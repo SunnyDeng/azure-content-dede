@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Überwachen und Verwalten von Azure Data Factory-Pipelines" 
-	description="Erfahren Sie, wie Sie von Ihnen erstellte Azure Data Factorys und Pipelines mithilfe des Azure-Verwaltungsportals und Azure PowerShell überwachen und verwalten." 
+	description="Erfahren Sie, wie Sie von Ihnen erstellte Azure Data Factorys und Pipelines mithilfe des klassischen Azure-Portals und Azure PowerShell überwachen und verwalten." 
 	services="data-factory" 
 	documentationCenter="" 
 	authors="spelluru" 
@@ -22,10 +22,10 @@ Der Data Factory-Dienst bietet eine zuverlässige und umfassende Ansicht der Spe
 In diesem Artikel wird das Überwachen, Verwalten und Debuggen Ihrer Pipelines beschrieben. Ferner wird erläutert, wie Warnungen erstellt und Benachrichtigungen bei Fehlern eingerichtet werden.
 
 ## Grundlegendes zu Pipelines und Aktivitätsstatus
-Im Azure-Vorschauportal können Sie Ihre Data Factory in Diagrammform anzeigen, Aktivitäten in einer Pipeline einsehen, Ein- und Ausgabedatasets anzeigen u.v.m. In diesem Abschnitt wird auch erklärt, wie ein Slice von einem Status in einen anderen wechselt.
+Im Azure-Portal können Sie Ihre Data Factory in Diagrammform anzeigen, Aktivitäten in einer Pipeline einsehen, Ein- und Ausgabedatasets anzeigen u.v.m. In diesem Abschnitt wird auch erklärt, wie ein Slice von einem Status in einen anderen wechselt.
 
 ### Navigieren zu Ihrer Data Factory
-1.	Melden Sie sich beim [Azure-Vorschauportal](http://portal.azure.com) an.
+1.	Melden Sie sich beim [Azure-Portal](http://portal.azure.com) an.
 2.	Klicken Sie auf **Alle durchsuchen**, und wählen Sie **Data Factorys** aus.
 	
 	![Alle durchsuchen -> Data Factorys](./media/data-factory-monitor-manage-pipelines/browseall-data-factories.png)
@@ -96,6 +96,7 @@ Die Datasetslices in Data Factory können einen der folgenden Status haben:
 <td>ValidationRetry</td><td>Es wird auf die Wiederholung der Überprüfung gewartet.</td>
 </tr>
 <tr>
+&lt; tr
 <td rowspan="2">In Bearbeitung</td><td>Die Überprüfen erfolgt.</td><td>Die Überprüfung wird ausgeführt.</td>
 </tr>
 <td></td>
@@ -181,12 +182,12 @@ Beispiel:
 
 
 ## Debuggen von Pipelines
-Azure Data Factory bietet über das Azure-Portal und Azure PowerShell umfangreiche Funktionen zum Debuggen von Problemen bei Pipelines.
+Azure Data Factory bietet über das klassische Azure-Portal und Azure PowerShell umfangreiche Funktionen zum Debuggen von Problemen bei Pipelines.
 
 ### Suchen von Fehlern in einer Pipeline
 Wenn eine Aktivitätsausführung in einer Pipeline nicht erfolgreich ist, hat das von der Pipeline erstellte Dataset aufgrund des Fehlers den Status "Fehler". Sie können Fehler in Azure Data Factory mit den folgenden Verfahren debuggen und beheben.
 
-#### Debuggen eines Fehlers im Azure-Portal:
+#### Debuggen eines Fehlers im klassischen Azure-Portal:
 
 1.	Klicken Sie auf der Startseite der Data Factory auf der Kachel **Datasets** auf **Mit Fehlern**.
 	
@@ -262,7 +263,7 @@ Wenn eine Aktivitätsausführung in einer Pipeline nicht erfolgreich ist, hat da
 
 ## Wiederholen von Fehlern in einer Pipeline
 
-### Verwenden des Azure-Portals
+### Verwendung des klassischen Azure-Portals
 
 Nachdem Sie eine Problembehandlung und ein Debugging für Fehler in einer Pipeline ausgeführt haben, können Sie Fehler wiederholen, indem Sie zum fehlerhaften Slice navigieren und dann auf der Befehlsleiste auf die Schaltfläche **Ausführen** klicken.
 
@@ -391,26 +392,44 @@ Um die Liste der bereitgestellten Azure-Ressourcengruppen abzurufen, verwenden S
 
 
 #### Problembehandlung bei Benutzerereignissen
-Sie können alle erzeugten Ereignisse anzeigen, indem Sie auf die Kachel **Vorgänge** klicken. Für alle auf dem Blatt **Ereignisse** angezeigten Vorgänge können Warnungen eingerichtet werden:
-
-![Vorgänge](./media/data-factory-monitor-manage-pipelines/operations.png)
-
-Um die eingerichteten Warnungen mithilfe von PowerShell anzuzeigen, können Sie den folgenden Befehl ausführen. Dadurch werden die Warnungen angezeigt, die für sowohl Metriken als auch Ereignisse mit dem Ressourcentyp **microsoft.insights/alertrules** eingerichtet sind.
-
-	Get-AzureResourceGroup -Name $resourceGroupName
-
-	ResourceGroupName : mdwevent
-	Location          : westus
-	ProvisioningState : Succeeded
-	Resources         :
-                    Name                  Type                                 Location
-                    ====================  ===================================  ========
-                    abhieventtest1        Microsoft.DataFactory/dataFactories  westus
-                    abhieventtest2        Microsoft.DataFactory/dataFactories  westus
-                    FailedValidationRuns  microsoft.insights/alertrules        eastus
 
 
-Wenn Sie die Ereignisse für die Warnungserzeugung auf dem Blatt "Portal" sehen, aber keine E-Mail-Benachrichtigungen erhalten, prüfen Sie, ob die angegebene E-Mail-Adresse für den Empfang von E-Mails externer Absender eingerichtet ist. Möglicherweise wurden die Warnungs-E-Mails durch Ihre E-Mail-Einstellungen blockiert.
+- Sie können alle erzeugten Ereignisse anzeigen, indem Sie auf die Kachel **Vorgänge** klicken. Für alle auf dem Blatt **Ereignisse** angezeigten Vorgänge können Warnungen eingerichtet werden:
+
+	![Vorgänge](./media/data-factory-monitor-manage-pipelines/operations.png)
+
+
+- Der Artikel [Azure Insigh-Cmdlets](https://msdn.microsoft.com/library/mt282452.aspx) erörtert PowerShell-Cmdlets, mit deren Hilfe sich Warnungen hinzufügen/empfangen/entfernen lassen. Hier sind einige Beispiele für die Verwendung des Cmdlets **Get-AlertRule**:
+
+		PS C:\> Get-AlertRule -res $resourceGroup
+	
+				Properties : Microsoft.Azure.Management.Insights.Models.Rule
+				Tags       : {[$type, Microsoft.WindowsAzure.Management.Common.Storage.CasePreservedDictionary, Microsoft.WindowsAzure.Management.Common.Storage]}
+				Id         : /subscriptions/<subscription id>/resourceGroups/<resource group name>/providers/microsoft.insights/alertrules/FailedExecutionRunsWest0
+				Location   : West US
+				Name       : FailedExecutionRunsWest0
+		
+				Properties : Microsoft.Azure.Management.Insights.Models.Rule
+				Tags       : {[$type, Microsoft.WindowsAzure.Management.Common.Storage.CasePreservedDictionary, Microsoft.WindowsAzure.Management.Common.Storage]}
+				Id         : /subscriptions/<subscription id>/resourceGroups/<resource group name>/providers/microsoft.insights/alertrules/FailedExecutionRunsWest3
+				Location   : West US
+				Name       : FailedExecutionRunsWest3
+	
+		PS C:\> Get-AlertRule -res $resourceGroup -Name FailedExecutionRunsWest0
+		
+				Properties : Microsoft.Azure.Management.Insights.Models.Rule
+				Tags       : {[$type, Microsoft.WindowsAzure.Management.Common.Storage.CasePreservedDictionary, Microsoft.WindowsAzure.Management.Common.Storage]}
+				Id         : /subscriptions/<subscription id>/resourceGroups/<resource group name>/providers/microsoft.insights/alertrules/FailedExecutionRunsWest0
+				Location   : West US
+				Name       : FailedExecutionRunsWest0
+
+	Führen Sie die folgenden get-Help-Befehle aus, wenn Ihnen das Cmdlet „Get-AlertRule“ im Detail und anhand von Beispiele vorgeführt werden soll.
+
+		get-help Get-AlertRule -detailed 
+		get-help Get-AlertRule -examples
+
+
+- Wenn Sie die Ereignisse für die Warnungserzeugung auf dem Blatt "Portal" sehen, aber keine E-Mail-Benachrichtigungen erhalten, prüfen Sie, ob die angegebene E-Mail-Adresse für den Empfang von E-Mails externer Absender eingerichtet ist. Möglicherweise wurden die Warnungs-E-Mails durch Ihre E-Mail-Einstellungen blockiert.
 
 ### Warnungen zu Metriken
 Data Factory erlaubt das Erfassen verschiedener Metriken und Erstellen von Warnungen zu Metriken. Sie können Warnungen für die folgenden Metriken für die Slices in Ihrer Data Factory erstellen und überwachen.
@@ -497,9 +516,7 @@ Sie können Warnungen zu Metriken auf die gleiche Weise wie zu Ereignissen berei
  
 Ersetzen Sie "subscriptionId", "resourceGroupName" und "dataFactoryName" im obigen Beispiel durch die entsprechenden Werte.
 
-*metricName* unterstützt ab jetzt zwei Werte:
-- "FailedRuns" 
-- "SuccessfulRuns"
+*metricName* unterstützt ab jetzt zwei Werte: "FailedRuns" und "SuccessfulRuns".
 
 **Bereitstellen der Warnung:**
 
@@ -523,4 +540,4 @@ Folgende Meldung sollte nach erfolgreicher Bereitstellung angezeigt werden:
 	Parameters        :
 	Outputs           
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

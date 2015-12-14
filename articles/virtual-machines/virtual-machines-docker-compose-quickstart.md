@@ -17,7 +17,7 @@
    ms.date="11/16/2015"
    ms.author="danlep"/>
 
-# Erste Schritte mit Docker und Compose zum Ausführen einer Anwendung mit mehreren Containern auf einem virtuellen Azure-Computer
+# Erste Schritte mit Docker und Compose zum Definieren und Ausführen einer Anwendung mit mehreren Containern auf einem virtuellen Azure-Computer
 
 In diesem Artikel werden die ersten Schritte mit Docker und [Compose](http://github.com/docker/compose) zum Festlegen und Ausführen einer komplexen Anwendung auf einem virtuellen Linux-Computer in Azure beschrieben. Bei Compose (dem Nachfolger von *Fig*) verwenden Sie eine einfache Textdatei zum Definieren einer Anwendung, die aus mehreren Docker-Containern besteht. Anschließend erstellen Sie Ihre Anwendung mit nur einem Befehl, der alle erforderlichen Schritte zur Ausführung der Anwendung auf dem virtuellen Computer ausführt. In diesem Artikel wird beispielsweise veranschaulicht, wie Sie schnell einen WordPress-Blog mit einer MariaDB SQL-Back-End-Datenbank einrichten. Sie können aber auch Compose verwenden, um komplexere Anwendungen einzurichten.
 
@@ -58,18 +58,9 @@ Als Nächstes erstellen Sie die Datei `docker-compose.yml` (eine reine Textkonfi
 
 Legen Sie ein Arbeitsverzeichnis auf Ihrem virtuellen Computer an, und erstellen Sie mit Ihrem bevorzugten Texteditor die Datei `docker-compose.yml`. Kopieren Sie probeweise einfach den folgenden Text in die Datei. Diese Konfiguration nutzt Images aus der [DockerHub-Registrierung](https://registry.hub.docker.com/_/wordpress/), um WordPress (Open-Source-Blogging- und Content Management-System) und eine verknüpfte MariaDB-Back-End-Datenbank zu installieren.
 
- ```
- wordpress:
-  image: wordpress
-  links:
-    - db:mysql
-  ports:
-    - 8080:80
+ ``` wordpress: image: wordpress links: - db:mysql ports: - 8080:80
 
-db:
-  image: mariadb
-  environment:
-    MYSQL_ROOT_PASSWORD: <your password>
+db: image: mariadb environment: MYSQL\_ROOT\_PASSWORD: <your password>
 
 ```
 
@@ -85,9 +76,7 @@ $ docker-compose up -d
 This starts the Docker containers specified in `docker-compose.yml`. You'll see output similar to:
 
 ```
-Creating wordpress_db_1...
-Creating wordpress_wordpress_1...
-```
+Creating wordpress\_db\_1... Creating wordpress\_wordpress\_1... ```
 
 >[AZURE.NOTE]Verwenden Sie zu Beginn die Option **-d**, damit die Container kontinuierlich im Hintergrund ausgeführt werden.
 
@@ -119,11 +108,10 @@ Daraufhin sollte der Startbildschirm von WordPress angezeigt werden, auf dem Sie
 
 * Weitere Beispiele zum Erstellen und Bereitstellen von Anwendungen mit mehreren Containern finden Sie in der [Compose-Befehlsreferenz](http://docs.docker.com/compose/reference/) und im [Compose-Benutzerhandbuch](http://docs.docker.com/compose/).
 * Verwenden Sie eine von Ihnen oder der [Community](http://azure.microsoft.com/documentation/templates/) erstellte Vorlage des Azure-Ressourcen-Managers, um eine Azure-VM mit Docker und eine mit Compose eingerichtete Anwendung bereitzustellen. Die Vorlage [WordPress-Blog mit Docker bereitstellen](https://azure.microsoft.com/documentation/templates/docker-wordpress-mysql/) verwendet Docker und Compose, um WordPress schnell mit einem MySQL-Back-End auf einem virtuellen Ubuntu-Computer bereitzustellen.
-* Sie können Docker Compose auch in ein [Docker Swarm-Cluster](virtual-machines-docker-swarm.md) integrieren. Szenarien finden Sie im Artikel über die
-[Integration von Docker Compose/Swarm](https://github.com/docker/compose/blob/master/SWARM.md).
+* Sie können Docker Compose auch in ein [Docker Swarm-Cluster](virtual-machines-docker-swarm.md) integrieren. Szenarien finden Sie im Artikel über die [Integration von Docker Compose/Swarm](https://github.com/docker/compose/blob/master/SWARM.md).
 
 <!--Image references-->
 
 [wordpress_start]: ./media/virtual-machines-docker-compose-quickstart/WordPress.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

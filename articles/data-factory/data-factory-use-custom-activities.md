@@ -233,7 +233,7 @@ Wenn Sie das Lernprogramm [Erste Schritte mit Azure Data Factory][adfgetstarted]
 
 #### So verwenden Sie einen bedarfsgesteuerten HDInsight-Cluster
 
-1. Klicken Sie im **Azure-Portal** auf der Startseite der Data Factory auf **Erstellen und bereitstellen**.
+1. Klicken Sie im **klassischen Azure-Portal** auf der Startseite der Data Factory auf **Erstellen und bereitstellen**.
 2. Klicken Sie im Data Factory-Editor auf der Befehlsleiste auf **Neu -> Compute**, und wählen Sie im Menü **On-Demand-HDInsight-Cluster** aus.
 2. Führen Sie im JSON-Skript folgende Schritte aus:
 	1. Geben Sie für die Eigenschaft **clusterSize** die Größe des HDInsight-Clusters an.
@@ -248,7 +248,7 @@ Wenn Sie das Lernprogramm [Erste Schritte mit Azure Data Factory][adfgetstarted]
 			    "typeProperties": {
 			      "clusterSize": "1",
 			      "timeToLive": "00:05:00",
-			      "version": "3.1",
+			      "version": "3.2",
 			      "linkedServiceName": "StorageLinkedService"
 			    }
 			  }
@@ -374,7 +374,7 @@ Wenn Sie das Lernprogramm [Erste Schritte mit Azure Data Factory][adfgetstarted]
 
 	(Blobspeicherort), (Name des Blobs), (Anzahl der Zeilen im Blob) (Knoten, auf dem die Aktivität ausgeführt wurde), (Datum-/Uhrzeitstempel)
 
-10.	Verwenden Sie das [Azure-Portal][azure-preview-portal] oder die Azure PowerShell-Cmdlets zum Überwachen Ihrer Data Factory, Pipelines und Datasets. Sie können die Meldungen vom **ActivityLogger** im Code für die benutzerdefinierte Aktivität in den Protokollen (insbesondere "user-0.log") sehen, die Sie aus dem Portal oder mithilfe von Cmdlets herunterladen können.
+10.	Verwenden Sie das [klassische Azure-Portal][azure-preview-portal] oder die Azure PowerShell-Cmdlets zum Überwachen Ihrer Data Factory, Pipelines und Datasets. Sie können die Meldungen vom **ActivityLogger** im Code für die benutzerdefinierte Aktivität in den Protokollen (insbesondere "user-0.log") sehen, die Sie aus dem Portal oder mithilfe von Cmdlets herunterladen können.
 
 	![Herunterladen von Protokollen aus einer benutzerdefinierten Aktivität][image-data-factory-download-logs-from-custom-activity]
 
@@ -398,7 +398,7 @@ Sie können Ihre benutzerdefinierten .NET-Aktivitäten mithilfe von Azure Batch 
 
 Es folgen die allgemeinen Schritte zur Verwendung des mit Azure Batch verknüpften Diensts in der exemplarischen Vorgehensweise, die im vorherigen Abschnitt beschrieben wurde:
 
-1. Erstellen Sie mit dem Azure-Verwaltungsportal ein Azure Batch-Konto. Anweisungen finden Sie unter [Erstellen und Verwalten eines Azure Batch-Kontos][batch-create-account]. Notieren Sie den Azure Batch-Kontonamen und -Kontoschlüssel.
+1. Erstellen Sie mit dem [klassischen Azure-Portal](http://manage.windowsazure.com) ein Azure Batch-Konto. Anweisungen finden Sie im Artikel [Erstellen und Verwalten eines Azure Batch-Kontos][batch-create-account]. Notieren Sie den Azure Batch-Kontonamen und -Kontoschlüssel.
 
 	Sie können auch das [New-AzureBatchAccount][new-azure-batch-account]-Cmdlet verwenden, um ein Azure Batch-Konto zu erstellen. Ausführliche Anweisungen zur Verwendung dieses Cmdlets finden Sie unter [Verwenden von Azure PowerShell zum Verwalten des Azure Batch-Kontos][azure-batch-blog].
 2. Erstellen Sie einen Azure Batch-Pool. Sie können zum Erstellen eines Azure Batch-Pools das [Azure Batch-Explorer-Tool][batch-explorer] herunterladen und verwenden (oder) die [Azure Batch-Bibliothek für .NET][batch-net-library]. Unter [Azure Batch-Explorer – Beispiel für eine exemplarische Vorgehensweise][batch-explorer-walkthrough] finden Sie Schritt-für-Schritt-Anweisungen zur Verwendung des Azure Batch-Explorers.
@@ -474,4 +474,4 @@ Es folgen die allgemeinen Schritte zur Verwendung des mit Azure Batch verknüpft
 
 [image-data-factory-azure-batch-tasks]: ./media/data-factory-use-custom-activities/AzureBatchTasks.png
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

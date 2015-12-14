@@ -24,7 +24,7 @@ In diesem Lernprogramm erfahren Sie, wie Sie eine PHP-Web-App in [Azure App Serv
 
 Sie erhalten Informationen zu folgenden Themen:
 
-* Erstellen einer Web-App und einer SQL-Datenbank über das [Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715). Da PHP standardmäßig in App Service-Web-Apps aktiviert ist, gelten für die Ausführung Ihres PHP-Codes keine besonderen Voraussetzungen.
+* Erstellen einer Azure-Web-App und einer SQL-Datenbank über das [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715). Da PHP standardmäßig in App Service-Web-Apps aktiviert ist, gelten für die Ausführung Ihres PHP-Codes keine besonderen Voraussetzungen.
 * Veröffentlichen und erneutes Veröffentlichen Ihrer Anwendung mithilfe von Git in Azure
  
 Mithilfe dieses Lernprogramms erstellen Sie eine einfache Webanwendung für die Registrierung in PHP. Die Anwendung wird auf einer Azure-Website gehostet. Unten finden Sie einen Screenshot der vollständigen Anwendung:
@@ -39,7 +39,7 @@ Mithilfe dieses Lernprogramms erstellen Sie eine einfache Webanwendung für die 
 
 Befolgen Sie diese Schritte, um eine Azure-Web-App und eine SQL-Datenbank zu erstellen:
 
-1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com/) an.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/) an.
 
 2. Öffnen Sie den Azure Marketplace, indem Sie oben links im Dashboard auf das Symbol **Neu** klicken. Klicken Sie dann neben „Marketplace“ auf **Alles markieren**, und wählen Sie **Web und mobil** aus.
 	
@@ -284,7 +284,6 @@ Befolgen Sie die folgenden Schritte, um Änderungen an der Anwendung zu veröffe
 
 ## Änderungen
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des Portals gegenüber dem Vorschauportal finden Sie unter [Referenz zur Navigation im Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715).
 
 
 
@@ -296,4 +295,4 @@ Befolgen Sie die folgenden Schritte, um Änderungen an der Anwendung zu veröffe
 [pdo-sqlsrv]: http://php.net/pdo_sqlsrv
  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

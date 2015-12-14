@@ -33,7 +33,7 @@ Der bedarfsgesteuerte HDInsight-Cluster wird vom Azure Data Factory-Dienst autom
 Beachten Sie die folgenden **wichtigen** Hinweise zum bedarfsgesteuerten verknüpften HDInsight-Dienst:
 
 - Der bedarfsgesteuerte HDInsight-Cluster wird nicht in Ihrem Azure-Abonnement angezeigt, sondern vom Azure Data Factory-Dienst verwaltet.
-- Die Protokolle für Aufträge, die in einem bedarfsgesteuerten HDInsight-Cluster ausgeführt werden, werden in das mit dem HDInsight-Cluster verknüpfte Speicherkonto kopiert. Der Zugriff auf diese Protokolle erfolgt über das Azure-Portal auf dem Blatt **Aktivitätsausführung – Details**. Einzelheiten finden Sie im Artikel [Überwachen und Verwalten von Pipelines](data-factory-monitor-manage-pipelines.md).
+- Die Protokolle für Aufträge, die in einem bedarfsgesteuerten HDInsight-Cluster ausgeführt werden, werden in das mit dem HDInsight-Cluster verknüpfte Speicherkonto kopiert. Der Zugriff auf diese Protokolle erfolgt über das klassische Azure-Portal auf dem Blatt **Aktivitätsausführung – Details**. Einzelheiten finden Sie im Artikel [Überwachen und Verwalten von Pipelines](data-factory-monitor-manage-pipelines.md).
 - Ihnen wird nur die Zeit in Rechnung gestellt, in der der HDInsight-Cluster verfügbar ist und Aufträge ausführt.
 
 > [AZURE.IMPORTANT]Die bedarfsgesteuerte Bereitstellung eines Azure HDInsight-Clusters dauert üblicherweise länger als **15 Minuten**.
@@ -47,7 +47,7 @@ Beachten Sie die folgenden **wichtigen** Hinweise zum bedarfsgesteuerten verknü
 	    "typeProperties": {
 	      "clusterSize": 4,
 	      "timeToLive": "00:05:00",
-	      "version": "3.1",
+	      "version": "3.2",
 		  "osType": "linux",
 	      "linkedServiceName": "MyBlobStore"
 	      "additionalLinkedServiceNames": [
@@ -65,17 +65,17 @@ Eigenschaft | Beschreibung | Erforderlich
 Typ | Legen Sie die Typeigenschaft auf **HDInsightOnDemand** fest. | Ja
 clusterSize | Die Größe des bedarfsgesteuerten Clusters. Geben Sie an, über wie viele Knoten dieser bedarfsgesteuerte Cluster verfügen soll. | Ja
 timetolive | <p>Die zulässige Leerlaufzeit für den bedarfsgesteuerten HDInsight-Cluster. Gibt an, wie lange der bedarfsgesteuerte HDInsight-Cluster nach Abschluss einer Aktivitätsausführung beibehalten wird, wenn der Cluster über keine weiteren aktiven Aufträge verfügt.</p><p>Wenn eine Aktivitätsausführung z. B. 6 Minuten dauert und "timetolive" auf 5 Minuten festgelegt ist, wird der Cluster nach den 6 Minuten, in denen die Aktivitätsausführung verarbeitet wird, weitere 5 Minuten beibehalten. Wenn innerhalb dieser 6 Minuten eine weitere Aktivitätsausführung verarbeitet wird, wird diese vom selben Cluster verarbeitet.</p><p>Da das Erstellen eines bedarfsgesteuerten HDInsight-Clusters ein kostenintensiver Vorgang ist, der mit einem recht hohen Zeitaufwand einhergehen kann, sollten Sie diese Einstellung gegebenenfalls nutzen, um die Data Factory-Leistung durch die Wiederverwendung eines bedarfsgesteuerten HDInsight-Clusters zu verbessern.</p><p>Wenn Sie den timetolive-Wert auf 0 festlegen, wird der Cluster gelöscht, sobald die Aktivitätsausführung verarbeitet wurde. Wenn Sie jedoch einen hohen Wert festlegen, wird der Cluster möglicherweise für einen zu langen Zeitraum im Leerlauf beibehalten, was hohe Kosten verursachen kann. Daher ist es wichtig, basierend auf Ihren individuellen Anforderungen einen geeigneten Wert festzulegen.</p><p>Wenn der Wert der Eigenschaft "timetolive" ordnungsgemäß festgelegt wird, können mehrere Pipelines dieselbe Instanz des bedarfsgesteuerten HDInsight-Clusters verwenden</p> | Ja
-Version | Version des HDInsight-Clusters | Nein
+Version | Version des HDInsight-Clusters. Der Standardwert ist 3.1 für Windows-Cluster und 3.2 für Linux-Cluster. | Nein
 linkedServiceName | Der Blobspeicher, den der bedarfsgesteuerte Cluster zum Speichern und Verarbeiten von Daten nutzt. | Ja
 additionalLinkedServiceNames | Gibt zusätzliche Speicherkonten für den verknüpften HDInsight-Dienst an, damit der Data Factory-Dienst diese für Sie registrieren kann. | Nein
-osType | Typ des Betriebssystems. Zulässige Werte sind: „windows“ (Standard) und „Linux“. | Nein
+osType | Typ des Betriebssystems. Zulässige Werte sind: „Windows“ (Standard) und „Linux“. | Nein
 
 ### Erweiterte Eigenschaften
 
 Für eine präzisere Konfiguration des bedarfsgesteuerten HDInsight-Clusters können Sie die folgenden Eigenschaften festlegen.
 
 Eigenschaft | Beschreibung | Erforderlich
--------- | ----------- | --------
+:-------- | :----------- | :--------
 coreConfiguration | Gibt die wichtigsten Konfigurationsparameter (wie in "core-site.xml") für den HDInsight-Cluster an, der erstellt werden soll. | Nein
 hBaseConfiguration | Gibt die HBase-Konfigurationsparameter (hbase-site.xml) für den HDInsight-Cluster an. | Nein
 hdfsConfiguration | Gibt die HDFS-Konfigurationsparameter (hdfs-site.xml) für den HDInsight-Cluster an. | Nein
@@ -94,7 +94,7 @@ yarnConfiguration | Gibt die Yarn-Konfigurationsparameter (yarn-site.xml) für d
 	    "typeProperties": {
 	      "clusterSize": 16,
 	      "timeToLive": "01:30:00",
-	      "version": "3.1",
+	      "version": "3.2",
 	      "linkedServiceName": "adfods1",
 	      "coreConfiguration": {
 	        "templeton.mapper.memory.mb": "5000"
@@ -119,6 +119,27 @@ yarnConfiguration | Gibt die Yarn-Konfigurationsparameter (yarn-site.xml) für d
 	    }
 	  }
 	}
+
+### Knotengrößen
+Sie können die Größe der Head-, Daten- und Zookeeper-Knoten mit den folgenden Eigenschaften angeben.
+
+Eigenschaft | Beschreibung | Erforderlich
+:-------- | :----------- | :--------
+headNodeSize | Gibt die Größe des Hauptknotens an. Der Standardwert lautet „groß“. Details finden Sie im Abschnitt **Knotengrößen angeben** unten. | Nein
+dataNodeSize | Gibt die Größe des Datenknotens an. Der Standardwert lautet „groß“. | Nein
+zookeeperNodeSize | Gibt die Größe des Zoo Keeper-Knotens an. Der Standardwert lautet „klein“. | Nein
+ 
+#### Knotengrößen angeben
+Lesen Sie sich den Artikel [Größen von virtuellen Computern](../virtual-machines/virtual-machines-size-specs.md#size-tables) durch, um Näheres zu Zeichenfolgenwerten zu erfahren, die Sie für die oben aufgeführten Eigenschaften angeben müssen. Die Werte müssen den **CMDLETs und APIs** entsprechen, auf die im Artikel verwiesen wird. Wie Sie in diesem Artikel sehen können, hat der Datenknoten „Large“ (Standard) 7 GB Arbeitsspeicher, was für Ihr Szenario möglicherweise nicht ausreichend ist.
+
+Wenn Sie Head-Knoten der Größe D4 und Worker-Knoten erstellen möchten, müssen Sie **Standard\_D4** als Wert für die „HeadNodeSize“- und „DataNodeSize“-Eigenschaften angeben.
+
+	"headNodeSize": "Standard_D4",	
+	"dataNodeSize": "Standard_D4",
+
+Wenn Sie einen falschen Wert für diese Eigenschaften angeben, erhalten Sie möglicherweise den folgenden **Fehler:** Fehler beim Erstellen des Clusters. Ausnahme: Vorgang der Clustererstellung kann nicht abgeschlossen werden. Vorgang mit Code "400" fehlgeschlagen. Cluster hinterließ folgenden Status: "Fehler". Nachricht: "PreClusterCreationValidationFailure" Wenn Sie diesen Fehler erhalten, stellen Sie sicher, dass Sie den Namen der **Cmdlets und APIs** aus der Tabelle im oben genannten Artikel verwenden.
+
+
 
 ## Eigene Compute-Umgebung
 
@@ -169,7 +190,7 @@ Lesen Sie die folgenden Themen, wenn Sie noch nicht mit dem Azure Batch-Dienst v
 
 
 - Unter [Azure Batch – Grundlagen](../batch/batch-technical-overview.md) finden Sie eine Übersicht über den Azure Batch-Dienst.
-- Erstellen Sie ein Azure Batch-Konto mit dem Cmdlet [New-AzureBatchAccount](https://msdn.microsoft.com/library/mt125880.aspx) oder über das [Azure-Verwaltungsportal](../batch/batch-account-create-portal.md). Im Blog [Using Azure PowerShell to Manage Azure Batch Account](http://blogs.technet.com/b/windowshpc/archive/2014/10/28/using-azure-powershell-to-manage-azure-batch-account.aspx) ist die Verwendung dieses Cmdlets im Detail beschrieben.
+- Erstellen Sie ein Azure Batch-Konto mit dem Cmdlet [New-AzureBatchAccount](https://msdn.microsoft.com/library/mt125880.aspx) oder über das [klassische Azure-Verwaltungsportal](../batch/batch-account-create-portal.md). Im Blog [Using Azure PowerShell to Manage Azure Batch Account](http://blogs.technet.com/b/windowshpc/archive/2014/10/28/using-azure-powershell-to-manage-azure-batch-account.aspx) ist die Verwendung dieses Cmdlets im Detail beschrieben.
 - Verwenden Sie das Cmdlet [New-AzureBatchPool](https://msdn.microsoft.com/library/mt125936.aspx), um einen Azure Batch-Pool zu erstellen.
 
 ### Beispiel
@@ -271,4 +292,4 @@ sessionId | Sitzungs-ID aus der OAuth-Autorisierungssitzung. Jede Sitzungs-ID is
 
 Sie erstellen einen mit Azure SQL verknüpften Dienst und verwenden ihn mit der [Aktivität "Gespeicherte Prozedur"](data-factory-stored-proc-activity.md) zum Aufrufen einer gespeicherten Prozedur in einer Data Factory-Pipeline. Im Artikel [Azure SQL-Connector](data-factory-azure-sql-connector.md#azure-sql-linked-service-properties) finden Sie weitere Informationen zu diesem verknüpften Dienst.
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

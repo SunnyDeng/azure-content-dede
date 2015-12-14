@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Konfigurieren eines Clouddiensts (Vorschauportal) | Microsoft Azure" 
-	description="Hier erfahren Sie, wie Sie Clouddienste in Azure konfigurieren. Hier erfahren Sie, wie Sie die Konfiguration für Clouddienste aktualisieren und Remotezugriff auf Rolleninstanzen konfigurieren. In diesen Beispielen wird das Azure-Vorschauportal verwendet." 
+	pageTitle="Konfigurieren eines Clouddiensts | Microsoft Azure" 
+	description="Hier erfahren Sie, wie Sie Clouddienste in Azure konfigurieren. Hier erfahren Sie, wie Sie die Konfiguration für Clouddienste aktualisieren und Remotezugriff auf Rolleninstanzen konfigurieren. In diesen Beispielen wird das Azure-Portal verwendet." 
 	services="cloud-services" 
 	documentationCenter="" 
 	authors="Thraka" 
@@ -22,10 +22,10 @@
 # Konfigurieren von Clouddiensten
 
 > [AZURE.SELECTOR]
-- [Azure Portal](cloud-services-how-to-configure.md)
-- [Azure Preview Portal](cloud-services-how-to-configure-portal.md)
+- [Azure classic portal](cloud-services-how-to-configure.md)
+- [Azure portal](cloud-services-how-to-configure-portal.md)
 
-Im Azure-Verwaltungsportal können Sie die am häufigsten für einen Clouddienst verwendeten Einstellungen konfigurieren. Wenn Sie die Konfigurationsdateien jedoch direkt aktualisieren möchten, laden Sie eine zu aktualisierende Konfigurationsdatei herunter, laden Sie anschließend die aktualisierte Datei hoch, und aktualisieren Sie den Clouddienst mit den Konfigurationsänderungen. In beiden Fällen wird die aktualisierte Konfiguration an alle Rolleninstanzen übermittelt.
+Im Azure-Portal können Sie die am häufigsten für einen Clouddienst verwendeten Einstellungen konfigurieren. Wenn Sie die Konfigurationsdateien jedoch direkt aktualisieren möchten, laden Sie eine zu aktualisierende Konfigurationsdatei herunter, laden Sie anschließend die aktualisierte Datei hoch, und aktualisieren Sie den Clouddienst mit den Konfigurationsänderungen. In beiden Fällen wird die aktualisierte Konfiguration an alle Rolleninstanzen übermittelt.
 
 Sie können auch eine Remotedesktopverbindung zu einer oder allen Rollen aktivieren, die in Ihrem Clouddienst ausgeführt werden. Mit Remotedesktop können Sie auf den Desktop Ihrer Anwendung zugreifen, während diese ausgeführt wird, und Probleme diagnostizieren und beheben. Sie können eine Remotedesktopverbindung zu Ihrer Rolle auch aktivieren, wenn Sie während der Entwicklung der Anwendung die Servicedefinitionsdatei (.csdef) für Remotedesktop nicht konfiguriert haben. Die Anwendung muss nicht erneut bereitgestellt werden, um eine Remotedesktopverbindung zu aktivieren.
 
@@ -33,7 +33,7 @@ Während der Konfigurationsupdates kann Azure nur dann eine Dienstverfügbarkeit
 
 ## Ändern eines Clouddiensts
 
-1. Navigieren Sie im [Azure-Vorschauportal](http://portal.azure.com/) zu Ihrem Clouddienst.
+1. Navigieren Sie im [Azure-Portal](http://portal.azure.com/) zu Ihrem Clouddienst.
 
 2. Klicken Sie auf das Symbol **Einstellungen** oder den Link **Essentials/Alle Einstellungen**, um das Blatt **Einstellungen** zu öffnen.
 
@@ -53,13 +53,13 @@ Während der Konfigurationsupdates kann Azure nur dann eine Dienstverfügbarkeit
     
     ![Schaltflächen für die Clouddienstinstanz](./media/cloud-services-how-to-configure-portal/cs-instance-buttons.png)
 
->[AZURE.NOTE]Das für den Clouddienst verwendete Betriebssystem kann nicht über das **Azure-Vorschauportal** geändert werden. Diese Einstellung können Sie nur über das andere [Portal](http://manage.windowsazure.com/) ändern. Weitere Informationen finden Sie [hier](cloud-services-how-to-configure.md#update-a-cloud-service-configuration-file).
+>[AZURE.NOTE]Das für den Clouddienst verwendete Betriebssystem kann nicht über das **Azure-Portal** geändert werden. Diese Einstellung können Sie nur über das [klassische Azure-Portal](http://manage.windowsazure.com/) ändern. Weitere Informationen finden Sie [hier](cloud-services-how-to-configure.md#update-a-cloud-service-configuration-file).
 
 ## Aktualisieren einer Clouddienst-Konfigurationsdatei
 
 1. Laden Sie zunächst die vorhandene Clouddienst-Konfigurationsdatei (.cscfg) herunter.
 
-    1. Navigieren Sie im [Azure-Vorschauportal](http://portal.azure.com/) zu Ihrem Clouddienst.
+    1. Navigieren Sie im [Azure-Portal](http://portal.azure.com/) zu Ihrem Clouddienst.
 
     2. Klicken Sie auf das Symbol **Einstellungen** oder den Link **Essentials/Alle Einstellungen**, um das Blatt **Einstellungen** zu öffnen.
 
@@ -85,7 +85,7 @@ Während der Konfigurationsupdates kann Azure nur dann eine Dienstverfügbarkeit
 
 ## Konfigurieren des Remotezugriffs auf Rolleninstanzen
 
-Der Remotezugriff kann nicht über das **Azure-Vorschauportal** konfiguriert werden. Sie können Sie diese Einstellung nur über das andere [Portal](http://manage.windowsazure.com/) ändern. Dies wird [hier](cloud-services-role-enable-remote-desktop.md) beschrieben.
+Der Remotezugriff kann nicht über das **Azure-Portal** konfiguriert werden. Sie können Sie diese Einstellung nur über das [klassische Azure-Portal](http://manage.windowsazure.com/) ändern. Dies wird [hier](cloud-services-role-enable-remote-desktop.md) beschrieben.
 			
 ## Nächste Schritte
 
@@ -94,4 +94,4 @@ Der Remotezugriff kann nicht über das **Azure-Vorschauportal** konfiguriert wer
 * [Verwalten Ihres Clouddiensts](cloud-services-how-to-manage-portal.md)
 * Konfigurieren von [SSL-Zertifikaten](cloud-services-configure-ssl-certificate-portal.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

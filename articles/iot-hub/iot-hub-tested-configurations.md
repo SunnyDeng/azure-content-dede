@@ -130,4 +130,4 @@ Die Kompatibilität jedes Geräts mit unserem SDK unter dem Betriebssystem und i
 
 Weitere Informationen zum Entwickeln von Lösungen mit **für IoT zertifizierten Geräten** finden Sie [hier](http://azure.com/iotdev).
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

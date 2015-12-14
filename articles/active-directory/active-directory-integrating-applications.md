@@ -351,4 +351,4 @@ Damit ein Unternehmensadministrator den Zugriff einer App auf das Verzeichnis en
 
 - Besuchen Sie das [Entwicklerhandbuch zu Azure Active Directory](active-directory-developers-guide.md).
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

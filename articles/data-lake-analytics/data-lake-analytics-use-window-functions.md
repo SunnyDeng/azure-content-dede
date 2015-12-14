@@ -35,7 +35,7 @@ Die Fensterfunktionen sind in die folgenden Kategorien unterteilt:
 
 - Durchlaufen Sie die folgenden beiden Tutorials:
 
-    - [Erste Schritte mit Azure Data Lake-Tools für Visual Studio](data-lake-analytics-use-data-lake-tools.md)
+    - [Erste Schritte mit Azure Data Lake-Tools für Visual Studio](data-lake-analytics-use-data-lake-tools.md).
     - [Erste Schritte mit U-SQL für Azure Data Lake Analytics-Aufträge](data-lake-analytics-u-sql-get-started.md).
 - Erstellen Sie ein Data Lake Analytic-Konto gemäß den Anweisungen unter [Erste Schritte mit Azure Data Lake-Tools für Visual Studio](data-lake-analytics-use-data-lake-tools.md).
 - Erstellen Sie ein Visual Studio-U-SQL-Projekt gemäß den Anweisungen unter [Erste Schritte mit U-SQL für Azure Data Lake Analytics-Aufträge](data-lake-analytics-u-sql-get-started.md).
@@ -157,9 +157,9 @@ Die Ergebnisse sind wie folgt:
 
 |DeptName|SalaryByDept
 |--------|------------
-|Engineering|60000
+|Entwicklung|60000
 |HR|30000
-|Executive|50000
+|Geschäftsleitung|50000
 |Marketing|25000
 
 Die Summe der Spalte „SalaryByDept“ ist $165000, was dem Betrag im letzten Skript entspricht.
@@ -210,10 +210,10 @@ Die Ergebnisse sind wie folgt:
 
 |EmpName|DeptName|SalaryByDep
 |-------|--------|-------------------
-|Noah|Engineering|60000
-|Sophia|Engineering|60000
-|Liam|Engineering|60000
-|Mason|Executive|50000
+|Noah|Entwicklung|60000
+|Sophia|Entwicklung|60000
+|Liam|Entwicklung|60000
+|Mason|Geschäftsleitung|50000
 |Emma|HR|30000
 |Jacob|HR|30000
 |Olivia|HR|30000
@@ -233,7 +233,7 @@ Fensterfunktionen unterstützen auch die folgenden Aggregate:
 - SUM
 - MIN
 - MAX
-- AVG
+- DURCHSCHN.
 - STDEV
 - VAR
 
@@ -260,10 +260,10 @@ Hier sehen Sie die Ausgabe:
 
 |EmpID|EmpName|DeptName|DeptID|Salary|TotalByDept
 |-----|-------|--------|------|------|-----------
-|1|Noah|Engineering|100|10000|60000
-|2|Sophia|Engineering|100|20000|60000
-|3|Liam|Engineering|100|30000|60000
-|7|Mason|Executive|300|50000|50000
+|1|Noah|Entwicklung|100|10000|60000
+|2|Sophia|Entwicklung|100|20000|60000
+|3|Liam|Entwicklung|100|30000|60000
+|7|Mason|Geschäftsleitung|300|50000|50000
 |4|Emma|HR|200|10000|30000
 |5|Jacob|HR|200|10000|30000
 |6|Olivia|HR|200|10000|30000
@@ -283,10 +283,10 @@ Das Ergebnis:
 
 |EmpID|EmpName|DeptName|DeptID|Salary|CountByDept
 |-----|-------|--------|------|------|-----------
-|1|Noah|Engineering|100|10000|3
-|2|Sophia|Engineering|100|20000|3
-|3|Liam|Engineering|100|30000|3
-|7|Mason|Executive|300|50000|1
+|1|Noah|Entwicklung|100|10000|3
+|2|Sophia|Entwicklung|100|20000|3
+|3|Liam|Entwicklung|100|30000|3
+|7|Mason|Geschäftsleitung|300|50000|1
 |4|Emma|HR|200|10000|3
 |5|Jacob|HR|200|10000|3
 |6|Olivia|HR|200|10000|3
@@ -308,10 +308,10 @@ Die Ergebnisse:
 
 |EmpID|EmpName|DeptName|DeptID|Salary|MinSalary
 |-----|-------|--------|------|-------------|----------------
-|1|Noah|Engineering|100|10000|10000
-|2|Sophia|Engineering|100|20000|10000
-|3|Liam|Engineering|100|30000|10000
-|7|Mason|Executive|300|50000|50000
+|1|Noah|Entwicklung|100|10000|10000
+|2|Sophia|Entwicklung|100|20000|10000
+|3|Liam|Entwicklung|100|30000|10000
+|7|Mason|Geschäftsleitung|300|50000|50000
 |4|Emma|HR|200|10000|10000
 |5|Jacob|HR|200|10000|10000
 |6|Olivia|HR|200|10000|10000
@@ -357,7 +357,7 @@ ROW\_NUMBER, RANK und DENSE\_RANK weisen Zeilen in einem Fenster Werte zu. Ansta
         
 Beachten Sie, dass die OVER-Klauseln identisch sind. Das Ergebnis:
 
-|Abfrage|Latency:int|Vertical|RowNumber|Rank|DenseRank
+|Abfragen|Latency:int|Vertical|RowNumber|Rank|DenseRank
 |-----|-----------|--------|--------------|---------|--------------
 |Banana|300|Image|1|1|1
 |Cherry|300|Image|2|1|1
@@ -417,7 +417,7 @@ Im folgenden Beispiel wird die Menge der Zeilen in jeder Partition (Vertical) in
 		
 Die Ergebnisse:
 
-|Query|Latency|Vertical|Quartile
+|Abfragen|Wartezeit|Vertical|Quartile
 |-----|-----------|--------|-------------
 |Banana|300|Image|1
 |Cherry|300|Image|2
@@ -456,7 +456,7 @@ Sie haben am Anfang des Abschnitts zu Rangfolgefunktionen das folgende Beispiel 
 
 Die Ergebnisse:
 
-|Query|Latency|Vertical|Rank|DenseRank|RowNumber
+|Abfragen|Wartezeit|Vertical|Rank|DenseRank|RowNumber
 |-----|-----------|--------|---------|--------------|--------------
 |Banana|300|Image|1|1|1
 |Cherry|300|Image|1|1|2
@@ -485,7 +485,7 @@ Im folgenden Beispiel werden die TOP 3 Datensätze in jeder Gruppe ohne Lücken 
 
 Die Ergebnisse:
 
-|Query|Latency|Vertical|DenseRank
+|Abfragen|Wartezeit|Vertical|DenseRank
 |-----|-----------|--------|--------------
 |Banana|300|Image|1
 |Cherry|300|Image|1
@@ -510,7 +510,7 @@ Die Ergebnisse:
 
 Die Ergebnisse:
 
-|Query|Latency|Vertical|Rank
+|Abfragen|Wartezeit|Vertical|Rank
 |-----|-----------|--------|---------
 |Banana|300|Image|1
 |Cherry|300|Image|1
@@ -535,7 +535,7 @@ Die Ergebnisse:
 
 Die Ergebnisse:
     
-|Query|Latency|Vertical|RowNumber
+|Abfragen|Wartezeit|Vertical|RowNumber
 |-----|-----------|--------|--------------
 |Banana|300|Image|1
 |Cherry|300|Image|2
@@ -588,17 +588,17 @@ Im folgenden Beispiel wird die CUME\_DIST-Funktion zum Berechnen des Latenzperze
 
 Die Ergebnisse:
     
-|Query|Latency|Vertical|CumeDist
+|Abfragen|Wartezeit|Vertical|CumeDist
 |-----|-----------|--------|---------------
 |Durian|500|Image|1
-|Banana|300|Image|0,666666666666667
-|Cherry|300|Image|0,666666666666667
+|Banana|300|Image|0\.666666666666667
+|Cherry|300|Image|0\.666666666666667
 |Durian|500|Web|1
-|Cherry|400|Web|0,833333333333333
-|Fig|300|Web|0,666666666666667
+|Cherry|400|Web|0\.833333333333333
+|Fig|300|Web|0\.666666666666667
 |Fig|200|Web|0,5
 |Papaya|200|Web|0,5
-|Apple|100|Web|0,166666666666667
+|Apple|100|Web|0\.166666666666667
 
 Es gibt in der Partition 6 Zeilen mit dem Partitionsschlüssel „Web“ (ab der 4. Zeile nach unten):
 
@@ -654,7 +654,7 @@ Der von der PERCENT\_RANK-Funktion zurückgegebene Wert stellt den Rang der Late
 
 Die Ergebnisse:
 
-|Query|Latency:int|Vertical|PercentRank
+|Abfragen|Latency:int|Vertical|PercentRank
 |-----|-----------|--------|------------------
 |Banana|300|Image|0
 |Cherry|300|Image|0
@@ -703,7 +703,7 @@ Die Funktionsweise beider Funktionen zeigt das folgende Beispiel, bei dem der Me
 
 Die Ergebnisse:
 
-|Query|Latency:int|Vertical|PercentileCont50|PercentilDisc50
+|Abfragen|Latency:int|Vertical|PercentileCont50|PercentilDisc50
 |-----|-----------|--------|-------------------|----------------
 |Banana|300|Image|300|300
 |Cherry|300|Image|300|300
@@ -733,14 +733,14 @@ PERCENTILE\_DISC interpoliert keine Werte, weshalb der Median für „Web“ 200
 ## Weitere Informationen
 
 - [Übersicht über Microsoft Azure Data Lake Analytics](data-lake-analytics-overview.md)
-- [Erste Schritte mit Data Lake Analytics mithilfe des Azure-Vorschauportals](data-lake-analytics-get-started-portal.md)
+- [Erste Schritte mit Data Lake Analytics mithilfe des Azure-Portals](data-lake-analytics-get-started-portal.md)
 - [Erste Schritte mit Data Lake Analytics mithilfe von Azure PowerShell](data-lake-analytics-get-started-powershell.md)
 - [Entwickeln von U-SQL-Skripts mit Data Lake-Tools für Visual Studio](data-lake-analytics-data-lake-tools-get-started.md)
-- [Verwenden interaktiver Tutorials zu Azure Data Lake Analytics](data-lake-analytics-use-interactive-tutorials.md)
+- [Verwenden interaktiver Lernprogramme zu Azure Data Lake Analytics](data-lake-analytics-use-interactive-tutorials.md)
 - [Analysieren von Websiteprotokollen mit Azure Data Lake Analytics](data-lake-analytics-analyze-weblogs.md)
 - [Erste Schritte mit der Sprache U-SQL für Azure Data Lake Analytics](data-lake-analytics-u-sql-get-started.md)
-- [Verwalten von Azure Data Lake Analytics mithilfe des Azure-Vorschauportals](data-lake-analytics-use-portal.md)
+- [Verwalten von Azure Data Lake Analytics mithilfe des Azure-Portals](data-lake-analytics-use-portal.md)
 - [Verwalten von Azure Data Lake Analytics mithilfe von Azure PowerShell](data-lake-analytics-use-powershell.md)
-- [Überwachung und Problembehandlung von Azure Data Lake Analytics-Aufträgen mithilfe des Azure-Vorschauportals](data-lake-analytics-monitor-and-troubleshoot-jobs-tutorial.md)
+- [Überwachen und Problembehandeln von Azure Data Lake Analytics-Aufträgen mithilfe des Azure-Portals](data-lake-analytics-monitor-and-troubleshoot-jobs-tutorial.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

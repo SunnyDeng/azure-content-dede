@@ -114,4 +114,4 @@ Weitere Informationen zur Konfiguration der [Azure AD Connect-Synchronisierung](
 
 Weitere Informationen zum [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

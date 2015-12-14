@@ -18,6 +18,11 @@
 
 # Verwendung der Offlinedatensynchronisierung in Mobile Services
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
+
 [AZURE.INCLUDE [mobile-services-selector-offline](../../includes/mobile-services-selector-offline.md)]
 
 In diesem Thema werden die Offlinesynchronisierungsfunktionen von Azure Mobile Services in der TodoList-Schnellstart-App erläutert. Die Offlinesynchronisierung ermöglicht Ihnen die einfache Erstellung von Apps, die auch dann verwendet werden können, wenn der Benutzer keinen Netzwerkzugriff hat.
@@ -130,9 +135,9 @@ In diesem Abschnitt verbinden Sie die App erneut mit dem mobilen Dienst. Dies si
 
 2. Erstellen Sie die App erneut, und führen Sie sie aus. Beachten Sie, dass die Daten genau wie im Offlineszenario aussehen, obwohl die App jetzt mit dem mobilen Dienst verbunden ist. Dies liegt daran, dass die App immer die `IMobileServiceSyncTable` verwendet, die auf den lokalen Speicher verweist.
 
-3. Melden Sie sich beim Azure-Verwaltungsportal an, und zeigen Sie die Datenbank für Ihren mobilen Dienst an. Wenn Ihr Dienst das JavaScript-Back-End verwendet, können Sie die Daten auf der Registerkarte **Daten** des mobilen Diensts durchsuchen.
+3. Melden Sie sich beim [klassischen Azure-Portal] an, und überprüfen Sie die Datenbank für Ihren mobilen Dienst. Wenn Ihr Dienst das JavaScript-Back-End verwendet, können Sie die Daten auf der Registerkarte **Daten** des mobilen Diensts durchsuchen.
 
-    Wenn Sie das .NET-Back-End für Ihren mobilen Dienst verwenden, wechseln Sie in Visual Studio zu **Server-Explorer** -> **Azure** -> **SQL-Datenbanken**. Klicken Sie mit der rechten Maustaste auf Ihre Datenbank, und wählen Sie **In SQL Server-Objekt-Explorer öffnen** aus.
+    Wenn Sie das .NET-Back-End für Ihren mobilen Dienst verwenden, wechseln Sie in Visual Studio zu **Server-Explorer** > **Azure** > **SQL-Datenbanken**. Klicken Sie mit der rechten Maustaste auf Ihre Datenbank, und wählen Sie **In SQL Server-Objekt-Explorer öffnen** aus.
 
     Beachten Sie, dass die Daten zwischen Datenbank und lokalem Speicher *nicht* synchronisiert wurden.
 
@@ -169,6 +174,6 @@ In diesem Abschnitt verbinden Sie die App erneut mit dem mobilen Dienst. Dies si
 [Xamarin Studio]: http://xamarin.com/download
 [Xamarin-Erweiterung]: http://xamarin.com/visual-studio
 [NuGet Addin for Xamarin]: https://github.com/mrward/monodevelop-nuget-addin
- 
+[klassischen Azure-Portal]: https://manage.windowsazure.com
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

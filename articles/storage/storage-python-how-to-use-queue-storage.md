@@ -104,15 +104,13 @@ Zum Löschen einer Warteschlange und aller darin enthaltenen Nachrichten rufen S
 
 Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
 
--   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure][].
 -   Besuchen Sie den [Blog des Azure-Speicherteams][]
 
 Weitere Informationen finden Sie außerdem im [Python Developer Center](/develop/python/).
 
-[Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/library/azure/gg433040.aspx
 [Blog des Azure-Speicherteams]: http://blogs.msdn.com/b/windowsazurestorage/
 [Python Azure-Pakets]: https://pypi.python.org/pypi/azure
 [Python Azure Storage-Paket]: https://pypi.python.org/pypi/azure-storage
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

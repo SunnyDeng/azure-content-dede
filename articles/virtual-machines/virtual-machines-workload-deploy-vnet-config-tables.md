@@ -36,7 +36,7 @@ In den nachfolgend dargestellten Schritten, die Sie durch die Konfiguration des 
 
 ## Erstellen eines neuen standortübergreifenden virtuellen Azure-Netzwerks mit den Einstellungen Ihrer Konfigurationstabellen
 
-1. Melden Sie sich beim [Azure-Portal] an.
+1. Melden Sie sich beim [klassischen Azure-Portal] an.
 2. Klicken Sie in der Taskleiste auf **Neu > Netzwerkdienste > Virtuelles Netzwerk > Benutzerdefiniert erstellen**.
 3. Gehen Sie auf der Seite **Details zum virtuellen Netzwerk** wie folgt vor:
 	- Geben Sie unter **Name** den Namen von Element 1 aus Tabelle V ein.
@@ -69,4 +69,4 @@ In den nachfolgend dargestellten Schritten, die Sie durch die Konfiguration des 
 
 [Configure a cross-premises site-to-site connection to an Azure virtual network (Konfiguration einer standortübergreifenden Site-to-Site-Verbindung mit einem virtuellen Azure-Netzwerk).](../vpn-gateway/vpn-gateway-site-to-site-create.md)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

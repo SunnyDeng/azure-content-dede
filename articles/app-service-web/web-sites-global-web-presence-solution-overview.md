@@ -65,7 +65,7 @@ Stellen Sie durch das [Integrieren Ihrer Web-App in Azure CDN] statische Inhalte
 
 Optimieren Sie Ihre Organisationswebsite über eine automatische Skalierung mit "Autoskalierung", eine Zwischenspeicherung mit Azure Redis Cache, die Ausführung von Hintergrundaufgaben mithilfe von WebJobs, und sorgen Sie mit Azure Traffic Manager für eine gleichbleibend hohe Verfügbarkeit.
 
-Die [flexible Skalierbarkeit] von App Service-Web-Apps ist ideal für Ihre Organisationswebsite – unabhängig von Ihrem Workload. Skalieren Sie Ihre Website manuell über das [Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715), programmgesteuert über die [Dienstverwaltungs-API] oder über [PowerShell-Skripts] oder automatisch über die Funktion "Autoskalierung". Im Hostingplan **Standard** kann eine Website mithilfe der Autoskalierung abhängig von der CPU-Auslastung automatisch skaliert werden. Bewährte Methoden finden Sie auf der Website von [Troy Hunt]\: [10 things I learned about rapidly scaling websites with Azure] (10 Dinge, die ich über eine schnelle Skalierung von Websites mit Azure gelernt habe, in englischer Sprache).
+Die [flexible Skalierbarkeit] von App Service-Web-Apps ist ideal für Ihre Organisationswebsite – unabhängig von Ihrem Workload. Skalieren Sie Ihre Website manuell über das [Azure-Portal](https://portal.azure.com), programmgesteuert über die [Dienstverwaltungs-API] oder [PowerShell-Skripts] oder automatisch über die Funktion „Autoskalierung“. Im Hostingplan **Standard** kann eine Website mithilfe der Autoskalierung abhängig von der CPU-Auslastung automatisch skaliert werden. Bewährte Methoden finden Sie auf der Website von [Troy Hunt]\: [10 things I learned about rapidly scaling websites with Azure] (10 Dinge, die ich über eine schnelle Skalierung von Websites mit Azure gelernt habe, in englischer Sprache).
 
 Erhöhen Sie die Reaktionsfähigkeit Ihrer Website mit [Azure Redis Cache]. Nutzen Sie diese Funktion zum Zwischenspeichern von Daten aus Back-End-Datenbanken und anderen Daten, beispielsweise [ASP.NET-Sitzungszustand] und [Ausgabecache].
 
@@ -75,7 +75,7 @@ Stellen Sie mithilfe von [Azure Traffic Manager] eine hohe Verfügbarkeit Ihrer 
 
 Sorgen Sie mit Azure oder Tools von Drittanbietern für eine optimale Leistung Ihrer Website. Empfangen Sie Warnungen zu kritischen Websiteereignissen. Erhalten Sie problemlos Benutzereinblick über Application Insights oder eine Webprotokollanalyse aus HDInsight.
 
-Im [Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715) finden Sie auf dem Blatt der Web-App eine [Übersicht] über die aktuellen Leistungskennzahlen und Ressourcenkontingente der Website. Eine 360-Grad-Ansicht Ihrer Anwendung, einschließlich von Daten zu Verfügbarkeit, Leistung und Auslastung, erhalten Sie mit [Azure Application Insights]. So erhalten Sie schnell aussagekräftige Erkenntnisse zu Problembehandlung, Diagnose und Nutzung. Alternativ können Sie ein Drittanbietertool wie [New Relic] nutzen, um weiterführende Überwachungsdaten für Ihre Websites zu erhalten.
+Auf dem Blatt der Web-App im [Azure-Portal](https://portal.azure.com) erhalten Sie eine [Übersicht] über die aktuellen Leistungsmetriken und Ressourcenkontingente der Website. Eine 360-Grad-Ansicht Ihrer Anwendung, einschließlich von Daten zu Verfügbarkeit, Leistung und Auslastung, erhalten Sie mit [Azure Application Insights]. So erhalten Sie schnell aussagekräftige Erkenntnisse zu Problembehandlung, Diagnose und Nutzung. Alternativ können Sie ein Drittanbietertool wie [New Relic] nutzen, um weiterführende Überwachungsdaten für Ihre Websites zu erhalten.
 
 Im Hostingplan **Standard** erhalten für die Websiteüberwachung verantwortliche Benutzer E-Mail-Benachrichtigungen, wenn die Website nicht mehr reagiert. Weitere Informationen finden Sie unter [Empfangen von Warnbenachrichtigungen und Verwalten von Warnregeln in Azure].
 
@@ -137,4 +137,4 @@ Erhöhen Sie den Anreiz Ihrer Website mit Rich Media:
 
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

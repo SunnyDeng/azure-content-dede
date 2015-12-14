@@ -1,22 +1,27 @@
-<properties 
-	pageTitle="Verwenden von Offlinedaten in Ihrer universellen Windows-App | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie mit Azure Mobile Services Offlinedaten in Ihrer universellen Windows-App zwischenspeichern und synchronisieren." 
-	documentationCenter="mobile-services" 
-	authors="lindydonna" 
-	manager="dwrede" 
-	editor="" 
+<properties
+	pageTitle="Verwenden von Offlinedaten in Ihrer universellen Windows-App | Microsoft Azure"
+	description="Erfahren Sie, wie Sie mit Azure Mobile Services Offlinedaten in Ihrer universellen Windows-App zwischenspeichern und synchronisieren."
+	documentationCenter="mobile-services"
+	authors="lindydonna"
+	manager="dwrede"
+	editor=""
 	services="mobile-services"/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-windows" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="11/06/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-windows"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="11/06/2015"
 	ms.author="donnam"/>
 
 # Verwendung der Offlinedatensynchronisierung in Mobile Services
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 [AZURE.INCLUDE [mobile-services-selector-offline](../../includes/mobile-services-selector-offline.md)]
 
@@ -26,11 +31,11 @@ Wenn Sie sich lieber ein Video ansehen möchten, finden Sie die Schritte dieses 
 
 > [AZURE.VIDEO build-offline-apps-with-mobile-services]
 
-In diesem Tutorial aktualisieren Sie das universelle App-Projekt aus dem Tutorial [Erste Schritte mit Mobile Services], um Offlinefunktionen von Azure Mobile Services zu unterstützen. Anschließend fügen Sie Daten in einem Offlineszenario mit getrennter Verbindung hinzu, synchronisieren diese Elemente mit der Onlinedatenbank und melden sich daraufhin beim Azure-Verwaltungsportal an, um Änderungen an den Daten anzuzeigen, die bei der Ausführung der Anwendung vorgenommen wurden.
+In diesem Tutorial aktualisieren Sie das universelle App-Projekt aus dem Tutorial [Erste Schritte mit Mobile Services], um Offlinefunktionen von Azure Mobile Services zu unterstützen. Anschließend fügen Sie Daten in einem Offlineszenario mit getrennter Verbindung hinzu, synchronisieren diese Elemente mit der Onlinedatenbank und melden sich daraufhin beim [klassischen Azure-Portal] an, um Änderungen an den Daten anzuzeigen, die bei der Ausführung der Anwendung vorgenommen wurden.
 
 >[AZURE.NOTE]In diesem Lernprogramm erfahren Sie, wie Sie Azure Mobile Services verwenden können, um Daten in einer Windows Store-App zu speichern und abzurufen. Falls Sie noch keine Erfahrung mit Mobile Services haben, schließen Sie zunächst das Lernprogramm [Erste Schritte mit Mobile Services] ab.
 
-##Voraussetzungen 
+##Voraussetzungen
 
 Für dieses Lernprogramm ist Folgendes erforderlich:
 
@@ -39,7 +44,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 * [Azure Mobile Services SDK Version 1.3.0 (oder höher)][Mobile Services SDK Nuget]
 * [Azure Mobile Services SQLite Store Version 1.0.0 (oder höher)][SQLite store nuget]
 * [SQLite für Windows 8.1](http://www.sqlite.org/download.html)
-* Ein Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Dienste, die Sie auch nach Ablauf der Testversion weiter nutzen können. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AE564AB28). 
+* Ein Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Dienste, die Sie auch nach Ablauf der Testversion weiter nutzen können. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AE564AB28).
 
 ## <a name="enable-offline-app"></a>Aktualisieren der App für die Unterstützung von Offlinefunktionen
 
@@ -47,7 +52,7 @@ Offlinefunktionen von Azure Mobile Services ermöglichen Ihnen die Interaktion m
 
 >[AZURE.NOTE]Sie können diesen Abschnitt überspringen und einfach das Beispielprojekt abrufen, das bereits über Offlineunterstützung vom GitHub-Beispielrepository für Mobile Services verfügt. Das Beispielprojekt mit aktivierter Offlineunterstützung befindet sich unter [TodoList Offline Sample] (in englischer Sprache).
 
-1. Installieren Sie die SQLite-Laufzeit für Windows 8.1 und Windows Phone 8.1. 
+1. Installieren Sie die SQLite-Laufzeit für Windows 8.1 und Windows Phone 8.1.
 
     * **Windows 8.1-Runtime:** Installieren Sie [SQLite für Windows 8.1].
     * **Windows Phone 8.1:** Installieren Sie [SQLite für Windows Phone 8.1].
@@ -211,7 +216,7 @@ In diesem Abschnitt verbinden Sie die App erneut mit dem mobilen Dienst. Dies si
 
 2. Drücken Sie die Taste **F5**, um die App erneut zu erstellen und auszuführen. Beachten Sie, dass die Daten genau wie im Offlineszenario aussehen, obwohl die App jetzt mit dem mobilen Dienst verbunden ist. Dies liegt daran, dass die App immer mit `IMobileServiceSyncTable` arbeitet und sich diese Tabelle auf den lokalen Speicher bezieht.
 
-3. Melden Sie sich beim Azure-Verwaltungsportal an, und zeigen Sie die Datenbank für Ihren mobilen Dienst an. Wenn Ihr Dienst das JavaScript-Back-End für mobile Dienste verwendet, können Sie die Daten in der Registerkarte **Daten** des mobilen Dienstes durchsuchen.
+3. Melden Sie sich beim [klassischen Azure-Portal] an, und überprüfen Sie die Datenbank für Ihren mobilen Dienst. Wenn Ihr Dienst das JavaScript-Back-End für mobile Dienste verwendet, können Sie die Daten in der Registerkarte **Daten** des mobilen Dienstes durchsuchen.
 
     Wenn Sie das .NET-Back-End für Ihren mobilen Dienst verwenden, wechseln Sie in Visual Studio zu **Server-Explorer** -> **Azure** -> **SQL-Datenbanken**. Klicken Sie mit der rechten Maustaste auf Ihre Datenbank, und wählen Sie **In SQL Server-Objekt-Explorer öffnen** aus.
 
@@ -232,7 +237,7 @@ In diesem Abschnitt verbinden Sie die App erneut mit dem mobilen Dienst. Dies si
 6. Klicken Sie erneut auf die Schaltfläche **Aktualisieren**, um `SyncAsync` aufzurufen. `SyncAsync` ruft Push- und Pullvorgänge auf, in diesem Fall hätten wir den Aufruf von `PushAsync` auch entfernen können. Dies liegt daran, dass ein **Pull-Vorgang immer zuerst einen Push-Vorgang ausführt**. Dadurch wird sichergestellt, dass alle Tabellen im lokalen Speicher und die Beziehungen konsistent bleiben.
 
     ![][10]
-  
+
 
 ##Zusammenfassung
 
@@ -276,6 +281,6 @@ In diesem Abschnitt verbinden Sie die App erneut mit dem mobilen Dienst. Dies si
 
 [Mobile Services SDK Nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices/1.3.0
 [SQLite store nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices.SQLiteStore/1.0.0
- 
+[klassischen Azure-Portal]: https://manage.windowsazure.com
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

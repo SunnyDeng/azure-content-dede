@@ -38,9 +38,9 @@ Zum Durchführen dieses Lernprogramms benötigen Sie Folgendes:
 
 ## Erstellen eines Ereignis-Hubs
 
-1. Melden Sie sich beim [Azure-Portal] an, und klicken Sie im unteren Teil des Bildschirms auf **NEW**.
+1. Melden Sie sich beim [klassischen Azure-Portal][] an, und klicken Sie im unteren Teil des Bildschirms auf **NEU**.
 
-2. Klicken Sie auf **App-Dienste**, **Service Bus**, **Event Hub** und dann auf **Schnellerfassung**.
+2. Klicken Sie auf **App Services**, **Service Bus**, **Event Hub** und dann auf **Schnellerfassung**.
 
    	![][1]
 
@@ -110,12 +110,12 @@ Nachdem Sie eine funktionierende Anwendung erstellt haben, die einen Ereignis-Hu
 [24]: ./media/event-hubs-c-ephcs-getstarted/receive-eph-c.png
 
 <!-- Links -->
-[Azure-Portal]: https://manage.windowsazure.com/
+[klassischen Azure-Portal]: https://manage.windowsazure.com/
 [Ereignisprozessorhost-Bibliothek]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
 [Übersicht über Event Hubs]: event-hubs-overview.md
 [Übersicht über Event Hubs]: event-hubs-overview.md
-[Beispielanwendung mit Verwendung von Ereignis-Hubs]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
-[Horizontales Hochskalieren der Ereignisverarbeitung mit Event Hubs]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-45f43fc3
+[Beispielanwendung mit Verwendung von Ereignis-Hubs]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097
+[Horizontales Hochskalieren der Ereignisverarbeitung mit Event Hubs]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-45f43fc3
 [Messaginglösung mit Warteschlange]: ../service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

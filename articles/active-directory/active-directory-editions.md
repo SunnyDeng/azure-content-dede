@@ -28,7 +28,7 @@ Sie können Ihre Azure Active Directory-Anwendung erweitern, indem Sie mit Azure
 Office 365-Abonnements enthalten zusätzliche Azure Active Directory-Features. Diese werde in der nachfolgenden Vergleichstabelle beschrieben.
 
 
-> [AZURE.NOTE]Informationen zu den Preisoptionen für diese Editionen finden Sie unter [Azure Active Directory – Preise](https://azure.microsoft.com/de-DE/pricing/details/active-directory/). <br>Azure Active Directory Premium und Azure Active Directory Basic werden derzeit in China nicht unterstützt. Wenn Sie weitere Informationen benötigen, kontaktieren Sie uns im Azure Active Directory-Forum.
+> [AZURE.NOTE]Informationen zu den Preisoptionen für diese Editionen finden Sie unter [Azure Active Directory – Preise](https://azure.microsoft.com/pricing/details/active-directory/). <br>Azure Active Directory Premium und Azure Active Directory Basic werden derzeit in China nicht unterstützt. Wenn Sie weitere Informationen benötigen, kontaktieren Sie uns im Azure Active Directory-Forum.
 
 
 - **Azure Active Directory Basic** – Diese Edition bietet Sachbearbeitern mit wichtigen Cloudanforderungen auf die Cloud ausgerichtete Lösungen für den Anwendungszugriff und die Self-Service-Identitätsverwaltung. Mit der Basic Edition von Azure Active Directory erhalten Sie Funktionen zur Produktivitätssteigerung und Kostensenkung wie gruppenbasierte Zugriffsverwaltung, Self-Service-Kennwortzurücksetzung für Cloud-Anwendungen und den Azure Active Directory-Anwendungsproxy (zur Veröffentlichung lokaler Webanwendungen mit Azure Active Directory). Diese Features basieren auf einer SLA auf Unternehmensebene mit einer Verfügbarkeitsgarantie von 99,9 Prozent.
@@ -65,7 +65,7 @@ Wenn Sie sich noch heute für Active Directory Premium registrieren und Ihre Arb
 | | [Self-Service-Kennwortrücksetzung für Cloudbenutzer](active-directory-passwords.md)| Im Lieferumfang von Office 365-Abonnements enthalten [4]| ![Prüfen][12]| ![Prüfen][12]|
 | | [Anwendungsproxy: sicherer Remotezugriff und SSO für lokale Webanwendungen](active-directory-application-proxy-get-started.md)| | ![Prüfen][12]| ![Prüfen][12]|
 | | [Gruppenbasierte Anwendungszugriffsverwaltung und Bereitstellung von Anwendungen](active-directory-accessmanagement-group-saasapps.md)| | ![Prüfen][12]| ![Prüfen][12]|
-| | [In der SLA garantierte Verfügbarkeit von 99,9 %](https://azure.microsoft.com/de-DE/support/legal/sla/)| Microsoft Online Services – SLA [5]| ![Prüfen][12]| ![Prüfen][12]|
+| | [In der SLA garantierte Verfügbarkeit von 99,9 %](https://azure.microsoft.com/support/legal/sla/)| Microsoft Online Services – SLA [5]| ![Prüfen][12]| ![Prüfen][12]|
 | **Nur Premium-Features**| [Erweiterte Berichte zur Anwendungsnutzung](active-directory-view-access-usage-reports.md)| | | ![Prüfen][12]|
 | | [Self-Service-Gruppenverwaltung für Cloud-Benutzer] (Self-Service-Gruppenverwaltung für Benutzer in Azure AD)| | | ![Prüfen][12]|
 | | [Self-Service-Kennwortrücksetzung mit lokalem Zurückschreiben](active-directory-passwords-getting-started.md/#enable-users-to-reset-or-change-their-ad-passwords)| | | ![Prüfen][12]|
@@ -102,4 +102,4 @@ Wenn Sie sich noch heute für Active Directory Premium registrieren und Ihre Arb
 <!--Image references-->
 [12]: ./media/active-directory-editions/ic195031.png
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

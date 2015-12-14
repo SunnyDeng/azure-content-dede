@@ -23,7 +23,7 @@
 
 Dieses Thema enthält bewährte Methoden zur Optimierung der Leistung von SQL Server in Microsoft Azure Virtual Machines. Es empfiehlt sich, beim Ausführen von SQL Server in Azure Virtual Machines weiterhin die gleichen Optionen zur Optimierung der Datenbankleistung zu verwenden, die für SQL Server in der lokalen Server-Umgebung gelten. Die Leistung einer relationalen Datenbank in einer öffentlichen Cloud hängt jedoch von vielen Faktoren ab, z. B. der Größe eines virtuellen Computers und der Konfiguration der Datenträger für Daten.
 
-Wenn Sie SQL Server-Images erstellen, empfiehlt es sich, das Azure-Vorschauportal zu verwenden, damit Sie dessen Funktionalität, etwa die standardmäßige Verwendung von Storage Premium, sowie weitere Optionen, z. B. das automatisierte Patchen, die automatisierte Sicherung und AlwaysOn-Konfigurationen, nutzen können.
+Wenn Sie SQL Server-Images erstellen, empfiehlt es sich, dass Sie das Azure-Portal verwenden, damit Sie dessen Funktionalität, etwa die standardmäßige Verwendung von Storage Premium, sowie weitere Optionen, z. B. automatisierte Anwendung von Patches, automatisierte Sicherung und AlwaysOn-Konfigurationen, nutzen können.
 
 Dieser Artikel konzentriert sich auf die optimale Leistung von SQL Server auf Azure-VMs. Wenn Ihre Workload weniger anspruchsvoll ist, sind möglicherweise nicht alle unten aufgeführten Optimierungen erforderlich. Berücksichtigen Sie bei der Evaluierung dieser Empfehlungen Ihre Leistungsanforderungen und Workloadmuster.
 
@@ -133,4 +133,4 @@ Bewährte Methoden für die Sicherheit finden Sie unter [Sicherheitsüberlegunge
 
 Weitere Themen zu virtuellen SQL Server-Computern finden Sie unter [Übersicht zu SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

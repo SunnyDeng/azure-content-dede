@@ -78,11 +78,11 @@ Bei der Bereitstellung eines HDInsight-Clusters geben Sie ein Azure-Speicherkont
 
 **So erstellen Sie ein Azure-Speicherkonto**
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal][azure-classic-portal] an.
+1. Melden Sie sich beim [klassischen Azure-Portal][azure-classic-portal] an.
 	
-	> [AZURE.NOTE]Azure HDInsight wird derzeit im Azure-Verwaltungsportal unterstützt, während Azure DocumentDB lediglich im Microsoft Azure-Portal vorhanden ist.
+	> [AZURE.NOTE]Azure HDInsight wird derzeit im klassischen Azure-Portal unterstützt, während Azure DocumentDB lediglich im Microsoft Azure-Portal vorhanden ist.
 
-2. Klicken Sie links unten auf **+ NEU**, zeigen Sie auf **DATA SERVICES**, auf **SPEICHER**, und klicken Sie anschließend auf **SCHNELLERFASSUNG**. ![Azure-Portal, in dem Sie die Schnellerfassungsfunktion nutzen können, um ein neues Speicherkonto einzurichten.][image-storageaccount-quickcreate]
+2. Klicken Sie links unten auf **+ NEU**, zeigen Sie auf **DATA SERVICES**, auf **SPEICHER**, und klicken Sie anschließend auf **SCHNELLERFASSUNG**. ![Klassisches Azure-Portal, in dem Sie per „Quick Create“ ein neues Speicherkonto einrichten können.][image-storageaccount-quickcreate]
 
 3. Geben Sie die **URL** ein, wählen Sie die **SPEICHERORT**- und **REPLIKATION**-Werte und klicken Sie anschließend auf **SPEICHERKONTO ERSTELLEN**. Affinitätsgruppen werden nicht unterstützt.
 	
@@ -93,9 +93,9 @@ Bei der Bereitstellung eines HDInsight-Clusters geben Sie ein Azure-Speicherkont
 4. Warten Sie, bis sich der **STATUS** des neuen Speicherkontos auf **Online** geändert hat.
 
 ## <a name="ProvisionHDInsight"></a>Schritt 2: Erstellen eines benutzerdefinierten HDInsight-Clusters.
-Dieses Lernprogramm verwendet Skriptaktionen aus dem Azure-Verwaltungsportal zum Anpassen des HDInsight-Clusters. In diesem Lernprogramm wird das Azure-Verwaltungsportal zum Erstellen des angepassten Clusters verwendet. Anweisungen bezüglich der Verwendung von PowerShell-Cmdlets oder von HDInsight .NET SDK finden Sie im Artikel[ Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen][hdinsight-custom-provision].
+Dieses Lernprogramm verwendet Skriptaktionen aus dem klassischen Azure-Portal zum Anpassen des HDInsight-Clusters. In diesem Lernprogramm wird das klassischen Azure-Portal zum Erstellen des angepassten Clusters verwendet. Anweisungen bezüglich der Verwendung von PowerShell-Cmdlets oder von HDInsight .NET SDK finden Sie im Artikel[ Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen][hdinsight-custom-provision].
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal][azure-classic-portal] an. Sie sind möglicherweise bereits seit dem vorherigen Schritt angemeldet.
+1. Melden Sie sich beim [klassischen Azure-Portal][azure-classic-portal] an. Sie sind möglicherweise bereits seit dem vorherigen Schritt angemeldet.
 
 2. Klicken Sie im unteren Seitenbereich auf **+ NEW**, anschließend auf **DATA SERVICES**, auf **HDINSIGHT**und zuletzt auf **CUSTOM CREATE**.
 
@@ -155,7 +155,7 @@ Dieses Lernprogramm verwendet Skriptaktionen aus dem Azure-Verwaltungsportal zum
 		<td>Gibt den Standardcontainer im Speicherkonto an, der als Standard-Dateisystem für den HDInsight-Cluster verwendet werden soll. Wenn Sie <strong>Vorhandenen Speicher verwenden</strong> für das Feld <strong>Speicherkonto</strong> wählen und in dem betreffenden Konto keine Container vorhanden sind, wird der Container standardmäßig mit demselben Namen wie der Cluster erstellt. Falls bereits ein Container mit dem Namen des Clusters existiert, wird eine Sequenznummer an den Containernamen angehängt.
     </td></tr>
 	<tr><td>Zusätzliche Speicherkonten</td>
-		<td>HDInsight unterstützt mehrere Speicherkonten. Es gibt keine Beschränkung in Bezug auf die zusätzlichen Speicherkonten, die von einem Cluster verwendet werden können. Wenn Sie den Cluster jedoch im Azure-Portal erstellen, können Sie aufgrund von Einschränkungen der Benutzeroberfläche maximal sieben Speicherkonten einrichten. Für jedes angegebene Speicherkonto wird eine zusätzliche Seite im Assistenten hinzugefügt, in der Sie die Kontoinformationen angeben können.</td></tr>
+		<td>HDInsight unterstützt mehrere Speicherkonten. Es gibt keine Beschränkung in Bezug auf die zusätzlichen Speicherkonten, die von einem Cluster verwendet werden können. Wenn Sie den Cluster jedoch im klassischen Azure-Portal erstellen, können Sie aufgrund von Einschränkungen der Benutzeroberfläche maximal sieben Speicherkonten einrichten. Für jedes angegebene Speicherkonto wird eine zusätzliche Seite im Assistenten hinzugefügt, in der Sie die Kontoinformationen angeben können.</td></tr>
 </table>Klicken Sie auf den Pfeil nach rechts.
 
 7. Klicken Sie auf der Seite **Skriptaktionen** auf **Skriptaktion hinzufügen**, und geben Sie Einzelheiten zu dem PowerShell-Skript an, das Sie zum Anpassen eines Clusters bei seiner Erstellung ausführen möchten. Über das PowerShell-Skript wird der DocumentDB-Hadoop-Connector auf den HDInsight-Clustern während der Erstellung des entsprechenden Clusters installiert.
@@ -181,7 +181,7 @@ Dieses Lernprogramm verwendet Skriptaktionen aus dem Azure-Verwaltungsportal zum
 
 1. Installieren Sie Azure PowerShell. Anweisungen dazu finden Sie [hier][powershell-install-configure].
 
-	> [AZURE.NOTE]Alternativ können Sie den Hive-Online-Editor von HDInsight ausschließlich für Hive-Abfragen verwenden. Melden Sie sich dazu am [Azure-Verwaltungsportal][azure-classic-portal] an, und klicken Sie im linken Bildschirmbereich auf **HDInsight**, um eine Liste Ihrer HDInsight-Cluster anzuzeigen. Klicken Sie auf den Cluster, auf dem Hive-Abfragen ausgeführt werden sollen, und klicken Sie anschließend auf **Abfragekonsole**.
+	> [AZURE.NOTE]Alternativ können Sie den Hive-Online-Editor von HDInsight ausschließlich für Hive-Abfragen verwenden. Melden Sie sich dazu am [klassischen Azure-Portal][azure-classic-portal] an, und klicken Sie im linken Bildschirmbereich auf **HDInsight**, um eine Liste Ihrer HDInsight-Cluster anzuzeigen. Klicken Sie auf den Cluster, auf dem Hive-Abfragen ausgeführt werden sollen, und klicken Sie anschließend auf **Abfragekonsole**.
 
 2. Öffnen Sie die integrierte Azure PowerShell-Skripting-Umgebung:
 	- Sie können die integrierte Suche auf einem Computer verwenden, auf dem Windows 8 oder Windows Server 2012 oder höher ausgeführt wird. Geben Sie auf der Startseite **powershell ise** ein, und drücken Sie die **Eingabetaste**. 
@@ -280,7 +280,7 @@ Dieses Lernprogramm verwendet Skriptaktionen aus dem Azure-Verwaltungsportal zum
 
 9. **Führen** Sie das neue Skript aus! **Klicken** Sie zum Ausführen auf die grüne Schaltfläche.
 
-10. Überprüfen Sie die Ergebnisse. Melden Sie sich am [Azure-Vorschauportal][azure-portal] an.
+10. Überprüfen Sie die Ergebnisse. Melden Sie sich beim [Azure-Portal][azure-portal] an.
 	1. Klicken Sie im linken Bereich auf <strong>Durchsuchen</strong>. </br>
 	2. Klicken Sie oben rechts im Suchbereich auf <strong>Alles</strong>. </br>
 	3. Suchen Sie nach und klicken Sie auf <strong>DocumentDB-Konten</strong>. </br>
@@ -362,7 +362,7 @@ Dieses Lernprogramm verwendet Skriptaktionen aus dem Azure-Verwaltungsportal zum
 		
 9. **Führen** Sie das neue Skript aus! **Klicken** Sie zum Ausführen auf die grüne Schaltfläche.
 
-10. Überprüfen Sie die Ergebnisse. Melden Sie sich am [Azure-Vorschauportal][azure-portal] an.
+10. Überprüfen Sie die Ergebnisse. Melden Sie sich beim [Azure-Portal][azure-portal] an.
 	1. Klicken Sie im linken Bereich auf <strong>Durchsuchen</strong>. </br>
 	2. Klicken Sie oben rechts im Suchbereich auf <strong>Alles</strong>. </br>
 	3. Suchen Sie nach und klicken Sie auf <strong>DocumentDB-Konten</strong>. </br>
@@ -405,7 +405,7 @@ Dieses Lernprogramm verwendet Skriptaktionen aus dem Azure-Verwaltungsportal zum
 
 5. **Führen** Sie das neue Skript aus! **Klicken** Sie zum Ausführen auf die grüne Schaltfläche.
 
-6. Überprüfen Sie die Ergebnisse. Melden Sie sich am [Azure-Vorschauportal][azure-portal] an.
+6. Überprüfen Sie die Ergebnisse. Melden Sie sich beim [Azure-Portal][azure-portal] an.
 	1. Klicken Sie im linken Bereich auf <strong>Durchsuchen</strong>.
 	2. Klicken Sie oben rechts im Suchbereich auf <strong>Alles</strong>.
 	3. Suchen Sie nach und klicken Sie auf <strong>DocumentDB-Konten</strong>.
@@ -470,4 +470,4 @@ Weitere Informationen finden Sie in den folgenden Artikeln:
 [powershell-install-configure]: ../install-configure-powershell.md
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

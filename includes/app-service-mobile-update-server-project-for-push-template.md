@@ -46,4 +46,6 @@
 
     Dieser Code weist den Benachrichtigungs-Hub an, eine Vorlagenbenachrichtigung an alle Vorlagenregistrierungen zu senden, die „messageParam“ enthalten. Die Zeichenfolge wird anstelle von „messageParam“ für jedes PNS eingefügt, das eine Registrierung mit „messageParam“ aufweist. Dadurch können Sie die Benachrichtigung an APNS, GCM, WNS oder eine beliebige andere PNS senden.
 
-<!---HONumber=AcomDC_1125_2015-->
+	Weitere Informationen zu Vorlagen mit Notification Hubs finden Sie unter [Vorlagen](notification-hubs-templates.md).
+
+<!---HONumber=AcomDC_1203_2015-->

@@ -159,7 +159,7 @@ Ist die Bereitstellung erfolgreich, sieht die Ausgabe etwa wie folgt aus.
 	data:    networkInterfaceId  String        /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/mynewrg/providers/Microsoft.Network/networkInterfaces/mynewnic
 	info:    group deployment create command OK
 
-### Überprüfung der Bereitstellung
+### Überprüfen der Bereitstellung
 
 Stellen Sie über SSH eine Verbindung zum erstellen virtuellen Computer her, um die Bereitstellung zu prüfen und den neuen virtuellen Computer zu verwenden. Um eine Verbindung über SSH herzustellen, suchen Sie die IP-Adresse des erstellten virtuellen Computers, indem Sie folgenden Befehl ausführen:
 
@@ -176,7 +176,7 @@ Verwenden Sie das erfasste Image und die Vorlage zum Bereitstellen zusätzlicher
 * Erstellen einer neuen NIC im selben oder in einem anderen virtuellen Netzwerk
 * Erstellen Sie eine Bereitstellung in der Ressourcengruppe, in der Sie das virtuelle Netzwerk mithilfe der JSON-Dateivorlage einrichten.
 
-Wenn Sie möchten, dass das Netzwerk beim Erstellen eines virtuellen Computers automatisch eingerichtet wird, verwenden Sie die [101-vm-from-user-image-Vorlage](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-from-user-image) von GitHub. Diese Vorlage erstellt einen virtuellen Computer aus Ihrem benutzerdefinierten Image sowie das erforderliche virtuelle Netzwerk, die öffentliche IP-Adresse und die NIC-Ressourcen. Eine exemplarische Vorgehensweise zur Verwendung der Vorlage im Azure-Vorschauportal finden Sie unter [Gewusst wie: Erstellen eines virtuellen Computers von einem benutzerdefinierten Abbild mithilfe einer ARM-Vorlage](http://codeisahighway.com/how-to-create-a-virtual-machine-from-a-custom-image-using-an-arm-template/).
+Wenn Sie möchten, dass das Netzwerk beim Erstellen eines virtuellen Computers automatisch eingerichtet wird, verwenden Sie die [101-vm-from-user-image-Vorlage](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-from-user-image) von GitHub. Diese Vorlage erstellt einen virtuellen Computer aus Ihrem benutzerdefinierten Image sowie das erforderliche virtuelle Netzwerk, die öffentliche IP-Adresse und die NIC-Ressourcen. Eine exemplarische Vorgehensweise zur Verwendung der Vorlage im Azure-Portal finden Sie unter [Gewusst wie: Erstellen eines virtuellen Computers von einem benutzerdefinierten Abbild mithilfe einer ARM-Vorlage](http://codeisahighway.com/how-to-create-a-virtual-machine-from-a-custom-image-using-an-arm-template/).
 
 ## Verwenden des „azure vm create“-Befehls
 
@@ -200,4 +200,4 @@ Führen Sie für zusätzliche Befehlsoptionen `azure help vm create` aus.
 
 Informationen zur Verwaltung Ihrer virtuellen Computer mit der CLI finden Sie unter [Bereitstellen und Verwalten von virtuellen Computern mit Azure-Ressourcen-Manager-Vorlagen und der Azure-CLI](virtual-machines-deploy-rmtemplates-azure-cli.md).
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

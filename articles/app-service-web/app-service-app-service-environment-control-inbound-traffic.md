@@ -54,7 +54,7 @@ Es empfiehlt sich auch, benutzerdefinierte DNS-Server im VNET vor dem Erstellen 
 ## Erstellen einer Netzwerksicherheitsgruppe ##
 Einzelheiten zur Funktionsweise von Netzwerksicherheitsgruppen finden Sie in den folgenden [Informationen][NetworkSecurityGroups]. Die unten aufgeführten Details gehen kurz auf die wichtigsten Aspekte von Netzwerksicherheitsgruppen ein. Dabei liegt der Schwerpunkt auf dem Konfigurieren und Anwenden einer Netzwerksicherheitsgruppe auf ein Subnetz, das eine App Service-Umgebung enthält.
 
-**Hinweis:** Netzwerksicherheitsgruppen können nur mit den unten beschriebenen PowerShell-Cmdlets konfiguriert werden. Netzwerksicherheitsgruppen können nicht grafisch über das neue Portal (portal.azure.com) konfiguriert werden, da das neue Portal nur die grafische Konfiguration von NSGs zulässt, die virtuellen "v2"-Netzwerken zugeordnet sind. App Service-Umgebungen werden jedoch derzeit nur in klassischen virtuellen "v1"-Netzwerken unterstützt. Daher können nur PowerShell-Cmdlets verwendet werden, um Netzwerksicherheitsgruppen zu konfigurieren, die virtuellen "v1"-Netzwerken zugeordnet sind.
+**Hinweis:** Netzwerksicherheitsgruppen können nur mit den unten beschriebenen PowerShell-Cmdlets konfiguriert werden. Netzwerksicherheitsgruppen (NSGs) können nicht grafisch über das [Azure-Portal](portal.azure.com) konfiguriert werden, weil das Azure-Portal nur die grafische Konfiguration von NSGs zulässt, die virtuellen "v2"-Netzwerken zugeordnet sind. App Service-Umgebungen werden jedoch derzeit nur in klassischen virtuellen "v1"-Netzwerken unterstützt. Daher können nur PowerShell-Cmdlets verwendet werden, um Netzwerksicherheitsgruppen zu konfigurieren, die virtuellen "v1"-Netzwerken zugeordnet sind.
 
 Netzwerksicherheitsgruppen werden zuerst als eigenständige Entität erstellt, die einem Abonnement zugeordnet ist. Da Netzwerksicherheitsgruppen in einer Azure-Region erstellt werden, stellen Sie sicher, dass die Netzwerksicherheitsgruppe in derselben Region wie die App Service-Umgebung erstellt wird.
 
@@ -134,4 +134,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 
 <!-- IMAGES -->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

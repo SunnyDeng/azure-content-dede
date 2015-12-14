@@ -29,7 +29,7 @@ Dieses Lernprogramm setzt voraus, dass Sie über die folgenden Punkte verfügen:
 
 - Eine vorhandene, lokale AlwaysOn-Verfügbarkeitsgruppe. Weitere Informationen zu Verfügbarkeitsgruppen finden Sie unter [AlwaysOn-Verfügbarkeitsgruppen](https://msdn.microsoft.com/library/hh510230.aspx).
 
-- Konnektivität zwischen dem lokalen Netzwerk und Ihrem virtuellen Azure-Netzwerk. Weitere Informationen zum Erstellen dieses virtuellen Netzwerks finden Sie unter [Konfigurieren eines Site-to-Site-VPN im Azure-Portal](../vpn-gateway/vpn-gateway-site-to-site-create.md).
+- Konnektivität zwischen dem lokalen Netzwerk und Ihrem virtuellen Azure-Netzwerk. Weitere Informationen zum Erstellen dieses virtuellen Netzwerks finden Sie unter [Konfigurieren eines Standort-zu-Standort-VPN im klassischen Azure-Portal](../vpn-gateway/vpn-gateway-site-to-site-create.md).
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
 
@@ -103,4 +103,4 @@ Nach dem Erstellen der Verfügbarkeitsgruppe sollten Sie einen Listener für Cli
 
 Weitere Informationen zum Ausführen von SQL Server auf virtuellen Azure-Computern finden Sie unter [SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

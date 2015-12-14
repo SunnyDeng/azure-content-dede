@@ -26,25 +26,25 @@ Azure Stream Analytics-Aufträge können mit einer oder mehreren Eingaben verkn�
 
 So fügen Sie Ihrem Stream Analytics-Auftrag eine Eingabe hinzu:
 
-1. Klicken Sie im Azure-Portal auf **Eingaben** und dann in Ihrem Stream Analytics-Auftrag auf **Eingabe hinzufügen**.
+1. Klicken Sie im klassischen Azure-Portal auf **Eingaben** und dann in Ihrem Stream Analytics-Auftrag auf **Eingabe hinzufügen**.
 
     ![Hinzufügen von Eingaben](./media/stream-analytics-add-inputs/1-stream-analytics-add-inputs.png)
 
-    Klicken Sie im Azure-Vorschauportal in Ihrem Stream Analytics-Auftrag auf die Kachel **Eingaben**.
+    Klicken Sie im Azure-Portal in Ihrem Stream Analytics-Auftrag auf die Kachel **Eingaben**.
 
-    ![Hinzufügen von Eingaben im Azure-Vorschauportal](./media/stream-analytics-add-inputs/7-stream-analytics-add-inputs.png)
+    ![Hinzufügen von Eingaben im Azure-Portal](./media/stream-analytics-add-inputs/7-stream-analytics-add-inputs.png)
 
 2. Geben Sie den Eingabetyp an: entweder **Datenstrom** oder **Verweisdaten**.
 
     ![Hinzufügen von Daten](./media/stream-analytics-add-inputs/2-stream-analytics-add-inputs.png)
 
-    ![Hinzufügen von Daten im Azure-Vorschauportal](./media/stream-analytics-add-inputs/8-stream-analytics-add-inputs.png)
+    ![Hinzufügen von Daten im Azure-Portal](./media/stream-analytics-add-inputs/8-stream-analytics-add-inputs.png)
 
 3. Geben Sie beim Erstellen einer Datenstromeingabe den Quelltyp für die Eingabe an. Während der Erstellung von Verweisdaten kann dieser Schritt übersprungen werden, da zu diesem Zeitpunkt nur Blobspeicher unterstützt wird.
 
     ![Hinzufügen eines Datenstroms](./media/stream-analytics-add-inputs/3-stream-analytics-add-inputs.png)
 
-    ![Hinzufügen eines Datenstroms im Azure-Vorschauportal](./media/stream-analytics-add-inputs/9-stream-analytics-add-inputs.png)
+    ![Hinzufügen eines Datenstroms im Portal](./media/stream-analytics-add-inputs/9-stream-analytics-add-inputs.png)
 
 4. Geben Sie im Feld „Eingabealias“ einen Anzeigenamen für diese Eingabe ein. Dieser Name wird später in der Abfrage Ihres Auftrags zum Verweisen auf die Eingabe verwendet.
 
@@ -58,13 +58,13 @@ So fügen Sie Ihrem Stream Analytics-Auftrag eine Eingabe hinzu:
 
     ![Einstellungen für die Datenserialisierung](./media/stream-analytics-add-inputs/5-stream-analytics-add-inputs.png)
 
-    ![Einstellungen für die Datenserialisierung im Azure-Vorschauportal](./media/stream-analytics-add-inputs/10-stream-analytics-add-inputs.png)
+    ![Einstellungen für die Datenserialisierung im Azure-Portal](./media/stream-analytics-add-inputs/10-stream-analytics-add-inputs.png)
 
 6. Nach Abschluss der Eingabeerstellung überprüft Stream Analytics, ob eine Verbindung mit der Eingabequelle hergestellt werden kann. Sie können den Status des Verbindungstests im Benachrichtigungshub anzeigen.
 
     ![Verbindung testen](./media/stream-analytics-add-inputs/6-stream-analytics-add-inputs.png)
 
-    ![Verbindung testen im Azure-Vorschauportal](./media/stream-analytics-add-inputs/11-stream-analytics-add-inputs.png)
+    ![Verbindung testen im Azure-Portal](./media/stream-analytics-add-inputs/11-stream-analytics-add-inputs.png)
 
 ## Hier erhalten Sie Hilfe
 Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=AzureStreamAnalytics).
@@ -77,4 +77,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

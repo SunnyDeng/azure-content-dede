@@ -30,7 +30,7 @@ So erkennt die Bedrohungserkennung beispielsweise bestimmte anomale Datenbankakt
 
 ## Einrichten der Bedrohungserkennung für Ihre Datenbank
 
-1. Rufen Sie das Azure-Vorschauportal unter [https://portal.azure.com](https://portal.azure.com) auf.
+1. Rufen Sie das Azure-Portal unter [https://portal.azure.com](https://portal.azure.com) auf.
 
 2. Navigieren Sie zum Konfigurationsblatt des SQL Data Warehouse, das Sie überwachen möchten. Wählen Sie auf dem Blatt **Einstellungen** die Option für Überwachung und Bedrohungserkennung.
 
@@ -55,7 +55,7 @@ So erkennt die Bedrohungserkennung beispielsweise bestimmte anomale Datenbankakt
 
 	![Navigationsbereich][4]
 
-2. Klicken Sie in der E-Mail auf den Link für das Azure SQL-Überwachungsprotokoll, um das Azure-Portal aufzurufen und die relevanten Überwachungsdatensätze für die Zeit des verdächtigen Ereignisses anzuzeigen.
+2. Klicken Sie in der E-Mail auf den Link für das Azure SQL-Überwachungsprotokoll, um das klassische Azure-Portal aufzurufen und die relevanten Überwachungsdatensätze für die Zeit des verdächtigen Ereignisses anzuzeigen.
 
 	![Navigationsbereich][5]
 
@@ -89,4 +89,4 @@ So erkennt die Bedrohungserkennung beispielsweise bestimmte anomale Datenbankakt
 [8]: ./media/sql-data-warehouse-security-threat-detection/8_td_excel_fast_combine.png
 [9]: ./media/sql-data-warehouse-security-threat-detection/9_td_excel_parameters.png
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

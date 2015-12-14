@@ -86,7 +86,7 @@ Zuerst muss das Microsoft HPC Pack auf einem lokalen Computer mit Windows Server
 	![Fertig stellen][install_hpc7]
 
 ## Erstellen des Azure-Abonnements
-Führen Sie im [Azure-Portal](https://manage.windowsazure.com) die nachfolgend beschriebenen Schritte für Ihr Azure-Abonnement aus. Diese sind erforderlich, damit Sie später Azure-Knoten von dem lokalen Hauptknoten aus bereitstellen können.
+Führen Sie im [klassischen Azure-Portal](https://manage.windowsazure.com) die nachfolgend beschriebenen Schritte für Ihr Azure-Abonnement aus. Diese sind erforderlich, damit Sie später Azure-Knoten von dem lokalen Hauptknoten aus bereitstellen können.
 
 - Laden Sie ein Verwaltungszertifikat hoch (wird für sichere Verbindungen zwischen dem Hauptknoten und den Azure-Diensten benötigt)
 
@@ -99,7 +99,7 @@ Führen Sie im [Azure-Portal](https://manage.windowsazure.com) die nachfolgend b
 ### <a>Hochladen des Standard-Verwaltungszertifikats</a>
 HPC Pack installiert im Hauptknoten ein selbstsigniertes Zertifikat mit dem Namen Default Microsoft HPC Azure Management, das Sie als ein Azure-Verwaltungszertifikat hochladen können. Dieses Zertifikat wird für Testzwecke und Machbarkeitsstudien bereitgestellt.
 
-1. Melden Sie sich vom Hauptknotencomputer aus beim [Azure-Portal](https://manage.windowsazure.com) an.
+1. Melden Sie sich vom Hauptknotencomputer aus beim [klassischen Azure-Portal](https://manage.windowsazure.com) an.
 
 2. Klicken Sie auf **Settings** und dann auf **Verwaltungszertifikate**.
 
@@ -297,7 +297,7 @@ Nachdem Sie das Cluster ausprobiert haben, können Sie mit HPC Cluster Manager d
 
 	![Nicht bereitgestellte Knoten][stop_node4]
 
-4. Vergewissern Sie sich, dass die Rolleninstanzen nicht mehr in Azure ausgeführt werden. Klicken Sie im [Portal](https://manage.windowsazure.com) auf **Cloud-Dienste**, dann auf den Namen Ihres Clouddiensts und abschließend auf **Instanzen**. In der Produktionsumgebung werden keine Instanzen mehr bereitgestellt.
+4. Vergewissern Sie sich, dass die Rolleninstanzen nicht mehr in Azure ausgeführt werden. Klicken Sie im [Portal](https://manage.windowsazure.com) auf **Cloud Services**, dann auf den Namen Ihres Clouddiensts und abschließend auf **Instanzen**. In der Produktionsumgebung werden keine Instanzen mehr bereitgestellt.
 
 	![Keine Instanzen][view_instances2]
 
@@ -348,4 +348,4 @@ Nachdem Sie das Cluster ausprobiert haben, können Sie mit HPC Cluster Manager d
 [stop_node4]: ./media/cloud-services-setup-hybrid-hpcpack-cluster/stop_node4.png
 [view_instances2]: ./media/cloud-services-setup-hybrid-hpcpack-cluster/view_instances2.png
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

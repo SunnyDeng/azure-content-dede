@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="billing"
-   ms.date="09/21/2015"
+   ms.date="12/01/2015"
    ms.author="curtand;kareni;ruchic"/>
 
 # Übertragen eines Azure-Abonnements
@@ -59,15 +59,11 @@ Sie können dies jetzt problemlos für die nutzungsbasierte Bezahlung sowie für
 
     Die Übertragung hat keine Auswirkung auf den Dienst. Effektiv wird dabei das Abonnement unter dem laufenden Kontoadministrator gekündigt, und ein neues unter dem Konto des Empfängers erstellt. Dabei werden die zugrunde liegenden Azure-Dienste dem neuen Abonnement zugeordnet. Die Abonnement-ID bleibt unverändert.
 
--   **Wie verwende ich diesen Mechanismus zum Ändern des Verzeichnisses für ein Abonnement?**- 
-    Ein Azure-Abonnement wird im Verzeichnis erstellt, zu dem das Administratorkonto gehört. Um das Verzeichnis zu ändern, müssen Sie also nur das Abonnements auf ein Benutzerkonto im Zielverzeichnis übertragen. Wenn der Benutzer die Schritte zum Akzeptieren der Übertragung abschließt, wird das Abonnement automatisch in das Zielverzeichnis verschoben.
-   
+-   **Wie verwende ich diesen Mechanismus zum Ändern des Verzeichnisses für ein Abonnement?** – Ein Azure-Abonnement wird im Verzeichnis erstellt, zu dem das Administratorkonto gehört. Um das Verzeichnis zu ändern, müssen Sie also nur das Abonnements auf ein Benutzerkonto im Zielverzeichnis übertragen. Wenn der Benutzer die Schritte zum Akzeptieren der Übertragung abschließt, wird das Abonnement automatisch in das Zielverzeichnis verschoben.
+
 -   **Wenn ich die Abrechnung eines Abonnements aus einer anderen Organisation übernehme, kann diese weiterhin auf meine Ressourcen zugreifen?**
 
-    Wenn das Abonnement auf einen anderen Mandanten übertragen wird, verlieren die Benutzer, die dem vorherigen Mandanten zugeordnet sind, den Zugriff auf das Abonnement. Selbst wenn ein Benutzer kein Dienstadministrator oder Co-Administrator mehr ist, hat er über andere Sicherheitsmechanismen möglicherweise immer noch Zugriff auf das Abonnement. Dazu gehören:
-    - Verwaltungszertifikate, die dem Benutzer Administratorrechte auf Abonnementressourcen gewähren. Weitere Informationen finden Sie unter [Erstellen und Hochladen eines Verwaltungszertifikats für Azure](https://msdn.microsoft.com/library/azure/gg551722.aspx)
-    -	Zugriffschlüssel für Dienste wie Storage. Weitere Informationen finden Sie unter [Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln](storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys)
-    -	RAS-Anmeldeinformationen für Dienste wie Azure Virtual Machines.
+    Wenn das Abonnement auf einen anderen Mandanten übertragen wird, verlieren die Benutzer, die dem vorherigen Mandanten zugeordnet sind, den Zugriff auf das Abonnement. Selbst wenn ein Benutzer kein Dienstadministrator oder Co-Administrator mehr ist, hat er über andere Sicherheitsmechanismen möglicherweise immer noch Zugriff auf das Abonnement. Dazu gehören: – Verwaltungszertifikate, die dem Benutzer Administratorrechte auf Abonnementressourcen gewähren. Weitere Informationen finden Sie unter [Erstellen und Hochladen eines Verwaltungszertifikats für Azure](https://msdn.microsoft.com/library/azure/gg551722.aspx) – Zugriffschlüssel für Dienste wie Storage. Weitere Informationen finden Sie unter [Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln](storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys) – RAS-Anmeldeinformationen für Dienste wie Azure Virtual Machines.
 
     Dies ist keine vollständige Liste. Der Empfänger sollte sich überlegen, ob er dem Dienst zugeordnete Schlüssel aktualisiert, wenn der Zugriff auf die Ressourcen eingeschränkt werden soll. Die meisten Ressourcen können wie folgt aktualisiert werden:
 
@@ -102,13 +98,13 @@ Sie können dies jetzt problemlos für die nutzungsbasierte Bezahlung sowie für
 
 ## Nächste Schritte nach dem Übernehmen des Besitzes eines Abonnements
 
-1. Sie sind nun der Kontoadministrator. Überprüfen und aktualisieren Sie den Dienstadministrator und die Co-Administratoren. Sie verwalten die Administratoren im [Azure-Verwaltungsportal](https://manage.windowsazure.com) unter "Einstellungen". [Weitere Informationen](http://go.microsoft.com/fwlink/?LinkID=533293).
-2. Sie können auch die rollenbasierte Zugriffskontrolle (RBAC) für Ihr Abonnement und die Dienste verwenden. Weitere Informationen finden Sie im [Azure-Vorschauportal](https://portal.azure.com) ([Weitere Informationen zur rollenbasierten Zugriffssteuerung](http://go.microsoft.com/fwlink/?LinkID=544802))
+1. Sie sind nun der Kontoadministrator. Überprüfen und aktualisieren Sie den Dienstadministrator und die Co-Administratoren. Sie verwalten Administratoren im [klassischen Azure-Portal](https://manage.windowsazure.com) unter „Einstellungen“. [Weitere Informationen](http://go.microsoft.com/fwlink/?LinkID=533293).
+2. Sie können auch die rollenbasierte Zugriffskontrolle (RBAC) für Ihr Abonnement und die Dienste verwenden. Besuchen Sie das [Azure-Portal](https://portal.azure.com) [Weitere Informationen zur RBAC](http://go.microsoft.com/fwlink/?LinkID=544802)
 3. Aktualisieren Sie die Anmeldeinformationen für die Dienste dieses Abonnements. Diese umfassen:
-    -   Verwaltungszertifikate, die dem Benutzer Administratorrechte auf Abonnementressourcen gewähren. Weitere Informationen finden Sie unter [Erstellen und Hochladen eines Verwaltungszertifikats für Azure](https://msdn.microsoft.com/library/azure/gg551722.aspx).
+    - Verwaltungszertifikate, die dem Benutzer Administratorrechte auf Abonnementressourcen gewähren. Weitere Informationen finden Sie unter [Erstellen und Hochladen eines Verwaltungszertifikats für Azure](https://msdn.microsoft.com/library/azure/gg551722.aspx).
     -	Tastenkombinationen für Dienste wie Storage. Weitere Informationen finden Sie unter [Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln](storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys).
     -	RAS-Anmeldeinformationen für Dienste wie Azure Virtual Machines
 4. Aktualisieren Sie die Abrechnungswarnungen für dieses Abonnement im [Azure Account Center](https://account.windowsazure.com/Subscriptions) ([weitere Informationen](http://go.microsoft.com/fwlink/?LinkID=533292)).
 5. 	Wenn Sie mit einem Partner arbeiten, sollten Sie die Partner-ID für dieses Abonnement aktualisieren. Sie können diese im [Azure Account Center](https://account.windowsazure.com/Subscriptions) durchführen.
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

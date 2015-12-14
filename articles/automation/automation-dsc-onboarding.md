@@ -236,4 +236,4 @@ Nach der Registrierung handelt jeder Knoten automatisch ein eindeutiges Zertifik
 * [Azure Automation DSC-Cmdlets](https://msdn.microsoft.com/library/mt244122.aspx)
 * [Azure Automation DSC – Preise](http://azure.microsoft.com/pricing/details/automation/)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

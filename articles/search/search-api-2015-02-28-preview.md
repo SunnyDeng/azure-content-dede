@@ -153,7 +153,7 @@ In der folgenden Liste werden die erforderlichen und optionalen Anforderungshead
 - `api-key`: Erforderlich. Mit dem `api-key` wird
 - die Anforderung für den Suchdienst authentifiziert. Es handelt sich um einen für Ihren Dienst eindeutigen Zeichenfolgewert. Die Anforderung **Index erstellen** muss einen `api-key`-Header enthalten, der auf Ihren Administratorschlüssel (keinen Abfrageschlüssel) festgelegt ist.
 
-Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdiensts im Portal](search-create-service-portal.md).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im klassischen Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdiensts im Portal](search-create-service-portal.md).
 
 <a name="RequestData"></a> **Syntax des Anforderungstexts**
 
@@ -733,7 +733,7 @@ In der folgenden Liste werden die erforderlichen und optionalen Anforderungshead
 - `Content-Type`: Erforderlich. Auf `application/json` festlegen.
 - `api-key`: Erforderlich. `api-key` wird zum Authentifizieren der Anforderung beim Search-Dienst verwendet. Es handelt sich um einen für Ihren Dienst eindeutigen Zeichenfolgewert. Die Anforderung **Index aktualisieren** muss einen `api-key`-Header enthalten, der auf Ihren Administratorschlüssel (keinen Abfrageschlüssel) festgelegt ist.
 
-Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdienstes im Portal](search-create-service-portal.md).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im klassischen Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdiensts im Portal](search-create-service-portal.md).
 
 **Syntax des Anforderungstextes**
 
@@ -833,7 +833,7 @@ In der folgenden Liste werden die erforderlichen und optionalen Anforderungshead
 
 - `api-key`: Erforderlich. `api-key` wird zum Authentifizieren der Anforderung beim Search-Dienst verwendet. Es handelt sich um einen für Ihren Dienst eindeutigen Zeichenfolgewert. Die Anforderung **Index auflisten** muss einen `api-key` enthalten, der auf einen Administratorschlüssel (keinen Abfrageschlüssel) festgelegt ist.
 
-Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdienstes im Portal](search-create-service-portal.md).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im klassischen Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdiensts im Portal](search-create-service-portal.md).
 
 **Anforderungstext**
 
@@ -900,7 +900,7 @@ In der folgenden Liste werden die erforderlichen und optionalen Anforderungshead
 
 - `api-key`: Mit `api-key` wird die Anforderung bei Ihrem Suchdienst authentifiziert. Es handelt sich um einen für Ihren Dienst eindeutigen Zeichenfolgewert. Die Anforderung **Index abrufen** muss einen `api-key` enthalten, der auf einen Administratorschlüssel (keinen Abfrageschlüssel) festgelegt ist.
 
-Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdienstes im Portal](search-create-service-portal.md).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im klassischen Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdiensts im Portal](search-create-service-portal.md).
 
 **Anforderungstext**
 
@@ -915,7 +915,7 @@ Unter [Erstellen und Aktualisieren eines Index](#CreateUpdateIndexExample) wird 
 <a name="DeleteIndex"></a>
 ## Index löschen
 
-Mit dem Vorgang **Index löschen** wird ein Index samt den damit verknüpften Dokumenten aus Ihrem Azure-Suchdienst entfernt. Sie können den Indexnamen im Dienst-Dashboard im Azure-Portal oder von der API abrufen. Details finden Sie unter [Indizes auflisten](#ListIndexes).
+Mit dem Vorgang **Index löschen** wird ein Index samt den damit verknüpften Dokumenten aus Ihrem Azure Search-Dienst entfernt. Sie können den Indexnamen im Dienst-Dashboard im klassischen Azure-Portal oder von der API abrufen. Details finden Sie unter [Indizes auflisten](#ListIndexes).
 
     DELETE https://[service name].search.windows.net/indexes/[index name]?api-version=[api-version]
     api-key: [admin key]
@@ -934,7 +934,7 @@ In der folgenden Liste werden die erforderlichen und optionalen Anforderungshead
 
 - `api-key`: Erforderlich. `api-key` wird zum Authentifizieren der Anforderung beim Search-Dienst verwendet. Es handelt sich um einen für Ihre Dienst-URL eindeutigen Zeichenfolgewert. Die Anforderung **Index löschen** muss einen `api-key`-Header enthalten, der auf Ihren Administratorschlüssel (keinen Abfrageschlüssel) festgelegt ist.
 
-Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdienstes im Portal](search-create-service-portal.md).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im klassischen Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdiensts im Portal](search-create-service-portal.md).
 
 **Anforderungstext**
 
@@ -967,7 +967,7 @@ In der folgenden Liste werden die erforderlichen und optionalen Anforderungshead
 
 - `api-key`: Mit `api-key` wird die Anforderung bei Ihrem Suchdienst authentifiziert. Es handelt sich um einen für Ihren Dienst eindeutigen Zeichenfolgewert. Die Anforderung **Indexstatistik abrufen** muss einen `api-key` enthalten, der auf einen Administratorschlüssel (keinen Abfrageschlüssel) festgelegt ist.
 
-Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdienstes im Portal](search-create-service-portal.md).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im klassischen Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdiensts im Portal](search-create-service-portal.md).
 
 **Anforderungstext**
 
@@ -1022,7 +1022,7 @@ In der folgenden Liste werden die erforderlichen und optionalen Anforderungshead
 - `Content-Type`: Erforderlich. Auf `application/json` festlegen.
 - `api-key`: Erforderlich. `api-key` wird zum Authentifizieren der Anforderung beim Search-Dienst verwendet. Es handelt sich um einen für Ihren Dienst eindeutigen Zeichenfolgewert. Die Anforderung **Index hinzufügen** muss einen `api-key`-Header enthalten, der auf Ihren Administratorschlüssel (keinen Abfrageschlüssel) festgelegt ist.
 
-Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdienstes im Portal](.search-create-service-portal.md).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im klassischen Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdiensts im Portal](.search-create-service-portal.md).
 
 **Anforderungstext**
 
@@ -1164,7 +1164,7 @@ Darüber hinaus ist die URL-Codierung nur erforderlich, wenn Sie die REST-API di
 
 <a name="SearchQueryParameters"></a> **Abfrageparameter**
 
-**Search** akzeptiert mehrere Parameter zum Angeben von Abfragekriterien und Suchverhalten. Diese Parameter werden in der URL-Abfragezeichenfolge (beim Aufrufen von **Search** mittels „GET“) bzw. als JSON-Eigenschaften im Anforderungstext (beim Aufrufen von **Search** mittels „POST“) angegeben. Bei manchen Parametern wird für „GET“ eine etwas andere Syntax verwendet als für „POST“. Diese Abweichungen werden im Anschluss erläutert:
+**Search** akzeptiert mehrere Parameter zum Angeben von Abfragekriterien und Suchverhalten. Diese Parameter werden in der URL-Abfragezeichenfolge (beim Aufrufen von **Search** mittels "GET") bzw. als JSON-Eigenschaften im Anforderungstext (beim Aufrufen von **Search** mittels "POST") angegeben. Bei manchen Parametern wird für „GET“ eine etwas andere Syntax verwendet als für „POST“. Diese Abweichungen werden im Anschluss erläutert:
 
 `search=[string]` (optional): Der zu suchenden Text. Alle Felder mit dem Attribut `searchable` werden standardmäßig durchsucht, es sei denn, es wurde `searchFields` angegeben. Beim Durchsuchen von Feldern mit dem Attribut `searchable` wird der zu durchsuchende Text mit Token versehen. Auf diese Weise können mehrere Begriffe durch Leerzeichen getrennt werden (Beispiel: `search=hello world`). Verwenden Sie für die Übereinstimmung mit einem beliebigen Begriff `*` (dies kann bei booleschen Filterabfragen nützlich sein). Das Auslassen dieses Parameters hat dieselbe Wirkung wie das Festlegen auf `*`. Einzelheiten zur Suchsyntax finden Sie unter [Einfache Abfragesyntax](https://msdn.microsoft.com/library/dn798920.aspx).
 
@@ -1254,7 +1254,7 @@ In der folgenden Liste werden die erforderlichen und optionalen Anforderungshead
 
 - `api-key`: Mit `api-key` wird die Anforderung bei Ihrem Suchdienst authentifiziert. Es handelt sich um einen für Ihre Dienst-URL eindeutigen Zeichenfolgewert. Für die **Suchanforderung** kann ein Administratorschlüssel oder ein Abfrageschlüssel für `api-key` festgelegt werden.
 
-Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdienstes im Portal](search-create-service-portal.md).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im klassischen Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdiensts im Portal](search-create-service-portal.md).
 
 **Anforderungstext**
 
@@ -1531,7 +1531,7 @@ In der folgenden Liste werden die erforderlichen und optionalen Anforderungshead
 
 - `api-key`: Mit `api-key` wird die Anforderung bei Ihrem Suchdienst authentifiziert. Es handelt sich um einen für Ihre Dienst-URL eindeutigen Zeichenfolgewert. Für die Anforderung **Dokument suchen** kann ein Administratorschlüssel oder ein Abfrageschlüssel für `api-key` festgelegt werden.
 
-Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdienstes im Portal](search-create-service-portal.md).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im klassischen Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdiensts im Portal](search-create-service-portal.md).
 
 **Anforderungstext**
 
@@ -1579,7 +1579,7 @@ In der folgenden Liste werden die erforderlichen und optionalen Anforderungshead
 - `Accept`: Dieser Wert muss auf `text/plain` gesetzt werden.
 - `api-key`: Mit `api-key` wird die Anforderung bei Ihrem Suchdienst authentifiziert. Es handelt sich um einen für Ihre Dienst-URL eindeutigen Zeichenfolgewert. Für die Anforderung **Dokumentanzahl** kann ein Administratorschlüssel oder ein Abfrageschlüssel für `api-key` festgelegt werden.
 
-Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdienstes im Portal](search-create-service-portal.md).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im klassischen Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdiensts im Portal](search-create-service-portal.md).
 
 **Anforderungstext**
 
@@ -1626,7 +1626,7 @@ Bei der Erstellung von GET-Anforderungen empfiehlt es sich, für spezifische Abf
 
 Die URL-Codierung wird nur bei den oben angegebenen Abfrageparametern empfohlen. Wenn Sie versehentlich die gesamte Abfragezeichenfolge mit einer URL-Codierung versehen (alles nach dem ?), schlagen die Anforderungen fehl.
 
-Darüber hinaus ist die URL-Codierung nur erforderlich, wenn Sie die REST-API direkt mittels „GET“ aufrufen. Wenn Sie **Suggestions** mithilfe von „POST“ aufrufen oder die URL-Codierung über die [.NET-Clientbibliothek](https://msdn.microsoft.com/library/dn951165.aspx) abwickeln, ist keine URL-Codierung erforderlich.
+Darüber hinaus ist die URL-Codierung nur erforderlich, wenn Sie die REST-API direkt mittels „GET“ aufrufen. Wenn Sie **Suggestions** mithilfe von "POST" aufrufen oder die URL-Codierung über die [.NET-Clientbibliothek](https://msdn.microsoft.com/library/dn951165.aspx) abwickeln, ist keine URL-Codierung erforderlich.
 
 **Abfrageparameter**
 
@@ -1670,7 +1670,7 @@ Darüber hinaus ist die URL-Codierung nur erforderlich, wenn Sie die REST-API di
 
 `api-version=[string]` (erforderlich). Die Vorschauversion ist `api-version=2015-02-28-Preview`. Details und alternative Versionen finden Sie unter [Versionsverwaltung für den Azure-Suchdienst](http://msdn.microsoft.com/library/azure/dn864560.aspx).
 
-Hinweis: Für diesen Vorgang wird `api-version` als Abfrageparameter in der URL angegeben. Dabei spielt es keine Rolle, ob Sie **Suggestions** mithilfe von „GET“ oder mithilfe von „POST“ aufrufen.
+Hinweis: Für diesen Vorgang wird `api-version` als Abfrageparameter in der URL angegeben. Dabei spielt es keine Rolle, ob Sie **Suggestions** mithilfe von "GET" oder mithilfe von "POST" aufrufen.
 
 **Anforderungsheader**
 
@@ -1678,7 +1678,7 @@ In der folgenden Liste werden die erforderlichen und optionalen Anforderungshead
 
 - `api-key`: Mit `api-key` wird die Anforderung bei Ihrem Suchdienst authentifiziert. Es handelt sich um einen für Ihre Dienst-URL eindeutigen Zeichenfolgewert. Für die Anforderung **Vorschläge** kann ein Administratorschlüssel oder ein Abfrageschlüssel für `api-key` festgelegt werden.
 
-Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdienstes im Portal](search-create-service-portal.md).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im klassischen Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdiensts im Portal](search-create-service-portal.md).
 
 **Anforderungstext**
 
@@ -1742,4 +1742,4 @@ Rufen Sie 5 Vorschläge mit der Teilsuche nach "lux" ab.
       "suggesterName": "sg"
     }
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

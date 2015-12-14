@@ -40,7 +40,7 @@ Mit diesen Schritten können Sie viele Zuordnungsfehler virtueller Computer behe
 
 - Ändern Sie die Größe des virtuellen Computers.<br> Klicken Sie auf „Alle durchsuchen“ > „Virtuelle Computer (klassisch)“ > „Ihr virtueller Computer“ > „Einstellungen“ > **Größe**. Ausführliche Schritte finden Sie unter [Ändern der Größe des virtuellen Computers](https://msdn.microsoft.com/library/dn168976.aspx).
 
-- Löschen Sie alle virtuellen Computer aus dem Clouddienst, und erstellen Sie virtuelle Computer neu.<br> Klicken Sie auf „Alle durchsuchen“ > „Virtuelle Computer (klassisch)“ > „Ihr virtueller Computer“ > „Löschen“. Klicken Sie auf „Neu“ > „Berechnen“ > [Virtuelles Computerimage].
+- Löschen Sie alle virtuellen Computer aus dem Clouddienst, und erstellen Sie virtuelle Computer neu.<br> Klicken Sie auf „Alle durchsuchen“ > „Virtuelle Computer (klassisch)“ > „Ihr virtueller Computer“ > „Löschen“. Klicken Sie auf „Neu“ > „Compute“ > [Virtuelles Computerimage].
 
 ## Problembehandlung für allgemeine Zuordnungsfehler im Ressourcen-Manager-Bereitstellungsmodell
 
@@ -66,7 +66,7 @@ Solange für den Fehler nicht „Die angeforderte Größe des virtuellen Compute
 
 Zwei häufig auftretende Fehlerszenarien hängen mit der Affinitätsgruppe zusammen. In der Vergangenheit wurde die Affinitätsgruppe verwendet, um die Nähe zu virtuellen Computern und Dienstinstanzen zu schaffen oder um die Erstellung eines Virtual Network (VNet) zu ermöglichen. Seit der Einführung von regionalen Virtual Networks wird die Affinitätsgruppe zum Erstellen eines Virtual Network nicht mehr benötigt. Dank der Reduzierung der Netzwerklatenz in der Azure-Infrastruktur hat sich die Empfehlung für die Verwendung der Affinitätsgruppe zum Schaffen der Nähe von virtuellen Computern und Diensten geändert.
 
-In Diagramm 5 unten ist die Taxonomie der Zuordnungsszenarien (mit Verknüpfung) dargestellt. ![Verknüpfte Zuordnung, Taxonomie](./media/virtual-machines-allocation-failure/Allocation3.png)
+In Diagramm 5 unten ist die Taxonomie der Zuordnungsszenarios (mit Verknüpfung) dargestellt. ![Verknüpfte Zuordnung, Taxonomie](./media/virtual-machines-allocation-failure/Allocation3.png)
 
 > [AZURE.NOTE]Der Fehler wird in den einzelnen Zuordnungsszenarien in Kurzform aufgelistet. Ausführliche Fehlerzeichenfolgen finden Sie im [Anhang](#appendix).
 
@@ -81,7 +81,7 @@ Die Anforderung der Größenänderung eines virtuellen Computers oder des Hinzuf
 
 **Problemumgehung**
 
-Probieren Sie es mit einer anderen Größe des virtuellen Computers, wenn der Fehler „Upgrade\_VMSizeNotSupported*“ lautet. Wenn das Verwenden einer anderen Größe des virtuellen Computers keine Option ist, dafür aber die Verwendung einer anderen virtuellen IP-Adresse (VIP), erstellen Sie einen neuen Clouddienst zum Hosten des neuen virtuellen Computers. Fügen Sie den neuen Clouddienst dem regionalen Virtual Network hinzu, auf dem die vorhandenen virtuellen Computer ausgeführt werden. Falls Ihr vorhandener Clouddienst kein regionales virtuelles Netzwerk verwendet, können Sie trotzdem ein neues virtuelles Netzwerk für den neuen Clouddienst erstellen und dann [für das vorhandene VNet eine Verbindung mit dem neuen VNet herstellen](https://azure.microsoft.com/de-DE/blog/vnet-to-vnet-connecting-virtual-networks-in-azure-across-different-regions/). Weitere Informationen zum [regionalen virtuellen Netzwerk](http://azure.microsoft.com/blog/2014/05/14/regional-virtual-networks/)
+Probieren Sie es mit einer anderen Größe des virtuellen Computers, wenn der Fehler „Upgrade\_VMSizeNotSupported*“ lautet. Wenn das Verwenden einer anderen Größe des virtuellen Computers keine Option ist, dafür aber die Verwendung einer anderen virtuellen IP-Adresse (VIP), erstellen Sie einen neuen Clouddienst zum Hosten des neuen virtuellen Computers. Fügen Sie den neuen Clouddienst dem regionalen Virtual Network hinzu, auf dem die vorhandenen virtuellen Computer ausgeführt werden. Falls Ihr vorhandener Clouddienst kein regionales virtuelles Netzwerk verwendet, können Sie trotzdem ein neues virtuelles Netzwerk für den neuen Clouddienst erstellen und dann [für das vorhandene VNET eine Verbindung mit dem neuen VNET herstellen](https://azure.microsoft.com/blog/vnet-to-vnet-connecting-virtual-networks-in-azure-across-different-regions/). Weitere Informationen zum [regionalen virtuellen Netzwerk](http://azure.microsoft.com/blog/2014/05/14/regional-virtual-networks/) (in englischer Sprache).
 
 Wenn der Fehler „GeneralError*“ lautet, wird der Typ der Ressource (z. B. eine bestimmte Größe des virtuellen Computers) vom Cluster wahrscheinlich unterstützt, aber der Cluster verfügt derzeit nicht über freie Ressourcen. Versuchen Sie ähnlich wie oben, die gewünschten Compute-Ressourcen per Erstellung eines neuen Clouddiensts hinzuzufügen (für den neuen Clouddienst muss eine andere VIP verwendet werden), und verwenden Sie das regionale Virtual Network zum Verbinden Ihrer Clouddienste.
 
@@ -97,7 +97,7 @@ Die **Teilaufhebung** der Zuordnung bedeutet, dass Sie mindestens einen virtuell
 
 **Problemumgehung**
 
-Wenn es akzeptabel ist, eine andere VIP zu verwenden, löschen Sie die beendeten virtuellen Computer (Aufhebung der Zuordnung) – aber behalten Sie die zugeordneten Datenträger bei –, und fügen Sie die virtuellen Computer über einen anderen Clouddienst wieder hinzu. Verwenden Sie ein regionales Virtual Network, um die Verbindung für Ihre Clouddienste herzustellen: 1. Wenn Ihr vorhandener Clouddienst das regionale Virtual Network nutzt, fügen Sie den neuen Clouddienst einfach demselben Virtual Network hinzu. 2. Falls Ihr vorhandener Clouddienst kein regionales virtuelles Netzwerk verwendet, erstellen Sie ein neues virtuelles Netzwerk für den neuen Clouddienst, und [stellen Sie für das vorhandene VNet dann eine Verbindung mit dem neuen VNet her](https://azure.microsoft.com/de-DE/blog/vnet-to-vnet-connecting-virtual-networks-in-azure-across-different-regions/). Weitere Informationen zum [regionalen virtuellen Netzwerk](http://azure.microsoft.com/blog/2014/05/14/regional-virtual-networks/)
+Wenn es akzeptabel ist, eine andere VIP zu verwenden, löschen Sie die beendeten virtuellen Computer (Aufhebung der Zuordnung) – aber behalten Sie die zugeordneten Datenträger bei –, und fügen Sie die virtuellen Computer über einen anderen Clouddienst wieder hinzu. Verwenden Sie ein regionales Virtual Network, um die Verbindung für Ihre Clouddienste herzustellen: 1. Wenn Ihr vorhandener Clouddienst das regionale Virtual Network nutzt, fügen Sie den neuen Clouddienst einfach demselben Virtual Network hinzu. 2. Falls Ihr vorhandener Clouddienst kein regionales virtuelles Netzwerk verwendet, erstellen Sie ein neues virtuelles Netzwerk für den neuen Clouddienst, und [stellen Sie für das vorhandene VNET dann eine Verbindung mit dem neuen VNET her](https://azure.microsoft.com/blog/vnet-to-vnet-connecting-virtual-networks-in-azure-across-different-regions/). Weitere Informationen zum [regionalen virtuellen Netzwerk](http://azure.microsoft.com/blog/2014/05/14/regional-virtual-networks/) (in englischer Sprache).
 
 ### Zuordnungsszenario: Neustarten beendeter virtueller Computer (Aufhebung der Zuordnung) - Vollständige Aufhebung der Zuordnung
 **Fehler**
@@ -149,11 +149,11 @@ Bevor das regionale Virtual Network eingeführt wurde, mussten Sie einem Virtual
 
 **Problemumgehung**
 
-Falls Sie die Affinitätsgruppe nicht benötigen, können Sie ein neues regionales virtuelles Netzwerk für die neuen Ressourcen erstellen, die Sie hinzufügen, und dann eine [Verbindung für Ihr vorhandenes VNet mit dem neuen VNet herstellen](https://azure.microsoft.com/de-DE/blog/vnet-to-vnet-connecting-virtual-networks-in-azure-across-different-regions/). Weitere Informationen zum [regionalen virtuellen Netzwerk](http://azure.microsoft.com/blog/2014/05/14/regional-virtual-networks/)
+Falls Sie die Affinitätsgruppe nicht benötigen, können Sie ein neues regionales virtuelles Netzwerk für die neuen Ressourcen erstellen, die Sie hinzufügen, und dann eine [Verbindung für Ihr vorhandenes VNET mit dem neuen VNET herstellen](https://azure.microsoft.com/blog/vnet-to-vnet-connecting-virtual-networks-in-azure-across-different-regions/). Weitere Informationen zum [regionalen virtuellen Netzwerk](http://azure.microsoft.com/blog/2014/05/14/regional-virtual-networks/) (in englischer Sprache).
 
 Alternativ dazu können Sie [Ihr auf der Affinitätsgruppe basierendes virtuelles Netzwerk zu einem regionalen virtuellen Netzwerk migrieren](http://azure.microsoft.com/blog/2014/11/26/migrating-existing-services-to-regional-scope/), und dann versuchen, die gewünschten Ressourcen wieder hinzuzufügen.
 
-## Problembehandlung für spezifische Zuordnungsfehlerszenarien im Azure-Ressourcen-Manager-Bereitstellungsmodell
+## Problembehandlung für spezifische Zuordnungsfehlerszenarios im Azure-Ressourcen-Manager-Bereitstellungsmodell
 Dies sind häufig vorkommende Zuordnungsszenarien, die bewirken, dass eine Zuordnungsanforderung „verknüpft“ wird. Die einzelnen Szenarien werden weiter unten in diesem Artikel genauer erläutert.
 
 - Ändern der Größe eines virtuellen Computers oder Hinzufügen zusätzlicher virtueller Computer oder Rolleninstanzen zu einem vorhandenen Clouddienst
@@ -226,6 +226,6 @@ Auf dem Server ist ein interner Fehler aufgetreten. Versuchen Sie die Anforderun
 ## Zusätzliche Ressourcen
 ### Kontaktieren des Azure-Kundensupports
 
-Suchen Sie in den Azure-Foren bei [MSDN und Stack Overflow](http://azure.microsoft.com/support/forums/) weitere Informationen, falls Sie ihr Azure-Problem mit diesem Artikel nicht beheben konnten. Sie können auch einen Azure-Supportfall zu Ihrem Problem erstellen. Rufen Sie die [Azure-Support-Website](http://azure.microsoft.com/support/options/) auf, und klicken Sie auf „Support erhalten“. Informationen zur Nutzung von Azure-Support finden Sie unter [Microsoft Azure-Support-FAQ](http://azure.microsoft.com/support/faq/).
+Suchen Sie in den Azure-Foren bei [MSDN und Stack Overflow](http://azure.microsoft.com/support/forums/) weitere Informationen, falls Sie ihr Azure-Problem mit diesem Artikel nicht beheben konnten. Sie können auch einen Azure-Supportfall zu Ihrem Problem erstellen. Rufen Sie die [Azure-Support-Website](http://azure.microsoft.com/support/options/) auf, und klicken Sie auf „Support erhalten“. Informationen zur Nutzung von Azure-Support finden Sie unter [Häufig gestellte Fragen zum Azure-Support](http://azure.microsoft.com/support/faq/).
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

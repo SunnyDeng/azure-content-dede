@@ -57,7 +57,7 @@ Wenn Kunden ihr Gastbetriebssystem so eingerichtet haben, dass es automatisch ak
 
 Gastbetriebssystemversionen werden jeden Monat veröffentlicht. Aufgrund der Häufigkeit der regulären Releases hat jede Version eine feste Lebensdauer.
 
-60 Tage nach Beginn der Lebensdauer wird eine Version "*deaktiviert*". "Deaktiviert" bedeutet, dass die Version aus dem Azure-Verwaltungsportal entfernt wird. Sie kann auch nicht mehr über die CSCFG-Konfigurationsdatei festgelegt werden. Vorhandene Bereitstellungen werden weiterhin ausgeführt, neue Bereitstellungen sowie Code- und Konfigurationsupdates für vorhandene Bereitstellungen sind jedoch nicht zulässig.
+60 Tage nach Beginn der Lebensdauer wird eine Version "*deaktiviert*". „Deaktiviert“ bedeutet, dass die Version aus dem klassischen Azure-Portal entfernt wurde. Sie kann auch nicht mehr über die CSCFG-Konfigurationsdatei festgelegt werden. Vorhandene Bereitstellungen werden weiterhin ausgeführt, neue Bereitstellungen sowie Code- und Konfigurationsupdates für vorhandene Bereitstellungen sind jedoch nicht zulässig.
 
 Zu einem späteren Zeitpunkt wird die Gast-BS-Version "*ablaufen*", und für alle Installationen, die noch unter dieser Version ausgeführt werden, wird ein Upgrade erzwungen. Gleichzeitig wird für diese Installationen festgelegt, dass das Gast-BS in Zukunft automatisch aktualisiert wird. Der Ablauf erfolgt in Batches, sodass die Zeitspanne zwischen Deaktivierung und tatsächlichem Ablauf variieren kann.
 
@@ -67,7 +67,7 @@ Diese Zeiträume können nach Ermessen von Microsoft verlängert werden, um den 
 
 ### Benachrichtigungen während der Deaktivierung 
 
-* **Deaktivierung der Familie** <br>Microsoft verwendet Blogbeiträge sowie Benachrichtigungen im Verwaltungsportal, um die Kunden zu informieren. Bei Kunden, die eine deaktivierte Gastbetriebssystemfamilie weiterhin verwenden, werden zugewiesene Dienstadministratoren auf direktem Weg benachrichtigt (E-Mail, Mitteilung im Portal, Telefonanruf). Alle Änderungen werden auf dieser Seite und im oben auf dieser Seite aufgeführten RSS-Feed veröffentlicht. 
+* **Deaktivierung der Familie** <br>Microsoft verwendet Blogbeiträge sowie Benachrichtigungen im klassischen Azure-Portal, um die Kunden zu informieren. Bei Kunden, die eine deaktivierte Gastbetriebssystemfamilie weiterhin verwenden, werden zugewiesene Dienstadministratoren auf direktem Weg benachrichtigt (E-Mail, Mitteilung im Portal, Telefonanruf). Alle Änderungen werden auf dieser Seite und im oben auf dieser Seite aufgeführten RSS-Feed veröffentlicht. 
 
 
 * **Deaktivierung der Version** <br>Alle Änderungen, einschließlich des Veröffentlichungs-, Deaktivierungs- und Ablaufdatums, werden auf dieser Seite und im oben auf dieser Seite aufgeführten RSS-Feed veröffentlicht. Dienstadministratoren erhalten E-Mails, wenn sie über Bereitstellungen verfügen, die unter einer deaktivierten Gastbetriebssystemversion oder -familie ausgeführt werden. Diese E-Mails können zu verschiedenen Zeitpunkten gesendet werden. Im Allgemeinen werden sie mindestens einen Monat vor der Deaktivierung gesendet, dies ist jedoch keine offizielle SLA.
@@ -90,4 +90,4 @@ Wenn die Architektur Ihrer Webanwendung eine tiefer gehende Abhängigkeit vom zu
 ## Nächste Schritte
 Überprüfen Sie die neuesten [Gastbetriebssystemreleases](cloud-services-guestos-update-matrix.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

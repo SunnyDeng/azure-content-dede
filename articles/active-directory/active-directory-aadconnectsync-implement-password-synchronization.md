@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure AD Connect-Synchronisierung – Implementieren der Kennwortsynchronisierung | Microsoft Azure"
+	pageTitle="Azure AD Connect-Synchronisierung: Implementieren der Kennwortsynchronisierung | Microsoft Azure"
 	description="Bietet Ihnen die Informationen, die Sie benötigen, um zu verstehen, wie die Synchronisierung von Kennwörtern funktioniert, und wie Sie sie in Ihrer Umgebung aktivieren."
 	services="active-directory"
 	documentationCenter=""
@@ -160,4 +160,4 @@ Das Erzwingen einer vollständigen Synchronisierung aller Kennwörter sollte in 
 * [Azure AD Connect-Synchronisierung: Anpassen von Synchronisierungsoptionen](active-directory-aadconnectsync-whatis.md)
 * [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

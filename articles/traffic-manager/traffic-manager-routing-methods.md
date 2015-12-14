@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/12/2015"
+   ms.date="12/01/2015"
    ms.author="joaoma" />
 
 # Traffic Manager-Routingmethoden
@@ -23,7 +23,7 @@ Beachten Sie unbedingt, dass alle Routingmethoden für Datenverkehr eine Endpunk
 
 Die drei folgenden Traffic Manager-Routingmethoden für Datenverkehr stehen zur Verfügung:
 
-- **Failover**: Wählen Sie "Failover" aus, wenn sich Endpunkte in demselben oder in verschiedenen Azure-Datencentern (im Verwaltungsportal als "Regionen" bezeichnet) befinden und Sie einen primären Endpunkt für den gesamten Datenverkehr verwenden, jedoch Sicherungen für den Fall bereitstellen möchten, dass die primären oder Sicherungsendpunkte nicht verfügbar sind. Weitere Informationen finden Sie unter [Routingmethode für Failoverdatenverkehr](#failover-traffic-routing-method).
+- **Failover**: Wählen Sie „Failover“ aus, wenn sich Endpunkte in demselben oder in verschiedenen Azure-Datencentern (im Azure-Portal als „Regionen“ bezeichnet) befinden und Sie einen primären Endpunkt für den gesamten Datenverkehr verwenden, jedoch Sicherungen für den Fall bereitstellen möchten, dass die primären oder Sicherungsendpunkte nicht verfügbar sind. Weitere Informationen finden Sie unter [Routingmethode für Failoverdatenverkehr](#failover-traffic-routing-method).
 
 - **Round Robin**: Wählen Sie "Roundrobin" aus, wenn Sie die Last auf eine Reihe von Endpunkten in demselben oder in verschiedenen Datencentern verteilen möchten. Weitere Informationen finden Sie unter [Routingmethode für Roundrobin-Datenverkehr](#round-robin-traffic-routing-method).
 
@@ -37,7 +37,7 @@ Beachten Sie, dass Azure Websites bereits Funktionen für Failover- und Roundrob
 
 Organisationen möchten häufig sicherstellen, dass ihre Dienste zuverlässig funktionieren. Dazu stellen sie Sicherungsprogramme für den Fall bereit, dass der primäre Dienst ausfällt. Der Failover-Lastenausgleich für Dienste wird häufig implementiert, indem eine Reihe identischer Endpunkte bereitgestellt und Datenverkehr an einen primären Dienst gesendet wird. Dabei wird eine Liste mit mindestens einer Sicherung verwendet. Wenn der primäre Dienst nicht verfügbar ist, werden anfordernde Clients an den nächsten Dienst in der Reihenfolge verwiesen. Wenn der erste und der zweite aufgeführte Dienst nicht verfügbar sind, wird der Datenverkehr an den dritten Dienst gesendet usw.
 
-Wenn Sie die Routingmethode für Failoverdatenverkehr konfigurieren, ist die Reihenfolge der ausgewählten Endpunkte von Bedeutung. Mithilfe des Verwaltungsportals können Sie die Failoverreihenfolge auf der Seite "Konfiguration" für das Profil konfigurieren.
+Wenn Sie die Routingmethode für Failoverdatenverkehr konfigurieren, ist die Reihenfolge der ausgewählten Endpunkte von Bedeutung. Mithilfe des Azure-Portals können Sie die Failoverreihenfolge auf der Seite „Konfiguration“ für das Profil konfigurieren.
 
 Abbildung 1 zeigt ein Beispiel für die Routingmethode für Failoverdatenverkehr für eine Reihe von Endpunkten.
 
@@ -81,7 +81,7 @@ Gewichtetes Routing von Roundrobin-Datenverkehr ermöglicht das Verteilen der La
 - Anwendungsmigration zu Azure: Erstellen Sie ein Profil mit Azure- und externen Endpunkten, und geben Sie die Gewichtung des Datenverkehrs an, der an jeden Endpunkt weitergeleitet wird.
 - Erweiterung in die Cloud für zusätzliche Kapazität: Erweitern Sie eine lokale Bereitstellung schnell in die Cloud, indem Sie diese hinter einem Traffic Manager-Profil zur Verfügung stellen. Wenn Sie zusätzliche Kapazität in der Cloud benötigen, können Sie weitere Endpunkte hinzufügen oder aktivieren. Geben Sie dann an, welcher Teil des Datenverkehrs an jeden Endpunkt gesendet wird.
 
-Zurzeit kann das Verwaltungsportal nicht zum Konfigurieren von gewichtetem Datenverkehrsrouting verwendet werden. Azure stellt programmgesteuerten Zugriff auf diese Methode mithilfe der zugehörigen Dienstverwaltungs-REST-API und der Azure PowerShell-Cmdlets zur Verfügung.
+Zurzeit kann das Azure-Portal nicht zum Konfigurieren von gewichtetem Datenverkehrsrouting verwendet werden. Azure stellt programmgesteuerten Zugriff auf diese Methode mithilfe der zugehörigen Dienstverwaltungs-REST-API und der Azure PowerShell-Cmdlets zur Verfügung.
 
 Informationen zur Verwendung der REST-APIs finden Sie unter [Vorgänge für Traffic Manager (REST-API-Referenz)](http://go.microsoft.com/fwlink/p/?LinkId=313584).
 
@@ -130,4 +130,4 @@ Wenn Sie die Abbildungen in diesem Thema als PowerPoint-Folien in Ihrer eigenen 
 [Hinzufügen eines Endpunkts](traffic-manager-endpoints.md)
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

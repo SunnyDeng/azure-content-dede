@@ -24,7 +24,7 @@ Der Ressourcen-Manager ist eine Komponente des Spark-Clusterdashboards, das zum 
 
 ## <a name="launchrm"></a>So starten Sie den Ressourcen-Manager
 
-1. Klicken Sie im [Azure-Vorschauportal](https://ms.portal.azure.com/) im Startmenü auf die Kachel für Ihren Spark-Cluster (sofern Sie die Kachel ans Startmenü angeheftet haben). Sie können auch unter **Alle durchsuchen** > **HDInsight-Cluster** zu Ihrem Cluster navigieren. 
+1. Klicken Sie im [Azure-Portal](https://ms.portal.azure.com/) im Startmenü auf die Kachel für Ihren Spark-Cluster (sofern Sie die Kachel ans Startmenü angeheftet haben). Sie können auch unter **Alle durchsuchen** > **HDInsight-Cluster** zu Ihrem Cluster navigieren. 
  
 2. Klicken Sie auf dem Blatt für den Spark-Cluster auf **Dashboard**. Geben Sie bei Aufforderung die Anmeldeinformationen für den Spark-Cluster ein.
 
@@ -64,7 +64,7 @@ Geben Sie als Anzahl von Thrift-Serverkernen und Thrift-Executor-Serverspeicher 
 
 ##<a name="seealso"></a>Weitere Informationen
 
-* [Übersicht: Apache Spark für Azure HDInsight](hdinsight-apache-spark-overview.md)
+* [Übersicht: Apache Spark in Azure HDInsight](hdinsight-apache-spark-overview.md)
 * [Bereitstellen von Spark in einem HDInsight-Cluster](hdinsight-apache-spark-provision-clusters.md)
 * [Durchführen interaktiver Datenanalysen mithilfe von Spark in HDInsight mit BI-Tools](hdinsight-apache-spark-use-bi-tools.md)
 * [Verwenden von Spark in HDInsight zum Erstellen von Machine Learning-Anwendungen](hdinsight-apache-spark-ipython-notebook-machine-learning.md)
@@ -82,4 +82,4 @@ Geben Sie als Anzahl von Thrift-Serverkernen und Thrift-Executor-Serverspeicher 
 [azure-management-portal]: https://manage.windowsazure.com/
 [azure-create-storageaccount]: ../storage-create-storage-account/
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

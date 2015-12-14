@@ -58,9 +58,9 @@ Führen Sie die folgenden Schritte auf einem Computer aus, der die Quelldateien 
 
 Nachdem Sie die aktualisierte Dienstdefinition veröffentlicht haben, können Sie eine Verbindung mit der Rolleninstanz herstellen.
 
-1.  Wählen Sie im [Azure-Verwaltungsportal] die Option **Cloud Services** und anschließend den Dienst aus.
+1.  Wählen Sie im [klassischen Azure-Portal] die Option **Cloud Services** und anschließend den Dienst aus.
 
-	![Azure-Verwaltungsportal][cloud-services]
+	![Klassisches Azure-Portal][cloud-services]
 
 2.  Klicken Sie auf **Instanzen** und anschließend auf **Produktion** oder **Staging**, um die Instanzen für Ihren Dienst anzuzeigen. Wählen Sie eine Instanz aus, und klicken Sie unten auf der Seite auf **Verbinden**.
 
@@ -74,7 +74,7 @@ Nachdem Sie die aktualisierte Dienstdefinition veröffentlicht haben, können Si
 
     ![Windows-Sicherheitshinweis][5]
 
-4.  Klicken Sie auf **Verbinden**. Ein Sicherheitshinweis wird angezeigt, mit dem gemeldet wird, dass Sie Ihre Anmeldedaten eingeben müssen, um auf die Instanz zuzugreifen. Geben Sie das Kennwort ein, das Sie in [Schritt 1](Schritt 1: Konfigurieren des Diensts für Remotedesktopzugriff mit Azure PowerShell) erstellt haben, und klicken Sie dann auf **OK.**
+4.  Klicken Sie auf **Verbinden**. Ein Sicherheitshinweis wird angezeigt, mit dem gemeldet wird, dass Sie Ihre Anmeldedaten eingeben müssen, um auf die Instanz zuzugreifen. Geben Sie das Kennwort ein, das Sie in [Schritt 1][Schritt 1: Konfigurieren des Diensts für Remotedesktopzugriff mit Azure PowerShell] erstellt haben, und klicken Sie dann auf **OK.**
 
     ![Hinweis auf Benutzernamen/Kennwort][6]
 
@@ -102,7 +102,7 @@ Wenn Sie die Remotedesktopverbindungen zu den Rolleninstanzen in der Cloud nicht
 
   [Azure PowerShell]: http://go.microsoft.com/?linkid=9790229&clcid=0x409
 
-[Azure-Verwaltungsportal]: http://manage.windowsazure.com
+[klassischen Azure-Portal]: http://manage.windowsazure.com
 [publish-project]: ./media/cloud-services-nodejs-enable-remote-desktop/publish-rdp.png
 [enable-rdp]: ./media/cloud-services-nodejs-enable-remote-desktop/enable-rdp.png
 [cloud-services]: ./media/cloud-services-nodejs-enable-remote-desktop/cloud-services-remote.png
@@ -116,4 +116,4 @@ Wenn Sie die Remotedesktopverbindungen zu den Rolleninstanzen in der Cloud nicht
   [Verwenden von Remotedesktop mit Azure-Rollen]: http://msdn.microsoft.com/library/windowsazure/gg443832.aspx
  
 
-<!----HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

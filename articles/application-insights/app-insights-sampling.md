@@ -67,6 +67,58 @@ In [ApplicationInsights.config](app-insights-configuration-with-applicationinsig
 
     Der Wert, der sofort nach dem Start der App zugewiesen wird. Reduzieren Sie ihn nicht, solange Sie debuggen.
 
+### Alternative: Konfigurieren der adaptiven Stichprobenerstellung in Code
+
+Anstatt die Stichproben in der config-Datei anzupassen, können Sie Code verwenden. Dadurch können Sie eine Rückruffunktion angeben, die aufgerufen wird, wenn die Abtastrate neu ausgewertet wird. Z. B. können Sie herausfinden, welche Samplingrate verwendet wird.
+
+Entfernen Sie den `AdaptiveSamplingTelemetryProcessor`-Knoten aus der .config-Datei.
+
+
+
+*C#*
+
+```C#
+
+    using Microsoft.ApplicationInsights;
+    using Microsoft.ApplicationInsights.Extensibility;
+    using Microsoft.ApplicationInsights.WindowsServer.Channel.Implementation;
+    using Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel;
+    ...
+
+    var adaptiveSamplingSettings = new SamplingPercentageEstimatorSettings();
+
+    // Optional: here you can adjust the settings from their defaults.
+
+    var builder = TelemetryConfiguration.Active.GetTelemetryProcessorChainBuilder();
+    
+    builder.UseAdaptiveSampling(
+         adaptiveSamplingSettings,
+
+        // Callback on rate re-evaluation:
+        (double afterSamplingTelemetryItemRatePerSecond,
+         double currentSamplingPercentage,
+         double newSamplingPercentage,
+         bool isSamplingPercentageChanged,
+         SamplingPercentageEstimatorSettings s
+        ) =>
+        {
+          if (isSamplingPercentageChanged)
+          {
+             // Report the sampling rate.
+             telemetryClient.TrackMetric("samplingPercentage", newSamplingPercentage);
+          }
+      });
+
+    // If you have other telemetry processors:
+    builder.Use((next) => new AnotherProcessor(next));
+
+    builder.Build();
+
+```
+
+([Informieren Sie sich über Telemetrieprozessoren](app-insights-api-filtering-sampling.md#filtering).)
+
+
 <a name="other-web-pages"></a>
 ## Erstellen von Stichproben für Webseiten mit JavaScript
 
@@ -132,7 +184,7 @@ Wenn Sie auch auf dem Server die Stichprobenerstellung mit festem Prozentsatz ak
 
 
 
-### Alternative: Stichprobenerstellung in Servercode festlegen
+### Alternative: Aktivieren der Stichprobenerstellung mit festem Prozentsatz im Servercode
 
 
 Anstatt den Stichprobenerstellungsparameter in der config-Datei festzulegen, können Sie Code verwenden.
@@ -155,7 +207,7 @@ Anstatt den Stichprobenerstellungsparameter in der config-Datei festzulegen, kö
 
 ```
 
-([Informieren Sie sich über Telemetrieprozessoren](app-insights-api-filtering-sampling/#filtering).)
+([Informieren Sie sich über Telemetrieprozessoren](app-insights-api-filtering-sampling.md#filtering).)
 
 ## Wann sollten Sie die Stichprobenerstellung nutzen?
 
@@ -221,11 +273,13 @@ Das clientseitige (JavaScript) SDK führt die Stichprobenerstellung in Verbindun
 
 *Kann ich den Stichproben-Prozentsatz bei der adaptiven Stichprobenerstellung ermitteln?*
 
- * In der aktuellen Version ist das nicht möglich.
+ * Ja – Verwenden Sie die Codemethode zum Konfigurieren der adaptiven Stichprobenerstellung, und Sie können einen Rückruf bereitstellen, der die Abtastrate abruft.
 
 *Wie kann ich bei einer Stichprobenerstellung mit festem Prozentsatz für meine App den idealen Prozentsatz ermitteln?*
 
-* Aktuell können Sie diesbezüglich lediglich Vermutungen anstellen. Analysieren Sie Ihre aktuelle Nutzung der Telemetriedaten in Application Insights, beobachten Sie die verworfenen Daten im Zusammenhang mit der Drosselung, und schätzen Sie die Menge der erfassten Telemetriedaten. In Kombination mit dem ausgewählten Tarif geben diese drei Faktoren Auskunft darüber, um wie viel Sie die Menge der erfassten Telemetriedaten gegebenenfalls reduzieren sollten. Durch eine Änderung der Menge an Telemetriedaten kann ein optimal konfigurierter Prozentsatz für die Stichprobenerfassung jedoch unwirksam werden (z. B. durch die Steigerung der Benutzeranzahl).
+* Eine Möglichkeit ist, mit der adaptiven Stichprobenerstellung zu beginnen, herauszufinden, bei welchem Wert sie sich einstellt (siehe die oben gestellt Frage), und dann mit diesem Wert zur Stichprobenerstellung mit festem Prozentsatz zu wechseln. 
+
+    Andernfalls müssen Sie raten. Analysieren Sie Ihre aktuelle Nutzung der Telemetriedaten in Application Insights, beobachten Sie die auftretende Drosselung, und schätzen Sie die Menge der erfassten Telemetriedaten. In Kombination mit Ihrem ausgewählten Tarif geben diese drei Faktoren Auskunft darüber, um wie viel Sie die Menge der erfassten Telemetriedaten gegebenenfalls reduzieren sollten. Allerdings kann eine Zunahme der Benutzeranzahl oder eine andere Verschiebung in der Menge der Telemetriedaten Ihre Schätzung ungültig werden lassen.
 
 *Was geschieht, wenn ich einen zu geringen Prozentsatz für die Stichprobenerstellung konfiguriere?*
 
@@ -241,6 +295,6 @@ Das clientseitige (JavaScript) SDK führt die Stichprobenerstellung in Verbindun
 
 *Es gibt einige seltene Ereignisse, die ich immer untersuchen möchte. Wie bekomme ich sie durch das Stichprobenmodul?*
 
- * Erstellen Sie eine separate Instanz von TelemetryClient mit einer separaten TelemetryConfiguration. Verwenden Sie diese zum Senden der seltenen Ereignisse.
+ * Initialisieren Sie eine separate Instanz von TelemetryClient mit einer neuen TelemetryConfiguration (nicht die standardmäßig aktivierte). Verwenden Sie diese zum Senden der seltenen Ereignisse.
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

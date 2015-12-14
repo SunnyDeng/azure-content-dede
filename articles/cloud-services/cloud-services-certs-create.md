@@ -26,7 +26,7 @@ Die in Azure verwendeten Zertifikate können einen privaten oder einen öffentli
 ## Was sind Dienstzertifikate?
 Dienstzertifikate werden an Clouddienste angefügt und ermöglichen die sichere Kommunikation zu und von den Diensten. Wenn Sie beispielsweise eine Webrolle bereitgestellt haben, sollten Sie ein Zertifikat angeben, das einen verfügbar gemachten HTTPS-Endpunkt authentifizieren kann. Dienstzertifikate, die in der Dienstdefinition definiert sind, werden automatisch auf dem virtuellen Computer bereitgestellt, auf dem eine Instanz der Rolle ausgeführt wird.
 
-Sie können Dienstzertifikate entweder über das Verwaltungsportal oder mithilfe der Dienstverwaltungs-API in das Verwaltungsportal hochladen. Dienstzertifikate sind einem bestimmten Clouddienst zugeordnet und einer Bereitstellung in der Dienstdefinitionsdatei zugewiesen.
+Sie können Dienstzertifikate entweder über das klassische Arzure-Portal oder mithilfe der Dienstverwaltungs-API in das klassische Azure-Portal hochladen. Dienstzertifikate sind einem bestimmten Clouddienst zugeordnet und einer Bereitstellung in der Dienstdefinitionsdatei zugewiesen.
 
 Dienstzertifikate können gesondert von Ihren Diensten sowie von verschiedenen Personen verwaltet werden. Beispielsweise kann ein Entwickler ein Dienstpaket hochladen, das auf ein Zertifikat verweist, das ein IT-Manager zuvor in Azure hochgeladen hat. Ein IT-Manager kann dieses Zertifikat verwalten und erneuern und die Konfiguration des Diensts ändern, ohne ein neues Dienstpaket hochladen zu müssen. Dies ist möglich, da der logische Name für das Zertifikat und sein Speichername und Speicherort in der Dienstdefinitionsdatei angegeben sind, während der Zertifikatfingerabdruck in der Dienstkonfigurationsdatei angegeben ist. Um das Zertifikat zu aktualisieren, muss lediglich ein neues Zertifikat hochgeladen und der Fingerabdruckwert in der Dienstkonfigurationsdatei geändert werden.
 
@@ -74,10 +74,10 @@ In [diesem](..\virtual-machines\virtual-machines-linux-use-ssh-key.md) Artikel w
 
 ## Nächste Schritte
 
-[Hochladen des Dienstzertifikats in das Azure-Portal](cloud-services-configure-ssl-certificate.md) (oder das [Vorschauportal](cloud-services-configure-ssl-certificate-portal.md)) und [Konfigurieren](cloud-services-xml-certs.md) des Zertifikats für den Clouddienst.
+[Hochladen des Dienstzertifikats in das klassische Azure-Portal](cloud-services-configure-ssl-certificate.md) (oder das [Azure-Portal](cloud-services-configure-ssl-certificate-portal.md)) und [Konfigurieren](cloud-services-xml-certs.md) des Zertifikats für den Clouddienst.
 
-Hochladen des [Verwaltungs-API-Zertifikats](../azure-api-management-certs.md) in das Azure-Portal.
+Hochladen des [Verwaltungs-API-Zertifikats](../azure-api-management-certs.md) in das klassische Azure-Portal.
 
->[AZURE.NOTE]Im Azure-Vorschauportal erfolgt der Zugriff auf die API nicht über Verwaltungszertifikate, sondern über Benutzerkonten.
+>[AZURE.NOTE]Im Azure-Portal erfolgt der Zugriff auf die API nicht über Verwaltungszertifikate, sondern über Benutzerkonten.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

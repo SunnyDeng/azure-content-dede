@@ -34,7 +34,7 @@ Dieser Abschnitt beschreibt das Staging einer Anwendung mit **Microsoft Azure Po
     Publish-AzureServiceProject -Slot staging
     ```
 
-2.  Melden Sie sich am [Azure-Verwaltungsportal] an, und wählen Sie **Cloud Services** aus. Klicken Sie auf den Dienstnamen, nachdem der Clouddienst erstellt und der Status der **Staging**-Spalte zu **Running** geändert wurde.
+2.  Melden Sie sich am [klassischen Azure-Portal] an, und wählen Sie **Cloud Services** aus. Klicken Sie auf den Dienstnamen, nachdem der Clouddienst erstellt und der Status der **Staging**-Spalte zu **Running** geändert wurde.
 
 	![Portal mit einem laufenden Dienst][cloud-service]
 
@@ -54,7 +54,7 @@ Nachdem Sie die erweiterte Version einer Anwendung in der Stagingumgebung geprü
 
 > [AZURE.NOTE]Dieser Schritt geht davon aus, dass Sie bereits eine Anwendung in der Produktionsumgebung bereitgestellt haben und dass sich eine erweiterte Version der Anwendung in der Stagingumgebung befindet.
 
-1.  Melden Sie sich beim [Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services** und wählen Sie den Dienstnamen aus.
+1.  Melden Sie sich beim [klassischen Azure-Portal] an, klicken Sie auf **Cloud Services**, und wählen Sie den Dienstnamen aus.
 
 2.  Wählen Sie im **Dashboard** **Staging** aus und klicken Sie am unteren Seitenrand auf **Swap**. Daraufhin öffnet sich der VIP Swap-Dialog.
 
@@ -68,11 +68,11 @@ Sie haben nun eine Bereitstellung in Staging getestet und eine Produktionsbereit
 
 - [Bereitstellen eines Dienstupgrades in der Produktionsumgebung durch Austausch der VIPs in Azure]
 
-[Azure-Verwaltungsportal]: http://manage.windowsazure.com
+[klassischen Azure-Portal]: http://manage.windowsazure.com
 [cloud-service]: ./media/cloud-services-nodejs-stage-application/staging-cloud-service-running.png
 [cloud-service-dashboard]: ./media/cloud-services-nodejs-stage-application/cloud-service-dashboard-staging.png
 [cloud-service-staging-url]: ./media/cloud-services-nodejs-stage-application/cloud-service-staging-url.png
 [vip-swap-dialog]: ./media/cloud-services-nodejs-stage-application/vip-swap-dialog.png
 [Bereitstellen eines Dienstupgrades in der Produktionsumgebung durch Austausch der VIPs in Azure]: cloud-services-how-to-manage.md#how-to-swap-deployments-to-promote-a-staged-deployment-to-production
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

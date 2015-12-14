@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Problembehandlung für Azure Data Lake Analytics-Aufträge mithilfe des Azure-Vorschauportals | Azure" 
-   description="Erfahren Sie, wie die Problembehandlung von Data Lake Analytics-Aufträgen im Azure-Vorschauportal erfolgt." 
+   pageTitle="Problembehandelung bei Azure Data Lake Analytics-Aufträgen mithilfe des Azure-Portals | Azure" 
+   description="Erfahren Sie, wie die Problembehandlung von Data Lake Analytics-Aufträgen im Azure-Portal erfolgt." 
    services="data-lake-analytics" 
    documentationCenter="" 
    authors="mumian" 
@@ -16,18 +16,18 @@
    ms.date="10/27/2015"
    ms.author="jgao"/>
 
-# Problembehandlung für Azure Data Lake Analytics-Aufträge mithilfe des Azure-Vorschauportals
+# Problembehandelung bei Azure Data Lake Analytics-Aufträgen mithilfe des Azure-Portals
 
-Erfahren Sie, wie die Problembehandlung von Data Lake Analytics-Aufträgen im Azure-Vorschauportal erfolgt.
+Erfahren Sie, wie die Problembehandlung von Data Lake Analytics-Aufträgen im Azure-Portal erfolgt.
 
-In diesem Tutorial simulieren Sie das Problem einer fehlenden Quelldatei, das Sie anschließend im Azure-Vorschauportal beheben.
+In diesem Lernprogramm simulieren Sie das Problem einer fehlenden Quelldatei, das Sie anschließend im Azure-Portal beheben.
 
 **Voraussetzungen**
 
 Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
-- **Grundlegende Kenntnisse des Data Lake Analytics-Auftragsprozesses**. Siehe [Erste Schritte mit Azure Data Lake Analytics mithilfe des Azure-Vorschauportals](data-lake-analytics-get-started-use-portal.md).
-- **Ein Data Lake Analytics-Konto.** Siehe [Erste Schritte mit Azure Data Lake Analytics mithilfe des Azure-Vorschauportals](data-lake-analytics-get-started-use-portal.md#create-adl-analytics-account).
+- **Grundlegende Kenntnisse des Data Lake Analytics-Auftragsprozesses**. Siehe [Erste Schritte mit Azure Data Lake Analytics mithilfe des Azure-Portals](data-lake-analytics-get-started-use-portal.md).
+- **Data Lake Analytics-Konto**. Siehe [Erste Schritte mit Azure Data Lake Analytics mithilfe des Azure-Portals](data-lake-analytics-get-started-use-portal.md#create-adl-analytics-account).
 - **Kopieren der Beispieldaten in das Data Lake Store-Standardkonto**. Siehe [Vorbereiten von Quelldaten](data-lake-analytics-get-started-use-portal.md.md#prepare-source-data).
 
 ##Übermitteln eines Data Lake Analytics-Auftrags
@@ -36,7 +36,7 @@ Nun erstellen Sie einen U-SQL-Auftrag mit einem ungültigen Quelldateinamen.
 
 **So übermitteln Sie den Auftrag**
 
-1. Klicken Sie links oben im Azure-Vorschauportal auf **Microsoft Azure**.
+1. Klicken Sie im Azure-Portal in der oberen linken Ecke auf **Microsoft Azure**.
 2. Klicken Sie auf die Kachel mit Ihrem Data Lake Analytics-Kontonamen. Der Name wurde hier angeheftet, als das Konto erstellt wurde. Falls das Konto hier nicht angeheftet ist, siehe [Öffnen eines Data Lake Analytics-Kontos im Portal](data-lake-analytics-manage-use-portal.md#access-adla-account).
 3. Klicken Sie im oberen Menü auf **Neuer Auftrag**.
 4. Geben Sie den Auftragsnamen und das folgende U-SQL-Skript ein:
@@ -58,8 +58,8 @@ Nun erstellen Sie einen U-SQL-Auftrag mit einem ungültigen Quelldateinamen.
 
     Die im Skript definierte Quelldatei heißt **/Samples/Data/SearchLog.tsv1**, sollte aber **/Samples/Data/SearchLog.tsv** heißen.
      
-5. Klicken Sie oben auf **Auftrag senden**. Ein neuer Bereich mit Auftragsdetails wird geöffnet. Auf der Titelleiste wird der Auftragsstatus angezeigt. Bis zum Abschluss des Vorgangs dauert es einige Minuten. Klicken Sie zum Abrufen des aktuellen Status auf **Aktualisieren**.
-6. Warten Sie, bis sich der Auftragsstatus in **Fehler** ändert. Wenn der Auftrag als **Erfolgreich** angezeigt wird, liegt das daran, dass Sie den Ordner „/Samples“ nicht entfernt haben. Siehe die Informationen im Abschnitt **Voraussetzung** weiter oben in diesem Tutorial.
+5. Klicken Sie oben auf **Auftrag senden**. Ein neuer Bereich mit Auftragsdetails wird geöffnet. In der Titelleiste wird der Auftragsstatus angezeigt. Bis zum Abschluss des Vorgangs dauert es einige Minuten. Klicken Sie zum Abrufen des aktuellen Status auf **Aktualisieren**.
+6. Warten Sie, bis sich der Auftragsstatus in **Fehlgeschlagen** ändert. Wenn der Auftrag als **Erfolgreich** angezeigt wird, liegt das daran, dass Sie den Ordner „/Samples“ nicht entfernt haben. Siehe die Informationen im Abschnitt **Voraussetzung** weiter oben in diesem Lernprogramm.
 
 Sie werden sich vielleicht fragen, warum das Ganze bei einem so kleinen Auftrag so lange dauert. Bedenken Sie, dass Data Lake Analytics auf die Big Data-Verarbeitung ausgelegt ist. Seine Leistung wird deutlich, sobald eine große Menge von Daten mithilfe seines verteilten Systems verarbeitet wird.
 
@@ -72,7 +72,7 @@ Im letzten Abschnitt haben Sie ohne Erfolg einen Auftrag übermittelt.
 
 **So zeigen Sie alle Aufträge an**
 
-1. Klicken Sie links oben im Azure-Portal auf **Microsoft Azure**.
+1. Klicken Sie im Azure-Portal in der oberen linken Ecke auf **Microsoft Azure**.
 2. Klicken Sie auf die Kachel mit Ihrem Data Lake Analytics-Kontonamen. Die Zusammenfassung des Auftrags wird auf der Kachel **Auftragsverwaltung** gezeigt.
 
     ![Azure Data Lake Analytics – Auftragsverwaltung](./media/data-lake-analytics-monitor-and-troubleshoot-tutorial/data-lake-analytics-job-management.png)
@@ -108,6 +108,6 @@ Im letzten Abschnitt haben Sie ohne Erfolg einen Auftrag übermittelt.
 - [Azure Data Lake Analytics – Übersicht](data-lake-analytics-overview.md)
 - [Erste Schritte mit Azure Data Lake Analytics mithilfe von Azure PowerShell](data-lake-analytics-get-started-powershell.md)
 - [Erste Schritte mit Azure Data Lake Analytics und U-SQL mithilfe von Visual Studio](data-lake-analytics-get-started-u-sql-studio.md)
-- [Verwalten von Azure Data Lake Analytics mithilfe des Azure-Vorschauportals](data-lake-analytics-manage-use-portal.md)
+- [Verwalten von Azure Data Lake Analytics mithilfe des Azure-Portals](data-lake-analytics-manage-use-portal.md)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

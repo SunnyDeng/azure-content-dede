@@ -13,10 +13,15 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="09/15/2015" 
+	ms.date="09/15/2015"
 	ms.author="ggailey777"/>
 
 # Speichern von Projektcode des mobilen Diensts in der Quellcodeverwaltung
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 > [AZURE.SELECTOR]
 - [.NET backend](mobile-services-dotnet-backend-store-code-source-control.md)
@@ -93,7 +98,7 @@ Sie haben nun Ihr lokales Repository erstellt und können Änderungen an Servers
 
 	Daraufhin wird eine Reihe von Ausgaben für die Bereitstellung des Commits im mobilen Dienst angezeigt.
 
-6. Kehren Sie zurück zum Verwaltungsportal, klicken Sie auf die Registerkarte **Daten**, klicken Sie anschließend auf die Tabelle **TodoItem**, klicken Sie auf **Skript**, und wählen Sie dann den Vorgang **Einfügen** aus. Beachten Sie, dass das angezeigte Skript für die Einfügen-Operation denselben JavaScript-Code enthält, den Sie soeben in Ihr Repository hochgeladen haben.
+6. Kehren Sie zurück zum [klassischen Azure-Portal], klicken Sie auf die Registerkarte **Daten**, klicken Sie anschließend auf die Tabelle **TodoItem**, klicken Sie auf **Skript**, und wählen Sie dann den Vorgang **Einfügen** aus. Beachten Sie, dass das angezeigte Skript für die Einfügen-Operation denselben JavaScript-Code enthält, den Sie soeben in Ihr Repository hochgeladen haben.
 
 ##<a name="use-npm"></a>Verwenden von freigegebenem Code und Node.js-Modulen in Ihren Serverskripts.
 
@@ -130,11 +135,7 @@ Die empfohlene Vorgehensweise zum Hinzufügen von Node.js-Modulen zu Ihrem mobil
 
 Nach Abschluss dieses Lernprogramms sind Sie in der Lage, Ihre Skripts in einer Quellcodeverwaltung zu speichern. Die folgenden Artikel enthalten weiterführende Informationen zu Serverskripts und benutzerdefinierten APIs:
 
-+ [Arbeiten mit Serverskripts in Mobile Services] <br/>
-Beschreibt die Verwendung von Serverskripts, Auftragsplaner und benutzerdefinierten APIs.
-
-+ [Aufrufen einer benutzerdefinierten API vom Client] <br/>
- Zeigt, wie benutzerdefinierte APIs erstellt werden, die vom Client aufgerufen werden können.
++ [Arbeiten mit Serverskripts in Mobile Services] <br/>Beschreibt die Verwendung von Serverskripts, Auftragsplaner und benutzerdefinierten APIs.
 
 <!-- Anchors. -->
 [Enable source control in your mobile service]: #enable-source-control
@@ -153,8 +154,8 @@ Beschreibt die Verwendung von Serverskripts, Auftragsplaner und benutzerdefinier
 [Installieren von Git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
 [Erste Schritte mit Mobile Services]: mobile-services-ios-get-started.md
 [Arbeiten mit Serverskripts in Mobile Services]: mobile-services-how-to-use-server-scripts.md
-[Azure Management Portal]: https://manage.windowsazure.com/
+[klassischen Azure-Portal]: https://manage.windowsazure.com/
 [Module]: http://nodejs.org/api/modules.html
 [node-uuid]: https://npmjs.org/package/node-uuid
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

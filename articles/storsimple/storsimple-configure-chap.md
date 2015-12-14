@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="TBD"
-   ms.date="09/15/2015"
+   ms.date="12/02/2015"
    ms.author="alkohli" />
 
 # Konfigurieren von CHAP für Ihr StorSimple-Gerät
@@ -31,7 +31,7 @@ Die CHAP-Einstellungen auf dem StorSimple-Gerät können wie folgt konfiguriert 
 
 - Bidirektionale oder wechselseitige (umgekehrte) Authentifizierung
 
-In beiden Fällen müssen das Verwaltungsportal des Geräts und die iSCSI-Initiator-Serversoftware konfiguriert werden. Die Schritte für diese Konfiguration werden im folgenden Tutorial ausführlich beschrieben.
+In beiden Fällen müssen das Portal des Geräts und die iSCSI-Initiator-Serversoftware konfiguriert werden. Die Schritte für diese Konfiguration werden im folgenden Tutorial ausführlich beschrieben.
 
 ## Unidirektionale Authentifizierung
 
@@ -39,7 +39,7 @@ Bei der unidirektionalen Authentifizierung authentifiziert das Ziel den Initiato
 
 #### So konfigurieren Sie das Gerät für die unidirektionale Authentifizierung
 
-1. Klicken Sie im Verwaltungsportal auf der Seite **Geräte** auf die Registerkarte **Konfigurieren**.
+1. Klicken Sie im klassischen Azure-Portal auf der Seite **Geräte** auf die Registerkarte **Konfigurieren**.
 
     ![CHAP-Initiator](./media/storsimple-configure-chap/IC740943.png)
 
@@ -75,9 +75,9 @@ Bei der unidirektionalen Authentifizierung authentifiziert das Ziel den Initiato
 													
 	1. Aktivieren Sie das Kontrollkästchen **CHAP-Anmeldung aktivieren**.
 
-	2. Geben Sie im Feld **Name** den Benutzernamen an, den Sie im Verwaltungsportal für den CHAP-Initiator angegeben haben.
+	2. Geben Sie im Feld **Name** den Benutzernamen an, den Sie im klassischen Portal für den CHAP-Initiator angegeben haben.
 
-	3. Geben Sie im Feld **Zielschlüssel** das Kennwort an, das Sie im Verwaltungsportal für den CHAP-Initiator angegeben haben.
+	3. Geben Sie im Feld **Zielschlüssel** das Kennwort an, das Sie im klassischen Portal für den CHAP-Initiator angegeben haben.
 
 	4. Klicken Sie auf **OK**.
 
@@ -96,7 +96,7 @@ Bei der bidirektionalen Authentifizierung muss das Ziel den Initiator und der In
 
 #### So konfigurieren Sie das Gerät für die wechselseitige Authentifizierung
 
-1. Klicken Sie im Verwaltungsportal auf der Seite **Geräte** auf die Registerkarte **Konfigurieren**.
+1. Klicken Sie im klassischen Azure-Portal auf der Seite **Geräte** auf die Registerkarte **Konfigurieren**.
 
     ![CHAP-Ziel](./media/storsimple-configure-chap/IC740948.png)
 
@@ -128,7 +128,7 @@ Bei der bidirektionalen Authentifizierung muss das Ziel den Initiator und der In
 
 4. Gehen Sie im Dialogfeld **iSCSI-Initiator: Geheimer Schlüssel für wechselseitige CHAP-Authentifizierung** wie folgt vor:
 													
-	1. Geben Sie das Kennwort für umgekehrtes CHAP ein, das Sie im Verwaltungsportal konfiguriert haben.
+	1. Geben Sie das **Kennwort für umgekehrtes CHAP** ein, das Sie im klassischen Azure-Portal konfiguriert haben.
 
 	2. Klicken Sie auf **OK**.
 
@@ -144,9 +144,9 @@ Bei der bidirektionalen Authentifizierung muss das Ziel den Initiator und der In
 													
 	1. Aktivieren Sie das Kontrollkästchen **CHAP-Anmeldung aktivieren**.
 
-	2. Geben Sie im Feld **Name** den Benutzernamen an, den Sie im Verwaltungsportal für den CHAP-Initiator angegeben haben.
+	2. Geben Sie im Feld **Name** den Benutzernamen an, den Sie im klassischen Portal für den CHAP-Initiator angegeben haben.
 
-	3. Geben Sie im Feld **Zielschlüssel** das Kennwort an, das Sie im Verwaltungsportal für den CHAP-Initiator angegeben haben.
+	3. Geben Sie im Feld **Zielschlüssel** das Kennwort an, das Sie im klassischen Portal für den CHAP-Initiator angegeben haben.
 
 	4. Aktivieren Sie das Kontrollkästchen **Wechselseitige Authentifizierung ausführen**.
 
@@ -188,7 +188,7 @@ Mit den folgenden Schritten können Sie überprüfen, ob CHAP verwendet wird.
 
 ## Nächste Schritte
 
-- Weitere Informationen zur [StorSimple-Sicherheit](storsimple-security.md).
+- Weitere Informationen zur [StorSimple-Sicherheit](storsimple-security.md)
 - Erfahren Sie mehr zum [Verwenden Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

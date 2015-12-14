@@ -1,5 +1,5 @@
 
-1. Klicken Sie im Verwaltungsportal auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItem**. 
+1. Klicken Sie im [klassischen Azure-Portal](https://manage.windowsazure.com/) auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItem**. 
  
 2. Klicken Sie unter **todoitem** auf die Registerkarte **Skript**, und wählen Sie **Einfügen** aus.
    
@@ -37,4 +37,4 @@
 
    	Daraufhin wird ein neues Einfügeskript registriert, das das [gcm-Objekt](http://go.microsoft.com/fwlink/p/?LinkId=282645) zum Senden einer Pushbenachrichtigung an alle registrierten Geräte verwendet, nachdem der Einfügevorgang erfolgreich war.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

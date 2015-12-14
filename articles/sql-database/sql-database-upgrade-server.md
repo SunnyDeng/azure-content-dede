@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Durchführen eines Upgrades auf SQL-Datenbank V12 mithilfe von PowerShell | Microsoft Azure" 
+	pageTitle="Durchführen eines Upgrades auf Azure SQL-Datenbank V12 mithilfe von PowerShell | Microsoft Azure" 
 	description="Erläutert das Upgrade auf Azure SQL-Datenbank V12, einschließlich der Aktualisierung von Web- und Business-Datenbanken, sowie das Upgrade eines V11-Servers mit direkter Migration der zugehörigen Datenbanken in einen Pool für elastische Datenbanken mithilfe von PowerShell." 
 	services="sql-database" 
 	documentationCenter="" 
@@ -20,11 +20,11 @@
 
 
 > [AZURE.SELECTOR]
-- [Azure preview portal](sql-database-upgrade-server-portal.md)
+- [Azure Portal](sql-database-upgrade-server-portal.md)
 - [PowerShell](sql-database-upgrade-server-powershell.md)
 
 
-SQL-Datenbank V12 ist die neueste Version, sodass eine Aktualisierung auf SQL-Datenbank V12 empfohlen wird. SQL-Datenbank V12 verfügt über viele [Vorteile gegenüber der vorherigen Version](sql-database-v12-whats-new.md) einschließlich:
+SQL-Datenbank V12 ist die neueste Version, sodass eine Aktualisierung auf SQL-Datenbank V12 empfohlen wird. SQL-Datenbank V12 verfügt über viele [Vorteile gegenüber der vorherigen Version](sql-database-v12-whats-new.md), einschließlich:
 
 - Höhere Kompatibilität mit SQL Server.
 - Verbesserte Premium-Leistung und neue Leistungsstufen.
@@ -48,7 +48,7 @@ Nach dem Upgrade auf V12 stehen [Empfehlungen zur Dienstebene](sql-database-serv
 
 - **Aktualisieren aller Web- und Business-Datenbanken**: Informationen hierzu finden Sie im Abschnitt [Durchführen eines Upgrades für alle Web- und Business-Datenbanken](sql-database-v12-upgrade.md#upgrade-all-web-and-business-databases) weiter unten, oder verwenden Sie [PowerShell zum Aktualisieren von Datenbanken und Server](sql-database-upgrade-server-powershell.md).
 - **Überprüfen und Beenden der Georeplikation**: Wenn Ihre Azure SQL-Datenbank für Georeplikation konfiguriert ist, sollten Sie ihre aktuelle Konfiguration dokumentieren und die [Georeplikation beenden](sql-database-geo-replication-portal.md#remove-secondary-database). Nachdem das Upgrade abgeschlossen ist, können Sie Ihre Datenbank erneut für die Georeplikation konfigurieren.
-- **Öffnen Sie folgende Ports, falls Sie Clients auf einer Azure-VM verwenden**: Wenn Ihr Clientprogramm eine Verbindung mit SQL-Datenbank V12 herstellt und der Client auf einem virtuellen Azure-Computer ausgeführt wird, müssen Sie die Portbereiche 11000–11999 und 14000–14999 auf dem virtuellen Computer öffnen. Weitere Informationen finden Sie unter [Ports für SQL-Datenbank V12](sql-database-develop-direct-route-ports-adonet-v12.md).
+- **Öffnen Sie folgende Ports, falls Sie Clients auf einer Azure-VM verwenden**: Wenn Ihr Clientprogramm eine Verbindung mit SQL-Datenbank V12 herstellt und der Client auf einem virtuellen Azure-Computer ausgeführt wird, müssen Sie die Portbereiche 11000 – 11999 und 14000 – 14999 auf dem virtuellen Computer öffnen. Weitere Informationen finden Sie unter [Ports für SQL-Datenbank V12](sql-database-develop-direct-route-ports-adonet-v12.md).
 
 
 ## Voraussetzungen 
@@ -192,7 +192,7 @@ Sie können z. B. eine E-Mail-Benachrichtigung für den "DTU Prozentsatz" festl
 
 ## Nächste Schritte
 
-- [Erstellen eines Pools für elastische Datenbanken](sql-database-elastic-pool-portal.md) und Hinzufügen einiger oder aller Datenbanken zum Pool
+- [Erstellen eines Pools für elastische Datenbanken](sql-database-elastic-pool-portal.md) und Hinzufügen einiger oder aller Datenbanken zum Pool.
 - [Ändern der Dienstebene und Leistungsstufe Ihrer Datenbank](sql-database-scale-up.md).
 
 
@@ -203,4 +203,4 @@ Sie können z. B. eine E-Mail-Benachrichtigung für den "DTU Prozentsatz" festl
 - [Start-AzureRmSqlServerUpgrade](https://msdn.microsoft.com/library/azure/mt619403.aspx)
 - [Stop-AzureRmSqlServerUpgrade](https://msdn.microsoft.com/library/azure/mt603589.aspx)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

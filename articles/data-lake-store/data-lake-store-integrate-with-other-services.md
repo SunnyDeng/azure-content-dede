@@ -22,12 +22,12 @@ Azure Data Lake-Speicher kann zusammen mit anderen Azure-Diensten verwendet werd
 
 ## Verwenden von Data Lake-Speicher mit Azure HDInsight
 
-Sie können einen [Azure HDInsight](https://azure.microsoft.com/de-DE/documentation/learning-paths/hdinsight-self-guided-hadoop-training/)-Cluster bereitstellen, der Data Lake-Speicher als HDFS-kompatiblen Speicher verwendet. In dieser Version können Sie für Hadoop- und Storm-Cluster unter Windows und Linux Data Lake-Speicher nur als Zusatzspeicher verwenden. Solche Cluster verwenden weiterhin Azure Storage (WASB) als Standardspeicher. Sie können jedoch für HBase-Cluster unter Windows und Linux Data Lake-Speicher als Standardspeicher oder als Zusatzspeicher verwenden.
+Sie können einen [Azure HDInsight](https://azure.microsoft.com/documentation/learning-paths/hdinsight-self-guided-hadoop-training/)-Cluster bereitstellen, der Data Lake-Speicher als HDFS-kompatiblen Speicher verwendet. In dieser Version können Sie für Hadoop- und Storm-Cluster unter Windows und Linux Data Lake-Speicher nur als Zusatzspeicher verwenden. Solche Cluster verwenden weiterhin Azure Storage (WASB) als Standardspeicher. Sie können jedoch für HBase-Cluster unter Windows und Linux Data Lake-Speicher als Standardspeicher oder als Zusatzspeicher verwenden.
 
 Anleitungen zum Bereitstellen eines HDInsight-Clusters mit Data Lake-Speicher finden Sie unter:
 
-* [Bereitstellen eines HDInsight-Clusters mit Data Lake-Speicher mithilfe des Azure-Vorschauportals](data-lake-store-hdinsight-hadoop-use-portal.md)
-* [Bereitstellen eines HDInsight-Clusters mit Data Lake-Speicher mithilfe von Azure PowerShell](data-lake-store-hdinsight-hadoop-use-powershell.md)
+* [Bereitstellen eines HDInsight-Clusters mit Data Lake-Speicher mithilfe des Azure-Portals](data-lake-store-hdinsight-hadoop-use-portal.md)
+* [Bereitstellen eines HDInsight-Clusters mit Data Lake-Speicher mithilfe von Azure PowerShell](data-lake-store-hdinsight-hadoop-use-powershell.md)
 
 
 ## Verwenden von Data Lake-Speicher mit Azure Data Lake Analytics
@@ -39,7 +39,7 @@ Anleitung zum Verwenden von Data Lake Analytics mit Data Lake-Speicher finden Si
 
 ## Verwenden von Data Lake-Speicher mit Azure Data Factory
 
-Sie können [Azure Data Factory](https://azure.microsoft.com/de-DE/services/data-factory/) zum Erfassen von Daten aus Azure-Tabellen, Azure SQL-Datenbank, Azure SQL Data Warehouse, Azure Storage-Blobs und lokalen Datenbanken verwenden. Als wichtige Komponente im Azure-Ökosystem kann Azure Data Factory auch zum Orchestrieren der Erfassung von Daten aus diesen Quelle in Azure Data Lake-Speicher verwendet werden.
+Sie können [Azure Data Factory](https://azure.microsoft.com/services/data-factory/) zum Erfassen von Daten aus Azure-Tabellen, Azure SQL-Datenbank, Azure SQL Data Warehouse, Azure Storage-Blobs und lokalen Datenbanken verwenden. Als wichtige Komponente im Azure-Ökosystem kann Azure Data Factory auch zum Orchestrieren der Erfassung von Daten aus diesen Quelle in Azure Data Lake-Speicher verwendet werden.
 
 Anleitungen zum Verwenden von Azure Data Factory mit Data Lake-Speicher finden Sie unter [Verschieben von Daten in und aus Data Lake-Speicher mit Data Factory](data-factory/data-factory-azure-datalake-connector.md).
 
@@ -50,4 +50,4 @@ Anleitungen zum Verwenden von Azure Data Factory mit Data Lake-Speicher finden S
 - [Erste Schritte mit Data Lake-Speicher mithilfe des Portals](data-lake-store-get-started-portal.md)
 - [Erste Schritte mit Data Lake-Speicher mithilfe von PowerShell](data-lake-store-get-started-powershell.md)  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

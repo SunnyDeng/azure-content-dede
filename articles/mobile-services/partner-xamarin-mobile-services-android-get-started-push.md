@@ -1,22 +1,27 @@
-<properties 
-	pageTitle="Hinzufügen von Pushbenachrichtigungen zur Xamarin Android-App | Microsoft Azure" 
-	description="Hier erfahren Sie, wie Sie Pushbenachrichtigungen mit Google Cloud Messaging für Ihre Xamarin.Android-App über Azure Mobile Services und Azure Notification Hubs konfigurieren." 
-	documentationCenter="xamarin" 
-	authors="ggailey777" 
-	manager="dwrede" 
-	services="mobile-services" 
+<properties
+	pageTitle="Hinzufügen von Pushbenachrichtigungen zur Xamarin Android-App | Microsoft Azure"
+	description="Hier erfahren Sie, wie Sie Pushbenachrichtigungen mit Google Cloud Messaging für Ihre Xamarin.Android-App über Azure Mobile Services und Azure Notification Hubs konfigurieren."
+	documentationCenter="xamarin"
+	authors="ggailey777"
+	manager="dwrede"
+	services="mobile-services"
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-xamarin-android" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="09/16/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-xamarin-android"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="09/16/2015"
 	ms.author="glenga"/>
 
 # Hinzufügen von Pushbenachrichtigungen zur Mobile Services-App
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-push](../../includes/mobile-services-selector-get-started-push.md)]
 
@@ -40,7 +45,7 @@ Sie haben die Komponenten [Xamarin.Android] und [Azure Mobile Services] bereits 
 
 ##<a id="update-scripts"></a>Aktualisieren des registrierten Einfügeskripts zum Senden von Benachrichtigungen
 
->[AZURE.TIP]Die folgenden Schritte veranschaulichen die Vorgehensweise beim Aktualisieren des Skripts, das für den Einfügevorgang in der TodoItem-Tabelle im Azure-Verwaltungsportal registriert ist. Der Zugriff und die Bearbeitung dieses Mobile Service-Skripts ist auch direkt in Visual Studio am Azure-Knoten im Server-Explorer möglich.
+>[AZURE.TIP]Die folgenden Schritte veranschaulichen die Vorgehensweise beim Aktualisieren des Skripts, das für den Einfügevorgang in der TodoItem-Tabelle im klassischen Azure-Portal registriert ist. Der Zugriff und die Bearbeitung dieses Mobile Service-Skripts ist auch direkt in Visual Studio am Azure-Knoten im Server-Explorer möglich.
 
 [AZURE.INCLUDE [mobile-services-javascript-backend-android-push-insert-script](../../includes/mobile-services-javascript-backend-android-push-insert-script.md)]
 
@@ -81,6 +86,5 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 [Google Cloud Messaging Client-Komponente]: http://components.xamarin.com/view/GCMClient/
 [Xamarin.Android]: http://xamarin.com/download/
 [Azure Mobile Services]: http://components.xamarin.com/view/azure-mobile-services/
- 
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

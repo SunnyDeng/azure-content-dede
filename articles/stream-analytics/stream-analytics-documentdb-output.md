@@ -59,4 +59,4 @@ Beim Erstellen einer DocumentDB-Datenbank als Ausgabe in Stream Analytics wird e
 -   **Partitionsschlüssel**: Der Name des Felds in Ausgabeereignissen, das zur Angabe des Schlüssels für die sammlungsübergreifende Partitionierung der Ausgabe verwendet wird. Für die Ausgabe einer einzelnen Sammlung kann eine beliebige Ausgabespalte wie „PartitionId“ verwendet werden.  
 -   **Dokument-ID**: Optional. Der Name des Felds in Ausgabeereignissen, das zur Angabe des Primärschlüssels verwendet wird, auf dem Einfüge- und Aktualisierungsvorgänge basieren.  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

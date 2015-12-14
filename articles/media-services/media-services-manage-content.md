@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwalten von Inhalten mit Media Services auf dem Azure-Verwaltungsportal" 
+	pageTitle="Verwalten von Inhalten mit Media Services auf dem klassischen Azure-Portal" 
 	description="Erfahren Sie, wie Sie Ihre Medieninhalte in Azure Media Services verwalten können. Hierzu zählt das Hochladen, Indizieren, Codieren, Verschlüsseln und Veröffentlichen." 
 	services="media-services" 
 	documentationCenter="" 
@@ -17,10 +17,10 @@
 	ms.author="juliako"/>
 
 
-# Verwalten von Inhalten mit Media Services auf dem Azure-Verwaltungsportal
+# Verwalten von Inhalten mit Azure Media Services auf dem klassischen Azure-Portal
 
 
-In diesem Thema wird veranschaulicht, wie Sie mit dem Azure-Verwaltungsportal Medieninhalte in Ihrem Media Services-Konto verwalten.
+In diesem Thema wird veranschaulicht, wie Sie mit dem klassischen Azure-Portal Medieninhalte in Ihrem Media Services-Konto verwalten.
 
 In diesem Thema wird erläutert, wie Sie die folgenden Inhaltsvorgänge direkt über das Portal durchführen können:
 
@@ -33,13 +33,13 @@ In diesem Thema wird erläutert, wie Sie die folgenden Inhaltsvorgänge direkt �
 - Wiedergeben von Inhalten
 
 
-##<a id="upload"></a>Hochladen von Inhalten 
+##<a id="upload"></a>Hochladen von Inhalten
 
 
 [AZURE.INCLUDE [media-services-selector-upload-files](../../includes/media-services-selector-upload-files.md)]
 
 
-1. Klicken Sie im [Verwaltungsportal](http://go.microsoft.com/fwlink/?LinkID=256666&clcid=0x409) auf **Media Services** und dann auf den Media Services-Kontonamen.
+1. Klicken Sie im [klassischen Azure-Portal](http://go.microsoft.com/fwlink/?LinkID=256666&clcid=0x409) auf **Media Services** und dann auf den Media Services-Kontonamen.
 2. Wählen Sie die Seite "INHALT" aus. 
 3. Klicken Sie auf der Seite oder unten im Portal auf **Hochladen**. 
 4. Navigieren Sie im Dialogfeld **Inhalte hochladen** zur gewünschten Ressourcendatei. Klicken Sie auf die Datei, und klicken Sie dann auf **Öffnen**, oder drücken Sie **Eingabe**.
@@ -63,16 +63,16 @@ Wenn der Wert für die Dateigröße nach dem Hochladen nicht aktualisiert wird, 
 - [.NET](media-services-index-content.md)
 - [Portal](media-services-manage-content.md#index)
 
-Mit dem Azure Media Indexer können Sie die Inhalte Ihrer Mediendateien durchsuchbar machen und eine Volltext-Aufzeichnung für Untertitel und Schlüsselwörter generieren. Sie können Ihre Inhalte mithilfe des Verwaltungsportals und den unten gezeigten Schritten indizieren. Wenn Sie mehr Kontrolle darüber möchten, wie und mit welchen Dateien die Indizierung erfolgt, können Sie das Media Services SDK für .NET oder REST-APIs verwenden. Weitere Informationen finden Sie unter [Indizieren von Mediendateien mit Azure Media Indexer](media-services-index-content.md).
+Mit dem Azure Media Indexer können Sie die Inhalte Ihrer Mediendateien durchsuchbar machen und eine Volltext-Aufzeichnung für Untertitel und Schlüsselwörter generieren. Sie können Ihre Inhalte mithilfe des klassischen Azure-Portals und den unten gezeigten Schritten indizieren. Wenn Sie mehr Kontrolle darüber möchten, wie und mit welchen Dateien die Indizierung erfolgt, können Sie das Media Services SDK für .NET oder REST-APIs verwenden. Weitere Informationen finden Sie unter [Indizieren von Mediendateien mit Azure Media Indexer](media-services-index-content.md).
 
-Die folgenden Schritte veranschaulichen, wie Sie das Verwaltungsportal verwenden, um die Inhalte zu indizieren.
+Die folgenden Schritte veranschaulichen, wie Sie das klassische Azure-Portal verwenden, um die Inhalte zu indizieren.
 
 1. Wählen Sie die Datei aus, die Sie indizieren möchten. Wenn die Indizierung für diesen Dateityp unterstützt wird, wird die Schaltfläche "Prozess" unten auf der Inhaltsseite aktiviert.
 1. Klicken Sie auf die Schaltfläche „Prozess“.
 2. Wählen Sie im Dialogfeld **Prozess** den **Azure Media Indexer**-Prozessor aus.
 3. Anschließend füllen Sie im Dialogfeld "Prozess" die Informationen zu **Titel** und **Beschreibung** der Eingabe-Mediendatei aus.
-	
-	![Prozess][process]
+
+![Prozess][process]
 
 ##<a id="encode"></a>Codieren von Inhalten
 
@@ -90,42 +90,39 @@ Media Services bietet dynamische Paketerstellung zum Übermitteln Ihrer MP4-Date
 Um die dynamische Paketerstellung nutzen zu können, müssen Sie folgende Schritte ausführen:
 
 - Codieren Ihrer Zwischendatei (Quelle) in einen Satz von MP4-Dateien oder Smooth Streaming-Dateien mit adaptiver Bitrate (die Codierungsschritte werden weiter unten in diesem Lernprogramm beschrieben)
-- Abrufen von mindestens einer On-Demand-Streamingeinheit für den Streamingendgerät, von dem aus Sie die Bereitstellung Ihrer Inhalte planen. Weitere Informationen finden Sie unter [Skalieren von reservierten Einheiten für bedarfsgesteuertes Streaming](media-services-manage-origins.md#scale_streaming_endpoints/).
+- Abrufen von mindestens einer On-Demand-Streamingeinheit für den Streamingendpunkt, von dem aus Sie die Bereitstellung Ihrer Inhalte planen. Weitere Informationen finden Sie unter [Skalieren von reservierten Einheiten für bedarfsgesteuertes Streaming](media-services-manage-origins.md#scale_streaming_endpoints/).
 
 Mit der dynamischen Paketerstellung müssen Sie die Dateien nur in einem Speicherformat speichern und bezahlen. Media Services erstellt und verarbeitet die entsprechende Antwort basierend auf Anforderungen von einem Client.
 
 Beachten Sie, dass die reservierten Einheiten für On-Demand-Streaming Ihnen zusätzlich zur dynamischen Paketerstellung auch eine dedizierte Ausgangskapazität bereitstellen, die in Schritten von 200 Mbit/s erworben werden kann. Standardmäßig wird das bedarfsgesteuerte Streaming in einem Modell mit einer gemeinsam genutzten Instanz konfiguriert, für das Serverressourcen (z. B. Rechen- und Ausgangskapazität usw.) mit allen anderen Benutzern gemeinsam genutzt werden. Um den Durchsatz des bedarfsgesteuerten Streamings zu erhöhen, sollten Sie reservierte Einheiten für On-Demand Streaming kaufen.
 
-Dieser Abschnitt beschreibt die Schritte, die Sie ausführen können, um Ihre Inhalte mit Azure Media Encoder im Verwaltungsportal zu codieren.
+Dieser Abschnitt beschreibt die Schritte, die Sie ausführen können, um Ihre Inhalte mit Azure Media Encoder im klassischen Azure-Portal zu codieren.
 
 1.  Wählen Sie die Datei aus, die Sie codieren möchten. Wenn die Codierung für diesen Dateityp unterstützt wird, wird die Schaltfläche "Prozess" unten auf der Inhaltsseite aktiviert.
 4. Wählen Sie im Dialogfeld **Prozess** den **Azure Media Encoder**-Prozessor aus.
 5. Wählen Sie eine der **Codierungskonfigurationen** aus.
 
-	![Prozess2][process2]
-
-		
-	Im Thema [Taskvoreinstellung für Media Services Encoder](https://msdn.microsoft.com/library/azure/dn619392.aspx) werden die Voreinstellungen in den Kategorien **Voreinstellungen für adaptives Streaming (dynamische Paketerstellung)**, **Voreinstellungen für progressiven Download** und **Legacy-Voreinstellungen für adaptives Streaming** erläutert.
+![Prozess2][process2]
 
 
-	Die **anderen** Konfigurationen werden nachfolgend beschrieben:
+Im Thema [Taskvoreinstellung für Media Services Encoder](https://msdn.microsoft.com/library/azure/dn619392.aspx) werden die Voreinstellungen in den Kategorien **Voreinstellungen für adaptives Streaming (dynamische Paketerstellung)**, **Voreinstellungen für progressiven Download** und **Legacy-Voreinstellungen für adaptives Streaming** erläutert.
 
-	+ **Codieren mit PlayReady-Inhaltsschutz**. Diese Voreinstellung produziert ein Medienobjekt, das mit dem PlayReady-Inhaltsschutz codiert ist.  
-	
-	
-		Standardmäßig wird der Media Services PlayReady-Lizenzierungsdienst verwendet. Verwenden Sie REST oder die Media Services .NET SDK-APIs, um andere Dienste zu verwenden, von denen Clients eine Lizenz zum Abspielen der mit PlayReady verschlüsselten Inhalte abrufen können. Weitere Informationen finden Sie unter [Inhaltsschutz mit statischer Verschlüsselung](). Setzen Sie außerdem die **licenseAcquisitionUrl**-Eigenschaft in der Media Encryptor-Voreinstellung. Alternativ können Sie dynamische Verschlüsselung verwenden und die **PlayReadyLicenseAcquisitionUrl**-Eigenschaft setzen. Lesen Sie dazu [Verwenden der dynamischen PlayReady-Verschlüsselung und des Lizenzierungsdienstes](http://go.microsoft.com/fwlink/?LinkId=507720). 
-	+ **Wiedergabe auf PC/Mac (über Flash/Silverlight)**. Diese Voreinstellung erzeugt ein Smooth Streaming-Medienobjekt mit den folgenden Eigenschaften: AAC-Stereo-Audio mit 44,1 kHz und 16 Bits/Sample, codiert mit konstanter Bitrate (96 Kbit/s) und 720p-Video codiert mit 6 konstanten Bitraten von 3400 Kbit/s bis 400 Kbit/s mithilfe des H.264-Hauptprofils und 2-Sekunden-GOPs.
-	+ **Wiedergabe über HTML5 (IE/Chrome/Safari)**. Diese Voreinstellung erzeugt ein Smooth Streaming-Medienobjekt mit den folgenden Eigenschaften: AAC-Stereo-Audio mit 44,1 kHz und 16 Bits/Sample, codiert mit konstanter Bitrate von 128 Kbit/s und 720p-Video codiert mit konstanter Bitrate von 4500 Kbit/s mithilfe des H.264-Hauptprofils und 2-Sekunden-GOPs.
-	+ **Wiedergabe auf iOS-Geräten und PC/Mac**. Diese Voreinstellung erzeugt eine Ressource mit den gleichen Eigenschaften wie die Smooth Streaming-Ressource (Beschreibung siehe oben), jedoch in einem Format, das zur Übermittlung von Apple HLS-Streams auf iOS-Geräten verwendet werden kann. 
+
+Die **anderen** Konfigurationen werden nachfolgend beschrieben:
+
++ **Codieren mit PlayReady-Inhaltsschutz**. Diese Voreinstellung produziert ein Medienobjekt, das mit dem PlayReady-Inhaltsschutz codiert ist.
+
+
+Standardmäßig wird der Media Services PlayReady-Lizenzierungsdienst verwendet. Verwenden Sie REST oder die Media Services .NET SDK-APIs, um andere Dienste zu verwenden, von denen Clients eine Lizenz zum Abspielen der mit PlayReady verschlüsselten Inhalte abrufen können. Weitere Informationen finden Sie unter [Inhaltsschutz mit statischer Verschlüsselung](). Setzen Sie außerdem die **licenseAcquisitionUrl**-Eigenschaft in der Media Encryptor-Voreinstellung. Alternativ können Sie dynamische Verschlüsselung verwenden und die **PlayReadyLicenseAcquisitionUrl**-Eigenschaft setzen. Lesen Sie dazu [Verwenden der dynamischen PlayReady-Verschlüsselung und des Lizenzierungsdienstes](http://go.microsoft.com/fwlink/?LinkId=507720). + **Wiedergabe auf PC/Mac (über Flash/Silverlight)**. Diese Voreinstellung erzeugt ein Smooth Streaming-Medienobjekt mit den folgenden Eigenschaften: AAC-Stereo-Audio mit 44,1 kHz und 16 Bits/Sample, codiert mit konstanter Bitrate (96 Kbit/s) und 720p-Video codiert mit 6 konstanten Bitraten von 3400 Kbit/s bis 400 Kbit/s mithilfe des H.264-Hauptprofils und 2-Sekunden-GOPs. + **Wiedergabe über HTML5 (IE/Chrome/Safari)**. Diese Voreinstellung erzeugt eine einzelne MP4-Datei mit den folgenden Eigenschaften: AAC-Stereo-Audio mit 44,1 kHz und 16 Bits/Sample, codiert mit konstanter Bitrate von 128 Kbit/s und 720p-Video codiert mit konstanter Bitrate von 4.500 Kbit/s mithilfe des H.264-Hauptprofils und 2-Sekunden-GOPs. + **Wiedergabe auf iOS-Geräten und PC/Mac**. Diese Voreinstellung erzeugt eine Ressource mit den gleichen Eigenschaften wie die Smooth Streaming-Ressource (Beschreibung siehe oben), jedoch in einem Format, das zur Übermittlung von Apple HLS-Streams auf iOS-Geräten verwendet werden kann.
 
 5. Anschließend geben Sie den gewünschten Anzeigenamen für den Inhalt ein oder übernehmen den Standardnamen. Klicken Sie anschließend auf das Häkchen, um den Codiervorgang zu starten. Den Fortschritt des Vorgangs können Sie unten im Portal verfolgen.
 6. Klicken Sie auf "OK".
 
-	Nach Abschluss der Codierung enthält die Inhaltsseite die codierte Datei.
+Nach Abschluss der Codierung enthält die Inhaltsseite die codierte Datei.
 
-	Um den Fortschritt des Codierungsauftrags anzuzeigen, wechseln Sie zur Seite **AUFTRÄGE**.
+Um den Fortschritt des Codierungsauftrags anzuzeigen, wechseln Sie zur Seite **AUFTRÄGE**.
 
-	Wenn der Wert für die Dateigröße nach dem Codieren nicht aktualisiert wird, drücken Sie die Schaltfläche **Metadaten synchronisieren**. Damit wird die Größe der ausgegebenen Medienobjektdatei mit der tatsächlichen Dateigröße im Speicher synchronisiert, und der Wert auf der Seite "Inhalt" wird aktualisiert.
+Wenn der Wert für die Dateigröße nach dem Codieren nicht aktualisiert wird, drücken Sie die Schaltfläche **Metadaten synchronisieren**. Damit wird die Größe der ausgegebenen Medienobjektdatei mit der tatsächlichen Dateigröße im Speicher synchronisiert, und der Wert auf der Seite "Inhalt" wird aktualisiert.
 
 ##<a id="encrypt"></a>Verschlüsseln von Inhalten
 
@@ -159,7 +156,7 @@ Siehe auch:
 
 Um Ihren Benutzern eine URL für das Streaming bzw. Herunterladen des Inhalts angeben zu können, müssen Sie zunächst das Medienobjekt "veröffentlichen", indem Sie einen Locator erstellen. Locator ermöglichen den Zugriff auf Dateien im Medienobjekt. Media Services unterstützt zwei Locator-Typen: OnDemandOrigin-Locator zum Streamen von Medien (z. B. MPEG DASH, HLS oder Smooth Streaming) und Access Signature (SAS)-Locator zum Herunterladen von Mediendateien.
 
-Wenn Sie Ihre Medienobjekte über das Azure-Verwaltungsportal veröffentlichen, werden die Locators für Sie erstellt und eine OnDemandOrigin-basierte URL (wenn Ihr Medienobjekt eine ISM-Datei enthält) oder eine SAS-URL bereitgestellt.
+Wenn Sie Ihre Medienobjekte über das klassische Azure-Verwaltungsportal veröffentlichen, werden die Locators für Sie erstellt und eine OnDemandOrigin-basierte URL (wenn Ihr Medienobjekt eine ISM-Datei enthält) oder eine SAS-URL bereitgestellt.
 
 Eine SAS-URL weist das folgende Format auf:
 
@@ -196,7 +193,7 @@ So veröffentlichen Sie ein Medienobjekt über das Portal:
 
 ## Wiedergeben von Inhalten im Portal
 
-Im **Azure-Verwaltungsportal** wird ein Inhaltsplayer bereitgestellt, mit dem Sie Ihre Videos testen können.
+Im **klassischen Azure-Portal** wird ein Inhaltsplayer bereitgestellt, mit dem Sie Ihre Videos testen können.
 
 Klicken Sie auf das gewünschte Video und dann auf die Schaltfläche **Wiedergeben** unten im Portal.
  
@@ -231,4 +228,4 @@ Folgende Überlegungen sollten berücksichtigt werden:
 [encrypt]: ./media/media-services-manage-content/media-services-encrypt-content.png
 [AMSPlayer]: ./media/media-services-manage-content/media-services-portal-player.png
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

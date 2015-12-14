@@ -40,7 +40,7 @@ Für dieses Lernprogramm wird ein Apache Tomcat-Anwendungsserver auf einem virtu
 
 ## So erstellen Sie einen virtuellen Computer
 
-1. Melden Sie sich beim [Azure-Portal](https://manage.windowsazure.com) an.
+1. Melden Sie sich beim [klassischen Azure-Portal](https://manage.windowsazure.com) an.
 2. Klicken Sie auf **Neu**, auf **Compute** auf **Virtueller Computer** und dann auf **Aus Galerie**.
 3. Wählen Sie im Dialogfeld **Virtual machine image select** die Option **JDK 7 Windows Server 2012** aus. Beachten Sie, dass **JDK 6 Windows Server 2012** verfügbar ist, wenn Ihre Legacyanwendungen nicht in JDK 7 ausgeführt werden können.
 4. Klicken Sie auf **Weiter**.
@@ -63,7 +63,7 @@ Für dieses Lernprogramm wird ein Apache Tomcat-Anwendungsserver auf einem virtu
 
 ## So melden Sie sich von einem Remotestandort aus bei Ihrem virtuellen Computer an
 
-1. Melden Sie sich beim [Azure-Portal](https://manage.windowsazure.com) an.
+1. Melden Sie sich beim [klassischen Azure-Portal](https://manage.windowsazure.com) an.
 2. Klicken Sie auf **Virtuelle Computer**.
 3. Klicken Sie auf den Namen des virtuellen Computers, an dem Sie sich anmelden möchten.
 4. Nachdem der virtuelle Computer gestartet wurde werden unten auf der Seite über ein Popupmenü Verbindungen zugelassen.
@@ -89,7 +89,7 @@ Wenn Sie im Dialogfeld **Completing the Apache Tomcat Setup Wizard** nicht angeg
 Um von externen Computern aus festzustellen, ob Tomcat ausgeführt wird, müssen Sie einen Endpunkt erstellen und einen Port öffnen.
 
 ## So erstellen Sie einen Endpunkt für den virtuellen Computer
-1. Melden Sie sich beim [Azure-Portal](https://manage.windowsazure.com) an.
+1. Melden Sie sich beim [klassischen Azure-Portal](https://manage.windowsazure.com) an.
 2. Klicken Sie auf **Virtuelle Computer**.
 3. Klicken Sie auf den Namen des virtuellen Computers, auf dem der Java-Anwendungsserver ausgeführt wird.
 4. Klicken Sie auf **Endpunkte**.
@@ -146,4 +146,4 @@ Weitere Informationen zu anderen Diensten wie beispielsweise Azure Storage, Serv
 [NewRuleName]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleName.png
 [NewRuleProfile]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleProfile.png
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

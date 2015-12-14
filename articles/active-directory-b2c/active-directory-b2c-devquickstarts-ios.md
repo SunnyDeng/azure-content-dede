@@ -615,4 +615,4 @@ Sie können nun mit den B2C-Themen für fortgeschrittenere Benutzer fortfahren. 
 
 [Anpassen der Benutzeroberfläche einer B2C-App >>]()
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

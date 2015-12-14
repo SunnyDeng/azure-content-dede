@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/02/2015" 
+	ms.date="11/25/2015" 
 	ms.author="awills"/>
 
 # Trennen von Application Insights-Ressourcen für Entwicklung, Test und Produktion
@@ -28,7 +28,7 @@ Die von Ihrer Anwendung empfangenen Daten werden von Application Insights in ein
 
 Fügen Sie unter [portal.azure.com](https://portal.azure.com) eine neue Application Insights-Ressource hinzu:
 
-![Klicken Sie auf "Neu > Application Insights"](./media/app-insights-create-new-resource/01-new.png)
+![Klicken Sie auf "Neu > Application Insights"](./media/app-insights-separate-resources/01-new.png)
 
 
 * **Anwendungstyp** bestimmt den Inhalt des Blatts "Übersicht" und die im [Metrik-Explorer][metrics] verfügbaren Eigenschaften. Wenn Ihr App-Typ nicht angezeigt wird, wählen Sie einen der Webtypen für Webseiten und einen der Telefontypen für andere Geräte aus.
@@ -46,7 +46,7 @@ Das Erstellen der Ressource dauert einige Sekunden. Wenn es abgeschlossen ist, s
 
 Der Instrumentationsschlüssel identifiziert die Ressource, die Sie erstellt haben.
 
-![Klicken Sie auf "Essentials", klicken Sie auf "Instrumentationsschlüssel", STRG+C](./media/app-insights-create-new-resource/02-props.png)
+![Klicken Sie auf "Essentials", klicken Sie auf "Instrumentationsschlüssel", STRG+C](./media/app-insights-separate-resources/02-props.png)
 
 Sie benötigen die Instrumentationsschlüssel aller Ressourcen, an die Ihre App Daten sendet.
 
@@ -98,4 +98,4 @@ Der iKey wird auch in Webseiten Ihrer App in dem [Skript verwendet, das Sie auf 
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

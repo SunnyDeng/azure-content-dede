@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration" 
-   ms.date="08/23/2015"
+   ms.date="11/30/2015"
    ms.author="rajram"/>
 
 # Erste Schritte mit der BizTalk-Handelspartnerverwaltung und das Hinzufügen zur Logik-App
@@ -39,4 +39,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 <!--References-->
 [1]: app-service-logic-create-a-trading-partner-agreement.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

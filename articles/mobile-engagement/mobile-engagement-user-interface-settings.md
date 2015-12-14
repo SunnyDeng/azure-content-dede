@@ -13,147 +13,98 @@
    ms.topic="article"
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="mobile" 
-   ms.date="08/10/2015"
+   ms.date="11/29/2015"
    ms.author="piyushjo"/>
 
 # Verwaltung der globalen Einstellungen Ihrer Anwendung
-Die verfügbaren Optionen im Menü "Einstellungen" für eine Anwendung variieren abhängig von der Plattform der Anwendung und den Berechtigungen, die Sie der Anwendung erteilt haben. Dazu zählen: Details, Projekte, Systemeigener Push, Pushgeschwindigkeit, SDK, Nachverfolgung, App-Info, Kommerzieller Druck und Berechtigungen. Nur die Menüoption "App-Info" im Abschnitt "Einstellungen" der Benutzeroberfläche enthält Elemente, die mit dem Feature "Tag" der Device-API verwaltet werden können. "Glossar" in "Konzepte" enthält die Definitionen der Begriffe und Abkürzungen, wie z. B. die folgenden: APNS, GCM, IDFA, API, SDK, API-Schlüssel, SDK-Schlüssel, Anwendungs-ID (App-ID), AppStore-ID, Tagplan, Benutzer-ID, Geräte-ID, App-Delegat, Stapelüberwachung und Deep Linking.
 
-### Weitere Informationen
-- [API-Dokumentation - Geräte-API][Link 4], [Konzepte - Glossar][Link 6], [Handbuch zur Problembehandlung - Dienst][Link 24]
+Die verfügbaren Optionen im Menü **Einstellungen** für eine Anwendung variieren abhängig von der Plattform der Anwendung und den Berechtigungen, die Sie der Anwendung erteilt haben. Dazu zählen: Details, Projekte, Systemeigener Push, Pushgeschwindigkeit, Tag (App-Info) und Kommerzieller Druck. Die Menüoption „Tag“ (App-Info) im Abschnitt „Einstellungen“ kann von der Anwendung (mithilfe des SDK) oder von Ihrem Back-End (mithilfe der Device-API) verwaltet werden.
 
-  ![settings1][46]
+
+>[AZURE.NOTE]Viele Abschnitte der Benutzeroberfläche des **Mobile Engagement**-Portals enthalten die Schaltfläche **HILFE ANZEIGEN**. Drücken Sie diese Schaltfläche, um weitere Kontextinformationen zu einem bestimmten Bereich zu erhalten.
 
 ## Details
-Ermöglicht Ihnen, den Namen und die Beschreibung Ihrer Anwendung zu ändern sowie deren Besitzer und Ihre Rollenberechtigungen anzuzeigen. Analysekonfiguration: Ermöglicht das Anzeigen oder Ändern des Anfangstags der Woche und des Bindungszeitraums in Tagen.
+
+Ermöglicht Ihnen, den Namen und die Beschreibung Ihrer Anwendung zu ändern sowie deren Besitzer und Ihre Rollenberechtigungen anzuzeigen.
+
+Analysekonfiguration: Ermöglicht das Anzeigen oder Ändern des Anfangstags der Woche und des Bindungszeitraums in Tagen.
  
-  ![settings2][47]
+  ![settings1][46]
  
 ## Projekte
-Ermöglicht Ihnen die Auswahl aller Projekte, in denen die Anwendung angezeigt werden soll. Sie können auch ein Projekt suchen und den Namen, die Beschreibung, den Besitzer und Ihre Rollenberechtigungen für Projekte anzeigen, zu denen die Anwendung gehört.
 
-### Weitere Informationen
--    [Dokumentation zur Benutzeroberfläche – Startseite][Link 13]
+Ermöglicht Ihnen die Auswahl aller Projekte, in denen die Anwendung angezeigt werden soll.
+
+Sie können auch ein Projekt suchen und den Namen, die Beschreibung, den Besitzer und Ihre Rollenberechtigungen für Projekte anzeigen, zu denen die Anwendung gehört.
+
+Weitere Informationen finden Sie unter [Dokumentation zur Benutzeroberfläche – Startseite][Link 13].
  
   ![settings3][48]
 
 ## Systemeigener Push
-Ermöglicht das Registrieren eines neuen Zertifikats oder Löschen eines vorhandenen Zertifikats für die Verwendung mit systemeigenem Push. "Systemeigener Push" ermöglicht Azure Mobile Engagement Pushübertragungen an Ihre Anwendung zu jeder Zeit, selbst wenn sie nicht ausgeführt wird. Nach dem Angeben von Anmeldeinformationen oder Zertifikaten für mindestens einen systemeigenen Pushdienst können Sie beim Erstellen von Reach-Kampagnen "Jederzeit" auswählen und auch den Parameter "Notifier" in der PUSH-API verwenden.
 
-### Weitere Informationen
-- [API-Dokumentation - Reach-API][Link 4], [API-Dokumentation - Push-API][Link 4], [Dokumentation zur Benutzeroberfläche - Reach - Neue Pushkampagne][Link 27]
+Ermöglicht das Registrieren eines neuen Zertifikats oder Löschen eines vorhandenen Zertifikats für die Verwendung mit systemeigenem Push. "Systemeigener Push" ermöglicht Azure Mobile Engagement Pushübertragungen an Ihre Anwendung zu jeder Zeit, selbst wenn sie nicht ausgeführt wird.
+
+Nach dem Angeben von Anmeldeinformationen oder Zertifikaten für mindestens einen systemeigenen Pushdienst können Sie beim Erstellen von Reach-Kampagnen "Jederzeit" auswählen und auch den Parameter "Notifier" in der PUSH-API verwenden.
+
+
 
 ### Apple Push Notification Service (APNS)
+
 Zum Aktivieren des systemeigenen Pushs mithilfe von Apple Push Notification Service müssen Sie Ihr Zertifikat registrieren. Sie müssen den Typ des Zertifikats entweder als DEV (Entwicklung) oder PROD (Produktion) angeben. Anschließend müssen Sie Ihr Zertifikat und Kennwort hochladen.
 
-### Weitere Informationen
-- [SDK-Dokumentation - iOS - Vorbereiten der Anwendung für Apple-Pushbenachrichtigungen][Link 5]
+Weitere Informationen finden Sie unter [SDK-Dokumentation – iOS – Vorbereiten der Anwendung für Apple-Pushbenachrichtigungen][Link 5]
  
 ![settings4][49]
  
 ### Windows-Pushbenachrichtigungsdienst (Windows Push Notification Service, WPNS)
+
 Um systemeigenen Push mit dem Windows-Pushbenachrichtigungsdienst zu aktivieren, müssen Sie die Anmeldeinformationen Ihrer Anwendung bereitstellen. Sie benötigen die Paketsicherheits-ID (SID) und den geheimen Schlüssel.
  
 ![settings5][50]
  
 ### Google Cloud Messaging (GCM) für Android
+
 Um systemeigenen Push über GCM zu aktivieren, müssen Sie den Anweisungen von Google folgen. Dann müssen einen "Server::Simple"-API-Schlüssel einfügen, der ohne IP-Einschränkungen konfiguriert ist. Erfordert Integration mit dem SDK für Android ab Version 1.12.0.
 
-### Weitere Informationen
-- [SDK-Dokumentation - Android - Integrieren von GCM][Link 5], [Google Developer - Handbuch für GCM](http://developer.android.com/guide/google/gcm/gs.html), [Google Developer - GCM-Dokumentation](http://developer.android.com/google/gcm/index.html)
+Weitere Informationen finden Sie unter:
+
+- [SDK-Dokumentation – Android – Integration von GCM][Link 5]
+- [Google Developer-Handbuch für GCM](http://developer.android.com/guide/google/gcm/gs.html)
  
 ### Amazon Device Messaging (ADM) für Android
+
 Zum Aktivieren von systemeigenem Push mit ADM müssen Sie Amazon-<OAuth credentials> angeben, bestehend aus einer Client-ID und einem Clientschlüssel (erfordert die Integration mit dem SDK für Android ab Version 2.1.0).
 
-### Weitere Informationen
-- [SDK-Dokumentation - Android - Integrieren von ADM][Link 5], [Amazon Developer - ADM-Dokumentation](https://developer.amazon.com/sdk/adm/credentials.html#Getting)
+Weitere Informationen finden Sie unter:
 
+- [SDK-Dokumentation – Android – Integration von ADM][Link 5]
+- [Amazon Developer-ADM-Dokumentation](https://developer.amazon.com/sdk/adm/credentials.html#Getting)
+ 
 ![settings6][51]
 
 ## Pushgeschwindigkeit
-Zeigt die aktuelle Pushgeschwindigkeit Ihrer Anwendung und ermöglicht Ihnen, die Pushgeschwindigkeit der Anwendung festzulegen. Die Pushgeschwindigkeit definiert die maximale Anzahl von Pushvorgängen pro Sekunde, die das Reach-Modul ausführt. Dies kann in Situationen hilfreich sein, in denen Ihre eigenen Server nach Aktivierung einer Kampagne durch zu viele Anforderungen pro Sekunde überlastet werden.
+
+Zeigt die aktuelle Pushgeschwindigkeit Ihrer Anwendung und ermöglicht Ihnen, die Pushgeschwindigkeit der Anwendung festzulegen.
  
   ![settings7][52]
 
-## Nachverfolgung
-Das Feature für die Nachverfolgung dient zum Verfolgen der Ursprünge der Installationen Ihrer iOS- und Android-Anwendungen. Es informiert Sie, wo die Benutzer Ihre Anwendung heruntergeladen haben (d. h. aus welchem Store für Apps) und welche Quelle sie hier her gebracht hat (d. h. Anzeigenkampagne, Blog, Website, E-Mail, SMS usw.). Das Feature zur Nachverfolgung von Azure Mobile Engagement muss als separater Schritt aus dem SDK in Ihre Anwendung integriert werden.
+## Tag (App-Info)
 
-### Weitere Informationen
-- [SDK-Dokumentation - Android - Integrieren][Link 5], [SDK-Dokumentation - iOS - Integrieren][Link 5]
- 
-### Stores
-Ermöglicht die Registrierung aller Stores, aus denen die Anwendung heruntergeladen werden kann, basierend auf deren Namen und zugehörigen Download-URLs. Dadurch können Sie Speicherorte zum Hosten von Nachverfolgungs-URLs erstellen. Stores können auf dieser Seite erstellt oder gelöscht werden. Durch Klicken auf das Symbol zum Erstellen einer neuen Nachverfolgungs-URL gelangen Sie zur weiter unten erläuterten Seite zu Nachverfolgung-URLs. Es gibt mehrere Möglichkeiten zu verfolgen, wo Ihre Benutzer Ihre App herunterladen:
-
--    Verwenden eines Adservers eines Drittanbieters (Azure Mobile Engagement unterstützt derzeit [SmartAd](http://smartadserver.fr/) und [Surikate](http://www.surikate.com/)).
--    Verwenden eines Zuweisungsdiensts eines Drittanbieters (Azure Mobile Engagement unterstützt derzeit [Mobile App Tracking](http://www.mobileapptracking.com/); [Trademob](http://www.trademob.com/) wird in Kürze voraussichtlich ebenfalls unterstützt.)
--    Verwenden eines Install Referrers eines Drittanbieters (Azure Mobile Engagement unterstützt derzeit [Google Play Install Referrer](https://developers.google.com/app-conversion-tracking/docs/third-party-trackers/) - Nur Android).
--    Verwenden manuell erstellter Berichte.
- 
-  ![settings8][53]
- 
-### Anzeigenkampagnen
-Ermöglichen Ihnen die Erstellung neuer Anzeigenkampagnen bestehend aus einem Adservernamen, einer Kampagne-ID und der Quelle, aus der die Anwendung heruntergeladen werden kann.
- 
-  ![settings9][54]
- 
-### Nachverfolgungs-URLs
-Ermöglicht das Erstellen von Nachverfolgungs-URLs zum Verwenden als Ziel-URLs in Ihren Quellen (Anzeigenkampagne, Blog, Website, E-Mail, SMS usw.), die Benutzer zu den Stores umleiten können, in denen sie Ihre Anwendung herunterladen können. Ermöglicht das Anzeigen aller Nachverfolgungs-URLs, die Sie bereits erstellt haben. Eine Nachverfolgungs-URL kann als Aktions-URL einer Anzeigenkampagne oder Reach-Ankündigung verwendet werden, um Ihre Benutzer zum Herunterladen einer Ihrer Apps in einer anderen App einzuladen. Eine Nachverfolgungs-URL ermöglicht das Umleiten zur Download-URL, die dem ausgewählten Store zugeordnet ist. Zugleich ermöglicht sie Ihrem Nachverfolgungssystem das Protokollieren des Stores, aus dem die Anwendung zum Installationszeitpunkt heruntergeladen wird. Wenn eine Quelle angegeben ist, zeichnet unser Nachverfolgungssystem auch diese auf, sodass Sie zwischen den einzelnen Anzeigenkampagnen unterscheiden können, die Sie für Ihre Anwendung erstellen.
-
-Das Erstellen einer neuen Nachverfolgungs-URL erfordert das Angeben eines Stores und der Quelle als entweder "Keine", "Benutzerdefiniert" oder "Adserver".
-
--    Die Quelle "Keine" erzeugt eine Standardnachverfolgungs-URL.
--    Die Quelle "Benutzerdefiniert" ermöglicht Ihnen das Angeben einer URL auf einem externen Server zum Herunterladen der Anwendung.
--    Die Quelle "Adserver" erzeugt eine Standardnachverfolgungs-URL in einem Adserver mit Standardnamen.
- 
-### Weitere Informationen
-- [Dokumentation zur Benutzeroberfläche – Reichweite – Neue Pushkampagne][Link 27] 
- 
-### Erstellen einer Nachverfolgungs-URL
-Sie können auch eine Nachverfolgungs-URL erstellen, die Benutzern das Herunterladen einer Ihrer Anwendungen aus dem Inhaltsabschnitt einer neuen Reach-Kampagne ermöglicht.
-
-### Weitere Informationen
-- [Dokumentation zur Benutzeroberfläche – Reichweite – Pushübertragung von Inhalten][Link 29]
-
-![settings10][55]
-
-## App-Info
-Ermöglicht das Registrieren zusätzlicher Informationen, die den Benutzern Ihrer Anwendung zugeordnet sind. Diese Informationen können über Ihre Anwendung (mithilfe des SDK) oder Ihr Back-Ends (mithilfe der Device-API) eingefügt werden.
-
-### Weitere Informationen
-- [API-Dokumentation - Device-API][Link 4]
-
-Durch Registrieren von Anwendungsinformationstags können Sie Ihre Reach-Kampagnen segmentieren, indem Sie darauf basierend bestimmte Reach-Zielgruppenkriterien erstellen. Sie können Namen und Typ der vorhandenen App-Infotags anzeigen oder neue App-Infotags basierend auf dem Namen und Typ (String, Date, Integer oder Boolean) hinzufügen.
-
-### Weitere Informationen
-- [Dokumentation zur Benutzeroberfläche – Reichweite – Neue Pushkampagne][Link 27]
- 
 ![settings11][56]
- 
+  
 ## Kommerzieller Druck
-Pushkontingente ermöglichen das Definieren, wie häufig ein Pushvorgang an ein Gerät in einem bestimmten Zeitraum maximal erfolgen darf. Pushkontingente werden nur von Reach-Kampagnen verwendet, bei denen die Option "Pushkontingente anwenden" aktiviert ist. Pushkontingente können entweder nach Segment oder standardmäßig verwaltet werden. Kontingente können so festgelegt werden, dass eine maximale Anzahl von Pushvorgängen nur über einen gleitenden Zeitraum der letzten Stunde, des letzten Tags, der letzten Woche oder des letzten Monats gesendet werden.
 
-### Weitere Informationen
-- [Dokumentation zur Benutzeroberfläche - Reach - Neue Pushkampagne][Link 27], [Dokumentation zur Benutzeroberfläche - Segmente][Link 18]
-
-### Kontingente:
-- Standardmäßiges Kontingent: Dieses Kontingent gilt für Benutzer, die mit keinem Segment im nachstehenden Abschnitt „Kontingent nach Segment“ übereinstimmen. Standardmäßig ist kein Kontingent festgelegt.
-- Kontingent nach Segment: Wenn ein Kontingent für eine Gruppe von Benutzern gelten soll, müssen Sie ein Segment erstellen, um die Benutzer zu bestimmen, für die ein Kontingent gelten soll. Es kann sich um ein Segment vom Typ „Aktive Benutzer“, das anhand der Anzahl der gestarteten Sitzungen definiert wird, oder einen anderen für Sie interessanten Aspekt zum Definieren der Benutzergruppe handeln. Wenn ein Gerät mit mehreren Segmenten mit einem definierten Kontingent übereinstimmt, gilt nur das Kontingent mit der höchsten maximalen Anzahl von Pushvorgängen pro Stunde.
 
 ![settings12][57]
+
+
+## Weitere Informationen
+
+- [Konzepte][Link 6]
+- [Handbuch zur Problembehandlung – Dienst][Link 24]
+
  
-## Berechtigungen
-Ermöglicht das Suchen und Anzeigen von E-Mail-Adresse, Name, Unternehmen und Berechtigungsstufe von Benutzern Ihrer Anwendung. Das Konzept von Berechtigungen ist eine Ergänzung der Projektrolle. Es ermöglicht Ihnen das Zuordnen einer Gruppe von Berechtigungen zu einem bestimmten Benutzer, der Zugriff auf Ihre Anwendung hat.
-
-### Derzeit gibt es die folgenden Berechtigungsstufen:
--    "Reach-Kampagnenersteller" (ein Benutzer, der Reach-Kampagnen erstellen darf) 
--    "Reach-Kampagnenverwalter" (ein Benutzer, der Reach-Kampagnen erstellen, aktivieren, anhalten, beenden und löschen darf)
-
-> Hinweis: Wenn ein Benutzer eine Projektrolle inne hat und über eine Gruppe von Berechtigungen für eine bestimmte Anwendung verfügt, wird das weniger restriktive Konzept verwendet. Daher wird empfohlen, dass bei Verwendung von Berechtigungen die Projektrolle Ihrer Benutzer auf "Anzeigender Benutzer" (die restriktivste Rolle) festgelegt wird und weitere weniger restriktive Berechtigungen auf Anwendungsebene hinzugefügt werden.
-
-### Weitere Informationen
-- [Dokumentation zur Benutzeroberfläche - Startseite][Link 13]  
- 
-![settings13][58]
 
 <!--Image references-->
 [1]: ./media/mobile-engagement-user-interface-navigation/navigation1.png
@@ -251,4 +202,4 @@ Ermöglicht das Suchen und Anzeigen von E-Mail-Adresse, Name, Unternehmen und Be
 [Link 33]: ../mobile-engagement-how-tos-web-view.md
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

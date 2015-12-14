@@ -45,7 +45,7 @@ Sie benötigen ein Microsoft Azure-Konto mit einem gültigen Abonnement, das in 
 
 ### Affinitätsgruppe
 
-Eine Affinitätsgruppe wird für die Lösung erstellt, indem Sie sich beim Azure-Portal anmelden, zu „Einstellungen“ scrollen und eine neue Affinitätsgruppe erstellen. Später zugeordnete Ressourcen werden zu dieser Affinitätsgruppe zugewiesen.
+Eine Affinitätsgruppe wird für die Lösung erstellt, indem Sie sich beim klassischen Azure-Portal anmelden, nach unten zu „Einstellungen“ scrollen und eine neue Affinitätsgruppe erstellen. Später zugeordnete Ressourcen werden zu dieser Affinitätsgruppe zugewiesen.
 
 ### Netzwerke
 
@@ -340,4 +340,4 @@ Es gelten die folgenden Einschränkungen:
 - Die MySQL-Feinabstimmung ist erforderlich, um sicherzustellen, dass der Schreibvorgang in einer vernünftigen Geschwindigkeit erfolgt und Zwischenspeicherungen möglichst häufig auf den Datenträger übertragen werden, um Speicherverluste zu vermeiden.
 - Die Schreibleistung hängt vom Interconnect des virtuellen Computers im virtuellen Switch ab, da es sich hierbei um den Mechanismus handelt, der durch DRBD zum Replizieren des Geräts verwendet wird.
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

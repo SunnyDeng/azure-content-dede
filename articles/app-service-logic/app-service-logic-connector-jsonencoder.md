@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="08/23/2015"
+   ms.date="11/25/2015"
    ms.author="rajram"/>
 
 # Erste Schritte mit dem BizTalk JSON Encoder und das Hinzufügen zur Logik-App 
@@ -68,4 +68,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 <!--Links -->
 [Erstellen einer Logik-App]: app-service-logic-create-a-logic-app.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

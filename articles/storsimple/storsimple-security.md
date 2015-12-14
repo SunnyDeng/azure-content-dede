@@ -36,9 +36,9 @@ In den folgenden Abschnitten werden die in der StorSimple-Sicherheitsfunktionen 
 
 ## Schutz des StorSimple-Manager-Diensts
 
-Der StorSimple-Manager-Dienst ist ein in Microsoft Azure gehosteter Verwaltungsdienst, der zum Verwalten aller StorSimple-Geräte verwendet wird, die Ihre Organisation beschafft hat. Sie können auf den StorSimple Manager-Dienst zugreifen, indem Sie sich am Azure-Portal mithilfe eines Webbrowsers unter Verwendung Ihrer Organisationsanmeldeinformationen anmelden.
+Der StorSimple-Manager-Dienst ist ein in Microsoft Azure gehosteter Verwaltungsdienst, der zum Verwalten aller StorSimple-Geräte verwendet wird, die Ihre Organisation beschafft hat. Sie können auf den StorSimple Manager-Dienst zugreifen, indem Sie sich beim klassischen Azure-Portal mithilfe eines Webbrowsers unter Verwendung Ihrer Organisationsanmeldeinformationen anmelden.
 
-Für den Zugriff auf den StorSimple-Manager-Dienst ist es erforderlich, dass Ihre Organisation über ein Azure-Abonnement verfügt, das StorSimple einschließt. Ihr Abonnement bestimmt die Funktionen, auf die Sie im Azure-Portal zugreifen können. Wenn Ihre Organisation kein Azure-Abonnement besitzt, und Sie weitere Informationen dazu erhalten möchten, lesen Sie [Als Unternehmen für Azure registrieren](../sign-up-organization.md).
+Für den Zugriff auf den StorSimple-Manager-Dienst ist es erforderlich, dass Ihre Organisation über ein Azure-Abonnement verfügt, das StorSimple einschließt. Ihr Abonnement bestimmt die Funktionen, auf die Sie im klassischen Azure-Portal zugreifen können. Wenn Ihre Organisation kein Azure-Abonnement besitzt, und Sie weitere Informationen dazu erhalten möchten, lesen Sie [Als Unternehmen für Azure registrieren](../sign-up-organization.md).
 
 Da der StorSimple-Manager-Dienst in Azure gehostet wird, ist er durch die Azure-Sicherheitsfeatures geschützt. Weitere Informationen zu den Sicherheitsfeatures von Microsoft Azure finden Sie im [Microsoft Azure Trust Center](http://azure.microsoft.com/support/trust-center/security/).
 
@@ -46,7 +46,7 @@ Da der StorSimple-Manager-Dienst in Azure gehostet wird, ist er durch die Azure-
 
 Das StorSimple-Gerät ist ein lokales Hybridspeicherarray mit Solid-State-Laufwerken (SSDs) und Festplattenlaufwerken (HDDs) sowie redundanten Controllern und automatischen Failoverfunktionen. Die Controller verwalten die Speicherstaffelung, wobei derzeit verwendete d. h. aktiv genutzte) Daten in lokalem Speicher (auf dem StorSimple-Gerät oder lokalen Server) abgelegt werden, während weniger häufig verwendete Daten in die Cloud verschoben werden.
 
-Nur autorisierte StorSimple-Geräte dürfen dem StorSimple-Manager-Dienst hinzugefügt werden, den Sie in Ihrem Azure-Abonnement erstellt haben. Um ein Gerät zu autorisieren, müssen Sie es beim StorSimple-Manager-Dienst registrieren, indem Sie den Dienstregistrierungsschlüssel bereitstellen. Der Dienstregistrierungsschlüssel ist ein im Azure-Portal generierter zufälliger 128-Bit-Schlüssel.
+Nur autorisierte StorSimple-Geräte dürfen dem StorSimple-Manager-Dienst hinzugefügt werden, den Sie in Ihrem Azure-Abonnement erstellt haben. Um ein Gerät zu autorisieren, müssen Sie es beim StorSimple-Manager-Dienst registrieren, indem Sie den Dienstregistrierungsschlüssel bereitstellen. Der Dienstregistrierungsschlüssel ist ein im klassischen Azure-Portal generierter zufälliger 128-Bit-Schlüssel.
 
 ![Dienstregistrierungsschlüssel](./media/storsimple-security/ServiceRegistrationKey.png)
 
@@ -131,7 +131,7 @@ Wie in anderen Abschnitten erläutert, werden Kennwörter verwendet, um Benutzer
 
 ## Schützen von durch den Dienst geleiteten Daten
 
-Der Hauptzweck des StorSimple-Manager-Diensts ist die Verwaltung und Konfiguration des StorSimple-Geräts. Der StorSimple Manager-Dienst wird in Microsoft Azure ausgeführt. Sie können Gerätekonfigurationsdaten über das Azure-Portal eingeben. Anschließend verwendet Microsoft Azure den StorSimple Manager-Dienst, um die Daten an das Gerät zu senden. StorSimple verwendet ein System aus asymmetrischen Schlüsselpaaren, um sicherzustellen, dass eine Gefährdung des Azure-Diensts nicht zu einer Gefährdung der gespeicherten Daten führt.
+Der Hauptzweck des StorSimple-Manager-Diensts ist die Verwaltung und Konfiguration des StorSimple-Geräts. Der StorSimple Manager-Dienst wird in Microsoft Azure ausgeführt. Sie können Gerätekonfigurationsdaten über das klassische Azure-Portal eingeben. Anschließend verwendet Microsoft Azure den StorSimple Manager-Dienst, um die Daten an das Gerät zu senden. StorSimple verwendet ein System aus asymmetrischen Schlüsselpaaren, um sicherzustellen, dass eine Gefährdung des Azure-Diensts nicht zu einer Gefährdung der gespeicherten Daten führt.
 
 ![Datenverschlüsselung in Aktion](./media/storsimple-security/DataEncryption.png)
 
@@ -183,7 +183,7 @@ Wenn Sie ein Speicherkonto erstellen, generiert Microsoft Azure zwei 512-Bit-Spe
 Es wird empfohlen, diese bewährten Methoden für die Schlüsselrotation zu befolgen:
 
 - Sie sollten die Speicherkontoschlüssel regelmäßig rotieren, um sicherzustellen, dass keine nicht autorisierten Benutzer auf Ihr Speicherkonto zugreifen.
-- Der Azure-Administrator sollte den primären oder sekundären Schlüssel regelmäßig über den Bereich „Storage“ des Azure-Portals neu generieren, um direkt auf das Speicherkonto zuzugreifen.
+- Der Azure-Administrator sollte den primären oder sekundären Schlüssel regelmäßig über den Bereich „Storage“ des klassischen Azure-Portals neu generieren, um direkt auf das Speicherkonto zuzugreifen.
 
 
 ## Schützen von Daten durch Verschlüsselung
@@ -192,8 +192,8 @@ In der folgenden Tabelle werden die Verschlüsselungsalgorithmen beschrieben, di
 
 | Algorithmus | Schlüssellänge | Protokolle/Anwendungen/Kommentare |
 | --------- | ---------- | ------------------------------- |
-| RSA | 2048 | RSA PKCS 1 v1.5 wird vom Azure-Portal verwendet, um Konfigurationsdaten zu verschlüsseln, die an das Gerät gesendet werden. Beispiel: Anmeldeinformationen für Speicherkonten, StorSimple-Gerätekonfiguration und Verschlüsselungsschlüssel für Cloudspeicher. |
-| AES | 256 | AES mit CBC wird zum Verschlüsseln des öffentlichen Teils des Verschlüsselungsschlüssels für Dienstdaten verwendet, bevor dieser vom StorSimple-Gerät zum Azure-Portal gesendet wird. Er wird auch vom StorSimple-Gerät verwendet, um Daten zu verschlüsseln, bevor diese zum Cloud-Speicherkonto gesendet werden. |
+| RSA | 2048 | RSA PKCS 1 v1.5 wird vom klassischen Azure-Portal verwendet, um Konfigurationsdaten zu verschlüsseln, die an das Gerät gesendet werden. Beispiel: Anmeldeinformationen für Speicherkonten, StorSimple-Gerätekonfiguration und Verschlüsselungsschlüssel für Cloudspeicher. |
+| AES | 256 | AES mit CBC wird zum Verschlüsseln des öffentlichen Teils des Verschlüsselungsschlüssels für Dienstdaten verwendet, bevor dieser vom StorSimple-Gerät zum klassischen Azure-Portal gesendet wird. Er wird auch vom StorSimple-Gerät verwendet, um Daten zu verschlüsseln, bevor diese zum Cloud-Speicherkonto gesendet werden. |
 
 
 ## Sicherheit für virtuelle Geräte bei StorSimple
@@ -269,4 +269,4 @@ Die folgenden Fragen und Antworten beziehen sich auf die Sicherheit und Microsof
 [Bereitstellen von StorSimple-Geräten](storsimple-deployment-walkthrough.md).
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

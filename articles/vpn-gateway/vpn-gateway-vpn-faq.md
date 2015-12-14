@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="10/26/2015"
+   ms.date="11/16/2015"
    ms.author="cherylmc" />
 
 # Häufig gestellte Fragen zum VPN-Gateway
@@ -20,12 +20,11 @@
 ## Herstellen einer Verbindung mit virtuellen Netzwerken
 
 ### Kann ich Verbindungen zwischen virtuellen Netzwerken in verschiedenen Azure-Regionen herstellen?
-
 Ja. Es gelten keine regionsbedingten Einschränkungen. Verbindungen können sowohl zwischen virtuellen Netzwerken in der gleichen Region als auch zwischen virtuellen Netzwerken in unterschiedlichen Azure-Regionen hergestellt werden.
 
 ### Kann ich Verbindungen zwischen virtuellen Netzwerken in unterschiedlichen Abonnements herstellen?
-
 Ja.
+
 ### Kann ich eine Verbindung mit mehreren Standorten eines einzelnen virtuellen Netzwerks herstellen?
 
 Verbindungen mit mehreren Standorten können mit Windows PowerShell und den REST-APIs von Azure hergestellt werden. Weitere Informationen finden Sie im Abschnitt [Mehrere Standorte und VNet-zu-VNet-Verbindungen](#multi-site-and-vnet-to-vnet-connectivity).
@@ -42,6 +41,8 @@ Die folgenden standortübergreifende Verbindungen werden unterstützt:
 - [Mehrere Standorte](vpn-gateway-multi-site.md): Hierbei handelt es sich um eine Variante der Standort-zu-Standort-Konfiguration, mit der Sie mehrere lokale Standorte mit einem virtuellen Netzwerk verbinden können.
 
 - [ExpressRoute](../expressroute/expressroute-introduction.md): ExpressRoute ist eine Azure-Direktverbindung mit Ihrem WAN (nicht über das öffentliche Internet). Weitere Informationen finden Sie unter [ExpressRoute – Technische Übersicht](../expressroute/expressroute-introduction.md) sowie unter [ExpressRoute – FAQ](../expressroute/expressroute-faqs.md).
+
+Weitere Informationen zu standortübergreifenden Verbindungen finden Sie unter [Informationen zu sicheren, standortübergreifenden Verbindungen](vpn-gateway-cross-premises-options.md).
 
 ### Was ist der Unterschied zwischen einer Standort-zu-Standort- und einer Punkt-zu-Standort-Verbindung?
 
@@ -97,9 +98,11 @@ Folgende Betriebssysteme werden unterstützt:
 
 - Windows Server 2012
 
+- Windows 10
+
 ### Kann ich für Punkt-zu-Standort-Verbindungen einen beliebigen VPN-Softwareclient mit SSTP-Unterstützung verwenden?
 
-Nein. Nur die oben aufgeführten Windows-Betriebssystemversionen werden unterstützt. Der Windows 10-Client wird derzeit überprüft.
+Nein. Nur die oben aufgeführten Windows-Betriebssystemversionen werden unterstützt.
 
 ### Wie viele VPN-Clientendpunkte kann meine Punkt-zu-Standort-Konfiguration umfassen?
 
@@ -135,11 +138,11 @@ Der genaue Durchsatz der VPN-Tunnel lässt sich nur schwer ermitteln. IPsec und 
 
 ## Gateways
 
-### Was ist ein Gateway mit statischem Routing?
+### Was ist ein richtlinienbasiertes Gateway mit statischem Routing?
 
 Gateways mit statischem Routing werden zur Implementierung richtlinienbasierter VPNs verwendet. Bei richtlinienbasierten VPNs werden Pakete verschlüsselt und durch IPsec-Tunnel geleitet. Grundlage hierfür sind Kombinationen aus Adresspräfixen zwischen Ihrem lokalen Netzwerk dem Azure-VNet. Die Richtlinie (auch Datenverkehrsselektor genannt) wird in der Regel als Zugriffsliste in der VPN-Konfiguration definiert.
 
-### Was ist ein Gateway mit dynamischem Routing?
+### Was ist ein routebasiertes Gateway mit dynamischem Routing?
 
 Gateways mit dynamischem Routing dienen zur Implementierung routingbasierter VPNs. Bei routingbasierten VPNs werden Pakete auf der Grundlage der Routen der IP-Weiterleitungs- oder -Routingtabelle an die entsprechenden VPN-Tunnelschnittstellen weitergeleitet. An den Tunnelschnittstellen werden die Pakete dann ver- bzw. entschlüsselt. Die Richtlinie bzw. der Datenverkehrsselektor für routingbasierte VPNs werden im Any-to-Any-Format (bzw. als Platzhalter) konfiguriert.
 
@@ -167,7 +170,7 @@ Beachten Sie, dass im Gatewaysubnetz keine virtuellen Computer oder Rolleninstan
 
 ### Wie kann ich angeben, welcher Datenverkehr über das VPN-Gateway abgewickelt werden soll?
 
-Wenn Sie das Azure-Portal verwenden, fügen Sie die einzelnen Bereiche, die über das Gateway für Ihr virtuelles Netzwerk gesendet werden sollen, auf der Seite "Netzwerke" unter "Lokale Netzwerke" hinzu.
+Wenn Sie das klassische Azure-Portal verwenden, fügen Sie die einzelnen Bereiche, die über das Gateway für Ihr virtuelles Netzwerk gesendet werden sollen, auf der Seite "Netzwerke" unter "Lokale Netzwerke" hinzu.
 
 ### Kann ich eine erzwungene Tunnelung konfigurieren?
 
@@ -176,6 +179,13 @@ Ja. Weitere Informationen finden Sie unter [Konfigurieren der Tunnelerzwingung](
 ### Kann ich in Azure einen eigenen VPN-Server einrichten und damit eine Verbindung mit meinem lokalen Netzwerk herstellen?
 
 Ja. Sie können in Azure eigene VPN-Gateways oder -Server bereitstellen (entweder über Azure Marketplace oder durch Erstellung eines eigenen VPN-Routers). Sie müssen in Ihrem virtuellen Netzwerk benutzerdefinierte Routen konfigurieren, um sicherzustellen, dass der Datenverkehr ordnungsgemäß zwischen Ihren lokalen Netzwerken und den Subnetzen Ihres virtuellen Netzwerks weitergeleitet wird.
+
+### Warum werden auf meinem VPN-Gateway bestimmte Ports geöffnet?
+
+Sie sind für die Kommunikation mit der Azure-Infrastruktur erforderlich. Sie werden von Azure-Zertifikaten geschützt (gesperrt). Ohne die richtigen Zertifikate werden externe Entitäten, einschließlich der Kunden dieser Gateways, sich nicht auf diese Endpunkte auswirken.
+
+Ein VPN-Gateway ist im Grunde ein mehrfach vernetztes Gerät mit einer NIC, die das private Netzwerk des Kunden nutzt, und einer NIC für das öffentliche Netzwerk. Azure-Infrastrukturentitäten können aus Compliance-Gründen keine privaten Netzwerke von Kunden nutzen, sodass sie öffentliche Endpunkte für die Kommunikation der Infrastruktur nutzen müssen. Die öffentlichen Endpunkte werden in regelmäßigen Abständen mit der Azure-Sicherheitsüberwachung überprüft.
+
 
 ### Weitere Informationen zu Gatewaytypen, Anforderungen und Durchsatz
 
@@ -240,7 +250,7 @@ Ja, diese Möglichkeit wird unterstützt. Weitere Informationen finden Sie unter
 
 ### Wenn sich mein virtueller Computer in einem virtuellen Netzwerk befindet und ich über eine standortübergreifende Verbindung verfüge, wie sollte ich dann die Verbindung mit dem virtuellen Computer herstellen?
 
-Hier haben Sie mehrere Möglichkeiten: Wenn Sie RDP aktiviert und einen Endpunkt erstellt haben, können Sie die Verbindung mit dem virtuellen Computer über die VIP-Adresse herstellen. Geben Sie in diesem Fall die VIP-Adresse und den Port an, mit dem Sie eine Verbindung herstellen möchten. Auf Ihrem virtuellen Computer müssen Sie den Port für den Datenverkehr konfigurieren. In der Regel speichern Sie hierzu die Einstellungen für die RDP-Verbindung mithilfe des Verwaltungsportals auf dem Computer. Die Einstellungen enthalten die erforderlichen Verbindungsinformationen.
+Hier haben Sie mehrere Möglichkeiten: Wenn Sie RDP aktiviert und einen Endpunkt erstellt haben, können Sie die Verbindung mit dem virtuellen Computer über die VIP-Adresse herstellen. Geben Sie in diesem Fall die VIP-Adresse und den Port an, mit dem Sie eine Verbindung herstellen möchten. Auf Ihrem virtuellen Computer müssen Sie den Port für den Datenverkehr konfigurieren. In der Regel speichern Sie hierzu die Einstellungen für die RDP-Verbindung mithilfe des klassischen Azure-Portals auf dem Computer. Die Einstellungen enthalten die erforderlichen Verbindungsinformationen.
 
 Wenn Sie ein virtuelles Netzwerk mit standortübergreifender Verbindung konfiguriert haben, können Sie die Verbindung mit Ihrem virtuellen Computer über die interne DIP-Adresse oder über die private IP-Adresse herstellen. Außerdem kann die Verbindung mit dem virtuellen Computer von einem anderen virtuellen Computer im gleichen virtuellen Netzwerk über die interne DIP-Adresse hergestellt werden. Wenn Sie die Verbindung an einem Standort außerhalb Ihres virtuellen Netzwerks herstellen möchten, kann über die DIP-Adresse keine RDP-Verbindung hergestellt werden. Wen Sie also beispielsweise ein virtuelles Netzwerk mit Punkt-zu-Standort-Verbindung konfiguriert haben und die Verbindung nicht von Ihrem Computer aus herstellen, ist keine DIP-basierte Verbindung mit dem virtuellen Computer möglich.
 
@@ -259,4 +269,4 @@ Weitere Informationen zu VPN-Gateways erhalten Sie auf der Seite [VPN Gateway-Do
 
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

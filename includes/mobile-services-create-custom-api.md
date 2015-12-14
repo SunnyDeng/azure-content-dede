@@ -1,6 +1,6 @@
 
 
-1. Melden Sie sich beim Azure-Verwaltungsportal an, klicken Sie auf **Mobile Services**, und wählen Sie dann Ihren mobilen Dienst aus.
+1. Melden Sie sich beim [klassischen Azure-Portal](https://manage.windowsazure.com/) an, klicken Sie auf **Mobile Services**, und wählen Sie dann Ihren mobilen Dienst aus.
 
 2. Klicken Sie auf die Registerkarte **API** und dann auf **Erstellen**. Das Dialogfeld **Create a new custom API** wird angezeigt.
 
@@ -35,4 +35,4 @@
 <!-- URLs. -->
 [mssql-Objekt]: http://msdn.microsoft.com/library/windowsazure/jj554212.aspx
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

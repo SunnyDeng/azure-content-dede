@@ -44,7 +44,7 @@ Absolvieren Sie zum Einstieg in Mobile Apps das Lernprogramm [Erste Schritte].
 
 Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure App Service].
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](https://tryappservice.azure.com/?appServiceName=mobile) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 <!-- URLs. -->
 [Migrate your Mobile Service to App Service]: app-service-mobile-dotnet-backend-migrating-from-mobile-services.md
@@ -52,9 +52,6 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 [Azure App Service]: ../app-service/app-service-value-prop-what-is.md
 [Erste Schritte]: app-service-mobile-ios-get-started.md
 
-[Management Portal]: https://manage.windowsazure.com/
-[XCode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
-[JavaScript backend version]: ../mobile-services-ios-get-started.md
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

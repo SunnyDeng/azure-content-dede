@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/23/2015" 
+	ms.date="11/30/2015" 
 	ms.author="mandia"/>
 
 # Verbinden eines lokalen Connectors in Azure App Service mithilfe des Hybrid Connection Managers
@@ -133,4 +133,4 @@ Wenn Ihre benutzerdefinierte API einen TCP- oder HTTP-Port verwendet, können Si
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

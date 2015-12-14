@@ -34,7 +34,7 @@ Die vorhandene **TodoItemController**-Klasse wird aktualisiert, sodass die **Pos
 
 0. Wenn Sie das Speicherkonto noch nicht erstellt haben, lesen Sie [So erstellen Sie ein Speicherkonto].
 
-1. Klicken Sie im Verwaltungsportal auf **Speicher**, klicken Sie auf das Speicherkonto, und klicken Sie dann auf **Schlüssel verwalten**.
+1. Klicken Sie im [klassischen Azure-Portal](https://manage.windowsazure.com/) auf **Speicher**, klicken Sie auf das Speicherkonto, und klicken Sie dann auf **Schlüssel verwalten**.
 
 2. Notieren Sie sich **Speicherkontoname** und **Zugriffsschlüssel**.
  
@@ -132,4 +132,4 @@ Als Nächstes aktualisieren Sie die Quickstart-App, um unter Verwendung der beim
 [So erstellen Sie ein Speicherkonto]: ../articles/storage/storage-create-storage-account.md
 [App-Einstellungen]: http://msdn.microsoft.com/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

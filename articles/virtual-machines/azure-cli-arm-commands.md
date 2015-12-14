@@ -21,7 +21,7 @@
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](virtual-machines-command-line-tools.md)
 
-In diesem Artikel wird beschrieben, wie Sie mithilfe der Azure-Befehlszeilenschnittstelle (Azure CLI) im Azure-Ressourcen-Manager-Modus Dienste über die Befehlszeile von Windows-, Mac- und Linux-Computern erstellen, verwalten und löschen können. Sie können zahlreiche der gleichen Aufgaben mithilfe der verschiedenen Bibliotheken der Azure SDKs, mit Azure PowerShell und über das Azure-Vorschauportal ausführen.
+In diesem Artikel wird beschrieben, wie Sie mithilfe der Azure-Befehlszeilenschnittstelle (Azure CLI) im Azure-Ressourcen-Manager-Modus Dienste über die Befehlszeile von Windows-, Mac- und Linux-Computern erstellen, verwalten und löschen können. Sie können viele dieser Aufgaben mithilfe der verschiedenen Bibliotheken der Azure-SDKs, mit Azure PowerShell und über das Azure-Portal ausführen.
 
 Azure-Ressourcen-Manager ermöglicht Ihnen, eine Gruppe von Ressourcen – virtuelle Computer, Websites, Datenbanken usw. – als einzelne bereitstellbare Einheit zu erstellen. Sie können dann alle Ressourcen für Ihre Anwendung in einem einzigen, koordinierten Vorgang bereitstellen, aktualisieren oder löschen. Für die Bereitstellung beschreiben Sie die Gruppenressourcen in einer JSON-Vorlage, die Sie dann für unterschiedliche Umgebungen, wie z. B. Test, Staging und Produktion, verwenden können.
 
@@ -1760,4 +1760,4 @@ Parameteroptionen:
 	vm image list-skus [options] <location> <publisher> <offer>
 	vm image list [options] <location> <publisher> [offer] [sku]
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

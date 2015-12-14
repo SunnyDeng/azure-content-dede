@@ -10,7 +10,7 @@
 <tags 
 	ms.service="sql-database"
 	ms.devlang="NA"
-	ms.date="10/08/2015" 
+	ms.date="12/01/2015" 
 	ms.author="sstein" 
 	ms.workload="data-management" 
 	ms.topic="article" 
@@ -140,7 +140,7 @@ Informationen zu den verfügbaren Größen finden Sie unter [eDTUs und Speicherb
 
 STA und DMVs bieten unterschiedliche Tools und Optionen für die Größenauslegung eines elastischen Datenbankpools. Ungeachtet der verwendeten Tools sollte die Größeneinschätzung nur für die Erstbewertung und -erstellung von elastischen Datenbankpools zugrunde gelegt werden. Nachdem ein Pool erstellt wurde, muss die Ressourcennutzung akkurat überwacht werden, wobei die Leistungseinstellungen des Pools je nach Bedarf nach oben oder unten korrigiert werden können.
 
-**STA**<br>STA ist ein integriertes Tool [im Vorschauportal](https://portal.azure.com), mit dem sich automatisch der Verlauf der Ressourcennutzung von Datenbanken auf einem vorhandenen SQL-Server ermitteln lässt und das auf dieser Basis eine geeignete Konfiguration für den elastischen Datenbankpool vorschlägt. Weitere Informationen finden Sie unter [Tarifempfehlungen für den elastischen Datenbankpool](sql-database-elastic-pool-portal.md#elastic-database-pool-pricing-tier-recommendations).
+**STA**<br>STA ist ein integriertes Tool im [Azure-Portal](https://portal.azure.com), mit dem sich automatisch der Verlauf der Ressourcennutzung von Datenbanken auf einem vorhandenen SQL-Server ermitteln lässt und das auf dieser Basis eine geeignete Konfiguration für den elastischen Datenbankpool vorschlägt. Weitere Informationen finden Sie unter [Tarifempfehlungen für den elastischen Datenbankpool](sql-database-elastic-pool-portal.md#elastic-database-pool-pricing-tier-recommendations).
 
 **DMV-Tool für die Größenfestlegung**<br>Das DMV-Tool für die Größenfestlegung wird als PowerShell-Skript bereitgestellt und ermöglicht die Anpassung von geschätzten Größen eines elastischen Datenbankpools an vorhandene Datenbanken auf einem Server.
 
@@ -160,7 +160,7 @@ Wählen Sie das Tool aus, das für die Analyse Ihrer speziellen Anwendung am bes
 
 STA bewertet den Verlauf der Datenbanknutzung und empfiehlt einen elastischen Datenbankpool, wenn dies kostengünstiger als die Verwendung von Leistungsstufen für einzelne Datenbanken ist. Wenn ein Pool empfohlen wird, stellt das Tool eine Liste der empfohlenen Datenbanken bereit und empfiehlt zudem die Anzahl der Pool-eDTUs sowie Höchst- und Tiefstwerte für eDTU-Einstellungen für jede elastische Datenbank. Damit eine Datenbank als Kandidat für einen Pool berücksichtigt wird, muss sie seit mindestens 7 Tagen existieren.
 
-STA steht im Vorschauportal zur Verfügung, wenn Sie einem vorhandenen Server einen elastischen Datenbankpool hinzufügen. Wenn für diesen Server Empfehlungen für einen elastischen Datenbankpool verfügbar sind, werden sie auf der Erstellungsseite „Elastischer Datenbankpool“ angezeigt. Kunden können die empfohlenen Konfigurationen jederzeit ändern, um eigene Gruppen aus elastischen Datenbankpools zu erstellen.
+STA steht im Portal zur Verfügung, wenn Sie einem vorhandenen Server einen elastischen Datenbankpool hinzufügen. Wenn für diesen Server Empfehlungen für einen elastischen Datenbankpool verfügbar sind, werden sie auf der Erstellungsseite „Elastischer Datenbankpool“ angezeigt. Kunden können die empfohlenen Konfigurationen jederzeit ändern, um eigene Gruppen aus elastischen Datenbankpools zu erstellen.
 
 Weitere Informationen finden Sie unter [Tarifempfehlungen für den elastischen Datenbankpool](sql-database-elastic-pool-portal.md#elastic-database-pool-pricing-tier-recommendations).
 
@@ -435,4 +435,4 @@ Nicht alle eigenständigen Datenbanken sind gute Kandidaten für elastische Date
 [2]: ./media/sql-database-elastic-pool-guidance/four-databases.png
 [3]: ./media/sql-database-elastic-pool-guidance/twenty-databases.png
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

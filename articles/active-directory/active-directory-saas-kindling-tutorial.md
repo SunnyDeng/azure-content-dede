@@ -3,8 +3,8 @@
 	description="Erfahren Sie, wie Sie das einmalige Anmelden zwischen Azure Active Directory und Kindling konfigurieren."
 	services="active-directory"
 	documentationCenter=""
-	authors="markusvi"
-	manager="stevenpo"
+	authors="jeevansd"
+	manager="prasannas"
 	editor=""/>
 
 <tags
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/05/2015"
-	ms.author="markusvi"/>
+	ms.date="12/01/2015"
+	ms.author="jeedes"/>
 
 
 # Tutorial: Azure Active Directory-Integration mit Kindling
@@ -23,7 +23,7 @@ In diesem Tutorial erfahren Sie, wie Sie Kindling in Azure Active Directory (Azu
 
 - Sie können in Azure AD steuern, wer Zugriff auf Kindling hat. 
 - Sie können es Benutzern ermöglichen, sich mit ihren Azure AD-Konten automatisch bei Kindling anzumelden (einmaliges Anmelden).
-- Sie können Ihre Konten an einem zentralen Ort verwalten – dem Azure Active Directory-Portal
+- Sie können Ihre Konten an einem zentralen Ort verwalten – dem Azure Active Directory-Portal.
 
 Weitere Informationen zur Integration von SaaS-Apps in Azure AD finden Sie unter [Was bedeuten Anwendungszugriff und einmaliges Anmelden mit Azure Active Directory?](active-directory-appssoaccess-whatis.md).
 
@@ -31,7 +31,7 @@ Weitere Informationen zur Integration von SaaS-Apps in Azure AD finden Sie unte
 
 Um die Azure AD-Integration mit Kindling konfigurieren zu können, benötigen Sie Folgendes:
 
-- Ein Azure AD-Abonnement.
+- Ein Azure AD-Abonnement
 - Ein Kindling-Abonnement, für das einmaliges Anmelden aktiviert ist
 
 
@@ -63,8 +63,8 @@ Zum Konfigurieren der Integration von Kindling in Azure AD müssen Sie Kindling 
 3. Klicken Sie zum Öffnen der Anwendungsansicht in der oberen Menüleiste der Verzeichnisansicht auf **Anwendungen**.<br><br> ![Anwendungen][2]<br>
 4. Klicken Sie unten auf der Seite auf **Hinzufügen**.<br><br> ![Anwendungen][3]<br>
 5. Klicken Sie im Dialogfeld **What do you want to do** auf **Anwendung aus dem Katalog hinzufügen**.<br><br> ![Anwendungen][4]<br>
-6. Geben Sie im Suchfeld das Wort **Kindling** ein.<br><br> ![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-kindling-tutorial/tutorial_kindling_01.png)<br>
-7. Wählen Sie im Ergebnisbereich **Kindling** aus, und klicken Sie dann auf **Abschließen**, um die Anwendung hinzuzufügen. <br><br> ![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-kindling-tutorial/tutorial_kindling_02.png)<br>
+6. Geben Sie im Suchfeld das Wort **Kindling** ein.<br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-kindling-tutorial/tutorial_kindling_01.png)<br>
+7. Wählen Sie im Ergebnisbereich **Kindling** aus, und klicken Sie dann auf **Abschließen**, um die Anwendung hinzuzufügen. <br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-kindling-tutorial/tutorial_kindling_02.png)<br>
 
 ##  Konfigurieren und Testen der einmaligen Anmeldung von Azure AD
 In diesem Abschnitt soll anhand eines Testbenutzers namens Britta Simon veranschaulicht werden, wie das einmalige Anmelden von Azure AD in Kindling konfiguriert und getestet werden kann.
@@ -79,9 +79,9 @@ Zum Konfigurieren und Testen des einmaligen Anmeldens in Azure AD bei Kindling m
 5. **[Zuweisen des Azure AD-Testbenutzers](#assigning-the-azure-ad-test-user)**, um Britta Simon für das einmalige Anmelden von Azure AD zu aktivieren.
 6. **[Testen der einmaligen Anmeldung](#testing-single-sign-on)**, um zu überprüfen, ob die Konfiguration funktioniert.
 
-### Konfigurieren der einmaligen Anmeldung in Azure AD
+### Konfigurieren des einmaligen Anmeldens von Azure AD
 
-Das Ziel dieses Abschnitts besteht darin, das einmalige Anmelden von Azure AD im Azure AD-Portal zu aktivieren und das einmalige Anmelden in Ihrer Kindling-Anwendung zu konfigurieren. Im Rahmen dieses Verfahrens müssen Sie eine Base64-codierte Zertifikatsdatei erstellen. Falls Sie mit diesem Verfahren nicht vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (Konvertieren eines binären Zertifikats in eine Textdatei; in englischer Sprache) weitere Informationen.
+Das Ziel dieses Abschnitts besteht darin, das einmalige Anmelden von Azure AD im Azure AD-Portal zu aktivieren und das einmalige Anmelden in Ihrer Kindling-Anwendung zu konfigurieren. Im Rahmen dieses Verfahrens müssen Sie eine Base64-codierte Zertifikatsdatei erstellen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache) weitere Informationen.
 
 Zum Konfigurieren des einmaligen Anmeldens für Kindling benötigen Sie eine registrierte Domäne. Wenn Sie noch keine registrierte Domäne besitzen, wenden Sie sich unter [support@flatterfiles.com](mailto:support@flatterfiles.com) an das Supportteam von Kindling.
 
@@ -119,19 +119,19 @@ Zum Konfigurieren des einmaligen Anmeldens für Kindling benötigen Sie eine reg
 
 
 ### Erstellen einen Azure AD-Testbenutzers
-Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta Simon im Azure-Portal.<br> Wählen Sie in der Benutzerliste **Britta Simon** aus. <br><br>![Azure AD-Benutzer erstellen][20]<br>
+Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta Simon im Azure-Portal.<br> Wählen Sie in der Benutzerliste **Britta Simon** aus.<br><br>![Azure AD-Benutzer erstellen][20]<br>
 
 **Um einen Testbenutzer in Azure AD zu erstellen, führen Sie die folgenden Schritte aus:**
 
-1. Klicken Sie im linken Navigationsbereich des **Azure-Verwaltungsportals** auf **Active Directory**. <br><br>![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-kindling-tutorial/create_aaduser_09.png) <br> 
+1. Klicken Sie im linken Navigationsbereich des **Azure-Verwaltungsportals** auf **Active Directory**. <br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-kindling-tutorial/create_aaduser_09.png) <br> 
 
 2. Wählen Sie in der Liste **Verzeichnis** das Verzeichnis aus, für das Sie die Verzeichnisintegration aktivieren möchten.
 
-3. Klicken Sie zum Anzeigen der Liste der Benutzer im Menü oben auf **Benutzer**. <br><br> ![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-kindling-tutorial/create_aaduser_03.png) <br>
+3. Klicken Sie zum Anzeigen der Liste der Benutzer im Menü oben auf **Benutzer**. <br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-kindling-tutorial/create_aaduser_03.png) <br>
  
-4. Um das Dialogfeld **Benutzer hinzufügen** zu öffnen, klicken Sie auf der Symbolleiste unten auf **Benutzer hinzufügen**. <br><br> ![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-kindling-tutorial/create_aaduser_04.png) <br>
+4. Um das Dialogfeld **Benutzer hinzufügen** zu öffnen, klicken Sie auf der Symbolleiste unten auf **Benutzer hinzufügen**. <br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-kindling-tutorial/create_aaduser_04.png) <br>
 
-5. Führen Sie auf der Dialogfeldseite **Informationen über diesen Benutzer** die folgenden Schritte aus: <br><br> ![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-kindling-tutorial/create_aaduser_05.png) <br>
+5. Führen Sie auf der Dialogfeldseite **Informationen über diesen Benutzer** die folgenden Schritte aus: <br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-kindling-tutorial/create_aaduser_05.png) <br>
 
     a. Wählen Sie als "Benutzertyp" die Option "Neuer Benutzer in Ihrer Organisation" aus.
 
@@ -139,7 +139,7 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta S
 
     c. Klicken Sie auf **Weiter**.
 
-6.  Führen Sie auf der Dialogfeldseite **Benutzerprofil** die folgenden Schritte aus: <br><br>![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-kindling-tutorial/create_aaduser_06.png) <br>
+6.  Führen Sie auf der Dialogfeldseite **Benutzerprofil** die folgenden Schritte aus: <br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-kindling-tutorial/create_aaduser_06.png) <br>
  
     a. Geben Sie in das Textfeld **Vorname** den Namen **Britta** ein.
 
@@ -149,7 +149,7 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta S
 
     d. Wählen Sie in der Liste **Rolle** die Rolle **Benutzer** aus. e. Klicken Sie auf **Weiter**.
 
-7. Klicken Sie auf der Dialogfeldseite **Vorübergehendes Kennwort abrufen** auf **Erstellen**. <br><br> ![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-kindling-tutorial/create_aaduser_07.png) <br>
+7. Klicken Sie auf der Dialogfeldseite **Vorübergehendes Kennwort abrufen** auf **Erstellen**. <br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-kindling-tutorial/create_aaduser_07.png) <br>
  
 8. Führen Sie auf der Dialogfeldseite **Vorübergehendes Kennwort abrufen** die folgenden Schritte aus: <br><br>![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-kindling-tutorial/create_aaduser_08.png) <br>
   
@@ -215,4 +215,4 @@ Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für einm
 [204]: ./media/active-directory-saas-kindling-tutorial/tutorial_general_204.png
 [205]: ./media/active-directory-saas-kindling-tutorial/tutorial_general_205.png
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

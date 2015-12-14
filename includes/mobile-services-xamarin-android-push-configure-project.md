@@ -1,13 +1,11 @@
 
-1. Erweitern Sie in der Projektmappenansicht den **Komponentenordner** in der Xamarin.Android-App, und vergewissern Sie sich, dass das Azure Mobile Services-Paket installiert ist. 
+1. Klicken Sie in der Projektmappenansicht (oder in Visual Studio im **Projektmappen-Explorer**) mit der rechten Maustaste auf den **Komponentenordner**, klicken Sie auf **Get More Components...**, suchen Sie nach der Komponente **Google Cloud Messaging Client**, und fügen Sie sie dem Projekt hinzu.
 
-2. Klicken Sie mit der rechten Maustaste auf den **Komponentenordner**, klicken Sie auf **Get More Components...**, suchen Sie nach der Komponente **Google Cloud Messaging Client**, und fügen Sie sie dem Projekt hinzu.
-
-1. Öffnen Sie die Projektdatei "ToDoActivity.cs", und fügen Sie die folgende "using"-Anweisung hinzu:
+2. Öffnen Sie die Projektdatei "ToDoActivity.cs", und fügen Sie die folgende "using"-Anweisung hinzu:
 
 		using Gcm.Client;
 
-2. Fügen Sie der **ToDoActivity**-Klasse den folgenden neuen Code hinzu:
+3. Fügen Sie der **ToDoActivity**-Klasse den folgenden neuen Code hinzu:
 
         // Create a new instance field for this activity.
         static ToDoActivity instance = new ToDoActivity();
@@ -29,11 +27,7 @@
             }
         }
 
-	Dies ermöglicht Ihnen den Zugriff auf die Mobile Services Clientinstanz vom Dienstprozess aus.
-
-3. Ändern Sie die vorhandene Mobile Services Clientdeklaration wie folgt in "public":
-
-		public MobileServiceClient client { get; private set; }
+	Dies ermöglicht Ihnen den Zugriff auf die mobile Clientinstanz vom Pushhandler-Dienstprozess aus.
 
 4.	Fügen Sie der **OnCreate**-Methode den folgenden Code hinzu, nachdem der **MobileServiceClient** erstellt wurde:
 
@@ -49,4 +43,4 @@
 
 Die **ToDoActivity** ist damit für das Hinzufügen von Pushbenachrichtigungen vorbereitet.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

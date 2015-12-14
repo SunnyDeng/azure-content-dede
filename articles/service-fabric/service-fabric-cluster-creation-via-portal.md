@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="11/16/2015"
+   ms.date="11/19/2015"
    ms.author="chackdan"/>
 
 # Einrichten eines Service Fabric-Clusters im Azure-Portal
@@ -64,7 +64,7 @@ Auf dieser Seite erhalten Sie Informationen zum Einrichten eines Service Fabric-
 
 
 
-1. **Optional: Placement-Eigenschaften**– Sie müssen hier keine Konfigurationen hinzufügen, da vom System eine Standard-Platzierungseigenschaft von „NodeTypeName“ hinzugefügt wird. Sie können bei Bedarf weitere hinzufügen, wenn die Anwendung das erfordert. 
+10. **Optional: Placement-Eigenschaften**– Sie müssen hier keine Konfigurationen hinzufügen, da vom System eine Standard-Platzierungseigenschaft von „NodeTypeName“ hinzugefügt wird. Sie können bei Bedarf weitere hinzufügen, wenn die Anwendung das erfordert. 
 
   
 ## Sicherheitskonfigurationen
@@ -178,14 +178,11 @@ Copy-ServiceFabricApplicationPackage -ApplicationPackagePath $applicationPath -A
 Register your application type with service fabric.
 
 ```powershell
-Register-ServiceFabricApplicationType -ApplicationPathInImageStore "WordCount"
-````
+Register-ServiceFabricApplicationType -ApplicationPathInImageStore "WordCount" ````
 
 Erstellen Sie eine neue Instanz auf dem soeben registrierten Anwendungstyp.
 
-```powershell
-New-ServiceFabricApplication -ApplicationName fabric:/WordCount -ApplicationTypeName WordCount -ApplicationTypeVersion 1.0.0.0
-````
+```powershell New-ServiceFabricApplication -ApplicationName fabric:/WordCount -ApplicationTypeName WordCount -ApplicationTypeVersion 1.0.0.0 ````
 
 Öffnen Sie jetzt den gewünschten Browser, und stellen Sie eine Verbindung zu dem Endpunkt her, den die Anwendung überwacht. Bei meiner Beispielanwendung zur Wortzählung sieht die URL wie folgt aus.
 
@@ -211,4 +208,4 @@ http://sfcluster4doc.westus.cloudapp.azure.com:31000
 [ClusterDashboard]: ./media/service-fabric-cluster-creation-via-portal/ClusterDashboard.png
 [SecureConnection]: ./media/service-fabric-cluster-creation-via-portal/SecureConnection.png
 
-<!----HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

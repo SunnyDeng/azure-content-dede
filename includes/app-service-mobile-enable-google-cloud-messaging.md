@@ -1,18 +1,19 @@
-1. Navigate to the [Google Cloud Console](https://console.developers.google.com/project) and sign-in with your Google account credentials, and then click **Select a project**, then **Create a project**.
+1. Navigieren Sie zur Website [Google Cloud Console](https://console.developers.google.com/project), melden Sie sich mit den Anmeldeinformationen für Ihr Google-Konto an, klicken Sie auf **Projekt auswählen** und dann auf **Projekt erstellen**.
 
-2. Enter a project name, accept the terms of service, and click **Create**. If requested, carry out the SMS Verification, and click **Create** again.
+2. Geben Sie einen Projektnamen ein, akzeptieren Sie die Nutzungsbedingungen, und klicken Sie auf **Create**. Führen, falls angefordert, die SMS-Verifizierung aus, und klicken Sie erneut auf **Create**.
 
-3. Make a note of the project number in the **Projects** section. 
+3. Notieren Sie sich die Projektnummer im Abschnitt **Projects**.
 
-	Later in the tutorial you set this value as the PROJECT_ID variable in the client.
+	Zu einem späteren Zeitpunkt im Lernprogramm legen Sie diesen Wert im Client als PROJECT\_ID-Variable fest.
 
-4. Click **Enable and manage APIs** under **User Google APIs** and click **Cloud Messaging for Android**. Then on the next page click **Enable API**. 
+4. Klicken Sie unter **Google-APIs der Benutzer** auf **Aktivieren und Verwalten von APIs** und dann auf **Cloud Messaging für Android**. Klicken Sie anschließend auf der nächsten Seite auf **API aktivieren**.
 
-5. Click **Credentials**, and then click **Add Credential**->**API Key** 
+5. Klicken Sie auf **Anmeldeinformationen** und dann auf **Anmeldeinformationen hinzufügen**->**API-Schlüssel**.
 
-6. In **Create a new key**, click **Server key**. In the next window click **Create**.
+6. Klicken Sie in **Create a new key** auf **Server key**. Klicken Sie im nächsten Fenster auf **Create**.
 
-7. Make a note of the **API KEY** value.
+7. Notieren Sie sich den **API KEY**-Wert.
 
-	You will use this API key value to enable Azure to authenticate with GCM and send push notifications on behalf of your app.
+	Mit diesem API-Schlüsselwert geben Sie Azure die Möglichkeit, sich bei GCM zu authentifizieren und Pushbenachrichtigungen im Auftrag Ihrer App zu verschicken.
 
+<!---HONumber=AcomDC_1203_2015-->

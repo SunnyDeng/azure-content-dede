@@ -59,7 +59,7 @@ Auf der Ubuntu Linux-VM ist Python 2.7 bereits vorab installiert; Apache oder D
 
 1.  Öffnen Sie ein neues **Terminal**-Fenster.
     
-1.  Geben Sie den folgenden Befehl ein, um eine Verbindung zum virtuellen Azure-Computer herzustellen. Wenn Sie einen FQDN erstellt haben, können Sie unter Verwendung der öffentlichen IP-Adresse, die auf dem virtuellen Computer in der Zusammenfassung im Azure-Portal angezeigt wird, eine Verbindung herstellen.
+1.  Geben Sie den folgenden Befehl ein, um eine Verbindung zum virtuellen Azure-Computer herzustellen. Wenn Sie keinen FQDN erstellt haben, können Sie unter Verwendung der öffentlichen IP-Adresse, die auf dem virtuellen Computer in der Zusammenfassung im klassischen Azure-Portal angezeigt wird, eine Verbindung herstellen.
 
 		$ ssh yourusername@yourVmUrl
 
@@ -126,4 +126,4 @@ Auf der Ubuntu Linux-VM ist Python 2.7 bereits vorab installiert; Apache oder D
 
 Wenn Sie mit diesem Lernprogramm fertig sind, fahren Sie den neu erstellten virtuellen Azure-Computer herunter, und/oder entfernen Sie diesen, sodass die Ressourcen für andere Lernprogramme zur Verfügung stehen und anfallende Kosten für die Verwendung von Azure vermieden werden.
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

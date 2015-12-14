@@ -19,6 +19,10 @@
 
 #Versionshinweise
 
+##4\.1.2 (25.11.2015)
+
+- Verbesserungen der Stabilität.
+
 ##4\.1.1 (04.11.2015)
 
 - Verbesserungen der Stabilität.
@@ -49,4 +53,4 @@
 -   Verbesserungen der Sicherheit.
 -   Google Play und die SmartAd-Nachverfolgung wurden entfernt.
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

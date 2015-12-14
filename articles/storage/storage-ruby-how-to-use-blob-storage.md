@@ -59,7 +59,7 @@ Das Azure-Modul liest die Umgebungsvariablen **AZURE\_STORAGE\_ACCOUNT** und **A
 
 So rufen Sie diese Werte ab:
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal](https://manage.windowsazure.com/) an.
+1. Melden Sie sich beim [Azure-Portal](portal.azure.com) an.
 2. Navigieren Sie zum Speicherkonto, das Sie verwenden möchten.
 3. Klicken Sie unter im Navigationsbereich auf **MANAGE KEYS**.
 4. Im eingeblendeten Dialog wird der Name des Speicherkontos, der primäre Zugriffsschlüssel und der sekundäre Zugriffsschlüssel angezeigt. Verwenden Sie den primären oder sekundären Zugriffsschlüssel.
@@ -142,8 +142,7 @@ Verwenden Sie schließlich die **delete\_blob()**-Methode, um einen Blob zu lös
 
 Unter den folgenden Links erhalten Sie weitere Informationen zu komplexeren Speicheraufgaben:
 
-- MSDN-Referenz: [Azure Storage](http://msdn.microsoft.com/library/azure/gg433040.aspx)
 - [Azure Storage-Teamblog](http://blogs.msdn.com/b/windowsazurestorage/)
 - [Azure SDK for Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby)-Repository auf GitHub
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

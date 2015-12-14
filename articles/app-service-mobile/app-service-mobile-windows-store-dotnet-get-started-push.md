@@ -13,14 +13,12 @@
 	ms.tgt_pltfrm="mobile-windows" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="11/10/2015" 
+	ms.date="11/25/2015" 
 	ms.author="glenga"/>
 
 # Hinzufügen von Pushbenachrichtigungen zu Ihrer universellen Windows Runtime 8.1-App
 
-[AZURE.INCLUDE [app-service-mobile-selector-get-started-push](../../includes/app-service-mobile-selector-get-started-push.md)]
-&nbsp;  
-[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
+[AZURE.INCLUDE [app-service-mobile-selector-get-started-push](../../includes/app-service-mobile-selector-get-started-push.md)]&nbsp;[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
 
 ##Übersicht
 
@@ -48,7 +46,7 @@ Bevor Sie Pushbenachrichtigungen von Azure an Ihre Windows-Apps senden können, 
 [AZURE.INCLUDE [app-service-mobile-register-wns](../../includes/app-service-mobile-register-wns.md)]
 
 
-##Konfigurieren der mobilen App zum Senden von Pushanforderungen
+##Konfigurieren des Back-Ends zum Senden von Pushbenachrichtigungen
 
 [AZURE.INCLUDE [app-service-mobile-configure-wns](../../includes/app-service-mobile-configure-wns.md)]
 
@@ -57,50 +55,7 @@ Bevor Sie Pushbenachrichtigungen von Azure an Ihre Windows-Apps senden können, 
 
 Nachdem die Pushbenachrichtigungen in der App aktiviert wurden, müssen Sie ihr App-Back-End aktualisieren, um Pushbenachrichtigungen senden zu können.
 
-1. Klicken Sie in Visual Studio mit der rechten Maustaste auf das Serverprojekt, und klicken Sie auf **NuGet-Pakete verwalten**, und suchen Sie nach `Microsoft.Azure.NotificationHubs`. Klicken Sie anschließend auf **Installieren**. Dadurch wird die Notification Hubs-Clientbibliothek installiert.
-
-2. Öffnen Sie **Controller** > **TodoItemController.cs** im Serverprojekt, und fügen Sie die folgenden using-Anweisungen hinzu:
-
-		using System.Collections.Generic;
-		using Microsoft.Azure.NotificationHubs;
-		using Microsoft.Azure.Mobile.Server.Config;
-
-3. Fügen Sie in der **PostTodoItem**-Methode den folgenden Code nach dem Aufruf von **InsertAsync** hinzu:
-
-        // Get the settings for the server project.
-        HttpConfiguration config = this.Configuration;
-        MobileAppSettingsDictionary settings = 
-			this.Configuration.GetMobileAppSettingsProvider().GetMobileAppSettings();
-        
-        // Get the Notification Hubs credentials for the Mobile App.
-        string notificationHubName = settings.NotificationHubName;
-        string notificationHubConnection = settings
-            .Connections[MobileAppSettingsKeys.NotificationHubConnectionString].ConnectionString;
-
-        // Create a new Notification Hub client.
-        NotificationHubClient hub = NotificationHubClient
-        .CreateClientFromConnectionString(notificationHubConnection, notificationHubName);
-
-		// Define a WNS payload
-		var windowsToastPayload = @"<toast><visual><binding template=""ToastText01""><text id=""1"">" 
-                                + item.Text + @"</text></binding></visual></toast>";
-
-        try
-        {
-			// Send the push notification and log the results.
-            var result = await hub.SendWindowsNativeNotificationAsync(windowsToastPayload);
-
-            // Write the success result to the logs.
-            config.Services.GetTraceWriter().Info(result.State.ToString());
-        }
-        catch (System.Exception ex)
-        {
-            // Write the failure result to the logs.
-            config.Services.GetTraceWriter()
-                .Error(ex.Message, null, "Push.SendAsync Error");
-        }
-
-    Dieser Code weist das Benachrichtigungshub an, nach dem Einfügen eines neuen Elements eine Pushbenachrichtigung zu senden.
+[AZURE.INCLUDE [app-service-mobile-update-server-project-for-push-template](../../includes/app-service-mobile-update-server-project-for-push-template.md)]
 
 
 ## <a name="publish-the-service"></a>Veröffentlichen des mobilen Back-Ends in Azure
@@ -149,10 +104,14 @@ Ihre App kann jetzt Popupbenachrichtigungen empfangen.
 
 [AZURE.INCLUDE [app-service-mobile-windows-universal-test-push](../../includes/app-service-mobile-windows-universal-test-push.md)]
 
+##Nächste Schritte
+
+Abschließend erfahren Sie im Lernprogramm [Senden plattformübergreifender Benachrichtigungen an einen bestimmten Benutzer](app-service-mobile-windows-store-dotnet-push-notifications-to-users.md), wie eine Pushbenachrichtigung unabhängig von einer Geräteplattform an alle Geräteregistrierungen eines bestimmten authentifizierten Benutzers gesendet wird.
+
 ##<a id="more"></a>Weitere Informationen
 
-* Vorlagen ermöglichen Ihnen, flexibel plattformübergreifende Pushvorgänge und lokalisierte Pushvorgänge zu senden. In [Verwenden des verwalteten Clients für Azure Mobile Apps](app-service-mobile-dotnet-how-to-use-client-library.md) wird erklärt, wie Sie Vorlagen registrieren.
-* Mit Tags können Sie für segmentierte Kunden Pushvorgänge auswählen. In [Arbeiten Sie mit der .NET-Back-End-Server-SDK für Azure Mobile Apps](app-service-mobile-dotnet-backend-how-to-use-server-sdk.md) wird erklärt, wie Sie einer Geräteinstallation Tags hinzufügen.
+* Vorlagen ermöglichen Ihnen, flexibel plattformübergreifende Pushvorgänge und lokalisierte Pushvorgänge zu senden. In [Verwenden des verwalteten Clients für Azure Mobile Apps](app-service-mobile-dotnet-how-to-use-client-library.md#how-to-register-push-templates-to-send-cross-platform-notifications) wird erklärt, wie Sie Vorlagen registrieren.
+* Mit Tags können Sie für segmentierte Kunden Pushvorgänge auswählen. In [Arbeiten Sie mit der .NET-Back-End-Server-SDK für Azure Mobile Apps](app-service-mobile-dotnet-backend-how-to-use-server-sdk.md#how-to-add-tags-to-a-device-installation-to-enable-push-to-tags) wird erklärt, wie Sie einer Geräteinstallation Tags hinzufügen.
 
 <!-- Anchors. -->
 
@@ -161,4 +120,4 @@ Ihre App kann jetzt Popupbenachrichtigungen empfangen.
 
 <!-- Images. -->
 
-<!---HONumber=AcomDC_1125_2015--->
+<!---HONumber=AcomDC_1203_2015-->

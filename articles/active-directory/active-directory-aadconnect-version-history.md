@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="11/03/2015"
+   ms.date="12/02/2015"
    ms.author="andkjell"/>
 
 # Azure AD Connect: Versionsveröffentlichungsverlauf
@@ -26,6 +26,16 @@ Verwandte Links:
 
 - Die zum Anwenden eines Updates erforderlichen Berechtigungen sind unter [Konten und Berechtigungen](active-directory-aadconnect-accounts-permissions.md#upgrade) aufgeführt.
 - [Azure AD Connect herunterladen](http://go.microsoft.com/fwlink/?LinkId=615771)
+
+## 1\.0.9131.0
+Veröffentlicht im Dezember 2015
+
+**Behobene Probleme:**
+
+- Möglicherweise funktioniert die Kennwortsynchronisierung in AD DS nicht beim Ändern von Kennwörtern, jedoch beim Festlegen eines Kennworts.
+- Mit einem Proxy-Server schlägt die Azure AD-Authentifizierung während der Installation möglicherweise fehl oder die Aktualisierung der Konfigurationsseite wird aufgehoben.
+- Das Aktualisieren einer vorherigen Version von Azure AD Connect mit einem vollständigen SQL Server schlägt fehl, wenn Sie in SQL nicht SA sind.
+- Beim Aktualisieren einer vorherigen Version von Azure AD Connect über einen Remotecomputer mit SQL Server wird die Fehlermeldung "Kein Zugriff auf die ADSync SQL-Datenbank." angezeigt.
 
 ## 1\.0.9125.0
 Veröffentlicht im November 2015
@@ -44,7 +54,7 @@ Veröffentlicht im November 2015
 
 **Neues unterstütztes Szenario:**
 
-- Es werden mehrere lokale Exchange-Organisationen unterstützt. Weitere Informationen finden Sie unter [Hybrid-Bereitstellungen mit mehreren Active Directory-Gesamtstrukturen](https://technet.microsoft.com/de-DE/library/jj873754.aspx).
+- Es werden mehrere lokale Exchange-Organisationen unterstützt. Weitere Informationen finden Sie unter [Hybrid-Bereitstellungen mit mehreren Active Directory-Gesamtstrukturen](https://technet.microsoft.com/library/jj873754.aspx).
 
 **Behobene Probleme:**
 
@@ -95,8 +105,8 @@ Veröffentlicht im Juni 2015
 **Neue Features:**
 
 - [Installation mit Express-Einstellungen](active-directory-aadconnect-get-started-express.md)
-- Möglichkeit zum [Konfigurieren von AD FS](active-directory-aadconnect-get-started-custom.md#configuring-federation-with-ad-fs)
-- Möglichkeit zum [Upgrade aus DirSync](active-directory-aadconnect-dirsync-upgrade-get-started.md)
+- Funktion [ADFS konfigurieren](active-directory-aadconnect-get-started-custom.md#configuring-federation-with-ad-fs)
+- Funktion [Von DirSync aktualisieren](active-directory-aadconnect-dirsync-upgrade-get-started.md)
 - [Verhindern von versehentlichen Löschungen](active-directory-aadconnectsync-feature-prevent-accidental-deletes.md)
 - Neuer [Stagingmodus](active-directory-aadconnectsync-operations.md#staging-mode)
 
@@ -155,7 +165,7 @@ Veröffentlicht im Dezember 2014
 
 **Neue Features:**
 
-- Die Synchronisierung von Kennwörtern mit attributbasierter Filterung wird jetzt unterstützt. Weitere Informationen finden Sie unter [Synchronisieren von Kennwörtern per Filterung](active-directory-aadconnectsync-configure-filtering.md).
+- Die Synchronisierung von Kennwörtern mit attributbasierter Filterung wird jetzt unterstützt. Weitere Informationen finden Sie unter [Synchronisierung von Kennwörtern mit Filterung](active-directory-aadconnectsync-configure-filtering.md).
 - Das Attribut msDS-ExternalDirectoryObjectID wird nach AD zurückgeschrieben. Damit wird Unterstützung für Office 365-Anwendungen hinzugefügt, die in einer Hybrid-Exchange-Bereitstellung mithilfe von OAuth2 sowohl auf Online- als auch lokale Postfächer zugreifen.
 
 **Behobene Upgrade-Probleme:**
@@ -197,6 +207,6 @@ Veröffentlicht im September 2014
 **Erste Version von Azure AD Sync**
 
 ## Nächste Schritte
-Weitere Informationen zum [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md).
+Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

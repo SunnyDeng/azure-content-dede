@@ -51,7 +51,6 @@ In diesem Artikel haben Sie erfahren, wie io.js sowohl mithilfe der vorhandenen 
 
 ## Änderungen
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
 
 >[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
@@ -61,4 +60,4 @@ In diesem Artikel haben Sie erfahren, wie io.js sowohl mithilfe der vorhandenen 
 [io.js Deployment Script]: https://github.com/felixrieseberg/iojs-azure
  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

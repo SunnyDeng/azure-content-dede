@@ -368,7 +368,7 @@ Es gelten die folgenden Bedingungen:
 	"Start" unterstützt darüber hinaus auch das spezielle Makro "{Best}", das versucht, den ersten "interessanten" Frame des Inhalts zu ermitteln. (HINWEIS: "Step" und "Range" werden ignoriert, wenn "Start" auf "{Best}" festgelegt ist.)
 	
 	- Standardwerte: Start:{Best}
-- Das Ausgabeformat muss für jedes Bildformat ausdrücklich bereitgestellt werden: "Jpg"/"Png"/"BmpFormat". Wenn vorhanden, ordnet AMS "JpgVideo" "JpgFormat" zu usw. "OutputFormat" führt ein neues Imagecodec-spezifisches Makro ein: "{Index}". Dieses Makro muss für Bildausgabeformate vorhanden sein (genau einmal).
+- Das Ausgabeformat muss für jedes Bildformat ausdrücklich bereitgestellt werden: "Jpg"/"Png"/"BmpFormat". Wenn vorhanden, ordnet MES "JpgVideo" "JpgFormat" zu usw. "OutputFormat" führt ein neues Imagecodec-spezifisches Makro ein: "{Index}". Dieses Makro muss für Bildausgabeformate vorhanden sein (genau einmal).
 
 
 ##Media Services-Lernpfade
@@ -383,4 +383,4 @@ Es gelten die folgenden Bedingungen:
 
 [Media Services-Codierung (Übersicht)](media-services-encode-asset.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

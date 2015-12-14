@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="11/12/2015"
+   ms.date="12/02/2015"
    ms.author="tomfitz"/>
 
 # Vorlagenfunktionen im Azure-Ressourcen-Manager
@@ -78,26 +78,44 @@ Gibt den aktuellen Index einer Iterationsschleife zurück. Beispiele zur Verwend
 
 Gibt Informationen zum aktuellen Bereitstellungsvorgang zurück.
 
-Die Informationen zur Bereitstellung werden als Objekt mit den folgenden Eigenschaften zurückgegeben:
+Dieser Ausdruck gibt das Objekt zurück, das während der Bereitstellung übergeben wird. Die Eigenschaften im zurückgegebenen Objekt hängen davon ab, ob das Bereitstellungsobjekt als Link oder als Inline-Objekt übergeben wird. Wenn das Bereitstellungsobjekt als Inline-Objekt übergeben wird, z. B. bei Verwendung des **-TemplateFile**-Parameters in Azure PowerShell zum Verweisen auf eine lokale Datei, hat das zurückgegebene Objekt folgendes Format:
 
     {
-      "name": "",
-      "properties": {
-        "template": {},
-        "parameters": {},
-        "mode": "",
-        "provisioningState": ""
-      }
+        "name": "",
+        "properties": {
+            "template": {
+                "$schema": "",
+                "contentVersion": "",
+                "resources": [
+                ],
+                "outputs": {}
+            },
+            "parameters": {},
+            "mode": "",
+            "provisioningState": ""
+        }
     }
 
-Im folgenden Beispiel wird veranschaulicht, wie Bereitstellungsinformationen im Abschnitt „outputs“ zurückgegeben werden.
+Wenn das Objekt als Link übergeben wird, z. B. bei Verwendung des **-TemplateUri**-Parameters zum Verweisen auf ein Remoteobjekt, hat das zurückgegebene Objekt folgendes Format:
 
-    "outputs": {
-      "exampleOutput": {
-        "value": "[deployment()]",
-        "type" : "object"
-      }
+    {
+        "name": "",
+        "properties": {
+            "templateLink": {
+                "uri": "",
+                "contentVersion": ""
+            },
+            "mode": "",
+            "provisioningState": ""
+        }
     }
+
+Im folgenden Beispiel wird veranschaulicht, wie die Bereitstellung() verwendet wird, um zu einer anderen Vorlage basierend auf dem URI der übergeordneten Vorlage eine Verknüpfung erstellt wird.
+
+    "variables": {  
+        "sharedTemplateUrl": "[uri(deployment().properties.templateLink.uri, 'shared-resources.json')]"  
+    }  
+
 
 ## div
 
@@ -131,9 +149,25 @@ Im folgenden Beispiel wird der vom Benutzer angegebene Parameterwert in eine gan
 
 ## Länge
 
-**length(array)**
+**Länge ("Array" oder "String")**
 
-Gibt die Anzahl der Elemente in einem Array zurück. Wird normalerweise verwendet, um bei der Erstellung von Ressourcen die Anzahl der Iterationen anzugeben. Ein Beispiel zur Verwendung dieser Funktion finden Sie unter [Erstellen mehrerer Instanzen von Ressourcen im Azure-Ressourcen-Manager](resource-group-create-multiple.md).
+Gibt die Anzahl der Elemente in einem Array oder die Anzahl der Zeichen in einer Zeichenfolge zurück. Sie können diese Funktion mit einem Array verwenden, um bei der Erstellung von Ressourcen die Anzahl der Iterationen anzugeben. Im folgenden Beispiel bezieht sich der Parameter **SiteNames** auf ein Array von Namen, die bei der Erstellung der Websites verwendet werden.
+
+    "copy": {
+        "name": "websitescopy",
+        "count": "[length(parameters('siteNames'))]"
+    }
+
+Weitere Informationen zur Verwendung dieser Funktion mit einem Array finden Sie unter [Erstellen mehrerer Instanzen von Ressourcen im Azure-Ressourcen-Manager](resource-group-create-multiple.md).
+
+Sie können auch eine Zeichenfolge verwenden:
+
+    "parameters": {
+        "appName": { "type": "string" }
+    },
+    "variables": { 
+        "nameLength": "[length(parameters('appName'))]"
+    }
 
 ## listKeys
 
@@ -559,9 +593,11 @@ Erstellt einen absoluten URI durch Kombinieren der baseUri- und der relativeUri-
 | baseUri | Ja | Die Zeichenfolge mit dem Basis-URI.
 | relativeUri | Ja | Der Zeichenfolge mit dem relativen URI, die der Zeichenfolge mit dem Basis-URI hinzugefügt werden soll.
 
-Im folgenden Beispiel wird veranschaulicht, wie ein absoluter URI im Vorlagenlink erstellt wird. Das Ergebnis lautet ****http://contoso.com/resources/nested/azuredeploy.json**.
+Der Wert für den **BaseUri**-Parameter kann eine bestimmte Datei enthalten, aber nur der Basispfad wird verwendet, wenn Sie den URI zu erstellen. Beispielsweise führt das Übergeben von ****http://contoso.com/resources/azuredeploy.json** als BaseUri-Parameter zu einem Basis-URI von ****http://contoso.com/resources/**.
 
-    "templateLink": "[uri('http://contoso.com/resources/', 'nested/azuredeploy.json')]"
+Im folgenden Beispiel wird veranschaulicht, wie basierend auf dem Wert der übergeordneten Vorlage eine Verknüpfung zu einer geschachtelten Vorlage erstellt wird.
+
+    "templateLink": "[uri(deployment().properties.templateLink.uri, 'nested/azuredeploy.json')]"
 
 
 ## Variablen
@@ -581,4 +617,4 @@ Gibt den Wert der Variablen zurück. Der angegebene Variablenname muss im Variab
 - Informationen dazu, wie Sie beim Erstellen eines Ressourcentyps eine bestimmte Anzahl von Durchläufen ausführen, finden Sie unter [Erstellen mehrerer Instanzen von Ressourcen im Azure-Ressourcen-Manager](resource-group-create-multiple.md).
 - Informationen zum Bereitstellen der erstellten Vorlage finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](resource-group-template-deploy.md).
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

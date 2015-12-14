@@ -31,7 +31,7 @@ In diesem Lernprogramm erfahren Sie, wie Sie eine PHP-MySQL-Web-App erstellen un
 
 Sie erhalten Informationen zu folgenden Themen:
 
-* Erstellen einer Web-App und einer MySQL-Datenbank über das [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715). Da PHP standardmäßig in[App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714) aktiviert ist, gelten für die Ausführung Ihres PHP-Codes keine besonderen Voraussetzungen.
+* Erstellen einer Web-App und einer MySQL-Datenbank über das [Azure-Portal](https://portal.azure.com). Da PHP standardmäßig in[App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714) aktiviert ist, gelten für die Ausführung Ihres PHP-Codes keine besonderen Voraussetzungen.
 * Veröffentlichen und erneutes Veröffentlichen Ihrer Anwendung mithilfe von Git in Azure
 
 Mithilfe dieses Lernprogramms erstellen Sie eine einfache Web-App für die Registrierung in PHP. Die Anwendung wird in Web-Apps gehostet. Nachfolgend sehen Sie einen Screenshot der fertigen Anwendung:
@@ -153,7 +153,7 @@ Befolgen Sie die unten stehenden Schritte, um die Anwendung lokal zu erstellen u
 		<?php
 			// DB connection info
 			//TODO: Update the values for $host, $user, $pwd, and $db
-			//using the values you retrieved earlier from the portal.
+			//using the values you retrieved earlier from the Azure Portal.
 			$host = "value of Data Source";
 			$user = "value of User Id";
 			$pwd = "value of Password";
@@ -220,9 +220,9 @@ Nun können Sie zu ****http://localhost:8000/** navigieren, um die Anwendung zu 
 
 Nachdem Sie Ihre App lokal getestet haben, können Sie sie über Git in Web-Apps veröffentlichen. Sie initialisieren Ihr lokales Git-Verzeichnis und veröffentlichen die Anwendung.
 
-> [AZURE.NOTE]Dies sind dieselben Schritte, die am Ende des obigen Abschnitts „Erstellen einer Web-App und Einrichten der Git-Veröffentlichung“ im Portal gezeigt werden.
+> [AZURE.NOTE]Dies sind dieselben Schritte, die am Ende des obigen Abschnitts „Erstellen einer Web-App und Einrichten der Git-Veröffentlichung“ im Azure-Portal gezeigt werden.
 
-1. (Optional) Sollten Sie Ihre Git-Remoteverzeichnis-URL vergessen oder verlegt haben, navigieren Sie zu den Web-App-Eigenschaften im Portal.
+1. (Optional) Sollten Sie Ihre Git-Remoteverzeichnis-URL vergessen oder verlegt haben, navigieren Sie zu den Web-App-Eigenschaften im Azure-Portal.
 
 1. Öffnen Sie GitBash (oder eine Terminalsitzung, wenn sich Git in Ihrem `PATH` befindet), wechseln Sie zum Stammverzeichnis Ihrer Anwendung, und führen Sie die folgenden Befehle aus:
 
@@ -269,7 +269,6 @@ Weitere Informationen finden Sie im [PHP Developer Center](/develop/php/).
 
 ## Änderungen
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
 
 [install-php]: http://www.php.net/manual/en/install.php
 [install-SQLExpress]: http://www.microsoft.com/download/details.aspx?id=29062
@@ -303,4 +302,4 @@ Weitere Informationen finden Sie im [PHP Developer Center](/develop/php/).
 [sql-database-editions]: http://msdn.microsoft.com/library/windowsazure/ee621788.aspx
  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

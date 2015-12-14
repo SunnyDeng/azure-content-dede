@@ -31,9 +31,9 @@ Der empfohlene Tarif für jede Datenbank wird beim Ändern einer Dienstebene fü
 
 Je nach Ihrer jeweiligen Umgebung wird vom Dienst die Aktualisierung einiger oder aller Datenbanken in einen [Pool für elastische Datenbanken](sql-database-elastic-pool.md) empfohlen.
 
-Sie können das [Azure-Vorschauportal](https://portal.azure.com) oder PowerShell verwenden, um die empfohlenen Dienstebenen für Ihre veralteten Datenbanken anzuzeigen. Schritt-für-Schritt-Anleitungen finden Sie unter:
+Sie können das [Azure-Portal](https://portal.azure.com) oder PowerShell verwenden, um die empfohlenen Dienstebenen für Ihre veralteten Datenbanken anzuzeigen. Schritt-für-Schritt-Anleitungen finden Sie unter:
 
-- [Upgrade auf SQL-Datenbank V12 (Azure-Vorschauportal)](sql-database-v12-upgrade.md)
+- [Upgrade auf SQL-Datenbank V12 (Azure-Portal)](sql-database-v12-upgrade.md)
 - [Upgrade auf SQL-Datenbank V12 (PowerShell)](sql-database-upgrade-server.md)
 
 
@@ -89,7 +89,7 @@ Die Funktionen und Leistungsstufen der neuen Dienstebene werden in der folgenden
 
 | Artikel | Beschreibung |
 |:--|:--|
-|[Dienst- und Leistungsebenen für Azure SQL-Datenbanken](sql-database-service-tiers.md)| Übersicht, Metriken und Funktionsumfang jeder Dienstebene (und Vorgehensweise bei der Überwachung der Datenbankauslastung im Verwaltungsportal und mithilfe von DMVs). |
+|[Dienst- und Leistungsebenen für Azure SQL-Datenbanken](sql-database-service-tiers.md)| Übersicht, Metriken und Funktionsumfang jeder Dienstebene (und Vorgehensweise bei der Überwachung der Datenbankauslastung im klassischen Portal und mithilfe von DMVs). |
 |[Geschäftskontinuität in Azure SQL-Datenbank](sql-database-business-continuity.md)|Details zu den Funktionen für die Geschäftskontinuität und Notfallwiederherstellung (Zeitpunktwiederherstellung, Geowiederherstellung, Georeplikation) der unterschiedlichen Dienstebenen.|
 |[SQL-Datenbank – Preisübersicht](http://azure.microsoft.com/pricing/details/sql-database/)|Detaillierte Preisinformationen zu den unterschiedlichen Dienstebenen und Leistungsstufen.|
 
@@ -101,21 +101,21 @@ Nach Auswahl einer geeigneten Dienstebene, die die Anforderungen der Datenbank e
 
 ## 2\. Ermitteln einer angemessenen Leistungsstufe basierend auf der bisherigen Ressourcennutzung
 
-Der Azure SQL-Datenbankdienst zeigt Informationen im Verwaltungsportal und in den Systemsichten an, um Ihnen eine neue Dienstebene und Leistungsstufe für Ihre vorhandene Web- oder Business-Datenbank vorzuschlagen.
+Der Azure SQL-Datenbankdienst zeigt Informationen im klassischen Portal und in den Systemsichten an, um Ihnen eine neue Dienstebene und Leistungsstufe für Ihre vorhandene Web- oder Business-Datenbank vorzuschlagen.
 
 Da Web-/Business-Datenbanken keine garantierten DTUs/Ressourcengrenzwerte zugeordnet sind, werden die Prozentwerte gemäß der Ressourcenmenge normalisiert, die für eine Datenbank der Leistungsstufe S2 zur Verfügung steht. Der durchschnittliche DTU-Prozentsatzverbrauch einer Datenbank in einem bestimmten Intervall kann als der höchste Prozentsatzwert für CPU, E/A und Protokollverwendung in diesem Intervall berechnet werden.
 
 
-Im Azure-Vorschauportal erhalten Sie einen allgemeinen Überblick über die prozentualen DTU-Verbrauchswerte. Von dort aus können Sie über die Systemsichten detailliertere Informationen abrufen.
+Im Azure-Portal erhalten Sie einen allgemeinen Überblick über die prozentualen DTU-Verbrauchswerte. Von dort aus können Sie über die Systemsichten detailliertere Informationen abrufen.
 
-Sie können auch das Azure-Vorschauportal verwenden, um die empfohlene Dienstebene für Ihre Web- oder Business-Datenbank anzuzeigen, wenn Sie einen Server auf Azure SQL-Datenbank V12 aktualisieren.
+Sie können auch das Azure-Portal verwenden, um die empfohlene Dienstebene für Ihre Web- oder Business-Datenbank anzuzeigen, wenn Sie einen Server auf Azure SQL-Datenbank V12 aktualisieren.
 
-### Anzeigen der empfohlenen Dienstebene im Azure-Vorschauportal
+### Anzeigen der empfohlenen Dienstebene im Azure-Portal
 Das Azure-Portal empfiehlt die entsprechende Dienstebene für Ihre Web- oder Business-Datenbank im Rahmen der Aktualisierung eines Servers auf SQL-Datenbank V12. Die Empfehlung basiert auf einer Verlaufsanalyse des Ressourcenverbrauchs der Datenbank.
 
 **Neues Verwaltungsportal**
 
-1. Melden Sie sich im [Azure-Vorschauportal](https://portal.azure.com) an, und navigieren Sie zu einem Server mit einer Web- oder Business-Datenbank.
+1. Melden Sie sich im [Azure-Portal](https://portal.azure.com) an, und navigieren Sie zu einem Server mit einer Web- oder Business-Datenbank.
 2. Klicken Sie auf dem Blatt "Server" auf **Neueste Aktualisierung**.
 3. Klicken Sie auf **Diesen Server aktualisieren**.
 
@@ -127,9 +127,9 @@ Das Blatt **Diesen Server aktualisieren** zeigt jetzt eine Liste der Web- oder B
 Das Verwaltungsportal gibt Einblicke in den DTU-Verbrauch einer vorhandenen Web- oder Business-Datenbank. DTU-Informationen finden Sie im aktuellen Azure-Portal.
 
 
-**Verwaltungsportal**
+**Klassisches Portal**
 
-1. Melden Sie sich beim [Verwaltungsportal](https://manage.windowsazure.com) an, und navigieren Sie zu einer vorhandenen Web- oder Business-Datenbank.
+1. Melden Sie sich beim [klassischen Portal](https://manage.windowsazure.com) an, und navigieren Sie zu einer vorhandenen Web- oder Business-Datenbank.
 2. Klicken Sie auf die Registerkarte **ÜBERWACHEN**.
 3. Klicken Sie auf **METRIKEN HINZUFÜGEN**.
 4. Wählen Sie **DTU-Prozentsatz** aus, und bestätigen Sie die Auswahl, indem Sie auf das darunter angezeigte Häkchen klicken.
@@ -170,7 +170,7 @@ Die Daten, die von [resource\_stats](https://msdn.microsoft.com/library/dn269979
 
 Die DTU-Verbrauchsinformationen für eine S2-Datenbankstufe ermöglichen Ihnen das Normalisieren des aktuellen Verbrauchs Ihrer Web- und Business-Datenbanken im Hinblick auf Datenbanken der neuen Ebene sowie eine Beurteilung der besseren Eignung. Wenn Ihr durchschnittlicher prozentualer DTU-Verbrauch z. B. einen Wert von 80 % anzeigt, besagt dies, dass die Datenbank DTU mit einer Rate von 80 % des Grenzwerts einer Datenbank auf der S2-Leistungsstufe verbraucht. Wenn in der Sicht **sys.resource\_stats** Werte angezeigt werden, die größer als 100 % sind, bedeutet dies, dass Sie eine Leistungsstufe benötigen, die größer als S2 ist. Nehmen Sie z. B. an, dass ein Spitzenwert für den DTU-Prozentsatz von 300 % angezeigt wird. Dies bedeutet, dass Sie drei Mal mehr Ressourcen verwenden als in der S2-Stufe verfügbar wären. Zum Bestimmen einer angemessenen Anfangsgröße vergleichen Sie die in einer S2-Stufe verfügbaren DTUs (50 DTUs) mit den nächsthöheren Stufen (S3/P1 = 100 DTUs oder 200 % von S2, P2 = 200 DTUs oder 400 % von S2). Da Sie bei 300 % der S2-Stufe liegen, können Sie in diesem Fall mit einer P2-Stufe beginnen und dann erneut einen Test durchführen.
 
-Basierend auf dem prozentualen DTU-Verbrauch und der größten Edition, die für Ihren Workload benötigt wird, können Sie ermitteln, welche Dienstebene und Leistungsstufe für den Workload Ihrer Datenbank am besten geeignet ist (wie durch den prozentualen DTU-Wert und die relativen DTU-Potenzen verschiedener [Leistungsstufen](sql-database-service-tiers.md) angegeben). Die folgende Tabelle zeigt eine Zuordnung des prozentualen Web-/Business-Ressourcenverbrauchs zu den entsprechenden Leistungsstufen der neuen Ebene:
+Basierend auf dem prozentualen DTU-Verbrauch und der größten Edition, die für Ihre Arbeitsauslastung benötigt wird, können Sie ermitteln, welche Dienstebene und Leistungsstufe für die Arbeitsauslastung Ihrer Datenbank am besten geeignet ist (wie durch den prozentualen DTU-Wert und die relativen DTU-Potenzen verschiedener [Leistungsstufen](sql-database-service-tiers.md) angegeben). Die folgende Tabelle zeigt eine Zuordnung des prozentualen Web-/Business-Ressourcenverbrauchs zu den entsprechenden Leistungsstufen der neuen Ebene:
 
 ![Ressourcenverbrauch][4]
 
@@ -253,7 +253,7 @@ Nachdem Sie die geeignete Dienstebene/Leistungsstufe für die Web-/Business-Date
 
 | Verwaltungstool | So ändern Sie die Dienstebene und Leistungsstufe einer Datenbank|
 | :---| :---|
-| [Azure-Verwaltungsportal](https://manage.windowsazure.com) | Klicken Sie auf der Seite "Dashboard" der Datenbank auf die Registerkarte **SKALIEREN**. |
+| [Klassisches Azure-Portal](https://manage.windowsazure.com) | Klicken Sie auf der Seite "Dashboard" der Datenbank auf die Registerkarte **SKALIEREN**. |
 | [Azure PowerShell](http://msdn.microsoft.com/library/azure/dn546726.aspx) | Verwenden Sie das Cmdlet [Set-AzureRMSqlDatabase](https://msdn.microsoft.com/library/azure/mt619433.aspx). |
 | [REST-API](https://msdn.microsoft.com/library/azure/mt163571.aspx) | Verwenden Sie den Befehl [Datenbank erstellen](https://msdn.microsoft.com/library/azure/mt163685.aspx) oder "Daten aktualisieren".|
 | [Transact-SQL](http://msdn.microsoft.com/library/azure/bb510741.aspx) | Verwenden Sie die Anweisung [ALTER DATABASE (Transact-SQL)](http://msdn.microsoft.com/library/azure/ms174269.aspx). |
@@ -262,7 +262,7 @@ Ausführliche Informationen finden Sie unter [Ändern von Datenbank-Dienstebenen
 
 
 ## 6\. Überwachen des Upgrades auf die neue Dienstebene/Leistungsstufe
-Die Azure SQL-Datenbank stellt in der dynamischen Verwaltungssicht "sys.dm\_operation\_status" in der Masterdatenbank des logischen Servers, auf dem die aktuelle Datenbank gespeichert ist, Statusinformationen zu Verwaltungsvorgängen (z. B. "CREATE", "ALTER", "DROP") zur Verfügung, die für eine Datenbank ausgeführt werden [siehe Dokumentation zum Status des Vorgangs "sys.dm\_operation\_status"](http://msdn.microsoft.com/library/azure/dn270022.aspx) Verwenden Sie die dynamische Verwaltungssicht zum Vorgangsstatus, um den Status des Upgradevorgangs für eine Datenbank zu ermitteln. Die folgende Beispielabfrage zeigt alle Verwaltungsvorgänge, die für eine Datenbank ausgeführt werden:
+Die Azure SQL-Datenbank stellt in der dynamischen Verwaltungssicht „sys.dm\_operation\_status“ in der Masterdatenbank des logischen Servers, auf dem die aktuelle Datenbank gespeichert ist, Statusinformationen zu Verwaltungsvorgängen (z. B. „CREATE“, „ALTER“, „DROP“) zur Verfügung, die für eine Datenbank ausgeführt werden [siehe Dokumentation zum Status des Vorgangs „sys.dm\_operation\_status“].(http://msdn.microsoft.com/library/azure/dn270022.aspx) Verwenden Sie die dynamische Verwaltungssicht zum Vorgangsstatus, um den Status des Upgradevorgangs für eine Datenbank zu ermitteln. Die folgende Beispielabfrage zeigt alle Verwaltungsvorgänge, die für eine Datenbank ausgeführt werden:
 
     SELECT o.operation, o.state_desc, o.percent_complete
     , o.error_code, o.error_desc, o.error_severity, o.error_state
@@ -272,7 +272,7 @@ Die Azure SQL-Datenbank stellt in der dynamischen Verwaltungssicht "sys.dm\_oper
     and o.major_resource_id = '<database_name>'
     ORDER BY o.last_modify_time DESC;
 
-Wenn Sie das Verwaltungsportal für das Upgrade verwendet haben, ist auch eine Benachrichtigung aus dem Portal für den Vorgang verfügbar.
+Wenn Sie das klassische Portal für das Upgrade verwendet haben, ist auch eine Benachrichtigung aus dem Portal für den Vorgang verfügbar.
 
 ## 7\. Überwachen der Datenbank nach dem Upgrade
 Nach dem Upgrade der Web-/Business-Datenbank auf die neue Ebene wird empfohlen, die Datenbank aktiv zu überwachen, um sicherzustellen, dass Anwendungen mit der gewünschten Leistung ausgeführt werden. Außerdem sollte die Nutzung optimiert werden. Die folgenden zusätzlichen Schritte werden zum Überwachen der Datenbank empfohlen.
@@ -293,7 +293,7 @@ Nach dem Upgrade der Web-/Business-Datenbank auf die neue Ebene wird empfohlen, 
 In der zusätzlichen [Dokumentation](http://msdn.microsoft.com/library/dn800981.aspx) finden Sie Details zur Verwendung dieser dynamischen Verwaltungssicht. Im [Leitfaden zur Azure SQL-Datenbankleistung](http://msdn.microsoft.com/library/azure/dn369873.aspx) wird das Überwachen und Optimieren Ihrer Anwendung erläutert.
 
 
-- **Warnungen:** Richten Sie im Azure-Verwaltungsportal "Warnungen" ein, damit Sie benachrichtigt werden, wenn der DTU-Verbrauch für eine aktualisierte Datenbank eine bestimmte hohe Ebene erreicht. Datenbankwarnungen können im Azure-Verwaltungsportal für verschiedene Leistungsmetriken wie DTU, CPU, E/A- und das Protokoll eingerichtet werden. 
+- **Warnungen**: Richten Sie im klassischen Azure-Portal „Warnungen“ ein, damit Sie benachrichtigt werden, wenn der DTU-Verbrauch für eine aktualisierte Datenbank eine bestimmte hohe Ebene erreicht. Datenbankwarnungen können im klassischen Azure-Portal für verschiedene Leistungsmetriken wie DTU, CPU, E/A und die Protokollierung eingerichtet werden. 
 
 	Sie können z. B. eine E-Mail-Benachrichtigung für den "DTU Prozentsatz" festlegen, wenn der durchschnittliche prozentuale DTU-Wert 75 % innerhalb der letzten 5 Minuten überschreitet. Weitere Informationen zur Konfiguration von Warnungsbenachrichtigungen finden Sie unter [Empfangen von Warnungsbenachrichtigungen](insights-receive-alert-notifications.md).
 
@@ -317,4 +317,4 @@ Der Azure SQL-Datenbankdienst stellt Telemetriedaten und Tools zum Auswerten der
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

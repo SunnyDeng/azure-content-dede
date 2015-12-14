@@ -13,11 +13,22 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="11/09/2015"
+   ms.date="11/30/2015"
    ms.author="kenhoff"/>
 
 
 # Erste Schritte mit der Azure AD Reporting-API
+
+## Artikel in der Azure AD Reporting-Dokumentation
+
+ - [Reporting-API](active-directory-reporting-api-getting-started.md)
+ - [Überwachungsereignisse](active-directory-reporting-audit-events.md)
+ - [Aufbewahrung](active-directory-reporting-retention.md)
+ - [Vorschau](active-directory-reporting-previews.md)
+ - [Suche](active-directory-reporting-search.md)
+ - [Abgleich](active-directory-reporting-backfill.md)
+ - [Wartezeiten](active-directory-reporting-latencies.md)
+ - [Ereignis „Unbekannter Akteur“](active-directory-reporting-unknown-actor.md)
 
 Azure Active Directory bietet eine Vielzahl von Aktivitäts-, Sicherheits- und Überwachungsberichten. Diese Daten können über das Azure-Portal genutzt werden, sind aber auch in vielen anderen Anwendungen sehr nützlich, z. B. in SIEM-Systemen, Überwachungs- und Business Intelligence-Tools.
 
@@ -168,4 +179,4 @@ Das Skript gibt Listen aller verfügbaren Berichte und die Ausgabe des Berichts 
 - Unter [Azure AD-Überwachungsberichtsereignisse](active-directory-reporting-audit-events.md) finden Sie weitere Informationen zum Überwachungsbericht.
 - Unter [Azure AD-Berichte und -Ereignisse (Vorschau)](https://msdn.microsoft.com/library/azure/mt126081.aspx) finden Sie weitere Informationen zum Graph-API-REST-Dienst.
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

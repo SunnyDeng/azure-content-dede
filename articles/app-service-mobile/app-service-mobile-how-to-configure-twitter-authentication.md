@@ -27,13 +27,13 @@ In diesem Thema wird veranschaulicht, wie Sie Azure App Service zur Verwendung v
 Sie benötigen ein Twitter-Konto mit verifizierter E-Mail-Adresse, um den in diesem Thema beschriebenen Vorgang abzuschließen. Rufen Sie die Seite <a href="http://go.microsoft.com/fwlink/p/?LinkID=268287" target="_blank">twitter.com</a> auf, um ein neues Twitter-Konto zu erstellen.
 
 
-> [AZURE.NOTE]Dieses Thema veranschaulicht die Verwendung der Authentifizierungs- und Autorisierungsfeatures von App Service. Diese Features ersetzen das App Service-Gateway für die meisten Anwendungen. Unterschiede, die für die Verwendung des Gateways gelten, werden in diesem Thema in Hinweisen hervorgehoben.
+> [AZURE.NOTE]Dieses Thema veranschaulicht die Verwendung der Authentifizierungs- und Autorisierungsfeatures von App Service. Dadurch wird für die meisten Anwendungen das App Service-Gateway ersetzt. Unterschiede, die für die Verwendung des Gateways gelten, werden in diesem Thema in Hinweisen hervorgehoben.
 
 
 ## <a name="register"> </a>Registrieren Ihrer Anwendung für Twitter
 
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal] an, und navigieren Sie zu Ihrer Anwendung. Kopieren Sie die **URL**. Diese verwenden Sie zur Konfiguration der Twitter-App.
+1. Melden Sie sich beim [Azure-Portal] an, und navigieren Sie zu Ihrer Anwendung. Kopieren Sie die **URL**. Diese verwenden Sie zur Konfiguration der Twitter-App.
 
 2. Navigieren Sie zur [Twitter Developers]-Website, melden Sie sich mit den Anmeldeinformationen für Ihr Twitter-Konto an, und klicken Sie auf **Create New App**.
 
@@ -43,11 +43,11 @@ Sie benötigen ein Twitter-Konto mit verifizierter E-Mail-Adresse, um den in die
 
 3.  Lesen und akzeptieren Sie die Bedingungen am Ende der Seite. Klicken Sie dann auf **Create your Twitter application**. Daraufhin wird die Anwendung mit den angegebenen Details registriert.
 
-4. Klicken Sie auf die Registerkarte **Einstellungen**, aktivieren Sie die Option **Allow this application to be used to sign in with Twitter**, und klicken Sie dann auf **Update Settings**.
+4. Klicken Sie auf die Registerkarte **Settings**, aktivieren Sie die Option **Allow this application to be used to sign in with Twitter**, und klicken Sie dann auf **Update Settings**.
 
 5. Wählen Sie die Registerkarte **Keys and Access Tokens**. Notieren Sie die Werte für **Consumer Key (API Key)** und **Consumer secret (API Secret)**.
 
-    > [AZURE.NOTE] Consumer secret ist eine wichtige Anmeldeinformation. Teilen Sie diesen Schlüssel mit niemandem, und geben Sie ihn nicht über Ihre App frei.
+    > [AZURE.NOTE]Consumer secret ist eine wichtige Anmeldeinformation. Teilen Sie diesen Schlüssel mit niemandem, und geben Sie ihn nicht über Ihre App frei.
 
 
 ## <a name="secrets"> </a>Hinzufügen von Twitter-Informationen zu Ihrer Anwendung
@@ -55,7 +55,7 @@ Sie benötigen ein Twitter-Konto mit verifizierter E-Mail-Adresse, um den in die
 > [AZURE.NOTE]Wenn Sie das App Service-Gateway verwenden, ignorieren Sie diesen Abschnitt und navigieren stattdessen im Portal zu Ihrem Gateway. Wählen Sie unter **Einstellungen** die Option **Identität** und dann **Twitter** aus. Fügen Sie die erhaltenen abgerufenen Werte ein, und klicken Sie auf **Speichern**.
 
 
-13. Navigieren Sie im [Azure-Verwaltungsportal] zu Ihrer Anwendung. Klicken Sie auf **Einstellungen** und anschließend auf **Authentifizierung/Autorisierung**.
+13. Navigieren Sie im [Azure-Portal] wieder zu Ihrer Anwendung. Klicken Sie auf **Einstellungen** und anschließend auf **Authentifizierung/Autorisierung**.
 
 14. Falls das Authentifizierungs-/Autorisierungsfeature nicht aktiviert ist, aktivieren Sie es über die Option **Ein**.
 
@@ -85,7 +85,7 @@ Sie können nun Twitter für die Authentifizierung in Ihrer App verwenden.
 <!-- URLs. -->
 
 [Twitter Developers]: http://go.microsoft.com/fwlink/p/?LinkId=268300
-[Azure-Verwaltungsportal]: https://portal.azure.com/
+[Azure-Portal]: https://portal.azure.com/
 [xamarin]: ../app-services-mobile-app-xamarin-ios-get-started-users.md
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

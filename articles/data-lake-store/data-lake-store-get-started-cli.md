@@ -33,7 +33,7 @@ Die Azure-CLI ist in Node.js implementiert. Sie kann auf allen Plattformen verwe
 
 Bevor Sie mit diesem Artikel beginnen können, benötigen Sie Folgendes:
 
-- **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/de-DE/pricing/free-trial/).
+- **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/).
 - **Aktiviertes Azure-Abonnement** für die öffentliche Vorschauversion des Data Lake-Speichers. Weitere Informationen finden Sie in den [Anweisungen](data-lake-store-get-started-portal.md#signup). 
 - **Azure-CLI** – Informationen zur Installation und Konfiguration finden Sie unter [Installieren und Konfigurieren der Azure-CLI](../xplat-cli-install.md). Achten Sie darauf, Ihren Computer nach der Installation der Befehlszeilenschnittstelle neu zu starten.
 
@@ -192,4 +192,4 @@ Geben Sie nach entsprechender Aufforderung **Y** ein, um das Konto zu löschen.
 
 [azure-command-line-tools]: ../xplat-cli-install.md
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

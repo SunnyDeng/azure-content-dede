@@ -204,7 +204,7 @@ Die Parameter sind selbsterklärend. Ersetzen Sie Ihre bestimmten Variablen, und
 
 > [AZURE.NOTE]Über die Befehlszeile automatisiere ich mithilfe des Parameters „–tcp-endpoints“ auch die Filterregeln für mein Endpunktnetzwerk. Ich habe die Ports 80 und 3389 geöffnet, um den Zugriff auf meine Webseite und die RDP-Sitzung zu gestatten.
 
-Nachdem Sie den Befehl ausgeführt haben, wechseln Sie zum Azure-Vorschauportal, in dem Sie die Bereitstellung des virtuellen Computers verfolgen können.
+Nachdem Sie den Befehl ausgeführt haben, wechseln Sie zum Azure-Portal, wo Sie die Bereitstellung des virtuellen Computers verfolgen können.
 
 ![][13]
 
@@ -218,7 +218,7 @@ Nach Abschluss der Bereitstellung können wir über den Port 80 eine Verbindung
 
 Wie Sie sehen, war ich bei meinem HTML-Code richtig kreativ.
 
-Vergessen Sie nicht, dass wir die Verbindung auch im Azure-Portal per RDP-Sitzung über den Port 3389 herstellen können.
+Vergessen Sie nicht, dass wir die Verbindung auch im klassischen Azure-Portal per RDP-Sitzung über den Port 3389 herstellen können.
 
 Ich hoffe, diese Informationen waren hilfreich. Starten Sie noch heute mit Azure, um Ihre Infrastruktur als Code umzusetzen!
 
@@ -239,4 +239,4 @@ Ich hoffe, diese Informationen waren hilfreich. Starten Sie noch heute mit Azure
 
 <!--Link references-->
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

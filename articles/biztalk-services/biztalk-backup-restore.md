@@ -13,13 +13,13 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/18/2015" 
+	ms.date="12/02/2015" 
 	ms.author="mandia"/>
 
 
 # BizTalk Services: Sichern und Wiederherstellen
 
-Azure BizTalk Services bieten eine Sicherungs- und Wiederherstellungsfunktion. In diesem Thema wird beschrieben, wie BizTalk Services mithilfe des Azure-Verwaltungsportals gesichert und wiederhergestellt werden.
+Azure BizTalk Services bieten eine Sicherungs- und Wiederherstellungsfunktion. In diesem Thema wird beschrieben, wie BizTalk Services unter Verwendung des klassischen Azure-Portals gesichert und wiederhergestellt werden.
 
 Sie können BizTalk Services auch mithilfe der [BizTalk Services-REST-API](http://go.microsoft.com/fwlink/p/?LinkID=325584) sichern.
 
@@ -29,7 +29,7 @@ Sie können BizTalk Services auch mithilfe der [BizTalk Services-REST-API](http:
 
 	**Hinweis** Hybridverbindungen werden editionsunabhängig NICHT gesichert.
 
-- Mit dem Azure-Verwaltungsportal können Sie bedarfsgesteuerte oder geplante Sicherungskopien erstellen.
+- Mit dem klassischen Azure-Portal können Sie bedarfsgesteuerte oder geplante Sicherungskopien erstellen.
 
 - Gesicherte Inhalte können im selben BizTalk Service oder in einem neuen BizTalk Service wiederhergestellt werden. Wenn Sie den BizTalk Service unter demselben Namen wiederherstellen möchten, muss der vorhandene BizTalk Service gelöscht werden und der Name muss verfügbar sein. Nach dem Löschen eines BizTalk Service kann es länger dauern als erwartet, bis der gleiche Name verfügbar ist. Wenn Sie nicht warten können, bis der gleiche Name verfügbar ist, dann stellen Sie in einem neuen BizTalk Service wieder her.
 
@@ -48,14 +48,14 @@ Sie können BizTalk Services auch mithilfe der [BizTalk Services-REST-API](http:
 
 ## Erstellen einer Sicherung
 
-Eine Sicherungskopie kann jederzeit erstellt werden und ist komplett benutzergesteuert. Dieser Abschnitt enthält die Schritte zum Erstellen von Sicherungen mit dem Azure-Verwaltungsportal. Dies umfasst Folgendes:
+Eine Sicherungskopie kann jederzeit erstellt werden und ist komplett benutzergesteuert. Dieser Abschnitt enthält die Schritte zum Erstellen von Sicherungen mit dem klassischen Azure-Portal. Dies umfasst Folgendes:
 
 [Bedarfsgesteuerte Sicherung](#backupnow)
 
 [Planen einer Sicherung](#backupschedule)
 
 #### <a name="backupnow"></a>Bedarfsgesteuerte Sicherung
-1. Wählen Sie im Azure-Verwaltungsportal zuerst **BizTalk Services** und dann den BizTalk Service aus, den Sie sichern möchten.
+1. Wählen Sie im klassischen Azure-Portal zuerst **BizTalk Services** und dann den BizTalk Service aus, den Sie sichern möchten.
 2. Wählen Sie auf der Registerkarte **Dashboard** unten auf der Seite **Sichern**.
 3. Geben Sie einen Namen für die Sicherung ein. Beispiel: *meinBizTalkService*SK*Datum*.
 4. Wählen Sie ein Blobspeicherkonto aus, und klicken Sie auf das Häkchen, um mit der Sicherung zu beginnen.
@@ -64,7 +64,7 @@ Sobald die Sicherung abgeschlossen ist, wird im Speicherkonto ein Container mit 
 
 #### <a name="backupschedule"></a>Planen einer Sicherung
 
-1. Klicken Sie im Azure-Verwaltungsportal auf **BizTalk Services**, wählen Sie den Namen des BizTalk Service aus, für den Sie die Sicherung planen möchten, und klicken Sie anschließend auf die Registerkarte **Konfigurieren**.
+1. Klicken Sie im klassischen Azure-Portal auf **BizTalk Services**, wählen Sie den Namen des BizTalk Service aus, für den Sie die Sicherung planen möchten, und klicken Sie anschließend auf die Registerkarte **Konfigurieren**.
 2. Stellen Sie den **Sicherungsstatus** auf **Automatisch** ein. 
 3. Wählen Sie das **Speicherkonto** zum Speichern der Sicherung aus, geben Sie unter **Häufigkeit** an, wie oft Sicherungen erstellt werden sollen, und unter **Aufbewahrung in Tagen** deren Aufbewahrungszeit:
 
@@ -86,7 +86,7 @@ Wenn auf dem BizTalk Service-Dashboard der Status **Fehler** angezeigt wird:
 
 ## Wiederherstellen
 
-Sie können eine Sicherung entweder über das Azure-Verwaltungsportal oder über die [REST-API zum Wiederherstellen von BizTalk Services](http://go.microsoft.com/fwlink/p/?LinkID=325582) wiederherstellen. Dieser Abschnitt enthält die Schritte zur Wiederherstellung über das Verwaltungsportal.
+Sie können eine Sicherung entweder über das klassische Azure-Portal oder über die [REST-API zum Wiederherstellen von BizTalk Services](http://go.microsoft.com/fwlink/p/?LinkID=325582) wiederherstellen. Dieser Abschnitt enthält die Schritte zur Wiederherstellung über das klassische Portal.
 
 #### Vor dem Wiederherstellen einer Sicherung
 
@@ -96,7 +96,7 @@ Sie können eine Sicherung entweder über das Azure-Verwaltungsportal oder über
 
 #### Wiederherstellen einer Sicherung
 
-1. Wählen Sie im Azure-Verwaltungsportal **Neu** > **App Services** > **BizTalk Service** > **Wiederherstellen** aus:
+1. Wählen Sie im klassischen Azure-Portal **Neu** > **App Services** > **BizTalk Service** > **Wiederherstellen** aus:
 
 	![Wiederherstellen einer Sicherung][Restore]
 
@@ -119,7 +119,7 @@ Sie können eine Sicherung entweder über das Azure-Verwaltungsportal oder über
 
 7. Klicken Sie auf das Häkchen, um die Wiederherstellung zu starten.
 
-Wenn die Wiederherstellung erfolgreich abgeschlossen wurde, wird auf der Seite "BizTalk Services" im Azure-Verwaltungsportal ein neuer BizTalk Service im angehaltenen Status angezeigt.
+Wenn die Wiederherstellung erfolgreich abgeschlossen wurde, wird auf der Seite "BizTalk Services" im klassischen Azure-Portal ein neuer BizTalk Service im angehaltenen Status angezeigt.
 
 
 
@@ -135,7 +135,7 @@ BizTalk Services werden immer im Status **Angehalten** wiederhergestellt. In die
 
 - Es empfiehlt sich auch, automatisierte Sicherungen der wiederhergestellten BizTalk Service-Umgebung zu konfigurieren.
 
-Um den BizTalk Service im Azure-Verwaltungsportal zu starten, wählen Sie zuerst den wiederhergestellten BizTalk Service und dann in der Taskleiste **Fortsetzen** aus.
+Um den BizTalk Service im klassischen Azure-Portal zu starten, wählen Sie zuerst den wiederhergestellten BizTalk Service und dann in der Taskleiste **Fortsetzen** aus.
 
 
 
@@ -214,13 +214,13 @@ Wenn die Nachverfolgungsdatenbank gelöscht wird und wiederhergestellt werden so
 
 ## Weiter
 
-Um Azure BizTalk Services im Azure-Verwaltungsportal zu erstellen, wechseln Sie zu [BizTalk Services: Erstellen eines BizTalk Service im Azure-Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=302280). Wenn Sie mit dem Erstellen von Anwendungen beginnen möchten, wechseln Sie zu [Azure BizTalk Services](http://go.microsoft.com/fwlink/p/?LinkID=235197).
+Um Azure BizTalk Services im klassischen Azure-Portal zu erstellen, wechseln Sie zu [BizTalk Services: Bereitstellen mit dem klassischen Azure-Portal](http://go.microsoft.com/fwlink/p/?LinkID=302280). Wenn Sie mit dem Erstellen von Anwendungen beginnen möchten, wechseln Sie zu [Azure BizTalk Services](http://go.microsoft.com/fwlink/p/?LinkID=235197).
 
 ## Weitere Informationen
 - [Sichern von BizTalk Services](http://go.microsoft.com/fwlink/p/?LinkID=325584)
 - [Wiederherstellen von BizTalk Services aus einer Sicherung](http://go.microsoft.com/fwlink/p/?LinkID=325582)
 - [BizTalk Services: Editionsübersicht](http://go.microsoft.com/fwlink/p/?LinkID=302279)
-- [BizTalk Services: Erstellen eines BizTalk Service im Azure-Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=302280)
+- [BizTalk Services: Bereitstellen mithilfe des klassischen Azure-Portals](http://go.microsoft.com/fwlink/p/?LinkID=302280)
 - [BizTalk Services: Bereitstellungsstatusübersicht](http://go.microsoft.com/fwlink/p/?LinkID=329870)
 - [BizTalk Services: Registerkarten "Dashboard", "Überwachen" und "Skalieren"](http://go.microsoft.com/fwlink/p/?LinkID=302281)
 - [BizTalk Services: Drosselung](http://go.microsoft.com/fwlink/p/?LinkID=302282)
@@ -233,4 +233,4 @@ Um Azure BizTalk Services im Azure-Verwaltungsportal zu erstellen, wechseln Sie 
 [RestoreBizTalkService]: ./media/biztalk-backup-restore/RestoreBizTalkServiceWindow.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

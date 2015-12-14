@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="nodejs"
 	ms.topic="article"
-	ms.date="11/20/2015"
+	ms.date="12/01/2015"
 	ms.author="robmcm"/>
 
 
@@ -71,7 +71,7 @@ Fügen Sie den folgenden Code am Anfang der Datei **server.js** in der Anwendung
 
 Das Azure-Modul entnimmt den Umgebungsvariablen AZURE\_STORAGE\_ACCOUNT und AZURE\_STORAGE\_ACCESS\_KEY oder AZURE\_STORAGE\_CONNECTION\_STRING die Informationen, die zum Herstellen einer Verbindung mit Ihrem Azure-Speicherkonto benötigt werden. Wenn diese Umgebungsvariablen nicht festgelegt wurden, müssen Sie die Kontoinformationen beim Aufruf von **TableService** angeben.
 
-Ein Beispiel zum Festlegen der Umgebungsvariablen im Azure-Portal für eine Azure-Website finden Sie unter [Node.js-Web-App mit Storage].
+Ein Beispiel zum Festlegen der Umgebungsvariablen für eine Azure-Website im [Azure-Portal](portal.azure.com) finden Sie unter [Node.js-Webanwendung mit Speicher].
 
 ## Erstellen einer Tabelle
 
@@ -432,7 +432,6 @@ Nachdem die ACL festgelegt wurde, können Sie basierend auf der ID für eine Ric
 
 Weitere Informationen finden Sie in den folgenden Ressourcen.
 
--   MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure][]
 -   [Azure Storage Team Blog][] (in englischer Sprache)
 -   [Azure Storage SDK for Node.js][]-Repository auf GitHub (in englischer Sprache)
 -   [Node.js Developer Center (in englischer Sprache)](/develop/nodejs/)
@@ -440,14 +439,13 @@ Weitere Informationen finden Sie in den folgenden Ressourcen.
   [Azure Storage SDK for Node.js]: https://github.com/Azure/azure-storage-node
   [OData.org]: http://www.odata.org/
   [Using the REST API]: http://msdn.microsoft.com/library/azure/hh264518.aspx
-  [Azure portal]: http://manage.windowsazure.com
+  [Azure Portal]: portal.azure.com
 
   [Node.js Cloud Service]: ../cloud-services-nodejs-develop-deploy-app.md
-  [Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/library/azure/gg433040.aspx
   [Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
   [Website with WebMatrix]: ../web-sites-nodejs-use-webmatrix.md
   [Node.js Cloud Service with Storage]: ../storage-nodejs-use-table-storage-cloud-service-app.md
-  [Node.js-Web-App mit Storage]: ../storage-nodejs-use-table-storage-web-site.md
+  [Node.js-Webanwendung mit Speicher]: ../storage-nodejs-use-table-storage-web-site.md
   [Create and deploy a Node.js application to an Azure website]: ../web-sites-nodejs-develop-deploy-mac.md
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

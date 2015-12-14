@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Zurücksetzen des Kennworts des virtuellen Linux-Computers über die Azure-Befehlszeilenschnittstelle | Microsoft Azure"
-	description="Hier erfahren Sie, wie Sie die VMAccess-Erweiterung im Azure-Portal oder der Azure-Befehlszeilenschnittstelle verwenden, um Kennwörter und SSH-Schlüssel des virtuellen Linux-Computers sowie SSH-Konfigurationen zurückzusetzen und Benutzerkonten zu löschen."
+	description="Hier erfahren Sie, wie Sie die VMAccess-Erweiterung im klassischen Azure-Portal oder der Azure-Befehlszeilenschnittstelle verwenden, um Kennwörter und SSH-Schlüssel des virtuellen Linux-Computers sowie SSH-Konfigurationen zurückzusetzen und Benutzerkonten zu löschen."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -22,15 +22,15 @@
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
 
 
-Wenn Sie aufgrund eines vergessenen Kennworts, eines falschen SSH (Secure Shell)-Schlüssels oder eines Problems bei der SSH-Konfiguration keine Verbindung zu einem virtuellen Linux-Computer herstellen können, haben Sie im Azure-Vorschauportal oder mit der VMAccessForLinux-Erweiterung die Möglichkeit, das Kennwort oder den SSH-Schlüssel zurückzusetzen oder die SSH-Konfiguration zu korrigieren. Beachten Sie, dass sich dieser Artikel auf virtuelle Computer bezieht, die mit dem klassischen Bereitstellungsmodell erstellt wurden.
+Wenn Sie aufgrund eines vergessenen Kennworts, eines falschen SSH (Secure Shell)-Schlüssels oder eines Problems bei der SSH-Konfiguration keine Verbindung zu einem virtuellen Linux-Computer herstellen können, haben Sie die Möglichkeit, das Kennwort oder den SSH-Schlüssel zurückzusetzen oder die SSH-Konfiguration zu beheben (mithilfe des Azure-Portals oder der VMAccessforLinux-Erweiterung). Beachten Sie, dass sich dieser Artikel auf virtuelle Computer bezieht, die mit dem klassischen Bereitstellungsmodell erstellt wurden.
 
-## Azure-Vorschauportal
+## Azure-Portal
 
-Um die SSH-Konfiguration im [Azure-Vorschauportal](https://portal.azure.com) zurückzusetzen, klicken Sie auf **Durchsuchen** > **Virtuelle Computer** > *Ihr virtueller Linux-Computer* > **Remotezugriff zurücksetzen**. Beispiel:
+Um die SSH-Konfiguration im [Azure-Portal](https://portal.azure.com) zurückzusetzen, klicken Sie auf **Durchsuchen** > **Virtuelle Computer** > *Ihr virtueller Linux-Computer* > **Remotezugriff zurücksetzen**. Beispiel:
 
 ![](./media/virtual-machines-linux-use-vmaccess-reset-password-or-ssh/Portal-RDP-Reset-Linux.png)
 
-Um den Namen und das Kennwort des Benutzerkontos mit sudo-Berechtigungen oder den öffentlichen SSH-Schlüssel im [Azure-Vorschauportal](https://portal.azure.com) zurückzusetzen, klicken Sie auf **Durchsuchen** > **Virtuelle Computer** > *Ihr virtueller Linux-Computer* > **Alle Einstellungen** > **Kennwortzurücksetzung**. Beispiel:
+Um den Namen und das Kennwort des Benutzerkontos mit sudo-Berechtigungen oder den öffentlichen SSH-Schlüssel im [Azure-Portal](https://portal.azure.com) zurückzusetzen, klicken Sie auf **Durchsuchen** > **Virtuelle Computer** > *Ihr virtueller Linux-Computer* > **Alle Einstellungen** > **Kennwortzurücksetzung**. Beispiel:
 
 ![](./media/virtual-machines-linux-use-vmaccess-reset-password-or-ssh/Portal-PW-Reset-Linux.png)
 
@@ -165,7 +165,7 @@ Wenn Sie den Namen des Clouddiensts und des virtuellen Computers nicht kennen, f
 
 > [AZURE.NOTE]Die Befehlszeilen, die mit $ beginnen, legen PowerShell-Variablen fest, die später in PowerShell-Befehlen verwendet werden.
 
-Wenn Sie die virtuelle Maschine mit dem Azure-Portal erstellt haben, führen Sie den folgenden zusätzlichen Befehl aus:
+Wenn Sie die virtuelle Maschine mit dem klassischen Azure-Portal erstellt haben, führen Sie den folgenden zusätzlichen Befehl aus:
 
 	$vm.GetInstance().ProvisionGuestAgent = $true
 
@@ -266,4 +266,4 @@ Führen Sie zum Anzeigen des Status der VMAccess-Erweiterung diesen Befehl aus.
 [Azure-VM-Erweiterungen und Features]: http://msdn.microsoft.com/library/azure/dn606311.aspx
 [Herstellen einer Verbindung mit einem virtuellen Azure-Computer über RDP oder SSH]: http://msdn.microsoft.com/library/azure/dn535788.aspx
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

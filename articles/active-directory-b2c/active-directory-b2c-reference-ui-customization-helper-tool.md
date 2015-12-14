@@ -60,7 +60,7 @@ Wenn Sie den Azure-BLOB-Speicher zum Hosten Ihrer Beispielinhalte verwenden möc
 #### Erstellen Sie ein Speicherkonto.
 
 1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com/) an.
-2. Klicken Sie auf **+ Neu** -> **Daten und Speicher** -> **Speicherkonto**. Sie benötigen ein Azure-Abonnement, um ein Azure-Blobspeicherkonto zu erstellen. Sie können sich [hier](https://azure.microsoft.com/en-us/pricing/free-trial/) für eine kostenlose Testversion registrieren.
+2. Klicken Sie auf **+ Neu** -> **Daten und Speicher** -> **Speicherkonto**. Sie benötigen ein Azure-Abonnement, um ein Azure-Blobspeicherkonto zu erstellen. Sie können sich [hier](https://azure.microsoft.com/pricing/free-trial/) für eine kostenlose Testversion registrieren.
 3. Geben Sie einen **Namen** für das Speicherkonto an (z. B. „contoso“), und treffen Sie die entsprechende Auswahl für **Tarif**, **Ressourcengruppe** und **Abonnement**. Stellen Sie sicher, dass die Option **An Startmenü anheften** aktiviert ist. Klicken Sie auf **Erstellen**.
 4. Wechseln Sie zurück zum Startmenü, und klicken Sie auf das Speicherkonto, das Sie gerade erstellt haben.
 5. Klicken Sie im Abschnitt **Zusammenfassung** auf **Container** und dann auf **+ Hinzufügen**.
@@ -90,4 +90,4 @@ Nachdem Sie die Beispielinhalte in Ihr eigenes Speicherkonto hochgeladen haben, 
         
 Sie können nun die Schaltfläche **Jetzt ausführen** oder Ihre eigene Anwendung verwenden, um die Richtlinie erneut auszuführen. Das Ergebnis sollte nahezu identisch sein, da Sie in beiden Fällen dieselben HTML- und CSS-Beispieldaten verwendet haben. Die Richtlinien verweisen jetzt aber auf Ihre eigene Instanz des Azure-BLOB-Speichers, und Sie können die Dateien wie gewünscht bearbeiten und neu hochladen. Weitere Informationen zum Anpassen der HTML- und CSS-Daten finden Sie im [Hauptartikel zur Anpassung der Benutzeroberfläche](active-directory-b2c-reference-ui-customization.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

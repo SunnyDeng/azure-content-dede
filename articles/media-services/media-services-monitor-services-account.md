@@ -24,11 +24,11 @@ Das Azure Media Services-Dashboard stellt Nutzungsmetriken und Kontoinformatione
 
 Sie können die Anzahl der Codierungsjobs in der Warteschlange, fehlgeschlagene Codierungsaufgaben, aktive Codierungsjobs, die durch die Eingabe- und Ausgabedaten des Encoders dargestellt werden, sowie die Blob-Speichernutzung Ihres Media Services-Kontos überwachen. Wenn Sie Inhalte per Streaming an Kunden übertragen, können Sie außerdem verschiedene Streaming-Metriken abrufen. Sie können Ihre Daten der letzten 6 Stunden, 24 Stunden oder 7 Tage überwachen.
  
->[AZURE.NOTE]Beim Überwachen der Speicherdaten im Windows Azure-Verwaltungsportal entstehen zusätzliche Kosten. Weitere Informationen finden Sie unter [Speicheranalyse und Speicheranalysekosten](http://go.microsoft.com/fwlink/?LinkId=256667).
+>[AZURE.NOTE]Beim Überwachen der Speicherdaten im klassischen Azure-Portal entstehen zusätzliche Kosten. Weitere Informationen finden Sie unter [Speicheranalyse und Speicheranalysekosten](http://go.microsoft.com/fwlink/?LinkId=256667).
 
 ##<a id="configuremonitoring"></a>Überwachen eines Media Services-Kontos
 
-1. Klicken Sie im [Verwaltungsportal](http://go.microsoft.com/fwlink/?LinkID=256666) auf **Media Services** und dann auf den Media Services-Kontonamen, um das Dashboard zu öffnen. 
+1. Klicken Sie im [klassischen Azure-Portal](http://go.microsoft.com/fwlink/?LinkID=256666) auf **Media Services** und dann auf den Media Services-Kontonamen, um das Dashboard zu öffnen. 
 
 	![MediaServices\_Dashboard][dashboard]
 
@@ -73,4 +73,4 @@ Sie können die Anzahl der Codierungsjobs in der Warteschlange, fehlgeschlagene 
 
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

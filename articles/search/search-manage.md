@@ -21,7 +21,7 @@
 
 Azure Search ist ein cloudbasierter Dienst mit einer HTTP-basierten API, die Sie in eigenen Suchanwendungen verwenden können. Unser Suchdienst bietet ein Modul für Volltextsuche, Textanalyse, erweiterte Suchfunktionen, Speicherung von Suchdaten und eine Befehlssyntax für Abfragen.
 
-In diesem Artikel wird die Verwaltung eines Suchdiensts im [Azure-Portal](https://portal.azure.com) erläutert.
+In diesem Artikel wird die Verwaltung eines Suchdiensts im [klassischen Azure-Portal](https://portal.azure.com) erläutert.
 
 Alternativ können Sie die Management-REST-API verwenden. Detaillierte Informationen finden Sie unter [Erste Schritte mit der Azure Search Management-REST-API](search-get-started-management-api.md) und [Azure Search Management REST-API](http://msdn.microsoft.com/library/azure/dn832684.aspx).
 
@@ -62,7 +62,7 @@ Entwickler benötigen für die Erstellung von Suchanwendungen die Dienst-URL fü
 
 So finden Sie die Dienst-URL im Dienst-Dashboard:
 
-1.	Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
+1.	Melden Sie sich beim [klassischen Azure-Portal](https://portal.azure.com) an.
 2.	Klicken Sie auf **Durchsuchen** | **Alles** | **Dienste suchen**.
 3.	Klicken Sie auf den Namen des Dienstes, um das Dashboard zu öffnen.
 4.	Klicken Sie auf **EIGENSCHAFTEN**, um eine Eigenschaftenseite zu öffnen. Die Dienst-URL befindet sich oben auf der Seite. Sie können diese Seite für den späteren Zugriff anheften.
@@ -159,7 +159,7 @@ Beim Starten oder Anhalten von Diensten wird die Abrechnung nicht deaktiviert. S
 <a id="sub-8"></a>
 ## Festlegen von Rollen für administrativen Zugriff
 
-Azure bietet ein globales rollenbasiertes Autorisierungsmodell für alle Dienste, die über das Vorschauportal oder in der Azure Ressource Manager-API verwaltet werden, wenn Sie ein benutzerdefiniertes Verwaltungstool verwenden. Die Rollen Besitzer, Mitwirkender und Leser legen die Ebene der Dienstverwaltung für die Active Directory-Benutzer, Gruppen und Sicherheitsprinzipale fest, die Sie jeder Rolle zuweisen. Weitere Informationen zur Rollenmitgliedschaft finden Sie unter [Rollenbasierte Zugriffssteuerung über das Azure-Vorschauportal](../role-based-access-control-configure.md).
+Azure bietet ein globales rollenbasiertes Autorisierungsmodell für alle Dienste, die über das Portal oder in der Azure Ressource Manager-API verwaltet werden, wenn Sie ein benutzerdefiniertes Verwaltungstool verwenden. Die Rollen Besitzer, Mitwirkender und Leser legen die Ebene der Dienstverwaltung für die Active Directory-Benutzer, Gruppen und Sicherheitsprinzipale fest, die Sie jeder Rolle zuweisen. Weitere Informationen zur Rollenmitgliedschaft finden Sie unter [Rollenbasierte Zugriffssteuerung über das klassische Azure-Portal](../role-based-access-control-configure.md).
 
 Bei Azure Search bestimmt die rollenbasierte Zugriffssteuerung die folgenden Verwaltungsaufgaben:
 
@@ -170,7 +170,7 @@ Besitzer|Starten, Beenden oder Löschen des Diensts.<p>Erstellen und Anzeigen vo
 Mitwirkender|Verfügt über die gleiche Zugriffsebene wie Besitzer mit Ausnahme der Rollenverwaltung. So kann z. B. ein Mitwirkender den `api-key` anzeigen und neu generieren, aber nicht die Rollenmitgliedschaften ändern.
 Reader|Dienststatus und Abfrageschlüssel anzeigen. Mitglieder dieser Rolle können einen Dienst nicht starten oder beenden und auch keine Admin-Schlüssel anzeigen.
 
-Beachten Sie, dass die Rollen keine Zugriffsrechte für den Dienstendpunkt erteilen. Suchdienstoperationen, wie z. B. die Indexverwaltung, Auffüllung des Indexes und Abfragen von Suchdaten werden durch die API-Schlüssel und nicht durch Rollen gesteuert. Weitere Informationen finden Sie unter [Rollenbasierte Zugriffssteuerung über das Azure-Vorschauportal](../role-based-access-control-configure.md) im Abschnitt "Autorisierung für Verwaltungsvorgänge vs. Datenvorgänge".
+Beachten Sie, dass die Rollen keine Zugriffsrechte für den Dienstendpunkt erteilen. Suchdienstoperationen, wie z. B. die Indexverwaltung, Auffüllung des Indexes und Abfragen von Suchdaten werden durch die API-Schlüssel und nicht durch Rollen gesteuert. Weitere Informationen finden Sie unter [Rollenbasierte Zugriffssteuerung über das klassische Azure-Portal](../role-based-access-control-configure.md) im Abschnitt „Autorisierung für Verwaltungsvorgänge vs. Datenvorgänge“.
 
 Rollen bieten Zugriffssteuerung, nachdem der Dienst erstellt wurde. Nur Abonnementmanager können einen Suchdienst zu einem Abonnement hinzufügen.
 
@@ -193,4 +193,4 @@ Rollen bieten Zugriffssteuerung, nachdem der Dienst erstellt wurde. Nur Abonneme
 
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

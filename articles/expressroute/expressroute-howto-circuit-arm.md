@@ -28,7 +28,7 @@ In diesem Artikel werden Sie durch die Schritte zum Erstellen einer ExpressRoute
 
 ## Konfigurationsvoraussetzungen
 
-- Sie benötigen die neueste Version der Azure PowerShell-Module, d. h. Version 1.0 oder höher. Befolgen Sie die Anleitung auf der Seite [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md). Sie erhalten dort eine Schritt-für-Schritt-Anleitung zum Konfigurieren des Computers für die Verwendung der Azure PowerShell-Module. 
+- Sie benötigen die neueste Version der Azure PowerShell-Module (also mindestens Version 1.0). Befolgen Sie die Anleitung auf der Seite [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md). Sie erhalten dort eine Schritt-für-Schritt-Anleitung zum Konfigurieren des Computers für die Verwendung der Azure PowerShell-Module. 
 - Stellen Sie sicher, dass Sie vor Beginn der Konfiguration die Seiten [Voraussetzungen](expressroute-prerequisites.md) und [Workflows](expressroute-workflows.md) gelesen haben.
 
 ## So können Sie eine ExpressRoute-Verbindung erstellen und bereitstellen
@@ -356,6 +356,5 @@ Wenn der Service Provider die Bereitstellung der Verbindung aufgehoben hat (Bere
 ## Nächste Schritte
 
 - [Konfigurieren des Routings](expressroute-howto-routing-arm.md)
-- [Verknüpfen eines VNet mit einer ExpressRoute-Verbindung](expressroute-howto-linkvnet-arm.md) 
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

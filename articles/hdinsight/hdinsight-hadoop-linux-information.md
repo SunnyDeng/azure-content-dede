@@ -47,7 +47,7 @@ Hiermit wird ein JSON-Dokument mit einer Beschreibung des Diensts zurückgegeben
 
 	> [AZURE.IMPORTANT]Während Ambari für Ihren Cluster direkt über das Internet zugänglich ist, benötigen einige Funktionen den Knotenzugriff über den internen Domänennamen, der vom Cluster verwendet wird. Da dies ein interner und somit nicht öffentlicher Domänenname ist, erhalten Sie die Fehlermeldung, dass der Server nicht gefunden wurde, wenn Sie versuchen, auf einige Features über das Internet zuzugreifen.
 	>
-	> Damit Sie die Funktionalität der Ambari-Webbenutzeroberfläche vollständig nutzen können, verwenden Sie einen SSH-Tunnel, um den Webdatenverkehr per Proxy an den Clusterhauptknoten weiterzuleiten. Weitere Informationen finden Sie unter [Verwenden von SSH-Tunneling zum Zugreifen auf die Ambari-Webbenutzeroberfläche, ResourceManager, JobHistory, NameNode, Oozie und andere Webbenutzeroberflächen](hdinsight-linux-ambari-ssh-tunnel.md).
+	> Damit Sie die Funktionalität der Ambari-Webbenutzeroberfläche vollständig nutzen können, verwenden Sie einen SSH-Tunnel, um den Webdatenverkehr per Proxy an den Clusterhauptknoten weiterzuleiten. Weitere Informationen finden Sie unter [Verwenden von SSH-Tunneling zum Zugriff auf die Ambari-Webbenutzeroberfläche, ResourceManager, JobHistory, NameNode, Oozie und andere Webbenutzeroberflächen](hdinsight-linux-ambari-ssh-tunnel.md).
 
 * **Ambari (REST)** - https://&lt;clustername>.azurehdinsight.net/ambari
 
@@ -61,7 +61,7 @@ Hiermit wird ein JSON-Dokument mit einer Beschreibung des Diensts zurückgegeben
 	>
 	> Die Authentifizierung erfolgt unverschlüsselt. Verwenden Sie immer HTTPS, um eine sichere Verbindung zu gewährleisten.
 
-* **SSH** - &lt;Clustername>-ssh.azurehdinsight.net an Port 22 oder 23. Port 22 dient zum Herstellen einer Verbindung mit Hauptknoten 0, während Port 23 zum Herstellen einer Verbindung mit Hauptknoten 1 verwendet wird. Weitere Informationen zu Hauptknoten finden Sie unter [Verfügbarkeit und Zuverlässigkeit von Hadoop-Clustern in HDInsight](hdinsight-high-availability-linux.md).
+* **SSH** - &lt;Custername>-ssh.azurehdinsight.net an Port 22 oder 23. Port 22 dient zum Herstellen einer Verbindung mit Hauptknoten 0, während Port 23 zum Herstellen einer Verbindung mit Hauptknoten 1 verwendet wird. Weitere Informationen zu Hauptknoten finden Sie unter [Verfügbarkeit und Zuverlässigkeit von Hadoop-Clustern in HDInsight](hdinsight-high-availability-linux.md).
 
 	> [AZURE.NOTE]Sie können auf einem Clientcomputer nur über SSH auf die Hauptknoten des Clusters zugreifen. Nachdem die Verbindung hergestellt ist, können Sie vom Hauptknoten aus über SSH auf die Workerknoten zugreifen.
 
@@ -76,7 +76,7 @@ Beispieldaten und JAR-Dateien für Hadoop Distributed File System (HDFS) oder Az
 
 ## Bewährte Methoden für HDFS, Azure-Blobspeicher und Speicher
 
-In den meisten Hadoop-Distributionen wird HDFS auf den Computern im Cluster durch lokalen Speicher gesichert. Obwohl dies effizient ist, kann es für eine Cloud-basierte Lösung mit zeitabhängiger Abrechnung für Computeressourcen kostenintensiv sein.
+In den meisten Hadoop-Distributionen wird HDFS auf den Computern im Cluster durch lokalen Speicher gesichert. Obwohl dies effizient ist, kann es für eine Cloud-basierte Lösung mit zeitabhängiger Abrechnung für Serverressourcen kostenintensiv sein.
 
 HDInsight verwendet Azure-Blobspeicher als Standardspeicher, der folgende Vorteile bietet:
 
@@ -88,7 +88,7 @@ Da dies der Standardspeicher für HDInsight ist, sind für seine Verwendung in d
 
 	hadoop fs -ls /example/data
 
-Bei einigen Befehlen müssen Sie möglicherweise angeben, dass Sie Blobspeicher verwenden. Diesen Befehlen können Sie die Zeichenfolge „****WASB://**“ voranstellen.
+Bei einigen Befehlen müssen Sie möglicherweise angeben, dass Sie Blobspeicher verwenden. Diesen Befehle können Sie die Zeichenfolge "****WASB://**" voranstellen.
 
 Mit HDInsight können Sie auch mehrere Blobspeicherkonten einem Cluster zuordnen. Für den Zugriff auf Daten in einem nicht standardmäßigen Blobspeicherkonto können Sie das Format **WASB://&lt;container-name>@&lt;Kontoname>.blob.core.windows.net/** verwenden. Der folgende Befehl listet z. B. den Inhalt des Verzeichnisses **/example/data** für den angegebenen Container und das Blobspeicherkonto auf:
 
@@ -120,15 +120,15 @@ Während der Clustererstellung haben Sie entweder die Verwendung eines vorhanden
 	>
 	> `curl -u admin:PASSWORD -G "https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME/configurations/service_config_versions?service_name=HDFS&service_config_version=1" | jq '.items[].configurations[].properties as $in | $in | keys[] | select(. | contains("fs.azure.account.key.")) as $item | $item | ltrimstr("fs.azure.account.key.") | { storage_account: ., storage_account_key: $in[$item] }'`
 
-Sie können die Speicherinformationen auch über das Azure-Vorschauportal finden:
+Sie können die Speicherinformationen auch über das Azure-Portal finden:
 
-1. Wählen Sie im [Azure-Vorschauportal](https://portal.azure.com/) Ihren HDInsight-Cluster aus.
+1. Wählen Sie im [Azure-Portal](https://portal.azure.com/) Ihren HDInsight-Cluster aus.
 
 2. Klicken Sie im Abschnitt __Zusammenfassung__ auf __Alle Einstellungen__.
 
-3. Wählen Sie unter __Einstellungen__ die Option __Azure Storage Keys__ aus.
+3. Wählen Sie unter __Einstellungen__ die Option __Azure-Speicherschlüssel__ aus.
 
-4. Wählen Sie unter __Azure Storage Keys__ eines der aufgeführten Speicherkonten aus. Damit werden Informationen zum Speicherkonto angezeigt.
+4. Wählen Sie unter __Azure-Speicherschlüssel__ eines der aufgeführten Speicherkonten aus. Damit werden Informationen zum Speicherkonto angezeigt.
 
 5. Wählen Sie das Schlüsselsymbol aus. Damit werden die Schlüssel für dieses Speicherkonto angezeigt.
 
@@ -188,13 +188,13 @@ Folgende Clustertypen sind von der Skalierung betroffen:
 
 			storm rebalance TOPOLOGYNAME
 
-		Sie können auch Parameter angeben, um die ursprünglich von der Topologie bereitgestellten Parallelitätshinweise zu überschreiben. Der Befehl `storm rebalance mytopology -n 5 -e blue-spout=3 -e yellow-bolt=10` konfiguriert z. B. die Topologie mit 5 Workerprozessen, 3 Executors für die Komponente „blue-spout“ und 10 Executors für die Komponente „yellow-bolt“ neu.
+		Sie können auch Parameter angeben, um die ursprünglich von der Topologie bereitgestellten Parallelitätshinweise zu überschreiben. Der Befehl `storm rebalance mytopology -n 5 -e blue-spout=3 -e yellow-bolt=10` z. B. konfiguriert die Topologie neu mit 5 Workerprozessen, 3 Executors für die Komponente "blue-spout" und 10 Executors für die Komponente "yellow-bolt".
 
 	* __Storm-Benutzeroberfläche__: Führen Sie die folgenden Schritte aus, um eine Topologie mithilfe der Storm-Benutzeroberfläche erneut auszugleichen.
 
-		1. [Erstellen Sie einen SSH-Tunnel zum Cluster, und öffnen Sie die Ambari-Webbenutzeroberfläche](hdinsight-linux-ambari-ssh-tunnel.md).
+		1. [Erstellen Sie einen SSH-Tunnel zum Cluster, und öffnen Sie die Ambari-Webbenutzeroberfläche.](hdinsight-linux-ambari-ssh-tunnel.md)
 
-		2. Wählen Sie in der Liste der Dienste auf der linken Seite __Storm__ aus. Wählen Sie dann unter __QuickLinks__ den Eintrag __Storm-UI__ aus.
+		2. Wählen Sie aus der Liste der Dienste auf der linken Seite den Dienst __Storm__ aus. Wählen Sie dann unter __QuickLinks__ den Eintrag __Storm-UI__ aus.
 
 
 			![Eintrag der Storm-Benutzeroberfläche in den Quicklinks](./media/hdinsight-hadoop-linux-information/ambari-storm.png)
@@ -207,7 +207,7 @@ Folgende Clustertypen sind von der Skalierung betroffen:
 
 Detaillierte Informationen zum Skalieren von HDInsight-Clustern finden Sie hier:
 
-* [Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Vorschauportal](hdinsight-administer-use-portal-linux.md#scaling)
+* [Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Portal](hdinsight-administer-use-portal-linux.md#scaling)
 
 * [Verwalten von Hadoop-Clustern in HDInsight mit Azure PowerShell](hdinsight-administer-use-command-line.md#scaling)
 
@@ -244,7 +244,7 @@ Wenn der Cluster bereits eine Version einer Komponente als eigenständige JAR-Da
 
 > [AZURE.WARNING]Komponenten, die mit dem HDInsight-Cluster bereitgestellt werden, werden vollständig unterstützt, und Microsoft Support hilft Ihnen, Probleme im Zusammenhang mit diesen Komponenten zu isolieren und zu beheben.
 >
-> Für benutzerdefinierte Komponenten steht kommerziell angemessener Support für eine weiterführende Behebung des Problems zur Verfügung. Auf diese Weise kann das Problem behoben werden, ODER Sie werden aufgefordert, verfügbare Kanäle für Open-Source-Technologien in Anspruch zu nehmen, die über umfassende Kenntnisse für diese Technologien verfügen. So können z. B. viele Communitywebsites verwendet werden, wie: das [MSDN-Forum für HDInsight](https://social.msdn.microsoft.com/Forums/azure/de-DE/home?forum=hdinsight), [http://stackoverflow.com](http://stackoverflow.com). Für Apache-Projekte gibt es Projektwebsites auf [http://apache.org](http://apache.org), zum Beispiel [Hadoop](http://hadoop.apache.org/), [Spark](http://spark.apache.org/).
+> Für benutzerdefinierte Komponenten steht kommerziell angemessener Support für eine weiterführende Behebung des Problems zur Verfügung. Auf diese Weise kann das Problem behoben werden, ODER Sie werden aufgefordert, verfügbare Kanäle für Open-Source-Technologien in Anspruch zu nehmen, die über umfassende Kenntnisse für diese Technologien verfügen. So können z. B. viele Communitywebsites verwendet werden, wie: das [MSDN-Forum für HDInsight](https://social.msdn.microsoft.com/Forums/azure/de-DE/home?forum=hdinsight), [http://stackoverflow.com](http://stackoverflow.com). Für Apache-Projekte gibt es Projektwebsites auf [http://apache.org](http://apache.org), zum Beispiel: [Hadoop](http://hadoop.apache.org/), [Spark](http://spark.apache.org/).
 
 ## Nächste Schritte
 
@@ -252,4 +252,4 @@ Wenn der Cluster bereits eine Version einer Komponente als eigenständige JAR-Da
 * [Verwenden von Pig mit HDInsight](hdinsight-use-pig.md)
 * [Verwenden von MapReduce-Aufträgen mit HDInsight](hdinsight-use-mapreduce.md)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -59,7 +59,7 @@ Add-HPCIaaSNode.ps1 [-ServiceName] <String> [-ImageName] <String>
 
 * **ServiceName**: Name des Clouddiensts, dem virtuelle Computer für neue Computeknoten hinzugefügt werden.
 
-* **ImageName**: Name des Azure-VM-Images, das über das Azure-Portal oder das Azure PowerShell-Cmdlet **Get-AzureVMImage** abgerufen werden kann. Das Image muss die folgenden Anforderungen erfüllen:
+* **ImageName**: Name des Azure-VM-Images, das über das klassische Azure-Portal oder das Azure PowerShell-Cmdlet **Get-AzureVMImage** abgerufen werden kann. Das Image muss die folgenden Anforderungen erfüllen:
 
     1. Es muss ein Windows-Betriebssystem installiert sein.
 
@@ -178,4 +178,4 @@ Stop-HPCIaaSNode.ps1 –Name HPCNodeCN-* -Force
 
 * Wenn Sie die Azure-Computeressourcen entsprechend dem aktuellen Workload der Aufträge und Aufgaben im Cluster automatisch vergrößern oder verkleinern möchten, finden Sie entsprechende Informationen unter [Automatisches Hoch- und Herunterskalieren von Azure-Computeressourcen in einem HPC Pack-Cluster entsprechend dem Clusterworkload](virtual-machines-hpcpack-cluster-node-autogrowshrink.md).
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

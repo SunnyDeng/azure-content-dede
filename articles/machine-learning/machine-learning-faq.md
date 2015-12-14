@@ -93,8 +93,7 @@ Laden Sie für DataSets größer als einige GB die Daten in Azure Storage oder A
 
 **Können Daten von Amazon S3 gelesen werden?**
 
-Wenn Ihre Daten nicht sehr umfangreich sind und Sie diese über eine HTTP-URL verfügbar machen möchten, können Sie das [Reader][reader]-Modul verwenden. Größere Datenmengen sollten Sie zunächst in Azure Storage übertragen und anschließend mit dem [Reader][reader]-Modul in das Experiment übernehmen.
-<!--
+Wenn Ihre Daten nicht sehr umfangreich sind und Sie diese über eine HTTP-URL verfügbar machen möchten, können Sie das [Reader][reader]-Modul verwenden. Größere Datenmengen sollten Sie zunächst in Azure Storage übertragen und anschließend mit dem [Reader][reader]-Modul in das Experiment übernehmen. <!--
 <SEE CLOUD DS PROCESS>
 -->
 
@@ -213,14 +212,13 @@ Sie können auch die APIs zum erneuten Trainieren verwenden. Der Beispielcode st
 
 **Wie überwache ich meinen Webdienst in der Produktionsumgebung?**
 
-Sobald ein Vorhersagemodell in die Produktionsumgebung übernommen wurde, können Sie es im Azure-Portal überwachen. Jeder bereitgestellte Dienst hat ein eigenes Dashboard mit Überwachungsinformationen für den jeweiligen Dienst.
+Sobald ein Vorhersagemodell in die Produktionsumgebung übernommen wurde, können Sie es im klassischen Azure-Portal überwachen. Jeder bereitgestellte Dienst hat ein eigenes Dashboard mit Überwachungsinformationen für den jeweiligen Dienst.
 
 **Kann ich die Ausgabe meines RRS/BES an einer Stelle einsehen?**
 
 Für RRS wird das Ergebnis normalerweise in der Antwort des Webdiensts ausgegeben. Sie können es aber auch in ein Blob schreiben. Bei BES wird die Ausgabe standardmäßig in ein Blob geschrieben. Sie können die Ausgabe aber auch mithilfe des Schreibmoduls in eine Datenbank oder Tabelle schreiben.
 
- **Können Webdienste nur aus Modellen erstellt werden, die im Studio erstellt wurden?
- Nein. Webdienste können auch direkt aus Jupyter Notebooks und RStudio erstellt werden.
+ ****Können Webdienste nur aus Modellen erstellt werden, die im Studio erstellt wurden? Nein. Webdienste können auch direkt aus Jupyter Notebooks und RStudio erstellt werden.
 
 ## Skalierbarkeit
 
@@ -268,7 +266,7 @@ Nr.
 
 **Wer hat standardmäßig Zugriff auf den HTTP-Endpunkt für den Webdienst in der Produktionsumgebung? Wie kann ich den Zugriff auf den Endpunkt einschränken?**
 
-Nach der Bereitstellung eines Webdiensts wird ein Standardendpunkt für den Dienst erstellt. Dieser Standardendpunkt wird für die Produktion bereitgestellt und kann mithilfe seines API-Schlüssels aufgerufen werden. Zusätzliche Endpunkte können im Azure-Portal oder programmgesteuert mithilfe der APIs der Webdienstverwaltung unter Verwendung ihrer eigenen Schlüssel hinzugefügt werden. Die Zugriffsschlüssel werden für Aufrufe an die Webdienste in den Produktions- und Stagingumgebungen benötigt. Weitere Informationen finden Sie unter [Verbinden mit einem Machine Learning-Webdienst](machine-learning-connect-to-azure-machine-learning-web-service.md).
+Nach der Bereitstellung eines Webdiensts wird ein Standardendpunkt für den Dienst erstellt. Dieser Standardendpunkt wird für die Produktion bereitgestellt und kann mithilfe seines API-Schlüssels aufgerufen werden. Zusätzliche Endpunkte können im klassischen Azure-Portal oder programmgesteuert mithilfe der APIs der Webdienstverwaltung unter Verwendung ihrer eigenen Schlüssel hinzugefügt werden. Die Zugriffsschlüssel werden für Aufrufe an die Webdienste in den Produktions- und Stagingumgebungen benötigt. Weitere Informationen finden Sie unter [Verbinden mit einem Machine Learning-Webdienst](machine-learning-connect-to-azure-machine-learning-web-service.md).
 
 
 **Was geschieht, wenn mein Speicherkonto nicht gefunden werden kann?**
@@ -280,7 +278,7 @@ Wenn Sie das Speicherkonto versehentlich löschen, ist die einzige Möglichkeit 
 
 **Was geschieht, wenn mein Speicherkonto-Zugriffsschlüssel nicht mehr synchronisiert ist?** In Machine Learning Studio ist ein vom Benutzer bereitgestelltes Azure-Speicherkonto zum Speichern von temporären Daten beim Ausführen des Workflows erforderlich. Dieses Speicherkonto wird Machine Learning Studio beim Erstellen des Arbeitsbereichs zur Verfügung gestellt, und der Zugriffsschlüssel wird diesem Arbeitsbereich zugewiesen. Wenn Zugriffsschlüssel nach dem Erstellen des Arbeitsbereichs geändert werden, kann dieser Arbeitsbereich nicht mehr auf das Speicherkonto zugreifen, und alle in diesem Arbeitsbereich ausgeführten Experimente schlagen fehl.
 
-Wenn Sie Zugriffsschlüssel für Speicherkonten geändert haben, synchronisieren Sie die Zugriffsschlüssel in der Arbeitsbereichseinstellung im Azure-Portal unbedingt neu.
+Wenn Sie Zugriffsschlüssel für Speicherkonten geändert haben, synchronisieren Sie die Zugriffsschlüssel in der Arbeitsbereichseinstellung im klassischen Azure-Portal unbedingt neu.
 
 
 ## Azure Marketplace
@@ -312,4 +310,4 @@ Für Azure Machine Learning gibt es außerdem ein Community-Forum auf MSDN, in d
 [reader]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
 [split]: https://msdn.microsoft.com/library/azure/70530644-c97a-4ab6-85f7-88bf30a8be5f/
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

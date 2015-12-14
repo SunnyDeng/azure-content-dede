@@ -18,6 +18,11 @@
 
 # <a name="getting-started"></a>Erste Schritte mit Mobile Services
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
+
 [AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]&nbsp;
 
 >[AZURE.TIP]Wenn Sie gerade in die mobile Entwicklung mit Microsoft Azure einsteigen, [beginnen Sie mit Azure Mobile Apps](app-service-mobile-dotnet-backend-ios-get-started-preview.md) anstatt mit Azure Mobile Services. Mit Mobile Apps erhalten Sie [zusätzliche Vorteile](app-service-mobile-value-prop-migration-from-mobile-services-preview.md).
@@ -60,17 +65,13 @@ Hier wird das Ausführen der neuen Client-App für den mobilen Dienst unter Azur
 
 Erfahren Sie, wie Sie weitere wichtige Aufgaben in Mobile Services durchführen:
 
-* [Erste Schritte mit der Synchronisierung von Offlinedaten]
-  <br/>Erfahren Sie, wie Sie die Offlinedatensynchronisierung nutzen, um eine reaktionsfähige, stabile App zu implementieren.
+* [Erste Schritte mit der Synchronisierung von Offlinedaten] <br/>Erfahren Sie, wie Sie die Offlinedatensynchronisierung nutzen, um eine reaktionsfähige, stabile App zu implementieren.
 
-* [Hinzufügen von Authentifizierung zu einer vorhandenen App]
-  <br/>Informationen über die Authentifizierung von Benutzern der App mit einem Identitätsanbieter.
+* [Hinzufügen von Authentifizierung zu einer vorhandenen App] <br/>Informationen über die Authentifizierung von Benutzern der App mit einem Identitätsanbieter.
 
-* [Hinzufügen von Pushbenachrichtigungen zu einer vorhandenen App]
-  <br/>Erfahren Sie, wie Sie eine einfache Pushbenachrichtigung an Ihre App senden können.
+* [Hinzufügen von Pushbenachrichtigungen zu einer vorhandenen App] <br/>Erfahren Sie, wie Sie eine einfache Pushbenachrichtigung an Ihre App senden können.
 
-* [Beheben von Problemen bei einem Mobile Services .NET-Back-End]
-  <br/> Erfahren Sie, wie Sie Probleme diagnostizieren und beheben, die in Zusammenhang mit einem Mobile Services .NET-Back-End auftreten.
+* [Beheben von Problemen bei einem Mobile Services .NET-Back-End] <br/> Erfahren Sie, wie Sie Probleme diagnostizieren und beheben, die in Zusammenhang mit einem Mobile Services .NET-Back-End auftreten.
 
 [AZURE.INCLUDE [app-service-disqus-feedback-slug](../../includes/app-service-disqus-feedback-slug.md)]
 
@@ -98,11 +99,8 @@ Erfahren Sie, wie Sie weitere wichtige Aufgaben in Mobile Services durchführen:
 [Hinzufügen von Authentifizierung zu einer vorhandenen App]: mobile-services-dotnet-backend-ios-get-started-users.md
 [Hinzufügen von Pushbenachrichtigungen zu einer vorhandenen App]: mobile-services-dotnet-backend-ios-get-started-push.md
 [Beheben von Problemen bei einem Mobile Services .NET-Back-End]: mobile-services-dotnet-backend-how-to-troubleshoot.md
-
 [Mobile Services iOS SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
-
-[Management Portal]: https://manage.windowsazure.com/
 [XCode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [JavaScript-Back-End-Version]: mobile-services-ios-get-started.md
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

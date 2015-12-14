@@ -181,4 +181,4 @@ Führen Sie zum Bereitstellen der ARM-Vorlage mithilfe der Azure-Befehlszeilensc
 	- **-f (oder --template-file)**. Pfad zu Ihrer ARM-Vorlagendatei.
 	- **-e (oder --parameters-file)**. Pfad zu Ihrer ARM-Parameterdatei.
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

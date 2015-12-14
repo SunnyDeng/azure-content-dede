@@ -83,7 +83,7 @@ Dieser Abschnitt enthält einige typische Szenarien für VM-Skalierungsgruppen. 
 
 	Eine PaaS v1-Workerrolle ist zwar im Hinblick auf die Unterstützung für Plattformen/Laufzeitumgebungen eingeschränkt (nur für Images der Windows-Plattform), aber sie bietet auch Dienste wie VIP-Austausch, konfigurierbare Upgradeeinstellungen und Einstellungen für laufzeitumgebungs- und anwendungsspezifische Bereitstellungen, die entweder _noch_ nicht in VM-Skalierungsgruppen zur Verfügung stehen oder die durch auf höherer Ebene angesiedelte PaaS-Dienste wie Service Fabric umgesetzt werden. Vor diesem Hintergrund können Sie VM-Skalierungsgruppen als eine Infrastruktur betrachten, die PaaS unterstützt. Das heißt: PaaS-Lösungen wie Service Fabric oder Cluster-Manager wie Mesos können auf VM-Skalierungsgruppen aufsetzen, um eine skalierbare Compute-Ebene zu bilden.
 
-	Hier ist ein Beispiel für einen Mesos-Cluster, der eine VM-Skalierungsgruppe und einen eigenständigen virtuellen Computer in demselben VNET bereitstellt. Der eigenständige virtuelle Computer ist ein Mesos-Master, und die VM-Skalierungsgruppe stellt eine Gruppe von untergeordneten Knoten dar: [https://github.com/gbowerman/azure-myriad/blob/master/mesos-vmss-simple-cluster.json](https://github.com/gbowerman/azure-myriad/blob/master/mesos-vmss-simple-cluster.json). Bei künftigen Versionen des [Azure Container Service](https://azure.microsoft.com/de-DE/blog/azure-container-service-now-and-the-future/) werden komplexere und besser geschützte Versionen dieses auf VM-Skalierungsgruppen beruhenden Szenarios bereitgestellt.
+	Hier ist ein Beispiel für einen Mesos-Cluster, der eine VM-Skalierungsgruppe und einen eigenständigen virtuellen Computer in demselben VNET bereitstellt. Der eigenständige virtuelle Computer ist ein Mesos-Master, und die VM-Skalierungsgruppe stellt eine Gruppe von untergeordneten Knoten dar: [https://github.com/gbowerman/azure-myriad/blob/master/mesos-vmss-simple-cluster.json](https://github.com/gbowerman/azure-myriad/blob/master/mesos-vmss-simple-cluster.json). Bei künftigen Versionen des [Azure Container Service](https://azure.microsoft.com/blog/azure-container-service-now-and-the-future/) werden komplexere und besser geschützte Versionen dieses auf VM-Skalierungsgruppen beruhenden Szenarios bereitgestellt.
 
 ## Richtlinien zur Leistungsfähigkeit von VM-Skalierungsgruppen und zum Skalieren
 
@@ -153,4 +153,4 @@ Dieser Abschnitt enthält einige typische Szenarien für VM-Skalierungsgruppen. 
 
 **A.** Ja. Eine VM-Skalierungsgruppe ist eine implizite Verfügbarkeitsgruppe mit 3 Fehlerdomänen (FDs) und 5 Updatedomänen (UDs). Unter virtualMachineProfile brauchen Sie nichts zu konfigurieren. In künftigen Versionen werden VM-Skalierungsgruppen wahrscheinlich mehrere Mandanten umspannen, aber derzeit entspricht eine Skalierungsgruppe einer einzigen Verfügbarkeitsgruppe.
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -65,7 +65,7 @@ Dieser Abschnitt enthält Empfehlungen zum Beheben von Problemen im Zusammenhang
 
 	**Problembehandlungsschritte**: Navigieren Sie im AMSE-Tool zur Registerkarte "Streamingendpunkt", und stellen Sie sicher, dass ein Streamingendpunkt mit einer Streamingeinheit ausgeführt wird.
 	
->[AZURE.NOTE]Wenn Sie nach dem Ausführen der Problembehandlungsschritte immer noch nicht streamen können, senden Sie über das Azure-Verwaltungsportal ein Supportticket.
+>[AZURE.NOTE]Wenn Sie nach dem Ausführen der Problembehandlungsschritte immer noch nicht streamen können, senden Sie über das klassische Azure-Portal ein Supportticket.
 
 ##Media Services-Lernpfade
 
@@ -75,4 +75,4 @@ Dieser Abschnitt enthält Empfehlungen zum Beheben von Problemen im Zusammenhang
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

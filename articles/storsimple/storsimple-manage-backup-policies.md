@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="09/15/2015"
+   ms.date="12/02/2015"
    ms.author="v-sharos"/>
 
 # Verwalten von Sicherungsrichtlinien mithilfe des StorSimple Manager-Diensts
@@ -28,7 +28,7 @@ Auf der Seite **Sicherungsrichtlinien** können Sie außerdem die vorhandenen Si
 - **Richtlinienname** – Der der Richtlinie zugeordnete Name. Die folgenden verschiedenen Richtlinientypen sind verfügbar:
 
    - Geplante Richtlinien, die explizit vom Benutzer erstellt werden.
-   - Automatische Richtlinien, die erstellt werden, wenn die Option "Standardsicherung für dieses Volume" zum Zeitpunkt der Volumeerstellung aktiviert war Diese Richtlinien tragen den Namen "VolumeName\_Default". Dabei bezieht sich "VolumeName" auf den Namen des StorSimple-Volumes, das vom Benutzer im Verwaltungsportal konfiguriert wird. Die automatischen Richtlinien bewirken tägliche Cloudmomentaufnahmen, die um 22:30 Uhr Gerätezeit beginnen.
+   - Automatische Richtlinien, die erstellt werden, wenn die Option "Standardsicherung für dieses Volume" zum Zeitpunkt der Volumeerstellung aktiviert war Diese Richtlinien tragen den Namen "VolumeName\_Default". Dabei bezieht sich "VolumeName" auf den Namen des StorSimple-Volumes, das vom Benutzer im klassischen Azure-Portal konfiguriert wird. Die automatischen Richtlinien bewirken tägliche Cloudmomentaufnahmen, die um 22:30 Uhr Gerätezeit beginnen.
    - Importierte Richtlinien, die ursprünglich im StorSimple-Momentaufnahme-Manager erstellt wurden. Diese weisen ein Tag auf, das den StorSimple-Momentaufnahme-Manager-Host beschreibt, von dem die Richtlinien importiert wurden.
 
 - **Volumes** – Die Volumes, die der Richtlinie zugeordnet sind. Alle Volumes, die einer Sicherungsrichtlinie zugeordnet sind, werden beim Erstellen von Sicherungen gruppiert.
@@ -49,7 +49,7 @@ Auf dieser Seite können die folgenden allgemeinen Vorgänge ausgeführt werden:
 
 ## Hinzufügen einer Sicherungsrichtlinie
 
-Fügen Sie eine Sicherungsrichtlinie zum automatischen Planen Ihrer Sicherungen hinzu. Führen Sie die folgenden Schritte im Verwaltungsportal aus, um eine Sicherungsrichtlinie für Ihr StorSimple-Gerät hinzuzufügen. Nachdem Sie die Richtlinie hinzugefügt haben, können Sie einen Zeitplan definieren (siehe [Hinzufügen oder Ändern eines Zeitplans](#add-or-modify-a-schedule).
+Fügen Sie eine Sicherungsrichtlinie zum automatischen Planen Ihrer Sicherungen hinzu. Führen Sie die folgenden Schritte im klassischen Azure-Portal aus, um eine Sicherungsrichtlinie für Ihr StorSimple-Gerät hinzuzufügen. Nachdem Sie die Richtlinie hinzugefügt haben, können Sie einen Zeitplan definieren (siehe [Hinzufügen oder Ändern eines Zeitplans](#add-or-modify-a-schedule).
 
 [AZURE.INCLUDE [storsimple-add-backup-policy](../../includes/storsimple-add-backup-policy.md)]
 
@@ -60,26 +60,26 @@ Sie können sich [hier](http://azure.microsoft.com/documentation/videos/create-s
 
 ## Hinzufügen oder Ändern eines Zeitplans
 
-Sie können einen Zeitplan hinzufügen oder ändern, der an eine vorhandene Sicherungsrichtlinie auf Ihrem StorSimple-Gerät angefügt wird. Führen Sie die folgenden Schritte im Verwaltungsportal aus, um einen Zeitplan hinzuzufügen oder zu ändern:
+Sie können einen Zeitplan hinzufügen oder ändern, der an eine vorhandene Sicherungsrichtlinie auf Ihrem StorSimple-Gerät angefügt wird. Führen Sie die folgenden Schritte im klassischen Azure-Portal aus, um einen Zeitplan hinzuzufügen oder zu ändern:
 
 [AZURE.INCLUDE [storsimple-add-modify-backup-schedule](../../includes/storsimple-add-modify-backup-schedule.md)]
 
 ## Löschen einer Sicherungsrichtlinie
 
-Führen Sie die folgenden Schritte im Verwaltungsportal aus, um eine Sicherungsrichtlinie auf Ihrem StorSimple-Gerät zu löschen.
+Führen Sie die folgenden Schritte im klassischen Azure-Portal aus, um eine Sicherungsrichtlinie für Ihr StorSimple-Gerät zu löschen.
 
 [AZURE.INCLUDE [storsimple-delete-backup-policy](../../includes/storsimple-delete-backup-policy.md)]
 
 
 ## Erstellen einer manuellen Sicherung
 
-Führen Sie die folgenden Schritte im Verwaltungsportal aus, um bei Bedarf eine (manuelle) Sicherung für ein einzelnes Volume zu erstellen.
+Führen Sie die folgenden Schritte im klassischen Azure-Portal aus, um bei Bedarf eine (manuelle) Sicherung für ein einzelnes Volume zu erstellen.
 
 [AZURE.INCLUDE [storsimple-create-manual-backup](../../includes/storsimple-create-manual-backup.md)]
 
 ## Erstellen einer benutzerdefinierten Sicherungsrichtlinie mit mehreren Volumes und Zeitplänen
 
-Führen Sie die folgenden Schritte im Verwaltungsportal aus, um eine benutzerdefinierte Sicherungsrichtlinie mit mehreren Volumes und Zeitplänen zu erstellen.
+Führen Sie die folgenden Schritte im klassischen Azure-Portal aus, um eine benutzerdefinierte Sicherungsrichtlinie mit mehreren Volumes und Zeitplänen zu erstellen.
 
 [AZURE.INCLUDE [storsimple-create-custom-backup-policy](../../includes/storsimple-create-custom-backup-policy.md)]
 
@@ -88,4 +88,4 @@ Führen Sie die folgenden Schritte im Verwaltungsportal aus, um eine benutzerdef
 
 - Erfahren Sie mehr über das [Verwenden Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

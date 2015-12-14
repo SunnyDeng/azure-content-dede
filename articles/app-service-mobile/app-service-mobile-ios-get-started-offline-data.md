@@ -13,14 +13,12 @@
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
 	ms.topic="article"
-	ms.date="08/22/2015"
+	ms.date="12/01/2015"
 	ms.author="krisragh"/>
 
 # Aktivieren der Offlinesynchronisierung für Ihre mobile iOS-App
 
-[AZURE.INCLUDE [app-service-mobile-selector-offline](../../includes/app-service-mobile-selector-offline.md)]
-&nbsp;  
-[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
+[AZURE.INCLUDE [app-service-mobile-selector-offline](../../includes/app-service-mobile-selector-offline.md)]&nbsp;[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
 
 ## Übersicht
 
@@ -88,7 +86,7 @@ Mit der Funktion zur Offlinesynchronisierung von Azure Mobile Apps können Endbe
 
     Mit der Methode `pullWithQuery` können Sie eine Abfrage zum Filtern der Datensätze angeben, die Sie abrufen möchten. In diesem Beispiel ruft die Abfrage einfach alle Datensätze in der Remotetabelle `TodoItem` ab.
 
-    Der zweite Parameter für `pullWithQuery` ist eine Abfrage-ID, die für die *inkrementelle Synchronisierung* verwendet wird. Die inkrementelle Synchronisierung ruft nur die Datensätze ab, die seit der letzten Synchronisierung geändert wurden. Dafür wird der Zeitstempel `UpdatedAt` (im lokalen Speicher `ms_updatedAt`) des Datensatzes verwendet. Die Abfrage-ID muss eine beschreibende Zeichenfolge sein, die für jede logische Abfrage in Ihrer App eindeutig ist. Um die inkrementelle Synchronisierung zu deaktivieren, übergeben Sie als Abfrage-ID `nil`. Beachten Sie, dass dies möglicherweise ineffizient ist, da auf diese Weise bei jedem Pullvorgang alle Datensätze abgerufen werden.
+    Der zweite Parameter für `pullWithQuery` ist eine Abfrage-ID, die für die *inkrementelle Synchronisierung* verwendet wird. Die inkrementelle Synchronisierung ruft nur die Datensätze ab, die seit der letzten Synchronisierung geändert wurden. Dafür wird der Zeitstempel `UpdatedAt` (im lokalen Speicher `updatedAt`) des Datensatzes verwendet. Die Abfrage-ID muss eine beschreibende Zeichenfolge sein, die für jede logische Abfrage in Ihrer App eindeutig ist. Um die inkrementelle Synchronisierung zu deaktivieren, übergeben Sie als Abfrage-ID `nil`. Beachten Sie, dass dies möglicherweise ineffizient ist, da auf diese Weise bei jedem Pullvorgang alle Datensätze abgerufen werden.
 
 	<!--     >[AZURE.NOTE] To remove records from the device local store when they have been deleted in your mobile service database, you should enable [Soft Delete]. Otherwise, your app should periodically call `MSSyncTable.purgeWithQuery` to purge the local store.
  -->
@@ -97,7 +95,7 @@ Mit der Funktion zur Offlinesynchronisierung von Azure Mobile Apps können Endbe
 
     Da bei jeder Änderung von Daten `syncData` aufgerufen wird, setzt diese App voraus, dass der Benutzer beim Bearbeiten von Daten stets online ist. In einem anderen Abschnitt werden wir die App modifizieren, sodass Benutzer auch im Offlinemodus Daten bearbeiten können.
 
-## <a name="review-core-data"></a>Überprüfen des Kerndatenmodells
+## <a name="review-core-data"></a>Überprüfen des Core-Datenmodells
 
 Bei Verwendung des Offlinespeichers für die Kerndaten müssen Sie bestimmte Tabellen und Felder in Ihrem Datenmodell definieren. Die Beispiel-App enthält bereits ein Datenmodell mit dem richtigen Format. In diesem Abschnitt durchlaufen wir diese Tabellen und ihre Verwendung.
 
@@ -105,9 +103,9 @@ Bei Verwendung des Offlinespeichers für die Kerndaten müssen Sie bestimmte Tab
       * MS\_TableOperations: Zum Nachverfolgen der Elemente, die mit dem Server synchronisiert werden müssen
       * MS\_TableOperationErrors: Zum Nachverfolgen von Fehlern, die während der Offlinesynchronisierung auftreten
       * MS\_TableConfig: Zum Nachverfolgen der letzten aktualisierten Zeit für die letzte Synchronisierung für alle Pullvorgänge
-      * TodoItem: Zum Speichern der TODO-Elemente. Die Systemspalten **ms\_createdAt**, **ms\_updatedAt** und **ms\_version** sind optionale Systemeigenschaften.
+      * TodoItem: Zum Speichern der TODO-Elemente. Die Systemspalten **createdAt**, **updatedAt** und **version** sind optionale Systemeigenschaften.
 
->[AZURE.NOTE]Das Azure Mobile Apps-SDK reserviert Spaltennamen, die mit "**`ms_`**" beginnen. Dieses Präfix sollte nur für Systemspalten verwendet werden, andernfalls werden die Spaltennamen bei Verwendung des Remote-Back-Ends geändert.
+>[AZURE.NOTE]Das Azure Mobile Apps-SDK reserviert Spaltennamen, die mit "**``**" beginnen. Dieses Präfix sollte nur für Systemspalten verwendet werden, andernfalls werden die Spaltennamen bei Verwendung des Remote-Back-Ends geändert.
 
 - Zur Verwendung der Funktion zur Offlinesynchronisierung müssen Sie die Systemtabellen definieren, wie unten dargestellt.
 
@@ -150,17 +148,16 @@ Bei Verwendung des Offlinespeichers für die Kerndaten müssen Sie bestimmte Tab
 
     ### Datentabelle
 
-    ![][defining-core-data-todoitem-entity]
-
     **TodoItem**
-
 
     | Attribut | Typ | Hinweis |
     |-----------   |  ------ | -------------------------------------------------------|
     | id | Zeichenfolge, als erforderlich gekennzeichnet | Primärschlüssel im Remotespeicher |
     | complete | Boolean | Todo-Elementfeld |
     | Text | String | Todo-Elementfeld |
-    | ms\_createdAt | Date | (optional) Zuordnung zur \_\_createdAt-Systemeigenschaft | | ms\_updatedAt | Datum | (optional) Zuordnung zur \_\_updatedAt-Systemeigenschaft | | ms\_version | String | (optional) Zum Erkennen von Konflikten, Zuordnung zu \_\_version |
+    | createdAt | Date | (optional) Zuordnung zur createdAt-Systemeigenschaft |
+    | updatedAt | Date | (optional) Zuordnung zur updatedAt-Systemeigenschaft |
+    | Version | String | (optional) Zum Erkennen von Konflikten, Zuordnung zu „version“ |
 
 
 ## <a name="setup-sync"></a>Ändern des Synchronisierungsverhaltens der App
@@ -183,20 +180,22 @@ In diesem Abschnitt ändern Sie die Anwendung, sodass beim Starten der App oder 
 
 ## <a name="test-app"></a>Testen der App
 
+In diesem Abschnitt stellen Sie eine Verbindung mit einer ungültigen URL her, um ein Offlineszenario zu simulieren. Wenn Sie Datenelemente hinzufügen, werden diese im lokalen Kerndatenspeicher vorgehalten, jedoch nicht mit dem mobilen Back-End synchronisiert.
 
-In diesem Abschnitt werden Sie im Simulator Wi-Fi deaktivieren, um ein Offlineszenario zu erzeugen. Wenn Sie Datenelemente hinzufügen, werden diese im lokalen Kerndatenspeicher vorgehalten, jedoch nicht mit dem mobilen Back-End synchronisiert.
+1. Ändern Sie die URL der mobilen App in **QSTodoService.m** zu einer ungültige URL und führen Sie sie erneut aus:
 
-1. Deaktivieren Sie Wi-Fi im iOS-Simulator.
+        self.client = [MSClient clientWithApplicationURLString:@"https://sitename.azurewebsites.net.fail"];
 
 2. Fügen Sie einige TODO-Elemente hinzu, oder schließen Sie einige Elemente ab. Beenden Sie den Simulator (oder Erzwingen Sie das Schließen der App), und starten Sie ihn neu. Stellen Sie sicher, dass die Änderungen erhalten geblieben sind.
 
 3. Zeigen Sie den Inhalt der TodoItem-Remotetabelle an:
-   - Klicken Sie für das JavaScript-Back-End auf dem Verwaltungsportal auf die Registerkarte "Daten", um den Inhalt der `TodoItem`-Tabelle anzuzeigen.
-   - Zeigen Sie für das .NET-Back-End den Inhalt der Tabelle entweder mit einem SQL-Tool wie SQL Server Management Studio oder einen REST-Client wie Fiddler oder Postman an.
+
+    + Ein Node.js-Back-End finden Sie im [Azure-Portal](https://portal.azure.com/). Dort klicken Sie in Ihrem mobilen App-Back-End auf **Easy Tables** > **TodoItem**, um den Inhalt der `TodoItem`-Tabelle anzuzeigen.
+   	+ Zeigen Sie für einen .NET-Back-End den Inhalt der Tabelle entweder mit einem SQL-Tool wie SQL Server Management Studio oder einen REST-Client wie Fiddler oder Postman an.
 
     Stellen Sie sicher, dass die neuen Elemente *nicht* auf dem Server synchronisiert wurden:
 
-4. Aktivieren Sie Wi-Fi im iOS-Simulator, und führen Sie die Aktualisierungsbewegung aus, indem Sie die Liste der Elemente nach unten ziehen. Eine Synchronisierungsanzeige und der Hinweis "Syncing.." werden angezeigt.
+4. Berichtigen Sie die URL nun wieder unter **QSTodoService.m** und führen Sie die Anwendung dann erneut aus. Führen Sie die Aktualisierungsbewegung aus, indem Sie die Elementliste nach unten ziehen. Eine Synchronisierungsanzeige und der Hinweis "Syncing.." werden angezeigt.
 
 5. Zeigen Sie die TodoItem-Daten erneut an. Es sollten jetzt die neuen und geänderten TodoItems angezeigt werden.
 
@@ -248,4 +247,4 @@ Zur Synchronisierung des lokalen Speichers mit dem Server haben Sie die Methoden
 [Azure Friday: Offline-enabled apps in Azure Mobile Services]: http://azure.microsoft.com/documentation/videos/azure-mobile-services-offline-enabled-apps-with-donna-malayeri/
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

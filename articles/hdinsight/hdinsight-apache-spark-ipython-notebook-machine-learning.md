@@ -43,15 +43,15 @@ Wir sagen anhand dieser Daten vorher, ob es in einem Gebäude basierend auf der 
 
 ##<a name="app"></a>Schreiben einer Machine Learning-Anwendung mit Spark MLlib
 
-1. Klicken Sie im [Azure-Vorschauportal](https://portal.azure.com/) im Startmenü auf die Kachel für Ihren Spark-Cluster (sofern Sie die Kachel ans Startmenü angeheftet haben). Sie können auch unter **Alle durchsuchen** > **HDInsight-Cluster** zu Ihrem Cluster navigieren.   
+1. Klicken Sie im [Azure-Portal](https://portal.azure.com/) im Startmenü auf die Kachel für Ihren Spark-Cluster (sofern Sie die Kachel ans Startmenü angeheftet haben). Sie können auch unter **Alle durchsuchen** > **HDInsight-Cluster** zu Ihrem Cluster navigieren.   
 
-2. Klicken Sie auf dem Blatt für den Spark-Cluster auf **Quicklinks** und anschließend auf dem Blatt **Cluster-Dashboard** auf **Jupyter Notebook**. Geben Sie die Administratoranmeldeinformationen für den Cluster ein, wenn Sie dazu aufgefordert werden.
+2. Klicken Sie auf dem Blatt für den Spark-Cluster auf **Quicklinks** und anschließend auf dem Blatt **Cluster Dashboard** auf **Jupyter Notebook**. Geben Sie die Administratoranmeldeinformationen für den Cluster ein, wenn Sie dazu aufgefordert werden.
 
 	> [AZURE.NOTE]Sie können auch das Jupyter Notebook für Ihren Cluster aufrufen, indem Sie in Ihrem Browser die folgende URL öffnen. Ersetzen Sie __CLUSTERNAME__ durch den Namen Ihres Clusters:
 	>
 	> `https://CLUSTERNAME.azurehdinsight.net/jupyter`
 
-2. Erstellen Sie ein neues Notebook. Klicken Sie auf **Neu** und dann auf **Python2**.
+2. Erstellen Sie ein neues Notebook. Klicken Sie auf **Neu** und dann auf **Python 2**.
 
 	![Erstellen eines neuen Jupyter Notebooks](./media/hdinsight-apache-spark-ipython-notebook-machine-learning/HDI.Spark.Note.Jupyter.CreateNotebook.png "Erstellen eines neuen Jupyter Notebooks")
 
@@ -213,7 +213,7 @@ Wir sagen anhand dieser Daten vorher, ob es in einem Gebäude basierend auf der 
 
 	In der ersten Zeile der Vorhersage können Sie sehen, dass das Gebäude für ein HVAC-System mit ID 20 und einem Systemalter von 25 Jahren zu warm ist (**prediction=1.0**). Der erste Wert für DenseVector (0.49999) entspricht der Vorhersage 0,0, und der zweite Wert (0.5001) entspricht der Vorhersage 1,0. Obwohl der zweite Wert in der Ausgabe nur unwesentlich höher ist, zeigt das Modell **prediction=1.0** an.
 
-11. Sie können das Notebook jetzt beenden, indem Sie den Kernel neu starten. Klicken Sie in der oberen Menüleiste auf **Kernel** und **Neu starten**, und klicken Sie in der Eingabeaufforderung noch einmal auf **Neu starten**.
+11. Sie können das Notebook jetzt beenden, indem Sie den Kernel neu starten. Klicken Sie in der oberen Menüleiste auf **Kernel** und **Neu starten**, und klicken Sie bei der Aufforderung noch einmal auf **Neu starten**.
 
 	![Neustarten des Jupyter-Kernels](./media/hdinsight-apache-spark-ipython-notebook-machine-learning/HDI.Spark.Jupyter.Restart.Kernel.png "Neustarten des Jupyter-Kernels")
 	  	   
@@ -224,7 +224,7 @@ Apache Spark-Cluster unter HDInsight enthalten Anaconda-Bibliotheken. Dazu gehö
 
 ##<a name="seealso"></a>Weitere Informationen
 
-* [Übersicht: Apache Spark für Azure HDInsight](hdinsight-apache-spark-overview.md)
+* [Übersicht: Apache Spark in Azure HDInsight](hdinsight-apache-spark-overview.md)
 * [Bereitstellen von Spark in einem HDInsight-Cluster](hdinsight-apache-spark-provision-clusters.md)
 * [Durchführen interaktiver Datenanalysen mithilfe von Spark in HDInsight mit BI-Tools](hdinsight-apache-spark-use-bi-tools.md)
 * [Verwenden von Spark in HDInsight zum Erstellen von Echtzeit-Streaminganwendungen](hdinsight-apache-spark-csharp-apache-zeppelin-eventhub-streaming.md)
@@ -247,4 +247,4 @@ Apache Spark-Cluster unter HDInsight enthalten Anaconda-Bibliotheken. Dazu gehö
 [azure-management-portal]: https://manage.windowsazure.com/
 [azure-create-storageaccount]: ../storage-create-storage-account/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

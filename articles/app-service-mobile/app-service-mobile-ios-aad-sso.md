@@ -98,7 +98,7 @@ Jetzt können Sie auf die Active Directory-Authentifizierungsbibliothek in Ihrem
             }];
         }
 
-4. Ersetzen Sie im Code für die oben angegebene `loginAndGetData`-Methode **INSERT-AUTHORITY-HERE** durch den Namen des Mandanten, in dem Sie Ihre Anwendung bereitgestellt haben. Das Format sollte https://login.windows.net/tenant-name.onmicrosoft.com sein. Sie können diesen Wert in der Registerkarte Domäne in Ihrem Azure Active Directory im [Azure-Verwaltungsportal] kopieren.
+4. Ersetzen Sie im Code für die oben angegebene `loginAndGetData`-Methode **INSERT-AUTHORITY-HERE** durch den Namen des Mandanten, in dem Sie Ihre Anwendung bereitgestellt haben. Das Format sollte https://login.windows.net/tenant-name.onmicrosoft.com sein. Sie können diesen Wert auf der Registerkarte „Domäne“ in Ihrem Azure Active Directory im [klassischen Azure-Portal] kopieren.
 
 5. Ersetzen Sie im oben angegebenen Code für die `loginAndGetData`-Methode **INSERT-RESOURCE-URI-HERE** durch den **App-ID-URI** für Ihre mobile App. Wenn Sie das Thema [Konfigurieren Ihrer mobilen App mit Azure Active Directory] befolgt haben, sollte der URI Ihrer App-ID in etwa so aussehen: https://contosogateway.azurewebsites.net/login/aad.
 
@@ -118,9 +118,9 @@ Jetzt können Sie auf die Active Directory-Authentifizierungsbibliothek in Ihrem
 
 <!-- URLs. -->
 [Konfigurieren Ihrer mobilen App mit Azure Active Directory]: app-service-mobile-how-to-configure-active-directory-authentication.md
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
+[klassischen Azure-Portal]: https://manage.windowsazure.com/
 [Active Directory-Authentifizierungsbibliothek für iOS]: https://github.com/MSOpenTech/azure-activedirectory-library-for-ios
 [Erste Schritte mit mobilen Apps]: app-service-mobile-ios-get-started.md
 [Hinzufügen von Authentifizierung zur App]: app-service-mobile-ios-get-started-users.md
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

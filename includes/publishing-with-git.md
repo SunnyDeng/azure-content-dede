@@ -58,7 +58,7 @@ Web-Apps unterstützen in verschiedenen Programmiersprachen erstellte Anwendunge
 
 Führen Sie die folgenden Schritte durch, um ein Git-Repository für Ihre Web-App zu aktivieren.
 
-1. Melden Sie sich beim [Azure-Vorschauportal] an.
+1. Melden Sie sich beim [Azure-Portal] an.
 
 2. Scrollen Sie auf dem Blatt Ihrer Web-App nach unten bis zum Bereich **Bereitstellung**, und klicken Sie auf **Kontinuierliche Bereitstellung einrichten**. Klicken Sie auf **Quelle auswählen**, dann auf **Lokales Git-Repository** und schließlich auf **OK**.
 
@@ -94,7 +94,7 @@ Führen Sie die folgenden Schritte durch, um Ihre Web-App mit einem lokalen Git 
 
 		git push azure master
 
-	Sie werden zum Eingeben des vorher beim Zurücksetzen Ihrer Anmeldeinformationen für die Bereitstellung im Portal erstellten Kennworts aufgefordert. Geben Sie das Kennwort ein (beachten Sie, dass Gitbash keine Sternchen in der Konsole anzeigt, wenn Sie Ihr Kennwort eingeben). Eine Ausgabe ähnlich der folgenden sollte angezeigt werden:
+	Sie werden zum Eingeben des Kennworts aufgefordert, das vorher beim Zurücksetzen Ihrer Anmeldeinformationen für die Bereitstellung im Portal erstellt wurde. Geben Sie das Kennwort ein (beachten Sie, dass Gitbash keine Sternchen in der Konsole anzeigt, wenn Sie Ihr Kennwort eingeben). Eine Ausgabe ähnlich der folgenden sollte angezeigt werden:
 
 		Counting objects: 6, done.
 		Compressing objects: 100% (2/2), done.
@@ -269,10 +269,9 @@ Die folgenden Fehler und Probleme treten häufiger auf, wenn Git zum Veröffentl
 
 ## Änderungen
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
 
 [Azure Developer Center]: http://azure.microsoft.com/develop/overview/
-[Azure-Vorschauportal]: https://portal.azure.com
+[Azure-Portal]: https://portal.azure.com
 [Git website]: http://git-scm.com
 [Installieren von Git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
 [Verwenden von PowerShell für Azure]: ../articles/install-configure-powershell.md
@@ -298,4 +297,4 @@ Die folgenden Fehler und Probleme treten häufiger auf, wenn Git zum Veröffentl
 [Verwenden von Dropbox zum Freigeben von Git-Repositorys]: https://gist.github.com/trey/2722927
 [Continuous delivery to Azure using Visual Studio Team Services]: ../articles/cloud-services/cloud-services-continuous-delivery-use-vso.md
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

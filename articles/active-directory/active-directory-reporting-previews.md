@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Vorschau von Azure Active Directory-Berichten | Microsoft Azure"
+   pageTitle="Azure Active Directory-Berichte in der Vorschau | Microsoft Azure"
    description="Azure Active Directory-Berichte in der öffentlichen und privaten Vorschau"
    services="active-directory"
    documentationCenter=""
@@ -13,10 +13,21 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="11/09/2015"
+   ms.date="11/30/2015"
    ms.author="kenhoff"/>
 
-# Vorschau von Azure Active Directory-Berichten
+# Azure Active Directory-Berichte in der Vorschau
+
+## Artikel in der Azure AD Reporting-Dokumentation
+
+ - [Reporting-API](active-directory-reporting-api-getting-started.md)
+ - [Überwachungsereignisse](active-directory-reporting-audit-events.md)
+ - [Aufbewahrung](active-directory-reporting-retention.md)
+ - [Vorschau](active-directory-reporting-previews.md)
+ - [Suche](active-directory-reporting-search.md)
+ - [Abgleich](active-directory-reporting-backfill.md)
+ - [Wartezeiten](active-directory-reporting-latencies.md)
+ - [Ereignis „Unbekannter Akteur“](active-directory-reporting-unknown-actor.md)
 
 Bericht | Verfügbarkeit
 ------------------------------------------------------- | --------------------
@@ -49,7 +60,7 @@ Aktivste RMS-Benutzer | Öffentliche Vorschau
 RMS-Nutzung | Öffentliche Vorschau
 Nutzung von RMS-Geräten | Öffentliche Vorschau
 Nutzung RMS-fähiger Anwendungen | Öffentliche Vorschau
-**Private Berichtsvorschau** |
+**Berichte in der privaten Vorschau** |
 Alle Benutzeranmeldeaktivitäten | Private Vorschau
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

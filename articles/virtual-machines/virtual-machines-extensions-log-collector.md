@@ -92,7 +92,7 @@ Intern verwendet diese Erweiterung die JSON-basierten Argumente „PublicConfigu
 
 Befolgen Sie einen der beiden folgenden Schritte, um den AzureLogCollector einer oder mehreren Instanzen eines Clouddiensts oder virtuellen Computers der ausgewählten Rollen hinzuzufügen. Dadurch wird die Ausführung der Sammlungen auf den einzelnen virtuellen Computern ausgelöst, und die gesammelten Dateien werden an das angegebene Azure-Konto gesendet.
 
-## Hinzufügen von AzureLogCollector als Diensterweiterung
+## Hinzufügen als Diensterweiterung
 
 1. Führen Sie die Anweisungen zum Verbinden von Azure PowerShell mit Ihrem Abonnement aus.
 
@@ -186,7 +186,7 @@ Im Folgenden sehen Sie die Definition der Parameter, die an das Skript übergebe
       { String Name, String Location, String SearchPattern, Bool Recursive }
              
             
-## Hinzufügen von AzureLogCollector als VM-Erweiterung
+## Hinzufügen als VM-Erweiterung
 
 Führen Sie die Anweisungen zum Verbinden von Azure PowerShell mit Ihrem Abonnement aus.
 
@@ -521,4 +521,4 @@ SetAzureVMLogCollector.ps1
 
 Sie können jetzt Ihre Protokolle an einem sehr einfachen Speicherort untersuchen oder kopieren.
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

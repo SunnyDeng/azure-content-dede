@@ -123,7 +123,7 @@ In diesem Abschnitt werden Sie schrittweise durch ein Beispiel zum Migrieren ein
  
 20.	Klicken Sie auf die Links zu den Azure-Web-Apps, und stellen Sie sicher, dass die Migration erfolgreich war.
 
-21. Sie können jetzt die migrierten Web-Apps in Azure App Service verwalten. Melden Sie sich dazu beim[Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) an.
+21. Sie können jetzt die migrierten Web-Apps in Azure App Service verwalten. Melden Sie sich dazu beim[Azure-Portal](https://portal.azure.com) an.
 
 22. Öffnen Sie das Blatt von Web-Apps im Azure-Portal, um Ihre migrierten Websites (dargestellt als Web-Apps) anzuzeigen. Klicken Sie dann auf eine, um sie zu verwalten. Sie können z. B. die kontinuierliche Veröffentlichung, das Erstellen von Sicherungen, die automatische Skalierung und die Überwachung von Nutzung oder Leistung konfigurieren.
 
@@ -132,8 +132,7 @@ In diesem Abschnitt werden Sie schrittweise durch ein Beispiel zum Migrieren ein
 >[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Änderungen
-* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
+* Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

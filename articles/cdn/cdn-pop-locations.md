@@ -3,7 +3,7 @@
 	description="In diesem Thema werden die POP-Standorte (Point of Presence) von Azure Content Delivery Network (CDN) aufgeführt." 
 	services="cdn" 
 	documentationCenter="" 
-	authors="Juliako" 
+	authors="camsoper" 
 	manager="dwrede" 
 	editor=""/>
 
@@ -11,10 +11,10 @@
 	ms.service="cdn" 
 	ms.workload="media" 
 	ms.tgt_pltfrm="na" 
-	ms.devlang="ne" 
+	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/01/2015" 
-	ms.author="juliako"/>
+	ms.date="12/02/2015" 
+	ms.author="casoper"/>
 
 
 #POP-Standorte von Azure Content Delivery Network (CDN)
@@ -25,7 +25,7 @@ In diesem Thema werden die aktuellen POP-Standorte (Point of Presence) von Micro
 ![CDN-POP-Standorte](./media/cdn-pop-locations/CDN_POP_locations_update.png)
 
 
-##USA
+##Nordamerika
 
 - Atlanta
 - Chicago
@@ -39,6 +39,10 @@ In diesem Thema werden die aktuellen POP-Standorte (Point of Presence) von Micro
 - Washington DC
 - Boston
 
+##Südamerika
+
+- São Paulo
+- Quito
 
 ##Europa
 
@@ -64,11 +68,14 @@ In diesem Thema werden die aktuellen POP-Standorte (Point of Presence) von Micro
 - Seoul
 - Singapur
 - Tokio
-
+- Bangalore
+- Chennai
+- Delhi
+- Mumbai
 
 ##Australien
 
 - Melbourne
 - Sydney 
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

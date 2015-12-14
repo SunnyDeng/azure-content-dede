@@ -32,7 +32,7 @@ Derzeit sind diese Features für das ASP.NET-SDK verfügbar.
 
 Vorbereitung:
 
-* Installieren Sie das [Application Insights SDK](app-insights-start-monitoring-app-health-usage.md) in Ihrer App. Installieren Sie die NuGet-Pakete manuell, und wählen Sie die neueste *Vorabversion* aus.
+* Installieren Sie das [Application Insights SDK](app-insights-asp-net.md) in Ihrer App. Installieren Sie die NuGet-Pakete manuell, und wählen Sie die neueste *Vorabversion* aus.
 * Probieren Sie die [Application Insights-API](app-insights-api-custom-events-metrics.md) aus. 
 
 
@@ -43,11 +43,11 @@ Vorbereitung:
 Bei der [Erstellung von Stichproben](app-insights-sampling.md) handelt es sich um die empfohlene Methode zum Reduzieren des Datenverkehrs bei gleichzeitig präzisen Statistiken. Der Filter wählt verwandte Elemente, damit Sie zwischen den Elementen in der Diagnose navigieren können. Ereigniszähler werden im metrischen Explorer angepasst, um die gefilterten Elemente zu kompensieren.
 
 * Es wird die adaptive Stichprobenerstellung empfohlen. Bei dieser Methode wird der Stichproben-Prozentsatz automatisch angepasst, um ein bestimmtes Volumen an Anforderungen zu erreichen. Derzeit nur für serverseitige Telemetrie bei ASP.NET verfügbar.  
-* Eine Stichprobenerstellung mit festem Prozentsatz steht ebenfalls zur Verfügung. Dabei geben Sie den Stichproben-Prozentsatz an. Verfügbar für ASP.NET-Web-App-Code und JavaScript-Webseiten. Client und Server synchronisieren ihre Stichprobenerstellung, sodass Sie in der Suche zwischen den verwandten Seitenaufrufen und Anforderungen navigieren können.
+* Die [Stichprobenerstellung mit festem Prozentsatz](app-insights-sampling.md) steht ebenfalls zur Verfügung. Dabei geben Sie den Stichproben-Prozentsatz an. Verfügbar für ASP.NET-Web-App-Code und JavaScript-Webseiten. Client und Server synchronisieren ihre Stichprobenerstellung, sodass Sie in der Suche zwischen den verwandten Seitenaufrufen und Anforderungen navigieren können.
 
 ### So aktivieren Sie die Stichprobenerstellung
 
-**Aktualisieren Sie die NuGet-Pakete Ihres Projekts** auf die neueste *Vorabversion* von Application Insights: Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, wählen Sie „NuGet-Pakete verwalten“ aus, aktivieren Sie **Vorabversion einschließen**, und suchen Sie nach „Microsoft.ApplicationInsights.Web“.
+**Aktualisieren Sie die NuGet-Pakete Ihres Projekts** auf die neueste *Vorabversion* von Application Insights: Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, wählen Sie "NuGet-Pakete verwalten" aus, aktivieren Sie **Vorabversion einschließen**, und suchen Sie nach "Microsoft.ApplicationInsights.Web".
 
 In [ApplicationInsights.config](app-insights-configuration-with-applicationinsights-config.md) können Sie den maximalen Prozentsatz an Telemetriedaten angeben, den der Anpassungsalgorithmus als Ziel anstreben soll:
 
@@ -86,7 +86,7 @@ Zum Filtern von Telemetriedaten schreiben Sie einen Telemetrie-Prozessor und reg
 
 ### Erstellen eines Telemetrieprozessors
 
-1. Aktualisieren Sie das Application Insights-SDK auf die neueste Version (2.0.0-beta2 oder höher). Klicken Sie im Visual Studio-Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und wählen Sie „NuGet-Pakete verwalten“ aus. Wählen Sie im NuGet-Paket-Manager **Vorabversion einschließen** aus, und suchen Sie nach „Microsoft.ApplicationInsights.Web“.
+1. Aktualisieren Sie das Application Insights-SDK auf die neueste Version (2.0.0-beta2 oder höher). Klicken Sie im Visual Studio-Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und wählen Sie „NuGet-Pakete verwalten“ aus. Wählen Sie im NuGet-Paket-Manager **Vorabversion einschließen** aus, und suchen Sie nach "Microsoft.ApplicationInsights.Web".
 
 1. Implementieren Sie zum Erstellen eines Filters „ITelemetryProcessor“. Hierbei handelt es sich um einen weiteren Erweiterungspunkt wie Telemetriemodul, Telemetrieinitiliasierer und Telemetriekanal.
 
@@ -395,7 +395,7 @@ Sie können beliebig viele Initialisierer hinzufügen.
 [data]: app-insights-data-retention-privacy.md
 [diagnostic]: app-insights-diagnostic-search.md
 [exceptions]: app-insights-asp-net-exceptions.md
-[greenbrown]: app-insights-start-monitoring-app-health-usage.md
+[greenbrown]: app-insights-asp-net.md
 [java]: app-insights-java-get-started.md
 [metrics]: app-insights-metrics-explorer.md
 [qna]: app-insights-troubleshoot-faq.md
@@ -404,4 +404,4 @@ Sie können beliebig viele Initialisierer hinzufügen.
 
  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

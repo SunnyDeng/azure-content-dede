@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="11/18/2015" 
+	ms.date="11/30/2015" 
 	ms.author="awills"/>
 
 # Application Insights-API für benutzerdefinierte Ereignisse und Metriken 
@@ -104,22 +104,26 @@ Senden Sie z. B. in einer Spiele-App ein Ereignis, sobald ein Benutzer das Spiel
 
     telemetry.trackEvent("WinGame");
 
-„WinGame“ ist hier der Name, der im Application Insights-Portal angezeigt wird. Klicken Sie auf die Kachel "Benutzerdefinierte Ereignisse" auf dem Blatt "Übersicht":
+„WinGame“ ist hier der Name, der im Application Insights-Portal angezeigt wird.
 
-![Navigieren Sie zu Ihrer Anwendungsressource in portal.azure.com.](./media/app-insights-api-custom-events-metrics/01-custom.png)
+Um die Anzahl der Ereignisse anzuzeigen, öffnen Sie das Blatt [Metrik-Explorer](app-insights-metrics-explorer.md), fügen Sie ein neues Diagramm hinzu und wählen Sie die Ereignisse aus.
+
+![](./media/app-insights-api-custom-events-metrics/01-custom.png)
+
+Um die Anzahl der verschiedene Ereignisse zu vergleichen, legen Sie den Diagrammtyp auf „Raster“ fest und gruppieren Sie nach Ereignisnamen:
+
+![](./media/app-insights-api-custom-events-metrics/07-grid.png)
 
 
-Das Diagramm ist nach Ereignisnamen gruppiert, um die relativen Beiträge der wichtigsten Ereignisse anzuzeigen. Markieren Sie zum Steuern dieser Einstellung das Diagramm, und verwenden Sie das Steuerelement für die Gruppierung.
-
-![Wählen Sie das Diagramm aus, und legen Sie die Gruppierung fest.](./media/app-insights-api-custom-events-metrics/02-segment.png)
-
-Wählen Sie in der Liste unterhalb des Diagramms einen Ereignisnamen aus. Klicken Sie, um weitere einzelne Vorkommen eines Ereignisses anzuzeigen.
+Klicken Sie im Raster auf einen Ereignisnamen, um einzelne Vorkommen dieses Ereignisses anzuzeigen.
 
 ![Führen Sie ein Drillthrough für die Ereignisse aus.](./media/app-insights-api-custom-events-metrics/03-instances.png)
 
 Klicken Sie auf ein beliebiges Vorkommen, um weitere Details anzuzeigen.
 
+Um sich entweder unter Search oder im Metrik-Explorer bestimmte Ereignisse zu konzentrieren, legen Sie den Filter des Blattes auf die Ereignisnamen fest, an denen Sie interessiert sind:
 
+![Öffnen Sie Filter, erweitern Sie den Ereignisnamen und wählen Sie einen oder mehrere Werte.](./media/app-insights-api-custom-events-metrics/06-filter.png)
 
 ## TrackMetric
 
@@ -654,16 +658,24 @@ Wenn Sie diese Werte selbst festlegen, empfiehlt es sich, die entsprechende Zeil
 
 ## Grenzen
 
-Es gibt einige Beschränkungen hinsichtlich der Anzahl von Metriken und Ereignissen pro Anwendung.
+Es gibt einige Beschränkungen hinsichtlich der Anzahl von Metriken und Ereignissen pro Anwendung (d. h. pro Instrumentationsschlüssel).
 
-1. Bis zu 500 Telemetriedatenpunkte pro Sekunde pro Instrumentationsschlüssel (d. h. pro Anwendung). Dazu gehören sowohl die vom SDK-Modul gesendete Standardtelemetrie als auch benutzerdefinierte Ereignisse, Metriken und andere Telemetriedaten, die vom Code gesendet werden.
+1. Eine maximale Rate pro Sekunde, die separat für jeden Instrumentationsschlüssel gilt. Oberhalb des Limits werden einige Daten gelöscht.
+ * Bis zu 500 Datenpunkte pro Sekunde für TrackTrace-Aufrufe und erfasste Protokolldaten. (100 pro Sekunde beim kostenlosen Tarif.)
+ * Bis zu 50 Datenpunkte pro Sekunde für Ausnahmen, entweder von unseren Modulen oder durch TrackException-Aufrufe erfasst. 
+ * Bis zu 500 Datenpunkte pro Sekunde für alle anderen Daten. Dazu gehören sowohl die vom SDK-Modul gesendete Standardtelemetrie als auch benutzerdefinierte Ereignisse, Metriken und andere Telemetriedaten, die vom Code gesendet werden. (100 pro Sekunde beim kostenlosen Tarif.)
+1. Monatliches Gesamtvolumen an Daten, abhängig von Ihrem [Tarif](app-insights-pricing.md).
 1.	Bis zu 200 eindeutige Metriknamen und 200 eindeutige Eigenschaftennamen für Ihre Anwendung. Zu den Metriken gehören Daten, die über TrackMetric gesendet werden, sowie Messungen für andere Datentypen wie z. B. Ereignisse. Metriken und Eigenschaftennamen gelten global pro Instrumentationsschlüssel und werden nicht auf den Datentyp begrenzt.
 2.	Eigenschaften können nur zur Filterung und zur Gruppierung verwendet werden, solange sie weniger als 100 eindeutige Werte für jede Eigenschaft aufweisen. Sobald die eindeutigen Werte 100 überschreiten, kann die Eigenschaft zwar noch zur Suche und Filterung, jedoch nicht mehr für Filter verwendet werden.
 3.	Standardeigenschaften wie z. B. RequestName und die Seiten-URL, sind auf 1000 eindeutige Werte pro Woche beschränkt. Nach 1000 eindeutigen Werten werden zusätzliche Werte als "Andere Werte" gekennzeichnet. Der ursprüngliche Wert kann nach wie vor für die Volltextsuche und die Filterung verwendet werden.
 
-* *F: Wie lange werden Daten aufbewahrt?*
+*Wie kann ich das Erreichen der Obergrenze vermeiden?*
 
-    Informationen hierzu finden Sie unter [Datenaufbewahrung und Datenschutz][data].
+* Installieren Sie das neueste SDK, um [Stichproben](app-insights-sampling.md) zu verwenden.
+
+*Wie lange werden Daten aufbewahrt?*
+
+* Informationen hierzu finden Sie unter [Datenaufbewahrung und Datenschutz][data].
 
 
 ## Referenz
@@ -715,7 +727,7 @@ Es gibt einige Beschränkungen hinsichtlich der Anzahl von Metriken und Ereignis
 [data]: app-insights-data-retention-privacy.md
 [diagnostic]: app-insights-diagnostic-search.md
 [exceptions]: app-insights-asp-net-exceptions.md
-[greenbrown]: app-insights-start-monitoring-app-health-usage.md
+[greenbrown]: app-insights-asp-net.md
 [java]: app-insights-java-get-started.md
 [metrics]: app-insights-metrics-explorer.md
 [qna]: app-insights-troubleshoot-faq.md
@@ -724,4 +736,4 @@ Es gibt einige Beschränkungen hinsichtlich der Anzahl von Metriken und Ereignis
 
  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

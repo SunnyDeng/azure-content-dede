@@ -13,10 +13,22 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/10/2015"
+	ms.date="11/30/2015"
 	ms.author="kenhoff;Justinha;curtand"/>
 
+
 # Anzeigen von Zugriffs- und Nutzungsberichten
+
+## Artikel in der Azure AD Reporting-Dokumentation
+
+ - [Reporting-API](active-directory-reporting-api-getting-started.md)
+ - [Überwachungsereignisse](active-directory-reporting-audit-events.md)
+ - [Aufbewahrung](active-directory-reporting-retention.md)
+ - [Vorschau](active-directory-reporting-previews.md)
+ - [Suche](active-directory-reporting-search.md)
+ - [Abgleich](active-directory-reporting-backfill.md)
+ - [Wartezeiten](active-directory-reporting-latencies.md)
+ - [Ereignis „Unbekannter Akteur“](active-directory-reporting-unknown-actor.md)
 
 Sie können die Zugriffs- und Nutzungsberichte von Azure Active Directory verwenden, um sich einen Einblick in die Integrität und Sicherheit des Verzeichnisses Ihrer Organisation zu verschaffen. Mithilfe dieser Informationen kann ein Verzeichnisadministrator mögliche Sicherheitsrisiken besser bestimmen, um angemessen zu planen, wie diese Risiken eingedämmt werden können.
 
@@ -159,7 +171,7 @@ Im Azure-Verwaltungsportal werden Berichte auf folgende Weise kategorisiert:
 | :-------------     | :-------        |
 | In diesem Bericht können Sie die Nutzung aller SaaS-Anwendungen in Ihrem Verzeichnis ablesen. Dieser Bericht basiert darauf, wie oft Benutzer im Zugriffsbereich auf die Anwendung geklickt haben. | Verzeichnis > Registerkarte "Berichte" |
 
-Dieser Bericht enthält Informationen zu Anmeldungen bei _allen_ Programmen, auf die Ihr Verzeichnis Zugriff hat, einschließlich bereits integrierten Microsoft-Anwendungen.
+Dieser Bericht enthält Informationen zu Anmeldungen bei _allen_ Programmen, auf die Ihr Verzeichnis Zugriff hat, einschließlich vorab integrierten Microsoft-Anwendungen.
 
 Zu den bereits integrierten Microsoft-Anwendungen zählen Office 365, Sharepoint, das Azure-Verwaltungsportal und andere.
 
@@ -275,4 +287,4 @@ Weitere Informationen zu den Benachrichtigungen für Berichte in Azure AD finde
 - [Erste Schritte mit Azure Active Directory Premium](active-directory-get-started-premium.md)
 - [Hinzufügen Ihres Unternehmensbranding zur Anmelde- und Zugriffsbereichsseite](active-directory-add-company-branding.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

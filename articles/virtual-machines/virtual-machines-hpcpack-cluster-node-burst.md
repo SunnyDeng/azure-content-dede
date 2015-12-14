@@ -41,7 +41,7 @@ Wenn Sie die rechenintensive A8- oder A9-Instanzengröße verwenden möchten, fi
 
 ## Schritt 1: Erstellen eines Clouddiensts und eines Speicherkontos zum Hinzufügen von Azure-Knoten
 
-Verwenden Sie das Azure-Portal oder entsprechende Tools, um die folgenden Komponenten zu konfigurieren, die für die Bereitstellung von Azure-Knoten erforderlich sind:
+Verwenden Sie das klassische Azure-Portal oder entsprechende Tools, um die folgenden Komponenten zu konfigurieren, die für die Bereitstellung von Azure-Knoten erforderlich sind:
 
 * Einen neuen Azure-Clouddienst
 * Ein neues Azure-Speicherkonto
@@ -69,7 +69,7 @@ Zusätzliche Optionen zum Konfigurieren des Verwaltungszertifikats finden Sie un
 
 
 
-Die Schritte zum Hinzufügen und Starten von Azure-Knoten in diesem Szenario entsprechen i. Allg. der Vorgehensweise bei lokalen Hauptknoten. Weitere Informationen finden Sie in den folgenden Abschnitten unter [Steps to Deploy Azure Nodes with Microsoft HPC Pack](https://technet.microsoft.com/library/gg481758(v=ws.10).aspx) (in englischer Sprache):
+Die Schritte zum Hinzufügen und Starten von Azure-Knoten in diesem Szenario entsprechen i. Allg. der Vorgehensweise bei lokalen Hauptknoten. Weitere Informationen finden Sie in den folgenden Abschnitten unter [Steps to Deploy Azure Nodes with Microsoft HPC Pack] (in englischer Sprache) ((https://technet.microsoft.com/library/gg481758(v=ws.10).aspx):
 
 * Erstellen einer Azure-Knotenvorlage
 
@@ -79,7 +79,7 @@ Die Schritte zum Hinzufügen und Starten von Azure-Knoten in diesem Szenario ent
 
 Nachdem Sie die Knoten hinzugefügt und gestartet haben, können Sie sie zum Ausführen von Clusteraufträgen verwenden.
 
-Wenn bei der Bereitstellung von Azure-Knoten Probleme auftreten, finden Sie unter [Troubleshoot Deployments of Azure Nodes with Microsoft HPC Pack](http://technet.microsoft.com/library/jj159097(v=ws.10).aspx) (in englischer Sprache) Anweisungen zur Problembehandlung.
+Wenn bei der Bereitstellung von Azure-Knoten Probleme auftreten, finden Sie unter [Troubleshoot Deployments of Azure Nodes with Microsoft HPC Pack] (in englischer Sprache) (http://technet.microsoft.com/library/jj159097(v=ws.10).aspx) Anweisungen zur Problembehandlung.
 
 ## Nächste Schritte
 
@@ -88,4 +88,4 @@ Wenn bei der Bereitstellung von Azure-Knoten Probleme auftreten, finden Sie unte
 <!--Image references-->
 [burst]: ./media/virtual-machines-hpcpack-cluster-node-burst/burst.png
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

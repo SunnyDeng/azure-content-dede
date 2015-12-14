@@ -45,7 +45,7 @@ Nachfolgend sind die beteiligten Komponenten aufgeführt.
 Bevor Sie mit einer detaillierte Problembehandlung beginnen, empfiehlt es sich, sich zu überlegen, was sich geändert hat, seit Sie zuletzt erfolgreich Remotedesktopverbindungen herstellen konnten, und diese Änderung als Ausgangspunkt für die Problembehebung zu verwenden. Beispiel:
 
 - Wenn Sie Remotedesktopverbindungen herstellen konnten und die öffentliche IP-Adresse des virtuellen Computers oder des Clouddiensts mit dem virtuellen Computer (auch virtuelle IP-Adresse [VIP] genannt) geändert haben, enthält der DNS-Clientcache möglicherweise einen Eintrag für den DNS-Namen und die *alte IP-Adresse*. Löschen Sie den Cache des DNS-Clients, und versuchen Sie es erneut. Versuchen Sie stattdessen, die Verbindung mit der neuen VIP herzustellen.
-- Wenn Sie statt des Azure-Portals oder des Azure-Vorschauportals eine Anwendung zum Verwalten von Remotedesktopverbindungen verwenden, stellen Sie sicher, dass die Anwendungskonfiguration den nach dem Zufallsprinzip bestimmten TCP-Port für den Remotedesktop-Datenverkehr enthält.
+- Wenn Sie statt des klassischen Azure-Portals oder des Azure-Portals eine Anwendung zum Verwalten von Remotedesktopverbindungen verwenden, stellen Sie sicher, dass die Anwendungskonfiguration den nach dem Zufallsprinzip bestimmten TCP-Port für den Remotedesktop-Datenverkehr enthält.
 
 In den folgenden Abschnitten wird schrittweise erläutert, wie die verschiedenen Ursachen für dieses Problem isoliert und ermittelt werden. Zudem werden Lösungen und Problemumgehungen bereitgestellt.
 
@@ -54,7 +54,7 @@ In den folgenden Abschnitten wird schrittweise erläutert, wie die verschiedenen
 
 Führen Sie die folgenden Schritte aus, bevor Sie mit der detaillierten Problembehandlung fortfahren.
 
-- Überprüfen Sie den Status des virtuellen Computers im Azure-Portal oder dem Azure-Vorschauportal.
+- Überprüfen Sie den Status des virtuellen Computers im klassischen Azure-Portal oder im Azure-Portal.
 - Starten Sie den virtuellen Computer neu.
 - [Ändern Sie die Größe des virtuellen Computers.](virtual-machines-size-specs.md)
 
@@ -114,10 +114,10 @@ Ist kein anderer virtueller Computer in demselben Clouddienst oder virtuellen Ne
 
 Wenn Sie mit einem virtuellen Computer in demselben Clouddienst oder virtuellen Netzwerk eine Remotedesktopverbindung herstellen können, überprüfen Sie Folgendes:
 
-- Die Endgerätkonfiguration für den Remotedesktop-Datenverkehr auf dem virtuellen Zielcomputer. Der private TCP-Port des Endgeräts muss mit dem TCP-Port übereinstimmen, der vom Dienst der Remotedesktopdienste auf dem virtuellen Computer überwacht wird. In der Standardeinstellung ist dies Port 3389.
-- Die ACL für das Endgerät des Remotedesktop-Datenverkehr auf dem virtuellen Zielcomputer. In ACLs können Sie anhand der Quell-IP-Adresse angeben, ob eingehender Datenverkehr aus dem Internet zugelassen oder verweigert wird. Falsch konfigurierte ACSs können verhindern, dass die Remotedesktop-Datenverkehr zum Endgerät gelangt. Untersuchen Sie die ACLs, um sicherzustellen, dass eingehender Verkehr von den öffentlichen IP-Adressen des Proxy- oder anderen Edgeservers zugelassen wird. Weitere Informationen finden Sie unter [Was ist eine Netzwerk-Zugriffssteuerungsliste (ACL)?](../virtual-network/virtual-networks-acl.md).
+- Die Endpunktkonfiguration für den Remotedesktop-Datenverkehr auf dem virtuellen Zielcomputer. Der private TCP-Port des Endpunkts muss mit dem TCP-Port übereinstimmen, der vom Dienst der Remotedesktopdienste auf dem virtuellen Computer überwacht wird. In der Standardeinstellung ist dies Port 3389.
+- Die ACL für den Endpunkt des Remotedesktop-Datenverkehr auf dem virtuellen Zielcomputer. In ACLs können Sie anhand der Quell-IP-Adresse angeben, ob eingehender Datenverkehr aus dem Internet zugelassen oder verweigert wird. Falsch konfigurierte ACSs können verhindern, dass die Remotedesktop-Datenverkehr zum Endpunkt gelangt. Untersuchen Sie die ACLs, um sicherzustellen, dass eingehender Verkehr von den öffentlichen IP-Adressen des Proxy- oder anderen Edgeservers zugelassen wird. Weitere Informationen finden Sie unter [Was ist eine Netzwerk-Zugriffssteuerungsliste (ACL)?](../virtual-network/virtual-networks-acl.md).
 
-Um das Endgerät als Problemquelle auszuschließen, entfernen Sie das aktuelle Endgerät, und erstellen Sie ein neues Endgerät. Wählen Sie einen zufälligen Port im Bereich von 49152 bis 65535 für die externe Portnummer aus. Weitere Informationen finden Sie unter [Einrichten von Endgeräten für einen virtuellen Computer](virtual-machines-set-up-endpoints.md).
+Um den Endpunkt als Problemquelle auszuschließen, entfernen Sie den aktuellen Endpunkt, und erstellen Sie einen neuen Endpunkt. Wählen Sie einen zufälligen Port im Bereich von 49152 bis 65535 für die externe Portnummer aus. Weitere Informationen finden Sie unter [Einrichten von Endpunkten für einen virtuellen Computer](virtual-machines-set-up-endpoints.md).
 
 ### <a id="nsgs"></a>Quelle 4: Netzwerksicherheitsgruppen
 
@@ -192,7 +192,7 @@ Beenden Sie die Azure PowerShell-Remotesitzung mit dem folgenden Befehl.
 
 	Exit-PSSession
 
-Überprüfen Sie, ob das Remotedesktop-Endgerät für den virtuellen Azure-Computer auch den TCP-Port 3398 als internen Port verwendet. Starten Sie den virtuellen Azure-Computer dann neu, und versuchen Sie erneut, die Remotedesktopverbindung herzustellen.
+Überprüfen Sie, ob der Remotedesktop-Endpunkt für den virtuellen Azure-Computer auch den TCP-Port 3398 als internen Port verwendet. Starten Sie den virtuellen Azure-Computer dann neu, und versuchen Sie erneut, die Remotedesktopverbindung herzustellen.
 
 
 ## Zusätzliche Ressourcen
@@ -207,4 +207,4 @@ Beenden Sie die Azure PowerShell-Remotesitzung mit dem folgenden Befehl.
 
 [Problembehandlung beim Zugriff auf eine Anwendung, die auf einem virtuellen Azure-Computer ausgeführt wird](virtual-machines-troubleshoot-access-application.md)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

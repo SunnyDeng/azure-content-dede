@@ -250,4 +250,4 @@ Sie besitzen nun eine einsatzbereite Tabelle mit Daten im ORC-Format.
 
 Im letzten Abschnitt werden Parameter beschrieben, mit denen Sie die Leistung der Hive-Abfragen optimieren können.
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

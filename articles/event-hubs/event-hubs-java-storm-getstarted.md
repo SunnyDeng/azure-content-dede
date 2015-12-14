@@ -36,7 +36,7 @@ Zum Durchführen dieses Lernprogramms benötigen Sie Folgendes:
 
 ## Erstellen eines Ereignis-Hubs
 
-1. Melden Sie sich beim [Azure-Portal] an, und klicken Sie im unteren Teil des Bildschirms auf **NEW**.
+1. Melden Sie sich beim [klassischen Azure-Portal][] an, und klicken Sie im unteren Teil des Bildschirms auf **NEU**.
 
 2. Klicken Sie auf **App Services** und anschließend nacheinander auf **Service Bus**, **Event Hub** und **Schnellerfassung**.
 
@@ -100,7 +100,7 @@ Die folgenden Ressourcen sind für die Entwicklung von Anwendungen verfügbar, d
 [22]: ./media/event-hubs-java-storm-getstarted/receive-storm2.png
 
 <!-- Links -->
-[Azure-Portal]: https://manage.windowsazure.com/
+[klassischen Azure-Portal]: https://manage.windowsazure.com/
 [Event Processor Host]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
 [Übersicht über Event Hubs]: event-hubs-overview.md
 
@@ -110,4 +110,4 @@ Die folgenden Ressourcen sind für die Entwicklung von Anwendungen verfügbar, d
 [Entwickeln von Anwendungen zur Verarbeitung von Streamingdaten mit SCP.NET und C# mit Storm und HDInsight]: ../hdinsight/hdinsight-storm-develop-csharp-visual-studio-topology.md
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

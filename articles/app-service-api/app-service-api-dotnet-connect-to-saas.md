@@ -18,6 +18,8 @@
 
 # Verbinden mit einer SaaS-Plattform über eine ASP.NET-API-App in Azure App Service
 
+[AZURE.INCLUDE [app-service-api-v2-note](../../includes/app-service-api-v2-note.md)]
+
 ## Übersicht
 
 In diesem Tutorial wird gezeigt, wie eine [API-App](app-service-api-apps-why-best-platform.md) programmiert und konfiguriert wird, die eine Verbindung mit einer [SaaS-Plattform (Software-as-a-Service)](../app-service/app-service-authentication-overview.md#obotosaas) mithilfe des [App Service-API-App SDK für .NET](http://www.nuget.org/packages/Microsoft.Azure.AppService.ApiApps.Service/) herstellt. Das Tutorial veranschaulicht auch, wie die API-App aus einem .NET-Client mithilfe des [App Service SDK für .NET](http://www.nuget.org/packages/Microsoft.Azure.AppService) aufgerufen wird. Am Ende des Tutorials verfügen Sie über einen .NET-Konsolen-App-Client, der eine .NET API-App aufruft, die in Azure App Service ausgeführt wird. Die API-App ruft die Dropbox-API auf und gibt eine Liste mit Dateien und Ordnern im Dropbox-Konto des Benutzers zurück.
@@ -376,12 +378,7 @@ Weitere Hinweise:
 
 		browser.Navigate(string.Format(@"{0}/login/aad", GATEWAY_URL));
 
-	Hier die Werte für andere Anbieter: 
-	* "microsoftaccount" 
-	* "facebook" 
-	* "twitter" 
-	* "google"
-<br/><br/>
+	Hier die Werte für andere Anbieter: * "microsoftaccount" * "facebook" * "twitter" * "google" <br/><br/>
 
 * Der zweite Parameter für die `GetConsentLinkAsync()`-Methode ist die Rückruf-URL, zu der der Zustimmungsserver umgeleitet wird, nachdem sich der Benutzer bei Dropbox angemeldet und die Zustimmung für den Zugriff auf das Konto des Benutzers gegeben hat.
 
@@ -452,4 +449,4 @@ Sie haben erfahren, wie Sie eine API-App programmieren und konfigurieren, die si
 [Azure preview portal]: https://portal.azure.com/
 [Azure portal]: https://manage.windowsazure.com/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

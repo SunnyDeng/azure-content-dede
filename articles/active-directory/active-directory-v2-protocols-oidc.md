@@ -113,7 +113,7 @@ Nachdem Sie die Signatur des ID-Tokens validiert haben, müssen Sie noch einige 
 - Sie sollten den `aud`-Anspruch überprüfen, um sicherzustellen, dass das ID-Token für Ihre App ausgestellt wurde. Dessen Wert sollte der `client_id` der App entsprechen.
 - Sie sollten die Ansprüche `iat` und `exp` überprüfen, um sicherzustellen, dass das ID-Token noch nicht abgelaufen ist.
 
-Sie können je nach Szenario auch zusätzliche Ansprüche überprüfen. Einige allgemeine Überprüfungen umfassen:
+Sie können je nach Szenario auch zusätzliche Ansprüche überprüfen. Einige allgemeinen Überprüfungen umfassen:
 
 - Sicherstellen, dass sich der Benutzer/die Organisation für die App angemeldet hat.
 - Sicherstellen, dass der Benutzer über eine ordnungsgemäße Autorisierung und Berechtigungen verfügt.
@@ -212,4 +212,4 @@ Der vollständige Ablauf für die Anmeldung mit OpenID Connect und den Abruf von
 
 ![OpenId Connect-Verantwortlichkeitsbereiche](../media/active-directory-v2-flows/convergence_scenarios_webapp_webapi.png)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

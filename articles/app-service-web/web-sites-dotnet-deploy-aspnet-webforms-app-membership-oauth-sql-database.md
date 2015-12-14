@@ -41,7 +41,7 @@ Sie erstellen eine einfache Kontaktlisten-Webanwendung, die auf ASP.NET 4.5-Webf
 
 ![Seite "Kontakte - Bearbeiten"](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms00.png)
 
->[AZURE.NOTE]Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Wenn Sie kein Konto haben, können Sie <a href="/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F" target="_blank">Ihre MSDN-Abonnentenvorteile aktivieren</a> oder <a href="/pricing/free-trial/?WT.mc_id=A261C142F" target="_blank">sich für eine kostenlose Testversion registrieren</a>. Wenn Sie Azure ausprobieren möchten, ehe Sie sich für ein Konto anmelden, besuchen Sie [App Service testen](https://tryappservice.azure.com/), wo Sie sofort kostenlos eine kurzlebige ASP.NET Starter Site in Azure erstellen können. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE]Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Wenn Sie kein Konto haben, können Sie <a href="/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F" target="_blank">Ihre Visual Studio-Abonnentenvorteile aktivieren</a> oder <a href="/pricing/free-trial/?WT.mc_id=A261C142F" target="_blank">sich für eine kostenlose Testversion registrieren</a>. Wenn Sie Azure ausprobieren möchten, ehe Sie sich für ein Konto anmelden, besuchen Sie [App Service testen](https://tryappservice.azure.com/), wo Sie sofort kostenlos eine kurzlebige ASP.NET Starter Site in Azure erstellen können. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ##Einrichten der Entwicklungsumgebung 
 Richten Sie zu Beginn Ihre Entwicklungsumgebung ein, indem Sie Visual Studio 2013 und das Azure SDK für .NET installieren.
@@ -68,7 +68,7 @@ In diesem Lernprogramm wird Ihre Web-App in einer freigegebenen Hostingumgebung 
 
 Die Azure SQL-Datenbank ist ein cloudbasierter relationaler Datenbankdienst auf Grundlage von SQL Server-Technologien. Die Tools und Anwendungen, die mit SQL Server verwendet werden können, sind auch für die SQL-Datenbank geeignet.
 
-1. Klicken Sie im [Azure-Verwaltungsportal](https://manage.windowsazure.com/) auf der linken Registerkarte auf **Web-Apps** und dann auf **Neu**. ![Webplattform-Installer](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/Intro-SecureWebForms-02.png)
+1. Klicken Sie im [klassischen Azure-Portal](https://manage.windowsazure.com/) auf der linken Registerkarte auf **Web-Apps** und dann auf **Neu**. ![Webplattform-Installer](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/Intro-SecureWebForms-02.png)
 2. Klicken Sie auf **Web-App** und dann auf **Benutzerdefiniert erstellen**. ![Benutzerdefiniert erstellen](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/Intro-SecureWebForms-03.png) Der Assistent **Neue Web-App - benutzerdefiniert erstellen** wird geöffnet.  
 
 3. Geben Sie im Schritt **Web-App erstellen** des Assistenten eine Zeichenfolge in das Feld **URL** ein, die als eindeutige URL der Anwendung dienen soll. Die vollständige URL besteht aus der hier eingegebenen Zeichenfolge und dem Suffix, das neben dem Textfeld aufgeführt wird. Die Abbildung zeigt eine URL, die wahrscheinlich schon vergeben ist, sodass Sie **eine andere URL auswählen müssen**. ![Kontakte - Neue Website erstellen](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/Intro-SecureWebForms-04.png)
@@ -82,7 +82,7 @@ Die Azure SQL-Datenbank ist ein cloudbasierter relationaler Datenbankdienst auf 
 11. Geben Sie unter **Anmeldename** und **Kennwort** die Anmeldedaten eines Administrators ein. Wenn Sie **New SQL Database server** ausgewählt haben, geben Sie hier keinen vorhandenen Namen und kein vorhandenes Kennwort ein. Stattdessen definieren Sie jetzt einen neuen Namen und ein neues Kennwort zur späteren Verwendung beim Datenbankzugriff. Wenn Sie eine zuvor erstellte SQL Server-Version ausgewählt haben, werden Sie aufgefordert, das Kennwort für den zuvor erstellten SQL Server-Kontonamen einzugeben. Für dieses Lernprogramm wird das Feld **Advanced** nicht aktiviert.
 12. Klicken Sie auf das Häkchen unten rechts im Feld, um anzugeben, dass Sie fertig sind.
 
-Sie kehren im **Azure-Verwaltungsportal** zur Seite **Web-Apps** zurück, und in der Spalte **Status** wird angegeben, dass die Website erstellt wird. Kurz danach (normalerweise weniger als eine Minute) wird in der Spalte **Status** angegeben, dass die Website erfolgreich erstellt wurde. In der linken Navigationsleiste wird die Anzahl der Websites in Ihrem Konto neben dem Symbol **Web-App** angegeben und die Anzahl der Datenbanken neben dem Symbol **SQL-Datenbanken**.
+Sie kehren im **klassischen Azure-Portal** zur Seite **Web-Apps** zurück, und in der Spalte **Status** wird angegeben, dass die Website erstellt wird. Kurz danach (normalerweise weniger als eine Minute) wird in der Spalte **Status** angegeben, dass die Website erfolgreich erstellt wurde. In der linken Navigationsleiste wird die Anzahl der Websites in Ihrem Konto neben dem Symbol **Web-App** angegeben und die Anzahl der Datenbanken neben dem Symbol **SQL-Datenbanken**.
 ##Erstellen einer ASP.NET-Webformularanwendung 
 Sie haben nun eine Web-App erstellt, diese enthält jedoch noch keinen Inhalt. Als Nächstes erstellen Sie die Visual Studio Web App, die Sie auf Azure veröffentlichen.
 ###Erstellen des Projekts 
@@ -419,16 +419,16 @@ Mit den folgenden Schritten können Sie einen Google-Authentifizierungsanbieter 
 		{
 		    public partial class Startup {
 		
-		// Weitere Informationen zum Konfigurieren der Authentifizierung finden Sie unter "http://go.microsoft.com/fwlink/?LinkId=301883".
+		        // For more information on configuring authentication, please visit http://go.microsoft.com/fwlink/?LinkId=301883
 		        public void ConfigureAuth(IAppBuilder app)
 		        {
-		// DB-Kontext und Benutzer-Manager für die Verwendung einer einzelnen Instanz pro Anforderung konfigurieren
+		            // Configure the db context and user manager to use a single instance per request
 		            app.CreatePerOwinContext(ApplicationDbContext.Create);
 		            app.CreatePerOwinContext(ApplicationUserManager.Create);
 		
-		// Anwendung kann Cookie zum Speichern von Informationen zum angemeldeten Benutzer
-		// sowie ein Cookie verwenden, um Informationen zu einem über einen externen Anmeldeanbieter angemeldeten Benutzer temporär zu speichern.
-		// Anmeldecookie konfigurieren
+		            // Enable the application to use a cookie to store information for the signed in user
+		            // and to use a cookie to temporarily store information about a user logging in with a third party login provider
+		            // Configure the sign in cookie
 		            app.UseCookieAuthentication(new CookieAuthenticationOptions
 		            {
 		                AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
@@ -440,10 +440,10 @@ Mit den folgenden Schritten können Sie einen Google-Authentifizierungsanbieter 
 		                        regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
 		                }
 		            });
-		            // Cookie verwenden, um Infos über externen Anmeldeanbieter angemeldeten Benutzer temporär zu speichern
+		            // Use a cookie to temporarily store information about a user logging in with a third party login provider
 		            app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 		
-		            // Heben Sie die Auskommentierung der folgenden Zeilen auf, um die Anmeldung mit externen Anmeldeanbietern zu ermöglichen.
+		            // Uncomment the following lines to enable logging in with third party login providers
 		            //app.UseMicrosoftAccountAuthentication(
 		            //    clientId: "",
 		            //    clientSecret: "");
@@ -667,7 +667,7 @@ Um zu verhindern, dass sich andere Personen registrieren und Ihre Beispielanwend
 2. Navigieren Sie im **Server Explorer** zu **Web-App**.
 3. Klicken Sie mit der rechten Maustaste auf jede Web-App-Instanz, und wählen Sie **Web-App anhalten** aus. ![Menüelement "Website anhalten"](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms26a.png)  
 
-	Alternativ können Sie die Web-App im Microsoft Azure-Verwaltungsportal auswählen und dann auf das Symbol **Beenden** unten auf der Seite klicken. ![Seite "Neuen Kontakt hinzufügen"](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms26b.png)
+	Sie können die Web-App alternativ im klassischen Azure-Portal auswählen und dann auf das Symbol **Beenden** unten auf der Seite klicken. ![Seite "Neuen Kontakt hinzufügen"](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms26b.png)
 
 ##Überprüfen der Datenbank 
 Es ist wichtig zu wissen, wie Sie die Datenbank direkt anzeigen und ändern können. Durch die direkte Bearbeitung können Sie die Daten in der Datenbank überprüfen und wissen, wie die Daten in der Tabelle gespeichert sind.
@@ -701,4 +701,4 @@ Bitte teilen Sie uns mit, was Ihrer Meinung nach gelungen ist, bzw. verbessert w
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -53,7 +53,7 @@ Die folgenden Schritte beschreiben die Aufgaben zum Erstellen von gebräuchliche
 
 3. Erstellen Sie ein Programm.
 
-	Im Azure-Verwaltungsportal wird beim Erstellen eines Programms auch ein Medienobjekt erstellt.
+	Im klassischen Azure-Portal wird beim Erstellen eines Programms auch ein Medienobjekt erstellt.
 
 	Wenn Sie hingegen .NET SDK oder REST verwenden, müssen Sie beim Erstellen eines Programms ein Medienobjekt erstellen und angeben, dass es verwendet werden soll. 
 1. Veröffentlichen Sie das mit dem Programm verknüpfte Medienobjekt.   
@@ -157,7 +157,7 @@ Wenn Sie einen Kanal erstellen, können Sie die Vorschau-URL abrufen. Der Kanal 
 
 Sobald der Kanal mit dem Erfassen von Daten beginnt, können Sie eine Vorschau des Streams anzeigen.
 
-Beachten Sie, dass der Vorschaustream derzeit unabhängig vom angegebenen Eingabetyp nur im Fragmented MP4-Format (Smooth Streaming) bereitgestellt werden kann. Sie können den Player [http://smf.cloudapp.net/healthmonitor](http://smf.cloudapp.net/healthmonitor) verwenden, um den Smooth Stream zu testen. Sie können auch mit dem im Azure Management Portal gehosteten Player Ihren Stream wiedergeben.
+Beachten Sie, dass der Vorschaustream derzeit unabhängig vom angegebenen Eingabetyp nur im Fragmented MP4-Format (Smooth Streaming) bereitgestellt werden kann. Sie können den Player [http://smf.cloudapp.net/healthmonitor](http://smf.cloudapp.net/healthmonitor) verwenden, um den Smooth Stream zu testen. Sie können auch einen Player verwenden, der im klassischen Azure-Portal gehostet wird, um Ihren Datenstrom anzuzeigen.
 
 
 ####Zulässige IP-Adressen
@@ -269,4 +269,4 @@ Wählen Sie **Portal**, **.NET** oder **REST API**, um auf Informationen zum Ers
 [live-overview]: ./media/media-services-manage-channels-overview/media-services-live-streaming-current.png
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

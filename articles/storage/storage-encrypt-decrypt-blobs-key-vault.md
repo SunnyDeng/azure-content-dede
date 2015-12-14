@@ -167,7 +167,7 @@ Fügen Sie den folgenden Code hinzu, um ein BLOB zu verschlüsseln und in Ihr Az
 		blob.UploadFromStream(stream, stream.Length, null, options, null);
 
 
-Unten sehen Sie einen Screenshot aus dem aktuellen Azure-Portal für ein BLOB, das per clientseitiger Verschlüsselung mit einem im Schlüsselspeicher gespeicherten Schlüssel verschlüsselt wurde. Die **KeyId**-Eigenschaft ist der URI für den Schlüssel im Schlüsseltresor, der als KEK fungiert. Die **EncryptedKey**-Eigenschaft enthält die verschlüsselte Version des CEK.
+Unten sehen Sie einen Screenshot aus dem [klassischen Azure-Portal](manage.windowsazure.com) für ein Blob, das per clientseitiger Verschlüsselung mit einem im Schlüsseltresor gespeicherten Schlüssel verschlüsselt wurde. Die **KeyId**-Eigenschaft ist der URI für den Schlüssel im Schlüsseltresor, der als KEK fungiert. Die **EncryptedKey**-Eigenschaft enthält die verschlüsselte Version des CEK.
 
 ![Screenshot mit Blob-Metadaten, die Verschlüsselungsmetadaten enthalten][1]
 
@@ -235,4 +235,4 @@ Aktuelle Informationen zu Microsoft Azure Storage finden Sie im [Microsoft Azure
 <!--Image references-->
 [1]: ./media/storage-encrypt-decrypt-blobs-key-vault/blobmetadata.png
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

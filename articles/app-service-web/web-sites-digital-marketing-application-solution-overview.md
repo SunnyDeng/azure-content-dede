@@ -71,7 +71,7 @@ Stellen Sie durch das [Integrieren Ihrer Web-App in Azure CDN] statische Inhalte
 
 Optimieren Sie Ihre Web-App über eine automatische Skalierung mit "Autoskalierung", eine Zwischenspeicherung mit Azure Redis Cache und die Ausführung von Hintergrundaufgaben mithilfe von WebJobs, und sorgen Sie mit Azure Traffic Manager für eine gleichbleibend hohe Verfügbarkeit.
 
-Die Fähigkeit von App Service-Web-Apps, eine [flexible Skalierung] zu ermöglichen, ist perfekt für unvorhersehbare Workloads wie bei digitalen Marketingkampagnen geeignet. Skalieren Sie Ihre Web-App manuell über das [Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715), programmgesteuert über die [Dienstverwaltungs-API] oder über [PowerShell-Skripts] oder automatisch über die Funktion "Autoskalierung". Im Modus **Standard** können Sie eine Web-App mithilfe von "Autoskalierung" basierend auf der CPU-Auslastung automatisch horizontal hochskalieren. Diese Funktion ermöglicht maximale Flexibilität bei minimalen Kosten, da die Web-App nur dann skaliert wird, wenn dies basierend auf der Benutzeraktivität erforderlich ist. Bewährte Methoden finden Sie auf der Website von [Troy Hunt]\: [10 things I learned about rapidly scaling websites with Azure] (10 Dinge, die ich über eine schnelle Skalierung von Websites mit Azure gelernt habe, in englischer Sprache).
+Die Fähigkeit von App Service-Web-Apps, eine [flexible Skalierung] zu ermöglichen, ist perfekt für unvorhersehbare Workloads wie bei digitalen Marketingkampagnen geeignet. Skalieren Sie Ihre Web-App manuell über das [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715), programmgesteuert über die [Dienstverwaltungs-API] oder [PowerShell-Skripts] oder automatisch über die Funktion „Autoskalierung“. Im Modus **Standard** können Sie eine Web-App mithilfe von "Autoskalierung" basierend auf der CPU-Auslastung automatisch horizontal hochskalieren. Diese Funktion ermöglicht maximale Flexibilität bei minimalen Kosten, da die Web-App nur dann skaliert wird, wenn dies basierend auf der Benutzeraktivität erforderlich ist. Bewährte Methoden finden Sie auf der Website von [Troy Hunt]\: [10 things I learned about rapidly scaling websites with Azure] (10 Dinge, die ich über eine schnelle Skalierung von Websites mit Azure gelernt habe, in englischer Sprache).
 
 Erhöhen Sie die Reaktionsfähigkeit Ihrer Web-App mit [Azure Redis Cache]. Nutzen Sie diese Funktion zum Zwischenspeichern von Daten aus Back-End-Datenbanken und anderen Daten, beispielsweise [ASP.NET-Sitzungszustand] und [Ausgabecache].
 
@@ -81,7 +81,7 @@ Stellen Sie mithilfe von [Azure Traffic Manager] eine hohe Verfügbarkeit Ihrer 
 
 Sorgen Sie mit Azure oder Tools von Drittanbietern für eine optimale Leistung Ihrer Web-App. Empfangen Sie Warnungen zu kritischen Web-App-Ereignissen. Erhalten Sie problemlos Benutzereinblick über Application Insights oder eine Webprotokollanalyse aus HDInsight.
 
-Im Blatt der Web-App im [Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715) erhalten Sie eine [Übersicht] über die aktuellen Leistungskennzahlen und Ressourcenkontingente der Web-App. Eine 360-Grad-Ansicht Ihrer Anwendung, einschließlich von Daten zu Verfügbarkeit, Leistung und Auslastung, erhalten Sie mit [Azure Application Insights]. So erhalten Sie schnell aussagekräftige Erkenntnisse zu Problembehandlung, Diagnose und Nutzung. Sie können auch ein Drittanbietertool wie [New Relic] nutzen, um weiterführende Überwachungsdaten zu Ihren Web-Apps zu erhalten.
+Auf dem Blatt der Web-App im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) erhalten Sie eine [Übersicht] über die aktuellen Leistungsmetriken und Ressourcenkontingente der Web-App. Eine 360-Grad-Ansicht Ihrer Anwendung, einschließlich von Daten zu Verfügbarkeit, Leistung und Auslastung, erhalten Sie mit [Azure Application Insights]. So erhalten Sie schnell aussagekräftige Erkenntnisse zu Problembehandlung, Diagnose und Nutzung. Sie können auch ein Drittanbietertool wie [New Relic] nutzen, um weiterführende Überwachungsdaten zu Ihren Web-Apps zu erhalten.
 
 Im Modus **Standard** erhalten die für die Web-App-Überwachung verantwortlichen Benutzer E-Mail-Benachrichtigungen, wenn die Web-App nicht mehr reagiert. Weitere Informationen finden Sie unter [Empfangen von Warnbenachrichtigungen und Verwalten von Warnregeln in Azure].
 
@@ -138,4 +138,4 @@ Im Modus **Standard** erhalten die für die Web-App-Überwachung verantwortliche
   [gitstaging]: http://www.bradygaster.com/post/multiple-environments-with-windows-azure-web-sites
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

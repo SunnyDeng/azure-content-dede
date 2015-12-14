@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/19/2015"
+   ms.date="12/01/2015"
    ms.author="joaoma" />
 
 # Konfigurieren der Routingmethode "Failover"
@@ -23,8 +23,8 @@ Beachten Sie, dass Azure Websites unabhängig vom Websitemodus bereits die Funkt
 
 ## So konfigurieren Sie die Routingmethode für Datenverkehr "Failover"
 
-1. Klicken Sie im Verwaltungsportal im linken Bereich auf das Symbol **Traffic Manager**, um den Bereich Traffic Manager zu öffnen. Wenn Sie noch kein Traffic Manager-Profil erstellt haben, finden Sie unter [Verwalten von Traffic Manager-Profilen](traffic-manager-manage-profiles.md) Anweisungen zum Erstellen eines einfachen Traffic Manager-Profils.
-2. Suchen Sie im Verwaltungsportal im Traffic Manager-Bereich das Traffic Manager-Profil mit den Einstellungen, die Sie ändern möchten, und klicken Sie dann auf den Pfeil rechts neben dem Profilnamen. Die Einstellungsseite für das Profil wird geöffnet.
+1. Klicken Sie im Azure-Portal im linken Bereich auf das Symbol **Traffic Manager**, um den Bereich „Traffic Manager“ zu öffnen. Wenn Sie noch kein Traffic Manager-Profil erstellt haben, finden Sie unter [Verwalten von Traffic Manager-Profilen](traffic-manager-manage-profiles.md) Anweisungen zum Erstellen eines einfachen Traffic Manager-Profils.
+2. Suchen Sie im Azure-Portal im Bereich „Traffic Manager“ das Traffic Manager-Profil, das die Einstellungen enthält, die Sie ändern möchten, und klicken Sie dann auf den Pfeil rechts neben dem Profilnamen. Die Einstellungsseite für das Profil wird geöffnet.
 3. Klicken Sie oben auf der Seite für Ihr Profil auf **Endpunkte**, und überprüfen Sie, ob die Cloud-Dienste und Websites (Endpunkte), die Sie in Ihre Konfiguration einschließen möchten, vorhanden sind. Schritte zum Hinzufügen oder Entfernen von Endpunkten finden Sie unter [Verwalten von Endpunkten in Traffic Manager](traffic-manager-endpoints.md).
 4. Klicken Sie auf der Seite Ihres Profils oben auf **Konfigurieren**, um die Konfigurationsseite zu öffnen.
 5. Überprüfen Sie in den Einstellungen der **Routingmethode für Datenverkehr**, ob die Routingmethode für Datenverkehr **Failover** ist. Klicken Sie andernfalls in der Dropdownliste auf **Failover**.
@@ -53,4 +53,4 @@ Beachten Sie, dass Azure Websites unabhängig vom Websitemodus bereits die Funkt
 [Azure Traffic Manager-Cmdlets](http://go.microsoft.com/fwlink/p/?LinkId=400769)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

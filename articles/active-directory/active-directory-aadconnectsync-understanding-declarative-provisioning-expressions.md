@@ -37,7 +37,7 @@ Die Attribute sind stark typisiert. Eine Funktion, die ein einwertiges Zeichenfo
 - Boolesche Werte werden mit Konstanten ausgedrückt: True, False.
 - Integrierte Konstanten werden nur mit ihrem Namen ausgedrückt: NULL, CRLF, IgnoreThisFlow
 
-### Functions
+### Funktionen
 Bei der deklarativen Bereitstellung werden viele Funktionen verwendet, um das Transformieren von Attributwerten zu ermöglichen. Diese können geschachtelt werden, damit das Ergebnis einer Funktion an eine andere Funktion übergeben wird.
 
 Funktionen können auch auf ein mehrwertiges Attribut angewendet werden. In diesem Fall wird die Funktion für jeden einzelnen Wert ausgeführt. Dabei wird die gleiche Funktion auf jeden Wert angewendet. Mit `Trim([proxyAddresses])` wird beispielsweise die Trim-Funktion für jeden Wert im Attribut „proxyAddress“ ausgeführt.
@@ -55,7 +55,7 @@ Der Active Directory Connector stellt folgende Parameter für eingehende Synchro
 | Domain.Netbios | NetBIOS-Format der Domäne, die gerade importiert wird, z. B. „FABRIKAMSALES“ |
 | Domain.FQDN | FQDN-Format der Domäne, die gerade importiert wird, z. B. „sales.fabrikam.com“ |
 | Domain.LDAP | LDAP-Format der Domäne, die gerade importiert wird, z. B. „DC=sales,DC=fabrikam,DC=com“ |
-| Forest.Netbios | NetBIOS-Format des Gesamtstrukturnamens, der gerade importiert wird, z. B. „FABRIKAMSALES“ |
+| Forest.Netbios | NetBIOS-Format des Gesamtstrukturnamens, der gerade importiert wird, z. B. „FABRIKAMCORP“ |
 | Forest.FQDN | FQDN-Format des Gesamtstrukturnamens, der gerade importiert wird, z. B. „fabrikam.com“ |
 | Forest.LDAP | LDAP-Format des Gesamtstrukturnamens, der gerade importiert wird, z. B. „DC=fabrikam,DC=com“ |
 
@@ -131,4 +131,4 @@ Eine vollständige Liste der Funktionen finden Sie unter [Azure AD Connect-Synch
 
 <!--Image references-->
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -68,7 +68,7 @@ Dient zum [Sammeln von Systemleistungsindikatoren](app-insights-web-monitor-perf
 
 ### Nachverfolgung von Webanforderungen
 
-Meldet die [Antwortzeit und den Ergebniscode](app-insights-start-monitoring-app-health-usage.md) von HTTP-Anforderungen.
+Meldet die [Antwortzeit und den Ergebniscode](app-insights-asp-net.md) von HTTP-Anforderungen.
 
 * `Microsoft.ApplicationInsights.Web.RequestTrackingTelemetryModule`
 * [Microsoft.ApplicationInsights.Web](http://www.nuget.org/packages/Microsoft.ApplicationInsights.Web)-NuGet-Paket
@@ -136,7 +136,30 @@ Mit Telemetrieprozessoren kann jedes Telemetrieelement direkt vor dem Senden vom
 
 Sie können [Ihre eigenen Telemetrieprozessoren schreiben](app-insights-api-filtering-sampling.md#filtering).
 
-Es gibt auch einen standardmäßigen [Sampling-Telemetrieprozessor](app-insights-api-filtering-sampling.md#sampling) (aus 2.0.1):
+
+#### Telemetrieprozessor für adaptive Stichprobenerstellung (von 2.0.0-beta3)
+
+Diese Einstellung ist standardmäßig aktiviert. Wenn die App viele Telemetriedaten sendet, entfernt dieser Prozessor einige davon.
+
+```xml
+
+    <TelemetryProcessors>
+      <Add Type="Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.AdaptiveSamplingTelemetryProcessor, Microsoft.AI.ServerTelemetryChannel">
+        <MaxTelemetryItemsPerSecond>5</MaxTelemetryItemsPerSecond>
+      </Add>
+    </TelemetryProcessors>
+
+```
+
+Der Parameter enthält das Ziel, das der Algorithmus zu erreichen versucht. Die Instanzen des SDK funktionieren unabhängig voneinander. Wenn Ihr Server also aus mehreren Computern zu einem Cluster gruppiert ist, erhöht sich das tatsächliche Volumen an Telemetriedaten entsprechend.
+
+[Erfahren Sie mehr über Sampling](app-insights-sampling.md).
+
+
+
+#### Telemetrieprozessor für die Stichprobenerstellung mit festem Prozentsatz (von 2.0.0-beta1)
+
+Es gibt auch einen standardmäßigen [Telemetrieprozessor für die Stichprobenerstellung ](app-insights-api-filtering-sampling.md#sampling) (von 2.0.1):
 
 ```XML
 
@@ -256,10 +279,10 @@ Um einen neuen Schlüssel abzurufen, [erstellen Sie eine neue Ressource im Appli
 [azure]: ../insights-perf-analytics.md
 [client]: app-insights-javascript.md
 [diagnostic]: app-insights-diagnostic-search.md
-[exceptions]: app-insights-web-failures-exceptions.md
+[exceptions]: app-insights-asp-net-exceptions.md
 [netlogs]: app-insights-asp-net-trace-logs.md
 [new]: app-insights-create-new-resource.md
 [redfield]: app-insights-monitor-performance-live-website-now.md
 [start]: app-insights-overview.md
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

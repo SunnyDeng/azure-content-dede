@@ -113,4 +113,4 @@ Wenn Sie das verwendete Betriebssystemimage aktualisieren müssen, muss das jewe
 [AddingProbes]: ./media/service-fabric-cluster-upgrade/addingProbes.png
 [AddingLBRules]: ./media/service-fabric-cluster-upgrade/addingLBRules.png
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

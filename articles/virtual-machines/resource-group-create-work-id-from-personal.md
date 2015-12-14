@@ -28,11 +28,11 @@ Glücklicherweise ist einer der größten Vorteile Ihres persönlichen Azure-Kon
 
 > [AZURE.NOTE]Wenn Sie einen Benutzernamen und ein Kennwort von einem Administrator erhalten haben, besteht eine hohe Wahrscheinlichkeit, dass Sie bereits eine Arbeits- oder Schul-ID (auch als *Organisations-ID* bezeichnet) besitzen. In diesem Fall können Sie sofort Ihr Azure-Konto verwenden, um auf entsprechende Azure-Ressourcen zuzugreifen. Wenn Sie feststellen, dass Sie diese Ressourcen nicht verwenden können, können Sie bei Bedarf zu diesem Artikel zurückkehren. Weitere Informationen finden Sie unter [Konten, die für die Anmeldung verwendet werden können](https://msdn.microsoft.com/library/azure/dn629581.aspx#BKMK_SignInAccounts) und insbesondere [Die Beziehung zwischen einem Azure-Abonnement und Azure AD](https://msdn.microsoft.com/library/azure/dn629581.aspx#BKMK_SubRelationToDir).
 
-Die Schritte sind einfach. Sie müssen Ihre angemeldete Identität im Azure-Portal suchen, Ihre Azure Active Directory-Standarddomäne ermitteln und als Azure-Co-Administrator einen neuen Benutzer hinzufügen.
+Die Schritte sind einfach. Sie müssen Ihre angemeldete Identität im klassischen Azure-Portal suchen, Ihre Azure Active Directory-Standarddomäne ermitteln und als Azure-Co-Administrator einen neuen Benutzer hinzufügen.
 
-## Suchen des Standardverzeichnisses im Azure-Verwaltungsportal
+## Suchen des Standardverzeichnisses im klassischen Azure-Portal
 
-Melden Sie sich als Erstes mit Ihrer persönlichen Microsoft-Kontoidentität beim [Azure-Portal](https://manage.windowsazure.com) an. Nachdem Sie angemeldet sind, scrollen Sie im blauen Bereich auf der linken Seite nach unten, und klicken Sie auf **ACTIVE DIRECTORY**.
+Melden Sie sich als Erstes mit Ihrer persönlichen Microsoft-Kontoidentität beim [klassischen Azure-Portal](https://manage.windowsazure.com) an. Nachdem Sie angemeldet sind, scrollen Sie im blauen Bereich auf der linken Seite nach unten, und klicken Sie auf **ACTIVE DIRECTORY**.
 
 ![Azure Active Directory](./media/resource-group-create-work-id-from-personal/azureactivedirectorywidget.png)
 
@@ -144,4 +144,4 @@ Beispielsweise können Sie nun mit Ihrer neuen Azure Active Directory-Identität
     data:
     info:    group create command OK
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

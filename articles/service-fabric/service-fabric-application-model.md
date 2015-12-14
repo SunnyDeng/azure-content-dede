@@ -18,24 +18,24 @@
 
 # Modellieren von Anwendungen in Service Fabric
 
-Dieser Artikel bietet eine Übersicht über das Service Fabric-Anwendungsmodell und erläutert, wie eine Anwendung und ein Dienst über Manifestdateien definiert werden und die Anwendung für die Bereitstellung gepackt und vorbereitet wird.
+Dieser Artikel enthält eine Übersicht über das Azure Service Fabric-Anwendungsmodell. Außerdem wird erläutert, wie eine Anwendung und ein Dienst über Manifestdateien definiert werden und die Anwendung für die Bereitstellung gepackt und vorbereitet wird.
 
 ## Informationen zum Anwendungsmodell
 
-Eine Anwendung ist eine Sammlung von einzelnen Diensten, die eine bzw. mehrere bestimmte Funktionen ausführen. Ein Dienst führt eine vollständige und eigenständige Funktion aus (Dienste können unabhängig von anderen Diensten gestartet und ausgeführt werden) und besteht aus Code, Konfiguration und Daten. Für jeden Dienst besteht der Code aus den ausführbaren Binärdateien; die Konfiguration umfasst Diensteinstellungen, die zur Laufzeit geladen werden können; und die Daten bestehen aus beliebigen statischen Daten, die vom Dienst verarbeitet werden. Jede Komponente in diesem hierarchischen Anwendungsmodell kann unabhängig mit einer Versionsangabe versehen und aktualisiert werden.
+Eine Anwendung ist eine Sammlung von einzelnen Diensten, die eine bzw. mehrere bestimmte Funktionen ausführen. Ein Dienst führt eine vollständige und eigenständige Funktion aus (er kann unabhängig von anderen Diensten gestartet und ausgeführt werden) und besteht aus Code, Konfiguration und Daten. Für jeden Dienst besteht der Code aus den ausführbaren Binärdateien, die Konfiguration umfasst Diensteinstellungen, die zur Laufzeit geladen werden können, und die Daten bestehen aus beliebigen statischen Daten, die vom Dienst verarbeitet werden. Jede Komponente in diesem hierarchischen Anwendungsmodell kann unabhängig mit einer Versionsangabe versehen und aktualisiert werden.
 
 ![][1]
 
 
-Ein Anwendungstyp ist eine Kategorisierung einer Anwendung und besteht aus einem Bündel von Diensttypen. Ein Diensttyp ist eine Kategorisierung eines Diensts, bei dem die Einstellungen und Konfigurationen variieren können, die Kernfunktionen jedoch gleich bleiben. Die Instanzen eines Diensts sind die verschiedenen Dienstkonfigurationsvarianten desselben Diensttyps.
+Ein Anwendungstyp ist eine Kategorisierung einer Anwendung und besteht aus einem Bündel von Diensttypen. Ein Diensttyp ist eine Kategorisierung eines Diensts. Bei der Kategorisierung können die Einstellungen und Konfigurationen variieren, die Kernfunktionen bleiben jedoch gleich. Die Instanzen eines Diensts sind die verschiedenen Dienstkonfigurationsvarianten desselben Diensttyps.
 
-Klassen (oder "Typen") von Anwendungen und Diensten werden mit XML-Dateien (Anwendungsmanifeste und Dienstmanifeste) beschrieben, bei denen es sich um die Vorlagen handelt, mit denen Anwendungen instanziiert werden können. Die Codes für verschiedene Anwendungsinstanzen werden als separate Prozesse ausgeführt, auch wenn sie im gleichen Service Fabric-Knoten gehostet werden. Darüber hinaus kann der Lebenszyklus jeder Anwendungsinstanz unabhängig verwaltet (d. h. aktualisiert) werden. Die folgende schematische Darstellung zeigt die Gliederung von Anwendungstypen in Diensttypen, die wiederum aus Code, Konfiguration und Paketen bestehen.
+Klassen (oder „Typen“) von Anwendungen und Diensten werden über XML-Dateien (Anwendungsmanifeste und Dienstmanifeste) beschrieben, bei denen es sich um die Vorlagen handelt, mit denen Anwendungen instanziiert werden können. Die Codes für verschiedene Anwendungsinstanzen werden als separate Prozesse ausgeführt, auch wenn sie im gleichen Service Fabric-Knoten gehostet werden. Darüber hinaus kann der Lebenszyklus jeder Anwendungsinstanz unabhängig verwaltet (d. h. aktualisiert) werden. Die folgende schematische Darstellung zeigt die Gliederung von Anwendungstypen in Diensttypen, die wiederum aus Code, Konfiguration und Paketen bestehen.
 
-![Anwendungs- und Diensttypen in Service Fabric][Image1]
+![Service Fabric-Anwendungstypen und Diensttypen][Image1]
 
-Anwendungen und Dienste werden mit zwei verschiedenen Manifestdateien beschrieben: dem Anwendungsmanifest und dem Dienstmanifest, die in den folgenden Abschnitten ausführlich behandelt werden.
+Anwendungen und Dienste werden mit zwei verschiedenen Manifestdateien beschrieben: dem Dienstmanifest und dem Anwendungsmanifest. Diese werden in den folgenden Abschnitten ausführlich behandelt.
 
-Im Cluster können eine oder mehrere Instanzen eines Diensttyps aktiv sein. Zustandsbehaftete Dienstinstanzen oder Replikate erzielen beispielsweise eine hohe Zuverlässigkeit durch die Replikation des Zustands zwischen Replikaten, die sich im Cluster in verschiedenen Knoten befinden (und gewährleisten im Wesentlichen die Redundanz für den Dienst, sodass dieser auch bei Ausfall eines Knotens in einem Cluster verfügbar ist). Bei einem [partitionierten Dienst](service-fabric-concepts-partitioning.md) unterteilt sich der Zustand (und die Zugriffsmuster auf diesen Zustand) noch weiter auf verschiedene Knoten im Cluster.
+Im Cluster können eine oder mehrere Instanzen eines Diensttyps aktiv sein. Zustandsbehaftete Dienstinstanzen oder Replikate erzielen beispielsweise eine hohe Zuverlässigkeit durch die Replikation des Zustands zwischen Replikaten, die sich im Cluster in verschiedenen Knoten befinden. Diese Replikation gewährleistet im Wesentlichen die Redundanz für den Dienst, sodass dieser auch bei Ausfall eines Knotens in einem Cluster verfügbar ist. Bei einem [partitionierten Dienst](service-fabric-concepts-partitioning.md) unterteilt sich der Zustand (und die Zugriffsmuster auf diesen Zustand) noch weiter auf verschiedene Knoten im Cluster.
 
 Die folgende schematische Darstellung zeigt die Beziehung zwischen Anwendungen und Dienstinstanzen, Partitionen und Replikaten.
 
@@ -44,7 +44,7 @@ Die folgende schematische Darstellung zeigt die Beziehung zwischen Anwendungen u
 
 ## Beschreiben eines Diensts
 
-Das Dienstmanifest definiert den Diensttyp und die Version deklarativ und gibt Dienstmetadaten wie z. B. den Diensttyp, Integritätseigenschaften, Lastenausgleichsmetriken sowie die Dienstbinärdateien und Konfigurationsdateien an. Anders ausgedrückt: Es beschreibt den Code, die Konfiguration und die Datenpakete, die ein Dienstpaket bilden, mit dem ein oder mehrere Diensttypen unterstützt werden. Hier ein einfaches Beispiel eines Dienstmanifests:
+Das Dienstmanifest definiert deklarativ der Diensttyp und die Version. Es legt Dienstmetadaten wie Diensttyp, Integritätseigenschaften, Lastenausgleichsmetriken, Dienstbinärdateien und Konfigurationsdateien fest. Anders ausgedrückt: Es beschreibt den Code, die Konfiguration und die Datenpakete, die ein Dienstpaket bilden, mit dem ein oder mehrere Diensttypen unterstützt werden. Hier ein einfaches Beispiel eines Dienstmanifests:
 
 ~~~
 <?xml version="1.0" encoding="utf-8" ?>
@@ -72,24 +72,24 @@ Das Dienstmanifest definiert den Diensttyp und die Version deklarativ und gibt D
 
 **Version**-Attribute sind unstrukturierte Zeichenfolgen und werden im System nicht analysiert. Sie werden dazu verwendet, jeder Komponente für Upgrades mit Versionsangaben zu versehen.
 
-**ServiceTypes** deklariert, welche Diensttypen von den **CodePackages** in diesem Manifest unterstützt werden. Wenn ein Dienst mit einem dieser Diensttypen instanziiert wird, werden alle Codepakete, die in diesem Manifest deklariert sind, durch Ausführen ihrer Einstiegspunkte aktiviert. Die resultierenden Prozesse registrieren die unterstützten Diensttypen zur Laufzeit. Beachten Sie, dass Diensttypen auf Ebene der Manifeste und nicht auf Ebene der Codepakete deklariert werden. Wenn mehrere Codepakete vorhanden sind, werden sie daher alle aktiviert, wenn im System nach einem der deklarierten Diensttypen gesucht wird.
+**ServiceTypes** deklariert, welche Diensttypen von **CodePackages** in diesem Manifest unterstützt werden. Wenn ein Dienst mit einem dieser Diensttypen instanziiert wird, werden alle Codepakete, die in diesem Manifest deklariert sind, durch Ausführen ihrer Einstiegspunkte aktiviert. Die resultierenden Prozesse registrieren die unterstützten Diensttypen zur Laufzeit. Beachten Sie, dass Diensttypen auf Ebene der Manifeste und nicht auf Ebene der Codepakete deklariert werden. Wenn mehrere Codepakete vorhanden sind, werden sie daher alle aktiviert, wenn im System nach einem der deklarierten Diensttypen gesucht wird.
 
-**SetupEntryPoint** ist ein privilegierter Einstiegspunkt, der mit den gleichen Anmeldeinformationen wie Service Fabric (i. d. R. das *LocalSystem*-Konto) vor jedem anderen Einstiegspunkt ausgeführt wird. Die ausführbare Datei, die von **EntryPoint** angegeben wird, ist i. d. R. der Diensthost mit langer Laufzeit. Durch Festlegen eines separaten Setupeinstiegspunkts wird vermieden, dass der Diensthost mit erhöhten Rechten über längere Zeiträume hinweg ausgeführt werden muss. Die von **EntryPoint** angegebene ausführbare Datei wird ausgeführt, nachdem **SetupEntryPoint** erfolgreich beendet wurde. Der resultierende Prozess wird überwacht und neu gestartet (und beginnt wieder mit **SetupEntryPoint**), sofern er beendet wird oder abstürzen sollte.
+**SetupEntryPoint** ist ein privilegierter Einstiegspunkt, der mit den gleichen Anmeldeinformationen wie Service Fabric (i. d. R. das *LocalSystem*-Konto) vor jedem anderen Einstiegspunkt ausgeführt wird. Die durch **EntryPoint** angegebene ausführbare Datei ist i. d. R. der Diensthost mit langer Ausführungsdauer. Das Vorhandensein eines separaten Setupeinstiegspunkts vermeidet, dass der Diensthost über längere Zeiträume mit hohen Berechtigungen ausgeführt werden muss. Die von **EntryPoint** angegebene ausführbare Datei wird ausgeführt, nachdem **SetupEntryPoint** erfolgreich beendet wurde. Der resultierende Prozess wird überwacht und neu gestartet (und beginnt wieder mit **SetupEntryPoint**), sofern er beendet wird oder abstürzt.
 
 **DataPackage** deklariert einen Ordner, der durch das **Name**-Attribut benannt wird und beliebige statische Daten enthält, die zur Laufzeit vom Prozess verarbeitet werden sollen.
 
-**ConfigPackage** deklariert einen Ordner, der durch das **Name**-Attribut benannt wird und die Datei *Settings.xml* enthält. Diese Datei enthält Abschnitte mit benutzerdefinierten Schlüssel-Wert-Paar-Einstellungen, die der Prozess zur Laufzeit einlesen kann. Wenn sich während des Upgrades nur die **ConfigPackage**-**Version** geändert hat, wird der ausgeführte Prozess nicht neu gestartet. Stattdessen benachrichtigt ein Rückruf den Prozess, dass sich Konfigurationseinstellungen geändert haben, sodass sie dynamisch neu geladen werden können. Hier ein Beispiel der Datei *Settings.xml*:
+**ConfigPackage** deklariert einen Ordner, der durch das **Name**-Attribut benannt wird und die Datei *Settings.xml* enthält. Diese Datei enthält Abschnitte mit benutzerdefinierten Schlüssel-Wert-Paar-Einstellungen, die der Prozess zur Laufzeit einlesen kann. Wenn sich während eines Upgrades nur die **ConfigPackage**-**Version** geändert hat, wird der ausgeführte Prozess nicht neu gestartet. Stattdessen benachrichtigt ein Rückruf den Prozess, dass sich Konfigurationseinstellungen geändert haben, sodass sie dynamisch neu geladen werden können. Hier ein Beispiel der Datei *Settings.xml*:
 
 ~~~
 <Settings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/2011/01/fabric">
   <Section Name="MyConfigurationSecion">
-    <Parameter Name="MySettingA" Value="Foo" />
-    <Parameter Name="MySettingB" Value="Bar" />
+    <Parameter Name="MySettingA" Value="Example1" />
+    <Parameter Name="MySettingB" Value="Example2" />
   </Section>
 </Settings>
 ~~~
 
-> [AZURE.NOTE]Ein Dienstmanifest kann mehrere Code-, Konfigurations- und Datenpakete enthalten, die jeweils unabhängig voneinander mit Versionsangabe versehen werden können.
+> [AZURE.NOTE]Ein Dienstmanifest kann mehrere Code-, Konfigurations- und Datenpakete enthalten. Diese können unabhängig voneinander mit Versionsangaben versehen werden.
 
 <!--
 For more information about other features supported by service manifests, refer to the following articles:
@@ -104,7 +104,7 @@ For more information about other features supported by service manifests, refer 
 ## Beschreiben einer Anwendung
 
 
-Das Anwendungsmanifest beschreibt den Anwendungstyp und die Version deklarativ und gibt die Dienstzusammensetzungs-Metadaten wie z. B. dauerhafte Namen, Partitionierungsschema, Anzahl der Instanzen/Replikationsfaktor, Richtlinie für Sicherheit/Isolation, Platzierungseinschränkungen, Konfigurationsüberschreibungen und zugehörige Diensttypen an. Zudem werden die Lastenausgleichsdomänen beschrieben, in denen die Anwendung eingefügt wird. Somit beschreibt ein Anwendungsmanifest Elemente auf Anwendungsebene, verweist auf ein oder mehrere Dienstmanifeste und bildet so einen Anwendungstyp. Hier ein einfaches Beispiel eines Anwendungsmanifests:
+Das Anwendungsmanifest beschreibt deklarativ den Typ und die Version der Anwendung. Es gibt Dienstzusammensetzungs-Metadaten wie z. B. dauerhafte Namen, Partitionierungsschema, Anzahl der Instanzen/Replikationsfaktor, Richtlinie für Sicherheit/Isolation, Platzierungseinschränkungen, Konfigurationsüberschreibungen und zugehörige Diensttypen an. Zudem werden die Lastenausgleichsdomänen beschrieben, in denen die Anwendung eingefügt wird. Somit beschreibt ein Anwendungsmanifest Elemente auf Anwendungsebene, verweist auf ein oder mehrere Dienstmanifeste und bildet so einen Anwendungstyp. Hier ein einfaches Beispiel eines Anwendungsmanifests:
 
 ~~~
 <?xml version="1.0" encoding="utf-8" ?>
@@ -127,7 +127,7 @@ Das Anwendungsmanifest beschreibt den Anwendungstyp und die Version deklarativ u
 </ApplicationManifest>
 ~~~
 
-Wie bei Dienstmanifesten sind **Version**-Attribute unstrukturierte Zeichenfolgen und werden im System nicht analysiert. Sie werden auch dazu verwendet, jeder Komponente für Upgrades mit Versionsangaben zu versehen.
+Wie bei Dienstmanifesten sind **Version**-Attribute unstrukturierte Zeichenfolgen, die im System nicht analysiert werden. Sie werden auch dazu verwendet, jeder Komponente für Upgrades mit Versionsangaben zu versehen.
 
 **ServiceManifestImport** enthält Verweise auf Dienstmanifeste zum Erstellen des entsprechenden Anwendungstyps. Importierte Dienstmanifeste legen fest, welche Diensttypen innerhalb des Anwendungstyps gültig sind.
 
@@ -170,27 +170,29 @@ D:\TEMP\MYAPPLICATIONTYPE
             init.dat
 ~~~
 
-Die Ordner werden nach den **Name**-Attributen der jeweils zugehörigen Elemente benannt. Wenn das Dienstmanifest beispielsweise zwei Codepakete mit dem Namen **MyCodeA** und **MyCodeB** enthält, müssen zwei Ordner mit denselben Namen vorhanden sein, die die jeweils erforderlichen Binärdateien für jedes Codepaket enthalten.
+Die Ordner werden nach den **Name**-Attributen der jeweils zugehörigen Elemente benannt. Wenn das Dienstmanifest beispielsweise zwei Codepakete mit dem Namen **MyCodeA** und **MyCodeB** enthält, enthalten zwei Ordner mit denselben Namen die jeweils erforderlichen Binärdateien für jedes Codepaket.
 
 ### Verwenden von SetupEntryPoint
-In einem typischen Szenario für die Verwendung von „SetupEntryPoint“ müssen Sie vor dem Starten des Diensts eine Aktion durchführen oder einen Vorgang ausführen, für den höhere Berechtigungen erforderlich sind. Zu den Beispielen zählen das Einrichten und Initialisieren von Umgebungsvariablen, die die ausführbare Datei des Diensts unter Umständen verwendet. Dazu gehören nicht nur ausführbare Dateien, die mit den Service Fabric-Programmiermodellen geschrieben wurden, sondern auch EXE-Dateien, die direkt verwendet werden. Wenn Sie beispielsweise eine nodejs-Anwendung bereitstellen, müssen für die Datei „npm.exe“ Umgebungsvarianten konfiguriert werden. - ACL: eine Ressource (etwa ein Zertifikat)
 
-Anhand der folgenden Schritte können Sie sicherstellen, dass Ihr Code (exe), Ihre Batchdatei oder PowerShell ordnungsgemäß in einem Visual Studio-Projekt gepackt wird.
+Gängige Szenarios für die Verwendung von **SetupEntryPoint** sind die Anforderung, eine ausführbare Datei vor dem Starten des Diensts auszuführen, sowie die Anforderung, einen Vorgang mit erhöhten Rechten auszuführen. Beispiel:
 
+- Einrichten und Initialisieren von Umgebungsvariablen, die die ausführbare Datei des Diensts benötigt. Dies ist nicht auf Dateien beschränkt, die mit den Service Fabric-Programmiermodellen geschrieben wurden. „npm.exe“ benötigt beispielsweise einige Umgebungsvariablen, die zum Bereitstellen einer node.js-Anwendung konfiguriert wurden.
+
+- Einrichten einer Zugriffssteuerung durch Installieren von Sicherheitszertifikaten.
 
 ### Erstellen eines Pakets mit Visual Studio
 
 Wenn Sie Ihre Anwendung mithilfe von Visual Studio 2015 erstellen, können Sie über den Befehl "Paket" automatisch ein Paket erstellen, das dem oben beschriebenen Layout entspricht.
 
-Klicken Sie zum Erstellen eines Pakets im Projektmappen-Explorer einfach mit der rechten Maustaste auf das Anwendungsprojekt, und wählen Sie wie unten gezeigt den Befehl "Paket" aus:
+Klicken Sie zum Erstellen eines Pakets im Projektmappen-Explorer mit der rechten Maustaste auf das Anwendungsprojekt, und wählen Sie wie unten gezeigt den Befehl „Paket“ aus:
 
 ![][2]
 
-Nach Abschluss der Paketerstellung wird der Speicherort des Pakets im Ausgabefenster angezeigt. Beachten Sie, dass die Paketerstellung automatisch erfolgt, wenn Sie die Anwendung in Visual Studio bereitstellen oder debuggen.
+Nach Abschluss der Paketerstellung wird der Speicherort des Pakets im **Ausgabefenster** angezeigt. Beachten Sie, dass die Paketerstellung automatisch erfolgt, wenn Sie die Anwendung in Visual Studio bereitstellen oder debuggen.
 
 ### Testen des Pakets
 
-Die Paketstruktur kann lokal über PowerShell mit dem Befehl **Test-ServiceFabricApplicationPackage** überprüft werden, mit dem Probleme bei der Manifestanalyse und alle Verweise überprüft werden. Beachten Sie, dass dieser Befehl nur die strukturelle Richtigkeit der Verzeichnisse und Dateien im Paket überprüft. Über die Überprüfung, ob alle erforderlichen Dateien vorhanden sind, hinaus werden die Inhalte des Code- oder Datenpakets nicht weiter geprüft.
+Sie können die Paketstruktur lokal über PowerShell mit dem **Test-ServiceFabricApplicationPackage**-Befehl überprüfen. Dieser Befehl sucht nach Problemen bei der Manifestanalyse und überprüft alle Verweise. Beachten Sie, dass dieser Befehl nur die strukturelle Richtigkeit der Verzeichnisse und Dateien im Paket überprüft. Es werden keine Inhalte der Code- oder Datenpakete überprüft, mit Ausnahme der Prüfung, ob alle erforderlichen Dateien vorhanden sind.
 
 ~~~
 PS D:\temp> Test-ServiceFabricApplicationPackage .\MyApplicationType
@@ -229,9 +231,12 @@ Nachdem die Anwendung ordnungsgemäß gepackt und die Überprüfung erfolgreich 
 
 ## Nächste Schritte
 
-[Bereitstellen und Entfernen von Anwendungen][10]
+[Deploy an application (in englischer Sprache)][10]
+
 [Verwalten von Anwendungsparametern für mehrere Umgebungen][11]
+
 [RunAs: Ausführen einer Service Fabric-Anwendung mit verschiedenen Sicherheitsberechtigungen][12]
+
 <!--Image references-->
 [1]: ./media/service-fabric-application-model/application-model.jpg
 [2]: ./media/service-fabric-application-model/vs-package-command.png
@@ -243,4 +248,4 @@ Nachdem die Anwendung ordnungsgemäß gepackt und die Überprüfung erfolgreich 
 [11]: service-fabric-manage-multiple-environment-app-configuration.md
 [12]: service-fabric-application-runas-security.md
 
-<!----HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

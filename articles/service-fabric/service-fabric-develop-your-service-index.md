@@ -72,7 +72,8 @@ Reliable Services bietet ein einfaches, leistungsfähiges High-Level-Programmier
 - [Erste Schritte mit Reliable Services](service-fabric-reliable-services-quick-start.md)
 - [Architektur](service-fabric-reliable-services-platform-architecture.md)
 - [Zuverlässige Auflistungen](service-fabric-reliable-services-reliable-collections.md)
-- [Konfigurieren zustandsbehafteter zuverlässiger Dienste](../Service-Fabric/service-fabric-reliable-services-configuration.md)
+- [Konfigurieren zustandsbehafteter Reliable Services](../Service-Fabric/service-fabric-reliable-services-configuration.md)
+- [Serialisierung](../Service-Fabric/service-fabric-reliable-services-serialization.md)
 - [Erweiterte Verwendung des Programmiermodells Reliable Services](../Service-Fabric/service-fabric-reliable-services-advanced-usage.md)
 
 Die folgenden Artikel beschreiben die Kommunikation mit Reliable Services und die Abstraktionen, die von Clients zum Erkennen und Kommunizieren mit Dienstendpunkten verwendet werden können:
@@ -87,4 +88,4 @@ Reliable Services geben Ereignisse und Leistungsindikatoren aus, die zur Diagnos
 
 - [Diagnose zustandsbehafteter zuverlässiger Dienste](service-fabric-reliable-services-diagnostics.md)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

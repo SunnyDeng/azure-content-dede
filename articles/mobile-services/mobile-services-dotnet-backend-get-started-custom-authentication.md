@@ -1,22 +1,27 @@
-<properties 
-	pageTitle="Erste Schritte mit der benutzerdefinierten Authentifizierung | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie Benutzer mit einem Benutzernamen und einem Kennwort authentifizieren." 
-	documentationCenter="Mobile" 
-	authors="mattchenderson" 
-	manager="dwrede" 
-	editor="" 
+<properties
+	pageTitle="Erste Schritte mit der benutzerdefinierten Authentifizierung | Microsoft Azure"
+	description="Erfahren Sie, wie Sie Benutzer mit einem Benutzernamen und einem Kennwort authentifizieren."
+	documentationCenter="Mobile"
+	authors="mattchenderson"
+	manager="dwrede"
+	editor=""
 	services="mobile-services"/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-multiple" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="09/28/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-multiple"
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.date="09/28/2015"
 	ms.author="mahender"/>
 
 # Erste Schritte mit der benutzerdefinierten Authentifizierung
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 ## Übersicht
 Dieses Thema zeigt, wie Benutzer im Azure Mobile Services .NET-Back-End mithilfe eines von Ihnen herausgegebenen Mobile Services Authentifizierungstokens authentifiziert werden. In diesem Lernprogramm fügen Sie die Authentifizierung mithilfe eines benutzerdefinierten Benutzernamens und Kennworts zum Schnellstartprojekt hinzu.
@@ -35,7 +40,7 @@ Weil Sie eine benutzerdefinierte Authentifizierung verwenden und sich nicht auf 
 
 2. Fügen Sie die folgende `using`-Anweisung hinzu:
 
-		using Microsoft.WindowsAzure.Mobile.Service;  
+		using Microsoft.WindowsAzure.Mobile.Service;
 
 3. Ersetzen Sie die Klassendefinition durch den folgenden Code:
 
@@ -45,7 +50,7 @@ Weil Sie eine benutzerdefinierte Authentifizierung verwenden und sich nicht auf 
 	        public byte[] Salt { get; set; }
 	        public byte[] SaltedAndHashedPassword { get; set; }
 	    }
-    
+
     Dies stellt eine Zeile in einer neuen Tabelle namens Account dar, die den Benutzernamen, die salt-Zeichenfolge des Benutzers und das auf sichere Weise gespeicherte Kennwort enthält.
 
 2. Im Ordner **Modelle** finden Sie eine **DbContext**-Klasse, die nach dem mobilen Dienst benannt ist. Öffnen Sie Ihren Kontext und fügen Sie die Kontentabelle Ihrem Datenmodell hinzu, indem Sie Folgendes aufnehmen:
@@ -53,7 +58,7 @@ Weil Sie eine benutzerdefinierte Authentifizierung verwenden und sich nicht auf 
         public DbSet<Account> Accounts { get; set; }
 
 	>[AZURE.NOTE]In den Codeausschnitten in diesem Lernprogramm wird `todoContext` als Kontextname verwendet. Sie müssen die Codeausschnitte für den Kontext Ihres Projekts aktualisieren. Als Nächstes richten Sie die Sicherheitsfunktionen für die Arbeit mit diesen Daten ein.
- 
+
 5. Erstellen Sie eine Klasse mit dem Namen `CustomLoginProviderUtils`, und fügen Sie ihr die folgende `using`-Anweisung hinzu:
 
 		using System.Security.Cryptography;
@@ -113,14 +118,14 @@ Sie haben an diesem Punkt alles Nötige, um Benutzerkonten anlegen zu können. I
 		using <my_project_namespace>.Models;
 
 	Ersetzen Sie den Platzhalter im obigen Code durch den Namespace des Projekts.
- 
+
 4. Ersetzen Sie die Klassendefinition durch den folgenden Code:
 
 	    [AuthorizeLevel(AuthorizationLevel.Anonymous)]
 	    public class CustomRegistrationController : ApiController
 	    {
 	        public ApiServices Services { get; set; }
-	
+
 	        // POST api/CustomRegistration
 	        public HttpResponseMessage Post(RegistrationRequest registrationRequest)
 	        {
@@ -132,7 +137,7 @@ Sie haben an diesem Punkt alles Nötige, um Benutzerkonten anlegen zu können. I
 	            {
 	                return this.Request.CreateResponse(HttpStatusCode.BadRequest, "Invalid password (at least 8 chars required)");
 	            }
-	
+
 	            todoContext context = new todoContext();
 	            Account account = context.Accounts.Where(a => a.Username == registrationRequest.username).SingleOrDefault();
 	            if (account != null)
@@ -154,7 +159,7 @@ Sie haben an diesem Punkt alles Nötige, um Benutzerkonten anlegen zu können. I
 	                return this.Request.CreateResponse(HttpStatusCode.Created);
 	            }
 	        }
-	    }   
+	    }
 
     Vergessen Sie nicht, die *todoContext*-Variable durch den Namen Ihres Projekts zu ersetzen: **DbContext**. Beachten Sie, dass dieser Controller das folgende Attribut verwendet, um sämtlichen Datenverkehr an diesen Endpunkt zuzulassen:
 
@@ -173,7 +178,7 @@ Eines der fundamentalen Konstrukte in der Mobile Services-Authentifizierungspipe
 		using Newtonsoft.Json.Linq;
 		using Owin;
 		using System.Security.Claims;
- 
+
 3. Ersetzen Sie die **CustomLoginProvider**-Klassendefinition durch den folgenden Code:
 
         public class CustomLoginProvider : LoginProvider
@@ -250,12 +255,12 @@ Eines der fundamentalen Konstrukte in der Mobile Services-Authentifizierungspipe
         }
 
 	Diese Methode übersetzt eine [ClaimsIdentity] in ein [ProviderCredentials]-Objekt, das in der Ausstellungsphase des Authentifizierungstoken verwendet wird. Es empfiehlt sich wieder, in dieser Methode alle etwaigen zusätzlichen Ansprüche zu erfassen.
-	
+
 6. Öffnen Sie die Projektdatei "WebApiConfig.cs" im Ordner "App\_Start". Die folgende Codezeile wird nach **ConfigOptions** erstellt:
-		
+
 		options.LoginProviders.Add(typeof(CustomLoginProvider));
 
-	
+
 
 ## Erstellen des Anmeldungsendpunkts
 
@@ -277,7 +282,7 @@ Als Nächstes erstellen Sie einen Endpunkt für die Benutzeranmeldung. Der Benut
 	    {
 	        public string UserId { get; set; }
 	        public string MobileServiceAuthenticationToken { get; set; }
-	
+
 	    }
 
 	Diese Klasse stellt eine erfolgreiche Anmeldung mit der Benutzer-ID und dem Authentifizierungstoken dar. Beachten Sie, dass diese Klasse die gleiche Form wie die MobileServiceUser-Klasse auf dem Client das, was die Weitergabe der Anmeldung an einen stark typisierten Client erleichtert.
@@ -290,13 +295,13 @@ Als Nächstes erstellen Sie einen Endpunkt für die Benutzeranmeldung. Der Benut
 		using <my_project_namespace>.Models;
 
 3. Ersetzen Sie die **CustomLoginController**-Klassendefinition durch den folgenden Code:
- 
+
 	    [AuthorizeLevel(AuthorizationLevel.Anonymous)]
 	    public class CustomLoginController : ApiController
 	    {
 	        public ApiServices Services { get; set; }
 	        public IServiceTokenHandler handler { get; set; }
-	
+
 	        // POST api/CustomLogin
 	        public HttpResponseMessage Post(LoginRequest loginRequest)
 	        {
@@ -307,7 +312,7 @@ Als Nächstes erstellen Sie einen Endpunkt für die Benutzeranmeldung. Der Benut
 	            {
 	                byte[] incoming = CustomLoginProviderUtils
 	                    .hash(loginRequest.password, account.Salt);
-	
+
 	                if (CustomLoginProviderUtils.slowEquals(incoming, account.SaltedAndHashedPassword))
 	                {
 	                    ClaimsIdentity claimsIdentity = new ClaimsIdentity();
@@ -342,7 +347,7 @@ Als Nächstes erstellen Sie einen Endpunkt für die Benutzeranmeldung. Der Benut
 
 Sie müssen in Idrer Client-Anwendung einen angepassten Anmeldebildschirm definieren, der Benutzernamen und Kennwörter als JSON-Nutzlast an die Registrierungs- und Anmeldungsendpunkte schickt. Für das Abschließen dieses Lernprogramms verwenden Sie aber stattdessen den integrierten Testclient für Mobile Services .NET-Back-End.
 
-1. Klicken Sie in Visual Studio mit der rechten Maustaste auf das Projekt für den mobilen Dienst, und klicken Sie dann auf **Debuggen** und **Neue Instanz starten**.  
+1. Klicken Sie in Visual Studio mit der rechten Maustaste auf das Projekt für den mobilen Dienst, und klicken Sie dann auf **Debuggen** und **Neue Instanz starten**.
 
 	Dadurch wird eine neue Debuginstanz des Back-End-Projekts für den mobilen Dienst gestartet. Nachdem der Dienst erfolgreich gestartet wurde, sehen Sie eine Startseite mit der Meldung **Dieser mobile Dienst wird nun ausgeführt**.
 
@@ -389,13 +394,13 @@ In diesem Abschnitt werden die Schritte beschrieben, die Sie ausführen müssen,
 2. Verwenden Sie die entsprechende **invokeApi**-Methode für **mobileServiceClient** in der Clientbibliothek, um den **CustomRegistration**-Endpunkt aufzurufen, und übergeben Sie dabei im Nachrichtentext die zur Laufzeit bereitgestellten Angaben für Benutzername und Kennwort.
 
 	Sie müssen den **CustomRegistration**-Endpunkt nur einmal aufrufen, um ein Konto für einen bestimmten Benutzer zu erstellen, sofern Sie die Anmeldeinformationen des Benutzers in der Tabelle Accounts speichern. Beispiele zum Aufrufen einer benutzerdefinierten API auf den verschiedenen unterstützten Clientplattformen finden Sie im Artikel [Benutzerdefinierte API in Azure Mobile Services – Client SDKs](http://blogs.msdn.com/b/carlosfigueira/archive/2013/06/19/custom-api-in-azure-mobile-services-client-sdks.aspx).
-	 
+
 	> [AZURE.IMPORTANT]Da dieser Schritt für die Benutzerbereitstellung nur einmal vorkommt, sollten Sie das Benutzerkonto auf irgendeine Weise extern erstellen. Für einen öffentlichen Registrierungsendpunkt sollten Sie die Implementierung einer SMS- oder e-Mail-basierten Überprüfung oder andere Schutzmaßnahmen in Betracht ziehen, um zu verhindern, dass Konten in betrügerischer Absicht generiert werden. Sie können die Twilio zum Senden von SMS-Nachrichten von Mobile Services verwenden. Sie können auch SendGrid verwenden, um E-Mail-Nachrichten von Mobile Services aus zu senden. Weitere Informationen zum Verwenden von SendGrid finden Sie unter [Senden von E-Mails in Mobile Services mit SendGrid](store-sendgrid-mobile-services-send-email-scripts.md).
-	
+
 3. Verwenden Sie die entsprechende **invokeApi** Methode erneut, um den **CustomLogin**-Endpunkt aufzurufen, und übergeben Sie die zur Laufzeit bereitgestellten Angaben für Benutzername und Kennwort im Nachrichtentext.
 
 	Diesmal müssen Sie erfassen die Werte für *userId* und *authenticationToken* erfassen, die nach einer erfolgreichen Anmeldung im Antwortobjekt zurückgegeben werden.
-	
+
 4. Erstellen Sie unter Verwendung der zurückgegebenen Werte für *userId* und *authenticationToken* ein neues **MobileServiceUser**-Objekt, und legen Sie es als den aktuellen Benutzer für die **MobileServiceClient**-Instanz fest, wie im Thema [Hinzufügen von Authentifizierung zur vorhandenen Anwendung](mobile-services-dotnet-backend-ios-get-started-users.md) beschrieben. Da das CustomLogin-Ergebnis das gleiche Format wie das **MobileServiceUser**-Objekt hat, sollten Sie das Ergebnis direkt in den Objekttyp umwandeln können.
 
 Damit ist dieses Lernprogramm abgeschlossen.
@@ -418,6 +423,5 @@ Damit ist dieses Lernprogramm abgeschlossen.
 
 [ClaimsIdentity]: https://msdn.microsoft.com/library/system.security.claims.claimsidentity(v=vs.110).aspx
 [ProviderCredentials]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobile.service.security.providercredentials.aspx
- 
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

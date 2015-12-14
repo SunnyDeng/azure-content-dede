@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/19/2015" 
+	ms.date="12/01/2015" 
 	ms.author="billmath"/>
 
 # Erste Schritte mit dem Webdienst der mobilen App für den MFA-Server
@@ -32,7 +32,7 @@ Um die Azure Multi-Factor Authentication-App verwenden zu können, müssen folge
 - In IIS 6.x oder IIS 7.x muss das Azure Multi-Factor Authentication-Webdienst-SDK auf dem Server installiert sein, auf dem der Azure Multi-Factor Authentication-Server installiert ist.
 - Das Azure Multi-Factor Authentication-Webdienst-SDK muss mit einem SSL-Zertifikat gesichert sein.
 - Der Webdienst der mobilen App muss eine SSL-Verbindung mit dem Azure Multi-Factor Authentication-Webdienst-SDK herstellen können.
-- Der Webdienst der mobilen App muss sich beim Azure Multi-Factor Authentication-Webdienst-SDK mit den Anmeldeinformationen eines Dienstkontos, das Mitglied der Sicherheitsgruppe "Azure Multi-Factor Authentication Admins" ist, authentifizieren können. Dieses Dienstkonto und diese Gruppe sind in Active Directory vorhanden, wenn der Azure Multi-Factor Authentication-Server auf einem in die Domäne eingebundenen Server ausgeführt wird. Dieses Dienstkonto und diese Gruppe sind lokal auf dem Azure Multi-Factor Authentication-Server vorhanden, wenn dieser nicht in eine Domäne eingebunden ist.
+- Der Webdienst der mobilen App muss sich beim Azure Multi-Factor Authentication-Webdienst-SDK mit den Anmeldeinformationen eines Dienstkontos, das Mitglied der Sicherheitsgruppe „PhoneFactor Admins“ ist, authentifizieren können. Dieses Dienstkonto und diese Gruppe sind in Active Directory vorhanden, wenn der Azure Multi-Factor Authentication-Server auf einem in die Domäne eingebundenen Server ausgeführt wird. Dieses Dienstkonto und diese Gruppe sind lokal auf dem Azure Multi-Factor Authentication-Server vorhanden, wenn dieser nicht in eine Domäne eingebunden ist.
 
 
 Zum Installieren des Benutzerportals auf einem anderen Server als dem Azure Multi-Factor Authentication-Server sind die folgenden drei Schritte erforderlich:
@@ -58,7 +58,7 @@ Beachten Sie folgende Punkte, bevor Sie den Webdienst der mobilen App installier
 ### So installieren Sie den Webdienst der mobilen App
 
 <ol>
-<li>Öffnen Sie auf dem Server Azure Multi-Factor Authentication-Server den Windows-Explorer, und navigieren Sie zu dem Ordner, in dem der Azure Multi-Factor Authentication-Server installiert ist (z.&#160;B. "C:\Programme\Azure Multi-Factor Authentication Server"). Wählen Sie entsprechend dem Server, auf dem der Webdienst der mobilen App installiert wird, die 32-Bit- oder 64-Bit-Version der Azure Multi-Factor AuthenticationPhoneAppWebServiceSetup installation-Installationsdatei aus. Kopieren Sie die Installationsdatei auf den mit dem Internet verbundenen Server.</li>
+<li>Öffnen Sie auf dem Azure Multi-Factor Authentication-Server den Windows-Explorer, und navigieren Sie zu dem Ordner, in dem der Azure Multi-Factor Authentication-Server installiert ist (z.&#160;B. „C:\Programme\Azure Multi-Factor Authentication Server“). Wählen Sie entsprechend dem Server, auf dem der Webdienst der mobilen App installiert wird, die 32-Bit- oder 64-Bit-Version der Azure Multi-Factor AuthenticationPhoneAppWebServiceSetup installation-Installationsdatei aus. Kopieren Sie die Installationsdatei auf den mit dem Internet verbundenen Server.</li>
 
 <li>Die Setupdatei muss auf dem mit dem Internet verbundenen Webserver mit Administratorrechten ausgeführt werden. Dies lässt sich am einfachsten erreichen, indem Sie eine Eingabeaufforderung als Administrator öffnen und zu dem Verzeichnis navigieren, in das die Installationsdatei kopiert wurde.</li>
 
@@ -68,7 +68,7 @@ Beachten Sie folgende Punkte, bevor Sie den Webdienst der mobilen App installier
 
 <li>Suchen Sie die Schlüssel WEB_SERVICE_SDK_AUTHENTICATION_USERNAME und WEB_SERVICE_SDK_AUTHENTICATION_PASSWORD, und legen Sie die Werte auf den Benutzernamen und das Kennwort des Dienstkontos fest, das Mitglied der Sicherheitsgruppe "PhoneFactor Admins" ist (siehe oben im Abschnitt zu den Anforderungen). Dabei kann es sich um das gleiche Konto handeln, das als Identität des Azure Multi-Factor Authentication-Benutzerportals verwendet wird, sofern dieses bereits installiert wurde. Geben Sie den Benutzernamen und das Kennwort zwischen den Anführungszeichen am Ende der Zeile ein (value=""/>). Es wird empfohlen, einen qualifizierten Benutzernamen (z.&#160;B. "Domäne\Benutzername" oder "Computer\Benutzername") zu verwenden.</li>
 
-<li>Suchen Sie die Einstellung "pfMobile App Web Service_pfwssdk_PfWsSdk", und ändern Sie den Wert "http://localhost:4898/PfWsSdk.asmx" in die URL des Webdienst-SDK, das auf dem Azure Multi-Factor Authentication-Server ausgeführt wird (z.&#160;B. "https://computer1.domain.local/MultiFactorAuthWebServiceSdk/PfWsSdk.asmx"). Für diese Verbindung wird SSL verwendet. Deshalb müssen Sie auf das Webdienst-SDK mit dem Servernamen und nicht mit der IP-Adresse verweisen, da das SSL-Zertifikat für den Servernamen ausgestellt wurde und die URL dem Namen des Zertifikats entsprechen muss. Wenn der Servername nicht als IP-Adresse des mit dem Internet verbundenen Servers aufgelöst wird, fügen Sie der HOSTS-Datei auf diesem Server einen Eintrag hinzu, um den Namen des Azure Multi-Factor Authentication-Servers seiner IP-Adresse zuzuordnen. Speichern Sie die Datei "Web.config", nachdem Änderungen vorgenommen wurden.</li>
+<li>Suchen Sie die Einstellung „pfMobile App Web Service_pfwssdk_PfWsSdk“, und ändern Sie den Wert „http://localhost:4898/PfWsSdk.asmx“ in die URL des Webdienst-SDK, das auf dem Azure Multi-Factor Authentication-Server ausgeführt wird (z.&#160;B. „https://computer1.domain.local/MultiFactorAuthWebServiceSdk/PfWsSdk.asmx“). Für diese Verbindung wird SSL verwendet. Deshalb müssen Sie auf das Webdienst-SDK mit dem Servernamen und nicht mit der IP-Adresse verweisen, da das SSL-Zertifikat für den Servernamen ausgestellt wurde und die URL dem Namen des Zertifikats entsprechen muss. Wenn der Servername nicht als IP-Adresse des Servers mit Internetzugriff aufgelöst wird, fügen Sie der HOSTS-Datei auf diesem Server einen Eintrag hinzu, um den Namen des Azure Multi-Factor Authentication-Servers seiner IP-Adresse zuzuordnen. Speichern Sie die Datei "Web.config", nachdem Änderungen vorgenommen wurden.</li>
 
 <li>Wenn die Website, unter der der Webdienst der mobilen App installiert wurde (z.&#160;B. "Standardwebsite"), noch nicht mit einem öffentlich signierten Zertifikat gebunden wurde, installieren Sie das Zertifikat auf dem Server, sofern es nicht bereits installiert ist, öffnen Sie den IIS-Manager, und binden Sie das Zertifikat an die Website.</li>
 
@@ -89,4 +89,4 @@ Nachdem Sie den Webdienst der mobilen App installiert haben, müssen Sie den Azu
 
 <center>![Setup](./media/multi-factor-authentication-get-started-server-webservice/mobile.png)</center>
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

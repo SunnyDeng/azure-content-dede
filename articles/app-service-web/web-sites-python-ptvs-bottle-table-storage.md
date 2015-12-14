@@ -67,9 +67,9 @@ In diesem Abschnitt erstellen wir ein Visual Studio-Projekt mithilfe einer Beisp
 
 Für Speichervorgänge benötigen Sie ein Azure-Speicherkonto. Mit den folgenden Schritten können Sie ein Speicherkonto erstellen.
 
-1.  Melden Sie sich beim [Azure-Portal] an.
+1.  Melden Sie sich beim [Azure-Portal](https://portal.azure.com/) an.
 
-2. Klicken Sie unten links im Portal auf das Symbol **Neu** und dann auf **Daten + Speicher** > **Speicherkonto**. Klicken Sie auf die Schaltfläche **Erstellen**, geben Sie dem Speicherkonto einen eindeutigen Namen, und erstellen Sie eine neue [Ressourcengruppe](../resource-group-overview.md) dafür.
+2. Klicken Sie oben links im Portal auf das Symbol **Neu** und dann auf **Daten und Speicher** > **Speicherkonto**. Klicken Sie auf die Schaltfläche **Erstellen**, geben Sie dem Speicherkonto einen eindeutigen Namen, und erstellen Sie eine neue [Ressourcengruppe](../resource-group-overview.md) dafür.
 
   	<!-- ![New Button](./media/web-sites-python-ptvs-bottle-table-storage/PollsCommonAzurePlusNew.png) -->Wenn das Speicherkonto erstellt wurde, leuchtet auf der Schaltfläche **Benachrichtigungen** grün **ERFOLG**. Das Blatt des Speicherkontos wird geöffnet, und darauf wird angezeigt, dass es zu der neu erstellten Ressourcengruppe gehört.
 
@@ -187,7 +187,6 @@ Folgen Sie diesen Links, wenn Sie mehr über Python Tools für Visual Studio, Bo
 
 ## Änderungen
 * Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715).
 
 
 <!--Link references-->
@@ -215,4 +214,4 @@ Folgen Sie diesen Links, wenn Sie mehr über Python Tools für Visual Studio, Bo
 [Azure-SDK für Python]: https://github.com/Azure/azure-sdk-for-python
  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -257,7 +257,7 @@ Beachten Sie Folgendes:
 **MergeFiles**: Alle Dateien aus dem Quellordner werden in einer Datei zusammengeführt. Wenn der Datei-/Blob-Name angegeben wurde, entspricht der Name dem angegebenen Namen, andernfalls dem automatisch generierten Dateinamen.
  
 ## Neue getDebugInfo-Eigenschaft für alle HDInsight-Aktivitäten
-Die HDInsight-Aktivitäten (Hive, Pig, MapReduce, Hadoop-Streaming) unterstützen die neue **getDebugInfo**-Eigenschaft. Die **getDebugInfo**-Eigenschaft ist ein optionales Element. Wenn die Eigenschaft auf **Failure** festgelegt wird, werden die Protokolle nur bei Ausführungsfehlern heruntergeladen. Wenn die Eigenschaft auf **All** festgelegt wird, werden Protokolle immer heruntergeladen, unabhängig vom Ausführungsstatus. Wenn die Eigenschaft auf **None** festgelegt wird, werden keine Protokolle heruntergeladen.
+Die HDInsight-Aktivitäten (Hive, Pig, MapReduce, Hadoop-Streaming) unterstützen die neue **getDebugInfo**-Eigenschaft. Die **getDebugInfo**-Eigenschaft ist ein optionales Element. Wenn die Eigenschaft als **Failure** festgelegt wird, werden die Protokolle nur bei Ausführungsfehlern heruntergeladen. Wenn die Eigenschaft auf **All** festgelegt wird, werden Protokolle immer heruntergeladen, unabhängig vom Ausführungsstatus. Wenn die Eigenschaft auf **None** festgelegt wird, werden keine Protokolle heruntergeladen.
 
   
      
@@ -270,10 +270,7 @@ Die Listen **Letzte aktualisierte Slices** und **Letzte fehlerhafte Slices** bef
 
 Klicken Sie auf den Titel der Listen oder auf **...** (Auslassungspunkte), um eine umfangreichere Liste mit Slices anzuzeigen. Klicken Sie auf der Symbolleiste auf **Filter**, um die Slices zu filtern.
  
-Durch Klicken auf die Kachel **Datenslices (nach Slicezeit)** können Sie Slices weiterhin sortiert nach der Slicezeit anzeigen. Die Slices in diesen Auflistungen sind nach Slicezeit sortiert. Bei einem stündlichen Zeitplan sind die Slices beispielsweise wie folgt sortiert:
-- 04.04.2015 17:00 Uhr In Bearbeitung
-- 04.04.2015 16:00 Uhr Erfolg 
-- 04.04.2015 15:00 Uhr Fehler
+Durch Klicken auf die Kachel **Datenslices (nach Slicezeit)** können Sie Slices weiterhin sortiert nach der Slicezeit anzeigen. Die Slices in diesen Auflistungen sind nach Slicezeit sortiert. Bei einem stündlichen Zeitplan sind die Slices beispielsweise wie folgt sortiert: - 04.04.2015 17:00 Uhr In Bearbeitung - 04.04.2015 16:00 Uhr Erfolg - 04.04.2015 15:00 Uhr Fehler
 
 Wenn jedoch ein älterer Slice erneut ausgeführt wird, wird er nicht oben in dieser Liste angezeigt, obwohl dies vermutlich für den Benutzer interessant wäre.
 
@@ -295,7 +292,7 @@ Siehe den Blogbeitrag [Azure Data Factory-Update – Neue Datenspeicher](http://
 ## Anmerkungen zur Version von Data Factory vom 27.2.2015
 
 ### Neue Verbesserungen
-- **Azure Data Factory-Editor**: Der Data Factory-Editor, der zum Azure-Vorschauportal gehört, dient zum Erstellen, Bearbeiten und Bereitstellen von JSON-Dateien, die verknüpfte Dienste, Datasets und Pipelines definieren. Hauptaufgabe des Editors ist es, Ihnen eine schnelle und schlanke Benutzeroberfläche zum Erstellen von Azure Data Factory-Artefakten zu bieten, ohne dass Sie Azure PowerShell installieren und PowerShell-Cmdlets einsetzen müssen. Im Blogbeitrag [Azure Data Factory-Editor – ein schlanker Web-Editor][adf-editor-blog] finden Sie eine Kurzübersicht sowie ein Video zum Data Factory-Editor. Eine ausführliche Übersicht über den Editor finden Sie im Artikel [Data Factory-Editor][adf-editor].          
+- **Azure Data Factory-Editor**: Der Data Factory-Editor, der zum Azure-Portal gehört, dient zum Erstellen, Bearbeiten und Bereitstellen von JSON-Dateien, die verknüpfte Dienste, Datasets und Pipelines definieren. Hauptaufgabe des Editors ist es, Ihnen eine schnelle und schlanke Benutzeroberfläche zum Erstellen von Azure Data Factory-Artefakten zu bieten, ohne dass Sie Azure PowerShell installieren und PowerShell-Cmdlets einsetzen müssen. Im Blogbeitrag [Azure Data Factory-Editor – ein schlanker Web-Editor][adf-editor-blog] finden Sie eine Kurzübersicht sowie ein Video zum Data Factory-Editor. Eine ausführliche Übersicht über den Editor finden Sie im Artikel [Data Factory-Editor][adf-editor].          
 
 ### Änderungen
 
@@ -316,7 +313,7 @@ Siehe den Blogbeitrag [Azure Data Factory-Update – Neue Datenspeicher](http://
 - Azure Machine Learning-Integration
 	- Mit dieser Version des Azure Data Factory-Diensts können Sie Azure Data Factory mit Azure Machine Learning (ML) mithilfe von **AzureMLLinkedService** und **AzureMLBatchScoringActivity** integrieren. Weitere Informationen finden Sie unter [Erstellen von Vorhersagepipelines mithilfe von Data Factory und Azure Machine Learning][adf-azure-ml]. 
 - Der Status der Gatewayversion wird bereitgestellt.
-	- Der Status "NewVersionAvailable" wird im Azure-Vorschauportal und in der Ausgabe des Cmdlet "Get-AzureDataFactoryGateway" angezeigt, wenn eine neuere Version des Gateways als die derzeit installierte Version verfügbar ist. Sie können dann den Portalanweisungen folgen, um die neue Installationsdatei (MSI) herunterzuladen und auszuführen, um das neueste Gateway zu installieren. Es ist keine zusätzliche Konfiguration erforderlich.
+	- Der Status „NewVersionAvailable“ wird im Azure-Portal und in der Ausgabe des Cmdlet „Get-AzureDataFactoryGateway“ angezeigt, wenn eine neuere Version des Gateways als die derzeit installierte Version verfügbar ist. Sie können dann den Portalanweisungen folgen, um die neue Installationsdatei (MSI) herunterzuladen und auszuführen, um das neueste Gateway zu installieren. Es ist keine zusätzliche Konfiguration erforderlich.
 
 ### Änderungen
 
@@ -357,4 +354,4 @@ Siehe den Blogbeitrag [Azure Data Factory-Update – Neue Datenspeicher](http://
 
  
 
-<!----HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

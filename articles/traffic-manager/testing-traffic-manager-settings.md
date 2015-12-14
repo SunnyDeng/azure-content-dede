@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/12/2015"
+   ms.date="12/01/2015"
    ms.author="joaoma" />
 
 # Testen der Traffic Manager-Einstellungen
@@ -52,9 +52,9 @@ Um die Lastenausgleichsmethode "Leistung" effizient zu testen, müssen Sie weltw
 
 Sie können kostenlose webbasierte DNS-Lookup- und Analysedienste nutzen. Mit einigen davon können Sie die DNS-Namensauflösung von verschiedenen Standorten aus überprüfen. Führen Sie beispielsweise eine Suche nach "DNS-Lookup" aus, um Beispiele zu erhalten. Sie können auch eine Drittanbieterlösung wie Gomez oder Keynote verwenden, um sicherzustellen, dass der Datenverkehr von den Profilen wie erwartet verteilt wird.
 
-## Siehe auch
+## Nächste Schritte
 
 [Informationen zu Traffic Manager-Routingmethoden für Datenverkehr](../about-traffic-manager-balancing-methods.md) [Traffic Manager](../traffic-manager.md)
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

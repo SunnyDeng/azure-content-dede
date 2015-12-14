@@ -1,10 +1,10 @@
 
 Um die Endgeräte zu schützen, müssen Sie den Zugriff auf authentifizierte Clients einschränken.
 
-1. Navigieren Sie im [Azure-Verwaltungsportal](https://manage.windowsazure.com/) zu Ihren Mobile Services, und klicken Sie dann auf **Daten** > den Tabellennamen (**TodoItem**) > **Berechtigungen**. 
+1. Navigieren Sie im [klassischen Azure-Portal](https://manage.windowsazure.com/) zu Ihren Mobile Services, und klicken Sie dann auf **Daten** > Ihren Tabellennamen (**TodoItem**) > **Berechtigungen**. 
 
 2. Legen Sie alle Berechtigungen für Tabellenvorgänge auf **Nur authentifizierte Benutzer** fest.
 
 	 Dadurch wird sichergestellt, dass alle Vorgänge für die Tabelle einen authentifizierten Benutzer erfordern. Die Einstellung ist auch für dieses Lernprogramm erforderlich. Um Ihr spezifisches Szenario zu unterstützen, können Sie für jeden Vorgang unterschiedliche Berechtigungen festlegen.
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

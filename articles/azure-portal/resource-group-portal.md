@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwenden des Azure-Vorschauportals zum Verwalten von Azure-Ressourcen | Microsoft Azure" 
+	pageTitle="Verwenden des Azure-Portals zum Verwalten von Azure-Ressourcen | Microsoft Azure" 
 	description="Gruppieren Sie mehrere Ressourcen als logische Gruppe, die zur Lebenszyklusbegrenzung für enthaltene Ressourcen wird." 
 	services="azure-resource-manager,azure-portal" 
 	documentationCenter="" 
@@ -13,19 +13,19 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/11/2015" 
+	ms.date="12/02/2015" 
 	ms.author="tomfitz"/>
 
 
-# Verwenden des Azure-Vorschauportals zum Verwalten Ihrer Azure-Ressourcen
+# Using the Azure Portal to manage your Azure resources (Verwenden des Azure-Portals zum Verwalten Ihrer Azure-Ressourcen)
 
 ## Einführung
 
-Um eine Ressource (z. B. ein Datenbankserver, eine Datenbank oder eine Web-App) in Microsoft Azure zu verwalten, konnten Sie Vorgänge bisher nur an jeweils einer Ressource ausführen. Wenn Sie eine komplexe Anwendung verwendet haben, die aus mehreren Ressourcen besteht, mussten Sie Änderungen an der Infrastruktur der Anwendung manuell koordinieren. Im Azure-Vorschauportal können Sie den Azure-Ressourcen-Manager nutzen, um Ressourcengruppen zu erstellen, mit denen alle Ressourcen einer Anwendung zusammen bereitgestellt und verwaltet werden können.
+Um eine Ressource (z. B. ein Datenbankserver, eine Datenbank oder eine Web-App) in Microsoft Azure zu verwalten, konnten Sie Vorgänge bisher nur an jeweils einer Ressource ausführen. Wenn Sie eine komplexe Anwendung verwendet haben, die aus mehreren Ressourcen besteht, mussten Sie Änderungen an der Infrastruktur der Anwendung manuell koordinieren. Im Azure-Portal können Sie den Azure-Ressourcen-Manager nutzen, um Ressourcengruppen zu erstellen, mit denen alle Ressourcen einer Anwendung zusammen bereitgestellt und verwaltet werden können.
 
 Normalerweise enthält eine Ressourcengruppe Ressourcen, die sich auf eine bestimmte Anwendung beziehen. Eine Gruppe kann z. B. eine Web-App enthalten, die Ihre öffentliche Website hostet, eine SQL-Datenbank, in der von der Website verwendete relationale Daten gespeichert sind, und ein Speicherkonto, in dem nicht-relationale Ressourcen gespeichert sind. Jede Ressource in einer Ressourcengruppe sollte den gleichen Lebenszyklus aufweisen. Weitere Informationen zum Ressourcen-Manager finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md).
 
-Dieses Thema enthält eine Übersicht über die Nutzung von Ressourcengruppen im Azure-Vorschauportal. Das Vorschauportal und der Ressourcen-Manager werden derzeit nicht von allen Diensten unterstützt. Verwenden Sie für diese Dienste das [Portal](https://manage.windowsazure.com). Informationen zum Status jedes Dienstes finden Sie unter [Ressourcen-Manager-Unterstützung für Dienste, Regionen und API-Versionen](resource-manager-supported-services.md).
+Dieses Thema enthält eine Übersicht über die Nutzung von Ressourcengruppen im Azure-Portal. Das Portal und der Ressourcen-Manager werden derzeit nicht von allen Diensten unterstützt. Verwenden Sie für diese Dienste das [klassische Portal](https://manage.windowsazure.com). Informationen zum Status jedes Dienstes finden Sie unter [Ressourcen-Manager-Unterstützung für Dienste, Regionen und API-Versionen](resource-manager-supported-services.md).
 
 ## Erstellen von Ressourcengruppen und Ressourcen
 
@@ -125,13 +125,13 @@ Da Sie mit Ressourcengruppen den Lebenszyklus aller darin enthaltenen Ressourcen
 
 ## Kennzeichnen von Ressourcen
 
-Sie können Ressourcengruppen und Ressourcen Tags zuordnen, um sie logisch zu organisieren. Informationen zur Verwendung von Tags über das Vorschauportal finden Sie unter [Verwenden von Tags zum Organisieren von Azure-Ressourcen](../resource-group-using-tags.md).
+Sie können Ressourcengruppen und Ressourcen Tags zuordnen, um sie logisch zu organisieren. Informationen zur Verwendung von Tags über das Portal finden Sie unter [Verwenden von Tags zum Organisieren von Azure-Ressourcen](../resource-group-using-tags.md).
 
 ## Bereitstellen einer benutzerdefinierten Vorlage
 
 Wenn Sie eine Bereitstellung ausführen möchten, ohne eine der Vorlagen des Marketplace zu nutzen, können Sie eine angepasste Vorlage erstellen, mit der die Infrastruktur für Ihre Lösung definiert wird. Weitere Informationen zu Vorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](../resource-group-authoring-templates.md).
 
-Wählen Sie zum Bereitstellen einer angepassten Vorlage über das Vorschauportal die Optionen **Neu**, **Marketplace** und **Alles**.
+Wählen Sie zum Bereitstellen einer angepassten Vorlage über das Portal die Optionen **Neu**, **Marketplace** und **Alles**.
 
 ![Vorlagenbereitstellung finden](./media/resource-group-portal/launch-template.png)
 
@@ -154,4 +154,4 @@ Erste Schritte
 
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

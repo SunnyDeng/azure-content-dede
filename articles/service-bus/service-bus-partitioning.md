@@ -33,7 +33,7 @@ Es fallen keine zusätzlichen Kosten an, wenn eine Nachricht an eine partitionie
 
 Setzen Sie zum Verwenden von partitionierten Warteschlangen und Themen mit Microsoft Azure Service Bus die Azure SDK Version 2.2 oder höher ein, oder geben Sie `api-version=2013-10` in Ihren HTTP-Anforderungen an.
 
-Sie können Service Bus-Warteschlangen und -Themen in Größen von 1, 2, 3, 4 oder 5 GB erstellen (die Standardgröße ist 1 GB). Bei aktivierter Partitionierung erstellt Service Bus 16 Partitionen für jedes angegebene GB. Wenn Sie also eine Warteschlange mit einer Größe von 5 GB erstellen, beträgt die maximale Warteschlangengröße bei 16 Partitionen 5*16 = 80 GB. Die maximale Größe der partitionierten Warteschlange oder des Themas wird im zugehörigen Eintrag im [Azure-Portal][] angezeigt.
+Sie können Service Bus-Warteschlangen und -Themen in Größen von 1, 2, 3, 4 oder 5 GB erstellen (die Standardgröße ist 1 GB). Bei aktivierter Partitionierung erstellt Service Bus 16 Partitionen für jedes angegebene GB. Wenn Sie also eine Warteschlange mit einer Größe von 5 GB erstellen, beträgt die maximale Warteschlangengröße bei 16 Partitionen 5*16 = 80 GB. Die maximale Größe der partitionierten Warteschlange oder des partitionierten Themas wird im zugehörigen Eintrag im [klassischen Azure-Portal][] angezeigt.
 
 Es gibt mehrere Möglichkeiten, eine partitionierte Warteschlange oder ein partitioniertes Thema zu erstellen. Wenn Sie die Warteschlange oder das Thema über Ihre Anwendung erstellen, können Sie die Partitionierung für die Warteschlange oder das Thema aktivieren, indem Sie die [QueueDescription.EnablePartitioning][]- bzw. [TopicDescription.EnablePartitioning][]-Eigenschaft auf **true** festlegen. Diese Eigenschaften müssen bei der Erstellung der Warteschlange oder des Themas festgelegt werden. Es ist nicht möglich, diese Eigenschaften für eine vorhandene Warteschlange oder ein Thema zu ändern. Beispiel:
 
@@ -45,7 +45,7 @@ td.EnablePartitioning = true;
 ns.CreateTopic(td);
 ```
 
-Alternativ können Sie eine partitionierte Warteschlange oder ein Thema in Visual Studio oder im [Azure-Portal][] erstellen. Wenn Sie eine neue Warteschlange oder ein Thema im Portal erstellen, sollten Sie die Option **Partitionierung aktivieren** auf der Registerkarte **Konfigurieren** des Warteschlangen- oder Themenfensters überprüfen. Klicken Sie in Visual Studio im Dialogfeld **Neue Warteschlange** bzw. **Neues Thema** auf das Kontrollkästchen **Partitionierung aktivieren**.
+Alternativ können Sie eine partitionierte Warteschlange oder ein partitioniertes Thema in Visual Studio oder im [klassischen Azure-Portal][] erstellen. Wenn Sie eine neue Warteschlange oder ein Thema im Portal erstellen, sollten Sie die Option **Partitionierung aktivieren** auf der Registerkarte **Konfigurieren** des Warteschlangen- oder Themenfensters überprüfen. Klicken Sie in Visual Studio im Dialogfeld **Neue Warteschlange** bzw. **Neues Thema** auf das Kontrollkästchen **Partitionierung aktivieren**.
 
 ## Verwenden von Partitionsschlüsseln
 
@@ -128,7 +128,7 @@ In der aktuellen Implementierung gelten bei Service Bus die folgenden Einschrän
 Weitere Informationen zur Partitionierung von Nachrichtenentitäten finden Sie in der Beschreibung der AMQP 1.0-Unterstützung für partitionierte Service Bus-Warteschlangen und -Themen (in Kürze verfügbar).
 
   [Service Bus-Architektur]: service-bus-architecture.md
-  [Azure-Portal]: http://manage.windowsazure.com
+  [klassischen Azure-Portal]: http://manage.windowsazure.com
   [QueueDescription.EnablePartitioning]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.queuedescription.enablepartitioning.aspx
   [TopicDescription.EnablePartitioning]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.topicdescription.enablepartitioning.aspx
   [BrokeredMessage.SessionId]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.sessionid.aspx
@@ -144,4 +144,4 @@ Weitere Informationen zur Partitionierung von Nachrichtenentitäten finden Sie i
   [QueueDescription.ForwardTo]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.queuedescription.forwardto.aspx
   [AMQP 1.0 support for Service Bus partitioned queues and topics]: service-bus-partitioned-entities-amqp-overview.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

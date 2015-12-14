@@ -1,6 +1,6 @@
 <properties 
    pageTitle="Anwendungsszenarien und -entwurf | Microsoft Azure" 
-   description="Übersicht über die Kategorien von Cloudanwendungen in Service Fabric. Informationen zum Anwendungsentwurf mit zustandsbehafteten und zustandslosen Diensten."
+   description="Übersicht über die Kategorien von Cloudanwendungen in Service Fabric. Informationen zum Anwendungsentwurf mit zustandsbehafteten und zustandslosen Diensten"
    services="service-fabric" 
    documentationCenter=".net" 
    authors="msfussell" 
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA" 
-   ms.date="08/21/2015"
+   ms.date="11/30/2015"
    ms.author="mfussell"/>
 
 # Service Fabric-Anwendungsszenarien
@@ -55,11 +55,13 @@ Einführung in die Erstellung zustandsloser und zustandsbehafteter Dienste mit d
 
 Weitere Informationen finden Sie in den folgenden Themen:
 
-[Service State](service-fabric-concepts-state.md) (in englischer Sprache)
+[Mehr über Microservices erfahren](service-fabric-overview-microservices.md)
 
-[Availability of services](service-fabric-concepts-availability-services.md) (in englischer Sprache)
+[Defining and managing service state (in englischer Sprache)](service-fabric-concepts-state.md)
 
-[Scaling Service Fabric Applications](service-fabric-concepts-scalability.md) (in englischer Sprache)
+[Availability of services (in englischer Sprache)](service-fabric-availability-services.md)
+
+[Scaling Service Fabric Applications (in englischer Sprache)](service-fabric-concepts-scalability.md)
 
 [Partitionieren von Service Fabric-Diensten](service-fabric-concepts-partitioning.md)
 
@@ -68,4 +70,4 @@ Weitere Informationen finden Sie in den folgenden Themen:
  
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

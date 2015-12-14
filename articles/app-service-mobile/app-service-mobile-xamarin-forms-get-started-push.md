@@ -10,17 +10,15 @@
 <tags 
 	ms.service="app-service-mobile" 
 	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-xamarin-ios" 
+	ms.tgt_pltfrm="mobile-xamarin" 
 	ms.devlang="dotnet" 
 	ms.topic="article"
-	ms.date="11/23/2015" 
+	ms.date="11/25/2015" 
 	ms.author="wesmc"/>
 
 # Hinzufügen von Pushbenachrichtigungen zur Xamarin Forms-App
 
-[AZURE.INCLUDE [app-service-mobile-selector-get-started-push](../../includes/app-service-mobile-selector-get-started-push.md)]
-&nbsp;  
-[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
+[AZURE.INCLUDE [app-service-mobile-selector-get-started-push](../../includes/app-service-mobile-selector-get-started-push.md)]&nbsp;[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
 
 ##Übersicht
 
@@ -62,39 +60,6 @@ Mit diesen Schritten erstellen Sie einen neuen Notification Hub. Wenn Sie bereit
 ##Bereitstellen des aktualisierten Serverprojekts in Azure
 
 [AZURE.INCLUDE [app-service-mobile-dotnet-backend-publish-service](../../includes/app-service-mobile-dotnet-backend-publish-service.md)]
-
-
-## Aktualisieren des portablen Klassenbibliotheksprojekts 
-
-Die im freigegebenen Projekt definierte `TodoItemManager`-Klasse umschließt die Clientverbindung mit dem Back-End für die mobile App zusammen mit den Vorgängen, die wir für die im Back-End für die mobile App gehostete Tabelle ausführen möchten. Wir machen die Clientverbindung verfügbar, sodass wir uns für Pushbenachrichtigungen registrieren können.
-
-1. Öffnen Sie in Visual Studio oder Xamarin Studio im freigegebenen Projekt die Datei „TodoItemManager.cs“. Fügen Sie die folgenden statischen Member und Accessoren zur `TodoItemManager`-Klasse hinzu. Wir verwenden diese für den Zugriff auf `MobileServiceClient` wenn wir das plattformspezifische `Microsoft.WindowsAzure.MobileServices.Push`-Objekt abrufen müssen. 
-
-        static TodoItemManager defaultInstance = null;
-
-        public static TodoItemManager DefaultInstance
-        {
-            get
-            {
-                return defaultInstance;
-            }
-            private set
-            {
-                defaultInstance = value;
-            }
-        }
-
-		public MobileServiceClient CurrentClient
-		{
-			get { return client; }
-		}
-
-
-2. Fügen Sie Code zum Initialisieren von `DefaultInstance` am Anfang des Konstruktors für die `TodoItemManager`-Klasse hinzu.
-
-        DefaultClient = this;
-
-
 
 
 ##(Optional) Konfigurieren und Ausführen des Android-Projekts
@@ -236,7 +201,7 @@ Dieser Abschnitt bezieht sich auf das Ausführen des Xamarin Android-Projekts f�
 		
 		    createNotification("GcmService Registered...", "The device has been Registered, Tap to View!");
 		
-            var push = TodoItemManager.DefaultInstance.CurrentClient.GetPush();
+            var push = TodoItemManager.DefaultManager.CurrentClient.GetPush();
 		
 		    MainActivity.CurrentActivity.RunOnUiThread(() => Register(push, null));
 		
@@ -422,7 +387,7 @@ Dieser Abschnitt bezieht sich auf das Ausführen des Xamarin iOS-Projekts für i
                 };
 
             // Register for push with your mobile app
-            Push push = TodoItemManager.DefaultInstance.CurrentClient.GetPush();
+            Push push = TodoItemManager.DefaultManager.CurrentClient.GetPush();
             push.RegisterAsync(deviceToken, templates);
         }
 
@@ -505,7 +470,7 @@ Dieser Abschnitt bezieht sich auf das Ausführen des Xamarin WinApp-Projekts fü
                   {"headers", headers} // Only needed for WNS & MPNS
                 };
 
-            await TodoItemManager.DefaultInstance.CurrentClient.GetPush().RegisterAsync(channel.Uri, templates);
+            await TodoItemManager.DefaultManager.CurrentClient.GetPush().RegisterAsync(channel.Uri, templates);
         }
 
 3. Aktualisieren Sie in „App.xaml.cs“ den `OnLaunched`-Ereignishandler mit dem `async`-Attribut, und rufen Sie `InitNotificationsAsync` auf.
@@ -572,10 +537,6 @@ Dieser Abschnitt bezieht sich auf das Ausführen des Xamarin WinApp-Projekts fü
 [Install Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [Xcode]: https://go.microsoft.com/fwLink/?LinkID=266532
 [Installation von Xamarin.iOS auf Windows]: http://developer.xamarin.com/guides/ios/getting_started/installation/windows/
-[Azure Management Portal]: https://manage.windowsazure.com/
 [apns object]: http://go.microsoft.com/fwlink/p/?LinkId=272333
 
-
- 
-
-<!---HONumber=AcomDC_1125_2015--->
+<!---HONumber=AcomDC_1203_2015-->

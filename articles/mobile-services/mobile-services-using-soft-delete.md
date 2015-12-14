@@ -1,22 +1,27 @@
-<properties 
-	pageTitle="Vorläufiges Löschen in Mobile Services (Windows Store) | Microsoft Azure" 
-	description="Lernen Sie, wie Sie die Funktion zum vorläufigen Löschen von Azure Mobile Services in Ihrer Anwendung nutzen" 
-	documentationCenter="" 
-	authors="wesmc7777" 
-	manager="dwrede" 
-	editor="" 
+<properties
+	pageTitle="Vorläufiges Löschen in Mobile Services (Windows Store) | Microsoft Azure"
+	description="Lernen Sie, wie Sie die Funktion zum vorläufigen Löschen von Azure Mobile Services in Ihrer Anwendung nutzen"
+	documentationCenter=""
+	authors="wesmc7777"
+	manager="dwrede"
+	editor=""
 	services="mobile-services"/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-windows" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="09/28/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-windows"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="09/28/2015"
 	ms.author="wesmc"/>
 
 # Vorläufiges Löschen in Mobile Services
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 ##Übersicht
 
@@ -44,7 +49,7 @@ Unterstützung für vorläufiges Löschen für das .NET-Backend wurde erstmalig 
 Die folgenden Schritte zeigen Ihnen, wie Sie das vorläufige Löschen für einen mobilen Dienst mit .NET-Backend aktivieren.
 
 1. Öffnen Sie das Projekt für den mobilen Dienst mit .NET-Backend in Visual Studio.
-2. Klicken Sie mit der rechten Maustaste auf das .NET-Backend-Projekt, und klicken Sie dann auf **NuGet-Pakete verwalten**. 
+2. Klicken Sie mit der rechten Maustaste auf das .NET-Backend-Projekt, und klicken Sie dann auf **NuGet-Pakete verwalten**.
 3. Klicken Sie im Paketverwaltungsdialogfeld unter den Updates auf **Nuget.org**, und installieren Sie Version 1.0.402 oder höher der [Microsoft Azure Mobile Services .NET Backend](http://go.microsoft.com/fwlink/?LinkId=513165)-NuGet-Pakete.
 3. Erweitern Sie im Projektmappen-Explorer für Visual Studio den Knoten **Controller** unter Ihrem .NET-Backend-Projekt, und öffnen Sie die Controllerquelle. Zum Beispiel *TodoItemController.cs*.
 4. Übergeben Sie in der `Initialize()`-Methode des Controllers den Parameter `enableSoftDelete: true` an den EntityDomainManager-Konstruktor.
@@ -65,7 +70,7 @@ Wenn Sie eine neue Tabelle für Ihren mobilen Dienst erstellen, können Sie das 
 
 So aktivieren Sie das vorläufige Löschen für eine vorhandene Tabelle im JavaScript-Backend:
 
-1. Klicken Sie im [Verwaltungsportal] auf Ihren mobilen Dienst. Klicken Sie dann auf die Registerkarte Daten.
+1. Klicken Sie im [klassischen Azure-Portal] auf Ihren mobilen Dienst. Klicken Sie dann auf die Registerkarte Daten.
 2. Klicken Sie auf der Seite Daten, um die gewünschte Tabelle auszuwählen. Klicken Sie dann in der Befehlsleiste auf die Schaltfläche **Vorläufiges Löschen aktivieren**. Sollte das vorläufige Löschen bereits für die Tabelle aktiviert sein, wird die Schaltfläche nicht angezeigt, Sie können jedoch die Spalte *\_\_deleted* sehen, wenn Sie auf die Registerkarte **Durchsuchen** oder **Spalten** für die Tabelle klicken.
 
     ![][0]
@@ -82,23 +87,23 @@ Mit dem folgenden geplanten Job werden vorläufig gelöschte Datensätze, die ä
     public class SampleJob : ScheduledJob
     {
         private MobileService1Context context;
-     
-        protected override void Initialize(ScheduledJobDescriptor scheduledJobDescriptor, 
+
+        protected override void Initialize(ScheduledJobDescriptor scheduledJobDescriptor,
             CancellationToken cancellationToken)
         {
             base.Initialize(scheduledJobDescriptor, cancellationToken);
             context = new MobileService1Context();
         }
-     
+
         public override Task ExecuteAsync()
         {
             Services.Log.Info("Purging old records");
             var monthAgo = DateTimeOffset.UtcNow.AddDays(-30);
-     
+
             var toDelete = context.TodoItems.Where(x => x.Deleted == true && x.UpdatedAt <= monthAgo).ToArray();
             context.TodoItems.RemoveRange(toDelete);
             context.SaveChanges();
-     
+
             return Task.FromResult(true);
         }
     }
@@ -113,12 +118,12 @@ Weitere Informationen zum Planen von periodischen Aufträgen mit Mobiles Service
 Sie verwenden Tabellenskripte, um der Funktion für das vorläufige Löschen mit Mobile Services mit JavaScript-Backend Logik hinzuzufügen.
 
 Um eine Anforderung für das Rückgängigmachen eines Löschvorgangs zu ermitteln, verwenden Sie die entsprechende Eigenschaft in Ihrem Update-Tabellenskript:
-    
+
     function update(item, user, request) {
         if (request.undelete) { /* any undelete specific code */; }
     }
 Um gelöschte Datensätze in das Abfrageergebnis in einem Skript einzuschließen, setzen Sie den Parameter „includeDeleted“ auf „true“:
-    
+
     tables.getTable('softdelete_scenarios').read({
         includeDeleted: true,
         success: function (results) {
@@ -158,9 +163,6 @@ Weitere Informationen zum Planen von periodischen Aufträgen mit Mobiles Service
 <!-- URLs. -->
 [SQL-Bit-Typ]: http://msdn.microsoft.com/library/ms177603.aspx
 [Offlinedaten-Synchronisierung für Mobile Services]: mobile-services-windows-store-dotnet-get-started-offline-data.md
-[Verwaltungsportal]: https://manage.windowsazure.com/
+[klassischen Azure-Portal]: https://manage.windowsazure.com/
 
-
- 
-
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

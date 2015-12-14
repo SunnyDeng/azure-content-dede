@@ -27,9 +27,9 @@ Azure-Ressourcen-Manager-Vorlagen wurden vor Kurzem als eine Möglichkeit eingef
 
 ## Tool-Optionen
 
-### GUI: Azure-Portal oder Azure-Vorschauportal
+### GUI: Klassisches Azure-Portal oder Azure-Portal
 
-Die grafische Benutzeroberfläche des Portals bietet eine einfache Möglichkeit zum Testen eines virtuellen Computers. Dies gilt insbesondere dann, wenn Sie mit Azure beginnen. Erstellen Sie den virtuellen Computer über das [Azure-Portal](http://manage.windowsazure.com) oder das [Azure-Vorschauportal](http://portal.azure.com). Allgemeine Anweisungen erhalten Sie, indem Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers][] ein beliebiges Linux-Image aus dem **Katalog** auswählen. Beachten Sie, dass virtuelle Computer über das [Azure-Portal](http://manage.windowsazure.com) nur mithilfe des klassischen Bereitstellungsmodells erstellt werden.
+Die grafische Benutzeroberfläche des Portals bietet eine einfache Möglichkeit zum Testen eines virtuellen Computers. Dies gilt insbesondere dann, wenn Sie mit Azure beginnen. Erstellen Sie den virtuellen Computer über das [klassische Azure-Portal](http://manage.windowsazure.com) oder das [Azure-Portal](http://portal.azure.com). Allgemeine Anweisungen erhalten Sie, indem Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers][] ein beliebiges Linux-Image aus dem **Katalog** auswählen. Beachten Sie, dass virtuelle Computer über das [klassische Azure-Portal](http://manage.windowsazure.com) nur mithilfe des klassischen Bereitstellungsmodells erstellt werden.
 
 ### Befehlsshell: Azure-Befehlszeilenschnittstelle oder Azure PowerShell
 
@@ -103,4 +103,4 @@ Verwenden Sie ein Image, das auf einem vorhandenen virtuellen Azure-Computer bas
 [Erstellen eines virtuellen Linux-Computers]: virtual-machines-linux-tutorial.md
 [Erstellen eines benutzerdefinierten virtuellen Computers]: virtual-machines-create-custom.md
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

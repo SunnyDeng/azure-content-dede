@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="Identity"
-   ms.date="10/13/2015"
+   ms.date="12/02/2015"
    ms.author="andkjell"/>
 
 # Entwurfskonzepte für Azure AD Connect
@@ -67,6 +67,6 @@ Aus diesem Grund gelten die folgenden Einschränkungen für Azure AD Connect:
 - Wenn der Wert für sourceAnchor geändert wird, nachdem das Objekt nach Azure AD exportiert wurde, meldet die Azure AD Connect-Synchronisierung einen Fehler, und lässt keine weiteren Änderungen am Objekt zu, bevor das Problem behoben und die Änderung von sourceAnchor im Quellverzeichnis wieder rückgängig gemacht worden ist.
 
 ## Nächste Schritte
-Weitere Informationen zum [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md)
+Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

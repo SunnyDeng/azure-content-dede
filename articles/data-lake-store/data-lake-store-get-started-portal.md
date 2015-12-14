@@ -16,7 +16,7 @@
    ms.date="11/13/2015"
    ms.author="nitinme"/>
 
-# Erste Schritte mit Azure Data Lake-Speicher mithilfe des Azure-Vorschauportals
+# Erste Schritte mit Azure Data Lake-Speicher mithilfe des Azure-Portals
 
 > [AZURE.SELECTOR]
 - [Using Portal](data-lake-store-get-started-portal.md)
@@ -24,19 +24,19 @@
 - [Using .NET SDK](data-lake-store-get-started-net-sdk.md)
 - [Using Azure CLI](data-lake-store-get-started-cli.md)
 
-Hier erfahren Sie, wie Sie im Azure-Vorschauportal ein Azure Data Lake-Speicherkonto erstellen und grundlegende Vorgänge ausführen, z. B. Ordner erstellen, Datendateien hoch- und herunterladen, Ihr Konto löschen usw. Weitere Informationen zu Data Lake-Speicher finden Sie unter [Übersicht über Azure Data Lake-Speicher](data-lake-store-overview.md).
+Hier erfahren Sie, wie Sie im Azure-Portal ein Azure Data Lake-Speicherkonto erstellen und grundlegende Vorgänge ausführen, z. B. Ordner erstellen, Datendateien hoch- und herunterladen, Ihr Konto löschen usw. Weitere Informationen zu Data Lake-Speicher finden Sie unter [Übersicht über Azure Data Lake-Speicher](data-lake-store-overview.md).
 
 ## Voraussetzungen
 
 Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
-- **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/de-DE/pricing/free-trial/).
+- **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/).
 
 ## <a name="signup"></a>Aktivieren Ihres Azure-Abonnements für die öffentliche Vorschau von Data Lake-Speicher
 
 Zunächst müssen Sie die Aktivierung Ihres Azure-Abonnements für die öffentliche Vorschau von Data Lake-Speicher anfordern. Führen Sie die folgenden Schritte aus.
 
-1. Melden Sie sich beim neuen [Azure-Vorschauportal](https://portal.azure.com) an.
+1. Melden Sie sich beim neuen [Azure-Portal](https://portal.azure.com) an.
 2. Klicken Sie auf **NEU**, auf **Daten und Speicher** und anschließend auf **Azure Data Lake-Speicher**.
 3. Klicken Sie auf dem Blatt **Neuer Data Lake-Speicher** auf **Für Vorschau anmelden**. Prüfen Sie die Informationen, und klicken Sie auf **OK**. Sie erhalten eine E-Mail, sobald Ihr Abonnement für die öffentliche Vorschau aktiviert wurde.
 
@@ -44,7 +44,7 @@ Zunächst müssen Sie die Aktivierung Ihres Azure-Abonnements für die öffentli
 
 ## Erstellen eines Azure Data Lake-Speicherkontos
 
-1. Melden Sie sich beim neuen [Azure-Vorschauportal](https://portal.azure.com) an.
+1. Melden Sie sich beim neuen [Azure-Portal](https://portal.azure.com) an.
 
 2. Klicken Sie auf **NEU**, auf **Daten und Speicher** und anschließend auf **Azure Data Lake-Speicher**. Prüfen Sie die Informationen auf dem Blatt **Azure Data Lake-Speicher**, und klicken Sie dann in der unteren linken Ecke des Blatts auf **Erstellen**.
 
@@ -133,4 +133,4 @@ Um ein Azure Data Lake-Speicherkonto zu löschen, klicken Sie auf dem Blatt „D
 - [Verwenden von Azure Data Lake Analytics mit Data Lake-Speicher](data-lake-analytics-get-started-portal.md)
 - [Verwenden von Azure HDInsight mit Data Lake-Speicher](data-lake-store-hdinsight-hadoop-use-portal.md)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

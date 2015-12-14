@@ -1,29 +1,34 @@
-<properties 
-	pageTitle="Registrieren für die Facebook-Authentifizierung | Azure Mobile Services" 
-	description="Erfahren Sie, wie Sie die Facebook-Authentifizierung mit Ihrer Azure Mobile Services-App verwenden." 
-	services="mobile-services" 
-	documentationCenter="" 
-	authors="ggailey777" 
-	manager="dwrede" 
+<properties
+	pageTitle="Registrieren für die Facebook-Authentifizierung | Azure Mobile Services"
+	description="Erfahren Sie, wie Sie die Facebook-Authentifizierung mit Ihrer Azure Mobile Services-App verwenden."
+	services="mobile-services"
+	documentationCenter=""
+	authors="ggailey777"
+	manager="dwrede"
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="11/15/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="na"
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.date="11/15/2015"
 	ms.author="glenga"/>
 
 # Registrieren Ihrer App für die Facebook-Authentifizierung mit Mobile Services
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 [AZURE.INCLUDE [mobile-services-selector-register-identity-provider](../../includes/mobile-services-selector-register-identity-provider.md)]
 
 In diesem Thema erfahren Sie, wie Sie Ihre Apps registrieren, um Facebook zur Authentifizierung mit Azure Mobile Services zu verwenden.
 
 >[AZURE.NOTE]Thema dieses Lernprogramms sind [Azure Mobile Services], eine Lösung, die Sie beim Erstellen skalierbarer mobiler Anwendungen für beliebige Plattformen unterstützt. Mit Mobile Services ist es einfach, Daten zu synchronisieren, Benutzer zu authentifizieren und Pushbenachrichtigungen zu senden. Diese Seite unterstützt das Lernprogramm [Erste Schritte mit der Authentifizierung](mobile-services-ios-get-started-users.md), das zeigt, wie sich Benutzer bei Ihrer App anmelden. Falls Sie noch keine Erfahrung mit Mobile Services haben, sollten Sie zunächst das Lernprogramm [Erste Schritte mit Mobile Services](mobile-services-ios-get-started.md) abschließen.
-	
+
 Sie benötigen ein Facebook-Konto mit verifizierter E-Mail-Adresse und einer Mobiltelefonnummer, um den in diesem Thema beschriebenen Vorgang abzuschließen. Rufen Sie die Seite [facebook.com](http://go.microsoft.com/fwlink/p/?LinkId=268285) auf, um ein neues Facebook-Konto zu erstellen.
 
 1. Navigieren Sie zur Website für [Facebook-Entwickler](http://go.microsoft.com/fwlink/p/?LinkId=268285), und melden Sie sich mit den Anmeldeinformationen für Ihr Facebook-Konto an.
@@ -45,14 +50,17 @@ Sie benötigen ein Facebook-Konto mit verifizierter E-Mail-Adresse und einer Mob
 7. Klicken Sie auf **Anzeigen**, geben Sie falls erforderlich Ihr Kennwort an, und notieren Sie sich die Werte von **App-ID** und **App-Schlüssel**.
 
    	![][5]&nbsp;
-	
+
     >[AZURE.IMPORTANT]Der App-Schlüssel ist eine wichtige Anmeldeinformation. Teilen Sie diesen Schlüssel mit niemandem, und geben Sie ihn nicht über Ihre App frei.&nbsp;
 
-8. Klicken Sie auf die Registerkarte **Advanced**, geben Sie in **Valid OAuth redirect URIs** die URL Ihres mobilen Diensts gefolgt vom Pfad _/login/facebook_ ein, und klicken Sie auf **Save Changes**.&nbsp;
+8. Klicken Sie auf die Registerkarte **Erweitert**, geben Sie eines der folgenden URL-Formate in **Valid OAuth redirect URIs** ein, klicken Sie dann auf **Änderungen speichern**:
 
-	 >[AZURE.NOTE]Stellen Sie sicher, dass Sie das richtige Umleitungs-URL-Pfadformat für Ihren Typ von Mobile Services-Back-End verwenden. Wenn die Angabe falsch ist, wird die Authentifizierung nicht erfolgreich ausgeführt.
+	+ **.NET-Back-End**: `https://<mobile_service>.azure-mobile.net/signin-facebook`
+	+ **JavaScript-Back-End**: `https://<mobile_service>.azure-mobile.net/login/facebook`
 
-       
+	 >[AZURE.NOTE]Stellen Sie sicher, dass Sie das passende Umleitungs-URL-Pfadformat für Ihr Mobile Services-Back-End verwenden. Wenn die Angabe falsch ist, wird die Authentifizierung nicht erfolgreich ausgeführt.
+
+
 9. Klicken Sie auf **Status & Review** > **Yes**, um den allgemeinen öffentlichen Zugriff auf Ihre App zu aktivieren.
 
 	Das Facebook-Konto, mit dem die neue App registriert wurde, verfügt über Administratorrechte und über Administratorzugriff auf die App. Mit diesem Schritt wird der allgemeine öffentliche Zugriff gewährt, sodass die App andere Facebook-Konten für die Authentifizierung verwenden kann.
@@ -69,8 +77,6 @@ Sie können nun ein Facebook-Login für die Authentifizierung in Ihrer App verwe
 <!-- URLs. -->
 [Facebook Developers]: http://go.microsoft.com/fwlink/p/?LinkId=268286
 [Get started with authentication]: /develop/mobile/tutorials/get-started-with-users-dotnet/
-[Azure Management Portal]: https://manage.windowsazure.com/
 [Azure Mobile Services]: http://azure.microsoft.com/services/mobile-services/
- 
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

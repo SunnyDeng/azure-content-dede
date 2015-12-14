@@ -156,7 +156,7 @@ Laden Sie das Image mithilfe der Azure-Befehlszeilenschnittstelle hoch. Sie kön
 
 Zum Hochladen der VHD-Datei wird ein Speicherkonto benötigt. Wählen Sie entweder ein vorhandenes Speicherkonto aus, oder erstellen Sie ein neues. Informationen zum Erstellen eines Speicherkontos finden Sie unter [Erstellen eines Speicherkontos](../storage-create-storage-account.md).
 
-Wenn Sie die .vhd-Datei hochladen, können Sie diese .vhd-Datei an einem beliebigen Speicherort innerhalb des Blobspeichers ablegen. In den folgenden Befehlsbeispielen stellt **BlobStorageURL** die URL für das zu verwendende Speicherkonto dar. Bei **YourImagesFolder** handelt es sich um den Container innerhalb des Blobspeichers, in dem Sie Ihre Images speichern möchten. **VHDName** steht für die Bezeichnung, die im [Azure-Portal](http://manage.windowsazure.com) zur Identifizierung der virtuellen Festplatte angezeigt wird. **PathToVHDFile** stellt den vollständigen Pfad und den Namen der .vhd-Datei dar.
+Wenn Sie die .vhd-Datei hochladen, können Sie diese .vhd-Datei an einem beliebigen Speicherort innerhalb des Blobspeichers ablegen. In den folgenden Befehlsbeispielen stellt **BlobStorageURL** die URL für das zu verwendende Speicherkonto dar. Bei **YourImagesFolder** handelt es sich um den Container innerhalb des Blobspeichers, in dem Sie Ihre Images speichern möchten. **VHDName** steht für die Bezeichnung, die im [klassischen Azure-Portal](http://manage.windowsazure.com) zur Identifizierung der virtuellen Festplatte angezeigt wird. **PathToVHDFile** stellt den vollständigen Pfad und den Namen der .vhd-Datei dar.
 
 Geben Sie über das Azure PowerShell-Fenster, welches Sie im vorherigen Schritt verwendet haben, Folgendes ein:
 
@@ -164,11 +164,11 @@ Geben Sie über das Azure PowerShell-Fenster, welches Sie im vorherigen Schritt 
 
 Weitere Informationen hierzu finden Sie unter [Add-AzureVhd](https://msdn.microsoft.com/library/azure/dn495173.aspx).
 
-> [AZURE.NOTE]Mit der [Vorschauversion von Azure Powershell 1.0](https://azure.microsoft.com/de-DE/blog/azps-1-0-pre/) ändert sich die Art und Weise, wie Cmdlets für das klassische und das Ressourcen-Manager-Bereitstellungsmodell verarbeitet werden, erheblich. In diesem Artikel wird die Vorschauversion noch nicht verwendet.
+> [AZURE.NOTE]Mit der [Vorschauversion von Azure Powershell 1.0](https://azure.microsoft.com/blog/azps-1-0-pre/) ändert sich die Art und Weise, wie Cmdlets für das klassische und das Ressourcen-Manager-Bereitstellungsmodell verarbeitet werden, erheblich. In diesem Artikel wird die Vorschauversion noch nicht verwendet.
 
 
 [Step 1: Prepare the image to be uploaded]: #prepimage
 [Step 2: Prepare the connection to Azure]: #connect
 [Step 3: Upload the image to Azure]: #upload
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

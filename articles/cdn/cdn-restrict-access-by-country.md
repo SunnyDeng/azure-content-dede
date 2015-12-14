@@ -3,7 +3,7 @@
 	description="Wenn ein Benutzer Ihren Inhalt anfordert, wird unabhängig davon, wo der Benutzer diese Anforderung vorgenommen hat, der Inhalt angezeigt. In einigen Fällen empfiehlt es sich, den Zugriff auf Ihre Inhalte nach Ländern einzuschränken. In diesem Thema wird erläutert, wie Sie das Feature **Länderfilter** einsetzen, um den Zugriff je nach Land zu genehmigen oder verweigern." 
 	services="cdn" 
 	documentationCenter=".NET" 
-	authors="juliako" 
+	authors="camsoper" 
 	manager="dwrede" 
 	editor=""/>
 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/01/2015" 
-	ms.author="juliako"/>
+	ms.date="12/02/2015" 
+	ms.author="casoper"/>
 
 #Einschränken des Zugriffs auf Inhalte nach Ländern
 
@@ -49,8 +49,8 @@ Wählen Sie die Länder aus, die Sie für den Pfad zulassen oder blockieren möc
 
 Beispielsweise werden durch die Regel zum Blockieren von "/Photos/Strasbourg/" die folgenden Dateien gefiltert:
 
-	http://az123456.vo.msecnd.net/Photos/Strasbourg/1000.jpg. 
-	http://az123456.vo.msecnd.net/Photos/Strasbourg/Cathedral/1000.jpg. 
+	http://az123456.azureedge.net/Photos/Strasbourg/1000.jpg
+	http://az123456.azureedge.net/Photos/Strasbourg/Cathedral/1000.jpg
 
 
 ##Landeskennzahlen
@@ -65,4 +65,4 @@ Die Funktion **Länderfilter** verwendet Landeskennzahlen, um die Länder zu def
 - Das dem relativen Pfad zugeordnete Länderfilterkonfiguration wird rekursiv auf diesen Pfad angewendet.
 - Pro relativen Pfad kann nur eine Regel angewendet werden (Sie können nicht mehrere Länderfilter erstellen, die auf den gleichen relativen Pfad verweisen). Jedoch können mehrere Länderfilter auf einen Ordner angewendet werden. Das liegt an der rekursiven Natur der Länderfilter. Anders ausgedrückt: Ein Unterordner eines zuvor konfigurierten Ordners kann einem anderen Länderfilter zugewiesen werden.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

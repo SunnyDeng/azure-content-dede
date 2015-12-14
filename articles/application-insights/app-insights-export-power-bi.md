@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/17/2015" 
+	ms.date="11/25/2015" 
 	ms.author="awills"/>
  
 # Verwenden Sie Stream Analytics für Power BI-Ansichten von Application Insights
@@ -39,6 +39,9 @@ Dieser Artikel beschreibt, wie Sie [Stream Analytics](http://azure.microsoft.com
 Noam Ben Zeev zeigt, was in diesem Artikel beschrieben wird.
 
 > [AZURE.VIDEO export-to-power-bi-from-application-insights]
+
+
+**Stichproben** Wenn Ihre Anwendung eine große Menge von Daten sendet und Sie das Application Insights-SDK für ASP.NET Version 2.0.0-beta3 oder höher verwenden, wird möglicherweise die adaptive Stichprobenerstellung verwendet, bei der nur ein bestimmter Prozentsatz der Telemetriedaten übermittelt wird. [Erfahren Sie mehr über das Erstellen von Stichproben.](app-insights-sampling.md)
 
 ## Überwachen Ihrer App mit Application Insights
 
@@ -266,4 +269,4 @@ Noam Ben Zeev zeigt, wie nach Power BI exportiert wird.
 * [Application Insights](app-insights-overview.md)
 * [Weitere Beispiele und exemplarische Vorgehensweisen](app-insights-code-samples.md)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

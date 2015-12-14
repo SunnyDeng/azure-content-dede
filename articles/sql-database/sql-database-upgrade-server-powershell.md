@@ -13,14 +13,14 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/11/2015" 
+	ms.date="12/01/2015" 
 	ms.author="sstein"/>
 
 # Upgrade auf Azure SQL-Datenbank V12 mithilfe von PowerShell
 
 
 > [AZURE.SELECTOR]
-- [Azure preview portal](sql-database-upgrade-server-portal.md)
+- [Azure portal](sql-database-upgrade-server-portal.md)
 - [PowerShell](sql-database-upgrade-server-powershell.md)
 
 
@@ -34,11 +34,11 @@ Dieser Artikel enthält Anweisungen zum Aktualisieren von vorhandenen SQL-Datenb
 
 Bei der Aktualisierung auf V12 führen Sie ein Upgrade aller Web- und Business-Datenbanken auf eine neue Dienstebene durch, daher stehen Anleitungen für das Upgrade von Web- und Business-Datenbanken zur Verfügung.
 
-Zudem kann eine Migration zu einem [Pool für elastische Datenbanken](sql-database-elastic-pool.md) kostengünstiger sein als die Aktualisierung auf einzelne Leistungsstufen (Tarife) für einzelne Datenbanken. Pools vereinfachen auch das Datenbankmanagement, da Sie nur die Leistungseinstellungen für den Pool verwalten müssen und nicht die Leistungsmerkmale der einzelnen Datenbanken. Wenn Sie über Datenbanken auf mehreren Servern verfügen, sollten Sie sie auf einen gemeinsamen Server verschieben und die Vorteile aus dem Zusammenfassen in einem Pool nutzen.
+Zudem kann eine Migration zu einem [Pool für elastische Datenbanken](sql-database-elastic-pool.md) kostengünstiger sein als die Aktualisierung auf einzelne Leistungsstufen (Tarife) für einzelne Datenbanken. Pools vereinfachen zudem das Datenbankmanagement, da Sie nur die Leistungseinstellungen für den Pool verwalten müssen, und nicht die Leistungsmerkmale der einzelnen Datenbanken. Wenn Sie über Datenbanken auf mehreren Servern verfügen, sollten Sie sie auf einen gemeinsamen Server verschieben und die Vorteile aus dem Zusammenfassen in einem Pool nutzen.
 
 Mit den Schritten in diesem Artikel können Sie Datenbanken mit PowerShell direkt auf einfache Weise automatisiert von V11-Servern in Pools für elastische Datenbanken migrieren.
 
-Beachten Sie, dass Ihre Datenbanken während des gesamten Upgradevorgangs online bleiben und weiterhin funktionieren. Zum Zeitpunkt des tatsächlichen Übergangs auf die neue Leistungsstufe können die Datenbankverbindungen ggf. für einen kurzen Zeitraum – in der Regel 90 Sekunden, eventuell jedoch bis zu 5 Minuten – unterbrochen werden. Wenn eine Anwendung über [Maßnahmen zur Behandlung vorübergehender Fehler bei Verbindungsunterbrechungen](sql-database-connect-central-recommendations.md) verfügt, ist es ausreichend, am Ende des Upgrades Schutz vor unterbrochenen Verbindungen vorzusehen.
+Beachten Sie, dass Ihre Datenbanken während des gesamten Upgradevorgangs online bleiben und weiterhin funktionieren. Zum Zeitpunkt des tatsächlichen Übergangs auf die neue Leistungsstufe können die Datenbankverbindungen ggf. für einen kurzen Zeitraum – i. d. R. 90 Sekunden, eventuell jedoch bis zu 5 Minuten – unterbrochen werden. Wenn eine Anwendung über [Maßnahmen zur Behandlung vorübergehender Fehler bei Verbindungsunterbrechungen](sql-database-connect-central-recommendations.md) verfügt, ist es ausreichend, am Ende des Upgrades Schutz vor unterbrochenen Verbindungen vorzusehen.
 
 Das Upgrade auf SQL-Datenbank V12 kann nicht rückgängig gemacht werden. Nach dem Upgrade kann der Server nicht auf V11 zurückgesetzt werden.
 
@@ -184,7 +184,7 @@ Zusätzliche Überwachungsinformationen:
 
 
 
-**Warnungen**: Richten Sie im Azure-Portal „Warnungen“ ein, damit Sie benachrichtigt werden, wenn der DTU-Verbrauch für eine aktualisierte Datenbank eine bestimmte hohe Stufe erreicht. Datenbankwarnungen können im Azure-Portal für verschiedene Leistungsmetriken wie DTU, CPU, E/A und die Protokollierung eingerichtet werden. Navigieren Sie zu der Datenbank, und wählen Sie **Warnungsregeln** auf dem Blatt **Einstellungen** aus.
+**Warnungen**: Richten Sie im Azure-Portal „Warnungen“ ein, damit Sie benachrichtigt werden, wenn der DTU-Verbrauch für eine aktualisierte Datenbank eine bestimmte hohe Ebene erreicht. Datenbankwarnungen können im Azure-Portal für verschiedene Leistungsmetriken wie DTU, CPU, E/A und die Protokollierung eingerichtet werden. Navigieren Sie zu der Datenbank, und wählen Sie **Warnungsregeln** auf dem Blatt **Einstellungen** aus.
 
 Sie können z. B. eine E-Mail-Benachrichtigung für den "DTU Prozentsatz" festlegen, wenn der durchschnittliche prozentuale DTU-Wert 75 % innerhalb der letzten 5 Minuten überschreitet. Weitere Informationen zur Konfiguration von Warnungsbenachrichtigungen finden Sie unter [Empfangen von Warnungsbenachrichtigungen](insights-receive-alert-notifications.md).
 
@@ -203,4 +203,4 @@ Sie können z. B. eine E-Mail-Benachrichtigung für den "DTU Prozentsatz" festl
 - [Start-AzureRmSqlServerUpgrade](https://msdn.microsoft.com/library/azure/mt619403.aspx)
 - [Stop-AzureRmSqlServerUpgrade](https://msdn.microsoft.com/library/azure/mt603589.aspx)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -724,7 +724,7 @@ Die Anwendung wird nun in der Cloud ausgeführt und verwendet die SQL-Datenbank 
 
 ## Nächste Schritte
 
-Eine echte Anwendung benötigt eine Authentifizierung und Autorisierung, und Sie würden für diesen Zweck die Mitgliedsdatenbank verwenden. Das Lernprogramm [Bereitstellen einer sicheren ASP.NET MVC 5-Anwendung mit Mitgliedschaft, OAuth und einer SQL-Datenbank ](web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database.md) basiert auf diesem Lernprogramm und zeigt, wie Sie eine Web-Anwendung mithilfe der Mitgliedsdatenbank bereitstellen.
+Eine echte Anwendung benötigt eine Authentifizierung und Autorisierung, und Sie würden für diesen Zweck die Mitgliedsdatenbank verwenden. Das Tutorial [Bereitstellen einer sicheren ASP.NET MVC 5-Anwendung mit Mitgliedschaft, OAuth und einer SQL-Datenbank ](web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database.md) basiert auf diesem Tutorial und zeigt, wie Sie eine Webanwendung mithilfe der Mitgliedsdatenbank bereitstellen.
 
 Ferner können Daten in einer Azure-Anwendung mithilfe von Azure Storage gespeichert werden, das nichtrelationale Datenspeicherung in Form von Blobs und Tabellen bietet. Die folgenden Links bieten weitere Informationen zu WEB API, ASP.NET MVC und Microsoft Azure.
  
@@ -739,8 +739,7 @@ Dieses Lernprogramm und die Beispielanwendung wurden von [Rick Anderson](http://
 Bitte teilen Sie uns mit, was Ihrer Meinung nach beim Tutorial wie auch den darin vorgestellten Produkten gelungen ist und was vielleicht verbessert werden kann. Ihr Feedback unterstützt uns dabei, eine entsprechende Priorität für Verbesserungen festzulegen. Wir interessieren uns vor allem dafür, wie groß das Interesse an weiteren Automatisierungen in Bezug auf die Konfiguration und Bereitstellung der Mitgliedsdatenbank ist.
 
 ## Änderungen
-* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
+* Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 
 <!-- bookmarks -->
 [Add an OAuth Provider]: #addOauth
@@ -811,4 +810,4 @@ Bitte teilen Sie uns mit, was Ihrer Meinung nach beim Tutorial wie auch den dari
 [prevent-csrf-attacks]: http://www.asp.net/web-api/overview/security/preventing-cross-site-request-forgery-(csrf)-attacks
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

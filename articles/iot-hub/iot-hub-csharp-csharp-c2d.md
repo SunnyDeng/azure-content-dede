@@ -67,7 +67,7 @@ Weitere Informationen zu IoT Hub:
 
 [IoT Hub Developer Guide - C2D]: iot-hub-devguide.md#c2d
 
-[Azure preview portal]: https://portal.azure.com/
+[Azure portal]: https://portal.azure.com/
 
 [Send Cloud-to-Device messages with IoT Hub]: iot-hub-csharp-csharp-c2d.md
 [Verarbeiten von Gerät-zu-Cloud-Nachrichten]: iot-hub-csharp-csharp-process-d2c.md
@@ -81,4 +81,4 @@ Weitere Informationen zu IoT Hub:
 [Supported devices]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/tested_configurations.md
 [Azure IoT Developer Center]: http://www.azure.com/develop/iot
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

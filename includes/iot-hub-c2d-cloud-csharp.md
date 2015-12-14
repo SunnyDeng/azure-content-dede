@@ -18,7 +18,7 @@ In diesem Abschnitt schreiben Sie eine Windows-Konsolen-App, die Cloud-zu-Gerät
 
 		using Microsoft.Azure.Devices;
 
-5. Fügen Sie der **Program**-Klasse die folgenden Felder hinzu, und ersetzen Sie dabei die Platzhalterwerte durch den IoT Hub-Namen und die IoT Hub-Verbindungszeichenfolge aus [Erste Schritte mit IoT Hub].
+5. Fügen Sie der **Program**-Klasse die folgenden Felder hinzu, und ersetzen Sie dabei die Platzhalterwerte durch die IoT Hub-Verbindungszeichenfolge aus [Erste Schritte mit IoT Hub]\:
 
 		static ServiceClient serviceClient;
         static string connectionString = "{iot hub connection string}";
@@ -102,4 +102,4 @@ In diesem Abschnitt ändern Sie die **SendCloudToDevice**-App so, dass sie Feedb
 [21]: ./media/iot-hub-c2d-cloud-csharp/sendc2d1.png
 [22]: ./media/iot-hub-c2d-cloud-csharp/sendc2d2.png
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

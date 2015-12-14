@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Erstellen Sie mit dem Azure-Portal Kanäle, die Livestreams mit mehreren Bitraten von lokalen Encodern empfangen | Microsoft Azure"
+	pageTitle="Erstellen Sie mit dem klassischen Azure-Portal Kanäle, die Livestreams mit mehreren Bitraten von lokalen Encodern empfangen | Microsoft Azure"
 	description="Dieses Lernprogramm führt Sie durch die Schritte zum Implementieren von grundlegenden Media Services-Anwendungen zum Livestreamen, in denen ein Kanal einen Livestream mit mehreren Bitraten von lokalen Encodern empfängt."
 	services="media-services"
 	documentationCenter=""
@@ -17,20 +17,20 @@
 	ms.author="juliako"/>
 
 
-# Verwenden Sie das Azure-Portal zum Erstellen von Kanälen, die Livestreams mit mehreren Bitraten von lokalen Encodern empfangen.
+# Verwenden Sie das klassische Azure-Portal zum Erstellen von Kanälen, die Livestreams mit mehreren Bitraten von lokalen Encodern empfangen.
 
 [AZURE.INCLUDE [media-services-selector-manage-channels](../../includes/media-services-selector-manage-channels.md)]
 
 
 Dieses Lernprogramm führt Sie durch die Schritte zum Implementieren von grundlegenden Media Services-Anwendungen zum Livestreamen, in denen ein Kanal einen Livestream mit mehreren Bitraten von lokalen Encodern empfängt. Ausführlichere Informationen zum Arbeiten mit Kanälen und dazugehörigen Komponenten finden Sie unter [Arbeiten mit Kanälen, von denen Multi-Bitrate-Livedatenströme aus lokalen Encodern empfangen werden](media-services-manage-channels-overview.md).
 
-In diesem Lernprogramm wird das Azure-Portal verwendet, um die folgenden Aufgaben auszuführen:
+In diesem Lernprogramm wird das klassische Azure-Portal verwendet, um die folgenden Aufgaben auszuführen:
 
 2.  Konfigurieren von Streamingendpunkten
 3.  Erstellen eines Kanals
 1.  Konfigurieren eines Live-Encoders und Aufnehmen von Live-Datenströmen in den Kanal (bei diesem Schritt wird Wirecast verwendet)
 1.  Erstellen eines Programms (und eines Medienobjekts)
-1.  Veröffentlichen des Medienobjekts und Abrufen von Streaming-URLs  
+1.  Veröffentlichen des Medienobjekts und Abrufen von Streaming-URLs
 1.  Wiedergeben Ihrer Inhalte
 2.  Bereinigen
 
@@ -42,7 +42,7 @@ Zum Abschließen dieses Lernprogramms müssen folgende Voraussetzungen erfüllt 
 - Sie benötigen eine Webcam und einen Encoder, von dem ein Multi-Bitrate-Livedatenstrom gesendet wird.
 
 
-## Konfigurieren von Streamingendpunkten mithilfe des Azure-Portals
+## Konfigurieren von Streamingendpunkten mithilfe des klassischen Azure-Portals
 
 Wenn Sie mit Azure Media Services arbeiten, besteht eines der häufigsten Szenarien darin, Streaming mit adaptiver Bitrate an Ihre Clients zu übermitteln. Beim Adaptive Bitrate Streaming mit adaptiver Bitrate kann der Client während der Videodarstellung abhängig von der aktuellen Netzwerkbandbreite, CPU-Auslastung und anderen Faktoren auf einen Stream mit höherer oder niedrigerer Bitrate wechseln. Von Media Services werden die folgenden Streamingtechnologien mit adaptiver Bitrate unterstützt: HTTP Live Streaming (HLS), Smooth Streaming, MPEG DASH und HDS (nur mit Adobe PrimeTime/Access-Lizenz).
 
@@ -50,28 +50,28 @@ Beim Arbeiten mit Livestreaming wird ein Livedatenstrom mit mehreren Bitraten vo
 
 Um die dynamische Paketerstellung nutzen zu können, ist mindestens eine Streamingeinheit für den *Streamingendpunkt* erforderlich, aus dem die Inhalte geliefert werden sollen.
 
-Um die Anzahl der reservierten Einheiten für das Streaming zu ändern, gehen Sie folgendermaßen vor:
+Um die Anzahl der Einheiten zu ändern, die für das Streaming reserviert sind, gehen Sie folgendermaßen vor:
 
-1. Klicken Sie im [Azure-Portal](https://manage.windowsazure.com/) auf **Media Services**. Klicken Sie anschließend auf den Namen des Mediendienstes.
+1. Klicken Sie im [klassischen Azure-Portal](https://manage.windowsazure.com/) auf **Media Services**. Klicken Sie anschließend auf den Namen des Media Service
 
 2. Wählen Sie die Seite **STREAMING-ENDPUNKTE** aus. Klicken Sie anschließend auf das Streamingendgerät, das Sie ändern möchten.
 
 3. Um die Anzahl der Streamingeinheiten anzugeben, wählen Sie die Registerkarte **SKALIERUNG** aus und verschieben anschließend den Schieberegler für die reservierte Kapazität.
 
-	![Seite "Skalieren"](./media/media-services-portal-get-started-with-live/media-services-origin-scale.png)
+![Seite "Skalieren"](./media/media-services-portal-get-started-with-live/media-services-origin-scale.png)
 
 4. Klicken Sie auf die Schaltfläche **SPEICHERN**, um die Änderungen zu speichern.
 
-	Das Zuordnen neuer Einheiten dauert etwa 20 Minuten.
+Das Zuordnen neuer Einheiten dauert etwa 20 Minuten.
 
-	>[AZURE.NOTE]Aktuell kann das Streaming bis zu eine Stunde lang deaktiviert werden, wenn Sie einen positiven Wert für die Streamingeinheiten zurück auf null setzen.
-	>
-	> Die höchste für den 24-Stunden-Zeitraum angegebene Anzahl an Einheiten wird zum Berechnen der Kosten verwendet. Informationen zu den Preisen finden Sie unter [Mediendienste – Preisübersicht](http://go.microsoft.com/fwlink/?LinkId=275107).
+>[AZURE.NOTE]Aktuell kann das Streaming bis zu eine Stunde lang deaktiviert werden, wenn Sie einen positiven Wert für die Streamingeinheiten zurück auf null setzen.
+>
+> Die höchste für den 24-Stunden-Zeitraum angegebene Anzahl an Einheiten wird zum Berechnen der Kosten verwendet. Informationen zu den Preisen finden Sie unter [Mediendienste – Preisübersicht](http://go.microsoft.com/fwlink/?LinkId=275107).
 
 
 ## Erstellen eines Kanals
 
-Wählen Sie im Azure-Portal die Seite **KANÄLE** aus. Klicken Sie dann auf **NEU**. Geben Sie auf der Seite **Neuen Livekanal erstellen** einen Namen für den Kanal ein.
+Wählen Sie im klassischen Azure-Portal die Seite **KANÄLE** aus. Klicken Sie dann auf **NEU**. Geben Sie auf der Seite **Neuen Livekanal erstellen** einen Namen für den Kanal ein.
 
 ![createchannel](./media/media-services-portal-get-started-with-live/media-services-create-channel.png)
 
@@ -96,7 +96,7 @@ Weitere Informationen über Erfassungs-URLs finden Sie unter [Verwenden von loka
 
 Ausführliche Informationen zum Konfigurieren von Wirecast und der Erfassung von Streams finden Sie unter [Wirecast-Konfiguration](http://azure.microsoft.com/blog/2014/09/18/azure-media-services-rtmp-support-and-live-encoders/).
 
->[AZURE.NOTE]Wenn Sie aus irgendeinem Grund den Encoder stoppen und anschließend neu starten müssen, setzen Sie zuerst den Kanal zurück, indem Sie im Azure-Portal auf den Befehl **Zurücksetzen** klicken.
+>[AZURE.NOTE]Wenn Sie aus irgendeinem Grund den Encoder stoppen und anschließend neu starten müssen, setzen Sie zuerst den Kanal zurück, indem Sie im klassischen Azure-Portal auf den Befehl **Zurücksetzen** klicken.
 
 
 ## Erstellen und Verwalten von Programmen
@@ -129,25 +129,25 @@ Es gibt zwei Möglichkeiten, ein Ereignis zu starten:
 
 1. Klicken Sie auf der Seite **KANÄLE** auf **HINZUFÜGEN**, um ein neues Programm hinzuzufügen.
 
-	Geben Sie auf der Seite **Neues Programm erstellen** den Programmnamen, den Medienobjektnamen, das Archivfenster und die Verschlüsselungsoption an.
+Geben Sie auf der Seite **Neues Programm erstellen** den Programmnamen, den Medienobjektnamen, das Archivfenster und die Verschlüsselungsoption an.
 
-	![createprogram](./media/media-services-portal-get-started-with-live/media-services-create-program.png)
+![createprogram](./media/media-services-portal-get-started-with-live/media-services-create-program.png)
 
-	Wenn **Dieses Programm jetzt veröffentlichen** ausgewählt ist, werden die Veröffentlichungs-URLs erstellt.
+Wenn **Dieses Programm jetzt veröffentlichen** ausgewählt ist, werden die Veröffentlichungs-URLs erstellt.
 
-	Sie können jeweils auf **START** klicken, wenn Sie bereit zum Streamen des Programms sind.
+Sie können jeweils auf **START** klicken, wenn Sie bereit zum Streamen des Programms sind.
 
-	Wenn Sie das Programm gestartet haben, können Sie auf **WIEDERGABE** klicken, um die Wiedergabe der Inhalte zu starten.
+Wenn Sie das Programm gestartet haben, können Sie auf **WIEDERGABE** klicken, um die Wiedergabe der Inhalte zu starten.
 
-	![createdprogram](./media/media-services-portal-get-started-with-live/media-services-created-program.png)
+![createdprogram](./media/media-services-portal-get-started-with-live/media-services-created-program.png)
 
 2. Alternativ dazu können Sie einfach auf der Seite **KANÄLE** auf die Schaltfläche **STREAMING STARTEN** klicken. Dadurch erstellen Sie ein Medienobjekt, ein Programm und einen Streaminglocator.
 
-	Das Programm hat den Namen „DefaultProgram“, und das Archivfenster ist auf 1 Stunde festgelegt.
+Das Programm hat den Namen „DefaultProgram“, und das Archivfenster ist auf 1 Stunde festgelegt.
 
-	Sie können das veröffentlichte Programm auf der Seite **KANÄLE** wiedergeben.
+Sie können das veröffentlichte Programm auf der Seite **KANÄLE** wiedergeben.
 
-	![channelpublish](./media/media-services-portal-get-started-with-live/media-services-channel-play.png)
+![channelpublish](./media/media-services-portal-get-started-with-live/media-services-channel-play.png)
 
 
 Wenn Sie auf der Seite **KANÄLE** auf **STREAMING BEENDEN** klicken, wird das Standardprogramm beendet und gelöscht. Das Medienobjekt bleibt erhalten, und Sie können es auf der Seite **INHALT** veröffentlichen bzw. die Veröffentlichung aufheben.
@@ -159,7 +159,7 @@ Wenn Sie zur Seite **INHALT** wechseln, sehen Sie die Ressourcen, die für Ihre 
 
 ## Wiedergeben von Inhalten
 
-Um für Ihre Benutzer eine URL bereitzustellen, die zum Streamen Ihrer Inhalte verwendet werden kann, müssen Sie das Medienobjekt zunächst *veröffentlichen* (wie im vorigen Abschnitt beschrieben), indem Sie einen Locator erstellen (wenn Sie ein Medienobjekt mithilfe des Azure-Portals veröffentlichen, werden die Locators automatisch erstellt). Locator ermöglichen den Zugriff auf Dateien im Medienobjekt.
+Um für Ihre Benutzer eine URL bereitzustellen, die zum Streamen Ihrer Inhalte verwendet werden kann, müssen Sie das Medienobjekt zunächst *veröffentlichen* (wie im vorigen Abschnitt beschrieben), indem Sie einen Locator erstellen (wenn Sie ein Medienobjekt mithilfe des klassischen Azure-Portals veröffentlichen, werden die Locators automatisch erstellt). Locators ermöglichen den Zugriff auf Dateien im Medienobjekt.
 
 Je nach dem Streamingprotokoll, das zum Wiedergeben Ihrer Inhalte verwendet werden soll, müssen Sie möglicherweise die URL ändern, die Sie über den Link **URL VERÖFFENTLICHEN** des Kanals/Programms erhalten haben.
 
@@ -167,15 +167,15 @@ Durch dynamische Paketerstellung wird der Livedatenstrom in das angegebene Proto
 
 Eine Streaming-URL, mit der Sie Smooth Streaming-Medienobjekte wiedergeben können, weist standardmäßig das folgende Format auf:
 
-	{streaming endpoint name-media services account name}.streaming.mediaservices.windows.net/{locator ID}/{filename}.ism/Manifest
+{Streamingendpunktname-Media Services-Kontoname}.streaming.mediaservices.windows.net/{Locator-ID}/{Dateiname}.ism/Manifest
 
-Um eine HLS-Streaming-URL zu erstellen, fügen Sie "(format=m3u8-aapl)" an die URL an.
+Um eine HLS-Streaming-URL zu erstellen, fügen Sie „(format=m3u8-aapl)“ an die URL an.
 
-	{streaming endpoint name-media services account name}.streaming.mediaservices.windows.net/{locator ID}/{filename}.ism/Manifest(format=m3u8-aapl)
+{Streamingendpunktname-Media Services-Kontoname}.streaming.mediaservices.windows.net/{Locator-ID}/{Dateiname}.ism/Manifest(Format=m3u8-aapl)
 
 Um eine MPEG DASH-Streaming-URL zu erstellen, fügen Sie „(format=mpd-time-csf)“ an die URL an.
 
-	{streaming endpoint name-media services account name}.streaming.mediaservices.windows.net/{locator ID}/{filename}.ism/Manifest(format=mpd-time-csf)
+{Streamingendpunktname-Media Services-Kontoname}.streaming.mediaservices.windows.net/{Locator-ID}/{Dateiname}.ism/Manifest(Format=mpd-time-csf)
 
 Weitere Informationen zum Bereitstellen von Inhalten finden Sie unter [Bereitstellen von Inhalten](media-services-deliver-content-overview.md).
 
@@ -205,11 +205,11 @@ Wenn dieses Thema nicht die erwarteten Informationen enthält, Informationen feh
 
 
 ## Zusätzliche Ressourcen
-- [Erste Schritte zum Livestreaming mithilfe des Azure-Verwaltungsportals](http://azure.microsoft.com/blog/getting-started-with-live-streaming-using-the-azure-management-portal/) (in englischer Sprache)
+- [Erste Schritte zum Livestreaming mithilfe des klassischen Azure-Portals](http://azure.microsoft.com/blog/getting-started-with-live-streaming-using-the-azure-management-portal/) (in englischer Sprache)
 
 <!-- URLs. -->
-[Azure portal]: http://manage.windowsazure.com/
+[Azure Classic Portal]: http://manage.windowsazure.com/
 
 <!-- Images -->
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

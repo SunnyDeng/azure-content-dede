@@ -14,10 +14,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/03/2015"
+   ms.date="11/20/2015"
    ms.author="joaoma" />
 
-#Erste Schritte zum Erstellen eines Load Balancers mit Internetzugriff (klassisch) im Vorschauportal
+# Erste Schritte zum Erstellen eines Load Balancers mit Internetzugriff (klassisch) im Vorschauportal
 
 [AZURE.INCLUDE [Load-Balancer-Get-Started-Internet-Classic-Selectors-include.MD](../../includes/load-balancer-get-started-internet-classic-selectors-include.md)]
 
@@ -30,7 +30,7 @@
 
 
 
-## Erstellen eines Load Balancer-Endpunkts mithilfe des Vorschauportals	
+## Erste Schritte zum Erstellen eines Load Balancer-Endpunkts mithilfe des Vorschauportals	
 
 Führen Sie zum Erstellen eines (klassischen) Load Balancer-Bereitstellungsmodells mit Internetzugriff im Vorschauportal die folgenden Schritte aus:
 
@@ -66,4 +66,4 @@ Führen Sie zum Erstellen eines (klassischen) Load Balancer-Bereitstellungsmodel
 
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

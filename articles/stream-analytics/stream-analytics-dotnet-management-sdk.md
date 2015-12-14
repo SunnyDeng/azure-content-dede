@@ -365,4 +365,4 @@ Sie haben nun die Grundlagen der Verwendung eines .NET SDK zum Erstellen und Aus
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

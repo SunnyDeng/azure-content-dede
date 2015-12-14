@@ -39,7 +39,7 @@ Vergewissern Sie sich vor dem Ausführen der Anweisungen dieses Power BI-Tutori
 	- Das Demokonto ist mit den Daten zu Vulkanen gefüllt, die in diesem Tutorial enthalten sind. Für dieses Demokonto gelten keine SLAs, und es dient nur zur Demonstration. Wir behalten uns das Recht vor, Änderungen an diesem Demokonto vorzunehmen, dazu gehören u. a. das Kündigen des Kontos, das Ändern des Schlüssels, das Einschränken des Zugriffs, das Ändern und Löschen der Daten sowie weitere Änderungen, jederzeit und ohne Vorankündigung oder Grund. 
 		- URL: https://analytics.documents.azure.com
 		- Schlüssel mit Leseberechtigung: MSr6kt7Gn0YRQbjd6RbTnTt7VHc5ohaAFu7osF0HdyQmfR+YhwCH2D2jcczVIR1LNK3nMPNBD31losN7lQ/fkw==
-	- Sie können aber auch ein eigenes Konto erstellen. Weitere Informationen finden Sie unter [Erstellen eines DocumentDB-Datenbankkontos über das Azure-Vorschauportal](https://azure.microsoft.com/documentation/articles/documentdb-create-account/). Um anschließend Beispieldaten zu Vulkanen abzurufen, die den in diesem Tutorial verwendeten ähneln (aber keine GeoJSON-Blöcke enthalten), besuchen Sie die [NOAA-Website](https://www.ngdc.noaa.gov/nndc/struts/form?t=102557&s=5&d=5) (in englischer Sprache), und importieren Sie dann die Daten mithilfe des [DocumentDB-Datenmigrationstools](https://azure.microsoft.com/documentation/articles/documentdb-import-data/).
+	- Sie können aber auch ein eigenes Konto erstellen. Weitere Informationen finden Sie unter [Erstellen eines DocumentDB-Datenbankkontos über das Azure-Portal](https://azure.microsoft.com/documentation/articles/documentdb-create-account/). Um anschließend Beispieldaten zu Vulkanen abzurufen, die den in diesem Tutorial verwendeten ähneln (aber keine GeoJSON-Blöcke enthalten), besuchen Sie die [NOAA-Website](https://www.ngdc.noaa.gov/nndc/struts/form?t=102557&s=5&d=5) (in englischer Sprache), und importieren Sie dann die Daten mithilfe des [DocumentDB-Datenmigrationstools](https://azure.microsoft.com/documentation/articles/documentdb-import-data/).
 
 
 Zum Freigeben von Berichten in PowerBI.com müssen Sie über ein Konto in PowerBI.com verfügen. Weitere Informationen zur kostenlosen Power BI-Version und zu Power BI Pro erhalten Sie unter [https://powerbi.microsoft.com/pricing](https://powerbi.microsoft.com/pricing).
@@ -86,7 +86,7 @@ Sind Sie bereit, es zu versuchen? Lassen Sie uns anfangen.
 
 	![Power BI Desktop – Datenabruf](./media/documentdb-powerbi-visualize/power_bi_connector_pbigetdata.png)
 
-6. Geben Sie die Endpunkt-URL des DocumentDB-Kontos an, von dem Sie die Daten abrufen möchten, wie unten dargestellt, und klicken Sie dann auf **OK**. Sie können die URL aus dem URI-Feld auf dem Blatt **Schlüssel** des Azure-Vorschauportals nutzen, oder Sie können die oben angegebenen Informationen für das Demokonto verwenden. Weitere Informationen finden Sie unter [Schlüssel](documentdb-manage-account.md#keys).
+6. Geben Sie die Endpunkt-URL des DocumentDB-Kontos an, von dem Sie die Daten abrufen möchten, wie unten dargestellt, und klicken Sie dann auf **OK**. Sie können die URL aus dem URI-Feld auf dem Blatt **Schlüssel** des Azure-Portals nutzen, oder Sie können die oben angegebenen Informationen für das Demokonto verwenden. Weitere Informationen finden Sie unter [Schlüssel](documentdb-manage-account.md#keys).
 
 
 	*Hinweis: In diesem Tutorial geben wir keinen Datenbanknamen, Sammlungsnamen bzw. keine SQL-Anweisung an, da diese Felder optional sind. Stattdessen verwenden wir den Navigator zum Auswählen der Datenbank und der Sammlung, um zu bestimmen, woher die Daten stammen.*
@@ -95,7 +95,7 @@ Sind Sie bereit, es zu versuchen? Lassen Sie uns anfangen.
 
 7. Wenn Sie zum ersten Mal eine Verbindung mit diesem Endpunkt herstellen, werden Sie aufgefordert, den Kontoschlüssel anzugeben. Geben Sie den Kontoschlüssel an, und klicken Sie auf **Verbinden**.
 	
-	*Hinweis: Es wird empfohlen, den Schlüssel mit Leseberechtigung beim Erstellen von Berichten zu verwenden. Dadurch wird verhindert, dass der Hauptschlüssel unnötig potenziellen Sicherheitsrisiken ausgesetzt wird. Der Schlüssel mit Leseberechtigung ist auf dem Blatt „Schlüssel mit Leseberechtigung“ des Azure-Vorschauportals verfügbar. Alternativ können Sie die oben angegebenen Informationen für das Demokonto verwenden.*
+	*Hinweis: Es wird empfohlen, den Schlüssel mit Leseberechtigung beim Erstellen von Berichten zu verwenden. Dadurch wird verhindert, dass der Hauptschlüssel unnötig potenziellen Sicherheitsrisiken ausgesetzt wird. Der Schlüssel mit Leseberechtigung ist auf dem Blatt „Schlüssel mit Leseberechtigung“ des Azure-Portals verfügbar. Alternativ können Sie die oben angegebenen Informationen für das Demokonto verwenden.*
 
     ![Power BI Desktop – Kontoschlüssel](./media/documentdb-powerbi-visualize/power_bi_connector_pbidocumentdbkey.png)
 
@@ -194,4 +194,4 @@ Zum Freigeben des Berichts müssen Sie über ein Konto in PowerBI.com verfügen.
 - Weitere Informationen zu Power BI erhalten Sie [hier](https://support.powerbi.com/knowledgebase).
 - Um weitere Informationen zu DocumentDB zu erhalten, klicken Sie [hier](https://azure.microsoft.com/documentation/services/documentdb/).
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

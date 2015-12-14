@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="09/15/2015"
+   ms.date="12/02/2015"
    ms.author="v-sharos" />
 
 # Anzeigen und Verwalten von StorSimple-Warnungen mithilfe des StorSimple Manager-Diensts
@@ -151,7 +151,7 @@ Wenn die Cloudverbindung für das StorSimple-Gerät in der Produktion ausfällt,
 	Abhängig von der Menge der Daten in den lokalen Schichten des Geräts werden innerhalb der ersten Stunden nach der Unterbrechung der Cloudverbindung auch Schreibvorgänge weiterhin ausgeführt. Die Schreibvorgänge werden dann langsamer, und es treten erste Fehler auf, wenn die Cloudverbindung für mehrere Stunden getrennt ist.
 
  
-- **Für die in der Cloud gespeicherten Daten**: Für die meisten Cloudverbindungsfehler wird eine Fehlermeldung zurückgegeben. Sobald die Verbindung wiederhergestellt ist, werden die EA-Vorgänge wieder aufgenommen, ohne dass der Benutzer das Volume online schalten muss. In seltenen Fällen ist unter Umständen ein Benutzereingriff erforderlich, um das Volume aus dem Azure-Portal wieder online zu schalten.
+- **Für die in der Cloud gespeicherten Daten**: Für die meisten Cloudverbindungsfehler wird eine Fehlermeldung zurückgegeben. Sobald die Verbindung wiederhergestellt ist, werden die EA-Vorgänge wieder aufgenommen, ohne dass der Benutzer das Volume online schalten muss. In seltenen Fällen ist unter Umständen ein Benutzereingriff erforderlich, um das Volume aus dem klassischen Azure-Portal wieder online zu schalten.
  
 - **Für aktuell ausgeführte Cloudmomentaufnahmen**: Der Vorgang wird innerhalb von 4–5 Stunden mehrfach erneut versucht, und wenn die Verbindung nicht wiederhergestellt wird, tritt ein Fehler bei den Cloudmomentaufnahmen auf.
 
@@ -234,4 +234,4 @@ Wenn die Cloudverbindung für das StorSimple-Gerät in der Produktion ausfällt,
 - Weitere Informationen zu [StorSimple-Fehlern](storsimple-troubleshoot-operational-device.md).
 - Erfahren Sie mehr zum [Verwenden Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

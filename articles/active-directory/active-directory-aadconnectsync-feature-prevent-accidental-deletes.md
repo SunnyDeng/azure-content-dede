@@ -16,7 +16,7 @@
    ms.date="10/20/2015"
    ms.author="andkjell"/>
 
-# Verhindern von versehentlichen Löschungen
+# Azure AD Connect-Synchronisierung: Verhindern von versehentlichen Löschvorgängen
 In diesem Thema wird die Funktion zum Verhindern von versehentlichen Löschungen (Verhindern versehentlicher Löschvorgänge) in Azure AD Connect beschrieben.
 
 Bei der Installation von Azure AD Connect wird die Funktion zum Schutz vor unbeabsichtigtem Löschen standardmäßig aktiviert und so konfiguriert, das Exporte mit mehr als 500 Löschungen unterbunden werden. Diese Funktion dient zum Schutz vor unbeabsichtigten Konfigurationsänderungen und Änderungen an Ihrem lokalen Verzeichnis, die sich auf eine große Anzahl von Benutzern auswirken würden.
@@ -48,4 +48,4 @@ Weitere Informationen zur Konfiguration der [Azure AD Connect-Synchronisierung](
 
 Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

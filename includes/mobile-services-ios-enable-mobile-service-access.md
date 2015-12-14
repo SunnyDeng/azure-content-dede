@@ -27,7 +27,7 @@ Ersetzen Sie diesen Kommentar durch die folgende Zeile in der `@interface`-Dekla
 ```
 
 
-* Klicken Sie im Verwaltungsportal auf **Mobile Dienste** und dann auf Ihren mobilen Dienst. Klicken Sie auf die Registerkarte **Dashboard**, und notieren Sie sich die **Site-URL**. Klicken Sie dann auf **Schlüssel verwalten** und notieren Sie den **Anwendungsschlüssel**. Sie benötigen diese Werte beim Zugriff auf den mobilen Dienst von Ihrem App-Code aus.
+* Klicken Sie im [klassischen Azure-Portal](https://manage.windowsazure.com/) auf **Mobile Services** und dann auf den mobilen Dienst. Klicken Sie auf die Registerkarte **Dashboard**, und notieren Sie sich die **Site-URL**. Klicken Sie dann auf **Schlüssel verwalten** und notieren Sie den **Anwendungsschlüssel**. Sie benötigen diese Werte beim Zugriff auf den mobilen Dienst von Ihrem App-Code aus.
 
 
 * Suchen Sie in **TodoService.m** die folgende Zeile:
@@ -146,4 +146,4 @@ Ersetzen Sie den Text der Methode ab diesem Punkt bis zum Methodenende durch den
 }
 ```
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

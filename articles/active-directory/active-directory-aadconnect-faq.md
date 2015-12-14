@@ -13,10 +13,10 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/16/2015"
+	ms.date="12/02/2015"
 	ms.author="billmath"/>
 
-# Häufig gestellte Fragen zu Azure Active Directory Connect
+# Häufig gestellte Fragen zu Azure AD Connect
 
 ## Allgemeine Installation
 **F: Ist die Installation möglich, wenn der globale Azure AD-Administrator 2FA aktiviert hat?**
@@ -90,4 +90,4 @@ Nein. Da bei dieser Option nicht alle Einstellungen abgerufen werden, sollte sie
 
 - Verwenden Sie diesen Link, um Support über das Azure-Portal zu erhalten.
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

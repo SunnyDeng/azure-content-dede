@@ -95,9 +95,9 @@ Zum Vereinfachen dieses Prozesses wird ein Satz mit [Codebeispielen](https://git
 **Voraussetzungen**
 
 * Visual Studio 2013 oder höher
-* [Azure SDK für .NET](https://azure.microsoft.com/de-DE/downloads/)
+* [Azure SDK für .NET](https://azure.microsoft.com/downloads/)
 * Windows-Computer, der die Verwendung von ASP.NET Framework 4.5 als SCIM-Endpunkt unterstützt. Auf diesen Computer muss aus der Cloud zugegriffen werden können.
-* [Azure-Abonnement mit Testversion oder lizenzierter Version von Azure AD Premium](https://azure.microsoft.com/de-DE/services/active-directory/)
+* [Azure-Abonnement mit Testversion oder lizenzierter Version von Azure AD Premium](https://azure.microsoft.com/services/active-directory/)
 * Für das Amazon AWS-Beispiel sind Bibliotheken aus dem [AWS Toolkit für Visual Studio](http://docs.aws.amazon.com/AWSToolkitVS/latest/UserGuide/tkv_setup.html) erforderlich. Weitere Details finden Sie in der INFODATEI des Beispiels.
 
 ###Erste Schritte
@@ -692,4 +692,4 @@ In der Abbildung unten sind die Nachrichten dargestellt, die von Azure Active Di
 [4]: ./media/active-directory-scim-provisioning/scim-figure-4.PNG
 [5]: ./media/active-directory-scim-provisioning/scim-figure-5.PNG
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

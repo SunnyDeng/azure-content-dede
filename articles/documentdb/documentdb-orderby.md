@@ -131,7 +131,7 @@ Sehen Sie sich dieses [Github-Beispielprojekt](https://github.com/Azure/azure-do
 
 Zukünftige Dienstaktualisierungen erweitern die hier eingeführte "Order By"-Unterstützung. Wir arbeiten an den folgenden Hinzufügungen und priorisieren die Veröffentlichung dieser Verbesserungen anhand Ihres Feedbacks:
 
-- Dynamische Indizierungsrichtlinien: Unterstützung des Änderns der Indizierungsrichtlinie nach der Erstellung der Sammlung und im Azure-Portal.
+- Dynamische Indizierungsrichtlinien: Unterstützung des Änderns der Indizierungsrichtlinie nach der Erstellung der Sammlung und im klassischen Azure-Portal.
 - Unterstützung für zusammengesetzte Indizes für ein effizienteres "Order By" und für "Order By" für mehrere Eigenschaften.
 
 ## Häufig gestellte Fragen
@@ -177,4 +177,4 @@ Verwenden Sie das [Github-Beispielprojekt](https://github.com/Azure/azure-docume
 * [DocumentDB-"Order By"-Beispiele](https://github.com/Azure/azure-documentdb-net/tree/master/samples/code-samples/Queries.OrderBy)
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

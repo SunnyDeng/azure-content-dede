@@ -142,7 +142,7 @@ Zunächst müssen Sie einige Werte in PowerShell festlegen, die Sie später beim
 
 1. Unabhängig davon, welches Verfahren Sie verwenden möchten, erstellen Sie ein X509Certificate-Objekt aus Ihrem Zertifikat, und rufen Sie den Schlüsselwert ab. Verwenden Sie den Pfad zu Ihrem Zertifikat und das Kennwort für das Zertifikat.
 
-        $cert = New-Object System.Security.Cryptography.X509Certificates.X509Certificate("C:\certificates\examplecert.pfx", "yourpassword")
+        $cert = New-Object -TypeName System.Security.Cryptography.X509Certificates.X509Certificate -ArgumentList @("C:\certificates\examplecert.pfx", "yourpassword")
         $keyValue = [System.Convert]::ToBase64String($cert.GetRawCertData())
 
 2. Wenn Sie Schlüsselanmeldeinformationen verwenden, erstellen Sie das Objekt für diese Informationen, und legen Sie den Wert für dieses Objekt auf den `$keyValue`-Wert aus dem vorherigen Schritt fest.
@@ -312,4 +312,4 @@ In diesem Abschnitt führen Sie die Schritte zum Erstellen eines Dienstprinzipal
 <!-- Images. -->
 [1]: ./media/resource-group-authenticate-service-principal/arm-get-credential.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

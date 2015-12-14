@@ -198,7 +198,6 @@ Folgen Sie diesen Links, wenn Sie mehr über Python Tools für Visual Studio, Dj
 
 ## Änderungen
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
 
 
 <!--Link references-->
@@ -220,4 +219,4 @@ Folgen Sie diesen Links, wenn Sie mehr über Python Tools für Visual Studio, Dj
 [Dokumentation zu Django]: https://www.djangoproject.com/
 [SQL-Datenbank]: /documentation/services/sql-database/
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

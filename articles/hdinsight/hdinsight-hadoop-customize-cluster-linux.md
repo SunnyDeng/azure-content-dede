@@ -42,7 +42,7 @@ Jeder Cluster unterstützt mehrere Skriptaktionen, die in der angegebenen Reihen
 
 ## Script Action-Beispielskripts
 
-Skriptaktionsskripts können über das Azure-Vorschauportal, Azure PowerShell oder das HDInsight .NET SDK genutzt werden. Dieser Artikel beschreibt, wie die Skriptaktion im Portal verwendet wird. Sehen Sie sich die Beispiele in der folgenden Tabelle an, um zu erfahren, wie Sie PowerShell und das .NET SDK für die Verwendung der Skriptaktion nutzen.
+Skriptaktionskripts können über das Azure-Portal, Azure PowerShell oder das HDInsight .NET SDK genutzt werden. Dieser Artikel beschreibt, wie die Skriptaktion im Portal verwendet wird. Sehen Sie sich die Beispiele in der folgenden Tabelle an, um zu erfahren, wie Sie PowerShell und das .NET SDK für die Verwendung der Skriptaktion nutzen.
 
 HDInsight verfügt über mehrere Skripts zum Installieren der folgenden Komponenten auf HDInsight-Clustern:
 
@@ -54,7 +54,7 @@ Name | Skript
 **Installieren von Solr** | https://hdiconfigactions.blob.core.windows.net/linuxsolrconfigactionv01/solr-installer-v01.sh. Siehe [Installieren und Verwenden von Solr in HDInsight-Clustern](hdinsight-hadoop-solr-install-linux.md).
 **Installieren von Giraph** | https://hdiconfigactions.blob.core.windows.net/linuxgiraphconfigactionv01/giraph-installer-v01.sh. Siehe [Installieren und Verwenden von Giraph in HDInsight-Clustern](hdinsight-hadoop-giraph-install-linux.md).
 
-## Verwenden einer Skriptaktion über das Azure-Vorschauportal
+## Verwenden einer Skriptaktion über das Azure-Portal
 
 1. Beginnen Sie mit dem Erstellen eines Clusters, wie unter [Erstellen von Hadoop-Clustern in HDInsight](hdinsight-provision-clusters.md#portal) beschrieben.
 
@@ -512,12 +512,9 @@ Wenn die Erstellung des Clusters aufgrund eines Fehlers der Skriptaktion fehlges
 
 	![Screenshot von Vorgängen](./media/hdinsight-hadoop-customize-cluster-linux/script_action_logs_in_storage.png)
 
-	Hier sind die Protokolle separat für Hauptknoten, Workerknoten und zookeeper-Knoten aufgeführt. Beispiele hierfür sind:
-	* **Headnode** – `<uniqueidentifier>AmbariDb-hn0-<generated_value>.cloudapp.net`
-	* **Worker-Knoten** – `<uniqueidentifier>AmbariDb-wn0-<generated_value>.cloudapp.net`
-	* **Zookeeper-Knoten** – `<uniqueidentifier>AmbariDb-zk0-<generated_value>.cloudapp.net`
+	Hier sind die Protokolle separat für Hauptknoten, Workerknoten und zookeeper-Knoten aufgeführt. Beispiele hierfür sind: * **Headnode** – `<uniqueidentifier>AmbariDb-hn0-<generated_value>.cloudapp.net` * **Worker-Knoten** – `<uniqueidentifier>AmbariDb-wn0-<generated_value>.cloudapp.net` * **Zookeeper-Knoten** – `<uniqueidentifier>AmbariDb-zk0-<generated_value>.cloudapp.net`
 
-* Alle stdout- und stderr-Elemente des entsprechenden Hosts werden in das Speicherkonto hochgeladen. Für jede Skriptaktion liegen die Dateien **output-*.txt** und  **errors-\*.txt** vor. Die Datei „output-*.txt“ enthält Informationen zum URI des Skripts, das auf dem Host ausgeführt wurde. Beispiel:
+* Alle stdout- und stderr-Elemente des entsprechenden Hosts werden in das Speicherkonto hochgeladen. Für jede Skriptaktion liegen die Dateien **output-*.txt** und **errors-*.txt** vor. Die Datei „output-*.txt“ enthält Informationen zum URI des Skripts, das auf dem Host ausgeführt wurde. Beispiel:
 
 		'Start downloading script locally: ', u'https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-installer-v01.sh'
 
@@ -568,4 +565,4 @@ Informationen und Beispiele zum Erstellen und Verwenden von Skripts zum Anpassen
 
 [img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster-linux/HDI-Cluster-state.png "Phasen während der Clustererstellung"
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

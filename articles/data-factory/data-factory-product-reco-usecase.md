@@ -52,7 +52,7 @@ Schließlich wird das Resultset der personalisierten Produktempfehlungen in eine
 
 ## Vorteile
 
-Durch Optimieren ihrer Produktempfehlungsstrategie und deren Ausrichtung auf Unternehmensziele erfüllt die Lösung die Verkaufsförderungs- und Marketingziele des Onlinehändlers. Darüber hinaus kann das Unternehmen den Workflow für Produktempfehlungen nun effizient, zuverlässig und wirtschaftlich betreiben und verwalten. Das Modell kann mühelos aktualisiert und seine Effektivität basierend auf den Kennzahlen für die Kundengewinnung und -bindung optimiert werden. Mithilfe von Azure Data Factory konnte der Onlinehändler von seiner zeitaufwändigen und kostspieligen manuellen Cloudressourcenverwaltung zu einer bedarfsgesteuerten Lösung wechseln, wodurch Zeit und Geld gespart und die Zeit bis zur Lösungsbereitstellung verkürzt werden. Ansichten der Datenherkunft und Integrität von Diensten lassen sich dank der intuitiven Data Factory-Benutzeroberfläche für Überwachung und Verwaltung im Azure-Portal einfach visualisieren. Die Lösung kann nun so geplant und verwaltet werden, dass einsatzbereite Daten zuverlässig erzeugt und den Benutzern bereitgestellt werden. Zudem werden Daten- und Verarbeitungsabhängigkeiten ohne Administratoreingriffe automatisch verwaltet.
+Durch Optimieren ihrer Produktempfehlungsstrategie und deren Ausrichtung auf Unternehmensziele erfüllt die Lösung die Verkaufsförderungs- und Marketingziele des Onlinehändlers. Darüber hinaus kann das Unternehmen den Workflow für Produktempfehlungen nun effizient, zuverlässig und wirtschaftlich betreiben und verwalten. Das Modell kann mühelos aktualisiert und seine Effektivität basierend auf den Kennzahlen für die Kundengewinnung und -bindung optimiert werden. Mithilfe von Azure Data Factory konnte der Onlinehändler von seiner zeitaufwändigen und kostspieligen manuellen Cloudressourcenverwaltung zu einer bedarfsgesteuerten Lösung wechseln, wodurch Zeit und Geld gespart und die Zeit bis zur Lösungsbereitstellung verkürzt werden. Ansichten der Datenherkunft und Integrität von Diensten lassen sich dank der intuitiven Data Factory-Benutzeroberfläche für Überwachung und Verwaltung im klassischen Azure-Portal einfach visualisieren. Die Lösung kann nun so geplant und verwaltet werden, dass einsatzbereite Daten zuverlässig erzeugt und den Benutzern bereitgestellt werden. Zudem werden Daten- und Verarbeitungsabhängigkeiten ohne Administratoreingriffe automatisch verwaltet.
 
 Durch die Bereitstellung dieses personalisierten Einkaufserlebnisses hat der Onlinehändler eine wettbewerbsfähigere, ansprechende Kundenerfahrung geschaffen, die zu mehr Umsatz und höherer Kundenzufriedenheit geführt hat.
 
@@ -60,4 +60,4 @@ Durch die Bereitstellung dieses personalisierten Einkaufserlebnisses hat der Onl
 
   
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

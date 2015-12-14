@@ -205,7 +205,7 @@ Wenn Clientbrowser immer wieder auf Long Polling zurückfallen und WebSockets ni
 
 	Dadurch wird das Modul "IIS WebSockets" deaktiviert, das eine eigene Implementierung von WebSockets aufweist und Konflikte mit Node.js- spezifischen WebSocket-Modulen wie z. B. Socket.IO verursacht. Wenn diese Zeile nicht vorhanden ist oder auf `true` festgelegt ist, ist dies möglicherweise der Grund, warum der WebSocket-Transport für Ihre Anwendung nicht funktioniert.
 
-	Normalerweise enthalten Node.js-Anwendungen keine **web.config**-Datei, sodass Azure-Websites eine solche Datei für Node.js-Anwendungen bei deren Bereitstellung automatisch generieren. Da diese Datei automatisch auf dem Server generiert wird, müssen Sie die FTP- oder FTPS-URL für Ihre Website zur Anzeige der Datei verwenden. Die FTP- und FTPS-URLs für Ihre Website können Sie im Azure-Verwaltungsportal einsehen, indem Sie Ihre Website und dann den Link **Dashboard** auswählen. Die URLs werden im Bereich **Auf einen Blick** angezeigt.
+	Normalerweise enthalten Node.js-Anwendungen keine **web.config**-Datei, sodass Azure-Websites eine solche Datei für Node.js-Anwendungen bei deren Bereitstellung automatisch generieren. Da diese Datei automatisch auf dem Server generiert wird, müssen Sie die FTP- oder FTPS-URL für Ihre Website zur Anzeige der Datei verwenden. Die FTP- und FTPS-URLs für Ihre Website können Sie im klassischen Portal einsehen, indem Sie Ihre Web-App und dann den Link **Dashboard** auswählen. Die URLs werden im Bereich **Auf einen Blick** angezeigt.
 
 	> [AZURE.NOTE]Die Datei **web.config** wird von Azure-Websites nur generiert, wenn sie von Ihrer Anwendung nicht bereitstellt wird. Wenn Sie eine Datei **web.config** im Stammverzeichnis Ihres Anwendungsprojekts bereitstellen, wird diese von Azure-Web-Apps verwendet.
 
@@ -285,4 +285,4 @@ Weitere Informationen finden Sie außerdem im [Node.js Developer Center](/develo
 [pricing]: /pricing/details/web-sites/
  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

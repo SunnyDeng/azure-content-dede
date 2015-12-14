@@ -21,7 +21,7 @@
 # Bereitstellen eines virtuellen Computers mit SQL Server in Azure
 
 > [AZURE.SELECTOR]
-- [Azure portal](virtual-machines-provision-sql-server.md)
+- [Azure classic portal](virtual-machines-provision-sql-server.md)
 - [PowerShell](virtual-machines-sql-server-create-vm-with-powershell.md)
 
 ## Übersicht
@@ -32,7 +32,7 @@ In der Galerie der virtuellen Computer von Azure sind verschiedene Images zu fin
 
 In diesem Lernprogramm lernen Sie Folgendes:
 
-* [Herstellen einer Verbindung mit dem Azure-Portal und Bereitstellen eines virtuellen Computers aus dem Katalog](#Provision)
+* [Herstellen einer Verbindung mit dem klassischen Azure-Portal und Bereitstellen eines virtuellen Computers aus dem Katalog](#Provision)
 * [Öffnen des virtuellen Computers mithilfe von Remotedesktop und vollständige Einrichtung](#RemoteDesktop)
 * [Fertigstellen der Konfigurationsschritte, um mithilfe von SQL Server Management Studio auf einem anderen Computer eine Verbindung zum virtuellen Computer herzustellen](#SSMS)
 * [Nächste Schritte](#Optional)
@@ -41,9 +41,9 @@ In diesem Lernprogramm lernen Sie Folgendes:
 
 ##<a id="Provision">Bereitstellen eines virtuellen SQL Server-Computers aus dem Katalog</a>
 
-1. Melden Sie sich mit Ihrem Konto beim [Azure-Portal](http://manage.windowsazure.com) an. Wenn Sie kein Azure-Konto haben, sollten Sie die Seite [Kostenlose einmonatige Testversion](http://azure.microsoft.com/pricing/free-trial/) besuchen.
+1. Melden Sie sich mit Ihrem Konto beim [klassischen Azure-Portal](http://manage.windowsazure.com) an. Wenn Sie kein Azure-Konto haben, sollten Sie die Seite [Kostenlose einmonatige Testversion](http://azure.microsoft.com/pricing/free-trial/) besuchen.
 
-2. Klicken Sie im Azure-Portal unten links auf der Webseite auf **+NEU**, und klicken Sie dann nacheinander auf **COMPUTE**, auf **VIRTUELLER COMPUTER** und dann auf **AUS KATALOG**.
+2. Klicken Sie im klassischen Azure-Portal unten links auf der Webseite auf **+NEU**, und klicken Sie dann nacheinander auf **COMPUTE**, auf **VIRTUELLER COMPUTER** und dann auf **AUS KATALOG**.
 
 3. Klicken Sie auf der Seite **Image auswählen** auf **SQL SERVER**. Wählen Sie dann ein SQL Server-Image aus. Klicken Sie am unteren rechten Rand der Seite auf den Pfeil "Weiter".
 
@@ -77,7 +77,7 @@ Aktuelle Informationen zu den unterstützten SQL Server-Images in Azure finden S
 	- Wählen Sie im Feld **Clouddienst** die Option **Einen neuen Clouddienst erstellen** aus.
 	- Geben Sie im Feld **DNS-Name des Clouddiensts** den ersten Teil eines DNS-Namens Ihrer Wahl ein, sodass insgesamt ein Name des Formats **TESTNAME.cloudapp.net** entsteht. 
 	- Wählen Sie ein **ABONNEMENT** aus, wenn Sie über mehrere Abonnements verfügen. Die Auswahl bestimmt, welche **Speicherkonten** verfügbar sind.
-	- Wählen Sie im Feld **REGION/AFFINITY GROUP/VIRTUAL NETWORK** eine Region aus, in der dieses virtuelle Image gehostet wird.
+- Wählen Sie im Feld **REGION/AFFINITY GROUP/VIRTUAL NETWORK** eine Region aus, in der dieses virtuelle Image gehostet wird.
 	- Erstellen Sie in **Speicherkonto** automatisch ein Konto, oder wählen Sie ein Konto aus der Liste aus. Ändern Sie das **ABONNEMENT**, um weitere Konten anzuzeigen. 
 	- Wählen Sie im Feld **AVAILABILITY SET** den Eintrag **(none)**.
 	- Lesen Sie sich die Bedingungen durch, und bestätigen Sie diese.
@@ -155,4 +155,4 @@ Die folgende Liste enthält zusätzliche Ressourcen für SQL Server auf virtuell
 
 - [Anwendungsmuster und Entwicklungsstrategien für SQL Server auf Azure Virtual Machines](virtual-machines-sql-server-application-patterns-and-development-strategies.md)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Erstellen von SharePoint-Serverfarmen | Microsoft Azure"
-	description="Erstellen Sie im Marketplace des Azure-Vorschauportals schnell eine neue grundlegende oder hoch verfügbare SharePoint Server 2013-Farm."
+	description="Erstellen Sie im Marketplace des Azure-Portals schnell eine neue grundlegende oder hoch verfügbare SharePoint Server 2013-Farm."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="JoeDavies-MSFT"
@@ -21,9 +21,9 @@
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]klassisches Modell.
 
-Mit dem Marketplace im Microsoft Azure-Vorschauportal können Sie schnell eine vorkonfigurierte SharePoint Server 2013-Farm erstellen. Damit können Sie viel Zeit sparen, wenn Sie eine grundlegende oder hochverfügbare SharePoint-Farm für eine Test- oder Entwicklungsumgebung benötigen oder wenn Sie SharePoint Server 2013 als Zusammenarbeitslösung für Ihre Organisation bewerten möchten.
+Mit dem Marketplace im Microsoft Azure-Portal können Sie schnell eine vorkonfigurierte SharePoint Server 2013-Farm erstellen. Damit können Sie viel Zeit sparen, wenn Sie eine grundlegende oder hochverfügbare SharePoint-Farm für eine Test- oder Entwicklungsumgebung benötigen oder wenn Sie SharePoint Server 2013 als Zusammenarbeitslösung für Ihre Organisation bewerten möchten.
 
-> [AZURE.NOTE]Das Element **SharePoint-Serverfarm** wurde aus dem Azure Marketplace des Azure-Vorschauportals entfernt.
+> [AZURE.NOTE]Das Element **SharePoint-Serverfarm** wurde aus dem Azure Marketplace des Azure-Portals entfernt.
 
 Die grundlegende SharePoint-Farm besteht aus drei virtuellen Computern mit der folgenden Konfiguration:
 
@@ -59,7 +59,7 @@ Sie können die Server dieser Farmen über Remotedesktopverbindungen verwalten. 
 
 Auf der SharePoint-Website für die Zentraladministration können Sie eigene Websites, SharePoint-Anwendungen und andere Funktionen konfigurieren. Weitere Informationen finden Sie unter [Konfigurieren von SharePoint 2013](http://technet.microsoft.com/library/ee836142.aspx).
 
-> [AZURE.NOTE]Das Azure-Vorschauportal erstellt beide Farmen in einem virtuellen Cloudnetzwerk mit einer über das Internet zugänglichen Webpräsenz. Es gibt keine Standort-zu-Standort-VPN- oder ExpressRoute-Verbindung mit Ihrem Unternehmensnetzwerk.
+> [AZURE.NOTE]Das Azure-Portal erstellt beide Farmen in einem virtuellen Cloudnetzwerk mit einer über das Internet zugänglichen Webpräsenz. Es gibt keine Standort-zu-Standort-VPN- oder ExpressRoute-Verbindung mit Ihrem Unternehmensnetzwerk.
 
 ## Zusätzliche Ressourcen
 
@@ -69,4 +69,4 @@ Auf der SharePoint-Website für die Zentraladministration können Sie eigene Web
 
 [Microsoft Azure-Architekturen für SharePoint 2013](https://technet.microsoft.com/library/dn635309.aspx)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

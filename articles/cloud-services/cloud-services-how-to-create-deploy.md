@@ -22,10 +22,10 @@
 # Erstellen und Bereitstellen eines Clouddiensts
 
 > [AZURE.SELECTOR]
-- [Azure Portal](cloud-services-how-to-create-deploy.md)
-- [Azure Preview Portal](cloud-services-how-to-create-deploy-portal.md)
+- [Azure classic portal](cloud-services-how-to-create-deploy.md)
+- [Azure portal](cloud-services-how-to-create-deploy-portal.md)
 
-Das Azure-Portal bietet zwei Methoden zum Erstellen und Bereitstellen eines Clouddiensts: **Schnellerfassung** und **Benutzerdefiniert erstellen**.
+Das klassische Azure-Portall bietet zwei Methoden zum Erstellen und Bereitstellen eines Clouddiensts: **Schnellerfassung** und **Benutzerdefiniert erstellen**.
 
 In diesem Thema wird erläutert, wie Sie die Schnellerfassungsmethode zum Erstellen eines neuen Clouddiensts und dann **Hochladen** verwenden, um ein Clouddienstpaket in Azure hochzuladen und bereitzustellen. Wenn Sie diese Methode verwenden, werden im Azure-Portal praktische Links zum Erfüllen aller Anforderungen zur Verfügung gestellt. Wenn Sie Ihren Clouddienst bei der Erstellung auch bereitstellen möchten, können Sie beides mithilfe von **Benutzerdefinierte Erstellung** durchführen.
 
@@ -61,12 +61,12 @@ Drei Clouddienstfunktionen benötigen vor dem Export eines Dienstpakets speziell
 
 - Falls Rolleninstanzen ein Zertifikat erfordern, erstellen Sie die Zertifikate. Clouddienste erfordern eine PFX-Datei mit einem privaten Schlüssel. Sie können die Zertifikate zu Azure hochladen, wenn Sie den Clouddienst erstellen und bereitstellen. Weitere Informationen zu Zertifikaten finden Sie unter [Verwalten von Zertifikaten](http://msdn.microsoft.com/library/gg981929.aspx).
 
-- Wenn Sie den Clouddienst für eine Affinitätsgruppe bereitstellen möchten, erstellen Sie die Affinitätsgruppe. Sie können eine Affinitätsgruppe verwenden, um den Clouddienst und andere Azure-Dienste für den gleichen Standort in einer Region bereitzustellen. Sie können die Affinitätsgruppe im Bereich **Netzwerke** des Verwaltungsportals auf der Seite **Affinitätsgruppen** erstellen. Weitere Informationen finden Sie unter [Erstellen einer Affinitätsgruppe im Verwaltungsportal](http://msdn.microsoft.com/library/jj156209.aspx).
+- Wenn Sie den Clouddienst für eine Affinitätsgruppe bereitstellen möchten, erstellen Sie die Affinitätsgruppe. Sie können eine Affinitätsgruppe verwenden, um den Clouddienst und andere Azure-Dienste für den gleichen Standort in einer Region bereitzustellen. Sie können die Affinitätsgruppe im Bereich **Netzwerke** des klassischen Azure-Portals auf der Seite **Affinitätsgruppen** erstellen. Weitere Informationen finden Sie unter [Erstellen einer Affinitätsgruppe im klassischen Azure-Portal](http://msdn.microsoft.com/library/jj156209.aspx).
 
 
 ## Erstellen eines Clouddiensts mithilfe der Schnellerfassung
 
-1. Klicken Sie im [Verwaltungsportal](http://manage.windowsazure.com/) auf **Neu**>**Server**>**Cloud-Dienst**>**Schnellerstellung**.
+1. Klicken Sie im [klassischen Azure-Portal](http://manage.windowsazure.com/) auf **Neu**>**Server**>**Cloud-Dienst**>**Schnellerstellung**.
 
 	![CloudServices\_QuickCreate](./media/cloud-services-how-to-create-deploy/CloudServices_QuickCreate.png)
 
@@ -87,7 +87,7 @@ Drei Clouddienstfunktionen benötigen vor dem Export eines Dienstpakets speziell
 
 ## Hochladen eines Zertifikats für einen Clouddienst
 
-1. Klicken Sie im [Azure-Verwaltungsportal](http://manage.windowsazure.com/) auf **Clouddienste** und dann auf den Namen des Clouddiensts, und klicken Sie dann auf **Zertifikate**.
+1. Klicken Sie im [klassischen Azure-Portal](http://manage.windowsazure.com/) auf **Cloud Services**, auf den Namen des Clouddiensts und dann auf **Zertifikate**.
 
 	![CloudServices\_QuickCreate](./media/cloud-services-how-to-create-deploy/CloudServices_EmptyDashboard.png)
 
@@ -108,7 +108,7 @@ Drei Clouddienstfunktionen benötigen vor dem Export eines Dienstpakets speziell
 
 ## Bereitstellen eines Clouddiensts
 
-1. Klicken Sie im [Azure-Verwaltungsportal](http://manage.windowsazure.com/) auf **Clouddienste** und dann auf den Namen des Clouddiensts, und klicken Sie dann auf **Dashboard**.
+1. Klicken Sie im [klassischen Azure-Portal](http://manage.windowsazure.com/) auf **Cloud Services**, auf den Namen des Clouddiensts und dann auf **Dashboard**.
 
 	Das Dashboard wird in der Produktionsumgebung geöffnet. Sie könnten an dieser Stelle "Staging" auswählen, um die Anwendung in der Stagingumgebung bereitzustellen. Weitere Informationen finden Sie unter [Verwalten von Bereitstellungen in Azure](http://msdn.microsoft.com/library/gg433027.aspx).
 
@@ -153,4 +153,4 @@ Drei Clouddienstfunktionen benötigen vor dem Export eines Dienstpakets speziell
 * [Verwalten Ihres Clouddiensts](cloud-services-how-to-manage.md)
 * Konfigurieren von [SSL-Zertifikaten](cloud-services-configure-ssl-certificate.md)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

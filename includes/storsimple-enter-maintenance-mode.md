@@ -1,4 +1,4 @@
-<!--author=SharS last changed: 9/17/15-->
+<!--author=SharS last changed: 12/01/15-->
 
 #### So wechseln Sie in den Wartungsmodus
 
@@ -10,8 +10,8 @@
 
      `Enter-HcsMaintenanceMode`
 
-4. Es wird eine Warnmeldung angezeigt, die Sie darüber informiert, dass durch den Wartungsmodus alle E/A-Anforderungen unterbrochen werden und die Verbindung mit dem Verwaltungsportal getrennt wird. Sie werden aufgefordert, dies zu bestätigen. Geben Sie **J** ein, um den Wartungsmodus zu beginnen.
+4. Es wird eine Warnmeldung angezeigt, die Sie darüber informiert, dass durch den Wartungsmodus alle E/A-Anforderungen unterbrochen werden und die Verbindung mit dem klassischen Azure-Portal getrennt wird. Sie werden aufgefordert, dies zu bestätigen. Geben Sie **J** ein, um den Wartungsmodus zu beginnen.
 
     Beide Controller werden neu gestartet. Wenn der Neustart abgeschlossen ist, wird eine andere Meldung angezeigt, die besagt, dass das Gerät in den Wartungsmodus versetzt wird.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

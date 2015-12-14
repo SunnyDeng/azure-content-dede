@@ -22,8 +22,8 @@
 # Konfigurieren von SSL für eine Anwendung in Azure
 
 > [AZURE.SELECTOR]
-- [Azure Portal](cloud-services-configure-ssl-certificate.md)
-- [Azure Preview Portal](cloud-services-configure-ssl-certificate-portal.md)
+- [Azure classic portal](cloud-services-configure-ssl-certificate.md)
+- [Azure portal](cloud-services-configure-ssl-certificate-portal.md)
 
 Secure Socket Layer (SSL)-Verschlüsselung ist die am häufigsten verwendete Methode zur Sicherung von Daten im Internet. Im Folgenden erfahren Sie, wie Sie einen HTTPS-Endpunkt für eine Webrolle angeben und ein SSL-Zertifikat zur Sicherung Ihrer Anwendung hochladen können.
 
@@ -44,7 +44,7 @@ Das Zertifikat muss die folgenden Anforderungen für SSL-Zertifikate in Azure er
 
 -   Das Zertifikat muss einen privaten Schlüssel enthalten.
 -   Das Zertifikat muss für den Schlüsselaustausch erstellt werden und in eine PFX-Datei (Persönlicher Informationsaustausch) exportiert werden können.
--   Der Name des Antragstellers für das Zertifikat muss der Domäne entsprechen, über die auf den Clouddienst zugegriffen wird. Für die Domäne cloudapp.net können Sie kein SSL-Zertifikat von einer Zertifizierungsstelle beziehen. Sie müssen einen benutzerdefinierten Domänennamen erwerben, den Sie für den Zugriff auf Ihren Dienst verwenden können. Wenn Sie ein Zertifikat von einer Zertifizierungsstelle anfordern, muss der Name des Antragstellers für das Zertifikat der Domäne entsprechen, über die auf Ihre Anwendung zugegriffen wird. Wenn beispielsweise der benutzerdefinierte Domänenname **contoso.com** lautet, fordern Sie von Ihrer Zertifizierungsstelle ein Zertifikat für  **\*.contoso.com** oder **www.contoso.com** an.
+-   Der Name des Antragstellers für das Zertifikat muss der Domäne entsprechen, über die auf den Clouddienst zugegriffen wird. Für die Domäne cloudapp.net können Sie kein SSL-Zertifikat von einer Zertifizierungsstelle beziehen. Sie müssen einen benutzerdefinierten Domänennamen erwerben, den Sie für den Zugriff auf Ihren Dienst verwenden können. Wenn Sie ein Zertifikat von einer Zertifizierungsstelle anfordern, muss der Name des Antragstellers für das Zertifikat der Domäne entsprechen, über die auf Ihre Anwendung zugegriffen wird. Wenn beispielsweise der benutzerdefinierte Domänenname **contoso.com** lautet, fordern Sie von Ihrer Zertifizierungsstelle ein Zertifikat für ****.contoso.com** oder **www.contoso.com** an.
 -   Das Zertifikat muss mindestens eine 2048-Bit-Verschlüsselung haben.
 
 Zu Testzwecken können Sie ein selbst signiertes Zertifikat [erstellen](cloud-services-certs-create.md) und verwenden. Ein selbstsigniertes Zertifikat wird nicht über eine Zertifizierungsstelle authentifiziert. Daher kann in diesem Fall die Domäne cloudapp.net als Website-URL verwendet werden. Zum Beispiel wird in der Aufgabe unten ein selbstsigniertes Zertifikat verwendet, in dem der allgemeine Name, der im Zertifikat verwendet wird, **sslexample.cloudapp.net** lautet.
@@ -114,9 +114,9 @@ Die Definitions- und Konfigurationsdateien für den Dienst wurden aktualisiert. 
 
 ## Schritt 3: Hochladen eines Zertifikats
 
-Ihr Bereitstellungspaket wurde so aktualisiert, dass das Zertifikat verwendet wird. Außerdem wurde ein HTTPS-Endpunkt hinzugefügt. Jetzt können Sie das Paket und das Zertifikat in Azure über das Verwaltungsportal hochladen
+Ihr Bereitstellungspaket wurde so aktualisiert, dass das Zertifikat verwendet wird. Außerdem wurde ein HTTPS-Endpunkt hinzugefügt. Jetzt können Sie das Paket und das Zertifikat in Azure über das klassische Azure-Portal hochladen.
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal][] an. 
+1. Melden Sie sich beim [klassischen Azure-Portal][] an. 
 2. Klicken Sie im linken Navigationsbereich auf **Cloud Services**.
 3. Klicken Sie auf den gewünschten Clouddienst.
 4. Klicken Sie auf die Registerkarte **Zertifikate**.
@@ -131,9 +131,9 @@ Ihr Bereitstellungspaket wurde so aktualisiert, dass das Zertifikat verwendet wi
 
 ## Schritt 4: Herstellen einer Verbindung mit der Rolleninstanz über HTTPS
 
-Jetzt wird die Bereitstellung in Azure ausgeführt und Sie können eine HTTPS-Verbindung herstellen.
+Jetzt wird die Bereitstellung in Azure ausgeführt, und Sie können eine HTTPS-Verbindung herstellen.
 
-1.  Wählen Sie im Verwaltungsportal die Bereitstellung aus, und klicken Sie dann unterhalb der **Website-URL** auf den Link.
+1.  Wählen Sie im klassischen Azure-Portal die Bereitstellung aus, und klicken Sie dann unterhalb der **Website-URL** auf den Link.
 
     ![Website-URL festlegen][2]
 
@@ -143,7 +143,7 @@ Jetzt wird die Bereitstellung in Azure ausgeführt und Sie können eine HTTPS-Ve
 
     ![SSL-Beispielwebsite][3]
 
-Wenn Sie SSL für eine Staging- statt für eine Produktionsbereitstellung verwenden möchten, müssen Sie zuerst die URL festlegen, die für die Stagingbereitstellung verwendet werden soll. Stellen Sie Ihren Clouddienst in der Stagingumgebung bereit, ohne ein Zertifikat oder Zertifikatinformationen hinzuzufügen. Nach der Bereitstellung können Sie die GUID-basierte URL festlegen, die im Verwaltungsportal im Feld **Website-URL** aufgelistet ist. Erstellen Sie ein Zertifikat mit einem allgemeinen Namen, welcher der GUID-basierten URL entspricht (beispielsweise **32818777-6e77-4ced-a8fc-57609d404462.cloudapp.net**). Verwenden Sie das Verwaltungsportal, um das Zertifikat zu Ihrem bereitgestellten Clouddienst hinzuzufügen. Fügen Sie dann die Zertifikatinformationen zu den CSDEF- und CSCFG-Dateien hinzu, erstellen Sie erneut ein Anwendungspaket, und aktualisieren Sie schließlich Ihre Stagingbereitstellung, sodass das neue Paket und die neue CSCFG-Datei verwendet werden.
+Wenn Sie SSL für eine Staging- statt für eine Produktionsbereitstellung verwenden möchten, müssen Sie zuerst die URL festlegen, die für die Stagingbereitstellung verwendet werden soll. Stellen Sie Ihren Clouddienst in der Stagingumgebung bereit, ohne ein Zertifikat oder Zertifikatinformationen hinzuzufügen. Nach der Bereitstellung können Sie die GUID-basierte URL festlegen, die im klassischen Azure-Portal im Feld **Website-URL** aufgelistet ist. Erstellen Sie ein Zertifikat mit einem allgemeinen Namen, welcher der GUID-basierten URL entspricht (beispielsweise **32818777-6e77-4ced-a8fc-57609d404462.cloudapp.net**). Verwenden Sie das klassische Azure-Portal, um das Zertifikat zu Ihrem bereitgestellten Clouddienst hinzuzufügen. Fügen Sie dann die Zertifikatinformationen zu den CSDEF- und CSCFG-Dateien hinzu, erstellen Sie erneut ein Anwendungspaket, und aktualisieren Sie schließlich Ihre Stagingbereitstellung, sodass das neue Paket und die neue CSCFG-Datei verwendet werden.
 
 ## Nächste Schritte
 
@@ -153,11 +153,11 @@ Wenn Sie SSL für eine Staging- statt für eine Produktionsbereitstellung verwen
 * [Verwalten Ihres Clouddiensts](cloud-services-how-to-manage.md)
 
 
-  [Azure-Verwaltungsportal]: http://manage.windowsazure.com
+  [klassischen Azure-Portal]: http://manage.windowsazure.com
   [0]: ./media/cloud-services-configure-ssl-certificate/CreateCloudService.png
   [1]: ./media/cloud-services-configure-ssl-certificate/AddCertificate.png
   [2]: ./media/cloud-services-configure-ssl-certificate/CopyURL.png
   [3]: ./media/cloud-services-configure-ssl-certificate/SSLCloudService.png
   [4]: ./media/cloud-services-configure-ssl-certificate/AddCertificateComplete.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

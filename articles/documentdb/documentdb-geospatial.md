@@ -177,7 +177,7 @@ Räumliche Funktionen können verwendet werden, um Entfernungsabfragen auf räum
       "id": "WakefieldFamily"
     }]
 
-Wenn Sie die räumliche Indizierung in Ihre Indizierungsrichtlinie einschließen, werden "Entfernungsabfragen" effizient über den Index beantwortet. Weitere Informationen zur räumliche Indizierung finden Sie im Abschnitt weiter unten. Wenn Sie keinen räumlichen Index für die angegebenen Pfade haben, können Sie dennoch raumbezogene Abfragen ausführen, indem Sie den `x-ms-documentdb-query-enable-scan`-Anforderungsheader mit auf "True" festgelegtem Wert angeben. In .NET erfolgt dies durch Übergeben des optionalen **FeedOptions**-Arguments an Abfragen mit auf "True" festgelegter [EnableScanInQuery](https://msdn.microsoft.com/library/microsoft.azure.documents.client.feedoptions.enablescaninquery.aspx#P:Microsoft.Azure.Documents.Client.FeedOptions.EnableScanInQuery)-Einstellung.
+Wenn Sie die räumliche Indizierung in Ihre Indizierungsrichtlinie einschließen, werden "Entfernungsabfragen" effizient über den Index beantwortet. Weitere Informationen zur räumliche Indizierung finden Sie im Abschnitt weiter unten. Wenn Sie keinen räumlichen Index für die angegebenen Pfade haben, können Sie dennoch raumbezogene Abfragen ausführen, indem Sie den `x-ms-documentdb-query-enable-scan`-Anforderungsheader mit auf „True“ festgelegtem Wert angeben. In .NET erfolgt dies durch Übergeben des optionalen **FeedOptions**-Arguments an Abfragen mit auf „True“ festgelegter [EnableScanInQuery](https://msdn.microsoft.com/library/microsoft.azure.documents.client.feedoptions.enablescaninquery.aspx#P:Microsoft.Azure.Documents.Client.FeedOptions.EnableScanInQuery)-Einstellung.
 
 ST\_WITHIN kann verwendet werden, um zu prüfen, ob ein Punkt innerhalb eines Polygons liegt. Polygone werden häufig verwendet, um Umgrenzungen wie Postleitzahlen, Staatsgrenzen oder natürliche Gebilde darzustellen. Wenn Sie wiederum die räumliche Indizierung in Ihre Indizierungsrichtlinie einschließen, werden Abfragen nach enthaltenen Elementen effizient über den Index beantwortet.
 
@@ -276,7 +276,7 @@ Kurz gesagt, die Geometrie wird von geodätischen Koordinaten auf eine 2D-Ebene 
 
 Wenn Sie eine Indizierungsrichtlinie angeben, die einen räumlichen Index für "/*" (alle Pfade) enthält, werden alle in der Sammlung gefundenen Punkte für effiziente räumliche Abfragen (ST\_WITHIN und ST\_DISTANCE) indiziert. Räumliche Indizes haben keinen Genauigkeitswert und verwenden stets einen Standardwert für die Genauigkeit.
 
-Der folgende JSON-Ausschnitt zeigt eine Indizierungsrichtlinie mit aktivierter räumlicher Indizierung, d. h. dass alle in Dokumenten für räumliche Abfragen gefundenen GeoJSON-Punkte indiziert werden. Wenn Sie die Indizierungsrichtlinie im Azure-Vorschauportal ändern, können Sie die folgende JSON für die Indizierungsrichtlinie angeben, um die räumliche Indizierung für Ihre Sammlung zu aktivieren.
+Der folgende JSON-Ausschnitt zeigt eine Indizierungsrichtlinie mit aktivierter räumlicher Indizierung, d. h. dass alle in Dokumenten für räumliche Abfragen gefundenen GeoJSON-Punkte indiziert werden. Wenn Sie die Indizierungsrichtlinie im Azure-Portal ändern, können Sie die folgende JSON für die Indizierungsrichtlinie angeben, um die räumliche Indizierung für Ihre Sammlung zu aktivieren.
 
 **JSON-Sammlungsindizierungsrichtlinie mit aktivierter räumlicher Indizierung**
 
@@ -355,4 +355,4 @@ Nachdem Sie die ersten Schritte mit räumlichen Daten in DocumentDB ausgeführt 
 - Weitere Informationen zu [DocumentDB-Abfragen](documentdb-sql-query.md)
 - Weitere Informationen zu [DocumentDB-Indizierungsrichtlinien](documentdb-indexing-policies.md)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -400,7 +400,7 @@ Bei unter Windows 10 per Domänenbeitritt in die Domäne eingebundenen Computern
 | displayName | X| |
 | ms-DS-CreatorSID | X| Auch als „registeredOwnerReference“ bezeichnet.|
 | objectGUID | X| Auch als „deviceID“ bezeichnet.|
-| objectSID | X| Auch als „omPremisesSecurityIdentifier“ bezeichnet.|
+| objectSID | X| Auch als „onPremisesSecurityIdentifier“ bezeichnet.|
 | operatingSystem | X| Auch als „deviceOSType“ bezeichnet.|
 | operatingSystemVersion | X| Auch als „deviceOSVersion“ bezeichnet.|
 | userCertificate | X| |
@@ -435,4 +435,4 @@ Weitere Informationen zur Konfiguration der [Azure AD Connect-Synchronisierung](
 
 Weitere Informationen zum [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

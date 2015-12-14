@@ -29,7 +29,7 @@ Für einen Auftrag wird mindestens eine Eingabequelle für Datenstreaming benöt
 ## Konfigurieren von Streaming-Einheiten ##
 Streaming-Einheiten (SUs) stellen die Ressourcen und Leistung für die Ausführung eines Azure Stream Analytics-Auftrags dar. SUs bieten anhand eines kombinierten Maßes aus CPU, Arbeitsspeicher und Schreib- und Leseraten eine Möglichkeit zur Beschreibung der relativen Ereignisverarbeitungskapazität. Jede Streaming-Einheit entspricht etwa einem Durchsatz von 1 MB/s.
 
-Die benötigte SU-Anzahl für ein bestimmtes Projekt hängt von der für die Partitionskonfiguration für die Eingaben und die für den Auftrag definierte Abfrage ab. Über das Azure-Portal können Sie für einen Auftrag bis zu Ihrem Kontingent Streamingeinheiten einrichten. Für jedes Azure-Abonnement hat standardmäßig höchstens 50 Streaming-Einheiten für alle Analytics-Aufträge in einer bestimmten Region. Wenn Sie die Streaming-Einheiten für Ihr Abonnement erhöhen möchten, wenden Sie sich an den [Microsoft Support](http://support.microsoft.com).
+Die benötigte SU-Anzahl für ein bestimmtes Projekt hängt von der für die Partitionskonfiguration für die Eingaben und die für den Auftrag definierte Abfrage ab. Über das klassische Azure-Portal können Sie für einen Auftrag bis zu Ihrem Kontingent Streamingeinheiten einrichten. Für jedes Azure-Abonnement hat standardmäßig höchstens 50 Streaming-Einheiten für alle Analytics-Aufträge in einer bestimmten Region. Wenn Sie die Streaming-Einheiten für Ihr Abonnement erhöhen möchten, wenden Sie sich an den [Microsoft Support](http://support.microsoft.com).
 
 Die Anzahl an Streaming-Einheiten, die ein Auftrag verwenden kann, hängt von der Partitionskonfiguration der Eingaben und der für den Auftrag definierten Abfrage ab. Beachten Sie außerdem, dass ein gültiger Wert für die Streamingeinheiten verwendet werden muss. Die gültigen Werte beginnen bei 1, 3, 6 und dann weiter in Schritten von 6, wie unten dargestellt.
 
@@ -147,20 +147,20 @@ Diese Abfrage kann auf bis zu 24 Streaming-Einheiten skaliert werden.
 
 **So passen Sie die Streaming-Einheit für einen Auftrag an**
 
-1. Melden Sie sich beim [Verwaltungsportal](https://manage.windowsazure.com) an.
+1. Melden Sie sich beim [klassischen Portal](https://manage.windowsazure.com) an.
 2. Klicken Sie links auf **Stream Analytics**.
 3. Klicken Sie auf den Stream Analytics-Auftrag, den Sie skalieren möchten.
 4. Klicken Sie oben auf der Seite auf **SCALE** (Skalieren).
 
 ![Azure Stream Analytics Skalieren von Streamingeinheiten][img.stream.analytics.streaming.units.scale]
 
-Im Azure-Vorschauportal können Sie unter „Einstellungen“ auf die Skalierungseinstellungen zugreifen:
+Im Azure-Portal können Sie unter „Einstellungen“ auf die Skalierungseinstellungen zugreifen:
 
-![Auftragskonfiguration in Stream Analytics im Azure-Vorschauportal][img.stream.analytics.preview.portal.settings.scale]
+![Auftragskonfiguration in Stream Analytics im Azure-Portal][img.stream.analytics.preview.portal.settings.scale]
 
 ## Überwachen der Auftragsleistung ##
 
-Über das Verwaltungsportal können Sie den Durchsatz eines Auftrags in Ereignissen/Sekunde nachverfolgen:
+Über das klassische Portal können Sie den Durchsatz eines Auftrags in Ereignissen/Sekunde nachverfolgen:
 
 ![Überwachen von Aufträgen in Azure Stream Analytics][img.stream.analytics.monitor.job]
 
@@ -265,4 +265,4 @@ Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://so
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

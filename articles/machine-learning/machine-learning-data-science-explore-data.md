@@ -29,4 +29,4 @@ Dieses Dokument beschreibt die Vorgehensweise beim Durchsuchen von Daten in vier
 - **Hive-Tabellendaten**: Daten werden mit Hive-Abfragen untersucht.
 - **Azure Machine Learning (AML) Studio**: Daten werden mit AML-Modulen untersucht .
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

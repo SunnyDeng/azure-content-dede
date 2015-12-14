@@ -39,15 +39,15 @@ Das folgende Diagramm gibt einen allgemeinen Überblick über den zu erstellende
 
 ## Schritt 1: Einrichten eines HPC Pack-Clusters in Azure
 
-Wir zeigen Ihnen zwei Methoden für die Clustereinrichtung. Bei der ersten kommen eine Azure-Schnellstartvorlage und das Azure-Vorschauportal zum Einsatz, bei der zweiten wird ein Azure PowerShell-Bereitstellungsskript verwendet.
+Wir zeigen Ihnen zwei Methoden für die Clustereinrichtung. Bei der ersten kommen eine Azure-Schnellstartvorlage und das Azure-Portal zum Einsatz, bei der zweiten wird ein Azure PowerShell-Bereitstellungsskript verwendet.
 
 
 ### Mit einer Schnellstartvorlage
-Verwenden Sie eine Azure-Schnellstartvorlage, um schnell und einfach einen HPC Pack-Cluster im Azure-Vorschauportal bereitzustellen. Wenn Sie die Vorlage im Vorschauportal öffnen, wird eine einfache Benutzeroberfläche angezeigt, über die Sie die Einstellungen für Ihren Cluster angeben können. Gehen Sie wie folgt vor:
+Verwenden Sie eine Azure-Schnellstartvorlage, um schnell und einfach einen HPC Pack-Cluster im Azure-Portal bereitzustellen. Wenn Sie die Vorlage im Vorschauportal öffnen, wird eine einfache Benutzeroberfläche angezeigt, über die Sie die Einstellungen für Ihren Cluster angeben können. Gehen Sie wie folgt vor:
 
 1. Besuchen Sie bei GitHub die [Seite mit der Vorlage für die HPC-Clustererstellung](https://github.com/Azure/azure-quickstart-templates/tree/master/create-hpc-cluster). Machen Sie sich ggf. mit den Informationen zur Vorlage sowie mit dem Quellcode vertraut.
 
-2. Klicken Sie auf **In Azure bereitstellen**, um im Azure-Vorschauportal eine Bereitstellung mit der Vorlage zu beginnen.
+2. Klicken Sie auf **In Azure bereitstellen**, um im Azure-Portal eine Bereitstellung mit der Vorlage zu beginnen.
 
     ![Vorlage für Azure bereitstellen][github]
 
@@ -81,7 +81,7 @@ Verwenden Sie eine Azure-Schnellstartvorlage, um schnell und einfach einen HPC 
 
 3.	Wenn die Bereitstellung nach etwa 30 Minuten abgeschlossen ist, exportieren Sie die Clusterzertifikatsdatei aus dem Clusterhauptknoten. Dieses öffentliche Zertifikat wird in einem späteren Schritt zur serverseitigen Authentifizierung für eine sichere HTTP-Bindung auf dem Clientcomputer importiert.
 
-    a. Stellen Sie über das Azure-Vorschauportal eine Remotedesktopverbindung mit dem Hauptknoten her.
+    a. Stellen Sie über das Azure-Portal eine Remotedesktopverbindung mit dem Hauptknoten her.
 
      ![Verbindung mit dem Hauptknoten herstellen][connect]
 
@@ -347,7 +347,7 @@ Legen Sie das Flag „UseAzureQueue“ in „SessionStartInfo“ explizit auf �
 
 ### Verwenden der NetTcp-Bindung
 
-Bei Verwendung der NetTcp-Bindung wird eine ähnliche Konfiguration verwendet wie bei der Verbindungsherstellung mit einem lokalen Cluster. Auf dem virtuellen Computer für den Hauptknoten müssen einige Endpunkte geöffnet werden. Gehen Sie im Azure-Portal wie folgt vor:
+Bei Verwendung der NetTcp-Bindung wird eine ähnliche Konfiguration verwendet wie bei der Verbindungsherstellung mit einem lokalen Cluster. Auf dem virtuellen Computer für den Hauptknoten müssen einige Endpunkte geöffnet werden. Gehen Sie im klassischen Azure-Portal wie folgt vor:
 
 
 1. Beenden Sie den virtuellen Computer.
@@ -381,4 +381,4 @@ Für die SOA-Clientanwendung muss lediglich der Hauptname auf den vollständigen
 [endpoint]: ./media/virtual-machines-excel-cluster-hpcpack/endpoint.png
 [udf]: ./media/virtual-machines-excel-cluster-hpcpack/udf.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

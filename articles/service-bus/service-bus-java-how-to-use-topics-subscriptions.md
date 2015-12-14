@@ -146,7 +146,7 @@ Service Bus-Themen unterstützen eine maximale Nachrichtengröße von 256 MB (d
 
 ## Empfangen von Nachrichten aus einem Abonnement
 
-Der einfachste Weg zum Empfangen von Nachrichten aus Abonnements sind **ServiceBusContract**-Objekte. Empfangene Nachrichten können in zwei unterschiedlichen Modi verwendet werden: **ReceiveAndDelete** und **PeekLock**.
+Der einfachste Weg zum Empfangen von Nachrichten aus Abonnements sind **ServiceBusContract**-Objekte. Empfangene Nachrichten können in zwei unterschiedlichen Modi funktionieren: **ReceiveAndDelete** und **PeekLock**.
 
 Bei Verwendung des **ReceiveAndDelete**-Modus ist der Nachrichtenempfang ein Single-Shot-Vorgang. Dies bedeutet, wenn Service Bus eine Leseanforderung für eine Nachricht erhält, wird die Nachricht als verarbeitet gekennzeichnet und an die Anwendung zurück gesendet. **Der ReceiveAndDelete**-Modus ist das einfachste Modell. Es wird am besten für Szenarien eingesetzt, bei denen es eine Anwendung tolerieren kann, wenn eine Nachricht bei Auftreten eines Fehlers nicht verarbeitet wird. Um dieses Verfahren zu verstehen, stellen Sie sich ein Szenario vor, in dem der Consumer die Empfangsanforderung ausstellt und dann abstürzt, bevor diese verarbeitet wird. Da Service Bus die Nachricht als verwendet markiert hat, wird er jene Nachricht auslassen, die vor dem Absturz verwendet wurde, wenn die Anwendung neu startet und erneut mit der Verwendung von Nachrichten beginnt.
 
@@ -232,10 +232,10 @@ Nachdem Sie nun mit den Grundlagen von Service Bus-Warteschlangen vertraut sind,
   [Azure SDK für Java]: http://azure.microsoft.com/develop/java/
   [Azure-SDK für Java]: http://azure.microsoft.com/develop/java/
   [Azure Toolkit für Eclipse]: https://msdn.microsoft.com/de-DE/library/azure/hh694271.aspx
-  [Azure portal]: http://manage.windowsazure.com/
+  [Azure classic portal]: http://manage.windowsazure.com/
   [Service Bus-Warteschlangen, -Themen und -Abonnements]: service-bus-queues-topics-subscriptions.md
   [SqlFilter]: http://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.sqlfilter.aspx
   [SqlFilter.SqlExpression]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
   [BrokeredMessage]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

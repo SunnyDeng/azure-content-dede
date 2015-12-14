@@ -55,7 +55,7 @@ Um einen bedingten Zugriff zu ermöglichen, können Sie eine Richtlinie erstelle
 
 Azure AD Connect ermöglicht die Bereitstellung lokaler Computer als Geräteobjekte in der Cloud. Weitere Informationen zum Bereitstellen von Azure AD Connect finden Sie unter „Aktivieren Ihres Verzeichnisses für das Hybridmanagement mit Azure AD Connect“.
 
- - Wenn Sie eine [benutzerdefinierte Installation für Azure AD Connect](https://azure.microsoft.com/de-DE/documentation/articles/active-directory-aadconnect-get-started-custom/) ausgeführt haben (nicht die Express-Installation), müssen Sie das unten beschriebene Verfahren **Erstellen eines Dienstverbindungspunkts im lokalen Active Directory** ausführen.
+ - Wenn Sie eine [benutzerdefinierte Installation für Azure AD Connect](active-directory-aadconnect-get-started-custom.md) ausgeführt haben (nicht die Express-Installation), müssen Sie das unten beschriebene Verfahren **Erstellen eines Dienstverbindungspunkts im lokalen Active Directory** ausführen.
  - Wenn Sie vor dem Installieren von Azure AD Connect über eine Verbundkonfiguration für Azure AD verfügen (z. B. weil Sie zuvor Active Directory-Verbunddienste [AD FS] bereitgestellt haben), müssen Sie das unten beschriebene Verfahren **Konfigurieren von AD FS-Anspruchsregeln** ausführen.
 
 ### Erstellen eines Dienstverbindungspunkts im lokalen Active Directory
@@ -137,4 +137,4 @@ Sie können eine Active Directory-Gruppenrichtlinie verwenden, um Ihre in die Do
 * [Verbinden von in die Domäne eingebundenen Geräten mit Azure AD für Windows 10-Funktionen](active-directory-azureadjoin-devices-group-policy.md)
 * [Einrichten von Azure AD Join](active-directory-azureadjoin-setup.md)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

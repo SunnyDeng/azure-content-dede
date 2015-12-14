@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="11/03/2015" 
+	ms.date="12/01/2015" 
 	ms.author="sdanie"/>
 
 
@@ -38,7 +38,7 @@ In-Role Caches bieten eine Caching-Schicht für Azure-Anwendungen. Das Caching e
 
 In-Role Cache stellt eine Möglichkeit zum Durchführen von Cachingaktionen bereit, indem ein Teil des Arbeitsspeichers der virtuellen Maschinen verwendet wird, in denen die Rolleninstanzen Ihrer Azure-Clouddienste (auch als gehostete Dienste bekannt) gehostet werden. Dadurch erhalten Sie eine höhere Flexibilität bei der Bereitstellung, die Caches können sehr groß sein und es gibt keine Cache-spezifischen Beschränkungen.
 
->[AZURE.NOTE]Ab Azure SDK 2.6 verwendet In-Role Cache das Microsoft Azure Storage SDK, Version 4.3. In früheren Versionen des Azure SDK verwendete In-Role Cache das Azure Storage SDK 1.7. Anwendungen, die In-Role Cache mit Azure SDK-Versionen vor 2.6 verwenden, sollten zu Azure SDK 2.6 migriert werden, bevor Azure Storage Version 2011-08-18 am 9. Dezember 2015 außer Betrieb gesetzt wird. Weitere Informationen finden Sie unter [Versionshinweise zu Azure SDK 2.6 – In-Role Cache](../azure-sdk-dotnet-release-notes-2_6.md#in-role-cache-updates) und [Microsoft Azure Storage Service Version Removal](http://azure.microsoft.com/blog/2014/08/04/microsoft-azure-storage-service-version-removal/).
+>[AZURE.IMPORTANT]Ab Azure SDK 2.6 verwendet In-Role Cache das Microsoft Azure Storage SDK, Version 4.3. In früheren Versionen des Azure SDK verwendete In-Role Cache das Azure Storage SDK 1.7. Anwendungen, die In-Role Cache mit Azure SDK-Versionen vor 2.6 verwenden, sollten zu Azure SDK 2.6 migriert werden, bevor Azure Storage Version 2011-08-18 am 1. August 2016 außer Betrieb gesetzt wird. Weitere Informationen finden Sie unter [Versionshinweise zu Azure SDK 2.6 – In-Role Cache](../azure-sdk-dotnet-release-notes-2_6.md#in-role-cache-updates) und [Aktualisierung bezüglich der Entfernung der Version Microsoft Azure Storage: Verlängerung bis 2016](http://blogs.msdn.com/b/windowsazurestorage/archive/2015/10/19/microsoft-azure-storage-service-version-removal-update-extension-to-2016.aspx).
 
 Das Caching von Rolleninstanzen bietet folgende Vorteile:
 
@@ -411,4 +411,4 @@ Nachdem Sie sich nun mit den Grundlagen von In-Role Cache vertraut gemacht haben
 [Welches Azure Cache-Angebot ist für mich das richtige?]: cache-faq.md#which-azure-cache-offering-is-right-for-me
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

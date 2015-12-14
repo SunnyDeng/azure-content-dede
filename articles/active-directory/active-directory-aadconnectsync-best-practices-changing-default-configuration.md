@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Bewährte Methoden zum Ändern der Standardkonfiguration | Microsoft Azure"
+	pageTitle="Azure AD Connect-Synchronisierung: Bewährte Methoden zum Ändern der Standardkonfiguration | Microsoft Azure"
 	description="Stellt bewährte Methoden zum Ändern der Standardkonfiguration der Azure AD Connect-Synchronisierung vor."
 	services="active-directory"
 	documentationCenter=""
@@ -83,4 +83,4 @@ Weitere Informationen zur Konfiguration der [Azure AD Connect-Synchronisierung](
 
 Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

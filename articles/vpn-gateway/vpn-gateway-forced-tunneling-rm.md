@@ -57,7 +57,7 @@ Vergewissern Sie sich vor Beginn der Konfiguration, dass Sie über Folgendes ver
 
 - Ein Azure-Abonnement. Wenn Sie noch kein Abonnement haben, können Sie Ihre [MSDN-Abonnentenvorteile](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) aktivieren oder sich für eine [kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/) registrieren.
 
-- Die neueste Version der Azure PowerShell-Cmdlets mit dem Webplattform-Installer. Sie können die neueste Version von [Webplattform-Installer](http://aka.ms/webpi-azps/) herunterladen und installieren. Diese Dokumentation wurde für PowerShell 1.0 oder höher geschrieben. Für diese Konfiguration erforderliche Cmdlets sind in früheren Versionen nicht vorhanden. Weitere Informationen zu PowerShell 1.0 finden Sie unter [Azure PowerShell 1.0 – Vorschau](https://azure.microsoft.com/blog/azps-1-0-pre/).
+- Azure PowerShell-Cmdlets (1.0 oder höher). Sie können diese Version aus dem Windows PowerShell-Abschnitt der [Downloadseite](http://azure.microsoft.com/downloads/) herunterladen und installieren. Diese Dokumentation wurde für PowerShell 1.0 oder höher geschrieben. Für diese Konfiguration erforderliche Cmdlets sind in früheren Versionen nicht vorhanden.
 
 - Wenn Sie mit der Verwendung des Azure-Ressourcen-Managers und mit PowerShell nicht vertraut sind, finden Sie [in diesem Artikel](../articles/powershell-azure-resource-manager.md) weitere Informationen.
 
@@ -71,9 +71,9 @@ Vergewissern Sie sich vor Beginn der Konfiguration, dass Sie über Folgendes ver
 
 		Get-AzureRmSubscription
 
-2. Geben Sie den Namen Ihres Azure-Abonnements an.
+2. Geben Sie das Abonnement an, das Sie verwenden möchten.
 
-		Get-AzureRmSubscription -SubscriptionName "YourSubscriptionName" | Select-AzureRmSubscription
+		Select-AzureRmSubscription -Subscriptionid "GUID of subscription"
 		
 3. Erstellen Sie eine Ressourcengruppe.
 
@@ -132,4 +132,4 @@ Vergewissern Sie sich vor Beginn der Konfiguration, dass Sie über Folgendes ver
 		Get-AzureRmVirtualNetworkGatewayConnection -Name "Connection1" -ResourceGroupName "ForcedTunneling"
 		
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

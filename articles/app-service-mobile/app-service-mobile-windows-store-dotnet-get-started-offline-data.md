@@ -18,9 +18,7 @@
 
 # Aktivieren der Offlinesynchronisierung für Ihre Windows-App
 
-[AZURE.INCLUDE [app-service-mobile-selector-offline](../../includes/app-service-mobile-selector-offline.md)]
-&nbsp;  
-[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
+[AZURE.INCLUDE [app-service-mobile-selector-offline](../../includes/app-service-mobile-selector-offline.md)]&nbsp;[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
 
 ## Übersicht
 
@@ -36,7 +34,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
 * Visual Studio 2013 für Windows 8.1.
 * Durchführung des Lernprogramms [Erstellen einer Windows-App][create a windows app].
-* [Azure Mobile Services SQLite Store, Version 2.0.0-beta2][sqlite store nuget]
+* [Azure Mobile Services SQLite Store][sqlite store nuget]
 * [SQLite für Windows 8.1](http://www.sqlite.org/downloads)
 
 ## Aktualisieren der Client-App für die Unterstützung von Offlinefunktionen
@@ -48,13 +46,9 @@ Offlinefunktionen der mobilen Azure-App ermöglichen Ihnen die Interaktion mit e
     * **Windows 8.1-Runtime:** Installieren Sie [SQLite für Windows 8.1].
     * **Windows Phone 8.1:** Installieren Sie [SQLite für Windows Phone 8.1].
 
-    >[AZURE.NOTE]Wenn Sie Internet Explorer verwenden und auf den Link für das Herunterladen von SQLite klicken, werden Sie möglicherweise aufgefordert, die VSIX-Datei als ZIP-Datei herunterzuladen. Speichern Sie die Datei mit der Endung .vsix statt.zip an einem Speicherort auf Ihrer Festplatte. Doppelklicken Sie im Windows-Explorer auf die VSIX-Datei, um die Installation auszuführen.
+    >[AZURE.NOTE]Diese Anweisungen lassen sich auch für Windows 10 UAP-Projekte verwenden, doch es empfiehlt sich, stattdessen [SQLite für Windows 10] zu installieren.
 
-2. Öffnen Sie in Visual Studio das Projekt, das Sie in [Erstellen einer Windows-App] abgeschlossen haben. Installieren Sie das **WindowsAzure.MobileServices.SQLiteStore**-NuGet-Paket für die Windows 8.1-Laufzeit und für Windows Phone 8.1-Projekte.
-
-    Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf die Projektmappe, und klicken Sie dann auf **NuGet-Pakete für Projektmappe verwalten**, um den NuGet-Paket-Manager auszuführen. Wählen Sie auf der Registerkarte "Online" in der Dropdownliste oben die Option "Vorversion einschließen". Suchen Sie nach **SQLiteStore**, um die Betaversion 2.0.0 von `WindowsAzure.MobileServices.SQLiteStore` zu installieren.
-
-    Dann fügen Sie den Windows Store 8.1- und den Windows Phone 8.1-Projekten den NuGet-Verweis hinzu.
+2. Öffnen Sie in Visual Studio das Projekt, das Sie in [Erstellen einer Windows-App] abgeschlossen haben. Installieren Sie das **Microsoft.Azure.Mobile.Client.SQLiteStore**-NuGet-Paket für Windows 8.1-Laufzeit- und für Windows Phone 8.1-Projekte. Fügen Sie den Windows Store 8.1- und den Windows Phone 8.1-Projekten den NuGet-Verweis hinzu.
 
     >[AZURE.NOTE]Wenn die Installation einen zusätzlichen Verweis auf eine andere Version von SQLite erstellt als die von Ihnen installierte, erhalten Sie einen Kompilierungsfehler. Sie sollten den Fehler beheben, indem Sie das Duplikat im Knoten **Verweise** in Ihren Projekten entfernen.
 
@@ -268,13 +262,13 @@ Zur Synchronisierung des lokalen Speichers mit dem Server wurden die Methoden `I
 [Offlinedatensynchronisierung in Azure Mobile Apps]: ../app-service-mobile-offline-data-sync.md
 [create a windows app]: ../app-service-mobile-windows-store-dotnet-get-started.md
 [Erstellen einer Windows-App]: ../app-service-mobile-windows-store-dotnet-get-started.md
-[SQLite für Windows 8.1]: http://go.microsoft.com/fwlink/?LinkId=394776
-[SQLite für Windows Phone 8.1]: http://go.microsoft.com/fwlink/?LinkId=397953
+[SQLite für Windows 8.1]: http://go.microsoft.com/fwlink/?LinkID=716919
+[SQLite für Windows Phone 8.1]: http://go.microsoft.com/fwlink/?LinkID=716920
+[SQLite für Windows 10]: http://go.microsoft.com/fwlink/?LinkID=716921
 
-[azure mobile app sdk nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices/2.0.0-beta
-[sqlite store nuget]: http://www.nuget.org/packages/WindowsAzure.MobileServices.SQLiteStore/2.0.0-beta
+[sqlite store nuget]: https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client.SQLiteStore/
  
 [Cloud Cover: Offlinesynchronisierung in Azure Mobile Services]: http://channel9.msdn.com/Shows/Cloud+Cover/Episode-155-Offline-Storage-with-Donna-Malayeri
 [Azure Friday: Offlinefähige Apps in Azure Mobile Services]: http://azure.microsoft.com/documentation/videos/azure-mobile-services-offline-enabled-apps-with-donna-malayeri/
 
-<!---HONumber=AcomDC_1125_2015--->
+<!---HONumber=AcomDC_1203_2015-->

@@ -89,4 +89,4 @@ Eine vollständige Beschreibung der APIs finden Sie in der Dokumentation zum Mic
 Die Beispiel-App ist nicht für die Ausführung in einer Produktionsumgebung gedacht. Der Katalog umfasst nur sehr wenige Daten, die kein sinnvolles Empfehlungsmodell ergeben. Die Daten werden als Beispiel bereitgestellt.
  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

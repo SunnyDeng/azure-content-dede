@@ -32,7 +32,7 @@ In diesem Artikel erfahren Sie, wie Sie Ihre Azure-Ressourcen mit der Azure-Befe
 
 Mit dem Azure-Ressourcen-Manager können Sie eine Gruppe von _Ressourcen_ (vom Benutzer verwaltete Entitäten wie etwa virtuelle Computer, Datenbankserver, Datenbanken oder Websites) als einzelne logische Einheit (_Ressourcengruppe_) erstellen und verwalten.
 
-Ein Vorteil des Azure-Ressourcen-Managers besteht darin, dass Sie Ihre Azure-Ressourcen _deklarativ_ erstellen können, indem Sie die Struktur und die Beziehungen einer bereitstellbaren Gruppe von Ressourcen in *JSON-Vorlagen* beschreiben. Die Vorlage gibt Parameter an, die entweder beim Ausführen eines Befehls (Inline) ausgefüllt oder in einer separaten JSON-Datei (azuredeploy-parameters.json) gespeichert werden. Auf diese Weise können Sie mühelos neue Ressourcen mit derselben Vorlage erstellen, indem Sie unterschiedliche Parameter bereitstellen. So enthält beispielsweise eine Vorlage für die Websiteerstellung Parameter für den Websitenamen und die Region, in der sich die Website befinden soll, sowie andere allgemeine Einstellungen.
+Ein Vorteil des Azure-Ressourcen-Managers besteht darin, dass Sie Ihre Azure-Ressourcen _deklarativ_ erstellen können, indem Sie die Struktur und die Beziehungen einer bereitstellbaren Gruppe von Ressourcen in *JSON-Vorlagen* beschreiben. Die Vorlage gibt Parameter an, die entweder beim Ausführen eines Befehls (Inline) ausgefüllt oder in einer separaten JSON-Datei („azuredeploy-parameters.json“) gespeichert werden. Auf diese Weise können Sie mühelos neue Ressourcen mit derselben Vorlage erstellen, indem Sie unterschiedliche Parameter bereitstellen. So enthält beispielsweise eine Vorlage für die Websiteerstellung Parameter für den Websitenamen und die Region, in der sich die Website befinden soll, sowie andere allgemeine Einstellungen.
 
 Wenn mit einer Vorlage eine Gruppe geändert oder erstellt wird, wird eine _Bereitstellung_ erstellt, die dann auf die Gruppe angewendet wird. Weitere Informationen zum Azure-Ressourcen-Manager finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md).
 
@@ -40,7 +40,7 @@ Nach dem Erstellen einer Bereitstellung können Sie genau wie beim klassischen B
 
 ## Authentifizierung
 
-Wenn Sie den Azure-Ressourcen-Manager über die Azure-Befehlszeilenschnittstelle nutzen möchten, müssen Sie sich mit einem Geschäfts- oder Schulkonto (Organisationskonto) oder einem Microsoft-Konto (ab Version 0.9.10 der Befehlszeilenschnittstelle) bei Microsoft Azure authentifizieren. Die Authentifizierung mit einem durch eine PUBLISHSETTINGS-Datei installierten Zertifikat ist in diesem Modus nicht möglich.
+Wenn Sie den Azure-Ressourcen-Manager über die Azure-Befehlszeilenschnittstelle nutzen möchten, müssen Sie sich mit einem Geschäfts- oder Schulkonto (Organisationskonto) oder einem Microsoft-Konto (ab Version 0.9.10 der Befehlszeilenschnittstelle) bei Microsoft Azure authentifizieren. Die Authentifizierung mit einem durch eine PUBLISHSETTINGS-Datei installierten Zertifikat ist in diesem Modus nicht möglich.
 
 Weitere Informationen zur Authentifizierung bei Microsoft Azure finden Sie unter [Herstellen einer Verbindung mit einem Azure-Abonnement über die Azure-Befehlszeilenschnittstelle](xplat-cli-connect.md).
 
@@ -203,11 +203,11 @@ Verwenden Sie den Befehl `azure group log show`, um protokollierte Informationen
 
 ## Nächste Schritte
 
-* Weitere Informationen zur Verwendung des Azure-Ressourcen-Managers mit Azure PowerShell finden Sie unter [Verwenden von Azure PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md).
-* Weitere Informationen zur Verwendung des Azure-Ressourcen-Managers im Azure-Vorschauportal finden Sie unter [Verwenden von Ressourcengruppen zum Verwalten von Azure-Ressourcen][psrm].
+* Weitere Informationen zur Verwendung des Azure-Ressourcen-Managers mit Azure PowerShell finden Sie unter [Verwenden von Windows PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md).
+* Weitere Informationen zur Verwendung des Azure-Ressourcen-Managers im Azure-Portal finden Sie unter [Verwenden des Azure-Vorschauportals zum Verwalten Ihrer Azure-Ressourcen][psrm].
 
 [signuporg]: http://www.windowsazure.com/documentation/articles/sign-up-organization/
 [adtenant]: http://technet.microsoft.com/library/jj573650#createAzureTenant
 [psrm]: http://go.microsoft.com/fwlink/?LinkId=394760
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

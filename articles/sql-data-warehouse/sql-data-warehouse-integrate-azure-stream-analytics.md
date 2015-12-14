@@ -53,7 +53,7 @@ Geben Sie auf der nächsten Seite die folgenden Werte ein:
 	- Befindet sich die SQL Data Warehouse-Datenbank im selben Abonnement wie der Stream Analytics-Auftrag, wählen Sie die Option "SQL-Datenbank aus aktuellem Abonnement verwenden" aus.
 	- Wenn die Datenbank sich in einem anderen Abonnement befindet, wählen Sie "SQL-Datenbank aus einem anderen Abonnement verwenden" aus.
 - *Datenbank*: Geben Sie den Namen einer Zieldatenbank an.
-- *Servername*: Geben Sie den Servernamen für die Datenbank an, die Sie soeben angegeben haben. Diese Eingaben können Sie im Azure-Portal vornehmen.
+- *Servername*: Geben Sie den Servernamen für die Datenbank an, die Sie soeben angegeben haben. Diese Angaben finden Sie im klassischen Azure-Portal.
 
 ![][server-name]
 
@@ -96,4 +96,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [SQL Data Warehouse-Entwicklu
 <!--Other Web references-->
 [Azure Stream Analytics documentation]: http://azure.microsoft.com/documentation/services/stream-analytics/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

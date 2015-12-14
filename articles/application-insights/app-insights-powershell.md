@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/13/2015" 
+	ms.date="11/23/2015" 
 	ms.author="awills"/>
  
 # Erstellen von Application Insights-Ressourcen mithilfe von PowerShell
@@ -76,7 +76,7 @@ Installieren Sie das Azure PowerShell-Modul auf dem Computer, auf dem die Skript
 
 2. Öffnen Sie den [Azure-Ressourcen-Manager](https://resources.azure.com/). Navigieren Sie über Abonnements, Ressourcengruppen und Komponenten nach unten zu Ihrer App-Ressource.
 
-    ![](./media/app-insights-create-powershell/01.png)
+    ![](./media/app-insights-powershell/01.png)
 
     *Komponenten* sind die grundlegenden Application Insights-Ressourcen zum Anzeigen von Anwendungen. Für die zugeordneten Warnungsregeln und Verfügbarkeitswebtests liegen separate Ressourcen vor.
 
@@ -288,4 +288,4 @@ Es folgt eine vollständige Vorlage für Komponenten, Webtests und Webtestwarnun
 
 ```
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

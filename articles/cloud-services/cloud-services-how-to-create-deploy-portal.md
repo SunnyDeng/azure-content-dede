@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Erstellen und Bereitstellen eines Clouddiensts (Vorschauportal) | Microsoft Azure"
-	description="Hier erfahren Sie, wie Sie einen Clouddienst mithilfe der Schnellerfassung in Azure erstellen und bereitstellen. In diesen Beispielen wird das Azure-Vorschauportal verwendet."
+	pageTitle="Erstellen und Bereitstellen eines Clouddiensts| Microsoft Azure"
+	description="Hier erfahren Sie, wie Sie einen Clouddienst mithilfe der Schnellerfassung in Azure erstellen und bereitstellen. In diesen Beispielen wird das Azure-Portal verwendet."
 	services="cloud-services"
 	documentationCenter=""
 	authors="Thraka"
@@ -22,8 +22,8 @@
 # Erstellen und Bereitstellen eines Clouddiensts
 
 > [AZURE.SELECTOR]
-- [Azure portal](cloud-services-how-to-create-deploy.md)
-- [Azure preview portal](cloud-services-how-to-create-deploy-portal.md)
+- [Azure classic portal](cloud-services-how-to-create-deploy.md)
+- [Azure portal](cloud-services-how-to-create-deploy-portal.md)
 
 Das Azure-Portal bietet zwei Methoden zum Erstellen und Bereitstellen eines Clouddiensts: *Schnellerfassung* und *Benutzerdefiniert erstellen*.
 
@@ -61,12 +61,12 @@ Sie müssen das Dienstpaket erstellen, um einen Clouddienst mit Bereitstellungen
 
 - Falls Rolleninstanzen ein Zertifikat erfordern, erstellen Sie die Zertifikate. Clouddienste erfordern eine PFX-Datei mit einem privaten Schlüssel. Sie können die Zertifikate zu Azure hochladen, wenn Sie den Clouddienst erstellen und bereitstellen. Weitere Informationen zu Zertifikaten finden Sie unter [Verwalten von Zertifikaten](http://msdn.microsoft.com/library/gg981929.aspx).
 
-- Wenn Sie den Clouddienst für eine Affinitätsgruppe bereitstellen möchten, erstellen Sie die Affinitätsgruppe. Sie können eine Affinitätsgruppe verwenden, um den Clouddienst und andere Azure-Dienste für den gleichen Standort in einer Region bereitzustellen. Sie können die Affinitätsgruppe im Bereich **Netzwerke** des Azure-Portals auf der Seite **Affinitätsgruppen** erstellen. Weitere Informationen finden Sie unter [Erstellen einer Affinitätsgruppe im Verwaltungsportal](http://msdn.microsoft.com/library/jj156209.aspx).
+- Wenn Sie den Clouddienst für eine Affinitätsgruppe bereitstellen möchten, erstellen Sie die Affinitätsgruppe. Sie können eine Affinitätsgruppe verwenden, um den Clouddienst und andere Azure-Dienste für den gleichen Standort in einer Region bereitzustellen. Sie können die Affinitätsgruppe im Bereich **Netzwerke** des Azure-Portals auf der Seite **Affinitätsgruppen** erstellen. Weitere Informationen finden Sie unter [Erstellen einer Affinitätsgruppe im Azure-Portal](http://msdn.microsoft.com/library/jj156209.aspx).
 
 
 ## Schritt 3: Erstellen eines Clouddiensts und Hochladen des Bereitstellungspakets
 
-1. Melden Sie sich beim [Azure-Vorschauportal][] an.
+1. Melden Sie sich beim Azure-Portal an.
 2. Klicken Sie auf **Neu > Compute**, führen Sie einen Bildlauf nach unten zu **Clouddienst** aus, und klicken Sie darauf.
 
     ![Clouddienst veröffentlichen](media/cloud-services-how-to-create-deploy-portal/create-cloud-service.png)
@@ -114,4 +114,4 @@ Wenn Ihr Bereitstellungspaket [für die Verwendung von Zertifikaten konfiguriert
 * [Verwalten Ihres Clouddiensts](cloud-services-how-to-manage-portal.md)
 * Konfigurieren von [SSL-Zertifikaten](cloud-services-configure-ssl-certificate-portal.md)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

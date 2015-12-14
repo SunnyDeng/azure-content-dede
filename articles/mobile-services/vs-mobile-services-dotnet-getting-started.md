@@ -13,10 +13,15 @@
 	ms.tgt_pltfrm="vs-getting-started"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="09/17/2015" 
+	ms.date="09/17/2015"
 	ms.author="tarcher"/>
 
 # Erste Schritte mit Mobile Services (.NET-Projekte)
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 > [AZURE.SELECTOR]
 > - [Getting Started](vs-mobile-services-dotnet-getting-started.md)
@@ -85,4 +90,4 @@ Löschen Sie eine Zeile in der Datenbank. Das Parameterelement ist das TodoItem-
 
 [Weitere Informationen zu mobilen Diensten](http://azure.microsoft.com/documentation/services/mobile-services/)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

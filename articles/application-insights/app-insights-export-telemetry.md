@@ -75,6 +75,8 @@ Andere berechnete Metriken sind nicht enthalten. Wir exportieren z. B. nicht die
 
 Die Daten umfassen außerdem die Ergebnisse von [Verfügbarkeitswebtests](app-insights-monitor-web-app-availability.md), die Sie eventuell eingerichtet haben.
 
+> [AZURE.NOTE]**Stichproben** Wenn Ihre Anwendung eine große Menge von Daten sendet und Sie das Application Insights-SDK für ASP.NET Version 2.0.0-beta3 oder höher verwenden, wird möglicherweise die adaptive Stichprobenerstellung verwendet, bei der nur ein bestimmter Prozentsatz der Telemetriedaten übermittelt wird. [Erfahren Sie mehr über das Erstellen von Stichproben.](app-insights-sampling.md)
+
 ## <a name="get"></a>Untersuchen der Daten
 
 Sie können den Speicher direkt im Portal überprüfen. Klicken Sie auf **Durchsuchen**, wählen Sie das Speicherkonto aus, und öffnen Sie dann **Container**.
@@ -147,7 +149,7 @@ Der fortlaufende Export wird neu gestartet.
 * [Exportieren in SQL über eine Workerrolle][exportcode]
 * [Exportieren in SQL mit Stream Analytics][exportasa]
 * [Exportieren in Power BI mit Stream Analytics](app-insights-export-power-bi.md)
- * Beachten Sie, dass es sich hier nicht um die standardmäßige Verwendung von Power BI handelt. Es gibt [einen Adapter](http://blogs.msdn.com/b/powerbi/archive/2015/11/04/explore-your-application-insights-data-with-power-bi.aspx), der keinen kontinuierlichen Export erfordert.
+ * Beachten Sie, dass es sich hier nicht um die standardmäßige Verwendung von Power BI handelt. Es gibt [einen Adapter](http://blogs.msdn.com/b/powerbi/archive/2015/11/04/explore-your-application-insights-data-with-power-bi.aspx), der keinen fortlaufenden Export erfordert.
 
 
 Bei größeren Dimensionen sollten Sie [HDInsight](http://azure.microsoft.com/services/hdinsight/)-Hadoop-Cluster in der Cloud erwägen. HDInsight bietet eine Vielzahl von Technologien für die Verwaltung und Analyse riesiger Datenmengen.
@@ -208,4 +210,4 @@ Bei größeren Dimensionen sollten Sie [HDInsight](http://azure.microsoft.com/se
 
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

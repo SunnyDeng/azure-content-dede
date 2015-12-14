@@ -20,7 +20,7 @@
 
 ## Übersicht
 
-In diesem Thema wird erklärt, wie mithilfe von Visual Studio ein Konsolenanwendungsprojekt in einer Web-App in [App Service](http://go.microsoft.com/fwlink/?LinkId=529714) als [Azure-Webauftrag](http://go.microsoft.com/fwlink/?LinkId=390226) bereitgestellt wird. Weitere Informationen zum Bereitstellen von Webaufträgen mit dem [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) finden Sie unter [Ausführen von Hintergrundaufgaben mit Webaufträgen](web-sites-create-web-jobs.md).
+In diesem Thema wird erklärt, wie mithilfe von Visual Studio ein Konsolenanwendungsprojekt in einer Web-App in [App Service](http://go.microsoft.com/fwlink/?LinkId=529714) als [Azure-Webauftrag](http://go.microsoft.com/fwlink/?LinkId=390226) bereitgestellt wird. Weitere Informationen zum Bereitstellen von Webaufträgen mit dem [Azure-Portal](https://portal.azure.com) finden Sie unter [Ausführen von Hintergrundaufgaben mit Webaufträgen](web-sites-create-web-jobs.md).
 
 Wenn mithilfe von Visual Studio ein webauftragsfähiges Konsolenanwendungsprojekt bereitgestellt wird, werden zwei Aufgaben ausgeführt:
 
@@ -127,7 +127,7 @@ Im Dialogfeld **Azure-Webauftrag hinzufügen** können Sie den Namen des Webauft
 
 ![Dialogfeld "Azure-Webauftrag hinzufügen"](./media/websites-dotnet-deploy-webjobs/aaw2.png)
 
-Die Felder in diesem Dialogfeld entsprechen den Feldern im Dialogfeld **Neuer Auftrag** im Azure-Verwaltungsportal. Weitere Informationen finden Sie unter [Ausführen von Hintergrundaufgaben mit Webaufträgen](web-sites-create-web-jobs.md).
+Die Felder in diesem Dialogfeld entsprechen den Feldern im Dialogfeld **Neuer Auftrag** im Azure-Portal. Weitere Informationen finden Sie unter [Ausführen von Hintergrundaufgaben mit Webaufträgen](web-sites-create-web-jobs.md).
 
 Für geplante Webaufträge (nicht für fortlaufende Webaufträge) erstellt Visual Studio eine [Azure Scheduler](/services/scheduler/)-Auftragssammlung, sofern noch nicht vorhanden, und einen Auftrag in der Sammlung:
 
@@ -197,7 +197,5 @@ In diesem Artikel wird erklärt, wie WebJobs mit Visual Studio bereitgestellt wi
 
 ## Änderungen
 * Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des Azure-Portals gegenüber dem Azure-Vorschauportal finden Sie unter [Referenz zur Navigation im Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715)
- 
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

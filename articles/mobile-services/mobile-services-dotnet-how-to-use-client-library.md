@@ -13,14 +13,19 @@
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="11/02/2015" 
+	ms.date="11/02/2015"
 	ms.author="glenga"/>
 
 # Verwenden der verwalteten Clientbibliothek für Azure Mobile Services
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
+
 [AZURE.INCLUDE [mobile-services-selector-client-library](../../includes/mobile-services-selector-client-library.md)]
 
-##Übersicht 
+##Übersicht
 
 In dieser Anleitung wird die Ausführung gängiger Aufgaben mithilfe der verwalteten Clientbibliothek für Azure Mobile Services in Windows- und Xamarin-Apps beschrieben. Besprochen werden unter anderem Datenabfragen, Einfügen, Aktualisieren und Löschen von Daten, Authentifizierung von Benutzern und Fehlerbehandlung. Wenn Sie keine Erfahrungen mit Mobile Services haben, sollten Sie eventuell zunächst das Lernprogramm [Mobile Services-Schnellstart](mobile-services-dotnet-backend-xamarin-ios-get-started.md) absolvieren.
 
@@ -58,13 +63,13 @@ Der folgende Code erstellt das `MobileServiceClient`-Objekt, das für den Zugrif
 		"AppKey"
 	);
 
-Ersetzen Sie im obigen Code `AppUrl` und `AppKey` durch die URL und den Anwendungsschlüssel des mobilen Diensts in dieser Reihenfolge. Beide Werte finden Sie im Azure-Verwaltungsportal, indem Sie Ihren mobilen Dienst auswählen und auf "Dashboard" klicken.
+Ersetzen Sie im obigen Code `AppUrl` und `AppKey` durch die URL und den Anwendungsschlüssel des mobilen Diensts in dieser Reihenfolge. Beide Werte finden Sie im klassischen Azure-Portal, indem Sie Ihren mobilen Dienst auswählen und auf „Dashboard“ klicken.
 
 >[AZURE.IMPORTANT]Der Anwendungsschlüssel dient dem Herausfiltern zufälliger Anforderungen an den mobilen Dienst und wird mit der Anwendung verteilt. Da dieser Schlüssel nicht verschlüsselt ist, kann er nicht als sicher angesehen werden. Um die Daten des mobilen Dienstes zu schützen, müssen Sie stattdessen Benutzer vor dem Zugriff authentifizieren. Weitere Informationen finden Sie unter [Gewusst wie: Authentifizieren von Benutzern](#authentication).
 
 ##<a name="instantiating"></a>Gewusst wie: Erstellen von Tabellenverweisen
 
-Jeglicher Code zum Abrufen oder Ändern von Daten in der Mobile Services-Tabelle ruft Funktionen des `MobileServiceTable`-Objekts auf. Sie erhalten einen Verweis auf die Tabelle, indem Sie wie folgt die Methode [GetTable](https://msdn.microsoft.com/library/azure/jj554275.aspx) für eine Instanz von `MobileServiceClient` aufrufen:
+Jeglicher Code zum Abrufen oder Ändern von Daten in der Mobile Services-Tabelle ruft Funktionen des `MobileServiceTable`-Objekts auf. Sie erhalten einen Verweis auf die Tabelle, indem Sie wie folgt die [GetTable](https://msdn.microsoft.com/library/azure/jj554275.aspx)-Methode für eine Instanz von `MobileServiceClient` aufrufen:
 
     IMobileServiceTable<TodoItem> todoTable =
 		client.GetTable<TodoItem>();
@@ -319,11 +324,11 @@ Das folgende Beispiel aktiviert periodische Benachrichtigungen, um Kachelvorlage
     TileUpdateManager.CreateTileUpdaterForApplication().StartPeriodicUpdate(
         new System.Uri(MobileService.ApplicationUri, "/api/tiles"),
         PeriodicUpdateRecurrence.Hour
-    ); 
+    );
 
 Wählen Sie einen passenden [PeriodicUpdateRecurrance](https://msdn.microsoft.com/library/windows/apps/windows.ui.notifications.periodicupdaterecurrence.aspx)-Wert für das Aktualisierungsintervall Ihrer Daten aus.
 
-##<a name="optimisticconcurrency"></a>Vorgehensweise: Verwenden von optimistischer Parallelität
+##<a name="optimisticconcurrency"></a>Gewusst wie: Verwenden von optimistischer Parallelität
 
 In manchen Szenarien können zwei oder mehr Clients gleichzeitig versuchen, dasselbe Element zu bearbeiten. Ohne Konflikterkennung würde der letzte Schreibvorgang alle vorherigen Aktualisierungen überschreiben, selbst wenn dies nicht so gewollt wäre. Die Steuerung für optimistische Parallelität nimmt an, dass jede Transaktion Commits ausführen kann und sperrt daher keine Ressourcen. Vor dem Commit einer Transaktion prüft die Steuerung für optimistische Parallelität, ob die Daten von einer anderen Transaktion geändert wurden. Falls die Daten geändert wurden, wird für die Transaktion, die den Commit durchführen sollte, ein Rollback durchgeführt.
 
@@ -685,7 +690,7 @@ Um Ihre spezielle App-Szenario zu unterstützen, müssen Sie möglicherweise die
 
     public class MyHandler : DelegatingHandler
     {
-        protected override async Task<HttpResponseMessage> 
+        protected override async Task<HttpResponseMessage>
             SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
             // Add a custom header to the request.
@@ -764,4 +769,4 @@ Mit dieser Eigenschaft werden alle Eigenschaften während der Serialisierung in 
 [Benutzerdefinierte API in Azure Mobile Services Client SDKs]: http://blogs.msdn.com/b/carlosfigueira/archive/2013/06/19/custom-api-in-azure-mobile-services-client-sdks.aspx
 [InvokeApiAsync]: http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.invokeapiasync.aspx
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -18,13 +18,17 @@
 
 # Hinzufügen von Offlinedatensynchronisierung zur Mobile Services-App für Android
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 [AZURE.INCLUDE [mobile-services-selector-offline](../../includes/mobile-services-selector-offline.md)]
 
 ## Zusammenfassung
 
 Die Netzwerkverbindung mobiler Apps kann verloren gehen, wenn sie in ein Gebiet ohne Service gelangen oder wenn Netzwerkprobleme auftreten. Beispiel: In eine App für die Baubranche, die auf einer entfernten Baustelle verwendet wird, müssen Zeitplandaten eingegeben werden, die später mit Azure synchronisiert werden. Mithilfe der Offlinesynchronisierung in Azure Mobile Services können Sie weiterarbeiten, wenn die Netzwerkverbindung unterbrochen ist. Dies ist für viele mobile Apps unabdingbar. Bei Verwendung der Offlinesynchronisierung arbeiten Sie mit einer lokalen Kopie der Azure SQL Server-Tabelle und synchronisieren in regelmäßigen Abständen Original und Kopie.
 
-In diesem Lernprogramm aktualisieren Sie die App aus dem [Schnellstartlernprogramm "Erste Schritte mit Mobile Services"], um die Offlinesynchronisierung zu aktivieren. Anschließend testen Sie die App, indem Sie Daten offline hinzufügen, diese Elemente mit der Onlinedatenbank synchronisieren und die Änderungen im Azure-Verwaltungsportal überprüfen.
+In diesem Lernprogramm aktualisieren Sie die App aus dem [Schnellstartlernprogramm „Erste Schritte mit Mobile Services“], um die Offlinesynchronisierung zu aktivieren. Anschließend testen Sie die App, indem Sie Daten offline hinzufügen, diese Elemente mit der Onlinedatenbank synchronisieren und die Änderungen im klassischen Azure-Portal überprüfen.
 
 Immer wenn mehrere Änderungen an den Daten vorgenommen werden, können Konflikte auftreten, egal ob Sie offline sind oder eine Verbindung besteht. In einem zukünftigen Lernprogramm wird das Behandeln von Synchronisierungskonflikten untersucht. Dabei wählen Sie die Version der Änderungen aus, die übernommen werden soll. In diesem Lernprogramm gehen wir davon aus, dass keine Synchronisierungskonflikte auftreten und alle von Ihnen an vorhandenen Daten vorgenommenen Änderungen direkt auf den Azure SQL Server angewendet werden.
 
@@ -179,12 +183,12 @@ One thing which is important to point out: if there are pending changes in the l
 
 3. Zeigen Sie den Inhalt der Azure-Tabelle *TodoItem* an. Stellen Sie sicher, dass die neuen Elemente _nicht_ auf dem Server synchronisiert wurden:
 
-   - Klicken Sie für das JavaScript-Back-End auf dem Verwaltungsportal auf die Registerkarte "Daten", um den Inhalt der `TodoItem`-Tabelle anzuzeigen.
+   - Klicken Sie für das JavaScript-Back-End im klassischen Azure-Portal auf die Registerkarte „Daten“, um den Inhalt der `TodoItem`-Tabelle anzuzeigen.
    - Zeigen Sie für das .NET-Back-End den Inhalt der Tabelle entweder mit einem SQL-Tool wie *SQL Server Management Studio* oder einen REST-Client wie *Fiddler* oder *Postman* an.
 
 4. Aktivieren Sie auf dem Gerät oder Simulator WLAN. Klicken Sie anschließend auf die Schaltfläche **Aktualisieren**.
 
-5. Zeigen Sie die TodoItem-Daten erneut im Azure-Portal an. Es sollten jetzt die neuen und geänderten TodoItems angezeigt werden.
+5. Zeigen Sie die TodoItem-Daten erneut im klassischen Azure-Portal an. Es sollten jetzt die neuen und geänderten TodoItems angezeigt werden.
 
 
 ## Nächste Schritte
@@ -217,6 +221,6 @@ One thing which is important to point out: if there are pending changes in the l
 [Cloud Cover: Offlinesynchronisierung in Azure Mobile Services]: http://channel9.msdn.com/Shows/Cloud+Cover/Episode-155-Offline-Storage-with-Donna-Malayeri
 [Azure Friday: Offlinefähige Apps in Azure Mobile Services]: http://azure.microsoft.com/documentation/videos/azure-mobile-services-offline-enabled-apps-with-donna-malayeri/
 
-[Schnellstartlernprogramm "Erste Schritte mit Mobile Services"]: mobile-services-android-get-started.md
+[Schnellstartlernprogramm „Erste Schritte mit Mobile Services“]: mobile-services-android-get-started.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

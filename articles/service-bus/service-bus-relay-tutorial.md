@@ -35,7 +35,7 @@ Um einen Namespace zu erstellen, führen Sie die Schritte unter [Vorgehensweise:
 
 >[AZURE.NOTE]Sie müssen für Client- und Dienstanwendungen nicht denselben Dienstnamespace verwenden.
 
-1. Klicken Sie im Hauptfenster des Azure-Portals auf den Namen des Dienstnamespace, den Sie im vorherigen Schritt erstellt haben.
+1. Klicken Sie im Hauptfenster des [klassischen Azure-Portals][] auf den Namen des Dienstnamespaces, den Sie im vorherigen Schritt erstellt haben.
 
 2. Klicken Sie auf **Konfigurieren**, um die Standardrichtlinien für den gemeinsamen Zugriff für Ihren Dienstnamespace anzuzeigen.
 
@@ -841,4 +841,6 @@ Weitere Informationen zu Service Bus finden Sie in den folgenden Themen.
 - [Service Bus – Grundlagen](service-bus-fundamentals-hybrid-solutions.md)
 - [Service Bus-Architektur](service-bus-architecture.md)
 
-<!---HONumber=Oct15_HO3-->
+[klassischen Azure-Portals]: http://manage.windowsazure.com
+
+<!---HONumber=AcomDC_1203_2015-->

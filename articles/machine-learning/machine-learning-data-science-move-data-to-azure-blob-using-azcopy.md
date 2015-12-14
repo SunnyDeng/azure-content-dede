@@ -36,7 +36,7 @@ Anleitungen zur Installation von AzCopy sowie zusätzliche Informationen zu sein
 
 In diesem Dokument wird davon ausgegangen, dass Sie über ein Azure-Abonnement, ein Speicherkonto und den zugehörigen Speicherschlüssel für dieses Konto verfügen. Bevor Sie Daten hoch- und herunterladen können, müssen Sie den Namen Ihres Azure-Speicherkontos und den Kontoschlüssel kennen.
 
-- Informationen zum Einrichten eines Azure-Abonnements finden Sie unter [Kostenlose 1-Monat-Testversion](https://azure.microsoft.com/de-DE/pricing/free-trial/).
+- Informationen zum Einrichten eines Azure-Abonnements finden Sie unter [Kostenlose 1-Monat-Testversion](https://azure.microsoft.com/pricing/free-trial/).
 - Anleitungen zum Erstellen eines Speicherkontos und zum Abrufen von Konto- und Schlüsselinformationen finden Sie unter [Informationen zu Azure-Speicherkonten](../storage-create-storage-account.md).
 
 ## Hochladen von Dateien in einen Azure-Blob
@@ -71,4 +71,4 @@ Zum Übertragen von Blobs zwischen Azure-Containern verwenden Sie den folgenden 
 
 > [AZURE.TIP]1. Beim Hochladen von Dateien wird der Vorgang mit "/S" rekursiv durchgeführt. Ohne diesen Parameter werden Dateien im Unterverzeichnis nicht hochgeladen. 2. Beim Herunterladen von Datei durchsucht "/S" die Container rekursiv, bis alle Dateien im angegebenen Verzeichnis und seinen Unterverzeichnissen oder alle Dateien, die dem angegebenen Muster im angegebenen Verzeichnis und seinen Unterverzeichnissen entsprechen, heruntergeladen wurden. 3. Sie können mit dem "/Source"-Parameter keine bestimmte Blobdatei für das Herunterladen angeben. Um eine bestimmte Datei herunterzuladen, geben Sie den Blobdateinamen mithilfe des "/Pattern"-Parameters an. Der "/S"-Parameter kann verwendet werden, damit AzCopy rekursiv nach einem Dateinamensmuster sucht. Ohne den "/Pattern"-Parameter lädt AzCopy alle Dateien in diesem Verzeichnis herunter.
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

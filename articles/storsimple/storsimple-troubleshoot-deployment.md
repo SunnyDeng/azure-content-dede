@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="09/29/2015"
+   ms.date="12/02/2015"
    ms.author="alkohli" />
 
 # Beheben von Problemen mit der Bereitstellung von StorSimple-Geräten
@@ -53,7 +53,7 @@ In den folgenden Schritten werden die Schritte des Setup-Assistenten zusammengef
  
     > [AZURE.IMPORTANT]Kennwörter werden vor der Registrierung erfasst, aber erst nach erfolgreicher Registrierung des Geräts angewendet. Wenn beim Zuweisen des Kennworts ein Fehler auftritt, werden Sie aufgefordert, das Kennwort erneut anzugeben, bis die erforderlichen Kennwörter (gemäß den Komplexitätsanforderungen) erfasst wurden.
 
-4. Registrieren des Geräts: Im letzten Schritt wird das Gerät im StorSimple-Manager-Dienst in Microsoft Azure registriert. Die Registrierung erfordert ein [Abrufen den Dienstregistrierungsschlüssels](storsimple-manage-service.md#get-the-service-registration-key) aus dem Azure-Verwaltungsportal sowie dessen Angabe im Setup-Assistenten. Nachdem das Gerät erfolgreich registriert wurde, wird ein Verschlüsselungsschlüssel für Dienstdaten bereitgestellt. Achten Sie darauf, dass Sie diesen Verschlüsselungsschlüssel an einem sicheren Ort speichern, da alle nachfolgenden Geräte mit dem Dienst registriert werden müssen.
+4. Registrieren des Geräts: Im letzten Schritt wird das Gerät im StorSimple-Manager-Dienst in Microsoft Azure registriert. Die Registrierung erfordert ein [Abrufen den Dienstregistrierungsschlüssels](storsimple-manage-service.md#get-the-service-registration-key) aus dem klassischen Azure-Portal sowie dessen Angabe im Setup-Assistenten. Nachdem das Gerät erfolgreich registriert wurde, wird ein Verschlüsselungsschlüssel für Dienstdaten bereitgestellt. Achten Sie darauf, dass Sie diesen Verschlüsselungsschlüssel an einem sicheren Ort speichern, da alle nachfolgenden Geräte mit dem Dienst registriert werden müssen.
 
 ## Häufige Fehler bei der Gerätebereitstellung
 
@@ -74,7 +74,7 @@ Die folgenden Tabellen enthalten häufige Fehler, die auftreten können, wenn Si
 | 4 | Invoke-HcsSetupWizard: Fehler in einer Clusterressource. (Ausnahme von HRESULT:0x800713AE). | Doppelte VIP. Die angegebene IP-Adresse wird bereits verwendet.| Geben Sie eine neue IP-Adresse an, die nicht belegt ist.|
 | 5 | Invoke-HcsSetupWizard: Ungültige IPv4-Adresse. | Die IP-Adresse hat das falsche Format.| Überprüfen Sie das Format, und geben Sie die IP-Adresse erneut an. Weitere Informationen finden Sie unter [Ipv4 Addressing][1] (in englischer Sprache). |
 | 6 | Invoke-HcsSetupWizard: Ungültige IPv6-Adresse. | Die IP-Adresse hat das falsche Format.| Überprüfen Sie das Format, und geben Sie die IP-Adresse erneut an. Weitere Informationen finden Sie unter [Ipv6 Addressing][2] (in englischer Sprache).|
-| 7 | Invoke-HcsSetupWizard: Es sind keine Endgeräte mehr von der Endgerätzuordnung verfügbar. (Ausnahme von HRESULT:0x800706D9). | Die Clusterfunktionalität ist nicht funktionsfähig. | [Wenden Sie sich an den Microsoft Support](storsimple-contact-microsoft-support.md) für weitere Schritte.
+| 7 | Invoke-HcsSetupWizard: Es sind keine Endpunkte mehr von der Endpunktzuordnung verfügbar. (Ausnahme von HRESULT:0x800706D9). | Die Clusterfunktionalität ist nicht funktionsfähig. | [Wenden Sie sich an den Microsoft Support](storsimple-contact-microsoft-support.md) für weitere Schritte.
 
 ## Fehler während der optionalen Webproxyeinstellungen
 
@@ -119,7 +119,7 @@ Kennwörter werden vor der Registrierung erfasst, aber erst nach erfolgreicher R
 
 > [AZURE.IMPORTANT]Nach einem Fehler beim Anwenden eines Kennworts versucht die Software im Allgemeinen wiederholt, das Kennwort zu erfassen, bis dies erfolgreich ist. In seltenen Fällen kann das Kennwort nicht angewendet werden. In diesem Fall können Sie das Gerät registrieren und den Vorgang fortsetzen, jedoch kann das Kennwort nicht geändert werden. Sie erhalten keinen Hinweis darauf, welches Kennwort nicht geändert wurde: das Kennwort für den Geräteadministrator oder das Kennwort für den StorSimple-Momentaufnahme-Manager. Tritt dieser Fall ein, empfehlen wir, beide Kennwörter zu ändern.
 
-Sie können die Kennwörter über das Verwaltungsportal vom StorSimple-Manager-Dienst zurücksetzen. Weitere Informationen finden Sie unter:
+Sie können die Kennwörter im klassischen Azure-Portal über den StorSimple Manager-Dienst zurücksetzen. Weitere Informationen finden Sie unter:
 
 - [Ändern des Geräteadministratorkennworts](storsimple-change-passwords.md#change-the-device-administrator-password).
 - [Ändern des StorSimple Snapshot Manager-Kennworts](storsimple-change-passwords.md#change-the-storsimple-snapshot-manager-password).
@@ -313,7 +313,7 @@ Verwenden Sie das Cmdlet `Test-HcsmConnection` für ein Gerät, das bereits verb
    
     Wenn keine Webausnahme ausgelöst wird, überprüfen Sie auf ErrorCode.CiSApplianceFailure. Dies gibt an, dass das Gerät fehlgeschlagen ist.
 
-5. Überprüfen Sie die Verbindung des Clouddiensts. Wenn der Dienst eine Webausnahme auslöst, werden möglicherweise die folgenden Fehler angezeigt:
+5. Überprüfen Sie die Verbindung des Cloud-Diensts. Wenn der Dienst eine Webausnahme auslöst, werden möglicherweise die folgenden Fehler angezeigt:
 
   - ErrorCode.CiSApplianceGateway – weist auf eine HttpStatusCode.BadGateway-Ausnahme hin: Ein zwischengeschalteter Proxyserver hat von einem anderen Proxy oder dem ursprünglichen Server eine ungültige Anforderung erhalten.
   - ErrorCode.CiSApplianceProxy – weist auf eine HttpStatusCode.ProxyAuthenticationRequired-Ausnahme (HTTP-Statuscode 407) hin: Der Client konnte nicht beim Proxyserver authentifiziert werden. 
@@ -380,7 +380,7 @@ Wenn Sie Update 1 auf Ihrem StorSimple-Gerät ausführen, müssen Sie es nicht m
 
 **Beispielausgabe – Offlinegerät mit StorSimple-Version (Juli 2014)**
 
-Dieses Beispiel stammt von einem Gerät mit dem Status **Offline** im Verwaltungsportal.
+Dieses Beispiel stammt von einem Gerät mit dem Status **Offline** im klassischen Azure-Portal.
 
      Checking device state: Success 
      Device is registered successfully 
@@ -577,4 +577,4 @@ Informationen zur [Problembehandlung bei einem betriebsbereiten Gerät](storsimp
 [1]: https://technet.microsoft.com/library/dd379547(v=ws.10).aspx
 [2]: https://technet.microsoft.com/library/dd392266(v=ws.10).aspx
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -1,8 +1,8 @@
 <properties
     pageTitle="Integrieren des einmaligen Anmeldens mit Azure Active Directory in SaaS-Apps | Microsoft Azure"
-    description="Ermöglichen Sie die Authentifizierung für das einmalige Anmelden und die Benutzerbereitstellung der zentralisierten Zugriffsverwaltung von SaaS-Apps in Azure Active Directory. Eine Übersicht zum Integrieren von Azure AD in SaaS-Apps."
+    description="Ermöglichen Sie die Authentifizierung für das einmalige Anmelden und die Benutzerbereitstellung der zentralisierten Zugriffsverwaltung von SaaS-Apps in Azure Active Directory. Eine Übersicht zum Integrieren von Azure Active Directory in SaaS-Apps."
     services="active-directory"
-	keywords="Integrieren von Azure AD in SaaS-Apps"
+	  keywords="Integrieren von Azure AD in SaaS-Apps"
     documentationCenter=""
     authors="curtand"
     manager="stevenpo"
@@ -14,14 +14,14 @@
       ms.topic="article"
       ms.tgt_pltfrm="na"
       ms.workload="identity"
-      ms.date="11/20/2015"
+      ms.date="12/01/2015"
       ms.author="curtand"/>
 
-# Integrieren des einmaligen Anmeldens mit Azure Active Directory (Azure AD) in SaaS-Apps  
+# Integrieren des einmaligen Anmeldens mit Azure Active Directory in SaaS-Apps  
 
 [AZURE.INCLUDE [active-directory-sso-use-case-intro](../../includes/active-directory-sso-use-case-intro.md)]
 
-Wenn Sie die einmalige Anmeldung für eine App einrichten, die Sie in Ihre Organisation einbringen möchten, beginnen Sie mit einem vorhandenen Verzeichnis in Azure Active Directory. Sie können ein Azure AD-Verzeichnis verwenden, das Sie über Microsoft Azure, Office 365 oder Windows Intune erhalten haben. Wenn Sie mehrere dieser Verzeichnisse haben, erfahren Sie unter [Verwalten Ihres Azure AD-Verzeichnisses](active-directory-administer.md), welches Sie am besten verwenden.
+Wenn Sie die einmalige Anmeldung für eine App einrichten, die Sie in Ihre Organisation einbringen möchten, beginnen Sie mit einem vorhandenen Verzeichnis in Azure Active Directory (Azure AD). Sie können ein Azure AD-Verzeichnis verwenden, das Sie über Microsoft Azure, Office 365 oder Windows Intune erhalten haben. Wenn Sie mehrere dieser Verzeichnisse haben, erfahren Sie unter [Verwalten Ihres Azure AD-Verzeichnisses](active-directory-administer.md), welches Sie am besten verwenden.
 
 ## Authentifizierung
 
@@ -41,7 +41,7 @@ Azure AD bietet mehrere anpassbare Möglichkeiten zum Bereitstellen von Anwendu
 
 ## Zusätzliche Aspekte für bereits verwendete Anwendungen
 
-Das Einrichten des einmaligen Anmeldens für eine Anwendung, die in Ihrem Unternehmen bereits verwendet wird, ist ein anderer Prozess als das Erstellen neuer Konten für eine neue Anwendung. Beispiele für vorbereitende Schritte sind: Zuordnen von Benutzeridentitäten in der Anwendung zu Azure Active Directory (AD)-Identitäten und Ermitteln, wie Benutzer das Anmelden an einer Anmeldung nach der Integration erfahren.
+Das Einrichten des einmaligen Anmeldens für eine Anwendung, die in Ihrem Unternehmen bereits verwendet wird, ist ein anderer Prozess als das Erstellen neuer Konten für eine neue Anwendung. Beispiele für vorbereitende Schritte sind: Zuordnen von Benutzeridentitäten in der Anwendung zu Azure AD-Identitäten und Ermitteln, wie Benutzer das Anmelden an einer Anmeldung nach der Integration erfahren.
 
 > [AZURE.NOTE]Um SSO für eine vorhandene Anwendung einzurichten, benötigen Sie globale Administratorrechte in Azure AD und der SaaS-Anwendung.
 
@@ -62,10 +62,10 @@ Eine weitere nützliche Ressource ist der Abschnitt *Unterdrücken der Benutzerz
 ## Nächste Schritte
 
 
-Für SaaS-Apps, die Sie im App-Katalog finden, bietet Azure Active Directory eine Reihe von [Lernprogrammen zur Integration von SaaS-Apps](active-directory-saas-tutorial-list.md).
+Für SaaS-Apps, die Sie im App-Katalog finden, bietet Azure AD eine Reihe von [Lernprogrammen zur Integration von SaaS-Apps](active-directory-saas-tutorial-list.md).
 
-Wenn die App sich nicht im App-Katalog befindet, können Sie [sie der Azure Active Directory-App-Galerie als benutzerdefinierte Anwendung hinzufügen](http://blogs.technet.com/b/ad/archive/2015/06/17/bring-your-own-app-with-azure-ad-self-service-saml-configuration-gt-now-in-preview.aspx).
+Wenn die App sich nicht im App-Katalog befindet, können Sie [sie der Azure AD-App-Galerie als benutzerdefinierte Anwendung hinzufügen](http://blogs.technet.com/b/ad/archive/2015/06/17/bring-your-own-app-with-azure-ad-self-service-saml-configuration-gt-now-in-preview.aspx).
 
 In der Azure.com-Bibliothek finden Sie weitaus umfassendere Informationen zu diesen Problemen, beginnend mit [Was bedeuten Anwendungszugriff und einmaliges Anmelden mit Azure Active Directory](active-directory-appssoaccess-whatis.md).
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

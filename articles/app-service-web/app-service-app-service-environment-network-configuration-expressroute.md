@@ -36,11 +36,11 @@ Es gibt Netzwerkverbindungsanforderungen für App Service-Umgebungen, die urspr�
 -  Die DNS-Konfiguration für das virtuelle Netzwerk muss alle der zuvor genannten Endpunkte und Domänen auflösen können. Können diese Endpunkte nicht aufgelöst werden, schlägt die Erstellung von App Service-Umgebungen fehl, und vorhandene App Service-Umgebungen werden als fehlerhaft gekennzeichnet.
 -  Falls ein benutzerdefinierter DNS-Server am anderen Ende eines VPN-Gateways vorhanden ist, muss der DNS-Server über das Subnetz mit der App Service-Umgebung erreichbar sein. 
 -  Der ausgehende Netzwerkpfad kann weder durch interne Unternehmensproxys laufen noch zwangsweise zur lokalen Infrastruktur getunnelt werden. Andernfalls wird die tatsächliche NAT-Adresse des ausgehenden Netzwerkdatenverkehrs der App Service-Umgebung geändert. Das Ändern der NAT-Adresse des ausgehenden Netzwerkdatenverkehrs einer App Service-Umgebung verursacht bei vielen der oben genannten Endpunkte Verbindungsfehler. Dies führt zu Fehlern bei der Erstellung von App Service-Umgebungen und dazu, dass zuvor fehlerfreie App Service-Umgebungen als fehlerhaft gekennzeichnet werden.  
--  Eingehender Netzwerkzugriff auf die erforderlichen Ports für App Service-Umgebungen muss wie in diesem [Artikel][requiredports] beschrieben zugelassen werden.
+-  Eingehender Netzwerkzugriff auf die erforderlichen Ports für App Service-Umgebungen muss entsprechend diesem [Artikel][requiredports] zugelassen werden.
 
-Die DNS-Anforderungen können erfüllt werden, indem Sie sicherstellen, dass eine gültige DNS-Infrastruktur für das virtuelle Netzwerk konfiguriert und beibehalten wird. Falls die DNS-Konfiguration nach der Erstellung einer App Service-Umgebung geändert wird, können Entwickler erzwingen, dass eine App Service-Umgebung die neue DNS-Konfiguration übernimmt. Wird im [neuen Verwaltungsportal][NewPortal] über das Symbol „Neu starten“ oben auf dem Verwaltungsblatt der App Service-Umgebung ein paralleler Neustart der Umgebung ausgelöst, übernimmt diese die neue DNS-Konfiguration.
+Die DNS-Anforderungen können erfüllt werden, indem Sie sicherstellen, dass eine gültige DNS-Infrastruktur für das virtuelle Netzwerk konfiguriert und beibehalten wird. Falls die DNS-Konfiguration nach der Erstellung einer App Service-Umgebung geändert wird, können Entwickler erzwingen, dass eine App Service-Umgebung die neue DNS-Konfiguration übernimmt. Wird im [Azure-Portal][NewPortal] über das Symbol „Neu starten“ oben auf dem Verwaltungsblatt der App Service-Umgebung ein paralleler Neustart der Umgebung ausgelöst, übernimmt diese die neue DNS-Konfiguration.
 
-Die eingehenden Netzwerkzugriffsanforderungen können erfüllt werden, indem im Subnetz der App Service-Umgebung eine [Netzwerksicherheitsgruppe][NetworkSecurityGroups] konfiguriert wird, um wie in diesem [Artikel][requiredports] beschrieben den erforderlichen Zugriff zu ermöglichen.
+Die eingehenden Netzwerkzugriffsanforderungen können erfüllt werden, indem im Subnetz der App Service-Umgebung eine [Netzwerksicherheitsgruppe][NetworkSecurityGroups] konfiguriert wird, um, wie in diesem [Artikel][requiredports] beschrieben, den erforderlichen Zugriff zu ermöglichen.
 
 ## Aktivieren ausgehender Netzwerkverbindungen für eine App Service-Umgebung##
 In der Standardeinstellung kündigt eine neu erstellte ExpressRoute-Verbindung eine Standardroute an, die ausgehende Internetverbindungen zulässt. Bei dieser Konfiguration kann sich eine App Service-Umgebung mit anderen Azure-Endpunkten verbinden.
@@ -68,7 +68,7 @@ Details zum Erstellen und Konfigurieren benutzerdefinierter Routen finden Sie in
 
 **Voraussetzungen**
 
-1. Installieren Sie die aktuellste Azure PowerShell über die [Seite mit den Azure-Downloads][AzureDownloads] (Juni 2015 oder später). Unter "Befehlszeilentools" befindet sich unter "Windows PowerShell" der Link "Installieren", über den die aktuellen PowerShell-Cmdlets installiert werden.
+1. Installieren Sie die aktuellste Azure PowerShell über die [Seite mit den Azure-Downloads][AzureDownloads] (vom Juni 2015 oder später). Unter "Befehlszeilentools" befindet sich unter "Windows PowerShell" der Link "Installieren", über den die aktuellen PowerShell-Cmdlets installiert werden.
 
 2. Es wird empfohlen, ein eindeutiges Subnetz für die ausschließliche Verwendung durch eine App Service-Umgebung zu erstellen. Dadurch wird sichergestellt, dass die im Subnetz eingerichteten benutzerdefinierten Routen nur für ausgehenden Datenverkehr für die App Service-Umgebung geöffnet werden.
 3. **Wichtig**: Stellen Sie die App Service-Umgebung erst bereit, **nachdem** die folgenden Konfigurationsschritte erfolgt sind. Dadurch wird sichergestellt, dass ausgehende Netzwerkverbindungen verfügbar sind, bevor Sie versuchen, eine App Service-Umgebung bereitzustellen.
@@ -137,4 +137,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 
 <!-- IMAGES -->
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

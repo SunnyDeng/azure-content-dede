@@ -38,9 +38,9 @@ Zur Ausführung dieses Lernprogramms benötigen Sie Folgendes:
 
 ## Erstellen eines Ereignis-Hubs
 
-1. Melden Sie sich beim [Azure-Portal] an, und klicken Sie im unteren Teil des Bildschirms auf **NEW**.
+1. Melden Sie sich beim [klassischen Azure-Portal][] an, und klicken Sie im unteren Teil des Bildschirms auf **NEU**.
 
-2. Klicken Sie auf **App-Dienste**, **Service Bus**, **Event Hub** und dann auf **Schnellerfassung**.
+2. Klicken Sie auf **App Services**, **Service Bus**, **Event Hub** und dann auf **Schnellerfassung**.
 
 	![][1]
 
@@ -111,7 +111,7 @@ Weitere Informationen finden Sie im [Java Developer Center](/develop/java/).
 [22]: ./media/event-hubs-java-ephcs-getstarted/run-csharp-ephcs2.png
 
 <!-- Links -->
-[Azure-Portal]: https://manage.windowsazure.com/
+[klassischen Azure-Portal]: https://manage.windowsazure.com/
 [Ereignisprozessorhosts]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
 [Übersicht über Event Hubs]: event-hubs-overview.md
 [Beispielanwendung mit Verwendung von Ereignis-Hubs]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097
@@ -119,4 +119,4 @@ Weitere Informationen finden Sie im [Java Developer Center](/develop/java/).
 [Messaginglösung mit Warteschlange]: ../service-bus/service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

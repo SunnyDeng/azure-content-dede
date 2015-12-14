@@ -24,7 +24,7 @@ Sie können den Zugriff auf Ihre Azure-Web-App einschränken, indem Sie verschie
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 ## Konfigurieren einer Web-App für die Clientzertifikatauthentifizierung ##
-Zum Einrichten Ihrer Web-App für das Anfordern von Clientzertifikaten müssen Sie Ihrer Web-App die Website-Einstellung "clientCertEnabled" hinzufügen und diese auf "true" festlegen. Diese Einstellung ist derzeit nicht auf der Verwaltungsoberfläche im Portal verfügbar, weshalb Sie die REST-API verwenden müssen.
+Zum Einrichten Ihrer Web-App für das Anfordern von Clientzertifikaten müssen Sie Ihrer Web-App die Website-Einstellung "clientCertEnabled" hinzufügen und diese auf "true" festlegen. Diese Einstellung ist derzeit nicht auf der Verwaltungsoberfläche im Portal verfügbar, weshalb Sie dazu die REST-API verwenden müssen.
 
 Sie können das Tool [ARMClient](https://github.com/projectkudu/ARMClient) zum Vereinfachen des REST-API-Aufrufs verwenden. Nachdem Sie sich mit dem Tool angemeldet haben, müssen Sie den folgenden Befehl aufrufen:
 
@@ -179,4 +179,4 @@ Das Clientzertifikat, das an die Anwendung gesendet wird, durchläuft keinerlei 
         }
     }
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

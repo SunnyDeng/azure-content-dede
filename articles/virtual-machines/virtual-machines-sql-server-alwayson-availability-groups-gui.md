@@ -13,13 +13,13 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
-	ms.date="08/12/2015"
+	ms.date="11/30/2015"
 	ms.author="jroth" />
 
 # Konfigurieren von AlwaysOn-Verfügbarkeitsgruppen in einem virtuellen Azure-Computer (GUI)
 
 > [AZURE.SELECTOR]
-- [Azure portal](virtual-machines-sql-server-alwayson-availability-groups-gui.md)
+- [Azure classic portal](virtual-machines-sql-server-alwayson-availability-groups-gui.md)
 - [PowerShell](virtual-machines-sql-server-alwayson-availability-groups-powershell.md)
 
 <br/>
@@ -29,7 +29,7 @@
 
 In diesem End-to-End-Tutorial erfahren Sie, wie Sie Verfügbarkeitsgruppen mithilfe von SQL Server AlwaysOn implementieren, das auf virtuellen Computern in Azure ausgeführt wird.
 
->[AZURE.NOTE]Im Azure-Verwaltungsportal gibt es einen neuen Katalog, der für AlwaysOn-Verfügbarkeitsgruppen mit einem Listener eingerichtet ist. Hierüber wird alles automatisch konfiguriert, was Sie für AlwaysOn-Verfügbarkeitsgruppen benötigen. Weitere Informationen finden Sie unter [SQL Server AlwaysOn Offering in Microsoft Azure Portal Gallery](http://blogs.technet.com/b/dataplatforminsider/archive/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery.aspx) (in englischer Sprache). Informationen zum Verwenden von PowerShell finden Sie im Tutorial desselben Szenarios unter [Konfigurieren von AlwaysOn-Verfügbarkeitsgruppen in Azure mit PowerShell](virtual-machines-sql-server-alwayson-availability-groups-powershell.md).
+>[AZURE.NOTE]Im Azure-Verwaltungsportal gibt es einen neuen Katalog, der für AlwaysOn-Verfügbarkeitsgruppen mit einem Listener eingerichtet ist. Hierüber wird alles automatisch konfiguriert, was Sie für AlwaysOn-Verfügbarkeitsgruppen benötigen. Weitere Informationen finden Sie unter [SQL Server AlwaysOn Offering in Microsoft Azure classic portal Gallery](http://blogs.technet.com/b/dataplatforminsider/archive/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery.aspx) (in englischer Sprache). Informationen zum Verwenden von PowerShell finden Sie im Tutorial desselben Szenarios unter [Konfigurieren von AlwaysOn-Verfügbarkeitsgruppen in Azure mit PowerShell](virtual-machines-sql-server-alwayson-availability-groups-powershell.md).
 
 Am Ende des Tutorials besteht Ihre SQL Server AlwaysOn-Lösung in Azure aus folgenden Elementen:
 
@@ -61,7 +61,7 @@ In diesem Tutorial wird Folgendes vorausgesetzt:
 
 ## Erstellen des virtuellen Netzwerks und des Domänencontrollerservers
 
-Sie beginnen mit einem neuen Azure-Testkonto. Nachdem Sie die Einrichtung Ihres Kontos fertig gestellt haben, sollten Sie sich im Startbildschirm des Azure-Portals befinden.
+Sie beginnen mit einem neuen Azure-Testkonto. Nachdem Sie die Einrichtung Ihres Kontos fertig gestellt haben, sollten Sie sich im Startbildschirm des klassischen Azure-Portals befinden.
 
 1. Klicken Sie, wie unten dargestellt, in der linken unteren Ecke der Seite auf die Schaltfläche **Neu**.
 
@@ -88,11 +88,11 @@ Sie beginnen mit einem neuen Azure-Testkonto. Nachdem Sie die Einrichtung Ihres 
 	|Seite|Einstellungen|
 |---|---|
 |Betriebssystem des virtuellen Computers auswählen|Windows Server 2012 R2 Datacenter|
-|Konfiguration des virtuellen Computers|**VERÖFFENTLICHUNGSDATUM DER VERSION** = (neueste Version)<br/>**NAME DES VIRTUELLEN COMPUTERS** = ContosoDC<br/>**EBENE** = BASIC<br/>**GRÖSSE** = A2 (2 Kerne)<br/>**NEUER BENUTZERNAME** = AzureAdmin<br/>**NEUES KENNWORT** = Contoso!000<br/>**BESTÄTIGEN** = Contoso!000|
+|Konfiguration des virtuellen Computers|**VERÖFFENTLICHUNGSDATUM DER VERSION** = (neueste Version)<br/>**NAME DES VIRTUELLEN COMPUTERS** = ContosoDC<br/>**EBENE** = STANDARD<br/>**GRÖSSE** = A2 (2 Kerne)<br/>**NEUER BENUTZERNAME** = AzureAdmin<br/>**NEUES KENNWORT** = Contoso!000<br/>**BESTÄTIGEN** = Contoso!000|
 |Konfiguration des virtuellen Computers|**CLOUDDIENST** = Neuen Clouddienst erstellen<br/>**DNS-NAME DES CLOUDDIENSTS** = Ein eindeutiger Clouddienstname<br/>**DNS-NAME** = Ein eindeutiger Name (z. B. ContosoDC123)<br/>**REGION/AFFINITÄTSGRUPPE/VIRTUELLES NETZWERK** = ContosoNET<br/>**VIRTUELLES NETZWERK – SUBNETZE** = Back(10.10.2.0/24)<br/>**SPEICHERKONTO** = Automatisch generiertes Speicherkonto verwenden<br/>**VERFÜGBARKEITSGRUPPE** = (Keine)|
 |Virtueller Computer - Optionen|Standardwerte verwenden|
 
-Nachdem Sie die Konfiguration des neuen virtuellen Computers fertig gestellt haben, warten Sie auf die Bereitstellung des virtuellen Computers. Dieser Prozess dauert einige Zeit, und wenn Sie im Azure-Portal auf die Registerkarte **Virtueller Computer** klicken, können Sie sehen, wie ContosoDC die Zustände von **Wird gestartet (Bereitstellung)** zu **Beendet**, **Wird gestartet** über **Wird ausgeführt (Bereitstellung)** und schließlich **Wird ausgeführt** durchläuft.
+Nachdem Sie die Konfiguration des neuen virtuellen Computers fertig gestellt haben, warten Sie auf die Bereitstellung des virtuellen Computers. Dieser Prozess dauert einige Zeit, und wenn Sie im klassischen Azure-Portal auf die Registerkarte **Virtueller Computer** klicken, können Sie sehen, wie ContosoDC die Zustände von **Wird gestartet (Bereitstellung)** zu **Beendet**, **Wird gestartet** über **Wird ausgeführt (Bereitstellung)** und schließlich **Wird ausgeführt** durchläuft.
 
 Der DC-Server ist jetzt erfolgreich bereitgestellt. Als Nächstes konfigurieren Sie die Active Directory-Domäne auf diesem DC-Server.
 
@@ -192,14 +192,18 @@ Nachdem Sie nun die Konfiguration von Active Directory und den Benutzerobjekten 
 
 ## Erstellen der virtuellen SQL Server-Computer
 
-Als Nächstes erstellen Sie drei virtuelle Computer, einschließlich eines WSFC-Clusterknotens und zweier virtueller SQL Server-Computer. Um jeden dieser virtuellen Computer zu erstellen, kehren Sie zum Azure-Portal zurück. Klicken Sie auf **Neu**, **Compute**, **Virtueller Computer** und dann auf **Aus Katalog**. Verwenden Sie dann die Vorlagen aus der folgenden Tabelle, die Sie bei der Erstellung der virtuellen Computer unterstützen.
+Als Nächstes erstellen Sie drei virtuelle Computer, einschließlich eines WSFC-Clusterknotens und zweier virtueller SQL Server-Computer. Um jeden dieser virtuellen Computer zu erstellen, kehren Sie zum klassischen Azure-Portal zurück. Klicken Sie auf **Neu**, **Compute**, **Virtueller Computer** und dann auf **Aus Katalog**. Verwenden Sie dann die Vorlagen aus der folgenden Tabelle, die Sie bei der Erstellung der virtuellen Computer unterstützen.
 
 |Seite|VM1|VM2|VM3|
 |---|---|---|---|
 |Betriebssystem des virtuellen Computers auswählen|**Windows Server 2012 R2 Datacenter**|**SQL Server 2014 RTM Enterprise**|**SQL Server 2014 RTM Enterprise**|
-|Konfiguration des virtuellen Computers|**VERÖFFENTLICHUNGSDATUM DER VERSION** = (neueste Version)<br/>**NAME DES VIRTUELLEN COMPUTERS** = ContosoWSFCNode<br/>**EBENE** = BASIC<br/>**GRÖSSE** = A2 (2 Kerne)<br/>**NEUER BENUTZERNAME** = AzureAdmin<br/>**NEUES KENNWORT** = Contoso!000<br/>**BESTÄTIGEN** = Contoso!000|**VERÖFFENTLICHUNGSDATUM DER VERSION** = (neueste Version)<br/>**NAME DES VIRTUELLEN COMPUTERS** = ContosoSQL1<br/>**EBENE** = BASIC<br/>**GRÖSSE** = A3 (4 Kerne)<br/>**NEUER BENUTZERNAME** = AzureAdmin<br/>**NEUES KENNWORT** = Contoso!000<br/>**BESTÄTIGEN** = Contoso!000|**VERÖFFENTLICHUNGSDATUM DER VERSION** = (neueste Version)<br/>**NAME DES VIRTUELLEN COMPUTERS** = ContosoSQL2<br/>**EBENE** = BASIC<br/>**GRÖSSE** = A3 (4 Kerne)<br/>**NEUER BENUTZERNAME** = AzureAdmin<br/>**NEUES KENNWORT** = Contoso!000<br/>**BESTÄTIGEN** = Contoso!000|
+|Konfiguration des virtuellen Computers|**VERÖFFENTLICHUNGSDATUM DER VERSION** = (neueste Version)<br/>**NAME DES VIRTUELLEN COMPUTERS** = ContosoWSFCNode<br/>**EBENE** = STANDARD<br/>**GRÖSSE** = A2 (2 Kerne)<br/>**NEUER BENUTZERNAME** = AzureAdmin<br/>**NEUES KENNWORT** = Contoso!000<br/>**BESTÄTIGEN** = Contoso!000|**VERÖFFENTLICHUNGSDATUM DER VERSION** = (neueste Version)<br/>**NAME DES VIRTUELLEN COMPUTERS** = ContosoSQL1<br/>**EBENE** = STANDARD<br/>**GRÖSSE** = A3 (4 Kerne)<br/>**NEUER BENUTZERNAME** = AzureAdmin<br/>**NEUES KENNWORT** = Contoso!000<br/>**BESTÄTIGEN** = Contoso!000|**VERÖFFENTLICHUNGSDATUM DER VERSION** = (neueste Version)<br/>**NAME DES VIRTUELLEN COMPUTERS** = ContosoSQL2<br/>**EBENE** = STANDARD<br/>**GRÖSSE** = A3 (4 Kerne)<br/>**NEUER BENUTZERNAME** = AzureAdmin<br/>**NEUES KENNWORT** = Contoso!000<br/>**BESTÄTIGEN** = Contoso!000|
 |Konfiguration des virtuellen Computers|**CLOUDDIENST** = Zuvor erstellter eindeutiger DNS-Name des Clouddiensts (z. B. ContosoDC123)<br/>**REGION/AFFINITÄTSGRUPPE/VIRTUELLES NETZWERK** = ContosoNET<br/>**VIRTUELLES NETZWERK – SUBNETZE** = Back(10.10.2.0/24)<br/>**SPEICHERKONTO** = Automatisch generiertes Speicherkonto verwenden<br/>**VERFÜGBARKEITSGRUPPE** = Verfügbarkeitsgruppe erstellen<br/>**VERFÜGBARKEITSGRUPPENNAME** = SQLHADR|**CLOUDDIENST** = Zuvor erstellter eindeutiger DNS-Name des Clouddiensts (z. B. ContosoDC123)<br/>**REGION/AFFINITÄTSGRUPPE/VIRTUELLES NETZWERK** = ContosoNET<br/>**VIRTUELLES NETZWERK – SUBNETZE** = Back(10.10.2.0/24)<br/>**SPEICHERKONTO** = Automatisch generiertes Speicherkonto verwenden<br/>**VERFÜGBARKEITSGRUPPE** = SQLHADR (Sie können die Verfügbarkeitsgruppe auch konfigurieren, nachdem der Computer erstellt wurde. Alle drei Computer sollten der Verfügbarkeitsgruppe SQLHADR zugewiesen werden.)|**CLOUDDIENST** = Zuvor erstellter eindeutiger DNS-Name des Clouddiensts (z. B. ContosoDC123)<br/>**REGION/AFFINITÄTSGRUPPE/VIRTUELLES NETZWERK** = ContosoNET<br/>**VIRTUELLES NETZWERK – SUBNETZE** = Back(10.10.2.0/24)<br/>**SPEICHERKONTO** = Automatisch generiertes Speicherkonto verwenden<br/>**VERFÜGBARKEITSGRUPPE** = SQLHADR (Sie können die Verfügbarkeitsgruppe auch konfigurieren, nachdem der Computer erstellt wurde. Alle drei Computer sollten der Verfügbarkeitsgruppe SQLHADR zugewiesen werden.)|
 |Virtueller Computer - Optionen|Standardwerte verwenden|Standardwerte verwenden|Standardwerte verwenden|
+
+<br/>
+
+>[AZURE.NOTE]Die vorherige Konfiguration schlägt virtuelle Computer der Standardebene vor, da Computer auf der Basisebene Endpunkte mit Lastenausgleich nicht unterstützen, die später für das Erstellen von Verfügbarkeitsgruppenlisteners erforderlich sind. Außerdem sind die hier vorgeschlagenen Computergrößen für das Testen von Verfügbarkeitsgruppen in Azure-VMs vorgesehen. Die beste Leistung für Produktionsarbeitslasten finden Sie unter den Empfehlungen für die Größe und Konfiguration der SQL Server-Computer in [Optimale Verfahren für die Leistung für SQL Server auf virtuellen Computern in Azure](virtual-machines-sql-server-performance-best-practices.md).
 
 Sobald die drei virtuellen Computer vollständig bereitgestellt wurden, müssen Sie sie der Domäne **corp.contoso.com** beitreten lassen und CORP\\Install Administratorrechte für die Computer gewähren. Verwenden Sie hierzu die folgenden Schritte für jeden der drei virtuellen Computer.
 
@@ -544,4 +548,4 @@ Sie haben nun erfolgreich SQL Server AlwaysOn implementiert, indem Sie eine Verf
 
 Weitere Informationen zur Verwendung von SQL Server in Azure finden Sie unter [SQL Server auf virtuellen Azure-Computern](../articles/virtual-machines/virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

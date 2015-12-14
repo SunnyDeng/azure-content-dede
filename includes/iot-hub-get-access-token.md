@@ -1,8 +1,8 @@
-## Obtain a Resource Manager token
+## Ein Ressourcen-Manager-Token abrufen
 
-Azure Active Directory must authenticate all the tasks that you perform on resources using the Azure Resource Manager. The example shown here uses password authentication, for other approaches see [Authenticating Azure Resource Manager requests][lnk-authenticate-arm].
+Azure Active Directory muss alle Aufgaben authentifizieren, die Sie mithilfe des Azure-Ressourcen-Managers für die Ressourcen ausführen. Im hier gezeigten Beispiel wird die Kennwortauthentifizierung verwendet, andere Ansätze finden Sie unter [Authentifizieren von Anforderungen des Azure-Ressourcen-Managers][lnk-authenticate-arm].
 
-1. Add the following code to the **Main** method in Program.cs to retrieve a token from Azure AD using the application id and password.
+1. Fügen Sie der **Main**-Methode in „Program.cs“ folgenden Code hinzu, um mithilfe der Anwendungs-ID und des Kennworts ein Token von Azure AD abzurufen.
 
     ```
     var authContext = new AuthenticationContext(string.Format  
@@ -18,14 +18,14 @@ Azure Active Directory must authenticate all the tasks that you perform on resou
     }
     ```
 
-2. Create a **ResourceManagementClient** object that uses the token by adding the following code to the end of the **Main** method:
+2. Erstellen Sie ein **ResourceManagementClient**-Objekt, das das Token verwendet. Fügen Sie dazu folgenden Code am Ende der **Main**-Methode hinzu:
 
     ```
     var creds = new TokenCloudCredentials(subscriptionId, token.AccessToken);
     var client = new ResourceManagementClient(creds);
     ```
 
-3. Create, or obtain a reference to, the resource group you are using:
+3. Erstellen Sie oder erhalten Sie einen Verweis auf die Ressourcengruppe, die Sie verwenden:
 
     ```
     var rgResponse = client.ResourceGroups.CreateOrUpdateAsync(rgName,
@@ -39,3 +39,5 @@ Azure Active Directory must authenticate all the tasks that you perform on resou
     ```
 
 [lnk-authenticate-arm]: https://msdn.microsoft.com/library/azure/dn790557.aspx
+
+<!---HONumber=AcomDC_1203_2015-->

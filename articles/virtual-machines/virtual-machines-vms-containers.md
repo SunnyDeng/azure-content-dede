@@ -129,7 +129,7 @@ Diese Fähigkeiten werden dann oft in Tools wie [Puppet](https://puppetlabs.com/
 
 Vor Kurzem wurde die REST-API der [Azure Ressourcenverwaltung](virtual-machines-azurerm-versus-azuresm.md) veröffentlicht und die PowerShell- und Azure-Befehlszeilenschnittstellen-Tools wurden aktualisiert, um die Verwendung zu erleichtern. Sie können komplette Anwendungstopologien bereitstellen, ändern oder erneut bereitstellen, indem Sie die [Azure-Ressourcen-Manager-Vorlagen](../resource-group-authoring-templates.md) mit der Azure Ressourcenverwaltungs-API verwenden. Verwenden Sie dazu Folgendes:
 
-- Das [Azure-Vorschauportal mit Vorlagen](https://github.com/Azure/azure-quickstart-templates) (Hinweis: Verwenden Sie die Schaltfläche "DeployToAzure".)
+- Das [Azure-Portal mit Vorlagen](https://github.com/Azure/azure-quickstart-templates) (Hinweis: Verwenden Sie die Schaltfläche „DeployToAzure“.)
 - Die [Azure-Befehlszeilenschnittstelle](virtual-machines-deploy-rmtemplates-azure-cli.md)
 - Die [Azure PowerShell-Module](virtual-machines-deploy-rmtemplates-azure-cli.md)
 
@@ -187,12 +187,12 @@ Docker in Microsoft Azure:
 - [Docker-VM-Erweiterung für Linux auf Azure](virtual-machines-docker-vm-extension.md)
 - [Benutzerhandbuch für die Azure-Docker-VM-Erweiterung](https://github.com/Azure/azure-docker-extension/blob/master/README.md)
 - [Verwenden der Docker-VM-Erweiterung aus der Azure-Befehlszeilenschnittstelle (Azure-CLI)](virtual-machines-docker-with-xplat-cli-install.md)
-- [Verwenden der Docker-VM-Erweiterung aus dem Azure-Vorschauportal](virtual-machines-docker-with-portal.md)
+- [Verwenden der Docker-VM-Erweiterung über das Azure-Portal](virtual-machines-docker-with-portal.md)
 - [Schneller Einstieg in Docker in Azure Marketplace](virtual-machines-docker-ubuntu-quickstart.md)
 - [Verwenden von "docker-machine" auf Azure](virtual-machines-docker-machine.md)
 - [Verwenden von Docker mit Swarm auf Azure](virtual-machines-docker-swarm.md)
 - [Erste Schritte mit Docker und Compose auf einem virtuellen Azure-Computer](virtual-machines-docker-compose-quickstart.md)
-- [Using an Azure resource group template to create a Docker host on Azure quickly](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-simple-on-ubuntu) ("Verwenden einer Azure-Ressourcengruppenvorlage zur schnellen Erstellung eines Docker-Hosts in Azure", in englischer Sprache)
+- [Using an Azure resource group template to create a Docker host on Azure quickly ("Verwenden einer Azure-Ressourcengruppenvorlage zur schnellen Erstellung eines Docker-Hosts in Azure", in englischer Sprache)](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-simple-on-ubuntu)
 - [Integrierte Unterstützung`compose`](https://github.com/Azure/azure-docker-extension#11-public-configuration-keys) für enthaltene Anwendungen
 - [Implementieren einer privaten Docker-Registrierung für Azure](virtual-machines-docker-registry-on-azure-blob-storage.md)
 
@@ -222,10 +222,10 @@ Konfiguration, Clusterverwaltung und Containerorchestrierung:
 	
 -	[Chef](https://docs.chef.io/index.html)
 	- [Chef und Virtual Machines](virtual-machines-windows-install-chef-client.md)
-	- [Video: Was ist Chef, und wie funktioniert es??](https://msopentech.com/blog/2014/03/31/using-chef-to-manage-azure-resources/)
+	- [Video: Was ist Chef, und wie funktioniert es?](https://msopentech.com/blog/2014/03/31/using-chef-to-manage-azure-resources/)
 
 -	[Azure Automation](http://azure.microsoft.com/services/automation/)
-	- [Video: How to Use Azure Automation with Linux VMs](http://channel9.msdn.com/Shows/Azure-Friday/Azure-Automation-104-managing-Linux-and-creating-Modules-with-Joe-Levy) (Video: Verwenden von Azure Automation mit virtuellen Linux-Computern, in englischer Sprache)
+	- [Video: How to Use Azure Automation with Linux VMs (Video: Verwenden von Azure Automation mit virtuellen Linux-Computern, in englischer Sprache)](http://channel9.msdn.com/Shows/Azure-Friday/Azure-Automation-104-managing-Linux-and-creating-Modules-with-Joe-Levy)
 	
 -	Powershell DSC für Linux
     - [Blog: Powershell DSC für Linux](http://blogs.technet.com/b/privatecloud/archive/2014/05/19/powershell-dsc-for-linux-step-by-step.aspx)
@@ -240,4 +240,4 @@ Auschecken von [Docker](https://www.docker.com) und [Windows Server-Containern](
 [microservice]: http://martinfowler.com/articles/microservices.html
 <!--Image references-->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

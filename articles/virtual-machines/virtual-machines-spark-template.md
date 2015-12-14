@@ -47,7 +47,7 @@ Wie in der Abbildung oben gezeigt, besteht die Bereitstellungstopologie aus den 
 -	Vier Slaveknoten, die im gleichen virtuellen Subnetz und der gleichen Verfügbarkeitsgruppe ausgeführt werden wie der Masterknoten
 -	Eine "Jumpbox"-VM, die sich im gleichen virtuellen Netzwerk und Subnetz befindet und für den Zugriff auf den Cluster verwendet werden kann
 
-Version 3.0.0 von Spark ist die Standardversion. Sie können jede vorgefertigte Binärdatei aus dem Spark-Repository verwenden. Es ist im Skript vorgesehen, die Auskommentierung der Builderstellung aus der Quelle aufzuheben. Jedem Spark-Masterknoten wird eine statische IP-Adresse zugewiesen: 10.0.0.10. Jedem Spark-Slaveknoten wird eine statische IP-Adresse zugewiesen, um die aktuellen Beschränkung zu umgehen, durch die es nicht möglich ist, dynamisch aus der Vorlage heraus eine Liste von IP-Adressen zu erstellen. (Standardmäßig wird dem ersten Knoten die private IP-Adresse 10.0.0.30 zugewiesen, dem zweiten Knoten die IP-Adresse 10.0.0.31 usw.) Zur Überprüfung auf Bereitstellungsfehler wechseln Sie zum Azure-Vorschauportal und navigieren zu **Ressourcengruppe** > **Letzte Bereitstellung** > **Vorgangsdetails überprüfen**.
+Version 3.0.0 von Spark ist die Standardversion. Sie können jede vorgefertigte Binärdatei aus dem Spark-Repository verwenden. Es ist im Skript vorgesehen, die Auskommentierung der Builderstellung aus der Quelle aufzuheben. Jedem Spark-Masterknoten wird eine statische IP-Adresse zugewiesen: 10.0.0.10. Jedem Spark-Slaveknoten wird eine statische IP-Adresse zugewiesen, um die aktuellen Beschränkung zu umgehen, durch die es nicht möglich ist, dynamisch aus der Vorlage heraus eine Liste von IP-Adressen zu erstellen. (Standardmäßig wird dem ersten Knoten die private IP-Adresse 10.0.0.30 zugewiesen, dem zweiten Knoten die IP-Adresse 10.0.0.31 usw.) Wechseln Sie zur Überprüfung auf Bereitstellungsfehler zum Azure-Portal, und navigieren Sie zu **Ressourcengruppe** > **Letzte Bereitstellung** > **Vorgangsdetails überprüfen**.
 
 Bevor wir zu näheren Einzelheiten zum Azure-Ressourcen-Manager und der für diese Bereitstellung verwendeten Vorlage kommen, stellen Sie sicher, dass Azure PowerShell oder die Azure-Befehlszeilenschnittstelle konfiguriert und einsatzbereit ist.
 
@@ -381,7 +381,7 @@ Parameters        :
 
 Während und nach der Bereitstellung können Sie alle Anforderungen überprüfen, die während der Bereitstellung vorgenommen wurden, einschließlich der aufgetretenen Fehler.
 
-Öffnen Sie dazu das [Azure-Vorschauportal](https://portal.azure.com), und gehen Sie folgendermaßen vor:
+Wechseln Sie dazu in das [Azure-Portal](https://portal.azure.com), und gehen Sie folgendermaßen vor:
 
 - Klicken Sie auf der linken Navigationsleiste auf **Durchsuchen**, scrollen Sie nach unten, und klicken Sie auf **Ressourcengruppen**.
 - Klicken Sie auf die gerade erstellte Ressourcengruppe, um das Blatt "Ressourcengruppe" anzuzeigen.
@@ -847,4 +847,4 @@ Entdecken Sie weitere [Anwendungsframeworks](virtual-machines-app-frameworks.md)
 
 [Problembehandlung bei Vorlagenbereitstellungen](resource-group-deploy-debug.md).
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

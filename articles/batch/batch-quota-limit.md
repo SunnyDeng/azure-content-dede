@@ -41,7 +41,7 @@ Aufgaben pro Serverknoten|4 x Anzahl der Kerne des Knotens
 
 ## Anzeigen von Batch-Kontingenten
 
-Sie können die Kontingente Ihres Batch-Kontos im [Azure-Vorschauportal](https://portal.azure.com) anzeigen.
+Sie können die Kontingente Ihres Batch-Kontos im [Azure-Portal](https://portal.azure.com) anzeigen.
 
 1. Klicken Sie im Vorschauportal auf **Batch-Konten** und dann auf den Namen Ihres Batch-Kontos.
 
@@ -53,7 +53,7 @@ Sie können die Kontingente Ihres Batch-Kontos im [Azure-Vorschauportal](https:/
 
 ## Erhöhen eines Kontingents
 
-Anhand der folgenden Schritte können Sie die Erhöhung eines Kontingents im Azure-Vorschauportal anfordern (Sie können die Erhöhung auch im [Azure-Portal](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) anfragen).
+Anhand der folgenden Schritte können Sie die Erhöhung eines Kontingents im Azure-Portal anfordern (Sie können die Erhöhung auch im [klassischen Azure-Portal](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) beantragen).
 
 1. Klicken Sie auf dem Dashboard des Vorschauportals auf **Hilfe und Support**.
 
@@ -95,4 +95,4 @@ Der Azure-Support tritt mit Ihnen in Kontakt. Die Bearbeitung der Anfrage kann b
 
 [account_quotas]: ./media/batch-quota-limit/accountquota_portal.PNG
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -8,7 +8,7 @@
 	services="mobile-services"/>
 
 <tags
-	ms.service="mobile-services" 
+	ms.service="mobile-services"
 	ms.workload="mobile"
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.devlang="dotnet"
@@ -17,6 +17,11 @@
 	ms.author="wesmc"/>
 
 # Rollenbasierte Zugriffssteuerung in Mobile Services mit JavaScript und Azure Active Directory
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 [AZURE.INCLUDE [mobile-services-selector-rbac](../../includes/mobile-services-selector-rbac.md)]
 
@@ -179,7 +184,7 @@ In diesem Abschnitt erstellen Sie ein neues benutzerdefiniertes Autorisierungsat
         // Use ADAL and the authentication app settings from the Mobile Service to get an AAD access token
         private async Task<string> GetAADToken()
         {
-            // Try to get the required AAD authentication app settings from the mobile service.  
+            // Try to get the required AAD authentication app settings from the mobile service.
             if (!(services.Settings.TryGetValue("AAD_CLIENT_ID", out clientid) &
                   services.Settings.TryGetValue("AAD_CLIENT_KEY", out clientkey) &
                   services.Settings.TryGetValue("AAD_TENANT_DOMAIN", out tenantdomain)))
@@ -381,7 +386,6 @@ In diesem Abschnitt erstellen Sie ein neues benutzerdefiniertes Autorisierungsat
 <!-- URLs. -->
 [Hinzufügen von Authentifizierung zur App]: mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users.md
 [How to Register with the Azure Active Directory]: mobile-services-how-to-register-active-directory-authentication.md
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Directory Sync Scenarios]: http://msdn.microsoft.com/library/azure/jj573653.aspx
 [Store Server Scripts]: mobile-services-store-scripts-source-control.md
 [Registrieren für die Verwendung einer Azure Active Directory-Anmeldung]: mobile-services-how-to-register-active-directory-authentication.md
@@ -389,4 +393,4 @@ In diesem Abschnitt erstellen Sie ein neues benutzerdefiniertes Autorisierungsat
 [IsMemberOf]: http://msdn.microsoft.com/library/azure/dn151601.aspx
 [ADAL für .NET]: https://msdn.microsoft.com/library/azure/jj573266.aspx
 
-<!----HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

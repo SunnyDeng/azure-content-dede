@@ -26,7 +26,7 @@ Um die Wirksamkeitsdaten der Marketingkampagne aus dem Azure-BLOB auf einen loka
 
 > [AZURE.IMPORTANT]In diesem Artikel werden nicht alle Data Factory-Cmdlets behandelt. In der [Data Factory-Cmdlet-Referenz][cmdlet-reference] finden Sie eine umfassende Dokumentation zu Data Factory-Cmdlets.
 >    
-> Bei Verwendung der Azure PowerShell 1.0-Vorschau müssen Sie die [hier](https://msdn.microsoft.com/library/dn820234.aspx) dokumentierten Cmdlets verwenden. Verwenden Sie beispielsweise „New-AzureRMDataFactory“ anstelle von „New-AzureDataFactory“.
+> Bei Verwendung der Azure PowerShell 1.0 müssen Sie die [hier](https://msdn.microsoft.com/library/dn820234.aspx) dokumentierten Cmdlets verwenden. Verwenden Sie beispielsweise „New-AzureRMDataFactory“ anstelle von „New-AzureDataFactory“.
 
 ## Voraussetzungen
 
@@ -44,7 +44,7 @@ In dieser exemplarischen Vorgehensweise führen Sie die folgenden Schritte aus:
 2. [Schritt 2: Erstellen eines verknüpften Diensts für den lokalen SQL Server](#OnPremStep2). In diesem Schritt erstellen Sie zuerst eine Datenbank und eine Tabelle auf dem lokalen SQL Server-Computer und dann den verknüpften Dienst: **OnPremSqlLinkedService**.
 3. [Schritt 3: Erstellen der Tabelle und der Pipeline](#OnPremStep3). In diesem Schritt erstellen Sie die Tabelle **MarketingCampaignEffectivenessOnPremSQLTable** und die Pipeline **EgressDataToOnPremPipeline**. 
 
-4. [Schritt 4: Überwachen der Pipeline und Anzeigen des Ergebnisses](#OnPremStep4). In diesem Schritt überwachen Sie die Pipelines, Tabellen und Datenslices mithilfe des Azure-Portals.
+4. [Schritt 4: Überwachen der Pipeline und Anzeigen des Ergebnisses](#OnPremStep4). In diesem Schritt überwachen Sie die Pipelines, Tabellen und Datenslices mithilfe des klassischen Azure-Portals.
 
 
 ## <a name="OnPremStep1"></a> Schritt 1: Erstellen eines Datenverwaltungsgateways
@@ -55,7 +55,7 @@ Sie müssen mindestens ein Gateway in Ihrer Unternehmensumgebung installiert hab
 
 Wenn Sie ein vorhandenes Datengateway haben, das Sie verwenden können, überspringen Sie diesen Schritt.
 
-1.	Erstellen eines logischen Datengateways. Klicken Sie im **Azure-Vorschauportal** auf dem Blatt **DATA FACTORY** auf **Verknüpfte Dienste**.
+1.	Erstellen eines logischen Datengateways. Klicken Sie im **Azure-Portal** auf dem Blatt **DATA FACTORY** auf **Verknüpfte Dienste**.
 2.	Klicken Sie in der Befehlsleiste auf **(+) Datengateway hinzufügen**.  
 3.	Klicken Sie auf dem Blatt **Neues Datengateway** auf **ERSTELLEN**.
 4.	Geben Sie auf dem Blatt **Erstellen** als **Namen** für das Datengateway **MyGateway**.
@@ -101,7 +101,7 @@ Zunächst müssen Sie die SQL Server-Datenbank, die Tabelle, benutzerdefinierte 
 
 ### Erstellen des verknüpften Diensts
 
-1.	Klicken Sie im **Azure-Vorschauportal** auf dem Blatt **DATA FACTORY** auf die Kachel **Verknüpfte Dienste** für **LogProcessingFactory**.
+1.	Klicken Sie im **Azure-Portal** auf dem Blatt **DATA FACTORY** auf die Kachel **Verknüpfte Dienste** für **LogProcessingFactory**.
 2.	Klicken Sie auf dem Blatt **Verknüpfte Dienste** auf **(+) Datenspeicher hinzufügen**.
 3.	Geben Sie **OnPremSqlLinkedService** auf dem Blatt **Neuer Datenspeicher** unter **Name** ein. 
 4.	Klicken Sie auf **TYP (Einstellungen erforderlich)**, und wählen Sie **SQL Server** aus. Jetzt sollten die Einstellungen **DATENGATEWAY**, **Server**, **Datenbank** und **ANMELDEINFORMATIONEN** auf dem Blatt **Neuer Datenspeicher** angezeigt werden. 
@@ -158,7 +158,7 @@ Glückwunsch! Sie haben die exemplarische Vorgehensweise zur Verwendung Ihrer lo
 [adfintroduction]: data-factory-introduction.md
 [useonpremisesdatasources]: data-factory-move-data-between-onprem-and-cloud.md
 
-[azure-preview-portal]: http://portal.azure.com
+[azure-portal]: http://portal.azure.com
 [azure-purchase-options]: http://azure.microsoft.com/pricing/purchase-options/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
 [azure-free-trial]: http://azure.microsoft.com/pricing/free-trial/
@@ -174,4 +174,4 @@ Glückwunsch! Sie haben die exemplarische Vorgehensweise zur Verwendung Ihrer lo
 
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

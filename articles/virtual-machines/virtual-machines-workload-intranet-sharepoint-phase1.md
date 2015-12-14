@@ -82,16 +82,16 @@ Zum Erstellen des virtuellen Netzwerks mit den Einstellungen der Tabellen V, S, 
 
 > [AZURE.NOTE]Dieses Verfahren führt Sie durch die Erstellung eines virtuellen Netzwerks, das eine Site-to-Site-VPN-Verbindung verwendet. Informationen zur Verwendung von ExpressRoute für Ihre Site-to-Site-Verbindung finden Sie unter [ExpressRoute – technische Übersicht](../expressroute/expressroute-introduction.md).
 
-Nach der Erstellung des virtuellen Azure-Netzwerks ermittelt das Azure-Portal Folgendes:
+Nach der Erstellung des virtuellen Azure-Netzwerks ermittelt das klassische Azure-Portal Folgendes:
 
 - Die öffentliche IPv4-Adresse des Azure-VPN-Gateways Ihres virtuellen Netzwerks.
 - Den vorinstallierten Internet Protocol Security (IPsec)-Schlüssel für die Site-to-Site-VPN-Verbindung.
 
-Um diese Informationen nach der Erstellung des virtuellen Netzwerks im Azure-Portal anzuzeigen, klicken Sie auf **Netzwerke**, den Namen des virtuellen Netzwerks und dann auf die Menüoption **Dashboard**.
+Um diese Informationen nach der Erstellung des virtuellen Netzwerks im klassischen Azure-Portal anzuzeigen, klicken Sie auf **Netzwerke**, den Namen des virtuellen Netzwerks und dann auf die Menüoption **Dashboard**.
 
-Als Nächstes konfigurieren Sie das Gateway für das virtuelle Netzwerk, um eine sichere Site-to-Site-VPN-Verbindung zu erstellen. Anweisungen hierzu finden Sie unter [Konfigurieren eines Gateways eines virtuellen Netzwerks im Azure-Portal](../vpn-gateway/vpn-gateway-configure-vpn-gateway-mp.md).
+Als Nächstes konfigurieren Sie das Gateway für das virtuelle Netzwerk, um eine sichere Site-to-Site-VPN-Verbindung zu erstellen. Anweisungen hierzu finden Sie unter [Konfigurieren eines Gateways eines virtuellen Netzwerks im klassischen Azure-Portal](../vpn-gateway/vpn-gateway-configure-vpn-gateway-mp.md).
 
-Erstellen Sie die Site-to-Site-VPN-Verbindung zwischen dem neuen virtuellen Netzwerk und einem lokalen VPN-Gerät. Einzelheiten hierzu finden Sie unter [Konfigurieren eines Gateways eines virtuellen Netzwerks im Azure-Portal](../vpn-gateway/vpn-gateway-configure-vpn-gateway-mp.md).
+Erstellen Sie die Site-to-Site-VPN-Verbindung zwischen dem neuen virtuellen Netzwerk und einem lokalen VPN-Gerät. Einzelheiten hierzu finden Sie unter [Konfigurieren eines Gateways eines virtuellen Netzwerks im klassischen Azure-Portal](../vpn-gateway/vpn-gateway-configure-vpn-gateway-mp.md).
 
 Stellen Sie anschließend sicher, dass der Adressraum des virtuellen Netzwerks aus Ihrem lokalen Netzwerk erreichbar ist. Dies erfolgt in der Regel durch Hinzufügen einer Route zwischen dem Adressraum des virtuellen Netzwerks und Ihrem VPN-Gerät und der Bekanntgabe dieser Route für den Rest der Routinginfrastruktur Ihres Unternehmensnetzwerks. Erarbeiten Sie diese Lösung gemeinsam mit Ihrer IT-Abteilung.
 
@@ -173,4 +173,4 @@ Zum Fortsetzen der Konfiguration dieser Arbeitsauslastung gehen Sie zu [Phase 2:
 
 [Azure-Infrastrukturdienste-Workload: Branchenanwendung mit hoher Verfügbarkeit](virtual-machines-workload-high-availability-lob-application.md)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

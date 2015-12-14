@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="nodejs"
 	ms.topic="article"
-	ms.date="11/20/2015"
+	ms.date="12/01/2015"
 	ms.author="robmcm"/>
 
 
@@ -67,7 +67,7 @@ Verwenden Sie Editor oder einen anderen Texteditor, um die folgende Zeile am Anf
 
 Das Azure-Modul entnimmt den Umgebungsvariablen `AZURE_STORAGE_ACCOUNT` und `AZURE_STORAGE_ACCESS_KEY` oder `AZURE_STORAGE_CONNECTION_STRING` die erforderlichen Informationen zum Herstellen einer Verbindung mit Ihrem Azure-Speicherkonto. Falls diese Umgebungsvariablen nicht gesetzt sind, müssen Sie die Kontoinformationen beim Aufruf von **createBlobService** angeben.
 
-Ein Beispiel zum Festlegen der Umgebungsvariablen im Azure-Portal für eine Azure-Web-App finden Sie unter [Node.js-Web-Anwendung mit Storage].
+Ein Beispiel zum Festlegen der Umgebungsvariablen für eine Azure-Web-App im [Azure-Portal](portal.azure.com) finden Sie unter [Node.js-Web-Anwendung mit Speicher].
 
 ## Erstellen eines Containers
 
@@ -361,7 +361,6 @@ Nachdem die ACL festgelegt wurde, können Sie basierend auf der ID für eine Ric
 Weitere Informationen finden Sie in den folgenden Ressourcen.
 
 -   [API-Referenz zum Azure Storage-SDK für Node][]
--   MSDN-Referenz: [Speichern und Zugreifen auf Daten in Azure][]
 -   [Azure Storage-Teamblog][]
 -   [Azure Storage SDK for Node.js][]-Repository auf GitHub (in englischer Sprache)
 -   [Node.js Developer Center](/develop/nodejs/)
@@ -369,13 +368,12 @@ Weitere Informationen finden Sie in den folgenden Ressourcen.
 [Azure Storage SDK for Node.js]: https://github.com/Azure/azure-storage-node
 [Create and deploy a Node.js application to an Azure Web Site]: /develop/nodejs/tutorials/create-a-website-(mac)/
 [Node.js Cloud Service with Storage]: ../storage-nodejs-use-table-storage-cloud-service-app.md
-[Node.js-Web-Anwendung mit Storage]: ../storage-nodejs-use-table-storage-web-site.md
+[Node.js-Web-Anwendung mit Speicher]: ../storage-nodejs-use-table-storage-web-site.md
 [Web-App mit WebMatrix]: ../web-sites-nodejs-use-webmatrix.md
 [Using the REST API]: http://msdn.microsoft.com/library/azure/hh264518.aspx
-[Azure portal]: http://manage.windowsazure.com
+[Azure Portal]: portal.azure.com
 [Node.js Cloud Service]: ../cloud-services-nodejs-develop-deploy-app.md
-[Speichern und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/library/azure/gg433040.aspx
 [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
 [API-Referenz zum Azure Storage-SDK für Node]: http://dl.windowsazure.com/nodestoragedocs/index.html
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

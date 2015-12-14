@@ -21,7 +21,7 @@
 
 Diese Anleitung enthält Informationen zur Verwendung der [Azure-Dienstverwaltungs-Cmdlets für Storage](https://msdn.microsoft.com/library/azure/dn806401.aspx) zum Ausführen einer Vielzahl von Entwicklungs- und Verwaltungsaufgaben mit Azure Storage.
 
-Azure PowerShell ist ein Modul, das Cmdlets zum Verwalten von Azure durch Windows PowerShell enthält. Es handelt sich um eine aufgabenbasierte Befehlszeilenshell und Skriptsprache, die insbesondere für die Systemverwaltung konzipiert ist. Mit PowerShell können Sie die Verwaltung Ihrer Azure-Dienste und -Anwendungen ganz einfach steuern und automatisieren. Sie können z. B. dieselben Aufgaben mithilfe der Cmdlets wie über das Azure-Verwaltungsportal ausführen.
+Azure PowerShell ist ein Modul, das Cmdlets zum Verwalten von Azure durch Windows PowerShell enthält. Es handelt sich um eine aufgabenbasierte Befehlszeilenshell und Skriptsprache, die insbesondere für die Systemverwaltung konzipiert ist. Mit PowerShell können Sie die Verwaltung Ihrer Azure-Dienste und -Anwendungen ganz einfach steuern und automatisieren. Sie können z. B. dieselben Aufgaben mithilfe der Cmdlets wie über das [Azure-Portal](portal.azure.com) ausführen.
 
 Es wird davon ausgegangen, dass Sie bereits Erfahrung mit der Verwendung von [Azure Storage](http://azure.microsoft.com/documentation/services/storage/) und [Windows PowerShell](http://technet.microsoft.com/library/bb978526.aspx) haben. Das Handbuch bietet eine Reihe von Skripts, um die Verwendung von PowerShell mit Azure Storage zu veranschaulichen. Sie müssen die Skriptvariablen auf Basis Ihrer Konfiguration aktualisieren, bevor Sie die jeweiligen Skripts ausführen.
 
@@ -102,19 +102,17 @@ Weitere Informationen zu Azure-Abonnements finden Sie unter [Verwalten von Konte
 	- **$SubscriptionName**: Sie müssen diese Variable mit Ihrem eigenen Abonnementnamen aktualisieren. Suchen Sie den Namen Ihres Abonnements auf eine der folgenden drei Arten:
 
 		a. Klicken Sie in **Windows PowerShell ISE** auf **Datei** > **Neu**, um eine neue Skriptdatei zu erstellen. Kopieren Sie das folgende Skript in die neue Skriptdatei, und klicken Sie auf **Debuggen** > **Ausführen**. Das folgende Skript fordert zunächst Ihre Azure-Anmeldeinformationen an, um Ihr Azure-Konto zur lokalen PowerShell-Umgebung hinzuzufügen. Anschließend werden alle Abonnements angezeigt, die mit der lokalen PowerShell-Sitzung verbunden sind. Notieren Sie den Namen des Abonnements, das Sie in diesem Lernprogramm verwenden möchten:
-
-    		Add-AzureAccount
-       		Get-AzureSubscription | Format-Table SubscriptionName, IsDefault, IsCurrent, CurrentStorageAccountName
-
-
-		b. Azure unterstützt derzeit zwei Portale: das [Azure-Verwaltungsportal](https://manage.windowsazure.com/) und das [Azure-Vorschauportal](https://portal.azure.com/). Wenn Sie sich beim aktuellen [Azure-Verwaltungsportal](https://portal.azure.com/) anmelden, navigieren Sie nach unten, und klicken Sie auf der linken Seite des Portals auf **Einstellungen**. Klicken Sie auf **Abonnements**. Kopieren Sie den Namen des Abonnements, das Sie während der Ausführung der in diesem Handbuch angegebenen Skripts verwenden möchten. Der folgende Screenshot stellt ein Beispiel dar.
-
-		![Azure-Verwaltungsportal][Image1]
-
-		c. Wenn Sie sich beim [Azure-Vorschauportal](https://portal.azure.com/) anmelden, klicken Sie auf der linken Seite im Menü "Hub" auf **DURCHSUCHEN**. Klicken Sie dann auf **Alles** und anschließend auf **Abonnements**. Kopieren Sie den Namen des Abonnements, das Sie während der Ausführung der in diesem Handbuch angegebenen Skripts verwenden möchten. Der folgende Screenshot stellt ein Beispiel dar.
-
-		![Azure-Vorschauportal][Image2]
-
+		
+			Add-AzureAccount
+				Get-AzureSubscription | Format-Table SubscriptionName, IsDefault, IsCurrent, CurrentStorageAccountName
+		
+		b. Klicken Sie im [Azure-Portal](portal.azure.com) im Menü „Hub“ links auf **Abonnement**, um Ihren Abonnementnamen zu finden und zu kopieren. Kopieren Sie den Namen des Abonnements, das Sie während der Ausführung der in diesem Handbuch angegebenen Skripts verwenden möchten.
+		
+		![Azure-Portal][Image2]
+		  
+		c. Scrollen Sie auf der linken Seite im [klassischen Azure-Portal](https://manage.windowsazure.com/) nach unten und klicken Sie auf **Einstellungen**, um Ihren Abonnementnamen zu finden und zu kopieren. Klicken Sie auf **Abonnements**, um eine Liste Ihrer Abonnements anzuzeigen. Kopieren Sie den Namen des Abonnements, das Sie während der Ausführung der in diesem Handbuch angegebenen Skripts verwenden möchten.
+		
+		![Klassisches Azure-Portal][Image1]
 
 	- **$StorageAccountName**: Verwenden Sie den im Skript angegebenen Namen, oder geben Sie einen neuen Namen für Ihr Speicherkonto ein. **Wichtig:** Der Name des Speicherkontos muss in Azure eindeutig sein. Er darf außerdem nur aus Kleinbuchstaben bestehen!
 
@@ -597,7 +595,7 @@ Der Azure-Dateispeicher bietet einen gemeinsam genutzten Speicher für Anwendung
 Ausführliche Informationen zum Azure-Dateispeicher finden Sie unter [Verwenden des Azure-Dateispeichers mit Windows](storage-dotnet-how-to-use-files.md) und [Dateidienst-REST-API](http://msdn.microsoft.com/library/azure/dn167006.aspx).
 
 ## Festlegen und Abfragen von Speicheranalysen
-Mithilfe der [Azure Storage-Analyselösung](storage-analytics.md) können Sie Metriken von Ihren Azure-Speicherkonten und Protokolldaten zu Anforderungen erfassen, die an Ihr Speicherkonto gesendet wurden. Mithilfe von Speichermetriken können Sie die Integrität eines Speicherkontos überwachen. Mithilfe der Speicherprotokollierung können Sie Probleme mit dem Speicherkonto diagnostizieren und beheben. Standardmäßig sind für Ihre Speicherdienste keine Speichermetriken aktiviert. Sie können die Überwachung mithilfe des Azure-Verwaltungsportals, über Windows PowerShell oder programmgesteuert über eine Speicher-API aktivieren. Die Speicherprotokollierung erfolgt serverseitig, und sie ermöglicht es Ihnen, Details für erfolgreiche und fehlerhafte Anforderungen in Ihrem Speicherkonto aufzuzeichnen. Anhand dieser Protokolle können Sie Details zu Lese-, Schreib- und Löschvorgängen für Ihre Tabellen, Warteschlangen und Blobs sowie die Gründe für fehlerhafte Anforderungen anzeigen.
+Mithilfe der [Azure Storage-Analyselösung](storage-analytics.md) können Sie Metriken von Ihren Azure-Speicherkonten und Protokolldaten zu Anforderungen erfassen, die an Ihr Speicherkonto gesendet wurden. Mithilfe von Speichermetriken können Sie die Integrität eines Speicherkontos überwachen. Mithilfe der Speicherprotokollierung können Sie Probleme mit dem Speicherkonto diagnostizieren und beheben. Standardmäßig sind für Ihre Speicherdienste keine Speichermetriken aktiviert. Sie können die Überwachung mithilfe des Azure-Portals, über Windows PowerShell oder programmgesteuert mithilfe der Speicherclientbibliothek aktivieren. Die Speicherprotokollierung erfolgt serverseitig, und sie ermöglicht es Ihnen, Details für erfolgreiche und fehlerhafte Anforderungen in Ihrem Speicherkonto aufzuzeichnen. Anhand dieser Protokolle können Sie Details zu Lese-, Schreib- und Löschvorgängen für Ihre Tabellen, Warteschlangen und Blobs sowie die Gründe für fehlerhafte Anforderungen anzeigen.
 
 Informationen zum Aktivieren und Anzeigen von Speichermetrikdaten mithilfe von PowerShell finden Sie unter [Aktivieren von Speichermetriken mithilfe von PowerShell](http://msdn.microsoft.com/library/azure/dn782843.aspx#HowtoenableStorageMetricsusingPowerShell).
 
@@ -684,7 +682,6 @@ Weitere Informationen finden Sie unter:
 In diesem Handbuch haben Sie erfahren, wie Sie Azure Storage mit Azure PowerShell verwalten. In den folgenden Artikeln und Ressourcen finden Sie weitere Informationen dazu.
 
 - [Azure-Speicherdokumentation](http://azure.microsoft.com/documentation/services/storage/)
-- [MSDN-Referenz für Azure-Speicher](http://msdn.microsoft.com/library/azure/gg433040.aspx)
 - [PowerShell-Cmdlets für Azure Storage](http://msdn.microsoft.com/library/azure/dn806401.aspx)
 - [Windows PowerShell-Referenz](https://msdn.microsoft.com/library/ms714469.aspx)
 
@@ -733,4 +730,4 @@ In diesem Handbuch haben Sie erfahren, wie Sie Azure Storage mit Azure PowerShel
 [Next Steps]: #next
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -29,7 +29,7 @@ Das in diesem Thema verwendete Beispielskript erstellt einen Windows-basierten S
 
 **Verwandte Artikel**
 
-- [Installieren von Solr in HDInsight-Clustern](hdinsight-hadoop-solr-install.md): Installieren von Solr auf einem HDInsight-Cluster über das Azure-Vorschauportal
+- [Installieren von Solr in HDInsight-Clustern](hdinsight-hadoop-solr-install.md): Installieren von Solr auf einem HDInsight-Cluster über das Azure-Portal
 - [Installieren und Verwenden von Solr in HDInsight Hadoop-Clustern (Linux)](hdinsight-hadoop-solr-install-linux.md)
 - [Erstellen von Hadoop-Clustern in HDInsight](hdinsight-provision-clusters.md): Allgemeine Informationen zum Erstellen von HDInsight-Clustern
 - [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen][hdinsight-cluster-customize]\: Allgemeine Informationen zum Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen
@@ -37,7 +37,7 @@ Das in diesem Thema verwendete Beispielskript erstellt einen Windows-basierten S
 
 ## Was ist Solr?
 
-<a href="http://lucene.apache.org/solr/features.html" target="_blank">Apache Solr</a> ist eine Unternehmensplattform für die leistungsstarke Volltextsuche in Daten. Während Hadoop das Speichern und Verwalten von großen Datenmengen ermöglicht, bietet Apache Solr die Suchfunktionen, um schnell Daten abzurufen.
+[Apache Solr](http://lucene.apache.org/solr/features.html) ist eine Unternehmensplattform für die leistungsstarke Volltextsuche in Daten. Während Hadoop das Speichern und Verwalten von großen Datenmengen ermöglicht, bietet Apache Solr die Suchfunktionen, um schnell Daten abzurufen.
 
 ## Installieren von Solr mithilfe des Portals
 
@@ -68,7 +68,7 @@ Sie können das Skript auch zum Installieren von Solr in HDInsight mit Azure Pow
 
 Sie müssen mit der Indizierung von Solr mit einigen Datendateien beginnen. Sie können dann Solr verwenden, um Suchabfragen der indizierten Daten auszuführen. Führen Sie die folgenden Schritte aus, um Solr in einem HDInsight-Cluster zu verwenden:
 
-1. **Verwenden Sie das Remotedesktopprotokoll (RDP) zum Herstellen einer Remoteverbindung mit dem HDInsight-Cluster mit installiertem Solr**. Aktivieren Sie im Azure-Portal Remotedesktop für den Cluster, den Sie mit installiertem Solr erstellt haben, und stellen Sie dann eine Remoteverbindung mit dem Cluster her. Anweisungen hierzu finden Sie unter <a href="http://azure.microsoft.com/documentation/articles/hdinsight-administer-use-management-portal/#rdp" target="_blank">Herstellen einer Verbindung mit HDInsight-Clustern mit RDP</a>.
+1. **Verwenden Sie das Remotedesktopprotokoll (RDP) zum Herstellen einer Remoteverbindung mit dem HDInsight-Cluster mit installiertem Solr**. Aktivieren Sie im Azure-Portal Remotedesktop für den Cluster, den Sie mit installiertem Solr erstellt haben, und stellen Sie dann eine Remoteverbindung mit dem Cluster her. Anweisungen hierzu finden Sie unter [Herstellen einer Verbindung mit HDInsight-Clustern mit RDP](hdinsight-administer-use-management-portal.md#rdp).
 
 2. **Indizieren Sie Solr durch Hochladen von Datendateien**. Wenn Sie Solr indizieren, legen Sie Dokumente ab, die Sie ggf. durchsuchen müssen. Stellen Sie zum Indizieren von Solr mittels RDP eine Verbindung mit dem Cluster her, navigieren Sie zum Desktop, öffnen Sie die Hadoop-Befehlszeile, und navigieren Sie zu **C:\\apps\\dist\\solr-4.7.2\\example\\exampledocs**. Führen Sie den folgenden Befehl aus:
 	
@@ -145,7 +145,7 @@ Sie müssen mit der Indizierung von Solr mit einigen Datendateien beginnen. Sie 
 			  }
    
 
-4. **Empfehlung: Sichern Sie die indizierten Daten aus Solr in Azure-BLOB-Speicher, der dem HDInsight-Cluster zugeordnet ist**. Bewährt hat sich auch das Sichern der indizierten Daten auf den Solr-Clusterknoten in Azure-Blobspeicher. Führen Sie dazu die folgenden Schritte aus:
+4. **Empfehlung: Sichern Sie die indizierten Daten aus Solr in Azure-Blobspeicher, der dem HDInsight-Cluster zugeordnet ist**. Bewährt hat sich auch das Sichern der indizierten Daten auf den Solr-Clusterknoten in Azure-Blobspeicher. Führen Sie dazu die folgenden Schritte aus:
 
 	1. Öffnen Sie aus der RDP-Sitzung den Internet Explorer, und verweisen Sie auf die folgende URL:
 
@@ -180,7 +180,7 @@ Weitere Informationen finden Sie unter [Anpassen von HDInsight-Clustern mithilfe
 
 ## Weitere Informationen
 
-- [Installieren von Solr in HDInsight-Clustern](hdinsight-hadoop-solr-install.md): Installieren von Solr auf einem HDInsight-Cluster über das Azure-Vorschauportal
+- [Installieren von Solr in HDInsight-Clustern](hdinsight-hadoop-solr-install.md): Installieren von Solr auf einem HDInsight-Cluster über das Azure-Portal
 - [Installieren und Verwenden von Solr in HDInsight Hadoop-Clustern (Linux)](hdinsight-hadoop-solr-install-linux.md)
 - [Erstellen von Hadoop-Clustern in HDInsight](hdinsight-provision-clusters.md): Allgemeine Informationen zum Erstellen von HDInsight-Clustern
 - [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen][hdinsight-cluster-customize]\: Allgemeine Informationen zum Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen
@@ -196,4 +196,4 @@ Weitere Informationen finden Sie unter [Anpassen von HDInsight-Clustern mithilfe
 [hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster.md
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

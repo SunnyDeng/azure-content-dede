@@ -58,13 +58,13 @@ Das Azure-Modul liest die Umgebungsvariablen **AZURE\_STORAGE\_ACCOUNT** und **A
 
 So rufen Sie diese Werte ab:
 
-1. Melden Sie sich beim [Azure-Portal](https://manage.windowsazure.com/) an.
+1. Melden Sie sich beim [Azure-Portal](portal.azure.com) an.
 
-2. Navigieren Sie zum Speicherkonto, das Sie verwenden möchten.
+2. Navigieren Sie zum Speicherkonto.
 
-3. Klicken Sie unter im Navigationsbereich auf **MANAGE KEYS**.
+3. Wählen Sie auf dem Blatt **Einstellungen** die Option **Schlüssel** aus.
 
-4. Im eingeblendeten Dialog werden der Name des Speicherkontos, der primäre Zugriffsschlüssel und der sekundäre Zugriffsschlüssel angezeigt. Als Zugriffsschlüssel können Sie den primären oder sekundären auswählen.
+4. Kopieren Sie den gewünschten Zugriffsschlüsselwert.
 
 ## Erstellen einer Tabelle
 
@@ -154,8 +154,7 @@ Um eine Tabelle zu löschen, verwenden Sie die **delete\_table()**-Methode, und 
 
 Unter den folgenden Links erhalten Sie weitere Informationen zu komplexeren Speicheraufgaben:
 
-- MSDN-Referenz: [Azure Storage](http://msdn.microsoft.com/library/azure/gg433040.aspx)
 - [Azure Storage-Teamblog](http://blogs.msdn.com/b/windowsazurestorage/)
 - [Azure SDK for Ruby](http://github.com/WindowsAzure/azure-sdk-for-ruby)-Repository auf GitHub
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

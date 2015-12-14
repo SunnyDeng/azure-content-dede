@@ -85,15 +85,15 @@ Verwenden Sie die folgenden Informationen, wenn Sie für Ihren Cluster die Verwe
 
 Wenn Sie einen Linux-basierten HDInsight-Cluster erstellen, müssen Sie den zuvor erstellten öffentlichen Schlüssel bereitstellen. Es gibt zwei Möglichkeiten, um einen HDInsight-Cluster über einen Linux-, Unix- oder OS X-Client zu erstellen:
 
-* **Azure-Vorschauportal**: Zum Erstellen des Clusters wird ein webbasiertes Portal verwendet.
+* **Azure-Portal**: – Zum Erstellen des Clusters wird ein webbasiertes Portal verwendet.
 
 * **Azure-CLI für Mac, Linux und Windows **: Zum Erstellen des Clusters werden Befehle über die Befehlszeile eingegeben.
 
 Jede dieser Methoden erfordert entweder ein Kennwort oder einen öffentlichen Schlüssel. Vollständige Informationen zum Erstellen eines Linux-basierten HDInsight-Clusters finden Sie unter [Bereitstellen von Linux-basierten HDInsight-Clustern](hdinsight-hadoop-provision-linux-clusters.md).
 
-###Azure-Vorschauportal
+###Azure-Portal
 
-Wenn Sie das [Azure-Vorschauportal][preview-portal] verwenden, um einen Linux-basierten HDInsight-Cluster zu erstellen, müssen Sie einen **SSH-Benutzernamen** eingeben und auswählen, ob Sie ein **Kennwort** oder einen **öffentlichen SSH-Schlüssel** eingeben.
+Wenn Sie das [Azure Portal][preview-portal] verwenden, um einen Linux-basierten HDInsight-Cluster zu erstellen, müssen Sie einen **SSH-Benutzernamen** eingeben und auswählen, ob Sie ein **Kennwort** oder einen **öffentlichen SSH-Schlüssel** eingeben.
 
 Wenn Sie **ÖFFENTLICHER SSH-SCHLÜSSEL** auswählen, können Sie entweder den öffentlichen Schlüssel (aus der Datei mit der Erweiterung **.pub**) in das Feld __Öffentlicher SSH-Schlüssel__ einfügen oder auf __Datei auswählen__ klicken, um die Datei mit dem öffentlichen Schlüssel zu suchen und auszuwählen.
 
@@ -238,4 +238,4 @@ Nachdem Sie jetzt wissen, wie die Authentifizierung mithilfe eines SSH-Schlüsse
 
 [preview-portal]: https://portal.azure.com/
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

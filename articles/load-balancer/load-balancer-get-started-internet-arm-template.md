@@ -71,4 +71,12 @@ Führen Sie zum Bereitstellen der ARM-Vorlage mithilfe der Azure-Befehlszeilensc
 
 		azure group create -n TestRG -l westus -f 'https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-2-vms-loadbalancer-natrules/azuredeploy.json' -e 'c:\lb\azuredeploy.parameters.json'
 
-<!---HONumber=AcomDC_1125_2015-->
+## Nächste Schritte
+
+[Erste Schritte zum Konfigurieren des internen Lastenausgleichs](load-balancer-internal-getstarted.md)
+
+[Konfigurieren eines Lastenausgleichs-Verteilungsmodus](load-balancer-distribution-mode.md)
+
+[Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
+
+<!---HONumber=AcomDC_1203_2015-->

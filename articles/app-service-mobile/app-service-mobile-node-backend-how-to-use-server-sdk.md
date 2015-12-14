@@ -13,14 +13,14 @@
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.devlang="node"
 	ms.topic="article"
-	ms.date="11/13/2015"
+	ms.date="12/02/2015"
 	ms.author="adrianhall"/>
 
 # Verwenden des Azure Mobile Apps SDK für Node.js
 
 Dieser Artikel enthält ausführliche Informationen und Beispiele, die veranschaulichen, wie Sie in Azure Mobile App Service-Apps ein Node.js-Back-End verwenden.
 
-> [AZURE.NOTE]Dieses SDK befindet sich in der Vorschauphase. Daher wird empfohlen, dieses SDK nicht in einer Produktionsumgebung einzusetzen. Die Beispiele in diesem Dokument verwenden die Version „2.0.0-alpha6“ von [azure-mobile-apps].
+> [AZURE.NOTE]Dieses SDK befindet sich in der Vorschauphase. Daher wird empfohlen, dieses SDK nicht in einer Produktionsumgebung einzusetzen. Die Beispiele in diesem Dokument verwenden die Version „2.0.0-beta1“ von [azure-mobile-apps].
 
 ## <a name="Introduction"></a>Einführung
 
@@ -98,7 +98,7 @@ Für Visual Studio 2015 ist eine Erweiterung zum Entwickeln der Node.js-Anwendu
 
 5. Klicken Sie mit der rechten Maustaste auf den Knoten **npm**, und wählen Sie **Neue NPM-Pakete installieren...** aus.
 
-6. Bei der Erstellung der ersten Node.js-Anwendung müssen Sie den NPM-Katalog aktualisieren. Klicken Sie auf **Aktualisieren**.
+6. Bei der Erstellung der ersten Node.js-Anwendung müssen Sie den NPM-Katalog möglicherweise aktualisieren. Falls dies der Fall ist, werden Sie dazu aufgefordert. Klicken Sie auf **Aktualisieren**.
 
 7. Geben Sie in das Suchfeld _azure-mobile-apps_ ein. Klicken Sie auf das Paket **azure-mobile-apps 2.0.0** und dann auf **Paket installieren**.
 
@@ -211,8 +211,8 @@ Wenn Sie Tabellen statisch definieren, müssen Sie auch die tables.initialize()-
 Das Node.js SDK für Azure Mobile Apps bietet drei standardmäßige Optionen zum Bereitstellen von Daten:
 
 - Verwenden des **memory**-Treibers zum Bereitstellen eines nicht beständigen Beispielspeichers
-- Verwenden des **sql**-Treibers zum Bereitstellen eines SQL Express-Datenspeichers für die Entwicklung
-- Verwenden des **sql**-Treibers zum Bereitstellen eines SQL Azure-Datenspeichers für die Produktion
+- Verwenden des **mssql**-Treibers zum Bereitstellen eines SQL Express-Datenspeichers für die Entwicklung
+- Verwenden des **mssql**-Treibers zum Bereitstellen eines SQL Azure-Datenspeichers für die Produktion
 
 Das Node.js SDK für Azure Mobile Apps verwendet das [mssql-Node.js-Paket], um eine Verbindung mit SQL Express und SQL Azure einzurichten und zu nutzen. Für dieses Paket müssen Sie TCP-Verbindungen auf Ihrer SQL Express-Instanz aktivieren.
 
@@ -222,23 +222,40 @@ Das Node.js SDK für Azure Mobile Apps verwendet das [mssql-Node.js-Paket], um e
 
 2. Führen Sie den SQL Server 2014-Konfigurations-Manager aus.
 
-  a. Erweitern Sie links im Strukturmenü den Knoten **SQL Server-Netzwerkkonfiguration**. b. Klicken Sie auf **Protokolle für SQLEXPRESS**. c. Klicken Sie mit der rechten Maustaste auf **TCP/IP**, und wählen Sie **Aktivieren**. Klicken Sie im Popupdialogfenster auf **OK**. d. Klicken Sie mit der rechten Maustaste auf **TCP/IP**, und wählen Sie **Eigenschaften**. e. Klicken Sie auf die Registerkarte **IP-Adressen**. f. Suchen Sie nach dem Knoten **IPAll**. Geben Sie im Feld **TCP-Port** den Wert **1433** ein.
-
-  ![SQL Express für TCP/IP konfigurieren][3]
-
-  g. Klicken Sie auf **OK**. Klicken Sie im Popupdialogfenster auf **OK**. h. Klicken Sie im linken Strukturmenü auf **SQL Server-Dienste**. i. Klicken Sie mit der rechten Maustaste auf **SQL Server (SQLEXPRESS)**, und wählen Sie **Neu starten** aus. j. Schließen Sie den SQL Server 2014-Konfigurations-Manager.
+  1. Erweitern Sie links im Strukturmenü den Knoten **SQL Server-Netzwerkkonfiguration**.
+  2. Klicken Sie auf **Protokolle für SQLEXPRESS**.
+  3. Klicken Sie mit der rechten Maustaste auf **TCP/IP**, und wählen Sie **Aktivieren**. Klicken Sie im Popupdialogfenster auf **OK**.
+  4. Klicken Sie mit der rechten Maustaste auf **TCP/IP**, und wählen Sie **Eigenschaften**.
+  5. Klicken Sie auf die Registerkarte **IP-Adressen**.
+  6. Suchen Sie nach dem Knoten **IPAll**. Geben Sie im Feld **TCP-Port** den Wert **1433** ein.
+  
+	 	 ![Configure SQL Express for TCP/IP][3]
+  7. Klicken Sie auf **OK**. Klicken Sie im Popupdialogfenster auf **OK**.
+  8. Klicken Sie im linken Strukturmenü auf **SQL Server-Dienste**.
+  9. Klicken Sie mit der rechten Maustaste auf **SQL Server (SQLEXPRESS)**, und wählen Sie **Neu starten** aus.
+  10. Schließen Sie den SQL Server 2014-Konfigurations-Manager.
 
 3. Ausführen von SQL Server 2014 Management Studio und Herstellen einer Verbindung mit Ihrer lokalen SQL Express-Instanz
 
-  a. Klicken Sie mit der rechten Maustaste im Objekt-Explorer auf Ihre Instanz, und wählen Sie **Eigenschaften** aus. b. Wählen Sie die Seite **Sicherheit** aus. c. Stellen Sie sicher, dass der **SQL Server- und Windows-Authentifizierungsmodus** ausgewählt ist. d. Klicken Sie auf **OK**.
+  1. Klicken Sie mit der rechten Maustaste im Objekt-Explorer auf Ihre Instanz, und wählen Sie **Eigenschaften** aus.
+  2. Wählen Sie die Seite **Sicherheit** aus.
+  3. Stellen Sie sicher, dass der **SQL Server- und Windows-Authentifizierungsmodus** ausgewählt ist.
+  4. Klicken Sie auf **OK**.
 
-  ![SQL Express-Authentifizierung konfigurieren][4]
+  		![Configure SQL Express Authentication][4]
 
-  e. Erweitern Sie im Objekt-Explorer **Sicherheit** > **Anmeldungen**. f. Klicken Sie mit der rechten Maustaste auf **Anmeldungen**, und wählen Sie **Neue Anmeldung...** aus. g. Geben Sie einen Anmeldenamen ein. Wählen Sie **SQL Server-Authentifizierung**. Geben Sie ein Kennwort ein, und geben Sie das gleiche Kennwort dann noch einmal unter **Kennwort bestätigen** ein. Beachten Sie, dass das Kennwort die unter Windows erforderliche Kennwortkomplexität aufweisen muss. h. Klicken Sie auf **OK**.
+  5. Erweitern Sie im Objekt-Explorer **Sicherheit** > **Anmeldungen**.
+  6. Klicken Sie mit der rechten Maustaste auf **Anmeldungen**, und wählen Sie **Neue Anmeldung...** aus.
+  7. Geben Sie einen Anmeldenamen ein. Wählen Sie **SQL Server-Authentifizierung**. Geben Sie ein Kennwort ein, und geben Sie das gleiche Kennwort dann noch einmal unter **Kennwort bestätigen** ein. Beachten Sie, dass das Kennwort die unter Windows erforderliche Kennwortkomplexität aufweisen muss.
+  8. Klicken Sie auf **OK**.
 
-  ![Neuen Benutzer zu SQL Express hinzufügen][5]
+  		![Add a new user to SQL Express][5]
 
-  i. Klicken Sie mit der rechten Maustaste auf die neue Anmeldung, und wählen Sie **Eigenschaften** aus. j. Wählen Sie die Seite **Serverrollen** aus. k. Aktivieren Sie das Kontrollkästchen neben der Serverrolle **dbcreator**. l. Klicken Sie auf **OK**. m. Schließen Sie SQL Server 2015 Management Studio.
+  9. Klicken Sie mit der rechten Maustaste auf die neue Anmeldung, und wählen Sie **Eigenschaften** aus.
+  10. Wählen Sie die Seite **Serverrollen** aus.
+  11. Aktivieren Sie das Kontrollkästchen neben der Serverrolle **dbcreator**.
+  12. Klicken Sie auf **OK**.
+  13. Schließen Sie SQL Server 2015 Management Studio.
 
 Notieren Sie sich den gewählten Benutzernamen und das gewählte Kennwort. Unter Umständen müssen Sie je nach Ihren speziellen Datenbankanforderungen weitere Serverrollen oder Berechtigungen zuweisen.
 
@@ -263,7 +280,7 @@ Hier ist eine Beispieldatei für _azureMobile.js_ zum Implementieren der oben be
             origins: [ 'localhost' ]
         },
         data: {
-            provider: 'sql',
+            provider: 'mssql',
             server: '127.0.0.1',
             database: 'mytestdatabase',
             user: 'azuremobile',
@@ -274,11 +291,11 @@ Hier ist eine Beispieldatei für _azureMobile.js_ zum Implementieren der oben be
         }
     };
 
-Wir empfehlen, _azureMobile.js_ Ihrer _.gitignore_-Datei hinzuzufügen (oder eine andere Datei zum Ignorieren der Quellcodeverwaltung), um zu verhindern, dass Kennwörter in der Cloud gespeichert werden. Konfigurieren Sie die Produktionseinstellungen in App-Einstellungen immer im [Azure-Portal].
+Wir empfehlen, _azureMobile.js_ Ihrer _.gitignore_-Datei hinzuzufügen (oder eine andere Datei zum Ignorieren der Quellcodeverwaltung), um zu verhindern, dass Kennwörter in der Cloud gespeichert werden. Konfigurieren Sie die Produktionseinstellungen in den App-Einstellungen immer im [Azure-Portal].
 
 ### <a name="howto-use-sqlazure"></a>Verwenden von SQL Azure als Datenspeicher für die Produktion
 
-<!-- ALTERNATE INCLUDE - we can't use ../includes/app-service-mobile-dotnet-backend-create-new-service.md - slightly different semantics -->
+<!--- ALTERNATE INCLUDE - we can't use ../includes/app-service-mobile-dotnet-backend-create-new-service.md - slightly different semantics -->
 
 Das Verwenden von SQL Azure als Datenspeicher ist über alle Azure App Service-Anwendungstypen hinweg identisch. Führen Sie diese Schritte zum Erstellen eines neuen mobilen App-Back-Ends aus, falls Sie dies noch nicht getan haben.
 
@@ -310,9 +327,9 @@ Nach der Erstellung des mobilen App-Back-Ends können Sie wählen, ob Sie entwed
 
 11. Klicken Sie auf dem Blatt **Add data connection** auf **OK**, um die Datenbank zu erstellen.
 
-<!-- END OF ALTERNATE INCLUDE -->
+<!--- END OF ALTERNATE INCLUDE -->
 
-Das Erstellen der Datenbank kann einige Minuten dauern. Im Bereich **Benachrichtigungen** können Sie den Fortschritt der Bereitstellung überwachen. Fahren Sie erst fort, wenn die Datenbank erfolgreich bereitgestellt wurde. Nach der erfolgreichen Bereitstellung wird für die SQL Azure-Datenbankinstanz in den Einstellungen des mobilen App-Back-Ends eine Verbindungszeichenfolge erstellt. Sie können diese App-Einstellungen unter **Einstellungen** > **Anwendungseinstellungen** > **Verbindungszeichenfolgen** anzeigen.
+Das Erstellen der Datenbank kann einige Minuten dauern. Im Bereich **Benachrichtigungen** können Sie den Fortschritt der Bereitstellung überwachen. Fahren Sie erst fort, wenn die Datenbank erfolgreich bereitgestellt wurde. Nach der erfolgreichen Bereitstellung wird für die SQL Azure-Datenbankinstanz in den Einstellungen des mobilen App-Back-Ends eine Verbindungszeichenfolge erstellt. Sie können diese App-Einstellung unter **Einstellungen** > **Anwendungseinstellungen** > **Verbindungszeichenfolgen** anzeigen.
 
 ### <a name="howto-tables-auth"></a>Erzwingen der Authentifizierung für den Zugriff auf Tabellen
 
@@ -357,9 +374,9 @@ Wenn die access-Eigenschaft nicht definiert ist, ist der Zugriff ohne Authentifi
 Die access-Eigenschaft kann nicht nur in der Tabelle angezeigt werden, sondern sie kann auch verwendet werden, um einzelne Vorgänge zu steuern. Es gibt vier Vorgänge:
 
   - *read* ist der auf die Tabelle angewendete RESTful GET-Vorgang.
-  - *read* ist der auf die Tabelle angewendete RESTful POST-Vorgang.
-  - *read* ist der auf die Tabelle angewendete RESTful PATCH-Vorgang.
-  - *read* ist der auf die Tabelle angewendete RESTful DELETE-Vorgang.
+  - *insert* ist der auf die Tabelle angewendete RESTful POST-Vorgang.
+  - *update* ist der auf die Tabelle angewendete RESTful PATCH-Vorgang.
+  - *delete* ist der auf die Tabelle angewendete RESTful DELETE-Vorgang.
 
 Es kann beispielsweise sein, dass Sie eine schreibgeschützte nicht authentifizierte Tabelle bereitstellen möchten. Dies ist mit der folgenden Tabellendefinition möglich:
 
@@ -485,9 +502,9 @@ Wenn Sie die App Service-Authentifizierung mit einer benutzerdefinierten API ver
 
 Benutzerdefinierte APIs werden auf ähnliche Weise wie die Tabellen-API definiert.
 
-1. Erstellen des Verzeichnisses **api**
-2. Erstellen Sie im Verzeichnis **api** eine JavaScript-Datei mit einer API-Definition.
-3. Verwenden Sie die „import“-Methode, um das Verzeichnis **api** zu importieren.
+1. Erstellen eines **api**-Verzeichnisses
+2. Erstellen Sie im **api**-Verzeichnis eine JavaScript-Datei mit einer API-Definition.
+3. Verwenden Sie die „import“-Methode, um das **api**-Verzeichnis zu importieren.
 
 Hier ist die API-Prototypdefinition angegeben, die auf dem bereits verwendeten basic-app-Beispiel basiert.
 
@@ -607,4 +624,4 @@ Node.js-Anwendungen haben Zugriff auf viele Tools für die Diagnoseprotokollieru
 [ExpressJS Middleware]: http://expressjs.com/guide/using-middleware.html
 [Winston]: https://github.com/winstonjs/winston
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

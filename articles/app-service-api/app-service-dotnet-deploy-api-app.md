@@ -18,6 +18,8 @@
 
 # Bereitstellen einer API-App in Azure App Service 
 
+[AZURE.INCLUDE [app-service-api-v2-note](../../includes/app-service-api-v2-note.md)]
+
 ## Übersicht
 
 In diesem Lernprogramm stellen Sie das Web-API-Projekt, das Sie im [vorherigen Lernprogramm](app-service-dotnet-create-api-app.md) erstellt haben, in einer neuen [API-App](app-service-api-apps-why-best-platform.md) bereit. Sie verwenden Visual Studio zum Erstellen der API-App-Ressource in [Azure App Service](../app-service/app-service-value-prop-what-is.md) und zum Bereitstellen Ihres Web-API-Codes in der Azure API-App.
@@ -127,4 +129,4 @@ API-Apps sind Web-Apps mit zusätzlichen Funktionen für das Hosten von APIs. Si
 
 Informationen zu API-Apps-Funktionen finden Sie unter [Was sind API-Apps?](app-service-api-apps-why-best-platform.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

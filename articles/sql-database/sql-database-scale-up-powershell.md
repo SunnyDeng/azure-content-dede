@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.devlang="NA"
-	ms.date="10/08/2015"
+	ms.date="12/01/2015"
 	ms.author="sstein"
 	ms.workload="data-management"
 	ms.topic="article"
@@ -22,7 +22,7 @@
 **Einzeldatenbank**
 
 > [AZURE.SELECTOR]
-- [Azure Preview Portal](sql-database-scale-up.md)
+- [Azure portal](sql-database-scale-up.md)
 - [PowerShell](sql-database-scale-up-powershell.md)
 
 
@@ -134,4 +134,4 @@ Führen Sie das **Set-AzureRMSqlDatabase**-Cmdlet aus, und legen Sie **-Requeste
 - [SQL-Datenbankdokumentation](https://azure.microsoft.com/documentation/services/sql-database/)
 - [Azure SQL-Datenbank-Cmdlets](https://msdn.microsoft.com/library/azure/mt163521.aspx)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

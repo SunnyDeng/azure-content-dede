@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/04/2015"
+    ms.date="12/01/2015"
     ms.author="tamram"/>
 
 
@@ -35,8 +35,8 @@ Eine Funktionsübersicht von Azure Storage Premium finden Sie unter [Storage Pre
 
 Dieser Leitfaden ist in zwei Abschnitte gegliedert, in denen die folgenden zwei Migrationsszenarien erläutert werden:
 
-- [Migrieren von VMs außerhalb von Azure zu Azure Storage Premium](#migrating-vms-from-outside-azure-to-azure-premium-storage)
-- [Migrieren von vorhandenen Azure-VMs zu Azure Storage Premium](#migrating-existing-azure-vms-to-azure-premium-storage)
+- [Migrieren von VMs außerhalb von Azure zu Azure Storage Premium](#migrating-vms-from-outside-azure-to-azure-premium-storage).
+- [Migrieren von vorhandenen Azure-VMs zu Azure Storage Premium](#migrating-existing-azure-vms-to-azure-premium-storage).
 
 Befolgen Sie je nach Szenario die im entsprechenden Abschnitt angegebenen Schritte.
 
@@ -50,7 +50,7 @@ Befolgen Sie je nach Szenario die im entsprechenden Abschnitt angegebenen Schrit
 ### Überlegungen
 
 #### VM-Größen
-Die Größenspezifikationen der Azure-VM sind unter [Größen für virtuelle Computer](https://azure.microsoft.com/de-DE/documentation/articles/virtual-machines-size-specs/) aufgelistet. Sehen Sie sich die Leistungsmerkmale von virtuellen Computern für Storage Premium an, und wählen Sie die am besten für Ihre Workload geeignete VM-Größe aus. Stellen Sie sicher, dass auf Ihrem virtuellen Computer ausreichend Bandbreite zum Steuern des Datenverkehrs des Datenträgers verfügbar ist.
+Die Größenspezifikationen der Azure-VM sind unter [Größen für virtuelle Computer](../virtual-machines/virtual-machines-size-specs.md) aufgelistet. Sehen Sie sich die Leistungsmerkmale von virtuellen Computern für Storage Premium an, und wählen Sie die am besten für Ihre Workload geeignete VM-Größe aus. Stellen Sie sicher, dass auf Ihrem virtuellen Computer ausreichend Bandbreite zum Steuern des Datenverkehrs des Datenträgers verfügbar ist.
 
 
 #### Datenträgergrößen
@@ -76,7 +76,7 @@ Weitere Informationen zu den Spezifikationen für Storage Premium finden Sie unt
 Legen Sie je nach Workload fest, ob zusätzliche Datenträger für Ihren virtuellen Computer erforderlich sind. Sie können mehrere Datenträger für permanente Daten auf Ihrem virtuellen Computer anfügen. Bei Bedarf können Sie Daten über die Datenträger verteilen, um die Kapazität und die Leistung des Volumens zu erhöhen. Wenn Sie Daten über Premium-Speicher-Datenträger mithilfe von [Speicherplätzen](http://technet.microsoft.com/library/hh831739.aspx) verteilen, sollten Sie sie für jeden verwendeten Datenträger eine Spalte konfigurieren. Andernfalls kann die Gesamtleistung des Stripesetvolume aufgrund ungleicher Verteilung des Datenverkehrs auf die Datenträger niedriger sein als erwartet. Für Linux-VMs können Sie dazu das Hilfsprogramm *mdadm* verwenden. Weitere Informationen finden Sie im Artikel [Konfigurieren von Software-RAID unter Linux](../virtual-machines-linux-configure-raid.md).
 
 #### Zwischenspeicherungsrichtlinie für Datenträger
-Standardmäßig ist die Richtlinie für das Zwischenspeichern für alle Premium-Datenträger *Schreibgeschützt* und für die Premium-Betriebssystem-Datenträger, die an den virtuellen Computer angeschlossen sind, *Lesen/Schreiben*. Diese Konfigurationseinstellung wird empfohlen, um die optimale E/A-Leistung für Ihre Anwendung zu erreichen. Für Datenträger mit hohem oder ausschließlichem Schreibzugriff (z. B. SQL Server-Protokolldateien) deaktivieren Sie das Zwischenspeichern, sodass Sie eine bessere Anwendungsleistung erzielen können. Die Einstellungen für das Zwischenspeichern bei vorhandenen Datenträgern können Sie über das Azure-Portal oder den Parameter *-HostCaching* des Cmdlets *Set-AzureDataDisk* aktualisieren.
+Standardmäßig ist die Richtlinie für das Zwischenspeichern für alle Premium-Datenträger *Schreibgeschützt* und für die Premium-Betriebssystem-Datenträger, die an den virtuellen Computer angeschlossen sind, *Lesen/Schreiben*. Diese Konfigurationseinstellung wird empfohlen, um die optimale E/A-Leistung für Ihre Anwendung zu erreichen. Für Datenträger mit hohem oder ausschließlichem Schreibzugriff (z. B. SQL Server-Protokolldateien) deaktivieren Sie das Zwischenspeichern, sodass Sie eine bessere Anwendungsleistung erzielen können. Die Einstellungen für das Zwischenspeichern bei vorhandenen Datenträgern können Sie über das [Azure-Portal](portal.azure.com) oder den Parameter *-HostCaching* des Cmdlets *Set-AzureDataDisk* aktualisieren.
 
 #### Standort
 Wählen Sie einen Speicherort, an dem Azure Premium-Speicher verfügbar ist. Aktuelle Informationen zu verfügbaren Standorten finden Sie unter [Azure: Dienste nach Region](http://azure.microsoft.com/regions/#services). Virtuelle Computer in der gleichen Umgebung wie das Speicherkonto, in dem die Datenträger für den virtuellen Computer gespeichert sind, erzielen eine höhere Leistung als solche in unterschiedlichen Regionen.
@@ -250,7 +250,7 @@ Verwenden Sie die folgenden PowerShell-Cmdlets, um die virtuelle Festplatte als 
 
 Kopieren und speichern Sie den Namen des neuen Azure-Datenträgers. In dem Beispiel oben ist dies *DataDisk*.
 
-### Erstellen eines virtuellen Computers der Azure DS- oder GS-Serie.
+### Erstellen Sie einen neuen virtuellen Computer der DS- oder GS-Serie.
 
 Nachdem das Betriebssystemimage oder der Betriebssystemdatenträger registriert wurde, können Sie einen neuen virtuellen Computer der DS- oder GS-Serie erstellen. Sie verwenden dazu den Namen des Betriebssystemimages oder Betriebssystemdatenträgers, den Sie registriert haben. Wählen Sie den virtuellen Computer aus der Premium-Speicherebene aus. Im folgenden Beispiel wird die VM-Größe *Standard\_DS2* verwendet.
 
@@ -662,14 +662,14 @@ Datenbanken und andere komplexe Anwendungen erfordern womöglich spezielle Schri
 
 Informationen zu bestimmten Szenarios zur Migration virtueller Computer finden Sie in den folgenden Ressourcen:
 
-- [Migrate Azure Virtual Machines between Storage Accounts](http://azure.microsoft.com/blog/2014/10/22/migrate-azure-virtual-machines-between-storage-accounts/) (in englischer Sprache)
+- [Migrate Azure Virtual Machines between Storage Accounts (in englischer Sprache)](http://azure.microsoft.com/blog/2014/10/22/migrate-azure-virtual-machines-between-storage-accounts/)
 - [Erstellen und Hochladen einer Windows Server-VHD nach Azure](../virtual-machines-create-upload-vhd-windows-server.md)
 - [Erstellen und Hochladen einer virtuellen Festplatte, die das Linux-Betriebssystem enthält](../virtual-machines-linux-create-upload-vhd.md)
-- [Migrating Virtual Machines from Amazon AWS to Microsoft Azure](http://channel9.msdn.com/Series/Migrating-Virtual-Machines-from-Amazon-AWS-to-Microsoft-Azure) (in englischer Sprache)
+- [Migrating Virtual Machines from Amazon AWS to Microsoft Azure (in englischer Sprache)](http://channel9.msdn.com/Series/Migrating-Virtual-Machines-from-Amazon-AWS-to-Microsoft-Azure)
 
 Lesen Sie außerdem die folgenden Ressourcen, um mehr über Azure Sstorage und Azure Virtual Machines zu erfahren:
 
-- [Azure Storage](http://azure.microsoft.com/documentation/services/storage/) (in englischer Sprache)
+- [Azure Storage (in englischer Sprache)](http://azure.microsoft.com/documentation/services/storage/)
 - [Dokumentation zu virtuellen Computern](http://azure.microsoft.com/documentation/services/virtual-machines/)
 - [Premium-Speicher: Hochleistungsspeicher für Workloads in Azure Virtual Machine](storage-premium-storage-preview-portal.md)
 
@@ -677,4 +677,4 @@ Lesen Sie außerdem die folgenden Ressourcen, um mehr über Azure Sstorage und A
 [2]: ./media/storage-migration-to-premium-storage/migration-to-premium-storage-1.png
 [3]: ./media/storage-migration-to-premium-storage/migration-to-premium-storage-3.png
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -54,7 +54,7 @@ Melden Sie sich am *wp-admin*-Bereich Ihrer Web-App an. Im Menü **Tools** sollt
 
 ![Bildschirm zur Netzwerkeinrichtung][wordpress-network-setup]
 
-In diesem Lernprogramm wird das Siteschema *Sub-directories* verwendet, da dies immer funktionieren sollte. Später in diesem Lernprogramm richten wir benutzerdefinierte Domänen für die einzelnen Untersites ein. Es sollte jedoch möglich sein, eine Unterdomäneninstallation einzurichten, wenn Sie eine Domäne über das [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) zuweisen und Platzhalter-DNS ordnungsgemäß einrichten.
+In diesem Lernprogramm wird das Siteschema *Sub-directories* verwendet, da dies immer funktionieren sollte. Später in diesem Lernprogramm richten wir benutzerdefinierte Domänen für die einzelnen Untersites ein. Es sollte jedoch möglich sein, eine Unterdomäneninstallation einzurichten, wenn Sie eine Domäne über das [Azure-Portal](https://portal.azure.com) zuweisen und Platzhalter-DNS ordnungsgemäß einrichten.
 
 Weitere Informationen zu Unterdomäneneinrichtungen im Vergleich zu Unterverzeichniseinrichtungen finden Sie im Artikel [Types of multisite network][wordpress-codex-types-of-networks] (Arten von Multisite-Netzwerken, in englischer Sprache) im WordPress-Codex.
 
@@ -137,8 +137,7 @@ Azure-Web-Apps ermöglichen Ihnen, eine unbegrenzte Anzahl von Domänen zu einer
 >[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Änderungen
-* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
+* Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 
 [ben-lobaugh]: http://ben.lobaugh.net
 [ms-open-tech]: http://msopentech.com
@@ -154,4 +153,4 @@ Azure-Web-Apps ermöglichen Ihnen, eine unbegrenzte Anzahl von Domänen zu einer
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

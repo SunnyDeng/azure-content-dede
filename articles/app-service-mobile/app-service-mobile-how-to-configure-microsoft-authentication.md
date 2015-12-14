@@ -25,12 +25,12 @@
 In diesem Thema wird demonstriert, wie Sie Azure App Services zur Verwendung eines Microsoft-Kontos als Authentifizierungsanbieter konfigurieren.
 
 
-> [AZURE.NOTE]Dieses Thema veranschaulicht die Verwendung der Authentifizierungs- und Autorisierungsfeatures von App Service. Diese Features ersetzen das App Service-Gateway für die meisten Anwendungen. Unterschiede, die für die Verwendung des Gateways gelten, werden in diesem Thema in Hinweisen hervorgehoben.
+> [AZURE.NOTE]Dieses Thema veranschaulicht die Verwendung der Authentifizierungs- und Autorisierungsfeatures von App Service. Dadurch wird für die meisten Anwendungen das App Service-Gateway ersetzt. Unterschiede, die für die Verwendung des Gateways gelten, werden in diesem Thema in Hinweisen hervorgehoben.
 
 
 ## <a name="register"> </a>Registrieren Ihrer Anwendung für ein Microsoft-Konto
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal] an, und navigieren Sie zu Ihrer Anwendung. Kopieren Sie die **URL**. Diese verwenden Sie, um die Microsoft-Konto-App zu konfigurieren.
+1. Melden Sie sich beim [Azure-Portal] an, und navigieren Sie zu Ihrer Anwendung. Kopieren Sie die **URL**. Diese verwenden Sie, um die Microsoft-Konto-App zu konfigurieren.
 
 2. Navigieren Sie im Microsoft Account Developer Center zur Seite [Eigene Anwendungen], und melden Sie sich, falls erforderlich, mit Ihrem Microsoft-Konto an.
 
@@ -55,7 +55,7 @@ In diesem Thema wird demonstriert, wie Sie Azure App Services zur Verwendung ein
 > [AZURE.NOTE]Wenn Sie das App Service-Gateway verwenden, ignorieren Sie diesen Abschnitt und navigieren stattdessen im Portal zu Ihrem Gateway. Wählen Sie unter **Einstellungen** die Option **Identität** und dann **Microsoft-Konto** aus. Fügen Sie die erhaltenen abgerufenen Werte ein, und klicken Sie auf **Speichern**.
 
 
-7. Navigieren Sie im [Azure-Verwaltungsportal] zu Ihrer Anwendung. Klicken Sie auf **Einstellungen** und anschließend auf **Authentifizierung/Autorisierung**.
+7. Navigieren Sie im [Azure-Portal] wieder zu Ihrer Anwendung. Klicken Sie auf **Einstellungen** und anschließend auf **Authentifizierung/Autorisierung**.
 
 8. Falls das Authentifizierungs-/Autorisierungsfeature nicht aktiviert ist, aktivieren Sie es über die Option **Ein**.
 
@@ -88,6 +88,6 @@ Sie können nun ein Microsoft-Konto für die Authentifizierung in Ihrer App verw
 <!-- URLs. -->
 
 [Eigene Anwendungen]: http://go.microsoft.com/fwlink/p/?LinkId=262039
-[Azure-Verwaltungsportal]: https://portal.azure.com/
+[Azure-Portal]: https://portal.azure.com/
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

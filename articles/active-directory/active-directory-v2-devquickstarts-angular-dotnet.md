@@ -203,9 +203,9 @@ Sie können anhand des Objekts `userInfo` auch ermitteln, ob der Benutzer angeme
 ```
 
 ## Aufrufen der REST-API
-Nun ist es an der Zeit, Token abzurufen und die REST-API aufzurufen, um Aufgaben zu erstellen, zu lesen, zu aktualisieren und zu löschen. Wissen Sie was? Sie müssen *nichts* tun. „Adal.js“ kümmert sich automatisch um das Abrufen, Zwischenspeichern und Aktualisieren von Token. Die Bibliothek fügt diese Token darüber hinaus an ausgehende AJAX-Anforderungen an, die Sie an die REST-API senden.
+Nun ist es an der Zeit, Token abzurufen und die REST-API aufzurufen, um Aufgaben zu erstellen, zu lesen, zu aktualisieren und zu löschen. Aber wissen Sie was? Sie müssen *nichts* tun. „Adal.js“ kümmert sich automatisch um das Abrufen, Zwischenspeichern und Aktualisieren von Token. Außerdem werden diese Token an die ausgehenden AJAX-Anforderungen angefügt, die Sie an die REST-API senden.
 
-Wie das funktioniert? Mit [AngularJS-Interceptors](https://docs.angularjs.org/api/ng/service/$http). Diese ermöglichen „adal.js“ das Transformieren aus- und eingehender HTTP-Nachrichten. Bei „adal.js“ wird zudem davon ausgegangen, dass alle Anforderungen an die gleiche Domäne gerichtet werden, da das Fenster Token verwenden soll, die für die gleiche Anwendungs-ID vorgesehen sind wie die AngularJS-App. Daher haben wir sowohl in der Angular-App als auch in der NodeJS-REST-API die gleiche Anwendungs-ID verwendet. Natürlich können Sie dieses Verhalten überschreiben und „adal.js“ bei Bedarf zum Abrufen von Token für andere REST-APIs anweisen. Für dieses einfache Szenario sind jedoch die Standardeinstellungen ausreichend.
+Wie das funktioniert? Mit [AngularJS-Interceptors](https://docs.angularjs.org/api/ng/service/$http). Diese ermöglichen „adal.js“ das Transformieren aus- und eingehender HTTP-Nachrichten. Darüber hinaus geht „adal.js“ davon aus, dass alle Anforderungen, die an dieselbe Domäne wie das Fenster gesendet werden, Token verwenden sollten, die für dieselbe Anwendungs-ID wie die AngularJS-App bestimmt sind. Daher haben wir sowohl in der Angular-App als auch in der NodeJS-REST-API die gleiche Anwendungs-ID verwendet. Natürlich können Sie dieses Verhalten überschreiben und „adal.js“ bei Bedarf zum Abrufen von Token für andere REST-APIs anweisen. Für dieses einfache Szenario sind jedoch die Standardeinstellungen ausreichend.
 
 Der folgende Codeausschnitt veranschaulicht, wie einfach das Senden von Anforderungen mit Bearertoken von Azure AD ist:
 
@@ -217,7 +217,7 @@ return $http.get('/api/tasks');
 ...
 ```
 
-Glückwunsch! Ihre in Azure AD integrierte einseitige App ist nun vollständig. Toll gemacht! Damit können Benutzer authentifiziert werden, die Back-End-REST-API kann mit OpenID Connect sicher aufgerufen werden, und es können grundlegende Informationen zum Benutzer abgerufen werden. Standardmäßig werden Benutzer mit einem persönlichen Microsoft- oder einem Geschäfts- oder Schulkonto von Azure AD unterstützt. Führen Sie die App aus, und navigieren Sie in einem Browser zu `https://localhost:44326/`. Melden Sie sich mit einem persönlichen Microsoft-Konto oder einem Geschäfts- oder Schulkonto an. Fügen Sie der Aufgabenliste des Benutzers Aufgaben hinzu, und melden Sie sich ab. Versuchen Sie, sich mit dem anderen Kontotyp anzumelden. Falls ein Azure AD-Mandant Geschäfts- oder Schulbenutzer erstellen soll, [erfahren Sie hier, wie Sie einen Mandanten einrichten](active-directory-howto-tenant.md) (kostenlos).
+Glückwunsch! Ihre in Azure AD integrierte einseitige App ist nun vollständig. Genießen Sie das. Jetzt können Benutzer authentifiziert werden, die zugehörige Back-End-REST-API kann mit OpenID Connect sicher aufgerufen werden, und es können grundlegende Informationen zum Benutzer abgerufen werden. Standardmäßig werden Benutzer mit einem persönlichen Microsoft- oder einem Geschäfts- oder Schulkonto von Azure AD unterstützt. Führen Sie die App aus, und navigieren Sie in einem Browser zu `https://localhost:44326/`. Melden Sie sich mit einem persönlichen Microsoft-Konto oder einem Geschäfts- oder Schulkonto an. Fügen Sie der Aufgabenliste des Benutzers Aufgaben hinzu, und melden Sie sich ab. Versuchen Sie, sich mit dem anderen Kontotyp anzumelden. Falls ein Azure AD-Mandant Geschäfts- oder Schulbenutzer erstellen soll, [erfahren Sie hier, wie Sie einen Mandanten einrichten](active-directory-howto-tenant.md) (kostenlos).
 
 Weitere Informationen zum App-Model v2.0 (Vorschauversion) finden Sie unter [v2.0 – Entwicklerhandbuch](active-directory-appmodel-v2-overview.md). Weitere Ressourcen:
 
@@ -225,4 +225,4 @@ Weitere Informationen zum App-Model v2.0 (Vorschauversion) finden Sie unter [v2.
 - [Azure AD auf Stack Overflow >>](http://stackoverflow.com/questions/tagged/azure-active-directory)
 - Azure AD-Dokumentation auf [Azure.com >>](http://azure.microsoft.com/documentation/services/active-directory/)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

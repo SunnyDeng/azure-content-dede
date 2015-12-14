@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Erstellen oder Bearbeiten von Benutzern in Azure AD"
-	description="In diesem Thema erfahren Sie, wie Sie Benutzerkonten unter Azure AD erstellen oder bearbeiten."
+	pageTitle="Erstellen oder Bearbeiten von Benutzern in Azure Active Directory | Microsoft Azure"
+	description="Erklärt, wie Sie Benutzerkonten unter Azure Active Directory erstellen oder bearbeiten."
 	services="active-directory"
 	documentationCenter=""
 	authors="curtand"
@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/21/2015"
+	ms.date="12/01/2015"
 	ms.author="curtand"/>
 
-# Erstellen oder Bearbeiten von Benutzern in Azure AD
+# Erstellen oder Bearbeiten von Benutzern in Azure Active Directory
 
-Sie müssen für jeden Benutzer, der auf einen Microsoft-Clouddienst zugreifen soll, ein eigenes Konto erstellen. Sie können Benutzerkonten auch ändern oder löschen, wenn sie nicht mehr benötigt werden. Benutzer haben standardmäßig keine Administratorberechtigungen, aber Sie können ihnen diese erteilen.
+Sie müssen in Azure Active Directory (Azure AD) für jeden Benutzer, der auf einen Microsoft-Clouddienst zugreifen soll, ein eigenes Konto erstellen. Sie können Benutzerkonten auch ändern oder löschen, wenn sie nicht mehr benötigt werden. Benutzer haben standardmäßig keine Administratorberechtigungen, aber Sie können ihnen diese erteilen.
 
 ## Erstellen eines Benutzers
 
@@ -41,7 +41,7 @@ Achten Sie auf die folgenden Probleme, die beim Erstellen eines Benutzerkontos a
 
 Wenn der Benutzer, den Sie bearbeiten möchten, mit Ihrem lokalen Active Directory-Dienst synchronisiert wird, wird eine Fehlermeldung angezeigt. Sie können den Benutzer mit diesem Verfahren dann nicht bearbeiten. Verwenden Sie zum Bearbeiten des Benutzers Ihre lokalen Active Directory-Verwaltungstools.
 
-So bearbeiten Sie einen Benutzer im Azure-Verwaltungsportal
+So bearbeiten Sie einen Benutzer im klassischen Azure-Portal:
 
 1. Klicken Sie auf **Active Directory** und dann auf den Namen des Verzeichnisses Ihrer Organisation.
 2. Klicken Sie auf der Seite **Benutzer** auf den Anzeigenamen des Benutzers, den Sie bearbeiten möchten.
@@ -61,7 +61,7 @@ In Azure AD können Sie einem Azure AD-Verzeichnis auch Benutzer aus einem ander
 
 Bei Benutzern, die aus einem anderen Verzeichnis hinzugefügt werden, handelt es sich um externe Benutzer. Externe Benutzer können mit Benutzern zusammenarbeiten, die einem Verzeichnis bereits vorhanden sind, z. B. in einer Testumgebung, ohne dass sie sich mit neuen Konten und Anmeldeinformationen anmelden müssen. Externe Benutzer werden über ihr Basisverzeichnis authentifiziert, wenn sie sich anmelden. Diese Authentifizierung funktioniert auch für alle anderen Verzeichnisse, deren Mitglied sie sind.
 
-Beim Erstellen eines externen Benutzers erstellen Sie diesen im Portal und wählen unter **Art des Benutzers** die Option **Benutzer in einem anderen Azure AD-Verzeichnis**.
+Beim Erstellen eines externen Benutzers erstellen Sie diesen im klassischen Azure-Portal und wählen unter **Art des Benutzers** die Option **Benutzer in einem anderen Azure AD-Verzeichnis**.
 
 ## Verwaltung externer Benutzer und Einschränkungen
 
@@ -73,7 +73,7 @@ Die einzige Verbindung zwischen den beiden Objekten ist, dass der Benutzer immer
 
 Wenn ein Benutzer in seinem Basisverzeichnis gelöscht wird oder sein Microsoft-Konto kündigt, ist der externe Benutzer weiterhin im Verzeichnis vorhanden. Er kann aber nicht mehr auf Ressourcen im Verzeichnis zugreifen, da die Authentifizierung über das Basisverzeichnis oder das Microsoft-Konto nicht mehr möglich ist.
 
-Ein Benutzer, der Administrator mehrerer Verzeichnisse ist, kann diese Verzeichnisse im Azure-Verwaltungsportal verwalten. Andere Anwendungen wie Office 365 enthalten derzeit keine Optionen zum Zuweisen von und Zugreifen auf Dienste als externer Benutzer in einem anderen Verzeichnis. Wir stellen demnächst Anleitungen für Entwickler bereit. Darin ist beschrieben, wie Apps für Benutzer bereitgestellt werden können, die Mitglieder mehrerer Verzeichnisse sind.
+Ein Benutzer, der Administrator mehrerer Verzeichnisse ist, kann diese Verzeichnisse im klassischen Azure-Portal verwalten. Andere Anwendungen wie Office 365 enthalten derzeit keine Optionen zum Zuweisen von und Zugreifen auf Dienste als externer Benutzer in einem anderen Verzeichnis. Wir stellen demnächst Anleitungen für Entwickler bereit. Darin ist beschrieben, wie Apps für Benutzer bereitgestellt werden können, die Mitglieder mehrerer Verzeichnisse sind.
 
 Derzeit gelten bestimmte Einschränkungen. Ein Administrator kann die Zustimmung für eine mehrinstanzenfähige Anwendung nur im Basisverzeichnis gewähren, und die Bereitstellung ist nur für SaaS-Apps und SSO per Zugriffsbereich im Basisverzeichnis möglich. Für Benutzer mit Microsoft-Konto gelten die gleichen Einschränkungen. Es ist momentan nicht möglich, die Zustimmung für eine mehrinstanzenfähige Anwendung zu gewähren oder den Zugriffsbereich zu verwenden.
 
@@ -85,7 +85,7 @@ Gäste verfügen im Verzeichnis über eingeschränkte Berechtigungen. Diese Bere
 
 ## Konfigurieren von Richtlinien für den Benutzerzugriff
 
-Die Registerkarte **Konfigurieren** eines Verzeichnisses enthält Optionen zur Zugriffssteuerung für externe Benutzer. Diese Optionen können nur über die Benutzeroberfläche (es gibt keine Windows PowerShell- oder API-Methode) im vollständigen Azure-Portal durch einen globalen Verzeichnisadministrator geändert werden. Klicken Sie zum Öffnen im Azure-Portal auf die Registerkarte **Konfigurieren** und dann auf **Active Directory** und den Namen des Verzeichnisses.
+Die Registerkarte **Konfigurieren** eines Verzeichnisses enthält Optionen zur Zugriffssteuerung für externe Benutzer. Diese Optionen können nur über die Benutzeroberfläche (es gibt keine Windows PowerShell- oder API-Methode) im vollständigen klassischen Azure-Portal durch einen globalen Verzeichnisadministrator geändert werden. Klicken Sie zum Öffnen im klassischen Azure-Portal auf die Registerkarte **Konfigurieren** und dann auf **Active Directory** und den Namen des Verzeichnisses.
 
 ![][1]
 
@@ -111,4 +111,4 @@ Durch die Anzeige eingeschränkter Informationen zu einem Benutzer oder einer Gr
 [1]: ./media/active-directory-create-users/RBACDirConfigTab.png
 [2]: ./media/active-directory-create-users/RBACGuestAccessControls.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

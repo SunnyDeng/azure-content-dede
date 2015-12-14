@@ -235,7 +235,7 @@ Der Abschnitt "typeProperties" unterscheidet sich bei jedem Typ von Dataset und 
 
 | Eigenschaft | Beschreibung | Erforderlich |
 | -------- | ----------- | -------- | 
-| tableName | Name der Tabelle in der DB2-Datenbankinstanz, auf die der verknüpfte Dienst verweist. | Ja |
+| tableName | Name der Tabelle in der DB2-Datenbankinstanz, auf die der verknüpfte Dienst verweist. | Nein (wenn **query** von **RelationalSource** angegeben ist) |
 
 ## Eigenschaften von DB2-Kopieraktivitätstyp
 
@@ -248,7 +248,7 @@ Wenn bei der Kopieraktivität "source" den Typ **RelationalSource** hat (zu dem 
 
 | Eigenschaft | Beschreibung | Zulässige Werte | Erforderlich |
 | -------- | ----------- | -------- | -------------- |
-| query | Verwendet die benutzerdefinierte Abfrage zum Lesen von Daten. | SQL-Abfragezeichenfolge. Beispiel: select * from MyTable. | Nein |
+| query | Verwendet die benutzerdefinierte Abfrage zum Lesen von Daten. | SQL-Abfragezeichenfolge. Beispiel: select * from MyTable. | Nein (wenn **tableName** von **Dataset** angegeben ist)|
 
 [AZURE.INCLUDE [data-factory-structure-for-rectangular-datasets](../../includes/data-factory-structure-for-rectangualr-datasets.md)]
 
@@ -309,4 +309,4 @@ Char | String
 
 [AZURE.INCLUDE [data-factory-type-repeatability-for-relational-sources](../../includes/data-factory-type-repeatability-for-relational-sources.md)]
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

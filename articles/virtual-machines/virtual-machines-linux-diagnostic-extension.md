@@ -39,9 +39,9 @@ In Version 2.0 werden folgende Daten verarbeitet:
 
 
 ## So aktivieren Sie die Erweiterung
-Die Erweiterung kann über das [Azure-Vorschauportal](https://ms.portal.azure.com/#), mit Azure PowerShell oder über Azure-Befehlszeilenschnittstellen-Skripts aktiviert werden.
+Die Erweiterung kann über das [Azure-Portal](https://ms.portal.azure.com/#), die Azure PowerShell oder per Azure-Befehlszeilenschnittstellen-Skript aktiviert werden.
 
-Um die System- und Leistungsdaten direkt im Azure-Vorschauportal anzuzeigen und zu konfigurieren, führen Sie [diese Schritte](http://azure.microsoft.com/blog/2014/09/02/windows-azure-virtual-machine-monitoring-with-wad-extension/ "URL zum Windows-Blog") aus.
+Um die System- und Leistungsdaten direkt im Azure-Portal anzuzeigen und zu konfigurieren, führen Sie [diese Schritt](http://azure.microsoft.com/blog/2014/09/02/windows-azure-virtual-machine-monitoring-with-wad-extension/ "URL zum Windows-Blog")e aus.
 
 
 Dieser Artikel befasst sich mit dem Aktivieren und Konfigurieren der Erweiterung per Azure-Befehlszeilenschnittstelle. Dadurch können Sie die Daten direkt in der Speichertabelle anzeigen und lesen.
@@ -144,4 +144,4 @@ Wenn Sie in Szenario 2 und 3 „fileCfg“ oder „perfCfg“ aktiviert haben,
 - In Version 2.0 kann auf die Rsyslog-Informationen und die benutzerdefinierte Protokolldatei nur über Skripts zugegriffen werden.
 - Wenn Sie in Version 2.0 die Linux-Diagnoseerweiterung zunächst über ein Skript aktiviert haben, können Sie die Daten nicht im Portal anzeigen. Wenn Sie die Erweiterung dagegen zuerst im Portal aktivieren, funktionieren die Skripts weiterhin.
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

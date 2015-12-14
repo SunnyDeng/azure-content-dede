@@ -125,7 +125,7 @@ Beachten Sie, dass die Builddefinition, die Sie anhand dieser Anweisungen erstel
 
 ### Installieren des Service Fabric-SDKs
 
-Installieren Sie das [Service Fabric-SDK](https://azure.microsoft.com/de-DE/campaigns/service-fabric/).
+Installieren Sie das [Service Fabric-SDK](https://azure.microsoft.com/campaigns/service-fabric/).
 
 ### Registrieren des NuGet-Repositorys des Service Fabric-SDKs
 
@@ -339,4 +339,4 @@ Mit den oben aufgeführten Anweisungen wird für jeden Buildvorgang ein neuer Cl
 
 Weitere Informationen zu Continuous Integration für Service Fabric-Anwendungen finden Sie in den folgenden Artikeln: - [Startseite der Builddokumentation](https://msdn.microsoft.com/Library/vs/alm/Build/overview) - [Bereitstellen eines Build-Agents](https://msdn.microsoft.com/Library/vs/alm/Build/agents/windows) - [Erstellen und Konfigurieren einer Builddefinition](https://msdn.microsoft.com/Library/vs/alm/Build/vs/define-build)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

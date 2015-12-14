@@ -20,7 +20,7 @@
 # Erstellen eines virtuellen Computers mit SQL Server in Azure (PowerShell)
 
 > [AZURE.SELECTOR]
-- [Azure portal](virtual-machines-provision-sql-server.md)
+- [Azure classic portal](virtual-machines-provision-sql-server.md)
 - [PowerShell](virtual-machines-sql-server-create-vm-with-powershell.md)
 
 ## Übersicht
@@ -32,7 +32,7 @@ Dieser Artikel enthält Schritte zum Erstellen eines virtuellen Computers mit SQ
 
 ## Installieren und Konfigurieren von PowerShell
 
-1. Wenn Sie kein Azure-Konto haben, sollten Sie die Seite [Kostenlose einmonatige Testversion](https://azure.microsoft.com/de-DE/pricing/free-trial/) besuchen. 
+1. Wenn Sie kein Azure-Konto haben, sollten Sie die Seite [Kostenlose einmonatige Testversion](https://azure.microsoft.com/pricing/free-trial/) besuchen. 
  
 2. [Installieren Sie die neuesten Azure PowerShell-Cmdlets](../powershell-install-configure.md/#how-to-install-azure-powershell).
 
@@ -170,8 +170,8 @@ Weitere Anleitungen zur Bereitstellung von virtuellen Computern mit PowerShell f
 
 In vielen Fällen ist der nächste Schritt, die Datenbanken auf diese neue SQL Server-VM zu migrieren. Anleitungen zur Datenbankmigration finden Sie unter [Migrieren einer Datenbank zu SQL Server auf einer Azure-VM](virtual-machines-migrate-onpremises-database.md).
 
-Wenn Sie auch wissen möchten, wie diese Schritte im Azure-Portal ausgeführt werden, lesen Sie [Bereitstellen eines virtuellen Computers mit SQL Server in Azure](virtual-machines-provision-sql-server.md).
+Wenn Sie auch wissen möchten, wie diese Schritte im klassischen Azure-Portal ausgeführt werden, lesen Sie [Bereitstellen eines virtuellen Computers mit SQL Server in Azure](virtual-machines-provision-sql-server.md).
 
 Zusätzlich zu diesen Ressourcen wird empfohlen, dass Sie sich die [anderen Themen im Zusammenhang mit Ausführen von SQL Server auf virtuellen Azure Computern](virtual-machines-sql-server-infrastructure-services.md) ansehen.
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

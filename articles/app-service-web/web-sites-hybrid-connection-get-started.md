@@ -13,14 +13,14 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/11/2015" 
+	ms.date="11/24/2015" 
 	ms.author="cephalin"/>
 
 #Zugreifen auf lokale Ressourcen über Hybridverbindungen in Azure App Service
 
 Sie können eine Web-App in Azure App Service mit jeder lokalen Ressource verbinden, die einen statischen TCP-Port verwendet, wie SQL Server, MySQL, HTTP Web-APIs, Mobile Services und die meisten benutzerdefinierten Webdienste. In diesem Artikel erfahren Sie, wie Sie eine Hybridverbindung zwischen einer Web-App in Azure App Service und einer lokalen SQL Server-Datenbank herstellen.
 
-> [AZURE.NOTE]Der Web-Apps-Teil der Funktion "Hybridverbindungen" ist nur im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) verfügbar. Informationen zum Erstellen einer Verbindung in BizTalk-Diensten finden Sie unter [Hybridverbindungen](http://go.microsoft.com/fwlink/p/?LinkID=397274).
+> [AZURE.NOTE]Der Web-Apps-Teil der Funktion "Hybridverbindungen" ist nur im [Azure-Portal](https://portal.azure.com) verfügbar. Informationen zum Erstellen einer Verbindung in BizTalk-Diensten finden Sie unter [Hybridverbindungen](http://go.microsoft.com/fwlink/p/?LinkID=397274).
 
 ## Voraussetzungen
 - Ein Azure-Abonnement. Hinweise zum kostenlosen Abonnement finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/). 
@@ -39,9 +39,7 @@ Sie können eine Web-App in Azure App Service mit jeder lokalen Ressource verbin
 
 > [AZURE.NOTE]Wenn Sie bereits eine Web-App im Azure-Portal erstellt haben, die Sie für dieses Lernprogramm verwenden möchten, können Sie direkt zu [Erstellen einer Hybridverbindung und eines BizTalk-Diensts](#CreateHC) wechseln und dort beginnen.
 
-1. Klicken Sie unten links im [Azure-Portal](https://portal.azure.com) auf **Neu** > **Web + Mobile** > **Website**.
-	
-	![Schaltfläche "Neu"][New]
+1. Klicken Sie oben links im [Azure-Portal](https://portal.azure.com) auf **Neu** > **Web und mobil** > **Web-App**.
 	
 	![Neue Web-App][NewWebsite]
 	
@@ -64,7 +62,7 @@ Anschließend erstellen Sie eine Hybridverbindung und einen BizTalk-Dienst für 
 <a name="CreateHC"></a>
 ## Erstellen einer Hybridverbindung und eines BizTalk-Diensts ##
 
-1. Führen Sie im Blatt der Web-App einen Bildlauf nach unten durch, und wählen Sie **Hybridverbindungen** aus.
+1. Klicken Sie im Blatt Ihrer Web-App auf **Alle Einstellungen** > **Netzwerk** > **Configure your hybrid connection endpoints**.
 	
 	![Hybridverbindungen][CreateHCHCIcon]
 	
@@ -77,11 +75,7 @@ Anschließend erstellen Sie eine Hybridverbindung und einen BizTalk-Dienst für 
 	
 	![Hybridverbindung erstellen][TwinCreateHCBlades]
 	
-	Im Blatt **Hybridverbindung erstellen**:
-	- Geben Sie für **Name** einen Namen für die Verbindung an.
-	- Geben Sie für **Hostname** den Namen des lokalen Computers ein, der Ihre Ressourcen hostet.
-	- Geben Sie für **Port** die Portnummer ein, die Ihre lokale Ressource verwendet (1433 für eine Standardinstanz von SQL Server).
-	- Klicken Sie auf **Biz Talk Service**.
+	Im Blatt **Hybridverbindung erstellen**: – Geben Sie für **Name** einen Namen für die Verbindung an. – Geben Sie für **Hostname** den Namen des lokalen Computers ein, der Ihre Ressourcen hostet. – Geben Sie für **Port** die Portnummer ein, die Ihre lokale Ressource verwendet (1433 für eine Standardinstanz von SQL Server). – Klicken Sie auf **Biz Talk Service**.
 
 
 4. Das Blatt **BizTalk Service erstellen** wird geöffnet. Geben Sie einen Namen für den BizTalk-Dienst ein, und klicken Sie auf **OK**.
@@ -97,7 +91,7 @@ Anschließend erstellen Sie eine Hybridverbindung und einen BizTalk-Dienst für 
 6. Sobald der Prozess abgeschlossen ist, werden Sie im Benachrichtigungsbereich des Portals informiert, dass die Verbindung erfolgreich erstellt wurde.
 	<!-- TODO
 
-Everything fails at this step. I can't create a BizTalk service in the dogfood portal. I switch to the old portal
+Everything fails at this step. I can't create a BizTalk service in the dogfood portal. I switch to the classic portal
 (full portal) and created the BizTalk service but it doesn't seem to let you connnect them - When you finish the
 Create hybrid conn step, you get the following error
 Failed to create hybrid connection RelecIoudHC. The 
@@ -114,9 +108,9 @@ The error indicates it couldn't find the type, not the instance.
 An diesem Punkt haben Sie einen wichtigen Teil der Hybridverbindungsinfrastruktur der Cloud erstellt. Als Nächstes erstellen Sie das lokale Gegenstück.
 
 <a name="InstallHCM"></a>
-## Installieren des lokalen Hybrid Connection Manager, um die Verbindung zu vervollständigen ##
+## Installieren des lokalen Hybridverbindungs-Managers zum Herstellen der Verbindung ##
 
-1. Klicken Sie im Blatt der Web-App auf das Symbol "Hybridverbindungen". 
+1. Klicken Sie im Blatt der Web-App auf **Alle Einstellungen** > **Netzwerk** > **Configure your hybrid connection endpoints**. 
 	
 	![Symbol für Hybridverbindungen][HCIcon]
 	
@@ -182,8 +176,7 @@ Nachdem die Hybridverbindungsinfrastruktur nun vollständig ist, können Sie ein
 [Verbindung mit einem lokalen SQL Server über Azure Mobile Services mithilfe von Hybridverbindungen (Channel 9-Video)](http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Connect-to-an-on-premises-SQL-Server-from-Azure-Mobile-Services-using-Hybrid-Connections)
 
 ## Änderungen
-* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zu Websites und Web-Apps in Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529715)
+* Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 
 <!-- IMAGES -->
 [New]: ./media/web-sites-hybrid-connection-get-started/B01New.png
@@ -211,4 +204,4 @@ Nachdem die Hybridverbindungsinfrastruktur nun vollständig ist, können Sie ein
 [HCStatusConnected]: ./media/web-sites-hybrid-connection-get-started/D10HCStatusConnected.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

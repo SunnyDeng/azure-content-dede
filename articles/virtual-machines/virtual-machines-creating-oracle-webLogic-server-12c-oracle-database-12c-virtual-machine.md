@@ -24,7 +24,7 @@ In diesem Artikel wird gezeigt, wie Sie einen virtuellen Computer in Azure erste
 
 ##So erstellen Sie einen virtuellen Oracle WebLogic Server 12c- und Oracle Database 12c-Computer in Azure
 
-1. Melden Sie sich beim [Azure-Vorschauportal](https://ms.portal.azure.com/) an.
+1. Melden Sie sich beim [Azure-Portal](https://ms.portal.azure.com/) an.
 
 2.	Klicken Sie auf **Marketplace**, dann auf **Compute**, und geben Sie **Oracle** in das Suchfeld ein.
 
@@ -46,7 +46,7 @@ In diesem Artikel wird gezeigt, wie Sie einen virtuellen Computer in Azure erste
 
 	c. Fügen Sie zu diesem Zeitpunkt keine Endpunkte hinzu.
 
-9.	Wählen Sie eine Ressourcengruppe aus, oder erstellen Sie eine Ressourcengruppe Weitere Informationen finden Sie unter [Verwenden des Azure-Vorschauportals zum Verwalten Ihrer Azure-Ressourcen](resource-group-portal.md).
+9.	Wählen Sie eine Ressourcengruppe aus, oder erstellen Sie eine Ressourcengruppe Weitere Informationen finden Sie unter [Verwenden des Azure-Portals zum Verwalten Ihrer Azure-Ressourcen](resource-group-portal.md).
 
 10. Wählen Sie ein **Abonnement** aus.
 
@@ -71,4 +71,4 @@ Folgen Sie den Anweisungen in [Erstellen eines virtuellen Oracle WebLogic Server
 
 [Oracle Database 2 Day DBA 12c Release 1](http://docs.oracle.com/cd/E16655_01/server.121/e17643/toc.htm)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

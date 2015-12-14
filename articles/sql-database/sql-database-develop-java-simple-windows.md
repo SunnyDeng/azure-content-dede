@@ -58,7 +58,7 @@ Could this instead be a #tempPerson table, so that the Java code sample could be
 ## Verbindungszeichenfolge für die SQL-Datenbank
 
 
-Das Codebeispiel erstellt mithilfe einer Verbindungszeichenfolge ein `Connection`-Objekt. Die Verbindungszeichenfolge finden Sie mithilfe des [Azure-Vorschauportals](http://portal.azure.com/). Weitere Informationen zum Ermitteln der Verbindungszeichenfolge finden Sie unter [Erstellen der ersten Azure SQL-Datenbank](sql-database-get-started.md).
+Das Codebeispiel erstellt mithilfe einer Verbindungszeichenfolge ein `Connection`-Objekt. Die Verbindungszeichenfolge finden Sie mithilfe des [Azure-Portals](http://portal.azure.com/). Weitere Informationen zum Ermitteln der Verbindungszeichenfolge finden Sie unter [Erstellen der ersten Azure SQL-Datenbank](sql-database-get-started.md).
 
 
 > [AZURE.NOTE]Wenn Sie den JTDS JDBC-Treiber verwenden, müssen Sie „ssl=require“ in der URL der Verbindungszeichenfolge hinzufügen, und Sie müssen die folgende Option für die JVM festlegen: „-Djsse.enableCBCProtection=false“. Diese JVM-Option deaktiviert einen Fix für ein Sicherheitsrisiko. Daher sollten Sie diese Option nur festlegen, wenn Sie das Risiko genau kennen.
@@ -230,4 +230,4 @@ Kopieren Sie diesen kurzen Java-Codeausschnitt, und fügen Sie ihn beim Kommenta
 
 Weitere Informationen finden Sie im [Java Developer Center](/develop/java/).
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

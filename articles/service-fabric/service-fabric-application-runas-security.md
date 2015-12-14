@@ -86,7 +86,7 @@ Konfigurieren Sie als Nächstes im Abschnitt **ServiceManifestImport** eine Rich
 
 Lassen Sie uns nun die Datei „MySetup.bat“ zum Visual Studio-Projekt hinzufügen, um die Administratorrechte zu testen. Klicken Sie in Visual Studio mit der rechten Maustaste auf das Dienstprojekt, und fügen Sie einen neuen Aufruf der Datei „MySetup.bat“ hinzu. Als Nächstes muss sichergestellt werden, dass diese Datei in das Dienstpaket einbezogen wird, was standardmäßig nicht der Fall ist. Um sicherzustellen, dass die Datei „MySetup.bat“ im Paket enthalten ist, wählen Sie die Datei aus. Klicken Sie mit der rechten Maustaste, um das Kontextmenü zu öffnen, wählen Sie „Eigenschaften“ aus, und stellen Sie im Dialogfeld „Eigenschaften“ sicher, dass die **In Ausgabeverzeichnis kopieren** auf **Kopieren, wenn neuer** festgelegt ist. Dies wird im folgenden Screenshot gezeigt.
 
-![Visual Studio – Batchdatei für „CopyToOutput“ für „SetupEntryPoint“][Image1]
+![Visual Studio – Batchdatei für „CopyToOutput“ für „SetupEntryPoint“][image1]
 
 Öffnen Sie nun die MySetup.bat-Datei, und fügen Sie die folgenden Befehle hinzu.
 
@@ -103,9 +103,8 @@ REM REG delete "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Mana
 Als Nächstes müssen Sie die Projektmappe erstellen und in einem lokalen Entwicklungscluster bereitstellen. Nachdem der Dienst gestartet wurde, können Sie im Service Fabric-Explorer erkennen, dass „MySetup.bat“ auf zwei Arten erfolgreich war. Öffnen Sie eine PowerShell-Eingabeaufforderung, und geben Sie Folgendes ein:
 
 ~~~
-Like this
-~~~
-PS C:\ [Environment]::GetEnvironmentVariable("TestVariable","Machine") MyValue
+PS C:\ [Environment]::GetEnvironmentVariable("TestVariable","Machine")
+MyValue
 ~~~
 
 Notieren Sie sich den Namen des Knotens, auf dem der Dienst im Service Fabric-Explorer bereitgestellt und gestartet wurde, z. B. Knoten 1, und navigieren Sie zum Arbeitsordner der Anwendungsinstanz, um die out.txt-Datei zu finden, die den Wert **TestVariable** zeigt. Wenn die Bereitstellung z. B. auf Knoten 2 erfolgt wäre, können Sie für „MyApplicationType“ zu diesem Pfad navigieren.
@@ -123,11 +122,12 @@ MySetup.bat zum Starten der PowerShell-Datei.
 powershell.exe -ExecutionPolicy Bypass -Command ".\MySetup.ps1"
 ~~~
 
-Fügen Sie in der PowerShell-Datei Folgendes hinzu, um eine Systemumgebungsvariable festzulegen:
-~~~
+Fügen Sie in der PowerShell-Datei Folgendes ein, um eine Systemumgebungsvariable festzulegen.
+
+```
 [Environment]::SetEnvironmentVariable("TestVariable", "MyValue", "Machine")
 [Environment]::GetEnvironmentVariable("TestVariable","Machine") > out.txt
-~~~
+```
 
 ## Anwenden der RunAs-Richtlinie auf Dienste
 In den vorangegangenen Schritten wurde erläutert, wie eine RunAs-Richtlinie auf einen „SetupEntryPoint“ angewendet wird. Nun wollen wir uns ein wenig näher anschauen, wie verschiedene Prinzipale erstellt werden, die als Dienstrichtlinien angewendet werden können.
@@ -290,4 +290,4 @@ Das folgende Anwendungsmanifest zeigt viele der zuvor beschriebenen Einstellunge
 
 [image1]: ./media/service-fabric-application-runas-security/copy-to-output.png
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

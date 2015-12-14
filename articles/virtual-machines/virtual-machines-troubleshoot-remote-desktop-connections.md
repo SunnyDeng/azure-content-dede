@@ -34,7 +34,7 @@ Im ersten Abschnitt „Grundlegende Schritte“ sind Schritte zum Beheben häufi
 
 Diese grundlegenden Schritte können helfen, die meisten Remotedesktop-Verbindungsfehler bei virtuellen Computern zu beheben, die mit dem klassischen Bereitstellungsmodell erstellt wurden. Versuchen Sie nach jedem Schritt, die Verbindung mit dem virtuellen Computer erneut herzustellen.
 
-- Setzen Sie den Remotedesktopdienst über das [Azure-Vorschauportal](https://portal.azure.com) zurück, um die Startprobleme mit dem RDP-Server zu beheben.<br> Klicken Sie auf „Alle durchsuchen“ > „Virtuelle Computer (klassisch)“ > „Ihr virtueller Windows-Computer“ > **Remotezugriff zurücksetzen**.
+- Setzen Sie den Remotedesktopdienst über das [Azure-Portal](https://portal.azure.com) zurück, um die Startprobleme mit dem RDP-Server zu beheben.<br> Klicken Sie auf „Alle durchsuchen“ > „Virtuelle Computer (klassisch)“ > „Ihr virtueller Windows-Computer“ > **Remotezugriff zurücksetzen**.
 
     ![Screenshot, auf dem das Zurücksetzen der RDP-Konfiguration dargestellt ist](./media/virtual-machines-troubleshoot-remote-desktop-connections/Portal-RDP-Reset-Windows.png)
 
@@ -169,4 +169,4 @@ Wenn keiner dieser Fehler auftritt und Sie trotzdem keine Verbindung mit dem vir
 
 [Problembehandlung beim Zugriff auf eine Anwendung, die auf einem virtuellen Azure-Computer ausgeführt wird](virtual-machines-troubleshoot-access-application.md)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

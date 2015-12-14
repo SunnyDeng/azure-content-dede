@@ -18,6 +18,11 @@
 
 # Hinzufügen von Authentifizierung zur Mobile Services-App
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
+
 [AZURE.INCLUDE [mobile-services-selector-get-started-users](../../includes/mobile-services-selector-get-started-users.md)]
 
 In diesem Thema erfahren Sie, wie Sie Benutzer in Azure Mobile Services über Ihre App authentifizieren. In diesem Lernprogramm fügen Sie eine Authentifizierung zu dem Schnellstartprojekt hinzu. Sie verwenden dazu einen Identitätsanbieter, der von Mobile Services unterstützt wird. Nach der erfolgreichen Authentifizierung und Autorisierung durch Mobile Services wird der Benutzer-ID-Wert angezeigt.
@@ -145,9 +150,7 @@ Im nächsten Lernprogramm [Autorisieren von Benutzern mit Skripts] werden Sie de
 [Get started with authentication]: /develop/mobile/tutorials/get-started-with-users-xamarin-ios
 [Get started with push notifications]: /develop/mobile/tutorials/-get-started-with-push-xamarin-ios
 [Autorisieren von Benutzern mit Skripts]: /develop/mobile/tutorials/authorize-users-in-scripts-xamarin-ios
-
-[Azure Management Portal]: https://manage.windowsazure.com/
 [abgeschlossene Beispielprojekt]: http://go.microsoft.com/fwlink/p/?LinkId=331328
 [Xamarin.iOS]: http://xamarin.com/download
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

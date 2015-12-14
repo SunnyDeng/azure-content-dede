@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/24/2015" 
+	ms.date="11/25/2015" 
 	ms.author="awills"/>
  
 # Verwendungsanalyse für Webanwendungen mit Application Insights
@@ -367,7 +367,7 @@ Wenn Sie mit Analysen arbeiten, werden diese zu einem integrierten Bestandteil I
 [availability]: app-insights-monitor-web-app-availability.md
 [client]: app-insights-javascript.md
 [diagnostic]: app-insights-diagnostic-search.md
-[greenbrown]: app-insights-start-monitoring-app-health-usage.md
+[greenbrown]: app-insights-asp-net.md
 [java]: app-insights-java-get-started.md
 [metrics]: app-insights-metrics-explorer.md
 [portal]: http://portal.azure.com/
@@ -375,4 +375,4 @@ Wenn Sie mit Analysen arbeiten, werden diese zu einem integrierten Bestandteil I
 
  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

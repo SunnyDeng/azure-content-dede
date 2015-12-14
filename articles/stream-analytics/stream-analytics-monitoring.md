@@ -21,19 +21,19 @@
 
 ## Seite „Überwachen“
 
-Im Azure-Verwaltungsportal und im Azure-Vorschauportal werden wichtige Leistungsmetriken angezeigt, die zum Überwachen Ihrer Arbeit und für die Problembehandlung verwendet werden können.
+Im klassischen Azure-Portal und im Azure-Portal werden wichtige Leistungsmetriken angezeigt, die zum Überwachen Ihrer Arbeit und für die Problembehandlung verwendet werden können.
 
-Klicken Sie im Azure-Verwaltungsportal auf die Registerkarte **Überwachen** eines ausgeführten Stream Analytics-Auftrags, um diese Metriken anzuzeigen. Für die Leistungsmetriken, die auf der Seite „Überwachen“ angezeigt werden, tritt eine Verzögerung von höchstens 1 Minute auf.
+Klicken Sie im klassischen Azure-Portal auf die Registerkarte **Überwachen** eines ausgeführten Stream Analytics-Auftrags, um diese Metriken anzuzeigen. Für die Leistungsmetriken, die auf der Seite „Überwachen“ angezeigt werden, tritt eine Verzögerung von höchstens 1 Minute auf.
 
   ![Überwachungsdashboard](./media/stream-analytics-monitoring/01-stream-analytics-monitoring.png)
 
-Navigieren Sie im Azure-Vorschauportal zum Stream Analytics-Auftrag, dessen Metriken Sie interessieren, und zeigen Sie den Abschnitt **Überwachung** an.
+Navigieren Sie im Azure-Portal zum Stream Analytics-Auftrag, dessen Metriken Sie interessieren, und zeigen Sie den Abschnitt **Überwachung** an.
 
-  ![Azure-Vorschauportal, Überwachungsdashboard](./media/stream-analytics-monitoring/06-stream-analytics-monitoring.png)
+  ![Azure-Portal – Überwachungsdashboard](./media/stream-analytics-monitoring/06-stream-analytics-monitoring.png)
 
 Beim erstmaligen Erstellen eines Stream Analytics-Auftrags in einer Region müssen Sie "Diagnose" für diese Region konfigurieren. Zu diesem Zweck klicken Sie auf eine beliebige Stelle im Abschnitt **Überwachung**, und das Blatt **Diagnose** wird angezeigt. Hier können Sie die Diagnose aktivieren und ein Speicherkonto für Überwachungsdaten angeben.
 
-  ![Azure-Vorschauportal, "Diagnose konfigurieren"](./media/stream-analytics-monitoring/07-stream-analytics-monitoring.png)
+  ![Azure-Portal – Konfigurieren der Diagnose](./media/stream-analytics-monitoring/07-stream-analytics-monitoring.png)
 
 ## Verfügbare Metriken für Stream Analytics  
 
@@ -46,7 +46,7 @@ Beim erstmaligen Erstellen eines Stream Analytics-Auftrags in einer Region müss
 | Ereignisse für falsche Reihenfolge | Anzahl der Ereignisse, die in falscher Reihenfolge empfangen und anhand der Richtlinie für die Ereignissortierung entweder verworfen oder mit einem angepassten Zeitstempel versehen wurden. Dies kann von der Konfiguration der Einstellung „Toleranzfenster für Fehlordnung“ beeinflusst werden. |
 | Konvertierungsfehler | Anzahl der Datenkonvertierungsfehler im Zusammenhang mit einem Stream Analytics-Auftrag. |
 | Ereignisse bei verspäteter Eingabe | Anzahl von Ereignissen, die spät von der Quelle eintreffen und entweder verworfen wurden oder über eine Anpassung des Zeitstempels verfügen (basierend auf der Konfiguration der Richtlinie für die Ereignissortierung unter der Einstellung „Toleranzfenster für Eingangsverzögerung“). |
-## Anpassen der Überwachung im Azure-Verwaltungsportal ##
+## Anpassen der Überwachung im klassischen Azure-Portal ##
 
 Bis zu 6 Metriken können in einem Diagramm angezeigt werden.
 
@@ -62,15 +62,15 @@ Wählen Sie 1 Stunde, 24 Stunden oder 7 Tage im oberen Bereich des Diagramms aus
 
 Sie können Regeln festlegen, dass Sie per E-Mail benachrichtigt werden, falls für den Auftrag ein bestimmter Schwellenwert überschritten wird.
 
-## Anpassen der Überwachung im Azure-Vorschauportal ##
+## Anpassen der Überwachung im Azure-Portal ##
 
 Sie können den Diagrammtyp, die angezeigten Metriken und den Uhrzeitbereich in den Einstellungen unter "Diagramm bearbeiten" anpassen. Ausführliche Informationen finden Sie unter [Anpassen der Überwachung](./azure-portal/insights-how-to-customize-monitoring.md).
 
-  ![Azure-Vorschauportal, Zeitachse](./media/stream-analytics-monitoring/08-stream-analytics-monitoring.png)
+  ![Azure-Portal – Zeitachse](./media/stream-analytics-monitoring/08-stream-analytics-monitoring.png)
 
 ## Auftragsstatus
 
-Der Status von Stream Analytics-Aufträgen kann im Azure-Portal in der Liste mit den Aufträgen angezeigt werden. Sie können die Auftragsliste einblenden, indem Sie im Azure-Portal auf das Stream Analytics-Symbol klicken.
+Der Status von Stream Analytics-Aufträgen kann im klassischen Azure-Portal in der Liste mit den Aufträgen angezeigt werden. Sie können die Auftragsliste einblenden, indem Sie im klassischen Azure-Portal auf das Stream Analytics-Symbol klicken.
 
 | Status | Definition |
 |--------|------------|
@@ -85,9 +85,9 @@ Der Status von Stream Analytics-Aufträgen kann im Azure-Portal in der Liste mit
 
 ## Diagnose
 
-Im Azure-Verwaltungsportal enthält das Auftragsdashboard Informationen dazu, wo Sie nach der Diagnose suchen müssen, also im Eingaben-, Ausgaben- bzw. Vorgangsprotokoll. Sie können auf den Link klicken, um auf den entsprechenden Ort zuzugreifen und die Informationen zur Diagnose anzuzeigen.
+Im klassischen Azure-Portal enthält das Auftragsdashboard Informationen dazu, wo Sie nach der Diagnose suchen müssen, also im Eingaben-, Ausgaben- bzw. Vorgangsprotokoll. Sie können auf den Link klicken, um auf den entsprechenden Ort zuzugreifen und die Informationen zur Diagnose anzuzeigen.
 
-  ![Fehler](./media/stream-analytics-monitoring/04-stream-analytics-monitoring.png)
+  ![Error](./media/stream-analytics-monitoring/04-stream-analytics-monitoring.png)
 
 Das Klicken auf die Eingabe- oder Ausgaberessource liefert ausführliche Diagnoseinformationen. Während der Auftrag ausgeführt wird, erfolgt eine Aktualisierung mit den neuesten Diagnoseinformationen.
 
@@ -104,4 +104,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

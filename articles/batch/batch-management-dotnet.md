@@ -20,7 +20,7 @@
 # Verwalten von Azure Batch-Konten und -Kontingenten mit Batch Management .NET
 
 > [AZURE.SELECTOR]
-- [Azure preview portal](batch-account-create-portal.md)
+- [Azure portal](batch-account-create-portal.md)
 - [Batch Management .NET](batch-management-dotnet.md)
 
 Geringerer Wartungsaufwand in der Azure Batch-Anwendung durch Nutzung der [Batch Management .NET][api_mgmt_net]-Bibliothek, um das Erstellen des Batch-Kontos, die Schlüsselverwaltung und die Kontingentermittlung zu automatisieren.
@@ -30,7 +30,7 @@ Geringerer Wartungsaufwand in der Azure Batch-Anwendung durch Nutzung der [Batc
 - **Überprüfen von Kontokontingenten** und Beseitigen der Mutmaßungen des Trial-and-Error-Prinzips beim Festlegen der Einschränkungen für die jeweiligen Batch-Konten. Durch Überprüfen der Kontokontingente vor dem Starten von Aufträgen, Erstellen von Pools oder Hinzufügen von Computeknoten können Sie proaktiv anpassen, wo und wann diese Computeressourcen erstellt werden. Sie können bestimmen, für welche Konten die Kontingente erhöht werden müssen, bevor zusätzliche Ressourcen in diesen Konten zugewiesen werden.
 - **Kombinieren Sie Funktionen von anderen Azure-Diensten** für eine Verwaltung mit vollem Funktionsumfang durch die gemeinsame Nutzung von Batch Management .NET, [Azure Active Directory][aad_about] und den [Azure-Ressourcen-Manager][resman_overview] in derselben Anwendung. Durch die Nutzung dieser Funktionen und ihrer APIs können Sie einen reibungslosen Authentifizierungs- sowie Erstellungs- und Löschvorgang von Ressourcengruppen und die oben beschriebenen Funktionen für eine End-to-End-Verwaltungslösung bereitstellen.
 
-> [AZURE.NOTE]Auch wenn sich dieser Artikel auf die programmgesteuerte Verwaltung der Batch-Konten, -Schlüssel und -Kontingente konzentriert, können Sie viele dieser Aktivitäten mithilfe des [Azure-Vorschauportals][azure_portal] ausführen. Weitere Informationen finden Sie unter [Erstellen und Verwalten eines Azure Batch-Kontos im Azure-Vorschauportal](batch-account-create-portal.md) und [Kontingente und Limits für den Azure Batch-Dienst](batch-quota-limit.md).
+> [AZURE.NOTE]Auch wenn sich dieser Artikel auf die programmgesteuerte Verwaltung der Batch-Konten, -Schlüssel und -Kontingente konzentriert, können Sie viele dieser Aktivitäten mithilfe des [Azure-Portals][azure_portal] ausführen. Weitere Informationen finden Sie unter [Erstellen und Verwalten eines Azure Batch-Kontos im Azure-Portal](batch-account-create-portal.md) und [Kontingente und Limits für den Azure Batch-Dienst](batch-quota-limit.md).
 
 ## Erstellen und Löschen von Batch-Konten
 
@@ -119,7 +119,7 @@ Console.WriteLine("Pool quota: {0}", account.Properties.PoolQuota);
 Console.WriteLine("Active job and job schedule quota: {0}", account.Properties.ActiveJobAndJobScheduleQuota);
 ```
 
-> [AZURE.IMPORTANT]Solange Standardkontingente für Azure-Abonnements und -Dienste vorliegen, können viele dieser Grenzen durch eine Anforderung im [Azure-Vorschauportal][azure_portal] erhöht werden. Anleitungen zum Erhöhen der Batch-Kontokontingente finden Sie beispielsweise unter [Kontingente und Limits für den Azure Batch-Dienst](batch-quota-limit.md).
+> [AZURE.IMPORTANT]Solange Standardkontingente für Azure-Abonnements und -Dienste vorliegen, können viele dieser Grenzen durch eine Anforderung im [Azure-Portal][azure_portal] erhöht werden. Anleitungen zum Erhöhen der Batch-Kontokontingente finden Sie beispielsweise unter [Kontingente und Limits für den Azure Batch-Dienst](batch-quota-limit.md).
 
 ## Batch Management .NET, AAD und Ressourcen-Manager
 
@@ -133,7 +133,7 @@ Im nachfolgenden Beispielprojekt wird die Azure [Active Directory-Authentifizier
 
 ### Ressourcen-Manager
 
-Beim Erstellen von Batch-Konten mit der Batch Management .NET-Bibliothek erstellen Sie sie in der Regel innerhalb einer [Ressourcengruppe][resman_overview]. Sie können die Ressourcengruppe programmgesteuert mithilfe von [ResourceManagementClient][resman_client] innerhalb der [Resource Manager .NET][resman_api]-Bibliothek erstellen, oder Sie können ein Konto einer vorhandenen Ressourcengruppe hinzufügen, die Sie zuvor mit dem [Azure-Vorschauportal][azure_portal] erstellt haben.
+Beim Erstellen von Batch-Konten mit der Batch Management .NET-Bibliothek erstellen Sie sie in der Regel innerhalb einer [Ressourcengruppe][resman_overview]. Sie können die Ressourcengruppe programmgesteuert mithilfe von [ResourceManagementClient][resman_client] innerhalb der [Resource Manager .NET][resman_api]-Bibliothek erstellen, oder Sie können ein Konto einer vorhandenen Ressourcengruppe hinzufügen, die Sie zuvor mit dem [Azure-Portal][azure_portal] erstellt haben.
 
 ## <a name="sample"></a>Beispielprojekt auf GitHub
 
@@ -159,9 +159,9 @@ Die Beispielanwendung veranschaulicht die folgenden Vorgänge:
   - Löschen des neu erstellten Kontos
 7. Löschen der Ressourcengruppe
 
-Vor dem Löschen des neu erstellten Batch-Kontos und der Ressourcengruppe können Sie beides im [Azure-Vorschauportal][azure_portal] überprüfen:
+Vor dem Löschen des neu erstellten Batch-Kontos und der Ressourcengruppe können Sie beides im [Azure-Portal][azure_portal] überprüfen:
 
-![Azure-Vorschauportal mit Ressourcengruppe und Batch-Konto][1] <br /> *Azure-Vorschauportal mit neuer Ressourcengruppe und neuem Batch-Konto*
+![Azure-Portal mit Ressourcengruppe und Batch-Konto][1] <br /> *Azure-Portal mit neuer Ressourcengruppe und neuem Batch-Konto*
 
 [aad_about]: ../active-directory/active-directory-whatis.md "Was ist Azure Active Directory?"
 [aad_adal]: ../active-directory/active-directory-authentication-libraries.md
@@ -190,4 +190,4 @@ Vor dem Löschen des neu erstellten Batch-Kontos und der Ressourcengruppe könne
 
 [1]: ./media/batch-management-dotnet/portal-01.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

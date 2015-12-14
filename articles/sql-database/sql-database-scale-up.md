@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.devlang="NA"
-	ms.date="09/10/2015"
+	ms.date="12/01/2015"
 	ms.author="sstein"
 	ms.workload="data-management"
 	ms.topic="article"
@@ -22,10 +22,10 @@
 **Einzeldatenbank**
 
 > [AZURE.SELECTOR]
-- [Azure Preview Portal](sql-database-scale-up.md)
+- [Azure Portal](sql-database-scale-up.md)
 - [PowerShell](sql-database-scale-up-powershell.md)
 
-In diesem Artikel wird beschrieben, wie Sie die Dienstebene und Leistungsstufe Ihrer SQL-Datenbank mit dem [Azure-Vorschauportal](https://portal.azure.com) ändern.
+In diesem Artikel wird beschrieben, wie Sie die Dienstebene und Leistungsstufe Ihrer SQL-Datenbank mit dem [Azure-Portal](https://portal.azure.com) ändern.
 
 Bestimmen Sie anhand der Informationen unter [Aktualisieren von Web-/Business-SQL-Datenbanken auf die neuen Dienstebenen und Leistungsstufen der Azure SQL-Datenbank](sql-database-upgrade-new-service-tiers.md) und [Dienstebenen und Leistungsstufen der Azure SQL-Datenbank](sql-database-service-tiers.md) die geeignete Dienstebene und Leistungsstufe für Ihre Azure SQL-Datenbank.
 
@@ -50,7 +50,7 @@ Bestimmen Sie anhand der Informationen unter [Aktualisieren von Web-/Business-SQ
 
 Öffnen Sie das Blatt „SQL-Datenbank“ für die Datenbank, die Sie zentral hoch- oder herunterskalieren möchten:
 
-1.	Öffnen Sie das [Azure-Vorschauportal](https://portal.azure.com).
+1.	Öffnen Sie das [Azure-Portal](https://portal.azure.com).
 2.	Klicken Sie auf **ALLE DURCHSUCHEN**.
 3.	Klicken Sie auf **SQL-Datenbanken**.
 2.	Klicken Sie auf die Datenbank, die Sie ändern möchten.
@@ -98,4 +98,4 @@ Bestimmen Sie anhand der Informationen unter [Aktualisieren von Web-/Business-SQ
 [3]: ./media/sql-database-scale-up/scale-notification.png
 [4]: ./media/sql-database-scale-up/new-tier.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

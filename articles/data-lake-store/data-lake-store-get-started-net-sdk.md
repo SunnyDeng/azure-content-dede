@@ -29,7 +29,7 @@ Erfahren Sie, wie Sie mithilfe des .NET SDK für Azure Data Lake-Speicher ein Az
 ## Voraussetzungen
 
 * Visual Studio 2013 oder 2015 Die folgenden Anweisungen verwenden Visual Studio 2015.
-* **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/de-DE/pricing/free-trial/).
+* **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/).
 * **Aktivieren Ihres Azure-Abonnements** für die öffentliche Vorschauversion von Data Lake-Speicher. Weitere Informationen finden Sie in den [Anweisungen](data-lake-store-get-started-portal.md#signup).
 
 ## Erstellen einer .NET-Anwendung
@@ -223,4 +223,4 @@ Erfahren Sie, wie Sie mithilfe des .NET SDK für Azure Data Lake-Speicher ein Az
 - [Verwenden von Azure Data Lake Analytics mit Data Lake-Speicher](data-lake-analytics-get-started-portal.md)
 - [Verwenden von Azure HDInsight mit Data Lake-Speicher](data-lake-store-hdinsight-hadoop-use-portal.md)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -59,7 +59,7 @@ Schließlich ist es wichtig zu wissen, dass alle IoT Hub-Endpunkte über [TLS][l
 
 Wenn Sie das [Azure Service Bus-SDK für .NET](https://www.nuget.org/packages/WindowsAzure.ServiceBus) oder den [Event Hubs-Ereignisprozessorhost][] verwenden, können Sie eine beliebige IoT Hub-Verbindungszeichenfolge mit den richtigen Berechtigungen verwenden und anschließend `messages/events` als Event Hub-Name nutzen.
 
-Bei der Verwendung von SDKs (oder Produktintegrationen), die nicht IoT Hub-fähig sind, müssen Sie einen Event Hubs-kompatiblen Endpunkt und den Event Hub-Namen aus den IoT Hub-Einstellungen im [Azure-Vorschauportal][] abrufen:
+Bei der Verwendung von SDKs (oder Produktintegrationen), die nicht IoT Hub-fähig sind, müssen Sie einen Event Hubs-kompatiblen Endpunkt und den Event Hub-Namen aus den IoT Hub-Einstellungen im [Azure-Portal][] abrufen:
 
 1. Klicken Sie auf dem IoT Hub-Blatt auf **Einstellungen** und anschließend auf **Messaging**.
 2. Im Abschnitt **D2C-Einstellungen** befinden sich die Felder **Event Hub-kompatibler Endpunkt**, **Event Hub-kompatibler Name** und **Partitionen**.
@@ -193,7 +193,7 @@ IoT Hub verwendet den folgenden Satz an *Berechtigungen*, um Zugriff auf den End
 
 Berechtigungen werden mithilfe der folgenden Methoden erteilt:
 
-* **Gemeinsam genutzte Zugriffsrichtlinien auf Hubebene**. *Gemeinsam genutzte Zugriffsrichtlinien* können eine beliebige Kombination der im vorigen Abschnitt aufgeführten Berechtigungen gewähren. Sie können Richtlinien im [Azure-Vorschauportal][lnk-management-portal] oder programmgesteuert mithilfe von [Azure IoT Hub-Ressourcenanbieter-APIs][lnk-resource-provider-apis] definieren. Ein neu erstellter IoT Hub verfügt über die folgenden Standardrichtlinien:
+* **Gemeinsam genutzte Zugriffsrichtlinien auf Hubebene**. *Gemeinsam genutzte Zugriffsrichtlinien* können eine beliebige Kombination der im vorigen Abschnitt aufgeführten Berechtigungen gewähren. Sie können Richtlinien im [Azure-Portal][lnk-management-portal] oder programmgesteuert mithilfe von [Azure IoT Hub-Ressourcenanbieter-APIs][lnk-resource-provider-apis] definieren. Ein neu erstellter IoT Hub verfügt über die folgenden Standardrichtlinien:
 
     - *iothubowner*: Richtlinie mit sämtlichen Berechtigungen
     - *service*: Richtlinie mit **ServiceConnect**-Berechtigung
@@ -353,7 +353,7 @@ Ein IoT Hub macht die folgenden Eigenschaften zum Steuern des D2C-Messaging verf
 
 Analog zu Event Hubs ermöglicht IoT Hub die Verwaltung von Consumergruppen am empfangenden D2C-Endpunkt.
 
-Sie können all diese Eigenschaften sowohl über das [Azure-Vorschauportal][lnk-management-portal] als auch programmgesteuert über [Azure IoT Hub-Ressourcenanbieter-APIs][lnk-resource-provider-apis] ändern.
+Sie können all diese Eigenschaften sowohl über das [Azure-Portal][lnk-management-portal] als auch programmgesteuert über [Azure IoT Hub-Ressourcenanbieter-APIs][lnk-resource-provider-apis] ändern.
 
 #### Eigenschaften zum Schutz vor Spoofing <a id="antispoofing"></a>
 
@@ -405,7 +405,7 @@ Jede C2D-Nachricht verfügt über eine Gültigkeitsdauer. Diese kann (in der Eig
 
 Beim Senden einer C2D-Nachricht kann der Dienst das Übermitteln von Feedback auf Nachrichtenbasis anfordern, um über den finalen Status dieser Nachricht informiert zu werden. Wenn die **Ack**-Eigenschaft auf **positive** festgelegt wird, generiert IoT Hub nur dann eine Feedbacknachricht, wenn die C2D-Nachricht den Status **Abgeschlossen** erreicht hat. Bei Festlegung der **Ack**-Eigenschaft auf **negative** generiert IoT Hub nur dann eine Feedbacknachricht, wenn die C2D-Nachricht den Status **Unzustellbar** erreicht. Bei Festlegung der **Ack**-Eigenschaft auf **full** generiert IoT Hub in beiden Fällen eine Feedbacknachricht.
 
-Wie im Abschnitt [Endpunkte](#endpoints) beschrieben, wird Feedback über einen dienstseitigen Endpunkt (`/messages/servicebound/feedback`) in Form von Nachrichten übermittelt. Die Semantik für den Empfang von Feedback stimmt mit der für C2D-Nachrichten überein, die den gleichen [Nachrichtenlebenszyklus aufweisen](#message lifecycle). Nachrichtenfeedback wird nach Möglichkeit in einer einzigen Nachricht zusammengefasst, die das folgende Format aufweist.
+Wie im Abschnitt [Endpunkte](#endpoints) beschrieben, wird Feedback über einen dienstseitigen Endpunkt (`/messages/servicebound/feedback`) in Form von Nachrichten übermittelt. Die Semantik für den Empfang von Feedback stimmt mit der für C2D-Nachrichten überein, die den gleichen Nachrichtenlebenszyklus aufweisen. Nachrichtenfeedback wird nach Möglichkeit in einer einzigen Nachricht zusammengefasst, die das folgende Format aufweist.
 
 Jede vom Feedbackendpunkt empfangene Nachricht umfasst die folgenden Eigenschaften:
 
@@ -492,7 +492,7 @@ Nachdem Sie in diesem Dokument einen Überblick über die Entwicklung für IoT H
 
 [Event Hubs-Ereignisprozessorhost]: http://blogs.msdn.com/b/servicebus/archive/2015/01/16/event-processor-host-best-practices-part-1.aspx
 
-[Azure-Vorschauportal]: https://portal.azure.com
+[Azure-Portal]: https://portal.azure.com
 
 [img-summary]: ./media/iot-hub-devguide/summary.png
 [img-endpoints]: ./media/iot-hub-devguide/endpoints.png
@@ -533,4 +533,4 @@ Nachdem Sie in diesem Dokument einen Überblick über die Entwicklung für IoT H
 [lnk-tls]: https://tools.ietf.org/html/rfc5246
 [lnk-iotdev]: https://azure.microsoft.com/develop/iot/
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

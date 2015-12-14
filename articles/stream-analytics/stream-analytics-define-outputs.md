@@ -14,14 +14,14 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="11/23/2015" 
+	ms.date="12/01/2015" 
 	ms.author="jeffstok"/>
 
 # Grundlegendes zu Stream Analytics-Ausgaben
 
 Beim Erstellen eines Stream Analytics-Auftrags muss unter anderem beachtet werden, wie die Ausgabe des Auftrags genutzt (konsumiert) wird. Wie sehen sich die Consumer der Datentransformation die Ergebnisse des Stream Analytics-Auftrags an? Welche Tools verwenden die Consumer, um die Ausgabe zu analysieren? Ist Beibehaltung von Daten oder Data Warehousing erforderlich?
 
-Um verschiedene Anwendungsmuster zu aktivieren, stellt Azure Stream Analytics sieben verschiedene Methoden zum Speichern und Anzeigen von Auftragsausgaben bereit. Unterstützte Ausgaben sind: SQL-Datenbank, Blobspeicher, Event Hubs, Service Bus-Warteschlangen, Service Bus-Themen, Power BI und Tabellenspeicher. Dadurch wird sowohl einfaches Anzeigen von Auftragsausgabe als auch Flexibilität bei der Nutzung und Speicherung der Auftragsausgabe für Data Warehousing und andere Zwecke erreicht.
+Um verschiedene Anwendungsmuster zu aktivieren, stellt Azure Stream Analytics verschiedene Methoden zum Speichern und Anzeigen von Auftragsausgaben bereit. Dadurch wird sowohl einfaches Anzeigen von Auftragsausgabe als auch Flexibilität bei der Nutzung und Speicherung der Auftragsausgabe für Data Warehousing und andere Zwecke erreicht. Jede Ausgabe, die im Auftrag konfiguriert wird, muss vorhanden sein, bevor der Auftrag gestartet wird und Ereignisse übertragen werden. Wird beispielsweise ein Blob Storage als Ausgabe verwendet, erstellt der Auftrag nicht automatisch ein Speicherkonto. Es muss vom Benutzer erstellt werden, bevor der ASA-Auftrag gestartet wird.
 
 
 ## SQL-Datenbank ##
@@ -118,11 +118,11 @@ Es gibt einige Parameter, die erforderlich sind, um Event Hub-Datenströme als A
 
 [Power BI](https://powerbi.microsoft.com/) kann als Ausgabe für einen Stream Analytics-Auftrag verwendet werden, um Stream Analytics-Benutzern eine umfassende Visualisierungsumgebung bereitzustellen. Diese Funktionalität kann für betriebliche Dashboards, Erstellung von Berichten und metrikgesteuerte Berichterstellung verwendet werden.
 
-> [AZURE.NOTE]Zurzeit wird die Erstellung und Konfiguration von Power BI-Ausgaben im Azure-Vorschauportal nicht unterstützt.
+> [AZURE.NOTE]Zu diesem Zeitpunkt wird die Erstellung und Konfiguration von Power BI-Ausgaben im Azure-Portal nicht unterstützt.
 
 ### Autorisieren eines Power BI-Kontos
 
-1.	Wenn Power BI im Azure-Verwaltungsportal als Ausgabe ausgewählt ist, werden Sie aufgefordert, einen vorhandenen Power BI-Benutzer zu autorisieren oder ein neues Power BI-Konto zu erstellen.  
+1.	Wenn Power BI im klassischen Azure-Portal als Ausgabe ausgewählt ist, werden Sie aufgefordert, einen vorhandenen Power BI-Benutzer zu autorisieren oder ein neues Power BI-Konto zu erstellen.  
 
     ![Autorisieren von Power BI-Benutzern](./media/stream-analytics-define-outputs/01-stream-analytics-define-outputs.png)
 
@@ -267,4 +267,4 @@ Sie haben nun Stream Analytics kennengelernt, einen verwalteten Dienst für Stre
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

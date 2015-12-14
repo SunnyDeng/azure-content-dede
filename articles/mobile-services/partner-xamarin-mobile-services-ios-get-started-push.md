@@ -18,6 +18,11 @@
 
 # Hinzufügen von Pushbenachrichtigungen zur Mobile Services-App
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
+
 [AZURE.INCLUDE [mobile-services-selector-get-started-push](../../includes/mobile-services-selector-get-started-push.md)]
 
 ##Übersicht
@@ -155,7 +160,7 @@ Nachdem Sie Ihre App bei APNS registriert und Sie Ihr Projekt konfiguriert haben
 
     Notieren Sie sich den Dateinamen und den Ort des exportierten Zertifikats.
 
-2. Melden Sie sich beim [Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services**, und klicken Sie dann auf Ihre Anwendung.
+2. Melden Sie sich beim [klassischen Azure-Portal] an, klicken Sie auf **Mobile Services**, und klicken Sie dann auf Ihre App.
 
     ![][18]
 
@@ -275,9 +280,9 @@ Ihr mobiler Dienst ist nun für APNS konfiguriert.
 
 Ihre App kann Pushbenachrichtigungen nun unterstützen.
 
-## <a name="update-scripts"></a>Aktualisieren des registrierten Einfügeskripts im Verwaltungsportal
+## <a name="update-scripts"></a>Aktualisieren des registrierten Einfügeskripts im klassischen Azure-Portal
 
-1. Klicken Sie im Verwaltungsportal auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItem**.
+1. Klicken Sie im [klassischen Azure-Portal] auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItem**.
 
     ![][21]
 
@@ -392,10 +397,10 @@ Sie haben dieses Lernprogramm erfolgreich abgeschlossen.
 [Xamarin Device Provisioning]: http://developer.xamarin.com/guides/ios/getting_started/installation/device_provisioning/
 
 
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
+[klassischen Azure-Portal]: https://manage.windowsazure.com/
 [apns-Objekt]: http://go.microsoft.com/fwlink/p/?LinkId=272333
 [Azure Mobile Services-Komponente]: http://components.xamarin.com/view/azure-mobile-services/
 [completed example project]: http://go.microsoft.com/fwlink/p/?LinkId=331303
 [Xamarin.iOS]: http://xamarin.com/download
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

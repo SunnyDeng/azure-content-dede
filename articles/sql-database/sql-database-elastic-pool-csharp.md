@@ -14,13 +14,13 @@
     ms.topic="article"
     ms.tgt_pltfrm="powershell"
     ms.workload="data-management"
-    ms.date="11/06/2015"
+    ms.date="12/01/2015"
     ms.author="sstein"/>
 
 # C&#x23;-Datenbankentwicklung: Erstellen und Konfigurieren eines Pools für elastische Datenbanken für SQL-Datenbank
 
 > [AZURE.SELECTOR]
-- [Azure Preview Portal](sql-database-elastic-pool-portal.md)
+- [Azure portal](sql-database-elastic-pool-portal.md)
 - [C#](sql-database-elastic-pool-csharp.md)
 - [PowerShell](sql-database-elastic-pool-powershell.md)
 
@@ -56,7 +56,7 @@ Bevor Sie die SQL-Entwicklung mit C# beginnen, müssen Sie einige Aufgaben im Az
 
 Die [REST-APIs des Azure-Ressourcen-Managers](https://msdn.microsoft.com/library/azure/dn948464.aspx) verwenden Azure Active Directory zur Authentifizierung und nicht die Zertifikate, die von den früheren REST-APIs für die Azure-Dienstverwaltung verwendet wurden.
 
-Zur Authentifizierung der Clientanwendung basierend auf dem aktuellen Benutzer, müssen Sie die Anwendung zuerst in der AAD-Domäne registrieren, die dem Abonnement zugeordnet ist, unter dem die Azure-Ressourcen erstellt wurden. Wenn das Azure-Abonnement mit einem Microsoft-Konto anstelle eines Geschäfts-, Schul- oder Unikontos erstellt wurde, verfügen Sie bereits über eine AAD-Standarddomäne. Das Registrieren der Anwendung kann im [Verwaltungsportal](https://manage.windowsazure.com/) erfolgen.
+Zur Authentifizierung der Clientanwendung basierend auf dem aktuellen Benutzer, müssen Sie die Anwendung zuerst in der AAD-Domäne registrieren, die dem Abonnement zugeordnet ist, unter dem die Azure-Ressourcen erstellt wurden. Wenn das Azure-Abonnement mit einem Microsoft-Konto anstelle eines Geschäfts-, Schul- oder Unikontos erstellt wurde, verfügen Sie bereits über eine AAD-Standarddomäne. Die Anwendung kann im [klassischen Portal](https://manage.windowsazure.com/) registriert werden.
 
 Um eine neue Anwendung zu erstellen und im richtigen Active Directory zu registrieren, führen Sie die folgenden Schritte aus:
 
@@ -106,7 +106,7 @@ Um eine neue Anwendung zu erstellen und im richtigen Active Directory zu registr
 
 Der Domänenname ist für den Code erforderlich. Es folgt eine einfache Möglichkeit zum Ermitteln des richtigen Domänennamens:
 
-1. Öffnen Sie das [Azure-Vorschauportal](https://portal.azure.com).
+1. Öffnen Sie das [Azure-Portal](https://portal.azure.com).
 2. Zeigen Sie auf Ihren Namen in der oberen rechten Ecke, und notieren Sie sich die Domäne, die im Popupfenster angezeigt wird. Ersetzen Sie **domain.onmicrosoft.com** im folgenden Codeausschnitt durch den Wert für Ihr Konto.
 
     ![Domänenname ermitteln][3]
@@ -585,4 +585,4 @@ Das folgende Beispiel führt alle Datenbanken in einem Pool auf:
 [8]: ./media/sql-database-elastic-pool-csharp/add-application2.png
 [9]: ./media/sql-database-elastic-pool-csharp/clientid.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

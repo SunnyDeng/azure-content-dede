@@ -270,4 +270,4 @@ Verwenden Sie den Befehl „Remove-AzureLoadBalancer“, um den zuvor erstellten
 
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -349,6 +349,6 @@ Wenn Sie Hilfe zu Funktionen abrufen möchten, können Sie an der Windows PowerS
 
 ## Nächste Schritte
 
-Weitere Informationen zur PowerShell-Skripterstellung finden Sie unter [Scripting with Windows PowerShell](https://technet.microsoft.com/library/bb978526.aspx). Weitere Azure PowerShell-Skripts finden Sie im [Script Center](https://azure.microsoft.com/de-DE/documentation/scripts/).
+Weitere Informationen zur PowerShell-Skripterstellung finden Sie unter [Scripting with Windows PowerShell](https://technet.microsoft.com/library/bb978526.aspx). Weitere Azure PowerShell-Skripts finden Sie im [Script Center](https://azure.microsoft.com/documentation/scripts/).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

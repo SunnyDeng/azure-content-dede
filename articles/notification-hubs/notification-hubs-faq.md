@@ -3,7 +3,7 @@
 	description="Häufig gestellte Fragen zum Entwerfen/Implementieren von Lösungen in Notification Hubs"
 	services="notification-hubs"
 	documentationCenter="mobile"
-	authors="wesmc"
+	authors="wesmc7777"
 	manager="dwrede"
 	editor="" />
 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="08/18/2015" 
+	ms.date="11/25/2015" 
 	ms.author="wesmc" />
 
 #Azure Notification Hubs - häufig gestellte Fragen (FAQs)
@@ -47,10 +47,10 @@ Klicken Sie im [Azure-Portal] auf „Service Bus“, dann auf Ihren Namespace un
 Es werden SDKs und Beispiele für .NET, Java, PHP, Python und Node.js bereitgestellt, damit ein App-Back-End für die Kommunikation mit Notification Hubs über eine beliebige dieser Plattformen eingerichtet werden kann. Notification Hubs-APIs basieren auf REST-Schnittstellen, sodass Sie sich für eine direkte Kommunikation entscheiden können. Weitere Informationen finden Sie hier: [NH – REST-APIs]
 
 ###2\. Welche Geräteplattformen werden unterstützt?
-Benachrichtigungen können an die Plattformen Apple iOS, Android, Windows Universal und Windows Phone, Kindle, Android China (über Baidu), Xamarin (iOS & Android) und Chrome-Apps gesendet werden. Tutorials mit Schrittanleitungen für den Einstieg in diese Plattformen finden Sie hier: [NH – Tutorials für den Einstieg]
+Benachrichtigungen können an die Plattformen Apple iOS, Android, Windows Universal und Windows Phone, Kindle, Android China (über Baidu), Xamarin (iOS & Android) und Chrome-Apps gesendet werden. Lernprogramme mit Schrittanleitungen für den Einstieg für diese Plattformen finden Sie hier: [NH – Lernprogramme für den Einstieg]
 
 ###3\. Werden Benachrichtigungen per SMS/E-Mail/Web unterstützt?
-Notification Hubs wurde primär zum Senden von Benachrichtigungen an mobile Apps mithilfe der oben aufgeführten Plattformen entwickelt. Es werden keine Funktionen zum Senden von E-Mails oder SMS bereitgestellt, es können jedoch zusätzlich zu Notification Hubs Drittanbieterplattformen mit dieser Funktionalität integriert werden, um systemeigene Pushbenachrichtigungen unter Verwendung von Azure Mobile Services zu senden. Es werden ebenfalls keine sofort einsatzfähigen Browserpushbenachrichtigungen bereitgestellt. Kunden können diese Funktionalität unter Verwendung von SignalR implementieren. Es steht ein Lernprogramm zum Senden von Pushbenachrichtigungen an Chrome-Apps über den Google Chrome-Browser zur Verfügung. Siehe hier – [Chrome-Apps-Tutorial]
+Notification Hubs wurde primär zum Senden von Benachrichtigungen an mobile Apps mithilfe der oben aufgeführten Plattformen entwickelt. Es werden keine Funktionen zum Senden von E-Mails oder SMS bereitgestellt, es können jedoch zusätzlich zu Notification Hubs Drittanbieterplattformen mit dieser Funktionalität integriert werden, um systemeigene Pushbenachrichtigungen unter Verwendung von Azure Mobile Services zu senden. Es werden ebenfalls keine sofort einsatzfähigen Browserpushbenachrichtigungen bereitgestellt. Kunden können diese Funktionalität unter Verwendung von SignalR implementieren. Es steht ein Lernprogramm zum Senden von Pushbenachrichtigungen an Chrome-Apps über den Google Chrome-Browser zur Verfügung. Siehe hier – [Chrome-Apps-Lernprogramm]
 
 ###4\. Welche Beziehung besteht zwischen Azure Mobile Services und Azure Notification Hubs, und wann verwende ich was?
 Wenn Sie über ein vorhandenes Back-End für mobile Apps verfügen und nur die Funktionalität zum Senden von Pushbenachrichtigungen hinzufügen möchten, müssen Sie Azure Notification Hubs verwenden. Wenn Sie ein Back-End für mobile Apps von Grund auf erstellen möchten, sollten Sie den Einsatz von Azure Mobile Services erwägen. Azure Mobile Services stellt automatisch einen Notification Hub für Sie bereit, damit Sie über das Back-End der mobilen App problemlos Pushbenachrichtigungen senden können. Die Preise für Azure Mobile Services schließen die Grundgebühren für Notification Hubs ein, und Kosten fallen nur dann an, wenn Sie die eingeschlossene Zahl an Pushvorgängen überschreiten. Weitere Einzelheiten finden Sie hier: [Mobile Services-Preise].
@@ -68,9 +68,9 @@ Azure Notification Hubs kann in einem normalen Benutzerszenario mit konsistenter
 Aufgrund der Tatsache, dass Pushbenachrichtigungen von einem externen, plattformspezifischen PNS übermittelt werden, können keine Latenzzeiten garantiert werden. Die Mehrzahl der Benachrichtigungen wird jedoch innerhalb weniger Minuten zugestellt.
 
 ###9\. Welche Aspekte müssen beim Entwurf einer Lösung mit Namespaces und Notification Hubs berücksichtigt werden?
-*Mobile App/Umgebung:* Es muss ein Notification Hub pro mobiler App pro Umgebung verfügbar sein. In einem mehrinstanzenfähigen Szenario sollte jeder Mandant über einen separaten Hub verfügen. Ein Notification Hub darf niemals von einer Test- und einer Produktionsumgebung gemeinsam genutzt werden, da dies zu Problemen beim Senden von Benachrichtigungen führen kann. Apple bietet beispielsweise Pushendpunkte für Sandbox und Produktion an, die jeweils über separate Anmeldeinformationen verfügen. Wenn der Hub ursprünglich mit einem Apple-Sandbox-Zertifikat konfiguriert wurde und anschließend zur Verwendung eines Apple-Produktionszertifikats neu konfiguriert wird, verfällt das vorherige Gerätetoken durch das neue Zertifikat, und es kommt zu Fehlern bei Pushvorgängen. Sie sollten Ihre Produktions- und Testumgebung immer getrennt voneinander verwalten und unterschiedliche Hubs für unterschiedliche Umgebungen verwenden.
+*Mobile App/Umgebung:* Es sollte ein Notification Hub pro Umgebung für mobile Apps verfügbar sein. In einem mehrinstanzenfähigen Szenario sollte jeder Mandant über einen separaten Hub verfügen. Ein Notification Hub darf niemals von einer Test- und einer Produktionsumgebung gemeinsam genutzt werden, da dies zu Problemen beim Senden von Benachrichtigungen führen kann. Apple bietet beispielsweise Pushendpunkte für Sandbox und Produktion an, die jeweils über separate Anmeldeinformationen verfügen. Wenn der Hub ursprünglich mit einem Apple-Sandbox-Zertifikat konfiguriert wurde und anschließend zur Verwendung eines Apple-Produktionszertifikats neu konfiguriert wird, verfällt das vorherige Gerätetoken durch das neue Zertifikat, und es kommt zu Fehlern bei Pushvorgängen. Sie sollten Ihre Produktions- und Testumgebung immer getrennt voneinander verwalten und unterschiedliche Hubs für unterschiedliche Umgebungen verwenden.
 
-*PNS-Anmeldeinformationen:* Wenn eine mobile App für das Entwicklerportal einer Plattform registriert wird (z. B. Apple oder Google usw.), erhalten Sie eine App-ID und Sicherheitstoken, die ein App-Back-End für den PNS der Plattform benötigen, um Pushbenachrichtigungen an die Geräte zu senden. Diese Sicherheitstoken, die in Form von Zertifikaten (beispielsweise für Apple iOS oder Windows Phone) oder als Sicherheitsschlüssel (Google Android, Windows) ausgestellt werden, müssen in Notification Hubs konfiguriert werden. Die Konfiguration erfolgt typischerweise auf Notification Hub-Ebene, kann jedoch in einem Szenario mit Mehrinstanzenfähigkeit auch auf Namespaceebene durchgeführt werden.
+*PNS-Anmeldeinformationen:* Wenn eine mobile App für das Entwicklerportal einer Plattform registriert wird (z. B. Apple oder Google usw.), erhalten Sie eine App-ID und Sicherheitstoken, die ein App-Back-End für den PNS der Plattform benötigen, um Pushbenachrichtigungen an die Geräte zu senden. Diese Sicherheitstoken, die in Form von Zertifikaten (beispielsweise für Apple iOS oder Windows Phone) oder als Sicherheitsschlüssel (Google Android, Windows usw.) ausgestellt werden, müssen in Notification Hubs konfiguriert werden. Die Konfiguration erfolgt typischerweise auf Notification Hub-Ebene, kann jedoch in einem Szenario mit Mehrinstanzenfähigkeit auch auf Namespaceebene durchgeführt werden.
 
 *Namespaces:* Namespaces können auch für eine Bereitstellungsgruppierung eingesetzt werden. Sie können alle Notification Hubs für alle Mandanten derselben App in einem Szenario mit Mehrinstanzenfähigkeit repräsentieren.
 
@@ -83,13 +83,13 @@ Registrierungen über das App-Back-End sind sinnvoll, wenn Sie eine Clientauthen
 Azure Notification Hubs verwendet ein SAS-basiertes (Shared Access Signature) Sicherheitsmodell. Sie können die SAS-Token auf Namespacestammebene oder auf der granularen Notification Hubs-Ebene verwenden. Diese SAS-Token können mit verschiedenen Authentifizierungsregeln festgelegt werden, z. B. Berechtigungen zum Senden von Nachrichten oder Berechtigungen zum Überwachen auf Benachrichtigungen usw.. Weitere Einzelheiten finden Sie hier: [NH Sicherheitsmodell].
 
 ###12\. Wie werden sensible Daten in Benachrichtigungen behandelt?
-Alle Benachrichtigungen werden über den Push Notification Service (PNS) der Plattform an die Geräte übermittelt. Wenn ein Absender eine Benachrichtigung an Azure Notification Hubs sendet, werden diese Benachrichtigungen verarbeitet und an den jeweiligen PNS weitergeleitet. Alle Verbindungen zwischen Absender und Azure Notification Hubs und zum PNS verwenden HTTPS. Azure Notification Hubs führt keine Protokollierung der Nachrichteninhalte durch. Für das Senden sensibler Daten wird jedoch der Einsatz eines sicheren Pushmusters empfohlen, bei dem der Absender eine "Ping"-Benachrichtigung ohne die vertraulichen Daten mit einer Nachrichten-ID an das Gerät sendet. Wenn die App diese Daten empfängt, erfolgt ein direkter Aufruf einer sicheren App-Back-End-API, mit der die Nachrichtendetails angefordert werden. Ein Tutorial zur Implementierung dieses Musters finden Sie hier: [NH – Tutorial für sichere Pushvorgänge].
+Alle Benachrichtigungen werden über den Push Notification Service (PNS) der Plattform an die Geräte übermittelt. Wenn ein Absender eine Benachrichtigung an Azure Notification Hubs sendet, werden diese Benachrichtigungen verarbeitet und an den jeweiligen PNS weitergeleitet. Alle Verbindungen zwischen Absender und Azure Notification Hubs und zum PNS verwenden HTTPS. Azure Notification Hubs führt keine Protokollierung der Nachrichteninhalte durch. Für das Senden sensibler Daten wird jedoch der Einsatz eines sicheren Pushmusters empfohlen, bei dem der Absender eine "Ping"-Benachrichtigung ohne die vertraulichen Daten mit einer Nachrichten-ID an das Gerät sendet. Wenn die App diese Daten empfängt, erfolgt ein direkter Aufruf einer sicheren App-Back-End-API, mit der die Nachrichtendetails angefordert werden. Ein Lernprogramm zur Implementierung dieses Musters finden Sie hier: [NH – Lernprogramm für sichere Pushvorgänge].
 
 ##Vorgänge
 ###1\. Wie wird eine Notfallwiederherstellung gewährleistet?
 Es wird eine Notfallwiederherstellung für Metadaten bereitgestellt (Notification Hub-Name, Verbindungszeichenfolge usw.). Im Falle einer Notfallwiederherstellung gehen die Registrierungsdaten verloren, deshalb müssen Sie diese Daten über eine eigene Lösung wieder in Ihren neuen Hub einspeisen.
 
-- *Schritt 1* – Erstellen Sie eine sekundären Notification Hub auf einem anderen Domänencontroller. Sie können den sekundären Notification Hub im Falle einer Notfallwiederherstellung bei Bedarf oder bereits im Vorfeld erstellen. Dies spielt keine große Rolle, da die NH-Bereitstellung sehr schnell erfolgt und innerhalb weniger Sekunden durchgeführt werden kann. Es wird jedoch empfohlen, bereits im Vorfeld einen sekundären Notification Hub zu erstellen, da so Auswirkungen der Notfallwiederherstellung auf Verwaltungsfunktionen ausgeschlossen werden.
+- *Schritt 1* – Erstellen eines sekundären Notification Hubs auf einem anderen Domänencontroller. Sie können den sekundären Notification Hub im Falle einer Notfallwiederherstellung bei Bedarf oder bereits im Vorfeld erstellen. Dies spielt keine große Rolle, da die NH-Bereitstellung sehr schnell erfolgt und innerhalb weniger Sekunden durchgeführt werden kann. Es wird jedoch empfohlen, bereits im Vorfeld einen sekundären Notification Hub zu erstellen, da so Auswirkungen der Notfallwiederherstellung auf Verwaltungsfunktionen ausgeschlossen werden.
 
 - *Schritt 2* – Stellen Sie die Registrierungen aus dem primären Notification Hub im sekundären Notification Hub bereit. Es wird nicht empfohlen, Registrierungen auf beiden Hubs zu verwalten und diese zu synchronisieren, wenn Registrierungen eingehen. Dies funktioniert in der Regel nicht, da Registrierungen vom PNS mit einem Ablaufdatum versehen werden. Notification Hubs bereinigt Registrierungen, wenn PNS-Informationen zu abgelaufenen oder ungültigen Registrierungen empfangen werden.
 
@@ -99,7 +99,7 @@ Es wird empfohlen, ein App-Back-End zu verwenden, das folgende Aufgaben erfüllt
 
 - Regelmäßiger Abruf einer Sicherungskopie der Registrierungen aus dem primären Hub als Datensicherung und anschließendes Einfügen der Registrierungen auf dem sekundären Notification Hub (per Massenvorgang).
 
-(Informationen zur Funktion für den Export/Import von Registrierungen im Tarif „Standard“ finden Sie hier: [Exportieren/Importieren von Registrierungen].)
+(Informationen zur Funktion für den Export/Import von Registrierungen in der Stufe "Standard" finden Sie hier: [Exportieren/Importieren von Registrierungen].)
 
 Wenn Sie über kein Back-End verfügen und die App auf den Geräten gestartet wird, erfolgt eine Neuregistrierung im sekundären Notification Hub. Dies führt letztlich dazu, dass der sekundäre Notification Hub über alle Registrierungen für aktive Geräte verfügt. Der Nachteil hierbei ist, dass Geräte, auf denen die App nicht geöffnet wird, eine Zeit lang keine Benachrichtigungen erhalten.
 
@@ -111,7 +111,7 @@ Alle Notification Hubs-Verwaltungsvorgänge werden in Vorgangsprotokollen aufgez
 Azure Notification Hubs bietet verschiedene Funktionen für die gängige Problembehandlung, insbesondere für häufigsten Szenarien im Zusammenhang mit verworfenen Benachrichtigungen. Weitere Informationen finden Sie in diesem Whitepaper zur Problembehandlung: [NH – Problembehandlung].
 
 ###2\. Welche Telemetriefunktionen stehen zur Verfügung?
-Azure Notification Hubs ermöglicht die Anzeige von Telemetriedaten im Azure-Verwaltungsportal. Detailinformationen zu den verfügbaren Metriken finden Sie hier: [NH – Metriken]. Beachten Sie, dass erfolgreiche Benachrichtigungen nur bedeuten, dass die Benachrichtigungen an den externen PSN übermittelt wurden (z. B. APNS für Apple, GCM für Google usw.). Anschließend liegt es in der Verantwortung des PNS, die Benachrichtigung an die Geräte zuzustellen. Die PNS-Anbieter stellen zu diesem Vorgang keine näheren Angaben zur Verfügung. Es gibt außerdem die Möglichkeit, Telemetriedaten programmatisch zu exportieren (verfügbar in Stufe "Standard"). Ein Beispiel mit näheren Informationen finden Sie hier: [NH – Beispiel zu Metriken].
+Azure Notification Hubs ermöglicht die Anzeige von Telemetriedaten im Azure-Verwaltungsportal. Detailinformationen zu den verfügbaren Metriken finden Sie hier: [NH – Metriken]. Beachten Sie, dass erfolgreiche Benachrichtigungen nur bedeuten, dass die Benachrichtigungen an den externen PNS übermittelt wurden (z. B. APNS für Apple, GCM für Google usw.). Anschließend liegt es in der Verantwortung des PNS, die Benachrichtigung an die Geräte zuzustellen. Die PNS-Anbieter stellen zu diesem Vorgang keine näheren Angaben zur Verfügung. Es gibt außerdem die Möglichkeit, Telemetriedaten programmatisch zu exportieren (verfügbar in Stufe "Standard"). Ein Beispiel mit näheren Informationen finden Sie hier: [NH – Beispiel zu Metriken].
 
 [Azure-Portal]: https://manage.windowsazure.com
 [Notification Hubs – Preise]: http://azure.microsoft.com/pricing/details/notification-hubs/
@@ -122,16 +122,16 @@ Azure Notification Hubs ermöglicht die Anzeige von Telemetriedaten im Azure-Ver
 [Fallstudie – Mural.ly]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=11592
 [Fallstudie – 7Digital]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=3684
 [NH – REST-APIs]: https://msdn.microsoft.com/library/azure/dn530746.aspx
-[NH – Tutorials für den Einstieg]: http://azure.microsoft.com/documentation/articles/notification-hubs-ios-get-started/
-[Chrome-Apps-Tutorial]: http://azure.microsoft.com/documentation/articles/notification-hubs-chrome-get-started/
+[NH – Lernprogramme für den Einstieg]: http://azure.microsoft.com/documentation/articles/notification-hubs-ios-get-started/
+[Chrome-Apps-Lernprogramm]: http://azure.microsoft.com/documentation/articles/notification-hubs-chrome-get-started/
 [Mobile Services-Preise]: http://azure.microsoft.com/pricing/details/mobile-services/
 [Leitfaden zur Back-End-Registrierung]: https://msdn.microsoft.com/library/azure/dn743807.aspx
 [Leitfaden zur Back-End-Registrierung – 2]: https://msdn.microsoft.com/library/azure/dn530747.aspx
 [NH Sicherheitsmodell]: https://msdn.microsoft.com/library/azure/dn495373.aspx
-[NH – Tutorial für sichere Pushvorgänge]: http://azure.microsoft.com/documentation/articles/notification-hubs-aspnet-backend-ios-secure-push/
+[NH – Lernprogramm für sichere Pushvorgänge]: http://azure.microsoft.com/documentation/articles/notification-hubs-aspnet-backend-ios-secure-push/
 [NH – Problembehandlung]: http://azure.microsoft.com/documentation/articles/notification-hubs-diagnosing/
 [NH – Metriken]: https://msdn.microsoft.com/library/dn458822.aspx
 [NH – Beispiel zu Metriken]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/FetchNHTelemetryInExcel
 [Exportieren/Importieren von Registrierungen]: https://msdn.microsoft.com/library/dn790624.aspx
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

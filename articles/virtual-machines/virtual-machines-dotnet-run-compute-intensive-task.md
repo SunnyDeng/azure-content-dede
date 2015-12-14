@@ -48,7 +48,7 @@ Es folgt ein Beispiel der .NET-Anwendung, welche die rechenintensive Aufgabe üb
 
 ## So erstellen Sie einen virtuellen Computer
 
-1. Melden Sie sich beim [Azure-Portal](https://manage.windowsazure.com) an.
+1. Melden Sie sich beim [klassischen Azure-Portal](https://manage.windowsazure.com) an.
 2. Klicken Sie auf **Neu**.
 3. Klicken Sie auf **Virtueller Computer**.
 4. Klicken Sie auf **Schnellerfassung**.
@@ -57,11 +57,11 @@ Es folgt ein Beispiel der .NET-Anwendung, welche die rechenintensive Aufgabe üb
 7. Geben Sie im Feld **Benutzername** einen Namen für den Administrator ein. Merken Sie sich diesen Namen und das als nächstes eingegebene Kennwort. Sie benötigen diese Daten, wenn Sie sich von einem Remotestandort aus an dem virtuellen Computer anmelden.
 8. Geben Sie ein Kennwort im Feld **Neues Kennwort** ein, und geben Sie das Kennwort dann erneut im Feld **Kennwort bestätigen** ein.
 9. Wählen Sie in der Dropdownliste **Standort** den Standort des Rechenzentrums Ihres virtuellen Computers aus.
-10. Klicken Sie auf **Virtuellen Computer erstellen**. Sie können den Status im Abschnitt **Virtuelle Computer** des Azure-Portals überwachen. Wenn als Status des virtuellen Computers **Aktiv** angezeigt wird, können Sie sich am virtuellen Computer anmelden.
+10. Klicken Sie auf **Virtuellen Computer erstellen**. Sie können den Status im Abschnitt **Virtuelle Computer** des klassischen Azure-Portals überwachen. Wenn als Status des virtuellen Computers **Aktiv** angezeigt wird, können Sie sich am virtuellen Computer anmelden.
 
 ## So melden Sie sich von einem Remotestandort aus an Ihrem virtuellen Computer an
 
-1. Melden Sie sich beim [Azure-Portal](https://manage.windowsazure.com) an.
+1. Melden Sie sich beim [klassischen Azure-Portal](https://manage.windowsazure.com) an.
 2. Klicken Sie auf **Virtuelle Computer**.
 3. Klicken Sie auf den Namen des virtuellen Computers, an dem Sie sich anmelden möchten.
 4. Klicken Sie auf **Verbinden**.
@@ -71,11 +71,11 @@ Es folgt ein Beispiel der .NET-Anwendung, welche die rechenintensive Aufgabe üb
 
 Um mit der Verwendung von Service Bus-Warteschlangen in Azure beginnen zu können, müssen Sie zuerst einen Dienstnamespace erstellen. Ein Dienstnamespace ist eine Bereichseinheit zur Adressierung von Servicebus-Ressourcen innerhalb Ihrer Anwendung.
 
-So erstellen Sie einen Dienstnamespace
+So erstellen Sie einen Dienstnamespace:
 
-1.  Melden Sie sich beim [Azure-Portal](https://manage.windowsazure.com) an.
-2.  Klicken Sie im linken Navigationsbereich des Azure-Portals auf **Service Bus**.
-3.  Klicken Sie im unteren Bereich des Azure-Portals auf **Erstellen**.
+1.  Melden Sie sich beim [klassischen Azure-Portal](https://manage.windowsazure.com) an.
+2.  Klicken Sie im linken Navigationsbereich des klassischen Azure-Portals auf **Service Bus**.
+3.  Klicken Sie im unteren Bereich des klassischen Azure-Portals auf **Erstellen**.
 
     ![Neuen Service Bus erstellen][create_service_bus]
 4.  Geben Sie im Dialogfeld **Namespace erstellen** einen Namen für den Namespace ein. Es wird sofort geprüft, ob der Name verfügbar ist, da der Name eindeutig sein muss.
@@ -90,7 +90,7 @@ So erstellen Sie einen Dienstnamespace
 
 	![Screenshot beim Klicken auf "Erstellen"][click_create]
 
-Der erstellte Namespace wird dann im Azure-Portal angezeigt und nach einem Moment aktiviert. Warten Sie, bis **Active** als Status angezeigt wird, bevor Sie mit dem nächsten Schritt fortfahren.
+Der erstellte Namespace wird dann im klassischen Azure-Portal angezeigt und nach einem Moment aktiviert. Warten Sie, bis **Active** als Status angezeigt wird, bevor Sie mit dem nächsten Schritt fortfahren.
 
 ## Abrufen der Standard-Anmeldeinformationen für den Namespace
 
@@ -539,7 +539,7 @@ Der Solver wird ausgeführt, bis alle Routen untersucht wurden.
 Sowohl für Solver- als auch für Clientanwendungen können Sie Strg+C drücken, um die Anwendung vor dem normalen Abschluss zu beenden.
 
 ## Alternative zum Erstellen und Löschen der Warteschlange mit TSPSolver
-Anstatt TSPSolver zum Erstellen oder Löschen der Warteschlange zu verwenden, können Sie die Warteschlange mit dem [Azure-Portal](https://manage.windowsazure.com) erstellen oder löschen. Navigieren Sie zum Service Bus-Abschnitt des Azure-Portals, um auf die Funktionen zum Erstellen oder Löschen einer Warteschlange sowie zum Abrufen von Verbindungszeichenfolge, Aussteller und Zugriffsschlüssel zuzugreifen. Sie können auch ein Dashboard der Service Bus-Warteschlangen anzeigen, sodass Sie Metriken für die ein- und ausgehenden Nachrichten sehen können.
+Anstatt TSPSolver zum Erstellen oder Löschen der Warteschlange zu verwenden, können Sie die Warteschlange mit dem [klassischen Azure-Portal](https://manage.windowsazure.com) erstellen oder löschen. Navigieren Sie zum Service Bus-Abschnitt des klassischen Azure-Portals, um auf die Funktionen zum Erstellen oder Löschen einer Warteschlange sowie zum Abrufen von Verbindungszeichenfolge, Aussteller und Zugriffsschlüssel zuzugreifen. Sie können auch ein Dashboard der Service Bus-Warteschlangen anzeigen, sodass Sie Metriken für die ein- und ausgehenden Nachrichten sehen können.
 
 [solver_output]: ./media/virtual-machines-dotnet-run-compute-intensive-task/WA_dotNetTSPSolver.png
 [client_output]: ./media/virtual-machines-dotnet-run-compute-intensive-task/WA_dotNetTSPClient.png
@@ -550,4 +550,4 @@ Anstatt TSPSolver zum Erstellen oder Löschen der Warteschlange zu verwenden, k�
 [namespace_list]: ./media/virtual-machines-dotnet-run-compute-intensive-task/NamespaceList.png
 [access_key_button]: ./media/virtual-machines-dotnet-run-compute-intensive-task/AccessKey.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

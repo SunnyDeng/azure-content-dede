@@ -89,7 +89,7 @@ Jedes Serverskript hat eine main-Funktion und weitere optionale Hilfsfunktionen.
 
 Sie können Serverskripts, die für einen Tabellenvorgang registriert sind, auf folgende Arten definieren:
 
-+ Im [Azure-Verwaltungsportal][Management Portal]. Sie finden die Skripts für Tabellenvorgänge in der Registerkarte **Skripts** für eine bestimmte Tabelle. Hier sehen Sie den Standardcode, der für das Insert-Skript der Tabelle `TodoItem` registriert ist. Sie können diesen Code mit Ihrer eigenen benutzerdefinierten Geschäftslogik überschreiben.
++ Im [klassischen Azure-Portal]. Sie finden die Skripts für Tabellenvorgänge in der Registerkarte **Skripts** für eine bestimmte Tabelle. Hier sehen Sie den Standardcode, der für das Insert-Skript der Tabelle `TodoItem` registriert ist. Sie können diesen Code mit Ihrer eigenen benutzerdefinierten Geschäftslogik überschreiben.
 
 	![1][1]
 	
@@ -336,11 +336,11 @@ Der globale Status bleibt zwischen Ausführungen erhalten.
 
 Sie können Serverskripts, die für HTTP-Methoden in einem Endpunkt einer benutzerdefinierten API registriert sind, auf folgende Arten definieren:
 
-+ Im [Azure-Verwaltungsportal][Management Portal]. Skripts für benutzerdefinierte APIs werden in der Registerkarte **API** erstellt und bearbeitet. Der Serverskript-Code befindet sich in der Registerkarte **Skripts** der jeweiligen benutzerdefinierten API. Im Folgenden wird das Skript gezeigt, das durch eine POST-Anforderung an den Endpunkt der benutzerdefinierten `CompleteAll`-API aufgerufen wird. 
++ Im [klassischen Azure-Portal]. Skripts für benutzerdefinierte APIs werden in der Registerkarte **API** erstellt und bearbeitet. Der Serverskript-Code befindet sich in der Registerkarte **Skripts** der jeweiligen benutzerdefinierten API. Im Folgenden wird das Skript gezeigt, das durch eine POST-Anforderung an den Endpunkt der benutzerdefinierten `CompleteAll`-API aufgerufen wird. 
 
 	![2][2]
 	
-	Zugriffsberechtigungen für Methoden von benutzerdefinierten APIs werden in der Registerkarte Berechtigungen zugewiesen. Informationen zur Erstellung der API finden Sie unter [Aufrufen benutzerdefinierter APIs vom Client, in englischer Sprache].  
+	Zugriffsberechtigungen für Methoden von benutzerdefinierten APIs werden in der Registerkarte Berechtigungen zugewiesen. Informationen zur Erstellung der API finden Sie unter [Call a custom API from the client] (Aufrufen benutzerdefinierter APIs vom Client, in englischer Sprache.
 
 + Mithilfe von Quellcodeverwaltung. Falls Sie die Quellcodeverwaltung aktiviert haben, erstellen Sie einfach eine Datei mit dem Namen "<em>`<custom_api>`</em>.js" im Unterordner ".\\service\\api" in Ihrem Git-Repository, wobei <em>`<custom_api>`</em> der Name der benutzerdefinierten API ist, die registriert wird. Die Skriptdatei enthält eine _exported_-Funktion für jede HTTP-Methode, die von der benutzerdefinierten API verfügbar gemacht wird. Die Berechtigungen werden in einer separaten .json-Datei definiert. Weitere Informationen finden Sie unter [Quellcodeverwaltung und freigegebener Code][Source control, shared code, and helper functions].
 
@@ -443,17 +443,17 @@ Die beiden Routen im obigen Beispiel für eine benutzerdefinierte API können wi
 
 ##<a name="scheduler-scripts"></a>Auftragsplaner
 
-Mit Mobile Services können Sie Serverskripts definieren, die entweder als Aufträge nach festem Zeitplan oder bedarfsgesteuert über das Verwaltungsportal ausgeführt werden können. Planmäßige Aufträge sind hilfreich für periodische Aufgaben wie z. B: Aufräumvorgänge in Tabellendaten und Batchverarbeitungen. Weitere Informationen finden Sie unter [Geplante Aufträge].
+Mit Mobile Services können Sie Serverskripts definieren, die entweder als Aufträge nach festem Zeitplan oder bedarfsgesteuert über das klassische Azure-Portal ausgeführt werden können. Planmäßige Aufträge sind hilfreich für periodische Aufgaben wie z. B: Aufräumvorgänge in Tabellendaten und Batchverarbeitungen. Weitere Informationen finden Sie unter [Geplante Aufträge].
 
 Skripts, die für geplante Aufträge registriert sind, haben eine Hauptfunktion mit demselben Namen wie der geplante Auftrag. Da geplante Aufträge nicht über HTTP-Anforderungen aufgerufen werden, existiert kein Kontext, der von der Server-Runtime übergeben werden kann, und die Funktion nimmt keine Parameter entgegen. Wie auch andere Skriptarten können Sie Unterfunktionen definieren und freigegebene Module einbinden. Weitere Informationen finden Sie unter [Quellcodeverwaltung, freigegebener Code und Hilfsfunktionen].
 
 ###<a name="scheduler-scripts"></a>Gewusst wie: Definieren geplanter Auftragsskripts
 
-Serverskripts können Aufträgen zugewiesen werden, die im Mobile Service-Scheduler definiert sind. Diese Skripts gehören zum jeweiligen Auftrag und werden nach Auftragsplaner ausgeführt. (Sie können Aufträge auch über das [Verwaltungsportal] bei Bedarf ausführen.) Skripts, die geplante Aufträge definieren, haben keine Parameter, da Mobile Services keine Daten an sie übergeben. Sie werden stattdessen als normale JavaScript-Funktion aufgerufen und interagieren nicht direkt mit Mobile Services.
+Serverskripts können Aufträgen zugewiesen werden, die im Mobile Service-Scheduler definiert sind. Diese Skripts gehören zum jeweiligen Auftrag und werden nach Auftragsplaner ausgeführt. (Sie können Aufträge auch über das [klassische Azure-Portal] bei Bedarf ausführen.) Skripts, die geplante Aufträge definieren, haben keine Parameter, da Mobile Services keine Daten an sie übergeben. Sie werden stattdessen als normale JavaScript-Funktion aufgerufen und interagieren nicht direkt mit Mobile Services.
 
 Geplante Aufträge können auf zwei Arten definiert werden:
 
-+ Im [Azure-Verwaltungsportal][Management Portal] in der Registerkarte **Skript** im Scheduler:
++ Im [klassischen Azure-Portal] in der Registerkarte **Skript** im Scheduler:
 
 	![3][3]
 
@@ -924,7 +924,7 @@ Debugging und Problembehandlung Ihrer Serverskript erledigen Sie am Besten, inde
 
 Verwenden Sie das globale [Konsolenobjekt], um in die Protokolle zu schreiben. Mit den Funktionen **log** oder **info** können Sie Warnungen auf der Informationsebene schreiben. Die Funktionen **warning** und **error** schreiben Einträge auf ihrer jeweiligen Ebene, die in den Protokollen hervorgehoben werden.
 
-> [AZURE.NOTE]Um die Protokolle für Ihren Mobile Service anzuzeigen, melden Sie sich am [Verwaltungsportal](https://manage.windowsazure.com/) an, wählen Sie Ihren Mobile Service aus und öffnen Sie die Registerkarte **Protokolle**.
+> [AZURE.NOTE]Um die Protokolle für Ihren Mobile Service anzuzeigen, melden Sie sich am [klassischen Azure-Portal](https://manage.windowsazure.com/) an, wählen Sie Ihren Mobile Service aus und öffnen Sie die Registerkarte **Protokolle**.
 
 Sie können außerdem die Protokollfunktionen des [Konsolenobjekts] verwenden, um Ihre Nachrichten mithilfe von Parametern zu formatieren. Im folgenden Beispiel wird ein JSON-Objekt als Parameter an die Nachrichten-Zeichenfolge übergeben:
 
@@ -1023,8 +1023,8 @@ Um Ihr Protokoll nicht zu überladen, sollten Sie Aufrufe von console.log() entf
 [Überprüfen von Daten]: http://msdn.microsoft.com/library/windowsazure/jj631638.aspx
 [Ändern der Anforderung]: http://msdn.microsoft.com/library/windowsazure/jj631635.aspx
 [Ändern der Antwort]: http://msdn.microsoft.com/library/windowsazure/jj631631.aspx
-[Management Portal]: https://manage.windowsazure.com/
-[Verwaltungsportal]: https://manage.windowsazure.com/
+[klassische Azure-Portal]: https://manage.windowsazure.com/
+[klassischen Azure-Portal]: https://manage.windowsazure.com/
 [Geplante Aufträge]: http://msdn.microsoft.com/library/windowsazure/jj860528.aspx
 [Validate and modify data in Mobile Services by using server scripts]: /develop/mobile/tutorials/validate-modify-and-augment-data-dotnet/
 [Commands to manage Azure Mobile Services]: ../virtual-machines-command-line-tools.md#Mobile_Scripts
@@ -1044,7 +1044,7 @@ Um Ihr Protokoll nicht zu überladen, sollten Sie Aufrufe von console.log() entf
 [util API]: http://go.microsoft.com/fwlink/p/?LinkId=288806
 [zlib API]: http://go.microsoft.com/fwlink/p/?LinkId=288807
 [Benutzerdefinierte API]: http://msdn.microsoft.com/library/windowsazure/dn280974.aspx
-[Aufrufen benutzerdefinierter APIs vom Client, in englischer Sprache]: /develop/mobile/tutorials/call-custom-api-dotnet/#define-custom-api
+[Call a custom API from the client]: /develop/mobile/tutorials/call-custom-api-dotnet/#define-custom-api
 [express.js-Bibliothek]: http://go.microsoft.com/fwlink/p/?LinkId=309046
 [Define a custom API that supports periodic notifications]: /develop/mobile/tutorials/create-pull-notifications-dotnet/
 [express-Objekt in express.js]: http://expressjs.com/api.html#express
@@ -1056,4 +1056,4 @@ Um Ihr Protokoll nicht zu überladen, sollten Sie Aufrufe von console.log() entf
 [Support for package.json in Azure Mobile Services]: http://go.microsoft.com/fwlink/p/?LinkId=391036
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -26,7 +26,7 @@ In diesem Artikel wird veranschaulicht, wie Sie einen lokalen Clientcomputer mit
 
 ## Voraussetzungen
 
-* **Auf einem virtuellen Azure-Computer bereitgestellter HPC Pack-Hauptknoten:** Sie können automatisierte Tools wie eine [Azure-Schnellstartvorlage](https://azure.microsoft.com/de-DE/documentation/templates/) oder ein [Azure PowerShell-Skript](virtual-machines-hpcpack-cluster-powershell-script.md) verwenden, um den Hauptknoten und den Cluster bereitzustellen. Alternativ dazu können Sie den Cluster manuell in Azure bereitstellen, wie Sie dies auch für einen lokalen Cluster durchführen. Sie benötigen den DNS-Namen des Hauptknotens und die Anmeldeinformationen eines Clusteradministrators, um die Schritte in diesem Artikel auszuführen.
+* **Auf einem virtuellen Azure-Computer bereitgestellter HPC Pack-Hauptknoten:** Sie können automatisierte Tools wie eine [Azure-Schnellstartvorlage](https://azure.microsoft.com/documentation/templates/) oder ein [Azure PowerShell-Skript](virtual-machines-hpcpack-cluster-powershell-script.md) verwenden, um den Hauptknoten und den Cluster bereitzustellen. Alternativ dazu können Sie den Cluster manuell in Azure bereitstellen, wie Sie dies auch für einen lokalen Cluster durchführen. Sie benötigen den DNS-Namen des Hauptknotens und die Anmeldeinformationen eines Clusteradministrators, um die Schritte in diesem Artikel auszuführen.
 
     Wenn Sie den Hauptknoten manuell bereitgestellt haben, müssen Sie sicherstellen, dass auf dem virtuellen Computer ein HTTPS-Endpunkt konfiguriert ist. Richten Sie dies ein, falls dies nicht der Fall ist. Weitere Informationen finden Sie unter [Einrichten von Endpunkten für einen virtuellen Computer](virtual-machines-set-up-endpoints.md).
 
@@ -183,4 +183,4 @@ Zum Überprüfen der Konfiguration können Sie versuchen, Aufträge im Cluster i
 <!--Image references-->
 [jobsubmit]: ./media/virtual-machines-hpcpack-cluster-submit-jobs/jobsubmit.png
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

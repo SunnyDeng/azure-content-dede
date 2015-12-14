@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/29/2015"
+	ms.date="11/12/2015"
 	ms.author="jgao"/>
 
 
@@ -22,15 +22,15 @@
 
 [AZURE.INCLUDE [Heapdump-Auswahl](../../includes/hdinsight-selector-heap-dump.md)]
 
-Heapdumps können für Hadoop-Dienste automatisch gesammelt und im Azure-Blobspeicherkonto eines Benutzers unter "HDInsightHeapDumps/" abgelegt werden. Dumpdateien für einen Dienst mit Heaps enthalten eine Momentaufnahme des Arbeitsspeichers der Anwendung. Dazu zählen die Werte von Variablen zum Zeitpunkt der Erstellung des Dumps.
+Heapdumps enthalten eine Momentaufnahme des Speichers der Anwendung, einschließlich der Werte von Variablen zum Zeitpunkt der Dumperstellung. Daher sind sie sehr nützlich zum Diagnostizieren von Problemen, die bei der Ausführung auftreten. Heapdumps können für Hadoop-Dienste automatisch gesammelt und im Azure-Blobspeicherkonto eines Benutzers unter "HDInsightHeapDumps/" abgelegt werden.
 
 Die Sammlung von Heapdumps für verschiedene Dienste muss für Dienste in einzelnen Clustern aktiviert werden. Standardmäßig ist dieses Feature für einen Cluster deaktiviert. Diese Heapdumps können groß sein, sodass es ratsam ist, das Blobspeicherkonto zu überwachen, in dem sie gespeichert werden, nachdem die Sammlung aktiviert wurde.
 
 > [AZURE.NOTE]Die Informationen in diesem Artikel gelten nur für Windows-basierte HDInsight-Cluster. Informationen zu Linux-basierten HDInsight-Clustern finden Sie unter [Aktivieren von Heapdumps für Hadoop-Dienste auf Linux-basierten HDInsight-Clustern](hdinsight-hadoop-collect-debug-heap-dump-linux.md)
 
-## <a name="whichServices"></a>Verfügbare Dienste für Heapdumps
+## Verfügbare Dienste für Heapdumps
 
-Für die folgenden Dienste können Heapdumps auf Anforderung aktiviert werden:
+Sie können Heapdumps für die folgenden Dienste aktivieren:
 
 *  **hcatalog**: tempelton
 *  **hive**: hiveserver2, metastore, derbyserver
@@ -38,7 +38,7 @@ Für die folgenden Dienste können Heapdumps auf Anforderung aktiviert werden:
 *  **yarn**: resourcemanager, nodemanager, timelineserver
 *  **hdfs**: datanode, secondarynamenode, namenode
 
-## <a name="configuration"></a>Die Konfigurationselemente, mit denen Heapdumps aktiviert werden
+## Die Konfigurationselemente, mit denen Heapdumps aktiviert werden
 
 Um Heapdumps für einen Dienst zu aktivieren, müssen Sie die entsprechenden Konfigurationselemente im Abschnitt des jeweiligen Diensts festlegen, der von **service\_name** angegeben wird.
 
@@ -47,7 +47,7 @@ Um Heapdumps für einen Dienst zu aktivieren, müssen Sie die entsprechenden Kon
 
 Der Wert von **service\_name** kann einer der oben angegebenen Dienste sein: tempelton, hiveserver2, metastore, derbyserver, jobhistoryserver, resourcemanager, nodemanager, timelineserver, datanode, secondarynamenode oder namenode.
 
-## <a name="powershell"></a>Aktivieren von Heapdumps mithilfe von Azure PowerShell
+## Aktivieren mithilfe von Azure PowerShell
 
 Um Heapdumps mit Azure PowerShell z. B. für den Dienst "jobhistoryserver" zu aktivieren, müssen Sie die folgenden Schritte ausführen:
 
@@ -55,7 +55,7 @@ Um Heapdumps mit Azure PowerShell z. B. für den Dienst "jobhistoryserver" zu a
 
 	$MapRedConfigValues.Configuration = @{ "javaargs.jobhistoryserver.XX:+HeapDumpOnOutOfMemoryError"="-XX:+HeapDumpOnOutOfMemoryError" ; "javaargs.jobhistoryserver.XX:HeapDumpPath" = "-XX:HeapDumpPath=c:\\Dumps\\jobhistoryserver_%date:~4,2%_%date:~7,2%_%date:~10,2%_%time:~0,2%_%time:~3,2%_%time:~6,2%.hprof" }
 
-## <a name="sdk"></a>Aktivieren von Heapdumps mit dem Azure HDInsight .NET SDK
+## Aktivieren mithilfe von .NET SDK
 
 Um Heapdumps mit dem .NET SDK z. B. für "jobhistoryserver" zu aktivieren, müssen Sie die folgenden Schritte ausführen:
 
@@ -63,4 +63,4 @@ Um Heapdumps mit dem .NET SDK z. B. für "jobhistoryserver" zu aktivieren, müs
 
 	clusterInfo.MapReduceConfiguration.ConfigurationCollection.Add(new KeyValuePair<string, string>("javaargs.jobhistoryserver.XX:HeapDumpPath", "-XX:HeapDumpPath=c:\\Dumps\\jobhistoryserver_%date:~4,2%_%date:~7,2%_%date:~10,2%_%time:~0,2%_%time:~3,2%_%time:~6,2%.hprof"));
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -32,7 +32,7 @@ Dieser Artikel enthält eine Anleitung zur Verwendung des Azure-Portals für die
 
 Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
-- **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/de-DE/pricing/free-trial/).
+- **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/).
 - **Ein Azure Data Lake-Speicherkonto**. Eine Anleitung zur Erstellung finden Sie unter [Erste Schritte mit dem Azure Data Lake-Speicher](data-lake-store-get-started-portal.md).
 
 ## Erstellen von Sicherheitsgruppen in Azure Active Directory
@@ -125,7 +125,7 @@ Indem Sie dem Azure Data Lake-Dateisystem Benutzer oder Sicherheitsgruppen zuwei
 
 ## Entfernen von Sicherheitsgruppen für ein Azure Data Lake-Speicherkonto
 
-Wenn Sie Sicherheitsgruppen aus Azure Data Lake-Speicherkonten entfernen, ändern Sie lediglich den Zugriff auf die Verwaltungsvorgänge des Kontos, indem Sie das Azure-Vorschauportal und die Azure-Ressourcen-Manager-APIs verwenden.
+Wenn Sie Sicherheitsgruppen aus Azure Data Lake-Speicherkonten entfernen, ändern Sie lediglich den Zugriff auf die Verwaltungsvorgänge des Kontos, indem Sie das Azure-Portal und die Azure-Ressourcen-Manager-APIs verwenden.
 
 1. Klicken Sie auf dem Blatt Ihres Data Lake-Speicherkontos auf das Benutzersymbol.
 
@@ -164,4 +164,4 @@ Wenn Sie Zugriffssteuerungslisten von Sicherheitsgruppen aus dem Azure Data Lake
 - [Erste Schritte mit Data Lake-Speicher mithilfe von PowerShell](data-lake-store-get-started-powershell.md)
 - [Erste Schritte mit Data Lake-Speicher mithilfe des .NET SDK](data-lake-store-get-started-net-sdk.md)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

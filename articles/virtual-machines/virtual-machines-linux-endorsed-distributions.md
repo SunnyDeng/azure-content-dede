@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/13/2015"
+	ms.date="12/01/2015"
 	ms.author="szark"/>
 
 
@@ -37,12 +37,13 @@ Der Azure Linux-Agent ist bereits in den Images im Azure-Katalog vorinstalliert 
 
 Verteilung|Version|Treiber|Agent
 ---|---|---|---
-Ubuntu von Canonical|Ubuntu 12.04, 14.04, 15.04 und 15.10|Im Kernel|Paket: Im Repository unter „walinuxagent“ <p><p>Quelle: [GitHub](http://go.microsoft.com/fwlink/p/?LinkID=250998)
-CentOS von OpenLogic |CentOS 6.3+, 7.0+| CentOS 6.3:[LIS-Download](http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409)<p>CentOS 6.4+: Im Kernel|Paket: Im <a href="http://olcentgbl.trafficmanager.net/openlogic/6/openlogic/x86_64/RPMS/">-OpenLogic-Repository unter „WALinuxAgent“<p><p>Quelle: [GitHub](http://go.microsoft.com/fwlink/p/?LinkID=250998)
+Ubuntu|Ubuntu 12.04, 14.04, 15.04 und 15.10|Im Kernel|Paket: Im Repository unter „walinuxagent“ <p><p>Quelle: [GitHub](https://github.com/Azure/WALinuxAgent)
+CentOS von OpenLogic |CentOS 6.3+, 7.0+| CentOS 6.3:[LIS-Download](http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409)<p>CentOS 6.4+: Im Kernel|Paket: Im <a href="http://olcentgbl.trafficmanager.net/openlogic/6/openlogic/x86_64/RPMS/">-OpenLogic-Repository unter „WALinuxAgent“<p><p>Quelle: [GitHub](https://github.com/Azure/WALinuxAgent)
 [CoreOS](https://coreos.com/docs/running-coreos/cloud-providers/azure/)|494\.4.0+ |Im Kernel|Quelle: [GitHub](https://github.com/coreos/coreos-overlay/tree/master/app-emulation/wa-linux-agent)
 Oracle Linux| 6\.4+, 7.0+|Im Kernel|Paket: Im Repository unter „WALinuxagent“ <p><p>Quelle: [GitHub](http://go.microsoft.com/fwlink/p/?LinkID=250998)
 SUSE Linux Enterprise |SLES 11 SP3 oder höher, SLES 12 oder höher und <p><p>SLES für SAP 11.3 oder höher |Im Kernel|Paket: Im [Cloud:Tools](https://build.opensuse.org/project/show/Cloud:Tools)-Repository unter „WALinuxAgent“<p><p>Quelle: [GitHub](http://go.microsoft.com/fwlink/p/?LinkID=250998)
-openSUSE |openSUSE 13.1+|Im Kernel|Paket: Im [Cloud:Tools](https://build.opensuse.org/project/show/Cloud:Tools)-Repository unter „WALinuxAgent“<p><p>Quellcode: [GitHub](http://go.microsoft.com/fwlink/p/?LinkID=250998)
+openSUSE |openSUSE 13.1+|Im Kernel|Paket: Im [Cloud:Tools](https://build.opensuse.org/project/show/Cloud:Tools)-Repository unter „WALinuxAgent“<p><p>Quellcode: [GitHub](https://github.com/Azure/WALinuxAgent)
+Debian von Credativ |Debian 7.9+, 8.2+|Im Kernel|Paket: Im Repository unter „waagent“ <p><p>Quelle: [GitHub](https://github.com/Azure/WALinuxAgent)
 
 ## Partner
 
@@ -79,4 +80,9 @@ Die Strategie von Oracle besteht darin, ein weitgefasstes Portfolio von Lösunge
 
 SUSE Linux Enterprise Server unter Azure ist eine bewährte Plattform, die hervorragende Zuverlässigkeit und Sicherheit für Cloud Computing bietet. Die vielseitige Linux-Plattform SUSE lässt sich nahtlos in Azure-Cloud-Dienste integrieren, um eine einfach zu verwaltende Cloudumgebung bereitzustellen. Mit mehr als 9.200 zertifizierten Anwendungen von über 1.800 unabhängigen Softwareanbietern für SUSE Linux Enterprise Server stellt SUSE zudem sicher, dass vorhandene im Rechenzentrum unterstützte Arbeitsauslastungen vertrauensvoll unter Azure bereitgestellt werden können.
 
-<!---HONumber=Nov15_HO4-->
+### Credativ
+[http://www.credativ.de/blog/debian-images-f%C3%BCr-microsoft-azure](http://www.credativ.co.uk/credativ-blog/debian-images-microsoft-azure)
+
+Credativ ist ein unabhängige Beratungs- und Dienstleistungsunternehmen, das sich auf die Entwicklung und Implementierung von professionellen Lösungen mithilfe von freier Software spezialisiert hat. Als führende Open-Source-Experten verfügen wir über internationale Anerkennung und unterstützen zahlreiche IT-Abteilungen. Gemeinsam mit Microsoft bereitet credativ derzeit entsprechende Debian Images für Debian 8 (Jessie) und Debian 7 (Wheezy) vor. Diese wurden speziell für die Ausführung auf Azure entwickelt und können einfach über die Plattform verwaltet werden. Mithilfe der Open Source Support Center unterstützt credativ außerdem die langfristige Wartung und Aktualisierung der Debian Images für Azure.
+
+<!---HONumber=AcomDC_1203_2015-->

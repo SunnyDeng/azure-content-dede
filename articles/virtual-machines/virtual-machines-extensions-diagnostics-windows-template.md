@@ -72,7 +72,7 @@ Bei VM-Skalierungsgruppen wird die Erweiterungskonfiguration in der *extensionPr
    
 Die *publisher*-Eigenschaft mit dem Wert **Microsoft.Azure.Diagnostics** und die *type*-Eigenschaft mit dem Wert **IaaSDiagnostics** definieren die Azure-Diagnoseerweiterung eindeutig.
 
-Der Wert der *name*-Eigenschaft kann zum Verweisen auf die Erweiterung in der Ressourcengruppe verwendet werden. Wenn Sie diese Eigenschaft auf **Microsoft.Insights.VMDiagnosticsSettings** festlegen, kann sie problemlos im Azure-Portal identifiziert werden – so wird sichergestellt, dass die Überwachungsdiagramme im Azure-Portal richtig angezeigt werden.
+Der Wert der *name*-Eigenschaft kann zum Verweisen auf die Erweiterung in der Ressourcengruppe verwendet werden. Wenn Sie diese Eigenschaft auf **Microsoft.Insights.VMDiagnosticsSettings** festlegen, kann sie problemlos im klassischen Azure-Portal identifiziert werden – so wird sichergestellt, dass die Überwachungsdiagramme im klassischen Azure-Portal richtig angezeigt werden.
 
 Die Eigenschaft *typeHandlerVersion* gibt die Version der Erweiterung an, die Sie verwenden möchten. Indem Sie *autoUpgradeMinorVersion* auf **true** festlegen, stellen Sie sicher, dass Sie die neueste verfügbare Nebenversion der Erweiterung erhalten. Es wird dringend empfohlen, *autoUpgradeMinorVersion* immer auf **true** festzulegen, damit Sie jederzeit die neueste verfügbare Diagnoseerweiterung mit allen neuen Funktionen und Bugfixes verwenden.
 
@@ -119,7 +119,7 @@ Nachfolgend sehen Sie den XML-Code für die Diagnosekonfiguration, der standardm
         "wadmetricsresourceid": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', resourceGroup().name , '/providers/', 'Microsoft.Compute/virtualMachines/')]",
         "wadcfgxend": ""><MetricAggregation scheduledTransferPeriod="PT1H"/><MetricAggregation scheduledTransferPeriod="PT1M"/></Metrics></DiagnosticMonitorConfiguration></WadCfg>"
 
-Der XML-Knoten für die Metrikdefinition in der oben stehenden Konfiguration ist ein wichtiges Konfigurationselement, da er festlegt, wie die weiter oben im XML-Code im Knoten *PerformanceCounter* definierten Leistungsindikatoren aggregiert und gespeichert werden. Mit diesen Metriken werden die Diagramme und Warnungen im Azure-Vorschauportal gesteuert – wenn Sie also die Überwachungsdaten im Portal anzeigen möchten, ist es wichtig, diese Metriken in die Konfiguration einzubinden.
+Der XML-Knoten für die Metrikdefinition in der oben stehenden Konfiguration ist ein wichtiges Konfigurationselement, da er festlegt, wie die weiter oben im XML-Code im Knoten *PerformanceCounter* definierten Leistungsindikatoren aggregiert und gespeichert werden. Mit diesen Metriken werden die Diagramme und Warnungen im Azure-Portal gesteuert – wenn Sie also die Überwachungsdaten im Portal anzeigen möchten, ist es wichtig, diese Metriken in die Konfiguration einzubinden.
 
 Im Folgenden sehen Sie ein Beispiel des XML-Codes für die Metrikdefinition:
 
@@ -165,7 +165,4 @@ Jede WADMetrics-Tabelle enthält die folgenden Spalten:
 - Stellen Sie die Ressourcen-Manager-Vorlage über [Azure PowerShell](virtual-machines-deploy-rmtemplates-powershell.md) oder die [Azure-Befehlszeile](virtual-machines-deploy-rmtemplates-powershell.md) bereit.
 - Weitere Informationen zum [Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md).
 
-
-<!---HONumber=Nov15_HO4-->
-
-
+<!---HONumber=AcomDC_1203_2015-->

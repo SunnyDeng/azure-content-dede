@@ -90,7 +90,7 @@ Wenn Sie sie stattdessen zur Laufzeit angeben möchten, können Sie die folgende
           /* Initialize Engagement angent with above configuration. */
           EngagementAgent.Instance.Init(e, engagementConfiguration);
 
-Die Verbindungszeichenfolge für die Anwendung wird im Azure-Portal angezeigt.
+Die Verbindungszeichenfolge für die Anwendung wird im klassischen Azure-Portal angezeigt.
 
 ### Engagement-Initialisierung
 
@@ -285,4 +285,4 @@ Der Burst-Modus verlängert leicht die Akkulaufzeit, wirkt sich jedoch auf den E
 [NuGet website]: http://docs.nuget.org/docs/start-here/overview
  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

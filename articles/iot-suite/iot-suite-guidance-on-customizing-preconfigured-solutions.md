@@ -45,7 +45,7 @@ Der zweite Auftrag bearbeitet die Werte für "Gerät bis Schwellenwert", die auf
 
 ## Hinzufügen eigener Regeln
 
-Sie können nicht nur die vorkonfigurierten Azure Stream Analytics-Aufträge ändern, sondern auch im Azure-Vorschauportal neue Aufträge hinzufügen oder vorhandenen Aufträgen neue Abfragen hinzufügen.
+Sie können nicht nur die vorkonfigurierten Azure Stream Analytics-Aufträge ändern, sondern auch im Azure-Portal neue Aufträge hinzufügen oder vorhandenen Aufträgen neue Abfragen hinzufügen.
 
 ## Anpassen von Geräten
 
@@ -69,4 +69,4 @@ Weitere Informationen zu IoT-Geräten finden Sie auf der [Azure IoT-Entwicklerwe
 
 [IoT-Geräte-SDK]: https://azure.microsoft.com/documentation/articles/iot-hub-sdks-summary/
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

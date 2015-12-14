@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/16/2015" 
+	ms.date="12/02/2015" 
 	ms.author="sdanie"/>
 
 # Richtlinienreferenz für Azure API Management
@@ -34,6 +34,11 @@ Richtlinienausdrücke können als Attributwerte oder Textwerte in einer beliebig
 	-	[Ablaufsteuerung][] – Bedingte Anwendung von Richtlinienanweisungen basierend auf den Ergebnissen der Auswertung von booleschen [Ausdrücken][].
 	-	[Anforderung weiterleiten][] – leitet die Anforderung an den Back-End-Dienst.
 	-	[Protokoll an Event Hub][] – sendet Nachrichten im angegebenen Format an ein von einem [Protokollierungstool](https://msdn.microsoft.com/library/azure/mt592020.aspx#Logger) definiertes Nachrichtenziel.
+	-	[Zurückgegebene Antwort](https://msdn.microsoft.com/library/azure/dn894085.aspx#ReturnResponse) – Bricht die Pipeline-Ausführung ab und gibt die angegebene Antwort unmittelbar an den Aufrufer zurück.
+	-	[Unidirektionale Anforderung senden](https://msdn.microsoft.com/library/azure/dn894085.aspx#SendOneWayRequest) – Sendet eine Anforderung an die angegebene URL, ohne auf eine Antwort zu warten.
+	-	[Sendeanforderung](https://msdn.microsoft.com/library/azure/dn894085.aspx#SendRequest) – Sendet eine Anforderung an die angegebenen URL.
+	-	[Anforderungsmethode festlegen](https://msdn.microsoft.com/library/azure/dn894085.aspx#SetRequestMethod) – Dient der Vornahme von Änderungen der HTTP-Anforderungsmethode.
+	-	[Statuscode festlegen](https://msdn.microsoft.com/library/azure/dn894085.aspx#SetStatus) – Ändert den HTTP-Statuscode auf den angegebenen Wert.
 	-	[Variable festlegen][] – Speichert einen Wert in einer benannten [Kontextvariable][], um später darauf zugreifen zu können.
 -	[Authentifizierungsrichtlinien][]
 	-	[Standardauthentifizierung][] – Authentifizierung mit einem Back-End-Dienst unter Verwendung der Standardauthentifizierung.
@@ -109,4 +114,4 @@ Weitere Informationen zu Richtlinienausdrücken finden Sie im folgenden Video.
 
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

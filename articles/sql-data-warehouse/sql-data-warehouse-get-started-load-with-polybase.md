@@ -72,7 +72,7 @@ So bereiten Sie eine Beispieltextdatei vor
 
 So suchen Sie den Endpunkt Ihres Blobdiensts
 
-1. Wählen Sie im Azure-Portal **Durchsuchen** > **Speicherkonten** aus.
+1. Wählen Sie im klassischen Azure-Portal **Durchsuchen** > **Speicherkonten** aus.
 2. Klicken Sie auf das Speicherkonto, das Sie verwenden möchten.
 3. Klicken Sie auf dem Blatt des Speicherkontos auf „Blobs“.
 
@@ -282,4 +282,4 @@ Im [PolyBase-Handbuch][] finden Sie weitere Informationen, die Sie beim Entwicke
 [Create Database Scoped Credential (Transact-SQL)]: https://msdn.microsoft.com/library/mt270260.aspx
 [DROP CREDENTIAL (Transact-SQL)]: https://msdn.microsoft.com/library/ms189450.aspx
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

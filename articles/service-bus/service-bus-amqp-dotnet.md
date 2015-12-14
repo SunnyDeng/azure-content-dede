@@ -45,7 +45,7 @@ Beim Wert der Einstellung `Microsoft.ServiceBus.ConnectionString` handelt es sic
 
 	Endpoint=sb://[namespace].servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=[SAS key];TransportType=Amqp
 
-`[namespace]` und `SharedAccessKey` werden aus dem Azure-Portal bezogen. Weitere Informationen finden Sie unter [Verwenden von Azure Service Bus-Warteschlangen][].
+`[namespace]` und `SharedAccessKey` werden aus dem [klassischen Azure-Portal][] bezogen. Weitere Informationen finden Sie unter [Verwenden von Azure Service Bus-Warteschlangen][].
 
 Wenn Sie AMQP verwenden, fügen Sie `;TransportType=Amqp` an die Verbindungszeichenfolge an. Diese Notation weist die Clientbibliothek an, die Verbindung mit Service Bus über AMQP 1.0 herzustellen.
 
@@ -168,7 +168,7 @@ Die .NET-APIs machen mehrere Einstellungen zum Steuern des Verhaltens des AMQP-P
 Möchten Sie mehr erfahren? Nutzen Sie die folgenden Links:
 
 - [Übersicht über Service Bus AMQP]
-- [AMQP 1.0-Unterstützung für partitionierte Warteschlangen und Themen von Service Bus]
+- [AMQP 1.0-Unterstützung für partitionierte Warteschlangen und Themen von Service Bus]
 - [AMQP in Service Bus für Windows Server]
 
   [Verwenden von Azure Service Bus-Warteschlangen]: service-bus-dotnet-how-to-use-queues.md
@@ -199,8 +199,9 @@ Möchten Sie mehr erfahren? Nutzen Sie die folgenden Links:
   [OperationTimeout]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.messagingfactorysettings.operationtimeout.aspx
 [NuGet]: http://nuget.org/packages/WindowsAzure.ServiceBus/
 
+[klassischen Azure-Portal]: http://manage.windowsazure.com
 [Übersicht über Service Bus AMQP]: service-bus-amqp-overview.md
-[AMQP 1.0-Unterstützung für partitionierte Warteschlangen und Themen von Service Bus]: service-bus-partitioned-queues-and-topics-amqp-overview.md
+[AMQP 1.0-Unterstützung für partitionierte Warteschlangen und Themen von Service Bus]: service-bus-partitioned-queues-and-topics-amqp-overview.md
 [AMQP in Service Bus für Windows Server]: https://msdn.microsoft.com/library/dn574799.aspx
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

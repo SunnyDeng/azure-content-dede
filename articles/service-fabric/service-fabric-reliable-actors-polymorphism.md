@@ -4,7 +4,7 @@
    services="service-fabric"
    documentationCenter=".net"
    authors="seanmck"
-   manager="coreysa"
+   manager="timlt"
    editor=""/>
 
 <tags
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="10/15/2015"
+   ms.date="12/01/2015"
    ms.author="seanmck"/>
 
 # Polymorphie im Reliable Actor-Framework
@@ -78,4 +78,4 @@ Beachten Sie das `ActorService`-Attribut des Akteurtyps. Dies teilt dem Service 
 
 [shapes-interface-hierarchy]: ./media/service-fabric-reliable-actors-polymorphism/Shapes-Interface-Hierarchy.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

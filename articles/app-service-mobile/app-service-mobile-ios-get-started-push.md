@@ -13,20 +13,18 @@
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
 	ms.topic="article"
-	ms.date="08/22/2015"
+	ms.date="11/25/2015"
 	ms.author="krisragh"/>
 
 
 # Hinzufügen von Pushbenachrichtigungen zu Ihrer iOS-App
 
-[AZURE.INCLUDE [app-service-mobile-selector-get-started-push](../../includes/app-service-mobile-selector-get-started-push.md)]
-&nbsp;  
-[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
+[AZURE.INCLUDE [app-service-mobile-selector-get-started-push](../../includes/app-service-mobile-selector-get-started-push.md)]&nbsp;[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
 
 ## Übersicht
-In diesem Tutorial fügen Sie Pushbenachrichtigungen zum [iOS-Schnellstartprojekt] hinzu, damit jedes Mal, wenn ein Datensatz eingefügt wird, eine Pushbenachrichtigung gesendet wird. Dieses Tutorial baut auf dem [iOS-Schnellstart]-Tutorial auf, das Sie zuerst abschließen müssen. Wenn Sie das heruntergeladene Schnellstart-Serverprojekt nicht verwenden, müssen Sie Ihrem Projekt das Pushbenachrichtigungs-Erweiterungspaket hinzufügen. Weitere Informationen zu Servererweiterungspaketen finden Sie unter [Work with the .NET backend server SDK for Azure Mobile Apps](app-service-mobile-dotnet-backend-how-to-use-server-sdk.md) (in englischer Sprache).
+In diesem Lernprogramm fügen Sie Pushbenachrichtigungen zum [iOS-Schnellstartprojekt] hinzu, damit jedes Mal, wenn ein Datensatz eingefügt wird, eine Pushbenachrichtigung gesendet wird. Dieses Lernprogramm baut auf dem [iOS-Schnellstartlernprogramm] auf, das Sie zuerst abschließen müssen. Wenn Sie das heruntergeladene Schnellstart-Serverprojekt nicht verwenden, müssen Sie Ihrem Projekt das Pushbenachrichtigungs-Erweiterungspaket hinzufügen. Weitere Informationen zu Servererweiterungspaketen finden Sie unter [Work with the .NET backend server SDK for Azure Mobile Apps](app-service-mobile-dotnet-backend-how-to-use-server-sdk.md) (in englischer Sprache).
 
-Der [iOS-Simulator bietet keine Unterstützung für Pushbenachrichtigungen](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/TestingontheiOSSimulator.html), sodass Sie für dieses Tutorial ein physisches iOS-Gerät und eine [Apple-Entwicklerprogramm-Mitgliedschaft](https://developer.apple.com/programs/ios/) benötigen.
+Der [iOS-Simulator bietet keine Unterstützung für Pushbenachrichtigungen](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/iOS_Simulator_Guide/TestingontheiOSSimulator.html), sodass Sie für dieses Lernprogramm ein physisches iOS-Gerät benötigen und eine [Apple-Entwicklerprogramm-Mitgliedschaft](https://developer.apple.com/programs/ios/).
 
 ##<a name="create-hub"></a>Erstellen eines Notification Hubs
 
@@ -50,11 +48,16 @@ Der [iOS-Simulator bietet keine Unterstützung für Pushbenachrichtigungen](http
 
 ## <a id="add-push"></a>Hinzufügen von Pushbenachrichtigungen zur App
 
-[AZURE.INCLUDE [Hinzufügen von Pushbenachrichtigungen zur App](../../includes/app-service-add-push-notifications-to-app.md)]
+[AZURE.INCLUDE [app-service-mobile-add-push-notifications-to-ios-app.md](../../includes/app-service-mobile-add-push-notifications-to-ios-app.md)]
 
 ## <a id="test"></a>Testen von Pushbenachrichtigungen in einer App
 
 [AZURE.INCLUDE [Testen von Pushbenachrichtigungen in einer App](../../includes/test-push-notifications-in-app.md)]
+
+##<a id="more"></a>Weitere Informationen
+
+* Vorlagen ermöglichen Ihnen, flexibel plattformübergreifende Pushvorgänge und lokalisierte Pushvorgänge zu senden. In [Verwenden der iOS-Clientbibliothek für Azure Mobile Apps](app-service-mobile-ios-how-to-use-client-library.md#templates) wird erklärt, wie Sie Vorlagen registrieren.
+* Mit Tags können Sie für segmentierte Kunden Pushvorgänge auswählen. In [Arbeiten Sie mit der .NET-Back-End-Server-SDK für Azure Mobile Apps](app-service-mobile-dotnet-backend-how-to-use-server-sdk.md#tags) wird erklärt, wie Sie einer Geräteinstallation Tags hinzufügen.
 
 <!-- Anchors.  -->
 [Generate iOS certificate signing request]: #certificates
@@ -69,7 +72,7 @@ Der [iOS-Simulator bietet keine Unterstützung für Pushbenachrichtigungen](http
 <!-- Images. -->
 
 <!-- URLs. -->
-[iOS-Schnellstart]: app-service-mobile-ios-get-started.md
+[iOS-Schnellstartlernprogramm]: app-service-mobile-ios-get-started.md
 [iOS-Schnellstartprojekt]: app-service-mobile-ios-get-started.md
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

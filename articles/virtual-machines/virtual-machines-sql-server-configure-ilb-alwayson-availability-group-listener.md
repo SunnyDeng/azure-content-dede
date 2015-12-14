@@ -84,7 +84,7 @@ Sie müssen für ILB zunächst den internen Load Balancer einrichten. Verwenden 
 
 1. Nachdem Sie die Variablen festgelegt haben, kopieren Sie das Skript zur Ausführung aus dem Text-Editor in Ihre Azure PowerShell-Sitzung. Wenn die Aufforderung weiterhin >> anzeigt, geben Sie erneut ENTER ein, um die Skriptausführung zu starten. Hinweis:
 
->[AZURE.NOTE]Das Azure-Portal bietet gegenwärtig keine Unterstützung für den internen Load Balancer. Folglich werden im Azure-Portal weder der interne Load Balancer noch die Endpunkte angezeigt. Wenn der Load Balancer auf einem Endpunkt ausgeführt wird, gibt **Get-AzureEndpoint** jedoch eine interne IP-Adresse zurück. Andernfalls wird null zurückgegeben.
+>[AZURE.NOTE]Das klassische Azure-Portal bietet gegenwärtig keine Unterstützung für den internen Lastenausgleich. Folglich werden im klassischen Azure-Portal weder das interne Lastenausgleichsmodul noch die Endpunkte angezeigt. Wenn der Load Balancer auf einem Endpunkt ausgeführt wird, gibt **Get-AzureEndpoint** jedoch eine interne IP-Adresse zurück. Andernfalls wird null zurückgegeben.
 
 ## Stellen Sie gegebenenfalls sicher, dass KB2854082 installiert ist.
 
@@ -138,4 +138,4 @@ Sie müssen für ILB zunächst den internen Load Balancer einrichten. Verwenden 
 
 [AZURE.INCLUDE [Listener-Next-Steps](../../includes/virtual-machines-ag-listener-next-steps.md)]
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -5,7 +5,7 @@ In diesem Abschnitt registrieren Sie den mobilen Dienst in Azure Active Director
 
 1. Registrieren Sie Ihre Anwendung in Azure Active Directory, indem Sie die Anleitung im Thema [Registrieren bei Azure Active Directory] befolgen.
 
-2. Gehen Sie im [Azure-Verwaltungsportal] zurück zur Erweiterung "Azure Active Directory" und klicken Sie auf Ihr aktives Verzeichnis.
+2. Gehen Sie im [klassischen Azure-Portal](https://manage.windowsazure.com/) zurück zur Erweiterung "Azure Active Directory", und klicken Sie auf Ihr aktives Verzeichnis.
 
 3. Klicken Sie auf die Registerkarte **Anwendungen** t und dann auf Ihre Anwendung.
 
@@ -33,10 +33,9 @@ In diesem Abschnitt registrieren Sie den mobilen Dienst in Azure Active Director
             }
         ],
 
-6. Klicken Sie im Azure-Verwaltungsportal für die Anwendung erneut auf **Manifest verwalten** und anschließend auf **Manifest hochladen**. Navigieren Sie zum Speicherort des Anwendungsmanifests, das Sie gerade aktualisiert haben, und laden Sie das Manifest hoch.
+6. Klicken Sie im [klassischen Azure-Portal](https://manage.windowsazure.com/) für die Anwendung erneut auf **Manifest verwalten** und anschließend auf **Manifest hochladen**. Navigieren Sie zum Speicherort des Anwendungsmanifests, das Sie gerade aktualisiert haben, und laden Sie das Manifest hoch.
 
 <!-- URLs. -->
 [Registrieren bei Azure Active Directory]: ../articles/mobile-services/mobile-services-how-to-register-active-directory-authentication.md
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

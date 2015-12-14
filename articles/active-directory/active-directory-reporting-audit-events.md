@@ -13,10 +13,22 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="09/21/2015"
+   ms.date="11/30/2015"
    ms.author="kenhoff"/>
 
 # Azure Active Directory-Überwachungsberichtsereignisse
+
+## Artikel in der Azure AD Reporting-Dokumentation
+
+ - [Reporting-API](active-directory-reporting-api-getting-started.md)
+ - [Überwachungsereignisse](active-directory-reporting-audit-events.md)
+ - [Aufbewahrung](active-directory-reporting-retention.md)
+ - [Vorschau](active-directory-reporting-previews.md)
+ - [Suche](active-directory-reporting-search.md)
+ - [Abgleich](active-directory-reporting-backfill.md)
+ - [Wartezeiten](active-directory-reporting-latencies.md)
+ - [Ereignis „Unbekannter Akteur“](active-directory-reporting-unknown-actor.md)
+
 Der Azure Active Directory-Überwachungsbericht hilft Kunden, privilegierte Aktionen zu bestimmen, die in ihrem Azure Active Directory aufgetreten sind. Privilegierte Aktionen umfassen Änderungen zur Rechteerweiterung (z. B. das Erstellen von Rollen oder Zurücksetzen von Kennwörtern), das Ändern von Richtlinienkonfigurationen (z. B. Kennwortrichtlinien) oder Änderungen an der Verzeichniskonfiguration (z. B. Änderungen an Domänenverbundeinstellungen). Die Berichte enthalten den Überwachungsdatensatz für den Ereignisnamen, den Akteur, der die Aktion ausgeführt hat, die von der Änderung betroffene Zielressource sowie Datum und Uhrzeit (in UTC). Kunden können die Liste der Überwachungsereignisse für ihr Azure Active Directory über das [Azure-Verwaltungsportal](https://manage.windowsazure.com/) abrufen, wie beschrieben unter [Anzeigen von Zugriffs- und Nutzungsberichten](active-directory-view-access-usage-reports.md).
 
 
@@ -119,4 +131,4 @@ TelephoneNumber | Die Telefonnummer des Benutzers.
 
 Überwachungsdatensätze sind ein erforderliches Steuerelement in vielen Richtlinien zur Einhaltung von Vorschriften. Kunden, die den Azure Active Directory-Überwachungsbericht zum Erfüllen dieser Vorschriften nutzen, wird empfohlen, der Kopie des exportierten Überwachungsberichts eine Kopie dieses Hilfethemas hinzuzufügen, das die Berichtsdetails erläutert. Wenn der Prüfer die Richtlinien zur Vorschrifteneinhaltung bestimmen möchte, die Azure derzeit erfüllt, leiten Sie ihn zur [Seite "Compliance"](http://azure.microsoft.com/support/trust-center/compliance/) im Microsoft Azure Trust Center.
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

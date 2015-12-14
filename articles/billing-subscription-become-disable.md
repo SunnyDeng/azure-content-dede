@@ -32,6 +32,6 @@ Die Problembehebung finden Sie im Artikel [Warum haben Sie eine Benachrichtigung
 
 ### Das Azure-Abonnement wurde gekündigt
 
-Um ein Abonnement zu reaktivieren, müssen Sie ein Supportticket erstellen. Informationen zum Erstellen eines Supporttickets für das Reaktivieren eines Azure-Abonnements finden Sie im Artikel [Erstellen eines Supporttickets bei Problemen mit Azure-Abrechnungen und -Abonnements](../billing-create-billing-support-ticket.md).
+Um ein Abonnement zu reaktivieren, müssen Sie ein Supportticket erstellen. Informationen zum Erstellen eines Supporttickets für das Reaktivieren eines Azure-Abonnements finden Sie im Artikel [Erstellen eines Supporttickets bei Problemen mit Azure-Abrechnungen und -Abonnements](../billing-how-to-create-billing-support-ticket.md).
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

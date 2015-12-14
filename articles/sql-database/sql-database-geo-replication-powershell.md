@@ -13,7 +13,7 @@
     ms.topic="article"
     ms.tgt_pltfrm="powershell"
     ms.workload="data-management" 
-    ms.date="11/10/2015"
+    ms.date="12/01/2015"
     ms.author="sstein"/>
 
 # Konfigurieren der Georeplikation für die Azure SQL-Datenbank mit PowerShell
@@ -21,18 +21,18 @@
 
 
 > [AZURE.SELECTOR]
-- [Azure preview portal](sql-database-geo-replication-portal.md)
+- [Azure portal](sql-database-geo-replication-portal.md)
 - [PowerShell](sql-database-geo-replication-powershell.md)
 - [Transact-SQL](sql-database-geo-replication-transact-sql.md)
 
 
 In diesem Artikel wird beschrieben, wie Sie die Georeplikation der SQL-Datenbank mit PowerShell konfigurieren.
 
-Die Georeplikation ermöglicht das Erstellen von bis zu vier (sekundären) Replikatdatenbanken in verschiedenen Rechenzentrumregionen. Sekundäre Datenbanken stehen zur Verfügung, wenn ein Rechenzentrum ausgefallen ist oder keine Verbindung mit der primären Datenbank möglich ist.
+Die Georeplikation ermöglicht das Erstellen von bis zu vier (sekundären) Replikatdatenbanken in verschiedenen Datencenterregionen. Sekundäre Datenbanken stehen zur Verfügung, wenn ein Datencenter ausgefallen ist oder keine Verbindung mit der primären Datenbank möglich ist.
 
 Die Georeplikation ist nur für Standard- und Premium-Datenbanken verfügbar.
 
-Standard-Datenbanken können über eine nicht lesbare sekundäre Datenbank verfügen und müssen die empfohlene Region verwenden. Premium-Datenbanken können bis zu vier lesbare sekundäre Datenbanken in beliebigen verfügbaren Regionen aufweisen.
+Standard-Datenbanken können über eine nicht lesbare sekundäre Datenbank verfügen und müssen die empfohlene Region verwenden. Premium-Datenbanken können bis zu vier lesbare sekundäre Datenbanken in beliebigen der verfügbaren Regionen aufweisen.
 
 Zum Konfigurieren der Georeplikation benötigen Sie Folgendes:
 
@@ -58,7 +58,7 @@ Nach der erfolgreichen Anmeldung werden einige Informationen auf dem Bildschirm 
 
 ### Auswählen des Azure-Abonnements
 
-Zum Auswählen des Abonnements benötigen Sie Ihre Abonnement-ID. Sie können die Abonnement-ID aus den Informationen im vorherigen Schritt kopieren. Falls Sie über mehrere Abonnements verfügen und mehr Details benötigen, können Sie auch das **Get-AzureSubscription**-Cmdlet ausführen und die gewünschten Abonnementinformationen aus dem Resultset kopieren. Das folgende Cmdlet verwendet die Abonnement-ID, um das aktuelle Abonnement festzulegen:
+Zum Auswählen des Abonnements benötigen Sie Ihre Abonnement-ID. Sie können die Abonnement-ID aus den Informationen im vorherigen Schritt kopieren. Falls Sie über mehrere Abonnements verfügen und mehr Details benötigen, können Sie auch das **Get-AzureRmSubscription**-Cmdlet ausführen und die gewünschten Abonnementinformationen aus dem Resultset kopieren. Das folgende Cmdlet verwendet die Abonnement-ID, um das aktuelle Abonnement festzulegen:
 
 	Select-AzureRmSubscription -SubscriptionId 4cac86b0-1e56-bbbb-aaaa-000000000000
 
@@ -123,14 +123,14 @@ Mit dem folgenden Befehl erstellen Sie eine lesbare sekundäre Datenbank der „
 
 ## Entfernen einer sekundären Datenbank
 
-Mit dem **Remove-AzureRmSqlDatabaseSecondary**-Cmdlet können Sie die Replikationspartnerschaft zwischen einer sekundären Datenbank und ihrer primären Datenbank dauerhaft beenden. Nach dem Beenden der Beziehung wird die sekundäre Datenbank eine Datenbank mit Lese-/Schreibzugriff. Wenn die Verbindung mit der sekundären Datenbank unterbrochen wird, ist der Befehl zwar erfolgreich, aber die sekundäre Datenbank wird erst mit Lese-/Schreibzugriff versehen, nachdem die Verbindung wiederhergestellt wurde. Weitere Informationen finden Sie unter [Remove-AzureRmSqlDatabaseSecondary](https://msdn.microsoft.com/library/mt603457.aspx) und [Dienstebenen](https://azure.microsoft.com/documentation/articles/sql-database-service-tiers/).
+Mit dem **Remove-AzureRmSqlDatabaseSecondary**-Cmdlet können Sie die Replikationspartnerschaft zwischen einer sekundären Datenbank und ihrer primären Datenbank dauerhaft beenden. Nach dem Beenden der Beziehung wird die sekundäre Datenbank eine Datenbank mit Lese-/Schreibzugriff. Wenn die Verbindung mit der sekundären Datenbank unterbrochen wird, ist der Befehl zwar erfolgreich, aber die sekundäre Datenbank wird erst mit Lese-/ Schreibzugriff versehen, nachdem die Verbindung wiederhergestellt wurde. Weitere Informationen finden Sie unter [Remove-AzureRmSqlDatabaseSecondary](https://msdn.microsoft.com/library/mt603457.aspx) und [Dienstebenen](sql-database-service-tiers.md).
 
 Dieses Cmdlet ersetzt „Stop-AzureSqlDatabaseCopy“ für die Replikation.
 
 Dieser Vorgang ähnelt einer erzwungenen Beendigung, die die Replikationsverknüpfung entfernt. Die sekundäre Datenbank ist nun eine eigenständige Datenbank, die vor der Beendigung nicht komplett repliziert wird. Alle verknüpften Daten werden auf den vorherigen primären und sekundären Datenbanken bereinigt, falls oder wenn sie verfügbar sind. Dieses Cmdlet gibt zurück, wenn die Replikationsverknüpfung entfernt wird.
 
 
-Zum Entfernen der sekundären Datenbank benötigen die Benutzer Schreibzugriff auf primäre und sekundäre Datenbanken entsprechend RBAC. Weitere Informationen finden Sie im Abschnitt zur rollenbasierten Zugriffssteuerung
+Zum Entfernen der sekundären Datenbank benötigen die Benutzer Schreibzugriff auf primäre und sekundäre Datenbanken entsprechend RBAC. Weitere Informationen finden Sie im Abschnitt zur rollenbasierten Zugriffssteuerung.
 
 Mit dem folgenden Code entfernen Sie die Replikationsverknüpfung der „mydb“-Datenbank zum Server „srv2“ der Ressourcengruppe „rg2“.
 
@@ -151,7 +151,7 @@ Der Befehl hat den folgenden Workflow:
 
 2. Vertauschen Sie die Rollen der beiden Datenbanken in der Georeplikationspartnerschaft.
 
-Durch diese Abfolge wird sichergestellt, dass kein Datenverlust auftritt. Es gibt einen kurzen Zeitraum, in dem beide Datenbanken während des Rollenwechsels (ca. 0 bis 25 Sekunden) nicht verfügbar sind. Unter normalen Umständen dauert der gesamte Vorgang nicht länger als eine Minute. Weitere Informationen finden Sie unter [Set AzureRmSqlDatabaseSecondary](https://msdn.microsoft.com/library/mt619393.aspx).
+Durch diese Abfolge wird sichergestellt, dass kein Datenverlust auftritt. Es gibt einen kurzer Zeitraum, in dem beide Datenbanken während des Rollenwechsels (ca. 0 bis 25 Sekunden) nicht verfügbar sind. Unter normalen Umständen dauert der gesamte Vorgang nicht länger als 1 Minute. Weitere Informationen finden Sie unter [Set AzureRmSqlDatabaseSecondary](https://msdn.microsoft.com/library/mt619393.aspx).
 
 
 > [AZURE.NOTE]Falls die primäre Datenbank bei Aufruf des Befehls nicht verfügbar ist, misslingt dieser mit der Fehlermeldung, dass der primäre Server nicht verfügbar ist. In seltenen Fällen ist es möglich, dass der Vorgang nicht abgeschlossen werden kann und festzustecken scheint. In diesem Fall kann der Benutzer den Befehl zum Erzwingen des Failovers (ungeplantes Failover) aufrufen und den Datenverlust akzeptieren.
@@ -170,7 +170,7 @@ Mit dem folgenden Befehl werden die Rollen der „mydb“-Datenbank auf dem Serv
 ## Auslösen eines ungeplanten Failovers von der primären Datenbank zur sekundären Datenbank
 
 
-Mit dem **Set-AzureRmSqlDatabaseSecondary**-Cmdlet mit **–Failover** und den **-AllowDataLoss**-Parametern können Sie eine sekundäre Datenbank auf ungeplante Weise zur neuen primären Datenbank heraufstufen und das Herabstufen der vorhandenen primären Datenbank zu einer sekundären Datenbank erzwingen, sobald die primäre Datenbank nicht mehr verfügbar ist.
+Mit dem **Set-AzureRmSqlDatabaseSecondary**-Cmdlet mit **–Failover**- und **-AllowDataLoss**-Parametern können Sie eine sekundäre Datenbank auf ungeplante Weise zur neuen primären Datenbank heraufstufen und das Herabstufen der vorhandenen primären Datenbank zu einer sekundären Datenbank erzwingen, sobald die primäre Datenbank nicht mehr verfügbar ist.
 
 Diese Funktion dient zur Notfallwiederherstellung, wenn das Wiederherstellen der Verfügbarkeit der Datenbank überaus wichtig und ein gewisser Datenverlust akzeptabel ist. Beim Auslösen eines erzwungenen Failovers wird die angegebene sekundäre Datenbank sofort zur primären Datenbank und beginnt mit dem Akzeptieren von Schreibtransaktionen. Sobald sich die ursprüngliche primäre Datenbank wieder mit dieser neuen primären Datenbank verbinden kann, wird eine inkrementelle Sicherung der ursprünglichen Datenbank erstellt. Die alte primäre Datenbank wird zu einer sekundären Datenbank der neuen primären Datenbank. Anschließend ist sie lediglich ein Replikat der neuen primären Datenbank.
 
@@ -218,4 +218,4 @@ Der folgende Befehl ruft den Status der Replikationsverknüpfung zwischen der pr
 - [Übersicht über die Geschäftskontinuität](sql-database-business-continuity.md)
 - [SQL-Datenbankdokumentation](https://azure.microsoft.com/documentation/services/sql-database/)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

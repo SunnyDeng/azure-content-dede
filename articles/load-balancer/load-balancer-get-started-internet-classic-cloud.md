@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/03/2015"
+   ms.date="11/30/2015"
    ms.author="joaoma" />
 
 # Erste Schritte zum Erstellen eines Load Balancers mit Internetzugriff für Clouddienste
@@ -27,6 +27,8 @@
 
 Clouddienste werden automatisch mit einem Lastenausgleich konfiguriert und können über das Dienstmodell angepasst werden.
 
+## Erstellen eines Load Balancers mit der Dienstdefinitionsdatei
+ 
 Sie können das Azure SDK für .NET 2.5 verwenden, um Ihren Clouddienst zu aktualisieren. Endpunkteinstellungen für Clouddienste werden in der Dienstdefinitionsdatei ([.csdef](https://msdn.microsoft.com/library/azure/gg557553.aspx)) vorgenommen.
 
 Das folgende Beispiel zeigt, wie eine "servicedefinition.csdef"-Datei für eine Cloudbereitstellung konfiguriert wird:
@@ -56,7 +58,7 @@ Wenn Sie den von einer Cloudbereitstellung generierten Codeabschnitt für die CS
 
 
 
-### Überprüfen des Integritätsstatus des Lastenausgleichs für Clouddienste
+## Überprüfen des Integritätsstatus des Lastenausgleichs für Clouddienste
 
 
 Im Folgenden finden Sie ein Beispiel für das Erstellen eines Integritätstests:
@@ -81,4 +83,4 @@ Die Testdefinition steuert auch die Häufigkeit des Tests. In unserem Fall teste
 
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

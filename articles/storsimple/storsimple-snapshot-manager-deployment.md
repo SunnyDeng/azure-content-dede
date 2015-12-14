@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="11/16/2015"
+   ms.date="12/01/2015"
    ms.author="v-sharos" />
 
 # Bereitstellen des StorSimple Snapshot Manager-MMC-Snap-Ins
@@ -127,7 +127,7 @@ Führen Sie die folgenden Schritte aus, um den StorSimple Snapshot Manager mit e
 
     ![Konfigurieren eines Geräts](./media/storsimple-snapshot-manager-deployment/HCS_SSM_config_device.png)
 
-3. Wählen Sie im Listenfeld **Gerät** die IP-Adresse des Microsoft Azure StorSimple-Geräts oder des virtuellen Geräts aus. Geben Sie im Textfeld **Kennwort** das StorSimple Snapshot Manager-Kennwort ein, das Sie im Azure-Portal für das Gerät erstellt haben. Klicken Sie auf **OK**.
+3. Wählen Sie im Listenfeld **Gerät** die IP-Adresse des Microsoft Azure StorSimple-Geräts oder des virtuellen Geräts aus. Geben Sie im Textfeld **Kennwort** das StorSimple Snapshot Manager-Kennwort ein, das Sie im klassischen Azure-Portal für das Gerät erstellt haben. Klicken Sie auf **OK**.
 
 4. Der StorSimple Snapshot Manager sucht nach dem von Ihnen angegebenen Gerät. Wenn das Gerät verfügbar ist, fügt der StorSimple Snapshot Manager eine Verbindung hinzu. Sie können [die Verbindung mit dem Gerät überprüfen](#to-verify-the-connection), um zu bestätigen, dass die Verbindung erfolgreich hinzugefügt wurde.
 
@@ -201,7 +201,7 @@ Führen Sie die folgenden Schritte aus, um eine Kopie der StorSimple Snapshot Ma
 
         ![Stop the StorSimple Manager service](./media/storsimple-snapshot-manager-deployment/HCS_SSM_stop_service.png)
 
-2. Navigieren Sie zu „C:\ProgramData\Microsoft\StorSimple\BACatalog“.
+2. Navigieren Sie zu „C:\\ProgramData\\Microsoft\\StorSimple\\BACatalog“.
 
     >[AZURE.NOTE]„ProgramData“ ist ein versteckter Ordner.
 
@@ -255,4 +255,4 @@ Um den StorSimple Snapshot Manager erneut zu installieren, führen Sie die Schri
 
 - Weitere Informationen zum Verwenden von StorSimple Snapshot Manager finden Sie unter [Verwenden von StorSimple Snapshot Manager zum Verwalten der StorSimple-Lösung](storsimple-snapshot-manager-admin.md).
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

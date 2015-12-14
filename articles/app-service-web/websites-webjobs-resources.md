@@ -31,7 +31,7 @@ Das WebJobs-Dashboard im Azure-Portal bietet leistungsstarke Verwaltungsfunktion
 ##<a name="getstarted"></a>Erste Schritte mit WebJobs und dem WebJobs-SDK
 
 * [Einführung in Azure WebJobs](http://www.hanselman.com/blog/IntroducingWindowsAzureWebJobs.aspx)
-* [Azure WebJobs are awesome and you should start using them right now!](http://www.troyhunt.com/2015/01/azure-webjobs-are-awesome-and-you.html) (Setzen Sie ab sofort das großartige Azure WebJobs ein; in englischer Sprache) (Blogbeitrag von Troy Hunt)
+* [Azure WebJobs are awesome and you should start using them right now! (Setzen Sie ab sofort das großartige Azure WebJobs ein; in englischer Sprache)](http://www.troyhunt.com/2015/01/azure-webjobs-are-awesome-and-you.html) (Blogbeitrag von Troy Hunt)
 * [Funktionen von Azure WebJobs](/blog/2014/10/22/webjobs-goes-into-full-production/)
 * [Was ist das WebJobs-SDK?](websites-dotnet-webjobs-sdk.md)
 * [Anleitungen für Hintergrundaufträge von Microsoft Patterns and Practices](https://github.com/mspnp/azure-guidance/blob/master/Background-Jobs.md)
@@ -54,11 +54,11 @@ Weitere Informationen finden Sie auch in den Abschnitten [Bereitstellen von WebJ
 ##<a name="deploy"></a>Bereitstellen von WebJobs
 
 * [Bereitstellen von Azure WebJobs mit Visual Studio](websites-dotnet-deploy-webjobs.md)
-* [Bereitstellen von WebJobs mithilfe des Azure-Verwaltungsportals](web-sites-create-web-jobs.md)
+* [Bereitstellen von WebJobs mithilfe des Azure-Portals](web-sites-create-web-jobs.md)
 * [Aktivieren der befehlszeilengesteuerten oder der kontinuierlichen Bereitstellung von Azure WebJobs](http://azure.microsoft.com/blog/2014/08/18/enabling-command-line-or-continuous-delivery-of-azure-webjobs/)
 * [Git-Bereitstellung einer .NET-Konsolen-App in Azure mithilfe von WebJobs](http://blog.amitapple.com/post/73574681678/git-deploy-console-app/)
-* [Deploying an F# WebJob to Azure](http://blogs.msdn.com/b/dave_crooks_dev_blog/archive/2015/02/18/deploying-f-web-job-to-azure.aspx) (Bereitstellen eines F#-Webauftrags in Azure; in englischer Sprache)
-* [Deploying custom services as Azure Webjobs](http://withouttheloop.com/articles/2015-06-23-deploying-custom-services-as-azure-webjobs/) (Bereitstellen benutzerdefinierter Dienste als Azure-WebJobs, in englischer Sprache)
+* [Deploying an F# WebJob to Azure (Bereitstellen eines F#-Webauftrags in Azure; in englischer Sprache)](http://blogs.msdn.com/b/dave_crooks_dev_blog/archive/2015/02/18/deploying-f-web-job-to-azure.aspx)
+* [Deploying custom services as Azure Webjobs (Bereitstellen benutzerdefinierter Dienste als Azure-WebJobs, in englischer Sprache)](http://withouttheloop.com/articles/2015-06-23-deploying-custom-services-as-azure-webjobs/)
 * Videos
 	* [Einführung in WebJobs-Tools für Visual Studio](http://channel9.msdn.com/Shows/Web+Camps+TV/Introducing-WebJobs-Tooling-for-Visual-Studio-with-Brady-Gaster) 
 	* [WebJobs-Tools und Remotedebuggen](http://channel9.msdn.com/Shows/Web+Camps+TV/WebJobs-GA-Series-Episode-1-WebJobs-Tooling-with-Brady-Gaster) 
@@ -66,9 +66,9 @@ Weitere Informationen finden Sie auch in den Abschnitten [Bereitstellen von WebJ
 ##<a name="schedule"></a>Planen von WebJobs
 
 * [Das Dialogfeld "Azure-Webauftrag hinzufügen"](websites-dotnet-deploy-webjobs.md#configure)
-* [Erstellen geplanter WebJobs im Azure-Verwaltungsportal](web-sites-create-web-jobs.md#CreateScheduled)
-* [Hooking up a scheduler job to a WebJob](http://blog.davidebbo.com/2015/05/scheduled-webjob.html) (Einbinden eines Zeitplanungsauftrags in einen WebJob, in englischer Sprache)
-* [Scheduling Azure WebJobs with cron expressions](http://blog.amitapple.com/post/2015/06/scheduling-azure-webjobs/) (Planen von Azure WebJobs mit Cron-Ausdrücken, in englischer Sprache)
+* [Erstellen geplanter WebJobs im Azure-Portal](web-sites-create-web-jobs.md#CreateScheduled)
+* [Hooking up a scheduler job to a WebJob (Einbinden eines Zeitplanungsauftrags in einen WebJob, in englischer Sprache)](http://blog.davidebbo.com/2015/05/scheduled-webjob.html)
+* [Scheduling Azure WebJobs with cron expressions (Planen von Azure WebJobs mit Cron-Ausdrücken, in englischer Sprache)](http://blog.amitapple.com/post/2015/06/scheduling-azure-webjobs/)
 
 ##<a name="debug"></a>Testen und Debuggen von WebJobs
 
@@ -107,7 +107,7 @@ Weitere Informationen finden Sie auch in den Abschnitten [Bereitstellen von WebJ
 ##<a name="additionalsdk"></a>Zusätzliche Ressourcen für das WebJobs-SDK
 
 * [Quellcode des WebJobs-SDK](https://github.com/Azure/azure-webjobs-sdk)
-* [How does [BlobTrigger] work?](http://blogs.msdn.com/b/jmstall/archive/2014/04/17/how-does-blobinput-work.aspx) (Wie funktioniert [BlobTrigger]?; in englischer Sprache) 
+* [How does [BlobTrigger] work? (Wie funktioniert [BlobTrigger]?; in englischer Sprache)](http://blogs.msdn.com/b/jmstall/archive/2014/04/17/how-does-blobinput-work.aspx) 
 * [Erweiterte Bindungen mit dem Azure-WebJobs-SDK](http://victorhurdugaci.com/advanced-bindings-with-the-windows-azure-web-jobs-sdk/)
 * [Webauftrag zum Hochladen von FREB-Dateien in Azure Storage mithilfe des WebJobs-SDK](http://thenextdoorgeek.com/post/WAWS-WebJob-to-upload-FREB-files-to-Azure-Storage-using-the-WebJobs-SDK)
 * [Hosten von Azure WebJobs außerhalb von Azure mit den Protokollierungsvorteilen eines auf Azure geosteten Webauftrags](http://bypassion.dk/?p=510)
@@ -135,11 +135,11 @@ Weitere Informationen finden Sie auch in den Abschnitten [Bereitstellen von WebJ
 * [Forum für Azure App Service-Web-Apps](http://social.msdn.microsoft.com/Forums/azure/home?forum=windowsazurewebsitespreview)
 * [User Voice-Website für Azure-Web-Apps](http://feedback.azure.com/forums/169385-websites)
 * [Twitter](http://twitter.com/). Verwenden Sie das Hashtag #AzureWebJobs
-* [Report a WebJobs bug or issue](https://github.com/projectkudu/kudu/wiki/Reporting-WebJobs-issues) (Melden eines WebJobs-Fehlers oder -Problems; in englischer Sprache)
+* [Report a WebJobs bug or issue (Melden eines WebJobs-Fehlers oder -Problems; in englischer Sprache)](https://github.com/projectkudu/kudu/wiki/Reporting-WebJobs-issues)
 
 ## Änderungen
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

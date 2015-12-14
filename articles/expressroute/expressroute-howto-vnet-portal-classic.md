@@ -23,7 +23,7 @@ Diese Schritte führen Sie durch die Konfiguration eines virtuellen Netzwerks un
 
 >[AZURE.IMPORTANT]Sie sollten wissen, dass Azure derzeit mit zwei Bereitstellungsmodellen arbeitet: der Bereitstellung mit dem Ressourcen-Manager und der klassischen Bereitstellung. Bevor Sie Ihre Konfiguration beginnen, sollten Sie sicherstellen, dass Sie die Bereitstellungsmodelle und -tools verstehen. Informationen zu den Bereitstellungsmodellen finden Sie unter [Azure-Bereitstellungsmodelle](../azure-classic-rm.md).
 
-1. Melden Sie sich beim **Azure-Portal** an.
+1. Melden Sie sich beim **klassischen Azure-Portal** an.
 
 2. Klicken Sie unten links auf dem Bildschirm auf **Neu**. Klicken Sie im Navigationsbereich auf **Netzwerkdienste** und dann auf **Virtuelles Netzwerk**. Klicken Sie auf **Custom Create**, um den Konfigurationsassistenten zu starten.
 
@@ -53,7 +53,7 @@ Diese Schritte führen Sie durch die Konfiguration eines virtuellen Netzwerks un
 	- **Subnetz hinzufügen** – Umfasst Start-IP und Anzahl Adressen. Zusätzliche Subnetze sind nicht erforderlich, aber Sie können ein getrenntes Subnetz für virtuelle Computer erstellen, die über dynamische IP-Adressen (DIPs) verfügen sollen. Vielleicht möchten Sie jedoch auch Ihre virtuellen Computer in einem Subnetz zusammenfassen, das von Ihren PaaS-Instanzen getrennt ist.
 	- **Gatewaysubnetz hinzufügen** – Klicken Sie auf diese Option, um das Gatewaysubnetz hinzuzufügen. Das Gatewaysubnetz wird nur für das Gateway des virtuellen Netzwerks verwendet und ist für diese Konfiguration erforderlich. ***Wichtig:*** Das Gatewaysubnetzpräfix für ExpressRoute muss gleich /28 oder kleiner (/27, /26 usw.) sein.
 
-7. Klicken Sie auf das Häkchen am rechten unteren Rand der Seite, damit das virtuelle Netzwerk erstellt wird. Sobald der Vorgang abgeschlossen ist, wird im Verwaltungsportal auf der Seite **Netzwerke** unter **Status** der Eintrag **Erstellt** angezeigt.
+7. Klicken Sie auf das Häkchen am rechten unteren Rand der Seite, damit das virtuelle Netzwerk erstellt wird. Sobald der Vorgang abgeschlossen ist, wird im klassischen Azure-Portal auf der Seite **Netzwerke** unter **Status** der Eintrag **Erstellt** angezeigt.
 
 8. Klicken Sie auf der Seite **Netzwerke** auf das eben erstellte virtuelle Netzwerk, und klicken Sie dann auf **Dashboard**.
 9. Klicken Sie unten auf der Seite "Dashboard" auf **GATEWAY ERSTELLEN**, und klicken Sie dann auf **Ja**.
@@ -70,4 +70,4 @@ Diese Schritte führen Sie durch die Konfiguration eines virtuellen Netzwerks un
 
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

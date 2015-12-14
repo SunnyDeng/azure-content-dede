@@ -118,7 +118,7 @@ Geben Sie zuerst den Namen der Ressourcengruppe, den Azure-Standort und den Name
 
 Stellen Sie dann eine Verbindung mit dem virtuellen Computer DC1 her.
 
-1.	Klicken Sie im Azure-Vorschauportal im linken Bereich auf **Alle durchsuchen**, und klicken Sie in der Liste **Durchsuchen** auf **Virtuelle Computer** und dann auf den virtuellen Computer **DC1**.  
+1.	Klicken Sie im Azure-Portal im linken Bereich auf **Alle durchsuchen**, und klicken Sie in der Liste **Durchsuchen** auf **Virtuelle Computer** und dann auf den virtuellen Computer **DC1**.  
 2.	Klicken Sie unter **DC1** auf **Verbinden**.
 3.	Öffnen Sie die heruntergeladene Datei „DC1.rdp“, wenn Sie dazu aufgefordert werden.
 4.	Wenn ein Meldungsfeld der Remotedesktopverbindung angezeigt wird, klicken Sie auf **Verbinden**.
@@ -147,7 +147,7 @@ Als Nächstes konfigurieren Sie DC1 als Domänencontroller und DNS-Server für d
 
 Stellen Sie nach dem Neustart des virtuellen Computers DC1 erneut eine Verbindung mit DC1 her.
 
-1.	Klicken Sie im Azure-Vorschauportal im linken Bereich auf „Alle durchsuchen“, und klicken Sie in der Liste „Durchsuchen“ auf „Virtuelle Computer“ und dann auf den virtuellen Computer „DC1“.
+1.	Klicken Sie im Azure-Portal im linken Bereich auf „Alle durchsuchen“, und klicken Sie in der Liste „Durchsuchen“ auf „Virtuelle Computer“ und dann auf den virtuellen Computer „DC1“.
 2.	Klicken Sie unter „DC1“ auf „Verbinden“.
 3.	Wenn Sie zum Öffnen von „DC1.rdp“ aufgefordert werden, klicken Sie auf **Öffnen**.
 4.	Wenn ein Meldungsfeld der Remotedesktopverbindung angezeigt wird, klicken Sie auf **Verbinden**.
@@ -310,4 +310,4 @@ Zum Starten der virtuellen Computer mit Azure PowerShell in der richtigen Reihen
 	Start-AzureRMVM -ResourceGroupName $rgName -Name "APP1"
 	Start-AzureRMVM -ResourceGroupName $rgName -Name "CLIENT1"
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

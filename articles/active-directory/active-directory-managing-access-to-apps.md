@@ -71,4 +71,4 @@ Zu den Azure AD-Features zur gemeinsamen Nutzung von Konten gehören folgende Fu
 - [Schützen von Apps durch bedingten Zugriff](active-directory-conditional-access.md)
 - [Self-Service-Gruppenverwaltung/SSAA](active-directory-accessmanagement-self-service-group-management.md)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

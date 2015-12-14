@@ -84,7 +84,7 @@ Beachten Sie, dass sich die Bereitstellung von Widevine-Lizenzübermittlungsdien
 
 ##<a id="oct_changes_15"></a>Version vom Oktober 2015
 
-Azure Media Services (AMS) ist jetzt in den folgenden Rechenzentren verfügbar: „Brasilien, Süden“, „Indien, Westen“, „Indien, Süden“ und „Indien, Mitte“. Sie können das Azure-Verwaltungsportal jetzt zum [Erstellen von Media Service-Konten](media-services-create-account.md#create-a-media-services-account-using-quick-create) und zum Durchführen verschiedener Aufgaben verwenden, die [hier](https://azure.microsoft.com/documentation/services/media-services/) beschrieben werden. Live Encoding ist in diesen Datencentern jedoch nicht aktiviert. Darüber hinaus sind nicht alle Arten von für die Codierung reservierten Einheiten in diesen Datencentern verfügbar.
+Azure Media Services (AMS) ist jetzt in den folgenden Rechenzentren verfügbar: „Brasilien, Süden“, „Indien, Westen“, „Indien, Süden“ und „Indien, Mitte“. Sie können das klassische Azure-Portal jetzt zum [Erstellen von Media Service-Konten](media-services-create-account.md#create-a-media-services-account-using-quick-create) und zum Durchführen verschiedener Aufgaben verwenden, die [hier](https://azure.microsoft.com/documentation/services/media-services/) beschrieben werden. Live Encoding ist in diesen Datencentern jedoch nicht aktiviert. Darüber hinaus sind nicht alle Arten von für die Codierung reservierten Einheiten in diesen Datencentern verfügbar.
 
 - „Brasilien, Süden“: Für die Codierung reservierte Einheiten stehen nur in den Versionen Standard und Basic zur Verfügung.
 - „Indien, Westen“, „Indien, Süden“ und „Indien, Mitte“: Für die Codierung reservierte Einheiten stehen nur in der Basic-Version zur Verfügung.
@@ -275,15 +275,15 @@ Für Media Services SDK für .NET ist jetzt Version 3.0.0.7 verfügbar.
 ### <a id="sept_14_breaking_changes"></a>Wichtige Änderungen
 
 * **Origin** wurde in [StreamingEndpoint] umbenannt.
-* Eine Änderung des Standardverhaltens bei Verwendung des **Azure-Verwaltungsportals** zum Codieren und Veröffentlichen von MP4-Dateien. 
+* Eine Änderung des Standardverhaltens bei Verwendung des **klassischen Azure-Portals** zum Codieren und Veröffentlichen von MP4-Dateien.
 
-	Zuvor wurde bei Verwendung des Verwaltungsportals zum Veröffentlichen eines MP4-Videoobjekts mit einer einzelnen Datei eine SAS-URL erstellt (SAS-URLs ermöglichen das Herunterladen des Videos aus einem Blobspeicher). Derzeit verweist die generierte URL bei Verwendung des Verwaltungsportals zum Codieren und Veröffentlichen eines MP4-Videoobjekts mit einer einzelnen Datei auf einen Azure Media Services-Streaming-Endpunkt. Diese Änderung hat keinerlei Einfluss auf MP4-Videos, die direkt in Media Services hochgeladen und ohne Codierung durch Azure Media Services veröffentlicht werden.
-	
-	Derzeit stehen Ihnen die folgenden beiden Optionen zur Verfügung, um das Problem zu beheben.
-	
-	* Aktivieren von Streaming-Einheiten und Verwenden der dynamischen Paketerstellung, um das .mp4-Objekt als Smooth-Streaming-Präsentation zu streamen
-	
-	* Erstellen einer SAS-URL zum Herunterladen (oder schrittweisen Abspielen) der .mp4 Weitere Informationen zum Erstellen eines SAS-Locators finden Sie unter [Bereitstellen von Inhalten].
+Zuvor wurde bei Verwendung des klassischen Azure-Portals zum Veröffentlichen eines MP4-Videoobjekts mit einer einzelnen Datei eine SAS-URL erstellt (SAS-URLs ermöglichen das Herunterladen des Videos aus einem Blobspeicher). Derzeit verweist die generierte URL bei Verwendung des klassischen Azure-Portals zum Codieren und Veröffentlichen eines MP4-Videoobjekts mit einer einzelnen Datei auf einen Azure Media Services-Streaming-Endpunkt. Diese Änderung hat keinerlei Einfluss auf MP4-Videos, die direkt in Media Services hochgeladen und ohne Codierung durch Azure Media Services veröffentlicht werden.
+
+Derzeit stehen Ihnen die folgenden beiden Optionen zur Verfügung, um das Problem zu beheben.
+
+* Aktivieren von Streaming-Einheiten und Verwenden der dynamischen Paketerstellung, um das .mp4-Objekt als Smooth-Streaming-Präsentation zu streamen
+
+* Erstellen einer SAS-URL zum Herunterladen (oder schrittweisen Abspielen) der .mp4 Weitere Informationen zum Erstellen eines SAS-Locators finden Sie unter [Bereitstellen von Inhalten].
 
 
 ### <a id="sept_14_GA_changes"></a>Neue Funktionen/Szenarien, die Teil der GA-Version sind
@@ -602,7 +602,7 @@ Die folgende Funktion war neu in der November-Version des SDK.
 [Preview features]: http://azure.microsoft.com/services/preview/
 [Media Services PlayReady-Lizenzvorlage – Übersicht]: http://msdn.microsoft.com/library/azure/dn783459.aspx
 [Streaming Storage Encrypted Content]: http://msdn.microsoft.com/library/azure/dn783451.aspx
-[Azure Management Portal]: https://manage.windowsazure.com
+[Azure Classic Portal]: https://manage.windowsazure.com
 [Dynamische Paketerstellung]: http://msdn.microsoft.com/library/azure/jj889436.aspx
 [Nick Drouin's Blog]: http://blog-ndrouin.azurewebsites.net/hls-v3-new-old-thing/
 [Schützen von Smooth Streaming und MPEG DASH mit PlayReady]: http://msdn.microsoft.com/library/azure/dn189154.aspx
@@ -621,4 +621,4 @@ Die folgende Funktion war neu in der November-Version des SDK.
 [Verarbeiten von Media Services-Auftragsbenachrichtigungen]: http://msdn.microsoft.com/library/azure/dn261241.aspx
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

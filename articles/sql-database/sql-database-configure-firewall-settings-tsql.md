@@ -22,7 +22,7 @@
 
 
 > [AZURE.SELECTOR]
-- [Azure Preview Portal](sql-database-configure-firewall-settings.md)
+- [Azure Portal](sql-database-configure-firewall-settings.md)
 - [TSQL](sql-database-configure-firewall-settings-tsql.md)
 - [PowerShell](sql-database-configure-firewall-settings-powershell.md)
 - [REST API](sql-database-configure-firewall-settings-rest.md)
@@ -35,7 +35,7 @@ Microsoft Azure SQL-Datenbank verwendet Firewallregeln, um Verbindungen mit Ihre
 
 ## Verwalten von Firewallregeln auf Serverebene über Transact-SQL
 
-1. Starten Sie ein Abfragefenster über das Verwaltungsportal oder über SQL Server Management Studio.
+1. Starten Sie ein Abfragefenster über das klassische Portal oder über SQL Server Management Studio.
 2. Stellen Sie sicher, dass Sie mit der master-Datenbank verbunden sind.
 3. Firewallregeln auf Serverebene können innerhalb des Abfragefensters ausgewählt, erstellt, aktualisiert oder gelöscht werden.
 4. Führen Sie zum Erstellen oder Aktualisieren von Firewallregeln auf Serverebene die gespeicherte Prozedur "sp\_set\_firewall\_rule" aus. Im folgenden Beispiel wird ein Bereich von IP-Adressen auf dem Server "Contoso" aktiviert.<br/>Zeigen Sie zunächst die vorhandenen Regeln an.
@@ -54,7 +54,7 @@ Microsoft Azure SQL-Datenbank verwendet Firewallregeln, um Verbindungen mit Ihre
  
 ## Firewallregeln auf Datenbankebene
 
-1. Starten Sie nach dem Erstellen einer Firewall auf Serverebene für Ihre IP-Adresse ein Abfragefenster über das Verwaltungsportal oder über SQL Server Management Studio.
+1. Starten Sie nach dem Erstellen einer Firewall auf Serverebene für Ihre IP-Adresse ein Abfragefenster über das klassische Portal oder über SQL Server Management Studio.
 2. Stellen Sie eine Verbindung mit der Datenbank her, für die Sie eine Firewallregel auf Datenbankebene erstellen möchten.
 
 	Um eine neue Firewallregel auf Datenbankebene zu erstellen oder eine vorhandene zu ändern, führen Sie die gespeicherte Prozedur "sp\_set\_database\_firewall\_rule" aus. Im folgenden Beispiel wird eine neue Firewallregel mit dem Namen "ContosoFirewallRule" erstellt.
@@ -70,4 +70,4 @@ Microsoft Azure SQL-Datenbank verwendet Firewallregeln, um Verbindungen mit Ihre
 
 Ein Lernprogramm zum Erstellen einer Datenbank finden Sie unter [Erstellen einer ersten Azure SQL-Datenbank](sql-database-get-started.md). Hilfe beim Herstellen einer Verbindung mit Azure SQL-Datenbank von Open-Source-Anwendungen oder Anwendungen von Drittanbietern finden Sie unter [Richtlinien zum programmgesteuerten Herstellen einer Verbindung mit Azure SQL-Datenbank](https://msdn.microsoft.com/library/azure/ee336282.aspx). Informationen zum Navigieren zu Datenbanken finden Sie unter [Verwalten von Datenbanken, Anmeldungen und Benutzern in der Azure SQL-Datenbank](https://msdn.microsoft.com/library/azure/ee336235.aspx).
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

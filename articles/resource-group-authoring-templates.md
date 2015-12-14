@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="11/13/2015"
+   ms.date="11/30/2015"
    ms.author="tomfitz"/>
 
 # Erstellen von Azure-Ressourcen-Manager-Vorlagen
@@ -228,7 +228,7 @@ Sie definieren Ressourcen mit der folgenden Struktur:
 
 | Elementname | Erforderlich | Beschreibung
 | :----------------------: | :------: | :----------
-| apiVersion | Ja | Die Version der API, die die Ressource unterstützt. Die verfügbaren Versionen und Schemas für Ressourcen finden Sie unter [Schemas des Azure-Ressourcen-Managers](https://github.com/Azure/azure-resource-manager-schemas).
+| apiVersion | Ja | Version der REST-API zum Erstellen der Ressource. Wie Sie die verfügbaren Versionsnummern für einen bestimmten Ressourcentyp ermitteln, erfahren Sie unter [Unterstützte API-Versionen](../resource-manager-supported-services/#supported-api-versions).
 | type | Ja | Der Typ der Ressource. Dieser Wert ist eine Kombination aus dem Namespace des Ressourcenanbieters und dem Ressourcentyp, den der Ressourcenanbieter unterstützt.
 | Name | Ja | Der Name der Ressource. Der Name muss die Einschränkungen für URI-Komponenten laut Definition in RFC3986 erfüllen.
 | location | Nein | Unterstützte Standorte der angegebenen Ressource
@@ -418,4 +418,4 @@ Die folgende Vorlage stellt eine Web-App bereit und stattet sie mit Code aus ein
 - Ein ausführliches Beispiel für die Bereitstellung einer Anwendung finden Sie unter [Vorhersagbares Bereitstellen von Microservices in Azure](app-service-web/app-service-deploy-complex-application-predictably.md).
 - Die verfügbaren Schemas finden Sie unter [Schemas des Azure-Ressourcen-Managers](https://github.com/Azure/azure-resource-manager-schemas).
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

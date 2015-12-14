@@ -159,7 +159,7 @@ Fügen Sie dem Befehlssatz einen Block hinzu, um den Erstellungsprozess für die
 
 	New-AzureVM –ServiceName "<short name of the cloud service>" -VMs $vm1
 
-Der kurze Name des Clouddiensts ist der Name in der Liste der Azure Cloud Services im Azure-Portal oder in der Liste der Ressourcengruppen im Azure-Vorschauportal.
+Der kurze Name des Clouddiensts ist der Name in der Liste der Azure Cloud Services im klassischen Azure-Portal oder in der Liste der Ressourcengruppen im Azure-Portal.
 
 **Option 2**: Erstellen Sie den virtuellen Computer in einem vorhandenen Clouddienst und virtuellen Netzwerk.
 
@@ -178,7 +178,7 @@ Informieren Sie sich nach dem Erstellen des virtuellen Computers unter [Anmelden
 Wenn Sie den Befehlssatz erneut verwenden möchten, können Sie:
 
 - diesen Befehlssatz als PowerShell-Skriptdatei (*.ps1) speichern
-- diesen Befehlssatz als Azure-Automatisierungsrunbook im Bereich **Automatisierung** des Azure-Portals speichern
+- diesen Befehlssatz als Azure-Automatisierungsrunbook im Bereich **Automatisierung** des klassischen Azure-Portals speichern
 
 ## <a id="examples"></a>Beispiele
 
@@ -280,4 +280,4 @@ Hier finden Sie den entsprechenden Azure PowerShell-Befehlssatz zum Erstellen di
 
 [Verwenden von Azure PowerShell zum Erstellen und Vorabkonfigurieren Windows-basierter virtueller Computer](virtual-machines-ps-create-preconfigure-windows-vms.md)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

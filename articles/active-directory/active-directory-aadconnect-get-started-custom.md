@@ -51,7 +51,7 @@ Berechtigungen | Standardmäßig erstellt Azure AD Connect lokal auf dem Server 
 
 
 ## Benutzeranmeldung
-Nach dem Installieren der erforderlichen Komponenten werden Sie aufgefordert, die Methode für das einmalige Anmelden anzugeben, die die Benutzer verwenden. Die folgende Tabelle enthält eine kurze Beschreibung der verfügbaren Optionen.
+Nach dem Installieren der erforderlichen Komponenten werden Sie aufgefordert, die Methode für das einmalige Anmelden anzugeben, die die Benutzer verwenden. Die folgende Tabelle enthält eine kurze Beschreibung der verfügbaren Optionen. Eine vollständige Beschreibung der Anmeldemethoden finden Sie unter [Benutzeranmeldung](active-directory-aadconnect-user-signin.md).
 
 ![Benutzeranmeldung](./media/active-directory-aadconnect-get-started-custom/usersignin.png)
 
@@ -242,8 +242,10 @@ Führen Sie darüber hinaus die folgenden Überprüfungsschritte aus:
 
 
 ## Nächste Schritte
+Melden Sie sich nach Abschluss der Installation von Windows ab und erneut wieder an, ehe Sie den Synchronisierungsdienst-Manager oder Synchronisierungsregel-Editor verwenden.
+
 Nachdem Sie Azure AD Connect installiert haben, können Sie [die Installation überprüfen und Lizenzen zuweisen](active-directory-aadconnect-whats-next.md).
 
-Weitere Informationen zum [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md).
+Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

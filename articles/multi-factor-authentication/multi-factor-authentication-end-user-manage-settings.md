@@ -134,9 +134,9 @@ Wenn Sie mehrere Überprüfungscodes erhalten haben, funktioniert immer nur der 
 Falls Sie zuvor einen Ersatzanschluss konfiguriert haben, wird empfohlen, den Vorgang zu wiederholen, indem Sie dieses Telefon auswählen, wenn Sie auf der Anmeldeseite dazu aufgefordert werden. Wenn Sie keine andere Methode konfiguriert haben, bitten Sie Ihren Administrator, Ihre Einstellungen zu löschen, damit Sie bei der nächsten Anmeldung aufgefordert werden, die [Multi-Factor Authentication erneut einzurichten](multi-factor-authentication-manage-users-and-devices.md#require-selected-users-to-provide-contact-methods-again).
 
 ##App-Kennwörter funktionieren nicht
-Stellen Sie zunächst sicher, dass Sie das App-Kennwort richtig eingegeben haben. Wenn es weiterhin nicht funktioniert, versuchen Sie, sich anzumelden, und [erstellen Sie ein neues App-Kennwort](multi-factor-authentication-end-user-app-passwords). Wenn dies nicht funktioniert, bitten Sie den Administrator, [Ihre vorhandenen App-Kennwörter zu löschen](multi-factor-authentication-manage-users-and-devices.md#delete-users-existing-app-passwords). Erstellen Sie anschließend ein neues, und nutzen Sie dieses.
+Stellen Sie zunächst sicher, dass Sie das App-Kennwort richtig eingegeben haben. Wenn es weiterhin nicht funktioniert, versuchen Sie, sich anzumelden, und [erstellen Sie ein neues App-Kennwort](multi-factor-authentication-end-user-app-passwords.md). Wenn dies nicht funktioniert, bitten Sie den Administrator, [Ihre vorhandenen App-Kennwörter zu löschen](multi-factor-authentication-manage-users-and-devices.md#delete-users-existing-app-passwords). Erstellen Sie anschließend ein neues, und nutzen Sie dieses.
 
 ##Wie entferne ich Azure Authenticator von meinem alten Gerät, und wie wechsle ich zu einem neuen?
 Wenn Sie die App von Ihrem Gerät deinstallieren oder das Gerät auf die Werkseinstellungen zurücksetzen, wird die Aktivierung im Back-End nicht entfernt. Befolgen Sie die Schritte unter [Wechseln zu einem neuen Gerät](multi-factor-authentication-azure-authenticator.md#how-to-move-to-the-new-azure-authenticator-app).
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

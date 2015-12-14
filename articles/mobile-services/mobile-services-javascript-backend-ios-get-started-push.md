@@ -33,7 +33,7 @@ In diesem Thema wird das Hinzufügen von Pushbenachrichtigungen zum [Schnellstar
 
 ## <a id="update-scripts"></a>Aktualisieren des Back-End-Skripts zum Senden von Pushbenachrichtigungen
 
-* Klicken Sie im Verwaltungsportal auf die Registerkarte **Daten** und anschließend auf die Tabelle **TodoItem**. Klicken Sie unter **TodoItem** auf die Registerkarte **Skript**, und wählen Sie **Einfügen** aus. Daraufhin wird die Funktion angezeigt, die aufgerufen wird, wenn etwas in die Tabelle **TodoItem** eingefügt wird.
+* Klicken Sie im [klassischen Azure-Portal] auf die Registerkarte **Daten** und dann auf **TodoItem**. Klicken Sie unter **TodoItem** auf die Registerkarte **Skript**, und wählen Sie **Einfügen** aus. Daraufhin wird die Funktion angezeigt, die aufgerufen wird, wenn etwas in die Tabelle **TodoItem** eingefügt wird.
 
 * Ersetzen Sie die Einfügefunktion durch folgenden Code. Klicken Sie dann auf **Speichern**. Auf diese Weise wird ein neues Einfügeskript registriert, das über das [apns-Objekt] eine Pushbenachrichtigung (den eingefügten Text) zum in der Einfügeanforderung angegebenen Gerät sendet. Dieses Skript verzögert die Übermittlung der Benachrichtigung, um Ihnen Zeit zum Schließen der App für den Empfang einer Pushbenachrichtigung zu geben.
 
@@ -106,7 +106,7 @@ In diesem Thema wird das Hinzufügen von Pushbenachrichtigungen zum [Schnellstar
 [Apple Push Notification Service]: http://go.microsoft.com/fwlink/p/?LinkId=272584
 [Erste Schritte mit Mobile Services]: mobile-services-ios-get-started.md
 [Get started with authentication]: mobile-services-ios-get-started-users.md
-[Azure Management Portal]: https://manage.windowsazure.com/
+[klassischen Azure-Portal]: https://manage.windowsazure.com/
 [apns-Objekt]: http://go.microsoft.com/fwlink/p/?LinkId=272333
 
 [Mobile Services server script reference]: http://go.microsoft.com/fwlink/?LinkId=262293
@@ -117,4 +117,4 @@ In diesem Thema wird das Hinzufügen von Pushbenachrichtigungen zum [Schnellstar
 [Send template-based notifications to subscribers]: ../notification-hubs-ios-send-localized-breaking-news.md
 [Mobile Services Objective-C how-to conceptual reference]: mobile-services-windows-dotnet-how-to-use-client-library.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

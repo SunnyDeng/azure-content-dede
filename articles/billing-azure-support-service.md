@@ -21,8 +21,8 @@
 #Wie erwerbe ich Azure-Support?
 Azure bietet flexible Supportoptionen für alle Kunden – von Entwicklern, die am Anfang ihrer Reise in die Cloud stehen, bis hin zu Unternehmen, die für den Geschäftsbetrieb wichtige Anwendungen bereitstellen. Der Support für Probleme bei der Abrechnungs- und Abonnementverwaltung wird kostenlos angeboten, während Sie technischen Support von Azure ein Azure Support-Abonnement erwerben müssen.
 
-Um weitere Informationen zu erhältlichen Azure-Abonnements zu erhalten, klicken Sie [hier](https://azure.microsoft.com/de-DE/support/legal/offer-details/). Um technischen Support zu erwerben, besuchen Sie die [Seite Azure-Supportpläne](https://azure.microsoft.com/de-DE/support/plans/).
+Um weitere Informationen zu erhältlichen Azure-Abonnements zu erhalten, klicken Sie [hier](https://azure.microsoft.com/support/legal/offer-details/). Um technischen Support zu erwerben, besuchen Sie die [Seite mit den Azure-Supportplänen](https://azure.microsoft.com/support/plans/).
 
-Es stehen auch Ressourcen zur Selbsthilfe zur Verfügung. Sehen hier [häufig gestellte Fragen ](https://azure.microsoft.com/de-DE/support/faq/) zum Azure-Support und greifen Sie allen „Azure.com“-Seiten aus der Registerkarte „Dokumentation“ auf Support-Artikel zu.
+Es stehen auch Ressourcen zur Selbsthilfe zur Verfügung. Sehen Sie sich hier [häufig gestellte Fragen ](https://azure.microsoft.com/support/faq/) zum Azure-Support an, und greifen Sie auf allen „Azure.com“-Seiten auf der Registerkarte „Dokumentation“ auf Supportartikel zu.
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

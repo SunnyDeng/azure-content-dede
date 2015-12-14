@@ -111,7 +111,7 @@ Führen Sie nach der Bereitstellung der richtigen Werte den daraus resultierende
 	$vm=Set-AzureRMVMOSDisk -VM $vm -Name "OSDisk" -VhdUri $osDiskUri -CreateOption fromImage
 	New-AzureRMVM -ResourceGroupName $rgName -Location $locName -VM $vm
 
-> [AZURE.NOTE]Da diese virtuellen Computer für eine Intranetanwendung gedacht sind, wird ihnen keine öffentliche IP-Adresse oder ein DNS-Domänenname zugewiesen, und sie sind nicht über das Internet erreichbar. Dies bedeutet jedoch auch, dass Sie damit aus dem Azure-Vorschauportal keine Verbindung herstellen können. Die Schaltfläche **Verbinden** ist nicht verfügbar, wenn Sie die Eigenschaften des virtuellen Computers anzeigen. Verwenden Sie die Remotedesktopverbindung oder ein anderes Remotedesktoptool zum Herstellen einer Verbindung mit dem virtuellen Computer über seine private IP-Adresse oder den Intranet-DNS-Namen.
+> [AZURE.NOTE]Da diese virtuellen Computer für eine Intranetanwendung gedacht sind, wird ihnen keine öffentliche IP-Adresse oder ein DNS-Domänenname zugewiesen, und sie sind nicht über das Internet erreichbar. Dies bedeutet jedoch auch, dass Sie damit über das Azure-Portal keine Verbindung herstellen können. Die Schaltfläche **Verbinden** ist nicht verfügbar, wenn Sie die Eigenschaften des virtuellen Computers anzeigen. Verwenden Sie die Remotedesktopverbindung oder ein anderes Remotedesktoptool zum Herstellen einer Verbindung mit dem virtuellen Computer über seine private IP-Adresse oder den Intranet-DNS-Namen.
 
 ## Konfigurieren des ersten Domänencontrollers
 
@@ -165,13 +165,13 @@ Sie werden aufgefordert, die Anmeldeinformationen eines Domänenadministratorkon
 
 Anschließend müssen Sie die DNS-Server für Ihr virtuelles Netzwerk aktualisieren, damit Azure den virtuellen Computern die IP-Adressen der beiden neuen Domänencontroller als deren DNS-Server zuweist. Die für dieses Verfahren benötigten Werte stammen aus Tabelle V (Einstellungen Ihres virtuellen Netzwerks) und Tabelle M (für Ihre virtuellen Computer).
 
-1.	Klicken Sie im linken Bereich des Azure-Vorschauportals auf **Alle durchsuchen > Virtuelle Netzwerke**, und klicken Sie dann auf den Namen Ihres virtuellen Netzwerks (Tabelle V – Element 1 – Wertspalte).
+1.	Klicken Sie im linken Bereich des Azure-Portals auf **Alle durchsuchen > Virtuelle Netzwerke**, und klicken Sie dann auf den Namen Ihres virtuellen Netzwerks (Tabelle V – Element 1 – Wertspalte).
 2.	Klicken Sie im Bereich für Ihr virtuelles Netzwerk auf **Alle Einstellungen**.
 3.	Klicken Sie im Bereich **Einstellungen** auf **DNS-Server**.
 4.	Geben Sie im Bereich **DNS-Server** Folgendes ein:
 	- Für **Primärer DNS-Server**: Tabelle V – Element 6 – Wertspalte
 	- Für **Sekundärer DNS-Server**: Tabelle V – Element 7 – Wertspalte
-5.	Klicken Sie im Azure-Vorschauportal im linken Bereich auf **Alle durchsuchen > Virtuelle Computer**.
+5.	Klicken Sie im Azure-Portal im linken Bereich auf **Alle durchsuchen > Virtuelle Computer**.
 6.	Klicken Sie im Bereich **Virtuelle Computer** auf den Namen Ihres ersten Domänencontrollers (Tabelle M – Element 1 – Spalte mit Namen der virtuellen Computer).
 7.	Klicken Sie im Bereich für den virtuellen Computer auf **Neu starten**.
 8.	Wenn der erste Domänencontroller gestartet wurde, klicken Sie im Bereich **Virtuelle Computer** auf den Namen des zweiten Domänencontrollers (Tabelle M – Element 2 – Spalte mit Namen der virtuellen Computer).
@@ -210,4 +210,4 @@ Zum Fortsetzen der Konfiguration dieser Workload gehen Sie zu [Phase 3: Konfigur
 
 [Azure-Infrastrukturdienste-Workload: SharePoint Server 2013-Farm](virtual-machines-workload-intranet-sharepoint-farm.md)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

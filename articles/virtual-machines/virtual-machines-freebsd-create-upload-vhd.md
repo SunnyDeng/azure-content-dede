@@ -104,9 +104,9 @@ Führen Sie auf dem virtuellen Computer, auf dem das FreeBSD-Betriebssystem inst
 
 ## Schritt 2: Erstellen eines Speicherkontos in Azure ##
 
-Sie benötigen ein Speicherkonto in Azure, um eine VHD-Datei hochzuladen, damit diese in Azure zum Erstellen eines virtuellen Computers verwendet werden kann. Über das Azure-Portal können Sie ein Speicherkonto erstellen.
+Sie benötigen in Azure ein Speicherkonto, um eine VHD-Datei hochladen zu können, die zum Erstellen eines virtuellen Computers verwendet werden kann. Über das klassische Azure-Portal können Sie ein Speicherkonto erstellen.
 
-1. Melden Sie sich beim Azure-Portal an.
+1. Melden Sie sich am klassischen Azure-Portal an.
 
 2. Klicken Sie in der Befehlsleiste auf **Neu**.
 
@@ -181,7 +181,7 @@ Bevor Sie eine VHD-Datei hochladen können, müssen Sie eine sichere Verbindung 
 
 ## Schritt 4: Hochladen der VHD-Datei ##
 
-Wenn Sie die VHD-Datei hochladen, können Sie diese VHD-Datei an einem beliebigen Speicherort innerhalb des Blobspeichers ablegen. In den folgenden Befehlsbeispielen stellt **BlobStorageURL** den URL für das Speicherkonto dar, das Sie im Schritt 2 erstellt haben. Zudem stellt **YourImagesFolder** den Container innerhalb des Blobspeichers dar, in dem Sie Ihre Images speichern möchten. **VHDName** steht für die Bezeichnung, die im Azure-Portal zur Identifizierung der virtuellen Festplatte angezeigt wird. **PathToVHDFile** stellt den vollständigen Pfad und den Namen der .vhd-Datei dar.
+Wenn Sie die VHD-Datei hochladen, können Sie diese VHD-Datei an einem beliebigen Speicherort innerhalb des Blobspeichers ablegen. In den folgenden Befehlsbeispielen stellt **BlobStorageURL** den URL für das Speicherkonto dar, das Sie im Schritt 2 erstellt haben. Zudem stellt **YourImagesFolder** den Container innerhalb des Blobspeichers dar, in dem Sie Ihre Images speichern möchten. **VHDName** steht für die Bezeichnung, die im klassischen Azure-Portal zur Identifizierung der virtuellen Festplatte angezeigt wird. **PathToVHDFile** stellt den vollständigen Pfad und den Namen der .vhd-Datei dar.
 
 
 1. Geben Sie über das Azure PowerShell-Fenster, welches Sie im vorherigen Schritt verwendet haben, Folgendes ein:
@@ -197,7 +197,7 @@ Nach dem Hochladen fügen Sie die VHD-Datei als Image zu der Ihrem Abonnement zu
 
     **Wichtig**: Verwenden Sie zunächst Linux als Betriebssystemtyp, da die aktuelle Version von Azure PowerShell nur „Linux“ oder „Windows“ als Parameter akzeptiert.
 
-2. Nachdem Sie die vorherigen Schritte abgeschlossen haben, wird das neue Image aufgelistet, sobald Sie die Registerkarte **Images** im Azure-Portal auswählen.
+2. Nachdem Sie die vorherigen Schritte abgeschlossen haben, wird das neue Image aufgelistet, sobald Sie die Registerkarte **Images** im klassischen Azure-Portal auswählen.
 
     ![Image hinzufügen](./media/virtual-machines-freebsd-create-upload-vhd/addfreebsdimage.png)
 
@@ -209,4 +209,4 @@ Nach dem Hochladen fügen Sie die VHD-Datei als Image zu der Ihrem Abonnement zu
 
 	![FreeBSD-Images in Azure](./media/virtual-machines-freebsd-create-upload-vhd/freebsdimageinazure.png)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

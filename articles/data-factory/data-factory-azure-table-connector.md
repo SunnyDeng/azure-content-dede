@@ -348,7 +348,7 @@ Sie können einen mit Azure Storage verknüpften Dienst verwenden, um ein Azure-
 | Eigenschaft | Beschreibung | Erforderlich |
 | -------- | ----------- | -------- |
 | Typ | Die type-Eigenschaft muss auf "AzureStorage" festgelegt sein. | Ja |
-| connectionString | Geben Sie Informationen, die zur Verbindung mit dem Azure-Speicher erforderlich sind, für die connectionString-Eigenschaft ein. Sie können die connectionString-Eigenschaft für den Azure-Speicher aus dem Azure-Portal abrufen. | Ja |
+| connectionString | Geben Sie Informationen, die zur Verbindung mit dem Azure-Speicher erforderlich sind, für die connectionString-Eigenschaft ein. Sie können die connectionString-Eigenschaft für den Azure-Speicher aus dem klassischen Azure-Portal abrufen. | Ja |
 
 ## Eigenschaften des Dataset-Typs "Azure-Tabelle"
 
@@ -504,4 +504,4 @@ In diesem Fall führt Data Factory die Typkonvertierungen automatisch einschlie�
 
 [AZURE.INCLUDE [data-factory-column-mapping](../../includes/data-factory-column-mapping.md)]
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

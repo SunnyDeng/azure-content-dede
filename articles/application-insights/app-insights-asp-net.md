@@ -123,10 +123,12 @@ Beim Betrieb im Debugmodus wird Telemetrie über die Pipeline geliefert, sodass 
 
 Weitere Informationen finden Sie in [diesem Artikel zur Problembehandlung](app-insights-troubleshoot-faq.md#NuGetBuild).
 
+> [AZURE.NOTE]Wenn die Anwendung viele Telemetriedaten generiert (und Sie Version 2.0.0-beta3 oder höher des ASP.NET-SDK verwenden), reduziert das adaptive Stichprobenmodul automatisch die an das Portal gesendete Datenmenge, indem nur ein repräsentativer Bruchteil der Ereignisse gesendet wird. Ereignisse, die mit derselben Anforderung im Zusammenhang stehen, werden als Gruppe aus- oder abgewählt, sodass Sie zwischen verwandten Ereignissen navigieren können. [Erfahren Sie mehr über das Erstellen von Stichproben.](app-insights-sampling.md)
+
 ## Nächste Schritte
 
 - [Daten zu Seiten und Benutzern](../article/application-insights/app-insights-asp-net-client.md#selector1)
-- [Exceptions](../article/application-insights/app-insights-asp-net-exception-mvc.md#selector1)
+- [Ausnahmen](../article/application-insights/app-insights-asp-net-exception-mvc.md#selector1)
 - [Abhängigkeiten](../article/application-insights/app-insights-asp-net-dependencies.md#selector1)
 - [Verfügbarkeit](../article/application-insights/app-insights-monitor-web-app-availability.md#selector1)
 
@@ -168,4 +170,4 @@ Wenn Sie Anpassungen an der Datei "ApplicationInsights.config" vorgenommen haben
 
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

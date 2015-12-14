@@ -41,7 +41,7 @@
 
     >[AZURE.NOTE]Der geheime Clientschlüssel und die Paket-SID sind wichtige Sicherheitsanmeldeinformationen. Geben Sie diese Informationen nicht weiter und verteilen Sie sie nicht mit Ihrer Anwendung.
 
-10. Melden Sie sich beim [Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services**, und klicken Sie dann auf Ihre Anwendung.
+10. Melden Sie sich beim [klassischen Azure-Portal](https://manage.windowsazure.com/) an, klicken Sie auf **Mobile Services**, und klicken Sie dann auf Ihre App.
 
 11. Klicken Sie auf die Registerkarte **Identität**, geben Sie die Werte für **Geheimer Clientschlüssel** und **Paket-SID** ein, die Sie von WNS in Schritt 4 erhalten haben. Klicken Sie dann auf **Speichern**.
 
@@ -60,6 +60,5 @@ Sie können nun ein Microsoft-Konto für die Authentifizierung in Ihrer App verw
 <!-- URLs. -->
 [Erste Schritte mit Mobile Services]: /develop/mobile/tutorials/get-started/#create-new-service
 [Anwendungsseite senden]: http://go.microsoft.com/fwlink/p/?LinkID=266582
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

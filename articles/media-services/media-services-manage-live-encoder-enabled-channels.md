@@ -23,7 +23,7 @@
 In Azure Media Services repräsentiert ein **Kanal** eine Pipeline zum Verarbeiten von Livestreaminginhalten. Es gibt zwei Arten, auf die Live-Eingabedatenströme von **Kanälen** empfangen werden können:
 
 - Von einem lokalen Liveencoder wird Multi-Bitrate- **RTMP** oder -**Smooth Streaming** (fragmentiertes MP4) an den Kanal gesendet. Sie können die folgenden Liveencoder verwenden, von denen Multi-Bitrate-Smooth Streaming ausgegeben werden kann: Elemental, Envivio, Cisco. Von den folgenden Liveencodern wird RTMP ausgegeben: Adobe Flash Live, Telestream Wirecast und Tricaster-Transcoder. Die aufgenommenen Datenströme werden ohne weitere Verarbeitung durch die **Kanäle** geleitet. Auf Anforderung wird der Datenstrom den Kunden von Media Services bereitgestellt.
-- Ein Single-Bitrate-Datenstrom (in einem der folgenden Formate: **RTP** (MPEG-TS)), **RTMP** oder **Smooth Streaming** (fragmentiertes MP4)) wird an den **Kanal** gesendet, der zum Ausführen von Livecodierung mit Media Services aktiviert wurde. Vom **Kanal** wird dann eine Livecodierung des Single-Bitrate-Eingabedatenstroms in einen Multi-Bitrate-Videodatenstrom (adaptiv) ausgeführt. Auf Anforderung wird der Datenstrom den Kunden von Media Services bereitgestellt. 
+- Ein Single-Bitrate-Datenstrom (in einem der folgenden Formate: **RTP** (MPEG-TS)), **RTMP** oder **Smooth Streaming** (fragmentiertes MP4)) wird an den **Kanal** gesendet, der zum Ausführen von Livecodierung mit Media Services aktiviert wurde. Vom **Kanal** wird dann eine Livecodierung des Single-Bitrate-Eingabedatenstroms in einen Multi-Bitrate-Videodatenstrom (adaptiv) ausgeführt. Auf Anforderung wird der Datenstrom den Kunden von Media Services bereitgestellt.
 
 Mit Media Services-Version 2.10 können Sie beim Erstellen eines Kanals angeben, wie der Eingabedatenstrom vom Kanal empfangen werden soll und ob vom Kanal eine Livecodierung des Datenstroms ausgeführt werden soll. Sie haben zwei Möglichkeiten:
 
@@ -36,9 +36,9 @@ Mit Media Services-Version 2.10 können Sie beim Erstellen eines Kanals angeben,
 
 ##Hinweise zur Gebührenberechnung
 
-Für einen Live Encoding-Kanal beginnt die Berechnung von Gebühren, sobald der Status über die API in „Wird ausgeführt“ geändert wird. Sie können den Status auch im Azure-Portal oder im Azure Media Services-Explorer anzeigen (http://aka.ms/amse).
+Für einen Live Encoding-Kanal beginnt die Berechnung von Gebühren, sobald der Status über die API in „Wird ausgeführt“ geändert wird. Sie können den Status auch im klassischen Azure-Portal oder im Azure Media Services-Explorer anzeigen (http://aka.ms/amse).
 
-In der folgenden Tabelle ist dargestellt, wie Kanalzustände den Abrechnungszuständen in der API und im Portal zugeordnet werden. Beachten Sie, dass sich die Zustände zwischen der API und der Benutzeroberfläche des Portals leicht unterscheiden. Sobald ein Kanal über die API in den Zustand „Wird ausgeführt“ oder im Azure-Portal in den Zustand „Bereit“ oder „Streaming“ versetzt wird, wird die Abrechnung aktiv. Um die weitere Gebührenberechnung für den Kanal zu beenden, müssen Sie den Kanal über die API oder im Azure-Portal beenden. Sie sind für das Beenden Ihrer Kanäle verantwortlich, wenn Sie die Nutzung des Live Encoding-Kanals abgeschlossen haben. Wenn Sie einen Codierkanal nicht beenden, werden weiter Gebühren berechnet.
+In der folgenden Tabelle ist dargestellt, wie Kanalzustände den Abrechnungszuständen in der API und im klassischen Azure-Portal zugeordnet werden. Beachten Sie, dass sich die Zustände zwischen der API und der Benutzeroberfläche des Portals leicht unterscheiden. Sobald ein Kanal über die API in den Zustand „Wird ausgeführt“ oder im klassischen Azure-Portal in den Zustand „Bereit“ oder „Streaming“ versetzt wird, wird die Abrechnung aktiv. Um die weitere Gebührenberechnung für den Kanal zu beenden, müssen Sie den Kanal über die API oder im klassischen Azure-Portal beenden. Sie sind für das Beenden Ihrer Kanäle verantwortlich, wenn Sie die Nutzung des Live Encoding-Kanals abgeschlossen haben. Wenn Sie einen Codierkanal nicht beenden, werden weiter Gebühren berechnet.
 
 ###<a id="states"></a>Kanalstatus und ihre Zuordnung zum Abrechnungsmodus 
 
@@ -93,7 +93,7 @@ Im Folgenden werden grundlegende Schritte zum Erstellen allgemeiner Livestreamin
 
 3. Erstellen Sie ein Programm.
 
-	Im Azure-Verwaltungsportal wird beim Erstellen eines Programms auch ein Medienobjekt erstellt.
+	Im klassischen Azure-Portal wird beim Erstellen eines Programms auch ein Medienobjekt erstellt.
 
 	Wenn Sie hingegen .NET SDK oder REST verwenden, müssen Sie beim Erstellen eines Programms ein Medienobjekt erstellen und angeben, dass es verwendet werden soll. 
 1. Veröffentlichen Sie das mit dem Programm verknüpfte Medienobjekt.   
@@ -244,7 +244,7 @@ Wenn Sie einen Kanal erstellen, können Sie die Vorschau-URL abrufen. Der Kanal 
 
 Wenn die Datenerfassung durch den Kanal begonnen hat, können Sie eine Vorschau Ihres Datenstroms ansehen.
 
-**Hinweis**: Zurzeit kann die Vorschau des Datenstroms unabhängig vom angegebenen Eingabetyp nur in fragmentiertem MP4-Format (Smooth Streaming) geliefert werden. Sie können den Player [http://smf.cloudapp.net/healthmonitor](http://smf.cloudapp.net/healthmonitor) verwenden, um den Smooth Stream zu testen. Sie können auch einen Player verwenden, der im Azure-Verwaltungsportal gehostet wird, um Ihren Datenstrom anzuzeigen.
+**Hinweis**: Zurzeit kann die Vorschau des Datenstroms unabhängig vom angegebenen Eingabetyp nur in fragmentiertem MP4-Format (Smooth Streaming) geliefert werden. Sie können den Player [http://smf.cloudapp.net/healthmonitor](http://smf.cloudapp.net/healthmonitor) verwenden, um den Smooth Stream zu testen. Sie können auch einen Player verwenden, der im klassischen Azure-Portal gehostet wird, um Ihren Datenstrom anzuzeigen.
 
 ###Zulässige IP-Adressen
 
@@ -358,7 +358,7 @@ Wenn für diese Einstellung der Wert „true“ festgelegt ist, wird der Liveenc
 
 Optional. Hier wird die ID des Media Services-Medienobjekts angegeben, welches das Slatebild enthält. Der Standardwert lautet null.
 
-**Hinweis**: Vor dem Erstellen des Kanals muss das Slatebild mit den folgenden Einschränkungen als dediziertes Medienobjekt hochgeladen werden (in diesem Medienobjekt dürfen sich keine anderen Dateien befinden).
+**Hinweis**: Vor dem Erstellen des Kanals muss das Slate-Bild mit den folgenden Einschränkungen als dediziertes Medienobjekt hochgeladen werden (in diesem Medienobjekt dürfen sich keine anderen Dateien befinden).
 
 - Auflösung von höchstens 1920 x 1080
 - Größe von maximal 3 MB
@@ -433,7 +433,7 @@ Beendet|Beendet|Nein
 
 - Die durchschnittliche Dauer bis zum Start des Kanals wurde auf ca. 2 Minuten verkürzt, aber in Einzelfällen kann dies immer noch mehr als 20 Minuten dauern.
 - Die RTP-Unterstützung zielt auf professionelle Sendeanstalten ab. Bitte lesen Sie die Hinweise zu RTP in [diesem](http://azure.microsoft.com/blog/2015/04/13/an-introduction-to-live-encoding-with-azure-media-services/) Blog.
-- Die Slatebilder sollten den [hier](media-services-manage-live-encoder-enabled-channels.md#default_slate) beschriebenen Einschränkungen entsprechen. Wenn Sie versuchen, einen Kanal mit einem Standard-Slatebild zu erstellen, das größer ist als 1920 x 1080, tritt bei der Anforderung ein Fehler auf.
+- Die Slate-Bilder sollten den [hier](media-services-manage-live-encoder-enabled-channels.md#default_slate) beschriebenen Einschränkungen entsprechen. Wenn Sie versuchen, einen Kanal mit einem Standard-Slatebild zu erstellen, das größer ist als 1920 x 1080, tritt bei der Anforderung ein Fehler auf.
 - Wir weisen noch einmal darauf hin: Vergessen Sie nicht, IHRE KANÄLE ZU BEENDEN, wenn Sie mit dem Streaming fertig sind. Wenn Sie dies nicht tun, werden weiter Gebühren berechnet.
 
 ###Erstellen von Kanälen, von denen eine Livecodierung eines Single-Bitrate-Datenstroms in einen Datenstrom mit adaptiver Bitrate ausgeführt wird 
@@ -466,4 +466,4 @@ Wählen Sie **Portal**, **.NET** oder **REST API**, um auf Informationen zum Ers
 [live-overview]: ./media/media-services-manage-live-encoder-enabled-channels/media-services-live-streaming-new.png
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="Azure"
    ms.workload="na"
-   ms.date="10/09/2015"
+   ms.date="11/30/2015"
    ms.author="hascipio"/>
 
 # Abschließen der Angebotserstellung mit Marketinginhalten
@@ -144,9 +144,7 @@ Im Folgenden finden Sie eine ausführliche Übersicht darüber, wie die Marketin
 ## Nächste Schritte
 Nachdem nun Ihre Marketplace-Inhalte geladen wurden, geht es weiter mit dem Testen des Angebots in der Stagingumgebung. Da die Schritte jedoch je nach Angebotstyp unterschiedlich sind, müssen Sie den entsprechenden Angebotstyp in der Liste unten auswählen.
 
-||VM-Image | Entwicklerdienst | Datendienst | Lösungsvorlage |
-|----|----|----|----|----|
-| **Schritt 3: Überführen des Angebots in die Stagingumgebung** | [Testen Ihres VM-Angebots in der Stagingumgebung](marketplace-publishing-vm-image-test-in-staging.md) | Testen Ihres Entwicklungsdiensts in der Stagingumgebung | Testen Ihres Datendiensts in der Stagingumgebung | [Testen Ihrer Lösungsvorlage in der Stagingumgebung](marketplace-publishing-solution-template-test-in-staging.md) |
+||VM-Image | Entwicklerdienst | Datendienst | Lösungsvorlage | |----|----|----|----|----| | **Schritt 3: Überführen des Angebots in die Stagingumgebung** | [Testen Ihres VM-Angebots in der Stagingumgebung](marketplace-publishing-vm-image-test-in-staging.md) | Testen Ihres Entwicklungsdiensts in der Stagingumgebung | [Testen Ihres Datendiensts in der Stagingumgebung](marketplace-publishing-data-service-test-in-staging.md) | [Testen Ihrer Lösungsvorlage in der Stagingumgebung](marketplace-publishing-solution-template-test-in-staging.md) |
 
 ## Weitere Informationen
 - [Erste Schritte: Veröffentlichen eines Angebots im Azure Marketplace](marketplace-publishing-getting-started.md)
@@ -160,4 +158,4 @@ Nachdem nun Ihre Marketplace-Inhalte geladen wurden, geht es weiter mit dem Test
 [link-pubportal]: https://publish.windowsazure.com
 [link-push-to-production]: marketplace-publishing-push-to-production.md
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

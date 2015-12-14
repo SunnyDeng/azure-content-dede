@@ -1,6 +1,6 @@
 <properties 
    pageTitle="Bereitstellen des StorSimple Manager-Diensts | Microsoft Azure"
-   description="Erläutert das Erstellen und Löschen des StorSimple Manager-Diensts im Azure-Portal und beschreibt die Verwaltung des Dienstregistrierungsschlüssels."
+   description="Erläutert das Erstellen und Löschen des StorSimple Manager-Diensts im klassischen Azure-Portal und beschreibt die Verwaltung des Dienstregistrierungsschlüssels."
    services="storsimple"
    documentationCenter=""
    authors="SharS"
@@ -12,14 +12,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="11/16/2015"
+   ms.date="12/01/2015"
    ms.author="v-sharos" />
 
 # Bereitstellen des StorSimple Manager-Diensts
 
 ## Übersicht
 
-Der StorSimple Manager-Dienst wird in Microsoft Azure ausgeführt. Er stellt Verbindungen mit mehreren StorSimple-Geräten her. Nachdem Sie den Dienst erstellt haben, können Sie ihn zum Verwalten der Geräte über das in einem Browser ausgeführte Microsoft Azure-Portal verwenden. So können Sie alle Geräte, die mit den StorSimple Manager-Dienst verbunden sind, von einem zentralen Standort aus überwachen und damit den Verwaltungsaufwand minimieren.
+Der StorSimple Manager-Dienst wird in Microsoft Azure ausgeführt. Er stellt Verbindungen mit mehreren StorSimple-Geräten her. Nachdem Sie den Dienst erstellt haben, können Sie ihn zum Verwalten der Geräte über das in einem Browser ausgeführte klassische Microsoft Azure-Portal verwenden. So können Sie alle Geräte, die mit den StorSimple Manager-Dienst verbunden sind, von einem zentralen Standort aus überwachen und damit den Verwaltungsaufwand minimieren.
 
 Auf der Startseite von StorSimple Manager werden alle StorSimple Manager-Dienste aufgeführt, mit denen Sie Ihre StorSimple-Speichergeräte verwalten können. Für jeden StorSimple Manager-Dienst werden die folgende Informationen auf der Seite von StorSimple Manager angezeigt:
 
@@ -115,4 +115,4 @@ Führen Sie die folgenden Schritte durch, um den Dienstregistrierungsschlüssel 
 
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

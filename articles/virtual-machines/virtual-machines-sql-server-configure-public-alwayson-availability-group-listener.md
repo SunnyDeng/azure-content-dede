@@ -81,7 +81,7 @@ Der externe Lastenausgleich verwendet die öffentliche virtuelle IP-Adresse des 
 
 [AZURE.INCLUDE [Firewall](../../includes/virtual-machines-ag-listener-create-listener.md)]
 
-1. Für den externen Lastenausgleich müssen Sie die öffentliche virtuelle IP-Adresse des Clouddiensts abrufen, der Ihre Replikate enthält. Melden Sie sich beim Azure-Portal an. Navigieren Sie zu dem Clouddienst, der Ihren virtuellen Verfügbarkeitsgruppencomputer enthält. Öffnen Sie die Ansicht **Dashboard**. 
+1. Für den externen Lastenausgleich müssen Sie die öffentliche virtuelle IP-Adresse des Clouddiensts abrufen, der Ihre Replikate enthält. Melden Sie sich beim klassischen Azure-Portal an. Navigieren Sie zu dem Clouddienst, der Ihren virtuellen Verfügbarkeitsgruppencomputer enthält. Öffnen Sie die Ansicht **Dashboard**. 
 
 3. Beachten Sie die Adresse unter **Öffentliche virtuelle IP-Adresse (VIP)**. Wenn Ihre Lösung VNets umfasst, wiederholen Sie diesen Schritt für jeden Clouddienst mit einem virtuellen Computer, der ein Replikat hostet.
 
@@ -130,4 +130,4 @@ Wenn sich die AlwaysOn-Replikate in unterschiedlichen Subnetzen befinden, müsse
 
 [AZURE.INCLUDE [Listener-Next-Steps](../../includes/virtual-machines-ag-listener-next-steps.md)]
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

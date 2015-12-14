@@ -45,6 +45,6 @@ Sie können Widevine-Lizenzen mithilfe von [Axinom](http://www.axinom.com/press/
 
 [Verwenden von dynamischer allgemeiner Verschlüsselung mit PlayReady und/oder Widevine.](media-services-protect-with-drm.md)
 
-[Blog von Mingfei](https://azure.microsoft.com/de-DE/blog/azure-media-services-adds-google-widevine-packaging-for-delivering-multi-drm-stream/)
+[Blog von Mingfei](https://azure.microsoft.com/blog/azure-media-services-adds-google-widevine-packaging-for-delivering-multi-drm-stream/)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -32,17 +32,17 @@ Informationen zur Vorbereitung auf Notfälle und zur Wiederherstellung der Daten
 Der Wiederherstellungsvorgang wirkt sich auf die Anwendung aus. Er erfordert eine Änderung der SQL-Verbindungszeichenfolge und kann zu dauerhaftem Datenverlust führen. Er sollte daher nur ausgeführt werden, wenn der Ausfall wahrscheinlich länger als die Anwendungs-RTO dauert. Wenn die Anwendung in der Produktionsumgebung bereitgestellt wird, sollten Sie regelmäßige Überwachungen der Anwendungsintegrität durchführen und die folgenden Datenpunkte verwenden, um zu bestätigen, dass die Wiederherstellung erforderlich ist:
 
 1. Permanente Verbindungsfehler zwischen Anwendungsebene und Datenbank.
-2. Das Azure-Portal zeigt eine Warnung zu einem Vorfall in der Region mit weit reichenden Auswirkungen.
+2. Das klassische Azure-Portal zeigt eine Warnung zu einem Vorfall in der Region mit weit reichenden Auswirkungen.
 
 > [AZURE.NOTE]Nachdem die Wiederherstellung Ihrer Datenbank abgeschlossen ist, können Sie sie für die Verwendung konfigurieren. Befolgen Sie hierzu die Anleitung [Konfigurieren einer Datenbank nach der Wiederherstellung](#postrecovery).
 
 ## Failover auf eine georeplizierte sekundäre Datenbank
 > [AZURE.NOTE]Sie müssen eine sekundäre Datenbank für das Failover konfigurieren. Die Georeplikation ist nur für Standard- und Premium-Datenbanken verfügbar. Hier finden Sie Informationen zum [Konfigurieren der Georeplikation](sql-database-business-continuity-design.md).
 
-###Azure-Portal
-Verwenden Sie das Azure-Portal, um die fortlaufende Kopierbeziehung mit der georeplizierten sekundären Datenbank zu beenden.
+###Klassisches Azure-Portal
+Verwenden Sie das klassische Azure-Portal, um die fortlaufende Kopierbeziehung mit der georeplizierten sekundären Datenbank zu beenden.
 
-1. Melden Sie sich beim [Azure-Portal](https://portal.Azure.com) an.
+1. Melden Sie sich beim [klassischen Azure-Portal](https://portal.Azure.com) an.
 2. Wählen Sie auf der linken Bildschirmseite **DURCHSUCHEN** und dann **SQL-Datenbanken** aus.
 3. Navigieren Sie zu Ihrer Datenbank, und wählen Sie sie aus. 
 4. Wählen Sie am unteren Rand des Datenbankblatts die **Geo Replication map** aus.
@@ -66,10 +66,10 @@ Bei einem Ausfall einer Datenbank können Sie diese aus der aktuellen geografisc
 
 > [AZURE.NOTE]Beim Wiederherstellen einer Datenbank wird eine neue Datenbank erstellt. Es muss sichergestellt werden, dass der Server, auf dem die Wiederherstellung erfolgt, über ausreichend DTU-Kapazität für die neue Datenbank verfügt. [Wenden Sie sich an den Support](http://azure.microsoft.com/blog/azure-limits-quotas-increase-requests/), um dieses Kontingent zu erhöhen.
 
-###Azure-Portal
-Führen Sie die folgenden Schritte aus, um eine SQL-Datenbank mithilfe der geografischen Wiederherstellung im Azure-Portal wiederherzustellen.
+###Klassisches Azure-Portal
+Führen Sie die folgenden Schritte aus, um eine SQL-Datenbank mithilfe der geografischen Wiederherstellung im klassischen Azure-Portal wiederherzustellen.
 
-1. Melden Sie sich beim [Azure-Portal](https://portal.Azure.com) an.
+1. Melden Sie sich beim [klassischen Azure-Portal](https://portal.Azure.com) an.
 2. Wählen Sie auf der linken Bildschirmseite **NEU**, dann **Daten und Speicher** und dann **SQL-Datenbank** aus.
 2. Wählen Sie **BACKUP** als Quelle aus und dann die geografisch redundante Sicherung aus der wiederhergestellt werden soll.
 3. Geben Sie die restlichen Datenbankeigenschaften an, und klicken Sie auf **Erstellen**.
@@ -131,4 +131,4 @@ Weitere Informationen zu Datenbankwarnungsregeln finden Sie unter [Empfangen von
 
 Wenn für den Zugriff auf die Datenbank Überwachung erforderlich ist, müssen Sie nach der Wiederherstellung der Datenbank die Überwachung aktivieren. Es ist ein guter Indikator für die Notwendigkeit von Überwachung, wenn Clientanwendungen sichere Verbindungszeichenfolgen in einem Muster von *.database.secure.windows.net verwenden. Weitere Informationen finden Sie unter [Erste Schritte mit der SQL-Datenbanküberwachung](sql-database-auditing-get-started.md).
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

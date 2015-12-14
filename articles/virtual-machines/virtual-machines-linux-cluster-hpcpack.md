@@ -313,4 +313,4 @@ Das HPC Pack-Tool **clusrun** kann zum Ausführen von Befehlen auf Linux-Knoten 
 [nfsperm]: ./media/virtual-machines-linux-cluster-hpcpack/nfsperm.png
 [nfsmanage]: ./media/virtual-machines-linux-cluster-hpcpack/nfsmanage.png
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

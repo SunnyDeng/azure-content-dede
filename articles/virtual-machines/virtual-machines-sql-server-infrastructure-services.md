@@ -28,9 +28,9 @@ Um einen virtuellen Computer mit SQL Server in Azure zu erstellen, müssen Sie z
 
 ### Bereitstellen einer SQL Server-Instanz auf einem einzelnen virtuellen Computer
 
-Nachdem Sie sich für ein Abonnement angemeldet haben, besteht die einfachste Möglichkeit zum Bereitstellen eines virtuellen Computers mit SQL Server in Azure darin, [im Azure-Portal aus dem Imagekatalog ein Image eines virtuellen Computers mit SQL Server bereitzustellen](virtual-machines-provision-sql-server.md). Diese Images enthalten in den Preisen für den virtuellen Computer SQL Server-Lizenzen.
+Nachdem Sie sich für ein Abonnement angemeldet haben, besteht die einfachste Möglichkeit zum Bereitstellen eines virtuellen Computers mit SQL Server in Azure darin, [im klassischen Azure-Portal aus dem Imagekatalog ein Image eines virtuellen Computers mit SQL Server bereitzustellen](virtual-machines-provision-sql-server.md). Diese Images enthalten in den Preisen für den virtuellen Computer SQL Server-Lizenzen.
 
->[AZURE.NOTE]Nutzen Sie das Azure-Vorschauportal zum Bereitstellen und Verwalten von virtuellen Computern mit SQL Server. Es verwendet standardmäßig Storage Premium und bietet die automatisierte Anwendung von Patches, die automatisierte Sicherung und AlwaysOn-Konfigurationen.
+>[AZURE.NOTE]Nutzen Sie das Azure-Portal zum Bereitstellen und Verwalten von virtuellen SQL Server-Computern. Es verwendet standardmäßig Storage Premium und bietet die automatisierte Anwendung von Patches, die automatisierte Sicherung und AlwaysOn-Konfigurationen.
 
 Die folgende Tabelle enthält eine Matrix der SQL Server-Images, die im Katalog der virtuellen Computer verfügbar sind.
 
@@ -61,7 +61,7 @@ Nachdem Ihr virtueller SQL Server-Computer eingerichtet wurde und ausgeführt wi
 
 ## Hohe Verfügbarkeit
 
-Wenn Sie hohe Verfügbarkeit benötigen, sollten Sie SQL Server-AlwaysOn-Verfügbarkeitsgruppen konfigurieren. Dies beinhaltet mehrere Azure-VMs in einem virtuellen Netzwerk. Das Azure-Vorschauportal bietet eine Vorlage, die diese Konfiguration für Sie einrichtet. Weitere Informationen finden Sie unter [SQL Server AlwaysOn Offering in Microsoft Azure Portal Gallery](http://blogs.technet.com/b/dataplatforminsider/archive/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery.aspx) (in englischer Sprache).
+Wenn Sie hohe Verfügbarkeit benötigen, sollten Sie SQL Server-AlwaysOn-Verfügbarkeitsgruppen konfigurieren. Dies beinhaltet mehrere Azure-VMs in einem virtuellen Netzwerk. Das Azure-Portal bietet eine Vorlage, die diese Konfiguration für Sie einrichtet. Weitere Informationen finden Sie unter [SQL Server AlwaysOn Offering in Microsoft Azure Portal Gallery](http://blogs.technet.com/b/dataplatforminsider/archive/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery.aspx) (in englischer Sprache).
 
 Wenn Sie Ihre Verfügbarkeitsgruppe und den ihr zugeordneten Listener manuell konfigurieren möchten, lesen Sie die folgenden Artikel:
 
@@ -148,4 +148,4 @@ Wenn Sie einen virtuellen Computer erstellen, indem Sie ein von der Plattform be
 - [Anwendungsmuster und Entwicklungsstrategien für SQL Server auf Azure Virtual Machines](virtual-machines-sql-server-application-patterns-and-development-strategies.md)
 - [Dokumentation zu virtuellen Computern](virtual-machines-about.md) 
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

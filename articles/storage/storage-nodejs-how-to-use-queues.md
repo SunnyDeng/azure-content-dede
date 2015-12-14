@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="nodejs" 
 	ms.topic="article" 
-	ms.date="11/20/2015" 
+	ms.date="12/01/2015" 
 	ms.author="robmcm"/>
 
 
@@ -66,7 +66,7 @@ Verwenden Sie Editor oder einen anderen Texteditor, um die folgende Zeile am Anf
 
 Das Azure-Modul entnimmt den Umgebungsvariablen AZURE\_STORAGE\_ACCOUNT und AZURE\_STORAGE\_ACCESS\_KEY oder AZURE\_STORAGE\_CONNECTION\_STRING die Informationen, die zum Herstellen einer Verbindung mit Ihrem Azure-Speicherkonto benötigt werden. Falls diese Umgebungsvariablen nicht gesetzt sind, müssen Sie die Kontoinformationen beim Aufruf von **createQueueService** angeben.
 
-Ein Beispiel zum Festlegen der Umgebungsvariablen im Verwaltungsportal für eine Azure-Website finden Sie unter [Node.js-Webanwendung mit Speicher].
+Ein Beispiel zum Festlegen der Umgebungsvariablen für eine Azure-Website im [Azure-Portal](portal.azure.com) finden Sie unter [Node.js-Webanwendung mit Speicher].
 
 ## Erstellen einer Warteschlange
 
@@ -309,13 +309,12 @@ Nachdem die ACL festgelegt wurde, können Sie basierend auf der ID für eine Ric
 
 Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
 
--   Weitere Informationen finden Sie in der MSDN-Referenz: [Speichern von und Zugreifen auf Daten in Azure][].
 -   Besuchen Sie den [Blog des Azure-Speicherteams][].
 -   Besuchen Sie das [Azure Storage SDK für Node][]-Repository auf GitHub.
 
   [Azure Storage SDK für Node]: https://github.com/Azure/azure-storage-node
   [using the REST API]: http://msdn.microsoft.com/library/azure/hh264518.aspx
-  [Azure Management Portal]: http://manage.windowsazure.com
+  [Azure Portal]: portal.azure.com
   [Erstellen und Bereitstellen einer Node.js-Anwendung auf einer Azure-Website]: ../web-sites-nodejs-develop-deploy-mac.md
   [Node.js Cloud Service with Storage]: ../storage-nodejs-use-table-storage-cloud-service-app.md
   [Node.js-Webanwendung mit Speicher]: ../storage-nodejs-use-table-storage-web-site.md
@@ -328,9 +327,8 @@ Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gem
   
   
   [Node.js Cloud Service]: ../cloud-services-nodejs-develop-deploy-app.md
-  [Speichern von und Zugreifen auf Daten in Azure]: http://msdn.microsoft.com/library/azure/gg433040.aspx
   [Blog des Azure-Speicherteams]: http://blogs.msdn.com/b/windowsazurestorage/
- [Website mit WebMatrix]: ../web-sites-nodejs-use-webmatrix.md
+  [Website mit WebMatrix]: ../web-sites-nodejs-use-webmatrix.md
  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

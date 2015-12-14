@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/04/2015"
+	ms.date="12/01/2015"
 	ms.author="tamram;selcint"/>
 
 
@@ -35,7 +35,7 @@ Die folgende Liste führt wichtige Informationen auf, die vor oder bei der Verwe
 
 - Damit Sie den Premium-Speicher verwenden können, benötigen Sie ein Premium-Speicherkonto. Informationen zum Erstellen eines Premium-Speicherkontos finden Sie unter [Erstellen und Verwenden des Premium-Speicherkontos für Datenträger](#create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk).
 
-- Der Premium-Speicher ist zurzeit im [Microsoft Azure-Vorschauportal](https://portal.azure.com/) verfügbar, und auf ihn kann über die folgenden SDK-Bibliotheken zugegriffen werden: [Speicher-REST-API](http://msdn.microsoft.com//library/azure/dd179355.aspx) Version 2014-02-14 oder höher, [Dienstverwaltungs-REST.API](http://msdn.microsoft.com/library/azure/ee460799.aspx) Version 2014-10-01 oder höher und [Azure PowerShell](../install-configure-powershell.md) Version 0.8.10 oder höher.
+- Der Premium-Speicher ist im [Azure-Portal](portal.azure.com) verfügbar, und auf ihn kann über die folgenden SDK-Bibliotheken zugegriffen werden: [Speicher-REST-API](http://msdn.microsoft.com//library/azure/dd179355.aspx) Version 2014-02-14 oder höher, [Dienstverwaltungs-REST.API](http://msdn.microsoft.com/library/azure/ee460799.aspx) Version 2014-10-01 oder höher und [Azure PowerShell](../install-configure-powershell.md) Version 0.8.10 oder höher.
 
 - Eine Liste der Regionen mit Unterstützung für Storage Premium finden Sie unter [Azure-Dienste nach Region](http://azure.microsoft.com/regions/#services).
 
@@ -61,7 +61,7 @@ Azure verwendet das Speicherkonto als Container für Ihr Betriebssystem und die 
 
 Informationen zur Migration der vorhandenen virtuellen Computer zu Storage Premium finden Sie unter [Migrieren zu Azure Premium-Speicher](storage-migration-to-premium-storage.md).
 
-Damit Sie die Vorteile des Premium-Speichers nutzen können, erstellen Sie zuerst ein Premium-Speicherkonto vom Typ *Premium\_LRS*. Zu diesem Zweck können Sie das [Microsoft Azure-Vorschauportal](https://portal.azure.com/), [Azure PowerShell](../install-configure-powershell.md) oder die [Dienstverwaltungs-REST-API](http://msdn.microsoft.com/library/azure/ee460799.aspx) verwenden. Ausführliche Anleitungen finden Sie unter [Erstellen und Verwenden des Premium-Speicherkontos für Datenträger](#create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk).
+Damit Sie die Vorteile des Premium-Speichers nutzen können, erstellen Sie zuerst ein Premium-Speicherkonto vom Typ *Premium\_LRS*. Zu diesem Zweck können Sie das [Azure-Portal](portal.azure.com), [Azure PowerShell](../install-configure-powershell.md) oder die [Dienstverwaltungs-REST-API](http://msdn.microsoft.com/library/azure/ee460799.aspx) verwenden. Ausführliche Anleitungen finden Sie unter [Erstellen und Verwenden des Premium-Speicherkontos für Datenträger](#create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk).
 
 ### Wichtige Hinweise:
 
@@ -201,7 +201,7 @@ Nachfolgend finden Sie wichtige Anweisungen zum Konfigurieren virtueller Linux-C
 	- Wenn Sie **XFS** verwenden, deaktivieren Sie Sperren mithilfe der Bereitstellungsoption „nobarrier“ (verwenden Sie zum Aktivieren von Sperren „barrier“).
 
 - Bei Premium-Speicherdatenträgern mit der Cacheeinstellung „ReadWrite“ müssen Sperren aktiviert werden, um die Beständigkeit von Schreibvorgängen zu gewährleisten.
-- Damit die Volumebezeichnungen nach dem Neustart des virtuellen Computers beibehalten werden, müssen Sie „/etc/fstab“ mit den UUID-Verweisen auf die Datenträger aktualisieren. Weitere Informationen finden Sie unter [Gewusst wie: Anfügen eines Datenträgers an einen virtuellen Linux-Computer](http://azure.microsoft.com/documentation/articles/virtual-machines-linux-how-to-attach-disk).
+- Damit die Volumebezeichnungen nach dem Neustart des virtuellen Computers beibehalten werden, müssen Sie „/etc/fstab“ mit den UUID-Verweisen auf die Datenträger aktualisieren. Weitere Informationen finden Sie unter [Gewusst wie: Anfügen eines Datenträgers an einen virtuellen Linux-Computer](../virtual-machines/virtual-machines-linux-how-to-attach-disk).
 
 Nachfolgend sind die Linux-Distributionen aufgeführt, die für Premium-Speicher überprüft wurden. Es wird empfohlen, dass Sie Ihre virtuellen Computer auf mindestens eine dieser Versionen (oder eine höhere Version) aktualisieren, um eine bessere Leistung und Stabilität mit Premium-Speicher zu erzielen. Außerdem erfordern einige Versionen die neuesten LIS (Linux-Integrationsdienste v4.0 für Microsoft Azure). Der Download und die Installation sind über folgenden Link möglich: Wir fügen der Liste mehr Images hinzu, wenn weitere Überprüfungen ausgeführt wurden. Beachten Sie, dass unsere Überprüfungen ergaben, dass die Leistung für diese Images variiert. Sie hängt auch von den Workloadmerkmalen und -einstellungen der Images ab. Verschiedene Images werden für verschiedene Arten von Workload optimiert. <table border="1" cellspacing="0" cellpadding="5" style="border: 1px solid #000000;"> <tbody> <tr> <td><strong>Distribution</strong></td> <td><strong>Version</strong></td> <td><strong>Unterstützter Kernel</strong></td> <td><strong>Unterstütztes Image</strong></td> </tr> <tr> <td rowspan="4"><strong>Ubuntu</strong></td> <td>12.04</td> <td>3.2.0-75.110</td> <td>Ubuntu-12\_04\_5-LTS-amd64-server-20150119-de-DE-30GB</td> </tr> <tr> <td>14.04</td> <td>3.13.0-44.73</td> <td>Ubuntu-14\_04\_1-LTS-amd64-server-20150123-de-DE-30GB</td> </tr> <tr> <td>14.10</td> <td>3.16.0-29.39</td> <td>Ubuntu-14\_10-amd64-server-20150202-de-DE-30GB</td> </tr> <tr> <td>15.04</td> <td>3.19.0-15</td> <td>Ubuntu-15\_04-amd64-server-20150422-de-DE-30GB</td> </tr> <tr> <td><strong>SUSE</strong></td> <td>SLES 12</td> <td>3.12.36-38.1</td> <td>suse-sles-12-priority-v20150213<br>suse-sles-12-v20150213</td> </tr> <tr> <td><strong>CoreOS</strong></td> <td>584.0.0</td> <td>3.18.4</td> <td>CoreOS 584.0.0</td> </tr> <tr> <td rowspan="2"><strong>CentOS</strong></td> <td>6.5, 6.6, 6.7, 7.0</td> <td></td> <td> <a href="http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409"> LIS 4.0 erforderlich </a> </br> *Siehe Hinweis unten</td> </tr> <tr> <td>7.1</td> <td>3.10.0-229.1.2.el7</td> <td> <a href="http://go.microsoft.com/fwlink/?LinkID=403033&clcid=0x409"> LIS 4.0 empfohlen </a> <br/> *Siehe Hinweis unten </td> </tr>
 
@@ -250,11 +250,7 @@ In diesem Abschnitt wird veranschaulicht, wie ein Premium-Speicherkonto mit dem 
 
 In diesem Abschnitt wird gezeigt, wie ein Premium-Speicherkonto mit dem Azure-Vorschauportal erstellt wird.
 
-1.	Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com/) an. Testen Sie das [kostenlose Testkonto](http://azure.microsoft.com/pricing/free-trial/), wenn Sie noch kein Abonnement haben.
-
-
-    > [AZURE.NOTE]Wenn Sie sich am Azure-Verwaltungsportal anmelden, klicken Sie auf den Namen Ihres Benutzerkontos in der oberen rechten Ecke des Portals. Klicken Sie dann auf **In das neue Portal wechseln**.
-
+1.	Melden Sie sich beim [Azure-Portal](portal.azure.com) an. Testen Sie das [kostenlose Testkonto](http://azure.microsoft.com/pricing/free-trial/), wenn Sie noch kein Abonnement haben.
 
 2.	Klicken Sie im Hub-Menü auf **Neu**.
 
@@ -335,9 +331,8 @@ azure storage account create "premiumtestaccount" -l "west us" --type PLRS
 - [Erstellen eines virtuellen Computers unter Windows](../virtual-machines-windows-tutorial-azure-preview.md)
 - [Größen virtueller Computer und Clouddienste für Azure](../virtual-machines/virtual-machines-size-specs.md)
 - [Speicherdokumentation](http://azure.microsoft.com/documentation/services/storage/)
-- [MSDN-Referenz](http://msdn.microsoft.com/library/azure/gg433040.aspx)
 
 [Image1]: ./media/storage-premium-storage-preview-portal/Azure_pricing_tier.png
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -158,7 +158,7 @@ Unterschiedliche Clustertypen weisen verschiedene Knotentypen, eine unterschiedl
 
 > [AZURE.IMPORTANT]Wenn Sie mehr als 32 Workerknoten planen, entweder bei Erstellung des Clusters oder durch eine Skalierung des Clusters nach der Erstellung, müssen Sie eine Hauptknotengröße von mindestens 8 Kernen und 14 GB Arbeitsspeicher (RAM) auswählen.
 
-Wenn Sie das Azure-Vorschauportal zum Konfigurieren des Clusters verwenden, ist die Knotengröße auf dem Blatt __Knotentarif__ verfügbar. Hier werden auch die Kosten für die verschiedenen Knotengrößen angezeigt.
+Wenn Sie das Azure-Portal zum Konfigurieren des Clusters verwenden, ist die Knotengröße auf dem Blatt __Knotentarif__ verfügbar. Hier werden auch die Kosten für die verschiedenen Knotengrößen angezeigt.
 
 > [AZURE.IMPORTANT]Die Abrechnung beginnt, sobald ein Cluster erstellt wurde, und endet erst, wenn der Cluster gelöscht wird. Weitere Informationen zu den Preisen finden Sie unter [HDInsight – Preise](https://azure.microsoft.com/pricing/details/hdinsight/).
 
@@ -197,7 +197,7 @@ Weitere Informationen zu Features, Vorteilen und Funktionen von virtuellen Netzw
 >
 > Derzeit (25.8.2015) können Sie nur einen Linux-basierten Cluster in einem virtuellen Azure-Netzwerk bereitstellen.
 >
-> Sie können kein virtuelles Azure-Netzwerk der Version 1 (klassisch) mit Linux-basiertem HDInsight verwenden. Das virtuelle Netzwerk muss Version 2 aufweisen (Azure-Ressourcen-Manager), damit es beim Erstellen des Clusters im Azure-Vorschauportal als Option angezeigt wird bzw. beim Erstellen eines Clusters über die Azure-Befehlszeilenschnittstelle oder Azure PowerShell verwendet werden kann.
+> Sie können kein virtuelles Azure-Netzwerk der Version 1 (klassisch) mit Linux-basiertem HDInsight verwenden. Das virtuelle Netzwerk muss Version 2 aufweisen (Azure-Ressourcen-Manager), damit es beim Erstellen des Clusters im Azure-Portal als Option angezeigt wird bzw. beim Erstellen eines Clusters über die Azure-Befehlszeilenschnittstelle oder Azure PowerShell verwendet werden kann.
 >
 > Wenn Sie über Ressourcen in einem v1-Netzwerk verfügen und möchten, dass diese Ressourcen über ein virtuelles Netzwerk direkt auf HDInsight zugreifen können, finden Sie unter [Herstellen einer Verbindung zwischen klassischen VNets und neuen VNets](../virtual-network/virtual-networks-arm-asm-s2s.md) Informationen zum Verbinden eines virtuellen v2-Netzwerks mit einem virtuellen v1-Netzwerk. Nachdem diese Verbindung eingerichtet wurde, können Sie den HDInsight-Cluster im virtuellen v2-Netzwerk erstellen.
 
@@ -227,7 +227,7 @@ In diesem Artikel haben Sie grundlegende Informationen zum Erstellen eines Linux
 
 | Clustererstellung | Webbrowser | Befehlszeile | REST-API | SDK | Linux, Mac OS X oder Unix | Windows |
 | ------------------------------- |:----------------------:|:--------------------:|:------------------:|:------------:|:-----------------------------:|:------------:|
-| [Azure-Vorschauportal](hdinsight-hadoop-create-linux-clusters-portal.md) | ✔ | &nbsp; | &nbsp; | &nbsp; | ✔ | ✔ |
+| [Azure-Portal](hdinsight-hadoop-create-linux-clusters-portal.md) | ✔ | &nbsp; | &nbsp; | &nbsp; | ✔ | ✔ |
 | [Azure-Befehlszeilenschnittstelle](hdinsight-hadoop-create-linux-clusters-azure-cli.md) | &nbsp; | ✔ | &nbsp; | &nbsp; | ✔ | ✔ |
 | [Azure PowerShell](hdinsight-hadoop-create-linux-clusters-azure-powershell.md) | &nbsp; | ✔ | &nbsp; | &nbsp; | &nbsp; | ✔ |
 | [cURL](hdinsight-hadoop-create-linux-clusters-curl.md) | &nbsp; | ✔ | ✔ | &nbsp; | ✔ | ✔ |
@@ -280,6 +280,6 @@ In diesem Artikel haben Sie grundlegende Informationen zum Erstellen eines Linux
 
 [img-hdi-cluster]: ./media/hdinsight-hadoop-provision-linux-clusters/HDI.Cluster.png
 
-  [89e2276a]: /documentation/articles/hdinsight-use-sqoop/ "Verwenden von Sqoop mit HDInsight"
+[89e2276a]: /documentation/articles/hdinsight-use-sqoop/ "Verwenden von Sqoop mit HDInsight"
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

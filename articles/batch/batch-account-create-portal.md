@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Erstellen eines Azure Batch-Kontos | Microsoft Azure"
-	description="Erfahren Sie, wie Sie ein Azure Batch-Konto im Azure-Vorschauportal erstellen, um umfangreiche parallele Workloads in der Cloud auszuführen."
+	description="Erfahren Sie, wie Sie ein Azure Batch-Konto im Azure-Portal erstellen, um umfangreiche parallele Workloads in der Cloud auszuführen."
 	services="batch"
 	documentationCenter=""
 	authors="dlepow"
@@ -18,19 +18,19 @@
 
 
 
-# Erstellen und Verwalten eines Azure Batch-Kontos im Azure-Vorschauportal
+# Erstellen und Verwalten eines Azure Batch-Kontos im Azure-Portal
 
 > [AZURE.SELECTOR]
-- [Azure preview portal](batch-account-create-portal.md)
+- [Azure portal](batch-account-create-portal.md)
 - [Batch Management .NET](batch-management-dotnet.md)
 
-In diesem Artikel wird beschrieben, wie Sie das [Azure-Vorschauportal](https://portal.azure.com) zum Erstellen und Verwalten eines Azure Batch-Kontos und der zugehörigen Einstellungen wie der Kontoschlüssel verwenden. Sie benötigen eine Batch-Konto-URL und den zugehörigen Zugriffsschlüssel, um alle Batch-API-Anforderungen zu authentifizieren. Außerdem ordnen Sie alle Batch-Ressourcen (z. B. Pools, Aufträge und Aufgaben) für Ihre Batch-Workload einem bestimmten Batch-Konto zu.
+In diesem Artikel wird beschrieben, wie Sie das [Azure-Portal](https://portal.azure.com) zum Erstellen und Verwalten eines Azure Batch-Kontos und der zugehörigen Einstellungen wie der Kontoschlüssel verwenden. Sie benötigen eine Batch-Konto-URL und den zugehörigen Zugriffsschlüssel, um alle Batch-API-Anforderungen zu authentifizieren. Außerdem ordnen Sie alle Batch-Ressourcen (z. B. Pools, Aufträge und Aufgaben) für Ihre Batch-Workload einem bestimmten Batch-Konto zu.
 
 >[AZURE.NOTE]Derzeit unterstützt das Vorschauportal Funktionen für die Batch-Kontenverwaltung und das Anzeigen einiger Kontoressourcen. Sämtliche Batch-Features stehen Entwicklern über die Batch-APIs zur Verfügung.
 
 ## Erstellen eines Batch-Kontos
 
-1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
 
 2. Klicken Sie auf **Neu** > **Compute** > **Batch-Dienst**.
 
@@ -84,4 +84,4 @@ Klicken Sie zum Anzeigen und Verwalten der Zugriffsschlüssel auf das Schlüssel
 [account_portal]: ./media/batch-account-create-portal/batch_acct_portal.png
 [account_keys]: ./media/batch-account-create-portal/account_keys.PNG
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

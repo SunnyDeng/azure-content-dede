@@ -20,7 +20,7 @@
 
 Testen Sie die Leistung Ihrer Web-App, bevor Sie sie starten oder Updates für die Produktion bereitstellen. Auf diese Weise können Sie besser beurteilen, ob Ihre App zur Veröffentlichung bereit ist. Und Sie können sicher sein, dass Ihre App den Datenverkehr zu Spitzenlastzeiten oder während Ihrer nächsten Marketingkampagne verarbeiten kann.
 
-Während der öffentlichen Vorschau können Sie Ihre App kostenlos im Azure-Vorschauportal testen. Diese Tests simulieren über einen bestimmten Zeitraum eine bestimmte Benutzerlast für Ihre App und messen die Antwortzeit der App. Die Testergebnisse zeigen beispielsweise, wie schnell Ihre App bei einer bestimmten Anzahl von Benutzern reagiert. Sie zeigen auch, bei wie vielen Anforderungen Fehler aufgetreten sind, was auf Probleme mit der App hinweisen kann.
+Während der öffentlichen Vorschau können Sie Ihre App kostenlos im Azure-Portal testen. Diese Tests simulieren über einen bestimmten Zeitraum eine bestimmte Benutzerlast für Ihre App und messen die Antwortzeit der App. Die Testergebnisse zeigen beispielsweise, wie schnell Ihre App bei einer bestimmten Anzahl von Benutzern reagiert. Sie zeigen auch, bei wie vielen Anforderungen Fehler aufgetreten sind, was auf Probleme mit der App hinweisen kann.
 
 ![Leistungsprobleme in Ihrer Web-App finden][TestOverview]
 
@@ -34,7 +34,7 @@ Während der öffentlichen Vorschau können Sie Ihre App kostenlos im Azure-Vors
 
 ## Einrichten und Ausführen des Leistungstests
 
-0.	Melden Sie sich beim [Azure-Vorschauportal][AzurePortal] an. Um ein Visual Studio Team Services-Konto zu verwenden, dessen Besitzer Sie sind, melden Sie sich als Kontobesitzer an.
+0.	Melden Sie sich beim [Azure-Portal][AzurePortal] an. Um ein Visual Studio Team Services-Konto zu verwenden, dessen Besitzer Sie sind, melden Sie sich als Kontobesitzer an.
 
 0.	Wechseln Sie zu Ihrer Web-App.
 
@@ -76,7 +76,7 @@ Wir freuen uns auf Ihr Feedback. Bei Fragen oder Problemen wenden Sie sich unter
 
 #### F: Gibt es eine Beschränkung, wie lange ich einen Test ausführen kann? 
 
-A: Ja. Sie können den Test bis zu einer Stunde lang im Azure-Vorschauportal ausführen.
+A: Ja. Sie können den Test bis zu einer Stunde lang im Azure-Portal ausführen.
 
 #### F: Wie viel Zeit habe ich zum Ausführen von Leistungstests? 
 
@@ -84,7 +84,7 @@ A: Nach der öffentlichen Vorschau erhalten Sie jeden Monat 20.000 virtuelle Ben
 
 #### F: Wo kann ich prüfen, wie viele virtuelle Benutzerminuten ich bereits verwendet habe?
 
-A: Sie können die Anzahl im Azure-Vorschauportal prüfen.
+A: Sie können die Anzahl im Azure-Portal prüfen.
 
 ![Zum VSTS-Konto wechseln][VSTSAccount]
 
@@ -112,4 +112,4 @@ A: Sie finden Ihr neues Konto hier: ```https://{accountname}.visualstudio.com```
 [AzureFreeTrial]: https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F
 [WhatIsVSTS]: https://www.visualstudio.com/products/what-is-visual-studio-online-vs
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

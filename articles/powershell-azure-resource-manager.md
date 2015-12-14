@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="powershell" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/16/2015" 
+	ms.date="12/01/2015" 
 	ms.author="tomfitz"/>
 
 # Verwenden von Windows PowerShell mit dem Azure-Ressourcen-Manager
@@ -31,12 +31,10 @@ In diesem Tutorial erlernen Sie das Verwenden von Azure PowerShell mit dem Azure
 Für dieses Tutorial benötigen Sie Folgendes:
 
 - Ein Azure-Konto
-  + Sie können [ein Azure-Konto kostenlos erstellen](/pricing/free-trial/?WT.mc_id=A261C142F): Sie erhalten ein Guthaben, das Sie zum Ausprobieren zahlungspflichtiger Azure-Dienste nutzen können, und Sie können das Konto selbst dann behalten und die kostenlosen Azure-Dienste wie Azure Websites nutzen, wenn das Guthaben aufgebraucht ist. Ihre Kreditkarte wird nur dann belastet, wenn Sie Ihre Einstellungen explizit ändern und mit einer Zahlung einverstanden sind.
+  + Sie können [ein Azure-Konto kostenlos erstellen](/pricing/free-trial/?WT.mc_id=A261C142F): Sie erhalten ein Guthaben, das Sie zum Ausprobieren zahlungspflichtiger Azure-Dienste nutzen können, und Sie können das Konto selbst dann behalten und die kostenlosen Azure-Dienste wie Websites nutzen, wenn das Guthaben aufgebraucht ist. Ihre Kreditkarte wird nur dann belastet, wenn Sie Ihre Einstellungen explizit ändern und mit einer Zahlung einverstanden sind.
   
-  + Sie können Ihre [Vorteile für MSDN-Abonnenten aktivieren](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F): Ihr MSDN-Abonnement enthält ein monatliches Guthaben, das Sie für zahlungspflichtige Azure-Dienste nutzen können.
-- Azure PowerShell
-
-[AZURE.INCLUDE [powershell-preview-inline-include](../includes/powershell-preview-inline-include.md)]
+  + Sie können Ihre [Vorteile für MSDN-Abonnenten aktivieren](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F): Ihr MSDN-Abonnement beinhaltet ein monatliches Guthaben, das Sie für zahlungspflichtige Azure-Dienste nutzen können.
+- Azure PowerShell 1.0. Informationen zu dieser Version und wie Sie diese installieren finden Sie unter [Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0/) (in englischer Sprache).
 
 Dieses Lernprogramm richtet sich an PowerShell-Anfänger. Es wird aber vorausgesetzt, dass Sie die grundlegenden Konzepte verstehen, z. B. Module, Cmdlets und Sitzungen. Weitere Informationen zu Windows PowerShell finden Sie unter [Erste Schritte mit Windows PowerShell](http://technet.microsoft.com/library/hh857337.aspx).
 
@@ -53,7 +51,7 @@ In diesem Tutorial verwenden Sie Azure PowerShell zur Bereitstellung einer Web-A
 
 ## Hilfe zu Cmdlets
 
-Um detaillierte Hilfe zu einem Cmdlet aus dem Tutorial zu erhalten, verwenden Sie das Get-Help-Cmdlet.
+Um detaillierte Hilfe zu einem Cmdlet aus dem Lernprogramm zu erhalten, verwenden Sie das Get-Help-Cmdlet.
 
 	Get-Help <cmdlet-name> -Detailed
 
@@ -83,7 +81,7 @@ Um die vollständige Hilfe zu einem Cmdlet zu erhalten, geben Sie einen Befehl i
 
 Bevor Sie an Ihrer Lösung arbeiten, müssen Sie sich bei Ihrem Konto anmelden.
 
-Um sich bei Ihrem Azure-Konto anzumelden, verwenden Sie das Cmdlet **Login-AzureRmAccount**. Verwenden Sie in Azure PowerShell-Versionen vor 1.0 Preview den Befehl **Add-AzureAccount**.
+Um sich bei Ihrem Azure-Konto anzumelden, verwenden Sie das Cmdlet **Login-AzureRmAccount**.
 
     PS C:\> Login-AzureRmAccount
 
@@ -216,7 +214,7 @@ Für die Datenbank wird Folgendes angezeigt:
 
 In diesem Thema wird nicht gezeigt, wie Sie eine Vorlage erstellen, und nicht die Struktur der Vorlage erläutert. Weitere Informationen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md). Nachstehend finden Sie die Vorlage, die Sie bereitstellen werden. Beachten Sie, dass die Vorlage die API-Versionen verwendet, die Sie im vorherigen Abschnitt abgerufen haben. Um sicherzustellen, dass sich alle Ressourcen in der gleichen Region befinden, verwenden wir den Vorlagenausdruck **resourceGroup().location**, um den Standort der Ressourcengruppe zu nutzen.
 
-Beachten Sie auch den Abschnitt für Parameter. Dieser Abschnitt definiert Werte, die Sie angeben können, wenn die Ressourcen bereitgestellt werden. Sie verwenden diese Werte später im Tutorial.
+Beachten Sie auch den Abschnitt für Parameter. Dieser Abschnitt definiert Werte, die Sie angeben können, wenn die Ressourcen bereitgestellt werden. Sie verwenden diese Werte später in diesem Tutorial.
 
 Sie können die Vorlage kopieren und als JSON-Datei lokal speichern. In diesem Tutorial wird davon ausgegangen, dass sie unter „C:\\Azure\\Templates\\azuredeploy.json“ gespeichert wurde. Doch Sie können sie an einen beliebigen Ort und mit dem Namen speichern, der für Ihre Anforderungen geeignet ist.
 
@@ -344,7 +342,7 @@ Sie geben die Ressourcengruppe und den Speicherort der Vorlage an. Wenn Ihre Vor
 
 ###Dynamische Vorlagenparameter
 
-Wenn Sie mit PowerShell vertraut sind, wissen Sie, dass Sie die für ein Cmdlet verfügbaren Parameter durchlaufen können, indem Sie ein Minuszeichen (-) eingeben und die TAB-TASTE drücken. Dieselbe Funktionalität gilt auch für Parameter, die Sie in der Vorlage definieren. Sobald Sie den Vorlagennamen eingeben, ruft das Cmdlet die Vorlage ab, analysiert sie und fügt die Vorlagenparameter dynamisch zum Befehl hinzu. Auf diese Weise wird das Angeben der Vorlagenparameterwerte stark vereinfacht. Wenn Sie einen erforderlichen Parameterwert vergessen haben, fordert PowerShell Sie zur Angabe des Werts auf.
+Wenn Sie mit PowerShell vertraut sind, wissen Sie, dass Sie die für ein Cmdlet verfügbaren Parameter durchlaufen können, indem Sie ein Minuszeichen (-) eingeben und die TAB-TASTE drücken. Dieselbe Funktionalität gilt auch für Parameter, die Sie in der Vorlage definieren. Sobald Sie den Vorlagennamen eingeben, ruft das Cmdlet die Vorlage ab, analysiert sie und fügt die Vorlagenparameter dynamisch dem Befehl hinzu. Auf diese Weise wird das Angeben der Vorlagenparameterwerte stark vereinfacht. Wenn Sie einen erforderlichen Parameterwert vergessen haben, fordert PowerShell Sie zur Angabe des Werts auf.
 
 Es folgt der vollständige Befehl mit Parametern. Sie können Ihre eigenen Werte für die Namen der Ressourcen angeben.
 
@@ -394,9 +392,9 @@ Nach dem Erstellen einer Ressourcengruppe können Sie die Cmdlets im Ressourcen-
 		
 		...
 
-- Um die Ressourcen in der Ressourcengruppe abzurufen, verwenden Sie das Cmdlet **Get-AzureRmResource** und den zugehörigen „ResourceGroupName“-Parameter. Ohne Parameter ruft „Get-AzureRmResource“ alle Ressourcen in Ihrem Azure-Abonnement ab.
+- Um die Ressourcen in der Ressourcengruppe abzurufen, verwenden Sie das Cmdlet **Find-AzureRmResource** und den zugehörigen **ResourceGroupNameContains**-Parameter. Ohne Parameter ruft „Find-AzureRmResource“ alle Ressourcen in Ihrem Azure-Abonnement ab.
 
-		PS C:\> Get-AzureRmResource -ResourceGroupName TestRG1
+		PS C:\> Find-AzureRmResource -ResourceGroupNameContains TestRG1
 		
 		Name              : exampleserver
                 ResourceId        : /subscriptions/{guid}/resourceGroups/TestRG1/providers/Microsoft.Sql/servers/tfserver10
@@ -412,7 +410,7 @@ Nach dem Erstellen einer Ressourcengruppe können Sie die Cmdlets im Ressourcen-
 
 ## Hinzufügen zu einer Ressourcengruppe
 
-Um eine Ressource zur Ressourcengruppe hinzuzufügen, verwenden Sie das Cmdlet **New-AzureRmResource**. Das Hinzufügen einer Ressource auf diese Weise kann jedoch künftig für Verwirrung sorgen, da die neue Ressource nicht in Ihrer Vorlage vorhanden ist. Wenn Sie die alte Vorlage erneut bereitgestellt hätten, würden Sie eine unvollständige Lösung bereitstellen. Wenn Sie häufig bereitstellen, ist es einfacher und zuverlässiger, die neue Ressource Ihrer Vorlage hinzuzufügen und Sie erneut bereitzustellen.
+Um der Ressourcengruppe eine Ressource hinzuzufügen, verwenden Sie das Cmdlet **New-AzureRmResource**. Das Hinzufügen einer Ressource auf diese Weise kann jedoch künftig für Verwirrung sorgen, da die neue Ressource nicht in Ihrer Vorlage vorhanden ist. Wenn Sie die alte Vorlage erneut bereitgestellt hätten, würden Sie eine unvollständige Lösung bereitstellen. Wenn Sie häufig bereitstellen, ist es einfacher und zuverlässiger, die neue Ressource Ihrer Vorlage hinzuzufügen und Sie erneut bereitzustellen.
 
 ## Verschieben einer Ressource
 
@@ -441,6 +439,6 @@ Sie können vorhandene Ressourcen in eine neue Ressourcengruppe verschieben. Bei
 - Weitere Informationen zum Erstellen von Ressourcen-Manager-Vorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](./resource-group-authoring-templates.md).
 - Informationen zum Bereitstellen von Vorlagen finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](./resource-group-template-deploy.md).
 - Ein ausführliches Beispiel für das Bereitstellen eines Projekts finden Sie unter [Vorhersagbares Bereitstellen von Microservices in Azure](app-service-web/app-service-deploy-complex-application-predictably.md).
-- Weitere Informationen zur Problembehandlung bei einer nicht erfolgreichen Bereitstellung finden Sie unter [Problembehandlung bei Bereitstellungen von Ressourcengruppen in Azure](./virtual-machines/resource-group-deploy-debug.md).
+- Weitere Informationen zur Problembehandlung bei einer nicht erfolgreichen Bereitstellung finden Sie unter [Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure](./virtual-machines/resource-group-deploy-debug.md).
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

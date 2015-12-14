@@ -22,7 +22,7 @@ Wenn während der Bereitstellung ein Problem auftritt, müssen Sie den Grund daf
 
 In diesem Thema geht es hauptsächlich um die Verwendung von Bereitstellungsbefehlen für das Beheben von Bereitstellungsfehlern. Weitere Informationen zum Nachverfolgen aller Vorgänge in Ihren Ressourcen mithilfe der Überwachungsprotokolle finden Sie unter [Überwachen von Vorgängen mit dem Ressourcen-Manager](../resource-group-audit.md).
 
-In diesem Thema wird das Abrufen von Informationen zur Problembehandlung mit Azure PowerShell, mit der Azure-Befehlszeilenschnittstelle und der REST-API veranschaulicht. Informationen zum Verwenden des Vorschauportals zum Beheben von Bereitstellungsfehlern finden Sie unter [Verwenden des Azure-Vorschauportals zum Verwalten Ihrer Azure-Ressourcen](../azure-portal/resource-group-portal.md).
+In diesem Thema wird das Abrufen von Informationen zur Problembehandlung mit Azure PowerShell, mit der Azure-Befehlszeilenschnittstelle und der REST-API veranschaulicht. Informationen zum Verwenden des Vorschauportals zum Beheben von Bereitstellungsfehlern finden Sie unter [Verwenden des Azure-Portals zum Verwalten Ihrer Azure-Ressourcen](../azure-portal/resource-group-portal.md).
 
 Lösungen für allgemeine Fehler bei der Verwendung werden ebenfalls in diesem Thema beschrieben.
 
@@ -292,30 +292,12 @@ Wenn Sie versuchen, eine Vorlage bereitzustellen, die mehr als vier Kerne in der
 
 In diesen Fällen sollten Sie zum Portal navigieren und ein Supportproblem einreichen, um Ihr Kontingent für die Region, in der Sie diese bereitstellen möchten, zu erhöhen.
 
-> [AZURE.NOTE]Denken Sie daran, dass für Ressourcengruppen das Kontingent für jede einzelne Region und nicht für das gesamte Abonnement gilt. Wenn Sie 30 Kerne in der Region "USA, Westen" bereitstellen möchten, müssen Sie 30 Ressourcen-Manager-Kerne für "USA, Westen" anfordern. Wenn Sie 30 Kerne in allen Regionen, auf die Sie Zugriff haben, bereitstellen möchten, müssen Sie 30 Ressourcen-Manager-Kerne in allen Regionen anfordern.
-<!-- -->
-Um genaue Angaben zu Kernen zu machen, können Sie z. B. die Regionen angeben, für die Sie die entsprechende Kontingentmenge anfordern möchten, indem Sie den folgenden Befehl verwenden, der zur JSON-Analyse an **jq** weitergereicht wird:
-<!-- -->
-        azure provider show Microsoft.Compute --json | jq '.resourceTypes[] | select(.name == "virtualMachines") | { name,apiVersions, locations}'
-        {
-          "name": "virtualMachines",
-          "apiVersions": [
-            "2015-05-01-preview",
-            "2014-12-01-preview"
-          ],
-          "locations": [
-            "East US",
-            "West US",
-            "West Europe",
-            "East Asia",
-            "Southeast Asia"
-          ]
-        }
+> [AZURE.NOTE]Denken Sie daran, dass für Ressourcengruppen das Kontingent für jede einzelne Region und nicht für das gesamte Abonnement gilt. Wenn Sie 30 Kerne in der Region "USA, Westen" bereitstellen möchten, müssen Sie 30 Ressourcen-Manager-Kerne für "USA, Westen" anfordern. Wenn Sie 30 Kerne in allen Regionen, auf die Sie Zugriff haben, bereitstellen möchten, müssen Sie 30 Ressourcen-Manager-Kerne in allen Regionen anfordern. <!-- --> Um genaue Angaben zu Kernen zu machen, können Sie z. B. die Regionen angeben, für die Sie die entsprechende Kontingentmenge anfordern möchten, indem Sie den folgenden Befehl verwenden, der zur JSON-Analyse an **jq** weitergereicht wird: <!-- --> azure provider show Microsoft.Compute --json | jq '.resourceTypes | select(.name == "virtualMachines") | { name,apiVersions, locations}' { "name": "virtualMachines", "apiVersions": [ "2015-05-01-preview", "2014-12-01-preview" ], "locations": [ "East US", "West US", "West Europe", "East Asia", "Southeast Asia" ] }
 
 
 ## Überprüfen der Ressourcenanbieterregistrierung
 
-Ressourcen werden von Ressourcenanbietern verwaltet, und ein Konto oder Abonnement kann für die Verwendung eines bestimmten Anbieters konfiguriert werden. Falls Ihre Aktivierung die Nutzung eines bestimmten Anbieters vorsieht, muss dieser auch für die Nutzung registriert sein. Die meisten Anbieter werden automatisch über das Azure-Vorschauportal oder die verwendete Befehlszeilenschnittstelle registriert, aber nicht alle.
+Ressourcen werden von Ressourcenanbietern verwaltet, und ein Konto oder Abonnement kann für die Verwendung eines bestimmten Anbieters konfiguriert werden. Falls Ihre Aktivierung die Nutzung eines bestimmten Anbieters vorsieht, muss dieser auch für die Nutzung registriert sein. Die meisten Anbieter werden automatisch über das Azure-Portal oder die verwendete Befehlszeilenschnittstelle registriert.
 
 ### PowerShell
 
@@ -434,4 +416,4 @@ Informationen zur Vorlagenerstellung finden Sie unter [Erstellen von Azure-Resso
 
 <!--Reference style links - using these makes the source content way more readable than using inline links-->
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

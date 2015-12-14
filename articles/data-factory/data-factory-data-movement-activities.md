@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/19/2015" 
+	ms.date="12/01/2015" 
 	ms.author="spelluru"/>
 
 # Datenverschiebungsaktivitäten
@@ -109,4 +109,4 @@ Eigenschaften wie Name, Beschreibung, Eingabe- und Ausgabetabellen, verschiedene
 
 Bei der Kopieraktivität hängt der **typeProperties**-Abschnitt von den Typen der Quellen und Senken ab. Auf jeder der oben genannten Seiten für Datenspeicher sind diese Eigenschaften für den jeweiligen Datenspeichertyp dokumentiert.
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

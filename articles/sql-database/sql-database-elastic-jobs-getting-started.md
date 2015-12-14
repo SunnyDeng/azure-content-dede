@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/04/2015"
+	ms.date="12/01/2015"
 	ms.author="sidneyh; ddove" />
 
 # Erste Schritte mit Aufträgen für die elastische Datenbank
@@ -33,9 +33,9 @@ Hier erstellen Sie einen Shardzuordnungs-Manager und mehrere Shards und fügen a
 
 	![Eingabeaufforderung][1]
 
-2.  Geben Sie im Befehlsfenster "1" ein, und drücken Sie die **EINGABETASTE**. Dadurch wird der Shardzuordnungs-Manager erstellt, und es werden zwei Shards zum Server hinzugefügt. Geben Sie dann "3" ein, und drücken Sie die **EINGABETASTE**. Wiederholen Sie den Vorgang viermal. Dadurch werden Beispieldatenzeilen in die Shards eingefügt.
+2.  Geben Sie im Befehlsfenster "1" ein, und drücken Sie die **EINGABETASTE**. Dadurch wird der Shardzuordnungs-Manager erstellt, und es werden zwei Shards zum Server hinzugefügt. Geben Sie dann „3“ ein, und drücken Sie die **Eingabetaste**. Wiederholen Sie diesen Vorgang viermal. Dadurch werden Beispieldatenzeilen in die Shards eingefügt.
 
-3.  Im [Azure-Vorschauportal](https://portal.azure.com) sollten drei neue Datenbanken auf dem V12-Server angezeigt werden:
+3.  Im [Azure-Portal](https://portal.azure.com) sollten drei neue Datenbanken auf dem V12-Server angezeigt werden:
 
 	![Visual Studio-Bestätigung][2]
 
@@ -379,7 +379,7 @@ Legen Sie die folgenden Werte fest, um das gewünschte Skript, die Anmeldeinform
 
 ## Erstellen eines Zeitplans für die Auftragsausführung mithilfe eines Auftragsauslösers
 
-Das folgende PowerShell-Skript kann zum Erstellen eines wiederkehrenden Zeitplans verwendet werden. Dieses Skript verwendet ein Minutenintervall, „New-AzureSqlJobSchedule“ unterstützt aber außerdem auch die Parameter „-DayInterval“, „-HourInterval“, „-MonthInterval“ und „-WeekInterval“. Zeitpläne, die nur einmalig ausgeführt werden sollen, können durch Angeben von „-OneTime“ erstellt werden.
+Das folgende PowerShell-Skript kann zum Erstellen eines wiederkehrenden Zeitplans verwendet werden. Dieses Skript verwendet ein einminütiges Intervall, „New-AzureSqlJobSchedule“ unterstützt aber außerdem auch die Parameter „-DayInterval“, „-HourInterval“, „-MonthInterval“ und „-WeekInterval“. Zeitpläne, die nur einmalig ausgeführt werden sollen, können durch Angeben von „-OneTime“ erstellt werden.
 
 Erstellen Sie einen neuen Zeitplan:
 
@@ -418,7 +418,7 @@ Um die Fortsetzung der Auftragsausführung durch einen Auftragsauslöser aufzuhe
 
 1. Öffnen Sie Excel 2013.
 2. 	Navigieren Sie zum Menüband **Daten**.
-3. 	Klicken Sie auf **Aus anderen Quellen**, und klicken Sie auf **Aus SQL Server**.
+3. 	Klicken Sie auf **Aus anderen Quellen** und dann auf **Von SQL Server**.
 
 	![Excel-Import aus anderen Quellen][5]
 4. 	Geben Sie im **Datenverbindungs-Assistenten** den Servernamen und die Anmeldeinformationen ein. Klicken Sie auf **Next**.
@@ -447,4 +447,4 @@ Preisinformationen finden Sie in der [SQL-Datenbank – Preisdetails](http://azu
 [5]: ./media/sql-database-elastic-query-getting-started/exel-sources.png
 <!--anchors-->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

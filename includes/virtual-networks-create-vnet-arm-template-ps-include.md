@@ -92,4 +92,4 @@ Führen Sie zum Bereitstellen der mithilfe von PowerShell heruntergeladenen ARM-
 		                      }
 		                    ]
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

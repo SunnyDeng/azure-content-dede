@@ -18,7 +18,7 @@
 
 
 # Vorbereiten eines auf Red Hat basierenden virtuellen Computers für Azure
-In diesem Artikel erfahren Sie, wie einen auf Red Hat Enterprise Linux (RHEL) basierenden virtuellen Computer für die Verwendung in Azure vorbereiten. In diesem Artikel werden die RHEL-Versionen 6.7 und 7.1 sowie die Hypervisoren Hyper-V, KVM und VMware für die Vorbereitung vorgestellt.
+In diesem Artikel erfahren Sie, wie einen auf Red Hat Enterprise Linux (RHEL) basierenden virtuellen Computer für die Verwendung in Azure vorbereiten. In diesem Artikel werden die RHEL-Versionen 6.7 und 7.1 sowie die Hypervisoren Hyper-V, KVM und VMware für die Vorbereitung vorgestellt. Weitere Informationen zu den Berechtigungsvoraussetzungen für die Teilnahme am Cloud Access-Programm von Red Hat finden Sie auf der [Red Hat Cloud Access-Website](http://www.redhat.com/en/technologies/cloud-computing/cloud-access).
 
 
 
@@ -427,7 +427,7 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
 
         # systemctl enable waagent.service
 
-14.	Richten Sie keinen SWAP-Raum auf dem BS-Datenträger ein. Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein temporärer Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Ändern Sie nach dem Installieren des Azure Linux-Agents (siehe vorheriger Schritt) die folgenden Parameter in `/etc/waagent.conf` entsprechend:
+14.	Richten Sie keinen SWAP-Raum auf dem BS-Datenträger ein. Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein temporärer Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Passen Sie nach dem Installieren des Azure Linux-Agents (siehe vorheriger Schritt) die folgenden Parameter in `/etc/waagent.conf` an:
 
         ResourceDisk.Format=y
         ResourceDisk.Filesystem=ext4
@@ -542,7 +542,7 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits einen virtuellen Co
 
 11.	Richten Sie keinen SWAP-Bereich auf dem Betriebssystemdatenträger ein:
     
-    Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein temporärer Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Ändern Sie nach dem Installieren des Azure Linux-Agents (siehe vorheriger Schritt) die folgenden Parameter in `/etc/waagent.conf` entsprechend:
+    Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein temporärer Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Passen Sie nach dem Installieren des Azure Linux-Agents (siehe vorheriger Schritt) die folgenden Parameter in `/etc/waagent.conf` an:
 
         ResourceDisk.Format=y
         ResourceDisk.Filesystem=ext4
@@ -644,7 +644,7 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits einen virtuellen Co
         # sudo yum install WALinuxAgent
         # sudo systemctl enable waagent.service
 
-11.	Richten Sie keinen SWAP-Raum auf dem BS-Datenträger ein. Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein temporärer Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Ändern Sie nach dem Installieren des Azure Linux-Agents (siehe vorheriger Schritt) die folgenden Parameter in `/etc/waagent.conf` entsprechend:
+11.	Richten Sie keinen SWAP-Raum auf dem BS-Datenträger ein. Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein temporärer Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Passen Sie nach dem Installieren des Azure Linux-Agents (siehe vorheriger Schritt) die folgenden Parameter in `/etc/waagent.conf` an:
 
         ResourceDisk.Format=y
         ResourceDisk.Filesystem=ext4
@@ -830,4 +830,4 @@ Dieses Problem tritt zeitweise auf, jedoch öfter während häufigen Datenträge
 
     # sudo yum update
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

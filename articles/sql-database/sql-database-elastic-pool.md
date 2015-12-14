@@ -11,7 +11,7 @@
 <tags
 	ms.service="sql-database"
 	ms.devlang="NA"
-	ms.date="11/10/2015"
+	ms.date="12/01/2015"
 	ms.author="sstein"
 	ms.workload="data-management"
 	ms.topic="article"
@@ -58,12 +58,12 @@ Datenbanken in einem Pool für elastische Datenbanken werden automatisch vom Sys
 
 ### Geografische Wiederherstellung
 
-Mit der geografischen Wiederherstellung können Sie eine Datenbank in einem Pool auf einem Server an einem anderen Standort wiederherstellen. Bei der Vorschau muss zum Wiederherstellen einer Datenbank in einem Pool auf einem anderen Server der Pool auf dem Zielserver über den gleichen Namen wie der Quellpool verfügen. Bei Bedarf erstellen Sie einen neuen Pool auf dem Zielserver und geben ihm den gleichen Namen wie vor dem Wiederherstellen der Datenbank. Die geografische Wiederherstellung schlägt fehl, wenn kein Pool mit dem gleichen Namen auf dem Zielserver vorhanden ist. Sie können Vorgänge zur geografischen Wiederherstellung mithilfe des Azure-Portals oder der REST-API ausführen. PowerShell-Cmdlet-Unterstützung wird demnächst zur Verfügung stehen.
+Mit der geografischen Wiederherstellung können Sie eine Datenbank in einem Pool auf einem Server an einem anderen Standort wiederherstellen. Bei der Vorschau muss zum Wiederherstellen einer Datenbank in einem Pool auf einem anderen Server der Pool auf dem Zielserver über den gleichen Namen wie der Quellpool verfügen. Bei Bedarf erstellen Sie einen neuen Pool auf dem Zielserver und geben ihm den gleichen Namen wie vor dem Wiederherstellen der Datenbank. Die geografische Wiederherstellung schlägt fehl, wenn kein Pool mit dem gleichen Namen auf dem Zielserver vorhanden ist. Informationen finden Sie unter [Wiederherstellen mit geografischer Wiederherstellung](sql-database-disaster-recovery.md#recover-using-geo-restore).
 
 
 ### Georeplikation
 
-Georeplikation ist für jede Datenbank in einem Standard- oder Premiumpool mit elastischen Datenbanken verfügbar. Eine oder alle Datenbanken in einer Georeplikationspartnerschaft können in einem Pool mit elastischen Datenbanken enthalten sein, sofern die Dienstebenen identisch sind. Sie können die Georeplikation für Pools mit elastischen Datenbanken mit dem [Azure-Portal](sql-database-geo-replication-portal.md), [PowerShell](sql-database-geo-replication-powershell.md) oder [Transact-SQL](sql-database-geo-replication-transact-sql.md) konfigurieren.
+Georeplikation ist für jede Datenbank in einem Standard- oder Premiumpool mit elastischen Datenbanken verfügbar. Eine oder alle Datenbanken in einer Georeplikationspartnerschaft können in einem Pool mit elastischen Datenbanken enthalten sein, sofern die Dienstebenen identisch sind. Sie können die Georeplikation für Pools für elastische Datenbanken mit dem [Azure-Portal](sql-database-geo-replication-portal.md), [PowerShell](sql-database-geo-replication-powershell.md) oder [Transact-SQL](sql-database-geo-replication-transact-sql.md) konfigurieren.
 
 ### Import und Export
 
@@ -73,4 +73,4 @@ Das Exportieren einer Datenbank aus einem Pool wird unterstützt. Derzeit wird d
 <!--Image references-->
 [1]: ./media/sql-database-elastic-pool/databases.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

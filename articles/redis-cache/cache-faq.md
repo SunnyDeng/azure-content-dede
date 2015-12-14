@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/18/2015" 
+	ms.date="11/30/2015" 
 	ms.author="sdanie"/>
 
 # Azure Redis Cache – häufig gestellte Fragen
@@ -29,7 +29,7 @@ Nachfolgend sind verschiedene Aspekte aufgeführt, die Ihnen bei der Wahl helfen
 -	**Speicher**: Der Basic-Tarif und der Standard-Tarif bieten 250 MB bis 53 GB. Der Premium-Tarif bietet bis zu 530 GB, die [auf Anfrage](mailto:wapteams@microsoft.com?subject=Redis%20Cache%20quota%20increase) aufgestockt werden können. Weitere Informationen finden Sie unter [Azure Redis Cache Preise](https://azure.microsoft.com/pricing/details/cache/).
 -	**Netzwerkleistung**: Bei einer Workload, die einen hohen Durchsatz erfordert, bietet der Premium-Tarif im Vergleich zum Standard- oder Basic-Tarif eine größere Bandbreite. Zudem haben die größeren Caches aufgrund des zugrunde liegenden virtuellen Computers, der den Cache hostet, bei jedem Tarif eine höhere Bandbreite. Ausführliche Informationen finden Sie in der Tabelle weiter unten.
 -	**Durchsatz**: Der Premium-Tarif bietet den maximal verfügbaren Durchsatz. Wenn Cacheserver oder -clients die Bandbreitengrenzwerte erreichen, kommt es zu Timeouts auf Clientseite. Ausführliche Informationen finden Sie in der Tabelle weiter unten.
--	**Hohe Verfügbarkeit/SLA**: Azure Redis Cache garantiert, dass ein Standard-Cache oder Premium-Cache (SLA für den Premium-Tarif erst nach der Vorschauphase) mindestens 99,9 % der Zeit zur Verfügung steht. Weitere Informationen zu unserer SLA finden Sie unter [Azure Redis Cache Preise](https://azure.microsoft.com/pricing/details/cache/). Die SLA deckt nur die Konnektivität zu den Cache-Endpunkten ab. Sie bezieht sich dagegen nicht auf Schutz vor Datenverlusten. Es wird empfohlen, das Redis-Feature für Datenpersistenz im Premium-Tarif zu verwenden, um den Schutz vor Datenverlusten zu erhöhen.
+-	**Hohe Verfügbarkeit/SLA**: Azure Redis Cache garantiert, dass ein Standard-/Premium-Cache mindestens 99,9 % der Zeit zur Verfügung steht. Weitere Informationen zu unserer SLA finden Sie unter [Azure Redis Cache Preise](https://azure.microsoft.com/support/legal/sla/cache/v1_0/). Die SLA deckt nur die Konnektivität zu den Cache-Endpunkten ab. Sie bezieht sich dagegen nicht auf Schutz vor Datenverlusten. Es wird empfohlen, das Redis-Feature für Datenpersistenz im Premium-Tarif zu verwenden, um den Schutz vor Datenverlusten zu erhöhen.
 -	**Redis-Datenpersistenz**: Der Premium-Tarif ermöglicht die Persistenz der Cachedaten in einem Azure-Speicherkonto. In einem Basic- oder Standard-Cache werden alle Daten nur im Arbeitsspeicher gespeichert. Bei Problemen mit der zugrunde liegenden Infrastruktur kann es zu Datenverlusten kommen. Es wird empfohlen, das Redis-Feature für Datenpersistenz im Premium-Tarif zu verwenden, um den Schutz vor Datenverlusten zu erhöhen. Azure Redis Cache bietet RDB- und AOF-Optionen (demnächst verfügbar) bei der Redis-Persistenz. Weitere Informationen finden Sie unter [Konfigurieren von Persistenz für Azure Redis Cache vom Typ "Premium"](cache-how-to-premium-persistence.md).
 -	**Redis Cluster**: Wenn Sie Caches mit einer Größe über 53 GB erstellen oder Daten über mehrere Redis-Knoten horizontal partitionieren möchten, können Sie das im Premium-Tarif verfügbare Redis-Clustering verwenden. Für die hohe Verfügbarkeit besteht jeder Knoten aus einem Paar aus primärem Cache und Replikatcache. Weitere Informationen finden Sie unter [Konfigurieren von Clustern für Azure Redis Cache vom Typ "Premium"](cache-how-to-premium-clustering.md).
 -	**Erhöhte Sicherheit und Isolation**: Die Bereitstellung von Azure Virtual Network (VNET) bietet verbesserte Sicherheit und Isolation für den Azure Redis Cache sowie Subnetze, Zugriffssteuerungsrichtlinien und andere Features, mit denen der Zugriff weiter eingeschränkt wird. Weitere Informationen finden Sie unter [Konfigurieren der Unterstützung virtueller Netzwerke für Azure Redis Cache vom Typ "Premium"](cache-how-to-premium-vnet.md).
@@ -204,7 +204,7 @@ Azure Cache verfügt derzeit über drei Angebote:
 
 
 ### Azure Redis Cache
-Azure Redis Cache ist allgemein verfügbar in Größen bis zu 53 GB mit einer Verfügbarkeits-SLA von 99,9 %. Der neue Tarif [Premium](cache-premium-tier.md) befindet sich noch in der Vorschauversion. Er bietet Größen bis 530 GB und unterstützt Clustering, VNET und Dauerhaftigkeit.
+Azure Redis Cache ist allgemein verfügbar in Größen bis zu 53 GB mit einer Verfügbarkeits-SLA von 99,9 %. Der neue Tarif [Premium](cache-premium-tier.md) bietet Größen bis zu 530 GB und unterstützt Clustering, VNET und Beständigkeit mit einer SLA von 99,9 %.
 
 Azure Redis Cache ermöglicht den Kunden die Verwendung eines gesicherten, dedizierten Redis Cache, der von Microsoft verwaltet wird. Mit diesem Angebot können Sie die umfangreichen Features und die Umgebung von Redis nutzen und dabei von zuverlässigem Hosting und Überwachung durch Microsoft profitieren.
 
@@ -220,4 +220,4 @@ Wenn Sie den Azure Managed Cache Service bereits nutzen, können Sie den vorhand
 ### In-Role Cache
 Wenn Sie Cache mithilfe des In-Role Caches selbst hosten, können Sie dies auch weiterhin tun. Da In-Role Cache eine selbst gehostete Softwarekomponente und kein von Microsoft gehosteter Dienst ist, bietet er keine SLA. Benutzer von In-Role Cache können zu Azure Redis Cache migrieren, um den umfassenden Featuresatz zu nutzen und eine SLA zu erhalten.
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

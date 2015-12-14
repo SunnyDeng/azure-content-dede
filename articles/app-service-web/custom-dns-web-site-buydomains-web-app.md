@@ -41,12 +41,12 @@ Bei einer Produktions-Web-App sollten Sie Benutzern einen benutzerdefinierten Do
 
 > [AZURE.NOTE]Versuchen Sie nicht, den Kauf einer Domäne mithilfe eines Abonnements durchzuführen, dem keine aktive Kreditkarte zugeordnet ist. Dadurch kann das Abonnement deaktiviert werden.
 
-Wenn Sie über keinen Domänennamen für Ihre Web-App verfügen, können Sie diesen im [Azure-Verwaltungsportal](https://portal.azure.com) auf einfache Weise erwerben. Während des Einkaufsprozesses können Sie festlegen, dass die DNS-Einträge für WWW und die Stammdomäne automatisch Ihrer Web-App zugeordnet werden. Sie können Ihre Domäne auch direkt im Azure-Portal verwalten.
+Wenn Sie keinen Domänennamen für Ihre Web-App haben, können Sie diesen im [Azure-Portal](https://portal.azure.com) auf einfache Weise erwerben. Während des Einkaufsprozesses können Sie festlegen, dass die DNS-Einträge für WWW und die Stammdomäne automatisch Ihrer Web-App zugeordnet werden. Sie können Ihre Domäne auch direkt im Azure-Portal verwalten.
 
 
 Gehen Sie folgendermaßen vor, um Domänennamen zu erwerben und Ihrer Web-App zuzuweisen.
 
-1. Öffnen Sie das [Azure-Verwaltungsportal](https://portal.azure.com) in Ihrem Browser.
+1. Öffnen Sie das [Azure-Portal](https://portal.azure.com) in Ihrem Browser.
 
 2. Klicken Sie auf der Registerkarte **Web-Apps** auf den Namen der Web-App, wählen Sie **Einstellungen** und dann **Benutzerdefinierte Domänen und SSL** aus.
 
@@ -98,4 +98,4 @@ Sobald die Konfiguration abgeschlossen ist, wird der benutzerdefinierte Domänen
 Jetzt sollten Sie den benutzerdefinierten Domänennamen in Ihren Browser eingeben können und und auf diese Weise erfolgreich zu Ihrer Web-App gelangen.
  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

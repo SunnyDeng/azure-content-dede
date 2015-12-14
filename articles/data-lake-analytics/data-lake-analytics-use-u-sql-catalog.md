@@ -34,7 +34,7 @@ U-SQL-Datenbanken enthalten:
 ## Verwalten von Katalogen
 Jedes Azure Data Lake Analytics-Konto verfügt über ein zugehöriges Azure Data Lake-Speicherkonto. Dieses Data Lake-Speicherkonto wird als Data Lake-Standardspeicherkonto bezeichnet. Der U-SQL-Katalog wird im Data Lake-Standardspeicherkonto im Ordner „/catalog“ gespeichert. Löschen Sie keine Dateien im Ordner „/catalog“.
 
-### Verwenden des Azure-Vorschauportals
+### Verwenden des Azure-Portals
 
 Weitere Informationen finden Sie unter [Verwalten von Data Lake Analytics mithilfe des Portals](data-lake-analytics-use-portal.md#view-u-sql-catalog)
 
@@ -64,7 +64,7 @@ Sie können die Data Lake-Tools für Visual Studio zur Katalogverwaltung nutzen.
 ## Weitere Informationen
 
 - Erste Schritte
-    - [Erste Schritte mit Data Lake Analytics mithilfe des Azure-Vorschauportals](data-lake-analytics-get-started-portal.md)
+    - [Erste Schritte mit Data Lake Analytics mithilfe des Azure-Portals](data-lake-analytics-get-started-portal.md)
     - [Erste Schritte mit Data Lake Analytics mithilfe von Azure PowerShell](data-lake-analytics-get-started-powershell.md)
     - [Erste Schritte mit Data Lake Analytics mithilfe des Azure .NET SDK](data-lake-analytics-get-started-net-sdk.md)
     - [Entwickeln von U-SQL-Skripts mit Data Lake-Tools für Visual Studio](data-lake-analytics-data-lake-tools-get-started.md)
@@ -76,12 +76,12 @@ Sie können die Data Lake-Tools für Visual Studio zur Katalogverwaltung nutzen.
     - [Entwickeln von benutzerdefinierten U-SQL-Operatoren für Data Lake Analytics-Aufträge](data-lake-analtyics-u-sql-user-defined-operators.md)
 
 - Verwaltung
-    - [Verwalten von Azure Data Lake Analytics mithilfe des Azure-Vorschauportals](data-lake-analytics-use-portal.md)
+    - [Verwalten von Azure Data Lake Analytics mithilfe des Azure-Portals](data-lake-analytics-use-portal.md)
     - [Verwalten von Azure Data Lake Analytics mithilfe von Azure PowerShell](data-lake-analytics-use-powershell.md)
-    - [Überwachen und Problembehandeln von Azure Data Lake Analytics-Aufträgen mithilfe des Azure-Vorschauportals](data-lake-analytics-monitor-and-troubleshoot-jobs-tutorial.md)
+    - [Überwachen und Problembehandeln von Azure Data Lake Analytics-Aufträgen mithilfe des Azure-Portals](data-lake-analytics-monitor-and-troubleshoot-jobs-tutorial.md)
 
 - Komplettes Lernprogramm
     - [Verwenden interaktiver Lernprogramme zu Azure Data Lake Analytics](data-lake-analytics-use-interactive-tutorials.md)
     - [Analysieren von Websiteprotokollen mit Azure Data Lake Analytics](data-lake-analytics-analyze-weblogs.md)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

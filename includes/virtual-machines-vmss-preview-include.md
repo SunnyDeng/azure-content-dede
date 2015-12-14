@@ -2,4 +2,4 @@ Die Virtual Machine Scale Sets API, Version 2015-06-15, ist eine Vorschauversio
 
   Register-AzureRmProviderFeature -FeatureName vmssApiPreviewV2Access -ProviderNamespace Microsoft.Compute
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

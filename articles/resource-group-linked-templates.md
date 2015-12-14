@@ -102,6 +102,12 @@ Das folgende Beispiel zeigt, wie Sie eine Basis-URL verwenden können, um zwei U
         }
     }
 
+Sie können auch [Bereitstellung()](resource-group-template-functions.md/#deployment) verwenden, um die Basis-URL für die aktuelle Vorlage zu erhalten. Sie können diese verwenden, um die URL für die anderen Vorlagen am gleichen Speicherort abzurufen. Dies ist hilfreich, wenn sich der Speicherort der Vorlage ändert (möglicherweise aufgrund einer Versionsverwaltung) oder wenn Sie es vermeiden möchten, URLs in der Vorlagendatei fest programmieren zu müssen.
+
+    "variables": {
+        "sharedTemplateUrl": "[uri(deployment().properties.templateLink.uri, 'shared-resources.json')]"
+    }
+
 ## Zurückgeben von Werten aus einer verknüpften Vorlage
 
 Wenn Sie einen Wert aus der verknüpften Vorlage an die Hauptvorlage übergeben müssen, können Sie einen Wert im **outputs**-Abschnitt der verknüpften Vorlage erstellen. Ein Beispiel finden Sie unter [Freigeben des Status in Azure-Ressourcen-Manager-Vorlagen](best-practices-resource-manager-state.md).
@@ -110,4 +116,4 @@ Wenn Sie einen Wert aus der verknüpften Vorlage an die Hauptvorlage übergeben 
 - [Erstellen von Vorlagen](./resource-group-authoring-templates.md)
 - [Bereitstellen von Vorlagen](resource-group-template-deploy.md)
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

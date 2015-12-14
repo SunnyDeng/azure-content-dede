@@ -129,11 +129,11 @@ In diesem Abschnitt wird erläutert, wie ein Windows PowerShell-Skript erstellt 
 
 6.  Stellen Sie sicher, dass in Ihrem Abonnement gültige Clouddienst- und Speicherkonten erstellt sind, die vom Veröffentlichungsskript als Ziel angesprochen werden können. Das Speicherkonto (Blobspeicher) dient dazu, das Bereitstellungspaket und die Konfigurationsdatei hochzuladen und vorübergehend zu speichern, während die Bereitstellung erstellt wird.
 
-    -   Wenn Sie einen neuen Clouddienst erstellen möchten, können Sie dieses Skript aufrufen oder das Azure-Verwaltungsportal verwenden. Der Name des Clouddiensts wird als Präfix in einem vollqualifizierten Domänennamen verwendet und muss daher eindeutig sein.
+    -   Wenn Sie einen neuen Clouddienst erstellen möchten, können Sie dieses Skript aufrufen oder das klassischen Azure-Portal verwenden. Der Name des Clouddiensts wird als Präfix in einem vollqualifizierten Domänennamen verwendet und muss daher eindeutig sein.
 
             New-AzureService -ServiceName "mytestcloudservice" -Location "North Central US" -Label "mytestcloudservice"
 
-    -   Wenn Sie ein neues Speicherkonto erstellen möchten, können Sie dieses Skript aufrufen oder das Azure-Verwaltungsportal verwenden. Der Name des Speicherkontos wird als Präfix in einem vollqualifizierten Domänennamen verwendet und muss daher eindeutig sein. Sie können versuchen, den gleichen Namen wie für den Clouddienst zu verwenden.
+    -   Wenn Sie ein neues Speicherkonto erstellen möchten, können Sie dieses Skript aufrufen oder das klassischen Azure-Portal verwenden. Der Name des Speicherkontos wird als Präfix in einem vollqualifizierten Domänennamen verwendet und muss daher eindeutig sein. Sie können versuchen, den gleichen Namen wie für den Clouddienst zu verwenden.
 
             New-AzureStorageAccount -ServiceName "mytestcloudservice" -Location "North Central US" -Label "mytestcloudservice"
 
@@ -165,11 +165,11 @@ In diesem Abschnitt wird erläutert, wie ein Windows PowerShell-Skript erstellt 
 
         Add-AzureCertificate -serviceName <CLOUDSERVICENAME> -certToDeploy (get-item cert:\CurrentUser\MY<THUMBPRINT>)
 
-    Zum Beispiel:
+    Beispiel:
 
         Add-AzureCertificate -serviceName 'mytestcloudservice' -certToDeploy (get-item cert:\CurrentUser\MY\C33B6C432C25581601B84C80F86EC2809DC224E8
 
-    Alternativ können Sie die PFX-Zertifikatdatei mit privatem Schlüssel exportieren und Zertifikate über das Azure-Verwaltungsportal zu jedem Zielclouddienst hochladen. Weitere Informationen hierzu finden Sie im folgenden Artikel: [http://msdn.microsoft.com/library/windowsazure/gg443832.aspx][].
+    Alternativ können Sie die PFX-Zertifikatdatei mit privatem Schlüssel exportieren und Zertifikate über das klassischen Azure-Portal zu jedem Zielclouddienst hochladen. Weitere Informationen hierzu finden Sie im folgenden Artikel: [http://msdn.microsoft.com/library/windowsazure/gg443832.aspx][].
 
     **Upgrade einer Bereitstellung im Vergleich zum Löschen einer Bereitstellung -> neue Bereitstellung**
 
@@ -576,4 +576,4 @@ Informationen zum Aktivieren des Remotedebuggens bei Verwendung der kontinuierli
   [5]: ./media/cloud-services-dotnet-continuous-delivery/common-task-tfs-05.png
   [6]: ./media/cloud-services-dotnet-continuous-delivery/common-task-tfs-06.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

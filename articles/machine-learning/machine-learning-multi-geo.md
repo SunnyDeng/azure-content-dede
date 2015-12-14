@@ -23,7 +23,7 @@ Dieser Artikel beschreibt, wie Sie in anderen Azure-Regionen einen Arbeitsbereic
 
 ## Erstellen eines Arbeitsbereichs
 
-1. Melden Sie sich beim Azure-Verwaltungsportal an.
+1. Melden Sie sich beim klassischen Azure-Portal an.
 
 2.  Klicken Sie auf **+NEW** > **DATA SERVICES** > **MACHINE LEARNING** > **QUICK CREATE**. Wählen Sie unter **LOCATION** eine andere Region, z. B. **Southeast Asia**, aus. ![Hilfe zu mehreren geografischen Räumen Bild 1][1]
 3. Wählen Sie den Arbeitsbereich aus, und klicken Sie dann auf **Sign-in to ML Studio**. ![Hilfe zu mehreren geografischen Räumen Bild 2][2]
@@ -57,4 +57,4 @@ Stellen Sie eine Frage im [Azure Machine Learning-Forum](https://social.msdn.mic
 [3]: ./media/machine-learning-multi-geo/multi-geo_3.png
 [4a]: ./media/machine-learning-multi-geo/multi-geo_4a.png
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

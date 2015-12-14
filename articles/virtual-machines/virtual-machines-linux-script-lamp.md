@@ -24,7 +24,7 @@
 
 Die Microsoft Azure-CustomScript-Erweiterung für Linux bietet eine Möglichkeit, Ihre virtuellen Computer anzupassen, indem Sie beliebigen, in einer vom virtuellen Computer unterstützten Skriptsprache geschriebenen Code ausführen (z. B. Python, Bash usw.) Dies bietet eine sehr flexible Möglichkeit zum Automatisieren der Anwendungsbereitstellung auf verschiedenen Computern.
 
-Sie können die CustomScript-Erweiterung mit dem Azure-Portal, mit Windows PowerShell oder mit der Azure-Befehlszeilenschnittstelle (Azure-CLI) bereitstellen.
+Sie können die CustomScript-Erweiterung mit dem klassischen Azure-Portal, mit Windows PowerShell oder mit der Azure-Befehlszeilenschnittstelle (Azure-CLI) bereitstellen.
 
 In diesem Artikel verwenden wir die Azure-Befehlszeilenschnittstelle zum Bereitstellen einer einfachen LAMP-Anwendung auf einem virtuellen Ubuntu-Computer, der mit dem klassischen Bereitstellungsmodell erstellt wurde.
 
@@ -32,7 +32,7 @@ In diesem Artikel verwenden wir die Azure-Befehlszeilenschnittstelle zum Bereits
 
 Erstellen Sie für dieses Beispiel zuerst zwei virtuelle Azure-Computer, auf denen Ubuntu 14.04 oder höher ausgeführt wird. Die virtuellen Computer heißen *script-vm* und *lamp-vm*. Verwenden Sie beim Erstellen der virtuellen Computer eindeutige Namen. Einer davon dient zur Ausführung der CLI-Befehle, auf dem anderen wird die LAMP-App bereitgestellt.
 
-Darüber hinaus benötigen Sie ein Azure-Speicherkonto und einen Schlüssel für den Zugriff (Sie erhalten diesen über das Azure-Portal).
+Darüber hinaus benötigen Sie ein Azure-Speicherkonto und einen Schlüssel für den Zugriff (Sie erhalten diesen über das klassische Azure-Portal).
 
 Weitere Informationen zum Erstellen von Linux-VMs auf Azure finden Sie unter [Erstellen eines virtuellen Linux-Computers](virtual-machines-linux-tutorial.md).
 
@@ -110,4 +110,4 @@ Nachfolgend finden Sie einige zusätzliche Ressourcen für die Azure-CLI, Linux 
 
 [Linux und Open-Source-Computing auf Azure](virtual-machines-linux-opensource.md)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

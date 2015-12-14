@@ -110,7 +110,7 @@ Den Prototyp haben wir dann wie folgt erstellt.
 
 **Konfigurieren des Azure-Suchdiensts**
 
-1. Anmelden beim Azure-Portal und Hinzufügen des Suchdiensts zu unserem Abonnement: Wir haben die gemeinsam genutzte Version verwendet (kostenlos für unser Abonnement).
+1. Wir haben uns beim klassischen Azure-Portal angemeldet und den Suchdienst unserem Abonnement hinzugefügt. Wir haben die gemeinsam genutzte Version verwendet (kostenlos für unser Abonnement).
 2. Erstellen eines Index: Für den Prototyp haben wir die Benutzeroberfläche des Portals verwendet, um die Suchfelder zu definieren und die Bewertungsprofile zu erstellen. Unser Bewertungsprofil basiert auf Standortdaten: Land | Stadt | Straße (siehe „Hinzufügen von Bewertungsprofilen“).
 3. Kopieren der Dienst-URL und des API-Schlüssels (api-key) für Administratoren in unsere Konfigurationsdateien: Dieser Schlüssel befindet sich im Portal auf der Seite des Suchdiensts und wird zur Authentifizierung beim Dienst verwendet.
 	
@@ -421,4 +421,4 @@ Der folgende Code erstellt den Indexer, der im Abschnitt über die Erstellung de
 [Link 3 to another azure.microsoft.com documentation topic]: ../storage-whatis-account.md
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

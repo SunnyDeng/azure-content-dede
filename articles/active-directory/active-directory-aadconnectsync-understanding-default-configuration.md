@@ -16,7 +16,7 @@
    ms.date="11/10/2015"
    ms.author="andkjell"/>
 
-# Grundlegendes zur Standardkonfiguration
+# Azure AD Connect-Synchronisierung: Grundlegendes zur Standardkonfiguration
 
 Dieser Artikel führt Sie durch die Standardkonfiguration der Azure AD Connect-Synchronisierung. Der Leser soll verstehen, wie das als deklarative Bereitstellung bezeichnete Konfigurationsmodell in einem realistischen Beispiel funktioniert. Dieser Artikel setzt voraus, dass Sie die Azure AD-Synchronisierung bereits mit dem Installations-Assistenten installiert und konfiguriert haben.
 
@@ -150,4 +150,4 @@ Jetzt wissen wir genug über Synchronisierungsregeln, um die Funktionsweise der 
 * [Azure AD Connect-Synchronisierung: Anpassen von Synchronisierungsoptionen](active-directory-aadconnectsync-whatis.md)
 * [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

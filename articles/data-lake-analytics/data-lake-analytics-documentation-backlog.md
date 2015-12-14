@@ -38,6 +38,7 @@ U-SQL | Grammatik mit Railroad-Diagrammen | 1 | In Arbeit mit [Railroad Diagram 
 Dienst | Sichern von Aufträgen, Daten und Tabellen in Data Lake Analytics |1| In Arbeit | [@mumian](https://github.com/mumian) | [@MikeRys](https://github.com/mikerys)
 Dienst | Verschieben der Auftragsausgabe an SQL Data Warehouse mithilfe von Data Factory |1 | In Arbeit | [@mumian](https://github.com/mumian) | 
 Tools | Verwenden des Diagnosetools | 1 | Ausstehend | [@mumian](https://github.com/mumian) | 
+U-SQL | Erläutert Techniken für bereichsbasierte JOINs | 1 | Ausstehend | [@MikeRys](https://github.com/mikerys) |[@saveenr](https://github.com/saveenr) 
 
 
 
@@ -46,13 +47,13 @@ Tools | Verwenden des Diagnosetools | 1 | Ausstehend | [@mumian](https://github.
 
 Bereich |Thema | location
 ------------- | ------------- | -------------- 
-Service | Koordinieren der Bereitstellung von Data Lake Analytics über andere Azure-Diensten mithilfe von ARM-Vorlagen | [location](https://azure.microsoft.com/documentation/articles/data-lake-analytics-manage-use-powershell/)
+Service | Koordinieren der Bereitstellung von Data Lake Analytics über andere Azure-Diensten mithilfe von ARM-Vorlagen | [location](../data-lake-analytics-manage-use-powershell.md)
 
 ## So senden Sie Feedback bezüglich des Rückstands
 Für das Senden von Feedback bezüglich des Rückstands stehen mehrere Optionen zur Verfügung:
 
 * Fügen Sie nachstehend einen Kommentar hinzu.
 * Senden Sie im [Azure-Inhaltsrepository](https://github.com/Azure/azure-content/blob/master/articles/data-lake-analytics/data-lake-analytics-documentation-backlog.md) eine Pull-Anforderung für dieses Dokument.
-* Senden Sie eine E-Mail an [adlafeedback at microsoft.com](mailto:adlafeedback@microsoft.com?subject=DocBacklog).
+* Senden Sie eine E-Mail an [adlafeedback@microsoft.com](mailto:adlafeedback@microsoft.com?subject=DocBacklog).
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

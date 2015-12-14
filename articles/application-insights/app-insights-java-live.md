@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/21/2015" 
+	ms.date="11/24/2015" 
 	ms.author="awills"/>
  
 # Application Insights für Java-Web-Apps, die bereits live sind
@@ -21,7 +21,7 @@
 
 Wenn Sie eine Webanwendung haben, die bereits auf dem J2EE-Server ausgeführt wird, können Sie mit der Überwachung mit [Application Insights](app-insights-overview.md) beginnen, ohne Codeänderungen vornehmen oder das Projekt neu kompilieren zu müssen. Mit dieser Option erhalten Sie Informationen über an Ihre Server gesendete HTTP-Anforderungen, nicht behandelte Ausnahmen und Leistungsindikatoren.
 
-Sie benötigen ein [Microsoft Azure](http://azure.com)-Abonnement.
+Sie benötigen ein [Microsoft Azure](https://azure.com)-Abonnement.
 
 > [AZURE.NOTE]Mit dem Verfahren auf dieser Seite wird Ihrer Web-App zur Laufzeit das SDK hinzugefügt. Dies ist nützlich, wenn Sie den Quellcode nicht aktualisieren oder neu erstellen möchten. Sofern möglich, empfehlen wir jedoch, dass Sie stattdessen [das SDK zum Quellcode hinzufügen](app-insights-java-get-started.md). Dadurch erhalten Sie weitere Optionen, Sie können z. B. Code zum Nachverfolgen der Benutzeraktivität schreiben.
 
@@ -30,13 +30,13 @@ Sie benötigen ein [Microsoft Azure](http://azure.com)-Abonnement.
 1. Melden Sie sich am [Microsoft Azure-Portal](https://portal.azure.com) an.
 2. Erstellen einer neuen Application Insights-Ressource
 
-    ![Klicken Sie auf +, und wählen Sie "Application Insights"](./media/app-insights-java-get-started/01-create.png)
+    ![Klicken Sie auf +, und wählen Sie "Application Insights"](./media/app-insights-java-live/01-create.png)
 3. Legen Sie den Anwendungstyp auf "Java-Webanwendung" fest.
 
-    ![Geben Sie einen Namen ein, wählen Sie "Java-Web-App", und klicken Sie auf "Erstellen"](./media/app-insights-java-get-started/02-create.png)
+    ![Geben Sie einen Namen ein, wählen Sie "Java-Web-App", und klicken Sie auf "Erstellen"](./media/app-insights-java-live/02-create.png)
 4. Suchen Sie den Instrumentationsschlüssel der neuen Ressource. Sie müssen ihn in Kürze in Ihr Codeprojekt einfügen.
 
-    ![Klicken Sie in der Übersicht über neue Ressourcen auf "Eigenschaften", und kopieren Sie den Instrumentationsschlüssel](./media/app-insights-java-get-started/03-key.png)
+    ![Klicken Sie in der Übersicht über neue Ressourcen auf "Eigenschaften", und kopieren Sie den Instrumentationsschlüssel](./media/app-insights-java-live/03-key.png)
 
 ## 2\. Herunterladen des SDK
 
@@ -111,18 +111,18 @@ Kehren Sie zur Application Insights-Ressource im [Microsoft Azure-Portal](https:
 
 HTTP-Anforderungsdaten werden auf dem Blatt "Übersicht" angezeigt. (Wenn sie nicht vorhanden sind, warten Sie einige Sekunden, und klicken Sie dann auf "Aktualisieren".)
 
-![Beispieldaten](./media/app-insights-java-get-started/5-results.png)
+![Beispieldaten](./media/app-insights-java-live/5-results.png)
  
 
 Klicken Sie sich durch ein beliebiges Diagramm, um ausführlichere Metriken anzuzeigen.
 
-![](./media/app-insights-java-get-started/6-barchart.png)
+![](./media/app-insights-java-live/6-barchart.png)
 
  
 
 Beim Anzeigen der Eigenschaften einer Anforderung können Sie die damit verbundenen Telemetrieereignisse erkennen, wie z. B. Anforderungen und Ausnahmen.
  
-![](./media/app-insights-java-get-started/7-instance.png)
+![](./media/app-insights-java-live/7-instance.png)
 
 
 [Hier finden Sie weitere Informationen zu Metriken.](app-insights-metrics-explorer.md)
@@ -139,4 +139,4 @@ Beim Anzeigen der Eigenschaften einer Anforderung können Sie die damit verbunde
 
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

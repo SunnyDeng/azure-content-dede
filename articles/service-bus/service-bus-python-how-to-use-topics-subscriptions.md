@@ -43,7 +43,7 @@ bus_service = ServiceBusService(
 	shared_access_key_value='sharedaccesskey')
 ```
 
-Sie können die Werte für den Namen und Wert des SAS-Schlüssels im [Azure-Portal][] im Fenster **Verbindungsinformationen** abrufen.
+Sie können die Werte für den Namen und Wert des SAS-Schlüssels im [klassischen Azure-Portal][] im Fenster **Verbindungsinformationen** abrufen.
 
 ```
 bus_service.create_topic('mytopic')
@@ -123,7 +123,7 @@ for i in range(5):
 	bus_service.send_topic_message('mytopic', msg)
 ```
 
-Service Bus-Themen unterstützen eine maximale Nachrichtengröße von 256 MB (der Header, der die standardmäßigen und die benutzerdefinierten Anwendungseigenschaften enthält, kann eine maximale Größe von 64 MB haben). Es gibt keine Beschränkung für die Anzahl der Nachrichten, die ein Thema enthält. Es gibt jedoch eine Obergrenze für die Gesamtgröße der Nachrichten eines Themas. Die Themengröße wird bei der Erstellung definiert. Die Obergrenze beträgt 5 GB. Weitere Informationen zu Kontingenten finden Sie unter [Azure-Warteschlangen und Service Bus-Warteschlangen][].
+Servicebus-Themen unterstützen eine maximale Nachrichtengröße von 256 MB (der Header, der die standardmäßigen und die benutzerdefinierten Anwendungseigenschaften enthält, kann eine maximale Größe von 64 MB haben). Es gibt keine Beschränkung für die Anzahl der Nachrichten, die ein Thema enthält. Es gibt jedoch eine Obergrenze für die Gesamtgröße der Nachrichten eines Themas. Die Themengröße wird bei der Erstellung definiert. Die Obergrenze beträgt 5 GB. Weitere Informationen zu Kontingenten finden Sie unter [Azure-Warteschlangen und Service Bus-Warteschlangen][].
 
 ## Empfangen von Nachrichten aus einem Abonnement
 
@@ -157,7 +157,7 @@ Falls die Anwendung nach der Verarbeitung der Nachricht, aber vor Abrufen der **
 
 ## Löschen von Themen und Abonnements
 
-Themen und Abonnements sind persistent und müssen über das Azure-Portal oder programmgesteuert explizit gelöscht werden. Im folgenden Beispiel wird das Thema `mytopic` gelöscht:
+Themen und Abonnements sind persistent und müssen über das [klassische Azure-Portal][] oder programmgesteuert explizit gelöscht werden. Im folgenden Beispiel wird das Thema `mytopic` gelöscht:
 
 ```
 bus_service.delete_topic('mytopic')
@@ -176,11 +176,12 @@ Nachdem Sie nun mit den Grundlagen der Service Bus-Themen vertraut sind, finden 
 -   Siehe [Service Bus-Warteschlangen, -Themen und -Abonnements][].
 -   Referenz für [SqlFilter.SqlExpression][].
 
-[Azure-Portal]: http://manage.windowsazure.com
+[klassische Azure-Portal]: http://manage.windowsazure.com
+[klassischen Azure-Portal]: http://manage.windowsazure.com
 [Python Azure-Paket]: https://pypi.python.org/pypi/azure
 [Python Azure-Pakets]: https://pypi.python.org/pypi/azure
 [Service Bus-Warteschlangen, -Themen und -Abonnements]: service-bus-queues-topics-subscriptions.md
 [SqlFilter.SqlExpression]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
 [Azure-Warteschlangen und Service Bus-Warteschlangen]: service-bus-azure-and-service-bus-queues-compared-contrasted.md#capacity-and-quotas
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

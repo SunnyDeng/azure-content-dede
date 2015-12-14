@@ -35,9 +35,9 @@ Sie können basierend auf einem virtuellen Computer in Azure oder einem an ander
 
 ## Arbeiten mit Images
 
-Die Azure-Befehlszeilenschnittstelle (CLI) für Mac, Linux und Windows oder das Azure PowerShell-Modul dienen zum Verwalten der Images, die in Ihrem Azure-Abonnement zur Verfügung stehen. Sie können für einige Aufgaben für Images auch das Azure-Portal nutzen, doch die Befehlszeile bieten Ihnen mehr Optionen.
+Die Azure-Befehlszeilenschnittstelle (CLI) für Mac, Linux und Windows oder das Azure PowerShell-Modul dienen zum Verwalten der Images, die in Ihrem Azure-Abonnement zur Verfügung stehen. Sie können für einige Aufgaben für Images auch das klassische Azure-Portal nutzen, doch die Befehlszeile bieten Ihnen mehr Optionen.
 
-Informationen zur Verwendung dieser Tools mit Ressourcen-Manager-Bereitstellungen finden Sie unter [Navigieren zwischen und Aussuchen von Images virtueller Azure-Computer mit PowerShell und der Azure-Befehlszeilenschnittstelle](resource-groups-vm-searching.md).
+Informationen zur Verwendung dieser Tools mit Ressourcen-Manager-Bereitstellungen finden Sie unter [Navigieren zwischen und Aussuchen von Images virtueller Azure-Computer mit Windows PowerShell und der Azure-Befehlszeilenschnittstelle](resource-groups-vm-searching.md).
 
 Beispiele der Verwendung der Tools in einer klassischen Bereitstellung:
 
@@ -59,4 +59,4 @@ Beispiele der Verwendung der Tools in einer klassischen Bereitstellung:
 
 [Verschiedene Möglichkeiten zum Erstellen eines virtuellen Windows-Computers](virtual-machines-windows-choices-create-vm.md)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

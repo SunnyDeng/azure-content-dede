@@ -419,7 +419,7 @@ Der **Projektmappen-Explorer** sollte folgendermaßen aussehen:
 
 	private string connectionString = "mongodb://<vm-dns-name>";
 
-Ersetzen Sie `<vm-dns-name>` durch den DNS-Namen des virtuellen Computers, auf dem die MongoDB-Datenbank ausgeführt wird und den Sie in diesem Lernprogramm im Schritt [Erstellen eines virtuellen Computers und Installieren von MongoDB][] erstellt haben. Um den DNS-Namen des virtuellen Computers zu finden, gehen Sie zum Azure-Portal, wählen Sie **Virtuelle Computer** aus, und suchen Sie **DNS-Name**.
+Ersetzen Sie `<vm-dns-name>` durch den DNS-Namen des virtuellen Computers, auf dem die MongoDB-Datenbank ausgeführt wird und den Sie in diesem Lernprogramm im Schritt [Erstellen eines virtuellen Computers und Installieren von MongoDB][] erstellt haben. Um den DNS-Namen des virtuellen Computers zu finden, wechseln Sie zum Azure-Portal, wählen Sie **Virtuelle Computer** aus, und suchen Sie **DNS-Name**.
 
 Wenn der DNS-Name des virtuellen Computers "testlinuxvm.cloudapp.net" lautet und MongoDB am Standardport 27017 empfangsbereit ist, lautet die Verbindungszeichenfolge folgendermaßen:
 
@@ -499,4 +499,4 @@ Weitere Informationen zum Entwickeln von C#-Anwendungen für MongoDB finden Sie 
 [Deploy the ASP.NET application to the web site using Git]: #deployapp
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

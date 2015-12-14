@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Anfügen eines Datenträgers | Microsoft Azure"
-	description="Hier erhalten Sie Informationen zum Anfügen von neuen oder vorhandenen Datenträgern an einen virtuellen Computer im Azure-Vorschauportal mit dem Ressourcen-Manager-Bereitstellungsmodell."
+	description="Hier erhalten Sie Informationen zum Anfügen von neuen oder vorhandenen Datenträgern an einen virtuellen Computer im Azure-Portal mit dem Ressourcen-Manager-Bereitstellungsmodell."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -17,11 +17,11 @@
 	ms.date="09/14/2015"
 	ms.author="cynthn"/>
 
-# Anfügen eines Datenträgers für Daten im Azure-Vorschauportal
+# Anfügen eines Datenträgers für Daten im Azure-Portal
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](storage-windows-attach-disk.md).
 
-In diesem Artikel wird beschrieben, wie Sie über das Azure-Vorschauportal neue und vorhandene Datenträger an einen virtuellen Computer anfügen können. Lesen Sie die folgenden Tipps, bevor Sie mit diesem Vorgang fortfahren:
+In diesem Artikel wird beschrieben, wie Sie über das Azure-Portal neue und vorhandene Datenträger an einen virtuellen Computer anfügen können. Lesen Sie die folgenden Tipps, bevor Sie mit diesem Vorgang fortfahren:
 
 - Die Größe des virtuellen Computers bestimmt, wie viele Datenträger Sie anfügen können. Ausführliche Informationen finden Sie unter [Größen für virtuelle Computer](virtual-machines-size-specs.md).
 - Für die Verwendung von Premium-Speicher benötigen Sie einen virtuellen Computer der DS- oder GS-Serie. Sie können Datenträger aus Premium- und aus Standard-Speicherkonten für diese virtuellen Computer verwenden. Premium-Speicher ist in bestimmten Regionen verfügbar. Nähere Informationen finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Workloads auf virtuellen Azure-Computern](../storage/storage-premium-storage-preview-portal.md).
@@ -31,7 +31,7 @@ In diesem Artikel wird beschrieben, wie Sie über das Azure-Vorschauportal neue 
 
 ## Suchen des virtuellen Computers
 
-1. Melden Sie sich beim Azure-Vorschauportal an.
+1. Melden Sie sich beim Azure-Portal an.
 
 2. Klicken Sie im Menü "Hub" auf **Durchsuchen**.
 
@@ -90,4 +90,4 @@ Nach dem Hinzufügen des Datenträgers müssen Sie ihn für die Verwendung im Be
 
 [Informationen zu Azure-Speicherkonten]: ../storage-whatis-account/
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

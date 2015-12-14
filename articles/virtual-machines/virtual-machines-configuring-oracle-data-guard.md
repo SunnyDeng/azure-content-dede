@@ -31,7 +31,7 @@ Das Lernprogramm geht zudem davon aus, dass Sie die folgenden Voraussetzungen be
 
 - Sie haben zwei virtuelle Computer (VMs) in Azure mit demselben von der Plattform bereitgestellten Image von Oracle Enterprise Edition unter Windows Server erstellt. Weitere Informationen finden Sie unter [Erstellen eines virtuellen Oracle-Datenbank 12c-Computers in Azure](virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine.md) und [Azure Virtual Machines](http://azure.microsoft.com/documentation/services/virtual-machines/). Stellen Sie sicher, dass sich die virtuellen Computer im [gleichen Clouddienst](virtual-machines-load-balance.md) und im gleichen [virtuellen Netzwerk](azure.microsoft.com/documentation/services/virtual-network/) befinden, um sicherzustellen, dass sie über die permanente private IP-Adresse aufeinander zugreifen können. Darüber hinaus wird empfohlen, die virtuellen Computer in derselben [Verfügbarkeitsgruppe](virtual-machines-manage-availability.md) zu platzieren, damit sie von Azure in eigenen Fehlerdomänen und Upgradedomänen angeordnet werden können. Beachten Sie, dass Oracle Data Guard nur mit Oracle Database Enterprise Edition verfügbar ist. Jeder Computer muss mindestens 2 GB Arbeitsspeicher und 5 GB Speicherplatz aufweisen. Aktuelle Informationen zu den von der Plattform bereitgestellten VM-Größen finden Sie unter [Größen virtueller Computer für Azure](http://msdn.microsoft.com/library/dn197896.aspx). Wenn Sie zusätzliche Datenträgervolumes für die virtuellen Computer benötigen, können Sie zusätzliche Datenträger anfügen. Entsprechende Informationen finden Sie unter [Gewusst wie: Anfügen eines Datenträgers an einen virtuellen Computer](storage-windows-attach-disk.md).
 
-- Sie haben im Azure-Portal die Namen der virtuellen Computer auf „Machine1“ für den primären virtuellen Computer und „Machine2“ für den virtuellen Standbycomputer festgelegt.
+- Sie haben im klassischen Azure-Portal die Namen der virtuellen Computer auf „Machine1“ für den primären virtuellen Computer und „Machine2“ für den virtuellen Standbycomputer festgelegt.
 
 - Sie haben festgelegt, dass auf dem primären virtuellen Computer und auf dem virtuellen Standbycomputer die **ORACLE\_HOME**-Umgebungsvariable auf denselben Oracle-Stamminstallationspfad verweist, z. B. `C:\OracleDatabase\product\11.2.0\dbhome_1\database`.
 
@@ -313,7 +313,7 @@ Starten Sie dann eine Instanz mithilfe des Befehls "startup":
 ##Erstellen einer physischen Standbydatenbank
 In diesem Abschnitt werden die Schritte beschrieben, die Sie auf Machine2 ausführen müssen, um die physische Standbydatenbank zu erstellen.
 
-Zunächst müssen Sie über das Azure-Portal eine Remotedesktopverbindung mit „Machine2“ herstellen.
+Zunächst müssen Sie über das klassische Azure-Portal eine Remotedesktopverbindung mit „Machine2“ herstellen.
 
 Erstellen Sie dann auf dem Standbyserver (Machine2) alle erforderlichen Ordner für die Standbydatenbank, z. B. "C:\\<LokalerOrdner>\\TEST". Stellen Sie in diesem Lernprogramm sicher, dass die Ordnerstruktur der Ordnerstruktur auf Machine1 entspricht, damit alle erforderlichen Dateien, z. B. Steuerungsdatei, Datendateien, Redo-Log-Dateien sowie die Dateien in den Verzeichnissen "UDUMP", "BDUMP" und "CDUMP", erhalten bleiben. Definieren Sie außerdem auf Machine2 die Umgebungsvariablen "ORACLE\_HOME" und "ORACLE\_BASE". Wenn sie noch nicht definiert sind, definieren Sie sie im Dialogfeld "Umgebungsvariablen". Um auf dieses Dialogfeld zuzugreifen, starten Sie das Hilfsprogramm **System**, indem Sie in der **Systemsteuerung** auf das Symbol "System" doppelklicken. Klicken Sie dann auf die Registerkarte **Erweitert**, und wählen Sie **Umgebungsvariablen** aus. Klicken Sie unter **Systemvariablen** auf die Schaltfläche **Neu**, um die Umgebungsvariablen festzulegen. Nachdem Sie die Umgebungsvariablen eingerichtet haben, müssen Sie die vorhandene Windows-Eingabeaufforderung schließen und eine neue Eingabeaufforderung öffnen, damit die Änderungen angezeigt werden.
 
@@ -625,4 +625,4 @@ Es wird empfohlen, für die primäre und Standbydatenbank "flashback database" z
 ##Zusätzliche Ressourcen
 [Oracle Virtual Machine images for Azure (Images von virtuellen Oracle-Computern für Azure; in englischer Sprache)](virtual-machines-oracle-list-oracle-virtual-machine-images.md)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

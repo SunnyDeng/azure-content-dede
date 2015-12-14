@@ -23,15 +23,15 @@ Um Sie bei der Aktualisierung von Web- und Business-Datenbanken zu unterstützen
 
 **Abrufen von Tarifempfehlungen:**
 
-- [Upgrade auf SQL-Datenbank V12 mithilfe des Azure-Portals](sql-database-v12-upgrade.md)
-- [Upgrade auf SQL-Datenbank V12 mithilfe von PowerShell](sql-database-upgrade-server.md)
+- [Upgrade auf SQL-Datenbank V12 mithilfe des Azure-Portals](sql-database-upgrade-server-portal.md)
+- [Upgrade auf SQL-Datenbank V12 mithilfe von PowerShell](sql-database-upgrade-server-powershell.md)
 - [Ändern des Tarifs einer Web- oder Business-Datenbank](sql-database-service-tier-advisor.md)
  
 
 
-## Warum werden meine Web und Business Edition-Datenbanken im Azure-Verwaltungsportal als zurückgezogen angezeigt?
+## Warum werden meine Web und Business Edition-Datenbanken im Azure-Portal als zurückgezogen angezeigt?
 
-Da Datenbanken der Web und Business Editionen nach dem September 2015 nicht mehr verfügbar sind, werden Web- und Business-Datenbanken im Verwaltungsportal als zurückgezogen gekennzeichnet. Web- und Business-Datenbanken können noch wie gewohnt bereitgestellt und verwaltet werden, aber die Kennzeichnung "Zurückgezogen" dient als Erinnerung, dass für neue Datenbanken die Dienstebenen Basic, Standard oder Premium verwendet werden sollten. Die Bezeichnung "Zurückgezogen" soll auch daran erinnern, dass vorhandene Web- und Business-Datenbanken auf Standard, Basic oder Premium aktualisiert werden sollten. Ausführliche Informationen zum Aktualisieren vorhandener Web- oder Business-Datenbanken auf die neuen Dienstebenen finden Sie unter [Upgrade von Web-/Business-Datenbanken der SQL-Datenbank auf neue Dienstebenen](sql-database-upgrade-new-service-tiers.md).
+Da Datenbanken der Web und Business Editionen nach September 2015 nicht mehr verfügbar sind, werden Web- und Business-Datenbanken im Portal als zurückgezogen gekennzeichnet. Web- und Business-Datenbanken können noch wie gewohnt bereitgestellt und verwaltet werden, aber die Kennzeichnung "Zurückgezogen" dient als Erinnerung, dass für neue Datenbanken die Dienstebenen Basic, Standard oder Premium verwendet werden sollten. Die Bezeichnung "Zurückgezogen" soll auch daran erinnern, dass vorhandene Web- und Business-Datenbanken auf Standard, Basic oder Premium aktualisiert werden sollten. Ausführliche Informationen zum Aktualisieren vorhandener Web- oder Business-Datenbanken auf die neuen Dienstebenen finden Sie unter [Upgrade von Web-/Business-Datenbanken der SQL-Datenbank auf neue Dienstebenen](sql-database-upgrade-new-service-tiers.md).
 
 ## Welche neue Dienstebene ist die beste Wahl für die Aktualisierung meiner vorhandenen Web- oder Business-Datenbank?
 
@@ -68,4 +68,4 @@ Azure SQL-Datenbanken der Editionen Basic, Standard und Premium werden nach Stun
 
 [Upgrade von Web-/Business-Datenbanken der SQL-Datenbank auf neue Dienstebenen](sql-database-upgrade-new-service-tiers.md)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

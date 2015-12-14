@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/30/2015" 
+	ms.date="11/30/2015" 
 	ms.author="sdanie"/>
 
 # Skalieren von Azure Redis Cache
@@ -111,7 +111,7 @@ Wenn ein **Basic**-Cache auf einen **Standard**-Cache skaliert wird, werden die 
 
 Wenn ein **Standard**-Cache auf eine größere Größe skaliert wird, bleiben in der Regel alle Daten erhalten. Wenn Sie einen **Standard**-Cache auf eine kleinere Größe herunterskalieren, können Daten verloren gehen, je nachdem, ob der neue Cache groß genug für alle im alten Cache enthaltenen Daten ist. Wenn Daten beim Herunterskalieren verloren gehen, werden die Schlüssel mithilfe der Entfernungsrichtlinie [allkeys-lru](http://redis.io/topics/lru-cache) entfernt.
 
-Hinweis: Für Caches des Tarifs "Standard" gilt zwar eine SLA (Service Level Agreement, Vereinbarung zum Servicelevel) von 99,9 % für die Verfügbarkeit, es gibt jedoch keine SLA für Datenverlust.
+Hinweis: Für Caches der Tarife „Standard“ und „Premium“ gilt zwar eine SLA (Service Level Agreement, Vereinbarung zum Servicelevel) von 99,9 % für Verfügbarkeit, aber keine SLA für Datenverlust.
 
 ## Ist der Cache während der Skalierung verfügbar?
 
@@ -155,4 +155,4 @@ Wir haben die Funktion veröffentlicht, um Feedback zu erhalten. Basierend auf d
 
 [redis-cache-scaling]: ./media/cache-how-to-scale/redis-cache-scaling.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

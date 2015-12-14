@@ -1,23 +1,28 @@
-<properties 
-	pageTitle="Senden von E-Mails mit SendGrid | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie mit dem SendGrid-Dienst E-Mails von Ihrer Azure Mobile Services-App senden." 
-	services="mobile-services" 
-	documentationCenter="" 
-	authors="Erikre" 
-	manager="sendgrid" 
+<properties
+	pageTitle="Senden von E-Mails mit SendGrid | Microsoft Azure"
+	description="Erfahren Sie, wie Sie mit dem SendGrid-Dienst E-Mails von Ihrer Azure Mobile Services-App senden."
+	services="mobile-services"
+	documentationCenter=""
+	authors="Erikre"
+	manager="sendgrid"
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="07/31/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="na"
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.date="07/31/2015"
 	ms.author="Erikre"/>
 
 
 # Senden von E-Mails in Mobile Services mit SendGrid
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 Dieses Thema beschreibt die Hinzufügung von E-Mail-Funktionen zu Ihrem mobilen Dienst. In diesem Lernprogramm fügen Sie serverseitige Skripts hinzu, um E-Mails mithilfe von SendGrid zu senden. Wenn dies abgeschlossen ist, sendet Ihr mobiler Dienst immer dann, wenn ein Datensatz eingefügt wird, eine E-Mail.
 
@@ -37,14 +42,14 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit
 
 ## <a name="add-script"></a>Registrieren neuer Skripts zum Senden von E-Mails
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services** und dann auf Ihren mobilen Dienst.
+1. Melden Sie sich beim [klassischen Azure-Portal] an, klicken Sie auf **Mobile Services** und dann auf Ihren mobilen Dienst.
 
-2. Klicken Sie im Verwaltungsportal auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItem**.
+2. Klicken Sie im klassischen Azure-Portal auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItem**.
 
 	![][1]
 
 3. Klicken Sie unter **todoitem** auf die Registerkarte **Skript**, und wählen Sie **Einfügen** aus.
-   
+
 	![][2]
 
 	Daraufhin wird die Funktion angezeigt, die aufgerufen wird, wenn etwas in die Tabelle **TodoItem** eingefügt wird.
@@ -52,8 +57,8 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit
 4. Ersetzen Sie die Einfügefunktion durch den folgenden Code:
 
         var SendGrid = require('sendgrid').SendGrid;
-        
-        function insert(item, user, request) {    
+
+        function insert(item, user, request) {
             request.execute({
                 success: function() {
                     // After the record has been inserted, send the response immediately to the client
@@ -64,8 +69,8 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit
             });
 
             function sendEmail(item) {
-                var sendgrid = new SendGrid('**username**', '**password**');       
-                
+                var sendgrid = new SendGrid('**username**', '**password**');
+
                 sendgrid.send({
                     to: '**email-address**',
                     from: '**from-address**',
@@ -94,7 +99,7 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Bevor Sie mit
 
 ## <a name="insert-data"></a>Einfügen von Testdaten zum Empfangen von E-Mails
 
-1. Führen Sie im Client-App-Projekt die Schellstartanwendung aus. 
+1. Führen Sie im Client-App-Projekt die Schellstartanwendung aus.
 
 	In diesem Thema wird die Windows Store-Version des Schnellstarts angezeigt.
 
@@ -131,10 +136,8 @@ Nun, da Sie wissen, wie leicht die Verwendung des SendGrid-E-Mail-Dienstes mit M
 [Erste Schritte mit Mobile Services]: /develop/mobile/tutorials/get-started
 [sign up page]: https://sendgrid.com/windowsazure.html
 [Multiple User Credentials page]: https://sendgrid.com/credentials
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
+[klassischen Azure-Portal]: https://manage.windowsazure.com/
 [cloudbasierter E-Mail-Dienst]: https://sendgrid.com/email-solutions
 [transaktionale E-Mail-Übermittlung]: https://sendgrid.com/transactional-email
 
- 
-
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

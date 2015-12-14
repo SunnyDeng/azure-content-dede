@@ -34,11 +34,11 @@ Dieses Lernprogramm wurde mit Ubuntu Server 14.04 LTS getestet. Wenn Sie eine a
 
 Beginnen Sie, indem Sie eine Azure-VM mit einem Linux-Image erstellen.
 
-Zur Erstellung des virtuellen Computers können Sie das Azure-Portal oder die Azure-Befehlszeilenschnittstelle (CLI) verwenden.
+Zur Erstellung des virtuellen Computers können Sie das klassische Azure-Portal oder die Azure-Befehlszeilenschnittstelle (CLI) verwenden.
 
 ### Azure-Verwaltungsportal
 
-1. Melden Sie sich beim [Azure-Portal](http://manage.windowsazure.com) an.
+1. Melden Sie sich beim [klassischen Azure-Portal](http://manage.windowsazure.com) an.
 2. Klicken Sie auf **Neu** > **Compute** > **Virtueller Computer** > **Schnellerfassung**. Wählen Sie ein Linux-Image aus.
 3. Geben Sie ein Kennwort ein.
 
@@ -97,7 +97,7 @@ Eine Ausgabe ähnlich der folgenden sollte angezeigt werden.
 
 ## Hinzufügen eines Endpunkts
 
-1. Öffnen Sie das [Azure-Portal][management-portal], und wählen Sie Ihren virtuellen Computer aus.
+1. Öffnen Sie das [klassische Azure-Portal][management-portal], und wählen Sie Ihren virtuellen Computer aus.
 
 	![Liste der virtuellen Computer][vmlist]
 
@@ -175,4 +175,4 @@ Informationen zum Verwenden von Azure-Diensten in der Ruby-Anwendung finden Sie 
 
 [new-endpoint1]: ./media/virtual-machines-ruby-rails-web-app-linux/newendpoint1.png
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

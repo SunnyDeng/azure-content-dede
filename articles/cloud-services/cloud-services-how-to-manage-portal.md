@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Verwalten eines Clouddiensts (Vorschauportal) | Microsoft Azure" 
-	description="Hier erfahren Sie mehr über die Verwaltung von Clouddiensten im Azure-Vorschauportal. In diesen Beispielen wird das Azure-Vorschauportal verwendet." 
+	pageTitle="Verwalten eines Clouddiensts| Microsoft Azure" 
+	description="Hier erfahren Sie mehr über die Verwaltung von Clouddiensten im Azure-Portal. In diesen Beispielen wird das Azure-Portal verwendet." 
 	services="cloud-services" 
 	documentationCenter="" 
 	authors="Thraka" 
@@ -20,17 +20,17 @@
 # Verwalten von Clouddiensten
 
 > [AZURE.SELECTOR]
-- [Azure Portal](cloud-services-how-to-manage.md)
-- [Azure Preview Portal](cloud-services-how-to-manage-portal.md)
+- [Azure classic portal](cloud-services-how-to-manage.md)
+- [Azure portal](cloud-services-how-to-manage-portal.md)
 
-Im Bereich **Cloud Services** des Azure-Vorschauportals können Sie eine Dienstrolle oder eine Bereitstellung aktualisieren, eine Bereitstellung zur Produktion heraufstufen, Ressourcen mit Ihrem Clouddienst verknüpfen, sodass Sie die Ressourcenabhängigkeiten sehen und die Ressourcen zusammen skalieren können, und einen Clouddienst oder eine Bereitstellung löschen.
+Im Bereich **Cloud Services** des Azure-Portals können Sie eine Dienstrolle oder eine Bereitstellung aktualisieren, eine Bereitstellung zur Produktion heraufstufen, Ressourcen mit Ihrem Clouddienst verknüpfen, sodass Sie die Ressourcenabhängigkeiten sehen und die Ressourcen zusammen skalieren können, und einen Clouddienst oder eine Bereitstellung löschen.
 
 
 ## Aktualisieren einer Clouddienstrolle oder -bereitstellung
 
 Wenn Sie den Anwendungscode für den Clouddienst aktualisieren müssen, verwenden Sie die Option **Aktualisieren** auf dem Blatt für Clouddienste. Sie können eine oder alle Rollen aktualisieren. Sie müssen ein neues Dienstpaket und eine neue Dienstkonfigurationsdatei hochladen.
 
-1. Wählen Sie im [Azure-Vorschauportal][] den Clouddienst aus, den Sie aktualisieren möchten. Dadurch wird das Blatt für die Clouddienstinstanz geöffnet.
+1. Wählen Sie im [Azure-Portal][] den Clouddienst aus, den Sie aktualisieren möchten. Dadurch wird das Blatt für die Clouddienstinstanz geöffnet.
 
 2. Klicken Sie auf dem Blatt auf die Schaltfläche **Aktualisieren**.
 
@@ -60,7 +60,7 @@ Verwenden Sie **Austauschen**, um eine Stagingbereitstellung eines Cloud-Diensts
 
 Sie können Bereitstellungen über die Seite **Cloud-Dienste** oder über das Dashboard austauschen.
 
-1. Wählen Sie im [Azure-Vorschauportal][] den Clouddienst aus, den Sie aktualisieren möchten. Dadurch wird das Blatt für die Clouddienstinstanz geöffnet.
+1. Wählen Sie im [Azure-Portal][] den Clouddienst aus, den Sie aktualisieren möchten. Dadurch wird das Blatt für die Clouddienstinstanz geöffnet.
 
 2. Klicken Sie auf dem Blatt auf die Schaltfläche **Austauschen**.
 
@@ -78,7 +78,7 @@ Sie können Bereitstellungen über die Seite **Cloud-Dienste** oder über das Da
 
 ## Verknüpfen einer Ressource mit einem Clouddienst
 
-Das Azure-Vorschauportal verknüpft Ressourcen nicht miteinander wie das aktuelle Azure-Portal. Stattdessen müssen Sie zusätzliche Ressourcen in der gleichen Ressourcengruppe bereitstellen, die auch vom Clouddienst verwendet wird.
+Das Azure-Portal verknüpft Ressourcen nicht miteinander wie das aktuelle klassische Azure-Portal. Stattdessen müssen Sie zusätzliche Ressourcen in der gleichen Ressourcengruppe bereitstellen, die auch vom Clouddienst verwendet wird.
 
 ## Löschen von Bereitstellungen und eines Clouddiensts
 
@@ -88,7 +88,7 @@ Um Rechenkosten zu sparen, können Sie Ihre Stagingbereitstellung löschen, nach
 
 Gehen Sie folgendermaßen vor, um eine Bereitstellung oder Ihren Cloud-Dienst zu löschen.
 
-1. Wählen Sie im [Azure-Vorschauportal][] den Clouddienst aus, den Sie löschen möchten. Dadurch wird das Blatt für die Clouddienstinstanz geöffnet.
+1. Wählen Sie im [Azure-Portal][] den Clouddienst aus, den Sie löschen möchten. Dadurch wird das Blatt für die Clouddienstinstanz geöffnet.
 
 2. Klicken Sie auf dem Blatt auf die Schaltfläche **Löschen**.
 
@@ -102,10 +102,9 @@ Gehen Sie folgendermaßen vor, um eine Bereitstellung oder Ihren Cloud-Dienst zu
 
 5. Klicken Sie zum Löschen des Cloud-Diensts auf **Cloud-Dienst löschen**. Klicken Sie dann an der Bestätigungsaufforderung auf **Ja**.
 
-> [AZURE.NOTE]
-> Wenn für den Cloud-Dienst die ausführliche Überwachung konfiguriert ist, löscht Azure die Überwachungsdaten aus Ihrem Speicherkonto nicht, wenn Sie den Cloud-Dienst löschen. Sie müssen die Daten manuell löschen. Informationen zum Speicherort der Metriktabellen finden Sie in [diesem](cloud-services-how-to-monitor.md) Artikel.
+> [AZURE.NOTE]Wenn für den Cloud-Dienst die ausführliche Überwachung konfiguriert ist, löscht Azure die Überwachungsdaten aus Ihrem Speicherkonto nicht, wenn Sie den Cloud-Dienst löschen. Sie müssen die Daten manuell löschen. Informationen zum Speicherort der Metriktabellen finden Sie in [diesem](cloud-services-how-to-monitor.md) Artikel.
 
-[Azure-Vorschauportal]: https://portal.azure.com
+[Azure-Portal]: https://portal.azure.com
 
 ## Nächste Schritte
 
@@ -114,4 +113,4 @@ Gehen Sie folgendermaßen vor, um eine Bereitstellung oder Ihren Cloud-Dienst zu
 * [Konfigurieren eines benutzerdefinierten Domänennamens](cloud-services-custom-domain-name-portal.md)
 * Konfigurieren von [SSL-Zertifikaten](cloud-services-configure-ssl-certificate-portal.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -90,9 +90,9 @@ In diesem Abschnitt verwenden Sie eine [Azure-Ressourcen-Manager](../resource-gr
         ./deploy-deis.sh -n "[resource group name]" -l "West US" -f ./azuredeploy.json -e ./azuredeploy-parameters.json
         -c ./cloud-config.yaml  
 
-11. Sobald die Ressourcengruppe bereitgestellt wurde, können Sie im Azure-Portal alle Ressourcen in der Gruppe sehen. Wie im folgenden Screenshot gezeigt, enthält die Ressourcengruppe ein virtuelles Netzwerk mit drei virtuellen Computern, die derselben Verfügbarkeitsgruppe angehören. Die Gruppe enthält auch einen Load Balancer, der über eine zugeordnete öffentliche IP verfügt.
+11. Sobald die Ressourcengruppe bereitgestellt wurde, können Sie im klassischen Azure-Portal alle Ressourcen in der Gruppe sehen. Wie im folgenden Screenshot gezeigt, enthält die Ressourcengruppe ein virtuelles Netzwerk mit drei virtuellen Computern, die derselben Verfügbarkeitsgruppe angehören. Die Gruppe enthält auch einen Load Balancer, der über eine zugeordnete öffentliche IP verfügt.
 
-  ![Bereitgestellte Ressourcengruppe im Azure-Portal](media/virtual-machines-deis-cluster/resource-group.png)
+  ![Bereitgestellte Ressourcengruppe im klassischen Azure-Portal](media/virtual-machines-deis-cluster/resource-group.png)
 
 ## Installieren des Clients
 
@@ -113,7 +113,7 @@ Zum Steuern des Deis-Clusters benötigen Sie **deisctl**. deisctl wird automatis
 
         export DEISCTL_TUNNEL=[public ip of the load balancer]:2223
 
-Die Vorlage definiert die eingehende NAT-Regeln, die 2223 zu Instanz 1, 2224 zu Instanz 2 und 2225 zu Instanz 3 zuordnen. Dies bietet Redundanz für die Verwendung des deisctl-Tools. Sie können diese Regeln im Azure-Portal überprüfen:
+Die Vorlage definiert die eingehende NAT-Regeln, die 2223 zu Instanz 1, 2224 zu Instanz 2 und 2225 zu Instanz 3 zuordnen. Dies bietet Redundanz für die Verwendung des deisctl-Tools. Sie können diese Regeln im klassischen Azure-Portal überprüfen:
 
 ![NAT-Regeln des Load Balancers](media/virtual-machines-deis-cluster/nat-rules.png)
 
@@ -258,4 +258,4 @@ In diesem Artikel wurden Sie durch alle Schritte der Bereitstellung eines neuen 
 [resource-group-overview]: ../resource-group-overview.md
 [powershell-azure-resource-manager]: ../powershell-azure-resource-manager.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

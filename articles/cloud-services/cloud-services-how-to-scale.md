@@ -22,7 +22,7 @@
 
 # Automatisches Skalieren einer Anwendung
 
-Auf der Seite "Skalieren" des Azure Verwaltungsportals können Sie Ihre Anwendung manuell skalieren oder Parameter für die automatische Skalierung festlegen. Skaliert werden können Anwendungen, die Webrollen, Workerrollen oder virtuelle Computer ausführen. Sie skalieren eine Anwendung, die Instanzen von Webrollen und Workerrollen ausführt, indem Sie Rolleninstanzen hinzufügen oder entfernen, um die Arbeitslast zu bewältigen.
+Auf der Seite „Skalieren“ des klassischen Azure-Portals können Sie Ihre Anwendung manuell skalieren oder Parameter für die automatische Skalierung festlegen. Skaliert werden können Anwendungen, die Webrollen, Workerrollen oder virtuelle Computer ausführen. Sie skalieren eine Anwendung, die Instanzen von Webrollen und Workerrollen ausführt, indem Sie Rolleninstanzen hinzufügen oder entfernen, um die Arbeitslast zu bewältigen.
 
 Bei der Skalierung einer Anwendung, die virtuelle Computer ausführt, werden keine neuen Computer erstellt oder gelöscht, sondern lediglich in einer Verfügbarkeitsgruppe vorhandene Computer aktiviert oder deaktiviert. Sie können festlegen, dass eine Skalierung abhängig von der durchschnittlichen prozentualen CPU-Nutzung oder abhängig von der Anzahl Nachrichten in einer Warteschlange durchgeführt wird.
 
@@ -43,7 +43,7 @@ Folgendes ist allerdings zu beachten, bevor die Skalierung einer Anwendung konfi
 
 Auf der Skalierungsseite können Sie die Anzahl der in einem Clouddienst laufenden Instanzen manuell erhöhen oder verringern.
 
-1. Klicken Sie im [Verwaltungsportal](https://manage.windowsazure.com/) auf **Clouddienste** und dann auf den Namen des Clouddiensts, um das Dashboard zu öffnen.
+1. Klicken Sie im [klassischen Azure-Portal](https://manage.windowsazure.com/) auf **Cloud Services** und dann auf den Namen des Clouddiensts, um das Dashboard zu öffnen.
 
 2. Klicken Sie auf **Skalieren**. Die automatische Skalierung ist standardmäßig für alle Rollen deaktiviert, sodass Sie die Anzahl der von Ihrer Anwendung verwendeten Instanzen manuell ändern können.
 
@@ -74,7 +74,7 @@ Auf der Skalierungsseite können Sie Ihren Clouddienst so konfigurieren, dass di
 
 ## Durchschnittliche CPU-Nutzung
 
-1. Klicken Sie im [Verwaltungsportal](https://manage.windowsazure.com/) auf **Clouddienste** und dann auf den Namen des Clouddiensts, um das Dashboard zu öffnen.
+1. Klicken Sie im [klassischen Azure-Portal](https://manage.windowsazure.com/) auf **Cloud Services** und dann auf den Namen des Clouddiensts, um das Dashboard zu öffnen.
 
 2. Klicken Sie auf **Skalieren**.
 
@@ -126,7 +126,7 @@ Auf der Skalierungsseite können Sie Ihren Clouddienst so konfigurieren, dass di
 
 ## Warteschlangennachrichten
 
-1. Klicken Sie im [Verwaltungsportal](https://manage.windowsazure.com/) auf **Clouddienste** und dann auf den Namen des Clouddiensts, um das Dashboard zu öffnen.
+1. Klicken Sie im [klassischen Azure-Portal](https://manage.windowsazure.com/) auf **Cloud Services** und dann auf den Namen des Clouddiensts, um das Dashboard zu öffnen.
 2. Klicken Sie auf **Skalieren**.
 3. Führen Sie einen Bildlauf zu dem Abschnitt für die Rolle bzw. Verfügbarkeitsgruppe aus, und klicken Sie dann auf **Warteschlange**. Dann kann Ihre Anwendung basierend auf einer vorgegebenen Anzahl Warteschlangennachrichten automatisch skaliert werden.
 
@@ -176,7 +176,7 @@ Auf der Skalierungsseite können Sie Ihren Clouddienst so konfigurieren, dass di
 
 Häufig empfiehlt es sich, beim Skalieren einer Rolle auch die von der Anwendung verwendete Datenbank zu skalieren. Wenn Sie die Datenbank mit dem Clouddienst verknüpfen, ändern Sie die Edition der SQL-Datenbank und die Größe der Datenbank auf der Skalierungsseite.
 
-1. Klicken Sie im [Verwaltungsportal](https://manage.windowsazure.com/) auf **Clouddienste** und dann auf den Namen des Clouddiensts, um das Dashboard zu öffnen.
+1. Klicken Sie im [klassischen Azure-Portal](https://manage.windowsazure.com/) auf **Cloud Services** und dann auf den Namen des Clouddiensts, um das Dashboard zu öffnen.
 2. Klicken Sie auf **Skalieren**.
 3. Wählen Sie im Abschnitt "Linkes Resources" die für die Datenbank zu verwendende Edition aus.
 
@@ -195,7 +195,7 @@ Sie können die automatische Skalierung Ihrer Anwendung planen, indem Sie Zeitpl
 
 **Hinweis:** Für Anwendungen, die Virtual Machines verwenden, werden derzeit noch keine Zeitpläne unterstützt.
 
-1. Klicken Sie im [Verwaltungsportal](https://manage.windowsazure.com/) auf **Clouddienste** und dann auf den Namen des Clouddiensts, um das Dashboard zu öffnen.
+1. Klicken Sie im [klassischen Azure-Portal](https://manage.windowsazure.com/) auf **Cloud Services** und dann auf den Namen des Clouddiensts, um das Dashboard zu öffnen.
 2. Klicken Sie auf **Skalieren**.
 3. Klicken Sie in der Skalierungsseite auf **set up schedule times**.
 
@@ -227,4 +227,4 @@ Sie können die automatische Skalierung Ihrer Anwendung planen, indem Sie Zeitpl
 [scale_schedule]: ./media/cloud-services-how-to-scale/CloudServices_SetUpSchedule.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

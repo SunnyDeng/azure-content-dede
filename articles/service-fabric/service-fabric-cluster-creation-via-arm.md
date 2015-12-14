@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="11/13/2015"
+   ms.date="11/19/2015"
    ms.author="chackdan"/>
 
 # Einrichten eines Service Fabric-Clusters mithilfe einer ARM-Vorlage
@@ -45,7 +45,7 @@ Auf dieser Seite erhalten Sie Informationen zum Einrichten eines Service Fabric-
 
 ## Bereitstellen der ARM-Vorlage in Azure mithilfe von Azure PS
 
-Ausführliche Verfahrensweisen finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](https://azure.microsoft.com/de-DE/documentation/articles/resource-group-template-deploy/).
+Ausführliche Verfahrensweisen finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](resource-group-template-deploy.md).
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## Nächste Schritte
@@ -56,4 +56,4 @@ Ausführliche Verfahrensweisen finden Sie unter [Bereitstellen einer Anwendung m
 <!--Image references-->
 [DownloadTemplate]: ./media/service-fabric-cluster-creation-via-arm/DownloadTemplate.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -224,7 +224,7 @@ Der Abschnitt "typeProperties" unterscheidet sich bei jedem Typ von Dataset und 
 
 Eigenschaft | Beschreibung | Erforderlich
 -------- | ----------- | --------
-tableName | Name der Tabelle in der Oracle Database, auf die der verknüpfte Dienst verweist. | Ja
+tableName | Name der Tabelle in der Oracle Database, auf die der verknüpfte Dienst verweist. | Nein (wenn **OracleReaderQuery** von **SqlSource** angegeben ist)
 
 ## Eigenschaften von Oracle-Kopieraktivitätstyp
 
@@ -234,12 +234,12 @@ Eine vollständige Liste der Abschnitte und Eigenschaften zum Definieren von Akt
 
 Im Abschnitt "typeProperties" der Aktivität verfügbare Eigenschaften variieren hingegen bei jedem Aktivitätstyp. Bei der Kopieraktivität variieren sie je nach Typ der Quellen und Senken.
 
-Wenn bei der Kopieraktivität "source" den Typ "SqlSource" hat, sind im Abschnitt "typeProperties" die folgenden Eigenschaften verfügbar:
+Wenn bei der Kopieraktivität „source“ den Typ **OracleSource** hat, sind im Abschnitt **typeProperties** die folgenden Eigenschaften verfügbar:
 
 Eigenschaft | Beschreibung |Zulässige Werte | Erforderlich
 -------- | ----------- | ------------- | --------
 oracleReaderQuery | Verwendet die benutzerdefinierte Abfrage zum Lesen von Daten. | SQL-Abfragezeichenfolge. 
-Beispiel: select * from MyTable <p>Falls nicht angegeben, die SQL-Anweisung, die ausgeführt wird: select * from MyTable</p> | Nein
+Beispiel: select * from MyTable <p>Falls nicht angegeben, die SQL-Anweisung, die ausgeführt wird: select * from MyTable</p> | Nein (wenn **tableName** von **Dataset** angegeben ist)
 
 [AZURE.INCLUDE [data-factory-structure-for-rectangular-datasets](../../includes/data-factory-structure-for-rectangualr-datasets.md)]
 
@@ -292,7 +292,7 @@ XML | String
 1. Falls Sie den .NET Framework-Datenanbieter für Oracle nicht installiert haben, [Installieren Sie ihn](http://www.oracle.com/technetwork/topics/dotnet/utilsoft-086879.html), und wiederholen Sie anschließend das Szenario. 
 2. Falls Sie die Fehlermeldung auch nach der Installation des Anbieters erhalten, führen Sie folgende Schritte aus: 
 	1. Öffnen Sie die Computerkonfiguration von .NET 2.0 im folgenden Ordner: <system disk>:\\Windows\\Microsoft.NET\\Framework64\\v2.0.50727\\CONFIG\\machine.config.
-	2. Suchen Sie nach **Oracle-Datenanbieter für .NET**. Daraufhin sollte unter **system.data** -> **DbProviderFactories** ein Eintrag wie der Folgende angezeigt werden: <add name="Oracle Data Provider for .NET" invariant="Oracle.DataAccess.Client" description="Oracle Data Provider for .NET" type="Oracle.DataAccess.Client.OracleClientFactory, Oracle.DataAccess, Version=2.112.3.0, Culture=neutral, PublicKeyToken=89b483f429c47342" />
+	2. Suchen Sie nach **Oracle-Datenanbieter für .NET**. Daraufhin sollte unter **system.data** -> **DbProviderFactories** ein Eintrag wie der Folgende angezeigt werden: „<add name="Oracle Data Provider for .NET" invariant="Oracle.DataAccess.Client" description="Oracle Data Provider for .NET" type="Oracle.DataAccess.Client.OracleClientFactory, Oracle.DataAccess, Version=2.112.3.0, Culture=neutral, PublicKeyToken=89b483f429c47342" />“
 2.	Kopieren Sie diesen Eintrag in die Datei „machine.config“ im v4.0-Ordner „<system disk>:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\Config\\machine.config“, und ändern Sie die Version in „4.xxx.x.x“.
 3.	Führen Sie „gacutil /i [Anbieterpfad]“ aus, um „<ODP.NET Installed Path>\\11.2.0\\client\_1\\odp.net\\bin\\4\\Oracle.DataAccess.dll“ im globalen Assemblycache (GAC) zu installieren.
 
@@ -300,4 +300,4 @@ XML | String
 
 [AZURE.INCLUDE [data-factory-column-mapping](../../includes/data-factory-column-mapping.md)]
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

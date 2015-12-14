@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Datenbankfragen zu DocumentDB – Häufig gestellte Fragen | Microsoft Azure" 
-	description="Erhalten Sie Antworten auf häufig gestellte Fragen zum Azure DocumentDB-NoSql-Dokumentdatenbankdienst. Beantworten Sie Datenbankfragen zu Kapazität, Leistung und Skalierung." 
+	description="Erhalten Sie Antworten auf häufig gestellte Fragen zum Azure DocumentDB-NoSQL-Dokumentdatenbankdienst für JSON. Beantworten Sie Datenbankfragen zu Kapazität, Leistung und Skalierung." 
 	keywords="Datenbankfragen,häufig gestellte Fragen,DocumentDB,Azure,Microsoft Azure"
 	services="documentdb" 
 	authors="mimig1" 
@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/01/2015" 
+	ms.date="11/30/2015" 
 	ms.author="mimig"/>
 
 
@@ -49,7 +49,7 @@ DocumentDB-Konten können hinsichtlich Speicher und Durchsatz durch Hinzufügen 
 Ausführliche Informationen dazu finden Sie auf der Seite [DocumentDB – Preise](http://go.microsoft.com/fwlink/p/?LinkID=402317). Die Nutzungsgebühren für DocumentDB werden bestimmt von der verwendeten Anzahl von Sammlungen, der Anzahl der Stunden, die die Sammlungen online waren, und der [Leistungsebene](documentdb-performance-levels.md) jeder Sammlung.
 
 ### Gibt es eine kostenlose Testversion?
-Wenn Azure für Sie neu ist, können Sie sich für eine [kostenlose Testversion von Azure](https://azure.microsoft.com/pricing/free-trial/) registrieren. Sie erhalten ein Guthaben von 200 US-Dollar für 30 Tage, in denen Sie alle Azure-Dienste ausprobieren können. Wenn Sie ein MSDN-Abonnement besitzen, haben Sie Anspruch auf ein [kostenloses Azure-Guthaben von 150 US-Dollar pro Monat](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/), das Sie für beliebige Azure-Dienste nutzen können.
+Wenn Azure für Sie neu ist, können Sie sich für eine [kostenlose Testversion von Azure](https://azure.microsoft.com/pricing/free-trial/) registrieren. Sie erhalten ein Guthaben von 200 US-Dollar für 30 Tage, in denen Sie alle Azure-Dienste ausprobieren können. Wenn Sie ein Visual Studio-Abonnement besitzen, haben Sie Anspruch auf ein [kostenloses Azure-Guthaben von 150 US-Dollar pro Monat](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/), das Sie für beliebige Azure-Dienste nutzen können.
 
 ### Wie kann ich zusätzliche Hilfe zu DocumentDB erhalten?
 Wenn Sie Hilfe benötigen, wenden Sie sich auf [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-documentdb) oder in den [MSDN-Foren für Entwickler zu Azure DocumentDB](https://social.msdn.microsoft.com/forums/azure/home?forum=AzureDocumentDB) an uns, oder terminieren Sie einen [1:1-Chat mit dem Entwicklungsteam von DocumentDB](http://www.askdocdb.com/). Um bei den neuesten Features von DocumentDB auf dem Laufenden zu bleiben, folgen Sie uns auf [Twitter](https://twitter.com/DocumentDB).
@@ -57,13 +57,13 @@ Wenn Sie Hilfe benötigen, wenden Sie sich auf [Stack Overflow](http://stackover
 ## Einrichten von Microsoft Azure DocumentDB
 
 ### Wie registriere ich mich für Microsoft Azure DocumentDB?
-Microsoft Azure DocumentDB steht im [Azure-Vorschauportal][azure-portal] zur Verfügung. Zuerst müssen Sie sich für ein Microsoft Azure-Abonnement anmelden. Nachdem Sie sich für ein Microsoft Azure-Abonnement registriert haben, können Sie Ihrem Azure-Abonnement ein DocumentDB-Konto hinzufügen. Anweisungen zum Hinzufügen eines DocumentDB-Kontos finden Sie unter [Erstellen eines DocumentDB-Datenbankkontos](documentdb-create-account.md).
+Microsoft Azure DocumentDB steht im [Azure-Portal][azure-portal] zur Verfügung. Zuerst müssen Sie sich für ein Azure-Abonnement anmelden. Nachdem Sie sich für ein Microsoft Azure-Abonnement registriert haben, können Sie Ihrem Azure-Abonnement ein DocumentDB-Konto hinzufügen. Anweisungen zum Hinzufügen eines DocumentDB-Kontos finden Sie unter [Erstellen eines DocumentDB-Datenbankkontos](documentdb-create-account.md).
 
 ### Was ist ein Hauptschlüssel?
-Ein Hauptschlüssel ist ein Sicherheitstoken für den Zugriff auf alle Ressourcen eines Kontos. Personen, die über diesen Schlüssel verfügen, haben Lese- und Schreibzugriff auf alle Ressourcen im Datenbankkonto. Gehen Sie beim Verteilen der Hauptschlüssel mit Bedacht vor. Der primäre und sekundäre Hauptschlüssel stehen auf dem Blatt **Schlüssel** im [Azure-Vorschauportal][azure-portal] zur Verfügung. Weitere Informationen zu Schlüsseln finden Sie unter [Anzeigen, Kopieren und erneutes Generieren von Zugriffsschlüsseln](documentdb-manage-account.md#keys).
+Ein Hauptschlüssel ist ein Sicherheitstoken für den Zugriff auf alle Ressourcen eines Kontos. Personen, die über diesen Schlüssel verfügen, haben Lese- und Schreibzugriff auf alle Ressourcen im Datenbankkonto. Gehen Sie beim Verteilen der Hauptschlüssel mit Bedacht vor. Der primäre und sekundäre Hauptschlüssel stehen auf dem Blatt **Schlüssel** im [Azure-Portal][azure-portal] zur Verfügung. Weitere Informationen zu Schlüsseln finden Sie unter [Anzeigen, Kopieren und erneutes Generieren von Zugriffsschlüsseln](documentdb-manage-account.md#keys).
 
 ### Wie erstelle ich eine Datenbank?
-Datenbanken können wie folgt erstellt werden: über das [Azure-Vorschauportal]() gemäß [Erstellen einer DocumentDB-Datenbank](documentdb-create-database.md), eines der[DocumentDB SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) oder die[REST-APIs](https://msdn.microsoft.com/library/azure/dn781481.aspx).
+Datenbanken können wie folgt erstellt werden: über das [Azure-Portal](), wie in [Erstellen einer DocumentDB-Datenbank](documentdb-create-database.md) beschrieben, eines der[DocumentDB SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) oder die[REST-APIs](https://msdn.microsoft.com/library/azure/dn781481.aspx).
 
 ### Was ist eine Sammlung?
 Eine Sammlung ist ein Container für JSON-Dokumente und die zugehörige JavaScript-Anwendungslogik. Abfragen und Transaktionen sind Sammlungen zugeordnet. Sie können heterogene (nicht zusammenhängende) JSON-Dokumente in einer Sammlung speichern, die alle automatisch indiziert werden.
@@ -71,7 +71,7 @@ Eine Sammlung ist ein Container für JSON-Dokumente und die zugehörige JavaScri
 Sammlungen sind zudem die Abrechnungseinheiten für DocumentDB. Die monatlichen Nutzungsgebühren für DocumentDB werden bestimmt von der verwendeten Anzahl von Sammlungen, der Anzahl der Stunden, die die Sammlungen online waren, und der [Leistungsebene](documentdb-performance-levels.md) jeder Sammlung. Weitere Informationen finden Sie unter [DocumentDB-Preise](https://azure.microsoft.com/pricing/details/documentdb/).
 
 ### Gibt es Beschränkungen für Datenbanken und Sammlungen?
-Jede Sammlung ist mit einer Zuweisung an Datenbankspeicher und bereitgestelltem Durchsatz auf einer der unterstützten [Leistungsebenen](documentdb-performance-levels.md) ausgestattet. Außerdem sind für jede vom Dienst verwaltete Ressource Kontingente angegeben. Eine Übersicht aller Grenzwerte finden Sie unter [DocumentDB-Begrenzungen](documentdb-limits.md). Informationen zum Beantragen einer Änderung Ihrer Kontobegrenzungen finden Sie unter [Anfordern von erhöhten DocumentDB-Kontobegrenzungen](documentdb-increase-limits.md).
+Jede Sammlung ist mit einer Zuweisung an Datenbankspeicher und bereitgestelltem Durchsatz auf einer der unterstützten [Leistungsebenen](documentdb-performance-levels.md) ausgestattet. Außerdem sind für jede vom Dienst verwaltete Ressource Kontingente angegeben. Eine Übersicht aller Grenzwerte finden Sie unter [DocumentDB-Grenzen und -Kontingente](documentdb-limits.md). Informationen zum Beantragen einer Änderung Ihrer Kontobegrenzungen finden Sie unter [Anfordern von erhöhten DocumentDB-Kontobegrenzungen](documentdb-increase-limits.md).
 
 ### Wie richte ich Benutzer und Berechtigungen ein?
 Sie können Benutzer und Berechtigungen mit einem des [DocumentDB SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) oder mithilfe der [REST-APIs](https://msdn.microsoft.com/library/azure/dn781481.aspx) erstellen.
@@ -99,7 +99,7 @@ DocumentDB unterstützt sprachintegrierte Transaktionen über gespeicherte JavaS
 Es gibt drei Möglichkeiten zur Masseneinfügung von Dokumenten in DocumentDB:
 
 - Das Datenmigrationstool, beschrieben in [Importieren von Daten in DocumentDB](documentdb-import-data.md).
-- Den Dokument-Explorer im Azure-Vorschauportal, beschrieben in [Massenhinzufügen von Dokumenten mit dem Dokument-Explorer](documentdb-view-json-document-explorer.md#BulkAdd).
+- Den Dokument-Explorer im Azure-Portal, beschrieben in [Massenhinzufügen von Dokumenten mit dem Dokument-Explorer](documentdb-view-json-document-explorer.md#BulkAdd).
 - Gespeicherte Prozeduren, beschrieben in [DocumentDB, serverseitige Programmierung](documentdb-programming.md).
 
 ### Unterstützt DocumentDB Ressourcenlink-Zwischenspeicherung?
@@ -112,4 +112,4 @@ Ja. Da es sich bei DocumentDB um einen RESTful-Dienst handelt, sind Ressourcenli
 [query]: documentdb-sql-query.md
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

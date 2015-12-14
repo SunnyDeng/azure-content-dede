@@ -18,6 +18,11 @@
 
 # Hinzufügen von Pushbenachrichtigungen zur Mobile Services-App
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
+
 [AZURE.INCLUDE [mobile-services-selector-get-started-push](../../includes/mobile-services-selector-get-started-push.md)]
 
 In diesem Thema erfahren Sie, wie Sie mithilfe von Azure Mobile Services eine Pushbenachrichtigung an Ihre Android-App senden. In diesem Lernprogramm fügen Sie Pushbenachrichtigungen mithilfe von Google Cloud Messaging (GCM) zu dem Schnellstartprojekt hinzu. Wenn dies abgeschlossen ist, sendet Ihr mobiler Dienst immer dann, wenn ein Datensatz eingefügt wird, eine Pushbenachrichtigung.
@@ -104,7 +109,6 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 <!-- URLs. -->
 [Get started with push notifications (Eclipse)]: mobile-services-dotnet-backend-android-get-started-push-ec.md
 [Erste Schritte mit Mobile Services]: mobile-services-dotnet-backend-android-get-started.md
-[Management Portal]: https://manage.windowsazure.com/
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/p/?LinkId=257545
 
 [Verwenden der Android-Clientbibliothek für Mobile Services]: mobile-services-android-how-to-use-client-library.md
@@ -112,6 +116,5 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 [Was sind Notification Hubs?]: ../notification-hubs-overview.md
 [Senden von Übertragungsbenachrichtigungen an Abonnenten]: ../notification-hubs-windows-store-dotnet-send-breaking-news.md
 [Senden vorlagenbasierter Benachrichtigungen an Abonnenten]: ../notification-hubs-windows-store-dotnet-send-localized-breaking-news.md
-[Azure Management Portal]: https://manage.windowsazure.com/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

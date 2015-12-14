@@ -192,4 +192,4 @@ Führen Sie folgenden Befehl aus, um dem virtuellen Computer, der mit dem obigen
 - Erfahren Sie mehr über [öffentliche IP-Adressen auf Instanzebene (ILPIP)](../virtual-networks-instance-level-public-ip).
 - Lesen Sie die Informationen unter [Vorgänge für reservierte IP-Adressen](https://msdn.microsoft.com/library/azure/dn722420.aspx).
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

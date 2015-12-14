@@ -84,7 +84,7 @@ Genau wie andere Dienste in Azure setzt Service Bus eine Reihe spezifischer Kont
 
 - **Anzahl der gleichzeitigen Relaylistener pro Namespace**: Service Bus setzt ein Limit von 2.000 gleichzeitigen Relaylistenern pro Dienstnamespace durch. Wenn dieses Kontingent erreicht wird, werden nachfolgende Anforderungen für das Öffnen zusätzlicher Relaylistener abgelehnt, und vom aufrufenden Code wird eine Ausnahme empfangen.
 
-- **Anzahl der Themen/Warteschlangen pro Dienstnamespace**: Die maximale Anzahl der Themen/Warteschlangen (permanente, durch Speicher gesicherte Entitäten) für einen Dienstnamespace ist auf 10.000 beschränkt. Wenn dieses Kontingent erreicht wird, werden nachfolgende Anforderungen zum Erstellen eines neuen Themas bzw. einer neuen Warteschlange für den Dienstnamespace zurückgewiesen. In diesem Fall zeigt das Azure-Portal eine Fehlermeldung an, oder der anfordernde Clientcode empfängt eine Ausnahme, je nachdem, ob der Erstellungsversuch über das Portal oder über den Clientcode erfolgt ist.
+- **Anzahl der Themen/Warteschlangen pro Dienstnamespace**: Die maximale Anzahl der Themen/Warteschlangen (permanente, durch Speicher gesicherte Entitäten) für einen Dienstnamespace ist auf 10.000 beschränkt. Wenn dieses Kontingent erreicht wird, werden nachfolgende Anforderungen zum Erstellen eines neuen Themas bzw. einer neuen Warteschlange für den Dienstnamespace zurückgewiesen. In diesem Fall zeigt das [klassische Azure-Portal][] eine Fehlermeldung an, oder der anfordernde Clientcode empfängt eine Ausnahme, je nachdem, ob der Erstellungsversuch über das Portal oder über den Clientcode erfolgt ist.
 
 - **Kontingente für die Nachrichtengröße**
 	- **Warteschlange/Thema/Abonnement**
@@ -96,7 +96,7 @@ Genau wie andere Dienste in Azure setzt Service Bus eine Reihe spezifischer Kont
 
 	Nachrichten, die diese Größenkontingente überschreiten, werden abgelehnt, und vom aufrufenden Code wird eine Ausnahme empfangen.
 
-- **Anzahl von Abonnements pro Thema**: Die maximale Anzahl von Abonnements pro Thema ist auf 2.000 beschränkt. Wenn dieses Kontingent erreicht ist, werden nachfolgende Anforderungen zum Erstellen weiterer Abonnements für das Thema zurückgewiesen. In diesem Fall zeigt das Verwaltungsportal eine Fehlermeldung an, oder der anfordernde Clientcode empfängt eine Ausnahme, je nachdem, ob der Erstellungsversuch über das Portal oder über den Clientcode erfolgt ist.
+- **Anzahl von Abonnements pro Thema**: Die maximale Anzahl von Abonnements pro Thema ist auf 2.000 beschränkt. Wenn dieses Kontingent erreicht ist, werden nachfolgende Anforderungen zum Erstellen weiterer Abonnements für das Thema zurückgewiesen. In diesem Fall zeigt das [klassische Azure-Portal][] eine Fehlermeldung an, oder der anfordernde Clientcode empfängt eine Ausnahme, je nachdem, ob der Erstellungsversuch über das Portal oder über den Clientcode erfolgt ist.
 
 - **Anzahl von SQL-Filtern pro Thema**: Die maximale Anzahl von SQL-Filtern pro Thema ist auf 2.000 beschränkt. Wenn dieses Kontingent erreicht ist, werden nachfolgende Anforderungen für die Erstellung weiterer Filter für das Thema zurückgewiesen, und der aufrufende Code empfängt eine Ausnahme.
 
@@ -114,4 +114,6 @@ Weitere Informationen zu Service Bus Messaging finden Sie in folgenden Themen.
 - [Übersicht über die Architektur von Azure Service Bus](fundamentals-service-bus-hybrid-solutions.md)
 - [Verwenden von Service Bus-Warteschlangen](service-bus-dotnet-how-to-use-queues.md)
 
-<!---HONumber=Oct15_HO3-->
+[klassische Azure-Portal]: http://manage.windowsazure.com
+
+<!---HONumber=AcomDC_1203_2015-->

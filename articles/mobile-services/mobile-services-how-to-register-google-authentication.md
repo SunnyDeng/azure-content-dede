@@ -1,22 +1,27 @@
-<properties 
-	pageTitle="Registrieren für die Google-Authentifizierung | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie Ihre Apps registrieren, um Google zur Authentifizierung mit Azure Mobile Services zu verwenden." 
-	services="mobile-services" 
-	documentationCenter="android" 
-	authors="ggailey777" 
-	manager="dwrede" 
+<properties
+	pageTitle="Registrieren für die Google-Authentifizierung | Microsoft Azure"
+	description="Erfahren Sie, wie Sie Ihre Apps registrieren, um Google zur Authentifizierung mit Azure Mobile Services zu verwenden."
+	services="mobile-services"
+	documentationCenter="android"
+	authors="ggailey777"
+	manager="dwrede"
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-android" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="11/15/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-android"
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.date="11/15/2015"
 	ms.author="glenga"/>
 
 # Registrieren Ihrer App für die Google-Anmeldung mit Mobile Services
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 [AZURE.INCLUDE [mobile-services-selector-register-identity-provider](../../includes/mobile-services-selector-register-identity-provider.md)]
 
@@ -35,11 +40,11 @@ Sie benötigen ein Google-Konto mit verifizierter E-Mail-Adresse, um den in dies
 6. Klicken Sie auf der Registerkarte **Credentials** auf **Add credentials** > **OAuth 2.0 client ID**, und wählen Sie dann **Web application**.
 
 7. Geben Sie in **Authorized JavaScript Origins** die URL für Ihren mobilen Dienst ein, ersetzen Sie die generierte URL in **Authorized Redirect URI** durch eines der folgenden URL-Formate, und klicken Sie dann auf **Create client ID**.
- 
-	+ **.NET-Back-End**: `https://<mobile_service>.azure-mobile.net/signin-google`
-	+ **JavaScript-Back-End**:`https://<mobile_service>.azure-mobile.net/login/google` 
 
-	 >[AZURE.NOTE]Stellen Sie sicher, dass Sie das richtige Umleitungs-URL-Pfadformat für Ihren Typ von Mobile Services-Back-End verwenden. Wenn die Angabe falsch ist, wird die Authentifizierung nicht erfolgreich ausgeführt.
+	+ **.NET-Back-End**: `https://<mobile_service>.azure-mobile.net/signin-google`
+	+ **JavaScript-Back-End**: `https://<mobile_service>.azure-mobile.net/login/google`
+
+	 >[AZURE.NOTE]Stellen Sie sicher, dass Sie das passende Umleitungs-URL-Pfadformat für Ihr Mobile Services-Back-End verwenden. Wenn die Angabe falsch ist, wird die Authentifizierung nicht erfolgreich ausgeführt.
 
 8. Notieren Sie sich auf dem nächsten Bildschirm die Werte für die Client-ID und den geheimen Clientschlüssel.
 
@@ -56,7 +61,4 @@ Sie können nun Ihren mobilen Dienst für die Verwendung der Google-Anmeldung zu
 [Google apis]: http://go.microsoft.com/fwlink/p/?LinkId=268303
 [Get started with authentication]: /develop/mobile/tutorials/get-started-with-users-dotnet/
 
-[Azure Management Portal]: https://manage.windowsazure.com/
- 
-
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

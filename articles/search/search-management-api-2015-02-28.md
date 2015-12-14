@@ -39,7 +39,7 @@ Beachten Sie, dass Sie, wenn Ihr Anwendungscode sowohl *Dienstverwaltungs-* als 
 
 Die im Abschnitt [Erste Schritte mit der Azure Search-Verwaltungs-REST-API](http://go.microsoft.com/fwlink/p/?linkID=516968) dokumentierte Beispielanwendung zeigt die Authentifizierungsmethoden für jede Art von Operation. Anweisungen zur Konfiguration einer Clientanwendung für Active Directory sind in den ersten Schritten enthalten.
 
-Die Zugriffssteuerung für den Azure-Ressourcen-Manager verwendet die integrierten Rollen "Besitzer", "Mitwirkender" und "Leser". Administratoren sind standardmäßig Mitglieder der Rolle "Besitzer". Details hierzu finden Sie im Artikel [Rollenbasierte Zugriffssteuerung im Azure-Portal](../role-based-access-control-configure.md).
+Die Zugriffssteuerung für den Azure-Ressourcen-Manager verwendet die integrierten Rollen "Besitzer", "Mitwirkender" und "Leser". Administratoren sind standardmäßig Mitglieder der Rolle "Besitzer". Details hierzu finden Sie im Artikel [Rollenbasierte Zugriffssteuerung im klassischen Azure-Portal](../role-based-access-control-configure.md).
 
 
 ### Übersicht über die APIs ##
@@ -810,6 +810,6 @@ Bei erfolgreicher Ausführung lautet der Statuscode HTTP 200 (OK).
 
 ###Antworttext###
 
-Keine.
+Keiner.
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -56,7 +56,6 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 
 ## Änderungen
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Änderungen im neuen Portal gegenüber dem alten Portal finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
 
 [appservice]: ../app-service/app-service-value-prop-what-is.md
 [create]: web-sites-dotnet-get-started.md
@@ -65,4 +64,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

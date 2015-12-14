@@ -3,8 +3,8 @@
 	description="Erfahren Sie, wie Sie das Hilfsprogramm AzCopy zum Hochladen, Herunterladen und Kopieren von Blob- und Dateiinhalten verwenden." 
 	services="storage" 
 	documentationCenter="" 
-	authors="tamram" 
-	manager="adinah" 
+	authors="micurd" 
+	manager="jahogg" 
 	editor="cgronlun"/>
 
 <tags 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/03/2015" 
-	ms.author="tamram"/>
+	ms.date="12/02/2015" 
+	ms.author="micurd"/>
 
 # Erste Schritte mit dem Befehlszeilenprogramm AzCopy
 
@@ -22,19 +22,14 @@
 
 AzCopy ist ein Befehlszeilenprogramm, das zum leistungsstarken Hochladen, Herunterladen und Kopieren von Daten zu und vom Microsoft Azure Blob-, Datei- und Tabellenspeicher konzipiert wurde. Dieser Leitfaden bietet einen Überblick über die Verwendung von AzCopy.
 
-> [AZURE.NOTE]In diesem Leitfaden wird davon ausgegangen, dass Sie AzCopy 3.2.0 oder höher installiert haben. AzCopy 3.x ist jetzt generell verfügbar.
-> 
-> Diese Anleitung behandelt auch das Verwenden von AzCopy 4.2.0, das eine Vorschauversion von AzCopy ist. Im Rahmen dieser Anleitung sind Funktionen, die nur in der Vorschauversion verfügbar sind, mit *Vorschau* gekennzeichnet.
-> 
-> Beachten Sie, dass sich bei AzCopy 4.x die Befehlszeilenoptionen und ihre Funktionen möglicherweise in zukünftigen Versionen ändern können.
+> [AZURE.NOTE]In diesem Leitfaden wird davon ausgegangen, dass Sie AzCopy 5.0 oder höher installiert haben.
 
-
-Wir haben außerdem eine Open-Source-Bibliothek basierend auf dem Kernframework für die Datenverschiebung veröffentlicht, das Grundlage von AzCopy ist. Weitere Einzelheiten finden Sie unter [Introducing Azure Storage Data Movement Library Preview](https://azure.microsoft.com/de-DE/blog/introducing-azure-storage-data-movement-library-preview-2/).
+Wir haben außerdem eine Open-Source-Bibliothek basierend auf dem Kernframework für die Datenverschiebung veröffentlicht, das Grundlage von AzCopy ist. Weitere Einzelheiten finden Sie unter [Introducing Azure Storage Data Movement Library Preview](https://azure.microsoft.com/blog/introducing-azure-storage-data-movement-library-preview-2/).
 
 ## Herunterladen und Installieren von AzCopy
 
-1. Laden Sie die [neueste Version von AzCopy](http://aka.ms/downloadazcopy) oder die [neueste Vorschauversion](http://aka.ms/downloadazcopypr) herunter.
-2. Führen Sie die Installation aus. Standardmäßig wird bei der Installation von AzCopy ein Ordner namens `AzCopy` unter `%ProgramFiles(x86)%\Microsoft SDKs\Azure` (auf einem Computer mit einer 64-Bit-Version von Windows) oder `%ProgramFiles%\Microsoft SDKs\Azure` (auf einem Computer mit einer 32-Bit-Version von Windows) erstellt. Sie können den Installationspfad jedoch über den Setup-Assistenten ändern.
+1. Laden Sie die [neueste Version von AzCopy](http://aka.ms/downloadazcopy) herunter
+2. Führen Sie die Installation aus. Standardmäßig wird AzCopy in `%ProgramFiles(x86)%\Microsoft SDKs\Azure\AzCopy\AzCopy.exe` (auf einem Computer mit einer 64-Bit-Version von Windows) oder `%ProgramFiles%\Microsoft SDKs\Azure\AzCopy\AzCopy.exe` (auf einem Computer mit einer 32-Bit-Version von Windows) installiert. Sie können den Installationspfad jedoch über den Setup-Assistenten ändern.
 3. Bei Bedarf können Sie den Speicherort für die AzCopy-Installation zum Systempfad hinzufügen.
 
 ## Informationen zur Befehlszeilensyntax von AzCopy
@@ -66,22 +61,22 @@ Parameter für AzCopy werden in der folgenden Tabelle beschrieben. Sie können a
     <th>Optionsname</th>
     <th>Beschreibung</th>
     <th>Anwendbar auf BLOB-Speicher (J/N)</th>
-    <th>Anwendbar auf Dateispeicher (J/N) (nur Vorschauversion)</th>
-    <th>Anwendbar auf Tabellenspeicher (J/N) (nur Vorschauversion)</th>
+    <th>Anwendbar auf Dateispeicher (J/N)</th>
+    <th>Anwendbar auf Tabellenspeicher (J/N)</th>
   </tr>
   <tr>
     <td><b>/Source:&lt;source></b></td>
     <td>Gibt die Quelldaten an, aus denen kopiert werden soll. Die Quelle kann ein Dateisystemverzeichnis, ein Blobcontainer, ein virtuelles Blobverzeichnis, eine Speicherdateifreigabe, ein Speicherdateiverzeichnis oder eine Azure-Tabelle sein.</td>
     <td>J</td>
-    <td>J<br /> (nur Vorschau)</td>
-    <td>J<br /> (nur Vorschau)</td>
+    <td>J<br /></td>
+    <td>Y<br /></td>
   </tr>
   <tr>
     <td><b>/Dest:&lt;destination></b></td>
     <td>Geben das Ziel für das Kopieren an. Das Ziel kann ein Dateisystemverzeichnis, ein Blobcontainer, ein virtuelles Blobverzeichnis, eine Speicherdateifreigabe, ein Speicherdateiverzeichnis oder eine Azure-Tabelle sein.</td>
     <td>J</td>
-    <td>J<br /> (nur Vorschau)</td>
-    <td>J<br /> (nur Vorschau)</td>
+    <td>J<br /></td>
+    <td>J<br /></td>
   </tr>
   <tr>
     <td><b>/Pattern:&lt;file-pattern></b></td>
@@ -98,15 +93,15 @@ Parameter für AzCopy werden in der folgenden Tabelle beschrieben. Sie können a
           <br/>
           Das standardmäßige Dateimuster lautet *.* für ein Dateisystemspeicherort oder ein leeres Präfix für ein Azure Storage-Speicherort, wenn kein Dateimuster angegeben ist. Das Angeben mehrerer Dateimuster wird nicht unterstützt.</td>
     <td>J</td>
-    <td>J<br /> (nur Vorschau)</td>
+    <td>J<br /></td>
     <td>N</td>
   </tr>
   <tr>
     <td><b>/DestKey:&lt;storage-key></b></td>
     <td>Gibt den Speicherkontoschlüssel für die Zielressource an.</td>
     <td>Y</td>
-    <td>J<br /> (nur Vorschau)</td>
-    <td>J<br /> (nur Vorschau)</td>
+    <td>J<br /></td>
+    <td>J<br /></td>
   </tr>
   <tr>
     <td class="auto-style1"><b>/DestSAS:&lt;sas-token></b></td>
@@ -114,15 +109,15 @@ Parameter für AzCopy werden in der folgenden Tabelle beschrieben. Sie können a
         Wenn die Zielressource ein BLOB-Container, eine Dateifreigabe oder eine Tabelle ist, können Sie entweder diese Option gefolgt vom SAS-Token oder die SAS als Teil des Ziel-BLOB-Containers, der Dateifreigabe oder des URI der Tabelle ohne diese Option angeben.<br />
         Wenn es sich bei der Quelle und beim Ziel um Blobs handelt, muss sich das Zielblob im selben Speicherkonto wie das Quellblob befinden.</td>
     <td class="auto-style1">J</td>
-    <td class="auto-style1">J<br /> (nur Vorschau)</td>
-    <td class="auto-style1">J<br /> (nur Vorschau)</td>
+    <td class="auto-style1">J<br /></td>
+    <td class="auto-style1">J<br /></td>
   </tr>
   <tr>
     <td><b>/SourceKey:&lt;storage-key></b></td>
     <td>Gibt den Speicherkontoschlüssel für die Quellressource an.</td>
     <td>Y</td>
-    <td>J<br /> (nur Vorschau)</td>
-    <td>J<br /> (nur Vorschau)</td>
+    <td>J<br /></td>
+    <td>J<br /></td>
   </tr>
   <tr>
     <td><b>/SourceSAS:&lt;sas-token></b></td>
@@ -132,14 +127,14 @@ Parameter für AzCopy werden in der folgenden Tabelle beschrieben. Sie können a
         <br />
         Wenn die Quelle eine Dateifreigabe oder Tabelle ist, muss ein Schlüssel oder eine SAS angegeben werden.</td>
     <td>J</td>
-    <td>J<br /> (nur Vorschau)</td>
-    <td>J<br /> (nur Vorschau)</td>
+    <td>J<br /></td>
+    <td>Y<br /></td>
   </tr>
   <tr>
     <td><b>/S</b></td>
     <td>Gibt den rekursiven Modus für Kopiervorgänge an. Im rekursiven Modus kopiert AzCopy alle BLOBs oder Dateien, die mit dem angegebenen Dateimuster übereinstimmen, einschließlich der BLOBs oder Dateien in den Unterordnern.</td>
     <td>Y</td>
-    <td>J<br /> (nur Vorschau)</td>
+    <td>J<br /></td>
     <td>N</td>
   </tr>
   <tr>
@@ -157,7 +152,7 @@ Parameter für AzCopy werden in der folgenden Tabelle beschrieben. Sie können a
 	<br />
     AzCopy legt die Content-MD5-Eigenschaft für einen Azure-BLOB oder eine entsprechende Datei immer fest, nachdem diese(r) in den Dienst hochgeladen wurde.</td>
     <td>Y</td>
-    <td>J<br /> (nur Vorschau)</td>
+    <td>Y<br /></td>
     <td>N</td>
   </tr>
   <tr>
@@ -175,8 +170,8 @@ Parameter für AzCopy werden in der folgenden Tabelle beschrieben. Sie können a
     <td><b>/V:[Ausführliche Protokolldatei]</b></td>
     <td>Gibt ausführliche Statusmeldungen in eine Protokolldatei aus. Die ausführliche Protokolldatei erhält standardmäßig die Bezeichnung <code>AzCopyVerbose.log</code> und wird im Verzeichnis <code>%LocalAppData%\Microsoft\Azure\AzCopy</code> gespeichert. Wenn Sie für diese Option einen vorhandenen Dateispeicherort angeben, wird das ausführliche Protokoll an diese Datei angefügt.</td>
     <td>Y</td>
-    <td>J<br /> (nur Vorschau)</td>
-    <td>J<br /> (nur Vorschau)</td>
+    <td>J<br /></td>
+    <td>Y<br /></td>
   </tr>
   <tr>
     <td><b>/Z:[Journaldateiordner]</b></td>
@@ -191,8 +186,8 @@ Parameter für AzCopy werden in der folgenden Tabelle beschrieben. Sie können a
 		<br />
 		Beachten Sie, dass die Fortsetzung eines Vorgangs aus einer Journaldatei nicht unterstützt wird, die mit einer früheren Version von AzCopy erstellt wurde.</td>
     <td>Y</td>
-    <td>J<br /> (nur Vorschau)</td>
-    <td>J<br /> (nur Vorschau)</td>
+    <td>J<br /></td>
+    <td>J<br /></td>
   </tr>
   <tr>
     <td><b>/@:parameter-file</b></td>
@@ -203,15 +198,15 @@ Parameter für AzCopy werden in der folgenden Tabelle beschrieben. Sie können a
         <br />
         Sie können mehrere Antwortdateien angeben. Beachten Sie jedoch, dass AzCopy geschachtelte Antwortdateien nicht unterstützt.</td>
     <td>Y</td>
-    <td>J<br /> (nur Vorschau)</td>
-    <td>J<br /> (nur Vorschau)</td>
+    <td>J<br /></td>
+    <td>Y<br /></td>
   </tr>
   <tr>
     <td><b>/Y</b></td>
     <td>Unterdrückt alle Bestätigungsaufforderungen von AzCopy.</td>
     <td>Y</td>
-    <td>J<br /> (nur Vorschau)</td>
-    <td>J<br /> (nur Vorschau)</td>
+    <td>J<br /></td>
+    <td>Y<br /></td>
   </tr>
   <tr>
     <td><b>/L</b></td>
@@ -223,35 +218,35 @@ Parameter für AzCopy werden in der folgenden Tabelle beschrieben. Sie können a
     <br />
     Wird diese Option verwendet, benötigt AzCopy AUFLISTUNGS- und LESE-Berechtigung für den Quellspeicherort.</td>
     <td>J</td>
-    <td>J<br /> (nur Vorschau)</td>
+    <td>J<br /></td>
     <td>N</td>
   </tr>
   <tr>
     <td><b>/MT</b></td>
     <td>Legt für die Uhrzeit der letzten Änderung der heruntergeladenen Datei denselben Zeitpunkt wie für den Quell-BLOB oder die Quelldatei fest.</td>
     <td>Y</td>
-    <td>J<br /> (nur Vorschau)</td>
+    <td>J<br /></td>
     <td>N</td>
   </tr>
   <tr>
     <td><b>/XN</b></td>
     <td>Schließt eine neuere Quellressource aus. Die Ressource wird nicht kopiert, wenn der Zeitpunkt der letzten Änderung der Quelle mit dem Ziel identisch oder neuer ist.</td>
     <td>J</td>
-    <td>J<br /> (nur Vorschau)</td>
+    <td>J<br /></td>
     <td>N</td>
   </tr>
   <tr>
     <td><b>/XO</b></td>
     <td>Schließt eine ältere Quellressource aus. Die Ressource wird nicht kopiert, wenn der Zeitpunkt der letzten Änderung der Quelle mit dem Ziel identisch oder älter ist.</td>
     <td>J</td>
-    <td>J<br /> (nur Vorschau)</td>
+    <td>Y<br /></td>
     <td>N</td>
   </tr>
   <tr>
     <td><b>/A</b></td>
     <td>Lädt ausschließlich Dateien hoch, für die das Archivattribut festgelegt ist.</td>
     <td>Y</td>
-    <td>J<br /> (nur Vorschau)</td>
+    <td>Y<br /></td>
     <td>N</td>
   </tr>
   <tr>
@@ -279,7 +274,7 @@ Parameter für AzCopy werden in der folgenden Tabelle beschrieben. Sie können a
         <br />
         I&#160;&#160;&#160;Nicht indizierte Dateien</td>
     <td>Y</td>
-    <td>J<br /> (nur Vorschau)</td>
+    <td>J<br /></td>
     <td>N</td>
   </tr>
   <tr>
@@ -307,7 +302,7 @@ Parameter für AzCopy werden in der folgenden Tabelle beschrieben. Sie können a
         <br />
         I&#160;&#160;&#160;Nicht indizierte Dateien</td>
     <td>Y</td>
-    <td>J<br /> (nur Vorschau)</td>
+    <td>Y<br /></td>
     <td>N</td>
   </tr>
   <tr>
@@ -328,22 +323,22 @@ Parameter für AzCopy werden in der folgenden Tabelle beschrieben. Sie können a
         <br />
 		Maximal können 512 gleichzeitige Vorgänge ausgeführt werden.</td>
     <td>J</td>
-    <td>J<br /> (nur Vorschau)</td>
-    <td>J<br /> (nur Vorschau)</td>
+    <td>J<br /></td>
+    <td>J<br /></td>
   </tr>
   <tr>
     <td><b>/SourceType:Blob|Table</b></td>
     <td>Gibt an, dass die <code>source</code>-Ressource ein in der lokalen Entwicklungsumgebung verfügbares Blob ist (Ausführung im Speicheremulator).</td>
     <td>J</td>
     <td>N</td>
-    <td>J<br /> (nur Vorschau)</td>
+    <td>J<br /></td>
   </tr>
   <tr>
     <td><b>/DestType:Blob|Table</b></td>
     <td>Gibt an, dass die <code>destination</code>-Ressource ein in der lokalen Entwicklungsumgebung verfügbares Blob ist (Ausführung im Speicheremulator).</td>
     <td>J</td>
     <td>N</td>
-    <td>J<br /> (nur Vorschau)</td>
+    <td>Y<br /></td>
   </tr>
   <tr>
     <td><strong>/PKRS:&lt;"key1#key2#key3#..."></strong></td>
@@ -360,7 +355,7 @@ Parameter für AzCopy werden in der folgenden Tabelle beschrieben. Sie können a
         &#160;&#160;&#160;[bb, &lt;letzter Partitionsschlüssel>] </td>
     <td>N</td>
     <td>N</td>
-    <td>J<br /> (nur Vorschau)</td>
+    <td>J<br /></td>
   </tr>
   <tr>
     <td><strong>/SplitSize:</strong><file-size><strong>&lt;file-size></strong></td>
@@ -371,7 +366,7 @@ Parameter für AzCopy werden in der folgenden Tabelle beschrieben. Sie können a
         Wenn die Tabellendaten in ein Blob exportiert wird, und die exportierte Dateigröße die 200-GB-Begrenzung für die Blobgröße erreicht, teilt AzCopy die exportierte Datei auf, selbst wenn diese Option nicht angegeben ist. </td>
     <td>N</td>
     <td>N</td>
-    <td>J<br /> (nur Vorschau)</td>
+    <td>J<br /></td>
   </tr>
   <tr>
     <td><b>/EntityOperation:&lt;InsertOrSkip | InsertOrMerge | InsertOrReplace> </b>
@@ -385,7 +380,7 @@ Parameter für AzCopy werden in der folgenden Tabelle beschrieben. Sie können a
         InsertOrReplace – Ersetzt eine vorhandene Entität oder fügt eine neue Entität ein, wenn sie in der Tabelle nicht vorhanden ist. </td>
     <td>N</td>
     <td>N</td>
-    <td>J<br /> (nur Vorschau)</td>
+    <td>Y<br /></td>
   </tr>
   <tr>
     <td><b>/Manifest:&lt;manifest-file></b></td>
@@ -395,14 +390,14 @@ Parameter für AzCopy werden in der folgenden Tabelle beschrieben. Sie können a
     Diese Option ist während eines Importvorgangs erforderlich, damit die Datendateien gefunden werden.</td>
     <td>N</td>
     <td>N</td>
-    <td>J<br /> (nur Vorschau)</td>
+    <td>Y<br /></td>
   </tr>
   <tr>
     <td><b>/SyncCopy</b></td>
     <td>Gibt an, ob Blobs oder Dateien synchron zwischen zwei Azure-Speicherendpunkten kopiert werden sollen. <br />
 		Standardmäßig führt AzCopy serverseitige asynchrone Kopiervorgänge aus. Geben Sie diese Option an, um Kopiervorgänge synchron ausführen zu lassen. Blobs und Dateien werden so in den lokalen Arbeitsspeicher herunter- und dann in den Azure-Speicher hochgeladen. Diese Option eignet sich zum Kopieren von Dateien innerhalb eines Blob-Speichers oder eines Dateispeichers sowie zwischen Blob- und Dateispeicher.</td>
     <td>J</td>
-    <td>J<br /> (nur Vorschau)</td>
+    <td>J<br /></td>
     <td>N</td>
   </tr>
   <tr>
@@ -410,7 +405,7 @@ Parameter für AzCopy werden in der folgenden Tabelle beschrieben. Sie können a
     <td>Gibt den MIME-Inhaltstyp für Ziel-Blobs oder -dateien an. <br />
 		AzCopy legt den Inhaltstyp eines Blobs oder einer Datei standardmäßig als <code>application/octet-stream</code> fest. Sie können den Inhaltstyp für alle Blobs oder Dateien ändern, indem Sie für diese Option einen Wert angeben. Wenn Sie für diese Option keinen Wert angeben, legt AzCopy den Inhaltstyp jedes Blobs und jeder Datei gemäß der jeweiligen Dateierweiterung fest.</td>
     <td>J</td>
-    <td>J<br /> (nur Vorschau)</td>
+    <td>J<br /></td>
     <td>N</td>
   </tr>
     <tr>
@@ -419,7 +414,7 @@ Parameter für AzCopy werden in der folgenden Tabelle beschrieben. Sie können a
     Ist diese Option nicht angegeben, exportiert AzCopy eine Tabellendatendatei standardmäßig im JSON-Format.</td>
     <td>N</td>
     <td>N</td>
-    <td>J<br /> (nur Vorschau)</td>
+    <td>Y<br /></td>
   </tr>
 </table>
 <br/>
@@ -777,7 +772,7 @@ Wenn Sie für `/SetContentType` keinen Wert angeben, legt AzCopy den Inhaltstyp 
 
 	AzCopy /Source:C:\myfolder\ /Dest:https://myaccount.blob.core.windows.net/myContainer/ /DestKey:key /Pattern:ab /SetContentType
 
-## Kopieren von Dateien in den Azure-Dateispeicher mit AzCopy (nur Vorschauversion)
+## Kopieren von Dateien im Azure-Dateispeicher mit AzCopy
 
 Die nachfolgenden Beispiele veranschaulichen eine Reihe von Szenarien zum Kopieren von Azure-Dateien mit AzCopy.
 
@@ -838,7 +833,7 @@ Der Standardblobtyp beim Kopieren aus File Storage in einen Blob Storage ist Blo
 Hinweis: Anders als beim asynchronen Kopieren kann es bei der Verwendung von `/SyncCopy` zu Zusatzkosten für den ausgehenden Datenverkehr kommen. Um dies zu vermeiden, sollten Sie diese Option in dem virtuellen Azure-Computer verwenden, der sich in derselben Region wie das Quellspeicherkonto befindet.
 
 
-## Kopieren von Entitäten in einer Azure-Tabelle mit AzCopy (nur Vorschauversion)
+## Kopieren von Entitäten in einer Azure-Tabelle mit AzCopy
 
 Die nachfolgenden Beispiele veranschaulichen eine Reihe von Szenarien zum Kopieren von Azure-Tabellenentitäten mit AzCopy.
 
@@ -938,8 +933,9 @@ Auf einem Windows-Computer ist der FIPS-konforme Algorithmus standardmäßig dea
 
 | Version | Neuerungen | Refenzierte .NET-Clientbibliotheksversioin | Zielversion der Storage-REST-API |
 |---------|-----------------------------------------------------------------------------------------------------------------|--------|----------|
-| [**V4.2.0**](http://xdmrelease.blob.core.windows.net/azcopy-4-2-0-preview/MicrosoftAzureStorageTools.msi) | **Aktuelle Vorschauversion. Enthält die gesamte Funktionalität von V3.2.0. Unterstützt auch SAS für Dateispeicherfreigaben, asynchrones Kopieren von Dateispeicher, Exportieren von Tabellenentitäten in CSV und Angeben von Manifestnamen, wenn Tabellenentitäten exportiert werden.** | **V5.0.0** | **2015-02-21**
-| [**V3.2.0**](http://xdmrelease.blob.core.windows.net/azcopy-3-2-0/MicrosoftAzureStorageTools.msi) | **Aktuelle Vorabversion. Unterstützt Anfügeblobs und FIPS-kompatible MD5-Einstellung.** | **V5.0.0** | **2015-02-21**
+| [**V5.0.0**](http://xdmrelease.blob.core.windows.net/azcopy-5-0-0/MicrosoftAzureStorageTools.msi) | **Aktuelle Vorabversion. Enthält die gesamte Funktionalität von V4.2.0. Alle Funktionen für Datei-und Tabellenspeicher sind jetzt allgemein verfügbar.** | **V6.0.0** | **2015-04-05**
+| [V4.2.0](http://xdmrelease.blob.core.windows.net/azcopy-4-2-0-preview/MicrosoftAzureStorageTools.msi) | Enthält die gesamte Funktionalität von V3.2.0. Unterstützt auch SAS für Dateispeicherfreigaben, asynchrones Kopieren von Dateispeicher, Exportieren von Tabellenentitäten in CSV und Angeben von Manifestnamen, wenn Tabellenentitäten exportiert werden | V5.0.0 | 2015-02-21
+| [V3.2.0](http://xdmrelease.blob.core.windows.net/azcopy-3-2-0/MicrosoftAzureStorageTools.msi) | Unterstützt Anfügeblobs und FIPS-kompatible MD5-Einstellung | V5.0.0 | 2015-02-21
 | [V4.1.0](http://xdmrelease.blob.core.windows.net/azcopy-4-1-0-preview/MicrosoftAzureStorageTools.msi) | Enthält die gesamte Funktionalität von V3.1.0. Unterstützt zudem das synchrone Kopieren von Blobs und Dateien und das Angeben des Inhaltstyps von Ziel-Blobs und -dateien. | V4.3.0 | 2014-02-14
 | [V3.1.0](http://xdmrelease.blob.core.windows.net/azcopy-3-1-0/MicrosoftAzureStorageTools.msi) | Unterstützt das synchrone Kopieren von Blobs und das Angeben des Inhaltstyps von Ziel-Blobs.| V4.3.0 | 2014-02-14
 | [V4.0.0](http://xdmrelease.blob.core.windows.net/azcopy-4-0-0-preview/MicrosoftAzureStorageTools.msi) | Enthält alle Funktionalitäten von V3.0.0. Unterstützt zudem das Kopieren zum oder aus dem Azure-Dateispeicher und das Kopieren von Entitäten zum oder aus dem Azure-Tabellenspeicher.| V4.2.1 | 2014-02-14
@@ -966,7 +962,7 @@ Weitere Informationen zu Azure Storage und zu AzCopy finden Sie in den folgenden
 - [Erstellen einer SMB-Dateifreigabe in Azure mit Dateispeicher](storage-dotnet-how-to-use-files.md)
 
 ### Azure Storage-Blogbeiträge:
-- [DML: Introducing Azure Storage Data Movement Library Preview](https://azure.microsoft.com/de-DE/blog/introducing-azure-storage-data-movement-library-preview-2/)
+- [DML: Introducing Azure Storage Data Movement Library Preview](https://azure.microsoft.com/blog/introducing-azure-storage-data-movement-library-preview-2/)
 - [AzCopy: Einführung in das synchrone Kopieren und benutzerdefinierte Inhaltstypen](http://blogs.msdn.com/b/windowsazurestorage/archive/2015/01/13/azcopy-introducing-synchronous-copy-and-customized-content-type.aspx)
 - [AzCopy: Ab sofort allgemein verfügbar: AzCopy 3.0 sowie die Vorschau auf AzCopy 4.0 mit Tabellen- und Dateiunterstützung](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/10/29/azcopy-announcing-general-availability-of-azcopy-3-0-plus-preview-release-of-azcopy-4-0-with-table-and-file-support.aspx)
 - [AzCopy: Optimiert für große Kopierszenarien](http://go.microsoft.com/fwlink/?LinkId=507682)
@@ -976,4 +972,4 @@ Weitere Informationen zu Azure Storage und zu AzCopy finden Sie in den folgenden
 - [AzCopy: Verwenden des kontoübergreifenden Kopierblobs](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/04/01/azcopy-using-cross-account-copy-blob.aspx)
 - [AzCopy: Hochladen/Herunterladen von Dateien für Windows Azure-Blobs](http://blogs.msdn.com/b/windowsazurestorage/archive/2012/12/03/azcopy-uploading-downloading-files-for-windows-azure-blobs.aspx)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

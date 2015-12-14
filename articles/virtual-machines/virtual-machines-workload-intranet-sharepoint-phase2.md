@@ -108,10 +108,10 @@ Melden Sie sich bei dem ersten Domänencontroller mit den Anmeldeinformationen d
 
 ### <a id="logon"></a>So melden Sie sich bei einem virtuellen Computer über eine Remotedesktopverbindung an
 
-1.	Klicken Sie im Azure-Portal im linken Bereich auf **Virtuelle Computer**.
+1.	Klicken Sie im klassischen Azure-Portal im linken Bereich auf **Virtuelle Computer**.
 2.	Zum Herstellen einer Verbindung mit einem virtuellen Computer klicken Sie in der Spalte **Status** neben dem Namen des virtuellen Computers auf **Ausführen**.
 3.	Klicken Sie in der Befehlsleiste am unteren Rand der Seite auf **Verbinden**.
-4.	Im Azure-Portal wird angezeigt, dass die RDP-Datei abgerufen wird. Klicken Sie auf **OK**.
+4.	Im klassischen Azure-Portal wird angezeigt, dass die RDP-Datei abgerufen wird. Klicken Sie auf **OK**.
 5.	Sie werden nun im Browserdialogfeld gefragt, ob "ComputerName.rdp" von "manage.windowsazure.com" geöffnet oder gespeichert werden soll. Klicken Sie auf **Öffnen**.
 6.	Klicken Sie im Dialogfeld **Remotedesktopverbindung** auf **Verbinden**.
 7.	Klicken Sie im Dialogfeld **Windows-Sicherheit** auf **Anderes Konto verwenden**.
@@ -205,14 +205,14 @@ Führen Sie als Nächstes die folgenden Schritte aus, um den neuen Benutzerkonte
 
 Aktualisieren Sie danach die DNS-Server für Ihr virtuelles Netzwerk, damit Azure den virtuellen Computern die IP-Adressen der beiden neuen Domänencontroller als deren DNS-Server zuweist. Die für dieses Verfahren benötigten Werte stammen aus Tabelle V (Einstellungen Ihres virtuellen Netzwerks).
 
-1.	Klicken Sie im linken Bereich des Azure-Portals auf **Netzwerke**, und klicken Sie dann auf den Namen Ihres virtuellen Netzwerks (Tabelle V – Element 1 – Wertspalte).
+1.	Klicken Sie im linken Bereich des klassischen Azure-Portals auf **Netzwerke**, und klicken Sie dann auf den Namen Ihres virtuellen Netzwerks (Tabelle V – Element 1 – Wertspalte).
 2.	Klicken Sie auf **Konfigurieren**.
 3.	Entfernen Sie unter **DNS-Server** die Einträge der DNS-Server, die sich in Ihrem lokalen Netzwerk befinden.
 4.	Fügen Sie unter **DNS-Server** zwei Einträge mit den Anzeigenamen und IP-Adressen der beiden folgenden Tabellenelemente hinzu:
  - Tabelle V – Element 6 – Wertspalte
  - Tabelle V – Element 7 – Wertspalte
 5.	Klicken Sie unten in der Befehlsleiste auf **Speichern**.
-6.	Klicken Sie im linken Bereich des Azure-Portals auf **Virtuelle Computer**, und klicken Sie dann neben dem Namen Ihres ersten Domänencontrollers auf die Spalte **Status**.
+6.	Klicken Sie im linken Bereich des klassischen Azure-Portals auf **Virtuelle Computer**, und klicken Sie dann neben dem Namen Ihres ersten Domänencontrollers auf die Spalte **Status**.
 7.	Klicken Sie in der Befehlsleiste auf **Neu starten**.
 8.	Klicken Sie nach dem Start des ersten Domänencontrollers neben dem Namen des zweiten Domänencontrollers auf die Spalte **Status**.
 9.	Klicken Sie in der Befehlsleiste auf **Neu starten**. Warten Sie, bis der zweite Domänencontroller gestartet ist.
@@ -248,4 +248,4 @@ Zum Fortsetzen der Konfiguration dieser Workload gehen Sie zu [Phase 3: Konfigur
 
 [Azure-Infrastrukturdienste-Workload: Branchenanwendung mit hoher Verfügbarkeit](virtual-machines-workload-high-availability-lob-application.md)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

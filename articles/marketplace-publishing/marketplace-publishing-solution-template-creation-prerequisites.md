@@ -22,10 +22,10 @@ Lesen Sie die Informationen zum Prozess vor Beginn sorgfältig durch, um nachvol
 ## Entwickeln von Bausteinen
 Sie müssen eine Entscheidung bezüglich der einzelnen Bausteine Ihrer Lösung treffen, ehe Sie zur Lösungsvorlage im Veröffentlichungsportal übergehen. Nachstehend finden Sie Links zu den Dokumenten, die Sie im Prozess unterstützen:
 
-1. [Bewährte Methoden für das Entwerfen von Azure-Ressourcen-Manager-Vorlagen](https://azure.microsoft.com/de-DE/documentation/articles/best-practices-resource-manager-design-templates/)
-2. [Erstellen von Azure-Ressourcen-Manager-Vorlagen](https://azure.microsoft.com/de-DE/documentation/articles/resource-group-authoring-templates/)
+1. [Bewährte Methoden für das Entwerfen von Azure-Ressourcen-Manager-Vorlagen](../best-practices-resource-manager-design-templates.md)
+2. [Erstellen von Azure-Ressourcen-Manager-Vorlagen](../resource-group-authoring-templates.md)
 3. Azure-Schnellstartvorlagen:
-  - [https://azure.microsoft.com/de-DE/documentation/templates/](https://azure.microsoft.com/de-DE/documentation/templates/)
+  - [https://azure.microsoft.com/de-DE/documentation/templates/](https://azure.microsoft.com/documentation/templates/)
   - [https://github.com/azure/azure-quickstart-templates](https://github.com/azure/azure-quickstart-templates)
 
 ## Nächste Schritte
@@ -34,4 +34,4 @@ Sie haben die Voraussetzungen überprüft und die erforderlichen Aufgaben ausgef
 
 [link-acct]: marketplace-publishing-accounts-creation-registration.md
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

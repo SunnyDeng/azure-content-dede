@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="11/17/2015"
+   ms.date="12/01/2015"
    ms.author="tomfitz"/>
 
 # Erstellen einer Active Directory-Anwendung und eines Dienstprinzipals mithilfe des Portals
@@ -111,7 +111,7 @@ Wählen Sie die Rolle aus, der Sie die Anwendung zuweisen möchten, und suchen S
 
 ![Benutzer auswählen](./media/resource-group-create-service-principal-portal/assign-to-role.png)
 
-Weitere Informationen zum Arbeiten mit Benutzern, Anwendungen und Rollen finden Sie unter [Verwalten des Zugriffs über das Azure-Verwaltungsportal](active-directory/role-based-access-control-configure/#manage-access-using-the-azure-management-portal).
+Weitere Informationen zum Zuweisen von Benutzern und Anwendungen zu Rollen über das Portal finden Sie unter [Verwalten des Zugriffs über das Azure-Verwaltungsportal](../role-based-access-control-configure/#manage-access-using-the-azure-management-portal).
 
 ## Abrufen des Zugriffstokens mit Code
 
@@ -162,4 +162,4 @@ Fügen Sie in Ihrer Anwendung eine Methode wie die folgende zum Abrufen des Toke
 [12]: ./media/resource-group-create-service-principal-portal/add-icon.png
 [13]: ./media/resource-group-create-service-principal-portal/save-icon.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

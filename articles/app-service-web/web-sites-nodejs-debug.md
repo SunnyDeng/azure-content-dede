@@ -46,7 +46,7 @@ Wenn die Datei **IISNode.yml** in Ihrer Anwendung zuvor noch nicht vorhanden war
 
 > [AZURE.NOTE]Wenn Sie die Web-App mit den Azure-Befehlszeilentools oder Azure-PowerShell-Cmdlets erstellt haben, wird automatisch eine standardmäßige **IISNode.yml**-Datei erstellt.
 
-Um die Web-App neu zu starten, wählen Sie die Web-App im [Azure-Vorschauportal](https://portal.azure.com) aus, und klicken Sie dann auf die Schaltfläche **NEU STARTEN**:
+Um die Web-App neu zu starten, wählen Sie die Web-App im [Azure-Portal](https://portal.azure.com) aus, und klicken Sie dann auf die Schaltfläche **NEU STARTEN**:
 
 ![Schaltfläche 'Neustart'][restart-button]
 
@@ -67,7 +67,7 @@ Nachdem sie installiert wurden, können Sie mit dem Befehl "azure" auf die Tools
 
 ###FTP
 
-Um per FTP auf die Diagnoseinformationen zuzugreifen, rufen Sie das [Azure-Vorschauportal](https://portal.azure.com) auf, wählen Sie Ihre Web-App aus, und wählen Sie dann **DASHBOARD** aus. Im Abschnitt **QuickLinks** bieten die Links **FTP DIAGNOSTIC LOGS** und **FTPS DIAGNOSTIC LOGS** Zugriff auf die Protokolldateien per FTP.
+Um per FTP auf die Diagnoseinformationen zuzugreifen, rufen Sie das [Azure-Portal](https://portal.azure.com) auf, wählen Sie Ihre Web-App aus, und wählen Sie dann **DASHBOARD** aus. Im Abschnitt **QuickLinks** bieten die Links **FTP DIAGNOSTIC LOGS** und **FTPS DIAGNOSTIC LOGS** Zugriff auf die Protokolldateien per FTP.
 
 > [AZURE.NOTE]Wenn Sie noch keinen Benutzernamen und kein Kennwort für FTP oder die Bereitstellung konfiguriert haben, können Sie dies auf der **QuickStart**-Verwaltungsseite durchführen, indem Sie **Set up deployment credentials** auswählen.
 
@@ -114,7 +114,6 @@ Weitere Informationen finden Sie außerdem im [Node.js Developer Center](/develo
 
 ## Änderungen
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
 
 >[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
@@ -127,4 +126,4 @@ Weitere Informationen finden Sie außerdem im [Node.js Developer Center](/develo
 [restart-button]: ./media/web-sites-nodejs-debug/restartbutton.png
  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

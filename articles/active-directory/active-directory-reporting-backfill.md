@@ -13,10 +13,21 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="11/09/2015"
+   ms.date="11/30/2015"
    ms.author="kenhoff"/>
 
 # Aufbewahrungsrichtlinien für Azure Active Directory-Berichte
+
+## Artikel in der Azure AD Reporting-Dokumentation
+
+ - [Reporting-API](active-directory-reporting-api-getting-started.md)
+ - [Überwachungsereignisse](active-directory-reporting-audit-events.md)
+ - [Aufbewahrung](active-directory-reporting-retention.md)
+ - [Vorschau](active-directory-reporting-previews.md)
+ - [Suche](active-directory-reporting-search.md)
+ - [Abgleich](active-directory-reporting-backfill.md)
+ - [Wartezeiten](active-directory-reporting-latencies.md)
+ - [Ereignis „Unbekannter Akteur“](active-directory-reporting-unknown-actor.md)
 
 Nachdem ein Verzeichnis für Berichte aktiviert wurde, werden die Daten für die nachfolgend angegebene Anzahl von Tagen abgeglichen.
 
@@ -46,4 +57,4 @@ Aktivste RMS-Benutzer | 0 Tage
 Nutzung von RMS-Geräten | 0 Tage
 Nutzung RMS-fähiger Anwendungen | 0 Tage
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

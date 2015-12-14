@@ -43,7 +43,7 @@ Zum Konfigurieren von HDInsight für den Data Lake-Speicher mithilfe von PowerS
 
 Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
-- **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/de-DE/pricing/free-trial/).
+- **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/).
 - **Aktiviertes Azure-Abonnement** für die öffentliche Vorschauversion des Data Lake-Speichers. Weitere Informationen finden Sie in den [Anweisungen](data-lake-store-get-started-portal.md#signup).
 - **Windows SDK**. Das Installationspaket finden Sie [hier](https://dev.windows.com/de-DE/downloads). Dies dient zum Erstellen eines Sicherheitszertifikats.
 - **Azure PowerShell 1.0 oder höher**. Entsprechende Anweisungen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md).
@@ -96,7 +96,7 @@ Führen Sie folgende Schritte aus, um einen Data Lake-Speicher zu erstellen.
 
 ## Einrichten der Authentifizierung für rollenbasierten Zugriff auf den Data Lake-Speicher
 
-Jedes Azure-Abonnement ist mit einem Azure Active Directory verknüpft. Benutzer und Dienste, die über das Azure-Portal oder die Azure-Ressourcen-Manager-API auf Abonnementressourcen zugreifen, müssen sich zunächst bei diesem Azure Active Directory authentifizieren. Azure-Abonnements und -Dienste erhalten Zugriff, indem ihnen die entsprechende Rolle für eine Azure-Ressource zugewiesen wird. Für Dienste identifiziert der Dienstprinzipal den Dienst in Azure Active Directory (AAD). In diesem Abschnitt wird veranschaulicht, wie Sie einem Anwendungsdienst, z. B. HDInsight, Zugriff auf eine Azure-Ressource gewähren (das zuvor erstellte Azure Data Lake-Speicherkonto), indem Sie einen Dienstprinzipal für die Anwendung erstellen und ihr über Azure PowerShell Rollen zuweisen.
+Jedes Azure-Abonnement ist mit einem Azure Active Directory verknüpft. Benutzer und Dienste, die über das klassische Azure-Portal oder die Azure-Ressourcen-Manager-API auf Abonnementressourcen zugreifen, müssen sich zunächst bei diesem Azure Active Directory authentifizieren. Azure-Abonnements und -Dienste erhalten Zugriff, indem ihnen die entsprechende Rolle für eine Azure-Ressource zugewiesen wird. Für Dienste identifiziert der Dienstprinzipal den Dienst in Azure Active Directory (AAD). In diesem Abschnitt wird veranschaulicht, wie Sie einem Anwendungsdienst, z. B. HDInsight, Zugriff auf eine Azure-Ressource gewähren (das zuvor erstellte Azure Data Lake-Speicherkonto), indem Sie einen Dienstprinzipal für die Anwendung erstellen und ihr über Azure PowerShell Rollen zuweisen.
 
 Sie müssen die folgenden Aufgaben ausführen, um die Active Directory-Authentifizierung für Azure Data Lake einzurichten.
 
@@ -265,7 +265,7 @@ Die Ausgabe des Auftrags sieht etwa wie folgt aus:
 
 Nachdem Sie den HDInsight-Cluster für die Verwendung des Data Lake-Speichers konfiguriert haben, können Sie die HDFS-Shellbefehle verwenden, um auf den Speicher zuzugreifen.
 
-1. Melden Sie sich beim neuen [Azure-Vorschauportal](https://portal.azure.com) an.
+1. Melden Sie sich beim neuen [Azure-Portal](https://portal.azure.com) an.
 
 2. Klicken Sie auf **Durchsuchen**, **HDInsight-Cluster** und dann auf den HDInsight-Cluster, den Sie erstellt haben.
 
@@ -294,4 +294,4 @@ Nachdem Sie den HDInsight-Cluster für die Verwendung des Data Lake-Speichers ko
 [makecert]: https://msdn.microsoft.com/de-DE/library/windows/desktop/ff548309(v=vs.85).aspx
 [pvk2pfx]: https://msdn.microsoft.com/de-DE/library/windows/desktop/ff550672(v=vs.85).aspx
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -48,7 +48,7 @@ Es folgt ein Beispiel für die Java-Anwendung, die die rechenintensive Aufgabe �
 
 ## So erstellen Sie einen virtuellen Computer
 
-1. Melden Sie sich beim [Azure-Portal](https://manage.windowsazure.com) an.
+1. Melden Sie sich beim [klassischen Azure-Portal](https://manage.windowsazure.com) an.
 2. Klicken Sie auf **Neu**, auf **Compute** auf **Virtueller Computer** und dann auf **Aus Galerie**.
 3. Wählen Sie im Dialogfeld **Image des virtuellen Computers auswählen** die Option **JDK 7 Windows Server 2012** aus. Beachten Sie, dass **JDK 6 Windows Server 2012** verfügbar ist, wenn Sie Legacyanwendungen haben, die noch nicht in JDK 7 ausgeführt werden können.
 4. Klicken Sie auf **Weiter**.
@@ -71,7 +71,7 @@ Es folgt ein Beispiel für die Java-Anwendung, die die rechenintensive Aufgabe �
 
 ## So melden Sie sich von einem Remotestandort aus an Ihrem virtuellen Computer an
 
-1. Melden Sie sich beim [Azure-Portal](https://manage.windowsazure.com) an.
+1. Melden Sie sich beim [klassischen Azure-Portal](https://manage.windowsazure.com) an.
 2. Klicken Sie auf **Virtuelle Computer**.
 3. Klicken Sie auf den Namen des virtuellen Computers, an dem Sie sich anmelden möchten.
 4. Klicken Sie auf **Verbinden**.
@@ -85,13 +85,13 @@ Um Service Bus-Warteschlangen in Azure zu verwenden, müssen Sie zunächst einen
 
 So erstellen Sie einen Dienstnamespace:
 
-1.  Melden Sie sich beim [Azure-Portal](https://manage.windowsazure.com) an.
-2.  Klicken Sie unten links im Navigationsbereich des Azure-Portals auf **Servicebus, Zugriffssteuerung und Cache**.
-3.  Klicken Sie im Azure-Portal links oben auf den Knoten **Service Bus** und dann auf die Schaltfläche **Neu**. ![Screenshot des Service Bus-Knotens][svc_bus_node]
+1.  Melden Sie sich beim [klassischen Azure-Portal](https://manage.windowsazure.com) an.
+2.  Klicken Sie unten links im Navigationsbereich des klassischen Azure-Portals auf **Servicebus, Zugriffssteuerung und Cache**.
+3.  Klicken Sie im klassischen Azure-Portal links oben auf den Knoten **Service Bus** und dann auf die Schaltfläche **Neu**. ![Screenshot des Service Bus-Knotens][svc_bus_node]
 4.  Geben Sie im Dialogfeld zum Erstellen eines neuen Dienstnamespace einen **Namespace** ein, und klicken Sie dann auf die Schaltfläche **Verfügbarkeit prüfen**, um sicherzustellen, dass er eindeutig ist. ![Screenshot des Erstellens eines neuen Namespace][create_namespace]
 5.  Nachdem Sie sichergestellt haben, dass der Namespace verfügbar ist, wählen Sie das Land oder die Region aus, in dem bzw. der Ihr Namespace gehostet werden soll, und klicken Sie dann auf die Schaltfläche **Create Namespace**.  
 
-    Der erstellte Namespace wird dann im Azure-Portal angezeigt und nach kurzer Zeit aktiviert. Warten Sie, bis **Active** als Status angezeigt wird, bevor Sie mit dem nächsten Schritt fortfahren.
+    Der erstellte Namespace wird dann im klassischen Azure-Portal angezeigt und nach einem Moment aktiviert. Warten Sie, bis **Active** als Status angezeigt wird, bevor Sie mit dem nächsten Schritt fortfahren.
 
 ## Abrufen der Standard-Anmeldeinformationen für die Namespaceverwaltung
 
@@ -520,4 +520,4 @@ Für Solver- und Clientanwendungen können Sie **Strg+C** drücken, um die Anwen
 [default_key]: ./media/virtual-machines-java-run-compute-intensive-task/SvcBusQueues_07_DefaultKey.jpg
 [add_ca_cert]: ../java-add-certificate-ca-store.md
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -1,37 +1,42 @@
-<properties 
-	pageTitle="Registrieren für die Twitter-Authentifizierung | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie die Twitter-Authentifizierung mit Ihrer Azure Mobile Services-Anwendung verwenden." 
-	services="mobile-services" 
-	documentationCenter="" 
-	authors="ggailey777" 
-	manager="dwrede" 
+<properties
+	pageTitle="Registrieren für die Twitter-Authentifizierung | Microsoft Azure"
+	description="Erfahren Sie, wie Sie die Twitter-Authentifizierung mit Ihrer Azure Mobile Services-Anwendung verwenden."
+	services="mobile-services"
+	documentationCenter=""
+	authors="ggailey777"
+	manager="dwrede"
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="11/15/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="na"
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.date="11/15/2015"
 	ms.author="glenga"/>
 
 #Registrieren Ihrer Apps für die Twitter-Anmeldung mit Mobile Services
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 [AZURE.INCLUDE [mobile-services-selector-register-identity-provider](../../includes/mobile-services-selector-register-identity-provider.md)]
 
 In diesem Thema erfahren Sie, wie Sie Ihre Apps registrieren, um Twitter zur Authentifizierung mit Azure Mobile Services zu verwenden.
 
->[AZURE.NOTE]Thema dieses Lernprogramms sind [Azure Mobile Services](http://azure.microsoft.com/services/mobile-services/), eine Lösung, die Sie beim Erstellen skalierbarer mobiler Anwendungen für beliebige Plattformen unterstützt. Mit Mobile Services ist es einfach, Daten zu synchronisieren, Benutzer zu authentifizieren und Pushbenachrichtigungen zu senden. Diese Seite unterstützt das Lernprogramm [Hinzufügen von Authentifizierung zur App](mobile-services-ios-get-started-users.md), das zeigt, wie sich Benutzer bei Ihrer App anmelden. Falls Sie noch keine Erfahrung mit Mobile Services haben, sollten Sie zunächst das Lernprogramm [Erste Schritte mit Mobile Services](mobile-services-ios-get-started) abschließen.
+>[AZURE.NOTE]Thema dieses Lernprogramms sind [Azure Mobile Services](http://azure.microsoft.com/services/mobile-services/), eine Lösung, die Sie beim Erstellen skalierbarer mobiler Anwendungen für beliebige Plattformen unterstützt. Mit Mobile Services ist es einfach, Daten zu synchronisieren, Benutzer zu authentifizieren und Pushbenachrichtigungen zu senden. Diese Seite unterstützt das Tutorial [Hinzufügen von Authentifizierung zur App](mobile-services-ios-get-started-users.md), das zeigt, wie sich Benutzer bei Ihrer App anmelden. Falls Sie noch keine Erfahrung mit Mobile Services haben, sollten Sie zunächst das Lernprogramm [Erste Schritte mit Mobile Services](mobile-services-ios-get-started) abschließen.
 
 Sie benötigen ein Twitter-Konto mit verifizierter E-Mail-Adresse, um den in diesem Thema beschriebenen Vorgang abzuschließen. Rufen Sie die Seite <a href="http://go.microsoft.com/fwlink/p/?LinkID=268287" target="_blank">twitter.com</a> auf, um ein neues Twitter-Konto zu erstellen.
 
-1. Navigieren Sie zur [Twitter Developers](http://go.microsoft.com/fwlink/p/?LinkId=268300)-Website, melden Sie sich mit den Anmeldeinformationen für Ihr Twitter-Konto an, und klicken Sie auf **Create New App**.
+1. Navigieren Sie zur [Twitter Developers](http://go.microsoft.com/fwlink/p/?LinkId=268300)-Website, melden Sie sich mit den Anmeldeinformationen für Ihr Twitter-Konto an, und klicken Sie auf **Create new app**.
 
 2. Geben Sie die Werte für **Name**, **Beschreibung** und **Website** für Ihre App ein, geben Sie dann eines der folgenden URL-Formate in **Callback URL** ein.
- 
+
 	+ **.NET-Back-End**: `https://<mobile_service>.azure-mobile.net/signin-twitter`
-	+ **JavaScript-Back-End**:`https://<mobile_service>.azure-mobile.net/login/twitter` 
+	+ **JavaScript-Back-End**: `https://<mobile_service>.azure-mobile.net/login/twitter`
 
 	 >[AZURE.NOTE]Stellen Sie sicher, dass Sie das richtige Umleitungs-URL-Pfadformat für Ihren Typ von Mobile Services-Back-End verwenden. Wenn die Angabe falsch ist, wird die Authentifizierung nicht erfolgreich ausgeführt.&nbsp;
 
@@ -60,7 +65,4 @@ Sie können nun ein Twitter-Login für die Authentifizierung in Ihrer App verwen
 [Twitter Developers]: http://go.microsoft.com/fwlink/p/?LinkId=268300
 [Get started with authentication]: /develop/mobile/tutorials/get-started-with-users-dotnet/
 
-[Azure Management Portal]: https://manage.windowsazure.com/
- 
-
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

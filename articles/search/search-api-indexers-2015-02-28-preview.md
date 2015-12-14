@@ -92,7 +92,7 @@ In der folgenden Liste werden die erforderlichen und optionalen Anforderungshead
 - `Content-Type`: Erforderlich. Auf `application/json` festlegen.
 - `api-key`: Erforderlich. `api-key` wird zum Authentifizieren der Anforderung beim Search-Dienst verwendet. Es handelt sich um einen für Ihren Dienst eindeutigen Zeichenfolgenwert. Die Anforderung **Datenquelle erstellen** muss einen `api-key`-Header enthalten, der auf Ihren Admin-Schlüssel (im Gegensatz zum Abfrageschlüssel) festgelegt ist. 
  
-Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie finden den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im [Azure-Verwaltungsportal](https://portal.azure.com/). Hilfe bei der Seitennavigation finden Sie unter [Search-Dienst im Portal erstellen](search-create-service-portal.md).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im [klassischen Azure-Portal](https://portal.azure.com/) abrufen. Hilfe bei der Seitennavigation finden Sie unter [Search-Dienst im Portal erstellen](search-create-service-portal.md).
 
 <a name="CreateDataSourceRequestSyntax"></a> **Syntax des Anforderungstextes**
 
@@ -120,8 +120,8 @@ Die Anforderung enthält die folgenden Eigenschaften:
 	- `documentdb`: Azure DocumentDB
 - `credentials`:
 	- Die erforderlichen Eigenschaft `connectionString` gibt die Verbindungszeichenfolge für die Datenquelle an. Das Format der Verbindungszeichenfolge hängt vom Typ der Datenquelle ab: 
-		- Für SQL Azure ist dies die übliche SQL Server-Verbindungszeichenfolge. Wenn Sie die Verbindungszeichenfolge über das Azure-Verwaltungsportal abrufen, verwenden Sie die Option `ADO.NET connection string`.
-		- Für DocumentDB muss die Verbindungszeichenfolge folgenden Format aufweisen: `"AccountEndpoint=https://[your account name].documents.azure.com;AccountKey=[your account key];Database=[your database id]"`. Alle Werte sind erforderlich. Informationen zu den Werten finden Sie im [Azure-Verwaltungsportal](https://portal.azure.com/).   
+		- Für SQL Azure ist dies die übliche SQL Server-Verbindungszeichenfolge. Wenn Sie die Verbindungszeichenfolge über das klassische Azure-Portal abrufen, verwenden Sie die Option `ADO.NET connection string`.
+		- Für DocumentDB muss die Verbindungszeichenfolge folgenden Format aufweisen: `"AccountEndpoint=https://[your account name].documents.azure.com;AccountKey=[your account key];Database=[your database id]"`. Alle Werte sind erforderlich. Informationen zu den Werten finden Sie im [klassischen Azure-Portal](https://portal.azure.com/).   
 		
 - `container`:
 	- Die erforderliche Eigenschaft `name` gibt die Tabelle bzw. Ansicht (für Azure SQL-Datenquelle) oder eine Sammlung (für DocumentDB-Datenquelle) an, die indiziert werden soll. 
@@ -776,4 +776,4 @@ Statuscode "204 Kein Inhalt" bei erfolgreicher Antwort.
 </tr>
 </table>
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

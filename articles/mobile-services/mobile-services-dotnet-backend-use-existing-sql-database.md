@@ -12,12 +12,17 @@
 	ms.workload="mobile"
 	ms.tgt_pltfrm="na"
 	ms.devlang="multiple"
-	ms.topic="article" 
+	ms.topic="article"
 	ms.date="11/09/2015"
 	ms.author="glenga"/>
 
 
 # Erstellen eines Diensts mithilfe einer vorhandenen SQL-Datenbank mit dem Mobile Services .NET-Backend
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 Das Mobile Services .NET-Backend macht die Nutzung vorhandener Objekte beim Erstellen eines mobilen Diensts ganz einfach. Ein besonders interessantes Szenario ist die Verwendung einer vorhandenen SQL-Datenbank (entweder lokal oder in der Cloud), die bereits von anderen Anwendungen verwendet wird, um die vorhandenen Daten auch für mobile Clients nutzbar zu machen. In diesem Fall ist es erforderlich, dass das Datenbankmodell (oder *Schema*) unverändert bleibt, damit die vorhandenen Lösungen weiter damit arbeiten können.
 
@@ -26,7 +31,7 @@ Das Mobile Services .NET-Backend macht die Nutzung vorhandener Objekte beim Erst
 
 Für dieses Lernprogramm verwenden wir die Datenbank, die mit Ihrem mobilen Dienst erstellt wurde, aber wir verwenden nicht das Standardmodell. Stattdessen erstellen wir manuell ein beliebiges Modell, das eine vorhandene Anwendung darstellt. Ausführliche Informationen zur alternativen Verbindung mit einer lokalen Datenbank finden Sie unter [Verbindung mit einem lokalen SQL Server von einem mobilen Azure-Dienst mithilfe von Hybridverbindungen](mobile-services-dotnet-backend-hybrid-connections-get-started.md).
 
-1. Erstellen Sie zuerst ein Mobile Services-Serverprojekt in **Visual Studio 2013 Update 2** oder mithilfe des Schnellstartprojekts, das Sie auf der Mobile Services-Registerkarte für Ihren Dienst im [Azure-Verwaltungsportal](http://manage.windowsazure.com) herunterladen können. Zum Zweck dieses Lernprogramms verwenden wir den Serverprojektnamen **ShoppingService**.
+1. Erstellen Sie zuerst ein Mobile Services-Serverprojekt in **Visual Studio 2013 Update 2** oder mithilfe des Schnellstartprojekts, das Sie auf der Mobile Services-Registerkarte für Ihren Dienst im [klassischen Azure-Portal](http://manage.windowsazure.com) herunterladen können. Zum Zweck dieses Lernprogramms verwenden wir den Serverprojektnamen **ShoppingService**.
 
 2. Erstellen Sie eine Datei **Customer.cs** im Ordner **Models**, und verwenden Sie die folgende Implementierung. Sie müssen einen Assemblyverweis auf **System.ComponentModel.DataAnnotations** zum Projekt hinzufügen.
 
@@ -614,4 +619,4 @@ Beachten Sie, dass beide Controllerimplementierungen die DTOs **MobileCustomer**
 
 Als nächsten Schritt können Sie nun die Client-App erstellen, um auf den Dienst zuzugreifen.
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

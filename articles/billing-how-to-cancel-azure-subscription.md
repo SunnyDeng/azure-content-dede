@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/21/2015"
+	ms.date="12/01/2015"
 	ms.author="genli"/>
 
 # Kündigung Ihres Azure-Abonnements
@@ -30,4 +30,4 @@ Wenn Sie Ihr Abonnement kündigen, werden alle Ihre Dienste sofort gelöscht. St
 4. Wählen Sie **Ja, mein Abonnement kündigen**. </br> ![cancelbox](.\media\billing-how-to-cancel-azure-subscription\cancelbox.png)
 5. Klicken Sie auf ![checkbutton](.\media\billing-how-to-cancel-azure-subscription\checkbutton.png), um das Dialogfenster zu schließen und zu Ihrer Abonnementseite zurückzukehren.
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

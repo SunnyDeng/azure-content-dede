@@ -43,10 +43,10 @@ Dieser Artikel enthält spezifische Informationen für IT-Experten und Entwickle
 
 - [Was ist Azure IoT Hub?][lnk-iothub]
 - Der Abschnitt ["Sicherheit" im Entwicklungsleitfaden für Azure IoT Hub][lnk-devguide] bietet zusätzliche Informationen zu den Token und dem Berechtigungssystem in IoT Hub.
-- Unter [Verwalten von IoT Hub über das Azure-Vorschauportal][lnk-manage-portal] wird beschrieben, wie IoT Hub mithilfe des Azure-Vorschauportals verwaltet wird.
+- Unter [Verwalten von IoT Hub über das Azure-Portal][lnk-manage-portal] wird beschrieben, wie IoT Hub mithilfe des Azure-Portals verwaltet wird.
 
 [lnk-iothub]: iot-hub-what-is-iot-hub.md
 [lnk-devguide]: iot-hub-devguide.md#security
 [lnk-manage-portal]: iot-hub-manage-through-portal.md
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

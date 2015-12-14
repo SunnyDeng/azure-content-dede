@@ -18,6 +18,11 @@
 
 # Erste Schritte mit der Synchronisierung von Offlinedaten in Mobile Services
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
+
 [AZURE.INCLUDE [mobile-services-selector-offline](../../includes/mobile-services-selector-offline.md)]
 
 Die Offlinesynchronisierung ermöglicht Ihnen, Daten in einer mobilen Anwendung anzuzeigen und Daten hinzuzufügen oder zu ändern, auch wenn keine Netzwerkverbindung verfügbar ist. In diesem Lernprogramm erfahren Sie, wie Sie Ihre App so konfigurieren, dass Änderungen automatisch in einer lokalen Offlinedatenbank gespeichert werden und die Daten synchronisiert werden, sobald die App wieder online ist.
@@ -196,7 +201,7 @@ In diesem Abschnitt werden Sie im Simulator Wi-Fi deaktivieren, um ein Offlinesz
 
 3. Zeigen Sie den Inhalt der TodoItem-Remotetabelle an. Stellen Sie sicher, dass die neuen Elemente _nicht_ auf dem Server synchronisiert wurden.
 
-   - Klicken Sie für das JavaScript-Back-End auf dem Verwaltungsportal auf die Registerkarte "Daten", um den Inhalt der `TodoItem`-Tabelle anzuzeigen.
+   - Klicken Sie für das JavaScript-Back-End im [klassischen Azure-Portal](http://manage.windowsazure.com) auf die Registerkarte "Daten", um den Inhalt der `TodoItem`-Tabelle anzuzeigen.
    - Zeigen Sie für das .NET-Back-End den Inhalt der Tabelle entweder mit einem SQL-Tool wie SQL Server Management Studio oder einen REST-Client wie Fiddler oder Postman an.
 
 4. Aktivieren Sie Wi-Fi im iOS-Simulator. Führen Sie als Nächstes die Aktualisierungsbewegung aus, indem Sie die Elementliste nach unten ziehen. Eine Synchronisierungsanzeige und der Hinweis „Syncing...“ werden angezeigt.
@@ -270,4 +275,4 @@ Um den lokalen Speicher mit dem Server zu synchronisieren, wurden `MSSyncTable.p
 
 [Erste Schritte mit Mobile Services]: mobile-services-ios-get-started.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

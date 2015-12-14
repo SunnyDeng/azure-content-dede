@@ -261,4 +261,4 @@ Nachdem Sie nun mit den Grundlagen des E-Mail-Dienstes SendGrid vertraut sind, f
   [transaktionale E-Mail-Übermittlung]: https://sendgrid.com/transactional-email
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

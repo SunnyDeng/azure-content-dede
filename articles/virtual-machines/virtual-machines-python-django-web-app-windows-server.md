@@ -50,7 +50,7 @@ Nachstehend finden Sie einen Screenshot der vollständigen Anwendung:
 1. Befolgen Sie die [hier](virtual-machines-windows-tutorial-classic-portal.md) aufgeführten Anweisungen, um einen virtuellen Azure-Computer mit der Windows Server 2012 R2 Datacenter-Distribution zu erstellen.
 
 1. Weisen Sie Azure an, den Port 80-Datenverkehr aus dem Web an Port 80 auf dem virtuellen Computer zu leiten.
- - Navigieren Sie im Azure-Portal zu Ihrem neu erstellten virtuellen Computer, und klicken Sie auf die Registerkarte **ENDPUNKTE**.
+ - Navigieren Sie im klassischen Azure-Portal zu Ihrem neu erstellten virtuellen Computer, und klicken Sie auf die Registerkarte **ENDPUNKTE**.
  - Klicken Sie unten auf der Seite auf **HINZUFÜGEN**. ![Endpunkt hinzufügen](./media/virtual-machines-python-django-web-app-windows-server/django-helloworld-addendpoint.png)
 
  - Öffnen Sie **ÖFFENTLICHER PORT 80 ** des **TCP**-Protokolls als **PRIVATER PORT 80**. ![][port80]
@@ -184,4 +184,4 @@ Wenn Sie mit diesem Lernprogramm fertig sind, fahren Sie den neu erstellten virt
 [python.org]: https://www.python.org/downloads/
 [wfastcgi]: https://pypi.python.org/pypi/wfastcgi
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

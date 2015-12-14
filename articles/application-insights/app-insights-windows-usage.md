@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/19/2015" 
+	ms.date="11/25/2015" 
 	ms.author="awills"/>
 
 #  Überwachen der Nutzung in Windows Store- und Windows Phone-Apps mit Application Insights
@@ -153,4 +153,4 @@ Wenn Sie den Build im Freigabemodus erstellen, werden Ereignisse auf dem Gerät 
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

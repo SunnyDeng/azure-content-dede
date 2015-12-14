@@ -23,10 +23,10 @@ Hier erfahren Sie, wie Sie benutzerdefinierte Operatoren zur Verwendung und Wied
 
 ##Voraussetzungen
 
-- Visual Studio 2015, Visual Studio 2013 Update 4 oder Visual Studio 2012 mit Installation von Visual C++. 
+- Visual Studio 2015, Visual Studio 2013 Update 4 oder Visual Studio 2012 mit Installation von Visual C++ 
 - Microsoft Azure SDK für .NET, Version 2.5 oder höher. Führen Sie die Installation mit dem Webplattform-Installer durch.
-- Data Lake Analytics-Konto. Siehe [Erste Schritte mit Azure Data Lake Analytics mithilfe des Azure-Vorschauportals](data-lake-analytics-get-started-portal.md).
-- Arbeiten Sie das Tutorial [Erste Schritte mit U-SQL-Studio für Azure Data Lake Analytics](data-lake-analytics-u-sql-studio-get-started.md) durch.
+- Data Lake Analytics-Konto. Siehe [Erste Schritte mit Azure Data Lake Analytics mithilfe des Azure-Portals](data-lake-analytics-get-started-portal.md).
+- Arbeiten Sie das Lernprogramm [Erste Schritte mit U-SQL-Studio für Azure Data Lake Analytics](data-lake-analytics-u-sql-studio-get-started.md) durch.
 - Stellen Sie eine Verbindung mit Azure her (siehe [Erste Schritte mit U-SQL-Studio für Azure Data Lake Analytics](data-lake-analytics-u-sql-studio-get-started.md#connect-to-azure)). 
 - Laden Sie die Datenquelle hoch (siehe [Erste Schritte mit U-SQL-Studio für Azure Data Lake Analytics](data-lake-analytics-u-sql-studio-get-started.md#upload-source-data-files)). 
 
@@ -137,7 +137,7 @@ Hier erfahren Sie, wie Sie benutzerdefinierte Operatoren zur Verwendung und Wied
 
 **So zeigen Sie die Auftragsausgabe an**
 
-1. Erweitern Sie im **Server-Explorer** nacheinander **Azure**, **Data Lake Analytics**, Ihr Data Lake Analytics-Konto und **Speicherkonten**. Klicken Sie mit der rechten Maustaste auf das Standardspeicherkonto, und klicken Sie dann auf **Explorer**. 
+1. Erweitern Sie im **Server-Explorer** nacheinander **Azure**, **Data Lake Analytics**, Ihr Data Lake Analytics-Konto und **Speicherkonten**. Klicken Sie mit der rechten Maustaste auf den Standardspeicher, und klicken Sie dann auf **Explorer**. 
 2. Erweitern Sie „Beispielcode“ und „Ausgaben“, und doppelklicken Sie dann auf **Drivers.csv**.
 
 
@@ -147,4 +147,4 @@ Hier erfahren Sie, wie Sie benutzerdefinierte Operatoren zur Verwendung und Wied
 - [Erste Schritte mit Data Lake Analytics mithilfe des Azure-Portals](data-lake-analytics-get-started-portal.md)
 - [Verwenden von Data Lake-Tools für Visual Studio zum Entwickeln von U-SQL-Anwendungen](data-lake-analytics-data-lake-tools-get-started.md)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

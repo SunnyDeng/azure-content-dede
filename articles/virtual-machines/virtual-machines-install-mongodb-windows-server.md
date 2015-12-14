@@ -22,7 +22,7 @@
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
 
 
-[MongoDB][MongoDB] ist eine beliebte, leistungsfähige Open Source-NoSQL-Datenbank. Im [Azure-Portal][AzurePortal] können Sie über den Imagekatalog einen virtuellen Windows Server-Computer unter Verwendung des klassischen Bereitstellungsmodells erstellen. Anschließend können Sie auf dem virtuellen Computer eine MongoDB-Datenbank installieren und konfigurieren.
+[MongoDB][MongoDB] ist eine beliebte, leistungsfähige Open Source-NoSQL-Datenbank. Im [klassischen Azure-Portal][AzurePortal] können Sie über den Imagekatalog einen virtuellen Windows Server-Computer unter Verwendung des klassischen Bereitstellungsmodells erstellen. Anschließend können Sie auf dem virtuellen Computer eine MongoDB-Datenbank installieren und konfigurieren.
 
 
 ## Erstellen eines virtuellen Computers unter Windows Server
@@ -51,4 +51,4 @@ In diesem Lernprogramm haben Sie erfahren, wie Sie einen virtuellen Windows Serv
 [MongoDB]: http://www.mongodb.org/
 [AzurePortal]: http://manage.windowsazure.com
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

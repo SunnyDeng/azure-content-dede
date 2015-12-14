@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="AzurePortal"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/11/2015"
+	ms.date="12/02/2015"
 	ms.author="tomfitz"/>
 
 
@@ -51,9 +51,9 @@ Das folgende Beispiel zeigt ein Speicherkonto mit einem Tag.
         }
     ]
 
-## Tags im Vorschauportal
+## Tags im Portal
 
-Das Markieren von Ressourcen und Ressourcengruppen im Vorschauportal ist einfach. Verwenden Sie den Durchsuchenhub, um zu der Ressource oder Ressourcengruppe zu navigieren, die Sie markieren möchten. Klicken Sie dann auf den Tags-Teil im Übersichtsabschnitt oben im Fenster.
+Das Markieren von Ressourcen und Ressourcengruppen im Portal ist einfach. Verwenden Sie den Durchsuchenhub, um zu der Ressource oder Ressourcengruppe zu navigieren, die Sie markieren möchten. Klicken Sie dann auf den Tags-Teil im Übersichtsabschnitt oben im Fenster.
 
 ![Tags-Bereich im Blatt für Ressourcen oder Ressourcengruppen](./media/resource-group-using-tags/tag-icon.png)
 
@@ -139,7 +139,7 @@ Um Ressourcengruppen mit einem bestimmten Tag abzurufen, verwenden Sie das Cmdle
     rbacdemo-group
     tag-demo
 
-Für niedrigere Azure PowerShell-Versionen als 1.0 Preview verwenden Sie die folgenden Befehle, um Ressourcen mit einem bestimmten Tag abzurufen.
+Für niedrigere Azure PowerShell-Versionen als 1.0 verwenden Sie die folgenden Befehle, um Ressourcen mit einem bestimmten Tag abzurufen.
 
     PS C:\> Get-AzureResourceGroup -Tag @{ Name="env"; Value="demo" } | %{ $_.ResourceGroupName }
     rbacdemo-group
@@ -181,6 +181,6 @@ Wenn Sie die CSV-Nutzungsdatei für Dienste herunterladen, die die Verwendung vo
 - Sie können mithilfe benutzerdefinierter Richtlinien Einschränkungen und Konventionen für Ihr Abonnement festlegen. Die Richtlinie, die Sie definieren, kann erfordern, dass ein bestimmtes Tag für alle Ressourcen festgelegt wird. Weitere Informationen finden Sie unter [Verwenden von Richtlinien für Ressourcenverwaltung und Zugriffssteuerung](resource-manager-policy.md).
 - Eine Einführung zur Verwendung von Azure PowerShell für das Bereitstellen von Ressourcen finden Sie unter [Verwenden von Windows PowerShell mit dem Azure-Ressourcen-Manager](./powershell-azure-resource-manager.md).
 - Eine Einführung zur Verwendung der Azure-Befehlszeilenschnittstelle für das Bereitstellen von Ressourcen finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit der Azure-Ressourcenverwaltung](./xplat-cli-azure-resource-manager.md).
-- Eine Einführung zum Verwenden des Vorschauportals finden Sie unter [Verwenden des Azure-Vorschauportals zum Verwalten Ihrer Azure-Ressourcen](./resource-group-portal.md).  
+- Eine Einführung zum Verwenden des Portals finden Sie unter [Verwenden des Azure-Portals zum Verwalten Ihrer Azure-Ressourcen](./resource-group-portal.md).  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

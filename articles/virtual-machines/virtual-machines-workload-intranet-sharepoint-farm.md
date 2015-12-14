@@ -48,7 +48,7 @@ Sie können diese Entwicklungs- und Testumgebungen im Rahmen Ihres [MSDN-Abonnem
 
 ### Virtuelles Nur-Cloud-Netzwerk
 
-Ein virtuelles Nur-Cloud-Netzwerk ist nicht mit einem lokalen Netzwerk verbunden. Falls Sie nur schnell eine grundlegende oder hochverfügbare SharePoint-Farm erstellen möchten, helfen Ihnen die Informationen unter [SharePoint-Serverfarm](virtual-machines-sharepoint-farm-azure-preview.md) weiter. Das folgende Beispiel zeigt die grundlegende Konfiguration für eine SharePoint-Farm.
+Ein virtuelles Nur-Cloud-Netzwerk ist nicht mit einem lokalen Netzwerk verbunden. Falls Sie nur schnell eine grundlegende oder hochverfügbare SharePoint-Farm erstellen möchten, helfen Ihnen die Informationen unter [Erstellen von SharePoint-Serverfarmen](virtual-machines-sharepoint-farm-azure-preview.md) weiter. Das folgende Beispiel zeigt die grundlegende Konfiguration für eine SharePoint-Farm.
 
 ![](./media/virtual-machines-workload-intranet-sharepoint-farm/Non-HAFarm.png)
 
@@ -109,7 +109,7 @@ Nutzen Sie zum Berechnen der geschätzten Kosten für diese Konfiguration den [A
 	- **Standard** für die Preisstufe
 	- Die Standardgröße in der vorherigen Tabelle oder die gewünschte Größe für die **Instanzgröße**
 
-> [AZURE.NOTE]Der Azure-Preisrechner bezieht nicht die zusätzlichen Kosten für die SQL Server-Lizenz für die beiden virtuellen Computer ein, auf denen SQL Server 2014 Enterprise ausgeführt wird. Weitere Informationen finden Sie unter [Virtual Machine Preise – SQL](https://azure.microsoft.com/pricing/details/virtual-machines/#Sql).
+> [AZURE.NOTE]Der Azure-Preisrechner bezieht nicht die zusätzlichen Kosten für die SQL Server-Lizenz für die beiden virtuellen Computer ein, auf denen SQL Server 2014 Enterprise ausgeführt wird. Weitere Informationen finden Sie unter [Virtual Machines-Preise – SQL](https://azure.microsoft.com/pricing/details/virtual-machines/#Sql).
 
 ### Phasen der Bereitstellung
 
@@ -117,7 +117,7 @@ Verwenden Sie zum Bereitstellen dieser Konfiguration das folgende Verfahren:
 
 - Phase 1: Konfigurieren von Azure
 
-	Verwenden Sie das Azure-Portal und Azure PowerShell, um ein Speicherkonto, Clouddienste und ein standortübergreifendes virtuelles Netzwerk zu erstellen. Die ausführlichen Konfigurationsschritte finden Sie unter [Phase 1](virtual-machines-workload-intranet-sharepoint-phase1.md).
+	Verwenden Sie das klassische Azure-Portal und Azure PowerShell, um ein Speicherkonto, Clouddienste und ein standortübergreifendes virtuelles Netzwerk zu erstellen. Die ausführlichen Konfigurationsschritte finden Sie unter [Phase 1](virtual-machines-workload-intranet-sharepoint-phase1.md).
 
 - Phase 2: Konfigurieren der Domänencontroller
 
@@ -153,4 +153,4 @@ Nach Abschluss der Konfiguration können Sie diese SharePoint-Farm gemäß den I
 
 [Azure-Infrastrukturdienste-Workload: Branchenanwendung mit hoher Verfügbarkeit](virtual-machines-workload-high-availability-lob-application.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -1,13 +1,13 @@
 <properties
-	pageTitle="Fehlerbehandlung bei der Sicherung eines virtuellen Azure-Computers | Microsoft Azure"
-	description="Fehlerbehandlung bei Sichern und Wiederherstellen von virtuellen Azure-Computern"
+	pageTitle="Fehlerbehandlung bei der Sicherung virtueller Azure-Computer | Microsoft Azure"
+	description="Fehlerbehandlung bei der Sicherung und Wiederherstellung virtueller Azure-Computer"
 	services="backup"
 	documentationCenter=""
 	authors="trinadhk"
 	manager="shreeshd"
 	editor=""/>
 
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/29/2015" ms.author="trinadhk";"aashishr"/>
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/25/2015" ms.author="trinadhk";"aashishr"/>
 
 
 # Problembehandlung bei der Sicherung virtueller Azure-Computer
@@ -24,7 +24,7 @@ Sie können die Problembehandlung für Fehler, die beim Verwenden von Azure Back
 | Sicherungsvorgang | Fehlerdetails | Problemumgehung |
 | -------- | -------- | -------|
 | Registrieren | Für die Anzahl von Datenträgern für Daten, die dem virtuellen Computer zugeordnet sind, wurde die unterstützte Obergrenze überschritten. Trennen Sie einige Datenträger für Daten von diesem virtuellen Computer, und wiederholen Sie den Vorgang. Azure Backup unterstützt bis zu 16 Datenträger für Daten, die für die Sicherung an einen virtuellen Azure-Computer angeschlossen sind. | Keine |
-| Registrieren | Für Microsoft Azure Backup ist ein interner Fehler aufgetreten. Warten Sie einige Minuten, und wiederholen Sie anschließend den Vorgang. Wenden Sie sich an den Microsoft Support, wenn das Problem weiterhin besteht. | Dieser Fehler kann aufgrund einer der folgenden nicht unterstützten Konfigurationen auftreten: <ol><li>Premium LRS <li>Multi-NIC <li>Load Balancer (intern und mit Internetzugriff)</ol> |
+| Registrieren | Für Microsoft Azure Backup ist ein interner Fehler aufgetreten. Warten Sie einige Minuten, und wiederholen Sie anschließend den Vorgang. Wenden Sie sich an den Microsoft Support, wenn das Problem weiterhin besteht. | Dieser Fehler kann aufgrund einer der folgenden nicht unterstützten Konfigurationen auftreten: <ul><li>Premium LRS</ul>. |
 | Registrieren | Fehler bei der Registrierung aufgrund einer Zeitüberschreitung beim Installieren des Agents | Überprüfen Sie, ob die Betriebssystemversion des virtuellen Computers unterstützt wird. |
 | Registrieren | Fehler beim Ausführen des Befehls – Für dieses Element wird ein anderer Vorgang ausgeführt. Warten Sie, bis der aktuelle Vorgang abgeschlossen ist. | Keine |
 | Registrieren | Virtuelle Computer mit virtuellen Festplatten, die in Storage Premium gespeichert sind, werden für die Sicherung nicht unterstützt. | Keine |
@@ -42,8 +42,6 @@ Sie können die Problembehandlung für Fehler, die beim Verwenden von Azure Back
 | Sicherung | Die Erweiterungsinstallation ist mit dem Fehler "COM+ konnte keine Daten mit dem Microsoft Distributed Transaction Coordinator austauschen" fehlgeschlagen. | Dies bedeutet i. d. R., dass der COM+-Dienst nicht ausgeführt wird. Wenden Sie sich an den Microsoft Support, um Hilfe beim Beheben dieses Problems zu erhalten. |
 | Sicherung | Der Momentaufnahmevorgang ist mit folgendem VSS-Vorgangsfehler fehlgeschlagen: "Dieses Laufwerk ist durch die BitLocker-Laufwerkverschlüsselung gesperrt. Das Laufwerk muss mithilfe der Systemsteuerung entsperrt werden." | Deaktivieren Sie BitLocker für alle Laufwerke auf dem virtuellen Computer, und überprüfen Sie, ob der VSS-Fehler behoben ist. |
 | Sicherung | Virtuelle Computer mit virtuellen Festplatten, die in Storage Premium gespeichert sind, werden für die Sicherung nicht unterstützt. | Keine |
-| Sicherung | Die Sicherung von virtuellen Computern mit Load Balancer-Konfiguration wird nicht unterstützt. | Keine <br><br>Dies gilt für interne Load Balancer und Load Balancer mit Internetzugriff.|
-| Sicherung | Die Sicherung von virtuellen Computern mit mehr als einer NIC wird nicht unterstützt. | Keine |
 | Sicherung | Der virtuelle Azure-Computer wurde nicht gefunden. | Dies tritt auf, wenn der primäre virtuelle Computer gelöscht wurde, die Sicherungsrichtlinie jedoch weiterhin einen virtuellen Computer für die Sicherung sucht. Gehen Sie wie folgt vor, um diesen Fehler zu beheben: <ol><li>Erstellen Sie einen neuen virtuellen Computer mit demselben Namen und demselben Ressourcengruppennamen [Clouddienstnamen]. <br>(ODER) <li> Deaktivieren Sie den Schutz für den virtuellen Computer, damit keine Sicherungsaufträge erstellt werden.</ol> |
 | Sicherung | Der Agent für virtuelle Computer ist nicht auf dem virtuellen Computer vorhanden. Installieren Sie den VM-Agent (erforderliche Voraussetzung), und starten Sie den Vorgang erneut. | [Erfahren Sie mehr](#vm-agent) über die VM-Agent-Installation und die dazugehörige Überprüfung. |
 
@@ -59,7 +57,7 @@ Sie können die Problembehandlung für Fehler, die beim Verwenden von Azure Back
 ## Wiederherstellen
 | Vorgang | Fehlerdetails | Problemumgehung |
 | -------- | -------- | -------|
-| Wiederherstellen | Cloudinterner Fehler bei der Wiederherstellung | <ol><li>Der Clouddienst, in dem Sie die Wiederherstellung durchführen möchten, ist mit DNS-Einstellungen konfiguriert. Prüfen Sie <br>$deployment = Get-AzureDeployment -ServiceName "ServiceName" -Slot "Production" Get-AzureDns -DnsSettings $deployment.DnsSettings<br>Wenn "Address" konfiguriert ist, bedeutet dies, dass DNS-Einstellungen konfiguriert wurden.<br> <li>Der Clouddienst, in dem Sie die Wiederherstellung durchführen möchten, ist mit ReservedIP konfiguriert, und vorhandene virtuelle Computer im Clouddienst befinden sich im Zustand "Beendet".<br>Mit den folgenden Powershell-Cmdlets können Sie prüfen, ob ein Clouddienst über eine reservierte IP-Adresse verfügt:<br>$deployment = Get-AzureDeployment -ServiceName "servicename" -Slot "Production" $dep.ReservedIPName</ol> |
+| Wiederherstellen | Cloudinterner Fehler bei der Wiederherstellung | <ol><li>Der Clouddienst, in dem Sie die Wiederherstellung durchführen möchten, ist mit DNS-Einstellungen konfiguriert. Prüfen Sie <br>$deployment = Get-AzureDeployment -ServiceName "ServiceName" -Slot "Production" Get-AzureDns -DnsSettings $deployment.DnsSettings<br>Wenn "Address" konfiguriert ist, bedeutet dies, dass DNS-Einstellungen konfiguriert wurden.<br> <li>Der Clouddienst, in dem Sie die Wiederherstellung durchführen möchten, ist mit ReservedIP konfiguriert, und vorhandene virtuelle Computer im Clouddienst befinden sich im Status „Beendet“.<br> Mithilfe des folgdenden PowerShell-Cmdlets können Sie überprüfen, ob ein Clouddienst über eine reservierte IP-Adresse verfügt:<br>$deployment = Get-AzureDeployment-ServiceName „Servicename“-Slot „Production“ $DEP ReservedIPName <br><li>Sie versuchen, eine virtuelle Maschine mit der folgenden speziellen Netzwerkkonfigurationen im selben Clouddienst wiederherzustellen. <br>– Virtuelle Computer unter der Konfiguration des Lastenausgleichsmoduls (intern und extern)<br>– Virtuelle Computer mit mehreren reservierten IP-Adressen<br>– Virtuelle Computer mit mehreren NICs<br>Wählen Sie einen neuen Clouddienst in der Benutzeroberfläche aus oder gehen Sie zu [Überlegungen zur Wiederherstellung](backup-azure-restore-vms.md/#restoring-vms-with-special-network-configurations) für virtuelle Computer mit speziellen Netzwerkkonfigurationen</ol> |
 | Wiederherstellen | Der ausgewählte DNS-Name ist bereits vergeben. Geben Sie einen anderen DNS-Namen an, und versuchen Sie es erneut. | Der DNS-Name bezieht sich hier auf den Clouddienstnamen (der i. d. R. auf ".cloudapp.net" endet). Dieser muss eindeutig sein. Wenn der vorliegende Fehler auftritt, müssen Sie während der Wiederherstellung einen anderen Namen für den virtuellen Computer auswählen. <br><br> Beachten Sie, dass dieser Fehler nur Benutzern des Azure-Portals angezeigt wird. Der Wiederherstellungsvorgang über PowerShell ist erfolgreich, da nur die Datenträger wiederhergestellt werden und kein virtueller Computer erstellt wird. Der Fehler tritt auf, wenn der virtuelle Computer nach Abschluss des Wiederherstellungsvorgangs für die Datenträger explizit von Ihnen erstellt wird. |
 | Wiederherstellen | Die angegebene Konfiguration des virtuellen Netzwerks ist nicht korrekt. Geben Sie eine andere Konfiguration des virtuellen Netzwerks an, und versuchen Sie es erneut. | Keine |
 | Wiederherstellen | Der angegebene Clouddienst verwendet eine reservierte IP, die nicht mit der Konfiguration des virtuellen Computers übereinstimmt, der wiederhergestellt werden soll. Geben Sie einen anderen Clouddienst an, der keine reservierte IP verwendet, oder wählen Sie einen anderen Wiederherstellungspunkt aus. | Keine |
@@ -123,4 +121,4 @@ Nachdem die Namensauflösung richtig eingerichtet wurde, muss auch der Zugriff a
 1. Beschaffen Sie sich die Liste mit den [IP-Adressen des Azure-Rechenzentrums](https://msdn.microsoft.com/library/azure/dn175718.aspx), die auf der Positivliste stehen sollen.
 2. Heben Sie Blockierung für die IP-Adressen mit dem [New-NetRoute](https://technet.microsoft.com/library/hh826148.aspx)-Cmdlet auf. Führen Sie dieses Cmdlet auf dem virtuellen Azure-Computer in einem PowerShell-Fenster mit erhöhten Rechten aus (Als Administrator ausführen).
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

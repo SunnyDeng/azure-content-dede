@@ -73,7 +73,7 @@ Sie benötigen zum Erstellen eines HDInsight-Clusters ein Azure-Ressourcen-Manag
 
 	> [AZURE.NOTE]Das Speicherkonto muss sich im selben Datencenter wie HDInsight befinden. Der Speicherkontotyp darf nicht ZRS sein, da ZRS keine Tabellen unterstützt.
 
-	Informationen zum Erstellen von Azure-Speicherkonten mit dem Azure-Vorschauportal finden Sie unter [Erstellen, Verwalten oder Löschen eines Speicherkontos][azure-create-storageaccount].
+	Informationen zum Erstellen von Azure-Speicherkonten im Azure-Portal finden Sie unter [Erstellen, Verwalten oder Löschen eines Speicherkontos][azure-create-storageaccount].
 	
 	Falls Sie bereits ein Speicherkonto haben, aber dessen Kontonamen und Kontoschlüssel nicht kennen, können Sie diese Daten mit den folgenden Befehlen abrufen:
 	
@@ -84,7 +84,7 @@ Sie benötigen zum Erstellen eines HDInsight-Clusters ein Azure-Ressourcen-Manag
 		-- Lists the keys for a Storage account
 		azure storage account keys list "<Storage Account Name>" -g "<Resource Group Name>"
 
-	Ausführliche Informationen zum Abrufen dieser Informationen über das Azure-Vorschauportal finden Sie unter [Erstellen, Verwalten oder Löschen eines Speicherkontos][azure-create-storageaccount] im Abschnitt „Anzeigen, Kopieren und Neuerstellen von Speicherzugriffsschlüsseln“.
+	Ausführliche Informationen zum Abrufen dieser Informationen über das Azure-Portal finden Sie unter [Erstellen, Verwalten oder Löschen eines Speicherkontos][azure-create-storageaccount] im Abschnitt "Anzeigen, Kopieren und Neuerstellen von Speicherzugriffsschlüsseln".
 
 - **(Optional) Standardblobcontainer**: Der Befehl **azure hdinsight cluster create** erstellt den Container, sofern dieser noch nicht vorhanden ist. Falls Sie den Container zuvor erstellen möchten, können Sie den folgenden Befehl verwenden:
 
@@ -160,7 +160,7 @@ Führen Sie den folgenden Befehl auf einem Clientcomputer aus, um die Hadoop-Clu
 ##Nächste Schritte
 Sie sind nun in der Lage, verschiedene Verwaltungsaufgaben für HDInsight-Cluster auszuführen. Weitere Informationen finden Sie in den folgenden Artikeln:
 
-* [Verwalten von HDInsight mit dem Azure-Vorschauportal][hdinsight-admin-portal]
+* [Verwalten von HDInsight mit dem Azure-Portal][hdinsight-admin-portal]
 * [Verwalten von HDInsight mit Azure PowerShell][hdinsight-admin-powershell]
 * [Erste Schritte mit Azure HDInsight][hdinsight-get-started]
 * [Verwenden der Azure-CLI][azure-command-line-tools]
@@ -182,4 +182,4 @@ Sie sind nun in der Lage, verschiedene Verwaltungsaufgaben für HDInsight-Cluste
 [image-cli-clustercreation-config]: ./media/hdinsight-administer-use-command-line/HDI.CLIClusterCreationConfig.png
 [image-cli-clusterlisting]: ./media/hdinsight-administer-use-command-line/HDI.CLIListClusters.png "Auflisten und Anzeigen von Clustern"
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

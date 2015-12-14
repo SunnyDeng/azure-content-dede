@@ -18,11 +18,11 @@
 	ms.author="rickbyh"/>
 
 
-# Konfigurieren der Firewalleinstellungen für SQL-Datenbank mit dem Azure-Portal
+# Konfigurieren der Firewalleinstellungen für eine SQL-Datenbank mit dem klassischen Azure-Portal
 
 
 > [AZURE.SELECTOR]
-- [Azure Preview Portal](sql-database-configure-firewall-settings.md)
+- [Azure Portal](sql-database-configure-firewall-settings.md)
 - [TSQL](sql-database-configure-firewall-settings-tsql.md)
 - [PowerShell](sql-database-configure-firewall-settings-powershell.md)
 - [REST API](sql-database-configure-firewall-settings-rest.md)
@@ -33,15 +33,15 @@ Microsoft Azure SQL-Datenbank verwendet Firewallregeln, um Verbindungen mit Ihre
 > [AZURE.IMPORTANT]Um Anwendungen von Azure die Verbindung mit dem Datenbankserver zu ermöglichen, müssen Azure-Verbindungen aktiviert sein. Weitere Informationen zu Firewallregeln und dem Aktivieren von Verbindungen aus Azure finden Sie unter [Firewall für Azure SQL-Datenbank](sql-database-firewall-configure.md). Sie müssen möglicherweise einige zusätzliche TCP-Ports öffnen, wenn Sie Verbindungen innerhalb der Grenzen der Azure-Cloud herstellen möchten. Weitere Informationen finden Sie im Abschnitt **SQL-Datenbank V12: "Außerhalb" im Vergleich zu "Innerhalb"** im Artikel [Andere Ports als 1433 für ADO.NET 4.5 und SQL-Datenbank V12](sql-database-develop-direct-route-ports-adonet-v12.md)
 
 
-### Verwalten von Firewallregeln auf Serverebene über das neue Azure-Portal
+### Verwalten von Firewallregeln auf Serverebene über das neue klassische Azure-Portal
 
 
 [AZURE.INCLUDE [sql-database-include-ip-address-22-v12portal](../../includes/sql-database-include-ip-address-22-v12portal.md)]
 
 
-## Verwalten von Firewallregeln auf Serverebene über das Verwaltungsportal 
+## Verwalten von Firewallregeln auf Serverebene über das neue klassische Portal 
 
-1. Klicken Sie im Verwaltungsportal auf **SQL-Datenbanken**. Alle Datenbanken und ihre entsprechenden Server werden hier aufgelistet.
+1. Klicken Sie im klassischen Portal auf **SQL-Datenbanken**. Alle Datenbanken und ihre entsprechenden Server werden hier aufgelistet.
 2. Klicken Sie oben auf der Seite auf **Servers**.
 3. Klicken Sie auf den Pfeil neben dem Server, für den Sie die Firewallregeln verwalten möchten.
 4. Klicken Sie oben auf der Seite auf **Konfigurieren**.
@@ -62,4 +62,4 @@ Ein Lernprogramm zum Erstellen einer Datenbank finden Sie unter [Erstellen einer
 [2]: ./media/sql-database-configure-firewall-settings/AzurePortalFirewallSettings.png
 <!--anchors-->
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

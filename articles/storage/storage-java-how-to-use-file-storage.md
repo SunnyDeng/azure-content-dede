@@ -217,8 +217,8 @@ Folgen Sie diesen Links, wenn Sie mehr über andere Azure-Speicher-APIs erfahren
 [Azure Storage-SDK für Java]: https://github.com/azure/azure-storage-java
 [Azure Storage SDK for Android]: https://github.com/azure/azure-storage-android
 [Referenz für Azure Storage-Client-SDKs]: http://dl.windowsazure.com/storage/javadoc/
-[Azure Storage-REST-API]: http://msdn.microsoft.com/library/azure/gg433040.aspx
+[Azure Storage-REST-API]: https://msdn.microsoft.com/library/azure/dd179355.aspx
 [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

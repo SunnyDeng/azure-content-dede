@@ -3,7 +3,7 @@
    description="Dieser Artikel enthält eine Einführung in das Generieren, Sammeln und Analysieren von Sicherheitsprotokollen aus Diensten, die in Azure gehostet werden. Er richtet sich an IT-Experten und Sicherheitsanalysten, die sich täglich mit der Verwaltung von Informationsressourcen befassen, auch an diejenigen, die für die Sicherheits- und Compliancemaßnahmen in ihrer Organisation verantwortlich sind."
    services="virtual-machines, cloud-services, storage"
    documentationCenter="na"
-   authors="TerryLanfear"
+   authors="nayak-mahesh"
    manager="msStevenPo"
    editor=""/>
 
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="08/13/2015"
+   ms.date="11/30/2015"
    ms.author="mnayak;tomsh;terrylan"/>
 
 # Microsoft Azure-Sicherheits- und Überwachungsprotokollverwaltung
@@ -614,4 +614,4 @@ Die folgenden Ressourcen bieten allgemeine Informationen zu Microsoft Azure und 
 [19]: ./media/azure-security-audit-log-management/sec-view-blob-container.png
 [20]: ./media/azure-security-audit-log-management/sec-hdinsight-analysis.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

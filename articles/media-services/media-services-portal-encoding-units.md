@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Skalieren der Medienverarbeitung im Azure-Portal"
+	pageTitle="Skalieren der Medienverarbeitung im klassischen Azure-Portal"
 	description="Erfahren Sie, wie Sie Media Services durch Angabe der Anzahl von On-Demand Streaming Reserved Units und Encoding Reserved Units für Ihr Konto skalieren können."
 	services="media-services"
 	documentationCenter=""
@@ -17,7 +17,7 @@
 	ms.author="juliako"/>
 
 
-# Skalieren der Medienverarbeitung im Azure-Portal
+# Skalieren der Medienverarbeitung im klassischen Azure-Portal
 
 > [AZURE.SELECTOR]
 - [.NET](media-services-dotnet-encoding-units.md)
@@ -35,7 +35,7 @@ Zusätzlich zum Typ reservierter Einheiten können Sie angeben, dass für Ihr Ko
 
 Führen Sie folgende Schritte aus, um den Typ reservierter Einheiten und die Anzahl reservierter Einheiten für die Codierung zu ändern:
 
-1. Klicken Sie im [Management Portal](https://manage.windowsazure.com/) auf **Media Services**. Klicken Sie anschließend auf den Namen des Mediendienstes.
+1. Klicken Sie im [klassischen Azure-Portal](https://manage.windowsazure.com/) auf **Media Services**. Klicken Sie anschließend auf den Namen des Media Service
 
 2. Wählen Sie die Seite **CODIERUNG** aus.
 
@@ -69,4 +69,4 @@ Informationen zu Kontingenten und Einschränkungen sowie zum Öffnen von Support
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

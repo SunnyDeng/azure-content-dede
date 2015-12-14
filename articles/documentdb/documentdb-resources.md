@@ -34,8 +34,7 @@ Wie das folgende Diagramm veranschaulicht, besteht das hierarchische **Ressource
 
 >[AZURE.NOTE]DocumentDB bietet ein hoch effizientes TCP-Protokoll mit einem RESTful-basierten Kommunikationsmodell, das über das [.NET Client-SDK](https://msdn.microsoft.com/library/azure/dn781482.aspx) verfügbar ist.
 
-![Hierarchisches Ressourcenmodell von DocumentDB][1]  
-**Hierarchisches Ressourcenmodell**
+![Hierarchisches Ressourcenmodell von DocumentDB][1] **Hierarchisches Ressourcenmodell**
 
 Um mit Ressourcen zu arbeiten, müssen Sie über Ihr Azure-Abonnement [ein DocumentDB-Datenbankkonto erstellen](documentdb-create-account.md). Ein Datenbankkonto kann aus einer Reihe von **Datenbanken** mit jeweils mehreren **Sammlungen** bestehen, die jeweils wiederum **gespeicherte Prozeduren, Trigger, UDFs, Dokumente** und zugehörige **Anlagen** (Vorschaufunktion) enthalten. Einer Datenbank sind zudem **Benutzer** zugeordnet, die jeweils über eine Reihe von **Berechtigungen** verfügen, um auf Sammlungen, gespeicherte Prozeduren, Trigger, UDFs, Dokumente oder Anhänge zuzugreifen. Während Datenbanken, Benutzer, Berechtigungen und Sammlungen vom System definierte Ressourcen mit bekannten Schemas sind, enthalten Dokumente und Anhänge beliebige, benutzerdefinierte JSON-Inhalte.
 
@@ -50,7 +49,7 @@ Um mit Ressourcen zu arbeiten, müssen Sie über Ihr Azure-Abonnement [ein Docum
 |Trigger |In JavaScript geschriebene Anwendungslogik, die vor oder nach einem Einfüge-, Ersetzungs- oder Löschvorgang ausgeführt wird.
 |UDF |In JavaScript geschriebene Anwendungslogik. Mit UDFs kann ein benutzerdefinierter Abfrageoperator erstellt und damit die DocumentDB-Kernabfragesprache erweitert werden.
 |Dokument |Benutzerdefinierter (beliebiger) JSON-Inhalt. Standardmäßig müssen kein Schema definiert oder sekundäre Indizes für alle zu einer Sammlung hinzugefügten Dokumente bereitgestellt werden.
-|(Vorschau) Anhang |Ein Anhang ist ein besonderes Dokument mit Verweisen und verknüpften Metadaten für externe Blobs/Medien. Entwickler können auswählen, ob der Blob von DocumentDB verwaltet oder mit einem externen Blob-Dienstanbieter wie OneDrive, Dropbox usw. gespeichert wird. 
+|(Vorschau) Anhang |Ein Anhang ist ein besonderes Dokument mit Verweisen und verknüpften Metadaten für externe Blobs/Medien. Entwickler können auswählen, ob der Blob von DocumentDB verwaltet oder mit einem externen Blobdienstanbieter wie OneDrive, Dropbox usw. gespeichert wird. 
 
 
 ## Vergleich von system- und benutzerdefinierten Ressourcen
@@ -61,41 +60,26 @@ Ressourcen wie Datenbankkonten, Datenbanken, Sammlungen, Benutzer, Berechtigunge
 
 Eigenschaft |Vom Benutzer einstellbar oder systemgeneriert?|Zweck
 ---|---|---
-_rid|Vom System generiert|Vom System generierter, eindeutiger und hierarchischer Bezeichner der Ressource
-_etag|Vom System generiert|ETag der Ressource, das für die Steuerung optimistischer Parallelität erforderlich ist
-_ts|Vom System generiert|Zuletzt aktualisierter Zeitstempel der Ressource
-_self|Vom System generiert|Eindeutiger aufrufbarer URI der Ressource
-id|Vom Benutzer festlegbar|Benutzerdefinierter eindeutiger Name der Ressource Wenn der Benutzer keine ID angibt, wird eine ID vom System generiert.
+_\_rid|Vom System generiert|Vom System generierter, eindeutiger und hierarchischer Bezeichner der Ressource \_etag|Vom System generiert|ETag der Ressource, das für die Steuerung optimistischer Parallelität erforderlich ist \_ts|Vom System generiert|Zuletzt aktualisierter Zeitstempel der Ressource \_self|Vom System generiert|Eindeutiger aufrufbarer URI der Ressource id|Vom Benutzer festlegbar|Benutzerdefinierter eindeutiger Name der Ressource Wenn der Benutzer keine ID angibt, wird eine ID vom System generiert.
 
 ### Übermittlungsdarstellung der Ressourcen
 DocumentDB verfügt über keine proprietären Erweiterungen des JSON-Standards oder besonderer Codierungen, und kann nur mit standardkonformen JSON-Dokumenten verwendet werden.
  
 ### Adressieren einer Ressource
-Alle Ressourcen können über URI aufgerufen werden. Der Wert der **_self**-Eigenschaft einer Ressource stellt den relativen URI der Ressource dar. Das Format des URI besteht aus den /\<feed>/{_rid}-Pfadsegmenten:  
+Alle Ressourcen können über URI aufgerufen werden. Der Wert der **\_self**-Eigenschaft einer Ressource stellt den relativen URI der Ressource dar. Das Format des URI besteht aus den /<feed>/{\_rid}-Pfadsegmenten:
 
-|Wert von \_self |Beschreibung
-|-------------------|-----------
-|/dbs |Feed der Datenbanken in einem Datenbankkonto
-|/dbs/{\_rid-db} |Datenbank mit einer ID mit dem Wert {\_rid-db}
-|/dbs/{\_rid-db}/colls/ |Feed der Sammlungen in einer Datenbank
-|/dbs/{\_rid-db}/colls/{\_rid-coll} |Sammlung mit einer ID mit dem Wert {\_rid-coll}
-|/dbs/{\_rid-db}/colls/{\_rid-coll}/docs |Feed von Dokumenten in einer Sammlung
-|/dbs/{\_rid-db}/colls/{\_rid-coll}/docs/{\_rid-doc} |Dokument mit einer ID mit dem Wert {\_rid-doc}
-|/dbs/{\_rid-db}/users/ |Feed der Benutzer in einer Datenbank
-|/dbs/{\_rid-db}/users/{\_rid-user} |Benutzer mit einer ID mit dem Wert {\_rid-user}
-|/dbs/{\_rid-db}/users/{\_rid-user}/permissions |Feed der Berechtigungen für einen Benutzer
-|/dbs/{\_rid-db}/users/{\_rid-user}/permissions/{\_rid-permission} |Berechtigung mit einer ID mit dem Wert {\_rid-permission}.
+|Wert von „\_self“ |Beschreibung |-------------------|----------- |/dbs |Feed der Datenbanken in einem Datenbankkonto |/dbs/{\_rid-db} |Datenbank mit einer ID mit dem Wert {\_rid-db} |/dbs/{\_rid-db}/colls/ |Feed der Sammlungen in einer Datenbank |/dbs/{\_rid-db}/colls/{\_rid-coll} |Sammlung mit einer ID mit dem Wert {\_rid-coll} |/dbs/{\_rid-db}/colls/{\_rid-coll}/docs |Feed von Dokumenten in einer Sammlung |/dbs/{\_rid-db}/colls/{\_rid-coll}/docs/{\_rid-doc} |Dokument mit einer ID mit dem Wert {\_rid-doc} |/dbs/{\_rid-db}/users/ |Feed der Benutzer in einer Datenbank |/dbs/{\_rid-db}/users/{\_rid-user} |Benutzer mit einer ID mit dem Wert {\_rid-user} |/dbs/{\_rid-db}/users/{\_rid-user}/permissions |Feed der Berechtigungen für einen Benutzer |/dbs/{\_rid-db}/users/{\_rid-user}/permissions/{\_rid-permission} |Berechtigung mit einer ID mit dem Wert {\_rid-permission}.
   
 Jede Ressource verfügt über einen eindeutigen benutzerdefinierten Namen, der über die ID-Eigenschaft bereitgestellt wird. Hinweis: Wenn der Benutzer für Dokumente keine ID angibt, generiert das System automatisch eine eindeutige ID für das Dokument. Die ID ist eine benutzerdefinierte Zeichenfolge mit bis zu 256 Zeichen Länge, die innerhalb des Kontexts einer bestimmten übergeordneten Ressource eindeutig ist. Der Wert der ID-Eigenschaft aller Dokumente innerhalb einer bestimmten Sammlung ist z. B. eindeutig, ist jedoch sammlungsübergreifend möglicherweise nicht eindeutig. Der Wert der ID-Eigenschaft aller Berechtigungen eines bestimmten Benutzers ist ebenso eindeutig, ist jedoch benutzerübergreifend möglicherweise eindeutig. Die \_rid-Eigenschaft wird zum Erstellen eines aufrufbaren \_self-Links einer Ressource verwendet.
 
-Jede Ressource verfügt ebenfalls über eine systemgenerierte hierarchische Ressourcen-ID (auch als RID bezeichnet), die über die \_rid-Eigenschaft verfügbar ist. Die RID codiert die gesamte Hierarchie einer bestimmten Ressource und ist eine einfache interne Darstellung, die zum Erzwingen einer dezentralen refentiellen Integrität verwendet. Die RID ist innerhalb eines Datenbankkontos eindeutig, und sie wird von DocumentDB intern für effiziente Weiterleitung ohne getrenntes Nachschlagen verwendet.
+Jede Ressource verfügt ebenfalls über eine systemgenerierte hierarchische Ressourcen-ID (auch als RID bezeichnet), die über die \_rid-Eigenschaft verfügbar ist. Die RID codiert die gesamte Hierarchie einer bestimmten Ressource und ist eine einfache interne Darstellung, die zum Erzwingen einer dezentralen refentiellen Integrität verwendet. Die RID ist innerhalb eines Datenbankkontos eindeutig, und sie wird von DocumentDB intern für die effiziente Weiterleitung ohne getrenntes Nachschlagen verwendet.
 
 Bei den Werten der \_self- und \_rid-Eigenschaften handelt es sich um alternative und kanonische Darstellungen einer Ressource.
 
 ## Datenbankkonten
 Sie können mithilfe Ihres Azure-Abonnements ein oder mehrere DocumentDB-Datenbankkonten bereitstellen. Jedes Datenbankkonto der Ebene "Standard" erhält eine Mindestkapazität von einer S1-Sammlung.
 
-Sie können [DocumentDB-Datenbankkonten erstellen und verwalten](documentdb-create-account.md), indem Sie das Azure-Portal unter [http://portal.azure.com/](http://portal.azure.com/) nutzen. Das Erstellen und Verwalten eines Datenbankkontos erfordert Administratorzugriff und kann nur unter Ihrem Azure-Abonnement ausgeführt werden.
+Sie können [DocumentDB-Datenbankkonten erstellen und verwalten](documentdb-create-account.md), indem Sie das klassische Azure-Portal unter [http://portal.azure.com/](http://portal.azure.com/) nutzen. Das Erstellen und Verwalten eines Datenbankkontos erfordert Administratorzugriff und kann nur unter Ihrem Azure-Abonnement ausgeführt werden.
 
 ### Eigenschaften von Datenbankkonten
 Sie können die folgenden Eigenschaften im Rahmen der Bereitstellung und Verwaltung eines Datenbankkontos konfigurieren und lesen:
@@ -107,20 +91,19 @@ Primärer und sekundärer Schlüssel|Dies sind die primären und sekundären Sch
 MaxMediaStorageUsageInMB (READ)|Maximale Medienspeichermenge, die für das Datenbankkonto zur Verfügung steht.
 MediaStorageUsageInMB (READ)|Aktuelle Medienspeichernutzung für das Datenbankkonto.
 
-Beachten Sie, dass Sie zusätzlich zur Bereitstellung, Konfiguration und Verwaltung Ihres Datenbankkontos über das Azure-Portal die DocumentDB-Datenbankkonten auch über [Azure DocumentDB-REST-APIs](https://msdn.microsoft.com/library/azure/dn781481.aspx) und [Client-SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) programmgesteuert erstellen und verwalten können.
+Beachten Sie, dass Sie zusätzlich zur Bereitstellung, Konfiguration und Verwaltung Ihres Datenbankkontos über das klassische Azure-Portal die DocumentDB-Datenbankkonten auch über [Azure DocumentDB-REST-APIs](https://msdn.microsoft.com/library/azure/dn781481.aspx) und [Client-SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) programmgesteuert erstellen und verwalten können.
 
 ## Datenbanken
 Eine DocumentDB-Datenbank ist ein logischer Container einer oder mehrerer Sammlungen und Benutzer, wie im folgenden Diagramm dargestellt. Sie können eine beliebige Anzahl von Datenbanken unter einem DocumentDB-Datenbankkonto erstellen, abhängig von der angegebenen Grenze.
 
-![][2]  
-**Eine Datenbank ist ein logischer Container von Benutzern und Sammlungen**
+![Hierarchisches Modell für Datenbankkonten und -sammlungen][2] **Eine Datenbank ist ein logischer Container von Benutzern und Sammlungen**
 
 Eine Datenbank kann praktisch unbegrenzten Dokumentspeicher enthalten, der in Sammlungen unterteilt ist, die die Transaktionsdomänen für die darin enthaltenen Dokumente bilden.
 
 ### Elastische Skalierbarkeit einer DocumentDB-Datenbank
 Eine DocumentDB-Datenbank ist standardmäßig flexibel und kann von einigen GB zu mehreren Petabytes an SSD-gestütztem Dokumentspeicher und bereitgestelltem Durchsatz reichen.
 
-Im Gegensatz zur Datenbank im traditionellen RDBMS ist der Gültigkeitsbereich einer Datenbank in DocumentDB nicht auf einen einzelnen Computer beschränkt. Mit DocumentDB können Sie weitere Sammlungen, Datenbanken bzw. beides erstellen, wenn die Größenanforderungen Ihrer Anwendung zunehmen. Tatsächlich haben verschiedene Anwendungen von Erstanbietern bei Microsoft DocumentDB in einer Größenordnung für Verbraucher verwendet, indem extrem große DocumentDB-Datenbanken erstellt wurden, die jeweils Tausende Sammlungen mit mehreren Terabytes an Dokumentspeicher enthalten haben. Sie können eine Datenbank durch Hinzufügen oder Entfernen von Sammlungen vergrößern oder verkleinern, um den Größenanforderungen Ihrer Anwendung zu entsprechen.
+Im Gegensatz zur Datenbank im traditionellen RDBMS ist der Gültigkeitsbereich einer Datenbank in DocumentDB nicht auf einen einzelnen Computer beschränkt. Mit DocumentDB können Sie weitere Sammlungen und Datenbanken erstellen, wenn die Größenanforderungen Ihrer Anwendung zunehmen. Tatsächlich haben verschiedene Anwendungen von Erstanbietern bei Microsoft DocumentDB in einer Größenordnung für Verbraucher verwendet, indem extrem große DocumentDB-Datenbanken erstellt wurden, die jeweils Tausende Sammlungen mit mehreren Terabytes an Dokumentspeicher enthalten haben. Sie können eine Datenbank durch Hinzufügen oder Entfernen von Sammlungen vergrößern oder verkleinern, um den Größenanforderungen Ihrer Anwendung zu entsprechen.
 
 Sie können je nach Angebot eine beliebige Anzahl von Sammlungen innerhalb einer Datenbank erstellen. Jede Sammlung verfügt über SSD-gesicherten Speicher und Durchsatz, der Ihnen je nach ausgewählter Leistungsebene bereitgestellt wird.
 
@@ -144,10 +127,10 @@ Die Indizierungsrichtlinie der einzelnen Sammlungen gestattet es Ihnen, Kompromi
 -	Wählen Sie, ob bestimmte Pfade oder Muster in Ihren Dokumenten in den Index einbezogen oder aus diesem ausgeschlossen werden sollen. Dies können Sie durch die entsprechende Festlegung von "includedPaths" und "excludedPaths" für die Indizierungsrichtlinie einer Sammlung erreichen. Sie können auch die Speicher- und Leistungsabstriche für Bereichs- und Hashabfragen für bestimmte Pfadmuster konfigurieren. 
 -	Wählen Sie zwischen synchronen (konsistenten) und asynchronen (flexiblen) Indexaktualisierungen. Der Index wird bei jedem Einfügen, Ersetzen oder Löschen eines Dokuments der Sammlung standardmäßig synchron aktualisiert. Auf diese Weise können die Abfragen dieselbe Konsistenzebene wie die von Dokumentlesevorgängen berücksichtigen. Obwohl DocumentDB für Schreibvorgänge optimiert ist und beständige Mengen an Dokumentschreibvorgängen zusammen mit der synchronen Indexwartung und der Bereitstellung konsistenter Abfragen unterstützt, können Sie bestimmte Sammlungen so konfigurieren, dass ihr Index flexibel aktualisiert wird. Die flexible Indizierung steigert die Schreibleistung noch weiter und ist ideal für Sammelerfassungsszenarien für Sammlungen mit hauptsächlich übermäßigen Lesevorgängen geeignet.
 
-Die Indizierungsrichtlinie kann durch Ausführen von PUT in der Sammlung geändert werden. Dies kann durch das [Client-SDK](https://msdn.microsoft.com/library/azure/dn781482.aspx), das [Azure-Portal](https://portal.azure.com) oder die [Azure DocumentDB-REST-APIs](https://msdn.microsoft.com/library/azure/dn781481.aspx) erreicht werden.
+Die Indizierungsrichtlinie kann durch Ausführen von PUT in der Sammlung geändert werden. Dies kann durch das [Client-SDK](https://msdn.microsoft.com/library/azure/dn781482.aspx), das [klassische Azure-Portal](https://portal.azure.com) oder die [Azure DocumentDB-REST-APIs](https://msdn.microsoft.com/library/azure/dn781481.aspx) erreicht werden.
 
 ### Abfragen einer Sammlung
-Die Dokumente in einer Sammlung können beliebige Schemas aufweisen, und Sie können Dokumente in einer Sammlung abfragen, ohne vorab ein Schema oder sekundäre Indizes bereitstellen zu müssen. Sie können die Sammlung mithilfe der [SQL-Syntax von DocumentDB](https://msdn.microsoft.com/library/azure/dn782250.aspx) abfragen, die über JavaScript-basierte UDFs umfassende hierarchische und relationale Operatoren sowie Erweiterbarkeit bietet. Die JSON-Grammatik ermöglicht die Gestaltung von JSON-Dokumenten als Baumstrukturen mit den Beschriftungen als Strukturknoten. Dies wird sowohl über die automatischen Indizierungsverfahren sowie über den SQL-Dialekt von DocumentDB erreicht. Die Abfragesprache von DocumentDB besteht aus drei Hauptaspekten:
+Die Dokumente in einer Sammlung können beliebige Schemas aufweisen, und Sie können Dokumente in einer Sammlung abfragen, ohne vorab ein Schema oder sekundäre Indizes bereitstellen zu müssen. Sie können die Sammlung mithilfe der [SQL-Syntax von DocumentDB](https://msdn.microsoft.com/library/azure/dn782250.aspx) abfragen, die über JavaScript-basierte UDFs umfassende hierarchische und relationale Operatoren sowie Erweiterbarkeit bietet. Die JSON-Grammatik ermöglicht die Gestaltung von JSON-Dokumenten als Baumstrukturen mit den Beschriftungen als Strukturknoten. Dies wird sowohl über die automatischen Indizierungsverfahren als auch über den SQL-Dialekt von DocumentDB erreicht. Die Abfragesprache von DocumentDB besteht aus drei Hauptaspekten:
 
 1.	Eine kleine Auswahl von Abfragevorgängen, die natürlich zur Baumstruktur zugeordnet werden, einschließlich hierarchischer Abfragen und Projektionen. 
 2.	Eine Teilmenge von relationalen Vorgängen, einschließlich der Kompositionen, Filter, Projektionen, Aggregaten und Selbstverknüpfungen. 
@@ -395,8 +378,7 @@ Da sich die Skalierung Ihrer Anwendung an die zunehmende Anzahl der Benutzer anp
 
 Unabhängig von der gewählten Strategie für die horizontale Partitionierung können Sie Ihre realen Benutzer als Benutzer in der DocumentDB-Datenbank abbilden und den einzelnen Benutzern differenzierte Berechtigungen zuweisen.
 
-![][3]  
-**Shardingstrategien und Benutzermodellierung**
+![Benutzersammlungen][3] **Shardingstrategien und Benutzermodellierung**
 
 Wie alle anderen Ressourcen können Benutzer in DocumentDB mithilfe der REST-APIs oder eines Client-SDKs einfach erstellt, ersetzt, gelöscht, gelesen und aufgezählt werden. DocumentDB bietet für das Lesen oder Abfragen der Metadaten einer Benutzerressource immer eine hohe Konsistenz. Es sollte dabei darauf hingewiesen werden, dass das Löschen eines Benutzers automatisch sicherstellt, dass Sie auf keine der ihm zugeordneten Berechtigungen zugreifen können. Obwohl das Kontingent der Berechtigungen als Teil des gelöschten Benutzers im Hintergrund von DocumentDB freigegeben wird, stehen die gelöschten Berechtigungen sofort wieder für Sie zur Verfügung.
 
@@ -415,4 +397,4 @@ Weitere Informationen zum Arbeiten mit Ressourcen mithilfe von HTTP-Befehlen fin
 [2]: media/documentdb-resources/resources2.png
 [3]: media/documentdb-resources/resources3.png
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

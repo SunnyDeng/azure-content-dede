@@ -32,7 +32,7 @@ Führen Sie diese Schritte aus, um Ihr Clouddienstprojekt einzurichten, um Azure
 
 ![Rollendesigner sendet Diagnosedaten an Application Insights][2]
 
-3) Wählen Sie im Dialogfeld, das angezeigt wird, die Application Insights-Ressource aus, an die Sie die Azure-Diagnose-Daten senden möchten. Im Dialogfeld können Sie eine vorhandene Application Insights-Ressource aus Ihrem Abonnement auswählen oder manuell einen Instrumentierungsschlüssel für eine Application Insights-Ressource angeben. Wenn Sie keine vorhandene Application Insights-Ressource haben, können Sie eine erstellen, indem Sie auf den Link **Neue Ressource erstellen** klicken, dadurch wird ein Browserfenster mit dem Azure-Portal geöffnet, in dem Sie eine Application Insights-Ressource erstellen können. Weitere Informationen zum Erstellen einer Application Insights-Ressource finden Sie unter [Erstellen einer neuen Application Insights-Ressource](app-insights-create-new-resource.md).
+3) Wählen Sie im Dialogfeld, das angezeigt wird, die Application Insights-Ressource aus, an die Sie die Azure-Diagnose-Daten senden möchten. Im Dialogfeld können Sie eine vorhandene Application Insights-Ressource aus Ihrem Abonnement auswählen oder manuell einen Instrumentierungsschlüssel für eine Application Insights-Ressource angeben. Wenn Sie keine vorhandene Application Insights-Ressource haben, können Sie eine erstellen, indem Sie auf den Link **Neue Ressource erstellen** klicken, dadurch wird ein Browserfenster mit dem klassischen Azure-Portal geöffnet, in dem Sie eine Application Insights-Ressource erstellen können. Weitere Informationen zum Erstellen einer Application Insights-Ressource finden Sie unter [Erstellen einer neuen Application Insights-Ressource](app-insights-create-new-resource.md).
 
 ![Auswählen einer Application Insights-Ressource][3]
 
@@ -57,17 +57,17 @@ Im Folgenden wird gezeigt, wie die verschiedenen Azure-Diagnose-Protokolltypen d
 
 So zeigen Sie Azure-Diagnose-Daten in Application Insights an:
 
-- Verwenden Sie den [Metrik-Explorer](https://azure.microsoft.com/documentation/articles/app-insights-metrics-explorer/), um alle benutzerdefinierten Leistungsindikatoren oder die Anzahl verschiedener Arten von Windows-Ereignisprotokollereignissen zu visualisieren.
+- Verwenden Sie den [Metrik-Explorer](../application-insights/app-insights-metrics-explorer.md), um alle benutzerdefinierten Leistungsindikatoren oder die Anzahl verschiedener Arten von Windows-Ereignisprotokollereignissen zu visualisieren.
 
 ![Benutzerdefinierte Metriken im Metrik-Explorer][5]
 
-- Verwenden Sie [Suchen](https://azure.microsoft.com/documentation/articles/app-insights-diagnostic-search/), um die verschiedenen Ablaufverfolgungsprotokolle zu durchsuchen, die von Azure-Diagnose gesendet werden. Wenn Sie beispielsweise über eine nicht bearbeitete Ausnahme in einer Rolle verfügen, aufgrund dessen die Rolle abstürzt und wiederverwendet wird, werden diese Informationen im *Application*-Kanal des *Windows-Ereignisprotokolls* angezeigt. Mit der Suchfunktion können Sie den Windows-Ereignisprotokollfehler anzeigen und die vollständige Stapelüberwachung für die Ausnahme abrufen, um die Ursache des Problems zu ermitteln. 
+- Verwenden Sie die [Suche](../application-insights/app-insights-diagnostic-search.md), um die verschiedenen Ablaufverfolgungsprotokolle zu durchsuchen, die von Azure-Diagnose gesendet werden. Wenn Sie beispielsweise über eine nicht bearbeitete Ausnahme in einer Rolle verfügen, aufgrund dessen die Rolle abstürzt und wiederverwendet wird, werden diese Informationen im *Application*-Kanal des *Windows-Ereignisprotokolls* angezeigt. Mit der Suchfunktion können Sie den Windows-Ereignisprotokollfehler anzeigen und die vollständige Stapelüberwachung für die Ausnahme abrufen, um die Ursache des Problems zu ermitteln. 
 
 ![Durchsuchen von Ablaufverfolgungen][6]
 
 ## Nächste Schritte
 
-- [Fügen Sie dem Clouddienst das Application Insights-SDK hinzu](https://azure.microsoft.com/documentation/articles/app-insights-cloudservices/), um Daten zu Anforderungen, Ausnahmen, Abhängigkeiten und einer benutzerdefinierten Telemetrie aus Ihrer Anwendung zu senden. Zusammen mit den Azure-Diagnose-Daten erhalten Sie eine umfassende Ansicht Ihrer Anwendung und des Systems in der gleichen Application Insights-Ressource.  
+- [Fügen Sie dem Clouddienst das Application Insights-SDK hinzu](../application-insights/app-insights-cloudservices.md), um Daten zu Anforderungen, Ausnahmen, Abhängigkeiten und einer benutzerdefinierten Telemetrie aus Ihrer Anwendung zu senden. Zusammen mit den Azure-Diagnose-Daten erhalten Sie eine umfassende Ansicht Ihrer Anwendung und des Systems in der gleichen Application Insights-Ressource.  
 
 
 <!--Image references-->
@@ -78,4 +78,4 @@ So zeigen Sie Azure-Diagnose-Daten in Application Insights an:
 [5]: ./media/cloud-services-dotnet-diagnostics-applicationinsights/metrics-explorer-custom-metrics.png
 [6]: ./media/cloud-services-dotnet-diagnostics-applicationinsights/search-windowseventlog-error.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

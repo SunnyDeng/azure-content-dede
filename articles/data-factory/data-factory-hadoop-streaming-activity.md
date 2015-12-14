@@ -40,7 +40,8 @@ Der HDInsight-Cluster wird automatisch mit Beispielprogrammen („wc.exe“ und 
 	                        "<nameofthecluster>/example/apps/wc.exe",
 	                        "<nameofthecluster>/example/apps/cat.exe"
 	                    ],
-	                    "fileLinkedService": "StorageLinkedService"
+	                    "fileLinkedService": "StorageLinkedService",
+	                    "getDebugInfo": "Failure"
 	                },
 	                "outputs": [
 	                    {
@@ -78,6 +79,7 @@ Beachten Sie Folgendes:
 7. Geben Sie im Abschnitt **filePaths** die Pfade für die ausführbare Zuordnungs- und Reduzierungsdatei an. Im Beispiel „adfsample/example/apps/wc.exe“ ist „adfsample“ der Blob-Container, „example/apps“ der Ordner und „wc.exe“ die ausführbare Datei.
 8. Geben Sie für die **fileLinkedService**-Eigenschaft den mit Azure Storage verknüpften Dienst an, der den Azure-Speicher mit den im Abschnitt „filePaths“ angegebenen Dateien darstellt.
 9. Geben Sie für die **arguments**-Eigenschaft die Argumente für den Streamingauftrag an.
+10. Die **getDebugInfo**-Eigenschaft ist ein optionales Element. Wenn die Eigenschaft auf "Failure" festgelegt wird, werden die Protokolle nur bei Fehlern heruntergeladen. Wenn die Eigenschaft auf "All" festgelegt wird, werden Protokolle immer heruntergeladen, unabhängig vom Ausführungsstatus.
 
 > [AZURE.NOTE]Wie im Beispiel gezeigt, müssen Sie in Bezug auf die Hadoop-Streamingaktivität für die **outputs**-Eigenschaft ein Ausgabedataset festlegen. Dies ist nur ein für die Pipeline erforderliches Dummy-Dataset. Sie müssen in Bezug auf die Aktivität kein Eingabedataset für die **inputs**-Eigenschaft festlegen.
 
@@ -190,4 +192,4 @@ Der HDInsight-Cluster wird automatisch mit Beispielprogrammen („wc.exe“ und 
 	    }
 	}
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

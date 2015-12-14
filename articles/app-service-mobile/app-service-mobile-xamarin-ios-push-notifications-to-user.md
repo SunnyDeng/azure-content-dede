@@ -13,16 +13,14 @@
 	ms.tgt_pltfrm="mobile-xamarin-ios" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="09/25/2015"
+	ms.date="12/01/2015"
 	ms.author="yuaxu"/>
 
 # Senden von plattformübergreifenden Benachrichtigungen an einen bestimmten Benutzer
 
-[AZURE.INCLUDE [app-service-mobile-selector-push-users](../../includes/app-service-mobile-selector-push-users.md)]
-&nbsp;  
-[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
+[AZURE.INCLUDE [app-service-mobile-selector-push-users](../../includes/app-service-mobile-selector-push-users.md)]&nbsp;[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
 
-In diesem Thema wird das Senden von Benachrichtigungen an alle registrierten Geräte eines bestimmten Benutzers aus Ihrem mobilen Back-End veranschaulicht. Sie erhalten eine Einführung in das Konzept der [Vorlagen], mit denen Clientanwendungen die Möglichkeit erhalten, bei der Registrierung Nutzlastformate und variable Platzhalter anzugeben. Die Versendung erfolgt anschließend an alle Plattformen mit diesen Platzhaltern, sodass plattformübergreifende Benachrichtigungen ermöglicht werden.
+In diesem Thema wird das Senden von Benachrichtigungen an alle registrierten Geräte eines bestimmten Benutzers aus Ihrem mobilen Back-End veranschaulicht. Sie erhalten eine Einführung in [Vorlagen], mit denen Clientanwendungen bei der Registrierung Nutzlastformate und variable Platzhalter angeben können. Wenn eine Vorlagenbenachrichtigung von einem Server gesendet wird, leitet Ihr Benachrichtigungs-Hub diese an alle Plattformen mit den entsprechenden Platzhaltern weiter, sodass plattformübergreifende Benachrichtigungen möglich sind.
 
 > [AZURE.NOTE]Um Pushbenachrichtigungen mit plattformübergreifenden Clients zu unterstützen, müssen Sie dieses Lernprogramm für jede Plattform absolvieren, die Sie aktivieren möchten. Die [Aktualisierung des mobilen Back-Ends](#backend) muss für Clients, die dasselbe mobile Back-End verwenden, nur einmal durchgeführt werden.
  
@@ -58,20 +56,7 @@ Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie die entsprechenden App S
         }
         ...
 
-2. Ersetzen Sie in **AppDelegate.cs** den **RegisterAsync**-Aufruf in **RegisteredForRemoteNotifications** durch den folgenden Code, um mit Vorlagen zu arbeiten:
 
-        // delete await push.RegisterAsync (deviceToken);
-        
-        var notificationTemplate = "{"aps": {"alert":"$(message)"}}";
-
-        JObject templateBody = new JObject();
-        templateBody["body"] = notificationTemplate;
-
-        JObject templates = new JObject();
-        templates["testApnsTemplate"] = templateBody;
-
-        // register with templates
-        await push.RegisterAsync (deviceToken, templates);
 
 ##<a name="backend"></a>Aktualisieren Ihres Dienst-Back-Ends zum Senden von Benachrichtigungen an einen bestimmten Benutzer
 
@@ -92,11 +77,14 @@ Bevor Sie mit diesem Lernprogramm beginnen, müssen Sie die entsprechenden App S
             ServiceUser authenticatedUser = this.User as ServiceUser;
             string userTag = "_UserId:" + authenticatedUser.Id;
 
-            var notification = new Dictionary<string, string>{{"message", item.Text}};
+            // Sending the message so that all template registrations that contain "messageParam"
+            // will receive the notifications. This includes APNS, GCM, WNS, and MPNS template registrations.
+            Dictionary<string,string> templateParams = new Dictionary<string,string>();
+            templateParams["messageParam"] = item.Text + " was added to the list.";
 
             try
             {
-                await Hub.Push.SendTemplateNotificationAsync(notification, userTag);
+                await Hub.SendTemplateNotificationAsync(templateParams, userTag);
             }
             catch (System.Exception ex)
             {
@@ -112,6 +100,6 @@ Veröffentlichen Sie erneut Ihr mobiles Back-End-Projekt, und führen Sie eine b
 <!-- URLs. -->
 [Erste Schritte mit der Authentifizierung]: app-service-mobile-xamarin-ios-get-started-users.md
 [Erste Schritte mit Pushbenachrichtigungen]: app-service-mobile-xamarin-ios-get-started-push.md
-[Vorlagen]: https://msdn.microsoft.com/de-DE/library/dn530748.aspx
+[Vorlagen]: ../notification-hubs/notification-hubs-templates.md
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

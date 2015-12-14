@@ -101,4 +101,4 @@ Nach diesen ersten vier Monaten spiegeln die Ergebnisse eine gute Gesamtleistung
 <!--Link references-->
 [Media Playbook link]: https://github.com/Azure/azure-mobile-engagement-samples/tree/master/Playbooks
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

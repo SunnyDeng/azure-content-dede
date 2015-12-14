@@ -20,9 +20,9 @@
 
 [AZURE.INCLUDE [active-directory-b2c-preview-note](../../includes/active-directory-b2c-preview-note.md)]
 
-> [AZURE.NOTE]
-	Dieser Artikel behandelt nicht das Implementieren der Anmeldung, Registrierung und Profilverwaltung mit Azure AD B2C. Er konzentriert sich auf das Aufrufen von Web-APIs aufrufen, nachdem der Benutzer bereits authentifiziert wurde.
-Wenn nicht bereits erfolgt, sollten Sie mit dem [Lernprogramm "Erste Schritte mit .NET-Web-App"](active-directory-b2c-devquickstarts-web-dotnet.md) beginnen, um Informationen zu den Grundlagen von Azure AD B2C zu erhalten.
+
+> [AZURE.NOTE]Dieser Artikel behandelt nicht das Implementieren der Anmeldung, Registrierung und Profilverwaltung mit Azure AD B2C. Er konzentriert sich auf das Aufrufen von Web-APIs aufrufen, nachdem der Benutzer bereits authentifiziert wurde. Wenn nicht bereits erfolgt, sollten Sie mit dem [Lernprogramm "Erste Schritte mit .NET-Web-App"](active-directory-b2c-devquickstarts-web-dotnet.md) beginnen, um Informationen zu den Grundlagen von Azure AD B2C zu erhalten.
+
 
 > [AZURE.NOTE]Dieses Beispiel wurde geschrieben, um es mit unserer [iOS B2C-Beispielanwendung](active-directory-b2c-devquickstarts-ios.md) zu verbinden. Führen Sie bitte zuerst diese exemplarische Vorgehensweise durch, und machen Sie dann mit dem Beispiel weiter.
 
@@ -45,7 +45,7 @@ Die fertige Anwendung wird außerdem am Ende dieses Lernprogramms bereitgestellt
 
 ## 1\. Erstellen eines Azure AD B2C-Verzeichnisses
 
-Bevor Sie Azure AD B2C verwenden können, müssen Sie ein Verzeichnis oder einen Mandanten erstellen. Ein Verzeichnis ist ein Container für alle Benutzer, Apps, Gruppen usw. Wenn Sie noch nicht über ein Verzeichnis verfügen, [erstellen Sie ein B2C-Verzeichnis](active-directory-b2c-get-started.md), bevor Sie fortfahren.
+Bevor Sie Azure AD B2C verwenden können, müssen Sie ein Verzeichnis oder einen Mandanten erstellen. Ein Verzeichnis ist ein Container für alle Benutzer, Apps, Gruppen usw. Wenn Sie noch nicht über ein Verzeichnis verfügen,[ erstellen Sie ein B2C-Verzeichnis](active-directory-b2c-get-started.md), bevor Sie fortfahren.
 
 ## 2\. Erstellen einer Anwendung
 
@@ -54,7 +54,7 @@ Nun müssen Sie eine App in Ihrem B2C-Verzeichnis erstellen, sodass Azure AD die
 - Fügen Sie der Anwendung eine **Web-App/Web-API** hinzu.
 - Geben Sie `http://localhost/TodoListService` als **Antwort-URL** ein – dies ist die Standard-URL für dieses Codebeispiel.
 - Erstellen Sie einen **geheimen Schlüssel für Ihre Anwendung**, und notieren Sie ihn sich. Sie benötigen ihn später.
-- Notieren Sie sich die **Anwendungs-ID**, die Ihrer App zugewiesen ist. Sie benötigen sie ebenfalls in Kürze.
+- Notieren Sie die **Anwendungs-ID**, die Ihrer App zugewiesen ist. Sie benötigen sie ebenfalls in Kürze.
 
 [AZURE.INCLUDE [active-directory-b2c-devquickstarts-v2-apps](../../includes/active-directory-b2c-devquickstarts-v2-apps.md)]
 
@@ -256,6 +256,8 @@ Erstellen Sie eine `server.js`-Datei in Ihrem bevorzugten Editor, und fügen Sie
 /**
 * Module dependencies.
 */
+var fs = require('fs');
+var path = require('path');
 var util = require('util');
 var assert = require('assert-plus');
 var mongoose = require('mongoose/');
@@ -263,7 +265,7 @@ var bunyan = require('bunyan');
 var restify = require('restify');
 var config = require('./config');
 var passport = require('passport');
-var OIDCBearerStrategy = require('passport-azure-ad').BearerStategy;
+var OIDCBearerStrategy = require('passport-azure-ad').BearerStrategy;
 ```
 
 Speichern Sie die Datei . Wir werden schon bald wieder auf diese Datei zurückkommen.
@@ -284,7 +286,7 @@ Erstellen Sie eine `config.js`-Datei in Ihrem bevorzugten Editor, und fügen Sie
 exports.creds = {
 mongoose_auth_local: 'mongodb://localhost/tasklist', // Your mongo auth uri goes here
 audience: '<your audience URI>',
-identityMetadata: 'https://login.microsoftonline.com/common/.well-known/openid-configuration' // For using Microsoft you should never need to change this.
+identityMetadata: 'https://login.microsoftonline.com/common/.well-known/openid-configuration', // For using Microsoft you should never need to change this.
 tenantName:'<tenant name>',
 policyName:'b2c_1_<sign in policy name>',
 };
@@ -299,9 +301,9 @@ policyName:'b2c_1_<sign in policy name>',
 
 *audience*: der URI aus dem Portal, der den Dienst bezeichnet. In unserem Beispiel wird folgender URI verwendet: `http://localhost/TodoListService`.
 
-*tenantName*: der Name Ihres Mandanten (z. B. "contoso.onmicrosoft.com")
+*tenantName*: der Name Ihres Mandanten (z. B. „contoso.onmicrosoft.com“)
 
-*policyName*: die Richtlinie, anhand derer die auf Ihrem Server eingehenden Token überprüft werden sollen. Dies sollte dieselbe Richtlinie sein, die Sie in der Clientanwendung zum Anmelden verwenden würden.
+*policyName*: die Richtlinie, anhand der die auf Ihrem Server eingehenden Token überprüft werden sollen. Dies sollte dieselbe Richtlinie sein, die Sie in der Clientanwendung zum Anmelden verwenden würden.
 
 > [AZURE.NOTE]Für unsere B2C-Vorschau verwenden Sie beim Client- und Serversetup dieselben Richtlinien. Wenn Sie bereits eine exemplarische Vorgehensweise befolgt und diese Richtlinien erstellt haben, müssen Sie diese nicht erneut erstellen. Da Sie diese exemplarische Vorgehensweise abgeschlossen haben, müssen Sie keine neuen Richtlinien einrichten, wenn Sie auf dieser Website exemplarische Vorgehensweisen für Clients befolgen.
 
@@ -706,7 +708,7 @@ Date: Tue, 14 Jul 2015 05:43:38 GMT
 
 Nun können Sie wie folgt eine Aufgabe hinzufügen:
 
-`$ curl -isS -X POST http://127.0.0.1:8888/tasks/brandon/Hello`
+`$ curl -isS -X POST http://127.0.0.1:8080/tasks/brandon/Hello`
 
 Die Antwort sollte wie folgt lauten:
 
@@ -842,7 +844,7 @@ next();
 });
 ```
 
-## 18: Erneutes Ausführen der Serveranwendung, wobei Sie nun abgelehnt werden sollten
+## 20: Erneutes Ausführen der Serveranwendung, wobei Sie nun abgelehnt werden sollten
 
 Führen wir `curl` erneut aus, um festzustellen, ob unsere Endpunkte nun durch OAuth2 geschützt sind. Dies machen wir auf jeden Fall, bevor einer unserer Client-SDKs an diesen Endpunkten ausgeführt wird. Die zurückgegebenen Header sollte uns bereits zeigen, dass wir auf dem richtigen Weg sind.
 
@@ -887,4 +889,4 @@ Sie können nun mit den Themen für fortgeschrittenere Benutzer fortfahren. Wie 
 
 [Herstellen einer Verbindung mit einer Web-API mithilfe von iOS mit B2C >>](active-directory-b2c-devquickstarts-ios.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

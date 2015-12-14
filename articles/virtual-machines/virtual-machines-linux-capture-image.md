@@ -59,7 +59,7 @@ Diese Schritte setzen voraus, dass Sie bereits mithilfe des klassischen Bereitst
 4. Geben Sie **Exit** ein, um den SSH-Client zu schließen.
 
 
-	>[AZURE.NOTE]Bei den nächsten Schritten wird davon ausgegangen, dass Sie [die Azure-Befehlszeilenschnittstelle auf dem Clientcomputer installiert haben](../xplat-cli-install.md). Die folgenden Schritte können Sie auch im [Azure-Portal][] ausführen.
+	>[AZURE.NOTE]Bei den nächsten Schritten wird davon ausgegangen, dass Sie [die Azure-Befehlszeilenschnittstelle auf dem Clientcomputer installiert haben](../xplat-cli-install.md). Die folgenden Schritte können Sie auch im [klassischen Azure-Portal][] ausführen.
 
 5. Öffnen Sie auf dem Clientcomputer die Azure-CLI, und melden Sie sich bei Ihrem Azure-Abonnement an. Weitere Informationen hierzu finden Sie unter [Herstellen einer Verbindung mit einem Azure-Abonnement von der Azure-CLI](../xplat-cli-connect.md).
 
@@ -83,21 +83,22 @@ Diese Schritte setzen voraus, dass Sie bereits mithilfe des klassischen Bereitst
 
 	`azure vm image list`
 
-	Im [Azure-Portal][] wird es in der Liste **IMAGES** angezeigt.
+	Im [klassischen Azure-Portal][] wird es in der Liste **IMAGES** angezeigt.
 
 	![Image-Erfassung erfolgreich](./media/virtual-machines-linux-capture-image/VMCapturedImageAvailable.png)
 
 
 ## Nächste Schritte
-Das Image kann jetzt zum Erstellen virtueller Computer verwendet werden. Sie können den Azure-CLI-Befehl `azure vm create` verwenden und den Namen des Images angeben, das Sie gerade erstellt haben. Weitere Informationen zu dem Befehl finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit der Azure-Dienstverwaltung](virtual-machines-command-line-tools.md). Alternativ können Sie einen benutzerdefinierten virtuellen Computer über das [Azure-Portal][] erstellen, indem Sie die Methode **Aus Katalog** verwenden und das Image auswählen, das Sie gerade erstellt haben. Weitere Informationen finden Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers][].
+Das Image kann jetzt zum Erstellen virtueller Computer verwendet werden. Sie können den Azure-CLI-Befehl `azure vm create` verwenden und den Namen des Images angeben, das Sie gerade erstellt haben. Weitere Informationen zu dem Befehl finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit der Azure-Dienstverwaltung](virtual-machines-command-line-tools.md). Alternativ können Sie einen benutzerdefinierten virtuellen Computer über das [klassische Azure-Portal][] erstellen, indem Sie die Methode **Aus Katalog** verwenden und das Image auswählen, das Sie gerade erstellt haben. Weitere Informationen finden Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers][].
 
 **Siehe auch**: [Benutzerhandbuch für Azure Linux-Agent](virtual-machines-linux-agent-user-guide.md)
 
-[Azure-Portal]: http://manage.windowsazure.com
+[klassische Azure-Portal]: http://manage.windowsazure.com
+[klassischen Azure-Portal]: http://manage.windowsazure.com
 [Anmelden bei einem virtuellen Computer, auf dem Linux ausgeführt wird]: virtual-machines-linux-how-to-log-on.md
 [Informationen zu virtuellen Computern in Azure]: virtual-machines-images.md
 [Erstellen eines benutzerdefinierten virtuellen Computers]: virtual-machines-linux-create-custom.md
 [How to Attach a Data Disk to a Virtual Machine]: storage-windows-attach-disk.md
 [Erstellen eines virtuellen Linux-Computers]: virtual-machines-linux-tutorial.md
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

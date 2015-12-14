@@ -1,6 +1,6 @@
 <properties
 	pageTitle="ARM-Vorlage für hoch verfügbare Active Directory-Domänendienste | Microsoft Azure"
-	description="Mit einer Ressourcen-Manager-Vorlage und dem Azure-Vorschauportal, Azure PowerShell oder der Azure-Befehlszeilenschnittstelle können Sie ganz einfach zwei Server bereitstellen, die als AD DS-Domänencontroller fungieren."
+	description="Mit einer Ressourcen-Manager-Vorlage und dem Azure-Portal, Azure PowerShell oder der Azure-Befehlszeilenschnittstelle können Sie ganz einfach zwei Server bereitstellen, die als AD DS-Domänencontroller fungieren."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="davidmu1"
@@ -26,11 +26,11 @@ Verwenden Sie die Anweisungen in diesem Artikel, um eine hoch verfügbare Active
 
 ![](./media/virtual-machines-workload-template-ad-domain/two-server-ad.png)
 
-Sie können die Vorlage mit dem Azure-Vorschauportal, mit Azure PowerShell oder der Azure-Befehlszeilenschnittstelle ausführen.
+Sie können die Vorlage mit dem Azure-Portal, mit Azure PowerShell oder der Azure-Befehlszeilenschnittstelle ausführen.
 
-## Azure-Vorschauportal
+## Azure-Portal
 
-Wenn Sie diese Workload mit einer Ressourcen-Manager-Vorlage und dem Azure-Vorschauportal bereitstellen möchten, klicken Sie [hier](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Factive-directory-new-domain-ha-2-dc%2Fazuredeploy.json).
+Wenn Sie diese Workload mit einer Ressourcen-Manager-Vorlage und dem Azure-Portal bereitstellen möchten, klicken Sie [hier](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Factive-directory-new-domain-ha-2-dc%2Fazuredeploy.json).
 
 ![](./media/virtual-machines-workload-template-ad-domain/azure-portal-template.png)
 
@@ -108,4 +108,4 @@ Wenn die Ausführung der Vorlage abgeschlossen ist, verfügen Sie über eine neu
 
 [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

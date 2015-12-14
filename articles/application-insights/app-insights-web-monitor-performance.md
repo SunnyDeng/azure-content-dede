@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/08/2015" 
+	ms.date="11/25/2015" 
 	ms.author="awills"/>
  
 # Leistung in Webanwendungen überwachen
@@ -134,11 +134,17 @@ Wenn Sie eine Instanz angeben, wird sie als "CounterInstanceName"-Eigenschaft de
 
 Wenn Sie möchten, können Sie den gleichen Effekt auch mit Code erzielen:
 
-    var perfCollector = new PerformanceCollectorModule();
-    perfCollector.Counters.Add(new CustomPerformanceCounterCollectionRquest(
+    var perfCollectorModule = new PerformanceCollectorModule();
+    perfCollectorModule.Counters.Add(new PerformanceCounterCollectionRequest(
       @"\Sales(electronics)# Items Sold", "Items sold"));
-    perfCollector.Initialize(TelemetryConfiguration.Active);
-    TelemetryConfiguration.Active.TelemetryModules.Add(perfCollector);
+    perfCollectorModule.Initialize(TelemetryConfiguration.Active);
+
+Wenn Sie Systemleistungsindikatoren sammeln und an Application Insights übertragen möchten, können Sie außerdem den folgenden Codeausschnitt verwenden:
+
+    var perfCollectorModule = new PerformanceCollectorModule();
+    perfCollectorModule.Counters.Add(new PerformanceCounterCollectionRequest(
+      @"\.NET CLR Memory([replace-with-application-process-name])# GC Handles", "GC Handles")));
+    perfCollectorModule.Initialize(TelemetryConfiguration.Active);
 
 ### Ausnahmeraten
 
@@ -185,7 +191,7 @@ Im Folgenden finden Sie einige Tipps zum Feststellen und Diagnostizieren von Lei
 
 [availability]: app-insights-monitor-web-app-availability.md
 [diagnostic]: app-insights-diagnostic-search.md
-[greenbrown]: app-insights-start-monitoring-app-health-usage.md
+[greenbrown]: app-insights-asp-net.md
 [qna]: app-insights-troubleshoot-faq.md
 [redfield]: app-insights-monitor-performance-live-website-now.md
 [start]: app-insights-overview.md
@@ -193,4 +199,4 @@ Im Folgenden finden Sie einige Tipps zum Feststellen und Diagnostizieren von Lei
 
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

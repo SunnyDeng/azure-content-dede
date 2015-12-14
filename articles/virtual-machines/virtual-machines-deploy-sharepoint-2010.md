@@ -59,7 +59,7 @@ Mit virtuellen Azure-Computern erhalten Entwickler die Flexibilität, ihre bevor
 
 ## Bereitstellung
 
-Die Abbildbibliothek in Azure enthält eine Liste der verfügbaren vorkonfigurierten virtuellen Computer. Benutzer können ISO/VHDs von SharePoint Server, SQL Server, Windows Server und anderen in der Abbildbibliothek veröffentlichen. Um die Erstellung von virtuellen Computern zu erleichtern, werden Basisimages angelegt und in der Bibliothek veröffentlicht. Autorisierte Benutzer können anhand dieser Images den gewünschten virtuellen Computer generieren. Weitere Informationen finden Sie unter [Erstellen eines virtuellen Computers mit Windows im Azure-Portal](virtual-machines-windows-tutorial-classic-portal.md). Abbildung 1 zeigt die grundlegenden Schritte zum Erstellen eines virtuellen Computers mit dem Azure-Portal.
+Die Abbildbibliothek in Azure enthält eine Liste der verfügbaren vorkonfigurierten virtuellen Computer. Benutzer können ISO/VHDs von SharePoint Server, SQL Server, Windows Server und anderen in der Abbildbibliothek veröffentlichen. Um die Erstellung von virtuellen Computern zu erleichtern, werden Basisimages angelegt und in der Bibliothek veröffentlicht. Autorisierte Benutzer können anhand dieser Images den gewünschten virtuellen Computer generieren. Weitere Informationen finden Sie unter [Erstellen eines virtuellen Computers mit Windows im klassischen Azure-Portal](virtual-machines-windows-tutorial-classic-portal.md). Abbildung 1 zeigt die grundlegenden Schritte zum Erstellen eines virtuellen Computers mit dem klassischen Azure-Portal.
 
 ![azure-sharepoint-wp-13](./media/virtual-machines-deploy-sharepoint-2010/azure-sharepoint-wp-2.png)
 
@@ -67,7 +67,7 @@ Die Abbildbibliothek in Azure enthält eine Liste der verfügbaren vorkonfigurie
 
 Benutzer können im Azure-Verwaltungsportal auch ein vom System erstelltes Image hochladen. Weitere Informationen finden Sie unter [Erstellen und Hochladen einer Windows Server-VHD nach Azure](virtual-machines-create-upload-vhd-windows-server.md). Abbildung 2 zeigt die grundlegenden Schritte für das Hochladen eines Image, um eine VM zu erstellen.
 
-Im Azure-Portal können Benutzer auch ein Image hochladen, für das das SysPrep-Tool bereits ausgeführt wurde. Weitere Informationen finden Sie unter [Erstellen und Hochladen einer Windows Server-VHD nach Azure](virtual-machines-create-upload-vhd-windows-server.md). Abbildung 2 zeigt die grundlegenden Schritte für das Hochladen eines Image, um einen virtuellen Computer zu erstellen.
+Im klassischen Azure-Portal können Benutzer auch ein Image hochladen, für das das SysPrep-Tool bereits ausgeführt wurde. Weitere Informationen finden Sie unter [Erstellen und Hochladen einer Windows Server-VHD nach Azure](virtual-machines-create-upload-vhd-windows-server.md). Abbildung 2 zeigt die grundlegenden Schritte für das Hochladen eines Image, um einen virtuellen Computer zu erstellen.
 
 ![azure-sharepoint-wp-13](./media/virtual-machines-deploy-sharepoint-2010/azure-sharepoint-wp-3.png)
 
@@ -77,8 +77,8 @@ Im Azure-Portal können Benutzer auch ein Image hochladen, für das das SysPrep-
 
 Sie können SharePoint 2010 auf Azure mit dem klassischen Bereitstelungsmodell bereitstellen, indem Sie folgendermaßen vorgehen:
 
-1. Melden Sie sich beim [Azure-Portal](http://manage.windowsazure.com/) mit Ihrem Azure-Abonnementkonto an. Wenn Sie kein Azure-Konto haben, [melden Sie sich für eine kostenlose Testversion von Azure an](http://azure.microsoft.com/pricing/free-trial/).
-2. Klicken Sie zum Erstellen eines virtuellen Computers mit dem Basisbetriebssystem im Azure-Portal auf **Neu > Compute > Virtueller Computer > Aus Katalog**.
+1. Melden Sie sich beim [klassischen Azure-Portal](http://manage.windowsazure.com/) mit Ihrem Azure-Abonnementkonto an. Wenn Sie kein Azure-Konto haben, [melden Sie sich für eine kostenlose Testversion von Azure an](http://azure.microsoft.com/pricing/free-trial/).
+2. Klicken Sie zum Erstellen eines virtuellen Computers mit dem Basisbetriebssystem im klassischen Azure-Portal auf **Neu > Compute > Virtueller Computer > Aus Katalog**.
 3. Das Dialogfeld **Image auswählen** wird angezeigt. Klicken Sie auf das Plattformimage **Windows Server 2008 R2 SP1** und dann auf den Pfeil nach rechts.
 4. Das Dialogfeld **Konfiguration des virtuellen Computers** wird angezeigt. Geben Sie die folgenden Informationen ein:
 	- Geben Sie den **Namen des virtuellen Computers** ein.
@@ -131,7 +131,7 @@ Schritt 4: Nachdem das Skript abgeschlossen ist, stellen Sie über das Dashboar
 
 Melden Sie sich beim SharePoint Server an, und überprüfen Sie mit der Zentraladministration die Konfiguration.
 
-> [AZURE.NOTE]Konfigurieren Sie Sicherheitsoptionen am Endpunkt des Azure-Portals, und legen Sie einen eingehenden Port in der Windows Firewall des virtuellen Computers fest. Überprüfen Sie anschließend, ob Sie eine Remotesitzung mit Windows PowerShell für einen der SharePoint-Anwendungsserver starten können, indem Sie eine Windows PowerShell-Sitzung mit Administratoranmeldeinformationen öffnen.
+> [AZURE.NOTE]Konfigurieren Sie Sicherheitsoptionen am Endpunkt des klassischen Azure-Portals, und legen Sie einen eingehenden Port in der Windows Firewall des virtuellen Computers fest. Überprüfen Sie anschließend, ob Sie eine Remotesitzung mit Windows PowerShell für einen der SharePoint-Anwendungsserver starten können, indem Sie eine Windows PowerShell-Sitzung mit Administratoranmeldeinformationen öffnen.
 
 ### Erstellen und Hochladen einer virtuellen Festplatte
 
@@ -157,7 +157,7 @@ Abbildung 3 zeigt eine SharePoint-Entwicklungs- und -Testumgebung auf einem vir
 
 Führen Sie die folgenden Schritte aus, um eine SharePoint-Entwicklungs- und -Testumgebung auf Azure zu implementieren:
 
-1. Bereitstellen: Stellen Sie zuerst mit Azure Virtual Network eine VPN-Verbindung zwischen Ihrem Standort und Azure bereit. (Da hier nicht Active Directory verwendet wird, ist ein VPN-Tunnel erforderlich.) Weitere Informationen finden Sie unter [Virtuelle Netzwerke – Übersicht](../virtual-network/virtual-networks-overview.md). Stellen Sie dann im Azure-Portal einen neuen virtuellen Computer mithilfe eines vorhandenen Image aus der Abbildbibliothek bereit.
+1. Bereitstellen: Stellen Sie zuerst mit Azure Virtual Network eine VPN-Verbindung zwischen Ihrem Standort und Azure bereit. (Da hier nicht Active Directory verwendet wird, ist ein VPN-Tunnel erforderlich.) Weitere Informationen finden Sie unter [Virtuelle Netzwerke – Übersicht](../virtual-network/virtual-networks-overview.md). Stellen Sie dann im klassischen Azure-Portal einen neuen virtuellen Computer mithilfe eines vorhandenen Image aus der Abbildbibliothek bereit.
 	- Sie können die lokalen virtuellen SharePoint-Entwicklungs- und -Testcomputer in Ihr Azure-Speicherkonto hochladen und über die Abbildbibliothek auf diese VMs verweisen, um die erforderliche Umgebung zu erstellen.
 	- Sie können das SQL Server 2012-Image anstelle des Windows Server 2008 R2 SP1-Image verwenden. Weitere Informationen finden Sie unter [Bereitstellen eines virtuellen Computers mit SQL Server auf Azure](virtual-machines-provision-sql-server.md).
 
@@ -169,11 +169,11 @@ Führen Sie die folgenden Schritte aus, um eine SharePoint-Entwicklungs- und -Te
 	- Erstellen Sie mit SQL Server Data Tools und Visual Studio Bereitstellungspakete für vorhandene Anwendungen und Datenbanken.
 	- Stellen Sie mit diesen Paketen die Anwendungen und Datenbanken auf virtuellen Azure-Computern bereit.
 4. Bereitstellen von SharePoint-Anwendungen und -Datenbanken:
-	- Konfigurieren Sie Sicherheitsoptionen am Endpunkt des Azure-Portals, und legen Sie einen eingehenden Port in der Windows Firewall des virtuellen Computers fest.
+	- Konfigurieren Sie Sicherheitsoptionen am Endpunkt des klassischen Azure-Portals, und legen Sie einen eingehenden Port in der Windows Firewall des virtuellen Computers fest.
 	- Stellen Sie SharePoint-Anwendungen und -Datenbanken auf virtuellen Azure-Computern mit den in Schritt 3 erstellten Bereitstellungspaketen und -skripts bereit.
 - Testen Sie bereitgestellte Anwendungen und Datenbanken.
 5. Verwalten virtueller Computer:
-	- Überwachen Sie die virtuellen Computer mit dem Azure-Portal.
+	- Überwachen Sie die virtuellen Computer mit dem klassischen Azure-Portal.
 	- Überwachen Sie die Anwendungen mit Visual Studio und SQL Server Management Studio.
 	- Sie können virtuelle Computer auch mit lokaler Verwaltungssoftware wie Microsoft System Center Operations Manager überwachen und verwalten.
 
@@ -197,13 +197,13 @@ Führen Sie die folgenden Schritte aus, um eine öffentliche SharePoint-Farm auf
 
 1. Bereitstellen von Active Directory: Die Grundanforderungen für die Bereitstellung von Active Directory auf virtuellen Azure-Computern ähneln den Anforderungen für die Bereitstellung auf lokalen virtuellen Computern (und bis zu einem gewissen Grad auf physischen Computern), sind aber nicht identisch damit. Weitere Informationen zu Unterschieden, Richtlinien und anderen Aspekten finden Sie unter [Richtlinien für die Bereitstellung von Windows Server Active Directory auf virtuellen Computern in Azure](http://msdn.microsoft.com/library/jj156090). So stellen Sie Active Directory auf Azure bereit:
 	- Definieren und erstellen Sie ein virtuelles Netzwerk, in dem die virtuellen Computer bestimmten Subnetzen zugewiesen werden können.
-	- Erstellen Sie im Azure-Portal den Domänencontroller auf einem neuen virtuellen Computer in Azure, und stellen Sie ihn bereit. Sie können auch anhand des Windows PowerShell-Skripts eine eigenständige Domäne in der Cloud mit Azure Virtual Machines und Azure Virtual Network bereitstellen. Weitere Informationen zum Erstellen einer neuen Active Directory-Gesamtstruktur auf einem virtuellen Computer in Azure Virtual Network finden Sie unter [Installieren einer neuen Active Directory-Gesamtstruktur in Azure](active-directory-new-forest-virtual-machine.md).
-2. Bereitstellen eines virtuellen Computers: Verwenden Sie das Azure-Portal, um einen neuen virtuellen Computer über ein Image bereitzustellen, das in der Abbildbibliothek enthalten ist.
+	- Erstellen Sie im klassischen Azure-Portal den Domänencontroller auf einem neuen virtuellen Computer in Azure, und stellen Sie ihn bereit. Sie können auch anhand des Windows PowerShell-Skripts eine eigenständige Domäne in der Cloud mit Azure Virtual Machines und Azure Virtual Network bereitstellen. Weitere Informationen zum Erstellen einer neuen Active Directory-Gesamtstruktur auf einem virtuellen Computer in Azure Virtual Network finden Sie unter [Installieren einer neuen Active Directory-Gesamtstruktur in Azure](active-directory-new-forest-virtual-machine.md).
+2. Bereitstellen eines virtuellen Computers: Verwenden Sie das klassische Azure-Portal, um einen neuen virtuellen Computer über ein Image bereitzustellen, das in der Abbildbibliothek enthalten ist.
 3. Stellen Sie eine SharePoint-Farm bereit.
-	- Verwenden Sie das Azure-Portal, um den Lastenausgleich zu konfigurieren. Konfigurieren Sie die Endpunkte des virtuellen Computers, wählen Sie die Option zum Laden des Ausgleichsdatenverkehrs auf einen vorhandenen Endpunkt, und geben Sie dann den Namen des virtuellen Computers mit dem Lastenausgleich an.
+	- Verwenden Sie das klassische Azure-Portal, um den Lastenausgleich zu konfigurieren. Konfigurieren Sie die Endpunkte des virtuellen Computers, wählen Sie die Option zum Laden des Ausgleichsdatenverkehrs auf einen vorhandenen Endpunkt, und geben Sie dann den Namen des virtuellen Computers mit dem Lastenausgleich an.
 	- Fügen Sie der vorhandenen SharePoint-Farm einen weiteren virtuellen Front-End-Web-Computer für zusätzlichen Datenverkehr hinzu.
 3. Verwalten virtueller Computer:
-	- Überwachen Sie die virtuellen Computer mit dem Azure-Portal.
+	- Überwachen Sie die virtuellen Computer mit dem klassischen Azure-Portal.
 	- Überwachen Sie die SharePoint-Farm mit der Zentraladministration.
 
 ### Szenario 3: Horizontal hochskalierte Farm für weitere BI-Dienste
@@ -224,16 +224,16 @@ Führen Sie die folgenden Schritte aus, um eine BI-Umgebung auf Azure horizontal
 
 1. Bereitstellung:
 	- Stellen Sie mit Azure Virtual Network eine VPN-Verbindung zwischen Ihrem lokalen Standort und Azure bereit. Weitere Informationen finden Sie unter [Virtuelle Netzwerke – Übersicht](../virtual-network/virtual-networks-overview.md).
-	- Stellen Sie im Azure-Portal einen neuen virtuellen Computer mithilfe eines vorhandenen Images aus der Abbildbibliothek bereit. Sie können BI-Workloadimages von SharePoint Server oder SQL Server in die Abbildbibliothek hochladen. Auf diese Weise kann jeder autorisierte Benutzer diese virtuellen BI-Komponentencomputer auswählen, um die horizontal hochskalierte Umgebung zu erstellen.
+	- Stellen Sie im klassischen Azure-Portal einen neuen virtuellen Computer mithilfe eines vorhandenen Images aus der Abbildbibliothek bereit. Sie können BI-Workloadimages von SharePoint Server oder SQL Server in die Abbildbibliothek hochladen. Auf diese Weise kann jeder autorisierte Benutzer diese virtuellen BI-Komponentencomputer auswählen, um die horizontal hochskalierte Umgebung zu erstellen.
 2. Installation:
 	- Wenn Ihre Organisation über keine vorgefertigten Images von SharePoint Server- oder SQL Server-BI-Komponenten verfügt, installieren Sie SharePoint Server und SQL Server mit einer Remotedesktopverbindung auf den virtuellen Computern.
 	- Weitere Informationen zum Installieren von SharePoint finden Sie unter [Installieren von SharePoint Server 2010 mithilfe von Windows PowerShell](http://technet.microsoft.com/library/cc262839.aspx) oder [CodePlex: AutoSPInstaller](http://autospinstaller.codeplex.com/).
 	- Weitere Informationen zum Installieren von SQL Server finden Sie unter [Installieren von SQL Server mit SysPrep](http://msdn.microsoft.com/library/ee210664.aspx).
 3. Hinzufügen des virtuellen BI-Computers:
-	- Konfigurieren Sie Sicherheitsoptionen am Endpunkt des Azure-Portals, und legen Sie einen eingehenden Port in der Windows Firewall des virtuellen Computers fest.
+	- Konfigurieren Sie Sicherheitsoptionen am Endpunkt des klassischen Azure-Portals, und legen Sie einen eingehenden Port in der Windows Firewall des virtuellen Computers fest.
 	- Fügen Sie den neu erstellten virtuellen BI-Computer der vorhandenen SharePoint- oder SQL Server-Farm hinzu.
 4. Verwalten virtueller Computer:
-	- Überwachen Sie die virtuellen Computer mit dem Azure-Portal.
+	- Überwachen Sie die virtuellen Computer mit dem klassischen Azure-Portal.
 	- Überwachen Sie die SharePoint-Farm mit der Zentraladministration.
 	- Überwachen und verwalten Sie virtuelle Computer mit lokaler Verwaltungssoftware, wie Microsoft System Center – Operations Manager.
 
@@ -255,19 +255,19 @@ Die folgenden Schritte zeigen, wie eine angepasste SharePoint-Farmumgebung aus v
 
 1. Bereitstellen von Active Directory: Die Grundanforderungen für die Bereitstellung von Active Directory auf virtuellen Azure-Computern ähneln den Anforderungen für die Bereitstellung auf lokalen virtuellen Computern (und bis zu einem gewissen Grad auf physischen Computern), sind aber nicht identisch damit. Weitere Informationen zu Unterschieden, Richtlinien und anderen Aspekten finden Sie unter [Richtlinien für die Bereitstellung von Windows Server Active Directory auf virtuellen Computern in Azure](http://msdn.microsoft.com/library/jj156090). So stellen Sie Active Directory auf Azure bereit:
 	- Definieren und erstellen Sie ein virtuelles Netzwerk, in dem die virtuellen Computer bestimmten Subnetzen zugewiesen werden können.
-	- Erstellen Sie im Azure-Portal den Domänencontroller auf einem neuen virtuellen Computer in Azure, und stellen Sie ihn bereit.
+	- Erstellen Sie im klassischen Azure-Portal den Domänencontroller auf einem neuen virtuellen Computer in Azure, und stellen Sie ihn bereit.
 	- Weitere Informationen zum Erstellen einer neuen Active Directory-Gesamtstruktur auf einem virtuellen Computer in Azure Virtual Network finden Sie unter [Installieren einer neuen Active Directory-Gesamtstruktur in Azure](active-directory-new-forest-virtual-machine).
 2. Bereitstellen von SQL Server:
-	- Stellen Sie im Azure-Portal einen neuen virtuellen Computer mithilfe eines vorhandenen Images aus der Abbildbibliothek bereit.
+	- Stellen Sie im klassischen Azure-Portal einen neuen virtuellen Computer mithilfe eines vorhandenen Images aus der Abbildbibliothek bereit.
 	- Konfigurieren Sie SQL Server auf dem virtuellen Computer. Weitere Informationen finden Sie unter [Installieren von SQL Server mit SysPrep](http://msdn.microsoft.com/library/ee210664.aspx).
 	- Verknüpfen Sie den virtuellen Computer mit der neu angelegten Active Directory-Domäne.
 3. Bereitstellen einer SharePoint-Farm mit mehreren Servern:
 	- Erstellen Sie ein virtuelles Netzwerk. Weitere Informationen finden Sie unter [Virtuelle Netzwerke – Übersicht](../virtual-network/virtual-networks-overview.md).
 	- Wenn virtuelle SharePoint-Computer bereitgestellt werden, müssen Subnetze für SharePoint Server vorhanden sein, damit die DNS-Adressen in dem lokalen Active Directory während der Bereitstellung verfügbar sind.
-	- Verwenden Sie das Azure-Portal, um einen virtuellen Computer zu erstellen.
+	- Verwenden Sie das klassische Azure-Portal, um einen virtuellen Computer zu erstellen.
 	- Installieren Sie SharePoint Server auf diesem virtuellen Computer, und generieren Sie ein wiederverwendbares Image. Weitere Informationen zum Installieren von SharePoint Server finden Sie unter [Installieren von SharePoint Server 2010 mithilfe von Windows PowerShell](http://technet.microsoft.com/library/cc262839.aspx) oder [CodePlex: AutoSPInstaller](http://autospinstaller.codeplex.com/).
 	- Konfigurieren Sie den virtuellen SharePoint-Computer so, dass die SharePoint-Farm erstellt und mit dem Befehl [Join-SharePointFarm](http://technet.microsoft.com/library/ff607979.aspx) eine Verbindung damit hergestellt wird.
-	- Konfigurieren Sie den Lastenausgleich im Azure-Portal: Konfigurieren Sie die Endpunkte des virtuellen Computers, wählen Sie die Option für den Lastenausgleich des Datenverkehrs auf einem vorhandenen Endpunkt, und geben Sie dann den Namen des virtuellen Computers mit Lastenausgleichsmodul an.
+	- Konfigurieren Sie den Lastenausgleich im klassischen Azure-Portal: Konfigurieren Sie die Endpunkte des virtuellen Computers, wählen Sie die Option für den Lastenausgleich des Datenverkehrs auf einem vorhandenen Endpunkt, und geben Sie dann den Namen des virtuellen Computers mit Lastenausgleichsmodul an.
 4. Verwalten der SharePoint-Farm im System Center:
 	- Verbinden Sie Ihr lokales System Center mit dem Operations Manager-Agent und dem neuen Azure-Integrationspaket mit virtuellen Azure-Computern.
 	- Verwenden Sie den lokalen App Controller und Orchestrator für die Verwaltungsfunktionen.
@@ -288,4 +288,4 @@ Voraussetzung für eine erfolgreiche Bereitstellung von SharePoint Server auf vi
 
 [Test the SharePoint Server 2016 IT Preview in Azure (auf Englisch)](http://azure.microsoft.com/blog/test-sharepoint-server-2016-it-preview-4/)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -13,10 +13,15 @@
 	ms.tgt_pltfrm="multiple"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="08/18/2015" 
+	ms.date="08/18/2015"
 	ms.author="wesmc;ricksal"/>
 
 # Problembehandlung beim Mobile Services .NET-Back-End
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 Entwickeln mit Mobile Services ist normalerweise kurz und schmerzlos, doch selbst dann kann etwas schieflaufen. Dieses Lernprogramm behandelt einige Techniken, mit denen Sie häufige Probleme behandeln können, die mit dem Mobile Services .NET-Back-End auftreten können.
 
@@ -36,7 +41,7 @@ Sie können einen belieben HTTP-Debugger verwenden und HTTP-Traffic senden und i
 1. Beginnen Sie mit einem Mobile Services-Serverprojekt in **Visual Studio 2013 Update 2** oder neuer. Falls Sie kein Projekt zur Hand haben, können Sie ein neues erstellen, indem Sie **Datei**, **Neu**, **Projekt** auswählen und dann den **Cloud**-Knoten und anschließend die **Windows Azure Mobile Services**-Vorlage auswählen.
 2. Drücken Sie **F5**, wodurch das Projekt erstellt und ausgeführt wird. Wählen Sie auf der Startseite **Ausprobieren**.
 
-    >[AZURE.NOTE]Wenn der Dienst lokal gehostet wird, werden Sie beim Klicken auf den Link direkt auf die nächste Seite weitergeleitet. Beim Hosting in der Cloud hingegen werden Sie zur Eingabe von Anmeldeinformationen aufgefordert. Damit soll sichergestellt werden, dass nicht authentifizierte Benutzer keinen Zugriff auf die Daten über ihre API und Nutzlasten haben. Um die Seite sehen zu können, müssen Sie sich mit einem **leeren Benutzernamen** und Ihrem **Anwendungsschlüssel** als Kennwort anmelden. Ihren Anwendungsschlüssel für Ihren mobilen Dienst finden Sie im **Azure-Verwaltungsportal** auf der Registerkarte **Dashboard**, wenn Sie **Schlüssel verwalten** auswählen.
+    >[AZURE.NOTE]Wenn der Dienst lokal gehostet wird, werden Sie beim Klicken auf den Link direkt auf die nächste Seite weitergeleitet. Beim Hosting in der Cloud hingegen werden Sie zur Eingabe von Anmeldeinformationen aufgefordert. Damit soll sichergestellt werden, dass nicht authentifizierte Benutzer keinen Zugriff auf die Daten über ihre API und Nutzlasten haben. Um die Seite sehen zu können, müssen Sie sich mit einem **leeren Benutzernamen** und Ihrem **Anwendungsschlüssel** als Kennwort anmelden. Ihren Anwendungsschlüssel für Ihren mobilen Dienst finden Sie im klassischen Azure-Portal auf der Registerkarte **Dashboard**, wenn Sie **Schlüssel verwalten** auswählen.
     >
     > ![Authentifizierungsaufforderung für den Zugriff auf die Hilfeseite][HelpPageAuth]
 
@@ -107,9 +112,9 @@ Nach dem Veröffentlichen Ihres Diensts auf Azure sind die Protokolle für die i
 
 ![Protokolle im Visual Studio Server-Explorer][LogsServerExplorer]
 
-Dieselben Protokolle sind für Ihren mobilen Dienst auch im **Azure-Verwaltungsportal** auf der Registerkarte **Protokolle** verfügbar.
+Dieselben Protokolle sind für Ihren mobilen Dienst auch im klassischen Azure-Portal auf der Registerkarte **Protokolle** verfügbar.
 
-![Protokolle im Azure-Verwaltungsportal][LogsPortal]
+![Protokolle im klassischen Azure-Portal][LogsPortal]
 
 <a name="AssemblyResolution"></a>
 ## Debuggen der Cloud Assembly-Auflösung
@@ -154,4 +159,4 @@ Migrationen können komplex sein und erfordern, dass der Zustand der Datenbank s
 [LogsPortal]: ./media/mobile-services-dotnet-backend-how-to-troubleshoot/13.png
 [HelpConflict]: ./media/mobile-services-dotnet-backend-how-to-troubleshoot/14.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

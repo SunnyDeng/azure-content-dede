@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Dashboard, Überwachen, Skalieren, Konfigurieren und Hybridverbindungen in BizTalk Services | Microsoft Azure" 
-	description="Erfahren Sie mehr über die Steuerelemente und Leistungsüberwachung auf den Registerkarten des Verwaltungsportals für BizTalk Services: ";Dashboard";, ";Überwachen";, ";Skalieren";, ";Konfigurieren"; und ";Hybridverbindungen";. MABS, WABS" 
+	description="Erfahren Sie mehr über die Steuerelemente und Leistungsüberwachung auf den Registerkarten des klassischen Portals für BizTalk Services: „Dashboard“, „Überwachen“, „Skalieren“, „Konfigurieren“ und „Hybridverbindungen“. MABS, WABS" 
 	services="biztalk-services" 
 	documentationCenter="" 
 	authors="MandiOhlinger" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/26/2015" 
+	ms.date="12/02/2015" 
 	ms.author="mandia"/>
 
 
@@ -23,15 +23,12 @@
 
 Nachdem Sie Ihren BizTalk Service erstellt und Ihre Anwendung bereitgestellt haben, können Sie einige der BizTalk Service-Einstellungen ändern und die Anwendungsleistung überwachen.
 
-Wenn Sie das Azure-Verwaltungsportal zum ersten Mal öffnen, ist automatisch die Registerkarte **ALLE ELEMENTE** geöffnet. Wenn Sie Ihren BizTalk Service anzeigen möchten, wählen Sie diesen auf der Registerkarte **ALLE ELEMENTE** aus. Alternativ können Sie auf der Registerkarte **BIZTALK SERVICES** den Namen des BizTalk Service auswählen.
+Wenn Sie das klassische Azure-Portal zum ersten Mal öffnen, ist automatisch die Registerkarte **ALLE ELEMENTE** geöffnet. Wenn Sie Ihren BizTalk Service anzeigen möchten, wählen Sie diesen auf der Registerkarte **ALLE ELEMENTE** aus. Alternativ können Sie auf der Registerkarte **BIZTALK SERVICES** den Namen des BizTalk Service auswählen.
 
 Dadurch wird ein neues Fenster mit den folgenden Registerkarten geöffnet. In diesem Thema werden diese Registerkarten beschrieben.
 
 ## Schnellstart (![Schnellstart][QuickStart])
-Eventuell stehen nicht alle aufgeführten Optionen für alle BizTalk Services-Editionen zur Verfügung. 
-<table border="1">
-    <tr>
-        <td><strong>Tools herunterladen</strong></td>
+Eventuell stehen nicht alle aufgeführten Optionen für alle BizTalk Services-Editionen zur Verfügung. <table border="1"> <tr> <td><strong>Tools herunterladen</strong></td>
 
         <td>Download the BizTalk Services SDK to install the Visual Studio project templates on your on-premises development computer. These templates create the <strong>BizTalk Services</strong> (bridge) and the <strong>BizTalk Service Artifacts</strong> (Transform) Visual Studio projects that are deployed to your BizTalk Service.
         <br/><br/>
@@ -72,7 +69,7 @@ Unter <a HREF="http://go.microsoft.com/fwlink/p/?LinkID=303653">Konfigurieren vo
 <td><strong>Verbindungsinformationen</strong> des Access Control-Namespace</td>
 <td>Wenn Sie "Verbindungsinformationen" auswählen, werden der Access Control-Namespace, der Standardaussteller und der Standardschlüssel angezeigt. Diese Werte können kopiert werden.
 <br/><br/>
-Sie können auch das Access Control-Verwaltungsportal öffnen. Unter <a HREF="http://go.microsoft.com/fwlink/p/?LinkID=285670">Erstellen eines Access Control-Namespace</a> finden Sie weitere Informationen zum Access Control-Verwaltungsportal.</td>
+Sie können auch das Access Control-Portal öffnen. Unter <a HREF="http://go.microsoft.com/fwlink/p/?LinkID=285670">Erstellen eines Access Control-Namespace</a> finden Sie weitere Informationen zum Access Control-Portal.</td>
 </tr>
 
 <tr>
@@ -83,9 +80,9 @@ Angenommen, Sie möchten, dass der BizTalk Service einen neuen Primärschlüssel
 <br/><br/>
 <ol>
 <li>Wählen Sie Ihren BizTalk Service und dann <strong>Synchronisierungsschlüssel</strong> aus. Wählen Sie den Sekundärschlüssel aus. Wenn Sie dies tun, startet der BizTalk Service die Verwendung des Sekundärschlüssels.</li>
-<li>Klicken Sie im Azure-Verwaltungsportal auf Ihr Speicherkonto, und generieren Sie den Primärschlüssel neu. Denken Sie daran, dass Ihr BizTalk Service den Sekundärschlüssel verwendet.</li>
+<li>Wählen Sie im klassischen Azure-Portal Ihr Speicherkonto aus und generieren Sie den Primärschlüssel neu. Denken Sie daran, dass Ihr BizTalk Service den Sekundärschlüssel verwendet.</li>
 <li>Wählen Sie Ihren BizTalk Service und dann <strong>Synchronisierungsschlüssel</strong> aus. Wählen Sie nun den Primärschlüssel. Dies ist der neue Primärschlüssel, den Sie generiert haben.</li>
-<li>Wählen Sie im Azure-Verwaltungsportal Ihr Speicherkonto aus, und generieren Sie den Sekundärschlüssel neu.</li>
+<li>Wählen Sie im klassischen Azure-Portal Ihr Speicherkonto aus und generieren Sie den Sekundärschlüssel neu.</li>
 </ol>
 <br/>
 Man spricht hier von "Rollover-Schlüsseln". Der Zweck ist, zwischen dem Primär- und dem Sekundärschlüssel umzuschalten, ohne den BizTalk Service zu unterbrechen.</td>
@@ -170,7 +167,7 @@ Unter <a HREF="http://go.microsoft.com/fwlink/p/?LinkID=302280">Erläuterung der
 </tr>
 <tr>
 <td><strong>Abonnementname</strong></td>
-<td>Führt das Abonnement auf, in dem Ihr BizTalk Service gehostet wird. Das Abonnement regelt den Zugriff auf das Azure-Verwaltungsportal.</td>
+<td>Führt das Abonnement auf, in dem Ihr BizTalk Service gehostet wird. Das Abonnement regelt den Zugriff auf das klassische Azure-Portal.</td>
 </tr>
 <tr>
 <td><strong>Abonnement-ID</strong></td>
@@ -178,7 +175,7 @@ Unter <a HREF="http://go.microsoft.com/fwlink/p/?LinkID=302280">Erläuterung der
 </tr>
 </table>
 
-[Konfigurieren von BizTalk Services im Azure-Portal](http://go.microsoft.com/fwlink/p/?LinkID=302280) enthält die Schritte zur Erstellung eines BizTalk Service.
+[Konfigurieren von BizTalk Services im klassischen Azure-Portal](http://go.microsoft.com/fwlink/p/?LinkID=302280) enthält die Schritte zur Erstellung eines BizTalk Service.
 
 
 ##### "Verwalten", "Verbindungsinformationen", "Synchronisierungsschlüssel" und "Löschen" in der Taskleiste:
@@ -197,9 +194,9 @@ Unter <a HREF="http://go.microsoft.com/fwlink/p/?LinkID=303653">Konfigurieren vo
 <td><strong>Verbindungsinformationen</strong> des Access Control-Namespace</td>
 <td>Hier finden Sie die Werte für den Access Control-Namespace, den Standardaussteller und den Standardschlüssel. Diese lassen sich kopieren.
 <br/><br/>
-Sie können auch das Access Control-Verwaltungsportal öffnen. Dieses Verwaltungsportal entspricht der Option "Active Directory" im linken Navigationsbereich.
+Sie können auch das Access Control-Portal öffnen. Bei diesem Access Control-Portal handelt es sich um dasselbe Tool wie die Option „Active Directory“ im linken Navigationsbereich.
 <br/><br/>
-Unter <a HREF="http://go.microsoft.com/fwlink/p/?LinkID=285670">Verwalten Ihres ACS-Namespace</a> finden Sie weitere Informationen zum Access Control-Verwaltungsportal.</td>
+Unter <a HREF="http://go.microsoft.com/fwlink/p/?LinkID=285670">Verwalten Ihres ACS-Namespace</a> finden Sie weitere Informationen zum Access Control-Portal.</td>
 </tr>
 <tr>
 <td><strong>Synchronisierungsschlüssel</strong> im Speicherkonto</td>
@@ -209,9 +206,9 @@ Angenommen, Sie möchten, dass der BizTalk Service einen neuen Primärschlüssel
 <br/><br/>
 <ol>
 <li>Wählen Sie Ihren BizTalk Service und dann <strong>Synchronisierungsschlüssel</strong> aus. Wählen Sie den Sekundärschlüssel aus. Wenn Sie dies tun, startet der BizTalk Service die Verwendung des Sekundärschlüssels.</li>
-<li>Klicken Sie im Azure-Verwaltungsportal auf Ihr Speicherkonto, und generieren Sie den Primärschlüssel neu. Denken Sie daran, dass Ihr BizTalk Service den Sekundärschlüssel verwendet.</li>
+<li>Wählen Sie im klassischen Azure-Portal Ihr Speicherkonto aus und generieren Sie den Primärschlüssel neu. Denken Sie daran, dass Ihr BizTalk Service den Sekundärschlüssel verwendet.</li>
 <li>Wählen Sie Ihren BizTalk Service und dann <strong>Synchronisierungsschlüssel</strong> aus. Wählen Sie nun den Primärschlüssel. Dies ist der neue Primärschlüssel, den Sie generiert haben.</li>
-<li>Wählen Sie im Azure-Verwaltungsportal Ihr Speicherkonto aus, und generieren Sie den Sekundärschlüssel neu.</li>
+<li>Wählen Sie im klassischen Azure-Portal Ihr Speicherkonto aus und generieren Sie den Sekundärschlüssel neu.</li>
 </ol>
 <br/>
 Man spricht hier von "Rollover-Schlüsseln". Der Zweck ist, zwischen dem Primär- und dem Sekundärschlüssel umzuschalten, ohne den BizTalk Service zu unterbrechen.</td>
@@ -332,7 +329,7 @@ Stellt den Sicherungsstatus auf "Keine" oder "Automatisch" ein. Bei Einstellung 
 
 
 ## <a name="HybridConnections"></a>Hybridverbindungen
-Über Hybridverbindungen werden Azure-Anwendungen wie Websites oder Mobile Services mit einer lokalen Ressource (wie SQL Server, MySQL, HTTP Web-APIs und die meisten benutzerdefinierten Webdienste) verbunden, die einen statischen TCP-Port verwendet. Hybridverbindungen werden in BizTalk Services über das Azure-Verwaltungsportal verwaltet.
+Über Hybridverbindungen werden Azure-Anwendungen wie Websites oder Mobile Services mit einer lokalen Ressource (wie SQL Server, MySQL, HTTP Web-APIs und die meisten benutzerdefinierten Webdienste) verbunden, die einen statischen TCP-Port verwendet. Hybridverbindungen werden in BizTalk Services über das kassische Azure-Portal verwaltet.
 
 Informationen zum Erstellen von Hybridverbindungen in Azure-Websites finden Sie unter [Hybridverbindung: Verbinden einer Azure-Website mit einer lokalen Ressource](http://go.microsoft.com/fwlink/p/?LinkId=397538).
 
@@ -352,7 +349,7 @@ Nun, da Sie mit den verschiedenen Registerkarten vertraut sind, können Sie mehr
 ## Weitere Informationen
 - [Hybridverbindungen](integration-hybrid-connection-overview.md)  
 - [BizTalk Services: Editionsübersicht](biztalk-editions-feature-chart.md)  
-- [BizTalk Services: Bereitstellen mit dem Azure-Verwaltungsportal](biztalk-provision-services.md)  
+- [BizTalk Services: Bereitstellen mithilfe des klassischen Azure-Portals](biztalk-provision-services.md)  
 - [BizTalk Services: BizTalk-Dienststatusübersicht](biztalk-service-state-chart.md)  
 - [Wie verwende ich das Azure BizTalk Services SDK?](http://go.microsoft.com/fwlink/p/?LinkID=302335)
 
@@ -362,4 +359,4 @@ Nun, da Sie mit den verschiedenen Registerkarten vertraut sind, können Sie mehr
 [EnabledMetric]: ./media/biztalk-dashboard-monitor-scale-tabs/WABS_EnabledMetric.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

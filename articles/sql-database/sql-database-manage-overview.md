@@ -22,12 +22,12 @@ In diesem Thema werden Tools und Optionen für die Verwaltung von SQL-Datenbanke
 
 
 
-## Azure-Portal
+## Klassisches Azure-Portal
 
 
-Das [Azure-Portal](http://portal.azure.com) ist ein webbasiertes Verwaltungsportal, in dem Sie Datenbanken und logische Server erstellen, aktualisieren und löschen sowie Datenbankaktivitäten überwachen können. Dieses Tool eignet sich hervorragend, wenn Sie gerade erst mit der Verwendung von Azure begonnen haben, nur eine kleine Anzahl von Datenbanken verwalten oder bestimmte Aktionen schnell ausführen müssen.
+Das [klassische Azure-Portal](http://portal.azure.com) ist ein webbasiertes klassisches Portal, in dem Sie Datenbanken und logische Server erstellen, aktualisieren und löschen sowie Datenbankaktivitäten überwachen können. Dieses Tool eignet sich hervorragend, wenn Sie gerade erst mit der Verwendung von Azure begonnen haben, nur eine kleine Anzahl von Datenbanken verwalten oder bestimmte Aktionen schnell ausführen müssen.
 
-Ausführlichere Informationen zum Verwenden des Portals finden Sie unter [Verwalten von SQL-Datenbanken über das Azure-Portal](sql-database-manage-portal.md).
+Ausführlichere Informationen zum Verwenden des Portals finden Sie unter [Verwalten von SQL-Datenbanken über das klassische Azure-Portal](sql-database-manage-portal.md).
 
 ## SQL Server Management Studio und SQL Server Data Tools in Visual Studio
 
@@ -44,4 +44,4 @@ Sie können Befehlszeilentools wie z. B. PowerShell zur Verwaltung von Datenban
 Weitere Informationen zum Verwalten von Azure SQL-Datenbanken mit Befehlszeilentools finden Sie unter [Verwalten von SQL-Datenbanken mit PowerShell](sql-database-command-line-tools.md)
  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -29,7 +29,7 @@ Im Allgemeinen sollten Sie immer Folgendes sicherstellen:
 2. Sie verwenden die neueste Version der Plattform-SDKs. 
 3. Führen Sie Tests auf einem Originalgerät und einem Emulator durch, da bestimmte Probleme nur beim Emulator auftreten. 
 4. Es treten keine der Beschränkungen/Drosselungen für Mobile Engagement auf, die [hier](azure-subscription-service-limits.md) dokumentiert sind.
-5. Wenn Sie keine Verbindung mit dem Engagement Mobile Service Back-End herstellen können oder festzustellen, dass Daten nicht kontinuierlich geladen werden, vergewissern Sie sich [hier](https://azure.microsoft.com/de-DE/status/), dass keine aktiven Servicevorfälle vorliegen.
+5. Wenn Sie keine Verbindung mit dem Engagement Mobile Service Back-End herstellen können oder festzustellen, dass Daten nicht kontinuierlich geladen werden, vergewissern Sie sich [hier](https://azure.microsoft.com/status/), dass keine aktiven Servicevorfälle vorliegen.
 
 ## Probleme beim „Überwachen“
 
@@ -118,4 +118,4 @@ Wenn Sie das Problem nicht selbst beheben können, haben Sie folgende Möglichke
 	- Mobile Engagement SDK-Version (z. B. „Android SDK v2.1.0“)
 	- Fehlerdetails mit der genauen Fehlermeldung und dem Fehlerszenario
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

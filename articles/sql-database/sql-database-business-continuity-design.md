@@ -55,13 +55,13 @@ Für Datenbanken der Standard-Ebene kann keine aktive Georeplikation verwendet w
 
 ##Aktivieren der Georeplikation
 
-Sie können die Georeplikation im Azure-Portal oder durch Aufrufen des entsprechenden REST-API- oder PowerShell-Befehls aktivieren.
+Sie können die Georeplikation im klassischen Azure-Portal oder durch Aufrufen des entsprechenden REST-API- oder PowerShell-Befehls aktivieren.
 
-###Azure-Portal
+###Klassisches Azure-Portal
 
 [AZURE.VIDEO sql-database-enable-geo-replication-in-azure-portal]
 
-1. Melden Sie sich beim [Azure-Portal](https://portal.Azure.com) an.
+1. Melden Sie sich beim [klassischen Azure-Portal](https://portal.Azure.com) an.
 2. Wählen Sie auf der linken Bildschirmseite **DURCHSUCHEN** und dann **SQL-Datenbanken** aus.
 3. Navigieren Sie zu Ihrem Datenbank-Blatt, wählen Sie die **Geo Replication map**, und klicken Sie auf **Configure Geo-Replication**.
 4. Navigieren Sie zum Blatt "Georeplikation". Wählen Sie die Zielregion aus. 
@@ -98,4 +98,4 @@ Diese API ist asynchron. Verwenden Sie nach der Rückgabe die [Get Replication L
 
 Sie sollten beim Entwerfen der Anwendung für die Geschäftskontinuität verschiedene Konfigurationsoptionen berücksichtigen. Die Auswahl hängt von der Bereitstellungstopologie für die Anwendung ab und davon, welche Teile der Anwendungen am anfälligsten für einen Ausfall sind. Anleitungen finden Sie unter [Entwerfen von Cloudlösungen für die Notfallwiederherstellung mithilfe der Georeplikation](sql-database-designing-cloud-solutions-for-disaster-recovery.md).
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -43,7 +43,7 @@ Die Vorgehensweise zum Hinzufügen eines Verweises auf den Mobiles Services-Clie
 	var MobileServiceClient = WindowsAzure.MobileServiceClient;
     var client = new MobileServiceClient('AppUrl', 'AppKey');
 
-Sie müssen den Platzhalter `AppUrl` durch die Anwendungs-URL Ihres mobilen Dienstes und `AppKey` durch den Anwendungsschlüssel ersetzen, den Sie aus dem [Azure-Portal](http://manage.windowsazure.com/) abrufen.
+Sie müssen den Platzhalter `AppUrl` durch die Anwendungs-URL Ihres mobilen Dienstes und `AppKey` durch den Anwendungsschlüssel ersetzen, den Sie aus dem [klassischen Azure-Portal](http://manage.windowsazure.com/) abrufen.
 
 >[AZURE.IMPORTANT]Der Anwendungsschlüssel dient dem Herausfiltern zufälliger Anforderungen an den mobilen Dienst und wird mit der Anwendung verteilt. Da dieser Schlüssel nicht verschlüsselt ist, kann er nicht als sicher angesehen werden. Um die Daten des mobilen Dienstes zu schützen, müssen Sie stattdessen Benutzer vor dem Zugriff authentifizieren. Weitere Informationen finden Sie unter [Gewusst wie: Authentifizieren von Benutzern](#authentication).
 
@@ -504,7 +504,7 @@ Das folgende Beispiel zeigt die Verwendung des Live-SDKs mit WinJS-APIs zum Bere
 	// Start the sign-in process.
 	authenticate();
 
-Dies initialisiert den Live Connect-Client, sendet eine neue Anmelde-Anforderung an das Microsoft-Konto, sendet das zurückgegebene Authentifizierungstoken an Mobile Services und zeigt anschließend Informationen über den angemeldeten Benutzer an. Die App startet erst, wenn die Authentifizierung erfolgreich ist.<!--- //this guidance may be bad from an XSS vulnerability standpoint. We need to find better guidance for this
+Dies initialisiert den Live Connect-Client, sendet eine neue Anmelde-Anforderung an das Microsoft-Konto, sendet das zurückgegebene Authentifizierungstoken an Mobile Services und zeigt anschließend Informationen über den angemeldeten Benutzer an. Die App startet erst, wenn die Authentifizierung erfolgreich ist. <!--- //this guidance may be bad from an XSS vulnerability standpoint. We need to find better guidance for this
 ###Caching the authentication token
 In some cases, the call to the login method can be avoided after the first time the user authenticates. We can use [sessionStorage] or [localStorage] to cache the current user identity the first time they log in and every subsequent time we check whether we already have the user identity in our cache. If the cache is empty or calls fail (meaning the current login session has expired), we still need to go through the login process.
 
@@ -624,7 +624,7 @@ Filter haben noch zahlreiche weitere Funktionen neben der Anpassung von Anforder
 
 ##<a name="hostnames"></a>Gewusst wie: Verwenden von Cross-Origin Resource Sharing (CORS)
 
-Um zu steuern, welche Websites mit Ihrem mobilen Dienst interagieren und Anforderungen senden dürfen, sollten Sie den Hostnamen der Website, die Sie zum Hosten verwenden, der CORS (Cross-Origin Resource Sharing)-Positivliste hinzufügen. Für einen mobilen Dienst mit JavaScript-Back-End konfigurieren Sie die Positivliste auf der Registerkarte "Konfigurieren" im [Azure-Verwaltungsportal](https://manage.windowsazure.com). Sie können bei Bedarf Platzhalter verwenden. Neue mobile Dienste weisen Browser standardmäßig an, nur Zugriff von `localhost` zuzulassen, und Cross-Origin Resource Sharing (CORS) gestattet es dem JavaScript-Code in einem Browser unter einem externen Hostnamen, mit Ihrem mobilen Dienst zu interagieren. Diese Konfiguration wird für WinJS-Anwendungen nicht benötigt.
+Um zu steuern, welche Websites mit Ihrem mobilen Dienst interagieren und Anforderungen senden dürfen, sollten Sie den Hostnamen der Website, die Sie zum Hosten verwenden, der CORS (Cross-Origin Resource Sharing)-Positivliste hinzufügen. Für einen mobilen Dienst mit JavaScript-Back-End konfigurieren Sie die Positivliste auf der Registerkarte „Konfigurieren“ im [klassischen Azure-Portal](https://manage.windowsazure.com). Sie können bei Bedarf Platzhalter verwenden. Neue mobile Dienste weisen Browser standardmäßig an, nur Zugriff von `localhost` zuzulassen, und Cross-Origin Resource Sharing (CORS) gestattet es dem JavaScript-Code in einem Browser unter einem externen Hostnamen, mit Ihrem mobilen Dienst zu interagieren. Diese Konfiguration wird für WinJS-Anwendungen nicht benötigt.
 
 <!-- Anchors. -->
 [What is Mobile Services]: #what-is
@@ -665,4 +665,4 @@ Um zu steuern, welche Websites mit Ihrem mobilen Dienst interagieren und Anforde
 [ASCII control codes C0 and C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
 [Referenz zu OData-Systemabfrageoptionen]: http://go.microsoft.com/fwlink/p/?LinkId=444502
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

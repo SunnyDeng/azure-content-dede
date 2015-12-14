@@ -20,7 +20,7 @@
 
 In diesem Thema wird erläutert, wie Sie eine benutzerdefinierte Java Web-App in [Azure App Service] Web-Apps hochladen. Es enthält Informationen, die für alle Java-Websites oder Web-Apps gelten, und einige Beispiele für spezifische Anwendungen.
 
-Beachten Sie, dass Azure die Möglichkeit bietet, Java Web-Apps mithilfe der Konfigurationsbenutzeroberfläche des Azure-Vorschauportals und des Azure- Marketplace zu erstellen. Informationen hierzu finden Sie unter [Erstellen einer Java Web-App in Azure App Service](web-sites-java-get-started.md). Dieses Tutorial eignet sich für Szenarien, in denen Sie nicht die Portal-Konfigurationsbenutzeroberfläche oder Azure Marketplace verwenden möchten.
+Beachten Sie, dass Azure die Möglichkeit bietet, Java Web-Apps mithilfe der Konfigurationsbenutzeroberfläche des Azure-Portals und des Azure Marketplace zu erstellen. Informationen hierzu finden Sie unter [Erstellen einer Java Web-App in Azure App Service](web-sites-java-get-started.md). Dieses Tutorial eignet sich für Szenarien, in denen Sie nicht die Azure-Portal-Konfigurationsbenutzeroberfläche oder Azure Marketplace verwenden möchten.
 
 ## Konfigurationsrichtlinien
 
@@ -257,4 +257,4 @@ Weitere Informationen zu Java finden Sie im [Java Developer Center](/develop/jav
 <!-- External Links -->
 [Azure App Service]: http://go.microsoft.com/fwlink/?LinkId=529714
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

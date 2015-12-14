@@ -72,11 +72,11 @@ Bei der Authentifizierung mit gemeinsam verwendetem Schlüssel nutzt die Anwendu
 
 > [AZURE.WARNING (Only use Shared Key authentication for testing purposes!) ]Ihr Kontoname und Kontoschlüssel, mit denen Sie vollständigen Lese-/Schreibzugriff auf das zugehörige Storage-Konto erhalten, werden an alle Personen verteilt, die Ihre App herunterladen. Diese Vorgehensweise wird **nicht** empfohlen, da das Risiko besteht, dass Ihr Schlüssel durch nicht vertrauenswürdige Clients beeinträchtigt werden kann.
 
-Wenn Sie die Authentifizierung mit gemeinsam verwendetem Schlüssel nutzen, erstellen Sie eine "Verbindungszeichenfolge". Die Verbindungszeichenfolge besteht aus:
+Wenn Sie die Authentifizierung mit gemeinsam verwendetem Schlüssel nutzen, erstellen Sie eine Verbindungszeichenfolge. Die Verbindungszeichenfolge besteht aus:
 
 - dem **DefaultEndpointsProtocol** – Sie können zwischen HTTP oder HTTPS wählen. Die Verwendung von HTTPS wird jedoch unbedingt empfohlen.
-- dem **Kontoname** – der Name Ihres Storage-Kontos
-- dem **Kontoschlüssel** – Im [Verwaltungsportal](manage.windowsazure.com) finden Sie diese Informationen durch Klicken auf *Zugriffsschlüssel verwalten*. Im [Vorschauportal](portal.azure.com) können Sie auf das Schlüsselsymbol klicken, um diese Informationen zu erhalten.
+- dem **Kontonamen** – der Name Ihres Storage-Kontos
+- dem** Kontoschlüssel** – Navigieren Sie im [Azure-Portal](portal.azure.com) zu Ihrem Speicherkonto, und klicken Sie auf das Symbol **Schlüssel**, um diese Informationen zu erhalten. Wenn Sie das [klassische Azure-Portal](manage.windowsazure.com) verwenden, navigieren Sie zu Ihrem Speicherkonto im Portal und klicken Sie auf **Zugriffsschlüssel verwalten**. 
 
 Und so sieht es in Ihrer Anwendung aus:
 
@@ -137,7 +137,7 @@ Jeder Blob in Azure Storage muss sich in einem Container befinden. Das folgende 
         }];
     }
 
-Sie können überprüfen, ob dies funktioniert, indem Sie im [Portal](portal.azure.com) oder in einem [Speicher-Explorer](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx) überprüfen, ob *newcontainer* sich in der Liste der Container für das Storage-Konto befindet.
+Sie können überprüfen, ob dies funktioniert, indem Sie im [Azure-Portal](portal.azure.com) oder in einem [Speicher-Explorer](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx) überprüfen, ob *newcontainer* sich in der Liste der Container für das Storage-Konto befindet.
 
 ## Festlegen von Containerberechtigungen
 Die Berechtigungen eines Containers werden standardmäßig für den **Privatzugriff** konfiguriert. Container bieten jedoch einige unterschiedliche Optionen für den Containerzugriff:
@@ -202,7 +202,7 @@ Das folgende Beispiel zeigt den Upload eines Blockblobs aus einer NSString. Wenn
          }];
      }
 
-Sie können überprüfen, ob dies funktioniert, indem Sie im [Portal](portal.azure.com) oder in einem [Speicher-Explorer](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx) überprüfen, ob der Container *containerpublic* das Blob *sampleblob* enthält. In diesem Beispiel haben wir einen öffentlichen Container verwendet, sodass Sie die Funktion auch durch das Aufrufen der Blob-URI überprüfen können:
+Sie können überprüfen, ob dies funktioniert, indem Sie im [Azure-Portal](portal.azure.com) oder in einem [Speicher-Explorer](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx) überprüfen, ob der Container *containerpublic* das Blob *sampleblob* enthält. In diesem Beispiel haben wir einen öffentlichen Container verwendet, sodass Sie die Funktion auch durch das Aufrufen der Blob-URI überprüfen können:
 
     https://nameofyourstorageaccount.blob.core.windows.net/containerpublic/sampleblob
 
@@ -352,10 +352,10 @@ Nachdem Sie sich nun mit den Grundlagen des Blob-Speichers vertraut gemacht habe
 - [Azure Storage-REST-API]
 - [Azure Storage-Teamblog]
 
-Stellen Sie Fragen zu dieser Bibliothek in unserem [MSDN Azure-Forum](http://social.msdn.microsoft.com/Forums/windowsazure/de-DE/home?forum=windowsazuredata) oder unter [Stack Overflow](http://stackoverflow.com/questions/tagged/windows-azure-storage+or+windows-azure-storage+or+azure-storage-blobs+or+azure-storage-tables+or+azure-table-storage+or+windows-azure-queues+or+azure-storage-queues+or+azure-storage-emulator+or+azure-storage-files). Vorschläge für Azure Storage-Funktionen können Sie unter [Feedback zu Azure Storage](http://feedback.azure.com/forums/217298-storage) machen.
+Stellen Sie Fragen zu dieser Bibliothek in unserem [MSDN Azure-Forum](http://social.msdn.microsoft.com/Forums/windowsazure/home?forum=windowsazuredata) oder unter [Stack Overflow](http://stackoverflow.com/questions/tagged/windows-azure-storage+or+windows-azure-storage+or+azure-storage-blobs+or+azure-storage-tables+or+azure-table-storage+or+windows-azure-queues+or+azure-storage-queues+or+azure-storage-emulator+or+azure-storage-files). Vorschläge für Azure Storage-Funktionen können Sie unter [Feedback zu Azure Storage](http://feedback.azure.com/forums/217298-storage) machen.
 
 [Azure Storage-iOS-Bibliothek]: https://github.com/azure/azure-storage-ios
-[Azure Storage-REST-API]: http://msdn.microsoft.com/library/azure/gg433040.aspx
+[Azure Storage-REST-API]: https://msdn.microsoft.com/library/azure/dd179355.aspx
 [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -17,26 +17,35 @@
    ms.author="sumukhs"/>
 
 # Konfigurieren zustandsbehafteter Reliable Services
-Die Standardkonfiguration für zustandsbehaftete Reliable Services kann geändert werden. Bearbeiten Sie zu diesem Zweck für jeden Dienst in der Anwendung die Datei "settings.xml", die im Stammverzeichnis des Visual Studio-Pakets im Ordner "Config" generiert wurde.
+Die Standardkonfiguration für zustandsbehaftete Reliable Services kann über das Konfigurationspaket (Config) oder in der Dienstimplementierung (Code) geändert werden.
 
-Die Service Fabric-Laufzeit sucht in der Datei "settings.xml" nach vordefinierten Abschnittsnamen und nutzt die Konfigurationswerte beim Erstellen der zugrunde liegenden Laufzeitkomponenten.
++ **Config**: Die Konfiguration über das Konfigurationspaket erfolgt für jeden Dienst in der Anwendung durch Ändern der Datei „Settings.xml“, die im Stammverzeichnis des Visual Studio-Pakets im Ordner "Config" generiert wurde.
++ **Code**: Die Konfiguration über Code erfolgt durch Überschreiben von StatefulService.CreateReliableStateManager und Erstellen von ReliableStateManager mit einem ReliableStateManagerConfiguration-Objekt mit den entsprechenden Optionen.
 
-> [AZURE.NOTE]Löschen bzw. ändern Sie **NICHT** die Abschnittsnamen der folgenden Konfigurationen in der Datei "settings.xml", die in der Visual Studio-Projektmappe generiert wird.
+Standardmäßig sucht die Service Fabric-Laufzeit in der Datei "Settings.xml" nach vordefinierten Abschnittsnamen und nutzt die Konfigurationswerte beim Erstellen der zugrunde liegenden Laufzeitkomponenten.
+
+> [AZURE.NOTE]Löschen Sie **NICHT** die Abschnittsnamen der folgenden Konfigurationen in der Datei "settings.xml", die in der Visual Studio-Projektmappe generiert wird, sofern Sie die Konfiguration nicht per Code vornehmen möchten. Das Umbenennen des Konfigurationspakets oder der Abschnittsnamen erfordert eine Änderung des Codes beim Konfigurieren von ReliableStateManager.
+
 
 ## Replicator-Sicherheitskonfiguration
 Replicator-Sicherheitskonfigurationen werden verwendet, um den während der Replikation verwendeten Kommunikationskanal zu sichern. Dies bedeutet, dass Dienste nicht ihren gegenseitigen Replikationsdatenverkehr erkennen können. Dadurch wird sichergestellt, dass die Daten nicht nur hochverfügbar, sondern auch sicher sind. Standardmäßig ermöglicht ein leerer Sicherheitskonfigurationsabschnitt keine Replikationssicherheit.
 
-### Name des Abschnitts
+### Standardmäßiger Abschnittsname
 ReplicatorSecurityConfig
+
+> [AZURE.NOTE]Zum Ändern dieses Abschnittsnamens überschreiben Sie den ReplicatorSecuritySectionName-Parameter für den ReliableStateManagerConfiguration-Konstruktor beim Erstellen von ReliableStateManager für diesen Dienst.
+
 
 ## Replicator-Konfiguration
 Replicator-Konfigurationen werden zum Konfigurieren des Replicators verwendet, der für die hohe Zuverlässigkeit des zustandsbehafteten Reliable Service verantwortlich ist. Er repliziert und speichert den Zustand zu diesem Zweck lokal. Die Standardkonfiguration wird von der Visual Studio-Vorlage generiert und sollte ausreichen. Dieser Abschnitt befasst sich mit zusätzlichen Konfigurationen, die zum Optimieren des Replicators verfügbar sind.
 
-### Name des Abschnitts
+### Standardmäßiger Abschnittsname
 ReplicatorConfig
 
-### Konfigurationsnamen
+> [AZURE.NOTE]Zum Ändern dieses Abschnittsnamens überschreiben Sie den ReplicatorSettingsSectionName-Parameter für den ReliableStateManagerConfiguration-Konstruktor beim Erstellen von ReliableStateManager für diesen Dienst.
 
+
+### Konfigurationsnamen
 |Name|Unit|Standardwert|Anmerkungen|
 |----|----|-------------|-------|
 |BatchAcknowledgementInterval|Sekunden|0,05|So lange wartet der Replicator auf dem sekundären Replicator nach dem Empfang eines Vorgangs, bevor er eine Bestätigung an den primären Replicator sendet. Alle anderen Bestätigungen, die für innerhalb dieses Intervalls verarbeitete Vorgänge gesendet werden, werden als eine einzelne Antwort gesendet.|
@@ -50,8 +59,22 @@ ReplicatorConfig
 |SharedLogId|GUID|""|Gibt eine eindeutige GUID zum Identifizieren der freigegebenen Protokolldatei an, die mit diesem Replikat verwendet wird. In der Regel sollten Dienste diese Einstellung nicht verwenden. Wenn jedoch "SharedLogId" festgelegt ist, muss auch "SharedLogPath" angegeben sein.|
 |SharedLogPath|Der vollständig qualifizierte Pfadname|""|Gibt den vollständig qualifizierten Pfad an, in dem die freigegebene Protokolldatei für dieses Replikat erstellt wird. In der Regel sollten Dienste diese Einstellung nicht verwenden. Wenn jedoch "SharedLogPath" festgelegt ist, muss auch "SharedLogId" angegeben sein.|
 
-## Beispiel einer Konfigurationsdatei
 
+## Beispielkonfiguration über Code
+```csharp
+protected override IReliableStateManager CreateReliableStateManager()
+{
+    return new ReliableStateManager(
+        new ReliableStateManagerConfiguration(
+            new ReliableStateManagerReplicatorSettings
+            {
+                RetryInterval = TimeSpan.FromSeconds(3)
+            }));
+}
+```
+
+
+## Beispiel einer Konfigurationsdatei
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <Settings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/2011/01/fabric">
@@ -72,6 +95,7 @@ ReplicatorConfig
 </Settings>
 ```
 
+
 ## Anmerkungen
 "BatchAcknowledgementInterval" steuert die Replikationslatenz. Der Wert "0" ergibt die geringstmögliche Latenz, allerdings auf Kosten des Durchsatzes (da eine größer Anzahl von Bestätigungsnachrichten gesendet und verarbeitet werden muss, von denen jede weniger Bestätigungen enthält). Je größer der Wert für "BatchAcknowledgementInterval" ist, um so höher ist der Gesamtdurchsatz der Replikation, zu Lasten einer höheren Vorgangslatenz. Daraus ergibt sich direkt die Latenz von Transaktions-Commits.
 
@@ -83,4 +107,4 @@ Die Einstellung "MaxRecordSizeInKB" definiert die maximale Größe eines Datensa
 
 Die Einstellungen "SharedLogId" und "SharedLogPath" werden immer zusammen verwendet. Sie ermöglichen einem Dienst, ein separates freigegebenes Protokoll aus dem freigegebenen Standardprotokoll für den Knoten zu verwenden. Zur Optimierung der Effizienz sollten so viele Dienste wie möglich dasselbe freigegebene Protokoll angeben. Freigegebene Protokolldateien sollten auf Datenträgern gespeichert werden, die ausschließlich für die freigegebene Protokolldatei verwendet werden. Dies reduziert Konflikte durch die Bewegungen des Lesekopfs. Eine Änderung sollte nur in seltenen Fällen erforderlich sein.
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

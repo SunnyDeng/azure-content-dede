@@ -1,6 +1,6 @@
 <properties
    pageTitle="Bereitstellung von Apache Spark-Clustern in HDInsight | Microsoft Azure"
-   description="Hier erfahren Sie, wie Sie Spark-Cluster für Azure HDInsight mit dem Azure-Portal, Azure PowerShell, einer Befehlszeile oder dem HDInsight .NET-SDK bereitstellen."
+   description="Hier erfahren Sie, wie Sie Spark-Cluster für Azure HDInsight mit dem klassischen Azure-Portal, Azure PowerShell, einer Befehlszeile oder dem HDInsight .NET-SDK bereitstellen."
    services="hdinsight"
    documentationCenter=""
    authors="nitinme"
@@ -21,7 +21,7 @@
 
 In den meisten Fällen können Sie einen Spark-Cluster mithilfe der Schnellerfassung gemäß der Beschreibung in [Erste Schritte mit Apache Spark in HDInsight](hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql.md) bereitstellen. In bestimmten Szenarien empfiehlt es sich, einen angepassten Cluster bereitstellen. Beispielsweise empfiehlt sich das Anfügen eines externen Metadatenspeichers, um die Hive-Metadaten nach Ablauf der Lebensdauer eines Clusters beizubehalten, oder das Verwenden von zusätzlichem Speicher mit dem Cluster.
 
-Für diese und andere Szenarien enthält dieser Artikel Anweisungen zur Verwendung des Azure-Portals, von Azure PowerShell oder des HDInsight .NET-SDKs, um einen benutzerdefinierten Spark-Cluster in HDInsight bereitzustellen.
+Für diese und andere Szenarien enthält dieser Artikel Anweisungen zur Verwendung des klassischen Azure-Portals, von Azure PowerShell oder des HDInsight .NET-SDKs, um einen benutzerdefinierten Spark-Cluster in HDInsight bereitzustellen.
 
 
 **Voraussetzungen:**
@@ -46,7 +46,7 @@ Informationen zum Erstellen einer SQL-Datenbank finden Sie unter [Erstellen eine
 
 ### Clusteranpassung
 
-Sie können zusätzliche Komponenten installieren oder die Clusterkonfiguration mithilfe von Skripts während der Bereitstellung anpassen. Diese Skripts werden mithilfe der Konfigurationsoption **Skriptaktion** aufgerufen, die vom Azure-Verwaltungsportal, von HDInsight Windows PowerShell-Cmdlets oder dem HDInsight .NET SDK verwendet werden kann. Weitere Informationen finden Sie unter [Anpassen eines HDInsight-Clusters mithilfe von Skriptaktionen][hdinsight-customize-cluster].
+Sie können zusätzliche Komponenten installieren oder die Clusterkonfiguration mithilfe von Skripts während der Bereitstellung anpassen. Diese Skripts werden mithilfe der Konfigurationsoption **Skriptaktion** aufgerufen, die vom klassischen Azure-Portal, von HDInsight Windows PowerShell-Cmdlets oder dem HDInsight .NET SDK verwendet werden kann. Weitere Informationen finden Sie unter [Anpassen eines HDInsight-Clusters mithilfe von Skriptaktionen][hdinsight-customize-cluster].
 
 
 ###Virtuelle Netzwerke
@@ -75,16 +75,16 @@ Weitere Informationen zu Features, Vorteilen und Funktionen von virtuellen Netzw
 >
 > Sie sollten unbedingt ein einziges Subnetz pro Cluster verwenden.
 
-##Verwenden des Azure-Vorschauportals
+##Verwenden des Azure-Portals
 
 Spark-Cluster in HDInsight verwenden als Standarddateisystem einen Azure-BLOB-Speichercontainer. Sie benötigen ein Azure-Speicherkonto im entsprechenden Rechenzentrum, um einen HDInsight-Cluster erstellen zu können. Weitere Informationen finden Sie unter [Verwenden von Azure-Blobspeicher mit HDInsight](hdinsight-hadoop-use-blob-storage.md). Weitere Informationen zum Erstellen eines Azure-Speicherkontos finden Sie unter [Erstellen eines Speicherkontos][azure-create-storageaccount].
 
 **So erstellen Sie einen HDInsight-Cluster mit der benutzerdefinierten Erstellungsoption**
 
-1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
 2. Klicken Sie auf **NEU**, auf **Datenanalyse** und anschließend auf **HDInsight**.
 
-    ![Erstellen eines neuen Clusters im Azure-Vorschauportal](./media/hdinsight-apache-spark-provision-clusters/HDI.CreateCluster.1.png "Erstellen eines neuen Clusters im Azure-Vorschauportal")
+    ![Erstellen eines neuen Clusters im Azure-Portal](./media/hdinsight-apache-spark-provision-clusters/HDI.CreateCluster.1.png "Erstellen eines neuen Clusters im Azure-Portal")
 
 3. Geben Sie einen **Clusternamen** ein, wählen Sie **Spark** als **Clustertyp** aus, und wählen Sie in der Dropdownliste **Clusterbetriebssystem** den Eintrag **Windows Server 2012 R2 Datacenter** aus. Wenn der Clustername verfügbar ist, wird neben dem Namen ein grünes Häkchen angezeigt.
 
@@ -136,7 +136,7 @@ Spark-Cluster in HDInsight verwenden als Standarddateisystem einen Azure-BLOB-Sp
 
 		![Blatt „Benutzerdefinierte Metastores“](./media/hdinsight-apache-spark-provision-clusters/HDI.CreateCluster.7.png "Externe Metastores angeben")
 
-		Klicken Sie für **Vorhandene SQL-Datenbank für Hive-Metadaten verwenden** auf **Ja**, wählen Sie eine SQL-­Datenbank aus, und geben Sie dann den Benutzernamen und das Kennwort für die Datenbank ein. Wiederholen Sie diese Schritte ggf. für **Vorhandene SQL-Datenbank für Oozie-Metadaten verwenden**. Klicken Sie auf **Auswählen**, bis wieder das Blatt **Optionale Konfiguration** angezeigt wird.
+		Klicken Sie für **Vorhandene SQL-Datenbank für Hive-Metadaten verwenden ** auf **Ja**, wählen Sie eine SQL-­Datenbank aus, und geben Sie dann den Benutzernamen und das Kennwort für die Datenbank ein. Wiederholen Sie diese Schritte ggf. für **Vorhandene SQL-Datenbank für Oozie-Metadaten verwenden**. Klicken Sie auf **Auswählen**, bis wieder das Blatt **Optionale Konfiguration** angezeigt wird.
 
 		>[AZURE.NOTE]Die als Metastore verwendete Azure SQL-Datenbank muss für die Konnektivität mit anderen Azure-Diensten konfiguriert sein, inklusive Azure HDInsight. Klicken Sie im Dashboard der Azure SQL-Datenbank mit der rechten Maustaste auf den Servernamen. Dies ist der Server, auf dem die SQL-Datenbankinstanz läuft. Öffnen Sie die Serveransicht, klicken Sie auf **Konfigurieren**, wählen Sie unter **Azure Services** den Wert **Ja** aus, und klicken Sie auf **Speichern**.
 
@@ -152,7 +152,7 @@ Spark-Cluster in HDInsight verwenden als Standarddateisystem einen Azure-BLOB-Sp
 
 		Klicken Sie auf **Auswählen**, bis wieder das Blatt **Neues HDInsight-Cluster** angezeigt wird.
 
-10. Vergewissern Sie sich auf dem Blatt **Neues HDInsight-Cluster**, dass **An Startmenü anheften** ausgewählt ist, und klicken Sie dann auf **Erstellen**. Der Cluster wird erstellt, und dem Startmenü Ihres Azure-Portals wird eine Kachel für den Cluster hinzugefügt. Das Symbol zeigt an, dass der Cluster bereitgestellt wird. Sobald die Bereitstellung abgeschlossen ist, ändert es sich in das HDInsight-Symbol.
+10. Vergewissern Sie sich auf dem Blatt **Neues HDInsight-Cluster**, dass **An Startmenü anheften** ausgewählt ist, und klicken Sie dann auf **Erstellen**. Der Cluster wird erstellt, und dem Startmenü Ihres klassischen Azure-Portals wird eine Kachel für den Cluster hinzugefügt. Das Symbol zeigt an, dass der Cluster bereitgestellt wird. Sobald die Bereitstellung abgeschlossen ist, ändert es sich in das HDInsight-Symbol.
 
 	| Während der Bereitstellung | Nach Abschluss der Bereitstellung |
 	| ------------------ | --------------------- |
@@ -180,7 +180,7 @@ Spark-Cluster in HDInsight verwenden als Standarddateisystem einen Azure-BLOB-Sp
 
 	* **Benutzer** (![Benutzersymbol](./media/hdinsight-apache-spark-provision-clusters/users.png)): Dient zum Festlegen der Berechtigungen für die _Portalverwaltung_ dieses Clusters für andere Benutzer in Ihrem Azure-Abonnement.
 
-		> [AZURE.IMPORTANT]Die hier vorgenommenen Einstellungen betreffen _nur_ den Zugriff und die Berechtigungen für diesen Cluster im Azure-Vorschauportal und haben keine Auswirkung darauf, wer eine Verbindung mit dem HDInsight-Cluster herstellen oder Aufträge übermitteln kann.
+		> [AZURE.IMPORTANT]Die hier vorgenommenen Einstellungen betreffen _nur_ den Zugriff und die Berechtigungen für diesen Cluster im Azure-Portal und haben keine Auswirkung darauf, wer eine Verbindung mit dem HDInsight-Cluster herstellen oder Aufträge übermitteln kann.
 
 	* **Tags** (![Tagsymbol](./media/hdinsight-apache-spark-provision-clusters/tags.png)): Mithilfe von Tags können Sie Schlüssel-Wert-Paare festlegen, um eine benutzerdefinierte Taxonomie für Ihre Clouddienste zu definieren. Sie können z. B. einen Schlüssel mit dem Namen __Projekt__ erstellen und dann einen gemeinsamen Wert für alle mit einem bestimmten Projekt verknüpften Dienste verwenden.
 
@@ -245,4 +245,4 @@ Geben Sie den Spark-Clustertyp an:
 
 [89e2276a]: /documentation/articles/hdinsight-use-sqoop/ "Verwenden von Sqoop mit HDInsight"
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

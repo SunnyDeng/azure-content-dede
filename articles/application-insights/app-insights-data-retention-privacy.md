@@ -59,6 +59,10 @@ Zu Telemetriedaten zählt Folgendes:
 
 Die Anzahl von Benutzern und Sitzungen sind nicht im Kontingent für Preisangaben enthalten.
 
+*Was geschieht, wenn meine App, das Pro-Sekunde-Volumen überschreitet?*
+
+* Die Datenmenge, die Ihre App sendet, wird minütlich gemessen. Wenn sie die pro Sekunde, über eine Minute gemittelt Datenmenge überschreitet, lehnt der Server einige Anforderungen ab. Einige Versionen des SDK versuchen in diesem Fall, die Daten erneut zu senden, sodass über Minuten hinweg die vielfache Menge gesendet wird; andere wie beispielsweise JavaScript SDK löschen die abgelehnten Daten einfach.
+
 *Woher weiß ich, wie viele Datenpunkte meine App sendet?*
 
 * Öffnen Sie "Settings/Quota and Pricing", um das Diagramm mit dem Datenvolumen anzuzeigen.
@@ -66,7 +70,7 @@ Die Anzahl von Benutzern und Sitzungen sind nicht im Kontingent für Preisangabe
 
 *Wie kann ich die von meiner App gesendete Datenmenge reduzieren?*
 
-* Verwenden Sie [Stichproben](app-insights-sampling.md). Diese Technologie verringert die Datenrate, ohne die Metriken zu verzerren und ohne die Navigation zwischen verwandten Elementen bei der Suche zu stören.
+* Verwenden Sie [Stichproben](app-insights-sampling.md). Diese Technologie verringert die Datenrate, ohne die Metriken zu verzerren und ohne die Navigation zwischen verwandten Elementen bei der Suche zu stören. Die adaptive Stichprobenerstellung wird von ASP.NET SDK-2.0.0-beta3 standardmäßig aktiviert.
 * [Deaktivieren Sie Telemetriedaten-Sammlungsmodule](app-insights-configuration-with-applicationinsights-config.md), die Sie nicht benötigen.
 
 
@@ -245,7 +249,7 @@ Dieses Produkt enthält GeoLite2-Daten, die von MaxMind erstellt wurden und unte
 [azure]: ../insights-perf-analytics.md
 [client]: app-insights-javascript.md
 [config]: app-insights-configuration-with-applicationinsights-config.md
-[greenbrown]: app-insights-start-monitoring-app-health-usage.md
+[greenbrown]: app-insights-asp-net.md
 [java]: app-insights-java-get-started.md
 [platforms]: app-insights-platforms.md
 [pricing]: http://azure.microsoft.com/pricing/details/application-insights/
@@ -255,4 +259,4 @@ Dieses Produkt enthält GeoLite2-Daten, die von MaxMind erstellt wurden und unte
 
  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

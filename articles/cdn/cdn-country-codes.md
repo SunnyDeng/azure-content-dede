@@ -3,7 +3,7 @@
 	description="Das Feature ";Länderfilter"; verwendet Landeskennzahlen, um die Länder zu definieren, von denen aus eine Anforderung für ein sicheres Verzeichnis zugelassen oder blockiert wird." 
 	services="cdn" 
 	documentationCenter=".NET" 
-	authors="juliako" 
+	authors="camsoper" 
 	manager="dwrede" 
 	editor=""/>
 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/01/2015" 
-	ms.author="juliako"/>
+	ms.date="12/02/2015" 
+	ms.author="casoper"/>
 
 #Landeskennzahlen
 
@@ -268,4 +268,4 @@ Das Feature **Länderfilter** verwendet Landeskennzahlen, um die Länder zu defi
 | ZM | Sambia | |
 | ZW | Simbabwe | |
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

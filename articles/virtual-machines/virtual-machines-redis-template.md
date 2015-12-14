@@ -348,7 +348,7 @@ Während der Bereitstellung wird etwa Folgendes angezeigt:
 
 Während und nach der Bereitstellung können Sie alle Anforderungen überprüfen, die während der Bereitstellung vorgenommen wurden, einschließlich der aufgetretenen Fehler.
 
-Öffnen Sie dazu das [Azure-Vorschauportal](https://portal.azure.com), und gehen Sie folgendermaßen vor:
+Wechseln Sie dazu in das [Azure-Portal](https://portal.azure.com), und gehen Sie folgendermaßen vor:
 
 - Klicken Sie auf der linken Navigationsleiste auf **Durchsuchen**, scrollen Sie nach unten, und klicken Sie auf **Ressourcengruppen**.
 - Wählen Sie die gerade erstellte Ressourcengruppe aus, um das Blatt "Ressourcengruppe" anzuzeigen.
@@ -670,4 +670,4 @@ Im Wesentlichen empfiehlt dieser Ansatz:
 
 Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](../resource-group-authoring-templates.md).
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -66,7 +66,7 @@ Wenn Sie den Azure Batch-Dienst verwenden, nutzen Sie die folgenden Ressourcen:
 
 ### <a name="account"></a>Konto
 
-Ein Batch-Konto ist eine eindeutig identifizierte Entität innerhalb des Batch-Diensts. Die gesamte Verarbeitung ist einem Batch-Konto zugeordnet. Beim Ausführen von Vorgängen mit dem Batch-Dienst benötigen Sie sowohl den Kontonamen als auch den Kontoschlüssel. Zum Erstellen eines Batch-Kontos finden Sie weitere Informationen unter [Erstellen und Verwalten eines Azure Batch-Kontos im Azure-Vorschauportal](batch-account-create-portal.md).
+Ein Batch-Konto ist eine eindeutig identifizierte Entität innerhalb des Batch-Diensts. Die gesamte Verarbeitung ist einem Batch-Konto zugeordnet. Beim Ausführen von Vorgängen mit dem Batch-Dienst benötigen Sie sowohl den Kontonamen als auch den Kontoschlüssel. Weitere Informationen zum Erstellen eines Batch-Kontos finden Sie unter [Erstellen und Verwalten eines Azure Batch-Kontos im Azure-Portal](batch-account-create-portal.md).
 
 ### <a name="computenode"></a>Computeknoten
 
@@ -354,4 +354,4 @@ Jeder Knoten in einem Pool erhält eine eindeutige ID, und der Knoten, auf dem e
 [rest_update_job]: https://msdn.microsoft.com/library/azure/dn820162.aspx
 [rest_rdp]: https://msdn.microsoft.com/library/azure/dn820120.aspx
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

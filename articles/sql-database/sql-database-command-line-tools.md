@@ -13,14 +13,14 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/08/2015" 
-	ms.author="sstein; vinsonyu"/>
+	ms.date="12/01/2015" 
+	ms.author="sstein"/>
 
 # Verwalten von Azure SQL-Datenbanken mit PowerShell
 
 
 > [AZURE.SELECTOR]
-- [Azure Preview Portal](sql-database-manage-portal.md)
+- [Azure Portal](sql-database-manage-portal.md)
 - [Transact-SQL (SSMS)](sql-database-manage-azure-ssms.md)
 - [PowerShell](sql-database-command-line-tools.md)
 
@@ -36,7 +36,7 @@ Zur Ausführung von PowerShell-Cmdlets muss Azure PowerShell installiert sein un
 
 ## Konfigurieren Ihrer Anmeldeinformationen
 
-Um PowerShell-Cmdlets für Ihr Azure-Abonnement ausführen zu können, müssen Sie zunächst den Zugriff auf Ihr Azure-Konto herstellen. Führen Sie Folgendes aus. Es wird eine Anmeldeseite angezeigt, auf der Sie Ihre Anmeldeinformationen eingeben müssen. Verwenden Sie die E-Mail-Adresse und das Kennwort für die Anmeldung beim Azure-Portal.
+Um PowerShell-Cmdlets für Ihr Azure-Abonnement ausführen zu können, müssen Sie zunächst den Zugriff auf Ihr Azure-Konto herstellen. Führen Sie Folgendes aus. Es wird eine Anmeldeseite angezeigt, auf der Sie Ihre Anmeldeinformationen eingeben müssen. Verwenden Sie die E-Mail-Adresse und das Kennwort für die Anmeldung beim klassischen Azure-Portal.
 
 	Add-AzureAccount
 
@@ -115,7 +115,7 @@ Sie können auch einen Server mit dem Befehl [Remove-AzureRMSqlServer](https://m
 Wenn Sie diese oder ähnliche Azure SQL-Ressourcen erneut erstellen, haben Sie folgende Möglichkeiten:
 
 - Speichern als PowerShell-Skriptdatei ("*.ps1")
-- Speichern als Azure Automation-Runbook im Bereich "Automation" des Azure-Verwaltungsportals 
+- Speichern als Azure Automation-Runbook im Bereich „Automation“ des klassischen Azure-Portals 
 
 ## Nächste Schritte
 
@@ -131,4 +131,4 @@ Kombinieren und Automatisieren von Befehlen. Ersetzen Sie z. B. alles innerhalb
 
 - [Azure SQL-Datenbank-Cmdlets](https://msdn.microsoft.com/library/azure/mt574084.aspx)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

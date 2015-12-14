@@ -22,7 +22,7 @@ Wenn Sie ein neues Azure Media Services-Konto erstellen, müssen Sie auch ein Az
 
 Wenn ein neues Speicherkonto erstellt wird, generiert Azure zwei 512-Bit-Speicherzugriffsschlüssel, die zum Authentifizieren des Zugriffs auf das Speicherkonto verwendet werden. Um Ihre Speicherverbindungen sicherer zu gestalten, sollten Sie Ihre Speicherzugriffsschlüssel in regelmäßigen Abständen neu generieren und austauschen. Zwei Zugriffsschlüssel (primär und sekundär) werden zugewiesen, damit Sie Verbindungen zum Speicherkonto mit einem Zugriffsschlüssel aufrechterhalten können, während Sie den anderen Zugriffsschlüssel neu generieren. Dieser Vorgang wird als Austausch der Zugriffsschlüssel bezeichnet.
 
-Media Services ist auf einen der Speicherschlüssel angewiesen (primär oder sekundär). Insbesondere hängen die Locator, mit denen Ihre Assets gestreamt oder heruntergeladen werden, vom Zugriffsschlüssel ab. Beim Austausch der Speicherzugriffsschlüssel müssen Sie auch sicherstellen, dass Ihre Locator aktualisiert werden, damit keine Unterbrechungen Ihres Streamingdiensts auftreten.
+Media Services ist auf einen der Speicherschlüssel angewiesen (primär oder sekundär). Insbesondere hängen die Locator, mit denen Ihre Medienobjekte gestreamt oder heruntergeladen werden, vom Zugriffsschlüssel ab. Beim Austausch der Speicherzugriffsschlüssel müssen Sie auch sicherstellen, dass Ihre Locator aktualisiert werden, damit keine Unterbrechungen Ihres Streamingdiensts auftreten.
 
 >[AZURE.NOTE]Nachdem Sie einen Speicherschlüssel neu generiert haben, müssen Sie diese Aktualisierung mit Media Services synchronisieren.
 
@@ -39,11 +39,11 @@ Beginnen Sie mit dem Neugenerieren des sekundären Speicherschlüssels. Standard
 
 Aktualisieren Sie Media Services, damit der sekundäre Speicherzugriffsschlüssel verwendet wird. Sie können eine der beiden folgenden Methoden anwenden, um den neu generierten Speicherschlüssel mit Media Services zu synchronisieren.
 
-- Im Azure-Portal: Wählen Sie Ihr Media Services-Konto aus, und klicken Sie unten im Portalfenster auf das Symbol "SCHLÜSSEL VERWALTEN". Je nachdem, welcher Speicherschlüssel mit Media Services synchronisiert werden soll, klicken Sie auf die Schaltfläche für das Synchronisieren des primären oder des sekundären Schlüssels. Verwenden Sie in diesem Fall den sekundären Schlüssel.
+- Im klassischen Azure-Portal: Wählen Sie Ihr Media Services-Konto aus, und klicken Sie unten im Portalfenster auf das Symbol "SCHLÜSSEL VERWALTEN". Je nachdem, welcher Speicherschlüssel mit Media Services synchronisiert werden soll, klicken Sie auf die Schaltfläche für das Synchronisieren des primären oder des sekundären Schlüssels. Verwenden Sie in diesem Fall den sekundären Schlüssel.
 
 - Mit der Media Services REST-API.
 
-	Im folgenden Codebeispiel wird veranschaulicht, wie die Abfrage "https://endpoint/<subscriptionId>/services/mediaservices/Accounts/<accountName>/StorageAccounts/<storageAccountName>/Key" erstellt wird, um den angegebenen Speicherschlüssel mit Media Services zu synchronisieren. In diesem Fall wird der Wert des sekundären Speicherschlüssels verwendet. Weitere Informationen finden Sie unter [Vorgehensweise: Verwenden der Media Services-Verwaltungs-REST-API](http://msdn.microsoft.com/library/azure/dn167656.aspx).
+Im folgenden Codebeispiel wird veranschaulicht, wie die Abfrage "https://endpoint/<subscriptionId>/services/mediaservices/Accounts/<accountName>/StorageAccounts/<storageAccountName>/Key" erstellt wird, um den angegebenen Speicherschlüssel mit Media Services zu synchronisieren. In diesem Fall wird der Wert des sekundären Speicherschlüssels verwendet. Weitere Informationen finden Sie unter [Vorgehensweise: Verwenden der Media Services-Verwaltungs-REST-API](http://msdn.microsoft.com/library/azure/dn167656.aspx).
  
 		public void UpdateMediaServicesWithStorageAccountKey(string mediaServicesAccount, string storageAccountName, string storageAccountKey)
 		{
@@ -159,4 +159,4 @@ Gehen Sie auf die gleiche Weise wie in [Schritt 3](media-services-roll-storage-a
 
 Wir möchten folgenden Personen für ihre Beiträge zur Erstellung dieses Dokuments danken: Cenk Dingiloglu, Milan Gada, Seva Titov.
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

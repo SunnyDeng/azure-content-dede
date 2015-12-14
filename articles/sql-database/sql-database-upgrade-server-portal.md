@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Durchführen eines Upgrades auf SQL-Datenbank V12 mithilfe des Azure-Vorschauportals | Microsoft Azure" 
-	description="Erläutert das Upgrade auf Azure SQL-Datenbank V12, einschließlich der Aktualisierung von Web- und Business-Datenbanken, sowie das Upgrade eines V11-Servers mit direkter Migration der Datenbanken in einen Pool für elastische Datenbanken mithilfe des Azure-Vorschauportals." 
+	pageTitle="Durchführen eines Upgrades auf SQL-Datenbank V12 mithilfe des Azure-Portals | Microsoft Azure" 
+	description="Erläutert das Upgrade auf Azure SQL-Datenbank V12, einschließlich der Aktualisierung von Web- und Business-Datenbanken, sowie das Upgrade eines V11-Servers mit direkter Migration der Datenbanken in einen Pool für elastische Datenbanken mithilfe des Azure-Portals." 
 	services="sql-database" 
 	documentationCenter="" 
 	authors="stevestein" 
@@ -13,19 +13,19 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-management" 
-	ms.date="11/11/2015" 
+	ms.date="12/01/2015" 
 	ms.author="sstein"/>
 
 
-# Durchführen eines Upgrades auf SQL-Datenbank V12 mithilfe des Azure-Vorschauportals
+# Upgrade auf Azure SQL-Datenbank V12 mithilfe des Azure-Portals
 
 
 > [AZURE.SELECTOR]
-- [Azure preview portal](sql-database-upgrade-server-portal.md)
+- [Azure portal](sql-database-upgrade-server-portal.md)
 - [PowerShell](sql-database-upgrade-server-powershell.md)
 
 
-SQL-Datenbank V12 ist die neueste Version, sodass eine Aktualisierung auf SQL-Datenbank V12 empfohlen wird. SQL-Datenbank V12 verfügt über viele [Vorteile gegenüber der vorherigen Version](sql-database-v12-whats-new.md) einschließlich:
+SQL-Datenbank V12 ist die neueste Version, sodass eine Aktualisierung auf SQL-Datenbank V12 empfohlen wird. SQL-Datenbank V12 verfügt über viele [Vorteile gegenüber der vorherigen Version](sql-database-v12-whats-new.md), einschließlich:
 
 - Höhere Kompatibilität mit SQL Server.
 - Verbesserte Premium-Leistung und neue Leistungsstufen.
@@ -54,7 +54,7 @@ Nach dem Upgrade auf V12 stehen [Empfehlungen zur Dienstebene](sql-database-serv
 
 ## Starten des Upgrades
 
-1. Navigieren Sie im [Azure-Vorschauportal](http://portal.azure.com/) zu dem Server, den Sie aktualisieren möchten. Wählen Sie dazu **ALLE DURCHSUCHEN** > **SQL-Server** und dann den gewünschten Server aus.
+1. Navigieren Sie im [Azure-Portal](http://portal.azure.com/) zu dem Server, den Sie aktualisieren möchten. Wählen Sie dazu **ALLE DURCHSUCHEN** > **SQL-Server** und dann den gewünschten Server aus.
 2. Wählen Sie **Letzte Aktualisierung der SQL-Datenbank** aus, und wählen Sie dann **Upgrade für diesen Server ausführen** aus.
 
       ![Server upgraden][1]
@@ -99,7 +99,7 @@ Nachdem alle Datenbanken auf dem Server qualifiziert sind, können Sie das Upgra
 
 ## Verschieben der Datenbanken in einen Pool für elastische Datenbanken
 
-Wechseln Sie im [Azure-Vorschauportal](https://ms.portal.azure.com/) zum V12-Server, und klicken Sie auf **Pool hinzufügen**.
+Wechseln Sie im [Azure-Portal](https://portal.azure.com/) zum V12-Server und klicken Sie auf **Pool hinzufügen**.
 
 Oder
 
@@ -168,4 +168,4 @@ Sie können z. B. eine E-Mail-Benachrichtigung für den "DTU Prozentsatz" festl
 [6]: ./media/sql-database-upgrade-server-portal/recommendations.png
 [7]: ./media/sql-database-upgrade-server-portal/new-elastic-pool.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

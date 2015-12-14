@@ -16,14 +16,14 @@
 	ms.date="10/21/2015" 
 	ms.author="twounder"/>
  
-# Erste Schritte der Transparent Data Encryption (TDE)
+# Erste Schritte mit Transparent Data Encryption (TDE)
 > [AZURE.SELECTOR]
-- [Azure Portal](sql-data-warehouse-encryption-tde.md)
+- [Azure Classic Portal](sql-data-warehouse-encryption-tde.md)
 - [TSQL](sql-data-warehouse-encryption-tde-tsql.md)
 
 Azure SQL Data Warehouse Transparent Data Encryption (TDE) ist ein zusätzlicher Schutz vor der Bedrohung durch schädliche Aktivitäten. Hierzu werden die Schritte für die Echtzeitverschlüsselung und -entschlüsselung der Datenbank, die dazugehörigen Backups und die Transaktionsprotokolldateien im Ruhezustand ausgeführt, ohne dass Änderungen an der Anwendung erforderlich sind.
 
-TDE verschlüsselt die Speicherung einer gesamten Datenbank, indem ein symmetrischer Schlüssel verwendet wird, der als Datenbankverschlüsselungsschlüssel bezeichnet wird. In SQL-Datenbank wird der Datenbankverschlüsselungsschlüssel mit einem integrierten Serverzertifikat geschützt. Das integrierte Serverzertifikat ist für jeden SQL-Datenbank-Server eindeutig. Microsoft führt für diese Zertifikate nach spätestens 90 Tagen automatisch eine Rotation durch. Eine allgemeine Beschreibung von TDE finden Sie unter [Transparent Data Encryption (TDE)].
+TDE verschlüsselt die Speicherung einer gesamten Datenbank, indem ein symmetrischer Schlüssel verwendet wird, der als Datenbankverschlüsselungsschlüssel bezeichnet wird. In SQL-Datenbank wird der Datenbankverschlüsselungsschlüssel mit einem integrierten Serverzertifikat geschützt. Das integrierte Serverzertifikat ist für jeden SQL-Datenbank-Server eindeutig. Microsoft führt für diese Zertifikate nach spätestens 90 Tagen automatisch eine Rotation durch. Eine allgemeine Beschreibung von TDE finden Sie unter [Transparente Datenverschlüsselung (TDE)].
 
 ##Aktivieren der Verschlüsselung
 
@@ -66,11 +66,11 @@ Das Ergebnis ```1``` steht für eine verschlüsselte Datenbank, und mit ```0``` 
 
  
 <!--Anchors-->
-[Transparent Data Encryption (TDE)]: https://msdn.microsoft.com/de-DE/library/bb934049.aspx
+[Transparente Datenverschlüsselung (TDE)]: https://msdn.microsoft.com/de-DE/library/bb934049.aspx
 
 
 <!--Image references-->
 
 <!--Link references-->
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

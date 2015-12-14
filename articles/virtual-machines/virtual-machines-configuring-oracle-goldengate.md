@@ -36,7 +36,7 @@ Das Lernprogramm geht zudem davon aus, dass Sie die folgenden Voraussetzungen be
 
 - Sie haben zwei virtuelle Computer (VMs) in Azure mit dem von der Plattform bereitgestellten Abbild von Oracle Enterprise Edition auf Windows Server erstellt. Weitere Informationen finden Sie unter [Erstellen eines virtuellen Oracle-Datenbank 12c-Computers in Azure](#z3dc8d3c097cf414e9048f7a89c026f80) und [Azure Virtual Machines](http://azure.microsoft.com/documentation/services/virtual-machines/). Stellen Sie sicher, dass sich die virtuellen Computer im [gleichen Clouddienst](virtual-machines-load-balance.md) und im gleichen [virtuellen Netzwerk](http://azure.microsoft.com/documentation/services/virtual-network/) befinden, um sicherzustellen, dass sie über die permanente private IP-Adresse aufeinander zugreifen können.
 
-- Sie haben im Azure-Portal die Namen der virtuellen Computer für Standort A als „MachineGG1“ und als „MachineGG2“ für Standort B festgelegt.
+- Sie haben im klassischen Azure-Portal die Namen der virtuellen Computer für Standort A als „MachineGG1“ und als „MachineGG2“ für Standort B festgelegt.
 
 - Sie haben die Testdatenbanken "TestGG1" für Standort A und "TestGG2" für Standort B erstellt.
 
@@ -95,7 +95,7 @@ Nachfolgende Versionen von Oracle-Datenbanken und Oracle-GoldenGate enthalten m�
 ##1\. Einrichten der Datenbank an Standort A und Standort B
 In diesem Abschnitt wird erläutert, wie Sie die Datenbankvoraussetzungen für Standort A und Standort B ausführen. Sie müssen alle Schritte in diesem Abschnitt an beiden Standorten ausführen: Standort A und Standort B.
 
-Stellen Sie zunächst über das Azure-Portal eine Remotedesktopverbindung mit Standort A und Standort B her. Öffnen Sie eine Windows-Eingabeaufforderung, und erstellen Sie ein Basisverzeichnis für Oracle-GoldenGate-Setup-Dateien:
+Verwenden Sie zuerst Remotedesktop an Standort A und Standort B über das klassische Azure-Portal. Öffnen Sie eine Windows-Eingabeaufforderung, und erstellen Sie ein Basisverzeichnis für Oracle-GoldenGate-Setup-Dateien:
 
 	mkdir C:\OracleGG
 
@@ -183,7 +183,7 @@ Erstellen und aktivieren Sie als Nächstes einen Datenbanktrigger, INVENTORY\_CD
 ##2\. Vorbereiten von Standort A und Standort B für die Datenbankreplikation
 Dieser Abschnitt beschreibt das Vorbereiten von Standort A und Standort B für die Datenbankreplikation. Sie müssen alle Schritte in diesem Abschnitt an beiden Standorten ausgeführt: Standort A und Standort B.
 
-Verwenden Sie zuerst Remotedesktop an Standort A und Standort B über das Azure-Portal. Wechseln Sie die Datenbank unter Verwendung der SQL* Plus-Eingabeaufforderung in den Archivelog-Modus:
+Verwenden Sie zuerst Remotedesktop an Standort A und Standort B über das klassische Azure-Portal. Wechseln Sie die Datenbank unter Verwendung der SQL* Plus-Eingabeaufforderung in den Archivelog-Modus:
 
 	sql>shutdown immediate
 	sql>startup mount
@@ -285,7 +285,7 @@ Starten Sie den Manager-Prozess:
 
 ###Erstellen von Extrahierungs- und Datapump-Prozessen an Standort A und Standort B
 
-Sie müssen die Prozesse „Extrahieren“ und „Datapump“ an Standort A und Standort B erstellen. Stellen Sie über das Azure-Portal eine Remotedesktopverbindung mit Standort A und Standort B her. GGSCI-Befehlsinterpreterfenster öffnen. Führen Sie die folgenden Befehle an Standort A aus:
+Sie müssen die Prozesse „Extrahieren“ und „Datapump“ an Standort A und Standort B erstellen. Stellen Sie über das klassische Azure-Portal eine Remotedesktopverbindung mit Standort A und Standort B her. GGSCI-Befehlsinterpreterfenster öffnen. Führen Sie die folgenden Befehle an Standort A aus:
 
 	GGSCI (MachineGG1) 14> add extract ext1 tranlog begin now
 	EXTRACT added.
@@ -602,4 +602,4 @@ Remotedesktop an Standort A und überprüfen Sie, ob die Replikation stattgefund
 ##Zusätzliche Ressourcen
 [Oracle Virtual Machine images for Azure (Images von virtuellen Oracle-Computern für Azure; in englischer Sprache)](virtual-machines-oracle-list-oracle-virtual-machine-images.md)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

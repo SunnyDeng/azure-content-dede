@@ -18,7 +18,7 @@
 
 
 #Erste Schritte mit Azure SQL-Datensynchronisierung (Vorschauversion)
-In diesem Lernprogramm lernen sie die Grundlagen der Azure SQL-Datensynchronisierung mit dem Azure-Verwaltungsportal kennen.
+In diesem Tutorial lernen Sie die Grundlagen der Azure SQL-Datensynchronisierung mit dem klassischen Azure-Portal kennen.
 
 Für dieses Lernprogramm wird minimale vorherige Erfahrung mit SQL Server und Azure SQL Database vorausgesetzt. In diesem Lernprogramm erstellen Sie eine hybride (aus SQL Server- und SQL Database-Instanzen bestehende) Synchronisierungsgruppe, die vollständig gemäß einem von Ihnen festgelegten Zeitplan konfiguriert und synchronisiert wird.
 
@@ -26,7 +26,7 @@ Für dieses Lernprogramm wird minimale vorherige Erfahrung mit SQL Server und Az
 
 ## Schritt 1: Herstellen einer Verbindung zur Azure SQL-Datenbank
 
-1. Melden Sie sich beim [Verwaltungsportal](http://manage.windowsazure.com) an.
+1. Melden Sie sich beim [klassischen Portal](http://manage.windowsazure.com) an.
 
 2. Klicken Sie im linken Bereich auf **SQL DATABASES**.
 
@@ -90,7 +90,7 @@ Registrieren Sie nach der Installation des Client-Agents jede lokale SQL Server-
 <a id="StartNewSGWizard"></a>
 ### Schritt 4a: Starten des Assistenten "Neue Synchronisierungsgruppe"
 
-1.	Kehren sie zum [Verwaltungsportal](http://manage.windowsazure.com) zurück.
+1.	Kehren Sie zum [klassischen Portal](http://manage.windowsazure.com) zurück.
 2.	Klicken Sie auf **SQL DATABASES**.
 3.	Klicken Sie unten auf der Seite auf **ADD SYNC**, und wählen Sie dann in der Schublade "Neue Synchronisierungsgruppe" aus.
 
@@ -155,7 +155,7 @@ Wiederholen Sie diesen Schritt für jede zusätzliche Datenbank, die Sie zur Syn
 
 In Azure SQL Data Sync können Sie Tabellen und Spalten zur Synchronisierung auswählen. Wenn Sie eine Spalte so filtern möchten, dass nur Zeilen mit bestimmten Werten (z B. Alter>=65) synchronisiert werden, verwenden Sie das Portal SQL Data Sync in Azure und die Dokumentation zum Auswählen der zu synchronisierenden Tabellen, Spalten und Zeilen, um festzulegen, welche Daten synchronisiert werden sollen.
 
-1.	Kehren sie zum [Verwaltungsportal](http://manage.windowsazure.com) zurück.
+1.	Kehren Sie zum [klassischen Portal](http://manage.windowsazure.com) zurück.
 2.	Klicken Sie auf **SQL DATABASES**.
 3.	Klicken Sie auf die Registerkarte **SYNC**.
 4.	Klicken Sie auf den Namen dieser Synchronisierungsgruppe.
@@ -176,7 +176,7 @@ In Azure SQL Data Sync können Sie Tabellen und Spalten zur Synchronisierung aus
 
 Sie können eine Synchronisierungsgruppe immer synchronisieren, indem Sie unten auf der Data Sync-Angebotsseite auf SYNC klicken. Wenn Sie möchten, dass eine Synchronisierungsgruppe gemäß einem Zeitplan synchronisiert wird, konfigurieren Sie diese Synchronisierungsgruppe.
 
-1.	Kehren sie zum [Verwaltungsportal](http://manage.windowsazure.com) zurück.
+1.	Kehren Sie zum [klassischen Portal](http://manage.windowsazure.com) zurück.
 2.	Klicken Sie auf **SQL DATABASES**.
 3.	Klicken Sie auf die Registerkarte **SYNC**.
 4.	Klicken Sie auf den Namen dieser Synchronisierungsgruppe.
@@ -202,4 +202,4 @@ Zusätzliche Informationen über SQL Database und SQL Data Sync finden Sie hier:
 
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

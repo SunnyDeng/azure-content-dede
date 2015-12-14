@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="08/12/2015"
+   ms.date="12/02/2015"
    ms.author="alkohli" />
 
 # Austauschen des EBOD-Controllers eines StorSimple-Geräts
@@ -38,7 +38,7 @@ Bevor Sie das fehlerhafte EBOD-Controllermodul in Ihrem StorSimple-Gerät austau
 
 #### So bauen Sie ein EBOD-Modul aus
 
-1. Öffnen Sie das Verwaltungsportal.
+1. Öffnen Sie das klassische Azure-Portal.
 
 2. Navigieren Sie zu **Geräte** > **Wartung** > **Hardwarestatus**, und stellen Sie sicher, dass der Status der LED für das aktive EBOD-Controllermodul grün und der LED für das fehlerhafte EBOD-Controllermodul rot ist.
 
@@ -107,4 +107,4 @@ Im folgenden Verfahren sowie in der Tabelle wird erläutert, wie ein EBOD-Contro
 
 Erfahren Sie mehr zum [Austauschen von StorSimple-Hardwarekomponenten](storsimple-hardware-component-replacement.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

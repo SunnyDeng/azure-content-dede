@@ -500,8 +500,7 @@ In diesem Schritt laden Sie eine Datei mit Informationen zu Ihrem Abonnement her
 
 	Dieser Befehl startet einen Browser und navigiert zur Downloadseite. Melden Sie sich bei entsprechender Aufforderung mit dem Konto an, dass Ihrem Azure-Abonnement zugeordnet ist.
 
-	<!-- ![The download page][download-publishing-settings] -->
-	Der Dateidownload beginnt automatisch. Klicken Sie andernfalls auf den Link oben auf der Seite, um die Datei manuell herunterzuladen. Speichern Sie die Datei, und notieren Sie den Dateipfad.
+	<!-- ![The download page][download-publishing-settings] -->Der Dateidownload beginnt automatisch. Klicken Sie andernfalls auf den Link oben auf der Seite, um die Datei manuell herunterzuladen. Speichern Sie die Datei, und notieren Sie den Dateipfad.
 
 2. Geben Sie den folgenden Befehl ein, um die Einstellungen zu importieren:
 
@@ -600,7 +599,6 @@ Die Schritte in diesem Artikel beschreiben zwar die Verwendung des Tabellendiens
 
 ## Änderungen
 * Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des Azure-Portals gegenüber dem Azure-Vorschauportal finden Sie unter [Referenz zur Navigation im Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715)
 
 [Erstellen und Bereitstellen einer Node.js-Web-App in Azure App Service]: web-sites-nodejs-develop-deploy-mac.md
 [Continuous deployment using GIT in Azure App Service]: web-sites-publish-source-control.md
@@ -642,4 +640,4 @@ Die Schritte in diesem Artikel beschreiben zwar die Verwendung des Tabellendiens
 [Create and deploy a Node.js application to an Azure Web Site]: web-sites-nodejs-develop-deploy-mac.md
  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

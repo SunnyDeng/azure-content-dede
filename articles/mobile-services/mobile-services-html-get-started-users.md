@@ -132,9 +132,7 @@ Im nächsten Lernprogramm [Autorisieren von Benutzern mit Skripts] werden Sie de
 <!-- URLs. -->
 [Erste Schritte mit Mobile Services]: mobile-services-html-get-started.md
 [Autorisieren von Benutzern mit Skripts]: mobile-services-javascript-backend-service-side-authorization.md
-
-[Azure Management Portal]: https://manage.windowsazure.com/
 [Mobile Services HTML/JavaScript How-to Conceptual Reference]: mobile-services-html-how-to-use-client-library.md
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

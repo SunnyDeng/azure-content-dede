@@ -132,7 +132,7 @@ Es gibt viele gute Gründe, warum Kunden jetzt ein Upgrade von V11 auf Azure SQL
 Eine einfache Möglichkeit, um festzustellen, ob eine Datenbank oder ein logischer Server einer älteren Version des SQL-Datenbankdiensts ausgeführt wird, besteht in folgendem Verfahren:
 
 
-1. Öffnen Sie das [Azure-Vorschauportal](http://portal.azure.com/).
+1. Öffnen Sie das [Azure-Portal](http://portal.azure.com/).
 2. Klicken Sie auf **Durchsuchen**.
 3. Klicken Sie auf **SQL-Server**.
 4. Das Symbol neben dem Server oder der Datenbank enthält die Informationen:
@@ -161,4 +161,4 @@ Wenn Sie noch nicht V12 ausführen, können Sie ein Upgrade des logischen Server
 
 [Ergänzende Nutzungsbedingungen für Microsoft Azure-Vorschauversionen](http://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

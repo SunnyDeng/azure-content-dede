@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Stellen Sie DocumentDB und Azure App Service-Web-Apps mithilfe einer Vorlage des Azure-Ressourcen-Managers bereit | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie ein DocumentDB-Konto, eine Azure App Service-Web-App und eine Beispielwebanwendung mithilfe einer Vorlage des Azure-Ressourcen-Managers bereitstellen." 
+	description="Erfahren Sie, wie Sie ein DocumentDB-Konto, eine Azure App-Service-Web-App und eine Beispielwebanwendung mithilfe einer Vorlage des Azure-Ressourcen-Managers bereitstellen." 
 	services="documentdb, app-service\web" 
 	authors="ryancrawcour" 
 	manager="jhubbard" 
@@ -119,7 +119,7 @@ Jetzt stellen wir unsere erste Vorlage bereit.
 
 	- Ein WebDeploy-Paket wurde für die App Service-Web-App bereitgestellt.
 
-	- Die Konfiguration der Web-App wurde so geändert, dass das DocumentDB-Endgerät und der primäre Hauptschlüssel als Anwendungseinstellungen angegeben wurden.
+	- Die Konfiguration der Web-App wurde so geändert, dass der DocumentDB-Endpunkt und der primäre Hauptschlüssel als Anwendungseinstellungen angegeben wurden.
 
 	- Eine Reihe von standardmäßigen Überwachungsregeln wurde erstellt.
 
@@ -128,11 +128,11 @@ Jetzt stellen wir unsere erste Vorlage bereit.
 
 	![Todo-Beispielanwendung](./media/documentdb-create-documentdb-website/image2.png)
 
-7. Erstellen Sie nun eine Reihe von Aufgaben, anschließend öffnen wir das [Microsoft Azure-Vorschauportal](https://portal.azure.com).
+7. Erstellen Sie nun eine Reihe von Aufgaben, und öffnen Sie anschließend das [Microsoft Azure-Portal](https://portal.azure.com).
 
 8. Durchsuchen Sie die Ressourcengruppen, und wählen Sie die Ressourcengruppe aus, die wir bei der Bereitstellung erstellt haben (im Beispiel oben ist dies myDemoResourceGroup).
 
-	![Screenshot des Azure-Portals mit der hervorgehobenen MyDemoResourceGroup](./media/documentdb-create-documentdb-website/image3.png)
+	![Screenshot des klassischen Azure-Portals mit der hervorgehobenen „MyDemoResourceGroup“](./media/documentdb-create-documentdb-website/image3.png)
 9.  Beachten Sie, dass die Ressourcenzuordnung im Bereich „Zusammenfassung“ alle zugehörigen Ressourcen (DocumentDB-Konto, App Service-Web-App, Überwachung) anzeigt.
 
 	![Screenshot der Zusammenfassung](./media/documentdb-create-documentdb-website/image4.png)
@@ -172,24 +172,24 @@ Jetzt stellen wir unsere zweite Vorlage bereit.
 	> [AZURE.TIP]Beachten Sie, dass Sie im Rahmen der Skriptausführung zur Eingabe des Benutzernamens und Kennworts für Ihr Azure-Konto aufgefordert werden. Die gesamte Bereitstellung nimmt zwischen 10 und 15 Minuten in Anspruch.
 
 4. Die Ausgabe der Bereitstellung sieht der des ersten Vorlagenbeispiels sehr ähnlich.
-5. Bevor wir das Azure-Vorschauportal öffnen, sehen wir uns an, was bei der Vorlagenbereitstellung geschehen ist:
+5. Bevor Sie das Azure-Portal öffnen, lassen Sie uns ansehen, was bei der Vorlagenbereitstellung geschehen ist:
 
 	- Eine App Service-Web-App wurde erstellt.
 
 	- Ein DocumentDB-Konto wurde erstellt.
 
-	- 	Die Konfiguration der Web-App wurde so geändert, dass das Azure DocumentDB-Endgerät, der primäre Hauptschlüssel und der sekundäre Hauptschlüssel als Anwendungseinstellungen angegeben wurden.
+	- 	Die Konfiguration der Web-App wurde so geändert, dass der Azure DocumentDB-Endpunkt, der primäre Hauptschlüssel und der sekundäre Hauptschlüssel als Anwendungseinstellungen angegeben wurden.
 
 	- 	Eine Reihe von standardmäßigen Überwachungsregeln wurde erstellt.
 
-6. Wir öffnen nun das [Azure-Vorschauportal](https://portal.azure.com), durchsuchen die Ressourcengruppen und wählen die Ressourcengruppe aus, die wir bei der Bereitstellung erstellt haben (im Beispiel oben ist dies „myOtherDemoResourceGroup“).
+6. Öffnen Sie nun das [Azure-Portal](https://portal.azure.com), durchsuchen Sie die Ressourcengruppen und wählen Sie die Ressourcengruppe aus, die wir bei der Bereitstellung erstellt haben (im Beispiel oben ist dies „myOtherDemoResourceGroup“).
 7. Klicken Sie im Bereich „Zusammenfassung“ auf die soeben bereitgestellte Web-App.
 
 	![Screenshot der Zusammenfassung mit der hervorgehobenen Web-Apps „Myotherdocumentdbwebapp“](./media/documentdb-create-documentdb-website/image6.png)
-8. Klicken Sie auf dem Blatt „Web-App“ auf **Alle Einstellungen** und dann auf **Anwendungseinstellungen**. Beachten Sie, dass Anwendungseinstellungen für das DocumentDB-Endgerät und jeden der DocumentDB-Hauptschlüssel vorhanden sind.
+8. Klicken Sie auf dem Blatt „Web-App“ auf **Alle Einstellungen** und dann auf **Anwendungseinstellungen**. Beachten Sie, dass Anwendungseinstellungen für den DocumentDB-Endpunkt und jeden der DocumentDB-Hauptschlüssel vorhanden sind.
 
 	![Screenshot der Blätter „Web-App“, „Einstellungen“ und „Anwendungseinstellungen“](./media/documentdb-create-documentdb-website/image7.png)
-9. Sie können das Azure-Vorschauportal gerne weiter erkunden oder eines der DocumentDB-[Beispiele](http://go.microsoft.com/fwlink/?LinkID=402386) durcharbeiten, um Ihre eigene DocumentDB-Anwendung zu erstellen.
+9. Sie können das Azure-Portal gerne weiter erkunden oder eines der DocumentDB-[Beispiele](http://go.microsoft.com/fwlink/?LinkID=402386) durcharbeiten, um Ihre eigene DocumentDB-Anwendung zu erstellen.
 
 	
 	
@@ -199,15 +199,15 @@ Jetzt stellen wir unsere zweite Vorlage bereit.
 Glückwunsch! Sie haben DocumentDB, eine App Service-Web-App und eine Beispielwebanwendung mithilfe von Vorlagen des Azure-Ressourcen-Managers bereitgestellt.
 
 - Um weitere Informationen zu DocumentDB zu erhalten, klicken Sie [hier](http://azure.com/docdb).
-- Weitere Informationen zu Azure App Service-Web-Apps erhalten Sie, indem Sie [hier](http://go.microsoft.com/fwlink/?LinkId=325362) klicken.
+- Weitere Informationen zu Azure App Service Web-Apps erhalten Sie, indem Sie [hier](http://go.microsoft.com/fwlink/?LinkId=325362) klicken.
 - Weitere Informationen zu Vorlagen des Azure-Ressourcen-Managers erhalten Sie, indem Sie [hier](https://msdn.microsoft.com/library/azure/dn790549.aspx) klicken.
 
 
 ## Änderungen
-* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715).
+* Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
+* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im klassischen Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715).
 
 >[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -92,7 +92,7 @@ fleetctl --tunnel coreos-cluster.cloudapp.net:22 unload helloworld.service
 
 Ein Vorteil der Verwendung von CoreOS, Docker und **fleet** besteht darin, dass dann Dienste problemlos mit hoher Verfügbarkeit ausgeführt werden können. In diesem Beispiel stellen Sie einen Dienst bereit, der aus drei identischen Containern besteht, in denen der nginx-Webserver ausgeführt wird. Der Container werden auf die drei virtuellen Computern im Cluster ausgeführt. Dieses Beispiel ähnelt dem Beispiel in [Starten von Containern mit fleet] und verwendet das [nginx Docker Hub-Image].
 
->[AZURE.IMPORTANT]Um den Webserver mit hoher Verfügbarkeit auszuführen, müssen Sie auf den virtuellen Computern einen HTTP-Endpunkt mit Lastenausgleich konfigurieren (öffentlicher Port 80, privater Port 80). Sie können dies nach der Erstellung des CoreOS-Clusters im Azure-Portal oder mit dem Befehl **azure vm endpoint** tun. Weitere Informationen finden Sie unter [Konfigurieren einer Gruppe mit Lastenausgleich].
+>[AZURE.IMPORTANT]Um den Webserver mit hoher Verfügbarkeit auszuführen, müssen Sie auf den virtuellen Computern einen HTTP-Endpunkt mit Lastenausgleich konfigurieren (öffentlicher Port 80, privater Port 80). Sie können dies nach der Erstellung des CoreOS-Clusters im klassischen Azure-Portal oder mit dem Befehl **azure vm endpoint** tun. Weitere Informationen finden Sie unter [Konfigurieren einer Gruppe mit Lastenausgleich].
 
 Erstellen Sie auf dem Clientcomputer mit Ihrem bevorzugten Texteditor eine **systemd**-Unit-Vorlagendatei namens nginx@.service. Sie verwenden diese einfache Vorlage zum Starten von drei separaten Instanzen namens nginx@1.service, nginx@2.service und nginx@3.service:
 
@@ -192,4 +192,4 @@ fleetctl --tunnel coreos-cluster.cloudapp.net:22 unload nginx@{1,2,3}.service
 [nginx Docker Hub-Image]: https://hub.docker.com/_/nginx/
 [Linux- und Open Source-Computing in Azure]: virtual-machines-linux-opensource.md
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

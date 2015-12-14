@@ -237,4 +237,4 @@ Wenn Benutzer auf Ihre Anwendung jetzt über ein Gerät zugreifen, das nicht unt
 
 ![Screenshot eines Fehlers, den Benutzer erhalten, wenn sie ihr Gerät nicht unter Azure AD registriert haben](./media/active-directory-conditional-access/error-azureDRS-device-not-registered.gif)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

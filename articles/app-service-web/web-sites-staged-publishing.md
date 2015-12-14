@@ -34,7 +34,7 @@ Jeder App Service-Planmodus unterstützt eine andere Anzahl von Bereitstellungss
 
 - Die Skalierung ist für Nicht-Produktionsslots nicht verfügbar,
 
-- Die Verwaltung verknüpfter Ressourcen wird für Nicht-Produktionsslots nicht unterstützt. Sie können diese negativen Auswirkungen für einen Produktionsslot nur im [Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715) vermeiden, indem Sie den Nicht-Produktionsslot vorübergehend in einen anderen App Service-Planmodus verschieben. Beachten Sie, dass der Nicht-Produktionsslot wieder im selben Modus freigegeben werden muss wie der Produktionsslot, bevor Sie die beiden Slots austauschen können.
+- Die Verwaltung verknüpfter Ressourcen wird für Nicht-Produktionsslots nicht unterstützt. Sie können diese negativen Auswirkungen für einen Produktionsslot nur im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) vermeiden, indem Sie den Nicht-Produktionsslot vorübergehend in einen anderen App Service-Planmodus verschieben. Beachten Sie, dass der Nicht-Produktionsslot wieder im selben Modus freigegeben werden muss wie der Produktionsslot, bevor Sie die beiden Slots austauschen können.
 
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
@@ -44,7 +44,7 @@ Jeder App Service-Planmodus unterstützt eine andere Anzahl von Bereitstellungss
 
 Die Web-App muss im **Standard**- oder **Premium**-Modus ausgeführt werden, damit mehrere Bereitstellungsslots aktiviert werden können.
 
-1. Öffnen Sie im [Azure-Vorschauportal](https://portal.azure.com/) das Blatt Ihrer Web-App.
+1. Öffnen Sie im [Azure-Portal](https://portal.azure.com/) das Blatt Ihrer Web-App.
 2. Klicken Sie auf **Bereitstellungsslots**. Klicken Sie dann auf dem Blatt **Bereitstellungsslots**auf **Bereitstellungsslot hinzufügen**.
 
 	![Neuen Bereitstellungs-Steckplatz hinzufügen][QGAddNewDeploymentSlot]
@@ -241,8 +241,7 @@ Um einen nicht mehr benötigten Bereitstellungsslot zu löschen, verwenden Sie w
 [Kostenlose Microsoft Azure-Testversion](/pricing/free-trial/)
 
 ## Änderungen
-* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
+* Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 
 <!-- IMAGES -->
 [QGAddNewDeploymentSlot]: ./media/web-sites-staged-publishing/QGAddNewDeploymentSlot.png
@@ -260,4 +259,4 @@ Um einen nicht mehr benötigten Bereitstellungsslot zu löschen, verwenden Sie w
 [SlotSettings]: ./media/web-sites-staged-publishing/SlotSetting.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -32,7 +32,7 @@ Hadoop-Cluster sind standardmäßig nicht leistungsoptimiert. In diesem Artikel 
 
 In einem Cluster, dem mehr Worker-Knoten zur Verfügung stehen, können mehr Mapper und Reducer parallel ausgeführt werden. In HDInsight können Sie die horizontale Skalierung auf zwei Weisen erhöhen:
 
-- Bei der Bereitstellung können Sie die Anzahl der Workerknoten im Azure-Vorschauportal, mit Azure PowerShell oder mit der plattformübergreifenden Befehlszeilenschnittstelle angeben. Weitere Informationen finden Sie unter [Bereitstellen von HDInsight-Clustern](hdinsight-provision-clusters.md). Der folgende Screenshot zeigt die Konfiguration der Workerknoten im Azure-Vorschauportal:
+- Bei der Bereitstellung können Sie die Anzahl der Worker-Knoten im Azure-Portal, in Azure PowerShell oder in der plattformübergreifenden Befehlszeilenschnittstelle angeben. Weitere Informationen finden Sie unter [Bereitstellen von HDInsight-Clustern](hdinsight-provision-clusters.md). Der folgende Screenshot zeigt die Konfiguration der Worker-Knoten im Azure-Portal:
 
 	![scaleout\_1][image-hdi-optimize-hive-scaleout_1]
 
@@ -226,4 +226,4 @@ In diesem Artikel haben Sie mehrere allgemeine Hive-Methoden zur Optimierung von
 [image-hdi-optimize-hive-tez_1]: ./media/hdinsight-hadoop-optimize-hive-query/tez_1.png
 [image-hdi-optimize-hive-partitioning_1]: ./media/hdinsight-hadoop-optimize-hive-query/partitioning_1.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

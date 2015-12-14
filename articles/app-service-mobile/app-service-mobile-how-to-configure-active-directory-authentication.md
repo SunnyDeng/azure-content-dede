@@ -29,7 +29,7 @@ In diesem Thema wird veranschaulicht, wie Sie Azure App Services zur Verwendung 
 
 ## <a name="express"> </a>Konfigurieren von Azure Active Directory mit Express-Einstellungen
 
-13. Navigieren Sie im [Azure-Verwaltungsportal] zu Ihrer Anwendung. Klicken Sie auf **Einstellungen** und anschließend auf **Authentifizierung/Autorisierung**.
+13. Navigieren Sie im [Azure-Portal] zu Ihrer Anwendung. Klicken Sie auf **Einstellungen** und anschließend auf **Authentifizierung/Autorisierung**.
 
 14. Falls das Authentifizierungs-/Autorisierungsfeature nicht aktiviert ist, aktivieren Sie es über die Option **Ein**.
 
@@ -52,9 +52,9 @@ Sie können Konfigurationseinstellungen auch manuell bereitstellen Dies ist die 
 
 ### <a name="register"> </a>Registrieren Ihrer Anwendung bei Azure Active Directory
 
-1. Melden Sie sich bei der [Vorschau des Azure-Verwaltungsportals] an, und navigieren Sie zur gewünschten Anwendung. Kopieren Sie die **URL**. Diese dient zum Konfigurieren Ihrer Azure Active Directory-App.
+1. Melden Sie sich im [Azure-Portal] an, und navigieren Sie zu Ihrer Anwendung. Kopieren Sie die **URL**. Diese dient zum Konfigurieren Ihrer Azure Active Directory-App.
 
-3. Melden Sie sich am [Azure-Verwaltungsportal] an, und navigieren Sie zu **Active Directory**.
+3. Melden Sie sich im [Klassischen Azure-Portal] an, und navigieren Sie zu **Active Directory**.
 
     ![][2]
 
@@ -85,7 +85,7 @@ Sie können Konfigurationseinstellungen auch manuell bereitstellen Dies ist die 
 > [AZURE.NOTE]Wenn Sie das App Service-Gateway verwenden, ignorieren Sie diesen Abschnitt und navigieren stattdessen im Portal zu Ihrem Gateway. Wählen Sie unter **Einstellungen** die Option **Identität** und dann **Azure Active Directory** aus. Fügen Sie die Client-ID ein, und fügen Sie die Mandanten-ID der Liste **Zulässige Mandanten** hinzu. Klicken Sie auf **Speichern**.
 
 
-13. Navigieren Sie in der [Vorschau des Azure-Verwaltungsportals] zu Ihrer Anwendung. Klicken Sie auf **Einstellungen** und anschließend auf **Authentifizierung/Autorisierung**.
+13. Zurück im [Azure-Portal] navigieren Sie zu Ihrer Anwendung. Klicken Sie auf **Einstellungen** und anschließend auf **Authentifizierung/Autorisierung**.
 
 14. Falls das Authentifizierungs-/Autorisierungsfeature nicht aktiviert ist, aktivieren Sie es über die Option **Ein**.
 
@@ -101,6 +101,30 @@ Sie können Konfigurationseinstellungen auch manuell bereitstellen Dies ist die 
 
 Sie können nun Azure Active Directory für die Authentifizierung in Ihrer App verwenden.
 
+## (Optional) Konfigurieren Sie eine systemeigene Clientanwendung
+
+Mit Azure Active Directory können Sie auch systemeigene Clients registrieren. So haben Sie noch mehr Kontrolle bei der Zuordnung von Berechtigungen. Dies ist erforderlich, wenn Sie mit einer Bibliothek, wie z. B. der **Active Directory-Authentifizierungsbibliothek**, Anmeldungen durchführen möchten.
+
+1. Navigieren Sie im **klassischen Azure-Verwaltungsportal** zu [Active Directory].
+
+2. Wählen Sie Ihr Verzeichnis und anschließend die Registerkarte **Anwendungen** im oberen Bereich aus. Klicken Sie im unteren Bereich auf **HINZUFÜGEN**, um eine neue App-Registrierung zu erstellen.
+
+3. Klicken Sie auf **Von meiner Organisation entwickelte Anwendung hinzufügen**.
+
+4. Geben Sie im Assistenten zum Hinzufügen von Anwendungen einen **Namen** für Ihre Anwendung ein, und klicken Sie auf den Typ **Systemeigene Clientanwendung**. Klicken Sie dann auf Continue.
+
+5. Geben Sie im Feld **Umleitungs-URI** den _/.auth/login/done_-Endpunkt Ihrer Website mittels des HTTPS-Schemas ein. Dieser Wert sollte etwa so aussehen: \__https://contoso.azurewebsites.net/.auth/login/done_.
+
+6. Nachdem die systemeigene Anwendung hinzugefügt wurde, klicken Sie auf die Registerkarte **Konfigurieren**. Suchen Sie die **Client-ID** und notieren Sie sich den Wert.
+
+7. Führen Sie auf der Seite einen Bildlauf nach unten zum Abschnitt **Berechtigungen für andere Anwendungen** durch, und klicken Sie auf **Anwendung hinzufügen**.
+
+8. Suchen Sie nach der zuvor registrierten Web-App, und klicken Sie auf das Pluszeichen. Klicken Sie dann auf das Häkchen, um das Dialogfeld zu schließen.
+
+9. Öffnen Sie für den neu erstellten Eintrag das Dropdownmenü **Berechtigungen der Stellvertretung**, und wählen Sie **Zugriff (App-Name)** aus. Klicken Sie anschließend auf **Save**.
+
+Sie haben nun eine systemeigene Clientanwendung mit Zugriff auf Ihre App Service-Anwendung konfiguriert.
+
 ## <a name="related-content"> </a>Verwandte Inhalte
 
 [AZURE.INCLUDE [app-service-mobile-related-content-get-started-users](../../includes/app-service-mobile-related-content-get-started-users.md)]
@@ -114,9 +138,10 @@ Sie können nun Azure Active Directory für die Authentifizierung in Ihrer App v
 
 <!-- URLs. -->
 
-[Vorschau des Azure-Verwaltungsportals]: https://portal.azure.com/
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
+[Azure-Portal]: https://portal.azure.com/
+[Active Directory]: https://manage.windowsazure.com/
+[Klassischen Azure-Portal]: https://manage.windowsazure.com/
 [ios-adal]: ../app-service-mobile-xamarin-ios-aad-sso.md
 [alternative Methode]: #advanced
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

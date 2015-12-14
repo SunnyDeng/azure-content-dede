@@ -163,7 +163,7 @@ Die Suche zeigt einzelne Ereignisse an, z. B. Seitenaufrufe, Anforderungen, Aus
 
 Öffnen Sie die Diagnosesuche:
 
-![Diagnosesuche öffnen](./media/app-insights-diagnostic-search/01-open-Diagnostic.png)
+![Diagnosesuche öffnen](./media/app-insights-portal/01-open-Diagnostic.png)
 
 Öffnen Sie das Blatt "Filter", und wählen Sie die Ereignistypen, die Sie anzeigen möchten. (Wenn Sie später die Filter wiederherstellen möchten, mit denen Sie das Blatt geöffnet haben, klicken Sie auf "Zurücksetzen".)
 
@@ -205,4 +205,4 @@ Um die Suche erneut zu verwenden, **wechseln Sie zum Blatt "Übersicht"** und ö
 
 Wenn Sie mit dem Zeitraum "Relativ" gespeichert haben, enthält das neu geöffnete Blatt die neuesten Daten. Wenn Sie mit dem Zeitraum "Absolut" gespeichert haben, werden jedes Mal dieselben Daten gezeigt.
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

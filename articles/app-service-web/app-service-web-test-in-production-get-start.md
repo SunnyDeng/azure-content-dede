@@ -18,7 +18,7 @@
 
 # Erste Schritte beim Testen in der Produktionsumgebung für Web-Apps
 
-Das Testen von Web-Apps in der Produktionsumgebung unter Verwendung von Livedatenverkehr der Kunden – auch Livetesting genannt – ist eine Teststrategie, die App-Entwickler immer häufiger in ihre Methodik der [agilen Entwicklung](https://en.wikipedia.org/wiki/Agile_software_development) integrieren. Mit dieser Strategie können Sie die Qualität Ihrer Apps in Ihrer Produktionsumgebung mit Livedatenverkehr von Benutzern testen und müssen nicht mit künstlich erzeugten Daten und simuliertem Datenverkehr in einer Testumgebung arbeiten. Indem Sie Ihre neue App für echte Benutzer verfügbar machen, erhalten Sie wichtige Informationen zu den tatsächlichen Problemen, die bei Ihrer App nach der Bereitstellung auftreten können. Sie können die Funktionsfähigkeit, die Leistung und den Nutzen Ihrer App-Updates anhand des Umfangs, der Geschwindigkeit und der Variabilität echten Benutzerdatenverkehrs überprüfen – diese Aspekte lassen sich in einer Textumgebung nicht genau genug annähern.
+Das Testen von Web-Apps in der Produktionsumgebung unter Verwendung von Livedatenverkehr der Kunden – auch Livetesting genannt – ist eine Teststrategie, die App-Entwickler immer häufiger in ihre Methodik der [agilen Entwicklung](https://en.wikipedia.org/wiki/Agile_software_development) integrieren. Mit dieser Strategie können Sie die Qualität Ihrer Apps in Ihrer Produktionsumgebung mit Livedatenverkehr von Benutzern testen und müssen nicht mit künstlich erzeugten Daten und simuliertem Datenverkehr in einer Testumgebung arbeiten. Indem Sie Ihre neue App für echte Benutzer verfügbar machen, erhalten Sie wichtige Informationen zu den tatsächlichen Problemen, die bei Ihrer App nach der Bereitstellung auftreten können. Sie können die Funktionsfähigkeit, die Leistung und den Nutzen Ihrer App-Updates anhand des Umfangs, der Geschwindigkeit und der Variabilität echten Benutzerdatenverkehrs überprüfen – diese Aspekte lassen sich in einer Testumgebung nicht genau genug annähern.
 
 ## Datenverkehrsrouting in App Service-Web-Apps
 
@@ -26,7 +26,7 @@ Mit dem Feature für Datenverkehrsrouting in [Azure App Service](http://go.micro
 
 - Ermitteln von Bugs in Funktionen oder Leistungsengpässen in Ihren Updates vor der Bereitstellung in der gesamten Website
 - Durchführen von „kontrollierten Test-Flights“ Ihrer Änderungen durch Messen von Nutzungsmetriken in der Beta-App
-- Sukzessives Einführen eines Updates und problemloses Zurücksetzen auf die aktuelle Version, falls ein Fehler auftritt 
+- Sukzessives Einführen eines Updates und problemloses Zurücksetzen auf die derzeitige Version, falls ein Fehler auftritt 
 - Optimieren der Geschäftsergebnisse Ihrer App durch Ausführen von [A/B-Tests](https://en.wikipedia.org/wiki/A/B_testing) oder [multivariaten Tests](https://en.wikipedia.org/wiki/Multivariate_testing_in_marketing) in mehreren Bereitstellungsslots
 
 ### Anforderungen für die Verwendung des Datenverkehrsroutings in Web-Apps
@@ -41,7 +41,7 @@ Auf der Basisebene in jedem TiP-Szenario leiten Sie einen vorab definierten Proz
 
 >[AZURE.NOTE]Bei den folgenden Schritten wird davon ausgegangen, dass Sie bereits über einen [nicht produktiven Bereitstellungsslot](web-sites-staged-publishing.md) verfügen und die gewünschten Web-App-Inhalte in diesem Slot [bereitgestellt](web-sites-publish-source-control.md) wurden.
 
-1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
 2. Klicken Sie auf dem Blatt der Web-App auf **Einstellungen** > **Datenverkehrsrouting**. ![](./media/app-service-web-test-in-production/01-traffic-routing.png)
 3. Wählen Sie den Slot aus, an den Sie den Datenverkehr weiterleiten möchten, sowie den gewünschten Prozentsatz des Gesamtdatenverkehrs, und klicken Sie auf **Speichern**.
 
@@ -86,4 +86,4 @@ Damit Benutzer Ihre Beta-App nutzen können, legen Sie den gleichen Abfrageparam
 -   [Agile Softwareentwicklung mit Azure App Service](app-service-agile-software-development.md)
 -	[Effektive Verwendung der DevOps-Umgebungen für Ihre Web-Apps](app-service-web-staged-publishing-realworld-scenarios.md)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

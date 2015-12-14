@@ -59,7 +59,7 @@ Gehen Sie wie folgt vor, um mithilfe von Visual Studio Team Services einen Cloud
 
 ## Schritt 3: Verbinden des Projekts mit Azure
 
-1. Nachdem Sie in Visual Studio Team Services ein Git-Repository mit Quellcode erstellt haben, können Sie Ihr Git-Repository mit Azure verknüpfen. Wählen Sie im [Azure-Verwaltungsportal](http://manage.windowsazure.com) Ihren Clouddienst oder Ihre Web-App aus, oder erstellen Sie einen neuen Clouddienst oder eine neue Web-App, indem Sie auf das +-Symbol links unten sowie auf **Clouddienst** oder **Web-App** und anschließend auf **Schnellerstellung** klicken.
+1. Nachdem Sie in Visual Studio Team Services ein Git-Repository mit Quellcode erstellt haben, können Sie Ihr Git-Repository mit Azure verknüpfen. Wählen Sie im [klassischen Azure-Portal](http://manage.windowsazure.com) Ihren Clouddienst oder Ihre Web-App aus, oder erstellen Sie einen neuen Clouddienst oder eine neue Web-App, indem Sie auf das +-Symbol links unten sowie auf **Cloud Services** oder **Web-App** und anschließend auf **Schnellerstellung** klicken.
 
 	![][9]
 
@@ -152,7 +152,7 @@ Gehen Sie wie folgt vor, um mithilfe von Visual Studio Team Services einen Cloud
 
 	![][29]
 
-1. Im [Azure-Verwaltungsportal](http://manage.windowsazure.com) können Sie die entsprechende Bereitstellung auf der Registerkarte **Bereitstellungen** anzeigen, wenn die Stagingumgebung ausgewählt ist.
+1. Im [klassischen Azure-Portal](http://manage.windowsazure.com) können Sie die entsprechende Bereitstellung auf der Registerkarte **Bereitstellungen** anzeigen, wenn die Stagingumgebung ausgewählt ist.
 
 	![][30]
 
@@ -172,13 +172,13 @@ Gehen Sie wie folgt vor, um mithilfe von Visual Studio Team Services einen Cloud
 
 ## Schritt 5: Erneutes Bereitstellen eines früheren Builds
 
-Dieser Schritt ist optional. Wählen Sie im Azure-Verwaltungsportal eine frühere Bereitstellung aus, und wählen Sie **Erneut bereitstellen**, um Ihre Website auf einen früheren Eincheckvorgang zurückzusetzen. Beachten Sie, dass dadurch ein neuer Buildvorgang in TFS ausgelöst und in Ihrem Bereitstellungsverlauf ein neuer Eintrag erstellt wird.
+Dieser Schritt ist optional. Wählen Sie im klassischen Azure-Portal eine frühere Bereitstellung aus, und wählen Sie **Erneut bereitstellen**, um Ihre Website auf einen früheren Eincheckvorgang zurückzusetzen. Beachten Sie, dass dadurch ein neuer Buildvorgang in TFS ausgelöst und in Ihrem Bereitstellungsverlauf ein neuer Eintrag erstellt wird.
 
 ![][34]
 
 ## Schritt 6: Ändern der Produktionsbereitstellung
 
-Wenn Sie bereit sind, können Sie die Stagingumgebung in die Produktionsumgebung überführen, indem Sie im Azure-Verwaltungsportal auf die Schaltfläche **Swap** klicken. Die neu bereitgestellte Stagingumgebung wird in eine Produktionsumgebung geändert, und die vorherige Produktionsumgebung (falls vorhanden) wird zu einer Stagingumgebung. Die aktive Bereitstellung für die Produktions- und die Stagingumgebung kann unterschiedlich sein, aber der Bereitstellungsverlauf der bisherigen Builds ist unabhängig von der Umgebung gleich.
+Wenn Sie bereit sind, können Sie die Stagingumgebung in die Produktionsumgebung überführen, indem Sie im klassischen Azure-Portal auf die Schaltfläche **Swap** klicken. Die neu bereitgestellte Stagingumgebung wird in eine Produktionsumgebung geändert, und die vorherige Produktionsumgebung (falls vorhanden) wird zu einer Stagingumgebung. Die aktive Bereitstellung für die Produktions- und die Stagingumgebung kann unterschiedlich sein, aber der Bereitstellungsverlauf der bisherigen Builds ist unabhängig von der Umgebung gleich.
 
 ![][35]
 
@@ -272,4 +272,4 @@ Zusätzliche Tipps zur Verwendung von Git mit Visual Studio Team Services finden
 [47]: ./media/cloud-services-continuous-delivery-use-vso-git/SourceSettingsPage.PNG
 [48]: ./media/cloud-services-continuous-delivery-use-vso-git/IncludeWorkingBranch.PNG
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

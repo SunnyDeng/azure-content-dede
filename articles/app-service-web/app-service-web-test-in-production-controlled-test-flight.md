@@ -41,14 +41,14 @@ In diesem Tutorial lernen Sie, wie Sie folgende Szenarien kombinieren, um Ihre A
 -	Ein Azure-Konto
 -	Ein [GitHub](https://github.com/)-Konto
 - Visual Studio 2015 – Sie können die [Community-Edition](https://www.visualstudio.com/de-DE/products/visual-studio-express-vs.aspx) herunterladen
--	Git-Shell (mit [GitHub für Windows](https://windows.github.com/) installiert) – ermöglicht Ihnen die Ausführung von Git- und PowerShell-Befehlen in derselben Sitzung
+-	Git-Shell (mit [GitHub für Windows](https://windows.github.com/) installiert) – Ermöglicht Ihnen, Git- und PowerShell-Befehle in derselben Sitzung auszuführen.
 -	Neueste [Azure PowerShell](https://github.com/Azure/azure-powershell/releases/download/v0.9.8-September2015/azure-powershell.0.9.8.msi)-Version
 -	Grundlegende Kenntnisse der folgenden Komponenten:
 	-	Bereitstellung der [Azure-Ressourcen-Manager](resource-group-overview.md)-Vorlage (siehe [Vorhersagbares Bereitstellen einer komplexen Anwendung in Azure](app-service-deploy-complex-application-predictably.md))
 	-	[Git](http://git-scm.com/documentation)
 	-	[PowerShell](https://technet.microsoft.com/library/bb978526.aspx)
 
-> [AZURE.NOTE]Sie benötigen ein Azure-Konto, um dieses Lernprogramm abzuschließen: + Sie können [kostenlos ein Azure-Konto erstellen](/pricing/free-trial/?WT.mc_id=A261C142F): – Sie erhalten ein Guthaben, das Sie zum Ausprobieren der kostenpflichtigen Azure-Dienste nutzen können. Sie können das Konto behalten und weiterhin kostenlose Azure-Dienste wie z. B. Web-Apps nutzen, wenn das Guthaben aufgebraucht sind. + Sie können von [Vorteilen für MSDN-Abonnenten](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) profitieren – Über Ihr MSDN-Abonnement erhalten Sie jeden Monat Gutschriften, die Sie für kostenpflichtige Azure-Dienste einsetzen können.
+> [AZURE.NOTE]Sie benötigen ein Azure-Konto, um dieses Lernprogramm abzuschließen: + Sie können [kostenlos ein Azure-Konto erstellen](/pricing/free-trial/?WT.mc_id=A261C142F): – Sie erhalten ein Guthaben, das Sie zum Ausprobieren der kostenpflichtigen Azure-Dienste nutzen können. Sie können das Konto behalten und weiterhin kostenlose Azure-Dienste wie z. B. Web-Apps nutzen, wenn das Guthaben aufgebraucht sind. + Sie können von [Vorteilen für Visual Studio-Abonnenten](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) profitieren – Über Ihr Visual Studio-Abonnement erhalten Sie jeden Monat Gutschriften, die Sie für kostenpflichtige Azure-Dienste einsetzen können.
 >
 > Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
@@ -56,15 +56,15 @@ In diesem Tutorial lernen Sie, wie Sie folgende Szenarien kombinieren, um Ihre A
 
 >[AZURE.NOTE]Das Skript in diesem Tutorial konfiguriert automatisch die kontinuierliche Veröffentlichung aus Ihrem GitHub-Repository. Dies erfordert, dass Ihre Anmeldeinformationen für GitHub bereits in Azure gespeichert sind. Andernfalls misslingt die skriptgesteuerte Bereitstellung, wenn versucht wird, Quellcodeverwaltungseinstellungen für die Web-Apps zu konfigurieren.
 >
->Um Ihre GitHub-Anmeldeinformationen in Azure zu speichern, erstellen Sie eine Web-App im [Azure-Vorschauportal](https://portal.azure.com) und [konfigurieren die GitHub-Bereitstellung](web-sites-publish-source-control.md#Step7). Dies ist nur einmalig erforderlich.
+>Um Ihre GitHub-Anmeldeinformationen in Azure zu speichern, erstellen Sie eine Web-App im [Azure-Portal](https://portal.azure.com) und [konfigurieren die GitHub-Bereitstellung](web-sites-publish-source-control.md#Step7). Dies ist nur einmalig erforderlich.
 
 In einem typischen DevOps-Szenario verfügen Sie über eine Anwendung, die aktiv in Azure ausgeführt wird und an der Sie über die fortlaufende Veröffentlichung Änderungen vornehmen möchten. In diesem Szenario stellen Sie eine Vorlage in der Produktionsumgebung bereit, die Sie entwickelt und getestet haben.
 
-1.	Erstellen Sie Ihre eigene Verzweigung des [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp)-Repositorys. Informationen zum Erstellen einer Verzweigung finden Sie unter [Verzweigen eines Repositorys](https://help.github.com/articles/fork-a-repo/). Sobald die Verzweigung erstellt wurde, können Sie sie in Ihrem Browser einsehen.
+1.	Erstellen Sie Ihre eigene Verzweigung des [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp)-Repositorys. Informationen zum Erstellen Ihrer Verzweigung finden Sie unter [Verzweigen eines Repositorys](https://help.github.com/articles/fork-a-repo/). Sobald die Verzweigung erstellt wurde, können Sie sie in Ihrem Browser einsehen.
 
 	![](./media/app-service-agile-software-development/production-1-private-repo.png)
 
-2.	Öffnen Sie eine Git-Shell-Sitzung. Wenn Sie noch nicht über die Git-Shell verfügen, installieren Sie nun [GitHub für Windows](https://windows.github.com/).
+2.	Öffnen Sie eine Git-Shell-Sitzung. Wenn Sie noch nicht über Git-Shell verfügen, installieren Sie nun [GitHub für Windows](https://windows.github.com/).
 3.	Erstellen Sie einen lokalen Klon Ihrer Verzweigung, indem Sie den folgenden Befehl ausführen:
 
         git clone https://github.com/<your_fork>/ToDoApp.git
@@ -75,7 +75,7 @@ In einem typischen DevOps-Szenario verfügen Sie über eine Anwendung, die aktiv
 
 4.	Geben Sie bei Aufforderung den gewünschten Benutzernamen und das Kennwort für den Datenbankzugriff ein. Merken Sie sich die Datenbankanmeldeinformationen, da Sie sie beim Aktualisieren der Ressourcengruppe angeben müssen.
 
-	Der Fortschritt der Bereitstellung verschiedener Azure-Ressourcen sollte angezeigt werden. Sobald die Bereitstellung abgeschlossen ist, startet das Skript die Anwendung im Browser, und Sie hören einen Signalton.![](./media/app-service-web-test-in-production-controlled-test-flight/00.1-app-in-browser.png)
+	Der Fortschritt der Bereitstellung verschiedener Azure-Ressourcen sollte angezeigt werden. Sobald die Bereitstellung abgeschlossen ist, startet das Skript die Anwendung im Browser, und Sie hören einen Signalton. ![](./media/app-service-web-test-in-production-controlled-test-flight/00.1-app-in-browser.png)
 
 6.	Zurück in der Git-Shell-Sitzung führen Sie Folgendes aus:
 
@@ -84,9 +84,9 @@ In einem typischen DevOps-Szenario verfügen Sie über eine Anwendung, die aktiv
 	![](./media/app-service-web-test-in-production-controlled-test-flight/00.2-swap-to-production.png)
 
 7.	Wenn das Skript abgeschlossen ist, navigieren Sie zurück zur Adresse des Front-Ends (http://ToDoApp*&lt;your_suffix>*.azurewebsites.net/), um zu prüfen, ob die Anwendung in der Produktionsumgebung ausgeführt wird.
-5.	Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an, und sehen Sie sich an, was erstellt wurde.
+5.	Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an, und sehen Sie sich an, was erstellt wurde.
 
-	Sie sollten zwei Web-Apps in derselben Ressourcengruppe sehen, von denen eine das Suffix `Api` im Namen enthält. Wenn Sie die Ressourcengruppenansicht betrachten, sehen Sie auch SQL-Datenbank und -Server, den App Service-Plan und die Stagingslots für die Web-Apps. Navigieren Sie durch die verschiedenen Ressourcen, und vergleichen Sie diese mit *&lt;Repositorystammverzeichnis>*\\ARMTemplates\\ProdAndStage.json, um zu prüfen, wie sie in der Vorlage konfiguriert sind.
+	Sie sollten zwei Web-Apps in derselben Ressourcengruppe sehen, von denen eine das Suffix `Api` im Namen enthält. Wenn Sie die Ressourcengruppenansicht betrachten, sehen Sie auch SQL-Datenbank und -Server, den App Service-Plan und die Stagingslots für die Web-Apps. Navigieren Sie durch die verschiedenen Ressourcen, und vergleichen Sie diese mit *&lt;Repositorystammverzeichnis>\\ARMTemplates\\ProdAndStage.json*, um zu prüfen, wie sie in der Vorlage konfiguriert sind.
 
 	![](./media/app-service-web-test-in-production-controlled-test-flight/00.3-resource-group-view.png)
 
@@ -97,7 +97,7 @@ Sie haben die Produktions-App eingerichtet. Angenommen, Sie erhalten Rückmeldun
 5. Öffnen Sie *&lt;Repositorystammverzeichnis>*\\src\\MultiChannelToDo.sln in Visual Studio.
 6. Stellen Sie alle NuGet-Pakete wieder her, indem Sie mit der rechten Maustaste auf die Projektmappe > **NuGet-Pakete für Projektmappe verwalten** > **Wiederherstellen** klicken.
 6. Klicken Sie mit der rechten Maustaste auf **MultiChannelToDo.Web** > **Application Insights-Telemetrie hinzufügen** > **Einstellungen konfigurieren** > Ressourcengruppe ändern zu ToDoApp*&lt;Ihr\_suffix>* > **Application Insights zu Projekt hinzufügen**.
-7. Öffnen Sie im Azure-Vorschauportal das Blatt für die Application Insight-Ressource **MultiChannelToDo.Web**. Klicken Sie dann im Detail **Anwendungsintegrität** auf **Erfahren Sie, wie Sie Daten zu Seitenladezeiten im Browser erfassen** > Code kopieren.
+7. Öffnen Sie im Azure-Portal das Blatt für die Application Insight-Ressource **MultiChannelToDo.Web**. Klicken Sie dann im Detail **Anwendungsintegrität** auf **Erfahren Sie, wie Sie Daten zu Seitenladezeiten im Browser erfassen** > Code kopieren.
 7. Fügen Sie den kopierten JS-Instrumentationscode zu *&lt;Repositorystammverzeichnis>*\\src\\MultiChannelToDo.Web\\app\\Index.cshtml hinzu, direkt vor das schließende `<heading>`-Tag. Der Code sollte den eindeutigen Instrumentationsschlüssel Ihrer Application Insight-Ressource enthalten.
 
         <script type="text/javascript">
@@ -157,7 +157,7 @@ Dieses Beispiel ist möglicherweise nicht sehr realitätsnah. Es ging nur darum,
 ### Instrumentieren Ihrer Server-App für Überwachung/Metriken
 Dies weicht ein wenig vom Thema ab, da es in dem hier vorgestellten Szenario nur um die Client-App geht. Der Vollständigkeit halber richten Sie jetzt jedoch auch die serverseitige App ein.
 
-6. Klicken Sie mit der rechten Maustaste auf **MultiChannelToDo** > **Application Insights-Telemetrie hinzufügen** > **Einstellungen konfigurieren** > Ressourcengruppe ändern zu ToDoApp*&lt;Ihr\_suffix>* > **Application Insights zu Projekt hinzufügen**.
+6. Klicken Sie mit der rechten Maustaste auf **MultiChannelToDo** > **Application Insights-Telemetrie hinzufügen** > **Einstellungen konfigurieren** > Ressourcengruppe ändern zu ToDoApp*&lt;Ihr\_Suffix>* > **Application Insights zu Projekt hinzufügen**.
 12. Führen Sie für Ihre Änderungen in Git-Shell ein Commit aus, und pushen Sie die Änderungen in Ihre Verzweigung in GitHub. Warten Sie, bis die Browser auf den Clients aktualisiert werden.
 
         git add -A :/
@@ -375,4 +375,4 @@ Mit Azure App Service können kleine und mittelgroße Unternehmen ihre kundenori
 -	[Azure PowerShell](powershell-install-configure.md)
 -	[Wiki zum Kudu-Projekt](https://github.com/projectkudu/kudu/wiki)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

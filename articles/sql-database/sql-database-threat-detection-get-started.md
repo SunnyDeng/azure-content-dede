@@ -1,6 +1,6 @@
 <properties
    pageTitle="Erste Schritte mit der Bedrohungserkennung von SQL-Datenbank"
-   description="Gewusst wie: Erste Schritte mit der Bedrohungserkennung von SQL-Datenbank im Azure-Vorschauportal"
+   description="Erste Schritte mit der Bedrohungserkennung der SQL-Datenbank im Azure-Portal"
    services="sql-database"
    documentationCenter=""
    authors="ronitr"
@@ -21,7 +21,7 @@
 
 ## Übersicht
 
-Die Bedrohungserkennung erkennt anormale Datenbankaktivitäten, die auf potenzielle Sicherheitsrisiken für die Datenbank hindeuten. Die Bedrohungserkennung befindet sich in der Vorschauphase und wird für die Version V12 von Azure SQL-Datenbank unterstützt.
+Die Bedrohungserkennung erkennt anormale Datenbankaktivitäten, die auf potenzielle Sicherheitsrisiken für die Datenbank hindeuten. Die Bedrohungserkennung befindet sich in der Vorschauphase und wird für die Version V12 der Azure SQL-Datenbank unterstützt.
 
 Die Bedrohungserkennung bietet eine neue Sicherheitsebene und ermöglicht es den Kunden, auf erkannte potenzielle Bedrohungen zu reagieren. Zu diesem Zweck werden Sicherheitshinweise zu anormalen Aktivitäten bereitgestellt. Die Benutzer können die verdächtigen Ereignisse mithilfe der [Azure SQL-Datenbanküberwachung](sql-database-auditing-get-started.md) untersuchen, um zu ermitteln, ob sie auf einen Zugriffsversuch zurückzuführen sind oder die Verletzung der Datensicherheit oder den Missbrauch von Daten zum Ziel haben. Die Bedrohungserkennung vereinfacht den Umgang mit potenziellen Bedrohungen für die Datenbank, ohne das Fachwissen eines Sicherheitsexperten besitzen oder komplexe Sicherheitsüberwachungssysteme verwalten zu müssen.
 
@@ -30,7 +30,7 @@ So erkennt die Bedrohungserkennung beispielsweise bestimmte anormale Datenbankak
 
 ## Einrichten der Bedrohungserkennung für Ihre Datenbank
 
-1. Rufen Sie das Azure-Vorschauportal ([https://portal.azure.com](https://portal.azure.com)) auf.
+1. Rufen Sie das Azure-Portal unter [https://portal.azure.com](https://portal.azure.com) auf.
 
 2. Navigieren Sie zum Konfigurationsblatt der SQL-Datenbank, die Sie überwachen möchten. Wählen Sie auf dem Blatt **Einstellungen** die Option für Überwachung und Bedrohungserkennung.
 
@@ -51,7 +51,7 @@ So erkennt die Bedrohungserkennung beispielsweise bestimmte anormale Datenbankak
 
 ## Untersuchen anormaler Datenbankaktivitäten bei Erkennung eines verdächtigen Ereignisses
 
-1. Bei Erkennung anormaler Datenbankaktivitäten erhalten Sie eine E-Mail-Benachrichtigung. <br/> Die E-Mail enthält Informationen zum verdächtigen Sicherheitsereignis (wie etwa Art der anormalen Aktivitäten, Datenbankname, Servername und Zeit des Ereignisses). Darüber hinaus enthält sie Angaben zu möglichen Ursachen und empfohlenen Maßnahmen zur Untersuchung und Abwehr der potenziellen Bedrohung für die Datenbank.<br/>
+1. Bei Erkennung anormaler Datenbankaktivitäten erhalten Sie eine E-Mail-Benachrichtigung. <br/> Die E-Mail enthält Informationen zum verdächtigen Sicherheitsereignis (wie etwa Art der anomalen Aktivitäten, Datenbankname, Servername und Zeit des Ereignisses). Darüber hinaus enthält sie Angaben zu möglichen Ursachen und empfohlenen Maßnahmen zur Untersuchung und Abwehr der potenziellen Bedrohung für die Datenbank.<br/>
 
 	![Navigationsbereich][4]
 
@@ -75,7 +75,7 @@ So erkennt die Bedrohungserkennung beispielsweise bestimmte anormale Datenbankak
 
 	![Navigationsbereich][9]
 
-7. Die Ergebnisse werden auf dem Blatt mit den SQL-Überwachungsprotokollen angezeigt. Dadurch können Sie die erkannten anormalen Aktivitäten eingehender untersuchen und die Auswirkungen des Sicherheitsereignisses in Ihrer Anwendung begrenzen.
+7. Die Ergebnisse werden auf dem Blatt mit den SQL-Überwachungsprotokollen angezeigt. Dadurch können Sie die erkannten anomalen Aktivitäten eingehender untersuchen und die Auswirkungen des Sicherheitsereignisses in Ihrer Anwendung begrenzen.
 
 
 <!--Image references-->
@@ -89,4 +89,4 @@ So erkennt die Bedrohungserkennung beispielsweise bestimmte anormale Datenbankak
 [8]: ./media/sql-database-threat-detection-get-started/8_td_excel_fast_combine.png
 [9]: ./media/sql-database-threat-detection-get-started/9_td_excel_parameters.png
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

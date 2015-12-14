@@ -309,7 +309,7 @@ Denken Sie beim Bereitstellen daran, dass ein neues Azure-Speicherkonto erstellt
 
 Während und nach der Bereitstellung können Sie alle Anforderungen überprüfen, die während der Bereitstellung vorgenommen wurden, einschließlich der aufgetretenen Fehler.
 
-Öffnen Sie dazu das [Azure-Vorschauportal](https://portal.azure.com), und gehen Sie folgendermaßen vor:
+Wechseln Sie dazu in das [Azure-Portal](https://portal.azure.com), und gehen Sie folgendermaßen vor:
 
 - Klicken Sie auf der linken Navigationsleiste auf **Durchsuchen**, führen Sie einen Bildlauf nach unten durch, und klicken Sie auf **Ressourcengruppen**.
 - Nach dem Klicken auf die Ressourcengruppe, die Sie gerade erstellt haben, wird das Blatt "Ressourcengruppe" angezeigt.
@@ -694,4 +694,4 @@ Im Wesentlichen empfiehlt dieser Ansatz:
 
 Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](../resource-group-authoring-templates.md).
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

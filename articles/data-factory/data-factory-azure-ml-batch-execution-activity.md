@@ -38,7 +38,7 @@ Im Laufe der Zeit müssen die Vorhersagemodelle in den Azure ML-Bewertungsexperi
   
 Nachdem Sie das erneute Trainieren abgeschlossen haben, sollten Sie den Bewertungswebdienst (das Vorhersageexperiment, das als Webdienst verfügbar gemacht wurde) mit dem neu trainierten Modell aktualisieren. Dazu müssen Sie die folgenden Schritte ausführen:
 
-1. Fügen Sie einen nicht standardmäßigen Endpunkt zum Bewertungswebdienst hinzu. Der Standardendpunkt des Webdiensts kann nicht aktualisiert werden, daher müssen Sie einen neuen nicht standardmäßigen Endpunkt mithilfe des Azure-Verwaltungsportals erstellen. Im Artikel [Erstellen von Endpunkten](../machine-learning/machine-learning-create-endpoint.md) finden Sie konzeptionelle Informationen und entsprechende Schritte.
+1. Fügen Sie einen nicht standardmäßigen Endpunkt zum Bewertungswebdienst hinzu. Der Standardendpunkt des Webdiensts kann nicht aktualisiert werden, daher müssen Sie einen neuen nicht standardmäßigen Endpunkt mithilfe des klassischen Azure-Portals erstellen. Im Artikel [Erstellen von Endpunkten](../machine-learning/machine-learning-create-endpoint.md) finden Sie konzeptionelle Informationen und entsprechende Schritte.
 2. Aktualisieren Sie vorhandene mit Azure ML verknüpfte Dienste für die Bewertung, sodass sie den nicht standardmäßigen Endpunkt verwenden. Sie sollten mit der Verwendung des neuen Endpunkts beginnen, um den Webdienst zu verwenden, der aktualisiert wurde.
 3. Verwenden Sie die **Azure ML-Ressourcenaktualisierungsaktivität**, um den Webdienst mit dem neu trainierten Modell zu aktualisieren.  
 
@@ -364,7 +364,7 @@ In der folgenden Tabelle werden die in diesem Beispiel verwendeten Webdienste be
 | Webdiensttyp | description 
 | :------------------ | :---------- 
 | **Trainingswebdienst** | Empfängt Trainingsdaten und erzeugt trainierte Modelle. Die Ausgabe des erneuten Trainierens ist eine iLearner-Datei in einem Azure-Blobspeicher. Der **Standardendpunkt** wird automatisch erstellt, wenn Sie das Trainingsexperiment als Webdienst veröffentlichen. Sie können weitere Endpunkte erstellen, aber im Beispiel wird nur der Standardendpunkt verwendet. |
-| **Bewertungswebdienst** | Empfängt Datenbeispiele ohne Bezeichnung und macht Vorhersagen. Die Ausgabe der Vorhersage kann verschiedene Formen aufweisen, z. B. eine CSV-Datei oder Zeilen in einer Azure SQL-Datenbank, dies ist abhängig von der Konfiguration des Experiments. Der Standardendpunkt wird automatisch erstellt, wenn Sie das Vorhersageexperiment als Webdienst veröffentlichen. Sie müssen einen zweiten **nicht standardmäßigen und aktualisierbaren Endpunkt** mithilfe des [Azure-Portals](https://manage.windowsazure.com) erstellen. Sie können weitere Endpunkte erstellen, aber im Beispiel wird nur der nicht standardmäßige aktualisierbare Endpunkt verwendet. Die Schritte sind im Artikel [Erstellen von Endpunkten](../machine-learning/machine-learning-create-endpoint.md) aufgeführt.       
+| **Bewertungswebdienst** | Empfängt Datenbeispiele ohne Bezeichnung und macht Vorhersagen. Die Ausgabe der Vorhersage kann verschiedene Formen aufweisen, z. B. eine CSV-Datei oder Zeilen in einer Azure SQL-Datenbank, dies ist abhängig von der Konfiguration des Experiments. Der Standardendpunkt wird automatisch erstellt, wenn Sie das Vorhersageexperiment als Webdienst veröffentlichen. Sie müssen einen zweiten **nicht standardmäßigen und aktualisierbaren Endpunkt** mithilfe des [klassischen Azure-Portals](https://manage.windowsazure.com) erstellen. Sie können weitere Endpunkte erstellen, aber im Beispiel wird nur der nicht standardmäßige aktualisierbare Endpunkt verwendet. Die Schritte sind im Artikel [Erstellen von Endpunkten](../machine-learning/machine-learning-create-endpoint.md) aufgeführt.       
  
 Die folgende Abbildung zeigt die Beziehung zwischen Trainings- und Bewertungsendpunkten in Azure ML.
 
@@ -623,4 +623,4 @@ Wenn Sie weiterhin die AzureMLBatchScoring-Aktivität verwenden möchten, finden
 
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

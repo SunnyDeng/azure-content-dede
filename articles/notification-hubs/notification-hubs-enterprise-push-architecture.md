@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="08/18/2015" 
+	ms.date="11/20/2015" 
 	ms.author="wesmc"/>
 
 # Anleitung für eine unternehmensbezogene Pusharchitektur
@@ -270,4 +270,4 @@ Der vollständige Beispielcode ist unter [Notification Hubs Samples] (in englisc
 [Azure-Webauftrag]: http://azure.microsoft.com/documentation/articles/web-sites-create-web-jobs/
 [Erste Schritte mit Notification Hubs]: http://azure.microsoft.com/documentation/articles/notification-hubs-windows-store-dotnet-get-started/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="07/28/2015"
+   ms.date="12/02/2015"
    ms.author="jgao"/>
 
 # Konfigurieren von DNS zwischen zwei virtuellen Netzwerken in Azure
@@ -98,7 +98,7 @@ Ermitteln Sie nach der Erstellung des virtuellen Computers die interne und exter
 
 ##Legen Sie statische IP-Adressen für die beiden virtuellen Computer fest
 
-DNS-Server erfordern statische IP-Adressen. Dieser Schritt kann nicht vom Azure-Portal aus durchgeführt werden. Sie verwenden dafür Azure PowerShell.
+DNS-Server erfordern statische IP-Adressen. Dieser Schritt kann nicht vom klassischen Azure-Portal aus durchgeführt werden. Sie verwenden dafür Azure PowerShell.
 
 **So konfigurieren Sie statische IP-Adresse für die beiden virtuellen Computer**
 
@@ -120,7 +120,7 @@ DNS-Server erfordern statische IP-Adressen. Dieser Schritt kann nicht vom Azure-
 
 **So fügen Sie die DNS-Serverrolle zu Contoso-DNS-EU hinzu**
 
-1.	Klicken Sie im Azure-Portal auf **Virtuelle Computer** auf der linken Seite. 
+1.	Klicken Sie im klassischen Azure-Portal auf **Virtuelle Computer** auf der linken Seite. 
 2.	Klicken Sie auf **Contoso-DNS-EU**.
 3.	Klicken Sie von oben auf **DASHBOARD**.
 4.	Klicken Sie auf **CONNECT** von unten, und befolgen Sie die Anweisungen für die Verbindung mit dem virtuellen Computer über RDP.
@@ -142,7 +142,7 @@ DNS-Server erfordern statische IP-Adressen. Dieser Schritt kann nicht vom Azure-
 
 **So registrieren Sie die beiden DNS-Server**
 
-1.	Klicken Sie im Azure-Portal auf **NEU**, **NETWORK SERVICES**, **VIRTUELLES NETZWERK**, **DNS-SERVER REGISTRIEREN**.
+1.	Klicken Sie im klassischen Azure-Portal auf **NEU**, **NETWORK SERVICES**, **VIRTUELLES NETZWERK**, **DNS-SERVER REGISTRIEREN**.
 2.	Geben Sie Folgendes ein:
 	- **NAME**: Contoso-DNS-EU
 	- **IP-ADRESSE DES DNS-SERVERS**: 10.1.0.4 – die IP-Adresse muss mit der IP-Adresse des virtuellen Computers vom DNS-Server übereinstimmen.
@@ -153,7 +153,7 @@ DNS-Server erfordern statische IP-Adressen. Dieser Schritt kann nicht vom Azure-
 
 **Den beiden virtuellen Netzwerken die zwei DNS-Server zuweisen**
 
-1.	Klicken Sie auf **Netzwerke** im linken Bereich im Verwaltungsportal.
+1.	Klicken Sie auf **Netzwerke** im linken Bereich im klassischen Portal.
 2.	Klicken Sie auf **Contoso-VNet-EU**
 3.	Klicken Sie auf **KONFIGURIEREN**.
 4.	Wählen Sie **Contoso-DNS-EU** im Abschnitt **DNS-Server** aus.
@@ -164,7 +164,7 @@ Alle virtuellen Computer, die den virtuellen Netzwerken bereitgestellt wurden, m
 
 **So starten Sie die virtuellen Computer neu**
 
-1. Klicken Sie im Azure-Portal auf **Virtuelle Computer** auf der linken Seite.
+1. Klicken Sie im klassischen Azure-Portal auf **Virtuelle Computer** auf der linken Seite.
 2. Klicken Sie auf **Contoso-DNS-EU**.
 3. Klicken Sie von oben auf **Dashboard**.
 4. Klicken Sie unten auf **NEU STARTEN**.
@@ -220,4 +220,4 @@ In diesem Lernprogramm haben Sie erfahren, wie Namensauflösungen in virtuellen 
 
 [img-vnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-DNS/HDInsight.HBase.VPN.diagram.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -49,7 +49,7 @@ Dank des MPP-Verfahrens kann SQL Data Warehouse wie oben beschrieben einen Ansat
 
 ## Skalierbar
 
-Mit der Architektur von SQL Data Warehouse werden getrennte Speicher- und Compute-Ressourcen eingeführt, sodass diese unabhängig voneinander skaliert werden können. Die schnelle und einfache Bereitstellungsstruktur der SQL-Datenbank ermöglicht es, dass sehr kurzfristig zusätzliche Compute-Ressourcen bereitgestellt werden. Dies wird durch die Verwendung von Azure-Speicher-Blobs vervollständigt. Mit Blobs erhalten wir nicht nur einen stabilen, replizierten Speicher, sondern auch die Infrastruktur für eine mühelose Erweiterung zu niedrigen Kosten. Die Kombination aus der Speicherung auf Cloudebene und Azure Compute-Ressourcen ermöglicht für SQL Data Warehouse die bedarfsabhängige Bezahlung des Abfrageleistungsspeichers. Das Ändern der Compute-Menge ist so einfach wie das Verschieben eines Schiebereglers nach links oder rechts im Azure-Portal. Dieser Vorgang kann aber auch per T-SQL und PowerShell geplant oder einer Workload hinzugefügt werden.
+Mit der Architektur von SQL Data Warehouse werden getrennte Speicher- und Compute-Ressourcen eingeführt, sodass diese unabhängig voneinander skaliert werden können. Die schnelle und einfache Bereitstellungsstruktur der SQL-Datenbank ermöglicht es, dass sehr kurzfristig zusätzliche Compute-Ressourcen bereitgestellt werden. Dies wird durch die Verwendung von Azure-Speicher-Blobs vervollständigt. Mit Blobs erhalten wir nicht nur einen stabilen, replizierten Speicher, sondern auch die Infrastruktur für eine mühelose Erweiterung zu niedrigen Kosten. Die Kombination aus der Speicherung auf Cloudebene und Azure Compute-Ressourcen ermöglicht für SQL Data Warehouse die bedarfsabhängige Bezahlung des Abfrageleistungsspeichers. Das Ändern des Umfangs der Computeleistung ist so einfach wie das Verschieben eines Schiebereglers nach links oder rechts im klassischen Azure-Portal. Dieser Vorgang kann aber auch per T-SQL und PowerShell geplant oder einer Workload hinzugefügt werden.
 
 Neben der Möglichkeit zur vollständigen Kontrolle über den Umfang der Computeleistung unabhängig vom Speicher ermöglicht Ihnen SQL Data Warehouse auch das vollständige Anhalten des Data Warehouse. Während Ihr Speicher unverändert bleibt, werden alle Compute-Ressourcen für den Hauptpool von Azure freigegeben, sodass Sie sofort Kosten sparen. Setzen Sie die Computeressource bei Bedarf einfach fort, und halten Sie Ihre Daten und Computeleistung für Ihre Arbeitslast zur Verfügung.
 
@@ -138,4 +138,4 @@ Nachdem Sie jetzt einige Informationen zu SQL Data Warehouse erhalten haben, kö
 
 <!--Other Web references-->
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

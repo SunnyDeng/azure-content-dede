@@ -21,11 +21,11 @@
 
 Durch Nachverfolgen des Wachstums von Indizes und Dokumentgröße können Sie die Kapazität proaktiv anpassen, bevor die Obergrenze, die Sie für den Dienst festgelegt haben, erreicht wird.
 
-Zum Überwachen der Ressourcennutzung können die Zähler und Statistiken einfach im [Azure-Portal](https://portal.azure.com) angezeigt werden, aber Sie können diese Informationen auch programmgesteuert abrufen, wenn Sie ein benutzerdefiniertes Dienstverwaltungstool erstellen. In diesem Artikel werden die Schritte für beide Verfahren behandelt.
+Zum Überwachen der Ressourcennutzung können die Zähler und Statistiken einfach im [klassischen Azure-Portal](https://portal.azure.com) angezeigt werden, aber Sie können diese Informationen auch programmgesteuert abrufen, wenn Sie ein benutzerdefiniertes Dienstverwaltungstool erstellen. In diesem Artikel werden die Schritte für beide Verfahren behandelt.
 
 ##Anzeigen von Anzahl und Metriken im Portal 
 
-1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an. 
+1. Melden Sie sich beim [klassischen Azure-Portal](https://portal.azure.com) an. 
 
 2. Öffnen Sie das Service-Dashboard des Azure-Suchdiensts. Die Startseite enthält Kacheln für den Dienst, oder Sie können auch über „Durchsuchen“ auf der Indexleiste zum Dienst navigieren. Schrittweise Anweisungen finden Sie unter [Erstellen eines Diensts](search-create-service-portal.md).
 
@@ -57,4 +57,4 @@ Weitere Informationen zur Dienstverwaltung finden Sie unter [Verwalten Ihres Suc
 
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

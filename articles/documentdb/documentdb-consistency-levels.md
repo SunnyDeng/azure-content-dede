@@ -56,7 +56,7 @@ Die Konsistenzebene "Eventual" bietet die schwächste Lesekonsistenz, jedoch die
 
 ### Ändern der Konsistenzebene einer Datenbank
 
-1.  Klicken Sie in der Navigationsleiste im [Azure-Vorschauportal](https://portal.azure.com/) auf **DocumentDB-Konten**.
+1.  Klicken Sie im [Azure-Portal](https://portal.azure.com/) in der Navigationsleiste auf **DocumentDB-Konten**.
 
 2. Wählen Sie auf dem Blatt **DocumentDB-Konten** das zu ändernde Datenbankkonto aus.
 
@@ -68,7 +68,7 @@ Die Konsistenzebene "Eventual" bietet die schwächste Lesekonsistenz, jedoch die
 
 ## Konsistenzebenen für Abfragen
 
-Bei benutzerdefinierten Ressourcen entspricht die Konsistenzebene der Abfragen standardmäßig der der Lesevorgänge. Der Index wird bei jedem Einfügen, Ersetzen oder Löschen eines Dokuments der Sammlung standardmäßig synchron aktualisiert. Auf diese Weise können die Abfragen dieselbe Konsistenzebene wie die von Dokumentlesevorgängen berücksichtigen. Obwohl DocumentDB für Schreibvorgänge optimiert ist und beständige Mengen an Dokumentschreibvorgängen zusammen mit der synchronen Indexwartung und der Bereitstellung konsistenter Abfragen unterstützt, können Sie bestimmte Sammlungen so konfigurieren, dass ihr Index flexibel aktualisiert wird. Die verzögerte Indizierung steigert die Schreibleistung noch weiter und ist ideal für Sammelerfassungsszenarien mit einer starken Leseworkload geeignet.
+Bei benutzerdefinierten Ressourcen entspricht die Konsistenzebene der Abfragen standardmäßig der der Lesevorgänge. Der Index wird bei jedem Einfügen, Ersetzen oder Löschen eines Dokuments der Sammlung standardmäßig synchron aktualisiert. Auf diese Weise können die Abfragen dieselbe Konsistenzebene wie die von Dokumentlesevorgängen berücksichtigen. Obwohl DocumentDB für Schreibvorgänge optimiert ist und beständige Mengen an Dokumentschreibvorgängen zusammen mit der synchronen Indexwartung und der Bereitstellung konsistenter Abfragen unterstützt, können Sie bestimmte Sammlungen so konfigurieren, dass ihr Index flexibel aktualisiert wird. Die verzögerte Indizierung steigert die Schreibleistung noch weiter und ist ideal für Sammelerfassungsszenarien mit einer starken Lesearbeitsauslastung geeignet.
 
 Indizierungsmodus|	Lesevorgänge|	Abfragen  
 -------------|-------|---------
@@ -88,4 +88,4 @@ Wenn Sie weitere Informationen zu Konsistenzebenen und deren Vor- und Nachteile 
 -	Werner Vogels. Eventual Consistent - Revisited. [http://allthingsdistributed.com/2008/12/eventually\_consistent.html](http://allthingsdistributed.com/2008/12/eventually_consistent.html)
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -129,7 +129,7 @@ Nachdem Sie die Web-App erstellt und alle erforderlichen NuGet-Pakete abgerufen 
 
 2. Öffnen Sie einen Browser, und navigieren Sie zur folgenden URL:
 
-	**http://localhost:5000**
+	****http://localhost:5000**
 
 	> [AZURE.NOTE]Der in der Datei *project.json* angegebene Befehl "kestrel" zeigt auf eine Datei mit Hostingdetails (*hosting.ini*), die den lokalen App-Speicherort angibt. In diesem Fall kann die App über die zuvor genannte URL angezeigt werden.
 
@@ -139,11 +139,11 @@ Nachdem Sie die Web-App erstellt und alle erforderlichen NuGet-Pakete abgerufen 
 
 3. Schließen Sie Ihren Browser. Drücken Sie im Befehlsfenster zum Herunterfahren der Anwendung oder Schließen des Befehlsfensters **STRG+C**.
 
-## Erstellen einer Web-App im Azure-Vorschauportal
+## Erstellen einer Web-App im Azure-Portal
 
-Die folgenden Schritte dienen zum Erstellen einer Web-App im Azure-Vorschauportal:
+Die folgenden Schritte dienen zum Erstellen einer Web-App im Azure-Portal:
 
-1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
 
 2. Klicken Sie links oben im Portal auf **NEU**.
 
@@ -165,7 +165,7 @@ Die folgenden Schritte dienen zum Erstellen einer Web-App im Azure-Vorschauporta
 
 Git ist ein verteiltes Versionskontrollsystem, mit dem Sie Ihre Azure App Service-Web-App bereitstellen können. Dazu speichern Sie den Code, den Sie für Ihre Web-App geschrieben haben, in einem lokalen Git-Repository und stellen ihn anschließend mithilfe eines Pushvorgangs zu einem Remoterepository in Azure bereit.
 
-1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
 
 2. Klicken Sie auf **Durchsuchen**.
 
@@ -258,7 +258,7 @@ Dies kann auf zwei Arten erfolgen:
 
 		http://SampleWebAppDemo.azurewebsites.net
  
-* Navigieren Sie im Azure-Vorschauportal zum Blatt für Ihre Web-App, und klicken Sie auf **Durchsuchen**, um Ihre App 
+* Navigieren Sie im Azure-Portal zum Blatt für Ihre Web-App, und klicken Sie auf **Durchsuchen**, um Ihre App
 * in Ihrem Standardbrowser anzuzeigen.
 
 ![Azure-Web-App](./media/web-sites-create-web-app-using-vscode/21-azurewebapp.png)
@@ -266,4 +266,4 @@ Dies kann auf zwei Arten erfolgen:
 ## Zusammenfassung
 In diesem Lernprogramm wurde gezeigt, wie Sie eine Web-App in VS Code erstellen und in Azure bereitstellen. Weitere Informationen zu VS Code finden Sie im Artikel [Why Visual Studio Code?](https://code.visualstudio.com/Docs/) (Argumente für Visual Studio Code; in englischer Sprache). Informationen zu App Service-Web-Apps finden Sie unter [Web-Apps – Übersicht](app-service-web-overview.md).
 
-<!----HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -230,4 +230,4 @@ Allgemein sieht der gesamte Authentifizierungsablauf für eine systemeigene oder
 
 ![OAuth-Autorisierungscodefluss](../media/active-directory-v2-flows/convergence_scenarios_native.png)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

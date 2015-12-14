@@ -1,6 +1,6 @@
 <properties 
    pageTitle="Benutzerdefiniertes Bereitstellen von Hadoop-Clustern in HDInsight | Microsoft Azure" 
-   description="Erfahren Sie, wie Sie Cluster für Azure HDInsight mithilfe von Azure-Portal, Azure PowerShell, über die Befehlszeile oder ein .NET SDK benutzerdefiniert bereitstellen." 
+   description="Erfahren Sie, wie Sie Cluster für Azure HDInsight mithilfe des klassischen Azure-Portals, über Azure PowerShell, eine Befehlszeile oder ein .NET SDK benutzerdefiniert bereitstellen." 
    services="hdinsight" 
    documentationCenter="" 
    authors="mumian" 
@@ -113,7 +113,7 @@ Bevor Sie die Anweisungen in diesem Artikel ausführen können, benötigen Sie F
 
 	Die HDInsight-Cluster ermöglichen Ihnen, während der Bereitstellung zwei Benutzerkonten zu konfigurieren:
 
-	- HTTP-Benutzer. Der Standardbenutzername bei der grundlegenden Konfiguration im Azure-Portal ist "admin".
+	- HTTP-Benutzer. Der Standardbenutzername bei der Basiskonfiguration im klassischen Azure-Portal ist „admin“.
 	- RDP-Benutzer (Windows-Cluster): Dient zum Herstellen einer Verbindung mit dem Cluster über RDP. Wenn Sie das Konto erstellen, müssen Sie ein Ablaufdatum festlegen, das maximal 90 Tage hinter dem aktuellen Datum liegt. 
 	- SSH-Benutzer (Linux-Cluster): Dient zum Herstellen einer Verbindung mit dem Cluster über SSH. Sie können zusätzliche SSH-Benutzerkonten erstellen, nachdem der Cluster erstellt wurde, indem Sie die Schritte unter [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Linux, Unix oder OS X](hdinsight-hadoop-linux-use-ssh-unix.md) ausführen.
   
@@ -199,7 +199,7 @@ Weitere Informationen finden Sie im Blog von Azim Uddin mit dem Titel [Customizi
 
 ### Anpassen von Clustern mithilfe von Skriptaktionen
 
-Sie können zusätzliche Komponenten installieren oder die Clusterkonfiguration mithilfe von Skripts während der Bereitstellung anpassen. Diese Skripts werden mithilfe der Konfigurationsoption **Skriptaktion** aufgerufen, die vom Azure-Verwaltungsportal, von HDInsight Windows PowerShell-Cmdlets oder dem HDInsight .NET SDK verwendet werden kann. Weitere Informationen finden Sie unter [Anpassen eines HDInsight-Clusters mithilfe von Skriptaktionen](hdinsight-hadoop-customize-cluster.md).
+Sie können zusätzliche Komponenten installieren oder die Clusterkonfiguration mithilfe von Skripts während der Bereitstellung anpassen. Diese Skripts werden mithilfe der Konfigurationsoption **Skriptaktion** aufgerufen, die vom klassischen Azure-Portal, von HDInsight Windows PowerShell-Cmdlets oder dem HDInsight .NET SDK verwendet werden kann. Weitere Informationen finden Sie unter [Anpassen eines HDInsight-Clusters mithilfe von Skriptaktionen](hdinsight-hadoop-customize-cluster.md).
 
 
 ### Verwenden virtueller Azure-Netzwerke
@@ -227,24 +227,24 @@ Weitere Informationen zu Features, Vorteilen und Funktionen von virtuellen Netzw
 > Azure HDInsight unterstützt nur standortbasierte virtuelle Netzwerke und kann momentan nicht mit affinitätsgruppenbasierten virtuellen Netzwerken verwendet werden. Verwenden Sie das Azure PowerShell-Cmdlet "Get-AzureVNetConfig", um zu prüfen, ob ein vorhandenes virtuelles Netzwerk in Azure standortbasiert ist. Wenn das virtuelle Netzwerk nicht standortbasiert ist, haben Sie die folgenden Optionen:
 >
 > - Exportieren Sie die vorhandene virtuelle Netzwerkkonfiguration, und erstellen Sie ein neues virtuelles Netzwerk. Alle neuen virtuellen Netzwerke sind standardmäßig standortbasiert.
-> - Migrieren Sie zu einem standortbasierten virtuellen Netzwerk. Siehe [Migrating Existing Services to Regional Scope](http://azure.microsoft.com/blog/2014/11/26/migrating-existing-services-to-regional-scope/) (in englischer Sprache).
+> - Migrieren Sie zu einem standortbasierten virtuellen Netzwerk. Siehe [Migrieren vorhandener Dienste in einen Regionsbereich](http://azure.microsoft.com/blog/2014/11/26/migrating-existing-services-to-regional-scope/).
 >
 > Sie sollten unbedingt ein einziges Subnetz pro Cluster verwenden.
 
 ## Bereitstellungstools
 
-- Das Azure-Portal
-- Azure PowerShell
+- Das klassische Azure-Portal
+- Windows Azure PowerShell
 - .NET SDK
 - Befehlszeilenschnittstelle (CLI)
 
-### Verwenden des Azure-Portals
+### Verwenden des klassischen Azure-Portals
 
 Erläuterung der Felder finden Sie in den [grundlegenden Konfigurationsoptionen] und [erweiterten Konfigurationsoptionen] .
 
 **So erstellen Sie einen HDInsight-Cluster mit der benutzerdefinierten Erstellungsoption**
 
-1. Melden Sie sich beim [Azure-Portal][azure-management-portal] an.
+1. Melden Sie sich beim [klassischen Azure-Portal][azure-management-portal] an.
 2. Klicken Sie im unteren Seitenbereich auf **+ NEW**, anschließend auf **DATA SERVICES**, auf **HDINSIGHT**und zuletzt auf **CUSTOM CREATE**.
 3. Geben Sie auf der Seite **Clusterdetails** die folgenden Daten ein:
 
@@ -374,7 +374,7 @@ Sobald Sie Ihr Speicherkonto und Ihren Blobcontainer vorbereitet haben, können 
 		# Create a new HDInsight cluster
 		New-AzureHDInsightCluster -Name $clusterName -Credential $credential -Location $location -DefaultStorageAccountName "$storageAccountName.blob.core.windows.net" -DefaultStorageAccountKey $storageAccountKey -DefaultStorageContainerName $containerName  -ClusterSizeInNodes $clusterNodes -ClusterType Hadoop
 
-	>[AZURE.NOTE]Die Befehle $hadoopUserName und $hadoopUserPassword werden zum Erstellen des Hadoop-Benutzerkontos für den Cluster verwendet. Sie verwenden dieses Konto, um die Verbindung mit dem Cluster herzustellen und Aufträge auszuführen.. Wenn Sie im Azure-Portal die Option "Schnellerfassung" verwenden, um einen Cluster bereitzustellen, lautet der Hadoop-Standardbenutzername "admin". Sie dürfen dieses Konto nicht mit dem Benutzerkonto für das Remotedesktopprotokoll (RDP) verwechseln. Das RDP-Benutzerkonto muss sich vom Hadoop-Benutzerkonto unterscheiden. Weitere Informationen finden Sie unter "Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Verwaltungsportal".
+	>[AZURE.NOTE]Die Befehle $hadoopUserName und $hadoopUserPassword werden zum Erstellen des Hadoop-Benutzerkontos für den Cluster verwendet. Sie verwenden dieses Konto, um die Verbindung mit dem Cluster herzustellen und Aufträge auszuführen.. Wenn Sie im klassischen Azure-Portal die Option „Schnellerfassung“ verwenden, um einen Cluster bereitzustellen, lautet der Hadoop-Standardbenutzername „admin“. Sie dürfen dieses Konto nicht mit dem Benutzerkonto für das Remotedesktopprotokoll (RDP) verwechseln. Das RDP-Benutzerkonto muss sich vom Hadoop-Benutzerkonto unterscheiden. Weitere Informationen finden Sie unter [Verwalten von Hadoop-Clustern in HDInsight mit dem klassischen Azure-Portal][hdinsight-admin-portal].
 
 	Die Bereitstellung des Clusters kann einige Minuten dauern.
 
@@ -574,7 +574,7 @@ HDInsight verwendet Azure-Blob-Speichercontainer als Standarddateisystem. Sie be
 
 	Wählen Sie einen geeigneten Ort für die Bereitstellung des HDInsight-Clusters aus, wenn Sie dazu aufgefordert werden. Der Speicher muss sich am gleichen Standort befinden wie der HDInsight-Cluster. HDInsight-Cluster sind momentan nur in den Regionen **Ostasien**, **Südostasien**, **Nordeuropa**, **Westeuropa**, **Osten USA**, **Westen USA**, **USA Nord Mitte** und **USA Süd Mitte** verfügbar.
 
-Informationen zum Erstellen von Azure-Speicherkonten im Azure-Portal finden Sie unter [Erstellen, Verwalten oder Löschen eines Speicherkontos](../storage-create-storage-account.md).
+Informationen zum Erstellen von Azure-Speicherkonten mit dem klassischen Azure-Portal finden Sie unter [Erstellen, Verwalten oder Löschen eines Speicherkontos](../storage-create-storage-account.md).
 
 Falls Sie bereits ein Speicherkonto haben, aber dessen Kontonamen und Kontoschlüssel nicht kennen, können Sie diese Daten mit den folgenden Befehlen abrufen:
 
@@ -587,7 +587,7 @@ Falls Sie bereits ein Speicherkonto haben, aber dessen Kontonamen und Kontoschl�
 	-- Lists the keys for a Storage account
 	azure storage account keys list <StorageAccountName>
 
-Ausführliche Informationen zum Abrufen dieser Informationen im Azure-Portal finden Sie unter [Erstellen, Verwalten oder Löschen eines Speicherkontos](../storage-create-storage-account.md) im Abschnitt *Anzeigen, Kopieren und Neuerstellen von Speicherzugriffsschlüsseln*.
+Ausführliche Informationen zum Abrufen dieser Informationen im klassischen Azure-Portal finden Sie unter [Erstellen, Verwalten oder Löschen eines Speicherkontos](../storage-create-storage-account.md) im Abschnitt *Anzeigen, Kopieren und Neuerstellen von Speicherzugriffsschlüsseln*.
 
 Für einen HDInsight-Cluster benötigen Sie außerdem einen Container innerhalb des Speicherkontos. Falls das angegebene Speicherkonto noch keinen Container enthält, werden Sie vom Befehl *azure hdinsight cluster create* zur Eingabe eines Containernamens aufgefordert, und der Container wird erstellt. Sie können den folgenden Befehl verwenden, um den Container vorab zu erstellen:
 
@@ -810,4 +810,4 @@ In diesem Artikel haben Sie mehrere Möglichkeiten zu Bereitstellung von HDInsig
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/library/dn479185.aspx
 [azure-management-portal]: https://manage.windowsazure.com
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

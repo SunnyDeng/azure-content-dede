@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="08/18/2015"
+   ms.date="12/01/2015"
    ms.author="mcoskun"/>
 
 # Sichern und Wiederherstellen von Reliable Services
@@ -41,30 +41,37 @@ Der Dienst muss **IReliableStateManager.BackupAsync** aufrufen, um die Sicherung
 
 Wie Sie unten sehen, hat die einfachste Überladung von **BackupAsync** in Func<< BackupInfo  bool >> **backupCallback** aufgerufen.
 
-        await this.StateManager.BackupAsync(this.BackupCallbackAsync);
+```C#
+await this.StateManager.BackupAsync(this.BackupCallbackAsync);
+```
 
 **BackupInfo** gibt Informationen über die Sicherung, einschließlich des Speicherorts des Ordners, in dem die Runtime die Sicherung (BackupInfo.Directory) gespeichert hat. Die Callback-Funktion möchte BackupInfo.Directory in einen externen Speicher oder an einen anderen Speicherort verschieben. Diese Funktion gibt auch einen booleschen Wert zurück, der angibt, ob der Sicherungsordner erfolgreich an den Zielspeicherort verschoben werden konnte.
 
 Der folgende Code zeigt, wie die Sicherung mit BackupCallback in den Azure-Speicher hochgeladen wird:
 
 ```C#
-        private async Task<bool> BackupCallbackAsync(BackupInfo backupInfo)
-        {
-            var backupId = Guid.NewGuid();
+private async Task<bool> BackupCallbackAsync(BackupInfo backupInfo)
+{
+    var backupId = Guid.NewGuid();
 
-            await externalBackupStore.UploadBackupFolderAsync(backupInfo.Directory, backupId, CancellationToken.None);
+    await externalBackupStore.UploadBackupFolderAsync(backupInfo.Directory, backupId, CancellationToken.None);
 
-            return true;
-        }
+    return true;
+}
 ```
 
 Im obigen Beispiel ist **ExternalBackupStore** die Beispielklasse, die als Schnittstelle zum Azure-Blobspeicher verwendet wird, und **UploadBackupFolderAsync** ist die Methode, die den Ordner komprimiert und im Azure-Blobspeicher platziert.
 
->[AZURE.NOTE]Pro Replikat-Inflight ist stets nur ein **BackupAsync** möglich. Mehrere **BackupAsync**-Aufrufe gleichzeitig lösen **FabricBackupInProgressException** aus, um nur eine Inflight-Sicherung zuzulassen.[AZURE.NOTE]Wenn ein Replikat während einer Sicherung ausfällt, wird die Sicherung möglicherweise nicht abgeschlossen. Folglich muss der Dienst nach Abschluss des Failovers neu starten, indem bei Bedarf **BackupAsync** aufgerufen wird.
+Beachten Sie Folgendes:
+
+- Pro Replikat-Inflight ist stets nur ein **BackupAsync** möglich. Mehrere **BackupAsync**-Aufrufe gleichzeitig lösen **FabricBackupInProgressException** aus, um nur eine Inflight-Sicherung zuzulassen.
+
+- Wenn ein Replikat während einer Sicherung ausfällt, wird die Sicherung möglicherweise nicht abgeschlossen. Folglich muss der Dienst nach Abschluss des Failovers neu starten, indem bei Bedarf **BackupAsync** aufgerufen wird.
 
 ## Wiederherstellen von Daten
 
-Die Wiederherstellung kann in folgende Szenarien klassifiziert werden, in denen der ausgeführte Dienst Daten aus dem Sicherungsspeicher wiederherstellt:
+Im Allgemeinen können die Fälle, in denen Sie möglicherweise eine Wiederherstellung durchführen müssen, einer der folgenden Kategorien zugeordnet werden:
+
 
 1. Die Dienstpartition hat Daten verloren. Beispielsweise wird die Festplatte für zwei von drei Replikaten einer Partition (einschließlich des primären Replikates) beschädigt/gelöscht. Das neue primäre Replikat muss möglicherweise Daten aus einer Sicherung wiederherstellen.
 
@@ -83,27 +90,27 @@ Der Dienstautor muss zum Wiederherstellen folgende Schritte ausführen: – **I
 Nachfolgend finden Sie ein Beispiel für das Implementieren **OnDataLossAsync**-Methode und das Überschreiben von **IReliableStateManager**.
 
 ```C#
-        protected override IReliableStateManager CreateReliableStateManager()
-        {
-            return new ReliableStateManager(new ReliableStateManagerConfiguration(
-                    onDataLossEvent: this.OnDataLossAsync));
-        }
+protected override IReliableStateManager CreateReliableStateManager()
+{
+    return new ReliableStateManager(new ReliableStateManagerConfiguration(
+            onDataLossEvent: this.OnDataLossAsync));
+}
 
-        protected override async Task<bool> OnDataLossAsync(CancellationToken cancellationToken)
-        {
-            var backupFolder = await this.externalBackupStore.DownloadLastBackupAsync(cancellationToken);
+protected override async Task<bool> OnDataLossAsync(CancellationToken cancellationToken)
+{
+    var backupFolder = await this.externalBackupStore.DownloadLastBackupAsync(cancellationToken);
 
-            await this.StateManager.RestoreAsync(backupFolder);
+    await this.StateManager.RestoreAsync(backupFolder);
 
-            return true;
-        }
+    return true;
+}
 ```
 
 >[AZURE.NOTE]Für die RestorePolicy ist standardmäßig „sicher“ eingestellt. Dies bedeutet, dass die RestoreAsync-API mit ArgumentException fehlschlägt, wenn sie erkennt, dass der Sicherungsordner einen Status enthält, der älter ist als der Status in diesem Replikat bzw. diesem entspricht. RestorePolicy.Force kann verwendet werden, um diese Sicherheitsprüfung zu überspringen.
 
 ## Gelöschter oder verlorener Dienst
 
-Wenn ein Dienst entfernt wird, muss der Dienst neu erstellt werden, bevor die Daten wiederhergestellt werden können. Der Dienst muss unbedingt mit der gleichen Konfiguration erstellt werden, z. B. Partitionierungsschema, sodass die Daten problemlos wiederhergestellt werden können. Sobald der Dienst wieder läuft, muss die API zum Wiederherstellen von Daten (**OnDataLossAsync** oben) auf jeder Partition dieses Dienstes aufgerufen werden. Eine Möglichkeit, das zu erreichen, ist die Verwendung von **FabricClient.ServiceManager.InvokeDataLossAsync** auf jeder Partition.
+Wenn ein Dienst entfernt wird, muss der Dienst erst neu erstellt werden, bevor die Daten wiederhergestellt werden können. Der Dienst muss unbedingt mit der gleichen Konfiguration erstellt werden, z. B. Partitionierungsschema, sodass die Daten problemlos wiederhergestellt werden können. Sobald der Dienst wieder läuft, muss die API zum Wiederherstellen von Daten (**OnDataLossAsync** oben) auf jeder Partition dieses Dienstes aufgerufen werden. Eine Möglichkeit, das zu erreichen, ist die Verwendung von **FabricClient.ServiceManager.InvokeDataLossAsync** auf jeder Partition.
 
 Ab diesem Zeitpunkt erfolgt die Implementierung wie im oben aufgeführten Szenario. Jede Partition muss die letzte relevante Sicherung aus dem externen Speicher wiederherstellen. Ein Nachteil ist, dass die Partitions-ID sich geändert haben kann, da die Runtime Partitions-IDs dynamisch erstellt. Daher muss der Dienst die entsprechenden Partitionsinformationen und den Dienstnamen speichern, um die aktuelle Sicherung zum Speichern für jede Partition zu finden.
 
@@ -118,10 +125,11 @@ Wenn Sie nicht sicher sind, welche Sicherungen fehlerhaft sind, können Sie eine
 
 Mit den Schritten aus dem Szenario zum gelöschten Dienst kann der Status der Dienstsicherung wieder auf den Status vor Beschädigung der Datei wiederhergestellt werden.
 
+Beachten Sie Folgendes:
 
->[AZURE.NOTE]Bei jeder Wiederherstellung besteht die Möglichkeit, dass die wiederherzustellende Sicherung älter als der Status der Partition vor Verlust der Daten ist. Deshalb sollte die Wiederherstellung nur als letzter Ausweg verwendet werden, um so viele Daten wie möglich wiederherzustellen.
+- Bei einer Wiederherstellung besteht die Möglichkeit, dass die wiederherzustellende Sicherung älter als der Status der Partition vor Verlust der Daten ist. Deshalb sollte die Wiederherstellung nur als letzter Ausweg verwendet werden, um so viele Daten wie möglich wiederherzustellen.
 
->[AZURE.NOTE]Die Zeichenfolge, die den Sicherungsorderpfad sowie die Dateipfade im Sicherungsordner repräsentiert, kann je nach dem FabricDataRoot-Pfad und der Namenslänge des Anwendungstyps länger als 255 Zeichen sein. Einige .Net-Methoden wie **Directory.Move** werfen daraufhin möglicherweise die **PathTooLongException** aus. Um das zu umgehen, können kernel32-APIs wie **CopyFile** direkt aufgerufen werden.
+- Die Zeichenfolge, die den Sicherungsorderpfad und die Dateipfade im Sicherungsordner repräsentiert, kann je nach dem FabricDataRoot-Pfad und der Namenslänge des Anwendungstyps länger als 255 Zeichen sein. Einige .Net-Methoden wie **Directory.Move** werfen daraufhin möglicherweise die **PathTooLongException** aus. Eine Problemumgehung besteht darin, kernel32-APIs wie **CopyFile** direkt aufzurufen.
 
 
 ## Weitere Informationen zum Sichern und Wiederherstellen
@@ -138,4 +146,4 @@ Reliable State Manager ermöglicht das Wiederherstellen aus einer Sicherung mith
 
 RestoreAsync löscht zuerst jeden bestehenden Zustand in dem primären Replikat, von dem es aufgerufen wurde. Danach erstellt der Reliable State Manager die Reliable Objects, die im Sicherungsordner vorhanden sind. Als Nächstes werden die Reliable Objects angewiesen, ihre Prüfpunkte im Sicherungsordner wiederherzustellen. Schließlich stellt Reliable State Manager seinen eigenen Status aus den Protokolldatensätzen im Sicherungsordner wieder her und führt die Wiederherstellung aus. Im Rahmen des Wiederherstellungsprozesses werden ab dem „Startpunkt“ beginnende Vorgänge, die Protokolldatensätze in den Sicherungsordner ausgeführt haben, in den Reliable Objects wiederholt. Dadurch wird sichergestellt, dass der wiederhergestellte Status konsistent ist.
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

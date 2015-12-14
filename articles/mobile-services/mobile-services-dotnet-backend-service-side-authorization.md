@@ -18,6 +18,11 @@
 
 # Dienstseitige Autorisierung von Benutzern in Mobile Services
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
+
 > [AZURE.SELECTOR-LIST (Platform | Backend)]
 - [(Any | .NET)](mobile-services-dotnet-backend-service-side-authorization.md)
 - [(Any | Javascript)](mobile-services-javascript-backend-service-side-authorization.md)
@@ -79,4 +84,4 @@ Dieses Lernprogramm basiert auf Mobile Services-Schnellstart und setzt auf dem L
 <!-- URLs. -->
 [Hinzufügen von Authentifizierung zu einer vorhandenen Mobile Services-App]: mobile-services-dotnet-backend-ios-get-started-users.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

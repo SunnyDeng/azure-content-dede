@@ -12,14 +12,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="cache-redis"
    ms.workload="tbd"
-   ms.date="10/09/2015"
+   ms.date="12/01/2015"
    ms.author="sdanie" />
 
 # Gewusst wie: Konfigurieren von Azure Redis Cache
 
 In diesem Thema wird beschrieben, wie Sie die Konfiguration für Ihre Azure Redis Cache-Instanzen überprüfen und aktualisieren. Außerdem wird die standardmäßige Redis-Serverkonfiguration für Azure Redis Cache-Instanzen beschrieben.
 
->[AZURE.NOTE]Der Premium-Tarif von Azure Redis Cache befindet sich derzeit in der Vorschau. Während des Vorschauzeitraums können Premium-Features nur beim Erstellen des Caches konfiguriert werden. Weitere Informationen zur Verwendung von Premium-Cache-Features finden Sie unter [Konfigurieren von Persistenz für Azure Redis Cache vom Typ "Premium"](cache-how-to-premium-persistence.md), [Konfigurieren von Clustern für Azure Redis Cache vom Typ "Premium"](cache-how-to-premium-clustering.md) und [Konfigurieren der Unterstützung virtueller Netzwerke für Azure Redis Cache vom Typ "Premium"](cache-how-to-premium-vnet.md).
+>[AZURE.NOTE]Weitere Informationen zur Konfiguration und Verwendung von Premium-Cache-Features finden Sie unter [Konfigurieren von Persistenz für Azure Redis Cache vom Typ „Premium“](cache-how-to-premium-persistence.md), [Konfigurieren von Clustern für Azure Redis Cache vom Typ „Premium“](cache-how-to-premium-clustering.md) und [Konfigurieren der Unterstützung virtueller Netzwerke für Azure Redis Cache vom Typ „Premium“](cache-how-to-premium-vnet.md).
 
 ## Konfigurieren von Redis Cache-Einstellungen
 
@@ -102,6 +102,22 @@ Klicken Sie auf **Erweiterte Einstellungen**, um Redis-Keyspacebenachrichtigunge
 
 Weitere Informationen finden Sie unter [Redis-Keyspacebenachrichtigungen](http://redis.io/topics/notifications). Beispielcode finden Sie in der Datei [KeySpaceNotifications.cs](https://github.com/rustd/RedisSamples/blob/master/HelloWorld/KeySpaceNotifications.cs) im [Hello world](https://github.com/rustd/RedisSamples/tree/master/HelloWorld)-Beispiel.
 
+## Redis-Datenpersistenz
+
+Klicken Sie auf **Redis-Datenpersistenz** zum Aktivieren, Deaktivieren oder Konfigurieren der Datenpersistenz für den Premium-Cache konfigurieren.
+
+![Redis-Datenpersistenz](./media/cache-configure/redis-cache-persistence-settings.png)
+
+Klicken Sie auf **Aktiviert**, um die Redis-Datenbanksicherung zu aktivieren. Klicken Sie auf **Deaktiviert**, um die Redis-Persistenz zu deaktivieren.
+
+Zum Konfigurieren des Sicherungsintervalls, wählen Sie eine **Sicherungshäufigkeit** aus der Dropdownliste. Zur Auswahl stehen **15 Minuten**, **30 Minuten**, **60 Minuten**, **6 Stunden**, **12 Stunden** und **24 Stunden**. Dieses Intervall wird ab dem Moment rückwärts gezählt, an dem der vorherige Sicherungsvorgang erfolgreich abgeschlossen wird. Wenn das Intervall abgelaufen ist, wird eine neue Sicherung gestartet.
+
+Klicken Sie auf **Speicherkonto**, um das Speicherkonto auszuwählen, und wählen Sie entweder **Primärschlüssel** oder **Sekundärschlüssel** aus der Dropdownliste **Speicherschlüssel** aus. Sie müssen ein Speicherkonto auswählen, das aus der gleichen Region wie der Cache stammt, und wir empfehlen ein **Storage Premium**-Konto, da dieses einen höheren Durchsatz aufweist. Wenn der Speicherschlüssel für Ihr Persistenzkonto neu generiert wird, müssen Sie den gewünschten Schlüssel erneut aus der Dropdownliste **Speicherschlüssel** auswählen.
+
+Klicken Sie auf **OK**, um die Persistenzkonfiguration zu speichern.
+
+>[AZURE.IMPORTANT]Redis-Datenpersistenz ist nur für Premium-Caches verfügbar.
+
 ## Benutzer und Tags
 
 ![Redis Cache: Benutzer und Tags](./media/cache-configure/IC808320.png)
@@ -183,4 +199,4 @@ Eine Liste der Redis-Befehle, die für Azure Redis Cache deaktiviert sind, finde
 ## Nächste Schritte
 -	Weitere Informationen zum Verwenden von Redis-Befehlen finden Sie unter [Wie führe ich Redis-Befehle aus?](cache-faq.md#how-can-i-run-redis-commands).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

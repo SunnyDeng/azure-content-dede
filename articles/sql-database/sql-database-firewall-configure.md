@@ -35,7 +35,7 @@ Zum Konfigurieren der Firewall erstellen Sie Firewallregeln, die Bereiche zuläs
 
 ## Firewall für SQL-Datenbank – Übersicht
 
-Anfänglich ist jeglicher Zugriff auf den Azure SQL-Datenbankserver durch die Firewall blockiert. Damit der Azure SQL-Datenbankserver verwendet werden kann, müssen Sie zum Verwaltungsportal wechseln und eine oder mehrere Firewallregeln auf Serverebene festlegen, die den Zugriff auf den Azure SQL-Datenbankserver ermöglichen. Geben Sie mithilfe der Firewallregeln an, welche IP-Adressbereiche aus dem Internet zulässig sind und ob Azure-Anwendungen versuchen können, eine Verbindung mit dem Azure SQL-Datenbankserver herzustellen.
+Anfänglich ist jeglicher Zugriff auf den Azure SQL-Datenbankserver durch die Firewall blockiert. Damit der Azure SQL-Datenbankserver verwendet werden kann, müssen Sie zum klassischen Portal wechseln und eine oder mehrere Firewallregeln auf Serverebene festlegen, die den Zugriff auf den Azure SQL-Datenbankserver ermöglichen. Geben Sie mithilfe der Firewallregeln an, welche IP-Adressbereiche aus dem Internet zulässig sind und ob Azure-Anwendungen versuchen können, eine Verbindung mit dem Azure SQL-Datenbankserver herzustellen.
 
 Wenn Sie jedoch selektiv nur den Zugriff auf eine der Datenbanken auf dem Azure SQL-Datenbankserver gewähren möchten, müssen Sie eine Regel auf Datenbankebene für die erforderliche Datenbank mit einem IP-Adressbereich erstellen, der über den IP-Adressbereich hinausgeht, der in der Firewallregel auf Serverebene angegeben ist, und sicherstellen, dass die IP-Adresse des Clients in dem Bereich liegt, der in der Regel auf Datenbankebene angegeben ist.
 
@@ -60,7 +60,7 @@ Wenn ein Computer versucht, eine Verbindung mit dem Datenbankserver über das In
 
 Wenn eine Azure-Anwendung versucht, eine Verbindung mit dem Datenbankserver herzustellen, prüft die Firewall, ob Azure-Verbindungen zulässig sind. Eine Firewalleinstellung, bei der die Start- und Endadresse den Wert 0.0.0.0 aufweist, gibt an, dass diese Verbindungen zulässig sind. Ist der Verbindungsversuch nicht zulässig, gelangt die Anforderung nicht zum Azure SQL-Datenbankserver.
 
-Im [Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=161793) können Sie Verbindungen über Azure auf zwei Arten ermöglichen:
+Im [klassischen Portal](http://go.microsoft.com/fwlink/p/?LinkID=161793) können Sie Verbindungen über Azure auf zwei Arten ermöglichen:
 
 - Aktivieren Sie beim Erstellen eines neuen Servers das Kontrollkästchen **Ermöglichen Sie Microsoft Azure-Diensten den Zugriff auf den Server**.
 
@@ -68,7 +68,7 @@ Im [Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=161793) können 
 
 ## Erstellen der ersten Firewallregel auf Serverebene
 
-Die erste Firewalleinstellung auf Serverebene kann mit dem [Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=161793) oder programmgesteuert mithilfe der REST-API oder Azure PowerShell erstellt werden. Nachfolgende Firewallregeln auf Serverebene können anhand dieser Methoden sowie über Transact-SQL erstellt und verwaltet werden. Weitere Informationen zur Firewallregeln auf Serverebene finden Sie unter [Vorgehensweise: Konfigurieren von Firewalleinstellungen (Azure SQL-Datenbank)](sql-database-configure-firewall-settings.md).
+Die erste Firewalleinstellung auf Serverebene kann mit dem [klassischen Portal](http://go.microsoft.com/fwlink/p/?LinkID=161793) oder programmgesteuert mithilfe der REST-API oder Azure PowerShell erstellt werden. Nachfolgende Firewallregeln auf Serverebene können anhand dieser Methoden sowie über Transact-SQL erstellt und verwaltet werden. Weitere Informationen zur Firewallregeln auf Serverebene finden Sie unter [Vorgehensweise: Konfigurieren von Firewalleinstellungen (Azure SQL-Datenbank)](sql-database-configure-firewall-settings.md).
 
 ## Erstellen von Firewallregeln auf Datenbankebene
 
@@ -76,7 +76,7 @@ Nachdem Sie die erste Firewall auf Serverebene konfiguriert haben, können Sie d
 
 ## Programmgesteuertes Verwalten von Datenbankfirewallregeln
 
-Außer im Azure-Verwaltungsportal können Firewallregeln mithilfe von Transact-SQL, REST-API und Azure PowerShell programmgesteuert verwaltet werden. In den folgenden Tabellen sind die Gruppen von Befehlen beschrieben, die für die jeweilige Methode zur Verfügung stehen.
+Außer im klassischen Azure-Portal können Firewallregeln mithilfe von Transact-SQL, REST-API und Azure PowerShell programmgesteuert verwaltet werden. In den folgenden Tabellen sind die Gruppen von Befehlen beschrieben, die für die jeweilige Methode zur Verfügung stehen.
 
 
 ### Transact-SQL
@@ -117,7 +117,7 @@ Wenn der Zugriff auf den Microsoft Azure SQL-Datenbankdienst nicht das erwartete
 
 - **Lokale Firewallkonfiguration:** Bevor Ihr Computer auf Azure SQL-Datenbank zugreifen kann, müssen Sie möglicherweise eine Firewallausnahme auf Ihrem Computer für TCP-Port 1433 erstellen. Sie müssen möglicherweise zusätzliche Ports öffnen, wenn Sie Verbindungen innerhalb der Grenzen der Azure-Cloud herstellen möchten. Weitere Informationen finden Sie im Abschnitt **SQL-Datenbank V12: „Außerhalb“ im Vergleich zu „Innerhalb“** im Artikel [Andere Ports als 1433 für ADO.NET 4.5 und SQL-Datenbank V12](sql-database-develop-direct-route-ports-adonet-v12.md).
 
-- **Netzwerkadressübersetzung (NAT):** Aufgrund von NAT kann die IP-Adresse, die vom Computer zum Herstellen einer Verbindung mit Azure SQL-Datenbank verwendet wird, von der IP-Adresse abweichen, die in den IP-Konfigurationseinstellungen des Computers angezeigt wird. Zum Anzeigen der IP-Adresse, die vom Computer zum Herstellen einer Verbindung mit Azure verwendet wird, melden Sie sich beim Verwaltungsportal an, und navigieren Sie zur Registerkarte **Konfigurieren** auf dem Server, auf dem die Datenbank gehostet ist. Im Abschnitt **Zulässige IP-Adressen** wird die aktuelle Client-IP-Adresse angezeigt. Klicken Sie auf **Hinzufügen** für **Zulässige IP-Adressen**, um diesem Computer den Zugriff auf den Server zu gestatten.
+- **Netzwerkadressübersetzung (NAT):** Aufgrund von NAT kann die IP-Adresse, die vom Computer zum Herstellen einer Verbindung mit Azure SQL-Datenbank verwendet wird, von der IP-Adresse abweichen, die in den IP-Konfigurationseinstellungen des Computers angezeigt wird. Zum Anzeigen der IP-Adresse, die vom Computer zum Herstellen einer Verbindung mit Azure verwendet wird, melden Sie sich beim klassischen Portal an und navigieren zur Registerkarte **Konfigurieren** auf dem Server, auf dem die Datenbank gehostet ist. Im Abschnitt **Zulässige IP-Adressen** wird die aktuelle Client-IP-Adresse angezeigt. Klicken Sie auf **Hinzufügen** für **Zulässige IP-Adressen**, um diesem Computer den Zugriff auf den Server zu gestatten.
 
 - **Änderungen an der Zulassungsliste sind noch nicht wirksam:** Es kann zu einer Verzögerung von bis zu fünf Minuten kommen, bevor Änderungen an der Firewallkonfiguration für Azure SQL-Datenbank wirksam werden.
 
@@ -138,4 +138,4 @@ Wenn der Zugriff auf den Microsoft Azure SQL-Datenbankdienst nicht das erwartete
 <!--Image references-->
 [1]: ./media/sql-database-firewall-configure/sqldb-firewall-1.png
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

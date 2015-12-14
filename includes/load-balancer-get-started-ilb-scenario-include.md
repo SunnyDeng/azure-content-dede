@@ -1,10 +1,9 @@
-## Scenario
+## Szenario
 
-You are creating an internal load balancer according to the following scenario
+Sie erstellen einen internen Lastenausgleich gemäß dem folgenden Szenario
 
-![IMAGE DESCRIPTION](./media/load-balancer-get-started-ilb-scenario-include/figure1.png)
+![BILDBESCHREIBUNG](./media/load-balancer-get-started-ilb-scenario-include/figure1.png)
 
-An internal load balancer is configured in a virtual network  
-- 2 virtual machines called DB1 and DB2<BR>
-- endpoints <BR>
--  internal load balancer<BR>
+Ein interner Lastenausgleich wird in einem virtuellen Netzwerk konfiguriert – zwei virtuelle Computer namens DB1 und DB2<BR> –Endpunkte <BR> – interner Lastenausgleich<BR>
+
+<!---HONumber=AcomDC_1203_2015-->

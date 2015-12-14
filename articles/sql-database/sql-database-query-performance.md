@@ -25,7 +25,7 @@ Das Verwalten und Abstimmen der Leistung von relationalen Datenbanken ist eine a
 - Informationen zu Abfragen mit dem höchsten DTU-Verbrauch, für die unter Umständen eine Leistungssteigerung erzielt werden kann. 
 - Die Fähigkeit zum Durchführen eines Drilldowns in die Details einer Abfrage.​
 
-> [AZURE.NOTE]Query Performance Insight befindet sich derzeit in der Preview-Phase und steht nur im [Azure-Vorschauportal](https://portal.azure.com/) zur Verfügung.
+> [AZURE.NOTE]Query Performance Insight befindet sich derzeit in der Vorschau und steht nur im [Azure-Portal](https://portal.azure.com/) zur Verfügung.
 
 
 
@@ -62,7 +62,7 @@ Query Performance Insight ist einfach zu verwenden:
 
 ## Überprüfen von Abfragen mit dem höchsten DTU-Verbrauch
 
-Gehen Sie im [Vorschauportal](https://portal.azure.com) wie folgt vor:
+Gehen Sie im [Portal](https://portal.azure.com) wie folgt vor:
 
 1. Navigieren Sie zu einer SQL-Datenbank, und klicken Sie auf **Query Performance Insight**. 
 
@@ -109,4 +109,4 @@ Sehen Sie sich den [Index Advisor](sql-database-index-advisor.md) an, um weitere
 [2]: ./media/sql-database-query-performance/top-queries.png
 [3]: ./media/sql-database-query-performance/query-details.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

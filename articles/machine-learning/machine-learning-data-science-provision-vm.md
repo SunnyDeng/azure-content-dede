@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/23/2015" 
+	ms.date="11/26/2015" 
 	ms.author="bradsev" />
 
 
@@ -51,39 +51,39 @@ Bevor Sie eine Microsoft Data Science Virtual Machine erstellen können, benöti
 
 Es folgen die Schritte zum Erstellen einer Instanz der Microsoft Data Science Virtual Machine:
 
-1.	Wechseln Sie im [Azure-Portal](https://portal.azure.com/#gallery/microsoft-ads.standard-data-science-vmstandard-data-science-vm) zur Auflistung der virtuellen Computer.
+1.	Wechseln Sie im [klassischen Azure-Portal](https://portal.azure.com/#gallery/microsoft-ads.standard-data-science-vmstandard-data-science-vm) zur Auflistung der virtuellen Computer.
 2.	 Klicken Sie unten auf die Schaltfläche **Erstellen**, um einen Assistenten aufzurufen. ![configure-data-science-vm](./media/machine-learning-data-science-provision-vm/configure-data-science-virtual-machine.png)
 3.	 Die folgenden Abschnitte enthalten die **Eingaben** für jeden der **fünf Schritte** im Assistenten (im rechten Teil der obigen Abbildung aufgelistet), der zum Erstellen der Microsoft Data Science Virtual Machine wird. Die zum Konfigurieren der einzelnen Schritte erforderlichen Eingaben sind:
 
   **a. Grundlagen**:
 
-    - **Name**: Name of your data science server you are creating.
-    - **User Name**: Admin account login id
-    - **Password**: Admin account password
-    - **Subscription**: If you have more than one subscription, select the one on which the machine will be created and billed
-    - **Resource Group**: You can create a new one or use an existing group
-    - **Location**: Select the data center that is most appropriate. Usually it is the data center that has most of your data or is closest to your physical location for fastest network access
+   - **Name**: Name des Data Science-Servers, den Sie erstellen.
+   - **Benutzername**: ID des Administratoranmeldekontos.
+   - **Kennwort**: Kennwort des Administratorkontos.
+   - **Abonnement**: Wenn Sie über mehrere Abonnements verfügen, wählen Sie eines aus, über das der Computer erstellt und abgerechnet wird.
+   - **Ressourcengruppe**: Sie können eine neue Gruppe erstellen oder eine vorhandene Gruppe verwenden.
+   - **Standort**: Wählen Sie das Rechenzentrum aus, das am besten geeignet ist. Normalerweise ist es das Rechenzentrum, in dem der größte Teil Ihrer Daten gespeichert ist oder das Ihrem Standort am nächsten ist, um den schnellsten Netzwerkzugriff zu erreichen.
 
   **b. Größe**:
 
-    - Select one of the server types that meets your functional requirement and cost constraints. You can get more choices of VM sizes by selecting “View All”
+   - Wählen Sie einen Servertyp aus, der die funktionalen Anforderungen und den Kostenrahmen erfüllt. Eine größere Auswahl an VM-Größen erhalten Sie durch die Auswahl von „Alle anzeigen“.
 
   **c. Einstellungen**:
 
-    - **Disk Type**: Choose Premium if you prefer a solid state drive (SSD), else choose “Standard”.
-    - **Storage Account**: You can create a new Azure storage account in your subscription or use an existing one in the same *Location* that was chosen on the Basics step of the wizard.
-    - **Other parameters**: In most cases you will just use the default values. You can hover over the informational link for help on the specific fields in case you want to consider the use of non-default values.
+   - **Datenträgertyp**: Wählen Sie „Premium“, wenn Sie Solid-State-Laufwerke (SSD) bevorzugen, andernfalls „Standard“.
+   - **Speicherkonto**: Sie können ein neues Azure-Speicherkonto in Ihrem Abonnement erstellen oder ein vorhandenes an dem *Standort* verwenden, der im Schritt „Grundlagen“ des Assistenten ausgewählt wurde.
+   - **Andere Parameter**: In den meisten Fällen verwenden Sie die Standardeinstellungen für die übrigen Parameter. Sie können den Mauszeiger über den Informationslink bewegen, um Hilfe zu einem bestimmten Feld anzuzeigen, falls Sie nicht die Standardeinstellungen verwenden möchten.
 
   **d. Zusammenfassung**:
 
-    - Verify that all information you entered is correct.
+   - Stellen Sie sicher, dass alle eingegebenen Informationen richtig sind.
 
   **e. Kaufen**:
 
-    - Click on **Buy** to start the provisioning. A link is provided to the terms of the transaction. The VM does not have any additional charges beyond the compute for the server size you chose in the **Size** step. 
+   - Klicken Sie auf **Kaufen**, um die Bereitstellung zu starten. Ein Link zu den Bedingungen der Transaktion wird bereitgestellt. Für die VM gelten keine über die Computekosten für die Servergröße, die Sie im Schritt **Größe** ausgewählt haben, hinausgehenden Kosten. 
 
 
-Die Bereitstellung sollte ungefähr 10 bis 20 Minuten dauern. Der Status der Bereitstellung wird im Azure-Portal angezeigt.
+Die Bereitstellung sollte ungefähr 10 bis 20 Minuten dauern. Der Status der Bereitstellung wird im klassischen Azure-Portal angezeigt.
 
 ## Zugreifen auf die Microsoft Data Science Virtual Machine
 
@@ -111,7 +111,7 @@ Hinweis: Es könnte eine Meldung angezeigt werden, die besagt, dass der Evaluier
 Eine eingeschränkte Version von SQL Server gehört ebenfalls zu Visual Studio Community Edition. Sie können auf die SQL Server-Instanz zugreifen, indem Sie **SQL Server Management Studio** starten. Ihr VM-Name wird als Servernamen angegeben. Verwenden Sie die Windows-Authentifizierung, wenn Sie als Administrator unter Windows angemeldet sind. Sobald SQL Server Management Studio gestartet wurde, können Sie andere Benutzer erstellen, Datenbanken erstellen, Daten importieren und SQL-Abfragen ausführen.
 
 ### Azure 
-Mehrere Azure-Tools sind auf der VM installiert: Es gibt eine Desktopverknüpfung für den Zugriff auf die Azure SDK-Dokumentation. – **AzCopy** wird zum Verschieben von Daten in das und aus dem Microsoft Azure Storeag-Konto verwendet. – **Azure Storage Explorer** wird verwendet, um die Objekte zu durchsuchen, die in Ihrem Azure-Speicherkonto gespeichert sind. – **Microsoft Azure PowerShell** ist eine Skriptsprache zur Verwaltung von Azure-Ressourcen in einer Skriptsprache, die auch auf Ihrer VM installiert ist.
+Mehrere Azure-Tools sind auf der VM installiert: Es gibt eine Desktopverknüpfung für den Zugriff auf die Azure SDK-Dokumentation. – **AzCopy** wird zum Verschieben von Daten in das und aus dem Microsoft Azure Storage-Konto verwendet. – **Azure Storage Explorer** wird verwendet, um die Objekte zu durchsuchen, die in Ihrem Azure-Speicherkonto gespeichert sind. – **Microsoft Azure PowerShell** ist eine Skriptsprache zur Verwaltung von Azure-Ressourcen in einer Skriptsprache, die auch auf Ihrer VM installiert ist.
 
 ###Power BI
 
@@ -122,4 +122,4 @@ Hinweis: Für den Zugriff auf Power BI benötigen Sie ein Office 365-Konto.
 ## Zusätzliche Microsoft-Entwicklungstools
 Der [**Microsoft-Webplattform-Installer**](https://www.microsoft.com/web/downloads/platform.aspx) kann verwendet werden, um andere Microsoft-Entwicklungstools zu suchen und herunterzuladen. Es gibt auch eine Verknüpfung mit dem Tool auf dem Desktop der Microsoft Data Science Virtual Machine.
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

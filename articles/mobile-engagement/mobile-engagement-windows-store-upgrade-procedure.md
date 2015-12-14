@@ -271,7 +271,7 @@ Wenn Sie sie stattdessen zur Laufzeit angeben möchten, können Sie die folgende
 	/* Initialize Engagement agent with above configuration. */
 	EngagementAgent.Instance.Init(args, engagementConfiguration);
 
-Die Verbindungszeichenfolge für die Anwendung wird im Azure-Verwaltungsportal angezeigt.
+Die Verbindungszeichenfolge für die Anwendung wird im klassischen Azure-Portal angezeigt.
 
 ### Namensänderung von Elementen
 
@@ -289,4 +289,4 @@ Beachten Sie, dass sich die Umbenennung auch auf überschriebene Methoden auswir
 
  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

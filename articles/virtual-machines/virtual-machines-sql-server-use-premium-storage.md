@@ -680,7 +680,7 @@ Da Sie mindestens einen SQL Server offline schalten, sollten Sie die Clusterquo
 
     Set-ClusterQuorum -NodeMajority  
 
-Weitere Informationen zur Verwaltung und zum Konfigurieren des Clusterquorums finden Sie unter [Konfigurieren und Verwalten des Quorums in einem Windows Server 2012-Failovercluster](https://technet.microsoft.com/de-DE/library/jj612870.aspx).
+Weitere Informationen zur Verwaltung und zum Konfigurieren des Clusterquorums finden Sie unter [Konfigurieren und Verwalten des Quorums in einem Windows Server 2012-Failovercluster](https://technet.microsoft.com/library/jj612870.aspx).
 
 #### Schritt 6: Extrahieren vorhandener Endpunkte und ACLs
     #GET Endpoint info
@@ -1083,7 +1083,7 @@ Informationen zu einzelnen Blobs: #Check individual blob status Get-AzureStorage
     Get-AzureVM –ServiceName $destcloudsvc –Name $vmNameToMigrate  | Add-AzureEndpoint -Name $epname -Protocol $prot -LocalPort $locport -PublicPort $pubport -ProbePort 59999 -ProbeIntervalInSeconds 5 -ProbeTimeoutInSeconds 11  -ProbeProtocol "TCP" -InternalLoadBalancerName $ilb -LBSetName $ilb -DirectServerReturn $true | Update-AzureVM
     
     
-    #STOP!!! CHECK in the Azure portal or Machine Endpoints through powershell that these Endpoints are created!
+    #STOP!!! CHECK in the Azure classic portal or Machine Endpoints through powershell that these Endpoints are created!
     
     #SET ACLs or Azure Network Security Groups & Windows FWs 
      
@@ -1149,4 +1149,4 @@ Informationen zum Hinzufügen einer IP-Adresse finden Sie im [Anhang](#appendix-
 [25]: ./media/virtual-machines-sql-server-use-premium-storage/10_Appendix_15.png
  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

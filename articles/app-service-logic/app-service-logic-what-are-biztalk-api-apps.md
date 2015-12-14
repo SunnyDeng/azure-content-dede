@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/08/2015" 
+	ms.date="12/01/2015" 
 	ms.author="mandia"/>
 
 # Was sind Connectors und BizTalk-API-Apps?
@@ -48,4 +48,4 @@ Geschäftsregeln umfassen die Richtlinien und Entscheidungen, welche Geschäftsp
 Eine vollständige Liste der Connectors und API-Apps, die in den einzelnen Kategorien wie den Standardconnectors, BizTalk-EAI, Premiumconnectors usw. enthalten sind, finden Sie unter [Liste mit Connectors und API-Apps](app-service-logic-connectors-list.md).
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

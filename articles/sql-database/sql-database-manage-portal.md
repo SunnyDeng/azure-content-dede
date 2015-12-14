@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Verwalten von Azure SQL-Datenbanken über das Azure-Verwaltungsportal" 
-	description="Erfahren Sie, wie Sie das Azure-Verwaltungsportal verwenden, um eine relationale Datenbank mithilfe des Azure-Verwaltungsportals in der Cloud zu verwalten." 
+	pageTitle="Verwalten von Azure SQL-Datenbanken über das klassische Azure-Portal" 
+	description="Erfahren Sie, wie Sie das klassische Azure-Portal verwenden, um eine relationale Datenbank mithilfe des klassischen Azure-Portals in der Cloud zu verwalten." 
 	services="sql-database" 
 	documentationCenter="" 
 	authors="stevestein" 
@@ -17,24 +17,24 @@
 	ms.author="sstein"/>
 
 
-# Verwalten von Azure SQL-Datenbank über das Azure-Verwaltungsportal
+# Verwalten von Azure SQL-Datenbanken über das klassische Azure-Portal
 
 
 > [AZURE.SELECTOR]
-- [Azure Preview Portal](sql-database-manage-portal.md)
+- [Azure Portal](sql-database-manage-portal.md)
 - [SSMS](sql-database-manage-azure-ssms.md)
 - [PowerShell](sql-database-command-line-tools.md)
 
-Das [Azure-Verwaltungsportal][Management Portal] ermöglicht das Erstellen, Überwachen und Verwalten von Azure SQL-Datenbanken und -Servern. In diesem Artikel werden die Datenbankvorgänge erläutert, die mit dem Verwaltungsportal ausgeführt werden können.
+Das [klassische Azure-Portal][Classic Portal] ermöglicht das Erstellen, Überwachen und Verwalten von Azure SQL-Datenbanken und -Servern. In diesem Artikel werden die Datenbankvorgänge erläutert, die mit dem klassischen Portal ausgeführt werden können.
 
->[AZURE.NOTE]Wenn Ihnen das Azure-Verwaltungsportal nicht vertraut ist, erhalten Sie in diesem [Video][Azure Portal Tour] (in englischer Sprache) einen kurzen Überblick über die allgemeinen Funktionen und Konzepte.
+>[AZURE.NOTE]Wenn Ihnen das klassische Azure-Portal nicht vertraut ist, erhalten Sie in diesem [Video][Azure Classic Portal Tour] (in englischer Sprache) einen kurzen Überblick über die allgemeinen Funktionen und Konzepte.
 
 ![Datenbankübersicht](./media/sql-database-manage-portal/sqldatabase_annotated.png)
 
 ## 1\. Aktionen zur Datenbankverwaltung
 ![Datenbankverwaltungsaktionen](./media/sql-database-manage-portal/sqldatabase_actions.png)
 
-Das Azure-Verwaltungsportal bietet eine Reihe von allgemeinen Datenbankaktionen, auf die oben auf dem Blatt "Datenbank" zugegriffen werden kann. Sie können eine Datenbank zu einem früheren Zeitpunkt wiederherstellen, eine Datenbank in Visual Studio öffnen, eine Datenbank auf einen neuen Server kopieren und die Datenbank in ein Azure-Speicherkonto exportieren.
+Das klassische Azure-Portal bietet eine Reihe von allgemeinen Datenbankaktionen, auf die oben auf dem Blatt „Datenbank“ zugegriffen werden kann. Sie können eine Datenbank zu einem früheren Zeitpunkt wiederherstellen, eine Datenbank in Visual Studio öffnen, eine Datenbank auf einen neuen Server kopieren und die Datenbank in ein Azure-Speicherkonto exportieren.
 
 - [Wiederherstellen einer SQL-­Datenbank](sql-database-point-in-time-restore-tutorial-management-portal.md)
 - [Öffnen einer SQL-Datenbank in Visual Studio](sql-database-connect-query.md)
@@ -45,7 +45,7 @@ Das Azure-Verwaltungsportal bietet eine Reihe von allgemeinen Datenbankaktionen,
 
 Azure SQL-Datenbanken verfügen standardmäßig über Überwachungsdiagramme für die Datenbankdurchsatzeinheit (DTU), die Größe der Datenbank und die Verbindungsintegrität. Diese Überwachungsdiagramme können angepasst und erweitert werden, um außerdem die CPU-Nutzung, den Daten-E/A-Prozentsatz, Deadlocks, den Protokoll-E/A-Prozentsatz oder sogar den Prozentsatz der Anforderungen anzuzeigen, die von der Firewall blockiert werden. Weitere Informationen zum Anpassen der Überwachungsdiagrammen finden Sie [hier][Azure part monitoring].
 
-Darüber hinaus können Regeln für Warnhinweise eingerichtet werden, um eine angegebene Metrik zu überwachen und einen bestimmten Administrator und Co-Administrator zu warnen, wenn vordefinierte Grenzwerte erreicht werden. Weitere Informationen zum Einrichten von Regeln für Warnhinweise im Azure-Verwaltungsportal finden Sie [hier][Azure part monitoring].
+Darüber hinaus können Regeln für Warnhinweise eingerichtet werden, um eine angegebene Metrik zu überwachen und einen bestimmten Administrator und Co-Administrator zu warnen, wenn vordefinierte Grenzwerte erreicht werden. Weitere Informationen zum Einrichten von Regeln für Warnhinweise im klassischen Azure-Portal finden Sie [hier][Azure part monitoring].
 
 ## 3\. Datenbanksicherheit und Überwachung
 ![Datenbanksicherheit](./media/sql-database-manage-portal/sqldatabase_security.png)
@@ -62,7 +62,7 @@ Azure SQL-Datenbanken können auch zum Maskieren vertraulicher Daten für nicht 
 ## 4\. Georeplikation
 ![Georeplikation](./media/sql-database-manage-portal/sqldatabase_georeplication.png)
 
-Azure SQL-Datenbanken können konfiguriert werden, um bereits übergebene Transaktionen asynchron in eine sekundäre Datenbank zu replizieren. Mit der Georeplikation im Verwaltungsportal können Sie die Azure-Region wählen, in der die sekundäre Datenbank gespeichert werden soll.
+Azure SQL-Datenbanken können konfiguriert werden, um bereits übergebene Transaktionen asynchron in eine sekundäre Datenbank zu replizieren. Mit der Georeplikation im klassischen Portal können Sie die Azure-Region wählen, in der die sekundäre Datenbank gespeichert werden soll.
 
 - [Georeplikation](https://msdn.microsoft.com/library/azure/dn783447.aspx)
 
@@ -75,8 +75,8 @@ Azure SQL-Datenbanken können konfiguriert werden, um bereits übergebene Transa
 * [Überwachen der SQL-Datenbank mit dynamischen Verwaltungssichten][]   
 * [Transact-SQL-Referenz (SQL-Datenbank)][]
   
-  [Azure Portal Tour]: https://go.microsoft.com/fwlink/?LinkID=522341
-  [Management Portal]: https://portal.azure.com
+  [Azure Classic Portal Tour]: https://go.microsoft.com/fwlink/?LinkID=522341
+  [Classic Portal]: https://portal.azure.com
   [Azure part monitoring]: ../documentdb-monitor-accounts.md
   [AzureDb management overview]: http://azure.microsoft.com/blog/2014/12/22/client-tooling-updates-for-azure-sql-database/
   [Introducing SQL Database]: http://azure.microsoft.com/services/sql-database
@@ -90,4 +90,4 @@ Azure SQL-Datenbanken können konfiguriert werden, um bereits übergebene Transa
  
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -38,8 +38,7 @@ Preisinformationen finden Sie auf der [New Relic-Seite im Azure Marketplace](/ma
 
 Azure-Kunden erhalten bei Bereitstellung des New Relic-Agenten ein zweiwöchiges Testabonnement von New Relic Pro.
 
-Anmelden bei New Relic über den Azure Marketplace 
---
+Anmelden bei New Relic über den Azure Marketplace --
 
 New Relic kann nahtlos in Azure-Web- und -Workerrollen sowie Azure App Service integriert werden.
 
@@ -47,7 +46,7 @@ Um sich direkt im Azure Marketplace bei New Relic anzumelden, führen Sie diese 
 
 ## Schritt 1: Erstellen eines New Relic-Kontos
 
-1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an, und klicken Sie auf **Neu**.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an, und klicken Sie in der Ecke auf **Neu**.
 3. Klicken Sie auf **Entwicklerdienste** > **New Relic-APM**.
 4. Konfigurieren Sie Ihr New Relic-Konto mit den folgenden Angaben, und klicken Sie dann auf **Erstellen**.
 	- **Name**
@@ -63,7 +62,7 @@ Um sich direkt im Azure Marketplace bei New Relic anzumelden, führen Sie diese 
 
 ## Schritt 2: Konfigurieren der New Relic-Integration für die Web-App
 
-1. Öffnen Sie im [Azure-Vorschauportal](https://portal.azure.com) das Blatt Ihrer Web-App.
+1. Öffnen Sie im [Azure-Portal](https://portal.azure.com) das Blatt Ihrer Web-App.
 2. Klicken Sie im oberen Bereich des Blatts auf das Menü "...", und wählen Sie **Kacheln hinzufügen**.
 3. Wählen Sie auf der Registerkarte **Überwachung** **Anwendungsübersicht**, und ziehen Sie die Kachel auf die gewünschte Stelle im Blatt für die Web-App.
 4. Klicken Sie auf „Fertig“, um das Hinzufügen der Kacheln zu beenden.
@@ -84,7 +83,7 @@ Veröffentlichen Sie Ihre Web-App mit Visual Studio. Wenn Sie Ihre Web-App berei
 
 So zeigen Sie das New Relic-Dashboard an:
 
-2. Öffnen Sie das Blatt der Web-App im [Azure-Vorschauportal](https://portal.azure.com).
+2. Öffnen Sie im [Azure-Portal](https://portal.azure.com) das Blatt Ihrer Web-App.
 3. Klicken Sie auf **Anwendungsüberwachung** > **Anwendungsname** > **View at New Relic**.
 
 	![](./media/store-new-relic-web-sites-dotnet-application-performance-management/view-new-relic-data.png)
@@ -165,7 +164,6 @@ In den folgenden Ressourcen finden Sie weitere Informationen:
 
 ## Änderungen
 * Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des Azure-Portals gegenüber dem Azure-Vorschauportal finden Sie unter [Referenz zur Navigation im Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715)
 
 
 [vswebsite]: web-sites-dotnet-get-started.md
@@ -179,4 +177,4 @@ In den folgenden Ressourcen finden Sie weitere Informationen:
 [custom]: ./media/store-new-relic-web-sites-dotnet-application-performce-management/nrcustom.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

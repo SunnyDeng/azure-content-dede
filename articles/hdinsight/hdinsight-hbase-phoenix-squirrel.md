@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="07/29/2015"
+   ms.date="12/02/2015"
    ms.author="jgao"/>
 
 # Verwenden von Apache Phoenix und SQuirreL mit HBase-Clustern in HDInsight  
@@ -29,7 +29,7 @@ Erfahren Sie, wie Sie [Apache Phoenix](http://phoenix.apache.org/) in HDInsight 
 Bevor Sie SQLLine verwenden können, benötigen Sie Folgendes:
 
 - **Ein HBase-Cluster in HDInsight**. Informationen zur Bereitstellung von HBase-Cluster finden Sie unter [Erste Schritte mit Apache in HDInsight][hdinsight-hbase-get-started].
-- **Verbinden Sie sich per Remotedesktop-Protokoll mit dem HBase-Cluster**. Anweisungen finden Sie in [Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Verwaltungsportal][hdinsight-manage-portal].
+- **Verbinden Sie sich per Remotedesktop-Protokoll mit dem HBase-Cluster**. Anweisungen finden Sie in [Verwalten von Hadoop-Clustern in HDInsight mit dem klassischen Azure-Portal][hdinsight-manage-portal].
 
 **Herausfinden des Hostnamen**
 
@@ -116,7 +116,7 @@ Stellen Sie sicher, dass Sie einen HBase-Cluster in einem virtuellen Azure Netzw
 
 **So konfigurieren Sie die Punkt-zu-Standort-Konnektivität**
 
-1. Melden Sie sich auf dem [Azure-Portal][azure-portal] an.
+1. Melden Sie sich beim [klassischen Azure-Portal][azure-portal] an.
 2. Klicken Sie auf der linken Seite auf **NETZWERKE**.
 3. Klicken Sie auf das virtuelle Netzwerk, das Sie erstellt haben (siehe [Bereitstellen von HBase-Clustern im virtuellen Azure Netzwerk][hdinsight-hbase-provision-vnet]).
 4. Klicken Sie oben auf **KONFIGURIEREN** .
@@ -129,7 +129,7 @@ Stellen Sie sicher, dass Sie einen HBase-Cluster in einem virtuellen Azure Netzw
 
 **Erstellen eines dynamischen Routing-Gateways**
 
-1. Klicken Sie im Azure-Portal oben auf der Seite auf **DASHBOARD**.
+1. Klicken Sie im klassischen Azure-Portal oben auf der Seite auf **DASHBOARD**.
 2. Klicken Sie unten auf der Seite auf **GATEWAY ERSTELLEN**.
 3. Klicken Sie auf **JA**, um zu bestätigen. Warten Sie, bis das Gateway erstellt wurde.
 4. Klicken Sie Fall oben auf **DASHBOARD**. Es wird eine visuelle Darstellung des virtuellen Netzwerks angezeigt:
@@ -147,7 +147,7 @@ Eine Möglichkeit zum Erstellen eines X.509-Zertifikats ist mithilfe des Tools z
 
 1. Öffnen Sie auf Ihrer Arbeitsstation ein Eingabeaufforderungsfenster.
 2. Navigieren Sie zum Ordner „Visual Studio-Tools“. 
-3. Der folgende Befehl im Beispiel unten erstellt und installiert ein Stammzertifikat im persönlichen Zertifikatsspeicher auf Ihrer Arbeitsstation und erstellt außerdem eine entsprechende .cer-Datei, die Sie später in der Azure-Portal hochladen. 
+3. Der folgende Befehl im Beispiel unten erstellt und installiert ein Stammzertifikat im persönlichen Zertifikatsspeicher auf Ihrer Arbeitsstation und erstellt außerdem eine entsprechende .cer-Datei, die Sie später im klassischen Azure-Portal hochladen. 
 
 		makecert -sky exchange -r -n "CN=HBaseVnetVPNRootCertificate" -pe -a sha1 -len 2048 -ss My "C:\Users\JohnDole\Desktop\HBaseVNetVPNRootCertificate.cer"
 
@@ -171,9 +171,9 @@ Eine Möglichkeit zum Erstellen eines X.509-Zertifikats ist mithilfe des Tools z
 
 	Auf jedem Computer, den Sie mit dem virtuellen Netzwerk verbinden möchten,muss ein Clientzertifikat installiert werden. Es wird empfohlen, dass Sie für alle Computer, die Sie mit dem virtuellen Netzwerk verbinden möchten, jeweils eindeutige Clientzertifikate erstellen. Verwenden Sie zum Exportieren der Clientzertifikate den Zertifikatmanager "certmgr.msc".
 
-**Hochladen de Stammzertifikats in der Azure-Portal**
+**Hochladen des Stammzertifikats im klassischen Azure-Portal**
 
-1. Klicken Sie im Azure-Portal links auf **NETZWERK**.
+1. Klicken Sie im klassischen Azure-Portal auf **NETZWERKE** auf der linken Seite.
 2. Klicken Sie auf das virtuelle Netzwerk, in das Ihr HBase Cluster bereitgestellt wird.
 3. Klicken Sie oben auf **ZERTIFIKATE**.
 4. Klicken Sie unten auf **HOCHLADEN** und bestimmen Sie die Stammzertifikatdatei, die Sie im vorletzten Verfahren erstellt haben. Warten Sie, bis das Zertifikat importiert wurde.
@@ -308,4 +308,4 @@ In diesem Artikel haben Sie erfahren, wie Sie Apache Phoenix in HDInsight verwen
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

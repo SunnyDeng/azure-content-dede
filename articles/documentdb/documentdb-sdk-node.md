@@ -99,4 +99,4 @@ Anforderungen von DocumentDB mithilfe eines deaktivierten SDK werden vom Dienst 
 
 Weitere Informationen zu DocumentDB finden Sie auf Seite zum Dienst [Microsoft Azure DocumentDB](https://azure.microsoft.com/services/documentdb/).
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1203_2015-->

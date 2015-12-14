@@ -42,14 +42,14 @@ Diese Informationen werden in dem von Ihnen angegebenen Azure-Speicherkonto und 
 
 * Die Funktion zum Sichern und Wiederherstellen erfordert, dass die Website im Standardmodus ist. Weitere Informationen zum Skalieren von Websites im Standardmodus finden Sie unter [Skalieren von Web-Apps in Azure App Service](web-sites-scale.md). Beachten Sie, dass im Premium-Modus eine größere Anzahl von täglichen Sicherungen als im Standardmodus ausgeführt werden kann.
 
-* Die Funktion zum Sichern und Wiederherstellen erfordert ein Azure-Speicherkonto und einen -Container, die zum selben Abonnement wie die Web-App gehören, die Sie sichern möchten. Falls Sie noch nicht über ein Speicherkonto verfügen, können Sie es erstellen, indem Sie im [Azure-Vorschauportal](http://portal.azure.com) auf dem Blatt **Sicherungen** auf die Schaltfläche **Speicherkonto** klicken. Wählen Sie anschließend auf dem Blatt **Ziel** das **Speicherkonto** und den **Container** aus. Weitere Informationen zu Azure-Speicherkonten erhalten Sie unter den [Links](#moreaboutstorage) am Ende dieses Artikels.
+* Die Funktion zum Sichern und Wiederherstellen erfordert ein Azure-Speicherkonto und einen -Container, die zum selben Abonnement wie die Web-App gehören, die Sie sichern möchten. Falls Sie noch nicht über ein Speicherkonto verfügen, können Sie es erstellen, indem Sie im [Azure-Portal](http://portal.azure.com) auf dem Blatt **Sicherungen** auf die Schaltfläche **Speicherkonto** klicken. Klicken Sie anschließend auf dem Blatt **Ziel** auf das **Speicherkonto** und den **Container**. Weitere Informationen zu Azure-Speicherkonten erhalten Sie unter den [Links](#moreaboutstorage) am Ende dieses Artikels.
 
 * Das Feature zum Sichern und Wiederherstellen unterstützt bis zu 10 GB an Website- und Datenbankinhalt. In die Operationsprotokolle wird ein Fehler ausgegeben, wenn das Sicherungsfeature nicht fortgesetzt werden kann, weil die Nutzlast diesen Grenzwert überschreitet.
 
 <a name="manualbackup"></a>
 ## Erstellen einer manuellen Sicherung
 
-1. Wählen Sie im Azure-Portal auf dem Blatt "Web-Apps" Ihre Web-App aus. Damit zeigen Sie Details der Web-App auf einem neuen Blatt an.
+1. Wählen Sie im Azure-Portal auf dem Blatt „Web-Apps“ Ihre Web-App aus. Damit zeigen Sie Details der Web-App auf einem neuen Blatt an.
 2. Wählen Sie die Option **Einstellungen** aus. Das Blatt **Einstellungen** wird angezeigt, auf dem Sie Ihre Web-App ändern können.
 	
 	![Seite 'Sicherungen'][ChooseBackupsPage]
@@ -125,8 +125,7 @@ Erstellen Sie zum Ausschließen von Dateien und Ordnern aus der Sicherung eine `
 
 Stellen Sie sich vor, Sie verfügen über eine Website mit Protokolldateien und statischen Bildern aus früheren Jahren, die sich nicht ändern. Sie haben bereits eine vollständige Sicherung der Web-App erstellt, die die alten Bilder enthält. Jetzt möchten Sie die Web-App täglich sichern, aber Sie möchten nicht für die Speicherung von Protokolldateien oder statischen Bilddateien bezahlen, die sich nie ändern.
 
-![Ordner "Logs"][LogsFolder]
-![Ordner "Images"][ImagesFolder]
+![Ordner "Logs"][LogsFolder] ![Ordner "Images"][ImagesFolder]
 	
 Die unten angegebenen Schritte zeigen, wie Sie diese Dateien aus der Sicherung ausschließen.
 
@@ -200,11 +199,10 @@ Informationen zu den ersten Schritten mit Azure finden Sie unter [Kostenlose Mic
 
 [Überwachen eines Speicherkontos](../storage-monitor-storage-account.md)
 
-[Understanding Azure Storage Billing](http://blogs.msdn.com/b/windowsazurestorage/archive/2010/07/09/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity.aspx) (Grundlagen zur Abrechnung von Azure-Speicher, in englischer Sprache)
+[Understanding Azure Storage Billing (Grundlagen zur Abrechnung von Azure-Speicher, in englischer Sprache)](http://blogs.msdn.com/b/windowsazurestorage/archive/2010/07/09/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity.aspx)
 
 ## Änderungen
-* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
+* Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 
 <!-- IMAGES -->
 [ChooseBackupsPage]: ./media/web-sites-backup/01ChooseBackupsPage.png
@@ -222,4 +220,4 @@ Informationen zu den ersten Schritten mit Azure finden Sie unter [Kostenlose Mic
 [GhostUpgradeWarning]: ./media/web-sites-backup/13GhostUpgradeWarning.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

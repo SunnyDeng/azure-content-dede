@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="11/16/2015"
+   ms.date="12/01/2015"
    ms.author="alkohli" />
 
 # Bereitstellen und Verwalten eines virtuellen StorSimple-Geräts in Azure
@@ -57,7 +57,7 @@ Beachten Sie bei der Verwendung des virtuellen StorSimple-Geräts die folgenden 
 
 - Das virtuelle Gerät wird über das Microsoft Azure-Abonnement geschützt. Wenn Sie daher das virtuelle Gerät verwenden und Ihr Azure-Abonnement beeinträchtigt ist, sind auch die auf dem virtuellen Gerät gespeicherten Daten anfällig.
 
-- Der öffentliche Schlüssel des Zertifikats zum Verschlüsseln von Daten in Azure StorSimple wird im Microsoft Azure-Portal sicher zur Verfügung gestellt, und der private Schlüssel wird auf dem StorSimple-Gerät aufbewahrt. Auf dem virtuellen StorSimple-Gerät werden die öffentlichen und privaten Schlüssel in Azure gespeichert.
+- Der öffentliche Schlüssel des Zertifikats zum Verschlüsseln von in Azure StorSimple gespeicherten Daten wird im klassischen Azure-Portal sicher zur Verfügung gestellt, und der private Schlüssel wird auf dem StorSimple-Gerät aufbewahrt. Auf dem virtuellen StorSimple-Gerät werden die öffentlichen und privaten Schlüssel in Azure gespeichert.
 
 - Das virtuelle Gerät wird im Microsoft Azure-Datencenter gehostet.
 
@@ -97,7 +97,7 @@ Nehmen Sie vor dem Erstellen eines virtuellen Geräts die folgenden Updates für
 Stellen Sie vorab sicher, dass die folgenden Informationen vorliegen:
 
 
-- Sie verfügen über ein Konto für das Azure-Portal sowie die zugehörigen Anmeldeinformationen.
+- Sie verfügen über ein Konto für das klassische Azure-Portal sowie die zugehörigen Anmeldeinformationen.
 
 - Sie verfügen über die Anmeldeinformationen für Ihr Azure-Speicherkonto.
 
@@ -118,7 +118,7 @@ Nachdem Sie ein virtuelles Netzwerk erstellt, den StorSimple-Manager-Dienst konf
 
 Führen Sie die folgenden Schritte aus, um das virtuelle StorSimple-Gerät zu erstellen.
 
-1.  Wechseln Sie im Azure-Portal zum **StorSimple Manager**-Dienst.
+1.  Wechseln Sie im klassischen Azure-Portal zum **StorSimple Manager**-Dienst.
 
 2. Wechseln Sie zur Seite **Geräte**. Klicken Sie auf der Seite **Geräte** unten auf **Virtuelles Gerät erstellen**.
 
@@ -292,7 +292,7 @@ Wenn Sie jedoch von einem anderen Computer außerhalb des virtuellen Netzwerks o
 
 Führen Sie die folgenden Schritte durch, um auf dem virtuellen Gerät einen öffentlichen Endpunkt zu erstellen:
 
-1. Melden Sie sich beim Azure-Portal an.
+1. Melden Sie sich am klassischen Azure-Portal an.
 
 - Klicken Sie auf **Virtuelle Computer**, und wählen Sie dann den als virtuelles Gerät zu verwendenden virtuellen Computer aus.
 
@@ -374,7 +374,7 @@ Wenn Sie das virtuelle Gerät herunterfahren oder löschen, wird es auf der Seit
 
 ### So fahren Sie das virtuelle StorSimple-Gerät herunter
 
-1. Melden Sie sich beim Azure-Portal an.
+1. Melden Sie sich am klassischen Azure-Portal an.
 
 2. Klicken Sie auf **Virtuelle Computer**, und wählen Sie das virtuelle Gerät aus.
 
@@ -382,7 +382,7 @@ Wenn Sie das virtuelle Gerät herunterfahren oder löschen, wird es auf der Seit
 
 ### So löschen Sie das virtuelle StorSimple-Gerät
 
-1. Melden Sie sich beim Azure-Portal an.
+1. Melden Sie sich am klassischen Azure-Portal an.
 
 - Klicken Sie auf **Virtuelle Computer**, und wählen Sie das virtuelle Gerät aus.
 
@@ -392,4 +392,4 @@ Wenn Sie das virtuelle Gerät herunterfahren oder löschen, wird es auf der Seit
 
 Erfahren Sie, wie Sie [StorSimple-Volumes aus einem Sicherungssatz wiederherstellen](storsimple-restore-from-backup-set.md).
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->
