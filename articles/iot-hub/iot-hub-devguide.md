@@ -419,8 +419,9 @@ Der Nachrichtenkörper ist ein serialisiertes JSON-Array aus Datensätzen, von d
 
 | Eigenschaft | Beschreibung |
 | -------- | ----------- |
-| EnqueuedTimeUtc | Zeitstempel, der den Zeitpunkt des Nachrichtenergebnisses angibt. Diese Eigenschaft kann beispielsweise angeben, wann das Gerät abgeschlossen wurde oder die Nachricht abgelaufen ist. |
-| OriginalMessageId | **MessageId** der C2D-Nachricht, auf die sich das Feedback bezieht. |
+| EnqueuedTime | Zeitstempel, der den Zeitpunkt des Nachrichtenergebnisses angibt. Diese Eigenschaft kann beispielsweise angeben, wann das Gerät abgeschlossen wurde oder die Nachricht abgelaufen ist. |
+| CorrelationId | **MessageId** der C2D-Nachricht, auf die sich das Feedback bezieht. |
+| StatusCode | **0** bei Erfolg, **1** bei Ablauf der Nachricht, **2** bei Überschreiten der maximalen Anzahl von Zustellungen, **3** bei Ablehnung der Nachricht. |
 | Beschreibung | Zeichenfolgenwerte für die zuvor genannten Ergebnisse. |
 | DeviceId | **DeviceId** des Zielgeräts für die C2D-Nachricht, auf die sich das Feedback bezieht. |
 | DeviceGenerationId | **DeviceGenerationId** des Zielgeräts für die C2D-Nachricht, auf die sich das Feedback bezieht. |

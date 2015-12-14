@@ -28,15 +28,15 @@ Als Alternative zum Schreiben von Code, der eine SaaS-API direkt aus einer benut
 
 In diesem Tutorial werden die folgenden Schritte behandelt:
 
-* Erstellen eines API-App-Projekts in Visual Studio 
-* Konfigurieren der Datei *apiapp.json*, um der API-App die Verbindung mit dem Dropbox-Dienst zu ermöglichen
-* Hinzufügen von Code, der Dropbox aufruft und die Ergebnisse zurückgibt
-* Erstellen einer neuen API-App in Azure
-* Bereitstellen des Projekts für die API-App
-* Konfigurieren der API-App
-* Konfigurieren des Gateways
-* Erstellen eines Testclients
-* Ausführen des Testclients
+* Erstellen eines API-App-Projekts in Visual Studio. 
+* Konfigurieren der Datei *apiapp.json*, um der API-App die Verbindung mit dem Dropbox-Dienst zu ermöglichen.
+* Hinzufügen von Code, der Dropbox aufruft und die Ergebnisse zurückgibt.
+* Erstellen einer neuen API-App in Azure.
+* Bereitstellen des Projekts für die API-App.
+* Konfigurieren der API-App.
+* Konfigurieren des Gateways.
+* Erstellen eines Testclients.
+* Ausführen des Testclients.
 
 ## Voraussetzungen
 
@@ -378,7 +378,12 @@ Weitere Hinweise:
 
 		browser.Navigate(string.Format(@"{0}/login/aad", GATEWAY_URL));
 
-	Hier die Werte für andere Anbieter: * "microsoftaccount" * "facebook" * "twitter" * "google" <br/><br/>
+	Hier die Werte für andere Anbieter: 
+	* "microsoftaccount" 
+	* "facebook" 
+	* "twitter" 
+	* "google"
+<br/><br/>
 
 * Der zweite Parameter für die `GetConsentLinkAsync()`-Methode ist die Rückruf-URL, zu der der Zustimmungsserver umgeleitet wird, nachdem sich der Benutzer bei Dropbox angemeldet und die Zustimmung für den Zugriff auf das Konto des Benutzers gegeben hat.
 

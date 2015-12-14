@@ -18,7 +18,9 @@
 
 # Senden von plattformübergreifenden Benachrichtigungen an einen bestimmten Benutzer
 
-[AZURE.INCLUDE [app-service-mobile-selector-push-users](../../includes/app-service-mobile-selector-push-users.md)]&nbsp;[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
+[AZURE.INCLUDE [app-service-mobile-selector-push-users](../../includes/app-service-mobile-selector-push-users.md)]
+&nbsp;  
+[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
 
 In diesem Thema wird das Senden von Benachrichtigungen an alle registrierten Geräte eines bestimmten Benutzers aus Ihrem mobilen Back-End veranschaulicht. Sie erhalten eine Einführung in [Vorlagen], mit denen Clientanwendungen bei der Registrierung Nutzlastformate und variable Platzhalter angeben können. Wenn eine Vorlagenbenachrichtigung von einem Server gesendet wird, leitet Ihr Benachrichtigungs-Hub diese an alle Plattformen mit den entsprechenden Platzhaltern weiter, sodass plattformübergreifende Benachrichtigungen möglich sind.
 
@@ -102,4 +104,4 @@ Veröffentlichen Sie erneut Ihr mobiles Back-End-Projekt, und führen Sie eine b
 [Erste Schritte mit Pushbenachrichtigungen]: app-service-mobile-xamarin-ios-get-started-push.md
 [Vorlagen]: ../notification-hubs/notification-hubs-templates.md
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1203_2015--->

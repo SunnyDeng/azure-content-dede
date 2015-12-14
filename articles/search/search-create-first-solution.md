@@ -68,7 +68,10 @@ Nach einigen Augenblicken wird der Vorgang mit folgender Meldung abgeschlossen: 
 
 Drücken Sie die **Eingabetaste**, um die Anwendung zu schließen. Damit ist die Erstellung des Azure Search-Index abgeschlossen.
 
-> [AZURE.NOTE]Wenn Sie Fehlermeldungen erhalten, die den Text "Ungültiger Wert für den Schlüssel 'attachdbfilename'" oder einen anderen Datenbankzuordnungsfehler enthalten, sind eventuell UAC-Konflikte aufgetreten. Beheben Sie diese Fehler für diese Demonstration auf folgende Weise: Kopieren Sie die Projektmappe in einen neuen oder vorhandenen Ordner (z. B. „Temp“), auf den authentifizierte Benutzer zugreifen können. Starten Sie Visual Studio mit der Option **Als Administrator ausführen**. Öffnen Sie die Projektmappe, erstellen Sie sie, und drücken Sie dann F5, um den Index zu erstellen.
+> [AZURE.NOTE]Wenn Sie Fehlermeldungen erhalten, die den Text "Ungültiger Wert für den Schlüssel 'attachdbfilename'" oder einen anderen Datenbankzuordnungsfehler enthalten, sind eventuell UAC-Konflikte aufgetreten. Beheben Sie diese Fehler für diese Demonstration auf folgende Weise: 
+> Kopieren Sie die Projektmappe in einen neuen oder vorhandenen Ordner (z. B. „Temp“), auf den authentifizierte Benutzer zugreifen können. 
+> Starten Sie Visual Studio mit der Option **Als Administrator ausführen**. 
+> Öffnen Sie die Projektmappe, erstellen Sie sie, und drücken Sie dann **F5**, um den Index zu erstellen.
 
 Um das Erstellen des Index und das Hochladen der Dokumente zu überprüfen, gehen Sie im [klassischen Azure-Portal](https://portal.azure.com) zum Suchdienst-Dashboard. Unter "Verwendung" muss der Indexzähler um eins erhöht worden sein, und es sollten 294 Dokumente vorhanden sein, eines für jedes Produkt in der Datenbank.
 
@@ -171,7 +174,7 @@ Die Demonstration ist hiermit abgeschlossen. Sie haben sich nun mit den wichtigs
 
 Wenn beim Buildvorgang von AdventureWorksWeb die Fehlermeldung "Datei oder Assemblydatei 'System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' oder eine ihrer Abhängigkeiten konnte nicht geladen werden" angezeigt wird, gehen Sie wie folgt vor, um den Fehler zu beheben.
 
-1. Wählen Sie **Extras** > **NuGet-Paket-Manager** > **Paket-Manager-Konsole **, um die Paket-Manager-Konsole zu öffnen.
+1. Wählen Sie **Extras** > **NuGet-Paket-Manager** > **Paket-Manager-Konsole**, um die Paket-Manager-Konsole zu öffnen.
 2. Geben Sie an der Paket-Manager-Eingabeaufforderung folgenden Befehl ein: "Update-package -reinstall Microsoft.AspNet.Mvc".
 3. Wählen Sie bei Aufforderung zum Neuladen der Datei die Option **Ja, alle** aus.
 4. Erstellen Sie die Lösung neu, und drücken Sie **F5**.

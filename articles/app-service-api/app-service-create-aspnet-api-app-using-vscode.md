@@ -41,15 +41,19 @@ Dieses Lernprogramm unterstützt Sie beim Einstieg in die Erstellung von Anwendu
 1. Wenn Sie .NET Version Manager (DNVM) unter Windows installieren möchten, führen Sie im Befehlsfenster folgenden Befehl aus:
 
 	<pre class="prettyprint">
-@powershell -NoProfile -ExecutionPolicy unrestricted -Command "&amp;{$Branch='dev';iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.ps1'))}"
-</pre>Dadurch wird das DNVM-Skript herunterladen und Ihrem Benutzerprofil hinzugefügt.
+	@powershell -NoProfile -ExecutionPolicy unrestricted -Command "&amp;{$Branch='dev';iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/aspnet/Home/dev/dnvminstall.ps1'))}"
+	</pre>
+
+	Dadurch wird das DNVM-Skript herunterladen und Ihrem Benutzerprofil hinzugefügt.
 
 2. Möglicherweise müssen Sie sich nach Eingabe des oben stehenden Befehls abmelden, damit die Änderung in der PATH-Umgebungsvariablen wirksam wird.
 3. Überprüfen Sie den Speicherort von DNVM, indem Sie im Befehlsfenster folgenden Befehl ausführen: 
 
 	<pre class="prettyprint">
-where dnvm
-</pre>Im Befehlsfenster wird ein Pfad wie der folgende angezeigt:
+	where dnvm
+	</pre>
+
+	Im Befehlsfenster wird ein Pfad wie der folgende angezeigt:
 
 	![DNVM-Speicherort](./media/app-service-create-aspnet-api-app-using-vscode/00-where-dnvm.png)
 
@@ -62,8 +66,10 @@ dnvm upgrade
 5. Überprüfen Sie DNVM, und zeigen Sie die aktive Laufzeit an, indem Sie im Befehlsfenster Folgendes eingeben:
 
 	<pre class="prettyprint">
-dnvm list
-</pre>Im Befehlsfenster werden die Details zur aktiven Laufzeit angezeigt.
+	dnvm list
+	</pre>
+
+	Im Befehlsfenster werden die Details zur aktiven Laufzeit angezeigt.
 
 	![DNVM-Speicherort](./media/app-service-create-aspnet-api-app-using-vscode/00b-dnvm-list.png)
 
@@ -90,8 +96,10 @@ yo aspnet
 
 	![Yeoman – ASP.NET 5-Generator](./media/app-service-create-aspnet-api-app-using-vscode/01-yo-aspnet.png)
 
-5. Legen Sie den Namen Ihrer neuen ASP.NET-API-App auf **ContactsList** fest. Dieser Name wird in dem Code verwendet, der weiter unten in diesem Lernprogramm bereitgestellt wird. <br> Yeoman erstellt einen neuen Ordner namens **ContactsList** sowie die erforderlichen Dateien für Ihre neue App.
-6. Öffnen Sie **Visual Studio Code**.<br>. Sie können VSCode über das Befehlsfenster öffnen, indem Sie **code .** eingeben.
+5. Legen Sie den Namen Ihrer neuen ASP.NET-API-App auf **ContactsList** fest. Dieser Name wird in dem Code verwendet, der weiter unten in diesem Lernprogramm bereitgestellt wird. <br>
+	Yeoman erstellt einen neuen Ordner namens **ContactsList** sowie die erforderlichen Dateien für Ihre neue App.
+6. Öffnen Sie **Visual Studio Code**.<br>.
+	Sie können VSCode über das Befehlsfenster öffnen, indem Sie **code .** eingeben.
 7. Wählen Sie im Menü **Datei** die Option **Ordner öffnen**, und wählen Sie den Ordner, in dem Ihre ASP.NET-API-App gespeichert ist.
 
 	![Dialogfeld "Ordner auswählen"](./media/app-service-create-aspnet-api-app-using-vscode/02-open-folder.png)
@@ -104,8 +112,10 @@ yo aspnet
 9. Geben Sie in der **Befehlspalette** die folgenden Befehle ein:
 
 	<pre class="prettyprint">
-dnx:dnu restore - (ContactsList)
-</pre>Wenn Sie mit der Eingabe beginnen, wird die vollständige Befehlszeile aus der Liste angezeigt.
+	dnx:dnu restore - (ContactsList)
+	</pre>
+
+	Wenn Sie mit der Eingabe beginnen, wird die vollständige Befehlszeile aus der Liste angezeigt.
 
 	![Befehl "Restore"](./media/app-service-create-aspnet-api-app-using-vscode/04-dnu-restore.png)
 
@@ -163,8 +173,10 @@ namespace ContactsList.Controllers
 5. Geben Sie in der **Befehlspalette** Folgendes ein, um die App lokal auszuführen:
 
 	<pre class="prettyprint">
-dnx: kestrel - (ContactsList, Microsoft.AspNet.Hosting --server Kestrel --server.urls http://localhost:5001
-</pre>Im Befehlsfenster wird *Gestartet* angezeigt. Sollte im Befehlsfenster nicht *Gestartet* angezeigt werden, überprüfen Sie, ob links unten in VSCode Fehler für Ihr Projekt angezeigt werden.
+	dnx: kestrel - (ContactsList, Microsoft.AspNet.Hosting --server Kestrel --server.urls http://localhost:5001
+	</pre>
+
+	Im Befehlsfenster wird *Gestartet* angezeigt. Sollte im Befehlsfenster nicht *Gestartet* angezeigt werden, überprüfen Sie, ob links unten in VSCode Fehler für Ihr Projekt angezeigt werden.
 
 5. Öffnen Sie einen Browser, und navigieren Sie zur folgenden URL:
 
@@ -178,7 +190,8 @@ dnx: kestrel - (ContactsList, Microsoft.AspNet.Hosting --server Kestrel --server
 Die Metadaten, mit denen ein ASP.NET-API-Projekt als API-App bereitgestellt werden kann, müssen in der Datei *apiapp.json* im Stammverzeichnis des Projekts enthalten sein.
 
 1. Klicken Sie in VSCode mit der rechten Maustaste auf den Ordner *wwwroot*, und wählen Sie die Option **Neue Datei** aus.
-2. Nennen Sie die neue Datei *apiapp.json*.<br> Stellen Sie sicher, dass sich *apiapp.json* im Ordner *wwwroot* befindet.
+2. Nennen Sie die neue Datei *apiapp.json*.<br\> 
+	Stellen Sie sicher, dass sich *apiapp.json* im Ordner *wwwroot* befindet.
 3. Fügen Sie der Datei *apiapp.json* folgenden Code hinzu:
 
 	<pre class="prettyprint">
@@ -415,8 +428,10 @@ git remote add azure [URL for remote repository]
 9. Übertragen Sie Ihre Änderungen mit dem folgenden Befehl per Push an Azure:
 
 	<pre class="prettyprint">
-git push azure master
-</pre>Sie werden aufgefordert, das zuvor erstellte Kennwort einzugeben. **Hinweis: Das Kennwort ist nicht sichtbar.**
+	git push azure master
+	</pre>
+
+	Sie werden aufgefordert, das zuvor erstellte Kennwort einzugeben. **Hinweis: Das Kennwort ist nicht sichtbar.**
 
 	Die Ausgabe des oben stehenden Befehls führt zu einer Meldung, dass die Bereitstellung erfolgreich durchgeführt wurde:
 
@@ -434,7 +449,8 @@ Nun, da Sie eine API in Ihrer API-App bereitgestellt haben, können Sie die API-
 1. Wechseln Sie im Azure-Vorschauportal zum Blatt **API-App** für die zuvor erstellte API-App, und klicken Sie auf den Link **Gateway**.
 2. Klicken Sie auf dem Blatt **Gateway** auf **Neu starten**. Sie können dieses Blatt nun schließen.
 3. Klicken Sie auf dem Blatt **API-App** auf **Neu starten**. 
-4. Klicken Sie auf dem Blatt **API-App** auf **API-Definition**.<br> Das Blatt "API-Definition" zeigt zwei Methoden an. Wenn Sie die GET- und POST-Methoden nicht sofort sehen, warten Sie einige Sekunden, bis Azure die App aktualisiert hat. Klicken Sie auf dem Blatt **API-App** auf** API-Definition**.
+4. Klicken Sie auf dem Blatt **API-App** auf **API-Definition**.<br>
+	Das Blatt "API-Definition" zeigt zwei Methoden an. Wenn Sie die GET- und POST-Methoden nicht sofort sehen, warten Sie einige Sekunden, bis Azure die App aktualisiert hat. Klicken Sie auf dem Blatt **API-App** auf** API-Definition**.
 
 ## Ausführen der App in Azure
 Wechseln Sie im Azure-Vorschauportal zum Blatt **API-App-Host** für Ihre API-App, und klicken Sie auf **Durchsuchen** . Fügen Sie am Ende Ihrer URL die Zeichenfolge **api/Contacts** ein, um die Kontaktinformationen anzuzeigen

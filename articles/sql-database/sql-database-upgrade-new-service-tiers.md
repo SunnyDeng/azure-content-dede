@@ -89,9 +89,11 @@ Die Funktionen und Leistungsstufen der neuen Dienstebene werden in der folgenden
 
 | Artikel | Beschreibung |
 |:--|:--|
-|[Dienst- und Leistungsebenen für Azure SQL-Datenbanken](sql-database-service-tiers.md)| Übersicht, Metriken und Funktionsumfang jeder Dienstebene (und Vorgehensweise bei der Überwachung der Datenbankauslastung im klassischen Portal und mithilfe von DMVs). |
-|[Geschäftskontinuität in Azure SQL-Datenbank](sql-database-business-continuity.md)|Details zu den Funktionen für die Geschäftskontinuität und Notfallwiederherstellung (Zeitpunktwiederherstellung, Geowiederherstellung, Georeplikation) der unterschiedlichen Dienstebenen.|
-|[SQL-Datenbank – Preisübersicht](http://azure.microsoft.com/pricing/details/sql-database/)|Detaillierte Preisinformationen zu den unterschiedlichen Dienstebenen und Leistungsstufen.|
+|[Dienstebenen (Editionen) der Azure SQL-Datenbank](http://msdn.microsoft.com/library/azure/dn741340.aspx)| Übersicht über die Dienstebenen "Basic", "Standard" und "Premium".|
+|[Dienst- und Leistungsebenen von Azure SQL-Datenbank](http://msdn.microsoft.com/library/dn741336.aspx)| Metriken und Funktionsumfang jeder Dienstebene (und Vorgehensweise bei der Überwachung der Datenbankauslastung im Verwaltungsportal und mithilfe von DMVs). |
+|[Worin unterscheiden sich die Dienstebenen?](http://msdn.microsoft.com/library/dn369873.aspx#Different)| Weitere Informationen zu den verschiedenen Dienstebenen einschließlich der Gründe, die für oder gegen eine Ebene sprechen. |
+|[Geschäftskontinuität in Azure SQL-Datenbank](http://msdn.microsoft.com/library/azure/hh852669.aspx)|Details zu den Funktionen für die Geschäftskontinuität und Notfallwiederherstellung (Zeitpunktwiederherstellung, Geowiederherstellung, Georeplikation) der unterschiedlichen Dienstebenen.|
+|[SQL-Datenbank – Preisdetails](http://azure.microsoft.com/pricing/details/sql-database/)|Detaillierte Preisinformationen zu den unterschiedlichen Dienstebenen und Leistungsstufen.|
 
 <br>
 
@@ -262,7 +264,7 @@ Ausführliche Informationen finden Sie unter [Ändern von Datenbank-Dienstebenen
 
 
 ## 6\. Überwachen des Upgrades auf die neue Dienstebene/Leistungsstufe
-Die Azure SQL-Datenbank stellt in der dynamischen Verwaltungssicht „sys.dm\_operation\_status“ in der Masterdatenbank des logischen Servers, auf dem die aktuelle Datenbank gespeichert ist, Statusinformationen zu Verwaltungsvorgängen (z. B. „CREATE“, „ALTER“, „DROP“) zur Verfügung, die für eine Datenbank ausgeführt werden [siehe Dokumentation zum Status des Vorgangs „sys.dm\_operation\_status“].(http://msdn.microsoft.com/library/azure/dn270022.aspx) Verwenden Sie die dynamische Verwaltungssicht zum Vorgangsstatus, um den Status des Upgradevorgangs für eine Datenbank zu ermitteln. Die folgende Beispielabfrage zeigt alle Verwaltungsvorgänge, die für eine Datenbank ausgeführt werden:
+Die Azure SQL-Datenbank stellt in der dynamischen Verwaltungssicht "sys.dm\_operation\_status" in der Masterdatenbank des logischen Servers, auf dem die aktuelle Datenbank gespeichert ist, Statusinformationen zu Verwaltungsvorgängen (z. B. "CREATE", "ALTER", "DROP") zur Verfügung, die für eine Datenbank ausgeführt werden [siehe Dokumentation zum Status des Vorgangs "sys.dm\_operation\_status"](http://msdn.microsoft.com/library/azure/dn270022.aspx) Verwenden Sie die dynamische Verwaltungssicht zum Vorgangsstatus, um den Status des Upgradevorgangs für eine Datenbank zu ermitteln. Die folgende Beispielabfrage zeigt alle Verwaltungsvorgänge, die für eine Datenbank ausgeführt werden:
 
     SELECT o.operation, o.state_desc, o.percent_complete
     , o.error_code, o.error_desc, o.error_severity, o.error_state
