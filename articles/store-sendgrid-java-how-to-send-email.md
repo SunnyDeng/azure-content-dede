@@ -82,7 +82,7 @@ Rufen Sie die javax.mail-Bibliotheken z. B. unter <http://www.oracle.com/techne
         Session mailSession = Session.getDefaultInstance(properties, auth);
 
 4.  Erstellen Sie Ihre Nachricht, und ordnen Sie die Werte für **An**, **Von**, **Betreff** und die Inhalte zu. Die entsprechende Vorgehensweise wird im Abschnitt [Erstellen einer E-Mail](#bkmk_HowToCreateEmail) erläutert.
-5.  Versenden Sie eine Nachricht über ein *javax.mail.Transport*-Objekt. Die entsprechende Vorgehensweise wird im Abschnitt [Vorgehensweise: Eine E-Mail senden][Vorgehensweise: Eine E-Mail senden] erläutert.
+5.  Versenden Sie eine Nachricht über ein *javax.mail.Transport*-Objekt. Die entsprechende Vorgehensweise wird im Abschnitt [Vorgehensweise: Eine E-Mail senden](Vorgehensweise: Eine E-Mail senden) erläutert.
 
 ## Vorgehensweise: Eine E-Mail erstellen
 

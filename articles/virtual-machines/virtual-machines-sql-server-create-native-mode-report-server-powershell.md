@@ -633,7 +633,7 @@ Damit Sie sich vergewissern können, dass die grundlegenden Berichtsserverfunkti
 
 		http://localhost/Reports
 
-- Navigieren Sie auf Ihrem lokalen Computer zu dem **Remote**-Berichts-Manager auf dem virtuellen Computer. Aktualisieren Sie den DNS-Namen im folgenden Beispiel entsprechend Ihren Anforderungen. Wenn Sie zur Eingabe eines Kennworts aufgefordert werden, verwenden Sie die Administratoranmeldeinformationen, die Sie beim Bereitstellen des virtuellen Computers angegeben haben. Der Benutzername hat das Format [Domäne][Benutzername], wobei die Domäne dem Namen des virtuellen Computers entspricht, z. B. „ssrsnativecloud\\testuser“. Wenn Sie nicht HTTPS verwenden, entfernen Sie das **S** aus der URL. Informationen, wie Sie weitere Benutzer auf dem virtuellen Computer erstellen, finden Sie im nächsten Abschnitt.
+- Navigieren Sie auf Ihrem lokalen Computer zu dem **Remote**-Berichts-Manager auf dem virtuellen Computer. Aktualisieren Sie den DNS-Namen im folgenden Beispiel entsprechend Ihren Anforderungen. Wenn Sie zur Eingabe eines Kennworts aufgefordert werden, verwenden Sie die Administratoranmeldeinformationen, die Sie beim Bereitstellen des virtuellen Computers angegeben haben. Der Benutzername hat das Format [Domäne](Benutzername), wobei die Domäne dem Namen des virtuellen Computers entspricht, z. B. „ssrsnativecloud\\testuser“. Wenn Sie nicht HTTPS verwenden, entfernen Sie das **S** aus der URL. Informationen, wie Sie weitere Benutzer auf dem virtuellen Computer erstellen, finden Sie im nächsten Abschnitt.
 
 		https://ssrsnativecloud.cloudapp.net/Reports
 
