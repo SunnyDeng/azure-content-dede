@@ -76,7 +76,7 @@ db:
 
 ```
 
-## Step 4: Start the containers with Compose
+## Schritt 4: Start the containers with Compose
 
 In the working directory on your VM, simply run the following command.
 
@@ -85,7 +85,7 @@ $ docker-compose up -d
 
 ```
 
-This starts the Docker containers specified in `docker-compose.yml`. You'll see output similar to:
+This starts the Docker containers specified in `docker-compose.yml`. Eine Ausgabe ähnlich der folgenden wird angezeigt:
 
 ```
 Creating wordpress_db_1...
