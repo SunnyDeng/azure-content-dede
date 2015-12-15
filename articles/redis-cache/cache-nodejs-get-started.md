@@ -13,7 +13,7 @@
 	ms.topic="hero-article"
 	ms.tgt_pltfrm="cache-redis"
 	ms.workload="tbd"
-	ms.date="10/23/2015"
+	ms.date="12/03/2015"
 	ms.author="sdanie"/>
 
 # Verwenden von Azure Redis Cache mit Node.js
@@ -39,34 +39,34 @@ In diesem Lernprogramm wird [node\_redis](https://github.com/mranney/node_redis)
 
 ## Erstellen eines Redis-Caches in Azure
 
-Klicken Sie im [Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=398536) auf **Neu** und **Daten und Speicher**, und wählen Sie **Redis Cache** aus.
+Klicken Sie im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=398536) auf **Neu** und **Daten und Speicher**, und wählen Sie **Redis-Cache** aus.
 
   ![][1]
 
-Geben Sie einen DNS-Hostnamen ein. Das Format hierfür ist `<name>.redis.cache.windows.net`. Klicken Sie auf **Erstellen**.
+Geben Sie einen DNS-Hostnamen ein. Das Format hierfür ist `<name>
+  .redis.cache.windows.net`. Klicken Sie auf **Erstellen**.
 
   ![][2]
 
 
-Sobald Sie den Cache erstellt haben, klicken Sie im Vorschauportal darauf, um die Cache-Einstellungen anzuzeigen. Klicken Sie auf den Link unter **Schlüssel**, und kopieren Sie den Primärschlüssel. Sie benötigen ihn zum Authentifizieren von Anforderungen.
+  [Navigieren](cache-configure.md#configure-redis-cache-settings) Sie zum Cache nach dessen Erstellung, um die Cache-Einstellungen anzuzeigen. Klicken Sie auf den Link unter **Schlüssel**, und kopieren Sie den Primärschlüssel. Sie benötigen ihn zum Authentifizieren von Anforderungen.
 
   ![][4]
 
 
-## Aktivieren des Nicht-SSL-Endpunkts
+  ## Enable the non-SSL endpoint
 
 
-Klicken Sie auf den Link unter **Ports**, und klicken Sie bei "Zugriff nur über SSL zulassen" auf **Nein**. Dadurch wird der Nicht-SSL-Port für den Cache aktiviert. Der "node\_redis"-Client unterstützt SSL derzeit nicht.
+  Klicken Sie auf den Link unter **Ports**, und klicken Sie bei "Zugriff nur über SSL zulassen" auf **Nein**. Dadurch wird der Nicht-SSL-Port für den Cache aktiviert. Der "node\_redis"-Client unterstützt SSL derzeit nicht.
 
   ![][3]
 
 
-## Fügen Sie dem Cache Daten hinzu, und rufen Sie sie ab.
+  ## Add something to the cache and retrieve it
 
-	var redis = require("redis");
+  var redis = require("redis");
 
-    // Add your cache name and access key.
-	var client = redis.createClient(6379,'<name>.redis.cache.windows.net', {auth_pass: '<key>' });
+  // Add your cache name and access key. var client = redis.createClient(6379,'<name>.redis.cache.windows.net', {auth\_pass: '<key>' });
 
 	client.set("foo", "bar", function(err, reply) {
 	    console.log(reply);
@@ -97,4 +97,4 @@ Ausgabe:
 
 [Erstellen einer Node.js-Chatanwendung mit Socket.IO auf einer Azure-Website]: ../app-service-web/web-sites-nodejs-chat-app-socketio.md
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1210_2015-->

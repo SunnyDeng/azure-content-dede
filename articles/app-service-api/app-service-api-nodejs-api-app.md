@@ -237,7 +237,10 @@ Indem Sie die integrierten Azure App Service-Funktionen für die dauerhafte Bere
 
     ![Postman trifft auf API](media/app-service-api-nodejs-api-app/postman-hitting-api.png)
 
-## Zusammenfassung
-Sie haben mit Node.js erfolgreich Ihre erste API-App erstellt und bereitgestellt. Nun haben Sie die Möglichkeit, den Handlern Code zum Speichern Ihrer Daten in einer Datenbank oder auf der Festplatte Ihrer API-App-Instanz hinzuzufügen. Nachdem Sie die fortlaufende Bereitstellung eingerichtet haben, ist das Ändern und Erweitern der API-App-Funktionalität so einfach wie das Ändern und Befördern des Codes in Ihr Git-Repository.
+## Nächste Schritte
 
-<!---HONumber=AcomDC_1203_2015-->
+Sie haben mit Node.js erfolgreich Ihre erste API-App erstellt und bereitgestellt. Im nächsten Tutorial der Reihe „Erste Schritte mit API-Apps“ wird gezeigt, wie Sie [API-Apps über JavaScript-Clients mit CORS nutzen](app-service-api-cors-consume-javascript.md).
+
+Aufbauend auf diesem Beispiel haben Sie die Möglichkeit, den Handlern Code zum Speichern Ihrer Daten in einer Datenbank oder auf der Festplatte Ihrer API-App-Instanz hinzuzufügen. Nachdem Sie die fortlaufende Bereitstellung eingerichtet haben, ist das Ändern und Erweitern der API-App-Funktionalität so einfach wie das Ändern und Befördern des Codes in Ihr Git-Repository.
+
+<!---HONumber=AcomDC_1210_2015-->

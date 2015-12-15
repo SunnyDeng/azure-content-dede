@@ -159,4 +159,4 @@ Wie beim Delegieren mithilfe einer Registrierungsstelle können wir überprüfen
 
 [REST-API-Referenz für Azure DNS](https://msdn.microsoft.com/library/azure/mt163862.aspx)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1210_2015-->

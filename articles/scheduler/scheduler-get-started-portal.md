@@ -12,26 +12,22 @@
  ms.tgt_pltfrm="na"
  ms.devlang="dotnet"
  ms.topic="hero-article"
- ms.date="08/18/2015"
+ ms.date="12/04/2015"
  ms.author="krisragh"/>
 
-# Erste Schritte mit Azure Scheduler im Azure-Portal
-
-## Konfigurieren von Scheduler mit dem Azure-Portal zur schnellen und einfachen Auftragserstellung
-
-Für dieses Lernprogramm benötigen Sie ein Azure-Konto mit aktiviertem Azure Scheduler-Feature. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Informationen hierzu finden Sie unter [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/).
+# Erste Schritte mit Azure Scheduler im klassischen Azure-Portal
 
 ## Erste Schritte
 
-Über das Azure-Portal können Sie ganz einfach Aufträge und Auftragssammlungen für Azure Scheduler erstellen. Dieses Tutorial erläutert das Erstellen der Auftragssammlung zum Speichern von Aufträgen sowie das Erstellen eines Auftrags in einer Auftragssammlung und bietet eine Übersicht über die Aufgaben für die Auftragsüberwachung und -verwaltung, die im Portal zur Verfügung stehen. In diesem Lernprogramm werden keine Azure-Vorkenntnisse vorausgesetzt.
+Sie können ganz einfach Aufträge und Auftragssammlungen für Azure Scheduler erstellen. Dieses Tutorial erläutert das Erstellen der Auftragssammlung zum Speichern von Aufträgen sowie das Erstellen eines Auftrags in einer Auftragssammlung und bietet eine Übersicht über die verfügbaren Aufgaben für die Auftragsüberwachung und -verwaltung. In diesem Lernprogramm werden keine Azure-Vorkenntnisse vorausgesetzt.
 
-Wenn Sie das Azure-Portal zum ersten Mal öffnen, ist automatisch die Registerkarte **ALLE ELEMENTE** geöffnet. Die Spalten auf der Registerkarte **ALL ITEMS** können sortiert werden. Klicken Sie zum Anzeigen Ihrer Scheduler-Aufträge und -Auftragssammlungen auf die Registerkarte **SCHEDULER**.
+Wenn Sie das klassische Azure-Portal zum ersten Mal öffnen, ist automatisch die Registerkarte **ALLE ELEMENTE** geöffnet. Die Spalten auf der Registerkarte **ALL ITEMS** können sortiert werden. Klicken Sie zum Anzeigen Ihrer Scheduler-Aufträge und -Auftragssammlungen auf die Registerkarte **SCHEDULER**.
 
 ![][1]
 
 ## Erstellen einer Auftragssammlung und eines Auftrags
 
-1.  Melden Sie sich beim [Azure-Portal](https://manage.windowsazure.com/) an.  
+1.  Melden Sie sich beim [klassischen Azure-Portal](https://manage.windowsazure.com/) an.  
 
 2.  Klicken Sie auf **App Services** > **Neu erstellen** > **Scheduler** und dann auf **Benutzerdefiniert erstellen**. <br /><br /> ![][2]
 
@@ -261,4 +257,4 @@ Bei allen Aktionstypen können Zeitplan und Wiederholungsverhalten geändert wer
 [14]: ./media/scheduler-get-started-portal/scheduler-get-started-portal014.png
 [15]: ./media/scheduler-get-started-portal/scheduler-get-started-portal015.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

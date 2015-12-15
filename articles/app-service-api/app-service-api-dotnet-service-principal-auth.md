@@ -22,21 +22,19 @@
 
 ## Übersicht
 
-In diesem Tutorial wird veranschaulicht, wie Sie die Authentifizierungs- und Autorisierungsfunktionen von Azure App Service zum Schützen einer API-App verwenden und wie Sie eine geschützte API-App im Namen eines Dienstkontos nutzen. Ein Dienstkonto wird auch als *Dienstprinzipal* bezeichnet. Die Authentifizierung mithilfe eines solchen Kontos ist auch als *Dienst-zu-Dienst*-Szenario bekannt. In diesem Tutorial schützen Sie in einem Dienst-zu-Dienst-Szenario eine API-App, indem Sie Azure Active Directory für die Authentifizierung verwenden und die API aus einem .NET-Client nutzen.
+In diesem Tutorial wird veranschaulicht, wie Sie die Authentifizierungs- und Autorisierungsfunktionen von Azure App Service zum Schützen einer API-App verwenden und wie Sie eine geschützte API-App im Namen eines Dienstkontos nutzen. Der im Tutorial beschriebene Authentifizierungsanbieter ist Azure Active Directory, und sowohl Client als auch API sind ASP.NET-Web-APIs, die in API-Apps ausgeführt werden.
 
-Im Tutorial wird das ASP.NET-Web-API für den aufrufenden Client und die aufgerufene API verwendet. Die vorgestellten Verfahren gelten jedoch auch für andere von Azure App Service unterstützte Sprachen und Frameworks. Der hier gezeigte Clientcode ist Azure Active Directory-Standardcode für das Abrufen und Übergeben eines Bearertokens für ein Dienstkonto. Es ist kein spezieller Azure-Code erforderlich, wie er beispielsweise für das Behandeln des Mobile Services-Zumo-Tokens benötigt wurde.
+## Authentifizierung und Autorisierung in App Service
 
-Hierbei handelt es sich um das vierte Tutorial einer Serie, in der die Verwendung von API-Apps in Azure App Service erläutert wird. Informationen zu dieser Serie finden Sie im ersten Tutorial unter [Erste Schritte mit API-Apps und ASP.NET in Azure App Service](app-service-api-dotnet-get-started.md). Informationen zur Authentifizierung und Autorisierung in Azure App Service finden Sie im vorherigen Tutorial der Serie: [Benutzerauthentifizierung für API-Apps in Azure App Service](app-service-api-dotnet-user-principal-auth.md).
+Eine Einführung in die Authentifizierungsfeatures, die in diesem Tutorial verwendet werden, finden Sie im vorherigen Tutorial dieser Reihe: [Authentifizierung und Autorisierung für AP-Apps in Azure App Service](app-service-api-dotnet-get-started.md).
 
-## Weitere Optionen für die Dienst-zu-Dienst-Authentifizierung
+## Inhalt dieses Tutorials
 
-Wenn ein Dienst-zu-Dienst-Szenario nicht mithilfe von App Service-Authentifizierung und -Autorisierung, sondern beispielsweise mit Clientzertifikaten behandelt werden soll, lesen Sie die Informationen im Abschnitt [Nächste Schritte](#next-steps).
+Dieses Tutorial baut auf einer Beispielanwendung auf, die Sie herunterladen und für die Sie im [ersten Tutorial der Reihe mit den ersten Schritten mit API-Apps und ASP.NET](app-service-api-dotnet-get-started.md) eine API-App erstellen.
 
 ## Das Beispielprojekt „CompanyUsers.API“
 
-In diesem Tutorial verwenden Sie die Beispielprojekte, die Sie im [ersten Tutorial dieser Serie](app-service-api-dotnet-get-started.md) heruntergeladen haben, sowie die im vorherigen Tutorials erstellten Azure-Ressourcen (API-App und Web-App).
-
-Das Projekt „CompanyUsers.API“ ist ein einfaches Web-API-Projekt mit einer Get-Methode, die eine hardcodierte Liste mit Kontakten zurückgibt. Zur Veranschaulichung eines Dienst-zu-Dienst-Szenarios ruft die Get-Methode in „ContactsList.API“ die Get-Methode von „CompanyContacts.API“ auf und fügt die abgerufenen Kontakte zu den Daten im eigenen Datenspeicher hinzu. Anschließend gibt sie die kombinierte Liste zurück.
+In der [Beispielanwendung „ContactsList“](https://github.com/Azure-Samples/app-service-api-dotnet-contact-list) ist das Projekt „CompanyUsers.API“ ein einfaches Web-API-Projekt mit einer GET-Methode, die eine hardcodierte Liste mit Kontakten zurückgibt. Zur Veranschaulichung eines Dienst-zu-Dienst-Szenarios ruft die GET-Methode in „ContactsList.API“ die GET-Methode in „CompanyContacts.API“ auf und fügt die abgerufenen Kontakte den Daten im eigenen Datenspeicher hinzu. Anschließend gibt sie die kombinierte Liste zurück.
 
 Hier sehen Sie die Get-Methode in „CompanyUsers.API“:
 
@@ -70,7 +68,7 @@ Und hier wird gezeigt, wie die Get-Methode in „ContactsList.API“ das Projekt
 		    return contactsList;
 		}
 
-Das Clientobjekt für „CompanyContacts.API“ ist eine Änderung des generierten API-App-Clientcodes, der ein Token zur HTTP-Anforderung hinzufügt.
+Das im obigen Code von `CompanyContactsAPIClientWithAuth()` zurückgegebene Clientobjekt basiert auf dem generierten Clientcode, fügt jedoch ein Autorisierungstoken zu HTTP-Anforderungen hinzu.
 
 		private static CompanyContactsAPI CompanyContactsAPIClientWithAuth()
 		{
@@ -90,7 +88,7 @@ Das Clientobjekt für „CompanyContacts.API“ ist eine Änderung des generiert
 
 4. Melden Sie sich an Ihrem Azure-Konto an, falls Sie dies noch nicht getan haben, oder aktualisieren Sie Ihre Anmeldeinformationen, falls sie abgelaufen sind.
 
-4. Wählen Sie im App Service-Dialogfeld das gewünschte Azure-**Abonnement** aus, und klicken Sie dann auf **Neu**.
+4. Wählen Sie im Dialogfeld **App Service** das gewünschte Azure-**Abonnement** aus, und klicken Sie dann auf **Neu**.
 
 	![](./media/app-service-api-dotnet-service-principal-auth/clicknew.png)
 
@@ -128,6 +126,8 @@ Das Projekt „ContactsList.API“ enthält bereits den generierten Clientcode, 
 
 8. Erweitern Sie im Dialogfeld **App Service** die für dieses Tutorial verwendete Ressourcengruppe, und wählen Sie anschließend die eben erstellte API-App aus.
 
+	Wenn Sie die API-App nicht in der Liste sehen, besteht die Möglichkeit, dass Sie beim Erstellen der API-App versehentlich den Schritt ausgelassen haben, bei dem der Typ von „Web-App“ in „API-App“ geändert wird. In diesem Fall können Sie eine neue API-App erstellen, indem Sie die vorherigen Schritte wiederholen. Sie müssen einen anderen Namen für die API-App wählen, es sei denn, Sie besuchen Sie das Portal, um zuerst die Web-App zu löschen.
+
 10. Klicken Sie auf **OK**.
 
 9. Klicken Sie im Dialogfeld **REST-API-Client hinzufügen** auf **OK**.
@@ -140,7 +140,7 @@ Der Code in „ContactsList.API“, der „CompanyContacts.API“ aufruft, wird 
 
 1. Öffnen Sie im Projekt „ContactsList.API“ die Datei *Controllers/ContactsController.cs*.
 
-2. Ersetzen Sie oben in der Klasse `ContactsController` im Code, der die generierte Clientklasse zum Hinzufügen eines Autorisierungstokens verwendet, den Klassennamen `CompanyContactsAPI` durch den Namen der Klasse, die von Ihrer API-App erstellt wurde.
+2. Ersetzen Sie oben in der `ContactsController`-Klasse im Code, der die generierte Clientklasse zum Hinzufügen eines Autorisierungstokens verwendet, den Klassennamen `CompanyContactsAPI` durch den Namen der Klasse, die von Ihrer API-App erstellt wurde.
 
 	Heißt Ihre API-App beispielsweise „CompanyContactsAPI3“, würde der Code , wie folgt lauten:
 
@@ -152,7 +152,7 @@ Der Code in „ContactsList.API“, der „CompanyContacts.API“ aufruft, wird 
 		     return client;
 		 }
  
-4. Heben Sie in der Get-Methode die Auskommentierung des Codeblocks auf, der das von `CompanyContactsAPIClientWithAuth` zurückgegebene Clientobjekt verwendet.
+4. Heben Sie in der `Get`-Methode die Kommentierung des Codeblocks auf, der „CompanyContacts.API“ aufruft.
 
 		using (var client = CompanyContactsAPIClientWithAuth())
 		{
@@ -168,6 +168,8 @@ Der Code in „ContactsList.API“, der „CompanyContacts.API“ aufruft, wird 
 	Der Assistent **Web veröffentlichen** wird mit dem zuvor verwendeten Veröffentlichungsprofil geöffnet.
 
 3. Klicken Sie im Assistenten **Web veröffentlichen** auf **Veröffentlichen**.
+
+	Visual Studio stellt das Projekt bereit und öffnet ein Browserfenster mit der Basis-URL der API-App. Schließen Sie dieses Browserfenster.
 
 ## Einrichten der Authentifizierung und Autorisierung in Azure für die neue API-App
 
@@ -199,23 +201,11 @@ Der Code in „ContactsList.API“, der „CompanyContacts.API“ aufruft, wird 
 
 16. Klicken Sie auf **Konfigurieren**.
 
-15. Klicken Sie unten auf der Seite auf **Manifest verwalten > Manifest herunterladen**, und speichern Sie die Datei an einem Ort, an dem Sie sie bearbeiten können.
-
-16. Suchen Sie in der heruntergeladenen Manifestdatei nach der `oauth2AllowImplicitFlow`-Eigenschaft. Ändern Sie den Wert dieser Eigenschaft von `false` in `true`, und speichern Sie die Datei anschließend.
-
-16. Klicken Sie auf **Manifest verwalten > Manifest hochladen**, und laden Sie die Datei hoch, die Sie im vorherigen Schritt aktualisiert haben.
-
 17. Lassen Sie diese Seite geöffnet, damit Sie Werte kopieren und einfügen und Werte auf der Seite in späteren Schritten des Tutorials aktualisieren können.
 
 ## Aktualisieren von Einstellungen in der API-App, die den Code des Projekts „ContactsList.API“ ausführt
 
-1. Navigieren Sie im [Azure-Portal](https://portal.azure.com/) zum Blatt „API-App“ der API-App, in der Sie das Projekt „ContactsList.API“ bereitgestellt haben. Hierbei handelt es sich um die aufrufende, in diesem Tutorial erstellte API-App (nicht um die aufgerufene API-App).
-
-2. Klicken Sie auf **Einstellungen > Anwendungseinstellungen**.
-
-	Sie fügen hier einige Einstellungen hinzu, diese müssen jedoch von einer anderen Seite des klassischen Azure-Portals abgerufen werden.
-
-3. Navigieren Sie im [klassischen Azure-Portal](https://manage.windowsazure.com/) zur Registerkarte **Bestätigen** der AAD-Anwendung, die Sie für die API-App „ContactsList.API“ erstellt haben.
+3. Navigieren Sie in einem anderen Browserfenster zum [klassischen Azure-Portal](https://manage.windowsazure.com/) und dann zur Registerkarte **Bestätigen** der AAD-Anwendung, die Sie für die API-App „ContactsList.API“ erstellt haben.
 
 5. Wählen Sie unter **Schlüssel** in der Dropdownliste **Dauer auswählen** die Option **1 Jahr** aus.
 
@@ -223,12 +213,19 @@ Der Code in „ContactsList.API“, der „CompanyContacts.API“ aufruft, wird 
 
 	![](./media/app-service-api-dotnet-service-principal-auth/genkey.png)
 
-
 7. Kopieren Sie den Schlüsselwert.
 
 	![](./media/app-service-api-dotnet-service-principal-auth/genkeycopy.png)
 
-3. Fügen Sie im Azure-Portal auf dem Blatt **Anwendungseinstellungen** im Abschnitt **App-Einstellungen** einen Schlüssel namens „ida:ClientSecret“ hinzu, und fügen Sie im Feld für den Wert den soeben erstellten Schlüssel ein.
+1. Navigieren Sie in einem anderen Browserfenster zum [Azure-Portal](https://portal.azure.com/) und dann zum Blatt „API-App“ der API-App, in der Sie das Projekt „ContactsList.API“ bereitgestellt haben. (Dies ist die aufrufende, nicht die aufgerufene API-App: „ContactsList.API“, nicht „CompanyContacts.API“.)
+
+2. Klicken Sie auf **Einstellungen > Anwendungseinstellungen**.
+
+3. Fügen Sie im Abschnitt **App-Einstellungen** einen Schlüssel namens „ida:ClientSecret“ hinzu, und fügen Sie im Feld für den Wert den soeben erstellten Schlüssel ein.
+
+3. Fügen Sie einen Schlüssel mit dem Namen „ida: ClientId“ hinzu, und fügen Sie im Feld für den Wert die Client-ID von der gleichen AAD-Seite **Konfigurieren** ein.
+
+4. Fügen Sie einen Schlüssel mit dem Namen „ida: Authority“ hinzu, und geben Sie im Feld für den Wert „https://login.windows.net/ {Ihr Mandant}“ ein, z. B. „https://login.windows.net/contoso.onmicrosoft.com“.
 
 3. Navigieren Sie im klassischen Azure-Portal zur Registerkarte **Konfigurieren** der AAD-Anwendung, die Sie für die API-App „CompanyContacts.API“ erstellt haben.
 
@@ -236,7 +233,7 @@ Der Code in „ContactsList.API“, der „CompanyContacts.API“ aufruft, wird 
 
 3. Fügen Sie im Azure-Portal auf dem Blatt **Anwendungseinstellungen** im Abschnitt **App-Einstellungen** einen Schlüssel namens „ida:Resource“ hinzu, und fügen Sie im Feld für den Wert die soeben kopierte Client-ID ein.
 
-4. Fügen Sie einen Schlüssel namens „CompanyContactsAPIUrl“ hinzu, und geben Sie im Feld für den Wert „https://{your api app name}.azurewebsites.net“ ein. Beispiel: https://companycontactsapi.azurewebsites.net.
+4. Fügen Sie einen Schlüssel namens „CompanyContactsAPIUrl“ hinzu, und geben Sie im Feld für den Wert „https://{Name Ihrer API-App}.azurewebsites.net.azurewebsites.net“ ein. Beispiel: „https://companycontactsapi.azurewebsites.net“.
 
 6. Klicken Sie auf Speichern.
 
@@ -252,17 +249,43 @@ Der Code in „ContactsList.API“, der „CompanyContacts.API“ aufruft, wird 
 
 	![](./media/app-service-api-dotnet-service-principal-auth/contactspagewithdavolio.png)
 
+Wie auch schon im vorherigen Tutorial können Sie die Visual Studio-Projekte mit SSL-URLs für „localhost“ einrichten und die Anwendung lokal ausführen. In diesem Fall können Sie in der Datei „Web.config“ die Einstellungen speichern, die für die Ausführung in Azure (Client-ID, geheimer Schlüssel usw.) in Azure gespeichert haben. Checken Sie jedoch auf keinen Fall eine Datei „web.config“ in die Quellcodeverwaltung ein, die vertrauliche Informationen wie den geheimen Clientschlüssel enthält. Weitere Informationen finden Sie unter [Best Practices für das Bereitstellen von Kennwörtern und anderen vertraulichen Daten in ASP.NET und Azure App Service](http://www.asp.net/identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure).
+
+## Schützen der API-App vor dem Browserzugriff
+
+In diesem Tutorial haben Sie im Azure-Portal die Option „Express“ verwendet, um die AAD-Authentifizierung für die API-App einzurichten, auf die Sie über die Dienstprinzipalauthentifizierung zugreifen möchten. Standardmäßig konfiguriert App Service die neue AAD-Anwendung in einer Weise, die es einem Benutzer erlaubt, zur URL der API-App zu wechseln, um sich anzumelden. Das heißt, dass ein Endbenutzer und nicht nur ein Dienstprinzipal auf die API zugreifen kann. Wenn Sie möchten, dass nur ein Dienstprinzipal auf die API zugreifen darf, können Sie den Browserzugriff verhindern, indem die **Antwort-URL** in der AAD-Anwendung so ändern, dass sie sich von der Basis-URL der API-App unterscheidet.
+
+### Überprüfen, ob der Browserzugriff funktioniert
+
+1. Öffnen Sie in einem neuen Browserfenster die HTTPS-URL der API-App, die Sie für das „CompanyContacts.API“-Projekt erstellt haben.
+
+	Der Browser wechselt zu einem Anmeldebildschirm.
+	
+2. Melden Sie sich mit den Anmeldeinformationen eines Benutzers in Ihrem AAD-Mandanten an.
+
+3. Der Browser zeigt den Bildschirm „Erfolgreich erstellt“ der API-App an.
+
+	Wenn die Swagger-Benutzeroberfläche aktiviert wäre, könnten Sie zur `/swagger`-URL wechseln und die API aufrufen. Sie können die API aus dem Browser aufrufen, indem Sie `/api/contacts/get` zur URL hinzufügen.
+
+### Deaktivieren des Browserzugriffs
+
+1. Ändern Sie im klassischen Portal auf der Registerkarte **Konfigurieren** der AAD-Anwendung, die für das Projekt „CompanyContacts.API“ erstellt wurde, den Wert im Feld **Antwort-URL** in eine gültige URL, die nicht die URL der API-App ist.
+ 
+2. Klicken Sie auf **Speichern**.
+
+### Prüfen, ob der Browserzugriff nicht mehr funktioniert
+
+1. Öffnen Sie in einem neuen Browserfenster erneut die URL der API-App.
+
+2. Melden Sie sich an, wenn Sie dazu aufgefordert werden.
+
+3. Die Anmeldung ist erfolgreich, führt aber zu einer Seite mit einer Fehlermeldung.
+
+	Sie können mithilfe eines Dienstprinzipaltokens weiter auf die API-App zugreifen, aber Benutzer im AAD-Mandanten können sich nicht anmelden und nicht in einem Browser auf die API zugreifen.
+
 ## Nächste Schritte
 
-Dies ist das letzte Tutorial in der Serie für erste Schritte mit API-Apps. Dieser Abschnitt enthält weitere Informationsempfehlungen zur Verwendung von API-Apps.
-
-* Weitere Möglichkeiten zum Nutzen einer durch Azure App Service-Authentifizierung und -Autorisierung geschützte API-App
-
-	In diesem Artikel wurde erläutert, wie Sie eine API-App schützen und aus Code aufrufen, der in einer anderen API-App ausgeführt wird. Weitere Informationen dazu, wie Sie eine geschützte API-App aus einer Logik-App aufrufen, finden Sie unter [Verwenden der in App Service gehosteten benutzerdefinierten API mit Logik-Apps](../app-service-logic/app-service-logic-custom-hosted-api.md).
-
-* Weitere Methoden zum Schützen einer API-App für Dienst-zu-Dienst-Szenarien
-
-	Als Alternative zur App Service-Authentifizierung und -Autorisierung können Sie eine API-App auch mithilfe von Clientzertifikaten oder Standardauthentifizierung schützen. Informationen zu Clientzertifikaten in Azure finden Sie unter [Konfigurieren von gegenseitiger TLS-Authentifizierung für Web-Apps](../app-service-web/app-service-web-configure-tls-mutual-auth.md).
+Dies ist das letzte Tutorial in der Serie für erste Schritte mit API-Apps. Dieser Abschnitt enthält weitere Informationsempfehlungen zum Arbeiten mit API-Apps.
 
 * Weitere Methoden zum Bereitstellen einer App Service-App
 
@@ -281,4 +304,4 @@ Dies ist das letzte Tutorial in der Serie für erste Schritte mit API-Apps. Dies
 	* [Konfigurieren eines benutzerdefinierten Domänennamens in Azure App Service](web-sites-custom-domain-name.md)
 	* [Aktivieren von HTTPS für Azure-Web-Apps](web-sites-configure-ssl-certificate.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

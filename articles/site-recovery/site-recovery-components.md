@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Wie funktioniert Azure Site Recovery?"
+	pageTitle="Wie funktioniert Site Recovery? | Microsoft Azure"
 	description="Dieser Artikel enthält eine Übersicht über die Site Recovery-Architektur."
 	services="site-recovery"
 	documentationCenter=""
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="11/29/2015"
+	ms.date="12/07/2015"
 	ms.author="raynew"/>
 
 # Wie funktioniert Azure Site Recovery?
@@ -43,7 +43,7 @@ Wenn Sie VMware-VMs oder physische Windows/Linux-Computer per Replikation zu Azu
 
 **Standort** | **Erforderliches Element** 
 --- | --- 
- Lokal | **Prozessserver**: Mit diesem Server werden Daten von geschützten virtuellen VMware-Maschinen oder physischen Windows/Linux-Computern optimiert, bevor sie an Azure gesendet werden. Außerdem werden hiermit die Pushinstallation der Mobilitätsdienstkomponente auf dem geschützten Computer und die automatische Ermittlung von virtuellen VMware-Maschinen durchgeführt. <br/><br/> **VMware vCenter-Server**: Beim Schützen von VMware-VMs benötigen Sie einen VMwave vCenter-Server zum Verwalten der vSphere-Hypervisors.<br/><br/> **ESX-Server**: Beim Schützen von VMware-VMs benötigen Sie einen Server, auf dem ESX/ESXi Version 5.1 oder 5.5 mit den neuesten Updates ausgeführt wird.<br/><br/> **Maschinen**: Beim Schützen von VMware sollten Sie über VMware-VMs verfügen, auf den die VMware-Tools installiert sind und ausgeführt werden. Wenn Sie physische Computer schützen, sollte darauf ein unterstütztes Windows- oder Linux-Betriebssystem ausgeführt werden. Weitere Informationen finden Sie unter [Unterstützung](site-recovery-vmware-to-azure/#before-you-start). <br/><br/> **Mobilitätsdienst**: Wird auf Maschinen installiert, die Sie schützen möchten, um Änderungen zu erfassen und an den Prozessserver zu übermitteln. <br/><br/>Drittanbieterkomponenten: Diese Bereitstellung ist von einigen [Drittanbieterkomponenten](http://download.microsoft.com/download/C/D/7/CD79E327-BF5A-4026-8FF4-9EB990F9CEE2/Third-Party_Notices.txt) abhängig.
+ Lokal | **Prozessserver**: Mit diesem Server werden Daten von geschützten virtuellen VMware-Maschinen oder physischen Windows/Linux-Computern optimiert, bevor sie an Azure gesendet werden. Außerdem werden hiermit die Pushinstallation der Mobilitätsdienstkomponente auf dem geschützten Computer und die automatische Ermittlung von virtuellen VMware-Maschinen durchgeführt. <br/><br/> **VMware vCenter-Server**: Beim Schützen von VMware-VMs benötigen Sie einen VMwave vCenter-Server zum Verwalten der vSphere-Hypervisors.<br/><br/> **ESX-Server**: Beim Schützen von VMware-VMs benötigen Sie einen Server, auf dem ESX/ESXi Version 5.1 oder 5.5 mit den neuesten Updates ausgeführt wird.<br/><br/> **Maschinen**: Beim Schützen von VMware sollten Sie über VMware-VMs verfügen, auf den die VMware-Tools installiert sind und ausgeführt werden. Wenn Sie physische Computer schützen, sollte darauf ein unterstütztes Windows- oder Linux-Betriebssystem ausgeführt werden. Weitere Informationen finden Sie unter [Unterstützung](site-recovery-vmware-to-azure.md/#before-you-start). <br/><br/> **Mobilitätsdienst**: Wird auf Maschinen installiert, die Sie schützen möchten, um Änderungen zu erfassen und an den Prozessserver zu übermitteln. <br/><br/>Drittanbieterkomponenten: Diese Bereitstellung ist von einigen [Drittanbieterkomponenten](http://download.microsoft.com/download/C/D/7/CD79E327-BF5A-4026-8FF4-9EB990F9CEE2/Third-Party_Notices.txt) abhängig.
 Azure | **Konfigurationsserver**: Standardmäßige A3 Azure-VM zum Koordinieren der Kommunikation zwischen geschützten Computern, dem Prozessserver und den Masterzielservern in Azure. Dient zum Einrichten der Replikation und Koordinieren der Wiederherstellung, wenn ein Failover eintritt. <br/><br/>**Masterzielserver**: Azure-VM mit replizierten Daten von geschützten Computern, indem angefügte VHDs verwendet werden, die in der Blob Storage-Komponente Ihres Azure-Speicherkontos erstellt wurden. Ein Failback-Masterzielserver wird lokal ausgeführt, damit Sie für Azure-VMs das Failback auf VMware-VMs durchführen können. <br/><br/> **Site Recovery-Tresor**: Mindestens ein Azure Site Recovery-Tresor (Einrichtung mit einem Abonnement des Site Recovery-Diensts). <br/><br/> **Virtual Network**: Ein Azure-Netzwerk, in dem sich der Konfigurationsserver und die Masterzielserver befinden (unter demselben Abonnement und in derselben Region wie der Site Recovery-Dienst. <br/><br/> **Azure-Speicher**: Azure-Speicherkonto zum Speichern der replizierten Daten. Hierbei sollte es sich um ein standardmäßiges georedundantes Konto oder Premium-Konto in derselben Region wie das Site Recovery-Abonnement handeln.
 
 
@@ -155,4 +155,4 @@ In diesem Szenario werden Deltareplikationsänderungen vom vereinheitlichten Age
 
 [Bereiten Sie sich auf die Bereitstellung vor](site-recovery-best-practices.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

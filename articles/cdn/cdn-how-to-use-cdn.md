@@ -139,6 +139,7 @@ Weitere Informationen zum Zuordnen einer benutzerdefinierten Domäne finden Sie 
 
 - [Aktivieren des Content Delivery Network für Azure](cdn-create-new-endpoint.md)
 - [Übersicht über das Azure Content Delivery Network (CDN)](cdn-overview.md)
+- [Löschen eines Azure CDN-Endpunkts](cdn-purge-endpoint.md)
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

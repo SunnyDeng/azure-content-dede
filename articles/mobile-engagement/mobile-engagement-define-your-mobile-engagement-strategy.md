@@ -116,11 +116,13 @@ Zu sämtlichen Datentypen können Parameter hinzugefügt werden (*extra-informat
 *Anwendungsfall: Deklarative Daten* 1. Alarmmeldungen segmentieren: Erfassen Sie deklarative Daten, um die Zielgruppe auf Basis ihrer Präferenzen zu segmentieren. Es können Pushbenachrichtigungen zu einem bestimmten Thema gesendet werden, das für eine bestimmte Zielgruppe von großem Interesse ist. 2. Segmentieren Sie die Zielgruppe auf Basis des Anmeldestatus. Erfassen Sie entsprechende Daten, um zu erfahren, ob ein Benutzer verbunden ist oder er ein Konto erstellt hat. Dies hilft bei der Ausrichtung auf Endbenutzer, die sich noch nicht angemeldet haben, und sendet eine Pushbenachrichtigung, um den Benutzer zur Konvertierung zu motivieren. ![][2]
 
 ### Nächste Schritte
+
 - Weitere Informationen zu den grundlegenden Konzepten von Mobile Engagement finden Sie unter [Mobile Engagement-Konzepte].
+- [Erstellen Sie ein Azure Mobile Engagement-Konto.](mobile-engagement-create-account.md)
 - Detaillierte Informationen finden Sie unter [Bewährte Methoden](mobile-engagement-getting-started-best-practices.md).
 - Ein Anwendungsbeispiel zum Implementieren von Mobile Engagement bei einer Spiele-App finden Sie unter [Szenario für eine Spiele-App](mobile-engagement-gaming-scenario.md). 
 - Ein Anwendungsbeispiel zum Implementieren von Mobile Engagement bei einer Medien-App finden Sie unter [Szenario für eine Medien-App](mobile-engagement-media-scenario.md). 
-- Weitere Informationen zur Implementierung finden Sie unter [Tutorials].
+- Weitere Informationen zur Implementierung finden Sie unter [Lernprogramme].
 
 <!-- Images. -->
 [1]: ./media/mobile-engagement-define-your-mobile-engagement-strategy/use-case1.png
@@ -128,6 +130,6 @@ Zu sämtlichen Datentypen können Parameter hinzugefügt werden (*extra-informat
 
 <!-- URLs. -->
 [Mobile Engagement-Konzepte]: http://azure.microsoft.com/documentation/articles/mobile-engagement-concepts/
-[Tutorials]: http://azure.microsoft.com/documentation/articles/mobile-engagement-ios-get-started/
+[Lernprogramme]: http://azure.microsoft.com/documentation/articles/mobile-engagement-ios-get-started/
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1210_2015-->

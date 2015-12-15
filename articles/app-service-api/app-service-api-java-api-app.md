@@ -230,11 +230,11 @@ In diesem Abschnitt ersetzen Sie die serverseitige Implementierung des generiert
 	
 1. Senden Sie mit [Postman](https://www.getpostman.com/) eine Anforderung an die API-Methode „get all contacts“ unter http://localhost:8080/api/contacts.
 
-	![Kontakte-APPI aufrufen](media/app-service-api-java-api-app/calling-contacts-api.png)
+	![„Contacts-API“ aufrufen](media/app-service-api-java-api-app/calling-contacts-api.png)
 	
 1. Senden Sie mit [Postman](https://www.getpostman.com/) eine Anforderung an die API-Methode „get specific contact“ unter http://localhost:8080/api/contacts/2.
 
-	![Kontakte-APPI aufrufen](media/app-service-api-java-api-app/calling-specific-contact-api.png)
+	![„Contacts-API“ aufrufen](media/app-service-api-java-api-app/calling-specific-contact-api.png)
 	
 1. Erstellen Sie abschließend die Java WAR (Web ARrchiv)-Datei, indem Sie folgenden Maven-Befehl in der Konsole ausführen.
 
@@ -289,8 +289,10 @@ In diesem Abschnitt erfahren Sie, wie Sie mit dem Azure-Portal eine neue API-App
 	![Verwenden Ihrer Java-Kontakte-REST-API in einer Liveinstanz in Azure](media/app-service-api-java-api-app/postman-calling-azure-contacts.png)
 	
 ## Nächste Schritte
-In diesem Artikel konnten Sie mit einer Swagger-JSON-Datei und Java-Code beginnen, der mit dem swagger.io-Editor generiert wurde. Durch einfache Änderungen und einen Git-Bereitstellungsprozess haben Sie eine funktionale, in Java geschriebene API-App erhalten. Sie können jetzt zurückgehen und mehr zum [Storage-SDK für Java](../storage/storage-java-how-to-use-blob-storage.md) lesen, um die JSON-Blobs beizubehalten. Alternativ können Sie mit dem [DocumentDB-Java-SDK](../documentdb/documentdb-java-application.md) Ihre Kontaktdaten in Azure DocumentDB speichern.
+In diesem Artikel konnten Sie mit einer Swagger-JSON-Datei und Java-Code beginnen, der mit dem swagger.io-Editor generiert wurde. Durch einfache Änderungen und einen Git-Bereitstellungsprozess haben Sie eine funktionale, in Java geschriebene API-App erhalten. Im nächsten Tutorial der Reihe „Erste Schritte mit API-Apps“ wird gezeigt, wie Sie [API-Apps über JavaScript-Clients mit CORS nutzen](app-service-api-cors-consume-javascript.md).
+
+Aufbauend auf diesem Beispiel können Sie mehr über das [Storage SDK für Java](../storage/storage-java-how-to-use-blob-storage.md) erfahren, um die JSON-Blobs beständig zu speichern. Alternativ Sie können mithilfe des [Java SDK für DocumentDB](../documentdb/documentdb-java-application.md) Ihre Kontaktdaten in Azure DocumentDB speichern.
 
 Weitere Informationen zum Verwenden von Java in Azure finden Sie im [Java Developer Center](/develop/java/).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

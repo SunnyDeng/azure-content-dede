@@ -3,8 +3,8 @@
 	description="Erstellen Sie ein neues Speicherkonto, verwalten Sie die Zugriffsschlüssels, oder löschen Sie ein Speicherkonto im Azure-Portal."
 	services="storage"
 	documentationCenter=""
-	authors="tamram"
-	manager="adinah"
+	authors="robinsh"
+	manager="carmonm"
 	editor=""/>
 
 <tags
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="12/01/2015" 
-	ms.author="tamram"/>
+	ms.date="12/04/2015" 
+	ms.author="robinsh"/>
 
 
 # Informationen zu Azure-Speicherkonten
@@ -138,4 +138,4 @@ Um ein Speicherkonto zu entfernen, das Sie nicht mehr verwenden, wechseln Sie im
 - Weitere Informationen über Azure Storage finden Sie in der Azure Storage-Dokumentation auf [Azure.com](http://azure.microsoft.com/documentation/services/storage/).
 - Besuchen Sie den [Blog des Azure-Speicherteams](http://blogs.msdn.com/b/windowsazurestorage/).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->
