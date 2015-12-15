@@ -84,7 +84,7 @@ Der Notification Hub ist jetzt für die Arbeit mit GCM konfiguriert, und Sie bes
 1. Laden Sie die Datei „notification-hubs-0.4.jar“ aus dem [Notification-Hubs-Android-SDK auf Bintray](https://bintray.com/microsoftazuremobile/SDK/Notification-Hubs-Android-SDK/0.4) auf der Registerkarte **Files** herunter. Laden Sie auch [notifications-1.0.1.jar](https://bintray.com/microsoftazuremobile/SDK/Notifications-Handler/view) in das Verzeichnis **app\\libs** Ihres Projekts herunter. Dazu können Sie die Dateien direkt in den Ordner **libs** im Fenster "Project View" von Android Studio ziehen. Aktualisieren Sie den Ordner **libs**.
 
 
-    >[AZURE.NOTE]Die Nummern am Ende des Dateinamens können sich in den nachfolgenden SDK-Versionen ändern.
+    > [AZURE.NOTE] Die Nummern am Ende des Dateinamens können sich in den nachfolgenden SDK-Versionen ändern.
 
 2. Richten Sie ein, dass die Anwendung eine Registrierungs-ID von GCM erhält, und verwenden Sie diese, um die App-Instanz beim Notification Hub zu registrieren.
 
@@ -118,7 +118,10 @@ Der Notification Hub ist jetzt für die Arbeit mit GCM konfiguriert, und Sie bes
 	    private static Boolean isVisible = false;
 
 
-	Aktualisieren Sie die drei Platzhalter: * **SENDER\_ID**: Legen Sie `SENDER_ID` auf die Projektnummer fest, die Sie zuvor von dem in der [Google Cloud Console](http://cloud.google.com/console) erstellten Projekt abgerufen haben. * **HubListenConnectionString**: Legen Sie für `HubListenConnectionString` die Verbindungszeichenfolge **DefaultListenAccessSignature** für den Hub fest. Sie können diese Verbindungszeichenfolge kopieren, indem Sie im [klassischen Azure-Portal] auf der Registerkarte **Dashboard** Ihres Hubs auf **Verbindungszeichenfolge anzeigen** klicken. * **HubName**: Verwenden Sie den Namen Ihres Notification Hubs, der oben auf der Seite in Azure angezeigt wird (**nicht** die vollständige URL). Verwenden Sie z. B. `"myhub"`.
+	Aktualisieren Sie die drei Platzhalter:
+	* **SENDER\_ID**: Setzen Sie `SENDER_ID` auf die Projektnummer, die Sie zuvor von dem in der [Google Cloud Console](http://cloud.google.com/console) erstellten Projekt abgerufen haben.
+	* **HubListenConnectionString**: Legen Sie für `HubListenConnectionString` die Verbindungszeichenfolge **DefaultListenAccessSignature** für den Hub fest. Sie können diese Verbindungszeichenfolge kopieren, indem Sie im [Azure-Portal] auf der Registerkarte **Dashboard** Ihres Hubs auf **Verbindungszeichenfolge anzeigen** klicken.
+	* **HubName**: Verwenden Sie den Namen Ihres Notification Hubs, der oben auf der Seite in Azure angezeigt wird (**nicht** die vollständige URL). Verwenden Sie z. B. `"myhub"`.
 
 
 
@@ -213,7 +216,7 @@ Der Notification Hub ist jetzt für die Arbeit mit GCM konfiguriert, und Sie bes
 
 8. Da Android keine Benachrichtigungen anzeigt, müssen Sie einen eigenen Empfänger schreiben. Fügen Sie in **AndroidManifest.xml** das folgende Element im `<application>`-Element ein.
 
-	> [AZURE.NOTE]Ersetzen Sie den Platzhalter mit dem Namen Ihres Pakets.
+	> [AZURE.NOTE] Ersetzen Sie den Platzhalter mit dem Namen Ihres Pakets.
 
         <receiver android:name="com.microsoft.windowsazure.notifications.NotificationsBroadcastReceiver"
             android:permission="com.google.android.c2dm.permission.SEND">

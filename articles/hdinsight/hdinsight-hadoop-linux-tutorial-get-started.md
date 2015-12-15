@@ -186,9 +186,9 @@ Führen Sie in der Hive-Ansicht folgende Schritte aus, um eine Hive-Abfrage an D
     
     Die anderen Symbole haben folgende Zwecke:
     
-        * Settings: The gear icon allows you to change Hive settings, such as setting `hive.execution.engine` or Tez parameters.
+        * Einstellungen: The gear icon allows you to change Hive settings, such as setting `hive.execution.engine` or Tez parameters.
         * Tez: Displays the Directed Acyclic Graph (DAG) that Tez used to perform the query. If you want to view the DAG for queries you've ran in the past, use the __Tez View__ instead.
-        * Notifications: Displays notifications, such as "Query has been submitted" or if an error occurs when running a query.
+        * Benachrichtigungen: Displays notifications, such as "Query has been submitted" or if an error occurs when running a query.
 
 5. Wählen Sie das __SQL__-Symbol, um zum Abfrage-Editor zurückzukehren, erstellen Sie dann ein neues Arbeitsblatt, und geben Sie folgende Abfrage ein:
 

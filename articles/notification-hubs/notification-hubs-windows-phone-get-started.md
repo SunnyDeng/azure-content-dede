@@ -52,6 +52,7 @@ Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen N
 Der Hub ist jetzt erstellt und so konfiguriert, dass nicht authentifizierte Benachrichtigungen für Windows Phone gesendet werden.
 
 > [AZURE.NOTE]Dieses Lernprogramm verwendet MPNS im nicht authentifizierten Modus. Im nicht authentifizierten MPNS-Modus liegen Einschränkungen für Benachrichtigungen vor, die Sie an jeden Kanal senden können. Notification Hubs unterstützt den [authentifizierten MPNS-Modus](http://msdn.microsoft.com/library/windowsphone/develop/ff941099.aspx), wodurch Sie Ihr Zertifikat hochladen können.
+<!--Refer to [Notification Hubs How-To for Windows Phone 8] for more information on how to use MPNS authenticated mode.-->
 
 ##Verbinden Ihrer App mit dem Notification Hub
 
@@ -78,7 +79,7 @@ Der Hub ist jetzt erstellt und so konfiguriert, dass nicht authentifizierte Bena
         using Microsoft.Phone.Notification;
         using Microsoft.WindowsAzure.Messaging;
 
-5. Fügen Sie den folgenden Code oben in der Methode **Application\_Launching** in „App.xaml.cs“ ein:
+5. Fügen Sie den folgenden Code oben in der Methode **Application\_Launching** in App.xaml.cs ein:
 
 	    var channel = HttpNotificationChannel.Find("MyPushChannel");
         if (channel == null)
@@ -98,7 +99,7 @@ Der Hub ist jetzt erstellt und so konfiguriert, dass nicht authentifizierte Bena
 
 	>[AZURE.NOTE]Dieses Lernprogramm sendet eine Popupbenachrichtigung an das Gerät. Wenn Sie eine Kachelbenachrichtigung senden, müssen Sie stattdessen die **BindToShellTile**-Methode für den Kanal aufrufen. Um Popup- und Kachelbenachrichtigungen zu unterstützen, rufen Sie beide Methoden, **BindToShellTile** und **BindToShellToast**, auf.
 
-6. Erweitern Sie im Projektmappen-Explorer **Eigenschaften**, öffnen Sie die Datei „WMAppManifest.xml“, klicken Sie auf die Registerkarte **Funktionen**, und aktivieren Sie die Funktion **ID\_CAP\_PUSH\_NOTIFICATION**.
+6. Erweitern Sie im Projektmappen-Explorer **Eigenschaften**, öffnen Sie die Datei "WMAppManifest.xml", klicken Sie auf die Registerkarte **Funktionen**, und aktivieren Sie die Funktion **ID\_CAP\_PUSH\_NOTIFICATION**.
 
    	![][14]
 
@@ -147,7 +148,7 @@ Sie können Benachrichtigungen mit Notification Hubs von jedem beliebigen Back-E
             await hub.SendMpnsNativeNotificationAsync(toast);
         }
 
-	Stellen Sie sicher, dass Sie den Platzhalter "hub name" durch den Namen des Notification Hub ersetzen, der im Portal auf der Registerkarte **Notification Hubs** angezeigt wird. Ersetzen Sie außerdem den Platzhalter für die Verbindungszeichenfolge durch die Verbindungszeichenfolge **DefaultFullSharedAccessSignature**, die Sie im Abschnitt „Konfigurieren Ihres Notification Hubs“ erhalten haben.
+	Stellen Sie sicher, dass Sie den Platzhalter "hub name" durch den Namen des Notification Hub ersetzen, der im Portal auf der Registerkarte **Notification Hubs** angezeigt wird. Ersetzen Sie außerdem den Platzhalter für die Verbindungszeichenfolge durch die Verbindungszeichenfolge **DefaultFullSharedAccessSignature**, die Sie im Abschnitt "Konfigurieren Ihres Notification Hub" erhalten haben.
 
 	>[AZURE.NOTE]Stellen Sie sicher, dass Sie die Verbindungszeichenfolge mit Vollzugriff (**Full**) verwenden, nicht mit Abhörzugriff (**Listen**). Die Verbindungszeichenfolge mit Abhörzugriff verfügt nicht über die Berechtigungen zum Senden von Benachrichtigungen.
 
