@@ -90,7 +90,8 @@ Klonen Sie das komplette Vorlagenrepository mithilfe eines Git-Clients Ihrer Wah
 
 	git clone https://github.com/Azure/azure-quickstart-templates C:\Azure\Templates
 
-Sobald dies abgeschlossen ist, suchen Sie im Verzeichnis "C:\\Azure\\Vorlagen" nach dem Ordner "datastax-enterprise". <!--Wrapping name of folder in bold typeface is not corp style  -->
+Sobald dies abgeschlossen ist, suchen Sie im Verzeichnis "C:\\Azure\\Vorlagen" nach dem Ordner "datastax-enterprise".
+<!--Wrapping name of folder in bold typeface is not corp style  -->
 ### Schritt 2 (optional): Erlernen der Vorlagenparameter
 
 Wenn Sie schwierige Lösungen wie einen auf DataStax basierenden Apache Cassandra-Cluster bereitstellen, müssen Sie eine Reihe von Konfigurationsparametern für den Umgang mit unterschiedlichen erforderlichen Einstellungen angeben. Durch das Deklarieren dieser Parameter in der Vorlagendefinition ist es möglich, Werte während der Bereitstellung über eine externe Datei oder an der Befehlszeile anzugeben.
@@ -383,7 +384,12 @@ Im Abschnitt "resources" geschieht am meisten. Schauen Sie sich diesen Abschnitt
 
 Im ersten Beispiel wird deutlich, wie die Datei "azuredeploy.json" in diesem Szenario als Mechanismus zur Orchestrierung organisiert wurde, indem eine Anzahl anderer Vorlagendateien aufgerufen wird, wobei jede jeweils für einen Teil der erforderlichen Bereitstellungsaufgaben verantwortlich ist.
 
-Insbesondere die folgenden verknüpften Vorlagen werden für diese Bereitstellung verwendet: <!-- In list format, using bold typeface in the following manner is ok --> – **shared-resource.json**: Enthält die Definition aller Ressourcen, die in der gesamten Bereitstellung freigegeben werden sollen. Beispiele hierfür sind Speicherkonten, die zum Speichern der Betriebssystem-Datenträger und virtuellen Netzwerke des virtuellen Computers verwendet werden. – **opscenter-resources.json**: Stellt eine OpsCenter-VM und alle zugehörigen Ressourcen bereit, einschließlich einer Netzwerkschnittstelle und einer öffentlichen IP-Adresse. – **opscenter-install-resources.json**: Stellt die OpsCenter-VM-Erweiterung (benutzerdefiniertes Skript für Linux) bereit, die die spezifische Bash-Skriptdatei ("opscenter.sh") aufruft, das zum Einrichten des OpsCenter-Diensts innerhalb dieses virtuellen Computers erforderlich ist. – **ephemeral-nodes-resources.json**: Stellt alle Clusterknoten-VMs und verbundenen Ressourcen bereit (z. B. Netzwerkkarten und private IPs). Diese Vorlage stellt auch VM-Erweiterungen bereit (benutzerdefinierte Skripts für Linux) und ruft ein Bash-Skript ("dsenode.sh") ab, um Apache Cassandra-Bits auf jedem Knoten physisch zu installieren.
+Insbesondere die folgenden verknüpften Vorlagen werden für diese Bereitstellung verwendet:
+<!-- In list format, using bold typeface in the following manner is ok -->
+– **shared-resource.json**: Enthält die Definition aller Ressourcen, die in der gesamten Bereitstellung freigegeben werden sollen. Beispiele hierfür sind Speicherkonten, die zum Speichern der Betriebssystem-Datenträger und virtuellen Netzwerke des virtuellen Computers verwendet werden.
+– **opscenter-resources.json**: Stellt eine OpsCenter-VM und alle zugehörigen Ressourcen bereit, einschließlich einer Netzwerkschnittstelle und einer öffentlichen IP-Adresse.
+– **opscenter-install-resources.json**: Stellt die OpsCenter-VM-Erweiterung (benutzerdefiniertes Skript für Linux) bereit, die die spezifische Bash-Skriptdatei ("opscenter.sh") aufruft, das zum Einrichten des OpsCenter-Diensts innerhalb dieses virtuellen Computers erforderlich ist.
+– **ephemeral-nodes-resources.json**: Stellt alle Clusterknoten-VMs und verbundenen Ressourcen bereit (z. B. Netzwerkkarten und private IPs). Diese Vorlage stellt auch VM-Erweiterungen bereit (benutzerdefinierte Skripts für Linux) und ruft ein Bash-Skript ("dsenode.sh") ab, um Apache Cassandra-Bits auf jedem Knoten physisch zu installieren.
 
 Sehen wir uns nun die Verwendung der letzten Vorlage genauer an, da diese aus Sicht der Vorlagenentwicklung am interessantesten ist. Ein wichtiges hervorzuhebendes Konzept ist, wie eine einzelne Vorlagendatei mehrere Kopien eines einzelnen Ressourcentyps bereitstellen und für jede Instanz eindeutige Werte für die erforderlichen Einstellungen festgelegen kann. Dieses Konzept ist als "Ressourcenschleife" bekannt.
 
