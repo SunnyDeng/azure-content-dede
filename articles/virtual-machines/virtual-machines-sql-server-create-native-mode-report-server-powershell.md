@@ -37,9 +37,9 @@ In diesem Thema wird beschrieben und sind Anleitungen enthalten, wie ein SQL Ser
 
 - **Windows PowerShell-Skrips**: Für das Thema wird davon ausgegangen, dass Sie grundlegende Kenntnisse zu Windows PowerShell haben. Weitere Informationen zur Verwendung von Windows PowerShell finden Sie hier:
 
-	- [Starting Windows PowerShell on Windows Server](https://technet.microsoft.com/library/hh847814.aspx)
+	- [Starten von WindowsPowerShell unter WindowsServer](https://technet.microsoft.com/library/hh847814.aspx)
 	
-	- [Getting Started with Windows PowerShell](https://technet.microsoft.com/library/hh857337.aspx)
+	- [Erste Schritte mit WindowsPowerShell](https://technet.microsoft.com/library/hh857337.aspx)
 
 ## Schritt 1: Bereitstellen eines virtuellen Azure-Computers
 
@@ -111,7 +111,7 @@ In diesem Thema wird beschrieben und sind Anleitungen enthalten, wie ein SQL Ser
 
 Wenn Sie HTTPS auf dem virtuellen Computer verwenden möchten, benötigen Sie ein vertrauenswürdiges SSL-Zertifikat. Abhängig von Ihrem Szenario können Sie eine der beiden folgenden Methoden verwenden:
 
-- Ein gültiges SSL-Zertifikat, das von einer Zertifizierungsstelle ausgegeben wurde und von Microsoft als vertrauenswürdig eingestuft ist. Die Stammzertifikate einer Zertifizierungsstelle müssen über das Microsoft-Programm für Stammzertifikate (Microsoft Root Certificate Program) verteilt werden. Weitere Informationen zu diesem Programm finden Sie unter [Windows and Windows Phone 8 SSL Root Certificate Program (Member CAs)](http://social.technet.microsoft.com/wiki/contents/articles/14215.windows-and-windows-phone-8-ssl-root-certificate-program-member-cas.aspx) und [Introduction to The Microsoft Root Certificate Program](http://social.technet.microsoft.com/wiki/contents/articles/3281.introduction-to-the-microsoft-root-certificate-program.aspx).
+- Ein gültiges SSL-Zertifikat, das von einer Zertifizierungsstelle ausgegeben wurde und von Microsoft als vertrauenswürdig eingestuft ist. Die Stammzertifikate einer Zertifizierungsstelle müssen über das Microsoft-Programm für Stammzertifikate (Microsoft Root Certificate Program) verteilt werden. Weitere Informationen zu diesem Programm finden Sie unter [Windows und Windows Phone 8 SSL Root Certificate Program (Members CAs)](http://social.technet.microsoft.com/wiki/contents/articles/14215.windows-and-windows-phone-8-ssl-root-certificate-program-member-cas.aspx) und [Einführung in das Microsoft Root Certificate Program](http://social.technet.microsoft.com/wiki/contents/articles/3281.introduction-to-the-microsoft-root-certificate-program.aspx).
 
 - Ein selbstsigniertes Zertifikat. Selbstsignierte Zertifikate werden für Produktionsumgebungen nicht empfohlen.
 
@@ -131,7 +131,7 @@ Wenn Sie HTTPS auf dem virtuellen Computer verwenden möchten, benötigen Sie ei
 
 	>[AZURE.NOTE]Der Wert des Felds **Ausgestellt für** muss mit dem Namen übereinstimmen, den Sie in **DNS-Name des Clouddiensts** für den neuen virtuellen Computer verwendet haben.
 
-1. **Installieren Sie das Serverzertifikat auf dem Webserver**. In diesem Fall ist der Webserver der virtuelle Computer, der den Berichtsserver hostet, und die Website wird in späteren Schritten erstellt, wenn Sie Reporting Services konfigurieren. Weitere Informationen zum Installieren des Serverzertifikats auf dem Webserver mithilfe des MMC-Snap-Ins „Zertifikate“ finden Sie unter [Install a Server Certificate](https://technet.microsoft.com/library/cc740068).
+1. **Installieren Sie das Serverzertifikat auf dem Webserver**. In diesem Fall ist der Webserver der virtuelle Computer, der den Berichtsserver hostet, und die Website wird in späteren Schritten erstellt, wenn Sie Reporting Services konfigurieren. Weitere Informationen zum Installieren des Serverzertifikats auf dem Webserver mithilfe des MMC-Snap-Ins „Zertifikate“ finden Sie unter [Installieren eines Serverzertifikats](https://technet.microsoft.com/library/cc740068).
 	
 	Wenn Sie das in diesem Thema enthaltene Skript verwenden möchten, um den Berichtsserver zu konfigurieren, ist der Wert, der für das Zertifikat als **Fingerabdruck** angegeben ist, als Parameter des Skripts erforderlich. Ausführliche Informationen, wie Sie den Fingerabdruck des Zertifikats abrufen, finden Sie im nächsten Abschnitt.
 
@@ -141,7 +141,7 @@ Wenn Sie HTTPS auf dem virtuellen Computer verwenden möchten, benötigen Sie ei
 
 Bei der Bereitstellung des virtuellen Computer wurde auf ihm ein selbstsigniertes Zertifikat erstellt. Der Name des Zertifikats ist mit dem DNS-Namen des virtuellen Computers identisch. Damit keine Zertifikatfehler auftreten, ist es erforderlich, dass das Zertifikat sowohl auf dem virtuellen Computer selbst als auch von allen Benutzern der Website als vertrauenswürdig eingestuft wird.
 
-1. Damit der Stammzertifizierungsstelle des Zertifikats auf dem lokalen virtuellen Computer vertraut wird, fügen Sie das Zertifikat zu **Vertrauenswürdige Stammzertifizierungsstellen** hinzu. Es folgt eine Zusammenfassung der erforderlichen Schritte. Ausführliche Schritte dazu, wie die Zertifizierungsstelle als vertrauenswürdig eingestuft wird, finden Sie unter [Install a Server Certificate](https://technet.microsoft.com/library/cc740068).
+1. Damit der Stammzertifizierungsstelle des Zertifikats auf dem lokalen virtuellen Computer vertraut wird, fügen Sie das Zertifikat zu **Vertrauenswürdige Stammzertifizierungsstellen** hinzu. Es folgt eine Zusammenfassung der erforderlichen Schritte. Ausführliche Schritte dazu, wie die Zertifizierungsstelle als vertrauenswürdig eingestuft wird, finden Sie unter [Installieren eines Serverzertifikats](https://technet.microsoft.com/library/cc740068).
 
 	1. Wählen Sie im klassischen Azure-Portal den virtuellen Computer aus, und klicken Sie auf „Verbinden“. Abhängig von Ihrer Browserkonfiguration werden Sie möglicherweise aufgefordert, eine RDP-Datei zum Herstellen einer Verbindung mit dem virtuellen Computer zu speichern.
 	
@@ -633,7 +633,7 @@ Damit Sie sich vergewissern können, dass die grundlegenden Berichtsserverfunkti
 
 		http://localhost/Reports
 
-- Navigieren Sie auf Ihrem lokalen Computer zu dem **Remote**-Berichts-Manager auf dem virtuellen Computer. Aktualisieren Sie den DNS-Namen im folgenden Beispiel entsprechend Ihren Anforderungen. Wenn Sie zur Eingabe eines Kennworts aufgefordert werden, verwenden Sie die Administratoranmeldeinformationen, die Sie beim Bereitstellen des virtuellen Computers angegeben haben. Der Benutzername hat das Format [Domäne](Benutzername), wobei die Domäne dem Namen des virtuellen Computers entspricht, z. B. „ssrsnativecloud\\testuser“. Wenn Sie nicht HTTPS verwenden, entfernen Sie das **S** aus der URL. Informationen, wie Sie weitere Benutzer auf dem virtuellen Computer erstellen, finden Sie im nächsten Abschnitt.
+- Navigieren Sie auf Ihrem lokalen Computer zu dem **Remote**-Berichts-Manager auf dem virtuellen Computer. Aktualisieren Sie den DNS-Namen im folgenden Beispiel entsprechend Ihren Anforderungen. Wenn Sie zur Eingabe eines Kennworts aufgefordert werden, verwenden Sie die Administratoranmeldeinformationen, die Sie beim Bereitstellen des virtuellen Computers angegeben haben. Der Benutzername hat das Format [Domäne]\[Benutzername], wobei die Domäne dem Namen des virtuellen Computers entspricht, z. B. „ssrsnativecloud\\testuser“. Wenn Sie nicht HTTPS verwenden, entfernen Sie das **S** aus der URL. Informationen, wie Sie weitere Benutzer auf dem virtuellen Computer erstellen, finden Sie im nächsten Abschnitt.
 
 		https://ssrsnativecloud.cloudapp.net/Reports
 
@@ -647,7 +647,7 @@ Nach dem Konfigurieren und Überprüfen des Berichtsservers besteht eine der üb
 
 - [Erstellen eines lokalen Benutzerkontos](https://technet.microsoft.com/library/cc770642.aspx)
 
-- [Gewähren von Benutzerzugriff auf einen Berichtsserver (Berichts-Manager)](https://msdn.microsoft.com/library/ms156034.aspx))
+- [Gewähren von Benutzerzugriff auf einen Berichtsserver (Berichts-Manager)](https://msdn.microsoft.com/library/ms156034.aspx)
 
 - [Erstellen und Verwalten von Rollenzuweisungen](https://msdn.microsoft.com/library/ms155843.aspx)
 
