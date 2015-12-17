@@ -61,7 +61,17 @@ Anforderungen von DocumentDB mithilfe eines deaktivierten SDK werden vom Dienst 
 
 | Version | Herausgabedatum | Deaktivierungstermine 
 | ---	  | ---	         | ---
-| [1\.4.2](#1.4.2) | 6. Oktober 2015 |--- | [1\.4.1](#1.4.1) | 6. Oktober 2015 |--- | [1\.2.0](#1.2.0) | 6. August 2015 |--- | [1\.1.0](#1.1.0) | 9. Juli 2015 |--- | [1\.0.1](#1.0.1) | 25. Mai 2015 |--- | [1\.0.0](#1.0.0) | 7. April 2015 |--- | 0.9.4-prelease | 14. April 2015 | 29. Februar 2016 | 0.9.3-prelease | 9. Dezember 2014 | 29. Februar 2016 | 0.9.2-prelease | 25. November 2014 | 29. Februar 2016 | 0.9.1-prelease | 23. September 2014 | 29. Februar 2016 | 0.9.0-prelease | 21. August 2014 | 29. Februar 2016
+| [1\.4.2](#1.4.2) | 6. Oktober 2015 |---
+| [1\.4.1](#1.4.1) | 6. Oktober 2015 |---
+| [1\.2.0](#1.2.0) | 6. August 2015 |---
+| [1\.1.0](#1.1.0) | 9. Juli 2015 |---
+| [1\.0.1](#1.0.1) | 25. Mai 2015 |---
+| [1\.0.0](#1.0.0) | 7. April 2015 |---
+| 0.9.4-prelease | 14. April 2015 | 29. Februar 2016
+| 0.9.3-prelease | 9. Dezember 2014 | 29. Februar 2016
+| 0.9.2-prelease | 25. November 2014 | 29. Februar 2016
+| 0.9.1-prelease | 23. September 2014 | 29. Februar 2016
+| 0.9.0-prelease | 21. August 2014 | 29. Februar 2016
 
 ## Häufig gestellte Fragen
 [AZURE.INCLUDE [documentdb-sdk-faq](../../includes/documentdb-sdk-faq.md)]
