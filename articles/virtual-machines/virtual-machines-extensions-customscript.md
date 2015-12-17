@@ -23,7 +23,8 @@ Der vorliegende Artikel bietet einen Überblick über die Verwendung der benutze
 
 Mit den Erweiterungen virtueller Computer, die von Microsoft und vertrauenswürdigen Drittanbietern entwickelt werden, wird die Funktionalität des virtuellen Computers erweitert. Eine Übersicht über die Erweiterungen virtueller Computer finden Sie unter [Erweiterungen virtueller Azure-Computer und Features](virtual-machines-extensions-features.md).
 
-Link:[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](virtual-machines-extensions-customscript%20-with%20template.md).
+Link:
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] [Ressourcen-Manager-Modell](virtual-machines-extensions-customscript%20-with%20template.md).
 
 
 ## Übersicht über benutzerdefinierte Skripterweiterungen
@@ -92,3 +93,4 @@ Um Informationen zur Verwendung der benutzerdefinierten Skripterweiterung mit Vo
 [5]: ./media/virtual-machines-extensions-customscript/addcse.png
 
 <!---HONumber=AcomDC_1203_2015-->
+
