@@ -74,7 +74,9 @@ Für Speichervorgänge benötigen Sie ein Azure-Speicherkonto. Mit den folgenden
 
 2. Klicken Sie oben links im Portal auf das Symbol **Neu** und dann auf **Daten und Speicher** > **Speicherkonto**. Klicken Sie auf **Erstellen**, geben Sie dem Speicherkonto einen eindeutigen Namen, und erstellen Sie eine neue [Ressourcengruppe](../resource-group-overview.md) dafür.
 
-  	<!-- ![New Button](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonAzurePlusNew.png) -->Wenn das Speicherkonto erstellt wurde, leuchtet auf der Schaltfläche **Benachrichtigungen** grün **ERFOLG**. Das Blatt des Speicherkontos wird geöffnet, und darauf wird angezeigt, dass es zu der neu erstellten Ressourcengruppe gehört.
+  	<!-- ![New Button](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonAzurePlusNew.png) -->
+
+	Wenn das Speicherkonto erstellt wurde, leuchtet auf der Schaltfläche **Benachrichtigungen** grün **ERFOLG**. Das Blatt des Speicherkontos wird geöffnet, und darauf wird angezeigt, dass es zu der neu erstellten Ressourcengruppe gehört.
 
 5. Klicken Sie auf dem Blatt des Speicherkontos auf den Abschnitt **Einstellungen**. Notieren Sie sich den Kontonamen und den Primärschlüssel.
 
@@ -211,4 +213,4 @@ Unter den folgenden Links finden Sie weitere Informationen zu Python Tools für 
 [Azure-SDK für Python]: https://github.com/Azure/azure-sdk-for-python
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!----HONumber=AcomDC_1203_2015-->
