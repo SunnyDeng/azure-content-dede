@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/18/2015" 
+	ms.date="12/05/2015" 
 	ms.author="juliako"/>
 
 #Erste Schritte zum Bereitstellen von Inhalten nach Bedarf mit der REST-API
@@ -1210,4 +1210,4 @@ Wenn dieses Thema nicht die erwarteten Informationen enthält, Informationen feh
 <!-- URLs. -->
   [klassischen Azure-Portal]: http://manage.windowsazure.com/
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

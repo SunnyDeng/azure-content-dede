@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="javascript" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="08/17/2015" 
+	ms.date="12/01/2015" 
 	ms.author="ricksal"/>
 
 
@@ -289,7 +289,7 @@ In JavaScript ist dies eine kompakte Version des folgenden Codes:
 
 ###<a name="work-with-users"></a>Gewusst wie: Arbeiten mit Benutzern
 
-In Azure Mobile Services können Sie Benutzer mithilfe von Identitätsanbietern authentifizieren. Weitere Informationen finden Sie unter [Erste Schritte mit der Authentifizierung]. Wenn ein authentifizierter Benutzer einen Tabellenvorgang aufruft, verwendet Mobile Services das [Benutzerobjekt], um Informationen über den Benutzer an die registrierte Skriptfunktion zu liefern. Die **userId**-Eigenschaft kann zum Speichern und Abrufen benutzerspezifischer Informationen verwendet werden. Im folgenden Beispiel wird die owner-Eigenschaft eines Elements anhand der userId eines authentifizierten Benutzers gesetzt:
+In Azure Mobile Services können Sie Benutzer mithilfe von Identitätsanbietern authentifizieren. Weitere Informationen finden Sie unter [Erste Schritte mit der Authentifizierung]. Wenn ein authentifizierter Benutzer einen Tabellenvorgang aufruft, verwendet Mobile Services das [Benutzerobjekt], um Informationen über den Benutzer an die registrierte Skriptfunktion zu liefern. Die **userId**-Eigenschaft kann zum Speichern und Abrufen benutzerspezifischer Informationen verwendet werden. Im folgenden Beispiel wird die owner-Eigenschaft eines Elements anhand der **userId** eines authentifizierten Benutzers gesetzt:
 
 	function insert(item, user, request) {
 	    item.owner = user.userId;
@@ -340,7 +340,7 @@ Sie können Serverskripts, die für HTTP-Methoden in einem Endpunkt einer benutz
 
 	![2][2]
 	
-	Zugriffsberechtigungen für Methoden von benutzerdefinierten APIs werden in der Registerkarte Berechtigungen zugewiesen. Informationen zur Erstellung der API finden Sie unter [Call a custom API from the client] (Aufrufen benutzerdefinierter APIs vom Client, in englischer Sprache.
+	Zugriffsberechtigungen für Methoden von benutzerdefinierten APIs werden in der Registerkarte Berechtigungen zugewiesen. Informationen zur Erstellung der API finden Sie unter [Aufrufen benutzerdefinierter APIs vom Client, in englischer Sprache].  
 
 + Mithilfe von Quellcodeverwaltung. Falls Sie die Quellcodeverwaltung aktiviert haben, erstellen Sie einfach eine Datei mit dem Namen "<em>`<custom_api>`</em>.js" im Unterordner ".\\service\\api" in Ihrem Git-Repository, wobei <em>`<custom_api>`</em> der Name der benutzerdefinierten API ist, die registriert wird. Die Skriptdatei enthält eine _exported_-Funktion für jede HTTP-Methode, die von der benutzerdefinierten API verfügbar gemacht wird. Die Berechtigungen werden in einer separaten .json-Datei definiert. Weitere Informationen finden Sie unter [Quellcodeverwaltung und freigegebener Code][Source control, shared code, and helper functions].
 
@@ -378,7 +378,7 @@ Sie können diese Funktion aufrufen, indem Sie eine HTTP GET-Anforderung an den 
 
 In Azure Mobile Services können Sie Benutzer mithilfe von Identitätsanbietern authentifizieren. Weitere Informationen finden Sie unter [Get started with authentication] (Erste Schritte zur Authentifizierung, in englischer Sprache). Wenn ein authentifizierter Benutzer eine benutzerdefinierte API aufruft, verwendet Mobile Services das [Benutzerobjekt], um Informationen über den Benutzer an den Code der benutzerdefinierten API zu liefern. Das [Benutzerobjekt] ist über die user-Eigenschaft des [Anforderungsobjekts] zugänglich. Die **userId**-Eigenschaft kann zum Speichern und Abrufen benutzerspezifischer Informationen verwendet werden.
 
-In der folgenden **OrderPizza**-Funktion einer benutzerdefinierten API wird die owner-Eigenschaft eines Elements anhand der userId eines authentifizierten Benutzers gesetzt:
+In der folgenden **OrderPizza**-Funktion einer benutzerdefinierten API wird die owner-Eigenschaft eines Elements anhand der **userId** eines authentifizierten Benutzers gesetzt:
 
 		exports.post = function(request, response) {
 			var userTable = request.service.tables.getTable('user');
@@ -453,7 +453,7 @@ Serverskripts können Aufträgen zugewiesen werden, die im Mobile Service-Schedu
 
 Geplante Aufträge können auf zwei Arten definiert werden:
 
-+ Im [klassischen Azure-Portal] in der Registerkarte **Skript** im Scheduler:
++ Im [klassischen Azure-Portal] auf der Registerkarte **Skript** im Scheduler:
 
 	![3][3]
 
@@ -924,7 +924,7 @@ Debugging und Problembehandlung Ihrer Serverskript erledigen Sie am Besten, inde
 
 Verwenden Sie das globale [Konsolenobjekt], um in die Protokolle zu schreiben. Mit den Funktionen **log** oder **info** können Sie Warnungen auf der Informationsebene schreiben. Die Funktionen **warning** und **error** schreiben Einträge auf ihrer jeweiligen Ebene, die in den Protokollen hervorgehoben werden.
 
-> [AZURE.NOTE]Um die Protokolle für Ihren Mobile Service anzuzeigen, melden Sie sich am [klassischen Azure-Portal](https://manage.windowsazure.com/) an, wählen Sie Ihren Mobile Service aus und öffnen Sie die Registerkarte **Protokolle**.
+> [AZURE.NOTE]Um die Protokolle für Ihren Mobile Service anzuzeigen, melden Sie sich beim [klassischen Azure-Portal](https://manage.windowsazure.com/) an, wählen Sie Ihren Mobile Service aus, und wählen Sie die Registerkarte **Protokolle** aus.
 
 Sie können außerdem die Protokollfunktionen des [Konsolenobjekts] verwenden, um Ihre Nachrichten mithilfe von Parametern zu formatieren. Im folgenden Beispiel wird ein JSON-Objekt als Parameter an die Nachrichten-Zeichenfolge übergeben:
 
@@ -1044,7 +1044,7 @@ Um Ihr Protokoll nicht zu überladen, sollten Sie Aufrufe von console.log() entf
 [util API]: http://go.microsoft.com/fwlink/p/?LinkId=288806
 [zlib API]: http://go.microsoft.com/fwlink/p/?LinkId=288807
 [Benutzerdefinierte API]: http://msdn.microsoft.com/library/windowsazure/dn280974.aspx
-[Call a custom API from the client]: /develop/mobile/tutorials/call-custom-api-dotnet/#define-custom-api
+[Aufrufen benutzerdefinierter APIs vom Client, in englischer Sprache]: /develop/mobile/tutorials/call-custom-api-dotnet/#define-custom-api
 [express.js-Bibliothek]: http://go.microsoft.com/fwlink/p/?LinkId=309046
 [Define a custom API that supports periodic notifications]: /develop/mobile/tutorials/create-pull-notifications-dotnet/
 [express-Objekt in express.js]: http://expressjs.com/api.html#express
@@ -1056,4 +1056,4 @@ Um Ihr Protokoll nicht zu überladen, sollten Sie Aufrufe von console.log() entf
 [Support for package.json in Azure Mobile Services]: http://go.microsoft.com/fwlink/p/?LinkId=391036
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="10/29/2015"
+    ms.date="12/04/2015"
     ms.author="larryfr"/>
 
 # Entwickeln von Skriptaktionen mit HDInsight
@@ -220,4 +220,4 @@ Ersetzen Sie den oben aufgeführten Befehl __INFILE__ durch die Datei mit Bytere
 
 [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen](hdinsight-hadoop-customize-cluster-linux.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

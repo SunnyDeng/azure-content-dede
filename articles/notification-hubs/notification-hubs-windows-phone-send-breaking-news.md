@@ -149,7 +149,7 @@ Die App kann jetzt verschiedene Kategorien in einem lokalen Speicher auf dem Ger
 
 Durch diese Schritte findet beim Starten eine Registrierung beim Notification Hub statt, wobei die im lokalen Speicher gespeicherten Kategorien verwendet werden.
 
-> [AZURE.NOTE]Da sich der durch den Microsoft Push Notification Service (MPNS) zugeteilte Channel-URI jederzeit ändern kann, sollten Sie sich regelmäßig für Benachrichtigungen registrieren, um Benachrichtigungsfehler zu vermeiden. Dieses Beispiel registriert sich jedes Mal für Benachrichtigungen, wenn die App gestartet wird. Für häufig ausgeführte Anwendungen (öfters als einmal täglich) können Sie die Registrierung wahrscheinlich überspringen, wenn weniger als ein Tag seit der letzten Registrierung vergangen ist, um Bandbreite einzusparen.
+> [AZURE.NOTE]Da sich der durch den Microsoft Push Notification Service (MPNS) zugeteilte Channel-URI jederzeit ändern kann, sollten Sie sich regelmäßig für Benachrichtigungen registrieren, um Benachrichtigungsausfälle zu vermeiden. Dieses Beispiel registriert sich bei jedem Start der App für Benachrichtigungen. Für häufig ausgeführte Anwendungen (öfters als einmal täglich) können Sie die Registrierung wahrscheinlich überspringen, wenn weniger als ein Tag seit der letzten Registrierung vergangen ist, um Bandbreite einzusparen.
 
 1. Fügen Sie der **Notifications**-Klasse folgenden Code hinzu:
 
@@ -252,6 +252,4 @@ In this tutorial we learned how to broadcast breaking news by category. Consider
 [Notification Hubs-Leitfaden]: http://msdn.microsoft.com/library/jj927170.aspx
 [Notification Hubs How-To for Windows Phone]: ??
 
-[Azure Management Portal]: https://manage.windowsazure.com/
-
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

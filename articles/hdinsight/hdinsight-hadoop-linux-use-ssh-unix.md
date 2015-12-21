@@ -105,9 +105,9 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCelfkjrpYHYiks4TM+r1LVsTYQ4jAXXGeOAF9Vv/KG
 
 Dadurch wird eine Anmeldung für den angegebenen Benutzer mit dem bereitgestellten Kennwort oder öffentlichen Schlüssel erstellt.
 
-###Azure-Befehlszeilenschnittstelle (CLI) für Mac, Linux und Windows Azure
+###Azure-Befehlszeilenschnittstelle (CLI) für Mac, Linux und Microsoft Azure
 
-Sie können über die [Azure-CLI für Mac, Linux und Windows ](../xplat.md) einen neuen Cluster mithilfe des Befehls `azure hdinsight cluster create` erstellen.
+Sie können über die [Azure-CLI für Mac, Linux und Windows ](../xplat-cli.md) einen neuen Cluster mithilfe des Befehls `azure hdinsight cluster create` erstellen.
 
 Weitere Informationen zur Verwendung dieses Befehls finden Sie unter [Benutzerdefinierte Bereitstellung eines Hadoop-Linux-Clusters in HDInsight](hdinsight-hadoop-provision-linux-clusters.md).
 
@@ -238,4 +238,4 @@ Nachdem Sie jetzt wissen, wie die Authentifizierung mithilfe eines SSH-Schlüsse
 
 [preview-portal]: https://portal.azure.com/
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

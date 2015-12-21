@@ -49,11 +49,13 @@ Nutzen Sie Microsoft HPC Pack und die Azure-Dienste für Berechnung und Infrastr
 
 ### Lernprogramme
 
-* [Tutorial: Erste Schritte mit Linux-Computeknoten in einem HPC Pack-Cluster in Azure](../virtual-machines/virtual-machines-linux-cluster-hpcpack.md)
+* [Tutorial: Erste Schritte mit Linux-Computeknoten in einem HPC Pack-Cluster in Azure](virtual-machines-linux-cluster-hpcpack.md)
 
-* [Tutorial: Ausführen von NAMD mit dem Microsoft HPC Pack auf Linux-Computeknoten in Azure](../virtual-machines/virtual-machines-linux-cluster-hpcpack-namd.md)
+* [Tutorial: Ausführen von NAMD mit dem Microsoft HPC Pack auf Linux-Computeknoten in Azure](virtual-machines-linux-cluster-hpcpack-namd.md)
 
-* [Tutorial: Erste Schritte mit einem HPC Pack-Cluster in Azure zum Ausführen von Excel- und SOA-Workloads](../virtual-machines/virtual-machines-excel-cluster-hpcpack.md)
+* [Lernprogramm: Ausführen von OpenFOAM mit Microsoft HPC Pack auf einem Linux-RDMA-Cluster in Azure](virtual-machines-linux-cluster-hpcpack-openfoam.md)
+
+* [Tutorial: Erste Schritte mit einem HPC Pack-Cluster in Azure zum Ausführen von Excel- und SOA-Workloads](virtual-machines-excel-cluster-hpcpack.md)
 
 
 
@@ -77,7 +79,7 @@ Nutzen Sie Microsoft HPC Pack und die Azure-Dienste für Berechnung und Infrastr
 ## Hinzufügen von Workerrolleknoten zu einem HPC Pack-Cluster
 
 
-* [Burst to Azure with Microsoft HPC Pack](https://technet.microsoft.com/library/gg481749.aspx) (in englischer Sprache)
+* [Burst to Azure with Microsoft HPC Pack (in englischer Sprache)](https://technet.microsoft.com/library/gg481749.aspx)
 
 * [Tutorial: Einrichten eines Hybridclusters mit HPC Pack in Azure](../cloud-services/cloud-services-setup-hybrid-hpcpack-cluster.md)
 
@@ -87,7 +89,7 @@ Nutzen Sie Microsoft HPC Pack und die Azure-Dienste für Berechnung und Infrastr
 
 ## Integration in Azure Batch 
 
-* [Burst to Azure Batch with Microsoft HPC Pack](https://technet.microsoft.com/library/mt612877.aspx) (in englischer Sprache)
+* [Burst to Azure Batch with Microsoft HPC Pack (in englischer Sprache)](https://technet.microsoft.com/library/mt612877.aspx)
 
 ## Erstellen von RDMA-Clustern für MPI-Workloads
 
@@ -97,4 +99,4 @@ Nutzen Sie Microsoft HPC Pack und die Azure-Dienste für Berechnung und Infrastr
 
 <!-- * [Set up a Linux RDMA cluster to run MPI applications](virtual-machines-linux-hpcpack-cluster-rdma.md) -->
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

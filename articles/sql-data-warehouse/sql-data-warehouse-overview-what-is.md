@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="11/18/2015"
+   ms.date="12/10/2015"
    ms.author="lodipalm;barbkess;twounder;JRJ@BigBangData.co.uk;"/>
 
 
@@ -29,9 +29,9 @@ Im Kern wird SQL Data Warehouse mit der MPP-Architektur (Massive Parallel Proces
 
 ![SQL Data Warehouse-Architektur][1]
 
-- **Steuerknoten**: Sie stellen eine Verbindung mit dem Steuerknoten her, wenn Sie SQL Data Warehouse mit Entwicklungs-, Lade- oder Business Intelligence-Tools verwenden. In SQL Data Warehouse ist der Compute-Knoten eine SQL-Datenbank, und beim Herstellen der Verbindung fühlt sich dies wie eine standardmäßige SQL-Datenbank an und sieht auch so aus. Im Hintergrund werden aber alle Datenbewegungen und -berechnungen koordiniert, die im System durchgeführt werden. Wenn ein Befehl an den Steuerknoten ausgegeben wird, wird er in mehrere Abfragen unterteilt, die an die Compute-Knoten des Diensts übergeben werden.
+- **Steuerknoten**: Sie stellen eine Verbindung mit dem Steuerknoten her, wenn Sie SQL Data Warehouse mit Entwicklungs-, Lade- oder Business Intelligence-Tools verwenden. In SQL Data Warehouse ist der Steuerknoten eine SQL-Datenbank, und beim Herstellen der Verbindung besteht kein Unterschied zu Standard-SQL-Datenbanken. Im Hintergrund werden aber alle Datenbewegungen und -berechnungen koordiniert, die im System durchgeführt werden. Wenn ein Befehl an den Steuerknoten ausgegeben wird, wird er in mehrere Abfragen unterteilt, die an die Compute-Knoten des Diensts übergeben werden.
 
-- **Serverknoten**: Wie der Steuerknoten auch, werden die Serverknoten von SQL Data Warehouse mit SQL-Datenbanken betrieben. Ihre Aufgabe besteht darin, als Compute-Komponente des Diensts zu fungieren. Im Hintergrund werden Daten, die in SQL Data Warehouse geladen werden, auf die Knoten des Diensts verteilt. Immer wenn der Steuerknoten dann einen Befehl erhält, wird er für die einzelnen Compute-Knoten in mehrere Teile unterteilt. Die Compute-Knoten verarbeiten dann jeweils ihre entsprechenden Daten. Nach Abschluss der Berechnung übergeben die Compute-Knoten die Teilergebnisse an den Steuerknoten, auf dem die Ergebnisse dann zusammengefasst werden, bevor eine Antwort zurückgegeben wird.
+- **Serverknoten:** Wie der Steuerknoten auch werden die Serverknoten von SQL Data Warehouse mit SQL-Datenbanken betrieben. Ihre Aufgabe besteht darin, als Compute-Komponente des Diensts zu fungieren. Im Hintergrund werden Daten, die in SQL Data Warehouse geladen werden, auf die Knoten des Diensts verteilt. Immer wenn der Steuerknoten dann einen Befehl erhält, wird er für die einzelnen Compute-Knoten in mehrere Teile unterteilt. Die Compute-Knoten verarbeiten dann jeweils ihre entsprechenden Daten. Nach Abschluss der Berechnung übergeben die Compute-Knoten die Teilergebnisse an den Steuerknoten, auf dem die Ergebnisse dann zusammengefasst werden, bevor eine Antwort zurückgegeben wird.
 
 - **Speicher**: Beim gesamten Speicher für SQL Data Warehouse handelt es sich um standardmäßige Azure Storage-Blobs. Dies bedeutet Folgendes: Beim Interagieren mit Daten führen Compute-Knoten das Schreiben und Lesen direkt auf bzw. von Blobs durch. Da der Azure-Speicher transparent und nahezu unbegrenzt erweitert werden kann, können wir den Speicher automatisch skalieren, und zwar separat vom Compute-Bereich. Mit Azure-Speicher können wir Speicher beim Skalieren oder Pausieren außerdem beständig machen, unseren Sicherungs- und Wiederherstellungsprozess optimieren und einen Speicher mit mehr Sicherheit und höherer Fehlertoleranz schaffen.
 
@@ -138,4 +138,4 @@ Nachdem Sie jetzt einige Informationen zu SQL Data Warehouse erhalten haben, kö
 
 <!--Other Web references-->
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="powershell" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/01/2015" 
+	ms.date="12/08/2015" 
 	ms.author="tomfitz"/>
 
 # Verwenden von Windows PowerShell mit dem Azure-Ressourcen-Manager
@@ -338,7 +338,7 @@ Sie haben Ihre Ressourcengruppe und Ihre Vorlage, weshalb Sie bereit sind, die i
 
     PS C:\> New-AzureRmResourceGroupDeployment -ResourceGroupName TestRG1 -TemplateFile c:\Azure\Templates\azuredeploy.json
 
-Sie geben die Ressourcengruppe und den Speicherort der Vorlage an. Wenn Ihre Vorlage nicht lokal ist, können Sie mithilfe des „TemplateUri“-Parameters einen URI für die Vorlage angeben.
+Sie geben die Ressourcengruppe und den Speicherort der Vorlage an. Wenn Ihre Vorlage nicht lokal ist, können Sie mithilfe des **TemplateUri**-Parameters einen URI für die Vorlage angeben. Sie können den **-Mode**-Parameter entweder auf **Incremental** oder **Complete** festlegen. Standardmäßig führt die Ressourcen-Manager eine inkrementelle Aktualisierung während der Bereitstellung durch. Daher ist es nicht erforderlich, **-Mode** festzulegen, wenn Sie **Incremental** wünschen. Informationen zu den Unterschieden bei diesen Bereitstellungsmodi finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](resource-group-template-deploy.md).
 
 ###Dynamische Vorlagenparameter
 
@@ -441,4 +441,4 @@ Sie können vorhandene Ressourcen in eine neue Ressourcengruppe verschieben. Bei
 - Ein ausführliches Beispiel für das Bereitstellen eines Projekts finden Sie unter [Vorhersagbares Bereitstellen von Microservices in Azure](app-service-web/app-service-deploy-complex-application-predictably.md).
 - Weitere Informationen zur Problembehandlung bei einer nicht erfolgreichen Bereitstellung finden Sie unter [Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure](./virtual-machines/resource-group-deploy-debug.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

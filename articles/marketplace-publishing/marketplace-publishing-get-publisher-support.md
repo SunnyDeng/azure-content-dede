@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="10/08/2015"
+   ms.date="12/06/2015"
    ms.author="v-jeana; hascipio"/>
 
 
@@ -60,7 +60,7 @@ Verfügbare Problemtypen:
   - **Kundenverwaltung**
   - **Angebotsverwaltung**
   - **Auszahlungen**
-  - **Verkäuferdashboard**
+  - **Developer Center**
   - **Andere**
 
 ## 4\. Anfordern von Support
@@ -92,4 +92,4 @@ Informationen zur Lösung bestimmter Supportprobleme finden Sie unter [Beheben v
 [5]: ./media/marketplace-publishing-get-publisher-support/step5.png
 [6]: ./media/marketplace-publishing-get-publisher-support/step6.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1210_2015-->

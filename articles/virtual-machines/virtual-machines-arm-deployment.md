@@ -86,7 +86,16 @@ Nachdem die Azure Active Directory-Anwendung erstellt und die Authentifizierungs
 
 1.	Öffnen Sie die Datei "Program.cs" für das Projekt, das Sie erstellt haben, und fügen Sie die folgenden using-Anweisungen am Anfang der Datei hinzu:
 
-    using Microsoft.Azure; using Microsoft.IdentityModel.Clients.ActiveDirectory; using Microsoft.Azure.Management.Resources; using Microsoft.Azure.Management.Resources.Models; using Microsoft.Azure.Management.Storage; using Microsoft.Azure.Management.Storage.Models; using Microsoft.Azure.Management.Network; using Microsoft.Azure.Management.Network.Models; using Microsoft.Azure.Management.Compute; using Microsoft.Azure.Management.Compute.Models;
+        using Microsoft.Azure;
+        using Microsoft.IdentityModel.Clients.ActiveDirectory;
+		using Microsoft.Azure.Management.Resources;
+		using Microsoft.Azure.Management.Resources.Models;
+		using Microsoft.Azure.Management.Storage;
+		using Microsoft.Azure.Management.Storage.Models;
+		using Microsoft.Azure.Management.Network;
+		using Microsoft.Azure.Management.Network.Models;
+		using Microsoft.Azure.Management.Compute;
+		using Microsoft.Azure.Management.Compute.Models;
 
 
 2. Fügen Sie der Program-Klasse die folgende Methode hinzu, um das Token abzurufen, das zum Erstellen der Anmeldeinformationen benötigt wird:
@@ -340,7 +349,7 @@ Nachdem Sie alle unterstützenden Ressourcen erstellt haben, können Sie nun ein
 2.	Fügen Sie der Main-Methode den folgenden Code hinzu, um die gerade hinzugefügte Methode aufzurufen:
 
 		CreateVirtualMachine(credential);
-    Console.ReadLine();
+        Console.ReadLine();
 
 ##Schritt 5: Hinzufügen von Code zum Löschen der Ressourcen
 
@@ -375,4 +384,4 @@ Da in Azure die genutzten Ressourcen in Rechnung gestellt werden, empfiehlt es s
 
 	![Erstellen einer AD-Anwendung](./media/virtual-machines-arm-deployment/crpportal.png)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

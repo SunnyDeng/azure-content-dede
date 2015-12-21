@@ -23,7 +23,7 @@ Azure SQL-Datenbank bietet die folgenden Funktionen zur Wiederherstellung nach e
 - Aktive Georeplikation [(Blog, in englischer Sprache)](http://azure.microsoft.com/blog/2014/07/12/spotlight-on-sql-database-active-geo-replication/)
 - Standardmäßige Georeplikation [(Blog, in englischer Sprache)](http://azure.microsoft.com/blog/2014/09/03/azure-sql-database-standard-geo-replication/)
 - Geografische Wiederherstellung [(Blog, in englischer Sprache)](http://azure.microsoft.com/blog/2014/09/13/azure-sql-database-geo-restore/)
-- Neue Möglichkeiten der Georeplikation [(Blog)](https://azure.microsoft.com/blog/azure-sql-database-geo-replication-october-2015-update/)
+- Neue Möglichkeiten der Georeplikation [(Blog)](https://azure.microsoft.com/blog/spotlight-on-new-capabilities-of-azure-sql-database-geo-replication/)
 
 Informationen zur Vorbereitung auf Notfälle und zur Wiederherstellung der Datenbanken finden Sie auf der Seite [Entwurf für Geschäftskontinuität](sql-database-business-continuity-design.md).
 
@@ -131,4 +131,4 @@ Weitere Informationen zu Datenbankwarnungsregeln finden Sie unter [Empfangen von
 
 Wenn für den Zugriff auf die Datenbank Überwachung erforderlich ist, müssen Sie nach der Wiederherstellung der Datenbank die Überwachung aktivieren. Es ist ein guter Indikator für die Notwendigkeit von Überwachung, wenn Clientanwendungen sichere Verbindungszeichenfolgen in einem Muster von *.database.secure.windows.net verwenden. Weitere Informationen finden Sie unter [Erste Schritte mit der SQL-Datenbanküberwachung](sql-database-auditing-get-started.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

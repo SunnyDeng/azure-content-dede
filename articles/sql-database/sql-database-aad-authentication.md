@@ -153,42 +153,41 @@ Um einen Administrator zu einem späteren Zeitpunkt zu entfernen, klicken Sie ob
 
 ### Bereitstellen eines Azure AD-Administrators für Azure SQL Server unter Verwendung von PowerShell 
 
-> [AZURE.IMPORTANT]Ab Veröffentlichung von Azure PowerShell 1.0 Preview ist das Cmdlet "Switch-AzureMode" nicht mehr erforderlich. Außerdem wurden die Cmdlets im Modul "Azure-Ressourcen-Manager" umbenannt. In den Beispielen in diesem Artikel wird die neue Benennungskonvention von PowerShell 1.0 Preview verwendet. Ausführliche Informationen finden Sie unter ["Switch-AzureMode" in Azure PowerShell veraltet](https://github.com/Azure/azure-powershell/wiki/Deprecation-of-Switch-AzureMode-in-Azure-PowerShell).
 
 
-Zur Ausführung von PowerShell-Cmdlets muss Azure PowerShell installiert sein und ausgeführt werden. Aufgrund des Entfernens von "Switch-AzureMode" müssen Sie die neueste Azure PowerShell herunterladen und durch Ausführen des [Microsoft-Webplattform-Installers](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409) installieren. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
+Zum Ausführen von PowerShell-Cmdlets muss Azure PowerShell installiert sein und ausgeführt werden. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
 
 Um einen Azure AD-Administrator bereitzustellen, müssen Sie die folgenden Azure PowerShell-Befehle ausführen:
 
-- Add-AzureAccount
-- Select-AzureSubscription
+- Add-AzureRmAccount
+- Select-AzureRmSubscription
 
 
 Verwenden Sie folgende Cmdlets zum Bereitstellen und Verwalten des Azure AD-Administrators:
 
 | Cmdlet-Name | Beschreibung |
 |---------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| [Set-AzureRMSqlServerActiveDirectoryAdministrator](https://msdn.microsoft.com/library/azure/mt603544.aspx) | Stellt einen Azure Active Directory-Administrator für Azure SQL Server bereit. (Muss aus dem aktuellen Abonnement stammen.) |
-| [Remove-AzureRMSqlServerActiveDirectoryAdministrator](https://msdn.microsoft.com/library/azure/mt619340.aspx) | Entfernt einen Azure Active Directory-Administrator für Azure SQL Server. |
-| [Get-AzureRMSqlServerActiveDirectoryAdministrator](https://msdn.microsoft.com/library/azure/mt603737.aspx) | Gibt Informationen zu dem Azure Active Directory-Administrator zurück, der aktuell für Azure SQL Server konfiguriert ist. |
+| [Set-AzureRmSqlServerActiveDirectoryAdministrator](https://msdn.microsoft.com/library/azure/mt603544.aspx) | Stellt einen Azure Active Directory-Administrator für Azure SQL Server bereit. (Muss aus dem aktuellen Abonnement stammen.) |
+| [Remove-AzureRmSqlServerActiveDirectoryAdministrator](https://msdn.microsoft.com/library/azure/mt619340.aspx) | Entfernt einen Azure Active Directory-Administrator für Azure SQL Server. |
+| [Get-AzureRmSqlServerActiveDirectoryAdministrator](https://msdn.microsoft.com/library/azure/mt603737.aspx) | Gibt Informationen zu dem Azure Active Directory-Administrator zurück, der aktuell für Azure SQL Server konfiguriert ist. |
 
-Verwenden Sie den PowerShell-Befehl "get-help", um weitere Informationen zu diesen Befehlen anzuzeigen. Verwenden Sie z. B. ``get-help Set-AzureRMSqlServerActiveDirectoryAdministrator``.
+Verwenden Sie den PowerShell-Befehl "get-help", um weitere Informationen zu diesen Befehlen anzuzeigen. Verwenden Sie z. B. ``get-help Set-AzureRmSqlServerActiveDirectoryAdministrator``.
 
 Das folgende Skript stellt eine Azure AD-Administratorengruppe namens **DBA\_Group** (Objekt-ID `40b79501-b343-44ed-9ce7-da4c8cc7353f`) für den Server **demo\_server** in einer Ressourcengruppe mit dem Namen **Group-23** bereit:
 
 ```
-Set-AzureRMSqlServerActiveDirectoryAdministrator –ResourceGroupName "Group-23" 
+Set-AzureRmSqlServerActiveDirectoryAdministrator –ResourceGroupName "Group-23" 
 –ServerName "demo_server" -DisplayName "DBA_Group"
 ```
 
 Der Eingabeparameter **DisplayName** akzeptiert entweder den Azure AD-Anzeigenamen oder den Benutzerprinzipalnamen (UPN). Beispiel: ``DisplayName="John Smith"`` und ``DisplayName="johns@contoso.com"``. Für Azure AD-Gruppen wird nur der Azure AD-Anzeigename unterstützt.
 
-> [AZURE.NOTE]Der Azure PowerShell-Befehl ```Set-AzureRMSqlServerActiveDirectoryAdministrator``` verhindert nicht, dass nicht unterstützte Benutzer als Azure AD-Administratoren bereitgestellt werden. Ein nicht unterstützter Benutzer kann bereitgestellt werden, dieser kann aber keine Verbindung mit einer Datenbank herstellen. (Eine Liste der unterstützten Administratoren finden Sie unter **Features und Einschränkungen von Azure AD** weiter oben.)
+> [AZURE.NOTE]Der Azure PowerShell-Befehl ```Set-AzureRmSqlServerActiveDirectoryAdministrator``` verhindert nicht, dass nicht unterstützte Benutzer als Azure AD-Administratoren bereitgestellt werden. Ein nicht unterstützter Benutzer kann bereitgestellt werden, dieser kann aber keine Verbindung mit einer Datenbank herstellen. (Eine Liste der unterstützten Administratoren finden Sie unter **Features und Einschränkungen von Azure AD** weiter oben.)
 
 Im folgenden Beispiel wird der optionale Wert für **ObjectID** verwendet:
 
 ```
-Set-AzureRMSqlServerActiveDirectoryAdministrator –ResourceGroupName "Group-23" 
+Set-AzureRmSqlServerActiveDirectoryAdministrator –ResourceGroupName "Group-23" 
 –ServerName "demo_server" -DisplayName "DBA_Group" -ObjectId "40b79501-b343-44ed-9ce7-da4c8cc7353f"
 ```
 
@@ -197,11 +196,11 @@ Set-AzureRMSqlServerActiveDirectoryAdministrator –ResourceGroupName "Group-23"
 Das folgende Beispiel gibt Informationen zum aktuellen Azure AD-Administrator für Azure SQL Server zurück:
 
 ```
-Get-AzureRMSqlServerActiveDirectoryAdministrator –ResourceGroupName "Group-23" –ServerName "demo_server" | Format-List
+Get-AzureRmSqlServerActiveDirectoryAdministrator –ResourceGroupName "Group-23" –ServerName "demo_server" | Format-List
 ```
 
 Mit dem folgenden Beispiel wird ein Azure AD-Administrator entfernt: ```
-Remove-AzureRMSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" –ServerName "demo_server"
+Remove-AzureRmSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" –ServerName "demo_server"
 ```
 
 ## 5\. Konfigurieren der Clientcomputer
@@ -327,4 +326,4 @@ Spezifische Codebeispiele für die Azure AD-Authentifizierung finden Sie im [SQL
 [9]: ./media/sql-database-aad-authentication/9ad-settings.png
 [10]: ./media/sql-database-aad-authentication/10choose-admin.png
 
-<!---HONumber=AcomDC_1203_2015--->
+<!---HONumber=AcomDC_1210_2015--->

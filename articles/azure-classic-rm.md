@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/14/2015"
+   ms.date="12/07/2015"
    ms.author="telmos"/>
 
 # Azure-Bereitstellungsmodelle
@@ -68,4 +68,4 @@ Sie können Azure-Ressourcen auf Windows-, OS X- oder Linux-Computern über die 
 - Erlernen Sie das [Entwerfen von Vorlagen](/best-practices-resource-manager-design-templates.md).
 - Wenden Sie [bewährte Methoden](/best-practices-resource-manager-examples.md) an.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

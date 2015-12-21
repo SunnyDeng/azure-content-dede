@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="11/17/2015"
+   ms.date="12/04/2015"
    ms.author="hascipio" />
 
 # Veröffentlichen eines Angebots im Azure Marketplace
@@ -32,7 +32,16 @@ Einige Schritte müssen für alle Lösungstypen ausgeführt werden. In diesem Ar
 
 > [AZURE.NOTE]Bevor Sie im Azure Marketplace arbeiten können, müssen Sie über eine Vorabgenehmigung verfügen. Dies gilt nicht für Herausgeber von Datendiensten.
 
-||VM-Image |Entwicklerdienst | Datendienst | Lösungsvorlage | |----|----|----|----|----| | **Erhalt einer Vorabgenehmigung** | [Microsoft Azure Certified][link-certification] | [Microsoft Azure Certified][link-certification] | – | [Microsoft Azure Certified][link-certification] | | **Schritt 1: Registrieren eines Verkäuferkontos** | [Microsoft-Verkäuferkonto: Erstellung und Registrierung][link-accts] | [Microsoft-Verkäuferkonto: Erstellung und Registrierung][link-accts] | [Microsoft-Verkäuferkonto: Erstellung und Registrierung][link-accts] | [Microsoft-Verkäuferkonto: Erstellung und Registrierung][link-accts] | |**Schritt 2: Erstellen Ihres Angebots**| [Allgemeine, nicht technische Voraussetzungen](marketplace-publishing-pre-requisites.md)| [Allgemeine, nicht technische Voraussetzungen](marketplace-publishing-pre-requisites.md)| [Allgemeine, nicht technische Voraussetzungen](marketplace-publishing-pre-requisites.md)| [Allgemeine, nicht technische Voraussetzungen](marketplace-publishing-pre-requisites.md)| || [Technische Voraussetzungen für VMs][link-single-vm-prereq] | Technische Voraussetzungen für Entwicklerdienste | [Technische Voraussetzungen für Datendienste](marketplace-publishing-data-service-creation-prerequisites.md) | [Technische Voraussetzungen für Lösungsvorlagen](marketplace-publishing-solution-template-creation-prerequisites.md) | ||[Veröffentlichungsleitfaden für VM-Image][link-single-vm] | Veröffentlichungsleitfaden für Entwicklerdienste | [Veröffentlichungsleitfaden für Datendienste](marketplace-publishing-data-service-creation.md) | [Veröffentlichungsleitfaden für Lösungsvorlagen](marketplace-publishing-solution-template-creation.md) | || [Leitfaden zu Azure Marketplace-Marketinginhalten][link-pushstaging] | [Leitfaden zu Azure Marketplace-Marketinginhalten][link-pushstaging] | [Leitfaden zu Azure Marketplace-Marketinginhalten][link-pushstaging] | [Leitfaden zu Azure Marketplace-Marketinginhalten][link-pushstaging] | | **Schritt 3: Überführen des Angebots in die Stagingumgebung** | [Testen Ihres VM-Angebots in der Stagingumgebung](marketplace-publishing-vm-image-test-in-staging.md) | Testen Ihres Entwicklerdiensts in der Stagingumgebung | [Testen Ihres Datendiensts in der Stagingumgebung](marketplace-publishing-data-service-test-in-staging.md) | [Testen Ihrer Lösungsvorlage in der Stagingumgebung](marketplace-publishing-solution-template-test-in-staging.md) | | **Schritt 4: Bereitstellen Ihres Angebots im Marketplace** | [Bereitstellen Ihres Angebots im Marketplace][link-pushprod] | [Bereitstellen Ihres Angebots im Marketplace][link-pushprod] | [Bereitstellen Ihres Angebots im Marketplace][link-pushprod] | [Bereitstellen Ihres Angebots im Marketplace][link-pushprod] |
+||VM-Image |Entwicklerdienst | Datendienst | Lösungsvorlage |
+|----|----|----|----|----|
+| **Erhalt einer Vorabgenehmigung** | [Microsoft Azure Certified][link-certification] | [Microsoft Azure Certified][link-certification] | – | [Microsoft Azure Certified][link-certification] |
+| **Schritt 1: Registrieren eines Verkäuferkontos** | [Microsoft-Verkäuferkonto: Erstellung und Registrierung][link-accts] | [Microsoft-Verkäuferkonto: Erstellung und Registrierung][link-accts] | [Microsoft-Verkäuferkonto: Erstellung und Registrierung][link-accts] | [Microsoft-Verkäuferkonto: Erstellung und Registrierung][link-accts] |
+|**Schritt 2: Erstellen Ihres Angebots**| [Allgemeine, nicht technische Voraussetzungen](marketplace-publishing-pre-requisites.md)| [Allgemeine, nicht technische Voraussetzungen](marketplace-publishing-pre-requisites.md)| [Allgemeine, nicht technische Voraussetzungen](marketplace-publishing-pre-requisites.md)| [Allgemeine, nicht technische Voraussetzungen](marketplace-publishing-pre-requisites.md)|
+|| [Technische Voraussetzungen für VMs][link-single-vm-prereq] | Technische Voraussetzungen für Entwicklerdienste | [Technische Voraussetzungen für Datendienste](marketplace-publishing-data-service-creation-prerequisites.md) | [Technische Voraussetzungen für Lösungsvorlagen](marketplace-publishing-solution-template-creation-prerequisites.md) |
+||[Veröffentlichungsleitfaden für VM-Image][link-single-vm] | Veröffentlichungsleitfaden für Entwicklerdienste | [Veröffentlichungsleitfaden für Datendienste](marketplace-publishing-data-service-creation.md) | [Veröffentlichungsleitfaden für Lösungsvorlagen](marketplace-publishing-solution-template-creation.md) |
+|| [Leitfaden zu Azure Marketplace-Marketinginhalten][link-pushstaging] | [Leitfaden zu Azure Marketplace-Marketinginhalten][link-pushstaging] | [Leitfaden zu Azure Marketplace-Marketinginhalten][link-pushstaging] | [Leitfaden zu Azure Marketplace-Marketinginhalten][link-pushstaging] |
+| **Schritt 3: Überführen des Angebots in die Stagingumgebung** | [Testen Ihres VM-Angebots in der Stagingumgebung](marketplace-publishing-vm-image-test-in-staging.md) | Testen Ihres Entwicklerdiensts in der Stagingumgebung | [Testen Ihres Datendiensts in der Stagingumgebung](marketplace-publishing-data-service-test-in-staging.md) | [Testen Ihrer Lösungsvorlage in der Stagingumgebung](marketplace-publishing-solution-template-test-in-staging.md) |
+| **Schritt 4: Bereitstellen Ihres Angebots im Marketplace** | [Bereitstellen Ihres Angebots im Marketplace][link-pushprod] | [Bereitstellen Ihres Angebots im Marketplace][link-pushprod] | [Bereitstellen Ihres Angebots im Marketplace][link-pushprod] | [Bereitstellen Ihres Angebots im Marketplace][link-pushprod] |
 
 ## Support
 - [Zugriff auf die Publisher-Unterstützung][suppt-general]
@@ -49,7 +58,11 @@ Einige Schritte müssen für alle Lösungstypen ausgeführt werden. In diesem Ar
 - [Erstellen eines lokalen VM-Images](marketplace-publishing-vm-image-creation-on-premise.md)
 - [Erstellen eines virtuellen Computers unter Windows im Azure-Vorschauportal](../virtual-machines-windows-tutorial/)
 
-**Datendienste** – [Datendienst OData-Zuordnung](marketplace-publishing-data-service-creation-odata-mapping.md) – [Datendienst OData-Zuordnungsknoten](marketplace-publishing-data-service-creation-odata-mapping-nodes.md) – [Datendienst OData-Zuordnungsbeispiele](marketplace-publishing-data-service-creation-odata-mapping-examples.md)
+**Datendienste**
+
+- [OData-Zuordnung für Datendienste](marketplace-publishing-data-service-creation-odata-mapping.md)
+- [OData-Zuordnungsknoten für Datendienste](marketplace-publishing-data-service-creation-odata-mapping-nodes.md)
+- [Beispiele für OData-Zuordnungen für Datendienste](marketplace-publishing-data-service-creation-odata-mapping-examples.md)
 
 [suppt-general]: marketplace-publishing-get-publisher-support.md
 [suppt-rpt-insights]: marketplace-publishing-report-seller-insights.md
@@ -68,4 +81,4 @@ Einige Schritte müssen für alle Lösungstypen ausgeführt werden. In diesem Ar
 [link-pushstaging]: marketplace-publishing-push-to-staging.md
 [link-pushprod]: marketplace-publishing-push-to-production.md
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

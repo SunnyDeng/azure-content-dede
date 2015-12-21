@@ -10,7 +10,11 @@
 
 # Konfigurieren der Tunnelerzwingung mit PowerShell und dem Azure-Ressourcen-Manager
 
-Dieser Artikel bezieht sich auf VNets und VPN-Gateways, die mithilfe des Azure-Ressourcen-Manager-Bereitstellungsmodells erstellt wurden. Informationen zum Konfigurieren der Tunnelerzwingung mithilfe des Bereitstellungsmodells der Dienstverwaltung finden Sie unter [Konfigurieren der Tunnelerzwingung](vpn-gateway-about-forced-tunneling.md).
+> [AZURE.SELECTOR]
+- [PowerShell - Service Management](vpn-gateway-about-forced-tunneling.md)
+- [PowerShell - Resource Manager](vpn-gateway-forced-tunneling-rm.md)
+
+Dieser Artikel bezieht sich auf VNets und VPN-Gateways, die mithilfe des Azure-Ressourcen-Manager-Bereitstellungsmodells erstellt wurden. Informationen zum Konfigurieren der Tunnelerzwingung für VNETs, die mithilfe der Dienstverwaltung (auch als klassisches Bereitstellungsmodell bezeichnet) erstellt wurden, finden Sie unter [Konfigurieren der Tunnelerzwingung](vpn-gateway-about-forced-tunneling.md).
 
 [AZURE.INCLUDE [vpn-gateway-sm-rm](../../includes/vpn-gateway-sm-rm-include.md)]
 
@@ -132,4 +136,4 @@ Vergewissern Sie sich vor Beginn der Konfiguration, dass Sie über Folgendes ver
 		Get-AzureRmVirtualNetworkGatewayConnection -Name "Connection1" -ResourceGroupName "ForcedTunneling"
 		
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

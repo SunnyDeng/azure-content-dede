@@ -161,8 +161,8 @@ Die relevanten .NET-API-Referenzen für Pushbenachrichtigungen befinden sich hie
   [Microsoft.WindowsAzure.Messaging.NotificationHub]: http://msdn.microsoft.com/library/microsoft.windowsazure.messaging.notificationhub.aspx
   [Microsoft.ServiceBus.Notifications]: http://msdn.microsoft.com/library/microsoft.servicebus.notifications.aspx
   [Mobile App Service-Apps]: https://azure.microsoft.com/de-DE/documentation/articles/app-service-mobile-value-prop/
-  [Vorlagen]: https://msdn.microsoft.com/de-DE/library/azure/dn530748.aspx
+  [Vorlagen]: https://msdn.microsoft.com/library/azure/dn530748.aspx
   [Azure-Portal]: https://portal.azure.com
   [tags]: (http://msdn.microsoft.com/library/azure/dn530749.aspx)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -1,7 +1,7 @@
 ## WebAPI-Projekt
 
 1. Öffnen Sie in Visual Studio das Projekt **AppBackend**, das Sie im Lernprogramm **Benachrichtigen von Benutzern** erstellt haben.
-2. Ersetzen Sie in der Datei "Notifications.cs" die gesamte **Notifications**-Klasse durch den folgenden Code. Stellen Sie sicher, dass Sie die Platzhalter durch Ihre Verbindungszeichenfolge (mit vollständigem Zugriff) für Ihr Notification Hub und den Hub-Namen ersetzen. Diese Information erhalten Sie im [Azure-Verwaltungsportal](http://manage.windowsazure.com). Dieses Modul stellt nun die unterschiedlichen sicheren Benachrichtigungen dar, die gesendet werden. In einer vollständigen Implementierung werden die Benachrichtigungen in einer Datenbank gespeichert; der Einfachheit halber speichern wir Sie in diesem Fall im Speicher.
+2. Ersetzen Sie in der Datei "Notifications.cs" die gesamte **Notifications**-Klasse durch den folgenden Code. Stellen Sie sicher, dass Sie die Platzhalter durch Ihre Verbindungszeichenfolge (mit vollständigem Zugriff) für Ihr Notification Hub und den Hub-Namen ersetzen. Diese Werte erhalten Sie im [klassischen Azure-Portal](http://manage.windowsazure.com). Dieses Modul stellt nun die unterschiedlichen sicheren Benachrichtigungen dar, die gesendet werden. In einer vollständigen Implementierung werden die Benachrichtigungen in einer Datenbank gespeichert; der Einfachheit halber speichern wir Sie in diesem Fall im Speicher.
 
 		public class Notification
 	    {
@@ -84,4 +84,4 @@ Beachten Sie, dass die `Post`-Methode jetzt keine Popupbenachrichtigung sendet. 
 
 24. Wählen Sie die Azure-Website als Ihr Veröffentlichungsziel aus. Melden Sie sich mit Ihrem Azure-Konto an, und wählen Sie eine vorhandene oder neue Website, und notieren Sie sich die **Ziel-URL**-Eigenschaft auf der Registerkarte **Verbindung**. Diese URL wird später in diesem Lernprogramm als *Back-End-Endpunkt* bezeichnet. Klicken Sie auf **Veröffentlichen**.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -265,14 +265,14 @@ Die HDInsight-Aktivitäten (Hive, Pig, MapReduce, Hadoop-Streaming) unterstütze
 ## Anmerkungen zur Version von Data Factory vom 10.04.2015
 Die Listen **Letzte aktualisierte Slices** und **Letzte fehlerhafte Slices** befinden sich nun auf dem Blatt **TABELLE**. Diese Listen werden anhand der Aktualisierungszeit des Slices sortiert. Der Zeitpunkt der Aktualisierung eines Slices wird in den folgenden Situationen geändert.
 
--  Sie haben den Status eines Slices manuell aktualisiert, z. B. mit dem Cmdlet **Set AzureDataFactorySliceStatus** oder durch Klicken auf **Ausführen** auf dem Blatt **SLICE** des Slices.
+-  Sie haben den Status eines Slices manuell aktualisiert, z. B. mit dem Cmdlet **Set-AzureRmDataFactorySliceStatus**, oder durch Klicken auf **Ausführen** auf dem Blatt **SLICE** des Slices.
 -  Der Status des Slices ändert sich aufgrund einer Ausführung (z. B. Ausführung gestartet, Ausführung mit Fehler beendet, Ausführung erfolgreich beendet usw.).
 
 Klicken Sie auf den Titel der Listen oder auf **...** (Auslassungspunkte), um eine umfangreichere Liste mit Slices anzuzeigen. Klicken Sie auf der Symbolleiste auf **Filter**, um die Slices zu filtern.
  
 Durch Klicken auf die Kachel **Datenslices (nach Slicezeit)** können Sie Slices weiterhin sortiert nach der Slicezeit anzeigen. Die Slices in diesen Auflistungen sind nach Slicezeit sortiert. Bei einem stündlichen Zeitplan sind die Slices beispielsweise wie folgt sortiert:
 - 04.04.2015 17:00 Uhr In Bearbeitung
-- 04.04.2015 16:00 Uhr Erfolg 
+- 04.04.2015 16:00 Uhr Erfolg
 - 04.04.2015 15:00 Uhr Fehler
 
 Wenn jedoch ein älterer Slice erneut ausgeführt wird, wird er nicht oben in dieser Liste angezeigt, obwohl dies vermutlich für den Benutzer interessant wäre.
@@ -307,7 +307,7 @@ Siehe den Blogbeitrag [Azure Data Factory-Update – Neue Datenspeicher](http://
 - **SqlSink** unterstützt die neue Eigenschaft **WriteBatchTimeout**. Mit dieser Eigenschaft können Sie flexibel festlegen, wie lange auf den Abschluss des Batcheinfügevorgangs gewartet werden soll, bis ein Timeout erfolgt. Für einen Hybridkopiervorgang (der eine lokale und eine Clouddatenquelle umfasst) benötigen Sie Version 1.4 oder höher des Gateways, um diese Eigenschaft verwenden zu können. 
 - Der **mit SQL Server verknüpfte Dienst** unterstützt jetzt die **Windows-Authentifizierung**. 
 	- Beim Erstellen eines mit SQL Server verknüpften Diensts im Portal können Sie jetzt die Windows-Authentifizierung wählen und entsprechende Anmeldeinformationen festlegen. Dazu müssen Sie Version 1.4 oder höher des Gateways verwenden. 
-	- Beim Erstellen eines mit SQL Server verknüpften Diensts mit Azure PowerShell können Sie Verbindungsinformationen unverschlüsselt angeben oder die Verbindung mit dem aktualisierten [Cmdlet "New-AzureDataFactoryEncryptValue"][adf-encrypt-value-cmdlet] verschlüsseln. Anschließend verwenden Sie die verschlüsselte Zeichenfolge für die Eigenschaft mit der Verbindungszeichenfolge in der JSON-Nutzlast des verknüpften Diensts. Unter [Verknüpfte Dienste][adf-msdn-linked-services] finden Sie Details zum Definieren eines verknüpften Diensts in JSON. Die Verschlüsselungsfunktion wird vom Cmdlet "New-AzureDataFactoryEncryptValue" noch nicht unterstützt. 
+	- Beim Erstellen eines mit SQL Server verknüpften Diensts mit Azure PowerShell können Sie Verbindungsinformationen unverschlüsselt angeben oder die Verbindung mit dem aktualisierten Cmdlet [New-AzureRmDataFactoryEncryptValue](https://msdn.microsoft.com/library/mt603802.aspx) verschlüsseln. Anschließend verwenden Sie die verschlüsselte Zeichenfolge für die Eigenschaft mit der Verbindungszeichenfolge in der JSON-Nutzlast des verknüpften Diensts. Die Verschlüsselungsfunktion wird noch nicht vom Cmdlet „New-AzureRmDataFactoryEncryptValue“ unterstützt. 
 
 ## Anmerkungen zur Version von Data Factory vom 12.11.2014 ##
 
@@ -316,16 +316,16 @@ Siehe den Blogbeitrag [Azure Data Factory-Update – Neue Datenspeicher](http://
 - Azure Machine Learning-Integration
 	- Mit dieser Version des Azure Data Factory-Diensts können Sie Azure Data Factory mit Azure Machine Learning (ML) mithilfe von **AzureMLLinkedService** und **AzureMLBatchScoringActivity** integrieren. Weitere Informationen finden Sie unter [Erstellen von Vorhersagepipelines mithilfe von Data Factory und Azure Machine Learning][adf-azure-ml]. 
 - Der Status der Gatewayversion wird bereitgestellt.
-	- Der Status „NewVersionAvailable“ wird im Azure-Portal und in der Ausgabe des Cmdlet „Get-AzureDataFactoryGateway“ angezeigt, wenn eine neuere Version des Gateways als die derzeit installierte Version verfügbar ist. Sie können dann den Portalanweisungen folgen, um die neue Installationsdatei (MSI) herunterzuladen und auszuführen, um das neueste Gateway zu installieren. Es ist keine zusätzliche Konfiguration erforderlich.
+	- Der Status „NewVersionAvailable“ wird im Azure-Portal und in der Ausgabe des Cmdlets „Get-AzureRmDataFactoryGateway“ angezeigt, wenn eine neuere Version des Gateways als die derzeit installierte Version verfügbar ist. Sie können dann den Portalanweisungen folgen, um die neue Installationsdatei (MSI) herunterzuladen und auszuführen, um das neueste Gateway zu installieren. Es ist keine zusätzliche Konfiguration erforderlich.
 
 ### Änderungen
 
 - "JobsContainer" in "HdInsightOnDemandLinkedService" wird entfernt.
-	- In der JSON-Definition für "HDInsightOnDemandLinkedService" müssen Sie die Eigenschaft **jobsContainer** nicht länger angeben. Wenn Sie die Eigenschaft für einen verknüpften, bedarfsgesteuerten Dienst angegeben haben, wird die Eigenschaft ignoriert. Sie können die Eigenschaft aus der JSON-Definition für den verknüpften Dienst entfernen und die Definition des verknüpften Diensts mithilfe des Cmdlet "New-AzureDataFactoryLinkedService" aktualisieren.
+	- In der JSON-Definition für "HDInsightOnDemandLinkedService" müssen Sie die Eigenschaft **jobsContainer** nicht länger angeben. Wenn Sie die Eigenschaft für einen verknüpften, bedarfsgesteuerten Dienst angegeben haben, wird die Eigenschaft ignoriert. Sie können die Eigenschaft aus der JSON-Definition für den verknüpften Dienst entfernen und die Definition des verknüpften Diensts mithilfe des Cmdlets „New-AzureRmDataFactoryLinkedService“ aktualisieren.
 - Optionale Konfigurationsparameter für "HDInsightOnDemandLinkedService"
 	- Diese Version führt die Unterstützung für einige optionale Konfigurationsparameter für "HDInsightOnDemandLinked" (bedarfsgesteuerter HDInsight-Cluster) ein. Weitere Informationen finden Sie unter [ClusterCreateParameters-Eigenschaften][on-demand-hdi-parameters].
 - Speicherort für Gateway wird entfernt.
-	- Wenn Sie ein Azure Data Factory-Gateway über das Portal oder PowerShell (New-AzureDataFactoryGateway) erstellen, müssen Sie den Speicherort für das Gateway nicht länger angeben. Die Region für die Data Factory wird übernommen. Ebenso wird zum Konfigurieren eines verknüpften SQL Server-Diensts mithilfe von JSON die Eigenschaft "gatewayLocation" nicht länger benötigt. Das Data Factory .NET SDK wird ebenfalls aktualisiert, um diese Änderungen widerzuspiegeln.
+	- Wenn Sie ein Azure Data Factory-Gateway über das Portal oder PowerShell (New-AzureRmDataFactoryGateway) erstellen, müssen Sie den Speicherort für das Gateway nicht länger angeben. Die Region für die Data Factory wird übernommen. Ebenso wird zum Konfigurieren eines verknüpften SQL Server-Diensts mithilfe von JSON die Eigenschaft "gatewayLocation" nicht länger benötigt. Das Data Factory .NET SDK wird ebenfalls aktualisiert, um diese Änderungen widerzuspiegeln.
 	- Wenn Sie eine ältere Version des SDK und von Azure PowerShell verwenden, müssen Sie weiterhin die Standorteinstellung bereitstellen.
  
      
@@ -357,4 +357,4 @@ Siehe den Blogbeitrag [Azure Data Factory-Update – Neue Datenspeicher](http://
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

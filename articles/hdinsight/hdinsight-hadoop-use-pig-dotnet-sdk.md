@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="10/02/2015"
+   ms.date="12/04/2015"
    ms.author="larryfr"/>
 
 #Ausführen von Pig-Aufträgen mithilfe des .NET SDK für Hadoop in HDInsight
@@ -49,7 +49,7 @@ Anweisungen hierzu finden Sie unter [Erstellen eines selbstsignierten Zertifikat
 
 Jedes Azure-Abonnement wird durch einen GUID-Wert gekennzeichnet, der als Abonnement-ID bezeichnet wird. Ermitteln Sie diesen Wert mithilfe der folgenden Schritte.
 
-1. Besuchen Sie das [Azure-Portal] [Vorschauportal].
+1. Besuchen Sie das [Azure-Vorschauportal] [Vorschauportal].
 
 2. Klicken Sie links im Portal auf der Menüleiste auf __ALLE DURCHSUCHEN__, und wählen Sie dann auf dem Blatt __Durchsuchen__ die Option __Abonnements__.
 
@@ -60,7 +60,9 @@ Speichern Sie die Abonnement-ID, da sie später verwendet wird.
 ##<a id="create"></a>Erstellen der Anwendung
 
 1. Öffnen Sie Visual Studio 2012 oder 2013.
+
 2. Wählen Sie im Menü **Datei** die Option **Neu** und anschließend **Projekt** aus.
+
 3. Geben Sie für das neue Projekt die folgenden Werte ein, oder wählen Sie sie aus.
 
 	<table>
@@ -81,7 +83,9 @@ Speichern Sie die Abonnement-ID, da sie später verwendet wird.
 <th>SubmitPigJob</th>
 </tr>
 </table>
+
 4. Klicken Sie auf **OK**, um das Projekt zu erstellen.
+
 5. Wählen Sie im Menü **Extras** die Option **Bibliothekspaket-Manager** oder **Nuget-Paket-Manager** und dann **Paket-Manager-Konsole** aus.
 6. Führen Sie den folgenden Befehl in der Konsole aus, um die .NET SDK-Pakete zu installieren.
 
@@ -155,6 +159,7 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 
 * [Verwenden von Hive mit Hadoop in HDInsight](hdinsight-use-hive.md)
 
-* [Verwenden von MapReduce mit Hadoop in HDInsight](hdinsight-use-mapreduce.md) [Vorschauportal]: https://portal.azure.com/
+* [Verwenden von MapReduce mit Hadoop in HDInsight](hdinsight-use-mapreduce.md)
+[Vorschauportal]: https://portal.azure.com/
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

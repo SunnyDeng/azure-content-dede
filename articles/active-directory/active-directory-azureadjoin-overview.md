@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/19/2015" 
+	ms.date="12/07/2015" 
 	ms.author="femila"/>
 
 # Erweitern von Cloudfunktionen auf Windows 10-Geräte über Azure Active Directory Join
@@ -66,7 +66,7 @@ Azure AD Join bietet folgende Funktionen:
 | Benutzer melden Sie sich bei Windows mit den Anmeldeinformationen ihrer Arbeit an (wie dies aktuell der Fall ist). | Benutzer können sich bei Windows mit den Anmeldeinformationen Ihrer Arbeit anmelden, die in Azure AD verwaltet werden. Dies ist für unternehmenseigene Geräte in drei Fällen relevant: 1. Die Organisation verfügt über kein lokales AD (z. B. Kleinunternehmen). 2. Die Organisation erstellt nicht alle Benutzerkonten in AD (z. B. Schüler, Berater, saisonale Mitarbeiter). 3. Unternehmenseigene Geräte, die nicht mit einer (lokalen) Domäne verknüpft werden können, wie Telefone oder Tablets mit Mobile SKU. Beispielsweise funktioniert ein sekundäres Gerät auf Fabrik-/Einzelhandelsebene bei verwalteten und verbundenen Organisationen. | Benutzer melden Sie sich bei Windows mit ihren persönlichen MSA-Anmeldeinformationen an (keine Änderung). |
 | Benutzer haben Zugriff auf das Roaming von Einstellungen und auf Windows Store. Diese Dienste funktionieren mit Arbeitskonten (eine persönliche MSA ist nicht erforderlich). Erfordert, dass Unternehmen ihre lokale AD mit Azure AD verknüpfen. | Self-Service-Einrichtung – Benutzer können den Eindruck beim ersten Ausführen über ihr Arbeitskonto durchgehen (als Alternative dazu, dass die IT die Geräte bereitstellt, wobei beide Methoden unterstützt werden). | Es ist spielend leicht, ein Arbeitskonto hinzuzufügen, dass in AD oder Azure AD verwaltet wird. |
 | Einmaliges Anmelden vom Desktop, um mit Apps, Websites oder Ressourcen zu arbeiten. Dies funktioniert sowohl lokal als auch in der Cloud für Apps, die Azure AD für die Authentifizierung nutzen. | Automatische Registrierung im Unternehmensverzeichnis (Azure AD) und für das MDM. (Azure AD Premium-Funktion) | Liefert einmaliges Anmelden für Apps und für Websites oder Ressourcen mit diesem Arbeitskonto |
-| Benutzer können ihre persönliche MSA für den Zugriff auf eigene Bilder oder Dateien hinzufügen, ohne Unternehmensdaten zu beeinträchtigen (die Roamingeinstellungen funktionieren weiterhin mit dem Konto). Das MSA-Konto ermöglicht einmaliges Anmelden und führt nicht länger das Roaming der Einstellungen aus. | Self-Service-Kennwortzurücksetzung für die Windows-Anmeldung (die Möglichkeit, ein vergessenes Kennwort zurückzusetzen). (Hierfür benötigen Sie Azure AD Premium.) | Ermöglicht den Zugriff auf die Enterprise Store-Front bzw. den -Abschnitt, damit Benutzer Branchen-Apps erwerben und auf ihren persönlichen Geräten verwenden können. | |
+| Benutzer können ihre persönliche MSA für den Zugriff auf eigene Bilder oder Dateien hinzufügen, ohne Unternehmensdaten zu beeinträchtigen (die Roamingeinstellungen funktionieren weiterhin mit dem Konto). Das MSA-Konto ermöglicht einmaliges Anmelden und führt nicht länger das Roaming der Einstellungen aus. | Self-Service-Kennwortzurücksetzung für die Windows-Anmeldung (die Möglichkeit, ein vergessenes Kennwort zurückzusetzen). (Hierfür benötigen Sie Azure AD Premium.) | Ermöglicht den Zugriff auf den Enterprise Store, damit Benutzer Branchen-Apps erwerben und auf ihren persönlichen Geräten verwenden können. | |
 
 
 ## Zusätzliche Informationen
@@ -77,4 +77,4 @@ Azure AD Join bietet folgende Funktionen:
 * [Verbinden von einer Domäne beigetretenen Geräten mit Azure AD für Windows 10-Benutzeroberflächen](active-directory-azureadjoin-devices-group-policy.md)
 * [Einrichten von Azure AD Join](active-directory-azureadjoin-setup.md)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1210_2015-->

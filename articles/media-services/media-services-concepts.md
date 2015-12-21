@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/28/2015" 
+	ms.date="12/05/2015" 
 	ms.author="juliako"/>
 
 #Azure Media Services-Konzepte 
@@ -104,9 +104,11 @@ Informationen zu unterstützten Encodern finden Sie unter [Encoder](media-servic
 
 ##Livestreaming
 
-###Lokaler Live-Encoder (Drittanbieter)
+In Azure Media Services repräsentiert ein Kanal eine Pipeline zum Verarbeiten von Livestreaminginhalten. Es gibt zwei Arten, auf die Live-Eingabedatenströme von Kanälen empfangen werden können:
 
-Ein lokaler Live-Encoder (oder -Transcoder) konvertiert die von Ihrer Kamera gestreamten Audio- und/oder Videodaten in ein RTMP- oder Smooth Streaming-Format mit variablen Bitraten. Der Transcoder überträgt dann die RTMP- oder Smooth Streams mit adaptiver Bitrate in einen Media Services-Kanal. Media Services sendet das Ereignis anschließend live.
+- Von einem lokalen Liveencoder wird Multi-Bitrate-RTMP oder -Smooth Streaming (fragmentiertes MP4) an den Kanal gesendet. Sie können die folgenden Liveencoder verwenden, von denen Multi-Bitrate-Smooth Streaming ausgegeben werden kann: Elemental, Envivio, Cisco. Von den folgenden Liveencodern wird RTMP ausgegeben: Adobe Flash Live, Telestream Wirecast und Tricaster-Transcoder. Die erfassten Streams durchlaufen Kanäle ohne weitere Verarbeitung. Auf Anforderung wird der Datenstrom den Kunden von Media Services bereitgestellt.
+
+- Ein Single-Bitrate-Datenstrom (in einem der folgenden Formate: RTP [MPEG-TS]), RTMP oder Smooth Streaming [fragmentiertes MP4]) wird an den Kanal gesendet, der zum Ausführen der Livecodierung mit Media Services aktiviert wurde. Vom Kanal wird dann eine Livecodierung des Single-Bitrate-Eingabedatenstroms in einen Multi-Bitrate-Videodatenstrom (adaptiv) ausgeführt. Auf Anforderung wird der Datenstrom den Kunden von Media Services bereitgestellt.
 
 ###Kanal
 
@@ -116,9 +118,6 @@ Beim Erstellen des Kanals können Sie die Erfassungs-URL und die Vorschau-URL er
 
 Jedes Media Services-Konto kann mehrere Kanäle, mehrere Programme und mehrere StreamingEndpoints enthalten. Je nach den Anforderungen an Bandbreite und Sicherheit können StreamingEndpoint-Dienste einem oder mehreren Kanälen zugeordnet werden. Jeder StreamingEndpoint kann von jedem Kanal abrufen.
 
-In der Standardeinstellung können Sie Ihrem Media Services-Konto bis zu fünf Kanäle hinzufügen. Informationen zum Anfordern eines höheren Kontingents finden Sie unter [Kontingente und Einschränkungen](media-services-quotas-and-limitations.md).
-
-Eine Abrechnung erfolgt nur für ausgeführte Kanäle.
 
 ###Programm 
 
@@ -130,37 +129,37 @@ Jedes Programm ist mit einem Medienobjekt verknüpft. Zum Veröffentlichen des P
 
 Ein Kanal unterstützt bis zu drei gleichzeitig ausgeführte Programme, sodass Sie mehrere Archive desselben eingehenden Datenstroms erstellen können. Auf diese Weise können Sie verschiedene Teile eines Ereignisses nach Bedarf veröffentlichen und archivieren. Beispielsweise könnte Ihre Geschäftsanforderung darin bestehen, 6 Stunden eines Programms zu archivieren, jedoch nur die letzten 10 Minuten zu senden. Dazu müssen Sie zwei Programme erstellen, die gleichzeitig ausgeführt werden. Ein Programm wird auf die Archivierung von 6 Stunden des Ereignisses festgelegt. Dieses Programm wird jedoch nicht veröffentlicht. Das andere Programm wird auf die Archivierung von 10 Minuten festgelegt. Dieses Programm wird veröffentlicht.
 
+
+Weitere Informationen finden Sie unter:
+
+- [Arbeiten mit Kanälen, die zum Ausführen von Livecodierung mit Azure Media Services aktiviert wurden](media-services-manage-live-encoder-enabled-channels.md)
+- [Arbeiten mit Kanälen, die Livedatenströme mit mehreren Bitraten von lokalen Encodern empfangen](media-services-manage-channels-overview.md)
+- [Kontingente und Einschränkungen](media-services-quotas-and-limitations.md).  
+
 ##Schützen von Inhalten
 
 ###Dynamische Verschlüsselung
 
-Mit Microsoft Azure Media Services können Sie Inhalte dynamisch verschlüsselt übermitteln, und zwar mit AES (Advanced Encryption Standard unter Verwendung eines 128-Bit-Verschlüsselungsschlüssels) und PlayReady-DRM.
+Azure Media Services ermöglicht die Sicherung Ihrer Medien ab dem Zeitpunkt, an dem sie Ihren Computer durch Speicherung, Verarbeitung und Übermittlung verlassen. Mit Media Services können Sie Inhalte dynamisch verschlüsselt übermitteln, und zwar mit AES (Advanced Encryption Standard unter Verwendung eines 128-Bit-Verschlüsselungsschlüssels) und Common Encryption (CENC, allgemeine Verschlüsselung) mit PlayReady- oder Widevine-DRM. Media Services bietet auch einen Dienst für die Übermittlung von AES-Schlüsseln und PlayReady-Lizenzen an autorisierte Clients. Die Bereitstellung von Widevine-Lizenzübermittlungsdiensten über Azure Media Services befindet sich derzeit in der Vorschauphase.
 
 Zur Zeit können Sie die folgenden Streamingformate verschlüsseln: HLS, MPEG DASH und Smooth Streaming. Das HDS-Streamingformat oder progressive Downloads können nicht verschlüsselt werden.
 
 Wenn ein Medienobjekt durch Media Services verschlüsselt werden soll, müssen Sie dem Medienobjekt einen Verschlüsselungsschlüssel (CommonEncryption oder EnvelopeEncryption) zuordnen und zusätzlich Autorisierungsrichtlinien für den Schlüssel konfigurieren.
 
-Außerdem müssen Sie die Übermittlungsrichtlinie des Medienobjekts konfigurieren. Wenn Sie ein speicherverschlüsseltes Medienobjekt streamen möchten, geben Sie durch Konfigurieren der Übermittlungsrichtlinie an, wie die Übermittlung erfolgen soll.
+Um ein speicherverschlüsseltes Asset zu übermitteln, müssen Sie die Übermittlungsrichtlinie des Assets konfigurieren, um anzugeben, wie das Asset bereitgestellt werden soll.
 
-Wenn ein Player einen Stream anfordert, verwendet Media Services den angegebenen Schlüssel, um Ihren Inhalt mit AES- oder PlayReady-Verschlüsselung dynamisch zu verschlüsseln. Um den Stream zu entschlüsseln, fordert der Player den Schlüssel vom Schlüsselübermittlungsdienst an. Um zu entscheiden, ob der Benutzer berechtigt ist, den Schlüssel zu erhalten, wertet der Dienst die Autorisierungsrichtlinien aus, die Sie für den Schlüssel angegeben haben.
+Wenn ein Player einen Stream anfordert, verwendet Media Services den angegebenen Schlüssel, um den Inhalt mit einer Umschlagverschlüsselung (mit AES) oder allgemeinen Verschlüsselung (mit PlayReady oder Widevine) dynamisch zu verschlüsseln. Um den Stream zu entschlüsseln, fordert der Player den Schlüssel vom Schlüsselübermittlungsdienst an. Um zu entscheiden, ob der Benutzer berechtigt ist, den Schlüssel zu erhalten, wertet der Dienst die Autorisierungsrichtlinien aus, die Sie für den Schlüssel angegeben haben.
 
-###PlayReady-DRM-Lizenzen und AES-Übermittlungsdienste mit unverschlüsselten Schlüsseln
-
-Media Services bietet einen Dienst zum Übermitteln von PlayReady-Lizenzen und unverschlüsselten AES-Schlüsseln für autorisierte Clients. Sie können das klassische Azure-Portal, die REST-API oder das Media Services-SDK für .NET zum Konfigurieren von Autorisierungs- und Authentifizierungsrichtlinien für Ihre Lizenzen und Schlüssel verwenden.
-
-Beachten Sie, dass Sie über das Portal eine AES-Richtlinie (zur Anwendung auf alle AES-verschlüsselten Inhalte) und eine PlayReady-Richtlinie (zur Anwendung auf alle PlayReady-verschlüsselten Inhalte) konfigurieren können. Verwenden Sie das Media Services-SDK für .NET, wenn Sie mehr Kontrolle über die Konfigurationen benötigen.
-
-###PlayReady-Lizenzvorlage
-
-Media Services bietet einen Dienst für die Übermittlung von PlayReady-Lizenzen. Wenn der Endbenutzer-Player (z. B. Silverlight) versucht, Ihre durch PlayReady geschützten Inhalte wiederzugeben, wird eine Anforderung zum Erwerben einer Lizenz an den Lizenzübermittlungsdienst gesendet. Wenn der Lizenzdienst die Anforderung genehmigt, wird die Lizenz ausgegeben. Diese wird an den Client gesendet und kann zum Entschlüsseln und Wiedergeben des angegebenen Inhalts verwendet werden.
-
-Lizenzen enthalten die Rechte und Einschränkungen, die von der PlayReady-DRM-Laufzeit durchgesetzt werden sollen, wenn ein Benutzer versucht, geschützte Inhalte wiederzugeben. Media Services bietet APIs, mit denen Sie Ihre PlayReady-Lizenzen konfigurieren können. Weitere Informationen finden Sie unter [Media Services PlayReady-Lizenzvorlage – Übersicht](https://msdn.microsoft.com/library/azure/dn783459.aspx)
 
 ###Token-Einschränkung
 
 Die Autorisierungsrichtlinie für Inhaltsschlüssel kann eine oder mehrere Autorisierungseinschränkungen aufweisen: offen, Tokeneinschränkung oder IP-Einschränkung. Eine durch Token eingeschränkte Richtlinie gilt nur zusammen mit einem Token, das von einem Secure Token Service (STS) ausgestellt wurde. Media Services unterstützt Token im Simple Web Tokens (SWT)-Format und JSON Web Token (JWT)-Format. Secure Token Services werden von Media Services nicht bereitgestellt. Sie können einen benutzerdefinierten STS erstellen oder Microsoft Azure ACS zum Ausstellen von Token nutzen. Der STS muss für die Erstellung eines mit dem angegebenen Schlüssel signierten Tokens und die Ausstellungsansprüche konfiguriert sein, die Sie in der Konfiguration der Tokeneinschränkung angegeben haben. Der Schlüsselübermittlungsdienst von Media Services gibt den angeforderten Schlüssel (oder die Lizenz) an den Client zurück, wenn das Token gültig ist und die Ansprüche im Token mit den für den Schlüssel (oder die Lizenz) konfigurierten Ansprüchen übereinstimmen.
 
 Bei der Konfiguration der Richtlinie mit Token-Einschränkung müssen die Parameter PrimaryVerificationKey, Issuer und Audience angegeben werden. PrimaryVerificationKey enthält den Schlüssel, mit dem das Token signiert wurde, und Issuer ist der STS (Secure Token Service), von dem das Token ausgestellt wurde. Audience (manchmal auch Scope) beschreibt den Verwendungszweck des Tokens oder die Ressource, auf die durch das Token Zugriff gewährt wird. Der Schlüsselübermittlungsdienst von Media Services überprüft, ob die Werte im Token mit den Werten in der Vorlage übereinstimmen.
+
+Weitere Informationen finden Sie in den folgenden Artikeln:
+
+[Schützen von Inhalten – Übersicht](media-services-content-protection-overview.md) [Schützen mit AES-128](media-services-protect-with-aes128.md) [Schützen mit DRM](media-services-protect-with-drm.md)
 
 ##Übermitteln
 
@@ -249,4 +248,4 @@ In der folgenden Liste werden verschiedene Streamingformate beschrieben und Beis
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

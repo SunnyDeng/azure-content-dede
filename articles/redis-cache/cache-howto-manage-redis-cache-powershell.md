@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="cache-redis"
    ms.workload="multiple"
-   ms.date="12/02/2015"
+   ms.date="12/03/2015"
    ms.author="riande"/>
 
 # Verwalten von Azure-Redis-Cache mit Azure PowerShell
@@ -94,9 +94,9 @@ Weitere Informationen zur Verwendung von Windows PowerShell mit Azure finden Sie
 
 - [Dokumentation zu den Azure Redis Cache-Cmdlets auf MSDN](https://msdn.microsoft.com/library/azure/mt634513.aspx)
 - [Azure Resource Manager Cmdlets](http://go.microsoft.com/fwlink/?LinkID=394765) (in englischer Sprache): Verwenden der Cmdlets im AzureResourceManager-Modul.
-- [Using Resource groups to manage your Azure resources](../azure-portal/resource-group-portal.md) (in englischer Sprache): Erstellen und Verwalten von Ressourcengruppe im Azure-Vorschauportal.
+- [Verwenden von Ressourcengruppen zum Verwalten von Azure-Ressourcen](../azure-portal/resource-group-portal.md): Erfahren Sie, wie Sie Ressourcengruppen im Azure-Portal erstellen und verwalten.
 - [Azure-Blog](http://blogs.msdn.com/windowsazure): Informationen zu neuen Funktionen in Azure.
 - [Windows PowerShell-Blog](http://blogs.msdn.com/powershell): Informationen zu neuen Funktionen in Windows PowerShell.
 - ["Hey, Scripting Guy!"- Blog](http://blogs.technet.com/b/heyscriptingguy/): Praktische Tipps und Tricks aus der Windows PowerShell-Community.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

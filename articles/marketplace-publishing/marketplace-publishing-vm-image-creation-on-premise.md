@@ -43,9 +43,7 @@ Suchen Sie die Blob-URL im neuen [Microsoft Azure-Portal](https://ms.portal.azur
 
 ### Herunterladen einer VHD-Datei
 Nachdem Sie die Blob-URL kennen, können Sie die virtuelle Festplatte über das [Azure-Portal](http://manage.windowsazure.com/) oder per PowerShell herunterladen.  
-
-
-> [AZURE.NOTE] Zum Zeitpunkt der Erstellung dieser Anleitung ist die Funktionalität zum Herunterladen einer VHD-Datei noch nicht im neuen Microsoft Azure-Portal vorhanden.
+> [AZURE.NOTE]Zum Zeitpunkt der Erstellung dieser Anleitung ist die Funktionalität zum Herunterladen einer VHD-Datei noch nicht im neuen Microsoft Azure-Portal vorhanden.
 
 **Herunterladen der Betriebssystem-VHD-Datei über das aktuelle [Azure-Portal](http://manage.windowsazure.com/)**
 
@@ -140,4 +138,4 @@ Verwenden Sie folgenden Befehl im [Linux-Befehlszeilentool](../virtual-machines/
 - [Erstellen eines Images eines virtuellen Computers für den Marketplace](marketplace-publishing-vm-image-creation.md)
 - [Einrichten von Azure PowerShell](marketplace-publishing-powershell-setup.md)
 
-<!-------HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1210_2015-->

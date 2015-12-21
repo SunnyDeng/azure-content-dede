@@ -128,7 +128,7 @@ Die Installation kann auch mit der PATCH-Methode unter Verwendung des [JSON-Patc
         if (deviceInstallation.installationId == null)
             return HttpStatusCode.BadRequest;
 
-        // Parse connection string (https://msdn.microsoft.com/de-DE/library/azure/dn495627.aspx)
+        // Parse connection string (https://msdn.microsoft.com/library/azure/dn495627.aspx)
         ConnectionStringUtility connectionSaSUtil = new ConnectionStringUtility(listenConnectionString);
         string hubResource = "installations/" + deviceInstallation.installationId + "?";
         string apiVersion = "api-version=2015-04";
@@ -137,7 +137,7 @@ Die Installation kann auch mit der PATCH-Methode unter Verwendung des [JSON-Patc
         string uri = connectionSaSUtil.Endpoint + hubName + "/" + hubResource + apiVersion;
 
         //=== Generate SaS Security Token for Authorization header ===
-		// See, https://msdn.microsoft.com/de-DE/library/azure/dn495627.aspx
+		// See, https://msdn.microsoft.com/library/azure/dn495627.aspx
         string SasToken = connectionSaSUtil.getSaSToken(uri, 60);
 
         using (var httpClient = new HttpClient())
@@ -332,4 +332,4 @@ Die Installation kann auch mit der PATCH-Methode unter Verwendung des [JSON-Patc
 
 Die Nebenläufigkeit zwischen Registrierungsupdates muss vom Back-End behandelt werden. Service Bus unterstützt die Steuerung für optimistische Nebenläufigkeit für die Registrierungsverwaltung. Auf der HTTP-Ebene wird dies durch die Verwendung von ETag für Registrierungsverwaltungsvorgänge implementiert. Dieses Feature wird von Microsoft-SDKs, die eine Ausnahme auslösen, wenn ein Update aus Gründen der Nebenläufigkeit abgelehnt wird, transparent verwendet. Das Back-End ist dafür verantwortlich, diese Ausnahmen zu behandeln und das Update ggf. zu wiederholen.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

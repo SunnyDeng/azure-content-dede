@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="media" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="11/03/2015"   
+	ms.date="12/09/2015"   
 	ms.author="juliako"/>
 
 
@@ -25,6 +25,7 @@ In diesen Versionshinweisen werden Änderungen im Vergleich zu früheren Version
 
 - [Aktuell bekannte Probleme](#issues)
 - [REST-API-Versionsverlauf](#rest_version_history)
+- [Version vom Dezember 2015](#dec_changes_15)
 - [Version vom November 2015](#nov_changes_15)
 - [Version vom Oktober 2015](#oct_changes_15)
 - [Version September 2015](#september_changes_15)
@@ -76,15 +77,28 @@ Media Services-Medienobjekte im SDK können nicht serialisiert werden und funkti
 
 Informationen zum Versionsverlauf der Media Services-REST-API finden Sie unter [Azure Media Services – REST-API-Referenz].
 
+##<a id="dec_changes_15"></a>Version vom Dezember 2015
+
+Das Azure SDK-Team hat eine neue Version des [Azure SDK für PHP](http://github.com/Azure/azure-sdk-for-php)-Pakets veröffentlicht, das Updates und neue Features für Microsoft Azure Media Services enthält. Das Azure Media Services SDK für PHP unterstützt jetzt insbesondere die neuesten Features für den [Inhaltsschutz](media-services-content-protection-overview.md): dynamische Verschlüsselung mit AES und DRM (PlayReady und Widevine) mit und ohne Tokeneinschränkung. Unterstützt wird auch die Skalierung von [Codierungseinheiten](media-services-dotnet-encoding-units.md).
+
+Weitere Informationen finden Sie unter:
+
+- Blog zum [Microsoft Azure Media Services SDK für PHP](http://southworks.com/blog/2015/12/09/new-microsoft-azure-media-services-sdk-for-php-release-available-with-new-features-and-samples/).
+- Die folgenden [Codebeispiele](http://github.com/Azure/azure-sdk-for-php/tree/master/examples/MediaServices) erleichtern Ihnen den schnellen Einstieg:
+	- **vodworkflow\_aes.php**: PHP-Datei, die die Verwendung der dynamischen AES-128-Verschlüsselung und des Schlüsselübermittlungsdiensts veranschaulicht. Sie basiert auf dem .NET-Beispiel, das in [diesem](media-services-protect-with-aes128.md) Artikel erläutert wird.
+	- **vodworkflow\_aes.php**: PHP-Datei, die die Verwendung der dynamischen PlayReady-Verschlüsselung und des Lizenzübermittlungsdiensts veranschaulicht. Sie basiert auf dem .NET-Beispiel, das in [diesem](media-services-protect-with-drm.md) Artikel erläutert wird.
+	- **scale\_encoding\_units.php**: PHP-Datei, die das Skalieren einer reservierten Einheit für die Codierung zeigt.
+
+
 ##<a id="nov_changes_15"></a>Version vom November 2015
 
-Azure Media Services bietet jetzt Google Widevine-Dienste zur Lizenzbereitstellung in der Cloud an. Weitere Informationen finden Sie in [diesem Ankündigungs-Blog](http://azure.microsoft.com/blog/announcing-google-widevine-license-delivery-services-public-preview-in-azure-media-services/). Weitere Informationen finden Sie auch [in diesem Lernprogramm](media-services-protect-with-drm.md) und [GitHub-Repository](http://github.com/Azure-Samples/media-services-dotnet-dynamic-encryption-with-drm).
+Azure Media Services bietet jetzt Google Widevine-Dienste zur Lizenzbereitstellung in der Cloud an. Weitere Informationen finden Sie in [diesem Ankündigungs-Blog](http://azure.microsoft.com/blog/announcing-google-widevine-license-delivery-services-public-preview-in-azure-media-services/). Weitere Informationen finden Sie auch in [diesem Tutorial](media-services-protect-with-drm.md) und [GitHub-Repository](http://github.com/Azure-Samples/media-services-dotnet-dynamic-encryption-with-drm).
 
 Beachten Sie, dass sich die Bereitstellung von Widevine-Lizenzübermittlungsdiensten über Azure Media Services in der Vorschauphase befindet. Weitere Informationen finden Sie in [diesem Blog](http://azure.microsoft.com/blog/announcing-google-widevine-license-delivery-services-public-preview-in-azure-media-services/).
 
 ##<a id="oct_changes_15"></a>Version vom Oktober 2015
 
-Azure Media Services (AMS) ist jetzt in den folgenden Rechenzentren verfügbar: „Brasilien, Süden“, „Indien, Westen“, „Indien, Süden“ und „Indien, Mitte“. Sie können das klassische Azure-Portal jetzt zum [Erstellen von Media Service-Konten](media-services-create-account.md#create-a-media-services-account-using-quick-create) und zum Durchführen verschiedener Aufgaben verwenden, die [hier](https://azure.microsoft.com/documentation/services/media-services/) beschrieben werden. Live Encoding ist in diesen Datencentern jedoch nicht aktiviert. Darüber hinaus sind nicht alle Arten von für die Codierung reservierten Einheiten in diesen Datencentern verfügbar.
+Azure Media Services (AMS) ist jetzt in den folgenden Rechenzentren verfügbar: „Brasilien, Süden“, „Indien, Westen“, „Indien, Süden“ und „Indien, Mitte“. Sie können das klassische Azure-Portal jetzt zum [Erstellen von Media Service-Konten](media-services-create-account.md#create-a-media-services-account-using-quick-create) und zum Ausführen verschiedener Aufgaben verwenden, die [hier](https://azure.microsoft.com/documentation/services/media-services/) beschrieben werden. Live Encoding ist in diesen Datencentern jedoch nicht aktiviert. Darüber hinaus sind nicht alle Arten von für die Codierung reservierten Einheiten in diesen Datencentern verfügbar.
 
 - „Brasilien, Süden“: Für die Codierung reservierte Einheiten stehen nur in den Versionen Standard und Basic zur Verfügung.
 - „Indien, Westen“, „Indien, Süden“ und „Indien, Mitte“: Für die Codierung reservierte Einheiten stehen nur in der Basic-Version zur Verfügung.
@@ -621,4 +635,4 @@ Die folgende Funktion war neu in der November-Version des SDK.
 [Verarbeiten von Media Services-Auftragsbenachrichtigungen]: http://msdn.microsoft.com/library/azure/dn261241.aspx
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

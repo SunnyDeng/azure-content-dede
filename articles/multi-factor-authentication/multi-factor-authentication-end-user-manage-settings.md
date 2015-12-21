@@ -13,19 +13,23 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/19/2015" 
+	ms.date="12/10/2015" 
 	ms.author="billmath"/>
 
 # Beheben von Problemen mit Azure Multi-Factor Authentication
+>[AZURE.IMPORTANT]Helfen Sie uns, diese Seite zu verbessern. Wenn Sie auf dieser Seite keine Antwort auf Ihre Frage finden, geben Sie ausführliches Feedback, damit wir diesen Punkt hinzufügen können.
+
 Die folgende Informationen sollen Ihnen helfen, einige der häufigsten Probleme, die auftreten können, in den Griff zu bekommen.
 
 
 - [Korrelations-ID-Fehler](#correlation-id-errors)
 - [Ich habe mein Telefon verloren, oder es wurde mir gestohlen](#i-have-lost-my-phone-or-it-was-stolen?)
 - [Ich möchte meine Telefonnummer ändern](#i-want-to-change-my-phone-number)
+- [Ich habe ein neues Telefon und muss meine Telefonnummer ändern](#i-have-a-new-phone-and-need-to-change-my-phone-number)
 - [Ich empfange keinen Code auf meinem Telefon](#i-am-not-receiving-a-code-on-my-phone)
 - [App-Kennwörter funktionieren nicht](#app-passwords-are-not-working)
 - [Wie entferne ich Azure Authenticator von meinem alten Gerät, und wie wechsle ich zu einem neuen?](#how-do-i-clean-up-azure-authenticator-from-my-old-device-and-move-to-a-new-one)
+- [Ich konnte keine Lösung für mein Problem finden](#i-didn't-find-an-answer-to-my-problem)
 
 ##Korrelations-ID-Fehler
 Wenn Sie die nachstehenden Schritte zur Problembehandlung ausgeführt haben und weiterhin Fehler auftreten, können Sie in den [Azure AD-Foren](https://social.msdn.microsoft.com/forums/azure/home?forum=WindowsAzureAD) eine Frage stellen, [die Microsoft Knowledge Base (KB) durchsuchen](https://www.microsoft.com/de-DE/Search/result.aspx?q=azure%20active%20directory%20connect&form=mssupport) oder [sich an den Support wenden](https://support.microsoft.com/de-DE). Wir bemühen uns, möglichst schnell eine Lösung für Ihr Problem zu finden.
@@ -113,10 +117,29 @@ Wenn Sie Multi-Factor Authentication mit Azure verwenden, können Sie Ihre Einst
 3. Wählen Sie in der Dropdownliste "Zusätzliche Sicherheitsüberprüfung" aus. ![Azure](./media/multi-factor-authentication-end-user-manage/azure1.png)
 4. Dadurch gelangen Sie zu der Seite, auf der Sie Ihre Einstellungen ändern können. ![Proofup](./media/multi-factor-authentication-end-user-manage-azure/proofup.png)
 
-##Ich empfange keinen Code auf meinem Telefon
+##Ich habe ein neues Telefon und muss meine Telefonnummer ändern
+
+Sie haben ein anderes Telefon haben und müssen die primäre Telefonnummer ändern, die MFA verwendet? Hierzu stehen zwei Möglichkeiten zur Verfügung.
+
+Die erste Möglichkeit ist eine sekundäre Authentifizierungsmethode. Wenn Sie eine sekundäre Authentifizierungstelefonnummer angegeben haben, können Sie sich damit anmelden. ![Einrichtung](./media/multi-factor-authentication-end-user-manage/altphone.png) Auf dem Bildschirmfoto oben sehen Sie, dass zwei Telefonnummern eingerichtet wurden. Eine endet mit 67 und die zweite mit 30.
+  
+Um sich mit der alternativen Telefonnummer anzumelden, gehen Sie wie üblich vor, und wählen Sie **Andere Überprüfungsoption verwenden** aus. ![Andere Überprüfung](./media/multi-factor-authentication-end-user-manage/differentverification.png)
+
+Wählen Sie dann Ihre andere Telefonnummer aus. Wählen Sie in diesem Fall **Rufen Sie mich unter der Rufnummer +XXXXXXXXX30 an** aus.
+
+![Alternatives Telefon](./media/multi-factor-authentication-end-user-manage/altphone2.png)
+
+>[AZURE.IMPORTANT]Konfigurieren Sie unbedingt eine sekundäre Authentifizierungstelefonnummer. Da sich Ihre primäre Telefonnummer und ihre mobile App wahrscheinlich auf demselben Telefon befinden, ist die sekundäre Telefonnummer die einzige Möglichkeit, sich wieder bei Ihrem Konto anzumelden, sollte Ihr Telefon verloren gehen oder gestohlen werden.
+
+Die zweite Möglichkeit ist, sich an Ihren Administrator oder die Person zu wenden, die MFA für Sie eingerichtet hat. So müssen Sie nur vorgehen, wenn Sie keine sekundäre Authentifizierungstelefonnummer konfiguriert haben. In diesem Fall müssen Sie den Administrator oder die Person, die MFA eingerichtet hat, bitten, Ihre Einstellungen zu löschen. Sie werden dann bei der nächsten Anmeldung zum erneuten [Einrichten von Multi-Factor Authentication](multi-factor-authentication-manage-users-and-devices.md#require-selected-users-to-provide-contact-methods-again) aufgefordert.
+
+##Ich empfange keinen Code oder Anruf auf meinem Telefon
 
 Zunächst müssen Sie Folgendes sicherstellen:
 
+
+
+- Wenn Sie einen Telefonanruf auf Ihrem Mobiltelefon ausgewählt haben, stellen Sie sicher, dass das Mobilfunksignal stark genug ist. Übertragungsgeschwindigkeit und Verfügbarkeit können je nach Region und Dienstanbieter variieren.
 - Wenn Sie das Empfangen von Überprüfungscodes per Textnachricht auf Ihrem Mobiltelefon ausgewählt haben, vergewissern Sie sich, dass Ihr Tarif und Gerät die Übermittlung von Textnachrichten unterstützen. Übertragungsgeschwindigkeit und Verfügbarkeit können je nach Region und Dienstanbieter variieren. Stellen Sie auch sicher, dass das Mobilfunksignal stark genug ist, um diese Codes zu empfangen.
 - Wenn Sie das Empfangen einer Überprüfung über die mobile App gewählt haben, stellen Sie sicher, dass das Mobilfunksignal stark genug ist. Beachten Sie auch, dass Übertragungsgeschwindigkeit und Verfügbarkeit je nach Region und Dienstanbieter variieren können. 
 
@@ -126,12 +149,11 @@ Sie können zwischen dem Empfang von Überprüfungscodes per Textnachrichten und
 
 ![Andere Überprüfung](./media/multi-factor-authentication-end-user-manage/differentverification.png)
 
-
 Mitunter ist die Übermittlung einer dieser Dienste zuverlässiger als der andere.
 
 Wenn Sie mehrere Überprüfungscodes erhalten haben, funktioniert immer nur der neueste.
 
-Falls Sie zuvor einen Ersatzanschluss konfiguriert haben, wird empfohlen, den Vorgang zu wiederholen, indem Sie dieses Telefon auswählen, wenn Sie auf der Anmeldeseite dazu aufgefordert werden. Wenn Sie keine andere Methode konfiguriert haben, bitten Sie Ihren Administrator, Ihre Einstellungen zu löschen, damit Sie bei der nächsten Anmeldung aufgefordert werden, die [Multi-Factor Authentication erneut einzurichten](multi-factor-authentication-manage-users-and-devices.md#require-selected-users-to-provide-contact-methods-again).
+Falls Sie zuvor einen Ersatzanschluss konfiguriert haben, wird empfohlen, den Vorgang zu wiederholen, indem Sie dieses Telefon auswählen, wenn Sie auf der Anmeldeseite dazu aufgefordert werden. Wenn Sie keine andere Methode konfiguriert haben, bitten Sie Ihren Administrator, Ihre Einstellungen zu löschen, damit Sie bei der nächsten Anmeldung zur erneuten [Einrichtung von Multi-Factor Authentication](multi-factor-authentication-manage-users-and-devices.md#require-selected-users-to-provide-contact-methods-again) aufgefordert werden.
 
 ##App-Kennwörter funktionieren nicht
 Stellen Sie zunächst sicher, dass Sie das App-Kennwort richtig eingegeben haben. Wenn es weiterhin nicht funktioniert, versuchen Sie, sich anzumelden, und [erstellen Sie ein neues App-Kennwort](multi-factor-authentication-end-user-app-passwords.md). Wenn dies nicht funktioniert, bitten Sie den Administrator, [Ihre vorhandenen App-Kennwörter zu löschen](multi-factor-authentication-manage-users-and-devices.md#delete-users-existing-app-passwords). Erstellen Sie anschließend ein neues, und nutzen Sie dieses.
@@ -139,4 +161,11 @@ Stellen Sie zunächst sicher, dass Sie das App-Kennwort richtig eingegeben haben
 ##Wie entferne ich Azure Authenticator von meinem alten Gerät, und wie wechsle ich zu einem neuen?
 Wenn Sie die App von Ihrem Gerät deinstallieren oder das Gerät auf die Werkseinstellungen zurücksetzen, wird die Aktivierung im Back-End nicht entfernt. Befolgen Sie die Schritte unter [Wechseln zu einem neuen Gerät](multi-factor-authentication-azure-authenticator.md#how-to-move-to-the-new-azure-authenticator-app).
 
-<!---HONumber=AcomDC_1203_2015-->
+##Ich konnte keine Lösung für mein Problem finden
+Wenn Sie auf dieser Seite keine Lösung für Ihr Problem finden, können Sie eine Frage in den [Azure AD-Foren](https://social.msdn.microsoft.com/forums/azure/home?forum=WindowsAzureAD) stellen, [die Microsoft Knowledge Base (KB) durchsuchen](https://www.microsoft.com/de-DE/Search/result.aspx?q=azure%20active%20directory%20connect&form=mssupport) oder den [Support kontaktieren](https://support.microsoft.com/de-DE).
+
+Außerdem können Sie Ihren Administrator oder die Person, die Multi-Factor Authentication für Sie eingerichtet hat, um Hilfe bitten.
+
+Geben Sie abschließend bitte detailliertes Feedback auf dieser Seite ab, damit wir diese Seite aktualisieren und durch weitere Informationen verbessern können.
+
+<!---HONumber=AcomDC_1210_2015-->

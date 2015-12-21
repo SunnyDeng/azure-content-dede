@@ -24,11 +24,11 @@
 
 ##Übersicht 
 
-In dieser Anleitung wird die Ausführung gängiger Aufgaben mithilfe der verwalteten Clientbibliothek für Mobile App Service-Apps unter Azure in Windows- und Xamarin-Apps beschrieben. Wenn Sie keine Erfahrungen mit Mobile Apps haben, sollten Sie eventuell zunächst das Lernprogramm [Mobile Apps-Schnellstart](app-service-mobile-windows-store-dotnet-get-started.md) absolvieren. In diesem Handbuch konzentrieren wir uns auf das clientseitige verwaltete SDK. Weitere Informationen zum serverseitigen SDK für das .NET-Back-End finden Sie unter [Arbeiten mit dem .NET-Back-End](app-service-mobile-dotnet-backend-how-to-use-server-sdk.md).
+In dieser Anleitung wird die Ausführung gängiger Aufgaben mithilfe der verwalteten Clientbibliothek für Mobile App Service-Apps unter Azure in Windows- und Xamarin-Apps beschrieben. Wenn Sie keine Erfahrungen mit Mobile Apps haben, sollten Sie eventuell zunächst das Lernprogramm [Mobile Apps-Schnellstart](app-service-mobile-windows-store-dotnet-get-started.md) absolvieren. In diesem Handbuch konzentrieren wir uns auf das clientseitige verwaltete SDK. Weitere Informationen zu den serverseitigen SDKs für mobile Apps finden Sie unter [Arbeiten mit dem .NET-Back-End-SDK](app-service-mobile-dotnet-backend-how-to-use-server-sdk.md) oder [Verwenden des Node.js-Back-End-SDKs](app-service-mobile-node-backend-how-to-use-server-sdk.md).
 
 ## Referenzdokumentation
 
-Die Referenzdokumentation für das Client-SDK finden Sie hier: [Azure Mobile Apps .NET-Client-Referenz](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.aspx).
+Die Referenzdokumentation für das Client-SDK finden Sie hier: [.NET-Client-Referenz für Azure Mobile Apps](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.aspx).
 
 ##<a name="setup"></a>Einrichtung und Voraussetzungen
 
@@ -48,7 +48,9 @@ Der entsprechende typisierte clientseitige Typ in C# sieht wie folgt aus:
 		public bool Complete { get; set; }
 	}
 
-Beachten Sie, dass das [JsonPropertyAttribute](http://www.newtonsoft.com/json/help/html/Properties_T_Newtonsoft_Json_JsonPropertyAttribute.htm) verwendet wird, um die *PropertyName*-Zuordnung zwischen dem Clienttyp und der Tabelle zu definieren.
+Beachten Sie, dass [JsonPropertyAttribute](http://www.newtonsoft.com/json/help/html/Properties_T_Newtonsoft_Json_JsonPropertyAttribute.htm) verwendet wird, um die *PropertyName*-Zuordnung zwischen dem Clienttyp und der Tabelle zu definieren.
+
+Informationen zum Erstellen neuer Tabellen in Ihrem Mobile Apps-Back-End finden Sie unter [Vorgehensweise: Definieren eines Tabellencontrollers](app-service-mobile-dotnet-backend-how-to-use-server-sdk.md#how-to-define-a-table-controller) (.NET-Back-End) oder [Definieren von Tabellen mit einem dynamischen Schema](app-service-mobile-node-backend-how-to-use-server-sdk.md#TableOperations) (Node.js-Back-End). Für ein Node.js-Back-End können Sie auch die Einstellung **Einfache Tabellen** im [Azure-Portal](https://portal.azure.com) verwenden.
 
 ##<a name="create-client"></a>Erstellen des Mobile App-Clients
 
@@ -58,7 +60,7 @@ Mit dem folgenden Code wird das `MobileServiceClient`-Objekt erstellt, das zum Z
 
 Ersetzen Sie im obigen Code `MOBILE_APP_URL` durch die URL des Mobile App-Back-Ends. Sie finden die URL auf dem Blatt für das Mobile App-Back-End im [Azure-Portal](https://portal.azure.com).
 
-##<a name="instantiating"></a>Gewusst wie: Erstellen von Tabellenverweisen
+##<a name="instantiating"></a>Erstellen von Tabellenverweisen
 
 Jeglicher Code zum Abrufen oder Ändern von Daten in einer Back-End-Tabelle ruft Funktionen des `MobileServiceTable`-Objekts auf. Sie erhalten einen Verweis auf die Tabelle, indem Sie wie folgt die Methode [GetTable](https://msdn.microsoft.com/library/azure/jj554275.aspx) für eine Instanz von `MobileServiceClient` aufrufen:
 
@@ -94,7 +96,7 @@ Der folgende Code zeigt, wie Sie Daten mithilfe einer `Where`-Klausel in einer A
 	   .Where(todoItem => todoItem.Complete == false)
 	   .ToListAsync();
 
-Sie können den URI der an das Back-End gesendeten Anforderung anzeigen, indem Sie Software zur Überprüfung von Nachrichten verwenden, z. B. Browser-Entwicklertools oder [Fiddler]. Beachten Sie in der folgenden URI, dass wir die eigentliche Abfragezeichenfolge verändern:
+Sie können den URI der an das Back-End gesendeten Anforderung anzeigen, indem Sie Software zur Überprüfung von Nachrichten verwenden, z. B. Browserentwicklertools oder [Fiddler]. Beachten Sie in der folgenden URI, dass wir die eigentliche Abfragezeichenfolge verändern:
 
 	GET /tables/todoitem?$filter=(complete+eq+false) HTTP/1.1
 
@@ -146,7 +148,7 @@ Der folgende Code zeigt, wie Sie Daten mithilfe einer `OrderBy`- oder `OrderByDe
 					.OrderByDescending(todoItem => todoItem.Text)
  	List<TodoItem> items = await query.ToListAsync();
 
-### <a name="paging"></a>Gewusst wie: Seitenweises Zurückgeben von Daten
+### <a name="paging"></a>Seitenweises Zurückgeben von Daten
 
 Standardmäßig gibt das Back-End nur die ersten 50 Zeilen zurück. Sie können die [Take]-Methode aufrufen, um die Anzahl der zurückgegebenen Zeilen zu erhöhen. Verwenden Sie `Take` zusammen mit der [Skip]-Methode, um eine bestimmte "Seite" des gesamten Datasets anzufordern, das von der Abfrage zurückgegeben wird. Die folgende Abfrage liefert die ersten drei Elemente aus der Tabelle zurück.
 
@@ -169,7 +171,7 @@ Mit der [IncludeTotalCount]-Methode können Sie sicherstellen, dass die Abfrage 
 
 In diesem vereinfachten Szenario werden hartcodierte Pagingwerte an die `Take`-Methode und die `Skip`-Methode übergeben. Tatsächliche Anwendungen können ähnliche Abfragen mit einem Pagersteuerelement oder einer ähnlichen Benutzersteuerung ausführen, um zur vorherigen bzw. nächsten Seite zu navigieren.
 
->[AZURE.NOTE]Um die Begrenzung auf 50 Zeilen in einem Mobile App-Back-End zu überschreiben, müssen Sie das [EnableQueryAttribute](https://msdn.microsoft.com/library/system.web.http.odata.enablequeryattribute.aspx) auf die öffentliche GET-Methode anwenden und das Pagingverhalten festlegen. Bei Anwendung des Attributs auf die Methode wird durch Folgendes die maximale Anzahl zurückgegebener Zeilen auf 1000 beschränkt:
+>[AZURE.NOTE]Um die Begrenzung auf 50 Zeilen in einem Mobile App-Back-End zu überschreiben, müssen Sie [EnableQueryAttribute](https://msdn.microsoft.com/library/system.web.http.odata.enablequeryattribute.aspx) auf die öffentliche GET-Methode anwenden und das Pagingverhalten festlegen. Bei Anwendung des Attributs auf die Methode wird durch Folgendes die maximale Anzahl zurückgegebener Zeilen auf 1000 beschränkt:
 
     [EnableQuery(MaxTop=1000)]
 
@@ -259,7 +261,7 @@ Der folgende Code zeigt, wie Sie eine existierende Instanz mit derselben Id und 
 
 Zum Einfügen nicht typisierter Daten können Sie Json.NET wie folgt nutzen: JObject jo = new JObject(); jo.Add("Id", "37BBF396-11F0-4B39-85C8-B319C729AF6D"); jo.Add("Text", "Hello World"); jo.Add("Complete", false); var inserted = await table.UpdateAsync(jo);
 
-Beachten Sie, dass Sie beim Durchführen eines Updates eine ID angeben müssen. Sie wird benötigt, damit das Back-End erkennen kann, welche Instanz aktualisiert werden soll. Sie finden die ID im Ergebnis des `InsertAsync`-Aufrufs. Wenn Sie versuchen, ein Element ohne Angabe eines Werts für „Id“ zu aktualisieren, wird eine `ArgumentException` ausgelöst.
+Beachten Sie, dass Sie beim Durchführen eines Updates eine ID angeben müssen. Sie wird benötigt, damit das Back-End erkennen kann, welche Instanz aktualisiert werden soll. Sie finden die ID im Ergebnis des `InsertAsync`-Aufrufs. Wenn Sie versuchen, ein Element ohne Angabe eines Werts für „Id“ zu aktualisieren, wird `ArgumentException` ausgelöst.
 
 
 ##<a name="deleting"></a>Löschen von Daten in einem Mobile App-Back-End
@@ -274,13 +276,13 @@ Zum Löschen von nicht typisierten Daten können Sie Json.NET wie folgt verwende
 	jo.Add("Id", "37BBF396-11F0-4B39-85C8-B319C729AF6D");
 	await table.DeleteAsync(jo);
 
-Beachten Sie, dass Sie bei einer Löschanforderung eine ID angeben müssen. Andere Eigenschaften werden nicht an den Dienst übergeben oder vom Dienst ignoriert. Das Ergebnis eines `DeleteAsync`-Aufrufs lautet normalerweise `null`. Sie erhalten die zu übergebende ID im Ergebnis des `InsertAsync`-Aufrufs. Wenn Sie versuchen, ein Element ohne vorherige Eingabe im Feld „Id“ zu löschen, wird vom Back-End eine `MobileServiceInvalidOperationException` zurückgegeben.
+Beachten Sie, dass Sie bei einer Löschanforderung eine ID angeben müssen. Andere Eigenschaften werden nicht an den Dienst übergeben oder vom Dienst ignoriert. Das Ergebnis eines `DeleteAsync`-Aufrufs lautet normalerweise `null`. Sie erhalten die zu übergebende ID im Ergebnis des `InsertAsync`-Aufrufs. Wenn Sie versuchen, ein Element ohne vorherige Eingabe im Feld „Id“ zu löschen, wird vom Back-End `MobileServiceInvalidOperationException` zurückgegeben.
 
 ##<a name="#custom-api"></a>Gewusst wie: Aufrufen einer benutzerdefinierten API
 
 Mit einer benutzerdefinierten API können Sie benutzerdefinierte Endpunkte definieren, die Serverfunktionen zur Verfügung stellen, welche keinem Einfüge-, Aktualisierungs-, Lösch- oder Lesevorgang zugeordnet sind. Durch die Verwendung einer benutzerdefinierten API erhalten Sie mehr Kontrolle über das Messaging, einschließlich Lesen und Einstellen der HTTP-Nachrichten-Header sowie Definieren eines von JSON abweichenden Nachrichtentextformats.
 
-Sie rufen eine benutzerdefinierte API auf, indem Sie eine der [InvokeApiAsync]-Methodenüberladungen für den Client aufrufen. Mit der folgenden Codezeile wird beispielsweise eine POST-Anforderung an die **completeAll**-API auf dem Back-End gesendet:
+Sie rufen eine benutzerdefinierte API auf, indem Sie eine der [InvokeApiAsync]-Methodenüberladungen für den Client aufrufen. Mit der folgenden Codezeile wird beispielsweise eine POST-Anforderung an die **completeAll**-API im Back-End gesendet:
 
     var result = await App.MobileService
         .InvokeApiAsync<MarkAllResult>("completeAll",
@@ -341,13 +343,13 @@ Die **RegisterAsync()**-Methode akzeptiert auch sekundäre Kacheln:
 
         MobileService.GetPush().RegisterAsync(string channelUri, JObject templates, JObject secondaryTiles);
 
-Beachten Sie, dass aus Sicherheitsgründen alle Tags entfernt werden. Informationen zum Hinzufügen von Tags zu Installationen bzw. Vorlagen innerhalb von Installationen finden Sie unter [Arbeiten Sie mit der Back-End-Server-SDK für Azure Mobile Apps].
+Beachten Sie, dass aus Sicherheitsgründen alle Tags entfernt werden. Informationen zum Hinzufügen von Tags zu Installationen bzw. Vorlagen innerhalb von Installationen finden Sie unter [Arbeiten Sie mit dem Back-End-Server-SDK für Azure Mobile Apps].
 
 Zum Senden von Benachrichtigungen, die diese registrierten Vorlagen verwenden, arbeiten Sie mit den [Notification Hubs-APIs](https://msdn.microsoft.com/library/azure/dn495101.aspx).
 
 ##<a name="optimisticconcurrency"></a>Gewusst wie: Verwenden von optimistischer Parallelität.
 
-In manchen Szenarien können zwei oder mehr Clients gleichzeitig versuchen, dasselbe Element zu bearbeiten. Ohne Konflikterkennung würde der letzte Schreibvorgang alle vorherigen Aktualisierungen überschreiben, selbst wenn dies nicht so gewollt wäre. Die *Steuerung für optimistische Parallelität* nimmt an, dass jede Transaktion Commits ausführen kann und sperrt daher keine Ressourcen. Vor dem Commit einer Transaktion prüft die Steuerung für optimistische Parallelität, ob die Daten von einer anderen Transaktion geändert wurden. Falls die Daten geändert wurden, wird für die Transaktion, die den Commit durchführen sollte, ein Rollback durchgeführt.
+In manchen Szenarien können zwei oder mehr Clients gleichzeitig versuchen, dasselbe Element zu bearbeiten. Ohne Konflikterkennung würde der letzte Schreibvorgang alle vorherigen Aktualisierungen überschreiben, selbst wenn dies nicht so gewollt wäre. Die *Steuerung für optimistische Parallelität* nimmt an, dass jede Transaktion Commits ausführen kann, und sperrt daher keine Ressourcen. Vor dem Commit einer Transaktion prüft die Steuerung für optimistische Parallelität, ob die Daten von einer anderen Transaktion geändert wurden. Falls die Daten geändert wurden, wird für die Transaktion, die den Commit durchführen sollte, ein Rollback durchgeführt.
 
 Mobile Apps unterstützt die Steuerung für optimistische Parallelität, indem Änderungen an Elementen in der Spalte `__version` mit den Systemeigenschaften nachverfolgt werden, die für jede Tabelle im Mobile App-Back-End definiert wird. Bei jeder Aktualisierung eines Datensatzes wird die `__version`-Eigenschaft des entsprechenden Datensatzes von Mobile Apps auf einen neuen Wert festgelegt. Bei jeder Aktualisierungsanforderung wird die `__version`-Eigenschaft des in der Anforderung enthaltenen Datensatzes mit der Eigenschaft des Datensatzes auf dem Server verglichen. Wenn die mit der Anforderung übergebene Version nicht mit dem Back-End übereinstimmt, löst die Clientbibliothek eine `MobileServicePreconditionFailedException<T>` aus. Der in der Ausnahme enthaltene Typ ist der Eintrag des Back-Ends, der die Serverversion des entsprechenden Eintrags enthält. Anschließend kann die Anwendung anhand dieser Informationen entscheiden, ob die Updateanforderung erneut mit dem korrekten `__version`-Wert vom Back-End ausgeführt werden soll, um Commits für die Änderungen auszuführen.
 
@@ -680,7 +682,7 @@ Dieser Abschnitt beschreibt die Möglichkeiten zum Anpassen der Anforderungshead
 
 ### <a name="headers"></a>Gewusst wie: Anpassen der Anforderungsheader
 
-Um Ihr spezielles App-Szenario zu unterstützen, müssen Sie unter Umständen die Kommunikation mit dem Mobile App-Back-End anpassen. Sie können z. B. benutzerdefinierte Header zu allen ausgehenden Anforderungen hinzufügen oder den Statuscode von Antworten ändern. Hierzu müssen Sie einen benutzerdefinierten [DelegatingHandler] bereitstellen, wie im folgenden Beispiel gezeigt:
+Um Ihr spezielles App-Szenario zu unterstützen, müssen Sie unter Umständen die Kommunikation mit dem Mobile App-Back-End anpassen. Sie können z. B. benutzerdefinierte Header zu allen ausgehenden Anforderungen hinzufügen oder den Statuscode von Antworten ändern. Hierzu müssen Sie ein benutzerdefiniertes [DelegatingHandler]-Element bereitstellen, wie im folgenden Beispiel gezeigt:
 
     public async Task CallClientWithHandler()
     {
@@ -734,7 +736,7 @@ Mit dieser Eigenschaft werden alle Eigenschaften während der Serialisierung in 
 
 <!-- URLs. -->
 [Add authentication to your app]: mobile-services-dotnet-backend-windows-universal-dotnet-get-started-users.md
-[Arbeiten Sie mit der Back-End-Server-SDK für Azure Mobile Apps]: app-service-mobile-dotnet-backend-how-to-use-server-sdk.md
+[Arbeiten Sie mit dem Back-End-Server-SDK für Azure Mobile Apps]: app-service-mobile-dotnet-backend-how-to-use-server-sdk.md
 [PasswordVault]: http://msdn.microsoft.com/library/windows/apps/windows.security.credentials.passwordvault.aspx
 [ProtectedData]: http://msdn.microsoft.com/library/system.security.cryptography.protecteddata%28VS.95%29.aspx
 [LoginAsync method]: http://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.mobileservices.mobileserviceclientextensions.loginasync.aspx
@@ -754,4 +756,4 @@ Mit dieser Eigenschaft werden alle Eigenschaften während der Serialisierung in 
 [InvokeApiAsync]: http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.invokeapiasync.aspx
 [DelegatingHandler]: https://msdn.microsoft.com/library/system.net.http.delegatinghandler(v=vs.110).aspx
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -55,9 +55,7 @@ Nach dem Upgrade auf V12 stehen [Empfehlungen zur Dienstebene](sql-database-serv
 
 Für das Upgrade eines Servers auf V12 mit PowerShell, muss Azure PowerShell installiert sein und ausgeführt werden. Je nach Version müssen Sie eventuell in den Ressourcen-Manager-Modus wechseln, um auf die PowerShell-Cmdlets für Azure-Ressourcen-Manager zuzugreifen.
 
-> [AZURE.IMPORTANT]Ab Veröffentlichung von Azure PowerShell 1.0 Preview ist das Cmdlet "Switch-AzureMode" nicht mehr verfügbar. Außerdem wurden die Cmdlets im Modul "Azure-Ressourcen-Manager" umbenannt. In den Beispielen in diesem Artikel wird die neue Benennungskonvention von PowerShell 1.0 Preview verwendet. Ausführliche Informationen finden Sie unter ["Switch-AzureMode" in Azure PowerShell veraltet](https://github.com/Azure/azure-powershell/wiki/Deprecation-of-Switch-AzureMode-in-Azure-PowerShell).
-
-Zur Ausführung von PowerShell-Cmdlets muss Azure PowerShell installiert sein und ausgeführt werden. Aufgrund des Entfernens von "Switch-AzureMode" müssen Sie die neueste Azure PowerShell herunterladen und durch Ausführen des [Microsoft-Webplattform-Installers](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409) installieren. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
+Zum Ausführen von PowerShell-Cmdlets muss Azure PowerShell installiert sein und ausgeführt werden. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
 
 
 ## Konfigurieren der Anmeldeinformationen und Auswählen des Abonnements
@@ -68,7 +66,7 @@ Um PowerShell-Cmdlets für Ihr Azure-Abonnement ausführen zu können, müssen S
 
 Nach der erfolgreichen Anmeldung sollten einige Informationen auf dem Bildschirm angezeigt werden, wie die ID, mit der Sie sich angemeldet haben, und die Azure-Abonnements, auf die Sie zugreifen können.
 
-Zur Auswahl des Abonnements, mit dem Sie arbeiten möchten, benötigen Sie Ihre Abonnement-ID (**-SubscriptionId**) oder den Abonnementnamen (**-SubscriptionName**). Sie können diese Informationen aus dem vorherigen Schritt kopieren. Wenn Sie über mehrere Abonnements verfügen, können Sie sie über das Cmdlet **Get-AzureRMSubscription** abrufen und die gewünschten Abonnementinformationen aus dem Resultset kopieren.
+Zur Auswahl des Abonnements, mit dem Sie arbeiten möchten, benötigen Sie Ihre Abonnement-ID (**-SubscriptionId**) oder den Abonnementnamen (**-SubscriptionName**). Sie können diese Informationen aus dem vorherigen Schritt kopieren. Wenn Sie über mehrere Abonnements verfügen, können Sie sie über das Cmdlet **Get-AzureRmSubscription** abrufen und die gewünschten Abonnementinformationen aus dem Resultset kopieren.
 
 Führen Sie das folgende Cmdlet mit den Informationen zu Ihrem Abonnement aus, um Ihr aktuelles Abonnement festlegen:
 
@@ -165,7 +163,7 @@ Nach dem Upgrade wird empfohlen, die Datenbank aktiv zu überwachen, um sicherzu
 Zusätzlich zur Überwachung einzelner Datenbanken können Sie [mithilfe des Portals](sql-database-elastic-pool-portal.md#monitor-and-manage-an-elastic-database-pool) oder mit [PowerShell](sql-database-elastic-pool-powershell.md#monitoring-elastic-databases-and-elastic-database-pools) auch Pools für elastische Datenbanken überwachen.
 
 
-**Ressourcenverbrauchsdaten**: Für Basic-, Standard- und Premium-Datenbanken sind Ressourcenverbrauchsdaten über die dynamische Verwaltungssicht (DMV) [sys.dm\_ db\_ resource\_stats](http://msdn.microsoft.com/library/azure/dn800981.aspx) in der Benutzerdatenbank verfügbar. Diese dynamische Verwaltungssicht stellt beinahe in Echtzeit Informationen zum Ressourcenverbrauch mit einer Genauigkeit von 15 Sekunden für die vorhergehende Stunde des Betriebs zur Verfügung. Der prozentuale DTU-Verbrauch für ein Intervall wird als maximaler prozentualer Verbrauch von CPU-, E/A- und Protokollressourcen berechnet. Die folgende Abfrage berechnet den durchschnittlichen prozentualen DTU-Verbrauch während der letzten Stunde:
+**Ressourcenverbrauchsdaten:** Für Basic-, Standard- und Premium-Datenbanken sind Ressourcenverbrauchsdaten über die dynamische Verwaltungssicht (DMV) [sys.dm\_ db\_ resource\_stats](http://msdn.microsoft.com/library/azure/dn800981.aspx) in der Benutzerdatenbank verfügbar. Diese dynamische Verwaltungssicht stellt beinahe in Echtzeit Informationen zum Ressourcenverbrauch mit einer Genauigkeit von 15 Sekunden für die vorhergehende Stunde des Betriebs zur Verfügung. Der prozentuale DTU-Verbrauch für ein Intervall wird als maximaler prozentualer Verbrauch von CPU-, E/A- und Protokollressourcen berechnet. Die folgende Abfrage berechnet den durchschnittlichen prozentualen DTU-Verbrauch während der letzten Stunde:
 
     SELECT end_time
     	 , (SELECT Max(v)
@@ -178,13 +176,13 @@ Zusätzlich zur Überwachung einzelner Datenbanken können Sie [mithilfe des Por
 
 Zusätzliche Überwachungsinformationen:
 
-- [Leitfaden zur Azure SQL-Datenbankleistung für einzelne Datenbanken](http://msdn.microsoft.com/library/azure/dn369873.aspx).
-- [Überlegungen zum Preis und zur Leistung eines Pools für elastische Datenbanken](sql-database=elastic-pool-guidance.md).
+- [Leitfaden zur Azure SQL-Datenbankleistung für Einzeldatenbanken](http://msdn.microsoft.com/library/azure/dn369873.aspx)
+- [Überlegungen zum Preis und zur Leistung eines Pools für elastische Datenbanken](sql-database=elastic-pool-guidance.md)
 - [Überwachen der Azure SQL-Datenbank mit dynamischen Verwaltungssichten](sql-database-monitoring-with-dmvs.md)
 
 
 
-**Warnungen**: Richten Sie im Azure-Portal „Warnungen“ ein, damit Sie benachrichtigt werden, wenn der DTU-Verbrauch für eine aktualisierte Datenbank eine bestimmte hohe Ebene erreicht. Datenbankwarnungen können im Azure-Portal für verschiedene Leistungsmetriken wie DTU, CPU, E/A und die Protokollierung eingerichtet werden. Navigieren Sie zu der Datenbank, und wählen Sie **Warnungsregeln** auf dem Blatt **Einstellungen** aus.
+**Warnungen:** Richten Sie im Azure-Portal „Warnungen“ ein, damit Sie benachrichtigt werden, wenn der DTU-Verbrauch für eine aktualisierte Datenbank eine bestimmte hohe Ebene erreicht. Datenbankwarnungen können im Azure-Portal für verschiedene Leistungsmetriken wie DTU, CPU, E/A und die Protokollierung eingerichtet werden. Navigieren Sie zu der Datenbank, und wählen Sie **Warnungsregeln** auf dem Blatt **Einstellungen** aus.
 
 Sie können z. B. eine E-Mail-Benachrichtigung für den "DTU Prozentsatz" festlegen, wenn der durchschnittliche prozentuale DTU-Wert 75 % innerhalb der letzten 5 Minuten überschreitet. Weitere Informationen zur Konfiguration von Warnungsbenachrichtigungen finden Sie unter [Empfangen von Warnungsbenachrichtigungen](insights-receive-alert-notifications.md).
 
@@ -203,4 +201,4 @@ Sie können z. B. eine E-Mail-Benachrichtigung für den "DTU Prozentsatz" festl
 - [Start-AzureRmSqlServerUpgrade](https://msdn.microsoft.com/library/azure/mt619403.aspx)
 - [Stop-AzureRmSqlServerUpgrade](https://msdn.microsoft.com/library/azure/mt603589.aspx)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

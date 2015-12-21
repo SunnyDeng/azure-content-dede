@@ -63,7 +63,7 @@ Im Folgenden werden die Schritte zum Burst auf Azure-Instanzen der Größe A8 od
 
 4. **Bereitstellen und Konfigurieren eines HPC Pack 2012 R2-Hauptknotens**
 
-    Laden Sie das neueste HPC Pack-Installationspaket aus dem [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=47755) herunter. Anforderungen und Anleitungen zur Vorbereitung der Azure-Burstbereitstellung finden Sie im [Handbuch mit ersten Schritten für HPC Pack](https://technet.microsoft.com/library/jj884144.aspx) und unter [Zugriff auf Azure mit Microsoft HPC Pack](https://technet.microsoft.com/library/gg481749.aspx).
+    Laden Sie das neueste HPC Pack-Installationspaket aus dem [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=49922) herunter. Anforderungen und Anleitungen zur Vorbereitung der Azure-Burstbereitstellung finden Sie im [Handbuch mit ersten Schritten für HPC Pack](https://technet.microsoft.com/library/jj884144.aspx) und unter [Zugriff auf Azure mit Microsoft HPC Pack](https://technet.microsoft.com/library/gg481749.aspx).
 
 5. **Konfigurieren eines Verwaltungszertifikats im Azure-Abonnement**
 
@@ -107,14 +107,14 @@ Im Folgenden werden die Schritte zum Burst auf Azure-Instanzen der Größe A8 od
 
 ## Szenario 2: Bereitstellen von Computeknoten in rechenintensiven virtuellen Computern (IaaS)
 
-In diesem Szenario stellen Sie HPC Pack-Hauptknoten und Clustercomputeknoten auf virtuellen Computern bereit, die zu einer Active Directory-Domäne in einem virtuellen Azure-Netzwerk gehören. Das [IaaS-Bereitstellungsskript von HPC Pack](virtual-machines-hpcpack-cluster-powershell-script.md) automatisiert den größten Teil dieses Prozesses und bietet flexible Bereitstellungsoptionen, einschließlich der Möglichkeit zum Angeben der VM-Größe A8 oder A9 für die Clusterknoten. Die folgenden Schritte erläutern das Verwenden dieser automatisierten Bereitstellungsmethode. Alternativ können Sie den Cluster mit dem Ressourcen-Manager-Bereitstellungsmodell mithilfe einer Azure-Schnellstartvorlage bereitstellen. Für Testbereitstellungen können Sie auch manuell die Active Directory-Domäne, die Hauptknoten-VM, Computeknoten-VMs und andere Teile der Infrastruktur des HPC Pack-Clusters in Azure bereitstellen. Weitere Informationen finden Sie unter [HPC-Clusteroptionen mit Microsoft HPC Pack in Azure](virtual-machines-hpcpack-cluster-options.md).
+In diesem Szenario stellen Sie den HPC Pack-Hauptknoten und Clusterserverknoten auf virtuellen Computern bereit, die zu einer Active Directory-Domäne in einem virtuellen Azure-Netzwerk gehören. Das [IaaS-Bereitstellungsskript von HPC Pack](virtual-machines-hpcpack-cluster-powershell-script.md) automatisiert den größten Teil dieses Prozesses und bietet flexible Bereitstellungsoptionen, einschließlich der Möglichkeit zum Angeben der VM-Größe A8 oder A9 für die Clusterknoten. Die folgenden Schritte erläutern das Verwenden dieser automatisierten Bereitstellungsmethode. Sie können den Cluster auch mit dem Ressourcen-Manager-Bereitstellungsmodell mithilfe einer Azure-Schnellstartvorlage bereitstellen. Für Testbereitstellungen können Sie auch manuell die Active Directory-Domäne, die Hauptknoten-VM, Computeknoten-VMs und andere Teile der Infrastruktur des HPC Pack-Clusters in Azure bereitstellen. Weitere Informationen finden Sie unter [HPC-Clusteroptionen mit Microsoft HPC Pack in Azure](virtual-machines-hpcpack-cluster-options.md).
 
 ![Cluster in Azure-VMs][iaas]
 
 
 1. **Erstellen eines Clusterhauptknotens und von Computeknoten-VMs durch Ausführen des IaaS-Bereitstellungsskripts von HPC Pack auf einem Clientcomputer**
 
- Laden Sie das HPC Pack-Paket mit dem IaaS-Bereitstellungsskript aus dem [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=47755) herunter.
+ Laden Sie das HPC Pack-Paket mit dem IaaS-Bereitstellungsskript aus dem [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=49922) herunter.
 
  Erstellen Sie zur Vorbereitung des Clientcomputers die Skriptkonfigurationsdatei, und führen Sie das Skript aus. Weitere Informationen finden Sie unter [Erstellen eines HPC-Clusters mit dem IaaS-Bereitstellungsskript von HPC Pack](virtual-machines-hpcpack-cluster-powershell-script.md). Informationen zur Bereitstellung von Computeknoten der Größen A8 und A9 finden Sie unter den Überlegungen weiter unten in diesem Artikel.
 
@@ -198,8 +198,12 @@ So führen Sie "mpipingpong" auf dem Cluster aus
 
     Ändern Sie auf einem HPC Pack-Cluster, der auf Azure-VMs bereitgestellt wurde, den Befehl wie in Schritt 2 beschrieben.
 
-5. Geben Sie nach Abschluss des Auftrags zum Anzeigen der Ausgabe (in diesem Fall die Ausgabe von Aufgabe 1 des Auftrags) Folgendes ein: task view &lt;JobID&gt;.1
+5. Geben Sie nach Abschluss des Auftrags zum Anzeigen der Ausgabe (in diesem Fall die Ausgabe von Aufgabe 1 des Auftrags) Folgendes ein:
 
+    ```
+    task view &lt;JobID&gt;.1
+    ```
+    
   Die Ausgabe enthält Durchsatzergebnisse wie die folgenden.
 
   ![Pingpong-Durchsatz][pingpong2]
@@ -246,4 +250,4 @@ Im Folgenden finden Sie Überlegungen zum Ausführen von MPI-Anwendungen auf Azu
 [pingpong1]: ./media/virtual-machines-windows-hpcpack-cluster-rdma/pingpong1.png
 [pingpong2]: ./media/virtual-machines-windows-hpcpack-cluster-rdma/pingpong2.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

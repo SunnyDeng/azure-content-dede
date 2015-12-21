@@ -29,9 +29,9 @@ In diesem Lernprogramm fügen Sie Pushbenachrichtigungen zum [Android-Schnellsta
 
 Für dieses Lernprogramm benötigen Sie Folgendes:
 
-* [Google-Konto](http://go.microsoft.com/fwlink/p/?LinkId=268302) mit einer verifizierten E-Mail-Adresse
-* [Visual Studio Community 2013.](https://go.microsoft.com/fwLink/p/?LinkID=391934)
-* Schließen Sie das [Schnellstart-Lernprogramm](../app-service-mobile-android-get-started.md) ab
+* [Google-Konto](http://go.microsoft.com/fwlink/p/?LinkId=268302) mit einer verifizierten E-Mail-Adresse.
+* [Visual Studio Community 2013](https://go.microsoft.com/fwLink/p/?LinkID=391934) &ndash; für ein Node.js-Back-End-Projekt nicht erforderlich.
+* Schließen Sie das [Schnellstart-Lernprogramm](../app-service-mobile-android-get-started.md) ab.
 
 ##<a name="create-hub"></a>Erstellen eines Notification Hubs
 
@@ -82,4 +82,4 @@ Sie können die App testen, indem Sie ein Android-Telefon direkt mit einem USB-K
 <!-- URLs -->
 [Android-Schnellstart]: app-service-mobile-android-get-started.md
 
-<!---HONumber=AcomDC_1203_2015--->
+<!---HONumber=AcomDC_1210_2015--->

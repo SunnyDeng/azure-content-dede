@@ -1,6 +1,6 @@
 
 <properties
-    pageTitle="Kostenlose 30-Tage-Testversion von Azure RemoteApp"
+    pageTitle="Kostenlose 30-Tage-Testversion von Azure RemoteApp | Microsoft Azure"
     description="Testen Sie die 30-tägige kostenlose Testversion von Azure RemoteApp."
     services="remoteapp"
     documentationCenter=""
@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="08/12/2015"
+    ms.date="12/05/2015"
     ms.author="elizapo" />
 
 
@@ -30,4 +30,4 @@ Sie möchten nicht warten? Sehen Sie sich ein kurzes Video zum [Erstellen einer 
 
 Sie haben Fragen oder Anmerkungen? Stellen Sie Fragen in [den Diskussionsforen](http://feedback.azure.com/forums/247748-azure-remoteapp). Wenn Sie über einen [Azure-Supportplan](http://azure.microsoft.com/support/plans/) verfügen, können Sie eine Supportanfrage einreichen. In unserem [Feedbackforum](http://feedback.azure.com/forums/247748-azure-remoteapp) kann jede Person Feedback abgeben.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

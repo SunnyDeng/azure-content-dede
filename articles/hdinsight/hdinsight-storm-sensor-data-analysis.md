@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="09/23/2015"
+   ms.date="12/04/2015"
    ms.author="larryfr"/>
 
 # Analysieren von Sensordaten mit Apache Storm, Event Hub und HBase in HDInsight (Hadoop)
@@ -422,4 +422,4 @@ Sie haben gelernt, wie Sie Daten mithilfe von Storm aus einem Event Hub lesen un
 
 [azure-portal]: https://manage.windowsazure.com/
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

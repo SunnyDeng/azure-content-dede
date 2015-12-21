@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="10/26/2015"
+   ms.date="12/04/2015"
    ms.author="larryfr"/>
 
 #Verwenden von Hive mit Hadoop in HDInsight über Beeline
@@ -61,7 +61,7 @@ Weitere Informationen zum Verwenden von PuTTY finden Sie unter [Verwenden von SS
     
     Speichern Sie den zurückgegebenen Hostnamen, da er später verwendet wird, wenn die Verbindung von Beeline zu HiveServer2 hergestellt wird.
     
-2. Starten Sie die Hive-Befehlszeilenschnittstelle, indem Sie den folgenden Befehl verwenden:
+2. Starten Sie die Hive-Befehlszeilenschnittstelle mit dem folgenden Befehl:
 
         beeline
 
@@ -170,7 +170,7 @@ Beeline kann auch verwendet werden, um eine Datei auszuführen, die HiveQL-Anwei
 
     * **TABELLE ERSTELLEN, FALLS NICHT VORHANDEN** – Erstellt eine Tabelle, sofern diese noch nicht vorhanden ist. Da das Schlüsselwort **EXTERN** nicht verwendet wird, ist dies eine "interne" Tabelle, die im Hive-Data Warehouse gespeichert und vollständig von Hive verwaltet wird.
     * **ALS ORC GESPEICHERT** – Speichert die Daten im ORC-Format (Optimized Row Columnar). Dies ist ein stark optimiertes und effizientes Format zum Speichern von Hive-Daten.
-    * **ÜBERSCHREIBEN EINFÜGEN ... SELECT**: Wählt die Zeilen aus der Tabelle **log4jLogs** aus, die **[ERROR]** enthalten. Dann werden die Daten in die Tabelle **errorLogs** eingefügt.
+    * **ÜBERSCHREIBEN EINFÜGEN ... AUSWÄHLEN**: Wählt die Zeilen aus der Tabelle **log4jLogs** aus, die **[FEHLER]** enthalten. Dann werden die Daten in die Tabelle **errorLogs** eingefügt.
     
     > [AZURE.NOTE]Im Gegensatz zu externen Tabellen werden beim Ablegen von internen Tabellen auch die zugrunde liegenden Daten gelöscht.
     
@@ -184,7 +184,7 @@ Beeline kann auch verwendet werden, um eine Datei auszuführen, die HiveQL-Anwei
 
         SELECT * from errorLogs;
 
-    Es sollten drei Datenzeilen zurückgegeben werden, die alle in Spalte „t4“ den Wert **[ERROR]** enthalten.
+    Es sollten drei Datenzeilen zurückgegeben werden, die alle in Spalte „t4“ den Wert **[FEHLER]** enthalten:
     
         +---------------+---------------+---------------+---------------+---------------+---------------+---------------+--+
         | errorlogs.t1  | errorlogs.t2  | errorlogs.t3  | errorlogs.t4  | errorlogs.t5  | errorlogs.t6  | errorlogs.t7  |
@@ -229,18 +229,12 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 
 [putty]: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 
-[hdinsight-storage]: hdinsight-use-blob-storage.md
 
 [hdinsight-provision]: hdinsight-provision-clusters.md
 [hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically.md
 [hdinsight-upload-data]: hdinsight-upload-data.md
-[hdinsight-get-started]: hdinsight-get-started.md
 
 
 [powershell-here-strings]: http://technet.microsoft.com/library/ee692792.aspx
 
-[image-hdi-hive-powershell]: ./media/hdinsight-use-hive/HDI.HIVE.PowerShell.png
-[img-hdi-hive-powershell-output]: ./media/hdinsight-use-hive/HDI.Hive.PowerShell.Output.png
-[image-hdi-hive-architecture]: ./media/hdinsight-use-hive/HDI.Hive.Architecture.png
-
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1210_2015-->

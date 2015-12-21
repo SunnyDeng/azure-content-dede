@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/02/2015" 
+	ms.date="12/08/2015" 
 	ms.author="mandia"/>
 
 
@@ -23,11 +23,11 @@ Azure BizTalk Services bieten eine Sicherungs- und Wiederherstellungsfunktion. I
 
 Sie können BizTalk Services auch mithilfe der [BizTalk Services-REST-API](http://go.microsoft.com/fwlink/p/?LinkID=325584) sichern.
 
+> [AZURE.NOTE]Hybridverbindungen werden editionsunabhängig NICHT gesichert. Sie müssen die Hybridverbindungen neu erstellen.
+
 ## Voraussetzungen
 
 - Sichern und Wiederherstellen ist unter Umständen nicht für alle Editionen verfügbar. Siehe [BizTalk Services: Editionsübersicht](biztalk-editions-feature-chart.md).
-
-	**Hinweis** Hybridverbindungen werden editionsunabhängig NICHT gesichert.
 
 - Mit dem klassischen Azure-Portal können Sie bedarfsgesteuerte oder geplante Sicherungskopien erstellen.
 
@@ -86,7 +86,7 @@ Wenn auf dem BizTalk Service-Dashboard der Status **Fehler** angezeigt wird:
 
 ## Wiederherstellen
 
-Sie können eine Sicherung entweder über das klassische Azure-Portal oder über die [REST-API zum Wiederherstellen von BizTalk Services](http://go.microsoft.com/fwlink/p/?LinkID=325582) wiederherstellen. Dieser Abschnitt enthält die Schritte zur Wiederherstellung über das klassische Portal.
+Sie können eine Sicherung über das klassische Azure-Portal oder über die [REST-API zum Wiederherstellen von BizTalk Services](http://go.microsoft.com/fwlink/p/?LinkID=325582) wiederherstellen. Dieser Abschnitt enthält die Schritte zur Wiederherstellung über das klassische Portal.
 
 #### Vor dem Wiederherstellen einer Sicherung
 
@@ -96,7 +96,7 @@ Sie können eine Sicherung entweder über das klassische Azure-Portal oder über
 
 #### Wiederherstellen einer Sicherung
 
-1. Wählen Sie im klassischen Azure-Portal **Neu** > **App Services** > **BizTalk Service** > **Wiederherstellen** aus:
+1. Wählen Sie im klassischen Azure-Portal **Neu** > **App-Dienste** > **BizTalk Service** > **Wiederherstellen** aus:
 
 	![Wiederherstellen einer Sicherung][Restore]
 
@@ -214,7 +214,7 @@ Wenn die Nachverfolgungsdatenbank gelöscht wird und wiederhergestellt werden so
 
 ## Weiter
 
-Um Azure BizTalk Services im klassischen Azure-Portal zu erstellen, wechseln Sie zu [BizTalk Services: Bereitstellen mit dem klassischen Azure-Portal](http://go.microsoft.com/fwlink/p/?LinkID=302280). Wenn Sie mit dem Erstellen von Anwendungen beginnen möchten, wechseln Sie zu [Azure BizTalk Services](http://go.microsoft.com/fwlink/p/?LinkID=235197).
+Um Azure BizTalk Services im klassischen Azure-Portal zu erstellen, lesen Sie [Konfigurieren von BizTalk Services im Azure-Portal](http://go.microsoft.com/fwlink/p/?LinkID=302280). Wenn Sie mit dem Erstellen von Anwendungen beginnen möchten, wechseln Sie zu [Azure BizTalk Services](http://go.microsoft.com/fwlink/p/?LinkID=235197).
 
 ## Weitere Informationen
 - [Sichern von BizTalk Services](http://go.microsoft.com/fwlink/p/?LinkID=325584)
@@ -233,4 +233,4 @@ Um Azure BizTalk Services im klassischen Azure-Portal zu erstellen, wechseln Sie
 [RestoreBizTalkService]: ./media/biztalk-backup-restore/RestoreBizTalkServiceWindow.png
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

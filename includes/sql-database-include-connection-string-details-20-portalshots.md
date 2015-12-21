@@ -7,29 +7,29 @@ Latest Freshness check:  2015-09-02 , GeneMi.
 -->
 
 
-### Obtain the connection string from the Azure portal
+### Abrufen der Verbindungszeichenfolge aus dem Azure-Portal
 
 
-Use the [Azure preview portal](http://portal.azure.com/) to obtain the connection string necessary for your client program to interact with Azure SQL Database:
+Nutzen Sie das [Azure-Vorschauportal](http://portal.azure.com/) zum Abrufen der Verbindungszeichenfolge, die für die Interaktion des Clientprogramms mit der Azure SQL-Datenbank erforderlich ist:
 
 
-1. Click **BROWSE** > **SQL databases**.
+1. Klicken auf **DURCHSUCHEN** > **SQL-Datenbanken**.
 
-    ![Select SQL][1-select-sql]
+    ![SQL auswählen][1-select-sql]
 
-2. Enter the name of your database into the filter text box near the upper-left of the **SQL databases** blade.
+2. Geben Sie in das Textfeld "Filter" nahe der oberen linken Ecke des Blattes **SQL-Datenbanken** den Namen der Datenbank ein.
 
-    ![Select Database][2-select-database]]
+    ![Datenbank auswählen][2-select-database]]
 
-3. Click the row for your database.
+3. Klicken Sie auf die Zeile für die Datenbank.
 
-4. After the blade appears for your database, for visual convenience you can click the standard minimize controls to collapse the blades  you used for browsing and database filtering.
+4. Nachdem das Blatt für die Datenbank angezeigt wird, können Sie der visuellen Einfachheit halber auf die Standardsteuerelemente zum Minimieren klicken, um die Blätter auszublenden, die Sie zum Durchsuchen und Filtern verwendet haben.
 
-5. Make note of the **SQL database** name and the **Server name**.  The username will be yourusername@yourserver.
+5. Notieren Sie sich den Namen der **SQL-Datenbank** und den **Servernamen**. Der Benutzername lautet yourusername@yourserver.
 
-	![Get Connection Details][3-get-connection-details]
+	![Verbindungsdetails abrufen][3-get-connection-details]
 
-7.  Paste the connection details into your client program code.  You will need to replace the {your_password_here} with your real password.
+7.  Fügen Sie die Verbindungsdetails in den Code der Clientanwendung ein. Ersetzen Sie {your\_password\_here} durch Ihr tatsächliches Kennwort.
 
 
 <!--
@@ -55,3 +55,5 @@ includes/sql-database-include-connection-string-20-portalshots.md
 includes/sql-database-include-connection-string-30-compare.md
 includes/sql-database-include-connection-string-40-config.md
 -->
+
+<!---HONumber=AcomDC_1210_2015-->

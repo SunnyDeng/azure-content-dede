@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/07/2015" 
+	ms.date="12/05/2015" 
 	ms.author="juliako"/>
 
 
@@ -166,8 +166,8 @@ Im folgenden Code werden .NET SDK-Erweiterungsmethoden aufgerufen, durch die ein
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-##Siehe auch
+##Weitere Informationen
 
 [Herunterladen von Medienobjekten](media-services-deliver-asset-download.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="identity"
-	ms.date="10/12/2015"
+	ms.date="12/04/2015"
 	ms.author="inhenk"/>
 
 # Rollenbasierte Zugriffssteuerung in Azure Active Directory
@@ -22,7 +22,7 @@
 Die rollenbasierte Zugriffssteuerung in Azure (Role-Based Access Control, RBAC) ermöglicht eine präzise Zugriffsverwaltung für Azure. Mithilfe von RBAC können Sie Aufgaben in Ihrem DevOps-Team verteilen und Benutzern nur den Zugriff gewähren, den sie zur Ausführung ihrer Aufgaben benötigen.
 
 ### Grundlagen zur Zugriffsverwaltung in Azure
-Jedes Azure-Abonnement befindet sich in einem Azure Active Directory. Nur Benutzern, Gruppen und Anwendungen aus diesem Verzeichnis kann Verwaltungszugriff auf Ressourcen im zugehörigen Azure-Abonnement gewährt werden. Die Verwaltung kann über das Azure-Verwaltungsportal, Azure-Befehlszeilentools und Azure-Verwaltungs-APIs erfolgen.
+Jedes Azure-Abonnement befindet sich in einem Azure Active Directory. Nur Benutzern, Gruppen und Anwendungen aus diesem Verzeichnis kann Verwaltungszugriff auf Ressourcen im zugehörigen Azure-Abonnement gewährt werden. Die Verwaltung kann über das klassische Azure-Portal, Azure-Befehlszeilentools und Azure-Verwaltungs-APIs erfolgen.
 
 Der Zugriff wird gewährt, indem Benutzern, Gruppen und Anwendungen die jeweils geeignete RBAC-Rolle auf der richtigen Ebene zugewiesen wird. Um Zugriff auf das gesamten Abonnement zu gewähren, weisen Sie eine Rolle auf Abonnementebene zu. Um Zugriff auf eine bestimmte Ressourcengruppe innerhalb eines Abonnements zu gewähren, weisen Sie eine Rolle auf Ressourcengruppenebene zu. Sie können Rollen auch für bestimmte Ressourcen zuweisen, wie z. B.für Websites, virtuelle Computer und Subnetze, um nur Zugriff auf eine Ressource zu gewähren.
 
@@ -39,14 +39,14 @@ Unter [Integrierte RBAC-Rollen](role-based-access-built-in-roles.md) werden die 
 Jedes Abonnement in Azure gehört zu einem einzigen Verzeichnis, jede Ressourcengruppe gehört zu einem einzigen Abonnement, und jede Ressource gehört zu einer einzigen Ressourcengruppe. Der Zugriff, den Sie auf übergeordneter Ebene gewähren, wird auf untergeordneter Ebene geerbt. Wenn Sie einer Azure AD-Gruppe die Rolle "Leser" auf Abonnementebene zuweisen, können die Mitglieder dieser Rolle alle Ressourcengruppen und alle Ressourcen in diesem Abonnement anzeigen. Wenn Sie einer Anwendung auf Ressourcengruppenebene die Rolle "Mitwirkender" zuweisen, kann diese Anwendung alle Ressourcentypen in dieser Ressourcengruppe verwalten. Sie kann jedoch keine anderen Ressourcengruppen im Abonnement verwalten.
 
 ### Azure RBAC im Vergleich zu klassischen Administratoren und Co-Admins für Abonnements
-Klassische Administratoren und Co-Admins für Abonnements verfügen über vollständigen Zugriff auf das Azure-Abonnement. Sie können Ressourcen sowohl über das klassische Portal (https://manage.windowsazure.com) und Azure Service Manager-APIs als auch über das neue Verwaltungsportal (https://portal.azure.com) und die neuen Azure-Ressourcen-Manager-APIs verwalten. Im RBAC-Modell wird klassischen Administratoren die Besitzerrolle auf Abonnementebene zugewiesen.
+Klassische Administratoren und Co-Admins für Abonnements verfügen über vollständigen Zugriff auf das Azure-Abonnement. Sie können Ressourcen sowohl über das klassische Azure-Portal (https://manage.windowsazure.com) und Azure Service Manager-APIs als auch über das Azure-Portal (https://portal.azure.com) und die neuen Azure-Ressourcen-Manager-APIs verwalten. Im RBAC-Modell wird klassischen Administratoren die Besitzerrolle auf Abonnementebene zugewiesen.
 
-Das präzisere Autorisierungsmodell (Azure RBAC) wird nur vom neuen Verwaltungsportal (https://portal.azure.com) und den Azure-Ressourcen-Manager-APIs unterstützt. Benutzer und Anwendungen, denen eine RBAC-Rolle zugewiesen ist (auf Abonnement-/Ressourcengruppen-/Ressourcenebene), können das klassische Verwaltungsportal (http://manage.windowsazure.com) und die Azure Service Manager-APIs nicht verwenden.
+Das präzisere Autorisierungsmodell (Azure RBAC) wird nur vom neuen Azure-Portal (https://portal.azure.com) und den Azure-Ressourcen-Manager-APIs unterstützt. Benutzer und Anwendungen, denen eine RBAC-Rolle zugewiesen ist (auf Abonnement-/Ressourcengruppen-/Ressourcenebene), können das klassische Verwaltungsportal (http://manage.windowsazure.com) und die Azure Service Manager-APIs nicht verwenden.
 
 ### Autorisierung für Verwaltungsvorgänge im Vergleich zu Datenvorgängen
-Das präzisere Autorisierungsmodell (Azure RBAC)wird nur für Verwaltungsvorgänge für die Azure-Ressourcen im Azure-Portal und in den Azure-Ressourcen-Manager-APIs unterstützt. Über RBAC können nicht alle Vorgänge auf Datenebene für Azure-Ressourcen autorisiert werden. Während das Erstellen/Lesen/Aktualisieren/Löschen von Speicherkonten über RBAC gesteuert werden kann, lassen sich dieselben Vorgänge für Blobs oder Tabellen in einem Speicherkonto noch nicht über RBAC steuern. Ebenso kann das Erstellen/Lesen/Aktualisieren/Löschen einer SQL-Datenbank über RBAC gesteuert werden, während sich dieselben Vorgänge noch nicht für SQL-Tabellen in einer Datenbank über RBAC steuern lassen.
+Das präzisere Autorisierungsmodell (Azure RBAC) wird nur für Verwaltungsvorgänge für die Azure-Ressourcen im klassischen Azure-Portal und in den Azure-Ressourcen-Manager-APIs unterstützt. Über RBAC können nicht alle Vorgänge auf Datenebene für Azure-Ressourcen autorisiert werden. Während das Erstellen/Lesen/Aktualisieren/Löschen von Speicherkonten über RBAC gesteuert werden kann, lassen sich dieselben Vorgänge für Blobs oder Tabellen in einem Speicherkonto noch nicht über RBAC steuern. Ebenso kann das Erstellen/Lesen/Aktualisieren/Löschen einer SQL-Datenbank über RBAC gesteuert werden, während sich dieselben Vorgänge noch nicht für SQL-Tabellen in einer Datenbank über RBAC steuern lassen.
 
-## Verwalten des Zugriffs über das Azure-Verwaltungsportal
+## Verwalten des Zugriffs mit dem klassischen Azure-Portal
 ### Zugriff anzeigen
 Wählen Sie die Zugriffseinstellungen auf dem Blatt der Ressourcengruppe im Abschnitt mit den grundlegenden Informationen aus. Auf dem Blatt **Benutzer** werden alle Benutzer, Gruppen und Anwendungen aufgeführt, denen Zugriff auf die Ressourcengruppe gewährt wurde. Der Zugriff wird entweder in der Ressourcengruppe zugewiesen oder aus einer Zuweisung im übergeordneten Abonnement geerbt.
 
@@ -76,13 +76,13 @@ Wählen Sie die Zugriffseinstellungen auf dem Blatt der Ressourcengruppe im Absc
 ## Verwalten des Zugriffs mit Azure PowerShell
 Der Zugriff kann mithilfe von Azure RBAC-Befehlen in den Azure PowerShell-Tools verwaltet werden.
 
--	Verwenden Sie `Get-AzureRoleDefinition` zum Auflisten von RBAC-Rollen für die Zuweisung und zum Überprüfen der Vorgänge, auf die sie Zugriff gewähren.
+-	Verwenden Sie `Get-AzureRmRoleDefinition` zum Auflisten von RBAC-Rollen für die Zuweisung und zum Überprüfen der Vorgänge, auf die sie Zugriff gewähren.
 
--	Verwenden Sie `Get-AzureRoleAssignment` zum Auflisten der RBAC-Zugriffszuweisungen, die im angegebenen Abonnement bzw. in der angegebenen Ressource oder Ressourcengruppe gelten. Verwenden Sie `ExpandPrincipalGroups` zum Auflisten der Zugriffszuweisungen zum angegebenen Benutzer sowie zu den Gruppen, denen der Benutzer angehört. Verwenden Sie den `IncludeClassicAdministrators`-Parameter, um auch die klassischen Administratoren und Co-Admins für Abonnements aufzulisten.
+-	Verwenden Sie `Get-AzureRmRoleAssignment` zum Auflisten der RBAC-Zugriffszuweisungen, die im angegebenen Abonnement bzw. in der angegebenen Ressource oder Ressourcengruppe gelten. Verwenden Sie `ExpandPrincipalGroups` zum Auflisten der Zugriffszuweisungen zum angegebenen Benutzer sowie zu den Gruppen, denen der Benutzer angehört. Verwenden Sie den `IncludeClassicAdministrators`-Parameter, um auch die klassischen Administratoren und Co-Admins für Abonnements aufzulisten.
 
--	Verwenden Sie `New-AzureRoleAssignment` zum Gewähren des Zugriffs für Benutzer, Gruppen und Anwendungen.
+-	Verwenden Sie `New-AzureRmRoleAssignment` zum Gewähren des Zugriffs für Benutzer, Gruppen und Anwendungen.
 
--	Verwenden Sie `Remove-AzureRoleAssignment` zum Entfernen des Zugriffs.
+-	Verwenden Sie `Remove-AzureRmRoleAssignment` zum Entfernen des Zugriffs.
 
 Detaillierte Beispiele zur Verwaltung des Zugriffs mithilfe von Azure PowerShell finden Sie unter [Verwalten des Zugriffs mit Azure PowerShell](role-based-access-control-manage-access-powershell.md).
 
@@ -105,16 +105,16 @@ Alle Zugriffsänderungen, die in Ihrem Azure-Abonnement vorgenommen werden, werd
 ### Erstellen eines Berichts mit Azure PowerShell
 Verwenden Sie folgenden PowerShell-Befehl, um einen Bericht zu erstellen, der darüber informiert, wer welche Art von Zugriff auf welcher Ebene in Ihren Azure-Abonnements gewährt oder widerrufen hat.
 
-    Get-AzureAuthorizationChangeLog
+    `Get-AzureAuthorizationChangeLog`
 
 ### Erstellen eines Berichts über die Azure-Befehlszeilenschnittstelle
 Verwenden Sie folgenden Befehl in der Azure-Befehlszeilenschnittstelle, um einen Bericht zu erstellen, der darüber informiert, wer welche Art von Zugriff auf welcher Ebene in Ihren Azure-Abonnements gewährt oder widerrufen hat.
 
-    azure authorization changelog
+    `azure authorization changelog`
 
 > [AZURE.NOTE]Zugriffsänderungen können für die letzten 90 Tage abgefragt werden (in Zeiträumen von jeweils 15 Tagen).
 
-Das folgende Beispiel führt alle Zugriffsänderungen im Abonnement für die letzten 7 Tage auf.
+Unten sind alle Zugriffsänderungen im Abonnement für die letzten 7 Tage aufgeführt.
 
 ![](./media/role-based-access-control-configure/access-change-history.png)
 
@@ -123,4 +123,72 @@ Zugriffsänderungen lassen sich zum einfacheren Überprüfen in eine Kalkulation
 
 ![](./media/role-based-access-control-configure/change-history-spreadsheet.png)
 
-<!---HONumber=Oct15_HO3-->
+## Benutzerdefinierte Rollen in Azure RBAC
+Erstellen Sie eine benutzerdefinierte Rolle in Azure RBAC, falls keine der integrierten Rollen Ihre speziellen Zugriffsanforderungen erfüllt. Benutzerdefinierte Rollen können mit RBAC-Befehlszeilentools in Azure PowerShell und in der Azure-Befehlszeilenschnittstelle erstellt werden. Wie integrierte Rollen auch, können benutzerdefinierte Rollen Benutzern, Gruppen und Anwendungen auf Abonnement-, Ressourcengruppen- und Ressourcenebene zugewiesen werden.
+
+Es folgt ein Beispiel für die Definition einer benutzerdefinierten Rolle, die das Überwachen und Neustarten virtueller Maschinen ermöglicht:
+
+```
+{
+  "Name": "Virtual Machine Operator",
+  "Id": "cadb4a5a-4e7a-47be-84db-05cad13b6769",
+  "IsCustom": true,
+  "Description": "Can monitor and restart virtual machines.",
+  "Actions": [
+    "Microsoft.Storage/*/read",
+    "Microsoft.Network/*/read",
+    "Microsoft.Compute/*/read",
+    "Microsoft.Compute/virtualMachines/start/action",
+    "Microsoft.Compute/virtualMachines/restart/action",
+    "Microsoft.Authorization/*/read",
+    "Microsoft.Resources/subscriptions/resourceGroups/read",
+    "Microsoft.Insights/alertRules/*",
+    "Microsoft.Insights/diagnosticSettings/*",
+    "Microsoft.Support/*"
+  ],
+  "NotActions": [
+
+  ],
+  "AssignableScopes": [
+    "/subscriptions/c276fc76-9cd4-44c9-99a7-4fd71546436e",
+    "/subscriptions/e91d47c4-76f3-4271-a796-21b4ecfe3624",
+    "/subscriptions/34370e90-ac4a-4bf9-821f-85eeedeae1a2"
+  ]
+}
+```
+### Actions
+Mit der Actions-Eigenschaft einer benutzerdefinierten Rolle werden die Azure-Vorgänge angegeben, auf die mit der Rolle Zugriff gewährt wird. Es handelt sich um eine Sammlung von Vorgangszeichenfolgen, mit denen sicherungsfähige Vorgänge von Azure-Ressourcenanbietern identifiziert werden. Vorgangszeichenfolgen mit Platzhaltern (*) gewähren Zugriff auf alle Vorgänge, die mit der Vorgangszeichenfolge übereinstimmen. Beispiel:
+
+-	`*/read` gewährt Zugriff auf Lesevorgänge für alle Ressourcentypen aller Azure-Ressourcenanbieter.
+-	`Microsoft.Network/*/read` gewährt Zugriff auf Lesevorgänge für alle Ressourcentypen im Microsoft.Network-Ressourcenanbieter von Azure.
+-	`Microsoft.Compute/virtualMachines/*` gewährt Zugriff auf alle Vorgänge virtueller Maschinen und die dazugehörigen untergeordneten Ressourcentypen.
+-	`Microsoft.Web/sites/restart/Action` gewährt Zugriff zum Neustarten von Websites.
+
+Verwenden Sie den Befehl `Get-AzureRmProviderOperation` oder `azure provider operations show`, um die Vorgänge von Ressourcenanbietern aufzulisten. Sie können diese Befehle auch verwenden, um zu überprüfen, ob eine Vorgangszeichenfolge gültig ist, und um Zeichenfolgen für Platzhaltervorgänge zu erweitern.
+
+![](./media/role-based-access-control-configure/1-get-azurermprovideroperation-1.png)
+
+![](./media/role-based-access-control-configure/1-azure-provider-operations-show.png)
+
+### Not Actions
+Verwenden Sie die **NotActions**-Eigenschaft einer benutzerdefinierten Rolle im folgenden Fall: Wenn sich die Gruppe der Vorgänge, die Sie zulassen möchten, leicht ausdrücken lässt, indem Sie bestimmte Vorgänge ausschließen, anstatt alle Vorgänge bis auf die Vorgänge einzuschließen, die ausgeschlossen werden sollen. Der effektive Zugriff, der von einer benutzerdefinierten Rolle gewährt wird, wird berechnet, indem die **NotActions**-Vorgänge von den Actions-Vorgängen ausgeschlossen werden.
+
+Beachten Sie Folgendes: Wenn einem Benutzer eine Rolle zugewiesen wird, mit der ein Vorgang in **NotActions** ausgeschlossen wird, und dem Benutzer dann eine zweite Rolle zugewiesen wird, mit der Zugriff auf denselben Vorgang gewährt wird, kann der Benutzer den Vorgang durchführen. **NotActions** ist keine Verweigerungsregel. Es ist lediglich eine bequeme Möglichkeit, eine Gruppe zulässiger Vorgänge zu erstellen, wenn bestimmte Vorgänge ausgeschlossen werden müssen.
+
+### AssignableScopes
+Mit der **AssignableScopes**-Eigenschaft der benutzerdefinierten Rolle werden die Bereiche angegeben (Abonnements, Ressourcengruppen oder Ressourcen), in denen die benutzerdefinierte Rolle für die Zuweisung zu Benutzern, Gruppen und Anwendungen verfügbar ist. Mit **AssignableScopes** können Sie die benutzerdefinierte Rolle für die Zuweisung nur in den Abonnements oder Ressourcengruppen verfügbar machen, für die dies erforderlich ist. So wird verhindert, dass die Benutzeroberfläche für die restlichen Abonnements oder Ressourcengruppen unnötig belastet wird. Mit **AssignableScopes** einer benutzerdefinierten Rolle wird außerdem gesteuert, wer die Rolle anzeigen, aktualisieren und löschen kann. Im Folgenden sind einige gültige zuweisbare Bereiche aufgeführt:
+
+-	„/subscriptions/c276fc76-9cd4-44c9-99a7-4fd71546436e“, „/subscriptions/e91d47c4-76f3-4271-a796-21b4ecfe3624“: Macht die Rolle für die Zuweisung in zwei Abonnements verfügbar.
+-	„/subscriptions/c276fc76-9cd4-44c9-99a7-4fd71546436e“: Macht die Rolle für die Zuweisung in einem einzelnen Abonnement verfügbar.
+-	„/subscriptions/c276fc76-9cd4-44c9-99a7-4fd71546436e/resourceGroups/Network“: Macht die Rolle für die alleinige Zuweisung in der Netzwerkressourcengruppe verfügbar.
+
+### Zugriffssteuerung für benutzerdefinierte Rollen
+Mit der **AssignableScopes**-Eigenschaft der benutzerdefinierten Rolle wird festgelegt, wer die Rolle anzeigen, ändern und löschen kann.
+
+**Wer kann eine benutzerdefinierte Rolle erstellen?** Die Erstellung der benutzerdefinierten Rolle ist nur erfolgreich, wenn der Benutzer, der die Rolle erstellt, eine benutzerdefinierte Rolle für alle angegebenen **AssignableScopes**-Bereiche erstellen darf. Die Erstellung der benutzerdefinierten Rolle ist nur erfolgreich, wenn der Benutzer, der die Rolle erstellt, `Microsoft.Authorization/roleDefinition/write operation` für alle **AssignableScopes**-Bereiche der Rolle durchführen kann. Besitzer (und Benutzerzugriff-Administratoren) von Abonnements, Ressourcengruppen und Ressourcen können also benutzerdefinierte Rollen für die Verwendung in diesen Bereichen erstellen.
+
+**Wer kann eine benutzerdefinierte Rolle ändern?** Benutzer, die berechtigt sind, benutzerdefinierte Rollen für alle **AssignableScopes**-Bereiche einer Rolle zu aktualisieren, können diese benutzerdefinierte Rolle ändern. Benutzer, die den Vorgang `Microsoft.Authorization/roleDefinition/write` für alle **AssignableScopes**-Bereiche einer benutzerdefinierten Rolle durchführen können, können diese benutzerdefinierte Rolle ändern. Wenn eine benutzerdefinierte Rolle beispielsweise in zwei Azure-Abonnements zuweisbar ist (also in der **AssignableScopes**-Eigenschaft über zwei Abonnements verfügt), gilt Folgendes: Ein Benutzer muss Besitzer (oder Benutzerzugriff-Administrator) beider Abonnements sein, um die benutzerdefinierte Rolle ändern zu können.
+
+**Wer kann benutzerdefinierte Rollen anzeigen, die für die Zuweisung in einem Bereich verfügbar sind?** Benutzer, die den Vorgang `Microsoft.Authorization/roleDefinition/read` für einen Bereich durchführen können, können die RBAC-Rollen anzeigen, die für die Zuweisung in diesem Bereich verfügbar sind. Alle integrierten Rollen in Azure RBAC ermöglichen das Anzeigen von Rollen, die für die Zuweisung verfügbar sind.
+
+<!---HONumber=AcomDC_1210_2015-->

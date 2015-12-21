@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
-	ms.date="08/14/2015"
+	ms.date="12/04/2015"
 	ms.author="jroth" />
 
 # Konfigurieren von AlwaysOn-Verfügbarkeitsgruppen in virtuellen Azure-Computern (PowerShell)
@@ -536,7 +536,7 @@ Sie sind jetzt bereit, die Verfügbarkeitsgruppe zu konfigurieren. Sie verwenden
 		$svc2.Start();
 		$svc2.WaitForStatus([System.ServiceProcess.ServiceControllerStatus]::Running,$timeout)
 
-1. Laden Sie **CreateAzureFailoverCluster.ps1** von [Create WSFC Cluster for AlwaysOn Availability Groups in Windows Azure VM](http://gallery.technet.microsoft.com/scriptcenter/Create-WSFC-Cluster-for-7c207d3a) (Erstellen eines WSFC-Clusters für AlwaysOn-Verfügbarkeitsgruppen in Azure-VMs, in englischer Sprache) in das lokale Arbeitsverzeichnis herunter. Dieses Skript unterstützt Sie beim Erstellen eines funktionsfähigen WSFC-Clusters. Wichtige Informationen zum Zusammenwirken von WSFC mit dem Azure-Netzwerk finden Sie unter [Hochverfügbarkeit und Notfallwiederherstellung für SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions.md).
+1. Laden Sie **CreateAzureFailoverCluster.ps1** von [Create WSFC Cluster for AlwaysOn Availability Groups in Microsoft Azure VM](http://gallery.technet.microsoft.com/scriptcenter/Create-WSFC-Cluster-for-7c207d3a) (Erstellen eines WSFC-Clusters für AlwaysOn-Verfügbarkeitsgruppen in Azure-VMs, in englischer Sprache) in das lokale Arbeitsverzeichnis herunter. Dieses Skript unterstützt Sie beim Erstellen eines funktionsfähigen WSFC-Clusters. Wichtige Informationen zum Zusammenwirken von WSFC mit dem Azure-Netzwerk finden Sie unter [Hochverfügbarkeit und Notfallwiederherstellung für SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions.md).
 
 1. Wechseln Sie in das Arbeitsverzeichnis, und erstellen Sie mithilfe des heruntergeladenen Skripts den WSFC-Cluster.
 
@@ -631,4 +631,4 @@ Sie haben nun erfolgreich SQL Server AlwaysOn implementiert, indem Sie eine Verf
 
 Weitere Informationen zur Verwendung von SQL Server in Azure finden Sie unter [SQL Server auf virtuellen Azure-Computern](../articles/virtual-machines/virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

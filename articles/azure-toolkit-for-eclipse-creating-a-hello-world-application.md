@@ -16,7 +16,7 @@
     ms.date="11/19/2015" 
     ms.author="robmcm"/>
 
-<!-- Legacy MSDN URL = https://msdn.microsoft.com/de-DE/library/azure/hh690944.aspx -->
+<!-- Legacy MSDN URL = https://msdn.microsoft.com/library/azure/hh690944.aspx -->
 
 # Erstellen einer Hello World-Anwendung für Azure in Eclipse #
 
@@ -176,4 +176,4 @@ Weitere Informationen zum Verwenden von Azure mit Java finden Sie im [Azure Java
 [ic719491]: ./media/azure-toolkit-for-eclipse-creating-a-hello-world-application/ic719491.png
 [ic789598]: ./media/azure-toolkit-for-eclipse-creating-a-hello-world-application/ic789598.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

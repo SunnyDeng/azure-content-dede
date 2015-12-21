@@ -13,13 +13,13 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/03/2015" 
+	ms.date="12/05/2015" 
 	ms.author="juliako"/>
 
 #Schützen von Inhalten – Übersicht
 
 
-Microsoft Azure Media Services ermöglicht die Sicherung Ihrer Medien ab dem Zeitpunkt, an dem sie Ihren Computer durch Speicherung, Verarbeitung und Übermittlung verlassen. Mit Media Services können Sie Inhalte dynamisch verschlüsselt übermitteln, und zwar mit AES (Advanced Encryption Standard unter Verwendung eines 128-Bit-Verschlüsselungsschlüssels) und Common Encryption (CENC, allgemeine Verschlüsselung) mit PlayReady- oder Widevine-DRM. Media Services umfasst auch einen Dienst für die Übermittlung von Schlüsseln und PlayReady-Lizenzen an autorisierte Clients. Media Services bietet derzeit keinen Widevine-Lizenzserver. Die folgenden AMS-Partner unterstützen Sie bei der Übermittlung von Widevine-Lizenzen: [Axinom](http://www.axinom.com/press/ibc-axinom-drm-6/), [EZDRM](http://ezdrm.com/), [castLabs](http://castlabs.com/company/partners/azure/).
+Microsoft Azure Media Services ermöglicht die Sicherung Ihrer Medien ab dem Zeitpunkt, an dem sie Ihren Computer durch Speicherung, Verarbeitung und Übermittlung verlassen. Mit Media Services können Sie Inhalte dynamisch verschlüsselt übermitteln, und zwar mit AES (Advanced Encryption Standard unter Verwendung eines 128-Bit-Verschlüsselungsschlüssels) und Common Encryption (CENC, allgemeine Verschlüsselung) mit PlayReady- oder Widevine-DRM. Media Services umfasst auch einen Dienst für die Übermittlung von AES-Schlüsseln und PlayReady-Lizenzen an autorisierte Clients. Die Bereitstellung von Widevine-Lizenzübermittlungsdiensten über Azure Media Services befindet sich in der Vorschau. Sie können sich auch von folgenden AMS-Partnern bei der Übermittlung von Widevine-Lizenzen unterstützen lassen: [Axinom](http://www.axinom.com/press/ibc-axinom-drm-6/), [EZDRM](http://ezdrm.com/), [castLabs](http://castlabs.com/company/partners/azure/).
 
 - Die folgende Abbildung veranschaulicht den Workflow für dynamische Common Encryption mit PlayReady- und/oder Widevine-DRM. Weitere Informationen finden Sie unter [Verwenden von dynamischer allgemeiner Verschlüsselung mit PlayReady- und/oder Widevine-DRM](media-services-protect-with-drm.md).
 
@@ -138,4 +138,4 @@ Weitere Informationen finden Sie unter [How to integrate Azure PlayReady License
 
 [content-protection]: ./media/media-services-content-protection-overview/media-services-content-protection.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

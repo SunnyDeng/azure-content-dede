@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="09/28/2015"
+	ms.date="12/07/2015"
 	ms.author="wesmc"/>
 
 # Vorläufiges Löschen in Mobile Services
@@ -165,4 +165,4 @@ Weitere Informationen zum Planen von periodischen Aufträgen mit Mobiles Service
 [Offlinedaten-Synchronisierung für Mobile Services]: mobile-services-windows-store-dotnet-get-started-offline-data.md
 [klassischen Azure-Portal]: https://manage.windowsazure.com/
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

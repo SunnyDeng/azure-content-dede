@@ -1,6 +1,6 @@
 
 <properties
-	pageTitle="Überlegungen zum Entwurf der Azure Active Directory-Hybrid-Identität – Ermitteln der Anforderungen in Bezug auf die Zugriffssteuerung | Microsoft Azure"
+	pageTitle="Überlegungen zum Entwurf der Azure Active Directory-Hybrididentität – Ermitteln der Anforderungen in Bezug auf die Zugriffssteuerung | Microsoft Azure"
 	description="Es werden die Säulen der Identität erläutert, und es wird die Ermittlung der Zugriffsanforderungen für Ressourcen für Benutzer in einer Hybrid-Umgebung beschrieben."
 	documentationCenter=""
 	services="active-directory"
@@ -14,7 +14,7 @@
 	ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity" 
-	ms.date="11/11/2015"
+	ms.date="12/07/2015"
 	ms.author="yuridio"/>
 
 # Ermitteln der Zugriffssteuerungsanforderungen für Ihre Hybrid-Identitätslösung
@@ -69,4 +69,4 @@ Die Authentifizierung und Autorisierung sind wichtige Elemente, um über die Üb
 ## Weitere Informationen
 [Überlegungen zum Entwurf – Übersicht](active-directory-hybrid-identity-design-considerations-overview.md)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1210_2015-->

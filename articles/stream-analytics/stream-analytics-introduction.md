@@ -1,7 +1,7 @@
 <properties 
 	pageTitle="Einführung in Stream Analytics | Microsoft Azure" 
-	description="Erfahren Sie mehr über Azure Stream Analytics, einen vollständig verwalteten Clouddienst, der Ihnen bei der Analyse der Streamigdaten aus dem Internet der Dinge (IoT) in Echtzeit hilft." 
-	keywords="Big Data-Analysen,Clouddienst,Internet der Dinge,verwalteter Dienst,Datenstromverarbeitung, Streaming Analytics, Streamingdaten"
+	description="Erfahren Sie mehr über Stream Analytics, einen verwalteten Dienst, der Ihnen bei der Analyse der Streamingdaten aus dem Internet der Dinge (IoT) in Echtzeit hilft." 
+	keywords="Analysen als Dienst, verwaltete Dienste, Streamingverarbeitung, Stream Analytics, was ist Stream Analytics"
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
@@ -14,11 +14,11 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="11/23/2015" 
+	ms.date="12/04/2015" 
 	ms.author="jeffstok"/>
 
 
-# Was ist Azure Stream Analytics?
+# Was ist Stream Analytics?
 
 Azure Stream Analytics (ASA) ist ein vollständig verwaltetes, kostengünstiges Echtzeit-Ereignisverarbeitungsmodul, mit dem Datenanalysen durchgeführt werden können. Stream Analytics erleichtert die Einrichtung von analytischen Echtzeitberechnungen von Datenströmen von Geräten, Sensoren, Websites, Sozialen Medien, Anwendungen, Infrastruktursystemen und mehr.
 
@@ -53,4 +53,4 @@ Sie haben nun Stream Analytics kennengelernt, einen verwalteten Dienst für Stre
 - [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

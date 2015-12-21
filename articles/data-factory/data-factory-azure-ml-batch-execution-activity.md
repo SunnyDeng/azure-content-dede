@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Erstellen von Vorhersagepipelines mithilfe der Aktivität ";Azure Machine Learning-Batchausführung"; | Microsoft Azure" 
-	description="Erläuterungen zum Erstellen von Vorhersagepipelines mithilfe von Data Factory und Azure Machine Learning" 
+	description="Beschreibt das Erstellen von Vorhersagepipelines mithilfe von Azure Data Factory und Azure Machine Learning" 
 	services="data-factory" 
 	documentationCenter="" 
 	authors="spelluru" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/04/2015" 
+	ms.date="12/06/2015" 
 	ms.author="spelluru"/>
 
 # Erstellen von Vorhersagepipelines mithilfe von Azure Machine Learning-Aktivitäten   
@@ -623,4 +623,4 @@ Wenn Sie weiterhin die AzureMLBatchScoring-Aktivität verwenden möchten, finden
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

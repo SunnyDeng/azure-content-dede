@@ -4,7 +4,7 @@
    services="cloud-services" 
    documentationCenter="na" 
    authors="yuemlu" 
-   manager="markkie" 
+   manager="timlt" 
    editor=""/>
 
 <tags
@@ -394,4 +394,4 @@ Aufgrund der partiellen Einführung der letzten beiden Releases können Personen
 [fam1retire]: cloud-services-guestos-family1-retirement.md
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

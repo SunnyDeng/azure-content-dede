@@ -13,21 +13,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="11/30/2015"
+   ms.date="12/07/2015"
    ms.author="kenhoff"/>
 
 # Azure Active Directory-Berichte in der Vorschau
 
-## Artikel in der Azure AD Reporting-Dokumentation
-
- - [Reporting-API](active-directory-reporting-api-getting-started.md)
- - [Überwachungsereignisse](active-directory-reporting-audit-events.md)
- - [Aufbewahrung](active-directory-reporting-retention.md)
- - [Vorschau](active-directory-reporting-previews.md)
- - [Suche](active-directory-reporting-search.md)
- - [Abgleich](active-directory-reporting-backfill.md)
- - [Wartezeiten](active-directory-reporting-latencies.md)
- - [Ereignis „Unbekannter Akteur“](active-directory-reporting-unknown-actor.md)
+*Diese Dokumentation ist Teil des [Handbuchs für Azure Active Directory Reporting](active-directory-reporting-guide.md).*
 
 Bericht | Verfügbarkeit
 ------------------------------------------------------- | --------------------
@@ -63,4 +54,4 @@ Nutzung RMS-fähiger Anwendungen | Öffentliche Vorschau
 **Berichte in der privaten Vorschau** |
 Alle Benutzeranmeldeaktivitäten | Private Vorschau
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

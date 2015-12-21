@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Erstellen und Bereitstellen von Bereitstellungsprojekten für Azure-Ressourcengruppen | Microsoft Azure"
-   description="Erstellen und Bereitstellen von Bereitstellungsprojekten für Azure-Ressourcengruppen"
+   pageTitle="Erstellen und Bereitstellen von Visual Studio-Projekten für Azure-Ressourcengruppen | Microsoft Azure"
+   description="Verwenden Sie Visual Studio, um ein Azure-Ressourcengruppenprojekt zu erstellen und die Ressourcen in Azure bereitzustellen."
    services="visual-studio-online"
    documentationCenter="na"
    authors="kempb"
@@ -12,10 +12,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="10/02/2015"
+   ms.date="11/13/2015"
    ms.author="kempb" />
 
-# Erstellen und Bereitstellen von Bereitstellungsprojekten für Azure-Ressourcengruppen
+# Erstellen und Bereitstellen von Azure-Ressourcengruppen mit Visual Studio
 
 Die Bereitstellungsprojektvorlage **Azure-Ressourcengruppe** ist in Visual Studio verfügbar, wenn Azure SDK 2.6 installiert ist. In Azure-Ressourcengruppenprojekten können mehrere zusammengehörige Azure-Ressourcen in einem einzelnen Bereitstellungsvorgang zusammengefasst und veröffentlicht werden. Azure-Ressourcengruppenprojekte nutzen eine Technologie namens **Azure-Ressourcen-Manager**. Der **Azure-Ressourcen-Manager** ist ein REST-API-Dienst, der das Definieren von Azure-Ressourcengruppen unterstützt, die mehrere Azure-Ressourcen enthalten, die in der Regel zusammen verwendet werden und einen ähnlichen Lebenszyklus aufweisen. Mithilfe von Ressourcengruppen können Sie für alle Ressourcen in einer Gruppe einen einzigen Funktionsaufruf verwenden, anstatt viele verschiedene Funktionen einzeln für jede Ressource aufzurufen. Weitere Informationen zu Azure-Ressourcengruppen finden Sie unter [Verwenden des Azure-Vorschauportals zum Verwalten Ihrer Azure-Ressourcen](resource-group-portal.md). Ein detaillierteres, umfassendes Azure-Ressourcengruppen-Bereitstellungsszenario finden Sie unter [Azure-Ressourcengruppe für Visual Studio](https://azure.microsoft.com/blog/azure-resource-manager-2-5-for-visual-studio/).
 
@@ -49,9 +49,10 @@ In diesem Verfahren lernen Sie, ein Azure-Ressourcengruppenprojekt mit einer **W
 
     |Dateiname|Beschreibung|
     |---|---|
-    |Deploy-AzureResourceGroup.ps1|Ein PowerShell-Skript, das PowerShell-Befehle für die Bereitstellung im Azure-Ressourcen-Manager aufruft.
-
-    **Hinweis** Dieses PowerShell-Skript wird von Visual Studio zum Bereitstellen Ihrer Vorlage verwendet. Alle Änderungen an diesem Skript wirken sich auch auf die Bereitstellung in Visual Studio aus. Gehen Sie also umsichtig vor. | ! WebSite.json| Eine Konfigurationsdatei, die alle Details angibt, die Sie im Azure-Ressourcen-Manager bereitstellen möchten. | | WebSite.param.dev.json| Ein Parameterdatei, die bestimmte Werte enthält, die für die Konfigurationsdatei erforderlich sind. | | AzCopy.exe| Ein Tool, das vom PowerShell-Skript zum Kopieren von Dateien aus dem lokalen Speicherablagepfad in den Container des Speicherkontos verwendet wird. Dieses Tool wird nur verwendet, wenn Sie das Bereitstellungsprojekt zum Bereitstellen von Code zugleich mit der Vorlage konfigurieren.|
+    |Deploy-AzureResourceGroup.ps1|Ein PowerShell-Skript, das PowerShell-Befehle zum Bereitstellen im Azure-Ressourcen-Manager aufruft.<br />**Hinweis** Dieses PowerShell-Skript wird von Visual Studio zum Bereitstellen Ihrer Vorlage verwendet. Alle Änderungen, die Sie an diesem Skript vornehmen, haben auch Auswirkungen auf die Bereitstellung in Visual Studio. Vorsicht ist also geboten.|
+    !WebSite.json|Eine Vorlage, die die Infrastruktur definiert, die Sie in Azure bereitstellen möchten.|
+    |WebSite.param.dev.json|Ein Parameterdatei, die bestimmte Werte enthält, die für die Konfigurationsdatei erforderlich sind.|
+    |AzCopy.exe|Ein Tool, das vom PowerShell-Skript verwendet wird, um Dateien aus dem lokalen Speicherablagepfad in den Container des Speicherkontos zu kopieren. Dieses Tool wird nur verwendet, wenn Sie das Bereitstellungsprojekt zum Bereitstellen von Code zusammen mit der Vorlage konfigurieren.|
 
     Alle Bereitstellungsprojekte für Azure-Ressourcengruppen enthalten die folgenden vier grundlegenden Dateien. Andere Projekte enthalten möglicherweise zusätzliche Dateien zur Unterstützung weiterer Funktionen.
 
@@ -193,6 +194,6 @@ Anpassungen wurden auch an einigen Variablennamen und Buildaufgaben vorgenommen,
 
 ## Nächste Schritte
 
-Informationen zum Hinzufügen von Ressourcen zu Ihrer Azure-Ressourcengruppe in Visual Studio finden Sie unter [Hinzufügen von Ressourcen zu einer Azure-Ressourcengruppe](vs-azure-tools-resource-group-adding-resources.md).
+Informationen zum Hinzufügen von Ressourcen zu Ihrer Azure-Ressourcengruppe in Visual Studio finden Sie unter [Bearbeiten von Ressourcen-Manager-Vorlagen mit Visual Studio](vs-azure-tools-resource-group-adding-resources.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

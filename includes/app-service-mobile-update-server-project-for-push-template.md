@@ -1,4 +1,6 @@
+Nutzen Sie das Ihrem Back-End-Projekttyp entsprechende Verfahren: entweder [.NET-Back-End](#dotnet) oder [Node.js-Back-End](#nodejs).
 
+### <a name="dotnet"></a>.NET-Back-End-Projekt
 1. Klicken Sie in Visual Studio mit der rechten Maustaste auf das Serverprojekt, und klicken Sie auf **NuGet-Pakete verwalten**, und suchen Sie nach `Microsoft.Azure.NotificationHubs`. Klicken Sie anschließend auf **Installieren**. Dadurch wird die Notification Hubs-Bibliothek zum Senden von Benachrichtigungen von Ihrem Back-End installiert.
 
 3. Öffnen Sie **Controller** > **TodoItemController.cs** im Serverprojekt, und fügen Sie die folgenden using-Anweisungen hinzu:
@@ -48,4 +50,51 @@
 
 	Weitere Informationen zu Vorlagen mit Notification Hubs finden Sie unter [Vorlagen](notification-hubs-templates.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+### <a name="nodejs"></a>Node.js-Back-End-Projekt
+
+1. Ersetzen Sie den bestehenden Code in der Datei „todoitem.js“ durch den folgenden Code:
+
+		var azureMobileApps = require('azure-mobile-apps'),
+	    promises = require('azure-mobile-apps/src/utilities/promises'),
+	    logger = require('azure-mobile-apps/src/logger');
+	
+		var table = azureMobileApps.table();
+		
+		table.insert(function (context) {
+	    // For more information about the Notification Hubs JavaScript SDK, 
+	    // see http://aka.ms/nodejshubs
+	    logger.info('Running TodoItem.insert');
+	    
+	    // Define the template payload.
+	    var payload = '{"messageParam": context.item.text}'; 
+	    
+	    // Execute the insert.  The insert returns the results as a Promise,
+	    // Do the push as a post-execute action within the promise flow.
+	    return context.execute()
+	        .then(function (results) {
+	            // Only do the push if configured
+	            if (context.push) {
+					// Send a template notification.
+	                context.push.send(null, payload, function (error) {
+	                    if (error) {
+	                        logger.error('Error while sending push notification: ', error);
+	                    } else {
+	                        logger.info('Push notification sent successfully!');
+	                    }
+	                });
+	            }
+	            // Don't forget to return the results from the context.execute()
+	            return results;
+	        })
+	        .catch(function (error) {
+	            logger.error('Error while running context.execute: ', error);
+	        });
+		});
+
+		module.exports = table;  
+
+	Damit wird eine Vorlagenbenachrichtigung gesendet, die „item.text“ enthält, wenn ein neues Todo-Element eingefügt wird.
+
+2. Beim Bearbeiten der Datei auf Ihrem lokalen Computer veröffentlichen Sie das Serverprojekt erneut.
+
+<!---HONumber=AcomDC_1210_2015-->

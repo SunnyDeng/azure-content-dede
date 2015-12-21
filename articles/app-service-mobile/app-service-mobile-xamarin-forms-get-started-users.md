@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-xamarin" 
 	ms.devlang="dotnet" 
 	ms.topic="article"
-	ms.date="11/30/2015" 
+	ms.date="12/07/2015" 
 	ms.author="wesmc"/>
 
 # Hinzufügen der Authentifizierung zu Ihrer Xamarin.Forms-App
@@ -40,7 +40,9 @@ Sie müssen zunächst das [Xamarin.Forms-Schnellstart-Tutorial](app-service-mobi
 
 ##Hinzufügen der Authentifizierung zur portablen Klassenbibliothek 
 
-Mobile Apps verwendet eine plattformspezifische `MobileServiceClient.LoginAsync`-Methode zum Anzeigen der Anmeldeschnittstelle und der Cachedaten. Zur Authentifizierung mit einem Xamarin.Forms-Projekt definieren Sie eine `IAuthenticate`-Schnittstelle in der portablen Klassenbibliothek. Diese Schnittstelle kann auf jeder Plattform, die unterstützt werden soll, im plattformspezifischen Projekt implementiert werden. Sie fügen Code hinzu, sodass die Authentifizierung vor Aufrufen der eingeschränkten Tabelle über die portable Klassenbibliothek erfolgt.
+Mobile Apps verwendet eine plattformspezifische `MobileServiceClient.LoginAsync`-Methode zum Anzeigen der Anmeldeschnittstelle und der Cachedaten. Zur Authentifizierung mit einem Xamarin.Forms-Projekt definieren Sie eine `IAuthenticate`-Schnittstelle in der portablen Klassenbibliothek. Diese Schnittstelle wird auf jeder Plattform, die unterstützt werden soll, im plattformspezifischen Projekt implementiert.
+
+Sie aktualisieren auch die in der portablen Klassenbibliothek definierte Benutzeroberfläche, indem Sie eine Anmeldeschaltfläche hinzufügen. Der Benutzer muss auf diese Schaltfläche klicken, um sich nach dem Start der App zu authentifizieren.
 
 1. Öffnen Sie die Datei „App.cs“ in Visual Studio oder Xamarin Studio über das **portable**-Projekt. Fügen Sie der Datei die folgende `using`-Anweisung hinzu.
 
@@ -67,22 +69,63 @@ Mobile Apps verwendet eine plattformspezifische `MobileServiceClient.LoginAsync`
 	
 			...
 
-4. Öffnen Sie „TodoList.xaml.cs“ über das **portable**-Projekt, und aktualisieren Sie die `OnAppearing`-Methode so, dass die Authentifizierung vor der Aktualisierung der Elemente aus der Tabelle erfolgt.
+
+4. Öffnen Sie „TodoList.xaml.cs“ vom **portable**-Projekt aus. Fügen Sie das folgende Flag der `TodoList`-Klasse hinzu, um anzuzeigen, ob der Benutzer authentifiziert wurde oder nicht.
+
+        bool authenticated = false;
+
+
+5. Aktualisieren Sie in „TodoList.xaml.cs“ die `OnAppearing`-Methode, damit Sie die Elemente nur aktualisieren, wenn der Benutzer authentifiziert wurde.
 
 
         protected override async void OnAppearing()
         {
             base.OnAppearing();
 
+            // Set syncItems to true in order to synchronize the data on startup when running in offline mode
+            if (authenticated == true)
+                await RefreshItems(true, syncItems: false);
+        }
+
+6. Definieren Sie in „TodoList.xaml.cs“ am oberen Rand des Konstruktors für die `TodoList`-Klasse die folgende Anmeldeschaltfläche, und klicken Sie auf den Handler...
+
+        public TodoList()
+        {
+            InitializeComponent();
+
+            manager = TodoItemManager.DefaultManager;
+
+            var loginButton = new Button
+            {
+                Text = "Login",
+                TextColor = Xamarin.Forms.Color.Black,
+                BackgroundColor = Xamarin.Forms.Color.Lime,
+            };
+            loginButton.Clicked += loginButton_Clicked;
+
+            Xamarin.Forms.StackLayout bp = buttonsPanel as StackLayout;
+            Xamarin.Forms.StackLayout bpParentStack = bp.Parent.Parent as StackLayout;
+
+            bpParentStack.Padding = new Xamarin.Forms.Thickness(10, 30, 10, 20);
+            bp.Orientation = StackOrientation.Vertical;
+            bp.Children.Add(loginButton);
+
+			...
+
+7. Fügen Sie in „TodoList.xaml.cs“ den folgenden Handler für das Click-Ereignis der Anmeldeschaltfläche hinzu.
+
+        async void loginButton_Clicked(object sender, EventArgs e)
+        {
             if (App.Authenticator != null)
-                await App.Authenticator.Authenticate();
+                authenticated = await App.Authenticator.Authenticate();
 
             // Set syncItems to true in order to synchronize the data on startup when running in offline mode
-            await RefreshItems(true, syncItems: false);
+            if (authenticated == true)
+                await RefreshItems(true, syncItems: false);
         }
 
 
-5. Speichern Sie die Änderungen, und erstellen Sie das Portalprojekt zum Überprüfen auf Fehler.
+8. Speichern Sie die Änderungen, und erstellen Sie das portable Klassenbibliotheksprojekt. Stellen Sie sicher, dass es fehlerfrei ist.
 
 
 ##Hinzufügen der Authentifizierung zur Android-App
@@ -129,6 +172,16 @@ In diesem Abschnitt fügen Sie die Authentifizierung für das droid-Projekt hinz
             }
             return success;
         }
+
+        private void CreateAndShowDialog(String message, String title)
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+            builder.SetMessage(message);
+            builder.SetTitle(title);
+            builder.Create().Show();
+        }
+
 
 6. Aktualisieren Sie die `OnCreate`-Methode der `MainActivity`-Klasse so, dass der Authentifikator vor dem Laden der App initialisiert wird.
 
@@ -177,6 +230,11 @@ In diesem Abschnitt fügen Sie die Authentifizierung für das iOS-Projekt hinzu.
                 {
                     user = await TodoItemManager.DefaultManager.CurrentClient.LoginAsync(UIApplication.SharedApplication.KeyWindow.RootViewController,
                         MobileServiceAuthenticationProvider.Facebook);
+                    if (user != null)
+                    {
+                        UIAlertView avAlert = new UIAlertView("Authentication", "You are now logged in " + user.UserId, null, "OK", null);
+                        avAlert.Show();
+                    }
                 }
 
                 success = true;
@@ -191,7 +249,7 @@ In diesem Abschnitt fügen Sie die Authentifizierung für das iOS-Projekt hinzu.
 
 6. Aktualisieren Sie die `FinishedLaunching`-Methode der `AppDelegate`-Klasse so, dass der Authentifikator vor dem Laden der App initialisiert wird.
 
-        App.Init((IAuthenticate)this);
+        App.Init(this);
 
 		LoadApplication (new App ());
 
@@ -237,9 +295,12 @@ In diesem Abschnitt fügen Sie die Authentifizierung für das WinApp-Projekt hin
                 if (user == null)
                 {
                     user = await TodoItemManager.DefaultManager.CurrentClient.LoginAsync(MobileServiceAuthenticationProvider.Facebook);
-                    var messageDialog = new Windows.UI.Popups.MessageDialog(
-							string.Format("you are now logged in - {0}", user.UserId), "Authentication");
-                    messageDialog.ShowAsync();
+					if (user != null)
+					{
+	                    var messageDialog = new Windows.UI.Popups.MessageDialog(
+								string.Format("you are now logged in - {0}", user.UserId), "Authentication");
+	                    messageDialog.ShowAsync();
+					}
                 }
 
                 success = true;
@@ -258,9 +319,9 @@ In diesem Abschnitt fügen Sie die Authentifizierung für das WinApp-Projekt hin
         {
             this.InitializeComponent();
 
-            <Your portable class library namespace>.App.Init((IAuthenticate)this);
+            <Your portable class library namespace>.App.Init(this);
             
-            LoadApplication(new WesmcMobileAppGaTest.App());
+            LoadApplication(new <Your portable class library namespace>.App());
         }
 
 
@@ -268,7 +329,93 @@ In diesem Abschnitt fügen Sie die Authentifizierung für das WinApp-Projekt hin
 7. Erstellen Sie die App neu, und führen Sie sie aus. Melden Sie sich über den ausgewählten Authentifizierungsanbieter an, und stellen Sie sicher, dass Sie als authentifizierter Benutzer auf die Tabelle zugreifen können.
 
 
+##Hinzufügen der Authentifizierung zur Windows Phone 8.1-App
 
+In diesem Abschnitt fügen Sie die Authentifizierung für das WinPhone81-Projekt hinzu. Wenn Sie nicht mit Windows Phone 8.1-Geräten arbeiten, können Sie diesen Abschnitt überspringen.
+
+1. Klicken Sie in Visual Studio mit der rechten Maustaste auf das **WinPhone81**-Projekt, und klicken Sie auf **Als Startprojekt festlegen**.
+
+2. Führen Sie dann das Projekt im Debugger aus, um sicherzustellen, dass ein Ausnahmefehler mit dem Statuscode 401 (Nicht autorisiert) angezeigt wird, nachdem die App gestartet wurde. Dies erfolgt, da Sie den Zugriff auf das Back-End nur auf autorisierte Benutzer beschränkt haben.
+
+
+3. Öffnen Sie als Nächstes die Datei „MainPage.xaml.cs“ im WinPhone81-Projekt, und fügen Sie die folgende `using`-Anweisung hinzu. Ersetzen Sie <*Your portable class library namespace*> durch den Namespace für Ihre portable Klassenbibliothek.
+
+		using Microsoft.WindowsAzure.MobileServices;
+		using System.Threading.Tasks;
+		using <Your portable class library namespace>;
+
+4. Aktualisieren Sie die `MainPage`-Klasse mit der Implementierung der `IAuthenticate`-Schnittstelle.
+
+	    public sealed partial class MainPage : IAuthenticate
+
+
+5. Aktualisieren Sie die `MainPage`-Klasse, indem Sie ein `MobileServiceUser`-Feld und die unten dargestellte `Authenticate`-Methode zur Unterstützung der `IAuthenticate`-Schnittstelle hinzufügen.
+ 
+	Wenn Sie einen anderen `MobileServiceAuthenticationProvider` als Facebook verwenden möchten, nehmen Sie auch diese Änderung vor.
+
+        // Define a authenticated user.
+        private MobileServiceUser user;
+
+        public async Task<bool> Authenticate()
+        {
+            var success = false;
+            try
+            {
+                // Sign in with Facebook login using a server-managed flow.
+                if (user == null)
+                {
+                    user = await TodoItemManager.DefaultManager.CurrentClient.LoginAsync(MobileServiceAuthenticationProvider.Facebook);
+					if (user != null)
+					{
+	                    var messageDialog = new Windows.UI.Popups.MessageDialog(
+								string.Format("you are now logged in - {0}", user.UserId), "Authentication");
+	                    messageDialog.ShowAsync();
+					}
+                }
+
+                success = true;
+            }
+            catch (Exception ex)
+            {
+                var messageDialog = new Windows.UI.Popups.MessageDialog(ex.Message, "Authentication Failed");
+                messageDialog.ShowAsync();
+            }
+            return success;
+        }
+
+6. Aktualisieren Sie den Konstruktor für die `MainPage`-Klasse so, dass der Authentifikator vor dem Laden der App initialisiert wird. Ersetzen Sie <*Your portable class library namespace*> durch den Namespace für Ihre portable Klassenbibliothek.
+
+        public MainPage()
+        {
+            this.InitializeComponent();
+
+            this.NavigationCacheMode = NavigationCacheMode.Required;
+
+            <Your portable class library namespace>.App.Init(this);
+
+            LoadApplication(new <Your portable class library namespace>.App());
+        }
+
+7. Unter Windows Phone müssen Sie außerdem die Anmeldung abzuschließen. Öffnen Sie „App.xaml.cs“, und fügen Sie die folgende `using`-Anweisung und folgenden Code dem `OnActivated`-Handler in der `App`-Klasse hinzu.
+
+	```
+		using Microsoft.WindowsAzure.MobileServices;
+	```
+
+		protected override void OnActivated(IActivatedEventArgs args)
+		{
+		    base.OnActivated(args);
+		
+		    if (args.Kind == ActivationKind.WebAuthenticationBrokerContinuation)
+		    {
+		        var client = TodoItemManager.DefaultManager.CurrentClient as MobileServiceClient;
+		        client.LoginComplete(args as WebAuthenticationBrokerContinuationEventArgs);
+		    }
+		}
+
+
+
+8. Erstellen Sie die App neu, und führen Sie sie aus. Melden Sie sich über den ausgewählten Authentifizierungsanbieter an, und stellen Sie sicher, dass Sie als authentifizierter Benutzer auf die Tabelle zugreifen können.
 
 <!-- Images. -->
 
@@ -282,4 +429,4 @@ In diesem Abschnitt fügen Sie die Authentifizierung für das WinApp-Projekt hin
 
  
 
-<!---HONumber=AcomDC_1203_2015--->
+<!---HONumber=AcomDC_1210_2015--->

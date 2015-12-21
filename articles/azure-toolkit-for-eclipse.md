@@ -16,7 +16,7 @@
     ms.date="11/20/2015" 
     ms.author="robmcm"/>
 
-<!-- Legacy MSDN URL = https://msdn.microsoft.com/de-DE/library/azure/hh694271.aspx -->
+<!-- Legacy MSDN URL = https://msdn.microsoft.com/library/azure/hh694271.aspx -->
 
 # Azure-Toolkit für Eclipse #
 
@@ -93,4 +93,4 @@ Weitere Informationen zur Verwendung von Azure mit Java finden Sie im [Azure Jav
 [Verwenden der Azure-Dienstlaufzeitbibliothek in JSP]: http://go.microsoft.com/fwlink/?LinkID=699551
 [Neuerungen im Azure-Toolkit für Eclipse]: http://go.microsoft.com/fwlink/?LinkID=699552
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

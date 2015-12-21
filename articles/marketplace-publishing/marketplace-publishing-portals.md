@@ -13,16 +13,16 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="10/05/2015"
+   ms.date="12/06/2015"
    ms.author="hascipio" />
 
 
 # Portale, die Sie benötigen
-Bevor Sie mit der Veröffentlichung eines Angebots beginnen, sollten Sie sich mit den verschiedenen Portalen vertraut machen, die Sie dazu benötigen. Im Anschluss folgt eine kurze Zusammenfassung der Portale (Verkäuferdashboard, Veröffentlichungsportal und Azure-Vorschauportal) in der Reihenfolge, in der Sie mit ihnen interagieren.
-## Verkäuferdashboard
-[https://sellerdashboard.microsoft.com](https://sellerdashboard.microsoft.com)
+Bevor Sie mit der Veröffentlichung eines Angebots beginnen, sollten Sie sich mit den verschiedenen Portalen vertraut machen, die Sie dazu benötigen. Im Anschluss folgt eine kurze Zusammenfassung der Portale (Developer Center, Azure-Veröffentlichungsportal und Azure-Portal) in der Reihenfolge, in der Sie mit ihnen interagieren.
+## Developer Center
+[http://dev.windows.com](http://dev.windows.com/registration?accountprogram=azure)
 ### Beschreibung
-Das Erstellen Ihres Verkäuferdashboard-Kontos ist eine einmalige Angelegenheit. Vergewissern Sie sich vor der Kontoerstellung, dass Ihr Unternehmen nicht bereits über ein Verkäuferdashboard-Konto verfügt. Während des Prozesses erfassen wir Bankdaten, Steuerinformationen und Adressdaten Ihres Unternehmens.
+Das Erstellen Ihres Microsoft Developer Center-Kontos ist eine einmalige Aufgabe. Vergewissern Sie sich vor der Kontoerstellung, dass Ihr Unternehmen nicht bereits über ein Developer Center-Konto verfügt. Während des Prozesses erfassen wir Bankdaten, Steuerinformationen und Adressdaten Ihres Unternehmens.
 
 > [AZURE.NOTE]Wenn Sie nur kostenlose Angebote (oder Angebote mit Verwendung Ihrer eigenen Lizenz) veröffentlichen, benötigen wir keine steuerlichen Informationen oder Bankdaten.
 
@@ -38,10 +38,10 @@ Im Idealfall eine Verteilerliste oder Sicherheitsgruppe (z. B. azurepublishing@
 Dieses Portal dient zum Bearbeiten und Veröffentlichen des Angebots. Hierzu zählen unter anderem Marketing, Preisgestaltung, Veröffentlichung und ggf. Zertifizierung.
 
 ### Verwendete Identität/Verwendetes Konto
-Die weiter oben erwähnte Verteilerliste oder Sicherheitsgruppe muss bei der erstmaligen Anmeldung beim Veröffentlichungsportal verwendet werden. Später können dann weitere Benutzer als Co-Admins hinzugefügt werden. So geschieht die Zuordnung zu den Registrierungsdaten im Verkäuferdashboard.
+Die weiter oben erwähnte Verteilerliste oder Sicherheitsgruppe muss bei der erstmaligen Anmeldung beim Veröffentlichungsportal verwendet werden. Später können dann weitere Benutzer als Co-Admins hinzugefügt werden. So erfolgt die Zuordnung zu den Registrierungsdaten im Developer Center.
 
-## Azure-Vorschauportal
-[https://ms.portal.azure.com](https://ms.portal.azure.com)
+## Azure-Portal
+[https://portal.azure.com](https://portal.azure.com)
 ### Beschreibung
 Dies ist das Portal, in dem Sie Ihre bereitgestellten und veröffentlichten Angebote im Azure Marketplace anzeigen können (gilt für virtuelle Computer, Lösungsvorlagen und auf dem Azure-Ressourcen-Manager basierende Entwicklerdienste).
 ### Verwendete Identität/Verwendetes Konto
@@ -50,4 +50,4 @@ Beim Bereitstellen des Angebots über das Veröffentlichungsportal muss eine Abo
 ## Weitere Informationen
 - [Erste Schritte: Veröffentlichen eines Angebots im Azure Marketplace](marketplace-publishing-getting-started.md)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1210_2015-->

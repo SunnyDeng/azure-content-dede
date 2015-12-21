@@ -126,7 +126,7 @@ Die Versionsüberprüfung ist in den folgenden Versionen des Server-SDK enthalte
 | Null | False/Nicht angegeben | 400 – Ungültige Anforderung |
 | 1\.x.y | False/Nicht angegeben | 400 – Ungültige Anforderung |
 | 2\.0.0 - 2.x.y | False/Nicht angegeben | 200 – OK |
-| 3\.0.0 - 3.x.y | False/Nicht angegeben | 400 – Ungültige Anforderung |
+| 3\.0.0-3.x.y | False/Nicht angegeben | 400 – Ungültige Anforderung |
 
 
 ## Nächste Schritte
@@ -139,6 +139,6 @@ Die Versionsüberprüfung ist in den folgenden Versionen des Server-SDK enthalte
 
 
 [Mobile App Server SDK]: http://www.nuget.org/packages/microsoft.azure.mobile.server
-[Migrieren eines Mobile Service zu Azure App Service]: app-service-mobile-dotnet-backend-migrating-from-mobile-services.md
+[Migrieren eines Mobile Service zu Azure App Service]: app-service-mobile-migrating-from-mobile-services.md
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

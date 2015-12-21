@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-xamarin-android" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="08/27/2015" 
+	ms.date="12/07/2015" 
 	ms.author="mahender"/>
 
 # Hinzufügen der Authentifizierung zu Ihrer Xamarin.Android-App
@@ -97,7 +97,11 @@ Die App wird so aktualisiert, dass Benutzer auf die Schaltfläche **Anmelden** t
             android:onClick="LoginUser"
             android:text="@string/login_button_text" />
 
-4. Führen Sie das Clientprojekt in Visual Studio oder Xamarin Studio auf einem Gerät oder Emulator aus, und melden Sie sich mit dem ausgewählten Identitätsanbieter an.
+5. Fügen Sie das folgende Element in die Ressourcendatei „Strings.xml“ ein:
+
+		<string name="login_button_text">Sign in</string> 
+
+6. Führen Sie das Clientprojekt in Visual Studio oder Xamarin Studio auf einem Gerät oder Emulator aus, und melden Sie sich mit dem ausgewählten Identitätsanbieter an.
 
    	Nachdem Sie sich erfolgreich angemeldet haben, zeigt die App Ihre Login-ID und die Liste der zu erledigenden Elemente an, und Sie können die Daten ändern.
 
@@ -106,4 +110,4 @@ Die App wird so aktualisiert, dass Benutzer auf die Schaltfläche **Anmelden** t
 [Erstellen einer Xamarin.Android-App]: app-service-mobile-xamarin-android-get-started.md
  
 
-<!---HONumber=AcomDC_1203_2015--->
+<!---HONumber=AcomDC_1210_2015--->

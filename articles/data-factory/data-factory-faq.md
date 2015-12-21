@@ -132,11 +132,11 @@ Im obigen Beispiel stellen "otherLinkedServiceName1" und "otherLinkedServiceName
 Sie können einen Slice auf eine der folgenden Arten erneut ausführen:
 
 - Klicken Sie im Portal auf der Befehlsleiste für den Slice auf dem Blatt **DATENSLICE** auf **Ausführen**. 
-- Führen Sie das Cmdlet **Set AzureDataFactorySliceStatus** mit auf **PendingExecution** festgelegtem Status für den Slice aus.   
+- Führen Sie das Cmdlet **Set-AzureRmDataFactorySliceStatus** aus, und legen Sie dabei den Status für den Slice auf **PendingExecution** fest.   
 	
-		Set-AzureDataFactorySliceStatus -Status PendingExecution -ResourceGroupName $ResourceGroup -DataFactoryName $df -TableName $table -StartDateTime "02/26/2015 19:00:00" -EndDateTime "02/26/2015 20:00:00" 
+		Set-AzureRmDataFactorySliceStatus -Status PendingExecution -ResourceGroupName $ResourceGroup -DataFactoryName $df -TableName $table -StartDateTime "02/26/2015 19:00:00" -EndDateTime "02/26/2015 20:00:00" 
 
-Unter [Set AzureDataFactorySliceStatus][set-azure-datafactory-slice-status] finden Sie ausführliche Informationen zum Cmdlet.
+Unter [Set-AzureRmDataFactorySliceStatus][set-azure-datafactory-slice-status] finden Sie ausführliche Informationen zum Cmdlet.
 
 ### Wie lange hat die Verarbeitung eines Slices gedauert?
 1. Klicken Sie auf der Kachel **Datasets** auf das Blatt **DATA FACTORY** für Ihre Data Factory.
@@ -147,7 +147,7 @@ Unter [Set AzureDataFactorySliceStatus][set-azure-datafactory-slice-status] find
 6. Daraufhin sollte das Feld **Dauer** mit einem Wert angezeigt werden. Dies ist die Verarbeitungszeit des Slices.   
 
 ### Wie wird ein ausgeführter Slice beendet?
-Wenn Sie die Ausführung der Pipeline beenden müssen, können Sie das Cmdlet [Suspend-AzureDataFactoryPipeline](https://msdn.microsoft.com/library/dn834939.aspx) verwenden. Derzeit werden laufende Sliceausführungen bei Anhalten der Pipeline nicht beendet. Sobald die laufenden Ausführungen abgeschlossen sind, wird kein zusätzlicher Slice ausgewählt.
+Wenn Sie die Ausführung der Pipeline beenden müssen, können Sie das Cmdlet [Suspend-AzureRmDataFactoryPipeline](https://msdn.microsoft.com/library/mt603721.aspx) verwenden. Derzeit werden laufende Sliceausführungen bei Anhalten der Pipeline nicht beendet. Sobald die laufenden Ausführungen abgeschlossen sind, wird kein zusätzlicher Slice ausgewählt.
 
 Wenn Sie alle Ausführungen wirklich sofort beenden möchten, ist die einzige Möglichkeit das Löschen und erneute Erstellen der Pipeline. Wenn Sie die Pipeline löschen, müssen Sie keine Tabellen und verknüpften Dienste löschen, die von der Pipeline verwendet werden.
 
@@ -169,7 +169,7 @@ Wenn Sie alle Ausführungen wirklich sofort beenden möchten, ist die einzige M�
 [adf-powershell-reference]: https://msdn.microsoft.com/library/dn820234.aspx
 [adf-documentation-landingpage]: http://go.microsoft.com/fwlink/?LinkId=516909
 [azure-portal]: http://portal.azure.com
-[set-azure-datafactory-slice-status]: https://msdn.microsoft.com/library/azure/dn835095.aspx
+[set-azure-datafactory-slice-status]: https://msdn.microsoft.com/library/mt603522.aspx
 
 [adf-pricing-details]: http://go.microsoft.com/fwlink/?LinkId=517777
 [hdinsight-supported-regions]: http://azure.microsoft.com/pricing/details/hdinsight/
@@ -177,4 +177,4 @@ Wenn Sie alle Ausführungen wirklich sofort beenden möchten, ist die einzige M�
 [hdinsight-alternate-storage-2]: http://blogs.msdn.com/b/cindygross/archive/2014/05/05/use-additional-storage-accounts-with-hdinsight-hive.aspx
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

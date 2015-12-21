@@ -1,6 +1,7 @@
 <properties 
 	pageTitle="Programmgesteuertes Überwachen von Stream Analytics-Aufträgen | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie Stream Analytics-Aufträge, die mit REST-APIs, Azure SDK oder PowerShell erstellt wurden, programmgesteuert überwachen können." 
+	description="Erfahren Sie, wie Sie Stream Analytics-Aufträge, die mit REST-APIs, Azure SDK oder PowerShell erstellt wurden, programmgesteuert überwachen können."
+	keywords=".NET-Überwachung, Auftragsüberwachung, Überwachungs-App"
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
@@ -13,14 +14,14 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="11/23/2015" 
+	ms.date="12/04/2015" 
 	ms.author="jeffstok"/>
 
 
-# Programmgesteuertes Überwachen von Stream Analytics-Aufträgen 
-Dieser Artikel erläutert, wie die Überwachung für einen Stream Analytics-Auftrag aktiviert wird. Für Stream Analytics-Aufträge, die mit REST-APIs, Azure SDK oder PowerShell erstellt wurden, ist in der Standardeinstellung keine Überwachung aktiviert. Sie können diese manuell im Azure-Portal aktivieren, indem Sie zur Überwachungsseite des Auftrags wechseln und auf die Schaltfläche "Aktivieren" klicken. Sie können diesen Prozess auch automatisieren, indem Sie die Schritte in diesem Artikel befolgen. Die Überwachungsdaten werden im Azure-Portal auf der Registerkarte "Überwachung" für den Stream Analytics-Auftrag angezeigt.
+# Programmgesteuertes Überwachen von Stream Analytics-Aufträgen
+ Dieser Artikel erläutert, wie die Überwachung für einen Stream Analytics-Auftrag aktiviert wird. Für Stream Analytics-Aufträge, die mit REST-APIs, Azure SDK oder PowerShell erstellt wurden, ist in der Standardeinstellung keine Überwachung aktiviert. Sie können diese manuell im Azure-Portal aktivieren, indem Sie zur Überwachungsseite des Auftrags wechseln und auf die Schaltfläche "Aktivieren" klicken. Sie können diesen Prozess auch automatisieren, indem Sie die Schritte in diesem Artikel befolgen. Die Überwachungsdaten werden im Azure-Portal auf der Registerkarte "Überwachung" für den Stream Analytics-Auftrag angezeigt.
 
-![Registerkarte "Aufträge überwachen"](./media/stream-analytics-monitor-jobs/stream-analytics-monitor-jobs-tab.png)
+![Registerkarte „Aufträge überwachen“](./media/stream-analytics-monitor-jobs/stream-analytics-monitor-jobs-tab.png)
 
 ## Voraussetzungen
 Bevor Sie mit diesem Artikel beginnen können, benötigen Sie Folgendes:
@@ -178,4 +179,4 @@ Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://so
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

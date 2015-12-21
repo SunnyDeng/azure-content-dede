@@ -10,7 +10,11 @@
 
 # Konfigurieren der Tunnelerzwingung
 
-Dieser Artikel bezieht sich auf VNETs und VPN-Gateways, die mithilfe des klassischen Bereitstellungsmodells erstellt wurden. Informationen zum Konfigurieren der Tunnelerzwingung für VNETs und VPN-Gateways, die mit dem Ressourcen-Manager-Bereitstellungsmodell erstellt wurden, finden Sie unter [Konfigurieren der Tunnelerzwingung mithilfe von PowerShell und Azure-Ressourcen-Manager](vpn-gateway-forced-tunneling-rm.md).
+> [AZURE.SELECTOR]
+- [PowerShell - Service Management](vpn-gateway-about-forced-tunneling.md)
+- [PowerShell - Resource Manager](vpn-gateway-forced-tunneling-rm.md)
+
+Dieser Artikel bezieht sich auf die VNETs und VPN-Gateways, die mithilfe des klassischen Bereitstellungsmodells (auch als Dienstverwaltung bezeichnet) erstellt wurden. Informationen zum Konfigurieren der Tunnelerzwingung für VNETs und VPN-Gateways, die mit dem Ressourcen-Manager-Bereitstellungsmodell erstellt wurden, finden Sie unter [Konfigurieren der Tunnelerzwingung mithilfe von PowerShell und Azure-Ressourcen-Manager](vpn-gateway-forced-tunneling-rm.md).
 
 [AZURE.INCLUDE [vpn-gateway-sm-rm](../../includes/vpn-gateway-sm-rm-include.md)]
 
@@ -153,4 +157,4 @@ Im folgenden finden Sie einige weitere PowerShell-Cmdlets, die bei der Verwendun
 
 	Remove-AzureVnetGatewayDefaultSites -VNetName <virtualNetworkName>
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

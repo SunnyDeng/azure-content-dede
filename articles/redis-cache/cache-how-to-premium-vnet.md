@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/02/2015" 
+	ms.date="12/03/2015" 
 	ms.author="sdanie"/>
 
 # Konfigurieren der Unterstützung virtueller Netzwerke für Azure Redis Cache vom Typ "Premium"
@@ -27,7 +27,7 @@ Informationen zu anderen Funktionen des Premium-Caches finden Sie unter [Konfigu
 Die Bereitstellung von [Azure Virtual Network (VNET)](https://azure.microsoft.com/services/virtual-network/) bietet verbesserte Sicherheit und Isolation für den Azure Redis Cache sowie Subnetze, Zugriffssteuerungsrichtlinien und andere Funktionen, mit denen der Zugriff auf Azure Redis Cache weiter eingeschränkt wird.
 
 ## Unterstützung für virtuelle Netzwerke
-Die Unterstützung für ein virtuelles Netzwerk (VNET) wird während der Erstellung des Caches auf dem Blatt **Neuer Redis-Cache** konfiguriert. Um einen Cache zu erstellen, melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an, und klicken Sie auf **Neu** > **Daten und Speicher** > **Redis Cache**.
+Die Unterstützung für ein virtuelles Netzwerk (VNET) wird während der Erstellung des Caches auf dem Blatt **Neuer Redis-Cache** konfiguriert. Um einen Cache zu erstellen, melden Sie sich beim [Azure-Portal](https://portal.azure.com) an, und klicken Sie auf **Neu** > **Daten und Speicher** > **Redis Cache**.
 
 ![Erstellen eines Redis-Cache][redis-cache-new-cache-menu]
 
@@ -35,9 +35,9 @@ Zum Konfigurieren der VNET-Unterstützung wählen Sie zunächst auf dem Blatt **
 
 ![Tarif auswählen][redis-cache-premium-pricing-tier]
 
-Die VNET-Integration für Azure Redis Cache wird auf dem Blatt **Virtuelles Netzwerk** konfiguriert. Hier können Sie ein vorhandenes klassisches VNET auswählen. Um ein neues VNET zu verwenden, führen Sie die unter [Erstellen eines virtuellen Netzwerks (klassisch) über das Azure-Vorschauportal](../virtual-network/virtual-networks-create-vnet-classic-pportal.md) beschriebenen Schritte aus und kehren dann zum Blatt **Virtuelles Netzwerk** zurück, um das erstellte Netzwerk auszuwählen.
+Die VNET-Integration für Azure Redis Cache wird auf dem Blatt **Virtuelles Netzwerk** konfiguriert. Hier können Sie ein vorhandenes klassisches VNET auswählen. Um ein neues VNET zu verwenden, führen Sie die unter [Erstellen eines virtuellen Netzwerks (klassisch) über das Azure-Portal](../virtual-network/virtual-networks-create-vnet-classic-pportal.md) beschriebenen Schritte aus und kehren dann zum Blatt **Redis Cache Virtuelles Netzwerk** zurück, um das erstellte Netzwerk auszuwählen.
 
->[AZURE.NOTE]Azure Redis Cache kann mit klassischen VNETs ausgeführt werden. Informationen zum Erstellen eines klassischen VNET finden Sie unter [Erstellen eines virtuellen Netzwerks (klassisch) über das Azure-Vorschauportal](../virtual-network/virtual-networks-create-vnet-classic-pportal.md).
+>[AZURE.NOTE]Azure Redis Cache kann mit klassischen VNETs ausgeführt werden. Informationen zum Erstellen eines klassischen VNET finden Sie unter [Erstellen eines virtuellen Netzwerks (klassisch) über das Azure-Portal](../virtual-network/virtual-networks-create-vnet-classic-pportal.md). Informationen zum Herstellen einer Verbindung von klassischen VNETs mit ARM-VNETS finden Sie unter [Herstellen einer Verbindung zwischen klassischen VNets und neuen VNets](../virtual-network/virtual-networks-arm-asm-s2s.md).
 
 ![Virtuelles Netzwerk][redis-cache-vnet]
 
@@ -80,6 +80,7 @@ Die folgende Liste enthält Antworten auf häufig gestellte Fragen zur Skalierun
 
 Im Folgenden sind einige häufige Konfigurationsfehler aufgeführt, die dazu führen, dass Azure Redis Cache nicht ordnungsgemäß ausgeführt wird.
 
+-	Kein Zugriff auf DNS. Azure Redis Cache-Instanzen in einem VNET benötigen Zugriff auf DNS für Teile des Überwachungs- und Laufzeitsystems des Caches. Wenn die Cacheinstanz keinen DNS-Zugriff hat, funktioniert die Überwachung nicht, und der Cache funktioniert nicht richtig.
 -	Blockierte TCP-Ports, über die Clients eine Verbindung mit Redis herstellen, z. B. Port 6379 oder 6380.
 -	Blockierter oder abgefangener ausgehender HTTPS-Datenverkehr aus dem virtuellen Netzwerk. Azure Redis Cache verwendet den ausgehenden HTTPS-Datenverkehr in Azure-Diensten, insbesondere in Azure Storage.
 -	Virtuelle Computer mit blockierten Redis-Rolleninstanzen, sodass die Kommunikation zwischen den Rolleninstanzen im Subnetz nicht möglich ist. Redis-Rolleninstanzen müssen über TCP auf allen verwendeten Ports miteinander kommunizieren können. Dies kann zwar geändert werden, muss jedoch mindestens für alle in der Redis-Datei "CSDEF" verwendeten Ports zulässig sein.
@@ -116,4 +117,4 @@ Informationen zur Verwendung weiterer Funktionen des Premium-Caches finden Sie i
 
 [redis-cache-vnet-subnet]: ./media/cache-how-to-premium-vnet/redis-cache-vnet-subnet.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

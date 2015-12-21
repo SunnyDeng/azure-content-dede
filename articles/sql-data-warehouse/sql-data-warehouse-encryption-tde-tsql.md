@@ -66,11 +66,11 @@ Das Ergebnis ```1``` steht für eine verschlüsselte Datenbank, und mit ```0``` 
 
  
 <!--Anchors-->
-[Transparente Datenverschlüsselung (TDE)]: https://msdn.microsoft.com/de-DE/library/bb934049.aspx
+[Transparente Datenverschlüsselung (TDE)]: https://msdn.microsoft.com/library/bb934049.aspx
 
 
 <!--Image references-->
 
 <!--Link references-->
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

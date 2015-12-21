@@ -63,7 +63,7 @@ ExpressRoute-Verbindungen ermöglichen den Zugriff auf die folgenden Dienste:
 
 - Microsoft Azure-Dienste
 - Microsoft Office 365-Dienste
-- Microsoft CRM Online-Dienste (demnächst verfügbar) 
+- Microsoft CRM Online-Dienste 
  
 Auf der Seite [ExpressRoute – FAQ](expressroute-faqs.md) finden Sie eine ausführliche Liste mit den Diensten, die per ExpressRoute unterstützt werden.
 
@@ -124,4 +124,4 @@ Sie können ein Abrechnungsmodell auswählen, das für Sie am besten geeignet is
 	- [Konfigurieren des Routings](expressroute-howto-routing-classic.md)
 	- [Verknüpfen eines VNet mit einer ExpressRoute-Verbindung](expressroute-howto-linkvnet-classic.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

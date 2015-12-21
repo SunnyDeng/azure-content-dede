@@ -180,9 +180,9 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 [Entwicklungsübersicht]: sql-data-warehouse-overview-develop.md
 
 <!--MSDN references-->
-[GROUP BY]: https://msdn.microsoft.com/de-DE/library/ms177673.aspx
+[GROUP BY]: https://msdn.microsoft.com/library/ms177673.aspx
 
 
 <!--Other Web references-->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

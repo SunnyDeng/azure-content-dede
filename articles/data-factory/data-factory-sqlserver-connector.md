@@ -204,7 +204,7 @@ Die Pipeline enthält eine Kopieraktivität, die für das Verwenden der oben gen
 	   }
 	}
 
-> [AZURE.NOTE]Im obigen Beispiel ist **sqlReaderQuery** für SqlSource angegeben. Mit der Kopieraktivität wird diese Abfrage für die SQL Server-Datenbankquelle ausgeführt, um die Daten abzurufen.
+> [AZURE.NOTE]Im obigen Beispiel ist **sqlReaderQuery** für SqlSource angegeben. Mit der Kopieraktivität wird diese Abfrage in der SQL Server-Datenbankquelle ausgeführt, um die Daten abzurufen.
 >  
 > Alternativ dazu können Sie eine gespeicherte Prozedur angeben, indem Sie **sqlReaderStoredProcedureName** und **storedProcedureParameters** angeben (sofern die gespeicherten Prozeduren Parameter verwenden).
 >  
@@ -391,13 +391,13 @@ Die folgende Tabelle enthält eine Beschreibung der JSON-Elemente, die für den 
 
 | Eigenschaft | Beschreibung | Erforderlich |
 | -------- | ----------- | -------- |
-| Typ | Die type-Eigenschaft muss auf **OnPremisesSqlServer** festgelegt sein. | Ja |
+| Typ | Die "type"-Eigenschaft muss auf **OnPremisesSqlServer** festgelegt sein. | Ja |
 | connectionString | Geben Sie "connectionString"-Informationen an, die zum Herstellen einer Verbindung mit der lokalen SQL Server-Datenbank mithilfe der SQL Server- oder Windows-Authentifizierung benötigt werden. | Ja |
 | gatewayName | Name des Gateways, das der Data Factory-Dienst zum Herstellen einer Verbindung mit der lokalen SQL Server-Datenbank verwenden soll. | Ja |
 | username | Geben Sie den Benutzernamen an, wenn Sie die Windows-Authentifizierung verwenden. | Nein |
 | password | Geben Sie das Kennwort für das Benutzerkonto an, das Sie für den Benutzernamen angegeben haben. | Nein |
 
-Sie können Anmeldeinformationen mithilfe des **New-AzureDataFactoryEncryptValue**-Cmdlets verschlüsseln und wie im folgenden Beispiel gezeigt in der Verbindungszeichenfolge verwenden (**EncryptedCredential**-Eigenschaft):
+Sie können Anmeldeinformationen mithilfe des **New-AzureRmDataFactoryEncryptValue**-Cmdlets verschlüsseln und wie im folgenden Beispiel gezeigt in der Verbindungszeichenfolge verwenden (**EncryptedCredential**-Eigenschaft):
 
 	"connectionString": "Data Source=<servername>;Initial Catalog=<databasename>;Integrated Security=True;EncryptedCredential=<encrypted credential>",
 
@@ -461,7 +461,7 @@ Wenn bei der Kopieraktivität „source“ den Typ **SqlSource** hat, sind im Ab
 | sqlReaderStoredProcedureName | Der Name der gespeicherten Prozedur, die Daten aus der Quelltabelle liest. | Name der gespeicherten Prozedur. | Nein |
 | storedProcedureParameters | Parameter für die gespeicherte Prozedur. | Name-Wert-Paare. Die Namen und die Groß-/Kleinschreibung von Parametern müssen denen der Parameter der gespeicherten Prozedur entsprechen. | Nein |
 
-Wenn **sqlReaderQuery** für SqlSource angegeben ist, führt die Kopieraktivität diese Abfrage für die SQL Server-Datenbankquelle aus, um die Daten abzurufen.
+Wenn **sqlReaderQuery** für SqlSource angegeben ist, führt die Kopieraktivität diese Abfrage in der SQL Server-Datenbankquelle aus, um die Daten abzurufen.
 
 Alternativ dazu können Sie eine gespeicherte Prozedur angeben, indem Sie **sqlReaderStoredProcedureName** und **storedProcedureParameters** angeben (sofern die gespeicherten Prozeduren Parameter verwenden).
 
@@ -543,4 +543,4 @@ Die Zuordnung ist mit der SQL Server-Datentypzuordnung für ADO.NET identisch.
 
 [AZURE.INCLUDE [data-factory-column-mapping](../../includes/data-factory-column-mapping.md)]
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

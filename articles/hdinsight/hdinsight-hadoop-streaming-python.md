@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="10/09/2015"
+   ms.date="12/04/2015"
    ms.author="larryfr"/>
 
 #Entwickeln von Python-Streamingprogrammen für HDInsight
@@ -23,7 +23,7 @@ Hadoop stellt eine Streaming-API für MapReduce zur Verfügung, mit der Sie Map-
 
 > [AZURE.NOTE]Während der Python-Code in diesem Dokument mit einem Windows-basierten HDInsight-Cluster verwendet werden kann, gelten die Schritte in diesem Dokument speziell für Linux-basierte Cluster.
 
-Dieser Artikel basiert auf Informationen und Beispielen, die von Michael Noll unter [http://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/] (Schreiben eines MapReduce-Programms in Python) veröffentlicht wurden.
+Dieser Artikel basiert auf Informationen und Beispielen, die von Michael Noll unter [Writing an Hadoop MapReduce Program in Python](http://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/) (in englischer Sprache) veröffentlicht wurden.
 
 ##Voraussetzungen
 
@@ -205,4 +205,4 @@ Nachdem Sie erfahren haben, wie Sie Streaming-MapReduce-Aufträge mit HDInsight 
 * [Verwenden von Pig mit HDInsight](hdinsight-use-pig.md)
 * [Verwenden von MapReduce-Aufträgen mit HDInsight](hdinsight-use-mapreduce.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="10/20/2015"
+   ms.date="12/07/2015"
    ms.author="mmercuri"/>
 
 # Definieren von Abhängigkeiten in Azure-Ressourcen-Manager-Vorlagen
@@ -49,6 +49,8 @@ Wenn Sie eine Abhängigkeit zwischen einer Ressource und Ressourcen definieren m
 
 Mit der resources-Eigenschaft können Sie untergeordnete Ressourcen angeben, die mit der definierten Ressource verknüpft sind. Untergeordnete Ressourcen können nur mit fünf Ebenen definiert werden. Es ist wichtig zu beachten, dass keine implizite Abhängigkeit zwischen einer untergeordneten Ressource und der übergeordneten Ressource erstellt wird. Wenn die untergeordnete Ressource nach der übergeordneten Ressource bereitgestellt werden muss, müssen Sie diese Abhängigkeit explizit mit der dependsOn-Eigenschaft angeben.
 
+Jede übergeordnete Ressource akzeptiert nur bestimmte Ressourcentypen als untergeordnete Ressourcen. Die akzeptierten Ressourcentypen werden im [Vorlagenschema](https://github.com/Azure/azure-resource-manager-schemas) der übergeordneten Ressource angegeben. Der Name des untergeordneten Ressourcentyps enthält den Namen des übergeordneten Ressourcentyps. So sind z. B. **Microsoft.Web/sites/config** und **Microsoft.Web/sites/extensions** untergeordnete Ressourcen von **Microsoft.Web/sites**.
+
 ## reference-Funktion
 
 Mit der reference-Funktion kann ein Ausdruck seinen Wert von anderen JSON-Name/Wertpaaren oder Laufzeitressourcen ableiten. reference-Ausdrücke deklarieren implizit, dass eine Ressource von einer anderen abhängt. Die durch **propertyPath** unten dargestellte Eigenschaft ist optional. Wenn sie nicht angegeben ist, wird auf die Ressource verwiesen.
@@ -62,6 +64,6 @@ Weitere Informationen finden Sie unter [reference-Funktion](../resource-group-te
 ## Nächste Schritte
 
 - Weitere Informationen zum Erstellen von Azure-Ressourcen-Manager-Vorlagen finden Sie unter [Erstellen von Vorlagen](resource-group-authoring-templates.md). 
-- Eine Liste der verfügbaren Funktionen in einer Vorlage finden Sie unter [Funktionen von Azure-Ressourcen-Manager-Vorlagen](resource-group-template-functions.md).
+- Eine Liste der verfügbaren Funktionen in einer Vorlage finden Sie unter [Funktionen von Azure Resource Manager-Vorlagen](resource-group-template-functions.md).
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1210_2015-->

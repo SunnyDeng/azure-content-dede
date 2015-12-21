@@ -15,16 +15,16 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/02/2015" 
+	ms.date="12/03/2015" 
 	ms.author="mimig"/>
 
-# Automatisieren der Erstellung von DocumentDB-Datenbankkonten mithilfe von Azure-Ressourcen-Manager-Vorlagen und der Azure-CLI
+# Automatisieren der Erstellung von DocumentDB-Konten mithilfe von Azure-Ressourcen-Manager-Vorlagen und der Azure-CLI
 
 > [AZURE.SELECTOR]
 - [Azure Portal](documentdb-create-account.md)
 - [Azure CLI and ARM](documentdb-automation-resource-manager-cli.md)
 
-In diesem Artikel erfahren Sie, wie Sie ein DocumentDB-Konto mithilfe von Azure-Ressourcen-Manager-Vorlagen oder der Azure-CLI (Command-Line Interface, Befehlszeilenschnittstelle) erstellen können.
+In diesem Artikel erfahren Sie, wie Sie ein DocumentDB-Konto mithilfe von Azure-Ressourcen-Manager-Vorlagen oder der Azure-CLI (Command-Line Interface, Befehlszeilenschnittstelle) erstellen können. Weitere Informationen zum Erstellen eines DocumentDB-Kontos über das Azure Portal finden Sie unter [Erstellen eines DocumentDB-Kontos über das Azure-Portal](documentdb-create-account.md).
 
 - [Erstellen eines DocumentDB-Kontos über die CLI](#quick-create-documentdb-account)
 - [Erstellen eines DocumentDB-Kontos über eine ARM-Vorlage](#deploy-documentdb-from-a-template)
@@ -93,13 +93,13 @@ Die folgende Ausgabe wird zurückgegeben:
 
 Sie können zum Standardbefehlssatz wechseln, indem Sie `azure config mode asm` eingeben.
 
-## <a id="quick-create-documentdb-account"></a>Aufgabe: Erstellen eines DocumentDB-Kontos über die CLI
+## <a id="quick-create-documentdb-account"></a>Aufgabe: Erstellen eines DocumentDB-Kontos über Azure CLI
 
 Befolgen Sie die Anweisungen in diesem Abschnitt, um ein DocumentDB-Konto über die Azure-CLI zu erstellen.
 
 ### Schritt 1: Erstellen oder Abrufen der Ressourcengruppe
 
-Wenn Sie ein DocumentDB-Konto erstellen möchten, benötigen Sie zuerst eine Ressourcengruppe. Wenn Sie den Namen der gewünschten Ressourcengruppe bereits kennen, fahren Sie mit [Schritt2](#create-documentdb-account-cli) fort.
+Wenn Sie ein DocumentDB-Konto erstellen möchten, benötigen Sie zuerst eine Ressourcengruppe. Wenn Sie den Namen der gewünschten Ressourcengruppe bereits kennen, fahren Sie mit [Schritt 2](#create-documentdb-account-cli) fort.
 
 Wenn Sie eine Liste aller aktuellen Ressourcengruppen anzeigen möchten, führen Sie den folgenden Befehl aus, und notieren Sie sich den Namen der gewünschten Ressourcengruppe:
 
@@ -107,9 +107,12 @@ Wenn Sie eine Liste aller aktuellen Ressourcengruppen anzeigen möchten, führen
 
 Wenn Sie eine neue Ressourcengruppe erstellen möchten, führen Sie den folgenden Befehl aus, und geben Sie den Namen der neu zu erstellenden Ressourcengruppe und die Region an, in der Sie die Ressourcengruppe erstellen möchten:
 
-	azure group create <resourcegroupname> <location>
+	azure group create <resourcegroupname> <resourcegrouplocation>
 
-Beispiel:
+ - `<resourcegroupname>` darf nur alphanumerische Zeichen, Punkte, Unterstriche, den Bindestrich „-“ und Klammern enthalten und darf nicht mit einem Punkt enden. 
+ - `<resourcegrouplocation>` muss einer der Regionen entsprechen, in denen DocumentDB allgemein verfügbar ist. Die aktuelle Liste der Regionen finden Sie auf der Seite [Azure Regionen](https://azure.microsoft.com/regions/#services).
+
+Beispieleingabe:
 
 	azure group create new_res_group westus
 
@@ -129,15 +132,19 @@ Die folgende Ausgabe wird erzeugt:
 
 Beim Auftreten von Fehlern finden Sie weitere Informationen unter [Problembehandlung](#troubleshooting).
 
-### <a id="create-documentdb-account-cli"></a> Schritt 2: Erstellen eines DocumentDB-Kontos über die CLI
+### <a id="create-documentdb-account-cli"></a> Schritt 2: Erstellen eines DocumentDB-Kontos über die CLI
 
 Erstellen Sie ein DocumentDB-Konto in der neuen oder vorhandenen Ressourcengruppe, indem Sie den folgenden Befehl an der Eingabeaufforderung eingeben:
 
 > [AZURE.TIP]Wenn Sie diesen Befehl in Azure PowerShell oder Windows PowerShell ausführen, erhalten Sie eine Fehlermeldung über ein unerwartetes Token. Führen Sie den Befehl stattdessen an der Windows-Eingabeaufforderung aus.
 
-    azure resource create -g <resourceGroupName> -n <databaseaccountname> -r "Microsoft.DocumentDB/databaseAccounts" -o "2015-04-08" -l <databaseaccountlocation> -p "{"databaseAccountOfferType":"Standard"}" 
+    azure resource create -g <resourcegroupname> -n <databaseaccountname> -r "Microsoft.DocumentDB/databaseAccounts" -o "2015-04-08" -l <databaseaccountlocation> -p "{"databaseAccountOfferType":"Standard"}" 
 
-Beispiel:
+ - `<resourcegroupname>` darf nur alphanumerische Zeichen, Punkte, Unterstriche, den Bindestrich „-“ und Klammern enthalten und darf nicht mit einem Punkt enden. 
+ - `<databaseaccountname>` darf nur Kleinbuchstaben, Ziffern und den Bindestrich „-“ enthalten und muss zwischen 3 und 50 Zeichen lang sein.
+ - `<databaseaccountlocation>` muss einer der Regionen entsprechen, in denen DocumentDB allgemein verfügbar ist. Die aktuelle Liste der Regionen finden Sie auf der Seite [Azure Regionen](https://azure.microsoft.com/regions/#services).
+
+Beispieleingabe:
 
     azure resource create -g new_res_group -n samplecliacct -r "Microsoft.DocumentDB/databaseAccounts" -o 2015-04-08  -l westus -p "{"databaseAccountOfferType":"Standard"}"
 
@@ -216,13 +223,11 @@ Wenn Sie eine Parameterdatei erstellen möchten, kopieren Sie den folgenden Inha
         }
     }
 
-Ändern Sie in der Datei "azuredeploy.parameters.json" den Wert "samplearmacct", sodass er dem gewünschten Datenbanknamen entspricht, und speichern Sie die Datei.
-
-> [AZURE.TIP]Namen von Datenbankkonten dürfen nur Kleinbuchstaben, Ziffern und den Bindestrich "-" enthalten und müssen zwischen 3 und 50 Zeichen lang sein.
+Ändern Sie in der Datei „azuredeploy.parameters.json“ den Wert „samplearmacct“, sodass er dem gewünschten Datenbanknamen entspricht, und speichern Sie die Datei. `<databaseAccountName>` darf nur Kleinbuchstaben, Ziffern und den Bindestrich „-“ enthalten und muss zwischen 3 und 50 Zeichen lang sein.
 
 ### Schritt 2: Erstellen oder Abrufen der Ressourcengruppe
 
-Wenn Sie ein DocumentDB-Konto erstellen möchten, benötigen Sie zuerst eine Ressourcengruppe. Wenn Sie den Namen der gewünschten Ressourcengruppe bereits kennen, fahren Sie mit [Schritt3](#create-account-from-template) fort.
+Wenn Sie ein DocumentDB-Konto erstellen möchten, benötigen Sie zuerst eine Ressourcengruppe. Wenn Sie den Namen der Ressourcengruppe, die Sie verwenden möchten, bereits kennen, stellen Sie sicher, dass der Standort eine [-Region ist, in der DocumentDB allgemein verfügbar ist](https://azure.microsoft.com/regions/#services), und fahren Sie mit [Schritt 3](#create-account-from-template) fort. In der Vorlage wird der Standort des Kontos in der gleichen Region wie die Ressourcengruppe erstellt. Wenn Sie versuchen, ein Konto in einer Region zu erstellen, in DocumentDB nicht verfügbar ist, führt das zu einem Bereitstellungsfehler.
 
 Wenn Sie eine Liste aller aktuellen Ressourcengruppen anzeigen möchten, führen Sie den folgenden Befehl aus, und notieren Sie sich den Namen der gewünschten Ressourcengruppe:
 
@@ -230,9 +235,12 @@ Wenn Sie eine Liste aller aktuellen Ressourcengruppen anzeigen möchten, führen
 
 Wenn Sie eine neue Ressourcengruppe erstellen möchten, führen Sie den folgenden Befehl aus, und geben Sie den Namen der neu zu erstellenden Ressourcengruppe und die Region an, in der Sie die Ressourcengruppe erstellen möchten:
 
-	azure group create <resourcegroupname> <location>
+	azure group create <resourcegroupname> <databaseaccountlocation>
 
-Beispiel:
+ - `<resourcegroupname>` darf nur alphanumerische Zeichen, Punkte, Unterstriche, den Bindestrich „-“ und Klammern enthalten und darf nicht mit einem Punkt enden. 
+ - `<databaseaccountlocation>` muss einer der Regionen entsprechen, in denen DocumentDB allgemein verfügbar ist. Die aktuelle Liste der Regionen finden Sie auf der Seite [Azure Regionen](https://azure.microsoft.com/regions/#services).
+
+Beispieleingabe:
 
 	azure group create new_res_group westus
 
@@ -252,7 +260,7 @@ Die folgende Ausgabe wird erzeugt:
 
 Beim Auftreten von Fehlern finden Sie weitere Informationen unter [Problembehandlung](#troubleshooting).
 
-### <a id="create-account-from-template"></a>Schritt 3: Erstellen des DocumentDB-Kontos über eine ARM-Vorlage
+### <a id="create-account-from-template"></a>Schritt 3: Erstellen des DocumentDB-Kontos über eine ARM-Vorlage
 
 Wenn Sie ein DocumentDB-Konto in der Ressourcengruppe erstellen möchten, führen Sie den folgenden Befehl aus, und geben Sie den Pfad der Vorlagendatei, den Pfad der Parameterdatei oder den Parameterwert, den Namen der Ressourcengruppe für die Bereitstellung und einen Bereitstellungsnamen (-n ist optional) an.
 
@@ -260,7 +268,12 @@ So verwenden Sie eine Parameterdatei
 
     azure group deployment create -f <PathToTemplate> -e <PathToParameterFile> -g <resourcegroupname> -n <deploymentname>
 
-Beispiel:
+ - `<PathToTemplate>` ist der Pfad zur Datei „azuredeploy.json“, die in Schritt 1 erstellt wurde.
+ - `<PathToParameterFile>` ist der Pfad zur Datei „azuredeploy.parameters.json“, die in Schritt 1 erstellt wurde.
+ - `<resourcegroupname>` ist der Name der vorhandenen Ressourcengruppe, der ein DocumentDB-Datenbankkonto hinzugefügt werden soll. 
+ - `<deploymentname>` ist der optionale Name der Bereitstellung.
+
+Beispieleingabe:
 
     azure group deployment create -f azuredeploy.json -e azuredeploy.parameters.json -g new_res_group -n azuredeploy
 
@@ -268,12 +281,12 @@ ODER führen Sie den folgenden Befehl aus, um den Namensparameter für das Daten
 
     azure group deployment create -f <PathToTemplate> -g <resourcegroupname> -n <deploymentname>
 
-Beispiel (Eingabeaufforderung und Eintrag eines Datenbankkontos mit dem Namen "new\_db\_acct"):
+Beispiel für Eingabeaufforderung und Eintrag eines Datenbankkontos mit dem Namen „new\_db\_acct“:
 
     azure group deployment create -f azuredeploy.json -g new_res_group -n azuredeploy
     info:    Executing command group deployment create
     info:    Supply values for the following parameters
-    databaseAccountName: newarmacct
+    databaseAccountName: samplearmacct
 
 Bei der Bereitstellung des Kontos werden folgende Informationen angezeigt:
 
@@ -289,7 +302,7 @@ Bei der Bereitstellung des Kontos werden folgende Informationen angezeigt:
     data:    Mode               : Incremental
     data:    Name                 Type    Value
     data:    -------------------  ------  ------------------
-    data:    databaseAccountName  String  newarmacct
+    data:    databaseAccountName  String  samplearmacct
     data:    location             String  West US
     info:    group deployment create command OK
 
@@ -299,21 +312,25 @@ Nachdem der Befehl ausgeführt wurde, befindet sich das Konto einige Minuten im 
 
 ## Problembehandlung
 
-Wenn Sie bei der Erstellung der Ressourcengruppe oder des Datenbankkontos Fehlermeldungen wie `Deployment provisioning state was not successful` erhalten, verwenden Sie den folgenden Befehl, um das Protokoll der Ressourcengruppe anzuzeigen.
+Wenn Sie Fehlermeldungen wie `Deployment provisioning state was not successful` beim Erstellen Ihrer Ressourcengruppe oder Ihres Datenbankkontos erhalten, haben Sie einige Möglichkeiten für die Problembehandlung.
 
-    azure group log show <resourcegroupname> --last-deployment
+> [AZURE.NOTE]Enthält der Name des Datenbankkontos ungültige Zeichen oder wird ein Ort angegeben, an dem DocumentDB nicht verfügbar ist, führt das zu einem Bereitstellungsfehler. Namen von Datenbankkonten dürfen nur Kleinbuchstaben, Ziffern und den Bindestrich „-“ enthalten und müssen zwischen 3 und 50 Zeichen lang sein. Alle gültigen Orte für Datenbank-Konten sind auf der Seite [Azure Regionen](https://azure.microsoft.com/regions/#services) aufgeführt.
 
-Beispiel:
+- Die Ausgabe enthält die folgenden `Error information has been recorded to C:\Users\wendy\.azure\azure.err`, und überprüfen Sie dann die Fehlerinformationen in der Datei „azure.err“.
 
-    azure group log show new_res_group --last-deployment
+- Nützliche Informationen finden Sie möglicherweise in der Protokolldatei für die Ressourcengruppe. Führen Sie den folgenden Befehl aus, um die Protokolldatei anzuzeigen:
 
-Zusätzliche Informationen finden Sie unter [Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure](../resource-group-deploy-debug.md).
+    	azure group log show <resourcegroupname> --last-deployment
 
-Beachten Sie, dass Namen von Datenbankkonten nur Kleinbuchstaben, Ziffern und den Bindestrich "-" enthalten dürfen und zwischen 3 und 50 Zeichen lang sein müssen.
+    Beispieleingabe:
 
-Fehlerinformationen sind auch im Azure-Portal verfügbar, wie im folgenden Screenshot dargestellt. So navigieren Sie zu Fehlerinformationen: Klicken Sie auf der Navigationsleiste auf "Ressourcengruppen", wählen Sie die fehlerhafte Ressourcengruppe aus, und klicken Sie dann im Bereich "Zusammenfassung" des Blatts "Ressourcengruppe" auf das Datum der letzten Bereitstellung, und wählen Sie auf dem Blatt "Bereitstellungsverlauf" die fehlerhafte Bereitstellung aus. Klicken Sie dann auf dem Blatt "Bereitstellung" auf das mit einem roten Ausrufezeichen gekennzeichnete Vorgangsdetail. Die Statusmeldung der fehlerhaften Bereitstellung wird auf dem Blatt "Vorgangsdetails" angezeigt.
+    	azure group log show new_res_group --last-deployment
 
-![Screenshot des Azure-Portals mit dem Navigationspfad zur Bereitstellungsfehlermeldung](media/documentdb-automation-resource-manager-cli/portal-troubleshooting-deploy.png)
+    Zusätzliche Informationen finden Sie unter [Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure](../resource-group-deploy-debug.md).
+
+- Fehlerinformationen sind auch im Azure-Portal verfügbar, wie im folgenden Screenshot dargestellt. So navigieren Sie zu Fehlerinformationen: Klicken Sie auf der Navigationsleiste auf "Ressourcengruppen", wählen Sie die fehlerhafte Ressourcengruppe aus, und klicken Sie dann im Bereich "Zusammenfassung" des Blatts "Ressourcengruppe" auf das Datum der letzten Bereitstellung, und wählen Sie auf dem Blatt "Bereitstellungsverlauf" die fehlerhafte Bereitstellung aus. Klicken Sie dann auf dem Blatt "Bereitstellung" auf das mit einem roten Ausrufezeichen gekennzeichnete Vorgangsdetail. Die Statusmeldung der fehlerhaften Bereitstellung wird auf dem Blatt "Vorgangsdetails" angezeigt.
+
+    ![Screenshot des Azure-Portals mit dem Navigationspfad zur Bereitstellungsfehlermeldung](media/documentdb-automation-resource-manager-cli/portal-troubleshooting-deploy.png)
 
 ## Nächste Schritte
 
@@ -334,4 +351,4 @@ Weitere Informationen zu DocumentDB finden Sie in folgenden Ressourcen:
 
 Weitere Vorlagen finden Sie unter [Azure-Schnellstartvorlagen](http://azure.microsoft.com/documentation/templates/).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -35,11 +35,7 @@ Klicken Sie, um den [SDK-Inhalt](mobile-engagement-android-sdk-content.md) anzuz
 
 ##Versionshinweise
 
-##4\.1.2 (25.11.2015)
-
-- Verbesserungen der Stabilität.
-
-##4\.1.1 (04.11.2015)
+##4\.1.3 (9.12.2015)
 
 - Verbesserungen der Stabilität.
 
@@ -56,4 +52,4 @@ Frühere Versionen finden Sie unter [Vollständige Versionshinweise](mobile-enga
 
 Wenn Sie bereits eine ältere Version unseres SDKs in die Anwendung integriert haben, finden Sie Informationen dazu in [Upgrade-Verfahren](mobile-engagement-android-upgrade-procedure.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -3,8 +3,8 @@
 	description="Erfahren Sie, wie Sie Azure-PowerShell-Cmdlets für Azure Storage zum Erstellen und Verwalten von Speicherkonten, zum Arbeiten mit Blobs, Tabellen, Warteschlangen und Dateien, zum Konfigurieren und Abfragen von Speicheranalysen und zum Erstellen von SAS verwenden."
 	services="storage"
 	documentationCenter="na"
-	authors="tamram" 
-	manager="adinah"/>
+	authors="robinsh" 
+	manager="carmonm"/>
 
 <tags
 	ms.service="storage"
@@ -12,8 +12,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/26/2015"
-	ms.author="selcint"/>
+	ms.date="12/07/2015"
+	ms.author="robinsh"/>
 
 # Verwenden von Azure PowerShell mit Azure Storage
 
@@ -730,4 +730,4 @@ In diesem Handbuch haben Sie erfahren, wie Sie Azure Storage mit Azure PowerShel
 [Next Steps]: #next
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

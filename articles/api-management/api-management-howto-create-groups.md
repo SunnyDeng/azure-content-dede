@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/13/2015" 
+	ms.date="12/07/2015" 
 	ms.author="sdanie"/>
 
 # Erstellen und Verwenden von Gruppen für Entwicklerkonten in Azure API Management
@@ -34,7 +34,7 @@ Diese Anleitung beschreibt, wie Administrator einer API Management-Instanz neue 
 
 ## <a name="create-group"> </a>Erstellen einer Gruppe
 
-Um eine neue Gruppe zu erstellen, klicken Sie im Azure-Portal für Ihren API Management-Dienst auf **Verwalten**. Daraufhin gelangen Sie zum API Management-Herausgeberportal.
+Um eine neue Gruppe zu erstellen, klicken Sie im klassischen Azure-Portal für Ihren API Management-Dienst auf **Verwalten**. Daraufhin gelangen Sie zum API Management-Herausgeberportal.
 
 ![Herausgeberportal][api-management-management-console]
 
@@ -111,4 +111,4 @@ Sobald Sie die Zuordnung zwischen Entwickler und Gruppe erstellt haben, können 
 [Erstellen einer API Management-Instanz]: api-management-get-started.md#create-service-instance
 [externe Gruppen in zugeordneten Azure Active Directory-Mandanten verwenden]: api-management-howto-aad.md#how-to-add-an-external-azure-active-directory-group
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

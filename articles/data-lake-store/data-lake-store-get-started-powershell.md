@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="11/13/2015"
+   ms.date="12/04/2015"
    ms.author="nitinme"/>
 
 # Erste Schritte mit Azure Data Lake-Speicher mithilfe von Azure PowerShell
@@ -32,7 +32,38 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
 - **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/).
 - **Aktivieren Ihres Azure-Abonnements** für die öffentliche Vorschauversion von Data Lake-Speicher. Weitere Informationen finden Sie in den [Anweisungen](data-lake-store-get-started-portal.md#signup).
-- **Azure PowerShell 1.0 oder höher**. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md).
+
+
+##Installieren von Azure PowerShell 1.0 und höher
+
+Zunächst müssen Sie die 0.9x-Versionen von Azure PowerShell deinstallieren. Um die installierte PowerShell-Version zu überprüfen, führen Sie den folgenden Befehl in einem PowerShell-Fenster aus:
+
+	Get-Module *azure*
+	
+Um die ältere Version zu deinstallieren, führen Sie **Programme und Funktionen** in der Systemsteuerung aus und entfernen die installierte Version, sofern diese niedriger ist als PowerShell 1.0.
+
+Es gibt zwei Hauptoptionen für die Installation von Azure PowerShell.
+
+- [PowerShell-Katalog](https://www.powershellgallery.com/). Führen Sie die folgenden Befehle in einer erweiterten PowerShell ISE oder einer Windows PowerShell-Konsole mit erhöhten Rechten aus:
+
+		# Install the Azure Resource Manager modules from PowerShell Gallery
+		Install-Module AzureRM
+		Install-AzureRM
+		
+		# Install the Azure Service Management module from PowerShell Gallery
+		Install-Module Azure
+		
+		# Import AzureRM modules for the given version manifest in the AzureRM module
+		Import-AzureRM
+		
+		# Import Azure Service Management module
+		Import-Module Azure
+
+	Weitere Informationen finden Sie unter [PowerShell Gallery](https://www.powershellgallery.com/) (in englischer Sprache).
+
+- [Microsoft Web Platform Installer (WebPI)](http://aka.ms/webpi-azps) (in englischer Sprache). Falls Sie Azure PowerShell 0.9.x installiert haben, werden Sie aufgefordert, diese Version zu deinstallieren. Wenn Sie Azure PowerShell-Module aus dem PowerShell-Katalog installiert haben, erfordert das Installationsprogramm, dass diese Module vor der Installation deinstalliert werden, um eine konsistente Azure PowerShell-Umgebung herzustellen. Anweisungen hierzu finden Sie unter [Installing Azure PowerShell 1.0 via WebPI](https://azure.microsoft.com/blog/azps-1-0/) (in englischer Sprache).
+
+WebPI wird monatlich aktualisiert. Der PowerShell-Katalog wird fortlaufend aktualisiert. Wenn Sie mit der Installation aus dem PowerShell-Katalog erst einmal vertraut sind, wird der Katalog sicherlich Ihre erste Anlaufstelle für die neusten und beliebtesten Cmdlets in Azure PowerShell.
 
 ## Erstellen eines Azure Data Lake-Speicherkontos
 
@@ -141,4 +172,4 @@ Geben Sie nach entsprechender Aufforderung **Y** ein, um das Konto zu löschen.
 - [Verwenden von Azure Data Lake Analytics mit Data Lake-Speicher](data-lake-analytics-get-started-portal.md)
 - [Verwenden von Azure HDInsight mit Data Lake-Speicher](data-lake-store-hdinsight-hadoop-use-portal.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

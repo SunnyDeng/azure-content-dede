@@ -24,7 +24,7 @@
 - [PolyBase](sql-data-warehouse-load-with-polybase-short.md)
 - [BCP](sql-data-warehouse-load-with-bcp.md)
 
-In diesem Tutorial erfahren Sie, wie Sie Daten in Azure SQL Data Warehouse laden, indem Sie PolyBase verwenden. Weitere Informationen zu PolyBase finden Sie im [Tutorial zu PolyBase in SQL Data Warehouse][].
+In diesem Tutorial erfahren Sie, wie Sie Daten in Azure SQL Data Warehouse laden, indem Sie PolyBase verwenden. Weitere Informationen zu PolyBase finden Sie unter [PolyBase in SQL Data Warehouse – Tutorial][].
 
 
 ## Voraussetzungen
@@ -72,7 +72,7 @@ Als Nächstes müssen Sie externe Tabellen in SQL Data Warehouse erstellen, um a
 
 - [Create Master Key][]\: Dient zum Verschlüsseln des geheimen Schlüssels Ihrer datenbankbezogenen Anmeldeinformationen.
 - [Create Database Scoped Credential]\: Dient zum Angeben der Authentifizierungsinformationen für Ihr Azure-Speicherkonto.
-- [Create External Data Source]\: Dient zum Angeben des Speicherorts Ihres Azure-Blobspeichers.
+- [Create External Data Source]\: Dient zum Angeben des Speicherorts Ihres Azure-BLOB-Speichers.
 - [Create External File Format]\: Dient zum Angeben des Layouts Ihrer Daten.
 - [Create External Table]\: Dient zum Verweisen auf die Azure-Speicherdaten.
 
@@ -131,7 +131,7 @@ SELECT count(*) FROM dbo.DimDate2External;
 
 ## Schritt 4: Laden von Daten in SQL Data Warehouse
 
-- Führen Sie die Anweisung [CREATE TABLE AS SELECT (Transact-SQL)][] aus, um die Daten in eine neue Tabelle zu laden. Die neue Tabelle erbt die in der Abfrage benannten Spalten. Sie erbt die Datentypen dieser Spalten aus der Definition der externen Tabelle. 
+- Führen Sie die Anweisung [CREATE TABLE AS SELECT (Azure SQL Data Warehouse)][] aus, um die Daten in eine neue Tabelle zu laden. Die neue Tabelle erbt die in der Abfrage benannten Spalten. Sie erbt die Datentypen dieser Spalten aus der Definition der externen Tabelle. 
 - Verwenden Sie die Anweisung INSERT...SELECT, um die Daten in eine vorhandene Tabelle zu laden.  
 
 
@@ -152,9 +152,9 @@ FROM   [dbo].[DimDate2External];
 ```
 
 
-## Schritt 5: Erstellen von Statistiken für die neu geladenen Daten 
+## Schritt 5: Erstellen von Statistiken für die neu geladenen Daten 
 
-Azure SQL Data Warehouse bietet noch keine Unterstützung für die automatische Erstellung oder die automatische Aktualisierung von Statistiken. Um die beste Leistung bei Abfragen zu erhalten, ist es wichtig, dass die Statistiken für alle Spalten aller Tabellen nach dem ersten Laden oder nach allen wesentlichen Datenänderungen erstellt werden. Eine ausführliche Erläuterung der Statistik finden Sie unter dem Thema [Statistiken][] in der Entwicklungsgruppe der Themen. Es folgt ein kurzes Beispiel, wie Sie Statistiken für die in diesem Beispiel geladene Tabelle erstellen können.
+Azure SQL Data Warehouse bietet noch keine Unterstützung für die automatische Erstellung oder die automatische Aktualisierung von Statistiken. Um die beste Leistung bei Abfragen zu erhalten, ist es wichtig, dass die Statistiken für alle Spalten aller Tabellen nach dem ersten Laden oder nach allen wesentlichen Datenänderungen erstellt werden. Eine ausführliche Erläuterung der Statistik finden Sie im Thema [Statistiken][] in der Entwicklungsgruppe der Themen. Es folgt ein kurzes Beispiel, wie Sie Statistiken für die in diesem Beispiel geladene Tabelle erstellen können.
 
 
 ```
@@ -164,7 +164,7 @@ create statistics [FiscalQuarter] on [DimDate2] ([FiscalQuarter]);
 ```
 
 <!--Article references-->
-[Tutorial zu PolyBase in SQL Data Warehouse]: sql-data-warehouse-load-with-polybase.md
+[PolyBase in SQL Data Warehouse – Tutorial]: sql-data-warehouse-load-with-polybase.md
 
 
 <!-- External Links -->
@@ -174,13 +174,13 @@ create statistics [FiscalQuarter] on [DimDate2] ([FiscalQuarter]);
 [Create External Data Source]: https://msdn.microsoft.com/library/dn935022(v=sql.130).aspx
 [Create External File Format]: https://msdn.microsoft.com/library/dn935026(v=sql.130).aspx
 [Create External Table]: https://msdn.microsoft.com/library/dn935021(v=sql.130).aspx
-[Create Master Key]: https://msdn.microsoft.com/de-DE/library/ms174382.aspx
-[Create Database Scoped Credential]: https://msdn.microsoft.com/de-DE/library/mt270260.aspx
-[CREATE TABLE AS SELECT (Transact-SQL)]: https://msdn.microsoft.com/library/mt204041.aspx
+[Create Master Key]: https://msdn.microsoft.com/library/ms174382.aspx
+[Create Database Scoped Credential]: https://msdn.microsoft.com/library/mt270260.aspx
+[CREATE TABLE AS SELECT (Azure SQL Data Warehouse)]: https://msdn.microsoft.com/library/mt204041.aspx
 
 
 <!--Article references-->
 
 [Statistiken]: ./sql-data-warehouse-develop-statistics.md
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1210_2015-->

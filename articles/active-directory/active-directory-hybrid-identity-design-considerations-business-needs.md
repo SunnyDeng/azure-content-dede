@@ -13,7 +13,7 @@
 	ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity" 
-	ms.date="11/11/2015"
+	ms.date="12/07/2015"
 	ms.author="billmath"/>
 
 # Ermitteln der Identitätsanforderungen für Ihre Hybrid-Identitätslösung
@@ -96,4 +96,4 @@ Sie müssen zudem die Benutzeranforderungen bewerten. Diese Bewertung ist wichti
 ## Weitere Informationen
 [Design considerations overview]((active-directory-hybrid-identity-design-considerations-overview.md)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1210_2015-->

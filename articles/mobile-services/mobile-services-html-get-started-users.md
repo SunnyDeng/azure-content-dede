@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-multiple" 
 	ms.devlang="javascript" 
 	ms.topic="article" 
-	ms.date="07/21/2015" 
+	ms.date="11/30/2015" 
 	ms.author="glenga"/>
 
 # Hinzufügen von Authentifizierung zur Mobile Services-App 
@@ -35,7 +35,7 @@ Dieses Lernprogramm baut auf dem Mobile Services-Schnellstart auf. Sie müssen z
 
 3. Starten Sie im Ordner der App eine der folgenden Befehlsdateien aus dem **server**-Unterordner.
 
-	+ **.\\start-iisexpress.ps1** (Windows-Computer) 
+	+ **launch-windows** (Windows-Computer) 
 	+ **launch-mac.command** (Mac OS X-Computer)
 	+ **launch-linux.sh** (Linux-Computer)
 
@@ -135,4 +135,4 @@ Im nächsten Lernprogramm [Autorisieren von Benutzern mit Skripts] werden Sie de
 [Mobile Services HTML/JavaScript How-to Conceptual Reference]: mobile-services-html-how-to-use-client-library.md
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

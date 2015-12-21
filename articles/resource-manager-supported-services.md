@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="12/01/2015"
+   ms.date="12/04/2015"
    ms.author="tomfitz"/>
 
 # Ressourcen-Manager-Unterstützung für Dienste, Regionen und API-Versionen
@@ -58,9 +58,9 @@ Ressourcen des Typs "Virtuelle Computer (klassisch)" können in neue Ressourceng
 | DocumentDB | Ja | [Ja](https://portal.azure.com/#create/Microsoft.DocumentDB) | Ja | [DocumentDB REST](https://msdn.microsoft.com/library/azure/dn781481.aspx) | |
 | Storage | Ja | [Ja](https://portal.azure.com/#create/Microsoft.StorageAccount-ARM) | Nein | [Erstellen des Speicherkontos](https://msdn.microsoft.com/library/azure/mt163564.aspx) | [Speicherkonto](resource-manager-template-storage.md) |
 | Redis-Cache | Ja | [Ja](https://portal.azure.com/#create/Microsoft.Cache.1.0.4) | Ja | | [2014-04-01-preview](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2014-04-01-preview/Microsoft.Cache.json) |
-| SQL-Datenbank | Ja | [Ja](https://portal.azure.com/#create/Microsoft.SQLDatabase.0.5.9-preview) | Ja | [Erstellen einer Datenbank](https://msdn.microsoft.com/library/azure/mt163685.aspx) | [2014-04-01-preview](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2014-04-01-preview/Microsoft.Sql.json) |
+| SQL-Datenbank | Ja | [Ja](https://portal.azure.com/#create/Microsoft.SQLDatabase.1.0.3) | Ja | [Erstellen einer Datenbank](https://msdn.microsoft.com/library/azure/mt163685.aspx) | [2014-04-01-preview](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2014-04-01-preview/Microsoft.Sql.json) |
 | Suchen | Ja | [Ja](https://portal.azure.com/#create/Microsoft.Search) | Ja | [Azure-Suchdienst-REST-API](https://msdn.microsoft.com/library/azure/dn798935.aspx) | |
-| SQL Data Warehouse | Ja | [Ja](https://portal.azure.com/#create/Microsoft.SQLDataWarehouse.0.1.12-preview) | | | |
+| SQL Data Warehouse | Ja | [Ja](https://portal.azure.com/#create/Microsoft.SQLDataWarehouse.0.1.13-preview) | | | |
 | StorSimple | Nein | Nein | - | - | - | | Verwalteter Cache | Nein | Nein | - | - | - |
 
 ## Web- und mobile Anwendungen
@@ -68,7 +68,7 @@ Ressourcen des Typs "Virtuelle Computer (klassisch)" können in neue Ressourceng
 | Dienst | Ressourcen-Manager aktiviert | Portal | Ressourcen verschieben | REST-API | Schema |
 | ------- | ------- | -------- | -------------- | -------- | ------ |
 | API Management | Ja | Nein | Ja | [API erstellen](https://msdn.microsoft.com/library/azure/dn781423.aspx#CreateAPI) | |
-| API-Apps | Ja | [Ja](https://portal.azure.com/#create/microsoft_com.ApiApp.0.2.0-preview) | | | [2015-03-01-preview](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-03-01-preview/Microsoft.AppService.json) |
+| API-Apps | Ja | [Ja](https://portal.azure.com/#create/Microsoft.ApiApp) | | | [2015-03-01-preview](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-03-01-preview/Microsoft.AppService.json) |
 | Web-Apps | Ja | [Ja](https://portal.azure.com/#create/Microsoft.WebSite) | Ja, mit Einschränkungen (siehe unten) | | [2015-08-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-08-01/Microsoft.Web.json) |
 | Notification Hubs | Ja | [Ja](https://portal.azure.com/#create/Microsoft.NotificationHub) | Ja | [Notification Hub erstellen:](https://msdn.microsoft.com/library/azure/dn223269.aspx) | [2015-04-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-04-01/Microsoft.NotificationHubs.json) |
 | Logik-Apps | Ja | [Ja](https://portal.azure.com/#create/Microsoft.EmptyWorkflow.0.2.0-preview) | Ja | | |
@@ -94,7 +94,7 @@ Bei der Arbeit mit Web-Apps können Sie nicht nur einen App Services-Plan versch
 
 | Dienst | Ressourcen-Manager aktiviert | Portal | Ressourcen verschieben | REST-API | Schema |
 | ------- | ------- | -------- | -------------- | -------- | ------ |
-| CDN | Ja (Vorschau) | Nein | | | |
+| CDN | Ja | [Ja](https://portal.azure.com/#create/Microsoft.CDN) | | | |
 | Mediendienst | Nein | Nein | | | |
 
 
@@ -116,7 +116,7 @@ Bei der Arbeit mit Web-Apps können Sie nicht nur einen App Services-Plan versch
 
 | Dienst | Ressourcen-Manager aktiviert | Portal | Ressourcen verschieben | REST-API | Schema |
 | ------- | ------- | ---------- | -------------- | -------- | ------ |
-| Application Insights | Ja | [Ja](https://portal.azure.com/#create/Microsoft.AppInsights.0.2.3-preview) | Nein | | [2014-04-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2014-04-01/Microsoft.Insights.json) |
+| Application Insights | Ja | [Ja](https://portal.azure.com/#create/Microsoft.AppInsights) | Nein | | [2014-04-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2014-04-01/Microsoft.Insights.json) |
 | Bing Maps | Ja | [Ja](https://portal.azure.com/#create/bingmaps.mapapis.1.0.4) | | | |
 | Visual Studio-Konto | Ja | | | | [2014-02-26](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2014-02-26/microsoft.visualstudio.json) |
 
@@ -124,7 +124,7 @@ Bei der Arbeit mit Web-Apps können Sie nicht nur einen App Services-Plan versch
 
 | Dienst | Ressourcen-Manager aktiviert | Portal | Ressourcen verschieben | REST-API | Schema |
 | ------- | ------- | --------- | -------------- | -------- | ------ |
-| Automation | Ja | [Ja](https://portal.azure.com/#create/Microsoft.AutomationAccount.1.0.2-preview) | Ja | | |
+| Automation | Ja | [Ja](https://portal.azure.com/#create/Microsoft.AutomationAccount.1.0.5) | Ja | | |
 | Schlüsseltresor | Ja | Nein | Ja | [Referenz zur Schlüsseltresor-REST-API](https://msdn.microsoft.com/library/azure/dn903609.aspx) | |
 | Scheduler | Ja | Nein | | | [2014-08-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2014-08-01/Microsoft.Scheduler.json) |
 | Operational Insights | Ja | Nein | Ja | | |
@@ -134,7 +134,7 @@ Bei der Arbeit mit Web-Apps können Sie nicht nur einen App Services-Plan versch
 
 | Funktion | Ressourcen-Manager aktiviert | Portal | Ressourcen verschieben | REST-API | Schema |
 | ------- | ------- | -------- | -------------- | -------- | ------ |
-| Autorisierung | Ja | N/V | N/V | [Verwaltungssperren](https://msdn.microsoft.com/library/azure/mt204563.aspx)<br >[Rollenbasierte Zugriffssteuerung](https://msdn.microsoft.com/library/azure/dn906885.aspx) | [Ressourcensperre](resource-manager-template-lock.md)<br />[Rollenzuweisungen](resource-manager-template-role.md) |
+| Autorisierung | Ja | N/V | N/V | [Management-Sperren](https://msdn.microsoft.com/library/azure/mt204563.aspx)<br >[Rollenbasierte Zugriffssteuerung](https://msdn.microsoft.com/library/azure/dn906885.aspx) | [Ressourcensperre](resource-manager-template-lock.md)<br />[Rollenzuweisungen](resource-manager-template-role.md) |
 | Ressourcen | Ja | N/V | N/V | [Verknüpfte Ressourcen](https://msdn.microsoft.com/library/azure/mt238499.aspx) | [Ressourcenlinks](resource-manager-template-links.md) |
 
 
@@ -236,4 +236,4 @@ Sie können die Datei öffnen und nach dem Element **apiVersions** suchen.
 - Weitere Informationen zum Erstellen von Ressourcen-Manager-Vorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md).
 - Informationen zum Bereitstellen von Vorlagen finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](resource-group-template-deploy.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

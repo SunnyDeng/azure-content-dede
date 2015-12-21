@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/27/2015" 
+	ms.date="12/07/2015" 
 	ms.author="sdanie"/>
 
 # So autorisieren Sie Entwicklerkonten mithilfe von OAuth 2.0 in Azure API Management
@@ -28,7 +28,7 @@ Diese Anleitung beschreibt, wie Sie eine Instanz des API Management-Diensts zur 
 
 ## <a name="step1"> </a>Konfigurieren eines OAuth 2.0-Autorisierungsservers in API Management
 
-Klicken Sie zunächst im Azure-Portal für Ihren API Management-Dienst auf **Verwalten**. Daraufhin gelangen Sie zum API Management-Herausgeberportal.
+Klicken Sie zunächst im klassischen Azure-Portal für Ihren API Management-Dienst auf **Verwalten**. Daraufhin gelangen Sie zum API Management-Herausgeberportal.
 
 ![Herausgeberportal][api-management-management-console]
 
@@ -160,4 +160,4 @@ Weitere Informationen zur Verwendung von OAuth 2.0 und API Management finden Si
 [Test the OAuth 2.0 user authorization in the Developer Portal]: #step3
 [Next steps]: #next-steps
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -14,7 +14,7 @@
  ms.topic="article"
  ms.tgt_pltfrm="na"
  ms.workload="big-data"
- ms.date="09/23/2015"
+ ms.date="12/04/2015"
  ms.author="larryfr"/>
 
 # Beispiel-Storm-Topologien und -Komponenten für Apache Storm auf HDInsight
@@ -45,7 +45,7 @@ Es folgt eine Liste von Beispielen zur Verwendung mit Apache Storm in HDInsight,
 
 * [Erfahren Sie, wie Sie Storm-Topologien mit Storm auf HDInsight bereitstellen und verwalten ][6eb0d3b8]
 
-  [2b8c3488]: ../hdinsight-storm-getting-started.md "Erfahren Sie, wie sie Storm auf HDInsight-Cluster erstellen und das Storm-Dashboard zum Bereitstellen von Beispiel-Topologien verwenden."
+  [2b8c3488]: hdinsight-apache-storm-tutorial-get-started-linux.md "Erfahren Sie, wie sie Storm auf HDInsight-Cluster erstellen und das Storm-Dashboard zum Bereitstellen von Beispiel-Topologien verwenden."
   [6eb0d3b8]: hdinsight-storm-deploy-monitor-topology.md "Erfahren Sie, wie Sie Topologien mit dem webbasierten Storm-Dashboard und der Storm-Benutzeroberfläche oder die HDInsight-Tools für Visual Studio bereitstellen und verwalten."
   [16fce2d1]: hdinsight-storm-develop-csharp-visual-studio-topology.md "Erfahren Sie, wie Sie C#-Storm-Topologien mithilfe der HDInsight Tools für Visual Studio erstellen."
   [5797064f]: hdinsight-storm-develop-java-topology.md "Erfahren Sie, wie Sie Storm-Topologien in Java mit Maven erstellen, indem Sie eine Grundtopologie zur Wortzählung erstellen."
@@ -60,4 +60,4 @@ Es folgt eine Liste von Beispielen zur Verwendung mit Apache Storm in HDInsight,
   [ce0c02a2]: https://github.com/hdinsight/hdinsight-storm-examples/tree/master/templates/HDInsightStormExamples "Dieses Projekt enthält Vorlagen für Spouts, Bolts und Topologien für die Interaktion mit verschiedenen Azure-Diensten wie Event Hubs, DocumentDB und SQL-Datenbank."
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -213,7 +213,7 @@ Der vollständige Beispielcode ist unter [Notification Hubs Samples] (in englisc
 
 	![][3]
 
-	g. Konfigurieren Sie den WebJob mit „Dauerhaft ausführen“, sodass in etwa Folgendes angezeigt wird, wenn Sie sich beim Azure-Verwaltungsportal angemeldet haben:
+	g. Konfigurieren Sie den WebJob mit „Dauerhaft ausführen“, sodass in etwa Folgendes angezeigt wird, wenn Sie sich beim [klassischen Azure-Portal] angemeldet haben:
 
 	![][4]
 
@@ -250,7 +250,7 @@ Der vollständige Beispielcode ist unter [Notification Hubs Samples] (in englisc
 
 	![][5]
 
-4. Die Nachrichten wurden ursprünglich an Service Bus-Themen gesendet, die von Service Bus-Abonnements in Ihrem Webauftrag (WebJob) überwacht wurden. Sobald eine Nachricht empfangen wurde, wurde eine Benachrichtigung erstellt und an die mobile App gesendet. Sie können die WebJob-Protokolle durchsuchen, um die Verarbeitung zu bestätigen. Navigieren Sie dazu im Azure-Verwaltungsportal für Ihren Webauftrag zum Link „Protokolle“:
+4. Die Nachrichten wurden ursprünglich an Service Bus-Themen gesendet, die von Service Bus-Abonnements in Ihrem Webauftrag (WebJob) überwacht wurden. Sobald eine Nachricht empfangen wurde, wurde eine Benachrichtigung erstellt und an die mobile App gesendet. Sie können die WebJob-Protokolle durchsuchen, um die Verarbeitung zu bestätigen. Navigieren Sie dazu im [klassischen Azure-Portal] für Ihren WebJob zum Link „Protokolle“:
 
 	![][6]
 
@@ -269,5 +269,6 @@ Der vollständige Beispielcode ist unter [Notification Hubs Samples] (in englisc
 [Verwenden von Service Bus-Themen und -Abonnements]: http://azure.microsoft.com/documentation/articles/service-bus-dotnet-how-to-use-topics-subscriptions/
 [Azure-Webauftrag]: http://azure.microsoft.com/documentation/articles/web-sites-create-web-jobs/
 [Erste Schritte mit Notification Hubs]: http://azure.microsoft.com/documentation/articles/notification-hubs-windows-store-dotnet-get-started/
+[klassischen Azure-Portal]: https://manage.windowsazure.com/
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

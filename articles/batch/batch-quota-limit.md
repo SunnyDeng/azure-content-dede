@@ -43,7 +43,7 @@ Aufgaben pro Serverknoten|4 x Anzahl der Kerne des Knotens
 
 Sie können die Kontingente Ihres Batch-Kontos im [Azure-Portal](https://portal.azure.com) anzeigen.
 
-1. Klicken Sie im Vorschauportal auf **Batch-Konten** und dann auf den Namen Ihres Batch-Kontos.
+1. Klicken Sie im Portal auf **Batch-Konten** und dann auf den Namen Ihres Batch-Kontos.
 
 2. Klicken Sie auf dem Blatt für Ihr Konto auf **Einstellungen** > **Eigenschaften**.
 
@@ -95,4 +95,4 @@ Der Azure-Support tritt mit Ihnen in Kontakt. Die Bearbeitung der Anfrage kann b
 
 [account_quotas]: ./media/batch-quota-limit/accountquota_portal.PNG
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

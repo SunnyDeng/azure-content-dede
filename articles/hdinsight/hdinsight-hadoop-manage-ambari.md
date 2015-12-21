@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="10/27/2015"
+   ms.date="12/03/2015"
    ms.author="larryfr"/>
 
 #Verwalten von HDInsight-Clustern mithilfe der Ambari-Webbenutzeroberfläche
@@ -139,7 +139,7 @@ Wenn Sie einen dieser Links öffnen, wird eine Registerkarte im Browser geöffne
 
 > [AZURE.NOTE]Wenn Sie einen **Quick Link** für einen Dienst auswählen, führt dies zum Fehler "Server nicht gefunden", sofern Sie nicht einen SSL-Tunnel (Secure Sockets Layer) verwenden, um den Webdatenverkehr per Proxy an den Cluster weiterzuleiten. Die Ursache ist, dass die Webanwendungen, mit denen diese Informationen angezeigt werden, nicht im Internet verfügbar gemacht werden.
 >
-> Informationen zur Verwendung eines SSL-Tunnels mit HDInsight finden Sie unter [Verwenden von SSH-Tunneling zum Zugriff auf die Ambari-Webbenutzeroberfläche, ResourceManager, JobHistory, NameNode, Oozie und andere Webbenutzeroberflächen](hdinsight-linux-ambari-ssh-tunnel.md).
+> Informationen zum Verwenden eines SSL-Tunnels mit HDInsight finden Sie unter [Verwenden von SSH-Tunneling zum Zugriff auf die Ambari-Webbenutzeroberfläche, ResourceManager, JobHistory, NameNode, Oozie und andere Webbenutzeroberflächen](hdinsight-linux-ambari-ssh-tunnel.md).
 
 ##Verwaltung
 
@@ -185,11 +185,11 @@ Die Seite **Hosts** listet alle Hosts im Cluster auf. Gehen Sie folgendermaßen 
 
 ###<a id="service"></a>Dienste
 
-Verwenden Sie auf der Seite **Dashboard** oder **Dienste** die Schaltfläche **Aktionen** am Ende der Dienstliste, um alle Dienste zu beenden und zu starten.
+Verwenden Sie auf der Seite **Dashboard** oder **Dienste** am Ende der Dienstliste die Schaltfläche **Aktionen**, um alle Dienste zu beenden und zu starten.
 
 ![Dienstaktionen](./media/hdinsight-hadoop-manage-ambari/service-actions.png)
 
-> [AZURE.WARNING]Die Option __Dienst hinzufügen__ wird zwar in diesem Menü angezeigt, sollte aber nicht verwendet werden, um dem HDInsight-Cluster Dienste hinzuzufügen. Neue Dienste sollten während der Clusterbereitstellung mit einer Skriptaktion hinzugefügt werden. Weitere Informationen zur Verwendung von Skriptaktionen finden Sie unter [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen](hdinsight-hadoop-customize-cluster-linux.md).
+> [AZURE.WARNING]Zwar wird __Dienst hinzufügen__ in diesem Menü aufgelistet, es sollte aber nicht verwendet werden, um dem HDInsight-Cluster Dienste hinzuzufügen. Neue Dienste sollten während der Clusterbereitstellung mit einer Skriptaktion hinzugefügt werden. Weitere Informationen zur Verwendung von Skriptaktionen finden Sie unter [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen](hdinsight-hadoop-customize-cluster-linux.md).
 
 
 Während die Schaltfläche **Actions** alle Dienste neu starten kann, ist es möglicherweise häufig erforderlich, dass Sie bestimmte Dienste starten, beenden oder neu starten möchten. Gehen Sie wie folgt vor, um Aktionen für einzelne Dienste auszuführen:
@@ -216,4 +216,12 @@ Gehen Sie wie folgt vor, um einen Dienst zu konfigurieren:
 
 3. Verwenden Sie die angezeigten Felder, um die Konfiguration zu ändern, und klicken Sie dann auf **Save**. Sie können auch eine vorherige Konfiguration und dann **Make current** auswählen, um die vorherigen Einstellungen zu reaktivieren.
 
-<!---HONumber=Nov15_HO1-->
+##Ambari-Ansichten
+
+Ambari-Ansichten ermöglichen Entwicklern das Hinzufügen von Benutzeroberflächenelementen zur Ambari-Webbenutzeroberfläche mit dem [Ambari Views Framework](https://cwiki.apache.org/confluence/display/AMBARI/Views). HDInsight bietet für Hadoop-Clustertypen die folgenden Ansichten:
+
+* Yarn-Warteschlangen-Manager: Der Warteschlangen-Manager bietet eine einfache Benutzeroberfläche zum Anzeigen und Ändern von YARN-Warteschlangen.
+* Hive-Ansicht: In der Hive-Ansicht können Sie Hive-Abfragen direkt in Ihrem Webbrowser ausführen. Sie können Abfragen speichern sowie Ergebnisse anzeigen, im Clusterspeicher speichern oder auf Ihr lokales System herunterladen. Weitere Informationen zum Verwenden von Hive-Ansichten finden Sie unter [Verwenden von Hive-Ansichten mit HDInsight](hdinsight-hadoop-use-hive-ambari-view.md).
+* Tez-Ansicht: Mithilfe der Tez-Ansicht können Sie Aufträge besser verstehen und optimieren, indem Sie Informationen dazu anzeigen, wie Tez-Aufträge ausgeführt und welche Ressourcen von den Aufträgen verwendet werden.
+
+<!---HONumber=AcomDC_1210_2015-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/02/2015" 
+	ms.date="12/03/2015" 
 	ms.author="sdanie"/>
 
 # Überwachen von Azure Redis Cache
@@ -24,11 +24,11 @@ Wenn die Cachediagnose aktiviert ist, werden ca. alle 30 Sekunden Metriken für
 
 Cachemetriken werden mithilfe des Redis-Befehls [INFO](http://redis.io/commands/info) gesammelt. Weitere Informationen zu den verschiedenen für die Cachemetriken verwendeten INFO-Befehlen finden Sie unter [Verfügbare Metriken und Berichtsintervalle](#available-metrics-and-reporting-intervals).
 
-Zum Anzeigen von Cachemetriken klicken Sie auf [Durchsuchen](cache-configure.md) im [Azure-Vorschauportal](https://portal.azure.com), um zu Ihrer Cache-Instanz zu navigieren. Sie können auf dem Blatt **Redis Cache** auf Metriken für Azure Redis Cache-Instanzen zugreifen.
+Zum Anzeigen von Cachemetriken klicken Sie auf [Durchsuchen](cache-configure.md) im [Azure-Portal](https://portal.azure.com), um zu Ihrer Cache-Instanz zu navigieren. Sie können auf dem Blatt **Redis Cache** auf Metriken für Azure Redis Cache-Instanzen zugreifen.
 
 ![Überwachen][redis-cache-monitor-overview]
 
->[AZURE.IMPORTANT]Wenn im Vorschauportal die folgende Meldung angezeigt wird, befolgen Sie die Anweisungen im Abschnitt [Aktivieren der Cachediagnose](#enable-cache-diagnostics), um die Cachediagnose zu aktivieren.
+>[AZURE.IMPORTANT]Wenn im Azure-Portal die folgende Meldung angezeigt wird, befolgen Sie die Anweisungen im Abschnitt [Aktivieren der Cachediagnose](#enable-cache-diagnostics), um die Cachediagnose zu aktivieren.
 >
 >`Monitoring may not be enabled. Click here to turn on Diagnostics.`
 
@@ -36,7 +36,7 @@ Das Blatt **Redis Cache** bietet Diagramme für die **Überwachung** und die **N
 
 ## Aktivieren der Cachediagnose
 
-Azure Redis Cache ermöglicht Ihnen das Speichern von Diagnosedaten in einem Speicherkonto, sodass Sie mit einem Tool Ihrer Wahl auf die Daten zugreifen und diese direkt verarbeiten können. Damit Cachediagnosedaten gesammelt, gespeichert und im Azure-Vorschauportal angezeigt werden können, muss ein Speicherkonto konfiguriert werden. Caches innerhalb derselben Region und desselben Abonnements nutzen ein gemeinsames Speicherkonto für Diagnosedaten. Wenn die Konfiguration dieses Kontos geändert wird, gilt diese Änderung für alle Caches dieses Abonnements in dieser Region.
+Azure Redis Cache ermöglicht Ihnen das Speichern von Diagnosedaten in einem Speicherkonto, sodass Sie mit einem Tool Ihrer Wahl auf die Daten zugreifen und diese direkt verarbeiten können. Damit Cachediagnosedaten gesammelt, gespeichert und im Azure-Portal angezeigt werden können, muss ein Speicherkonto konfiguriert werden. Caches innerhalb derselben Region und desselben Abonnements nutzen ein gemeinsames Speicherkonto für Diagnosedaten. Wenn die Konfiguration dieses Kontos geändert wird, gilt diese Änderung für alle Caches dieses Abonnements in dieser Region.
 
 Um die Cachediagnose zu aktivieren und zu konfigurieren, navigieren Sie zum Blatt **Redis Cache** für Ihre Cache-Instanz. Wenn die Diagnose noch nicht aktiviert ist, wird eine Meldung anstelle eines Diagnosediagramms angezeigt.
 
@@ -56,9 +56,9 @@ Wenn die Diagnoseeinstellungen konfiguriert sind, klicken Sie auf **Speichern**,
 
 >[AZURE.IMPORTANT]Caches innerhalb derselben Region und desselben Abonnements nutzen ein gemeinsames Speicherkonto für Diagnosedaten. Wenn die Konfiguration dieses Kontos geändert wird, gilt diese Änderung für alle Caches dieses Abonnements in dieser Region.
 
-Um die gespeicherten Metriken anzuzeigen, untersuchen Sie die Tabellen in Ihrem Speicherkonto, deren Namen mit `WADMetrics` beginnen. Weitere Informationen zum Zugriff auf die gespeicherten Metriken außerhalb des Vorschauportals finden Sie im Beispiel [Zugriff auf Redis Cache-Überwachungsdaten](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring).
+Um die gespeicherten Metriken anzuzeigen, untersuchen Sie die Tabellen in Ihrem Speicherkonto, deren Namen mit `WADMetrics` beginnen. Weitere Informationen zum Zugriff auf die gespeicherten Metriken außerhalb des Azure-Portals finden Sie im Beispiel [Access Redis Cache Monitoring data](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring) (in englischer Sprache).
 
->[AZURE.NOTE]Im Vorschauportal werden nur Metriken angezeigt, die im ausgewählten Speicherkonto gespeichert sind. Wenn Sie das Speicherkonto ändern, sind die Daten im zuvor konfigurierten Speicherkonto weiterhin verfügbar, werden im Vorschauportal jedoch nicht angezeigt.
+>[AZURE.NOTE]Im Azure-Portal werden nur Metriken angezeigt, die im ausgewählten Speicherkonto gespeichert sind. Wenn Sie das Speicherkonto ändern, sind die Daten im zuvor konfigurierten Speicherkonto weiterhin verfügbar, werden im Azure-Portal jedoch nicht angezeigt.
 
 ## Verfügbare Metriken und Berichtsintervalle
 
@@ -259,4 +259,4 @@ Weitere Informationen zu Warnungen in Azure finden Sie unter [Empfangen von Warn
 
 [redis-cache-premium-point-shard]: ./media/cache-how-to-monitor/redis-cache-premium-point-shard.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -40,7 +40,7 @@ Es gibt zahlreiche Kunden, die Notification Hubs verwenden, darunter beispielswe
 * Bing Apps – mehrere Millionen von Geräten, 3 Millionen Benachrichtigungen pro Tag gesendet
 
 ###4\. Wie führe ich für meine Notification Hubs zum Ändern meiner Dienstebene ein Upgrade oder Downgrade durch?
-Klicken Sie im [Azure-Portal] auf „Service Bus“, dann auf Ihren Namespace und schließlich auf Ihren Notification Hub. Unter der Registerkarte „Skalierung“ können Sie die Dienstebene Ihrer Notification Hubs ändern.
+Klicken Sie im [klassischen Azure-Portal] auf „Service Bus“, dann auf Ihren Namespace und schließlich auf Ihren Notification Hub. Unter der Registerkarte „Skalierung“ können Sie die Dienstebene Ihrer Notification Hubs ändern.
 
 ##Entwurf und Entwicklung
 ###1\. Welche Serviceplattformen werden unterstützt?
@@ -104,16 +104,16 @@ Es wird empfohlen, ein App-Back-End zu verwenden, das folgende Aufgaben erfüllt
 Wenn Sie über kein Back-End verfügen und die App auf den Geräten gestartet wird, erfolgt eine Neuregistrierung im sekundären Notification Hub. Dies führt letztlich dazu, dass der sekundäre Notification Hub über alle Registrierungen für aktive Geräte verfügt. Der Nachteil hierbei ist, dass Geräte, auf denen die App nicht geöffnet wird, eine Zeit lang keine Benachrichtigungen erhalten.
 
 ###2\. Steht ein Überwachungsprotokoll zur Verfügung?
-Alle Notification Hubs-Verwaltungsvorgänge werden in Vorgangsprotokollen aufgezeichnet, die im Azure-Verwaltungsportal zur Verfügung stehen.
+Alle Notification Hubs-Verwaltungsvorgänge werden in Vorgangsprotokollen aufgezeichnet, die im [klassischen Azure-Portal] zur Verfügung stehen.
 
 ##Überwachung und Problembehandlung
 ###1\. Welche Funktionen für die Problembehandlung stehen zur Verfügung?
 Azure Notification Hubs bietet verschiedene Funktionen für die gängige Problembehandlung, insbesondere für häufigsten Szenarien im Zusammenhang mit verworfenen Benachrichtigungen. Weitere Informationen finden Sie in diesem Whitepaper zur Problembehandlung: [NH – Problembehandlung].
 
 ###2\. Welche Telemetriefunktionen stehen zur Verfügung?
-Azure Notification Hubs ermöglicht die Anzeige von Telemetriedaten im Azure-Verwaltungsportal. Detailinformationen zu den verfügbaren Metriken finden Sie hier: [NH – Metriken]. Beachten Sie, dass erfolgreiche Benachrichtigungen nur bedeuten, dass die Benachrichtigungen an den externen PNS übermittelt wurden (z. B. APNS für Apple, GCM für Google usw.). Anschließend liegt es in der Verantwortung des PNS, die Benachrichtigung an die Geräte zuzustellen. Die PNS-Anbieter stellen zu diesem Vorgang keine näheren Angaben zur Verfügung. Es gibt außerdem die Möglichkeit, Telemetriedaten programmatisch zu exportieren (verfügbar in Stufe "Standard"). Ein Beispiel mit näheren Informationen finden Sie hier: [NH – Beispiel zu Metriken].
+Azure Notification Hubs ermöglicht die Anzeige von Telemetriedaten im [klassischen Azure-Portal]. Detailinformationen zu den verfügbaren Metriken finden Sie hier: [NH – Metriken]. Beachten Sie, dass erfolgreiche Benachrichtigungen nur bedeuten, dass die Benachrichtigungen an den externen PNS übermittelt wurden (z. B. APNS für Apple, GCM für Google usw.). Anschließend liegt es in der Verantwortung des PNS, die Benachrichtigung an die Geräte zuzustellen. Die PNS-Anbieter stellen zu diesem Vorgang keine näheren Angaben zur Verfügung. Es gibt außerdem die Möglichkeit, Telemetriedaten programmatisch zu exportieren (verfügbar in Stufe "Standard"). Ein Beispiel mit näheren Informationen finden Sie hier: [NH – Beispiel zu Metriken].
 
-[Azure-Portal]: https://manage.windowsazure.com
+[klassischen Azure-Portal]: https://manage.windowsazure.com
 [Notification Hubs – Preise]: http://azure.microsoft.com/pricing/details/notification-hubs/
 [Notification Hubs-SLA]: http://azure.microsoft.com/support/legal/sla/
 [Fallstudie - Sochi]: https://customers.microsoft.com/Pages/CustomerStory.aspx?recid=7942
@@ -134,4 +134,4 @@ Azure Notification Hubs ermöglicht die Anzeige von Telemetriedaten im Azure-Ver
 [NH – Beispiel zu Metriken]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/FetchNHTelemetryInExcel
 [Exportieren/Importieren von Registrierungen]: https://msdn.microsoft.com/library/dn790624.aspx
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

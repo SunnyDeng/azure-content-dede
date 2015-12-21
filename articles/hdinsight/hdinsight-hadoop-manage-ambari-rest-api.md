@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="10/27/2015"
+   ms.date="12/04/2015"
    ms.author="larryfr"/>
 
 #Verwalten von HDInsight-Clustern mithilfe der Ambari-REST-API
@@ -34,7 +34,7 @@ Apache Ambari vereinfacht die Verwaltung und Überwachung von Hadoop-Clustern du
 
 <a href="http://ambari.apache.org" target="_blank">Apache Ambari</a> vereinfacht die Hadoop-Verwaltung durch die Bereitstellung einer benutzerfreundlichen Webbenutzeroberfläche, die zum Bereitstellen, Verwalten und Überwachen von Hadoop-Clustern verwendet werden kann. Entwickler können diese Funktionen mithilfe der <a href="https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md" target="_blank">Ambari-REST-APIs</a> in ihre Anwendungen integrieren.
 
-Ambari wird standardmäßig mit Linux-basierten HDInsight-Clustern bereitgestellt.
+Ambari wird standardmäßig mit Linux-basierten Clustern bereitgestellt.
 
 ##REST-API
 
@@ -131,4 +131,4 @@ Eine vollständige Referenz der REST-API finden Sie unter [Referenz zur Ambari-A
 
 > [AZURE.NOTE]Einige Ambari-Funktionen sind deaktiviert, da sie vom HDInsight-Clouddienst verwaltet werden, z. B. Hinzufügen oder Entfernen von Hosts im Cluster oder Hinzufügen neuer Dienste.
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1210_2015-->

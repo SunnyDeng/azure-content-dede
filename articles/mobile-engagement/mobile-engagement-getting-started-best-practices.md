@@ -391,6 +391,7 @@ Nachdem Sie einige Erfahrungen gesammelt haben, könnten Sie Ihren Einbindungspr
 
 ## Nächste Schritte
 
+- [Erstellen Sie ein Azure Mobile Engagement-Konto](mobile-engagement-create-account.md).
 - Besuchen Sie [Definieren der Mobile Engagement-Strategie](mobile-engagement-define-your-mobile-engagement-strategy.md), um weitere Informationen zum Definieren der Mobile Engagement-Strategie zu erhalten.
 
 
@@ -403,4 +404,4 @@ Nachdem Sie einige Erfahrungen gesammelt haben, könnten Sie Ihren Einbindungspr
 <!--Link references-->
 [Media Playbook link]: https://github.com/Azure/azure-mobile-engagement-samples/tree/master/Playbooks
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -3,8 +3,8 @@
    description="Hier erhalten Sie einen Überblick über die Einrichtung der Continuous Integration für eine Service Fabric-Anwendung mit Visual Studio Online (VSO)."
    services="service-fabric"
    documentationCenter="na"
-   authors="cawa"
-   manager="paulyuk"
+   authors="cawams"
+   manager="timlt"
    editor="" />
 <tags
    ms.service="multiple"
@@ -339,4 +339,4 @@ Mit den oben aufgeführten Anweisungen wird für jeden Buildvorgang ein neuer Cl
 
 Weitere Informationen zu Continuous Integration für Service Fabric-Anwendungen finden Sie in den folgenden Artikeln: - [Startseite der Builddokumentation](https://msdn.microsoft.com/Library/vs/alm/Build/overview) - [Bereitstellen eines Build-Agents](https://msdn.microsoft.com/Library/vs/alm/Build/agents/windows) - [Erstellen und Konfigurieren einer Builddefinition](https://msdn.microsoft.com/Library/vs/alm/Build/vs/define-build)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

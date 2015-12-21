@@ -7,13 +7,14 @@
 	manager="sendgrid"
 	editor=""/>
 
-<tags
-	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="na"
-	ms.devlang="multiple"
-	ms.topic="article"
-	ms.date="07/31/2015"
+
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="multiple" 
+	ms.topic="article" 
+	ms.date="11/30/2015" 
 	ms.author="Erikre"/>
 
 
@@ -140,4 +141,4 @@ Nun, da Sie wissen, wie leicht die Verwendung des SendGrid-E-Mail-Dienstes mit M
 [cloudbasierter E-Mail-Dienst]: https://sendgrid.com/email-solutions
 [transaktionale E-Mail-Übermittlung]: https://sendgrid.com/transactional-email
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -16,7 +16,7 @@
     ms.date="11/19/2015" 
     ms.author="robmcm"/>
 
-<!-- Legacy MSDN URL = https://msdn.microsoft.com/de-DE/library/azure/dn205108.aspx -->
+<!-- Legacy MSDN URL = https://msdn.microsoft.com/library/azure/dn205108.aspx -->
 
 # Azure-Speicherkontenliste #
 
@@ -100,4 +100,4 @@ Weitere Informationen zum Verwenden von Azure mit Java finden Sie im [Azure Java
 [ic719496]: ./media/azure-toolkit-for-eclipse-azure-storage-account-list/ic719496.png
 [ic719497]: ./media/azure-toolkit-for-eclipse-azure-storage-account-list/ic719497.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

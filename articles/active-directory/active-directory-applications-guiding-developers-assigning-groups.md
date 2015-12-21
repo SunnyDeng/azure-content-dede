@@ -13,13 +13,13 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/09/2015"
+	ms.date="12/03/2015"
 	ms.author="inhenk"/>
 
 # Azure AD und Anwendungen: Zuweisen von Gruppen zu einer Anwendung
 Bevor Sie einer Anwendung Benutzer und Gruppen zuweisen können, müssen Sie die Benutzerzuweisung erfordern. Informationen zum Erfordern der Benutzerzuweisung finden Sie im Artikel zum [Erfordern von Benutzerzuweisungen](active-directory-applications-guiding-developers-requiring-user-assignment.md).
 
-In diesem Artikel wird davon ausgegangen, dass Sie bereits Gruppen in Active Directory für diese Anwendung erstellt haben. Die Schritte werden im folgenden Video beschrieben.
+In diesem Artikel wird davon ausgegangen, dass Sie bereits Gruppen in Active Directory für diese Anwendung erstellt haben.
 
 ## Zuweisen von Gruppen zu einer Anwendung
 1. Melden Sie sich beim Azure-Portal mit dem Administratorkonto an.
@@ -36,4 +36,4 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits Gruppen in Active Dir
 ## Nächste Schritte
 [AZURE.INCLUDE [active-directory-applications-guiding-developers-for-lob-applications-toc.md](../../includes/active-directory-applications-guiding-developers-for-lob-applications-toc.md)]
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

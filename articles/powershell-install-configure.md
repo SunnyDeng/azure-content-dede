@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="powershell"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/01/2015"
+	ms.date="12/02/2015"
 	ms.author="coreyp"/>
 
 # Installieren und Konfigurieren von Azure PowerShell#
@@ -36,9 +36,9 @@ Laden Sie [PowerShell 1.0.1](https://github.com/Azure/azure-powershell/releases/
 Das Modul installiert eine benutzerdefinierte Konsole für Azure PowerShell. Sie können die Cmdlets über die Windows PowerShell-Standardkonsole oder über die Azure PowerShell-Konsole ausführen.
 
 ## Schritt 3: Verbinden
-Für die Cmdlets ist Ihr Abonnement erforderlich, damit Ihre Dienste verwaltet werden können. Sie können ein Azure-Abonnement erwerben, falls Sie noch keines besitzen. Anweisungen hierzu finden Sie unter [Erste Schritte mit Azure](http://go.microsoft.com/fwlink/p/?LinkId=320795).
+Für die Cmdlets ist Ihr Abonnement erforderlich, damit Ihre Dienste verwaltet werden können. Sie können ein Azure-Abonnement erwerben, falls Sie noch keines besitzen. Eine Anleitung finden Sie unter [Azure erwerben](http://go.microsoft.com/fwlink/p/?LinkId=320795).
 
-1. Typ Add-AzureAccount
+1. Geben Sie **Add-AzureAccount** ein.
 
 2. Geben Sie die dem Konto zugeordnete E-Mail-Adresse und das zugehörige Kennwort ein. Die Anmeldeinformationen werden von Azure authentifiziert und gespeichert, dann wird das Fenster geschlossen.
 
@@ -49,44 +49,29 @@ Melden Sie sich mit Ihrem Geschäfts- oder Schulkonto an:
         $cred = Get-Credential
         Add-AzureAccount -Credential $cred
 
-	>
-	> [AZURE.NOTE] This non-interactive login method only works with a work or school account. A work or school account is a user that is managed by your work or school, and defined in the Azure Active Directory instance for your work or school. If you do not currently have a work or school account, and are using a Microsoft account to log in to your Azure subscription, you can easily create one using the following steps.
-	>
-	> 1. Login to the [Azure Management Portal](https://manage.windowsazure.com), and click on **Active Directory**.
-	>
-	> 2. If no directory exists, select **Create your directory** and provide the requested information.
-	>
-	> 3. Select your directory and add a new user. This new user can sign in using a work or school account.
-	>
-	>     During the creation of the user, you will be supplied with both an e-mail address for the user and a temporary password. Save this  information as it is used in another step.
-	>
-	> 4. From the management portal, select **Settings** and then select **Administrators**. Select **Add**, and add the new user as a co-administrator. This allows the work or school account to manage your Azure subscription.
-	>
-	> 5. Finally, log out of the Azure portal and then log back in using the work or school account. If this is the first time logging in with this account, you will be prompted to change the password.
-	>
-	>For more information on signing up for Microsoft Azure with a work or school account, see [Sign up for Microsoft Azure as an Organization](sign-up-organization.md).
+> [AZURE.NOTE]Diese nicht-interaktive Anmeldemethode funktioniert nur mit einem Geschäfts- oder Schulkonto. Bei einem Geschäfts- oder Schulkonto handelt es sich um ein von Ihrem Unternehmen bzw. Ihrer Bildungseinrichtung verwaltetes Benutzerkonto, das in der entsprechenden Azure Active Directory-Instanz definiert ist. Wenn Sie derzeit kein Geschäfts- oder Schulkonto besitzen und sich mit einem Microsoft-Konto bei Ihrem Azure-Abonnement anmelden, können Sie mit den folgenden Schritten auf einfache Weise ein solches Konto erstellen.
 
+> 1. Melden Sie sich beim [Azure-Verwaltungsportal](https://manage.windowsazure.com) an, und klicken Sie auf **Active Directory**.
+
+> 2. Wenn kein Verzeichnis vorhanden ist, wählen Sie **Create your directory** (Verzeichnis erstellen) aus, und stellen Sie die geforderten Informationen bereit.
+
+> 3. Wählen Sie Ihr Verzeichnis aus, und fügen Sie einen neuen Benutzer hinzu. Mit diesem neuen Benutzer können Sie sich über ein Geschäfts- oder Schulkonto anmelden. Während der Erstellung des Benutzers erhalten Sie sowohl eine E-Mail-Adresse für den Benutzer als auch ein temporäres Kennwort. Speichern Sie diese Informationen, da sie in Schritt 5 weiter unten benötigt werden.
+
+> 4. Wählen Sie im Verwaltungsportal **Einstellungen** und anschließend **Administratoren** aus. Wählen Sie **Hinzufügen** aus, und fügen Sie den neuen Benutzer als Co-Administrator hinzu. Dies ermöglicht es dem Geschäfts- oder Schulkonto, Ihr Azure-Abonnement zu verwalten.
+
+> 5. Melden Sie sich schließlich vom Azure-Portal ab und dann unter Verwendung des Geschäfts- oder Schulkontos erneut beim Azure-Portal an. Wenn Sie sich zu diesem Zeitpunkt zum ersten Mal mit diesem Konto anmelden, werden Sie aufgefordert, das Kennwort zu ändern.
+
+> Weitere Informationen zur Anmeldung bei Microsoft Azure mit einem Geschäfts- oder Schulkonto finden Sie unter [Anmelden bei Microsoft Azure als Organisation](sign-up-organization.md).
 
 ### Anzeigen von Konto- und Abonnementinformationen
 
-Sie können über mehrere Konten und Abonnements zur Verwendung durch Azure PowerShell verfügen Sie können mehrere Konten hinzufügen, indem Sie **Add-AzureAccount** mehr als einmal ausführen.
+Sie können über mehrere Konten und Abonnements zur Verwendung durch Azure PowerShell verfügen Sie können mehrere Konten hinzufügen, indem Sie **Add-AzureAccount** mehrmals ausführen.
 
-Geben Sie Folgendes ein, um die verfügbaren Azure-Konten abzurufen:
+Geben Sie zum Anzeigen der verfügbaren Azure-Konten **Get-AzureAccount** ein.
 
-	Get-AzureAccount
+Um Ihre Azure-Abonnements anzuzeigen, geben Sie **Get-AzureSubscription** ein.
 
-Geben Sie Folgendes ein, um Ihre Azure-Abonnements abzurufen:
-
-	Get-AzureSubscription
-
-
-
-
-
-
-
-
-## Schritt 4: Testen<a id="Ex"></a>
+## Schritt 4: Testen<a id="Ex"></a>
 
 
 Nachdem Sie das Modul installiert und die Verbindung zwischen Ihrem Computer und dem Abonnement konfiguriert haben, können Sie eine Azure-Web-App erstellen, um zu testen, ob alles funktioniert.
@@ -143,4 +128,4 @@ Hilfe von der Community erhalten Sie in den folgenden beliebten Foren:
 - [Azure-Forum auf MSDN](http://go.microsoft.com/fwlink/p/?LinkId=320212)
 - [Stackoverflow](http://go.microsoft.com/fwlink/?LinkId=320213)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

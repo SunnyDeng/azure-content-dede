@@ -20,6 +20,6 @@ Standardmäßig können APIs auf mobilen App-Back-Ends anonym aufgerufen werden.
 
         table.access = 'authenticated';
 
-	Weitere Informationen finden Sie unter [Erzwingen der Authentifizierung für den Zugriff auf Tabellen](../articles/app-service-mobile/app-service-mobile-node-backend-how-to-use-server-sdk.md#howto-tables-auth) in [Verwenden des Azure Mobile Apps-SDK für Node.js](../articles/app-service-mobile/app-service-mobile-node-backend-how-to-use-server-sdk.md).
+	Weitere Informationen finden Sie unter [Erzwingen der Authentifizierung für den Zugriff auf Tabellen](../articles/app-service-mobile/app-service-mobile-node-backend-how-to-use-server-sdk.md#howto-tables-auth). Informationen zum Herunterladen des Schnellstart-Codeprojekts von Ihrer Website finden Sie unter [Herunterladen des Schnellstart-Codeprojekts für das Node.js-Back-End mithilfe von Git](../articles/app-service-mobile/app-service-mobile-node-backend-how-to-use-server-sdk.md#download-quickstart).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

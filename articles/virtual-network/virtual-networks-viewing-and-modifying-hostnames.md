@@ -4,7 +4,7 @@
    services="virtual-network"
    documentationCenter="na"
    authors="joaoma"
-   manager="jdial"
+   manager="carmonm"
    editor="tysonn" />
 <tags 
    ms.service="virtual-network"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/25/2015"
+   ms.date="12/07/2015"
    ms.author="joaoma" />
 
 # Anzeigen und Ändern von Hostnamen
@@ -65,10 +65,10 @@ Sie können den Hostnamen für einen virtuellen Computer oder eine Rolleninstanz
 
 [Namensauflösung (DNS)](virtual-networks-name-resolution-for-vms-and-role-instances.md)
 
-[Azure-Dienstkonfigurationsschema (.cscfg)](https://msdn.microsoft.com/library/windowsazure/ee758710.aspx)
+[Azure-Dienstkonfigurationsschema (CSCFG)](https://msdn.microsoft.com/library/windowsazure/ee758710.aspx)
 
 [Konfigurationsschema für virtuelle Azure-Netzwerke](http://go.microsoft.com/fwlink/?LinkId=248093)
 
 [Angeben von DNS-Einstellungen mit Netzwerkkonfigurationsdateien](virtual-networks-specifying-a-dns-settings-in-a-virtual-network-configuration-file.md)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1210_2015-->

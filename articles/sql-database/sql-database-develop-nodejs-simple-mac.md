@@ -1,20 +1,20 @@
-<properties 
-	pageTitle="Herstellen von Verbindungen mit SQL-Datenbanken mithilfe von Node.js mit Tedious unter Mac OS X" 
+<properties
+	pageTitle="Herstellen von Verbindungen mit SQL-Datenbanken mithilfe von Node.js mit Tedious unter Mac OS X"
 	description="Zeigt ein Node.js-Codebeispiel zum Herstellen einer Verbindung mit Azure SQL-Datenbank. Das Beispiel verwendet den Tedious-Treiber zum Herstellen der Verbindung."
-	services="sql-database" 
-	documentationCenter="" 
-	authors="meet-bhagdev" 
-	manager="jeffreyg" 
+	services="sql-database"
+	documentationCenter=""
+	authors="meet-bhagdev"
+	manager="jeffreyg"
 	editor=""/>
 
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="nodejs" 
-	ms.topic="article" 
-	ms.date="10/20/2015" 
+<tags
+	ms.service="sql-database"
+	ms.workload="data-management"
+	ms.tgt_pltfrm="na"
+	ms.devlang="nodejs"
+	ms.topic="article"
+	ms.date="12/08/2015"
 	ms.author="meetb"/>
 
 
@@ -27,7 +27,7 @@
 Dieses Thema enthält ein Node.js-Codebeispiel, das unter Mac OS X ausgeführt wird. Das Beispiel stellt mithilfe des Tedious-Treibers eine Verbindung mit Azure SQL-Datenbank her.
 
 
-## Erforderliche Softwarekomponenten
+## Voraussetzungen
 
 
 Installieren Sie **node**, sofern es nicht bereits auf Ihrem Computer installiert ist.
@@ -47,14 +47,15 @@ Nach der Konfiguration Ihres Computers mit **node** und **npm** navigieren Sie z
 
 **npm init** erstellt ein node-Projekt. Wenn Sie während der Projekterstellung die Standardeinstellungen beibehalten möchten, drücken Sie die EINGABETASTE, bis das Projekt erstellt wurde. Im Projektverzeichnis wird nun die Datei **package.json** angezeigt.
 
+### Eine SQL-Datenbank
 
-### Erstellen von AdventureWorks-Datenbanken
+Auf der [Seite für erste Schritte](sql-database-get-started.md) erhalten Sie Informationen zum Erstellen einer Beispieldatenbank. Sie sollten unbedingt die Anleitung zum Erstellen einer **AdventureWorks-Datenbankvorlage** befolgen. Die unten gezeigten Beispiele funktionieren nur mit dem **AdventureWorks-Schema**.
 
+## Schritt 1: Abrufen der Verbindungsdetails
 
-Für das Codebeispiel in diesem Thema wird eine **AdventureWorks**-Testdatenbank vorausgesetzt. Wenn Sie noch keine erstellt haben, lesen Sie unter [Erste Schritte mit SQL-Datenbank](sql-database-get-started.md) nach. Sie sollten unbedingt die Anleitung zum Erstellen einer **AdventureWorks-Datenbankvorlage** befolgen. Die unten gezeigten Beispiele funktionieren nur mit dem **AdventureWorks-Schema**.
+[AZURE.INCLUDE [sql-database-include-connection-string-details-20-portalshots](../../includes/sql-database-include-connection-string-details-20-portalshots.md)]
 
-
-## Herstellen von Verbindungen mit der SQL-Datenbank
+## Schritt 2: Verbinden
 
 Die [new Connection](http://pekim.github.io/tedious/api-connection.html)-Funktion dient zum Herstellen einer Verbindung mit der SQL-Datenbank.
 
@@ -73,7 +74,7 @@ Die [new Connection](http://pekim.github.io/tedious/api-connection.html)-Funktio
 	});
 
 
-## Ausführen von SQL-SELECT-Anweisungen
+## Schritt 3: Ausführen einer Abfrage
 
 
 Alle SQL-Anweisungen werden mithilfe der [new Request()](http://pekim.github.io/tedious/api-request.html)-Funktion ausgeführt. Wenn die Anweisung Zeilen zurückgibt, z. B. eine select-Anweisung, können Sie diese mithilfe der [request.on()](http://pekim.github.io/tedious/api-request.html)-Funktion abrufen. Wenn keine Zeilen vorhanden sind, gibt die [request.on()](http://pekim.github.io/tedious/api-request.html)-Funktion leere Listen zurück.
@@ -95,12 +96,12 @@ Alle SQL-Anweisungen werden mithilfe der [new Request()](http://pekim.github.io/
 		console.log("Connected");
 		executeStatement();
 	});
-	
-	
+
+
 	function executeStatement() {
 		request = new Request("SELECT c.CustomerID, c.CompanyName,COUNT(soh.SalesOrderID) AS OrderCount FROM SalesLT.Customer AS c LEFT OUTER JOIN SalesLT.SalesOrderHeader AS soh ON c.CustomerID = soh.CustomerID GROUP BY c.CustomerID, c.CompanyName ORDER BY OrderCount DESC;", function(err) {
 	  	if (err) {
-	   		console.log(err);} 
+	   		console.log(err);}
 		});
 		var result = "";
 		request.on('row', function(columns) {
@@ -114,7 +115,7 @@ Alle SQL-Anweisungen werden mithilfe der [new Request()](http://pekim.github.io/
 		    console.log(result);
 		    result ="";
 		});
-	
+
 		request.on('done', function(rowCount, more) {
 		console.log(rowCount + ' rows returned');
 		});
@@ -122,13 +123,9 @@ Alle SQL-Anweisungen werden mithilfe der [new Request()](http://pekim.github.io/
 	}
 
 
-## Einfügen von Zeilen, Anwenden von Parametern und Abrufen von generierten Primärschlüsseln
+## Schritt 4: Einfügen einer Zeile
 
-
-In SQL-Datenbanken können die [IDENTITY](https://msdn.microsoft.com/library/ms186775.aspx)-Eigenschaft und das [SEQUENCE](https://msdn.microsoft.com/library/ff878058.aspx)-Objekt zum automatischen Generieren von Werten für [Primärschlüssel](https://msdn.microsoft.com/library/ms179610.aspx) verwendet werden. In diesem Beispiel erfahren Sie, wie Sie eine "insert"-Anweisung ausführen, Parameter zum Schutz vor einer Einschleusung von SQL-Befehlen sicher übergeben und den automatisch generierten Primärschlüsselwert abrufen.
-
-
-Das Codebeispiel in diesem Abschnitt wendet Parameter auf eine SQL-INSERT-Anweisung an. Der generierte Primärschlüsselwert wird vom Programm abgerufen.
+In diesem Beispiel erfahren Sie, wie Sie eine [INSERT](https://msdn.microsoft.com/library/ms174335.aspx)-Anweisung sicher ausführen, Parameter zum Schutz Ihrer Anwendung vor einer [Einschleusung von SQL-Befehlen](https://technet.microsoft.com/library/ms161953(v=sql.105).aspx) übergeben und den automatisch generierten [Primärschlüsselwert](https://msdn.microsoft.com/library/ms179610.aspx) abrufen.
 
 
 	var Connection = require('tedious').Connection;
@@ -147,12 +144,12 @@ Das Codebeispiel in diesem Abschnitt wendet Parameter auf eine SQL-INSERT-Anweis
 		console.log("Connected");
 		executeStatement1();
 	});
-	
-	
+
+
 	function executeStatement1() {
 		request = new Request("INSERT SalesLT.Product (Name, ProductNumber, StandardCost, ListPrice, SellStartDate) OUTPUT INSERTED.ProductID VALUES (@Name, @Number, @Cost, @Price, CURRENT_TIMESTAMP);", function(err) {
 		 if (err) {
-		 	console.log(err);} 
+		 	console.log(err);}
 		});
 		request.addParameter('Name', TYPES.NVarChar,'SQL Server Express 2014');
 		request.addParameter('Number', TYPES.NVarChar , 'SQLEXPRESS2014');
@@ -170,4 +167,9 @@ Das Codebeispiel in diesem Abschnitt wendet Parameter auf eine SQL-INSERT-Anweis
 		connection.execSql(request);
 	}
 
-<!---HONumber=Oct15_HO4-->
+
+## Nächste Schritte
+
+Weitere Informationen finden Sie im [Node.js Developer Center](/develop/nodejs/).
+
+<!---HONumber=AcomDC_1210_2015-->

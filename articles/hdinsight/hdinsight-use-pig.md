@@ -122,9 +122,9 @@ Nachdem Sie erfahren haben, wie Sie Pig mit HDInsight verwenden, können Sie mit
 [apachepig-home]: http://pig.apache.org/
 [putty]: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 [curl]: http://curl.haxx.se/
-[pigtask]: http://msdn.microsoft.com/de-DE/library/mt146781(v=sql.120).aspx
-[connectionmanager]: http://msdn.microsoft.com/de-DE/library/mt146773(v=sql.120).aspx
-[ssispack]: http://msdn.microsoft.com/de-DE/library/mt146770(v=sql.120).aspx
+[pigtask]: http://msdn.microsoft.com/library/mt146781(v=sql.120).aspx
+[connectionmanager]: http://msdn.microsoft.com/library/mt146773(v=sql.120).aspx
+[ssispack]: http://msdn.microsoft.com/library/mt146770(v=sql.120).aspx
 
 [hdinsight-storage]: ../hdinsight-use-blob-storage.md
 [hdinsight-upload-data]: hdinsight-upload-data.md
@@ -146,4 +146,4 @@ Nachdem Sie erfahren haben, wie Sie Pig mit HDInsight verwenden, können Sie mit
 [image-hdi-pig-powershell]: ./media/hdinsight-use-pig/hdi.pig.powershell.png
 [image-hdi-pig-architecture]: ./media/hdinsight-use-pig/HDI.Pig.Architecture.png
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/06/2015" 
+	ms.date="12/07/2015" 
 	ms.author="LuisCa"/>
 
 # Azure Machine Learning-Empfehlungs-APIs – Dokumentation
@@ -798,12 +798,14 @@ d5358189-d70f-4e35-8add-34b83b4942b3, Pigs in Heaven
 
 </pre>
 
-##7. Modellgeschäftsregeln
-Es gibt 4 Typen von Regeln:
-<strong>BlockList</strong>: Mit dieser Funktion können Sie eine Sperrliste mit Elementen erstellen, die nicht in den Empfehlungsergebnissen zurückgegeben werden sollen.
-<strong>Upsale</strong>: Hiermit können Sie das Zurückgeben von Elementen in den Empfehlungsergebnissen erzwingen.
-<strong>WhiteList</strong>: Mit dieser Funktion können Sie eine Positivliste mit den einzigen Elementen erstellen, die in den Empfehlungsergebnissen zurückgegeben werden sollen (Gegenfunktion zur Sperrliste).
-<strong>PerSeedBlockList</strong>: Mit dieser Funktion können Sie eine Sperrliste pro Startwert erstellen, um für jedes Element eine Liste von Elementen festzulegen, die nicht in den Empfehlungsergebnissen zurückgegeben werden sollen.
+##7\. Modellgeschäftsregeln
+Folgende Regeltypen werden unterstützt:
+– <strong>BlockList</strong>: Hiermit können Sie eine Sperrliste mit Elementen erstellen, die nicht in den Empfehlungsergebnissen zurückgegeben werden sollen.
+– <strong>FeatureBlockList</strong>: Hiermit können Sie Elemente basierend auf den Werten ihrer Features blockieren
+– <strong>Upsale</strong>: Hiermit können Sie das Zurückgeben von Elementen in den Empfehlungsergebnissen erzwingen.
+– <strong>WhiteList</strong>: Hiermit können Sie ausschließlich Empfehlungen aus einer Liste von Elementen vorschlagen.
+– <strong>FeatureWhiteList</strong>: Hiermit können Sie ausschließlich Elemente empfehlen, die bestimmte Featurewerte haben.
+– <strong>PerSeedBlockList</strong>: Hiermit können Sie pro Element eine Liste von Elementen festlegen, die nicht in den Empfehlungsergebnissen zurückgegeben werden sollen.
 
 
 ###7.1. Modellregeln abrufen
@@ -873,11 +875,12 @@ OData-XML
 
 |	Parametername |	Gültige Werte						 |
 |:--------			|:--------								|
-|	apiVersion		| 1\.0 |
+|	apiVersion | 1,0 |
 ||| 
 | Anforderungstext | 
-<ins>Stellen Sie beim Bereitstellen von Element-IDs für Geschäftsregeln sicher, dass Sie die externe ID des Elements verwenden (die gleiche ID, die Sie in der Katalogdatei verwendet haben).</ins><br>
-<ins>Zum Hinzufügen einer Upsale-Regel:`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>BlockList</Type><Value>{"ItemsToExclude":["2406E770-769C-4189-89DE-1C9283F93A96","3906E110-769C-4189-89DE-1C9283F98888"]}</Value></ApiFilter>`<br><br><ins>Zum Hinzufügen der Upsale-Regel:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>Upsale</Type><Value>{"ItemsToUpsale":["2406E770-769C-4189-89DE-1C9283F93A96"]}</Value></ApiFilter>`<br><br><ins>Zum Hinzufügen der WhiteList-Regel:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>WhiteList</Type><Value>{"ItemsToInclude":["2406E770-769C-4189-89DE-1C9283F93A96","1116E770-769C-4189-89DE-1C9283F88888"]}</Value></ApiFilter>`<br><br><ins>Zum Hinzufügen der PerSeedBlockList-Regel:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>PerSeedBlockList</Type><Value>{"SeedItems":["9949"],"ItemsToExclude":["9862","8158","8244"]}</Value></ApiFilter>`|
+<ins>Stellen Sie beim Bereitstellen von Element-IDs für Geschäftsregeln sicher, dass Sie die externe ID des Elements verwenden (die gleiche ID, die Sie in der Katalogdatei verwendet haben).</ins><br> 
+<ins>So fügen Sie eine „BlockList“-Regel hinzu:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>BlockList</Type><Value>{"ItemsToExclude":["2406E770-769C-4189-89DE-1C9283F93A96","3906E110-769C-4189-89DE-1C9283F98888"]}</Value></ApiFilter>`<br><br><ins> <ins>So fügen Sie eine „FeatureBlockList“-Regel hinzu:</ins><br> <br> `<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>FeatureBlockList</Type><Value>{"Name":"Movie_category","Values":["Adult","Drama"]}</Value></ApiFilter>`<br><br><ins> So fügen Sie eine „Upsale“-Regel hinzu:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>Upsale</Type><Value>{"ItemsToUpsale":["2406E770-769C-4189-89DE-1C9283F93A96"]}</Value></ApiFilter>`<br><br> <ins>So fügen Sie eine „WhiteList“-Regel hinzu:</ins><br> `<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>WhiteList</Type><Value>{"ItemsToInclude":["2406E770-769C-4189-89DE-1C9283F93A96","1116E770-769C-4189-89DE-1C9283F88888"]}</Value></ApiFilter>`<br><br><ins> <ins>So fügen Sie eine „FeatureWhiteList“-Regel hinzu:</ins><br> <br> `<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>FeatureWhiteList</Type><Value>{"Name":"Movie_rating","Values":["PG13"]}</Value></ApiFilter>`<br><br><ins> So fügen Sie eine „PerSeedBlockList“-Regel hinzu:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>PerSeedBlockList</Type><Value>{"SeedItems":["9949"],"ItemsToExclude":["9862","8158","8244"]}</Value></ApiFilter>`|
+
 
 **Antwort**:
 
@@ -1188,8 +1191,8 @@ In diesem Abschnitt wird gezeigt, wie Nutzungsdaten mithilfe einer Datei hochgel
 |:--------			|:--------								|
 |	modelId |	Dies ist der eindeutige Bezeichner des Modells. |
 | filename | Textbezeichner des Katalogs.<br>Es sind nur Buchstaben (A-Z, a-z), Zahlen (0-9), Bindestriche (-) und Unterstriche (_) zulässig.<br>Max. Länge: 50 | 
-| apiVersion | 1.0 | 
-||| 
+| apiVersion | 1.0 |
+|||
 | Anforderungstext | Nutzungsdaten. Format:<br>`<User Id>,<Item Id>[,<Time>,<Event>]`<br><br><table><tr><th>Name</th><th>Obligatorisch</th><th>Typ</th><th>Beschreibung</th></tr><tr><td>Benutzer-ID</td><td>Ja</td><td>[A-z], [a-z], [0-9], [_] &#40;Unterstrich&#41;, [-] &#40;Bindestrich&#41;<br> Max. Länge: 255 </td><td>Eindeutiger Bezeichner eines Benutzers.</td></tr><tr><td>Element-ID</td><td>Ja</td><td>[A-z], [a-z], [0-9], [&#95;] &#40;Unterstrich&#41;, [-] &#40;Bindestrich&#41;<br> Max. Länge: 50</td><td>Eindeutiger Bezeichner eines Elements.</td></tr><tr><td>Zeit</td><td>Nein</td><td>Datum im Format: JJJJ/MM/TTTHH:MM:SS (z. B. 2013/06/20T10:00:00)</td><td>Zeitstempel der Daten.</td></tr><tr><td>Ereignis</td><td>Nein; wenn bereitgestellt, muss auch ein Datum angegeben werden</td><td>Eins der Folgenden:<br>• Click<br>• RecommendationClick<br>• AddShopCart<br>• RemoveShopCart<br>• Purchase</td><td></td></tr></table><br>Max. Dateigröße: 200MB<br><br>Beispiel:<br><pre>149452,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>6360,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>50321,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>71285,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>224450,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>236645,1b3d95e2-84e4-414c-bb38-be9cf461c347<br>107951,1b3d95e2-84e4-414c-bb38-be9cf461c347</pre> |
 
 **Antwort**:
@@ -1797,8 +1800,8 @@ OData
 
   In diesem Abschnitt werden die verschiedenen APIs im Zusammenhang mit Builds erläutert. Es gibt 3 Arten von Builds: Empfehlungsbuilds, Rangfolgebuilds und FBT-Builds (Frequently Bought Together, häufig zusammen gekauft).
 
-Empfehlungsbuilds dienen dazu, Empfehlungsmodelle für Vorhersagen zu erstellen. Für Vorhersagen (für diese Art Build) gibt es zwei Varianten:
-* I2I – auch bekannt als "Item to Item"-Empfehlungen – diese Option sagt anhand eines Elements oder einer Elementliste andere Elemente voraus, die wahrscheinlich von hohem Interesse sind.
+Empfehlungsbuilds dienen dazu, Empfehlungsmodelle für Vorhersagen zu erstellen. Für Vorhersagen (für diese Art Build) gibt es zwei Varianten: 
+* I2I – auch bekannt als "Item to Item"-Empfehlungen – diese Option sagt anhand eines Elements oder einer Elementliste andere Elemente voraus, die wahrscheinlich von hohem Interesse sind. 
 * U2I – auch bekannt als "User to Item"-Empfehlungen – diese Option sagt anhand einer Benutzer-ID (und optional einer Liste von Elementen) andere Elemente voraus, die wahrscheinlich für den Benutzer (sowie ggf. seine sonstige Elementauswahl) von hohem Interesse sind. U2I-Empfehlungen basieren auf dem Verlauf derjenigen Elemente, für die der Benutzer sich bis zu dem Zeitpunkt interessiert hat, zu dem das Modell entwickelt wurde.
 
 Rangfolgebuilds sind technische Builds, welche die Nützlichkeit Ihrer Features vermitteln können. Um bei Empfehlungsmodellen mit Features die besten Ergebnisse zu erzielen, sollten Sie die folgenden Schritte ausführen:
@@ -1868,6 +1871,7 @@ In der folgenden Tabelle sind die Parameter für Empfehlungsbuilds aufgeführt.
 |FbtSupportThreshold | Dies ist ein Maß dafür, wie konservativ das Modell ist. Dies ein Maß für die Grauwerte von Elementen, die bei der Modellierung berücksichtigt werden.| Ganze Zahl | 3-50 (6) |
 |FbtMaxItemSetSize | Begrenzt die Anzahl der Elemente in einem häufigen Satz.| Ganze Zahl | 2-3 (2) |
 |FbtMinimalScore | Dies ist die Mindestbewertung, die ein häufiger Satz haben muss, um in die zurückgegebenen Ergebnisse eingeschlossen zu werden. Höhere Bewertungen sind besser als niedrigere.| Doppelt | 0 und höher (0) |
+|FbtSimilarityFunction | Definiert die Ähnlichkeitsfunktion, die vom Build verwendet werden soll. | String | cooccurrence, lift, jaccard (lift) |
 
 ###11.2. Auslösen eines Empfehlungsbuilds
 
@@ -2646,7 +2650,7 @@ Die Antwort enthält einen Eintrag pro empfohlenem Element. Jeder Eintrag enthä
 
 Eine Beispielantwort finden Sie unter 12.1.
 
-###12.3. Abrufen von FBT-Empfehlungen (für aktiven Build)
+###12\.3. Abrufen von FBT-Empfehlungen (für aktiven Build)
 
 Hierdurch werden Empfehlungen des aktiven Builds vom Typ "FBT" basierend auf einer Liste von Seedelementen (Eingabeelementen) abgerufen.
 
@@ -3080,4 +3084,4 @@ Dieses Dokument gibt Ihnen keinerlei geistige Eigentums- oder anderweitige Recht
 © 2015 Microsoft. Alle Rechte vorbehalten.
  
 
-<!----HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

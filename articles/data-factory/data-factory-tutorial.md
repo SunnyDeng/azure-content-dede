@@ -243,17 +243,20 @@ Der Azure Data Factory-Dienst unterstützt das Erstellen eines Clusters bei Beda
 	5. Geben Sie für **linkedServiceName** die Zeichenfolge **HDInsightStorageLinkedService** an. Diesen Dienst haben Sie im Lernprogramm „Erste Schritte“ erstellt. 
 
 			{
-		    	"name": "HDInsightLinkedService",
-				    "properties": {
-		    	    "type": "HDInsightOnDemandLinkedService",
-		    	    "clusterSize": "4",
-		    	    "timeToLive": "00:05:00",
-		    	    "version": "3.2",
-		    	    "linkedServiceName": "HDInsightStorageLinkedService"
-		    	}
+			    "name": "HDInsightOnDemandLinkedService",
+			    "properties": {
+			        "type": "HDInsightOnDemand",
+			        "description": "",
+			        "typeProperties": {
+			            "clusterSize": "4",
+			            "timeToLive": "00:30:00",
+			            "version": "3.2",
+			            "linkedServiceName": "StorageLinkedService"
+			        }
+			    }
 			}
 
-		Achten Sie darauf, dass **type** für den verknüpften Dienst auf **HDInsightOnDemandLinkedService** festgelegt ist.
+		Achten Sie darauf, dass **type** für den verknüpften Dienst auf **HDInsightOnDemand** festgelegt ist.
 
 2. Klicken Sie auf der Befehlsleiste auf **Bereitstellen**, um den verknüpften Dienst bereitzustellen.
    
@@ -321,7 +324,8 @@ In diesem Schritt erstellen Sie die folgenden Pipelines:
         "isPaused": false
 
 	Beachten Sie, dass die Start- und Endzeiten auf 05/01/2014 und 05/05/2014 festgelegt sind, da sich die Beispieldaten in dieser exemplarischen Vorgehensweise auf den Zeitraum von 05/01/2014 bis 05/05/2014 beziehen.
- 
+ 	
+	Wenn Sie den bedarfsgesteuerten verknüpften HDInsight-Dienst verwenden, legen Sie die **linkedServiceName**-Eigenschaft auf **HDInsightOnDemandLinkedService** fest.
 3. Klicken Sie in der Symbolleiste auf **Bereitstellen**, um die Pipeline bereitzustellen. Vergewissern Sie sich, dass die Nachricht **PIPELINE ERFOLGREICH ERSTELLT** in der Titelleiste des Editors angezeigt wird.
 4. Wiederholen Sie die Schritte 1 bis 3 mit dem Inhalt der folgenden Dateien: 
 	1. EnrichGameLogsPipeline.json
@@ -355,11 +359,7 @@ In diesem Schritt erstellen Sie die folgenden Pipelines:
 
 		![Überwachung – Startmenü][image-data-factory-monitoring-startboard]
 
-	2. Klicken Sie auf den Hub **DURCHSUCHEN** und dann auf **Alles**.
-	 	
-		![Hub „Überwachung“ – Alles][image-data-factory-monitoring-hub-everything]
-
-		Wählen Sie auf dem Blatt **Durchsuchen** die Option **Data Factorys** und auf dem Blatt **Data Factorys** die Option **LogProcessingFactory** aus.
+	2. Klicken Sie auf dem Blatt **Durchsuchen** auf **DURCHSUCHEN**, wählen Sie die Option **Data Factorys** und auf dem Blatt **Data Factorys** die Option **LogProcessingFactory** aus.
 
 		![Überwachung – Data Factorys durchsuchen][image-data-factory-monitoring-browse-datafactories]
 2. Sie haben mehrere Möglichkeiten, um Ihre Data Factory zu überwachen. Sie können mit Pipelines oder Datasets beginnen. Wir beginnen mit Pipelines und arbeiten uns dann weiter vor. 
@@ -375,7 +375,7 @@ In diesem Schritt erstellen Sie die folgenden Pipelines:
 
 	Die Listen **Letzte aktualisierte Slices** und **Letzte fehlerhafte Slices** werden nach **UHRZEIT DER LETZTEN AKTUALISIERUNG** sortiert. Der Zeitpunkt der Aktualisierung eines Slices wird in den folgenden Situationen geändert.
 
-	-  Sie haben den Status eines Slices manuell aktualisiert, z. B. mit dem Cmdlet **Set AzureDataFactorySliceStatus** oder durch Klicken auf **Ausführen** auf dem Blatt **SLICE** des Slices.
+	-  Sie haben den Status eines Slices manuell aktualisiert, z. B. mit dem Cmdlet **Set-AzureRmDataFactorySliceStatus** oder durch Klicken auf **AUSFÜHREN** auf dem Blatt **SLICE** des Slices.
 	-  Der Status des Slices ändert sich aufgrund einer Ausführung (z. B. Ausführung gestartet, Ausführung mit Fehler beendet, Ausführung erfolgreich beendet usw.).
  
 	Klicken Sie auf den Titel der Listen oder auf **...** (Auslassungspunkte), um eine umfangreichere Liste mit Slices anzuzeigen. Klicken Sie auf der Symbolleiste auf **Filter**, um die Slices zu filtern.
@@ -524,4 +524,4 @@ In [Exemplarische Vorgehensweise: Verwenden einer lokalen Datenquelle][tutorial-
 
 [image-data-factory-new-datafactory-create-button]: ./media/data-factory-tutorial/DataFactoryCreateButton.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

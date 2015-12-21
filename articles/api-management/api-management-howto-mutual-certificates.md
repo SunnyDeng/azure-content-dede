@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/23/2015" 
+	ms.date="12/07/2015" 
 	ms.author="sdanie"/>
 
 # Sichern von Back-End-Diensten über eine Clientzertifikatauthentifizierung in Azure API Management
@@ -28,7 +28,7 @@ Diese Anleitung beschreibt, wie Sie Ihre Instanz des API Management-Diensts konf
 
 ## <a name="step1"> </a>Hochladen eines Clientzertifikats
 
-Klicken Sie zunächst im Azure-Portal für Ihren API Management-Dienst auf **Verwalten**. Daraufhin gelangen Sie zum API Management-Herausgeberportal.
+Klicken Sie zunächst im klassischen Azure-Portal für Ihren API Management-Dienst auf **Verwalten**. Daraufhin gelangen Sie zum API Management-Herausgeberportal.
 
 ![API-Herausgeberportal][api-management-management-console]
 
@@ -141,4 +141,4 @@ Informieren Sie sich im folgenden Video, welche anderen Möglichkeiten zum Absic
 
  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1210_2015-->

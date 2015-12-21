@@ -183,11 +183,11 @@ Durch Analysieren dieser Tags zusammen mit der Nutzung erhalten Organisationen n
 
 
 [PowerShell-Umgebung mit dem Azure-Ressourcen-Manager]: ../powershell-azure-resource-manager.md
-[Azure Resource-Cmdlets]: https://msdn.microsoft.com/de-DE/library/azure/dn757692.aspx
+[Azure Resource-Cmdlets]: https://msdn.microsoft.com/library/azure/dn757692.aspx
 [Umgebung für Ihre Azure-Befehlszeilenschnittstelle]: ./xplat-cli-azure-resource-manager.md
 [Übersicht über den Azure Resource Manager]: ../resource-group-overview.md
 [Using tags to organize your Azure resources (Verwenden von Tags zum Organisieren von Azure-Ressourcen)]: ../resource-group-using-tags.md
 [Erläuterungen zur Rechnung für Azure]: ../billing-understand-your-bill.md
 [Gewinnen von Einblicken in den Ressourcenverbrauch unter Microsoft Azure]: ../billing-usage-rate-card-overview.md
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/30/2015" 
+	ms.date="12/03/2015" 
 	ms.author="mimig"/>
 
 
@@ -42,6 +42,9 @@ Ja, DocumentDB unterstützt dokumentübergreifende Transaktionen, die in Form vo
 ### Was sind die typischen Anwendungsfälle für DocumentDB?  
 DocumentDB ist eine gute Wahl für neue Web- und mobile Anwendungen, wenn Skalierung, Leistung und Abfrage schemafreier Daten wichtig sind. DocumentDB eignet sich für schnelle Entwicklungen und die Unterstützung kontinuierlicher Iterationen von Anwendungsdatenmodellen. Anwendungen, die von Benutzern erzeugte Inhalte und Daten verwalten, sind ein [häufiger Anwendungsfall von DocumentDB](documentdb-use-cases.md).
 
+### Ist DocumentDB mit HIPAA kompatibel?
+DocumentDB ist derzeit nicht mit HIPAA kompatibel, es ist allerdings geplant, daraus einen HIPAA-kompatiblen Azure-Dienst zu machen. Weitere Informationen zu Microsoft und HIPAA finden Sie unter [HIPAA and the HITECH Act](https://www.microsoft.com/de-DE/TrustCenter/Compliance/HIPAA) (in englischer Sprache).
+
 ### Was sind die Größenbeschränkungen von DocumentDB?
 DocumentDB-Konten können hinsichtlich Speicher und Durchsatz durch Hinzufügen von Sammlungen skaliert werden. Die Dienstkontingente für die Anzahl der Sammlungen finden Sie unter [DocumentDB-Grenzen](documentdb-limits.md). Wenn Sie weitere Sammlungen benötigen, [wenden Sie sich an den Support](documentdb-increase-limits.md), um das Kontokontingent zu erhöhen.
 
@@ -49,7 +52,7 @@ DocumentDB-Konten können hinsichtlich Speicher und Durchsatz durch Hinzufügen 
 Ausführliche Informationen dazu finden Sie auf der Seite [DocumentDB – Preise](http://go.microsoft.com/fwlink/p/?LinkID=402317). Die Nutzungsgebühren für DocumentDB werden bestimmt von der verwendeten Anzahl von Sammlungen, der Anzahl der Stunden, die die Sammlungen online waren, und der [Leistungsebene](documentdb-performance-levels.md) jeder Sammlung.
 
 ### Gibt es eine kostenlose Testversion?
-Wenn Azure für Sie neu ist, können Sie sich für eine [kostenlose Testversion von Azure](https://azure.microsoft.com/pricing/free-trial/) registrieren. Sie erhalten ein Guthaben von 200 US-Dollar für 30 Tage, in denen Sie alle Azure-Dienste ausprobieren können. Wenn Sie ein Visual Studio-Abonnement besitzen, haben Sie Anspruch auf ein [kostenloses Azure-Guthaben von 150 US-Dollar pro Monat](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/), das Sie für beliebige Azure-Dienste nutzen können.
+Wenn Azure für Sie neu ist, können Sie sich für eine [kostenlose Testversion von Azure](https://azure.microsoft.com/pricing/free-trial/) registrieren. Sie erhalten ein Guthaben von 200 US-Dollar für 30 Tage, in denen Sie alle Azure-Dienste ausprobieren können. Wenn Sie ein Visual Studio-Abonnement besitzen, haben Sie Anspruch auf ein [kostenloses Azure-Guthaben von 150 US-Dollar pro Monat](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/), das Sie für beliebige Azure-Dienste nutzen können.
 
 ### Wie kann ich zusätzliche Hilfe zu DocumentDB erhalten?
 Wenn Sie Hilfe benötigen, wenden Sie sich auf [Stack Overflow](http://stackoverflow.com/questions/tagged/azure-documentdb) oder in den [MSDN-Foren für Entwickler zu Azure DocumentDB](https://social.msdn.microsoft.com/forums/azure/home?forum=AzureDocumentDB) an uns, oder terminieren Sie einen [1:1-Chat mit dem Entwicklungsteam von DocumentDB](http://www.askdocdb.com/). Um bei den neuesten Features von DocumentDB auf dem Laufenden zu bleiben, folgen Sie uns auf [Twitter](https://twitter.com/DocumentDB).
@@ -60,10 +63,10 @@ Wenn Sie Hilfe benötigen, wenden Sie sich auf [Stack Overflow](http://stackover
 Microsoft Azure DocumentDB steht im [Azure-Portal][azure-portal] zur Verfügung. Zuerst müssen Sie sich für ein Azure-Abonnement anmelden. Nachdem Sie sich für ein Microsoft Azure-Abonnement registriert haben, können Sie Ihrem Azure-Abonnement ein DocumentDB-Konto hinzufügen. Anweisungen zum Hinzufügen eines DocumentDB-Kontos finden Sie unter [Erstellen eines DocumentDB-Datenbankkontos](documentdb-create-account.md).
 
 ### Was ist ein Hauptschlüssel?
-Ein Hauptschlüssel ist ein Sicherheitstoken für den Zugriff auf alle Ressourcen eines Kontos. Personen, die über diesen Schlüssel verfügen, haben Lese- und Schreibzugriff auf alle Ressourcen im Datenbankkonto. Gehen Sie beim Verteilen der Hauptschlüssel mit Bedacht vor. Der primäre und sekundäre Hauptschlüssel stehen auf dem Blatt **Schlüssel** im [Azure-Portal][azure-portal] zur Verfügung. Weitere Informationen zu Schlüsseln finden Sie unter [Anzeigen, Kopieren und erneutes Generieren von Zugriffsschlüsseln](documentdb-manage-account.md#keys).
+Ein Hauptschlüssel ist ein Sicherheitstoken für den Zugriff auf alle Ressourcen eines Kontos. Personen, die über diesen Schlüssel verfügen, haben Lese- und Schreibzugriff auf alle Ressourcen im Datenbankkonto. Gehen Sie beim Verteilen der Hauptschlüssel mit Bedacht vor. Der primäre und der sekundäre Hauptschlüssel stehen auf dem Blatt **Schlüssel** im [Azure-Portal][azure-portal] zur Verfügung. Weitere Informationen zu Schlüsseln finden Sie unter [Anzeigen, Kopieren und erneutes Generieren von Zugriffsschlüsseln](documentdb-manage-account.md#keys).
 
 ### Wie erstelle ich eine Datenbank?
-Datenbanken können wie folgt erstellt werden: über das [Azure-Portal](), wie in [Erstellen einer DocumentDB-Datenbank](documentdb-create-database.md) beschrieben, eines der[DocumentDB SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) oder die[REST-APIs](https://msdn.microsoft.com/library/azure/dn781481.aspx).
+Datenbanken können über das [Azure-Portal]() erstellt werden, wie in [Erstellen einer DocumentDB-Datenbank](documentdb-create-database.md) beschrieben, über eines der [DocumentDB-SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) oder über die [REST-APIs](https://msdn.microsoft.com/library/azure/dn781481.aspx).
 
 ### Was ist eine Sammlung?
 Eine Sammlung ist ein Container für JSON-Dokumente und die zugehörige JavaScript-Anwendungslogik. Abfragen und Transaktionen sind Sammlungen zugeordnet. Sie können heterogene (nicht zusammenhängende) JSON-Dokumente in einer Sammlung speichern, die alle automatisch indiziert werden.
@@ -112,4 +115,4 @@ Ja. Da es sich bei DocumentDB um einen RESTful-Dienst handelt, sind Ressourcenli
 [query]: documentdb-sql-query.md
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

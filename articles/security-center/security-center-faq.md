@@ -4,7 +4,7 @@
    services="security-center"
    documentationCenter="na"
    authors="TerryLanfear"
-   manager="stevenpo"
+   manager="StevenPo"
    editor=""/>
 
 <tags
@@ -13,10 +13,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="12/02/2015"
+   ms.date="12/08/2015"
    ms.author="terrylan"/>
 
-# Häufig gestellte Fragen (FAQ) zu Azure Security Center
+# Azure Security Center – Häufig gestellte Fragen
 
 Hier werden häufig gestellte Fragen zu Azure Security Center beantwortet. Azure Security Center ist ein Dienst, der Sie durch größere Transparenz und bessere Kontrolle über die Sicherheit Ihrer Azure-Ressourcen dabei unterstützt, Bedrohungen zu verhindern, zu erkennen und darauf zu reagieren.
 
@@ -28,17 +28,17 @@ Hier werden häufig gestellte Fragen zu Azure Security Center beantwortet. Azure
 Azure Security Center unterstützt Sie beim Verhindern, Erkennen und Beheben von Bedrohungen durch größere Transparenz und bessere Kontrolle über die Sicherheit Ihrer Azure-Ressourcen. Es bietet integrierte Sicherheitsüberwachung und Richtlinienverwaltung für Ihre Abonnements, hilft bei der Erkennung von Bedrohungen, die andernfalls möglicherweise unbemerkt bleiben, und kann gemeinsam mit einem breiten Sektrum an Sicherheitslösungen verwendet werden.
 
 ### Wie erhalte ich Azure Security Center?
-Azure Security Center wird mit Ihrem Microsoft Azure-Abonnement aktiviert und wird über das [Microsoft Azure-Vorschauportal](http://azure.microsoft.com/features/azure-portal/) aufgerufen. ([Melden Sie sich beim Azure-Vorschauportal an](https://ms.portal.azure.com/), wählen Sie **Durchsuchen** aus, und scrollen Sie bis **Security Center**). Möglicherweise Sehen im Dashboard Sie sofort einige Sicherheitsempfehlungen. Dies liegt daran, dass der Dienst den Sicherheitsstatus einiger Sicherheitsmechanismen anhand ihrer Konfiguration in Azure bewerten kann. Damit Sie den vollständigen Satz von Funktionen zur Sicherheitsüberwachung, zu Empfehlungen und zu Warnmeldungen ausprobieren können, müssen Sie [Datensammlung aktivieren](#data-collection).
+Azure Security Center wird mit Ihrem Microsoft Azure-Abonnement aktiviert und über das [Azure-Portal](http://azure.microsoft.com/features/azure-portal/) aufgerufen. ([Melden Sie sich beim Portal an](https://portal.azure.com), wählen Sie **Durchsuchen** aus, und führen Sie einen Bildlauf zum **Security Center** aus.) Möglicherweise Sehen im Dashboard Sie sofort einige Sicherheitsempfehlungen. Dies liegt daran, dass der Dienst den Sicherheitsstatus einiger Sicherheitsmechanismen anhand ihrer Konfiguration in Azure bewerten kann. Damit Sie den vollständigen Satz von Funktionen zur Sicherheitsüberwachung, zu Empfehlungen und zu Warnmeldungen ausprobieren können, müssen Sie [Datensammlung aktivieren](#data-collection).
 
 ## Abrechnung
 
 ### Wie funktioniert die Abrechnung für Azure Security Center?
-Informationen hierzu finden Sie unter [Azure Security Center Preise](https://azure.microsoft.com/pricing/).
+Informationen hierzu finden Sie unter [Security Center – Preise](https://azure.microsoft.com/pricing/details/security-center/).
 
 ## Datensammlung
 
 ### Wie aktiviere ich Datensammlung?<a name=data-collection></a>
-Sie können Datensammlung für Ihre Azure-Abonnements in der Sicherheitsrichtlinie aktivieren. Um Datensammlung zu aktivieren, [melden Sie sich beim Azure-Vorschauportal an](https://ms.portal.azure.com/), wählen Sie **Durchsuchen** aus, wählen Sie **Security Center** aus, und wählen Sie **Sicherheitsrichtlinie** aus. Legen Sie **Datensammlung** auf **Ein** fest, und konfigurieren Sie die Speicherkonten, in denen Sie die gesammelten Daten anzeigen möchten (siehe die Frage [Wo werden meine Daten gespeichert?](#where-is-my-data-stored)). Wenn **Datensammlung** aktiviert ist, werden automatisch Sicherheitskonfigurations- und Ereignisinformationen von allen virtuellen Computern gesammelt, die im Abonnement unterstützt werden.
+Sie können Datensammlung für Ihre Azure-Abonnements in der Sicherheitsrichtlinie aktivieren. Um die Datensammlung zu aktivieren, [melden Sie sich beim Azure-Portal an](https://portal.azure.com). Wählen Sie **Durchsuchen**, **Security Center** und dann **Sicherheitsrichtlinie** aus. Legen Sie **Datensammlung** auf **Ein** fest, und konfigurieren Sie die Speicherkonten, in denen Sie die gesammelten Daten anzeigen möchten (siehe die Frage [Wo werden meine Daten gespeichert?](#where-is-my-data-stored)). Wenn **Datensammlung** aktiviert ist, werden automatisch Sicherheitskonfigurations- und Ereignisinformationen von allen virtuellen Computern gesammelt, die im Abonnement unterstützt werden.
 
 ### Was geschieht, wenn ich Datensammlung aktiviere?
 Datensammlung wird über den Azure-Überwachungs-Agent und die Azure-Erweiterung für Sicherheitsüberwachung aktiviert. Die Azure-Erweiterung für Sicherheitsüberwachung sucht in ETW-Ablaufverfolgungen (Event Tracing for Windows, [Ereignisablaufverfolgung für Windows](https://msdn.microsoft.com/library/windows/desktop/bb968803.aspx)) nach verschiedenen sicherheitsrelevanten Konfigurationen und Ereignissen. Zusätzlich löst das Betriebssystem Ereignisprotokollereignisse zu jeder Aktivität aus. Der Azure-Überwachungs-Agent liest Ereignisprotokolleinträge und ETW-Ablaufverfolgungen und kopiert diese zur Analyse in Ihr Speicherkonto. Dies ist das Speicherkonto, das Sie in der Sicherheitsrichtlinie konfiguriert haben. Weitere Informationen über das Speicherkonto finden Sie in der Farge [Wo werden meine Daten gespeichert?](#where-is-my-data-stored)
@@ -47,10 +47,10 @@ Datensammlung wird über den Azure-Überwachungs-Agent und die Azure-Erweiterung
 Der Agent und die Erweiterung beanspruchen eine äußerst geringe Menge von Systemressourcen und sollten nur eine geringe Auswirkung auf die Leistung haben.
 
 ### Wie gehe ich vor, wenn ich Datensammlung deaktivieren möchte?
-Sie können **Datensammlung** für ein Abonnement in der Sicherheitsrichtlinie deaktivieren. ([Melden Sie sich beim Azure-Vorschauportal an](https://ms.portal.azure.com/), wählen Sie **Durchsuchen** aus, wählen Sie **Security Center** aus, und wählen Sie **Sicherheitsrichtlinie** aus.) Wenn Sie auf ein Abonnement klicken, wird ein neues Blatt geöffnet, das Ihnen die Option bietet, Datensammlung zu deaktivieren. Wählen Sie im oberen Menüband die Option **Agents löschen** aus, um die Agents von vorhandenen virtuellen Computern zu entfernen.
+Sie können **Datensammlung** für ein Abonnement in der Sicherheitsrichtlinie deaktivieren. ([Melden Sie sich beim Azure-Portal an](https://portal.azure.com). Wählen Sie **Durchsuchen**, **Security Center** und dann **Sicherheitsrichtlinie** aus.) Wenn Sie auf ein Abonnement klicken, wird ein neues Blatt geöffnet, das Ihnen die Option bietet, Datensammlung zu deaktivieren. Wählen Sie im oberen Menüband die Option **Agents löschen** aus, um die Agents von vorhandenen virtuellen Computern zu entfernen.
 
 ### Wo werden meine Daten gespeichert?<a name=where-is-my-data-stored></a>
-Wählen Sie für jede Region, in der Sie virtuelle Computer ausführen, ein Speicherkonto, in dem Daten dieser virtuellen Computer gespeichert werden. Dies macht es einfach für Sie, Daten aus Datenschutz- und Datenhoheitszwecken im selben geografischen Gebiet zu speichern. Das Speicherkonto für ein Abonnement wählen Sie in der Sicherheitsrichtlinie aus. ([Melden Sie sich beim Azure-Vorschauportal an](https://ms.portal.azure.com/), wählen Sie **Durchsuchen** aus, wählen Sie **Security Center** aus, und wählen Sie **Sicherheitsrichtlinie** aus.) Wenn Sie auf ein Abonnement klicken, wird ein neues Blatt geöffnet. Klicken Sie auf **Speicherkonten wählen**, um eine Region auszuwählen. Die gesammelten Daten werden aus Sicherheitsgründen logisch von anderen Kundendaten getrennt.
+Wählen Sie für jede Region, in der Sie virtuelle Computer ausführen, ein Speicherkonto, in dem Daten dieser virtuellen Computer gespeichert werden. Dies macht es einfach für Sie, Daten aus Datenschutz- und Datenhoheitszwecken im selben geografischen Gebiet zu speichern. Das Speicherkonto für ein Abonnement wählen Sie in der Sicherheitsrichtlinie aus. ([Melden Sie sich beim Azure-Portal an](https://portal.azure.com). Wählen Sie **Durchsuchen**, **Security Center** und dann **Sicherheitsrichtlinie** aus.) Wenn Sie auf ein Abonnement klicken, wird ein neues Blatt geöffnet. Klicken Sie auf **Speicherkonten wählen**, um eine Region auszuwählen. Die gesammelten Daten werden aus Sicherheitsgründen logisch von anderen Kundendaten getrennt.
 
 Weitere Informationen zu Azure-Speicher und zu Speicherkonten finden Sie unter [Speicherdokumentation](https://azure.microsoft.com/documentation/services/storage/) und [Informationen zu Azure-Speicherkonten](storage-create-storage-account.md).
 
@@ -101,6 +101,6 @@ Es werden [klassische virtuelle Computer und virtuelle Ressourcen-Manager-Comput
 Zugriffssteuerungslisten-Empfehlungen gelten derzeit für klassische virtuelle Computer. Netzwerksicherheitsgruppen und Empfehlungen für die Installation einer Web Application Firewall gelten derzeit nur für virtuelle Ressourcen-Manager-Computer.
 
 ### Werden virtuelle Linux-Computer unterstützt?
-Azure Security Center bietet Basisüberwachung für virtuelle Linux-Computer (nur für Ubuntu). Zukünftig werden weitere Sicherheitintegritätsüberwachung und Datensammlung/-analysen verfügbar sein, und es sollen weitere Linux-Distributionen unterstützt werden.
+Azure Security Center bietet eine Basisüberwachung für virtuelle Linux-Computer (nur für die Ubuntu-Versionen 12.04, 14.04, 14.10, 15.04). Zukünftig werden weitere Sicherheitintegritätsüberwachung und Datensammlung/-analysen verfügbar sein, und es sollen weitere Linux-Distributionen unterstützt werden.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -13,7 +13,7 @@
       ms.topic="article"
       ms.tgt_pltfrm="na"
       ms.workload="na"
-      ms.date="11/30/2015"
+      ms.date="12/06/2015"
       ms.author="hascipio; avikova" />
 
 # Zuordnen eines vorhandenen Webdiensts zu OData über CSDL
@@ -72,11 +72,11 @@ Ermöglicht die Definition von Funktionen (SPROCs) und Entitäten, die über ein
 > [AZURE.TIP]Klicken Sie auf den Dropdownpfeil **Weitere Versionen**, und wählen Sie eine Version aus, falls der Artikel nicht angezeigt wird.
 
 ### EDM – Entry Data Model
-- Übersicht: [http://msdn.microsoft.com/library/vstudio/ee382825(v=vs.100).aspx](OverviewLink)
+- Übersicht: [OverviewLink](http://msdn.microsoft.com/library/vstudio/ee382825(v=vs.100).aspx)
 [OverviewLink]:http://msdn.microsoft.com/library/vstudio/ee382825(v=vs.100).aspx
-- Vorschau: [http://msdn.microsoft.com/library/aa697428(v=vs.80).aspx](PreviewLink)
+- Vorschau: [PreviewLink](http://msdn.microsoft.com/library/aa697428(v=vs.80).aspx)
 [PreviewLink]:http://msdn.microsoft.com/library/aa697428(v=vs.80).aspx
-- Datentypen: [http://msdn.microsoft.com/library/bb399548(v=VS.100).aspx](DataTypesLink)
+- Datentypen: [DataTypesLink](http://msdn.microsoft.com/library/bb399548(v=VS.100).aspx)
 [DataTypesLink]:http://msdn.microsoft.com/library/bb399548(v=VS.100).aspx
 
 Im Folgenden sehen Sie den detaillierten Links-nach-Rechts-Ablauf ab dem Punkt, an dem der Client in die OData-Anweisung eintritt (Aufruf des Inhaltsanbieter-Webdienst) bis zu dem Punkt, an dem die Ergebnisse/Daten zurückgegeben werden:
@@ -123,9 +123,9 @@ Das Metadaten-/Zuordnungsdokument wird für die Zuordnung vorhandener Webdienste
 
 Im Folgenden ein CSDL-Beispiel: (Kopieren Sie die folgende Beispiel-CSDL, fügen Sie sie in einen XML-Editor ein, und passen Sie sie an Ihren Dienst an. Fügen Sie es dann auf der Registerkarte "DataService" unter "CSDL-Zuordnung" ein, wenn Sie den Dienst im [Azure Marketplace-Veröffentlichungsportal](https://publish.windowsazure.com) erstellen.)
 
-**Begriffe:** Beziehung der CSDL-Begriffe zu PPUI ([Publishing Portal](https://publish.windowsazure.com) UI)-Begriffen. - Der "Title" des Angebots in der PPUI bezieht sich auf MyWebOffer. - MyCompany in der PPUI bezieht sich auf "Firmenname" in der UI des [Verkäuferdashboards](https://sellerdashboard.microsoft.com). - API bezieht sich auf einen Web- oder Datendienst (einen Plan in der PPUI).
+**Begriffe**: Beziehung der CSDL-Begriffe zu PPUI-Begriffen ([Publishing Portal](https://publish.windowsazure.com) UI). – Der „Title“ des Angebots in der PPUI bezieht sich auf „MyWebOffer“. – „MyCompany“ in der PPUI bezieht sich auf den **Anzeigenamen des Herausgebers** auf der Benutzeroberfläche von [Microsoft Developer Center](http://dev.windows.com/registration?accountprogram=azure). – Ihre API bezieht sich auf einen Web- oder Datendienst (einen Plan auf der PPUI).
 
-**Hierarchie:** Ein Unternehmen (Inhaltsanbieter) besitzt Angebot(e) mit einem Plan/mehreren Plänen. Dabei handelt es sich um Dienst(e), die in einer API aufgeführt sind.
+**Hierarchie:** Ein Unternehmen (Inhaltsanbieter) besitzt Angebote mit Plänen. Dabei handelt es sich um Dienste, die in einer API aufgeführt sind.
 
 ### CSDL-Beispiel "WebService"
 
@@ -301,4 +301,4 @@ Stellt eine Verbindung mit einem Dienst her, der eine Datenbanktabelle oder -sic
 - Wenn Sie an Beispielen interessiert sind, lesen Sie den Artikel [Beispiele für die OData-Zuordnung im Datendienst](marketplace-publishing-data-service-creation-odata-mapping-examples.md), um Beispielcode kennenzulernen sowie Codesyntax und Kontext zu verstehen.
 - Um zum vorgeschriebenen Pfad für die Veröffentlichung eines Datendiensts im Azure Marketplace zurückzukehren, lesen Sie den Artikel [Leitfaden zum Veröffentlichen von Datendiensten](marketplace-publishing-data-service-creation.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!----HONumber=AcomDC_1210_2015-->

@@ -22,7 +22,7 @@ In Azure API Management werden APIs und deren Operationen zu Produkten hinzugef�
 
 ## <a name="create-apis"> </a>Erstellen von APIs
 
-Eine API in API Management besteht aus einem Satz von Operationen, die von Clientanwendungen aufgerufen werden können. Neue APIs werden im API Management-Portal erstellt.
+Eine API in API Management besteht aus einem Satz von Operationen, die von Clientanwendungen aufgerufen werden können. Neue APIs werden im Herausgeberportal erstellt.
 
 Diese Anleitung beschreibt die Erstellung und Konfiguration einer neuen API in API Management.
 
@@ -62,4 +62,4 @@ Produkte in API Management enthalten eine oder mehrere APIs sowie ein Nutzungsko
 [Importieren einer API-Definition mit Operationen]: api-management-howto-import-api.md
 [Erstellen und Konfigurieren erweiterter Produkteinstellungen]: api-management-howto-product-with-rules.md
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1210_2015-->

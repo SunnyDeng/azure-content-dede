@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/16/2015" 
+	ms.date="12/08/2015" 
 	ms.author="erikre"/>
 
 
@@ -66,7 +66,7 @@ Dieser Abschnitt enthält Name-Wert-Paare, die Ihre Web-App beim Start lädt.
 
 - Bei .NET-Apps werden diese Einstellungen zur Laufzeit in die `AppSettings` der .NET-Konfiguration eingefügt, wobei vorhandene Einstellungen überschrieben werden. 
 
-- PHP-, Python-, Java- und Node-Anwendungen können auf diese Einstellungen als Umgebungsvariablen zur Laufzeit zugreifen. Für jede App-Einstellung werden zwei Umgebungsvariablen erstellt: eine mit dem Namen, der für die App-Einstellung eingegeben wurde, und eine weitere mit dem Präfix APPSETTING\_. Beide enthalten denselben Wert.
+- PHP-, Python-, Java- und Node-Anwendungen können auf diese Einstellungen als Umgebungsvariablen zur Laufzeit zugreifen. Für jede App-Einstellung werden zwei Umgebungsvariablen erstellt: eine mit dem Namen, der für die App-Einstellung eingegeben wurde, und eine weitere mit dem Präfix APPSETTING_. Beide enthalten denselben Wert.
 
 ### Verbindungszeichenfolgen
 
@@ -76,10 +76,10 @@ Bei .NET-Apps werden diese Verbindungszeichenfolgen zur Laufzeit in die `connect
 
 Bei PHP-, Python-, Java- und Node-Anwendungen sind diese Einstellungen als Umgebungsvariablen zur Laufzeit mit dem Verbindungstyp als Präfix verfügbar. Die Präfixe der Umgebungsvariable lauten wie folgt:
 
-- SQL Server: SQLCONNSTR\_
-- MySQL: MYSQLCONNSTR\_
-- SQL-Datenbank: SQLAZURECONNSTR\_
-- Benutzerdefiniert: CUSTOMCONNSTR\_
+- SQL Server: SQLCONNSTR_
+- MySQL: MYSQLCONNSTR_
+- SQL-Datenbank: SQLAZURECONNSTR_
+- Benutzerdefiniert: CUSTOMCONNSTR_
 
 Wenn beispielsweise eine MySQL-Verbindungszeichenfolge "`connectionstring1`" heißt, wird sie über die Umgebungsvariable `MYSQLCONNSTR_connectionString1` aufgerufen.
 
@@ -132,7 +132,7 @@ Zum Anzeigen der Protokolldateien müssen Sie die FTP-Anmeldeinformationen wie f
 ![](./media/web-sites-configure/configure03.png)
 
 
-Der vollständige FTP-Benutzername lautet "App\\Benutzername". Dabei ist *App* der Name Ihrer Web-App. Den Benutzernamen finden Sie auf dem Blatt der Web-App unter **Essentials**.
+Der vollständige FTP-Benutzername lautet "App\Benutzername". Dabei ist *App* der Name Ihrer Web-App. Den Benutzernamen finden Sie auf dem Blatt der Web-App unter **Essentials**.
 
 ![](./media/web-sites-configure/configure02.png)
 
@@ -177,4 +177,4 @@ Weitere Informationen finden Sie unter [Vorgehensweise: Überwachen des Web-Endp
 * Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -7,13 +7,14 @@
 	manager="dwrede"
 	editor="mollybos"/>
 
-<tags
-	ms.service="mobile-services"
-	ms.workload="mobile"
-	ms.tgt_pltfrm="na"
-	ms.devlang="multiple"
-	ms.topic="article"
-	ms.date="08/08/2015"
+
+<tags 
+	ms.service="mobile-services" 
+	ms.workload="mobile" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="multiple" 
+	ms.topic="article" 
+	ms.date="12/01/2015" 
 	ms.author="donnam;ricksal"/>
 
 # Skalieren von durch Azure SQL-Datenbank gesicherten mobillen Diensten
@@ -46,20 +47,12 @@ Sollte einer der obigen Punkte nicht zutreffen, können Sie die Skalierungseinst
 
 ### Auswahl der richtigen SQL-Datenbankstufe
 
-Es ist wichtig, die verschiedenen verfügbaren Datenbankstufen zu verstehen, um sicherzustellen, dass Sie die passende Stufe für die Bedürfnisse Ihrer Anwendung gewählt haben. Die Azure SQL-Datenbank bietet zwei verschiedene Datenbankeditionen und drei verschiedene Diensttarife:
+Es ist wichtig, die verschiedenen verfügbaren Datenbankstufen zu verstehen, um sicherzustellen, dass Sie die passende Stufe für die Bedürfnisse Ihrer Anwendung gewählt haben. Azure SQL-Datenbank wird mit drei Tarifen angeboten:
 
-- Web und Business Edition (eingestellt)
-- Übersicht über die Diensttarife "Basic", "Standard" und "Premium".
+- Basic
+- Standard
+- Premium
 
-Die Web und die Business Edition werden vollständig unterstützt; sie werden jedoch am 12. September 2015 eingestellt, wie unter [Häufig gestellte Fragen zur Einstellung von Web Edition und Business Edition](http://msdn.microsoft.com/library/azure/dn741330.aspx) besprochen. Wir empfehlen neuen Kunden die Verwendung der Diensttarife "Basic", "Standard" und "Premium" in Vorbereitung auf diese Änderung. Diese bieten eine Reihe von Überwachungsfunktionen, mit denen es noch einfacher wird, die Datenbankleistung nachzuvollziehen und Fehler zu beheben. Alle neuen mobilen Dienste werden mit einem der neuen Diensttarife erstellt.
-
-Gehen Sie folgendermaßen vor, um einen mobilen Dienst mit der Web und Business Edition in die Diensttarife "Basic", "Standard" und "Premium" zu konvertieren.
-
-1. Starten Sie das [klassische Azure-Portal].
-2. Wählen Sie **+NEU** in der Symbolleiste, und wählen Sie **Datendienste**, **SQL-Datenbank**, **Schnellerfassung**.
-3. Geben Sie einen Datenbanknamen ein, und wählen Sie **Neuer SQL-Datenbankserver** im Feld **Server** aus. Dadurch wird ein Server erstellt, der den neuen Diensttarif "Basic", "Standard" oder "Premium" verwendet.
-4. Füllen Sie die restlichen Felder aus, und wählen Sie **SQL-Datenbank erstellen** aus. Dadurch wird eine Datenbank mit 100 MB erstellt, die die Basic-Stufe verwendet.
-5. Konfigurieren Sie den mobilen Dienst für die Verwendung der soeben erstellten Datenbank. Navigieren Sie zur Registerkarte **Konfigurieren** für diesen Dienst, und wählen Sie **Datenbank ändern** in der Symbolleiste. Wählen Sie auf dem nächsten Bildschirm **Vorhandene SQL-Datenbank verwenden** im Feld **SQL-Datenbank** aus, und klicken Sie auf **Weiter**. Wählen Sie auf dem nächsten Bildschirm die in Schritt 5 erstellte Datenbank aus, und klicken Sie auf **OK**.
 
 Einige Empfehlungen für die Auswahl der richtigen Datenbankstufe sind:
 
@@ -67,7 +60,7 @@ Einige Empfehlungen für die Auswahl der richtigen Datenbankstufe sind:
 - **Standard** — für Produktionsdienste, wenn mehrere gleichzeitige Datenbankabfragen erwartet werden.
 - **Premium** – für umfangreiche Produktionsdienste mit zahlreichen gleichzeitigen Abfragen, hohen Spitzenlasten und erwarteter niedriger Latenz für jede Anforderung.
 
-Weitere Informationen zur Verwendung der einzelnen Stufen finden Sie unter [Gründe für die Verwendung neuer Dienstebenen](http://msdn.microsoft.com/library/azure/dn369873.aspx#Reasons)
+Weitere Informationen zur Verwendung der einzelnen Stufen finden Sie unter [Gründe für die Verwendung neuer Dienstebenen]
 
 ### Analysieren von Datenbankmetriken
 
@@ -79,11 +72,12 @@ Nachdem Sie sich mit den einzelnen Datenbankstufen vertraut gemacht haben, könn
 4. Wählen Sie den Namen der **SQL-Datenbank** im Abschnitt **Datenbankeinstellungen** aus. Dadurch werden Sie zur Registerkarte „Azure SQL-Datenbank“ im Portal geführt.
 5. Gehen Sie zur Registerkarte **Überwachen**.
 6. Stellen Sie sicher, dass die relevanten Metriken angezeigt werden, indem Sie die Schaltfläche **Metriken hinzufügen** verwenden. Schließen Sie die folgenden Metriken ein:
-    - *CPU-Prozentsatz* (nur auf den Basic/Standard/Premium-Stufen verfügbar)
-    - *Prozentsatz physischer Datenlesevorgänge* (nur auf den Basic/Standard/Premium-Stufen verfügbar)
-    - *Prozentsatz Protokollschreibvorgänge* (nur auf den Basic/Standard/Premium-Stufen verfügbar)
-    - *Speicher*
-7. Prüfen Sie die Metriken über dem Zeitfenster, wenn der Dienst Probleme aufwies.
+    - *CPU-Prozentsatz* (nur für die Tarife Basic/Standard/Premium verfügbar)
+
+    - *Daten-E/A (Prozentsatz)* (nur für die Tarife Basic/Standard/Premium verfügbar)
+    - *Protokoll-E/A (Prozentsatz)* (nur für die Tarife Basic/Standard/Premium verfügbar)
+    - *Speicher* 
+7. Prüfen Sie die Metriken über dem Zeitfenster, wenn der Dienst Probleme aufwies. 
 
     ![Klassisches Azure-Portal – SQL-Datenbankmetriken][PortalSqlMetrics]
 
@@ -105,9 +99,16 @@ Häufig ist es hilfreich, Warnungen für wichtige Datenbankmetriken zu konfiguri
 
 1. Navigieren Sie für die Datenbank, für die Sie Warnungen einrichten möchten, zur Registerkarte **Überwachen**.
 2. Stellen Sie wie im vorigen Abschnitt beschrieben sicher, dass die relevanten Metriken angezeigt werden.
-3. Wählen Sie die Metrik, für die Sie eine Warnung einrichten möchten, und wählen Sie **Regel hinzufügen**. ![Klassisches Azure-Portal – SQL-Warnung][PortalSqlAddAlert]
-4. Geben Sie einen Namen und eine Beschreibung für die Warnung ein. ![Klassisches Azure-Portal – Name und Beschreibung für SQL-Warnung][PortalSqlAddAlert2]
-5. Geben Sie den Wert an, der als Warnschwellenwert verwendet werden soll. Empfohlen werden **80%**, damit noch Reaktionszeit bleibt. Geben Sie außerdem eine E-Mail-Adresse an, die Sie aktiv beobachten. ![Klassisches Azure-Portal – Schwellenwert und E-Mail für SQL-Warnung][PortalSqlAddAlert3]
+3. Wählen Sie die Metrik, für die Sie eine Warnung einrichten möchten, und wählen Sie **Regel hinzufügen** aus.
+
+    ![Azure-Verwaltungsportal – SQL-Warnung][PortalSqlAddAlert]
+
+4. Geben Sie einen Namen und eine Beschreibung für die Warnung ein. ![Azure-Verwaltungsportal – Name und Beschreibung für SQL-Warnung][PortalSqlAddAlert2]
+
+5. Geben Sie den Wert an, der als Warnschwellenwert verwendet werden soll. Empfohlen werden **80%**, damit noch Reaktionszeit bleibt. Geben Sie außerdem eine e-Mail-Adresse an, die Sie aktiv beobachten.
+ 
+    ![Azure-Verwaltungsportal – Schwellenwert und E-Mail für SQL-Warnung][PortalSqlAddAlert3]
+
 
 Weitere Informationen zum Diagnostizieren von SQL-Problemen finden Sie unter [Erweiterte Diagnose](#AdvancedDiagnosing) am Ende dieses Dokuments.
 
@@ -189,8 +190,10 @@ Die folgenden Richtlinien sollten bei Datenbankabfragen beachtet werden:
     - Führen Sie keine Joins im Anwendungscode durch.
     - Führen Sie keine Joins im Code des mobilen Diensts durch. Wenn Sie das JavaScript-Back-End verwenden, sollten Sie beachten, dass das [Tabellenobjekt](http://msdn.microsoft.com/library/windowsazure/jj554210.aspx) keine Joins bearbeitet. Verwenden Sie unbedingt direkt das [mssql.Objekt](http://msdn.microsoft.com/library/windowsazure/jj554212.aspx), damit der Join in der Datenbank erfolgt. Weitere Informationen finden Sie unter [Verknüpfen relationaler Tabellen](mobile-services-how-to-use-server-scripts.md#joins). Wenn Sie das .NET.-Back-End verwenden und über LINQ abfragen, werden Joins automatisch auf Datenbankebene vom Entity Framework bearbeitet.
 - **Implementieren Sie Paging.** Bei Datenbankabfragen werden oft sehr viele Datensätze an den Client zurückgegeben. Um die Größe und Latenz der Vorgänge zu minimieren, sollten Sie Paging implementieren.
-    - Standardmäßig begrenzt der mobile Dienst alle eingehenden Abfragen auf eine Seitengröße von 50. Sie können manuell bis zu 1.000 Datensätze anfordern. Weitere Informationen finden Sie unter „Daten seitenweise zurückgeben“ für [Windows Store](mobile-services-windows-dotnet-how-to-use-client-library.md#paging), [iOS](mobile-services-ios-how-to-use-client-library.md#paging), [Android](mobile-services-android-how-to-use-client-library.md#paging), [HTML/JavaScript](mobile-services-html-how-to-use-client-library/#paging) und [Xamarin](partner-xamarin-mobile-services-how-to-use-client-library.md#paging).
-    - Für Abfragen von Ihrem Mobildienstcode aus gibt es keine Standardseitengröße. Wenn Ihre Anwendung Paging nicht implementiert, oder wenn Sie eine defensive Maßnahme ergreifen möchten, können Sie Standardlimits für Ihre Abfragen festlegen. Verwenden Sie im JavaScript-Back-End den Operator **take** für das [Abfrageobjekt](http://msdn.microsoft.com/library/azure/jj613353.aspx). Wenn Sie das .NET-Back-End verwenden, können Sie die Take-Methode (http://msdn.microsoft.com/library/vstudio/bb503062(v=vs.110).aspx) als Teil der LINQ-Abfrage verwenden.
+
+    - Standardmäßig begrenzt der mobile Dienst alle eingehenden Abfragen auf eine Seitengröße von 50. Sie können manuell bis zu 1.000 Datensätze anfordern. Weitere Informationen finden Sie unter „Daten seitenweise zurückgeben“ für [Windows Store](mobile-services-windows-dotnet-how-to-use-client-library.md#paging), [iOS](mobile-services-ios-how-to-use-client-library.md#paging), [Android](mobile-services-android-how-to-use-client-library.md#paging), [HTML/JavaScript](mobile-services-html-how-to-use-client-library#paging) und [Xamarin](partner-xamarin-mobile-services-how-to-use-client-library.md#paging).
+    - Für Abfragen von Ihrem Mobildienstcode aus gibt es keine Standardseitengröße. Wenn Ihre Anwendung Paging nicht implementiert, oder wenn Sie eine defensive Maßnahme ergreifen möchten, können Sie Standardlimits für Ihre Abfragen festlegen. Verwenden Sie im JavaScript-Back-End den Operator **take** für das [Abfrageobjekt](http://msdn.microsoft.com/library/azure/jj613353.aspx). Wenn Sie das .NET-Back-End verwenden, können Sie die [Take-Methode] als Teil der LINQ-Abfrage verwenden.  
+
 
 Weitere Informationen zum Verbessern des Abfragedesigns, darunter die Analyse von Abfrageplänen, finden Sie unter [Erweitertes Abfragedesign](#AdvancedQuery) am Ende dieses Dokuments.
 
@@ -208,7 +211,7 @@ Stellen Sie sich ein Szenario vor, in dem Sie eine Pushbenachrichtigung an alle 
 In diesem Abschnitt werden erweiterte Diagnoseaufgaben behandelt, die hilfreich sein können, wenn das Problem mit den bisherigen Schritten nicht vollständig behoben werden konnte.
 
 ### Voraussetzungen
-Um einige der Diagnoseaufgaben in diesem Abschnitt durchführen zu können, benötigten Sie Zugriff auf ein Verwaltungstool für SQL-Datenbanken wie **SQL Server Management Studio** oder die integrierte Verwaltungsfunktion des **klassischen Azure-Portals**.
+Um einige der Diagnoseaufgaben in diesem Abschnitt durchführen zu können, benötigten Sie Zugriff auf ein Verwaltungstool für SQL-Datenbanken wie **SQL Server Management Studio** oder die in das **klassische Azure-Portal** integrierten Verwaltungsfunktionen.
 
 SQL Server Management Studio ist eine kostenlose Windows-Anwendung, die die fortgeschrittensten Funktionen bietet. Wenn Sie keinen Zugang zu einem Windows-Computer haben (wenn Sie z. B. einen Mac benutzen), können Sie einen virtuellen Computer in Azure wie in [Erstellen eines virtuellen Windows Server-Computers](../virtual-machines-windows-tutorial.md) beschrieben bereitstellen und dann eine Remoteverbindung mit ihm herstellen. Wenn Sie den virtuellen Computer hauptsächlich für die Ausführung von SQL Server Management Studio benötigen, sollte eine **Basic A0**-Instanz (früher „Sehr klein“) ausreichend sein.
 
@@ -252,7 +255,7 @@ Mit den folgenden Schritten werden Sie durch das Abrufen von Verbindungsinformat
 <a name="AdvancedDiagnosing" />
 ### Erweiterte Diagnose
 
-Mehrere Diagnoseaufgaben können problemlos direkt über das **klassische Azure-Portal** ausgeführt werden; einige erweiterte Diagnoseaufgaben sind aber nur über **SQL Server Management Studio** oder das **SQL-Datenbankverwaltungsportal** möglich. Wir nutzen dynamischen Verwaltungssichten, eine Reihe von Sichten, die automatisch mit Diagnoseinformationen zu Ihrer Datenbank ausgefüllt werden. Dieser Abschnitt enthält eine Reihe von Abfragen, die anhand dieser Sichten ausgeführt werden können, um verschiedene Metriken zu prüfen. Weitere Informationen finden Sie unter [Überwachung von SQL Database mit dynamischen Verwaltungssichten][].
+Mehrere Diagnoseaufgaben können problemlos direkt über das **klassische Azure-Portal** ausgeführt werden. Einige erweiterte Diagnoseaufgaben sind aber nur über **SQL Server Management Studio** oder das **Verwaltungsportal für SQL-Datenbank** möglich. Wir nutzen dynamischen Verwaltungssichten, eine Reihe von Sichten, die automatisch mit Diagnoseinformationen zu Ihrer Datenbank ausgefüllt werden. Dieser Abschnitt enthält eine Reihe von Abfragen, die anhand dieser Sichten ausgeführt werden können, um verschiedene Metriken zu prüfen. Weitere Informationen finden Sie unter [Überwachung von SQL Database mit dynamischen Verwaltungssichten][].
 
 Nach den Schritten im vorigen Abschnitt zum Verbinden der Datenbank in SQL Server Management Studio wählen Sie die Datenbank in **Objekt-Explorer** aus. Erweitern Sie **Sichten** und dann **Systemsichten**. Es wird eine Liste der Verwaltungssichten angezeigt. Um die Abfragen unten auszuführen, wählen Sie **Neue Abfrage** bei ausgewählter Datenbank in **Objekt-Explorer**. Fügen Sie dann die Abfrage ein, und klicken Sie auf **Ausführen**.
 
@@ -262,13 +265,14 @@ Wenn Sie das SQL-Datenbankverwaltungsportal verwenden, können Sie alternativ zu
 
 ![SQL-Datenbankverwaltungsportal – neue Abfrage][PortalSqlManagementNewQuery]
 
-Um eine der Abfragen unten auszuführen, fügen Sie sie in das Fenster ein, und klicken Sie auf **Ausführen**.
+Um eine der nachstehenden Abfragen auszuführen, fügen Sie sie in das Fenster ein und klicken auf **Ausführen**.
 
 ![SQL-Datenbankverwaltungsportal – Abfrage ausführen][PortalSqlManagementRunQuery]
 
 #### Erweiterte Metriken
 
-Im klassischen Azure-Portal werden einige Metriken bereitgestellt, wenn die Stufen Basic, Standard und Premium verwendet werden. Wenn Sie aber die Stufen Web und Business verwenden, ist nur die Speichermetrik über das Portal verfügbar. Glücklicherweise lassen sich diese und andere Metriken leicht über die Verwaltungssicht **[sys.resource\_stats](http://msdn.microsoft.com/library/dn269979.aspx)** abrufen, unabhängig von der verwendeten Stufe. Betrachten Sie die folgende Abfrage:
+
+Im Verwaltungsportal werden einige Metriken bereitgestellt, wenn die Stufen Basic, Standard und Premium verwendet werden. Diese und andere Metriken lassen sich unabhängig vom gewählten Tarif mühelos über die Verwaltungssicht **[sys.resource\_stats](http://msdn.microsoft.com/library/dn269979.aspx)** abrufen. Betrachten Sie die folgende Abfrage:
 
     SELECT TOP 10 *
     FROM sys.resource_stats
@@ -290,7 +294,7 @@ Die Sicht **[sys.event\_log](http://msdn.microsoft.com/library/azure/jj819229.as
 
 > [AZURE.NOTE]Führen Sie diese Abfrage für die **master**-Datenbank auf dem Server aus. Die Sicht **sys.event\\_log** ist nur für diese Datenbank vorhanden.
 
-<a name="AdvancedIndexing" />
+<a name="AdvancedIndexing" ></a>
 ### Erweiterte Indizierung
 
 Eine Tabelle oder Sicht kann die folgenden Indizierungstypen enthalten:
@@ -371,12 +375,13 @@ In der folgenden Beispielabfrage wird ein Join für diese Tabellen ausgeführt, 
       AND migs_adv.index_advantage > 10
     ORDER BY migs_adv.index_advantage DESC;
 
-Weitere Informationen finden Sie unter [Überwachung von SQL Database mit dynamischen Verwaltungssichten][] und [Fehlende Indizes in dynamischen Verwaltungssichten](sys-missing-index-stats).
+Weitere Informationen finden Sie unter [Überwachung von SQL Database mit dynamischen Verwaltungssichten][] und [Fehlende Indizes in dynamischen Verwaltungssichten][].
 
-<a name="AdvancedQuery" />
-### Erweitertes Abfragedesign
+<a name="AdvancedQuery" ></a>
+### Erweitertes Abfragedesign 
 
-Häufig ist es schwierig zu diagnostizieren, welche Abfragen die Datenbank am stärksten belasten.
+Häufig ist es schwierig zu diagnostizieren, welche Abfragen für die Datenbank am aufwendigsten sind.
+
 
 #### Suchen der ersten N Abfragen
 
@@ -397,7 +402,7 @@ Das folgende Beispiel gibt Informationen über die „Top-Fünf“-Abfragen geme
 	GROUP BY query_stats.query_hash
 	ORDER BY 2 DESC;
 
-Weitere Informationen finden Sie unter [Überwachung von SQL Database mit dynamischen Verwaltungssichten][]. Zusätzlich zur Ausführung der Abfrage finden Sie im **SQL-Datenbankverwaltungsportal** eine praktische Möglichkeit, diese Daten anzuzeigen. Wählen Sie **Zusammenfassung** für Ihre Datenbank, und klicken Sie dann auf **Abfrageleistung**:
+Weitere Informationen finden Sie unter [Überwachung von SQL Database mit dynamischen Verwaltungssichten][]. Zusätzlich zur Ausführung der Abfrage finden Sie im **Verwaltungsportal für SQL-Datenbank** eine praktische Möglichkeit, diese Daten anzuzeigen. Wählen Sie **Zusammenfassung** für Ihre Datenbank, und klicken Sie dann auf **Abfrageleistung**:
 
 ![SQL-Datenbankverwaltungsportal – Abfrageleistung][PortalSqlManagementQueryPerformance]
 
@@ -407,7 +412,7 @@ Nachdem Sie aufwändige Abfragen identifiziert haben, oder wenn Sie Code mit neu
 
 ![SQL Server Management Studio – Abfrageplan][SSMSQueryPlan]
 
-Um den Abfrageplan im **SQL-Datenbankverwaltungsportal** zu analysieren, verwenden Sie die markierten Symbolleistenschaltflächen.
+Um den Abfrageplan im **Verwaltungsportal für SQL-Datenbank** zu analysieren, verwenden Sie die markierten Symbolleistenschaltflächen.
 
 ![SQL-Datenbankverwaltungsportal – Abfrageplan][PortalSqlManagementQueryPlan]
 
@@ -457,6 +462,9 @@ Um den Abfrageplan im **SQL-Datenbankverwaltungsportal** zu analysieren, verwend
 [Überwachung von SQL Database mit dynamischen Verwaltungssichten]: http://go.microsoft.com/fwlink/p/?linkid=309725&clcid=0x409
 [Azure SQL-Datenbankleistung und -skalierung]: http://go.microsoft.com/fwlink/p/?linkid=397217&clcid=0x409
 [Problembehandlung in Azure SQL-Datenbank]: http://msdn.microsoft.com/library/azure/ee730906.aspx
+[Gründe für die Verwendung neuer Dienstebenen]: http://msdn.microsoft.com/library/azure/dn369873.aspx#Reasons
+
+[Take-Methode]: http://msdn.microsoft.com/library/vstudio/bb503062(v=vs.110).aspx
 
 <!-- MSDN -->
 [Erstellen und Ändern von PRIMARY KEY-Einschränkungen]: http://technet.microsoft.com/library/ms181043(v=sql.105).aspx
@@ -471,7 +479,7 @@ Um den Abfrageplan im **SQL-Datenbankverwaltungsportal** zu analysieren, verwend
 [Eindeutige Richtlinien zum Indexdesign]: http://technet.microsoft.com/library/ms187019(v=sql.105).aspx
 [Richtlinien für das Design von gruppierten Indizes]: http://technet.microsoft.com/library/ms190639(v=sql.105).aspx
 
-[sys-missing-index-stats]: http://technet.microsoft.com/library/ms345421.aspx
+[Fehlende Indizes in dynamischen Verwaltungssichten]: http://technet.microsoft.com/library/ms345421.aspx
 
 <!-- EF -->
 [Leistungsüberlegungen zu Entity Framework 5]: http://msdn.microsoft.com/data/hh949853
@@ -481,4 +489,4 @@ Um den Abfrageplan im **SQL-Datenbankverwaltungsportal** zu analysieren, verwend
 <!-- BLOG LINKS -->
 [Was kostet dieser Schlüssel?]: http://www.sqlskills.com/blogs/kimberly/how-much-does-that-key-cost-plus-sp_helpindex9/
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

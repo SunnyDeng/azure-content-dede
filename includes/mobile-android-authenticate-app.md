@@ -1,5 +1,5 @@
 
-1. In **Project Explorer** in Android Studio, open the ToDoActivity.java file and add the following import statements.
+1. Öffnen Sie die Datei "ToDoActivity.java" im **Projektexplorer** in Android Studio, und fügen Sie die folgenden import-Anweisungen hinzu.
 
 		import java.util.concurrent.ExecutionException;
 		import java.util.concurrent.atomic.AtomicBoolean;
@@ -11,7 +11,7 @@
 		import com.microsoft.windowsazure.mobileservices.authentication.MobileServiceAuthenticationProvider;
 		import com.microsoft.windowsazure.mobileservices.authentication.MobileServiceUser;
 
-2. Add the following method to the **ToDoActivity** class: 
+2. Fügen Sie der **ToDoActivity**-Klasse die folgende Methode hinzu:
 	
 		private void authenticate() {
 		    // Login using the Google provider.
@@ -34,17 +34,17 @@
 		}
 
 
-	This creates a new method to handle the authentication process. The user is authenticated by using a Google login. A dialog is displayed which displays the ID of the authenticated user. You cannot proceed without a positive authentication.
+	Diese neue Methode erledigt den Authentifizierungsprozess. Der Benutzer wird mithilfe einer Google-Anmeldung authentifiziert. Ein Dialogfeld mit der ID des authentifizierten Benutzers wird eingeblendet. Ohne erfolgreiche Authentifizierung können Sie nicht fortfahren.
 
-    > [AZURE.NOTE] If you are using an identity provider other than Google, change the value passed to the **login** method above to one of the following: _MicrosoftAccount_, _Facebook_, _Twitter_, or _windowsazureactivedirectory_.
+    > [AZURE.NOTE]Falls Sie einen anderen Identitätsanbieter als Facebook verwenden, ändern Sie den an die **login**-Methode übergebenen Wert in einen der folgenden Werte: _MicrosoftAccount_, _Facebook_, _Twitter_ oder _windowsazureactivedirectory_.
 
-3. In the **onCreate** method, add the following line of code after the code that instantiates the `MobileServiceClient` object.
+3. Fügen Sie in der **onCreate**-Methode die folgende Codezeile im Anschluss an den Code hinzu, der das `MobileServiceClient`-Objekt instanziiert.
 
 		authenticate();
 
-	This call starts the authentication process.
+	Dieser Aufruf startet den Authentifizierungsprozess.
 
-4. Move the remaining code after `authenticate();` in the **onCreate** method to a new **createTable** method, which looks like this:
+4. Verschieben Sie den verbleibenden Code nach `authenticate();` in der **onCreate**-Methode in eine neue **createTable**-Methode, die etwa so aussieht:
 
 		private void createTable() {
 	
@@ -62,6 +62,8 @@
 			refreshItemsFromTable();
 		}
 
-9. From the **Run** menu, then click **Run app** to start the app and sign in with your chosen identity provider. 
+9. Klicken Sie im Menü **Ausführen** auf **App ausführen**, um die App zu starten, und melden Sie sich mit dem Identitätsanbieter Ihrer Wahl an.
 
-   	When you are successfully logged-in, the app should run without errors, and you should be able to query the backend service and make updates to data.
+   	Wenn Sie erfolgreich angemeldet sind, sollte die App ohne Fehler ausgeführt werden, und Sie sollten in der Lage sein, den Back-End-Dienst abzufragen und Daten zu aktualisieren.
+
+<!---HONumber=AcomDC_1210_2015-->

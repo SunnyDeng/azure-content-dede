@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Hinzufügen von Ressourcen zu einer Azure-Ressourcengruppe"
-   description="Erfahren Sie, wie Ressourcen mithilfe von Visual Studio einer Azure-Ressourcengruppe hinzugefügt werden."
+   pageTitle="Bearbeiten einer Ressourcen-Manager-Vorlage mit Visual Studio | Microsoft Azure"
+   description="Erfahren Sie, wie Ressourcen mithilfe von Visual Studio einer Azure-Ressourcen-Manager-Vorlage hinzugefügt werden."
    services="visual-studio-online"
    documentationCenter="na"
    authors="kempb"
@@ -12,14 +12,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="multiple"
-   ms.date="08/13/2015"
+   ms.date="11/13/2015"
    ms.author="kempb" />
 
-# Hinzufügen von Ressourcen zu einer Azure-Ressourcengruppe
+# Bearbeiten von Ressourcen-Manager-Vorlagen mit Visual Studio
 
-Wenn Sie einer Ressourcengruppe weitere Ressourcen hinzufügen müssen, können Sie dies im Fenster "JSON-Gliederung" in Visual Studio vornehmen.
+Mit Visual Studio können Sie die Ressourcen-Manager-Vorlage für die Ressourcengruppe bearbeiten. Sie können entweder über das Fenster „JSON-Gliederung“ von Visual Studio oder direkt an der Vorlagensyntax Änderungen an der Vorlage vornehmen.
 
-## Hinzufügen von Ressourcen zu einer Ressourcengruppe
+## Hinzufügen von Ressourcen zu einer Ressourcengruppe über das Fenster „JSON-Gliederung“
 
 ### So fügen Sie einer Ressourcengruppe Ressourcen hinzu
 
@@ -51,14 +51,22 @@ Wenn Sie einer Ressourcengruppe weitere Ressourcen hinzufügen müssen, können 
 
 1. Wenn von Ihnen Parameter angegeben werden müssen, wird das Dialogfeld **Parameter bearbeiten** angezeigt. Geben Sie die erforderlichen Werte ein, und wählen Sie dann die Schaltfläche **Speichern**. Die neue Ressource wird in der Azure-Ressourcengruppe bereitgestellt.
 
-## Siehe auch
+## Bearbeiten der Vorlagensyntax
 
-[Erstellen und Bereitstellen von Bereitstellungsprojekten für Azure-Ressourcengruppen](http://go.microsoft.com/fwlink/p/?LinkID=623073)
+Mit Visual Studio können Sie die Vorlage auch direkt bearbeiten. Wenn Sie mit der Bearbeitung von Werten in der Vorlage beginnen, erhalten Sie im Editor Hilfe zu den möglichen Werte, die Sie angeben können.
 
-[Azure-Ressourcen-Manager-Cmdlets](https://msdn.microsoft.com/library/dn654592.aspx)
+![Bearbeiten der Vorlage](./media/vs-azure-tools-resource-group-adding-resources/arm-edit-template.png)
+
+Weitere Informationen zur Struktur der Vorlage finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md).
+
+## Weitere Informationen
+
+[Erstellen und Bereitstellen von Azure-Ressourcengruppen mit Visual Studio](vs-azure-tools-resource-groups-deployment-project-create-deploy.md)
+
+[Azure-Ressourcen-Manager-Cmdlets](https://msdn.microsoft.com/library/azure/dn757692.aspx)
 
 [Verwenden von Windows PowerShell mit Azure-Ressourcen-Manager](../powershell-azure-resource-manager/)
 
 [Channel 9-Video: Azure-Ressourcen-Manager](http://channel9.msdn.com/Events/TechEd/NorthAmerica/2014/DEV-B224#fbid=)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

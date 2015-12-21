@@ -1,20 +1,20 @@
-<properties 
-	pageTitle="Herstellen von Verbindungen mit der SQL-Datenbank mithilfe von Java mit JDBC unter Windows" 
+<properties
+	pageTitle="Herstellen von Verbindungen mit der SQL-Datenbank mithilfe von Java mit JDBC unter Windows"
 	description="Zeigt ein Java-Codebeispiel zum Herstellen einer Verbindung mit Azure SQL-Datenbank. Das Beispiel verwendet JDBC und wird auf einem Clientcomputer unter Windows ausgeführt."
-	services="sql-database" 
-	documentationCenter="" 
-	authors="LuisBosquez" 
-	manager="jeffreyg" 
+	services="sql-database"
+	documentationCenter=""
+	authors="LuisBosquez"
+	manager="jeffreyg"
 	editor="genemi"/>
 
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="java" 
-	ms.topic="article" 
-	ms.date="09/28/2015" 
+<tags
+	ms.service="sql-database"
+	ms.workload="data-management"
+	ms.tgt_pltfrm="na"
+	ms.devlang="java"
+	ms.topic="article"
+	ms.date="12/08/2015"
 	ms.author="lbosq"/>
 
 
@@ -27,19 +27,20 @@
 Dieses Thema enthält ein Java-Codebeispiel zum Herstellen einer Verbindung mit Azure SQL-Datenbank. Das Java-Beispiel beruht auf dem Java Development Kit (JDK), Version 1.8. Das Beispiel stellt mithilfe des JDBC-Treibers eine Verbindung mit Azure SQL-Datenbank her.
 
 
-## Anforderungen
+## Voraussetzungen
 
+### Treiber und Bibliotheken
 
 - [Microsoft JDBC-Treiber für SQL Server – SQL JDBC 4](http://www.microsoft.com/download/details.aspx?displaylang=en&id=11774).
 - Eine Betriebssystemplattform, auf der [Java Development Kit 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) ausgeführt wird.
-- Eine bestehende Datenbank auf Azure SQL. Im Thema [Erste Schritte](sql-database-get-started.md) erhalten Sie Informationen zum Erstellen einer Beispieldatenbank und zum Abrufen der Verbindungszeichenfolge.
 
+### Eine SQL-Datenbank
 
-## Testumgebung
+Auf der [Seite für erste Schritte](sql-database-get-started.md) erhalten Sie Informationen zum Erstellen einer Datenbank.
 
+### Eine SQL-Tabelle
 
 Beim Java-Codebeispiel in diesem Thema wird davon ausgegangen, dass die folgende Testtabelle in der Azure SQL-Datenbank bereits enthalten ist.
-
 
 <!--
 Could this instead be a #tempPerson table, so that the Java code sample could be fully self-sufficient and be runnable (with automatic cleanup)?
@@ -55,16 +56,14 @@ Could this instead be a #tempPerson table, so that the Java code sample could be
 	);
 
 
-## Verbindungszeichenfolge für die SQL-Datenbank
+## Schritt 1: Abrufen der Verbindungszeichenfolge
 
-
-Das Codebeispiel erstellt mithilfe einer Verbindungszeichenfolge ein `Connection`-Objekt. Die Verbindungszeichenfolge finden Sie mithilfe des [Azure-Portals](http://portal.azure.com/). Weitere Informationen zum Ermitteln der Verbindungszeichenfolge finden Sie unter [Erstellen der ersten Azure SQL-Datenbank](sql-database-get-started.md).
-
+[AZURE.INCLUDE [sql-database-include-connection-string-jdbc-20-portalshots](../../includes/sql-database-include-connection-string-jdbc-20-portalshots.md)]
 
 > [AZURE.NOTE]Wenn Sie den JTDS JDBC-Treiber verwenden, müssen Sie „ssl=require“ in der URL der Verbindungszeichenfolge hinzufügen, und Sie müssen die folgende Option für die JVM festlegen: „-Djsse.enableCBCProtection=false“. Diese JVM-Option deaktiviert einen Fix für ein Sicherheitsrisiko. Daher sollten Sie diese Option nur festlegen, wenn Sie das Risiko genau kennen.
 
 
-## Java-Codebeispiel
+## Schritt 2: Kompilieren des Java-Codebeispiels
 
 
 Der Abschnitt enthält den größten Teil des Java-Codebeispiels. Die enthaltenen Kommentare geben an, wohin Sie die kleineren Java-Ausschnitte aus den folgenden Abschnitten kopieren. Das Beispiel in diesem Abschnitt kann auch ohne Kopieren und Einfügen in der Nähe der Kommentare kompiliert und ausgeführt werden. In diesem Fall würde aber nur eine Verbindung hergestellt und wieder getrennt werden. Folgende Kommentare sind enthalten:
@@ -80,36 +79,36 @@ Es folgt der Hauptteil des Java-Codebeispiels. Das Beispiel umfasst die `main`-F
 
 	import java.sql.*;
 	import com.microsoft.sqlserver.jdbc.*;
-	
+
 	public class SQLDatabaseTest {
-	
+
 		public static void main(String[] args) {
 			String connectionString =
-				"jdbc:sqlserver://your_server.database.windows.net:1433;" 
+				"jdbc:sqlserver://your_server.database.windows.net:1433;"
 				+ "database=your_database;"
 				+ "user=your_user@your_server;"
 				+ "password=your_password;"
 				+ "encrypt=true;"
 				+ "trustServerCertificate=false;"
 				+ "hostNameInCertificate=*.database.windows.net;"
-				+ "loginTimeout=30;"; 
-	
+				+ "loginTimeout=30;";
+
 			// Declare the JDBC objects.
 			Connection connection = null;
 			Statement statement = null;
 			ResultSet resultSet = null;
 			PreparedStatement prepsInsertPerson = null;
 			PreparedStatement prepsUpdateAge = null;
-	
+
 			try {
 				connection = DriverManager.getConnection(connectionString);
-	
+
 				// INSERT two rows into the table.
 				// ...
-	
+
 				// TRANSACTION and commit for an UPDATE.
 				// ...
-	
+
 				// SELECT rows from the table.
 				// ...
 			}
@@ -137,7 +136,7 @@ Um das gezeigte Java-Codebeispiel tatsächlich auszuführen, müssen Sie natürl
 - your\_password
 
 
-## INSERT two rows into the table (Einfügen von zwei Zeilen in die Tabelle mithilfe einer INSERT-Anweisung)
+## Schritt 3: Einfügen von Zeilen
 
 
 Dieser Java-Codeausschnitt übergibt eine Transact-SQL-INSERT-Anweisung für das Einfügen von zwei Zeilen in die Tabelle "Person". Die allgemeine Abfolge lautet wie folgt:
@@ -157,7 +156,7 @@ Kopieren Sie diesen kurzen Java-Codeausschnitt, und fügen Sie ihn beim Kommenta
 	String insertSql = "INSERT INTO Person (firstName, lastName, age) VALUES "
 		+ "('Bill', 'Gates', 59), "
 		+ "('Steve', 'Ballmer', 59);";
-	
+
 	prepsInsertPerson = connection.prepareStatement(
 		insertSql,
 		Statement.RETURN_GENERATED_KEYS);
@@ -170,8 +169,7 @@ Kopieren Sie diesen kurzen Java-Codeausschnitt, und fügen Sie ihn beim Kommenta
 	}
 
 
-## TRANSACTION and commit for an UPDATE (TRANSACTION und COMMIT für ein UPDATE)
-
+## Schritt 4: Ausführen eines Commits für eine Transaktion
 
 Der folgende Java-Codeausschnitt übergibt eine Transact-SQL-UPDATE-Anweisung zum Erhöhen des `age`-Werts für jede Zeile in der Tabelle "Person". Die allgemeine Abfolge lautet wie folgt:
 
@@ -186,22 +184,22 @@ Kopieren Sie diesen kurzen Java-Codeausschnitt, und fügen Sie ihn beim Kommenta
 
 	// Set AutoCommit value to false to execute a single transaction at a time.
 	connection.setAutoCommit(false);
-	
+
 	// Write the SQL Update instruction and get the PreparedStatement object.
 	String transactionSql = "UPDATE Person SET Person.age = Person.age + 1;";
 	prepsUpdateAge = connection.prepareStatement(transactionSql);
-	
+
 	// Execute the statement.
 	prepsUpdateAge.executeUpdate();
-	
+
 	//Commit the transaction.
 	connection.commit();
-	
+
 	// Return the AutoCommit value to true.
 	connection.setAutoCommit(true);
 
 
-## SELECT rows from a table (Auswählen von Zeilen in einer Tabelle)
+## Schritt 4: Ausführen einer Abfrage
 
 
 Dieser Java-Codeausschnitt führt eine Transact-SQL-SELECT-Anweisung aus, um alle aktualisierten Zeilen aus der Tabelle "Person" anzuzeigen. Die allgemeine Abfolge lautet wie folgt:
@@ -219,7 +217,7 @@ Kopieren Sie diesen kurzen Java-Codeausschnitt, und fügen Sie ihn beim Kommenta
 	String selectSql = "SELECT firstName, lastName, age FROM dbo.Person";
 	statement = connection.createStatement();
 	resultSet = statement.executeQuery(selectSql);
-	
+
 	// Iterate through the result set and print the attributes.
 	while (resultSet.next()) {
 		System.out.println(resultSet.getString(2) + " "
@@ -230,4 +228,4 @@ Kopieren Sie diesen kurzen Java-Codeausschnitt, und fügen Sie ihn beim Kommenta
 
 Weitere Informationen finden Sie im [Java Developer Center](/develop/java/).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

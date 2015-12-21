@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/30/2015" 
+	ms.date="12/03/2015" 
 	ms.author="sdanie"/>
 
 # Azure Redis Cache – häufig gestellte Fragen
@@ -84,7 +84,7 @@ Timeouts treten auf dem Client auf, der mit Redis kommuniziert. In der Regel kom
 <a name="cache-monitor"></a>
 ## Wie überwache ich die Integrität und Leistung meines Caches?
 
-Microsoft Azure Redis Cache-Instanzen können im [Azure-Vorschauportal](https://portal.azure.com) überwacht werden. Sie können Metriken anzeigen, Metrikdiagramme an das Startmenü anheften, Daten- und Zeitbereiche für Überwachungsdiagramme anpassen, Metriken aus Diagrammen hinzufügen und entfernen sowie Warnungen festlegen, die ausgelöst werden, wenn bestimmte Bedingungen erfüllt sind. Diese Tools ermöglichen es Ihnen, die Integrität Ihrer Azure Redis Cache-Instanzen zu überwachen und unterstützen Sie beim Verwalten Ihrer Cachinganwendungen. Weitere Informationen zum Überwachen Ihrer Caches finden Sie unter [Überwachen von Azure Redis Cache](https://msdn.microsoft.com/library/azure/dn763945.aspx).
+Microsoft Azure Redis Cache-Instanzen können im [Azure-Portal](https://portal.azure.com) überwacht werden. Sie können Metriken anzeigen, Metrikdiagramme an das Startmenü anheften, Daten- und Zeitbereiche für Überwachungsdiagramme anpassen, Metriken aus Diagrammen hinzufügen und entfernen sowie Warnungen festlegen, die ausgelöst werden, wenn bestimmte Bedingungen erfüllt sind. Diese Tools ermöglichen es Ihnen, die Integrität Ihrer Azure Redis Cache-Instanzen zu überwachen und unterstützen Sie beim Verwalten Ihrer Cachinganwendungen. Weitere Informationen zum Überwachen Ihrer Caches finden Sie unter [Überwachen von Azure Redis Cache](https://msdn.microsoft.com/library/azure/dn763945.aspx).
 
 <a name="cache-disconnect"></a>
 ## Warum wurde mein Client vom Cache getrennt?
@@ -157,7 +157,7 @@ Anweisungen zum Herunterladen der Redis-Tools finden Sie im Abschnitt [Wie führ
 <a name="cache-benchmarking"></a>
 ## Wie kann ich die Leistung meines Caches messen und testen?
 
--	[Aktivieren Sie die Cachediagnose](https://msdn.microsoft.com/library/azure/dn763945.aspx#EnableDiagnostics), damit Sie die Integrität Ihres Caches [überwachen](https://msdn.microsoft.com/library/azure/dn763945.aspx) können. Sie können die Metriken im Vorschauportal anzeigen und sie anschließend mit einem Tool Ihrer Wahl [herunterladen und prüfen](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring).
+-	[Aktivieren Sie die Cachediagnose](https://msdn.microsoft.com/library/azure/dn763945.aspx#EnableDiagnostics), damit Sie die Integrität Ihres Caches [überwachen](https://msdn.microsoft.com/library/azure/dn763945.aspx) können. Sie können die Metriken im Azure-Portal anzeigen und anschließend mit einem Tool Ihrer Wahl [herunterladen und prüfen](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring).
 -	Mit "redis-benchmark.exe" können Sie Auslastungstests für Ihren Redis-Server durchführen.
 	-	Stellen Sie sicher, dass sich Client und Redis Cache für die Auslastungstests in derselben Region befinden.
 -	Verwenden Sie "redis-cli.exe", und überwachen Sie den Cache unter Verwendung des INFO-Befehls.
@@ -169,7 +169,7 @@ Anweisungen zum Herunterladen der Redis-Tools finden Sie im Abschnitt [Wie führ
 
 Sie können alle aufgelisteten [Redis-Befehle](http://redis.io/commands#) mit Ausnahme der Befehle verwenden, die unter [Redis-Befehle, die in Azure Redis Cache nicht unterstützt werden](cache-configure.md#redis-commands-not-supported-in-azure-redis-cache) aufgeführt sind. Für die Ausführung von Redis-Befehlen haben Sie mehrere Optionen.
 
--	Wenn Sie über einen Standard- oder Premium-Cache verfügen, können Sie Redis-Befehle über die [Redis-Konsole](cache-configure.md#redis-console) ausführen. Dies ist eine sichere Methode zum Ausführen von Redis-Befehlen im Vorschauportal.
+-	Wenn Sie über einen Standard- oder Premium-Cache verfügen, können Sie Redis-Befehle über die [Redis-Konsole](cache-configure.md#redis-console) ausführen. Dies ist eine sichere Methode zum Ausführen von Redis-Befehlen im Azure-Portal.
 -	Sie können auch die Redis-Befehlszeilentools verwenden. Führen Sie hierzu die folgenden Schritte aus:
 	-	Laden Sie die [Redis-Befehlszeilentools](https://github.com/MSOpenTech/redis/releases/download/win-2.8.19.1/redis-2.8.19.zip) herunter.
 	-	Stellen Sie über `redis-cli.exe` eine Verbindung mit dem Cache her. Übergeben Sie den Cacheendpunkt mithilfe des Schalters "-h" und dem Schlüssel mit Verwendung von "-a", wie im folgenden Beispiel gezeigt.
@@ -202,9 +202,20 @@ Azure Cache verfügt derzeit über drei Angebote:
 -	Azure Managed Cache Service
 -	Azure In-Role Cache
 
+>[AZURE.IMPORTANT]Wir geben die Deaktivierung der Dienste Azure Managed Cache Service und Azure In-Role Cache am 30. November 2016 bekannt. Sie sollten zur Vorbereitung für die Einstellung dieser Dienste zu Azure Redis Cache migrieren.
+>
+>Azure Redis Cache wird in Azure als Cachelösung empfohlen, seit der Dienst allgemein verfügbar ist, und ist jetzt in allen Azure-Regionen verfügbar, auch in China und für die US-Regierungsbehörden. Aufgrund dieser Verfügbarkeit kündigen wir die bevorstehende Einstellung von Managed Cache Service und In-Role Cache-Dienst an.
+>
+>Managed Cache Service und In-Role Cache-Dienst bleiben für Bestandskunden maximal 12 Monate ab dem Datum dieser Ankündigung am 30. November 2015 verfügbar – das Dienstendedatum für beide ist der 30. November 2016. Nach diesem Datum wird Managed Cache Service abgeschaltet, und der In-Role Cache-Dienst wird nicht mehr unterstützt.
+>
+>Wir entfernen die Unterstützung für das Erstellen neuer In-Role Caches aus der ersten Azure SDK-Version, die nach dem 1. Februar 2016 herauskommt. Kunden werden vorhandene Projekte öffnen können, die über In-Role Caches verfügen.
+>
+>Wir empfehlen allen Managed Cache Service- und In-Role Cache-Dienst-Kunden, während dieses Zeitraums zu Azure Redis Cache zu migrieren. Azure Redis Cache bietet mehr Funktionen und ist insgesamt höherwertig. Weitere Informationen zur Migration finden Sie auf der Dokumentationswebseite [Migrieren von Managed Cache Service zu Azure Redis Cache](cache-migrate-to-redis.md).
+>
+>Sollten Sie weitere Fragen haben, [kontaktieren Sie uns](https://azure.microsoft.com/support/options/?WT.mc_id=azurebg_email_Trans_933).
 
 ### Azure Redis Cache
-Azure Redis Cache ist allgemein verfügbar in Größen bis zu 53 GB mit einer Verfügbarkeits-SLA von 99,9 %. Der neue Tarif [Premium](cache-premium-tier.md) bietet Größen bis zu 530 GB und unterstützt Clustering, VNET und Beständigkeit mit einer SLA von 99,9 %.
+Azure Redis Cache ist allgemein verfügbar in Größen bis zu 53 GB mit einer Verfügbarkeits-SLA von 99,9 %. Der neue [Premium-Tarif](cache-premium-tier.md) bietet Größen bis zu 530 GB und unterstützt Clustering, VNET und Persistenz mit einer SLA von 99,9 %.
 
 Azure Redis Cache ermöglicht den Kunden die Verwendung eines gesicherten, dedizierten Redis Cache, der von Microsoft verwaltet wird. Mit diesem Angebot können Sie die umfangreichen Features und die Umgebung von Redis nutzen und dabei von zuverlässigem Hosting und Überwachung durch Microsoft profitieren.
 
@@ -220,4 +231,4 @@ Wenn Sie den Azure Managed Cache Service bereits nutzen, können Sie den vorhand
 ### In-Role Cache
 Wenn Sie Cache mithilfe des In-Role Caches selbst hosten, können Sie dies auch weiterhin tun. Da In-Role Cache eine selbst gehostete Softwarekomponente und kein von Microsoft gehosteter Dienst ist, bietet er keine SLA. Benutzer von In-Role Cache können zu Azure Redis Cache migrieren, um den umfassenden Featuresatz zu nutzen und eine SLA zu erhalten.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

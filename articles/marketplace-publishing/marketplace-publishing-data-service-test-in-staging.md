@@ -13,11 +13,11 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="11/24/2015"
+   ms.date="12/03/2015"
    ms.author="hascipio; avikova" />
 
 # Testen des Datendienstangebots im Staging
-Nach Abschluss der ersten beiden Schritte zum [Erstellen Ihrer Microsoft-Verkäuferkonten im Verkäuferdashboard](marketplace-publishing-accounts-creation-registration.md) und zum [Erstellen des Datendienstangebots im Veröffentlichungsportal](marketplace-publishing-data-service-creation.md) können Sie Ihr Angebot im Azure Marketplace verfügbar machen. Dieses Thema führt Sie durch den ersten Zwischenschritt namens „Staging“.
+Nach Abschluss der ersten beiden Schritte zum [Erstellen Ihres Microsoft-Developer-Kontos](marketplace-publishing-accounts-creation-registration.md) und zum [Erstellen des Datendienstangebots im Veröffentlichungsportal](marketplace-publishing-data-service-creation.md) können Sie Ihr Angebot im Azure Marketplace verfügbar machen. Dieses Thema führt Sie durch den ersten Zwischenschritt namens „Staging“.
 
 In der Stagingumgebung wird Ihr Angebot in einem privaten "Sandkasten" bereitgestellt, in dem Sie es testen und seine Funktionalität vor der Veröffentlichung überprüfen können. Das Angebot wird in der Stagingumgebung genau wie bei einem Kunden angezeigt, der es bereitgestellt hat.
 
@@ -86,4 +86,4 @@ Wenn Sie mit den Ergebnissen zufrieden und bereit für die Veröffentlichung Ihr
 ## Weitere Informationen
 - [Erste Schritte: Veröffentlichen eines Angebots im Azure Marketplace](marketplace-publishing-getting-started.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

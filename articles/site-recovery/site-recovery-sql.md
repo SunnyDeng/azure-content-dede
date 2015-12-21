@@ -126,14 +126,14 @@ Es folgen die Schritte zum Integrieren von SQL AlwaysOn in ASR.
 - SQL-Verfügbarkeitsgruppe, die zwischen der lokalen und in Azure ausgeführten SQL Server-Instanz eingerichtet ist.
 - PowerShell-Remoting muss für die lokale SQL Server-Instanz aktiviert sein. Der VMM-Server muss PowerShell-Remoteaufrufe an SQL Server richten können.
 - Für die lokale SQL Server-Instanz muss ein Benutzerkonto in SQL-Benutzergruppen mit mindestens den folgenden Berechtigungen hinzugefügt werden:
-	- ALTER AVAILABILITY GROUP – [Verweis 1](https://msdn.microsoft.com/de-DE/library/hh231018.aspx), [Verweis 2](https://msdn.microsoft.com/de-DE/library/ff878601.aspx#Anchor_3)
-	- ALTER DATABASE – [Verweis 1](https://msdn.microsoft.com/de-DE/library/ff877956.aspx#Security)
+	- ALTER AVAILABILITY GROUP – [Verweis 1](https://msdn.microsoft.com/library/hh231018.aspx), [Verweis 2](https://msdn.microsoft.com/library/ff878601.aspx#Anchor_3)
+	- ALTER DATABASE – [Verweis 1](https://msdn.microsoft.com/library/ff877956.aspx#Security)
 - Ein ausführendes Konto muss auf dem VMM-Server für das Konto aus dem vorherigen Schritt erstellt werden.
 - Das SQL PS-Modul muss für SQL Server-Instanzen installiert werden, die lokal oder in virtuellen Azure-Computern ausgeführt werden.
 - Der VM-Agent muss in virtuellen Computern installiert werden, die in Azure ausgeführt werden.
 - NTAUTHORITY\\System benötigt folgende Berechtigungen für eine in virtuellen Computern in Azure ausgeführte SQL Server-Instanz:
-	- ALTER AVAILABILITY GROUP – [Verweis 1](https://msdn.microsoft.com/de-DE/library/hh231018.aspx), [Verweis 2](https://msdn.microsoft.com/de-DE/library/ff878601.aspx#Anchor_3)
-	- ALTER DATABASE – [Verweis 1](https://msdn.microsoft.com/de-DE/library/ff877956.aspx#Security)
+	- ALTER AVAILABILITY GROUP – [Verweis 1](https://msdn.microsoft.com/library/hh231018.aspx), [Verweis 2](https://msdn.microsoft.com/library/ff878601.aspx#Anchor_3)
+	- ALTER DATABASE – [Verweis 1](https://msdn.microsoft.com/library/ff877956.aspx#Security)
 
 ##### 1\. Hinzufügen einer SQL Server-Instanz
 
@@ -374,4 +374,4 @@ Bei SQL-Standardclustern ist für das Failback nach einem nicht geplanten Failov
 
  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -13,7 +13,7 @@
       ms.topic="article"
       ms.tgt_pltfrm="na"
       ms.workload="na"
-      ms.date="10/08/2015"
+      ms.date="12/06/2015"
       ms.author="v-jeana; hascipio"/>
 
 # Beheben von häufig auftretenden Problemen mit dem Azure Marketplace für Herausgeber
@@ -63,12 +63,12 @@ In einigen Fällen müssen Sie möglicherweise die Abonnementdetails für einen 
 
 ## Wie aktualisiere ich mein Herausgeberprofil?
 
-Wenn Sie Ihr Herausgeberprofil aktualisieren möchten, kann dies über das Verkäuferdashboard erfolgen.
+Wenn Sie Ihr Herausgeberprofil aktualisieren möchten, kann dies über das Microsoft Developer Center erfolgen.
 
-**1. Melden Sie sich beim Verkäuferdashboard an.**
+**1. Melden Sie sich beim Microsoft Developer Center an**.
 
 - Öffnen Sie eine neue Chrome-Inkognito- oder Internet Explorer-InPrivate-Browsersitzung, um sicherzustellen, dass Sie nicht bei einem persönlichen Konto angemeldet sind.
-- Wechseln Sie zur Adresse http://sellerdashboard.microsoft.com.
+- Wechseln Sie zu [http://dev.windows.com/registration?accountprogram=azure](http://dev.windows.com/registration?accountprogram=azure).
 
 ![inprivate][4]
 
@@ -120,4 +120,4 @@ Wenn Sie Ihr Herausgeberprofil aktualisieren möchten, kann dies über das Verk�
 [7]: ./media/marketplace-publishing-support-common-issues/acctdetails.png
 [8]: ./media/marketplace-publishing-support-common-issues/manageadmins.png
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1210_2015-->

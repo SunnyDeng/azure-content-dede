@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="dotnet" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/01/2015" 
+	ms.date="12/04/2015" 
 	ms.author="erikre"/>
 
 # Erstellen einer ASP.NET 5-API-App mit Visual Studio-Code
@@ -29,7 +29,8 @@ In diesem Lernprogramm erfahren Sie, wie Sie mithilfe von [Visual Studio Code](h
 ## Voraussetzungen  
 
 * Installieren Sie [Visual Studio Code](http://code.visualstudio.com/Docs/setup), und richten Sie ihn ein.
-* Installieren Sie [Node.js](http://nodejs.org/download/).<br> [Node](http://nodejs.org/) ist eine Plattform für die Erstellung schneller und skalierbarer Serveranwendungen mit JavaScript. Node ist die Laufzeit (Node), [npm](http://www.npmjs.com/) der Paket-Manager für Node-Module. In diesem Lernprogramm erstellen Sie mithilfe von npm das Gerüst für eine ASP.NET 5-API-App.
+* Installieren Sie [Node.js](http://nodejs.org/download/).<br\>
+	[Node](http://nodejs.org/) ist eine Plattform für die Erstellung schneller und skalierbarer Serveranwendungen mit JavaScript. Node ist die Laufzeit (Node), [npm](http://www.npmjs.com/) der Paket-Manager für Node-Module. In diesem Lernprogramm erstellen Sie mithilfe von npm das Gerüst für eine ASP.NET 5-API-App.
 
 ## Installieren von ASP.NET 5 und DNX
 ASP.NET 5/DNX ist ein schlanker .NET-Stapel für die Erstellung moderner Cloud- und Web-Apps für OS X, Linux und Windows. Er wurde von Grund auf neu als optimiertes Entwicklungsframework für Apps konzipiert, die entweder in der Cloud bereitgestellt oder lokal ausgeführt werden. Er besteht aus modularen Komponenten mit minimalem Mehraufwand und ermöglicht Ihnen eine flexible Lösungsentwicklung.
@@ -180,7 +181,7 @@ namespace ContactsList.Controllers
 
 5. Öffnen Sie einen Browser, und navigieren Sie zur folgenden URL:
 
-	****http://localhost:5001/api/Contacts**
+	**http://localhost:5001/api/Contacts**
 
 	Anschließend können Sie die Inhalte von *Contacts.json* anzeigen. In dieser Datei wird folgender Inhalt angezeigt:
 
@@ -460,4 +461,4 @@ Wechseln Sie im Azure-Vorschauportal zum Blatt **API-App-Host** für Ihre API-Ap
 In diesem Lernprogramm haben Sie erfahren, wie Sie eine API-App in Visual Studio Code erstellen. Weitere Informationen zu Visual Studio Code finden Sie unter [Visual Studio Code](https://code.visualstudio.com/Docs/). Weitere Informationen zu API-Apps finden Sie unter [Was sind API-Apps?](app-service-api-apps-why-best-platform.md).
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->
