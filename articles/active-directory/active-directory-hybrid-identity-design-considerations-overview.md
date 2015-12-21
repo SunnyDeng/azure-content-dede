@@ -13,7 +13,7 @@
 	ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity" 
-	ms.date="11/24/2015"
+	ms.date="12/07/2015"
 	ms.author="yuridio"/>
 
 # Überlegungen zum Entwurf der Azure Active Directory-Hybrid-Identität
@@ -55,4 +55,4 @@ Sie können eine PDF-Version des Azure Hybrid Identity Design Considerations Gui
 
                                                              
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

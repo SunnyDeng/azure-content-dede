@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/01/2015" 
+	ms.date="12/07/2015" 
 	ms.author="luisca"/>
 
 
@@ -58,6 +58,7 @@ In der Regel rufen Sie „Get recommendation“ über einen bestimmten Zeitraum 
 
 * Visual Studio 2013
 * Zugriff auf das Internet 
+* Abonnement der API für Empfehlungen (https://datamarket.azure.com/dataset/amla/recommendations).
 
 ##Beispielanwendungslösung für Azure Machine Learning
 
@@ -89,4 +90,4 @@ Eine vollständige Beschreibung der APIs finden Sie in der Dokumentation zum Mic
 Die Beispiel-App ist nicht für die Ausführung in einer Produktionsumgebung gedacht. Der Katalog umfasst nur sehr wenige Daten, die kein sinnvolles Empfehlungsmodell ergeben. Die Daten werden als Beispiel bereitgestellt.
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

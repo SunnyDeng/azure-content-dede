@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/07/2015" 
+	ms.date="12/04/2015" 
 	ms.author="juliako"/>
 
 
@@ -32,4 +32,4 @@ In diesem Thema sind die für Microsoft Azure Media Services geltenden Kontingen
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

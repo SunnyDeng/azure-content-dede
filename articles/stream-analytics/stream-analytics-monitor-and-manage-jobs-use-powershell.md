@@ -1,7 +1,7 @@
 <properties 
 	pageTitle="Überwachen und Verwalten von Stream Analytics-Aufträgen mit von PowerShell | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie Stream Analytics-Aufträge mithilfe von PowerShell und Cmdlets überwachen und verwalten können." 
-	keywords="Azure PowerShell,Azure PowerShell-Cmdlets,PowerShell-Befehl"	
+	keywords="Azure PowerShell, Azure PowerShell-Cmdlets, PowerShell-Befehl, PowerShell-Skripts"	
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
@@ -14,14 +14,13 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="11/17/2015" 
+	ms.date="12/04/2015" 
 	ms.author="jeffstok"/>
 
 
 # Überwachen und Verwalten von Stream Analytics-Aufträgen mit PowerShell-Cmdlets
 
-Erfahren Sie, wie Sie Stream Analytics-Ressourcen mit PowerShell-Cmdlets, die grundlegende Stream Analytics-Aufgaben ausführen, überwachen und verwalten.
-
+Erfahren Sie, wie Sie Stream Analytics-Ressourcen mit Azure PowerShell-Cmdlets und -Skripts, die grundlegende Stream Analytics-Aufgaben ausführen, überwachen und verwalten.
 
 ## Voraussetzungen für das Ausführen von Azure PowerShell-Cmdlets für Stream Analytics
 
@@ -290,4 +289,4 @@ Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://so
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1210_2015-->

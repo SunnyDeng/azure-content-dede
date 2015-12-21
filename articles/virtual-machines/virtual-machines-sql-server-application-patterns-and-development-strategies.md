@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
-	ms.date="08/20/2015"
+	ms.date="12/04/2015"
 	ms.author="selcint" />
 
 # Anwendungsmuster und Entwicklungsstrategien für SQL Server in Azure Virtual Machines
@@ -202,7 +202,7 @@ Bei diesem Anwendungsmuster stellen Sie eine Anwendung mit 2 oder 3 Ebenen in A
 
 Über Cloud Services verwaltet Azure automatisch die Infrastruktur für Sie, indem es Routinewartungen durchführt, die Betriebssysteme patcht und eine Wiederherstellung nach Dienst- und Hardwarefehlern versucht. Wenn Ihre Anwendung horizontales Hochskalieren erfordert, stehen automatische und manuelle Skalierungsoptionen für das Clouddienstprojekt zur Verfügung, indem die Anzahl der Instanzen oder virtuellen Computern, die von der Anwendung verwendet werden, erhöht oder verringert wird. Darüber hinaus können Sie Visual Studio lokal zum Bereitstellen der Anwendung in einem Clouddienstprojekt in Azure verwenden.
 
-Wenn Sie keine umfangreichen administrativen Aufgaben für die Präsentations-/Geschäftsebenen benötigen und Ihre Anwendung keine komplexen Softwarekonfigurationen oder Betriebssysteme erfordert, sollten Sie Azure Cloud Services verwenden. Wenn Azure SQL-Datenbank nicht alle benötigten Funktionen unterstützt, verwenden Sie SQL Server auf einem virtuellen Azure-Computer für die Datenebene. Die Ausführung einer Anwendung auf Azure Cloud Services und das Speichern von Daten in Azure Virtual Machines verbindet die Vorteile beider Dienste. Einen ausführlichen Vergleich finden Sie in diesem Thema im Abschnitt [Vergleichen der Entwicklungsstrategien in Azure](#comparing-development-strategies-in-azure).
+Wenn Sie keine umfangreichen administrativen Aufgaben für die Präsentations-/Geschäftsebenen benötigen und Ihre Anwendung keine komplexen Softwarekonfigurationen oder Betriebssysteme erfordert, sollten Sie Azure Cloud Services verwenden. Wenn Azure SQL-Datenbank nicht alle benötigten Funktionen unterstützt, verwenden Sie SQL Server auf einem virtuellen Azure-Computer für die Datenebene. Die Ausführung einer Anwendung auf Azure Cloud Services und das Speichern von Daten in Azure Virtual Machines verbindet die Vorteile beider Dienste. Einen ausführlichen Vergleich finden Sie in diesem Thema im Abschnitt [Vergleichen der Entwicklungsstrategien in Azure](#comparing-web-development-strategies-in-azure).
 
 Bei diesem Anwendungsmuster enthält die Präsentationsebene eine Webrolle, bei der es sich um eine Cloud Services-Komponente handelt, die in der Azure-Ausführungsumgebung ausgeführt wird und die für die Programmierung von Webanwendungen (mit IIS- und ASP.NET-Unterstützung) angepasst ist. Die Geschäfts- oder Back-End-Ebene enthält eine Workerrolle, bei der es sich um eine Cloud Services-Komponente handelt, die in der Azure-Ausführungsumgebung ausgeführt wird, der allgemeinen Entwicklung dient und die Hintergrundprozesse für eine Webrolle ausführen kann. Die Datenbankebene befindet sich auf einem virtuellen SQL Server-Computer in Azure. Die Kommunikation zwischen der Präsentations- und der Datenbankebene erfolgt direkt oder über die Workerrollenkomponenten der Geschäftsebene.
 
@@ -327,4 +327,4 @@ Weitere Informationen zur Auswahl der richtigen Programmiermethode finden Sie un
 
 Ausführlichere Informationen zur Verwendung von SQL Server auf virtuellen Azure-Computern finden Sie unter [Übersicht zu SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

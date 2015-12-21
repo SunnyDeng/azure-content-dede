@@ -13,21 +13,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="11/30/2015"
+   ms.date="12/07/2015"
    ms.author="kenhoff"/>
 
 # Wartezeiten von Azure Active Directory-Berichten
 
-## Artikel aus der Reporting-Dokumentation
-
- - [Reporting-API](active-directory-reporting-api-getting-started.md)
- - [Überwachen von Ereignissen](active-directory-reporting-audit-events.md)
- - [Aufbewahrung](active-directory-reporting-retention.md)
- - [Vorschau](active-directory-reporting-previews.md)
- - [Suchen,](active-directory-reporting-search.md)
- - [Abgleich](active-directory-reporting-backfill.md)
- - [Wartezeiten](active-directory-reporting-latencies.md)
- - [Ereignis "Unbekannter Akteur"](active-directory-reporting-unknown-actor.md)
+*Diese Dokumentation ist Teil des [Handbuchs für Azure Active Directory Reporting](active-directory-reporting-guide.md).*
 
 Bericht | Minimum | Durchschnitt | Maximum
 ------------------------------------------------------- | -------- | ---------- | ----------
@@ -61,4 +52,4 @@ Nutzung RMS-fähiger Anwendungen | 2 Stunden | 4 Stunden | 8 Stunden
 **Private Berichtsvorschau** | | |
 Alle Benutzeranmeldeaktivitäten | 2 Stunden | 4 Stunden | 8 Stunden
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

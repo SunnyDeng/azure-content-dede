@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/26/2015"
+	ms.date="12/04/2015"
 	ms.author="larryfr"/>
 
 # Installieren von Giraph in HDInsight Hadoop-Clustern und Verwenden von Giraph zur Verarbeitung großer Diagramme
@@ -59,7 +59,7 @@ Ein Beispielskript zum Installieren von Giraph in einem HDInsight-Cluster steht 
 
 3. Verwenden Sie am unteren Rand der **Skriptaktionen** die Schaltfläche **Auswählen**, um die Konfiguration zu speichern. Verwenden Sie schließlich die Schaltfläche **Auswählen** am unteren Rand des Blatts **Optionale Konfiguration**, um die optionalen Konfigurationsinformationen zu speichern.
 
-4. Setzen Sie die Erstellung des Clusters wie unter [Erstellen Linux-basierter HDInsight-Cluster](hdinsight-provision-linux-clusters.md#portal) beschrieben fort.
+4. Setzen Sie die Erstellung des Clusters wie unter [Erstellen Linux-basierter HDInsight-Cluster](hdinsight-hadoop-create-linux-clusters-portal.md) beschrieben fort.
 
 ## <a name="usegiraph"></a>Wie verwende ich Giraph in HDInsight?
 
@@ -152,4 +152,4 @@ Sobald die Clustererstellung abgeschlossen ist, gehen Sie folgendermaßen vor, u
 
 - [Installieren von Solr in HDInsight-Clustern](hdinsight-hadoop-solr-install-linux.md). Verwenden Sie die Clusteranpassung, um Solr in HDInsight Hadoop-Clustern zu installieren. Solr ermöglicht es Ihnen, leistungsstarke Suchvorgänge für gespeicherte Daten durchzuführen.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

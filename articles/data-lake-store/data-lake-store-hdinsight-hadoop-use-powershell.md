@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="11/13/2015"
+   ms.date="12/04/2015"
    ms.author="nitinme"/>
 
 # Bereitstellen eines HDInsight-Clusters mit Data Lake-Speicher mithilfe von Azure PowerShell
@@ -46,7 +46,38 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 - **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/).
 - **Aktiviertes Azure-Abonnement** für die öffentliche Vorschauversion des Data Lake-Speichers. Weitere Informationen finden Sie in den [Anweisungen](data-lake-store-get-started-portal.md#signup).
 - **Windows SDK**. Das Installationspaket finden Sie [hier](https://dev.windows.com/de-DE/downloads). Dies dient zum Erstellen eines Sicherheitszertifikats.
-- **Azure PowerShell 1.0 oder höher**. Entsprechende Anweisungen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md).
+
+
+##Installieren von Azure PowerShell 1.0 und höher
+
+Zunächst müssen Sie die 0.9x-Versionen von Azure PowerShell deinstallieren. Um die installierte PowerShell-Version zu überprüfen, führen Sie den folgenden Befehl in einem PowerShell-Fenster aus:
+
+	Get-Module *azure*
+	
+Um die ältere Version zu deinstallieren, führen Sie **Programme und Funktionen** in der Systemsteuerung aus, und entfernen Sie die installierte Version, wenn sie niedriger ist als PowerShell 1.0.
+
+Es gibt zwei Hauptoptionen für die Installation von Azure PowerShell.
+
+- [PowerShell-Katalog](https://www.powershellgallery.com/). Führen Sie die folgenden Befehle in einer erweiterten PowerShell ISE oder einer Windows PowerShell-Konsole mit erhöhten Rechten aus:
+
+		# Install the Azure Resource Manager modules from PowerShell Gallery
+		Install-Module AzureRM
+		Install-AzureRM
+		
+		# Install the Azure Service Management module from PowerShell Gallery
+		Install-Module Azure
+		
+		# Import AzureRM modules for the given version manifest in the AzureRM module
+		Import-AzureRM
+		
+		# Import Azure Service Management module
+		Import-Module Azure
+
+	Weitere Informationen finden Sie unter [PowerShell Gallery](https://www.powershellgallery.com/).
+
+- [Microsoft Web Platform Installer (WebPI)](http://aka.ms/webpi-azps). Falls Sie Azure PowerShell 0.9.x installiert haben, werden Sie aufgefordert, diese Version zu deinstallieren. Wenn Sie Azure PowerShell-Module aus dem PowerShell-Katalog installiert haben, erfordert das Installationsprogramm, dass diese Module vor der Installation deinstalliert werden, um eine konsistente Azure PowerShell-Umgebung herzustellen. Anweisungen hierzu finden Sie unter [Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0/)
+
+WebPI wird monatlich aktualisiert. Der PowerShell-Katalog wird fortlaufend aktualisiert. Wenn Sie mit der Installation aus dem PowerShell-Katalog erst einmal vertraut sind, wird der Katalog sicherlich Ihre erste Anlaufstelle für die neusten und beliebtesten Cmdlets in Azure PowerShell.
  
 
 ## Erstellen eines Azure Data Lake-Speichers
@@ -87,7 +118,7 @@ Führen Sie folgende Schritte aus, um einen Data Lake-Speicher zu erstellen.
 
 	Die Ausgabe sollte **True** lauten.
 
-4. Laden Sie einige Beispieldaten in Azure Data Lake hoch. Sie werden später in diesem Artikel verwendet, um zu überprüfen, ob auf die Daten aus einem HDInsight-Cluster zugegriffen werden kann. Wenn Sie Beispieldaten hochladen möchten, können Sie den Ordner **Ambulance Data** aus dem [Azure Data Lake-Git-Repository](https://github.com/MicrosoftBigData/AzureDataLake/tree/master/SQLIPSamples/SampleData/AmbulanceData) herunterladen.
+4. Laden Sie einige Beispieldaten in Azure Data Lake hoch. Sie werden später in diesem Artikel verwendet, um zu überprüfen, ob auf die Daten aus einem HDInsight-Cluster zugegriffen werden kann. Wenn Sie Beispieldaten zum Hochladen verwenden möchten, können Sie den Ordner **Ambulance Data** aus dem [Azure Data Lake-Git-Repository](https://github.com/MicrosoftBigData/AzureDataLake/tree/master/SQLIPSamples/SampleData/AmbulanceData) herunterladen.
 
 		
 		$myrootdir = "/"
@@ -105,9 +136,9 @@ Sie müssen die folgenden Aufgaben ausführen, um die Active Directory-Authentif
 
 ### Erstellen eines selbstsignierten Zertifikats
 
-Stellen Sie sicher, dass Sie das [Windows-SDK](https://dev.windows.com/de-DE/downloads) installiert haben, bevor Sie mit den Schritten in diesem Abschnitt fortfahren. Sie müssen auch ein Verzeichnis erstellt haben, z. B. **C:\\mycertdir**, in dem das Zertifikat erstellt werden soll.
+Stellen Sie sicher, dass Sie das [Windows SDK](https://dev.windows.com/de-DE/downloads) installiert haben, bevor Sie mit den Schritten in diesem Abschnitt fortfahren. Sie müssen auch ein Verzeichnis erstellt haben, z. B. **C:\\mycertdir**, in dem das Zertifikat erstellt werden soll.
 
-1. Navigieren Sie im PowerShell-Fenster zu dem Speicherort, an dem Sie das Windows-SDK installiert haben (normalerweise `C:\Program Files (x86)\Windows Kits\10\bin\x86`), und verwenden Sie das [MakeCert][makecert]-Hilfsprogramm, um ein selbstsigniertes Zertifikat und einen privaten Schlüssel zu erstellen. Verwenden Sie die folgenden Befehle:
+1. Navigieren Sie im PowerShell-Fenster zu dem Speicherort, wo Sie das Windows SDK installiert haben (normalerweise `C:\Program Files (x86)\Windows Kits\10\bin\x86`), und verwenden Sie das [MakeCert][makecert]-Hilfsprogramm, um ein selbstsigniertes Zertifikat und einen privaten Schlüssel zu erstellen. Verwenden Sie die folgenden Befehle:
 
 		$certificateFileDir = "<my certificate directory>"
 		cd $certificateFileDir
@@ -116,7 +147,7 @@ Stellen Sie sicher, dass Sie das [Windows-SDK](https://dev.windows.com/de-DE/dow
 
 		makecert -sv mykey.pvk -n "cn=HDI-ADL-SP" CertFile.cer -b $startDate -e $endDate -r -len 2048
 
-	Sie werden aufgefordert, das Kennwort für den privaten Schlüssel einzugeben. Nachdem der Befehl erfolgreich ausgeführt wurde, sollten im von Ihnen angegebenen Zertifikatsverzeichnis die Dateien **CertFile.cer** und **mykey.pvk** enthalten sein.
+	Sie werden aufgefordert, das Kennwort für den privaten Schlüssel einzugeben. Nach erfolgreicher Ausführung des Befehls sollten im von Ihnen angegebenen Zertifikatsverzeichnis die Dateien **CertFile.cer** und **mykey.pvk** enthalten sein.
 
 4. Verwenden Sie das Hilfsprogramm [Pvk2Pfx][pvk2pfx], um die von MakeCert erstellten PVK- und CER-Dateien in eine PFX-Datei zu konvertieren. Führen Sie den folgenden Befehl aus:
 
@@ -267,7 +298,7 @@ Nachdem Sie den HDInsight-Cluster für die Verwendung des Data Lake-Speichers ko
 
 1. Melden Sie sich beim neuen [Azure-Portal](https://portal.azure.com) an.
 
-2. Klicken Sie auf **Durchsuchen**, **HDInsight-Cluster** und dann auf den HDInsight-Cluster, den Sie erstellt haben.
+2. Klicken Sie auf **Durchsuchen**, auf **HDInsight-Cluster** und dann auf den HDInsight-Cluster, den Sie erstellt haben.
 
 3. Klicken Sie auf dem Clusterblatt auf **Remotedesktop** und dann auf dem Blatt **Remotedesktop** auf **Verbinden**.
 
@@ -285,13 +316,13 @@ Nachdem Sie den HDInsight-Cluster für die Verwendung des Data Lake-Speichers ko
 		Found 1 items
 		-rwxrwxrwx   0 NotSupportYet NotSupportYet     671388 2015-09-16 22:16 adl://mydatalakestore.azuredatalakestore.net:443/vehicle1_09142014.csv
 
-	Sie können auch den Befehl `hdfs dfs -put` verwenden, um Dateien in Azure Data Lake hochzuladen, und dann mit `hdfs dfs -ls` überprüfen, ob der Upload der Dateien erfolgreich war.
+	Sie können auch den Befehl `hdfs dfs -put` verwenden, um Dateien in Azure Data Lake hochzuladen, und dann mit `hdfs dfs -ls` überprüfen, ob das Hochladen der Dateien erfolgreich war.
 
 ## Weitere Informationen
 
 * [Portal: Erstellen eines HDInsight-Clusters für die Verwendung des Data Lake-Speichers](data-lake-store-hdinsight-hadoop-use-portal.md)
 
-[makecert]: https://msdn.microsoft.com/de-DE/library/windows/desktop/ff548309(v=vs.85).aspx
-[pvk2pfx]: https://msdn.microsoft.com/de-DE/library/windows/desktop/ff550672(v=vs.85).aspx
+[makecert]: https://msdn.microsoft.com/library/windows/desktop/ff548309(v=vs.85).aspx
+[pvk2pfx]: https://msdn.microsoft.com/library/windows/desktop/ff550672(v=vs.85).aspx
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

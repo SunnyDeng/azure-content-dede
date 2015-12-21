@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="java" 
 	ms.topic="article" 
-	ms.date="11/16/2015" 
+	ms.date="12/07/2015" 
 	ms.author="ryancraw"/>
 
 # DocumentDB SDK
@@ -29,6 +29,9 @@
 <table> <tr><td>** Herunterladen **</td><td>[Maven](http://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb)</td></tr> <tr><td>** Mitwirken **</td><td>[GitHub](https://github.com/Azure/azure-documentdb-java/)</td></tr> <tr><td>** Dokumentation **</td><td>[Referenzdokumentation zum Java SDK](http://azure.github.io/azure-documentdb-java/)</td></tr> <tr><td>** Erste Schritte **</td><td>[Erste Schritte mit dem Java SDK](documentdb-java-application.md)</td></tr> <tr><td>** Derzeit unterstützte Laufzeit **</td><td>[JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)</td></tr> </table></br>
 
 ## Versionsinformationen
+
+### <a name="1.5.0"/>[1\.5.0](http://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb/1.5.0)
+- Hinzufügen von Hash- und Bereichspartitionen-Konfliktlösern, um die Freigabe von Anwendungen über mehrere Partitionen zu unterstützen.
 
 ### <a name="1.4.0"/>[1\.4.0](http://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb/1.4.0)
 - Upsert implementiert. Neue UpsertXXX-Methoden hinzugefügt, um das „Upsert“-Feature zu unterstützen.
@@ -49,36 +52,25 @@
 - Allgemeine Verfügbarkeit (GA) des SDK
 
 ## Veröffentlichungs- und Deaktivierungstermine
-Wenn Microsoft ein SDK deaktiviert, werden Sie mindestens **12 Monate** vorher benachrichtigt, um einen reibungslosen Übergang zu einer neueren, unterstützten Version zu gewährleisten.
+Wenn Microsoft ein SDK deaktiviert, werden Sie mindestens **12 Monate** vorher benachrichtigt, um einen reibungslosen Übergang zu einer neueren/unterstützten Version zu gewährleisten.
 
 Neue Features, Funktionen und Optimierungen werden nur dem aktuellen SDK hinzugefügt. Daher wird empfohlen, immer so früh wie möglich auf die neueste SDK-Version zu aktualisieren.
 
 Anforderungen von DocumentDB mithilfe eines deaktivierten SDK werden vom Dienst abgelehnt.
 
-> [AZURE.WARNING]Alle Versionen des Azure DocumentDB SDK für Java vor Version **1.0.0** werden am **29. Februar 2016** deaktiviert.
+> [AZURE.WARNING]Alle Versionen des Azure DocumentDB SDK für Java vor Version **1.0.0** werden am **29. Februar 2016** deaktiviert.
 
 <br/>
 
 | Version | Herausgabedatum | Deaktivierungstermine 
 | ---	  | ---	         | ---
-| [1\.4.0](#1.4.0) | 5. Oktober 2015 |---
-| [1\.3.0](#1.3.0) | 5. Oktober 2015 |---
-| [1\.2.0](#1.2.0) | 5. August 2015 |---
-| [1\.1.0](#1.1.0) | 9. Juli 2015 |---
-| [1\.0.1](#1.0.1) | 12. Mai 2015 |---
-| [1\.0.0](#1.0.0) | 7. April 2015 |---
-| 0.9.5-prelease | 9. März 2015 | 29. Februar 2016 
-| 0.9.4-prelease | 17. Februar 2015 | 29. Februar 2016 
-| 0.9.3-prelease | 13. Januar 2015 | 29. Februar 2016 
-| 0.9.2-prelease | 19. Dezember 2014 | 29. Februar 2016 
-| 0.9.1-prelease | 19. Dezember 2014 | 29. Februar 2016 
-| 0.9.0-prelease | 10. Dezember 2014 | 29. Februar 2016
+| [1\.5.0](#1.5.0) | 4. Dezember 2015 |--- | [1\.4.0](#1.4.0) | 5. Oktober 2015 |--- | [1\.3.0](#1.3.0) | 5. Oktober 2015 |--- | [1\.2.0](#1.2.0) | 5. August 2015 |--- | [1\.1.0](#1.1.0) | 9. Juli 2015 |--- | [1\.0.1](#1.0.1) | 12. Mai 2015 |--- | [1\.0.0](#1.0.0) | 7. April 2015 |--- | 0.9.5-prelease | 9. März 2015 | 29. Februar 2016 | 0.9.4-prelease | 17. Februar 2015 | 29. Februar 2016 | 0.9.3-prelease | 13. Januar 2015 | 29. Februar 2016 | 0.9.2-prelease | 19. Dezember 2014 | 29. Februar 2016 | 0.9.1-prelease | 19. Dezember 2014 | 29. Februar 2016 | 0.9.0-prelease | 10. Dezember 2014 | 29. Februar 2016
 
 ## Häufig gestellte Fragen
 [AZURE.INCLUDE [documentdb-sdk-faq](../../includes/documentdb-sdk-faq.md)]
 
 ## Weitere Informationen
 
-Weitere Informationen zu DocumentDB finden Sie auf Seite zum Dienst [Microsoft Azure DocumentDB](https://azure.microsoft.com/services/documentdb/).
+Weitere Informationen zu DocumentDB finden Sie auf der Seite zum Dienst [Microsoft Azure DocumentDB](https://azure.microsoft.com/services/documentdb/).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

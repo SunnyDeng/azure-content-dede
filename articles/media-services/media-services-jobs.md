@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/07/2015" 
+	ms.date="12/05/2015" 
 	ms.author="juliako"/>
 
 #Arbeiten mit Azure Media Services-Aufträgen
@@ -55,6 +55,18 @@ Führen Sie die Codierung mit **Azure Media Encoder** mithilfe des klassischen *
 
 [AZURE.INCLUDE [media-services-selector-job-progress](../../includes/media-services-selector-job-progress.md)]
 
+##Auflisten 
+
+> [AZURE.SELECTOR]
+- [.NET](media-services-dotnet-manage-entities.md/#list-jobs-and-assets)
+- [REST](media-services-rest-manage-entities.md/#querying-entities)
+
+##Löschen von Aufträgen
+
+> [AZURE.SELECTOR]
+- [.NET](media-services-dotnet-manage-entities.md/#delete-a-job)
+- [REST](media-services-rest-manage-entities.md/##deleting-entities)
+
 ##Verwandte Links
 
 [Kontingente und Einschränkungen](media-services-quotas-and-limitations.md): Beschreibt verwendete Kontingente und Einschränkungen für den Media Services Encoder
@@ -68,4 +80,4 @@ Führen Sie die Codierung mit **Azure Media Encoder** mithilfe des klassischen *
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

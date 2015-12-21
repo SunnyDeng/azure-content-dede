@@ -49,4 +49,4 @@ Folgen Sie diesen Links, um mehr über Azure IoT Hub zu erfahren:
 [lnk-get-started]: iot-hub-csharp-csharp-getstarted.md
 [Was ist Azure IoT Hub?]: iot-hub-what-is-iot-hub.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

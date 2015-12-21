@@ -41,8 +41,8 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 [Entwicklungsübersicht]: sql-data-warehouse-overview-develop.md
 
 <!--MSDN references-->
-[sp\_executesql]: https://msdn.microsoft.com/de-DE/library/ms188001.aspx
+[sp\_executesql]: https://msdn.microsoft.com/library/ms188001.aspx
 
 <!--Other Web references-->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

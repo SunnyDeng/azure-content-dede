@@ -4,7 +4,7 @@
    services="security-center"
    documentationCenter="na"
    authors="TerryLanfear"
-   manager="stevenpo"
+   manager="StevenPo"
    editor=""/>
 
 <tags
@@ -20,7 +20,7 @@
 
 Dieses Dokument unterstützt Sie beim Einstieg in Azure Security Center. Sie erhalten eine Einführung in die Sicherheitsüberwachungs- und Richtlinienverwaltungs-Komponenten und werden zu weiterführenden Schritten geleitet.
 
-> [AZURE.NOTE]Die Informationen in diesem Dokument gelten für die Vorschauversion von Azure Security Center. Dies ist eine Einführung in den Dienst anhand einer Beispielbereitstellung. Es enthält keine schrittweise Anleitung.
+> [AZURE.NOTE]Die Informationen in diesem Dokument gelten für die Vorschauversion von Azure Security Center. Dies ist eine Einführung in den Dienst anhand einer Beispielbereitstellung. Es ist keine schrittweise Anleitung.
 
 ## Was ist Azure Security Center?
 Azure Security Center unterstützt Sie beim Verhindern, Erkennen und Beheben von Bedrohungen durch größere Transparenz und bessere Kontrolle über die Sicherheit Ihrer Azure-Ressourcen. Es bietet integrierte Sicherheitsüberwachung und Richtlinienverwaltung für Ihre Abonnements, hilft bei der Erkennung von Bedrohungen, die andernfalls möglicherweise unbemerkt bleiben, und kann gemeinsam mit einem breiten Sektrum an Sicherheitslösungen verwendet werden.
@@ -29,12 +29,12 @@ Azure Security Center unterstützt Sie beim Verhindern, Erkennen und Beheben von
 
 Zum Einstieg in Azure Security Center benötigen Sie ein Microsoft Azure-Abonnement. Azure Security Center wird mit Ihrem Abonnement aktiviert. Wenn Sie nicht über ein Abonnement verfügen, können Sie sich für ein [kostenloses Testabonnement](https://azure.microsoft.com/pricing/free-trial) registrieren.
 
-Der Zugriff auf Azure Security Center erfolgt über das [Microsoft Azure-Vorschauportal](http://azure.microsoft.com/features/azure-portal/). Weitere Informationen finden Sie unter [Dokumentation zu Microsoft Azure-Vorschauportal](https://azure.microsoft.com/documentation/services/azure-portal/).
+Der Zugriff auf Azure Security Center erfolgt über das [Azure-Portal](http://azure.microsoft.com/features/azure-portal/). Weitere Informationen finden Sie in der [Dokumentation zum Portal](https://azure.microsoft.com/documentation/services/azure-portal/).
 
 
 ## Zugreifen auf Azure Security Center
 
-Gehen Sie für den Zugriff auf Azure Security Center im Azure-Portal folgendermaßen vor:
+Gehen Sie für den Zugriff auf Azure Security Center im Portal folgendermaßen vor:
 
 1. Wählen Sie **Durchsuchen**, und scrollen Sie zur Option **Security Center**. ![][1]
 
@@ -103,4 +103,4 @@ In diesem Dokument wurden die Sicherheitsüberwachungs- und Richtlinienverwaltun
 [6]: ./media/security-center-get-started/security-alert.png
 [7]: ./media/security-center-get-started/security-alert-detail.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

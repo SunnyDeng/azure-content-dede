@@ -13,7 +13,7 @@
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity"
-    ms.date="12/01/2015"
+    ms.date="12/04/2015"
     ms.author="markvi"/>
 
 #Liste der Tutorials zur Integration von SaaS-Apps in Azure Active Directory
@@ -58,6 +58,7 @@ Die umfassende Liste bereits in Azure AD integrierter SaaS-Apps finden Sie im [A
 | ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_ClickTime.jpg)| [ClickTime](https://go.microsoft.com/fwLink/?LinkID=403236&clcid=0x409)|
 | ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_CloudPassage.jpg)| [CloudPassage](https://go.microsoft.com/fwLink/?LinkID=512732&clcid=0x409)|
 | ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_Concur.jpg)| [Concur](https://go.microsoft.com/fwLink/?LinkID=309575&clcid=0x409)|
+| ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_Condeco.jpg)| [Condeco](https://go.microsoft.com/fwLink/?LinkID=708660&clcid=0x409)|
 | ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_CornerstoneOnDemand.jpg)| [Cornerstone OnDemand](https://go.microsoft.com/fwLink/?LinkID=512745&clcid=0x409)|
 | ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_Coupa.jpg)| [Coupa](https://go.microsoft.com/fwLink/?LinkID=510267&clcid=0x409)|
 | ![Logo](./media/active-directory-saas-tutorial-list/SaaSApp_CritixGoToMeeting.jpg)| [Citrix GoToMeeting](https://go.microsoft.com/fwLink/?LinkID=309579&clcid=0x409)|
@@ -182,4 +183,4 @@ Die umfassende Liste bereits in Azure AD integrierter SaaS-Apps finden Sie im [A
 
 [AZURE.INCLUDE [saas-toc](../../includes/active-directory-saas-toc.md)]
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

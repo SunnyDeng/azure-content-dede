@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/23/2015" 
+	ms.date="12/04/2015" 
 	ms.author="larryfr"/>
 
 #Analysieren von Sensordaten mit der Hive-Abfragekonsole für Hadoop in HDInsight
@@ -54,4 +54,4 @@ In diesem Beispiel verarbeiten Sie Verlaufsdaten von Klimaanlagensystemen mithil
 
 3. Folgen Sie den Anweisungen auf der Webseite, um das Beispiel abzuschließen.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

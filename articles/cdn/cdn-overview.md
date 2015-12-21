@@ -20,7 +20,7 @@
 
 Das Azure CDN (Content Delivery Network, Netzwerk für die Inhaltsübermittlung) speichert von Clouddiensten verwendete Azure-Blobs und statische Inhalte an strategisch platzierten Standorten zwischen, um für das Bereitstellen von Inhalten für Benutzer maximale Bandbreite zu bieten.
 
-Wenn Sie bereits CDN-Kunde sind, können Sie jetzt Ihre CDN-Endpunkte über das [Microsoft Azure-Verwaltungsportal](https://portal.azure.com) verwalten.
+Wenn Sie bereits CDN-Kunde sind, können Sie jetzt Ihre CDN-Endpunkte über das [Microsoft Azure-Portal](https://portal.azure.com) verwalten.
 
 
 Das CDN bietet Entwicklern eine globale Lösung für die Übermittlung von Inhalten mit hoher Bandbreite durch Zwischenspeichern der Inhalte auf physischen Knoten auf der ganzen Welt. Eine aktuelle Liste von CDN-Knotenstandorten finden Sie unter [POP-Standorte von Azure Content Delivery Network (CDN)](cdn-pop-locations.md).
@@ -48,7 +48,7 @@ Der CDN-Tarif „Standard“ enthält die folgenden Features:
 - [HTTPS-Unterstützung](cdn-how-to-use-cdn.md#accessing-cached-content-over-https)
 - Lastenausgleich
 - DDoS-Schutz
-- Schnelles Löschen
+- [Schnelles Löschen](cdn-purge-endpoint.md)
 
  
 ## Premium-Features
@@ -59,4 +59,4 @@ Der CDN-Tarif „Premium“ beinhaltet alle Funktionen des Standard-Tarifs und f
 - [Erweiterte HTTP-Berichte](cdn-advanced-http-reports.md)
 - [Echtzeitstatistiken](cdn-read-time-stats.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

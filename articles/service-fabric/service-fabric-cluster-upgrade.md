@@ -66,6 +66,8 @@ Sie können die primären oder sekundären Zertifikate einfach über das Portal 
 
 ![Zertifikatsaktualisierung][CertificateUpgrade]
 
+**Hinweis** Bevor Sie die Zertifikate bestimmen, die Sie für die Clusterressourecen verwenden möchten, müssen Sie die folgenden Schritte ausführen. Andernfalls wird das neue Zertifikat nicht verwendet. (1) Laden Sie das neue Zertifikat in den Schlüsseltresor hoch (Anweisungen finden Sie unter [Service Fabric-Sicherheit](service-fabric-cluster-security.md)). Beginnen Sie mit Schritt 2 in diesem Dokument. (2) Aktualisieren Sie alle virtuellen Computer, die unseren Cluster bilden, sodass das Zertifikat auf ihnen bereitgestellt wird. Eine Anleitung finden Sie in [diesem Blogbeitrag](http://blogs.technet.com/b/kv/archive/2015/07/14/vm_2d00_certificates.aspx).
+
 ### Anwendungsports
 
 Sie können die dem Knotentyp zugeordneten Ressourceneigenschaften des Load Balancers ändern. Dies ist über das Portal oder direkt über ARM PowerShell möglich.
@@ -90,7 +92,7 @@ Um einen neuen Port auf allen VMs in einem Knotentyp öffnen zu können, führen
 
   Für die einzelnen Knotentypen können Sie benutzerdefinierte Placement-Eigenschaften hinzufügen, die Sie in Ihrer Anwendung verwenden möchten. „NodeType“ ist eine Standardeigenschaft, die Sie verwenden können, ohne dass sie explizit hinzugefügt werden muss.
 
-  >[AZURE.NOTE]Informationen zur Verwendung der Placement-Eigenschaft finden Sie in der [Dokumentation der Placement-Einschränkungen](service-fabric-placement-constraint.md).
+  >[AZURE.NOTE]Informationen zur Verwendung der „Placement“-Eigenschaft finden Sie in der [Dokumentation der Platzierungseinschränkungen](service-fabric-placement-constraint.md).
 
 ### Kapazitätsmetriken
 
@@ -113,4 +115,4 @@ Wenn Sie das verwendete Betriebssystemimage aktualisieren müssen, muss das jewe
 [AddingProbes]: ./media/service-fabric-cluster-upgrade/addingProbes.png
 [AddingLBRules]: ./media/service-fabric-cluster-upgrade/addingLBRules.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

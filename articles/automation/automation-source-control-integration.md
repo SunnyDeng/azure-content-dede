@@ -126,7 +126,7 @@ Durch Einchecken des Runbooks können Sie die Änderungen, die Sie an einem Runb
 
 ### Synchronisieren von Runbooks aus der Quellcodeverwaltung in Azure Automation 
 
-Mit der Synchronisierungsschaltfläche auf dem Blatt „Runbook-Synchronisierung“ können Sie alle Runbooks im Runbook-Ordnerpfad des Repositorys in Ihr Automation-Konto verschieben. Dasselbe Repository kann mit mehreren Automation-Konten synchronisiert werden. Mit den folgenden Schritten können Sie ein Runbook synchronisieren:
+Mit der Synchronisierungsschaltfläche auf dem Blatt „Repository-Synchronisierung“ können Sie alle Runbooks im Runbook-Ordnerpfad des Repositorys in Ihr Automation-Konto verschieben. Dasselbe Repository kann mit mehreren Automation-Konten synchronisiert werden. Mit den folgenden Schritten können Sie ein Runbook synchronisieren:
 
 1. Öffnen Sie in dem Automation-Konto, in dem Sie die Quellcodeverwaltung einrichten, das Blatt **Integration der Quellcodeverwaltung/Repository Synchronization**, und klicken Sie auf **Synchronisieren**. Klicken Sie in der angezeigten Bestätigungsmeldung auf **Ja**, um den Vorgang fortzusetzen.  
 
@@ -158,4 +158,4 @@ Klicken Sie zum Trennen der Verbindung zu Ihrem GitHub-Konto auf dem Blatt „Re
 
 Weitere Informationen zur Integration der Quellcodeverwaltung finden Sie in den folgenden Ressourcen: – [Integration der Quellcodeverwaltung in Azure Automation](https://azure.microsoft.com/blog/azure-automation-source-control-13/) – [Vote for your favorite source control system](https://www.surveymonkey.com/r/?sm=2dVjdcrCPFdT0dFFI8nUdQ%3d%3d) - [Azure Automation: Integrating Runbook Source Control using Visual Studio Online](https://azure.microsoft.com/blog/azure-automation-integrating-runbook-source-control-using-visual-studio-online/)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1210_2015-->

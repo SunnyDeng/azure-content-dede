@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/26/2015"
+	ms.date="12/04/2015"
 	ms.author="larryfr"/>
 
 
@@ -535,7 +535,7 @@ Um einen Zeitplan für den Workflow zu definieren, führen Sie die folgenden Sch
 	* **${coordStart}**: Startzeit des Auftrags
 	* **${coordEnd}**: Endzeit des Auftrags
 	* **${coordTimezone}**: Koordinatoraufträge erfolgen in einer festen Zeitzone ohne Sommerzeit (in der Regel unter Verwendung von UTC dargestellt). Diese Zeitzone wird als "Oozie-Verarbeitungszeitzone" bezeichnet.
-	* **${wfPath}**: Pfad zur Datei "workflow.xml".
+	* **${wfPath}**: Pfad zur Datei „workflow.xml“.
 
 2. Drücken Sie zum Speichern der Datei STRG+X, **Y** und dann **EINGABE**.
 
@@ -644,7 +644,7 @@ Es folgen Fehlermeldungen, die auftreten können, und Möglichkeiten zu ihrer Be
 
 ###Launcher ERROR (Sqoop)
 
-**Symptome**: Der Auftragsstatus wird in **KILLED** geändert. In den Details zum Auftrag wird der Status von "RunSqoopExport" als **ERROR** angezeigt. Bei Auswahl der Aktion wird die folgende Fehlermeldung angezeigt:
+**Symptome**: Der Auftragsstatus wird in **KILLED** geändert. In den Details zum Auftrag wird der Status von „RunSqoopExport“ als **ERROR** angezeigt. Bei Auswahl der Aktion wird die folgende Fehlermeldung angezeigt:
 
 	Launcher ERROR, reason: Main class [org.apache.oozie.action.hadoop.SqoopMain], exit code [1]
 
@@ -721,4 +721,4 @@ In diesem Lernprogramm haben Sie gelernt, wie ein Oozie-Workflow definiert und e
 
 [technetwiki-hive-error]: http://social.technet.microsoft.com/wiki/contents/articles/23047.hdinsight-hive-error-unable-to-rename.aspx
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1210_2015-->

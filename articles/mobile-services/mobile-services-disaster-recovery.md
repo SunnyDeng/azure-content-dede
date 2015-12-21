@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="08/08/2015"
+	ms.date="11/30/2015"
 	ms.author="christopheranderson"/>
 
 # Notfallwiederherstellung mobiler Dienste
@@ -29,7 +29,7 @@ Wenn Sie Azure Mobile Services zum Bereitstellen einer App verwenden, verwenden 
 Um die Wiederherstellung im Fall eines Verfügbarkeitsproblems zu vereinfachen, können Sie sich zuvor darauf vorbereiten:
 
 + **Sichern Sie Ihre Daten in der SQL-Datenbank des mobilen Azure-Dienstes** Ihre Mobildienst-Anwendungsdaten werden in einer Azure-SQL-Datenbank gespeichert. Wie empfehlen, diese Daten wie unter [SQL Database business continuity guidance] beschrieben zu sichern.
-+ **Sichern Sie Ihre Skripts für mobile Dienste**. Wir empfehlen, Ihre Skripts für mobile Dienste in einem Quellcodeverwaltungssystem wie [Team Foundation Service] oder [GitHub] zu speichern und sich nicht nur auf die Kopien im mobilen Dienst zu verlassen. Sie können die Skripts über das klassische Azure-Portal mithilfe der [Quellcodeverwaltungsfunktion] oder der [Azure-Befehlszeilenschnittstelle] von Mobile Services herunterladen. Achten Sie auf Funktionen, die im klassischen Azure-Portal als „Vorschau“ bezeichnet werden, da die Wiederherstellung dieser Skripts nicht garantiert werden kann und Sie sie möglicherweise aus Ihrer eigenen, ursprünglichen Quellcodeverwaltung wiederherstellen müssen.
++ **Sichern Sie Ihre Skripts für mobile Dienste** Wir empfehlen, Ihre Skripts für mobile Dienste in einem Quellcodeverwaltungssystem wie [Team Foundation Service] oder [GitHub] zu speichern und sich nicht nur auf die Kopien im mobilen Dienst zu verlassen. Sie können die Skripts über das klassische Azure-Portal mithilfe der [Quellcodeverwaltungsfunktion] oder der [Azure-Befehlszeilenschnittstelle] von Mobile Services herunterladen. Achten Sie auf Funktionen, die im klassischen Azure-Portal als „Vorschau“ bezeichnet werden, da die Wiederherstellung dieser Skripts nicht garantiert werden kann und Sie sie möglicherweise aus Ihrer eigenen, ursprünglichen Quellcodeverwaltung wiederherstellen müssen.
 + **Reservieren Sie einen sekundären mobilen Dienst** Bei einem Verfügbarkeitsproblem mit Ihrem mobilen Dienst müssen Sie ihn möglicherweise in einer alternativen Azure-Region erneut bereitstellen. Um sicherzustellen, dass die Kapazität verfügbar ist (zum Beispiel in den seltenen Fällen des Ausfalls einer ganzen Region), sollten Sie einen sekundären mobilen Dienst in der alternativen Region erstellen und den Modus auf den gleichen oder einen höheren Modus wie beim primären Dienst festlegen. (Falls sich der primäre Dienst im Basic-Modus befindet, können Sie den sekundären Dienst auf den Basic- oder auf den Standard-Modus festlegen. Falls sich der primäre Dienst aber im Standard-Modus befindet, muss auch der sekundäre auf den Standard-Modus festgelegt werden.)
 
 ## <a name="watch"></a>Suchen nach Anzeichen für ein Problem
@@ -83,11 +83,18 @@ So stellen Sie die mobilen Dienste nach einem Ausfall wieder her:
 	+ Wählen Sie im klassischen Azure-Portal auf der Registerkarte **Konfigurieren** des mobilen Dienstes die Option „Change Database“ und dann die neu wiederhergestellte Datenbank aus.
 
 7. Der mobile Dienst wird jetzt an einem anderen physischen Standort gehostet. Sie müssen Ihre Veröffentlichungs- und/oder Git-Anmeldeinformationen aktualisieren, um das Update der laufenden Site zu ermöglichen.
-	+ Bei Verwendung eines **.NET-Back-Ends** richten Sie Ihr Veröffentlichungsprofil erneut ein, wie unter [Veröffentlichen des mobilen Diensts](mobile-services-dotnet-backend-windows-store-dotnet-get-started/#publish-your-mobile-service) beschrieben. Dadurch werden Ihre Veröffentlichungsdetails aktualisiert, um auf den Speicherort zu verweisen.
-	+ Bei Verwendung eines **Javascript-Back-Ends** und bei Verwaltung des Diensts mit dem klassischen Azure-Portal müssen Sie keine zusätzlichen Maßnahmen ergreifen.
+
+	+ Bei Verwendung eines **.NET-Back-Ends** richten Sie Ihr Veröffentlichungsprofil erneut ein, wie unter [Veröffentlichen des mobilen Diensts](mobile-services-dotnet-backend-windows-store-dotnet-get-started.md#publish-your-mobile-service) beschrieben. Dadurch werden Ihre Veröffentlichungsdetails aktualisiert, um auf den Speicherort zu verweisen.
+	+ Bei Verwendung eines **Javascript-Back-Ends** und bei Verwaltung des Diensts mit dem Portal müssen Sie keine zusätzlichen Maßnahmen ergreifen.
+
 	+ Bei Verwendung eines **Javascript-Back-Ends** und der Verwaltung des Diensts mit dem Knoten aktualisieren Sie Ihr Git-Remote, sodass es auf das neue Repository verweist. Entfernen Sie dazu den Dateipfad ".git" aus dem Git-Remote:
 
-		1. Suchen des aktuellen Ursprungs-Remotes: Git remote: git remote -v origin https://myservice.scm.azure-mobile.net/myservice.git (fetch) origin https://myservice.scm.azure-mobile.net/myservice.git (push)
+		1. Suchen Sie Ihr aktuelles Ursprungsremote:
+
+				git remote -v
+				 origin  https://myservice.scm.azure-mobile.net/myservice.git (fetch)
+				 origin  https://myservice.scm.azure-mobile.net/myservice.git (push)
+
 		3. Aktualisieren Sie das Remote mit der gleichen URL, jedoch ohne den endgültigen .git-Dateipfad: git remote set-url origin https://myservice.scm.azure-mobile.net
 		4. Führen Sie einen Abruf aus dem Ursprung durch, um sicherzustellen, dass dies ordnungsgemäß funktioniert.
 
@@ -100,11 +107,11 @@ Jetzt sollte der mobile Dienst in einer neuen Azure-Region wiederhergestellt wor
 <!-- URLs. -->
 [SQL Database business continuity guidance]: http://msdn.microsoft.com/library/windowsazure/hh852669.aspx
 [Team Foundation Service]: http://tfs.visualstudio.com/
-
+[Github]: https://github.com/
 [Quellcodeverwaltungsfunktion]: http://www.windowsazure.com/develop/mobile/tutorials/store-scripts-in-source-control/
 [Azure-Befehlszeilenschnittstelle]: http://www.windowsazure.com/develop/mobile/tutorials/command-line-administration/
 [klassischen Azure-Portal]: http://manage.windowsazure.com/
 [Azure-Dienstdashboard]: http://www.windowsazure.com/support/service-dashboard/
 [Automatisieren von mobilen Diensten mit Befehlszeilentools]: http://www.windowsazure.com/develop/mobile/tutorials/command-line-administration/
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

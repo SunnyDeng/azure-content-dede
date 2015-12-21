@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/30/2015"
+	ms.date="12/04/2015"
 	ms.author="larryfr"/>
 
 
@@ -121,4 +121,4 @@ Gehen Sie folgendermaßen vor, um die Konfiguration für einen Dienst zu ändern
 
 8. Verwenden Sie nach dem Neustart der Dienste die Schaltfläche **Service Actions**, um **Turn Off Maintenance Mode** auszuwählen. Dadurch setzt Ambari das Überwachen auf Warnungen für den Dienst fort.
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Azure Site Recovery: häufig gestellte Fragen" 
+	pageTitle="Häufig gestellte Fragen (FAQ) zu Site Recovery | Microsoft Azure" 
 	description="Dieser Artikel enthält häufig gestellte Fragen zu Azure Site Recovery." 
 	services="site-recovery" 
 	documentationCenter=""
@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na" 
 	ms.workload="storage-backup-recovery"
-	ms.date="12/01/2015" 
+	ms.date="12/07/2015" 
 	ms.author="raynew"/>
 
 
@@ -43,9 +43,9 @@ Dies hängt vom Bereitstellungsszenario ab.
 
 Überprüfen Sie die Voraussetzungen für Hyper-V-Hostserver unter:
 
-- [Replizieren von Hyper-V-VMs (ohne VMM) in Azure](site-recovery-hyper-v-site-to-azure/#before-you-start)
-- [Replizieren von Hyper-V-VMs (mit VMM) in Azure](site-recovery-vmm-to-azure/#before-you-start)
-- [Replizieren von Hyper-V-VMs in ein sekundäres Datencenter](site-recovery-vmm-to-vmm/#before-you-start)
+- [Replizieren von Hyper-V-VMs (ohne VMM) in Azure](site-recovery-hyper-v-site-to-azure.md/#before-you-start)
+- [Replizieren von Hyper-V-VMs (mit VMM) in Azure](site-recovery-vmm-to-azure.md/#before-you-start)
+- [Replizieren von Hyper-V-VMs in ein sekundäres Datencenter](site-recovery-vmm-to-vmm.md/#before-you-start)
 
 Informationen zu Gastbetriebssystemen:
 
@@ -74,17 +74,17 @@ Ja. Sie können Hyper-V-VMs in der Cloud auf dem VMM-Server in Azure replizieren
 
 ### Welche physischen Server können geschützt werden?
 
-Sie können physische Server unter Windows und Linux in Azure oder einen sekundären Standort schützen. Informationen zu den Anforderungen für das Betriebssystem finden Sie unter [Was benötige ich?](site-recovery-vmware-to-azure/#what-do-i-need). Unabhängig davon, ob Sie physische Server in Azure oder einen sekundären Standort replizieren, gelten die gleichen Einschränkungen.
+Sie können physische Server unter Windows und Linux in Azure oder einen sekundären Standort schützen. Informationen zu den Anforderungen für das Betriebssystem finden Sie unter [Was benötige ich?](site-recovery-vmware-to-azure.md/#what-do-i-need). Unabhängig davon, ob Sie physische Server in Azure oder einen sekundären Standort replizieren, gelten die gleichen Einschränkungen.
 
 Beachten Sie, dass physische Server als VMs in Azure ausgeführt werden, wenn der lokale Server ausfällt. Ein Failback auf einen lokalen physischen Server wird derzeit nicht unterstützt, aber ein Failback auf einen virtuellen Computer auf Hyper-V oder VMware ist möglich.
 
 ### Welche VMware-VMs können geschützt werden?
 
-Für dieses Szenario benötigen Sie einen VMware vCenter-Server, einen vSphere-Hypervisor und virtuelle Computer mit aktiven VMware-Tools. Genaue Anforderungen finden Sie unter [Was benötige ich?](site-recovery-vmware-to-azure/#what-do-i-need). Unabhängig davon, ob Sie physische Server in Azure oder einen sekundären Standort replizieren, gelten die gleichen Einschränkungen.
+Für dieses Szenario benötigen Sie einen VMware vCenter-Server, einen vSphere-Hypervisor und virtuelle Computer mit aktiven VMware-Tools. Die genauen Anforderungen finden Sie unter [Was benötige ich?](site-recovery-vmware-to-azure.md/#what-do-i-need). Unabhängig davon, ob Sie physische Server in Azure oder einen sekundären Standort replizieren, gelten die gleichen Einschränkungen.
 
 ### Gelten Voraussetzungen für die Replikation von virtuellen Computern in Azure?
 
-Virtuelle Computer, die Sie in Azure replizieren möchten, sollten den [Azure-Anforderungen](site-recovery-best-practices/#virtual-machines) entsprechen.
+Virtuelle Computer, die Sie in Azure replizieren möchten, sollten den [Azure-Anforderungen](site-recovery-best-practices.md/#virtual-machines) entsprechen.
 
 ### Kann ich virtuelle Hyper-V-Computer der 2. Generation in Azure replizieren?
 
@@ -127,7 +127,7 @@ Beim Replizieren von virtuellen Computern und physischen Servern zwischen lokale
 
 ### Wenn ich in Azure repliziere, welche Art von Speicherkonto benötige ich?
 
-Sie benötigen ein Speicherkonto mit [georedundantem Standardspeicher](../storage/storage-redundancy/#geo-redundant-storage). Ein [Premium-Speicherkonto](../storage/storage-premium-storage-preview-portal/) wird nur unterstützt, wenn Sie virtuelle VMware-Computer oder physische Windows-/Linux-Server in Azure replizieren.
+Sie benötigen ein Speicherkonto mit [georedundantem Standardspeicher](../storage/storage-redundancy.md/#geo-redundant-storage). Ein [Premium-Speicherkonto](../storage/storage-premium-storage-preview-portal/) wird nur unterstützt, wenn Sie virtuelle VMware-Computer oder physische Windows-/Linux-Server in Azure replizieren.
 
 Mit der Unterstützung für lokal redundante Standardspeicher sind wir im Rückstand. Senden Sie Feedback zu dieser Funktion über das [Feedbackforum](http://feedback.azure.com/forums/256299-site-recovery/suggestions/7204469-local-redundant-type-azure-storage-support).
 
@@ -154,7 +154,7 @@ Dynamische Datenträger werden unterstützt, wenn virtuelle Hyper-V-Computer rep
 
 ### Wie greife ich nach einem Failover auf Azure auf die virtuellen Azure-Computer zu? 
 
-Sie können auf die Azure-VMs über eine sichere Internetverbindung oder über ein Standort-zu-Standort-VPN (oder Azure ExpressRoute) zugreifen, falls vorhanden. Die Kommunikation über eine VPN-Verbindung erfolgt über interne Ports in dem Azure-Netzwerk, in dem sich die VM befindet. Die Kommunikation über das Internet wird den öffentlichen Endpunkten im Azure-Clouddienst für VMs zugeordnet. [Weitere Informationen](site-recovery-network-design/#connectivity-after-failover)
+Sie können auf die Azure-VMs über eine sichere Internetverbindung oder über ein Standort-zu-Standort-VPN (oder Azure ExpressRoute) zugreifen, falls vorhanden. Die Kommunikation über eine VPN-Verbindung erfolgt über interne Ports in dem Azure-Netzwerk, in dem sich die VM befindet. Die Kommunikation über das Internet wird den öffentlichen Endpunkten im Azure-Clouddienst für VMs zugeordnet. [Weitere Informationen](site-recovery-network-design.md/#connectivity-after-failover)
 
 ### Wie wird bei einem Failover auf Azure in Azure sichergestellt, dass die Daten stabil sind?
 
@@ -223,4 +223,4 @@ Ja, Sie können virtuelle Hyper-V-Computer in Azure oder zwischen Dienstanbieter
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

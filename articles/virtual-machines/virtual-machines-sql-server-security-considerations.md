@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
-	ms.date="08/19/2015"
+	ms.date="12/04/2015"
 	ms.author="jroth" />
 
 # Sicherheitsüberlegungen für SQL Server in Azure Virtual Machines
@@ -62,4 +62,4 @@ Weitere Informationen zu bewährten Methoden in Bezug auf Leistung finden Sie un
 
 Weitere Informationen zum Ausführen von SQL Server auf virtuellen Azure-Computern finden Sie in der [Übersicht zu SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

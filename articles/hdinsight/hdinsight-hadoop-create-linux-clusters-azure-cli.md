@@ -35,11 +35,11 @@ Anhand der Schritte in diesem Dokument werden Sie durch die Erstellung eines neu
 
 - **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 
-- __Azure-Befehlszeilenschnittstelle__. Informationen zum Installieren der Befehlszeilenschnittstelle finden Sie unter [Installieren der Azure-Befehlszeilenschnittstelle](xplat-cli-install.md).
+- __Azure-Befehlszeilenschnittstelle__. Informationen zum Installieren der Befehlszeilenschnittstelle finden Sie unter [Installieren der Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md).
 
 ##Anmelden bei Ihrem Azure-Abonnement
 
-Führen Sie die Schritte aus, die unter [Herstellen einer Verbindung mit einem Azure-Abonnement von der Azure Befehlszeilenschnittstelle (Azure CLI)](xplat-cli-connect.md) dokumentiert sind, und stellen Sie eine Verbindung mit Ihrem Abonnement über die __login__-Methode her.
+Führen Sie die Schritte aus, die unter [Herstellen einer Verbindung mit einem Azure-Abonnement von der Azure Befehlszeilenschnittstelle (Azure CLI)](../xplat-cli-connect.md) dokumentiert sind, und stellen Sie eine Verbindung mit Ihrem Abonnement über die __login__-Methode her.
 
 ##Erstellen eines Clusters
 
@@ -112,13 +112,13 @@ Nachdem Sie einen HDInsight-Cluster erfolgreich erstellt haben, nutzen Sie die f
 
 ###HBase-Cluster
 
-* [Erste Schritte mit HBase in HDInsight](hdinsight-hbase-tutorial-get-stared-linux.md)
-* [Entwickeln von Java-Anwendungen für HBase in HDInsight](hdinsight-hbase-build-java-maven-linux)
+* [Erste Schritte mit HBase in HDInsight](hdinsight-hbase-tutorial-get-started-linux.md)
+* [Entwickeln von Java-Anwendungen für HBase in HDInsight](hdinsight-hbase-build-java-maven-linux.md)
 
 ###Storm-Cluster
 
 * [Entwickeln von Java-Topologien für Storm in HDInsight](hdinsight-storm-develop-java-topology.md)
-* [Verwenden von Python-Komponenten in Storm in HDInsight](hdinsight-storm-develop-python.md)
+* [Verwenden von Python-Komponenten in Storm in HDInsight](hdinsight-storm-develop-python-topology.md)
 * [Bereitstellen und Überwachen von Topologien mit Storm in HDInsight](hdinsight-storm-deploy-monitor-topology-linux.md)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1210_2015-->

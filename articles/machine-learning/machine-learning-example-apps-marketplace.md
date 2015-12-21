@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/01/2015" 
+	ms.date="12/08/2015" 
 	ms.author="luisca"/>
 
 # Machine Learning-Apps im Azure Marketplace
@@ -33,12 +33,6 @@ Zu diesen Apps gehören beispielsweise:
 
 [Kurzanleitung](machine-learning-recommendation-api-quick-start-guide.md)
   
-##Häufig zusammen gekauft##
-Eine API, über die Ihre Kunden in Ihrem Katalog Elemente finden können, die häufig zusammen gekauft werden. Nutzen Sie das Kundenkaufverhalten, um "Häufig zusammen gekauft"-Empfehlungen zu Ihrer Website hinzuzufügen und die Anzahl der Kaufabschlüsse in Ihrem Onlinestore zu verbessern.
-
-[Link zum Marketplace](https://datamarket.azure.com/dataset/amla/mba)
-
-[Dokumentation](machine-learning-apps-frequently-bought-together-api.md)
 
 ##Erkennung von Anomalien##
 Eine API, über die anomale Ereignisse in Zeitreihendaten (z. B. Servertelemetriedaten oder sensorbasierte Daten) erkannt werden.
@@ -63,4 +57,4 @@ Mit dieser API kann unstrukturierter Text für Aufgaben wie Stimmungsanalyse und
 
 [Dokumentation](https://churn.cloudapp.net/documentation)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

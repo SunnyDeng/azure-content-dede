@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="12/01/2015"
+   ms.date="12/07/2015"
    ms.author="joaoma" />
 
 # Konfigurieren der Routingmethode für Leistungsdatenverkehr
@@ -51,4 +51,4 @@ Wenn Sie ein Datenverkehrsrouting für Clouddienste und Websites (Endpunkte) in 
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

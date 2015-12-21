@@ -1,6 +1,7 @@
 <properties 
 	pageTitle="Stream Analytics: Austauschen von Anmeldeinformationen für Ein- und Ausgaben | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie die Anmeldeinformationen für Stream Analytics-Ein- und Ausgaben aktualisieren können." 
+	description="Erfahren Sie, wie Sie die Anmeldeinformationen für Stream Analytics-Ein- und Ausgaben aktualisieren können."
+	keywords="Anmeldeinformationen"
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
@@ -13,15 +14,15 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="11/06/2015" 
+	ms.date="12/04/2015" 
 	ms.author="jeffstok"/>
 
-#Austauschen der Anmeldeinformationen für die Eingabe-/Ausgabe
+#Austauschen von Anmeldeinformationen
 
 ##Zusammenfassung
 Derzeit unterstützt Azure Stream Analytics das Austauschen der Anmeldeinformationen für die Eingabe/Ausgabe nicht, während ein Auftrag ausgeführt wird.
 
-Während Azure Stream Analytics zwar das Fortsetzen eines Auftrags von der letzten Ausgabe an unterstützt, wollten wir den gesamten Prozess freigeben, um die Verzögerung zwischen dem Anhalten und Starten des Auftrags zu verkürzen.
+Während Azure Stream Analytics zwar das Fortsetzen eines Auftrags von der letzten Ausgabe an unterstützt, wollten wir den gesamten Prozess freigeben, um die Verzögerung zwischen dem Anhalten und Starten des Auftrags und dem Austauschen der Anmeldeinformationen zu verkürzen.
 
 ##Teil 1 – Vorbereiten des neuen Anmeldeinformationssatzes:
 Dieser Teil gilt für die folgenden Eingaben/Ausgaben:
@@ -34,7 +35,7 @@ Dieser Teil gilt für die folgenden Eingaben/Ausgaben:
 Für andere Ein-/Ausgaben fahren Sie mit Teil 2 fort.
 
 ###Blob-Speicher/Tabellenspeicher
-1.  Wechseln Sie zur Storage-Erweiterung des klassischen Azure-Portals: ![Grafik1][graphic1]
+1.  Wechseln Sie zur Storage-Erweiterung des Azure-Verwaltungsportals: ![Grafik1][graphic1]
 2.  Suchen Sie nach dem für den Auftrag verwendeten Speicher, und wechseln Sie zu diesem: ![Grafik2][graphic2]
 3.  Klicken Sie auf den Befehl "Zugriffsschlüssel verwalten": ![Grafik3][graphic3]
 4.  Wählen Sie entweder den primären oder den sekundären Zugriffsschlüssel abhängig davon aus, **welcher für den Auftrag nicht verwendet wird**.
@@ -43,7 +44,7 @@ Für andere Ein-/Ausgaben fahren Sie mit Teil 2 fort.
 7.  Fahren Sie mit Teil 2 fort.
 
 ###Event Hubs
-1.  Wechseln Sie zur Service Bus-Erweiterung des klassischen Azure-Portals: ![Grafik6][graphic6]
+1.  Wechseln Sie zur Service Bus-Erweiterung des Azure-Verwaltungsportals: ![Grafik6][graphic6]
 2.  Suchen Sie den vom Auftrag verwendeten Service Bus-Namespace, und wechseln Sie zu diesem: ![Grafik7][graphic7]
 3.  Wenn für den Auftrag eine SAS-Richtlinie für den Service Bus-Namespace verwendet wird, wechseln Sie zu Schritt 6.  
 4.  Wechseln Sie zur Registerkarte "Event Hubs": ![Grafik8][graphic8]
@@ -57,9 +58,9 @@ Für andere Ein-/Ausgaben fahren Sie mit Teil 2 fort.
 
 ###SQL-Datenbank
 
->[AZURE.NOTE]Hinweis: Sie müssen eine Verbindung mit dem SQL-Datenbankdienst herstellen. Wir werden die Vorgehensweise anhand der Verwaltungsfunktionen des klassischen Azure-Portals erläutern, Sie können jedoch auch clientseitige Tools wie z. B. SQL Server Management Studio verwenden.
+>[AZURE.NOTE]Hinweis: Sie müssen eine Verbindung mit dem SQL-Datenbankdienst herstellen. Wir werden die Vorgehensweise anhand der Verwaltungsfunktionen des Azure-Verwaltungsportals erläutern, Sie können jedoch auch clientseitige Tools wie z. B. SQL Server Management Studio verwenden.
 
-1.  Wechseln Sie zur SQL-Datenbank-Erweiterung des klassischen Azure-Portals: ![Grafik14][graphic14]
+1.  Wechseln Sie zur SQL-Datenbank-Erweiterung des Azure-Verwaltungsportals: ![Grafik14][graphic14]
 2.  Suchen Sie die für den Auftrag verwendete SQL-Datenbank, und **klicken Sie in derselben Zeile auf den Server**: ![Grafik15][graphic15]
 3.  Klicken Sie auf den Befehl "Verwalten": ![Grafik16][graphic16]
 4.  Geben Sie den Datenbank-Master ein: ![Grafik17][graphic17]
@@ -77,7 +78,7 @@ Für andere Ein-/Ausgaben fahren Sie mit Teil 2 fort.
 16. Fahren Sie mit Teil 2 fort.
 
 ##Teil 2: Beenden des Stream Analytics-Auftrags
-1.  Wechseln Sie zur Stream Analytics-Erweiterung des klassischen Azure-Portals: ![Grafik26][graphic26]
+1.  Wechseln Sie zur Stream Analytics-Erweiterung des Azure-Verwaltungsportals: ![Grafik26][graphic26]
 2.  Suchen Sie den Auftrag, und wechseln Sie zu diesem: ![Grafik27][graphic27]
 3.  Wechseln Sie abhängig davon, ob Sie die Anmeldeinformationen für eine Ein- oder Ausgabe ändern, zur Registerkarte "Eingaben" oder "Ausgaben". ![Grafik28][graphic28]
 4.  Klicken Sie auf den Befehl "Beenden", und vergewissern Sie sich, dass der Auftrag beendet wurde: ![Grafik29][graphic29] Warten Sie, bis der Auftrag beendet wurde.
@@ -193,4 +194,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 [graphic43]: ./media/stream-analytics-login-credentials-inputs-outputs/43-stream-analytics-login-credentials-inputs-outputs.png
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

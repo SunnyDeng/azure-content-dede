@@ -42,6 +42,7 @@
                 // expired, as shown in this post: http://aka.ms/jww5vp.
 
                 success = true;
+			    message = string.Format("Cached credentials for user - {0}", user.UserId);
             }
             else
             {
@@ -73,10 +74,10 @@
 
 	In dieser Version von **AuthenticateAsync** versucht die App, auf den Dienst über Anmeldeinformationen zuzugreifen, die in **PasswordVault** gespeichert sind. Dies erfolgt auch dann, wenn keine gespeicherten Anmeldeinformationen vorhanden sind.
 
-	>[AZURE.NOTE]Zwischengespeicherte Token können auch nach der Authentifizierung ablaufen, wenn die App verwendet wird. Weitere Informationen dazu, wie Sie ermitteln, ob ein Token abgelaufen ist, finden Sie unter [Check for expired Azure Mobile Services authentication tokens](http://aka.ms/jww5vp) (in englischer Sprache). Eine Lösung zur Behandlung von Autorisierungsfehlern in Zusammenhang mit abgelaufenen Token finden Sie im Beitrag [Caching and handling expired tokens in Azure Mobile Services managed SDK](hive/2014/03/13/caching-and-handling-expired-tokens-in-azure-mobile-services-managed-sdk.aspx) (Zwischenspeichern und Behandeln von abgelaufenen Token mit dem Azure Mobile Services-SDK für verwalteten Code, in englischer Sprache).
+	>[AZURE.NOTE]Zwischengespeicherte Token können auch nach der Authentifizierung ablaufen, wenn die App verwendet wird. Weitere Informationen dazu, wie Sie ermitteln, ob ein Token abgelaufen ist, finden Sie unter [Check for expired Azure Mobile Services authentication tokens](http://aka.ms/jww5vp) (in englischer Sprache). Eine Lösung zur Behandlung von Autorisierungsfehlern in Zusammenhang mit abgelaufenen Token finden Sie im Beitrag [Caching and handling expired tokens in Azure Mobile Services managed SDK](http://blogs.msdn.com/b/carlosfigueira/archive/2014/03/13/caching-and-handling-expired-tokens-in-azure-mobile-services-managed-sdk.aspx) (Zwischenspeichern und Behandeln von abgelaufenen Token mit dem Azure Mobile Services-SDK für verwalteten Code, in englischer Sprache).
 
 3. Starten Sie die App zweimal neu.
 
 	Beachten Sie, dass beim ersten Start die Anmeldung beim Anbieter wieder erforderlich ist. Beim zweiten Neustart jedoch werden die zwischengespeicherten Anmeldeinformationen verwendet, und die Anmeldung wird umgangen.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

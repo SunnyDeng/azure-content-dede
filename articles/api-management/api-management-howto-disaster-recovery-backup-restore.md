@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/15/2015" 
+	ms.date="12/07/2015" 
 	ms.author="sdanie"/>
 
 # So implementieren Sie die Notfallwiederherstellung mit Sichern und Wiederherstellen von Diensten in Azure API Management
@@ -36,9 +36,9 @@ Alle Aufgaben, die Sie mithilfe des Azure-Ressourcen-Managers für Ressourcen au
 -	Legen Sie Berechtigungen für die hinzugefügte Anwendung fest.
 -	Rufen Sie das Token zum Authentifizieren von Anforderungen an den Azure-Ressourcen-Manager ab.
 
-Im ersten Schritt wird eine Azure Active Directory-Anwendung erstellt. Melden Sie sich mit dem Abonnement, das Ihre API Management-Dienstinstanz enthält, beim [Verwaltungsportal](http://manage.windowsazure.com/) an, und navigieren Sie zu der Registerkarte **Anwendungen** für Ihr Azure Active Directory-Standardverzeichnis.
+Im ersten Schritt wird eine Azure Active Directory-Anwendung erstellt. Melden Sie sich mit dem Abonnement, das Ihre API Management-Dienstinstanz enthält, beim [klassischen Azure-Portal](http://manage.windowsazure.com/) an, und navigieren Sie zu der Registerkarte **Anwendungen** für Ihr Azure Active Directory-Standardverzeichnis.
 
->[AZURE.NOTE]Wenn das Azure Active Directory-Standardverzeichnis in Ihrem Konto nicht angezeigt wird, bitten Sie den Administrator des Azure-Abonnements, die erforderlichen Berechtigungen für das Konto zu erteilen. Informationen zur Suche des Standardverzeichnisses finden Sie unter [Suchen des Standardverzeichnisses im Azure-Verwaltungsportal](../virtual-machines/resource-group-create-work-id-from-persona.md/#locate-your-default-directory-in-the-azure-portal).
+>[AZURE.NOTE]Wenn das Azure Active Directory-Standardverzeichnis in Ihrem Konto nicht angezeigt wird, bitten Sie den Administrator des Azure-Abonnements, die erforderlichen Berechtigungen für das Konto zu erteilen. Informationen zur Suche des Standardverzeichnisses finden Sie unter [Suchen des Standardverzeichnisses](../virtual-machines/resource-group-create-work-id-from-persona.md/#locate-your-default-directory-in-the-azure-portal).
 
 ![Erstellen der Azure Active Directory-Anwendung][api-management-add-aad-application]
 
@@ -167,9 +167,9 @@ Die Wiederherstellung ist ein länger anhaltender Vorgang, der bis zum Abschluss
 ## Nächste Schritte
 Sehen Sie sich die folgenden Microsoft-Blogs für zwei verschiedene Vorgehensweisen des Sicherungs- und Wiederherstellungsvorgangs an.
 
--	[Replicate Azure API Management Accounts](https://www.returngis.net/en/2015/06/replicate-azure-api-management-accounts/) (in englischer Sprache) 
+-	[Replicate Azure API Management Accounts (in englischer Sprache)](https://www.returngis.net/en/2015/06/replicate-azure-api-management-accounts/) 
 	-	Vielen Dank an Gisela für ihren Beitrag zu diesem Artikel.
--	[Azure API Management: Backing Up and Restoring Configuration](http://blogs.msdn.com/b/stuartleeks/archive/2015/04/29/azure-api-management-backing-up-and-restoring-configuration.aspx) (in englischer Sprache)
+-	[Azure API Management: Backing Up and Restoring Configuration (in englischer Sprache)](http://blogs.msdn.com/b/stuartleeks/archive/2015/04/29/azure-api-management-backing-up-and-restoring-configuration.aspx)
 	-	Der Ansatz von Stuart entspricht nicht der offiziellen Anleitung, ist aber sehr interessant.
 
 [Backup an API Management service]: #step1
@@ -189,4 +189,4 @@ Sehen Sie sich die folgenden Microsoft-Blogs für zwei verschiedene Vorgehenswei
 [api-management-endpoint]: ./media/api-management-howto-disaster-recovery-backup-restore/api-management-endpoint.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

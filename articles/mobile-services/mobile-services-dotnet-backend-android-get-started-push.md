@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="java"
 	ms.topic="article"
-	ms.date="10/01/2015"
+	ms.date="12/06/2015"
 	ms.author="ricksal"/>
 
 # Hinzufügen von Pushbenachrichtigungen zur Mobile Services-App
@@ -117,4 +117,4 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 [Senden von Übertragungsbenachrichtigungen an Abonnenten]: ../notification-hubs-windows-store-dotnet-send-breaking-news.md
 [Senden vorlagenbasierter Benachrichtigungen an Abonnenten]: ../notification-hubs-windows-store-dotnet-send-localized-breaking-news.md
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

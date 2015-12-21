@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Erste Schritte zum Erstellen eines Load Balancers mit Internetzugriff in einem klassischen Bereitstellungsmodell im Vorschauportal | Microsoft Azure"
-   description="Erfahren Sie, wie Sie im Vorschauportal einen Load Balancer mit Internetzugriff in einem klassischen Bereitstellungsmodell erstellen."
+   pageTitle="Erste Schritte zum Erstellen eines Load Balancers mit Internetzugriff in einem klassischen Bereitstellungsmodell im Azure-Portal | Microsoft Azure"
+   description="Erfahren Sie, wie Sie im Azure-Portal einen Load Balancer mit Internetzugriff in einem klassischen Bereitstellungsmodell erstellen"
    services="load-balancer"
    documentationCenter="na"
    authors="joaoma"
@@ -14,10 +14,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/20/2015"
+   ms.date="12/07/2015"
    ms.author="joaoma" />
 
-# Erste Schritte zum Erstellen eines Load Balancers mit Internetzugriff (klassisch) im Vorschauportal
+# Erste Schritte zum Erstellen eines Load Balancers mit Internetzugriff (klassisch) im Azure-Portal
 
 [AZURE.INCLUDE [Load-Balancer-Get-Started-Internet-Classic-Selectors-include.MD](../../includes/load-balancer-get-started-internet-classic-selectors-include.md)]
 
@@ -30,9 +30,9 @@
 
 
 
-## Erste Schritte zum Erstellen eines Load Balancer-Endpunkts mithilfe des Vorschauportals	
+## Erste Schritte zum Erstellen eines Load Balancer-Endpunkts mithilfe des Azure-Portals	
 
-Führen Sie zum Erstellen eines (klassischen) Load Balancer-Bereitstellungsmodells mit Internetzugriff im Vorschauportal die folgenden Schritte aus:
+Führen Sie zum Erstellen eines (klassischen) Load Balancer-Bereitstellungsmodells mit Internetzugriff im Azure-Portal die folgenden Schritte aus:
 
 1. Navigieren Sie in einem Browser zu http://portal.azure.com, und melden Sie sich, falls erforderlich, mit Ihrem Azure-Konto an.
 
@@ -66,4 +66,4 @@ Führen Sie zum Erstellen eines (klassischen) Load Balancer-Bereitstellungsmodel
 
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

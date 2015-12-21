@@ -37,6 +37,7 @@ In der aktuellen Vorschauversion unterstützt **Azure Data Catalog** die Registr
 * SQL Server Analysis Services – Tabellarische Tabellen
 * SQL Server Reporting Services-Berichte
 * Azure-Speicherblobs und -Verzeichnisse
+* Azure Data Lake-Speicher
 * HDFS-Dateien und -Verzeichnisse
 * Apache Hive-Tabellen
 * Teradata-Tabellen und -Sichten
@@ -95,4 +96,4 @@ Beim erneuten Registrieren einer bereits registrierten Datenquelle werden neue O
 ## Zusammenfassung
 Durch die Registrierung einer Datenquelle in **Azure Data Catalog** werden strukturelle und beschreibende Metadaten aus der Datenquelle in den Katalogdienst kopiert, sodass die Datenquelle leichter zu ermitteln und zu verstehen ist. Nachdem eine Datenquelle registriert wurde, kann sie im **Azure Data Catalog**-Portal mit Anmerkungen versehen, verwaltet und ermittelt werden.
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1210_2015-->

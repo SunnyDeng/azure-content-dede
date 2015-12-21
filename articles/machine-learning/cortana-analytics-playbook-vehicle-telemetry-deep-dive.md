@@ -40,26 +40,26 @@ Zu dieser Lösung gehört ein Simulator für Fahrzeugtelematik (Vehicle Telemati
 
 Dies ist ein Dataset im JSON-Format, das das unten angegebene Schema enthält.
 
-Column | Beschreibung | Werte |  
-------- | ----------- | --------- | 
-VIN (Fahrzeug-Identifizierungsnummer) | Zufällig generierte Fahrzeug-Identifizierungsnummer | Wird aus einer Masterliste mit 10.000 zufällig generierten Fahrzeug-Identifizierungsnummern ausgewählt | 
-Outside temperature (Außentemperatur) | Die Außentemperatur an dem Ort, an dem sich das Fahrzeug befindet | Zufällig generierte Zahl von 0 bis 100 | 
-Engine temperature (Motortemperatur) | Motortemperatur des Fahrzeugs | Zufällig generierte Zahl von 0 bis 500 | 
-Speed (Geschwindigkeit) | Geschwindigkeit, mit der sich das Fahrzeug bewegt | Zufällig generierte Zahl von 0 bis 100 | 
-Fuel (Kraftstoff) | Kraftstoffmenge des Fahrzeugs | Zufällig generierte Zahl von 0 bis 100 (Kraftstoffstand in Prozent) | 
-EngineOil (Motoröl) | Motorölstand des Fahrzeugs | Zufällig generierte Zahl von 0 bis 100 (Motorölstand in Prozent) | 
-Tirepressure (Reifendruck) | Reifendruck des Fahrzeugs | Zufällig generierte Zahl von 0 bis 50 (Reifendruck in Prozent) | 
-Odometer (Kilometerzähler) | Kilometerstand des Fahrzeugs | Zufällig generierte Zahl von 0 bis 200.000 | 
-Accelerator\_pedal\_position (Position des Gaspedals) | Gaspedalposition des Fahrzeugs | Zufällig generierte Zahl von 0 bis 100 (Gaspedalposition in Prozent) | 
-Parking\_brake\_status (Status der Handbremse) | Gibt an, ob das Fahrzeug geparkt und die Handbremse gezogen ist | „true“ oder „false“ | 
-Headlamp\_status (Scheinwerferstatus) | Gibt an, ob die Scheinwerfer eingeschaltet sind | „true“ oder „false“ | 
-Brake\_pedal\_status (Status des Bremspedals) | Gibt an, ob das Bremspedal betätigt wird | „true“ oder „false“ | 
-Transmission\_gear\_position (Position des Ganghebels) | Gangposition des Fahrzeugs | Positionen: Erster, Zweiter, Dritter, Vierter, Fünfter, Sechster, Siebter, Achter | 
-Ignition\_status (Status der Zündung) | Gibt an, ob das Fahrzeug fährt oder ob die Zündung ausgeschaltet ist | „true“ oder „false“ | 
-Windshield\_wiper\_status (Scheibenwischerstatus) | Gibt an, ob die Scheibenwischer eingeschaltet sind | „true“ oder „false“ | 
-ABS (ABS) | Gibt an, ob ABS aktiviert ist | „true“ oder „false“ | 
-Timestamp (Zeitstempel) | Zeitstempel für die Erstellung des Datenpunkts | Datum | 
-City (Ort) | Standort des Fahrzeugs | Diese Projektmappe enthält vier Orte : Bellevue, Redmond, Sammamish, Seattle | 
+Column | Beschreibung | Werte   
+ ------- | ----------- | ---------  
+VIN (Fahrzeug-Identifizierungsnummer) | Zufällig generierte Fahrzeug-Identifizierungsnummer | Wird aus einer Masterliste mit 10.000 zufällig generierten Fahrzeug-Identifizierungsnummern ausgewählt
+Outside temperature (Außentemperatur) | Die Außentemperatur an dem Ort, an dem sich das Fahrzeug befindet | Zufällig generierte Zahl von 0 bis 100
+Engine temperature (Motortemperatur) | Motortemperatur des Fahrzeugs | Zufällig generierte Zahl von 0 bis 500
+Speed (Geschwindigkeit) | Geschwindigkeit, mit der sich das Fahrzeug bewegt | Zufällig generierte Zahl von 0 bis 100
+Fuel (Kraftstoff) | Kraftstoffmenge des Fahrzeugs | Zufällig generierte Zahl von 0 bis 100 (Kraftstoffstand in Prozent)
+EngineOil (Motoröl) | Motorölstand des Fahrzeugs | Zufällig generierte Zahl von 0 bis 100 (Motorölstand in Prozent)
+Tirepressure (Reifendruck) | Reifendruck des Fahrzeugs | Zufällig generierte Zahl von 0 bis 50 (Reifendruck in Prozent)
+Odometer (Kilometerzähler) | Kilometerstand des Fahrzeugs | Zufällig generierte Zahl von 0 bis 200.000
+Accelerator\_pedal\_position (Position des Gaspedals) | Gaspedalposition des Fahrzeugs | Zufällig generierte Zahl von 0 bis 100 (Gaspedalposition in Prozent)
+Parking\_brake\_status (Status der Handbremse) | Gibt an, ob das Fahrzeug geparkt und die Handbremse gezogen ist | „true“ oder „false“
+Headlamp\_status (Scheinwerferstatus) | Gibt an, ob die Scheinwerfer eingeschaltet sind | „true“ oder „false“
+Brake\_pedal\_status (Status des Bremspedals) | Gibt an, ob das Bremspedal betätigt wird | „true“ oder „false“
+Transmission\_gear\_position (Position des Ganghebels) | Gangposition des Fahrzeugs | Positionen: Erster, Zweiter, Dritter, Vierter, Fünfter, Sechster, Siebter, Achter
+Ignition\_status (Status der Zündung) | Gibt an, ob das Fahrzeug fährt oder ob die Zündung ausgeschaltet ist | „true“ oder „false“
+Windshield\_wiper\_status (Scheibenwischerstatus) | Gibt an, ob die Scheibenwischer eingeschaltet sind | „true“ oder „false“
+ABS (ABS) | Gibt an, ob ABS aktiviert ist | „true“ oder „false“
+Timestamp (Zeitstempel) | Zeitstempel für die Erstellung des Datenpunkts | Datum
+City (Ort) | Standort des Fahrzeugs | Diese Projektmappe enthält vier Orte : Bellevue, Redmond, Sammamish, Seattle
 
 
 Das Referenzdataset für das Fahrzeugmodell enthält die Zuordnung von Fahrzeug-Identifizierungsnummer und Modell.
@@ -696,4 +696,4 @@ Klicken Sie hier, um eine ausführliche Anleitung zum Einrichten der PowerBI-Ber
 
 In diesem Dokument wird die Projektmappe für die Fahrzeugtelemetrieanalyse (Vehicle Telemetry Analytics) ausführlich beschrieben. Es wird ein Lambda-Architekturmuster für die Echtzeit- und Batchanalyse mit Vorhersagen und Aktionen veranschaulicht. Dieses Muster gilt für eine Vielzahl von Anwendungsfällen, für die „Hot Path“-Analysen (Echtzeit) und „Cold Path“-Analysen (Batch) erforderlich sind.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

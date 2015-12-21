@@ -54,8 +54,8 @@ Zuverlässige Auflistungen wählen automatisch je nach Vorgang und Rolle des Rep
 
 Es gibt zwei Isolationsstufen, die von zuverlässigen Auflistungen unterstützt werden:
 
-- **Wiederholbarer Lesevorgang**: "Gibt an, dass Anweisungen keine Daten lesen können, die geändert wurden, für die aber noch kein Commit ausgeführt wurde. Darüber hinaus können von der aktuellen Transaktion gelesene Daten erst nach Abschluss dieser von anderen Transaktionen geändert werden. (https://msdn.microsoft.com/de-DE/library/ms173763.aspx)"
-- **Momentaufnahme**: "Gibt an, dass von Anweisungen in einer Transaktion gelesene Daten der im Hinblick auf Transaktionen konsistenten Version der Daten entsprechen, die zu Beginn der Transaktion vorhanden waren." Die Transaktion kann nur Datenänderungen erkennen, die vor dem Start der Transaktion festgeschrieben wurden. Nach dem Start der aktuellen Transaktion von anderen Transaktionen vorgenommene Datenänderungen sind für Anweisungen, die in der aktuellen Transaktion ausgeführt werden, nicht sichtbar. Es erscheint daher, als ob die Anweisungen in einer Transaktion eine Momentaufnahme der festgeschriebenen Daten erhalten, die zu Beginn der Transaktion vorhanden waren. (https://msdn.microsoft.com/de-DE/library/ms173763.aspx)"
+- **Wiederholbarer Lesevorgang**: "Gibt an, dass Anweisungen keine Daten lesen können, die geändert wurden, für die aber noch kein Commit ausgeführt wurde. Darüber hinaus können von der aktuellen Transaktion gelesene Daten erst nach Abschluss dieser von anderen Transaktionen geändert werden. (https://msdn.microsoft.com/library/ms173763.aspx)"
+- **Momentaufnahme**: "Gibt an, dass von Anweisungen in einer Transaktion gelesene Daten der im Hinblick auf Transaktionen konsistenten Version der Daten entsprechen, die zu Beginn der Transaktion vorhanden waren." Die Transaktion kann nur Datenänderungen erkennen, die vor dem Start der Transaktion festgeschrieben wurden. Nach dem Start der aktuellen Transaktion von anderen Transaktionen vorgenommene Datenänderungen sind für Anweisungen, die in der aktuellen Transaktion ausgeführt werden, nicht sichtbar. Es erscheint daher, als ob die Anweisungen in einer Transaktion eine Momentaufnahme der festgeschriebenen Daten erhalten, die zu Beginn der Transaktion vorhanden waren. (https://msdn.microsoft.com/library/ms173763.aspx)"
 
 Das zuverlässige Wörterbuch und die zuverlässige Warteschlange unterstützen beide "Read Your Writes". Mit anderen Worten sind jegliche Schreibvorgänge innerhalb einer Transaktion für den nachfolgenden Lesevorgang sichtbar, wenn dieser derselben Transaktion angehört.
 
@@ -119,4 +119,4 @@ hier folgen einige Punkte, die es zu beachten gilt:
 - [Erweiterte Verwendung des Reliable Services-Programmiermodells](service-fabric-reliable-services-advanced-usage.md)
 - [Entwicklerreferenz für zuverlässige Auflistungen](https://msdn.microsoft.com/library/azure/microsoft.servicefabric.data.collections.aspx)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1210_2015-->

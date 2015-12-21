@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/15/2015" 
+	ms.date="12/07/2015" 
 	ms.author="sdanie"/>
 
 # Erstellen und Veröffentlichen eines Produkts in Azure API Management
@@ -22,7 +22,7 @@ Produkte in Azure API Management enthalten eine oder mehrere APIs sowie ein Nutz
 
 ## <a name="create-product"> </a>Erstellen eines Produkts
 
-Operationen werden einer API im Herausgeberportal hinzugefügt und in diesem konfiguriert. Um auf das Herausgeberportal zuzugreifen, klicken Sie im Azure-Portal für Ihren API Management-Dienst auf **Verwalten**.
+Operationen werden einer API im Herausgeberportal hinzugefügt und in diesem konfiguriert. Um auf das Herausgeberportal zuzugreifen, klicken Sie im klassischen Azure-Portal für Ihren API Management-Dienst auf **Verwalten**.
 
 ![Herausgeberportal][api-management-management-console]
 
@@ -148,4 +148,4 @@ Weitere Informationen zum Arbeiten mit Produkten finden Sie im folgenden Video.
 [Erstellen und Verwenden von Gruppen für Entwicklerkonten in Azure API Management]: api-management-howto-create-groups.md
 [Erstellen und Konfigurieren erweiterter Produkteinstellungen in Azure API Management]: api-management-howto-product-with-rules.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

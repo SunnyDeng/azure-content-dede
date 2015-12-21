@@ -28,7 +28,7 @@ Wenn ein Mobil-Back-End auf Azure App Service aktualisiert wird, hat dieses Zugr
 
 [AZURE.INCLUDE [app-service-mobile-migrate-vs-upgrade](../../includes/app-service-mobile-migrate-vs-upgrade.md)]
 
->[AZURE.TIP]Es wird empfohlen, vor einem Upgrade eine [Migration auszuführen](app-service-mobile-dotnet-backend-migrating-from-mobile-services.md). Auf diese Weise können Sie beide Versionen der Anwendung in den gleichen App Service-Plan übernehmen, ohne dass zusätzliche Kosten anfallen.
+>[AZURE.TIP]Es wird empfohlen, vor einem Upgrade eine [Migration durchzuführen](app-service-mobile-migrating-from-mobile-services.md). Auf diese Weise können Sie beide Versionen der Anwendung in den gleichen App Service-Plan übernehmen, ohne dass zusätzliche Kosten anfallen.
 
 ### Verbesserungen im Mobile Apps-Server-SDK für Node.js
 
@@ -52,7 +52,7 @@ Anders als beim Mobile Apps-SDK für .NET lässt sich das Upgraden eines Node-Ba
 
 Die Mobile Services-Client-SDKs sind **nicht** mit dem neuen Mobile Apps-Server-SDK kompatibel. Um die Kontinuität von Diensten für Ihre App zu gewährleisten, sollten Sie keine Änderungen auf einer Website veröffentlichen, die derzeit veröffentlichte Clients bereitstellt. Stattdessen sollten Sie eine neue mobile App erstellen, die als Duplikat dient. Sie können diese Anwendung in den gleichen App Service-Plan aufnehmen, um zu vermeiden, dass zusätzliche Kosten anfallen.
 
-Anschließend verfügen Sie über zwei Versionen der Anwendung: eine unveränderte Version, die veröffentlichte praktisch genutzte Apps bedient, und eine zweite Version, die Sie upgraden und als Ziel für eine neue Clientversion verwenden. Sie können Ihren Code im eigenen Tempo verschieben und testen, aber sie sollten sicherstellen, dass alle Fehlerbehebungen auf beide Versionen angewendet werden. Wenn Sie das Gefühl haben, dass die gewünschte Anzahl von praktisch genutzten Client-Apps auf die neueste Version aktualisiert wurde, können Sie die ursprüngliche migrierte App je nach Wunsch löschen. Solange die zweite Version im gleichen App Service-Plan gehostet wird wie Ihre vorhandene mobile App, fallen dafür keine zusätzlichen Kosten an.
+Anschließend verfügen Sie über zwei Versionen der Anwendung: eine unveränderte Version, die veröffentlichte praktisch genutzte Apps bedient, und eine zweite Version, die Sie upgraden und als Ziel für eine neue Clientversion verwenden. Sie können den eigenen Code im eigenen Tempo verschieben und testen, aber sie sollten sicherstellen, dass alle Fehlerbehebungen, die Sie vornehmen, auf beide Versionen angewendet werden. Wenn Sie das Gefühl haben, dass die gewünschte Anzahl von praktisch genutzten Client-Apps auf die neueste Version aktualisiert wurde, können Sie die ursprüngliche migrierte App je nach Wunsch löschen. Solange die zweite Version im gleichen App Service-Plan gehostet wird wie Ihre vorhandene mobile App, fallen dafür keine zusätzlichen Kosten an.
 
 Der vollständige Überblick über den Upgradevorgang sieht wie folgt aus:
 
@@ -203,7 +203,7 @@ Geplante Aufträge sind nicht in Mobile Apps integriert. Deshalb müssen alle vo
 
 Die Authentifizierungskomponenten von Mobile Services wurden jetzt in das App Service-Feature „Authentifizierung/Autorisierung“ verschoben. Weitere Informationen zum Aktivieren dieses Features für Ihre Website finden Sie im Thema [Hinzufügen von Authentifizierung zu Ihrer mobilen App](app-service-mobile-ios-get-started-users.md).
 
-Für einige Anbieter, wie z. B. AAD, Facebook und Google, sollten Sie die vorhandene Registrierung aus der kopierten Anwendung nutzen können. Sie müssen lediglich zum Portal des Identitätsanbieters navigieren und eine neue Umleitungs-URL zur Registrierung hinzufügen. Anschließend konfigurieren Sie die App Service-Authentifizierung/Autorisierung mit der Client-ID und dem geheimen Schlüssel.
+Für einige Anbieter, z. B. AAD, Facebook und Google, sollten Sie die vorhandene Registrierung aus der kopierten Anwendung nutzen können. Sie müssen lediglich zum Portal des Identitätsanbieters navigieren und eine neue Umleitungs-URL zur Registrierung hinzufügen. Anschließend konfigurieren Sie die App Service-Authentifizierung/Autorisierung mit der Client-ID und dem geheimen Schlüssel.
 
 ### Autorisierung von Controlleraktionen und Benutzeridentität
 
@@ -212,7 +212,7 @@ Sie können den Zugriff auf Ihre Tabelle einschränken, indem Sie ihn auf Tabell
 Auf die Benutzeridentitätsinformationen können Sie über die `user.getIdentity`-Methode zugreifen, die [hier](http://azure.github.io/azure-mobile-apps-node/module-azure-mobile-apps_auth_user.html#~getIdentity) beschrieben ist.
 
 ## <a name="updating-clients"></a>Aktualisieren von Clients
-Sobald Sie über ein betriebsbereites Mobile App-Back-End verfügen, können Sie an einer neuen Version Ihrer Clientanwendung arbeiten, die dieses nutzt. Mobile Apps umfasst außerdem eine neue Version der Client-SDKs. Wie bei dem oben beschriebenen Serverupgrade müssen Sie vor der Installation der Mobile Apps-Versionen alle Verweise auf die Mobile Services-SDKs entfernen.
+Sobald Sie über ein betriebsbereites Mobile App-Back-End verfügen, können Sie an einer neuen Version Ihrer Clientanwendung arbeiten, die dieses nutzt. Mobile Apps enthält außerdem eine neue Version der Client-SDKs. Wie bei dem oben beschriebenen Serverupgrade müssen Sie vor der Installation der Mobile Apps-Versionen alle Verweise auf die Mobile Services-SDKs entfernen.
 
 Einer der wichtigsten Unterschiede zwischen den Versionen ist, dass die Konstruktoren keinen Anwendungsschlüssel mehr benötigen. Sie brauchen jetzt nur noch die URL der mobilen App zu übergeben. Bei den .NET-Clients lautet der `MobileServiceClient`-Konstruktor z. B. nun:
 
@@ -244,10 +244,9 @@ Wenn die neue Clientversion bereit ist, testen Sie sie mit dem aktualisierten Se
 [Add authentication to your mobile app]: app-service-mobile-xamarin-ios-get-started-users.md
 [Azure Scheduler]: /de-DE/documentation/services/scheduler/
 [WebJob]: ../app-service-web/websites-webjobs-resources.md
-[Send cross-platform push notifications]: app-service-mobile-xamarin-ios-push-notifications-to-user.md
 [How to use the .NET server SDK]: app-service-mobile-dotnet-backend-how-to-use-server-sdk.md
-[Migrate from Mobile Services to an App Service Mobile App]: app-service-mobile-dotnet-backend-migrating-from-mobile-services.md
-[Migrate your existing Mobile Service to App Service]: app-service-mobile-dotnet-backend-migrating-from-mobile-services.md
+[Migrate from Mobile Services to an App Service Mobile App]: app-service-mobile-migrating-from-mobile-services.md
+[Migrate your existing Mobile Service to App Service]: app-service-mobile-migrating-from-mobile-services.md
 [App Service-Preisen]: https://azure.microsoft.com/de-DE/pricing/details/app-service/
 [.NET server SDK overview]: app-service-mobile-dotnet-backend-how-to-use-server-sdk.md
 
@@ -265,4 +264,4 @@ Wenn die neue Clientversion bereit ist, testen Sie sie mit dem aktualisierten Se
 [ExpressJS Middleware]: http://expressjs.com/guide/using-middleware.html
 [Winston]: https://github.com/winstonjs/winston
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

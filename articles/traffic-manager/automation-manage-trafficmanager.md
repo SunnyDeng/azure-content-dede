@@ -3,7 +3,7 @@
  description="Erfahren Sie, wie der Azure Automation-Dienst zum Verwalten von Azure Traffic Manager verwendet werden kann." 
  services="traffic-manager, automation" 
  documentationCenter="" 
- authors="eamonoreilly" 
+ authors="joaoma" 
  manager="carmonm" 
  editor=""/>
 
@@ -42,4 +42,4 @@ Nachdem Sie sich nun mit den Grundlagen von Azure Automation und dessen Verwendu
 * Weitere Informationen finden Sie im Handbuch [Erste Schritte mit Azure Automation](http://go.microsoft.com/fwlink/?LinkId=390560).
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1210_2015-->

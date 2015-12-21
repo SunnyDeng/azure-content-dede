@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/16/2015"
+	ms.date="12/03/2015"
 	ms.author="antonba"/>
 
 # Einrichten von VPN-Verbindungen in Azure API Management
@@ -22,9 +22,9 @@ Mit der VPN-Unterstützung von API Management können Sie Ihr API Management-Gat
 
 ## <a name="enable-vpn"> </a>Aktivieren von VPN-Verbindungen
 
->Die VPN-Konnektivität steht nur im Tarif **Premium** zur Verfügung. Um zu diesem Tarif zu wechseln, öffnen Sie Ihren API Management-Dienst im [Verwaltungsportal][] und öffnen die Registerkarte **Skalieren**. Wählen Sie im Abschnitt **Allgemein** den Premium-Tarif, und klicken Sie auf "Speichern".
+>Die VPN-Konnektivität steht nur im Tarif **Premium** zur Verfügung. Um zu diesem Tarif zu wechseln, öffnen Sie Ihren API Management-Dienst im [klassischen Azure-Portal][] und öffnen dann die Registerkarte **Skalieren**. Wählen Sie im Abschnitt **Allgemein** den Premium-Tarif, und klicken Sie auf "Speichern".
 
-Um die VPN-Konnektivität zu aktivieren, öffnen Sie Ihren API Management-Dienst im [Verwaltungsportal][] und wechseln zur Registerkarte **Konfigurieren**.
+Um die VPN-Konnektivität zu aktivieren, öffnen Sie Ihren API Management-Dienst im [klassischen Azure-Portal][] und wechseln zur Registerkarte **Konfigurieren**.
 
 Legen Sie im VPN-Abschnitt die Option **VPN-Verbindung** auf **Ein** fest.
 
@@ -36,7 +36,7 @@ Wählen Sie ein VPN und Subnetz für jede Region. Die Liste der VPNs wird basier
 
 ![VPN auswählen][api-management-setup-vpn-select]
 
-Klicken Sie unten auf dem Bildschirm auf **Speichern**. Während der Aktualisierung können Sie über das Azure-Verwaltungsportal keine weiteren Vorgänge für den API Management-Dienst durchführen. Das Dienstgateway bleibt verfügbar, und Laufzeitaufrufe sollten nicht beeinträchtigt werden.
+Klicken Sie unten auf dem Bildschirm auf **Speichern**. Während des Updates können Sie über das klassische Azure-Portal keine weiteren Vorgänge für den API Management-Dienst durchführen. Das Dienstgateway bleibt verfügbar, und Laufzeitaufrufe sollten nicht beeinträchtigt werden.
 
 Beachten Sie, dass sich die VIP-Adresse des Gateways bei jeder Aktivierung oder Deaktivierung des VPN ändert.
 
@@ -50,8 +50,8 @@ Nachdem Ihr API Management-Dienst mit dem VPN verbunden wurde, unterscheidet sic
 ## <a name="related-content"> </a>Verwandte Inhalte
 
 
- * [Lernprogramm: Erstellen eines virtuellen Netzwerks mit standortübergreifenden Verbindungen][]
- * [Verwenden des API-Inspektors zur Verfolgung von Aufrufen in Azure API Management][]
+* [Lernprogramm: Erstellen eines virtuellen Netzwerks mit standortübergreifenden Verbindungen][]
+* [Verwenden des API-Inspektors zur Verfolgung von Aufrufen in Azure API Management][]
 
 [api-management-setup-vpn-configure]: ./media/api-management-howto-setup-vpn/api-management-setup-vpn-configure.png
 [api-management-setup-vpn-select]: ./media/api-management-howto-setup-vpn/api-management-setup-vpn-select.png
@@ -61,10 +61,9 @@ Nachdem Ihr API Management-Dienst mit dem VPN verbunden wurde, unterscheidet sic
 [Connect to a web service behind VPN]: #connect-vpn
 [Related content]: #related-content
 
-[Verwaltungsportal]: https://manage.windowsazure.com/
+[klassischen Azure-Portal]: https://manage.windowsazure.com/
 
 [Lernprogramm: Erstellen eines virtuellen Netzwerks mit standortübergreifenden Verbindungen]: ../virtual-networks-create-site-to-site-cross-premises-connectivity
 [Verwenden des API-Inspektors zur Verfolgung von Aufrufen in Azure API Management]: api-management-howto-api-inspector.md
- 
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1210_2015-->

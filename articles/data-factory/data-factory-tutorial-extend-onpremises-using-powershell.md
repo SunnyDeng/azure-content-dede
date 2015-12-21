@@ -24,12 +24,6 @@ Im letzten Schritt des Protokollverarbeitungszenarios aus der ersten exemplarisc
  
 Um die Wirksamkeitsdaten der Marketingkampagne aus dem Azure-BLOB auf einen lokalen SQL Server zu kopieren, müssen Sie einen zusätzlichen lokalen verknüpften Dienst, eine Tabelle und eine Pipeline erstellen, die die gleichen Cmdlets wie in der ersten exemplarischen Vorgehensweise verwenden.
 
-> [AZURE.IMPORTANT]In diesem Artikel werden nicht alle Data Factory-Cmdlets behandelt. In der [Data Factory-Cmdlet-Referenz][cmdlet-reference] finden Sie eine umfassende Dokumentation zu Data Factory-Cmdlets.
->    
-> Bei Verwendung der Azure PowerShell 1.0 müssen Sie die [hier](https://msdn.microsoft.com/library/dn820234.aspx) dokumentierten Cmdlets verwenden. Verwenden Sie beispielsweise „New-AzureRMDataFactory“ anstelle von „New-AzureDataFactory“.
-
-## Voraussetzungen
-
 Sie **müssen** die exemplarische Vorgehensweise im [Lernprogramm: Verschieben und Verarbeiten von Protokolldateien mit Data Factory][datafactorytutorial] durchführen, bevor Sie die exemplarische Vorgehensweise in diesem Artikel befolgen.
 
 **(Empfohlen)** Beschäftigen Sie sich mit der exemplarischen Vorgehensweise im Artikel [Aktivieren von Pipelines zum Arbeiten mit lokalen Daten][useonpremisesdatasources], um eine exemplarische Vorgehensweise zum Erstellen einer Pipeline zum Verschieben von Daten von einem lokalen SQL Server zu einem Azure-Blobspeicher zu erhalten.
@@ -120,22 +114,22 @@ Zunächst müssen Sie die SQL Server-Datenbank, die Tabelle, benutzerdefinierte 
 ### Erstellen der lokalen logischen Tabelle
 
 1.	Wechseln Sie in **Azure PowerShell** zum Ordner **C:\\ADFWalkthrough\\OnPremises**. 
-2.	Verwenden Sie das Cmdlet **New-AzureDataFactoryDataset**, um die Tabellen für **MarketingCampaignEffectivenessOnPremSQLTable.json** wie folgt zu erstellen.
+2.	Verwenden Sie das Cmdlet **New-AzureRmDataFactoryDataset**, um die Tabellen für **MarketingCampaignEffectivenessOnPremSQLTable.json** wie folgt zu erstellen.
 
 			
-		New-AzureDataFactoryDataset -ResourceGroupName ADF -DataFactoryName $df –File .\MarketingCampaignEffectivenessOnPremSQLTable.json
+		New-AzureRmDataFactoryDataset -ResourceGroupName ADF -DataFactoryName $df –File .\MarketingCampaignEffectivenessOnPremSQLTable.json
 	 
 #### Erstellen der Pipeline zum Kopieren der Daten aus dem Azure-BLOB auf SQL Server
 
-1.	Verwenden Sie das Cmdlet **New-AzureDataFactoryPipeline**, um die Pipeline für **EgressDataToOnPremPipeline.json** wie folgt zu erstellen.
+1.	Verwenden Sie das Cmdlet **New-AzureRmDataFactoryPipeline**, um die Pipeline für **EgressDataToOnPremPipeline.json** wie folgt zu erstellen.
 
 			
-		New-AzureDataFactoryPipeline -ResourceGroupName ADF -DataFactoryName $df –File .\EgressDataToOnPremPipeline.json
+		New-AzureRmDataFactoryPipeline -ResourceGroupName ADF -DataFactoryName $df –File .\EgressDataToOnPremPipeline.json
 	 
-2. Verwenden Sie das Cmdlet **Set-AzureDataFactoryPipelineActivePeriod**, um den aktiven Zeitraum für **EgressDataToOnPremPipeline** anzugeben.
+2. Verwenden Sie das Cmdlet **Set-AzureRmDataFactoryPipelineActivePeriod**, um den aktiven Zeitraum für **EgressDataToOnPremPipeline** anzugeben.
 
 			
-		Set-AzureDataFactoryPipelineActivePeriod -ResourceGroupName ADF -DataFactoryName $df -StartDateTime 2014-05-01Z -EndDateTime 2014-05-05Z –Name EgressDataToOnPremPipeline
+		Set-AzureRmDataFactoryPipelineActivePeriod -ResourceGroupName ADF -DataFactoryName $df -StartDateTime 2014-05-01Z -EndDateTime 2014-05-05Z –Name EgressDataToOnPremPipeline
 
 	Drücken Sie **J**, um fortzufahren.
 	
@@ -169,9 +163,11 @@ Glückwunsch! Sie haben die exemplarische Vorgehensweise zur Verwendung Ihrer lo
 [download-azure-powershell]: http://azure.microsoft.com/documentation/articles/install-configure-powershell
 [adfwalkthrough-download]: http://go.microsoft.com/fwlink/?LinkId=517495
 [developer-reference]: http://go.microsoft.com/fwlink/?LinkId=516908
+[old-cmdlet-reference]: https://msdn.microsoft.com/library/azure/dn820234(v=azure.98).aspx
+
 
 [image-data-factory-datamanagementgateway-configuration-manager]: ./media/data-factory-tutorial-extend-onpremises-using-powershell/DataManagementGatewayConfigurationManager.png
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

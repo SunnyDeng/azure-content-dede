@@ -23,7 +23,8 @@ In diesem Artikel wird beschrieben, wie Site Recovery zu folgenden Zwecken berei
 - **Schützen virtueller VMware-Computer** – Koordinieren von Replikation, Failover und Wiederherstellung von lokalen virtuellen VMware-Computern mit Azure
 - **Schützen physischer Server** – Koordinieren von Replikation, Failover und Wiederherstellung von lokalen physischen Windows- und Linux-Servern mit Azure mithilfe des Azure Site Recovery-Diensts
 
-Dieser Artikel enthält eine Übersicht, informiert über die Voraussetzungen für die Bereitstellung und bietet Setupanweisungen. Am Ende des Artikels wird das Replizieren der virtuellen VMware-Computer oder physischen Server in Azure beschrieben. Sollten Probleme auftreten, stellen Sie Ihre Fragen im [Azure Recovery Services-Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
+Dieser Artikel enthält eine Übersicht, informiert über die Voraussetzungen für die Bereitstellung und bietet Setupanweisungen. Am Ende des Artikels wird das Replizieren der virtuellen VMware-Computer oder physischen Server in Azure beschrieben. 
+Sollten Probleme auftreten, stellen Sie Ihre Fragen im [Azure Recovery Services-Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
 
 
 ## Was ist Azure Site Recovery?
@@ -78,7 +79,7 @@ Wichtige zu berücksichtigende Punkte:
 - **Anzahl von Quellen pro Masterzielserver** – Mit einem einzelnen Masterzielserver können mehrere Quellcomputer geschützt werden. Ein einzelner Quellcomputer kann jedoch nicht über mehrere Masterzielserver geschützt werden, da bei der Datenträgerreplikation eine virtuelle Festplatte, die die Größe des Datenträgers widerspiegelt, in Azure-BLOB-Speicher erstellt und als Datenträger mit dem Masterzielserver verbunden wird.  
 - **Maximale tägliche Änderungsrate pro Quellcomputer** – Bei der empfohlenen Änderungsrate pro Quellcomputer müssen drei Faktoren berücksichtigt werden. Im Hinblick auf den Zieldatenträger sind für jeden Vorgang auf dem Quellcomputer zwei IOPS auf dem Zieldatenträger erforderlich. Der Grund dafür ist, dass auf dem Zieldatenträger ein Lesevorgang für alte Daten und ein Schreibvorgang für neue Daten erfolgen. 
 	- **Vom Prozessserver unterstützte tägliche Änderungsrate** – Ein Quellcomputer kann nicht mehrere Prozessserver umfassen. Ein einzelner Prozessserver unterstützt eine tägliche Änderungsrate von bis zu 1 TB. Daher beträgt die maximale Datenänderungsrate pro Tag, die für einen Quellcomputer unterstützt wird, 1 TB. 
-	- **Maximaler vom Zieldatenträger unterstützter Durchsatz ** – Die maximale Codeänderung pro Quelldatenträger darf nicht mehr als 144 GB/Tag (mit einer Schreibgröße von 8 K) betragen. Informationen zum Durchsatz und den IOPS des Ziels für verschiedene Schreibgrößen finden Sie in der Tabelle im Abschnitt zum Masterzielserver. Diese Zahl muss durch zwei dividiert werden, da jede Quell-IOPS 2 IOPS auf dem Zieldatenträger generiert. Ziehen Sie beim Konfigurieren des Ziels für das Premium-Speicherkonto den Artikel [Skalierbarkeits- und Leistungsziele bei der Verwendung des Premium-Speichers](../storage/storage-scalability-targets.md#scalability-targets-for-premium-storage-accounts) zurate.
+	- **Maximaler vom Zieldatenträger unterstützter Durchsatz** – Die maximale Codeänderung pro Quelldatenträger darf nicht mehr als 144 GB/Tag (mit einer Schreibgröße von 8 K) betragen. Informationen zum Durchsatz und den IOPS des Ziels für verschiedene Schreibgrößen finden Sie in der Tabelle im Abschnitt zum Masterzielserver. Diese Zahl muss durch zwei dividiert werden, da jede Quell-IOPS 2 IOPS auf dem Zieldatenträger generiert. Ziehen Sie beim Konfigurieren des Ziels für das Premium-Speicherkonto den Artikel [Skalierbarkeits- und Leistungsziele bei der Verwendung des Premium-Speichers](../storage/storage-scalability-targets.md#scalability-targets-for-premium-storage-accounts) zurate.
 	- **Maximaler vom Speicherkonto unterstützter Durchsatz** – Ein Quellcomputer kann nicht mehrere Speicherkonten umfassen. Da ein Speicherkonto bis zu 20.000 Anforderungen pro Sekunde annimmt und jede Quell-IOPS 2 IOPS auf dem Masterzielserver generiert, wird empfohlen, die Anzahl der IOPS für den Quellcomputer auf 10.000 zu beschränken. Ziehen Sie beim Konfigurieren der Quelle für das Premium-Speicherkonto den Artikel [Skalierbarkeits- und Leistungsziele bei der Verwendung des Premium-Speichers](../storage/storage-scalability-targets.md#scalability-targets-for-premium-storage-accounts) zurate.
 
 ### Überlegungen zu Komponentenservern
@@ -273,12 +274,12 @@ Der Konfigurationsserver wird in einem automatisch erstellten Azure-Clouddienst 
 	- Wenn Sie auf **Weiter** klicken, wird ein Test ausgeführt, um die Proxyverbindung zu überprüfen.
 	- Wenn Sie einen benutzerdefinierten Proxy verwenden oder wenn der Standardproxy Authentifizierung erfordert, müssen Sie die Proxydetails eingeben, einschließlich Adresse, Port und Anmeldeinformationen.
 	- Über den Proxy sollte Zugriff auf die folgenden URLs möglich sein:
-		- **.hypervrecoverymanager.windowsazure.com
-- **.accesscontrol.windows.net
-- **.backup.windowsazure.com
-- **.blob.core.windows.net
-- **.store.core.windows.net
-- Wenn Sie auf IP-Adressen basierende Firewallregeln verwenden, sollten Sie sicherstellen, dass die Regeln die Kommunikation zwischen dem Konfigurationsserver und den unter [IP-Bereiche des Azure-Rechenzentrums](https://msdn.microsoft.com/de-DE/library/azure/dn175718.aspx) beschriebenen IP-Adressen sowie das HTTPS (443)-Protokoll zulassen. Fügen Sie die IP-Adressbereiche der zu verwendenden Azure-Region sowie die IP-Adressbereiche der westlichen USA einer Positivliste hinzu.
+		- *.hypervrecoverymanager.windowsazure.com
+		- *.accesscontrol.windows.net
+		- *.backup.windowsazure.com
+		- *.blob.core.windows.net
+		- *.store.core.windows.net
+	- Wenn Sie auf IP-Adressen basierende Firewallregeln verwenden, sollten Sie sicherstellen, dass die Regeln die Kommunikation zwischen dem Konfigurationsserver und den unter [IP-Bereiche des Azure-Rechenzentrums](https://msdn.microsoft.com/de-DE/library/azure/dn175718.aspx) beschriebenen IP-Adressen sowie das HTTPS (443)-Protokoll zulassen. Fügen Sie die IP-Adressbereiche der zu verwendenden Azure-Region sowie die IP-Adressbereiche der westlichen USA einer Positivliste hinzu.
 
 	![Proxyregistrierung](./media/site-recovery-vmware-to-azure/ASRVMWare_RegistrationProxy.png)
 
@@ -380,9 +381,10 @@ Beachten Sie, dass in jedem Subnetz die ersten vier IP-Adressen für die interne
 
 8. Wenn Sie Linux verwenden:
 	1. Stellen Sie sicher, dass Sie die aktuellen Linux Integration Services (LIS) installiert haben, bevor Sie die Masterzielserver-Software installieren. Die neueste Version von LIS sowie eine Anleitung zur Installation finden Sie [hier](https://www.microsoft.com/de-DE/download/details.aspx?id=46842). Starten Sie den Computer nach der LIS-Installation neu.
-	2. Klicken Sie unter ** Zielressourcen (Azure-Ressourcen) vorbereiten** auf **Weitere Software herunterladen und installieren (nur für Linux-Masterzielserver)**, um das Linux-Masterzielserverpaket herunterzuladen. Kopieren Sie die heruntergeladene TAR-Datei mit einem SFTP-Client auf den virtuellen Computer. Alternativ können Sie sich bei dem bereitgestellten Linux-Masterzielserver anmelden und die Datei mithilfe von *wget http://go.microsoft.com/fwlink/?LinkID=529757&clcid=0x409* herunterladen.
-2. Melden Sie sich über einen Secure Shell-Client beim Server an. Wenn Sie über VPN mit dem Azure-Netzwerk verbunden sind, verwenden Sie die interne IP-Adresse. Verwenden Sie andernfalls die externe IP-Adresse und den öffentlichen SSH-Endpunkt.
-	3. Extrahieren Sie die Dateien aus dem GZIP-Installationsprogramm, indem Sie folgenden Befehl ausführen: **tar –xvzf Microsoft-ASR\_UA\_8.4.0.0\_RHEL6-64*** ![Linux-Masterzielserver](./media/site-recovery-vmware-to-azure/ASRVMWare_TSLinuxTar.png)
+	2. Klicken Sie unter **Zielressourcen (Azure-Ressourcen) vorbereiten** auf **Weitere Software herunterladen und installieren (nur für Linux-Masterzielserver)**, um das Linux-Masterzielserverpaket herunterzuladen. Kopieren Sie die heruntergeladene TAR-Datei mit einem SFTP-Client auf den virtuellen Computer. Alternativ können Sie sich bei dem bereitgestellten Linux-Masterzielserver anmelden und die Datei mithilfe von *wget http://go.microsoft.com/fwlink/?LinkID=529757&clcid=0x409* herunterladen.
+	2. Melden Sie sich über einen Secure Shell-Client beim Server an. Wenn Sie über VPN mit dem Azure-Netzwerk verbunden sind, verwenden Sie die interne IP-Adresse. Verwenden Sie andernfalls die externe IP-Adresse und den öffentlichen SSH-Endpunkt.
+	3. Extrahieren Sie die Dateien aus dem GZIP-Installationsprogramm, indem Sie folgenden Befehl ausführen: **tar –xvzf Microsoft-ASR\_UA\_8.4.0.0\_RHEL6-64***
+	![Linux-Masterzielserver](./media/site-recovery-vmware-to-azure/ASRVMWare_TSLinuxTar.png)
 	4. Stellen Sie sicher, dass Sie sich in dem Verzeichnis befinden, in das Sie den Inhalt der TAR-Datei extrahiert haben.
 	5. Kopieren Sie die Passphrase für den Konfigurationsserver mit dem Befehl **echo *`<passphrase>`* >passphrase.txt** in eine lokale Datei.
 	6. Führen Sie den Befehl „**sudo ./install -t both -a host -R MasterTarget -d /usr/local/ASR -i *`<Configuration server internal IP address>`* -p 443 -s y -c https -P passphrase.txt**“ aus.
@@ -547,7 +549,7 @@ Beim Hinzufügen von Computern zu einer Schutzgruppe wird der Mobilitätsdienst 
 
 **Automatische Pushinstallation des Mobilitätsdiensts auf Windows-Servern:**
 
-1. Installieren Sie die neuesten Updates für den Prozessserver wie in [Schritt 5: Installieren der neuesten Updates](#step-5-install-latest-updates) beschrieben, und stellen Sie sicher, dass der Prozessserver verfügbar ist. 
+1. Installieren Sie die neuesten Updates für den Prozessserver wie in [Schritt 5: Installieren der neuesten Updates](#step-5-install-latest-updates) beschrieben, und stellen Sie sicher, dass der Prozessserver verfügbar ist. 
 2. Stellen Sie sicher, dass eine Netzwerkverbindung zwischen dem Quellcomputer und dem Prozessserver besteht und dass der Prozessserver Zugriff auf den Quellcomputer hat.  
 3. Konfigurieren Sie die Windows-Firewall so, dass die **Datei- und Druckerfreigabe** und die **Windows-Verwaltungsinstrumentation** zulässig sind. Wählen Sie in den Einstellungen der Windows-Firewall die Option "Eine App oder ein Feature durch die Windows-Firewall zulassen" aus, und wählen Sie die in der folgenden Abbildung dargestellten Anwendungen aus. Für Computer, die einer Domäne angehören, können Sie die Firewallrichtlinie mit einem Gruppenrichtlinienobjekt konfigurieren.
 
@@ -558,7 +560,7 @@ Beim Hinzufügen von Computern zu einer Schutzgruppe wird der Mobilitätsdienst 
 
 **Automatische Pushinstallation des Mobilitätsdiensts auf Linux-Servern:**
 
-1. Installieren Sie die neuesten Updates für den Prozessserver wie in [Schritt 5: Installieren der neuesten Updates](#step-5-install-latest-updates) beschrieben, und stellen Sie sicher, dass der Prozessserver verfügbar ist.
+1. Installieren Sie die neuesten Updates für den Prozessserver wie in [Schritt 5: Installieren der neuesten Updates](#step-5-install-latest-updates) beschrieben, und stellen Sie sicher, dass der Prozessserver verfügbar ist.
 2. Stellen Sie sicher, dass eine Netzwerkverbindung zwischen dem Quellcomputer und dem Prozessserver besteht und dass der Prozessserver Zugriff auf den Quellcomputer hat.  
 3. Stellen Sie sicher, dass das Konto einem Root-Benutzer auf dem Linux-Quellserver entspricht.
 4. Stellen Sie sicher, dass die Datei "/etc/hosts" auf dem Linux-Quellserver Einträge enthält, die den Namen des lokalen Hosts IP-Adressen zuordnen, die allen NICs zugeordnet sind.
@@ -590,7 +592,7 @@ Die Softwarepakete zum Installieren des Mobilitätsdiensts befinden sich auf dem
 | Oracle Enterprise Linux 6.4, 6.5 (nur 64 Bit) | `C:\pushinstallsvc\repository\Microsoft-ASR_UA_8.4.0.0_OL6-64_GA_28Jul2015_release.tar.gz` |
 
 
-**Um den Mobilitätsdienst manuell auf einem Windows Server zu installieren**, gehen Sie folgendermaßen vor:
+**Um den Mobilitätsdienst manuell auf einem Windows-Server zu installieren**, gehen Sie folgendermaßen vor:
 
 1. Kopieren Sie das Paket **Microsoft-ASR\_UA\_8.4.0.0\_Windows\_GA\_28Jul2015\_release.exe** aus dem in der obigen Tabelle aufgeführten Verzeichnispfad des Prozessservers auf den Quellcomputer.
 2. Installieren Sie den Mobilitätsdienst, indem Sie die ausführbare Datei auf dem Quellcomputer ausführen.
@@ -649,7 +651,7 @@ Zum Aktivieren des Schutzes fügen Sie einer Schutzgruppe virtuelle Computer und
 - Virtuelle Computer werden alle 15 Minuten ermittelt, und es kann bis zu 15 Minuten dauern, bis sie nach der Ermittlung in Azure Site Recovery angezeigt werden.
 - Es kann auch bis zu 15 Minuten dauern, bis Umgebungsänderungen auf dem virtuellen Computer (z. B. Installation von VMware-Tools) in Site Recovery aktualisiert werden.
 - Sie können auf der Seite **Konfigurationsserver** im Feld **LETZTER KONTAKT UM** für den vCenter-Server/ESXi-Host den Zeitpunkt der letzten Ermittlung überprüfen.
-- Wenn Sie bereits eine Schutzgruppe erstellt haben und anschließend einen vCenter-Server oder ESXi-Host hinzufügen, dauert es 15 Minuten, bis das Azure Site Recovery-Portal aktualisiert wird und virtuelle Computer im Dialogfeld **Hinzufügen von Computern zu einer Schutzgruppe** angezeigt werden.
+- Wenn Sie bereits eine Schutzgruppe erstellt haben und anschließend einen vCenter-Server oder ESXi-Host hinzufügen, dauert es 15 Minuten, bis das Azure Site Recovery-Portal aktualisiert wird und virtuelle Computer im Dialogfeld **Hinzufügen von Computern zu einer Schutzgruppe** angezeigt werden.
 - Wenn Sie einer Schutzgruppe sofort Computer hinzufügen möchten, ohne auf die planmäßige Ermittlung zu warten, markieren Sie den Konfigurationsserver (klicken Sie nicht darauf), und klicken Sie auf die Schaltfläche **Aktualisieren**.
 - Wenn Sie einer Schutzgruppe virtuelle oder physische Computer hinzufügen, wird der Mobilitätsdienst automatisch vom Prozessserver auf den Quellserver gepusht und auf diesem installiert, sofern der Dienst nicht bereits installiert ist.
 - Damit der automatische Pushmechanismus funktioniert, stellen Sie sicher, dass Sie die geschützten Computer so eingerichtet haben, wie im vorherigen Schritt beschrieben wurde.
@@ -774,4 +776,4 @@ The information in Section B is regarding Third Party Code components that are b
 
 Die vollständige Datei steht im [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=529428) zur Verfügung. Microsoft behält sich alle Rechte vor, die hier nicht ausdrücklich, stillschweigend, durch Rechtsverwirkung oder auf andere Weise gewährt wurden.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -3,7 +3,7 @@
     description="Erfahren Sie, wie Sie mithilfe von Visual Studio Online Belastungstests für Ihre Azure Service Fabric-Anwendungen durchführen können."
     services="service-fabric"
     documentationCenter="na"
-    authors="cawa"
+    authors="cawams"
     manager="timlt"
     editor="" />
 
@@ -140,4 +140,4 @@ Visual Studio Online-Auslastungstests stellen APIs bereit, mit deren Hilfe Sie i
 [8]: ./media/service-fabric-vso-load-test/RunTest2.png
 [9]: ./media/service-fabric-vso-load-test/Graph.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1210_2015-->

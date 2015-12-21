@@ -35,13 +35,13 @@ Mit elastischen Datenbanktransaktionen für SQL-DB können Anwendungen unteilbar
 
 ## Installation und Migration
 
-Die Funktionen für elastische Datenbanktransaktionen in SQL-DB werden mittels Aktualisierung der .NET-Bibliotheken „System.Data.dll“ und „System.Transactions.dll“ bereitgestellt. Die DLLs gewährleisten, dass bei Bedarf das Zweiphasencommit verwendet wird, um die Unteilbarkeit sicherzustellen. Installieren Sie [.NET 4.6.1 Release Candidate](http://blogs.msdn.com/b/dotnet/archive/2015/10/29/announcing-net-framework-4-6-1-rc.aspx) oder eine höhere Version von .NET Framework, um mit dem Entwickeln von Anwendungen mit elastischen Datenbanktransaktionen zu beginnen. Bei der Ausführung unter einer älteren Version von .NET Framework lassen sich Transaktionen nicht zu einer verteilten Transaktion höher stufen, was eine Ausnahme zur Folge hat.
+Die Funktionen für elastische Datenbanktransaktionen in SQL-DB werden mittels Aktualisierung der .NET-Bibliotheken „System.Data.dll“ und „System.Transactions.dll“ bereitgestellt. Die DLLs gewährleisten, dass bei Bedarf das Zweiphasencommit verwendet wird, um die Unteilbarkeit sicherzustellen. Installieren Sie [.NET 4.6.1](https://www.microsoft.com/de-DE/download/details.aspx?id=49981) oder eine höhere Version von .NET Framework, um mit dem Entwickeln von Anwendungen mit elastischen Datenbanktransaktionen zu beginnen. Bei der Ausführung unter einer älteren Version von .NET Framework lassen sich Transaktionen nicht zu einer verteilten Transaktion höher stufen, was eine Ausnahme zur Folge hat.
 
-Nach der Installation können Sie die APIs für verteilte Transaktionen in „System.Transactions“ für Verbindungen mit SQL-DB verwenden. Wenn Sie über MSDTC-Anwendungen verfügen, die diese APIs verwenden, erstellen Sie nach der Release Candidate-Installation einfach Ihre vorhandenen Anwendungen für .NET 4.6 neu. Falls Ihre Projekte auf .NET 4.6 ausgerichtet sind, verwenden sie automatisch die aktualisierten DLLs des Release Candidate, und Aufrufe der API für verteilte Transaktion können in Kombination mit Verbindungen zu SQL-DB erfolgreich ausgeführt werden.
+Nach der Installation können Sie die APIs für verteilte Transaktionen in „System.Transactions“ für Verbindungen mit SQL-DB verwenden. Wenn Sie über MSDTC-Anwendungen verfügen, die diese APIs verwenden, erstellen Sie nach der Installation von .NET Framework 4.6.1 einfach Ihre vorhandenen Anwendungen für .NET Framework 4.6 neu. Falls Ihre Projekte auf .NET Framework 4.6 ausgerichtet sind, verwenden sie automatisch die aktualisierten DLLs der neuen .NET Framework-Version. Aufrufe der API für verteilte Transaktion können in Kombination mit Verbindungen zu SQL-DB erfolgreich ausgeführt werden.
 
 Beachten Sie, dass für elastische Datenbanktransaktionen keine Installation von MSDTC erforderlich ist. Elastische Datenbanktransaktionen werden stattdessen direkt durch (und innerhalb von) SQL-DB verwaltet. Dies vereinfacht Cloudszenarien erheblich, da die Verwendung verteilter Transaktionen mit SQL-DB keine MSDTC-Bereitstellung erfordert. Ausführlichere Informationen zum gemeinsamen Bereitstellen von elastischen Datenbanktransaktionen, .NET Framework und Ihren Cloudanwendungen in Azure finden Sie in Abschnitt 4.
 
-## Entwicklung
+## Entwicklungsumgebung
 
 ###	Multidatenbankanwendungen
 
@@ -96,7 +96,7 @@ Elastische Datenbanktransaktionen für SQL-DB unterstützen auch die Koordinieru
 
 ## Setup für Azure-Workerrollen
 
-Sie können die Installation und Bereitstellung der .NET-Version und Bibliotheken automatisieren, die für elastische Datenbanktransaktionen an Azure benötigt werden. Ziel ist das Gast-BS des Clouddiensts. Verwenden Sie für Azure-Workerrollen die Startaufgaben. Informationen zu den Konzepten und Schritten finden Sie unter [Installieren von .NET in einer Clouddienstrolle](https://azure.microsoft.com/documentation/articles/cloud-services-dotnet-install-dotnet/).
+Sie können die Installation und Bereitstellung der .NET-Version und Bibliotheken automatisieren, die für elastische Datenbanktransaktionen an Azure benötigt werden. Ziel ist das Gast-BS des Clouddiensts. Verwenden Sie für Azure-Workerrollen die Startaufgaben. Informationen zu den Konzepten und Schritten finden Sie unter [Installieren von .NET in einer Clouddienstrolle](../cloud-services/cloud-services-dotnet-install-dotnet.md).
 
 Beachten Sie, dass das Installationsprogramm für .NET 4.6.1 während des Bootstrappingprozesses für Azure-Clouddienste mehr temporären Speicherplatz benötigt, als für .NET 4.6. Um eine erfolgreiche Installation sicherzustellen, erhöhen Sie den temporären Speicher für Ihren Azure-Clouddienst in der Datei "ServiceDefinition.csdef" im Abschnitt "LocalResources". Ändern Sie außerdem die Umgebungseinstellungen der Startaufgabe wie im folgenden Beispiel gezeigt:
 
@@ -140,9 +140,9 @@ Derzeit gelten für elastische Datenbanktransaktionen in SQL-DB folgende Einschr
 
 ## Weitere Informationen
 
-Sie verwenden noch keine elastischen Datenbankfunktionen für Ihre Azure-Anwendungen? Sehen Sie sich unsere [Dokumentationsübersicht](https://azure.microsoft.com/documentation/articles/sql-database-elastic-scale-documentation-map/) an. Bei Fragen erreichen Sie uns im [SQL-Datenbankforum](http://social.msdn.microsoft.com/forums/azure/home?forum=ssdsgetstarted), Featureanforderungen können Sie im [SQL-Datenbank-Feedbackforum](http://feedback.azure.com/forums/217321-sql-database) einreichen.
+Sie verwenden noch keine elastischen Datenbankfunktionen für Ihre Azure-Anwendungen? Sehen Sie sich unsere [Dokumentationsübersicht](https://azure.microsoft.com/documentation/learning-paths/sql-database-elastic-scale/) an. Bei Fragen erreichen Sie uns im [SQL-Datenbankforum](http://social.msdn.microsoft.com/forums/azure/home?forum=ssdsgetstarted), Featureanforderungen können Sie im [SQL-Datenbank-Feedbackforum](http://feedback.azure.com/forums/217321-sql-database) einreichen.
 
 <!--Image references-->
 [1]: ./media/sql-database-elastic-transactions-overview/distributed-transactions.png
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

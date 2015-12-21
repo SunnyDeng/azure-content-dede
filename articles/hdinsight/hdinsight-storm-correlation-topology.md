@@ -14,7 +14,7 @@
  ms.topic="article"
  ms.tgt_pltfrm="na"
  ms.workload="big-data"
- ms.date="10/30/2015"
+ ms.date="12/04/2015"
  ms.author="larryfr"/>
 
 # Korrelieren von Ereignissen im Zeitverlauf mithilfe von Storm und HBase in HDInsight
@@ -200,4 +200,4 @@ Wenn Sie die Topologie beenden möchten, kehren Sie zum Projekt **CorrelationTop
 Weitere Storm-Beispiele finden Sie unter [Beispieltopologien für Storm in HDInsight](hdinsight-storm-example-topology.md).
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1210_2015-->

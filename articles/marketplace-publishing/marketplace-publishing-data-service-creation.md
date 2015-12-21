@@ -13,7 +13,7 @@
       ms.topic="article"
       ms.tgt_pltfrm="na"
       ms.workload="na"
-      ms.date="11/24/2015"
+      ms.date="12/03/2015"
       ms.author="hascipio; avikova" />
 
 # Leitfaden für die Veröffentlichung von Datendiensten im Azure Marketplace
@@ -23,7 +23,7 @@ Nach Abschluss von Schritt 1 [Erstellen und Registrieren eines Kontos][link-acct
 
 Gehen Sie zu [https://publish.windowsazure.com](https://publish.windowsazure.com.).
 
-**Verwenden Sie bei der erstmaligen Anmeldung beim Veröffentlichungsportal das Konto, mit dem das Verkäuferprofil Ihres Unternehmens im Verkäuferdashboard registriert wurde.** (Sie können später im Veröffentlichungsportal einen beliebigen Mitarbeiter Ihres Unternehmens als Co-Administrator hinzufügen.) Sie müssen der Herausgebervereinbarung zustimmen, bevor Sie mit der Erstellung Ihres Angebots im Veröffentlichungsportal beginnen können.
+**Verwenden Sie bei der erstmaligen Anmeldung beim Veröffentlichungsportal das Konto, mit dem das Verkäuferprofil Ihres Unternehmens im Developer Center registriert wurde.** (Sie können später im Veröffentlichungsportal einen beliebigen Mitarbeiter Ihres Unternehmens als Co-Administrator hinzufügen.)
 
 Klicken Sie auf die Kachel zur Veröffentlichung von Data Services, wenn dies Ihre erste Anmeldung beim Veröffentlichungsportal ist.
 
@@ -146,4 +146,4 @@ Nachdem Sie nun Ihr Datendienstangebot erstellt haben, stellen Sie sicher, dass 
 [link-acct-creation]: marketplace-publishing-microsoft-accounts-creation-registration.md
 [link-pubportal]: https://publish.windowsazure.com
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -3,7 +3,7 @@
    description="Bietet Informationen zu den Elementen, die Microsoft hinsichtlich des von Clouddiensten verwendeten Azure-Gastbetriebssystems unterstützt." 
    services="cloud-services" 
    documentationCenter="na" 
-   authors="Thraka" 
+   authors="yuemlu" 
    manager="timlt" 
    editor=""/>
 
@@ -13,11 +13,11 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="tbd" 
-   ms.date="08/18/2015"
-   ms.author="adegeo"/>
+   ms.date="12/07/2015"
+   ms.author="yuemlu"/>
 
 # Unterstützungs- und Deaktivierungsrichtlinie für Azure-Gastbetriebssysteme
-Die Informationen auf dieser Seite beziehen sich auf das Azure-Gastbetriebssystem ([Gast-BS](https://msdn.microsoft.com/library/azure/ff729422.aspx)) für Worker- und Webrollen für Clouddienste (PaaS). Sie gelten nicht für virtuelle Computer (IaaS).
+Die Informationen auf dieser Seite beziehen sich auf das Azure-Gastbetriebssystem ([Gast-BS](cloud-services-guestos-update-matrix.md)) für Worker- und Webrollen für Clouddienste (PaaS). Sie gelten nicht für virtuelle Computer (IaaS).
 
 Microsoft verfügt über eine veröffentlichte [Unterstützungsrichtlinie für das Gastbetriebssystem](http://support.microsoft.com/gp/azure-cloud-lifecycle-faq). Auf der vorliegenden Seite wird beschrieben, wie diese Richtlinie implementiert wird.
 
@@ -81,13 +81,13 @@ Sie sollten die neueste Gastbetriebssystemfamilie verwenden, um Ihre Clouddienst
 
 1. Starten Sie die Planung der Migration zu einer neueren Familie frühzeitig. 
 2. Richten Sie temporäre Testbereitstellungen ein, um die Ausführung Ihres Clouddiensts unter der neuen Gastbetriebssystemfamilie zu testen. 
-3. [Legen Sie die Gastbetriebssystemversion](https://msdn.microsoft.com/library/azure/gg433101.aspx) auf „Automatisch“ fest (osVersion=* in der [CSCFG](https://msdn.microsoft.com/library/azure/gg456324.aspx)-Datei), sodass die Migration zu neuen Gastbetriebssystemversionen automatisch erfolgt.
+3. Legen Sie die Gastbetriebssystemversion auf **Automatisch** fest („osVersion=*“ in der [CSCFG](cloud-services-model-and-package.md#cscfg)-Datei), sodass die Migration zu neuen Gastbetriebssystemversionen automatisch erfolgt.
 
 **Was geschieht, wenn meine Webanwendung eine tiefer greifende tiefere Integration in das Betriebssystem erfordert?**
 
-Wenn die Architektur Ihrer Webanwendung eine tiefer gehende Abhängigkeit vom zugrunde liegenden Betriebssystem erfordert, verwenden Sie von der Plattform unterstützte Funktionen wie z. B. "[Startaufgaben](https://msdn.microsoft.com/library/windowsazure/gg456327.aspx)" oder andere, zukünftig verfügbare Mechanismen zur Erweiterbarkeit. Alternativ dazu können Sie auch [Azure Virtual Machines](http://azure.microsoft.com/documentation/scenarios/virtual-machines/) (IaaS – Infrastructure-as-a-Service) verwenden, wo die Verwaltung des zugrunde liegenden Betriebssystems in Ihrem Verantwortungsbereich liegt.
+Wenn die Architektur Ihrer Webanwendung eine tiefer gehende Abhängigkeit vom zugrunde liegenden Betriebssystem erfordert, verwenden Sie von der Plattform unterstützte Funktionen wie z. B. [Startaufgaben](cloud-services-startup-tasks.md) oder andere, zukünftig verfügbare Mechanismen zur Erweiterbarkeit. Alternativ dazu können Sie auch [Azure Virtual Machines](http://azure.microsoft.com/documentation/scenarios/virtual-machines/) (IaaS – Infrastructure-as-a-Service) verwenden, wo die Verwaltung des zugrunde liegenden Betriebssystems in Ihrem Verantwortungsbereich liegt.
  
 ## Nächste Schritte
 Überprüfen Sie die neuesten [Gastbetriebssystemreleases](cloud-services-guestos-update-matrix.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

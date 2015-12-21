@@ -13,15 +13,15 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="10/08/2015"
+   ms.date="12/04/2015"
    ms.author="hascipio; v-divte" />
 
 # Testen Ihres Angebots einer Lösungsvorlage in der Stagingumgebung
 In der Stagingumgebung wird Ihr Angebot in einem privaten "Sandkasten" bereitgestellt, in dem Sie es testen und seine Funktionalität vor der Veröffentlichung überprüfen können. Das Angebot wird in der Stagingumgebung genau wie bei einem Kunden angezeigt, der sie bereitgestellt hat. Ihr Angebot muss für die Freigabe in der Stagingumgebung zertifiziert sein.
 
-Sobald das Angebot in der Stagingphase ist, können Sie es im [Azure-Vorschauportal](https://ms.portal.azure.com/) anzeigen und testen.
+Sobald das Angebot in der Stagingphase ist, können Sie es im [Azure-Portal](https://portal.azure.com/) anzeigen und testen.
 
-Führen Sie die folgenden Schritte aus, um Ihr Angebot in der Stagingumgebung freizugeben und es im [Azure-Vorschauportal](https://ms.portal.azure.com/) zu testen.
+Führen Sie die folgenden Schritte aus, um Ihr Angebot in der Stagingumgebung freizugeben und im [Azure-Portal](https://portal.azure.com/) zu testen.
 
 1.	Wählen Sie [Veröffentlichungsportal](https://publish.windowsazure.com) > Registerkarte **Lösungsvorlagen** > Ihr Angebot > **Veröffentlichen** > **Für Stagingumgebung freigeben**.
 2.	Geben Sie die Liste der Azure-Abonnements an, mit denen Sie eine Vorschau Ihres Angebots anzeigen und es testen möchten.
@@ -39,4 +39,4 @@ Wenn Sie mit den Ergebnissen zufrieden sind, können Sie mit der letzten Phase b
 
 Einen Leitfaden für alle Herausgeberaufgaben finden Sie unter [Erste Schritte: Veröffentlichen eines Angebots im Azure Marketplace](marketplace-publishing-getting-started.md).
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="PHP unter Windows für SQL-Datenbank | Microsoft Azure"
+	pageTitle="PHP-Wiederherstellungslogik zum Herstellen einer Verbindung mit einer SQL-Datenbank| Microsoft Azure"
 	description="Enthält ein PHP-Beispielprogramm, das eine Verbindung zwischen einem Windows-Client mit Behandlung vorübergehender Fehler und Azure SQL-Datenbank herstellt, sowie Links zu den auf dem Client erforderlichen Softwarekomponenten."
 	services="sql-database"
 	documentationCenter=""
@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="php"
 	ms.topic="article"
-	ms.date="10/20/2015"
+	ms.date="12/08/2015"
 	ms.author="meetb"/>
 
 
@@ -29,14 +29,16 @@ In diesem Thema wird veranschaulicht, wie Sie von einer in PHP geschriebenen Cli
 
 [AZURE.INCLUDE [sql-database-develop-includes-prerequisites-php-windows](../../includes/sql-database-develop-includes-prerequisites-php-windows.md)]
 
+### Eine SQL-Datenbank
 
-## Erstellen einer Datenbank und Abrufen der Verbindungszeichenfolge
-
-
-Im Thema [Erste Schritte](sql-database-get-started.md) erhalten Sie Informationen zum Erstellen einer Beispieldatenbank und zum Abrufen der Verbindungszeichenfolge. Sie sollten unbedingt die Anleitung zum Erstellen einer **AdventureWorks-Datenbankvorlage** befolgen. Die unten gezeigten Beispiele funktionieren nur mit dem **AdventureWorks-Schema**.
+Auf der [Seite für erste Schritte](sql-database-get-started.md) erhalten Sie Informationen zum Erstellen einer Beispieldatenbank. Sie sollten unbedingt die Anleitung zum Erstellen einer **AdventureWorks-Datenbankvorlage** befolgen. Die unten gezeigten Beispiele funktionieren nur mit dem **AdventureWorks-Schema**.
 
 
-## Verbinden mit einer Datenbank und Abfragen der Datenbank 
+## Schritt 1: Abrufen der Verbindungsdetails
+
+[AZURE.INCLUDE [sql-database-include-connection-string-details-20-portalshots](../../includes/sql-database-include-connection-string-details-20-portalshots.md)]
+
+## Schritt 2: Herstellen der Verbindung und Abfragen
 
 Das Demoprogramm wurde so entworfen, dass ein vorübergehender Fehler beim Herstellen einer Verbindung zu einer Wiederholung führt. Ein vorübergehender Fehler während des Abfragebefehls bewirkt jedoch, dass das Programm die Verbindung verwirft und eine neue Verbindung herstellt, bevor der Abfragebefehl wiederholt wird. Microsoft spricht keinerlei Empfehlung für oder gegen diese Entwurfsentscheidung aus. Das Demoprogramm soll lediglich die Entwurfsflexibilität veranschaulichen, die Ihnen zur Verfügung steht.
 
@@ -59,13 +61,13 @@ Mit der [sqlsrv\_query()](http://php.net/manual/en/function.sqlsrv-query.php)-Fu
 		{
 		    $errorArr = array();
 		    $ctr = 0;
-		    // [A.2] Connect, which proceeds to issue a query command. 
+		    // [A.2] Connect, which proceeds to issue a query command.
 		    $conn = sqlsrv_connect($serverName, $connectionOptions);  
 		    if( $conn == true)
 		    {
-		        echo "Connection was established"; 
+		        echo "Connection was established";
 		        echo "<br>";
-		 
+
 		        $tsql = "SELECT [CompanyName] FROM SalesLT.Customer";
 		        $getProducts = sqlsrv_query($conn, $tsql);
 		        if ($getProducts == FALSE)
@@ -96,8 +98,8 @@ Mit der [sqlsrv\_query()](http://php.net/manual/en/function.sqlsrv-query.php)-Fu
 		        // [A.4] Check whether sqlExc.Number is on the whitelist of transients.
 		        $isTransientError = IsTransientStatic($errorArr);
 		        if ($isTransientError == TRUE)  // Is a static persistent error...
-		        { 
-		            echo("Persistent error suffered, SqlException.Number==". $errorArr[0].". Program Will terminate."); 
+		        {
+		            echo("Persistent error suffered, SqlException.Number==". $errorArr[0].". Program Will terminate.");
 		            echo "<br>";
 		            // [A.5] Either the connection attempt or the query command attempt suffered a persistent SqlException.
 		            // Break the loop, let the hopeless program end.
@@ -129,11 +131,9 @@ Mit der [sqlsrv\_query()](http://php.net/manual/en/function.sqlsrv-query.php)-Fu
 		        return TRUE;
 		}
 	?>
-	
+
 ## Nächste Schritte
 
 Weitere Informationen über die Installation und Verwendung von PHP finden Sie unter [Accessing SQL Server Databases with PHP](http://technet.microsoft.com/library/cc793139.aspx) (Zugreifen auf SQL Server-Datenbanken mit PHP, in englischer Sprache).
 
- 
-
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/10/2015" 
+	ms.date="12/07/2015" 
 	ms.author="sdanie"/>
 
 # Konfigurieren von Benachrichtigungen und E-Mail-Vorlagen in Azure API Management
@@ -22,7 +22,7 @@ API Management bietet die Möglichkeit, Benachrichtigungen über spezifische Ere
 
 ## <a name="publisher-notifications"> </a>Konfigurieren von Herausgeberbenachrichtigungen
 
-Um Benachrichtigungen zu konfigurieren, klicken Sie im Azure-Portal für Ihren API Management-Dienst auf **Verwalten**. Daraufhin gelangen Sie zum API Management-Herausgeberportal.
+Um Benachrichtigungen zu konfigurieren, klicken Sie im klassischen Azure-Portal für Ihren API Management-Dienst auf **Verwalten**. Daraufhin gelangen Sie zum API Management-Herausgeberportal.
 
 ![Herausgeberportal][api-management-management-console]
 
@@ -54,7 +54,7 @@ Um die zu benachrichtigenden Benutzer zu konfigurieren, klicken Sie auf **Empfä
 
 Klicken Sie nach der Konfiguration der Benachrichtigungsempfänger auf **Speichern**, um die Änderungen zu übernehmen.
 
->Wenn Sie die Registerkarte **Herausgeber-Benachrichtigungen** verlassen, warnt Sie das API Management-Portal über nicht gespeicherte Änderungen.
+>Wenn Sie die Registerkarte **Publisher Notifications** verlassen, warnt Sie das Herausgeberportal über nicht gespeicherte Änderungen.
 
 ## <a name="email-templates"> </a>Konfigurieren von E-Mail-Vorlagen
 
@@ -114,4 +114,4 @@ Klicken Sie auf **Vorschau** oder auf **Test senden**, um eine Vorschau der E-Ma
 [Erste Schritte mit API Management]: api-management-get-started.md
 [Erstellen einer API Management-Dienstinstanz]: api-management-get-started.md#create-service-instance
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/02/2015"
+	ms.date="12/04/2015"
 	ms.author="jeedes"/>
 
 
@@ -23,7 +23,8 @@ In diesem Tutorial erfahren Sie, wie Sie Condeco in Azure Active Directory (Azur
 
 - Sie können in Azure AD steuern, wer Zugriff auf Condeco hat.
 - Sie können es Benutzern ermöglichen, sich mit ihren Azure AD-Konten automatisch bei Condeco anzumelden (einmaliges Anmelden).
-- Sie können Ihre Konten an einem zentralen Ort verwalten – dem Azure Active Directory-Portal.
+- Sie können Ihre Konten an einem zentralen Ort verwalten – in Azure Active Directory. 
+- 
 
 Weitere Informationen zur Integration von SaaS-Apps in Azure AD finden Sie unter [Was bedeuten Anwendungszugriff und einmaliges Anmelden mit Azure Active Directory?](active-directory-appssoaccess-whatis.md).
 
@@ -56,7 +57,7 @@ Zum Konfigurieren der Integration von Condeco in Azure AD müssen Sie Condeco a
 
 **Um Condeco aus dem Katalog hinzuzufügen, führen Sie die folgenden Schritte aus:**
 
-1. Klicken Sie im linken Navigationsbereich des **Azure-Verwaltungsportals** auf **Active Directory**. <br><br> ![Active Directory][1]<br>
+1. Klicken Sie im **klassischen Azure-Portal** im linken Navigationsbereich auf **Active Directory**. <br><br> ![Active Directory][1]<br>
 
 2. Wählen Sie in der Liste **Verzeichnis** das Verzeichnis aus, für das Sie die Verzeichnisintegration aktivieren möchten.
 
@@ -64,7 +65,8 @@ Zum Konfigurieren der Integration von Condeco in Azure AD müssen Sie Condeco a
 4. Klicken Sie unten auf der Seite auf **Hinzufügen**.<br><br> ![Anwendungen][3]<br>
 5. Klicken Sie im Dialogfeld **What do you want to do** auf **Anwendung aus dem Katalog hinzufügen**.<br><br> ![Anwendungen][4]<br>
 6. Geben Sie im Suchfeld das Wort **Condeco** ein.<br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-condeco-tutorial/tutorial_condeco_01.png)<br>
-7. Wählen Sie im Ergebnisbereich **Condeco** aus, und klicken Sie dann auf **Abschließen**, um die Anwendung hinzuzufügen. <br><br>
+7. Wählen Sie im Ergebnisbereich **Condeco** aus, und klicken Sie dann auf **Abschließen**, um die Anwendung hinzuzufügen. <br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-condeco-tutorial/tutorial_condeco_02.png)<br>
+
 
 ##  Konfigurieren und Testen der einmaligen Anmeldung von Azure AD
 In diesem Abschnitt soll veranschaulicht werden, wie basierend auf einem Testbenutzer namens „Britta Simon“ das einmalige Anmelden von Azure AD in Condeco konfiguriert und getestet werden kann.
@@ -79,27 +81,27 @@ Zum Konfigurieren und Testen des einmaligen Anmeldens in Azure AD bei Condeco m
 5. **[Zuweisen des Azure AD-Testbenutzers](#assigning-the-azure-ad-test-user)**, um Britta Simon für das einmalige Anmelden von Azure AD zu aktivieren.
 5. **[Testen der einmaligen Anmeldung](#testing-single-sign-on)**, um zu überprüfen, ob die Konfiguration funktioniert.
 
-### Konfigurieren des einmaligen Anmeldens von Azure AD
+### Konfigurieren der einmaligen Anmeldung in Azure AD
 
-Das Ziel dieses Abschnitts ist, das einmalige Anmelden von Azure AD im Azure AD-Portal zu aktivieren und das einmalige Anmelden in Ihrer Condeco-Anwendung zu konfigurieren.
+Das Ziel dieses Abschnitts ist, das einmalige Anmelden von Azure AD im klassischen Azure-Portal zu aktivieren und das einmalige Anmelden in Ihrer Condeco-Anwendung zu konfigurieren.
 
 
 
 **Führen Sie zum Konfigurieren des einmaligen Anmeldens von Azure AD in Condeco die folgenden Schritte aus:**
 
-1. Klicken Sie im Azure AD-Portal auf der Anwendungsintegrationsseite für **Condeco** auf **Einmaliges Anmelden konfigurieren**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu öffnen. <br><br> ![Einmaliges Anmelden konfigurieren][6] <br>
+1. Klicken Sie im klassischen Azure-Portal auf der Anwendungsintegrationsseite für **Condeco** auf **Einmaliges Anmelden konfigurieren**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu öffnen. <br><br> ![Einmaliges Anmelden konfigurieren][6] <br>
 
-2. Wählen Sie auf der Seite **Wie sollen sich Benutzer bei Condeco anmelden** die Option **Azure AD – einmaliges Anmelden** aus, und klicken Sie dann auf **Weiter**. <br><br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-condeco-tutorial/tutorial_condeco_03.png)<br>
+2. Wählen Sie auf der Seite **Wie sollen sich Benutzer bei Condeco anmelden** die Option **Azure AD – einmaliges Anmelden** aus, und klicken Sie dann auf **Weiter**. <br><br> ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-condeco-tutorial/tutorial_condeco_03.png) <br>
 
-3. Führen Sie auf der Dialogfeldseite **App-Einstellungen konfigurieren** die folgenden Schritte aus: <br><br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-condeco-tutorial/tutorial_condeco_04.png) <br>
+3. Führen Sie auf der Dialogseite **App-Einstellungen konfigurieren** die folgenden Schritte aus: <br><br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-condeco-tutorial/tutorial_condeco_04.png) <br>
 
 
-    a. Geben Sie im Textfeld „Anmelde-URL“ die URL ein, die von Ihren Benutzern nach folgendem Muster zur Anmeldung bei der Condeco-Software verwendet wird: **„https://companyname.condecosoftware.com“**.
+    a. Geben Sie im Textfeld „Anmelde-URL“ die URL ein, die von Ihren Benutzern nach folgendem Muster zur Anmeldung bei der Condeco-Anwendung verwendet wird: **„https://companyname.condecosoftware.com“**.
    
     b. Klicken Sie auf **Weiter**.
 
 
-4. Führen Sie auf der Seite **Einmaliges Anmelden konfigurieren für Condeco** die folgenden Schritte aus. <br><br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-condeco-tutorial/tutorial_condeco_05.png) <br>
+4. Führen Sie auf der Seite **Einmaliges Anmelden konfigurieren für Condeco** die folgenden Schritte aus: <br><br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-condeco-tutorial/tutorial_condeco_05.png) <br>
 
     a. Klicken Sie auf **Metadaten herunterladen**, und speichern Sie die Datei auf Ihrem Computer.
 
@@ -109,19 +111,19 @@ Das Ziel dieses Abschnitts ist, das einmalige Anmelden von Azure AD im Azure A
 5. Für die Konfiguration von SSO für Ihre Anwendung wenden Sie sich über supportna@condecosoftware.com an das Supportteam von Condeco. Fügen Sie die heruntergeladene Metadatendatei an Ihre E-Mail an.
 
 
-6. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration der einmaligen Anmeldung aus, und klicken Sie dann auf **Weiter**. <br><br>![Azure AD – einmaliges Anmelden][10]<br>
+6. Wählen Sie im klassischen Azure-Portal die Bestätigung zur Konfiguration der einmaligen Anmeldung aus, und klicken Sie dann auf **Weiter**. <br><br>![Azure AD – einmaliges Anmelden][10]<br>
 
 7. Klicken Sie auf der Seite **Bestätigung zur einmaligen Anmeldung** auf **Fertig stellen**. <br><br>![Azure AD – einmaliges Anmelden][11]
 
 
 
 
-### Erstellen einen Azure AD-Testbenutzers
-Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta Simon im Azure-Portal.<br> Wählen Sie in der Benutzerliste **Britta Simon** aus.<br><br>![Azure AD-Benutzer erstellen][20]<br>
+### Erstellen eines Azure AD-Testbenutzers
+Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta Simon im klassischen Azure-Portal.<br> Wählen Sie in der Benutzerliste **Britta Simon** aus.<br><br>![Azure AD-Benutzer erstellen][20]<br>
 
 **Um einen Testbenutzer in Azure AD zu erstellen, führen Sie die folgenden Schritte aus:**
 
-1. Klicken Sie im linken Navigationsbereich des **Azure-Verwaltungsportals** auf **Active Directory**. <br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-condeco-tutorial/create_aaduser_09.png) <br>
+1. Klicken Sie im **klassischen Azure-Portal** im linken Navigationsbereich auf **Active Directory**. <br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-condeco-tutorial/create_aaduser_09.png) <br>
 
 2. Wählen Sie in der Liste **Verzeichnis** das Verzeichnis aus, für das Sie die Verzeichnisintegration aktivieren möchten.
 
@@ -163,7 +165,7 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta S
 
 Das Ziel dieses Abschnitts ist das Erstellen eines Benutzers namens Britta Simon in Condeco. Condeco unterstützt die Just-in-Time-Bereitstellung, die standardmäßig aktiviert ist.
 
-Für Sie steht in diesem Abschnitt kein Aktionselement zur Verfügung. Wenn noch kein Benutzer vorhanden ist, wird beim Zugreifen auf Condeco ein neuer Benutzer erstellt. [Konfigurieren des einmaligen Anmeldens von Azure AD](#configuring-azure-ad-single-single-sign-on)
+Für Sie steht in diesem Abschnitt kein Aktionselement zur Verfügung. Wenn noch kein Benutzer vorhanden ist, wird beim Zugreifen auf Condeco ein neuer Benutzer erstellt. [Konfigurieren der einmaligen Anmeldung in Azure AD](#configuring-azure-ad-single-single-sign-on)
 
 > [AZURE.NOTE]Wenn Sie einen Benutzer manuell erstellen müssen, setzen Sie sich mit dem Supportteam von Condeco in Verbindung.
 
@@ -174,9 +176,9 @@ Das Ziel dieses Abschnitts besteht darin, Britta Simon die Verwendung des einmal
 
 **Um Britta Simon Condeco zuzuweisen, führen Sie die folgenden Schritte aus:**
 
-1. Klicken Sie zum Öffnen der Anwendungsansicht im Azure-Portal in der oberen Menüleiste der Verzeichnisansicht auf **Anwendungen**. <br><br>![Benutzer zuweisen][201] <br>
+1. Klicken Sie zum Öffnen der Anwendungsansicht im klassischen Azure-Portal in der oberen Menüleiste der Verzeichnisansicht auf **Anwendungen**. <br><br>![Benutzer zuweisen][201] <br>
 
-2. Wählen Sie in der Anwendungsliste **Condeco** aus. <br><br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-condeco-tutorial/tutorial_condeco_50.png)<br>
+2. Wählen Sie in der Anwendungsliste **Condeco** aus. <br><br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-condeco-tutorial/tutorial_condeco_50.png) <br>
 
 1. Klicken Sie im oberen Menü auf **Benutzer**. <br><br>![Benutzer zuweisen][203] <br>
 
@@ -215,4 +217,4 @@ Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für einm
 [204]: ./media/active-directory-saas-condeco-tutorial/tutorial_general_204.png
 [205]: ./media/active-directory-saas-condeco-tutorial/tutorial_general_205.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

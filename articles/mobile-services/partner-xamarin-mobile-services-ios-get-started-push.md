@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-xamarin-ios"
 	ms.devlang="objective-c"
 	ms.topic="article"
-	ms.date="08/18/2015"
+	ms.date="12/03/2015"
 	ms.author="yuaxu"/>
 
 # Hinzufügen von Pushbenachrichtigungen zur Mobile Services-App
@@ -267,7 +267,7 @@ Ihr mobiler Dienst ist nun für APNS konfiguriert.
             }
         }
 
-8. Modifizieren Sie in **TodoListViewController** die Aktion **OnAdd**, um den in **AppDelegeate** gespeicherten Gerätetoken abzurufen, und speichern Sie ihn in dem hinzugefügten **TodoItem**.
+8. Modifizieren Sie in **QSTodoListViewController** die Aktion **OnAdd**, um das in **AppDelegeate** gespeicherte Gerätetoken abzurufen, und speichern Sie es in dem hinzugefügten **TodoItem**.
 
         string deviceToken = ((AppDelegate)UIApplication.SharedApplication.Delegate).DeviceToken;
 
@@ -403,4 +403,4 @@ Sie haben dieses Lernprogramm erfolgreich abgeschlossen.
 [completed example project]: http://go.microsoft.com/fwlink/p/?LinkId=331303
 [Xamarin.iOS]: http://xamarin.com/download
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -4,7 +4,7 @@
    services="cloud-services" 
    documentationCenter="na" 
    authors="yuemlu" 
-   manager="markkie" 
+   manager="timlt" 
    editor=""/>
 
 <tags
@@ -331,4 +331,4 @@ Die folgenden Tabellen zeigen die Microsoft Security Response Center-Updates (MS
 [family-explain]: cloud-services-guestos-update-matrix.md#guest-os-family-version-and-release-explanation
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1210_2015-->

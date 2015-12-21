@@ -27,21 +27,7 @@ Der Standarddienst wird auf dedizierten Computern ausgeführt, die nur von Ihrem
 
 Azure-Abonnenten können den gemeinsam genutzten Search-Dienst (mehrere Mandanten) für die Entwicklung oder sehr kleine Suchanwendungen verwenden. Der gemeinsam genutzte Dienst ist im Azure-Abonnement enthalten. Es ist eine kostenfreie Option, die Ihnen das Ausprobieren des Diensts ermöglicht, bevor Sie sich dafür registrieren. Sie umfasst Folgendes:
 
-Objekt|Begrenzung
-------|-----
-Maximale Anzahl der Indizes|3
-Maximale Anzahl der Felder pro Index|1000
-Maximale Dokumentanzahl|10\.000
-Maximale Speichergröße|50 MB
-Maximale Anzahl der Partitionen|N/V
-Maximale Anzahl der Replikate|N/V
-Maximale Anzahl der Sucheinheiten|N/V
-Maximale Anzahl der Indexer|3
-Maximale Anzahl der Indexer-Datenquellen|3
-Maximale Anzahl der indizierten Dokumente pro Indexer-Aufruf|10\.000
-Maximale Laufzeit des Indexers|3 Minuten
-Maximale Anzahl von Bewertungsprofilen pro Index|16
-Maximale Anzahl von Funktionen pro Profil|8
+[AZURE.INCLUDE [azure-search-limits](../../includes/azure-search-limits-free.md)]
 
 Beachten Sie, dass Abfragen keine Kontingente oder Höchstwerte zugeordnet sind. Die Abfragen pro Sekunde (Queries per Second, QPS) sind variabel und hängen von der verfügbaren Bandbreite und der Konkurrenz um Systemressourcen ab. Die Azure-Computing- und Speicherressourcen zur Unterstützung des gemeinsam genutzten Diensts werden von mehreren Abonnenten gemeinsam verwendet, sodass der QPS-Wert für Ihre Lösung in Abhängigkeit davon variiert, wie viele andere Workloads gleichzeitig ausgeführt werden.
 
@@ -51,21 +37,7 @@ Beim Standardtarif werden in einem dedizierten Search-Dienst nur Ihre Daten gesp
 
 Die folgende Tabelle enthält eine Liste der Höchstgrenzen, doch sollten Sie auch die Tabelle weiter unten betrachten, um eine Vorstellung von der Kapazität im Zusammenhang mit zulässigen [Kombinationen von Partitionen und Replikaten](#chart) zu erhalten.
 
-Objekt|Begrenzung
-------|----
-Maximale Anzahl der Indizes|50 pro Search-Dienst
-Maximale Anzahl der Felder pro Index|1000
-Maximale Dokumentanzahl|15 Mio. pro Partition
-Maximale Speichergröße|25 GB pro Partition
-Maximale Anzahl der Partitionen|12 pro Search-Dienst
-Maximale Anzahl der Replikate|12 pro Search-Dienst
-Maximale Anzahl der Sucheinheiten|36 pro Search-Dienst
-Maximale Anzahl der Suchdienste|12 pro Azure-Abonnement
-Maximale Anzahl der Indexer|50 pro Search-Dienst
-Maximale Anzahl der Indexer-Datenquellen|50 pro Search-Dienst
-Maximale Anzahl der indizierten Dokumente pro Indexer-Aufruf|Unbegrenzt
-Maximale Anzahl von Bewertungsprofilen pro Index|16
-Maximale Anzahl von Funktionen pro Profil|8
+[AZURE.INCLUDE [azure-search-limits](../../includes/azure-search-limits-standard.md)]
 
 Kapazität in Azure Search kann in Schritten mit der Bezeichnung Sucheinheiten erworben werden. Der Standardtarif ermöglicht bis zu 36 Sucheinheiten pro Search-Dienst. Dieser Grenzwert hat Vorrang vor den individuellen Grenzwerten für Partitionen und Replikate. Sie können den Dienst z. B. nicht auf 12 Partitionen und 6 Replikate hochskalieren, da dazu 72 Sucheinheiten (12 x 6) erforderlich wären und dies den Grenzwert von 36 Sucheinheiten pro Dienst übersteigt.
 
@@ -116,7 +88,7 @@ Allgemeine Empfehlungen für hohe Verfügbarkeit sind:
 
 Derzeit steht kein integrierter Mechanismus für die Notfallwiederherstellung bereit. Das Hinzufügen von Partitionen oder Replikaten wäre die falsche Strategie, um die Zielsetzungen für eine Notfallwiederherstellung zu erfüllen. Stattdessen sollten Sie das Hinzufügen von Redundanz auf Dienstebene in Betracht ziehen. Eine eingehendere Besprechung der Methoden finden Sie in [diesem Forumsbeitrag](https://social.msdn.microsoft.com/Forums/ee108a26-00c5-49f6-b1ff-64c66c8b828a/dr-and-high-availability-for-azure-search?forum=azuresearch).
 
-> [AZURE.NOTE]Denken Sie daran, dass Vereinbarungen zum Servicelevel und Skalierbarkeit Features des Standarddiensts sind. Der kostenlose Dienst wird auf fester Ressourcenebene angeboten, wobei Replikate und Partitionen von mehreren Abonnenten gemeinsam genutzt werden. Wenn Sie mit dem kostenlosen Dienst begonnen haben und jetzt ein Upgrade durchführen möchten, müssen Sie einen neuen Azure Search-Dienst auf Standardebene erstellen und dann Indizes und Daten erneut in den neuen Dienst laden. Anweisungen zur Dienstbereitstellung finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](search-create-portal.md).
+> [AZURE.NOTE]Denken Sie daran, dass Vereinbarungen zum Servicelevel und Skalierbarkeit Features des Standarddiensts sind. Der kostenlose Dienst wird auf fester Ressourcenebene angeboten, wobei Replikate und Partitionen von mehreren Abonnenten gemeinsam genutzt werden. Wenn Sie mit dem kostenlosen Dienst begonnen haben und jetzt ein Upgrade durchführen möchten, müssen Sie einen neuen Azure Search-Dienst auf Standardebene erstellen und dann Indizes und Daten erneut in den neuen Dienst laden. Anweisungen zur Dienstbereitstellung finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](search-create-service-portal.md).
 
 ## Grenzwerte für API-Schlüssel
 
@@ -127,7 +99,7 @@ API-Schlüssel werden für die Dienstauthentifizierung verwendet. Es gibt zwei A
 
 ## Grenzwerte für Anforderungen
 
-- Maximal 16 MB pro Anforderung
+- Maximal 16 MB pro Anforderung <sup>1</sup>
 - Maximale URL-Länge von 8 KB
 - Maximal 1000 Dokumente pro Batch von Hochlade-, Zusammenführungs- oder Löschvorgängen für Indizes
 - Maximal 32 Felder in $orderby-Klausel
@@ -138,4 +110,6 @@ API-Schlüssel werden für die Dienstauthentifizierung verwendet. Es gibt zwei A
 - Maximale Rückgabe von 1000 Dokumenten pro Seite mit Suchergebnissen
 - Maximale Rückgabe von 100 Vorschlägen pro Anforderung der Vorschlags-API
 
-<!---HONumber=AcomDC_1125_2015-->
+<sup>1</sup> In Azure Search darf der Inhalt einer Anforderung nicht größer als 16 MB sein. Dies beschränkt möglicherweise den Inhalt einzelner Felder oder Sammlungen, für die ansonsten keine theoretischen Beschränkungen gelten. (Weitere Informationen zur Feldzusammensetzung und den Beschränkungen finden Sie unter [Unterstützte Datentypen (Azure Search)](https://msdn.microsoft.com/library/azure/dn798938.aspx)).
+
+<!---HONumber=AcomDC_1210_2015-->

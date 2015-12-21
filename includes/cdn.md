@@ -14,7 +14,7 @@ Die Verwendung von CDN zum Zwischenspeichern von Azure-Daten bietet folgende Vor
 -   Bessere Leistung und Benutzerfreundlichkeit für Endbenutzer, die von einer Inhaltsquelle weit entfernt sind und Anwendungen verwenden, die viele Verbindungen im Internet benötigen, um Inhalte zu laden.
 -   Große verteilte Skalierung, um hohe Lasten etwa zu Beginn eines Ereignisses, z. B. bei einer Produkteinführung, besser verarbeiten zu können
 
-Aktuelle CDN-Kunden können das Windows Azure CDN jetzt im [Azure-Verwaltungsportal] verwenden. Das CDN ist eine Zusatzfunktion Ihres Abonnements und hat einen eigenen [Abrechnungsplan].
+Aktuelle CDN-Kunden können das Windows Azure CDN jetzt im [klassischen Azure-Portal] verwenden. Das CDN ist eine Zusatzfunktion Ihres Abonnements und hat einen eigenen [Abrechnungsplan].
 
 <a id="Step1"></a><h2>Schritt 1: Erstellen eines Speicherkontos</h2>
 
@@ -26,7 +26,7 @@ Um ein Speicherkonto zu erstellen, müssen Sie entweder der Dienstadministrator 
 
 **So erstellen Sie ein Speicherkonto für ein Azure-Abonnement**
 
-1.  Melden Sie sich beim [Azure-Verwaltungsportal] an.
+1.  Melden Sie sich beim [klassischen Azure-Portal] an.
 2.  Klicken Sie unten links auf **Neu**. Wählen Sie im Dialogfeld **Neu** die Option **Data Services** aus, und klicken Sie dann auf **Storage** und **Schnellerfassung**.
 
     Das Dialogfeld **Speicherkonto erstellen** wird angezeigt.
@@ -57,7 +57,7 @@ Sobald Sie den CDN-Zugriff auf ein Speicherkonto oder einen gehosteten Dienst ak
 
 **So erstellen Sie einen neuen CDN-Endpunkt für das Speicherkonto**
 
-1. Klicken Sie im [Azure-Verwaltungsportal] im Navigationsbereich auf **CDN**.
+1. Klicken Sie im [klassische Azure-Portal] im Navigationsbereich auf **CDN**.
 
 2. Klicken Sie im Menüband auf **Neu**. Klicken Sie im Dialogfeld **Neu** auf **App Services**, dann auf **CDN** und schließlich auf **Schnellerfassung**.
 
@@ -100,7 +100,8 @@ Die Möglichkeit zum sofortigen Löschen von Inhalten wird im Azure-Verwaltungsp
 
   [Create Storage Account]: http://azure.microsoft.com/documentation/articles/storage-create-storage-account/
   [Standorte der Azure-CDN-Knoten]: http://msdn.microsoft.com/library/windowsazure/gg680302.aspx
-  [Azure-Verwaltungsportal]: https://manage.windowsazure.com/
+  [klassische Azure-Portal]: https://manage.windowsazure.com/
+  [klassischen Azure-Portal]: https://manage.windowsazure.com/
   [Abrechnungsplan]: /pricing/calculator/?scenario=full
   [Erstellen einer Affinitätsgruppe in Azure]: http://msdn.microsoft.com/library/azure/ee460798.aspx
   [Overview of the Azure CDN]: http://msdn.microsoft.com/library/windowsazure/ff919703.aspx
@@ -111,4 +112,4 @@ Die Möglichkeit zum sofortigen Löschen von Inhalten wird im Azure-Verwaltungsp
 [create-new-storage-account]: ./media/cdn/CDN_CreateNewStorageAcct.png
 [Previous Management Portal]: ../../Shared/Media/previous-portal.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

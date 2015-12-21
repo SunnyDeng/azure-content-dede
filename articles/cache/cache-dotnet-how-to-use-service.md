@@ -13,14 +13,14 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="11/03/2015" 
+	ms.date="12/03/2015" 
 	ms.author="sdanie"/>
 
 # Verwenden von Azure Managed Cache Service
 
 Dieser Leitfaden beschreibt die ersten Schritte mit **Azure Managed Cache Service**. Die Beispiele sind in C#-Code geschrieben und verwenden die .NET API. Die behandelten Szenarien umfassen das **Erstellen und Konfigurieren eines Caches**, **Konfigurieren von Cacheclients**, **Hinzufügen und Entfernen von Objekten aus dem Cache, Speichern des ASP.NET-Sitzungsstatus im Cache** und **Aktivieren der Zwischenspeicherung von ASP.NET-Seitenausgaben mit dem Cache**. Weitere Informationen zum Verwenden von Azure Cache finden Sie im Abschnitt [Nächste Schritte][].
 
->Hilfestellung bei der Auswahl des für Ihre Anwendung geeigneten Azure Cache-Angebots finden Sie unter [Welches Azure Cache-Angebot ist für mich das richtige?][].
+>[AZURE.IMPORTANT]Wir geben die Deaktivierung der Dienste Azure Managed Cache Service und Azure In-Role Cache am 30. November 2016 bekannt. Sie sollten zur Vorbereitung für die Einstellung dieser Dienste zu Azure Redis Cache migrieren. Weitere Informationen zu Daten und Hinweise zur Migration finden Sie unter [Welches Azure Cache-Angebot ist für mich das richtige?](../redis-cache/cache-faq.md#which-azure-cache-offering-is-right-for-me)
 
 <a name="what-is"></a>
 ## Was ist Azure Managed Cache Service?
@@ -59,7 +59,7 @@ Die ersten Schritte mit Managed Cache Service sind unkompliziert. Zunächst stel
 
 Cacheinstanzen werden in Managed Cache Service mit PowerShell-Cmdlets erstellt.
 
->Nach der Erstellung einer Managed Cache Service-Instanz mit PowerShell-Cmdlets können Sie die Instanz im [Azure-Verwaltungsportal][] anzeigen und konfigurieren.
+>Nach der Erstellung einer Managed Cache Service-Instanz mit PowerShell-Cmdlets können Sie die Instanz im [klassischen Azure-Portal][] anzeigen und konfigurieren.
 
 Öffnen Sie zum Erstellen einer Managed Cache Service-Instanz ein Azure PowerShell-Befehlsfenster.
 
@@ -91,7 +91,7 @@ Wählen Sie für **Sku** und **Memory** die Werte aus, die den Anforderungen Ihr
 
 >Eine vollständige Liste der Parameter und Werte für die Erstellung von Caches finden Sie in der Dokumentation zum Cmdlet [New-AzureManagedCache][].
 
-Nach dem Aufrufen des PowerShell-Cmdlets dauert das Erstellen des Caches ggf. einige Minuten. Nachdem der Cache erstellt wurde, weist der neue Cache den Status `Running` auf, ist mit den Standardeinstellungen zur Verwendung bereit und kann im [Azure-Verwaltungsportal][] angezeigt und konfiguriert werden. Informationen zum Anpassen der Konfiguration des Caches finden Sie im folgenden Abschnitt, [Konfigurieren des Caches][].
+Nach dem Aufrufen des PowerShell-Cmdlets dauert das Erstellen des Caches ggf. einige Minuten. Nachdem der Cache erstellt wurde, weist der neue Cache den Status `Running` auf, ist mit den Standardeinstellungen zur Verwendung bereit und kann im [klassischen Azure-Portal][] angezeigt und konfiguriert werden. Informationen zum Anpassen der Konfiguration des Caches finden Sie im folgenden Abschnitt, [Konfigurieren des Caches][].
 
 Sie können den Erstellungsstatus im Azure PowerShell-Fenster überwachen. Sobald der Cache einsatzbereit ist, zeigt das Cmdlet [New-AzureManagedCache][] die Cacheinformationen wie im folgenden Beispiel gezeigt an.
 
@@ -124,7 +124,7 @@ Sie können den Erstellungsstatus im Azure PowerShell-Fenster überwachen. Sobal
 <a name="enable-caching"></a>
 ## Konfigurieren des Caches
 
-Sie können die Optionen des Caches im Verwaltungsportal auf der Registerkarte **Konfigurieren** für Cache konfigurieren. Jeder Cache verfügt über einen benannten **Standardcache**. Die Standard- und Premium-Cacheangebote unterstützen darüber hinaus neun weitere benannte Caches, insgesamt also zehn. Jeder benannte Cache verfügt über eigene Optionen, über die Sie den Cache sehr flexibel konfigurieren können.
+Sie können die Optionen des Caches im klassischen Azure-Portal auf der Registerkarte **Konfigurieren** für Cache konfigurieren. Jeder Cache verfügt über einen benannten **Standardcache**. Die Standard- und Premium-Cacheangebote unterstützen darüber hinaus neun weitere benannte Caches, insgesamt also zehn. Jeder benannte Cache verfügt über eigene Optionen, über die Sie den Cache sehr flexibel konfigurieren können.
 
 ![NamedCaches][NamedCaches]
 
@@ -222,11 +222,11 @@ Diese neuen Abschnitte enthalten Verweise auf ein **dataCacheClients**-Element, 
 
 Ersetzen Sie die folgenden zwei Elemente, nachdem die Konfiguration hinzugefügt wurde.
 
-1. Ersetzen Sie **[Cacherollenname oder Dienstendpunkt]** durch den Endpunkt, der im Dashboard des Verwaltungsportals angezeigt wird.
+1. Ersetzen Sie **[Cacherollenname oder Dienstendpunkt]** durch den Endpunkt, der im Dashboard des klassischen Azure-Portals angezeigt wird.
 
 	![Endpunkt][Endpoint]
 
-2. Heben Sie die Auskommentierung des securityProperties-Abschnitts auf, und ersetzen Sie **[Authentifizierungsschlüssel]** durch den Authentifizierungsschlüssel. Sie finden diesen im Verwaltungsportal, wenn Sie im Cachedashboard auf **Manage Keys** klicken.
+2. Heben Sie die Auskommentierung des securityProperties-Abschnitts auf, und ersetzen Sie **[Authentifizierungsschlüssel]** durch den Authentifizierungsschlüssel. Sie finden diesen im klassischen Azure-Portal, wenn Sie im Cachedashboard auf **Schlüssel verwalten** klicken.
 
 	![AccessKeys][AccessKeys]
 
@@ -331,7 +331,7 @@ Mit der **Put**-Methode wird das Objekt mit dem angegebenen Schlüssel dem Cache
 <a name="specify-expiration"></a>
 ## Vorgehensweise: Angeben des Ablaufs eines Objekts im Cache
 
-Standardmäßig laufen Elemente im Cache 10 Minuten nach der Ablage im Cache ab. Dies kann in der Einstellung **Time (min)** auf der Registerkarte "Konfigurieren" für den Cache im Verwaltungsportal konfiguriert werden.
+Standardmäßig laufen Elemente im Cache 10 Minuten nach der Ablage im Cache ab. Dies kann in der Einstellung **Zeit (Min.)** auf der Registerkarte „Konfigurieren“ für den Cache im klassischen Azure-Portal konfiguriert werden.
 
 ![NamedCaches][NamedCaches]
 
@@ -449,7 +449,7 @@ Nachdem Sie sich nun mit den Grundlagen von Managed Cache Service vertraut gemac
   
    
 <!-- LINKS -->
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
+[klassischen Azure-Portal]: https://manage.windowsazure.com/
 [How to: Configure a Cache Client Programmatically]: http://msdn.microsoft.com/library/windowsazure/gg618003.aspx
 [Sitzungszustandsanbieter für Azure Cache]: http://go.microsoft.com/fwlink/?LinkId=320835
 [Azure AppFabric Cache: Caching Session State]: http://www.microsoft.com/showcase/details.aspx?uuid=87c833e9-97a9-42b2-8bb1-7601f9b5ca20
@@ -468,7 +468,6 @@ Nachdem Sie sich nun mit den Grundlagen von Managed Cache Service vertraut gemac
 [Problembehandlung und Diagnose]: http://go.microsoft.com/fwlink/?LinkId=320839
 [NuGet Package Manager Installation]: http://go.microsoft.com/fwlink/?LinkId=240311
 [Cache – Preisdetails]: http://www.windowsazure.com/pricing/details/cache/
-[Management Portal]: https://manage.windowsazure.com/
 [Cacheangebote]: http://go.microsoft.com/fwlink/?LinkId=317277
 [Capacity planning]: http://go.microsoft.com/fwlink/?LinkId=320167
 [Ablauf und Entfernung]: http://go.microsoft.com/fwlink/?LinkId=317278
@@ -482,7 +481,7 @@ Nachdem Sie sich nun mit den Grundlagen von Managed Cache Service vertraut gemac
 [Add-AzureAccount]: http://msdn.microsoft.com/library/dn495128.aspx
 [Select-AzureSubscription]: http://msdn.microsoft.com/library/dn495203.aspx
 
-[Welches Azure Cache-Angebot ist für mich das richtige?]: cache-faq.md#which-azure-cache-offering-is-right-for-me
+[Which Azure Cache offering is right for me?]: cache-faq.md#which-azure-cache-offering-is-right-for-me
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="identity"
-	ms.date="10/12/2015"
+	ms.date="12/04/2015"
 	ms.author="inhenk"/>
 
 # Verwalten der rollenbasierten Zugriffssteuerung (RBAC) mit der Azure-Befehlszeilenschnittstelle (CLI)
@@ -107,7 +107,50 @@ Das folgende Beispiel entfernt die Zuweisung der Rolle *Virtual Machine Contribu
 
 ![](./media/role-based-access-control-manage-access-azure-cli/3-azure-role-assignment-delete.png)
 
+## Erstellen einer benutzerdefinierten Rolle
+Verwenden Sie zum Erstellen einer benutzerdefinierten Rolle den Befehl `azure role create`.
+
+Das folgende Beispiel erstellt eine benutzerdefinierte Rolle namens *Virtual Machine Operator*, die Zugriff auf alle Lesevorgänge der Ressourcenanbieter *Microsoft.Compute*, *Microsoft.Storage* und *Microsoft.Network* und zum Starten, Neustarten und Überwachen virtueller Computer gewährt. Die benutzerdefinierte Rolle kann in zwei Abonnements verwendet werden. In diesem Beispiel wird eine JSON-Datei als Eingabe genutzt.
+
+![](./media/role-based-access-control-manage-access-azure-cli/2-azure-role create-1.png)
+
+![](./media/role-based-access-control-manage-access-azure-cli/2-azure-role-create-2.png)
+
+## Ändern einer benutzerdefinierten Rolle
+
+Um eine benutzerdefinierte Rolle zunächst zu ändern, verwenden Sie den Befehl zum Anzeigen der Azure-Rolle, um die Rollendefinition abzurufen. Nehmen Sie dann die gewünschten Änderungen an der Rollendefinition vor. Verwenden Sie abschließend den Befehl zum Festlegen der Azure-Rolle, um die geänderte Rollendefinition zu speichern.
+
+Im folgenden Beispiel wird der Vorgang „Microsoft.Insights/diagnosticSettings/*“ den Aktionen und ein Azure-Abonnement dem Element „AssignableScopes“ der benutzerdefinierten Rolle „Virtual Machine Operator“ hinzugefügt.
+
+![](./media/role-based-access-control-manage-access-azure-cli/3-azure-role-set-1.png)
+
+![](./media/role-based-access-control-manage-access-azure-cli/3-azure-role-set2.png)
+
+## Löschen einer benutzerdefinierten Rolle
+
+Verwenden Sie zum Löschen einer benutzerdefinierten Rolle zuerst den Befehl `azure role show`, um die **ID** der Rolle zu bestimmen. Führen Sie anschließend den Befehl `azure role delete` aus, um die Rolle unter Angabe der **ID** zu löschen.
+
+Im folgenden Beispiel wird die benutzerdefinierte Rolle *Virtual Machine Operator* entfernt.
+
+![](./media/role-based-access-control-manage-access-azure-cli/4-azure-role-delete.png)
+
+## Auflisten benutzerdefinierter Rollen
+
+Zum Auflisten der Rollen, die in einem Bereich für die Zuweisung verfügbar sind, wählen Sie den Befehl `azure role list`.
+
+Im folgenden Beispiel werden alle Rollen aufgelistet, die für die Zuweisung im ausgewählten Abonnement verfügbar sind.
+
+![](./media/role-based-access-control-manage-access-azure-cli/5-azure-role-list1.png)
+
+Im folgenden Beispiel ist die benutzerdefinierte Rolle *Virtual Machine Operator* im Abonnement *Production4* nicht verfügbar, da dieses Abonnement nicht in **AssignableScopes** für die Rolle enthalten ist.
+
+![](./media/role-based-access-control-manage-access-azure-cli/5-azure-role-list2.png)
+
+
+
+
+
 ## RBAC-Themen
 [AZURE.INCLUDE [role-based-access-control-toc.md](../../includes/role-based-access-control-toc.md)]
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

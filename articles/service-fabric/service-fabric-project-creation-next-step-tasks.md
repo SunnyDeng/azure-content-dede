@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="11/16/2015"
+   ms.date="12/06/2015"
    ms.author="seanmck"/>
 
 # Ihre Service Fabric-Anwendung und nächste Schritte
@@ -59,6 +59,10 @@ Service Fabric bietet Integration in ASP.NET 5 zum Erstellen von webbasierten E
 ### Erstellen eines Azure-Clusters
 Das Service Fabric-SDK stellt einen lokalen Cluster zu Entwicklungs- und Testzwecken bereit. Informationen zum Erstellen eines Clusters in Azure finden Sie unter [Einrichten eines Service Fabric-Clusters im Azure-Portal][create-cluster-in-portal]
 
+### Kostenloses Testen der Bereitstellung von Party Clustern in Azure
+
+Wenn Sie das Bereitstellen und Verwalten von Anwendungen in Azure testen möchten, ohne eigene Cluster einrichten zu müssen, können Sie den kostenlosen [Party Cluster-Dienst](http://aka.ms/tryservicefabric) verwenden.
+
 ### Veröffentlichen der Anwendung in Azure
 Sie können Ihre Anwendung direkt aus Visual Studio in einem Azure-Cluster veröffentlichen. Informationen dazu finden Sie unter [Veröffentlichen Ihrer Anwendung in Azure][publish-app-to-azure].
 
@@ -69,7 +73,7 @@ Service Fabric-Explorer bietet eine einfache Möglichkeit zum Visualisieren Ihr
 Service Fabric ermöglicht eine unabhängige Versionierung und Upgrades von unabhängigen Diensten in einer Anwendung. Weitere Informationen finden Sie unter [Versionierung und Upgrade Ihrer Dienste][app-upgrade-tutorial].
 
 ### Konfigurieren der fortlaufenden Integration in Visual Studio Online
-Informationen zur Einrichtung eines kontinuierlichen Integrationsverfahren für die Service Fabric-Anwendung finden Sie unter [Konfigurieren der fortlaufenden Integration in Visual Studio Online][ci-with-vso].
+Informationen zur Einrichtung einer fortlaufenden Integration für die Service Fabric-Anwendung finden Sie unter [Konfigurieren der fortlaufenden Integration in Visual Studio Online][ci-with-vso].
 
 
 <!-- Links -->
@@ -81,4 +85,4 @@ Informationen zur Einrichtung eines kontinuierlichen Integrationsverfahren für 
 [reliable-services-webapi]: ./service-fabric-reliable-services-communication-webapi.md
 [app-upgrade-tutorial]: ./service-fabric-application-upgrade-tutorial.md
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1210_2015-->

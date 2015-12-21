@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/12/2015"
+   ms.date="12/02/2015"
    ms.author="joaoma" />
 
 # Testen der Traffic Manager-Einstellungen
@@ -72,4 +72,4 @@ Sie können kostenlose webbasierte DNS-Lookup- und Analysedienste nutzen. Mit ei
 
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1210_2015-->

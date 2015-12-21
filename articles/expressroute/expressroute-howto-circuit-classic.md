@@ -13,7 +13,7 @@
    ms.topic="article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/05/2015"
+   ms.date="12/08/2015"
    ms.author="cherylmc"/>
 
 # Erstellen und Ändern einer ExpressRoute-Verbindung mit PowerShell
@@ -108,11 +108,11 @@ In diesem Artikel werden Sie durch die Schritte zum Erstellen einer ExpressRoute
 		$ServiceProvider = "Equinix"
 		$Location = "Silicon Valley"
 
-		New-AzureDedicatedCircuit -CircuitName $CircuitName -ServiceProviderName $ServiceProvider -Bandwidth $Bandwidth -Location $Location -sku Standard
+		New-AzureDedicatedCircuit -CircuitName $CircuitName -ServiceProviderName $ServiceProvider -Bandwidth $Bandwidth -Location $Location -sku Standard -BillingType MeteredData 
 
 	Verwenden Sie das unten angegebene Beispiel, falls Sie eine ExpressRoute-Verbindung mit dem Premium-Add-On erstellen möchten. Weitere Details zum Premium-Add-On finden Sie auf der Seite [ExpressRoute – FAQ](expressroute-faqs.md).
 
-		New-AzureDedicatedCircuit -CircuitName $CircuitName -ServiceProviderName $ServiceProvider -Bandwidth $Bandwidth -Location $Location -sku Premium
+		New-AzureDedicatedCircuit -CircuitName $CircuitName -ServiceProviderName $ServiceProvider -Bandwidth $Bandwidth -Location $Location -sku Premium - BillingType MeteredData
 	
 	
 	Die Antwort enthält den Dienstschlüssel. Ausführliche Beschreibungen aller Parameter erhalten Sie, wenn Sie Folgendes ausführen:
@@ -197,7 +197,7 @@ In diesem Artikel werden Sie durch die Schritte zum Erstellen einer ExpressRoute
 
 7. **Verknüpfen Sie ein VNet mit einer ExpressRoute-Verbindung.**
 
-	Verknüpfen Sie als Nächstes ein VNet mit der ExpressRoute-Verbindung. Eine Schritt-für-Schritt-Anleitung finden Sie unter [Verknüpfen von ExpressRoute-Verbindungen mit VNets](expressroute-howto-linkvnet-classic.md). Wenn Sie ein virtuelles Netzwerk für ExpressRoute erstellen möchten, hilft Ihnen die Anleitung unter [Erstellen eines virtuellen Netzwerks für ExpressRoute](expressroute-howto-createvnet-classic.md) weiter.
+	Verknüpfen Sie als Nächstes ein VNet mit der ExpressRoute-Verbindung. Eine schrittweise Anleitung finden Sie unter [Verknüpfen von ExpressRoute-Verbindungen mit VNETs](expressroute-howto-linkvnet-classic.md). Wenn Sie ein virtuelles Netzwerk für ExpressRoute erstellen möchten, hilft Ihnen die Anleitung unter [Erstellen eines virtuellen Netzwerks für ExpressRoute](expressroute-howto-createvnet-classic.md) weiter.
 
 ##  So rufen Sie den Status einer ExpressRoute-Verbindung ab
 
@@ -327,6 +327,5 @@ Wenn der Service Provider die Bereitstellung der Verbindung aufgehoben hat (Bere
 ## Nächste Schritte
 
 - [Konfigurieren des Routings](expressroute-howto-routing-classic.md)
-- [Verknüpfen eines VNet mit einer ExpressRoute-Verbindung](expressroute-howto-linkvnet-classic.md) 
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

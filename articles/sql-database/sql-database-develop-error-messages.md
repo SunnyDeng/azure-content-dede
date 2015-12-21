@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/24/2015" 
+	ms.date="12/06/2015" 
 	ms.author="genemi"/>
 
 
@@ -80,8 +80,6 @@ Vorübergehende Fehler sollten in Ihrem Clientprogramm eine Ausführung der von 
 |49919|16|Die Erstellung oder Aktualisierung der Anforderung kann nicht verarbeitet werden. Für das Abonnement „%ld“ werden derzeit zu viele Erstell- oder Aktualisierungsvorgänge ausgeführt.<br/><br/>Der Dienst ist mit der Verarbeitung mehrerer Erstell- oder Aktualisierungsvorgänge für Ihr Abonnement oder Ihren Server ausgelastet. Zur Ressourcenoptimierung werden Anforderungen derzeit blockiert. Fragen Sie [sys.dm\_operation\_status](https://msdn.microsoft.com/library/dn270022.aspx) auf ausstehende Vorgänge ab. Warten Sie, bis ausstehende Erstell- oder Aktualisierungsanforderungen abgeschlossen sind, oder löschen Sie eine Ihrer ausstehenden Anforderungen, und wiederholen Sie die Anforderung später. |
 |49920|16|Anforderung kann nicht verarbeitet werden. Für das Abonnement „%ld“ werden derzeit zu viele Vorgänge ausgeführt.<br/><br/>Der Dienst ist mit der Verarbeitung mehrerer Vorgänge für dieses Abonnement ausgelastet. Zur Ressourcenoptimierung werden Anforderungen derzeit blockiert. Fragen Sie [sys.dm\_operation\_status](https://msdn.microsoft.com/library/dn270022.aspx) auf den Vorgangsstatus ab. Warten Sie, bis ausstehende Anforderungen abgeschlossen sind, oder löschen Sie eine Ihrer ausstehenden Anforderungen, und wiederholen Sie die Anforderung später. |
 
-**Hinweis:** Die Fehler 10053 und 10054 sollten in Ihrer Wiederholungslogik unter Umständen auch berücksichtigt werden.
-
 
 <a id="bkmk_b_database_copy_errors" name="bkmk_b_database_copy_errors">&nbsp;</a>
 
@@ -143,7 +141,7 @@ In der folgende Tabelle sind die Fehler enthalten, die beim Arbeiten mit Azure S
 Weitere Informationen zur Ressourcenkontrolle und den dazugehörigen Fehlern finden Sie unter:
 
 
-- [Ressourceneinschränkungen für Azure SQL-Datenbanken](sql-database-resource-limits.md).
+- [Ressourceneinschränkungen für Azure SQL-Datenbanken](sql-database-resource-limits.md)
 
 
 
@@ -218,8 +216,7 @@ Die folgende Tabelle enthält alle allgemeinen Fehler, die nicht in die vorherig
 |40651|16|Fehler beim Erstellen des Servers, weil das <subscription-id>-Abonnement deaktiviert ist.|
 |40652|16|Der Server kann nicht verschoben oder erstellt werden, weil das <subscription-id>-Abonnement das Serverkontingent überschreitet.|
 |40671|17|Kommunikationsfehler zwischen dem Gateway und dem Verwaltungsdienst. Versuchen Sie es später erneut.|
-|45168|16|Das SQL Azure-System ist ausgelastet und richtet eine Obergrenze bei den gleichzeitigen DB CRUD-Vorgängen für einen Server ein (z. B. CREATE DATABASE). Für den in der Fehlermeldung angegebenen Server wurde die maximale Anzahl von gleichzeitigen Verbindungen überschritten. Versuchen Sie es später erneut.|
-|45169|16|Das SQL Azure-System ist ausgelastet und richtet eine Obergrenze bei der Anzahl gleichzeitiger CRUD-Servervorgänge für ein Abonnement ein (z. B.CREATE SERVER). Für das in der Fehlermeldung angegebene Abonnement wurde die maximale Anzahl von gleichzeitigen Verbindungen überschritten, und die Anforderung wurde verweigert. Versuchen Sie es später erneut.|
+|40852|16|Die von der Anmeldung angeforderte Datenbank „%.*ls“ auf Server „%.*ls“ kann nicht geöffnet werden. Der Zugriff auf die Datenbank ist nur mit einer Verbindungszeichenfolge mit aktivierter Sicherheit zulässig. Ändern Sie für den Zugriff auf diese Datenbank Ihre Verbindungszeichenfolgen so, dass „secure“ im FQDN des Servers enthalten ist. „'server name'.database.windows.net“ muss demnach in „'server name'.database.`secure`.windows.net“ geändert werden.| |45168|16|Das SQL Azure-System ist ausgelastet und richtet eine Obergrenze für gleichzeitige DB CRUD-Vorgänge für einen Server ein (z. B. CREATE DATABASE). Für den in der Fehlermeldung angegebenen Server wurde die maximale Anzahl von gleichzeitigen Verbindungen überschritten. Versuchen Sie es erneut. | |45169|16| Das SQL Azure-System ist ausgelastet und richtet eine Obergrenze für gleichzeitige CRUD-Servervorgänge für ein Abonnement ein (z. B. CREATE SERVER). Für das in der Fehlermeldung angegebene Abonnement wurde die maximale Anzahl von gleichzeitigen Verbindungen überschritten, und die Anforderung wurde verweigert. Versuchen Sie es erneut.|
 
 
 ## Verwandte Links
@@ -227,4 +224,4 @@ Die folgende Tabelle enthält alle allgemeinen Fehler, die nicht in die vorherig
 - [Azure SQL-Datenbanken – Allgemeine Einschränkungen und Leitlinien](sql-database-general-limitations.md)
 - [Ressourceneinschränkungen für Azure SQL-Datenbanken](sql-database-resource-limits.md)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1210_2015-->

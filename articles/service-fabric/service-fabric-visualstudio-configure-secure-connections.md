@@ -46,9 +46,9 @@ Das Dialogfeld **Service Fabric-Cluster auswählen** überprüft automatisch die
 
 4.	[Optional:] Sie können das Veröffentlichungsprofil bearbeiten, um eine sichere Clusterverbindung anzugeben.
 
-    Da Sie die Veröffentlichungsprofil-XML-Datei manuell bearbeiten, um Zertifikatsinformationen anzugeben, achten Sie darauf, dass Sie den Namen des Zertifikatspeichers, den Speicherort und den Zertifikatfingerabdruck notieren. Sie müssen diese Werte für den Namen des Zertifikatspeichers und den Speicherort angeben. Weitere Informationen finden Sie unter [Vorgehensweise: Abrufen des Fingerabdrucks eines Zertifikats](https://msdn.microsoft.com/de-DE/library/ms734695(v=vs.110).aspx).
+    Da Sie die Veröffentlichungsprofil-XML-Datei manuell bearbeiten, um Zertifikatsinformationen anzugeben, achten Sie darauf, dass Sie den Namen des Zertifikatspeichers, den Speicherort und den Zertifikatfingerabdruck notieren. Sie müssen diese Werte für den Namen des Zertifikatspeichers und den Speicherort angeben. Weitere Informationen finden Sie unter [Vorgehensweise: Abrufen des Fingerabdrucks eines Zertifikats](https://msdn.microsoft.com/library/ms734695(v=vs.110).aspx).
 
-    Die *ClusterConnectionParameters*-Parameter ermöglichen es Ihnen, die PowerShell-Parameter bei der Verbindung mit dem Service Fabric-Cluster anzugeben. Es werden alle Parameter des Cmdlets Connect-ServiceFabricCluster akzeptiert. Eine Liste der verfügbaren Parameter finden Sie unter [Connect-ServiceFabricCluster](https://msdn.microsoft.com/de-DE/library/mt125938.aspx).
+    Die *ClusterConnectionParameters*-Parameter ermöglichen es Ihnen, die PowerShell-Parameter bei der Verbindung mit dem Service Fabric-Cluster anzugeben. Es werden alle Parameter des Cmdlets Connect-ServiceFabricCluster akzeptiert. Eine Liste der verfügbaren Parameter finden Sie unter [Connect-ServiceFabricCluster](https://msdn.microsoft.com/library/mt125938.aspx).
 
     Wenn Sie auf einem Remotecluster veröffentlichen, müssen Sie die entsprechenden Parameter für diesen Cluster angeben. Im Folgenden finden Sie ein Beispiel zum Herstellen einer Verbindung mit einem unsicheren Cluster:
 
@@ -76,4 +76,4 @@ Weitere Informationen zum Zugreifen auf die Service Fabric-Cluster finden Sie u
 [publishdialog]: ./media/service-fabric-visualstudio-configure-secure-connections/publishdialog.png
 [selectsfcluster]: ./media/service-fabric-visualstudio-configure-secure-connections/selectsfcluster.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/17/2015"
+	ms.date="12/03/2015"
 	ms.author="jroth"/>
 
 # Einschränkungen für Azure-Abonnements und Dienste, Kontingente und Einschränkungen
@@ -30,9 +30,7 @@ Es ist jetzt möglich, mehrere Azure-Ressourcen in einer einzigen Azure-Ressourc
 
 In den folgenden Grenzwerten wurde eine neue Tabelle hinzugefügt, um alle abweichenden Grenzwerte bei Verwendung des Azure-Ressourcen-Managers aufzuzeigen. Es gibt beispielsweise eine Tabelle **Einschränkungen für Abonnements** und eine Tabelle **Abonnementgrenzwerte - Azure-Ressourcen-Manager**. Wenn ein Grenzwert für beide Szenarien gilt, wird er nur in der ersten Tabelle angezeigt. Sofern nicht anders angegeben, gelten Grenzwerte global für alle Regionen.
 
-> [AZURE.NOTE]Wichtig ist, dass Kontingente für Ressourcen in Azure-Ressourcengruppen pro Region über Ihr Abonnement zugänglich sind, und nicht wie die Dienstverwaltungskontingente pro Abonnement. Verwenden wir Kernspeicherkontingente als Beispiel. Wenn Sie eine Erhöhung des Kontingents mit Unterstützung für Kernspeicher anfordern müssen, müssen Sie entscheiden, wie viel Kernspeicher Sie in den einzelnen Regionen verwenden möchten, und anschließend eine spezifische Anforderung für Azure-Ressourcengruppen-Kernspeicherkontingente für die gewünschten Beträge und Regionen vornehmen. Wenn Sie für die Ausführung Ihrer Anwendung 30 Kerne in Westeuropa benötigen, sollten Sie daher 30 Kerne in Westeuropa anfordern. In anderen Regionen erfolgt jedoch keine Erhöhung des Kernspeicherkontingents. Das Kontingent von 30 Kernen gilt nur für Westeuropa.
-<!-- -->
-Daher sollten Sie ggf. überlegen, wie hoch Ihre Azure-Ressourcengruppenkontingente für Ihre Workload in jeder Region sein müssen, und diesen Betrag in jeder Region anfordern, in der Sie eine Bereitstellung in Betracht ziehen. Weitere Informationen zum Ermitteln Ihrer aktuellen Kontingente für bestimmte Regionen finden Sie unter [Problembehandlung bei der Bereitstellung](resource-group-deploy-debug.md##authentication-subscription-role-and-quota-issues).
+> [AZURE.NOTE]Wichtig ist, dass Kontingente für Ressourcen in Azure-Ressourcengruppen pro Region über Ihr Abonnement zugänglich sind, und nicht wie die Dienstverwaltungskontingente pro Abonnement. Verwenden wir Kernspeicherkontingente als Beispiel. Wenn Sie eine Erhöhung des Kontingents mit Unterstützung für Kernspeicher anfordern müssen, müssen Sie entscheiden, wie viel Kernspeicher Sie in den einzelnen Regionen verwenden möchten, und anschließend eine spezifische Anforderung für Azure-Ressourcengruppen-Kernspeicherkontingente für die gewünschten Beträge und Regionen vornehmen. Wenn Sie für die Ausführung Ihrer Anwendung 30 Kerne in Westeuropa benötigen, sollten Sie daher 30 Kerne in Westeuropa anfordern. In anderen Regionen erfolgt jedoch keine Erhöhung des Kernspeicherkontingents. Das Kontingent von 30 Kernen gilt nur für Westeuropa. <!-- --> Daher sollten Sie ggf. überlegen, wie hoch Ihre Azure-Ressourcengruppenkontingente für Ihre Workload in jeder Region sein müssen, und diesen Betrag in jeder Region anfordern, in der Sie eine Bereitstellung in Betracht ziehen. Weitere Informationen zum Ermitteln Ihrer aktuellen Kontingente für bestimmte Regionen finden Sie unter [Problembehandlung bei der Bereitstellung](resource-group-deploy-debug.md##authentication-subscription-role-and-quota-issues).
 
 
 ## Dienstspezifische Grenzwerte
@@ -180,9 +178,17 @@ In der folgende Tabelle werden die Grenzwerte für Azure Biztalk Services aufgef
 
 ### Search-Grenzwerte
 
-[AZURE.INCLUDE [azure-search-limits](../includes/azure-search-limits.md)]
+Der Tarif bestimmt die Kapazität und die Beschränkungen des Suchdiensts.
 
-Weitere Informationen zu maximalen Grenzwerten für den freigegebenen Dienst sowie eine Aufschlüsselung der Grenzwerte für Schlüssel, Anfragen und Antworten finden Sie unter [Diensteinschränkungen in Azure Search](search/search-limits-quotas-capacity.md).
+####Standard-Ebene
+
+[AZURE.INCLUDE [azure-search-limits-standard](../includes/azure-search-limits-standard.md)]
+
+####Stufe „Shared“ (Teil eines Mehrmandantendiensts, für Azure-Abonnenten kostenlos)
+
+[AZURE.INCLUDE [azure-search-limits-free](../includes/azure-search-limits-free.md)]
+
+Weitere Informationen zu Beschränkungen für Schlüssel, Replikat-Partitions-Kombinationen, Anforderungen und Antworten sowie zur Vorgehensweise für das Erzielen einer hohen Verfügbarkeit für unterschiedliche Workloads finden Sie unter [Grenzwerte für den Azure Search-Dienst](search/search-limits-quotas-capacity.md).
 
 ### Media Services-Einschränkungen
 
@@ -273,4 +279,4 @@ Einschränkungen für SQL-Datenbanken finden Sie unter [Ressourceneinschränkung
 
 [Größen virtueller Computer und Clouddienste für Azure](http://msdn.microsoft.com/library/azure/dn197896.aspx)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1210_2015-->

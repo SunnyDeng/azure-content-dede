@@ -14,7 +14,7 @@
    	ms.topic="article"
    	ms.tgt_pltfrm="na"
    	ms.workload="big-data"
-   	ms.date="10/23/2015"
+   	ms.date="12/04/2015"
    	ms.author="larryfr"/>
 
 #Erstellen von Linux-basierten Clustern in HDInsight mithilfe von cURL und der Azure-REST-API
@@ -33,7 +33,7 @@ Mit der Azure-REST-API können Sie Verwaltungsvorgänge für Dienste durchführe
 
 - __Azure-Befehlszeilenschnittstelle__. Die Azure-Befehlszeilenschnittstelle wird verwendet, um einen Dienstprinzipal zu erstellen, der zum Generieren von Authentifizierungstoken für Anforderungen an die Azure-REST-API verwendet wird.
 
-    Informationen zum Installieren der Befehlszeilenschnittstelle finden Sie unter [Installieren der Azure-Befehlszeilenschnittstelle](xplat-cli-install.md).
+    Informationen zum Installieren der Befehlszeilenschnittstelle finden Sie unter [Installieren der Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md).
 
 - __cURL__. Dieses Hilfsprogramm ist über Ihr Paketverwaltungssystem verfügbar oder kann hier heruntergeladen werden: [http://curl.haxx.se/](http://curl.haxx.se/).
 
@@ -259,7 +259,7 @@ Dieses Beispiel wird in den Schritten im vorliegenden Dokument verwendet. Sie m�
 
 ##Anmelden bei Ihrem Azure-Abonnement
 
-Führen Sie die Schritte aus, die unter [Herstellen einer Verbindung mit einem Azure-Abonnement von der Azure Befehlszeilenschnittstelle (Azure-CLI)](xplat-cli-connect.md) dokumentiert sind, und stellen Sie über die __login__-Methode eine Verbindung mit Ihrem Abonnement her.
+Führen Sie die Schritte aus, die unter [Herstellen einer Verbindung mit einem Azure-Abonnement von der Azure Befehlszeilenschnittstelle (Azure-CLI)](../xplat-cli-connect.md) dokumentiert sind, und stellen Sie über die __login__-Methode eine Verbindung mit Ihrem Abonnement her.
 
 ##Erstellen eines Dienstprinzipals
 
@@ -346,13 +346,13 @@ Nachdem Sie einen HDInsight-Cluster erfolgreich erstellt haben, nutzen Sie die f
 
 ###HBase-Cluster
 
-* [Erste Schritte mit HBase in HDInsight](hdinsight-hbase-tutorial-get-stared-linux.md)
-* [Entwickeln von Java-Anwendungen für HBase in HDInsight](hdinsight-hbase-build-java-maven-linux)
+* [Erste Schritte mit HBase in HDInsight](hdinsight-hbase-tutorial-get-started-linux.md)
+* [Entwickeln von Java-Anwendungen für HBase in HDInsight](hdinsight-hbase-build-java-maven-linux.md)
 
 ###Storm-Cluster
 
 * [Entwickeln von Java-Topologien für Storm in HDInsight](hdinsight-storm-develop-java-topology.md)
-* [Verwenden von Python-Komponenten in Storm in HDInsight](hdinsight-storm-develop-python.md)
+* [Verwenden von Python-Komponenten in Storm in HDInsight](hdinsight-storm-develop-python-topology.md)
 * [Bereitstellen und Überwachen von Topologien mit Storm in HDInsight](hdinsight-storm-deploy-monitor-topology-linux.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -1,11 +1,11 @@
 <properties 
-	pageTitle="Verwenden von Verweisdaten | Microsoft Azure" 
-	description="Verwenden von Verweisdaten in einem Stream Analytics-Eingabedatenstrom" 
-	keywords="Big Data-Analysen,Clouddienst,Internet der Dinge,verwalteter Dienst,Datenstromverarbeitung, Streaming Analytics, Streamingdaten"
+	pageTitle="Verwenden von Verweisdaten und Nachschlagetabellen in Stream Analytics | Microsoft Azure" 
+	description="Verwenden von Verweisdaten in einer Stream Analytics-Abfrage" 
+	keywords="Nachschlagetabelle, Verweisdaten"
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
-	manager="paulettm" 
+	manager="paulettm"
 	editor="cgronlun"/>
 
 <tags 
@@ -14,12 +14,12 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="11/23/2015" 
+	ms.date="12/04/2015" 
 	ms.author="jeffstok"/>
 
-# Verwenden von Verweisdaten in einem Stream Analytics-Eingabedatenstrom
+# Verwenden von Verweisdaten oder Nachschlagetabellen in einem Stream Analytics-Eingabedatenstrom
 
-Verweisdaten sind ein begrenzter Satz Daten, der statisch ist oder sich nur langsam ändert und der für eine Suche oder Korrelation mit Ihrem Datenstrom verwendet wird. Für den Einsatz von Verweisdaten in Ihrem Azure Stream Analytics-Auftrag verwenden Sie in der Regel [Verweisdaten für JOIN-Vorgänge](https://msdn.microsoft.com/library/azure/dn949258.aspx) in Ihrer Abfrage. Stream Analytics verwendet Azure-Blob-Speicher als Speicherschicht für Verweisdaten, und mit Azure Data Factory können Verweisdaten transformiert und/oder in den Azure-Blob-Speicher kopiert werden, um sie als Verweisdaten zu verwenden, aus einer [beliebigen Anzahl von cloudbasierten und lokalen Datenspeichern](./articles/data-factory-data-movement-activities.md). Referenzdaten werden als (in der Eingabekonfiguration definierte) Blobsequenz in aufsteigender Reihenfolge nach dem im Blobnamen angegebenen Datums- bzw. Uhrzeitwert modelliert. Hinzufügungen sind jeweils **nur** am Sequenzende möglich. Hierzu muss der verwendete Datums-/Uhrzeitwert den Wert des letzten Blobs in der Sequenz **übersteigen**.
+Verweisdaten (auch als Nachschlagetabellen bezeichnet) sind ein begrenzter Satz von Daten, der statisch ist oder sich nur langsam ändert und der für eine Suche oder Korrelation mit Ihrem Datenstrom verwendet wird. Für den Einsatz von Verweisdaten in Ihrem Azure Stream Analytics-Auftrag verwenden Sie in der Regel [Verweisdaten für JOIN-Vorgänge](https://msdn.microsoft.com/library/azure/dn949258.aspx) in Ihrer Abfrage. Stream Analytics verwendet Azure-Blob-Speicher als Speicherschicht für Verweisdaten, und mit Azure Data Factory können Verweisdaten transformiert und/oder in den Azure-Blob-Speicher kopiert werden, um sie als Verweisdaten zu verwenden, aus einer [beliebigen Anzahl von cloudbasierten und lokalen Datenspeichern](./articles/data-factory-data-movement-activities.md). Referenzdaten werden als (in der Eingabekonfiguration definierte) Blobsequenz in aufsteigender Reihenfolge nach dem im Blobnamen angegebenen Datums- bzw. Uhrzeitwert modelliert. Hinzufügungen sind jeweils **nur** am Sequenzende möglich. Hierzu muss der verwendete Datums-/Uhrzeitwert den Wert des letzten Blobs in der Sequenz **übersteigen**.
 
 ## Konfigurieren von Verweisdaten
 
@@ -103,4 +103,4 @@ Sie haben nun Stream Analytics kennengelernt, einen verwalteten Dienst für Stre
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

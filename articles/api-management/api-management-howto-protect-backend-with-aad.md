@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/03/2015"
+	ms.date="12/07/2015"
 	ms.author="sdanie"/>
 
 # So schützen Sie ein Web-API-Back-End mit Azure Active Directory und API Management
@@ -30,7 +30,7 @@ Im folgenden Video wird gezeigt, wie Sie ein Web-API-Back-End erstellen und es m
 
 ## Erstellen eines Azure AD-Verzeichnisses
 
-Zum Sichern Ihres Web-API-Back-Ends mit Azure Active Directory benötigen Sie einen AAD-Mandanten. In diesem Video wird ein Mandant mit dem Namen**APIMDemo** verwendet. Zum Erstellen eines AAD-Mandanten melden Sie sich beim [Azure-Portal](https://manage.windowsazure.com) an und klicken auf **Neu**->**App Services**->**Active Directory**->**Verzeichnis**->**Benutzerdefiniert erstellen**.
+Zum Sichern Ihres Web-API-Back-Ends mit Azure Active Directory benötigen Sie einen AAD-Mandanten. In diesem Video wird ein Mandant mit dem Namen**APIMDemo** verwendet. Zum Erstellen eines AAD-Mandanten melden Sie sich beim [klassischen Azure-Portal](https://manage.windowsazure.com) an und klicken auf **Neu**->**App Services**->**Active Directory**->**Verzeichnis**->**Benutzerdefiniert erstellen**.
 
 ![Azure Active Directory][api-management-create-aad-menu]
 
@@ -143,11 +143,7 @@ Ersetzen Sie die generierte Controllerklasse durch den folgenden Code: Dieser Co
         public HttpResponseMessage GetDiv([FromUri]int a, [FromUri]int b)
         {
             string xml = string.Format("<result><value>{0}</value><broughtToYouBy>Azure API Management - http://azure.microsoft.com/apim/ </broughtToYouBy></result>", a / b);
-            HttpResponseMessage response = Request.CreateResponse();
-            response.Content = new StringContent(xml, System.Text.Encoding.UTF8, "application/xml");
-            return response;
-        }
-    }
+HttpResponseMessage response = Request.CreateResponse(); response.Content = new StringContent(xml, System.Text.Encoding.UTF8, "application/xml"); return response; } }
 
 
 Drücken Sie **F6**, um die Lösung zu erstellen und zu überprüfen.
@@ -178,7 +174,7 @@ Notieren Sie die **App-ID-URI** für die Verwendung in einem späteren Schritt, 
 
 ## Importieren der Web-API in API Management
 
-APIs werden im API-Herausgeberportal konfiguriert, das über das Azure-Verwaltungsportal erreichbar ist. Um auf das Herausgeberportal zuzugreifen, klicken Sie im Azure-Portal für Ihren API Management-Dienst auf **Verwalten**. Falls Sie noch keine API Management-Dienstinstanz erstellt haben, finden Sie weitere Informationen im Abschnitt [Erstellen einer API Management-Dienstinstanz][] im Lernprogramm [Verwalten Ihrer ersten API][].
+APIs werden im API-Herausgeberportal konfiguriert, das über das klassische Azure-Portal erreichbar ist. Um auf das Herausgeberportal zuzugreifen, klicken Sie im klassischen Azure-Portal für Ihren API Management-Dienst auf **Verwalten**. Falls Sie noch keine API Management-Dienstinstanz erstellt haben, finden Sie weitere Informationen im Abschnitt [Erstellen einer API Management-Dienstinstanz][] im Lernprogramm [Verwalten Ihrer ersten API][].
 
 ![Herausgeberportal][api-management-management-console]
 
@@ -186,137 +182,7 @@ Vorgänge können [APIs manuell hinzugefügt](api-management-howto-add-operation
 
 Erstellen Sie eine Datei mit dem Namen `calcapi.json` mit folgenden Inhalt, und speichern Sie sie auf Ihrem Computer. Stellen Sie sicher, dass das `host`-Attribut auf Ihr Web-API-Back-End verweist. In diesem Beispiel wird `"host": "apimaaddemo.azurewebsites.net"` verwendet.
 
-	{
-	  "swagger": "2.0",
-	  "info": {
-		"title": "Calculator",
-		"description": "Arithmetics over HTTP!",
-		"version": "1.0"
-	  },
-	  "host": "apimaaddemo.azurewebsites.net",
-	  "basePath": "/api",
-	  "schemes": [
-		"http"
-	  ],
-	  "paths": {
-		"/add?a={a}&b={b}": {
-		  "get": {
-			"description": "Responds with a sum of two numbers.",
-			"operationId": "Add two integers",
-			"parameters": [
-			  {
-				"name": "a",
-				"in": "query",
-				"description": "First operand. Default value is <code>51</code>.",
-				"required": true,
-				"default": "51",
-				"enum": [
-				  "51"
-				]
-			  },
-			  {
-				"name": "b",
-				"in": "query",
-				"description": "Second operand. Default value is <code>49</code>.",
-				"required": true,
-				"default": "49",
-				"enum": [
-				  "49"
-				]
-			  }
-			],
-			"responses": {}
-		  }
-		},
-		"/sub?a={a}&b={b}": {
-		  "get": {
-			"description": "Responds with a difference between two numbers.",
-			"operationId": "Subtract two integers",
-			"parameters": [
-			  {
-				"name": "a",
-				"in": "query",
-				"description": "First operand. Default value is <code>100</code>.",
-				"required": true,
-				"default": "100",
-				"enum": [
-				  "100"
-				]
-			  },
-			  {
-				"name": "b",
-				"in": "query",
-				"description": "Second operand. Default value is <code>50</code>.",
-				"required": true,
-				"default": "50",
-				"enum": [
-				  "50"
-				]
-			  }
-			],
-			"responses": {}
-		  }
-		},
-		"/div?a={a}&b={b}": {
-		  "get": {
-			"description": "Responds with a quotient of two numbers.",
-			"operationId": "Divide two integers",
-			"parameters": [
-			  {
-				"name": "a",
-				"in": "query",
-				"description": "First operand. Default value is <code>100</code>.",
-				"required": true,
-				"default": "100",
-				"enum": [
-				  "100"
-				]
-			  },
-			  {
-				"name": "b",
-				"in": "query",
-				"description": "Second operand. Default value is <code>20</code>.",
-				"required": true,
-				"default": "20",
-				"enum": [
-				  "20"
-				]
-			  }
-			],
-			"responses": {}
-		  }
-		},
-		"/mul?a={a}&b={b}": {
-		  "get": {
-			"description": "Responds with a product of two numbers.",
-			"operationId": "Multiply two integers",
-			"parameters": [
-			  {
-				"name": "a",
-				"in": "query",
-				"description": "First operand. Default value is <code>20</code>.",
-				"required": true,
-				"default": "20",
-				"enum": [
-				  "20"
-				]
-			  },
-			  {
-				"name": "b",
-				"in": "query",
-				"description": "Second operand. Default value is <code>5</code>.",
-				"required": true,
-				"default": "5",
-				"enum": [
-				  "5"
-				]
-			  }
-			],
-			"responses": {}
-		  }
-		}
-	  }
-	}
+{ "swagger": "2.0", "info": { "title": "Calculator", "description": "Arithmetics over HTTP!", "version": "1.0" }, "host": "apimaaddemo.azurewebsites.net", "basePath": "/api", "schemes": [ "http" ], "paths": { "/add?a={a}&b={b}": { "get": { "description": "Responds with a sum of two numbers.", "operationId": "Add two integers", "parameters": [ { "name": "a", "in": "query", "description": "First operand. Default value is <code>51</code>.", "required": true, "default": "51", "enum": [ "51" ] }, { "name": "b", "in": "query", "description": "Second operand. Default value is <code>49</code>.", "required": true, "default": "49", "enum": [ "49" ] } ], "responses": {} } }, "/sub?a={a}&b={b}": { "get": { "description": "Responds with a difference between two numbers.", "operationId": "Subtract two integers", "parameters": [ { "name": "a", "in": "query", "description": "First operand. Default value is <code>100</code>.", "required": true, "default": "100", "enum": [ "100" ] }, { "name": "b", "in": "query", "description": "Second operand. Default value is <code>50</code>.", "required": true, "default": "50", "enum": [ "50" ] } ], "responses": {} } }, "/div?a={a}&b={b}": { "get": { "description": "Responds with a quotient of two numbers.", "operationId": "Divide two integers", "parameters": [ { "name": "a", "in": "query", "description": "First operand. Default value is <code>100</code>.", "required": true, "default": "100", "enum": [ "100" ] }, { "name": "b", "in": "query", "description": "Second operand. Default value is <code>20</code>.", "required": true, "default": "20", "enum": [ "20" ] } ], "responses": {} } }, "/mul?a={a}&b={b}": { "get": { "description": "Responds with a product of two numbers.", "operationId": "Multiply two integers", "parameters": [ { "name": "a", "in": "query", "description": "First operand. Default value is <code>20</code>.", "required": true, "default": "20", "enum": [ "20" ] }, { "name": "b", "in": "query", "description": "Second operand. Default value is <code>5</code>.", "required": true, "default": "5", "enum": [ "5" ] } ], "responses": {} } } } }
 
 Klicken Sie zum Importieren der Rechner-API im Menü **API Management** auf der linken Seite auf **APIs**, und klicken Sie anschließend auf **API importieren**.
 
@@ -547,4 +413,4 @@ Eine weitere Demonstration der Konfiguration und Verwendung dieser Richtlinie fi
 [Erstellen einer API Management-Dienstinstanz]: api-management-get-started.md#create-service-instance
 [Verwalten Ihrer ersten API]: api-management-get-started.md
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1210_2015-->

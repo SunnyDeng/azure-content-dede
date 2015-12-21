@@ -231,11 +231,11 @@ Nachdem Sie nun mit den Grundlagen von Service Bus-Warteschlangen vertraut sind,
 
   [Azure SDK für Java]: http://azure.microsoft.com/develop/java/
   [Azure-SDK für Java]: http://azure.microsoft.com/develop/java/
-  [Azure Toolkit für Eclipse]: https://msdn.microsoft.com/de-DE/library/azure/hh694271.aspx
+  [Azure Toolkit für Eclipse]: https://msdn.microsoft.com/library/azure/hh694271.aspx
   [Azure classic portal]: http://manage.windowsazure.com/
   [Service Bus-Warteschlangen, -Themen und -Abonnements]: service-bus-queues-topics-subscriptions.md
   [SqlFilter]: http://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.sqlfilter.aspx
   [SqlFilter.SqlExpression]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
   [BrokeredMessage]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

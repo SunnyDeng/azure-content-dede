@@ -10,10 +10,10 @@
 <tags
 	ms.service="mobile-services"
 	ms.workload="mobile"
-	ms.tgt_pltfrm="na"
+	ms.tgt_pltfrm="na" 
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="09/15/2015"
+	ms.date="12/07/2015"
 	ms.author="glenga"/>
 
 # Speichern von Projektcode des mobilen Diensts in der Quellcodeverwaltung
@@ -64,7 +64,7 @@ Nachdem Sie nun Ihr lokales Repository erstellt haben, können Sie Ihr .NET-Back
 
 ##<a name="deploy-scripts"></a>Veröffentlichen Ihres Projekts mithilfe von Git
 
-1. Erstellen Sie ein neues mobiles .NET-Back-End-Dienstprojekt in Visual Studio 2013, oder verschieben Sie ein vorhandenes Projekt in das neue lokale Repository.
+1. Erstellen Sie ein neues mobiles .NET-Back-End-Dienstprojekt in Visual Studio 2013, oder verschieben Sie ein vorhandenes Projekt in das neue lokale Repository.  
 
 	Für einen schnellen Test laden Sie das und Mobile Services-Schnellstartprojekt herunter, und speichern Sie es in diesem Ordner.
 
@@ -103,4 +103,4 @@ Ihr mobiles Dienstprojekt wird jetzt in der Quellcodeverwaltung verwaltet, und S
 [Erste Schritte mit Mobile Services]: mobile-services-dotnet-backend-ios-get-started.md
 [Ändern des Datenmodells eines mobilen .NET-Back-End-Diensts]: mobile-services-dotnet-backend-how-to-use-code-first-migrations.md
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -78,7 +78,7 @@ Erstellen Sie eine neue explizite App-ID für Ihre Anwendung bei Apple, und konf
 
 10. Klicken Sie in der Kategorie **Certificates** in der Schlüsselbundverwaltung mit der rechten Maustaste auf das gerade neu erstellte Pushzertifikat. Klicken Sie auf **Exportieren**, benennen Sie die Datei, wählen Sie das Format **.p12** aus, und klicken Sie dann auf **Speichern**.
 
-	Notieren Sie sich den Dateinamen und den Speicherort des exportierten P12-Zertifikats. Damit wird die Authentifizierung mit APNS aktiviert, indem Sie es in das Azure-Portal hochladen.
+	Notieren Sie sich den Dateinamen und den Speicherort des exportierten P12-Zertifikats. Damit wird die Authentifizierung mit APNS aktiviert, indem Sie es zum klassischen Azure-Portal hochladen.
 
 
 
@@ -110,4 +110,4 @@ Erstellen Sie eine neue explizite App-ID für Ihre Anwendung bei Apple, und konf
 
    	![](./media/notification-hubs-xamarin-enable-apple-push-notifications/notification-hubs-provisioning-name-profile.png)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

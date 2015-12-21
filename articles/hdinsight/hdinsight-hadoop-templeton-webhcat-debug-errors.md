@@ -14,7 +14,7 @@
  ms.topic="article"
  ms.tgt_pltfrm="na"
  ms.workload="big-data"
- ms.date="10/30/2015"
+ ms.date="12/04/2015"
  ms.author="larryfr"/>
 
 #Verstehen und Beheben von Fehlern in HDInsight, die von WebHCat (Templeton) ausgegeben wurden
@@ -86,4 +86,4 @@ Nachfolgend finden Sie eine Liste der Standardkonfigurationswerte, deren Übersc
 [max-age-ms]: http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.0.6.0/ds_Hadoop/hadoop-mapreduce-client/hadoop-mapreduce-client-core/mapred-default.xml
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1210_2015-->

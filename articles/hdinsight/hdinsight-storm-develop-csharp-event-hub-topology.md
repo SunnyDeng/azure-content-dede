@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="10/30/2015"
+   ms.date="12/04/2015"
    ms.author="larryfr"/>
 
 # Verarbeitung von Ereignissen von Azure-Event-Hubs mit Storm auf HDInsight (C#)
@@ -557,4 +557,4 @@ In diesem Dokument haben Sie erfahren, wie Sie den Java-Spout und den -Bolt für
 * [Beispiele für Storm-Topologien für Storm in HDInsight](hdinsight-storm-example-topology.md)
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

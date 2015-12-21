@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="11/30/2015"
+   ms.date="12/07/2015"
    ms.author="tomfitz"/>
 
 # Erstellen von Azure-Ressourcen-Manager-Vorlagen
@@ -236,7 +236,7 @@ Sie definieren Ressourcen mit der folgenden Struktur:
 | Kommentare | Nein | Ihre Notizen zur Dokumentierung der Ressourcen in Ihrer Vorlage
 | dependsOn | Nein | Ressourcen, von denen die definierte Ressource abhängig ist. Die Abhängigkeiten zwischen den Ressourcen werden ausgewertet, und die Ressourcen werden in ihrer Abhängigkeitsreihenfolge bereitgestellt. Wenn Ressourcen nicht voneinander abhängig sind, wird versucht, sie parallel bereitzustellen. Der Wert kann eine durch Trennzeichen getrennte Liste von Ressourcennamen oder eindeutigen Ressourcenbezeichnern sein.
 | Eigenschaften | Nein | Ressourcenspezifische Konfigurationseinstellungen
-| angeben | Nein | Untergeordnete Ressourcen, die von der definierten Ressource abhängig sind.
+| angeben | Nein | Untergeordnete Ressourcen, die von der definierten Ressource abhängig sind. Sie können nur Ressourcentypen bereitstellen, die laut Schema der übergeordneten Ressource zulässig sind. Der vollqualifizierte Name des untergeordneten Ressourcentyps enthält den übergeordneten Ressourcentyp, z. B. **Microsoft.Web/sites/extensions**.
 
 Wenn der Ressourcenname nicht eindeutig ist, können Sie mit der **resourceId**-Hilfsfunktion (weiter unten beschrieben) den eindeutigen Bezeichner für eine Ressource abrufen.
 
@@ -278,6 +278,9 @@ Das folgende Beispiel zeigt eine **Microsoft.Web/serverfarms**-Ressource und ein
                   "apiVersion": "2014-06-01",
                   "type": "Extensions",
                   "name": "MSDeploy",
+                  "dependsOn": [
+                      "[resourceId('Microsoft.Web/sites', parameters('siteName'))]"
+                  ],
                   "properties": {
                     "packageUri": "https://auxmktplceprod.blob.core.windows.net/packages/StarterSite-modified.zip",
                     "dbType": "None",
@@ -418,4 +421,4 @@ Die folgende Vorlage stellt eine Web-App bereit und stattet sie mit Code aus ein
 - Ein ausführliches Beispiel für die Bereitstellung einer Anwendung finden Sie unter [Vorhersagbares Bereitstellen von Microservices in Azure](app-service-web/app-service-deploy-complex-application-predictably.md).
 - Die verfügbaren Schemas finden Sie unter [Schemas des Azure-Ressourcen-Managers](https://github.com/Azure/azure-resource-manager-schemas).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="09/23/2015"
+   ms.date="12/04/2015"
    ms.author="larryfr"/>
 
 #Entwickeln von Java-basierten Topologien für eine einfache Anwendung zum Zählen von Wörtern mit Apache Storm und Maven auf HDInsight
@@ -467,4 +467,4 @@ Sie haben erfahren, wie Sie eine Storm-Topologie mit Java erstellen. Nun lernen 
 
 Weitere Beispiel-Storm-Topologien finden Sie unter [Beispieltopologien für Storm auf HDInsight](hdinsight-storm-example-topology.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/12/2015"
+	ms.date="12/03/2015"
 	ms.author="mandia"/>
 
 
@@ -67,10 +67,10 @@ Name | Beschreibung
 [BizTalk X12](app-service-logic-connector-x12.md) | Empfängt und sendet Nachrichten mithilfe des X12-Protokolls in der Business-to-Business-Kommunikation.
 [BizTalk XML Validator](app-service-logic-xml-validator.md) | Überprüft XML-Daten im Abgleich mit vordefinierten XML-Schemas. Sie können vorhandene Schemas verwenden oder Schemas auf Grundlage einer Flatfile-Instanz, JSON-Instanz oder vorhandenen Connectors generieren.
 [BizTalk XPath Extractor](app-service-logic-xpath-extract.md) | Sucht und extrahiert Daten aus XML-Inhalt basierend auf der ausgewählten XPath-Sprache.
-DB2-Connector | Stellt lokal und auf einem virtuellen Azure-Computer unter einem Windows-Betriebssystem eine Verbindung mit einer IBM DB2-Datenbank her. Er kann Befehlen der Informix Structured Query Language Web-API- und OData-API-Vorgänge zuordnen. <br/><br/>Keine Trigger. Aktionen umfassen die Auswahl von Tabellen, das Einfügen, Aktualisieren und Löschen sowie benutzerdefinierte Anweisungen.<br/><br/>Dieser Connector enthält auch den Microsoft-Client für DRDA zum Herstellen einer Verbindung mit einem Informix-Server über ein TCP/IP-Netzwerk.
+[DB2-Connector](app-service-logic-connector-db2.md) | Stellt lokal und auf einem virtuellen Azure-Computer unter einem Windows-Betriebssystem eine Verbindung mit einer IBM DB2-Datenbank her. Er kann Befehlen der Informix Structured Query Language Web-API- und OData-API-Vorgänge zuordnen. <br/><br/>Keine Trigger. Aktionen umfassen die Auswahl von Tabellen, das Einfügen, Aktualisieren und Löschen sowie benutzerdefinierte Anweisungen.<br/><br/>Dieser Connector enthält auch den Microsoft-Client für DRDA zum Herstellen einer Verbindung mit einem Informix-Server über ein TCP/IP-Netzwerk.
 [Datei](app-service-logic-connector-file.md) | Mit diesem Connector können Sie eine Verbindung mit dem lokalen Dateisystem oder Netzwerk herstellen und verschiedene Dateiaufgaben, einschließlich Hochladen, Löschen und Auflisten von Dateien, und vieles mehr ausführen.
 [FTP<br/>FTPS](app-service-logic-connector-ftp.md) | Stellt eine Verbindung mit einem FTP-/FTPS-Server her und ermöglicht u. a. die Ausführung verschiedener FTP-Tasks, einschließlich Hochladen, Abrufen und Löschen von Dateien.
-Informix | Stellt lokal und auf einem virtuellen Azure-Computer unter einem Windows-Betriebssystem eine Verbindung mit einer IBM Informix-Datenbank her. Er kann Befehlen der Informix Structured Query Language Web-API- und OData-API-Vorgänge zuordnen.<br/><br/>Keine Trigger. Aktionen umfassen die Auswahl von Tabellen, das Einfügen, Aktualisieren und Löschen sowie benutzerdefinierte Anweisungen.<br/><br/>Lokal oder mit VPN oder Azure kann ExpressRoute verwendet werden. Dieser Connector enthält auch einen Microsoft-Client für DRDA zum Herstellen einer Verbindung mit einem Informix-Server über ein TCP/IP-Netzwerk.
+[Informix](app-service-logic-connector-informix.md) | Stellt lokal und auf einem virtuellen Azure-Computer unter einem Windows-Betriebssystem eine Verbindung mit einer IBM Informix-Datenbank her. Er kann Befehlen der Informix Structured Query Language Web-API- und OData-API-Vorgänge zuordnen.<br/><br/>Keine Trigger. Aktionen umfassen die Auswahl von Tabellen, das Einfügen, Aktualisieren und Löschen sowie benutzerdefinierte Anweisungen.<br/><br/>Lokal oder mit VPN oder Azure kann ExpressRoute verwendet werden. Dieser Connector enthält auch einen Microsoft-Client für DRDA zum Herstellen einer Verbindung mit einem Informix-Server über ein TCP/IP-Netzwerk.
 [Microsoft SQL Server](app-service-logic-connector-sql.md) | Stellt eine Verbindung mit dem lokalen SQL Server oder einer Azure SQL-Datenbank her. Sie können Einträge in einer SQL-Datenbanktabelle erstellen, aktualisieren, abrufen und löschen.
 MQ | Stellt lokal und auf einem virtuellen Azure-Computer unter einem Windows-Betriebssystem eine Verbindung mit einem IBM WebSphere MQ-Server, Version 8, her. Bei lokaler Verwendung können VPN- oder Azure ExpressRoute-Verbindungen verwendet werden. Der Connector enthält außerdem den Microsoft-Client für MQ.<br/><br/>Keine Trigger. Keine Aktionen.<br/><br/>**Hinweis** Kann derzeit nicht mit Logik-Apps verwendet werden.
 [Oracle-Datenbank](app-service-logic-connector-oracle.md) | Stellt eine Verbindung mit der lokalen Oracle-Datenbank her und kann Einträge in einer Datenbanktabelle erstellen, aktualisieren, abrufen und löschen.
@@ -94,4 +94,4 @@ Connectors können innerhalb Ihrer Logik-App auch als Aktionen verwendet werden.
 ## Weitere Informationen zu Connectors und API-Apps
 [Was sind Connectors und BizTalk-API-Apps?](app-service-logic-what-are-biztalk-api-apps.md) [Verwenden des Hybrid Connection Managers in Azure App Service](app-service-logic-hybrid-connection-manager.md) [Verwalten und Überwachen integrierter API-Apps und Connectors](app-service-logic-monitor-your-connectors.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

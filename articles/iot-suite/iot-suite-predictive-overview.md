@@ -33,7 +33,7 @@ Durch die Vorhersage des geeigneten Wartungszeitpunkts kann Fabrikam eine Optimi
 
 ## Aufbau der Lösung für vorhersagbaren Wartungsbedarf
 
-Informationen dazu, wie [Azure IoT-Suite][lnk_iot_suite] die vom Kunden benötigten Fähigkeiten bereitstellt, um das Potenzial des vorhersagbaren Wartungsbedarfs zu erschließen, finden Sie auf [dieser Infografik][lnk_infographic].
+Informationen dazu, wie [Azure IoT-Suite][lnk_iot_suite] die vom Kunden benötigten Fähigkeiten bereitstellt, um das Potenzial des vorhersagbaren Wartungsbedarfs zu erschließen, finden Sie auf dieser [Infografik][lnk_infographic].
 
 Zur Demonstration dieser Möglichkeiten verwendet die vorgestellte Beispiellösung die über IoT-Suite-Dienste erfassten Gerätetelemetriedaten und bereitet diese anhand einer Webanwendung auf. Dabei kommt ein vorhandenes Azure Machine Learning-Modell zum Einsatz, das als Vorlage zur Verfügung steht. Microsoft hat ein Regressionsmodell erstellt und die vollständige Vorlage sowie die Daten<sup>[1]</sup> und eine schrittweise Anleitung [hier][lnk_regression_model] veröffentlicht.
 
@@ -45,11 +45,14 @@ Die vorkonfigurierte Azure IoT-Lösung für vorhersagbaren Wartungsbedarf verwen
 
 Informationen darüber, wie Azure IoT Szenarios mit vorhersagbarem Wartungsbedarf ermöglicht, finden Sie unter [Capture value from the Internet of Things][lnk_capture_value] (in englischer Sprache).
 
+Sehen Sie sich die [exemplarische Vorgehensweise][lnk-predictive-walkthrough] zur vorkonfigurierten Lösung für die vorbeugende Wartung an.
+
+[lnk-predictive-walkthrough]: iot-suite-predictive-walkthrough.md
 [lnk_preconfigured_solutions]: iot-suite-what-are-preconfigured-solutions.md
 [lnk_iot_suite]: iot-suite-overview.md
 [lnk_machine_learning]: https://azure.microsoft.com/services/machine-learning/
-[lnk_infographic]: https://www.microsoft.com/server-cloud/predictivemaintenance/Index.html
+[lnk_infographic]: https://www.microsoft.com/de-DE/server-cloud/predictivemaintenance/Index.html
 [lnk_regression_model]: http://gallery.cortanaanalytics.com/Collection/Predictive-Maintenance-Template-3
 [lnk_capture_value]: http://download.microsoft.com/download/0/7/D/07D394CE-185D-4B96-AC3C-9B61179F7080/Capture_value_from_the_Internet%20of%20Things_with_Predictive_Maintenance.PDF
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

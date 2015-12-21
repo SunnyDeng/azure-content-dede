@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/07/2015"
+	ms.date="12/05/2015"
 	ms.author="juliako"/>
 
 #Media Services PlayReady-Lizenzvorlage – Übersicht
@@ -74,7 +74,7 @@ Dies ist in der Vorlagenhierarchie die Klasse der obersten Ebene. Dies bedeutet,
 
 [PlayReadyPlayRight](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mediaservices.client.contentkeyauthorization.playreadyplayright.aspx): Diese Klasse stellt PlayRight für eine PlayReady-Lizenz dar. Sie gewährt dem Benutzer die Möglichkeit, Inhalte gemäß den null oder mehr Einschränkungen wiederzugeben, die in der Lizenz oder in PlayRight selbst (für wiedergabespezifische Richtlinien) konfiguriert wurden. Die Richtlinie für PlayRight bezieht sich in erster Linie auf Ausgabeneinschränkungen, mit denen gesteuert wird, über welche Ausgabetypen der Inhalt wiedergegeben werden kann, sowie Einschränkungen, die bei der Verwendung einer bestimmten Ausgabe gelten müssen. Wenn z. B. DigitalVideoOnlyContentRestriction aktiviert wird, lässt die DRM-Runtime nur zu, dass das Video über digitale Ausgaben angezeigt wird (für analoge Videoausgaben ist das Übergeben des Inhalts nicht zulässig).
 
->[AZURE.IMPORTANT]Dieser Einschränkungstypen können sehr effektiv sein, können jedoch auch die Benutzerfreundlichkeit beeinträchtigen. Wenn der Ausgabeschutz mit zu vielen Einschränkungen konfiguriert wird, kann der Inhalt möglicherweise in einigen Clients nicht wiedergegeben werden. Weitere Informationen finden Sie im Dokument zu [PlayReady-Kompatibilitätsregeln](https://www.microsoft.com/playready/licensing/compliance/).
+>[AZURE.IMPORTANT]Dieser Einschränkungstypen können sehr effektiv sein, können jedoch auch die Benutzerfreundlichkeit beeinträchtigen. Wenn der Ausgabeschutz mit zu vielen Einschränkungen konfiguriert wird, kann der Inhalt möglicherweise in einigen Clients nicht wiedergegeben werden. Weitere Informationen finden Sie im Dokument [Compliance & Robustness Rules](https://www.microsoft.com/playready/licensing/compliance/) (in englischer Sprache).
 
 Ein Beispiel für die von Silverlight unterstützten Schutzebenen finden Sie unter [Silverlight-Unterstützung für Ausgabeschutz](http://go.microsoft.com/fwlink/?LinkId=617318).
 
@@ -311,4 +311,4 @@ Ein Beispiel für die von Silverlight unterstützten Schutzebenen finden Sie unt
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -4,7 +4,7 @@
 	description="Aktivieren Sie das automatische Skalieren in einem Cloudpool, um die Anzahl von Computeknoten im Pool dynamisch anzupassen."
 	services="batch"
 	documentationCenter=""
-	authors="davidmu1"
+	authors="mmacy"
 	manager="timlt"
 	editor="tysonn"/>
 
@@ -14,8 +14,8 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows"
 	ms.workload="multiple"
-	ms.date="11/18/2015"
-	ms.author="davidmu;marsma"/>
+	ms.date="12/04/2015"
+	ms.author="marsma"/>
 
 # Automatisches Skalieren von Computeknoten in einem Azure Batch-Pool
 
@@ -559,11 +559,13 @@ Die folgenden Beispiele zeigen mehrere Möglichkeiten auf, wie Computeressourcen
 
 Möglicherweise möchten Sie die Größe des Pools basierend auf Wochentag und Uhrzeit anpassen und die Anzahl der Knoten im Pool entsprechend erhöhen bzw. reduzieren:
 
-		$CurTime=time();
-		$WorkHours=$CurTime.hour>=8 && $CurTime.hour<18;
-		$IsWeekday=$CurTime.weekday>=1 && $CurTime.weekday<=5;
-		$IsWorkingWeekdayHour=$WorkHours && $IsWeekday;
-		$TargetDedicated=$IsWorkingWeekdayHour?20:10;
+```
+$CurTime=time();
+$WorkHours=$CurTime.hour>=8 && $CurTime.hour<18;
+$IsWeekday=$CurTime.weekday>=1 && $CurTime.weekday<=5;
+$IsWorkingWeekdayHour=$WorkHours && $IsWeekday;
+$TargetDedicated=$IsWorkingWeekdayHour?20:10;
+```
 
 Diese Formel ruft zunächst die aktuelle Uhrzeit ab. Wenn es sich um einen Wochentag (1 bis 5) handelt und der Wert innerhalb der Geschäftszeiten (8:00 Uhr bis 18:00 Uhr) liegt, wird die Zielgröße des Pools auf 20 Knoten festgelegt. Andernfalls wird die Poolgröße auf 10 Knoten festgelegt.
 
@@ -571,35 +573,39 @@ Diese Formel ruft zunächst die aktuelle Uhrzeit ab. Wenn es sich um einen Woche
 
 In diesem Beispiel wird die Größe des Pools basierend auf der Anzahl der Aufgaben in der Warteschlange angepasst. Beachten Sie, dass in Formelzeichenfolgen sowohl Kommentare als auch Zeilenumbrüche verwendet werden können.
 
-	    // Get pending tasks for the past 15 minutes.
-	    $Samples = $ActiveTasks.GetSamplePercent(TimeInterval_Minute * 15);
-	    // If we have less than 70% data points, we use the last sample point, otherwise we use the maximum of
-		// last sample point and the history average.
-	    $Tasks = $Samples < 70 ? max(0,$ActiveTasks.GetSample(1)) : max( $ActiveTasks.GetSample(1), avg($ActiveTasks.GetSample(TimeInterval_Minute * 15)));
-	    // If number of pending tasks is not 0, set targetVM to pending tasks, otherwise half of current dedicated.
-	    $TargetVMs = $Tasks > 0? $Tasks:max(0, $TargetDedicated/2);
-	    // The pool size is capped at 20, if target VM value is more than that, set it to 20. This value
-		// should be adjusted according to your use case.
-	    $TargetDedicated = max(0,min($TargetVMs,20));
-	    // Set node deallocation mode - keep nodes active only until tasks finish
-	    $NodeDeallocationOption = taskcompletion;
+```
+// Get pending tasks for the past 15 minutes.
+$Samples = $ActiveTasks.GetSamplePercent(TimeInterval_Minute * 15);
+// If we have less than 70% data points, we use the last sample point, otherwise we use the maximum of
+// last sample point and the history average.
+$Tasks = $Samples < 70 ? max(0,$ActiveTasks.GetSample(1)) : max( $ActiveTasks.GetSample(1), avg($ActiveTasks.GetSample(TimeInterval_Minute * 15)));
+// If number of pending tasks is not 0, set targetVM to pending tasks, otherwise half of current dedicated.
+$TargetVMs = $Tasks > 0? $Tasks:max(0, $TargetDedicated/2);
+// The pool size is capped at 20, if target VM value is more than that, set it to 20. This value
+// should be adjusted according to your use case.
+$TargetDedicated = max(0,min($TargetVMs,20));
+// Set node deallocation mode - keep nodes active only until tasks finish
+$NodeDeallocationOption = taskcompletion;
+```
 
 ### Beispiel 3
 
 In diesem Beispiel wird die Größe des Pools ebenfalls basierend auf der Anzahl der Aufgaben angepasst. Diese Formel berücksichtigt jedoch darüber hinaus den [MaxTasksPerComputeNode](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.maxtaskspercomputenode.aspx)-Wert, der für den Pool festgelegt wurde. Dies ist besonders nützlich in Situationen, in denen eine parallele Ausführung von Aufgaben auf Computeknoten gewünscht wird.
 
-		// Determine whether 70% of the samples have been recorded in the past 15 minutes; if not, use last sample
-		$Samples = $ActiveTasks.GetSamplePercent(TimeInterval_Minute * 15);
-		$Tasks = $Samples < 70 ? max(0,$ActiveTasks.GetSample(1)) : max( $ActiveTasks.GetSample(1),avg($ActiveTasks.GetSample(TimeInterval_Minute * 15)));
-		// Set the number of nodes to add to one-fourth the number of active tasks (the MaxTasksPerComputeNode
-		// property on this pool is set to 4, adjust this number for your use case)
-		$Cores = $TargetDedicated * 4;
-		$ExtraVMs = ($Tasks - $Cores) / 4;
-		$TargetVMs = ($TargetDedicated+$ExtraVMs);
-		// Attempt to grow the number of compute nodes to match the number of active tasks, with a maximum of 3
-		$TargetDedicated = max(0,min($TargetVMs,3));
-		// Keep the nodes active until the tasks finish
-		$NodeDeallocationOption = taskcompletion;
+```
+// Determine whether 70% of the samples have been recorded in the past 15 minutes; if not, use last sample
+$Samples = $ActiveTasks.GetSamplePercent(TimeInterval_Minute * 15);
+$Tasks = $Samples < 70 ? max(0,$ActiveTasks.GetSample(1)) : max( $ActiveTasks.GetSample(1),avg($ActiveTasks.GetSample(TimeInterval_Minute * 15)));
+// Set the number of nodes to add to one-fourth the number of active tasks (the MaxTasksPerComputeNode
+// property on this pool is set to 4, adjust this number for your use case)
+$Cores = $TargetDedicated * 4;
+$ExtraVMs = (($Tasks - $Cores) + 3) / 4;
+$TargetVMs = ($TargetDedicated+$ExtraVMs);
+// Attempt to grow the number of compute nodes to match the number of active tasks, with a maximum of 3
+$TargetDedicated = max(0,min($TargetVMs,3));
+// Keep the nodes active until the tasks finish
+$NodeDeallocationOption = taskcompletion;
+```
 
 ### Beispiel 4
 
@@ -640,4 +646,4 @@ Die Formel im obigen Codeausschnitt weist folgende Merkmale auf:
         * [Get-AzureBatchRDPFile](https://msdn.microsoft.com/library/mt149851.aspx): Dieses PowerShell-Cmdlet ruft die RDP-Datei aus dem angegebenen Computeknoten ab und speichert sie am festgelegten Speicherort oder in einen Stream.
 2.	Einige Anwendungen erzeugen große Datenmengen, die nur schwer zu verarbeiten sind. Eine Möglichkeit zur Lösung dieses Problems ist die Verwendung [effizienter Listenabfragen](batch-efficient-list-queries.md).
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1210_2015-->

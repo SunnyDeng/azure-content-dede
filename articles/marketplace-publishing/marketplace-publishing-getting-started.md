@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="11/17/2015"
+   ms.date="12/04/2015"
    ms.author="hascipio" />
 
 # Veröffentlichen eines Angebots im Azure Marketplace
@@ -49,7 +49,11 @@ Einige Schritte müssen für alle Lösungstypen ausgeführt werden. In diesem Ar
 - [Erstellen eines lokalen VM-Images](marketplace-publishing-vm-image-creation-on-premise.md)
 - [Erstellen eines virtuellen Computers unter Windows im Azure-Vorschauportal](../virtual-machines-windows-tutorial/)
 
-**Datendienste** – [Datendienst OData-Zuordnung](marketplace-publishing-data-service-creation-odata-mapping.md) – [Datendienst OData-Zuordnungsknoten](marketplace-publishing-data-service-creation-odata-mapping-nodes.md) – [Datendienst OData-Zuordnungsbeispiele](marketplace-publishing-data-service-creation-odata-mapping-examples.md)
+**Datendienste**
+
+- [OData-Zuordnung für Datendienste](marketplace-publishing-data-service-creation-odata-mapping.md)
+- [OData-Zuordnungsknoten für Datendienste](marketplace-publishing-data-service-creation-odata-mapping-nodes.md)
+- [Beispiele für OData-Zuordnungen für Datendienste](marketplace-publishing-data-service-creation-odata-mapping-examples.md)
 
 [suppt-general]: marketplace-publishing-get-publisher-support.md
 [suppt-rpt-insights]: marketplace-publishing-report-seller-insights.md
@@ -68,4 +72,4 @@ Einige Schritte müssen für alle Lösungstypen ausgeführt werden. In diesem Ar
 [link-pushstaging]: marketplace-publishing-push-to-staging.md
 [link-pushprod]: marketplace-publishing-push-to-production.md
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

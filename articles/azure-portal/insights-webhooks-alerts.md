@@ -87,11 +87,11 @@ Der POST-Vorgang enthält die folgende JSON-Nutzlast und das folgende JSON-Schem
 |conditionType |J |"Metric", "Event" |Zwei Arten von Warnungen werden unterstützt. Eine Warnung basiert auf der Metrik und die andere auf Ereignissen. Zukünftig werden Warnungen für Ereignisse unterstützt. Verwenden Sie daher diesen Wert, um zu prüfen, ob die Warnung auf der Metrik oder auf einem Ereignis basiert.|
 |condition |J | |Legt die Felder fest, die basierend auf "conditionType" überprüft werden.|
 |metricName |für Warnungen des Typs "Metric" | |Der Name der Metrik, die definiert, welche Elemente mit der Regel überwacht werden.|
-|metricUnit |für Warnungen des Typs "Metric" |"Bytes", "BytesPerSecond", "Count", "CountPerSecond", "Percent", "Seconds"|	 Die in der Metrik zulässige Einheit. Zulässige Werte: https://msdn.microsoft.com/de-DE/library/microsoft.azure.insights.models.unit.aspx|
+|metricUnit |für Warnungen des Typs "Metric" |"Bytes", "BytesPerSecond", "Count", "CountPerSecond", "Percent", "Seconds"|	 Die in der Metrik zulässige Einheit. Zulässige Werte: https://msdn.microsoft.com/library/microsoft.azure.insights.models.unit.aspx|
 |metricValue |für Warnungen des Typs "Metric" | |Der tatsächliche Wert der Metrik, die die Warnung ausgelöst hat.|
 |threshold |für Warnungen des Typs "Metric" | |Der Schwellenwert, der die Warnung aktiviert.|
 |windowSize |für Warnungen des Typs "Metric" | |Der Zeitraum, in dem die Aktivität der Warnung basierend auf dem Schwellenwert überwacht wird. Muss zwischen 5 Minuten und 1 Tag liegen. Format der Zeitspanne nach ISO 8601.|
-|timeAggregation |für Warnungen des Typs "Metric" |"Average", "Last", "Maximum", "Minimum", "None", "Total" |	Legt fest, wie die erfassten Daten im Zeitverlauf kombiniert werden sollen. Der Standardwert ist "Average". Zulässige Werte: https://msdn.microsoft.com/de-DE/library/microsoft.azure.insights.models.aggregationtype.aspx|
+|timeAggregation |für Warnungen des Typs "Metric" |"Average", "Last", "Maximum", "Minimum", "None", "Total" |	Legt fest, wie die erfassten Daten im Zeitverlauf kombiniert werden sollen. Der Standardwert ist "Average". Zulässige Werte: https://msdn.microsoft.com/library/microsoft.azure.insights.models.aggregationtype.aspx|
 |operator |für Warnungen des Typs "Metric" | |Der zum Vergleichen der Daten und des Schwellenwerts verwendete Operator.|
 |subscriptionId |J | |Azure-Abonnement-GUID|
 |ResourceGroupName |J | |Ressourcengruppenname der betroffenen Ressource|
@@ -113,14 +113,14 @@ Informationen zum programmgesteuerten Erstellen von Webhooks finden Sie unter [C
 
 Nach dem Einrichten Ihrer Webhooks und Warnungen können Sie die folgenden Optionen zum Initiieren eines automatisierten Skripts austesten.
 
-[Execute Azure Automation scripts (Runbooks)](http://go.microsoft.com/fwlink/?LinkId=627081) (in englischer Sprache)
+[Execute Azure Automation scripts (Runbooks) (in englischer Sprache)](http://go.microsoft.com/fwlink/?LinkId=627081)
 
 Verwenden Sie Azure-Warnungen zum Senden von Nachrichten an andere Dienste. Zum Einstieg können Sie die folgenden Beispielvorlagen verwenden.
 
-[Use Logic App to send SMS via Twilio API](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-text-message-with-logic-app) (in englischer Sprache)
+[Use Logic App to send SMS via Twilio API (in englischer Sprache)](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-text-message-with-logic-app)
 
-[Use Logic App to send Slack messages](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-slack-with-logic-app) (in englischer Sprache)
+[Use Logic App to send Slack messages (in englischer Sprache)](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-slack-with-logic-app)
 
-[Use Logic App to send messages to an Azure Queue](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-queue-with-logic-app) (in englischer Sprache)
+[Use Logic App to send messages to an Azure Queue (in englischer Sprache)](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-queue-with-logic-app)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

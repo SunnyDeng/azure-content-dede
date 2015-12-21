@@ -36,7 +36,7 @@ Dieser Abschnitt enthält zwei ausführliche Beispiele. Sie zeigen, wie Vorlagen
 
 Das Standardverfahren zum Senden von Pushbenachrichtigungen besteht darin, für jede Benachrichtigung, die gesendet werden soll, eine bestimmte Nutzlast an Plattformbenachrichtigungsdienste (WNS, APNS) zu senden. Beim Senden einer Benachrichtigung an APNS entspricht die Nutzlast z. B. einem Json-Objekt im folgenden Format:
 
-	{“aps”: {“alert” : “Hello!” }}
+	{"aps": {"alert" : "Hello!" }}
 
 Zum Senden einer ähnlichen Popupnachricht für eine Windows Store-Anwendung sieht die XML-Nutzlast wie folgt aus:
 
@@ -61,7 +61,7 @@ Das oben beschriebene Verfahren wird in der folgenden Abbildung veranschaulicht.
 
 Die Vorlage für die Registrierung der iOS-Client-App sieht wie folgt aus:
 
-	{“aps”:{“alert”:”$(message)”}}
+	{"aps": {"alert": "$(message)"}}
 
 Die entsprechende Vorlage für die Windows Store-Client-App entspricht:
 
@@ -151,4 +151,4 @@ Wie oben erläutert, müssen Ausdrücke bei Verwendung der Verkettung in geschwe
 	  </visual>
 	</tile>
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="multiple"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="08/18/2015"
+	ms.date="12/01/2015" 
 	ms.author="wesmc;ricksal"/>
 
 # Problembehandlung beim Mobile Services .NET-Back-End
@@ -68,12 +68,12 @@ Jetzt sind Sie soweit, dass Sie die unterschiedlichen HTTP-APIs erkunden können
 
 Eine der Schlüsselfunktionen des .NET-Back-Ends ist die Möglichkeit, den Dienstcode lokal zu debuggen, aber auch den live in der Cloudumgebung ausgeführten. Folgen Sie diesen Schritten:
 
-1. Öffnen Sie das mobile Dienstprojekt, das Sie debuggen möchten, in **Visual Studio 2013 Update 2** oder neuer.
+1. Öffnen Sie das Mobile Service-Projekt, das Sie debuggen möchten, in **Visual Studio 2013 Update 2** oder einer neueren Version.
 2. Konfigurieren Sie das Laden von Symbolen. Navigieren Sie zum Menü **Debug** und wählen Sie **Optionen und Einstellungen**. Stellen Sie sicher, dass **Nur eigenen Code** nicht aktiviert und **Quellserversupport aktivieren** aktiviert ist.
 
     ![Konfigurieren des Ladens von Symbolen][SymbolLoading]
 
-3. Wählen Sie den Knoten **Symbole** links, und fügen Sie eine Referenz zum (SymbolSource)[http://symbolsource.org]-Server mithilfe der URI [http://srv.symbolsource.org/pdb/Public](http://srv.symbolsource.org/pdb/Public) hinzu. Symbole für das Mobile Services .NET-Back-End werden dort mit jeder neuen Version verfügbar gemacht.
+3. Wählen Sie den Knoten **Symbole** links aus, und fügen Sie eine Referenz zum [SymbolSource](http://srv.symbolsource.org/pdb/Public)-Server mithilfe des URI [http://srv.symbolsource.org/pdb/Public] hinzu. Symbole für das Mobile Services .NET-Back-End werden dort mit jeder neuen Version verfügbar gemacht.
 
     ![Konfigurieren des Symbolservers][SymbolServer]
 
@@ -121,7 +121,7 @@ Dieselben Protokolle sind für Ihren mobilen Dienst auch im klassischen Azure-Po
 
 Wenn Sie Ihren mobilen Dienst auf Azure veröffentlichen, wird er von der Mobile Services-Hostingumgebung geladen. Damit werden reibungslose Upgrades und Patches der HTTP-Pipeline sichergestellt, auf denen Ihr Controllercode gehostet wird. Dazu gehören alle Assemblys, auf die die [.NET-Back-End NuGet-Pakete](http://www.nuget.org/packages?q=%22mobile+services+.net+backend%22) verweisen: Das Team aktualisiert den Dienst fortwährend, sodass die aktuellen Versionen dieser Assemblys verwendet werden.
 
-Es ist manchmal möglich, dass es durch das Verweisen auf *unterschiedliche Hauptversionen* benötigter Assemblys zu Versionskonflikten kommt (unterschiedliche *Nebenversionen* sind zulässig). Das passiert häufig dann, wenn NuGet Sie zum Upgrade auf die neueste Version eines der Pakete auffordert, die vom Mobile Services .NET-Back-End verwendet werden.
+Es ist manchmal möglich, dass es durch das Verweisen auf *unterschiedliche Hauptversionen* benötigter Assemblys zu Versionskonflikten kommt (unterschiedliche *Nebenversionen* sind zulässig). Das passiert häufig dann, wenn NuGet Sie zum Upgrade auf die neueste Version eines der Pakete auffordert, die vom Mobile Services-.NET-Back-End verwendet werden.
 
 >[AZURE.NOTE]Mobile Services ist derzeit nur mit ASP.NET 5.1 kompatibel. ASP.NET 5.2 wird derzeit nicht unterstützt. Ein Upgrade Ihrer ASP.NET NuGet-Pakete auf 5.2.* kann nach der Bereitstellung zu einem Fehler führen.
 
@@ -159,4 +159,8 @@ Migrationen können komplex sein und erfordern, dass der Zustand der Datenbank s
 [LogsPortal]: ./media/mobile-services-dotnet-backend-how-to-troubleshoot/13.png
 [HelpConflict]: ./media/mobile-services-dotnet-backend-how-to-troubleshoot/14.png
 
-<!---HONumber=AcomDC_1203_2015-->
+
+<!-- Links -->
+[http://srv.symbolsource.org/pdb/Public]: http://symbolsource.org
+
+<!---HONumber=AcomDC_1210_2015-->

@@ -37,4 +37,4 @@ Weitere Informationen über das Azure IoT-Protokollgateway und zu dessen Verwend
 * [Repository für das Azure IoT-Protokollgateway auf GitHub](https://github.com/Azure/azure-iot-protocol-gateway/blob/master/README.md)
 * [Entwicklungsleitfaden für das Azure IoT-Protokollgateway](https://github.com/Azure/azure-iot-protocol-gateway/blob/master/docs/DeveloperGuide.md)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1210_2015-->

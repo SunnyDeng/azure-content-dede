@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-xamarin-android"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="09/25/2015"
+	ms.date="12/07/2015"
 	ms.author="donnam"/>
 
 # Verwendung der Offlinedatensynchronisierung in Mobile Services
@@ -176,4 +176,4 @@ In diesem Abschnitt verbinden Sie die App erneut mit dem mobilen Dienst. Dies si
 [NuGet Addin for Xamarin]: https://github.com/mrward/monodevelop-nuget-addin
 [klassischen Azure-Portal]: https://manage.windowsazure.com
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

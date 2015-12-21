@@ -1,5 +1,5 @@
 <properties
-    pageTitle="Best Practices für Azure RemoteApp"
+    pageTitle="Bewährte Methoden für Azure RemoteApp | Microsoft Azure"
     description="Bewährte Methoden zum Konfigurieren und Verwenden von Azure RemoteApp"
     services="remoteapp"
     documentationCenter=""
@@ -12,7 +12,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="08/12/2015" 
+    ms.date="12/05/2015"
     ms.author="elizapo" />
 
 # Bewährte Methoden zum Konfigurieren und Verwenden von Azure RemoteApp
@@ -42,6 +42,5 @@ Die folgenden Informationen sollen Ihnen bei der Konfiguration und der produktiv
 	- Speichern Sie freigegebene Daten an externen Speicherorten (außerhalb des Diensts), wie z. B. in lokalen Dateifreigaben oder auf OneDrive.
 	- Konfigurieren Sie systemweite Einstellungen im Vorlagenimage und nicht auf einzelnen virtuellen Computern in einem Dienst.
 	- Deaktivieren Sie automatische Softwareupdates für veröffentlichte Anwendungen – wenden Sie Updates stattdessen manuell auf das Vorlagenimage an, und testen Sie sie, bevor Sie sie über die Vorlage bereitstellen.
- 
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="11/19/2015"
+   ms.date="12/09/2015"
    ms.author="tomfitz"/>
 
 # Ressourcenverknüpfungen – Vorlagenschema
@@ -75,18 +75,18 @@ Verwenden Sie den folgenden Azure PowerShell-Befehl, um alle Verknüpfungen in I
 Im folgenden Beispiel wird eine Schreibschutzsperre für eine Web-App angewendet.
 
     {
-	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-	"contentVersion": "1.0.0.0",
-	"parameters": {
-		"hostingPlanName": {
-      			"type": "string"
-   		}
-	},
-	"variables": {
-		"siteName": "[concat('site',uniqueString(resourceGroup().id))]"
-	},
-	"resources": [
-	    {
+        "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+        "contentVersion": "1.0.0.0",
+        "parameters": {
+            "hostingPlanName": {
+                "type": "string"
+            }
+        },
+        "variables": {
+            "siteName": "[concat('site',uniqueString(resourceGroup().id))]"
+        },
+        "resources": [
+            {
                 "apiVersion": "2015-08-01",
                 "type": "Microsoft.Web/serverfarms",
                 "name": "[parameters('hostingPlanName')]",
@@ -100,17 +100,17 @@ Im folgenden Beispiel wird eine Schreibschutzsperre für eine Web-App angewendet
                     "numberOfWorkers": 1
                 }
             },
-	    {
+            {
                 "apiVersion": "2015-08-01",
                 "name": "[variables('siteName')]",
                 "type": "Microsoft.Web/sites",
                 "location": "[resourceGroup().location]",
-	        "dependsOn": [ "[parameters('hostingPlanName')]" ],
+                "dependsOn": [ "[parameters('hostingPlanName')]" ],
                 "properties": {
                     "serverFarmId": "[parameters('hostingPlanName')]"
                 }
-	    },
-	    {
+            },
+            {
                 "type": "Microsoft.Web/sites/providers/links",
                 "apiVersion": "2015-01-01",
                 "name": "[concat(variables('siteName'),'/Microsoft.Resources/SiteToStorage')]",
@@ -120,8 +120,8 @@ Im folgenden Beispiel wird eine Schreibschutzsperre für eine Web-App angewendet
                     "notes": "This web site uses the storage account to store user information."
                 }
     	    }
-	],
-	"outputs": {}
+        ],
+        "outputs": {}
     }
 
 
@@ -129,4 +129,4 @@ Im folgenden Beispiel wird eine Schreibschutzsperre für eine Web-App angewendet
 
 - Informationen zur Vorlagenstruktur finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md).
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -54,6 +54,7 @@ In diesem Artikel wird davon ausgegangen, dass Sie über die folgenden Elemente 
 Microsoft Azure unterstützt eine Vielzahl von Linux-Distributionen (siehe [Unterstützte Distributionen](../linux-endorsed-distributions.md)). Die folgenden Artikel führen Sie durch die Vorbereitung der verschiedenen Linux-Verteilungen, die auf Azure unterstützt werden:
 
 - **[CentOS-basierte Verteilungen](virtual-machines-linux-create-upload-vhd-centos.md)**
+- **[Debian Linux](virtual-machines-linux-create-upload-vhd-debian.md)**
 - **[Oracle Linux](virtual-machines-linux-create-upload-vhd-oracle.md)**
 - **[Red Hat Enterprise Linux](virtual-machines-linux-create-upload-vhd-redhat.md)**
 - **[SLES und openSUSE](../virtual-machines-linux-create-upload-vhd-suse)**
@@ -74,7 +75,7 @@ Bevor Sie eine .vhd-Datei hochladen können, müssen Sie eine sichere Verbindung
 
 Mit der neuesten Azure-Befehlszeilenschnittstelle wird standardmäßig das Ressourcen-Manager-Bereitstellungsmodell verwenden. Stellen Sie mit dem folgenden Befehl sicher, dass Sie das klassische Bereitstellungsmodell verwenden:
 
-		azure change mode asm  
+		azure config mode asm  
 
 Stellen Sie als Nächstes mit einer der folgenden Anmeldemethoden die Verbindung zu Ihrem Azure-Abonnement her.
 
@@ -164,11 +165,11 @@ Geben Sie über das Azure PowerShell-Fenster, welches Sie im vorherigen Schritt 
 
 Weitere Informationen hierzu finden Sie unter [Add-AzureVhd](https://msdn.microsoft.com/library/azure/dn495173.aspx).
 
-> [AZURE.NOTE]Mit der [Vorschauversion von Azure Powershell 1.0](https://azure.microsoft.com/blog/azps-1-0-pre/) ändert sich die Art und Weise, wie Cmdlets für das klassische und das Ressourcen-Manager-Bereitstellungsmodell verarbeitet werden, erheblich. In diesem Artikel wird die Vorschauversion noch nicht verwendet.
+> [AZURE.NOTE]Mit der [Vorschauversion von Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0-pre/) ändert sich die Art und Weise, wie Cmdlets für das klassische und das Ressourcen-Manager-Bereitstellungsmodell verarbeitet werden, erheblich. In diesem Artikel wird die Vorschauversion noch nicht verwendet.
 
 
 [Step 1: Prepare the image to be uploaded]: #prepimage
 [Step 2: Prepare the connection to Azure]: #connect
 [Step 3: Upload the image to Azure]: #upload
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

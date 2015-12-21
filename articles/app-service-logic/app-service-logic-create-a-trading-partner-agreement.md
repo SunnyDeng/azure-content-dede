@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Erstellen einer Handelspartnervereinbarung in Microsoft Azure App Service" 
+   pageTitle="Erstellen einer Handelspartnervereinbarung in Azure App Service | Microsoft Azure" 
    description="Erstellen von Handelspartnervereinbarungen" 
    services="app-service\logic" 
    documentationCenter=".net,nodejs,java" 
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration" 
-   ms.date="10/01/2015"
+   ms.date="12/07/2015"
    ms.author="rajram"/>
 
 
@@ -73,9 +73,9 @@ So erstellen Sie Handelspartnervereinbarungen:
 ![][3]
 
 <!--Image references-->
-[1]: ./media/app-service-logic-create-a-trading-partner-agreement/TPMResourceView.jpg
-[2]: ./media/app-service-logic-create-a-trading-partner-agreement/ProtocolSelection.jpg
-[3]: ./media/app-service-logic-create-a-trading-partner-agreement/X12AgreementCreation.jpg
+[1]: ./media/app-service-logic-create-a-trading-partner-agreement/TPMResourceView.png
+[2]: ./media/app-service-logic-create-a-trading-partner-agreement/ProtocolSelection.png
+[3]: ./media/app-service-logic-create-a-trading-partner-agreement/X12AgreementCreation.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

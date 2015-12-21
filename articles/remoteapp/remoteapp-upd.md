@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="article" 
-    ms.date="10/28/2015" 
+    ms.date="12/04/2015" 
     ms.author="elizapo" />
 
 
@@ -27,6 +27,9 @@ Benutzerprofil-Datenträger sind für den Benutzer vollständig transparent – 
 Jeder Benutzerprofil-Datenträger verfügt über 50 GB permanenten Speicher und enthält sowohl Benutzerdaten als auch Anwendungseinstellungen.
 
 Lesen Sie weiter, um mehr über die Besonderheiten von Benutzerprofildaten zu erfahren.
+
+>[AZURE.NOTE]Müssen Sie den Benutzerprofil-Datenträger (User Profile Disks,UPD) deaktivieren? Dies ist nun möglich. Die Details dazu finden Sie im Blogbeitrag von Pavithra [Disable User Profile Disks (UPDs) in Azure RemoteApp](http://blogs.msdn.com/b/rds/archive/2015/11/11/disable-user-profile-disks-upds-in-azure-remoteapp.aspx).
+
 
 ## Wie kann ein Administrator auf die Daten zugreifen?
 
@@ -46,6 +49,8 @@ Jeder Benutzer hat sein eigenes Verzeichnis auf dem Server, das dem Benutzerprof
 Azure RemoteApp speichert den Outlook-Zustand (Postfächer, PSTs) zwischen den Sitzungen. Um dies zu ermöglichen, müssen PSTs in den Benutzerprofildaten gespeichert werden (c:\\users<Benutzername>). Dies ist der Standardspeicherort für die Daten, und so lange dieser Speicherort nicht geändert wird, werden die Daten zwischen den Sitzungen beibehalten.
 
 Außerdem wird empfohlen, dass Sie den "Cache"-Modus in Outlook und den "Server/online"-Modus für die Suche verwenden.
+
+[In diesem Artikel](remoteapp-outlook.md) finden Sie weitere Informationen zur Verwendung von Outlook und Azure RemoteApp.
 
 ## Können Lösungen für freigegebene Daten genutzt werden?
 Ja, Azure RemoteApp unterstützt Lösungen für freigegebene Daten, insbesondere OneDrive for Business und Dropbox. Beachten Sie jedoch, dass OneDrive Consumer (persönliche Version) und Box nicht unterstützt werden.
@@ -76,6 +81,14 @@ Ja. Alles, was in „HKEY\_Current\_User“ geschrieben ist, ist Teil des Benutz
 ## Kann ich Benutzerprofil-Datenträger für eine Sammlung deaktivieren?
 
 Ja, Sie können das Azure RemoteApp-Team darum bitten, Benutzerprofil-Datenträger für ein Abonnement zu löschen. Sie können dies nicht selbst tun. Das bedeutet, dass Benutzerprofil-Datenträger für alle Sammlungen im Abonnement deaktiviert werden.
+
+In den folgenden Situationen möchten Sie Benutzerprofil-Datenträger möglicherweise deaktivieren:
+
+- Sie benötigen Vollzugriff auf und Kontrolle über Benutzerdaten (z. B. zu Überwachungs- und Prüfzwecken bei Finanzinstituten).
+- Sie verfügen über lokale Lösungen zur Benutzerprofilverwaltung, die Sie in Ihrer in die Domäne eingebundenen Azure RemoteApp-Bereitstellung weiter nutzen möchten. Dazu muss der Profil-Agent in das Gold-Image geladen werden. 
+- Sie benötigen keinen lokalen Datenspeicher oder haben alle Daten in die Cloud (z. B. OneDrive for Business) oder eine Dateifreigabe verlagert und möchten das lokale Speichern von Daten mit Azure RemoteApp steuern.
+
+Weitere Informationen finden Sie unter [Deaktivieren von Benutzerprofil-Datenträgern (UPDs) in Azure RemoteApp](http://blogs.msdn.com/b/rds/archive/2015/11/11/disable-user-profile-disks-upds-in-azure-remoteapp.aspx).
 
 ## Kann ich verhindern, dass Benutzer Daten auf dem Systemlaufwerk speichern?
 
@@ -126,4 +139,4 @@ Nein, dies wird von Azure RemoteApp nicht unterstützt, da der RDSH genutzt wird
 
 Nein, dies wird von Azure RemoteApp nicht unterstützt.
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1210_2015-->

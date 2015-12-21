@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/12/2015"
+   ms.date="12/02/2015"
    ms.author="joaoma" />
 
 # Problembehandlung beim Status "Heruntergestuft" in Traffic Manager
@@ -80,4 +80,4 @@ Wenn bei dem Test das HTTPs-Protokoll verwendet wird, sollten Sie in Wget den Pa
 [Azure Traffic Manager-Cmdlets](http://go.microsoft.com/fwlink/p/?LinkId=400769)
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1210_2015-->

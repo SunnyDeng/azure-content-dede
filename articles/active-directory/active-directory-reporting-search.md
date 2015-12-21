@@ -13,21 +13,12 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="identity"
-	ms.date="11/30/2015"
+	ms.date="12/07/2015"
 	ms.author="kenhoff"/>
 
 # Suche in Azure Active Directory-Berichten
 
-## Artikel in der Azure AD Reporting-Dokumentation
-
- - [Reporting-API](active-directory-reporting-api-getting-started.md)
- - [Überwachungsereignisse](active-directory-reporting-audit-events.md)
- - [Aufbewahrung](active-directory-reporting-retention.md)
- - [Vorschau](active-directory-reporting-previews.md)
- - [Suche](active-directory-reporting-search.md)
- - [Abgleich](active-directory-reporting-backfill.md)
- - [Wartezeiten](active-directory-reporting-latencies.md)
- - [Ereignis „Unbekannter Akteur“](active-directory-reporting-unknown-actor.md)
+*Diese Dokumentation ist Teil des [Handbuchs für Azure Active Directory Reporting](active-directory-reporting-guide.md).*
 
 Azure Active Directory bietet Verzeichnisadministratoren die Möglichkeit, in mehreren Berichten nach Benutzersicherheit, Aktivität und Überwachungsereignissen zu suchen.
 
@@ -67,4 +58,4 @@ Nutzung von RMS-Geräten | Nein
  - [Azure Active Directory-Berichte](active-directory-view-access-usage-reports.md)
  - [Azure Active Directory-Überwachungsberichtsereignisse](active-directory-reporting-audit-events.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

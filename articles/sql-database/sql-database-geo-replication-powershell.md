@@ -38,10 +38,7 @@ Zum Konfigurieren der Georeplikation benötigen Sie Folgendes:
 
 - Ein Azure-Abonnement. Wenn Sie ein Azure-Abonnement benötigen, müssen Sie lediglich oben auf dieser Seite auf den Link **Kostenlose Testversion** klicken. Lesen Sie anschließend den Artikel weiter.
 - Eine Azure SQL-Datenbank: Die primäre Datenbank, die in eine andere geografische Region repliziert werden soll.
-- Vorschau für Azure PowerShell 1.0: Sie können die Azure-PowerShell-Module herunterladen und installieren, indem Sie Anweisungen unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md) befolgen.
-
-> [AZURE.IMPORTANT]Ab Veröffentlichung von Azure PowerShell 1.0 Preview ist das Cmdlet "Switch-AzureMode" nicht mehr verfügbar. Außerdem wurden die Cmdlets im Modul "Azure-Ressourcen-Manager" umbenannt. In den Beispielen in diesem Artikel wird die neue Benennungskonvention von PowerShell 1.0 Preview verwendet. Ausführliche Informationen finden Sie unter ["Switch-AzureMode" in Azure PowerShell veraltet](https://github.com/Azure/azure-powershell/wiki/Deprecation-of-Switch-AzureMode-in-Azure-PowerShell).
-
+- Azure PowerShell 1.0 oder höher Sie können die Azure-PowerShell-Module herunterladen und installieren, indem Sie Anweisungen unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md) befolgen.
 
 
 
@@ -58,11 +55,11 @@ Nach der erfolgreichen Anmeldung werden einige Informationen auf dem Bildschirm 
 
 ### Auswählen des Azure-Abonnements
 
-Zum Auswählen des Abonnements benötigen Sie Ihre Abonnement-ID. Sie können die Abonnement-ID aus den Informationen im vorherigen Schritt kopieren. Falls Sie über mehrere Abonnements verfügen und mehr Details benötigen, können Sie auch das **Get-AzureRmSubscription**-Cmdlet ausführen und die gewünschten Abonnementinformationen aus dem Resultset kopieren. Das folgende Cmdlet verwendet die Abonnement-ID, um das aktuelle Abonnement festzulegen:
+Zum Auswählen des Abonnements benötigen Sie Ihre Abonnement-ID. Sie können die Abonnement-ID aus den Informationen im vorherigen Schritt kopieren. Falls Sie über mehrere Abonnements verfügen und mehr Details benötigen, können Sie auch das Cmdlet **Get-AzureRmSubscription** ausführen und die gewünschten Abonnementinformationen aus dem Resultset kopieren. Das folgende Cmdlet verwendet die Abonnement-ID, um das aktuelle Abonnement festzulegen:
 
 	Select-AzureRmSubscription -SubscriptionId 4cac86b0-1e56-bbbb-aaaa-000000000000
 
-Nach dem erfolgreichen Ausführen von **Select-AzureRMSubscription** kehren Sie zur PowerShell-Eingabeaufforderung zurück.
+Nach dem erfolgreichen Ausführen von **Select-AzureRmSubscription** kehren Sie zur PowerShell-Eingabeaufforderung zurück.
 
 
 
@@ -73,11 +70,11 @@ Mit den folgenden Schritten wird eine neue sekundäre Datenbank in einer Partner
   
 Zum Aktivieren einer sekundären Datenbank müssen Sie der Besitzer oder Mitbesitzer des Abonnements sein.
 
-Sie können das **New-AzureRmSqlDatabaseSecondary** Cmdlet nutzen, um eine sekundäre Datenbank auf einem Partnerserver in einer lokalen Datenbank auf dem Server hinzuzufügen, mit dem Sie verbunden sind (die primäre Datenbank).
+Sie können das Cmdlet **New-AzureRmSqlDatabaseSecondary** nutzen, um eine sekundäre Datenbank auf einem Partnerserver in einer lokalen Datenbank auf dem Server hinzuzufügen, mit dem Sie verbunden sind (die primäre Datenbank).
 
-Dieses Cmdlet ersetzt **Start AzureSqlDatabaseCopy** durch den **-IsContinuous**-Parameter. Es gibt ein **AzureRmSqlDatabaseSecondary**-Objekt aus, das von anderen Cmdlets für die eindeutige Bezeichnung einer bestimmten Replikationsverknüpfung verwendet werden kann. Dieses Cmdlet wird zurückgegeben, wenn die sekundäre Datenbank erstellt wurde und das Seeding erfolgt ist Je nach Größe der Datenbank liegt der Zeitaufwand zwischen wenigen Minuten und mehreren Stunden.
+Dieses Cmdlet ersetzt **Start AzureSqlDatabaseCopy** durch den **–IsContinuous**-Parameter. Es gibt ein **AzureRmSqlDatabaseSecondary**-Objekt aus, das von anderen Cmdlets für die eindeutige Bezeichnung einer bestimmten Replikationsverknüpfung verwendet werden kann. Dieses Cmdlet wird zurückgegeben, wenn die sekundäre Datenbank erstellt wurde und das Seeding erfolgt ist Je nach Größe der Datenbank liegt der Zeitaufwand zwischen wenigen Minuten und mehreren Stunden.
 
-Die replizierte Datenbank auf dem zweiten Server hat den gleichen Namen wie die primäre Datenbank und standardmäßig auch die gleiche Dienstebene. Die sekundäre Datenbank kann lesbar oder nicht lesbar und eine Einzeldatenbank oder eine elastische Datenbank sein. Weitere Informationen finden Sie unter [New-AzureRMSqlDatabaseSecondary](https://msdn.microsoft.com/library/mt603689.aspx) und [Dienstebenen](sql-database-service-tiers.md). Nachdem die sekundäre Datenbank erstellt und das Seeding ausgeführt wurde, beginnt die Replikation der Daten von der primären Datenbank in die neue sekundäre Datenbank. Nachfolgend erfahren Sie, wie Sie mithilfe von PowerShell nicht lesbare und lesbare sekundäre Datenbanken erstellen – mit einer Einzeldatenbank oder einer elastischen Datenbank.
+Die replizierte Datenbank auf dem zweiten Server hat den gleichen Namen wie die primäre Datenbank und standardmäßig auch die gleiche Dienstebene. Die sekundäre Datenbank kann lesbar oder nicht lesbar und eine Einzeldatenbank oder eine elastische Datenbank sein. Weitere Informationen finden Sie unter [New-AzureRMSqlDatabaseSecondary](https://msdn.microsoft.com/library/mt603689.aspx) und [Tarife](sql-database-service-tiers.md). Nachdem die sekundäre Datenbank erstellt und das Seeding ausgeführt wurde, beginnt die Replikation der Daten von der primären Datenbank in die neue sekundäre Datenbank. Nachfolgend erfahren Sie, wie Sie mithilfe von PowerShell nicht lesbare und lesbare sekundäre Datenbanken erstellen – mit einer Einzeldatenbank oder einer elastischen Datenbank.
 
 Wenn die Partnerdatenbank bereits vorhanden ist (z. B. aufgrund der Beendigung einer vorherigen Georeplikationsbeziehung), tritt für den Befehl ein Fehler auf.
 
@@ -123,7 +120,7 @@ Mit dem folgenden Befehl erstellen Sie eine lesbare sekundäre Datenbank der „
 
 ## Entfernen einer sekundären Datenbank
 
-Mit dem **Remove-AzureRmSqlDatabaseSecondary**-Cmdlet können Sie die Replikationspartnerschaft zwischen einer sekundären Datenbank und ihrer primären Datenbank dauerhaft beenden. Nach dem Beenden der Beziehung wird die sekundäre Datenbank eine Datenbank mit Lese-/Schreibzugriff. Wenn die Verbindung mit der sekundären Datenbank unterbrochen wird, ist der Befehl zwar erfolgreich, aber die sekundäre Datenbank wird erst mit Lese-/ Schreibzugriff versehen, nachdem die Verbindung wiederhergestellt wurde. Weitere Informationen finden Sie unter [Remove-AzureRmSqlDatabaseSecondary](https://msdn.microsoft.com/library/mt603457.aspx) und [Dienstebenen](sql-database-service-tiers.md).
+Mit dem Cmdlet **Remove-AzureRmSqlDatabaseSecondary** können Sie die Replikationspartnerschaft zwischen einer sekundären Datenbank und ihrer primären Datenbank dauerhaft beenden. Nach dem Beenden der Beziehung wird die sekundäre Datenbank eine Datenbank mit Lese-/Schreibzugriff. Wenn die Verbindung mit der sekundären Datenbank unterbrochen wird, ist der Befehl zwar erfolgreich, aber die sekundäre Datenbank wird erst mit Lese-/ Schreibzugriff versehen, nachdem die Verbindung wiederhergestellt wurde. Weitere Informationen finden Sie unter [Remove-AzureRmSqlDatabaseSecondary](https://msdn.microsoft.com/library/mt603457.aspx) und [Tarife](sql-database-service-tiers.md).
 
 Dieses Cmdlet ersetzt „Stop-AzureSqlDatabaseCopy“ für die Replikation.
 
@@ -143,7 +140,7 @@ Mit dem folgenden Code entfernen Sie die Replikationsverknüpfung der „mydb“
 
 ## Initiieren eines geplanten Failovers
 
-Mit dem **Set-AzureRmSqlDatabaseSecondary**-Cmdlet und dem **-Failover**-Parameter können Sie eine sekundäre Datenbank zur neuen primären Datenbank heraufstufen und die vorhandene primäre Datenbank zu einer sekundären Datenbank herabstufen. Diese Funktionalität ist auf ein geplantes Failover ausgelegt, z. B. bei Notfallwiederherstellungsverfahren, und erfordert, dass die primäre Datenbank verfügbar ist.
+Mit dem Cmdlet **Set-AzureRmSqlDatabaseSecondary** und dem **-Failover**-Parameter können Sie eine sekundäre Datenbank zur neuen primären Datenbank heraufstufen und die vorhandene primäre Datenbank zu einer sekundären Datenbank herabstufen. Diese Funktionalität ist auf ein geplantes Failover ausgelegt, z. B. bei Notfallwiederherstellungsverfahren, und erfordert, dass die primäre Datenbank verfügbar ist.
 
 Der Befehl hat den folgenden Workflow:
 
@@ -151,7 +148,7 @@ Der Befehl hat den folgenden Workflow:
 
 2. Vertauschen Sie die Rollen der beiden Datenbanken in der Georeplikationspartnerschaft.
 
-Durch diese Abfolge wird sichergestellt, dass kein Datenverlust auftritt. Es gibt einen kurzer Zeitraum, in dem beide Datenbanken während des Rollenwechsels (ca. 0 bis 25 Sekunden) nicht verfügbar sind. Unter normalen Umständen dauert der gesamte Vorgang nicht länger als 1 Minute. Weitere Informationen finden Sie unter [Set AzureRmSqlDatabaseSecondary](https://msdn.microsoft.com/library/mt619393.aspx).
+Durch diese Abfolge wird sichergestellt, dass kein Datenverlust auftritt. Es gibt einen kurzer Zeitraum, in dem beide Datenbanken während des Rollenwechsels (ca. 0 bis 25 Sekunden) nicht verfügbar sind. Unter normalen Umständen dauert der gesamte Vorgang nicht länger als 1 Minute. Weitere Informationen finden Sie unter [Set- AzureRmSqlDatabaseSecondary](https://msdn.microsoft.com/library/mt619393.aspx).
 
 
 > [AZURE.NOTE]Falls die primäre Datenbank bei Aufruf des Befehls nicht verfügbar ist, misslingt dieser mit der Fehlermeldung, dass der primäre Server nicht verfügbar ist. In seltenen Fällen ist es möglich, dass der Vorgang nicht abgeschlossen werden kann und festzustecken scheint. In diesem Fall kann der Benutzer den Befehl zum Erzwingen des Failovers (ungeplantes Failover) aufrufen und den Datenverlust akzeptieren.
@@ -170,7 +167,7 @@ Mit dem folgenden Befehl werden die Rollen der „mydb“-Datenbank auf dem Serv
 ## Auslösen eines ungeplanten Failovers von der primären Datenbank zur sekundären Datenbank
 
 
-Mit dem **Set-AzureRmSqlDatabaseSecondary**-Cmdlet mit **–Failover**- und **-AllowDataLoss**-Parametern können Sie eine sekundäre Datenbank auf ungeplante Weise zur neuen primären Datenbank heraufstufen und das Herabstufen der vorhandenen primären Datenbank zu einer sekundären Datenbank erzwingen, sobald die primäre Datenbank nicht mehr verfügbar ist.
+Mit dem Cmdlet **Set-AzureRmSqlDatabaseSecondary** mit den Parametern **-Failover** und **-AllowDataLoss** können Sie eine sekundäre Datenbank auf ungeplante Weise zur neuen primären Datenbank heraufstufen und das Herabstufen der vorhandenen primären Datenbank zu einer sekundären Datenbank erzwingen, sobald die primäre Datenbank nicht mehr verfügbar ist.
 
 Diese Funktion dient zur Notfallwiederherstellung, wenn das Wiederherstellen der Verfügbarkeit der Datenbank überaus wichtig und ein gewisser Datenverlust akzeptabel ist. Beim Auslösen eines erzwungenen Failovers wird die angegebene sekundäre Datenbank sofort zur primären Datenbank und beginnt mit dem Akzeptieren von Schreibtransaktionen. Sobald sich die ursprüngliche primäre Datenbank wieder mit dieser neuen primären Datenbank verbinden kann, wird eine inkrementelle Sicherung der ursprünglichen Datenbank erstellt. Die alte primäre Datenbank wird zu einer sekundären Datenbank der neuen primären Datenbank. Anschließend ist sie lediglich ein Replikat der neuen primären Datenbank.
 
@@ -193,7 +190,7 @@ Mit dem folgenden Befehl tauschen Sie die Rollen der „mydb“-Datenbank, wenn 
 
 Zu den Überwachungsaufgaben gehören die Überwachung der Konfiguration der Georeplikation und der Integrität der Datenreplikation.
 
-[Get-AzureRmSqlDatabaseReplicationLink](https://msdn.microsoft.com/library/mt619330.aspx) kann verwendet werden, um die Informationen zu den forward-Replikationsverknüpfungen in der Katalogsicht „sys.geo\_replication\_links“ abzurufen.
+[Get-AzureRmSqlDatabaseReplicationLink](https://msdn.microsoft.com/library/mt619330.aspx) kann verwendet werden, um die Informationen zu den „forward“-Replikationsverknüpfungen in der Katalogsicht „sys.geo\_replication\_links“ abzurufen.
 
 Der folgende Befehl ruft den Status der Replikationsverknüpfung zwischen der primären „mydb“-Datenbank und der sekundären Datenbank auf Server „srv2“ von der Ressourcengruppe „rg2“ auf.
 
@@ -218,4 +215,4 @@ Der folgende Befehl ruft den Status der Replikationsverknüpfung zwischen der pr
 - [Übersicht über die Geschäftskontinuität](sql-database-business-continuity.md)
 - [SQL-Datenbankdokumentation](https://azure.microsoft.com/documentation/services/sql-database/)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

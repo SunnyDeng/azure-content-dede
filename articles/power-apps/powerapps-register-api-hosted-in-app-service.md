@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na" 
-   ms.date="11/25/2015"
+   ms.date="12/09/2015"
    ms.author="guayan"/>
 
 # Registrieren einer in Ihrer App Service-Umgebung gehosteten API
@@ -27,11 +27,11 @@ Wenn Sie Ihre APIs in Ihrer App Service-Umgebung hosten, können Sie alle vorhan
 
 Um diese APIs in Ihren Apps zu verwenden, müssen Sie die APIs im Azure-Portal „registrieren“. Folgende Optionen sind verfügbar:
 
-- Registrieren einer [Microsoft-verwalteten API oder einer IT-verwalteten API](powerapps-register-from-available-apis.md)
-- Registrieren einer in Ihrer App Service-Umgebung gehosteten API
-- Registrieren mithilfe einer [Swagger 2.0-API-Definition](powerapps-register-existing-api-from-api-definition.md)
+- Registrieren einer vorgefertigten [Microsoft-verwalteten API oder einer IT-verwalteten API](powerapps-register-from-available-apis.md)
+- Registrieren einer Web-App, einer API-App und einer mobilen App, die in Ihrer App Service-Umgebung gehostet werden (in diesem Thema)
+- Registrieren eigener Swagger-APIs mit einer [Swagger 2.0-API-Definition](powerapps-register-existing-api-from-api-definition.md)
 
-In diesem Artikel wird erläutert, wie Sie **eine in Ihrer App Service-Umgebung gehostete API registrieren**.
+In diesem Artikel wird das **Registrieren einer Web-App, einer API-App und einer mobilen App, die in Ihrer App Service-Umgebung gehostet werden,** beschrieben.
 
 #### Voraussetzungen für den Einstieg
 
@@ -67,8 +67,9 @@ Nachdem die API in Ihrer APP Service-Umgebung bereitgestellt wurde, führen Sie 
 ## Zusammenfassung und nächste Schritte
 In diesem Thema wurde erläutert, wie Sie eine in Ihrer App Service-Umgebung gehostete API registrieren. In den folgenden Themen und Ressourcen finden Sie weitere Informationen zu PowerApps:
 
-- [Konfigurieren von APIs](../powerapps-configure-apis.md)
-- [Hinzufügen einer neuen API](../powerapps-register-from-available-apis.md)
+- [Konfigurieren der API-Eigenschaften](powerapps-configure-apis.md)
+- [Einrichten des Zugriffs für Benutzer auf die APIs](powerapps-manage-api-connection-user-access.md)
+- [Erstellen eigener Apps in PowerApps](https://powerapps.microsoft.com/tutorials/)
 
 <!--Reference-->
 [11]: ./media/powerapps-register-api-hosted-in-app-service/registered-apis-part.png
@@ -76,4 +77,4 @@ In diesem Thema wurde erläutert, wie Sie eine in Ihrer App Service-Umgebung geh
 [13]: ./media/powerapps-register-api-hosted-in-app-service/add-api-blade.png
 [14]: ./media/powerapps-register-api-hosted-in-app-service/add-api-select-from-ase.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

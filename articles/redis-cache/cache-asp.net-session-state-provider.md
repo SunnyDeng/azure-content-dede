@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="cache-redis"
    ms.workload="tbd"
-   ms.date="10/23/2015"
+   ms.date="12/03/2015"
    ms.author="sdanie" />
 
 # ASP.NET-Sitzungszustandsanbieter für Azure Redis Cache
@@ -29,7 +29,7 @@ Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Proj
 
 Geben Sie **RedisSessionStateProvider** in das Textfeld „Online-Suche“ ein, wählen Sie in den Suchergebnissen das Paket aus, und klicken Sie auf „Installieren“.
 
->[AZURE.IMPORTANT]Wenn Sie das Clusteringfeature aus dem Premium-Tarif verwenden, müssen Sie [RedisSessionStateProvider](https://www.nuget.org/packages/Microsoft.Web.RedisSessionStateProvider) 2.0.0 oder höher verwenden. Andernfalls wird eine Ausnahme ausgelöst. Dies ist eine tiefgreifende Änderung. Weitere Informationen finden Sie unter [v2.0.0 Breaking Change Details](https://github.com/Azure/aspnet-redis-providers/wiki/v2.0.0-Breaking-Change-Details) (in englischer Sprache).
+>[AZURE.IMPORTANT]Wenn Sie das Clusteringfeature aus dem Premium-Tarif verwenden, müssen Sie [RedisSessionStateProvider](https://www.nuget.org/packages/Microsoft.Web.RedisSessionStateProvider) 2.0.0 oder höher verwenden. Andernfalls wird eine Ausnahme ausgelöst. Dies ist eine unterbrechende Änderung. Weitere Informationen finden Sie unter [v2.0.0 Breaking Change Details](https://github.com/Azure/aspnet-redis-providers/wiki/v2.0.0-Breaking-Change-Details) (in englischer Sprache).
 
 ![Azure Redis Cache – Sitzungszustandsanbieter](./media/cache-asp.net-session-state-provider/IC751730.png)
 
@@ -57,9 +57,9 @@ Das NuGet-Paket wird heruntergeladen und fügt die benötigten Assemblyverweise 
         </providers>
     </sessionState>
 
-Im kommentierten Bereich finden Sie Beispiele für die Attribute sowie Beispieleinstellungen für jedes Attribut.
+Im kommentierten Bereich finden Sie Beispiele der Attribute sowie Beispieleinstellungen für jedes Attribut.
 
-Konfigurieren Sie die Attribute mit den Werten aus dem Blatt „Cache“ im Microsoft Azure-Vorschauportal, und konfigurieren Sie die restlichen Werte wie gewünscht. Anweisungen zum Zugreifen auf die Cacheeigenschaften finden Sie unter [Konfigurieren von Redis-Cacheeinstellungen](cache-configure.md#configure-redis-cache-settings).
+Konfigurieren Sie die Attribute mit den Werten aus dem Blatt „Cache“ im Microsoft Azure-Portal, und konfigurieren Sie die restlichen Werte wie gewünscht. Anweisungen zum Zugreifen auf die Cacheeigenschaften finden Sie unter [Konfigurieren von Redis-Cacheeinstellungen](cache-configure.md#configure-redis-cache-settings).
 
 -	**host**: Geben Sie den Cacheendpunkt an.
 -	**port**: Verwenden Sie abhängig von Ihren SSL-Einstellungen entweder den Nicht-SSL-Port oder den SSL-Port.
@@ -70,8 +70,8 @@ Konfigurieren Sie die Attribute mit den Werten aus dem Blatt „Cache“ im Micr
 -	**retryTimeoutInMilliseconds**: Bei Fehlern werden Vorgänge für diese Zeitspanne wiederholt (angegeben in Millisekunden). Die erste Wiederholung erfolgt nach 20 Millisekunden. Danach wird die Wiederholung jede Sekunde durchgeführt, bis die in „retryTimeoutInMilliseconds“ angegebene Zeitspanne abgelaufen ist. Unmittelbar nach dieser Zeitspanne wird der Vorgang ein letztes Mal wiederholt. Wenn dann immer noch ein Fehler bei dem Vorgang auftritt, wird der aufrufenden Funktion eine Ausnahme zurückgegeben, abhängig von der Einstellung für „throwOnError“. Der Standardwert lautet 0. Das heißt: keine Wiederholungen.
 -	**databaseId**: Gibt an, welche Datenbank für die Cacheausgabedaten verwendet werden soll. Wenn Sie hier nichts angeben, wird der Standardwert 0 verwendet.
 -	**applicationName**: Schlüssel werden in Redis als `{<Application Name>_<Session ID>}_Data` gespeichert. Dadurch wird es möglich, dass mehrere Anwendungen denselben Schlüssel gemeinsam nutzen. Dieser Parameter ist optional, und wenn Sie ihn nicht angeben, wird der Standardwert verwendet.
--	**connectionTimeoutInMilliseconds**: Diese Einstellung ermöglicht es Ihnen, die connectTimeout-Einstellung im StackExchange.Redis-Client zu überschreiben. Wenn Sie sie nicht angegeben, wird die connectTimeout-Standardeinstellung „5000“ verwendet. Weitere Informationen finden Sie unter [StackExchange.Redis-Konfigurationsmodell](http://go.microsoft.com/fwlink/?LinkId=398705).
--	**operationTimeoutInMilliseconds**: Diese Einstellung ermöglicht es Ihnen, die syncTimeout-Einstellung im StackExchange.Redis-Client zu überschreiben. Wenn Sie sie nicht angegeben, wird die syncTimeout-Standardeinstellung „1000“ verwendet. Weitere Informationen finden Sie unter [StackExchange.Redis-Konfigurationsmodell](http://go.microsoft.com/fwlink/?LinkId=398705).
+-	**connectionTimeoutInMilliseconds**: Diese Einstellung ermöglicht Ihnen, die connectTimeout-Einstellung im StackExchange.Redis-Client zu überschreiben. Wenn Sie sie nicht angegeben, wird die connectTimeout-Standardeinstellung „5000“ verwendet. Weitere Informationen finden Sie unter [StackExchange.Redis-Konfigurationsmodell](http://go.microsoft.com/fwlink/?LinkId=398705).
+-	**operationTimeoutInMilliseconds**: Diese Einstellung ermöglicht Ihnen, die syncTimeout-Einstellung im StackExchange.Redis-Client zu überschreiben. Wenn Sie sie nicht angegeben, wird die syncTimeout-Standardeinstellung „1000“ verwendet. Weitere Informationen finden Sie unter [StackExchange.Redis-Konfigurationsmodell](http://go.microsoft.com/fwlink/?LinkId=398705).
 							
 Weitere Informationen über diese Eigenschaften finden Sie im Blogbeitrag mit der ursprünglichen Ankündigung: [Announcing ASP.NET Session State Provider for Redis](http://blogs.msdn.com/b/webdev/archive/2014/05/12/announcing-asp-net-session-state-provider-for-redis-preview-release.aspx) (in englischer Sprache).
 
@@ -96,7 +96,7 @@ Nach Abschluss dieser Schritte ist Ihre Anwendung für die Verwendung des Redis 
 
 - In-Memory-Sitzungszustandsanbieter: Dieser Anbieter speichert den Sitzungszustand im Arbeitsspeicher. Der Vorteil bei diesem Anbieter ist, dass er einfach und schnell ist. Wenn Sie einen In-Memory-Anbieter verwenden, können Sie jedoch Ihre Web-Apps nicht skalieren, denn dieser Anbieter ist nicht verteilt.
 
-- SQL-Server-Sitzungszustandsanbieter: Dieser Anbieter speichert den Sitzungszustand in SQL Server. Sie sollten diesen Anbieter verwenden, wenn der Sitzungszustand in einem permanenten Speicher beibehalten werden soll. Sie können Ihre Web-App skalieren, aber die Verwendung von SQL Server für den Sitzungszustand hat Auswirkungen auf die Leistung Ihrer Web-App.
+- SQL Server-Sitzungszustandsanbieter: Dieser Anbieter speichert den Sitzungszustand in SQL Server. Sie sollten diesen Anbieter verwenden, wenn der Sitzungszustand in einem permanenten Speicher beibehalten werden soll. Sie können Ihre Web-App skalieren, aber die Verwendung von SQL Server für den Sitzungszustand hat Auswirkungen auf die Leistung Ihrer Web-App.
 
 - Verteilter In-Memory-Sitzungszustandsanbieter wie z. B. Redis Cache-Sitzungszustandsanbieter: Dieser Anbieter bietet Ihnen das Beste aus beiden Welten. Ihre Web-App kann einen einfachen, schnellen und skalierbaren Sitzungszustandsanbieter erhalten. Sie müssen dabei jedoch beachten, dass dieser Anbieter den Sitzungszustand in einem Cache speichert. Ihre App muss daher so ausgelegt sein, dass die besonderen Merkmale bei der Kommunikation mit einem verteilten In-Memory-Cache berücksichtigt werden, z. B. kurze Netzwerkausfälle. Bewährte Verfahren zum Verwenden des Caches finden Sie unter [Caching Guidance](https://github.com/mspnp/azure-guidance/blob/master/Caching.md) (in englischer Sprache, aus Microsoft Patterns & Practices, [Azure Cloud Application Design and Implementation Guidance](https://github.com/mspnp/azure-guidance)).
 
@@ -104,6 +104,6 @@ Weitere Information über das Thema Sitzungszustand und andere bewährte Verfahr
 
 ## Nächste Schritte
 
-Lesen Sie die Seite [ASP.NET-Ausgabecacheanbieter für Azure Redis Cache](cache-asp.net-output-cache-provider.md).
+Lesen Sie [ASP.NET-Ausgabecacheanbieter für Azure Redis Cache](cache-asp.net-output-cache-provider.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1210_2015-->

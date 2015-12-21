@@ -41,7 +41,7 @@ Um für eine REST-Schnittstelle das Übermitteln von Aufträgen an den Cluster p
 
 Ausführliche Verfahren finden Sie unter [Installieren der Microsoft HPC Pack-Webkomponenten](http://technet.microsoft.com/library/hh314627.aspx).
 
->[AZURE.TIP]Wenn Sie zum Erstellen des Clusters eine automatisierte Methode nutzen, z. B. das [HPC Pack-IaaS-Bereitstellungsskript](virtual-machines-hpcpack-cluster-powershell-script.md), können Sie die Webkomponenten optional als Teil der Bereitstellung installieren und konfigurieren.
+>[AZURE.TIP]Wenn Sie zum Erstellen des Clusters das [HPC Pack-IaaS-Bereitstellungsskript](virtual-machines-hpcpack-cluster-powershell-script.md) verwenden, können Sie die Webkomponenten optional als Teil der Bereitstellung installieren und konfigurieren.
 
 **So installieren Sie die Webkomponenten**
 
@@ -79,12 +79,12 @@ Ausführliche Verfahren finden Sie unter [Installieren der Microsoft HPC Pack-We
 
     ```
     net stop hpcscheduler
-net start hpcscheduler
+    net start hpcscheduler
     ```
 
 ## Schritt 2: Installieren der HPC Pack-Clienthilfsprogramme auf einem lokalen Computer
 
-Falls Sie dies nicht bereits getan haben, laden Sie eine kompatible Version von HPC Pack-Setupdateien aus dem [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=328024) auf den Clientcomputer herunter, und wählen Sie die Setupoption für die HPC Pack-Clienthilfsprogramme.
+Falls Sie dies nicht bereits getan haben, laden Sie eine kompatible Version von HPC Pack-Setupdateien aus dem [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=328024) auf den Clientcomputer herunter. Wenn Sie die Installation starten, wählen Sie die Setupoption für die HPC Pack-Clienthilfsprogramme aus.
 
 Um die HPC Pack-Clienttools zum Übermitteln von Aufträgen an den Hauptknoten verwenden zu können, müssen Sie außerdem ein Zertifikat vom Hauptknoten exportieren und auf dem Clientcomputer installieren. Das Zertifikat muss im CER-Format vorliegen.
 
@@ -94,7 +94,7 @@ Um die HPC Pack-Clienttools zum Übermitteln von Aufträgen an den Hauptknoten v
 
 2. Erweitern Sie in der Konsolenstruktur nacheinander **Zertifikate – Lokaler Computer** und **Persönlich**, und klicken Sie dann auf **Zertifikate**.
 
-3. Suchen Sie nach dem Zertifikat, das Sie für die HPC Pack-Webkomponenten in [Schritt 1: Installieren und Konfigurieren der Webkomponenten auf dem Hauptknoten](#step-1:-install-and-configure-the-web-components-on-the-head-node) konfiguriert haben (z. B. mit dem Namen &lt;*HeadNodeDnsName*&gt;.cloudapp.net).
+3. Suchen Sie nach dem Zertifikat, das Sie für die HPC Pack-Webkomponenten in [Schritt 1: Installieren und Konfigurieren der Webkomponenten auf dem Hauptknoten](#step-1:-install-and-configure-the-web-components-on-the-head-node) konfiguriert haben (z. B. mit dem Namen &lt;HauptkontenDNSName&gt;.cloudapp.net).
 
 4. Klicken Sie mit der rechten Maustaste auf das Zertifikat, und klicken Sie auf **Alle Aufgaben** und dann auf **Exportieren**.
 
@@ -133,9 +133,10 @@ Zum Überprüfen der Konfiguration können Sie versuchen, Aufträge im Cluster i
     ```
     job list /scheduler:https://<HeadNodeDnsName>.cloudapp.net /all
     ```
+    
     >[AZURE.TIP]Verwenden Sie in der Scheduler-URL den vollständigen DNS-Namen des Hauptknotens,nicht die IP-Adresse. Wenn Sie die IP-Adresse angeben, wird ein Fehler der Art „Das Serverzertifikat muss entweder über eine gültige Vertrauenskette verfügen oder im vertrauenswürdigen Stammspeicher angeordnet sein“ angezeigt.
 
-3. Geben Sie bei Aufforderung den Benutzernamen (in der Form „&lt;Domänenname&gt;&lt;Benutzername&gt;“) und das Kennwort des HPC-Clusteradministrators oder eines anderen Clusterbenutzers ein, den Sie konfiguriert haben. Sie können die Anmeldeinformationen für weitere Auftragsvorgänge auch lokal speichern.
+3. Geben Sie bei Aufforderung den Benutzernamen (in der Form „&lt;Domänenname&gt;\\&lt;Benutzername&gt;“) und das Kennwort des HPC-Clusteradministrators oder eines anderen Clusterbenutzers ein, den Sie konfiguriert haben. Sie können die Anmeldeinformationen für weitere Auftragsvorgänge auch lokal speichern.
 
     Eine Liste mit Aufträgen wird angezeigt.
 
@@ -148,18 +149,20 @@ Zum Überprüfen der Konfiguration können Sie versuchen, Aufträge im Cluster i
 
     b. Klicken Sie auf **Windows-Anmeldeinformationen** und dann auf **Generische Anmeldeinformationen hinzufügen**.
 
-    c. Geben Sie die Internetadresse https://&lt;*HeadNodeDnsName*&gt;.cloudapp.net/HpcScheduler und den Benutzernamen (in der Form „&lt;Domänenname&gt;&lt;Benutzername&gt;“) und das Kennwort des HPC-Clusteradministrators oder eines anderen Clusterbenutzers ein, den Sie konfiguriert haben.
+    c. Geben Sie die Internetadresse https://&lt;HeadNodeDnsName&gt;.cloudapp.net/HpcScheduler und den Benutzernamen (in der Form „&lt;Domänenname&gt;\\&lt;Benutzername&gt;“) und das Kennwort des HPC-Clusteradministrators oder eines anderen Clusterbenutzers ein, den Sie konfiguriert haben.
 
 2. Starten Sie auf dem Clientcomputer den HPC-Auftrags-Manager.
 
-3. Geben Sie im Dialogfeld **Hauptknoten auswählen** die URL zum Hauptknoten in Azure in der Form https://&lt;*HeadNodeDnsName*&gt;.cloudapp.net ein.
+3. Geben Sie im Dialogfeld **Hauptknoten auswählen** die URL zum Hauptknoten in Azure in der Form https://&lt;HeadNodeDnsName&gt;.cloudapp.net ein.
 
     Der HPC-Auftrags-Manager wird geöffnet und enthält eine Liste der Aufträge auf dem Hauptknoten.
 
 **So verwenden Sie das auf dem Hauptknoten ausgeführte Webportal**
 
-1. Starten Sie auf dem Clientcomputer einen Webbrowser, und geben Sie die folgende Adresse ein: ```
-    https://HeadNodeDnsName.cloudapp.net/HpcPortal
+1. Starten Sie auf dem Clientcomputer einen Webbrowser, und geben Sie die folgende Adresse ein:
+
+    ```
+    https://<HeadNodeDnsName>.cloudapp.net/HpcPortal
     ```
 2. Geben Sie im angezeigten Sicherheitsdialogfeld die Domänenanmeldeinformationen des HPC-Clusteradministrators ein. (Sie können auch andere Clusterbenutzer mit unterschiedlichen Rollen hinzufügen. Weitere Informationen finden Sie unter [Verwalten von Clusterbenutzern](https://technet.microsoft.com/library/ff919335.aspx).)
 
@@ -183,4 +186,4 @@ Zum Überprüfen der Konfiguration können Sie versuchen, Aufträge im Cluster i
 <!--Image references-->
 [jobsubmit]: ./media/virtual-machines-hpcpack-cluster-submit-jobs/jobsubmit.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

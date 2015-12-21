@@ -20,6 +20,8 @@
 Sie können Azure Data Factory-Probleme mithilfe vom klassischen Azure-Portal (oder) Azure PowerShell-Cmdlets beheben. Dieses Thema enthält exemplarische Vorgehensweisen, die Ihnen zeigen, wie Sie das klassische Azure-Portal verwenden, um schnell Fehler zu beheben, die bei Data Factory auftreten.
 
 ## Problem: Data Factory-Cmdlets können nicht ausgeführt werden.
+Wenn Sie eine Azure PowerShell-Version vor 1.0 verwenden:
+ 
 Wechseln Sie zum Beheben des Problems in den Azure-Modus **AzureResourceManager**:
 
 Starten Sie **Azure PowerShell**, und führen Sie den folgenden Befehl aus, um in den Modus **AzureResourceManager** zu wechseln. Die Azure Data Factory-Cmdlets sind im Modus **AzureResourceManager** verfügbar.
@@ -177,7 +179,7 @@ In dieser exemplarischen Vorgehensweise führen Sie einen Fehler in das Lernprog
 4. Führen Sie den folgenden Befehl in **Azure PowerShell** aus, um den aktiven Zeitraum für die Pipeline zu aktualisieren, sodass sie versucht, Daten in die Tabelle **emp** zu schreiben, die nicht mehr existiert.
 
          
-		Set-AzureDataFactoryPipelineActivePeriod -ResourceGroupName ADFTutorialResourceGroup -DataFactoryName ADFTutorialDataFactory -StartDateTime 2014-09-29 –EndDateTime 2014-09-30 –Name ADFTutorialPipeline
+		Set-AzureRmDataFactoryPipelineActivePeriod -ResourceGroupName ADFTutorialResourceGroup -DataFactoryName ADFTutorialDataFactory -StartDateTime 2014-09-29 –EndDateTime 2014-09-30 –Name ADFTutorialPipeline
 	
 	Ersetzen Sie den Wert **StartDateTime** durch den aktuellen Tag und den Wert **EndDateTime** durch den nächsten Tag.
 
@@ -214,17 +216,12 @@ Um dieses Problem zu beheben, erstellen Sie die Tabelle **emp** mit dem SQL-Skri
 
 ### Verwenden von Azure PowerShell-Cmdlets, um den Fehler zu beheben
 1.	Starten Sie **Azure PowerShell**. 
-2.	Wechseln Sie in den Modus **AzureResourceManager**, da Data Factory-Cmdlets nur in diesem Modus verfügbar sind.
+3. Führen Sie den Befehl „Get-AzureRmDataFactorySlice“ aus, um die Slices und deren Status anzuzeigen. Ein Slice mit dem Status "Fehler" sollte angezeigt werden.	
 
          
-		switch-azuremode AzureResourceManager
+		Get-AzureRmDataFactorySlice -ResourceGroupName ADFTutorialResourceGroup -DataFactoryName ADFTutorialDataFactory -TableName EmpSQLTable -StartDateTime 2014-10-15
 
-3. Führen Sie den Befehl Get-AzureDataFactorySlice aus, um die Slices und deren Status anzuzeigen. Ein Slice mit dem Status "Fehler" sollte angezeigt werden.
-
-         
-		Get-AzureDataFactorySlice -ResourceGroupName ADFTutorialResourceGroup -DataFactoryName ADFTutorialDataFactory -TableName EmpSQLTable -StartDateTime 2014-10-15
-
-	Ersetzen Sie **StartDateTime** durch den für **Set-AzureDataFactoryPipelineActivePeriod** festgelegten "StartDateTime"-Wert.
+	Ersetzen Sie **StartDateTime** durch den für **Set-AzureRmDataFactoryPipelineActivePeriod** festgelegten StartDateTime-Wert.
 
 		ResourceGroupName 		: ADFTutorialResourceGroup
 		DataFactoryName   		: ADFTutorialDataFactory
@@ -237,9 +234,9 @@ Um dieses Problem zu beheben, erstellen Sie die Tabelle **emp** mit dem SQL-Skri
 		LongRetryCount    		: 0
 
 	Beachten Sie in der Ausgabe die **Startzeit** für den Problemslice (den Slice mit dem **Status**: **Fehler**). 
-4. Führen Sie nun das Cmdlet **Get-AzureDataFactoryRun** zum Abrufen von Details zur Aktivitätsausführung für den Slice aus.
+4. Führen Sie nun das Cmdlet **Get-AzureRmDataFactoryRun** zum Abrufen von Details zur Aktivitätsausführung für den Slice aus.
          
-		Get-AzureDataFactoryRun -ResourceGroupName ADFTutorialResourceGroup -DataFactoryName ADFTutorialDataFactory -TableName EmpSQLTable -StartDateTime "10/15/2014 4:00:00 PM"
+		Get-AzureRmDataFactoryRun -ResourceGroupName ADFTutorialResourceGroup -DataFactoryName ADFTutorialDataFactory -TableName EmpSQLTable -StartDateTime "10/15/2014 4:00:00 PM"
 
 	Der Wert von **StartDateTime** ist die Startzeit für den Fehler-/Problemslice, den Sie im vorherigen Schritt notiert haben. Datum und Uhrzeit sollte in doppelte Anführungszeichen eingeschlossen werden.
 5. Die Ausgabe mit Einzelheiten zu dem Fehler (ähnlich der folgenden) sollte angezeigt werden:
@@ -296,17 +293,12 @@ In diesem Szenario ist Datensatz aufgrund eines Fehlers in der Hive-Verarbeitung
     
 ### Exemplarische Vorgehensweise: Verwenden von Azure PowerShell zur Problembehandlung bei der Pig/Hive-Verarbeitung
 1.	Starten Sie **Azure PowerShell**. 
-2.	Wechseln Sie in den Modus **AzureResourceManager**, da Data Factory-Cmdlets nur in diesem Modus verfügbar sind.
+3. Führen Sie den Befehl „Get-AzureRmDataFactorySlice“ aus, um die Slices und deren Status anzuzeigen. Ein Slice mit dem Status "Fehler" sollte angezeigt werden.	
 
          
-		switch-azuremode AzureResourceManager
+		Get-AzureRmDataFactorySlice -ResourceGroupName ADF -DataFactoryName LogProcessingFactory -TableName EnrichedGameEventsTable -StartDateTime 2014-05-04 20:00:00
 
-3. Führen Sie den Befehl Get-AzureDataFactorySlice aus, um die Slices und deren Status anzuzeigen. Ein Slice mit dem Status "Fehler" sollte angezeigt werden.
-
-         
-		Get-AzureDataFactorySlice -ResourceGroupName ADF -DataFactoryName LogProcessingFactory -TableName EnrichedGameEventsTable -StartDateTime 2014-05-04 20:00:00
-
-	Ersetzen Sie **StartDateTime** durch den für **Set-AzureDataFactoryPipelineActivePeriod** festgelegten "StartDateTime"-Wert.
+	Ersetzen Sie **StartDateTime** durch den für **Set-AzureRmDataFactoryPipelineActivePeriod** festgelegten StartDateTime-Wert.
 
 		ResourceGroupName : ADF
 		DataFactoryName   : LogProcessingFactory
@@ -320,9 +312,9 @@ In diesem Szenario ist Datensatz aufgrund eines Fehlers in der Hive-Verarbeitung
 
 
 	Beachten Sie in der Ausgabe die **Startzeit** für den Problemslice (den Slice mit dem **Status**: **Fehler**). 
-4. Führen Sie nun das Cmdlet **Get-AzureDataFactoryRun** zum Abrufen von Details zur Aktivitätsausführung für den Slice aus.
+4. Führen Sie nun das Cmdlet **Get-AzureRmDataFactoryRun** zum Abrufen von Details zur Aktivitätsausführung für den Slice aus.
          
-		Get-AzureDataFactoryRun -ResourceGroupName ADF -DataFactoryName LogProcessingFactory -TableName EnrichedGameEventsTable -StartDateTime "5/5/2014 12:00:00 AM"
+		Get-AzureRmDataFactoryRun -ResourceGroupName ADF -DataFactoryName LogProcessingFactory -TableName EnrichedGameEventsTable -StartDateTime "5/5/2014 12:00:00 AM"
 
 	Der Wert von **StartDateTime** ist die Startzeit für den Fehler-/Problemslice, den Sie im vorherigen Schritt notiert haben. Datum und Uhrzeit sollte in doppelte Anführungszeichen eingeschlossen werden.
 5. Die Ausgabe mit Einzelheiten zu dem Fehler (ähnlich der folgenden) sollte angezeigt werden:
@@ -346,7 +338,7 @@ In diesem Szenario ist Datensatz aufgrund eines Fehlers in der Hive-Verarbeitung
 		PipelineName        : EnrichGameLogsPipeline
 		Type                :
 
-6. Sie können das Cmdlet **Save-AzureDataFactoryLog** mit dem ID-Wert ausführen, den Sie in der oben genannten Ausgabe finden, und die Protokolldateien mithilfe der Option **-DownloadLogs** für das Cmdlet herunterladen.
+6. Sie können das Cmdlet **Save-AzureRmDataFactoryLog** mit dem ID-Wert ausführen, den Sie in der oben genannten Ausgabe finden, und die Protokolldateien mithilfe der Option **-DownloadLogs** für das Cmdlet herunterladen.
 
 
 
@@ -382,4 +374,4 @@ In diesem Szenario ist Datensatz aufgrund eines Fehlers in der Hive-Verarbeitung
 [image-data-factory-troubleshoot-activity-run-details]: ./media/data-factory-troubleshoot/Walkthrough2ActivityRunDetails.png
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -47,10 +47,8 @@ Bestimmen Sie anhand der Informationen unter [Aktualisieren von Web-/Business-SQ
 - Eine Azure SQL-Datenbank. Wenn Sie nicht über eine SQL-Datenbank verfügen, können Sie die Erstellung anhand der Schritte im folgenden Artikel durchführen: [Erstellen der ersten Azure SQL-Datenbank](sql-database-get-started.md).
 - Azure PowerShell.
 
-> [AZURE.IMPORTANT]Ab Veröffentlichung von Azure PowerShell 1.0 Preview ist das Cmdlet "Switch-AzureMode" nicht mehr verfügbar. Außerdem wurden die Cmdlets im Modul "Azure-Ressourcen-Manager" umbenannt. In den Beispielen in diesem Artikel wird die neue Benennungskonvention von PowerShell 1.0 Preview verwendet. Ausführliche Informationen finden Sie unter ["Switch-AzureMode" in Azure PowerShell veraltet](https://github.com/Azure/azure-powershell/wiki/Deprecation-of-Switch-AzureMode-in-Azure-PowerShell).
 
-
-Zur Ausführung von PowerShell-Cmdlets muss Azure PowerShell installiert sein und ausgeführt werden. Aufgrund des Entfernens von "Switch-AzureMode" müssen Sie die neueste Azure PowerShell herunterladen und durch Ausführen des [Microsoft-Webplattform-Installers](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409) installieren. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
+Zum Ausführen von PowerShell-Cmdlets muss Azure PowerShell installiert sein und ausgeführt werden. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
 
 
 
@@ -58,7 +56,7 @@ Zur Ausführung von PowerShell-Cmdlets muss Azure PowerShell installiert sein un
 
 Zuerst müssen Sie den Zugriff auf Ihr Azure-Konto einrichten. Starten Sie also PowerShell, und führen Sie dann das folgende Cmdlet aus. Geben Sie auf dem Anmeldebildschirm die E-Mail-Adresse und das Kennwort wie für die Anmeldung beim Azure-Portal ein.
 
-	Add-AzureAccount
+	Add-AzureRmAccount
 
 Nach der erfolgreichen Anmeldung werden einige Informationen auf dem Bildschirm angezeigt, wie die ID, mit der Sie sich angemeldet haben, und die Azure-Abonnements, auf die Sie zugreifen können.
 
@@ -68,7 +66,7 @@ Nach der erfolgreichen Anmeldung werden einige Informationen auf dem Bildschirm 
 Zur Auswahl des Abonnements benötigen Sie Ihre Abonnement-ID oder den Anmeldenamen für das Abonnement (**-SubscriptionName**). Sie können die Abonnement-ID aus den Informationen im vorherigen Schritt kopieren. Falls Sie über mehrere Abonnements verfügen und mehr Details benötigen, können Sie auch das **Get-AzureSubscription**-Cmdlet ausführen und die gewünschten Abonnementinformationen aus dem Resultset kopieren. Wenn Sie Ihre Abonnementinformationen haben, führen Sie das folgende Cmdlet aus:
 
 	$SubscriptionId = "4cac86b0-1e56-bbbb-aaaa-000000000000"
-    Select-AzureSubscription -SubscriptionId $SubscriptionId
+    Select-AzureRmSubscription -SubscriptionId $SubscriptionId
 
 Nach dem erfolgreichen Ausführen von **Select-AzureSubscription** kehren Sie zur PowerShell-Eingabeaufforderung zurück. Wenn Sie über mehrere Abonnements verfügen, können Sie **Get-AzureSubscription** ausführen und überprüfen, ob das gewünschte Abonnement den Wert **IsCurrent: True** aufweist.
 
@@ -78,7 +76,7 @@ Nach dem erfolgreichen Ausführen von **Select-AzureSubscription** kehren Sie zu
 
 ## Ändern der Dienstebene und Leistungsstufe Ihrer SQL-Datenbank
 
-Führen Sie das **Set-AzureRMSqlDatabase**-Cmdlet aus, und legen Sie **-RequestedServiceObjectiveName** auf die Leistungsstufe des gewünschten Tarifs fest; z. B. *S0*, *S1*, *S2*, *S3*, *P1*, *P2*, ...
+Führen Sie das Cmdlet **Set-AzureRmSqlDatabase** aus, und legen Sie **-RequestedServiceObjectiveName** auf die Leistungsstufe des gewünschten Tarifs fest, z. B. *S0*, *S1*, *S2*, *S3*, *P1*, *P2*, ...
 
     $ResourceGroupName = "resourceGroupName"
     
@@ -88,7 +86,7 @@ Führen Sie das **Set-AzureRMSqlDatabase**-Cmdlet aus, und legen Sie **-Requeste
     $NewEdition = "Standard"
     $NewPricingTier = "S2"
 
-    $ScaleRequest = Set-AzureSqlDatabase -DatabaseName $DatabaseName -ServerName $ServerName -ResourceGroupName $ResourceGroupName -Edition $NewEdition -RequestedServiceObjectiveName $NewPricingTier
+    $ScaleRequest = Set-AzureRmSqlDatabase -DatabaseName $DatabaseName -ServerName $ServerName -ResourceGroupName $ResourceGroupName -Edition $NewEdition -RequestedServiceObjectiveName $NewPricingTier
 
 
   
@@ -112,10 +110,10 @@ Führen Sie das **Set-AzureRMSqlDatabase**-Cmdlet aus, und legen Sie **-Requeste
     $NewEdition = "Standard"
     $NewPricingTier = "S2"
     
-    Add-AzureAccount
-    Select-AzureSubscription -SubscriptionId $SubscriptionId
+    Add-AzureRmAccount
+    Select-AzureRmSubscription -SubscriptionId $SubscriptionId
     
-    $ScaleRequest = Set-AzureRMSqlDatabase -DatabaseName $DatabaseName -ServerName $ServerName -ResourceGroupName $ResourceGroupName -Edition $NewEdition -RequestedServiceObjectiveName $NewPricingTier
+    $ScaleRequest = Set-AzureRmSqlDatabase -DatabaseName $DatabaseName -ServerName $ServerName -ResourceGroupName $ResourceGroupName -Edition $NewEdition -RequestedServiceObjectiveName $NewPricingTier
     
     $ScaleRequest
     
@@ -134,4 +132,4 @@ Führen Sie das **Set-AzureRMSqlDatabase**-Cmdlet aus, und legen Sie **-Requeste
 - [SQL-Datenbankdokumentation](https://azure.microsoft.com/documentation/services/sql-database/)
 - [Azure SQL-Datenbank-Cmdlets](https://msdn.microsoft.com/library/azure/mt163521.aspx)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

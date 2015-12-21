@@ -14,10 +14,14 @@
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="09/18/2015"
+	ms.date="12/03/2015"
 	ms.author="glenga"/>
 
 # Arbeiten Sie mit der Back-End-Server-SDK für Azure Mobile Apps
+
+[AZURE.INCLUDE [app-service-mobile-selector-server-sdk](../../includes/app-service-mobile-selector-server-sdk.md)]&nbsp;
+
+[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
 
 In diesem Thema wird das Verwenden des .NET-Back-End-Server-SDKs in Azure App Service Mobile Apps-Szenarien veranschaulicht. Das Azure-SDK für Mobile Apps erleichtert Ihnen die Arbeit mit mobilen Clients aus der ASP.NET-Anwendung.
 
@@ -45,7 +49,7 @@ Sie können direkt im [Azure-Portal ] eine neue mobile Anwendung erstellen. Sie 
 
 ### Erstellen eines .NET-Back-Ends mithilfe von Visual Studio 2013 und Visual Studio 2015
 
-Um ein Projekt für mobile Apps in Visual Studio zu erstellen, müssen Sie [Azure SDK für .NET](https://azure.microsoft.com/downloads/) (Version 2.8.1 oder höher) installieren. Erstellen Sie nach dem Installieren des SDKs eine neue ASP.NET-Anwendung:
+Um ein Mobile Apps-Projekt in Visual Studio zu erstellen, müssen Sie [Azure SDK für .NET](https://azure.microsoft.com/downloads/) (Version 2.8.1 oder höher) installieren. Erstellen Sie nach dem Installieren des SDKs eine neue ASP.NET-Anwendung:
 
 1. Öffnen Sie das Dialogfeld **Neues Projekt** (über *Datei* > **Neu** > **Projekt...**).
 
@@ -99,7 +103,7 @@ Beachten Sie, dass mit `MapApiControllers` nur Controller mit dem `[MobileAppCon
 
 Viele der Methoden zur Funktionserweiterung sind über zusätzliche NuGet-Pakete verfügbar, die Sie übernehmen können und die im folgenden Abschnitt beschrieben werden.
 
-Beim Schnellstartserverprojekt aus dem Azure-Portal wird **UseDefaultConfiguration()** aufgerufen. Dies entspricht der folgenden Konfiguration:
+Beim Serverschnellstart aus dem Azure-Portal wird **UseDefaultConfiguration()** aufgerufen. Dies entspricht der folgenden Konfiguration:
     
 		new MobileAppConfiguration()
 			.AddMobileAppHomeController()             // from the Home package
@@ -293,7 +297,7 @@ An diesem Punkt können Sie den Notification Hubs-Client zum Senden von Pushbena
 
 ##<a name="tags"></a>Hinzufügen von Tags zu einer Geräteinstallation zum Aktivieren von Pushvorgängen an Tags
 
-Gemäß den Schritten unter **Definieren eines benutzerdefinierten API-Controllers** können Sie eine benutzerdefinierte API auf Ihrem Back-End einrichten, die mit Notification Hubs zusammenarbeitet, um Tags zu einer bestimmten Geräteinstallation hinzuzufügen. Stellen Sie sicher, dass Sie die im lokalen Clientspeicher gespeicherte Installations-ID und die hinzuzufügenden Tags übergeben. (Letzteres ist optional, da Sie Tags auch direkt auf Ihrem Back-End angeben können.) Fügen Sie Ihrem Controller den folgenden Ausschnitt für die Zusammenarbeit mit Notification Hubs hinzu, um ein Tag zu einer Geräteinstallations-ID hinzuzufügen.
+Gemäß den Schritten unter **Definieren eines benutzerdefinierten API-Controllers** können Sie eine benutzerdefinierte API auf Ihrem Back-End einrichten, die mit Notification Hubs zusammenarbeitet, um Tags einer bestimmten Geräteinstallation hinzuzufügen. Stellen Sie sicher, dass Sie die im lokalen Clientspeicher gespeicherte Installations-ID und die hinzuzufügenden Tags übergeben. (Letzteres ist optional, da Sie Tags auch direkt auf Ihrem Back-End angeben können.) Fügen Sie Ihrem Controller den folgenden Ausschnitt für die Zusammenarbeit mit Notification Hubs hinzu, um ein Tag zu einer Geräteinstallations-ID hinzuzufügen.
 
 Verwendung von [Azure Notification Hubs NuGet](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/) ([Referenz](https://msdn.microsoft.com/library/azure/mt414893.aspx)):
 
@@ -309,7 +313,7 @@ Verwendung von [Azure Notification Hubs NuGet](https://www.nuget.org/packages/Mi
 		    }
 		});
 
-Verwenden Sie [Notification Hubs-APIs](https://msdn.microsoft.com/library/azure/dn495101.aspx), um einen Pushvorgang an diese Tags durchzuführen.
+Verwenden Sie [Notification Hubs-APIs](https://msdn.microsoft.com/library/azure/dn495101.aspx), um einen Pushvorgang an diese Tags auszuführen.
 
 Sie können Ihre benutzerdefinierte API auch so einrichten, dass Geräteinstallationen mit Notification Hubs direkt auf Ihrem Back-End registriert werden.
 
@@ -344,7 +348,7 @@ Stellen Sie sicher, dass für Ihre Anwendung [Microsoft.Azure.Mobile.Server.Auth
 			TokenHandler = config.GetMobileAppTokenHandler()
 		});
 
-Im oben genannten Beispiel sollten Sie die _authAudience_- und die _authIssuer_-Anwendungseinstellung in der Datei „Web.config“ so konfigurieren, dass beide die URL des Anwendungsstammverzeichnisses darstellen. Verwenden Sie dazu das HTTPS-Schema. Für _authSigningKey_ sollte der Wert des Signaturschlüssels Ihrer Anwendung festgelegt werden. Dies ist ein vertraulicher Wert, der keinesfalls freigegeben werden oder in einem Client enthalten sein sollte. Navigieren Sie zum Abrufen dieses Werts im [Azure-Portal] zu Ihrer App, und klicken Sie auf **Tools**. Wählen Sie dann **Kudu** aus, und klicken Sie auf **Go**. Dadurch gelangen Sie zum Kudu-Verwaltungsendpunkt für Ihre Website. Klicken Sie auf **Umgebung**, und suchen Sie den Wert unter _WEBSITE\_AUTH\_SIGNING\_KEY_. Dies ist der Wert, den Sie in Ihrer lokalen App-Konfiguration für _authSigningKey_ verwenden sollten.
+Im oben genannten Beispiel sollten Sie die _authAudience_- und _authIssuer_-Anwendungseinstellung in der Datei „Web.config“ so konfigurieren, dass beide die URL des Anwendungsstammverzeichnisses darstellen. Verwenden Sie dazu das HTTPS-Schema. Für _authSigningKey_ sollten Sie den Wert des Signaturschlüssels Ihrer Anwendung festlegen. Dies ist ein vertraulicher Wert, der keinesfalls freigegeben werden oder in einem Client enthalten sein sollte. Navigieren Sie zum Abrufen dieses Werts im [Azure-Portal] zu Ihrer App, und klicken Sie auf **Tools**. Wählen Sie dann **Kudu** aus, und klicken Sie auf **Go**. Dadurch gelangen Sie zum Kudu-Verwaltungsendpunkt für Ihre Website. Klicken Sie auf **Umgebung**, und suchen Sie den Wert unter _WEBSITE\_AUTH\_SIGNING\_KEY_. Dies ist der Wert, den Sie in Ihrer lokalen App-Konfiguration für _authSigningKey_ verwenden sollten.
 
 Ihr lokal ausgeführter Server kann nun Token überprüfen, die der Client vom cloudbasierten Endpunkt abruft.
 
@@ -357,4 +361,4 @@ Ihr lokal ausgeführter Server kann nun Token überprüfen, die der Client vom c
 [Microsoft.Azure.Mobile.Server.Login]: http://www.nuget.org/packages/Microsoft.Azure.Mobile.Server.Login/
 [Microsoft.Azure.Mobile.Server.Notifications]: http://www.nuget.org/packages/Microsoft.Azure.Mobile.Server.Notifications/
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
-	ms.date="08/14/2015"
+	ms.date="12/04/2015"
 	ms.author="jroth" />
 
 # Konfigurieren von AlwaysOn-Verfügbarkeitsgruppen in virtuellen Azure-Computern (PowerShell)
@@ -631,4 +631,4 @@ Sie haben nun erfolgreich SQL Server AlwaysOn implementiert, indem Sie eine Verf
 
 Weitere Informationen zur Verwendung von SQL Server in Azure finden Sie unter [SQL Server auf virtuellen Azure-Computern](../articles/virtual-machines/virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -33,7 +33,7 @@ Zunächst benötigen Sie Folgendes:
 
 Kopieren Sie im Azure-Portal die Stamm-SAS-Verbindungszeichenfolge für Service Bus. Diese Verbindungszeichenfolge verbindet Ihren Azure-Connector mit Ihrem lokalen System.
 
-1. Wählen Sie im [Azure-Portal](http://go.microsoft.com/fwlink/p/?LinkID=213885) den Service Bus-Namespace und dann die **Verbindungsinformationen**:
+1. Wählen Sie im [klassischen Azure-Portal](http://go.microsoft.com/fwlink/p/?LinkID=213885) den Service Bus-Namespace und dann die **Verbindungsinformationen** aus:
 
 	![][SB_ConnectInfo]
 
@@ -43,7 +43,7 @@ Kopieren Sie im Azure-Portal die Stamm-SAS-Verbindungszeichenfolge für Service 
 
 ## Den Hybrid Connection Manager installieren
 
-1. Wählen Sie in der [Azure-Portal](http://go.microsoft.com/fwlink/p/?LinkID=525040)-Vorschau den erstellten Connector aus. Um ihn zu öffnen, wählen Sie **Durchsuchen** aus, dann **API-Apps**, und anschließend Ihren Connector oder Ihre API-App. <br/><br/> In der **Hybridverbindung** ist das Setup **unvollständig**: <br/> ![][2] 
+1. Wählen Sie im [Azure-Portal](http://go.microsoft.com/fwlink/p/?LinkID=525040) den von Ihnen erstellten Connector aus. Um ihn zu öffnen, wählen Sie **Durchsuchen** aus, dann **API-Apps**, und anschließend Ihren Connector oder Ihre API-App. <br/><br/> In der **Hybridverbindung** ist das Setup **unvollständig**: <br/> ![][2] 
 
 2. Wählen Sie **Hybridverbindung** aus. Die zuvor eingegebenen Service Bus-Verbindungszeichenfolge wird aufgeführt.
 3. Kopieren Sie die **Primäre Konfigurationszeichenfolge**: <br/> ![][PrimaryConfigString]
@@ -98,7 +98,7 @@ Lokaler System-Port | Öffnen Sie im lokalen System den Port, der vom System ver
 
 
 
-### Im Azure-Portal
+### Im klassischen Azure-Portal
 
 1. Bestätigen Sie, dass der Service Bus-Namespace über im Zustand **Active** ist.
 2. Wenn Sie den Connector erstellen, geben Sie die Service Bus-SAS-Verbindungszeichenfolge ein. Geben Sie nicht die ACS-Verbindungszeichenfolge ein.
@@ -133,4 +133,4 @@ Wenn Ihre benutzerdefinierte API einen TCP- oder HTTP-Port verwendet, können Si
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->

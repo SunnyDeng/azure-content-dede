@@ -12,12 +12,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="12/01/2015"
+   ms.date="12/07/2015"
    ms.author="joaoma" />
 
 # Traffic Manager-Überwachung
 
-Azure Traffic Manager kann Ihre Endpunkte inklusive Cloud-Diensten und Websites überwachen, um sicherzustellen, dass sie verfügbar sind. Damit die Überwachung ordnungsgemäß funktioniert, müssen Sie Traffic Manager für jeden Endpunkt, den Sie in den Profileinstellungen angeben, auf die gleiche Weise einrichten. Nach dem Konfigurieren der Überwachung zeigt Traffic Manager den Status Ihrer Endpunkte und Ihres Profile im Azure-Portal an. Sie können die Überwachungseinstellungen im Azure-Portal auf der Konfigurationsseite für Ihr Traffic Manager-Profil konfigurieren. Sie können die folgenden Einstellungen angeben:
+Azure Traffic Manager kann Ihre Endpunkte inklusive Cloud-Diensten und Websites überwachen, um sicherzustellen, dass sie verfügbar sind. Damit die Überwachung ordnungsgemäß funktioniert, müssen Sie Traffic Manager für jeden Endpunkt, den Sie in den Profileinstellungen angeben, auf die gleiche Weise einrichten. Nach dem Konfigurieren der Überwachung zeigt Traffic Manager den Status Ihrer Endpunkte und Ihres Profile im klassischen Azure-Portal an. Sie können die Überwachungseinstellungen im klassischen Azure-Portal auf der Konfigurationsseite für Ihr Traffic Manager-Profil konfigurieren. Sie können die folgenden Einstellungen angeben:
 
 - **Protokoll** – Wählen Sie HTTP oder HTTPS aus. Beachten Sie, dass bei der HTTPS-Überwachung nicht überprüft wird, ob Ihr SSL-Zertifikat gültig ist. Es wird nur überprüft, ob es vorhanden ist.
 
@@ -27,7 +27,7 @@ Azure Traffic Manager kann Ihre Endpunkte inklusive Cloud-Diensten und Websites 
 
 ## Informationen zur Überwachung des Integritätsstatus
 
-Azure Traffic Manager zeigt die Integrität von Profil und Endpunkt im Azure-Portal an. In der Statusspalte für das Profil und dem Endpunkt wird der zuletzt ermittelte Status angezeigt. Mit diesem Status können Sie den Zustand der Profile gemäß Ihrer Traffic Manager-Überwachungseinstellungen ermitteln. Wenn das Profil fehlerfrei ist, werden DNS-Abfragen an Ihre Dienste basierend auf den Routingeinstellungen für Datenverkehr für das Profil (Roundrobin, Leistung oder Failover) verteilt. Sobald das Traffic Manager-Überwachungssystem eine Änderung des überwachten Status erkennt, wird der Statuseintrag im Azure-Portal aktualisiert. Es kann bis zu fünf Minuten dauern, bis die Statusänderung aktualisiert wird.
+Azure Traffic Manager zeigt die Integrität von Profil und Endpunkt im klassischen Azure-Portal an. In der Statusspalte für das Profil und dem Endpunkt wird der zuletzt ermittelte Status angezeigt. Mit diesem Status können Sie den Zustand der Profile gemäß Ihrer Traffic Manager-Überwachungseinstellungen ermitteln. Wenn das Profil fehlerfrei ist, werden DNS-Abfragen an Ihre Dienste basierend auf den Routingeinstellungen für Datenverkehr für das Profil (Roundrobin, Leistung oder Failover) verteilt. Sobald das Traffic Manager-Überwachungssystem eine Änderung des überwachten Status erkennt, wird der Statuseintrag im klassischen Azure-Portal aktualisiert. Es kann bis zu fünf Minuten dauern, bis die Statusänderung aktualisiert wird.
 
 ### Überwachungsstatus von Endpunkten
 
@@ -103,7 +103,7 @@ Die folgende Tabelle zeigt das Verhalten der Traffic Manager-Überwachung bei de
 
 1. Erstellen Sie eine Datei mit dem gleichen Namen für jeden Endpunkt, den Sie in das Profil einfügen möchten.
 2. Testen Sie für jeden Endpunkt mit einem Webbrowser den Zugriff auf die Datei. Die URL besteht aus dem Domänennamen des jeweiligen Endpunkts (Cloud-Dienst oder Website), dem Pfad zur Datei und dem Dateinamen. 
-3. Geben Sie im Azure-Portal unter **Überwachungseinstellungen** im Feld **Relativer Pfad und Dateiname** den Pfad und den Dateinamen an.
+3. Geben Sie im klassischen Azure-Portal unter **Überwachungseinstellungen** im Feld **Relativer Pfad und Dateiname** den Pfad und den Dateinamen an.
 4. Wenn Sie Ihre Änderungen an der Konfiguration abgeschlossen haben, klicken Sie unten auf der Seite auf **Speichern**.
 
 ## Weitere Informationen
@@ -115,4 +115,4 @@ Die folgende Tabelle zeigt das Verhalten der Traffic Manager-Überwachung bei de
 [Problembehandlung beim Status "Heruntergestuft" in Azure Traffic Manager](traffic-manager-troubleshooting-degraded.md)
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1210_2015-->
