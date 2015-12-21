@@ -53,16 +53,16 @@ Die zu schützenden virtuellen Maschinen müssen die [Voraussetzungen für virtu
 
 Im Rahmen der Azure Site Recovery-Bereitstellung werden auf jedem Hyper-V-Server der Azure Site Recovery-Anbieter und der Azure Recovery Services-Agent installiert. Beachten Sie Folgendes:
 
-- Es wird empfohlen, immer die aktuellen Versionen des Anbieters und des Agents auszuführen Diese sind im Site Recovery-Portal verfügbar.
-- Alle Hyper-V-Server in einem Tresor sollten über die gleichen Versionen des Anbieters und Agents verfügen.
-- Der Anbieter, der auf dem Server ausgeführt wird, stellt die Verbindung mit Site Recovery über das Internet her. Sie können dies ohne Proxy, mit den derzeit auf dem Hyper-V-Server konfigurierten Proxyeinstellungen oder mit benutzerdefinierten Proxyeinstellungen durchführen, die Sie während der Installation des Anbieters konfigurieren. Sie müssen sicherstellen, dass der Proxyserver, den Sie verwenden möchten, Zugriff auf die URLs für die Verbindungsherstellung mit Azure hat:
-	- **.hypervrecoverymanager.windowsazure.com
-- **.accesscontrol.windows.net
-- **.backup.windowsazure.com
-- **.blob.core.windows.net
-- **.store.core.windows.net
-	
-- Lassen Sie außerdem die unter [IP-Bereiche des Azure-Rechenzentrums](https://www.microsoft.com/de-DE/download/details.aspx?id=41653) angegebenen IP-Adressen sowie das HTTPS-Protokoll (443) zu. Fügen Sie die IP-Adressbereiche der zu verwendenden Azure-Region sowie die IP-Adressbereiche der westlichen USA einer Positivliste hinzu.
+- Verwenden Sie jeweils die neueste Anbieter- und Agent-Version.
+- Alle Hyper-V-Server in einem Tresor müssen die gleiche Version aufweisen.
+- Der Anbieter muss eine Internetverbindung mit Azure Site Recovery herstellen. Hierbei können Sie entweder auf die Verwendung eines Proxys verzichten oder die derzeit auf dem VMM-Server konfigurierten Proxyeinstellungen bzw. die benutzerdefinierten Proxyeinstellungen verwenden, die Sie bei der Anbieterinstallation konfiguriert haben. Wenn Sie einen vorhandenen Proxyserver verwenden möchten, stellen Sie sicher, dass die URLs für die Verbindung mit Azure nicht durch die Firewall blockiert werden.
+	- *.hypervrecoverymanager.windowsazure.com
+	- *.accesscontrol.windows.net
+	- *.backup.windowsazure.com
+	- *.blob.core.windows.net
+	- *.store.core.windows.net
+ 
+- Wenn Sie einen benutzerdefinierten Proxyserver verwenden möchten, richten Sie diesen vor der Installation des Anbieters ein. Bei der Anbieterinstallation müssen Sie dann die Adresse und den Port des Proxyservers sowie die Anmeldeinformationen für den Zugriff angeben. Beachten Sie, dass HTTPS-basierte Proxys nicht unterstützt werden.
 
 
 Diese Grafik zeigt die verschiedenen Kommunikationskanäle und Ports, die Site Recovery für die Orchestrierung und Replikation verwendet.

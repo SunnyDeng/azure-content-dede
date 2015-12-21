@@ -29,10 +29,12 @@ Die folgenden Tabellen zeigen, welche Dienste Bereitstellung und Verwaltung übe
 
 | Dienst | Ressourcen-Manager aktiviert | Portal | Ressourcen verschieben | REST-API | Schema |
 | ------- | ------------------------ | -------------- | -------------- |-------- | ------ |
-| Virtual Machines | Ja | Ja, mehrere Optionen | Nein | [VM erstellen](https://msdn.microsoft.com/library/azure/mt163591.aspx) | [2015-08-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-08-01/Microsoft.Compute.json) |
-| Batch | Ja | [Ja (nur klassisch)](https://portal.azure.com/#create/Microsoft.BatchAccount) | Ja | [Batch REST (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn820158.aspx) | |
-| Dynamics Lifecycle Services | Ja | Nein | | | |
-| Virtuelle Computer (klassisch) | Eingeschränkt | Ja, mehrere Optionen | Teilweise (siehe unten) | - | - | | Remote-App | Nein | Nein | - | - | - | | Service Fabric | Nein | - | - | - | - |
+| Virtual Machines | Ja | Ja, mehrere Optionen | Nein       | [VM erstellen](https://msdn.microsoft.com/library/azure/mt163591.aspx) | [2015-08-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-08-01/Microsoft.Compute.json) |
+| Batch   | Ja     | [Ja (nur klassisch)](https://portal.azure.com/#create/Microsoft.BatchAccount) | Ja | [Batch REST (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn820158.aspx) |        |
+| Dynamics Lifecycle Services | Ja | Nein |    |      |        |
+| Virtuelle Computer (klassisch) | Eingeschränkt | Ja, mehrere Optionen | Teilweise (siehe unten) | - | - |
+| Remote-App | Nein   | Nein | -              | -        | -      |
+| Service Fabric | Nein | -           | -        | -      |
 
 "Virtuelle Computer (klassisch)" bezieht sich auf Ressourcen, die über das klassische Bereitstellungsmodell statt über das Ressourcen-Manager-Bereitstellungsmodell bereitgestellt wurden. Im Allgemeinen unterstützen diese Ressourcen keine Ressourcen-Manager-Vorgänge, es wurden jedoch einige Vorgänge aktiviert. Weitere Informationen zu diesen Bereitstellungsmodellen finden Sie unter [Grundlegendes zur Bereitstellung über den Ressourcen-Manager im Vergleich zur klassischen Bereitstellung](resource-manager-deployment-model.md).
 
@@ -81,11 +83,12 @@ Bei der Arbeit mit Web-Apps können Sie nicht nur einen App Services-Plan versch
 
 | Dienst | Ressourcen-Manager aktiviert | Portal | Ressourcen verschieben | REST-API | Schema |
 | ------- | ------- | --------- | -------------- | -------- | ------ |
-| Event Hub | Ja | Nein | | [Event Hub erstellen](https://msdn.microsoft.com/library/azure/dn790676.aspx) | |
-| Stream Analytics | Ja | [Ja](https://portal.azure.com/#create/Microsoft.StreamAnalyticsJob) | | | |
-| HDInsights | Ja | [Ja](https://portal.azure.com/#create/Microsoft.HDInsightCluster) | Ja | | |
-| Data Factory | Ja | [Ja](https://portal.azure.com/#create/Microsoft.DataFactory) | Ja | [Erstellen einer Data Factory](https://msdn.microsoft.com/library/azure/dn906717.aspx) | |
-| Machine Learning | Nein | Nein | - | - | - | | Data Catalog | Nein | Nein | - | - | - |
+| Event Hub | Ja   | Nein |         | [Event Hub erstellen](https://msdn.microsoft.com/library/azure/dn790676.aspx) |        |
+| Stream Analytics | Ja | [Ja](https://portal.azure.com/#create/Microsoft.StreamAnalyticsJob) |        |          |        |
+| HDInsights | Ja  | [Ja](https://portal.azure.com/#create/Microsoft.HDInsightCluster) | Ja     |          |        |
+| Data Factory | Ja | [Ja](https://portal.azure.com/#create/Microsoft.DataFactory) | Ja | [Erstellen einer Data Factory](https://msdn.microsoft.com/library/azure/dn906717.aspx) |    |
+| Machine Learning | Nein | Nein | -          | -        | -      |
+| Data Catalog | Nein | Nein |  -             | -        | -       |
 
 ## Medien und CDN
 

@@ -14,7 +14,7 @@ Die Verwendung von CDN zum Zwischenspeichern von Azure-Daten bietet folgende Vor
 -   Bessere Leistung und Benutzerfreundlichkeit für Endbenutzer, die von einer Inhaltsquelle weit entfernt sind und Anwendungen verwenden, die viele Verbindungen im Internet benötigen, um Inhalte zu laden.
 -   Große verteilte Skalierung, um hohe Lasten etwa zu Beginn eines Ereignisses, z. B. bei einer Produkteinführung, besser verarbeiten zu können
 
-Aktuelle CDN-Kunden können das Windows Azure CDN jetzt im [klassischen Azure-Portal] verwenden. Das CDN ist eine Zusatzfunktion Ihres Abonnements und hat einen eigenen [Abrechnungsplan].
+Aktuelle CDN-Kunden können das Microsoft Azure CDN jetzt im [klassischen Azure-Portal] verwenden. Das CDN ist eine Zusatzfunktion Ihres Abonnements und hat einen eigenen [Abrechnungsplan].
 
 <a id="Step1"></a><h2>Schritt 1: Erstellen eines Speicherkontos</h2>
 

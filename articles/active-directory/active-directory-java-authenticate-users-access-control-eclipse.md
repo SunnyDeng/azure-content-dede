@@ -78,13 +78,13 @@ Damit Sie die in dieser Anleitung gestellten Aufgaben ausführen können, brauch
 - Ein Azure-Abonnement, das Sie unter <http://www.microsoft.com/windowsazure/offers/> erhalten.
 - Das Azure Toolkit für Eclipse, Version von April 2014 oder höher. Weitere Informationen finden Sie unter [Installation des Azure Toolkit für Eclipse](http://msdn.microsoft.com/library/windowsazure/hh690946.aspx).
 - Ein X.509-Zertifikat, das von Ihrer Anwendung verwendet werden kann. Dieses Zertifikat wird sowohl als öffentliches Zertifikat (.cer) als auch im Format Personal Information Exchange (.PFX) benötigt. (Optionen zur Erstellung dieses Zertifikats finden Sie weiter unten in diesem Lernprogramm).
-- Außerdem sollten Sie mit dem Azure-Serveremulator und den Einsatztechniken vertraut sein, die unter [Creating a Hello World Application for Windows Azure in Eclipse (Erstellen einer Hallo-Welt-Anwendung für Azure in Eclipse, in englischer Sprache)](http://msdn.microsoft.com/library/windowsazure/hh690944.aspx) diskutiert werden.
+- Außerdem sollten Sie mit dem Azure-Serveremulator und den Einsatztechniken vertraut sein, die unter [Creating a Hello World Application for Microsoft Azure in Eclipse (Erstellen einer Hallo-Welt-Anwendung für Azure in Eclipse, in englischer Sprache)](http://msdn.microsoft.com/library/windowsazure/hh690944.aspx) diskutiert werden.
 
 ## Erstellen eines ACS-Namespace
 
 Um mit der Verwendung des Access Control Service (ACS) in Azure beginnen zu können, müssen Sie einen ACS-Namespace erstellen. Dieser Namespace stellt einen eindeutigen Bereich für die Adressierung von ACS-Ressourcen innerhalb Ihrer Anwendung bereit.
 
-1. Melden Sie sich auf dem [Windows Azure-Verwaltungsportal][] an.
+1. Melden Sie sich auf dem [Microsoft Azure-Verwaltungsportal][] an.
 2. Klicken Sie auf **Active Directory**. 
 3. Klicken Sie zum Erstellen eines neuen Access Control-Namespace auf **Neu** und dann auf **App-Dienste**, auf **Access Control** sowie auf **Schnellerstellung**. 
 4. Geben Sie einen Namen für den Namespace ein. Azure prüft, ob der Name eindeutig ist.
@@ -205,7 +205,7 @@ Auf der Seite **Login Page Integration: Azure Web App** wird die unter **Option 
 
 1. Klicken Sie im Eclipse-Projektexplorer mit der rechten Maustaste auf **MyACSHelloWorld**, auf **Azure** und anschließend auf **Paket für Azure**.
 2. Geben Sie unter **Projektname** den Text **MyAzureACSProject** ein, und klicken Sie auf **Weiter**.
-3. Wählen sie ein JDK und einen Anwendungsserver. (Diese Schritte werden detailliert im Lernprogramm [Creating a Hello World Application for Windows Azure in Eclipse (Erstellen einer Hallo-Welt-Anwendung für Azure in Eclipse, in englischer Sprache)](http://msdn.microsoft.com/library/windowsazure/hh690944.aspx) beschrieben).
+3. Wählen sie ein JDK und einen Anwendungsserver. (Diese Schritte werden detailliert im Lernprogramm [Creating a Hello World Application for Microsoft Azure in Eclipse (Erstellen einer Hallo-Welt-Anwendung für Azure in Eclipse, in englischer Sprache)](http://msdn.microsoft.com/library/windowsazure/hh690944.aspx) beschrieben).
 4. Klicken Sie auf **Fertig stellen**.
 5. Klicken Sie auf die Schaltfläche **Run in Azure Emulator**.
 6. Schließen Sie nach dem Start Ihrer Java-Anwendung im Serveremulator alle Instanzen Ihres Browsers, damit andere laufende Browsersitzungen keine Konflikte mit Ihrem ACS-Anmeldungstest auslösen.
@@ -239,11 +239,11 @@ Für eine Bereitstellung in Azure müssen Sie den RP-Bereich und die Rückgabe-U
 
 13. Klicken Sie auf **Fertig stellen**, um das Dialogfeld **Bibliothek bearbeiten** zu schließen.
 14. Klicken Sie auf **OK**, um das Dialogfeld **Eigenschaften für MyACSHelloWorld** zu schließen.
-15. Klicken Sie in Eclipse auf die Schaltfläche **Publish to Azure Cloud**. Befolgen Sie die Anweisungen ähnlich wie im Abschnitt **Bereitstellen der Anwendung in Azure** des Themas [Creating a Hello World Application for Windows Azure in Eclipse (Erstellen einer Hallo-Welt-Anwendung für Azure in Eclipse, in englischer Sprache)](http://msdn.microsoft.com/library/windowsazure/hh690944.aspx). 
+15. Klicken Sie in Eclipse auf die Schaltfläche **Publish to Azure Cloud**. Befolgen Sie die Anweisungen ähnlich wie im Abschnitt **Bereitstellen der Anwendung in Azure** des Themas [Creating a Hello World Application for Microsoft Azure in Eclipse (Erstellen einer Hallo-Welt-Anwendung für Azure in Eclipse, in englischer Sprache)](http://msdn.microsoft.com/library/windowsazure/hh690944.aspx). 
 
 Schließen Sie nach der Bereitstellung Ihrer Webanwendung alle offenen Browser-Sitzungen, und führen Sie Ihre Webanwendung aus. Sie sollten nun die Aufforderung erhalten, sich mit Ihren Anmeldeinformationen für Windows Live ID anzumelden, und danach zur Rückgabe-URL Ihrer Anwendung der vertrauenden Seite weitergeleitet werden.
 
-Wenn Sie Ihre ACS-Hallo-Welt-Anwendung nicht mehr benötigen, denken Sie daran, die Bereitstellung zu löschen (Informationen dazu finden Sie im Thema [Creating a Hello World Application for Windows Azure in Eclipse (Erstellen einer Hallo-Welt-Anwendung für Azure in Eclipse, in englischer Sprache)](http://msdn.microsoft.com/library/windowsazure/hh690944.aspx).
+Wenn Sie Ihre ACS-Hallo-Welt-Anwendung nicht mehr benötigen, denken Sie daran, die Bereitstellung zu löschen (Informationen dazu finden Sie im Thema [Creating a Hello World Application for Microsoft Azure in Eclipse (Erstellen einer Hallo-Welt-Anwendung für Azure in Eclipse, in englischer Sprache)](http://msdn.microsoft.com/library/windowsazure/hh690944.aspx).
 
 
 ## <a name="next_steps"></a>Nächste Schritte
@@ -292,7 +292,7 @@ An diesem Punkt wird Ihr Zertifikat in Ihre Bereitstellung aufgenommen. Bitte be
 [Windows Identity Foundation]: http://www.microsoft.com/download/en/details.aspx?id=17331
 [Windows Identity Foundation SDK]: http://www.microsoft.com/download/en/details.aspx?id=4451
 [Azure-Verwaltungsportal]: https://manage.windowsazure.com
-[Windows Azure-Verwaltungsportal]: https://manage.windowsazure.com
+[Microsoft Azure-Verwaltungsportal]: https://manage.windowsazure.com
 [acs_flow]: ./media/active-directory-java-authenticate-users-access-control-eclipse/ACSFlow.png
 
 <!-- Eclipse-specific -->

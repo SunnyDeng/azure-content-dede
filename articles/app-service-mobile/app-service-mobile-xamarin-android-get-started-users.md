@@ -18,7 +18,9 @@
 
 # Hinzufügen der Authentifizierung zu Ihrer Xamarin.Android-App
 
-[AZURE.INCLUDE [app-service-mobile-selector-get-started-users](../../includes/app-service-mobile-selector-get-started-users.md)]&nbsp;[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
+[AZURE.INCLUDE [app-service-mobile-selector-get-started-users](../../includes/app-service-mobile-selector-get-started-users.md)]
+&nbsp;  
+[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
 
 In diesem Thema wird die Authentifizierung von Benutzern einer mobilen App über Ihre Clientanwendung veranschaulicht. In diesem Lernprogramm fügen Sie eine Authentifizierung zu dem Schnellstartprojekt hinzu. Sie verwenden dazu einen Identitätsanbieter, der von Azure Mobile Apps unterstützt wird. Nach der erfolgreichen Authentifizierung und Autorisierung in Mobile Apps wird die Benutzer-ID angezeigt.
 
@@ -108,4 +110,4 @@ Die App wird so aktualisiert, dass Benutzer auf die Schaltfläche **Anmelden** t
 [Erstellen einer Xamarin.Android-App]: app-service-mobile-xamarin-android-get-started.md
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1210_2015--->

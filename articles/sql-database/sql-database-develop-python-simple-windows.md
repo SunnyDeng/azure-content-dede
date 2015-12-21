@@ -103,11 +103,11 @@ In diesem Beispiel erfahren Sie, wie Sie eine [INSERT](https://msdn.microsoft.co
 Dieses Codebeispiel veranschaulicht die Verwendung von Transaktionen für folgende Aufgaben:
 
 
-- Starten von Transaktionen
+-Starten von Transaktionen
 
-- Einfügen von Zeilen mit Daten
+-Einfügen von Zeilen mit Daten
 
-- Durchführen von Rollbacks für Transaktionen zum Rückgängigmachen von Einfügungen
+-Durchführen von Rollbacks für Transaktionen zum Rückgängigmachen von Einfügungen
 
 
 	import pymssql

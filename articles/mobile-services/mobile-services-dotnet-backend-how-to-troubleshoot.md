@@ -38,7 +38,7 @@ Beim Entwickeln von Apps mit Mobile Services nutzt man normalerweise das Mobile 
 
 Sie können einen belieben HTTP-Debugger verwenden und HTTP-Traffic senden und inspizieren. [Fiddler](http://www.telerik.com/fiddler) ist ein beliebtes Tool, das Entwickler häufig zu diesem Zweck einsetzen. Um das Leben von Entwicklern einfacher zu machen, bündelt Mobile Services einen webbasierten HTTP-Debugger (auch als „Testclient“ bezeichnet) direkt mit Ihrem mobilen Dienst, was ein externes Tool unnötig macht. Wenn Sie Ihren mobilen Dienst lokal hosten, ist er unter einem URI im Stil von [http://localhost:59233](http://localhost:59233) verfügbar. Beim Hosten in der Cloud hat der URI das Format von [http://todo-list.azure-mobile.net](http://todo-list.azure-mobile.net). Die folgenden Schritte funktionieren gleich, unabhängig davon, wo der Dienst gehostet wird:
 
-1. Beginnen Sie mit einem Mobile Services-Serverprojekt in **Visual Studio 2013 Update 2** oder neuer. Falls Sie kein Projekt zur Hand haben, können Sie ein neues erstellen, indem Sie **Datei**, **Neu**, **Projekt** auswählen und dann den **Cloud**-Knoten und anschließend die **Windows Azure Mobile Services**-Vorlage auswählen.
+1. Beginnen Sie mit einem Mobile Services-Serverprojekt in **Visual Studio 2013 Update 2** oder neuer. Falls Sie kein Projekt zur Hand haben, können Sie ein neues erstellen, indem Sie **Datei**, **Neu**, **Projekt** auswählen und dann den **Cloud**-Knoten und anschließend die **Microsoft Azure Mobile Services**-Vorlage auswählen.
 2. Drücken Sie **F5**, wodurch das Projekt erstellt und ausgeführt wird. Wählen Sie auf der Startseite **Ausprobieren**.
 
     >[AZURE.NOTE]Wenn der Dienst lokal gehostet wird, werden Sie beim Klicken auf den Link direkt auf die nächste Seite weitergeleitet. Beim Hosting in der Cloud hingegen werden Sie zur Eingabe von Anmeldeinformationen aufgefordert. Damit soll sichergestellt werden, dass nicht authentifizierte Benutzer keinen Zugriff auf die Daten über ihre API und Nutzlasten haben. Um die Seite sehen zu können, müssen Sie sich mit einem **leeren Benutzernamen** und Ihrem **Anwendungsschlüssel** als Kennwort anmelden. Ihren Anwendungsschlüssel für Ihren mobilen Dienst finden Sie im klassischen Azure-Portal auf der Registerkarte **Dashboard**, wenn Sie **Schlüssel verwalten** auswählen.
@@ -89,7 +89,7 @@ Eine der Schlüsselfunktionen des .NET-Back-Ends ist die Möglichkeit, den Diens
 
     ![Debug veröffentlichen][PublishDebug]
 
-10. Nachdem der Dienst erfolgreich veröffentlicht wurde, öffnen Sie **Server-Explorer**, und erweitern Sie die Knoten **Windows Azure** und **Mobile Services**. Melden Sie sich wenn nötig an.
+10. Nachdem der Dienst erfolgreich veröffentlicht wurde, öffnen Sie **Server-Explorer**, und erweitern Sie die Knoten **Microsoft Azure** und **Mobile Services**. Melden Sie sich wenn nötig an.
 11. Klicken Sie mit der rechten Maustaste den mobilen Dienst, auf dem Sie gerade veröffentlicht haben und wählen Sie **Debugger anfügen**.
 
     ![Debugger anfügen][AttachDebugger]

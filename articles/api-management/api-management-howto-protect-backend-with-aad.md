@@ -56,7 +56,7 @@ Konfigurieren Sie die gewünschten Einstellungen im Dialogfeld **Authentifizieru
 
 ![Authentifizierung ändern][api-management-change-authentication]
 
-Beim Klicken auf **OK** versucht Visual Studio, Ihre Anwendung bei Ihrem Windows Azure AD-Verzeichnis zu registrieren, und Sie werden möglicherweise von Visual Studio zur Anmeldung aufgefordert. Melden Sie sich mit einem Administratorkonto für Ihr Verzeichnis an.
+Beim Klicken auf **OK** versucht Visual Studio, Ihre Anwendung bei Ihrem Microsoft Azure AD-Verzeichnis zu registrieren, und Sie werden möglicherweise von Visual Studio zur Anmeldung aufgefordert. Melden Sie sich mit einem Administratorkonto für Ihr Verzeichnis an.
 
 ![Anmelden bei Visual Studio][api-management-sign-in-vidual-studio]
 

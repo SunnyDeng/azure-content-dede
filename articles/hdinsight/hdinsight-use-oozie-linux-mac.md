@@ -481,7 +481,7 @@ Um auf die Oozie-Webbenutzeroberfläche zuzugreifen, gehen Sie folgendermaßen v
 
 2. Nachdem der Tunnel erstellt wurde, öffnen Sie die Ambari-Webbenutzeroberfläche in Ihrem Webbrowser. Der URI der Ambari-Website lautet ****https://CLUSTERNAME.azurehdinsight.net**. Ersetzen Sie **CLUSTERNAME** durch den Namen des Linux-basierten HDInsight-Clusters.
 
-3. Wählen Sie auf der linken Seite der Seite **Oozie**, dann **QuickLinks** und schließlich **Oozie Web UI** aus.
+3. Wählen Sie auf der linken Seite der Seite **Oozie**, dann **Quicklinks** und schließlich **Oozie Web UI** aus.
 
 	![Abbildung der Menüs](./media/hdinsight-use-oozie-linux-mac/ooziewebuisteps.png)
 

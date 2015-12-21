@@ -19,7 +19,7 @@
 
 # Ausführen von Aufgaben zur statischen Paketerstellung mithilfe von Azure Media Packager
 
->[AZURE.NOTE]Das Ende der Nutzung von Windows Azure Media Packager und Windows Azure Media Encryptor ist am 1. März 2016 erreicht. Ab diesem Zeitpunkt sind diese Komponenten nicht mehr verfügbar. Die Funktionen zur Formatkonvertierung und Verschlüsselung stehen dann über die dynamische Paketerstellung und die dynamische Verschlüsselung zur Verfügung.
+>[AZURE.NOTE]Das Ende der Nutzung von Microsoft Azure Media Packager und Microsoft Azure Media Encryptor ist am 1. März 2016 erreicht. Ab diesem Zeitpunkt sind diese Komponenten nicht mehr verfügbar. Die Funktionen zur Formatkonvertierung und Verschlüsselung stehen dann über die dynamische Paketerstellung und die dynamische Verschlüsselung zur Verfügung.
 
 ## Übersicht
 

@@ -156,7 +156,7 @@ In dieser Aufgabe werden Sie Ihre ASP.NET-Webanwendung mit ACS integrieren.
 
 	![][4]
 
-2.	Wählen Sie auf der Registerkarte **Anbieter** die Position **Windows Azure-Zugriffssteuerungsdienst verwenden** aus.
+2.	Wählen Sie auf der Registerkarte **Anbieter** die Position **Microsoft Azure-Zugriffssteuerungsdienst verwenden** aus.
 
     ![][44]
 

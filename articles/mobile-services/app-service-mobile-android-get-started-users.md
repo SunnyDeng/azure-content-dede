@@ -18,7 +18,9 @@
 
 # Hinzufügen der Authentifizierung zu Ihrer Android-App
 
-[AZURE.INCLUDE [app-service-mobile-selector-get-started-users](../../includes/app-service-mobile-selector-get-started-users.md)]&nbsp;[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
+[AZURE.INCLUDE [app-service-mobile-selector-get-started-users](../../includes/app-service-mobile-selector-get-started-users.md)]
+&nbsp;  
+[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
 
 ## Zusammenfassung
 
@@ -68,4 +70,4 @@ Nachdem Sie dieses einfache Tutorial zur Authentifizierung abgeschlossen haben, 
 <!-- URLs. -->
 [Erste Schritte mit Mobile Apps]: app-service-mobile-android-get-started.md
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1210_2015--->

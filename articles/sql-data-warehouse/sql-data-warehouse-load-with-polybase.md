@@ -58,7 +58,9 @@ Um auf den Azure-Blob-Speicher zugreifen zu können, müssen Sie datenbankbezoge
 
 1. Überprüfen Sie, ob bereits Datenbankanmeldeinformationen vorhanden sind. Verwenden Sie hierzu die Systemansicht „sys.database\_credentials“ und nicht „sys.credentials“, da diese Ansicht nur die Serveranmeldeinformationen enthält.
 
-    ``` -- Check for existing database-scoped credentials. SELECT * FROM sys.database\_credentials;
+    ```
+    -- Check for existing database-scoped credentials.
+    SELECT * FROM sys.database_credentials;
 
 3. Erstellen Sie mit [CREATE CREDENTIAL (Transact-SQL)][] datenbankbezogene Anmeldeinformationen für alle Azure-Speicherkonten, auf die Sie zugreifen möchten. In diesem Beispiel steht IDENTITY für den Anzeigenamen für die Anmeldeinformationen. Er hat keine Auswirkungen auf die Authentifizierung für den Azure-Speicher. SECRET ist der Azure-Speicherkontoschlüssel.
 

@@ -504,8 +504,27 @@ Die [Bundle](http://msdn.microsoft.com/library/system.web.optimization.bundle.as
 4. Veröffentlichen Sie Ihre Azure-Web-App erneut, und greifen Sie auf die Startseite zu.
 5. Zeigen Sie den HTML-Code für die Seite an. Es sollten eingefügte Skripts ähnlich den folgenden zu sehen sein:    
 	
-	``` ... <link href="http://az673227.vo.msecnd.net/Content/css?v=1.0.0.25474" rel="stylesheet"/>
-<script>(function() { var loadFallback, len = document.styleSheets.length; for (var i = 0; i < len; i++) { var sheet = document.styleSheets[i]; if (sheet.href.indexOf('http://az673227.vo.msecnd.net/Content/css?v=1.0.0.25474') !== -1) { var meta = document.createElement('meta'); meta.className = 'sr-only'; document.head.appendChild(meta); var value = window.getComputedStyle(meta).getPropertyValue('width'); document.head.removeChild(meta); if (value !== '1px') { document.write('<link href="/Content/css" rel="stylesheet" type="text/css" />'); } } } return true; }())||document.write('<script src="/Content/css"><\\/script>');</script>
+	```
+	...
+	<link href="http://az673227.vo.msecnd.net/Content/css?v=1.0.0.25474" rel="stylesheet"/>
+<script>(function() {
+                var loadFallback,
+                    len = document.styleSheets.length;
+                for (var i = 0; i < len; i++) {
+                    var sheet = document.styleSheets[i];
+                    if (sheet.href.indexOf('http://az673227.vo.msecnd.net/Content/css?v=1.0.0.25474') !== -1) {
+                        var meta = document.createElement('meta');
+                        meta.className = 'sr-only';
+                        document.head.appendChild(meta);
+                        var value = window.getComputedStyle(meta).getPropertyValue('width');
+                        document.head.removeChild(meta);
+                        if (value !== '1px') {
+                            document.write('<link href="/Content/css" rel="stylesheet" type="text/css" />');
+                        }
+                    }
+                }
+                return true;
+            }())||document.write('<script src="/Content/css"><\/script>');</script>
 
 	<script src="http://az673227.vo.msecnd.net/bundles/modernizer?v=1.0.0.25474"></script>
  	<script>(window.Modernizr)||document.write('<script src="/bundles/modernizr"><\/script>');</script>
@@ -518,11 +537,11 @@ Die [Bundle](http://msdn.microsoft.com/library/system.web.optimization.bundle.as
 	...
 	```
 
-	Note that injected script for the CSS bundle still contains the errant remnant from the `CdnFallbackExpression` property in the line:
+	Beachten Sie, dass das eingefügte Skript für das CSS-Bündel immer noch den fehlgeleiteten Rest aus der "CdnFallbackExpression"-Eigenschaft in der folgenden Zeile enthält:
 
 		}())||document.write('<script src="/Content/css"><\/script>');</script>
 
-	But since the first part of the || expression will always return true (in the line directly above that), the document.write() function will never run.
+	Da jedoch der erste Teil des ||-Ausdrucks immer "true" zurückgibt (in der Zeile unmittelbar darüber), wird die document.write()-Funktion niemals ausgeführt.
 
 6. Um zu testen, ob das Fallback-Skript funktioniert, gehen Sie zurück zum Dashboard Ihres CDN-Endpunkts, und klicken Sie auf **Endpunkt deaktivieren**.
 

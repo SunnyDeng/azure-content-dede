@@ -292,7 +292,7 @@ Beim n-Ebenen-Hybridanwendungsmuster können Sie den folgenden Workflow in der a
 
 	Weitere Informationen zum Herstellen einer Verbindung mit SQL Server in Azure finden Sie unter [Verbinden eines virtuellen SQL Server-Computers in Azure](virtual-machines-sql-server-connectivity.md).
 
-1. Richten Sie geplante Aufträge und Warnungen ein, die lokale Daten auf einem Datenträger eines virtuellen Computers in Azure sichern. Weitere Informationen finden Sie unter [SQL Server-Sicherung und -Wiederherstellung mit dem Windows Azure-BLOB-Speicherdienst](https://msdn.microsoft.com/library/jj919148.aspx) und [Sicherung und Wiederherstellung für SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-backup-and-restore.md).
+1. Richten Sie geplante Aufträge und Warnungen ein, die lokale Daten auf einem Datenträger eines virtuellen Computers in Azure sichern. Weitere Informationen finden Sie unter [SQL Server-Sicherung und -Wiederherstellung mit dem Microsoft Azure-BLOB-Speicherdienst](https://msdn.microsoft.com/library/jj919148.aspx) und [Sicherung und Wiederherstellung für SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-backup-and-restore.md).
 
 1. Abhängig von den Anforderungen Ihrer Anwendung können Sie eines der folgenden drei gängigen Szenarios implementieren:
 

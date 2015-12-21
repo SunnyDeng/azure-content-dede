@@ -88,7 +88,8 @@ Messen Sie als Nächstes die maximalen Leistungsanforderungen der Anwendung wäh
 | Durchschnittliche Arbeitsspeichernutzung | | | |
 | Warteschlangenlänge | | | |
 
->**Wichtiger Hinweis:** Es empfiehlt sich, diese Zahlen basierend auf dem erwarteten zukünftigen Wachstum Ihrer Anwendung zu skalieren. Es ist stets eine gute Idee, für Wachstum im Voraus zu planen, da es schwieriger sein könnte, die Infrastruktur zur Verbesserung der Leistung später zu ändern.
+>**Wichtiger Hinweis:**  
+>Es empfiehlt sich, diese Zahlen basierend auf dem erwarteten zukünftigen Wachstum Ihrer Anwendung zu skalieren. Es ist stets eine gute Idee, für Wachstum im Voraus zu planen, da es schwieriger sein könnte, die Infrastruktur zur Verbesserung der Leistung später zu ändern.
 
 Wenn Sie eine vorhandene Anwendung haben, die in Storage Premium verschoben werden soll, erstellen Sie für diese Anwendung zunächst die obige Prüfliste. Erstellen Sie anschließend einen Prototyp der Anwendung in Storage Premium, und entwerfen Sie die Anwendung basierend auf den Leitlinien unter *Optimieren der Anwendungsleistung* weiter unten in diesem Dokument. Im nächsten Abschnitt werden die Tools beschrieben, die Sie verwenden können, um die Leistungsindikatoren zu erfassen.
 
@@ -138,7 +139,8 @@ In der folgenden Tabelle sind sämtliche Leistungsfaktoren und die Schritte zum 
 ## Art der E/A-Anforderungen  
 Eine E/A-Anforderung ist eine E/A-Vorgangseinheit, die Ihre Anwendung ausführt. Das Bestimmen der Art der E/A-Anforderungen – zufällig oder sequenziell, Lese- oder Schreibvorgang, klein oder groß – hilft beim Ermitteln der Leistungsanforderungen Ihrer Anwendung. Sie müssen sich unbedingt mit der Art der E/A-Anforderungen vertraut machen, um beim Entwurf der Infrastruktur Ihrer Anwendung die richtigen Entscheidungen zu treffen.
 
-Die E/A-Größe ist einer der wichtigsten Faktoren. Die E/A-Größe ist die Größe des angeforderten E/A-Vorgangs, den Ihre Anwendung generiert hat. Die E/A-Größe hat einen erheblichen Einfluss auf die Leistung, insbesondere auf die IOPS und Bandbreite, die die Anwendung erzielen kann. Die folgende Formel zeigt die Beziehung zwischen IOPS, E/A-Größe und Bandbreite/Durchsatz. ![](media/storage-premium-storage-performance/image1.png)
+Die E/A-Größe ist einer der wichtigsten Faktoren. Die E/A-Größe ist die Größe des angeforderten E/A-Vorgangs, den Ihre Anwendung generiert hat. Die E/A-Größe hat einen erheblichen Einfluss auf die Leistung, insbesondere auf die IOPS und Bandbreite, die die Anwendung erzielen kann. Die folgende Formel zeigt die Beziehung zwischen IOPS, E/A-Größe und Bandbreite/Durchsatz.  
+	![](media/storage-premium-storage-performance/image1.png)
 
 Einige Anwendungen ermöglichen Ihnen das Ändern der E/A-Größe, andere hingegen nicht. Beispielsweise bestimmt SQL Server selbst die optimale E/A-Größe und bietet Benutzern keine Möglichkeiten, sie zu ändern. Oracle bietet dagegen den Parameter [DB\_BLOCK\_SIZE](https://docs.oracle.com/cd/B19306_01/server.102/b14211/iodesign.htm#i28815), mit dem Sie die E/A-Anforderungsgröße der Datenbank konfigurieren können.
 
@@ -163,7 +165,8 @@ Es folgt ein Beispiel, wie Sie IOPS bzw. Durchsatz/Bandbreite für Ihre Anwendun
 
 Um eine IOPS-Rate und Bandbreite zu erzielen, die höher als der Maximalwert eines einzelnen Storage Premium-Datenträgers ist, verwenden Sie mehrere Premium-Datenträger in einem Stripeset. Fügen Sie z. B. zwei P30-Datenträger zu einem Stripeset zusammen, um in dieser Kombination eine IOPS-Rate von 10.000 oder einen Durchsatz von 400 MB pro Sekunde zu erzielen. Wie im nächsten Abschnitt erläutert, müssen Sie eine VM-Größe wählen, die die IOPS-Rate und den Durchsatz der kombinierten Datenträger unterstützt.
 
->**Hinweis:** Wenn Sie entweder die IOPS-Rate oder den Durchsatz erhöhen, sollten Sie sicherstellen, dass Sie dabei nicht das Durchsatz- oder IOPS-Limit des Datenträgers oder der VM überschreiten.
+>**Hinweis:**  
+>Wenn Sie entweder die IOPS-Rate oder den Durchsatz erhöhen, stellen Sie sicher, dass Sie dabei nicht das Durchsatz- oder IOPS-Limit des Datenträgers oder der VM überschreiten.
 
 Führen Sie zum Überprüfen der Auswirkungen der E/A-Größe auf die Anwendungsleistung in Ihrer VM und auf Ihren Datenträgern Benchmarktools aus. Erstellen Sie mehrere Testläufe, und wählen Sie für jeden Lauf eine andere E/A-Größe, um die Auswirkungen zu prüfen. Im Abschnitt [Benchmarktests](#_Benchmarking) am Ende dieses Artikels finden Sie weitere Details.
 
@@ -179,11 +182,13 @@ Hochleistungs-VMs stehen in mehreren Größen mit jeweils einer anderen Anzahl v
 
 Eine vollständige Übersicht mit allen verfügbaren Azure-VM-Größen finden Sie unter [Größen für virtuelle Azure-Computer](virtual-machines-size-specs.md). Wählen Sie eine VM-Größe, die Ihre Anforderungen an die Anwendungsleistung erfüllen und entsprechend skaliert werden kann. Berücksichtigen Sie darüber hinaus folgende wichtige Aspekte bei der Wahl der VM-Größe.
 
-*Skalierungslimits* Die maximalen IOPS-Limits pro VM und Datenträger sind unterschiedlich und voneinander unabhängig. Stellen Sie sicher, dass die Anwendung die IOPS innerhalb der Limits der VM sowie der angefügten Storage Premium-Datenträger unterstützt. Andernfalls wird die Anwendungsleistung gedrosselt.
+*Skalierungslimits*  
+Die maximalen IOPS-Limits pro VM und Datenträger sind unterschiedlich und voneinander unabhängig. Stellen Sie sicher, dass die Anwendung die IOPS innerhalb der Limits der VM sowie der angefügten Storage Premium-Datenträger unterstützt. Andernfalls wird die Anwendungsleistung gedrosselt.
 
 Beispiel: Angenommen, eine Anwendungsanforderung ist ein IOPS-Wert von maximal 4.000. Um dies zu erreichen, stellen Sie einen P30-Datenträger in einer VM der DS1-Serie bereit. Der P30-Datenträger kann bis zu 5.000 IOPS bieten. Die VM der DS1-Serie ist jedoch auf 3.200 IOPS beschränkt. Daher wird die Anwendungsleistung gemäß dem VM-Limit auf 3.200 IOPS verringert. Um dies zu vermeiden, wählen eine VM- und Datenträgergröße, die beide Anwendungsanforderungen erfüllt.
 
-*Betriebskosten* In vielen Fällen ist es möglich, dass die Gesamtbetriebskosten bei der Verwendung von Storage Premium niedriger als bei der Verwendung von Storage Standard sind.
+*Betriebskosten*  
+In vielen Fällen ist es möglich, dass die Gesamtbetriebskosten bei Verwenden von Storage Premium niedriger als bei Verwenden von Storage Standard sind.
 
 Nehmen wir als Beispiel eine Anwendung, die 16.000 IOPS benötigt. Um diese Leistung zu erzielen, brauchen Sie eine Azure IaaS-VM vom Typ „Standard\_D14“, die bei Verwenden von 32 Storage Standard-Datenträgern mit je 1 TB eine maximale IOPS-Rate von 16.000 bietet. Jeder Storage Standard-Datenträger mit 1 TB kann maximal 500 IOPS erzielen. Die geschätzten Kosten für diese VM pro Monat liegen bei 1.570 $. Die monatliche Kosten der 32 Storage Standard-Datenträger betragen 1.638 $. Die geschätzten monatlichen Gesamtkosten betragen 3.208 $.
 
@@ -197,7 +202,8 @@ In der folgenden Tabelle wird die Aufschlüsselung der Kosten für Storage Stand
 | **Datenträgerkosten pro Monat** | 1\.638,40 $ (32 1-TB-Festplatten) | 544,34 $ (4 P30-Datenträger) |
 | **Gesamtkosten pro Monat** | 3\.208,98 $ | 1\.544,34 $ |
 
-*Linux-Distributionen* Mit Azure Storage Premium erhalten Sie unter Windows und Linux das gleiche Maß an Leistung für virtuelle Computer. Wir unterstützen viele Arten von Linux-Distributionen. Eine vollständige Liste finden Sie [hier](virtual-machines-linux-endorsed-distributions.md). Es ist wichtig zu beachten, dass verschiedene Distributionen für verschiedene Arten von Workloads besser geeignet sind. Je nach Distribution, in der Ihr Workload ausgeführt wird, sind die Leistungsgrade unterschiedlich. Testen Sie die Linux-Distributionen mit Ihrer Anwendung, und wählen Sie diejenige, die am besten geeignet ist.
+*Linux-Distributionen*  
+Mit Azure Storage Premium erhalten Sie unter Windows und Linux das gleiche Maß an Leistung für virtuelle Computer. Wir unterstützen viele Arten von Linux-Distributionen. Eine vollständige Liste finden Sie [hier](https://azure.microsoft.com/documentation/articles/virtual-machines-linux-endorsed-distributions/). Es ist wichtig zu beachten, dass verschiedene Distributionen für verschiedene Arten von Workloads besser geeignet sind. Je nach Distribution, in der Ihr Workload ausgeführt wird, sind die Leistungsgrade unterschiedlich. Testen Sie die Linux-Distributionen mit Ihrer Anwendung, und wählen Sie diejenige, die am besten geeignet ist.
 
 Überprüfen Sie bei Ausführen von Linux mit Storage Premium die neuesten Updates hinsichtlich erforderlicher Treiber, um eine hohe Leistung zu gewährleisten.
 
@@ -212,15 +218,18 @@ Für Azure Storage Premium werden derzeit drei Datenträgergrößen angeboten. J
 
 Die zu wählende Anzahl von Datenträgern hängt von der gewählten Datenträgergröße ab. Zum Erfüllen Ihrer Anwendungsanforderung können Sie entweder einen einzelnen P30- oder mehrere P10-Datenträger verwenden. Berücksichtigen Sie bei Ihrer Wahl die nachstehenden Aspekte.
 
-*Skalierungslimits (IOPS und Durchsatz)* Die IOPS- und Durchsatzlimits der einzelnen Premium-Datenträgergrößen sind unterschiedlich und unabhängig von den VM-Skalierungslimits. Vergewissern Sie sich, dass die gesamte IOPS- und Durchsatzrate der Datenträger innerhalb der Skalierungslimits der gewählten VM-Größe liegen.
+*Skalierungslimits (IOPS und Durchsatz)*  
+Die IOPS- und Durchsatzlimits der einzelnen Premium-Datenträgergrößen sind unterschiedlich und unabhängig von den VM-Skalierungslimits. Vergewissern Sie sich, dass die gesamte IOPS- und Durchsatzrate der Datenträger innerhalb der Skalierungslimits der gewählten VM-Größe liegen.
 
 Beispiel: Angenommen, eine Anwendungsanforderung hat einen Durchsatz von maximal 250 MB/s, und Sie verwenden eine VM vom Typ DS4 mit einem einzelnen P30-Datenträger. Die VM vom Typ DS4 kann einen Durchsatz von bis zu 256 MB/s bieten. Ein einzelner P30-Datenträger hat jedoch ein Durchsatzlimit von 200 MB/s. Demzufolge wird die Anwendung aufgrund des Datenträgerlimits auf 200 MB/s beschränkt. Um diese Beschränkung zu umgehen, stellen Sie für die VM mehr als einen Datenträger bereit.
 
->**Hinweis:** Leseanforderungen, die aus dem Cache erfüllt werden, bleiben bei der IOPS- und Durchsatzleistung des Datenträgers unberücksichtigt und unterliegen deshalb keinen Datenträgerlimits. Für den Cache gelten separate IOPS- und Durchsatzlimits pro VM.
+>**Hinweis:**  
+>Leseanforderungen, die aus dem Cache erfüllt werden, bleiben bei der IOPS- und Durchsatzleistung des Datenträgers unberücksichtigt und unterliegen deshalb keinen Datenträgerlimits. Für den Cache gelten separate IOPS- und Durchsatzlimits pro VM.
 >
 >Beispielsweise erfolgen Ihre Lese- und Schreibvorgänge anfänglich mit 60 MB/s bzw. 40 MB/s. Mit der Zeit füllt sich der Cache auf, sodass immer mehr Leseanforderungen aus dem Cache erfüllt werden. Dadurch erhalten Sie einen höheren Schreibdurchsatz vom Datenträger.
 
-*Anzahl der Datenträger* Bestimmen Sie die benötigte Anzahl der Datenträger, indem Sie die Anwendungsanforderungen prüfen. Für jede VM gilt auch ein Limit für die Anzahl der Datenträger, die an die VM angefügt werden können. In der Regel ist dies die doppelte Anzahl der Kerne. Stellen Sie sicher, dass die gewählte VM-Größe die erforderliche Anzahl von Datenträgern unterstützt.
+*Anzahl der Datenträger*  
+Bestimmen Sie die benötigte Anzahl der Datenträger, indem Sie die Anwendungsanforderungen prüfen. Für jede VM gilt auch ein Limit für die Anzahl der Datenträger, die an die VM angefügt werden können. In der Regel ist dies die doppelte Anzahl der Kerne. Stellen Sie sicher, dass die gewählte VM-Größe die erforderliche Anzahl von Datenträgern unterstützt.
 
 Wie schon erwähnt, bieten Storage Premium-Datenträger eine höhere Leistung als Storage Standard-Datenträger. Wenn Sie also Ihre Anwendung aus einer Azure IaaS-VM mit Storage Standard zu Storage Premium migrieren, benötigen Sie wahrscheinlich weniger Premium-Datenträger, um für Ihre Anwendung dieselbe oder eine höhere Leistung zu erzielen.
 
@@ -244,12 +253,14 @@ Es folgen die empfohlenen Cacheeinstellungen für Datenträger:
 | ReadOnly | Konfigurieren Sie „host-cache“ mit „ReadOnly“ für Datenträger mit reinem Lese- und Lese-/Schreibzugriff. |
 | ReadWrite | Konfigurieren Sie „host-cache“ nur dann mit „ReadWrite“, wenn Ihre Anwendung zwischengespeicherte Daten bei Bedarf ordnungsgemäß auf beständige Datenträger schreiben kann. |
 
-*ReadOnly* Durch Konfigurieren des „ReadOnly“-Caches für Storage Premium-Datenträger können Sie für Ihre Anwendung eine niedrige Leselatenz und eine sehr hohe Leserate hinsichtlich IOPS und Durchsatz erzielen. Hierfür gibt es zwei Gründe:
+*ReadOnly*  
+Durch Konfigurieren des „ReadOnly“-Caches für Storage Premium-Datenträger können Sie für Ihre Anwendung eine niedrige Leselatenz und einen sehr hohe Leserate hinsichtlich IOPS und Durchsatz erzielen. Hierfür gibt es zwei Gründe:
 
 1.  Aus dem Cache erfüllte Leseanforderungen, der sich im Arbeitsspeicher der VM und auf dem lokalen SSD-Laufwerk befindet, sind wesentlich schneller als Lesevorgänge vom Datenträger, der sich in Azure-Blobspeicher befindet.  
 2.  Storage Premium rechnet die aus dem Cache erfüllten Leseanforderungen nicht zur IOPS- und Durchsatzrate des Datenträgers. Aus diesem Grund kann Ihre Anwendung eine höhere Gesamtrate bei IOPS und Durchsatz erzielen.
 
-*ReadWrite* Für die Betriebssystem-Datenträger ist der „ReadWrite“-Cache standardmäßig aktiviert. Wir haben vor Kurzem Unterstützung des „ReadWrite“-Caches auf Datenträgern hinzugefügt. Wenn Sie den „ReadWrite“-Cache nutzen, benötigen Sie eine ordnungsgemäße Möglichkeit zum Schreiben der Daten aus dem Cache auf beständige Datenträger. SQL Server übernimmt beispielsweise selbst das Schreiben von Daten im Cache auf beständige Speicherdatenträger. Das Verwenden eines „ReadWrite“-Caches mit einer Anwendung, die die benötigten Daten nicht beständig speichert, kann zu Datenverlusten führen, sollte die VM abstürzen.
+*ReadWrite*  
+Für die Betriebssystem-Datenträger ist der „ReadWrite“-Cache standardmäßig aktiviert. Wir haben vor Kurzem Unterstützung des „ReadWrite“-Caches auf Datenträgern hinzugefügt. Wenn Sie den „ReadWrite“-Cache nutzen, benötigen Sie eine ordnungsgemäße Möglichkeit zum Schreiben der Daten aus dem Cache auf beständige Datenträger. SQL Server übernimmt beispielsweise selbst das Schreiben von Daten im Cache auf beständige Speicherdatenträger. Das Verwenden eines „ReadWrite“-Caches mit einer Anwendung, die die benötigten Daten nicht beständig speichert, kann zu Datenverlusten führen, sollte die VM abstürzen.
 
 Als Beispiel können Sie diese Leitlinien auf SQL Server in Storage Premium anwenden, indem Sie die folgenden Schritte ausführen:
 
@@ -265,13 +276,15 @@ Wichtig: Im Server-Manager können Sie die Gesamtanzahl der Spalten auf bis zu 8
 
 Unter Linux können Sie hierfür das Hilfsprogramm MDADM verwenden. Detaillierte Anweisungen für das Erstellen von Stripesets unter Linux finden Sie im Artikel [Konfigurieren von Software-RAID unter Linux](virtual-machines-linux-configure-raid.md).
 
-*Stripegröße* Eine wichtige Konfigurationseinstellung beim Datenträgerstriping ist die Stripegröße. Die Stripe- bzw. Blockgröße ist die kleinste Datenmenge, die eine Anwendung auf einem Stripesetvolume adressieren kann. Die Stripegröße, die Sie konfigurieren, hängt von der Art der Anwendung und ihrem Anforderungsmuster ab. Bei Wahl der falschen Stripegröße ist eine falsche E/A-Abstimmung möglich, durch die sich die Leistung Ihrer Anwendung verschlechtert.
+*Stripegröße*  
+Eine wichtige Konfigurationseinstellung beim Datenträgerstriping ist die Stripegröße. Die Stripe- bzw. Blockgröße ist die kleinste Datenmenge, die eine Anwendung auf einem Stripesetvolume adressieren kann. Die Stripegröße, die Sie konfigurieren, hängt von der Art der Anwendung und ihrem Anforderungsmuster ab. Bei Wahl der falschen Stripegröße ist eine falsche E/A-Abstimmung möglich, durch die sich die Leistung Ihrer Anwendung verschlechtert.
 
 Wenn beispielsweise eine von Ihrer Anwendung generierte E/A-Anweisung größer als die Stripegröße des Datenträgers ist, wird sie vom Speichersystem über Stripe-Einheitsgrenzen hinweg auf mehrere Datenträger geschrieben. Wenn auf diese Daten zugegriffen werden soll, muss zum Erfüllen der Anforderung mehr als eine Stripe-Einheit durchsucht werden. Die kumulative Wirkung eines solchen Verhaltens kann zu beträchtlichen Leistungseinbußen führen. Wenn hingegen die Größe der E/A-Anforderung kleiner als die Stripegröße ist und diese zufälliger Art ist, können sich die E/A-Anforderungen auf demselben Datenträger anhäufen, was zu einem Engpass und schließlich zu einer Verschlechterung der E/A-Leistung führt.
 
 Wählen Sie abhängig vom Workload Ihrer Anwendung eine geeignete Stripegröße aus. Wählen Sie für zufällige kleine E/A-Anforderungen eine kleinere Stripegröße. Wählen Sie hingegen für große sequenzielle E/A-Anforderungen eine größere Stripegröße. Ermitteln Sie Empfehlungen für die Stripegröße für die Anwendung, die Sie in Storage Premium ausführen. Für SQL Server konfigurieren Sie die Stripegröße mit 64 KB für OLTP-Workloads und 256 KB für Data Warehouse-Workloads. Weitere Informationen finden Sie unter [Optimale Verfahren für die Leistung für SQL Server in Azure Virtual Machines](virtual-machines-sql-server-performance-best-practices.md#disks-and-performance-considerations).
 
->**Hinweis:** Bei einer VM der DS-Serie können Sie ein Stripeset mit maximal 32 Storage Premium-Datenträgern und bei einer VM der GS-Serie mit maximal 64 Storage Premium-Datenträgern bilden.
+>**Hinweis:**  
+>Bei einer VM der DS-Serie können Sie ein Stripeset mit maximal 32 Storage Premium-Datenträgern und bei einer VM der GS-Serie mit maximal 64 Storage Premium-Datenträgern bilden.
 
 ## Multithreading  
 Azure hat die Storage Premium-Plattform mit einem hohen Grad an Parallelität ausgelegt. Aus diesem Grund wird mit einer Multithreadanwendung eine wesentlich höhere Leistung als mit einer Singlethreadanwendung erreicht. Eine Multithreadanwendung teilt ihre Aufgaben auf mehrere Threads auf und steigert die Effizienz ihrer Ausführung durch den maximalen Einsatz der VM- und Datenträgerressourcen.
@@ -295,17 +308,22 @@ Standardanwendungen lassen meist nicht das Ändern der Warteschlangenlänge so, 
 
 Einige Programme bieten Einstellungen zum Beeinflussen der Warteschlangenlänge. Die SQL Server-Einstellung „Max. Grad an Parallelität“ (MAXDOP) wurde beispielsweise im vorherigen Abschnitt vorgestellt. MAXDOP ist eine Möglichkeit, Warteschlangenlänge und Multithreading zu beeinflussen, obwohl dadurch der SQL Server-Wert der Warteschlangenlänge nicht direkt geändert wird.
 
-*Hohe Warteschlangenlänge* Bei einer hohen Warteschlangenlänge werden mehr Vorgänge auf dem Datenträger in die Schlange gestellt. Der Datenträger kennt die nächste Anforderungen in seiner Warteschlange vorzeitig. Daher kann der Datenträger Vorgänge im Voraus planen und sie in einer optimalen Sequenz verarbeiten. Da die Anwendung mehr Anforderungen zum Datenträger überträgt, kann der Datenträger mehr parallele E/A-Vorgänge verarbeiten. Schlussendlich erzielt die Anwendung dadurch mehr IOPS. Da die Anwendung mehr Anforderungen verarbeitet, erhöht sich auch der Gesamtdurchsatz der Anwendung.
+*Hohe Warteschlangenlänge*  
+Bei einer hohen Warteschlangenlänge werden mehr Vorgänge auf dem Datenträger in die Schlange gestellt. Der Datenträger kennt die nächste Anforderungen in seiner Warteschlange vorzeitig. Daher kann der Datenträger Vorgänge im Voraus planen und sie in einer optimalen Sequenz verarbeiten. Da die Anwendung mehr Anforderungen zum Datenträger überträgt, kann der Datenträger mehr parallele E/A-Vorgänge verarbeiten. Schlussendlich erzielt die Anwendung dadurch mehr IOPS. Da die Anwendung mehr Anforderungen verarbeitet, erhöht sich auch der Gesamtdurchsatz der Anwendung.
 
 In der Regel erzielt eine Anwendung einen maximalen Durchsatz bei 8-16 und mehr ausstehenden E/A-Vorgängen pro angefügtem Datenträger. Wenn die Warteschlangenlänge den Wert 1 hat, überträgt die Anwendung nicht genügend E/A-Vorgänge an das System, sodass in einem gegebenen Zeitraum weniger davon verarbeitet werden. Das bedeutet weniger Durchsatz.
 
 Beispiel: Wenn in SQL Server der MAXDOP-Wert für eine Abfrage auf 4 festgelegt wird, weiß SQL Server, dass bis zu vier Kerne verwendet werden können, um die Abfrage auszuführen. SQL Server bestimmt den besten Wert für die Warteschlangenlänge und die Anzahl der Kerne für die Abfrageausführung.
 
-*Optimale Warteschlangenlänge* Eine sehr hohe Warteschlangenlänge hat jedoch auch Nachteile. Wenn der Wert zu hoch ist, versucht die Anwendung, eine sehr hohe IOPS-Rate zu erzielen. Außer wenn die Anwendung über beständige Datenträger mit ausreichend bereitgestellten IOPS verfügt, kann sich dies negativ auf die Anwendungslatenz auswirken. Die folgende Formel zeigt die Beziehung zwischen IOPS, Latenz und Warteschlangenlänge. ![](media/storage-premium-storage-performance/image6.png)
+*Optimale Warteschlangenlänge*  
+Eine sehr hohe Warteschlangenlänge hat jedoch auch Nachteile. Wenn der Wert zu hoch ist, versucht die Anwendung, eine sehr hohe IOPS-Rate zu erzielen. Außer wenn die Anwendung über beständige Datenträger mit ausreichend bereitgestellten IOPS verfügt, kann sich dies negativ auf die Anwendungslatenz auswirken. Die folgende Formel zeigt die Beziehung zwischen IOPS, Latenz und Warteschlangenlänge.  
+	![](media/storage-premium-storage-performance/image6.png)
 
 Die Warteschlangenlänge darf nicht auf einen beliebig hohen Wert festgelegt werden. Wichtig ist ein optimaler Wert, der der Anwendung genügend IOPS bieten kann, ohne für mehr Latenz zu sorgen. Wenn z. B. die Anwendungslatenz 1 Millisekunde sein muss, ist die erforderliche Warteschlangenlänge zum Erzielen von 5.000 IOPS wie folgt: WL = 5000 x 0,001 = 5.
 
-*Warteschlangenlänge für Stripesetvolume* Für ein Stripesetvolume muss die Warteschlangenlänge so hoch sein, dass jeder Datenträger über eine individuelle Spitzenwarteschlangenlänge verfügt. Nehmen wir als Beispiel eine Anwendung mit dem Wert 2 für die Warteschlangenlänge und mit 4 Datenträgern im Stripeset. Die beiden E/A-Anforderungen werden an zwei Datenträger gerichtet, während die restlichen inaktiv bleiben. Konfigurieren Sie deshalb die Warteschlangenlänge so, dass alle Datenträger ausgelastet werden. Folgende Formel veranschaulicht, wie Sie die Warteschlangenlänge von Stripesetvolumes bestimmen. ![](media/storage-premium-storage-performance/image7.png)
+*Warteschlangenlänge für Stripesetvolume*  
+Für ein Stripesetvolume muss die Warteschlangenlänge so hoch sein, dass jeder Datenträger über eine individuelle Spitzenwarteschlangenlänge verfügt. Nehmen wir als Beispiel eine Anwendung mit dem Wert 2 für die Warteschlangenlänge und mit 4 Datenträgern im Stripeset. Die beiden E/A-Anforderungen werden an zwei Datenträger gerichtet, während die restlichen inaktiv bleiben. Konfigurieren Sie deshalb die Warteschlangenlänge so, dass alle Datenträger ausgelastet werden. Folgende Formel veranschaulicht, wie Sie die Warteschlangenlänge von Stripesetvolumes bestimmen.  
+	![](media/storage-premium-storage-performance/image7.png)
 
 ## Drosselung  
 Azure Storage Premium stellt abhängig von den gewählten VM- und Datenträgergrößen die angegebene IOPS- und Durchsatzrate bereit. Immer wenn die Anwendung versucht, eine IOPS- oder Durchsatzrate über diese Limits der VM oder des Datenträgers hinaus zu nutzen, erfolgt eine Drosselung durch Storage Premium. Dies zeigt sich in Form von Leistungseinbußen in Ihrer Anwendung. Folgen sind höhere Latenz, weniger Durchsatz oder weniger IOPS. Wenn Storage Premium keine Drosselung vornimmt, kann Ihre Anwendung vollständig ausfallen, sobald die zur Verfügung stehenden Ressourcen überschritten werden. Um also Leistungsprobleme aufgrund der Drosselung zu vermeiden, stellen Sie Ihrer Anwendung stets ausreichend Ressourcen zur Verfügung. Berücksichtigen Sie, was zuvor in den Abschnitt „VM-Größen“ und „Datenträgergrößen“ erörtert wurde. Benchmarktests sind die beste Möglichkeit, um herauszufinden, welche Ressourcen Sie zum Hosten der Anwendung benötigen.
@@ -317,34 +335,42 @@ Wir haben für Windows und Linux gängige Benchmarktools wie Iometer und FIO ver
 
 Erstellen Sie zum Befolgen der nachstehenden Beispiele eine Standard-VM vom Typ DS14, an die Sie 11 Storage Premium-Datenträger anfügen. Konfigurieren Sie 10 der 11 Datenträger mit der Hostcache-Einstellung „None“, und fügen Sie sie einem Stripeset mit dem Namen „NoCacheWrites“ hinzu. Konfigurieren Sie auf dem verbleibenden Datenträger die Hostcache-Einstellung „ReadOnly“, und erstellen Sie ein Volume mit dem Namen „CacheReads“ mit diesem Datenträger. Mithilfe dieser Einrichtung können Sie die maximale Lese- und Schreibleistung einer Standard-VM vom Typ DS14 ermitteln. Ausführliche Anweisungen zum Erstellen einer Standard-VM vom Typ DS14 mit Premium-Datenträgern finden Sie unter [Erstellen und Verwenden eines Storage Premium-Kontos für den Datenträger eines virtuellen Computers](storage-premium-storage-preview-portal.md#create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk).
 
-*Auffüllen des Caches* Der Datenträger mit der Hostcache-Einstellung „ReadOnly“ bietet eine IOPS-Rate, die höher als das Datenträgerlimit ist. Um diese maximale Leseleistung aus dem Hostcache zu erzielen, müssen zuerst Sie den Cache dieses Datenträgers mit gültigen Daten auffüllen. Dies stellt sicher, dass die Lese-E/As, die das Benchmarktool auf dem Volume „CacheReads“ erzeugt, tatsächlich den Cache und nicht direkt den Datenträger abfragen. Die Cachetreffer führen zu weiteren IOPS auf dem einzelnen Datenträger mit aktiviertem Cache.
+*Auffüllen des Caches*  
+Der Datenträger mit der Hostcache-Einstellung „ReadOnly“ bietet eine IOPS-Rate, die höher als das Datenträgerlimit ist. Um diese maximale Leseleistung aus dem Hostcache zu erzielen, müssen zuerst Sie den Cache dieses Datenträgers mit gültigen Daten auffüllen. Dies stellt sicher, dass die Lese-E/As, die das Benchmarktool auf dem Volume „CacheReads“ erzeugt, tatsächlich den Cache und nicht direkt den Datenträger abfragen. Die Cachetreffer führen zu weiteren IOPS auf dem einzelnen Datenträger mit aktiviertem Cache.
 
->**Wichtig:** Immer wenn die VM neu gestartet wird, müssen Sie den Cache vor dem Ausführen von Benchmarktests auffüllen.
+>**Wichtig:**  
+>Immer wenn die VM neu gestartet wird, müssen Sie den Cache vor dem Ausführen von Benchmarktests auffüllen.
 
 #### Iometer   
 Laden Sie in der VM das Tool Iometer über den folgenden Link herunter: [Iometer herunterladen](http://sourceforge.net/projects/iometer/files/iometer-stable/2006-07-27/iometer-2006.07.27.win32.i386-setup.exe/download).
 
-*Testdatei* Iometer verwendet eine Testdatei, die auf dem Volume gespeichert wird, auf dem Sie den Benchmarktest ausführen. Iometer erzeugt Lese- und Schreibvorgänge für diese Testdatei, um IOPS und Durchsatz des Datenträgers zu messen. Iometer erstellt diese Datei, falls Sie keine bereitgestellt haben. Erstellen Sie die 200 GB große Testdatei „iobw.tst“ auf den Volumes „CacheReads“ und „NoCacheWrites“.
+*Testdatei*  
+Iometer verwendet eine Testdatei, die auf dem Volume gespeichert wird, auf dem Sie den Benchmarktest ausführen. Iometer erzeugt Lese- und Schreibvorgänge für diese Testdatei, um IOPS und Durchsatz des Datenträgers zu messen. Iometer erstellt diese Datei, falls Sie keine bereitgestellt haben. Erstellen Sie die 200 GB große Testdatei „iobw.tst“ auf den Volumes „CacheReads“ und „NoCacheWrites“.
 
-*Zugriffsspezifikationen* Die Angaben „request IO size“, „% read/write“ und „% random/sequential“ werden in Iometer auf der Registerkarte „Access Specifications“ konfiguriert. Erstellen Sie eine Zugriffsspezifikation für jedes der nachstehend beschriebenen Szenarien. Erstellen Sie die Zugriffsspezifikationen, und speichern Sie sie unter einem geeigneten Namen wie „RandomWrites\_8K“, „RandomReads\_8K“. Wählen Sie beim Ausführen des Testszenarios die entsprechende Spezifikation aus.
+*Zugriffsspezifikationen*  
+Die Angaben „request IO size“, „% read/write“ und „% random/sequential“ werden in Iometer auf der Registerkarte „Access Specifications“ konfiguriert. Erstellen Sie eine Zugriffsspezifikation für jedes der nachstehend beschriebenen Szenarien. Erstellen Sie die Zugriffsspezifikationen, und speichern Sie sie unter einem geeigneten Namen wie „RandomWrites\_8K“, „RandomReads\_8K“. Wählen Sie beim Ausführen des Testszenarios die entsprechende Spezifikation aus.
 
-Ein Beispiel für Zugriffsspezifikationen für das Szenario „Maximale Schreib-IOPS“ wird nachstehend gezeigt: ![](media/storage-premium-storage-performance/image8.png)
+Ein Beispiel für Zugriffsspezifikationen für das Szenario „Maximale Schreib-IOPS“ wird nachstehend gezeigt:  
+	![](media/storage-premium-storage-performance/image8.png)
 
-*Testspezifikationen für maximale IOPS* Wählen Sie zum Demonstrieren von maximalen IOPS eine kleinere Anforderungsgröße. Wählen Sie die Anforderungsgröße 8 KB, und erstellen Sie Spezifikationen für zufällige Schreib- und Lesevorgänge.
+*Testspezifikationen für maximale IOPS*  
+Wählen Sie zum Demonstrieren von maximalen IOPS eine kleinere Anforderungsgröße. Wählen Sie die Anforderungsgröße 8 KB, und erstellen Sie Spezifikationen für zufällige Schreib- und Lesevorgänge.
 
 | Zugriffsspezifikation | Anforderungsgröße | Random % | Read % |
 |----------------------|--------------|----------|--------|
 | RandomWrites\_8K | 8 KB | 100 | 0 |
 | RandomReads\_8K | 8 KB | 100 | 100 |
 
-*Testspezifikationen für maximalen Durchsatz* Wählen Sie zum Demonstrieren eines maximalen Durchsatzes eine höhere Anforderungsgröße. Verwenden Sie die Anforderungsgröße 64 KB, und erstellen Sie Spezifikationen für zufällige Schreib- und Lesevorgänge.
+*Testspezifikationen für maximalen Durchsatz*  
+Wählen Sie zum Demonstrieren eines maximalen Durchsatzes eine höhere Anforderungsgröße. Verwenden Sie die Anforderungsgröße 64 KB, und erstellen Sie Spezifikationen für zufällige Schreib- und Lesevorgänge.
 
 | Zugriffsspezifikation | Anforderungsgröße | Random % | Read % |
 |----------------------|--------------|----------|--------|
 | RandomWrites\_64K | 64 KB | 100 | 0 |
 | RandomReads\_64K | 64 KB | 100 | 100 |
 
-*Ausführen des Iometer-Tests* Führen Sie die folgenden Schritte aus, um den Cache aufzufüllen.
+*Ausführen des Iometer-Tests*  
+Führen Sie die folgenden Schritte aus, um den Cache aufzufüllen.
 
 1.  Erstellen Sie zwei Zugriffsspezifikationen mit unten aufgeführten Werten:
 
@@ -380,9 +406,11 @@ Nachdem der Cachedatenträger aufgefüllt wurde, fahren Sie mit den nachstehende
 
 Nachstehend sehen Sie Screenshots der Iometer-Testergebnisse für kombinierte IOPS- und Durchsatz-Szenarien
 
-*Kombiniert Lese- und Schreibvorgänge – Maximale IOPS * ![](media/storage-premium-storage-performance/image9.png)
+*Kombiniert Lese- und Schreibvorgänge – Maximale IOPS*  
+![](media/storage-premium-storage-performance/image9.png)
 
-*Kombiniert Lese- und Schreibvorgänge – Maximaler Durchsatz* ![](media/storage-premium-storage-performance/image10.png)
+*Kombiniert Lese- und Schreibvorgänge – Maximaler Durchsatz*  
+![](media/storage-premium-storage-performance/image10.png)
 
 ### FIO  
 FIO ist ein beliebtes Tool für Benchmarktests des Speichers von Linux-VMs. Es ermöglicht die flexible Auswahl unterschiedlicher E/A-Größen sowie sequenzieller oder zufälliger Lese- und Schreibvorgänge. FIO erzeugt Arbeitsthreads oder Prozesse zum Ausführen der angegebenen E/A-Vorgänge. Mithilfe von Auftragsdateien können Sie den Typ der E/A-Vorgänge angeben, den jeder Arbeitsthread ausführen soll. Wir haben eine Auftragsdatei pro Szenario erstellt, was in den folgenden Beispielen veranschaulicht wird. Sie können die Spezifikationen in diesen Auftragsdateien ändern, um Benchmarktests für verschiedene Workloads in Storage Premium auszuführen. In den Beispielen verwenden wir eine Standard-VM vom Typ DS 14 unter**Ubuntu**. Verwenden Sie dieselbe am Anfang des Abschnitts „Benchmarktests“ beschriebene Einrichtung, und füllen Sie den Cache vor dem Ausführen der Benchmarktests auf.
@@ -395,7 +423,8 @@ Führen Sie den folgenden Befehl für Ubuntu aus:
 
 Wir verwenden je vier Arbeitsthreads zum Erzeugen von Schreib- und Lesevorgängen auf den Datenträgern. Die Arbeitsthreads für Schreibvorgänge erzeugen Datenverkehr auf dem Volume „NoCache“, das 10 Datenträger mit der Cacheeinstellung „None“ aufweist. Die Arbeitsthreads für Lesevorgänge erzeugen Datenverkehr auf dem Volume „ReadCache“, das einen Datenträger mit der Cacheeinstellung „ReadOnly“ aufweist.
 
-*Maximale Schreib-IOPS* Erstellen Sie die Auftragsdatei mit den folgenden Spezifikationen, um die maximale Schreib-IOPS zu erhalten. Nennen Sie die Datei „fiowrite.ini“.
+*Maximale Schreib-IOPS*  
+Erstellen Sie die Auftragsdatei mit den folgenden Spezifikationen, um die maximale Schreib-IOPS zu erhalten. Nennen Sie die Datei „fiowrite.ini“.
 
 ```
 [global]
@@ -419,15 +448,20 @@ rw=randwrite
 directory=/mnt/nocache
 ```
 
-Beachten Sie, dass die folgenden wichtigen Aspekte in Einklang mit den in den vorherigen Abschnitten erörterten Entwurfsrichtlinien sind. Diese Spezifikationen sind zum Erzielen der maximalen IOPS wichtig: - Eine hohe Warteschlangenlänge von 256 - Eine kleine Blockgröße von 8 KB - Mehrere Threads, die sequentielle Lesevorgänge ausführen
+Beachten Sie, dass die folgenden wichtigen Aspekte in Einklang mit den in den vorherigen Abschnitten erörterten Entwurfsrichtlinien sind. Diese Spezifikationen sind zum Erzielen der maximalen IOPS wichtig:  
+-   Eine hohe Warteschlangenlänge von 256  
+-   Eine kleine Blockgröße von 8 KB  
+-   Mehrere Threads, die sequentielle Schreibvorgänge ausführen
 
 Führen Sie den folgenden Befehl aus, um einen 30-sekündigen FIO-Test zu starten:
 				
 	sudo fio --runtime 30 fiowrite.ini
 
-Während der Testausführung können Sie die Anzahl der Schreib-IOPS erkennen, die die VM und Premium-Datenträger zu bieten haben. Wie im folgenden Beispiel gezeigt, schöpft die DS14-VM ihre maximale IOPS-Schreibkapazität von 50.000 IOPS aus. ![](media/storage-premium-storage-performance/image11.png)
+Während der Testausführung können Sie die Anzahl der Schreib-IOPS erkennen, die die VM und Premium-Datenträger zu bieten haben. Wie im folgenden Beispiel gezeigt, schöpft die DS14-VM ihre maximale IOPS-Schreibkapazität von 50.000 IOPS aus.  
+	![](media/storage-premium-storage-performance/image11.png)
 
-*Maximale Lese-IOPS* Erstellen Sie die Auftragsdatei mit den folgenden Spezifikationen, um die maximale Lese-IOPS zu erhalten. Nennen Sie die Datei „fioread.ini“.
+*Maximale Lese-IOPS*  
+Erstellen Sie die Auftragsdatei mit den folgenden Spezifikationen, um die maximale Lese-IOPS zu erhalten. Nennen Sie die Datei „fioread.ini“.
 
 ```
 [global]
@@ -461,9 +495,11 @@ Führen Sie den folgenden Befehl aus, um einen 30-sekündigen FIO-Test zu starte
 
 	sudo fio --runtime 30 fioread.ini
 
-Während der Testausführung können Sie die Anzahl der Lese-IOPS erkennen, die die VM und Premium-Datenträger zu bieten haben. Wie im folgenden Beispiel gezeigt, schöpft die DS14-VM ihre maximale IOPS-Lesekapazität von 64.000 IOPS aus. Dies ist eine Kombination aus Datenträger- und Cacheleistung. ![](media/storage-premium-storage-performance/image12.png)
+Während der Testausführung können Sie die Anzahl der Lese-IOPS erkennen, die die VM und Premium-Datenträger zu bieten haben. Wie im folgenden Beispiel gezeigt, schöpft die DS14-VM ihre maximale IOPS-Lesekapazität von 64.000 IOPS aus. Dies ist eine Kombination aus Datenträger- und Cacheleistung.  
+	![](media/storage-premium-storage-performance/image12.png)
 
-*Maximale Lese- und Schreib-IOPS* Erstellen Sie die Auftragsdatei mit den folgenden Spezifikationen, um die maximale kombinierte Lese- und Schreib-IOPS zu erhalten. Nennen Sie die Datei „fioreadwrite.ini“.
+*Maximale Lese- und Schreib-IOPS*  
+Erstellen Sie die Auftragsdatei mit den folgenden Spezifikationen, um die maximale kombinierte Lese- und Schreib-IOPS zu erhalten. Nennen Sie die Datei „fioreadwrite.ini“.
 
 ```
 [global]
@@ -514,9 +550,11 @@ Führen Sie den folgenden Befehl aus, um einen 30-sekündigen FIO-Test zu starte
 
 	sudo fio --runtime 30 fioreadwrite.ini
 
-Während der Testausführung können Sie die Anzahl der kombinierten Lese- und Schreib-IOPS erkennen, die die VM und Premium-Datenträger zu bieten haben. Wie im folgenden Beispiel gezeigt, bietet die DS14-VM kombinierte Lese- und Schreib-IOPS von über 100.000. Dies ist eine Kombination aus Datenträger- und Cacheleistung. ![](media/storage-premium-storage-performance/image13.png)
+Während der Testausführung können Sie die Anzahl der kombinierten Lese- und Schreib-IOPS erkennen, die die VM und Premium-Datenträger zu bieten haben. Wie im folgenden Beispiel gezeigt, bietet die DS14-VM kombinierte Lese- und Schreib-IOPS von über 100.000. Dies ist eine Kombination aus Datenträger- und Cacheleistung.  
+	![](media/storage-premium-storage-performance/image13.png)
 
-*Maximierter kombinierter Durchsatz* Um den maximalen kombinierten Lese- und Schreibdurchsatz zu erhalten, wählen Sie eine höhere Blockgröße und Warteschlangenlänge mit mehreren Threads, die Lese- und Schreibvorgänge ausführen. Sie können eine Blockgröße von 64 KB und Warteschlangenlänge von 128 verwenden.
+*Maximierter kombinierter Durchsatz*  
+Um den maximalen kombinierten Lese- und Schreibdurchsatz zu erhalten, wählen Sie eine höhere Blockgröße und Warteschlangenlänge mit mehreren Threads, die Lese- und Schreibvorgänge ausführen. Sie können eine Blockgröße von 64 KB und Warteschlangenlänge von 128 verwenden.
 
 ## Nächste Schritte  
 
