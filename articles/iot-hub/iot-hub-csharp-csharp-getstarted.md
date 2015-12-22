@@ -106,11 +106,11 @@ In diesem Tutorial haben Sie im Portal einen neuen IoT Hub konfiguriert und ans
 
 In den folgenden Artikeln finden Sie weitere Informationen zu IoT Hub:
 
-* [Übersicht zu IoT Hub][lnk-hub-overview]
-* [IoT Hub-Entwicklerhandbuch][lnk-hub-dev-guide]
-* [Entwerfen einer IoT Hub-Lösung][lnk-hub-guidance]
-* [Unterstützte Geräteplattformen und Sprachen][lnk-supported-devices]
-* [Azure IoT Developer Center][lnk-dev-center]
+* [Übersicht zu IoT Hub](lnk-hub-overview)
+* [IoT Hub-Entwicklerhandbuch](lnk-hub-dev-guide)
+* [Entwerfen einer IoT Hub-Lösung](lnk-hub-guidance)
+* [Unterstützte Geräteplattformen und Sprachen](lnk-supported-devices)
+* [Azure IoT Developer Center](lnk-dev-center)
 
 <!-- Images. -->
 [1]: ./media/iot-hub-csharp-csharp-getstarted/create-iot-hub1.png
