@@ -13,7 +13,7 @@
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery"
-	ms.date="11/24/2015"
+	ms.date="12/14/2015"
 	ms.author="raynew"/>
 
 
@@ -35,7 +35,7 @@ Die Speicherzuordnung ist nur relevant, wenn Sie virtuelle Hyper-V-Computer in V
 	- **Platzierung virtueller Replikatcomputer**: Virtuelle Replikatcomputer werden durch die Speicherzuordnung optimal auf Hyper-V-Hostservern platziert. Virtuelle Replikatcomputer werden auf Hosts platziert, die auf die zugeordnete Speicherklassifizierung zugreifen können.
 	- **Keine Speicherzuordnung**: Wenn Sie keine Speicherzuordnung konfigurieren, werden virtuelle Computer zum Standardspeicherort auf dem Hyper-V-Hostserver repliziert, der dem virtuellen Replikatcomputer zugeordnet ist.
 
-- **Lokal zu lokal (Replikation mit SAN)**: Sie richten die Speicherzuordnung ein, indem Sie einem Quell- und Ziel-VMM-Server Speicherarraypools für die folgenden Zwecke hinzufügen:
+- **Lokal zu lokal (Replikation mit SAN)**: Sie richten die Speicherzuordnung ein, indem Sie einem Quell- und Ziel-VMM-Server Speicherarraypools hinzufügen.
 	- **Angabe von Pools**: Dient zum Angeben, welcher sekundäre Speicherpool Replikationsdaten aus dem primären Pool empfängt.
 	- **Angabe von Zielspeicherpools**: Stellt sicher, dass LUNs in einer Replikationsgruppe in den zugeordneten Zielspeicherpool Ihrer Wahl repliziert werden.
 
@@ -98,4 +98,4 @@ VM5 | C:\\ClusterStorage\\SourceVolume3 | N/V | Keine Zuordnung, daher Verwendun
 
 Nachdem Sie sich mit der Speicherzuordnung vertraut gemacht haben, können Sie mit der [Azure Site Recovery-Bereitstellung beginnen](site-recovery-best-practices.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

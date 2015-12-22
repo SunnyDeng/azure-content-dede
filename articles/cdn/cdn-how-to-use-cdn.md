@@ -135,11 +135,16 @@ Sie können den CDN-HTTP-Endpunkt einem benutzerdefinierten Domänennamen zuordn
 
 Weitere Informationen zum Zuordnen einer benutzerdefinierten Domäne finden Sie unter [Zuordnen von CDN-Inhalt (Content Delivery Network, Netzwerk für die Inhaltsübermittlung) zu einer benutzerdefinierten Domäne](cdn-map-content-to-custom-domain.md).
 
+## Programmgesteuertes Verwalten von CDN
+
+Microsoft Azure CDN kann mithilfe der [CDN-Ressourcenanbieter-REST-API](https://msdn.microsoft.com/library/mt634456.aspx) programmgesteuert verwaltet werden.
+
+
 ## Weitere Informationen
 
 - [Aktivieren des Content Delivery Network für Azure](cdn-create-new-endpoint.md)
 - [Übersicht über das Azure Content Delivery Network (CDN)](cdn-overview.md)
 - [Löschen eines Azure CDN-Endpunkts](cdn-purge-endpoint.md)
- 
+- [CDN-Ressourcenanbieter-REST-API](https://msdn.microsoft.com/library/mt634456.aspx)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

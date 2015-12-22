@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
-	ms.date="10/16/2015"
+	ms.date="12/07/2015"
 	ms.author="tdykstra"/>
 
 # Erstellen von ASP.NET-Web-Apps in Azure App Service
@@ -109,23 +109,23 @@ Das Diagramm veranschaulicht Ihre Schritte bei der Erstellung und Bereitstellung
 
 5. Falls Sie sich noch nicht bei Azure angemeldet haben, werden Sie von Visual Studio dazu aufgefordert, dies nachzuholen. Melden Sie sich mit der ID und dem Kennwort des Kontos an, mit dem Sie Ihr Azure-Abonnement verwalten.
 
-	Wenn Sie angemeldet sind, werden Sie im Dialogfeld **Configure Microsoft Azure Web App Settings** gefragt, welche Ressourcen Sie erstellen möchten.
+	Wenn Sie angemeldet sind, werden Sie im Dialogfeld **App Service erstellen** gefragt, welche Ressourcen Sie erstellen möchten.
 
 	![Bei Azure angemeldet](./media/web-sites-dotnet-get-started/configuresitesettings.png)
 
-3. Geben Sie im Dialogfeld **Microsoft Azure-Web-App-Einstellungen konfigurieren** einen **Web-App-Namen** ein, der in der Domäne *azurewebsites.net* eindeutig ist. Beispielsweise können Sie sie "MyExample" nennen und Zahlen anhängen, damit der Name eindeutig ist, z. B. "MyExample810". Wenn ein Standardwebname für Sie erstellt wird, ist dieser eindeutig und Sie können ihn verwenden.
+3. Geben Sie im Dialogfeld **App Service erstellen** einen **Web-App-Namen** ein, der in der Domäne *azurewebsites.net* eindeutig ist. Beispielsweise können Sie sie "MyExample" nennen und Zahlen anhängen, damit der Name eindeutig ist, z. B. "MyExample810". Wenn ein Standardwebname für Sie erstellt wird, ist dieser eindeutig und Sie können ihn verwenden.
 
 	Wenn eine andere Person den eingegebenen Namen bereits verwendet hat, wird rechts ein rotes Ausrufungszeichen anstelle eines grünen Häkchens angezeigt, und Sie müssen einen anderen Namen eingeben.
 
 	Dieser Name wird von Azure als Präfix für die URL Ihrer Anwendung verwendet. Die vollständige URL besteht aus diesem Namen und *.azurewebsites.net* (wie neben dem Textfeld **Web-App-Name** angezeigt). Für den Namen `MyExample810` lautet die URL z. B. `MyExample810.azurewebsites.net`. Die URL muss eindeutig sein.
 
-4. Wählen Sie in der Dropdownliste **App Service plan** die Option **Create new App Service plan** aus.
+4. Klicken Sie neben der Dropdownliste **App Service-Plan** auf die Schaltfläche **Neu...**.
 
 	Der Abschnitt [Nächste Schritte](#next-steps) enthält Links zu Informationen über App Service-Pläne.
 
 5. Geben Sie **MyExamplePlan** oder einen Namen Ihrer Wahl für den Plan ein.
 
-6. Wählen Sie in der Dropdownliste **Ressourcengruppe** die Option **Neue Ressourcengruppe erstellen** aus.
+6. Geben Sie in der Dropdownliste **Ressourcengruppe** den Namen der neuen Ressourcengruppe ein.
 
 	Der Abschnitt [Nächste Schritte](#next-steps) enthält Links zu Informationen über Ressourcengruppen.
 
@@ -223,9 +223,9 @@ Wenn Sie eine Web-App testen und debuggen, können Sie Dateien im **Server-Explo
 
 Diese Änderung ist jetzt in der bereitgestellten Website vorhanden, jedoch nicht das lokale Projekt. Wenn Sie das Projekt erneut bereitstellen, wird die Website auf den Stand vor Durchführung dieser Änderung zurückgesetzt.
 
-Dieses Feature eignet sich gut für [vorübergehendes Deaktivieren von „customErrors“ in der Datei Web.config, um eine detaillierte Fehlermeldung zu erhalten](web-sites-dotnet-troubleshoot-visual-studio.md).
+Dieses Feature eignet sich gut für [vorübergehendes Deaktivieren von „customErrors“ in der Datei „Web.config“, um eine detaillierte Fehlermeldung zu erhalten](web-sites-dotnet-troubleshoot-visual-studio.md).
 
-Im **Server-Explorer** können Sie auch mit der rechten Maustaste auf den Web-App-Knoten klicken und so in einem Visual Studio-Fenster Zugriff auf Web-App-Einstellungen erhalten, eine Remotedebugsitzung starten und Anwendungsprotokolle in Echtzeit anzeigen, während die Anwendung sie schreibt.
+Im **Server-Explorer** können Sie auch mit der rechten Maustaste auf den App Service-Knoten klicken und so in einem Visual Studio-Fenster Zugriff auf Web-App-Einstellungen erhalten, eine Remotedebugsitzung starten und Anwendungsprotokolle in Echtzeit anzeigen, während die Anwendung sie schreibt.
 
 ![](./media/web-sites-dotnet-get-started/sewebappmenu.png)
 
@@ -237,7 +237,7 @@ Das [Azure-Portal](/services/management-portal/) ist eine Weboberfläche, die da
 
 1. Rufen Sie in Ihrem Browser [https://portal.azure.com](https://portal.azure.com) auf, und melden Sie sich mit Ihren Azure-Anmeldeinformationen an.
 
-2. Klicken Sie auf **Web-Apps** und dann auf den Namen der Web-App.
+2. Klicken Sie auf **App Services** und dann auf den Namen der Web-App.
 
 	Auf dem Blatt **Web-App** wird eine Übersicht über die Einstellungen und eine Nutzungsstatistik für Ihre Web-App angezeigt.
 
@@ -301,4 +301,4 @@ In diesem Lernprogramm haben Sie erfahren, wie eine einfache Webanwendung erstel
 ## Änderungen
 * Hinweise zu den Änderungen in App Service im Vergleich zu Websites finden Sie unter [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 
-<!---HONumber=AcomDC_1203_2015--->
+<!---HONumber=AcomDC_1217_2015-->

@@ -350,6 +350,7 @@ Nachdem Sie sich nun mit den Grundlagen von Blobspeichern vertraut gemacht haben
 - [Erste Schritte mit Tabellenspeicher für .NET](storage-dotnet-how-to-use-tables.md)
 - [Erste Schritte mit Warteschlangenspeicher für .NET](storage-dotnet-how-to-use-queues.md)
 - [Erste Schritte mit Dateispeicher für .NET](storage-dotnet-how-to-use-files.md)
+- [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy)
 - [Verwenden einer SQL-Datenbank zum Speichern relationaler Daten](../sql-database/articles/sql-database-dotnet-how-to-use.md)
 - [Verwenden von Azure-Blobspeicher mit dem WebJobs-SDK](../app-service-web/websites-dotnet-webjobs-sdk-storage-blobs-how-to.md)
 
@@ -365,4 +366,4 @@ Nachdem Sie sich nun mit den Grundlagen von Blobspeichern vertraut gemacht haben
   [REST API reference]: http://msdn.microsoft.com/library/azure/dd179355
  
 
-<!----HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

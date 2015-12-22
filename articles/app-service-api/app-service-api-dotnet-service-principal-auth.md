@@ -26,7 +26,7 @@ In diesem Tutorial wird veranschaulicht, wie Sie die Authentifizierungs- und Aut
 
 ## Authentifizierung und Autorisierung in App Service
 
-Eine Einführung in die Authentifizierungsfeatures, die in diesem Tutorial verwendet werden, finden Sie im vorherigen Tutorial dieser Reihe: [Authentifizierung und Autorisierung für AP-Apps in Azure App Service](app-service-api-dotnet-get-started.md).
+Eine Einführung in die Authentifizierungsfeatures, die in diesem Tutorial verwendet werden, finden Sie im vorherigen Tutorial dieser Reihe: [Authentifizierung und Autorisierung für API-Apps in Azure App Service](app-service-api-authentication.md).
 
 ## Inhalt dieses Tutorials
 
@@ -304,4 +304,4 @@ Dies ist das letzte Tutorial in der Serie für erste Schritte mit API-Apps. Dies
 	* [Konfigurieren eines benutzerdefinierten Domänennamens in Azure App Service](web-sites-custom-domain-name.md)
 	* [Aktivieren von HTTPS für Azure-Web-Apps](web-sites-configure-ssl-certificate.md)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->
