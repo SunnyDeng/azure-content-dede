@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="get-started-article" 
-	ms.date="10/07/2015" 
+	ms.date="12/07/2015" 
 	ms.author="riande"/>
 
 # Erstellen einer ASP.NET MVC-App mit Authentifizierung, SQL-Datenbank und Bereitstellung in Azure App Service
@@ -43,7 +43,7 @@ Sie lernen Folgendes:
 
 Sie benötigen ein Microsoft Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie kein Konto haben, können Sie [Ihre Visual Studio-Abonnentenvorteile aktivieren](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) oder [sich für eine kostenlose Testversion registrieren](/pricing/free-trial/?WT.mc_id=A261C142F).
 
-Zur Einrichtung Ihrer Entwicklungsumgebung müssen Sie [Visual Studio 2013 Update 4](http://go.microsoft.com/fwlink/?LinkId=390521) oder höher und die neueste Version von [Azure SDK für .NET](http://go.microsoft.com/fwlink/?linkid=324322&clcid=0x409) installieren. Dieser Artikel wurde für Visual Studio Update 4 und SDK 2.7.1 geschrieben. Die gleichen Anweisungen funktionieren mit Visual Studio 2015 mit dem neuesten installierten [Azure SDK für .NET](http://go.microsoft.com/fwlink/?linkid=518003&clcid=0x409), doch einige Bildschirme unterscheiden sich von den Abbildungen.
+Zur Einrichtung Ihrer Entwicklungsumgebung müssen Sie [Visual Studio 2013 Update 5](http://go.microsoft.com/fwlink/?LinkId=390521) oder höher und die neueste Version von [Azure SDK für .NET](http://go.microsoft.com/fwlink/?linkid=324322&clcid=0x409) installieren. Dieser Artikel wurde für Visual Studio Update 4 und SDK 2.8.1 geschrieben. Die gleichen Anweisungen funktionieren mit Visual Studio 2015 mit dem neuesten installierten [Azure SDK für .NET](http://go.microsoft.com/fwlink/?linkid=518003&clcid=0x409), doch einige Bildschirme unterscheiden sich von den Abbildungen.
 
 ## Erstellen einer ASP.NET MVC 5-Anwendung
 
@@ -61,7 +61,7 @@ Zur Einrichtung Ihrer Entwicklungsumgebung müssen Sie [Visual Studio 2013 Updat
  
 	**Hinweis:** Geben Sie "ContactManager" ein. In den Codeblöcken, die Sie später kopieren, wird davon ausgegangen, dass der Projektname "ContactManager" lautet.
 
-1. Wählen Sie im Dialogfeld **Neues ASP.NET-Projekt** die Vorlage **MVC** aus. Stellen Sie sicher, dass **Authentifizierung** auf **Einzelne Benutzerkonten** festgelegt, **Host in der Cloud** aktiviert und **Web-App** ausgewählt ist.
+1. Wählen Sie im Dialogfeld **Neues ASP.NET-Projekt** die Vorlage **MVC** aus. Überprüfen Sie, ob die **Authentifizierung** auf **Einzelne Benutzerkonten** festgelegt, **Host in der Cloud** aktiviert und **App Service** ausgewählt ist.
 
 	![Dialogfeld "Neues ASP.NET-Projekt"](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/newproject.png)
 
@@ -712,7 +712,7 @@ In diesem Abschnitt wenden Sie das [Authorize](http://msdn.microsoft.com/library
 
 Falls Probleme auftreten, finden Sie hier einige Vorschläge für Lösungsansätze.
 
-* Fehler bei der Bereitstellung der SQL-Datenbank – Stellen Sie sicher, dass das aktuelle SDK installiert ist. Versionen vor 2.7.1 haben einen Programmierfehler, der in einigen Szenarien Fehler verursacht, wenn Visual Studio versucht, den Datenbankserver oder die Datenbank zu erstellen.
+* Fehler bei der Bereitstellung der SQL-Datenbank – Stellen Sie sicher, dass das aktuelle SDK installiert ist. Versionen vor 2.8.1 haben einen Programmierfehler, der in einigen Szenarien Fehler verursacht, wenn Visual Studio versucht, den Datenbankserver oder die Datenbank zu erstellen.
 * Fehlermeldung „Der Vorgang wird für Ihren Abonnementangebotstyp nicht unterstützt“ beim Erstellen von Azure-Ressourcen – Siehe oben.
 * Fehler bei der Bereitstellung – Erwägen Sie, den Artikel [Erstellen von ASP.NET-Web-Apps in Azure App Service](web-sites-dotnet-get-started.md) durchzugehen. Dieses Bereitstellungsszenario ist einfacher. Wenn Sie dort das gleiche Problem haben, ist es möglicherweise einfacher zu isolieren. Beispielsweise kann in bestimmten Unternehmensumgebungen eine Unternehmensfirewall Web Deploy am Herstellen erforderlicher Verbindungen mit Azure hindern.
 * Keine Option zum Auswählen der Verbindungszeichenfolge im Assistenten „Web veröffentlichen“ bei der Bereitstellung – Wenn Sie eine andere Methode zum Erstellen Ihrer Azure-Ressourcen verwendet haben (z. B. versuchen, eine im Portal erstellte Web-App und SQL-Datenbank bereitzustellen), ist die SQL-Datenbank ggf. nicht der Web-App zugeordnet. Die einfachste Lösung ist das Erstellen einer neuen Web-App und Datenbank mit Visual Studio, wie in diesem Tutorial gezeigt. Sie müssen das Tutorial nicht von vorn durchlaufen. Im Assistenten „Web veröffentlichen“ finden Sie die Option zum Erstellen einer neuen Web-App, über die Ihnen dasselbe Dialogfeld zum Erstellen von Azure-Ressourcen wie beim Erstellen des Projekts angezeigt wird.
@@ -730,7 +730,7 @@ Sie haben eine einfache ASP.NET MVC-Web-Anwendung erstellt, die Benutzer authent
 
 Ein erweitertes Tutorial zur Verwendung von Entity Framework finden Sie unter [Erste Schritte mit EF und MVC](http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application).
 
-Dieses Lernprogramm und die Beispielanwendung wurden von [Rick Anderson](http://blogs.msdn.com/b/rickandy/) (Twitter [@RickAndMSFT](https://twitter.com/RickAndMSFT)) sowie Tom Dykstra und Barry Dorrans (Twitter [@blowdart](https://twitter.com/blowdart)) geschrieben.
+Dieses Tutorial wurden von [Rick Anderson](http://blogs.msdn.com/b/rickandy/) (Twitter [@RickAndMSFT](https://twitter.com/RickAndMSFT)) sowie Tom Dykstra und Barry Dorrans (Twitter [@blowdart](https://twitter.com/blowdart)) geschrieben.
 
 ***Bitte teilen Sie uns mit***, was Ihrer Meinung nach gelungen ist, bzw. verbessert werden kann, und zwar nicht nur bezüglich des Lernprogramms, sondern auch bezüglich der Produkte, die darin vorgestellt werden. Ihr Feedback unterstützt uns dabei, eine entsprechende Priorität für Verbesserungen festzulegen. Unter [Show Me How With Code](http://aspnet.uservoice.com/forums/228522-show-me-how-with-code) (in englischer Sprache) können Sie neue Themen anfordern oder eine Stimme dafür abgeben.
 
@@ -797,4 +797,4 @@ Dieses Lernprogramm und die Beispielanwendung wurden von [Rick Anderson](http://
 [ImportPublishSettings]: ./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database-vs2013/ImportPublishSettings.png
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

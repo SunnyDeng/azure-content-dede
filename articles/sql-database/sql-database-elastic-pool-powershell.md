@@ -189,7 +189,9 @@ Diese APIs sind identisch mit den aktuellen APIs (V12), die für die Überwachun
 
 * Die für diese API abgerufenen Metriken werden als Prozentsatz des "databaseDtuMax"-Werts (oder der entsprechenden Obergrenze für die zugrunde liegende Metrik wie CPU, E/A usw.) ausgedrückt, der für diesen Pool für elastische Datenbanken festgelegt wurde. Beispielsweise zeigen 50 % Auslastung bei einer dieser Metriken an, dass der spezifische Ressourcenverbrauch der Obergrenze pro Datenbank für diese Ressource im übergeordneten Pool für elastische Datenbanken bei 50 % liegt. 
 
-Abrufen der Metriken: $metrics = (Get-Metrics -ResourceId /subscriptions/d7c1d29a-ad13-4033-877e-8cc11d27ebfd/resourceGroups/FabrikamData01/providers/Microsoft.Sql/servers/fabrikamsqldb02/databases/myDB -TimeGrain ([TimeSpan]::FromMinutes(5)) -StartTime "4/18/2015" -EndTime "4/21/2015")
+Abrufen der Metriken:
+
+    $metrics = (Get-Metrics -ResourceId /subscriptions/d7c1d29a-ad13-4033-877e-8cc11d27ebfd/resourceGroups/FabrikamData01/providers/Microsoft.Sql/servers/fabrikamsqldb02/databases/myDB -TimeGrain ([TimeSpan]::FromMinutes(5)) -StartTime "4/18/2015" -EndTime "4/21/2015") 
 
 Abrufen zusätzlicher Tage nach Bedarf durch eine Wiederholung des Aufrufs und Anfügen der Daten:
 
@@ -235,4 +237,4 @@ Nach dem Erstellen eines Pools für elastische Datenbanken können Sie elastisch
 
 Weitere Informationen über elastische Datenbanken und elastische Datenbankpools, einschließlich API- und Fehlerinformationen, finden Sie unter [Referenz für elastische Datenbankpools](sql-database-elastic-pool-reference.md).
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

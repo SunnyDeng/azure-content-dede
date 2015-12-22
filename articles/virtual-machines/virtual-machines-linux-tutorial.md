@@ -21,10 +21,15 @@
 # Erstellen eines virtuellen Linux-Computers
 
 > [AZURE.SELECTOR]
+- [Azure Portal - Windows](virtual-machines-windows-tutorial.md)
+- [Azure PowerShell](virtual-machines-ps-create-preconfigure-windows-resource-manager-vms.md)
+- [Azure PowerShell - Template](virtual-machines-create-windows-powershell-resource-manager-template.md)
+- [Azure Portal - Linux](virtual-machines-linux-tutorial-portal-rm.md)
 - [Azure CLI](virtual-machines-linux-tutorial.md)
-- [Azure portal](virtual-machines-linux-tutorial-portal-rm.md)
 
-<br> Virtuelle Azure-Computer (VM), die Linux ausführen, lassen sich einfach über die Befehlszeile oder über das Portal erstellen. In diesem Tutorial wird gezeigt, wie Sie mit der Azure-Befehlszeilenschnittstelle (CLI, Command Line Interface) für Mac, Linux und Windows schnell eine Ubuntu Server-VM erstellen, die in Azure ausgeführt wird. Sie erfahren, wie mit **SSH** eine Verbindung damit hergestellt wird und wie Sie einen neuen Datenträger erstellen und bereitstellen. In diesem Thema wird eine Ubuntu Server-VM verwendet, aber Sie können virtuelle Linux-Computer auch mithilfe [Ihrer eigenen Images als Vorlagen](virtual-machines-linux-create-upload-vhd.md) erstellen.
+<br>
+
+Virtuelle Azure-Computer (VM), die Linux ausführen, lassen sich einfach über die Befehlszeile oder über das Portal erstellen. In diesem Tutorial wird gezeigt, wie Sie mit der Azure-Befehlszeilenschnittstelle (CLI, Command Line Interface) für Mac, Linux und Windows schnell eine Ubuntu Server-VM erstellen, die in Azure ausgeführt wird. Sie erfahren, wie Sie mit **SSH** eine Verbindung damit herstellen, und wie Sie einen neuen Datenträger erstellen und bereitstellen. In diesem Thema wird eine Ubuntu Server-VM verwendet, aber Sie können virtuelle Linux-Computer auch mithilfe [Ihrer eigenen Images als Vorlagen](virtual-machines-linux-create-upload-vhd.md) erstellen.
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell.
 
@@ -323,4 +328,4 @@ Weitere Informationen zu Linux auf Azure erhalten Sie unter:
 
 - [Die Docker-Erweiterung für virtuelle Linux-Computer auf Azure](virtual-machines-docker-vm-extension.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

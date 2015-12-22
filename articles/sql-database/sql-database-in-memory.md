@@ -14,12 +14,11 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="hero-article"
-	ms.date="11/20/2015"
+	ms.date="12/11/2015"
 	ms.author="jodebrui"/>
 
 
 # Erste Schritte mit In-Memory (Vorschau) in SQL-Datenbank
-
 
 In-Memory-Features verbessern die Leistung bei Transaktions- und Analyseworkloads in den richtigen Situationen deutlich.
 
@@ -28,6 +27,7 @@ Im Mittelpunkt dieses Themas stehen zwei Demos, eine für In-Memory OLTP und ei
 - Verwenden des Codes, um Variationen zu testen und Abweichungen in den Leistungen zu ermitteln
 - Lesen des Codes, um das Szenario zu verstehen und zu lernen, wie Sie In-Memory-Objekte erstellen und nutzen
 
+> [AZURE.VIDEO azure-sql-database-in-memory-technologies]
 
 #### In-Memory OLTP
 
@@ -82,7 +82,7 @@ Vorschau:
 Solange sich die In-Memory-Features in der Vorschau befinden, müssen einige Aspekte beachtet werden. Informationen dazu finden Sie [weiter unten in diesem Thema](#preview_considerations_for_in_memory).
 
 
-> [AZURE.NOTE]Die in der Vorschau befindlichen Features stehen nur für Azure SQL-Datenbanken im Tarif [*Premium*](sql-database-service-tiers.md) zur Verfügung, nicht für Datenbanken im Tarif Standard oder Basic.
+> [AZURE.NOTE]Die in der Vorschau befindlichen Features stehen nur für Azure SQL-Datenbanken im Tarif [*Premium*](sql-database-service-tiers.md) zur Verfügung, nicht für Datenbanken im Tarif „Standard“ oder „Basic“.
 
 
 
@@ -101,9 +101,9 @@ Sie können im [Azure-Portal](http://portal.azure.com/) die Beispieldatenbank �
 #### Installationsschritte
 
 1. Erstellen Sie im [Azure-Portal](http://portal.azure.com/) auf einem V12-Server eine Premium-Datenbank. Legen Sie die AdventureWorksLT [V12]-Beispieldatenbank als **Quelle** fest.
- - Detaillierte Anleitungen finden Sie unter [Erstellen Ihrer ersten Azure SQL-Datenbank](sql-database-get-started.md).
+ - Detaillierte Anweisungen finden Sie unter [Erstellen Ihrer ersten Azure SQL-Datenbank](sql-database-get-started.md).
 
-2. Stellen Sie eine Verbindung mit [SQL Server Management Studio (SSMS.exe)](http://msdn.microsoft.com/library/mt238290.aspx) her.
+2. Stellen Sie eine Verbindung mit der Datenbank mit SQL Server Management Studio [(SSMS.exe)](http://msdn.microsoft.com/library/mt238290.aspx) her.
 
 3. Kopieren Sie das [In-Memory OLTP Transact-SQL-Skript](http://raw.githubusercontent.com/Azure/azure-sql-database-samples/master/T-SQL/In-Memory/sql_in-memory_oltp_sample.sql) in die Zwischenablage.
  - Das T-SQL-Skript erstellt die erforderlichen In-Memory-Objekte in der in Schritt 1 erstellten Beispieldatenbank „AdventureWorksLT“.
@@ -131,7 +131,7 @@ SELECT DatabasePropertyEx(DB_Name(), 'IsXTPSupported');
 ```
 
 
-Das Ergebnis **0** bedeutet, dass In-Memory nicht unterstützt wird. 1 bedeutet Unterstützung. So analysieren Sie das Problem:
+Das Ergebnis **0** bedeutet, dass In-Memory nicht unterstützt wird. „1“ bedeutet Unterstützung. So analysieren Sie das Problem:
 
 - Stellen Sie sicher, dass die Datenbank erstellt wurde, nachdem die In-Memory OLTP-Features für die Vorschau aktiviert wurden.
 - Stellen Sie sicher, dass die Datenbank dem Premium-Tarif unterliegt.
@@ -230,13 +230,13 @@ end
 ```
 
 
-Um die „\_ondisk“-Version des vorherigen T-SQL-Skripts für „ostress.exe“ zu erstellen, müssen Sie beide Vorkommen der Teilzeichenfolge „ *\_inmem* “ durch „ *\_ondisk* “ ersetzen. Diese Austauschvorgänge wirken sich auf die Namen von Tabellen und gespeicherten Prozeduren aus.
+Um die „\_ondisk“-Version des vorherigen T-SQL-Skripts für „ostress.exe“ zu erstellen, müssen Sie beide Vorkommen der Teilzeichenfolge „*\_inmem*“ durch „*\_ondisk*“ ersetzen. Diese Austauschvorgänge wirken sich auf die Namen von Tabellen und gespeicherten Prozeduren aus.
 
 
 ### Installieren von RML-Hilfsprogrammen und ostress
 
 
-Im Idealfall planen Sie die Ausführung von „ostress.exe“ auf einer Azure-VM. Dazu erstellen Sie eine [Azure-VM](http://azure.microsoft.com/documentation/services/virtual-machines/) in der gleichen Azure-Region, in der sich die „AdventureWorksLT“-Datenbank befindet. Sie können „ostress.exe“ aber auch auf Ihrem Laptop ausführen.
+Im Idealfall planen Sie die Ausführung von „ostress.exe“ auf einer Azure-VM. Dazu erstellen Sie eine [Azure-VM](http://azure.microsoft.com/documentation/services/virtual-machines/) in der gleichen Azure-Region, in der sich die AdventureWorksLT-Datenbank befindet. Sie können „ostress.exe“ aber auch auf Ihrem Laptop ausführen.
 
 
 Installieren Sie auf der VM oder dem gewählten Host die RML-Hilfsprogramme (Replay Markup Language), zu denen „ostress.exe“ gehört.
@@ -262,7 +262,7 @@ whereas for SQL 2016+
 ### Ausführen der „\_inmem“-Belastungsworkload
 
 
-Sie können ein Fenster mit einer *RML-Eingabeaufforderung* zum Ausführen unserer „ostress.exe“-Befehlszeile verwenden. Die Befehlszeilenparameter weisen „ostress“ zu Folgendem an:
+Sie können ein Fenster mit einer *RML-Eingabeaufforderung* zum Ausführen der „ostress.exe“-Befehlszeile verwenden. Die Befehlszeilenparameter weisen „ostress“ zu Folgendem an:
 
 - Ausführen von 100 Verbindungen gleichzeitig (-n100).
 - 50-maliges Ausführen des T-SQL-Skripts auf jeder Verbindung (-r50).
@@ -276,8 +276,7 @@ ostress.exe -n100 -r50 -S<servername>.database.windows.net -U<login> -P<password
 So führen Sie die vorherige „ostress.exe“-Befehlszeile aus:
 
 
-1. Setzen Sie den Dateninhalt der Datenbank durch Ausführen des folgenden Befehls in SSMS zurück, um alle Daten zu löschen, die bei vorherigen Ausführungen eingefügt wurden:
-```
+1. Setzen Sie den Dateninhalt der Datenbank durch Ausführen des folgenden Befehls in SSMS zurück, um alle Daten zu löschen, die bei vorherigen Ausführungen eingefügt wurden: ```
 EXECUTE Demo.usp_DemoReset;
 ```
 
@@ -302,8 +301,7 @@ Wenn „ostress.exe“ abgeschlossen ist, wird die Testlaufdauer im RML-Befehlsf
 Sobald Sie über das Ergebnis der Ausführung von „\_inmem“ verfügen, führen Sie die folgenden Schritte für die „\_ondisk“-Ausführung durch:
 
 
-1. Setzen Sie die Datenbank durch Ausführen des folgenden Befehls in SSMS zurück, um alle Daten zu löschen, die beim vorherigen Testlauf eingefügt wurden:
-```
+1. Setzen Sie die Datenbank durch Ausführen des folgenden Befehls in SSMS zurück, um alle Daten zu löschen, die beim vorherigen Testlauf eingefügt wurden: ```
 EXECUTE Demo.usp_DemoReset;
 ```
 
@@ -451,7 +449,7 @@ GO
 ## Besondere Aspekte der Vorschauversion von In-Memory OLTP
 
 
-Die In-Memory OLTP-Features in Azure SQL-Datenbank [wurden am 28. Oktober 2015 als Vorschau aktiviert](http://azure.microsoft.com/updates/public-preview-in-memory-oltp-and-real-time-operational-analytics-for-azure-sql-database/).
+Die In-Memory OLTP-Features in der Azure SQL-Datenbank [wurden am 28. Oktober 2015 als Vorschau aktiviert](http://azure.microsoft.com/updates/public-preview-in-memory-oltp-and-real-time-operational-analytics-for-azure-sql-database/).
 
 
 In der Vorschauphase vor der allgemeinen Verfügbarkeit wird In-Memory OLTP nur für Folgendes unterstützt:
@@ -469,7 +467,7 @@ SELECT DatabasePropertyEx(DB_NAME(), 'IsXTPSupported');
 ```
 
 
-Wenn die Abfrage **1** zurückgibt, wird In-Memory OLTP in dieser Datenbank sowie allen Datenbankkopien und -wiederherstellungen unterstützt, die auf Basis auf dieser Datenbank erstellt wurden.
+Wenn die Abfrage **1** zurückgibt, wird In-Memory OLTP in dieser Datenbank sowie allen Datenbankkopien und -wiederherstellungen unterstützt, die auf Basis dieser Datenbank erstellt wurden.
 
 
 #### Nur im Premium-Tarif zulässige Objekte
@@ -527,4 +525,4 @@ Wenn eine Datenbank eine der folgenden Arten von In-Memory OLTP-Objekten oder -T
 
 - [Überwachen von In-Memory-Speicher](sql-database-in-memory-oltp-monitoring.md) für In-Memory OLTP
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

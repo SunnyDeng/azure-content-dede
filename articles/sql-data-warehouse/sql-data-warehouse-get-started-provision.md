@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="11/19/2015"
+   ms.date="12/15/2015"
    ms.author="lodipalm;barbkess"/>
 
 # Erstellen eines SQL Data Warehouse
@@ -29,6 +29,10 @@ In diesem Lernprogramm führen Sie folgende Schritte aus:
 
 - Erstellen eines Servers, der die Datenbank hostet
 - Erstellen einer Datenbank, die die AdventureWorksDW-Beispieldatenbank enthält
+
+Wenn Sie versuchen, eine vorhandene Datenbank zu SQL Data Warehouse zu migrieren, lesen Sie die [Übersicht über die Migration](./sql-data-warehouse-get-started-overview-migrate.md), oder verwenden Sie das [Migrationshilfsprogramm ](./sql-data-warehouse-migrate-migration-utility.md).
+
+Um Daten in SQL Data Warehouse zu laden, lesen Sie [Laden von Daten in SQL Data Warehouse](./sql-data-warehouse-overview-load.md).
 
 [AZURE.INCLUDE [free-trial-note](../../includes/free-trial-note.md)]
 
@@ -49,12 +53,7 @@ In diesem Lernprogramm führen Sie folgende Schritte aus:
 
 In Azure SQL-Datenbank und SQL Data Warehouse wird jede Datenbank einem Server und jeder Server einem geografischen Standort zugewiesen. Der Server wird als logischer SQL Server bezeichnet.
 
-> [AZURE.NOTE]<a name="note"></a>Ein logischer SQL Server:
-  >
-  > + Bietet ein einheitliches Verfahren zum Konfigurieren mehrerer Datenbanken innerhalb des gleichen geografischen Standorts.
-  > + Ist keine physische Hardware wie bei einem lokalen Server. sondern Teil der Dienstsoftware. Aus diesem Grund sprechen wird von einem *logischen Server*.
-  > + Kann mehrere Datenbanken ohne Beeinträchtigung der Leistung hosten.
-  > + Enthält im Namen ein kleingeschriebenes *s*. "SQL **s**erver" ist ein logischer Azure-Server, während "SQL **S**erver" der Name eines lokalen Datenbankprodukts von Microsoft ist.
+> [AZURE.NOTE]<a name="note"></a>Ein logischer SQL Server: >> + Bietet ein einheitliches Verfahren zum Konfigurieren mehrerer Datenbanken innerhalb des gleichen geografischen Standorts. > + Ist keine physische Hardware wie bei einem lokalen Server. sondern Teil der Dienstsoftware. Aus diesem Grund sprechen wird von einem *logischen Server*. > + Kann mehrere Datenbanken ohne Beeinträchtigung der Leistung hosten. > + Enthält im Namen ein kleingeschriebenes *s*. "SQL **s**erver" ist ein logischer Azure-Server, während "SQL **S**erver" der Name eines lokalen Datenbankprodukts von Microsoft ist.
 
 1. Klicken Sie auf **Server** > **Neuen Server erstellen**. Es fallen keine Gebühren für den Server ein. Wenn Sie einen bereits vorhandenen logischen V12-Server verwenden möchten, wählen Sie den vorhandenen Server aus und fahren mit dem nächsten Schritt fort. 
 
@@ -130,4 +129,4 @@ Da Sie jetzt die Firewall konfiguriert haben, können Sie Verbindungen zwischen 
 
 Nachdem Sie eine Beispieldatenbank für SQL Data Warehouse erstellt haben, sind Sie bereit, eine [Verbindung](./sql-data-warehouse-get-started-connect.md) mit der Datenbank herzustellen.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

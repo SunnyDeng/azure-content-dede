@@ -19,7 +19,7 @@
 
 # Erstellen eines Azure Search-Diensts im klassischen Azure-Portal
 
-Microsoft Azure Search ist ein gehosteter Cloudsuchdienst, mit dem Sie Suchfunktionen in benutzerdefinierte Anwendungen einbetten können. Er stellt eine Suchmaschine und Speicherplatz für Ihre Suchdaten zur Verfügung. Zugriff und Verwaltung können über das klassische Azure-Portal, ein .NET SDK oder eine REST-API erfolgen. Zu den zentralen Features zählen Abfragen mit automatischer Vervollständigung, Fuzzyübereinstimmung, Trefferhervorhebung, Facettennavigation, Bewertungsprofile und Unterstützung mehrerer Sprachen. Weitere Informationen zu den Funktionen von Azure Search finden unter [Was ist Azure Search?](seach-what-is-search.md).
+Microsoft Azure Search ist ein gehosteter Cloudsuchdienst, mit dem Sie Suchfunktionen in benutzerdefinierte Anwendungen einbetten können. Er stellt eine Suchmaschine und Speicherplatz für Ihre Suchdaten zur Verfügung. Zugriff und Verwaltung können über das klassische Azure-Portal, ein .NET SDK oder eine REST-API erfolgen. Zu den zentralen Features zählen Abfragen mit automatischer Vervollständigung, Fuzzyübereinstimmung, Trefferhervorhebung, Facettennavigation, Bewertungsprofile und Unterstützung mehrerer Sprachen. Weitere Informationen zu den Funktionen von Azure Search finden unter [Was ist Azure Search?](search-what-is-azure-search.md).
 
 ## Kostenloses Hinzufügen von Azure Search zu Ihrem Abonnement
 
@@ -123,4 +123,4 @@ Unter den folgenden Links finden Sie weitere Informationen zur Erstellung und Ve
 [2]: ./media/search-create-service-portal/create-search-portal-2.PNG
 [3]: ./media/search-create-service-portal/create-search-portal-3.PNG
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

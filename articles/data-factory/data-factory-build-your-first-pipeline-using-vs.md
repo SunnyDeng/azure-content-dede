@@ -22,6 +22,7 @@
 - [Using Data Factory Editor](data-factory-build-your-first-pipeline-using-editor.md)
 - [Using PowerShell](data-factory-build-your-first-pipeline-using-powershell.md)
 - [Using Visual Studio](data-factory-build-your-first-pipeline-using-vs.md)
+- [Using Resource Manager Template](data-factory-build-your-first-pipeline-using-arm.md)
 
 
 In diesem Artikel erfahren Sie, wie Sie mithilfe von Visual Studio Ihre erste Pipeline erstellen. Dieses Tutorial umfasst die folgenden Schritte:
@@ -204,7 +205,7 @@ Beim Veröffentlichen der Projektmappe im nächsten Schritt wird die HQL-Datei i
 
 21. Führen Sie auf der Seite zum Konfigurieren der Data Factory folgende Schritte aus:
 	1. Wählen Sie die Option **Neue Data Factory erstellen**.
-	2. Geben Sie **FirstPipelineUsingVS** als **Name** ein. 
+	2. Geben Sie **FirstPipelineUsingVS** als **Name** ein.
 	
 		> [AZURE.IMPORTANT]Der Name der Azure Data Factory muss global eindeutig sein. Wenn die Fehlermeldung **Data factory name “FirstPipelineUsingVS” is not available** beim Veröffentlichen angezeigt wird, ändern Sie den Namen (z. B. in „IhrNameFirstPipelineUsingVS“). Im Thema [Data Factory – Benennungsregeln](data-factory-naming-rules.md) finden Sie Benennungsregeln für Data Factory-Artefakte.
 		> 
@@ -243,4 +244,4 @@ Unter [Überwachen von Datasets und Pipelines](data-factory-monitor-manage-pipel
 In diesem Artikel haben Sie eine Pipeline mit einer Transformationsaktivität (HDInsight-Aktivität) erstellt, die ein Hive-Skript in einem bedarfsgesteuerten HDInsight-Cluster ausführt. Informationen zum Verwenden einer Kopieraktivität zum Kopieren von Daten aus einem Azure-Blob in Azure SQL finden Sie unter [Lernprogramm: Kopieren von Daten aus einem Azure-Blob in Azure SQL](data-factory-get-started.md).
   
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

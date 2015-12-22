@@ -1,6 +1,6 @@
 <properties
    pageTitle="Erstellen eines virtuellen Netzwerks mit einer Site-to-Site-VPN-Verbindung mit dem Azure-Ressourcen-Manager und PowerShell | Microsoft Azure"
-   description="In diesem Artikel werden Sie durch die Erstellung eines VNet mit dem Ressourcen-Manager-Modell und das Herstellen einer dazugehörigen Verbindung mit dem lokalen Netzwerk per Standort-zu-Standort-VPN Gateway-Verbindung geführt. Enthält zusätzliche Schritte zum Ändern der IP-Adresspräfixe für vorhandene lokale Standorte."
+   description="In diesem Artikel werden Sie durch die Erstellung eines VNet mit dem Ressourcen-Manager-Modell und das Herstellen einer dazugehörigen Verbindung mit dem lokalen Netzwerk mit einer S2S-VPN Gateway-Verbindung geführt. Standort-zu-Standort-Verbindungen können für Hybridkonfigurationen verwendet werden. Enthält zusätzliche Schritte zum Ändern der IP-Adresspräfixe für vorhandene lokale Standorte."
    services="vpn-gateway"
    documentationCenter="na"
    authors="cherylmc"
@@ -14,7 +14,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/30/2015"
+   ms.date="12/14/2015"
    ms.author="cherylmc"/>
 
 # Erstellen eines virtuellen Netzwerks mit einer Standort-zu-Standort-VPN-Verbindung mit PowerShell
@@ -23,9 +23,12 @@
 - [Azure Classic Portal](vpn-gateway-site-to-site-create.md)
 - [PowerShell - Resource Manager](vpn-gateway-create-site-to-site-rm-powershell.md)
 
-In diesem Artikel werden Sie durch das Erstellen eines virtuellen Netzwerks und das Herstellen einer Standort-zu-Standort-VPN-Verbindung mit Ihrem lokalen Netzwerk mithilfe des Bereitstellungsmodells aus dem Azure-Ressourcen-Manager geführt. Sie können den Artikel für das entsprechende Bereitstellungsmodell und Bereitstellungstool mithilfe der obigen Registerkarten auswählen.
+In diesem Artikel werden Sie durch das Erstellen eines virtuellen Netzwerks und das Herstellen einer Standort-zu-Standort-VPN-Verbindung mit Ihrem lokalen Netzwerk mithilfe des Bereitstellungsmodells aus dem Azure-Ressourcen-Manager geführt. Wenn Sie ein anderes Bereitstellungsmodell für diese Konfiguration suchen, verwenden Sie die Registerkarten oben, um den gewünschten Artikel auszuwählen. Wenn Sie VNets miteinander verbinden möchten, aber keine Verbindung mit einem lokalen Standort erstellen, finden Sie unter [Konfigurieren einer VNet-zu-VNet-Verbindung](vpn-gateway-vnet-vnet-rm-ps.md) entsprechende Informationen.
 
->[AZURE.NOTE]Sie sollten wissen, dass Azure derzeit mit zwei Bereitstellungsmodellen arbeitet: der Bereitstellung mit dem Ressourcen-Manager und der klassischen Bereitstellung. Bevor Sie Ihre Konfiguration beginnen, sollten Sie sicherstellen, dass Sie die Bereitstellungsmodelle und -tools verstehen. Informationen zu den Bereitstellungsmodellen finden Sie unter [Azure-Bereitstellungsmodelle](../azure-classic-rm.md).
+
+**Informationen zu Azure-Bereitstellungsmodellen**
+
+[AZURE.INCLUDE [vpn-gateway-clasic-rm](../../includes/vpn-gateway-classic-rm-include.md)]
 
 ## Voraussetzungen
 
@@ -37,8 +40,11 @@ Vergewissern Sie sich vor Beginn der Konfiguration, dass Sie über Folgendes ver
 	
 - Ein Azure-Abonnement. Wenn Sie noch kein Abonnement haben, können Sie Ihre [MSDN-Abonnentenvorteile](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) aktivieren oder sich für eine [kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/) registrieren.
 
-- Azure PowerShell-Cmdlets (1.0 oder höher). Sie können diese Version aus dem Windows PowerShell-Abschnitt der [Downloadseite](http://azure.microsoft.com/downloads/) herunterladen und installieren.
-	
+## Installieren von PowerShell-Modulen
+
+Sie benötigen die neueste Version der Azure-Ressourcen-Manager-PowerShell-Cmdlets zum Konfigurieren der Verbindung.
+
+[AZURE.INCLUDE [vpn-gateway-ps-rm-howto](../../includes/vpn-gateway-ps-rm-howto-include.md)]
 
 ## 1\. Verbinden mit Ihrem Abonnement 
 
@@ -82,7 +88,7 @@ Im folgenden Beispiel werden ein virtuelles Netzwerk mit dem Namen *testvnet* un
 
 ### <a name="gatewaysubnet"></a>So fügen Sie einem VNet ein Gatewaysubnetz hinzu (optional)
 
-Dieser Schritt ist nur erforderlich, wenn Sie einem VNet ein Gatewaysubnetz hinzufügen müssen.
+Dieser Schritt ist nur erforderlich, wenn Sie einem VNet ein Gatewaysubnetz hinzufügen müssen, das Sie zuvor erstellt haben.
 
 Wenn Sie bereits über ein vorhandenes virtuelles Netzwerk verfügen und ein Gatewaysubnetz hinzufügen möchten, können Sie Ihr Gatewaysubnetz anhand des folgenden Beispiels erstellen. Achten Sie darauf, dass Sie das Gatewaysubnetz "GatewaySubnet" nennen. Wenn Sie einen anderen Namen verwenden, erstellen Sie zwar ein Subnetz, aber es wird von Azure nicht als Gatewaysubnetz angesehen.
 
@@ -136,7 +142,7 @@ Die Gatewaykonfiguration definiert das zu verwendende Subnetz und die zu verwend
 
 ## 6\. Erstellen des Gateways
 
-In diesem Schritt erstellen Sie das Gateway des virtuellen Netzwerks. Beachten Sie, dass die Erstellung eines Gateways eine Weile dauert.
+In diesem Schritt erstellen Sie das Gateway des virtuellen Netzwerks. Beachten Sie, dass die Erstellung eines Gateways lange dauern kann. Häufig 20 Minuten oder länger.
 
 Verwenden Sie die folgenden Werte:
 
@@ -158,7 +164,7 @@ Um die öffentliche IP-Adresse des Gateways des virtuellen Netzwerks zu ermittel
 Erstellen Sie als Nächstes die Site-to-Site-VPN-Verbindung zwischen dem Gateway Ihres virtuellen Netzwerks und Ihrem VPN-Gerät. Achten Sie darauf, dass Sie die Werte durch Ihre eigenen ersetzen. Der gemeinsame Schlüssel muss dem Wert entsprechen, den Sie für Ihre VPN-Gerätekonfiguration verwendet haben.
 
 		$gateway1 = Get-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg
-		$local = Get-AzureLocalNetworkGateway -Name LocalSite -ResourceGroupName testrg
+		$local = Get-AzureRmLocalNetworkGateway -Name LocalSite -ResourceGroupName testrg
 
 		New-AzureRmVirtualNetworkGatewayConnection -Name localtovon -ResourceGroupName testrg -Location 'West US' -VirtualNetworkGateway1 $gateway1 -LocalNetworkGateway2 $local -ConnectionType IPsec -RoutingWeight 10 -SharedKey 'abc123'
 
@@ -246,6 +252,6 @@ Sie können das folgende Beispiel als Hilfe verwenden.
 
 ## Nächste Schritte
 
-Fügen Sie einen virtuellen Computer zu Ihrem virtuellen Netzwerk hinzu. [Erstellen Sie einen virtuellen Computer](../virtual-machines/virtual-machines-windows-tutorial.md).
+Sobald die Verbindung hergestellt ist, können Sie Ihren virtuellen Netzwerken virtuelle Computer hinzufügen. Für diese Schritte finden Sie Informationen unter [Erstellen eines virtuellen Computers](../virtual-machines/virtual-machines-windows-tutorial.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

@@ -74,19 +74,19 @@ App Service übergibt das JWT-Token im Autorisierungsheader einer HTTP-Anforderu
  
 In einer .NET-API können Sie das Attribut `Authorize` verwenden, und für die fein abgestufte Autorisierung können Sie leicht Code schreiben, der auf Ansprüchen basiert, weil Ansprücheinformationen für Sie in .NET-Klassen eingetragen werden.
 
-## Dienstprinzipalauthentifizierung
+## <a id="internal"></a> Dienstkontoauthentifizierung
 
-Sie können die App Service-Authentifizierung auch für interne Szenarien verwenden, z. B. für den Aufruf aus einer API-App, der sich an eine andere API-App richtet. In diesem Szenario können Sie Anmeldeinformationen für ein Dienstkonto statt Endbenutzer-Anmeldeinformationen für die Authentifizierung verwenden. Ein Dienstkonto wird auch als *Dienstprinzipal* bezeichnet. Die Authentifizierung mithilfe eines solchen Kontos ist auch als Dienst-zu-Dienst-Szenario bekannt.
+Sie können die App Service-Authentifizierung auch für interne Szenarien verwenden, z. B. für den Aufruf aus einer API-App, der sich an eine andere API-App richtet. In diesem Szenario können Sie Anmeldeinformationen für ein Dienstkonto statt Endbenutzer-Anmeldeinformationen für die Authentifizierung verwenden. Ein Dienstkonto wird in Azure Active Directory auch als *Dienstprinzipal* bezeichnet. Die Authentifizierung mithilfe eines solchen Kontos ist auch als Dienst-zu-Dienst-Szenario bekannt.
 
-Für interne Szenarien können Sie die aufgerufene API-App mithilfe von Azure Active Directory schützen und ein AAD-Dienstprinzipal-Autorisierungstoken bereitstellen, wenn Sie die API-App aufrufen. Sie können das Token anfordern, indem Sie die Client-ID und den geheimen Clientschlüssel aus der AAD-Anwendung bereitstellen. Es ist kein spezieller Azure-Code erforderlich, wie er beispielsweise für das Behandeln des Mobile Services-Zumo-Tokens benötigt wurde. Ein Beispiel für dieses Szenario mithilfe von ASP.NET-API-Apps finden Sie in dem Tutorial [Dienstprinzipalauthentifizierung für API-Apps in Azure App Service](app-service-api-dotnet-service-principal-auth.md).
+Für Dienst-zu-Dienst-Szenarien können Sie die aufgerufene API-App mithilfe von Azure Active Directory schützen und ein AAD-Dienstprinzipal-Autorisierungstoken bereitstellen, wenn Sie die API-App aufrufen. Sie können das Token anfordern, indem Sie die Client-ID und den geheimen Clientschlüssel aus der AAD-Anwendung bereitstellen. Es ist kein spezieller Azure-Code erforderlich, wie er beispielsweise für das Behandeln des Mobile Services-Zumo-Tokens benötigt wurde. Ein Beispiel für dieses Szenario mithilfe von ASP.NET-API-Apps finden Sie in dem Tutorial [Dienstprinzipalauthentifizierung für API-Apps in Azure App Service](app-service-api-dotnet-service-principal-auth.md).
 
-Wenn Sie ein Dienst-zu-Dienst-Szenario ohne App Service-Authentifizierung behandeln möchten, können Sie Clientzertifikate oder Standardauthentifizierung verwenden. Informationen zu Clientzertifikaten in Azure finden Sie unter [Konfigurieren von gegenseitiger TLS-Authentifizierung für Web-Apps](../app-service-web/app-service-web-configure-tls-mutual-auth.md).
+Wenn Sie ein Dienst-zu-Dienst-Szenario ohne App Service-Authentifizierung behandeln möchten, können Sie Clientzertifikate oder Standardauthentifizierung verwenden. Informationen zu Clientzertifikaten in Azure finden Sie unter [Konfigurieren von gegenseitiger TLS-Authentifizierung für Web-Apps](../app-service-web/app-service-web-configure-tls-mutual-auth.md). Informationen zum Konfigurieren einer Standardauthentifizierung in ASP.NET finden Sie unter [Authentication Filters in ASP.NET Web API 2](http://www.asp.net/web-api/overview/security/authentication-filters).
 
-Dienstprinzipalauthentifizierung von einer App Service-Logik-App zu einer API-App ist ein Sonderfall, der in [Verwenden der in App Service gehosteten benutzerdefinierten API mit Logik-Apps](../app-service-logic/app-service-logic-custom-hosted-api.md) erklärt wird.
+Dienstkontoauthentifizierung von einer App Service-Logik-App zu einer API-App ist ein Sonderfall, der in [Verwenden der in App Service gehosteten benutzerdefinierten API mit Logik-Apps](../app-service-logic/app-service-logic-custom-hosted-api.md) erklärt wird.
 
 ## Weitere Informationen
 
-Weitere Informationen zu Authentifizierungs- und Autorisierungsdiensten in Azure App Service finden Sie unter [Erweitern der App Service-Authentifizierung/Autorisierung](/blog/announcing-app-service-authentication-authorization/).
+Weitere Informationen zu Authentifizierungs- und Autorisierungsdiensten in Azure App Service finden Sie unter [Expanding App Service Authentication/Authorization](/blog/announcing-app-service-authentication-authorization/).
 
 ## Nächste Schritte
 
@@ -96,4 +96,4 @@ Wenn Sie der Erste-Schritte-Sequenz der Tutorials für ASP.NET- und API-Apps fol
 
 Weitere Informationen zur Verwendung von Knoten und Java in Azure App Service finden Sie unter [Node.js Developer Center](/develop/nodejs/) und [Java Developer Center](/develop/java/).
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

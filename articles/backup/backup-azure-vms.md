@@ -18,18 +18,18 @@
 	ms.author="trinadhk; aashishr; jimpark; markgal"/>
 
 
-# Sichern virtueller Azure-Computer
-In diesem Artikel werden die Verfahren zum Sichern vorhandener virtueller Azure-Computer erläutert, um Ihre virtuellen Computer in Übereinstimmung mit den Sicherungs- und Notfallwiederherstellungsrichtlinien Ihres Unternehmens zu schützen.
+# Sichern von virtuellen Azure-Computern
+In diesem Artikel werden die Verfahren zum Sichern vorhandener virtueller Azure-Computer (VMs, Virtual Machines) erläutert, um Ihre virtuellen Computer in Übereinstimmung mit den Sicherungs- und Notfallwiederherstellungsrichtlinien Ihres Unternehmens zu schützen.
 
 Bevor Sie einen virtuellen Azure-Computer sichern können, müssen Sie zunächst einige Dinge erledigen. Falls noch nicht erfolgt, erfüllen Sie die [Voraussetzungen](backup-azure-vms-prepare.md) zur Vorbereitung Ihrer Umgebung auf die Sicherung der virtuellen Computer, ehe Sie fortfahren.
 
-Wenn Sie Informationen zum [Planen der Sicherungsinfrastruktur für virtuelle Computer in Azure](backup-azure-vms-introduction.md) oder zu [virtuellen Azure-Computern](https://azure.microsoft.com/documentation/services/virtual-machines/) suchen, folgen Sie diesen Links.
+Weitere Informationen finden Sie in den Artikeln [Planen der Sicherungsinfrastruktur für virtuelle Computer in Azure](backup-azure-vms-introduction.md) und [Dokumentation zu Virtual Machines](https://azure.microsoft.com/documentation/services/virtual-machines/).
 
 Zur Sicherung virtueller Azure-Computer gehören drei Hauptschritte:
 
 ![Drei Schritte zum Sichern eines virtuellen Azure-IaaS-Computers](./media/backup-azure-vms/3-steps-for-backup.png)
 
->[AZURE.NOTE]Die Sicherung virtueller Computer erfolgt lokal. Sie können keine virtuellen Computer aus einer Region in einem Sicherungstresor in einer anderen Region sichern. Deshalb muss in jeder Azure-Region mit virtuellen Computern, die eine Sicherung erfordern, mindestens ein Sicherungstresor erstellt werden.
+>[AZURE.NOTE]Das Sichern virtueller Computer ist ein örtlich gebundener Vorgang. Sie können keine virtuellen Computer aus einer Region in einem Sicherungstresor in einer anderen Region sichern. Deshalb muss in jeder Azure-Region mit virtuellen Computern, die gesichert werden sollen, mindestens ein Sicherungstresor erstellt werden.
 
 ## Schritt 1: Ermitteln virtueller Azure-Computer
 Der Ermittlungsprozess muss immer als erster Schritt erfolgen, um sicherzustellen, dass alle neuen virtuellen Computer, die dem Abonnement hinzugefügt wurden, identifiziert werden. Bei diesem Vorgang wird Azure nach der Liste virtueller Computer im Abonnement abgefragt. Außerdem werden zusätzliche Informationen wie der Clouddienstname und die Region erfasst.
@@ -40,26 +40,26 @@ Der Ermittlungsprozess muss immer als erster Schritt erfolgen, um sicherzustelle
 
     ![Workload auswählen](./media/backup-azure-vms/discovery-select-workload.png)
 
-3. Klicken Sie unten auf der Seite auf **ERMITTELN**. ![Schaltfläche "Ermitteln"](./media/backup-azure-vms/discover-button-only.png)
+3. Klicken Sie unten auf der Seite auf **ERMITTELN**. ![Schaltfläche „Ermitteln“](./media/backup-azure-vms/discover-button-only.png)
 
-    Der Ermittlungsvorgang kann einige Minuten dauern, während die virtuellen Computer in einer Tabelle aufgeführt werden. Es erfolgt am unteren Rand des Bildschirms eine Benachrichtigung, die Ihnen mitteilt, dass der Vorgang ausgeführt wird.
+    Der Ermittlungsvorgang kann einige Minuten dauern, während die virtuellen Computer in einer Tabelle aufgeführt werden. Am unteren Rand des Bildschirms wird eine Benachrichtigung angezeigt, die Ihnen mitteilt, dass der Vorgang ausgeführt wird.
 
     ![VMs ermitteln](./media/backup-azure-vms/discovering-vms.png)
 
     Die Benachrichtigung ändert sich, sobald der Vorgang abgeschlossen ist.
 
-    ![Ermitteln abgeschlossen](./media/backup-azure-vms/discovery-complete.png)
+    ![Ermittlung abgeschlossen](./media/backup-azure-vms/discovery-complete.png)
 
 ##  Schritt 2: Registrieren virtueller Azure-Computer
 Sie registrieren einen virtuellen Azure-Computer, um ihn dem Azure Backup-Dienst zuzuordnen. Die Registrierung ist in der Regel eine einmalige Angelegenheit.
 
-1. Navigieren Sie zum Sicherungstresor, der sich im Azure-Portal unter **Recovery Services** befindet, und klicken Sie auf die Registerkarte **Registrierte Elemente**.
+1. Navigieren Sie zum Sicherungstresor, der sich im Azure-Portal unter **Recovery Services** befindet, und klicken Sie anschließend auf **Registrierte Elemente**.
 
 2. Wählen Sie im Dropdownmenü **Virtueller Azure-Computer** aus.
 
     ![Workload auswählen](./media/backup-azure-vms/discovery-select-workload.png)
 
-3. Klicken Sie unten auf der Seite auf **REGISTRIEREN**. ![Schaltfläche "Registrieren"](./media/backup-azure-vms/register-button-only.png)
+3. Klicken Sie unten auf der Seite auf **REGISTRIEREN**. ![Schaltfläche „Registrieren“](./media/backup-azure-vms/register-button-only.png)
 
 4. Wählen Sie im Kontextmenü **Elemente registrieren** die virtuellen Computer aus, die Sie registrieren möchten. Wenn zwei oder mehr virtuelle Computer denselben Namen aufweisen, verwenden Sie den Clouddienst, um sie unterscheiden.
 
@@ -82,9 +82,9 @@ Sie registrieren einen virtuellen Azure-Computer, um ihn dem Azure Backup-Dienst
 ## Schritt 3: Schützen virtueller Azure-Computer
 Nun können Sie die Sicherungs- und Aufbewahrungsrichtlinie für den virtuellen Computer definieren. Mehrere virtuelle Computer können in einem einzigen Schritt geschützt werden.
 
-Azure-Sicherungstresore, die nach Mai 2015 erstellt wurden, enthalten eine im Tresor integrierte Standardrichtlinie. Diese Standardrichtlinie sieht eine Standardaufbewahrungsdauer von 30 Tagen und eine tägliche Sicherung vor.
+Azure-Sicherungstresore, die nach Mai 2015 erstellt wurden, enthalten eine im Tresor integrierte Standardrichtlinie. Diese Standardrichtlinie sieht eine Standardaufbewahrungsdauer von 30 Tagen und eine einmalige tägliche Sicherung vor.
 
-1. Navigieren Sie zum Sicherungstresor, der sich im Azure-Portal unter **Recovery Services** befindet, und klicken Sie auf die Registerkarte **Registrierte Elemente**.
+1. Navigieren Sie zum Sicherungstresor, der sich im Azure-Portal unter **Recovery Services** befindet, und klicken Sie anschließend auf **Registrierte Elemente**.
 2. Wählen Sie im Dropdownmenü **Virtueller Azure-Computer** aus.
 
     ![Workload im Portal auswählen](./media/backup-azure-vms/select-workload.png)
@@ -111,7 +111,7 @@ Azure-Sicherungstresore, die nach Mai 2015 erstellt wurden, enthalten eine im T
 
     ![Schützen mit flexibler Aufbewahrung](./media/backup-azure-vms/policy-retention.png)
 
-    Die Aufbewahrungsrichtlinie gibt die Dauer der Speicherung einer Sicherung an. Sie können basierend auf dem Zeitpunkt der Erstellung der Sicherung unterschiedliche Aufbewahrungsrichtlinien angegeben. Beispiel: Der Sicherungspunkt am Ende jedes Quartals muss möglicherweise länger aufbewahrt werden (für Audits), während der tägliche Sicherungspunkt (der als Wiederherstellungspunkt für den alltäglichen Betrieb dient) nur 90 Tage aufbewahrt werden muss.
+    Die Aufbewahrungsrichtlinie legt fest, für welchen Zeitraum eine Sicherung aufbewahrt wird. Je nach Erstellungszeitpunkt der Sicherung können Sie unterschiedliche Aufbewahrungsrichtlinien festlegen. Beispiel: Der Sicherungspunkt am Ende jedes Quartals muss möglicherweise länger aufbewahrt werden (für Audits), während der tägliche Sicherungspunkt (der als Wiederherstellungspunkt für den alltäglichen Betrieb dient) nur 90 Tage aufbewahrt werden muss.
 
     ![Virtueller Computer wird mit Wiederherstellungspunkt gesichert](./media/backup-azure-vms/long-term-retention.png)
 
@@ -148,7 +148,7 @@ Sobald die erste Sicherung abgeschlossen ist, wird der Status des virtuellen Com
 ![Virtueller Computer wird mit Wiederherstellungspunkt gesichert](./media/backup-azure-vms/protect-backedupvm.png)
 
 ## Anzeigen von Status und Details der Sicherung
-Sobald der Schutz eingerichtet ist, steigt die Anzahl der virtuellen Computer auch auf der **Dashboard**-Zusammenfassungsseite. Auf der Seite **Dashboard** wird auch die Anzahl der Aufträge der letzten 24 Stunden angezeigt, die *erfolgreich* waren, *Fehler* verursacht haben oder *noch ausgeführt* werden. Durch Klicken auf eine beliebige Kategorie wird auf der Seite **Aufträge** ein Drilldown in diese Kategorie durchgeführt.
+Sobald der Schutz eingerichtet ist, steigt die Anzahl der virtuellen Computer auch auf der **Dashboard**-Zusammenfassungsseite. Auf der Seite **Dashboard** wird auch die Anzahl der Aufträge der letzten 24 Stunden angezeigt, die *erfolgreich* waren, *Fehler* verursacht haben oder *noch ausgeführt* werden. Auf der Seite **Aufträge** können Sie durch Klicken auf eine beliebige Kategorie ein Drilldown in diese Kategorie durchführen.
 
 ![Status der Sicherung auf der Dashboard-Seite](./media/backup-azure-vms/dashboard-protectedvms.png)
 
@@ -162,4 +162,4 @@ Wenn beim Sichern des virtuellen Computers Probleme auftreten, finden Sie in die
 - [Verwalten und Überwachen Ihrer virtuellen Computer](backup-azure-manage-vms.md)
 - [Wiederherstellen virtueller Computer](backup-azure-restore-vms.md)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1217_2015-->

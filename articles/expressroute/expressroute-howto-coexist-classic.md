@@ -205,10 +205,10 @@ Wenn Sie ein vorhandenes virtuelles Netzwerk über eine ExpressRoute- oder Stand
 		          </ConnectionsToLocalNetwork>
 		        </Gateway>
 
-5. An diesem Punkt verfügen Sie über ein VNet ohne Gateways. Sie können mit **Schritt 3** im Artikel [Erstellen eines neuen virtuellen Netzwerks sowohl mit ExpressRoute- als auch Standort-zu-Standort-Konnektivität](#create-a-new-virtual-network-with-both-expressroute-and-site-to-site-connectivity) fortfahren, um neue Gateways zu erstellen und Ihre Verbindungen zu vervollständigen.
+5. An diesem Punkt verfügen Sie über ein VNet ohne Gateways. Sie können mit **Schritt 4** im Abschnitt [Erstellen eines neuen virtuellen Netzwerks sowohl mit ExpressRoute- als auch Standort-zu-Standort-Konnektivität](#create-a-new-virtual-network-with-both-expressroute-and-site-to-site-connectivity) fortfahren, um neue Gateways zu erstellen und Ihre Verbindungen zu vervollständigen.
 
 ## Nächste Schritte
 
 Weitere Informationen über ExpressRoute finden Sie unter [ExpressRoute – FAQ](expressroute-faqs.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

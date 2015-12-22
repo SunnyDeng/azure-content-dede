@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="12/07/2015"
+	ms.date="12/16/2015"
 	ms.author="sdanie"/>
 
 # Hinzufügen der Zwischenspeicherung zum Verbessern der Leistung in Azure API Management
@@ -21,6 +21,8 @@
 Operationen in API Management können für das Zwischenspeichern von Antworten konfiguriert werden. Das Zwischenspeichern von Antworten kann API-Latenz, Bandbreitennutzung und Webdienstlast für Daten, die sich eher selten ändern, drastisch senken.
 
 In diesem Leitfaden wird gezeigt, wie Sie die Zwischenspeicherung von Antworten für Ihre API hinzufügen und Richtlinien für Operationen in der Echo-Beispiel-API konfigurieren. Um die Zwischenspeicherung in Aktion zu sehen, können Sie die Operation im Entwicklerportal aufrufen.
+
+>[AZURE.NOTE]Informationen zum Zwischenspeichern von Elementen nach Schlüssel mithilfe von Richtlinienausdrücken finden Sie unter [Benutzerdefiniertes Zwischenspeichern in Azure API Management](api-management-sample-cache-by-key.md).
 
 ## Voraussetzungen
 
@@ -129,6 +131,7 @@ Geben Sie **25** in das Feld **param2** ein, und klicken Sie dann auf **HTTP Get
 
 -	Lesen Sie die anderen Themen im Lernprogramm [Erste Schritte bei der erweiterten API-Konfiguration][].
 -	Weitere Informationen zu Richtlinien für die Zwischenspeicherung finden Sie unter [Richtlinien für die Zwischenspeicherung][] in der [Richtlinienreferenz für API Management][].
+-	Informationen zum Zwischenspeichern von Elementen nach Schlüssel mithilfe von Richtlinienausdrücken finden Sie unter [Benutzerdefiniertes Zwischenspeichern in Azure API Management](api-management-sample-cache-by-key.md).
 
 [api-management-management-console]: ./media/api-management-howto-cache/api-management-management-console.png
 [api-management-echo-api]: ./media/api-management-howto-cache/api-management-echo-api.png
@@ -160,4 +163,4 @@ Geben Sie **25** in das Feld **param2** ein, und klicken Sie dann auf **HTTP Get
 [Call an operation and test the caching]: #test-operation
 [Next steps]: #next-steps
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

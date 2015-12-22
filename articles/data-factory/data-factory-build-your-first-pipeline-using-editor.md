@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Erstellen der ersten Azure Data Factory-Pipeline mit dem Data Factory-Editor"
-	description="In diesem Tutorial erstellen Sie eine Azure Data Factory-Beispielpipeline mit dem Data Factory-Editor im klassischen Azure-Portal."
+	description="In diesem Tutorial erstellen Sie eine Azure Data Factory-Beispielpipeline mit dem Data Factory-Editor im Azure-Portal."
 	services="data-factory"
 	documentationCenter=""
 	authors="spelluru"
@@ -16,12 +16,13 @@
 	ms.date="11/02/2015"
 	ms.author="spelluru"/>
 
-# Erstellen der ersten Azure Data Factory-Pipeline mit dem Data Factory-Editor (klassisches Azure-Portal)
+# Erstellen der ersten Azure Data Factory-Pipeline mit dem Data Factory-Editor (Azure-Portal)
 > [AZURE.SELECTOR]
 - [Tutorial Overview](data-factory-build-your-first-pipeline.md)
 - [Using Data Factory Editor](data-factory-build-your-first-pipeline-using-editor.md)
 - [Using PowerShell](data-factory-build-your-first-pipeline-using-powershell.md)
 - [Using Visual Studio](data-factory-build-your-first-pipeline-using-vs.md)
+- [Using Resource Manager Template](data-factory-build-your-first-pipeline-using-arm.md)
 
 
 In diesem Artikel erfahren Sie, wie Sie mithilfe des [Azure-Portals](https://portal.azure.com/) Ihre erste Pipeline erstellen. Dieses Tutorial umfasst die folgenden Schritte:
@@ -147,7 +148,7 @@ Jetzt erstellen Sie das Ausgabedataset, das die im Azure-BLOB-Speicher gespeiche
 		  }
 		}
 
-3. Klicken Sie auf der Befehlsleiste auf **Bereitstellen**, um das neu erstellte DataSet bereitzustellen.
+3. Klicken Sie auf der Befehlsleiste auf **Bereitstellen**, um das neu erstellte Dataset bereitzustellen.
 4. Überprüfen Sie, ob das Dataset erfolgreich erstellt wurde.
 
 	![Strukturansicht mit verknüpften Diensten](./media/data-factory-build-your-first-pipeline-using-editor/tree-view-data-set.png)
@@ -233,4 +234,4 @@ In diesem Schritt erstellen Sie Ihre erste Pipeline.
 In diesem Artikel haben Sie eine Pipeline mit einer Transformationsaktivität (HDInsight-Aktivität) erstellt, die ein Hive-Skript in einem bedarfsgesteuerten HDInsight-Cluster ausführt. Informationen zum Verwenden einer Kopieraktivität zum Kopieren von Daten aus einem Azure-Blob in Azure SQL finden Sie unter [Lernprogramm: Kopieren von Daten aus einem Azure-Blob in Azure SQL](./data-factory-get-started.md).
   
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->
