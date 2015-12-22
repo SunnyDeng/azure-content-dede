@@ -54,11 +54,11 @@ Sie müssen einen IoT Hub erstellen, mit dem Ihr simuliertes Gerät verbunden w
 
 2. Klicken Sie in der Navigationsleiste auf **Neu**, klicken Sie auf **Internet der Dinge** und dann auf **Azure IoT Hub**.
 
-    ![][1]
+   	![][1]
 
 3. Wählen Sie auf dem Blatt **IoT Hub** die gewünschte Konfiguration für Ihren IoT Hub.
 
-    ![][2]
+   	![][2]
 
     * Geben Sie im Feld **Name** einen Namen für Ihren IoT Hub ein. Wenn der **Name** gültig und verfügbar ist, wird im Feld **Name** ein grünes Häkchen angezeigt.
     * Wählen Sie eine **Preis- und Skalierungsstufe** aus. Für dieses Tutorial ist keine bestimmte Stufe erforderlich.
@@ -71,11 +71,11 @@ Sie müssen einen IoT Hub erstellen, mit dem Ihr simuliertes Gerät verbunden w
 
 5. Nachdem der IoT Hub erfolgreich erstellt wurde, öffnen Sie das Blatt für den neuen IoT Hub, notieren Sie den **Hostnamen**, und klicken Sie dann auf das **Schlüsselsymbol**.
 
-    ![][4]
+   	![][4]
 
 6. Klicken Sie auf die Richtlinie **iothubowner**, und kopieren Sie oder notieren Sie die Verbindungszeichenfolge im Blatt **iothubowner**.
 
-    ![][5]
+   	![][5]
 
 Sie haben nun Ihren IoT Hub erstellt und verfügen über den Hostnamen und die Verbindungszeichenfolge, die Sie für die weiteren Schritte in diesem Tutorial benötigen.
 
@@ -122,13 +122,13 @@ In den folgenden Artikeln finden Sie weitere Informationen zu IoT Hub:
 [42]: ./media/iot-hub-csharp-csharp-getstarted/run-apps2.png
 
 <!-- Links -->
-[lnk-c2d-tutorial]: iot-hub-csharp-csharp-c2d.md
-[lnk-process-d2c-tutorial]: iot-hub-csharp-csharp-process-d2c.md
-[lnk-upload-tutorial]: iot-hub-csharp-csharp-file-upload.md
+[Senden von C2D-Nachrichten mit IoT Hub]: iot-hub-csharp-csharp-c2d.md
+[Verarbeiten von Gerät-zu-Cloud-Nachrichten]: iot-hub-csharp-csharp-process-d2c.md
+[Hochladen von Dateien von Geräten]: iot-hub-csharp-csharp-file-upload.md
 
-[lnk-hub-overview]: iot-hub-what-is-iot-hub.md
-[lnk-hub-guidance]: iot-hub-guidance.md
-[lnk-hub-dev-guide]: iot-hub-devguide.md
+[Übersicht zu IoT Hub]: iot-hub-what-is-iot-hub.md
+[IoT Hub – Anleitung]: iot-hub-guidance.md
+[IoT Hub-Entwicklerhandbuch]: iot-hub-devguide.md
 [lnk-supported-devices]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/tested_configurations.md
 [lnk-dev-center]: http://www.azure.com/develop/iot
 [lnk-hub-sdks]: iot-hub-sdks-summary.md

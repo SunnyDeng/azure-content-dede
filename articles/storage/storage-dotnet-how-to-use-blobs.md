@@ -23,7 +23,7 @@
 
 ## Übersicht
 
-In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Windows Azure Blob-Speicherdienst demonstriert. Die Beispiele sind in C# geschrieben und greifen auf die Azure-Speicherclientbibliothek für .NET zurück. Die Speicherclientbibliothek ist ein SDK, das die Interaktion mit Blobspeicher-REST-APIs vereinfacht. Die in dieser Anleitung behandelten Szenarien umfassen **Hochladen**, **Auflisten**, **Herunterladen** und **Löschen** von Blobs und nehmen etwa eine Stunde in Anspruch. Wenn Sie ein Erste-Schritte-Video sehen möchten, finden Sie dies unter [Einführung in Azure Storage in fünf Minuten](https://azure.microsoft.com/documentation/videos/azure-storage-5-minute-overview/), oder lesen Sie [Erste Schritte mit Azure Storage – Einstieg in fünf Minuten](storage-getting-started-guide.md).
+In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Microsoft Azure Blob-Speicherdienst demonstriert. Die Beispiele sind in C# geschrieben und greifen auf die Azure-Speicherclientbibliothek für .NET zurück. Die Speicherclientbibliothek ist ein SDK, das die Interaktion mit Blobspeicher-REST-APIs vereinfacht. Die in dieser Anleitung behandelten Szenarien umfassen **Hochladen**, **Auflisten**, **Herunterladen** und **Löschen** von Blobs und nehmen etwa eine Stunde in Anspruch. Wenn Sie ein Erste-Schritte-Video sehen möchten, finden Sie dies unter [Einführung in Azure Storage in fünf Minuten](https://azure.microsoft.com/documentation/videos/azure-storage-5-minute-overview/), oder lesen Sie [Erste Schritte mit Azure Storage – Einstieg in fünf Minuten](storage-getting-started-guide.md).
 
 [AZURE.INCLUDE [storage-dotnet-client-library-version-include](../../includes/storage-dotnet-client-library-version-include.md)]
 
