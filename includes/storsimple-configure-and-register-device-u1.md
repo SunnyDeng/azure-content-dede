@@ -62,7 +62,7 @@
   
         Wenn der Gerätestatus „Offline“ ist, warten Sie ein paar Minuten, bis das Gerät online geschaltet wird. 
       
-        Wenn das Gerät nach einigen Minuten weiterhin offline ist, müssen Sie sicherstellen, dass Ihr Firewallnetzwerk wie unter [Netzwerkanforderungen für Ihr StorSimple-Gerät] konfiguriert wurde(../articles/storsimple/storsimple-system-requirements.md). 
+        Wenn das Gerät nach einigen Minuten weiterhin offline ist, müssen Sie sicherstellen, dass Ihr Firewallnetzwerk wie unter [Netzwerkanforderungen für Ihr StorSimple-Gerät](../articles/storsimple/storsimple-system-requirements.md) konfiguriert wurde. 
 
 		Wenn HTTP 1.1 nicht unterstützt wird, überprüfen Sie Port 9354, um sicherzustellen, dass er für ausgehende Kommunikation geöffnet ist. Dieser Port wird für die Kommunikation zwischen dem StorSimple Manager-Dienst und Ihrem StorSimple-Gerät verwendet.
      
