@@ -139,7 +139,9 @@ Installieren Sie das [Service Fabric-SDK](https://azure.microsoft.com/campaigns
     ```
 
 3.	Ist die Datei „NuGet.config“ noch nicht vorhanden, erstellen Sie sie mit folgendem Inhalt. Ersetzen Sie dabei `<path to service fabric SDK>` durch den Pfad zum Service Fabric-SDK auf dem Buildcomputer.
+
 >[AZURE.NOTE]`<path to service fabric SDK>` ist standardmäßig `%ProgramFiles%\Microsoft SDKs\Service Fabric`.
+
 
     NuGet.config:
 
@@ -194,7 +196,7 @@ Führen Sie zum Installieren von Azure PowerShell die Schritte aus dem vorherige
 ### Registrieren Ihres Build-Agents
 
 1.	Laden Sie „agent.zip“ herunter. Gehen Sie dazu folgendermaßen vor:
-    1.	Melden Sie sich bei Ihrem Teamprojekt an. Beispiel: ****https://[your-VSO-account-name].visualstudio.com**.
+    1.	Melden Sie sich bei Ihrem Teamprojekt an. Beispiel: **https://[your-VSO-account-name].visualstudio.com**.
     1.	Wählen Sie das Zahnradsymbol in der rechten oberen Bildschirmecke aus.
     1.	Wählen Sie in der Systemsteuerung die Registerkarte **Agentpools** aus.
     1.	Wählen Sie **Download-Agent** aus, um die Datei „agent.zip“ herunterzuladen.
