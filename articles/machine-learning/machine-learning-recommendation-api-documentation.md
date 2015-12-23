@@ -800,12 +800,12 @@ d5358189-d70f-4e35-8add-34b83b4942b3, Pigs in Heaven
 
 ##7\. Modellgeschäftsregeln
 Folgende Regeltypen werden unterstützt:
-– <strong>BlockList</strong>: Hiermit können Sie eine Sperrliste mit Elementen erstellen, die nicht in den Empfehlungsergebnissen zurückgegeben werden sollen.
-– <strong>FeatureBlockList</strong>: Hiermit können Sie Elemente basierend auf den Werten ihrer Features blockieren
-– <strong>Upsale</strong>: Hiermit können Sie das Zurückgeben von Elementen in den Empfehlungsergebnissen erzwingen.
-– <strong>WhiteList</strong>: Hiermit können Sie ausschließlich Empfehlungen aus einer Liste von Elementen vorschlagen.
-– <strong>FeatureWhiteList</strong>: Hiermit können Sie ausschließlich Elemente empfehlen, die bestimmte Featurewerte haben.
-– <strong>PerSeedBlockList</strong>: Hiermit können Sie pro Element eine Liste von Elementen festlegen, die nicht in den Empfehlungsergebnissen zurückgegeben werden sollen.
+- <strong>BlockList</strong>: Hiermit können Sie eine Sperrliste mit Elementen erstellen, die nicht in den Empfehlungsergebnissen zurückgegeben werden sollen.
+- <strong>FeatureBlockList</strong>: Hiermit können Sie Elemente basierend auf den Werten ihrer Features blockieren
+- <strong>Upsale</strong>: Hiermit können Sie das Zurückgeben von Elementen in den Empfehlungsergebnissen erzwingen.
+- <strong>WhiteList</strong>: Hiermit können Sie ausschließlich Empfehlungen aus einer Liste von Elementen vorschlagen.
+- <strong>FeatureWhiteList</strong>: Hiermit können Sie ausschließlich Elemente empfehlen, die bestimmte Featurewerte haben.
+- <strong>PerSeedBlockList</strong>: Hiermit können Sie pro Element eine Liste von Elementen festlegen, die nicht in den Empfehlungsergebnissen zurückgegeben werden sollen.
 
 
 ###7.1. Modellregeln abrufen
@@ -879,7 +879,17 @@ OData-XML
 ||| 
 | Anforderungstext | 
 <ins>Stellen Sie beim Bereitstellen von Element-IDs für Geschäftsregeln sicher, dass Sie die externe ID des Elements verwenden (die gleiche ID, die Sie in der Katalogdatei verwendet haben).</ins><br> 
-<ins>So fügen Sie eine „BlockList“-Regel hinzu:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>BlockList</Type><Value>{"ItemsToExclude":["2406E770-769C-4189-89DE-1C9283F93A96","3906E110-769C-4189-89DE-1C9283F98888"]}</Value></ApiFilter>`<br><br><ins> <ins>So fügen Sie eine „FeatureBlockList“-Regel hinzu:</ins><br> <br> `<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>FeatureBlockList</Type><Value>{"Name":"Movie_category","Values":["Adult","Drama"]}</Value></ApiFilter>`<br><br><ins> So fügen Sie eine „Upsale“-Regel hinzu:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>Upsale</Type><Value>{"ItemsToUpsale":["2406E770-769C-4189-89DE-1C9283F93A96"]}</Value></ApiFilter>`<br><br> <ins>So fügen Sie eine „WhiteList“-Regel hinzu:</ins><br> `<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>WhiteList</Type><Value>{"ItemsToInclude":["2406E770-769C-4189-89DE-1C9283F93A96","1116E770-769C-4189-89DE-1C9283F88888"]}</Value></ApiFilter>`<br><br><ins> <ins>So fügen Sie eine „FeatureWhiteList“-Regel hinzu:</ins><br> <br> `<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>FeatureWhiteList</Type><Value>{"Name":"Movie_rating","Values":["PG13"]}</Value></ApiFilter>`<br><br><ins> So fügen Sie eine „PerSeedBlockList“-Regel hinzu:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>PerSeedBlockList</Type><Value>{"SeedItems":["9949"],"ItemsToExclude":["9862","8158","8244"]}</Value></ApiFilter>`|
+<ins>So fügen Sie eine „BlockList“-Regel hinzu:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>BlockList</Type><Value>{"ItemsToExclude":["2406E770-769C-4189-89DE-1C9283F93A96","3906E110-769C-4189-89DE-1C9283F98888"]}</Value></ApiFilter>`<br><br><ins>
+<ins>So fügen Sie eine „FeatureBlockList“-Regel hinzu:</ins><br>
+<br>
+`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>FeatureBlockList</Type><Value>{"Name":"Movie_category","Values":["Adult","Drama"]}</Value></ApiFilter>`<br><br><ins>
+So fügen Sie eine „Upsale“-Regel hinzu:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>Upsale</Type><Value>{"ItemsToUpsale":["2406E770-769C-4189-89DE-1C9283F93A96"]}</Value></ApiFilter>`<br><br>
+<ins>So fügen Sie eine „WhiteList“-Regel hinzu:</ins><br>
+`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>WhiteList</Type><Value>{"ItemsToInclude":["2406E770-769C-4189-89DE-1C9283F93A96","1116E770-769C-4189-89DE-1C9283F88888"]}</Value></ApiFilter>`<br><br><ins>
+<ins>So fügen Sie eine „FeatureWhiteList“-Regel hinzu:</ins><br>
+<br>
+`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>FeatureWhiteList</Type><Value>{"Name":"Movie_rating","Values":["PG13"]}</Value></ApiFilter>`<br><br><ins>
+So fügen Sie eine „PerSeedBlockList“-Regel hinzu:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>PerSeedBlockList</Type><Value>{"SeedItems":["9949"],"ItemsToExclude":["9862","8158","8244"]}</Value></ApiFilter>`|
 
 
 **Antwort**:
@@ -2780,7 +2790,7 @@ Hierdurch werden Benutzerempfehlungen eines Builds vom Typ "Recommendation" abge
 
 Die API gibt basierend auf dem Nutzungsverlauf des Benutzers eine Liste der vorhergesagten Elemente zurück.
 
-Hinweise: 
+Hinweise:  
  1. Für einen FBT-Build gibt es keine Benutzerempfehlungen.
  2. Wenn der aktive Build ein FBT-Build ist, gibt diese Methode einen Fehler zurück.
 
