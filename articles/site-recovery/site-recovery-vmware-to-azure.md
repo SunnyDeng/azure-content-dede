@@ -229,7 +229,8 @@ Es gibt zwei Möglichkeiten, die Netzwerkkonnektivität zwischen Ihrem lokalen S
 4. Geben Sie unter **Details des neuen Konfigurationsservers** Folgendes an:
 
 	- Einen Namen für den Konfigurationsserver und die Anmeldeinformationen für die Verbindung mit dem Server.
-	- Wählen Sie im Dropdownmenü als Netzwerkkonnektivitätstyp die Option „Öffentliches Internet“ oder „VPN“.[AZURE.NOTE]Diese Einstellung ist eine Entscheidung, die zur Bereitstellungszeit getroffen werden muss und später nicht geändert werden kann.  
+	- Wählen Sie im Dropdownmenü als Netzwerkkonnektivitätstyp die Option „Öffentliches Internet“ oder „VPN“.
+	[AZURE.NOTE]Diese Einstellung ist eine Entscheidung, die zur Bereitstellungszeit getroffen werden muss und später nicht geändert werden kann.  
 	- Wählen Sie das Azure-Netzwerk aus, in dem sich der Server befinden soll. Wenn Sie VPN als Netzwerkkonnektivitätstyp angegeben haben, sollten Sie sicherstellen, dass dieses virtuelle Azure-Netzwerk mit Ihrem lokalen Standort über eine ExpressRoute-Verbindung oder ein Standort-zu-Standort-VPN verbunden ist.
 	- Geben Sie die interne IP-Adresse und das Subnetz an, die bzw. das dem Server zugewiesen werden soll. Beachten Sie, dass in jedem Subnetz die ersten vier IP-Adressen für die interne Verwendung durch Azure reserviert sind. Verwenden Sie eine beliebige andere verfügbare IP-Adresse.
 	
@@ -459,6 +460,7 @@ Wenn Sie beim Registrieren des Prozessservers die Signaturüberprüfung für den
 
 1. Melden Sie sich beim Prozessserver als Administrator an, und öffnen Sie die Datei "C:\\pushinstallsvc\\pushinstaller.conf", um sie zu bearbeiten. Fügen Sie im Abschnitt **[PushInstaller.transport]** die folgende Zeile hinzu: **SignatureVerificationChecks="0"**. Speichern und schließen Sie die Datei.
 2. Starten Sie den InMage PushInstall-Dienst neu.
+
 
 
 ## Schritt 5: Installieren der neuesten Updates
@@ -759,8 +761,10 @@ Wenn ein Prozessserver in einem kritischen Zustand ist, wird im Site Recovery-Da
 
 1. Wechseln Sie zur Seite **KONFIGURATIONSSERVER** unter **SERVER**.
 2. Klicken Sie auf den Namen des Konfigurationsservers, und wechseln Sie zu **Serverdetails**.
-3. Klicken Sie in der Liste **Prozessserver** neben dem Server, den Sie ändern möchten, auf **Prozessserver ändern**. ![Prozessserver ändern 1](./media/site-recovery-vmware-to-azure/ASRVMware_ChangePS1.png)
-4. Wählen Sie im Dialogfeld **Prozessserver ändern** unter **Zielprozessserver** den neuen Server aus, und wählen Sie dann die virtuellen Computer aus, die Sie auf den neuen Server replizieren möchten. Klicken Sie auf das Informationssymbol neben dem Servernamen, um Informationen zum Server, z. B. freier Speicherplatz und verwendeter Arbeitsspeicher, zu erhalten. Um Sie bei Entscheidungen zur Last zu unterstützen, wird der durchschnittliche Speicherplatz angezeigt, der zum Replizieren jedes ausgewählten virtuellen Computers auf den neuen Prozessserver benötigt wird. ![Prozessserver ändern 2](./media/site-recovery-vmware-to-azure/ASRVMware_ChangePS2.png)
+3. Klicken Sie in der Liste **Prozessserver** neben dem Server, den Sie ändern möchten, auf **Prozessserver ändern**.
+	![Prozessserver ändern 1](./media/site-recovery-vmware-to-azure/ASRVMware_ChangePS1.png)
+4. Wählen Sie im Dialogfeld **Prozessserver ändern** unter **Zielprozessserver** den neuen Server aus, und wählen Sie dann die virtuellen Computer aus, die Sie auf den neuen Server replizieren möchten. Klicken Sie auf das Informationssymbol neben dem Servernamen, um Informationen zum Server, z. B. freier Speicherplatz und verwendeter Arbeitsspeicher, zu erhalten. Um Sie bei Entscheidungen zur Last zu unterstützen, wird der durchschnittliche Speicherplatz angezeigt, der zum Replizieren jedes ausgewählten virtuellen Computers auf den neuen Prozessserver benötigt wird.
+	![Prozessserver ändern 2](./media/site-recovery-vmware-to-azure/ASRVMware_ChangePS2.png)
 5. Klicken Sie auf das Häkchen, um mit dem Replizieren auf den neuen Prozessserver zu beginnen. Wenn Sie alle virtuellen Computer von einem Prozessserver entfernen, der einen kritischen Zustand aufgewiesen hat, wird im Dashboard keine Warnung mehr für einen kritischen Zustand angezeigt.
 
 
@@ -768,12 +772,12 @@ Wenn ein Prozessserver in einem kritischen Zustand ist, wird im Site Recovery-Da
 
 Do Not Translate or Localize
 
-Die Software und Firmware, die im Microsoft-Produkt oder -Dienst ausgeführt wird, basiert auf oder enthält Material aus den unten aufgeführten Projekten (zusammen " Drittanbietercode") Microsoft ist nicht der ursprüngliche Autor des Drittanbietercodes. Microsoft ist nicht der ursprüngliche Autor des Drittanbietercodes. Die ursprünglichen Urheberrechtshinweise und die Lizenz, unter der Microsoft der Drittanbietercode überlassen wurde, sind im Folgenden ausgeführt.
+The software and firmware running in the Microsoft product or service is based on or incorporates material from the projects listed below (collectively, “Third Party Code”).  Microsoft is the not original author of the Third Party Code.  The original copyright notice and license, under which Microsoft received such Third Party Code, are set forth below.
 
-The information in Section A is regarding Third Party Code components from the projects listed below. Solche Lizenzen und Informationen dienen ausschließlich informativen Zwecken. Der Code von Drittanbietern wird von Microsoft neu lizensiert und Ihnen dann zu den Microsoft-Softwarelizenzvereinbarungen für das Microsoft-Produkt oder den -Dienst zur Verfügung gestellt.
+The information in Section A is regarding Third Party Code components from the projects listed below. Such licenses and information are provided for informational purposes only.  This Third Party Code is being relicensed to you by Microsoft under Microsoft's software licensing terms for the Microsoft product or service.  
 
 The information in Section B is regarding Third Party Code components that are being made available to you by Microsoft under the original licensing terms.
 
-Die vollständige Datei steht im [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=529428) zur Verfügung. Microsoft behält sich alle Rechte vor, die hier nicht ausdrücklich, stillschweigend, durch Rechtsverwirkung oder auf andere Weise gewährt wurden.
+The complete file may be found on the [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=529428). Microsoft reserves all rights not expressly granted herein, whether by implication, estoppel or otherwise.
 
 <!---HONumber=AcomDC_1210_2015-->
