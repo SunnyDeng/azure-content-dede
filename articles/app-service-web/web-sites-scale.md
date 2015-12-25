@@ -18,7 +18,7 @@
 
 # Skalieren einer Web-App in Azure App Service #
 
-Zur Steigerung von Leistung und Durchsatz für Ihre Web-Apps unter Microsoft Azure können Sie mithilfe des [Azure-Portals](http://go.microsoft.com/fwlink/?LinkId=529715) Ihren[App Service](http://go.microsoft.com/fwlink/?LinkId=529714)-Plan vom Modus **Kostenlos** zum Modus **Freigegeben**,**Basic**, **Standard** oder **Premium** hochstufen.
+Zur Steigerung von Leistung und Durchsatz für Ihre Web-Apps unter Microsoft Azure können Sie mithilfe des [Azure-Portals](http://go.microsoft.com/fwlink/?LinkId=529715) Ihren [App Service](http://go.microsoft.com/fwlink/?LinkId=529714)-Plan vom Modus **Kostenlos** zum Modus **Freigegeben**,**Basic**, **Standard** oder **Premium** hochstufen.
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
@@ -176,7 +176,6 @@ Je nach Modus der Web-App stehen die folgenden entwicklungsbezogenen Funktionen 
 
 ## Änderungen
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
 
 <!-- LINKS -->
 [vmsizes]: http://go.microsoft.com/fwlink/?LinkId=309169

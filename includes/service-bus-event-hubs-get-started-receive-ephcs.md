@@ -42,7 +42,10 @@ Um [EventProcessorHost] verwenden zu können, benötigen Sie ein [Azure-Speicher
 
 	Ersetzen Sie anschließend den Text der Klasse durch folgenden Code:
 
-	``` class SimpleEventProcessor : IEventProcessor { Stopwatch checkpointStopWatch;
+	```
+    class SimpleEventProcessor : IEventProcessor
+	{
+	    Stopwatch checkpointStopWatch;
 
 	    async Task IEventProcessor.CloseAsync(PartitionContext context, CloseReason reason)
 	    {
@@ -79,7 +82,7 @@ Um [EventProcessorHost] verwenden zu können, benötigen Sie ein [Azure-Speicher
             }
 	    }
 	}
-````
+    ````
 
 	Diese Klasse wird von **EventProcessorHost** zur Verarbeitung der vom Event Hub empfangenen Ereignisse aufgerufen. Beachten Sie, dass die `SimpleEventProcessor`-Klasse eine Stoppuhr verwendet, um in regelmäßigen Abständen die "checkpoint"-Methode für den **EventProcessorHost**-Kontext aufzurufen. Dadurch wird sichergestellt, dass der Empfänger bei einem Neustart maximal nur die Daten verlieren kann, die in den letzten fünf Minuten verarbeitet wurden.
 
