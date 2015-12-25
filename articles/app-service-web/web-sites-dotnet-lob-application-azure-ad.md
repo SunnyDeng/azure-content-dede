@@ -63,7 +63,8 @@ Die Beispielanwendung in diesem Tutorial ([WebApp-RoleClaims-DotNet](https://git
 
 1.	Klonen Sie die Beispielprojektmappe unter [WebApp-RoleClaims-DotNet](https://github.com/Azure-Samples/active-directory-dotnet-webapp-roleclaims), oder laden Sie sie in Ihr lokales Verzeichnis herunter.
 
-2.	Befolgen Sie die Anweisungen unter [How To Run The Sample as a Single Tenant App](https://github.com/Azure-Samples/active-directory-dotnet-webapp-roleclaims#how-to-run-the-sample-as-a-single-tenant-app) (Ausführen des Beispiels als Einzelinstanz-App, in englischer Sprache), um die Azure Active Directory-Anwendung und das Projekt einzurichten. Achten Sie darauf, dass Sie alle Anweisungen befolgen, um die Anwendung von einer mehrinstanzenfähigen Anwendung in eine Einzelinstanzanwendung zu konvertieren.
+2.	Befolgen Sie die Anweisungen unter [How To Run The Sample as a Single Tenant App](https://github.com/Azure-Samples/active-directory-dotnet-webapp-roleclaims#how-to-run-the-sample-as-a-single-tenant-app) (Ausführen des Beispiels als Einzelinstanz-App, in englischer Sprache), um die Azure Active Directory-Anwendung und das Projekt einzurichten.
+Achten Sie darauf, dass Sie alle Anweisungen befolgen, um die Anwendung von einer mehrinstanzenfähigen Anwendung in eine Einzelinstanzanwendung zu konvertieren.
 
 3.	Klicken Sie in der Ansicht [Klassisches Azure-Portal](https://manage.windowsazure.com) für Ihre Azure Active Directory-Anwendung, die Sie gerade erstellt haben, auf die Registerkarte **BENUTZER**. Weisen Sie die gewünschten Benutzer anschließend den gewünschten Rollen zu.
 
@@ -147,7 +148,9 @@ Sie veröffentlichen nun die Anwendung in einer Web-App in Azure App Service. Di
    &lt;add key="ida:ClientId" value="<mark>[e.g. 82692da5-a86f-44c9-9d53-2f88d52b478b]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" />
    &lt;add key="ida:AppKey" value="<mark>[e.g. rZJJ9bHSi/cYnYwmQFxLYDn/6EfnrnIfKoNzv9NKgbo=]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" />
    &lt;add key="ida:PostLogoutRedirectUri" value="<mark>[e.g. https://mylobapp.azurewebsites.net/]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" />
-&lt;/appSettings></pre>Stellen Sie sicher, dass der Wert von "ida:PostLogoutRedirectUri" mit einem Schrägstrich "/" endet.
+&lt;/appSettings></pre>
+
+	Stellen Sie sicher, dass der Wert von "ida:PostLogoutRedirectUri" mit einem Schrägstrich "/" endet.
 
 1. Klicken Sie mit der rechten Maustaste auf Ihr Projekt, und wählen Sie **Veröffentlichen**.
 
@@ -212,11 +215,11 @@ public class RoleClaimContext : DbContext
 
 11. Fügen Sie den jeweiligen Aktionen unten die hervorgehobenen [Authorize]-Dekorationen hinzu.
 	<pre class="prettyprint">
-...
+	...
 
-<mark>[Authorize(Roles = "Admin, Observer, Writer, Approver")]</mark>
-public class WorkItemsController : Controller
-{
+	<mark>[Authorize(Roles = "Admin, Observer, Writer, Approver")]</mark>
+	public class WorkItemsController : Controller
+	{
 	...
 
     <mark>[Authorize(Roles = "Admin, Writer")]</mark>
@@ -242,9 +245,14 @@ public class WorkItemsController : Controller
     <mark>[Authorize(Roles = "Admin, Writer, Approver")]</mark>
     public async Task&lt;ActionResult> DeleteConfirmed(int id)
     ...
-}</pre>Da Sie die Rollenzuordnungen auf der Benutzeroberfläche des klassischen Azure-Portals vornehmen, müssen Sie lediglich sicherstellen, dass jede Aktion die richtigen Rollen autorisiert.
+	}</pre>
 
-	> [AZURE.NOTE]Bei einigen Aktionen haben Sie vielleicht die Dekoration <code>[ValidateAntiForgeryToken]</code> bemerkt. Aufgrund des Verhaltens, das von [Brock Allen](https://twitter.com/BrockLAllen) unter [MVC 4, AntiForgeryToken and Claims](http://brockallen.com/2012/07/08/mvc-4-antiforgerytoken-and-claims/) (MVC 4, AntiForgeryToken und Ansprüche, in englischer Sprache) beschrieben wird, besteht Ihr HTTP POST-Vorgang aus folgenden Gründen die Validierung des Fälschungsschutztokens ggf. nicht: + Azure Active Directory sendet http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider nicht, was vom Fälschungsschutztoken aber standardmäßig benötigt wird. + Wenn für Azure Active Directory eine Verzeichnissynchronisierung mit AD FS durchgeführt wird, sendet die AD FS-Vertrauensstellung den Anspruch http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider standardmäßig ebenfalls nicht. Sie können AD FS aber manuell konfigurieren, um diesen Anspruch zu senden. Mit diesen Dingen können Sie sich im nächsten Schritt befassen.
+	Da Sie die Rollenzuordnungen auf der Benutzeroberfläche des klassischen Azure-Portals vornehmen, müssen Sie lediglich sicherstellen, dass jede Aktion die richtigen Rollen autorisiert.
+
+	> [AZURE.NOTE]Bei einigen Aktionen haben Sie vielleicht die Dekoration <code>[ValidateAntiForgeryToken]</code> bemerkt. Aufgrund des Verhaltens, das von [Brock Allen](https://twitter.com/BrockLAllen) unter [MVC 4, AntiForgeryToken and Claims](http://brockallen.com/2012/07/08/mvc-4-antiforgerytoken-and-claims/) (MVC 4, AntiForgeryToken und Ansprüche, in englischer Sprache) beschrieben wird, besteht Ihr HTTP POST-Vorgang aus folgenden Gründen die Validierung des Fälschungsschutztokens ggf. nicht:
+	> + Azure Active Directory sendet http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider nicht, was vom Fälschungsschutztoken aber standardmäßig benötigt wird.
+	> + Wenn für Azure Active Directory eine Verzeichnissynchronisierung mit AD FS durchgeführt wird, sendet die AD FS-Vertrauensstellung den Anspruch http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider standardmäßig ebenfalls nicht.
+	> Sie können AD FS aber manuell konfigurieren, um diesen Anspruch zu senden. Mit diesen Dingen können Sie sich im nächsten Schritt befassen.
 
 12.  Fügen Sie in der Datei „App\_Start\\Startup.Auth.cs“ der `ConfigureAuth`-Methode die folgende Codezeile hinzu. Klicken Sie mit der rechten Maustaste jeweils auf einen Fehler zur Namensauflösung, um ihn zu beheben.
 
@@ -270,7 +278,7 @@ public class WorkItemsController : Controller
 		
 14.	Suchen Sie in "Views\\WorkItems\\Create.cshtml" (einem automatisch erstellten Gerüstelement) die Hilfsmethode `Html.BeginForm`, und ändern Sie sie folgendermaßen:
 	<pre class="prettyprint">@using (Html.BeginForm(<mark>"Create", "WorkItems", FormMethod.Post, new { id = "main-form" }</mark>))
-{
+	{
     @Html.AntiForgeryToken()
 
     &lt;div class="form-horizontal">
@@ -333,7 +341,9 @@ public class WorkItemsController : Controller
             });
     &lt;/script></mark>
 
-}</pre>Im Skript ruft das AadPicker-Objekt die [Azure Active Directory Graph-API](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog) auf, um nach Benutzern und Gruppen zu suchen, die für die Eingabe eine Übereinstimmung ergeben.
+	}</pre>
+	
+	Im Skript ruft das AadPicker-Objekt die [Azure Active Directory Graph-API](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog) auf, um nach Benutzern und Gruppen zu suchen, die für die Eingabe eine Übereinstimmung ergeben.
 
 15. Öffnen Sie die [Paket-Manager-Konsole](http://docs.nuget.org/Consume/Package-Manager-Console), und führen Sie **Enable-Migrations –EnableAutomaticMigrations** aus. Ähnlich wie die Option, die Sie beim Veröffentlichen der App unter Azure gewählt haben, dient dieser Befehl der Aktualisierung des Datenbankschemas Ihrer App in [LocalDB](https://msdn.microsoft.com/library/hh510202.aspx), wenn Sie das Debuggen in Visual Studio durchführen.
 
