@@ -13,7 +13,7 @@
 	ms.topic="article"
   ms.tgt_pltfrm="mobile-windows-store"
 	ms.devlang="dotnet"
-	ms.date="09/11/2015"
+	ms.date="12/09/2015"
 	ms.author="dastrock"/>
 
   # App-Modell v2.0 (Vorschauversion): Hinzufügen der Anmeldung zu einer universellen Windows-App
@@ -22,4 +22,4 @@
 
   >[AZURE.NOTE]Diese Informationen gelten für App-Modell v2.0 (öffentliche Vorschauversion). Anweisungen zum Integrieren in den allgemein verfügbaren Azure AD-Dienst finden Sie im [Azure Active Directory-Entwicklerhandbuch](active-directory-developers-guide.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

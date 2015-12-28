@@ -22,9 +22,10 @@
 ###1\. Welche Preise gelten für Notification Hubs?
 Notification Hubs wird in drei Stufen angeboten: *Free*, *Basic* und *Standard*. Weitere Informationen finden Sie hier – [Notification Hubs – Preise]. Die Kosten werden auf Abonnementebene berechnet und basieren auf der Anzahl von Pushvorgängen, sodass es keine Rolle spielt, über wie viele Namespaces oder Notification Hubs Sie verfügen. Der Free-Tarif wird zu Entwicklungszwecken ohne SLA-Garantie angeboten. Die Stufen "Basic" und "Standard" werden zur Verwendung in der Produktion angeboten, wobei die folgenden Funktionen nur für die Stufe "Standard" aktiviert werden:
 
-- *Broadcast* – Stufe "Basic" schränkt die Anzahl der Notification Hubs-Tags auf 3K ein (gilt für > 5-Geräte). Wenn Ihre Zielgruppe über 3K groß ist, müssen Sie zur Stufe "Standard" wechseln.
 - *Umfangreiche Telemetriedaten* – Stufe "Basic" ermöglicht keinen Export Ihrer Telemetrie- oder Registrierungsdaten. Wenn Sie Ihre Telemetriedaten zur Offlineanzeige oder -analyse exportieren möchten, müssen Sie zur Stufe "Standard" wechseln.
 - *Mehrinstanzenfähigkeit* – Wenn Sie eine mobile App mit Notification Hubs zur Unterstützung mehrerer Mandanten erstellen, müssen Sie einen Wechsel auf die Stufe "Standard" erwägen. Dadurch können Sie die App PNS-Anmeldeinformationen (Push Notification Services) auf Notification Hubs-Namespaceebene festlegen und anschließend die Mandanten trennen, indem Sie ihnen individuelle Hubs in diesem gemeinsamen Namespace bereitstellen. Dies vereinfacht die Wartung und ermöglicht es Ihnen gleichzeitig, die SAS-Schlüssel zum Senden und Empfangen von Benachrichtigungen von den Notification Hubs für jeden Mandanten getrennt zu halten und Überschneidungen zwischen Mandanten zu vermeiden.
+- *Geplanter Push:* Sie können planen, dass Pushbenachrichtigungen in eine Warteschlange gestellt und gesendet werden.
+- *Massenimport:* Sie können Registrierungen in einem Massenvorgang importieren.
 
 ###2\. Was ist eine Vereinbarung zum Servicelevel (SLA)?
 Für die Notification Hubs-Stufen "Basic" und "Standard" wird garantiert, dass von ordnungsgemäß konfigurierten Anwendungen zu mindestens 99,9 % der Zeit Benachrichtigungen gesendet oder Registrierungsverwaltungsvorgänge für Notification Hubs durchgeführt werden können, die im Rahmen der Notification Hubs-Stufen "Basic" oder "Standard" bereitgestellt werden. Weitere Informationen über die Vereinbarung zum Servicelevel finden Sie hier auf der SLA-Seite – [Notification Hubs-SLA]. Beachten Sie, dass keine SLA-Garantien für die Verbindungen zwischen PNS (Platform Notification Service) und dem Gerät gelten, da Notification Hubs von externen Plattformanbietern zum Übermitteln der Benachrichtigung an das Gerät abhängig sind.
@@ -83,7 +84,7 @@ Registrierungen über das App-Back-End sind sinnvoll, wenn Sie eine Clientauthen
 Azure Notification Hubs verwendet ein SAS-basiertes (Shared Access Signature) Sicherheitsmodell. Sie können die SAS-Token auf Namespacestammebene oder auf der granularen Notification Hubs-Ebene verwenden. Diese SAS-Token können mit verschiedenen Authentifizierungsregeln festgelegt werden, z. B. Berechtigungen zum Senden von Nachrichten oder Berechtigungen zum Überwachen auf Benachrichtigungen usw.. Weitere Einzelheiten finden Sie hier: [NH Sicherheitsmodell].
 
 ###12\. Wie werden sensible Daten in Benachrichtigungen behandelt?
-Alle Benachrichtigungen werden über den Push Notification Service (PNS) der Plattform an die Geräte übermittelt. Wenn ein Absender eine Benachrichtigung an Azure Notification Hubs sendet, werden diese Benachrichtigungen verarbeitet und an den jeweiligen PNS weitergeleitet. Alle Verbindungen zwischen Absender und Azure Notification Hubs und zum PNS verwenden HTTPS. Azure Notification Hubs führt keine Protokollierung der Nachrichteninhalte durch. Für das Senden sensibler Daten wird jedoch der Einsatz eines sicheren Pushmusters empfohlen, bei dem der Absender eine "Ping"-Benachrichtigung ohne die vertraulichen Daten mit einer Nachrichten-ID an das Gerät sendet. Wenn die App diese Daten empfängt, erfolgt ein direkter Aufruf einer sicheren App-Back-End-API, mit der die Nachrichtendetails angefordert werden. Ein Lernprogramm zur Implementierung dieses Musters finden Sie hier: [NH – Lernprogramm für sichere Pushvorgänge].
+Alle Benachrichtigungen werden über den Push Notification Service (PNS) der Plattform an die Geräte übermittelt. Wenn ein Absender eine Benachrichtigung an Azure Notification Hubs sendet, werden diese Benachrichtigungen verarbeitet und an den jeweiligen PNS weitergeleitet. Alle Verbindungen zwischen Absender und Azure Notification Hubs und zum PNS verwenden HTTPS. Azure Notification Hubs führt keine Protokollierung der Nachrichteninhalte durch. Für das Senden sensibler Daten wird jedoch der Einsatz eines sicheren Pushmusters empfohlen, bei dem der Absender eine "Ping"-Benachrichtigung ohne die vertraulichen Daten mit einer Nachrichten-ID an das Gerät sendet. Wenn die App diese Daten empfängt, erfolgt ein direkter Aufruf einer sicheren App-Back-End-API, mit der die Nachrichtendetails angefordert werden. Ein Tutorial zur Implementierung dieses Musters finden Sie unter [Azure Notification Hubs – Sichere Pushbenachrichtigungen].
 
 ##Vorgänge
 ###1\. Wie wird eine Notfallwiederherstellung gewährleistet?
@@ -128,10 +129,10 @@ Azure Notification Hubs ermöglicht die Anzeige von Telemetriedaten im [klassisc
 [Leitfaden zur Back-End-Registrierung]: https://msdn.microsoft.com/library/azure/dn743807.aspx
 [Leitfaden zur Back-End-Registrierung – 2]: https://msdn.microsoft.com/library/azure/dn530747.aspx
 [NH Sicherheitsmodell]: https://msdn.microsoft.com/library/azure/dn495373.aspx
-[NH – Lernprogramm für sichere Pushvorgänge]: http://azure.microsoft.com/documentation/articles/notification-hubs-aspnet-backend-ios-secure-push/
+[Azure Notification Hubs – Sichere Pushbenachrichtigungen]: http://azure.microsoft.com/documentation/articles/notification-hubs-aspnet-backend-ios-secure-push/
 [NH – Problembehandlung]: http://azure.microsoft.com/documentation/articles/notification-hubs-diagnosing/
 [NH – Metriken]: https://msdn.microsoft.com/library/dn458822.aspx
 [NH – Beispiel zu Metriken]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/FetchNHTelemetryInExcel
 [Exportieren/Importieren von Registrierungen]: https://msdn.microsoft.com/library/dn790624.aspx
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

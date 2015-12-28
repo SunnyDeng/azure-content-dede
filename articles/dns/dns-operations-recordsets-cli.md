@@ -24,6 +24,10 @@
 
 Diese Anleitung zeigt, wie Sie Datensatzgruppen und Einträge für die DNS-Zone verwalten.
 
+>[AZURE.NOTE]Azure DNS ist ein nur über Azure-Ressourcen-Manager verfügbarer Dienst. Er besitzt keine ASM-API. Sie müssen daher mit dem Befehl „azure config mode arm“ sicherstellen, dass die Azure-Befehlszeilenschnittstelle für die Verwendung des Ressourcen-Manager-Modus konfiguriert ist.
+
+>Falls „Fehler: ‚dns‘ ist kein Azure-Befehl“ angezeigt wird, verwenden Sie wahrscheinlich die Azure-CLI im ASM-Modus und nicht im Ressourcen-Manager-Modus.
+
 Es ist wichtig, den Unterschied zwischen DNS-Datensatzgruppen und einzelnen DNS-Einträge zu verstehen. Eine Datensatzgruppe ist die Auflistung von Einträgen in einer Zone mit dem gleichen Namen und dem gleichen Typ. Weitere Informationen finden Sie unter [Grundlegendes zu Datensatzgruppen und Einträgen](dns-getstarted-create-recordset.md#Understanding-record-sets-and-records).
 
 ## Erstellen einer Datensatzgruppe
@@ -236,7 +240,7 @@ Mit dem optionalen Switch "-q" kann diese Bestätigungsaufforderung unterdrückt
 
 ##Weitere Informationen
 
-[Delegieren einer Domäne an Azure DNS](dns-domain-delegation.md)<BR> [Verwalten von DNS-Zonen](dns-operations-dnszones-cli.md)<BR> [Automatisieren von Vorgängen mit .NET SDK](dns-sdk.md)
+[Delegieren einer Domäne an Azure DNS](dns-domain-delegation.md)<BR> [Verwalten von DNS-Zonen](dns-operations-dnszones-cli.md)<BR> [Automatisieren von Vorgängen mit dem .NET-SDK](dns-sdk.md)
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1217_2015-->

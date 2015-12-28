@@ -7,7 +7,14 @@
 	manager="shreeshd"
 	editor=""/>
 
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/25/2015" ms.author="trinadhk";"aashishr"/>
+<tags
+	ms.service="backup"
+	ms.workload="storage-backup-recovery"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="12/15/2015"
+	ms.author="trinadhk;aashishr;jimpark"/>
 
 
 # Problembehandlung bei der Sicherung virtueller Azure-Computer
@@ -57,7 +64,7 @@ Sie können die Problembehandlung für Fehler, die beim Verwenden von Azure Back
 ## Wiederherstellen
 | Vorgang | Fehlerdetails | Problemumgehung |
 | -------- | -------- | -------|
-| Wiederherstellen | Cloudinterner Fehler bei der Wiederherstellung | <ol><li>Der Clouddienst, in dem Sie die Wiederherstellung durchführen möchten, ist mit DNS-Einstellungen konfiguriert. Prüfen Sie <br>$deployment = Get-AzureDeployment -ServiceName "ServiceName" -Slot "Production" Get-AzureDns -DnsSettings $deployment.DnsSettings<br>Wenn "Address" konfiguriert ist, bedeutet dies, dass DNS-Einstellungen konfiguriert wurden.<br> <li>Der Clouddienst, in dem Sie die Wiederherstellung durchführen möchten, ist mit ReservedIP konfiguriert, und vorhandene virtuelle Computer im Clouddienst befinden sich im Status „Beendet“.<br> Mithilfe des folgdenden PowerShell-Cmdlets können Sie überprüfen, ob ein Clouddienst über eine reservierte IP-Adresse verfügt:<br>$deployment = Get-AzureDeployment-ServiceName „Servicename“-Slot „Production“ $DEP ReservedIPName <br><li>Sie versuchen, eine virtuelle Maschine mit der folgenden speziellen Netzwerkkonfigurationen im selben Clouddienst wiederherzustellen. <br>– Virtuelle Computer unter der Konfiguration des Lastenausgleichsmoduls (intern und extern)<br>– Virtuelle Computer mit mehreren reservierten IP-Adressen<br>– Virtuelle Computer mit mehreren NICs<br>Wählen Sie einen neuen Clouddienst in der Benutzeroberfläche aus oder gehen Sie zu [Überlegungen zur Wiederherstellung](backup-azure-restore-vms.md/#restoring-vms-with-special-network-configurations) für virtuelle Computer mit speziellen Netzwerkkonfigurationen</ol> |
+| Wiederherstellen | Cloudinterner Fehler bei der Wiederherstellung | <ol><li>Der Clouddienst, in dem Sie die Wiederherstellung durchführen möchten, ist mit DNS-Einstellungen konfiguriert. Prüfen Sie <br>$deployment = Get-AzureDeployment -ServiceName "ServiceName" -Slot "Production" Get-AzureDns -DnsSettings $deployment.DnsSettings<br>Wenn "Address" konfiguriert ist, bedeutet dies, dass DNS-Einstellungen konfiguriert wurden.<br> <li>Der Clouddienst, in dem Sie die Wiederherstellung durchführen möchten, ist mit ReservedIP konfiguriert, und vorhandene virtuelle Computer im Clouddienst weisen den Status „Beendet“ auf.<br>Mithilfe des folgenden PowerShell-Cmdlets können Sie überprüfen, ob ein Clouddienst über eine reservierte IP-Adresse verfügt:<br>$deployment = Get-AzureDeployment-ServiceName "Servicename"-Slot "Production" $DEP ReservedIPName <br><li>Sie versuchen, eine virtuelle Maschine mit der folgenden speziellen Netzwerkkonfigurationen im selben Clouddienst wiederherzustellen. <br>- Virtuelle Computer unter der Konfiguration des Load Balancers (intern und extern)<br>- Virtuelle Computer mit mehreren reservierten IP-Adressen<br> Virtuelle Computer mit mehreren NICs<br>Wählen Sie einen neuen Clouddienst in der Benutzeroberfläche aus, oder wechseln Sie zu [Überlegungen zur Wiederherstellung](backup-azure-restore-vms.md/#restoring-vms-with-special-network-configurations) für virtuelle Computer mit speziellen Netzwerkkonfigurationen</ol> |
 | Wiederherstellen | Der ausgewählte DNS-Name ist bereits vergeben. Geben Sie einen anderen DNS-Namen an, und versuchen Sie es erneut. | Der DNS-Name bezieht sich hier auf den Clouddienstnamen (der i. d. R. auf ".cloudapp.net" endet). Dieser muss eindeutig sein. Wenn der vorliegende Fehler auftritt, müssen Sie während der Wiederherstellung einen anderen Namen für den virtuellen Computer auswählen. <br><br> Beachten Sie, dass dieser Fehler nur Benutzern des Azure-Portals angezeigt wird. Der Wiederherstellungsvorgang über PowerShell ist erfolgreich, da nur die Datenträger wiederhergestellt werden und kein virtueller Computer erstellt wird. Der Fehler tritt auf, wenn der virtuelle Computer nach Abschluss des Wiederherstellungsvorgangs für die Datenträger explizit von Ihnen erstellt wird. |
 | Wiederherstellen | Die angegebene Konfiguration des virtuellen Netzwerks ist nicht korrekt. Geben Sie eine andere Konfiguration des virtuellen Netzwerks an, und versuchen Sie es erneut. | Keine |
 | Wiederherstellen | Der angegebene Clouddienst verwendet eine reservierte IP, die nicht mit der Konfiguration des virtuellen Computers übereinstimmt, der wiederhergestellt werden soll. Geben Sie einen anderen Clouddienst an, der keine reservierte IP verwendet, oder wählen Sie einen anderen Wiederherstellungspunkt aus. | Keine |
@@ -116,9 +123,14 @@ Wie bei allen Erweiterungen ist für die Backup-Erweiterung der Zugriff auf das 
 
 Die Notwendigkeit zur Auflösung von öffentlichen Internetadressen wird [hier](http://blogs.msdn.com/b/mast/archive/2014/06/18/azure-vm-provisioning-stuck-on-quot-installing-extensions-on-virtual-machine-quot.aspx) beschrieben. Sie müssen die DNS-Konfigurationen für das VNET überprüfen und sicherstellen, dass die Azure-URIs aufgelöst werden können.
 
-Nachdem die Namensauflösung richtig eingerichtet wurde, muss auch der Zugriff auf die Azure-IP-Adressen bereitgestellt werden. Führen Sie die folgenden Schritte aus, um die Blockierung des Zugriffs auf die Azure-Infrastruktur aufzuheben:
+Nachdem die Namensauflösung richtig eingerichtet wurde, muss auch der Zugriff auf die Azure-IP-Adressen bereitgestellt werden. Führen Sie einen der folgenden Schritte aus, um die Blockierung des Zugriffs auf die Azure-Infrastruktur aufzuheben:
 
-1. Beschaffen Sie sich die Liste mit den [IP-Adressen des Azure-Rechenzentrums](https://msdn.microsoft.com/library/azure/dn175718.aspx), die auf der Positivliste stehen sollen.
-2. Heben Sie Blockierung für die IP-Adressen mit dem [New-NetRoute](https://technet.microsoft.com/library/hh826148.aspx)-Cmdlet auf. Führen Sie dieses Cmdlet auf dem virtuellen Azure-Computer in einem PowerShell-Fenster mit erhöhten Rechten aus (Als Administrator ausführen).
+1. Aufnehmen der IP-Bereiche des Azure-Rechenzentrums in eine Positivliste
+    - Beschaffen Sie sich die Liste mit den [IP-Adressen des Azure-Rechenzentrums](https://www.microsoft.com/download/details.aspx?id=41653), die auf der Positivliste stehen sollen.
+    - Heben Sie Blockierung für die IP-Adressen mit dem Cmdlet [New-NetRoute](https://technet.microsoft.com/library/hh826148.aspx) auf. Führen Sie dieses Cmdlet auf dem virtuellen Azure-Computer in einem PowerShell-Fenster mit erhöhten Rechten aus (als Administrator).
+    - Fügen Sie der NSG (falls in der Organisation vorhanden) Regeln für den Zugriff auf die IP-Adressen hinzu.
+2. Erstellen eines Pfads für HTTP-Datenverkehr
+    - Wenn Netzwerkeinschränkung bestehen (beispielsweise eine Netzwerksicherheitsgruppe) sollte ein HTTP-Proxyserver zum Weiterleiten des Datenverkehrs bereitgestellt werden. Schritte zum Bereitstellen eines HTTP-Proxy-Servers finden Sie [hier](backup-azure-vms-prepare.md#2-network-connectivity).
+    - Fügen Sie der NSG (falls in der Organisation vorhanden) Regeln für den Zugriff auf das Internet über den HTTP-Proxy hinzu.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

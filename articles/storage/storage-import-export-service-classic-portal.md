@@ -269,6 +269,9 @@ Bei Exportaufträgen können Sie die BitLocker-Schlüssel, die vom Dienst für I
 
 - Bitte verschicken Sie nur Ihre Laufwerke. Legen Sie keine Gegenstände wie z. B. Strom- oder USB-Kabel bei.
 
+## Weitere Informationen
+
+[Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy)
 
 
 [import-job-03]: ./media/storage-import-export-service-classic-portal/import-job-03.png
@@ -276,4 +279,4 @@ Bei Exportaufträgen können Sie die BitLocker-Schlüssel, die vom Dienst für I
 [export-job-bitlocker-keys]: ./media/storage-import-export-service-classic-portal/export-job-bitlocker-keys.png
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

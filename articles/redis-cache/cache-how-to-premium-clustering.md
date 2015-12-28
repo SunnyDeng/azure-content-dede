@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/03/2015" 
+	ms.date="12/11/2015" 
 	ms.author="sdanie"/>
 
 # Konfigurieren von Redis-Clustern für Azure Redis Cache vom Typ "Premium"
@@ -36,11 +36,11 @@ Ausführliche Informationen zu Größe, Durchsatz und Bandbreite von Premium-Cac
 In Azure wird Redis Cluster als Modell aus primärem Cache und Replikatcache angeboten, in dem jeder Shard über ein Paar aus primärem Cache und Replikatcache mit Replikation verfügt und die Replikation mit dem Azure Redis Cache-Dienst verwaltet wird.
 
 ## Clustering
-Clustering wird während der Erstellung des Caches auf dem Blatt **Neuer Redis-Cache** konfiguriert. Um einen Cache zu erstellen, melden Sie sich beim [Azure-Portal](https://portal.azure.com) an, und klicken Sie auf **Neu** > **Daten und Speicher** > **Redis Cache**.
+Clustering wird während der Erstellung des Caches auf dem Blatt **Neuer Redis Cache** aktiviert. Um einen Cache zu erstellen, melden Sie sich beim [Azure-Portal](https://portal.azure.com) an, und klicken Sie auf **Neu** > **Daten und Speicher** > **Redis Cache**.
 
 ![Erstellen eines Redis-Cache][redis-cache-new-cache-menu]
 
-Zum Konfigurieren des Clustering wählen Sie zunächst auf dem Blatt **Wählen Sie Ihren Tarif** eine der **Premium**-Optionen für den Cache aus.
+Zum Konfigurieren des Clusterings wählen Sie zunächst auf dem Blatt **Wählen Sie Ihren Tarif** eine der **Premium**-Optionen für den Cache aus.
 
 ![Tarif auswählen][redis-cache-premium-pricing-tier]
 
@@ -77,6 +77,16 @@ Nach der Erstellung des Caches können Sie eine Verbindung mit dem Cache herstel
 	        return lazyConnection.Value;
 	    }
 	}
+
+## Hinzufügen oder Entfernen von Shards aus einem ausgeführten Premium-Cache
+
+Klicken Sie zum Hinzufügen oder Entfernen von Shards aus einem ausgeführten Premium-Cache mit aktivierter Clusterunterstützung auf **(PREVIEW) Redis Cluster Size** auf dem Blatt **Einstellungen**.
+
+>[AZURE.NOTE]Beachten Sie, dass sich trotz allgemeiner Verfügbarkeit der Azure Redis Cache in der Premium-Stufe das Feature Redis-Clustergröße derzeit in der Vorschau befindet.
+
+![Redis-Clustergröße][redis-cache-redis-cluster-size]
+
+Um die Anzahl der Shards zu ändern, verwenden Sie den Schieberegler, oder geben Sie eine Zahl zwischen 1 und 10 im Textfeld **Shardanzahl** ein, und klicken Sie zum Speichern auf **OK**.
 
 ## Clustering – häufig gestellte Fragen
 
@@ -131,7 +141,7 @@ Ersetzen Sie für SSL `1300N` durch `1500N`.
 
 ## Kann ich das Clustering für einen bereits erstellten Cache konfigurieren?
 
-Zu diesem Zeitpunkt können Sie das Clustering nur bei der Erstellung eines Caches aktivieren und konfigurieren.
+Zu, aktuellen Zeitpunkt können Sie das Clustering nur aktivieren, wenn ein Cache erstellt wird. Sie können nach dem Erstellen des Caches die Anzahl der Shards ändern, jedoch einem Premium-Cache kein Clustering hinzufügen oder das Clustering von einem Premium-Cache entfernen, nachdem der Cache erstellt wurde. Ein Premium-Cache mit aktivierter Clusterunterstützung und nur einem Shard unterscheidet sich von einem Premium-Cache der gleichen Größe ohne Clustering.
 
 ## Kann ich das Clustering für einen Basic- oder Standard-Cache konfigurieren?
 
@@ -166,4 +176,6 @@ Informationen zur Verwendung weiterer Funktionen des Premium-Caches finden Sie i
 
 [redis-cache-clustering-selected]: ./media/cache-how-to-premium-clustering/redis-cache-clustering-selected.png
 
-<!---HONumber=AcomDC_1210_2015-->
+[redis-cache-redis-cluster-size]: ./media/cache-how-to-premium-clustering/redis-cache-redis-cluster-size.png
+
+<!---HONumber=AcomDC_1217_2015-->

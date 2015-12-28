@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/16/2015" 
+	ms.date="12/10/2015" 
 	ms.author="cephalin"/>
 
 # Skalieren einer Web-App in Azure App Service #
 
-Zur Steigerung von Leistung und Durchsatz für Ihre Web-Apps unter Microsoft Azure können Sie mithilfe des [Azure-Portals](http://go.microsoft.com/fwlink/?LinkId=529715) Ihren [App Service](http://go.microsoft.com/fwlink/?LinkId=529714)-Plan vom Modus **Kostenlos** zum Modus **Freigegeben**,**Basic**, **Standard** oder **Premium** hochstufen.
+Zur Steigerung von Leistung und Durchsatz für Ihre Web-Apps unter Microsoft Azure können Sie mithilfe des [Azure-Portals](http://go.microsoft.com/fwlink/?LinkId=529715) Ihren[App Service](http://go.microsoft.com/fwlink/?LinkId=529714)-Plan vom Modus **Kostenlos** zum Modus **Freigegeben**,**Basic**, **Standard** oder **Premium** hochstufen.
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
@@ -45,7 +45,7 @@ Weitere Informationen zu App Service-Plänen finden Sie unter [Was ist ein App S
 	
 	Auf der Registerkarte **Benachrichtigungen** wird in grüner Schrift der Text **ERFOLGREICH** angezeigt, sobald der Vorgang abgeschlossen wurde.
 	
-5. Schieben Sie den Schieberegler **Instanz** von links nach rechts, um die Anzahl von Instanzen zu erhöhen, und klicken Sie in der Befehlsleiste auf **Speichern**. Die Instanzgrößenoption ist im Modus **Freigegeben** nicht verfügbar. Weitere Informationen zu den Instanzgrößen finden Sie unter [Größen virtueller Computer und Clouddienste für Windows Azure][vmsizes].
+5. Schieben Sie den Schieberegler **Instanz** von links nach rechts, um die Anzahl von Instanzen zu erhöhen, und klicken Sie in der Befehlsleiste auf **Speichern**. Die Instanzgrößenoption ist im Modus **Freigegeben** nicht verfügbar. Weitere Informationen zu den Instanzgrößen finden Sie unter [Größen virtueller Computer und Clouddienste für Microsoft Azure][vmsizes].
 	
 	![Instanzgröße für Basic-Modus][ChooseBasicInstances]
 	
@@ -160,7 +160,7 @@ Je nach Modus der Web-App stehen die folgenden entwicklungsbezogenen Funktionen 
 	
 	[Preisdetails für SQL-Datenbanken](/pricing/details/sql-database/)
 	
-	[Größen virtueller Computer und Clouddienste für Windows Azure][vmsizes]
+	[Größen virtueller Computer und Clouddienste für Microsoft Azure][vmsizes]
 	
 	[App-Service-Preisdetails](/pricing/details/web-sites/)
 	
@@ -175,7 +175,7 @@ Je nach Modus der Web-App stehen die folgenden entwicklungsbezogenen Funktionen 
 	- [Wie sollte man Azure-Websites skalieren? - Mit Stefan Schackow](/documentation/videos/how-azure-web-sites-scale/)
 
 ## Änderungen
-* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
+* Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 
 <!-- LINKS -->
 [vmsizes]: http://go.microsoft.com/fwlink/?LinkId=309169
@@ -200,4 +200,4 @@ Je nach Modus der Web-App stehen die folgenden entwicklungsbezogenen Funktionen 
 [GeoReplication]: ./media/web-sites-scale/scale12SQLGeoReplication.png
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!----HONumber=AcomDC_1217_2015-->

@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/10/2015"
+   ms.date="12/11/2015"
    ms.author="telmos" />
 
 # Was ist eine Netzwerksicherheitsgruppe (NSG)?
@@ -248,4 +248,4 @@ Da einige der oben aufgeführten NSGs einzelnen Netzwerkkarten zugeordnet werden
 - [Bereitstellen von NSGs im Ressourcen-Manager](virtual-networks-create-nsg-arm-pportal.md)
 - [Verwalten von NSG-Protokollen](virtual-network-nsg-manage-log.md)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

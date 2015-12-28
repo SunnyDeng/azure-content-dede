@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure Notification Hubs – Benachrichtigen von Benutzern über .NET-Back-End"
+	pageTitle="Azure Notification Hubs – Benachrichtigen von iOS-Benutzern über .NET-Back-End"
 	description="Erfahren Sie, wie Pushbenachrichtigungen in Azure an Benutzer gesendet werden. Die Codebeispiele wurden in Objective-C und der .NET-API für das Back-End geschrieben."
 	documentationCenter="ios"
 	authors="wesmc7777"
@@ -13,16 +13,16 @@
 	ms.tgt_pltfrm="ios"
 	ms.devlang="objective-c"
 	ms.topic="article"
-	ms.date="09/24/2015"
+	ms.date="12/16/2015"
 	ms.author="wesmc"/>
 
-#Azure Notification Hubs – Benachrichtigen von Benutzern über .NET-Back-End
+#Azure Notification Hubs – Benachrichtigen von iOS-Benutzern über .NET-Back-End
 
 [AZURE.INCLUDE [notification-hubs-selector-aspnet-backend-notify-users](../../includes/notification-hubs-selector-aspnet-backend-notify-users.md)]
 
 ##Übersicht
 
-Durch die Unterstützung von Pushbenachrichtigungen in Azure haben Sie Zugriff auf eine einfache, plattformübergreifende und skalierbare Infrastruktur, die die Verarbeitung von Pushbenachrichtigungen sowohl auf Privat- als auch auf Unternehmensanwendungen für mobile Plattformen erheblich erleichtert, In diesem Lernprogramm erfahren Sie, wie Sie mithilfe von Azure Notification Hubs eine Pushbenachrichtigung an einen bestimmten App-Benutzer auf einem bestimmten Gerät senden. Zum Authentifizieren von Clients und zum Generieren von Benachrichtigungen wird ein ASP.NET WebAPI-Back-End verwendet, wie im Thema [Registrieren von App-Back-End aus](http://msdn.microsoft.com/library/dn743807.aspx) gezeigt.
+Durch die Unterstützung von Pushbenachrichtigungen in Azure haben Sie Zugriff auf eine einfache, plattformübergreifende und skalierbare Infrastruktur, die die Verarbeitung von Pushbenachrichtigungen sowohl auf Privat- als auch auf Unternehmensanwendungen für mobile Plattformen erheblich erleichtert, In diesem Lernprogramm erfahren Sie, wie Sie mithilfe von Azure Notification Hubs eine Pushbenachrichtigung an einen bestimmten App-Benutzer auf einem bestimmten Gerät senden. Zum Authentifizieren von Clients und zum Generieren von Benachrichtigungen wird ein ASP.NET WebAPI-Back-End verwendet, wie im Thema [Registrieren von App-Back-End aus](notification-hubs-registration-management.md#registration-management-from-a-backend) gezeigt.
 
 > [AZURE.NOTE]In diesem Lernprogramm wird davon ausgegangen, dass Sie Ihren Notification Hub wie unter [Erste Schritte mit Notification Hubs (iOS)](notification-hubs-ios-get-started.md) beschrieben erstellt und konfiguriert haben. Dieses Lernprogramm ist außerdem die Voraussetzung für das Lernprogramm [Sichere Pushbenachrichtigungen (iOS)](notification-hubs-aspnet-backend-ios-secure-push.md). Wenn Sie Mobile Services als Back-End-Dienst verwenden, finden Sie weitere Informationen in der [Mobile Services-Version](../mobile-services-javascript-backend-ios-push-notifications-app-users.md) dieses Lernprogramms.
 
@@ -262,7 +262,7 @@ Durch die Unterstützung von Pushbenachrichtigungen in Azure haben Sie Zugriff a
 
 		@end
 
-	Der vorstehende Code implementiert die im Artikel [Registrieren von App-Back-End aus](http://msdn.microsoft.com/library/dn743807.aspx) erläuterte Logik unter Verwendung von NSURLSession zum Durchführen von REST-Aufrufen an das App-Back-End und von NSUserDefaults zum lokalen Speichern der vom Notification Hub zurückgegebenen registrationId.
+	Der vorstehende Code implementiert die im Artikel [Registrieren von App-Back-End aus](notification-hubs-registration-management.md#registration-management-from-a-backend) erläuterte Logik unter Verwendung von NSURLSession zum Durchführen von REST-Aufrufen an das App-Back-End und von NSUserDefaults zum lokalen Speichern der vom Notification Hub zurückgegebenen registrationId.
 
 	Beachten Sie, dass die Eigenschaft **authorizationHeader** dieser Klasse festgelegt werden muss, damit die Klasse ordnungsgemäß funktioniert. Diese Eigenschaft wird von der **ViewController**-Klasse nach der Anmeldung festgelegt.
 
@@ -465,4 +465,4 @@ Durch die Unterstützung von Pushbenachrichtigungen in Azure haben Sie Zugriff a
 [3]: ./media/notification-hubs-aspnet-backend-ios-notify-users/notification-hubs-ios-notify-users-registered.png
 [4]: ./media/notification-hubs-aspnet-backend-ios-notify-users/notification-hubs-ios-notify-users-enter-msg.png
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1217_2015-->

@@ -3,9 +3,9 @@
    description="Beschreibt, wie Sie Diagnoseinformationen für das Debuggen von Azure-Clouddiensten und virtuellen Computern in Visual Studio konfigurieren müssen."
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tglee" />
+   editor="" />
 <tags
    ms.service="multiple"
    ms.devlang="dotnet"
@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="multiple"
    ms.date="09/08/2015"
-   ms.author="kempb" />
+   ms.author="tarcher" />
 
 # Konfigurieren der Diagnose für Azure Cloud Services und Virtual Machines
 
@@ -231,7 +231,7 @@ Die derzeit nachverfolgten Prozesse werden aufgelistet. Wählen Sie die Kontroll
 
   ![Absturzabbilder](./media/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines/IC766026.png)
 
-  Weitere Informationen finden Sie unter [Protokollierung und Ablaufverfolgung in Windows Azure](https://msdn.microsoft.com/magazine/ff714589.aspx) und [Microsoft Azure-Diagnose Teil 4: Benutzerdefinierte Protokollierungskomponenten und Änderungen an Azure-Diagnose 1.3](http://justazure.com/microsoft-azure-diagnostics-part-4-custom-logging-components-azure-diagnostics-1-3-changes/).
+  Weitere Informationen finden Sie unter [Protokollierung und Ablaufverfolgung in Microsoft Azure](https://msdn.microsoft.com/magazine/ff714589.aspx) und [Microsoft Azure-Diagnose Teil 4: Benutzerdefinierte Protokollierungskomponenten und Änderungen an Azure-Diagnose 1.3](http://justazure.com/microsoft-azure-diagnostics-part-4-custom-logging-components-azure-diagnostics-1-3-changes/).
 
 ## Anzeigen von Diagnosedaten
 
@@ -305,7 +305,7 @@ Wenn Sie ein Problem bei einem Clouddienst untersuchen, der bereits ausgeführt 
 
 ## Problembehandlung für Azure-Clouddienste
 
-Bei Problemen mit Ihren Clouddienstprojekten auftreten, z. B. eine Rolle, die dauerhaft den Status "Beschäftigt" hat, wiederholte Neustarts oder Ausgabe eines internen Serverfehlers, stehen Ihnen Tools und Techniken zur Verfügung, mit denen Sie diese Probleme diagnostizieren und beheben können. Spezielle Beispiele für häufige Probleme und Lösungen sowie einen Überblick über die Konzepte und Tools zur Diagnose und zur Behebung dieser Fehler finden Sie unter [Windows Azure PaaS Compute Diagnostics Data](http://blogs.msdn.com/b/kwill/archive/2013/08/09/windows-azure-paas-compute-diagnostics-data.aspx).
+Bei Problemen mit Ihren Clouddienstprojekten auftreten, z. B. eine Rolle, die dauerhaft den Status "Beschäftigt" hat, wiederholte Neustarts oder Ausgabe eines internen Serverfehlers, stehen Ihnen Tools und Techniken zur Verfügung, mit denen Sie diese Probleme diagnostizieren und beheben können. Spezielle Beispiele für häufige Probleme und Lösungen sowie einen Überblick über die Konzepte und Tools zur Diagnose und zur Behebung dieser Fehler finden Sie unter [Microsoft Azure PaaS Compute Diagnostics Data](http://blogs.msdn.com/b/kwill/archive/2013/08/09/windows-azure-paas-compute-diagnostics-data.aspx).
 
 ## Fragen und Antworten
 
@@ -357,4 +357,4 @@ Legen Sie im Fenster **Eigenschaften** die Eigenschaft **In Ausgabeverzeichnis k
 
 Weitere Informationen zur Diagnoseprotokollierung in Azure finden Sie unter [Aktivieren der Diagnose in Azure Cloud Services und Virtual Machines](cloud-services-dotnet-diagnostics.md) und [Aktivieren der Diagnoseprotokollierung für Web-Apps in Azure App Service](web-sites-enable-diagnostic-log.md).
 
-<!---HONumber=Oct15_HO3-->
+<!----HONumber=AcomDC_1217_2015-->

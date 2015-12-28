@@ -40,7 +40,7 @@ Für die Bereitstellung einer Web-App ist es am einfachsten, einen [Workflow fü
 
 * [Automatisieren der Bereitstellung mit MSBuild](#msbuild)
 * [Kopieren von Dateien mit FTP-Tools und Skripts](#ftp)
-* Automatisieren der Bereitstellung mit Windows PowerShell(#powershell)
+* [Automatisieren der Bereitstellung mit Windows PowerShell](#powershell)
 * [Automatisieren der Bereitstellung mit .NET Verwaltungs-API](#api)
 * [Bereitstellen über die Azure-Befehlszeilenschnittstelle (Azure-CLI)](#cli)
 * [Bereitstellen über die Web Deploy-Befehlszeile](#webdeploy)
@@ -52,14 +52,14 @@ Für die Bereitstellung einer Web-App ist es am einfachsten, einen [Workflow fü
 
 Eine weitere Möglichkeit der Bereitstellung ist die Nutzung eines cloudbasierten Diensts, wie z. B. [Octopus Deploy](http://en.wikipedia.org/wiki/Octopus_Deploy). Weitere Informationen finden Sie unter [Bereitstellen von ASP.NET-Anwendungen für Azure-Websites](https://octopusdeploy.com/blog/deploy-aspnet-applications-to-azure-websites).
 
-##<a name="vso"></a>Continuous Delivery mithilfe von Visual Studio Team Services
+##<a name="vsts"></a>Continuous Delivery mithilfe von Visual Studio Team Services
 
 [Visual Studio Team Services](http://www.visualstudio.com/) (ehemals Team Foundation Service) ist die cloudbasierte Lösung von Microsoft für Quellcodeverwaltung und Teamzusammenarbeit. Für ein Team mit bis zu 5 Entwicklern ist dieser Dienst kostenlos. Sie können eine kontinuierliche Bereitstellung in einer App Service-Web-App gewährleisten und für das Repository entweder [Git oder TFVC](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control#gittfs) verwenden.
 
 Weitere Informationen finden Sie in den folgenden Ressourcen:
 
 * [Continuous Delivery für Azure mithilfe von Visual Studio Team Services und TFVC](../cloud-services-continuous-delivery-use-vso.md). In diesem Tutorial erfahren Sie Schritt für Schritt, wie Continuous Delivery über Visual Studio Team Services für eine Web-App mithilfe von TFVC eingerichtet wird. Bei TFVC handelt es sich um die zentralisierte Quellcodeverwaltungsoption. Git ist hingegen die dezentralisierte Quellcodeverwaltungsoption.
-* [Continuous Delivery für Azure mithilfe von Visual Studio Team Services und Git](../cloud-services-continuous-delivery-use-vso-git.md). Dieses Lernprogramm ist vergleichbar mit dem vorangehenden Lernprogramm, verwendet jedoch anstelle von TFVC das Verwaltungstool Git.
+* [Continuous Delivery für Azure mithilfe von Visual Studio Team Services und Git](../cloud-services-continuous-delivery-use-vso-git.md) Dieses Lernprogramm ist vergleichbar mit dem vorangehenden Lernprogramm, verwendet jedoch anstelle von TFVC das Verwaltungstool Git.
 
 ##<a name="git"></a>Repositorywebsites über Git
 
@@ -201,7 +201,7 @@ Informationen zur Verwendung der rollenbasierten Zugriffssteuerung von Azure zum
 Informationen zu weiteren Bereitstellungsthemen finden Sie in den entsprechenden Abschnitten der [Web-App-Dokumentation](/documentation/services/web-sites/).
 
 ## Änderungen
-* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
+* Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

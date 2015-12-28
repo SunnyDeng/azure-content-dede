@@ -73,7 +73,7 @@ Diese werden durch eine nicht ordnungsgemäße Konfiguration der Firewall oder d
 Die möglicherweise relevanten Firewalls sind die Unternehmensfirewall, die auf dem zentralen Router des Unternehmens ausgeführt wird, und die Windows-Firewall, die als Daemon auf dem lokalen Computer konfiguriert ist, auf dem das Gateway installiert ist. Im Folgenden sind einige Überlegungen aufgeführt:
 
 - Es besteht keine Notwendigkeit, die eingehende Richtlinie für die für Unternehmensfirewall zu ändern.
-- Die Unternehmensfirewall und die Windows-Firewall sollten die ausgehende Regel für TCP-Ports 80, 443 und 9305 bis 9354 aktivieren. Diese werden von Microsoft Azure Service Bus verwendet, um die Verbindung zwischen den Clouddiensten und dem Datenverwaltungsgateway herzustellen.
+- Die Unternehmensfirewall und die Windows-Firewall sollten die ausgehende Regel für TCP-Ports 80, 443 und 9350 bis 9354 aktivieren. Diese werden von Microsoft Azure Service Bus verwendet, um die Verbindung zwischen den Clouddiensten und dem Datenverwaltungsgateway herzustellen.
 
 Das MSI-Setup konfiguriert die Windows-Firewallregeln für eingehende Ports für den Gatewaycomputer automatisch (weitere Informationen finden Sie im Abschnitt zu Ports und Sicherheitsaspekten).
 
@@ -516,8 +516,8 @@ Sie können einen verknüpften SQL Server-Dienst auch mithilfe des Blatts "Verkn
 
 	![Dialogfeld "Anmeldeinformationen festlegen"](./media/data-factory-move-data-between-onprem-and-cloud/setting-credentials-dialog.png)
 	1.	Wählen Sie die **Authentifizierung** aus, die der Data Factory-Dienst für die Verbindung mit der Datenbank verwenden soll. 
-	2.	Geben Sie für die Einstellung **BENUTZERNAME** den Namen des Benutzers ein, der auf die Datenbank zugreifen kann.
-	3.	Geben Sie für die Einstellung **KENNWORT** das Kennwort für den Benutzer ein.
+	2.	Geben Sie für die Einstellung **BENUTZERNAME** den Namen des Benutzers ein, der auf die Datenbank zugreifen darf. 
+	3.	Geben Sie für die Einstellung **KENNWORT** das Kennwort des Benutzers ein.  
 	4.	Klicken Sie auf **OK**, um das Dialogfeld zu schließen. 
 4. Klicken Sie auf **OK**, um das Blatt **Anmeldeinformationen** zu schließen. 
 5. Klicken Sie auf dem Blatt **Neuer Datenspeicher** auf **OK**. 	
@@ -618,4 +618,4 @@ Im Folgenden sind der allgemeine Datenfluss und eine Zusammenfassung der Schritt
 	- 	Die [Azure SQL-Firewalleinstellungen](https://msdn.microsoft.com/library/azure/jj553530.aspx) müssen so konfiguriert sein, dass die **IP-Adresse des Gatewaycomputers** den **zulässigen IP-Adressen** hinzugefügt wird.
 5.	Wenn Sie Daten zwischen einer lokalen SQL Server-Datenbank und beliebigen Zielen kopieren und der Gateway- und die SQL Server-Computer sich unterscheiden, gehen Sie folgendermaßen vor: [Konfigurieren Sie die Windows-Firewall](https://msdn.microsoft.com/library/ms175043.aspx) auf dem SQL Server-Computer so, dass das Gateway auf die Datenbank über Ports zugreifen kann, die von der SQL Server-Instanz überwacht werden. Für die Standardinstanz ist dies Port 1433.
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

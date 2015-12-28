@@ -69,7 +69,7 @@ Sie müssen über Remotedesktopverbindung (virtuelle Windows-Computer) oder SSH 
 - [Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird](virtual-machines-log-on-windows-server.md) Es werden maximal zwei gleichzeitige Verbindungen unterstützt, es sei denn, der Server wurde als Host für eine Remotedesktopdienste-Sitzung konfiguriert.  
 - [Anmelden bei einem mit Linux betriebenen virtuellen Computer](virtual-machines-linux-how-to-log-on.md) SSH erlaubt standardmäßig maximal 10 gleichzeitige Verbindungen. Sie können diese Anzahl erhöhen, indem Sie die Konfigurationsdatei bearbeiten.
 
-Wenn bei Remotedesktop oder SSH Probleme auftreten, installieren und verwenden Sie die [VMAccess](http://go.microsoft.com/fwlink/p/?LinkId=396856)-Erweiterung, um das Problem zu beheben.
+Wenn bei Remotedesktop oder SSH Probleme auftreten, installieren und verwenden Sie die [VMAccess](virtual-machines-extensions-features.md)-Erweiterung, um das Problem zu beheben.
 
 Zusätzliche Optionen für virtuelle Windows-Computer:
 
@@ -102,7 +102,7 @@ Allgemeine Informationen zu Tools und Verfahren zum Migrieren von Windows Server
 
 Die von Azure bereitgestellten Images verfügen nicht über einen vorkonfigurierten Benutzernamen und ein Kennwort. Wenn Sie die virtuellen Computer mit einem dieser Images erstellen, müssen Sie einen Benutzernamen und ein Kennwort angeben, mit denen Sie sich beim virtuellen Computer anmelden.
 
-Wenn Sie den Benutzernamen oder das Kennwort vergessen und den VM-Agent installiert haben, können Sie die [VMAccess](http://go.microsoft.com/fwlink/p/?LinkId=396856)-Erweiterung installieren und verwenden, um das Problem zu beheben.
+Wenn Sie den Benutzernamen oder das Kennwort vergessen und den VM-Agent installiert haben, können Sie die [VMAccess](virtual-machines-extensions-features.md)-Erweiterung installieren und verwenden, um das Problem zu beheben.
 
 Weitere Details:
 
@@ -158,4 +158,4 @@ Um Redundanz bereitzustellen, platzieren Sie zwei oder mehr ähnlich konfigurier
 
 [Verschiedene Möglichkeiten zum Erstellen eines virtuellen Windows-Computers](virtual-machines-windows-choices-create-vm.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

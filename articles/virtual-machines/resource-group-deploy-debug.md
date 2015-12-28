@@ -259,7 +259,7 @@ Verwenden Sie bei der Azure-Befehlszeilenschnittstelle den Befehl **azure locati
     }
 
 ### REST-API
-
+        
 Informationen zur REST-API finden Sie unter [Abrufen von Informationen zu einem Ressourcenanbieter](https://msdn.microsoft.com/library/azure/dn790534.aspx).
 
 ## Erstellen eindeutiger Ressourcennamen
@@ -408,7 +408,7 @@ Wenn Sie selbst erstellte Vorlagen verwenden, ist es wichtig zu verstehen, dass 
 
 Es bedeutet jedoch nicht zwangsläufig, dass Ihre Ressourcengruppe aktiv ist und für Benutzer bereitsteht. Zum Beispiel erfordern die meisten Bereitstellungen, dass die Bereitstellung Upgrades herunterlädt, auf andere Ressourcen ohne Vorlagen wartet oder komplexe Skripte oder andere ausführbare Aktivitäten installiert, die Azure nicht kennt, da es sich um keine Aktivität handelt, die ein Anbieter überwacht. In diesen Fällen kann einige Zeit vergehen, bis Ihre Ressourcen tatsächlich nutzungsbereit sind. Daher sollten Sie davon ausgehen, dass der Bereitstellungsstatus einige Zeit bevor Ihre Bereitstellung genutzt werden kann, erfolgreich ist.
 
-Sie können jedoch Azure daran hindern, einen erfolgreichen Bereitstellungsstatus zu melden, indem Sie ein benutzerdefiniertes Skript für Ihre benutzerdefinierte Vorlage erstellen -- beispielsweise mithilfe der [CustomerScriptExtension](http://azure.microsoft.com/blog/2014/08/20/automate-linux-vm-customization-tasks-using-customscript-extension/) -- das weiß, wie die gesamte Bereitstellung für eine systemweite Einsatzbereitschaft zu überwachen ist und nur erfolgreich zurückkehrt, wenn Benutzer mit der gesamten Bereitstellung interagieren können. Wenn Sie sicherstellen möchten, dass Ihre Erweiterung die letzte ist, die ausgeführt wird, verwenden Sie die **dependsOn**-Eigenschaft in Ihrer Vorlage. Ein Beispiel ist hier [hier](https://msdn.microsoft.com/library/azure/dn790564.aspx) zu sehen.
+Sie können jedoch Azure daran hindern, einen erfolgreichen Bereitstellungsstatus zu melden, indem Sie ein benutzerdefiniertes Skript für Ihre benutzerdefinierte Vorlage erstellen -- beispielsweise mithilfe der [CustomerScriptExtension](http://azure.microsoft.com/blog/2014/08/20/automate-linux-vm-customization-tasks-using-customscript-extension/) -- das weiß, wie die gesamte Bereitstellung für eine systemweite Einsatzbereitschaft zu überwachen ist und nur erfolgreich zurückkehrt, wenn Benutzer mit der gesamten Bereitstellung interagieren können. Wenn Sie sicherstellen möchten, dass Ihre Erweiterung die letzte ist, die ausgeführt wird, verwenden Sie die **dependsOn**-Eigenschaft in Ihrer Vorlage. Ein Beispiel dazu finden Sie unter [Erstellen einer Vorlagenbereitstellung](https://msdn.microsoft.com/library/azure/dn790564.aspx).
 
 ## Nützliche Tools für die Interaktion mit Azure
 Wenn Sie mit Ihren Azure-Ressourcen über die Befehlszeile arbeiten, können Sie Tools verwenden, Sie bei Ihrer Arbeit unterstützen. Vorlagen für Azure-Ressourcengruppen sind JSON-Dokumente, und die Azure-Ressourcen-Manager-API akzeptiert JSON und gibt JSON zurück. JSON-Analysetools zählen also zu den ersten Instrumenten, die die Navigation durch Informationen zu Ihren Ressourcen sowie die Gestaltung von und die Interaktion mit Vorlagen und Parameterdateien von Vorlagen erleichtern.
@@ -434,4 +434,4 @@ Informationen zur Vorlagenerstellung finden Sie unter [Erstellen von Azure-Resso
 
 <!--Reference style links - using these makes the source content way more readable than using inline links-->
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

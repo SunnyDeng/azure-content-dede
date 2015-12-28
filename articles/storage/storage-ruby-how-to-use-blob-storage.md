@@ -144,5 +144,6 @@ Unter den folgenden Links erhalten Sie weitere Informationen zu komplexeren Spei
 
 - [Azure Storage-Teamblog](http://blogs.msdn.com/b/windowsazurestorage/)
 - [Azure SDK for Ruby](https://github.com/WindowsAzure/azure-sdk-for-ruby)-Repository auf GitHub
+- [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

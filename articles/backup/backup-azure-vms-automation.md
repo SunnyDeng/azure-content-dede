@@ -28,12 +28,39 @@ Die beiden wichtigsten Abläufe sind das Aktivieren des Schutzes für einen virt
 ## Einrichtung und Registrierung
 Vorbereitung:
 
-1. [Laden Sie die neueste PowerShell-Version herunter](https://github.com/Azure/azure-powershell/releases) (erforderliche Mindestversion: 1.0.0).
+1. [Laden Sie die neueste PowerShell herunter](https://github.com/Azure/azure-powershell/releases) (erforderliche Mindestversion ist 1.0.0).
 
-2. Aktivieren Sie die Azure Backup-Cmdlets, indem Sie über das Cmdlet **Switch-AzureMode** in den *AzureResourceManager*-Modus wechseln:
+2. Ermitteln Sie die Azure PowerShell-Cmdlets zur Datensicherung mithilfe des folgenden Befehls:
 
 ```
-PS C:\> Switch-AzureMode AzureResourceManager
+PS C:\> Get-Command *azurermbackup*
+
+CommandType     Name                                               Version    Source
+-----------     ----                                               -------    ------
+Cmdlet          Backup-AzureRmBackupItem                           1.0.1      AzureRM.Backup
+Cmdlet          Disable-AzureRmBackupProtection                    1.0.1      AzureRM.Backup
+Cmdlet          Enable-AzureRmBackupContainerReregistration        1.0.1      AzureRM.Backup
+Cmdlet          Enable-AzureRmBackupProtection                     1.0.1      AzureRM.Backup
+Cmdlet          Get-AzureRmBackupContainer                         1.0.1      AzureRM.Backup
+Cmdlet          Get-AzureRmBackupItem                              1.0.1      AzureRM.Backup
+Cmdlet          Get-AzureRmBackupJob                               1.0.1      AzureRM.Backup
+Cmdlet          Get-AzureRmBackupJobDetails                        1.0.1      AzureRM.Backup
+Cmdlet          Get-AzureRmBackupProtectionPolicy                  1.0.1      AzureRM.Backup
+Cmdlet          Get-AzureRmBackupRecoveryPoint                     1.0.1      AzureRM.Backup
+Cmdlet          Get-AzureRmBackupVault                             1.0.1      AzureRM.Backup
+Cmdlet          Get-AzureRmBackupVaultCredentials                  1.0.1      AzureRM.Backup
+Cmdlet          New-AzureRmBackupProtectionPolicy                  1.0.1      AzureRM.Backup
+Cmdlet          New-AzureRmBackupRetentionPolicyObject             1.0.1      AzureRM.Backup
+Cmdlet          New-AzureRmBackupVault                             1.0.1      AzureRM.Backup
+Cmdlet          Register-AzureRmBackupContainer                    1.0.1      AzureRM.Backup
+Cmdlet          Remove-AzureRmBackupProtectionPolicy               1.0.1      AzureRM.Backup
+Cmdlet          Remove-AzureRmBackupVault                          1.0.1      AzureRM.Backup
+Cmdlet          Restore-AzureRmBackupItem                          1.0.1      AzureRM.Backup
+Cmdlet          Set-AzureRmBackupProtectionPolicy                  1.0.1      AzureRM.Backup
+Cmdlet          Set-AzureRmBackupVault                             1.0.1      AzureRM.Backup
+Cmdlet          Stop-AzureRmBackupJob                              1.0.1      AzureRM.Backup
+Cmdlet          Unregister-AzureRmBackupContainer                  1.0.1      AzureRM.Backup
+Cmdlet          Wait-AzureRmBackupJob                              1.0.1      AzureRM.Backup
 ```
 
 Die folgenden Installations- und Registrierungsaufgaben können mit PowerShell automatisiert werden:
@@ -45,20 +72,20 @@ Die folgenden Installations- und Registrierungsaufgaben können mit PowerShell a
 
 > [AZURE.WARNING]Kunden, die Azure Backup zum ersten Mal verwenden, müssen den Azure Backup-Anbieter registrieren, der mit ihrem Abonnement verwendet werden soll. Führen Sie hierzu den folgenden Befehl aus: Register-AzureProvider -ProviderNamespace "Microsoft.Backup"
 
-Erstellen Sie einen neuen Sicherungstresor mit dem Commandlet **New-AzureRMBackupVault**. Der Sicherungstresor ist eine ARM-Ressource. Deshalb müssen Sie ihn innerhalb einer Ressourcengruppe einfügen. Führen Sie die folgenden Befehle in einer Azure PowerShell-Konsole mit erhöhten Rechten aus:
+Sie können mit dem Cmdlet **New-AzureRMBackupVault** einen neuen Sicherungstresor erstellen. Der Sicherungstresor ist eine ARM-Ressource. Deshalb müssen Sie ihn innerhalb einer Ressourcengruppe einfügen. Führen Sie die folgenden Befehle in einer Azure PowerShell-Konsole mit erhöhten Rechten aus:
 
 ```
 PS C:\> New-AzureRMResourceGroup –Name “test-rg” –Region “West US”
 PS C:\> $backupvault = New-AzureRMBackupVault –ResourceGroupName “test-rg” –Name “test-vault” –Region “West US” –Storage GeoRedundant
 ```
 
-Sie können eine Liste der Sicherungstresore in einem bestimmten Abonnement mithilfe des Commandlets **Get-AzureRMBackupVault** abrufen.
+Mit dem Cmdlet **Get-AzureRMBackupVault** können Sie eine Liste aller Sicherungstresore in einem bestimmten Abonnement abrufen.
 
 > [AZURE.NOTE]Es ist sinnvoll, das Sicherungstresor-Objekt in einer Variablen zu speichern. Das Tresor-Objekt ist als Eingabe für viele Azure Backup-Cmdlets erforderlich.
 
 
 ### Registrieren der virtuellen Computer
-Der erste Schritt zum Konfigurieren der Sicherung mit Azure Backup besteht darin, Ihren Computer oder virtuellen Computer bei einem Azure-Sicherungstresor zu registrieren. Das Commandlet **Register-AzureRMBackupContainer** nimmt die Eingabedaten eines virtuellen Azure IaaS-Computers entgegen und registriert sie beim angegebenen Tresor. Der Registrierungsvorgang ordnet den virtuellen Azure-Computer dem Sicherungstresor zu und verfolgt den virtuellen Computer über den gesamten Sicherungslebenszyklus hinweg.
+Der erste Schritt zum Konfigurieren der Sicherung mit Azure Backup besteht darin, Ihren Computer oder virtuellen Computer bei einem Azure-Sicherungstresor zu registrieren. Das Cmdlet **Register-AzureRMBackupContainer** verwendet die Eingabeinformationen eines virtuellen Azure-IaaS-Computers, um diesen beim angegebenen Tresor zu registrieren. Der Registrierungsvorgang ordnet den virtuellen Azure-Computer dem Sicherungstresor zu und verfolgt den virtuellen Computer über den gesamten Sicherungslebenszyklus hinweg.
 
 Durch die Registrierung des virtuellen Computers beim Azure Backup-Dienst wird ein Containerobjekt der obersten Ebene erstellt. Ein Container enthält i. d. R. mehrere Elemente, die gesichert werden können. Bei virtuellen Computern enthält der Container jedoch nur ein Sicherungselement.
 
@@ -69,7 +96,7 @@ PS C:\> $registerjob = Register-AzureRMBackupContainer -Vault $backupvault -Name
 ## Sichern von virtuellen Azure-Computern
 
 ### Erstellen einer Schutzrichtlinie
-Es ist nicht obligatorisch, eine neue Schutzrichtlinie zu erstellen, um die Sicherung von virtuellen Computern zu starten. Der Tresor enthält eine Standardrichtlinie, die für eine schnelle Aktivierung des Schutzes verwendet und dann später bearbeitet werden kann, wenn die richtigen Details zur Verfügung stehen. Sie können eine Liste der im Tresor verfügbaren Richtlinien abrufen, indem Sie das Commandlet **Get-AzureRMBackupProtectionPolicy** verwenden:
+Es ist nicht obligatorisch, eine neue Schutzrichtlinie zu erstellen, um die Sicherung von virtuellen Computern zu starten. Der Tresor enthält eine Standardrichtlinie, die für eine schnelle Aktivierung des Schutzes verwendet und dann später bearbeitet werden kann, wenn die richtigen Details zur Verfügung stehen. Mit dem Cmdlet **Get-AzureRMBackupProtectionPolicy** können Sie eine Liste der im Tresor verfügbaren Richtlinien abrufen:
 
 ```
 PS C:\> Get-AzureRMBackupProtectionPolicy -Vault $backupvault
@@ -81,9 +108,9 @@ DefaultPolicy             AzureVM            Daily              26-Aug-15 12:30:
 
 > [AZURE.NOTE]Die Zeitzone des Feldes „BackupTime“ in PowerShell ist UTC. Wenn jedoch der Zeitpunkt der Sicherung im Azure-Portal angezeigt wird, wird die Zeitzone auf Ihr lokales System zusammen mit der UTC-Abweichung ausgerichtet.
 
-Eine Sicherungsrichtlinie ist mindestens einer Aufbewahrungsrichtlinie zugeordnet. Die Aufbewahrungsrichtlinie definiert, wie lange ein Wiederherstellungspunkt in Azure Backup gespeichert wird. Das Commandlet **New-AzureRMBackupRetentionPolicy** erstellt PowerShell-Objekte, die Informationen zu Aufbewahrungsrichtlinien enthalten. Diese Aufbewahrungsrichtlinienobjekte werden als Eingaben für das Commandlet *New-AzureRMBackupProtectionPolicy* oder direkt mit dem Commandlet *Enable-AzureRMBackupProtection* verwendet.
+Eine Sicherungsrichtlinie ist mindestens einer Aufbewahrungsrichtlinie zugeordnet. Die Aufbewahrungsrichtlinie definiert, wie lange ein Wiederherstellungspunkt in Azure Backup gespeichert wird. Das Cmdlet **New-AzureRMBackupRetentionPolicy** erstellt PowerShell-Objekte, die Informationen zu Aufbewahrungsrichtlinien enthalten. Diese Aufbewahrungsrichtlinienobjekte werden als Eingaben für das Cmdlet *New-AzureRMBackupProtectionPolicy* oder direkt mit dem Cmdlet *Enable-AzureRMBackupProtection* verwendet.
 
-Eine Sicherungsrichtlinie definiert, wann und wie oft die Sicherung eines Elements erfolgt. Das Commandlet **New-AzureRMBackupProtectionPolicy** erstellt ein PowerShell-Objekt, das Sicherungsrichtlinieninformationen enthält. Die Sicherungsrichtlinie dient als Eingabe für das Commandlet *Enable-AzureRMBackupProtection*.
+Eine Sicherungsrichtlinie definiert, wann und wie oft die Sicherung eines Elements erfolgt. Das Cmdlet **New-AzureRMBackupProtectionPolicy** erstellt ein PowerShell-Objekt, das Informationen zu Sicherungsrichtlinien enthält. Die Sicherungsrichtlinie wird als Eingabe für das Cmdlet *Enable-AzureRMBackupProtection* verwendet.
 
 ```
 PS C:\> $Daily = New-AzureRMBackupRetentionPolicyObject -DailyRetention -Retention 30
@@ -130,7 +157,7 @@ WorkloadName    Operation       Status          StartTime              EndTime
 testvm          Backup          InProgress      01-Sep-15 12:24:01 PM  01-Jan-01 12:00:00 AM
 ```
 
-Anstatt die Fertigstellung dieser Aufträge abzufragen – was unnötigen, zusätzlichen Code bedeutet – ist es einfacher, das Cmdlet **Wait-AzureRMBackupJob** zu verwenden. Bei Verwendung in einem Skript hält das Cmdlet die Ausführung an, bis entweder der Auftrag abgeschlossen oder der angegebene Timeoutwert erreicht ist.
+Anstatt die Fertigstellung dieser Aufträge abzufragen, was unnötigen, zusätzlichen Code bedeutet, ist es einfacher, das Cmdlet **Wait-AzureRMBackupJob** zu verwenden. Bei Verwendung in einem Skript hält das Cmdlet die Ausführung an, bis entweder der Auftrag abgeschlossen oder der angegebene Timeoutwert erreicht ist.
 
 ```
 PS C:\> Wait-AzureRMBackupJob -Job $joblist[0] -Timeout 43200
@@ -168,7 +195,7 @@ Die Variable ```$rp``` ist ein Array mit Wiederherstellungspunkten für das ausg
 
 Es besteht ein entscheidender Unterschied zwischen Wiederherstellungsvorgängen, die über das Azure-Portal ausgeführt werden, und Wiederherstellungsvorgängen, die mit Azure PowerShell ausgeführt werden. Mit PowerShell endet der Wiederherstellungsvorgang mit der Wiederherstellung der Datenträger und der Konfigurationsinformationen aus dem Wiederherstellungspunkt. Es wird kein virtueller Computer erstellt.
 
-> [AZURE.WARNING]Mit "Restore-AzureRMBackupItem" wird kein virtueller Computer erstellt. Es werden nur die Datenträger im angegebenen Speicherkonto wiederhergestellt. Dies ist ein anderes Verhalten als bei einer Wiederherstellung über das Azure-Portal.
+> [AZURE.WARNING]Mit "Restore-AzureRMBackupItem" wird kein virtueller Computer erstellt. Es werden nur die Datenträger im angegebenen Speicherkonto wiederhergestellt. Dies ist ein anderes Verhalten als beim Azure-Portal.
 
 ```
 PS C:\> $restorejob = Restore-AzureRMBackupItem -StorageAccountName "DestAccount" -RecoveryPoint $rp[0]
@@ -196,8 +223,6 @@ Das Erstellen des virtuellen Computers aus den wiederhergestellten Datenträgern
  $storageAccountName = $properties["TargetStorageAccountName"]
  $containerName = $properties["TargetContainerName"]
  $blobName = $properties["TargetBlobName"]
-
- Switch-AzureMode AzureServiceManagement
 
  $keys = Get-AzureStorageKey -StorageAccountName $storageAccountName
  $storageAccountKey = $keys.Primary
@@ -300,6 +325,6 @@ for( $i = 1; $i -le $numberofdays; $i++ )
 $DAILYBACKUPSTATS | Out-GridView
 ```
 
-Wenn Sie der Berichtsausgabe Diagrammfunktionen hinzufügen möchten, erfahren Sie Näheres im TechNet-Blog unter [Charting with PowerShell](http://blogs.technet.com/b/richard_macdonald/archive/2009/04/28/3231887.aspx).
+Wenn Sie der Berichtsausgabe Diagrammfunktionen hinzufügen möchten, erfahren Sie Näheres im TechNet-Blog unter [Charting with PowerShell](http://blogs.technet.com/b/richard_macdonald/archive/2009/04/28/3231887.aspx) (auf Englisch).
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1217_2015-->

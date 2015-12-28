@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Erstellen von Wiederherstellungsplänen" 
+	pageTitle="Erstellen von Wiederherstellungsplänen | Microsoft Azure" 
 	description="Azure Site Recovery koordiniert Replikation, Failover und Wiederherstellung virtueller Computer auf lokalen Servern zu Azure oder einem sekundären Rechenzentrum." 
 	services="site-recovery" 
 	documentationCenter="" 
@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery" 
-	ms.date="10/07/2015" 
+	ms.date="12/14/2015" 
 	ms.author="raynew"/>
 
 # Erstellen von Wiederherstellungsplänen
@@ -124,4 +124,4 @@ Sie können unterschiedliche Arten von Failover-Wiederherstellungsplänen ausfü
 
  
 
-<!----HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

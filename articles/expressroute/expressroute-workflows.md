@@ -86,7 +86,7 @@ Die Verbindung kann nur im Zustand „Provisioned“ und „Enabled“ verwendet
 
 Die ExpressRoute-Verbindung weist den unten beschriebenen Zustand auf, sobald Sie das PowerShell-Cmdlet zum Löschen der ExpressRoute-Verbindung ausführen.
 
-	ServiceProviderProvisioningState : Provisioning
+	ServiceProviderProvisioningState : Provisioned
 	Status                           : Disabling
 
 Sie müssen sich an Ihren Konnektivitätsanbieter wenden, wenn Sie die Bereitstellung der ExpressRoute-Verbindung aufheben möchten. **Wichtig:** Microsoft erhebt weiterhin Gebühren für die Verbindung, bis Sie mithilfe des PowerShell-Cmdlets die Bereitstellung der Verbindung aufheben.
@@ -121,4 +121,4 @@ Wenn der Zustand der angekündigten öffentlichen Präfixe *validation needed* l
 	- [Konfigurieren des Routings](expressroute-howto-routing-classic.md)
 	- [Verknüpfen eines VNet mit einer ExpressRoute-Verbindung](expressroute-howto-linkvnet-classic.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

@@ -23,6 +23,7 @@
 - [Using PowerShell](data-lake-store-get-started-powershell.md)
 - [Using .NET SDK](data-lake-store-get-started-net-sdk.md)
 - [Using Azure CLI](data-lake-store-get-started-cli.md)
+- [Using Node.js](data-lake-store-manage-use-nodejs.md)
 
 Erfahren Sie, wie Sie mithilfe des .NET SDK für Azure Data Lake-Speicher ein Azure Data Lake-Konto erstellen und grundlegende Vorgänge ausführen, z. B. Ordner erstellen, Datendateien hoch- und herunterladen, Ihr Konto löschen usw. Weitere Informationen über Data Lake finden Sie unter [Übersicht über Azure Data Lake-Speicher](data-lake-store-overview.md).
 
@@ -223,4 +224,4 @@ Erfahren Sie, wie Sie mithilfe des .NET SDK für Azure Data Lake-Speicher ein Az
 - [Verwenden von Azure Data Lake Analytics mit Data Lake-Speicher](data-lake-analytics-get-started-portal.md)
 - [Verwenden von Azure HDInsight mit Data Lake-Speicher](data-lake-store-hdinsight-hadoop-use-portal.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

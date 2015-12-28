@@ -60,7 +60,7 @@ Um unsere Arbeit zu überprüfen, stellen wir die neue Anwendung bereit und sehe
 
 ## Verbinden der Dienste
 
-Service Fabric bietet absolute Flexibilität bei der Kommunikation mit Reliable Services. In einer einzigen Anwendung verfügen Sie möglicherweise über Dienste, die über TCP, über die HTTP REST-API und über Web-Sockets abrufbar sind. Ausführliche Informationen zu den verfügbaren Optionen und deren Vor- und Nachteile finden Sie unter [Kommunizieren mit Diensten](service-fabric-connect-and-communicate-with-services.md). In diesem Tutorial greifen wir auf einen einfacheren Ansatz zurück und verwenden die im SDK bereitgestellten `ServiceProxy`/`ServiceCommunicationListener`-Klassen.
+Service Fabric bietet absolute Flexibilität bei der Kommunikation mit Reliable Services. In einer einzigen Anwendung verfügen Sie möglicherweise über Dienste, die über TCP, über die HTTP REST-API und über Web-Sockets abrufbar sind. Ausführliche Informationen zu den verfügbaren Optionen und deren Vor- und Nachteile finden Sie unter [Kommunizieren mit Diensten](service-fabric-connect-and-communicate-with-services.md). In diesem Tutorial greifen wir auf einen einfacheren Ansatz zurück und verwenden die im SDK bereitgestellten `ServiceProxy`/`ServiceRemotingListener`-Klassen.
 
 Im `ServiceProxy`-Ansatz (in Remoteprozeduraufrufen (RPC) entwickelt) definieren Sie eine Schnittstelle, die als öffentlicher Vertrag für den Dienst fungiert, und verwenden diese Schnittstelle, um eine Proxyklasse für die Interaktion mit dem Dienst zu generieren.
 
@@ -130,13 +130,13 @@ Dach dem Definieren der Schnittstelle müssen wir sie in unseren zustandsbehafte
     ```
 
 
-### Bereitstellen des zustandsbehafteten Dienstes mit ServiceCommunicationListener
+### Bereitstellen des zustandsbehafteten Diensts mit „ServiceRemotingListener“
 
 Nach dem Implementieren der `ICounter`-Schnittstelle besteht der letzte Schritt bei der Aktivierung des zustandsbehafteten Diensts darin, von anderen Diensten aufgerufen zu werden, um einen Kommunikationskanal zu öffnen. Für zustandsbehaftete Dienste stellt Service Fabric die überschreibbare Methode `CreateServiceReplicaListeners` bereit. Hier können Sie einen oder mehrere Kommunikationslistener angeben, die auf dem Kommunikationstyp basieren, den Sie für Ihren Dienst aktivieren möchten.
 
 >[AZURE.NOTE]Die entsprechende Methode zum Öffnen eines Kommunikationskanals für zustandslose Dienste lautet `CreateServiceInstanceListeners`.
 
-In diesem Fall stellen wir einen `ServiceCommunicationListener` bereit, der einen RPC-Endpunkt erstellt, der von Clients aufgerufen werden kann, die `ServiceProxy` verwenden.
+In diesem Fall stellen wir einen `ServiceRemotingListener` bereit, der einen RPC-Endpunkt erstellt, der von Clients aufgerufen werden kann, die `ServiceProxy` verwenden.
 
 ```c#
 protected override IEnumerable<ServiceReplicaListener> CreateServiceReplicaListeners()
@@ -145,7 +145,7 @@ protected override IEnumerable<ServiceReplicaListener> CreateServiceReplicaListe
     {
         new ServiceReplicaListener(
             (initParams) =>
-                new ServiceCommunicationListener<ICounter>(initParams, this))
+                new ServiceRemotingListener<ICounter>(initParams, this))
     };
 }
 ```
@@ -194,7 +194,7 @@ Unser zustandsbehafteter Dienst kann nun Datenverkehr von anderen Diensten empfa
 
 Dieses Tutorial konzentriert sich auf das Hinzufügen des Web-Front-Ends, das mit einem zustandsbehafteten Dienst kommuniziert. Sie können aber mit einem sehr ähnlichen Modell mit Akteuren kommunizieren. Das ist sogar einfacher.
 
-Wenn Sie ein Akteur-Projekt erstellen, generiert Visual Studio automatisch ein Schnittstellenprojekt für Sie. Diese Schnittstelle können Sie verwenden, um einen Akteur-Proxy im Webprojekt für die Kommunikation mit den Akteur zu generieren. Der Kommunikationskanal wird automatisch bereitgestellt. Vorgänge wie die Einrichtung eines `ServiceCommunicationListener` wie beim zustandsbehafteten Dienst in diesem Tutorial sind also nicht erforderlich.
+Wenn Sie ein Akteur-Projekt erstellen, generiert Visual Studio automatisch ein Schnittstellenprojekt für Sie. Diese Schnittstelle können Sie verwenden, um einen Akteur-Proxy im Webprojekt für die Kommunikation mit den Akteur zu generieren. Der Kommunikationskanal wird automatisch bereitgestellt. Vorgänge wie die Einrichtung eines `ServiceRemotingListener` wie beim zustandsbehafteten Dienst in diesem Tutorial sind also nicht erforderlich.
 
 ## Ausführen von Webdiensten auf einem lokalen Cluster
 
@@ -221,4 +221,4 @@ Informationen zum Konfigurieren verschiedener Werte für andere Umgebungen finde
 [vs-services-nuget-package]: ./media/service-fabric-add-a-web-frontend/vs-services-nuget-package.png
 [browser-aspnet-counter-value]: ./media/service-fabric-add-a-web-frontend/browser-aspnet-counter-value.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

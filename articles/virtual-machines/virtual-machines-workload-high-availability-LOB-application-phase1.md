@@ -66,10 +66,10 @@ Item | Subnetzname | Subnetzadressraum | Zweck
 
 Füllen Sie für die zwei lokalen DNS-Server, die Sie bei der anfänglichen Einrichtung der Domänencontroller in Ihrem virtuellen Netzwerk verwenden möchten, Tabelle D aus. Geben Sie jedem DNS-Server einen Anzeigenamen und eine einzelne IP-Adresse. Der Anzeigename muss nicht mit dem Hostnamen oder dem Computernamen des DNS-Servers übereinstimmen. Auch wenn hierfür nur zwei Einträge vorgesehen sind, können Sie noch weitere hinzufügen. Erarbeiten Sie diese Liste gemeinsam mit Ihrer IT-Abteilung.
 
-Element | Anzeigename des DNS-Servers | IP-Adresse des DNS-Servers 
---- | --- | ---
-1\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-2\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ 
+Element | IP-Adresse des DNS-Servers 
+--- | ---
+1\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+2\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ 
 
 **Tabelle D: Lokale DNS-Server**
 
@@ -85,13 +85,24 @@ Element | Adressraum des lokalen Netzwerks
 
 **Tabelle L: Adresspräfixe für das lokale Netzwerk**
 
-> [AZURE.NOTE]Dieser Artikel enthält Befehle für die Vorschau für Azure PowerShell 1.0. Um diese Befehle in Azure PowerShell 0.9.8 und früheren Versionen auszuführen, ersetzen Sie alle Instanzen von „-AzureRM“ durch „-Azure“, und fügen Sie vor dem Ausführen von Befehlen den Befehl **Switch-AzureMode AzureResourceManager** hinzu. Weitere Informationen finden Sie unter [Vorschau für Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0-pre/).
+Starten Sie zunächst eine Azure PowerShell-Eingabeaufforderung.
 
-Öffnen Sie eine Azure PowerShell-Eingabeaufforderung.
+> [AZURE.NOTE]Die folgenden Befehlssätze verwenden Azure PowerShell 1.0 und höher. Weitere Informationen finden Sie unter [Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0/) (in englischer Sprache).
 
-Erstellen Sie eine neue Ressourcengruppe für Ihre Branchenanwendung.
+Starten Sie eine Azure PowerShell-Eingabeaufforderung, und melden Sie sich bei Ihrem Konto an.
 
-Um einen eindeutigen Namen für die Ressourcengruppe zu finden, verwenden Sie diesen Befehl zum Auflisten der vorhandenen Ressourcengruppen.
+	Login-AzureRMAccount
+
+Rufen Sie Ihren Abonnementnamen mit dem folgenden Befehl ab.
+
+	Get-AzureRMSubscription | Sort SubscriptionName | Select SubscriptionName
+
+Legen Sie Ihr Azure-Abonnement fest. Ersetzen Sie alles in den Anführungszeichen, einschließlich der Zeichen < and >, durch die korrekten Namen.
+
+	$subscr="<subscription name>"
+	Get-AzureRmSubscription –SubscriptionName $subscr | Select-AzureRmSubscription
+
+Erstellen Sie eine neue Ressourcengruppe für Ihre Branchenanwendung. Um einen eindeutigen Namen für die Ressourcengruppe zu finden, verwenden Sie diesen Befehl zum Auflisten der vorhandenen Ressourcengruppen.
 
 	Get-AzureRMResourceGroup | Sort ResourceGroupName | Select ResourceGroupName
 
@@ -105,8 +116,8 @@ Virtuelle Computer auf Ressourcen-Manager-Basis benötigen ein Speicherkonto auf
 
 Item | Speicherkontoname | Zweck 
 --- | --- | ---
-1\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ | Das Premium-Speicherkonto, das von den virtuellen SQL Server-Computern verwendet wird.
-2\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ | Das Standard-Speicherkonto, das von allen anderen virtuellen Computern in der Workload verwendet wird. 
+1\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ | Das Storage Premium-Konto, das von den virtuellen SQL Server-Computern verwendet wird.
+2\. | \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ | Das Storage Standard-Konto, das von allen anderen virtuellen Computern in der Workload verwendet wird. 
 
 **Tabelle ST: Speicherkonten**
 
@@ -114,7 +125,7 @@ Sie benötigen diesen Namen beim Erstellen der virtuellen Computer in den Phasen
 
 Sie müssen für jedes Speicherkonto einen global eindeutigen Namen angeben, der nur aus Kleinbuchstaben und Zahlen besteht. Mit diesem Befehl können Sie die vorhandenen Speicherkonten auflisten.
 
-	Get-AzureRMStorageAccount | Sort Name | Select Name
+	Get-AzureRMStorageAccount | Sort StorageAccountName | Select StorageAccountName
 
 Führen Sie folgende Befehle aus, um das erste Speicherkonto zu erstellen.
 
@@ -169,12 +180,12 @@ Verwenden Sie diese Befehle, um die Gateways für die Site-to-Site-VPN-Verbindun
 	$vnetConnectionKey="<Table V – Item 8 – Value column>"
 	$vnetConnection=New-AzureRMVirtualNetworkGatewayConnection -Name $vnetConnectionName -ResourceGroupName $rgName -Location $locName -ConnectionType IPsec -SharedKey $vnetConnectionKey -VirtualNetworkGateway1 $vnetGateway -LocalNetworkGateway2 $localGateway
 
-Konfigurieren Sie das lokale VPN-Gerät für die Verbindung zum Azure-VPN-Gateway. Weitere Informationen finden Sie unter [Konfigurieren des VPN-Geräts](../virtual-networks/vpn-gateway-configure-vpn-gateway-mp.md#configure-your-vpn-device).
+Konfigurieren Sie das lokale VPN-Gerät für die Verbindung zum Azure VPN Gateway. Weitere Informationen finden Sie unter [Konfigurieren des VPN-Geräts](../virtual-networks/vpn-gateway-configure-vpn-gateway-mp.md#configure-your-vpn-device).
 
 Zum Konfigurieren des lokalen VPN-Geräts benötigen Sie Folgendes:
 
-- Die öffentliche IPv4-Adresse des Azure-VPN-Gateways für Ihr virtuelles Netzwerk (aus der Ergebnisanzeige des Befehls **Get-AzureRMPublicIpAddress -Name $publicGatewayVipName -ResourceGroupName $rgName**)
-- Den vorinstallierten IPsec-Schlüssel für die Site-to-Site-VPN-Verbindung (Tabelle V – Element 8 – Spalte "Wert")
+- Die öffentliche IPv4-Adresse des Azure VPN Gateways für Ihr virtuelles Netzwerk aus der Ergebnisanzeige des Befehls **Get-AzureRMPublicIpAddress -Name $publicGatewayVipName -ResourceGroupName $rgName**.
+- Den vorinstallierten IPsec-Schlüssel für die Site-to-Site-VPN-Verbindung (Tabelle V – Element 8 – Spalte „Wert“)
 
 Stellen Sie anschließend sicher, dass der Adressraum des virtuellen Netzwerks aus Ihrem lokalen Netzwerk erreichbar ist. Dies erfolgt in der Regel durch Hinzufügen einer Route zwischen dem Adressraum des virtuellen Netzwerks und Ihrem VPN-Gerät und der Bekanntgabe dieser Route für den Rest der Routinginfrastruktur Ihres Unternehmensnetzwerks. Erarbeiten Sie diese Lösung gemeinsam mit Ihrer IT-Abteilung.
 
@@ -207,18 +218,6 @@ Hier sehen Sie die nach erfolgreichem Abschluss dieser Phase erstellte Konfigura
 
 ## Nächster Schritt
 
-Zum Fortsetzen der Konfiguration dieser Workload gehen Sie zu [Phase 2: Konfigurieren der Domänencontroller](virtual-machines-workload-high-availability-LOB-application-phase2.md).
+- Zum Fortsetzen der Konfiguration dieser Workload wechseln Sie zu [Phase 2](virtual-machines-workload-high-availability-LOB-application-phase2.md).
 
-## Zusätzliche Ressourcen
-
-[Bereitstellen einer hochverfügbaren Branchenanwendung in Azure](virtual-machines-workload-high-availability-LOB-application-overview.md)
-
-[Architekturblaupause für Branchenanwendungen](http://msdn.microsoft.com/dn630664)
-
-[Einrichten einer webbasierten Branchenanwendung in einer Hybrid Cloud zu Testzwecken](../virtual-network/virtual-networks-setup-lobapp-hybrid-cloud-testing.md)
-
-[Implementierungsrichtlinien für Azure-Infrastrukturdienste](virtual-machines-infrastructure-services-implementation-guidelines.md)
-
-[Azure-Infrastrukturdienste-Workload: SharePoint Server 2013-Farm](virtual-machines-workload-intranet-sharepoint-farm.md)
-
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1217_2015-->

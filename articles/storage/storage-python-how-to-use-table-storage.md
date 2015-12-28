@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="python"
 	ms.topic="article"
-	ms.date="08/25/2015"
+	ms.date="12/11/2015"
 	ms.author="emgerner"/>
 
 
@@ -142,4 +142,4 @@ Weitere Informationen finden Sie außerdem im [Python Developer Center](/develop
 [Python Azure-Pakets]: https://pypi.python.org/pypi/azure
 [Python Azure Storage-Paket]: https://pypi.python.org/pypi/azure-storage
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

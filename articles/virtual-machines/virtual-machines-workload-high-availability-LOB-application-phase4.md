@@ -20,7 +20,6 @@
 # Branchenanwendungs-Workload, Phase 4: Konfigurieren der Webserver
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell.
- 
 
 In dieser Phase der Bereitstellung einer hochverfügbaren Branchenanwendung in den Azure-Infrastrukturdiensten erstellen Sie die Webserver und laden Ihre Branchenanwendung auf die Server.
 
@@ -30,11 +29,21 @@ Diese Phase muss vor Beginn von [Phase 5](virtual-machines-workload-high-availab
 
 Es gibt zwei virtuelle Computer, die als Webserver fungieren. Auf diesen können Sie ASP.NET-Anwendungen oder ältere Anwendungen bereitstellen, die von IIS 8 (Internetinformationsdienste) in Windows Server 2012 R2 gehostet werden können.
 
-> [AZURE.NOTE]Dieser Artikel enthält Befehle für die Vorschau für Azure PowerShell 1.0. Um diese Befehle in Azure PowerShell 0.9.8 und früheren Versionen auszuführen, ersetzen Sie alle Instanzen von „-AzureRM“ durch „-Azure“, und fügen Sie vor dem Ausführen von Befehlen den Befehl **Switch-AzureMode AzureResourceManager** hinzu. Weitere Informationen finden Sie unter [Vorschau für Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0-pre/).
-
 Zunächst konfigurieren Sie den internen Lastenausgleich, sodass Azure den Clientdatenverkehr an die Branchenanwendung gleichmäßig auf die zwei Webserver verteilt. Dazu müssen Sie eine interne Lastenausgleichsinstanz konfigurieren, die aus einem Namen und einer eigenen IP-Adresse aus dem Adressraum des Subnetzes besteht, das Sie Ihrem virtuellen Azure-Netzwerk zugewiesen haben.
 
-Geben Sie die Variablen ein, und führen Sie die folgenden Befehle aus:
+> [AZURE.NOTE]Die folgenden Befehlssätze verwenden Azure PowerShell 1.0 und höher. Weitere Informationen finden Sie unter [Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0/) (in englischer Sprache).
+
+Geben Sie die Werte für die Variablen ein, lassen Sie dabei aber die < and >-Zeichen weg. Die Werte für die folgenden Azure PowerShell-Befehlssätze entnehmen Sie den folgenden Tabellen:
+
+- Tabelle M für Ihre virtuellen Computer
+- Tabelle V für die Einstellungen Ihres virtuellen Netzwerks
+- Tabelle S für Ihr Subnetz
+- Tabelle ST für Ihre Speicherkonten
+- Tabelle A für Ihre Verfügbarkeitsgruppen
+
+Die Tabelle M haben Sie in [Phase 2](virtual-machines-workload-high-availability-LOB-application-phase2.md), die Tabellen V, S, ST und A haben Sie in [Phase 1](virtual-machines-workload-high-availability-LOB-application-phase1.md) ausgefüllt.
+
+Führen Sie nach der Bereitstellung der richtigen Werte den daraus resultierenden Befehlsblock an der Azure-PowerShell-Eingabeaufforderung aus.
 
 	# Set up key variables
 	$rgName="<resource group name>"
@@ -53,15 +62,7 @@ Geben Sie die Variablen ein, und führen Sie die folgenden Befehle aus:
 
 Fügen Sie danach der DNS-Infrastruktur Ihres Unternehmens einen DNS-Adresseintrag hinzu, der den vollständig qualifizierten Domänennamen der Branchenanwendung (z. B. "lobapp.corp.contoso.com") in die dem internen Load Balancer zugewiesene IP-Adresse auflöst (der Wert von "$privIP" im vorangegangenen Azure PowerShell-Befehlsblock).
 
-Anschließend erstellen Sie mit dem folgenden PowerShell-Befehlsblock die virtuellen Computer für die zwei Webserver. Die Werte für diesen PowerShell-Befehlsblock entnehmen Sie den folgenden Tabellen:
-
-- Tabelle M für Ihre virtuellen Computer
-- Tabelle V für die Einstellungen Ihres virtuellen Netzwerks
-- Tabelle S für Ihr Subnetz
-- Tabelle ST für Ihre Speicherkonten
-- Tabelle A für Ihre Verfügbarkeitsgruppen
-
-Die Tabelle M haben Sie in [Phase 2](virtual-machines-workload-high-availability-LOB-application-phase2.md), die Tabellen V, S, ST und A haben Sie in [Phase 1](virtual-machines-workload-high-availability-LOB-application-phase1.md) ausgefüllt.
+Anschließend erstellen Sie mit dem folgenden PowerShell-Befehlsblock die virtuellen Computer für die zwei Webserver.
 
 Führen Sie nach der Bereitstellung der richtigen Werte den daraus resultierenden Befehlsblock an der Azure PowerShell-Eingabeaufforderung aus.
 
@@ -99,7 +100,7 @@ Führen Sie nach der Bereitstellung der richtigen Werte den daraus resultierende
 	$vmSize="<Table M – Item 7 - Minimum size column>"
 	$nic=New-AzureRMNetworkInterface -Name ($vmName + "-NIC") -ResourceGroupName $rgName -Location $locName -Subnet $backendSubnet -LoadBalancerBackendAddressPool $webLB.BackendAddressPools[0]
 	$vm=New-AzureRMVMConfig -VMName $vmName -VMSize $vmSize -AvailabilitySetId $avset.Id
-	$cred=Get-Credential -Message "Type the name and password of the local administrator account for the second second SQL Server computer." 
+	$cred=Get-Credential -Message "Type the name and password of the local administrator account for the second SQL Server computer." 
 	$vm=Set-AzureRMVMOperatingSystem -VM $vm -Windows -ComputerName $vmName -Credential $cred -ProvisionVMAgent -EnableAutoUpdate
 	$vm=Set-AzureRMVMSourceImage -VM $vm -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2012-R2-Datacenter -Version "latest"
 	$vm=Add-AzureRMVMNetworkInterface -VM $vm -Id $nic.Id
@@ -148,18 +149,6 @@ In diesem Diagramm sehen Sie die nach erfolgreichem Abschluss dieser Phase erste
 
 ## Nächster Schritt
 
-Zum Fortsetzen der Konfiguration dieser Workload wechseln Sie zu [Phase 5: Erstellen der Verfügbarkeitsgruppe und Hinzufügen der Anwendungsdatenbanken](virtual-machines-workload-high-availability-LOB-application-phase5.md).
+- Zum Abschließen der Konfiguration dieser Workload wechseln Sie zu [Phase 5](virtual-machines-workload-high-availability-LOB-application-phase5.md).
 
-## Zusätzliche Ressourcen
-
-[Bereitstellen einer hochverfügbaren Branchenanwendung in Azure](virtual-machines-workload-high-availability-LOB-application-overview.md)
-
-[Architekturblaupause für Branchenanwendungen](http://msdn.microsoft.com/dn630664)
-
-[Einrichten einer webbasierten Branchenanwendung in einer Hybrid Cloud zu Testzwecken](../virtual-network/virtual-networks-setup-lobapp-hybrid-cloud-testing.md)
-
-[Implementierungsrichtlinien für Azure-Infrastrukturdienste](virtual-machines-infrastructure-services-implementation-guidelines.md)
-
-[Azure-Infrastrukturdienste-Workload: SharePoint Server 2013-Farm](virtual-machines-workload-intranet-sharepoint-farm.md)
-
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

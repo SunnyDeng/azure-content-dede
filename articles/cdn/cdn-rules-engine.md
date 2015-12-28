@@ -63,6 +63,7 @@ Mit dem Regelmodul können Sie anpassen, wie HTTP-Anforderungen behandelt werden
 - Die Reihenfolge, in der mehrere Regeln aufgelistet sind, beeinflusst deren Verarbeitung. Eine Regel kann die von einer vorherigen Regel angegebenen Aktionen überschreiben.
 
 ## Weitere Informationen
+* [Regelmodul – Übereinstimmungsbedingungen und Featuredetails](cdn-rules-engine-details.md)
 * [Übersicht über das Azure CDN](cdn-overview.md)
 * [Echtzeitstatistiken in Microsoft Azure CDN](cdn-real-time-stats.md)
 * [Erweiterte HTTP-Berichte](cdn-advanced-http-reports.md)
@@ -71,4 +72,4 @@ Mit dem Regelmodul können Sie anpassen, wie HTTP-Anforderungen behandelt werden
 
 	
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

@@ -120,6 +120,7 @@ Weitere Informationen zum Azure-Dateispeicher erhalten Sie über diese Links.
 
 - [Azure-Dateispeicher: ein reibungsloses Cloud-SMB-Dateisystem für Windows und Linux](https://azure.microsoft.com/documentation/videos/azurecon-2015-azure-files-storage-a-frictionless-cloud-smb-file-system-for-windows-and-linux/)
 - [Verwenden des Azure-Dateispeichers unter Windows](storage-dotnet-how-to-use-files.md)
+- [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy)
 
 ### Toolunterstützung für Dateispeicher
 
@@ -137,4 +138,4 @@ Weitere Informationen zum Azure-Dateispeicher erhalten Sie über diese Links.
 - [Einführung in den Microsoft Azure-Dateidienst](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 - [Beibehalten von Verbindungen zu Microsoft Azure-Dateien](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

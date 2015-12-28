@@ -34,8 +34,9 @@ Vor der Installation von Azure AD Connect gibt es einige Dinge, die Sie benötig
 - Wenn Sie das Feature **Kennwortrückschreiben** verwenden möchten, müssen die Domänencontroller unter Windows Server 2008 (mit dem neuesten Service Pack) oder höher ausgeführt werden.
 - Azure AD Connect kann nicht auf dem Small Business Server oder Windows Server Essentials installiert werden. Der Server muss Windows Server Standard oder höher verwenden.
 - Azure AD Connect muss unter Windows Server 2008 oder höher installiert werden. Dieser Server kann bei Verwendung der Expresseinstellungen ein Domänencontroller oder ein Mitgliedsserver sein. Wenn Sie benutzerdefinierte Einstellungen verwenden, kann der Server auch eigenständig sein und muss nicht mit einer Domäne verknüpft werden.
-- Wenn Sie die **Kennwortsynchronisierung** verwenden möchten, muss der Azure AD Connect-Server unter Windows Server 2008 R2 SP1 oder höher ausgeführt werden.
-- Der Azure AD Connect-Server muss über [.Net 4.5.1](#component-prerequisites) oder höher verfügen und es muss [PowerShell 3.0](#component-prerequisites) oder höher installiert sein.
+- Wenn Sie Azure AD Connect unter Windows Server 2008 installieren, achten Sie darauf, die neuesten Hotfixes über Windows Update anzuwenden. Die Installation kann mit einem nicht gepatchten Server nicht gestartet werden.
+- Wenn Sie die **Kennwortsynchronisierung** verwenden möchten, muss der Azure AD Connect-Server unter Windows Server 2008 R2 SP1 oder höher ausgeführt werden.
+- Der Azure AD Connect-Server muss über [.NET 4.5.1](#component-prerequisites) oder höher verfügen, und es muss [PowerShell 3.0](#component-prerequisites) oder höher installiert sein.
 - Wenn Active Directory-Verbunddienste bereitgestellt werden, müssen die Server, auf denen die Active Directory-Verbunddienste oder der Webanwendungsproxy installiert werden, Windows Server 2012 R2 oder höher ausführen. [Windows-Remoteverwaltung](#windows-remote-management) muss auf diesen Servern zur Remoteinstallation aktiviert werden.
 - Wenn Active Directory-Verbunddienste bereitgestellt werden, benötigen Sie [SSL-Zertifikate](#ssl-certificate-requirements).
 - Azure AD Connect erfordert eine SQL Server-Datenbank zum Speichern von Identitätsdaten. Standardmäßig wird SQL Server 2012 Express LocalDB (eine Light-Version von SQL Server Express) installiert, und das Dienstkonto für den Dienst wird auf dem lokalen Computer erstellt. Für SQL Server Express gilt ein 10-GB-Limit, mit dem Sie etwa 100.000 Objekte verwalten können. Wenn Sie eine höhere Anzahl von Verzeichnisobjekten verwalten möchten, müssen Sie während der Installation auf eine andere Version von SQL Server verweisen. Azure AD Connect unterstützt sämtliche Versionen von Microsoft SQL Server – von SQL Server 2008 (mit SP4) bis hin zu SQL Server 2014.
@@ -48,7 +49,7 @@ Vor der Installation von Azure AD Connect gibt es einige Dinge, die Sie benötig
 
 **Konnektivität**
 
-- Wenn Sie einen ausgehenden Proxy für die Verbindung mit dem Internet verwenden, muss die folgende Einstellung in der Datei **C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\Config\\machine.config** für den Installations-Assistenten und Azure AD-Synchronisierung hinzugefügt werden, um die Internetverbindung zu ermöglichen.
+- Wenn Sie einen ausgehenden Proxy für die Verbindung mit dem Internet verwenden, muss die folgende Einstellung in der Datei **C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\Config\\machine.config** für den Installations-Assistenten und Azure AD-Synchronisierung hinzugefügt werden, um die Internetverbindung zu ermöglichen. Dieser Text muss am Ende der Datei eingegeben werden. In diesem Codeabschnitt steht „&lt;PROXYADRESS&gt;“ für die Proxy-IP-Adresse oder den Hostnamen.
 
 ```
     <system.net>
@@ -62,7 +63,25 @@ Vor der Installation von Azure AD Connect gibt es einige Dinge, die Sie benötig
     </system.net>
 ```
 
-Dieser Text muss am Ende der Datei eingegeben werden. In diesem Code stellt &lt;PROXYADRESS&gt; die tatsächliche Proxy-IP-Adresse oder den Hostnamen dar. Wenn Ihr Proxy den Zugriff auf bestimmte URLs beschränkt, müssen die unter [URLs und IP-Adressbereiche von Office 365](https://support.office.com/de-DE/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2) dokumentierten URLs im Proxy geöffnet werden.
+Wenn Ihr Proxyserver eine Authentifizierung erfordert, sollte dieser Abschnitt stattdessen wie folgt aussehen.
+
+```
+    <system.net>
+        <defaultProxy enabled="true" useDefaultCredentials="true">
+            <proxy
+            usesystemdefault="true"
+            proxyaddress="http://<PROXYADDRESS>:<PROXYPORT>"
+            bypassonlocal="true"
+            />
+        </defaultProxy>
+    </system.net>
+```
+
+Durch diese Änderung in „machine.config“ antworten der Installationsassistent und das Synchronisierungsmodul auf Authentifizierungsanfragen des Proxyservers. Auf allen Seiten des Installationsassistenten mit Ausnahme der Seite **Konfigurieren** werden die Anmeldeinformationen des angemeldeten Benutzers verwendet. Auf der Seite **Konfigurieren** am Ende des Installationsassistenten wird der Kontext auf das erstellte [Dienstkonto](active-directory-aadconnect-accounts-permissions.md#azure-ad-connect-sync-service-accounts) geändert.
+
+Weitere Informationen über das [<defaultProxy>-Element](https://msdn.microsoft.com/library/kd3cf2ex.aspx) finden Sie bei MSDN.
+
+- Wenn Ihr Proxy den Zugriff auf bestimmte URLs beschränkt, müssen die unter [URLs und IP-Adressbereiche von Office 365](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2) dokumentierten URLs im Proxy geöffnet werden.
 
 **Andere**
 
@@ -87,13 +106,13 @@ Azure AD Connect ist abhängig von PowerShell und .NET 4.5.1. Führen Sie abh�
  Überprüfen Sie bei Verwendung von Azure AD Connect für die Bereitstellung von Active Directory-Verbunddiensten oder des Webanwendungsproxys die unten aufgeführten Anforderungen, um die Konnektivität und eine erfolgreiche Konfiguration sicherzustellen:
 
  - Wenn der Zielserver mit der Domäne verknüpft ist, stellen Sie sicher, dass die Windows-Remoteverwaltung aktiviert ist.
-    - Öffnen Sie ein PSH-Befehlsfenster mit erhöhten Rechten, und verwenden Sie den Befehl `Enable-PSRemoting –force`.
+    - Verwenden Sie in einem PSH-Befehlsfenster mit erhöhten Rechten den Befehl `Enable-PSRemoting –force`.
  - Wenn der Zielserver kein mit der Domäne verknüpfter WAP-Computer ist, gibt es einige zusätzliche Anforderungen.
  	- Auf dem Zielcomputer (WAP-Computer):
          - Stellen Sie sicher, dass der WinRM-Dienst (Windows-Remoteverwaltung/WS-Verwaltung) über das Dienste-Snap-In ausgeführt wird.
-         - Öffnen Sie ein PSH-Befehlsfenster mit erhöhten Rechten, und verwenden Sie den Befehl `Enable-PSRemoting –force`.
+         - Verwenden Sie in einem PSH-Befehlsfenster mit erhöhten Rechten den Befehl `Enable-PSRemoting –force`.
     - Auf dem Computer, auf dem der Assistent ausgeführt wird (wenn der Zielcomputer nicht der Domäne beigetreten ist oder sich in einer nicht vertrauenswürdigen Domäne befindet):
-        - Öffnen Sie ein PSH-Befehlsfenster mit erhöhten Rechten, und verwenden Sie den Befehl `Set-Item WSMan:\localhost\Client\TrustedHosts –Value <DMZServerFQDN> -Force –Concatenate`.
+        - Verwenden Sie in einem PSH-Befehlsfenster mit erhöhten Rechten den Befehl `Set-Item WSMan:\localhost\Client\TrustedHosts –Value <DMZServerFQDN> -Force –Concatenate`.
  	    - In Server Manager:
  		     - Fügen Sie den DMZ-WAP-Host zum Computerpool hinzu (Server-Manager -> "Verwalten" -> "Server hinzufügen"-> Registerkarte "DNS verwenden").
  		     - Server-Manager, Registerkarte "Alle Server": Klicken Sie mit der rechten Maustaste auf "WAP-Server", und wählen Sie "Verwalten als" aus. Geben Sie dann die Anmeldeinformationen für den lokalen WAP-Computer ein (nicht für die Domäne).
@@ -109,7 +128,7 @@ Azure AD Connect ist abhängig von PowerShell und .NET 4.5.1. Führen Sie abh�
 - Die Identität des Zertifikats muss mit dem Namen des Verbunddiensts (z. B. "fs.contoso.com") übereinstimmen.
     - Die Identität ist die Erweiterung eines alternativen Antragstellernamens (SAN) des Typs "dNSName". Wenn keine SAN-Einträge vorhanden sind, wird der Name des Antragstellers als allgemeiner Name angegeben.  
     - Im Zertifikat können mehrere SAN-Einträge hinterlegt werden, sofern einer von ihnen mit dem Namen des Verbunddiensts übereinstimmt.
-    - Wenn Sie die Arbeitsbereichverknüpfung verwenden möchten, ist ein zusätzlicher SAN mit dem Wert **enterpriseregistration** gefolgt vom UPN-Suffix des Unternehmens erforderlich, z. B. **enterpriseregistration.contoso.com**.
+    - Wenn Sie die Arbeitsbereichverknüpfung verwenden möchten, ist ein zusätzliches SAN mit dem Wert **enterpriseregistration** gefolgt vom UPN-Suffix des Unternehmens erforderlich, z. B. **enterpriseregistration.contoso.com**.
 - Auf CNG-Schlüsseln (CryptoAPI Next Generation) und Schlüsselspeicheranbietern basierende Zertifikate werden nicht unterstützt. Dies bedeutet, dass Sie ein CSP-basiertes Zertifikat (Kryptografie-Service Provider) verwenden müssen, kein Zertifikat von einem Schlüsselspeicheranbieter.
 - Platzhalterzertifikate werden unterstützt.
 
@@ -148,4 +167,4 @@ Im Folgenden sind die Mindestanforderungen für Computer mit AD FS oder Webanwe
 ## Nächste Schritte
 Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Failover in Site Recovery" 
+	pageTitle="Failover in Site Recovery | Microsoft Azure" 
 	description="Azure Site Recovery koordiniert Replikation, Failover und Wiederherstellung virtueller Computer und physischer Server. Informieren Sie sich über das Failover zu Azure oder zu einem sekundären Datencenter." 
 	services="site-recovery" 
 	documentationCenter="" 
@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery" 
-	ms.date="10/12/2015" 
+	ms.date="12/14/2015" 
 	ms.author="raynew"/>
 
 # Failover in Site Recovery
@@ -250,4 +250,4 @@ Wenn Sie den Schutz zwischen einem [Hyper-V-Standort und Azure](site-recovery-hy
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

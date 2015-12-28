@@ -70,4 +70,4 @@ Nachdem Sie dieses einfache Tutorial zur Authentifizierung abgeschlossen haben, 
 <!-- URLs. -->
 [Erste Schritte mit Mobile Apps]: app-service-mobile-android-get-started.md
 
-<!---HONumber=AcomDC_1210_2015--->
+<!----HONumber=AcomDC_1217_2015-->

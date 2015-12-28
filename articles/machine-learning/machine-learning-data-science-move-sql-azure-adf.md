@@ -53,14 +53,14 @@ In diesem Tutorial wird Folgendes vorausgesetzt:
 
 ##<a name="upload-data"></a> Hochladen der Daten auf Ihren lokalen SQL Server
 
-Wir verwenden das [NYC Taxi-Dataset](http://chriswhong.com/open-data/foil_nyc_taxi/), um den Migrationsprozess zu demonstrieren. Das NYC Taxi-Dataset ist, wie in diesem Beitrag erwähnt, in Azure-Blob-Speicher [hier](http://www.andresmh.com/nyctaxitrips/) verfügbar. Die Daten umfassen zwei Dateien, die Datei "trip\_data.csv", die Details zu den einzelnen Fahrten enthält, und die Datei "trip\_far.csv", die Details zu den pro Fahrt bezahlten Fahrpreisen enthält. Ein Beispiel und eine Beschreibung dieser Dateien finden Sie unter [Beschreibung des NYC Taxi Trips-Datasets](machine-learning-data-science-process-sql-walkthrough.md#dataset).
+Wir verwenden das [NYC Taxi-Dataset](http://chriswhong.com/open-data/foil_nyc_taxi/), um den Migrationsprozess zu demonstrieren. Das NYC Taxi-Dataset ist, wie in diesem Beitrag erwähnt, in Azure Blob Storage unter [NYC Taxi Data](http://www.andresmh.com/nyctaxitrips/) verfügbar. Die Daten umfassen zwei Dateien, die Datei "trip\_data.csv", die Details zu den einzelnen Fahrten enthält, und die Datei "trip\_far.csv", die Details zu den pro Fahrt bezahlten Fahrpreisen enthält. Ein Beispiel und eine Beschreibung dieser Dateien finden Sie unter [Beschreibung des NYC Taxi Trips-Datasets](machine-learning-data-science-process-sql-walkthrough.md#dataset).
 
 
 Sie können entweder das hier beschriebene Verfahren auf einen Satz Ihrer eigenen Daten anpassen oder die Schritte wie beschrieben unter Verwendung des NYC Taxi-Datasets durchführen. Um das NYC Taxi-Dataset in Ihre lokale SQL Server-Datenbank hochzuladen, befolgen Sie das in [Massenimport von Daten in eine SQL Server-Datenbank](machine-learning-data-science-process-sql-walkthrough.md#dbload) beschriebene Verfahren. Diese Anleitungen gelten für einen SQL Server auf einem virtuellen Azure-Computer, aber das Verfahren zum Hochladen in auf den lokalen SQL Server ist identisch.
 
 ##<a name="create-adf"></a> Erstellen einer Azure Data Factory
 
-Die Schritte zum Erstellen einer neuen Azure Data Factory und einer Ressourcengruppe im [Azure-Portal](https://ms.portal.azure.com/) finden Sie [hier](data-factory-build-your-first-pipeline-using-editor.md#step-1-creating-the-data-factory). Nennen Sie die neue ADF-Instanz *adfdsp*, und nennen Sie die erstellte Ressourcengruppe *adfdsprg*.
+Die Schritte zum Erstellen einer neuen Azure Data Factory und einer Ressourcengruppe im [Azure-Portal](https://ms.portal.azure.com/) finden Sie unter [Create an Azure Data Factory](data-factory-build-your-first-pipeline-using-editor.md#step-1-creating-the-data-factory). Nennen Sie die neue ADF-Instanz *adfdsp*, und nennen Sie die erstellte Ressourcengruppe *adfdsprg*.
 
 ## Installieren und Konfigurieren das Datenverwaltungsgateways
 
@@ -301,4 +301,4 @@ Sobald die Pipeline ausgeführt wird, sollten Sie die Daten sehen können, die i
 
 Beachten Sie, dass wir nicht die Funktionalität von ADF zum inkrementellen Übertragen von Daten per Pipe genutzt haben. Weitere Detailinformationen zur Vorgehensweise sowie zu weiteren von ADF bereitgestellten Funktionen finden Sie in der [ADF-Dokumentation](http://azure.microsoft.com/services/data-factory/).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

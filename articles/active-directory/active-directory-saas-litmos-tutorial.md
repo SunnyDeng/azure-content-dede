@@ -23,7 +23,7 @@ In diesem Tutorial erfahren Sie, wie Sie Litmos in Azure Active Directory (Azure
 
 - Sie können in Azure AD steuern, wer Zugriff auf Litmos hat. 
 - Sie können es Benutzern ermöglichen, sich mit ihren Azure AD-Konten automatisch bei Litmos anzumelden (einmaliges Anmelden).
-- Sie können Ihre Konten an einem zentralen Ort verwalten – dem Azure Active Directory-Portal
+- Sie können Ihre Konten an einem zentralen Ort verwalten – dem Azure Active Directory-Portal.
 
 Weitere Informationen zur Integration von SaaS-Apps in Azure AD finden Sie unter [Was bedeuten Anwendungszugriff und einmaliges Anmelden mit Azure Active Directory?](active-directory-appssoaccess-whatis.md).
 
@@ -31,7 +31,7 @@ Weitere Informationen zur Integration von SaaS-Apps in Azure AD finden Sie unte
 
 Um die Azure AD-Integration mit Litmos konfigurieren zu können, benötigen Sie Folgendes:
 
-- Ein Azure AD-Abonnement.
+- Ein Azure AD-Abonnement
 - Ein Litmos-Abonnement, für das einmaliges Anmelden aktiviert ist
 
 
@@ -60,9 +60,9 @@ Zum Konfigurieren der Integration von Litmos in Azure AD müssen Sie Litmos aus 
 
 2. Wählen Sie in der Liste **Verzeichnis** das Verzeichnis aus, für das Sie die Verzeichnisintegration aktivieren möchten.
 
-3. Klicken Sie zum Öffnen der Anwendungsansicht in der Verzeichnisansicht auf **Anwendungen**.<br><br> ![Anwendungen][2]<br>
+3. Klicken Sie zum Öffnen der Anwendungsansicht in der oberen Menüleiste der Verzeichnisansicht auf **Anwendungen**.<br><br> ![Anwendungen][2]<br>
 4. Klicken Sie unten auf der Seite auf **Hinzufügen**.<br><br> ![Anwendungen][3]<br>
-5. Klicken Sie im Dialogfeld **Was möchten Sie tun?** auf **Anwendung aus dem Katalog hinzufügen**.<br><br> ![Anwendungen][4]<br>
+5. Klicken Sie im Dialogfeld **What do you want to do** auf **Anwendung aus dem Katalog hinzufügen**.<br><br> ![Anwendungen][4]<br>
 6. Geben Sie im Suchfeld als Suchbegriff **Litmos** ein.<br><br> ![Anwendungen][5]<br>
 7. Wählen Sie im Ergebnisbereich **Litmos** aus, und klicken Sie dann auf **Abschließen**, um die Anwendung hinzuzufügen. <br><br>![Anwendungen][500]<br>
 
@@ -82,7 +82,7 @@ Zum Konfigurieren und Testen des einmaligen Anmeldens in Azure AD bei Litmos mü
 
 ### Konfigurieren der einmaligen Anmeldung in Azure AD
 
-Das Ziel dieses Abschnitts besteht darin, das einmalige Anmelden von Azure AD im Azure AD-Portal zu aktivieren und das einmalige Anmelden in Ihrer Litmos-Anwendung zu konfigurieren.<br> Im Rahmen dieses Verfahrens müssen Sie eine Base64-codierte Zertifikatsdatei erstellen. Falls Sie mit diesem Verfahren vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (Abrufen des Fingerabdruckwerts eines Zertifikats, in englischer Sprache) weitere Informationen.
+Das Ziel dieses Abschnitts besteht darin, das einmalige Anmelden von Azure AD im Azure AD-Portal zu aktivieren und das einmalige Anmelden in Ihrer Litmos-Anwendung zu konfigurieren.<br> Im Rahmen dieses Verfahrens müssen Sie eine Base64-codierte Zertifikatsdatei erstellen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache) weitere Informationen.
 
 Im Rahmen der Konfiguration müssen Sie die **SAML-Tokenattribute** für Ihre Litmos-Anwendung anpassen. <br><br> ![Azure AD – einmaliges Anmelden][17] <br>
 
@@ -109,7 +109,7 @@ Im Rahmen der Konfiguration müssen Sie die **SAML-Tokenattribute** für Ihre Li
 
 3. Führen Sie im Azure-Portal auf der Dialogseite **App-Einstellungen konfigurieren** die folgenden Schritte aus: <br><br>![Azure AD – einmaliges Anmelden][8] <br>
  
-    a. Geben Sie im Textfeld **Aussteller** die URL ein, die die Benutzer zur Anmeldung bei der Litmos-Anwendung verwenden (z. B. **https://azureapptest.litmos.com/account/Login*).
+    a. Geben Sie im Textfeld **Bezeichner** die URL ein, die die Benutzer zur Anmeldung bei der Litmos-Anwendung verwenden (z. B. **https://azureapptest.litmos.com/account/Login*).
      
     b. Fügen Sie im Textfeld **Antwort-URL** den Wert ein, den Sie im vorherigen Schritt in der Litmos-Anwendung kopiert haben.
 
@@ -122,23 +122,23 @@ Im Rahmen der Konfiguration müssen Sie die **SAML-Tokenattribute** für Ihre Li
 
 1. Führen Sie in der **Litmos**-Anwendung die folgenden Schritte aus: <br><br>![Azure AD – einmaliges Anmelden][25] <br>
 
-    a. Klicken Sie auf **SAML aktivieren**.
+    a. Aktivieren Sie **Enable SAML**.
 
     b. Erstellen Sie eine **Base64-codierte** Datei aus dem heruntergeladenen Zertifikat.
 
-    >[AZURE.TIP]Weitere Informationen finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (Konvertieren eines binären Zertifikats in eine Textdatei; in englischer Sprache).
+    >[AZURE.TIP]Weitere Informationen finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache).
 
     c. Öffnen Sie das Base64-codierte Zertifikat im Editor, kopieren Sie den Inhalt des Zertifikats in die Zwischenablage, und fügen Sie ihn anschließend in das Textfeld **SAML-X.509-Zertifikat** ein.
 
     d. Klicken Sie auf **Änderungen speichern**.
 
 
-6. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration der einmaligen Anmeldung aus, und klicken Sie dann auf **Weiter**. <br><br>![Azure AD – einmaliges Anmelden][10]<br>
+6. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration der einmaligen Anmeldung aus, und klicken Sie dann auf **Weiter**. <br><br>![Azure AD – einmaliges Anmelden][10]<br>
 
-7. Klicken Sie auf der Seite **Bestätigung für einmaliges Anmelden** auf **Abschließen**. <br><br>![Azure AD – einmaliges Anmelden][11]
+7. Klicken Sie auf der Seite **Bestätigung zur einmaligen Anmeldung** auf **Fertig stellen**. <br><br>![Azure AD – einmaliges Anmelden][11]
 
 
-20. Klicken Sie oben im Menü auf **Attribute**, um das Dialogfeld **SAML-Tokenattribute** zu öffnen. <br><br>![Einmaliges Anmelden konfigurieren][12]<br>
+20. Klicken Sie oben im Menü auf **Attribute**, um das Dialogfeld **SAML-Tokenattribute** zu öffnen.<br><br>![Einmaliges Anmelden konfigurieren][12]<br>
 
 
 24. Führen Sie im Dialogfeld **Benutzerattribut hinzufügen** die folgenden Schritte aus. <br><br>![Einmaliges Anmelden konfigurieren][14]<br>
@@ -171,23 +171,23 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta S
 
 **Um einen Testbenutzer in Azure AD zu erstellen, führen Sie die folgenden Schritte aus:**
 
-1. Klicken Sie im linken Navigationsbereich des **Azure-Portals** auf **Active Directory**. <br><br>![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-litmos-tutorial/create_aaduser_09.png) <br> 
+1. Klicken Sie im linken Navigationsbereich des **Azure-Portals** auf **Active Directory**. <br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-litmos-tutorial/create_aaduser_09.png) <br> 
 
 2. Wählen Sie in der Liste **Verzeichnis** das Verzeichnis aus, für das Sie die Verzeichnisintegration aktivieren möchten.
 
-3. Klicken Sie zum Anzeigen der Liste der Benutzer im Menü oben auf **Benutzer**. <br><br> ![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-litmos-tutorial/create_aaduser_03.png) <br>
+3. Klicken Sie zum Anzeigen der Liste der Benutzer im Menü oben auf **Benutzer**. <br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-litmos-tutorial/create_aaduser_03.png) <br>
  
-4. Um das Dialogfeld **Benutzer hinzufügen** zu öffnen, klicken Sie auf der Symbolleiste unten auf **Benutzer hinzufügen**. <br><br> ![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-litmos-tutorial/create_aaduser_04.png) <br>
+4. Um das Dialogfeld **Benutzer hinzufügen** zu öffnen, klicken Sie auf der Symbolleiste unten auf **Benutzer hinzufügen**. <br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-litmos-tutorial/create_aaduser_04.png) <br>
 
-5. Führen Sie auf der Dialogfeldseite **Informationen über diesen Benutzer** die folgenden Schritte aus: <br><br> ![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-litmos-tutorial/create_aaduser_05.png) <br>
+5. Führen Sie auf der Dialogfeldseite **Informationen über diesen Benutzer** die folgenden Schritte aus: <br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-litmos-tutorial/create_aaduser_05.png) <br>
 
     a. Wählen Sie als **Benutzertyp** die Option **Neuer Benutzer in Ihrer Organisation** aus.
 
-    b. Geben Sie in das Textfeld **Benutzername** den Namen **BrittaSimon** ein.
+    b. Geben Sie in das Textfeld **Benutzername** den Text **BrittaSimon** ein.
 
     c. Klicken Sie auf **Weiter**.
 
-6.  Führen Sie auf der Dialogfeldseite **Benutzerprofil** die folgenden Schritte aus: <br><br>![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-litmos-tutorial/create_aaduser_06.png) <br>
+6.  Führen Sie auf der Dialogfeldseite **Benutzerprofil** die folgenden Schritte aus: <br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-litmos-tutorial/create_aaduser_06.png) <br>
  
     a. Geben Sie in das Textfeld **Vorname** den Namen **Britta** ein.
 
@@ -197,11 +197,11 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta S
 
     d. Wählen Sie in der Liste **Rolle** die Rolle **Benutzer** aus. e. Klicken Sie auf **Weiter**.
 
-7. Klicken Sie auf der Dialogfeldseite **Temporäres Kennwort abrufen** auf **Erstellen**. <br><br> ![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-litmos-tutorial/create_aaduser_07.png) <br>
+7. Klicken Sie auf der Dialogfeldseite **Vorübergehendes Kennwort abrufen** auf **Erstellen**. <br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-litmos-tutorial/create_aaduser_07.png) <br>
  
-8. Führen Sie auf der Dialogfeldseite **Temporäres Kennwort abrufen** die folgenden Schritte aus: <br><br>![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-litmos-tutorial/create_aaduser_08.png) <br>
+8. Führen Sie auf der Dialogfeldseite **Vorübergehendes Kennwort abrufen** die folgenden Schritte aus: <br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-litmos-tutorial/create_aaduser_08.png) <br>
   
-    a. Notieren Sie den Wert aus dem Feld **Neues Kennwort**.
+    a. Notieren Sie den Wert von **Neues Kennwort**.
 
     b. Klicken Sie auf **Fertig stellen**.
 
@@ -223,7 +223,7 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Benutzers namens Britta Simon
 1. Klicken Sie auf die Registerkarte **Integrationen**. <br><br> ![Azure AD – einmaliges Anmelden][23] <br>
 
 
-1. Führen Sie auf der Registerkarte **Integrationen** einen Bildlauf nach unten zu **Drittanbieterintegrationen** aus, und klicken Sie dann auf die Registerkarte **SAML 2.0**. <br><br> ![Azure AD – einmaliges Anmelden][24] <br>
+1. Scrollen Sie auf der Registerkarte **Integrationen** nach unten zu **Drittanbieterintegrationen**, und klicken Sie dann auf die Registerkarte **SAML 2.0**. <br><br> ![Azure AD – einmaliges Anmelden][24] <br>
 
 1. Wählen Sie **Benutzer automatisch erstellen:**. <br><br> ![Azure AD – einmaliges Anmelden][27] <br>
 
@@ -234,12 +234,12 @@ Das Ziel dieses Abschnitts besteht darin, Britta Simon die Verwendung des einmal
 
 **Um Britta Simon Litmos zuzuweisen, führen Sie die folgenden Schritte aus:**
 
-1. Klicken Sie zum Öffnen der Anwendungsansicht im Azure-Portal in der Verzeichnisansicht auf **Anwendungen**. <br> <br>![Benutzer zuweisen][201] <br>
+1. Klicken Sie zum Öffnen der Anwendungsansicht im Azure-Portal in der oberen Menüleiste der Verzeichnisansicht auf **Anwendungen**. <br><br>![Benutzer zuweisen][201] <br>
 2. Wählen Sie in der Anwendungsliste **Litmos** aus. <br><br>![Benutzer zuweisen][202] <br>
-1. Klicken Sie im Menü oben auf **Benutzer**.<br><br>![Benutzer zuweisen][203] <br>
+1. Klicken Sie im oberen Menü auf **Benutzer**. <br><br>![Benutzer zuweisen][203] <br>
 1. Wählen Sie in der Benutzerliste **Britta Simon** aus.
 
-2. Klicken Sie in der Symbolleiste unten auf **Zuweisen**. <br><br>![Benutzer zuweisen][205]
+2. Klicken Sie auf der Symbolleiste unten auf **Zuweisen**. <br><br>![Benutzer zuweisen][205]
 
 
 
@@ -297,4 +297,4 @@ Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für einm
 [401]: ./media/active-directory-saas-litmos-tutorial/tutorial_litmos_401.png
 [402]: ./media/active-directory-saas-litmos-tutorial/tutorial_litmos_402.png
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1217_2015-->

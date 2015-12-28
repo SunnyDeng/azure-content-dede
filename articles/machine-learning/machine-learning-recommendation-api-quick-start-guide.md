@@ -18,7 +18,7 @@
 
 # Kurzanleitung für die Machine Learning Empfehlungen-API
 
-Dieses Dokument beschreibt, wie Sie Ihren Dienst oder Ihre Anwendung zur Verwendung von Microsoft Azure Machine Learning-Empfehlungen einrichten.
+Dieses Dokument beschreibt, wie Sie Ihren Dienst oder Ihre Anwendung zur Verwendung von Microsoft Azure Machine Learning-Empfehlungen einrichten. Weitere Informationen zur Empfehlungs-API finden Sie im [Katalog](http://gallery.cortanaanalytics.com/MachineLearningAPI/Recommendations-2).
 
 [AZURE.INCLUDE [machine-learning-free-trial](../../includes/machine-learning-free-trial.md)]
 
@@ -35,7 +35,7 @@ Zur Verwendung von Azure Machine Learning-Empfehlungen müssen Sie die folgenden
 * Entwickeln eines Empfehlungsmodells – Dies ist ein asynchroner Vorgang, in dem das Empfehlungssystem anhand aller Nutzungsdaten ein Empfehlungsmodell erstellt. Dieser Vorgang dauert einige Minuten oder mehrere Stunden, je nach Größe der Daten und der Build-Konfigurationsparameter. Beim Auslösen des Builds erhalten Sie eine Build-ID. Überprüfen Sie anhand dieser ID, wann der Buildprozess beendet wurde, bevor Sie beginnen, die Empfehlungen zu nutzen.
 * Empfehlungen nutzen – Sie erhalten Empfehlungen für ein bestimmtes Element oder eine Liste von Elementen.
 
-Die oben aufgeführten Schritte erfolgen über die Azure Machine Learning-Empfehlungs-API.
+Die oben aufgeführten Schritte erfolgen über die Azure Machine Learning-Empfehlungs-API. Sie können [auch im Katalog](http://1drv.ms/1xeO2F3) eine Beispielanwendung herunterladen, in der die einzelnen Schritte implementiert sind.
 
 ##Einschränkungen
 
@@ -48,24 +48,23 @@ Die oben aufgeführten Schritte erfolgen über die Azure Machine Learning-Empfeh
 ##Integration
 
 ###Authentifizierung
-Microsoft Azure Marketplace unterstützt sowohl die Standard- als auch die OAuth-Authentifizierungsmethode.
+Microsoft Azure Marketplace unterstützt sowohl die Standard- als auch die OAuth-Authentifizierungsmethode. Sie können die Kontoschlüssel einfach finden, indem Sie im Marketplace unter Ihren [Kontoeinstellungen](https://datamarket.azure.com/account/keys) zu den Schlüsseln navigieren.
 ####Standardauthentifizierung
 Fügen Sie den Autorisierungsheader hinzu:
 
 	Authorization: Basic <creds>
                
-	Where <creds> = ConvertToBase64(“AccountKey:” + yourAccountKey);  
+	Where <creds> = ConvertToBase64("AccountKey:" + yourAccountKey);  
 	
 Konvertieren zu Base64 (C#)
 
-	var bytes = Encoding.UTF8.GetBytes(“AccountKey:” + yourAccountKey);
+	var bytes = Encoding.UTF8.GetBytes("AccountKey:" + yourAccountKey);
 	var creds = Convert.ToBase64String(bytes);
 	
 Konvertieren zu Base64 (JavaScript)
 
 	var creds = window.btoa("AccountKey" + ":" + yourAccountKey);
 	
-Sie erhalten Ihren Kontoschlüssel [hier](https://datamarket.azure.com/account/keys).
 
 
 
@@ -81,7 +80,7 @@ Jeder API-Aufruf enthält am Ende einen Abfrageparameter namens apiVersion. Dies
 Bei IDs, die von den APIs zurückgegeben werden, muss die Groß-/Kleinschreibung beachtet werden, wenn sie in nachfolgenden API-Aufrufen als Parameter weitergegeben werden. Beispielsweise muss bei Modell- und Katalog-IDs die Groß-/Kleinschreibung beachtet werden.
 
 ###Modellerstellung
-Erstellen eine Anforderung "Modell erstellen":
+Erstellen einer Anforderung „Modell erstellen“:
 
 | HTTP-Methode | URI |
 |:--------|:--------|
@@ -695,10 +694,10 @@ OData-XML
 	</feed>
 
 ##Rechtliche Hinweise
-Dieses Dokument wird bereitgestellt "wie-es- ist". Informationen und Stellungnahmen in diesem Dokument, einschließlich URLs und anderer Verweise auf Internetwebsites, können ohne vorherige Ankündigung geändert werden.
+Dieses Dokument wird so bereitgestellt, wie es ist. Informationen und Stellungnahmen in diesem Dokument, einschließlich URLs und anderer Verweise auf Internetwebsites, können ohne vorherige Ankündigung geändert werden.
 Einige der in diesem Dokument dargestellten Beispiele dienen nur zu Illustrationszwecken und sind frei erfunden. Keine Ähnlichkeit oder Verbindung ist beabsichtigt und ist rein zufällig.
 Dieses Dokument gibt keine Rechte an geistigem Eigentum an irgendeinem Microsoft-Produkt. Sie dürfen dieses Dokument zu internen Referenzzwecken kopieren und verwenden.
 © 2014 Microsoft. Alle Rechte vorbehalten.
  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1217_2015-->

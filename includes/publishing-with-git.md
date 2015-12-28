@@ -60,7 +60,7 @@ Führen Sie die folgenden Schritte durch, um ein Git-Repository für Ihre Web-Ap
 
 1. Melden Sie sich beim [Azure-Portal] an.
 
-2. Scrollen Sie auf dem Blatt Ihrer Web-App nach unten bis zum Bereich **Bereitstellung**, und klicken Sie auf **Kontinuierliche Bereitstellung einrichten**. Klicken Sie auf **Quelle auswählen**, dann auf **Lokales Git-Repository** und schließlich auf **OK**.
+2. Klicken Sie auf dem Blatt der Web-App auf **Einstellungen > Dauerhafte Bereitstellung**. Klicken Sie auf **Quelle auswählen**, dann auf **Lokales Git-Repository** und schließlich auf **OK**.
 
 	![Lokales Git-Repository](./media/publishing-with-git/azure1-local-git.png)
 
@@ -76,7 +76,7 @@ Führen Sie die folgenden Schritte durch, um ein Git-Repository für Ihre Web-Ap
 
 Führen Sie die folgenden Schritte durch, um Ihre Web-App mit einem lokalen Git in Azure zu veröffentlichen:
 
-1. Klicken Sie auf dem Blatt Ihrer Web-App im Abschnitt "Bereitstellung" auf **No deployment found**.
+1. Klicken Sie auf dem Blatt der Web-App für die **Git-URL** auf **Einstellungen > Eigenschaften**.
 
 	![](./media/publishing-with-git/azure3-repo-details.png)
 
@@ -138,7 +138,7 @@ Das Bereitstellen von Dateien über GitHub, CodePlex oder BitBucket setzt voraus
 
 1. Kopieren Sie die Dateien Ihrer Web-App zunächst in das ausgewählte Repository, das für die fortlaufende Bereitstellung verwendet wird.
 
-2. Scrollen Sie auf dem Blatt Ihrer Web-App im Portal nach unten bis zum Bereich **Bereitstellung**, und klicken Sie auf **Kontinuierliche Bereitstellung einrichten**. Klicken Sie auf **Quelle auswählen** und dann z. B. auf **GitHub**.
+2. Klicken Sie im Portal auf dem Blatt der Web-App auf **Einstellungen > Continuous Delivery**. Klicken Sie auf **Quelle auswählen** und dann z. B. auf **GitHub**.
 
 	![](./media/publishing-with-git/azure6-setup-github.png)
 	
@@ -192,11 +192,11 @@ Nachdem Sie Ihr Repository wie beschrieben eingerichtet und Ihre Web-App in Azur
 
 ## Deaktivieren der fortlaufenden Bereitstellung
 
-Die fortlaufende Bereitstellung kann auf dem Blatt **Bereitstellungen** deaktiviert werden. Klicken Sie auf dem Blatt Ihrer Web-App im Abschnitt **Bereitstellung** auf **Aktive Bereitstellung**. Klicken Sie dann auf **Trennen**.
+Die fortlaufende Bereitstellung kann auf dem Blatt **Bereitstellungen** deaktiviert werden. Klicken Sie auf dem Blatt der Web-App auf **Einstellungen > Dauerhafte Bereitstellung**. Klicken Sie dann auf **Trennen**.
 
 ![git-DisconnectFromGitHub](./media/publishing-with-git/azure5-disconnect.png)
 
-Nachdem Sie die Bestätigungsmeldung mit **Ja** beantwortet haben, können Sie zum Blatt Ihrer Web-App zurückkehren und auf **Kontinuierliche Bereitstellung einrichten** klicken, wenn Sie die Veröffentlichung aus einer anderen Quelle einrichten möchten.
+Nachdem Sie die Bestätigungsmeldung mit **Ja** beantwortet haben, können Sie zum Blatt Ihrer Web-App zurückkehren und auf **Einstellungen > Dauerhafte Bereitstellung** klicken, wenn Sie die Veröffentlichung aus einer anderen Quelle einrichten möchten.
 
 ## <a id="Step8"></a>Problembehandlung
 
@@ -208,7 +208,7 @@ Die folgenden Fehler und Probleme treten häufiger auf, wenn Git zum Veröffentl
 
 **Ursache**: Dieser Fehler kann auftreten, wenn die Web-App nicht ordnungsgemäß ausgeführt wird.
 
-**Lösung**: Starten Sie die Web-App im Azure-Portal. Die Git-Bereitstellung funktioniert nur dann, wenn die Web-App ausgeführt wird.
+**Lösung:** Starten Sie die Web-App im Azure-Portal. Die Git-Bereitstellung funktioniert nur dann, wenn die Web-App ausgeführt wird.
 
 
 ****
@@ -268,7 +268,7 @@ Die folgenden Fehler und Probleme treten häufiger auf, wenn Git zum Veröffentl
 >[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Änderungen
-* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
+* Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 
 [Azure Developer Center]: http://azure.microsoft.com/develop/overview/
 [Azure-Portal]: https://portal.azure.com
@@ -297,4 +297,4 @@ Die folgenden Fehler und Probleme treten häufiger auf, wenn Git zum Veröffentl
 [Verwenden von Dropbox zum Freigeben von Git-Repositorys]: https://gist.github.com/trey/2722927
 [Continuous delivery to Azure using Visual Studio Team Services]: ../articles/cloud-services/cloud-services-continuous-delivery-use-vso.md
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

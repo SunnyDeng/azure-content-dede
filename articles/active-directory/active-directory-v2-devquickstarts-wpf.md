@@ -10,10 +10,10 @@
 <tags
 	ms.service="active-directory"
 	ms.workload="identity"
-  ms.tgt_pltfrm="na"
+	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="09/11/2015"
+	ms.date="12/09/2015"
 	ms.author="dastrock"/>
 
 # App-Modell v2.0 (Vorschauversion): Hinzufügen der Anmeldung zu einer Windows-Desktop-App
@@ -41,17 +41,17 @@ Der Code für dieses Tutorial wird [auf GitHub](https://github.com/AzureADQuickS
 
 Die fertige App wird außerdem am Ende dieses Lernprogramms bereitgestellt.
 
-## 1\. Registrieren einer App
+## 1. Registrieren einer App
 Erstellen Sie eine neue App unter [apps.dev.microsoft.com](https://apps.dev.microsoft.com), oder führen Sie die folgenden [ausführlichen Schritte](active-directory-v2-app-registration.md) aus. Stellen Sie sicher, dass Sie:
 
 - die Ihrer App zugewiesene **Anwendungs-ID** kopieren. Sie benötigen Sie in Kürze.
 - Fügen Sie die **Mobile**-Plattform Ihrer App hinzu.
-- Kopieren Sie den **Umleitungs-URI** aus dem Portal. Sie müssen den Standardwert `urn:ietf:wg:oauth:2.0:oob` verwenden.
+- den richtigen **Umleitungs-URI** aus dem Portal eingeben. Sie müssen den Standardwert `urn:ietf:wg:oauth:2.0:oob` verwenden.
 
 ## 2\. Installieren und Konfigurieren von ADAL
 Nachdem Sie eine App bei Microsoft registriert haben, können Sie ADAL installieren und Code im Zusammenhang mit Identitätsfunktionen schreiben. Damit ADAL mit dem v2.0-Endpunkt kommunizieren kann, müssen Sie einige Informationen zur App-Registrierung bereitstellen.
 
--	Fügen Sie dazu zunächst ADAL mithilfe der Paket-Manager-Konsole zum TodoListClient-Projekt hinzu.
+- Fügen Sie dazu zunächst ADAL mithilfe der Paket-Manager-Konsole zum TodoListClient-Projekt hinzu.
 
 ```
 PM> Install-Package Microsoft.Experimental.IdentityModel.Clients.ActiveDirectory -ProjectName TodoListClient -IncludePrerelease
@@ -250,4 +250,4 @@ Weitere Ressourcen:
 - [Die App-Modell v2.0-Vorschauversion \>\>](active-directory-appmodel-v2-overview.md)
 - [StackOverflow-"adal"-Tag \>\>](http://stackoverflow.com/questions/tagged/adal)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

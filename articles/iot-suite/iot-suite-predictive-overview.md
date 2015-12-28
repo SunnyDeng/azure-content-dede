@@ -35,7 +35,7 @@ Durch die Vorhersage des geeigneten Wartungszeitpunkts kann Fabrikam eine Optimi
 
 Informationen dazu, wie [Azure IoT-Suite][lnk_iot_suite] die vom Kunden benötigten Fähigkeiten bereitstellt, um das Potenzial des vorhersagbaren Wartungsbedarfs zu erschließen, finden Sie auf dieser [Infografik][lnk_infographic].
 
-Zur Demonstration dieser Möglichkeiten verwendet die vorgestellte Beispiellösung die über IoT-Suite-Dienste erfassten Gerätetelemetriedaten und bereitet diese anhand einer Webanwendung auf. Dabei kommt ein vorhandenes Azure Machine Learning-Modell zum Einsatz, das als Vorlage zur Verfügung steht. Microsoft hat ein Regressionsmodell erstellt und die vollständige Vorlage sowie die Daten<sup>[1]</sup> und eine schrittweise Anleitung [hier][lnk_regression_model] veröffentlicht.
+Zur Demonstration dieser Möglichkeiten verwendet die vorgestellte Beispiellösung die über IoT-Suite-Dienste erfassten Gerätetelemetriedaten und bereitet diese anhand einer Webanwendung auf. Dabei kommt ein vorhandenes Azure Machine Learning-Modell zum Einsatz, das als Vorlage zur Verfügung steht. Microsoft hat ein [Regressionsmodell][lnk_regression_model] erstellt und die vollständige Vorlage sowie die Daten<sup>[1]</sup> und eine schrittweise Anleitung veröffentlicht.
 
 Die vorkonfigurierte Azure IoT-Lösung für vorhersagbaren Wartungsbedarf verwendet ein anhand der genannten Vorlage erstelltes Regressionsmodell. Es ist in Ihrem Azure-Abonnement bereitgestellt und über eine veröffentlichte API verfügbar gemacht. Die Lösung umfasst eine Teilmenge der Testdaten mit vier (von insgesamt 100) Triebwerken und vier (von insgesamt 21) Sensordatenströmen, die ein genaues Ergebnis aus dem trainierten Modell bereitstellen.
 
@@ -55,4 +55,4 @@ Sehen Sie sich die [exemplarische Vorgehensweise][lnk-predictive-walkthrough] zu
 [lnk_regression_model]: http://gallery.cortanaanalytics.com/Collection/Predictive-Maintenance-Template-3
 [lnk_capture_value]: http://download.microsoft.com/download/0/7/D/07D394CE-185D-4B96-AC3C-9B61179F7080/Capture_value_from_the_Internet%20of%20Things_with_Predictive_Maintenance.PDF
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

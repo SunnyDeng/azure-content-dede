@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Leitfaden zur Überwachung und Problembehandlung für den Schutz von VMM- und Hyper-V-Standorten" 
+	pageTitle="Überwachung und Problembehandlung für den Schutz von virtuellen Computern und physischen Servern | Microsoft Azure" 
 	description="Azure Site Recovery koordiniert Replikation, Failover und Wiederherstellung virtueller Computer auf lokalen Servern zu Azure oder einem sekundären Rechenzentrum. Verwenden Sie diesen Artikel zur Überwachung und Problembehandlung für den Schutz von VMM- und Hyper-V-Standorten." 
 	services="site-recovery" 
 	documentationCenter="" 
@@ -13,10 +13,10 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery" 
-	ms.date="09/01/2015" 
+	ms.date="12/14/2015" 
 	ms.author="anbacker"/>
 	
-# Überwachung und Problembehandlung für den Schutz von VMware, VMM, Hyper-V und physischen Standorten
+# Überwachung und Problembehandlung für den Schutz von virtuellen Computern und physischen Servern
 
 In diesem Leitfaden zur Überwachung und Problembehandlung erhalten Sie Informationen zur Nachverfolgung der Replikationsintegrität und zu den Problembehandlungsverfahren für Azure Site Recovery.
 
@@ -199,4 +199,4 @@ Konfigurationsserver (Configuration Server, CS), Prozessserver (Process Server, 
 ### Remotedesktop-Problembehandlung nach einem Failover
 -   Viele Kunden haben Probleme beim Herstellen einer Verbindung mit dem virtuellen Computer in Azure festgestellt, für den ein Failover ausgeführt wurde. [Stellen Sie anhand des Dokuments für die Problembehandlung eine RDP-Verbindung mit dem virtuellen Computer her.](http://social.technet.microsoft.com/wiki/contents/articles/31666.troubleshooting-remote-desktop-connection-after-failover-using-asr.aspx)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

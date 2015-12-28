@@ -108,7 +108,7 @@ Informationen zum Einstieg in PowerShell für Azure finden Sie unter [Installier
 	Add-AzureAccount
 	```
 
-2. Geben Sie im Fenster **Bei Windows Azure anmelden** die dem Konto zugeordnete E-Mail-Adresse und das zugehörige Kennwort ein. Die Anmeldeinformationen werden von Azure authentifiziert und gespeichert, dann wird das Fenster geschlossen.
+2. Geben Sie im Fenster **Bei Microsoft Azure anmelden** die dem Konto zugeordnete E-Mail-Adresse und das zugehörige Kennwort ein. Die Anmeldeinformationen werden von Azure authentifiziert und gespeichert, dann wird das Fenster geschlossen.
 3. Legen Sie als Standardspeicherkonto das Speicherkonto fest, das Sie für das Lernprogramm verwenden, indem Sie die folgenden Befehle im PowerShell-Fenster ausführen:
 
 	```
@@ -351,9 +351,9 @@ Weitere Informationen zur Problembehandlung in End-to-End-Szenarien im Azure-Spe
 - [Monitor, diagnose, and troubleshoot Storage (in englischer Sprache)](storage-monitoring-diagnosing-troubleshooting.md)
 - [Speicheranalyse](http://msdn.microsoft.com/library/azure/hh343270.aspx)
 - [Überwachen eines Speicherkontos](storage-monitor-storage-account.md)
-- [Verwenden von AzCopy mit Microsoft Azure Storage](storage-use-azcopy.md)
+- [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy)
 - [Microsoft Message Analyzer Operating Guide (in englischer Sprache)](http://technet.microsoft.com/library/jj649776.aspx)
  
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!----HONumber=AcomDC_1217_2015-->

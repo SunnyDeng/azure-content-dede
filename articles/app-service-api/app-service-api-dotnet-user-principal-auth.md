@@ -28,7 +28,7 @@ In diesem Tutorial wird veranschaulicht, wie Sie die Authentifizierungs- und Aut
  
 ## Authentifizierung und Autorisierung in App Service
 
-Eine Einführung in die Authentifizierungsfeatures, die in diesem Tutorial verwendet werden, finden Sie im vorherigen Tutorial dieser Reihe: [Authentifizierung und Autorisierung für AP-Apps in Azure App Service](app-service-api-dotnet-get-started.md).
+Eine Einführung in die Authentifizierungsfeatures, die in diesem Tutorial verwendet werden, finden Sie im vorherigen Tutorial dieser Reihe: [Authentifizierung und Autorisierung für API-Apps in Azure App Service](app-service-api-authentication.md).
 
 ## Inhalt dieses Tutorials
 
@@ -268,4 +268,4 @@ Das Front-End kann die API jetzt im Namen eines authentifizierten Benutzers aufr
 
 In diesem Tutorial haben Sie die App Service-Authentifizierung/Autorisierung verwendet, um den Zugriff auf eine API-App einzuschränken, damit sie nur von authentifizierten Benutzern aufgerufen werden kann. Im nächsten Tutorial der Reihe geht es um das [Einschränken des Zugriffs auf Ihre API-App für Dienst-zu-Dienst-Szenarien](app-service-api-dotnet-service-principal-auth.md).
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

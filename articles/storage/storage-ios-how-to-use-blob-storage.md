@@ -350,6 +350,7 @@ Nachdem Sie sich nun mit den Grundlagen des Blob-Speichers vertraut gemacht habe
 
 - [Azure Storage-iOS-Bibliothek]
 - [Azure Storage-REST-API]
+- [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy)
 - [Azure Storage-Teamblog]
 
 Stellen Sie Fragen zu dieser Bibliothek in unserem [MSDN Azure-Forum](http://social.msdn.microsoft.com/Forums/windowsazure/home?forum=windowsazuredata) oder unter [Stack Overflow](http://stackoverflow.com/questions/tagged/windows-azure-storage+or+windows-azure-storage+or+azure-storage-blobs+or+azure-storage-tables+or+azure-table-storage+or+windows-azure-queues+or+azure-storage-queues+or+azure-storage-emulator+or+azure-storage-files). Vorschläge für Azure Storage-Funktionen können Sie unter [Feedback zu Azure Storage](http://feedback.azure.com/forums/217298-storage) machen.
@@ -358,4 +359,4 @@ Stellen Sie Fragen zu dieser Bibliothek in unserem [MSDN Azure-Forum](http://soc
 [Azure Storage-REST-API]: https://msdn.microsoft.com/library/azure/dd179355.aspx
 [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

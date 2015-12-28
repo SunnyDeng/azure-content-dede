@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="09/04/2015"
+   ms.date="12/09/2015"
    ms.author="sethm" />
 
 # Service Bus-Warteschlangen, -Themen und -Abonnements
@@ -25,7 +25,7 @@ Den Kern der Brokermessagingfunktionen in Service Bus bilden die folgenden Messa
 
 Warteschlangen liefern die Nachrichten im First In, First Out (FIFO)-Verfahren an einen oder mehrere Consumer. Dies bedeutet, dass Nachrichten normalerweise von den Empfängern in der Reihenfolge empfangen und verarbeitet werden, in der sie der Warteschlange hinzugefügt wurden, und dass jede Nachricht nur von einem Nachrichtenconsumer empfangen und verarbeitet wird. Als Hauptvorteil ergibt sich bei der Verwendung von Warteschlangen eine "vorübergehende Entkopplung" von Anwendungskomponenten. Anders ausgedrückt, die Producer (Absender) und Consumer (Empfänger) müssen Nachrichten nicht gleichzeitig senden und empfangen, da Nachrichten dauerhaft in der Warteschlange gespeichert werden. Außerdem muss der Producer nicht auf eine Antwort vom Consumer warten, um weiterhin Nachrichten zu verarbeiten und zu senden.
 
-Ein weiterer Vorteil ist der "Belastungsausgleich", durch den Producer und Consumer die Möglichkeit haben, Nachrichten mit unterschiedlichen Raten zu senden und zu empfangen. In vielen Anwendungen schwankt die Systemlast mit der Zeit, jedoch ist die erforderliche Verarbeitungsdauer pro Arbeitseinheit üblicherweise konstant. Durch die Zwischenschaltung einer Warteschlange zwischen Nachrichtenproducer und -consumer reicht es aus, wenn die konsumierende Anwendung für die Durchschnittslast anstatt für die Spitzenlast ausgelegt ist. Die Tiefe der Warteschlange erhöht und verringert sich mit der eingehenden Last. Auf diese Weise sparen Sie direkt Geld, da Sie weniger Infrastruktur für Ihre Anwendungslast benötigen. Mit zunehmender Last können weitere Arbeitsprozesse hinzugefügt werden, die Nachrichten aus der Warteschlange abrufen. Jede Nachricht wird nur von einem der Arbeitsprozesse verarbeitet. Außerdem ermöglicht dieser Pull-basierte Lastenausgleich eine optimale Nutzung der Workercomputer, selbst wenn diese über unterschiedliche Leistung verfügen, da jeder von ihnen die Nachrichten in der eigenen Maximalgeschwindigkeit abruft. Dieses Muster nennt man auch "konkurrierende Consumer" (Completing Consumer Pattern).
+Ein weiterer Vorteil ist der Belastungsausgleich, durch den Producer und Consumer die Möglichkeit haben, Nachrichten mit unterschiedlichen Raten zu senden und zu empfangen. In vielen Anwendungen schwankt die Systemlast mit der Zeit, jedoch ist die erforderliche Verarbeitungsdauer pro Arbeitseinheit üblicherweise konstant. Durch die Zwischenschaltung einer Warteschlange zwischen Nachrichtenproducer und -consumer reicht es aus, wenn die konsumierende Anwendung für die Durchschnittslast anstatt für die Spitzenlast ausgelegt ist. Die Tiefe der Warteschlange erhöht und verringert sich mit der eingehenden Last. Auf diese Weise sparen Sie direkt Geld, da Sie weniger Infrastruktur für Ihre Anwendungslast benötigen. Mit zunehmender Last können weitere Arbeitsprozesse hinzugefügt werden, die Nachrichten aus der Warteschlange abrufen. Jede Nachricht wird nur von einem der Arbeitsprozesse verarbeitet. Außerdem ermöglicht dieser Pull-basierte Lastenausgleich eine optimale Nutzung der Workercomputer, selbst wenn diese über unterschiedliche Leistung verfügen, da jeder von ihnen die Nachrichten in der eigenen Maximalgeschwindigkeit abruft. Dieses Muster nennt man auch "konkurrierende Consumer" (Completing Consumer Pattern).
 
 Die Verwendung von Warteschlangen als Zwischenglied zwischen Nachrichtenproducern und -consumern sorgt für eine inhärente lockere Kopplung zwischen den Komponenten. Da Producer und Consumer voneinander unabhängig sind, kann ein Upgrade für einen Consumer ohne Auswirkungen auf den Producer durchgeführt werden.
 
@@ -146,7 +146,7 @@ while ((message = auditSubscriptionClient.Receive(TimeSpan.FromSeconds(5))) != n
 
 In vielen Fällen müssen Nachrichten mit bestimmten Merkmalen auf unterschiedliche Weise verarbeitet werden. Damit dies möglich ist, können Sie Abonnements so konfigurieren, dass sie nach Nachrichten mit bestimmten Eigenschaften suchen und dann bestimmte Änderungen an diesen Eigenschaften vornehmen. Auch wenn Service Bus-Abonnements alle Nachrichten angezeigt werden, die an das Thema gesendet wurden, können Sie nur eine Teilmenge dieser Nachrichten in die virtuelle Abonnementwarteschlange kopieren. Dies wird mithilfe von Abonnementfiltern erreicht. Solche Änderungen werden als *Filteraktionen* bezeichnet. Beim Erstellen eines Abonnements können Sie einen Filterausdruck angeben, der auf die Eigenschaften der Nachricht angewendet wird, und zwar sowohl auf die Systemeigenschaften (z. B. **Label**) als auch auf benutzerdefinierte Anwendungseigenschaften (z. B. **StoreName**). Der SQL-Filterausdruck ist in diesem Fall optional; ohne SQL-Filterausdruck wird jede für ein Abonnement definierte Filteraktion für alle Nachrichten in diesem Abonnement ausgeführt.
 
-Wenn Sie im vorherigen Beispiel nur Nachrichten von "Store1" herausfiltern möchten, erstellen Sie das Dashboard-Abonnement wie folgt:
+Wenn Sie im vorherigen Beispiel nur Nachrichten von **Store1** herausfiltern möchten, erstellen Sie das Dashboard-Abonnement wie folgt:
 
 ```
 namespaceManager.CreateSubscription("IssueTrackingTopic", "Dashboard", new SqlFilter("StoreName = 'Store1'"));
@@ -167,8 +167,9 @@ Event Hubs sind ein Konstrukt für das Streamen von Nachrichten, und obwohl sie 
 Weitere Informationen und Beispiele für die Verwendung von Service Bus-Brokermessagingentitäten finden Sie in den folgenden erweiterten Themen.
 
 - [Übersicht über Service Bus-Messaging](service-bus-messaging-overview.md)
-- [.NET-Tutorial zu Service Bus-Brokermessaging](https://msdn.microsoft.com/library/azure/hh367512.aspx)
-- [Ereignis-Hubs-Entwicklerhandbuch](../event-hubs-programming-guide.md)
+- [.NET-Tutorial zu Service Bus-Brokermessaging](service-bus-brokered-tutorial-dotnet.md)
+- [REST-Lernprogramm zu Service Bus-Brokermessaging ](service-bus-brokered-tutorial-rest.md)
+- [Ereignis-Hubs-Entwicklerhandbuch](../event-hubs/event-hubs-programming-guide.md)
 - [Brokermessaging: Erweiterte Filter](http://code.msdn.microsoft.com/Brokered-Messaging-6b0d2749)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

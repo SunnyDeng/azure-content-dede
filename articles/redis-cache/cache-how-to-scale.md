@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/03/2015" 
+	ms.date="12/11/2015" 
 	ms.author="sdanie"/>
 
 # Skalieren von Azure Redis Cache
@@ -89,7 +89,12 @@ Die folgende Liste enthält Antworten auf häufig gestellte Fragen zur Skalierun
 
 ## Kann ich eine Skalierung auf, aus oder innerhalb eines Premium-Caches vornehmen?
 
-Während des Vorschauzeitraums ist die Skalierung nicht für **Premium**-Caches verfügbar, aber Sie können den Tarif innerhalb eines Premium-Caches ändern.
+-	Eine Skalierung auf einen **Premium**-Cachetarif von den Tarifen **Basic** oder **Standard** ist nicht möglich.
+-	Eine Skalierung von einem **Premium**-Cachetarif auf die Tarife **Basic** oder **Standard** ist nicht möglich.
+-	Eine Skalierung von einem bestimmten **Premium**-Cachetarif zu einem anderen ist jedoch möglich.
+-	Wenn Sie beim Erstellen des **Premium**-Caches die Clusterunterstützung aktiviert haben, können Sie die Anzahl der Shards nach oben oder unten skalieren.
+
+Weitere Informationen finden Sie unter [Konfigurieren von Clustern für Azure Redis Cache vom Typ "Premium"](cache-how-to-premium-clustering.md).
 
 ## Muss ich nach dem Skalieren den Namen oder die Zugriffsschlüssel für den Cache ändern?
 
@@ -101,7 +106,7 @@ Wenn ein **Basic**-Cache auf eine andere Größe skaliert wird, wird er herunter
 
 Wenn ein **Basic**-Cache auf einen **Standard**-Cache skaliert wird, wird ein Replikatcache bereitgestellt, und die Daten werden aus dem primären Cache in den Replikatcache kopiert. Der Cache bleibt während des Skalierungsvorgangs verfügbar.
 
-Wenn ein **Standard**-Cache auf eine andere Größe skaliert wird, wird eines der Replikate heruntergefahren und mit der neuen Größe bereitgestellt, und die Daten werden übertragen. Anschließend führt das andere Replikat ein Failover aus, bevor es erneut bereitgestellt wird. Dieser Prozess ähnelt dem Prozess, der beim Ausfall eines Cacheknoten durchgeführt wird.
+Wenn ein **Standard**-Cache auf eine andere Größe skaliert wird, wird eines der Replikate heruntergefahren und mit der neuen Größe bereitgestellt, und die Daten werden übertragen. Anschließend führt das andere Replikat ein Failover aus, bevor es erneut bereitgestellt wird. Dieser Prozess ähnelt dem Prozess, der beim Ausfall eines Cacheknotens durchgeführt wird.
 
 ## Gehen während der Skalierung Daten aus dem Cache verloren?
 
@@ -155,4 +160,4 @@ Wir haben die Funktion veröffentlicht, um Feedback zu erhalten. Basierend auf d
 
 [redis-cache-scaling]: ./media/cache-how-to-scale/redis-cache-scaling.png
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

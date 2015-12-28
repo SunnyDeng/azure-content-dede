@@ -23,11 +23,14 @@
 - [Azure Classic Portal](virtual-networks-configure-vnet-to-vnet-connection.md)
 - [PowerShell - Azure Resource Manager](vpn-gateway-vnet-vnet-rm-ps.md)
 
-Dieser Artikel führt Sie durch die Schritte zum Erstellen und Verbinden virtueller Netzwerke mithilfe des klassischen Bereitstellungsmodells (auch als Dienstverwaltung bezeichnet). Für diese Schritte wird das klassische Azure-Portal (nicht das Azure-Portal) zusammen mit PowerShell-Cmdlets verwendet. Informationen zum Verbinden von VNets, die mit dem Azure-Ressourcen-Manager-Bereitstellungsmodell erstellt wurden, finden Sie oben auf der Registerkarte. Die Schritte variieren je nach Modell.
 
-Sie können ein mit dem klassischen Bereitstellungsmodell erstelltes VNet auch mit einem VNet verbinden, das mit dem Ressourcen-Manager-Modell erstellt wurde. Weitere Informationen erhalten Sie unter [Herstellen einer Verbindung zwischen klassischen VNets und neuen VNets](../virtual-network/virtual-networks-arm-asm-s2s.md).
+Dieser Artikel führt Sie durch die Schritte zum Erstellen und Verbinden virtueller Netzwerke mithilfe des klassischen Bereitstellungsmodells (auch als Dienstverwaltung bezeichnet). Für diese Schritte wird das klassische Azure-Portal (nicht das Azure-Portal) zusammen mit PowerShell-Cmdlets verwendet. Wenn Sie ein anderes Bereitstellungsmodell für diese Konfiguration suchen, verwenden Sie die Registerkarten oben, um den gewünschten Artikel auszuwählen.
 
-[AZURE.INCLUDE [vpn-gateway-sm-rm](../../includes/vpn-gateway-sm-rm-include.md)]
+**Informationen zu Azure-Bereitstellungsmodellen**
+
+[AZURE.INCLUDE [vpn-gateway-clasic-rm](../../includes/vpn-gateway-classic-rm-include.md)]
+	
+Sie können ein mit dem klassischen Bereitstellungsmodell erstelltes VNET auch mit einem VNET verbinden, das mit dem Ressourcen-Manager-Modell erstellt wurde. Weitere Informationen erhalten Sie unter [Herstellen einer Verbindung zwischen klassischen VNETs und neuen VNETs](../virtual-network/virtual-networks-arm-asm-s2s.md).
 
 Das Verbinden eines virtuellen Netzwerks mit einem anderen virtuellen Netzwerk (VNet-zu-VNet) ähnelt dem Verbinden eines virtuellen Netzwerks mit einem lokalen Standort. Beide Verbindungstypen verwenden ein VPN-Gateway, um einen sicheren Tunnel mit IPSec/IKE bereitzustellen. Die VNets, die Sie verbinden, können sich in verschiedenen Abonnements und Regionen befinden. Sie können sogar VNet-zu-VNet-Kommunikation mit Konfigurationen für mehrere Standorte kombinieren. Auf diese Weise können Sie Netzwerktopologien einrichten, die standortübergreifende Konnektivität mit Konnektivität zwischen virtuellen Netzwerken kombinieren, wie in der folgenden Abbildung dargestellt:
 
@@ -222,20 +225,11 @@ Warten Sie, bis die Verbindung initialisiert wird. Nachdem das Gateway initialis
 
 ## Nächste Schritte
 
-
-Informationen zum Hinzufügen virtueller Computer zu Ihrem virtuellen Netzwerk finden Sie unter [Erstellen eines virtuellen Computers](../virtual-machines/virtual-machines-windows-tutorial-classic-portal.md).
-
-Informationen zum Konfigurationsschema finden Sie unter [Konfigurationsschema für virtuelle Azure-Netzwerke](https://msdn.microsoft.com/library/azure/jj157100.aspx).
-
-Informationen zur REST-API finden Sie unter [Vorgänge für Gateways für virtuelle Netzwerke](https://msdn.microsoft.com/library/azure/jj154113.aspx).
-
-Weitere Informationen zu VPN-Gateways finden Sie unter [Häufig gestellte Fragen zum VPN-Gateway](vpn-gateway-vpn-faq.md).
-
-Weitere Informationen über virtuelle Netzwerke erhalten Sie unter [Überblick über virtuelle Azure-Netzwerke](../virtual-network/virtual-networks-overview.md) und [FAQs zu virtuellen Netzwerken](../virtual-network/virtual-networks-faq.md).
+Sobald die Verbindung hergestellt ist, können Sie Ihren virtuellen Netzwerken virtuelle Computer hinzufügen. Für diese Schritte finden Sie Informationen unter [Erstellen eines virtuellen Computers](../virtual-machines/virtual-machines-windows-tutorial-classic-portal.md).
 
 
 [1]: ../hdinsight-hbase-geo-replication-configure-vnets.md
 [2]: http://channel9.msdn.com/Series/Getting-started-with-Windows-Azure-HDInsight-Service/Configure-the-VPN-connectivity-between-two-Azure-virtual-networks
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

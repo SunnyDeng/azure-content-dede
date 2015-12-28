@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="08/06/2015" 
+	ms.date="12/10/2015" 
 	ms.author="erikre"/>
 
 
@@ -98,7 +98,7 @@ Sie haben nun eine Web-App erstellt, diese enthält jedoch noch keinen Inhalt. A
 ###Aktualisieren der Masterseite
 In ASP.NET Web Forms können Sie mit Masterseiten ein einheitliches Layout für die Seiten in Ihrer Anwendung erstellen. Eine einzige Masterdseite definiert das Aussehen und das Standardverhalten, das Sie für alle Seiten (oder eine Gruppe von Seiten) in Ihrer Anwendung wünschen. Anschließend können Sie die einzelnen Inhaltsseiten mit dem anzuzeigenden Inhalt erstellen. Wenn Benutzer Inhaltsseiten anfordern, werden diese in ASP.NET mit der Masterseite zusammengeführt, um eine Ausgabe zu erstellen, in der das Layout der Masterseite mit dem Inhalt der Inhaltsseite kombiniert wird. Für die neue Seite muss der Anwendungsname und der Link aktualisiert werden. Dieser Link verweist auf die Seite, welche die Kontaktdetails enthält. Um diese Änderungen vorzunehmen, ändern Sie das HTML auf der Masterseite.
 
-1. Öffnen Sie im **Projektmappen-Explorer** die Seite *Site.Master*. 
+1. Öffnen Sie im **Projektmappen-Explorer** die Seite *Site.Master*.
 2. Falls diese Seite sich in der **Entwurfsansicht** befindet, wechseln Sie zur **Quellansicht**.
 3. Aktualisieren Sie die Masterseite durch Ändern oder Hinzufügen des Markups, sodass es für die Seite wie folgt aussieht:
 
@@ -218,7 +218,7 @@ Sie beginnen mit der Erstellung eines einfachen Datenmodells mithilfe von Code. 
 
 1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Ordner *Modelle*, und wählen Sie dann **Hinzufügen** -> **Klasse** aus. ![Klasse auswählen](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms12.png) Das Dialogfeld **Neues Element hinzufügen** wird angezeigt.  
 
-2. Nennen Sie diese neue Klasse *Contacts.cs*. ![Dialogfeld "Neues Element hinzufügen"](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms13.png)
+2. Nennen Sie diese neue Klasse *Contacts.cs*, und klicken Sie auf **Hinzufügen**. ![Dialogfeld "Neues Element hinzufügen"](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms13.png)
 3. Ersetzen Sie den Standardcode durch den folgenden Code:  
 
 		using System.ComponentModel.DataAnnotations;
@@ -389,8 +389,8 @@ Mit den folgenden Schritten können Sie einen Google-Authentifizierungsanbieter 
 
 3. Navigieren Sie zur [Google Developers Console](https://console.developers.google.com/). Außerdem müssen Sie sich mit Ihrem Google Entwickler-E-Mail-Konto anmelden (gmail.com). Wenn Sie nicht über ein Google-Konto verfügen, wählen Sie den Link **Konto erstellen** aus. Danach sehen Sie die **Google Entwickler-Konsole**. ![Google-Entwickler-Konsole](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms21a.png)
 
-4. Klicken Sie auf **Create Project**, und geben Sie einen Projektnamen und die ID ein (Sie können die Standardwerte verwenden). Klicken Sie auf das Kontrollkästchen **Vereinbarung** und die Schaltfläche **Erstellen**. ![Google - Neues Projekt](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms21b.png) In wenigen Sekunden wird das neue Projekt erstellt, und Ihr Browser zeigt die Seite für neue Projekte an.
-5. Klicken Sie auf der linken Registerkarte auf **APIs & auth** und dann auf **Credentials**.
+4. Klicken Sie auf **Select a project** > **Create Project**, und geben Sie einen Projektnamen und die ID ein (Sie können die Standardwerte verwenden). Klicken Sie auf das Kontrollkästchen **Vereinbarung** und die Schaltfläche **Erstellen**. ![Google - Neues Projekt](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms21b.png) In wenigen Sekunden wird das neue Projekt erstellt, und Ihr Browser zeigt die Seite für neue Projekte an.
+5. Klicken Sie im Dropdownmenü **Google Developers Console** auf **API Manager** und dann auf **Credentials**.
 6. Klicken Sie auf **Neue Client-ID erstellen** unter **OAuth**. Das Dialogfeld **Client-ID erstellen** wird angezeigt. ![Google - Client-ID erstellen](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms21c.png)  
 7. Behalten Sie im Dialogfeld **Client-ID erstellen** den Standardwert **Webanwendung** für den Anwendungstyp bei.  
 8. Legen Sie die **Authorized JavaScript Origins** auf die SSL-URL fest, die Sie zuvor in diesem Lernprogramm verwendet haben (****https://localhost:44300/** sofern Sie keine anderen SSL-Projekte erstellt haben). Diese URL ist der Ursprung für Ihre Anwendung. In diesem Beispiel geben Sie nur die Test-URL "localhost" ein. Sie können jedoch mehrere URLs eingeben, um "localhost" und die Produktion einzubeziehen.
@@ -401,7 +401,7 @@ Mit den folgenden Schritten können Sie einen Google-Authentifizierungsanbieter 
 
 	Dieser Wert steht für den URI, den ASP.NET OAuth-Benutzer zur Kommunikation mit dem Google OAuth-Server verwenden. Geben Sie die oben verwendete SSL-URL ein (****https://localhost:44300/** sofern Sie nicht andere SSL-Projekte erstellt haben).
  
-10. Klicken Sie auf die Schaltfläche **Create Client ID**.
+10. Klicken Sie auf die Schaltfläche **Erstellen**.
 11. Aktualisieren Sie in Visual Studio die `UseGoogleAuthentication`-Methode der Seite *Startup.Auth.cs*, indem Sie **AppId** und **App Secret** kopieren und in die Methode einfügen. Die unten dargestellten Werte für **AppId** und **App Secret** sind Beispiele und funktionieren nicht.  
 
 		using System;
@@ -638,7 +638,7 @@ Nachdem die Webanwendung nun vollständig ist, können Sie sie in Azure veröffe
 ###Veröffentlichen der Anwendung 
 1. Erstellen Sie in Visual Studio das Projekt (**STRG+UMSCHALT+B**).
 2. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und wählen Sie **Veröffentlichen** aus. ![Menüoption "Veröffentlichen"](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms22.png) Das Dialogfeld **Web veröffentlichen** wird angezeigt. ![Dialogfeld "Web veröffentlichen"](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms22a.png)  
-3. Wählen Sie auf der Registerkarte **Profil** die Option **Azure-Web-App** als Veröffentlichungsziel, wenn es nicht bereits ausgewählt ist. ![Dialogfeld "Web veröffentlichen"](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms23.png)  
+3. Wählen Sie auf der Registerkarte **Profil** die Option **Azure App Service** als Veröffentlichungsziel, wenn es nicht bereits ausgewählt ist. ![Dialogfeld "Web veröffentlichen"](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms23.png)  
 4. Klicken Sie auf **Anmelden**, falls Sie nicht bereits angemeldet sind.
 5. Wählen Sie die vorhandene Web-App, die Sie zuvor in diesem Lernprogramm erstellt haben, im Dropdownfeld **Vorhandene Web-Apps** aus, und klicken Sie auf die Schaltfläche **OK**. ![Dialogfeld "Vorhandene Website auswählen"](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms25.png) Wenn Sie aufgefordert werden, Änderungen am Profil zu speichern, wählen Sie **Ja** aus.
 6. Klicken Sie auf die Registerkarte **Einstellungen**. ![Dialogfeld "Vorhandene Website auswählen"](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms26.png)  
@@ -701,4 +701,4 @@ Bitte teilen Sie uns mit, was Ihrer Meinung nach gelungen ist, bzw. verbessert w
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

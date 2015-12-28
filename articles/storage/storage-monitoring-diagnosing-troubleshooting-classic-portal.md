@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/01/2015"
+	ms.date="12/10/2015"
 	ms.author="jahogg"/>
 
 # Microsoft Azure-Speicher: Überwachung, Diagnose und Problembehandlung
@@ -137,7 +137,7 @@ Speichermetriken speichern nur Kapazitätsmetriken für den Blob-Dienst, weil Bl
 
 > [AZURE.NOTE]Sie sollten diese Werte überwachen, um früh zu erkennen, dass Sie sich den Kapazitätsgrenzen Ihres Speicherkontos nähern. Auf der Seite **Überwachung** für Ihr Speicherkonto im klassischen Azure-Portal können Sie Warnregeln hinzufügen, um benachrichtigt zu werden, wenn die Gesamtspeichernutzung die von Ihnen festgelegten Grenzwerte über- oder unterschreitet.
 
-Hilfe für die Schätzung der Größe der verschiedenen Speicherobjekte wie Blobs finden Sie im Blogbeitrag <a href="http://blogs.msdn.com/b/windowsazurestorage/archive/2010/07/09/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity.aspx" target="_blank">Windows Azure-Speicherabrechnung verstehen – Bandbreite, Transaktionen und Kapazität</a>.
+Hilfe für die Schätzung der Größe der verschiedenen Speicherobjekte wie Blobs finden Sie im Blogbeitrag <a href="http://blogs.msdn.com/b/windowsazurestorage/archive/2010/07/09/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity.aspx" target="_blank">Microsoft Azure-Speicherabrechnung verstehen – Bandbreite, Transaktionen und Kapazität</a>.
 
 ### <a name="monitoring-availability"></a>Verfügbarkeitsüberwachung
 
@@ -184,7 +184,7 @@ Die folgenden Abschnitte beschreiben die Schritte, die Sie befolgen sollten, um 
 
 ### <a name="service-health-issues"></a>Probleme mit der Dienstintegrität
 
-Probleme mit der Dienstintegrität liegen in der Regel außerhalb Ihrer Kontrolle. Das klassische Azure-Portal bietet Informationen zu allen auftretenden Problemen mit Azure-Diensten, inklusive Speicherdiensten. Falls Sie sich für georedundante Speicher mit Lesezugriff entschieden haben, als Sie Ihr Speicherkonto erstellt haben, dann sollte Ihre Anwendung im Falle der Nichtverfügbarkeit Ihrer Daten am Primärort vorübergehend auf die schreibgeschützte Kopie im Sekundärort umschalten. Hierzu muss die Anwendung in der Lage sein, zwischen der Verwendung der primären und sekundären Speicherorte zu wechseln und in einem Modus mit eingeschränkter Funktionalität mit schreibgeschützten Daten zu arbeiten. Mit den Azure Speicher-Clientbibliotheken können Sie eine Wiederholungsrichtlinie für das Lesen aus dem Sekundärspeicher definieren, falls der Primärort ausfällt. Ihre Anwendung muss auch erkennen können, ob die Daten am Sekundärort konsistent sind. Weitere Informationen finden Sie im Blogbeitrag <a href="http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/04/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx" target="_blank">Windows Azure-Speicher: Redundanzoptionen und Lesezugriff georedundanter Speicher</a>.
+Probleme mit der Dienstintegrität liegen in der Regel außerhalb Ihrer Kontrolle. Das klassische Azure-Portal bietet Informationen zu allen auftretenden Problemen mit Azure-Diensten, inklusive Speicherdiensten. Falls Sie sich für georedundante Speicher mit Lesezugriff entschieden haben, als Sie Ihr Speicherkonto erstellt haben, dann sollte Ihre Anwendung im Falle der Nichtverfügbarkeit Ihrer Daten am Primärort vorübergehend auf die schreibgeschützte Kopie im Sekundärort umschalten. Hierzu muss die Anwendung in der Lage sein, zwischen der Verwendung der primären und sekundären Speicherorte zu wechseln und in einem Modus mit eingeschränkter Funktionalität mit schreibgeschützten Daten zu arbeiten. Mit den Azure Speicher-Clientbibliotheken können Sie eine Wiederholungsrichtlinie für das Lesen aus dem Sekundärspeicher definieren, falls der Primärort ausfällt. Ihre Anwendung muss auch erkennen können, ob die Daten am Sekundärort konsistent sind. Weitere Informationen finden Sie im Blogbeitrag <a href="http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/04/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx" target="_blank">Microsoft Azure-Speicher: Redundanzoptionen und Lesezugriff georedundanter Speicher</a>.
 
 ### <a name="performance-issues"></a>Leistungsprobleme
 
@@ -920,4 +920,4 @@ Zum Redaktionszeitpunkt befindet sich Application Insights in der Vorschau. Weit
 [9]: ./media/storage-monitoring-diagnosing-troubleshooting-classic-portal/mma-screenshot-1.png
 [10]: ./media/storage-monitoring-diagnosing-troubleshooting-classic-portal/mma-screenshot-2.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!----HONumber=AcomDC_1217_2015-->

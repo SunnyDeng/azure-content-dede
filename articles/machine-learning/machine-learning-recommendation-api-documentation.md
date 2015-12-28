@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/07/2015" 
+	ms.date="12/10/2015" 
 	ms.author="LuisCa"/>
 
 # Azure Machine Learning-Empfehlungs-APIs – Dokumentation
@@ -26,37 +26,22 @@ In diesem Dokument werden die Microsoft Azure Machine Learning-APIs für Empfehl
 ## 1\. Allgemeine Übersicht
 Dieses Dokument ist eine API-Referenz. Beginnen Sie mit dem Dokument „Azure Machine Learning Recommendation – Quick Start“ (Empfehlungen zu Azure Machine Learning – Schnellstart).
 
-Die Azure Machine Learning-Empfehlungs-APIs können in 10 logische Gruppen unterteilt werden:
+Die Azure Machine Learning-Empfehlungs-APIs können in die folgenden logischen Gruppen unterteilt werden:
 
-1.	<ins>Einfaches Modell</ins>: Dies sind APIs, mit denen Sie grundlegende Vorgänge für ein Modell ausführen können (z. B. Erstellen, Aktualisieren und Löschen eines Modells).
-2.	<ins>Komplexes Modell</ins>: Dies sind APIs, mit denen Sie komplexere Einblicke in die Daten des Modells erhalten können.
-3.	<ins>Modellgeschäftsregeln</ins>: Dies sind APIs, mit denen Sie Geschäftsregeln für die Empfehlungsergebnisse des Modells verwalten können.
-4.	<ins>Katalog</ins>: Dies sind APIs, mit denen Sie grundlegende Vorgänge bei einem Modellkatalog ausführen können. Kataloge enthalten Metadateninformationen zu den Elementen der Nutzungsdaten.
-5.	<ins>Feature</ins>: Dies sind APIs, mit denen Sie Details zu Katalogelementen einfügen und erfahren, wie Sie diese Informationen nutzen, um bessere Empfehlungen entwickeln zu können.
-6.	<ins>Nutzungsdaten</ins>: Dies sind APIs, mit denen Sie grundlegende Vorgänge an den Modellnutzungsdaten ausführen können. Nutzungsdaten bestehen in der Grundform aus Zeilen mit Paaren von &#60;userId&#62;,&#60;itemId&#62;.
-7.	<ins>Build</ins>: Dies sind APIs, mit denen Sie das Erstellen eines Modellbuilds auslösen und im Zusammenhang mit diesem Build grundlegende Vorgänge ausführen können. Sobald Sie sinnvolle Nutzungsdaten haben, können Sie die Erstellung eines Modells auslösen.
-8.	<ins>Empfehlung</ins>: Dies sind APIs, mit denen Sie nach der Erstellung eines Modells Empfehlungen nutzen können.
-9.	<ins>Benutzerdaten</ins>: Dies sind APIs, mit denen Sie Informationen zu den Nutzungsdaten der Benutzer abrufen können.
-10.	<ins>Benachrichtigungen</ins>: Dies sind APIs, mit denen Sie Benachrichtigungen bei Problemen im Zusammenhang mit Ihren API-Vorgängen empfangen können. (Beispiel: Sie berichten Nutzungsdaten über die Datengewinnung, und bei der Verarbeitung von Ereignissen treten Fehler auf. Es wird eine Fehlerbenachrichtigung ausgegeben.)
+- <ins>Einschränkungen:</ins> Einschränkungen der Empfehlungs-API.
+- <ins>Allgemeine Informationen:</ins> Informationen zu Authentifizierung, Dienst-URI und Versionskontrolle.
+- <ins>Einfaches Modell</ins>: Dies sind APIs, mit denen Sie grundlegende Vorgänge für ein Modell ausführen können (z. B. Erstellen, Aktualisieren und Löschen eines Modells).
+- <ins>Komplexes Modell</ins>: Dies sind APIs, mit denen Sie komplexere Einblicke in die Daten des Modells erhalten können.
+- <ins>Modellgeschäftsregeln</ins>: Dies sind APIs, mit denen Sie Geschäftsregeln für die Empfehlungsergebnisse des Modells verwalten können.
+- <ins>Katalog</ins>: Dies sind APIs, mit denen Sie grundlegende Vorgänge bei einem Modellkatalog ausführen können. Kataloge enthalten Metadateninformationen zu den Elementen der Nutzungsdaten.
+- <ins>Feature</ins>: Dies sind APIs, mit denen Sie Details zu Katalogelementen einfügen und erfahren, wie Sie diese Informationen nutzen, um bessere Empfehlungen entwickeln zu können.
+- <ins>Nutzungsdaten</ins>: Dies sind APIs, mit denen Sie grundlegende Vorgänge an den Modellnutzungsdaten ausführen können. Nutzungsdaten bestehen in der Grundform aus Zeilen mit Paaren von &#60;userId&#62;,&#60;itemId&#62;.
+- <ins>Build</ins>: Dies sind APIs, mit denen Sie das Erstellen eines Modellbuilds auslösen und im Zusammenhang mit diesem Build grundlegende Vorgänge ausführen können. Sobald Sie sinnvolle Nutzungsdaten haben, können Sie die Erstellung eines Modells auslösen.
+- <ins>Empfehlung</ins>: Dies sind APIs, mit denen Sie nach der Erstellung eines Modells Empfehlungen nutzen können.
+- <ins>Benutzerdaten</ins>: Dies sind APIs, mit denen Sie Informationen zu den Nutzungsdaten der Benutzer abrufen können.
+- <ins>Benachrichtigungen</ins>: Dies sind APIs, mit denen Sie Benachrichtigungen bei Problemen im Zusammenhang mit Ihren API-Vorgängen empfangen können. (Beispiel: Sie berichten Nutzungsdaten über die Datengewinnung, und bei der Verarbeitung von Ereignissen treten Fehler auf. Es wird eine Fehlerbenachrichtigung ausgegeben.)
 
-##2. Erweiterte Themen
-
-###2.1. Qualität der Empfehlungen
-
-Das Erstellen eines Empfehlungsmodells ist in der Regel ausreichend, damit Empfehlungen vom System bereitgestellt werden können. Allerdings hängt die Qualität der Empfehlungen von der verarbeiteten Nutzung und der Abdeckung des Katalogs ab. Wenn beispielsweise viele „kalte“ Elemente (Elemente ohne nennenswerte Nutzung) vorhanden sind, ist es schwierig für das System, Empfehlungen für solche Elemente bereitzustellen oder sie als empfohlene Elemente zu verwenden. Um das Problem mit „kalten“ Elementen zu beheben, können die Metadaten der Elemente verwendet werden, um die Empfehlungen zu verbessern. Diese Metadaten werden als Funktionen bezeichnet. Typische Funktionen sind beispielsweise Buchautoren oder Filmschauspieler. Diese Funktionen werden im Katalog in Form von Schlüssel/Wert-Zeichenfolgen bereitgestellt. Die vollständige Format der Katalogdatei finden Sie im Abschnitt [Importieren von Katalogen](#81-import-catalog-data). Im folgenden Abschnitt wird die Verwendung von Features zur Verbesserung des Empfehlungsmodells erläutert.
-
-###2.2. Rangfolgebuild
-
-Features können das Empfehlungsmodell verbessern, doch dazu ist die Verwendung von nützlichen Features erforderlich. Zu diesem Zweck wurde ein neuer Build zum Erstellen von Rangfolgen eingeführt Durch diesen Build wird die Nützlichkeit der Features in eine Rangfolge gebracht. Nützliche Features erhalten mindestens eine Rangwertung von 2.
-Wenn Sie wissen, welche Features nützlich sind, lösen Sie mit der Liste bzw. Unterliste nützlicher Features das Erstellen eines Empfehlungsbuilds aus. Diese Features können zum Verbessern sowohl „warmer“ als auch „kalter“ Elemente verwendet werden. Zum Verwenden der Features bei „warmen“ Elementen muss der Buildparameter `UseFeatureInModel` eingerichtet werden. Zum Verwenden der Features bei „kalten“ Elementen muss der Buildparameter `AllowColdItemPlacement` aktiviert werden.
-Hinweis: Es ist nicht möglich, `AllowColdItemPlacement` ohne `UseFeatureInModel` zu aktivieren.
-
-###2.3. Empfehlungsargumentation
-
-Die Empfehlungsargumentation ist ein weiterer Nutzungsaspekt der Features. Das Empfehlungsmodul von Azure Machine Learning kann Features verwenden, um Erläuterungen („Argumentation“) zu den Empfehlungen bereitzustellen, um das Zutrauen desjenigen, der die Empfehlung verwendet, in das empfohlene Element zu erhöhen.
-Zum Aktivieren der Argumentation müssen die Parameter `AllowFeatureCorrelation` und `ReasoningFeatureList` eingerichtet werden, bevor ein Empfehlungsbuild angefordert wird.
-
-##3. Einschränkungen
+##2\. Einschränkungen
 
 - Die Maximale Anzahl von Modellen pro Abonnement beträgt 10.
 - Die maximale Anzahl von Elementen, die ein Katalog aufnehmen kann, beträgt 100.000.
@@ -64,25 +49,40 @@ Zum Aktivieren der Argumentation müssen die Parameter `AllowFeatureCorrelation`
 - Die maximale Größe der Daten, die in POST gesendet werden können (z. B. Importieren von Katalog- oder Nutzungsdaten), beträgt 200 MB.
 - Die Anzahl der Transaktionen pro Sekunde bei Empfehlungsmodellbuilds, die nicht aktiv sind, beträgt etwa 2 T/s. Bei aktiven Empfehlungsmodellbuilds sind bis zu 20 T/s möglich.
 
-##4. APIs – allgemeine Informationen
+##3\. APIs – allgemeine Informationen
 
-###4.1. Authentifizierung
+###3\.1. Authentifizierung
 Befolgen Sie die Microsoft Azure Marketplace-Richtlinien in Bezug auf die Authentifizierung. Der Marketplace unterstützt sowohl die Standard- als auch die OAuth-Authentifizierungsmethode.
 
-###4.2. Dienst-URI
+###3\.2. Dienst-URI
 Den Dienststamm-URI für die APIs zu Azure Machine Learning-Empfehlungen finden Sie [hier](https://api.datamarket.azure.com/amla/recommendations/v3/).
 
 Der vollständige Dienst-URI wird unter Verwendung von Elementen der OData-Spezifikation angegeben.
 
-###4.3. API-Version
+###3\.3. API-Version
 Jeder API-Aufruf enthält am Ende einen Abfrageparameter namens apiVersion. Dieser muss auf 1.0 festgelegt sein.
 
-###4.4. Groß-/Kleinschreibung bei IDs
+###3\.4. Groß-/Kleinschreibung bei IDs
 Bei IDs, die von den APIs zurückgegeben werden, muss die Groß-/Kleinschreibung beachtet werden, wenn sie in nachfolgenden API-Aufrufen als Parameter weitergegeben werden. Beispielsweise muss bei Modell- und Katalog-IDs die Groß-/Kleinschreibung beachtet werden.
 
-##5. Einfaches Modell
+##4\. Empfehlungsqualität und kalte Elemente
 
-###5.1. Modell erstellen
+###4\.1. Qualität der Empfehlungen
+
+Das Erstellen eines Empfehlungsmodells ist in der Regel ausreichend, damit Empfehlungen vom System bereitgestellt werden können. Allerdings hängt die Qualität der Empfehlungen von der verarbeiteten Nutzung und der Abdeckung des Katalogs ab. Wenn beispielsweise viele „kalte“ Elemente (Elemente ohne nennenswerte Nutzung) vorhanden sind, ist es schwierig für das System, Empfehlungen für solche Elemente bereitzustellen oder sie als empfohlene Elemente zu verwenden. Um das Problem mit „kalten“ Elementen zu beheben, können die Metadaten der Elemente verwendet werden, um die Empfehlungen zu verbessern. Diese Metadaten werden als Funktionen bezeichnet. Typische Funktionen sind beispielsweise Buchautoren oder Filmschauspieler. Diese Funktionen werden im Katalog in Form von Schlüssel/Wert-Zeichenfolgen bereitgestellt. Die vollständige Format der Katalogdatei finden Sie im Abschnitt [Importieren von Katalogen](#81-import-catalog-data).
+
+###4\.2. Rangfolgebuild
+
+Features können das Empfehlungsmodell verbessern, doch dazu ist die Verwendung von nützlichen Features erforderlich. Zu diesem Zweck wurde ein neuer Build zum Erstellen von Rangfolgen eingeführt Durch diesen Build wird die Nützlichkeit der Features in eine Rangfolge gebracht. Nützliche Features erhalten mindestens eine Rangwertung von 2. Wenn Sie wissen, welche Features nützlich sind, lösen Sie mit der Liste bzw. Unterliste nützlicher Features das Erstellen eines Empfehlungsbuilds aus. Diese Features können zum Verbessern sowohl „warmer“ als auch „kalter“ Elemente verwendet werden. Zum Verwenden der Features bei „warmen“ Elementen muss der Buildparameter `UseFeatureInModel` eingerichtet werden. Zum Verwenden der Features bei „kalten“ Elementen muss der Buildparameter `AllowColdItemPlacement` aktiviert werden. Hinweis: Es ist nicht möglich, `AllowColdItemPlacement` ohne `UseFeatureInModel` zu aktivieren.
+
+###4\.3. Empfehlungsargumentation
+
+Die Empfehlungsargumentation ist ein weiterer Nutzungsaspekt der Features. Das Empfehlungsmodul von Azure Machine Learning kann Features verwenden, um Erläuterungen („Argumentation“) zu den Empfehlungen bereitzustellen, um das Zutrauen desjenigen, der die Empfehlung verwendet, in das empfohlene Element zu erhöhen. Zum Aktivieren der Argumentation müssen die Parameter `AllowFeatureCorrelation` und `ReasoningFeatureList` eingerichtet werden, bevor ein Empfehlungsbuild angefordert wird.
+
+
+##5\. Einfaches Modell
+
+###5\.1. Modell erstellen
 Es wird eine Anforderung „Modell erstellen“ erstellt.
 
 | HTTP-Methode | URI |
@@ -797,6 +797,9 @@ d5358189-d70f-4e35-8add-34b83b4942b3, Pigs in Heaven
 	973f8cbd-0846-4f6b-9d28-4dd0d7dc3a19, Pigs in Heaven; Bewertung: 0,5367
 
 </pre>
+
+
+
 
 ##7\. Modellgeschäftsregeln
 Folgende Regeltypen werden unterstützt:
@@ -1881,7 +1884,7 @@ In der folgenden Tabelle sind die Parameter für Empfehlungsbuilds aufgeführt.
 |FbtSupportThreshold | Dies ist ein Maß dafür, wie konservativ das Modell ist. Dies ein Maß für die Grauwerte von Elementen, die bei der Modellierung berücksichtigt werden.| Ganze Zahl | 3-50 (6) |
 |FbtMaxItemSetSize | Begrenzt die Anzahl der Elemente in einem häufigen Satz.| Ganze Zahl | 2-3 (2) |
 |FbtMinimalScore | Dies ist die Mindestbewertung, die ein häufiger Satz haben muss, um in die zurückgegebenen Ergebnisse eingeschlossen zu werden. Höhere Bewertungen sind besser als niedrigere.| Doppelt | 0 und höher (0) |
-|FbtSimilarityFunction | Definiert die Ähnlichkeitsfunktion, die vom Build verwendet werden soll. | String | cooccurrence, lift, jaccard (lift) |
+|FbtSimilarityFunction | Definiert die Ähnlichkeitsfunktion, die vom Build verwendet werden soll. „Lift“ fördert Zufall, „Co-occurrence“ fördert Vorhersagbarkeit und „Jaccard“ stellt einen Kompromiss zwischen beiden dar. | String | cooccurrence, lift, jaccard (lift) |
 
 ###11.2. Auslösen eines Empfehlungsbuilds
 
@@ -2784,7 +2787,7 @@ Die Antwort umfasst einen Eintrag pro empfohlenem Elementsatz (ein Satz Elemente
 
 Eine Beispielantwort finden Sie unter 12.3.
 
-###12.5. Abrufen von Benutzerempfehlungen (für aktiven Build)
+###12\.5. Abrufen von Benutzerempfehlungen (für aktiven Build)
 
 Hierdurch werden Benutzerempfehlungen eines Builds vom Typ "Recommendation" abgerufen, der als aktiver Build gekennzeichnet ist.
 
@@ -2832,7 +2835,7 @@ Hinweise:
 
 | HTTP-Methode | URI |
 |:--------|:--------|
-|GET |`<rootURI>/UserRecommend?modelId=%27<modelId>%27&userId=%27<userId>&itemsIds=%27<itemsIds>%27&numberOfResults=<int>&includeMetadata=<bool>&apiVersion=%271.0%27`<br><br>Beispiel<br>`<rootURI>/UserRecommend?modelId=%272779c063-48fb-46c1-bae3-74acddc8c1d1%27&userId=%27u1101%27&itemsIds=%271003%27&numberOfResults=10&includeMetadata=false&apiVersion=%271.0%27`:|
+|GET |`<rootURI>/UserRecommend?modelId=%27<modelId>%27&userId=%27<userId>&itemsIds=%27<itemsIds>%27&numberOfResults=<int>&includeMetadata=<bool>&apiVersion=%271.0%27`<br><br>Beispiel<br>`<rootURI>/UserRecommend?modelId=%272779c063-48fb-46c1-bae3-74acddc8c1d1%27&userId=%27u1101%27&itemsIds=%271003%2C1000%27&numberOfResults=10&includeMetadata=false&apiVersion=%271.0%27`:|
 
 |	Parametername |	Gültige Werte |
 |:--------			|:--------								|
@@ -3094,4 +3097,4 @@ Dieses Dokument gibt Ihnen keinerlei geistige Eigentums- oder anderweitige Recht
 © 2015 Microsoft. Alle Rechte vorbehalten.
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

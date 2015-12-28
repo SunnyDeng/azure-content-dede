@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="11/16/2015"
+   ms.date="12/11/2015"
    ms.author="jgao"/>
 
 # Erstellen von Hadoop-Clustern in HDInsight
@@ -217,7 +217,7 @@ Weitere Informationen finden Sie im Blog von Azim Uddin mit dem Titel [Customizi
 
 ### Anpassen von Clustern mithilfe von Skriptaktionen
 
-Sie können zusätzliche Komponenten installieren oder die Clusterkonfiguration mithilfe von Skripts während der Erstellung anpassen. Diese Skripts werden mithilfe der Konfigurationsoption **Skriptaktion** aufgerufen, die vom Portal, von HDInsight Windows PowerShell-Cmdlets oder dem HDInsight .NET SDK verwendet werden kann. Weitere Informationen finden Sie unter [Anpassen eines HDInsight-Clusters mithilfe von Skriptaktionen](hdinsight-hadoop-customize-cluster.md).
+Sie können zusätzliche Komponenten installieren oder die Clusterkonfiguration mithilfe von Skripts während der Erstellung anpassen. Diese Skripts werden mithilfe der Konfigurationsoption **Skriptaktion** aufgerufen, die vom Portal, von Windows PowerShell-Cmdlets für HDInsight oder dem .NET-SDK für HDInsight verwendet werden kann. Weitere Informationen finden Sie unter [Anpassen eines HDInsight-Clusters mithilfe von Skriptaktionen](hdinsight-hadoop-customize-cluster.md).
 
 
 ### Verwenden virtueller Azure-Netzwerke
@@ -251,7 +251,7 @@ Weitere Informationen zu Features, Vorteilen und Funktionen von virtuellen Netzw
 
 ## Erstellen mithilfe des Portals
 
-Erläuterungen der Felder finden Sie in den [grundlegenden Konfigurationsoptionen](#basic-configuration-options) und [erweiterten Konfigurationsoptionen](#advanced-configuration-options).
+Erläuterung der Felder finden Sie in den [grundlegenden Konfigurationsoptionen](#basic-configuration-options) und [erweiterten Konfigurationsoptionen](#advanced-configuration-options).
 
 **So erstellen Sie einen HDInsight-Cluster**
 
@@ -277,7 +277,7 @@ Erläuterungen der Felder finden Sie in den [grundlegenden Konfigurationsoptione
 
   		* **Auswahlmethode**: Wählen Sie **Aus allen Abonnements** aus, damit Speicherkonten aus all Ihren Abonnements durchsucht werden können. Wählen Sie **Zugriffsschlüssel** aus, wenn Sie den **Speichernamen** und **Zugriffsschlüssel** eines vorhandenen Speicherkontos eingeben möchten.
   		* **Speicherkonto auswählen/Neu erstellen**: Klicken Sie auf **Speicherkonto auswählen**, um ein vorhandenes Speicherkonto auszuwählen, das Sie dem Cluster zuordnen möchten. OAlternativ können Sie auf **Neu erstellen** klicken, um ein neues Speicherkonto zu erstellen. Geben Sie den Namen des Speicherkontos in das angezeigte Feld ein. Wenn der Name verfügbar ist, wird ein grünes Häkchen angezeigt..
-  		* **Standardcontainer auswählen**: Geben Sie den Namen des Standardcontainers für den Cluster ein Sie können einen beliebigen Namen eingeben, es wird jedoch empfohlen, den Namen des Clusters zu verwenden. So können Sie leichter erkennen, dass es sich um den Container für diesen spezifischen Cluster handelt.
+  		* **Standardcontainer auswählen**: Geben Sie den Namen des Standardcontainers srfür den Cluster ein Sie können einen beliebigen Namen eingeben, es wird jedoch empfohlen, den Namen des Clusters zu verwenden. So können Sie leichter erkennen, dass es sich um den Container für diesen spezifischen Cluster handelt.
   		* **Standort**: Die geografische Region, in der sich das Speicherkonto befindet bzw. in der es erstellt wird. Dieser Standort bestimmt auch den Clusterstandort.  Der Cluster und das zugeordnete Standardspeicherkonto müssen sich im selben Azure-Rechenzentrum befinden.
   	
   * **Knotenpreistarife**: Legen Sie die Anzahl von Workerknoten fest, die Sie für den Cluster benötigen. Die vorkalkulierten Kosten für den Cluster werden auf dem Blatt angezeigt.
@@ -361,7 +361,7 @@ Die Azure-Ressourcen-Manager (ARM)-Vorlage erleichtert die Bereitstellung und er
 
 **So stellen Sie ein Cluster mithilfe einer ARM-Vorlage bereit**
 
-1. Speichern Sie die JSON-Datei aus [Anhang A](#appendix-a---arm-template) auf Ihrer Arbeitsstation.
+1. Speichern Sie die JSON-Datei aus [Anhang A](#appendix-a---arm-template) auf Ihrer Arbeitsstation.
 2. Erstellen Sie bei Bedarf die Parameter.
 3. Führen Sie die Vorlage mithilfe des folgenden PowerShell-Skripts aus:
 
@@ -408,6 +408,7 @@ Die folgenden Prozeduren müssen für die Erstellung eines HDInsight-Clusters mi
 - Erstellen eines Azure-Speicherkontos
 - Erstellen eines Azure-Blobcontainers
 - Erstellen eines HDInsight-Clusters
+
 
 	$subscriptionId = „<Azure Subscription ID>“
 	
@@ -751,4 +752,4 @@ Die folgende Azure-Ressourcen-Manager-Vorlage erstellt einen Hadoop-Cluster mit 
 [ssisclustercreate]: http://msdn.microsoft.com/library/mt146774(v=sql.120).aspx
 [ssisclusterdelete]: http://msdn.microsoft.com/library/mt146778(v=sql.120).aspx
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

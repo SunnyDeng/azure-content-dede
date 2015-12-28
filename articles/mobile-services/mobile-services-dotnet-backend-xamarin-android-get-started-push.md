@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-xamarin-android"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="08/18/2015"
+	ms.date="12/11/2015"
 	ms.author="glenga"/>
 
 # Hinzufügen von Pushbenachrichtigungen zur Mobile Services-App
@@ -74,4 +74,4 @@ Sie können die App testen, indem Sie ein Android-Telefon direkt mit einem USB-K
 [Xamarin.Android]: http://xamarin.com/download/
 [Azure Mobile Services Component]: http://components.xamarin.com/view/azure-mobile-services/
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

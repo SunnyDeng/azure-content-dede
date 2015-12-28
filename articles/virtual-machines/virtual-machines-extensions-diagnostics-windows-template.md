@@ -14,12 +14,12 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/13/2015"
+	ms.date="12/15/2015"
 	ms.author="saurabh"/>
 
 # Erstellen eines virtuellen Windows-Computers mit Überwachung und Diagnose mithilfe von Azure-Ressourcen-Manager-Vorlagen
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-include.md)]Dieser Artikel behandelt die Verwendung des Ressourcen-Manager-Bereitstellungsmodells.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell.
 
 Die Azure-Diagnoseerweiterung stellt Überwachungs- und Diagnosefunktionen auf einem Windows-basierten virtuellen Azure-Computer bereit. Sie können diese Funktionen auf dem virtuellen Computer nutzen, indem Sie die Erweiterung in die Azure-Ressourcen-Manager-Vorlage einbinden. Weitere Informationen zum Einbinden von Erweiterungen in eine Vorlage für virtuelle Computer finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen mit VM-Erweiterungen](virtual-machines-extensions-authoring-templates.md). Dieser Artikel beschreibt das Hinzufügen der Azure-Diagnoseerweiterung zu einer Vorlage für virtuelle Windows-Computer.
   
@@ -119,7 +119,9 @@ Nachfolgend sehen Sie den XML-Code für die Diagnosekonfiguration, der standardm
         "wadmetricsresourceid": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', resourceGroup().name , '/providers/', 'Microsoft.Compute/virtualMachines/')]",
         "wadcfgxend": ""><MetricAggregation scheduledTransferPeriod="PT1H"/><MetricAggregation scheduledTransferPeriod="PT1M"/></Metrics></DiagnosticMonitorConfiguration></WadCfg>"
 
-Der XML-Knoten für die Metrikdefinition in der oben stehenden Konfiguration ist ein wichtiges Konfigurationselement, da er festlegt, wie die weiter oben im XML-Code im Knoten *PerformanceCounter* definierten Leistungsindikatoren aggregiert und gespeichert werden. Mit diesen Metriken werden die Diagramme und Warnungen im Azure-Portal gesteuert – wenn Sie also die Überwachungsdaten im Portal anzeigen möchten, ist es wichtig, diese Metriken in die Konfiguration einzubinden.
+Der XML-Knoten für die Metrikdefinition in der oben stehenden Konfiguration ist ein wichtiges Konfigurationselement, da er festlegt, wie die weiter oben im XML-Code im Knoten *PerformanceCounter* definierten Leistungsindikatoren aggregiert und gespeichert werden.
+
+> [AZURE.IMPORTANT]Diese Metriken stellen die Grundlage für die Überwachungsdiagramme und Warnungen im Azure-Portal dar. Der Knoten **Metriken** muss mit der *resourceID* und der **MetricAggregation** in der Diagnosekonfiguration für den virtuellen Computer enthalten sein, wenn Sie die Überwachungsdaten für den virtuellen Computer im Azure-Portal anzeigen möchten.
 
 Im Folgenden sehen Sie ein Beispiel des XML-Codes für die Metrikdefinition:
 
@@ -134,35 +136,36 @@ Wenn Sie mehrere virtuelle Computer in einer Schleife erstellen, müssen Sie den
 
 	"xmlCfg": "[base64(concat(variables('wadcfgxstart'), variables('wadmetricsresourceid'), concat(parameters('vmNamePrefix'), copyindex()), variables('wadcfgxend')))]", 
 
+Die MetricAggregation-Werte *PT1H* und *PT1M* weisen auf eine Aggregierung während einer Minute und eine Aggregierung während einer Stunde hin.
 
-Die MetricAggregation-Werte *PT1H* und *PT1M* weisen auf eine Aggregierung ///während einer Stunde und eine Aggregierung während einer Minute hin.
+## WADMetrics-Tabellen im Speicher
 
 Die oben stehende Metrikkonfiguration generiert Tabellen mit den folgenden Benennungskonventionen in Ihrem Diagnosespeicherkonto:
 
-- **WADMetrics**: Standardpräfix für alle WADMetrics-Tabellen.
-- **PT1H** oder **PT1M**: Weist darauf hin, dass die Tabelle Daten enthält, die ///während einer Stunde bzw. einer Minute aggregiert wurden.
-- **P10D**: Gibt an, dass die Tabelle Daten ///für einen Zeitraum von 10 Tagen ab dem Tag enthält, an dem die Tabelle mit dem Sammeln von Daten begonnen hat.
-- **V2S**: Zeichenfolgenkonstante.
-- **yyyymmdd**: Das Datum, an dem die Tabelle mit dem Sammeln von Daten begonnen hat.
+- **WADMetrics:** Standardpräfix für alle WADMetrics-Tabellen.
+- **PT1H** oder **PT1M**: weist darauf hin, dass die Tabelle Daten enthält, die während einer Stunde bzw. einer Minute aggregiert wurden.
+- **P10D:** gibt an, dass die Tabelle Daten für einen Zeitraum von 10 Tagen ab dem Tag enthält, an dem die Tabelle mit dem Sammeln von Daten begonnen hat.
+- **V2S:** Zeichenfolgenkonstante.
+- **jjjjmmdd:** das Datum, an dem die Tabelle mit dem Sammeln von Daten begonnen hat.
 
-Beispiel: *WADMetricsPT1HP10DV2S20151108* enthält Metrikdaten, die ab 11. November 2015 10 Tage lang gesammelt und ///während einer Stunde aggregiert wurden.
+Beispiel: *WADMetricsPT1HP10DV2S20151108* enthält Metrikdaten, die ab 11. November 2015 10 Tage lang gesammelt und während einer Stunde aggregiert wurden.
 
 Jede WADMetrics-Tabelle enthält die folgenden Spalten:
 
-- **PartitionKey**: Der Partitionsschlüssel wird basierend auf dem *resourceID*-Wert gebildet um die VM-Ressource eindeutig zu identifizieren. Beispiel: 002Fsubscriptions:<subscriptionID>:002FresourceGroups:002F<ResourceGroupName>:002Fproviders:002FMicrosoft:002ECompute:002FvirtualMachines:002F<vmName>.  
-- **RowKey**: Folgt dem Format <Descending time tick>:<Performance Counter Name>. Zur Berechnung der absteigenden Zeiteinheiten werden die maximalen Zeiteinheiten abzüglich der Anfangszeit des Aggregationszeitraums herangezogen. Beispiel: Wenn der Sammelzeitraum am 10. Nov. 2015 um 00:00 Uhr UTC begann, lautet die Berechnung: DateTime.MaxValue.Ticks - (new DateTime(2015,11,10,0,0,0,DateTimeKind.Utc).Ticks). Für den Leistungsindikator für die im Arbeitsspeicher verfügbaren Bytes sieht der Zeilenschlüssel wie folgt aus: 2519551871999999999\_\_:005CMemory:005CAvailable:0020Bytes
-- **CounterName**: Der Name des Leistungsindikators. Entspricht dem in der XML-Konfiguration definierten *counterSpecifier*-Wert.
-- **Maximum**: Der Höchstwert des Leistungsindikators während des Aggregierungszeitraums.
-- **Minimum**: Der Mindestwert des Leistungsindikators während des Aggregierungszeitraums.
-- **Total**: Die Summe aller Werte des Leistungsindikators, die während des Aggregierungszeitraums gemeldet wurden.
-- **Count**: Die Gesamtanzahl von Werten, die für den Leistungsindikator gemeldet wurden.
-- **Average**: ///Der Durchschnitt der Werte „Total“/„Count“ des Leistungsindikators während des Aggregierungszeitraums.
+- **PartitionKey:** Der Partitionsschlüssel wird basierend auf dem *resourceID*-Wert gebildet um die VM-Ressource eindeutig zu identifizieren. Beispiel: 002Fsubscriptions:<subscriptionID>:002FresourceGroups:002F<ResourceGroupName>:002Fproviders:002FMicrosoft:002ECompute:002FvirtualMachines:002F<vmName>.  
+- **RowKey:** folgt dem Format <Descending time tick>:<Performance Counter Name>. Zur Berechnung der absteigenden Zeiteinheiten werden die maximalen Zeiteinheiten abzüglich der Anfangszeit des Aggregationszeitraums herangezogen. Beispiel: Wenn der Sammelzeitraum am 10. Nov. 2015 um 00:00 Uhr UTC begann, lautet die Berechnung: DateTime.MaxValue.Ticks - (new DateTime(2015,11,10,0,0,0,DateTimeKind.Utc).Ticks). Für den Leistungsindikator für die im Arbeitsspeicher verfügbaren Bytes sieht der Zeilenschlüssel wie folgt aus: 2519551871999999999\_\_:005CMemory:005CAvailable:0020Bytes
+- **CounterName:** der Name des Leistungsindikators. Entspricht dem in der XML-Konfiguration definierten *counterSpecifier*-Wert.
+- **Maximum:** der Höchstwert des Leistungsindikators während des Aggregierungszeitraums.
+- **Minimum:** der Mindestwert des Leistungsindikators während des Aggregierungszeitraums.
+- **Total:** die Summe aller Werte des Leistungsindikators, die während des Aggregierungszeitraums gemeldet wurden.
+- **Count:** die Gesamtanzahl von Werten, die für den Leistungsindikator gemeldet wurden.
+- **Average:** der Durchschnittswert (Total/Count) des Leistungsindikators während des Aggregationszeitraums.
 
 
 ## Nächste Schritte
 
-- Eine vollständige Beispielvorlage für einen virtuellen Windows-Computer mit Diagnoseerweiterung finden Sie unter[201-vm-monitoring-diagnostics-extension](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-monitoring-diagnostics-extension).   
+- Eine vollständige Beispielvorlage für einen virtuellen Windows-Computer mit Diagnoseerweiterung finden Sie unter [201-vm-monitoring-diagnostics-extension](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-monitoring-diagnostics-extension).   
 - Stellen Sie die Ressourcen-Manager-Vorlage über [Azure PowerShell](virtual-machines-deploy-rmtemplates-powershell.md) oder die [Azure-Befehlszeile](virtual-machines-deploy-rmtemplates-powershell.md) bereit.
 - Weitere Informationen zum [Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

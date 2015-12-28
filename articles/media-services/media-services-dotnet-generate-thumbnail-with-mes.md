@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/20/2015"    
+	ms.date="12/15/2015"    
 	ms.author="juliako"/>
 
 
@@ -357,7 +357,7 @@ Informationen zum Schema finden Sie in [diesem](https://msdn.microsoft.com/libra
 Es gelten die folgenden Bedingungen:
 
 - Bei der Verwendung von expliziten Zeitstempeln für "Start"/"Step"/"Range" wird davon ausgegangen, dass die Dauer der Eingabequelle mindestens 1 Minute beträgt.
-- Jpg-/Png-/BmpVideo-Elemente weisen Start-, Step- und Range-Zeichenfolgenattribute auf. Diese können folgendermaßen interpretiert werden:
+- Jpg-/Png-/BmpImage-Elemente weisen Start-, Step- und Range-Zeichenfolgenattribute auf. Diese können folgendermaßen interpretiert werden:
 
 	- Framenummer, wenn es sich nicht um negative ganze Zahlen handelt, z. B. "Start": "120",
 	- Relativ zur Quelldauer bei Ausdrücken mit dem Suffix "%", z. B. "Start": "15%" ODER
@@ -383,4 +383,4 @@ Es gelten die folgenden Bedingungen:
 
 [Media Services-Codierung (Übersicht)](media-services-encode-asset.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

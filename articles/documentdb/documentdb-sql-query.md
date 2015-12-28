@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/18/2015" 
+	ms.date="12/14/2015" 
 	ms.author="arramac"/>
 
 # SQL-Abfrage in DocumentDB
@@ -186,7 +186,7 @@ Beispiele zum Konfigurieren der Indexrichtlinie für Sammlungen finden Sie in de
 ## Grundlagen der DocumentDB-SQL-Abfrage
 Jede Abfrage besteht aus einer SELECT-Klausel und optionalen FROM- und WHERE-Klauseln nach ANSI-SQL-Standards. Normalerweise wird in jeder Abfrage die jeweilige Quelle in der From-Klausel aufgelistet. Anschließend wird in der WHERE-Klausel ein Filter auf die Quelle angewendet, um eine Teilmenge der JSON-Dokumente zurückzugeben. Zuletzt wird die SELECT-Klausel verwendet, um die abgefragten JSON-Werte in die ausgewählte Liste zu projizieren.
     
-    SELECT <select_list> 
+    SELECT [TOP <top_expression>] <select_list> 
     [FROM <from_specification>] 
     [WHERE <filter_condition>]
     [ORDER BY <sort_specification]    
@@ -661,6 +661,37 @@ Der Sonderoperator (*) wird unterstützt, um das Dokument unverändert zu projiz
 	    "isRegistered": true
 	}]
 
+###TOP-Operator
+Das TOP-Schlüsselwort kann verwendet werden, um die Anzahl der Werte aus einer Abfrage zu beschränken. Wenn TOP in Verbindung mit der ORDER BY-Klausel verwendet wird, ist das Resultset auf die ersten N der geordneten Werte beschränkt. Andernfalls werden die ersten N der Ergebnisse in einer nicht definierten Reihenfolge zurückgegeben. Es hat sich bewährt, in einer SELECT-Anweisung immer eine ORDER BY-Klausel mit der TOP-Klausel zu verwenden. Dies ist die einzige Möglichkeit, zuverlässig anzugeben, welche Zeilen von TOP betroffen sind.
+
+
+**Abfrage**
+
+	SELECT TOP 1 * 
+	FROM Families f 
+
+**Ergebnisse**
+
+	[{
+	    "id": "AndersenFamily",
+	    "lastName": "Andersen",
+	    "parents": [
+	       { "firstName": "Thomas" },
+	       { "firstName": "Mary Kay"}
+	    ],
+	    "children": [
+	       {
+	           "firstName": "Henriette Thaulow", "gender": "female", "grade": 5,
+	           "pets": [{ "givenName": "Fluffy" }]
+	       }
+	    ],
+	    "address": { "state": "WA", "county": "King", "city": "seattle" },
+	    "creationDate": 1431620472,
+	    "isRegistered": true
+	}]
+
+TOP kann mit einem konstanten Wert (wie oben gezeigt) oder einen Variablenwert mithilfe von parametrisierten Abfragen verwendet werden. Weitere Informationen finden Sie unten zu parametrisierte Abfragen.
+
 ## ORDER BY-Klausel
 Wie bei ANSI-SQL auch, können Sie beim Abfragen eine optionale Order By-Klausel einbinden. Die Klausel kann ein optionales ASC/DESC-Argument enthalten, um die Reihenfolge anzugeben, in der Ergebnisse abgerufen werden sollen. Eine ausführlichere Betrachtung von Order By finden Sie unter [Exemplarische Vorgehensweise: DocumentDB und „Order By“](documentdb-orderby.md).
 
@@ -1073,6 +1104,15 @@ Diese Anforderung kann dann an DocumentDB als parametrisierte JSON-Abfrage wie i
         "parameters": [          
             {"name": "@lastName", "value": "Wakefield"},         
             {"name": "@addressState", "value": "NY"},           
+        ] 
+    }
+
+Das Argument für TOP kann, wie unten gezeigt, mit parametrisierte Abfragen festgelegt werden.
+
+    {      
+        "query": "SELECT TOP @n * FROM Families",     
+        "parameters": [          
+            {"name": "@n", "value": 10},         
         ] 
     }
 
@@ -1603,6 +1643,22 @@ Für das Typsystem werden alle primitiven JSON-Typen unterstützt: numerische Ty
 		new { first = 1, second = 2 }; //an anonymous type with 2 fields              
 		new int[] { 3, child.grade, 5 };
 
+### Liste der unterstützten LINQ-Operatoren
+Es folgt eine Liste der unterstützten LINQ-Operatoren im LINQ-Anbieter, die im DocumentDB .NET SDK enthalten sind.
+
+-	**Select**: Projektionen einschließlich Objektkonstruktion werden in SQL SELECT übersetzt.
+-	**Where**: Filter werden in SQL WHERE übersetzt und unterstützen die Übersetzung von &&, || und ! in die SQL-Operatoren
+-	**SelectMany**: Ermöglicht das Entladen von Arrays in die SQL-JOIN-Klausel. Kann zum Verketten/Verschachteln von Ausdrücken in Arrayelemente verwendet werden.
+-	**OrderBy und OrderByDescending**: Auf-/absteigende Übersetzung in ORDER BY:
+-	**CompareTo**: Übersetzung in Bereichsvergleiche. Wird häufig für Zeichenfolgen verwendet werden, da sie nicht in .NET vergleichbar sind.
+-	**Take**: Übersetzung in SQL TOP, um Ergebnisse aus einer Abfrage einzuschränken.
+-	**Mathematische Funktionen**: Unterstützt die Übersetzung von „Abs“, „Acos“, „Asin“, „Atan“, „Ceiling“, „Cos“, „Exp“, „Floor“, „Log“, „Log10“, „Pow“, „Round“, „Sign“, „Sin“, „Sqrt“, „Tan“, „Truncate“ aus .NET in die entsprechenden SQL-integrierten Funktionen.
+-	**Zeichenfolgenfunktionen**: Unterstützt die Übersetzung von „Concat“, „Contains“, „EndsWith“, „IndexOf“, „Count“, „ToLower“, „TrimStart“, „Replace“, „Reverse“, „TrimEnd“, „StartsWith“, „SubString“, „ToUpper“ aus .NET in die entsprechenden SQL-integrierten Funktionen.
+-	**Arrayfunktionen**: Unterstützt die Übersetzung von „Concat“, „Contains“ und „Count“ aus .NET in die entsprechenden SQL-integrierten Funktionen.
+-	**Geospatial-Erweiterungsfunktionen**: Unterstützt die Übersetzung aus den Stubmethoden „Distance“, „Within“, „IsValid“ und „IsValidDetailed“ in die entsprechenden SQL-integrierten Funktionen.
+-	**Erweiterungsfunktion für benutzerdefinierte Funktion**: Unterstützt die Übersetzung aus der Stubmethode „UserDefinedFunctionProvider.Invoke“ in die entsprechende benutzerdefinierte Funktion.
+-	**Sonstiges**: Unterstützt die Übersetzung der Zusammenfügungs- und bedingten Operatoren. Kann „Contains“ je nach Kontext in die Zeichenfolge CONTAINS, ARRAY\_CONTAINS oder SQL IN übersetzen.
+
 ### SQL-Abfrageoperatoren
 Die folgenden Beispiele zeigen, wie einige der Standard-LINQ-Abfrageoperatoren in DocumentDB-Abfragen übersetzt werden.
 
@@ -2088,4 +2144,4 @@ Das folgende Beispiel zeigt, wie Sie mithilfe von "queryDocuments" in der server
 [consistency-levels]: documentdb-consistency-levels.md
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1217_2015-->

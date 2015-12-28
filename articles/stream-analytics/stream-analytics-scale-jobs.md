@@ -14,7 +14,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="data-services"
-	ms.date="12/04/2015"
+	ms.date="12/16/2015"
 	ms.author="jeffstok"/>
 
 # Skalieren von Azure Stream Analytics-Aufträgen zur Erhöhung des Durchsatzes bei der Streamingdatenverarbeitung #
@@ -61,7 +61,7 @@ Die vorherige Abfrage umfasst zwei Schritte.
 
 Für die Partitionierung eines Schrittes gelten die folgenden Voraussetzungen:
 
-- Die Eingabequelle muss partitioniert sein. Siehe [Azure Stream Analytics-Entwicklerhandbuch](../stream-analytics-developer-guide.md) und [Azure Event Hubs-Entwicklerhandbuch](../azure-event-hubs-developer-guide.md).
+- Die Eingabequelle muss partitioniert sein. Siehe [Azure Stream Analytics-Entwicklerhandbuch](../stream-analytics-developer-guide.md) und [Azure Event Hubs-Entwicklerhandbuch](../event-hubs/event-hubs-programming-guide.md).
 - Die SELECT-Anweisung der Abfrage muss aus einer partitionierten Eingabequelle lesen.
 - Die Abfrage im Schritt muss das Schlüsselwort **Partition By** aufweisen.
 
@@ -265,4 +265,4 @@ Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://so
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

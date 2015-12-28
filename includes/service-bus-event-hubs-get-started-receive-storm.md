@@ -16,7 +16,7 @@ In diesem Lernprogramm wird eine [HDInsight Storm][]-Installation verwendet, in 
 
 4. Erstellen Sie in Eclipse ein neues Maven-Projekt (klicken Sie auf **File**, dann auf **New** und **Project**).
 
-   	![][12]
+   ![][12]
 
 5. Wählen Sie **Use default Workspace location** aus, und klicken Sie dann auf **Next**.
 
@@ -230,4 +230,4 @@ In diesem Lernprogramm wird eine [HDInsight Storm][]-Installation verwendet, in 
 [13]: ./media/service-bus-event-hubs-getstarted/create-eph-csharp1.png
 [14]: ./media/service-bus-event-hubs-getstarted/create-sender-csharp1.png
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

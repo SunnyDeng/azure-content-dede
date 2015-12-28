@@ -1,30 +1,29 @@
 <!--author=v-sharos last changed: 11/06/15-->
 
-#### To add a StorSimple backup policy
+#### So fügen Sie eine StorSimple-Sicherungsrichtlinie hinzu
 
-1. On the device **Quick Start** page, click the **Backup Policies** tab. This will take you to the **Backup Policies** page.
+1. Klicken Sie auf der Seite **Schnellstart** des Geräts auf die Registerkarte **Sicherungsrichtlinien**. Dadurch gelangen Sie auf die Seite **Sicherungsrichtlinien**.
 
-2. At the bottom of the page, click **Add** to start the Add Backup Policy wizard.
+2. Klicken Sie unten auf der Seite auf **Hinzufügen**, um den Assistenten zum Hinzufügen einer Sicherungsrichtlinie zu starten.
 
-    ![Add a backup policy 1](./media/storsimple-add-backup-policy-u2/AddBackupPolicy1.png)
+    ![Hinzufügen einer Sicherungsrichtlinie 1](./media/storsimple-add-backup-policy-u2/AddBackupPolicy1.png)
 
-3. In the **Add Backup Policy** dialog box, under **Define your backup policy**, do the following:
+3. Führen Sie im Dialogfeld **Sicherungsrichtlinie hinzufügen** unter **Sicherungsrichtlinie definieren** die folgenden Schritte aus:
 
-    1. Specify a backup policy name that contains between 3 and 150 characters.
-    2. Click the check box(es) to assign one or more volumes to this backup policy. Note that you cannot select volumes that use different cloud service providers. If you are using multiple cloud service providers, based on your first selection, the list will show volumes belonging to only that cloud service provider. This will allow you to group volumes belonging to a single cloud service provider in a snapshot.
-    3. Click the arrow icon ![arrow icon](./media/storsimple-add-backup-policy-u2/HCS_ArrowIcon-include.png) to go to the next page.
+    1. Geben Sie für Ihre Sicherungsrichtlinie einen Namen an, der zwischen 3 und 150 Zeichen lang ist.
+    2. Aktivieren Sie die entsprechenden Kontrollkästchen, um dieser Sicherungsrichtlinie Volumes zuzuweisen. Beachten Sie, dass Sie keine Volumes auswählen können, die andere Clouddienstanbieter verwenden. Bei Verwendung von mehreren Clouddienstanbietern werden in der Liste basierend auf der ersten Auswahl Volumes angezeigt, die nur zu diesem Clouddienstanbieter gehören. Dadurch können Sie Volumes in einer Momentaufnahme gruppieren, die zu einem einzelnen Clouddienstanbieter gehören.
+    3. Klicken Sie auf den Pfeil ![Pfeilsymbol](./media/storsimple-add-backup-policy-u2/HCS_ArrowIcon-include.png), um zur nächsten Seite zu wechseln.
 
-     ![Add a backup policy 2](./media/storsimple-add-backup-policy-u2/AddBackupPolicy2.png)
+     ![Hinzufügen einer Sicherungsrichtlinie 2](./media/storsimple-add-backup-policy-u2/AddBackupPolicy2.png)
 
-4. Under **Define a schedule**, do the following:
-    1. In the **Type of Backup** box, select **Cloud Snapshot** or **Local Snapshot** from the drop-down list.
-    2. Indicate the frequency of backups (specify a number and then choose **Days** or **Weeks** from the drop-down list.
-    3. Enter a retention schedule.
-    4. Enter a time and date for the backup policy to begin.  
-    6. Click the check icon ![check icon](./media/storsimple-add-backup-policy-u2/HCS_CheckIcon-include.png) to save the policy.
+4. Gehen Sie unter **Zeitplan definieren** folgendermaßen vor:
+    1. Wählen Sie im Feld **Typ der Sicherung** eine der Optionen **Cloudmomentaufnahme** oder **Lokale Momentaufnahme** in der Dropdownliste aus.
+    2. Geben Sie die Häufigkeit der Sicherungen an. (Geben Sie eine Zahl an, und wählen Sie dann **Tage** oder **Wochen** in der Dropdownliste aus.)
+    3. Geben Sie einen Aufbewahrungszeitplan ein.
+    4. Geben Sie Startzeit und -datum für die Sicherungsrichtlinie ein.  
+    6. Klicken Sie auf das Häkchensymbol ![Häkchensymbol](./media/storsimple-add-backup-policy-u2/HCS_CheckIcon-include.png), um die Richtlinie zu speichern.
 
-The newly added policy will be displayed in the tabular view on the **Backup Policies** page.
+Die neu hinzugefügte Richtlinie wird in der Tabellenansicht auf der Seite **Sicherungsrichtlinien** angezeigt.
  
 
-
-
+<!---HONumber=AcomDC_1217_2015-->

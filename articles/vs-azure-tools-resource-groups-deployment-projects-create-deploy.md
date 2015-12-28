@@ -3,9 +3,9 @@
    description="Verwenden Sie Visual Studio, um ein Azure-Ressourcengruppenprojekt zu erstellen und die Ressourcen in Azure bereitzustellen."
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tlee" />
+   editor="" />
 <tags
    ms.service="azure-resource-manager"
    ms.devlang="multiple"
@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="11/13/2015"
-   ms.author="kempb" />
+   ms.author="tarcher" />
 
 # Erstellen und Bereitstellen von Azure-Ressourcengruppen mit Visual Studio
 
@@ -196,4 +196,4 @@ Anpassungen wurden auch an einigen Variablennamen und Buildaufgaben vorgenommen,
 
 Informationen zum Hinzufügen von Ressourcen zu Ihrer Azure-Ressourcengruppe in Visual Studio finden Sie unter [Bearbeiten von Ressourcen-Manager-Vorlagen mit Visual Studio](vs-azure-tools-resource-group-adding-resources.md).
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

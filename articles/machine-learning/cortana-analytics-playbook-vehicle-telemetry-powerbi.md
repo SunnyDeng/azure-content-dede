@@ -306,7 +306,7 @@ Hinweis: Es dauert ca. zwei Stunden (ab dem erfolgreichen Abschluss der Bereitst
 
 • Speichern Sie die Datei lokal.
 
-**Konfigurieren von PowerBI-Berichten** • Öffnen Sie die Designer-Datei „VehicleTelemetryAnalytics – Desktop-Report.pbix“ über PowerBI Desktop. Falls noch nicht geschehen, können Sie Power BI Desktop [hier](http://www.microsoft.com/download/details.aspx?id=45331) herunterladen und installieren.
+**Konfigurieren von PowerBI-Berichten** • Öffnen Sie die Designer-Datei „VehicleTelemetryAnalytics – Desktop-Report.pbix“ über PowerBI Desktop. Falls noch nicht geschehen, können Sie Power BI Desktop unter [Microsoft Power BI Desktop](http://www.microsoft.com/download/details.aspx?id=45331) herunterladen und installieren.
 
 • Klicken Sie auf **Abfragen bearbeiten**.
 
@@ -390,4 +390,4 @@ Heften Sie Diagramme an das vorhandene Dashboard **Vehicle Telemetry Analytics D
 
 Glückwunsch! Sie haben die Berichte und das Dashboard erfolgreich erstellt, um in Bezug auf den Fahrzeugzustand und das Fahrverhalten Informationen in den Bereichen Echtzeit, vorbeugende Wartung und Batchprozesse zu erhalten.
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

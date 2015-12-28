@@ -97,7 +97,7 @@ Das Ziel dieses Abschnitts besteht darin, das einmalige Anmelden von Azure AD i
     > [AZURE.NOTE]Wenden Sie sich unter [SupportTeam@statuspage.io](mailto:SupportTeam@statuspage.io) an das Supportteam von StatusPage, um die für das Konfigurieren der einmaligen Anmeldung erforderlichen Metadaten anzufordern.
 
 
-    a. Kopieren Sie in den Metadaten den Wert für „Aussteller“, und fügen Sie ihn in das Textfeld **Aussteller** ein.
+    a. Kopieren Sie in den Metadaten den Wert für „Aussteller“, und fügen Sie ihn in das Textfeld **Bezeichner** ein.
 
     b. Kopieren Sie in den Metadaten den Wert für „Antwort-URL“, und fügen Sie ihn in das Textfeld **Antwort-URL** ein.
 
@@ -244,4 +244,4 @@ Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für einm
 [204]: ./media/active-directory-saas-statuspage-tutorial/tutorial_general_204.png
 [205]: ./media/active-directory-saas-statuspage-tutorial/tutorial_general_205.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

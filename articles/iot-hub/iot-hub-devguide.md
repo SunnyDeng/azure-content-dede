@@ -78,7 +78,7 @@ Wenn Sie eine Event Hub-Verbindungszeichenfolge mit den angegebenen Informatione
 Im Folgenden finden Sie eine Liste der SDKs und Integrationen, die mit IoT Hub verwendet werden können:
 
 * [Java-Event Hubs-Client](https://github.com/hdinsight/eventhubs-client)
-* [Apache Storm-Spout](../hdinsight/hdinsight-storm-develop-csharp-event-hub-topology.md), den Link zur Spoutquelle finden Sie [hier](https://github.com/apache/storm/tree/master/external/storm-eventhubs)
+* [Apache Storm-Spout](../hdinsight/hdinsight-storm-develop-csharp-event-hub-topology.md), Sie können sich die [Spoutquelle](https://github.com/apache/storm/tree/master/external/storm-eventhubs) bei GitHub ansehen.
 * [Apache Spark-Integration](../hdinsight/hdinsight-apache-spark-csharp-apache-zeppelin-eventhub-streaming.md)
 
 ## Geräteidentitätsregistrierung
@@ -289,7 +289,8 @@ Die folgende Tabelle zeigt den Satz an Systemeigenschaften in IoT Hub-Nachrichte
 | -------- | ----------- |
 | MessageId | Eine vom Benutzer festgelegte Kennung für die Nachricht, wird üblicherweise für Anforderung-Antwort-Muster verwendet. Format: Eine Zeichenfolge mit Berücksichtigung von Klein-/Großschreibung (bis zu 128 Zeichen lang), die aus alphanumerischen ASCII-Zeichen (7 Bit) + `{'-', ':',’.', '+', '%', '_', '#', '*', '?', '!', '(', ')', ',', '=', '@', ';', '$', '''}` besteht. |
 | Sequenznummer | Eine Nummer (für jede Gerätewarteschlange eindeutig), die jeder C2D-Nachricht von IoT Hub zugewiesen wird. |
-| To | Gibt in [C2D](#c2d)-Nachrichten das Ziel der Nachricht an.|
+| To  
+ | Gibt in [C2D](#c2d)-Nachrichten das Ziel der Nachricht an.|
 | ExpiryTimeUtc | Datum und Uhrzeit des Nachrichtenablaufs. |
 | EnqueuedTime | Zeitpunkt des Empfangs der Nachricht durch IoT Hub. |
 | CorrelationId | Zeichenfolgeneigenschaft, die üblicherweise die Nachrichten-ID der Anforderung bei Anforderung-Antwort-Mustern enthält. |
@@ -404,7 +405,7 @@ Jede C2D-Nachricht verfügt über eine Gültigkeitsdauer. Diese kann (in der Eig
 
 Beim Senden einer C2D-Nachricht kann der Dienst das Übermitteln von Feedback auf Nachrichtenbasis anfordern, um über den finalen Status dieser Nachricht informiert zu werden. Wenn die **Ack**-Eigenschaft auf **positive** festgelegt wird, generiert IoT Hub nur dann eine Feedbacknachricht, wenn die C2D-Nachricht den Status **Abgeschlossen** erreicht hat. Bei Festlegung der **Ack**-Eigenschaft auf **negative** generiert IoT Hub nur dann eine Feedbacknachricht, wenn die C2D-Nachricht den Status **Unzustellbar** erreicht. Bei Festlegung der **Ack**-Eigenschaft auf **full** generiert IoT Hub in beiden Fällen eine Feedbacknachricht.
 
-Wie im Abschnitt [Endpunkte](#endpoints) beschrieben, wird Feedback über einen dienstseitigen Endpunkt (`/messages/servicebound/feedback`) in Form von Nachrichten übermittelt. Die Semantik für den Empfang von Feedback stimmt mit der für C2D-Nachrichten überein, die den gleichen [Nachrichtenlebenszyklus](#message lifecycle) aufweisen. Nachrichtenfeedback wird nach Möglichkeit in einer einzigen Nachricht zusammengefasst, die das folgende Format aufweist.
+Wie im Abschnitt [Endpunkte](#endpoints) beschrieben, wird Feedback über einen dienstseitigen Endpunkt (`/messages/servicebound/feedback`) in Form von Nachrichten übermittelt. Die Semantik für den Empfang von Feedback stimmt mit der für C2D-Nachrichten überein, die den gleichen [Nachrichtenlebenszyklus aufweisen](#message lifecycle). Nachrichtenfeedback wird nach Möglichkeit in einer einzigen Nachricht zusammengefasst, die das folgende Format aufweist.
 
 Jede vom Feedbackendpunkt empfangene Nachricht umfasst die folgenden Eigenschaften:
 
@@ -418,8 +419,8 @@ Der Nachrichtenkörper ist ein serialisiertes JSON-Array aus Datensätzen, von d
 
 | Eigenschaft | Beschreibung |
 | -------- | ----------- |
-| EnqueuedTime | Zeitstempel, der den Zeitpunkt des Nachrichtenergebnisses angibt. Diese Eigenschaft kann beispielsweise angeben, wann das Gerät abgeschlossen wurde oder die Nachricht abgelaufen ist. |
-| CorrelationId | **MessageId** der C2D-Nachricht, auf die sich das Feedback bezieht. |
+| EnqueuedTimeUtc | Zeitstempel, der den Zeitpunkt des Nachrichtenergebnisses angibt. Diese Eigenschaft kann beispielsweise angeben, wann das Gerät abgeschlossen wurde oder die Nachricht abgelaufen ist. |
+| OriginalMessageId | **MessageId** der C2D-Nachricht, auf die sich das Feedback bezieht. |
 | Beschreibung | Zeichenfolgenwerte für die zuvor genannten Ergebnisse. |
 | DeviceId | **DeviceId** des Zielgeräts für die C2D-Nachricht, auf die sich das Feedback bezieht. |
 | DeviceGenerationId | **DeviceGenerationId** des Zielgeräts für die C2D-Nachricht, auf die sich das Feedback bezieht. |
@@ -532,4 +533,4 @@ Nachdem Sie in diesem Dokument einen Überblick über die Entwicklung für IoT H
 [lnk-tls]: https://tools.ietf.org/html/rfc5246
 [lnk-iotdev]: https://azure.microsoft.com/develop/iot/
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

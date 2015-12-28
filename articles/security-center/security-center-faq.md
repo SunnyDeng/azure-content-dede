@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="12/08/2015"
+   ms.date="12/10/2015"
    ms.author="terrylan"/>
 
 # Azure Security Center – Häufig gestellte Fragen
@@ -101,6 +101,6 @@ Es werden [klassische virtuelle Computer und virtuelle Ressourcen-Manager-Comput
 Zugriffssteuerungslisten-Empfehlungen gelten derzeit für klassische virtuelle Computer. Netzwerksicherheitsgruppen und Empfehlungen für die Installation einer Web Application Firewall gelten derzeit nur für virtuelle Ressourcen-Manager-Computer.
 
 ### Werden virtuelle Linux-Computer unterstützt?
-Azure Security Center bietet eine Basisüberwachung für virtuelle Linux-Computer (nur für die Ubuntu-Versionen 12.04, 14.04, 14.10, 15.04). Zukünftig werden weitere Sicherheitintegritätsüberwachung und Datensammlung/-analysen verfügbar sein, und es sollen weitere Linux-Distributionen unterstützt werden.
+Azure Security Center bietet eine Basisüberwachung für virtuelle Linux-Computer (nur für die Ubuntu-Versionen 12.04, 14.04, 14.10 und 15.04). Zukünftig werden weitere Sicherheitintegritätsüberwachung und Datensammlung/-analysen verfügbar sein, und es sollen weitere Linux-Distributionen unterstützt werden.
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

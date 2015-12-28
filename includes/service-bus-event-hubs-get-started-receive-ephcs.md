@@ -1,8 +1,8 @@
 ## Empfangen von Nachrichten mit EventProcessorHost
 
-[EventProcessorHost][] ist eine .NET-Klasse, die das Empfangen von Ereignissen von Event Hubs durch Verwalten von permanenten Prüfpunkten und parallelen Empfangsvorgängen von diesen Event Hubs vereinfacht. Mit [EventProcessorHost] können Sie Ereignisse selbst dann auf mehrere Empfänger aufteilen, wenn sie in verschiedenen Knoten gehostet werden. In diesem Beispiel wird die Verwendung von [EventProcessorHost] für einen einzelnen Empfänger veranschaulicht. Im Beispiel [Skalieren der Ereignisverarbeitung] wird veranschaulicht, wie [EventProcessorHost] mit mehreren Empfängern verwendet wird.
+[EventProcessorHost][] ist eine .NET-Klasse, die das Empfangen von Ereignissen von Event Hubs durch Verwalten von permanenten Prüfpunkten und parallelen Empfangsvorgängen von diesen Event Hubs vereinfacht. Mit [EventProcessorHost][] können Sie Ereignisse selbst dann auf mehrere Empfänger aufteilen, wenn sie in verschiedenen Knoten gehostet werden. In diesem Beispiel wird die Verwendung von [EventProcessorHost][] für einen einzelnen Empfänger veranschaulicht. Im Beispiel [Skalieren der Ereignisverarbeitung][] wird veranschaulicht, wie [EventProcessorHost][] mit mehreren Empfängern verwendet wird.
 
-Um [EventProcessorHost] verwenden zu können, benötigen Sie ein [Azure-Speicherkonto]\:
+Um [EventProcessorHost][] verwenden zu können, benötigen Sie ein [Azure-Speicherkonto][]\:
 
 1. Melden Sie sich beim [klassischen Azure-Portal][] an, und klicken Sie im unteren Teil des Bildschirms auf **NEU**.
 
@@ -43,7 +43,7 @@ Um [EventProcessorHost] verwenden zu können, benötigen Sie ein [Azure-Speicher
 	Ersetzen Sie anschließend den Text der Klasse durch folgenden Code:
 
 	```
-    class SimpleEventProcessor : IEventProcessor
+	class SimpleEventProcessor : IEventProcessor
 	{
 	    Stopwatch checkpointStopWatch;
 
@@ -74,7 +74,7 @@ Um [EventProcessorHost] verwenden zu können, benötigen Sie ein [Azure-Speicher
 	                context.Lease.PartitionId, data));
 	        }
 
-	        //Call checkpoint every 5 minutes, so that worker can resume processing from the 5 minutes back if it restarts.
+	        //Call checkpoint every 5 minutes, so that worker can resume processing from 5 minutes back if it restarts.
 	        if (this.checkpointStopWatch.Elapsed > TimeSpan.FromMinutes(5))
             {
                 await context.CheckpointAsync();
@@ -82,11 +82,11 @@ Um [EventProcessorHost] verwenden zu können, benötigen Sie ein [Azure-Speicher
             }
 	    }
 	}
-    ````
+````
 
 	Diese Klasse wird von **EventProcessorHost** zur Verarbeitung der vom Event Hub empfangenen Ereignisse aufgerufen. Beachten Sie, dass die `SimpleEventProcessor`-Klasse eine Stoppuhr verwendet, um in regelmäßigen Abständen die "checkpoint"-Methode für den **EventProcessorHost**-Kontext aufzurufen. Dadurch wird sichergestellt, dass der Empfänger bei einem Neustart maximal nur die Daten verlieren kann, die in den letzten fünf Minuten verarbeitet wurden.
 
-9. Fügen Sie am Anfang der **Program**-Klasse die folgenden `using`-Anweisungen hinzu:
+9. Fügen Sie in der **Program**-Klasse die folgenden `using`-Anweisungen am Anfang der Datei hinzu:
 
 	```
 	using Microsoft.ServiceBus.Messaging;
@@ -94,7 +94,7 @@ Um [EventProcessorHost] verwenden zu können, benötigen Sie ein [Azure-Speicher
 	using System.Threading.Tasks;
 	```
 
-	Ändern Sie dann wie unten gezeigt die **Program**-Klasse der **Main**-Methode, und ersetzen Sie dabei den Namen und die Verbindungszeichenfolge des Event Hubs sowie das Speicherkonto und den Speicherschlüssel, die Sie in den vorherigen Abschnitten kopiert haben.
+	Ändern Sie dann wie folgt die `Main`-Methode in der `Program`-Klasse, und ersetzen Sie dabei den Namen und die Verbindungszeichenfolge des Event Hubs sowie das Speicherkonto und den Speicherschlüssel, die Sie in den vorherigen Abschnitten kopiert haben.
 
     ```
 	static void Main(string[] args)
@@ -116,7 +116,7 @@ Um [EventProcessorHost] verwenden zu können, benötigen Sie ein [Azure-Speicher
     }
 	````
 
-> [AZURE.NOTE]In diesem Tutorial wird eine einzelne Instanz von [EventProcessorHost][] verwendet. Um den Durchsatz zu erhöhen, sollten Sie mehrere Instanzen von [EventProcessorHost][] ausführen, wie im Beispiel [Skalieren der Ereignisverarbeitung] beschrieben. In diesen Fällen koordinieren sich die verschiedenen automatisch untereinander, um die Last der eingegangenen Ereignisse ausgeglichen zu verteilen. Wenn mehrere Empfänger für jeden Prozess *alle* Ereignisse verarbeiten sollen, müssen Sie das **ConsumerGroup**-Konzept verwenden. Wenn Ereignisse von anderen Computern empfangen werden, kann es hilfreich sein, die [EventProcessorHost][]-Instanzen nach den Computern (oder Rollen) zu benennen, auf denen sie bereitgestellt werden. Weitere Informationen zu diesen Themen finden Sie unter [Event Hubs – Übersicht][] und im [Event Hubs-Programmierhandbuch][].
+> [AZURE.NOTE]In diesem Tutorial wird eine einzelne Instanz von [EventProcessorHost][] verwendet. Um den Durchsatz zu erhöhen, sollten Sie mehrere Instanzen von [EventProcessorHost][] ausführen, wie im Beispiel [Skalieren der Ereignisverarbeitung][] beschrieben. In diesen Fällen koordinieren sich die verschiedenen automatisch untereinander, um die Last der eingegangenen Ereignisse ausgeglichen zu verteilen. Wenn mehrere Empfänger für jeden Prozess *alle* Ereignisse verarbeiten sollen, müssen Sie das **ConsumerGroup**-Konzept verwenden. Wenn Ereignisse von anderen Computern empfangen werden, kann es hilfreich sein, die [EventProcessorHost][]-Instanzen nach den Computern (oder Rollen) zu benennen, auf denen sie bereitgestellt werden. Weitere Informationen zu diesen Themen finden Sie unter [Event Hubs – Übersicht][] und im [Event Hubs-Programmierhandbuch][].
 
 <!-- Links -->
 [Event Hubs – Übersicht]: event-hubs-overview.md
@@ -133,4 +133,4 @@ Um [EventProcessorHost] verwenden zu können, benötigen Sie ein [Azure-Speicher
 [13]: ./media/service-bus-event-hubs-getstarted/create-eph-csharp1.png
 [14]: ./media/service-bus-event-hubs-getstarted/create-sender-csharp1.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

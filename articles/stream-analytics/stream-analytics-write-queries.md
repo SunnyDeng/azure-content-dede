@@ -14,7 +14,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="12/04/2015" 
+	ms.date="12/11/2015" 
 	ms.author="jeffstok"/>
 
 # Schreiben von Abfragen in Stream Analytics
@@ -34,7 +34,7 @@ Das Schreiben von Abfragen für die Datenstrom-Verarbeitungslogik in Azure Strea
 2.	Neue Aufträge verfügen über Abfragevorlagen, die Ihnen beim Einstieg helfen. Abfragevorlagen führen eine "Pass-Through"-Abfrage durch, die alle Felder aus den Eingabeereignissen in die Ausgabe überträgt.
 
     - Wenn Sie mindestens eine Eingabe und Ausgabe für den Auftrag definiert haben, können Sie den Platzhalter "[YourOutputAlias]" und die Felder "[YourInputAlias]" durch die Aliase der Eingabe und Ausgabe ersetzen, die Sie zuerst verwenden möchten. Darüber hinaus können Sie die Abfrage noch immer im Azure-Portal erstellen und testen, ohne Eingaben und Ausgaben für den Auftrag zu definieren.
-    - Wenn Sie mehr als eine einfache Pass-Through-Abfrage verarbeiten möchten, können Sie die Abfragedefinition bearbeiten. Betrachten Sie zum Einstieg in die Erstellung von Abfragen einige der [hier](stream-analytics-query-patterns) erfassten allgemeinen Abfragemuster.  
+    - Wenn Sie mehr als eine einfache Pass-Through-Abfrage verarbeiten möchten, können Sie die Abfragedefinition bearbeiten. Betrachten Sie zum Einstieg in die Erstellung von Abfragen einige der [hier](stream-analytics-stream-analytics-query-patterns.md) erfassten allgemeinen Abfragemuster.  
   
     ![Fenster mit Abfragedaten](./media/stream-analytics-write-queries/2-stream-analytics-write-queries.png)
 
@@ -71,4 +71,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

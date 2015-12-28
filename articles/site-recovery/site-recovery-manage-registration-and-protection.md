@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Verwalten von Registrierung und Schutz" 
-	description="Azure Site Recovery koordiniert Replikation, Failover und Wiederherstellung virtueller Computer auf lokalen Servern zu Azure oder einem sekundären Datencenter. In diesem Artikel erfahren Sie, wie Sie die Registrierung von Servern im Site Recovery-Tresor aufheben und den Schutz für virtuelle Computer und physische Server deaktivieren." 
+	pageTitle="Aufheben der Registrierung von Servern und Deaktivieren des Schutzes | Microsoft Azure" 
+	description="Azure Site Recovery koordiniert Replikation, Failover und Wiederherstellung virtueller Computer auf lokalen Servern zu Azure oder einem sekundären Rechenzentrum. In diesem Artikel erfahren Sie, wie Sie die Registrierung von Servern im Site Recovery-Tresor aufheben und den Schutz für virtuelle Computer und physische Server deaktivieren." 
 	services="site-recovery" 
 	documentationCenter="" 
 	authors="rayne-wiselman" 
@@ -13,10 +13,10 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery" 
-	ms.date="10/07/2015" 
+	ms.date="12/14/2015" 
 	ms.author="raynew"/>
 
-# Verwalten von Registrierung und Schutz
+# Aufheben der Registrierung von Servern und Deaktivieren des Schutzes
 
 In diesem Artikel erfahren Sie, wie Sie die Registrierung von Servern im Site Recovery-Tresor aufheben und wie Sie den Site Recovery-Schutz für virtuelle Computer deaktivieren. Sollten Sie nach der Lektüre dieses Artikels noch Fragen haben, stellen Sie diese bitte im [Azure Recovery Services-Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
 
@@ -212,4 +212,4 @@ Wenn Sie den Schutz für eine virtuelle VMware-Maschine oder einen physischen Se
 	- **Schutz deaktivieren**: Wenn Sie diese Option aktivieren und speichern, wird der Computer nicht mehr durch Site Recovery geschützt. Die Sicherheitseinstellungen für den Computer werden automatisch bereinigt.
 	- **Aus dem Tresor entfernen**: Wenn Sie diese Option auswählen, wird der Computer nur aus dem Site Recovery-Tresor entfernt. Lokale Sicherheitseinstellungen für den Computer sind nicht betroffen. Um die Einstellungen vom Computer und den virtuellen Computer aus dem Azure-Abonnement zu entfernen, müssen Sie die Einstellungen bereinigen, indem Sie den Mobilitätsdienst deinstallieren. ![Optionen entfernen](./media/site-recovery-manage-registration-and-protection/RegistrationProtection_RemoveVM.png)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

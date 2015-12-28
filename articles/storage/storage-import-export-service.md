@@ -82,7 +82,7 @@ Das Microsoft Azure Import-/Exporttool generiert für jedes Laufwerk bei der Vor
  
 2.	Geben Sie im ersten Schritt des Assistenten an, dass Sie Ihr Laufwerk vorbereitet haben und dass Sie die Laufwerkprotokolldatei zur Hand haben.
  
-3.	Geben Sie im zweiten Schritt die Kontaktinformationen des Ansprechpartners für diesen Importauftrag an. Wenn Sie ausführliche Protokolldaten für den Importauftrag speichern möchten, wählen Sie die Option **Save the verbose log in my 'waimportexport' blob container**.
+3.	Geben Sie im zweiten Schritt die Kontaktinformationen des Ansprechpartners für diesen Importauftrag an. Wenn Sie ausführliche Protokolldaten für den Importauftrag speichern möchten, wählen Sie die Option **Speichern des ausführlichen Protokolls im Blob-Container  'waimportexport'**.
 
 4.	Laden Sie im dritten Schritt die Protokolldateien hoch, die Sie während der Vorbereitung des Laufwerks erhalten haben. Sie müssen pro vorbereitetem Laufwerk eine Datei hochladen.
 
@@ -108,7 +108,7 @@ Erstellen Sie einen Exportauftrag, um den Import-/Export-Dienst darüber zu info
 
 1. 	Navigieren Sie zum Speicherkonto im [Azure-Portal](portal.azure.com), und zeigen Sie das Dashboard an, um einen Exportauftrag zu erstellen. Klicken Sie unter **Schnelleinsicht** auf **Create an Export Job**, und fahren Sie mit dem Assistenten fort.
 
-2. 	Geben Sie im zweiten Schritt die Kontaktinformationen des Ansprechpartners für diesen Exportauftrag an. Wenn Sie ausführliche Protokolldaten für den Exportauftrag speichern möchten, wählen Sie die Option **Save the verbose log in my 'waimportexport' blob container**.
+2. 	Geben Sie im zweiten Schritt die Kontaktinformationen des Ansprechpartners für diesen Exportauftrag an. Wenn Sie ausführliche Protokolldaten für den Exportauftrag speichern möchten, wählen Sie die Option **Speichern des ausführlichen Protokolls im Blob-Container  'waimportexport'**.
 
 3.	Legen Sie im dritten Schritt fest, welche Blob-Daten Sie von Ihrem Speicherkonto auf Ihr leeres Laufwerk oder Ihre Laufwerke exportieren möchten. Sie können alle Blob-Daten des Speicherkontos exportieren, oder Sie legen fest, welche Blobs oder Blob-Sätze exportiert werden sollen.
 
@@ -264,10 +264,13 @@ Bei Exportaufträgen können Sie die BitLocker-Schlüssel, die vom Dienst für I
 - Bitte verschicken Sie nur Ihre Laufwerke. Legen Sie keine Gegenstände wie z. B. Strom- oder USB-Kabel bei.
 
 
+## Weitere Informationen
+
+[Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy)
 
 [import-job-03]: ./media/storage-import-export-service/import-job-03.png
 [export-job-03]: ./media/storage-import-export-service/export-job-03.png
 [export-job-bitlocker-keys]: ./media/storage-import-export-service/export-job-bitlocker-keys.png
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

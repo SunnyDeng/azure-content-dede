@@ -96,7 +96,6 @@ Die Datasetslices in Data Factory können einen der folgenden Status haben:
 <td>ValidationRetry</td><td>Es wird auf die Wiederholung der Überprüfung gewartet.</td>
 </tr>
 <tr>
-&lt; tr
 <td rowspan="2">In Bearbeitung</td><td>Die Überprüfen erfolgt.</td><td>Die Überprüfung wird ausgeführt.</td>
 </tr>
 <td></td>
@@ -323,7 +322,7 @@ Um eine Warnungsdefinition anzugeben, erstellen Sie eine JSON-Datei mit einer Be
 	                        "odata.type": "Microsoft.Azure.Management.Insights.Models.RuleManagementEventDataSource",
 	                        "operationName": "RunFinished",
 	                        "status": "Failed",
-	                        "subStatus": "FailedExecution"   
+	                            "subStatus": "FailedExecution"   
 	                    }
 	                },
 	                "action": 
@@ -348,18 +347,16 @@ Vorgangsname | Status | Unterstatus
 -------------- | ------ | ----------
 RunStarted | Started | Starting
 RunFinished | Failed / Succeeded | <p>FailedResourceAllocation</p><p>Succeeded</p><p>FailedExecution</p><p>TimedOut</p><p><Canceled/p><p>FailedValidation</p><p>Abandoned</p>
-SliceOnTime | In Progress | Ontime
-SliceDelayed | In Progress | Late
 OnDemandClusterCreateStarted | Gestartet
 OnDemandClusterCreateSuccessful | Succeeded
 OnDemandClusterDeleted | Succeeded
 
-Unter [Warnungsregel erstellen](https://msdn.microsoft.com/library/azure/dn510366.aspx) finden Sie ausführliche Informationen zu JSON-Elementen, die im Beispiel oben verwendet werden.
+Unter [Benachrichtigungsregel erstellen](https://msdn.microsoft.com/library/azure/dn510366.aspx) finden Sie ausführliche Informationen zu JSON-Elementen, die im Beispiel oben verwendet werden.
 
 #### Bereitstellen der Warnung 
 Verwenden Sie zum Bereitstellen der Warnung das Azure-PowerShell-Cmdlet **New-AzureResourceGroupDeployment**, wie im folgenden Beispiel gezeigt:
 
-	New-AzureResourceGroupDeployment -ResourceGroupName adf -TemplateFile .\ADFAlertFailedSlice.json  
+	New-AzureResourceGroupDeployment -ResourceGroupName adf     -TemplateFile .\ADFAlertFailedSlice.json  
 
 Nachdem die Ressourcengruppenbereitstellung erfolgreich abgeschlossen wurde, werden die folgenden Meldungen angezeigt:
 
@@ -401,7 +398,7 @@ Um die Liste der bereitgestellten Azure-Ressourcengruppen abzurufen, verwenden S
 	![Vorgänge](./media/data-factory-monitor-manage-pipelines/operations.png)
 
 
-- Der Artikel [Azure Insigh-Cmdlets](https://msdn.microsoft.com/library/mt282452.aspx) erörtert PowerShell-Cmdlets, mit deren Hilfe sich Warnungen hinzufügen/empfangen/entfernen lassen. Hier sind einige Beispiele für die Verwendung des Cmdlets **Get-AlertRule**:
+- Der Artikel [Azure Insight Cmdlets](https://msdn.microsoft.com/library/mt282452.aspx) (in englischer Sprache) erörtert PowerShell-Cmdlets, mit deren Hilfe sich Warnungen hinzufügen/empfangen/entfernen lassen. Hier sind einige Beispiele für die Verwendung des Cmdlets **Get-AlertRule**:
 
 
 		PS C:\> get-alertrule -res $resourceGroup -n ADFAlertsSlice -det
@@ -569,4 +566,4 @@ Folgende Meldung sollte nach erfolgreicher Bereitstellung angezeigt werden:
 	Parameters        :
 	Outputs           
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

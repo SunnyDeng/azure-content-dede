@@ -14,12 +14,12 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="08/31/2015" 
+	ms.date="12/04/2015" 
 	ms.author="riande"/>
 
 # Erstellen eines REST-Diensts mithilfe der ASP.NET Web API und einer SQL-Datenbank in Azure App Service
 
-In diesem Tutorial wird die Bereitstellung einer ASP.NET-Web-App für einen [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) mit dem Assistenten "Web veröffentlichen" in Visual Studio 2013 oder Visual Studio 2013 for Web Express gezeigt.
+In diesem Tutorial wird die Bereitstellung einer ASP.NET-Web-App für einen [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) mit dem Assistenten „Web veröffentlichen“ in Visual Studio 2013 oder Visual Studio 2013 Community Edition erläutert.
 
 Sie können ein kostenloses Azure-Konto erstellen. Wenn Sie noch nicht über Visual Studio 2013 verfügen, wird Visual Studio 2013 for Web Express automatisch durch das SDK installiert. Auf diese Weise können Sie völlig kostenlos mit der Entwicklung für Azure beginnen.
 
@@ -44,9 +44,9 @@ Sie erstellen eine einfache Kontaktlisten-Webanwendung, die auf ASP.NET MVC 5 b
 
 1. Starten Sie Visual Studio 2013.
 1. Klicken Sie im Menü **Datei** auf **Neues Projekt**.
-3. Erweitern Sie im Dialogfeld **Neues Projekt** den Eintrag **Visual C#**, und wählen Sie die Option **Web** aus. Wählen Sie dann **ASP.NET MVC 5-Webanwendung** aus. Nennen Sie die Anwendung **ContactManager**, und klicken Sie auf **OK**.
+3. Erweitern Sie im Dialogfeld **Neues Projekt** den Eintrag **Visual C#**, und wählen Sie die Option **Web** aus. Wählen Sie dann **ASP.NET-Webanwendung** aus. Nennen Sie die Anwendung **ContactManager**, und klicken Sie auf **OK**.
 
-	![Dialogfeld "Neues Projekt"](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rr4.PNG)]
+	![Dialogfeld "Neues Projekt"](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rr4.PNG)
 
 1. Wählen Sie im Dialogfeld **Neues ASP.NET-Projekt** die Vorlage **MVC** und **Web API** aus, und klicken Sie dann auf **Authentifizierung ändern**.
 
@@ -58,7 +58,7 @@ Sie erstellen eine einfache Kontaktlisten-Webanwendung, die auf ASP.NET MVC 5 b
 
 	Die erstellte Beispielanwendung enthält keine Features, die eine Benutzeranmeldung erfordern. Informationen zum Implementieren von Authentifizierungs- und Autorisierungsfeatures finden Sie im Abschnitt [Nächste Schritte](#nextsteps) am Ende dieses Lernprogramms.
 
-1. Klicken Sie im Dialogfeld **Neues ASP.Net-Projekt** auf **OK**.
+1. Stellen Sie im Dialogfeld **Neues ASP.NET-Projekt** sicher, dass das Kontrollkästchen **Host in the Cloud** aktiviert ist, und klicken Sie auf **OK**.
 
 	![Dialogfeld "Neues ASP.NET-Projekt"](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rt3.PNG)
 
@@ -187,7 +187,7 @@ Sie beginnen mit der Erstellung eines einfachen Datenmodells in Code.
     		}
 		}
 
-Mit der Klasse **Contacts** werden die Daten definiert, die für die einzelnen Kontakte gespeichert werden, sowie ein Primärschlüssel ("ContactID"), der von der Datenbank benötigt wird. Weitere Informationen zu Datenmodellen erhalten Sie unter [Nächste Schritte](#nextsteps) am Ende dieses Lernprogramms.
+Mit der **Contact**-Klasse werden die Daten definiert, die für die einzelnen Kontakte gespeichert werden, sowie ein Primärschlüssel (ContactID), der von der Datenbank benötigt wird. Weitere Informationen zu Datenmodellen erhalten Sie unter [Nächste Schritte](#nextsteps) am Ende dieses Lernprogramms.
 
 ### Erstellen von Webseiten, die Anwendungsbenutzern das Arbeiten mit den Kontakten ermöglichen
 
@@ -500,10 +500,11 @@ in:
 
 1. Führen Sie in der Paket-Managerkonsole den folgenden Befehl aus, um "Knockout" zu installieren.
 
-	Installationspaket Knockoutjs
+		Install-Package knockoutjs
+
 ## Hinzufügen eines Controllers für die Restful-Web-API-Oberfläche
 
-1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Ordner **Controllers**, und klicken Sie dann auf **Hinzufügen** und Controller.
+1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf den Ordner **Controllers**, und klicken Sie dann auf **Hinzufügen** und Controller. 
 
 1. Wählen Sie im Dialogfeld **Add Scaffold** die Option **Web API 2 Controller with actions, using Entity Framework** aus, und klicken Sie dann auf **Hinzufügen**.
 
@@ -624,11 +625,13 @@ Weitere Informationen finden Sie unter [Open Web Application Security Project](h
 
 1. Fügen Sie den folgenden *Benutzervermerk* zum "Contracts Controller" hinzu, damit Sie Zugriff auf **[ValidateHttpAntiForgeryToken]** haben.
 
-	using ContactManager.Filters;
+		using ContactManager.Filters;
 
 1. Fügen Sie das Attribut **[ValidateHttpAntiForgeryToken]** zu den Post-Methoden des **ContactsController** hinzu, um ihn vor XSRF-Angriffen zu schützen. Fügen Sie ihn zu den Methoden "PutContact", "PostContact" und **DeleteContact** hinzu.
 
-	[ValidateHttpAntiForgeryToken] public IHttpActionResult PutContact(int id, Contact contact) {
+		[ValidateHttpAntiForgeryToken]
+	        public IHttpActionResult PutContact(int id, Contact contact)
+	        {
 
 1. Aktualisieren Sie den Abschnitt *Skripts* der Datei *Views\\Home\\Index.cshtml*, um Code für die XSRF-Tokens zu erhalten.
 
@@ -683,6 +686,7 @@ Weitere Informationen finden Sie unter [Open Web Application Security Project](h
                }
                ko.applyBindings(new ContactsViewModel());
             </script>
+		 }
 
 
 ## Veröffentlichen von Anwendungsaktualisierungen von Azure und SQL-Datenbank
@@ -810,4 +814,4 @@ Bitte teilen Sie uns mit, was Ihrer Meinung nach beim Tutorial wie auch den dari
 [prevent-csrf-attacks]: http://www.asp.net/web-api/overview/security/preventing-cross-site-request-forgery-(csrf)-attacks
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!------HONumber=AcomDC_1217_2015--->

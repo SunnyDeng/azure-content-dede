@@ -23,6 +23,7 @@
 - [Using PowerShell](data-lake-store-get-started-powershell.md)
 - [Using .NET SDK](data-lake-store-get-started-net-sdk.md)
 - [Using Azure CLI](data-lake-store-get-started-cli.md)
+- [Using Node.js](data-lake-store-manage-use-nodejs.md)
 
 Hier erfahren Sie, wie Sie im Azure-Portal ein Azure Data Lake-Speicherkonto erstellen und grundlegende Vorgänge ausführen, z. B. Ordner erstellen, Datendateien hoch- und herunterladen, Ihr Konto löschen usw. Weitere Informationen zu Data Lake-Speicher finden Sie unter [Übersicht über Azure Data Lake-Speicher](data-lake-store-overview.md).
 
@@ -133,4 +134,4 @@ Um ein Azure Data Lake-Speicherkonto zu löschen, klicken Sie auf dem Blatt „D
 - [Verwenden von Azure Data Lake Analytics mit Data Lake-Speicher](data-lake-analytics-get-started-portal.md)
 - [Verwenden von Azure HDInsight mit Data Lake-Speicher](data-lake-store-hdinsight-hadoop-use-portal.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

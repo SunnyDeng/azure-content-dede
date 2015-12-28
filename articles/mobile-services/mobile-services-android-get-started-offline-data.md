@@ -39,7 +39,7 @@ Immer wenn mehrere Änderungen an den Daten vorgenommen werden, können Konflikt
 
 ## Aktualisieren der App für die Unterstützung von Offlinesynchronisierung
 
-Bei der Offlinesynchronisierung wird in eine *Synchronisierungstabelle* geschrieben und aus dieser gelesen (mit der *IMobileServiceSyncTable*-Schnittstelle). Diese ist Teil einer **SQL Light**-Datenbank auf Ihrem Gerät.
+Bei der Offlinesynchronisierung wird in eine *Synchronisierungstabelle* geschrieben und aus dieser gelesen (mit der *IMobileServiceSyncTable*-Schnittstelle). Diese ist Teil einer **SQLite**-Datenbank auf Ihrem Gerät.
 
 Zum Übertragen von Änderungen per Push und Pull zwischen dem Gerät und Azure Mobile Services verwenden Sie einen *Synchronisierungskontext* (*MobileServiceClient.SyncContext*), den Sie mit der lokalen Datenbank initialisieren, in der Sie die Daten lokal speichern.
 
@@ -223,4 +223,4 @@ One thing which is important to point out: if there are pending changes in the l
 
 [Schnellstartlernprogramm „Erste Schritte mit Mobile Services“]: mobile-services-android-get-started.md
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

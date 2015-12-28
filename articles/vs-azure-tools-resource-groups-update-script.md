@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="na"
-	ms.date="11/10/2015"
+	ms.date="11/20/2015"
 	ms.author="kempb" />
 
 # Aktualisieren des PowerShell-Skripts für ein Azure-Ressourcengruppenprojekt
@@ -59,10 +59,10 @@ Die folgenden Anweisungen beziehen sich auf Zeilennummern. Das Verfahren zum Akt
 
 	```
 	$StorageAccountKey = (Get-AzureRMStorageAccountKey -ResourceGroupName $StorageAccountResourceGroupName -Name $StorageAccountName).Key1
-	$StorageAccountContext = New-AzureRMStorageContext -StorageAccountName $StorageAccountName -StorageAccountKey $StorageAccountKey
+	$StorageAccountContext = (Get-AzureRmStorageAccount -ResourceGroupName $StorageAccountResourceGroupName -Name $StorageAccountName).Context
 	```
 
-1. Ersetzen Sie in Zeile 87 den folgenden Code:
+1. Ersetzen Sie in Zeile 87 den folgenden Code:
 
 	```
 	$ArtifactsLocationSasToken = New-AzureStorageContainerSASToken -Container $StorageContainerName -Context $StorageAccountContext -Permission are
@@ -73,7 +73,7 @@ Die folgenden Anweisungen beziehen sich auf Zeilennummern. Das Verfahren zum Akt
 	```
 	$ArtifactsLocationSasToken = New-AzureRMStorageContainerSASToken -Container $StorageContainerName -Context $StorageAccountContext -Permission r -ExpiryTime (Get-Date).AddHours(4)
 	```
-1. Ersetzen Sie in Zeile 95 diesen Code:
+1. Ersetzen Sie in Zeile 95 diesen Code:
 
 	```
 	Switch-AzureMode AzureResourceManager
@@ -229,4 +229,4 @@ New-AzureRMResourceGroupDeployment `
 
 ```
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

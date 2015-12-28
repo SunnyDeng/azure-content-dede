@@ -212,6 +212,7 @@ Folgen Sie diesen Links, wenn Sie mehr über andere Azure-Speicher-APIs erfahren
 - [Referenz für Azure Storage-Client-SDKs]
 - [Azure Storage-REST-API]
 - [Azure Storage-Teamblog]
+- [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy)
 
 [Azure SDK for Java]: http://azure.microsoft.com/develop/java/
 [Azure Storage-SDK für Java]: https://github.com/azure/azure-storage-java
@@ -221,4 +222,4 @@ Folgen Sie diesen Links, wenn Sie mehr über andere Azure-Speicher-APIs erfahren
 [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

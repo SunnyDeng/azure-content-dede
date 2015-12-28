@@ -15,7 +15,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="command-line-interface"
    ms.workload="infrastructure"
-   ms.date="08/25/2015"
+   ms.date="12/08/2015"
    ms.author="rasquill"/>
 
 # Navigieren zwischen und Aussuchen von Images virtueller Azure-Computer mit Windows PowerShell und der Azure-Befehlszeilenschnittstelle
@@ -23,7 +23,7 @@
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell.
 
 
-Dieser Artikel beschreibt das Navigieren sowie das Auswählen von Images virtueller Computer mit einer aktuellen Installation der Azure-Befehlszeilenschnittstelle oder von Azure PowerShell. Als Voraussetzung müssen Sie in den Ressourcen-Manager-Modus wechseln. Wechseln Sie über die Azure-Befehlszeilenschnittstelle durch Eingabe von `azure config mode arm` in diesen Modus. Geben Sie bei Verwendung von PowerShell `Switch-AzureMode AzureResourceManager` ein. Ausführlichere Informationen zum Aktualisieren und Konfigurieren finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](xplat-cli-azure-resource-manager.md) und [Verwenden von Azure PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md).
+
 
 ## Tabelle mit häufig verwendeten Images
 
@@ -51,6 +51,8 @@ Dieser Artikel beschreibt das Navigieren sowie das Auswählen von Images virtuel
 
 
 ## Azure-Befehlszeilenschnittstelle
+
+> [AZURE.NOTE]Dieser Artikel beschreibt das Navigieren sowie das Auswählen von Images virtueller Computer mit einer aktuellen Installation der Azure-Befehlszeilenschnittstelle oder von Azure PowerShell. Als Voraussetzung müssen Sie in den Ressourcen-Manager-Modus wechseln. Wechseln Sie über die Azure-Befehlszeilenschnittstelle durch Eingabe von `azure config mode arm` in diesen Modus.
 
 Der schnellste und einfachste Weg ein Datenträgerabbild zu suchen, um es entweder mit `azure vm quick-create` zu verwenden oder um eine Vorlagendatei einer Ressourcengruppe zu erstellen, ist den Befehl `azure vm image list` aufzurufen und den Speicherort, den Herausgebernamen (keine Unterscheidung zwischen Groß- und Kleinschreibung) und ein Angebot - wenn Sie es kennen - zu übergeben. Zum Beispiel ist die folgende Liste nur ein kurzes Beispiel (einige Listen sind sehr lang), wenn Sie wissen, dass „Canonical“ ein Herausgeber für das „UbuntuServer“-Angebot ist.
 
@@ -149,6 +151,11 @@ Dieses Video zeigt die oben genannten Schritte mithilfe der Befehlszeilenschnitt
 
 ## PowerShell
 
+Geben Sie bei Verwendung von PowerShell `Switch-AzureMode AzureResourceManager` ein. Ausführlichere Informationen zum Aktualisieren und Konfigurieren finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](xplat-cli-azure-resource-manager.md) und [Verwenden von Azure PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md).
+
+> [AZURE.NOTE]In den Azure PowerShell-Modulen nach Version 1.0 wurde das Cmdlet `Switch-AzureMode` entfernt. Ersetzen Sie ab dieser Version in den nachfolgenden Befehlen den `Azure`-Teil durch `AzureRm`. Wenn Sie Azure PowerShell-Module vor Version 1.0 nutzen, verwenden Sie die folgenden Befehle, zunächst müssen Sie jedoch `Switch-AzureMode AzureResourceManager` ausführen.
+
+
 Wenn Sie mit dem Azure-Ressourcen-Manager einen neuen virtuellen Computer erstellen, kann es sein, dass Sie in einigen Fällen ein Datenträgerabbild mit den folgenden Datenträgerabbild-Eigenschaften angeben müssen:
 
 - Herausgeber
@@ -244,4 +251,4 @@ Dieses Video zeigt die oben genannten Schritte mithilfe von PowerShell.
 [yah]: http://search.yahoo.com/
 [msn]: http://search.msn.com/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

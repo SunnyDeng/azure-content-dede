@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="javascript"
 	ms.topic="article"
-	ms.date="11/19/2015"
+	ms.date="12/09/2015"
 	ms.author="dastrock"/>
 
 
@@ -225,4 +225,4 @@ Weitere Informationen zum App-Model v2.0 (Vorschauversion) finden Sie unter [v2.
 - [Azure AD auf Stack Overflow >>](http://stackoverflow.com/questions/tagged/azure-active-directory)
 - Azure AD-Dokumentation auf [Azure.com >>](http://azure.microsoft.com/documentation/services/active-directory/)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

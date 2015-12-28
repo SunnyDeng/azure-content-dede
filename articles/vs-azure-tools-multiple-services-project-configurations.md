@@ -3,9 +3,9 @@
    description="Erfahren Sie, wie Sie ein Azure-Clouddienstprojekt konfigurieren, indem Sie die Dateien ";ServiceDefinition.csdef"; und ";ServiceConfiguration.cscfg"; ändern."
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tlee" />
+   editor="" />
 <tags
    ms.service="multiple"
    ms.devlang="multiple"
@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="09/29/2015"
-   ms.author="kempb" />
+   ms.author="tarcher" />
 
 # Konfigurieren Ihres Azure-Projekts mit mehreren Dienstkonfigurationen
 
@@ -110,4 +110,4 @@ Zum Konfigurieren von für ein gesamtes Azure-Clouddienstprojekt gültigen Einst
 |Entwicklung|Auf dieser Seite geben Sie Buildkonfigurationsanweisungen und die Bedingungen an, unter denen Postbuildereignisse ausgeführt werden.|
 |Web|Auf dieser Seite konfigurieren Sie Einstellungen für den Webserver.|
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

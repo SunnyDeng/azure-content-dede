@@ -12,12 +12,12 @@ ms.service="search"
 ms.devlang="rest-api"
 ms.workload="search" ms.topic="article"  
 ms.tgt_pltfrm="na"
-ms.date="12/09/2015"
+ms.date="12/11/2015"
 ms.author="eugenesh" />
 
 # Indizieren von Dokumenten in Azure Blob Storage mit Azure Search
 
-Azure Search-Kunden können schon seit einiger Zeit beliebte Datenquellen automatisch indizieren, indem sie Indexer für [Azure SQL-Datenbank](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers-2015-02-28.md) und [Azure DocumentDB](documentdb-search-indexer.md) verwenden.
+Azure Search-Kunden können schon seit einiger Zeit beliebte Datenquellen automatisch indizieren, indem sie Indexer für [Azure SQL-Datenbank](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers-2015-02-28.md) und [Azure DocumentDB](../documentdb/documentdb-search-indexer.md) verwenden.
 
 Wir fügen nun Unterstützung für die Indizierung von Dokumenten hinzu, die unter Azure Blob Storage gespeichert sind. Viele Kunden haben uns gebeten, die Indizierung von in Blobs gespeicherten Dokumenten zu vereinfachen, z. B. für PDFs, Office-Dokumente oder HTML-Seiten. Bisher war hierfür das Schreiben von benutzerdefiniertem Code erforderlich, um die Textextrahierung durchzuführen und die Dokumente einem Azure Search-Index hinzuzufügen.
 
@@ -104,7 +104,7 @@ Azure Search indiziert jedes Dokument (Blob) wie folgt:
 
 Es ist nicht erforderlich, Felder für alle obigen Eigenschaften in Ihrem Suchindex zu definieren. Erfassen Sie einfach die Eigenschaften, die Sie für Ihre Anwendung benötigen.
 
-> [AZURE.NOTE]Die Feldnamen im vorhandenen Index unterscheiden sich von den Feldnamen, die während der Dokumentextrahierung generiert werden. Sie können **Feldzuordnungen** verwenden, um die von Azure Search bereitgestellten Eigenschaftennamen den Feldnamen in Ihrem Suchindex zuzuordnen.
+> [AZURE.NOTE]Die Feldnamen im vorhandenen Index unterscheiden sich von den Feldnamen, die während der Dokumentextrahierung generiert werden. Sie können **Feldzuordnungen** verwenden, um die von Azure Search bereitgestellten Eigenschaftennamen den Feldnamen in Ihrem Suchindex zuzuordnen. Weiter unten finden Sie ein Beispiel für die Verwendung von Feldzuordnungen.
 
 ## Auswählen des Dokumentschlüsselfelds und Behandeln unterschiedlicher Feldnamen
 
@@ -144,6 +144,8 @@ Hier wird beschrieben, wie Sie Feldzuordnungen hinzufügen und die Base64-Codier
 	  "parameters" : { "base64EncodeKeys": true }
 	}
 
+> [AZURE.NOTE]Weitere Informationen zu Feldzuordnungen finden Sie in [diesem Artikel](search-indexers-customization.md).
+
 ## Inkrementelle Indizierung und Erkennung von Löschungen
 
 Wenn Sie einen Blob-Indexer zur Ausführung nach einem Zeitplan einrichten, werden nur die geänderten Blobs neu indiziert. Dies wird anhand des `LastModified`-Zeitstempels der Blobs ermittelt.
@@ -152,7 +154,7 @@ Wenn Sie einen Blob-Indexer zur Ausführung nach einem Zeitplan einrichten, werd
 
 Um anzugeben, dass bestimmte Dokumente aus dem Index entfernt werden müssen, sollten Sie die Strategie „Vorläufiges Löschen“ verwenden. Anstatt die entsprechenden Blobs zu löschen, fügen Sie eine benutzerdefinierte Metadateneigenschaft hinzu, um anzugeben, dass die gelöscht sind. Außerdem richten Sie für die Datenquelle eine Richtlinie zur Erkennung des vorläufigen Löschens ein.
 
-> [AZURE.NOTE]Wenn Sie keine Richtlinie zum Erkennen von Löschungen verwenden, sondern nur die Blobs löschen, werden entsprechende Dokumente nicht aus dem Suchindex entfernt.
+> [AZURE.WARNING]Wenn Sie keine Richtlinie zum Erkennen von Löschungen verwenden, sondern nur die Blobs löschen, werden entsprechende Dokumente nicht aus dem Suchindex entfernt.
 
 Bei der unten angegebenen Richtlinie wird ein Blob beispielsweise als gelöscht angesehen, wenn es über die Metadateneigenschaft `IsDeleted` mit dem Wert `true` verfügt:
 
@@ -177,189 +179,33 @@ Bei der unten angegebenen Richtlinie wird ein Blob beispielsweise als gelöscht 
 
 In der folgenden Tabelle sind die Verarbeitungsschritte für jedes Dokumentformat zusammengefasst, und es werden die Metadateneigenschaften beschrieben, die von Azure Search extrahiert werden.
 
-<table style="font-size:12">
-
-<tr>
-<th>Dokumentformat/Inhaltstyp</th>
-<th>Inhaltstypspezifische Metadateneigenschaften</th>
-<th>Verarbeitungsdetails </th>
-</tr>
-
-<tr>
-<td>HTML („text/html“)</td>
-<td>
-„metadata_content_encoding“<br/>
-„metadata_content_type“<br/>
-„metadata_language“<br/>
-„metadata_description“<br/>
-„metadata_keywords“<br/>
-„metadata_title“
-</td>
-<td>Entfernen von HTML-Markup und Extrahieren von Text</td>
-</tr>
-
-<tr>
-<td>PDF („application/pdf“)</td>
-<td>
-„metadata_content_type“<br/>
-„metadata_language“<br/>
-„metadata_author“<br/>
-„metadata_title“
-</td>
-<td>Extrahieren von Text, z.&#160;B. eingebettete Dokumente (mit Ausnahme von Bildern)</td>
-</tr>
-
-<tr>
-<td>DOCX (application/vnd.openxmlformats-officedocument.wordprocessingml.document)</td>
-<td>
-„metadata_content_type“<br/>
-„metadata_author“<br/>
-„metadata_character_count“<br/>
-„metadata_creation_date“<br/>
-„metadata_last_modified“<br/>
-„metadata_page_count“<br/>
-„metadata_word_count“
-</td>
-<td>Extrahieren von Text, z.&#160;B. eingebettete Dokumente</td>
-</tr>
-
-<tr>
-<td>DOC (application/msword)</td>
-<td>
-„metadata_content_type“<br/>
-„metadata_author“<br/>
-„metadata_character_count“<br/>
-„metadata_creation_date“<br/>
-„metadata_last_modified“<br/>
-„metadata_page_count“<br/>
-„metadata_word_count“
-</td>
-<td>Extrahieren von Text, z.&#160;B. eingebettete Dokumente</td>
-</tr>
-
-<tr>
-<td>XLSX (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet)</td>
-<td>
-„metadata_content_type“<br/>
-„metadata_author“<br/>
-„metadata_creation_date“<br/>
-„metadata_last_modified“
-</td>
-<td>Extrahieren von Text, z.&#160;B. eingebettete Dokumente</td>
-</tr>
-
-<tr>
-<td>XLS (application/vnd.ms-excel)</td>
-<td>
-„metadata_content_type“<br/>
-„metadata_author“<br/>
-„metadata_creation_date“<br/>
-„metadata_last_modified“
-</td>
-<td>Extrahieren von Text, z.&#160;B. eingebettete Dokumente</td>
-</tr>
-
-<tr>
-<td>PPTX (application/vnd.openxmlformats-officedocument.presentationml.presentation)</td>
-<td>
-„metadata_content_type“<br/>
-„metadata_author“<br/>
-„metadata_creation_date“<br/>
-„metadata_last_modified“<br/>
-„metadata_slide_count“<br/>
-„metadata_title“
-</td>
-<td>Extrahieren von Text, z.&#160;B. eingebettete Dokumente</td>
-</tr>
-
-<tr>
-<td>PPT (application/vnd.ms-powerpoint)</td>
-<td>
-„metadata_content_type“<br/>
-„metadata_author“<br/>
-„metadata_creation_date“<br/>
-„metadata_last_modified“<br/>
-„metadata_slide_count“<br/>
-„metadata_title“
-</td>
-<td>Extrahieren von Text, z.&#160;B. eingebettete Dokumente</td>
-</tr>
-
-<tr>
-<td>MSG (application/vnd.ms-outlook)</td>
-<td>
-„metadata_content_type“<br/>
-„metadata_message_from“<br/>
-„metadata_message_to“<br/>
-„metadata_message_cc“<br/>
-„metadata_message_bcc“<br/>
-„metadata_creation_date“<br/>
-„metadata_last_modified“<br/>
-„metadata_subject“
-</td>
-<td>Extrahieren von Text, einschließlich Anlagen</td>
-</tr>
-
-<tr>
-<td>ZIP (application/zip)</td>
-<td>
-„metadata_content_type“
-</td>
-<td>Extrahieren von Text aus allen Dokumenten im Archiv</td>
-</tr>
-
-<tr>
-<td>XML (application/xml)</td>
-<td>
-„metadata_content_type“</br>
-„metadata_content_encoding“</br>
-</td>
-<td>Entfernen von XML-Markup und Extrahieren von Text </td>
-</tr>
-
-<tr>
-<td>JSON (application/json)</td>
-<td>
-„metadata_content_type“</br>
-„metadata_content_encoding“
-</td>
-<td></td>
-</tr>
-
-<tr>
-<td>Nur-Text (text/plain)</td>
-<td>
-„metadata_content_type“</br>
-„metadata_content_encoding“</br>
-</td>
-<td></td>
-</tr>
-</table>
+Dokumentformat/Inhaltstyp | Inhaltstypspezifische Metadateneigenschaften | Verarbeitungsdetails
+-------------------------------|-------------------------------------------|-------------------
+HTML (`text/html`) | `metadata_content_encoding`<br/>`metadata_content_type`<br/>`metadata_language`<br/>`metadata_description`<br/>`metadata_keywords`<br/>`metadata_title` | Entfernen von HTML-Markup und Extrahieren von Text
+PDF (`application/pdf`) | `metadata_content_type`<br/>`metadata_language`<br/>`metadata_author`<br/>`metadata_title`| Extrahieren von Text, z. B. eingebettete Dokumente (mit Ausnahme von Bildern)
+DOCX (application/vnd.openxmlformats-officedocument.wordprocessingml.document) | `metadata_content_type`<br/>`metadata_author`<br/>`metadata_character_count`<br/>`metadata_creation_date`<br/>`metadata_last_modified`<br/>`metadata_page_count`<br/>`metadata_word_count` | Extrahieren von Text, z. B. eingebettete Dokumente
+DOC (application/msword) | `metadata_content_type`<br/>`metadata_author`<br/>`metadata_character_count`<br/>`metadata_creation_date`<br/>`metadata_last_modified`<br/>`metadata_page_count`<br/>`metadata_word_count` | Extrahieren von Text, z. B. eingebettete Dokumente
+XLSX (application/vnd.openxmlformats-officedocument.spreadsheetml.sheet) | `metadata_content_type`<br/>`metadata_author`<br/>`metadata_creation_date`<br/>`metadata_last_modified` | Extrahieren von Text, z. B. eingebettete Dokumente
+XLS (application/vnd.ms-excel) | `metadata_content_type`<br/>`metadata_author`<br/>`metadata_creation_date`<br/>`metadata_last_modified` | Extrahieren von Text, z. B. eingebettete Dokumente
+PPTX (application/vnd.openxmlformats-officedocument.presentationml.presentation) | `metadata_content_type`<br/>`metadata_author`<br/>`metadata_creation_date`<br/>`metadata_last_modified`<br/>`metadata_slide_count`<br/>`metadata_title` | Extrahieren von Text, z. B. eingebettete Dokumente
+PPT (application/vnd.ms-powerpoint) | `metadata_content_type`<br/>`metadata_author`<br/>`metadata_creation_date`<br/>`metadata_last_modified`<br/>`metadata_slide_count`<br/>`metadata_title` | Extrahieren von Text, z. B. eingebettete Dokumente
+MSG (application/vnd.ms-outlook) | `metadata_content_type`<br/>`metadata_message_from`<br/>`metadata_message_to`<br/>`metadata_message_cc`<br/>`metadata_message_bcc`<br/>`metadata_creation_date`<br/>`metadata_last_modified`<br/>`metadata_subject` | Extrahieren von Text, einschließlich Anlagen
+ZIP (application/zip) | `metadata_content_type` | Extrahieren von Text aus allen Dokumenten im Archiv
+XML (application/xml) | `metadata_content_type`</br>`metadata_content_encoding`</br> | Entfernen von XML-Markup und Extrahieren von Text </td>
+JSON (application/json) | `metadata_content_type`</br>`metadata_content_encoding` | Extrahieren von Text<br/>HINWEIS: Wenn Sie mehrere Felder des Dokuments aus einem JSON-Blob extrahieren möchten, stimmen Sie für [diesen UserVoice-Vorschlag](https://feedback.azure.com/forums/263029-azure-search/suggestions/11113539-extract-document-structure-from-json-blobs).
+Nur-Text (text/plain) | `metadata_content_type`</br>`metadata_content_encoding`</br> | 
 
 <a name="CustomMetadataControl"></a>
 ## Verwenden von benutzerdefinierten Metadaten zum Steuern der Dokumentextrahierung
 
 Sie können einem Blob Metadateneigenschaften hinzufügen, um bestimmte Aspekte der Blob-Indizierung und des Prozesses der Dokumentextrahierung zu steuern. Derzeit werden die folgenden Eigenschaften unterstützt:
 
-<table style="font-size:12">
-
-<tr>
-<th>Eigenschaftenname</th>
-<th>Eigenschaftswert</th>
-<th>Erklärung</th>
-</tr>
-
-<tr>
-<td>AzureSearch_Skip</td>
-<td>„true“</td>
-<td>Weist den Blob-Indexer an, das Blob vollständig zu überspringen. Es wird nicht versucht, Metadaten oder Inhalt zu extrahieren. Dies ist nützlich, wenn Sie bestimmte Inhaltstypen überspringen möchten oder wenn ein bestimmtes Blob wiederholt fehlschlägt und den Indizierungsprozess unterbricht.
-</td>
-</tr>
-
-</table>
+Eigenschaftenname | Eigenschaftswert | Erklärung
+--------------|----------------|------------
+AzureSearch\_Skip | „true“ | Weist den Blob-Indexer an, das Blob vollständig zu überspringen. Es wird nicht versucht, Metadaten oder Inhalt zu extrahieren. Dies ist nützlich, wenn Sie bestimmte Inhaltstypen überspringen möchten oder wenn ein bestimmtes Blob wiederholt fehlschlägt und den Indizierungsprozess unterbricht.
 
 ## Helfen Sie uns bei der Verbesserung von Azure Search
 
 Teilen Sie uns auf unserer [UserVoice-Website](https://feedback.azure.com/forums/263029-azure-search) mit, wenn Sie sich Features wünschen oder Verbesserungsvorschläge haben.
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

@@ -4,7 +4,7 @@
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor="tysonn" />
 <tags 
    ms.service="virtual-network"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="09/18/2015"
+   ms.date="12/11/2015"
    ms.author="telmos" />
 
 # Herstellen einer Verbindung zwischen klassischen VNets und neuen VNets
@@ -130,4 +130,4 @@ Befolgen Sie die Anweisungen unten, um ein VPN-Gateway für das ARM-VNet zu erst
 - Weitere Informationen zum [Netzwerkressourcenanbieter (Network Resource Provider, NRP) für ARM](../resource-groups-networking.md).
 - Erstellen einer [End-to-End-Lösung, die ein klassisches VNet mit einem ARM-VNet mithilfe einer S2S-VPN-Verbindung verbindet](../virtual-networks-arm-asm-s2s.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

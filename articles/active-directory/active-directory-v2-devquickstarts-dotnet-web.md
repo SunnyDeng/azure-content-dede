@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="09/11/2015"
+	ms.date="12/09/2015"
 	ms.author="dastrock"/>
 
 # App-Modell v2. 0 (Vorschauversion): Hinzufügen der Anmeldung bei einer .NET-MVC-Web-App
@@ -83,9 +83,7 @@ namespace TodoList_WebApp
 -	Open the file `App_Start\Startup.Auth.cs` and implement the `ConfigureAuth(...)` method.  The parameters you provide in `OpenIdConnectAuthenticationOptions` will serve as coordinates for your app to communicate with Azure AD.  You'll also need to set up Cookie Authentication - the OpenID Connect middleware uses cookies underneath the covers.
 
 ```C#
-public void ConfigureAuth(IAppBuilder app)
-			 {
-					 app.SetDefaultSignInAsAuthenticationType(CookieAuthenticationDefaults.AuthenticationType);
+public void ConfigureAuth(IAppBuilder app) { app.SetDefaultSignInAsAuthenticationType(CookieAuthenticationDefaults.AuthenticationType);
 
 					 app.UseCookieAuthentication(new CookieAuthenticationOptions());
 
@@ -120,8 +118,7 @@ Ihre Anwendung ist nun ordnungsgemäß für die Kommunikation mit dem v2.0-Endpu
 - Über Autorisierungstags in Ihren Controllern können Sie die Benutzer vor dem Zugriff auf eine bestimmte Seite zur Anmeldung zwingen.  Öffnen Sie `Controllers\HomeController.cs`, und fügen Sie dem Info-Controller den Tag `[Authorize]` hinzu.
 
 ```C#
-[Authorize]
-public ActionResult About()
+[Authorize] public ActionResult About()
 {
   ...
 ```
@@ -215,4 +212,4 @@ Weitere Ressourcen:
 - [App-Modell v2.0 (Vorschauversion) >>](active-directory-appmodel-v2-overview.md)
 - [StackOverflow-Tag "azure-active-directory" >>](http://stackoverflow.com/questions/tagged/azure-active-directory)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

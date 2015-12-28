@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/16/2015" 
+	ms.date="12/10/2015" 
 	ms.author="cephalin"/>
 
 # Migrieren von Unternehmens-Web-Apps in Azure App Service
@@ -135,4 +135,4 @@ In diesem Abschnitt werden Sie schrittweise durch ein Beispiel zum Migrieren ein
 * Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

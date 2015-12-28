@@ -15,7 +15,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="12/10/2015" 
+	ms.date="12/14/2015" 
 	ms.author="jeffstok"
 />
 
@@ -38,7 +38,7 @@ Abbildung 2:
 Für diesen Artikel gelten folgende Voraussetzungen:
 
 1.	Ein aktives Azure-Abonnement
-2.	Eine CSV-Datei mit einigen Daten. Sie können die Datei aus Abbildung 2 hier herunterladen oder eine eigene Datei erstellen. In diesem Tutorial wird vorausgesetzt, dass die als Download verfügbare Datei verwendet wird.
+2.	Eine CSV-Datei mit einigen Daten. Sie können die Datei aus Abbildung 2 auf [GitHub](https://github.com/jeffstokes72/azure-stream-analytics-repository/blob/master/sampleinputs.csv) herunterladen oder eine eigene Datei erstellen. In diesem Tutorial wird vorausgesetzt, dass die als Download verfügbare Datei verwendet wird.
 
 Die ausgeführten Schritte lassen sich grob wie folgt zusammenfassen:
 
@@ -51,28 +51,28 @@ Die ausgeführten Schritte lassen sich grob wie folgt zusammenfassen:
 
 ## Hochladen der CSV-Eingabedatei in Blob Storage
 
-Für diesen Schritt können Sie eine beliebige CSV-Datei verwenden, z. B. die in der Einführung erwähnte Datei. Zum Hochladen der Datei können Sie [Azure Storage Explorer](http://storageexplorer.com/) oder Visual Studio oder auch benutzerdefinierten Code verwenden. In diesem Tutorial gelten die Beispiele für Visual Studio.
+Für diesen Schritt können Sie eine beliebige CSV-Datei verwenden, z. B. die in der Einführung erwähnte Datei. Zum Hochladen der Datei können Sie den [Azure-Speicher-Explorer](http://storageexplorer.com/), Visual Studio oder auch benutzerdefinierten Code verwenden. In diesem Tutorial gelten die Beispiele für Visual Studio.
 
-1.	Erweitern Sie Azure, und klicken Sie mit der rechten Maustaste auf den **Speicher**. Wählen Sie **Externen Speicher anfügen**, und geben Sie **Kontoname** und **Kontoschlüssel** an.  
+1.	Erweitern Sie Azure, und klicken Sie mit der rechten Maustaste auf **Storage**. Wählen Sie **Externen Speicher anfügen** aus, und geben Sie **Kontoname** und **Kontoschlüssel** an.  
 
     ![Stream Analytics Machine Learning-Tutorial – Server-Explorer](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-machine-learning-integration-tutorial-server-explorer.png)
 
-2.	Erweitern Sie den gerade angefügten Speicher, und wählen Sie **Blob-Container erstellen**. Geben Sie dann einen logischen Namen an. Doppelklicken Sie nach der Erstellung auf den Container, um seinen Inhalt anzuzeigen (zu diesem Zeitpunkt leer).
+2.	Erweitern Sie den gerade angefügten Speicher, und wählen Sie **Create Blob Container** aus. Geben Sie dann einen logischen Namen an. Doppelklicken Sie nach der Erstellung auf den Container, um seinen Inhalt anzuzeigen (zu diesem Zeitpunkt leer).
 
     ![Stream Analytics Machine Learning-Tutorial – Blob erstellen](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-machine-learning-integration-tutorial-create-blob.png)
 
-3.	Laden Sie die CSV-Datei hoch, indem Sie auf das Symbol **Blob hochladen** klicken und dann **Datei vom lokalen Datenträger** wählen.
+3.	Laden Sie die CSV-Datei hoch, indem Sie auf das Symbol **BLOB hochladen** klicken und dann **file from the local disk** auswählen.
 
 ## Hinzufügen des Sentiment Analytics-Modells aus dem Cortana Analytics-Katalog
 
-1.	Laden Sie das [Predictive Sentiment Analytics-Modell](https://gallery.cortanaanalytics.com/Experiment/Predictive-Mini-Twitter-sentiment-analysis-Experiment-1) aus dem Cortana Analytics-Katalog herunter.  
+1.	Laden Sie das [Predictive Experiment - Mini Twitter sentiment analysis](https://gallery.cortanaanalytics.com/Experiment/Predictive-Mini-Twitter-sentiment-analysis-Experiment-1) aus dem Cortana Analytics-Katalog herunter.  
 2.	Klicken Sie in Studio auf **Öffnen**:  
 
     ![Stream Analytics Machine Learning-Tutorial – Machine Learning Studio öffnen](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-machine-learning-integration-tutorial-open-ml-studio.png)
 
 3.	Melden Sie sich an, um zum Arbeitsbereich zu gelangen. Wählen Sie den Speicherort aus, der für Sie am besten geeignet ist.
 4.	Klicken Sie dann unten in Studio auf **Ausführen**.  
-5.	Klicken Sie nach der erfolgreichen Ausführung auf **Webdienst bereitstellen**.
+5.	Klicken Sie nach der erfolgreichen Ausführung auf **Deploy Web Service**.
 6.	Das Sentiment Analytics-Modell ist jetzt bereit für die Verwendung. Klicken Sie zum Überprüfen auf die Schaltfläche **Test**. Wenn Sie beispielsweise den Text „I love Microsoft“ eingeben, ähnelt das Ergebnis des Tests dieser Ausgabe:
 
 `'Predictive Mini Twitter sentiment analysis Experiment' test returned ["4","0.715057671070099"]...`
@@ -95,27 +95,35 @@ Notieren Sie sich die Webdienst-URL und den Zugriffsschlüssel aus den herunterg
 
     ![Stream Analytics Machine Learning-Tutorial – Machine Learning-Eingabe hinzufügen](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-machine-learning-integration-tutorial-add-input-screen.png)
 
-4.	Wählen Sie auf der ersten Seite des Assistenten **Eingabe hinzufügen** die Option **Datenstrom**, und klicken Sie auf „Weiter“. Wählen Sie auf der zweiten Seite **Blobspeicher** als Eingabe aus, und klicken Sie auf **Weiter**.
-5.	Geben Sie im Assistenten auf der Seite **Einstellungen des Blobspeichers** den Namen des Speicherkonto-Blob-Containers an, den Sie beim Hochladen der Daten definiert haben. Klicken Sie auf **Weiter**. Wählen Sie als **Ereignisserialisierungsformat** die Option **CSV**. Übernehmen Sie für die restlichen **Serialisierungseinstellungen** die Standardwerte. Klicken Sie auf **OK**.  
+4.	Wählen Sie auf der ersten Seite des Assistenten **Eingabe hinzufügen** die Option **Datenstrom** aus, und klicken Sie auf „Weiter“. Wählen Sie auf der zweiten Seite **Blob Storage** als Eingabe aus, und klicken Sie auf **Weiter**.
+5.	Geben Sie im Assistenten auf der Seite **Einstellungen des Blobspeichers** den Namen des Speicherkonto-Blob-Containers an, den Sie beim Hochladen der Daten definiert haben. Klicken Sie auf **Weiter**. Wählen Sie als **Ereignisserialisierungsformat** die Option **CSV** aus. Übernehmen Sie für die restlichen **Serialisierungseinstellungen** die Standardwerte. Klicken Sie auf **OK**.  
 6.	Navigieren Sie zur Registerkarte **Ausgaben**, und klicken Sie auf **Ausgabe hinzufügen**.  
 
     ![Stream Analytics Machine Learning-Tutorial – Ausgabe hinzufügen](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-machine-learning-integration-tutorial-add-output-screen.png)
 
-7.	Wählen Sie die Option **Blobspeicher**, und geben Sie mit Ausnahme des Containers die gleichen Parameter an. Die **Eingabe** wurde so konfiguriert, dass aus dem Container mit dem Namen „test“ gelesen wird, in den die **CSV**-Datei hochgeladen wurde. Geben Sie unter **Ausgabe** „testoutput“ ein. Die Containernamen müssen unterschiedlich sein. Stellen Sie sicher, dass dieser Container vorhanden ist.
+7.	Wählen Sie die Option **Blob Storage** und geben Sie mit Ausnahme des Containers die gleichen Parameter an. Die **Eingabe** wurde so konfiguriert, dass aus dem Container mit dem Namen „test“ gelesen wird, in den die **CSV**-Datei hochgeladen wurde. Geben Sie unter **Ausgabe** „testoutput“ ein. Die Containernamen müssen unterschiedlich sein. Stellen Sie sicher, dass dieser Container vorhanden ist.
 8.	Klicken Sie auf **Weiter**, um die **Serialisierungseinstellungen** der Ausgabe zu konfigurieren. Wählen Sie wie bei der Eingabe die Option **CSV**, und klicken Sie auf die Schaltfläche **OK**.
-9.	Navigieren Sie zur Registerkarte **Funktionen**, und klicken Sie auf **Machine Learning-Funktion hinzufügen**.  
+9.	Navigieren Sie zur Registerkarte **Funktionen**, und klicken Sie auf **Add a Machine Learning Function**.  
 
     ![Stream Analytics Machine Learning-Tutorial – Machine Learning-Funktion hinzufügen](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-machine-learning-integration-tutorial-add-ml-function.png)
 
-10.	Suchen Sie auf der Seite **Machine Learning-Webdiensteinstellungen** nach dem Machine Learning-Arbeitsbereich, dem Webdienst und dem Standardendpunkt. Wenden Sie die Einstellungen für dieses Tutorial manuell an, um sich mit der Konfiguration eines Webdiensts für einen Arbeitsbereich vertraut zu machen, wenn die URL und der Schlüssel bekannt sind. Geben Sie die **URL** und den **API-Schlüssel** für den Endpunkt an. Klicken Sie dann auf **OK**.
+10.	Suchen Sie auf der Seite **Machine Learning Web Service Settings** nach dem Machine Learning-Arbeitsbereich, dem Webdienst und dem Standardendpunkt. Wenden Sie die Einstellungen für dieses Tutorial manuell an, um sich mit der Konfiguration eines Webdiensts für einen Arbeitsbereich vertraut zu machen, wenn die URL und der Schlüssel bekannt sind. Geben Sie die **URL** und den **API-Schlüssel** für den Endpunkt an. Klicken Sie dann auf **OK**.
 
     ![Stream Analytics Machine Learning-Tutorial – Machine Learning-Webdienst](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-machine-learning-integration-tutorial-ml-web-service.png)
 
 11.	Navigieren Sie zur Registerkarte **Abfrage**, und ändern Sie die Abfrage wie folgt:
 
-    ![Stream Analytics Machine Learning-Tutorial – Machine Learning-Abfrage](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-machine-learning-integration-tutorial-ml-query.png)
+```
+	WITH subquery AS (  
+		SELECT text, sentiment(text) as result from input  
+	)  
+	  
+	Select text, result.[Score]  
+	Into output  
+	From subquery  
+```
 
-12. Klicken Sie auf **Speichern**, um die Abfrage zu speichern.
+12. Klicken Sie auf **Speichern**, um die Abfrage zu speichern.    
 
 ## Starten des Stream Analytics-Auftrags und Verfolgen der Ausgabe
 
@@ -142,4 +150,4 @@ Sie können sich auch die auf die Azure Machine Language-Funktion bezogenen Metr
 
     ![Stream Analytics Machine Learning-Tutorial – ML-Überwachungsansicht](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-machine-learning-integration-tutorial-ml-monitor-view.png)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

@@ -54,10 +54,9 @@ Die folgenden Befehle werden für das soeben ausgewählte Abonnement ausgeführt
 
 Erstellen Sie die Ressourcengruppe, die den Server enthalten soll. Sie können den nächsten Befehl für einen beliebigen gültigen Standort anpassen.
 
-Eine Liste der gültigen Standorte für Azure SQL-Datenbankserver erhalten Sie durch Ausführen der folgenden Cmdlets:
+Eine Liste der gültigen Standorte für Azure SQL-Datenbankserver erhalten Sie durch Ausführen des folgenden Cmdlets:
 
-	$AzureSQLLocations = Get-AzureRmLocation | Where-Object Name -Like "*SQL/Servers"
-	$AzureSQLLocations.Locations
+	$AzureSQLLocations = (Get-AzureRmResourceProvider -ListAvailable | Where-Object {$_.ProviderNamespace -eq 'Microsoft.Sql'}).Locations
 
 Wenn Sie bereits über eine Ressourcengruppe verfügen, können Sie mit dem Erstellen eines Servers fortfahren, oder Sie führen nach Anpassung den folgenden Befehl zum Erstellen einer neuen Ressourcengruppe aus:
 
@@ -128,4 +127,4 @@ Kombinieren und Automatisieren von Befehlen. Ersetzen Sie z. B. alles innerhalb
 
 - [Azure SQL-Datenbank-Cmdlets](https://msdn.microsoft.com/library/azure/mt574084.aspx)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

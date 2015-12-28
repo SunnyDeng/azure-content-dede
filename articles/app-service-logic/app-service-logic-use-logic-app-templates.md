@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/07/2015"
+	ms.date="12/09/2015"
 	ms.author="klam"/>
 
 # Verwenden von Logik-App-Vorlagen
@@ -44,4 +44,4 @@ Einfache Vorlagen für die Integration in soziale Netzwerkdienste, wie z. B. Tw
 Nachdem Sie eine der Vorlagen ausgewählt haben, führen Sie die Bereitstellungsschritte wie beim Erstellen Ihrer eigenen Logik-App aus. Die einzelnen Schritte werden unter [Erstellen einer Logik-App zum Verbinden von SaaS-Diensten](app-service-logic-create-a-logic-app.md) beschrieben.
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

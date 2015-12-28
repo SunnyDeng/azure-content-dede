@@ -236,10 +236,10 @@ Nachdem Sie sich nun mit den Grundlagen von Blob-Speichern vertraut gemacht habe
 -	[Auflisten von Azure Storage-Ressourcen in C++](storage-c-plus-plus-enumeration.md)
 -	[Referenz zur Speicherclientbibliothek für C++](http://azure.github.io/azure-storage-cpp)
 -	[Azure-Speicherdokumentation](http://azure.microsoft.com/documentation/services/storage/)
-
+- [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy)
 
 
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

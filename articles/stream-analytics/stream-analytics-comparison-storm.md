@@ -588,4 +588,4 @@ Beide Analyseplattformen bieten Vorteile einer PaaS-Lösung, es gibt aber einige
     </tbody>
 </table>
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

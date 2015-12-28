@@ -19,6 +19,14 @@
 
 # Bereitstellen und Verwalten von virtuellen Computern mit Azure-Ressourcen-Manager-Vorlagen und der Azure-CLI
 
+> [AZURE.SELECTOR]
+- [Azure PowerShell](virtual-machines-deploy-rmtemplates-powershell.md)
+- [Azure CLI](virtual-machines-deploy-rmtemplates-azure-cli.md)
+
+<br>
+
+
+
 In diesem Artikel wird gezeigt, wie mit Azure-Ressourcen-Manager-Vorlagen und der Azure-Befehlszeilenschnittstelle (Azure-CLI) die folgenden allgemeinen Aufgaben zum Bereitstellen und Verwalten von virtuellen Azure-Computern automatisiert werden. Weitere Vorlagen finden Sie unter [Azure-Schnellstartvorlagen](http://azure.microsoft.com/documentation/templates/) und [Erstellen von Anwendungsframeworks mithilfe von Vorlagen](virtual-machines-app-frameworks.md).
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell. Im klassischen Bereitstellungsmodell können Sie keine Vorlagen verwenden.
@@ -37,7 +45,7 @@ In diesem Artikel wird gezeigt, wie mit Azure-Ressourcen-Manager-Vorlagen und de
 
 ## Vorbereitung
 
-Vor der Verwendung von Azure-CLI mit Azure-Ressourcengruppen benötigen Sie die richtige Version von Azure-CLI und ein Azure-Konto. Wenn Sie nicht über die Azure-CLI verfügen, [installieren Sie sie](xplat-cli-install.md).
+Vor der Verwendung der Azure-CLI mit Azure-Ressourcengruppen benötigen Sie die richtige Version der Azure-CLI und ein Azure-Konto. Wenn Sie nicht über die Azure-CLI verfügen, [installieren Sie sie](xplat-cli-install.md).
 
 ### Aktualisieren Ihrer Azure-CLI auf Version 0.9.0 oder höher
 
@@ -767,7 +775,7 @@ Befolgen Sie diese Anweisungen zum Bereitstellen einer Anwendung mit mehreren vi
 
 ### Schritt 1: Untersuchen der JSON-Datei für die Vorlage
 
-Dies ist der Inhalt der JSON-Datei für die Vorlage. Wenn Sie die neueste Version möchten, diese finden Sie [hier](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-2-vms-loadbalancer-lbrules/azuredeploy.json). In diesem Thema wird der Switch `--template-uri` verwendet, um die Vorlage aufzurufen, aber Sie können auch den Switch `--template-file` nehmen, um eine lokale Version zu übergeben.
+Dies ist der Inhalt der JSON-Datei für die Vorlage. Die neueste Version befindet sich im [GitHub-Repository für Vorlagen](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-2-vms-loadbalancer-lbrules/azuredeploy.json) (in englischer Sprache). In diesem Thema wird der Switch `--template-uri` verwendet, um die Vorlage aufzurufen, aber Sie können auch den Switch `--template-file` nehmen, um eine lokale Version zu übergeben.
 
 
     {
@@ -1301,4 +1309,4 @@ Viele weitere Verwendungsbeispiele für die Azure-Befehlszeilenschnittstelle mit
 
 Weitere Vorlagen finden Sie unter [Azure-Schnellstartvorlagen](http://azure.microsoft.com/documentation/templates/) und [Erstellen von Anwendungsframeworks mithilfe von Vorlagen](virtual-machines-app-frameworks.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

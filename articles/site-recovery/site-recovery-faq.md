@@ -98,7 +98,7 @@ Während der regulären Replikation werden Daten in den georedundanten Azure-Spe
 
 Ja. Wenn Sie Site Recovery zum Orchestrieren von Replikation und Failover in Zweigstellen verwenden, erhalten Sie eine einheitliche Orchestrierung und Anzeige der Workloads aller Zweigstellen an einer zentralen Stelle. Sie können problemlos über Ihren Hauptsitz für alle Zweigstellen Failover ausführen und die Notfallwiederherstellung verwalten, ohne die Zweigstellen zu besuchen.
 
-### Gibt es ein SDK, mit dem ich den ASR-Workflow automatisieren kann?
+### Gibt es ein SDK, mit dem ich den Site Recovery-Workflow automatisieren kann?
 
 Ja. Sie können Site Recovery-Workflows mithilfe der REST-API, PowerShell oder Azure SDK automatisieren. Weitere Informationen finden Sie unter [Bereitstellen von Site Recovery mit PowerShell](site-recovery-deploy-with-powershell.md).
 
@@ -223,4 +223,4 @@ Ja, Sie können virtuelle Hyper-V-Computer in Azure oder zwischen Dienstanbieter
 
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

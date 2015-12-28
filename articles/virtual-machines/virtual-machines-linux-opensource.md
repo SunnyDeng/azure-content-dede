@@ -131,7 +131,7 @@ CoreOS ist eine kleine, optimierte Distribution für die reine Computingskalieru
 13. [Grundlagen: RAID](virtual-machines-linux-configure-raid.md)
 14. [Grundlagen: Erfassen eines virtuellen Linux-Computers zum Erstellen einer Vorlage](virtual-machines-linux-capture-image.md)
 15. [Grundlagen: Der Azure Linux-Agent](virtual-machines-linux-agent-user-guide.md)
-16. [Grundlagen: Azure-VM-Erweiterungen und -Features](http://msdn.microsoft.com/library/azure/dn606311.aspx)
+16. [Grundlagen: Azure-VM-Erweiterungen und -Features](virtual-machines-extensions-features.md)
 17. [Grundlagen: Einfügen benutzerdefinierter Daten in einen virtuellen Computer zur Verwendung mit "Cloud-init"](virtual-machines-how-to-inject-custom-data.md)
 18. [Blog zu den Grundlagen: Erstellen von Linux auf Azure in zwölf Schritten für Hochverfügbarkeit](http://blogs.technet.com/b/keithmayer/archive/2014/10/03/quick-start-guide-building-highly-available-linux-servers-in-the-cloud-on-microsoft-azure.aspx)
 19. [Blog zu den Grundlagen: Automatisieren der Bereitstellung von Linux auf Azure mit der Azure-CLI, node.js, jhawk](http://blogs.technet.com/b/keithmayer/archive/2014/11/24/step-by-step-automated-provisioning-for-linux-in-the-cloud-with-microsoft-azure-xplat-cli-json-and-node-js-part-1.aspx)
@@ -191,7 +191,7 @@ Es ist geplant, diesen Abschnitt in Kürze mit Inhalt zu füllen. Wenn Sie Vorsc
 4. [Video: Zugreifen auf Linux-basierten GUI auf Azure im Browser mit fernapp](http://channel9.msdn.com/Blogs/Open/Accessing-Linux-based-GUI-on-Azure-over-browser-with-fernapp)
 5. [Video: Freigegebener Speicher unter Linux mithilfe der Vorschau der Azure-Dateien – Teil 1](http://channel9.msdn.com/Blogs/Open/Shared-storage-on-Linux-via-Azure-Files-Preview-Part-1)
 6. [Video: Einbeziehen von Linux-Geräten auf Azure mithilfe von Service Bus und Websites](http://channel9.msdn.com/Blogs/Open/Embracing-Linux-devices-on-Azure-via-Service-Bus-and-Web-Sites)
-7. [Video: Verbinden einer nativen Linux-basierten zwischengespeicherten Anwendung mit Windows Azure](http://channel9.msdn.com/Blogs/Open/Connecting-a-Linux-based-native-memcache-application-to-Windows-Azure)
+7. [Video: Verbinden einer nativen Linux-basierten zwischengespeicherten Anwendung mit Microsoft Azure](http://channel9.msdn.com/Blogs/Open/Connecting-a-Linux-based-native-memcache-application-to-Windows-Azure)
 8. [Video: Lastenausgleich für hoch verfügbare Linux-Dienste auf Azure: OpenLDAP und MySQL](http://channel9.msdn.com/Blogs/Open/Load-balancing-highly-available-Linux-services-on-Windows-Azure-OpenLDAP-and-MySQL)
 
 
@@ -311,4 +311,4 @@ Dieser Abschnitt beginnt mit einem Blogeintrag mit einer Reihe von Videos unter 
 [How to use docker-machine on Azure]: virtual-machines-docker-machine.md
 [How to use docker with swarm on Azure]: virtual-machines-docker-swarm.md
 
-<!---HONumber=AcomDC_1203_2015-->
+<!----HONumber=AcomDC_1217_2015-->

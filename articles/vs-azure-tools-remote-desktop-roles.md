@@ -1,11 +1,11 @@
 <properties 
-   pageTitle="Verwendung von Remotedesktop mit Azure-Rollen"
+   pageTitle="Verwenden von Remotedesktop mit Azure-Rollen | Microsoft Azure"
    description="Verwendung von Remotedesktop mit Azure-Rollen"
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tlee" />
+   editor="" />
 <tags 
    ms.service="multiple"
    ms.devlang="multiple"
@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="08/24/2015"
-   ms.author="kempb" />
+   ms.author="tarcher" />
 
 # Verwendung von Remotedesktop mit Azure-Rollen
 
@@ -75,4 +75,4 @@ Nach der Veröffentlichung des Clouddiensts in Azure können Sie sich mit dem Se
 
 1. Geben Sie den Benutzernamen und das zuvor erstellte Kennwort ein. Sie sind nun bei Ihrer Remotesitzung angemeldet.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

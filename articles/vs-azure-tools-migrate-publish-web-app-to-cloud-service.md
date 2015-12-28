@@ -3,9 +3,9 @@
    description="Sie erfahren, wie Sie Ihre Webanwendung mit Visual Studio zu einem Azure-Clouddienst migrieren und veröffentlichen."
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tglee" />
+   editor="" />
 <tags
    ms.service="multiple"
    ms.devlang="dotnet"
@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="multiple"
    ms.date="09/30/2015"
-   ms.author="kempb" />
+   ms.author="tarcher" />
 
 # Vorgehensweise: Migrieren und Veröffentlichen einer Webanwendung in einem Azure-Clouddienst aus Visual Studio
 
@@ -208,4 +208,4 @@ Zum Veröffentlichen einer Webanwendung unter Azure muss für die Anwendung eine
 ## Nächste Schritte
 Weitere Informationen zur Veröffentlichung finden Sie unter [Veröffentlichen und Bereitstellen einer Azure-Anwendung in Visual Studio](vs-azure-tools-cloud-service-publish-set-up-required-services-in-visual-studio.md). Sehen Sie sich auch [Einrichten benannter Authentifizierungsanmeldeinformationen](vs-azure-tools-setting-up-named-authentication-credentials.md) an.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

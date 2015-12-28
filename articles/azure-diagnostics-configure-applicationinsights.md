@@ -7,12 +7,12 @@
    manager=""
    editor="" />
 <tags
-   ms.service="multiple"
+   ms.service="application-insights"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="11/16/2015"
+   ms.date="12/15/2015"
    ms.author="saurabh" />
 
 # Konfigurieren der Azure-Diagnose zum Senden von Daten an Application Insights
@@ -92,7 +92,7 @@ Hier ist ein vollständiges Beispiel für die öffentliche Konfigurationsdatei, 
 Für diese Funktionalität gibt es einige Einschränkungen, die es zu beachten gilt.
 
 - Kanäle sind nur für die Arbeit mit Protokolltyp und nicht mit Leistungsindikatoren vorgesehen. Wenn Sie einen Kanal mit einem Leistungsindikatorelement angeben, wird es ignoriert. 
-- Der Protokolliergrad für einen Kanal darf den Protokolliergrad für die von der Azure-Diagnose erfassten Daten nicht überschreiten. Beispiel: Sie können keine Anwendungsprotokollfehler im Logs-Element sammeln und können nicht versuchen, ausführliche Protokolle an die Application Insight-Synchronisierung zu senden. Das *ScheduledTransferLogLevelFilter*-Attribut muss immer genauso viele oder mehr Protokolle sammeln wie bzw. als die Protokolle, die Sie an eine Senke senden möchten. 
+- Der Protokolliergrad für einen Kanal darf den Protokolliergrad für die von der Azure-Diagnose erfassten Daten nicht überschreiten. Beispiel: Sie können keine Anwendungsprotokollfehler im Logs-Element sammeln und können nicht versuchen, ausführliche Protokolle an die Application Insight-Senke zu senden. Das *ScheduledTransferLogLevelFilter*-Attribut muss immer genauso viele oder mehr Protokolle sammeln wie bzw. als die Protokolle, die Sie an eine Senke senden möchten. 
 - Sie können keine von der Azure-Diagnose-Erweiterung gesammelten Blobdaten an Application Insights senden. Zum Beispiel alle Daten unter dem *Directories*-Knoten. Bei Absturzabbildern wird das tatsächliche Absturzabbild weiterhin an den Blobspeicher gesendet, und es wird nur eine Benachrichtigung, dass das Absturzabbild generiert wurde, an Application Insights gesendet. 
 
 
@@ -101,4 +101,4 @@ Für diese Funktionalität gibt es einige Einschränkungen, die es zu beachten g
 - Verwenden Sie [PowerShell](cloud-services-diagnostics-powershell.md), um die Azure-Diagnose-Erweiterung für Ihre Anwendung zu aktivieren. 
 - Verwenden Sie [Visual Studio](vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines.md), um die Azure-Diagnose-Erweiterung für Ihre Anwendung zu aktivieren. 
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1217_2015-->

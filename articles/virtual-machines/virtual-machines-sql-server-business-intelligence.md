@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
-	ms.date="08/19/2015"
+	ms.date="12/11/2015"
 	ms.author="jroth" />
 
 # SQL Server-Business Intelligence in Azure Virtual Machines
@@ -84,7 +84,7 @@ In der folgenden Tabelle sind die Business Intelligence-Features zusammengefasst
 |**Analysis Services – Tabellarisch**|Nein|In SQL Server 2012- und 2014-Images unterstützt, aber nicht standardmäßig installiert. Installieren Sie eine weitere Instanz von Analysis Services. Siehe Abschnitt „Installieren anderer SQL Server-Dienste und -Features“ in diesem Thema.|
 |**Analysis Services Power Pivot für SharePoint**|Nein|Das Image des Microsoft Azure Virtual Machine-Katalogs enthält weder SharePoint noch SharePoint-Installationsdateien. <sup>1</sup>|
 
-<sup>1</sup> Weitere Informationen zu SharePoint und virtuellen Azure-Computern finden Sie unter [Microsoft Azure-Architekturen für SharePoint 2013](https://technet.microsoft.com/library/dn635309.aspx) und [SharePoint Deployment on Windows Azure Virtual Machines](https://www.microsoft.com/download/details.aspx?id=34598) (SharePoint-Bereitstellung auf Microsoft Azure Virtual Machines, in englischer Sprache).
+<sup>1</sup> Weitere Informationen zu SharePoint und virtuellen Azure-Computern finden Sie unter [Microsoft Azure-Architekturen für SharePoint 2013](https://technet.microsoft.com/library/dn635309.aspx) und [SharePoint Deployment on Microsoft Azure Virtual Machines](https://www.microsoft.com/download/details.aspx?id=34598) (SharePoint-Bereitstellung auf Microsoft Azure Virtual Machines, in englischer Sprache).
 
 ![PowerShell](./media/virtual-machines-sql-server-business-intelligence/IC660119.gif) Führen Sie den folgenden PowerShell-Befehl aus, um eine Liste mit den installierten Diensten abzurufen, bei denen der Dienstname "SQL" enthält.
 
@@ -433,4 +433,4 @@ Im folgenden Diagramm sind die Ports dargestellt, die in der Firewall des virtue
 
 - [Verwalten von Azure SQL-Datenbank mit PowerShell](http://blogs.msdn.com/b/windowsazure/archive/2013/02/07/windows-azure-sql-database-management-with-powershell.aspx)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!----HONumber=AcomDC_1217_2015-->

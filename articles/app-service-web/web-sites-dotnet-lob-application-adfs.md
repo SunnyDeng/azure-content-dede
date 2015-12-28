@@ -13,7 +13,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="web" 
-	ms.date="09/29/2015" 
+	ms.date="12/15/2015" 
 	ms.author="cephalin"/>
 
 # Erstellen einer .NET MVC-Web-App in Azure App Service mit Azure Active Directory-Authentifizierung
@@ -48,7 +48,7 @@ Sie benötigen Folgendes zum Bearbeiten dieses Lernprogramms:
 <a name="bkmk_sample"></a>
 ## Verwenden der Beispielanwendung für die Vorlage der Branchenanwendung ##
 
-Die Beispielanwendung in diesem Lernprogramm ([WebApp-WSFederation-DotNet](https://github.com/AzureADSamples/WebApp-WSFederation-DotNet)) wurde vom Azure Active Directory-Team erstellt. Da AD FS WS-Federation unterstützt, können Sie es ohne Weiteres als Vorlage zum Erstellen neuer Branchenanwendungen verwenden. Es bietet die folgenden Features:
+Die Beispielanwendung in diesem Lernprogramm ([WebApp-WSFederation-DotNet](https://github.com/AzureADSamples/WebApp-WSFederation-DotNet)) wurde vom Azure Active Directory-Team erstellt. Da AD FS WS-Federation unterstützt, können Sie es ohne Weiteres als Vorlage zum Erstellen neuer Branchenanwendungen verwenden. Es bietet die folgenden Features:
 
 - Verwendet [WS-Federation](http://msdn.microsoft.com/library/bb498017.aspx) zur Authentifizierung bei einer lokalen AD FS-Bereitstellung
 - Funktionen zum An- und Abmelden
@@ -63,9 +63,9 @@ Die Beispielanwendung in diesem Lernprogramm ([WebApp-WSFederation-DotNet](https
 
 3.	Öffnen Sie die Projektmappe, und öffnen Sie "Controllers\\AccountController.cs" im **Projektmappen-Explorer**.
 
-	Sie sehen, dass der Code einfach eine Authentifizierungsaufforderung ausgibt, um den Benutzer mithilfe des WS-Verbunds zu authentifizieren. Die gesamte Authentifizierung wird in der Datei "App\_Start\\Startup.Auth.cs" konfiguriert.
+	Sie sehen, dass der Code einfach eine Authentifizierungsaufforderung ausgibt, um den Benutzer mithilfe des WS-Verbunds zu authentifizieren. Die gesamte Authentifizierung wird in der Datei "App_Start\\Startup.Auth.cs" konfiguriert.
 
-4.  Öffnen Sie die Datei "App\_Start\\Startup.Auth.cs". Beachten Sie in der `ConfigureAuth`-Methode die folgende Zeile:
+4.  Öffnen Sie die Datei "App_Start\\Startup.Auth.cs". Beachten Sie in der `ConfigureAuth`-Methode die folgende Zeile:
 
         app.UseWsFederationAuthentication(
             new WsFederationAuthenticationOptions
@@ -74,21 +74,21 @@ Die Beispielanwendung in diesem Lernprogramm ([WebApp-WSFederation-DotNet](https
                 MetadataAddress = metadata                                      
             });
 
-	Im OWIN-Zusammenhang beschränkt sich der Aufwand zur Konfiguration der WS-Verbund-Authentifizierung auf dieses absolute Minimum. Der Vorgang ist wesentlich einfacher und eleganter als bei WIF, wo in die Datei "Web.config" überall XML-Code eingefügt werden muss. Die einzige Information, die Sie benötigen, sind die ID der vertrauenden Seite (RP) und die URL der Metadatendatei Ihres AD FS-Diensts. Hier sehen Sie ein Beispiel:
+	Im OWIN-Zusammenhang beschränkt sich der Aufwand zur Konfiguration der WS-Verbund-Authentifizierung auf dieses absolute Minimum. Der Vorgang ist wesentlich einfacher und eleganter als bei WIF, wo in die Datei „Web.config“ überall XML-Code eingefügt werden muss. Die einzige Information, die Sie benötigen, sind die ID der vertrauenden Seite (RP) und die URL der Metadatendatei Ihres AD FS-Diensts. Hier sehen Sie ein Beispiel:
 
 	-	RP-ID: `https://contoso.com/MyLOBApp`
 	-	Metadaten-Adresse: `http://adfs.contoso.com/FederationMetadata/2007-06/FederationMetadata.xml`
 
-5.	Ändern Sie in der Datei "App\_Start\\Startup.Auth.cs" die Definitionen für statische Zeichenfolgen wie unten hervorgehoben:
+5.	Ändern Sie in der Datei "App_Start\\Startup.Auth.cs" die Definitionen für statische Zeichenfolgen wie unten hervorgehoben:
 	<pre class="prettyprint">
-private static string realm = ConfigurationManager.AppSettings["ida:<mark>RPIdentifier</mark>"];
-<mark><del>private static string aadInstance = ConfigurationManager.AppSettings["ida:AADInstance"];</del></mark>
-<mark><del>private static string tenant = ConfigurationManager.AppSettings["ida:Tenant"];</del></mark>
-<mark><del>private static string metadata = string.Format("{0}/{1}/federationmetadata/2007-06/federationmetadata.xml", aadInstance, tenant);</del></mark>
-<mark>private static string metadata = string.Format("https://{0}/federationmetadata/2007-06/federationmetadata.xml", ConfigurationManager.AppSettings["ida:ADFS"]);</mark>
+	private static string realm = ConfigurationManager.AppSettings["ida:<mark>RPIdentifier</mark>"];
+    <mark><del>private static string aadInstance = ConfigurationManager.AppSettings["ida:AADInstance"];</del></mark>
+    <mark><del>private static string tenant = ConfigurationManager.AppSettings["ida:Tenant"];</del></mark>
+    <mark><del>private static string metadata = string.Format("{0}/{1}/federationmetadata/2007-06/federationmetadata.xml", aadInstance, tenant);</del></mark>
+    <mark>private static string metadata = string.Format("https://{0}/federationmetadata/2007-06/federationmetadata.xml", ConfigurationManager.AppSettings["ida:ADFS"]);</mark>
 
-<mark><del>string authority = String.Format(CultureInfo.InvariantCulture, aadInstance, tenant);</del></mark>
-</pre>
+    <mark><del>string authority = String.Format(CultureInfo.InvariantCulture, aadInstance, tenant);</del></mark>
+    </pre>
 
 6.	Nehmen Sie jetzt die entsprechenden Änderungen in der Datei "Web.config" vor. Öffnen Sie die Datei "Web.config", und ändern Sie die App-Einstellungen wie unten dargestellt:
 	<pre class="prettyprint">
@@ -103,8 +103,10 @@ private static string realm = ConfigurationManager.AppSettings["ida:<mark>RPIden
   <mark>&lt;add key="ida:RPIdentifier" value="[ID für vertrauende Seite gemäß Konfiguration in AD&#160;FS eingeben, z.&#160;B. https://localhost:44320/]" /></mark>
   <mark>&lt;add key="ida:ADFS" value="[FQDN des AD&#160;FS-Diensts eingeben, z.&#160;B. adfs.contoso.com]" /></mark>
 
-&lt;/appSettings>
-</pre>Tragen Sie die Schlüsselwerte entsprechend Ihrer jeweiligen Umgebung ein.
+	&lt;/appSettings&gt;
+	</pre>
+
+	Tragen Sie die Schlüsselwerte entsprechend Ihrer jeweiligen Umgebung ein.
 
 7.	Erstellen Sie die Anwendung, um sicherzustellen, dass keine Fehler vorliegen.
 
@@ -119,7 +121,7 @@ Sie veröffentlichen hier eine Anwendung in einer Web-App in App Service-Web-App
 
 	![](./media/web-sites-dotnet-lob-application-adfs/01-publish-website.png)
 
-2. Wählen Sie **Microsoft Azure-Web-Apps**.
+2. Wählen Sie **Microsoft Azure App Service** aus.
 3. Wenn Sie sich nicht bei Azure angemeldet haben, klicken Sie auf **Anmelden**, und verwenden Sie zum Anmelden das Microsoft-Konto für Ihr Azure-Abonnement.
 4. Klicken Sie nach der Anmeldung auf **Neu**, um eine neue Web-App zu erstellen.
 5. Füllen Sie alle erforderlichen Felder aus. Da Sie später eine Verbindung mit lokalen Daten herstellen, erstellen Sie keine Datenbank für diese Web-App.
@@ -144,7 +146,7 @@ Wenn Sie die in Azure veröffentlichte Web-App dem Debugger anfügen möchten (d
 <a name="bkmk_rptrusts"></a>
 ## Konfigurieren von Vertrauensstellungen der vertrauenden Seite in der AD FS-Verwaltung ##
 
-Jetzt müssen Sie eine RP-Vertrauensstellung in der AD FS-Verwaltung konfigurieren, bevor sich Ihre Beispielanwendung tatsächlich mit AD FS authentifizieren kann. Sie müssen zwei separate RP-Vertrauensstellungen einrichten, eine für Ihre Debugumgebung und eine für die veröffentlichte Web-App.
+Jetzt müssen Sie eine RP-Vertrauensstellung in der AD FS-Verwaltung konfigurieren, bevor Sie Ihre Beispielanwendung verwenden und tatsächlich mit AD FS authentifizieren können. Sie müssen zwei separate RP-Vertrauensstellungen einrichten, eine für Ihre Debugumgebung und eine für die veröffentlichte Web-App.
 
 > [AZURE.NOTE]Wiederholen Sie die folgenden Schritte für beide Umgebungen.
 
@@ -251,7 +253,7 @@ Bisher haben Sie Folgendes erreicht:
 - AD FS hat einen Active Directory-Benutzer authentifiziert und leitet Sie zur Startseite der Anwendung zurück.
 - AD FS hat den Namensanspruch (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name) an Ihre Anwendung gesendet. Dies geht daraus hervor, dass der Benutzername in der Ecke angezeigt wird. 
 
-Wenn der Namensanspruch fehlt, würde **Hallo !** angezeigt werden. Wenn Sie die Datei „Views\\Shared\\_LoginPartial.cshtml“ betrachten, werden Sie feststellen, dass `User.Identity.Name` verwendet wird, um den Benutzernamen anzuzeigen. Wie bereits erwähnt, füllt ASP.NET diese Eigenschaft mit den Namensanspruch des authentifizierten Benutzers, wenn dieser im SAML-Token verfügbar ist. Um alle Ansprüche zu sehen, die von AD FS gesendet werden, setzen Sie in der Datei "Controllers\\HomeController.cs" einen Haltepunkt in der Index-Aktionsmethode. Nachdem der Benutzer authentifiziert wurde, überprüfen Sie die `System.Security.Claims.Current.Claims`-Auflistung.
+Wenn der Namensanspruch fehlt, würde **Hallo !** angezeigt werden. Wenn Sie die Datei "Views\\Shared\\_LoginPartial.cshtml" betrachten, werden Sie feststellen, dass `User.Identity.Name` verwendet wird, um den Benutzernamen anzuzeigen. Wie bereits erwähnt, füllt ASP.NET diese Eigenschaft mit den Namensanspruch des authentifizierten Benutzers, wenn dieser im SAML-Token verfügbar ist. Um alle Ansprüche zu sehen, die von AD FS gesendet werden, setzen Sie in der Datei "Controllers\\HomeController.cs" einen Haltepunkt in der Index-Aktionsmethode. Nachdem der Benutzer authentifiziert wurde, überprüfen Sie die `System.Security.Claims.Current.Claims`-Auflistung.
 
 ![](./media/web-sites-dotnet-lob-application-adfs/12-test-debugging-all-claims.png)
 
@@ -345,14 +347,14 @@ Azure App Service-Web-Apps unterstützen zwei Methoden für den Zugriff auf loka
 - [Schützen der Anwendung durch SSL und das Authorize-Attribut](web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database.md#protect-the-application-with-ssl-and-the-authorize-attribute)
 - [Verwenden von Active Directory für die Authentifizierung in Azure App Service](web-sites-authentication-authorization.md)
 - [Erstellen einer .NET MVC-Web-App in Azure App Service mit Azure Active Directory-Authentifizierung](web-sites-dotnet-lob-application-azure-ad.md)
-- [Use the On-Premises Organizational Authentication Option (ADFS) With ASP.NET in Visual Studio 2013](http://www.cloudidentity.com/blog/2014/02/12/use-the-on-premises-organizational-authentication-option-adfs-with-asp-net-in-visual-studio-2013/) (Verwenden der lokalen Organisationsauthentifizierungsoption (ADFS) mit ASP.NET in Visual Studio 2013, in englischer Sprache)
+- [Use the On-Premises Organizational Authentication Option (ADFS) With ASP.NET in Visual Studio 2013 (Verwenden der lokalen Organisationsauthentifizierungsoption (ADFS) mit ASP.NET in Visual Studio 2013, in englischer Sprache)](http://www.cloudidentity.com/blog/2014/02/12/use-the-on-premises-organizational-authentication-option-adfs-with-asp-net-in-visual-studio-2013/)
 - [Blog von Vittorio Bertocci](http://blogs.msdn.com/b/vbertocci/)
-- [Migrate a VS2013 Web Project From WIF to Katana](http://www.cloudidentity.com/blog/2014/09/15/MIGRATE-A-VS2013-WEB-PROJECT-FROM-WIF-TO-KATANA/) (Migrieren eines VS2013-Webprojekts von WIF nach Katana, in englischer Sprache)
+- [Migrate a VS2013 Web Project From WIF to Katana (Migrieren eines VS2013-Webprojekts von WIF nach Katana, in englischer Sprache)](http://www.cloudidentity.com/blog/2014/09/15/MIGRATE-A-VS2013-WEB-PROJECT-FROM-WIF-TO-KATANA/)
 - [Active Directory-Verbunddienste: Übersicht](http://technet.microsoft.com/library/hh831502.aspx)
-- [WS-Federation 1.1 specification](http://download.boulder.ibm.com/ibmdl/pub/software/dw/specs/ws-fed/WS-Federation-V1-1B.pdf?S_TACT=105AGX04&S_CMP=LP) (WS-Verbund 1.1 – Spezifikationen, in englischer Sprache)
+- [WS-Federation 1.1 specification (WS-Verbund 1.1 – Spezifikationen, in englischer Sprache)](http://download.boulder.ibm.com/ibmdl/pub/software/dw/specs/ws-fed/WS-Federation-V1-1B.pdf?S_TACT=105AGX04&S_CMP=LP)
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../../includes/app-service-web-whats-changed.md)]
  
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

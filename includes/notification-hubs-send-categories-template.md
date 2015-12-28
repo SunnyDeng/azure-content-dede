@@ -1,27 +1,27 @@
 
-This section shows how to send breaking news as tagged template notifications from a .NET console app.
+In diesem Abschnitt erfahren Sie, wie Sie Neuigkeiten als Vorlage mit Tags von einer .NET-Konsolen-App senden.
 
-If you are using Mobile Services please refer to the [Get Started with Push](mobile-services-dotnet-backend-windows-store-dotnet-get-started-push.md) tutorials. 
+Bei Verwendung von Mobile Services finden Sie weitere Informationen im Lernprogramm [Erste Schritte mit Push](mobile-services-dotnet-backend-windows-store-dotnet-get-started-push.md).
 
-If you want to use Java or PHP refer to [How to use Notification Hubs from Java/PHP](../articles/notification-hubs/notification-hubs-java-backend-how-to.md). You can send notifications from any backend using the [Notification Hub REST interface](http://msdn.microsoft.com/library/windowsazure/dn223264.aspx).
+Wenn Sie Java oder PHP verwenden möchten, lesen Sie die Informationen unter [Verwenden von Notification Hubs von Java/PHP](../articles/notification-hubs/notification-hubs-java-backend-how-to.md). Sie können Benachrichtigungen von beliebigen Back-Ends mithilfe der [Notification Hubs-REST-Schnittstelle](http://msdn.microsoft.com/library/windowsazure/dn223264.aspx) senden.
 
-Skip steps 1-3 if you created the console app for sending notifications when you completed [Get started with Notification Hubs][get-started].
+Überspringen Sie die Schritte 1 bis 3, wenn Sie eine Konsolen-App für das Senden von Benachrichtigungen erstellt haben, als Sie das Tutorial [Erste Schritte mit Notification Hubs][get-started] abgeschlossen haben.
 
-1. In Visual Studio create a new Visual C# console application: 
+1. Erstellen Sie in Visual Studio eine neue Visual C#-Konsolenanwendung 
 
    	![][13]
 
-2. In the Visual Studio main menu, click **Tools**, **Library Package Manager**, and **Package Manager Console**, then in the console window type the following and press **Enter**:
+2. Klicken Sie im Visual Studio-Hauptmenü auf **Extras**, **Bibliothekspaket-Manager** und **Paket-Managerkonsole**. Geben Sie dann in das Konsolenfenster Folgendes ein und drücken Sie die **Eingabetaste**:
 
         Install-Package Microsoft.Azure.NotificationHubs
  	
-	This adds a reference to the Azure Notification Hubs SDK using the <a href="http://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/">Microsoft.Azure.Notification Hubs NuGet package</a>. 
+	Dies fügt mithilfe des <a href="http://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/">Microsoft.Azure.NotificationHubs-NuGet-Pakets</a> einen Verweis auf das Azure Notification Hubs-SDK hinzu.
 
-3. Open the file Program.cs and add the following `using` statement:
+3. Öffnen Sie die Datei "Program.cs", und fügen Sie die folgende `using`-Anweisung hinzu:
 
         using Microsoft.Azure.NotificationHubs;
 
-4. In the `Program` class, add the following method, or replace it if it already exists:
+4. Fügen Sie in der `Program`-Klasse die folgende Methode hinzu, oder ersetzen Sie sie, falls sie bereits vorhanden ist:
 
         private static async void SendTemplateNotificationAsync()
         {
@@ -47,16 +47,16 @@ Skip steps 1-3 if you created the console app for sending notifications when you
             }
 		 }
 
-	This code sends a template notification for each of the six tags in the string array. The use of tags makes sure that devices receive notifications only for the registered categories.	
+	Dieser Code sendet eine Vorlagenbenachrichtigung für jedes der sechs Tags im Zeichenfolgenarray. Durch die Verwendung von Tags wird sichergestellt, dass Geräte nur Benachrichtigungen für die registrierten Kategorien erhalten.
 
-6. In the above code, replace the `<hub name>` and `<connection string with full access>` placeholders with your notification hub name and the connection string for *DefaultFullSharedAccessSignature* from the dashboard of your notification hub.
+6. Ersetzen Sie im Code oben die Platzhalter `<hub name>` und `<connection string with full access>` durch den Namen Ihres Notification Hubs und die Verbindungszeichenfolge für *DefaultFullSharedAccessSignature* aus dem Dashboard für Ihren Notification Hub.
 
-7. Add the following lines in the **Main** method:
+7. Fügen Sie die folgenden Zeilen zur **Main**-Methode hinzu:
 
          SendTemplateNotificationAsync();
 		 Console.ReadLine();
 
-8. Build the console app.
+8. Erstellen Sie die Konsolenanwendung.
 
 <!-- Anchors -->
 [From a console app]: #console
@@ -77,3 +77,5 @@ Skip steps 1-3 if you created the console app for sending notifications when you
 [Notification Hubs Guidance]: http://msdn.microsoft.com/library/jj927170.aspx
 [Notification Hubs How-To for Windows Store]: http://msdn.microsoft.com/library/jj927172.aspx
 [Notification Hubs REST interface]: http://msdn.microsoft.com/library/windowsazure/dn223264.aspx
+
+<!---HONumber=AcomDC_1217_2015-->

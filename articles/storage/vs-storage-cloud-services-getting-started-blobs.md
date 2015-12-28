@@ -5,7 +5,7 @@
 	documentationCenter=""
 	authors="TomArcher"
 	manager="douge"
-	editor="tglee"/>
+	editor=""/>
 
 <tags
 	ms.service="storage"
@@ -13,19 +13,10 @@
 	ms.tgt_pltfrm="vs-getting-started"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/03/2015"
+	ms.date="12/16/2015"
 	ms.author="tarcher"/>
 
 # Erste Schritte mit Azure-BLOB-Speicher und verbundenen Visual Studio-Diensten (Clouddienstprojekte)
-
-> [AZURE.SELECTOR]
-> - [Getting started](vs-storage-cloud-services-getting-started-blobs.md)
-> - [What happened](vs-storage-cloud-services-what-happened.md)
-
-> [AZURE.SELECTOR]
-> - [Blobs](vs-storage-cloud-services-getting-started-blobs.md)
-> - [Queues](vs-storage-cloud-services-getting-started-queues.md)
-> - [Tables](vs-storage-cloud-services-getting-started-tables.md)
 
 ## Übersicht
 
@@ -266,4 +257,4 @@ Da die Beispielmethode eine asynchrone Methode aufruft, muss sie mit dem Schlüs
 
 [AZURE.INCLUDE [vs-storage-dotnet-blobs-next-steps](../../includes/vs-storage-dotnet-blobs-next-steps.md)]
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

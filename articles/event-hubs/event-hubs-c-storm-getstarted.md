@@ -9,11 +9,11 @@
 
 <tags
 	ms.service="event-hubs"
-	ms.workload="core"
+	ms.workload="na"
 	ms.tgt_pltfrm="c"
 	ms.devlang="java"
 	ms.topic="article" 
-	ms.date="09/01/2015"
+	ms.date="12/09/2015"
 	ms.author="sethm"/>
 
 # Erste Schritte mit Event Hubs
@@ -86,8 +86,8 @@ Sie können jetzt die Anwendung ausführen.
 
 Die folgenden Ressourcen sind für die Entwicklung von Anwendungen verfügbar, die Event Hubs und Storm integrieren.
 
-- [Analysieren von Sensordaten mit Storm und HDInsight] ist ein Lernprogramm mit einem umfassenden Szenario, das Event Hubs, Storm und HBase zum Erfassen von Sensordaten in einen Hadoop-Cluster verwendet.
-- [Entwickeln von Anwendungen zur Verarbeitung von Streamingdaten mit SCP.NET und C# mit Storm und HDInsight] ist ein Lernprogramm zum Schreiben von Storm-Pipelines mithilfe von C#.
+- [Analysieren von Sensordaten mit Storm und HDInsight][] ist ein Lernprogramm mit einem umfassenden Szenario, das Event Hubs, Storm und HBase zum Erfassen von Sensordaten in einen Hadoop-Cluster verwendet.
+- [Entwickeln von Anwendungen zur Verarbeitung von Streamingdaten mit SCP.NET und C# mit Storm und HDInsight][] ist ein Lernprogramm zum Schreiben von Storm-Pipelines mithilfe von C#.
 
 <!-- Images. -->
 [1]: ./media/event-hubs-c-storm-getstarted/create-event-hub1.png
@@ -111,4 +111,4 @@ Die folgenden Ressourcen sind für die Entwicklung von Anwendungen verfügbar, d
 [Entwickeln von Anwendungen zur Verarbeitung von Streamingdaten mit SCP.NET und C# mit Storm und HDInsight]: ../hdinsight/hdinsight-storm-develop-csharp-visual-studio-topology.md
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

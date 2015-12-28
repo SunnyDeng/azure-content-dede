@@ -13,7 +13,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="web" 
-	ms.date="09/29/2015" 
+	ms.date="12/10/2015" 
 	ms.author="cephalin"/>
 
 # Verwenden von Active Directory für die Authentifizierung in Azure App Service #
@@ -52,4 +52,4 @@ In vielen Szenarien muss das Anwendungsverhalten in Bezug auf Authentifizierung 
 * Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

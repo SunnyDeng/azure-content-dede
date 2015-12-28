@@ -13,7 +13,7 @@
   ms.tgt_pltfrm="mobile-multiple"
   ms.devlang="dotnet"
   ms.topic="article"
-  ms.date="11/09/2015"
+  ms.date="12/15/2015"
   ms.author="donnam"/>
 
 # Client- und Serverversionsverwaltung in Mobile Apps und Mobile Services
@@ -101,21 +101,20 @@ Hinweis: Die Mobile Services-Client-SDKs senden *keinen* Headerwert für `ZUMO-A
 Die Versionsüberprüfung wurde ab den folgenden Versionen des Client-SDK für **Azure Mobile Apps** eingeführt:
 
 | Clientplattform | Version | Versionsheaderwert |
-| -------------------               | ------------------------                                                  | -----------------    |
-| Verwalteter Client (Windows, Xamarin) | [2\.0.0-beta-3](https://www.nuget.org/packages/WindowsAzure.MobileServices/2.0.0-beta-3) | 2\.0.0 |
-| iOS | [3\.0.0-beta4](http://go.microsoft.com/fwlink/?LinkID=529823) | 2\.0.0 |
-| Android | 3\.0.0-beta1 | 2\.0.0 |
-| HTML | 2\.0.0-beta2 | 2\.0.0 |
+| -------------------               | ------------------------  | -----------------    |
+| Verwalteter Client (Windows, Xamarin) | [2\.0.0](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/2.0.0) | 2\.0.0 |
+| iOS | [3\.0.0](http://go.microsoft.com/fwlink/?LinkID=529823) | 2\.0.0 |
+| Android | [3\.0.0](http://go.microsoft.com/fwlink/?LinkID=717033&clcid=0x409) | 3\.0.0 |
 
-<!-- TODO: add Android and HTML versions when released -->
+<!-- TODO: add HTML version when released -->
 
 ### Mobile *Apps*-Server-SDKs
 
 Die Versionsüberprüfung ist in den folgenden Versionen des Server-SDK enthalten:
 
-| Serverplattform | Version | Akzeptierter Versionsheader |
+| Serverplattform | SDK | Akzeptierter Versionsheader |
 | ---------------- | ------------------------------------------------------------                                                   | ----------------------- |
-| .NET | [Microsoft.Azure.Mobile.Server.* Version 0.3.x (oder höher)](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Server/) | 2\.0.0 |
+| .NET | [Microsoft.Azure.Mobile.Server](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Server/) | 2\.0.0 |
 | Node.js | [azure-mobile-apps Version 1.0-beta1 (oder höher)](https://www.npmjs.com/package/azure-mobile-apps) | 2\.0.0 |
 
 ### Verhalten von Mobile Apps-Back-Ends
@@ -141,4 +140,4 @@ Die Versionsüberprüfung ist in den folgenden Versionen des Server-SDK enthalte
 [Mobile App Server SDK]: http://www.nuget.org/packages/microsoft.azure.mobile.server
 [Migrieren eines Mobile Service zu Azure App Service]: app-service-mobile-migrating-from-mobile-services.md
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

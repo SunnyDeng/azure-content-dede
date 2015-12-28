@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="09/22/2015"
+   ms.date="12/15/2015"
    ms.author="sahajs"/>
 
 # Überwachen Ihres Workloads mit dynamischen Verwaltungssichten
@@ -131,7 +131,7 @@ Speichern Sie den Schrittindex des lang dauernden Schritts.
 
 ### SCHRITT 4a: Bestimmen des Ausführungsstatus eines SQL-Schritts
 
-Verwenden Sie die Anforderungs-ID und den Schrittindex zum Abrufen von Informationen zur Verteilung von SQL Server-Abfragen als Teil des SQL-Schritts in der Abfrage. Speichern Sie die Knoten-ID und die SPID.
+Verwenden Sie die Anforderungs-ID und den Schrittindex zum Abrufen von Informationen zur Verteilung von SQL Server-Abfragen als Teil des SQL-Schritts in der Abfrage. Speichern Sie die Verteilungs-ID und die SPID.
 
 ```
 
@@ -149,7 +149,7 @@ Verwenden Sie die folgende Abfrage, um den SQL Server-Ausführungsplan für den 
 ```
 
 -- Find the SQL Server execution plan for a query running on a specific SQL Data Warehouse Compute or Control node. 
--- Replace node_id and spid with values from previous query.
+-- Replace distribution_id and spid with values from previous query.
 
 DBCC PDW_SHOWEXECUTIONPLAN(1, 78);
 
@@ -203,4 +203,4 @@ Weitere Tipps zur Verwaltung von SQL Data Warehouse finden Sie unter [Verwaltung
 
 <!--MSDN references-->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

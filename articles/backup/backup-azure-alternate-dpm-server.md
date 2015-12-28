@@ -7,7 +7,14 @@
 	manager="shreeshd"
 	editor=""/>
 
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/14/2015" ms.author="giridham"; "jimpark"/>
+<tags
+	ms.service="backup"
+	ms.workload="storage-backup-recovery"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="12/10/2015"
+	ms.author="giridham;jimpark"/>
 
 # Wiederherstellen von Daten von einem anderen DPM-Server im Sicherungstresor
 Sie können nun Daten wiederherstellen, die Sie in einem Azure-Sicherungstresor auf einem beliebigen bei diesem Tresor registrierten DPM-Server gesichert haben. Das entsprechende Verfahren ist vollständig in die DPM-Verwaltungskonsole integriert und ähnelt dem anderer Wiederherstellungsworkflows.
@@ -21,7 +28,7 @@ So stellen Sie Daten von einem anderen DPM-Server wieder her
 
     ![Externen DPM hinzufügen](./media/backup-azure-alternate-dpm-server/add-external-dpm.png)
 
-2. Geben Sie die **Tresoranmeldedaten** für den DPM-Server an, dessen Daten wiederhergestellt werden. Wählen Sie den **DPM-Server** aus der Liste der beim Sicherungstresor registrierten DPM-Server aus, und geben Sie die **Verschlüsselungspassphrase** für den DPM-Server an, dessen Daten wiederhergestellt werden.
+2. Laden Sie die neuen **Tresoranmeldedaten** des mit dem **DPM-Server** verknüpften Tresors herunter, wählen Sie den DPM-Server aus der Liste der beim Sicherungstresor registrierten DPM-Server aus, und geben Sie die **Verschlüsselungspassphrase** für den DPM-Server an, dessen Daten wiederhergestellt werden.
 
     ![Anmeldeinformationen des externen DPM](./media/backup-azure-alternate-dpm-server/external-dpm-credentials.png)
 
@@ -96,4 +103,4 @@ So stellen Sie Daten von einem anderen DPM-Server wieder her
 ## Nächste Schritte:
 • [Azure Backup – Häufig gestellte Fragen](backup-azure-backup-faq.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

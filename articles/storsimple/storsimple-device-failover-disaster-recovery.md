@@ -4,7 +4,7 @@
    services="storsimple"
    documentationCenter=""
    authors="alkohli"
-   manager="carolz"
+   manager="carmonm"
    editor="" />
 <tags 
    ms.service="storsimple"
@@ -12,16 +12,22 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="09/14/2015"
+   ms.date="12/14/2015"
    ms.author="alkohli" />
 
 # Ausführen eines Failovers und einer Notfallwiederherstellung für das StorSimple-Gerät
 
 ## Übersicht
 
-In diesem Tutorial werden die erforderlichen Schritte für das Ausführen eines Failovers auf einem StorSimple-Gerät bei einem Notfall beschrieben. Ein Failover ermöglicht das Migrieren Ihrer Daten von einem Quellgerät im Datencenter auf ein anderes physisches oder sogar ein virtuelles Gerät an dem gleichen oder einem anderen geografischen Standort. Ein Gerätefailover wird über das Feature der Notfallwiederherstellung koordiniert und auf der Seite "Geräte" initiiert. Auf dieser Seite werden alle StorSimple-Geräte aufgeführt, die mit dem StorSimple-Manager-Dienst verbunden sind. Für jedes Gerät werden Anzeigename, Status, bereitgestellte und maximale Kapazität, Typ und Modell angezeigt.
+In diesem Tutorial werden die erforderlichen Schritte für das Ausführen eines Failovers auf einem StorSimple-Gerät bei einem Notfall beschrieben. Ein Failover ermöglicht das Migrieren Ihrer Daten von einem Quellgerät im Datencenter auf ein anderes physisches oder sogar ein virtuelles Gerät an dem gleichen oder einem anderen geografischen Standort.
+
+Ein Gerätefailover wird über das Feature der Notfallwiederherstellung koordiniert und auf der Seite "Geräte" initiiert. Auf dieser Seite werden alle StorSimple-Geräte aufgeführt, die mit dem StorSimple-Manager-Dienst verbunden sind. Für jedes Gerät werden Anzeigename, Status, bereitgestellte und maximale Kapazität, Typ und Modell angezeigt.
 
 ![Seite "Geräte"](./media/storsimple-device-failover-disaster-recovery/IC740972.png)
+
+Die Anweisungen in diesem Tutorial gelten für physische und virtuelle StorSimple-Geräte sowie für alle Softwareversionen.
+
+
 
 ## Notfallwiederherstellung und Gerätefailover
 
@@ -40,6 +46,18 @@ Bedenken Sie bei jedem Gerätefailover Folgendes:
 - Als Voraussetzung für die Notfallwiederherstellung müssen alle Volumes innerhalb der Volumecontainer offline sein, und den Volumecontainern muss eine Cloudmomentaufnahme zugeordnet sein. 
 - Die verfügbaren Zielgeräte für die Notfallwiederherstellung sind Geräte, die über ausreichenden Speicherplatz zur Aufnahme der ausgewählten Volumecontainer verfügen. 
 - Geräte, die mit dem Dienst verbunden sind, aber das Speicherplatzkriterium nicht erfüllen, stehen als Zielgeräte nicht zur Verfügung.
+
+#### Gerätefailover in allen Softwareversionen
+
+Der StorSimple Manager-Dienst verfügt in einer Bereitstellung möglicherweise über mehrere physische und virtuelle Geräte, auf denen unterschiedliche Softwareversionen ausgeführt werden. Je nach Version der Software können sich die Volumetypen auf den Geräten auch unterscheiden. So kann beispielsweise ein Gerät mit Update 2 oder höher lokal fixierte und mehrstufige Volumes haben (mit Archivierung als Teilmenge der mehrstufigen Konfiguration). Ein Gerät ohne Update 2 kann hingegen über mehrstufige und Archivierungsvolumes verfügen.
+
+Bestimmen Sie anhand der folgenden Tabelle, ob ein Failover zu einem anderen Gerät mit anderer Softwareversion möglich ist und wie sich die Volumetypen während der Notfallwiederherstellung verhalten.
+
+| Failover von | Für physische Geräte zulässig | Für virtuelle Geräte zulässig |
+|----------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------|
+| Update 2 zu Versionen vor Update 1 (Release, 0.1, 0.2, 0.3) | Nein | Nein |
+| Update 2 zu Update 1 (1, 1.1, 1.2) | Ja. <br></br>Bei lokal fixierten oder mehrstufigen Volumes oder einer Kombination aus beiden wird immer ein Failover der Volumes als mehrstufig ausgeführt. | Ja.<br></br>Bei lokal fixierten Volumes wird ein Failover als mehrstufiges Volume ausgeführt. |
+| Update 2 zu Update 2 (spätere Version) | Ja.<br></br>Bei lokal fixierten oder mehrstufigen Volumes oder einer Kombination der beiden wird ein Failover für die Volumes immer zum ursprünglichen Volumetyp ausgeführt – mehrstufig als mehrstufig und lokal fixiert als lokal fixiert. | Ja.<br></br>Bei lokal fixierten Volumes wird ein Failover als mehrstufiges Volume ausgeführt. |
 
 ## Failover auf ein anderes physisches Gerät
 
@@ -95,10 +113,8 @@ Führen Sie die folgenden Schritte aus, wenn Sie nur über ein einzelnes Gerät 
 
 ## Failover auf ein virtuelles StorSimple-Gerät
 
-Sie müssen zunächst ein virtuelles StorSimple-Gerät erstellen und konfigurieren, bevor Sie dieses Verfahren ausführen können.
+Sie müssen zunächst ein virtuelles StorSimple-Gerät erstellen und konfigurieren, bevor Sie dieses Verfahren ausführen können. Bei der Ausführung von Update 2 sollten Sie für die Notfallwiederherstellung ein virtuelles 8020-Gerät mit 64 TB und Storage Premium verwenden.
  
->[AZURE.NOTE]**In dieser Version beträgt der auf dem virtuellen StorSimple-Gerät unterstützte Speicherplatz 30 TB.**
-
 Führen Sie die folgenden Schritte aus, um Ihr Gerät auf einem virtuellen StorSimple-Zielgerät wiederherzustellen.
 
 1. Stellen Sie sicher, dass der Volumecontainer für das Failover über zugeordnete Cloudmomentaufnahmen verfügt.
@@ -119,7 +135,6 @@ Führen Sie die folgenden Schritte aus, um Ihr Gerät auf einem virtuellen StorS
 
 	b. Wählen Sie unter **Choose a target device for the volumes in the selected containers** das virtuelle StorSimple-Gerät aus der Dropdownliste der verfügbaren Geräte aus. Nur die Geräte, die über ausreichende Kapazität verfügen, werden in der Dropdownliste angezeigt.
 	
-	>[AZURE.NOTE]**Wenn auf dem physischen Gerät Update 1 ausgeführt wird, können Sie ein Failover nur auf ein virtuelles Gerät ausführen, auf dem Update 1 ausgeführt wird. Wenn auf dem virtuellen Zielgerät eine niedrigere Softwareversion ausgeführt wird, sehen Sie einen Fehler, der besagt, dass Ihre Zielgerätesoftware aktualisiert werden muss.**
 
 1. Überprüfen Sie abschließend die Failover-Einstellungen unter **Failover bestätigen**. Klicken Sie auf das Häkchensymbol ![Häkchensymbol](./media/storsimple-device-failover-disaster-recovery/IC740895.png).
 
@@ -150,4 +165,4 @@ Nach einem Failover müssen Sie möglicherweise folgende Schritte ausführen:
 Weitere Informationen zum Verwenden des StorSimple Manager-Diensts finden Sie unter [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

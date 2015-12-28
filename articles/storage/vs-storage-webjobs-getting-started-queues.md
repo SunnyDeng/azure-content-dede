@@ -1,11 +1,11 @@
-<properties 
+<properties
 	pageTitle="Erste Schritte mit Warteschlangenspeicher und verbundenen Visual Studio-Diensten (WebJob-Projekte) | Microsoft Azure"
 	description="Erste Schritte mit Azure-Warteschlangenspeicher in einem WebJob-Projekt nach dem Herstellen einer Verbindung mit einem Speicherkonto mithilfe von verbundenen Visual Studio-Diensten."
 	services="storage"
 	documentationCenter=""
 	authors="TomArcher"
 	manager="douge"
-	editor="tglee"/>
+	editor=""/>
 
 <tags
 	ms.service="storage"
@@ -13,19 +13,10 @@
 	ms.tgt_pltfrm="vs-getting-started"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/03/2015"
+	ms.date="12/16/2015"
 	ms.author="tarcher"/>
 
 # Erste Schritte mit Azure-Warteschlangenspeicher und verbundenen Visual Studio-Diensten (WebJob-Projekte)
-
-> [AZURE.SELECTOR]
-> - [Getting started](vs-storage-webjobs-getting-started-queues.md)
-> - [What happened](vs-storage-webjobs-what-happened.md)
-
-> [AZURE.SELECTOR]
-> - [Blobs](vs-storage-webjobs-getting-started-blobs.md)
-> - [Queues](vs-storage-webjobs-getting-started-queues.md)
-> - [Tables](vs-storage-webjobs-getting-started-tables.md)
 
 ## Übersicht
 
@@ -552,4 +543,4 @@ Und in einer Azure-Tabelle sehen **Console.Out**- und **Console.Error**-Protokol
 
 In diesem Artikel wurden Codebeispiele bereitgestellt, in denen veranschaulicht wird, wie häufige Szenarien für das Arbeiten mit Azure-Warteschlangen behandelt werden. Weitere Informationen zur Verwendung von Azure WebJobs und dem WebJobs-SDK finden Sie unter [Empfohlene Ressourcen für Azure WebJobs](http://go.microsoft.com/fwlink/?linkid=390226).
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

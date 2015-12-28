@@ -15,7 +15,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="infrastructure" 
 	ms.workload="infrastructure" 
-	ms.date="07/02/2015" 
+	ms.date="12/14/2015" 
 	ms.author="rasquill" 
 />
 
@@ -33,9 +33,9 @@ Azure bietet Ihnen hervorragende Cloudlösungen auf Basis virtueller Computer �
 - [Azure-Ressourcen-Manager](resource-group-overview.md) und [Ressourcengruppenvorlagen](resource-group-authoring-templates.md) zur Vereinfachung von Bereitstellung und Updates von komplexen verteilten Anwendungen
 - Integration einer großen Anzahl von proprietären und Open-Source-Tools für die Konfigurationsverwaltung
 
-Und da Sie virtuelle Computer und Linux-Container in Azure programmgesteuert erstellen können, können Sie auch Tools zur *Orchestrierung* für virtuelle Computer und Container verwenden, um VM-Gruppen (Virtual Machines, virtuelle Computer) zu erstellen und um Anwendungen in Linux-Containern und bald auch in [Windows Server-Containern](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview) bereitzustellen.
+Da Sie virtuelle Computer und Linux-Container in Azure programmgesteuert erstellen können, können Sie zudem auch Tools zur *Orchestrierung* für virtuelle Computer und Container verwenden, um VM-Gruppen (Virtual Machines, virtuelle Computer) zu erstellen und um Anwendungen in Linux-Containern und bald auch in [Windows-Containern](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview) bereitzustellen.
 
-In diesem Artikel werden diese Konzepte nicht nur erörtert, sondern Sie finden auch zahlreiche Links zu weiteren Informationen, Lernprogrammen und Produkten in Bezug auf die Container- und Clusternutzung in Azure. Wenn für Sie lediglich die Links von Interesse sind, finden Sie diese [hier](#tools-for-working-with-containers).
+In diesem Artikel werden diese Konzepte nicht nur erörtert, sondern Sie finden auch zahlreiche Links zu weiteren Informationen, Lernprogrammen und Produkten in Bezug auf die Container- und Clusternutzung in Azure. Wenn für Sie lediglich die Links von Interesse sind, finden Sie diese in den [Tools für die Arbeit mit Containern](#tools-for-working-with-containers).
 
 ## Der Unterschied zwischen virtuellen Computern und Containern
 
@@ -47,7 +47,7 @@ Da der Kernel des Docker-Hosts in diesem Isolations- und Ausführungsmodell geme
 
 Das ist wirklich praktisch.
 
-[Windows Server-Container](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview) bieten für Anwendungen unter Windows dieselben Vorteile wie Linux-Container. Windows Server-Container unterstützen das Docker-Imageformat und die Docker-API. Daher kann eine Anwendung mithilfe von Windows Server-Containern über ähnliche Befehle wie unter Mac und Linux entwickelt, veröffentlicht, abgerufen und bereitgestellt werden. Zusätzlich gibt es noch die [neue Docker-Unterstützung in Microsoft Visual Studio](https://visualstudiogallery.msdn.microsoft.com/6f638067-027d-4817-bcc7-aa94163338f0). Das größere [Containerökosystem](https://msdn.microsoft.com/virtualization/windowscontainers/about/container_ecosystem) stellt allen Benutzern die für das Arbeiten mit Containern erforderlichen Tools zur Verfügung.
+Windows-Container bieten für Anwendungen unter Windows dieselben Vorteile wie Linux-Container. Windows-Container unterstützen das Docker-Imageformat und die Docker-API, Sie können jedoch auch mithilfe von PowerShell verwaltet werden. Für Windows-Container sind zwei Containerlaufzeiten verfügbar, Windows Server-Container und Hyper-V-Container. Hyper-V-Container bieten eine zusätzliche Ebene der Isolation, indem jeder Container in einem höchst optimierten virtuellen Computer gehostet wird. Weitere Informationen über Windows-Container finden Sie unter [About Windows Containers](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview) (in englischer Sprache). Informationen zum Testen der Windows-Container in Azure finden Sie unter [Windows Container Azure Quick Start](https://msdn.microsoft.com/virtualization/windowscontainers/quick_start/azure_setup) (in englischer Sprache).
 
 Das ist auch äußerst praktisch.
 
@@ -166,9 +166,9 @@ Einige Technologien für Linux-Container:
 - [Open Container-Projekt](http://opencontainers.org/)
 - [RancherOS](http://rancher.com/rancher-os/)
 
-Links zu Windows Server-Containern:
+Links zu Windows-Containern:
 
-- [Windows Server-Container](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview)
+- [Windows Containers](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview) (in englischer Sprache)
 
 Links zu Visual Studio-Docker:
 
@@ -233,11 +233,11 @@ Konfiguration, Clusterverwaltung und Containerorchestrierung:
 
 ## Nächste Schritte
 
-Auschecken von [Docker](https://www.docker.com) und [Windows Server-Containern](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview).
+Lesen Sie über [Docker](https://www.docker.com) (in englischer Sprache) und [Windows Containers](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview) (in englischer Sprache).
 
 <!--Anchors-->
 [microservices]: http://martinfowler.com/articles/microservices.html
 [microservice]: http://martinfowler.com/articles/microservices.html
 <!--Image references-->
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

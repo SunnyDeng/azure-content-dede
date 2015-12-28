@@ -22,12 +22,12 @@ Dieses Beispiel veranschaulicht den Service Fabric-Anwendungslebenszyklus anhand
 
 In diesem Beispiel wird Folgendes durchgeführt:
 
-* Das WordCount 1.0.0-Beispiel wird aus dem WordCount-Anwendungspaket im ImageStore bereitgestellt.
+* Das **WordCount 1.0.0**-Beispiel wird aus dem WordCount-Anwendungspaket im Imagespeicher bereitgestellt.
 * Die Liste mit den Anwendungstypen wird angezeigt, darunter WordCount 1.0.0.
-* Die WordCount-Anwendung wird als „fabric:/WordCount“ erstellt.
+* Die WordCount-Anwendung wird als **fabric:/WordCount** erstellt.
 * Die Liste mit den Anwendungen wird angezeigt, darunter „fabric:/WordCount Version 1.0.0“.
-* Die Version 1.1.0 des WordCount-Beispiels wird aus dem WordCountUpgrade-Anwendungspaket im ImageStore bereitgestellt.
-* Die Liste mit den Anwendungstypen wird angezeigt, darunter sowohl WordCount 1.0.0 als auch WordCount 1.1.0.
+* Die Version 1.1.0 des WordCount-Beispiels wird aus dem **WordCountUpgrade**-Anwendungspaket im Imagespeicher bereitgestellt.
+* Die Liste mit den Anwendungstypen wird angezeigt, darunter sowohl WordCount 1.0.0 als auch **WordCount 1.1.0**.
 * Die WordCount-Anwendung wird auf Version 1.1.0 aktualisiert.
 * Die Liste mit den Anwendungen wird angezeigt, darunter WordCount Version 1.1.0, aber jetzt ohne WordCount Version 1.0.0.
 * Die WordCount-Anwendung wird gelöscht.
@@ -40,21 +40,21 @@ In diesem Beispiel wird Folgendes durchgeführt:
 
 ## Voraussetzungen
 
-Dieses Beispiel verwendet das [WordCount-Beispiel](http://aka.ms/servicefabricsamples) (aus den Beispielen für die ersten Schritte). Das WordCount-Beispiel muss zuerst erstellt werden, und dann müssen zwei Anwendungspakete in den ImageStore kopiert werden.
+Dieses Beispiel verwendet das [WordCount-Beispiel](http://aka.ms/servicefabricsamples) (aus den Beispielen für die **ersten Schritte**). Das WordCount-Beispiel muss zuerst erstellt werden, und dann müssen zwei Anwendungspakete in den Imagespeicher kopiert werden.
 
 |Ordner|Beschreibung|
 |------|-----------|
-|WordCount|Die WordCount-Beispielanwendung. Die Datei „ApplicationManifest.xml“ enthält ApplicationTypeVersion="1.0.0".|
-|WordCountUpgrade|Die WordCount-Beispielanwendung. Die Datei „ApplicationManifest.xml“ muss in ApplicationTypeVersion="1.1.0" geändert werden, damit das Upgrade der Anwendung durchgeführt werden kann.|
+|WordCount|Die WordCount-Beispielanwendung. Die Datei **ApplicationManifest.xml** enthält **ApplicationTypeVersion=„1.0.0“**.|
+|WordCountUpgrade|Die WordCount-Beispielanwendung. Die Datei „ApplicationManifest.xml“ muss in **ApplicationTypeVersion=„1.1.0“** geändert werden, damit das Upgrade der Anwendung durchgeführt werden kann.|
 
-Führen Sie die folgenden Schritte aus, um die Anwendungspakete zu erstellen und in den ImageStore zu kopieren:
+Führen Sie die folgenden Schritte aus, um die Anwendungspakete zu erstellen und in den Imagespeicher zu kopieren:
 
-1. Kopieren Sie „C:\\ServiceFabricSamples\\Services\\WordCount\\WordCount\\pkg\\Debug“ in „C:\\Temp\\WordCount“. Dadurch wird das WordCount-Anwendungspaket erstellt.
-2. Kopieren Sie „C:\\Temp\\WordCount“ in „C:\\Temp\\WordCountUpgrade“. Dadurch wird das WordCountUpgrade-Anwendungspaket erstellt.
-3. Öffnen Sie „C:\\Temp\\WordCountUpgrade\\ApplicationManifest.xml“ in einem Texteditor.
-4. Ändern Sie im ApplicationManifest-Element das ApplicationTypeVersion-Attribut in „1.1.0“. Dadurch wird die Versionsnummer der Anwendung aktualisiert.
+1. Kopieren Sie **C:\\ServiceFabricSamples\\Services\\WordCount\\WordCount\\pkg\\Debug** in **C:\\Temp\\WordCount**. Dadurch wird das WordCount-Anwendungspaket erstellt.
+2. Kopieren Sie „C:\\Temp\\WordCount“ in **C:\\Temp\\WordCountUpgrade**. Dadurch wird das **WordCountUpgrade**-Anwendungspaket erstellt.
+3. Öffnen Sie **C:\\Temp\\WordCountUpgrade\\ApplicationManifest.xml** in einem Text-Editor.
+4. Ändern Sie im **ApplicationManifest**-Element das **ApplicationTypeVersion**-Attribut in **„1.1.0“**. Dadurch wird die Versionsnummer der Anwendung aktualisiert.
 5. Speichern Sie die geänderte Datei „ApplicationManifest.xml“.
-6. Führen Sie das folgende PowerShell-Skript als Administrator aus, um die Anwendungen in den ImageStore zu kopieren:
+6. Führen Sie das folgende PowerShell-Skript als Administrator aus, um die Anwendungen in den Imagespeicher zu kopieren:
 
 ```powershell
 # Deploy the WordCount and upgrade applications
@@ -709,4 +709,4 @@ namespace ServiceFabricRestCaller
 
 [Service Fabric-Anwendungslebenszyklus](service-fabric-application-lifecycle.md)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

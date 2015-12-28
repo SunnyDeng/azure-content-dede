@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="09/11/2015"
+	ms.date="12/09/2015"
 	ms.author="dastrock"/>
 
 # App-Modell v2.0 (Vorschauversion): Schützen einer MVC-Web-API
@@ -158,4 +158,4 @@ Sie können sich nun weiteren Themen zuwenden. Wie wäre es zum Beispiel mit Fol
 
 Weitere Ressourcen: - [App-Modell v2.0 (Vorschauversion) >>](active-directory-appmodel-v2-overview.md) - [StackOverflow-Tag "azure-active-directory" >>](http://stackoverflow.com/questions/tagged/azure-active-directory)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->
