@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Konfigurieren von PHP in Azure App Service-Web-Apps"
+	pageTitle="Konfigurieren von PHP in Azure App Service-Web-Apps | Microsoft Azure"
 	description="Erfahren Sie mehr über das Konfigurieren der PHP-Standardinstallation oder das Hinzufügen einer benutzerdefinierten PHP-Installation für Web-Apps in Azure App Service."
 	services="app-service"
 	documentationCenter="php"
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="PHP"
 	ms.topic="article"
-	ms.date="09/16/2015"
+	ms.date="12/16/2015"
 	ms.author="tomfitz"/>
 
 #Konfigurieren von PHP in Azure App Service-Web-Apps
@@ -45,27 +45,34 @@ PHP 5.5 und PHP 5.6 sind ebenfalls verfügbar, aber nicht standardmäßig aktivi
 
 ### Azure PowerShell (Windows)
 
-1. Öffnen Sie Windows PowerShell.
-2. Geben Sie `Set-AzureWebsite -PhpVersion [5.4 | 5.5 | 5.6] -Name <site-name>` ein, und drücken Sie anschließend die EINGABETASTE.
-3. Die PHP-Version ist jetzt festgelegt.
+1. Öffnen Sie Azure PowerShell, und melden Sie sich bei Ihrem Konto an:
 
-	![Festlegen der PHP-Version mit Azure PowerShell][SETPHPVERPS]
-4. Sie können diese Einstellungen bestätigen, indem Sie `Get-AzureWebiste -Name <site-name>` eingeben und dann die EINGABETASTE drücken.
+        PS C:\> Login-AzureRmAccount
 
-	![Überprüfen der PHP-Version mit Azure PowerShell][GETPHPVERPS]
+2. Legen Sie die PHP-Version für die Web-App fest.
+
+        PS C:\> Set-AzureWebsite -PhpVersion [5.4 | 5.5 | 5.6] -Name {site-name}
+
+3. Die PHP-Version ist jetzt festgelegt. Sie können diese Einstellungen bestätigen:
+
+        PS C:\> Get-AzureWebsite -Name {site-name} | findstr PhpVersion
 
 ### Azure-Befehlszeilen-Schnittstelle (Linux, Mac, Windows)
 
 Um die Azure-Befehlszeilenschnittstelle verwenden zu können, muss **Node.js** auf Ihrem Computer installiert sein.
 
-1. Öffnen Sie das Terminal.
-2. Geben Sie `azure site set --php-version [5.4 | 5.5] [site-name]` ein, und drücken Sie anschließend die EINGABETASTE.
-3. Die PHP-Version ist jetzt festgelegt.
+1. Öffnen Sie Terminal, und melden sich bei Ihrem Konto an.
 
-	![Festlegen der PHP-Version mit der Azure-Befehlszeilenschnittstelle][SETPHPVERCLI]
-4. Sie können diese Einstellungen bestätigen, indem Sie `azure site show [site-name]` eingeben und dann die EINGABETASTE drücken.
+        azure login
 
-	![Überprüfen der PHP-Version mit der Azure-Befehlszeilenschnittstelle][GETPHPVERCLI]
+2. Legen Sie die PHP-Version für die Web-App fest.
+
+        azure site set --php-version [5.4 | 5.5] {site-name}
+
+3. Die PHP-Version ist jetzt festgelegt. Sie können diese Einstellungen bestätigen:
+
+        azure site show {site-name}
+
 
 ## Vorgehensweise: Ändern der integrierten PHP-Konfigurationen
 
@@ -160,7 +167,7 @@ Weitere Informationen finden Sie im [PHP Developer Center](/develop/php/).
 >[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Änderungen
-* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
+* Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 
 [ kostenlose Testversion]: https://www.windowsazure.com/pricing/free-trial/
 [phpinfo()]: http://php.net/manual/en/function.phpinfo.php
@@ -181,4 +188,4 @@ Weitere Informationen finden Sie im [PHP Developer Center](/develop/php/).
 [GETPHPVERPS]: ./media/web-sites-php-configure/ShowPHPVersion-PS.png
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

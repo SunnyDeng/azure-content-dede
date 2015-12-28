@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="11/30/2015"
+   ms.date="12/10/2015"
    ms.author="mnayak;tomsh;terrylan"/>
 
 # Microsoft Azure-Sicherheits- und Überwachungsprotokollverwaltung
@@ -614,4 +614,4 @@ Die folgenden Ressourcen bieten allgemeine Informationen zu Microsoft Azure und 
 [19]: ./media/azure-security-audit-log-management/sec-view-blob-container.png
 [20]: ./media/azure-security-audit-log-management/sec-hdinsight-analysis.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

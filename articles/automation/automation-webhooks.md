@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="10/08/2015"
+   ms.date="12/07/2015"
    ms.author="bwren;sngun"/>
 
 # Azure Automation-Webhooks
@@ -53,7 +53,24 @@ Das Objekt **$WebhookData** verfügt über folgende Eigenschaften:
 
 Zur Unterstützung des Parameters **$WebhookData** ist keine Konfiguration des Webhooks erforderlich, und das Runbook muss ihn nicht akzeptieren. Wenn das Runbook den Parameter nicht definiert, werden alle vom Client gesendeten Details der Anforderung ignoriert.
 
-Wenn Sie beim Erstellen des Webhooks einen Wert für "$WebhookData" angeben, wird dieser Wert beim Starten des Runbooks durch den Webhook mit den Daten aus der POST-Anforderung des Clients überschrieben, selbst wenn der Anforderungstext des Clients keine Daten enthält. Wenn Sie ein Runbook, das einen "$WebhookData"-Wert enthält, mit einer anderen Methode als einem Webhook starten, können Sie einen Wert für "$WebhookData" bereitstellen, der vom Runbook erkannt wird. Bei diesem Wert sollte es sich um ein Objekt mit den gleichen Eigenschaften wie "$WebhookData" handeln, damit das Runbook damit ordnungsgemäß funktioniert.
+Wenn Sie beim Erstellen des Webhooks einen Wert für "$WebhookData" angeben, wird dieser Wert beim Starten des Runbooks durch den Webhook mit den Daten aus der POST-Anforderung des Clients überschrieben, selbst wenn der Anforderungstext des Clients keine Daten enthält. Wenn Sie ein Runbook, das einen "$WebhookData"-Wert enthält, mit einer anderen Methode als einem Webhook starten, können Sie einen Wert für "$WebhookData" bereitstellen, der vom Runbook erkannt wird. Bei diesem Wert sollte es sich um ein Objekt mit den gleichen [Eigenschaften](#details-of-a-webhook) wie „$WebhookData“ handeln, damit das Runbook damit ordnungsgemäß funktioniert, als würde es mit WebhookData arbeiten, die über einen Webhook übergeben werden.
+
+Wenn Sie beispielsweise das folgende Runbook aus dem Azure-Portal starten und WebhookData als Testbeispiele übergeben möchten, sollten diese in der Benutzerschnittstelle als JSON übergeben werden, da WebhookData ein Objekt ist.
+
+![WebhookData-Parameter von der Benutzeroberfläche](media/automation-webhooks/WebhookData-parameter-from-UI.png)
+
+Angenommen, dass für das oben genannte Runbook Eigenschaften mit folgenden Werten für den WebhookData-Parameter vorliegen:
+
+1. WebhookName: *MyWebhook*
+2. RequestHeader: *From=Testbenutzer*
+3. RequestBody: *["VM1", "VM2"]*
+
+Dann würden Sie den folgenden JSON-Wert in der Benutzeroberfläche für den WebhookData-Parameter übergeben:
+
+* {"WebhookName":"MyWebhook", "RequestHeader":{"From":"Testbenutzer"}, "RequestBody":"["VM1","VM2"]"}
+
+![WebhookData-Startparameter von der Benutzeroberfläche](media/automation-webhooks/Start-WebhookData-parameter-from-UI.png)
+
 
 >[AZURE.NOTE]Die Werte aller Eingabeparameter werden mit dem Runbookauftrag protokolliert. Dies bedeutet, dass alle vom Client in der Webhookanforderung bereitgestellten Eingaben protokolliert werden und jedem Benutzer mit Zugriff auf den Automatisierungsauftrag zur Verfügung stehen. Aus diesem Grund sollten Sie sorgfältig überlegen, welche vertraulichen Daten Sie in Webhookaufrufe einschließen.
 
@@ -255,4 +272,4 @@ Das folgende Beispiel-Runbook wird immer dann ausgelöst, wenn die Warnregel akt
 - [Anzeigen des Status eines Runbookauftrags](automation-viewing-the-status-of-a-runbook-job.md)
 - [Ausführen von Aktionen nach Azure-Warnungen mithilfe von Azure Automation](https://azure.microsoft.com/blog/using-azure-automation-to-take-actions-on-azure-alerts/)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1217_2015-->

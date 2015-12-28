@@ -49,8 +49,9 @@ Der CDN-Tarif „Standard“ enthält die folgenden Features:
 - Lastenausgleich
 - DDoS-Schutz
 - [Schnelles Löschen](cdn-purge-endpoint.md)
+- [Verwaltung über die REST-API](https://msdn.microsoft.com/library/mt634456.aspx)
 
- 
+
 ## Premium-Features
 
 Der CDN-Tarif „Premium“ beinhaltet alle Funktionen des Standard-Tarifs und folgende zusätzliche Features:
@@ -59,4 +60,4 @@ Der CDN-Tarif „Premium“ beinhaltet alle Funktionen des Standard-Tarifs und f
 - [Erweiterte HTTP-Berichte](cdn-advanced-http-reports.md)
 - [Echtzeitstatistiken](cdn-read-time-stats.md)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

@@ -75,14 +75,15 @@ Jedes Node.js-Back-End von Azure Mobile App Service-Apps verhält sich am Anfang
 		// Start listening on HTTP
 		app.listen(process.env.PORT || 3000);
 
-Mit dieser Anwendung wird eine einfache, für Mobilgeräte optimierte WebAPI mit einem einzelnen Endpunkt (`/tables/TodoItem`) erstellt. Hiermit ist der authentifizierungsfreie Zugriff auf einen zugrunde liegenden SQL-Datenspeicher mit einem dynamischem Schema möglich. Mit der Anwendung können Sie die Schnellstarts der Clientbibliothek verfolgen:
+Mit dieser Anwendung wird eine einfache, für Mobilgeräte optimierte WebAPI mit einem einzelnen Endpunkt (`/tables/TodoItem`) erstellt. Hiermit ist der authentifizierungsfreie Zugriff auf einen zugrunde liegenden SQL-Datenspeicher mit einem dynamischen Schema möglich. Mit der Anwendung können Sie die Schnellstarts der Clientbibliothek verfolgen:
 
+- [Android-Client-Schnellstart]
 - [iOS-Client-Schnellstart]
+- [Windows Store-Client-Schnellstart]
 - [Xamarin.iOS-Client-Schnellstart]
 - [Xamarin.Android-Client-Schnellstart]
 - [Xamarin.Forms-Client-Schnellstart]
-- [Windows Store-Client-Schnellstart]
-- [HTML/JavaScript-Client-Schnellstart]
+
 
 Den Code für diese einfache Anwendung finden Sie im [basicapp-Beispiel auf GitHub].
 
@@ -322,6 +323,33 @@ Hier ist eine Beispieldatei für _azureMobile.js_ zum Implementieren der oben be
 
 Es ist ratsam, dass Sie _azureMobile.js_ Ihrer _.gitignore_-Datei hinzufügen (oder eine andere Datei zum Ignorieren der Quellcodeverwaltung), um zu verhindern, dass Kennwörter in der Cloud gespeichert werden. Konfigurieren Sie die Produktionseinstellungen in den App-Einstellungen immer im [Azure-Portal].
 
+### <a name="howto-appsettings"><a>App-Einstellungen zum Konfigurieren Ihrer mobilen App
+
+Für die meisten Einstellungen in der Datei _azureMobile.js_ gibt es im [Azure-Portal] eine entsprechende App-Einstellung. Verwenden Sie die folgende Liste, um Ihre App unter „App-Einstellungen“ zu konfigurieren:
+
+| App-Einstellung | _azureMobile.js_-Einstellung | Beschreibung | Gültige Werte |
+| :-------------------------- | :------------------------ | :---------------------------------------- | :------------------------------------------ |
+| **MS\_MobileAppName** | name | Der Name der App. | string |
+| **MS\_MobileLoggingLevel** | logging.level | Mindestprotokolliergrad für die zu protokollierenden Meldungen. | error, warning, info, verbose, debug, silly |
+| **MS\_DebugMode** | debug | Aktivieren oder Deaktivieren des Debugmodus. | true, false |
+| **MS\_TableSchema** | data.schema | Name des Standardschemas für SQL-Tabellen | string (default: dbo) |
+| **MS\_DynamicSchema** | data.dynamicSchema | Aktivieren oder Deaktivieren des Debugmodus. | true, false |
+| **MS\_DisableVersionHeader** | version (set to undefined)| Deaktiviert den Header „X-ZUMO-Server-Version“. | true, false |
+| **MS\_SkipVersionCheck** | skipversioncheck | Deaktiviert die Überprüfung der Client-API-Version. | true, false |
+
+So legen Sie eine App-Einstellung fest:
+
+1. Melden Sie sich beim [Azure-Portal] an.
+2. Wählen Sie **Alle Ressourcen** oder **App Services** aus, und klicken Sie dann auf den Namen Ihrer mobilen App.
+3. Das Blatt „Einstellungen“ wird standardmäßig geöffnet. Wenn dies nicht der Fall ist, klicken Sie auf **Einstellungen**.
+4. Klicken Sie im Menü „ALLGEMEIN“ auf **Anwendungseinstellungen**.
+5. Scrollen Sie zum Abschnitt „App-Einstellungen“.
+6. Wenn Ihre App-Einstellung bereits vorhanden ist, klicken Sie auf den Wert der App-Einstellung, um ihn zu bearbeiten.
+7. Wenn die App-Einstellung nicht vorhanden ist, geben Sie im Feld „Schlüssel“ die App-Einstellung und im Feld „Wert“ den Wert ein.
+8. Wenn Sie fertig sind, klicken Sie auf **Speichern**.
+
+Nach dem Ändern der meisten App-Einstellungen ist ein Neustart des Diensts erforderlich.
+
 ### <a name="howto-use-sqlazure"></a>Vorgehensweise: Verwenden von SQL-Datenbank als Datenspeicher für die Produktion
 
 <!--- ALTERNATE INCLUDE - we can't use ../includes/app-service-mobile-dotnet-backend-create-new-service.md - slightly different semantics -->
@@ -362,7 +390,7 @@ Das Erstellen der Datenbank kann einige Minuten dauern. Im Bereich **Benachricht
 
 ### <a name="howto-tables-auth"></a>Vorgehensweise: Erzwingen der Authentifizierung für den Zugriff auf Tabellen
 
-Wenn Sie die App Service-Authentifizierung mit dem „tables“-Endpunkt verwenden möchten, müssen Sie die App Service-Authentifizierung hierfür zuerst im [Azure-Portal] konfigurieren. Weitere Informationen zum Konfigurieren der Authentifizierung in einem Azure App Service finden Sie im Konfigurationshandbuch für den Identitätsanbieter, den Sie verwenden möchten:
+Wenn Sie die App Service-Authentifizierung mit dem tables-Endpunkt verwenden möchten, müssen Sie die App Service-Authentifizierung zuerst im [Azure-Portal] konfigurieren. Weitere Informationen zum Konfigurieren der Authentifizierung in einem Azure App Service finden Sie im Konfigurationshandbuch für den Identitätsanbieter, den Sie verwenden möchten:
 
 - [So wird‘s gemacht: Konfigurieren der Azure Active Directory-Authentifizierung]
 - [So wird‘s gemacht: Konfigurieren der Facebook-Authentifizierung]
@@ -519,7 +547,7 @@ Wir empfehlen, die initialize()-Methode explizit aufzurufen, um die Tabelle zu e
 
 Zusätzlich zur Datenzugriff-API über den /tables-Endpunkt können Azure Mobile Apps auch eine benutzerdefinierte API-Abdeckung bereitstellen. Benutzerdefinierte APIs werden auf ähnliche Weise wie Tabellendefinitionen definiert und können auf die gleichen Funktionen zugreifen, einschließlich der Authentifizierung.
 
-Wenn Sie die App Service-Authentifizierung mit einer benutzerdefinierten API verwenden möchten, müssen Sie die App Service-Authentifizierung hierfür zuerst im [Azure-Portal] konfigurieren. Weitere Informationen zum Konfigurieren der Authentifizierung in einem Azure App Service finden Sie im Konfigurationshandbuch für den Identitätsanbieter, den Sie verwenden möchten:
+Wenn Sie die App Service-Authentifizierung mit einer benutzerdefinierten API verwenden möchten, müssen Sie die App Service-Authentifizierung zuerst im [Azure-Portal] konfigurieren. Weitere Informationen zum Konfigurieren der Authentifizierung in einem Azure App Service finden Sie im Konfigurationshandbuch für den Identitätsanbieter, den Sie verwenden möchten:
 
 - [So wird‘s gemacht: Konfigurieren der Azure Active Directory-Authentifizierung]
 - [So wird‘s gemacht: Konfigurieren der Facebook-Authentifizierung]
@@ -531,9 +559,9 @@ Wenn Sie die App Service-Authentifizierung mit einer benutzerdefinierten API ver
 
 Benutzerdefinierte APIs werden auf ähnliche Weise wie die Tabellen-API definiert.
 
-1. Erstellen eines **api**-Verzeichnisses
+1. Erstellen Sie ein **api**-Verzeichnis.
 2. Erstellen Sie im **api**-Verzeichnis eine JavaScript-Datei mit einer API-Definition.
-3. Verwenden Sie die „import“-Methode, um das **api**-Verzeichnis zu importieren.
+3. Verwenden Sie die import-Methode, um das **api**-Verzeichnis zu importieren.
 
 Hier ist die API-Prototypdefinition angegeben, die auf dem bereits verwendeten basic-app-Beispiel basiert.
 
@@ -605,11 +633,11 @@ Der Azure App Service stellt mehrere Debugging- und Problembehandlungsverfahren 
 
 ### <a name="howto-diagnostic-logs"></a>Vorgehensweise: Schreiben in die Diagnoseprotokolle von Azure Mobile Apps
 
-Node.js-Anwendungen haben Zugriff auf viele Tools für die Diagnoseprotokollierung. Intern nutzt das Azure Mobile Apps Node.js SDK [Winston] für die Diagnoseprotokollierung. Diese Funktion wird automatisch aktiviert, indem der Debugmodus aktiviert oder die App-Einstellung **MS\_DebugMode** im [Azure-Portal] auf „true“ festgelegt wird. Generierte Protokolle werden im Diagnoseprotokoll im [Azure-Portal] angezeigt.
+Node.js-Anwendungen haben Zugriff auf viele Tools für die Diagnoseprotokollierung. Intern nutzt das Azure Mobile Apps Node.js SDK [Winston] für die Diagnoseprotokollierung. Diese Funktion wird automatisch aktiviert, wenn Sie den Debugmodus aktivieren oder im [Azure-Portal] die App-Einstellung **MS\_DebugMode** auf „true“ festlegen. Generierte Protokolle werden im [Azure-Portal] in den Diagnoseprotokollen angezeigt.
 
 ## <a name="in-portal-editing"></a>Codebearbeitung im Portal
 
-Spezielle Tools im Azure-Portal erleichtern Ihnen die Arbeit an einem Node.js-Back-End-Projekt, und Sie müssen das Codeprojekt nicht herunterladen. Mit Easy Tables und Easy APIs im Portal können Sie Tabellen und benutzerdefinierte APIs direkt im Portal erstellen und verwenden. Sie können auch Tabellenvorgangs- und API-Skripts direkt im Portal bearbeiten, indem Sie den Editor „Monaco“ von Visual Studio Online verwenden.
+Spezielle Tools im Azure-Portal erleichtern Ihnen die Arbeit an einem Node.js-Back-End-Projekt, und Sie müssen das Codeprojekt nicht herunterladen. Mit Easy Tables und Easy APIs im Portal können Sie Tabellen und benutzerdefinierte APIs direkt im Portal erstellen und verwenden. Sie können auch Tabellenvorgangs- und API-Skripts direkt im Portal bearbeiten, indem Sie den Editor „Monaco“ von Visual Studio Team Services verwenden.
 
 ### <a name="work-easy-tables"></a>Vorgehensweise: Verwenden von Easy Tables im Azure-Portal
 
@@ -619,9 +647,9 @@ Wenn Sie in den Einstellungen für die Back-End-Website auf **Easy Tables** klic
 
 Die folgenden Befehle stehen in der Befehlsleiste einer Tabelle zur Verfügung:
 
-+ **Berechtigungen ändern**: Dient zum Ändern der Berechtigung für die Vorgänge Lesen, Einfügen, Aktualisieren und Löschen der Tabelle. Sie können den anonymen Zugriff zulassen, eine Authentifizierung erzwingen oder den gesamten Zugriff auf den Vorgang deaktivieren. Dies führt zu einer Änderung der Projektcodedatei „table.json“.
-+ **Skript bearbeiten**: Die Skriptdatei für die Tabelle wird im Visual Studio Online-Editor geöffnet.
-+ **Schema verwalten**: Dient zum Hinzufügen oder Löschen von Spalten oder Ändern des Tabellenindex.
++ **Berechtigungen ändern**: Dient zum Ändern der Berechtigung für Vorgänge zum Lesen, Einfügen, Aktualisieren und Löschen in der Tabelle. Sie können den anonymen Zugriff zulassen, eine Authentifizierung erzwingen oder den gesamten Zugriff auf den Vorgang deaktivieren. Dies führt zu einer Änderung der Projektcodedatei „table.json“.
++ **Skript bearbeiten**: Die Skriptdatei für die Tabelle wird im Visual Studio Team Services-Editor geöffnet.
++ **Schema verwalten**: Dient zum Hinzufügen oder Löschen von Spalten oder zum Ändern des Tabellenindex.
 + **Tabelle löschen**: Dient zum Abschneiden einer vorhandenen Tabelle, indem alle Datenzeilen gelöscht werden, während das Schema unverändert bleibt.
 + **Zeilen löschen**: Dient zum Löschen einzelner Zeilen mit Daten.
 + **Streamingprotokolle anzeigen**: Dient zum Herstellen einer Verbindung mit dem Streamingprotokolldienst für Ihre Website.
@@ -632,15 +660,15 @@ Wenn Sie in den Einstellungen der Back-End-Website auf **Easy APIs** klicken, k�
 
 ![Verwenden von Easy APIs](./media/app-service-mobile-node-backend-how-to-use-server-sdk/mobile-apps-easy-apis.png)
 
-Im Portal können Sie die Zugriffsberechtigungen für eine bestimmte HTTP-Aktion ändern, die API-Skriptdatei im Visual Studio Online-Editor bearbeiten oder die Streamingprotokolle anzeigen.
+Im Portal können Sie die Zugriffsberechtigungen für eine bestimmte HTTP-Aktion ändern, die API-Skriptdatei im Visual Studio Team Services-Editor bearbeiten oder die Streamingprotokolle anzeigen.
 
-###<a name="online-editor"></a>Vorgehensweise: Bearbeiten von Code in Visual Studio Online
+###<a name="online-editor"></a>Vorgehensweise: Bearbeiten von Code in Visual Studio Team Services
 
-Im Azure-Portal können Sie Ihre Node.js-Back-End-Skriptdateien in Visual Studio Online bearbeiten, ohne dass Sie das Projekt auf den lokalen Computer herunterladen müssen. So bearbeiten Sie Skriptdateien im Online-Editor
+Im Azure-Portal können Sie Ihre Node.js-Back-End-Skriptdateien in Visual Studio Team Services bearbeiten, ohne dass Sie das Projekt auf den lokalen Computer herunterladen müssen. So bearbeiten Sie Skriptdateien im Online-Editor
 
-1. Klicken Sie auf dem Blatt für Ihr Mobile App-Back-End auf **Alle Einstellungen** und dann entweder auf **Easy Tables** oder **Easy APIs**, eine Tabelle oder API und dann auf **Skript bearbeiten**. Die Skriptdatei wird im Visual Studio Online-Editor geöffnet.
+1. Klicken Sie auf dem Blatt für Ihr Mobile App-Back-End auf **Alle Einstellungen** und dann entweder auf **Easy Tables** oder **Easy APIs**, eine Tabelle oder API und dann auf **Skript bearbeiten**. Die Skriptdatei wird im Visual Studio Team Services-Editor geöffnet.
 
-	![Visual Studio Online-Code-Editor](./media/app-service-mobile-node-backend-how-to-use-server-sdk/mobile-apps-visual-studio-editor.png)
+	![Visual Studio Team Services-Code-Editor](./media/app-service-mobile-node-backend-how-to-use-server-sdk/mobile-apps-visual-studio-editor.png)
 
 2. Nehmen Sie im Online-Editor die gewünschten Änderungen an der Codedatei vor. Die Änderungen werden beim Eingeben automatisch gespeichert.
 
@@ -657,12 +685,13 @@ Im Azure-Portal können Sie Ihre Node.js-Back-End-Skriptdateien in Visual Studio
 [6]: ../../includes/media/app-service-mobile-dotnet-backend-create-new-service/dotnet-backend-create-db.png
 
 <!-- URLs -->
+[Android-Client-Schnellstart]: app-service-mobile-android-get-started.md
 [iOS-Client-Schnellstart]: app-service-mobile-ios-get-started.md
 [Xamarin.iOS-Client-Schnellstart]: app-service-mobile-xamarin-ios-get-started.md
 [Xamarin.Android-Client-Schnellstart]: app-service-mobile-xamarin-android-get-started.md
 [Xamarin.Forms-Client-Schnellstart]: app-service-mobile-xamarin-forms-get-started.md
 [Windows Store-Client-Schnellstart]: app-service-mobile-windows-store-dotnet-get-started.md
-[HTML/JavaScript-Client-Schnellstart]: app-service-html-get-started.md
+[HTML/Javascript Client QuickStart]: app-service-html-get-started.md
 [Synchronisierung von Offlinedaten]: app-service-mobile-offline-data-sync.md
 [So wird‘s gemacht: Konfigurieren der Azure Active Directory-Authentifizierung]: app-service-mobile-how-to-configure-active-directory-authentication.md
 [So wird‘s gemacht: Konfigurieren der Facebook-Authentifizierung]: app-service-mobile-how-to-configure-facebook-authentication.md
@@ -693,4 +722,4 @@ Im Azure-Portal können Sie Ihre Node.js-Back-End-Skriptdateien in Visual Studio
 [ExpressJS Middleware]: http://expressjs.com/guide/using-middleware.html
 [Winston]: https://github.com/winstonjs/winston
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

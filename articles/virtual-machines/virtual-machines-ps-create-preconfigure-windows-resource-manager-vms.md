@@ -19,6 +19,17 @@
 
 # Erstellen und Konfigurieren eines virtuellen Windows-Computers mit dem Ressourcen-Manager und Azure PowerShell
 
+> [AZURE.SELECTOR]
+- [Azure Portal - Windows](virtual-machines-windows-tutorial.md)
+- [Azure PowerShell](virtual-machines-ps-create-preconfigure-windows-resource-manager-vms.md)
+- [Azure PowerShell - Template](virtual-machines-create-windows-powershell-resource-manager-template.md)
+- [Azure Portal - Linux](virtual-machines-linux-tutorial-portal-rm.md)
+- [Azure CLI](virtual-machines-linux-tutorial.md)
+
+<br>
+
+
+
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](virtual-machines-ps-create-preconfigure-windows-vms.md).
 
 Diese Schritte zeigen, wie eine Reihe von Azure PowerShell-Befehlen zum Erstellen und Konfigurieren eines virtuellen Azure-Computers erstellt werden. Sie können dieses Bausteinverfahren verwenden, um schnell einen Befehlssatz für einen neuen Windows-basierten virtuellen Computer zu erstellen und eine vorhandene Bereitstellung zu erweitern. Sie können damit auch mehrere Befehlssätze erstellen, mit denen Sie schnell eine benutzerdefinierte professionelle Entwicklungs- und Test-IT-Umgebung aufbauen können.
@@ -203,7 +214,7 @@ Zum Erstellen einer Netzwerkkarte und Hinzufügen der Karte zu einer Load Balanc
 - Die Indexnummer des Back-End-Adresspools der Load Balancer-Instanz zum Zuweisen auf die NIC.
 - Die Indexnummer der eingehenden NAT-Regel zum Zuweisen auf die NIC.
 
-Informationen zum Erstellen einer Lastenausgleichsmodul-Instanz mit eingehenden NAT-Regeln finden Sie unter [Erstellen eines Lastenausgleichsmoduls mit dem Azure-Ressourcen-Manager](../load-balancer/load-balancer-arm-powershell.md).
+Informationen zum Erstellen einer Load Balancer-Instanz mit eingehenden NAT-Regeln finden Sie unter [Erstellen eines Load Balancers mit dem Azure-Ressourcen-Manager](../load-balancer/load-balancer-arm-powershell.md).
 
 Kopieren Sie diese Zeilen in den Befehlssatz, und geben Sie die erforderlichen Namen und Indexnummern an.
 
@@ -223,7 +234,7 @@ Zum Erstellen einer Netzwerkkarte und Hinzufügen der Karte zu einer Load Balanc
 - Den Namen einer zuvor erstellten Load Balancer-Instanz, die über eine Regel für den eingehenden Datenverkehr verfügt.
 - Die Indexnummer des Back-End-Adresspools der Load Balancer-Instanz zum Zuweisen auf die NIC.
 
-Informationen zum Erstellen einer Lastenausgleichsmodul-Instanz mit Regeln für Datenverkehr mit Lastenausgleich finden Sie unter [Erstellen eines Lastenausgleichsmoduls mit dem Azure-Ressourcen-Manager](../load-balancer/load-balancer-arm-powershell.md).
+Informationen zum Erstellen einer Load Balancer-Instanz mit Regeln für Datenverkehr mit Lastenausgleich finden Sie unter [Erstellen eines Load Balancers mit dem Azure-Ressourcen-Manager](../load-balancer/load-balancer-arm-powershell.md).
 
 Kopieren Sie diese Zeilen in den Befehlssatz, und geben Sie die erforderlichen Namen und Indexnummern an.
 
@@ -376,12 +387,12 @@ Hier finden Sie den Azure PowerShell-Befehlssatz zum Erstellen dieses virtuellen
 
 [Azure Compute-, Network- and Storage-Anbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md)
 
-[Übersicht über den Azure Resource Manager](../resource-group-overview.md)
+[Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md)
 
 [Bereitstellen und Verwalten von virtuellen Azure-Computern mit Ressourcen-Manager-Vorlagen und PowerShell](virtual-machines-deploy-rmtemplates-powershell.md)
 
-[Erstellen eines virtuellen Windows-Computers mit einer Resource Manager-Vorlage und PowerShell](virtual-machines-create-windows-powershell-resource-manager-template-simple)
+[Erstellen eines virtuellen Windows-Computers mit einer Ressourcen-Manager-Vorlage und PowerShell](virtual-machines-create-windows-powershell-resource-manager-template-simple)
 
 [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1217_2015-->

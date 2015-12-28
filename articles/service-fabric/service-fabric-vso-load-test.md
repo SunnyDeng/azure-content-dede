@@ -1,6 +1,6 @@
 <properties
-    pageTitle="Durchführen von Auslastungstests für Anwendungen mithilfe von Visual Studio Online | Microsoft Azure"
-    description="Erfahren Sie, wie Sie mithilfe von Visual Studio Online Belastungstests für Ihre Azure Service Fabric-Anwendungen durchführen können."
+    pageTitle="Durchführen von Auslastungstests für Anwendungen mithilfe von Visual Studio Team Services | Microsoft Azure"
+    description="Erfahren Sie, wie Sie mithilfe von Visual Studio Team Services Belastungstests für Ihre Azure Service Fabric-Anwendungen durchführen können."
     services="service-fabric"
     documentationCenter="na"
     authors="cawams"
@@ -16,7 +16,7 @@
     ms.date="10/28/2015"
     ms.author="cawa" />
 
-# Durchführen von Auslastungstests für Anwendungen mithilfe von Visual Studio Online
+# Durchführen von Auslastungstests für Anwendungen mithilfe von Visual Studio Team Services
 
 In diesem Artikel wird erläutert, wie Sie die Visual Studio-Funktionen für Auslastungstests verwenden, um Belastungstests für eine Anwendung durchzuführen. Es wird ein Service Fabric-Back-End für zustandsbehaftete Dienste und ein Web-Front-End für zustandslose Dienste verwendet. Bei der hier verwendeten Beispielanwendung handelt es sich um einen Standortsimulator für Flugzeuge. Sie stellen eine Flugzeugkennung sowie den Abflug- und den Zielort bereit. Das Back-End der Anwendung verarbeitet die Anforderungen, und das Front-End zeigt das Flugzeug entsprechend den Kriterien auf einer Karte an.
 
@@ -27,7 +27,7 @@ Das folgende Diagramm veranschaulicht die Service Fabric-Anwendung, die Sie test
 ## Voraussetzungen
 Bevor Sie beginnen, müssen Sie folgende Aufgaben erledigen.
 
-- Legen Sie ein Visual Studio Online-Konto (VSO) an. Unter [Visual Studio Online](https://www.visualstudio.com) können Sie ein kostenloses Konto erhalten.
+- Richten Sie ein Visual Studio Team Services-Konto (VSTS) ein. Unter [Visual Studio Team Services](https://www.visualstudio.com) können Sie ein kostenloses Konto erhalten.
 - Laden Sie Visual Studio 2013 oder Visual Studio 2015 herunter, und installieren Sie die Software. In diesem Artikel wird Visual Studio 2015 Enterprise verwendet, Visual Studio 2013 und andere Editionen funktionieren jedoch genauso.
 - Stellen Sie Ihre Anwendung in einer Stagingumgebung bereit. Informationen hierzu finden Sie unter [Veröffentlichen einer Anwendung in einem Remotecluster mit Visual Studio](service-fabric-publish-app-remote-cluster.md).
 - Machen Sie sich mit dem Verwendungsmuster Ihrer Anwendung vertraut. Diese Informationen werden zur Simulation des Auslastungsmusters verwendet.
@@ -92,17 +92,15 @@ Ein Auslastungstestprojekt besteht aus mindestens einem Szenario, das durch eine
 1. Klicken Sie im Abschnitt **Testmischung** auf die Schaltfläche **Hinzufügen**, und wählen Sie den Test aus, den Sie in den Auslastungstest einschließen möchten. Sie können die Spalte **Verteilung** verwenden, um den Prozentsatz der Testläufe insgesamt für jeden Test anzugeben.
 
 1. Geben Sie im Abschnitt **Testlaufeinstellungen** die Dauer des Auslastungstests an.
-
     >[AZURE.NOTE]Die Option **Testiterationen** ist nur verfügbar, wenn Sie den Auslastungstest lokal über Visual Studio ausführen.
 
-
-1. Geben Sie im Abschnitt **Speicherort** der **Testlaufeinstellungen** das Verzeichnis an, in dem Auslastungstestanforderungen generiert werden. Der Assistent fordert Sie möglicherweise auf, sich bei Ihrem VSO-Konto anzumelden. Melden Sie sich bei Ihrem VSO-Konto an, und wählen Sie dann einen geografischen Standort. Wenn Sie fertig sind, klicken Sie auf die Schaltfläche **Fertig stellen**.
+1. Geben Sie im Abschnitt **Speicherort** der **Testlaufeinstellungen** das Verzeichnis an, in dem Auslastungstestanforderungen generiert werden. Der Assistent fordert Sie möglicherweise auf, sich bei Ihrem Team Services-Konto anzumelden. Melden Sie sich mit Ihrem Team Services-Konto an, und wählen Sie dann einen geografischen Standort aus. Wenn Sie fertig sind, klicken Sie auf die Schaltfläche **Fertig stellen**.
 
 1. Nachdem der Auslastungstest erstellt wurde, öffnen Sie das LOADTEST-Projekt, und wählen Sie die aktuelle Testlaufeinstellung aus, beispielsweise **Testlaufeinstellungen** > **Testlaufeinstellungen1 [Aktiv]**. Dadurch werden die Testlaufeinstellungen im Fenster **Eigenschaften** geöffnet.
 
-1. Im Abschnitt **Ergebnisse** des Fensters **Testlaufeinstellungen** sollte die Einstellung **Speicher für Details der zeitlichen Steuerung** den Standardwert **Keine** aufweisen. Ändern Sie diesen Wert zu **Alle einzelnen Details**, um weitere Informationen zum Ergebnis des Auslastungstests zu erhalten. Informationen zum Herstellen einer Verbindung mit Visual Studio Online und Ausführen eines Auslastungstests finden Sie unter [Auslastungstests](https://www.visualstudio.com/load-testing.aspx).
+1. Im Abschnitt **Ergebnisse** des Fensters **Testlaufeinstellungen** sollte die Einstellung **Speicher für Details der zeitlichen Steuerung** den Standardwert **Keine** aufweisen. Ändern Sie diesen Wert zu **Alle einzelnen Details**, um weitere Informationen zum Ergebnis des Auslastungstests zu erhalten. Informationen zum Herstellen einer Verbindung mit Visual Studio Team Services und zum Ausführen eines Auslastungstests finden Sie unter [Auslastungstests](https://www.visualstudio.com/load-testing.aspx).
 
-### Ausführen eines Auslastungstests mit Visual Studio Online
+### Ausführen von Auslastungstests mit Visual Studio Team Services
 
 Wählen Sie den Befehl **Auslastungstest ausführen**, um den Testlauf zu starten.
 
@@ -126,7 +124,7 @@ Informationen zum Anzeigen der Ergebnisse der Auslastungstests finden Sie unter 
 
 ## Automatisieren des Auslastungstests
 
-Visual Studio Online-Auslastungstests stellen APIs bereit, mit deren Hilfe Sie in einem VSO-Konto Auslastungstests verwalten und Ergebnisse analysieren können. Weitere Informationen finden Sie unter [Cloud Load Testing Rest APIs](http://blogs.msdn.com/b/visualstudioalm/archive/2014/11/03/cloud-load-testing-rest-apis-are-here.aspx).
+Visual Studio Team Services-Auslastungstests stellen APIs bereit, mit denen Sie in einem Team Services-Konto Auslastungstests verwalten und Ergebnisse analysieren können. Weitere Informationen finden Sie unter [Cloud Load Testing Rest APIs](http://blogs.msdn.com/b/visualstudioalm/archive/2014/11/03/cloud-load-testing-rest-apis-are-here.aspx).
 
 ## Nächste Schritte
 - [Überwachen und Diagnostizieren von Diensten in einer Entwicklungsumgebung auf einem lokalen Computer](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md)
@@ -142,4 +140,4 @@ Visual Studio Online-Auslastungstests stellen APIs bereit, mit deren Hilfe Sie i
 [8]: ./media/service-fabric-vso-load-test/RunTest2.png
 [9]: ./media/service-fabric-vso-load-test/Graph.png
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

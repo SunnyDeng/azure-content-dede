@@ -1,13 +1,4 @@
-<properties 
-	pageTitle="Verschieben von Daten in eine Azure SQL-Datenbank für Azure Machine Learning | Azure" 
-	description="Erstellen einer SQL-Tabelle und Laden von Daten in die SQL-Tabelle" 
-	services="machine-learning" 
-	documentationCenter="" 
-	authors="fashah" 
-	manager="jacob.spoelstra" 
-	editor="" 
-	videoId="" 
-	scriptId="" />
+<properties pageTitle="Verschieben von Daten in eine Azure SQL-Datenbank für Azure Machine Learning | Azure" description="Erstellen einer SQL-Tabelle und Laden von Daten in die SQL-Tabelle" services="machine-learning" documentationCenter="" authors="fashah" manager="jacob.spoelstra" editor="" videoId="" [hee scriptId="" />
 
 <tags 
 	ms.service="machine-learning" 
@@ -45,7 +36,7 @@ Für diese hier beschriebenen Verfahren benötigen Sie:
 * Zugriff auf eine **Azure SQL-Datenbank**. Wenn Sie eine Azure SQL-Datenbank einrichten müssen, finden Sie in [Erste Schritte mit Microsoft Azure SQL-Datenbank](sql-database-get-started.md) Informationen dazu, wie Sie eine neue Instanz einer Azure SQL-Datenbank bereitstellen.
 * Lokal installierte und konfigurierte **Azure PowerShell**. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md).
 
-**Daten**: Die Migrationsprozesse werden anhand des [NYC Taxi-Datasets](http://chriswhong.com/open-data/foil_nyc_taxi/) demonstriert. Das NYC Taxi-Dataset enthält Informationen zu Daten und Preisen von Fahrten und ist, wie in diesem Beitrag erwähnt, in Azure-Blobspeicher [hier](http://www.andresmh.com/nyctaxitrips/) verfügbar. Ein Beispiel und eine Beschreibung dieser Dateien finden Sie unter [Beschreibung des NYC Taxi Trips-Datasets](machine-learning-data-science-process-sql-walkthrough.md#dataset).
+**Daten**: Die Migrationsprozesse werden anhand des [NYC Taxi-Datasets](http://chriswhong.com/open-data/foil_nyc_taxi/) demonstriert. Das NYC Taxi-Dataset enthält Informationen zu Daten und Preisen von Fahrten und ist, wie in diesem Beitrag erwähnt, in Azure Blob Storage unter [NYC Taxi Data](http://www.andresmh.com/nyctaxitrips/) verfügbar. Ein Beispiel und eine Beschreibung dieser Dateien finden Sie unter [Beschreibung des NYC Taxi Trips-Datasets](machine-learning-data-science-process-sql-walkthrough.md#dataset).
  
 Sie können die hier beschriebenen Verfahren entweder auf einen Satz Ihrer eigenen Daten anpassen oder die Schritte wie beschrieben unter Verwendung des NYC Taxi-Datasets durchführen. Um das NYC Taxi-Dataset in Ihre lokale SQL Server-Datenbank hochzuladen, befolgen Sie das unter [Massenimport von Daten in eine SQL Server-Datenbank](machine-learning-data-science-process-sql-walkthrough.md#dbload) beschriebene Verfahren. Diese Anleitungen gelten für einen SQL Server auf einem virtuellen Azure-Computer, aber das Verfahren zum Hochladen in auf den lokalen SQL Server ist identisch.
 
@@ -53,7 +44,7 @@ Sie können die hier beschriebenen Verfahren entweder auf einen Satz Ihrer eigen
 
 Daten in Flatfiles (CSV- oder TSV-Format) können mithilfe einer SQL-Abfrage zum Masseneinfügen in eine Azure SQL-Datenbank verschoben werden.
 
-### <a name="bulk-insert-sql-query"></a> SQL-Abfrage zum Masseneinfügen
+### <a name="bulk-insert-sql-query"></a>SQL-Abfrage zum Masseneinfügen
 
 Die Schritte des Verfahrens unter Verwendung der SQL-Abfrage zum Masseneinfügen sind mit denen vergleichbar, die in den Abschnitten zum Verschieben von Daten aus einer Flatfilequelle in SQL Server auf einem virtuellen Azure-Computer behandelt werden. Ausführliche Informationen finden Sie unter [SQL-Abfrage zum Masseneinfügen](machine-learning-data-science-move-sql-server-virtual-machine.md#insert-tables-bulkquery).
 
@@ -86,4 +77,4 @@ Das Verfahren zum Verschieben von Daten in eine Azure SQL-Datenbank mit Azure Da
 
 Sie sollten die Verwendung von ADF in Betracht ziehen, wenn Daten in einem Hybridszenario kontinuierlich migriert werden müssen, das sowohl auf lokale als auch Cloudressourcen zugreift, und wenn die Daten Transaktionen unterworfen werden oder geändert werden müssen, oder wenn ihnen im Rahmen der Migration eine Geschäftslogik hinzugefügt wird. ADF gestatte die Planung und Überwachung von Aufträgen mithilfe einfacher JSON-Skripts, die das Verschieben von Daten in regelmäßigen Abständen verwalten. ADF verfügt außerdem über weitere Funktionen wie Unterstützung für komplexe Vorgänge.
 
-<!----HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

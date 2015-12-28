@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Erstellen einer VNet-zu-VNet-Verbindung mit dem Azure-Ressourcen-Manager und PowerShell für VNets im selben Abonnement | Microsoft Azure"
+   pageTitle="Erstellen einer VNET-zu-VNET-VPN-Gatewayverbindung mit dem Azure-Ressourcen-Manager und PowerShell für VNETs im selben Abonnement | Microsoft Azure"
    description="Dieser Artikel führt Sie durch das Verbinden virtueller Netzwerke mithilfe von Azure-Ressourcen-Manager und PowerShell."
    services="vpn-gateway"
    documentationCenter="na"
@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/30/2015"
+   ms.date="12/14/2015"
    ms.author="cherylmc"/>
 
 # Konfigurieren einer VNet-zu-VNet-Verbindung für virtuelle Netzwerke im selben Abonnement mit dem Azure-Ressourcen-Manager und PowerShell
@@ -23,19 +23,23 @@
 - [Azure Classic Portal](virtual-networks-configure-vnet-to-vnet-connection.md)
 - [PowerShell - Azure Resource Manager](vpn-gateway-vnet-vnet-rm-ps.md)
 
-In diesem Artikel werden Sie unter Verwendung des Ressourcen-Manager-Bereitstellungsmodells durch die Schritte begleitet. Sie können den Artikel für das entsprechende Bereitstellungsmodell und Bereitstellungstool mithilfe der obigen Registerkarten auswählen. Zu diesem Zeitpunkt gibt es keine Lösung für VNet-zu-VNet-Verbindungen für virtuelle Netzwerke, die mit der Azure-Ressourcen-Manager-Bereitstellungsmethode erstellt wurden und sich in verschiedenen Abonnements befinden. Das Team arbeitet derzeit an einer Lösung, und wir erwarten die ersten Lösungsschritte gegen Ende des Jahres. Sobald eine Lösung verfügbar ist, werden die entsprechenden Schritte in diesen Artikel aufgenommen. Die folgenden Schritte gelten für VNets, die sich im selben Abonnement befinden.
+In diesem Artikel werden Sie unter Verwendung des Ressourcen-Manager-Bereitstellungsmodells durch die Schritte begleitet. Wenn Sie ein anderes Bereitstellungsmodell für diese Konfiguration suchen, verwenden Sie die Registerkarten oben, um den gewünschten Artikel auszuwählen.
 
-Wenn Ihre virtuellen Netzwerke mit dem klassischen Bereitstellungsmodell erstellt wurden, lesen Sie die Informationen unter [Erstellen einer VNet-zu-VNet-Verbindung](virtual-networks-configure-vnet-to-vnet-connection.md). Das klassische Bereitstellungsmodell unterstützt die Verbindung von VNets, die sich in verschiedenen Abonnements befinden.
+Zu diesem Zeitpunkt gibt es keine Lösung für VNet-zu-VNet-Verbindungen für virtuelle Netzwerke, die mit der Azure-Ressourcen-Manager-Bereitstellungsmethode erstellt wurden und sich in verschiedenen Abonnements befinden. Das Team arbeitet derzeit an einer Lösung, und wir erwarten die ersten Lösungsschritte gegen Ende des Jahres oder sehr früh im neuen Jahr. Sobald eine Lösung verfügbar ist, werden die entsprechenden Schritte in diesen Artikel aufgenommen. Die folgenden Schritte gelten für VNets, die sich im selben Abonnement befinden.
 
-Wenn Sie ein mit dem klassischen Bereitstellungsmodell erstelltes virtuelles Netzwerk mit einem virtuellen Netzwerk verbinden möchten, das mit dem Azure-Ressourcen-Manager-Modell erstellt wurde, finden Sie weitere Informationen unter [Herstellen einer Verbindung zwischen klassischen VNets und neuen VNets](../virtual-network/virtual-networks-arm-asm-s2s.md).
+**Informationen zu Azure-Bereitstellungsmodellen**
 
-[AZURE.INCLUDE [vpn-gateway-sm-rm](../../includes/vpn-gateway-sm-rm-include.md)]
+[AZURE.INCLUDE [vpn-gateway-clasic-rm](../../includes/vpn-gateway-classic-rm-include.md)]
+	
+- Wenn Ihre virtuellen Netzwerke mit dem klassischen Bereitstellungsmodell erstellt wurden, lesen Sie die Informationen unter [Erstellen einer VNET-zu-VNET-Verbindung](virtual-networks-configure-vnet-to-vnet-connection.md). Das klassische Bereitstellungsmodell unterstützt die Verbindung von VNets, die sich in verschiedenen Abonnements befinden.
+	
+- Wenn Sie ein mit dem klassischen Bereitstellungsmodell erstelltes virtuelles Netzwerk mit einem virtuellen Netzwerk verbinden möchten, das mit dem Azure-Ressourcen-Manager-Modell erstellt wurde, finden Sie weitere Informationen unter [Herstellen einer Verbindung zwischen klassischen VNETs und neuen VNETs](../virtual-network/virtual-networks-arm-asm-s2s.md).
+
+## Verbindungsdiagramm
 
 Das Verbinden eines virtuellen Netzwerks mit einem anderen virtuellen Netzwerk (VNet-zu-VNet) ähnelt dem Verbinden eines VNet mit einem lokalen Standort. Beide Verbindungstypen verwenden ein VPN-Gateway, um einen sicheren Tunnel mit IPSec/IKE bereitzustellen. Die VNets, die Sie verbinden, können sich in verschiedenen Regionen befinden. Sie können sogar VNet-zu-VNet-Kommunikation mit Konfigurationen für mehrere Standorte kombinieren. Auf diese Weise können Sie Netzwerktopologien einrichten, die standortübergreifende Konnektivität mit Konnektivität zwischen virtuellen Netzwerken kombinieren, wie in der folgenden Abbildung dargestellt:
 
-
 ![VNet-zu-VNet-Konnektivitätsdiagramm](./media/virtual-networks-configure-vnet-to-vnet-connection/IC727360.png)
-
  
 ## Gründe für Verbindungen zwischen virtuellen Netzwerken
 
@@ -82,7 +86,11 @@ Bevor Sie beginnen, stellen Sie sicher, dass Sie über Folgendes verfügen:
 
 - Ein Azure-Abonnement. Wenn Sie noch kein Abonnement haben, können Sie Ihre [MSDN-Abonnentenvorteile](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) aktivieren oder sich für eine [kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/) registrieren.
 
-- Azure PowerShell-Cmdlets (1.0 oder höher). Sie können diese Version aus dem Windows PowerShell-Abschnitt der [Downloadseite](http://azure.microsoft.com/downloads/) herunterladen und installieren.
+## Installieren der PowerShell-Module
+
+Sie benötigen die neueste Version der PowerShell-Cmdlets für Azure-Ressourcen-Manager zum Konfigurieren der Verbindung.
+
+[AZURE.INCLUDE [vpn-gateway-ps-rm-howto](../../includes/vpn-gateway-ps-rm-howto-include.md)]
 
 
 ## 1\. Planen der IP-Adressbereiche
@@ -203,7 +211,7 @@ Nach einigen Minuten sollte die Verbindung hergestellt sein. Beachten Sie, dass 
 
 ## Überprüfen der Verbindungen
 
-Zu diesem Zeitpunkt sind die VPN-Verbindungen, die mit dem Ressourcen-Manager erstellt wurden, im Vorschauportal nicht sichtbar. Sie können aber überprüfen, ob Ihre Verbindung erfolgreich war, indem Sie *Get-AzureRmVirtualNetworkGatewayConnection –Debug* verwenden. In Zukunft wird hierfür ein Cmdlet verfügbar sein, und Sie können Ihre Verbindung dann auch im Vorschauportal anzeigen.
+Zu diesem Zeitpunkt sind die VPN-Verbindungen, die mit dem Ressourcen-Manager erstellt wurden, im Vorschauportal nicht sichtbar. Sie können aber überprüfen, ob Ihre Verbindung erfolgreich war, indem Sie *Get-AzureRmVirtualNetworkGatewayConnection -Debug* verwenden. In Zukunft wird hierfür ein Cmdlet verfügbar sein, und Sie können Ihre Verbindung dann auch im Vorschauportal anzeigen.
 
 Sie können das folgende Cmdlet-Beispiel verwenden. Ändern Sie die Werte entsprechend allen Verbindungen, die Sie überprüfen möchten. Wählen Sie bei Aufforderung die Option *A* für „Alle ausführen“ aus.
 
@@ -255,8 +263,6 @@ Nachdem Sie sich vergewissert haben, dass Ihre Gatewaysubnetze richtig konfiguri
 
 ## Nächste Schritte
 
-Sie können Ihren virtuellen Netzwerken virtuelle Computer hinzufügen. [Erstellen Sie einen virtuellen Computer](../virtual-machines/virtual-machines-windows-tutorial.md).
+Sobald die Verbindung hergestellt ist, können Sie Ihren virtuellen Netzwerken virtuelle Computer hinzufügen. Für diese Schritte finden Sie Informationen unter [Erstellen eines virtuellen Computers](../virtual-machines/virtual-machines-windows-tutorial.md).
 
-Weitere Informationen zu virtuellen Netzwerken finden Sie unter [Virtuelle Netzwerke im Überblick](../virtual-network/virtual-networks-overview.md).
-
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

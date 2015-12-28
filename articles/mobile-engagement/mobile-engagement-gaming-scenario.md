@@ -1,6 +1,6 @@
-	<properties 
-	pageTitle="Azure Mobile Engagement implementation for Gaming App"
-	description="Gaming app scenario to implement Azure Mobile Engagement" 
+<properties 
+	pageTitle="Azure Mobile Engagement-Implementierung für Spiele-App"
+	description="Spiele-App-Szenario zum Implementieren von Azure Mobile Engagement" 
 	services="mobile-engagement" 
 	documentationCenter="mobile" 
 	authors="piyushjo"
@@ -61,7 +61,7 @@ Nach drei Monaten hat der Mobile-Projektleiter genügend Daten zur Verbesserung 
 * Benutzer, die Level 20 abgeschlossen haben, beginnen mehr als 10 US-Dollar pro Woche auszugeben.
 * Benutzer neigen dazu Premium-Pakete auf Level 16, 24 und 32 zu kaufen.
 
-Dank dieser Analyse beschließt der Mobile-Projektleiter, bestimmte Pushbenachrichtigungssequenzen zu erstellen, um App-interne Käufe zu erhöhen. Er erstellt drei Pushsequenzen, die er folgendermaßen nennt: Welcome Program, Sales Program und Inactive Program. Weitere Informationen finden Sie in den [Playbooks](https://github.com/Azure/azure-mobile-engagement-samples/tree/master/Playbooks).![][1]
+Dank dieser Analyse beschließt der Mobile-Projektleiter, bestimmte Pushbenachrichtigungssequenzen zu erstellen, um App-interne Käufe zu erhöhen. Er erstellt drei Pushsequenzen, die er folgendermaßen nennt: Welcome Program, Sales Program und Inactive Program. Weitere Informationen finden Sie in den [Playbooks](https://github.com/Azure/azure-mobile-engagement-samples/tree/master/Playbooks) ![][1].
 
 <!--Image references-->
 
@@ -69,4 +69,4 @@ Dank dieser Analyse beschließt der Mobile-Projektleiter, bestimmte Pushbenachri
 
 <!--Link references-->
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

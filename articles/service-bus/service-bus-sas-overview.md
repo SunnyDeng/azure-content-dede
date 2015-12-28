@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="09/04/2015"
+   ms.date="12/09/2015"
    ms.author="darosa"/>
 
 # Shared Access Signatures
@@ -257,4 +257,4 @@ Weitere Beispiele für SAS in C# und Java Script finden Sie in [diesem Blogbeitr
 
 [klassischen Azure-Portal]: http://manage.windowsazure.com
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

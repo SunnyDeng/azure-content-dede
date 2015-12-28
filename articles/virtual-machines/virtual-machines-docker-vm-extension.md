@@ -74,7 +74,7 @@ Informationen zum Erstellen von Docker-fähigen virtuellen Computern finden Sie 
 ## Erweiterungen für virtuelle Linux- und Windows-Computer
 Die [Docker-VM-Erweiterung für Azure](https://github.com/Azure/azure-docker-extension/blob/master/README.md) ist nur eine von vielen VM-Erweiterungen mit besonderen Funktionen. Weitere sind bereits in der Entwicklung. Beispielsweise ermöglichen es Ihnen einige Features der [Linux VM Agent-Erweiterung](virtual-machines-linux-agent-user-guide.md) unter anderem, den virtuellen Computer, einschließlich Sicherheits-, Kernel- und Netzwerkfeatures, zu ändern und zu verwalten. Mit der VMAccess-Erweiterung können Sie z. B. das Administratorkennwort oder den SSH-Schlüssel zurücksetzen.
 
-Eine vollständige Liste finden Sie unter [Azure VM-Erweiterungen](http://msdn.microsoft.com/library/azure/dn606311.aspx).
+Eine vollständige Liste finden Sie unter [Azure VM-Erweiterungen](virtual-machines-extensions-features.md).
 
 <!--Anchors-->
 [Verwenden der Docker-VM-Erweiterung über die Azure-Befehlszeilenschnittstelle]: http://azure.microsoft.com/documentation/articles/virtual-machines-docker-with-xplat-cli/
@@ -84,4 +84,4 @@ Eine vollständige Liste finden Sie unter [Azure VM-Erweiterungen](http://msdn.m
 [Verwenden der Docker-VM-Erweiterung mit Azure]: #How-to-use-the-Docker-VM-Extension-with-Azure
 [Erweiterungen für virtuelle Linux- und Windows-Computer]: #Virtual-Machine-Extensions-For-Linux-and-Windows
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

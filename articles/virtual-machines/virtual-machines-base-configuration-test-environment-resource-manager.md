@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="Windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/20/2015"
+	ms.date="12/11/2015"
 	ms.author="josephd"/>
 
 # Testumgebung für die Basiskonfiguration mit Azure-Ressourcen-Manager
@@ -56,9 +56,22 @@ Wenn Sie noch nicht über ein Azure-Konto verfügen, erhalten Sie unter [Try Azu
 
 ## Phase 1: Erstellen des virtuellen Netzwerks
 
-> [AZURE.NOTE]Dieser Artikel enthält Befehle für die Vorschau für Azure PowerShell 1.0. Um diese Befehle in Azure PowerShell 0.9.8 und früheren Versionen auszuführen, ersetzen Sie alle Instanzen von „-AzureRM“ durch „-Azure“, und fügen Sie vor dem Ausführen von Befehlen den Befehl **Switch-AzureMode AzureResourceManager** hinzu. Weitere Informationen finden Sie unter [Vorschau für Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0-pre/).
+Starten Sie zunächst eine Azure PowerShell-Eingabeaufforderung.
 
-Öffnen Sie zunächst eine Azure PowerShell-Eingabeaufforderung.
+> [AZURE.NOTE]Die folgenden Befehlssätze verwenden Azure PowerShell 1.0 und höher. Weitere Informationen finden Sie unter [Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0/) (in englischer Sprache).
+
+Melden Sie sich in Ihrem Konto an.
+
+	Login-AzureRMAccount
+
+Rufen Sie Ihren Abonnementnamen mit dem folgenden Befehl ab.
+
+	Get-AzureRMSubscription | Sort SubscriptionName | Select SubscriptionName
+
+Legen Sie Ihr Azure-Abonnement fest. Ersetzen Sie alles in den Anführungszeichen, einschließlich der Zeichen < and >, durch die korrekten Namen.
+
+	$subscr="<subscription name>"
+	Get-AzureRmSubscription –SubscriptionName $subscr | Select-AzureRmSubscription
 
 Erstellen Sie als Nächstes eine neue Ressourcengruppe für das Basiskonfiguration-Testlabor. Um einen eindeutigen Namen für die Ressourcengruppe zu finden, verwenden Sie diesen Befehl zum Auflisten der vorhandenen Ressourcengruppen.
 
@@ -72,7 +85,7 @@ Erstellen Sie die neue Ressourcengruppe mit diesen Befehlen. Ersetzen Sie alles 
 
 Virtuelle Computer auf Ressourcen-Manager-Basis benötigen ein Speicherkonto auf Ressourcen-Manager-Basis. Geben Sie einen global eindeutigen Namen für das Speicherkonto an, der nur aus Kleinbuchstaben und Zahlen besteht. Mit diesem Befehl können Sie die vorhandenen Speicherkonten auflisten.
 
-	Get-AzureRMStorageAccount | Sort Name | Select Name
+	Get-AzureRMStorageAccount | Sort StorageAccountName | Select StorageAccountName
 
 Erstellen Sie mit diesen Befehlen ein neues Speicherkonto für die neue Testumgebung.
 
@@ -118,7 +131,7 @@ Geben Sie zuerst den Namen der Ressourcengruppe, den Azure-Standort und den Name
 
 Stellen Sie dann eine Verbindung mit dem virtuellen Computer DC1 her.
 
-1.	Klicken Sie im Azure-Portal im linken Bereich auf **Alle durchsuchen**, und klicken Sie in der Liste **Durchsuchen** auf **Virtuelle Computer** und dann auf den virtuellen Computer **DC1**.  
+1.	Klicken Sie im Azure-Portal auf **Virtuelle Computer** und anschließend auf den virtuellen Computer **DC1**.  
 2.	Klicken Sie unter **DC1** auf **Verbinden**.
 3.	Öffnen Sie die heruntergeladene Datei „DC1.rdp“, wenn Sie dazu aufgefordert werden.
 4.	Wenn ein Meldungsfeld der Remotedesktopverbindung angezeigt wird, klicken Sie auf **Verbinden**.
@@ -147,8 +160,8 @@ Als Nächstes konfigurieren Sie DC1 als Domänencontroller und DNS-Server für d
 
 Stellen Sie nach dem Neustart des virtuellen Computers DC1 erneut eine Verbindung mit DC1 her.
 
-1.	Klicken Sie im Azure-Portal im linken Bereich auf „Alle durchsuchen“, und klicken Sie in der Liste „Durchsuchen“ auf „Virtuelle Computer“ und dann auf den virtuellen Computer „DC1“.
-2.	Klicken Sie unter „DC1“ auf „Verbinden“.
+1.	Klicken Sie im Azure-Portal auf **Virtuelle Computer** und anschließend auf den virtuellen Computer **DC1**.
+2.	Klicken Sie unter **DC1** auf **Verbinden**.
 3.	Wenn Sie zum Öffnen von „DC1.rdp“ aufgefordert werden, klicken Sie auf **Öffnen**.
 4.	Wenn ein Meldungsfeld der Remotedesktopverbindung angezeigt wird, klicken Sie auf **Verbinden**.
 5.	Wenn Sie zur Eingabe von Anmeldeinformationen aufgefordert werden, geben Sie Folgendes ein:
@@ -276,11 +289,9 @@ Dies ist die endgültige Konfiguration.
 
 Die Basiskonfiguration in Azure kann nun zur Anwendungsentwicklung, zu Testzwecken oder für zusätzliche Testumgebungen verwendet werden.
 
-## Zusätzliche Ressourcen
+## Nächster Schritt
 
-[Hybrid cloud test environments (Testumgebungen für Hybridclouds)](../virtual-network/virtual-networks-setup-hybrid-cloud-environment-testing.md)
-
-[Testumgebung für die Basiskonfiguration](virtual-machines-base-configuration-test-environment.md)
+- Verwenden Sie dies als Grundlage zum Erstellen der [simulierten Hybridcloud-Testumgebung](../virtual-network/virtual-networks-setup-simulated-hybrid-cloud-environment-testing.md).
 
 
 ## <a id="costs"></a>Minimizing the costs of test environment virtual machines in Azure (Minimieren der Kosten von Testumgebungen für virtuelle Computer in Azure)
@@ -310,4 +321,4 @@ Zum Starten der virtuellen Computer mit Azure PowerShell in der richtigen Reihen
 	Start-AzureRMVM -ResourceGroupName $rgName -Name "APP1"
 	Start-AzureRMVM -ResourceGroupName $rgName -Name "CLIENT1"
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

@@ -1,7 +1,9 @@
-#### To delete a virtual device
+#### So erstellen Sie ein virtuelles Gerät
 
-1. Sign in to the Management Portal.
+1. Melden Sie sich beim Verwaltungsportal an.
 
-- Click **Virtual Machines**, and then select the virtual device.
+- Klicken Sie auf **Virtuelle Computer**, und wählen Sie das virtuelle Gerät aus.
 
-- Click **Delete** and choose to delete all the virtual machine disks.
+- Klicken Sie auf **Löschen**, und wählen Sie alle Datenträger des virtuellen Computers aus.
+
+<!---HONumber=AcomDC_1217_2015-->

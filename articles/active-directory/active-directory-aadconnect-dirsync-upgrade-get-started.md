@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.devlang="na"
    ms.topic="article"
-   ms.date="12/02/2015"
+   ms.date="12/16/2015"
    ms.author="shoatman;billmath"/>
 
 # Aktualisieren des Windows Azure Active Directory-Synchronisierungstools (DirSync) auf Azure AD Connect
@@ -56,6 +56,7 @@ Die folgenden Konfigurationsänderungen werden für DirSync unterstützt und sin
 - Alternative ID (UPN)
 - Kennwortsynchronisierung und Exchange-Hybrideinstellungen
 - Gesamtstruktur-/Domäneneinstellungen und Azure AD-Einstellungen
+- Filterung basierend auf Benutzerattributen
 
 Die folgenden Änderungen können im Rahmen des Upgrades nicht aktualisiert werden. Wenn Sie eine oder mehrere dieser Änderungen vorgenommen haben, wird das Upgrade blockiert.
 
@@ -63,9 +64,7 @@ Die folgenden Änderungen können im Rahmen des Upgrades nicht aktualisiert werd
 
 In diesen Fällen wird empfohlen, einen neuen Azure AD Connect-Server im [Stagingmodus](active-directory-aadconnectsync-operations.md#staging-mode) zu installieren und die alte DirSync- und die neue Azure AD Connect-Konfiguration zu überprüfen. Wenden Sie alle Änderungen mithilfe der benutzerdefinierten Konfiguration erneut an, wie unter [Azure AD Connect-Synchronisierung: Anpassen von Synchronisierungsoptionen](active-directory-aadconnectsync-whatis.md) beschrieben.
 
-
 - Nicht unterstützte DirSync-Änderungen, z. B. entfernte Attribute und die Verwendung einer benutzerdefinierten Erweiterungs-DLL
-- Filterung basierend auf Benutzerattributen
 
 Die Kennwörter, die von DirSync für die Dienstkonten verwendet werden, können nicht abgerufen werden und werden nicht migriert. Diese Kennwörter werden während des Upgrades zurückgesetzt.
 
@@ -198,4 +197,4 @@ Nachdem Sie Azure AD Connect installiert haben, können Sie [die Installation �
 
 Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

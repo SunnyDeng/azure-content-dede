@@ -32,7 +32,7 @@ Für die Lösung werden zwei unterschiedliche Datenquellen verwendet:
 - **Dataset mit simulierten Fahrzeugsignalen und Diagnosedaten** 
 - **Fahrzeugkatalog**
 
-Zu dieser Lösung gehört ein Simulator für Fahrzeugtelematik (Vehicle Telematics Simulator). Diese Anwendung gibt Diagnosedaten und Signale entsprechend dem Zustand des Fahrzeugs und Fahrmusters zu einem bestimmten Zeitpunkt aus. Klicken Sie [hier](http://go.microsoft.com/fwlink/?LinkId=717075), um die **Visual Studio-Projektmappe „Vehicle Telematics Simulator“** herunterzuladen, wenn Sie Anpassungen nach Ihren Anforderungen vornehmen möchten. Der Fahrzeugkatalog enthält ein Referenzdataset mit einer Zuordnung von Fahrzeug-Identifizierungsnummer und Modell.
+Zu dieser Lösung gehört ein Simulator für Fahrzeugtelematik (Vehicle Telematics Simulator). Diese Anwendung gibt Diagnosedaten und Signale entsprechend dem Zustand des Fahrzeugs und Fahrmuster zu einem bestimmten Zeitpunkt aus. Klicken Sie auf [Vehicle Telematics Simulator](http://go.microsoft.com/fwlink/?LinkId=717075), um die **Visual Studio-Projektmappe „Vehicle Telematics Simulator“** herunterzuladen, wenn Sie Anpassungen nach Ihren Anforderungen vornehmen möchten. Der Fahrzeugkatalog enthält ein Referenzdataset mit einer Zuordnung von Fahrzeug-Identifizierungsnummer und Modell.
 
 ![](./media/cortana-analytics-playbook-vehicle-telemetry-deep-dive/fig2-vehicle-telematics-simulator.png)
 
@@ -130,7 +130,7 @@ Der Stream Analytics-Auftrag erfasst die Daten vom Event Hub und führt eine Ver
 *Abbildung 7 – Stream Analytics-Auftrag – Abfrage zur Datenerfassung*
 
 ### Batchanalyse
-Wir generieren auch ein zusätzliches Volume mit simulierten Fahrzeugsignalen und einem Diagnosedataset, um eine umfassendere Batchanalyse zu ermöglichen. Dies ist erforderlich, um für die Batchverarbeitung ein gutes, repräsentatives Datenvolume sicherzustellen. Zu diesem Zweck verwenden wir eine Pipeline mit dem Namen „PrepareSampleDataPipeline“ im Azure Data Factory-Workflow, um simulierte Fahrzeugsignale und ein Diagnosedataset für den Zeitraum eines Jahres zu generieren. Klicken Sie [hier](http://go.microsoft.com/fwlink/?LinkId=717077), um die Visual Studio-Projektmappe „Benutzerdefinierte Data Factory-DotNet-Aktivität“ herunterzuladen, wenn Sie Anpassungen nach Ihren Anforderungen vornehmen möchten.
+Wir generieren auch ein zusätzliches Volume mit simulierten Fahrzeugsignalen und einem Diagnosedataset, um eine umfassendere Batchanalyse zu ermöglichen. Dies ist erforderlich, um für die Batchverarbeitung ein gutes, repräsentatives Datenvolume sicherzustellen. Zu diesem Zweck verwenden wir eine Pipeline mit dem Namen „PrepareSampleDataPipeline“ im Azure Data Factory-Workflow, um simulierte Fahrzeugsignale und ein Diagnosedataset für den Zeitraum eines Jahres zu generieren. Klicken Sie auf [Data Factory custom activity](http://go.microsoft.com/fwlink/?LinkId=717077), um die Visual Studio-Projektmappe „Data Factory custom DotNet activity“ herunterzuladen, wenn Sie Anpassungen nach Ihren Anforderungen vornehmen möchten.
 
 ![](./media/cortana-analytics-playbook-vehicle-telemetry-deep-dive/fig8-vehicle-telematics-prepare-sample-data-for-batch-processing.png)
 
@@ -360,7 +360,7 @@ Abbildung 15 – Stream Analytics-Abfrage für Echtzeitverarbeitung
 
 Alle Mittelwerte werden mit einem rollierenden Fenster (TumblingWindow) von drei Sekunden berechnet. Wir verwenden hier ein rollierendes Fenster, da wir nicht überlappende und zusammenhängende Zeitintervalle benötigen.
 
-Weitere Informationen zu allen „Windowing“-Funktionen in Azure Stream Analytics erhalten Sie, indem Sie [hier](https://msdn.microsoft.com/library/azure/dn835019.aspx) klicken.
+Weitere Informationen zu allen „Windowing“-Funktionen in Azure Stream Analytics erhalten Sie auf der Seite [Windowing (Azure Streamanalyse)](https://msdn.microsoft.com/library/azure/dn835019.aspx).
 
 **Echtzeitvorhersage**
 
@@ -375,7 +375,7 @@ Die Projektmappe enthält eine Anwendung, mit der das Machine Learning-Modell in
 
 Dieses Muster gilt auch für Szenarien, bei denen Sie eine Branchenanwendung in den Ablauf der Echtzeitanalyse integrieren möchten, z. B. für Warnungen, Benachrichtigungen, Messaging usw.
 
-Klicken Sie [hier](http://go.microsoft.com/fwlink/?LinkId=717078), um die Visual Studio-Projektmappe „RealtimeDashboardApp“ zur Verwendung für Anpassungen herunterzuladen.
+Klicken Sie auf [RealtimeDashboardApp download](http://go.microsoft.com/fwlink/?LinkId=717078), um die Visual Studio-Projektmappe „RealtimeDashboardApp“ zur Verwendung für Anpassungen herunterzuladen.
 
 ****So führen Sie die Echtzeit-Dashboardanwendung aus **
 
@@ -696,4 +696,4 @@ Klicken Sie hier, um eine ausführliche Anleitung zum Einrichten der PowerBI-Ber
 
 In diesem Dokument wird die Projektmappe für die Fahrzeugtelemetrieanalyse (Vehicle Telemetry Analytics) ausführlich beschrieben. Es wird ein Lambda-Architekturmuster für die Echtzeit- und Batchanalyse mit Vorhersagen und Aktionen veranschaulicht. Dieses Muster gilt für eine Vielzahl von Anwendungsfällen, für die „Hot Path“-Analysen (Echtzeit) und „Cold Path“-Analysen (Batch) erforderlich sind.
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

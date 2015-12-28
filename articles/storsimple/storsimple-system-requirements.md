@@ -1,10 +1,10 @@
 <properties 
    pageTitle="StorSimple-Systemanforderungen | Microsoft Azure" 
-   description="Beschreibt Systemanforderungen und bewährte Methoden für Software, hohe Verfügbarkeit und Netzwerke für Azure StorSimple-Lösungen." 
+   description="Beschreibt die Anforderungen und bewährten Methoden für Software, Netzwerke und hohe Verfügbarkeit für eine Microsoft Azure StorSimple-Lösung." 
    services="storsimple" 
    documentationCenter="NA" 
    authors="alkohli" 
-   manager="carolz" 
+   manager="carmonm" 
    editor=""/>
 
 <tags
@@ -13,14 +13,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD" 
-   ms.date="10/30/2015"
+   ms.date="12/14/2015"
    ms.author="alkohli"/>
 
 # StorSimple-Software, hohe Verfügbarkeit und Netzwerkanforderungen
 
 ## Übersicht
 
-Willkommen bei Microsoft Azure StorSimple In diesem Artikel werden wichtige Systemanforderungen sowie bewährte Methoden für Ihr StorSimple-Gerät und für die Speicherclients beschrieben, die auf das Gerät zugreifen. Sie sollten die Informationen sorgfältig überprüfen, bevor Sie Ihr Azure StorSimple-System bereitstellen. Auch später sollten Sie während der Bereitstellung und beim nachfolgenden Betrieb bei Bedarf als Referenz darauf zurückgreifen.
+Willkommen bei Microsoft Azure StorSimple In diesem Artikel werden wichtige Systemanforderungen sowie bewährte Methoden für Ihr StorSimple-Gerät und für die Speicherclients beschrieben, die auf das Gerät zugreifen. Sie sollten die Informationen sorgfältig überprüfen, bevor Sie Ihr StorSimple-System bereitstellen. Auch später sollten Sie während der Bereitstellung und beim nachfolgenden Betrieb bei Bedarf als Referenz darauf zurückgreifen.
 
 Systemanforderungen:
 
@@ -36,8 +36,8 @@ Die folgenden Softwareanforderungen gelten für Speicherclients, die auf das Sto
 | Unterstützte Betriebssysteme | Erforderliche Version | Weitere Anforderungen/Hinweise |
 | --------------------------- | ---------------- | ------------- |
 | Windows Server | 2008 R2 SP1, 2012, 2012 R2 |StorSimple iSCSI-Volumes werden nur für die Verwendung auf den folgenden Windows-Datenträgertypen unterstützt:<ul><li>Einfaches Volume auf einfachem Datenträger</li><li>Einfaches und gespiegeltes Volume auf dynamischem Datenträger</li></ul>Schlanke Speicherzuweisung für Windows Server 2012 und ODX-Features werden bei Verwendung eines StorSimple iSCSI-Volumes unterstützt.<br><br>Mit StorSimple können nur Volumes mit schlanker Speicherzuweisung erstellt werden. Es können damit keine vollständig oder teilweise bereitgestellten Volumes erstellt werden.<br><br>Das erneute Formatieren eines mit schlanker Speicherzuweisung erstellten Volumes kann lange dauern. Es wird empfohlen, das Volume zu löschen und dann ein neues Volume zu erstellen, anstatt neu zu formatieren. Falls Sie trotzdem das Neuformatieren eines Volumes vorziehen:<ul><li>Führen Sie vor dem Neuformatieren den folgenden Befehl aus, um Verzögerungen bei der Speicherplatzrückgewinnung zu vermeiden: <br>`fsutil behavior set disabledeletenotify 1`</br></li><li>Verwenden Sie nach Abschluss der Formatierung den folgenden Befehl, um die Speicherplatzrückgewinnung wieder zu aktivieren:<br>`fsutil behavior set disabledeletenotify 0`</br></li><li>Wenden Sie den Windows Server 2012-Hotfix, der unter [KB2878635](https://support.microsoft.com/kb/2870270) beschrieben ist, auf Ihren Windows Server-Computer an.</li></ul></li></ul></ul> Greifen Sie auf [Softwareanforderungen für optionale Komponenten](#software-requirements-for-optional-components) zu, wenn Sie StorSimple Snapshot Manager oder den StorSimple-Adapter für SharePoint konfigurieren.|
-| VMWare ESX | 5\.1 | Wird für VMware vSphere 5.1 als iSCSI-Client unterstützt. Die VAAI-Blockfunktion wird für VMware vSphere v.5.1 auf StorSimple-Geräten unterstützt. 
-| Linux RHEL/CentOS | 5 und 6 | Unterstützung für Linux-iSCSI-Clients mit Open-iSCSI-Initiator, Versionen 5 und 6 |
+| VMWare ESX | 5\.1 | Wird für VMware vSphere 5.1 als iSCSI-Client unterstützt. Die VAAI-Blockfunktion wird für VMware vSphere, Version 5.1, auf StorSimple-Geräten unterstützt. 
+| Linux RHEL/CentOS | 5 und 6 | Unterstützung für Linux-iSCSI-Clients mit Open-iSCSI-Initiator, Versionen 5 und 6. |
 | Linux | SUSE Linux 11 | |
  >[AZURE.NOTE]IBM AIX wird für StorSimple derzeit nicht unterstützt.
 
@@ -60,9 +60,9 @@ Das StorSimple-Gerät ist ein gesperrtes Gerät. Allerdings müssen Ports in der
 |TCP 443 (HTTPS)<sup>3</sup>| aus | WAN | Ja |<ul><li>Der ausgehende Port wird für den Zugriff auf Daten in der Cloud verwendet.</li><li>Der ausgehende Webproxy ist vom Benutzer konfigurierbar.</li><li>Zum Ermöglichen von Systemupdates muss dieser Port auch für die festen IP-Adressen des Controllers geöffnet sein.</li></ul>|
 |UDP 53 (DNS) | aus | WAN | In einigen Fällen; siehe Hinweise. |Dieser Port ist nur dann erforderlich, wenn Sie einen internetbasierten DNS-Server verwenden. |
 | UDP 123 (NTP) | aus | WAN | In einigen Fällen; siehe Hinweise. |Dieser Port ist nur dann erforderlich, wenn Sie einen internetbasierten NTP-Server verwenden. |
-| TCP 9354 | aus | WAN | In einigen Fällen; siehe Hinweise. |Der ausgehende Port wird vom StorSimple-Gerät für die Kommunikation mit dem StorSimple Manager-Dienst verwendet. Dieser Port ist erforderlich, wenn Ihr aktuelles Netzwerk für Verbindungen mit dem Internet nicht HTTP 1.1 unterstützt, z. B. wenn Sie einen HTTP-1.0-basierten Proxyserver verwenden.<br> Informationen zum Herstellen von Verbindungen über einen Proxyserver finden Sie unter [Hosten hinter einer Firewall mit Servicebus](https://msdn.microsoft.com/library/azure/ee706729.aspx). |
+| TCP 9354 | aus | WAN | Ja |Der ausgehende Port wird vom StorSimple-Gerät für die Kommunikation mit dem StorSimple Manager-Dienst verwendet. |
 | 3260 (iSCSI) | Geben Sie in | LAN | Nein | Dieser Port wird für den Datenzugriff über iSCSI verwendet.|
-| 5985 | Geben Sie in | LAN | Nein | Der eingehende Port wird vom StorSimple Snapshot Manager für die Kommunikation mit dem StorSimple-Gerät verwendet.<br>Dieser Port wird auch verwendet, wenn Sie eine Remoteverbindung mit Windows PowerShell für StorSimple über HTTP herstellen. |
+| 5985 | Geben Sie in | LAN | Nein | Der eingehende Port wird vom StorSimple-Momentaufnahme-Manager für die Kommunikation mit dem StorSimple-Gerät verwendet.<br>Dieser Port wird auch verwendet, wenn Sie eine Remoteverbindung mit Windows PowerShell für StorSimple über HTTP herstellen. |
 | 5986 | Geben Sie in | LAN | Nein | Dieser Port wird verwendet, wenn Sie eine Remoteverbindung mit Windows PowerShell für StorSimple über HTTPS herstellen. |
 
 <sup>1</sup> Es müssen keine eingehenden Ports für das öffentliche Internet geöffnet werden.
@@ -73,19 +73,72 @@ Das StorSimple-Gerät ist ein gesperrtes Gerät. Allerdings müssen Ports in der
 
 > [AZURE.IMPORTANT]Achten Sie darauf, dass SSL-Datenverkehr zwischen dem StorSimple-Gerät und Azure nicht durch die Firewall geändert oder entschlüsselt wird.
 
-### Portweiterleitung
+### Routingmetrik
 
-Die Portweiterleitung unterscheidet sich je nach Version der Software auf Ihrem StorSimple-Gerät.
+Eine Routingmetrik ist den Schnittstellen und dem Gateway zugeordnet, die die Daten an die angegebenen Netzwerke weiterleiten. Das Routingprotokoll errechnet anhand der Routingmetrik die beste Route für ein bestimmtes Ziel, wenn festgestellt wird, dass mehrere Pfade zum gleichen Ziel vorhanden sind. Je niedriger die Routingmetrik, desto höher ist die Voreinstellung.
 
-- Wenn auf Gerät eine Version vor Update 1 ausgeführt wird, z. B. die GA-Version (allgemeine Verfügbarkeit), 0.1, 0.2 oder 0.3, erfolgt die Portweiterleitung nach folgenden Regeln:
+Im Kontext von StorSimple gilt: Wenn mehrere Netzwerkschnittstellen und Gateways für das Weiterleiten von Datenverkehr konfiguriert sind, wird die Routingmetrik eingesetzt, um die relative Reihenfolge für die Verwendung der Schnittstellen festzulegen. Die Routingmetrik kann vom Benutzer nicht geändert werden. Mit dem `Get-HcsRoutingTable`-Cmdlet können Sie jedoch die Routingtabelle (und die Metrik) auf Ihrem StorSimple-Gerät ausgeben. Weitere Informationen zum [Cmdlet „Get-HcsRoutingTable“](storsimple-troubleshoot-deployment.md#troubleshoot-with-the-get-hcsroutingtable-cmdlet)
 
-     Zuletzt konfigurierte 10-GbE-Netzwerkschnittstelle > andere 10-GbE-Netzwerkschnittstelle > zuletzt konfigurierte 1-GbE-Netzwerkschnittstelle > andere 1-GbE-Netzwerkschnittstelle
+Die Algorithmen der Routingmetrik unterscheiden sich je nach Version der Software auf Ihrem StorSimple-Gerät.
 
-- Wenn auf dem Gerät Update 1 ausgeführt wird, erfolgt die Portweiterleitung nach folgenden Regeln:
+**Versionen vor Update 1**
 
-     DATA 0 > zuletzt konfigurierte 10-GbE-Netzwerkschnittstelle > andere 10-GbE-Netzwerkschnittstelle > zuletzt konfigurierte 1-GbE-Netzwerkschnittstelle > andere 1-GbE-Netzwerkschnittstelle
+Dazu gehören Softwareversionen vor Update 1, z. B. die GA oder die Versionen 0.1, 0.2 oder 0.3. Die auf der Routingmetrik basierende Reihenfolge lautet wie folgt:
 
-    In Update 1 ist DATA 0 die niedrigste Routingmetrik. Daher wird der gesamte Datenverkehr der Cloud über DATA 0 weitergeleitet. Notieren Sie sich dies, wenn es mehr als eine Cloud-Netzwerkschnittstelle auf dem StorSimple-Gerät gibt.
+   *Zuletzt konfigurierte 10-GbE-Netzwerkschnittstelle > andere 10-GbE-Netzwerkschnittstelle > zuletzt konfigurierte 1-GbE-Netzwerkschnittstelle > andere 1-GbE-Netzwerkschnittstelle*
+
+
+**Versionen ab Update 1 und vor Update 2**
+
+Dazu gehören Softwareversionen wie z. B. 1, 1.1 und 1.2. Die auf der Routingmetrik basierende Reihenfolge wird folgendermaßen festgelegt:
+
+   *DATA 0 > zuletzt konfigurierte 10-GbE-Netzwerkschnittstelle > andere 10-GbE-Netzwerkschnittstelle > zuletzt konfigurierte 1-GbE-Netzwerkschnittstelle > andere 1-GbE-Netzwerkschnittstelle*
+
+   In Update 1 ist DATA 0 die niedrigste Routingmetrik. Daher wird der gesamte Datenverkehr der Cloud über DATA 0 weitergeleitet. Notieren Sie sich dies, wenn es mehrere Cloud-Netzwerkschnittstellen auf dem StorSimple-Gerät gibt.
+
+
+**Versionen ab Update 2**
+
+Update 2 umfasst mehrere netzwerkbezogene Verbesserungen, und die Routingmetrik hat sich geändert. Das Verhalten lässt sich folgendermaßen beschreiben.
+
+- Ein Satz vordefinierter Werte wurde Netzwerkschnittstellen zugewiesen. 	
+		
+- Betrachten Sie die unten aufgeführte Beispieltabelle mit Beispielwerten, die den verschiedenen Netzwerkschnittstellen zugewiesen sind, wenn sie für die Cloud aktiviert oder mit konfiguriertem Gateway für die Cloud deaktiviert sind.
+
+		
+	| Netzwerkschnittstelle | Cloudfähig | Nicht cloudfähig mit Gateway |
+	|-----|---------------|---------------------------|
+	| Data 0 | 1 | - | | Data 1 | 2 | 20 | | Data 2 | 3 | 30 | | Data 3 | 4 | 40 | | Data 4 | 5 | 50 | | Data 5 | 6 | 60 |
+
+
+- Der Clouddatenverkehr wird in folgender Reihenfolge über die Netzwerkschnittstellen weitergeleitet:
+	 
+	*Data 0 > Data 1 > Date 2 > Data 4 > Data 5*
+
+	Dies lässt sich anhand des folgenden Beispiels erläutern:
+
+	Stellen Sie sich ein StorSimple-Gerät mit zwei cloudfähigen Netzwerkschnittstellen vor, Data 0 und Data 5. Data 1 bis Data 4 sind nicht cloudfähig, weisen jedoch ein konfiguriertes Gateway auf. Der Datenverkehr für dieses Gerät wird in folgender Reihenfolge weitergeleitet:
+
+	*Data 0 (1) > Data 5 (6) > Data 1 (20) > Data 2 (30) > Data 3 (40) > Data 4 (50)*
+	
+	*Die Zahlen in Klammern geben die jeweilige Routingmetrik an.*
+	
+	Wenn Data 0 einen Fehler verursacht, wird der Clouddatenverkehr über Data 5 weitergeleitet. Falls ein Gateway auf dem gesamten übrigen Netzwerk konfiguriert ist, verläuft der Clouddatenverkehr bei einem Ausfall von Data 0 und Data 5 über Data 1.
+ 
+
+- Wenn auf einer cloudfähigen Netzwerkschnittstelle ein Fehler auftritt, werden mit 30 Sekunden Verzögerung drei weitere Versuche zum Herstellen einer Verbindung mit der Schnittstelle unternommen. Wenn kein Versuch zum Erfolg führt, wird der Datenverkehr anhand der Routingtabelle an die nächste verfügbare cloudfähige Schnittstelle geroutet. Wenn sämtliche cloudfähigen Netzwerkschnittstellen einen Fehler verursachen, führt das Gerät ein Failover zum anderen Controller durch (in diesem Fall findet kein Neustart statt).
+	
+- Wenn ein VIP-Fehler für eine iSCSI-aktivierte Netzwerkschnittstelle vorliegt, werden drei Wiederholungsversuche mit einer Verzögerung von 2 Sekunden unternommen. Dieses Verhalten ist seit früheren Versionen gleich geblieben. Wenn alle iSCSI-Netzwerkschnittstellen einen Fehler verursachen, wird ein Controllerfailover (zusammen mit einem Neustart) durchgeführt.
+
+
+- Außerdem wird eine Warnung auf dem StorSimple-Gerät ausgelöst, wenn ein VIP-Fehler vorliegt. Weitere Informationen finden Sie unter [Warnung für VIP-Fehler](storsimple-manage-alerts.md).
+	
+- Im Hinblick auf Wiederholungsversuche erhält iSCSI Vorrang vor der Cloud.
+
+	Im folgenden Beispiel sind für ein StorSimple-Gerät zwei Netzwerkschnittstellen aktiviert, Data 0 und Data 1. Data 0 ist cloudfähig, Data 1 ist sowohl cloudfähig als auch iSCSI-aktiviert. Keine anderen Netzwerkschnittstellen auf diesem Gerät sind für die Cloud oder iSCSI aktiviert.
+		
+	Wenn bei Data 1 ein Fehler auftritt und es sich dabei um die letzte iSCSI-Netzwerkschnittstelle handelt, führt dies zu einem Controllerfailover auf Data 1 auf dem anderen Controller.
+
 
 ### Bewährte Methoden für Netzwerke
 
@@ -102,7 +155,7 @@ Befolgen Sie zusätzlich zu den oben genannten Netzwerkanforderungen die folgend
 
 ## Anforderungen an hohe Verfügbarkeit für StorSimple
 
-Die Hardwareplattform der StorSimple-Lösung bietet Features für Verfügbarkeit und Zuverlässigkeit, die als Grundlage für eine hochverfügbare, fehlertolerante Speicherinfrastruktur in Ihrem Rechenzentrum dienen. Es gibt jedoch Anforderungen und bewährte Methoden, die Sie einhalten sollten, um eine hohe Verfügbarkeit der Azure StorSimple-Lösung sicherzustellen. Überprüfen Sie vor dem Bereitstellen von Azure StorSimple sorgfältig die folgenden Anforderungen und bewährten Methoden für das StorSimple-Gerät und die verbundenen Hostcomputer.
+Die Hardwareplattform der StorSimple-Lösung bietet Features für Verfügbarkeit und Zuverlässigkeit, die als Grundlage für eine hoch verfügbare, fehlertolerante Speicherinfrastruktur in Ihrem Datencenter dienen. Es gibt jedoch Anforderungen und bewährte Methoden, die Sie einhalten sollten, um eine hohe Verfügbarkeit der StorSimple-Lösung sicherzustellen. Überprüfen Sie vor dem Bereitstellen von StorSimple sorgfältig die folgenden Anforderungen und bewährten Methoden für das StorSimple-Gerät und die verbundenen Hostcomputer.
 
 Weitere Informationen zur Überwachung und Wartung der Hardwarekomponenten Ihres StorSimple-Geräts finden Sie unter [Überwachen von Hardwarekomponenten und Status mithilfe des StorSimple Manager-Diensts](storsimple-monitor-hardware-status.md) und [Austauschen von StorSimple-Hardwarekomponenten](storsimple-hardware-component-replacement.md).
 
@@ -165,7 +218,7 @@ StorSimple-Geräte enthalten Solid-State-Datenträger (SSDs) und Festplattenlauf
 
 - Fällt eine SSD oder HDD aus oder erfordert einen Austausch, dürfen Sie nur die SSD oder HDD entfernen, die ersetzt werden muss.
 
-- Entfernen Sie zu keinem Zeitpunkt mehrere SSDs oder HDDs aus dem System. Ein Ausfall von zwei oder mehr Datenträgern eines bestimmten Typs (HDD, SSD) oder aufeinander folgende Fehler innerhalb eines kurzen Zeitraums können zu einer Fehlfunktion im System und zu potenziellen Datenverlusten führen. Wenden Sie sich in einem solchen Fall an den [Microsoft-Support](storsimple-contact-microsoft-support.md).
+- Entfernen Sie zu keinem Zeitpunkt mehrere SSDs oder HDDs aus dem System. Ein Ausfall von zwei oder mehr Datenträgern eines bestimmten Typs (HDD, SSD) oder aufeinander folgende Fehler innerhalb eines kurzen Zeitraums können zu einer Fehlfunktion im System und zu potenziellen Datenverlusten führen. Wenden Sie sich in einem solchen Fall an den [Microsoft Support](storsimple-contact-microsoft-support.md).
 
 - Überwachen Sie während des Austauschs den **Hardwarestatus** auf der Seite **Wartung** für die Laufwerke auf den SSDs und HDDs. Ein grünes Häkchen beim Status zeigt an, dass die Datenträger fehlerfrei funktionieren, während ein rotes Ausrufezeichen einen Fehler bei einer SSD oder HDD angibt.
 
@@ -203,4 +256,4 @@ Lesen Sie sich diese bewährten Methoden sorgfältig durch, um eine hohe Verfüg
 <!--Reference links-->
 [1]: https://technet.microsoft.com/library/cc731844(v=WS.10).aspx
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1217_2015-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="ne" 
 	ms.topic="article" 
-	ms.date="11/03/2015"  
+	ms.date="12/15/2015"  
 	ms.author="juliako"/>
 
 #Arbeiten mit Kanälen, die Livedatenströme mit mehreren Bitraten von lokalen Encodern empfangen
@@ -208,7 +208,7 @@ Wird ausgeführt|Bereit (keine ausgeführten Programme)<p>oder<p>Streaming (mind
 Wird beendet|Wird beendet|Nein (Übergangsstatus)
 Beendet|Beendet|Nein
 
-###Untertitel und Werbeeinblendungen 
+##<a id="cc_and_ads"></a>Untertitel und Werbeeinblendungen 
 
 Die folgende Tabelle zeigt die unterstützten Untertitel- und Werbeeinblendungsstandards.
 
@@ -269,4 +269,4 @@ Wählen Sie **Portal**, **.NET** oder **REST API**, um auf Informationen zum Ers
 [live-overview]: ./media/media-services-manage-channels-overview/media-services-live-streaming-current.png
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

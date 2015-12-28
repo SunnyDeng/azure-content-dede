@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="10/28/2015"
+   ms.date="12/11/2015"
    ms.author="saurabh"/>
 
 # Installieren von .NET in einer Clouddienstrolle 
@@ -26,6 +26,7 @@ Die Installation von .NET auf ihren Web- und Workerrollen schließt die Erfassun
 1. Laden Sie das Webinstallationsprogramm für das .NET Framework herunter, das Sie installieren möchten
 	- [Webinstallationsprogramm für .NET 4.5.2](http://go.microsoft.com/fwlink/p/?LinkId=397703)
 	- [Webinstallationsprogramm für .NET 4.6](http://go.microsoft.com/fwlink/?LinkId=528259)
+	- [Webinstallationsprogramm für .NET 4.6.1](http://go.microsoft.com/fwlink/?LinkId=671729)
 2. Für eine Webrolle
   1. Klicken Sie im **Projektmappen-Explorer** unter **Rollen** im Clouddienstprojekt mit der rechten Maustaste auf Ihre Rolle, und wählen Sie **Hinzufügen > Neuer Ordner** aus. Erstellen Sie einen Ordner mit dem Namen *bin*.
   2. Klicken Sie mit der rechten Maustaste auf den Ordner **bin**, und wählen Sie **Hinzufügen > Vorhandenes Element** aus. Wählen Sie das Installationsprogramm für .NET aus und fügen Sie es dem Ordner "Bin" hinzu.
@@ -43,20 +44,20 @@ Mit Startaufgaben können Sie Vorgänge ausführen, bevor eine Rolle gestartet w
 	
 	```xml
 	 <LocalResources>
-	    <LocalStorage name="InstallLogs" sizeInMB="5" cleanOnRoleRecycle="false" />
-	 </LocalResources>
-	 <Startup>
-	    <Task commandLine="install.cmd" executionContext="elevated" taskType="simple">
-	        <Environment>
-	        <Variable name="PathToInstallLogs">
-	        <RoleInstanceValue xpath="/RoleEnvironment/CurrentInstance/LocalResources/LocalResource[@name='InstallLogs']/@path" />
-	        </Variable>
-	        </Environment>
-	    </Task>
-	 </Startup>
+      <LocalStorage name="NETFXInstall" sizeInMB="1024" cleanOnRoleRecycle="false" />
+    </LocalResources>
+    <Startup>
+      <Task commandLine="install.cmd" executionContext="elevated" taskType="simple">
+        <Environment>
+          <Variable name="PathToNETFXInstall">
+            <RoleInstanceValue xpath="/RoleEnvironment/CurrentInstance/LocalResources/LocalResource[@name='NETFXInstall']/@path" />
+          </Variable>
+        </Environment>
+      </Task>
+    </Startup>
 	```
 
-	Die oben genannte Konfiguration führt den Konsolenbefehl *install.cmd* mit Administratorrechten aus, damit dieser das .NET Framework installieren kann. Die Konfiguration erstellt auch eine LocalStorage mit dem Namen *InstallLogs* zum Speichern der Protokollinformationen, die durch das Installationsskript erstellt wurden. Weitere Informationen finden Sie unter: [Verwenden des lokalen Speichers zum Speichern von Dateien während des Starts](https://msdn.microsoft.com/library/azure/hh974419.aspx)
+	Die oben genannte Konfiguration führt den Konsolenbefehl *install.cmd* mit Administratorrechten aus, damit dieser das .NET Framework installieren kann. Über die Konfiguration wird auch ein LocalStorage mit dem Namen *NETFXInstall* erstellt. Das Startskript stellt das temporäre Verzeichnis so ein, dass diese lokale Speicherressource genutzt wird, damit das Installationsprogramm für .NET-Framework von dieser Ressource heruntergeladen und installiert wird. Es ist wichtig, die Größe dieser Ressource auf mindestens 1.024 MB einzustellen, damit das Framework ordnungsgemäß installiert werden kann. Weitere Informationen finden Sie unter: [Verwenden des lokalen Speichers zum Speichern von Dateien während des Starts](https://msdn.microsoft.com/library/azure/hh974419.aspx)
 
 2. Erstellen Sie die Datei **install.cmd** und fügen Sie sie allen Rollen hinzu, indem Sie einen Rechtsklick auf die Rolle machen und **Hinzufügen > Vorhandenes Element...** auswählen. Nun sollten alle Rollen über die .NET Installerdateien sowie die Datei install.cmd verfügen.
 	
@@ -70,38 +71,58 @@ Mit Startaufgaben können Sie Vorgänge ausführen, bevor eine Rolle gestartet w
 	REM Set the value of netfx to install appropriate .NET Framework. 
 	REM ***** To install .NET 4.5.2 set the variable netfx to "NDP452" *****
 	REM ***** To install .NET 4.6 set the variable netfx to "NDP46" *****
-	set netfx="NDP452"
+	REM ***** To install .NET 4.6.1 set the variable netfx to "NDP461" *****
+	set netfx="NDP46"
+		
 	
+	REM ***** Needed to correctly install .NET 4.6.1, otherwise you may see an out of disk space error *****
+	set TMP=%PathToNETFXInstall%
+	set TEMP=%PathToNETFXInstall%
+	
+		
 	REM ***** Setup .NET filenames and registry keys *****
+	if %netfx%=="NDP461" goto NDP461
 	if %netfx%=="NDP46" goto NDP46
-		set netfxinstallfile="NDP452-KB2901954-Web.exe"
-		set netfxregkey="0x5cbf5"
-		goto logtimestamp
+	    set netfxinstallfile="NDP452-KB2901954-Web.exe"
+	    set netfxregkey="0x5cbf5"
+	    goto logtimestamp
+		
 	:NDP46
 	set netfxinstallfile="NDP46-KB3045560-Web.exe"
 	set netfxregkey="0x60051"
-	
+	goto logtimestamp
+		
+	:NDP461
+	set netfxinstallfile="NDP461-KB3102438-Web.exe"
+	set netfxregkey="0x6041f"
+		
 	:logtimestamp
 	REM ***** Setup LogFile with timestamp *****
 	set timehour=%time:~0,2%
 	set timestamp=%date:~-4,4%%date:~-10,2%%date:~-7,2%-%timehour: =0%%time:~3,2%
-	set startuptasklog=%PathToInstallLogs%startuptasklog-%timestamp%.txt
-	set netfxinstallerlog=%PathToInstallLogs%NetFXInstallerLog-%timestamp%
+	md "%PathToNETFXInstall%\log"
+	set startuptasklog="%PathToNETFXInstall%log\startuptasklog-%timestamp%.txt"
+	set netfxinstallerlog="%PathToNETFXInstall%log\NetFXInstallerLog-%timestamp%"
+	
 	echo Logfile generated at: %startuptasklog% >> %startuptasklog%
+	echo TMP set to: %TMP% >> %startuptasklog%
+	echo TEMP set to: %TEMP% >> %startuptasklog%
 	
 	REM ***** Check if .NET is installed *****
 	echo Checking if .NET (%netfx%) is installed >> %startuptasklog%
 	reg query "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" /v Release | Find %netfxregkey%
 	if %ERRORLEVEL%== 0 goto end
-	
+		
 	REM ***** Installing .NET *****
-	echo Installing .NET. Logfile: %netfxinstallerlog% >> %startuptasklog%
+	echo Installing .NET: start /wait %~dp0%netfxinstallfile% /q /serialdownload /log %netfxinstallerlog% >> %startuptasklog%
 	start /wait %~dp0%netfxinstallfile% /q /serialdownload /log %netfxinstallerlog% >> %startuptasklog% 2>>&1
-	
+		
 	:end
 	echo install.cmd completed: %date:~-4,4%%date:~-10,2%%date:~-7,2%-%timehour: =0%%time:~3,2% >> %startuptasklog%
+
 	```
-	> [AZURE.IMPORTANT]Aktualisieren Sie den Wert der*netfx*-Variable im Skript. Dieser muss mit der Framework-Version übereinstimmen, die Sie installieren möchten. Zum Installieren von .NET 4.5.2 muss die *netfx*-Variable *"NDP452"* lauten, und zum Installieren von .NET 4.6 muss die *netfx*-Variable *"NDP46"* lauten.
+	
+	> [AZURE.IMPORTANT]Aktualisieren Sie den Wert der*netfx*-Variable im Skript. Dieser muss mit der Framework-Version übereinstimmen, die Sie installieren möchten. Zum Installieren von .NET 4.5.2 muss die Variable *netfx* *NDP452* lauten, zum Installieren von .NET 4.6 muss die Variable *netfx* *NDP46* lauten, und zum Installieren von .NET 4.6.1 muss die Variable *netfx* *NDP461* lauten.
 		
 	Das Installationsskript überprüft, ob die angegebene .NET-Framework-Version bereits auf dem Computer installiert ist, indem die Registrierungsdatenbank abgefragt wird. Wenn die .NET-Version nicht installiert ist, wird das .NET-Webinstallationsprogramm gestartet. Zur Unterstützung bei der Problembehandlung protokolliert das Skript alle Aktivitäten in einer Datei mit dem Namen *startuptasklog-(currentdatetime).txt*, die unter *InstallLogs* im lokalen Speicher abgelegt ist.
  
@@ -114,13 +135,13 @@ Optional können Sie die Azure-Diagnose so konfigurieren, dass alle Protokolldat
 
 ```xml 
 <DataSources>
-    <DirectoryConfiguration containerName="netfx-install">
-    <LocalResource name="InstallLogs" relativePath="."/>
-    </DirectoryConfiguration>
+ <DirectoryConfiguration containerName="netfx-install">
+  <LocalResource name="NETFXInstall" relativePath="log"/>
+ </DirectoryConfiguration>
 </DataSources>
 ```
 
-Dadurch wird Azure-Diagnose zur Übertragung aller Dateien der Ressource *InstallLogs* in das Diagnose-Speicherkonto im *netfx-install*-Blobcontainer konfiguriert.
+Dadurch wird Azure-Diagnose zur Übertragung aller Dateien im Verzeichnis *log* unter der Ressource *NETFXInstall* in das Diagnose-Speicherkonto des Blobcontainers *netfx-install* konfiguriert.
 
 ## Ihren Dienst bereitstellen 
 Wenn Sie Ihren Dienst bereitstellen, wird die Startaufgabe ausgeführt und das .NET Framework installiert, sofern es nicht bereits installiert ist. Ihre Rollen befinden sich im Status "Beschäftigt", während das Framework installiert wird und werden möglicherweise sogar neu gestartet, wenn die Framework-Installation dies erforderlich macht.
@@ -142,4 +163,4 @@ Wenn Sie Ihren Dienst bereitstellen, wird die Startaufgabe ausgeführt und das .
 
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1217_2015-->

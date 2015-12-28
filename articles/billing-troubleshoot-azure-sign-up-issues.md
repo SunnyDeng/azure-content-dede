@@ -60,4 +60,4 @@ Vorschläge: – Wenn Sie in der Vergangenheit bereits ein Azure-Abonnement akti
 ## Sie können sich immer noch nicht registrieren?
 [Wenden Sie sich an Azure-Support](http://go.microsoft.com/fwlink/?linkid=544831&clcid=0x409), wenn weiterhin Probleme bei der Registrierung auftreten oder Ihr Problem in diesem Artikel nicht behandelt wird.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

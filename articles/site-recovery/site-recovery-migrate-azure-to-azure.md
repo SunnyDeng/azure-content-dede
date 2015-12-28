@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Migrieren von virtuellen Azure-IaaS-Computern aus einer Azure-Region in eine andere"
+	pageTitle="Migrieren von virtuellen Azure-IaaS-Computern zwischen Azure-Regionen mit Site Recovery | Microsoft Azure"
 	description="Verwenden Sie Azure Site Recovery, um virtuelle Azure-IaaS-Computer aus einer Azure-Region in eine andere zu migrieren."
 	services="site-recovery"
 	documentationCenter=""
@@ -13,10 +13,10 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/26/2015"
+	ms.date="12/14/2015"
 	ms.author="raynew"/>
 
-#  Migrieren von virtuellen Azure-IaaS-Computern zwischen Azure-Regionen
+#  Migrieren von virtuellen Azure-IaaS-Computern zwischen Azure-Regionen mit Site Recovery
 
 
 ## Übersicht
@@ -69,4 +69,4 @@ Sie benötigen Folgendes:
 
 Veröffentlichen von Kommentaren oder Fragen im [Site Recovery-Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

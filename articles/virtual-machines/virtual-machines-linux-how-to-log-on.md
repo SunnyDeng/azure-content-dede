@@ -14,22 +14,19 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/25/2015"
+	ms.date="12/08/2015"
 	ms.author="rasquill"/>
-
-
 
 
 #Anmelden bei einem mit Linux betriebenen virtuellen Computer #
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager deployment model](virtual-machines-linux-tutorial-portal-rm.md).
 
-Bei einem virtuellen Computer, auf dem das Betriebssystem Linux ausgeführt wird, verwenden Sie zur Anmeldung einen Secure Shell (SSH)-Client.
-
 Sie müssen einen SSH-Client auf dem Computer installieren, über den Sie sich beim virtuellen Computer anmelden möchten. Es gibt eine Vielzahl an SSH-Client-Programmen, die Sie verwenden können. Hier einige mögliche Programme:
 
 - Auf einem Computer, auf dem ein Windows-Betriebssystem ausgeführt wird, sollten Sie einen SSH-Client wie PuTTY verwenden. Weitere Informationen erhalten Sie unter [PuTTY Download Page](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) (in englischer Sprache).
-- Auf einem Computer, auf dem ein Linux-Betriebssystem ausgeführt wird, sollten Sie einen SSH-Client wie OpenSSH verwenden. Weitere Informationen finden Sie unter [OpenSSH](http://www.openssh.org/).
+- Für einen virtuellen Computer mit einem Linux-Betriebssystem verwenden Sie zur Anmeldung einen Secure Shell (SSH)-Client. Es ist sehr unwahrscheinlich, dass es eine Distribution gibt, bei der dieser nicht standardmäßig installiert ist. Weitere Informationen über Linux finden Sie unter [Verwenden von SSH](virtual-machines-linux-use-ssh-key.md).
+
 
 >[AZURE.NOTE]Weitere Tipps zu den Voraussetzungen und zur Problembehandlung finden Sie unter [Herstellen einer Verbindung mit einem virtuellen Azure-Computer über RDP oder SSH](http://go.microsoft.com/fwlink/p/?LinkId=398294).
 
@@ -56,4 +53,4 @@ Sie können jetzt mit dem virtuellen Computer wie mit jedem anderen Server arbei
 <!-- LINKS -->
 [Zurücksetzen eines Kennworts oder einer SSH für virtuelle Linux-Computer]: http://go.microsoft.com/fwlink/p/?LinkId=512138
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

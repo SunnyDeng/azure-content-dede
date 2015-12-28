@@ -52,7 +52,7 @@ Um auf den Azure-Blob-Speicher zugreifen zu können, müssen Sie datenbankbezoge
 2. Erstellen Sie mithilfe von [CREATE MASTER KEY (Transact-SQL)][] einen Hauptschlüssel für Ihre Datenbank. Wenn Ihre Datenbank bereits über einen Hauptschlüssel verfügt, müssen Sie keinen weiteren Schlüssel erstellen. Dieser Schlüssel wird im nächsten Schritt zum Verschlüsseln des geheimen Schlüssels für Ihre Anmeldeinformationen verwendet.
 
     ```
-    -- Create a E master key
+    -- Create a master key
     CREATE MASTER KEY;
     ```
 
@@ -61,10 +61,17 @@ Um auf den Azure-Blob-Speicher zugreifen zu können, müssen Sie datenbankbezoge
     ```
     -- Check for existing database-scoped credentials.
     SELECT * FROM sys.database_credentials;
+    ```
 
 3. Erstellen Sie mit [CREATE CREDENTIAL (Transact-SQL)][] datenbankbezogene Anmeldeinformationen für alle Azure-Speicherkonten, auf die Sie zugreifen möchten. In diesem Beispiel steht IDENTITY für den Anzeigenamen für die Anmeldeinformationen. Er hat keine Auswirkungen auf die Authentifizierung für den Azure-Speicher. SECRET ist der Azure-Speicherkontoschlüssel.
 
-    -- Create a database scoped credential CREATE DATABASE SCOPED CREDENTIAL ASBSecret WITH IDENTITY = 'joe' , Secret = '<azure_storage_account_key>' ; ```
+    ```
+    -- Create a database scoped credential
+    CREATE DATABASE SCOPED CREDENTIAL ASBSecret 
+    WITH IDENTITY = 'joe'
+    ,    Secret = '<azure_storage_account_key>'
+    ;
+    ```
 
 1. Verwenden Sie zum Löschen datenbankbezogener Anmeldeinformationen [DROP CREDENTIAL (Transact-SQL)][]\:
 
@@ -75,7 +82,7 @@ DROP DATABASE SCOPED CREDENTIAL ASBSecret
 ```
 
 ## Schritt 2: Erstellen einer externen Datenquelle
-Die externe Datenquelle ist ein Datenbankobjekt, in dem der Speicherort der Daten des Azure-Blob-Speichers und Ihre Zugriffsinformationen gespeichert sind. Definieren Sie mithilfe von [CREATE EXTERNAL DATA SOURCE (Transact-SQL)][] eine externe Datenquelle für alle Azure-Speicherblobs, auf die Sie zugreifen möchten.
+Die externe Datenquelle ist ein Datenbankobjekt, in dem der Speicherort der Daten des Azure-Blob-Speichers und Ihre Zugriffsinformationen gespeichert sind. Definieren Sie mithilfe von [CREATE EXTERNAL DATA SOURCE (Transact-SQL)][] eine externe Datenquelle für alle Azure Storage-Blobs, auf die Sie zugreifen möchten.
 
     ```
     -- Create an external data source for an Azure storage blob
@@ -236,7 +243,7 @@ Siehe [CREATE TABLE AS SELECT (Transact-SQL)][].
 
 ## Erstellen von Statistiken für die neu geladenen Daten
 
-Azure SQL Data Warehouse bietet noch keine Unterstützung für die automatische Erstellung oder die automatische Aktualisierung von Statistiken. Um die beste Leistung bei Abfragen zu erhalten, ist es wichtig, dass die Statistiken für alle Spalten aller Tabellen nach dem ersten Laden oder nach allen wesentlichen Datenänderungen erstellt werden. Eine ausführliche Erläuterung der Statistik finden Sie im Thema [Statistiken][] in der Entwicklungsgruppe der Themen. Es folgt ein kurzes Beispiel, wie Sie Statistiken für die in diesem Beispiel geladene Tabelle erstellen können.
+Azure SQL Data Warehouse bietet noch keine Unterstützung für die automatische Erstellung oder die automatische Aktualisierung von Statistiken. Um die beste Leistung bei Abfragen zu erhalten, ist es wichtig, dass die Statistiken für alle Spalten aller Tabellen nach dem ersten Laden oder nach allen wesentlichen Datenänderungen erstellt werden. Eine ausführliche Erläuterung der Statistik finden Sie unter dem Thema [Statistik][] in der Entwicklungsgruppe der Themen. Es folgt ein kurzes Beispiel, wie Sie Statistiken für die in diesem Beispiel geladene Tabelle erstellen können.
 
 ```
 create statistics [SensorKey] on [Customer_Speed] ([SensorKey]);
@@ -336,7 +343,7 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 [Load with PolyBase]: sql-data-warehouse-load-with-polybase.md
 [solution partners]: sql-data-warehouse-solution-partners.md
 [Entwicklungsübersicht]: sql-data-warehouse-overview-develop.md
-[Statistiken]: sql-data-warehouse-develop-statistics.md
+[Statistik]: sql-data-warehouse-develop-statistics.md
 
 <!--MSDN references-->
 [supported source/sink]: https://msdn.microsoft.com/library/dn894007.aspx
@@ -359,4 +366,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 [CREATE CREDENTIAL (Transact-SQL)]: https://msdn.microsoft.com/library/ms189522.aspx
 [DROP CREDENTIAL (Transact-SQL)]: https://msdn.microsoft.com/library/ms189450.aspx
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

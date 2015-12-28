@@ -3,7 +3,7 @@
 	description="Kurzanweisungen zum Kopieren, Verschieben und Migrieren von Daten und Datenbanken in Azure SQL-Datenbank."
 	services="sql-database"
 	documentationCenter=""
-	authors="dalechen"
+	authors="v-shysun"
 	manager="msmets"
 	editor=""/>
 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/10/2015"
-	ms.author="daleche"/>
+	ms.date="12/11/2015"
+	ms.author="v-shysun"/>
 
 # Verschieben von Datenbanken zwischen Servern und Abonnements sowie in und aus Azure
 ##So verschieben Sie eine Datenbank auf einen anderen Server im selben Abonnement
@@ -29,4 +29,4 @@
 ## So erstellen Sie eine Kopie einer Datenbank zur Verwendung außerhalb von Azure
 - [Exportieren Sie eine BACPAC-Datei.](sql-database-export.md)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

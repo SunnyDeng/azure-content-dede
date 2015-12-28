@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/19/2015"
+	ms.date="12/09/2015"
 	ms.author="dastrock"/>
 
 # App-Modell v2.0 Vorschauversion: Protokolle – OAuth 2.0-Autorisierungscodefluss
@@ -230,4 +230,4 @@ Allgemein sieht der gesamte Authentifizierungsablauf für eine systemeigene oder
 
 ![OAuth-Autorisierungscodefluss](../media/active-directory-v2-flows/convergence_scenarios_native.png)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

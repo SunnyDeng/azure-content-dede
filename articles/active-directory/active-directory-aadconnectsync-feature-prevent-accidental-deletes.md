@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="10/20/2015"
+   ms.date="12/16/2015"
    ms.author="andkjell"/>
 
 # Azure AD Connect-Synchronisierung: Verhindern von versehentlichen Löschvorgängen
@@ -25,7 +25,7 @@ Der Standardwert von 500 Objekten kann mit PowerShell mithilfe von `Enable-ADSy
 
 Wenn diese Funktion aktiviert ist und zu viele Löschungen in Azure AD exportiert werden sollen, wird der Export nicht fortgesetzt, und Sie erhalten Sie die folgende E-Mail-Nachricht:
 
-![Versehentliche Löschungen – E-Mail](./media/active-directory-aadconnectsync-feature-prevent-accidental-deletes/email.png)
+![Hallo, der Dienst zur Identitätssynchronisierung hat erkannt, dass die Anzahl der Löschungen den konfigurierten Grenzwert für fabrikam.com überschritten hat. Während dieses Identitätssynchronisierungslaufs wurden insgesamt 1.234 Objekte zur Löschung vorgesehen. Hierbei wurde der konfigurierte Grenzwert von 500 Objekten erreicht oder überschritten. Bitte erteilen Sie uns eine entsprechende Bestätigung, dass diese Löschungen bearbeitet werden sollen, bevor wir die Freigabe erteilen. Weitere Informationen über die in dieser E-Mail genannten Fehler finden Sie in der Dokumentation zum Vermeiden versehentlicher Löschungen.](./media/active-directory-aadconnectsync-feature-prevent-accidental-deletes/email.png)
 
 Wenn Sie diese Nachricht unerwartet erhalten haben, untersuchen Sie die Grunde dafür, und ergreifen Sie die nötigen Maßnahmen, um das Problem zu beheben. Führen Sie die folgenden Schritte aus, um zu ermitteln, welche Objekte gelöscht werden sollen:
 
@@ -48,4 +48,4 @@ Weitere Informationen zur Konfiguration der [Azure AD Connect-Synchronisierung](
 
 Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

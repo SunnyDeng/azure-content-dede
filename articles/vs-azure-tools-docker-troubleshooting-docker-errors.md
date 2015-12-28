@@ -3,9 +3,9 @@
    description="Beheben Sie Probleme, die bei der Verwendung von Visual Studio unter Windows zum Erstellen und Bereitstellen von Web-Apps in Docker auftreten können."
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tglee" />
+   editor="" />
 <tags
    ms.service="multiple"
    ms.devlang="dotnet"
@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="multiple"
    ms.date="08/20/2015"
-   ms.author="kempb" />
+   ms.author="tarcher" />
 
 # Problembehandlung von Docker-Fehlern
 
@@ -100,4 +100,4 @@ A: Eine Möglichkeit besteht darin, OpenSSL auf dem Server zu verwenden, um die 
 
 Eine weitere Option besteht darin, OpenSSL für Windows herunterzuladen die erforderlichen Zertifikate und Schlüssel zu generieren und anschließend die Zertifizierungsstelle, die Serverzertifikate und die Schlüssel auf den Linux-Computer hochzuladen. Weitere Informationen zum Einrichten einer sicheren Verbindung mit Docker finden Sie unter [Protect the Docker Daemon Socket mit HTTPS](https://docs.docker.com/articles/https/) (in englischer Sprache).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

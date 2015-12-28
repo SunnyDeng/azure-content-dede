@@ -1,19 +1,19 @@
 <properties 
-   pageTitle="Gewusst wie: Konfigurieren von Azure Redis Cache"
-   description="Grundlagen der Redis-Standardkonfiguration für Azure Redis Cache und Informationen zur Konfiguration Ihrer Azure Redis Cache-Instanzen"
-   services="redis-cache"
-   documentationCenter="na"
-   authors="steved0x"
-   manager="dwrede"
-   editor="tysonn" />
+	pageTitle="Gewusst wie: Konfigurieren von Azure Redis Cache"
+	description="Grundlagen der Redis-Standardkonfiguration für Azure Redis Cache und Informationen zur Konfiguration Ihrer Azure Redis Cache-Instanzen"
+	services="redis-cache"
+	documentationCenter="na"
+	authors="steved0x"
+	manager="dwrede"
+	editor="tysonn" />
 <tags 
-   ms.service="cache"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="cache-redis"
-   ms.workload="tbd"
-   ms.date="12/03/2015"
-   ms.author="sdanie" />
+	ms.service="cache"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="cache-redis"
+	ms.workload="tbd"
+	ms.date="12/11/2015"
+	ms.author="sdanie" />
 
 # Gewusst wie: Konfigurieren von Azure Redis Cache
 
@@ -116,13 +116,26 @@ Klicken Sie auf **Speicherkonto**, um das Speicherkonto auszuwählen, und wähle
 
 Klicken Sie auf **OK**, um die Persistenzkonfiguration zu speichern.
 
->[AZURE.IMPORTANT]Redis-Datenpersistenz ist nur für Premium-Caches verfügbar.
+>[AZURE.IMPORTANT]Redis-Datenpersistenz ist nur für Premium-Caches verfügbar. Weitere Informationen finden Sie unter [Konfigurieren von Persistenz für Azure Redis Cache vom Typ "Premium"](cache-how-to-premium-persistence.md).
+
+## Redis-Clustergröße
+
+Klicken Sie zum Hinzufügen oder Entfernen von Shards aus einem ausgeführten Premium-Cache mit aktivierter Clusterunterstützung auf **(PREVIEW) Redis Cluster Size**.
+
+>[AZURE.NOTE]Beachten Sie, dass sich trotz allgemeiner Verfügbarkeit der Azure Redis Cache in der Premium-Stufe das Feature Redis-Clustergröße derzeit in der Vorschau befindet.
+
+![Redis-Clustergröße](./media/cache-configure/redis-cache-redis-cluster-size.png)
+
+Um die Anzahl der Shards zu ändern, verwenden Sie den Schieberegler, oder geben Sie eine Zahl zwischen 1 und 10 im Textfeld **Shardanzahl** ein, und klicken Sie zum Speichern auf **OK**.
+
+>[AZURE.IMPORTANT]Redis-Clustering ist nur für Premium-Caches verfügbar. Weitere Informationen finden Sie unter [Konfigurieren von Clustern für Azure Redis Cache vom Typ "Premium"](cache-how-to-premium-clustering.md).
+
 
 ## Benutzer und Tags
 
 ![Redis Cache: Benutzer und Tags](./media/cache-configure/IC808320.png)
 
-Der Abschnitt **Benutzer** bietet Unterstützung für die rollenbasierte Zugriffssteuerung (RBAC) über das Azure-Portal, damit Organisationen ihre Zugriffsverwaltungsanforderungen einfach und präzise erfüllen können. Weitere Informationen finden Sie unter [Rollenbasierte Zugriffssteuerung in Azure Active Directory](http://go.microsoft.com/fwlink/?LinkId=512803).
+Der Abschnitt **Benutzer** bietet Unterstützung für die rollenbasierte Access Control (RBAC) über das Azure-Portal, damit Organisationen ihre Zugriffsverwaltungsanforderungen einfach und präzise erfüllen können. Weitere Informationen finden Sie unter [Rollenbasierte Zugriffssteuerung in Azure Active Directory](http://go.microsoft.com/fwlink/?LinkId=512803).
 
 Im Abschnitt **Tags** können Sie Ihre Ressourcen organisieren. Weitere Informationen finden Sie unter [Verwenden von Tags zum Organisieren von Azure-Ressourcen](../resource-group-using-tags.md).
 
@@ -199,4 +212,4 @@ Eine Liste der Redis-Befehle, die für Azure Redis Cache deaktiviert sind, finde
 ## Nächste Schritte
 -	Weitere Informationen zum Verwenden von Redis-Befehlen finden Sie unter [Wie führe ich Redis-Befehle aus?](cache-faq.md#how-can-i-run-redis-commands).
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

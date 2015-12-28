@@ -72,8 +72,8 @@ Service Fabric-Explorer bietet eine einfache Möglichkeit zum Visualisieren Ihr
 ### Versionierung und Upgrade Ihrer Dienste
 Service Fabric ermöglicht eine unabhängige Versionierung und Upgrades von unabhängigen Diensten in einer Anwendung. Weitere Informationen finden Sie unter [Versionierung und Upgrade Ihrer Dienste][app-upgrade-tutorial].
 
-### Konfigurieren der fortlaufenden Integration in Visual Studio Online
-Informationen zur Einrichtung einer fortlaufenden Integration für die Service Fabric-Anwendung finden Sie unter [Konfigurieren der fortlaufenden Integration in Visual Studio Online][ci-with-vso].
+### Konfigurieren der Continuous Integration in Visual Studio Team Services
+Informationen zur Einrichtung einer Continuous Integration für die Service Fabric-Anwendung finden Sie unter [Konfigurieren der Continuous Integration in Visual Studio Team Services][ci-with-vso].
 
 
 <!-- Links -->
@@ -85,4 +85,4 @@ Informationen zur Einrichtung einer fortlaufenden Integration für die Service 
 [reliable-services-webapi]: ./service-fabric-reliable-services-communication-webapi.md
 [app-upgrade-tutorial]: ./service-fabric-application-upgrade-tutorial.md
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

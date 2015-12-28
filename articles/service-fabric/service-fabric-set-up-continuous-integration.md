@@ -1,6 +1,6 @@
 <properties
    pageTitle="Continuous Integration für Service Fabric | Microsoft Azure"
-   description="Hier erhalten Sie einen Überblick über die Einrichtung der Continuous Integration für eine Service Fabric-Anwendung mit Visual Studio Online (VSO)."
+   description="Hier erhalten Sie eine Übersicht über die Einrichtung der Continuous Integration für eine Service Fabric-Anwendung mit Visual Studio Team Services (VSTS)."
    services="service-fabric"
    documentationCenter="na"
    authors="cawams"
@@ -15,19 +15,19 @@
    ms.date="10/16/2015"
    ms.author="cawa" />
 
-# Einrichten der Continuous Integration für eine Service Fabric-Anwendung mit Visual Studio Online (VSO)
+# Einrichten der Continuous Integration für eine Service Fabric-Anwendung mit Visual Studio Team Services (VSTS)
 
-Dieser Artikel beschäftigt sich mit der Einrichtung der Continuous Integration (CI) für eine Service Fabric-Anwendung mit Visual Studio Online (VSO), um die automatische Erstellung, Verpackung und Bereitstellung Ihrer Anwendung zu ermöglichen. Hinweis: Dieses Dokument wurde für die aktuelle Umgebung erstellt und wird wahrscheinlich im Laufe der Zeit an zukünftige Entwicklungen angepasst. Außerdem ist zu beachten, dass die Anweisungen jedes Mal eine Neuerstellung des Clusters zur Folge haben.
+Dieser Artikel beschäftigt sich mit der Einrichtung der Continuous Integration (CI) für eine Service Fabric-Anwendung mit Visual Studio Team Services (VSTS), um die automatische Erstellung, Verpackung und Bereitstellung Ihrer Anwendung zu ermöglichen. Hinweis: Dieses Dokument wurde für die aktuelle Umgebung erstellt und wird wahrscheinlich im Laufe der Zeit an zukünftige Entwicklungen angepasst. Außerdem ist zu beachten, dass die Anweisungen jedes Mal eine Neuerstellung des Clusters zur Folge haben.
 
 ## Voraussetzungen
 
-Richten Sie zunächst Ihr Projekts in Visual Studio Online ein.
+Richten Sie zunächst Ihr Projekt in Visual Studio Team Services ein.
 
-1. Erstellen Sie mithilfe Ihres [Microsoft-Kontos](http://www.microsoft.com/account) ein VSO-Konto, sofern Sie noch keins besitzen.
-2. Erstellen Sie in VSO mithilfe Ihres Microsoft-Kontos ein neues Projekt.
+1. Erstellen Sie mithilfe Ihres [Microsoft-Kontos](http://www.microsoft.com/account) ein Team Services-Konto, sofern Sie noch keines besitzen.
+2. Erstellen Sie in Team Services mithilfe Ihres Microsoft-Kontos ein neues Projekt.
 3. Führen Sie für die Quelle Ihrer neuen oder vorhandenen Service Fabric-App einen Pushvorgang an dieses Projekt durch.
 
-Weitere Informationen zur Verwendung von VSO-Projekten finden Sie unter [Herstellen einer Verbindung mit Visual Studio](https://www.visualstudio.com/get-started/setup/connect-to-visual-studio-online) .
+Weitere Informationen zur Verwendung von Team Services-Projekten finden Sie unter [Herstellen einer Verbindung mit Visual Studio](https://www.visualstudio.com/get-started/setup/connect-to-visual-studio-online).
 
 ## Einrichtungsschritte
 
@@ -39,9 +39,7 @@ Bevor Sie den Buildcomputer einrichten können, müssen Sie einen Dienstprinzipa
 
 1.	Installieren Sie Azure PowerShell.
     - Installieren Sie „PowerShellGet“. Installieren Sie hierzu [Windows Management Framework 5.0](http://www.microsoft.com/download/details.aspx?id=48729), da „PowerShellGet“ darin enthalten ist.
-
     >[AZURE.NOTE]Bei Verwendung von Windows 10 mit neuesten Updates können Sie diesen Schritt überspringen.
-
 
 1.	Installieren und aktualisieren Sie das AzureRM-Modul.
     1.  Wenn Sie eine ältere Version von Azure PowerShell installiert haben, entfernen Sie sie. Klicken Sie mit der rechten Maustaste auf die Schaltfläche „Start“, und wählen Sie „Programme hinzufügen/entfernen“. Suchen Sie nach „Azure PowerShell“, und deinstallieren Sie es.
@@ -139,9 +137,7 @@ Installieren Sie das [Service Fabric-SDK](https://azure.microsoft.com/campaigns
     ```
 
 3.	Ist die Datei „NuGet.config“ noch nicht vorhanden, erstellen Sie sie mit folgendem Inhalt. Ersetzen Sie dabei `<path to service fabric SDK>` durch den Pfad zum Service Fabric-SDK auf dem Buildcomputer.
-
 >[AZURE.NOTE]`<path to service fabric SDK>` ist standardmäßig `%ProgramFiles%\Microsoft SDKs\Service Fabric`.
-
 
     NuGet.config:
 
@@ -196,8 +192,8 @@ Führen Sie zum Installieren von Azure PowerShell die Schritte aus dem vorherige
 ### Registrieren Ihres Build-Agents
 
 1.	Laden Sie „agent.zip“ herunter. Gehen Sie dazu folgendermaßen vor:
-    1.	Melden Sie sich bei Ihrem Teamprojekt an. Beispiel: **https://[your-VSO-account-name].visualstudio.com**.
-    1.	Wählen Sie das Zahnradsymbol in der rechten oberen Bildschirmecke aus.
+    1.	Melden Sie sich bei Ihrem Teamprojekt an. Beispiel: ****https://[your-VSTS-account-name].visualstudio.com**.
+1.	Wählen Sie das Zahnradsymbol in der rechten oberen Bildschirmecke aus.
     1.	Wählen Sie in der Systemsteuerung die Registerkarte **Agentpools** aus.
     1.	Wählen Sie **Download-Agent** aus, um die Datei „agent.zip“ herunterzuladen.
     1.	Kopieren Sie „agent.zip“ auf den zuvor erstellten Buildcomputer.
@@ -210,7 +206,7 @@ Führen Sie zum Installieren von Azure PowerShell die Schritte aus dem vorherige
     |Parameter|Wert|
     |---|---|
     |Agent Name|Übernehmen Sie den Standardwert. (`Agent-[machine name]`)
-    |TFS Url|Geben Sie die URL zu Ihrem Teamprojekt ein. Beispiel: `https://[your-VSO-account-name].visualstudio.com`.
+    |TFS Url|Geben Sie die URL zu Ihrem Teamprojekt ein. Beispiel: `https://[your-VSTS-account-name].visualstudio.com`.
     |Agent Pool|Geben Sie den Namen Ihres Agentpools ein. (Falls Sie keinen Agentpool erstellt haben, übernehmen Sie den Standardwert.)|
     |Work folder|Übernehmen Sie den Standardwert. In diesem Ordner erstellt der Build-Agent Ihre Anwendung. Hinweis: Wenn Sie ASP.NET 5-Webdienste erstellen möchten, empfiehlt sich die Wahl eines möglichst kurzen Ordnernamens. Andernfalls treten bei der Bereitstellung unter Umständen Fehler vom Typ „PathTooLongExceptions“ auf.|
     |Install as Windows Service?|Ändern Sie den Standardwert „N“ in „Y“.|
@@ -220,9 +216,9 @@ Führen Sie zum Installieren von Azure PowerShell die Schritte aus dem vorherige
 1. Sie werden zur Angabe von Anmeldeinformationen aufgefordert. Geben Sie die Anmeldeinformationen für Ihr Microsoft-Konto ein, das über Rechte für Ihr Teamprojekt verfügt.
 1. Vergewissern Sie sich, dass Ihr Build-Agent registriert wurde. Gehen Sie dazu folgendermaßen vor:
 
-    1. Wechseln Sie wieder zur Ihrem Webbrowser. Dieser müsste die Seite `https://[your-VSO-account-name].visualstudio.com/_admin/_AgentPool` anzeigen. Aktualisieren Sie die Seite.
+    1. Wechseln Sie wieder zu Ihrem Webbrowser. Dieser müsste die Seite `https://[your-VSTS-account-name].visualstudio.com/_admin/_AgentPool` anzeigen. Aktualisieren Sie die Seite.
     1. Wählen Sie den Agentpool aus, den Sie zuvor beim Ausführen von „ConfigureAgent.ps1“ ausgewählt haben.
-    1. Vergewissern Sie sich, dass der Build-Agent in der Liste enthalten und die Statusanzeige grün ist. Ist die Statusanzeige rot, kann der Build-Agent keine Verbindung mit VSO herstellen.
+    1. Vergewissern Sie sich, dass der Build-Agent in der Liste enthalten und die Statusanzeige grün ist. Wenn die Statusanzeige rot ist, kann der Build-Agent keine Verbindung mit Team Services herstellen.
 
 ![](media/service-fabric-set-up-continuous-integration/vso-configured-agent.png)
 
@@ -237,7 +233,7 @@ Führen Sie zum Installieren von Azure PowerShell die Schritte aus dem vorherige
 ### Erstellen der Builddefinition
 
 1.	Erstellen Sie eine leere Builddefinition. Gehen Sie dazu folgendermaßen vor:
-    1.	Öffnen Sie Ihr Projekt in Visual Studio Online.
+    1.	Öffnen Sie Ihr Projekt in Visual Studio Team Services.
     1.	Wählen Sie die Registerkarte **Erstellen** aus.
     1.	Wählen Sie das grüne Pluszeichen (**+**) aus, um eine neue Builddefinition zu erstellen.
     1.	Wählen Sie die Option **Leer** und anschließend die Schaltfläche **Weiter** aus.
@@ -341,9 +337,6 @@ Mit den oben aufgeführten Anweisungen wird für jeden Buildvorgang ein neuer Cl
 
 ## Nächste Schritte
 
-Weitere Informationen zu Continuous Integration für Service Fabric-Anwendungen finden Sie in den folgenden Artikeln:
-- [Startseite der Builddokumentation](https://msdn.microsoft.com/Library/vs/alm/Build/overview)
-- [Bereitstellen eines Build-Agents](https://msdn.microsoft.com/Library/vs/alm/Build/agents/windows)
-- [Erstellen und Konfigurieren einer Builddefinition](https://msdn.microsoft.com/Library/vs/alm/Build/vs/define-build)
+Weitere Informationen zu Continuous Integration für Service Fabric-Anwendungen finden Sie in den folgenden Artikeln: - [Startseite der Builddokumentation](https://msdn.microsoft.com/Library/vs/alm/Build/overview) - [Bereitstellen eines Build-Agents](https://msdn.microsoft.com/Library/vs/alm/Build/agents/windows) - [Erstellen und Konfigurieren einer Builddefinition](https://msdn.microsoft.com/Library/vs/alm/Build/vs/define-build)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

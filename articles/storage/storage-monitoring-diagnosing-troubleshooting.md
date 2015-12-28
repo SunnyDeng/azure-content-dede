@@ -149,7 +149,7 @@ Der Abschnitt "[Anleitungen zur Problembehandlung]" in dieser Anleitung beschrei
 
 Um die Leistung des Speicherdiensts zu überwachen, können Sie die folgenden Metriken aus den Stunden- und Minuten-Metriktabellen verwenden.
 
-- Die Werte in **AverageE2ELatency** und **AverageServerLatency** zeigen die vom Speicherdienst oder der API-Operationsart benötigte Durchschnittszeit für die Anfragebearbeitung an. **AverageE2ELatency** ist eine Maßzahl für die durchgehende Latenz, die die benötigte Zeit für das Lesen der Anfrage und die Antwortversendung zusätzlich zu der für die Anfragebearbeitung benötigten Zeit beinhaltet (beinhaltet daher Netzwerklatenz, sobald die Anfrage den Speicherdienst erreicht). **AverageServerLatency** ist eine Maßzahl allein für die Bearbeitungszeit und schließt daher jegliche mit der Kommunikation mit dem Client verbundene Netzwerklatenz aus. Siehe den Abschnitt "[Metriken zeigen hohe AverageE2ELatency und niedrige AverageServerLatency an]" weiter unten in dieser Anleitung, wo die Unterschiede zwischen diesen beiden Werten erörtert werden.
+- Die Werte in den Spalten **AverageE2ELatency** und **AverageServerLatency** zeigen die vom Speicherdienst oder der API-Operationsart benötigte Durchschnittszeit für die Anfragebearbeitung an. **AverageE2ELatency** ist eine Maßzahl für die durchgehende Latenz, die die benötigte Zeit für das Lesen der Anfrage und die Antwortversendung zusätzlich zu der für die Anfragebearbeitung benötigten Zeit beinhaltet (beinhaltet daher Netzwerklatenz, sobald die Anfrage den Speicherdienst erreicht). **AverageServerLatency** ist eine Maßzahl allein für die Bearbeitungszeit und schließt daher jegliche mit der Kommunikation mit dem Client verbundene Netzwerklatenz aus. Siehe den Abschnitt "[Metriken zeigen hohe AverageE2ELatency und niedrige AverageServerLatency an]" weiter unten in dieser Anleitung, wo die Unterschiede zwischen diesen beiden Werten erörtert werden.
 - Die Werte in den Spalten **TotalIngress** und **TotalEgress** zeigen die Gesamtzahl der Daten in Byte an, die bei Ihrem Speicherdienst eingehen oder von ihm ausgehen bzw. über eine bestimmte API-Operationsart eingehen.
 - Die Werte in der Spalte **TotalRequests** zeigen die Gesamtzahl der Anfragen an, die beim Speicherdienst der API-Operation eingehen. **TotalRequests** ist die Gesamtzahl der Anfragen, die beim Speicherdienst eingehen.
 
@@ -363,7 +363,7 @@ Beachten Sie, dass der Speicherdienst nur die Metrik **AverageE2ELatency** für 
 
 #### Untersuchung von Clientleistungsproblemen
 
-Möglicher Grund für eine langsame Clientreaktion ist z. B. eine begrenzte Anzahl verfügbarer Verbindungen oder Threads. Möglicherweise können Sie das Problem lösen, indem Sie den Clientcode zugunsten einer höheren Effizienz ändern (z. B. durch Verwendung von asynchronen Aufrufen an den Speicherdienst) oder indem Sie einen größeren virtuellen Computer (mit mehr Kernen und mehr Arbeitsspeicher) verwenden.
+Mögliche Gründe für eine langsame Clientreaktion sind z. B. eine begrenzte Anzahl verfügbarer Verbindungen oder Threads oder begrenzte Ressourcen wie CPU, Arbeitsspeicher oder Netzwerkbandbreite. Möglicherweise können Sie das Problem lösen, indem Sie den Clientcode zugunsten einer höheren Effizienz ändern (z. B. durch Verwendung von asynchronen Aufrufen an den Speicherdienst) oder indem Sie einen größeren virtuellen Computer (mit mehr Kernen und mehr Arbeitsspeicher) verwenden.
 
 Für den Tabellen- und Warteschlangendienst kann der Nagle-Algorithmus auch höhere **AverageE2ELatency** verglichen mit **AverageServerLatency** verursachen: Weitere Informationen finden Sie im Eintrag <a href="http://blogs.msdn.com/b/windowsazurestorage/archive/2010/06/25/nagle-s-algorithm-is-not-friendly-towards-small-requests.aspx" target="_blank">Nagle-Algorithmus geht nicht freundlich mit kleinen Anfragen um</a> im Blog des Microsoft Azure-Speicherteams. Sie können den Nagle-Algorithmus im Code deaktivieren, indem Sie die Klasse **ServicePointManager** im **System.Net**-Namespace verwenden. Sie sollten dies tun, bevor Sie Aufrufe an die Tabellen- oder Warteschlangendienste in Ihrer Anwendung senden, da dies keinen Einfluss auf die bereits offenen Verbindungen hat. Das folgende Beispiel stammt aus der Methode **Application\_Start** in einer Workerrolle.
 
@@ -387,7 +387,13 @@ Weitere Informationen zur Verwendung von Microsoft Message Analyzer zur Behandlu
 
 In diesem Szenario ist ein verzögertes Erreichen des Speicherdiensts durch die Speicheranfragen die wahrscheinlichste Ursache. Sie sollten untersuchen, warum Clientanfragen den Blob-Dienst nicht erreichen.
 
-Möglicher Grund für das verzögerte Senden von Anfragen durch den Client ist z. B. eine begrenzte Anzahl verfügbarer Verbindungen oder Threads. Sie sollten auch prüfen, ob der Client mehrere Wiederholungen ausführt, und den Grund untersuchen, falls dies der Fall ist. Sie können dies systematisch tun, indem Sie das mit der Anfrage verbundene Objekt **OperationContext** anzeigen und den Wert **ServerRequestId** abrufen. Weitere Information finden Sie im Codebeispiel im Abschnitt "[Serveranfrage-ID]".
+Ein möglicher Grund für das verzögerte Senden von Anfragen durch den Client ist z. B. eine begrenzte Anzahl verfügbarer Verbindungen oder Threads.
+
+Sie sollten auch prüfen, ob der Client mehrere Wiederholungen ausführt, und den Grund untersuchen, falls dies der Fall ist. Um zu ermitteln, ob der Client mehrere Wiederholungen ausführt, können Sie folgende Aktionen ausführen:
+
+- Überprüfen Sie die Speicheranalyseprotokolle. Wenn mehrere Wiederholungen auftreten, sehen Sie mehrere Vorgänge mit der gleichen Client-ID, aber unterschiedliche Serveranfrage-IDs.
+- Überprüfen Sie die Clientprotokolle. Bei einer ausführlichen Protokollierung wird auch angezeigt, dass ein erneuter Versuch erfolgt ist.
+- Debuggen Sie den Code, und überprüfen Sie die Eigenschaften des **OperationContext**-Objekts, das mit der Anfrage verknüpft ist. Wenn der Vorgang wiederholt wurde, enthält die **RequestResults**-Eigenschaft mehrere eindeutige Serveranforderungs-IDs. Sie können auch die Start- und Endzeiten der einzelnen Anforderungen überprüfen. Weitere Information finden Sie im Codebeispiel im Abschnitt [Serveranforderungs-ID]. 
 
 Wenn das Problem nicht beim Client liegt, sollten Sie potenzielle Netzwerkprobleme wie Paketverlust untersuchen. Sie können Tools wie Wireshark oder Microsoft Message Analyzer verwenden, um Netzwerkprobleme zu untersuchen.
 
@@ -403,7 +409,7 @@ Im Falle von hoher **AverageServerLatency** bei wiederholten Blob-Download-Anfra
 
 Hohe Werte bei der **AverageServerLatency** können auch ein Zeichen für schlecht entworfene Tabellen oder Abfragen sein, die zu Scanoperationen führen oder die dem angehängten/vorangestellten Gegenmuster folgen. Weitere Informationen finden Sie unter "[Metriken zeigen Anstieg bei PercentThrottlingError an]".
 
-> [AZURE.NOTE]Hier finden Sie eine umfassende Checkliste mit weiteren Problemstellungen: [Entwerfen einer skalierbaren und leistungsfähigen speicherbasierten Anwendungscheckliste](storage-performance-checklist.md).
+> [AZURE.NOTE]Hier finden Sie eine umfassende Checkliste mit weiteren Problemstellungen, die Sie kennen sollten: [Checkliste zu Leistung und Skalierbarkeit von Microsoft Azure Storage](storage-performance-checklist.md).
 
 ### <a name="you-are-experiencing-unexpected-delays-in-message-delivery"></a>Sie stoßen auf unerwartete Verzögerungen bei der Nachrichtenübermittlung in einer Warteschlange
 
@@ -481,7 +487,7 @@ In diesem Szenario sollten Sie untersuchen, warum der SAS-Token abläuft, bevor 
 
 - In der Regel sollten Sie keine Startzeit festlegen, wenn Sie eine SAS für einen Client zur sofortigen Verwendung erstellen. Wenn es kleine Zeitunterschiede zwischen dem die SAS generierenden Host und dem Speicherdienst gibt, kann der Speicherdienst eine noch nicht gültige SAS empfangen.
 - Sie sollten keine sehr kurze Ablaufzeit für eine SAS einstellen. Auch hier können kleine Zeitunterschiede zwischen dem die SAS generierenden Host und dem Speicherdienst dazu führen, dass eine SAS scheinbar früher als erwartet abläuft.
-- Stimmt der Versionsparameter im SAS-Schlüssel (zum Beispiel **sv=2012-02-12**) mit der von Ihnen verwendeten Version der Speicher-Clientbibliothek überein? Sie sollten immer die neueste Version der Speicher-Clientbibliothek verwenden. Weitere Informationen zu SAS-Token-Versionsverwaltung und Abhängigkeiten von der Clientbibliotheksversion finden Sie unter <a href="http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/14/what-s-new-for-microsoft-azure-storage-at-teched-2014.aspx" target="_blank">Neuerungen bei Microsoft Azure Storage</a>.
+- Stimmt der Versionsparameter im SAS-Schlüssel (z. B. **sv=2015-04-05**) mit der von Ihnen verwendeten Version der Speicherclientbibliothek überein? Sie sollten immer die neueste Version der [Speicherclientbibliothek](https://www.nuget.org/packages/WindowsAzure.Storage/) verwenden. Weitere Informationen zur Versionsverwaltung von SAS-Token und Abhängigkeiten von der Clientbibliotheksversion finden Sie unter [What’s new for Microsoft Azure Storage at TechEd 2014](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/14/what-s-new-for-microsoft-azure-storage-at-teched-2014.aspx) (in englischer Sprache).
 - Wenn Sie Ihren Speicherzugriffsschlüssel neu erstellen, kann dies jedes vorhandenen SAS-Token unwirksam machen. Dies kann problematisch sein, wenn Sie SAS-Token mit einer langen Ablaufzeit zum Cachen von Clientanwendungen generieren.
 
 Wenn Sie die Speicher-Clientbibliothek verwenden, um SAS-Token zu erstellen, ist es einfach, einen gültigen Token anzulegen. Wenn Sie allerdings die Speicher-REST-API verwenden und das SAS-Token manuell anlegen, sollten Sie sorgfältig das Thema <a href="http://msdn.microsoft.com/library/azure/ee395415.aspx" target="_blank">Zugriffsdelegierung mit einer Shared Access Signature</a> in MSDN lesen.
@@ -789,7 +795,7 @@ Sie können Microsoft Message Analyzer verwenden, um HTTP- und HTTPS-Datenverkeh
 
 #### Konfigurieren einer Web-Rückverfolgungssession mit Microsoft Message Analyzer
 
-Um eine Rückverfolgungssession für HTTP- und HTTPS-Verkehr mit Microsoft Message Analyzer zu konfigurieren, führen Sie Microsoft Message Analyze aus, und klicken Sie anschließend im Menü **Datei** auf **Rückverfolgung**. Wählen Sie in der Liste der verfügbaren Rückverfolgungsszenarien **Web-Proxy** aus. Geben Sie anschließend im Bereich **Konfiguration des Rückverfolgungsszenarios** im Textfeld **HostnameFilter** die Namen Ihrer Speicherendpunkte ein (Sie können diese Namen im [Azure-Portal](portal.azure.com) nachschlagen). Wenn beispielsweise der Name Ihres Azure-Speicherkontos **contosodata** lautet, sollten Sie im Textfeld **HostnameFilter** Folgendes hinzufügen:
+Um eine Rückverfolgungssession für HTTP- und HTTPS-Verkehr mit Microsoft Message Analyzer zu konfigurieren, führen Sie Microsoft Message Analyze aus, und klicken Sie anschließend im Menü **Datei** auf **Rückverfolgung**. Wählen Sie in der Liste der verfügbaren Rückverfolgungsszenarien **Web-Proxy** aus. Geben Sie anschließend im Bereich **Trace Scenario Configuration** im Textfeld **HostnameFilter** die Namen Ihrer Speicherendpunkte ein. (Sie können diese Namen im [Azure-Portal](portal.azure.com) nachschlagen.) Wenn beispielsweise der Name Ihres Azure-Speicherkontos **contosodata** lautet, sollten Sie im Textfeld **HostnameFilter** Folgendes hinzufügen:
 
     contosodata.blob.core.windows.net contosodata.table.core.windows.net contosodata.queue.core.windows.net
 
@@ -827,14 +833,14 @@ Um Speicherprotokollierungsdaten in Excel zu importieren, nachdem Sie diese aus 
 
 In Schritt 1 des **Textimport-Assistenten**, wählen Sie **Semikolon** als einziges Trennungszeichen und Anführungszeichen als **Textbegrenzungszeichen** aus. Klicken Sie anschließend auf **Fertigstellen** und wählen Sie aus, wo Sie die Datei in Ihrer Arbeitsmappe ablegen möchten.
 
-### <a name="appendix-5"></a>Anhang 5: Überwachung mit Application Insights für Visual Studio Team Services
+### <a name="appendix-5"></a>Anhang 5: Überwachung mit Application Insights für Visual Studio Team Services
 
 Sie können die Application Insights-Funktion für Visual Studio Team Services auch als Bestandteil der Leistungs- und Verfügbarkeitsüberwachung verwenden. Dieses Tool kann:
 
 - Sicherstellen, dass Ihr Webdienst verfügbar und reaktionsschnell ist. Ob Ihre Anwendung eine Website ist, die einen Webdienst verwendet, oder eine Geräteanwendung: Sie kann Ihre URL alle paar Minuten von Standorten auf der ganzen Welt testen, und Ihnen mitteilen, ob es ein Problem gibt.
 - Leistungsprobleme oder Ausnahmen in Ihrem Webdienst schnell diagnostizieren. Finden Sie heraus, ob CPU oder andere Ressourcen gestretched werden, gewinnen Sie Stack-Traces aus Ausnahmen, und durchsuchen Sie Protokolltraces leicht. Wenn die Leistung der Anwendung unter akzeptable Grenzen fällt, können wir Ihnen eine E-Mail senden. Sie können sowohl .NET- als auch Java-Webdienste überwachen.
 
-Zum Redaktionszeitpunkt befindet sich Application Insights in der Vorschau. Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/library/azure/dn481095.aspx" target="_blank">Application Insights für Visual Studio Team Services auf MSDN</a>.
+Zum Redaktionszeitpunkt befindet sich Application Insights in der Vorschau. Weitere Informationen finden Sie unter <a href="http://msdn.microsoft.com/library/azure/dn481095.aspx" target="_blank">Application Insights für Visual Studio Online</a>.
 
 
 <!--Anchors-->
@@ -860,6 +866,7 @@ Zum Redaktionszeitpunkt befindet sich Application Insights in der Vorschau. Weit
 [Durchgängige Verfolgung]: #end-to-end-tracing
 [Korrelation von Protokollierungsdaten]: #correlating-log-data
 [Clientanfrage-ID]: #client-request-id
+[Serveranforderungs-ID]: #server-request-id
 [Serveranfrage-ID]: #server-request-id
 [Zeitstempel]: #timestamps
 
@@ -915,4 +922,4 @@ Zum Redaktionszeitpunkt befindet sich Application Insights in der Vorschau. Weit
 [9]: ./media/storage-monitoring-diagnosing-troubleshooting/mma-screenshot-1.png
 [10]: ./media/storage-monitoring-diagnosing-troubleshooting/mma-screenshot-2.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

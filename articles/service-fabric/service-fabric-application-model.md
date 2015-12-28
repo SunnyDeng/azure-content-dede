@@ -3,7 +3,7 @@
    description="Informationen zum Modellieren und Beschreiben von Anwendungen und Diensten in Service Fabric."
    services="service-fabric"
    documentationCenter=".net"
-   authors="alexwun"
+   authors="seanmck"
    manager="timlt"
    editor="mani-ramaswamy"/>
 
@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="11/02/2015"
-   ms.author="alexwun"/>
+   ms.date="12/10/2015"   
+   ms.author="seanmck"/>
 
 # Modellieren von Anwendungen in Service Fabric
 
@@ -231,8 +231,7 @@ Nachdem die Anwendung ordnungsgemäß gepackt und die Überprüfung erfolgreich 
 
 ## Nächste Schritte
 
-[Deploy an application (in englischer Sprache)][10]
-
+[Bereitstellen und Entfernen von Anwendungen][10]
 [Verwalten von Anwendungsparametern für mehrere Umgebungen][11]
 
 [RunAs: Ausführen einer Service Fabric-Anwendung mit verschiedenen Sicherheitsberechtigungen][12]
@@ -248,4 +247,4 @@ Nachdem die Anwendung ordnungsgemäß gepackt und die Überprüfung erfolgreich 
 [11]: service-fabric-manage-multiple-environment-app-configuration.md
 [12]: service-fabric-application-runas-security.md
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

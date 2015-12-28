@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/11/2015"
+   ms.date="12/11/2015"
    ms.author="telmos" />
 
 # Reservierte IP – Übersicht
@@ -41,7 +41,7 @@ Sie können eine IP-Adresse reservieren, um zu verhindern, dass sie sich ändert
 
 Bevor Sie reservierte IPs verwenden können, müssen Sie diese Ihrem Abonnement hinzufügen. Führen Sie den folgenden PowerShell-Befehl aus, um eine reservierte IP aus dem Pool mit den öffentlichen IP-Adressen zu erstellen, die für den Standort *Central US* verfügbar sind:
 
-	New-AzureReservedIP –ReservedIPName MyReservedIP –Location “Central US”
+	New-AzureReservedIP –ReservedIPName MyReservedIP –Location "Central US"
 
 Beachten Sie dabei, dass Sie nicht angeben können, welche IP-Adresse reserviert wird. Führen Sie den folgenden PowerShell-Befehl aus, und notieren Sie sich die Werte für *ReservedIPName* und *Address*, um anzuzeigen, welche IP-Adressen in Ihrem Abonnement reserviert sind:
 
@@ -67,7 +67,7 @@ Nachdem eine IP-Adresse reserviert wurde, bleibt sie Ihrem Abonnement so lange z
 ## Zuordnen einer reservierter IP zu einem neuen Clouddienst
 Mit dem unten angegebenen Skript wird eine neue reservierte IP erstellt, die dann einem neuen Clouddienst mit dem Namen *TestService* zugeordnet wird.
 
-	New-AzureReservedIP –ReservedIPName MyReservedIP –Location “Central US”
+	New-AzureReservedIP –ReservedIPName MyReservedIP –Location "Central US"
 	$image = Get-AzureVMImage|?{$_.ImageName -like "*RightImage-Windows-2012R2-x64*"}
 	New-AzureVMConfig -Name TestVM -InstanceSize Small -ImageName $image.ImageName `
 	| Add-AzureProvisioningConfig -Windows -AdminUsername adminuser -Password MyP@ssw0rd!! `
@@ -119,4 +119,4 @@ Sie können eine reservierte IP einem Clouddienst auch zuordnen, indem Sie eine 
 
 - Überprüfen Sie die [reservierten IP-REST-APIs](https://msdn.microsoft.com/library/azure/dn722420.aspx).
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1217_2015-->

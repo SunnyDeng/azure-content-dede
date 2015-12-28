@@ -351,9 +351,9 @@ Weitere Informationen zur Problembehandlung in End-to-End-Szenarien im Azure-Spe
 - [Monitor, diagnose, and troubleshoot Storage (in englischer Sprache)](storage-monitoring-diagnosing-troubleshooting.md)
 - [Speicheranalyse](http://msdn.microsoft.com/library/azure/hh343270.aspx)
 - [Überwachen eines Speicherkontos](storage-monitor-storage-account.md)
-- [Verwenden von AzCopy mit Microsoft Azure Storage](storage-use-azcopy.md)
+- [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy)
 - [Microsoft Message Analyzer Operating Guide (in englischer Sprache)](http://technet.microsoft.com/library/jj649776.aspx)
  
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

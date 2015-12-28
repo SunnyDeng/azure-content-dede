@@ -156,6 +156,6 @@ Klicken Sie zum Trennen der Verbindung zu Ihrem GitHub-Konto auf dem Blatt „Re
 
 ## Nächste Schritte
 
-Weitere Informationen zur Integration der Quellcodeverwaltung finden Sie in den folgenden Ressourcen: – [Integration der Quellcodeverwaltung in Azure Automation](https://azure.microsoft.com/blog/azure-automation-source-control-13/) – [Vote for your favorite source control system](https://www.surveymonkey.com/r/?sm=2dVjdcrCPFdT0dFFI8nUdQ%3d%3d) - [Azure Automation: Integrating Runbook Source Control using Visual Studio Online](https://azure.microsoft.com/blog/azure-automation-integrating-runbook-source-control-using-visual-studio-online/)
+Weitere Informationen zur Integration der Quellcodeverwaltung finden Sie in den folgenden Ressourcen: - [Source Control Integration in Azure Automation](https://azure.microsoft.com/blog/azure-automation-source-control-13/) - [Vote for your favorite source control system](https://www.surveymonkey.com/r/?sm=2dVjdcrCPFdT0dFFI8nUdQ%3d%3d) - [Azure Automation: Integrating Runbook Source Control using Visual Studio Online](https://azure.microsoft.com/blog/azure-automation-integrating-runbook-source-control-using-visual-studio-online/) (alle in englischer Sprache)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="10/29/2015"
+   ms.date="12/11/2015"
    ms.author="telmos" />
 
 # Virtuelle Netzwerke im Überblick
@@ -31,6 +31,8 @@ Das gleiche Netzwerk kann wie in der folgenden Abbildung dargestellt in Azure ge
 
 Die Azure-Infrastruktur übernimmt die Rolle des Routers und lässt ohne jeglichen Konfigurationsbedarf den Zugriff auf Ihr VNet über das öffentliche Internet zu. Firewalls können durch Netzwerksicherheitsgruppen ersetzt werden, die auf jedes einzelne Subnetz angewendet werden. Physische Load Balancer werden durch Load Balancer mit Internetzugriff und interne Load Balancer in Azure ersetzt.
 
+>[AZURE.NOTE]In Azure stehen zwei Bereitstellungsmodi zur Auswahl: klassisch (auch bekannt als Dienstverwaltung) und Azure-Ressourcen-Manager (ARM). Klassische VNets können einer Affinitätsgruppe hinzugefügt oder als regionales VNet erstellt werden. Wenn Sie ein VNet in einer Affinitätsgruppe haben, wird die [Migration zu einem regionalen VNet](./virtual-networks-migrate-to-regional-vnet.md) empfohlen.
+
 ## Vorteile von virtuellen Netzwerken
 
 - **Isolation** VNets sind vollständig voneinander isoliert. Daher können Sie separate Netzwerke für Entwicklung, Tests und Produktion erstellen, die die gleichen CIDR-Adressblöcke verwenden.
@@ -46,10 +48,6 @@ Die Azure-Infrastruktur übernimmt die Rolle des Routers und lässt ohne jeglich
 - **Konnektivität** VNets können mithilfe einer Standort-zu-Standort-VPN-Verbindung oder einer ExpressRoute-Verbindung miteinander und sogar mit Ihrem lokalen Datencenter verbunden werden. Weitere Informationen zu VPN-Gateways finden Sie unter [Informationen zu VPN-Gateways](./vpn-gateway-about-vpngateways.md). Weitere Informationen zu ExpressRoute finden Sie unter [ExpressRoute – Technische Übersicht](./expressroute-introduction.md).
 
     >[AZURE.NOTE]Vor der Bereitstellung von IaaS-VMs oder PaaS-Rolleninstanzen in Ihrer Azure-Umgebung müssen Sie ein VNet erstellen. ARM-basierte VMs erfordern ein VNet, und wenn Sie kein vorhandenes VNet angeben, erstellt Azure ein Standard-VNet, bei dem möglicherweise ein CIDR-Adressblockkonflikt mit Ihrem lokalen Netzwerk vorliegt. Wenn dies der Fall ist, ist es nicht möglich, das VNet mit Ihrem lokalen Netzwerk zu verbinden.
-
-## Bereitstellungsmodi
-
-    >[AZURE.NOTE] There are two deployment modes in Azure: classic (also known as Service Management) and Azure Resource Manager (ARM). Classic VNets could be added to an affinity group, or created as a regional VNet. If you have a VNet in an affinity group, it is recommended to [migrate it to a regional VNet](./virtual-networks-migrate-to-regional-vnet.md). 
     
 ## Subnetze
 
@@ -85,10 +83,10 @@ Netzwerksicherheitsgruppen können z. B. verwendet werden, um Sicherheit für da
 Virtuelle Geräte sind von [benutzerdefinierten Routen und IP-Weiterleitung](../virtual-networks-udr-overview.md) abhängig.
 
 ## Grenzen
-Die Anzahl der zulässigen virtuellen Netzwerken in einem Abonnement ist beschränkt. Weitere Informationen finden Sie unter [Azure-Netzwerkbeschränkungen](azure-subscription-service-limits.md#networking-limits).
+Die Anzahl der zulässigen virtuellen Netzwerke in einem Abonnement ist beschränkt. Weitere Informationen finden Sie unter [Azure-Netzwerkbeschränkungen](azure-subscription-service-limits.md#networking-limits).
 
 ## Preise
-Für die Verwendung virtueller Netzwerke in Azure fallen keine Zusatzkosten an. Für die im Vnet gestarteten Computerinstanzen werden die unter [Preise für Azure VMs](https://azure.microsoft.com/pricing/details/virtual-machines/) aufgeführten Standardpreise an. Für die im VNet verwendeten [VPN-Gateways](https://azure.microsoft.com/pricing/details/vpn-gateway/) und [öffentlichen IP-Adressen](https://azure.microsoft.com/pricing/details/ip-addresses/) werden ebenfalls Standardpreise berechnet.
+Für die Verwendung virtueller Netzwerke in Azure fallen keine Zusatzkosten an. Für die im VNET gestarteten Computerinstanzen werden die unter [Virtual Machines – Preise](https://azure.microsoft.com/pricing/details/virtual-machines/) aufgeführten Standardpreise berechnet. Für die im VNET verwendeten [VPN-Gateways](https://azure.microsoft.com/pricing/details/vpn-gateway/) und [öffentlichen IP-Adressen](https://azure.microsoft.com/pricing/details/ip-addresses/) werden ebenfalls die Standardpreise berechnet.
 
 ## Nächste Schritte
 
@@ -100,4 +98,4 @@ Für die Verwendung virtueller Netzwerke in Azure fallen keine Zusatzkosten an. 
 - [Reservieren einer öffentlichen IP-Adresse](../virtual-networks-reserved-public-ip.md)
 - Weitere Informationen zu [benutzerdefinierten Routen und IP-Weiterleitung](virtual-networks-udr-overview.md)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

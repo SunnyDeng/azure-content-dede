@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="12/02/2015"
+   ms.date="12/10/2015"
    ms.author="terrylan"/>
 
 # Erste Schritte mit Azure Security Center
@@ -88,7 +88,7 @@ Anzeigen des Integritäts- und Sicherheitsstatus Ihrer Ressourcen über **Resour
 In diesem Dokument wurden die Sicherheitsüberwachungs- und Richtlinienverwaltungskomponenten in Azure Security Center vorgestellt. Weitere Informationen finden Sie in den folgenden Artikeln:
 
 - [Festlegen von Sicherheitsrichtlinien in Azure Security Center](security-center-policies.md) – erfahren Sie, wie Sie Sicherheitsrichtlinien konfigurieren.
-- [Implementieren von Sicherheitsempfehlungen in Azure Security Center](security-center-recommendations.md) – erfahren Sie, wie Empfehlungen Ihnen beim Schutz der Azure-Ressourcen helfen.
+- [Verwalten von Sicherheitsempfehlungen in Azure Security Center](security-center-recommendations.md) – Erfahren Sie, wie Empfehlungen Ihnen beim Schutz der Azure-Ressourcen helfen.
 - [Überwachen der Sicherheitsintegrität in Azure Security Center](security-center-monitoring.md) – erfahren Sie, wie Sie die Integrität Ihrer Azure-Ressourcen überwachen.
 - [Verwalten von und Reagieren auf Sicherheitswarnungen in Azure Security Center](security-center-managing-and-responding-alerts.md) – erfahren Sie, wie Sie Sicherheitswarnungen verwalten und auf diese reagieren.
 - [Azure Security Center – häufig gestellte Fragen](security-center-faq.md) – häufig gestellte Fragen zur Verwendung des Diensts.
@@ -103,4 +103,4 @@ In diesem Dokument wurden die Sicherheitsüberwachungs- und Richtlinienverwaltun
 [6]: ./media/security-center-get-started/security-alert.png
 [7]: ./media/security-center-get-started/security-alert-detail.png
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

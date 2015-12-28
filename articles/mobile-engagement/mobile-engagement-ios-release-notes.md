@@ -18,6 +18,10 @@
 
 #Versionshinweise
 
+##3\.2.1 (11.12.2015)
+
+-   Es wurde eine Verzögerung behoben, wenn eine neue Instanz der App durch eine Benachrichtigung mit Deep-Links ausgelöst wird. 
+
 ##3\.2.0 (08.10.2015)
 
 -   Bitcode im SDK aktiviert, um die Verwendung mit **Xcode 7** zu ermöglichen.
@@ -54,4 +58,4 @@
 -   Verbesserungen der Sicherheit.
 -   SmartAd-Verfolgung entfernt.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

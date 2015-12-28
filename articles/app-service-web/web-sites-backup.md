@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/16/2015" 
+	ms.date="12/10/2015" 
 	ms.author="cephalin"/>
 
 # Sichern von Web-Apps in Azure App Service
@@ -31,7 +31,7 @@ Für Web-Apps können die folgenden Informationen gesichert werden:
 
 * Web-App-Konfiguration
 * Dateiinhalte der Web-App
-* Jede SQL Server- und jede MySQL-Datenbank, die mit der Web-App verbunden ist (Sie können auswählen, welche gesichert werden sollen)
+* Jede Azure SQL- und jede MySQL-Datenbank, die mit der Web-App verbunden ist (Sie können auswählen, welche gesichert werden sollen.)
 
 Diese Informationen werden in dem von Ihnen angegebenen Azure-Speicherkonto und -Container gesichert.
 
@@ -40,32 +40,37 @@ Diese Informationen werden in dem von Ihnen angegebenen Azure-Speicherkonto und 
 <a name="requirements"></a>
 ## Anforderungen und Einschränkungen
 
-* Die Funktion zum Sichern und Wiederherstellen erfordert, dass die Website im Standardmodus ist. Weitere Informationen zum Skalieren von Websites im Standardmodus finden Sie unter [Skalieren von Web-Apps in Azure App Service](web-sites-scale.md). Beachten Sie, dass im Premium-Modus eine größere Anzahl von täglichen Sicherungen als im Standardmodus ausgeführt werden kann.
+* Die Funktion zum Sichern und Wiederherstellen erfordert, dass sich der App Service-Plan im Tarif „Standard“ oder einem höheren Tarif angehört. Weitere Informationen zum Skalieren des App Service-Plans zur Verwendung in einem höheren Tarif finden Sie unter [Skalieren einer Web-App in Azure App Service](web-sites-scale.md). Beachten Sie, dass im Tarif „Premium“ eine größere Anzahl täglicher Sicherungen zulässig ist als im Tarif „Standard“.
 
 * Die Funktion zum Sichern und Wiederherstellen erfordert ein Azure-Speicherkonto und einen -Container, die zum selben Abonnement wie die Web-App gehören, die Sie sichern möchten. Falls Sie noch nicht über ein Speicherkonto verfügen, können Sie es erstellen, indem Sie im [Azure-Portal](http://portal.azure.com) auf dem Blatt **Sicherungen** auf die Schaltfläche **Speicherkonto** klicken. Klicken Sie anschließend auf dem Blatt **Ziel** auf das **Speicherkonto** und den **Container**. Weitere Informationen zu Azure-Speicherkonten erhalten Sie unter den [Links](#moreaboutstorage) am Ende dieses Artikels.
 
-* Das Feature zum Sichern und Wiederherstellen unterstützt bis zu 10 GB an Website- und Datenbankinhalt. In die Operationsprotokolle wird ein Fehler ausgegeben, wenn das Sicherungsfeature nicht fortgesetzt werden kann, weil die Nutzlast diesen Grenzwert überschreitet.
+* Das Feature zum Sichern und Wiederherstellen unterstützt bis zu 10 GB an Website- und Datenbankinhalt. Es wird eine Fehlermeldung angezeigt, wenn die Sicherungsfunktion nicht fortgesetzt werden kann, weil die Nutzlast diesen Grenzwert überschreitet.
 
 <a name="manualbackup"></a>
 ## Erstellen einer manuellen Sicherung
 
 1. Wählen Sie im Azure-Portal auf dem Blatt „Web-Apps“ Ihre Web-App aus. Damit zeigen Sie Details der Web-App auf einem neuen Blatt an.
-2. Wählen Sie die Option **Einstellungen** aus. Das Blatt **Einstellungen** wird angezeigt, auf dem Sie Ihre Web-App ändern können.
+2. Wählen Sie auf dem Blatt für Ihre App die Option **Einstellungen** und dann **Sicherungen** aus. Das Blatt **Sicherungen** wird angezeigt.
 	
 	![Seite 'Sicherungen'][ChooseBackupsPage]
 
-3. Wählen Sie auf dem Blatt **Einstellungen** die Option **Sicherungen** aus. Das Blatt **Sicherungen** wird angezeigt.
-	
-4. Wählen Sie auf dem Blatt **Sicherungen** das Sicherungsziel durch Auswahl von **Speicherkonto** und **Container** aus. Das Speicherkonto muss zu demselben Abonnement wie die Web-App gehören, die Sie sichern möchten.
-	
+3. Klicken Sie auf dem Blatt **Sicherungen** auf **Speicher: Nicht konfiguriert**, um ein Speicherkonto zu konfigurieren.
+
 	![Speicherkonto auswählen][ChooseStorageAccount]
 	
-5. Wählen Sie mithilfe der Option **Enthaltene Datenbanken** auf dem Blatt **Sicherungen** die Datenbanken aus, die mit der zu sichernden Web-App verbunden sind (SQL Server oder MySQL).
+4. Wählen Sie das Sicherungsziel durch Auswahl eines **Speicherkontos** und **Containers** aus. Das Speicherkonto muss zu demselben Abonnement wie die Web-App gehören, die Sie sichern möchten. Bei Bedarf können Sie auf den entsprechenden Blättern ein neues Speicherkonto oder einen neuen Container erstellen. Wenn Sie fertig sind, klicken Sie auf **Auswählen**.
+	
+	![Speicherkonto auswählen](./media/web-sites-backup/02ChooseStorageAccount1.png)
+	
+5. Klicken Sie auf dem geöffneten Blatt **Sicherungseinstellungen konfigurieren** auf **Datenbankeinstellungen**. Wählen Sie dann die Datenbanken aus, die in die Sicherungen einbezogen werden sollen (SQL-Datenbank oder MySQL), und klicken Sie auf **OK**.
+
+	![Speicherkonto auswählen](./media/web-sites-backup/03ConfigureDatabase.png)
 
 	> [AZURE.NOTE]Damit eine Datenbank in dieser Liste angezeigt wird, muss die zugehörige Verbindungszeichenfolge im Portal auf dem Blatt **Web-App-Einstellungen** im Abschnitt **Verbindungszeichenfolgen** angegeben sein.
-	
+
+6. Klicken Sie auf dem Blatt **Sicherungseinstellungen konfigurieren** auf **Speichern**.
 6. Wählen Sie auf dem Blatt **Sicherungen** das **Sicherungsziel** aus. Sie müssen ein vorhandenes Speicherkonto und einen Container auswählen.
-7. Klicken Sie in der Befehlsleiste auf **Backup Now**.
+7. Klicken Sie in der Befehlsleiste des Blatts **Sicherungen** auf **Jetzt sichern**.
 	
 	![Schaltfläche "Backup Now"][BackUpNow]
 	
@@ -77,34 +82,30 @@ Sie können jederzeit eine manuelle Sicherung vornehmen.
 <a name="automatedbackups"></a>
 ## Konfigurieren automatischer Sicherungen
 
-1. Legen Sie auf dem Blatt **Sicherungen** die Option **Geplante Sicherung** auf "EIN" fest.
+1. Klicken Sie im Blatt **Sicherungen** auf **Zeitplan: Nicht konfiguriert**. 
+
+	![Speicherkonto auswählen](./media/web-sites-backup/05ScheduleBackup.png)
+	
+1. Legen Sie auf dem Blatt **Backup Schedule Settings** die Option **Geplante Sicherung** auf **Ein** fest. Konfigurieren Sie dann den Sicherungszeitplan wie gewünscht, und klicken Sie auf **OK**.
 	
 	![Automatisierte Sicherungen aktivieren][SetAutomatedBackupOn]
 	
-2. Wählen Sie das Speicherkonto aus, in dem die Web-App gesichert werden soll. Das Speicherkonto muss zu demselben Abonnement wie die Web-App gehören, die Sie sichern möchten.
+4. Klicken Sie auf dem geöffneten Blatt **Sicherungseinstellungen konfigurieren** auf **Speichereinstellungen**, wählen Sie dann das Sicherungsziel durch Auswahl eines **Speicherkontos** und **Containers** aus. Das Speicherkonto muss zu demselben Abonnement wie die Web-App gehören, die Sie sichern möchten. Bei Bedarf können Sie auf den entsprechenden Blättern ein neues Speicherkonto oder einen neuen Container erstellen. Wenn Sie fertig sind, klicken Sie auf **Auswählen**.
 	
-	![Speicherkonto auswählen][ChooseStorageAccount]
+	![Speicherkonto auswählen](./media/web-sites-backup/02ChooseStorageAccount1.png)
 	
-3. Geben Sie im Feld **Häufigkeit** an, wie oft automatisierte Sicherungen erstellt werden sollen. Die Anzahl der Tage muss zwischen 1 und 90 liegen (von einmal täglich bis einmal alle 90 Tage).
-	
-4. Verwenden Sie die Option **Startdatum**, um das Startdatum und eine Uhrzeit für den Beginn der automatisierten Sicherungen festzulegen.
-	
-	> [AZURE.NOTE]Azure speichert die Sicherungszeit im UTC-Format, zeigt sie jedoch entsprechend der Systemzeit des Computers an, auf dem Sie das Portal anzeigen.
-	
-5. Wählen Sie im Abschnitt **Enthaltene Datenbanken** die Datenbanken aus, die mit der zu sichernden Web-App verbunden sind (SQL Server oder MySQL). Damit eine Datenbank in der Liste angezeigt wird, muss die zugehörige Verbindungszeichenfolge im Portal auf dem Blatt **Web-App-Einstellungen** im Abschnitt **Verbindungszeichenfolgen** angegeben sein.
-	
-	> [AZURE.NOTE]Wenn Sie eine oder mehrere Datenbanken in die Sicherung einschließen möchten und eine Häufigkeit von weniger als 7 Tagen angeben, werden Sie darauf hingewiesen, dass häufige Sicherungen die Kosten für die Datenbank erhöhen können.
-	
-6. Legen Sie außerdem die **Aufbewahrung in Tagen** auf die Anzahl der Tage fest, die die Sicherung beibehalten werden soll.
-7. Klicken Sie in der Befehlsleiste auf **Speichern**, um die Konfigurationsänderungen zu speichern (oder wählen Sie **Verwerfen** aus, wenn Sie sie nicht speichern möchten).
-	
-	![Schaltfläche "Save"][SaveIcon]
+5. Klicken Sie auf dem Blatt **Sicherungseinstellungen konfigurieren** auf **Datenbankeinstellungen**. Wählen Sie dann die Datenbanken aus, die in die Sicherungen einbezogen werden sollen (SQL-Datenbank oder MySQL), und klicken Sie auf **OK**.
+
+	![Speicherkonto auswählen](./media/web-sites-backup/03ConfigureDatabase.png)
+
+	> [AZURE.NOTE]Damit eine Datenbank in dieser Liste angezeigt wird, muss die zugehörige Verbindungszeichenfolge im Portal auf dem Blatt **Web-App-Einstellungen** im Abschnitt **Verbindungszeichenfolgen** angegeben sein.
+
+6. Klicken Sie auf dem Blatt **Sicherungseinstellungen konfigurieren** auf **Speichern**.
 
 <a name="notes"></a>
 ## Hinweise
 
 * Stellen Sie sicher, dass Sie die Verbindungszeichenfolgen für jede Ihrer Datenbanken ordnungsgemäß auf dem Blatt **Web-App-Einstellungen** in **Einstellungen** angeben, damit die Sicherungs- und Wiederherstellungsfunktion die Datenbanken einschließen kann.
-* Auch wenn Sie mehrere Web-Apps in demselben Speicherkonto sichern können, sollten Sie aus Verwaltungsgründen für jede Web-App ein separates Speicherkonto erstellen.
 
 >[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
@@ -163,43 +164,11 @@ Die Datenbanksicherung für die Web-App wird im Stammverzeichnis der ZIP-Datei g
 
 > [AZURE.WARNING]Wenn Sie die Dateien im Container **websitebackups** ändern, kann die Sicherung ungültig werden und nicht mehr wiederhergestellt werden.
 
-<a name="bestpractices"></a>
-##Bewährte Methoden
-
-Sie sollten im Hinblick Ausfälle oder Naturkatastrophen sicherstellen, dass Sie vorbereitet sind, indem Sie über eine vorhandene Sicherung und eine Wiederherstellungsstrategie verfügen.
-
-Ihre Sicherungsstrategie sollte etwa wie folgt aussehen:
-
--	Erstellen Sie mindestens eine vollständige Sicherung Ihrer Web-App.
--	Nutzen Sie Teilsicherungen Ihrer Web-App, nachdem Sie eine vollständige Sicherung erstellt haben.
-
-Ihre Wiederherstellungsstrategie sollte etwa wie folgt aussehen:
- 
--	Erstellen Sie einen [Stagingslot](web-sites-staged-publishing.md) für Ihre Web-App.
--	Stellen Sie die vollständige Sicherung der Web-App am Stagingslot wieder her.
--	Stellen Sie die neueste Teilsicherung zusätzlich zur vollständigen Sicherung wieder her, auch am Stagingslot.
--	Testen Sie die Wiederherstellung, um festzustellen, ob die Staging-App ordnungsgemäß funktioniert.
--	[Verschieben](web-sites-staged-publishing.md#Swap) Sie die bereitgestellte Web-App zum Produktionsslot.
-
->[AZURE.NOTE]Testen Sie stets den Wiederherstellungsvorgang. Weitere Informationen finden Sie unter [Very Good Thing](http://axcient.com/blog/one-thing-can-derail-disaster-recovery-plan/) (in englischer Sprache). Beispielsweise gelten auf bestimmten Blogplattformen wie z. B. [Ghost](https://ghost.org/) explizite Vorsichtsmaßnahmen im Zusammenhang mit dem Verhalten während einer Sicherung. Durch Testen der Wiederherstellung können Sie diese Vorsichtsmaßnahmen abfangen, wenn Sie noch nicht von einem Fehler oder Notfall betroffen sind.
-
 <a name="nextsteps"></a>
 ## Nächste Schritte
 Informationen zum Wiederherstellen von Web-Apps aus einer Sicherung finden Sie unter [Wiederherstellen von Web-Apps in Azure App Service](web-sites-restore.md).
 
 Informationen zu den ersten Schritten mit Azure finden Sie unter [Kostenlose Microsoft Azure-Testversion](/pricing/free-trial/).
-
-
-<a name="moreaboutstorage"></a>
-### Weitere Informationen zu Speicherkonten
-
-[Was ist ein Speicherkonto?](../storage-whatis-account.md)
-
-[Erstellen eines Speicherkontos](../storage-create-storage-account/)
-
-[Überwachen eines Speicherkontos](../storage-monitor-storage-account.md)
-
-[Understanding Azure Storage Billing (Grundlagen zur Abrechnung von Azure-Speicher, in englischer Sprache)](http://blogs.msdn.com/b/windowsazurestorage/archive/2010/07/09/understanding-windows-azure-storage-billing-bandwidth-transactions-and-capacity.aspx)
 
 ## Änderungen
 * Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
@@ -220,4 +189,4 @@ Informationen zu den ersten Schritten mit Azure finden Sie unter [Kostenlose Mic
 [GhostUpgradeWarning]: ./media/web-sites-backup/13GhostUpgradeWarning.png
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.workload="mobile" 
-	ms.date="09/25/2015"
+	ms.date="12/11/2015"
 	ms.author="wesmc"/>
 
 # Azure Mobile Engagement – Leitfaden mit ersten Schritten und Best Practices
@@ -284,7 +284,7 @@ Azure Mobile Engagement identifiziert Benutzer, indem für jedes Gerät ein eind
 
 Eine Sitzung ist eine Instanz der App, die von einem Benutzer ausgeführt wird. Die Sitzung dauert von dem Zeitpunkt, an dem der Benutzer die App startet, bis sie beendet wird.
 
-Eine Aktivität ist eine logische Gruppierung einer Reihe von Aktionen, die in der App während einer Sitzung ausgeführt werden. Es ist in der Regel ein bestimmter Bildschirm in der App, aber es kann alles sein, was von der Logik der Anwendung definiert wird. Zumindest sollten Sie jeden Bildschirm oder jede Aktivität für die App markieren. Dies ermöglicht es Ihnen, den Benutzerpfad zu verstehen.
+Eine Aktivität ist eine logische Gruppierung einer Reihe von Aktionen, die in der App während einer Sitzung ausgeführt werden können. Es ist in der Regel ein bestimmter Bildschirm in der App, aber es kann alles sein, was von der Logik der Anwendung definiert wird. Zumindest sollten Sie jeden Bildschirm oder jede Aktivität für die App markieren. Dies ermöglicht es Ihnen, den Benutzerpfad zu verstehen.
 
 
 ###### Ereignisse
@@ -404,4 +404,4 @@ Nachdem Sie einige Erfahrungen gesammelt haben, könnten Sie Ihren Einbindungspr
 <!--Link references-->
 [Media Playbook link]: https://github.com/Azure/azure-mobile-engagement-samples/tree/master/Playbooks
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

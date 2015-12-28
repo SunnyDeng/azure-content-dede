@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/10/2015"
+	ms.date="12/09/2015"
 	ms.author="dastrock"/>
 
 # App-Modell v2.0 (Vorschauversion): Was ist anders?
@@ -26,7 +26,7 @@ Wenn Sie mit dem allgemeinen Azure AD-Dienst vertraut sind oder in der Vergangen
 ## Microsoft-Konten und Azure AD-Konten
 Das App-Modell v2.0 ermöglicht Entwicklern das Schreiben von Apps, die eine Anmeldung sowohl von Microsoft-Konten als auch von Azure AD-Konten akzeptieren. Dazu wird ein einziger Endpunkt genutzt. Dadurch können Sie die App so schreiben, dass sie Konten komplett ignoriert, und auch die Art des Kontos ignorieren kann, mit dem sich der Benutzer anmeldet. Natürlich *können* Sie die App so einrichten, dass Sie die Art des Kontos erkennt, das in einer bestimmten Sitzung verwendet wird, dies ist aber nicht erforderlich.
 
-Wenn Ihre App z. B. die [Office 365-REST-APIs](https://www.msdn.com/office/office365/howto/authenticate-Office-365-APIs-using-v2) aufruft, sind einige zusätzliche Funktionen und Daten für Unternehmensbenutzer verfügbar, z. B. SharePoint-Websites oder Verzeichnisdaten. Der Code kann jedoch für viele Vorgänge wie das [Lesen von Nachrichten eines Benutzers](https://www.msdn.com/office/office365/howto/authenticate-Office-365-APIs-using-v2) gleich geschrieben werden, egal ob für Microsoft-Konten oder Azure AD-Konten.
+Wenn Ihre App z. B. die [Office 365-REST-APIs](https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2) aufruft, sind einige zusätzliche Funktionen und Daten für Unternehmensbenutzer verfügbar, z. B. SharePoint-Websites oder Verzeichnisdaten. Der Code kann jedoch für viele Vorgänge wie das [Lesen von Nachrichten eines Benutzers](https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2) gleich geschrieben werden, egal ob für Microsoft-Konten oder Azure AD-Konten.
 
 Das Integrieren Ihrer App mit Microsoft-Konten und Azure AD-Konten ist nun ein einfacher Prozess. Sie können einen einzelnen Satz von Endpunkten, eine einzelne Bibliothek und eine einzelne App-Registrierung verwenden, um Zugriff auf die Verbraucher- und Unternehmens-Welten zu erhalten. Weitere Informationen zum App-Model v2.0 finden Sie in [der Übersicht](active-directory-appmodel-v2-overview.md).
 
@@ -121,4 +121,4 @@ Weitere Informationen zu den spezifischen Ansprüchen, die in App-Modell v2.0-To
 ## Einschränkungen der Vorschau
 Es gibt eine Reihe von Einschränkungen beim Erstellen einer App mit dem App-Modell v2. 0 in der öffentlichen Vorschau, die Sie berücksichtigen sollten. Sehen Sie im [Dokument „App-Modell v2.0 - Einschränkungen](active-directory-v2-limitations.md) nach, um zu prüfen, ob diese Einschränkungen für Ihr spezielles Szenario gelten.
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

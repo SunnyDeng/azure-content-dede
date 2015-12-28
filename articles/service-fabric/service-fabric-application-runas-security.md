@@ -86,7 +86,7 @@ Konfigurieren Sie als Nächstes im Abschnitt **ServiceManifestImport** eine Rich
 
 Lassen Sie uns nun die Datei „MySetup.bat“ zum Visual Studio-Projekt hinzufügen, um die Administratorrechte zu testen. Klicken Sie in Visual Studio mit der rechten Maustaste auf das Dienstprojekt, und fügen Sie einen neuen Aufruf der Datei „MySetup.bat“ hinzu. Als Nächstes muss sichergestellt werden, dass diese Datei in das Dienstpaket einbezogen wird, was standardmäßig nicht der Fall ist. Um sicherzustellen, dass die Datei „MySetup.bat“ im Paket enthalten ist, wählen Sie die Datei aus. Klicken Sie mit der rechten Maustaste, um das Kontextmenü zu öffnen, wählen Sie „Eigenschaften“ aus, und stellen Sie im Dialogfeld „Eigenschaften“ sicher, dass die **In Ausgabeverzeichnis kopieren** auf **Kopieren, wenn neuer** festgelegt ist. Dies wird im folgenden Screenshot gezeigt.
 
-![Visual Studio – Batchdatei für „CopyToOutput“ für „SetupEntryPoint“][image1]
+![Visual Studio – Batchdatei für „CopyToOutput“ für „SetupEntryPoint“][Image1]
 
 Öffnen Sie nun die MySetup.bat-Datei, und fügen Sie die folgenden Befehle hinzu.
 
@@ -129,7 +129,7 @@ Fügen Sie in der PowerShell-Datei Folgendes ein, um eine Systemumgebungsvariabl
 [Environment]::GetEnvironmentVariable("TestVariable","Machine") > out.txt
 ```
 
-## Anwenden der RunAs-Richtlinie auf Dienste
+## Anwenden der RunAs-Richtlinie auf Dienste 
 In den vorangegangenen Schritten wurde erläutert, wie eine RunAs-Richtlinie auf einen „SetupEntryPoint“ angewendet wird. Nun wollen wir uns ein wenig näher anschauen, wie verschiedene Prinzipale erstellt werden, die als Dienstrichtlinien angewendet werden können.
 
 ### Erstellen lokaler Benutzergruppen
@@ -169,7 +169,7 @@ Sie können einen lokalen Benutzer erstellen, der zum Schützen eines Diensts in
   </Users>
 </Principals>
 ~~~
-
+ 
 <!-- If an application requires that the user account and password be same on all machines (e.g. to enable NTLM authentication), the cluster manifest must set NTLMAuthenticationEnabled to true and also specify an NTLMAuthenticationPasswordSecret that will be used to generate the same password across all machines.
 
 <Section Name="Hosting">
@@ -184,8 +184,8 @@ Der Abschnitt **RunAsPolicy** für **ServiceManifestImport** gibt das Konto aus 
 
 ~~~
 <Policies>
-  <RunAsPolicy CodePackageRef="Code" UserRef="LocalAdmin" EntryPointType="Setup"/>
-  <RunAsPolicy CodePackageRef="Code" UserRef="Customer3" EntryPointType="Main"/>
+<RunAsPolicy CodePackageRef="Code" UserRef="LocalAdmin" EntryPointType="Setup"/>
+<RunAsPolicy CodePackageRef="Code" UserRef="Customer3" EntryPointType="Main"/>
 </Policies>
 ~~~
 
@@ -272,7 +272,7 @@ Das folgende Anwendungsmanifest zeigt viele der zuvor beschriebenen Einstellunge
       </Users>
    </Principals>
    <Policies>
-      <DefaultRunAsPolicy UserRef="MyDefaultAccount" />
+      <DefaultRunAsPolicy UserRef="LocalAdmin" />
    </Policies>
    <Certificates>
 	 <EndpointCertificate Name="Cert1" X509FindValue="FF EE E0 TT JJ DD JJ EE EE XX 23 4T 66 "/>
@@ -290,4 +290,4 @@ Das folgende Anwendungsmanifest zeigt viele der zuvor beschriebenen Einstellunge
 
 [image1]: ./media/service-fabric-application-runas-security/copy-to-output.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

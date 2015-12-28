@@ -234,10 +234,14 @@ Wenn Sie die Authentifizierung mithilfe des Modells `ActiveDirectoryOAuth` hinzu
 |:--|:--|
 |_authentication (übergeordnetes Element)_ |Das Authentifizierungsobjekt für die Verwendung der ActiveDirectoryOAuth-Authentifizierung.|
 |_type_ |Erforderlich. Die Art der Authentifizierung. Für die ActiveDirectoryOAuth-Authentifizierung muss der Wert `ActiveDirectoryOAuth` lauten.|
-|_tenant_ |Erforderlich. Die Mandanten-ID dient zum Identifizieren des AD-Mandanten.|
+|_tenant_ |Erforderlich. Die Mandanten-ID für den Azure AD-Mandanten.|
 |_audience_ |Erforderlich. Dieser Wert wird auf https://management.core.windows.net/.| festgelegt.
 |_clientId_ |Erforderlich. Geben Sie die Client-ID für die Azure AD-Anwendung an.|
 |_secret_ |Erforderlich. Der geheime Schlüssel des Clients, der das Token anfordert.|
+
+### Ermitteln der Mandanten-ID
+
+Durch Ausführen von `Get-AzureAccount` in Azure PowerShell können Sie die Mandanten-ID für den Azure AD-Mandanten ermitteln.
 
 ## Antworttext für die ActiveDirectoryOAuth-Authentifizierung
 
@@ -247,7 +251,7 @@ Wenn eine Anforderung mit Authentifizierungsinformationen gesendet wird, enthäl
 |:--|:--|
 |_authentication (übergeordnetes Element)_ |Das Authentifizierungsobjekt für die Verwendung der ActiveDirectoryOAuth-Authentifizierung.|
 |_type_ |Die Art der Authentifizierung. Für die ActiveDirectoryOAuth-Authentifizierung lautet der Wert `ActiveDirectoryOAuth`.|
-|_tenant_ |Die Mandanten-ID zum Identifizieren des AD-Mandanten.|
+|_tenant_ |Die Mandanten-ID für den Azure AD-Mandanten. |
 |_audience_ |Dieser Wert wird auf https://management.core.windows.net/.| festgelegt.
 |_clientId_ |Die Client-ID für die Azure AD-Anwendung.|
 
@@ -272,7 +276,7 @@ Das folgende Beispiel führt eine PUT-Anforderung aus, die die Authentifizierung
 			"x-ms-version": "2013-03-01"
 		  },
 		  "authentication":{  
-			"tenant":"contoso.com",
+			"tenant":"01234567-89ab-cdef-0123-456789abcdef",
 			"audience":"https://management.core.windows.net/",
 			"clientId":"8a14db88-4d1a-46c7-8429-20323727dfab",
 			"secret": "&lt;secret-key&gt;",
@@ -310,7 +314,7 @@ Die Antwort auf diese Anforderung lautet wie folgt:
 			"x-ms-version": "2013-03-01"
 		  },
 		  "authentication":{  
-			"tenant":"contoso.com",
+			"tenant":"01234567-89ab-cdef-0123-456789abcdef",
 			"audience":"https://management.core.windows.net/",
 			"clientId":"8a14db88-4d1a-46c7-8429-20323727dfab",
 			"type":"ActiveDirectoryOAuth"
@@ -356,4 +360,4 @@ Die Antwort auf diese Anforderung lautet wie folgt:
  
   
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

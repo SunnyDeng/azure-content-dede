@@ -20,7 +20,7 @@
 ## Einführung
 Dieser Artikel beschreibt, wie [Service Fabric](http://azure.microsoft.com/documentation/services/service-fabric/)-Anwendungen **ElasticSearch** und **Kibana** als Anwendungsüberwachungsspeicher sowie zur Indizierung und Suche verwenden können. [ElasticSearch](https://www.elastic.co/guide/index.html) ist ein quelloffenes, verteiltes und skalierbares Modul für Such- und Analysevorgänge in Echtzeit, das sich hervorragend für diese Aufgabe eignet und auf virtuellen Windows- oder Linux-Computern mit Microsoft Azure installiert werden kann. ElasticSearch zeichnet sich durch eine überaus effiziente Verarbeitung *strukturierter* Ablaufverfolgungen aus, die von Technologien wie **Ereignisablaufverfolgung für Windows (ETW)** generiert werden.
 
-ETW wird von der Service Fabric-Laufzeit zum Abrufen von Diagnoseinformationen (Ablaufverfolgungen) verwendet und ist zugleich die empfohlene Methode für das Abrufen von Diagnoseinformationen durch Service Fabric-Anwendungen. Dies ermöglicht die Korrelation zwischen Ablaufverfolgungen der Laufzeit und Ablaufverfolgungen der Anwendung, was die Problembehandlung erleichtert. Die Service Fabric-Projektvorlagen in Visual Studio enthalten eine (auf der Klasse **EventSource** basierende) Protokollierungs-API, die standardmäßig ETW-Ablaufverfolgungen ausgibt. Eine allgemeine Übersicht über die Service Fabric-Anwendungsüberwachung mit ETW finden Sie [in diesem Artikel](https://azure.microsoft.com/documentation/articles/service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally/).
+ETW wird von der Service Fabric-Laufzeit zum Abrufen von Diagnoseinformationen (Ablaufverfolgungen) verwendet und ist zugleich die empfohlene Methode für das Abrufen von Diagnoseinformationen durch Service Fabric-Anwendungen. Dies ermöglicht die Korrelation zwischen Ablaufverfolgungen der Laufzeit und Ablaufverfolgungen der Anwendung, was die Problembehandlung erleichtert. Die Service Fabric-Projektvorlagen in Visual Studio enthalten eine (auf der Klasse **EventSource** basierende) Protokollierungs-API, die standardmäßig ETW-Ablaufverfolgungen ausgibt. Eine allgemeine Übersicht über die Service Fabric-Anwendungsnachverfolgung mit ETW finden Sie [in diesem Artikel](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md).
 
 Damit die Ablaufverfolgungsdaten in ElasticSearch angezeigt werden können, müssen sie in Echtzeit (also während der Anwendungsausführung) an den Service Fabric-Clusterknoten erfasst und an den ElasticSearch-Endpunkt gesendet werden. Für die Erfassung von Ablaufverfolgungen stehen zwei Hauptoptionen zur Verfügung:
 
@@ -32,7 +32,7 @@ Im weiteren Verlauf des Artikels erfahren Sie, wie ElasticSearch in Azure einger
 
 
 ## Einrichten von ElasticSearch für Azure
-Am einfachsten lässt sich der ElasticSearch-Dienst für Azure mit [**Azure ARM-Vorlagen**](https://azure.microsoft.com/documentation/articles/resource-group-overview/) einrichten. Eine umfassende [ARM-Schnellstartvorlage für ElasticSearch](https://github.com/Azure/azure-quickstart-templates/tree/master/elasticsearch) steht im Repository für Azure-Schnellstartvorlagen zur Verfügung. Diese Vorlage verwendet separate Speicherkonten für Skalierungseinheiten (Knotengruppen) und kann separate Client- und Serverknoten mit unterschiedlichen Konfigurationen und unterschiedlicher Anzahl von angefügten Datenträgern bereitstellen.
+Am einfachsten lässt sich der ElasticSearch-Dienst für Azure mit [**Azure ARM-Vorlagen**](../resource-group-overview.md) einrichten. Eine umfassende [ARM-Schnellstartvorlage für ElasticSearch](https://github.com/Azure/azure-quickstart-templates/tree/master/elasticsearch) steht im Repository für Azure-Schnellstartvorlagen zur Verfügung. Diese Vorlage verwendet separate Speicherkonten für Skalierungseinheiten (Knotengruppen) und kann separate Client- und Serverknoten mit unterschiedlichen Konfigurationen und unterschiedlicher Anzahl von angefügten Datenträgern bereitstellen.
 
 In diesem Artikel verwenden wir allerdings eine Vorlage namens **ES-MultiNode** aus der [ELK-Verzweigung von Microsoft Patterns & Practices](https://github.com/mspnp/semantic-logging/tree/elk/). Diese Vorlage ist etwas einfacher zu verwenden und erstellt einen ElasticSearch-Cluster, der standardmäßig mittels HTTP-Standardauthentifizierung geschützt ist. Laden Sie bei GitHub zunächst das [ELK-Repository von Microsoft P & P](https://github.com/mspnp/semantic-logging/tree/elk/) auf Ihren Computer herunter. Klonen Sie hierzu entweder das Repository, oder laden Sie eine ZIP-Datei herunter. Die Vorlage „ES-MultiNode“ befindet sich im gleichnamigen Ordner.
 >[AZURE.NOTE]„ES-MultiNode“ und die dazugehörigen Skripts unterstützen momentan Version 1.7 von ElasticSearch. Unterstützung für ElasticSearch 2.0 wird zu einem späteren Zeitpunkt hinzugefügt.
@@ -240,10 +240,10 @@ Geschafft! Wenn der Dienst nun ausgeführt wird, sendet er Ablaufverfolgungen an
 ![Kibana mit PartyCluster-Anwendungsereignissen][2]
 
 ## Nächste Schritte
-- [Weitere Informationen zur Diagnose und Überwachung eines Service Fabric-Diensts](service-fabric-diagnose-monitor-your-service-index.md)
+- [Weitere Informationen zur Diagnose und Überwachung eines Service Fabric-Diensts](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md)
 
 <!--Image references-->
 [1]: ./media/service-fabric-diagnostics-how-to-use-elasticsearch/listener-lib-references.png
 [2]: ./media/service-fabric-diagnostics-how-to-use-elasticsearch/kibana.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1217_2015-->

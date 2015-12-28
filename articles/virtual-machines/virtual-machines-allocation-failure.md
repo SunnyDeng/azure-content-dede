@@ -23,7 +23,7 @@
 
 Wenn Sie einen virtuellen Computer erstellen, beendete virtuelle Computer (Aufhebung der Zuordnung) neu starten, oder die Größe eines virtuellen Computers ändern, weist Microsoft Azure Ihrem Abonnement Compute-Ressourcen zu. Unter Umständen erhalten Sie beim Ausführen dieser Schritte auch dann gelegentlich Fehler, bevor Sie die Grenzwerte des Azure-Abonnements erreichen. In diesem Artikel werden die Ursachen einiger häufig auftretender Zuordnungsfehler erläutert und mögliche Abhilfemaßnahmen vorgeschlagen. Diese Informationen können auch hilfreich sein, wenn Sie die Bereitstellung Ihrer Dienste planen.
 
-Wenn Sie beim Lesen dieses Artikels feststellen, dass Sie weitere Hilfe benötigen, können Sie Ihre Frage im [MSDN Azure-Forum oder im Stack Overflow-Forum](http://azure.microsoft.com/support/forums/) stellen, um dort Hilfe von Azure-Experten zu erhalten. Alternativ dazu haben Sie die Möglichkeit, einen Azure-Supportfall zu erstellen. Rufen Sie die [Azure-Support-Website](http://azure.microsoft.com/support/options/) auf, und klicken Sie auf **Support erhalten**.
+Suchen Sie in den Azure-Foren bei [MSDN und Stack Overflow](https://azure.microsoft.com/support/forums/), falls Sie ihr Azure-Problem mit diesem Artikel nicht beheben konnten. Sie können Ihr Problem in diesen Foren veröffentlichen oder auf Twitter an den @AzureSupport senden. Darüber hinaus können Sie eine Azure-Supportanfrage stellen, indem Sie auf der Website des [Azure-Supports](http://azure.microsoft.com/support/options/) die Option **Support erhalten** auswählen.
 
 Im Abschnitt „Behandeln allgemeiner Zuordnungsfehler“ finden Sie Schritte für häufig auftretende Probleme. Der Abschnitt „Problembehandlung bei spezifischen Zuordnungsfehlerszenarien“ enthält Lösungsschritte für spezifische Fehlermeldungen. Bevor Sie beginnen, lesen Sie die Hintergrundinformationen zur Funktionsweise der Zuordnung und zu den Ursachen von Zuordnungsfehlern.
 
@@ -32,9 +32,12 @@ Im Abschnitt „Behandeln allgemeiner Zuordnungsfehler“ finden Sie Schritte f�
 Für die Server in Azure-Rechenzentren wird eine Partitionierung in Cluster vorgenommen. Normalerweise wird versucht, eine Zuordnungsanforderung in mehreren Clustern durchzuführen. Es ist aber möglich, dass bestimmte Einschränkungen der Zuordnungsanforderung die Azure-Plattform zu dem Versuch zwingen, die Anforderung nur für einen Cluster durchzuführen. In diesem Artikel wird dies als „verknüpft mit einem Cluster“ bezeichnet. In Diagramm 1 unten ist eine normale Zuordnung dargestellt, für die versucht wird, sie für mehrere Cluster durchzuführen. In Diagramm 2 ist eine Zuordnung zu sehen, die mit Cluster 2 verknüpft ist, da dies der Ort ist, an dem der vorhandene Clouddienst „CS\_1“ oder die Verfügbarkeitsgruppe gehostet wird. ![Zuordnungsdiagramm](./media/virtual-machines-allocation-failure/Allocation1.png)
 
 ### Gründe für Zuordnungsfehler
-Wenn eine Zuordnungsanforderung mit einem Cluster verknüpft ist, ist die Wahrscheinlichkeit höher, dass keine freien Ressourcen gefunden werden, da der verfügbare Ressourcenpool kleiner ist. Falls Ihre Zuordnungsanforderung mit einem Cluster verknüpft ist, der von Ihnen angeforderte Ressourcentyp für diesen Cluster aber nicht unterstützt wird, schlägt die Anforderung auch dann fehl, wenn der Cluster über eine freie Ressource verfügt. In Diagramm 3 unten ist der Fall dargestellt, in dem eine verknüpfte Zuordnung fehlschlägt, da der einzige Kandidatencluster keine freien Ressourcen aufweist. In Diagramm 4 ist der Fall dargestellt, in dem eine verknüpfte Zuordnung fehlschlägt, weil der einzige Kandidatencluster die angeforderte Größe des virtuellen Computers nicht unterstützt, obwohl der Cluster über freie Ressourcen verfügt. ![Verknüpfte Zuordnung, Fehler](./media/virtual-machines-allocation-failure/Allocation2.png)
+Wenn eine Zuordnungsanforderung mit einem Cluster verknüpft ist, ist die Wahrscheinlichkeit höher, dass keine freien Ressourcen gefunden werden, da der verfügbare Ressourcenpool kleiner ist. Falls Ihre Zuordnungsanforderung mit einem Cluster verknüpft ist, der von Ihnen angeforderte Ressourcentyp für diesen Cluster aber nicht unterstützt wird, schlägt die Anforderung auch dann fehl, wenn der Cluster über eine freie Ressource verfügt. In Diagramm 3 unten ist der Fall dargestellt, in dem eine verknüpfte Zuordnung fehlschlägt, da der einzige Kandidatencluster keine freien Ressourcen aufweist. In Diagramm 4 ist der Fall dargestellt, in dem eine verknüpfte Zuordnung fehlschlägt, weil der einzige Kandidatencluster die angeforderte Größe des virtuellen Computers nicht unterstützt, obwohl der Cluster über freie Ressourcen verfügt.
 
-## Problembehandlung bei allgemeinen Zuordnungsfehlern im klassischen Bereitstellungsmodell
+![Verknüpfte Zuordnung, Fehler](./media/virtual-machines-allocation-failure/Allocation2.png)
+
+## Allgemeine Schritte zur Problembehandlung
+### Problembehandlung bei allgemeinen Zuordnungsfehlern im klassischen Bereitstellungsmodell
 
 Mit diesen Schritten können Sie viele Zuordnungsfehler virtueller Computer beheben.
 
@@ -42,7 +45,7 @@ Mit diesen Schritten können Sie viele Zuordnungsfehler virtueller Computer behe
 
 - Löschen Sie alle virtuellen Computer aus dem Clouddienst, und erstellen Sie virtuelle Computer neu.<br> Klicken Sie auf „Alle durchsuchen“ > „Virtuelle Computer (klassisch)“ > „Ihr virtueller Computer“ > „Löschen“. Klicken Sie auf „Neu“ > „Compute“ > [Virtuelles Computerimage].
 
-## Problembehandlung für allgemeine Zuordnungsfehler im Ressourcen-Manager-Bereitstellungsmodell
+### Problembehandlung für allgemeine Zuordnungsfehler im Ressourcen-Manager-Bereitstellungsmodell
 
 Mit diesen Schritten können Sie viele Zuordnungsfehler virtueller Computer beheben.
 
@@ -50,7 +53,8 @@ Mit diesen Schritten können Sie viele Zuordnungsfehler virtueller Computer behe
 
 	Wählen Sie nach dem Beenden aller virtuellen Computer den ersten virtuellen Computer aus, und klicken Sie auf „Starten“.
 
-## Problembehandlung bei spezifischen Zuordnungsfehlerszenarien im klassischen Bereitstellungsmodell
+## Ausführliche Problembehandlungsschritte
+### Problembehandlung bei spezifischen Zuordnungsfehlerszenarien im klassischen Bereitstellungsmodell
 Dies sind häufig vorkommende Zuordnungsszenarien, die bewirken, dass eine Zuordnungsanforderung „verknüpft“ wird. Die einzelnen Szenarien werden weiter unten in diesem Artikel genauer erläutert.
 
 - Ändern der Größe eines virtuellen Computers oder Hinzufügen zusätzlicher virtueller Computer oder Rolleninstanzen zu einem vorhandenen Clouddienst
@@ -70,7 +74,7 @@ In Diagramm 5 unten ist die Taxonomie der Zuordnungsszenarios (mit Verknüpfung
 
 > [AZURE.NOTE]Der Fehler wird in den einzelnen Zuordnungsszenarien in Kurzform aufgelistet. Ausführliche Fehlerzeichenfolgen finden Sie im [Anhang](#appendix).
 
-### Zuordnungsszenario: Ändern der Größe eines virtuellen Computers oder Hinzufügen zusätzlicher virtueller Computer oder Rolleninstanzen zu einem vorhandenen Clouddienst
+#### Zuordnungsszenario: Ändern der Größe eines virtuellen Computers oder Hinzufügen zusätzlicher virtueller Computer oder Rolleninstanzen zu einem vorhandenen Clouddienst
 **Fehler**
 
 Upgrade\_VMSizeNotSupported* oder GeneralError*
@@ -85,7 +89,7 @@ Probieren Sie es mit einer anderen Größe des virtuellen Computers, wenn der Fe
 
 Wenn der Fehler „GeneralError*“ lautet, wird der Typ der Ressource (z. B. eine bestimmte Größe des virtuellen Computers) vom Cluster wahrscheinlich unterstützt, aber der Cluster verfügt derzeit nicht über freie Ressourcen. Versuchen Sie ähnlich wie oben, die gewünschten Compute-Ressourcen per Erstellung eines neuen Clouddiensts hinzuzufügen (für den neuen Clouddienst muss eine andere VIP verwendet werden), und verwenden Sie das regionale Virtual Network zum Verbinden Ihrer Clouddienste.
 
-### Zuordnungsszenario: Neustarten beendeter virtueller Computer (Aufhebung der Zuordnung) - Teilaufhebung der Zuordnung
+#### Zuordnungsszenario: Neustarten beendeter virtueller Computer (Aufhebung der Zuordnung) - Teilaufhebung der Zuordnung
 
 **Fehler**
 
@@ -99,7 +103,7 @@ Die **Teilaufhebung** der Zuordnung bedeutet, dass Sie mindestens einen virtuell
 
 Wenn es akzeptabel ist, eine andere VIP zu verwenden, löschen Sie die beendeten virtuellen Computer (Aufhebung der Zuordnung) – aber behalten Sie die zugeordneten Datenträger bei –, und fügen Sie die virtuellen Computer über einen anderen Clouddienst wieder hinzu. Verwenden Sie ein regionales Virtual Network, um die Verbindung für Ihre Clouddienste herzustellen: 1. Wenn Ihr vorhandener Clouddienst das regionale Virtual Network nutzt, fügen Sie den neuen Clouddienst einfach demselben Virtual Network hinzu. 2. Falls Ihr vorhandener Clouddienst kein regionales virtuelles Netzwerk verwendet, erstellen Sie ein neues virtuelles Netzwerk für den neuen Clouddienst, und [stellen Sie für das vorhandene VNET dann eine Verbindung mit dem neuen VNET her](https://azure.microsoft.com/blog/vnet-to-vnet-connecting-virtual-networks-in-azure-across-different-regions/). Weitere Informationen zum [regionalen virtuellen Netzwerk](http://azure.microsoft.com/blog/2014/05/14/regional-virtual-networks/) (in englischer Sprache).
 
-### Zuordnungsszenario: Neustarten beendeter virtueller Computer (Aufhebung der Zuordnung) - Vollständige Aufhebung der Zuordnung
+#### Zuordnungsszenario: Neustarten beendeter virtueller Computer (Aufhebung der Zuordnung) - Vollständige Aufhebung der Zuordnung
 **Fehler**
 
 GeneralError*
@@ -112,7 +116,7 @@ Die **vollständige** Aufhebung der Zuordnung bedeutet, dass Sie **alle** virtue
 
 Wenn es akzeptabel ist, eine andere VIP zu verwenden, löschen Sie die ursprünglich beendeten virtuellen Computer (Aufhebung der Zuordnung) – aber behalten Sie die zugeordneten Datenträger bei –, und löschen Sie den entsprechenden Clouddienst (die zugeordneten Compute-Ressourcen wurden bereits freigegeben, als Sie die virtuellen Computer beendet bzw. die Zuordnung dafür aufgehoben haben). Erstellen Sie einen neuen Clouddienst, um die virtuellen Computer wieder hinzuzufügen.
 
-### Zuordnungsszenario: Staging-/Produktionsbereitstellungen (nur Platform-as-a-Service)
+#### Zuordnungsszenario: Staging-/Produktionsbereitstellungen (nur Platform-as-a-Service)
 **Fehler**
 
 New\_General* oder New\_VMSizeNotSupported*
@@ -125,7 +129,7 @@ Die Stagingbereitstellung und Produktionsbereitstellung eines Clouddiensts werde
 
 Löschen Sie die erste Bereitstellung und den ursprünglichen Clouddienst, falls dies akzeptabel ist, und stellen Sie den Clouddienst neu bereit. Bei dieser Aktion kann die erste Bereitstellung in einem Cluster enden, der über genügend freie Ressourcen zur Aufnahme beider Bereitstellungen verfügt, oder in einem Cluster, der die von Ihnen angeforderten Größen des virtuellen Computers unterstützt.
 
-### Zuordnungsszenario: Affinitätsgruppe - Nähe von virtuellem Computer und Dienst
+#### Zuordnungsszenario: Affinitätsgruppe - Nähe von virtuellem Computer und Dienst
 **Fehler**
 
 New\_General* oder New\_VMSizeNotSupported*
@@ -138,7 +142,7 @@ Alle Compute-Ressourcen, die einer Affinitätsgruppe zugewiesen sind, sind an ei
 
 Verwenden Sie keine Affinitätsgruppe, wenn dies nicht erforderlich ist, oder versuchen Sie, Ihre Compute-Ressourcen in mehreren Affinitätsgruppen zu gruppieren.
 
-### Zuordnungsszenario: Auf Affinitätsgruppe basierendes virtuelles Netzwerk
+#### Zuordnungsszenario: Auf Affinitätsgruppe basierendes virtuelles Netzwerk
 **Fehler**
 
 New\_General* oder New\_VMSizeNotSupported*
@@ -153,7 +157,7 @@ Falls Sie die Affinitätsgruppe nicht benötigen, können Sie ein neues regional
 
 Alternativ dazu können Sie [Ihr auf der Affinitätsgruppe basierendes virtuelles Netzwerk zu einem regionalen virtuellen Netzwerk migrieren](http://azure.microsoft.com/blog/2014/11/26/migrating-existing-services-to-regional-scope/), und dann versuchen, die gewünschten Ressourcen wieder hinzuzufügen.
 
-## Problembehandlung für spezifische Zuordnungsfehlerszenarios im Azure-Ressourcen-Manager-Bereitstellungsmodell
+### Problembehandlung für spezifische Zuordnungsfehlerszenarios im Azure-Ressourcen-Manager-Bereitstellungsmodell
 Dies sind häufig vorkommende Zuordnungsszenarien, die bewirken, dass eine Zuordnungsanforderung „verknüpft“ wird. Die einzelnen Szenarien werden weiter unten in diesem Artikel genauer erläutert.
 
 - Ändern der Größe eines virtuellen Computers oder Hinzufügen zusätzlicher virtueller Computer oder Rolleninstanzen zu einem vorhandenen Clouddienst
@@ -164,7 +168,7 @@ Wenn Sie einen Zuordnungsfehler erhalten, sollten Sie prüfen, ob eines der besc
 
 Solange für den Fehler nicht „Die angeforderte Größe des virtuellen Computers wird nicht unterstützt“ angegeben wird, können Sie den Vorgang im Allgemeinen immer zu einem späteren Zeitpunkt wiederholen. Unter Umständen wurden im Cluster in der Zwischenzeit genügend Ressourcen für die Verarbeitung Ihrer Anforderung bereitgestellt. Unten sind Problemumgehungen angegeben, falls das Problem darin besteht, dass die angeforderte Größe des virtuellen Computers nicht unterstützt wird.
 
-### Zuordnungsszenario: Ändern der Größe eines virtuellen Computers oder Hinzufügen weiterer virtueller Computer zu einer vorhandenen Verfügbarkeitsgruppe
+#### Zuordnungsszenario: Ändern der Größe eines virtuellen Computers oder Hinzufügen weiterer virtueller Computer zu einer vorhandenen Verfügbarkeitsgruppe
 **Fehler**
 
 Upgrade\_VMSizeNotSupported* oder GeneralError*
@@ -179,7 +183,7 @@ Probieren Sie es mit einer anderen Größe des virtuellen Computers, wenn der Fe
 
 Wenn der Fehler „GeneralError*“ lautet, wird der Typ der Ressource (z. B. eine bestimmte Größe des virtuellen Computers) vom Cluster wahrscheinlich unterstützt, aber der Cluster verfügt derzeit nicht über freie Ressourcen. Falls der virtuelle Computer Teil einer anderen Verfügbarkeitsgruppe sein kann, erstellen Sie einen neuen virtuellen Computer in einer anderen Verfügbarkeitsgruppe (in derselben Region). Dieser neue virtuelle Computer kann dann demselben Virtual Network hinzugefügt werden.
 
-### Zuordnungsszenario: Neustarten beendeter virtueller Computer (Aufhebung der Zuordnung) - Teilaufhebung der Zuordnung
+#### Zuordnungsszenario: Neustarten beendeter virtueller Computer (Aufhebung der Zuordnung) - Teilaufhebung der Zuordnung
 **Fehler**
 
 GeneralError*
@@ -192,7 +196,7 @@ Die **Teilaufhebung** der Zuordnung bedeutet, dass Sie mindestens einen virtuell
 
 Versuchen Sie, alle virtuellen Computer der Verfügbarkeitsgruppe zu beenden, bevor Sie den ersten neu starten. Dadurch wird sichergestellt, dass ein neuer Zuordnungsversuch ausgeführt wird und ein neuer Cluster ausgewählt werden kann, der verfügbare Kapazität aufweist.
 
-### Zuordnungsszenario: Neustarten beendeter virtueller Computer (Aufhebung der Zuordnung) - Vollständige Aufhebung der Zuordnung
+#### Zuordnungsszenario: Neustarten beendeter virtueller Computer (Aufhebung der Zuordnung) - Vollständige Aufhebung der Zuordnung
 **Fehler**
 
 GeneralError*
@@ -223,9 +227,4 @@ Die Bereitstellung konnte nicht aktualisiert werden. Die angeforderte VM-Größe
 
 Auf dem Server ist ein interner Fehler aufgetreten. Versuchen Sie die Anforderung erneut. -oder- Für den Dienst konnte keine Zuordnung erstellt werden.
 
-## Zusätzliche Ressourcen
-### Kontaktieren des Azure-Kundensupports
-
-Suchen Sie in den Azure-Foren bei [MSDN und Stack Overflow](http://azure.microsoft.com/support/forums/) weitere Informationen, falls Sie ihr Azure-Problem mit diesem Artikel nicht beheben konnten. Sie können auch einen Azure-Supportfall zu Ihrem Problem erstellen. Rufen Sie die [Azure-Support-Website](http://azure.microsoft.com/support/options/) auf, und klicken Sie auf „Support erhalten“. Informationen zur Nutzung von Azure-Support finden Sie unter [Häufig gestellte Fragen zum Azure-Support](http://azure.microsoft.com/support/faq/).
-
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

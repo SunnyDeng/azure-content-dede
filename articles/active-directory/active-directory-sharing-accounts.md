@@ -48,7 +48,7 @@ Azure AD unterstützt freigegebene Konten für alle lizenzierten Benutzer von E
 
 Zu den Azure AD-Features zur gemeinsamen Nutzung von Konten gehören folgende Funktionen:
 
-- [Einmaliges Anmelden per Kennwort](active-directory-passwords-getting-started.md)
+- [Einmaliges Anmelden per Kennwort](active-directory-appssoaccess-whatis.md#password-based-single-sign-on)
 - Agent für einmaliges Anmelden per Kennwort
 - [Gruppenzuweisung](active-directory-accessmanagement-self-service-group-management.md)
 - Apps mit benutzerdefinierten Kennwörtern
@@ -72,4 +72,4 @@ Mithilfe von Azure AD lassen sich gemeinsam genutzte Konten durch Multi-Factor 
 - [Schützen von Apps durch bedingten Zugriff](active-directory-conditional-access.md)
 - [Self-Service-Gruppenverwaltung/SSAA](active-directory-accessmanagement-self-service-group-management.md)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1217_2015-->

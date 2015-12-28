@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/07/2015" 
+	ms.date="12/15/2015" 
 	ms.author="juliako"/>
 
 
@@ -21,7 +21,7 @@
 
 Dieses Thema enthält Informationen zum Einfügen verschiedener Typen von Werbeeinblendungen auf Clientseite.
 
-Informationen zu Untertiteln und der Unterstützung von Werbeeinblendungen in Livestreaming-Videos finden Sie unter [Standards für unterstützte Untertitel und für Werbeeinblendungen](https://msdn.microsoft.com/library/azure/dn783466.aspx#caption_ad).
+Informationen zu Untertiteln und der Unterstützung von Werbeeinblendungen in Livestreaming-Videos finden Sie unter [Standards für unterstützte Untertitel und für Werbeeinblendungen](media-services-manage-channels-overview.md#cc_and_ads).
 
  
 ##<a id="insert_ads_into_media"></a>Einfügen von Werbeeinblendungen in Ihre Medien
@@ -808,8 +808,8 @@ Das folgende Beispiel zeigt, wie eine Mid-Roll-Overlay-Werbeeinblendung geplant 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
  
-##Weitere Informationen
+##Siehe auch
 
 [Entwickeln von Videoplayeranwendungen](media-services-develop-video-players.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

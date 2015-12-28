@@ -19,12 +19,19 @@
 
 # Konfigurationsbeispiele für Linux-VM-Erweiterungen
 
+> [AZURE.SELECTOR]
+- [Azure PowerShell - Template](virtual-machines-extensions-configuration-samples-windows.md)
+- [Azure CLI - Template](virtual-machines-extensions-configuration-samples-linux.md)
+
+<br>
+
+
 Dieser Artikel enthält Beispielkonfigurationen der Azure-VM-Erweiterungen für virtuelle Linux-Computer.
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell.
 
 
-Weitere Informationen zu diesen Erweiterungen finden Sie unter [Azure-VM-Erweiterungen](https://msdn.microsoft.com/library/azure/dn606311.aspx).
+Weitere Informationen zu diesen Erweiterungen finden Sie unter [Azure-VM-Erweiterungen](virtual-machines-extensions-features.md).
 
 Weitere Informationen zum Erstellen von Erweiterungsvorlagen finden Sie unter [Erstellen von Erweiterungsvorlagen](virtual-machines-extensions-authoring-templates.md).
 
@@ -190,4 +197,4 @@ Dies ist eine vollständige VM-Vorlage zum Erstellen eines virtuellen Linux-Comp
 
 [Benutzerdefinierte Skriptserweiterung auf einem virtuellen Linux-Computer](https://github.com/Azure/azure-quickstart-templates/blob/b1908e74259da56a92800cace97350af1f1fc32b/mongodb-on-ubuntu/azuredeploy.json/)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Migrieren virtueller Windows-Computer von Amazon Web Services (AWS) zu Microsoft Azure"
+	pageTitle="Migrieren virtueller Windows-Computer von Amazon Web Services (AWS) zu Azure mit Site Recovery | Microsoft Azure"
 	description="Verwenden Sie Azure Site Recovery, um in Amazon Web Services (AWA) ausgeführte virtuelle Windows-Computer zu Azure zu migrieren."
 	services="site-recovery"
 	documentationCenter=""
@@ -13,10 +13,10 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="backup-recovery"
-	ms.date="08/26/2015"
+	ms.date="12/14/2015"
 	ms.author="raynew"/>
 
-#  Migrieren virtueller Windows-Computer in Amazon Web Services (AWS) zu Azure
+#  Migrieren virtueller Windows-Computer in Amazon Web Services (AWS) zu Azure mit Azure Site Recovery
 
 
 ## Übersicht
@@ -55,7 +55,7 @@ Sie benötigen Folgendes:
 	
 		![Prozessserver](./media/site-recovery-migrate-aws-to-azure/ASR_AWSMigration3.png)
 
-5. [Installieren Sie die neuesten Updates.](site-recovery-vmware-to-azure.md#step-5-install-latest-updates) Stellen Sie sicher, dass alle installierten Komponentenserver auf dem neuesten Stand sind.
+5. [Installieren Sie die neuesten Updates](site-recovery-vmware-to-azure.md#step-5-install-latest-updates). Stellen Sie sicher, dass alle installierten Komponentenserver auf dem neuesten Stand sind.
 6. [Erstellen Sie eine Schutzgruppe.](site-recovery-vmware-to-azure.md#step-7-create-a-protection-group) Richten Sie eine Schutzgruppe ein, um migrierte Instanzen mithilfe von Site Recovery zu schützen. Die für eine Gruppe angegebenen Replikationseinstellungen gelten für alle Instanzen, die Sie dieser Gruppe hinzufügen. 
 7. [Richten Sie virtuelle Computer ein.](site-recovery-vmware-to-azure.md#step-8-set-up-machines-you-want-to-protect) Der Mobilitätsdienst muss für jede Instanz installiert werden (entweder automatisch oder manuell).
 8. [Aktivieren Sie den Schutz für virtuelle Computer.](site-recovery-vmware-to-azure.md#step-9-enable-protection) Fügen Sie Instanzen einer Schutzgruppe hinzu, um den Schutz zu aktivieren. Beachten Sie Folgendes:
@@ -71,4 +71,4 @@ Sie benötigen Folgendes:
 
 Veröffentlichen von Kommentaren oder Fragen im [Site Recovery-Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

@@ -32,15 +32,16 @@ Weitere Informationen finden Sie unter [Erste Schritte mit Application Insights 
 * Vergleichen Sie die alte und neue Version der Datei "ApplicationInsights.config". Übernehmen Sie wieder alle Anpassungen, die Sie an der alten Version vorgenommen haben.
 * Erstellen Sie die Projektmappe neu.
 
-## Version 1.2
+## Version 1.1.1
 
-### Windows-App-SDK
+### Windows SDK
 
-- Korrigieren Sie eine „FileNotFound“-Ausnahme, die verhindert, dass beibehaltene Telemetrien gesendet werden, nachdem die App erneut geöffnet wird.
+- Beheben einer ausbleibenden Reaktion bei Abstürzen bei Nutzung des Silverlight SDK von Windows Phone. Nach dieser Änderung wird jeder Absturz, der später als etwa 2 Sekunden nach dem Aufruf von WindowsAppInitialier.InitializeAsync(...) auftritt, auf dem Datenträger gespeichert und bei der nächsten Ausführung der App gesendet. Wenn ein Absturz innerhalb von etwa 2 Sekunden nach dem Aufruf auftritt, wird er ignoriert.  
+- Legen Sie die NuGet-Abhängigkeiten auf eine bestimmte Version von Core und „Microsoft.ApplicationInsights.PersistenceChannel“ (Version 1.2.3) fest.   
 
 ### Core SDK
 
-- Erste Version des Application Insights-SDK, das von [Github](http://github.com/microsoft/ApplicationInsights-dotnet) geliefert wird
+- Core wird auf GitHub verwaltet. Zukünftige Versionsinformationen des Core SDK finden Sie [in Github](http://github.com/Microsoft/ApplicationInsights-dotnet/releases)
 
 ## Version 1.1
 
@@ -94,4 +95,4 @@ Vorschau vom 28.04.2015
 
 Für ältere Versionen sind keine Versionshinweise verfügbar.
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1217_2015-->

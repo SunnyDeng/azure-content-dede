@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="tbd" 
-   ms.date="11/13/2015"
+   ms.date="12/15/2015"
    ms.author="yuemlu"/>
 
 # Azure-Gastbetriebssystemreleases und SDK-Kompatibilitätsmatrix
@@ -27,7 +27,12 @@ Bietet Ihnen aktuelle Informationen zu den neuesten Azure-Gastbetriebssystemrele
 > [AZURE.TIP]Abonnieren Sie den [RSS-Feed zu Gastbetriebssystemupdates][rss], um immer sofort über alle Gastbetriebssystemänderungen benachrichtigt zu werden. Die in diesem Feed genannten Änderungen werden etwa einmal pro Woche in diese Seite integriert.
 
 
+
 ## Neuigkeiten
+
+###### **9. Dezember 2015**
+Die Bereitstellung des Gastbetriebssystems Dezember beginnt am 10. Dezember 2015 und soll voraussichtlich am 8. Januar 2016 freigegeben werden.
+
 ###### **12. November 2015**  
 Am 7. August 2014 kündigte Microsoft an, dass der Support für .NET Framework 4, 4.5 und 4.5.1 am 12. Januar 2016 beendet wird. Es wird empfohlen, dass Kunden und Entwickler die verfügbare Aktualisierung auf .NET Framework 4.5.2 bis zum 12. Januar 2016 durchführen, um weiterhin technischen Support und Sicherheitsupdates zu erhalten. Weitere Informationen finden Sie in der Microsoft .NET Framework Support Lifecycle-Richtlinie.
 
@@ -168,10 +173,11 @@ Unterstützt .NET 4.0, 4.5, 4.5.1, 4.5.2 (Hinweis 2)
 
 | Gastbetriebssystemversion | Konfigurationszeichenfolge | Herausgabedatum | Deaktivierungsdatum | Ablaufdatum |
 | ---------------- | -------------------------- | ---------------------- | ------------ | --- |
-| 4\.26 | WA-GUEST-OS-4.26\_201511-02 | Voraussichtlich: 10. Dezember 2015 | Wird bei Veröffentlichung von 4.28 aktualisiert | TBD |
-| 4\.26 | WA-GUEST-OS-4.26\_201511-01 | Voraussichtlich: 10. Dezember 2015 | Wird bei Veröffentlichung von 4.28 aktualisiert | TBD |
+| 4\.27 | WA-GUEST-OS-4.27\_201512-01 | Voraussichtlich: 8. Januar 2016 | Wird bei Veröffentlichung von 4.29 aktualisiert | TBD |
+| 4\.26 | WA-GUEST-OS-4.26\_201511-02 | Voraussichtlich: 16. Dezember 2015 | Wird bei Veröffentlichung von 4.28 aktualisiert | TBD |
+| 4\.26 | WA-GUEST-OS-4.26\_201511-01 | 10\. Dezember 2015 | Wird bei Veröffentlichung von 4.28 aktualisiert | TBD |
 | 4\.25 | WA-GUEST-OS-4.25\_201510-01 | 6\. November 2015 | Wird bei Veröffentlichung von 4.27 aktualisiert | TBD |
-| 4\.24 | WA-GUEST-OS-4.24\_201509-01 | 1\. Oktober 2015 | Wird bei Veröffentlichung von 4.26 aktualisiert | TBD |
+| 4\.24 | WA-GUEST-OS-4.24\_201509-01 | 1\. Oktober 2015 | 10\. Januar 2016 | TBD |
 | 4\.23 | WA-GUEST-OS-4.23\_201508-02 | 9\. September 2015 | 6\. Dezember 2015 | TBD |
 | 4\.22 | WA-GUEST-OS-4.22\_201507-02 | 7\. August 2015 | 1\. November 2015 | TBD |
 | 4\.21 | WA-GUEST-OS-4.21\_201506-01 | 9\. Juli 2015 | 9\. Oktober 2015 | TBD |
@@ -197,10 +203,11 @@ Unterstützt .NET 4.0, 4.5
 
 | Gastbetriebssystemversion | Konfigurationszeichenfolge | Herausgabedatum | Deaktivierungsdatum | Ablaufdatum |
 | ---------------- | -------------------------- | ---------------------- | ------------ | --- |
-| 3\.33 | WA-GUEST-OS-3.33\_201511-02 | Voraussichtlich: 10. Dezember 2015 | Wird bei Veröffentlichung von 3.35 aktualisiert | TBD |
-| 3\.33 | WA-GUEST-OS-3.33\_201511-01 | Voraussichtlich: 10. Dezember 2015 | Wird bei Veröffentlichung von 3.35 aktualisiert | TBD |
+| 3\.34 | WA-GUEST-OS-3.34\_201512-01 | Voraussichtlich: 8. Januar 2016 | Wird bei Veröffentlichung von 3.36 aktualisiert | TBD |
+| 3\.33 | WA-GUEST-OS-3.33\_201511-02 | Voraussichtlich: 16. Dezember 2015 | Wird bei Veröffentlichung von 3.35 aktualisiert | TBD |
+| 3\.33 | WA-GUEST-OS-3.33\_201511-01 | 10\. Dezember 2015 | Wird bei Veröffentlichung von 3.35 aktualisiert | TBD |
 | 3\.32 | WA-GUEST-OS-3.32\_201510-01 | 6\. November 2015 | Wird bei Veröffentlichung von 3.34 aktualisiert | TBD |
-| 3\.31 | WA-GUEST-OS-3.31\_201509-01 | 1\. Oktober 2015 | Wird bei Veröffentlichung von 3.33 aktualisiert | TBD |
+| 3\.31 | WA-GUEST-OS-3.31\_201509-01 | 1\. Oktober 2015 | 10\. Januar 2016 | TBD |
 | 3\.30 | WA-GUEST-OS-3.30\_201508-02 | 9\. September 2015 | 6\. Dezember 2015 | TBD |
 | 3\.29 | WA-GUEST-OS-3.29\_201507-02 | 7\. August 2015 | 1\. November 2015 | TBD |
 | 3\.28 | WA-GUEST-OS-3.28\_201506-01 | 9\. Juli 2015 | 9\. Oktober 2015 | TBD |
@@ -227,10 +234,11 @@ Unterstützt .NET 3.5, 4.0
 
 | Gastbetriebssystemversion | Konfigurationszeichenfolge | Herausgabedatum | Deaktivierungsdatum | Ablaufdatum |
 | ---------------- | -------------------------- | ---------------------- | ------------ | --- |
-| 2\.45 | WA-GUEST-OS-2.45\_201511-02 | Voraussichtlich: 10. Dezember 2015 | Wird bei Veröffentlichung von 2.47 aktualisiert | TBD |
-| 2\.45 | WA-GUEST-OS-2.45\_201511-01 | Voraussichtlich: 10. Dezember 2015 | Wird bei Veröffentlichung von 2.47 aktualisiert | TBD |
+| 2\.46 | WA-GUEST-OS-2.46\_201512-01 | Voraussichtlich: 8. Januar 2015 | Wird bei Veröffentlichung von 2.48 aktualisiert | TBD |
+| 2\.45 | WA-GUEST-OS-2.45\_201511-02 | Voraussichtlich: 16. Dezember 2015 | Wird bei Veröffentlichung von 2.47 aktualisiert | TBD |
+| 2\.45 | WA-GUEST-OS-2.45\_201511-01 | 10\. Dezember 2015 | Wird bei Veröffentlichung von 2.47 aktualisiert | TBD |
 | 2\.44 | WA-GUEST-OS-2.44\_201510-01 | 6\. November 2015 | Wird bei Veröffentlichung von 2.46 aktualisiert | TBD |
-| 2\.43 | WA-GUEST-OS-2.43\_201509-01 | 1\. Oktober 2015 | Wird bei Veröffentlichung von 2.45 aktualisiert | TBD |
+| 2\.43 | WA-GUEST-OS-2.43\_201509-01 | 1\. Oktober 2015 | 10\. Januar 2016 | TBD |
 | 2\.42 | WA-GUEST-OS-2.42\_201508-02 | 9\. September 2015 | 6\. Dezember 2015 | TBD |
 | 2\.41 | WA-GUEST-OS-2.41\_201507-02 | 7\. August 2015 | 1\. November 2015 | TBD |
 | 2\.40 | WA-GUEST-OS-2.40\_201506-01 | 9\. Juli 2015 | 9\. Oktober 2015 | TBD |
@@ -394,4 +402,4 @@ Aufgrund der partiellen Einführung der letzten beiden Releases können Personen
 [fam1retire]: cloud-services-guestos-family1-retirement.md
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

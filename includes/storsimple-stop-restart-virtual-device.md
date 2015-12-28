@@ -1,21 +1,19 @@
-#### To stop and start a virtual device
-To stop a virtual device, click its name, and then click **Shutdown**. While the virtual device is shutting down, its status is **Stopping**. After the virtual device is stopped, its status is **Stopped**.
+#### So beenden und starten Sie ein virtuelles Gerät
+Um ein virtuelles Gerät zu beenden, klicken Sie auf dessen Namen und anschließend auf **Herunterfahren**. Während des Herunterfahrens des virtuellen Geräts wird der Status **Wird beendet** angezeigt. Nach dem Beenden des virtuellen Geräts ändert sich der Status in **Beendet**.
 
-Use the following cmdlets to stop and start a virtual device.
+Verwenden Sie die folgenden Cmdlets zum Beenden und Starten eines virtuellen Geräts.
 
 `Stop-AzureVM -ServiceName "MyStorSimpleservice1" -Name "MyStorSimpleDevice"`
 
 
 `Start-AzureVM -ServiceName "MyStorSimpleservice1" -Name "MyStorSimpleDevice"`
     
-#### To restart a virtual device
+#### So starten Sie ein virtuelles Gerät neu
 
-When a virtual device is running and you want to restart it, click its name, and then click **Restart**. While the virtual device is restarting, its status is **Restarting**. When the virtual device is ready for you to use, its status is **Running**.
+Wenn ein virtuelles Gerät ausgeführt wird und Sie dieses neu starten möchten, klicken Sie auf den Namen und anschließend auf **Neu starten**. Während des Neustarts des virtuellen Geräts wird der Status **Wird neu gestartet** angezeigt. Wenn das virtuelle Gerät zur Verwendung bereit ist, wird der Status **Wird ausgeführt** angezeigt.
 
-Use the following cmdlet to restart a virtual device.
+Verwenden Sie die folgenden Cmdlets für den Neustart eines virtuellen Geräts.
 
 `Restart-AzureVM -ServiceName "MyStorSimpleservice1" -Name "MyStorSimpleDevice"`
 
-
-
-
+<!---HONumber=AcomDC_1217_2015-->

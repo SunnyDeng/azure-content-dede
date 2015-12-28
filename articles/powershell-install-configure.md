@@ -121,11 +121,11 @@ Diese Ressourcen enthalten Hilfethemen für bestimmte Cmdlets:
 
 
 
-- Referenzinformationen zu den Cmdlets in den Azure PowerShell-Modulen sind in der Azure-Bibliothek verfügbar. Informationen finden Sie in der [Azure-Cmdlet-Referenz](http://msdn.microsoft.com/library/windowsazure/jj554330.aspx).
+- Referenzinformationen zu den Cmdlets in den Azure PowerShell-Modulen sind in der Azure-Bibliothek verfügbar. Informationen finden Sie in der [Azure-Cmdlet-Referenz](https://msdn.microsoft.com/library/azure/dn708514.aspx).
 
 Hilfe von der Community erhalten Sie in den folgenden beliebten Foren:
 
 - [Azure-Forum auf MSDN](http://go.microsoft.com/fwlink/p/?LinkId=320212)
 - [Stackoverflow](http://go.microsoft.com/fwlink/?LinkId=320213)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

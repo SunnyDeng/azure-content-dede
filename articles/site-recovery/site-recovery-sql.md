@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Notfallwiederherstellung mit SQL Server und Azure Site Recovery | Microsoft Azure" 
+	pageTitle="Schützen von SQL Server mit der Notfallwiederherstellung von SQL Server und Azure Site Recovery | Microsoft Azure" 
 	description="Azure Site Recovery koordiniert Replikation, Failover und Wiederherstellung von SQL Server zu einen lokalen Standort oder zu Azure." 
 	services="site-recovery" 
 	documentationCenter="" 
@@ -13,11 +13,11 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/18/2015" 
+	ms.date="12/14/2015" 
 	ms.author="raynew"/>
 
 
-# Notfallwiederherstellung mit SQL Server und Azure Site Recovery 
+# Schützen von SQL Server mit der Notfallwiederherstellung von SQL Server und Azure Site Recovery 
 
 Site Recovery (ein Azure-Dienst) bereichert Ihre Strategie für Geschäftskontinuität und Notfallwiederherstellung durch die Orchestrierung von Replikation, Failover und Wiederherstellung Ihrer virtuellen Computer und physischen Server. Site Recovery unterstützt eine Reihe von Replikationsmechanismen für konsistenten Schutz und einheitliche Replikations- und Failovervorgänge zu Azure oder zu einem sekundären Datencenter. Eine Übersicht über alle Bereitstellungsszenarien für Azure Site Recovery finden Sie [hier](site-recovery-overview.md).
 
@@ -374,4 +374,4 @@ Bei SQL-Standardclustern ist für das Failback nach einem nicht geplanten Failov
 
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

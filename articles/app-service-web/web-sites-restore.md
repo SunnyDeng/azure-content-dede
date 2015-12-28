@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Wiederherstellen einer Web-App in Azure App Service" 
-	description="Erfahren Sie, wie Sie Ihre Web-App aus einer Sicherung wiederherstellen." 
+	pageTitle="Wiederherstellen einer App in Azure App Service" 
+	description="Erfahren Sie, wie Sie Ihre App aus einer Sicherung wiederherstellen." 
 	services="app-service" 
 	documentationCenter="" 
 	authors="cephalin" 
@@ -13,34 +13,40 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/16/2015" 
+	ms.date="12/11/2015" 
 	ms.author="cephalin"/>
 
-# Wiederherstellen einer Web-App in Azure App Service
+# Wiederherstellen einer App in Azure App Service
 
-In diesem Artikel erfahren Sie, wie Sie eine Web-App wiederherstellen, die zuvor mit der Funktion zur Sicherung von [App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714) gesichert wurde. Weitere Informationen finden Sie unter [Sichern von App Service-Web-Apps](web-sites-backup.md).
+In diesem Artikel erfahren Sie, wie Sie eine App Service-App wiederherstellen, die zuvor mit der [App Service](app-service-value-prop-what-is)-Sicherungsfunktion gesichert wurde. Weitere Informationen finden Sie unter [App Service-Sicherungen](web-sites-backup.md).
 
-[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
+Mit dem App Service-Wiederherstellungsfeature können Sie Ihre App mit den zugehörigen verknüpften Datenbanken (SQL-Datenbank oder MySQL) bei Bedarf in einem vorherigen Zustand wiederherstellen oder basierend auf der Sicherung der ursprünglichen App eine neue App erstellen. Das Erstellen einer neuen App, die parallel zur letzten Version ausgeführt wird, kann für A/B-Tests nützlich sein.
 
-Mit der Wiederherstellungsfunktion für Web-Apps können Sie Ihre Web-App bei Bedarf in einem vorherigen Zustand wiederherstellen oder eine neue Web-App auf der Grundlage einer Sicherung Ihrer ursprünglichen Web-App erstellen. Das Erstellen einer neuen Web-App, die parallel zur letzten Version ausgeführt wird, kann für A/B-Tests nützlich sein.
-
-Die Wiederherstellungsfunktion für Web-Apps ist auf dem Blatt **Sicherungen** im [Azure-Vorschauportal](http://portal.azure.com) verfügbar, jedoch nur im Standard- oder Premium-Modus. Weitere Informationen zum Skalieren Ihrer App im Standard- oder Premium-Modus finden Sie unter [Skalieren von Web-Apps in Azure App Service](web-sites-scale.md). Beachten Sie, dass im Premium-Modus eine größere Anzahl von täglichen Sicherungen als im Standardmodus ausgeführt werden kann.
+Die App Service-Wiederherstellungsfunktion ist im [Azure-Portal](http://portal.azure.com) auf dem Blatt **Sicherungen** verfügbar, jedoch nur im Standard- oder Premium-Tarif. Weitere Informationen zum Skalieren Ihrer App im Standard- oder Premium-Tarif finden Sie unter [Skalieren einer App in Azure App Service](web-sites-scale.md). Beachten Sie, dass im Premium-Tarif eine größere Anzahl von täglichen Sicherungen ausgeführt werden kann als im Standard-Tarif.
 
 <a name="PreviousBackup"></a>
-## So stellen Sie eine Web-App aus einer zuvor erstellten Sicherung wieder her
+## So stellen Sie eine App aus einer zuvor erstellten Sicherung wieder her
 
-1. Klicken Sie auf dem Blatt **Einstellungen** Ihrer Web-App im Azure-Portal auf die Option **Sicherungen**, um das Blatt **Sicherungen** anzuzeigen. Führen Sie auf diesem Blatt einen Bildlauf aus, und wählen Sie in der Sicherungsliste eine der Sicherungsoptionen anhand der Angaben für **SICHERUNGSZEIT** und **STATUS** aus.
+1. Klicken Sie auf dem Blatt **Einstellungen** Ihrer App im Azure-Portal auf **Sicherungen**, um das Blatt **Sicherungen** anzuzeigen. Klicken Sie dann in der Befehlsleiste auf **Jetzt wiederherstellen**. 
 	
-	![Sicherungsquelle auswählen][ChooseBackupSource]
-	
-2. Wählen Sie im oberen Bereich des Blatts **Sicherungen** die Option **Jetzt wiederherstellen** aus.
-
 	!["Jetzt wiederherstellen" auswählen][ChooseRestoreNow]
 
-3. Um die vorhandene Web-App wiederherzustellen, überprüfen Sie auf dem Blatt **Wiederherstellen** alle angegebenen Details, und klicken Sie dann auf **OK**.
+3. Wählen Sie auf dem Blatt **Wiederherstellen** zuerst die Sicherungsquelle aus.
+
+	![](./media/web-sites-restore/021ChooseSource.png)
 	
-Sie können Ihre Web-App auch als neue Web-App wiederherstellen, indem Sie den Bereich **WEB-APP** des Blatts **Wiederherstellen** auswählen und den Bereich **Eine neue Web-App erstellen** auswählen.
+	Die Option **App-Sicherung** zeigt alle Sicherungen, die direkt von der App selbst erstellt werden, da nur diese von den Apps erkannt werden. Sie können problemlos eine davon auswählen. Mit der Option **Speicher** können Sie die eigentliche ZIP-Datei der Sicherung aus dem Speicherkonto und dem Container auswählen, der auf Ihrem Blatt **Sicherungen** konfiguriert ist. Wenn Sicherungsdateien aus anderen Apps im Container enthalten sind, können Sie auch diese zur Wiederherstellung auswählen.
+
+4. Geben Sie anschließend das Ziel für die App-Wiederherstellung unter **Wiederherstellungsziel** an.
+
+	![](./media/web-sites-restore/022ChooseDestination.png)
 	
+	>[AZURE.WARNING]Wenn Sie **Überschreiben** wählen, werden alle Daten im Zusammenhang mit Ihrer vorhandenen App gelöscht. Bevor Sie auf **OK** klicken, stellen Sie sicher, dass alles genau Ihren Vorstellungen entspricht.
+	
+	Sie können **Vorhandene App** auswählen, um die App-Sicherung in einer anderen App in derselben Ressourcengruppe wiederherzustellen. Bevor Sie diese Option verwenden, sollten Sie bereits eine andere App in der Ressourcengruppe erstellt haben, deren Datenbankkonfiguration derjenigen entspricht, die in der App-Sicherung definiert ist.
+	
+5. Klicken Sie auf **OK**.
+
 <a name="StorageAccount"></a>
 ## Herunterladen oder Löschen einer Sicherung aus einem Speicherkonto
 	
@@ -65,11 +71,11 @@ Sie können Ihre Web-App auch als neue Web-App wiederherstellen, indem Sie den B
 <a name="OperationLogs"></a>
 ## Anzeigen der Überwachungsprotokolle
 	
-1. Um Details über den Erfolg oder Misserfolg des Wiederherstellungsvorgangs für die Web-App anzuzeigen, wählen Sie den Bereich **Überwachungsprotokoll** auf dem Hauptblatt **Durchsuchen** aus. 
+1. Um Details über den Erfolg oder Misserfolg des Wiederherstellungsvorgangs für die App anzuzeigen, wählen Sie den Bereich **Überwachungsprotokoll** auf dem Hauptblatt **Durchsuchen** aus. 
 	
 	Auf dem Blatt **Audio-Protokoll** werden alle Ihre Vorgänge mit Ebene, Status, Ressourcen und Zeitdetails angezeigt.
 	
-2. Führen Sie einen Bildlauf im Blatt aus, um Vorgänge im Zusammenhang mit Ihrer Web-App zu suchen.
+2. Scrollen Sie durch das Blatt, um Vorgänge im Zusammenhang mit Ihrer App zu suchen.
 3. Um weitere Details zu einem Vorgang anzuzeigen, wählen Sie den Vorgang in der Liste aus.
 	
 Auf dem Blatt "Details" werden die verfügbaren Informationen im Zusammenhang mit dem Vorgang angezeigt.
@@ -77,11 +83,9 @@ Auf dem Blatt "Details" werden die verfügbaren Informationen im Zusammenhang mi
 >[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 	
 ## Änderungen
-* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
+* Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 
 <!-- IMAGES -->
-[ChooseBackupSource]: ./media/web-sites-restore/01ChooseBackupSource.png
 [ChooseRestoreNow]: ./media/web-sites-restore/02ChooseRestoreNow.png
 [ViewContainers]: ./media/web-sites-restore/03ViewContainers.png
 [StorageAccountFile]: ./media/web-sites-restore/02StorageAccountFile.png
@@ -98,4 +102,4 @@ Auf dem Blatt "Details" werden die verfügbaren Informationen im Zusammenhang mi
 [OperationDetails]: ./media/web-sites-restore/13OperationDetails.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

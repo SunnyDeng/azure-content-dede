@@ -9,11 +9,11 @@
 
 <tags
 	ms.service="event-hubs"
-	ms.workload="core"
+	ms.workload="na"
 	ms.tgt_pltfrm="c"
 	ms.devlang="csharp"
 	ms.topic="article"
-	ms.date="09/01/2015"
+	ms.date="12/09/2015"
 	ms.author="sethm"/>
 
 # Erste Schritte mit Event Hubs
@@ -24,13 +24,13 @@
 
 Event Hubs sind ein hochgradig skalierbares Aufnahmesystem, das Millionen von Ereignissen pro Sekunde aufnehmen kann, wodurch eine Anwendung die Möglichkeit erhält, die von Ihren verbundenen Geräten und Anwendungen erzeugten immensen Datenmengen zu verarbeiten und zu analysieren. Nach der Erfassung in Event Hubs können Sie Daten über einen beliebigen Echtzeit-Analyseanbieter oder ein Speichercluster transformieren und speichern.
 
-Weitere Informationen finden Sie unter [Übersicht über Event Hubs].
+Weitere Informationen finden Sie unter [Übersicht über Event Hubs][].
 
-In diesem Lernprogramm erfahren Sie, wie Nachrichten an einen Event Hub mithilfe einer Konsolenanwendung in C aufgenommen werden können und wie Sie diese parallel mit der C#-[Ereignisprozessorhost-Bibliothek] abrufen.
+In diesem Lernprogramm erfahren Sie, wie Nachrichten an einen Event Hub mithilfe einer Konsolenanwendung in C aufgenommen werden können und wie Sie diese parallel mit der C#-[Ereignisprozessorhost-Bibliothek][] abrufen.
 
 Zum Durchführen dieses Lernprogramms benötigen Sie Folgendes:
 
-+ Eine C-Entwicklungsumgebung. In diesem Lernprogramm wird vom GCC-Stack auf einem [virtuellen Linux-Computer mit Azure](../virtual-machines-linux-tutorial.md) mit Ubuntu 14.04 ausgegangen. Anweisungen für andere Umgebungen werden in externen Links bereitgestellt.
++ Eine C-Entwicklungsumgebung. In diesem Lernprogramm wird vom GCC-Stack auf einem [virtuellen Linux-Computer mit Azure](../virtual-machines/virtual-machines-linux-tutorial.md) mit Ubuntu 14.04 ausgegangen. Anweisungen für andere Umgebungen werden in externen Links bereitgestellt.
 
 + Microsoft Visual Studio Express 2013 für Windows
 
@@ -79,11 +79,11 @@ Ihr Event Hub wird jetzt erstellt, und Sie verfügen über die zum Senden und Em
 
 Sie können jetzt die Anwendung ausführen.
 
-1.	Führen Sie das Projekt **Receiver** in Visual Studio aus, und warten Sie dann, bis es die Empfänger für alle Partitionen gestartet hat.
+1.	Führen Sie in Visual Studio das Projekt **Receiver** aus, und warten Sie dann, bis die Empfänger für alle Partitionen gestartet wurden.
 
    	![][21]
 
-2.	Führen Sie das Programm **sender** aus, und sehen Sie sich die im Empfängerfenster angezeigten Ereignisse an.
+2.	Führen Sie das Programm **Sender** aus, und sehen Sie sich die im Empfängerfenster angezeigten Ereignisse an.
 
    	![][24]
 
@@ -91,10 +91,10 @@ Sie können jetzt die Anwendung ausführen.
 
 Nachdem Sie eine funktionierende Anwendung erstellt haben, die einen Ereignis-Hub erstellt und Daten sendet und empfängt, können Sie mit den folgenden Szenarios fortfahren:
 
-- Eine vollständige [Beispielanwendung mit Verwendung von Ereignis-Hubs].
-- Das Beispiel [Horizontales Hochskalieren der Ereignisverarbeitung mit Event Hubs]
-- Eine [Messaginglösung mit Warteschlange] unter Verwendung von Service Bus-Warteschlangen.
-- [Übersicht über Event Hubs]
+- Eine vollständige [Beispielanwendung mit Verwendung von Ereignis-Hubs][].
+- Das Beispiel [Horizontales Hochskalieren der Ereignisverarbeitung mit Event Hubs][]
+- Eine [Messaginglösung mit Warteschlange][] unter Verwendung von Service Bus-Warteschlangen.
+- [Übersicht über Event Hubs][]
 
 <!-- Images. -->
 [1]: ./media/event-hubs-c-ephcs-getstarted/create-event-hub1.png
@@ -114,8 +114,8 @@ Nachdem Sie eine funktionierende Anwendung erstellt haben, die einen Ereignis-Hu
 [Ereignisprozessorhost-Bibliothek]: https://www.nuget.org/packages/Microsoft.Azure.ServiceBus.EventProcessorHost
 [Übersicht über Event Hubs]: event-hubs-overview.md
 [Übersicht über Event Hubs]: event-hubs-overview.md
-[Beispielanwendung mit Verwendung von Ereignis-Hubs]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
-[Horizontales Hochskalieren der Ereignisverarbeitung mit Event Hubs]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-45f43fc3
-[Messaginglösung mit Warteschlange]: ../service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
+[Beispielanwendung mit Verwendung von Ereignis-Hubs]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097
+[Horizontales Hochskalieren der Ereignisverarbeitung mit Event Hubs]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-45f43fc3
+[Messaginglösung mit Warteschlange]: ../service-bus/service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

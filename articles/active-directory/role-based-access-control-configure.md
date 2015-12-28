@@ -13,16 +13,16 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="identity"
-	ms.date="12/04/2015"
+	ms.date="12/14/2015"
 	ms.author="inhenk"/>
 
-# Rollenbasierte Zugriffssteuerung in Azure Active Directory
+# Rollenbasierte Access Control in Azure
 
 ## Rollenbasierte Zugriffssteuerung
-Die rollenbasierte Zugriffssteuerung in Azure (Role-Based Access Control, RBAC) ermöglicht eine präzise Zugriffsverwaltung für Azure. Mithilfe von RBAC können Sie Aufgaben in Ihrem DevOps-Team verteilen und Benutzern nur den Zugriff gewähren, den sie zur Ausführung ihrer Aufgaben benötigen.
+Die rollenbasierte Access Control in Azure (RBAC) ermöglicht eine präzise Zugriffsverwaltung für Azure. Mithilfe von RBAC können Sie Aufgaben in Ihrem DevOps-Team verteilen und Benutzern nur den Zugriff gewähren, den sie zur Ausführung ihrer Aufgaben benötigen.
 
 ### Grundlagen zur Zugriffsverwaltung in Azure
-Jedes Azure-Abonnement befindet sich in einem Azure Active Directory. Nur Benutzern, Gruppen und Anwendungen aus diesem Verzeichnis kann Verwaltungszugriff auf Ressourcen im zugehörigen Azure-Abonnement gewährt werden. Die Verwaltung kann über das klassische Azure-Portal, Azure-Befehlszeilentools und Azure-Verwaltungs-APIs erfolgen.
+Jedes Azure-Abonnement befindet sich in einem Azure Active Directory. Nur Benutzern, Gruppen und Anwendungen aus diesem Verzeichnis kann Verwaltungszugriff auf Ressourcen im zugehörigen Azure-Abonnement gewährt werden. Die Verwaltung kann über das Azure-Portal, Azure-Befehlszeilentools und Azure-Verwaltungs-APIs erfolgen.
 
 Der Zugriff wird gewährt, indem Benutzern, Gruppen und Anwendungen die jeweils geeignete RBAC-Rolle auf der richtigen Ebene zugewiesen wird. Um Zugriff auf das gesamten Abonnement zu gewähren, weisen Sie eine Rolle auf Abonnementebene zu. Um Zugriff auf eine bestimmte Ressourcengruppe innerhalb eines Abonnements zu gewähren, weisen Sie eine Rolle auf Ressourcengruppenebene zu. Sie können Rollen auch für bestimmte Ressourcen zuweisen, wie z. B.für Websites, virtuelle Computer und Subnetze, um nur Zugriff auf eine Ressource zu gewähren.
 
@@ -44,9 +44,9 @@ Klassische Administratoren und Co-Admins für Abonnements verfügen über vollst
 Das präzisere Autorisierungsmodell (Azure RBAC) wird nur vom neuen Azure-Portal (https://portal.azure.com) und den Azure-Ressourcen-Manager-APIs unterstützt. Benutzer und Anwendungen, denen eine RBAC-Rolle zugewiesen ist (auf Abonnement-/Ressourcengruppen-/Ressourcenebene), können das klassische Verwaltungsportal (http://manage.windowsazure.com) und die Azure Service Manager-APIs nicht verwenden.
 
 ### Autorisierung für Verwaltungsvorgänge im Vergleich zu Datenvorgängen
-Das präzisere Autorisierungsmodell (Azure RBAC) wird nur für Verwaltungsvorgänge für die Azure-Ressourcen im klassischen Azure-Portal und in den Azure-Ressourcen-Manager-APIs unterstützt. Über RBAC können nicht alle Vorgänge auf Datenebene für Azure-Ressourcen autorisiert werden. Während das Erstellen/Lesen/Aktualisieren/Löschen von Speicherkonten über RBAC gesteuert werden kann, lassen sich dieselben Vorgänge für Blobs oder Tabellen in einem Speicherkonto noch nicht über RBAC steuern. Ebenso kann das Erstellen/Lesen/Aktualisieren/Löschen einer SQL-Datenbank über RBAC gesteuert werden, während sich dieselben Vorgänge noch nicht für SQL-Tabellen in einer Datenbank über RBAC steuern lassen.
+Das präzisere Autorisierungsmodell (Azure RBAC) wird nur für Verwaltungsvorgänge für die Azure-Ressourcen im Azure-Portal und in den Azure-Ressourcen-Manager-APIs unterstützt. Über RBAC können nicht alle Vorgänge auf Datenebene für Azure-Ressourcen autorisiert werden. Während das Erstellen/Lesen/Aktualisieren/Löschen von Speicherkonten über RBAC gesteuert werden kann, lassen sich dieselben Vorgänge für Blobs oder Tabellen in einem Speicherkonto noch nicht über RBAC steuern. Ebenso kann das Erstellen/Lesen/Aktualisieren/Löschen einer SQL-Datenbank über RBAC gesteuert werden, während sich dieselben Vorgänge noch nicht für SQL-Tabellen in einer Datenbank über RBAC steuern lassen.
 
-## Verwalten des Zugriffs mit dem klassischen Azure-Portal
+## Verwalten des Zugriffs über das Azure-Portal
 ### Zugriff anzeigen
 Wählen Sie die Zugriffseinstellungen auf dem Blatt der Ressourcengruppe im Abschnitt mit den grundlegenden Informationen aus. Auf dem Blatt **Benutzer** werden alle Benutzer, Gruppen und Anwendungen aufgeführt, denen Zugriff auf die Ressourcengruppe gewährt wurde. Der Zugriff wird entweder in der Ressourcengruppe zugewiesen oder aus einer Zuweisung im übergeordneten Abonnement geerbt.
 
@@ -191,4 +191,4 @@ Mit der **AssignableScopes**-Eigenschaft der benutzerdefinierten Rolle wird fest
 
 **Wer kann benutzerdefinierte Rollen anzeigen, die für die Zuweisung in einem Bereich verfügbar sind?** Benutzer, die den Vorgang `Microsoft.Authorization/roleDefinition/read` für einen Bereich durchführen können, können die RBAC-Rollen anzeigen, die für die Zuweisung in diesem Bereich verfügbar sind. Alle integrierten Rollen in Azure RBAC ermöglichen das Anzeigen von Rollen, die für die Zuweisung verfügbar sind.
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

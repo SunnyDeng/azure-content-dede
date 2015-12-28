@@ -3,7 +3,7 @@
 	description="Hier erfahren Sie, wie Sie die kontinuierliche Zustellung für Azure-Cloud-Apps einrichten. Codebeispiele für MSBuild-Befehlszeilenanweisungen und PowerShell-Skripts."
 	services="cloud-services"
 	documentationCenter=""
-	authors="kempb"
+	authors="TomArcher"
 	manager="douge"
 	editor="tglee"/>
 
@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="08/19/2015"
-	ms.author="kempb"/>
+	ms.date="11/18/2015"
+	ms.author="tarcher"/>
 
 # Kontinuierliche Zustellung für Cloud Services in Azure
 
-Der in diesem Artikel beschriebene Prozess zeigt, wie die kontinuierliche Zustellung für Azure-Cloud-Apps eingerichtet wird. Dieser Prozess ermöglicht es Ihnen, Pakete automatisch zu erstellen und nach jedem Einchecken von Code in Azure bereitzustellen. Der in diesem Artikel beschriebene Prozess der Paketerstellung entspricht dem Befehl "Paket" in Visual Studio, die Veröffentlichungsschritte entsprechen dem Befehl "Veröffentlichen" in Visual Studio. Der Artikel befasst sich mit den Methoden, die üblicherweise dazu dienen, einen Buildserver mit MSBuild-Befehlszeilenanweisungen und Windows PowerShell-Skripts zu erstellen. Außerdem zeigt er, wie Visual Studio Team Foundation Server - Team Build-Definitionen optional für die Verwendung von MSBuild-Befehlen und PowerShell-Skripts konfiguriert werden. Der Prozess kann an Ihre Buildumgebung und Azure-Zielumgebungen angepasst werden.
+Der in diesem Artikel beschriebene Prozess zeigt, wie die kontinuierliche Zustellung für Azure-Cloud-Apps eingerichtet wird. Dieser Prozess ermöglicht es Ihnen, Pakete automatisch zu erstellen und nach jedem Einchecken von Code in Azure bereitzustellen. Der in diesem Artikel beschriebene Prozess der Paketerstellung entspricht dem Befehl **Paket** in Visual Studio, die Veröffentlichungsschritte entsprechen dem Befehl **Veröffentlichen** in Visual Studio. Der Artikel befasst sich mit den Methoden, die üblicherweise dazu dienen, einen Buildserver mit MSBuild-Befehlszeilenanweisungen und Windows PowerShell-Skripts zu erstellen. Außerdem zeigt er, wie Visual Studio Team Foundation Server - Team Build-Definitionen optional für die Verwendung von MSBuild-Befehlen und PowerShell-Skripts konfiguriert werden. Der Prozess kann an Ihre Buildumgebung und Azure-Zielumgebungen angepasst werden.
 
 Eine bequemere Möglichkeit hierzu bietet Visual Studio Team Services, eine in Azure gehostete Version von Team Foundation Server. Weitere Informationen finden Sie unter [Fortlaufende Bereitstellung für Azure mithilfe von Visual Studio Team Services][].
 
@@ -30,27 +30,27 @@ Bevor Sie ein Azure-Paket mithilfe von MSBuild erstellen können, müssen Sie di
 
 Visual Studio muss nicht auf dem Buildserver installiert werden. Wenn Sie Team Foundation-Builddienst zum Verwalten des Buildservers verwenden möchten, folgen Sie den Anweisungen in der Dokumentation [Einrichten des Team Foundation-Builddiensts][].
 
-1.  Installieren Sie auf dem Buildserver [.NET Framework 4][], [.NET Framework 4.5][] oder [.NET Framework 4.5.2][], die MSBuild enthalten.
-2.  Installieren Sie die [Azure-Entwicklertools für .NET](http://go.microsoft.com/fwlink/?LinkId=623518) (ersetzen Sie im zugehörigen Link "MicrosoftAzureAuthoringTools-x64.msi" durch "MicrosoftAzureAuthoringTools-x86.msi", falls der Buildserver ein 32-Bit-Betriebssystem bzw. einen 32-Bit-Prozessor verwendet.).
-3. Installieren Sie die [Azure-Bibliotheken für .NET](http://go.microsoft.com/fwlink/?LinkId=623519) (ändern Sie den zugehörigen Link bei Bedarf auf "MicrosoftAzureLibsForNet-x86.msi").
+1.  Installieren Sie auf dem Buildserver [.NET Framework 4.5.2][], das MSBuild einschließt.
+2.  Installieren Sie die neuesten [Azure-Entwicklertools für .NET](https://azure.microsoft.com/develop/net/).
+3.	Installieren Sie die [Microsoft Azure-Bibliotheken für .NET](http://go.microsoft.com/fwlink/?LinkId=623519).
 4.  Kopieren Sie die Datei "Microsoft.WebApplication.targets" aus einer Visual Studio-Installation auf den Buildserver.
 
-	Auf einem Computer, auf dem Visual Studio installiert ist, befindet sich diese Datei im Verzeichnis "C:\\Program Files (x86) \\MSBuild\\Microsoft\\VisualStudio\\v14.0\\WebApplications" ("v12.0" für Visual Studio 2013). Kopieren Sie die Datei in das gleiche Verzeichnis auf dem Buildserver.
-5.  Installieren Sie die [Azure-Tools für Visual Studio](http://go.microsoft.com/fwlink/?LinkId=623520). Verwenden Sie zum Erstellen von Visual Studio 2015-Projekten "MicrosoftAzureTools.VS140.exe", und "MicrosoftAzureTools.VS120.exe" zum Erstellen von Visual Studio 2013-Projekten.
+	Auf einem Computer, auf dem Visual Studio installiert ist, befindet sich diese Datei im Verzeichnis „C:\\Programme (x86) \\MSBuild\\Microsoft\\VisualStudio\\v14.0\\WebApplications“ Kopieren Sie die Datei in das gleiche Verzeichnis auf dem Buildserver.
+5.  Installieren Sie die [Azure-Tools für Visual Studio](https://www.visualstudio.com/features/azure-tools-vs.aspx).
 
 ## Schritt 2: Erstellen eines Pakets mit MSBuild-Befehlen
 
 In diesem Abschnitt wird erläutert, wie ein MSBuild-Befehl konstruiert wird, der ein Azure-Paket erstellt. Führen Sie diesen Schritt auf dem Buildserver aus, um sicherzustellen, dass alles richtig konfiguriert wurde und dass der MSBuild-Befehl ordnungsgemäß funktioniert. Sie können diese Befehlszeile vorhandenen Buildskripts auf dem Buildserver hinzufügen, oder Sie können die Befehlszeile in einer TFS-Builddefinition verwenden, wie im nächsten Abschnitt beschrieben. Weitere Informationen über Befehlszeilenparameter und MSBuild finden Sie unter [MSBuild-Befehlszeilenreferenz](https://msdn.microsoft.com/library/ms164311%28v=vs.140%29.aspx).
 
-1.  Wenn Visual Studio auf dem Buildserver installiert ist, klicken Sie auf **Start**, klicken Sie auf **Alle Programme**. Suchen Sie anschließend im Ordner **Visual Studio-Tools** nach **Visual Studio-Eingabeaufforderung**, und klicken Sie darauf.
+1.  Wenn Visual Studio auf dem Buildserver installiert ist, suchen Sie unter Windows im Ordner **Visual Studio Tools** nach **Visual Studio-Eingabeaufforderung**, und wählen Sie diese Option aus.
 
-    Wenn Visual Studio auf dem Buildserver nicht installiert ist, öffnen Sie eine Eingabeaufforderung, und stellen Sie sicher, dass MSBuild.exe im Pfad verfügbar ist. MSBuild wird mit .NET Framework unter "%WINDIR%\\Microsoft.NET\\Framework\\*Version*" installiert. Um z. B. MSBuild.exe der Umgebungsvariable PATH hinzuzufügen, wenn .NET Framework 4 installiert ist, geben Sie an der Eingabeaufforderung den folgenden Befehl ein:
+    Wenn Visual Studio auf dem Buildserver nicht installiert ist, öffnen Sie eine Eingabeaufforderung, und stellen Sie sicher, dass MSBuild.exe im Pfad verfügbar ist. MSBuild wird mit .NET Framework unter "%WINDIR%\\Microsoft.NET\\Framework\*Version*" installiert. Um z. B. MSBuild.exe der Umgebungsvariable PATH hinzuzufügen, wenn .NET Framework 4 installiert ist, geben Sie an der Eingabeaufforderung den folgenden Befehl ein:
 
         set PATH=%PATH%;"C:\Windows\Microsoft.NET\Framework\v4.0.30319"
 
 2.  Navigieren Sie an der Eingabeaufforderung zu dem Ordner, der die zu erstellende Azure-Projektdatei enthält.
 
-3.  Führen Sie msbuild wie im folgenden Beispiel mit der Option "/target:Publish" aus:
+3.  Führen Sie MSBuild wie im folgenden Beispiel mit der Option „/target:Publish“ aus:
 
         MSBuild /target:Publish
 
@@ -75,9 +75,9 @@ In diesem Abschnitt wird erläutert, wie ein MSBuild-Befehl konstruiert wird, de
 
     Sobald Sie eine entsprechende MSBuild-Befehlszeile zum Erstellen Ihrer Projekte und zur Kombination dieser Projekte in einem Azure-Paket konstruiert und getestet haben, können Sie diese Befehlszeile Ihren Buildskripts hinzufügen. Wenn der Buildserver benutzerdefinierte Skripts verwendet, hängt dieser Prozess von den Besonderheiten Ihres benutzerdefinierten Buildprozesses ab. Wenn Sie TFS als Buildumgebung verwenden, können Sie den Anweisungen im nächsten Schritt folgen, um den Azure-Paketbuild zu Ihrem Buildprozess hinzuzufügen.
 
-## Schritt 3: Erstellen eines Pakets mit TFS Team Build (optional)
+## Schritt 3: Erstellen eines Pakets mit TFS Team Build
 
-Wenn Sie Team Foundation Server (TFS) als Buildcontroller und den Buildserver als TFS-Buildcomputer eingerichtet haben, können Sie für Ihr Azure-Paket einen automatischen Build einrichten. Informationen zum Einrichten und Verwenden von Team Foundation Server als Buildsystem finden Sie unter [Skalieren des Buildsystems][]. Beim folgenden Verfahren wird insbesondere vorausgesetzt, dass Sie Ihren Buildserver, wie unter [Bereitstellen und Konfigurieren eines Buildservers][] beschrieben, konfiguriert und ein Teamprojekt sowie ein Clouddienstprojekt in diesem Teamprojekt erstellt haben.
+Wenn Sie Team Foundation Server (TFS) als Buildcontroller und den Buildserver als TFS-Buildcomputer eingerichtet haben, können Sie optional für Ihr Azure-Paket einen automatischen Build einrichten. Informationen zum Einrichten und Verwenden von Team Foundation Server als Buildsystem finden Sie unter [Skalieren des Buildsystems][]. Beim folgenden Verfahren wird insbesondere vorausgesetzt, dass Sie Ihren Buildserver, wie unter [Bereitstellen und Konfigurieren eines Buildservers][] beschrieben, konfiguriert und ein Teamprojekt sowie ein Clouddienstprojekt in diesem Teamprojekt erstellt haben.
 
 Um TFS zum Erstellen von Azure-Paketen zu konfigurieren, führen Sie die folgenden Schritte aus:
 
@@ -85,13 +85,13 @@ Um TFS zum Erstellen von Azure-Paketen zu konfigurieren, führen Sie die folgend
 
     ![][0]
 
-2.  Klicken Sie auf die Registerkarte **Trigger**, und geben Sie die gewünschten Bedingungen für die Erstellung des Pakets an. Geben Sie z. B. **Fortlaufende Integration** an, um das Paket zu erstellen, sobald ein Einchecken von Quellcode erfolgt.
+2.  Wählen Sie die Registerkarte **Trigger** aus, und geben Sie die gewünschten Bedingungen für die Erstellung des Pakets an. Geben Sie z. B. **Fortlaufende Integration** an, um das Paket zu erstellen, sobald ein Einchecken von Quellcode erfolgt.
 
 3.	Wählen Sie die Registerkarte **Quelleinstellungen** aus, und vergewissern Sie sich, dass Ihr Projektordner in der Spalte **Quellcodeverwaltungsordner** aufgeführt ist und der Status **Aktiv** lautet.
 
 4.  Wählen Sie die Registerkarte **Build-Standardwerte**, und prüfen Sie unter "Buildcontroller" den Namen des Buildservers. Wählen Sie außerdem die Option **Kopieren der Buildausgabe in den folgenden Ablageordner**, und geben Sie den gewünschten Ablageort an.
 
-5.  Klicken Sie auf die Registerkarte **Prozess**. Wählen Sie auf der Registerkarte "Prozess" die Standardvorlage aus, und wählen Sie dann unter **Build** das Projekt aus, sofern es noch nicht ausgewählt ist. Erweitern Sie dann im Abschnitt **Build** des Rasters den Abschnitt **Erweitert**.
+5.  Wählen Sie die **Prozessvorlage** aus. Wählen Sie auf der Registerkarte "Prozess" die Standardvorlage aus, und wählen Sie dann unter **Build** das Projekt aus, sofern es noch nicht ausgewählt ist. Erweitern Sie dann im Abschnitt **Build** des Rasters den Abschnitt **Erweitert**.
 
 6.  Wählen Sie **MSBuild-Argumente**, und legen Sie die entsprechenden MSBuild-Befehlszeilenargumente wie in Schritt 2 oben erläutert fest. Geben Sie z. B. **/t:Publish /p:PublishDir=\\\myserver\\drops\** ein, um ein Paket zu erstellen und die Paketdateien in das Verzeichnis "\\\myserver\\drops\" zu kopieren:
 
@@ -109,37 +109,37 @@ In diesem Abschnitt wird erläutert, wie ein Windows PowerShell-Skript erstellt 
 
 2.  Starten Sie Azure PowerShell über das Startmenü oder die Startseite. Auf diese Weise werden die Azure PowerShell-Cmdlets geladen.
 
-3.  Prüfen Sie an der PowerShell-Eingabeaufforderung, ob die PowerShell-Cmdlets geladen sind. Geben Sie dazu den Teilbefehl "Get-Azure" ein, und drücken Sie anschließend die Tabulatortaste, um die Anweisung zu vervollständigen.
+3.  Prüfen Sie an der PowerShell-Eingabeaufforderung, ob die PowerShell-Cmdlets geladen sind. Geben Sie dazu den Teilbefehl `Get-Azure` ein, und drücken Sie anschließend die Tabulatortaste, um die Anweisung zu vervollständigen.
 
     Wenn Sie die Tabulatortaste mehrfach drücken, werden verschiedene Azure PowerShell-Befehle angezeigt.
 
 4.  Prüfen Sie, ob Sie eine Verbindung mit dem Azure-Abonnement herstellen können, indem Sie die Abonnementinformationen aus der .publishsettings-Datei importieren.
 
-    Import-AzurePublishSettingsFile c:\\scripts\\WindowsAzure\\default.publishsettings
+    `Import-AzurePublishSettingsFile c:\scripts\WindowsAzure\default.publishsettings`
 
-    Geben Sie danach folgenden Befehl ein:
+    Geben Sie anschließend folgenden Befehl ein:
 
-    Get-AzureSubscription
+    `Get-AzureSubscription`
 
     Damit werden Informationen über Ihr Abonnement angezeigt. Prüfen Sie, ob alles richtig ist.
 
-4.  Speichern Sie die am [Ende dieses Artikels][] bereitgestellte Skriptvorlage im Skriptordner unter "C:\\scripts\\WindowsAzure\\**PublishCloudService.ps1**".
+4.  Speichern Sie die am Ende dieses Artikels bereitgestellte Skriptvorlage im Skriptordner unter „C:\\scripts\\WindowsAzure\**PublishCloudService.ps1**“.
 
 5.  Prüfen Sie den Parameterabschnitt des Skripts. Fügen Sie Standardwerte hinzu, oder ändern Sie diese. Diese Werte können durch Übergabe expliziter Parameter stets überschrieben werden.
 
 6.  Stellen Sie sicher, dass in Ihrem Abonnement gültige Clouddienst- und Speicherkonten erstellt sind, die vom Veröffentlichungsskript als Ziel angesprochen werden können. Das Speicherkonto (Blobspeicher) dient dazu, das Bereitstellungspaket und die Konfigurationsdatei hochzuladen und vorübergehend zu speichern, während die Bereitstellung erstellt wird.
 
-    -   Wenn Sie einen neuen Clouddienst erstellen möchten, können Sie dieses Skript aufrufen oder das klassischen Azure-Portal verwenden. Der Name des Clouddiensts wird als Präfix in einem vollqualifizierten Domänennamen verwendet und muss daher eindeutig sein.
+    -   Wenn Sie einen neuen Clouddienst erstellen möchten, können Sie dieses Skript aufrufen oder das Azure-Verwaltungsportal verwenden. Der Name des Clouddiensts wird als Präfix in einem vollqualifizierten Domänennamen verwendet und muss daher eindeutig sein.
 
             New-AzureService -ServiceName "mytestcloudservice" -Location "North Central US" -Label "mytestcloudservice"
 
-    -   Wenn Sie ein neues Speicherkonto erstellen möchten, können Sie dieses Skript aufrufen oder das klassischen Azure-Portal verwenden. Der Name des Speicherkontos wird als Präfix in einem vollqualifizierten Domänennamen verwendet und muss daher eindeutig sein. Sie können versuchen, den gleichen Namen wie für den Clouddienst zu verwenden.
+    -   Wenn Sie ein neues Speicherkonto erstellen möchten, können Sie dieses Skript aufrufen oder das Azure-Verwaltungsportal verwenden. Der Name des Speicherkontos wird als Präfix in einem vollqualifizierten Domänennamen verwendet und muss daher eindeutig sein. Sie können versuchen, den gleichen Namen wie für den Clouddienst zu verwenden.
 
             New-AzureStorageAccount -ServiceName "mytestcloudservice" -Location "North Central US" -Label "mytestcloudservice"
 
 7.  Rufen Sie das Skript direkt in Azure PowerShell auf, oder reihen Sie es in der Host-Buildautomatisierung nach dem Paketbuild ein.
 
-    **WARNUNG:** Vorhandene Bereitstellungen werden, falls sie erkannt werden, standardmäßig stets vom Skript gelöscht oder ersetzt. Dies ist notwendig, um die kontinuierliche Zustellung bei der Automatisierung zu ermöglichen, bei der keine Eingabeaufforderungen möglich sind.
+    >[AZURE.IMPORTANT]Standardmäßig werden vorhandene Bereitstellungen, falls sie erkannt werden, von dem Skript stets gelöscht oder ersetzt. Dies ist notwendig, um die kontinuierliche Zustellung bei der Automatisierung zu ermöglichen, bei der keine Eingabeaufforderungen möglich sind.
 
     **Beispielszenario 1:** kontinuierliche Bereitstellung in der Stagingumgebung eines Diensts:
 
@@ -165,23 +165,23 @@ In diesem Abschnitt wird erläutert, wie ein Windows PowerShell-Skript erstellt 
 
         Add-AzureCertificate -serviceName <CLOUDSERVICENAME> -certToDeploy (get-item cert:\CurrentUser\MY<THUMBPRINT>)
 
-    Beispiel:
+    Zum Beispiel:
 
         Add-AzureCertificate -serviceName 'mytestcloudservice' -certToDeploy (get-item cert:\CurrentUser\MY\C33B6C432C25581601B84C80F86EC2809DC224E8
 
-    Alternativ können Sie die PFX-Zertifikatdatei mit privatem Schlüssel exportieren und Zertifikate über das klassischen Azure-Portal zu jedem Zielclouddienst hochladen. Weitere Informationen hierzu finden Sie im folgenden Artikel: [http://msdn.microsoft.com/library/windowsazure/gg443832.aspx][].
+    Alternativ können Sie die PFX-Zertifikatdatei mit privatem Schlüssel exportieren und Zertifikate über das Azure-Verwaltungsportal zu jedem Zielclouddienst hochladen. Weitere Informationen hierzu finden Sie im folgenden Artikel: [http://msdn.microsoft.com/library/windowsazure/gg443832.aspx][].
 
     **Upgrade einer Bereitstellung im Vergleich zum Löschen einer Bereitstellung -> neue Bereitstellung**
 
     In der Standardeinstellung aktualisiert das Skript eine Bereitstellung ($enableDeploymentUpgrade = 1), wenn kein Parameter übergeben wird oder der Wert 1 explizit übergeben wird. Bei Einzelinstanzen bietet dies den Vorteil, dass die Bereitstellung weniger Zeit in Anspruch nimmt als eine vollständige Bereitstellung. Bei Instanzen, die hoch verfügbar sein müssen, bietet dies außerdem den Vorteil, dass einige Instanzen weiter aktiv sein können, während andere aktualisiert werden (wandernde Updatedomäne). Außerdem wird Ihr VIP nicht gelöscht.
 
-    Die Bereitstellung des Upgrades kann im Skript deaktiviert werden ($enableDeploymentUpgrade = 0) oder durch Übergabe von "-enableDeploymentUpgrade 0" als Parameter. Dadurch wird das Skriptverhalten so geändert, dass zuerst vorhandene Bereitstellungen gelöscht werden und anschließend eine neue Bereitstellung erstellt wird.
+    Die Bereitstellung des Upgrades kann im Skript deaktiviert werden ($enableDeploymentUpgrade = 0) oder durch Übergabe von *-enableDeploymentUpgrade 0* als Parameter. Dadurch wird das Skriptverhalten so geändert, dass zuerst vorhandene Bereitstellungen gelöscht werden und anschließend eine neue Bereitstellung erstellt wird.
 
-    **Warnung:** Vorhandene Bereitstellungen werden, falls sie erkannt werden, standardmäßig stets vom Skript gelöscht oder ersetzt. Dies ist notwendig, um die kontinuierliche Zustellung bei der Automatisierung zu ermöglichen, bei der keine Eingabeaufforderungen möglich sind.
+    >[AZURE.IMPORTANT]Standardmäßig werden vorhandene Bereitstellungen, falls sie erkannt werden, von dem Skript stets gelöscht oder ersetzt. Dies ist notwendig, um die kontinuierliche Zustellung bei der Automatisierung zu ermöglichen, bei der keine Eingabeaufforderungen möglich sind.
 
-## Schritt 5: Veröffentlichen eines Pakets mit TFS Team Build (optional)
+## Schritt 5: Veröffentlichen eines Pakets mit TFS Team Build
 
-Mit diesem Schritt wird TFS Team Build in das in Schritt 4 erstellte Skript eingereiht, das die Veröffentlichung des Paketbuilds in Azure übernimmt. Dies hat die Änderung der von der Builddefinition verwendeten Prozessvorlage zur Folge, sodass eine Veröffentlichungsaktivität am Ende des Workflows ausgeführt wird. Die Veröffentlichungsaktivität führt den PowerShell-Befehl aus und übergibt Parameter aus dem Build. Die Ausgabe der MSBuild-Ziele und des Veröffentlichungsskripts wird in die Standard-Buildausgabe geleitet.
+Mit diesem optionalen Schritt wird TFS Team Build in das in Schritt 4 erstellte Skript eingereiht, das die Veröffentlichung des Paketbuilds in Azure übernimmt. Dies hat die Änderung der von der Builddefinition verwendeten Prozessvorlage zur Folge, sodass eine Veröffentlichungsaktivität am Ende des Workflows ausgeführt wird. Die Veröffentlichungsaktivität führt den PowerShell-Befehl aus und übergibt Parameter aus dem Build. Die Ausgabe der MSBuild-Ziele und des Veröffentlichungsskripts wird in die Standard-Buildausgabe geleitet.
 
 1.  Bearbeiten Sie die für die kontinuierliche Bereitstellung verantwortliche Builddefinition.
 
@@ -558,22 +558,19 @@ Write-Output "$(Get-Date -f $timeStampFormat) - Azure Cloud Service deploy scrip
 Informationen zum Aktivieren des Remotedebuggens bei Verwendung der kontinuierlichen Zustellung finden Sie unter [Aktivieren von Remotedebuggen, wenn kontinuierliche Zustellung für die Veröffentlichung in Azure verwendet wird](cloud-services-virtual-machines-dotnet-continuous-delivery-remote-debugging.md).
 
   [Fortlaufende Bereitstellung für Azure mithilfe von Visual Studio Team Services]: cloud-services-continuous-delivery-use-vso.md
-  [Einrichten des Team Foundation-Builddiensts]: http://go.microsoft.com/fwlink/p/?LinkId=239963
-  [.NET Framework 4]: http://go.microsoft.com/fwlink/?LinkId=239538
-  [.NET Framework 4.5]: http://go.microsoft.com/fwlink/?LinkId=245484
-  [.NET Framework 4.5.2]: http://go.microsoft.com/fwlink/?LinkId=521668
-	[1]: http://go.microsoft.com/fwlink/p/?LinkId=239966
-  [Skalieren des Buildsystems]: http://go.microsoft.com/fwlink/?LinkId=238798
-  [Bereitstellen und Konfigurieren eines Buildservers]: http://go.microsoft.com/fwlink/?LinkId=238799
-  [0]: ./media/cloud-services-dotnet-continuous-delivery/tfs-01.png
-  [2]: ./media/cloud-services-dotnet-continuous-delivery/tfs-02.png
-  [Azure PowerShell-Cmdlets]: http://go.microsoft.com/fwlink/?LinkId=256262
+  [Einrichten des Team Foundation-Builddiensts]: https://msdn.microsoft.com/library/ee259687.aspx
+  [.NET Framework 4]: https://www.microsoft.com/download/details.aspx?id=17851
+  [.NET Framework 4.5]: https://www.microsoft.com/download/details.aspx?id=30653
+  [.NET Framework 4.5.2]: https://www.microsoft.com/download/details.aspx?id=42643
+  [Skalieren des Buildsystems]: https://msdn.microsoft.com/library/dd793166.aspx
+  [Bereitstellen und Konfigurieren eines Buildservers]: https://msdn.microsoft.com/library/ms181712.aspx
+  [Azure PowerShell-Cmdlets]: powershell-install-configure.md
   [the .publishsettings file]: https://manage.windowsazure.com/download/publishprofile.aspx?wa=wsignin1.0
-  [Ende dieses Artikels]: #script
-
+  [0]: ./media/cloud-services-dotnet-continuous-delivery/tfs-01bc.png
+  [2]: ./media/cloud-services-dotnet-continuous-delivery/tfs-02.png
   [3]: ./media/cloud-services-dotnet-continuous-delivery/common-task-tfs-03.png
   [4]: ./media/cloud-services-dotnet-continuous-delivery/common-task-tfs-04.png
   [5]: ./media/cloud-services-dotnet-continuous-delivery/common-task-tfs-05.png
   [6]: ./media/cloud-services-dotnet-continuous-delivery/common-task-tfs-06.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

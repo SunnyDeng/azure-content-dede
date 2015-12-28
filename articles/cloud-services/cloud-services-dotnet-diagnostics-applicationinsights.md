@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Verwenden von Application Insights mit Azure-Diagnose zum Beheben von Clouddienstproblemen | Microsoft Azure"
+   pageTitle="Problembehandlung bei Clouddiensten mit Application Insights | Microsoft Azure"
    description="Erfahren Sie mehr über das Beheben von Clouddienstproblemen mithilfe von Application Insights zum Verarbeiten von Daten aus der Azure-Diagnose."
    services="cloud-services"
    documentationCenter=".net"
@@ -12,11 +12,11 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="11/16/2015"
+   ms.date="12/15/2015"
    ms.author="saurabh" />
 
 
-# Verwenden von Application Insights mit Azure-Diagnose zum Beheben von Clouddienstproblemen
+# Problembehandlung bei Clouddiensten mit Application Insights
 
 Mit [Azure SDK 2.8](https://azure.microsoft.com/downloads/) und Azure-Diagnose-Erweiterung 1.5 können Sie jetzt Ihre Azure-Diagnose-Daten für Ihren Clouddienst direkt an Application Insights senden. Die verschiedenen von der Azure-Diagnose erfassten Protokolltypen, darunter Anwendungsprotokolle, Windows-Ereignisprotokolle, ETW-Protokolle und Leistungsindikatoren können jetzt an Application Insights gesendet und in der Benutzeroberfläche des Application Insights-Portals visualisiert werden. Bei der gemeinsamen Nutzung mit dem Application Insights-SDK können Sie nun Einblicke in die Metriken und Protokolle von der Anwendung sowie in die Daten der System- und Infrastrukturebene von Azure-Diagnose erhalten.
   
@@ -61,7 +61,7 @@ So zeigen Sie Azure-Diagnose-Daten in Application Insights an:
 
 ![Benutzerdefinierte Metriken im Metrik-Explorer][5]
 
-- Verwenden Sie die [Suche](../application-insights/app-insights-diagnostic-search.md), um die verschiedenen Ablaufverfolgungsprotokolle zu durchsuchen, die von Azure-Diagnose gesendet werden. Wenn Sie beispielsweise über eine nicht bearbeitete Ausnahme in einer Rolle verfügen, aufgrund dessen die Rolle abstürzt und wiederverwendet wird, werden diese Informationen im *Application*-Kanal des *Windows-Ereignisprotokolls* angezeigt. Mit der Suchfunktion können Sie den Windows-Ereignisprotokollfehler anzeigen und die vollständige Stapelüberwachung für die Ausnahme abrufen, um die Ursache des Problems zu ermitteln. 
+- Verwenden Sie die [Suche](../application-insights/app-insights-diagnostic-search.md), um die verschiedenen Ablaufverfolgungsprotokolle zu durchsuchen, die von Azure-Diagnose gesendet werden. Wenn Sie beispielsweise über eine nicht bearbeitete Ausnahme in einer Rolle verfügen, aufgrund derer die Rolle abstürzt und wiederverwendet wird, werden diese Informationen im *Application*-Kanal des *Windows-Ereignisprotokolls* angezeigt. Mit der Suchfunktion können Sie den Windows-Ereignisprotokollfehler anzeigen und die vollständige Stapelüberwachung für die Ausnahme abrufen, um die Ursache des Problems zu ermitteln. 
 
 ![Durchsuchen von Ablaufverfolgungen][6]
 
@@ -78,4 +78,4 @@ So zeigen Sie Azure-Diagnose-Daten in Application Insights an:
 [5]: ./media/cloud-services-dotnet-diagnostics-applicationinsights/metrics-explorer-custom-metrics.png
 [6]: ./media/cloud-services-dotnet-diagnostics-applicationinsights/search-windowseventlog-error.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

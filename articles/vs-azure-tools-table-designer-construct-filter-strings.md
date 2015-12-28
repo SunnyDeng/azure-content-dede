@@ -1,11 +1,11 @@
 <properties
-   pageTitle="Erstellen von Filterzeichenfolgen für den Tabellen-Designer"
+   pageTitle="Erstellen von Filterzeichenfolgen für den Tabellen-Designer | Microsoft Azure"
    description="Erstellen von Filterzeichenfolgen für den Tabellen-Designer"
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tlee" />
+   editor="" />
 <tags
    ms.service="storage"
    ms.devlang="multiple"
@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="08/24/2015"
-   ms.author="kempb" />
+   ms.author="tarcher" />
 
 # Erstellen von Filterzeichenfolgen für den Tabellen-Designer
 
@@ -99,4 +99,4 @@ Im folgenden Beispiel werden Entitäten zurückgegeben, bei denen die CustomerSi
 
     CustomerSince eq datetime'2008-07-10T00:00:00Z'
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

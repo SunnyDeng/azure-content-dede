@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="python"
 	ms.topic="article"
-	ms.date="08/25/2015"
+	ms.date="12/11/2015"
 	ms.author="emgerner"/>
 
 # Verwenden des Azure-Blob-Speichers mit Python
@@ -106,7 +106,8 @@ Um ein Blob zu löschen, rufen Sie **delete\_blob** auf.
 
 Nachdem Sie sich nun mit den Grundlagen des Blob-Speichers vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
 
--   Besuchen Sie den [Blog des Azure-Speicherteams][]
+- Besuchen Sie den [Blog des Azure-Speicherteams][]
+- [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy)
 
 Weitere Informationen finden Sie außerdem im [Python Developer Center](/develop/python/).
 
@@ -114,4 +115,4 @@ Weitere Informationen finden Sie außerdem im [Python Developer Center](/develop
 [Python Azure-Pakets]: https://pypi.python.org/pypi/azure
 [Python Azure Storage-Paket]: https://pypi.python.org/pypi/azure-storage
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->

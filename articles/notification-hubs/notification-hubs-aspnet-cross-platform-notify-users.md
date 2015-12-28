@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="mobile-windows"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="08/18/2015" 
+	ms.date="12/11/2015" 
 	ms.author="wesmc"/>
 
 # Senden plattformübergreifender Benachrichtigungen an Benutzer mit Benachrichtigungs-Hubs
@@ -88,9 +88,6 @@ Nach Abschluss dieses Lernprogramms finden Sie weitere Informationen über Notif
 
 +  **[Übersicht über Benachrichtigungshubs][Templates]**<br/>Dieser Übersichtsartikel enthält weitere Detailinformationen zu Vorlagen.
 
-+  **[Notification Hub How to for Windows Store]** (in englischer Sprache)<br/>Enthält eine Sprachreferenz für Vorlagen.
-
-
 
 <!-- Anchors. -->
 
@@ -110,4 +107,4 @@ Nach Abschluss dieses Lernprogramms finden Sie weitere Informationen über Notif
 [Templates]: http://go.microsoft.com/fwlink/p/?LinkId=317339
 [Notification Hub How to for Windows Store]: http://msdn.microsoft.com/library/windowsazure/jj927172.aspx
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1217_2015-->

@@ -3,7 +3,7 @@
    description="Bereitstellen und Entfernen von Anwendungen in Service Fabric"
    services="service-fabric"
    documentationCenter=".net"
-   authors="alexwun"
+   authors="seanmck"
    manager="timlt"
    editor=""/>
 
@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="09/23/2015"
-   ms.author="alexwun"/>
+   ms.date="12/10/2015"
+   ms.author="seanmck"/>
 
 # Bereitstellen von Anwendungen
 
@@ -24,7 +24,7 @@ Sobald der [Anwendungstyp gepackt][10] wurde, ist die Anwendung für die Bereits
 2. Registrieren des Anwendungstyps
 3. Erstellen der Anwendungsinstanz
 
->[AZURE.NOTE]Wenn Sie Visual Studio zum Bereitstellen und Debuggen von Anwendungen in Ihrem lokalen Entwicklungscluster verwenden, werden alle im Folgenden beschriebenen Schritte automatisch durch die PowerShell-Skripts im Ordner "Skripts" des Anwendungsprojekts ausgeführt. In diesem Artikel wird die grundlegende Funktionsweise der Skripts erläutert, sodass Sie die gleichen Vorgänge außerhalb von Visual Studio ausführen können.
+>[AZURE.NOTE]Wenn Sie Visual Studio zum Bereitstellen und Debuggen von Anwendungen in Ihrem lokalen Entwicklungscluster verwenden, werden alle im Folgenden beschriebenen Schritte automatisch über ein PowerShell-Skript im Ordner „Scripts“ des Anwendungsprojekts ausgeführt. In diesem Artikel wird die grundlegende Funktionsweise der Skripts erläutert, sodass Sie die gleichen Vorgänge außerhalb von Visual Studio ausführen können.
 
 ## Hochladen des Anwendungspakets
 
@@ -217,7 +217,7 @@ PS D:\temp>
 
 [Einführung in Service Fabric-Integrität](service-fabric-health-introduction.md)
 
-[Diagnose und Problembehandlung von Service Fabric-Diensten](service-fabric-diagnose-monitor-your-service-index.md)
+[Diagnose und Problembehandlung von Service Fabric-Diensten](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md)
 
 [Modellieren einer Anwendung in Service Fabric](service-fabric-application-model.md)
 
@@ -225,4 +225,4 @@ PS D:\temp>
 [10]: service-fabric-application-model.md
 [11]: service-fabric-application-upgrade.md
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1217_2015-->
