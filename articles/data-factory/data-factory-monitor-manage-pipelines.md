@@ -96,7 +96,6 @@ Die Datasetslices in Data Factory können einen der folgenden Status haben:
 <td>ValidationRetry</td><td>Es wird auf die Wiederholung der Überprüfung gewartet.</td>
 </tr>
 <tr>
-&lt; tr
 <td rowspan="2">In Bearbeitung</td><td>Die Überprüfen erfolgt.</td><td>Die Überprüfung wird ausgeführt.</td>
 </tr>
 <td></td>
@@ -323,7 +322,7 @@ Um eine Warnungsdefinition anzugeben, erstellen Sie eine JSON-Datei mit einer Be
 	                        "odata.type": "Microsoft.Azure.Management.Insights.Models.RuleManagementEventDataSource",
 	                        "operationName": "RunFinished",
 	                        "status": "Failed",
-	                        "subStatus": "FailedExecution"   
+	                            "subStatus": "FailedExecution"   
 	                    }
 	                },
 	                "action": 
@@ -357,7 +356,7 @@ Unter [Benachrichtigungsregel erstellen](https://msdn.microsoft.com/library/azur
 #### Bereitstellen der Warnung 
 Verwenden Sie zum Bereitstellen der Warnung das Azure-PowerShell-Cmdlet **New-AzureResourceGroupDeployment**, wie im folgenden Beispiel gezeigt:
 
-	New-AzureResourceGroupDeployment -ResourceGroupName adf -TemplateFile .\ADFAlertFailedSlice.json  
+	New-AzureResourceGroupDeployment -ResourceGroupName adf     -TemplateFile .\ADFAlertFailedSlice.json  
 
 Nachdem die Ressourcengruppenbereitstellung erfolgreich abgeschlossen wurde, werden die folgenden Meldungen angezeigt:
 

@@ -655,7 +655,7 @@ Nach dem Konfigurieren und Überprüfen des Berichtsservers besteht eine der üb
 
 In der folgende Tabelle sind einige der Optionen zusammengefasst, mit denen vorhandene Berichte von einem lokalen Computer auf dem Berichtsserver veröffentlicht werden können, der auf dem virtuellen Microsoft Azure-Computer gehostet wird:
 
-- **RS.exe-Skript**: Verwenden Sie das RS.exe-Skript, um Berichtselemente von Ihrem sowie einen vorhandenen Berichtsserver auf Ihren virtuellen Microsoft Azure-Computer zu kopieren. Weitere Informationen finden Sie im Abschnitt „Einheitlicher Modus zu einheitlichem Modus – Virtueller Windows Azure-Computer“ in [Reporting Services-Beispielskript rs.exe zum Migrieren von Inhalten zwischen Berichtsservern](https://msdn.microsoft.com/library/dn531017.aspx).
+- **RS.exe-Skript**: Verwenden Sie das RS.exe-Skript, um Berichtselemente von Ihrem sowie einen vorhandenen Berichtsserver auf Ihren virtuellen Microsoft Azure-Computer zu kopieren. Weitere Informationen finden Sie im Abschnitt „Einheitlicher Modus zu einheitlichem Modus – Virtueller Microsoft Azure-Computer“ in [Reporting Services-Beispielskript rs.exe zum Migrieren von Inhalten zwischen Berichtsservern](https://msdn.microsoft.com/library/dn531017.aspx).
 
 - **Berichts-Generator**: Der virtuelle Computer umfasst die ClickOnce-Version von Microsoft SQL Server-Berichts-Generator. So starten Sie den Berichts-Generator das erste Mal auf dem virtuellen Computer:
 
@@ -705,4 +705,4 @@ In der folgende Tabelle sind einige der Optionen zusammengefasst, mit denen vorh
 
 [Übersicht zu SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-infrastructure-services.md)
 
-<!---HONumber=AcomDC_1217_2015-->
+<!----HONumber=AcomDC_1217_2015-->

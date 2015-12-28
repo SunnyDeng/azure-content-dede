@@ -108,7 +108,7 @@ Informationen zum Einstieg in PowerShell für Azure finden Sie unter [Installier
 	Add-AzureAccount
 	```
 
-2. Geben Sie im Fenster **Bei Windows Azure anmelden** die dem Konto zugeordnete E-Mail-Adresse und das zugehörige Kennwort ein. Die Anmeldeinformationen werden von Azure authentifiziert und gespeichert, dann wird das Fenster geschlossen.
+2. Geben Sie im Fenster **Bei Microsoft Azure anmelden** die dem Konto zugeordnete E-Mail-Adresse und das zugehörige Kennwort ein. Die Anmeldeinformationen werden von Azure authentifiziert und gespeichert, dann wird das Fenster geschlossen.
 3. Legen Sie als Standardspeicherkonto das Speicherkonto fest, das Sie für das Lernprogramm verwenden, indem Sie die folgenden Befehle im PowerShell-Fenster ausführen:
 
 	```
@@ -364,4 +364,4 @@ Weitere Informationen zur Problembehandlung in End-to-End-Szenarien im Azure-Spe
  
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!----HONumber=AcomDC_1217_2015-->

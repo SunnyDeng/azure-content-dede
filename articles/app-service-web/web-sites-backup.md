@@ -126,7 +126,8 @@ Erstellen Sie zum Ausschließen von Dateien und Ordnern aus der Sicherung eine `
 
 Stellen Sie sich vor, Sie verfügen über eine Website mit Protokolldateien und statischen Bildern aus früheren Jahren, die sich nicht ändern. Sie haben bereits eine vollständige Sicherung der Web-App erstellt, die die alten Bilder enthält. Jetzt möchten Sie die Web-App täglich sichern, aber Sie möchten nicht für die Speicherung von Protokolldateien oder statischen Bilddateien bezahlen, die sich nie ändern.
 
-![Ordner "Logs"][LogsFolder] ![Ordner "Images"][ImagesFolder]
+![Ordner "Logs"][LogsFolder]
+![Ordner "Images"][ImagesFolder]
 	
 Die unten angegebenen Schritte zeigen, wie Sie diese Dateien aus der Sicherung ausschließen.
 

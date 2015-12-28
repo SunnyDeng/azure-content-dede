@@ -83,7 +83,7 @@ Sie können jetzt die Anwendung ausführen.
 
    	![][21]
 
-2.	Führen Sie das Programm **Sender** aus, und sehen Sie sich die im Empfängerfenster angezeigten Ereignisse an.
+2.	Führen Sie das Programm **sender** aus, und sehen Sie sich die im Empfängerfenster angezeigten Ereignisse an.
 
    	![][24]
 

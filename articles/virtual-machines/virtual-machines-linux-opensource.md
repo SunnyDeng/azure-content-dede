@@ -191,7 +191,7 @@ Es ist geplant, diesen Abschnitt in Kürze mit Inhalt zu füllen. Wenn Sie Vorsc
 4. [Video: Zugreifen auf Linux-basierten GUI auf Azure im Browser mit fernapp](http://channel9.msdn.com/Blogs/Open/Accessing-Linux-based-GUI-on-Azure-over-browser-with-fernapp)
 5. [Video: Freigegebener Speicher unter Linux mithilfe der Vorschau der Azure-Dateien – Teil 1](http://channel9.msdn.com/Blogs/Open/Shared-storage-on-Linux-via-Azure-Files-Preview-Part-1)
 6. [Video: Einbeziehen von Linux-Geräten auf Azure mithilfe von Service Bus und Websites](http://channel9.msdn.com/Blogs/Open/Embracing-Linux-devices-on-Azure-via-Service-Bus-and-Web-Sites)
-7. [Video: Verbinden einer nativen Linux-basierten zwischengespeicherten Anwendung mit Windows Azure](http://channel9.msdn.com/Blogs/Open/Connecting-a-Linux-based-native-memcache-application-to-Windows-Azure)
+7. [Video: Verbinden einer nativen Linux-basierten zwischengespeicherten Anwendung mit Microsoft Azure](http://channel9.msdn.com/Blogs/Open/Connecting-a-Linux-based-native-memcache-application-to-Windows-Azure)
 8. [Video: Lastenausgleich für hoch verfügbare Linux-Dienste auf Azure: OpenLDAP und MySQL](http://channel9.msdn.com/Blogs/Open/Load-balancing-highly-available-Linux-services-on-Windows-Azure-OpenLDAP-and-MySQL)
 
 
@@ -311,4 +311,4 @@ Dieser Abschnitt beginnt mit einem Blogeintrag mit einer Reihe von Videos unter 
 [How to use docker-machine on Azure]: virtual-machines-docker-machine.md
 [How to use docker with swarm on Azure]: virtual-machines-docker-swarm.md
 
-<!---HONumber=AcomDC_1217_2015-->
+<!----HONumber=AcomDC_1217_2015-->

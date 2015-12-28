@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Microsoft Azure AD Connect – Upgrade vom Windows Azure AD-Synchronisierungstool (DirSync)"
-   description="Informationen Sie zum Aktualisieren von DirSync auf Azure AD Connect. Dieser Artikel beschreibt die Schritte zur Aktualisierung Ihres aktuellen Windows Azure AD-Synchronisierungstools (DirSync) auf Azure AD Connect."
+   pageTitle="Microsoft Azure AD Connect – Upgrade vom Microsoft Azure AD-Synchronisierungstool (DirSync)"
+   description="Informationen Sie zum Aktualisieren von DirSync auf Azure AD Connect. Dieser Artikel beschreibt die Schritte zur Aktualisierung Ihres aktuellen Microsoft Azure AD-Synchronisierungstools (DirSync) auf Azure AD Connect."
    services="active-directory"
    documentationCenter=""
    authors="andkjell"
@@ -16,7 +16,7 @@
    ms.date="12/16/2015"
    ms.author="shoatman;billmath"/>
 
-# Aktualisieren des Windows Azure Active Directory-Synchronisierungstools (DirSync) auf Azure AD Connect
+# Aktualisieren des Microsoft Azure Active Directory-Synchronisierungstools (DirSync) auf Azure AD Connect
 
 Die folgende Dokumentation hilft Ihnen beim Upgrade Ihrer vorhandenen DirSync-Installation auf Azure AD Connect.
 
@@ -197,4 +197,4 @@ Nachdem Sie Azure AD Connect installiert haben, können Sie [die Installation �
 
 Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=AcomDC_1217_2015-->
+<!----HONumber=AcomDC_1217_2015-->

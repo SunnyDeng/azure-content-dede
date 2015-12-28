@@ -39,7 +39,9 @@ Bevor Sie den Buildcomputer einrichten können, müssen Sie einen Dienstprinzipa
 
 1.	Installieren Sie Azure PowerShell.
     - Installieren Sie „PowerShellGet“. Installieren Sie hierzu [Windows Management Framework 5.0](http://www.microsoft.com/download/details.aspx?id=48729), da „PowerShellGet“ darin enthalten ist.
+
     >[AZURE.NOTE]Bei Verwendung von Windows 10 mit neuesten Updates können Sie diesen Schritt überspringen.
+
 
 1.	Installieren und aktualisieren Sie das AzureRM-Modul.
     1.  Wenn Sie eine ältere Version von Azure PowerShell installiert haben, entfernen Sie sie. Klicken Sie mit der rechten Maustaste auf die Schaltfläche „Start“, und wählen Sie „Programme hinzufügen/entfernen“. Suchen Sie nach „Azure PowerShell“, und deinstallieren Sie es.
@@ -137,7 +139,9 @@ Installieren Sie das [Service Fabric-SDK](https://azure.microsoft.com/campaigns
     ```
 
 3.	Ist die Datei „NuGet.config“ noch nicht vorhanden, erstellen Sie sie mit folgendem Inhalt. Ersetzen Sie dabei `<path to service fabric SDK>` durch den Pfad zum Service Fabric-SDK auf dem Buildcomputer.
+
 >[AZURE.NOTE]`<path to service fabric SDK>` ist standardmäßig `%ProgramFiles%\Microsoft SDKs\Service Fabric`.
+
 
     NuGet.config:
 
@@ -192,8 +196,8 @@ Führen Sie zum Installieren von Azure PowerShell die Schritte aus dem vorherige
 ### Registrieren Ihres Build-Agents
 
 1.	Laden Sie „agent.zip“ herunter. Gehen Sie dazu folgendermaßen vor:
-    1.	Melden Sie sich bei Ihrem Teamprojekt an. Beispiel: ****https://[your-VSTS-account-name].visualstudio.com**.
-1.	Wählen Sie das Zahnradsymbol in der rechten oberen Bildschirmecke aus.
+    1.	Melden Sie sich bei Ihrem Teamprojekt an. Beispiel: **https://[your-VSTS-account-name].visualstudio.com**.
+    1.	Wählen Sie das Zahnradsymbol in der rechten oberen Bildschirmecke aus.
     1.	Wählen Sie in der Systemsteuerung die Registerkarte **Agentpools** aus.
     1.	Wählen Sie **Download-Agent** aus, um die Datei „agent.zip“ herunterzuladen.
     1.	Kopieren Sie „agent.zip“ auf den zuvor erstellten Buildcomputer.
@@ -337,6 +341,9 @@ Mit den oben aufgeführten Anweisungen wird für jeden Buildvorgang ein neuer Cl
 
 ## Nächste Schritte
 
-Weitere Informationen zu Continuous Integration für Service Fabric-Anwendungen finden Sie in den folgenden Artikeln: - [Startseite der Builddokumentation](https://msdn.microsoft.com/Library/vs/alm/Build/overview) - [Bereitstellen eines Build-Agents](https://msdn.microsoft.com/Library/vs/alm/Build/agents/windows) - [Erstellen und Konfigurieren einer Builddefinition](https://msdn.microsoft.com/Library/vs/alm/Build/vs/define-build)
+Weitere Informationen zu Continuous Integration für Service Fabric-Anwendungen finden Sie in den folgenden Artikeln:
+- [Startseite der Builddokumentation](https://msdn.microsoft.com/Library/vs/alm/Build/overview)
+- [Bereitstellen eines Build-Agents](https://msdn.microsoft.com/Library/vs/alm/Build/agents/windows)
+- [Erstellen und Konfigurieren einer Builddefinition](https://msdn.microsoft.com/Library/vs/alm/Build/vs/define-build)
 
 <!---HONumber=AcomDC_1217_2015-->

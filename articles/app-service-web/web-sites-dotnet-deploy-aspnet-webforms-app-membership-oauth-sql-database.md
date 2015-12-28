@@ -98,7 +98,7 @@ Sie haben nun eine Web-App erstellt, diese enthält jedoch noch keinen Inhalt. A
 ###Aktualisieren der Masterseite
 In ASP.NET Web Forms können Sie mit Masterseiten ein einheitliches Layout für die Seiten in Ihrer Anwendung erstellen. Eine einzige Masterdseite definiert das Aussehen und das Standardverhalten, das Sie für alle Seiten (oder eine Gruppe von Seiten) in Ihrer Anwendung wünschen. Anschließend können Sie die einzelnen Inhaltsseiten mit dem anzuzeigenden Inhalt erstellen. Wenn Benutzer Inhaltsseiten anfordern, werden diese in ASP.NET mit der Masterseite zusammengeführt, um eine Ausgabe zu erstellen, in der das Layout der Masterseite mit dem Inhalt der Inhaltsseite kombiniert wird. Für die neue Seite muss der Anwendungsname und der Link aktualisiert werden. Dieser Link verweist auf die Seite, welche die Kontaktdetails enthält. Um diese Änderungen vorzunehmen, ändern Sie das HTML auf der Masterseite.
 
-1. Öffnen Sie im **Projektmappen-Explorer** die Seite *Site.Master*. 
+1. Öffnen Sie im **Projektmappen-Explorer** die Seite *Site.Master*.
 2. Falls diese Seite sich in der **Entwurfsansicht** befindet, wechseln Sie zur **Quellansicht**.
 3. Aktualisieren Sie die Masterseite durch Ändern oder Hinzufügen des Markups, sodass es für die Seite wie folgt aussieht:
 

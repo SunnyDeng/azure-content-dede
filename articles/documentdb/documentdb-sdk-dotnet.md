@@ -91,26 +91,40 @@
 ### <a name="1.0.0"/>[1\.0.0](https://www.nuget.org/packages/Microsoft.Azure.DocumentDB/1.0.0)
 - Allgemeine Verfügbarkeit (GA) des SDK
 
-> [AZURE.NOTE]In der GA-Version wurde im Vergleich zur Preview-Version der Name eines NuGet-Pakets geändert. **Microsoft.Azure.Documents.Client** wurde in **Microsoft.Azure.DocumentDB** geändert. <br/>
+> [AZURE.NOTE]
+In der GA-Version wurde im Vergleich zur Preview-Version der Name eines NuGet-Pakets geändert. **Microsoft.Azure.Documents.Client** wurde in **Microsoft.Azure.DocumentDB** geändert. <br/>
 
 
 ### <a name="0.9.x-preview"/>[0\.9.x-preview](https://www.nuget.org/packages/Microsoft.Azure.Documents.Client)
 - SDK-Vorschauversionen [Veraltet]
 
 ## Veröffentlichungs- und Deaktivierungstermine
-Wenn Microsoft ein SDK deaktiviert, werden Sie mindestens **12 Monate** vorher benachrichtigt, um einen reibungslosen Übergang zu einer neueren/unterstützten Version zu gewährleisten.
+Wenn Microsoft ein SDK deaktiviert, werden Sie mindestens **12 Monate** vorher benachrichtigt, um einen reibungslosen Übergang zu einer neueren, unterstützten Version zu gewährleisten.
 
 Neue Features, Funktionen und Optimierungen werden nur dem aktuellen SDK hinzugefügt. Daher wird empfohlen, immer so früh wie möglich auf die neueste SDK-Version zu aktualisieren.
 
 Anforderungen von DocumentDB mithilfe eines deaktivierten SDK werden vom Dienst abgelehnt.
 
-> [AZURE.WARNING]Alle Versionen des Azure DocumentDB-SDK für .NET vor Version **1.0.0** werden am **29. Februar 2016** deaktiviert.
+> [AZURE.WARNING]
+Alle Versionen des Azure DocumentDB SDK für .NET vor Version **1.0.0** werden am **29. Februar 2016** deaktiviert.
  
 <br/>
  
 | Version | Herausgabedatum | Deaktivierungstermine 
 | ---	  | ---	         | ---
-| [1\.5.2](#1.5.2) | 14. Dezember 2015 |--- | [1\.5.1](#1.5.1) | 23. November 2015 |--- | [1\.5.0](#1.5.0) | 05. Oktober 2015 |--- | [1\.4.1](#1.4.1) | 25. August 2015 |--- | [1\.4.0](#1.4.0) | 13. August 2015 |--- | [1\.3.0](#1.3.0) | 05. August 2015 |--- | [1\.2.0](#1.2.0) | 06. Juli 2015 |--- | [1\.1.0](#1.1.0) | 30. April 2015 |--- | [1\.0.0](#1.0.0) | 08. April 2015 |--- | [0\.9.3-prelease](#0.9.x-preview) | 12. März 2015 | 29. Februar 2016 | [0\.9.2-prelease](#0.9.x-preview) | Januar 2015 | 29. Februar 2016 | [.9.1-prelease](#0.9.x-preview) | 13. Oktober 2014 | 29. Februar 2016 | [0\.9.0-prelease](#0.9.x-preview) | 21. August 2014 | 29. Februar 2016
+| [1\.5.2](#1.5.2) | 14. Dezember 2015 |--- 
+| [1\.5.1](#1.5.1) | 23. November 2015 |--- 
+| [1\.5.0](#1.5.0) | 05. Oktober 2015 |--- 
+| [1\.4.1](#1.4.1) | 25. August 2015 |--- 
+| [1\.4.0](#1.4.0) | 13. August 2015 |--- 
+| [1\.3.0](#1.3.0) | 05. August 2015 |--- 
+| [1\.2.0](#1.2.0) | 06. Juli 2015 |--- 
+| [1\.1.0](#1.1.0) | 30. April 2015 |--- 
+| [1\.0.0](#1.0.0) | 08. April 2015 |--- 
+| [0\.9.3-prelease](#0.9.x-preview) | 12. März 2015 | 29. Februar 2016 
+| [0\.9.2-prelease](#0.9.x-preview) | Januar 2015 | 29. Februar 2016 
+| [0\.9.1-prelease](#0.9.x-preview) | 13. Oktober 2014 | 29. Februar 2016 
+| [0\.9.0-prelease](#0.9.x-preview) | 21. August 2014 | 29. Februar 2016
 
 ## Häufig gestellte Fragen
 [AZURE.INCLUDE [documentdb-sdk-faq](../../includes/documentdb-sdk-faq.md)]

@@ -45,7 +45,7 @@ Weitere Informationen zu App Service-Plänen finden Sie unter [Was ist ein App S
 	
 	Auf der Registerkarte **Benachrichtigungen** wird in grüner Schrift der Text **ERFOLGREICH** angezeigt, sobald der Vorgang abgeschlossen wurde.
 	
-5. Schieben Sie den Schieberegler **Instanz** von links nach rechts, um die Anzahl von Instanzen zu erhöhen, und klicken Sie in der Befehlsleiste auf **Speichern**. Die Instanzgrößenoption ist im Modus **Freigegeben** nicht verfügbar. Weitere Informationen zu den Instanzgrößen finden Sie unter [Größen virtueller Computer und Clouddienste für Windows Azure][vmsizes].
+5. Schieben Sie den Schieberegler **Instanz** von links nach rechts, um die Anzahl von Instanzen zu erhöhen, und klicken Sie in der Befehlsleiste auf **Speichern**. Die Instanzgrößenoption ist im Modus **Freigegeben** nicht verfügbar. Weitere Informationen zu den Instanzgrößen finden Sie unter [Größen virtueller Computer und Clouddienste für Microsoft Azure][vmsizes].
 	
 	![Instanzgröße für Basic-Modus][ChooseBasicInstances]
 	
@@ -160,7 +160,7 @@ Je nach Modus der Web-App stehen die folgenden entwicklungsbezogenen Funktionen 
 	
 	[Preisdetails für SQL-Datenbanken](/pricing/details/sql-database/)
 	
-	[Größen virtueller Computer und Clouddienste für Windows Azure][vmsizes]
+	[Größen virtueller Computer und Clouddienste für Microsoft Azure][vmsizes]
 	
 	[App-Service-Preisdetails](/pricing/details/web-sites/)
 	
@@ -200,4 +200,4 @@ Je nach Modus der Web-App stehen die folgenden entwicklungsbezogenen Funktionen 
 [GeoReplication]: ./media/web-sites-scale/scale12SQLGeoReplication.png
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!----HONumber=AcomDC_1217_2015-->

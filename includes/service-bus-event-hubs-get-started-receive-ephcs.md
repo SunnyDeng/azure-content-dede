@@ -42,7 +42,10 @@ Um [EventProcessorHost][] verwenden zu können, benötigen Sie ein [Azure-Speich
 
 	Ersetzen Sie anschließend den Text der Klasse durch folgenden Code:
 
-	``` class SimpleEventProcessor : IEventProcessor { Stopwatch checkpointStopWatch;
+	```
+	class SimpleEventProcessor : IEventProcessor
+	{
+	    Stopwatch checkpointStopWatch;
 
 	    async Task IEventProcessor.CloseAsync(PartitionContext context, CloseReason reason)
 	    {
@@ -78,7 +81,8 @@ Um [EventProcessorHost][] verwenden zu können, benötigen Sie ein [Azure-Speich
                 this.checkpointStopWatch.Restart();
             }
 	    }
-	} ````
+	}
+````
 
 	Diese Klasse wird von **EventProcessorHost** zur Verarbeitung der vom Event Hub empfangenen Ereignisse aufgerufen. Beachten Sie, dass die `SimpleEventProcessor`-Klasse eine Stoppuhr verwendet, um in regelmäßigen Abständen die "checkpoint"-Methode für den **EventProcessorHost**-Kontext aufzurufen. Dadurch wird sichergestellt, dass der Empfänger bei einem Neustart maximal nur die Daten verlieren kann, die in den letzten fünf Minuten verarbeitet wurden.
 
@@ -92,11 +96,25 @@ Um [EventProcessorHost][] verwenden zu können, benötigen Sie ein [Azure-Speich
 
 	Ändern Sie dann wie folgt die `Main`-Methode in der `Program`-Klasse, und ersetzen Sie dabei den Namen und die Verbindungszeichenfolge des Event Hubs sowie das Speicherkonto und den Speicherschlüssel, die Sie in den vorherigen Abschnitten kopiert haben.
 
-    ``` static void Main(string args) { string eventHubConnectionString = "{event hub connection string}"; string eventHubName = "{event hub name}"; string storageAccountName = "{storage account name}"; string storageAccountKey = "{storage account key}"; string storageConnectionString = string.Format("DefaultEndpointsProtocol=https;AccountName={0};AccountKey={1}", storageAccountName, storageAccountKey);
+    ```
+	static void Main(string[] args)
+    {
+      string eventHubConnectionString = "{event hub connection string}";
+      string eventHubName = "{event hub name}";
+      string storageAccountName = "{storage account name}";
+      string storageAccountKey = "{storage account key}";
+      string storageConnectionString = string.Format("DefaultEndpointsProtocol=https;AccountName={0};AccountKey={1}", storageAccountName, storageAccountKey);
 
-      string eventProcessorHostName = Guid.NewGuid().ToString(); EventProcessorHost eventProcessorHost = new EventProcessorHost(eventProcessorHostName, eventHubName, EventHubConsumerGroup.DefaultGroupName, eventHubConnectionString, storageConnectionString); Console.WriteLine("Registering EventProcessor..."); eventProcessorHost.RegisterEventProcessorAsync<SimpleEventProcessor>().Wait();
+      string eventProcessorHostName = Guid.NewGuid().ToString();
+      EventProcessorHost eventProcessorHost = new EventProcessorHost(eventProcessorHostName, eventHubName, EventHubConsumerGroup.DefaultGroupName, eventHubConnectionString, storageConnectionString);
+      Console.WriteLine("Registering EventProcessor...");
+      eventProcessorHost.RegisterEventProcessorAsync<SimpleEventProcessor>().Wait();
 
-      Console.WriteLine("Empfang. Drücken Sie die EINGABETASTE, um den Worker zu beenden."); Console.ReadLine(); eventProcessorHost.UnregisterEventProcessorAsync().Wait(); } ````
+      Console.WriteLine("Receiving. Press enter key to stop worker.");
+      Console.ReadLine();
+      eventProcessorHost.UnregisterEventProcessorAsync().Wait();
+    }
+	````
 
 > [AZURE.NOTE]In diesem Tutorial wird eine einzelne Instanz von [EventProcessorHost][] verwendet. Um den Durchsatz zu erhöhen, sollten Sie mehrere Instanzen von [EventProcessorHost][] ausführen, wie im Beispiel [Skalieren der Ereignisverarbeitung][] beschrieben. In diesen Fällen koordinieren sich die verschiedenen automatisch untereinander, um die Last der eingegangenen Ereignisse ausgeglichen zu verteilen. Wenn mehrere Empfänger für jeden Prozess *alle* Ereignisse verarbeiten sollen, müssen Sie das **ConsumerGroup**-Konzept verwenden. Wenn Ereignisse von anderen Computern empfangen werden, kann es hilfreich sein, die [EventProcessorHost][]-Instanzen nach den Computern (oder Rollen) zu benennen, auf denen sie bereitgestellt werden. Weitere Informationen zu diesen Themen finden Sie unter [Event Hubs – Übersicht][] und im [Event Hubs-Programmierhandbuch][].
 
