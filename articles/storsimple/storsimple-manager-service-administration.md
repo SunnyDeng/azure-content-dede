@@ -57,7 +57,11 @@ Die folgende Tabelle gibt Aufschluss über die Navigationshierarchie der Benutze
 |Zielseite|Seiten auf Dienstebene|Seiten auf Geräteebene|Seiten auf Geräteebene|
 |---|---|---|---|
 |StorSimple Manager-Dienst|Dienstdashboard|Gerätedashboard||
-||Geräte →|Überwachen| ||Sicherungskatalog|Volumecontainer→|Volumes| ||Konfigurieren (Dienst)|Sicherungsrichtlinien|| ||Aufträge|Konfigurieren (Gerät)| ||Warnungen|Wartung|
+||Geräte →|Überwachen| 
+||Sicherungskatalog|Volumecontainer→|Volumes| 
+||Konfigurieren (Dienst)|Sicherungsrichtlinien|| 
+||Aufträge|Konfigurieren (Gerät)| 
+||Warnungen|Wartung|
 
 ![Video verfügbar](./media/storsimple-manager-service-administration/Video_icon.png) **Video verfügbar**
 
@@ -112,4 +116,4 @@ Falls sich das Problem nicht beheben lässt und Sie eine Serviceanfrage erstelle
 
 -  [Kontaktaufnahme mit dem Microsoft-Support](storsimple-contact-microsoft-support.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!----HONumber=AcomDC_1203_2015-->
