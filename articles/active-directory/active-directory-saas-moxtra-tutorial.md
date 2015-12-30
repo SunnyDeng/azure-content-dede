@@ -165,7 +165,7 @@ Die Moxtra-Anwendung erwartet die SAML-Assertionen in einem bestimmten Format. D
     | ---            | ---             |
     | firstname | givenname |
     | lastname | surname |
-    | idpid | *<Wert für die **Entitäts-ID** aus dem Dialogfeld **Einmaliges Anmelden konfigurieren für Moxtra** im Azure-Portal>* |
+    | idpid | *\<Wert für die **Entitäts-ID** aus dem Dialogfeld **Einmaliges Anmelden konfigurieren für Moxtra** im Azure-Portal \>* |
 
  
     a. Klicken Sie auf „Benutzerattribut hinzufügen“.<br><br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-moxtra-tutorial/tutorial_general_81.png) <br>
