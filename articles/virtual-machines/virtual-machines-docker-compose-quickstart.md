@@ -21,7 +21,7 @@
 
 In diesem Artikel werden die ersten Schritte mit Docker und [Compose](http://github.com/docker/compose) zum Festlegen und Ausführen einer komplexen Anwendung auf einem virtuellen Linux-Computer in Azure beschrieben. Bei Compose (dem Nachfolger von *Fig*) verwenden Sie eine einfache Textdatei zum Definieren einer Anwendung, die aus mehreren Docker-Containern besteht. Anschließend erstellen Sie Ihre Anwendung mit nur einem Befehl, der alle erforderlichen Schritte zur Ausführung der Anwendung auf dem virtuellen Computer ausführt. In diesem Artikel wird beispielsweise veranschaulicht, wie Sie schnell einen WordPress-Blog mit einer MariaDB SQL-Back-End-Datenbank einrichten. Sie können aber auch Compose verwenden, um komplexere Anwendungen einzurichten.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](https://azure.microsoft.com/documentation/templates/docker-wordpress-mysql/).
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] [Ressourcen-Manager-Modell](https://azure.microsoft.com/documentation/templates/docker-wordpress-mysql/).
 
 
 Wenn Sie mit Docker und Containern noch nicht vertraut sind, lesen Sie die Informationen unter [Docker High Level Whiteboard](http://azure.microsoft.com/documentation/videos/docker-high-level-whiteboard/) (Whiteboard auf hoher Ebene zu Docker; in englischer Sprache).
@@ -49,10 +49,7 @@ Führen Sie zum Testen der Compose-Installation den folgenden Befehl aus:
 $ docker-compose --version
 ```
 
-Eine Ausgabe ähnlich der folgenden wird angezeigt.
-```
-docker-compose 1.3.2
-```
+Eine Ausgabe ähnlich der folgenden wird angezeigt `docker-compose 1.4.1`.
 
 
 ## Schritt 3: Erstellen der Konfigurationsdatei „docker-compose.yml“
@@ -76,16 +73,16 @@ db:
 
 ```
 
-## Schritt 4: Start the containers with Compose
+## Schritt 4: Starten der Container mit Compose
 
-In the working directory on your VM, simply run the following command.
+Führen Sie auf Ihrer virtuellen Maschine im Arbeitsverzeichnis einfach den folgenden Befehl aus.
 
 ```
 $ docker-compose up -d
 
 ```
 
-This starts the Docker containers specified in `docker-compose.yml`. Eine Ausgabe ähnlich der folgenden wird angezeigt:
+Dadurch werden die in `docker-compose.yml` angegebenen Docker-Container gestartet. Eine Ausgabe ähnlich der folgenden wird angezeigt:
 
 ```
 Creating wordpress_db_1...

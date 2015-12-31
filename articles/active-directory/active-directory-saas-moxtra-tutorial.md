@@ -72,6 +72,7 @@ Zum Konfigurieren der Integration von Moxtra in Azure AD müssen Sie Moxtra aus
 ![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-moxtra-tutorial/tutorial_moxtra_01.png)<br>
 7. Wählen Sie im Ergebnisbereich **Moxtra** aus, und klicken Sie dann auf **Abschließen**, um die Anwendung hinzuzufügen.
 <br><br>
+![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-moxtra-tutorial/tutorial_moxtra_02.png)<br>
 
 ##  Konfigurieren und Testen der einmaligen Anmeldung von Azure AD
 In diesem Abschnitt soll anhand eines Testbenutzers namens Britta Simon veranschaulicht werden, wie das einmalige Anmelden von Azure AD in Moxtra konfiguriert und getestet werden kann.
@@ -107,7 +108,7 @@ Die Moxtra-Anwendung erwartet die SAML-Assertionen in einem bestimmten Format. D
 3. Führen Sie auf der Dialogseite **App-Einstellungen konfigurieren** die folgenden Schritte aus:
 <br><br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-moxtra-tutorial/tutorial_moxtra_04.png) <br>
 
-    a. Geben Sie im Textfeld **Anmelde-URL** die folgende URL ein: ****https://www.moxtra.com/service/#login**.
+    a. Geben Sie im Textfeld **Anmelde-URL** die folgende URL ein: **https://www.moxtra.com/service/#login**.
 
     b. Klicken Sie auf **Weiter**.
  
