@@ -123,7 +123,8 @@ Das Markup oben ändert den App-Namen von "My ASP.NET App" auf "Contact Manager"
 
 ### Lokales Ausführen der Anwendung
 
-1. Drücken Sie STRG+F5, um die Anwendung auszuführen. Die Startseite der Anwendung wird im Standardbrowser angezeigt. ![Homepage To-Do-Liste](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rr5.PNG)
+1. Drücken Sie STRG+F5, um die Anwendung auszuführen. Die Startseite der Anwendung wird im Standardbrowser angezeigt.
+  ![Homepage To-Do-Liste](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rr5.PNG)
 
 Darüber hinaus müssen Sie keine weiteren Aktionen ausführen, um die Anwendung zu erstellen, die Sie für Azure bereitstellen. Zu einem späteren Zeitpunkt fügen Sie Datenbankfunktionalität hinzu.
 
