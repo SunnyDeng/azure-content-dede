@@ -7,7 +7,7 @@
 	manager="shreeshd"
 	editor=""/>
 
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/01/2015" ms.author="aashishr"; "jimpark"/>
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/20/2015" ms.author="aashishr"; "jimpark"/>
 
 
 # Bereitstellen und Verwalten der Sicherung in Azure für Windows Server-/Windows-Clientcomputer mit PowerShell
@@ -18,7 +18,7 @@ In diesem Artikel erfahren Sie, wie Sie PowerShell zum Einrichten von Azure Back
 ## Einrichtung und Registrierung
 Vorbereitung:
 
-1. [Laden Sie die aktuelle PowerShell-Version herunter](https://github.com/Azure/azure-powershell/releases) (erforderliche Mindestversion ist 1.0.0).
+1. [Laden Sie die neueste PowerShell herunter](https://github.com/Azure/azure-powershell/releases) (erforderliche Mindestversion ist 1.0.0).
 2. Aktivieren Sie die Azure Backup-Cmdlets, indem Sie über das Cmdlet **Switch-AzureMode** in den *AzureResourceManager*-Modus wechseln:
 
 ```
@@ -181,8 +181,6 @@ Die Aufbewahrungsrichtlinie definiert, wie lange durch Sicherungsaufträge erste
 ```
 PS C:\> $retentionpolicy = New-OBRetentionPolicy -RetentionDays 7
 ```
-
-> [AZURE.NOTE]Das Festlegen von langfristigen Aufbewahrungsrichtlinien wird zurzeit nicht von PowerShell-Cmdlets unterstützt. Verwenden Sie die Azure Backup-Benutzeroberflächenkonsole, um langfristige Aufbewahrungsrichtlinien festzulegen.
 
 Die Aufbewahrungsrichtlinie muss der Hauptrichtlinie mithilfe des [Set-OBRetentionPolicy](https://technet.microsoft.com/library/hh770405)-Cmdlets zugeordnet werden:
 
@@ -595,4 +593,4 @@ Weitere Informationen zu Azure Backup für Windows-Server und -Clients finden Si
 - [Einführung in Azure Backup](backup-configure-vault.md)
 - [Sichern von Windows-Servern](backup-azure-backup-windows-server.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

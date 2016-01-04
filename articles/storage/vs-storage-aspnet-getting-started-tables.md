@@ -5,7 +5,7 @@
 	documentationCenter=""
 	authors="TomArcher"
 	manager="douge"
-	editor="tglee"/>
+	editor=""/>
 
 <tags
 	ms.service="storage"
@@ -13,18 +13,10 @@
 	ms.tgt_pltfrm="vs-getting-started"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/03/2015"
+	ms.date="12/16/2015"
 	ms.author="tarcher"/>
 
 # Erste Schritte mit Tabellenspeicher und verbundenen Visual Studio-Diensten (ASP.NET)
-> [AZURE.SELECTOR]
-> - [Getting Started](vs-storage-aspnet-getting-started-tables.md)
-> - [What Happened](vs-storage-aspnet-what-happened.md)
-
-> [AZURE.SELECTOR]
-> - [Blobs](vs-storage-aspnet-getting-started-blobs.md)
-> - [Queues](vs-storage-aspnet-getting-started-queues.md)
-> - [Tables](vs-storage-aspnet-getting-started-tables.md)
 
 ## Übersicht
 Dieser Artikel beschreibt, wie die ersten Schritte beim Verwenden von Azure-Tabellenspeicher in Visual Studio aussehen, nachdem Sie über das Visual Studio-Dialogfeld **Verbundene Dienste hinzufügen** in einem ASP.NET-Projekt ein Azure-Speicherkonto erstellt oder auf ein solches Konto verwiesen haben. In diesem Artikel werden allgemeine Aufgaben in Azure-Tabellen veranschaulicht, einschließlich dem Erstellen und Löschen einer Tabelle sowie dem Arbeiten mit Tabellenentitäten. Die Beispiele sind in C# geschrieben und greifen auf die [Azure-Speicherclientbibliothek für .NET](https://msdn.microsoft.com/library/azure/dn261237.aspx) zurück. Weitere allgemeine Informationen zur Verwendung von Azure-Tabellenspeicher finden Sie unter [Verwenden des Tabellenspeichers mit .NET](storage-dotnet-how-to-use-tables.md).
@@ -167,4 +159,4 @@ Sie können eine Entität nach dem Abrufen löschen. Der folgende Code sucht nac
 
 [AZURE.INCLUDE [vs-storage-dotnet-tables-next-steps](../../includes/vs-storage-dotnet-tables-next-steps.md)]
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

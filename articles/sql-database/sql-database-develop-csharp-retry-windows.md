@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/15/2015" 
+	ms.date="11/30/2015" 
 	ms.author="genemi"/>
 
 
@@ -54,7 +54,7 @@ Die Liste mit den Fehlernummern, die als vorübergehende Fehler kategorisiert we
 ## C#-Codebeispiel
 
 
-Das C#-Codebeispiel in diesem Thema enthält eine benutzerdefinierte Erkennungs- und Wiederholungslogik zum Behandeln von vorübergehenden Fehlern.
+Das C#-Codebeispiel in diesem Thema enthält eine benutzerdefinierte Erkennungs- und Wiederholungslogik zum Behandeln von vorübergehenden Fehlern. Bei dem Beispiel wird davon ausgegangen, dass .NET Framework 4.5.1 oder höher installiert ist.
 
 
 Im Codebeispiel werden einige grundlegende Richtlinien oder Empfehlungen befolgt, die unabhängig davon gelten, welche Technologie Sie zum Interagieren mit Azure SQL-Datenbank verwenden. Allgemeine Empfehlungen finden Sie unter:
@@ -131,8 +131,6 @@ namespace RetryAdo2
 			int retryIntervalSeconds = 10;
 			bool returnBool = false;
 
-			Program program = new Program();
-
 			for (int tries = 1; tries <= 5; tries++)
 			{
 				try
@@ -142,8 +140,7 @@ namespace RetryAdo2
 						H.Thread.Sleep(1000 * retryIntervalSeconds);
 						retryIntervalSeconds = Convert.ToInt32(retryIntervalSeconds * 1.5);
 					}
-
-					program.GetSqlConnectionStringBuilder(out sqlConnectionSB);
+					this.GetSqlConnectionStringBuilder(out sqlConnectionSB);
 
 					sqlConnection = new C.SqlConnection(sqlConnectionSB.ToString());
 
@@ -193,6 +190,10 @@ SELECT TOP 3
 			_sqlConnectionSB["User ID"] = "MyLogin";  // "@yourservername"  as suffix sometimes.
 			_sqlConnectionSB["Password"] = "MyPassword";
 			_sqlConnectionSB["Database"] = "MyDatabase";
+
+			// Adjust these values if you like. (.NET 4.5.1 or later.)
+			_sqlConnectionSB["ConnectRetryCount"] = 3;
+			_sqlConnectionSB["ConnectRetryInterval"] = 10;  // Seconds.
 
 			// Leave these values as they are.
 			_sqlConnectionSB["Trusted_Connection"] = false;
@@ -281,4 +282,4 @@ Führen Sie das Programm mit dem Parameter "test" aus, und überprüfen Sie, ob 
 
 - [Clientcodebeispiele für die ersten Schritte mit SQL-Datenbank](sql-database-develop-quick-start-client-code-samples.md)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

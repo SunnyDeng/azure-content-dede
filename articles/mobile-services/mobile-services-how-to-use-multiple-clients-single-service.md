@@ -7,15 +7,20 @@
 	manager="dwrede"
 	editor="mollybos"/>
 <tags
-	ms.service="mobile-services" 
+	ms.service="mobile-services"
 	ms.workload="mobile"
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="09/16/2015"
+	ms.date="12/07/2015"
 	ms.author="glenga"/>
 
 # Unterstützen mehrerer Geräteplattformen durch einen einzelnen mobilen Dienst
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 Einer der Hauptvorteile von Azure Mobile Services bei der Entwicklung mobiler Apps ist die Möglichkeit, mit einem einzigen Back-End-Dienst eine App auf verschiedenen Clientplattformen zu unterstützen. Mobile Services bieten systemeigene Clientbibliotheken für alle großen Geräteplattformen. Dies ermöglicht die einfache App-Entwicklung mit nur einem Back-End-Dienst und plattformübergreifenden Entwicklertools. In diesem Thema werden Aspekte erörtert, wie Sie mithilfe eines einzelnen mobilen Dienst-Back-Ends Ihre App auf mehreren Clientplattformen ausführen können.
 
@@ -145,7 +150,6 @@ Einige plattformübergreifende Tools gewährleisten eine funktionsreichere syste
 
 
 <!-- URLs -->
-[Azure Management portal]: https://manage.windowsazure.com
 [Azure Notification Hubs]: /develop/net/how-to-guides/service-bus-notification-hubs/
 [SSO Windows Store]: /develop/mobile/tutorials/single-sign-on-windows-8-dotnet/
 [SSO Windows Phone]: /develop/mobile/tutorials/single-sign-on-wp8/
@@ -169,4 +173,4 @@ Einige plattformübergreifende Tools gewährleisten eine funktionsreichere syste
 [Building universal Windows apps for all Windows devices]: http://go.microsoft.com/fwlink/p/?LinkId=509905
 [Universal Windows app project for Azure Mobile Services using MVVM]: http://code.msdn.microsoft.com/Universal-Windows-app-for-db3564de
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

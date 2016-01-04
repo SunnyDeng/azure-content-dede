@@ -95,7 +95,7 @@ Die Azure Active Directory-Authentifizierung wird in der aktuellen Version unter
 
 Wenn Sie über eine vorhandene Datenbank verfügen, prüfen Sie, ob diese in SQL-Datenbank V12 gehostet wird, indem Sie (beispielsweise über SQL Server Management Studio) eine Verbindung mit der Datenbank herstellen und `SELECT @@VERSION;` ausführen. Die erwartete Ausgabe für eine Datenbank in SQL-Datenbank V12 ist mindestens **Microsoft SQL Azure (RTM) – 12.0**.
 
-Wenn Ihre Datenbank nicht in SQL-Datenbank V12 gehostet wird, finden Sie weitere Informationen unter [Planen und Vorbereiten des Upgrades auf die SQL-Datenbank V12](sql-database-v12-plan-prepare-upgrade.md), und besuchen Sie dann das Azure-Portal, um die Datenbank nach SQL-Datenbank V12 zu migrieren.
+Wenn Ihre Datenbank nicht in SQL-Datenbank V12 gehostet wird, finden Sie weitere Informationen unter [Planen und Vorbereiten des Upgrades auf die SQL-Datenbank V12](sql-database-v12-plan-prepare-upgrade.md). Besuchen Sie dann das klassische Azure-Portal, um die Datenbank nach SQL-Datenbank V12 zu migrieren.
 
 Alternativ können Sie eine neue Datenbank in SQL-Datenbank V12 erstellen, indem Sie die unter [Erstellen einer ersten Azure SQL-Datenbank](sql-database-get-started.md) aufgeführten Schritte ausführen. **Tipp**: Lesen Sie die Informationen im nächsten Schritt, bevor Sie ein Abonnement für Ihre neue Datenbank auswählen.
 
@@ -107,7 +107,7 @@ Um Ihre Datenbank dem Azure AD-Verzeichnis für Ihre Organisation zuzuordnen, ke
 
 Die folgenden Verfahren zeigen Schrittanleitungen dazu, wie Sie das zugeordnete Verzeichnis für ein Abonnement ändern.
 
-1. Melden Sie sich als Azure-Abonnementadministrator beim [Azure-Portal](https://manage.windowsazure.com/) an.
+1. Melden Sie sich als Azure-Abonnementadministrator beim [klassischen Azure-Portal](https://manage.windowsazure.com/) an.
 2. Wählen Sie auf dem Banner links die Option **EINSTELLUNGEN** aus. 
 3. Ihre Abonnements werden im Bildschirm mit den Einstellungen angezeigt. Wenn das gewünschte Abonnement nicht angezeigt wird, klicken Sie oben auf **Abonnements**, klicken Sie auf die Dropdownliste **NACH VERZEICHNIS FILTERN**, und wählen Sie das Verzeichnis aus, das Ihre Abonnements enthält. Klicken Sie dann auf **ANWENDEN**.
 
@@ -131,9 +131,9 @@ Jede Azure SQL Server-Instanz wird zunächst mit einem einzigen Serveradministra
 
 > [AZURE.NOTE]Benutzer, die nicht auf einem Azure AD-Konto basieren (hierzu gehört auch das Azure SQL Server-Administratorkonto) können keine Azure AD-basierten Benutzer erstellen, da sie keine Berechtigung zum Überprüfen der vorgeschlagenen Datenbankbenutzer mit Azure AD besitzen.
 
-### Bereitstellen eines Azure Active Directory-Administrators für Azure SQL Server unter Verwendung des Azure-Portals 
+### Bereitstellen eines Azure Active Directory-Administrators für Azure SQL Server unter Verwendung des klassischen Azure-Portals 
 
-1. Klicken Sie im [Azure-Portal](https://portal.azure.com/) in der oberen rechten Ecke auf Ihre Verbindung, um eine Dropdownliste mit möglichen Active Directory-Verzeichnissen zu öffnen. Wählen Sie das richtige Active Directory-Verzeichnis als Standardeinstellung für Azure AD aus. Durch diesen Schritt wird das Abonnement mit Active Directory und Azure SQL-Datenbank verknüpft. So wird sichergestellt, dass dasselbe Abonnement sowohl für Azure AD als auch für SQL Server verwendet wird.
+1. Klicken Sie im [klassischen Azure-Portal](https://portal.azure.com/) in der oberen rechten Ecke auf Ihre Verbindung, um eine Dropdownliste mit möglichen Active Directory-Verzeichnissen zu öffnen. Wählen Sie das richtige Active Directory-Verzeichnis als Standardeinstellung für Azure AD aus. Durch diesen Schritt wird das Abonnement mit Active Directory und Azure SQL-Datenbank verknüpft. So wird sichergestellt, dass dasselbe Abonnement sowohl für Azure AD als auch für SQL Server verwendet wird.
 
 	![Administrator auswählen][8]
 2. Wählen Sie auf dem Banner links **SQL Server**, wählen Sie Ihre SQL Server-Instanz, und klicken Sie dann oben auf dem Blatt **SQL Server** auf **Einstellungen**.
@@ -147,59 +147,60 @@ Jede Azure SQL Server-Instanz wird zunächst mit einem einzigen Serveradministra
 
 	Der Vorgang zum Ändern des Administrators kann einige Minuten in Anspruch nehmen. Anschließend wird der neue Administrator im Feld **Active Directory-Administrator** angezeigt.
 
+> [AZURE.NOTE]Beim Einrichten des Azure AD-Administrators darf der Name des neuen Administrators (Benutzer oder Gruppe) in der Masterdatenbank noch nicht als SQL Server-Authentifizierungsanmeldung vorhanden sein. Wenn er vorhanden ist, schlägt die Einrichtung des Azure AD-Administrators fehl, wobei die Erstellung rückgängig gemacht und angegeben wird, dass ein solcher Administrator (Name) bereits vorhanden ist. Da diese SQL Server-Authentifizierungsanmeldung nicht Teil von Azure AD ist, schlagen alle Versuche fehl, unter der Azure AD-Authentifizierung eine Verbindung zum Server herzustellen.
+
 Um einen Administrator zu einem späteren Zeitpunkt zu entfernen, klicken Sie oben auf dem Blatt **Active Directory-Administrator** auf **Administrator entfernen**.
 
 ### Bereitstellen eines Azure AD-Administrators für Azure SQL Server unter Verwendung von PowerShell 
 
-> [AZURE.IMPORTANT]Ab Veröffentlichung von Azure PowerShell 1.0 Preview ist das Cmdlet "Switch-AzureMode" nicht mehr erforderlich. Außerdem wurden die Cmdlets im Modul "Azure-Ressourcen-Manager" umbenannt. In den Beispielen in diesem Artikel wird die neue Benennungskonvention von PowerShell 1.0 Preview verwendet. Ausführliche Informationen finden Sie unter ["Switch-AzureMode" in Azure PowerShell veraltet](https://github.com/Azure/azure-powershell/wiki/Deprecation-of-Switch-AzureMode-in-Azure-PowerShell).
 
 
-Zur Ausführung von PowerShell-Cmdlets muss Azure PowerShell installiert sein und ausgeführt werden. Aufgrund des Entfernens von "Switch-AzureMode" müssen Sie die neueste Azure PowerShell-Version herunterladen und mithilfe des [Microsoft-Webplattform-Installers](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409) installieren. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
+Zum Ausführen von PowerShell-Cmdlets muss Azure PowerShell installiert sein und ausgeführt werden. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
 
 Um einen Azure AD-Administrator bereitzustellen, müssen Sie die folgenden Azure PowerShell-Befehle ausführen:
 
-- Add-AzureAccount
-- Select-AzureSubscription
+- Add-AzureRmAccount
+- Select-AzureRmSubscription
 
 
 Verwenden Sie folgende Cmdlets zum Bereitstellen und Verwalten des Azure AD-Administrators:
 
 | Cmdlet-Name | Beschreibung |
 |---------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| [Set-AzureRMSqlServerActiveDirectoryAdministrator](https://msdn.microsoft.com/library/azure/mt603544.aspx) | Stellt einen Azure Active Directory-Administrator für Azure SQL Server bereit. (Muss aus dem aktuellen Abonnement stammen.) |
-| [Remove-AzureRMSqlServerActiveDirectoryAdministrator](https://msdn.microsoft.com/library/azure/mt619340.aspx) | Entfernt einen Azure Active Directory-Administrator für Azure SQL Server. |
-| [Get-AzureRMSqlServerActiveDirectoryAdministrator](https://msdn.microsoft.com/library/azure/mt603737.aspx) | Gibt Informationen zu dem Azure Active Directory-Administrator zurück, der aktuell für Azure SQL Server konfiguriert ist. |
+| [Set-AzureRmSqlServerActiveDirectoryAdministrator](https://msdn.microsoft.com/library/azure/mt603544.aspx) | Stellt einen Azure Active Directory-Administrator für Azure SQL Server bereit. (Muss aus dem aktuellen Abonnement stammen.) |
+| [Remove-AzureRmSqlServerActiveDirectoryAdministrator](https://msdn.microsoft.com/library/azure/mt619340.aspx) | Entfernt einen Azure Active Directory-Administrator für Azure SQL Server. |
+| [Get-AzureRmSqlServerActiveDirectoryAdministrator](https://msdn.microsoft.com/library/azure/mt603737.aspx) | Gibt Informationen zu dem Azure Active Directory-Administrator zurück, der aktuell für Azure SQL Server konfiguriert ist. |
 
-Verwenden Sie den PowerShell-Befehl "get-help", um weitere Informationen zu diesen Befehlen anzuzeigen. Verwenden Sie z. B. ``get-help Set-AzureRMSqlServerActiveDirectoryAdministrator``.
+Verwenden Sie den PowerShell-Befehl "get-help", um weitere Informationen zu diesen Befehlen anzuzeigen. Verwenden Sie z. B. ``get-help Set-AzureRmSqlServerActiveDirectoryAdministrator``.
 
 Das folgende Skript stellt eine Azure AD-Administratorengruppe namens **DBA\_Group** (Objekt-ID `40b79501-b343-44ed-9ce7-da4c8cc7353f`) für den Server **demo\_server** in einer Ressourcengruppe mit dem Namen **Group-23** bereit:
 
 ```
-Set-AzureRMSqlServerActiveDirectoryAdministrator –ResourceGroupName "Group-23" 
+Set-AzureRmSqlServerActiveDirectoryAdministrator –ResourceGroupName "Group-23" 
 –ServerName "demo_server" -DisplayName "DBA_Group"
 ```
 
 Der Eingabeparameter **DisplayName** akzeptiert entweder den Azure AD-Anzeigenamen oder den Benutzerprinzipalnamen (UPN). Beispiel: ``DisplayName="John Smith"`` und ``DisplayName="johns@contoso.com"``. Für Azure AD-Gruppen wird nur der Azure AD-Anzeigename unterstützt.
 
-> [AZURE.NOTE]Der Azure PowerShell-Befehl ```Set-AzureRMSqlServerActiveDirectoryAdministrator``` verhindert nicht, dass nicht unterstützte Benutzer als Azure AD-Administratoren bereitgestellt werden. Ein nicht unterstützter Benutzer kann bereitgestellt werden, dieser kann aber keine Verbindung mit einer Datenbank herstellen. (Eine Liste der unterstützten Administratoren finden Sie unter **Features und Einschränkungen von Azure AD** weiter oben.)
+> [AZURE.NOTE]Der Azure PowerShell-Befehl ```Set-AzureRmSqlServerActiveDirectoryAdministrator``` verhindert nicht, dass nicht unterstützte Benutzer als Azure AD-Administratoren bereitgestellt werden. Ein nicht unterstützter Benutzer kann bereitgestellt werden, dieser kann aber keine Verbindung mit einer Datenbank herstellen. (Eine Liste der unterstützten Administratoren finden Sie unter **Features und Einschränkungen von Azure AD** weiter oben.)
 
 Im folgenden Beispiel wird der optionale Wert für **ObjectID** verwendet:
 
 ```
-Set-AzureRMSqlServerActiveDirectoryAdministrator –ResourceGroupName "Group-23" 
+Set-AzureRmSqlServerActiveDirectoryAdministrator –ResourceGroupName "Group-23" 
 –ServerName "demo_server" -DisplayName "DBA_Group" -ObjectId "40b79501-b343-44ed-9ce7-da4c8cc7353f"
 ```
 
-> [AZURE.NOTE]Ein Wert für **ObjectID** ist in Azure AD erforderlich, wenn **DisplayName** nicht eindeutig ist. Um die Werte für **ObjectID** und **DisplayName** abzurufen, verwenden Sie den Active Directory-Abschnitt im Azure-Portal, um die Eigenschaften für einen Benutzer oder eine Gruppe anzuzeigen.
+> [AZURE.NOTE]Ein Wert für **ObjectID** ist in Azure AD erforderlich, wenn **DisplayName** nicht eindeutig ist. Um die Werte für **ObjectID** und **DisplayName** abzurufen, verwenden Sie den Active Directory-Abschnitt im klassischen Azure-Portal, um die Eigenschaften für einen Benutzer oder eine Gruppe anzuzeigen.
 
 Das folgende Beispiel gibt Informationen zum aktuellen Azure AD-Administrator für Azure SQL Server zurück:
 
 ```
-Get-AzureRMSqlServerActiveDirectoryAdministrator –ResourceGroupName "Group-23" –ServerName "demo_server" | Format-List
+Get-AzureRmSqlServerActiveDirectoryAdministrator –ResourceGroupName "Group-23" –ServerName "demo_server" | Format-List
 ```
 
 Mit dem folgenden Beispiel wird ein Azure AD-Administrator entfernt: ```
-Remove-AzureRMSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" –ServerName "demo_server"
+Remove-AzureRmSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" –ServerName "demo_server"
 ```
 
 ## 5\. Konfigurieren der Clientcomputer
@@ -226,7 +227,7 @@ Für die Azure Active Directory-Authentifizierung ist es erforderlich, dass Date
  
 Um zu bestätigen, dass der Azure AD-Administrator ordnungsgemäß eingerichtet ist, stellen Sie mit dem Azure AD-Administratorkonto eine Verbindung mit der Datenbank **master** her. Um einen Azure AD-basierten eigenständigen Datenbankbenutzer bereitzustellen (bei dem es sich nicht um den Serveradministrator handelt, der Besitzer der Datenbank ist), stellen Sie mithilfe einer Azure AD-Identität, die Zugriff auf die Datenbank hat, eine Verbindung mit der Datenbank her.
 
-> [AZURE.IMPORTANT][SQL Server 2016 Management Studio](https://msdn.microsoft.com/library/mt238290.aspx) bietet Unterstützung für die Azure Active Directory-Authentifizierung.
+> [AZURE.IMPORTANT] [SQL Server 2016 Management Studio](https://msdn.microsoft.com/library/mt238290.aspx) bietet Unterstützung für die Azure Active Directory-Authentifizierung.
 
 #### Herstellen einer Verbindung mithilfe der integrierten Active Directory-Authentifizierung 
 
@@ -325,4 +326,4 @@ Spezifische Codebeispiele für die Azure AD-Authentifizierung finden Sie im [SQL
 [9]: ./media/sql-database-aad-authentication/9ad-settings.png
 [10]: ./media/sql-database-aad-authentication/10choose-admin.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015--->

@@ -1,4 +1,4 @@
-<!--author=alkohli last changed: 9/17/15-->
+<!--author=alkohli last changed: 12/01/15-->
 
 
 ### So konfigurieren und registrieren Sie das Gerät
@@ -53,19 +53,19 @@
 
 13. Schließen Sie die serielle Konsole.
 
-14. Kehren Sie zum Verwaltungsportal zurück, und führen Sie die folgenden Schritte aus:
+14. Kehren Sie zum klassischen Azure-Portal zurück, und führen Sie die folgenden Schritte aus:
   1. Doppelklicken auf Ihren StorSimple-Manager-Dienst, um auf die Seite **Schnellstart** zuzugreifen.
   2. Klicken Sie auf **View connected devices**.
   3. Vergewissern Sie sich auf der Seite **Geräte**, dass das Gerät erfolgreich mit dem Dienst verbunden wurde, indem Sie seinen Status überprüfen. Als Gerätestatus sollte **Online** angezeigt werden.
    
     	![StorSimple Devices page](./media/storsimple-configure-and-register-device-u1/HCS_DevicesPageM_U1-include.png) 
   
-	Wenn der Gerätestatus **Offline** ist, warten Sie einige Minuten, bis das Gerät online geschaltet wird.
-	      
-	Wenn das Gerät nach einigen Minuten weiterhin offline ist, müssen Sie sicherstellen, dass Ihr Firewallnetzwerk wie unter [Netzwerkanforderungen für Ihr StorSimple-Gerät](../articles/storsimple/storsimple-system-requirements.md) konfiguriert wurde.
-	
-	Wenn HTTP 1.1 nicht unterstützt wird, überprüfen Sie Port 9354 um sicherzustellen, dass er für die ausgehende Kommunikation geöffnet ist. Dieser Port wird für die Kommunikation zwischen dem StorSimple Manager-Dienst und Ihrem StorSimple-Gerät verwendet.
+        Wenn der Gerätestatus „Offline“ ist, warten Sie ein paar Minuten, bis das Gerät online geschaltet wird. 
+      
+        Wenn das Gerät nach einigen Minuten weiterhin offline ist, müssen Sie sicherstellen, dass Ihr Firewallnetzwerk wie unter [Netzwerkanforderungen für Ihr StorSimple-Gerät](../articles/storsimple/storsimple-system-requirements.md) konfiguriert wurde. 
+
+		Wenn HTTP 1.1 nicht unterstützt wird, überprüfen Sie Port 9354, um sicherzustellen, dass er für ausgehende Kommunikation geöffnet ist. Dieser Port wird für die Kommunikation zwischen dem StorSimple Manager-Dienst und Ihrem StorSimple-Gerät verwendet.
      
        
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -46,7 +46,7 @@ Fügen Sie folgende include-Anweisungen am Anfang der C++-Datei dort ein, wo Azu
 	#include "was/table.h"
 
 ## Einrichten einer Azure-Speicherverbindungszeichenfolge  
-Ein Azure-Speicherclient verwendet eine Speicherverbindungszeichenfolge zum Speichern von Endpunkten und Anmeldeinformationen für den Zugriff auf Datenverwaltungsdienste. Beim Ausführen einer Clientanwendung müssen Sie die Speicherverbindungszeichenfolge im folgenden Format angeben. Verwenden Sie den Namen Ihres Speicherkontos und den Speicherzugriffsschlüssel für das Speicherkonto, die im Azure-Portal für die Werte *AccountName* und *AccountKey* aufgeführt sind. Weitere Informationen über Speicherkonten und Zugriffsschlüssel finden Sie unter [Informationen zu Azure-Speicherkonten](storage-create-storage-account.md). Dieses Beispiel zeigt, wie Sie ein statisches Feld für die Verbindungszeichenfolge deklarieren:
+Ein Azure-Speicherclient verwendet eine Speicherverbindungszeichenfolge zum Speichern von Endpunkten und Anmeldeinformationen für den Zugriff auf Datenverwaltungsdienste. Beim Ausführen einer Clientanwendung müssen Sie die Speicherverbindungszeichenfolge im folgenden Format angeben. Verwenden Sie den Namen Ihres Speicherkontos und den Speicherzugriffsschlüssel für das Speicherkonto, das im [Azure-Portal](portal.azure.com) aufgeführt ist, als Werte für *AccountName* und *AccountKey*. Weitere Informationen über Speicherkonten und Zugriffsschlüssel finden Sie unter [Informationen zu Azure-Speicherkonten](storage-create-storage-account.md). Dieses Beispiel zeigt, wie Sie ein statisches Feld für die Verbindungszeichenfolge deklarieren:
 
 	// Define the connection string with your values.
 	const utility::string_t storage_connection_string(U("DefaultEndpointsProtocol=https;AccountName=your_storage_account;AccountKey=your_storage_account_key"));
@@ -414,4 +414,4 @@ Nachdem Sie sich nun mit den Grundlagen von Tabellenspeichern vertraut gemacht h
 -	[Referenz zur Speicherclientbibliothek für C++](http://azure.github.io/azure-storage-cpp)
 -	[Azure Storage-Dokumentation](http://azure.microsoft.com/documentation/services/storage/)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

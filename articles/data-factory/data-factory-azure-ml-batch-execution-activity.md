@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Erstellen von Vorhersagepipelines mithilfe der Aktivität ";Azure Machine Learning-Batchausführung"; | Microsoft Azure" 
-	description="Erläuterungen zum Erstellen von Vorhersagepipelines mithilfe von Data Factory und Azure Machine Learning" 
+	description="Beschreibt das Erstellen von Vorhersagepipelines mithilfe von Azure Data Factory und Azure Machine Learning" 
 	services="data-factory" 
 	documentationCenter="" 
 	authors="spelluru" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/04/2015" 
+	ms.date="12/06/2015" 
 	ms.author="spelluru"/>
 
 # Erstellen von Vorhersagepipelines mithilfe von Azure Machine Learning-Aktivitäten   
@@ -38,7 +38,7 @@ Im Laufe der Zeit müssen die Vorhersagemodelle in den Azure ML-Bewertungsexperi
   
 Nachdem Sie das erneute Trainieren abgeschlossen haben, sollten Sie den Bewertungswebdienst (das Vorhersageexperiment, das als Webdienst verfügbar gemacht wurde) mit dem neu trainierten Modell aktualisieren. Dazu müssen Sie die folgenden Schritte ausführen:
 
-1. Fügen Sie einen nicht standardmäßigen Endpunkt zum Bewertungswebdienst hinzu. Der Standardendpunkt des Webdiensts kann nicht aktualisiert werden, daher müssen Sie einen neuen nicht standardmäßigen Endpunkt mithilfe des Azure-Verwaltungsportals erstellen. Im Artikel [Erstellen von Endpunkten](../machine-learning/machine-learning-create-endpoint.md) finden Sie konzeptionelle Informationen und entsprechende Schritte.
+1. Fügen Sie einen nicht standardmäßigen Endpunkt zum Bewertungswebdienst hinzu. Der Standardendpunkt des Webdiensts kann nicht aktualisiert werden, daher müssen Sie einen neuen nicht standardmäßigen Endpunkt mithilfe des klassischen Azure-Portals erstellen. Im Artikel [Erstellen von Endpunkten](../machine-learning/machine-learning-create-endpoint.md) finden Sie konzeptionelle Informationen und entsprechende Schritte.
 2. Aktualisieren Sie vorhandene mit Azure ML verknüpfte Dienste für die Bewertung, sodass sie den nicht standardmäßigen Endpunkt verwenden. Sie sollten mit der Verwendung des neuen Endpunkts beginnen, um den Webdienst zu verwenden, der aktualisiert wurde.
 3. Verwenden Sie die **Azure ML-Ressourcenaktualisierungsaktivität**, um den Webdienst mit dem neu trainierten Modell zu aktualisieren.  
 
@@ -59,7 +59,9 @@ Mit Azure Data Factory können Sie die Verschiebung und Verarbeitung von Daten o
 
 
 ### Szenario: Experimente mit Eingaben/Ausgaben für den Webdienst, die auf Daten im Azure-Blob-Speicher verweisen
-In diesem Szenario werden mit dem Azure Machine Learning-Webdienst anhand der Daten aus einer Datei eines Azure-Blob-Speichers Vorhersagen erstellt und die Vorhersageergebnisse im Blob-Speicher gespeichert. Das folgende JSON-Skript definiert eine Azure Data Factory-Pipeline mit einer AzureMLBatchExecution-Aktivität. Die Aktivität enthält das Dataset **DecisionTreeInputBlob** als Eingabe und **DecisionTreeResultBlob** als Ausgabe. **DecisionTreeInputBlob** wird mithilfe der JSON-Eigenschaft **webServiceInput** als Eingabe an den Webdienst und **DecisionTreeResultBlob** mithilfe der JSON-Eigenschaft **webServiceOutputs** als Ausgabe an den Webdienst übergeben. Es können nur Datasets, die Eingaben und Ausgaben für die Aktivität sind, als Ein- und Ausgaben für den Webdienst übergeben werden.
+In diesem Szenario werden mit dem Azure Machine Learning-Webdienst anhand der Daten aus einer Datei eines Azure-Blob-Speichers Vorhersagen erstellt und die Vorhersageergebnisse im Blob-Speicher gespeichert. Das folgende JSON-Skript definiert eine Azure Data Factory-Pipeline mit einer AzureMLBatchExecution-Aktivität. Die Aktivität enthält das Dataset **DecisionTreeInputBlob** als Eingabe und **DecisionTreeResultBlob** als Ausgabe. **DecisionTreeInputBlob** wird mithilfe der JSON-Eigenschaft **webServiceInput** als Eingabe an den Webdienst und **DecisionTreeResultBlob** mithilfe der JSON-Eigenschaft **webServiceOutputs** als Ausgabe an den Webdienst übergeben.
+
+> [AZURE.NOTE]Datasets, auf die die Eigenschaften **webServiceInput** und **webServiceOutputs** (in **typeProperties**) verweisen, müssen auch in den Aktivitäten **inputs** und **outputs** enthalten sein.
 
 
 	{
@@ -351,7 +353,96 @@ Im obigen JSON-Beispiel:
 
 - Der bereitgestellte Azure Machine Learning-Webdienst verwendet ein Reader- und ein Writer-Modul zum Lesen und Schreiben von Daten aus einer und in eine Azure SQL-Datenbank. Der Webdienst stellt die vier folgenden Parameter bereit: "Database server name", "Database name", "Server user account name" und "Server user account password".  
 - Datum und Uhrzeit von **Start** und **Ende** müssen im [ISO-Format](http://en.wikipedia.org/wiki/ISO_8601) angegeben werden. Beispiel: 2014-10-14T16:32:41Z. Die Zeit für **end** ist optional. Wenn Sie für die **end**-Eigenschaft keinen Wert angeben, wird sie als "**start + 48 Stunden**" berechnet. Um die Pipeline auf unbestimmte Zeit auszuführen, geben Sie als Wert für die **end**-Eigenschaft **9999-09-09** an. Informationen zu JSON-Eigenschaften finden Sie in der [JSON-Skriptreferenz](https://msdn.microsoft.com/library/dn835050.aspx).
- 
+
+### Andere Szenarien
+
+#### Webdienst erfordert keine Eingabe
+
+Mit Webdiensten zur Azure ML-Batchausführung können beliebige Workflows ausgeführt werden, z. B. R- oder Python-Skripts, keine Eingaben erfordern. Das Experiment könnte auch mit einem Reader-Modul konfiguriert werden, das keine GlobalParameters verfügbar macht. In diesem Fall würde die AzureMLBatchExecution-Aktivität wie folgt konfiguriert werden:
+
+	{
+        "name": "scoring service",
+        "type": "AzureMLBatchExecution",
+        "outputs": [
+            {
+                "name": "myBlob"
+            }
+        ],
+        "typeProperties": {
+            "webServiceOutputs": {
+                "output1": "myBlob"
+            }              
+         },
+        "linkedServiceName": "mlEndpoint",
+        "policy": {
+            "concurrency": 1,
+            "executionPriorityOrder": "NewestFirst",
+            "retry": 1,
+            "timeout": "02:00:00"
+        }
+    },
+   
+
+#### Webdienst erfordert keine Ein-/Ausgabe
+Für den Webdienst zur Azure ML-Batchausführung ist möglicherweise keine Webdienst-Ausgabe konfiguriert. In diesem Beispiel ist weder eine Webdienst-Ein-/Ausgabe, noch sind GlobalParameters konfiguriert. Beachten Sie, dass immer noch eine Ausgabe in der Aktivität selbst konfiguriert ist, aber nicht als „webServiceOutput“.
+
+	{
+        "name": "retraining",
+        "type": "AzureMLBatchExecution",
+        "outputs": [
+            {
+                "name": "placeholderOutputDataset"
+            }
+        ],
+        "typeProperties": {
+         },
+        "linkedServiceName": "mlEndpoint",
+        "policy": {
+            "concurrency": 1,
+            "executionPriorityOrder": "NewestFirst",
+            "retry": 1,
+            "timeout": "02:00:00"
+        }
+    },
+
+#### Der Webdienst verwendet Reader und Writer, und die Aktivität wird nur dann ausgeführt, wenn andere Aktivitäten erfolgreich ausgeführt wurden.
+
+Die Reader- und Writer-Module des Azure ML-Webdiensts könnten für die Ausführung mit oder ohne GlobalParameters konfiguriert werden. Aber möglicherweise möchten Sie die Dienstaufrufe in eine Verarbeitungspipeline einbetten, die Datasetabhängigkeiten verwendet, um den Dienst nur dann aufzurufen, wenn bestimmte Upstreamverarbeitung abgeschlossen ist, und dann nach der Batchausführung eine andere Aktion auszulösen. In diesem Fall können Sie die Abhängigkeiten mit Eingaben und Ausgaben der Aktivität ausdrücken, ohne diese als Webdienstein- oder Ausgaben zu benennen.
+
+	{
+	    "name": "retraining",
+	    "type": "AzureMLBatchExecution",
+	    "inputs": [
+	        {
+	            "name": "upstreamData1"
+	        },
+	        {
+	            "name": "upstreamData2"
+	        }
+	    ],
+	    "outputs": [
+	        {
+	            "name": "downstreamData"
+	        }
+	    ],
+	    "typeProperties": {
+	     },
+	    "linkedServiceName": "mlEndpoint",
+	    "policy": {
+	        "concurrency": 1,
+	        "executionPriorityOrder": "NewestFirst",
+	        "retry": 1,
+	        "timeout": "02:00:00"
+	    }
+	},
+
+Die **Vorteile** sind:
+
+-   Wenn Ihr Experimentendpunkt einen „webServiceInput“ verwendet, wird er durch ein Blobdataset dargestellt und ist sowohl in den Aktivitätseingaben als auch der webServiceInput-Eigenschaft enthalten. Andernfalls wird die webServiceInput-Eigenschaft weggelassen. 
+-   Wenn Ihr Experimentendpunkt „webServiceOutput(s)“ verwendet, werden sie von Blobdatasets dargestellt und sind sowohl in den Aktivitätsausgaben als auch der webServicepOutputs-Eigenschaft enthalten (zugeordnet von jedem Namen jeder Ausgabe im Experiment). Andernfalls wird die webServiceOutputs-Eigenschaft weggelassen.
+-   Wenn Ihr Experimentendpunkt „globalParameter(s)“ verfügbar macht, werden sie in der globalParameters-Eigenschaft der Aktivität als Schlüsselwertpaare angegeben. Andernfalls wird die globalParameters-Eigenschaft weggelassen. Bei Schlüsseln wird Groß-/Kleinschreibung unterschieden. [Azure Data Factory-Funktionen](data-factory-scheduling-and-execution.md#data-factory-functions-reference) können in den Werten verwendet werden. 
+- Weitere Datasets können in den Eigenschaften „inputs“ und „outputs“ der Aktivität enthalten sein, ohne das in „typeProperties“ der Aktivität darauf verwiesen wird. Diese bestimmen die Ausführung mit Slice-Abhängigkeiten, werden aber von der Aktivität „AzureMLBatchExecution“ ignoriert. 
+
 
 ## Aktualisieren von Azure ML-Modellen mithilfe der Ressourcenaktualisierungsaktivität
 Im Laufe der Zeit müssen die Vorhersagemodelle in den Azure ML-Bewertungsexperimenten mit neuen Eingabedatasets neu trainiert werden. Wenn Sie mit dem erneuten Trainieren fertig sind, sollten Sie den Bewertungswebdienst mit dem neu trainierten ML-Modell aktualisieren. Typische Schritte, um das erneute Trainieren und das Aktualisieren von Azure ML-Modellen über Webdienste zu ermöglichen:
@@ -364,7 +455,7 @@ In der folgenden Tabelle werden die in diesem Beispiel verwendeten Webdienste be
 | Webdiensttyp | description 
 | :------------------ | :---------- 
 | **Trainingswebdienst** | Empfängt Trainingsdaten und erzeugt trainierte Modelle. Die Ausgabe des erneuten Trainierens ist eine iLearner-Datei in einem Azure-Blobspeicher. Der **Standardendpunkt** wird automatisch erstellt, wenn Sie das Trainingsexperiment als Webdienst veröffentlichen. Sie können weitere Endpunkte erstellen, aber im Beispiel wird nur der Standardendpunkt verwendet. |
-| **Bewertungswebdienst** | Empfängt Datenbeispiele ohne Bezeichnung und macht Vorhersagen. Die Ausgabe der Vorhersage kann verschiedene Formen aufweisen, z. B. eine CSV-Datei oder Zeilen in einer Azure SQL-Datenbank, dies ist abhängig von der Konfiguration des Experiments. Der Standardendpunkt wird automatisch erstellt, wenn Sie das Vorhersageexperiment als Webdienst veröffentlichen. Sie müssen einen zweiten **nicht standardmäßigen und aktualisierbaren Endpunkt** mithilfe des [Azure-Portals](https://manage.windowsazure.com) erstellen. Sie können weitere Endpunkte erstellen, aber im Beispiel wird nur der nicht standardmäßige aktualisierbare Endpunkt verwendet. Die Schritte sind im Artikel [Erstellen von Endpunkten](../machine-learning/machine-learning-create-endpoint.md) aufgeführt.       
+| **Bewertungswebdienst** | Empfängt Datenbeispiele ohne Bezeichnung und macht Vorhersagen. Die Ausgabe der Vorhersage kann verschiedene Formen aufweisen, z. B. eine CSV-Datei oder Zeilen in einer Azure SQL-Datenbank, dies ist abhängig von der Konfiguration des Experiments. Der Standardendpunkt wird automatisch erstellt, wenn Sie das Vorhersageexperiment als Webdienst veröffentlichen. Sie müssen einen zweiten **nicht standardmäßigen und aktualisierbaren Endpunkt** mithilfe des [klassischen Azure-Portals](https://manage.windowsazure.com) erstellen. Sie können weitere Endpunkte erstellen, aber im Beispiel wird nur der nicht standardmäßige aktualisierbare Endpunkt verwendet. Die Schritte sind im Artikel [Erstellen von Endpunkten](../machine-learning/machine-learning-create-endpoint.md) aufgeführt.       
  
 Die folgende Abbildung zeigt die Beziehung zwischen Trainings- und Bewertungsendpunkten in Azure ML.
 
@@ -473,8 +564,8 @@ Führen Sie in **Azure ML Studio** folgende Schritte aus, um Werte für **mlEndp
 
 1. Klicken Sie im linken Menü auf **WEB SERVICES**.
 2. Klicken Sie in der Liste der Webdienste auf den **Trainingswebdienst**. 
-3. Klicken Sie neben dem Textfeld **API key** auf „Copy“, um den API-Schlüssel in die Zwischenablage zu kopieren. Fügen Sie den Schlüssel in den Data Factory-JSON-Editor ein.
-4. Klicken Sie in **Azure ML Studio** auf den Link **BATCH EXECUTION**, kopieren Sie den **Anforderungs-URI** aus dem Abschnitt **Request**, und fügen Sie ihn in den Data Factory-JSON-Editor ein.   
+3. Klicken Sie neben dem Textfeld **API-Schlüssel** auf „Kopieren“, um den API-Schlüssel in die Zwischenablage zu kopieren. Fügen Sie den Schlüssel in den Data Factory-JSON-Editor ein.
+4. Klicken Sie in **Azure ML Studio** auf den Link **BATCH-AUSFÜHRUNG**, kopieren Sie den **Anforderungs-URI** aus dem Abschnitt **Anforderung**, und fügen Sie ihn in den Data Factory-JSON-Editor ein.   
 
 
 #### Verknüpfter Dienst für den aktualisierbaren Azure ML-Bewertungsendpunkt
@@ -495,7 +586,7 @@ Der folgende JSON-Codeausschnitt definiert einen mit Azure Machine Learning verk
 
 Vor dem Erstellen und Bereitstellen eines mit Azure ML verknüpften Diensts führen Sie die Schritte im Artikel [Erstellen von Endpunkten](../machine-learning/machine-learning-create-endpoint.md) aus, um einen zweiten (nicht standardmäßigen und aktualisierbaren) Endpunkt für den Bewertungswebdienst zu erstellen.
 
-Klicken Sie nach dem Erstellen des nicht standardmäßigen aktualisierbaren Endpunkts auf **BATCH EXECUTION**, um den URI-Wert für die JSON-Eigenschaft **mlEndpoint** abzurufen. Klicken Sie dann auf den Link **UPDATE RESOURCE**, um den URI-Wert für die JSON-Eigenschaft **updateResourceEndpoint** abzurufen. Den API-Schlüssel finden Sie auf der Seite des Endpunkts (unten rechts).
+Klicken Sie nach dem Erstellen des nicht standardmäßigen aktualisierbaren Endpunkts auf **BATCH-AUSFÜHRUNG**, um den URI-Wert für die JSON-Eigenschaft **mlEndpoint** abzurufen. Klicken Sie dann auf den Link **RESSOURCE AKTUALISIEREN**, um den URI-Wert für die JSON-Eigenschaft **updateResourceEndpoint** abzurufen. Den API-Schlüssel finden Sie auf der Seite des Endpunkts (unten rechts).
 
 ![Aktualisierbarer Endpunkt](./media/data-factory-azure-ml-batch-execution-activity/updatable-endpoint.png)
 
@@ -583,32 +674,90 @@ Die Pipeline weist zwei Aktivitäten auf: **AzureMLBatchExecution** und **AzureM
 	                "name": "AzureML Update Resource",
 	                "linkedServiceName": "updatableScoringEndpoint2"
 	            }
-	        ]
+	        ],
+	    	"start": "2015-02-13T00:00:00Z",
+	   		"end": "2015-02-14T00:00:00Z"
 	    }
 	}
 
 
+### Die Module "Reader" und "Writer"
+
+Ein häufiges Szenario für Webdienstparameter ist die Verwendung der Azure SQL-Module "Reader" und "Writer". Das Modul "Reader" dient zum das Laden von Daten in ein Experiment aus Datenverwaltungsdiensten außerhalb von Azure Machine Learning Studio. Das Modul "Writer" wird zum Speichern von Daten aus Ihren Experimenten in Datenverwaltungsdiensten außerhalb von Azure Machine Learning Studio verwendet.
+
+Ausführliche Informationen zu Azure-Blob/Azure SQL Reader/Writer finden Sie in den Themen [Reader](https://msdn.microsoft.com/library/azure/dn905997.aspx) und [Writer](https://msdn.microsoft.com/library/azure/dn905984.aspx) in der MSDN Library. Im Beispiel im vorherigen Abschnitt wurden die Azure-Blobmodule "Reader" und "Writer" verwendet. In diesem Abschnitt werden die Azure SQL-Module "Reader" und "Writer" erläutert.
 
 
 ## Häufig gestellte Fragen
-
-**F:** Ich verwende die AzureMLBatchScoring-Aktivität. Soll ich auf die AzureMLBatchExecution-Aktivität umsteigen?
-
-**A:** Ja. Wenn Sie derzeit die AzureMLBatchScoring-Aktivität für die Integration in Azure Machine Learning verwenden, empfiehlt es sich, die neueste AzureMLBatchExecution-Aktivität zu verwenden. Die AzureMLBatchScoring-Aktivität ist veraltet und wird in zukünftigen Versionen nicht mehr enthalten sein.
-
-Die AzureMLBatchExecution-Aktivität wird in den Azure SDK- und Azure PowerShell-Versionen von August 2015 eingeführt.
-
-Die AzureMLBatchExecution-Aktivität erfordert keine Eingabe (wenn keine Eingabeabhängigkeiten benötigt werden). Zudem können Sie explizit angeben, ob die Eingabe und die Ausgabe für den Webdienst verwendet oder nicht verwendet werden sollen. Wenn Sie die Verwendung der Eingabe/Ausgabe für den Webdienst festlegen, können Sie die entsprechenden zu verwendenden Azure-Blob-Datasets angeben. Darüber hinaus können Sie die Werte für die Webdienstparameter, die vom Webdienst bereitgestellt werden, eindeutig angeben.
-
-Wenn Sie weiterhin die AzureMLBatchScoring-Aktivität verwenden möchten, finden Sie ausführliche Informationen im Artikel zur [AzureMLBatchScoring-Aktivität](data-factory-create-predictive-pipelines.md).
-
 
 **F:** Ich verfüge über mehrere Dateien, die von meinen Big Data-Pipelines erstellt werden. Kann ich die AzureMLBatchExecution-Aktivität zum Bearbeiten aller Dateien verwenden?
 
 **A:** Ja. Ausführliche Informationen dazu finden Sie im Abschnitt **Lesen von Daten aus mehreren Dateien im Azure-Blob mithilfe eines Reader-Moduls**.
 
+## Azure ML-Batchbewertungsaktivität
+Wenn Sie derzeit die Aktivität **AzureMLBatchScoring** für die Integration in Azure Machine Learning verwenden, empfiehlt es sich, die neueste **AzureMLBatchExecution**-Aktivität zu verwenden.
 
-## Weitere Informationen
+Die AzureMLBatchExecution-Aktivität wird in den Azure SDK- und Azure PowerShell-Versionen von August 2015 eingeführt.
+
+Wenn Sie weiterhin die AzureMLBatchScoring-Aktivität verwenden möchten, lesen Sie weiterhin diesen Abschnitt.
+
+### Azure ML-Batchbewertungsaktivität mit Azure Storage für Ein-/Ausgabe 
+
+	{
+	  "name": "PredictivePipeline",
+	  "properties": {
+	    "description": "use AzureML model",
+	    "activities": [
+	      {
+	        "name": "MLActivity",
+	        "type": "AzureMLBatchScoring",
+	        "description": "prediction analysis on batch input",
+	        "inputs": [
+	          {
+	            "name": "ScoringInputBlob"
+	          }
+	        ],
+	        "outputs": [
+	          {
+	            "name": "ScoringResultBlob"
+	          }
+	        ],
+	        "linkedServiceName": "MyAzureMLLinkedService",
+	        "policy": {
+	          "concurrency": 3,
+	          "executionPriorityOrder": "NewestFirst",
+	          "retry": 1,
+	          "timeout": "02:00:00"
+	        }
+	      }
+	    ],
+	    "start": "2015-02-13T00:00:00Z",
+	    "end": "2015-02-14T00:00:00Z"
+	  }
+	}
+
+### Webdienstparameter
+Fügen Sie den Abschnitt **typeProperties** dem Abschnitt **AzureMLBatchScoringActivty** im JSON-Code der Pipeline hinzu, um in diesem Abschnitt, wie im folgenden Beispiel gezeigt, Werte für Webdienstparameter hinzuzufügen:
+
+	"typeProperties": {
+		"webServiceParameters": {
+			"Param 1": "Value 1",
+			"Param 2": "Value 2"
+		}
+	}
+
+
+Sie können auch [Data Factory-Funktionen ](https://msdn.microsoft.com/library/dn835056.aspx) zum Übergeben von Werten für die Webdienstparameter verwenden, wie im folgenden Beispiel gezeigt:
+
+	"typeProperties": {
+    	"webServiceParameters": {
+    	   "Database query": "$$Text.Format('SELECT * FROM myTable WHERE timeColumn = \\'{0:yyyy-MM-dd HH:mm:ss}\\'', Time.AddHours(WindowStart, 0))"
+    	}
+  	}
+ 
+> [AZURE.NOTE]Bei Webdienstparametern wird Groß-/Kleinschreibung unterschieden, weshalb Sie sicherstellen müssen, dass die Namen, die Sie im JSON-Code der Aktivität angeben, denjenigen entsprechen, die vom Webdienst verfügbar gemacht werden.
+
+## Siehe auch
 
 - [Azure-Blogbeitrag: Erste Schritte mit Azure Data Factory und Azure Machine Learning](https://azure.microsoft.com/blog/getting-started-with-azure-data-factory-and-azure-machine-learning-4/)
 
@@ -623,4 +772,4 @@ Wenn Sie weiterhin die AzureMLBatchScoring-Aktivität verwenden möchten, finden
 
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

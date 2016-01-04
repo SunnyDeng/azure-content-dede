@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Erstellen eines B2B-Prozesses in Microsoft Azure App Service" 
+   pageTitle="Erstellen eines B2B-Prozesses in Azure App Service | Microsoft Azure" 
    description="Übersicht über die Erstellung eines Business-to-Business-Prozesses" 
    services="app-service\logic" 
    documentationCenter=".net,nodejs,java" 
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration" 
-   ms.date="10/01/2015"
+   ms.date="12/07/2015"
    ms.author="rajram"/>
 
 
@@ -35,7 +35,7 @@ In diesem Lernprogramm werden die folgenden Funktionen veranschaulicht:
 
 
 ## Voraussetzungen
-In diesem Lernprogramm wird davon ausgegangen, dass Sie ein grundlegendes Verständnis von Azure App Services haben und wissen, wie API-Apps erstellt und in einem Datenfluss zusammengefügt werden.
+In diesem Tutorial wird davon ausgegangen, dass Sie ein grundlegendes Verständnis von Azure App Services haben und wissen, wie API-Apps erstellt und in einem Datenfluss zusammengefügt werden.
 
 
 ## Schritte zum Realisieren des Geschäftsszenarios
@@ -44,7 +44,7 @@ In diesem Lernprogramm wird davon ausgegangen, dass Sie ein grundlegendes Verst�
 1. Erstellen Sie eine Instanz des **Azure Storage-Blobconnectors**. Dies erfordert die Anmeldeinformationen für ein Azure Storage-Konto. Stellen Sie sicher, dass es bereit ist, bevor Sie beginnen, dieses Szenario zu erstellen.
 2. Erstellen Sie eine Instanz der **BizTalk-Handelspartnerverwaltung**. Hierfür ist eine leere SQL-Datenbank erforderlich. Stellen Sie sicher, dass sie bereit ist, bevor Sie beginnen, diese Instanz zu erstellen.
 3. Erstellen Sie eine Instanz des **AS2-Connectors**. Hierfür ist auch eine leere SQL-Datenbank erforderlich. Stellen Sie sicher, dass sie bereit ist, bevor Sie beginnen, diese Instanz zu erstellen. Wenn Sie außerdem Nachrichten im Rahmen der AS2-Verarbeitung archivieren möchten, können Sie Anmeldeinformationen für ein Azure-Blob bei dessen Erstellung angeben.
-4. Konfigurieren Sie den TPM-Dienst (Trading Partner Management, Handelspartnerverwaltung), der erstellt wird:
+4. Konfigurieren Sie den TPM-Dienst (Trading Partner Management, Handelspartnerverwaltung), der erstellt wird:  
 	1. Navigieren Sie zur Instanz des TPM-Diensts, die als Teil der oben genannten Schritte erstellt wird.
 	2. Verwenden Sie die Option **Partner** unter *Komponenten* zum **Hinzufügen** eines neuen Partners mit dem Namen **Contoso**, und fügen Sie die erforderliche AS2-Identität in seinem Profil hinzu.
 	3. Verwenden Sie die Option **Partner** unter *Komponenten* zum **Hinzufügen** eines neuen Partners mit dem Namen **Northwind**, und fügen Sie die erforderliche AS2-Identität in seinem Profil hinzu.
@@ -52,25 +52,21 @@ In diesem Lernprogramm wird davon ausgegangen, dass Sie ein grundlegendes Verst�
 
 
 ## Erstellen eines Datenflusses/Geschäftsprozesses
-1. Erstellen Sie einen neuen Datenfluss, in dem AS2 der erste Schritt ist. Sie müssen den **AS2-Connector** ziehen und ablegen und dann die bereits erstellte Instanz wählen. Wählen Sie "Trigger" als Funktion aus.
-
-![][1]
-
-2. Sie müssen als Nächstes den **Azure Storage-Blobconnector** ziehen und ablegen und dann die bereits erstellte Instanz wählen. Wählen Sie "Aktion" als Funktion und dann "Blob hochladen" als gewünschte Funktionalität aus. Konfigurieren Sie nach Bedarf.
-
-3. Dann müssen Sie den Datenfluss erstellen bzw. bereitstellen.
+1. Erstellen Sie einen neuen Datenfluss, in dem AS2 der erste Schritt ist. Sie müssen den **AS2-Connector** ziehen und ablegen und dann die bereits erstellte Instanz wählen. Wählen Sie „Trigger“ als Funktion aus: ![][1]  
+2. Sie müssen als Nächstes den **Azure Storage-Blobconnector** ziehen und ablegen und dann die bereits erstellte Instanz wählen. Wählen Sie „Aktion“ als Funktion und dann **Blob hochladen** als gewünschte Funktionalität aus. Konfigurieren Sie nach Bedarf.
+3. Danach müssen Sie den Datenfluss erstellen bzw. bereitstellen.
 
 
 ## Nachrichtenverarbeitung und Fehlerbehebung
-1. Nun ist es Zeit, den Datenfluss zu testen, den wir bereitgestellt haben. Senden Sie von AS2 umschlossene XML-Nachrichten (gemäß der zuvor erstellten AS2-Vereinbarung) an den AS2-Endpunkt, der von der erstellten AS2-Connector-Instanz verfügbar gemacht wurde. Sie müssen möglicherweise die Authentifizierung für den Endpunkt so konfigurieren, dass er öffentlich zugänglich ist.
+1. Nun ist es Zeit, den Datenfluss zu testen, den wir bereitgestellt haben. Senden Sie von AS2 umschlossene XML-Nachrichten (gemäß der zuvor erstellten AS2-Vereinbarung) an den AS2-Endpunkt, der von der von Ihnen erstellten AS2Connector-Instanz verfügbar gemacht wurde. Sie müssen möglicherweise die Authentifizierung für den Endpunkt so konfigurieren, dass er öffentlich zugänglich ist.
 2. Informationen zur Ausführung des Datenflusses werden verfügbar gemacht, indem Sie zum Datenfluss navigieren und die ausgeführte Datenflussinstanz schrittweise durchlaufen.
 3. AS2-Verarbeitungsinformationen erhalten Sie, indem Sie zur beteiligten AS2-Connector-Instanz navigieren und den Teil "Nachverfolgung" schrittweise durchlaufen. Sie können die verfügbaren Filter nutzen, um die Ansicht auf die gewünschten Informationen zu beschränken.
 
 ![][2]
 
 <!--Image references-->
-[1]: ./media/app-service-logic-create-a-b2b-process/Flow.jpg
-[2]: ./media/app-service-logic-create-a-b2b-process/Tracking.jpg
+[1]: ./media/app-service-logic-create-a-b2b-process/Flow.png
+[2]: ./media/app-service-logic-create-a-b2b-process/Tracking.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

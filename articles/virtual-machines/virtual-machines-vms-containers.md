@@ -15,7 +15,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="infrastructure" 
 	ms.workload="infrastructure" 
-	ms.date="07/02/2015" 
+	ms.date="12/14/2015" 
 	ms.author="rasquill" 
 />
 
@@ -33,9 +33,9 @@ Azure bietet Ihnen hervorragende Cloudlösungen auf Basis virtueller Computer �
 - [Azure-Ressourcen-Manager](resource-group-overview.md) und [Ressourcengruppenvorlagen](resource-group-authoring-templates.md) zur Vereinfachung von Bereitstellung und Updates von komplexen verteilten Anwendungen
 - Integration einer großen Anzahl von proprietären und Open-Source-Tools für die Konfigurationsverwaltung
 
-Und da Sie virtuelle Computer und Linux-Container in Azure programmgesteuert erstellen können, können Sie auch Tools zur *Orchestrierung* für virtuelle Computer und Container verwenden, um VM-Gruppen (Virtual Machines, virtuelle Computer) zu erstellen und um Anwendungen in Linux-Containern und bald auch in [Windows Server-Containern](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview) bereitzustellen.
+Da Sie virtuelle Computer und Linux-Container in Azure programmgesteuert erstellen können, können Sie zudem auch Tools zur *Orchestrierung* für virtuelle Computer und Container verwenden, um VM-Gruppen (Virtual Machines, virtuelle Computer) zu erstellen und um Anwendungen in Linux-Containern und bald auch in [Windows-Containern](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview) bereitzustellen.
 
-In diesem Artikel werden diese Konzepte nicht nur erörtert, sondern Sie finden auch zahlreiche Links zu weiteren Informationen, Lernprogrammen und Produkten in Bezug auf die Container- und Clusternutzung in Azure. Wenn für Sie lediglich die Links von Interesse sind, finden Sie diese [hier](#tools-for-working-with-containers).
+In diesem Artikel werden diese Konzepte nicht nur erörtert, sondern Sie finden auch zahlreiche Links zu weiteren Informationen, Lernprogrammen und Produkten in Bezug auf die Container- und Clusternutzung in Azure. Wenn für Sie lediglich die Links von Interesse sind, finden Sie diese in den [Tools für die Arbeit mit Containern](#tools-for-working-with-containers).
 
 ## Der Unterschied zwischen virtuellen Computern und Containern
 
@@ -47,7 +47,7 @@ Da der Kernel des Docker-Hosts in diesem Isolations- und Ausführungsmodell geme
 
 Das ist wirklich praktisch.
 
-[Windows Server-Container](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview) bieten für Anwendungen unter Windows dieselben Vorteile wie Linux-Container. Windows Server-Container unterstützen das Docker-Imageformat und die Docker-API. Daher kann eine Anwendung mithilfe von Windows Server-Containern über ähnliche Befehle wie unter Mac und Linux entwickelt, veröffentlicht, abgerufen und bereitgestellt werden. Zusätzlich gibt es noch die [neue Docker-Unterstützung in Microsoft Visual Studio](https://visualstudiogallery.msdn.microsoft.com/6f638067-027d-4817-bcc7-aa94163338f0). Das größere [Containerökosystem](https://msdn.microsoft.com/virtualization/windowscontainers/about/container_ecosystem) stellt allen Benutzern die für das Arbeiten mit Containern erforderlichen Tools zur Verfügung.
+Windows-Container bieten für Anwendungen unter Windows dieselben Vorteile wie Linux-Container. Windows-Container unterstützen das Docker-Imageformat und die Docker-API, Sie können jedoch auch mithilfe von PowerShell verwaltet werden. Für Windows-Container sind zwei Containerlaufzeiten verfügbar, Windows Server-Container und Hyper-V-Container. Hyper-V-Container bieten eine zusätzliche Ebene der Isolation, indem jeder Container in einem höchst optimierten virtuellen Computer gehostet wird. Weitere Informationen über Windows-Container finden Sie unter [About Windows Containers](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview) (in englischer Sprache). Informationen zum Testen der Windows-Container in Azure finden Sie unter [Windows Container Azure Quick Start](https://msdn.microsoft.com/virtualization/windowscontainers/quick_start/azure_setup) (in englischer Sprache).
 
 Das ist auch äußerst praktisch.
 
@@ -129,7 +129,7 @@ Diese Fähigkeiten werden dann oft in Tools wie [Puppet](https://puppetlabs.com/
 
 Vor Kurzem wurde die REST-API der [Azure Ressourcenverwaltung](virtual-machines-azurerm-versus-azuresm.md) veröffentlicht und die PowerShell- und Azure-Befehlszeilenschnittstellen-Tools wurden aktualisiert, um die Verwendung zu erleichtern. Sie können komplette Anwendungstopologien bereitstellen, ändern oder erneut bereitstellen, indem Sie die [Azure-Ressourcen-Manager-Vorlagen](../resource-group-authoring-templates.md) mit der Azure Ressourcenverwaltungs-API verwenden. Verwenden Sie dazu Folgendes:
 
-- Das [Azure-Vorschauportal mit Vorlagen](https://github.com/Azure/azure-quickstart-templates) (Hinweis: Verwenden Sie die Schaltfläche "DeployToAzure".)
+- Das [Azure-Portal mit Vorlagen](https://github.com/Azure/azure-quickstart-templates) (Hinweis: Verwenden Sie die Schaltfläche „DeployToAzure“.)
 - Die [Azure-Befehlszeilenschnittstelle](virtual-machines-deploy-rmtemplates-azure-cli.md)
 - Die [Azure PowerShell-Module](virtual-machines-deploy-rmtemplates-azure-cli.md)
 
@@ -166,9 +166,9 @@ Einige Technologien für Linux-Container:
 - [Open Container-Projekt](http://opencontainers.org/)
 - [RancherOS](http://rancher.com/rancher-os/)
 
-Links zu Windows Server-Containern:
+Links zu Windows-Containern:
 
-- [Windows Server-Container](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview)
+- [Windows Containers](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview) (in englischer Sprache)
 
 Links zu Visual Studio-Docker:
 
@@ -187,12 +187,12 @@ Docker in Microsoft Azure:
 - [Docker-VM-Erweiterung für Linux auf Azure](virtual-machines-docker-vm-extension.md)
 - [Benutzerhandbuch für die Azure-Docker-VM-Erweiterung](https://github.com/Azure/azure-docker-extension/blob/master/README.md)
 - [Verwenden der Docker-VM-Erweiterung aus der Azure-Befehlszeilenschnittstelle (Azure-CLI)](virtual-machines-docker-with-xplat-cli-install.md)
-- [Verwenden der Docker-VM-Erweiterung aus dem Azure-Vorschauportal](virtual-machines-docker-with-portal.md)
+- [Verwenden der Docker-VM-Erweiterung über das Azure-Portal](virtual-machines-docker-with-portal.md)
 - [Schneller Einstieg in Docker in Azure Marketplace](virtual-machines-docker-ubuntu-quickstart.md)
 - [Verwenden von "docker-machine" auf Azure](virtual-machines-docker-machine.md)
 - [Verwenden von Docker mit Swarm auf Azure](virtual-machines-docker-swarm.md)
 - [Erste Schritte mit Docker und Compose auf einem virtuellen Azure-Computer](virtual-machines-docker-compose-quickstart.md)
-- [Using an Azure resource group template to create a Docker host on Azure quickly](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-simple-on-ubuntu) ("Verwenden einer Azure-Ressourcengruppenvorlage zur schnellen Erstellung eines Docker-Hosts in Azure", in englischer Sprache)
+- [Using an Azure resource group template to create a Docker host on Azure quickly ("Verwenden einer Azure-Ressourcengruppenvorlage zur schnellen Erstellung eines Docker-Hosts in Azure", in englischer Sprache)](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-simple-on-ubuntu)
 - [Integrierte Unterstützung`compose`](https://github.com/Azure/azure-docker-extension#11-public-configuration-keys) für enthaltene Anwendungen
 - [Implementieren einer privaten Docker-Registrierung für Azure](virtual-machines-docker-registry-on-azure-blob-storage.md)
 
@@ -222,10 +222,10 @@ Konfiguration, Clusterverwaltung und Containerorchestrierung:
 	
 -	[Chef](https://docs.chef.io/index.html)
 	- [Chef und Virtual Machines](virtual-machines-windows-install-chef-client.md)
-	- [Video: Was ist Chef, und wie funktioniert es??](https://msopentech.com/blog/2014/03/31/using-chef-to-manage-azure-resources/)
+	- [Video: Was ist Chef, und wie funktioniert es?](https://msopentech.com/blog/2014/03/31/using-chef-to-manage-azure-resources/)
 
 -	[Azure Automation](http://azure.microsoft.com/services/automation/)
-	- [Video: How to Use Azure Automation with Linux VMs](http://channel9.msdn.com/Shows/Azure-Friday/Azure-Automation-104-managing-Linux-and-creating-Modules-with-Joe-Levy) (Video: Verwenden von Azure Automation mit virtuellen Linux-Computern, in englischer Sprache)
+	- [Video: How to Use Azure Automation with Linux VMs (Video: Verwenden von Azure Automation mit virtuellen Linux-Computern, in englischer Sprache)](http://channel9.msdn.com/Shows/Azure-Friday/Azure-Automation-104-managing-Linux-and-creating-Modules-with-Joe-Levy)
 	
 -	Powershell DSC für Linux
     - [Blog: Powershell DSC für Linux](http://blogs.technet.com/b/privatecloud/archive/2014/05/19/powershell-dsc-for-linux-step-by-step.aspx)
@@ -233,11 +233,11 @@ Konfiguration, Clusterverwaltung und Containerorchestrierung:
 
 ## Nächste Schritte
 
-Auschecken von [Docker](https://www.docker.com) und [Windows Server-Containern](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview).
+Lesen Sie über [Docker](https://www.docker.com) (in englischer Sprache) und [Windows Containers](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview) (in englischer Sprache).
 
 <!--Anchors-->
 [microservices]: http://martinfowler.com/articles/microservices.html
 [microservice]: http://martinfowler.com/articles/microservices.html
 <!--Image references-->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

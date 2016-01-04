@@ -52,7 +52,7 @@ Ihr mobiler Dienst ist nun bereit, und Sie können die App aktualisieren, sodass
 9. Suchen Sie die* ProgressFilter*-Klasse am Ende der Datei und entfernen Sie die Kommentarzeichen. Diese Klasse zeigt einen Hinweis an, wenn der *MobileServiceClient* Netzwerkvorgänge ausführt.
 
 
-10. Klicken Sie im Verwaltungsportal auf **Mobile Services** und dann auf den mobilen Dienst, den Sie gerade erstellt haben.
+10. Klicken Sie im klassischen Azure-Portal auf **Mobile Services** und anschließend auf den mobilen Dienst, den Sie gerade erstellt haben.
 
 11. Klicken Sie auf die Registerkarte **Dashboard**, und notieren Sie sich die **Site URL**. Klicken Sie anschließend auf **Schlüssel verwalten**, und notieren Sie sich den **Anwendungsschlüssel**.
 
@@ -162,4 +162,4 @@ Ihr mobiler Dienst ist nun bereit, und Sie können die App aktualisieren, sodass
 <!-- URLs. -->
 [Mobile Services Android SDK]: http://aka.ms/Iajk6q
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

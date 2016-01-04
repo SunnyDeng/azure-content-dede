@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/16/2015"
+	ms.date="12/09/2015"
 	ms.author="cephalin"/>
 
 # Erweiterte Konfiguration und Erweiterungen von Azure App Service-Web-Apps
@@ -26,7 +26,7 @@ Mithilfe von [XML Document Transformation-Deklarationen](http://msdn.microsoft.c
 ##<a id="transform"></a>Erweiterte Konfiguration durch "ApplicationHost.config"
 Die App Service-Plattform ermöglicht eine flexible Konfiguration von Web-Apps. Obwohl die standardmäßige IIS-Konfigurationsdatei "ApplicationHost.config" zur direkten Bearbeitung in App Service nicht zur Verfügung steht, unterstützt die Plattform ein deklaratives, auf XDT (XML Document Transformation) beruhendes Transformationsmodell für die Datei "ApplicationHost.config".
 
-Um diese Transformationsfunktion zu nutzen, erstellen Sie die Datei "ApplicationHost.xdt" mit XDT-Inhalt und platzieren sie im Web-App-Stammverzeichnis. Möglicherweise müssen Sie die Web-App neu starten, damit die Änderungen wirksam werden.
+Um diese Transformationsfunktion zu nutzen, erstellen Sie die Datei ApplicationHost.xdt mit XDT-Inhalt und platzieren sie im Website-Stammverzeichnis (d:\\home\\site) in der [Kudu-Konsole](https://github.com/projectkudu/kudu/wiki/Kudu-console). Möglicherweise müssen Sie die Web-App neu starten, damit die Änderungen wirksam werden.
 
 Das folgende Beispiel für "applicationHost.xdt" zeigt, wie einer Web-App, die PHP 5.4 verwendet, eine neue benutzerdefinierte Umgebungsvariable hinzugefügt wird.
 
@@ -46,7 +46,7 @@ Das folgende Beispiel für "applicationHost.xdt" zeigt, wie einer Web-App, die P
 
 Im FTP-Stammverzeichnis finden Sie unter LogFiles\\Transform eine Protokolldatei mit Transformationsstatus und -details.
 
-Weitere Beispiele finden Sie unter [https://github.com/projectkudu/kudu/wiki/Azure-Site-Extensions](https://github.com/projectkudu/kudu/wiki/Azure-Site-Extensions).
+Weitere Beispiele finden Sie unter [https://github.com/projectkudu/kudu/wiki/Xdt-transform-samples](https://github.com/projectkudu/kudu/wiki/Xdt-transform-samples).
 
 **Hinweis**<br />Elemente in der Liste der Module unter `system.webServer` können nicht entfernt oder umgeordnet werden. Die Liste lässt sich jedoch erweitern.
 
@@ -174,12 +174,11 @@ Es ist möglich, alle privaten (nicht vorinstallierten) Erweiterungen für Ihre 
 >[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Änderungen
-* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
+* Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 
 <!-- IMAGES -->
 [TransformSitePHPUI]: ./media/web-sites-transform-extend/TransformSitePHPUI.png
 [TransformSiteSolEx]: ./media/web-sites-transform-extend/TransformSiteSolEx.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

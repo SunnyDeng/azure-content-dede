@@ -34,7 +34,7 @@ Eine partitionierte Warteschlange erhöht die Verfügbarkeit, Zuverlässigkeit u
 
 ### Erstellen von partitionierten Warteschlangen
 
-Sie können eine partitionierte Warteschlange mit dem klassischen Azure-Portal und dem Service Bus SDK erstellen. Um eine partitionierte Warteschlange zu erstellen, legen Sie die [EnablePartitioning](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.queuedescription.enablepartitioning.aspx)-Eigenschaft in der [QueueDescription](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.queuedescription.aspx)-Instanz auf **true** fest. Der folgende Code veranschaulicht, wie Sie mit dem Service Bus SDK eine partitionierte Warteschlange erstellen.
+Sie können eine partitionierte Warteschlange mit dem [klassischen Azure-Portal][] und dem Service Bus SDK erstellen. Um eine partitionierte Warteschlange zu erstellen, legen Sie die [EnablePartitioning](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.queuedescription.enablepartitioning.aspx)-Eigenschaft in der [QueueDescription](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.queuedescription.aspx)-Instanz auf **true** fest. Der folgende Code veranschaulicht, wie Sie mit dem Service Bus SDK eine partitionierte Warteschlange erstellen.
  
 ```
 // Create partitioned queue
@@ -72,7 +72,7 @@ Ein partitioniertes Thema erhöht die Verfügbarkeit, Zuverlässigkeit und den D
 
 ### Erstellen von partitionierten Themen
 
-Ein partitioniertes Thema kann über das klassische Azure-Portal und das Service Bus SDK erstellt werden. Legen Sie die [EnablePartitioning](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.topicdescription.enablepartitioning.aspx)-Eigenschaft in der [TopicDescription](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.topicdescription.aspx)-Instanz auf **true** fest, um ein partitioniertes Thema zu erstellen. Der folgende Code veranschaulicht, wie Sie mit dem Service Bus SDK ein partitioniertes Thema erstellen.
+Ein partitioniertes Thema kann über das [klassische Azure-Portal][] und das Service Bus SDK erstellt werden. Legen Sie die [EnablePartitioning](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.topicdescription.enablepartitioning.aspx)-Eigenschaft in der [TopicDescription](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.topicdescription.aspx)-Instanz auf **true** fest, um ein partitioniertes Thema zu erstellen. Der folgende Code veranschaulicht, wie Sie mit dem Service Bus SDK ein partitioniertes Thema erstellen.
 	
 ```
 // Create partitioned topic
@@ -116,4 +116,7 @@ Weitere Informationen zur Partitionierung von Messagingentitäten finden Sie in 
 *    [Verwenden der JMS (Java Message Service)-API mit Service Bus und AMQP 1.0](service-bus-java-how-to-use-jms-api-amqp.md)
 *    [Verwenden von AMQP 1.0 mit der .NET-Programmierschnittstelle für Service Bus](service-bus-dotnet-advanced-message-queuing.md)
 
-<!---HONumber=Nov15_HO3-->
+[klassische Azure-Portal]: http://manage.windowsazure.com
+[klassischen Azure-Portal]: http://manage.windowsazure.com
+
+<!---HONumber=AcomDC_1203_2015-->

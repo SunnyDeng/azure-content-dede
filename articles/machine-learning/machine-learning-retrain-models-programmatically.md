@@ -61,7 +61,7 @@ Diagramm 1: Übersicht über den Prozess des erneuten Trainings
 	![][4]
 
 	Als Nächstes klicken wir auf die Schaltfläche "Publish Web Service" (Webdienst veröffentlichen) und dann auf "Yes" (Ja). Dadurch wird das Trainingsexperiment als Webdienst veröffentlicht, der ein trainiertes Modell und Modellauswertungsergebnisse erzeugt. Das Webdienst-Dashboard wird mit dem API-Schlüssel und der API-Hilfeseite für die Batchausführung angezeigt. Beachten Sie, dass nur die Methode Batch Execution (Batchausführung) zum Erstellen von trainierten Modelle verwendet werden kann.  
-4. *Hinzufügen eines neuen Endpunkts* Der Bewertungswebdienst, den wir oben in Schritt 2 veröffentlicht haben, wurde mit einem Standardendpunkt erstellt. Die Standardendpunkte werden mit dem ursprünglichen Trainings- und Bewertungsexperiment synchronisiert, daher kann ein trainiertes Modell, das einem Standardendpunkt zugeordnet ist, nicht ausgetauscht werden. Zum Erstellen eines aktualisierbaren Endpunkts besuchen Sie das Azure-Portal, und klicken Sie auf "Add Endpoint" (Endpunkt hinzufügen) (nähere Informationen finden Sie [hier](machine-learning-create-endpoint.md)).
+4. *Hinzufügen eines neuen Endpunkts* Der Bewertungswebdienst, den wir oben in Schritt 2 veröffentlicht haben, wurde mit einem Standardendpunkt erstellt. Die Standardendpunkte werden mit dem ursprünglichen Trainings- und Bewertungsexperiment synchronisiert, daher kann ein trainiertes Modell, das einem Standardendpunkt zugeordnet ist, nicht ausgetauscht werden. Zum Erstellen eines aktualisierbaren Endpunkts besuchen Sie das klassische Azure-Portal, und klicken Sie auf „Endpunkt hinzufügen“ (nähere Informationen finden Sie [hier](machine-learning-create-endpoint.md)).
 
 5. *Erneutes Trainieren des Modells mit neuen Daten und BES* Zum Aufrufen der Retraining-APIs erstellen wir eine neue C#-Konsolenanwendung in Visual Studio (Neu -> Projekt -> Windows Desktop -> Konsolenanwendung).
 
@@ -84,7 +84,7 @@ Diagramm 1: Übersicht über den Prozess des erneuten Trainings
 	```
 	1. Bereitstellen von Azure-Speicherinformationen Der Beispielcode für BES lädt eine Datei von einem lokalen Laufwerk (z. B. "C:\\temp\\CensusIpnput.csv") in den Azure-Speicher zur Verarbeitung hoch und schreibt die Ergebnisse wieder in den Azure-Speicher.  
 
-		Dazu müssen Sie Informationen zum Namen, Schlüssel und Container des Speicherkontos aus dem Azure-Verwaltungsportal für Ihr Speicherkonto abrufen und den vorliegenden Code entsprechend aktualisieren. Sie müssen auch sicherstellen, dass die Eingabedatei an dem im Code angegebenen Speicherort verfügbar ist.
+		Dazu müssen Sie Informationen zum Namen, Schlüssel und Container des Speicherkontos aus dem klassischen Azure-Portal für Ihr Speicherkonto abrufen und den vorliegenden Code entsprechend aktualisieren. Sie müssen auch sicherstellen, dass die Eingabedatei an dem im Code angegebenen Speicherort verfügbar ist.
 
 		Da wir dieses Trainingsexperiment mit zwei Ausgabemodulen einrichten mussten, müssen auch die Ergebnisse Speicherortinformationen für beide enthalten (siehe unten). "output1" ist die Ausgabe des trainierten Modells, und "output2" ist die Ausgabe des Bewertungsmodells. Beachten Sie auch, dass die Dateierweiterung des Ergebnisses für das trainierte Modul (Output1) ".ilinear" lautet, nicht ".csv".
 
@@ -156,4 +156,4 @@ Mithilfe der Retraining-APIs können wir das trainierte Modell eines Vorhersagew
 <!-- Module References -->
 [train-model]: https://msdn.microsoft.com/library/azure/5cc7053e-aa30-450d-96c0-dae4be720977/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

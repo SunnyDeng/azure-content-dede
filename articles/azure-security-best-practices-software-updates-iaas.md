@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="09/03/2015"
+   ms.date="12/10/2015"
    ms.author="yurid"/>
 
 #Best Practices für Softwareupdates in Microsoft Azure IaaS
@@ -75,7 +75,7 @@ Beispielsweise reagiert das Microsoft Security Response Center (MSRC) auf alle s
 
 ## Überlegungen zu Softwareupdates
 
-Nachdem Sie eine anfängliche Überprüfung der Software in Ihrem Unternehmen durchgeführt haben, sollten Sie die Anforderungen zum Einrichten Ihres Systems zur Softwareupdateverwaltung ermitteln. Diese hängen davon ab, welches System für die Softwareupdateverwaltung Sie verwenden. Wenn Sie WSUS einsetzen, lesen Sie [Best Practices für Windows Server Update Services](https://technet.microsoft.com/de-DE/library/Cc708536), bei Verwendung von System Center finden Sie entsprechende Informationen unter [Planen von Softwareupdates in Configuration Manager](https://technet.microsoft.com/de-DE/library/gg712696).
+Nachdem Sie eine anfängliche Überprüfung der Software in Ihrem Unternehmen durchgeführt haben, sollten Sie die Anforderungen zum Einrichten Ihres Systems zur Softwareupdateverwaltung ermitteln. Diese hängen davon ab, welches System für die Softwareupdateverwaltung Sie verwenden. Wenn Sie WSUS einsetzen, lesen Sie [Best Practices für Windows Server Update Services](https://technet.microsoft.com/library/Cc708536), bei Verwendung von System Center finden Sie entsprechende Informationen unter [Planen von Softwareupdates in Configuration Manager](https://technet.microsoft.com/library/gg712696).
 
 Es gibt jedoch einige allgemeine Überlegungen und Best Practices, die Sie unabhängig von der eingesetzten Lösung anwenden können. Diese werden in den nächsten Abschnitten beschrieben.
 
@@ -87,17 +87,17 @@ Berücksichtigen Sie die folgenden Best Practices, wenn Sie die Einrichtung eine
 
 -   **Stellen Sie Präproduktionssammlungen zusammen, die Referenzcomputer enthalten**: Die Präproduktionssammlung sollte repräsentative Konfigurationen von Betriebssystemversionen, Branchenanwendungen und anderen Softwarekomponenten enthalten, die in Ihrem Unternehmen ausgeführt wird.
 
-Sie sollten außerdem berücksichtigen, wo der Softwareupdateserver platziert wird – beispielsweise in der Azure IaaS-Infrastruktur in der Cloud oder lokal. Dies ist eine wichtige Entscheidung, da Sie die Menge des Datenverkehrs zwischen lokalen Ressourcen und Azure-Infrastruktur auswerten müssen. Weitere Informationen zur Verbindung Ihrer lokalen Infrastruktur mit Azure finden Sie unter [Verbinden eines lokalen Netzwerks mit einem virtuellen Microsoft Azure-Netzwerk](https://technet.microsoft.com/de-DE/library/Dn786406.aspx).
+Sie sollten außerdem berücksichtigen, wo der Softwareupdateserver platziert wird – beispielsweise in der Azure IaaS-Infrastruktur in der Cloud oder lokal. Dies ist eine wichtige Entscheidung, da Sie die Menge des Datenverkehrs zwischen lokalen Ressourcen und Azure-Infrastruktur auswerten müssen. Weitere Informationen zur Verbindung Ihrer lokalen Infrastruktur mit Azure finden Sie unter [Verbinden eines lokalen Netzwerks mit einem virtuellen Microsoft Azure-Netzwerk](https://technet.microsoft.com/library/Dn786406.aspx).
 
-Die Entwurfsoptionen zur Platzierung des Updateservers richten sich auch nach Ihrer aktuellen Infrastruktur und dem Softwareupdatesystem, das Sie derzeit verwenden. Wenn Sie WSUS verwenden, lesen Sie [Bereitstellen von Windows Server Update Services in Ihrer Organisation](https://technet.microsoft.com/de-DE/library/hh852340.aspx), bei Verwendung von System Center Configuration Manager finden Sie weitere Informationen unter [Planen von Standorten und Hierarchien in Configuration Manager](https://technet.microsoft.com/de-DE/library/Gg712681.aspx).
+Die Entwurfsoptionen zur Platzierung des Updateservers richten sich auch nach Ihrer aktuellen Infrastruktur und dem Softwareupdatesystem, das Sie derzeit verwenden. Wenn Sie WSUS verwenden, lesen Sie [Bereitstellen von Windows Server Update Services in Ihrer Organisation](https://technet.microsoft.com/library/hh852340.aspx), bei Verwendung von System Center Configuration Manager finden Sie weitere Informationen unter [Planen von Standorten und Hierarchien in Configuration Manager](https://technet.microsoft.com/library/Gg712681.aspx).
 
 ### Sicherung
 
-Regelmäßige Sicherungen sind nicht nur für die Plattform zur Softwareupdateverwaltung selbst wichtig, sondern auch für die Server, die aktualisiert werden. Für Organisationen, die einen [Änderungsmangementprozess](https://technet.microsoft.com/de-DE/library/cc543216.aspx) einsetzen, ist es erforderlich, dass die IT Gründe für die Notwendigkeit von Serverupdates, die geschätzte Ausfallzeit und mögliche Auswirkungen benennt. Um sicherzustellen, dass Sie über eine Rollbackkonfiguration für den Fall verfügen, dass ein Update nicht erfolgreich durchgeführt werden kann, müssen Sie das System regelmäßig sichern.
+Regelmäßige Sicherungen sind nicht nur für die Plattform zur Softwareupdateverwaltung selbst wichtig, sondern auch für die Server, die aktualisiert werden. Für Organisationen, die einen [Änderungsmangementprozess](https://technet.microsoft.com/library/cc543216.aspx) einsetzen, ist es erforderlich, dass die IT Gründe für die Notwendigkeit von Serverupdates, die geschätzte Ausfallzeit und mögliche Auswirkungen benennt. Um sicherzustellen, dass Sie über eine Rollbackkonfiguration für den Fall verfügen, dass ein Update nicht erfolgreich durchgeführt werden kann, müssen Sie das System regelmäßig sichern.
 
 Für Azure IaaS stehen folgende Sicherungsoptionen zur Verfügung:
 
--   [Azure IaaS workload protection using Data Protection Manager](https://azure.microsoft.com/blog/2014/09/08/azure-iaas-workload-protection-using-data-protection-manager/) (in englischer Sprache)
+-   [Azure IaaS workload protection using Data Protection Manager (in englischer Sprache)](https://azure.microsoft.com/blog/2014/09/08/azure-iaas-workload-protection-using-data-protection-manager/)
 
 -   [Sichern von virtuellen Azure-Computern](../backup/backup-azure-vms.md)
 
@@ -119,4 +119,4 @@ Zusätzlich zu den allgemeinen Überlegungen, die in diesem Artikel vorgestellt 
 
 Verwenden Sie die in diesem Artikel beschriebenen Richtlinien, um die optimalen Optionen für Softwareupdates für virtuelle Computer in Azure IaaS zu ermitteln. Es gibt viele Ähnlichkeiten zwischen den Best Practices für Softwareupdates in einem traditionellen Datencenter und in Azure IaaS. Deshalb wird empfohlen, dass Sie Azure-VMs in Ihre aktuellen Richtlinien für Softwareupdates einbeziehen und die relevanten Best Practices aus diesem Artikel in Ihren allgemeinen Softwareupdateprozess einbinden.
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1217_2015-->

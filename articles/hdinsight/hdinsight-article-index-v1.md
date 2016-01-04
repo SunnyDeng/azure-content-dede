@@ -1,6 +1,6 @@
 <properties
-   pageTitle="HDInsight-Artikelindex für das Azure-Portal | Microsoft Azure"
-   description="Eine Indexseite mit Links zu Artikeln über HDInsight im Azure-Portal. Microsoft empfiehlt für neue Hadoop-Cluster in HDInsight die Verwendung des Azure-Vorschauportals."
+   pageTitle="HDInsight-Artikelindex für das klassische Azure-Portal | Microsoft Azure"
+   description="Eine Indexseite mit Links zu Artikeln über HDInsight im klassischen Azure-Portal. Microsoft empfiehlt für neue Hadoop-Cluster in HDInsight die Verwendung des Azure-Portals."
    services="hdinsight"
    documentationCenter="na"
    authors="cjgronlund"
@@ -16,25 +16,25 @@
    ms.date="08/17/2015"
    ms.author="cjgronlund"/>
 
-# HDInsight-Artikelindex für das Azure-Portal
+# HDInsight-Artikelindex für das klassische Azure-Portal
 
-Verwenden Sie diese Indexseite, um nach Artikeln über HDInsight im [Azure-Portal](https://manage.windowsazure.com/) zu suchen. Azure HDInsight ist eine Cloudverteilung von Open Source-Hadoop und der Hortonworks Data Platform (HDP).
+Verwenden Sie diese Indexseite, um nach Artikeln über HDInsight im [klassischen Azure-Portal](https://manage.windowsazure.com/) zu suchen. Azure HDInsight ist eine Cloudverteilung von Open Source-Hadoop und der Hortonworks Data Platform (HDP).
 
 
-> [AZURE.IMPORTANT]Dieser Dokumentationsindex ist für Kunden vorgesehen, die bereits Lösungen im aktuellen Azure-Portal bereitgestellt haben.
+> [AZURE.IMPORTANT]Dieser Dokumentationsindex ist für Kunden vorgesehen, die bereits Lösungen im aktuellen klassischen Azure-Portal bereitgestellt haben.
 >
-> Microsoft empfiehlt für neue HDInsight-Cluster die Verwendung des **Azure-Vorschauportals**:
+> Microsoft empfiehlt für neue HDInsight-Cluster die Verwendung des **Azure-Portals**:
 >
-> * [Dokumentation zum HDInsight-Vorschauportal](/documentation/services/hdinsight/)
-> * [Azure-Vorschauportal](https://portal.azure.com/)
+> * [Navigieren Sie zur Dokumentation zum HDInsight-Portal](/documentation/services/hdinsight/)
+> * [Navigieren Sie zum Azure-Portal](https://portal.azure.com/)
 >
-> Eine Erläuterung der Vorteile des Vorschauportals finden Sie unter [DevOps ist jetzt noch cooler](/overview/preview-portal/).
+> Eine Erläuterung der Vorteile des Portals finden Sie unter [DevOps ist jetzt noch cooler](/overview/preview-portal/).
 >
-> Für HDInsight im Azure-Portal werden nach Juli 2015 keine Upgrades mehr bereitgestellt. Das Azure-Portal wird durch das Azure-Vorschauportal ersetzt.
+> Für HDInsight im klassischen Azure-Portal werden nach Juli 2015 keine Upgrades mehr bereitgestellt. Es wird durch das Azure-Portal ersetzt.
 
 ## Erste Schritte
 
-Falls Sie noch nicht mit Hadoop in HDInsight vertraut sind, finden Sie auf der [HDInsight-Dokumentationsseite](/documentation/services/hdinsight/) Informationen zu den ersten Schritten mit dem Azure-Vorschauportal.
+Falls Sie noch nicht mit Hadoop in HDInsight vertraut sind, finden Sie auf der [HDInsight-Dokumentationsseite](/documentation/services/hdinsight/) Informationen zu den ersten Schritten mit dem Azure-Portal.
 
 ## Linux
 
@@ -81,7 +81,7 @@ Eine vollständige Liste von Artikeln zur Verwendung von Linux und Linux-Cluster
 
 ## Apache Spark
 
-Artikel zur Verwendung von systemeigenen Apache Spark-Clustern im Azure-Vorschauportal finden Sie auf der [HDInsight-Dokumentationsseite](/documentation/services/hdinsight/).
+Artikel zur Verwendung von systemeigenen Apache Spark-Clustern im Azure-Portal finden Sie auf der [HDInsight-Dokumentationsseite](/documentation/services/hdinsight/).
 
 * [Übersicht: Apache Spark für Azure HDInsight](hdinsight-apache-spark-overview.md)
 * [Installieren und Verwenden von Spark in Hadoop-Clustern](hdinsight-hadoop-spark-install.md)
@@ -133,4 +133,4 @@ Artikel zur Verwendung von systemeigenen Apache Spark-Clustern im Azure-Vorschau
 * [Interpretieren von Fehlermeldungen](hdinsight-debug-jobs.md)
 * [Hilfe im Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hdinsight)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

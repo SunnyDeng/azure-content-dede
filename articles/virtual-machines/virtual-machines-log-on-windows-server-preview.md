@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Anmelden bei einem virtuellen Windows Server-Computer | Microsoft Azure"
-	description="Hier erfahren Sie, wie Sie sich unter Verwendung des Azure-Vorschauportals und des Ressourcen-Manager-Bereitstellungsmodells bei einem virtuellen Windows Server-Computer anmelden."
+	description="Hier erfahren Sie, wie Sie sich unter Verwendung des Azure-Portals und des Ressourcen-Manager-Bereitstellungsmodells bei einem virtuellen Windows Server-Computer anmelden."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -21,11 +21,11 @@
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](virtual-machines-log-on-windows-server.md).
 
-Hierfür verwenden Sie die Schaltfläche **Verbinden** im Azure-Vorschauportal zum Starten einer Remotedesktopsitzung. Zuerst stellen Sie eine Verbindung mit dem virtuellen Computer her, und dann melden Sie sich an.
+Hierfür verwenden Sie die Schaltfläche **Verbinden** im Azure-Portal zum Starten einer Remotedesktopsitzung. Zuerst stellen Sie eine Verbindung mit dem virtuellen Computer her, und dann melden Sie sich an.
 
 ## Herstellen einer Verbindung mit dem virtuellen Computer
 
-1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com/) an, falls noch nicht geschehen.
+1. Melden Sie sich am [Azure-Portal](https://portal.azure.com/) an, falls Sie dies noch nicht getan haben.
 
 2.	Klicken Sie im Menü "Hub" auf **Durchsuchen**.
 
@@ -47,4 +47,4 @@ Hierfür verwenden Sie die Schaltfläche **Verbinden** im Azure-Vorschauportal z
 
 Wenn die Tipps zum Anmelden nicht hilfreich oder nicht das Gesuchte sind, finden Sie entsprechende Informationen unter [Problembehandlung bei Remotedesktopverbindungen mit einem Windows-basierten virtuellen Azure-Computer](virtual-machines-troubleshoot-remote-desktop-connections.md). Dieser Artikel führt Sie durch die Diagnose und Behebung von häufigen Problemen.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

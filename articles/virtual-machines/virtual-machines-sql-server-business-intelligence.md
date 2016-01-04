@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
-	ms.date="08/19/2015"
+	ms.date="12/11/2015"
 	ms.author="jroth" />
 
 # SQL Server-Business Intelligence in Azure Virtual Machines
@@ -41,7 +41,7 @@ Im Microsoft Azure Virtual Machine-Katalog sind verschiedene Images zu finden, d
 
 ![PowerShell](./media/virtual-machines-sql-server-business-intelligence/IC660119.gif) Mit dem folgenden PowerShell-Skript wird die Liste mit den Azure-Images zurückgegeben, bei denen "SQL-Server" Teil des Namens ("ImageName") ist:
 
-	# assumes you have already uploaded a management certificate to your Microsoft Azure Subscription. View the thumbprint value from the "settings" menu in Microsoft Azure Management Portal
+	# assumes you have already uploaded a management certificate to your Microsoft Azure Subscription. View the thumbprint value from the "settings" menu in Azure classic portal.
 	
 	$subscriptionID = ""    # REQUIRED: Provide your subscription ID.
 	$subscriptionName = "" # REQUIRED: Provide your subscription name.
@@ -84,7 +84,7 @@ In der folgenden Tabelle sind die Business Intelligence-Features zusammengefasst
 |**Analysis Services – Tabellarisch**|Nein|In SQL Server 2012- und 2014-Images unterstützt, aber nicht standardmäßig installiert. Installieren Sie eine weitere Instanz von Analysis Services. Siehe Abschnitt „Installieren anderer SQL Server-Dienste und -Features“ in diesem Thema.|
 |**Analysis Services Power Pivot für SharePoint**|Nein|Das Image des Microsoft Azure Virtual Machine-Katalogs enthält weder SharePoint noch SharePoint-Installationsdateien. <sup>1</sup>|
 
-<sup>1</sup> Weitere Informationen zu SharePoint und virtuellen Azure-Computern finden Sie unter [Microsoft Azure-Architekturen für SharePoint 2013](https://technet.microsoft.com/library/dn635309.aspx) und [SharePoint Deployment on Windows Azure Virtual Machines](https://www.microsoft.com/download/details.aspx?id=34598) (SharePoint-Bereitstellung auf Microsoft Azure Virtual Machines, in englischer Sprache).
+<sup>1</sup> Weitere Informationen zu SharePoint und virtuellen Azure-Computern finden Sie unter [Microsoft Azure-Architekturen für SharePoint 2013](https://technet.microsoft.com/library/dn635309.aspx) und [SharePoint Deployment on Microsoft Azure Virtual Machines](https://www.microsoft.com/download/details.aspx?id=34598) (SharePoint-Bereitstellung auf Microsoft Azure Virtual Machines, in englischer Sprache).
 
 ![PowerShell](./media/virtual-machines-sql-server-business-intelligence/IC660119.gif) Führen Sie den folgenden PowerShell-Befehl aus, um eine Liste mit den installierten Diensten abzurufen, bei denen der Dienstname "SQL" enthält.
 
@@ -388,7 +388,9 @@ In diesem Abschnitt werden die zu erstellenden Microsoft Azure Virtual Machine-E
 
 	|Port|Typ|Beschreibung|
 |---|---|---|
-|**80**|TCP|Remotezugriff auf den Berichtsserver (*).| |**1433**|TCP|SQL Server Management Studio (*).| |**1434**|UDP|SQL Server-Browser. Ist erforderlich, wenn der virtuelle Computer einer Domäne beigetreten ist.|
+|**80**|TCP|Remotezugriff auf den Berichtsserver (*).|
+|**1433**|TCP|SQL Server Management Studio (*).|
+|**1434**|UDP|SQL Server-Browser. Ist erforderlich, wenn der virtuelle Computer einer Domäne beigetreten ist.|
 |**2382**|TCP|SQL Server-Browser.|
 |**2383**|TCP|SQL Server Analysis Services-Standardinstanz und gruppierte benannte Instanzen.|
 |**Benutzerdefiniert**|TCP|Erstellen Sie einen statischen Analysis Services-Port für die benannte Instanz. Wählen Sie hierfür eine Portnummer aus, und entsperren Sie dann die Portnummer in der Firewall.|
@@ -425,10 +427,10 @@ Im folgenden Diagramm sind die Ports dargestellt, die in der Firewall des virtue
 
 - [Verwenden von Power BI in einer Hybridumgebung](https://msdn.microsoft.com/library/dn798994.aspx)
 
->[AZURE.NOTE] [Feedback senden und Kontaktinformationen über Microsoft SQL Server Connect](https://connect.microsoft.com/SQLServer/Feedback)
+>[AZURE.NOTE] [Submit feedback and contact information through Microsoft SQL Server Connect](https://connect.microsoft.com/SQLServer/Feedback)
 
 ### Community-Inhalte
 
 - [Verwalten von Azure SQL-Datenbank mit PowerShell](http://blogs.msdn.com/b/windowsazure/archive/2013/02/07/windows-azure-sql-database-management-with-powershell.aspx)
 
-<!----HONumber=Oct15_HO3-->
+<!----HONumber=AcomDC_1217_2015-->

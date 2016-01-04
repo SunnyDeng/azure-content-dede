@@ -1,19 +1,19 @@
 
-<properties 
-    pageTitle="App-Anforderungen für Azure RemoteApp"
-    description="Erfahren Sie, welche Anforderungen für Apps gelten, die Sie in Azure RemoteApp verwenden möchten." 
-    services="remoteapp" 
-    documentationCenter="" 
-    authors="lizap" 
+<properties
+    pageTitle="App-Anforderungen für Azure RemoteApp | Microsoft Azure"
+    description="Erfahren Sie, welche Anforderungen für Apps gelten, die Sie in Azure RemoteApp verwenden möchten."
+    services="remoteapp"
+    documentationCenter=""
+    authors="lizap"
     manager="mbaldwin" />
 
-<tags 
-    ms.service="remoteapp" 
-    ms.workload="compute" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="article" 
-    ms.date="08/12/2015" 
+<tags
+    ms.service="remoteapp"
+    ms.workload="compute"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="12/05/2015"
     ms.author="elizapo" />
 
 
@@ -26,8 +26,8 @@ Tipp: Wir arbeiten daran, einige funktionierende Beispiel-Apps für Sie zu erste
 ## Anforderungen
 Die folgenden drei Anforderungen tragen dazu bei, dass Ihre Anwendung in RemoteApp gut ausgeführt werden kann:
 
-1.	Anwendungen, die alle [Zertifizierungsanforderungen für Windows-Desktop-Apps](https://msdn.microsoft.com/library/windows/desktop/hh749939.aspx) erfüllen und die [Programmierrichtlinien für Remote Desktop Services](https://msdn.microsoft.com/library/aa383490.aspx) einhalten, sind vollständig mit RemoteApp kompatibel. 
-2.	Anwendungen sollten niemals Daten lokal im Image oder in RemoteApp-Instanzen speichern, die verloren gehen können. Nach dem Erstellen einer RemoteApp-Sammlung werden die Instanzen geklont. Sie weisen dann keinen Zustand auf und sollten ausschließlich Anwendungen enthalten. Speichern Sie Daten in externen Quellen oder im Benutzerprofil. 
+1.	Anwendungen, die alle [Zertifizierungsanforderungen für Windows-Desktop-Apps](https://msdn.microsoft.com/library/windows/desktop/hh749939.aspx) erfüllen und die [Programmierrichtlinien für Remote Desktop Services](https://msdn.microsoft.com/library/aa383490.aspx) einhalten, sind vollständig mit RemoteApp kompatibel.
+2.	Anwendungen sollten niemals Daten lokal im Image oder in RemoteApp-Instanzen speichern, die verloren gehen können. Nach dem Erstellen einer RemoteApp-Sammlung werden die Instanzen geklont. Sie weisen dann keinen Zustand auf und sollten ausschließlich Anwendungen enthalten. Speichern Sie Daten in externen Quellen oder im Benutzerprofil.
 3.	Benutzerdefinierte Images sollten niemals Daten enthalten, die verloren gehen können.  
 
 ## Testen Ihrer Apps
@@ -35,7 +35,7 @@ Gehen Sie folgendermaßen vor, um Anwendungen zu testen:
 
 1.	Installieren Sie Windows Server 2012 R2 und Ihre Anwendung.
 2.	Aktivieren Sie Remote Desktop.
-3.	Erstellen Sie zwei Benutzerkonten, BenutzerA und BenutzerB, und fügen Sie beide Konten der Remote Desktop-Sicherheitsgruppe hinzu. 
+3.	Erstellen Sie zwei Benutzerkonten, BenutzerA und BenutzerB, und fügen Sie beide Konten der Remote Desktop-Sicherheitsgruppe hinzu.
 4.	Überprüfen Sie die Kompatibilität mit mehreren Sitzungen, indem Sie zwei simultane RDS-Sitzungen auf dem Computer einrichten, während Sie die Anwendung starten.
 5.	Überprüfen Sie das App-Verhalten.
 
@@ -43,17 +43,16 @@ Gehen Sie folgendermaßen vor, um Anwendungen zu testen:
 Gehen Sie nach den folgenden Richtlinien vor, um Anwendungen für RemoteApp zu entwickeln.
 
 ### Mehrere Benutzer
- 
-- Nach dem Installieren einer [Anwendung für einen einzelnen Benutzer](https://msdn.microsoft.com/library/aa380661.aspx) können in einer Umgebung mit mehreren Benutzern Probleme auftreten. 
-- Anwendungen sollten [benutzerspezifische Informationen](https://msdn.microsoft.com/library/aa383452.aspx) an benutzerspezifischen Speicherorten speichern, die von den globalen, auf alle Benutzer bezogenen Informationen getrennt sind. 
-- RemoteApp verwendet mehrere [Namespaces für Kernelobjekte](https://msdn.microsoft.com/library/aa382954.aspx). Ein globaler Namespace wird in erster Linie von Diensten in Client-/Server-Anwendungen verwendet. 
-- Es darf nicht davon ausgegangen werden, dass der Computername oder die dem Computer zugewiesene [IP-Adresse](https://msdn.microsoft.com/library/aa382942.aspx) mit einem einzelnen Benutzer zusammenhängen, da mehrere Benutzer gleichzeitig an einem Remote Desktop Session Host-Server (RD Session Host) angemeldet sein können. 
+
+- Nach dem Installieren einer [Anwendung für einen einzelnen Benutzer](https://msdn.microsoft.com/library/aa380661.aspx) können in einer Umgebung mit mehreren Benutzern Probleme auftreten.
+- Anwendungen sollten [benutzerspezifische Informationen](https://msdn.microsoft.com/library/aa383452.aspx) an benutzerspezifischen Speicherorten speichern, die von den globalen, auf alle Benutzer bezogenen Informationen getrennt sind.
+- RemoteApp verwendet mehrere [Namespaces für Kernelobjekte](https://msdn.microsoft.com/library/aa382954.aspx). Ein globaler Namespace wird in erster Linie von Diensten in Client-/Server-Anwendungen verwendet.
+- Es darf nicht davon ausgegangen werden, dass der Computername oder die dem Computer zugewiesene [IP-Adresse](https://msdn.microsoft.com/library/aa382942.aspx) mit einem einzelnen Benutzer zusammenhängen, da mehrere Benutzer gleichzeitig an einem Remote Desktop Session Host-Server (RD Session Host) angemeldet sein können.
 
 ### Leistung
 - Deaktivieren Sie [Grafikeffekte](https://msdn.microsoft.com/library/aa380822.aspx), bevor Sie Ihre App in RemoteApp einfügen.
-- Um die CPU-Verfügbarkeit für alle Benutzer zu maximieren, deaktivieren Sie [Hintergrundaufgaben](https://msdn.microsoft.com/library/aa380665.aspx), oder erstellen Sie effiziente Hintergrundaufgaben, die effektiv mit Ressourcen umgehen. 
+- Um die CPU-Verfügbarkeit für alle Benutzer zu maximieren, deaktivieren Sie [Hintergrundaufgaben](https://msdn.microsoft.com/library/aa380665.aspx), oder erstellen Sie effiziente Hintergrundaufgaben, die effektiv mit Ressourcen umgehen.
 - Sie sollten die [Threadnutzung](https://msdn.microsoft.com/library/aa383520.aspx) von Anwendungen für Umgebungen mit mehreren Benutzern und mehreren Prozessoren abstimmen und ausbalancieren.
-- Um die Leistung zu optimieren, empfiehlt es sich, der Anwendung eine [Erkennung](https://msdn.microsoft.com/library/aa380798.aspx) hinzuzufügen, ob sie in einer Clientsitzung ausgeführt wird. 
- 
+- Um die Leistung zu optimieren, empfiehlt es sich, der Anwendung eine [Erkennung](https://msdn.microsoft.com/library/aa380798.aspx) hinzuzufügen, ob sie in einer Clientsitzung ausgeführt wird.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

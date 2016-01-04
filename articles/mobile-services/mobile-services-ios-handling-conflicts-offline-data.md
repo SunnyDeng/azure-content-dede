@@ -19,6 +19,11 @@
 
 # Behandeln von Konflikten bei der Synchronisierung von Offlinedaten in Mobile Services
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
+
 [AZURE.INCLUDE [mobile-services-selector-offline-conflicts](../../includes/mobile-services-selector-offline-conflicts.md)]
 
 In diesem Thema erfahren Sie, wie Sie Daten synchronisieren und Konflikte behandeln können, wenn Sie die Offlinefunktionen von Azure Mobile Services verwenden. Dieses Lernprogramm baut auf dem Lernprogramm [Erste Schritte mit Offlinedaten] auf.
@@ -139,4 +144,4 @@ Führen Sie eine Aktualisierung in den App-Instanzen durch, indem Sie von oben n
 [Erste Schritte mit Offlinedaten]: mobile-services-ios-get-started-offline-data.md
 [Get started with Mobile Services]: mobile-services-ios-get-started.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -1,4 +1,4 @@
-<properties pageTitle="Application Insights für C++-Apps" description="Analysieren Sie die Nutzung und Leistung Ihrer C++-App mit Application Insights." services="application-insights" documentationCenter="cpp" authors="crystk" manager="jakubo""/>
+<properties pageTitle="Application Insights für C++-Apps" description="Analysieren der Nutzung und Leistung Ihrer C++-App mit Application Insights." services="application-insights" documentationCenter="cpp" authors="crystk" manager="douge""/>
 
 <tags 
     ms.service="application-insights" 
@@ -6,7 +6,7 @@
     ms.tgt_pltfrm="universal" 
     ms.devlang="na" 
     ms.topic="article" 
-	ms.date="10/06/2015" 
+	ms.date="11/17/2015" 
     ms.author="crystk"/>
 
 # Application Insights für C++-Apps
@@ -140,4 +140,4 @@ Klicken Sie auf ein beliebiges Diagramm, um weitere Details zu erhalten. Zum Bei
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

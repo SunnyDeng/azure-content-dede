@@ -132,7 +132,7 @@ In diesem Abschnitt wird dem WebAPI-Back-End ein neuer Controller hinzugefügt, 
 
         using Microsoft.Azure.NotificationHubs;
 
-6. Ersetzen Sie dann die Definition der `Notifications`-Klasse durch den folgenden Code sowie die beiden Platzhalter durch die Verbindungszeichenfolge (mit Vollzugriff) für Ihren Notification Hub und durch den Namen des Hubs (der im [Azure-Verwaltungsportal](http://manage.windowsazure.com) verfügbar ist):
+6. Ersetzen Sie dann die Definition der `Notifications`-Klasse durch den folgenden Code sowie die beiden Platzhalter durch die Verbindungszeichenfolge (mit Vollzugriff) für Ihren Notification Hub und durch den Namen des Hubs (der im [klassischen Azure-Portal](http://manage.windowsazure.com) verfügbar ist):
 
 		public class Notifications
         {
@@ -364,4 +364,4 @@ In diesem Abschnitt fügen Sie einen neuen Controller hinzu, über den Clientger
 [B16]: ./media/notification-hubs-aspnet-backend-notifyusers/notification-hubs-notify-users16.PNG
 [B18]: ./media/notification-hubs-aspnet-backend-notifyusers/notification-hubs-notify-users18.PNG
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

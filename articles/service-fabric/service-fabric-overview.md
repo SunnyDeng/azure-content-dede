@@ -1,6 +1,6 @@
 <properties 
    pageTitle="Übersicht über Service Fabric | Microsoft Azure" 
-   description="Eine Übersicht über Service Fabric und das Konzept der Anwendungen, die sich aus Microservices zusammensetzen. Service Fabric ist eine Plattform für verteilte Systeme zum Erstellen skalierbarer, zuverlässiger und einfach zu verwaltender Anwendungen für die Cloud." 
+   description="Eine Übersicht über Service Fabric und das Konzept der Anwendungen, die sich aus Microservices zusammensetzen, um Skalierung und Belastbarkeit bereitzustellen. Service Fabric ist eine Plattform für verteilte Systeme zum Erstellen skalierbarer, zuverlässiger und einfach zu verwaltender Anwendungen für die Cloud." 
    services="service-fabric" 
    documentationCenter=".net" 
    authors="msfussell" 
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA" 
-   ms.date="08/25/2015"
+   ms.date="11/18/2015"
    ms.author="mfussell"/>
 
 # Übersicht über Service Fabric
@@ -89,13 +89,15 @@ Mit Service Fabric können Sie Folgendes tun:
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## Nächste Schritte
 
-* Weitere Informationen finden Sie unter [Technische Übersicht](service-fabric-technical-overview.md).
+* Weitere Informationen: 
+	* [Gründe für einen Microservices-Ansatz zum Erstellen von Clientanwendungen](service-fabric-overview-microservices.md).
+	* [Technische Übersicht](service-fabric-technical-overview.md).
 * Einrichten der Service Fabric-[Entwicklungsumgebung](service-fabric-get-started.md)  
-* Auswählen eines [Frameworks](service-fabric-choose-framework.md) für den Dienst
+* Auswählen eines [Programmiermodell-Frameworks](service-fabric-choose-framework.md) für Ihren Dienst.
 
 
 [Image1]: media/service-fabric-overview/Service-Fabric-Overview.png
 
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO4-->

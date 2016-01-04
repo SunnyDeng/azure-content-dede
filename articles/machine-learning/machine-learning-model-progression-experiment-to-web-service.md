@@ -39,7 +39,7 @@ Im Folgenden sind die Phasen einer typischen Lösung aufgeführt, während Sie s
 
 ### Das Trainingsexperiment
 
-Das ***Trainingsexperiment*** ist der anfängliche Experimentbereich in Machine Learning Studio. Das Trainingsexperiment soll Ihnen einen Bereich bieten, in dem Sie ein Machine Learning-Modell entwickeln, testen, durchlaufen und schließlich trainieren. Sie können sogar mehrere Modelle gleichzeitig trainieren, während sie nach der idealen Lösung suchen. Wenn Sie mit dem Experimentieren fertig sind, wählen Sie jedoch ein einziges trainiertes Modell aus und löschen die übrigen aus dem Experiment. Ein Beispiel für die Entwicklung eines Vorhersageanalyseexperiments finden Sie unter [Entwickeln einer Lösung zur Vorhersageanalyse für die Kreditrisikobewertung in Azure Machine Learning](https://azure.microsoft.com/de-DE/documentation/articles/machine-learning-walkthrough-develop-predictive-solution/).
+Das ***Trainingsexperiment*** ist der anfängliche Experimentbereich in Machine Learning Studio. Das Trainingsexperiment soll Ihnen einen Bereich bieten, in dem Sie ein Machine Learning-Modell entwickeln, testen, durchlaufen und schließlich trainieren. Sie können sogar mehrere Modelle gleichzeitig trainieren, während sie nach der idealen Lösung suchen. Wenn Sie mit dem Experimentieren fertig sind, wählen Sie jedoch ein einziges trainiertes Modell aus und löschen die übrigen aus dem Experiment. Ein Beispiel für die Entwicklung eines Vorhersageanalyseexperiments finden Sie unter [Entwickeln einer Lösung zur Vorhersageanalyse für die Kreditrisikobewertung in Azure Machine Learning](machine-learning-walkthrough-develop-predictive-solution.md).
 
 ### Das Vorhersageexperiment
 
@@ -57,11 +57,11 @@ Es gibt möglicherweise weitere Änderungen, die Sie vornehmen möchten, um das 
 
 In diesem Konvertierungsprozess wird das Trainingsexperiment nicht verworfen. Nach Abschluss des Prozesses werden in Studio zwei Registerkarten angezeigt: eine für das Trainingsexperiment und eine für das Vorhersageexperiment. So können Sie vor dem Bereitstellen Ihres Webdiensts noch Änderungen am Trainingsexperiment durchführen und das Vorhersageexperiment neu erstellen. Ebenso können Sie eine Kopie des Trainingsexperiments speichern, um eine weitere Experimentreihe zu starten.
 
->[AZURE.NOTE]Durch das Klicken auf **Set Up Web Service** starten Sie einen automatischen Prozess zum Konvertieren des Trainingsexperiments in ein Vorhersageexperiment. In den meisten Fällen verläuft dieser reibungslos. Wenn das Trainingsexperiment jedoch komplex ist (z. B. mehrere Pfade für das Training verknüpft werden), möchten Sie diese Konvertierung vielleicht manuell ausführen. Weitere Einzelheiten zur Funktionsweise dieses Konvertierungsvorgangs finden Sie unter [Konvertieren eines Machine Learning-Trainingsexperiments in ein Vorhersageexperiment](https://azure.microsoft.com/de-DE/documentation/articles/machine-learning-convert-training-experiment-to-scoring-experiment/).
+>[AZURE.NOTE]Durch das Klicken auf **Set Up Web Service** starten Sie einen automatischen Prozess zum Konvertieren des Trainingsexperiments in ein Vorhersageexperiment. In den meisten Fällen verläuft dieser reibungslos. Wenn das Trainingsexperiment jedoch komplex ist (z. B. mehrere Pfade für das Training verknüpft werden), möchten Sie diese Konvertierung vielleicht manuell ausführen. Weitere Einzelheiten zur Funktionsweise dieses Konvertierungsvorgangs finden Sie unter [Konvertieren eines Machine Learning-Trainingsexperiments in ein Vorhersageexperiment](machine-learning-convert-training-experiment-to-scoring-experiment.md).
 
 ### Der Webdienst
 
-Sobald Sie mit dem Vorhersageexperiment zufrieden sind, klicken Sie auf **Deploy Web Service**, um Ihr Modell in Betrieb zu nehmen, indem Sie es als ***Azure-Webdienst*** bereitstellen. Benutzer können jetzt über die Webdienst-REST-API Daten an Ihr Modell senden und Ergebnisse zurückerhalten. Weitere Informationen zur Vorgehensweise finden Sie unter [Nutzen eines Azure Machine Learning-Webdiensts, der von einem Machine Learning-Experiment aus bereitgestellt wurde](https://azure.microsoft.com/de-DE/documentation/articles/machine-learning-consume-web-services/).
+Sobald Sie mit dem Vorhersageexperiment zufrieden sind, klicken Sie auf **Deploy Web Service**, um Ihr Modell in Betrieb zu nehmen, indem Sie es als ***Azure-Webdienst*** bereitstellen. Benutzer können jetzt über die Webdienst-REST-API Daten an Ihr Modell senden und Ergebnisse zurückerhalten. Weitere Informationen zur Vorgehensweise finden Sie unter [Nutzen eines Azure Machine Learning-Webdiensts, der von einem Machine Learning-Experiment aus bereitgestellt wurde](machine-learning-consume-web-services.md).
 
 Nachdem Sie den Webdienst bereitgestellt haben, bleiben das Vorhersageexperiment und der Webdienst verbunden, und Sie können zwischen beiden hin und her wechseln:
 
@@ -69,8 +69,8 @@ Nachdem Sie den Webdienst bereitgestellt haben, bleiben das Vorhersageexperiment
 | ------------------- | --------------- | ---------------------- |
 |Experimentbereich in Studio|**Go to web service**|Webdienstkonfiguration in Studio|
 |Webdienstkonfiguration in Studio|**View latest**|Experimentbereich in Studio|
-|Webdienstkonfiguration in Studio|**Manage endpoints…**|Endpunktverwaltung im Azure-Portal|
-|Endpunktverwaltung im Azure-Portal|**Edit in Studio**|Experimentbereich in Studio|
+|Webdienstkonfiguration in Studio|**Manage endpoints…**|Endpunktverwaltung im klassischen Azure-Portal|
+|Endpunktverwaltung im klassischen Azure-Portal|**Edit in Studio**|Experimentbereich in Studio|
 
 ![](media\machine-learning-model-progression-experiment-to-web-service\connections-between-experiment-and-web-service.png)
 
@@ -134,7 +134,7 @@ Beispiel: Angenommen, das Vorhersageexperiment gibt die gesamte Zeile der Eingab
 
 Wenn Sie Ihr Machine Learning-Modell beibehalten, es aber mit neuen Daten neu trainieren möchten, haben Sie zwei Optionen:
 
-1.  **Neutrainieren des Modells, während der Webdienst ausgeführt wird.** Wenn Sie das Modell neu trainieren möchten, während der Vorhersagewebdienst ausgeführt wird, müssen Sie dazu ein paar Änderungen am Trainingsexperiment vornehmen, um es als ***Neutrainingsexperiment*** festzulegen. Anschließend können Sie es als ***Neutrainingswebdienst*** bereitstellen. Weitere Anweisungen hierzu finden Sie unter [Programmgesteuertes erneutes Trainieren von Machine Learning-Modellen](https://azure.microsoft.com/de-DE/documentation/articles/machine-learning-retrain-models-programmatically/).
+1.  **Neutrainieren des Modells, während der Webdienst ausgeführt wird.** Wenn Sie das Modell neu trainieren möchten, während der Vorhersagewebdienst ausgeführt wird, müssen Sie dazu ein paar Änderungen am Trainingsexperiment vornehmen, um es als ***Neutrainingsexperiment*** festzulegen. Anschließend können Sie es als ***Neutrainingswebdienst*** bereitstellen. Weitere Anweisungen hierzu finden Sie unter [Programmgesteuertes erneutes Trainieren von Machine Learning-Modellen](machine-learning-retrain-models-programmatically.md).
 
 2.  **Zurückwechseln zum ursprünglichen Trainingsexperiment und Verwenden anderer Trainingsdaten zum Entwickeln Ihres Modells.** Ihr Vorhersageexperiment ist mit dem Webdienst verknüpft, aber das Trainingsexperiment ist nicht direkt auf diese Weise verknüpft. Wenn Sie das ursprüngliche Trainingsexperiment ändern und auf **Set Up Web Service** klicken, wird ein *neues* Vorhersageexperiment erstellt, das bei seiner Bereitstellung einen *neuen* Webdienst erstellt. Der ursprüngliche Webdienst wird nicht einfach aktualisiert.
 
@@ -148,16 +148,16 @@ Wenn Sie am ursprünglichen Vorhersageexperiment Änderungen vornehmen möchten 
 
 Weitere Informationen zu diesem Prozess finden Sie in den folgenden Artikeln:
 
--   Konvertieren des Experiments: [Konvertieren eines Machine Learning-Trainingsexperiments in ein Vorhersageexperiment](https://azure.microsoft.com/de-DE/documentation/articles/machine-learning-convert-training-experiment-to-scoring-experiment/)
+-   Konvertieren des Experiments: [Konvertieren eines Machine Learning-Trainingsexperiments in ein Vorhersageexperiment](machine-learning-convert-training-experiment-to-scoring-experiment.md)
 
--   Bereitstellen des Webdiensts: [Bereitstellen eines Azure Machine Learning-Webdiensts](https://azure.microsoft.com/de-DE/documentation/articles/machine-learning-publish-a-machine-learning-web-service/)
+-   Bereitstellen des Webdiensts: [Bereitstellen eines Azure Machine Learning-Webdiensts](machine-learning-publish-a-machine-learning-web-service.md)
 
--   Neutrainieren des Modells: [Programmgesteuertes erneutes Trainieren von Machine Learning-Modellen](https://azure.microsoft.com/de-DE/documentation/articles/machine-learning-retrain-models-programmatically/)
+-   Neutrainieren des Modells: [Programmgesteuertes erneutes Trainieren von Machine Learning-Modellen](machine-learning-retrain-models-programmatically.md)
 
 Beispiele für den gesamten Prozess finden Sie unter:
 
--   [Lernprogramm für maschinelles Lernen: Erstellen Ihres ersten Experiments im Azure Machine Learning Studio](https://azure.microsoft.com/de-DE/documentation/articles/machine-learning-create-experiment/)
+-   [Lernprogramm für maschinelles Lernen: Erstellen Ihres ersten Experiments im Azure Machine Learning Studio](machine-learning-create-experiment.md)
 
--   [Exemplarische Vorgehensweise: Entwickeln einer Lösung zur Vorhersageanalyse für die Kreditrisikobewertung in Azure Machine Learning](https://azure.microsoft.com/de-DE/documentation/articles/machine-learning-walkthrough-develop-predictive-solution/)
+-   [Exemplarische Vorgehensweise: Entwickeln einer Lösung zur Vorhersageanalyse für die Kreditrisikobewertung in Azure Machine Learning](machine-learning-walkthrough-develop-predictive-solution.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

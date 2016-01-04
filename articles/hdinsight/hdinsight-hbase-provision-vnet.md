@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="08/12/2015"
+   ms.date="11/18/2015"
    ms.author="jgao"/>
 
 # Bereitstellen von HBase-Clustern im virtuellen Azure-Netzwerk 
@@ -60,7 +60,7 @@ Mit dem Azure-Ressourcen-Manager können Sie mit den Ressourcen in Ihrer Anwendu
 
 **So erstellen Sie eine Ressourcengruppe**
 
-1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
 2. Klicken Sie auf **NEU**, auf **Verwaltung** und anschließend auf **Ressourcengruppe**.
 3. Geben Sie folgende Werte ein bzw. wählen diese aus:
 
@@ -74,21 +74,26 @@ Vor der Bereitstellung eines HBase-Clusters müssen Sie ein virtuelles Azure-Net
 
 **So erstellen Sie ein virtuelles Netzwerk im Azure-Portal**
 
-1. Melden Sie sich beim [Vorschauportal](https://portal.azure.com) an.
+1. Melden Sie sich beim [Portal](https://portal.azure.com) an.
 2. Klicken Sie auf **NEU**, auf **Netzwerk** und anschließend auf **Virtuelles Netzwerk**.
-3. Wählen Sie unter **Bereitstellungsmodell auswählen** die Option **Klassisch** aus, und klicken Sie dann auf **Erstellen**.
+3. Wählen Sie in **Bereitstellungsmodell auswählen** die Option**Klassisch**, wenn Sie einen Windows-basierten HDInsight-Cluster verwenden möchten. Wählen Sie **Ressourcen-Manager**, wenn Sie einen Linux-basierten HDInsight-Cluster verwenden möchten. Klicken Sie abschließend auf **Erstellen**.
 
-	> [AZURE.NOTE]Sie können kein virtuelles Azure-Netzwerk der Version 1 (klassisch) mit HDInsight verwenden. Das virtuelle Netzwerk muss Version 2 aufweisen (Azure-Ressourcen-Manager), damit es beim Erstellen des Clusters im Azure-Vorschauportal als Option angezeigt wird bzw. beim Erstellen eines Clusters über die Azure-Befehlszeilenschnittstelle oder Azure PowerShell verwendet werden kann.
-> 
-> Wenn Ressourcen in einem v1-Netzwerk vorhanden sind und diese Ressourcen über ein virtuelles Netzwerk direkt auf HDInsight zugreifen können sollen, finden Sie unter [Herstellen einer Verbindung zwischen klassischen VNets und neuen VNets](../virtual-network/virtual-networks-arm-asm-s2s.md) Informationen zum Erstellen einer Verbindung zwischen einem virtuellen v2-Netzwerk und einem virtuellen v1-Netzwerk. Nachdem diese Verbindung eingerichtet wurde, können Sie den HDInsight-Cluster im virtuellen v2-Netzwerk erstellen.
-
-4. Geben Sie die folgenden Werte ein, oder wählen Sie sie aus:
+    > [AZURE.NOTE]Für Windows-basierte Cluster ist ein virtuelles Azure-Netzwerk der Version 1 (klassisch) erforderlich, für Linux-basierte Cluster dagegen ein virtuelles Azure-Netzwerk der Version 2 (Azure-Ressourcen-Manager). Wenn nicht der richtige Netzwerktyp vorhanden ist, kann das Netzwerk nicht zum Erstellen des Clusters verwendet werden.
+    >
+    > Wenn sich Ressourcen in einem virtuellen Netzwerk befinden, das nicht von dem zu erstellenden Cluster verwendet werden kann, dann können Sie ein neues virtuelles Netzwerk erstellen, das vom Cluster verwendet werden kann, und es mit dem inkompatiblen virtuellen Netzwerk verbinden. Anschließend können Sie den Cluster in der erforderlichen Netzwerkversion erstellen, und da die beiden Netzwerke verknüpft sind, kann auf die Ressourcen im anderen Netzwerk zugegriffen werden. Weitere Informationen zum Herstellen einer Verbindung zwischen klassischen und neuen virtuellen Netzwerken finden Sie unter [Herstellen einer Verbindung zwischen klassischen VNets und neuen VNets](../virtual-network/virtual-networks-arm-asm-s2s.md).
+    
+4. Geben Sie folgende Werte ein bzw. wählen diese aus:
 
 	- **Name**: Name des virtuellen Netzwerks.
 	- **Adressraum**: Wählen Sie einen Adressraum für das virtuelle Netzwerk, der groß genug ist, um Adressen für alle Knoten im Cluster zur Verfügung zu stellen. Andernfalls schlägt die Bereitstellung fehl. Für dieses Tutorial können Sie die Standardwerte verwenden. Klicken Sie zum Speichern der Änderungen auf **OK**.
+    
+        > [AZURE.NOTE]Wenn Sie dieses virtuelle Netzwerk mit mehreren Clustern verwenden, empfiehlt sich dringend, für jeden Cluster ein einzelnes Subnetz anzugeben.
+         
 	- **Ressourcengruppe**: Wählen Sie die Ressourcengruppe aus, die Sie zuvor in diesem Tutorial erstellt haben.
 	- **Abonnement**: Wählen Sie das Azure-Abonnement aus, das Sie für dieses virtuelle Netzwerk verwenden möchten.
 	- **Speicherort** – Der Speicherort muss derselbe sein wie der des zu erstellenden HBase-Clusters.
+    
+        > [AZURE.NOTE]> Azure HDInsight unterstützt nur standortbasierte virtuelle Netzwerke und kann momentan nicht mit affinitätsgruppenbasierten virtuellen Netzwerken verwendet werden.
 
 5. Klicken Sie auf **Erstellen**.
 
@@ -110,10 +115,10 @@ Ein DNS-Server ist optional, aber in einigen Fällen erforderlich. Die Vorgehens
 
 **So erstellen Sie einen HDInsight-Cluster**
 
-1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
 2. Klicken Sie auf **NEU**, auf **Datenanalyse** und anschließend auf **HDInsight**.
 
-    ![Erstellen eines neuen Clusters im Azure-Vorschauportal](./media/hdinsight-provision-clusters/HDI.CreateCluster.1.png "Erstellen eines neuen Clusters im Azure-Vorschauportal")
+    ![Erstellen eines neuen Clusters im Azure-Portal](./media/hdinsight-provision-clusters/HDI.CreateCluster.1.png "Erstellen eines neuen Clusters im Azure-Portal")
 
 3. Geben Sie folgende Werte ein bzw. wählen diese aus:
 
@@ -384,4 +389,4 @@ In diesem Lernprogramm haben Sie erfahren, wie Sie einen HBase-Cluster bereitste
 
 [azure-preview-portal]: https://portal.azure.com
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

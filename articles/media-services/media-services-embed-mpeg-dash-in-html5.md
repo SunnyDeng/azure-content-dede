@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/07/2015" 
+	ms.date="12/16/2015" 
 	ms.author="juliako"/>
 
 
@@ -23,7 +23,7 @@
 
 MPEG-DASH ist ein ISO-Standard für adaptives Streaming von Videoinhalten, der wichtige Vorteile für das Bereitstellen qualitativ hochwertiger Videoausgaben mit adaptivem Streaming bietet. Mit MPEG-DASH wird der Videostream automatisch auf eine niedrigere Auflösung gesetzt, wenn das Netzwerk überlastet ist. Dadurch verringert sich die Wahrscheinlichkeit eines "angehaltenen" Videos, während der Player die nächsten Sekunden für die Wiedergabe herunterlädt (Pufferung). Wenn die Netzwerküberlastung abnimmt, kehrt der Videoplayer zu einem Streaming mit höherer Qualität zurück. Diese Möglichkeit, die erforderliche Bandbreite anzupassen, führt außerdem zu einer kürzeren Startzeit für Videos. Das bedeutet, dass die ersten Sekunden in einem schnell herunterladbaren Segment mit niedriger Qualität wiedergegeben werden können und die Qualität anschließend erhöht wird, wenn genügend Inhalte gepuffert wurden.
 
-Dash.js ist ein Open Source-MPEG-DASH-Videoplayer, der in JavaScript geschrieben wurde. Es handelt sich um einen robusten, plattformübergreifenden Player, der kostenlos in Anwendungen zur Videowiedergabe verwendet werden kann. Er stellt die MPEG-DASH-Wiedergabe in allen Browsern zur Verfügung, die W3C MSE (Media Source Extensions) unterstützen. Zurzeit sind dies Chrome und IE11 (für andere Browser wurde eine baldige Unterstützung von MSE zugesichert). Weitere Informationen zu DASH.js finden Sie im dash.js-Repository von GitHub.
+Dash.js ist ein Open Source-MPEG-DASH-Videoplayer, der in JavaScript geschrieben wurde. Es handelt sich um einen robusten, plattformübergreifenden Player, der kostenlos in Anwendungen zur Videowiedergabe verwendet werden kann. Er stellt die MPEG-DASH-Wiedergabe in allen Browsern zur Verfügung, die W3C MSE (Media Source Extensions) unterstützen. Zurzeit sind dies Chrome, Microsoft Edge und IE11, für andere Browser wurde eine baldige Unterstützung von MSE zugesichert. Weitere Informationen zu DASH.js finden Sie im dash.js-Repository von GitHub.
 
 
 ##Erstellen eines browserbasierten Streaming-Videoplayers
@@ -38,7 +38,6 @@ So erstellen Sie eine einfache Webseite, auf der ein Videoplayer mit den erwarte
 1. Anzeigen der Ergebnisse in einem Browser, der MSE implementiert
 
 Die Initialisierung des Players kann in nur wenigen Codezeilen des JavaScript-Codes ausgeführt werden. Mit dash.js ist es sehr einfach, MPEG-DASH-Videos in Ihre browserbasierten Anwendungen einzubetten.
-
 
 ##Erstellen der HTML-Seite
 
@@ -113,6 +112,6 @@ Zeigen Sie zur Wiedergabe eines Videos in Ihrem Browser auf die Datei "basicPlay
 
 [Entwickeln von Videoplayeranwendungen](media-services-develop-video-players.md)
 
-[dash.js-Repository von GitHub](https://github.com/Dash-Industry-Forum/dash.js) (in englischer Sprache)
+[dash.js-Repository von GitHub (in englischer Sprache)](https://github.com/Dash-Industry-Forum/dash.js)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

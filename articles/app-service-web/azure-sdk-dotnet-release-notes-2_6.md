@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration" 
-   ms.date="08/08/2015"
+   ms.date="12/02/2015"
    ms.author="juliako"/>
 
 
@@ -58,9 +58,11 @@ Mit Azure SDK 2.6 können Sie Cloud-Dienst-Anwendungen (PaaS) entwickeln, die au
 
 - **In-Role Cache** wurde aktualisiert, um **Microsoft Azure Storage SDK** Version 4.3 zu verwenden. Bis jetzt hat **In-Role Cache ** Azure Storage SDK, Version 1.7 verwendet.
 
-	Kunden, die Azure SDK 2.5 oder niedriger verwenden, sollten auf Azure SDK 2.6 aktualisieren und die neue Version von Azure Storage-SDK verwenden. Beachten Sie, dass die Azure Storage Version 2011-08-18 am 9. Dezember 2015 entfernt wird. Weitere Informationen finden Sie in [dieser Ankündigung](http://azure.microsoft.com/blog/2014/08/04/microsoft-azure-storage-service-version-removal/).
+	Kunden, die Azure SDK 2.5 oder niedriger verwenden, sollten auf Azure SDK 2.6 aktualisieren und die neue Version von Azure Storage-SDK verwenden.
 
-	Weitere Informationen finden Sie unter [In-Role Cache für Azure Cache](https://msdn.microsoft.com/library/azure/dn386103.aspx).
+	Gegenwärtig ist geplant, Azure Storage Version 2011-08-18 am 1. August 2016 zu entfernen. Alle Migrationen von In-Role Cache von Azure SDK 2.5 oder niedriger auf die Version 2.6 müssen bis dahin abgeschlossen sein. Weitere Informationen zum Auslaufen von Azure Storage Version 2011-08-18 finden Sie unter [Aktualisierung bezüglich der Entfernung der Dienstversion Microsoft Azure Storage: Verlängerung bis 2016](http://blogs.msdn.com/b/windowsazurestorage/archive/2015/10/19/microsoft-azure-storage-service-version-removal-update-extension-to-2016.aspx).
+
+>[AZURE.IMPORTANT]Wir geben die Deaktivierung der Dienste Azure Managed Cache Service und Azure In-Role Cache zum 30. November 2016 bekannt. Es wird empfohlen, als Vorbereitung für diese Einstellung dieser Dienste zu Azure Redis Cache zu migrieren. Weitere Informationen zu Daten und Hinweise zur Migration finden Sie unter [Welches Azure Cache-Angebot ist für mich das richtige?](../redis-cache/cache-faq.md#which-azure-cache-offering-is-right-for-me)
 
 ##Azure App Service Tools
 
@@ -106,4 +108,4 @@ Das Speicherkonto für die Diagnose kann jetzt in der Dienstkonfigurationsdatei 
 
 [Unterstützungs- und Deaktivierungsinformationen zum Azure SDK für .NET und APIs](https://msdn.microsoft.com/library/azure/dn479282.aspx/)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

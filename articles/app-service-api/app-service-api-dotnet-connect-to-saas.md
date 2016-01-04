@@ -18,6 +18,8 @@
 
 # Verbinden mit einer SaaS-Plattform über eine ASP.NET-API-App in Azure App Service
 
+[AZURE.INCLUDE [app-service-api-v2-note](../../includes/app-service-api-v2-note.md)]
+
 ## Übersicht
 
 In diesem Tutorial wird gezeigt, wie eine [API-App](app-service-api-apps-why-best-platform.md) programmiert und konfiguriert wird, die eine Verbindung mit einer [SaaS-Plattform (Software-as-a-Service)](../app-service/app-service-authentication-overview.md#obotosaas) mithilfe des [App Service-API-App SDK für .NET](http://www.nuget.org/packages/Microsoft.Azure.AppService.ApiApps.Service/) herstellt. Das Tutorial veranschaulicht auch, wie die API-App aus einem .NET-Client mithilfe des [App Service SDK für .NET](http://www.nuget.org/packages/Microsoft.Azure.AppService) aufgerufen wird. Am Ende des Tutorials verfügen Sie über einen .NET-Konsolen-App-Client, der eine .NET API-App aufruft, die in Azure App Service ausgeführt wird. Die API-App ruft die Dropbox-API auf und gibt eine Liste mit Dateien und Ordnern im Dropbox-Konto des Benutzers zurück.
@@ -26,15 +28,15 @@ Als Alternative zum Schreiben von Code, der eine SaaS-API direkt aus einer benut
 
 In diesem Tutorial werden die folgenden Schritte behandelt:
 
-* Erstellen eines API-App-Projekts in Visual Studio 
-* Konfigurieren der Datei *apiapp.json*, um der API-App die Verbindung mit dem Dropbox-Dienst zu ermöglichen
-* Hinzufügen von Code, der Dropbox aufruft und die Ergebnisse zurückgibt
-* Erstellen einer neuen API-App in Azure
-* Bereitstellen des Projekts für die API-App
-* Konfigurieren der API-App
-* Konfigurieren des Gateways
-* Erstellen eines Testclients
-* Ausführen des Testclients
+* Erstellen eines API-App-Projekts in Visual Studio. 
+* Konfigurieren der Datei *apiapp.json*, um der API-App die Verbindung mit dem Dropbox-Dienst zu ermöglichen.
+* Hinzufügen von Code, der Dropbox aufruft und die Ergebnisse zurückgibt.
+* Erstellen einer neuen API-App in Azure.
+* Bereitstellen des Projekts für die API-App.
+* Konfigurieren der API-App.
+* Konfigurieren des Gateways.
+* Erstellen eines Testclients.
+* Ausführen des Testclients.
 
 ## Voraussetzungen
 
@@ -452,4 +454,4 @@ Sie haben erfahren, wie Sie eine API-App programmieren und konfigurieren, die si
 [Azure preview portal]: https://portal.azure.com/
 [Azure portal]: https://manage.windowsazure.com/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

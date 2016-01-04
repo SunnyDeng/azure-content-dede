@@ -44,7 +44,7 @@ Zum Hochladen von Daten- und Schemadateien für den Code des Prototypenbeispiels
 
 ## Testen der Prototypenprojektmappe auf Ihrem System
 
-1. [Erstellen Sie einen Azure Search-Dienst im Azure-Portal](search-create-service-portal.md).
+1. [Erstellen eines Azure Search-Diensts im klassischen Azure-Portal](search-create-service-portal.md).
 
     Jedem bereits vorhandenen Azure-Abonnement kann eine gemeinsam genutzte (kostenlose) Version des Diensts hinzugefügt werden. Der gemeinsam genutzte Dienst wird häufig für Prototypen verwendet. Beachten Sie, dass der gemeinsam genutzte Dienst auf 50 MB Daten oder auf insgesamt 10.000 Dokumente beschränkt ist (je nachdem, was zuerst eintritt). Darüber hinaus können Daten und Dokumente auf maximal drei Indizes verteilt werden.
 
@@ -133,4 +133,4 @@ Weitere Informationen finden Sie unter folgenden Links:
 [1]: ./media/search-build-prototype/azsearch-datafiles.png
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

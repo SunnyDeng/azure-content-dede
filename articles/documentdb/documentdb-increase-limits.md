@@ -47,7 +47,7 @@ Die folgende Tabelle beschreibt die DocumentDB-Kontingente, die durch Kontaktauf
 ##<a id="RequestQuotaIncrease"></a>Anfordern einer Kontingentanpassung
 Die folgenden Schritte zeigen, wie Sie eine Kontingentanpassung anfordern.
 
-1. Klicken Sie im [Azure-Vorschauportal](https://portal.azure.com) auf **Durchsuchen** und dann auf **Hilfe & Support**.
+1. Klicken Sie im [Azure-Portal](https://portal.azure.com) auf **Durchsuchen** und dann auf **Hilfe & Support**.
 
 	![Screenshot: Start von Hilfe & Support](media/documentdb-increase-limits/helpsupport.png)
 
@@ -75,4 +75,4 @@ Sobald das Supportticket erstellt wurde, sollten Sie per E-Mail eine Supportanfo
 ##<a name="NextSteps"></a> Nächste Schritte
 - Um weitere Informationen zu DocumentDB zu erhalten, klicken Sie [hier](http://azure.com/docdb).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

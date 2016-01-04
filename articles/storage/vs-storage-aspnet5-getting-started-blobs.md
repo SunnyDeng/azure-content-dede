@@ -5,7 +5,7 @@
 	documentationCenter=""
 	authors="TomArcher"
 	manager="douge"
-	editor="tglee"/>
+	editor=""/>
 
 <tags
 	ms.service="storage"
@@ -13,19 +13,10 @@
 	ms.tgt_pltfrm="vs-getting-started"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/03/2015"
+	ms.date="12/16/2015"
 	ms.author="tarcher"/>
 
 # Erste Schritte mit Azure-BLOB-Speicher und verbundenen Visual Studio-Diensten (ASP.NET 5)
-
-> [AZURE.SELECTOR]
-> - [Getting started](vs-storage-aspnet5-getting-started-blobs.md)
-> - [What happened](vs-storage-aspnet5-what-happened.md)
-
-> [AZURE.SELECTOR]
-> - [Blobs](vs-storage-aspnet5-getting-started-blobs.md)
-> - [Queues](vs-storage-aspnet5-getting-started-queues.md)
-> - [Tables](vs-storage-aspnet5-getting-started-tables.md)
 
 ##Übersicht
 
@@ -140,7 +131,7 @@ Um die Blobs in einem Container aufzuführen, müssen Sie zuerst einen Container
 Es gibt auch andere Möglichkeiten, den Inhalt eines BLOB-Containers aufzulisten. Weitere Informationen finden Sie unter [Verwenden von BLOB-Speicher aus .NET](storage-dotnet-how-to-use-blobs.md#list-the-blobs-in-a-container).
 
 ##Herunterladen eines Blobs
-Wenn Sie einen BLOB herunterladen möchten, rufen Sie zuerst einen Verweis auf den BLOB ab, und rufen Sie dann die **DownloadToStreamAsync()**-Methode auf. Im folgenden Beispiel wird die **DownloadToStreamAsync()**-Methode verwendet, um den Inhalt des BLOBs in ein Datenstromobjekt zu übertragen, das anschließend als eine lokale Datei gespeichert werden kann.
+Wenn Sie ein Blob herunterladen möchten, rufen Sie zuerst einen Verweis auf das Blob ab, und rufen Sie dann die **DownloadToStreamAsync()**-Methode auf. Im folgenden Beispiel wird die **DownloadToStreamAsync()**-Methode verwendet, um den Inhalt des BLOBs in ein Datenstromobjekt zu übertragen, das anschließend als eine lokale Datei gespeichert werden kann.
 
 	// Get a reference to a blob named "photo1.jpg".
 	CloudBlockBlob blockBlob = container.GetBlockBlobReference("photo1.jpg");
@@ -166,4 +157,4 @@ Wenn Sie einen BLOB löschen möchten, rufen Sie zuerst einen Verweis auf den BL
 
 [AZURE.INCLUDE [vs-storage-dotnet-blobs-next-steps](../../includes/vs-storage-dotnet-blobs-next-steps.md)]
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

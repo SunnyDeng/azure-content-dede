@@ -34,7 +34,7 @@ Bei Hue handelt es sich um einen Satz von Webanwendungen zur Interaktion mit ein
 
 ## Installation von Hue mithilfe von Skriptaktionen
 
-Die Skriptaktion [https://hdiconfigactions.blob.core.windows.net/linuxhueconfigactionv01/install-hue-uber-v01.sh](https://hdiconfigactions.blob.core.windows.net/linuxhueconfigactionv01/install-hue-uber-v01.sh) wird zum Installieren von Hue in einem HDInsight-Cluster verwendet. Dieser Abschnitt enthält Anweisungen zur Verwendung des Skripts während der Bereitstellung des Clusters mithilfe des Azure-Portals.
+Die Skriptaktion [https://hdiconfigactions.blob.core.windows.net/linuxhueconfigactionv01/install-hue-uber-v01.sh](https://hdiconfigactions.blob.core.windows.net/linuxhueconfigactionv01/install-hue-uber-v01.sh) wird zum Installieren von Hue in einem HDInsight-Cluster verwendet. Dieser Abschnitt enthält Anweisungen zur Verwendung des Skripts während der Bereitstellung des Clusters mithilfe des klassischen Azure-Portals.
 
 > [AZURE.NOTE]Sie können auch Azure PowerShell oder das HDInsight .NET SDK zum Erstellen eines Clusters mit diesem Skript verwenden. Weitere Informationen zur Verwendung dieser Methoden finden Sie unter [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen](hdinsight-hadoop-customize-cluster-linux.md).
 
@@ -65,9 +65,9 @@ SSH-Tunneling ist die einzige Möglichkeit für den Zugriff auf Hue auf dem Clus
 
 1. Nutzen Sie die Informationen unter [Verwenden von SSH-Tunneling zum Zugriff auf die Ambari-Webbenutzeroberfläche, ResourceManager, JobHistory, NameNode, Oozie und andere Webbenutzeroberflächen](hdinsight-linux-ambari-ssh-tunnel.md), um einen SSH-Tunnel von Ihrem Clientsystem an das HDInsight-Cluster zu erstellen und anschließend Ihren Webbrowser für die Verwendung des SSH-Tunnels als Proxy zu konfigurieren.
 
-2. Sobald Sie einen SSH-Tunnel erstellt und Ihren Browser für den Proxy-Datenverkehr konfiguriert haben, müssen Sie den Hostnamen des Hauptknotens suchen. Führen Sie die folgenden Schritte aus, um diese Informationen von Ambari abzurufen.
+2. Sobald Sie einen SSH-Tunnel erstellt und Ihren Browser für den Proxy-Datenverkehr konfiguriert haben, müssen Sie den Hostnamen des Hauptknotens suchen. Führen Sie die folgenden Schritte aus, um diese Informationen von Ambari abzurufen:
 
-    1. Wechseln Sie in einem Browser zu https://CLUSTERNAME.azurehdinsight.net. Wenn Sie aufgefordert werden, verwenden Sie den Admin-Benutzernamen und das Kennwort zur Authentifizierung auf der Website.
+    1. Wechseln Sie in einem Browser zu https://CLUSTERNAME.azurehdinsight.net. Wenn Sie aufgefordert werden, verwenden Sie den Admin-Benutzername und das Kennwort zur Authentifizierung auf der Website.
     
     2. Wählen im Menü oben auf der Seite die Option __Hosts__ aus.
     
@@ -137,4 +137,4 @@ SSH-Tunneling ist die einzige Möglichkeit für den Zugriff auf Hue auf dem Clus
 [hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster-linux.md
 [hdinsight-install-spark]: hdinsight-hadoop-spark-install-linux.md
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

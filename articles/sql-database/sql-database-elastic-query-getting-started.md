@@ -33,17 +33,17 @@ Hier erstellen Sie einen Shardzuordnungs-Manager und mehrere Shards und fügen a
 	![Eingabeaufforderung][1]
 
 2.  Geben Sie im Befehlsfenster "1" ein, und drücken Sie die **EINGABETASTE**. Dadurch wird der Shardzuordnungs-Manager erstellt, und es werden zwei Shards zum Server hinzugefügt. Geben Sie dann "3" ein, und drücken Sie die **EINGABETASTE**. Wiederholen Sie den Vorgang viermal. Dadurch werden Beispieldatenzeilen in die Shards eingefügt.
-3.  Im [Azure-Vorschauportal](https://portal.azure.com) sollten drei neue Datenbanken auf dem V12-Server angezeigt werden:
+3.  Im [Azure-Portal](https://portal.azure.com) sollten drei neue Datenbanken auf dem V12-Server angezeigt werden:
 
 	![Visual Studio-Bestätigung][2]
 
 	Zum diesem Zeitpunkt werden datenbankübergreifende Abfragen durch die Clientbibliotheken für elastische Datenbanken unterstützt. Verwenden Sie z. B. Option 4 im Eingabeaufforderungsfenster. Die Ergebnisse einer Abfrage mit mehreren Shards sind immer ein **UNION ALL** der Ergebnisse aus allen Shards.
 
-	Im nächsten Abschnitt erstellen wir einen Endgerät für eine Beispieldatenbank, der umfangreichere Abfragen der Daten über Shards hinweg unterstützt.
+	Im nächsten Abschnitt erstellen wir einen Endpunkt für eine Beispieldatenbank, der umfangreichere Abfragen der Daten über Shards hinweg unterstützt.
 
 ## Erstellen einer elastischen Datenbankabfrage
 
-1. Öffnen Sie das [Azure-Vorschauportal](https://portal.azure.com), und melden Sie sich an.
+1. Öffnen Sie das [Azure-Portal](https://portal.azure.com), und melden Sie sich an.
 2. Erstellen Sie eine neue Azure SQL-Datenbank auf demselben Server, auf dem sich auch das Shard-Setup befindet. Nennen Sie die Datenbank "ElasticDBQuery". Als Tarif müssen Sie eines der Premium-Angebote auswählen. Abfragen für elastische Datenbanken sind derzeit nur im Premium-Tarif verfügbar.
 
 	![Azure-Portal und -Tarif][3]
@@ -142,4 +142,4 @@ Preisinformationen finden Sie in der [SQL-Datenbank – Preisdetails](http://azu
 [5]: ./media/sql-database-elastic-query-getting-started/exel-sources.png
 <!--anchors-->
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

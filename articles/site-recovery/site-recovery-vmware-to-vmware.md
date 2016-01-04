@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Einrichten von Schutz zwischen lokalen VMware-Standorten" 
-	description="Verwenden Sie diesen Artikel, um Schutz zwischen zwei VMware-Standorten mithilfe von Azure Site Recovery zu konfigurieren." 
-	services="site-recovery" 
-	documentationCenter="" 
-	authors="rayne-wiselman" 
-	manager="jwhit" 
+<properties
+	pageTitle="Einrichten von Schutz zwischen lokalen VMware-Standorten"
+	description="Verwenden Sie diesen Artikel, um Schutz zwischen zwei VMware-Standorten mithilfe von Azure Site Recovery zu konfigurieren."
+	services="site-recovery"
+	documentationCenter=""
+	authors="rayne-wiselman"
+	manager="jwhit"
 	editor=""/>
 
-<tags 
-	ms.service="site-recovery" 
-	ms.workload="backup-recovery" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="10/07/2015" 
+<tags
+	ms.service="site-recovery"
+	ms.workload="backup-recovery"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="12/03/2015"
 	ms.author="raynew"/>
 
 
@@ -60,16 +60,16 @@ InMage Scout in Azure Site Recovery ermöglicht eine Echtzeitreplikation zwische
 
 Installieren Sie wie folgt:
 
-1. Laden Sie die ZIP-Datei [das Update](http://download.microsoft.com/download/9/F/D/9FDC6001-1DD0-4C10-BDDD-8A9EBFC57FDF/ASR Scout 8.0.1 Update1.zip) herunter. Diese ZIP-Datei enthält die folgenden Dateien:
+1. Laden Sie die ZIP-Datei für das [Update](http://aka.ms/scoutupdates) herunter. Diese ZIP-Datei enthält die folgenden Dateien:
 
 	-  RX\_8.0.1.0\_GA\_Update\_1\_3279231\_23Jun15.tar.gz
-	-  CX\_Windows\_8.0.1.0\_GA\_Update\_1\_3259146\_23Jun15.exe
+	-  CX\_Windows\_8.0.2.0\_GA\_Update\_2\_4306954\_21Aug15.exe
 	-  UA\_Windows\_8.0.1.0\_GA\_Update\_1\_3259401\_23Jun15.exe
 	-  UA\_RHEL6-64\_8.0.1.0\_GA\_Update\_1\_3259401\_23Jun15.tar.gz
 	-  vCon\_Windows\_8.0.1.0\_GA\_Update\_1\_3259523\_23Jun15.exe
 2. Extrahieren Sie die ZIP-Dateien.
 2. **RX server**: Kopieren Sie **RX\_8.0.1.0\_GA\_Update\_1\_3279231\_23Jun15.tar.gz** auf den RX-Server, und extrahieren Sie die Datei. Führen Sie im extrahierten Ordner **/Install** aus.
-2. **Konfigurationsserver/Prozessserver**: Kopieren Sie **CX\_Windows\_8.0.1.0\_GA\_Update\_1\_3259146\_23Jun15.exe** auf den Konfigurationsserver und den Prozessserver. Führen Sie sie durch Doppelklicken aus.
+2. **Konfigurationsserver/Prozessserver**: Kopieren Sie **CX\_Windows\_8.0.2.0\_GA\_Update\_2\_4306954\_21Aug15.exe** auf den Konfigurationsserver und Prozessserver. Führen Sie sie durch Doppelklicken aus.
 3. **Windows-Masterzielserver**: Um die Kopie des vereinheitlichten Agents zu aktualisieren, kopieren Sie **UA\_Windows\_8.0.1.0\_GA\_Update\_1\_3259401\_23Jun15.exe** auf den Masterzielserver. Führen Sie sie durch Doppelklicken aus. Beachten Sie, dass der vereinheitliche Agent für Windows nicht auf den Quellserver anwendbar ist. Er sollte nur auf dem Windows-Masterzielserver installiert werden.
 4. **Linux-Masterzielserver**: Um die Kopie des vereinheitlichten Agents zu aktualisieren, kopieren Sie **UA\_RHEL6 64\_8.0.1.0\_GA\_Update\_1\_3259401\_23Jun15.tar.gz** auf den Masterzielserver, und extrahieren Sie die Datei. Führen Sie im extrahierten Ordner **/Install** aus.
 5. **vContinuum-Server**: Kopieren Sie **vCon\_Windows\_8.0.1.0\_GA\_Update\_1\_3259523\_23Jun15.exe** auf den vContinuum-Server. Stellen Sie sicher, dass Sie den vContinuum Assistenten geschlossen haben. Doppelklicken Sie auf die Datei, um Sie auszuführen.
@@ -86,6 +86,19 @@ Installieren Sie wie folgt:
 
 
 ## Aktualisierungen
+
+### ASR Scout 8.0.1, Update vom 03.12.15
+
+Das Update vom 03.12.15 umfasst Folgendes:
+
+- **Konfigurationsserver**: Behebt ein Problem, das ein ordnungsgemäßes Funktionieren der 31 Tage kostenlosen Messfunktion verhinderte, wenn der Konfigurationsserver in Site Recovery registriert wurde.
+- **Vereinheitlichter Agent**: Behebt ein Problem in Update 1 für das Masterziel, das bewirkte, dass das Update nicht auf dem Masterzielserver installiert wurde, wenn ein Upgrade von Version 8.0 auf 8.0.1 erfolgte.
+
+>[AZURE.NOTE]
+>
+>-	Alle ASR-Updates sind kumulativ.
+>-	Die Updates vom Typ CS und RX können nicht rückgängig gemacht werden, sobald sie auf das System angewendet wurden.
+
 
 ### ASR Scout 8.0.1 Update 1
 
@@ -112,9 +125,9 @@ Dieses neueste Update enthält Fehlerbehebungen und neue Funktionen:
 	-  Im vContinuum-Assistenten wird der Datenträger automatisch deaktiviert, wenn Sie in der Datenträgeransicht während des Schutzes von virtuellen MSCS-Computern auf **Details** klicken.
 	- Während des P2V-Szenarios erforderliche HP-Dienste wie CIMnotify und CqMgHost werden im wiederhergestellten virtuellen Computer nicht in "Manuell" verschoben, was zu einem verlängerten Startvorgang führt.
 	- Fehler eines geschützten virtuellen Linux-Computers, wenn auf dem Masterzielserver mehr als 26 Datenträger vorhanden sind.
-	
+
 ## Nächste Schritte
 
-Etwaige Fragen können Sie im [Azure Recovery Services-Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr) stellen.<
+Etwaige Fragen können Sie im [Azure Recovery Services-Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr) stellen.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

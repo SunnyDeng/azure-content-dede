@@ -274,11 +274,11 @@ Die in dieser Abfrage verwendeten Felder sind GPS-Koordinaten von Start- und Zie
 		and dropoff_latitude between 30 and 90
 		limit 10; 
 
-Die mathematischen Gleichungen zur Berechnung der Entfernung zwischen zwei GPS-Koordinaten finden Sie in [diesem Artikel](http://www.movable-type.co.uk/scripts/latlong.html) von Peter Lapisu. In seinem JavaScript-Code ist die toRad()-Funktion nur `lat_or_lon*pi/180` und rechnet Grad in Radianten um. Hier ist `lat_or_lon` der Breiten- oder Längengrad. Da Hive keine `atan2`-Funktion bereitstellt, jedoch die Funktion `atan`, wird die `atan2`-Funktion in der oben angegebenen Hive-Abfrage durch die Funktion `atan` anhand der in [Wikipedia](http://en.wikipedia.org/wiki/Atan2) angegebenen Definition implementiert.
+Die mathematischen Gleichungen zur Berechnung der Entfernung zwischen zwei GPS-Koordinaten von Peter Lapisu finden Sie unter [Movable Type Scripts](http://www.movable-type.co.uk/scripts/latlong.html) (in englischer Sprache). In seinem JavaScript-Code ist die toRad()-Funktion nur `lat_or_lon*pi/180` und rechnet Grad in Radianten um. Hier ist `lat_or_lon` der Breiten- oder Längengrad. Da Hive keine `atan2`-Funktion bereitstellt, jedoch die Funktion `atan`, wird die `atan2`-Funktion in der oben angegebenen Hive-Abfrage durch die Funktion `atan` anhand der in [Wikipedia](http://en.wikipedia.org/wiki/Atan2) angegebenen Definition implementiert.
 
 ![Arbeitsbereich erstellen][1]
 
-Eine vollständige Liste der eingebetteten Hive-UDFs finden Sie [hier](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF#LanguageManualUDF-MathematicalFunctions).
+Eine vollständige Liste der eingebetteten Hive-UDFs finden im [UDF-Sprachhandbuch](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF#LanguageManualUDF-MathematicalFunctions) (in englischer Sprache).
 
 ## <a name="tuning"></a>Weiterführende Themen: Optimieren von Hive-Parametern zur Verbesserung der Abfrage-Geschwindigkeit
 
@@ -325,4 +325,4 @@ Die Standardeinstellungen für die Parameter von Hive-Clustern eignen sich mögl
 
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1217_2015-->

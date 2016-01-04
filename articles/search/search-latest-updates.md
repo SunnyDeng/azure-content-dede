@@ -22,7 +22,7 @@ Azure Search ist ein in Microsoft Azure gehosteter Cloudsuchdienst. Azure Search
 
 ##Versionierung und Freigabe der Funktionen
 
-Die Funktionen werden gemeinsam oder separat über die [REST-API](https://msdn.microsoft.com/library/azure/dn798935.aspx), das [.NET-SDK](http://go.microsoft.com/fwlink/?LinkId=528216) oder das Dienst-Dashboard im [Azure-Portal](https://portal.azure.com) veröffentlicht.
+Die Funktionen werden gemeinsam oder separat über die [REST-API](https://msdn.microsoft.com/library/azure/dn798935.aspx), das [.NET-SDK](http://go.microsoft.com/fwlink/?LinkId=528216) oder das Dienst-Dashboard im [klassischen Azure-Portal](https://portal.azure.com) veröffentlicht.
 
 Sowohl die .NET-Bibliothek als auch die REST-APIs liegen in mehreren Versionen vor. Die älteren APIs funktionieren weiterhin, auch nach Einführung neuerer Features. Nähere Informationen zu unseren Versionierungsrichtlinien erhalten Sie im Artikel [Search service versioning](https://msdn.microsoft.com/library/azure/dn864560.aspx) (+++Versionsverwaltung des Suchdienstes).
 
@@ -87,7 +87,7 @@ Besuchen Sie auch den Artikel [Azure Search is now Generally Available](http://g
 
 - [Lucene-Sprachanalyseprogramme](search-api-2014-10-20-preview.md) wurden hinzugefügt, um eine mehrsprachige Unterstützung der mit Lucene verteilten benutzerdefinierten Sprachanalyseprogramme bereitzustellen. 
 
-- Im [Azure Management Portal](https://portal.azure.com) wurde eine Toolunterstützung zum Erstellen von Indizes, einschließlich der Erstellung von Wertungsprofilen, eingeführt.
+- Im [klassischen Azure-Portal](https://portal.azure.com) wurde eine Toolunterstützung zum Erstellen von Indizes, einschließlich der Erstellung von Wertungsprofilen, eingeführt.
 
 ##API-Version 2014-07-31-Preview
 **Veröffentlicht am 21.08.2014**
@@ -100,12 +100,12 @@ Diese Version war die öffentliche Preview-Version für Azure Search. Sie enthie
 
 - Geospatial-Unterstützung wurde als fester Bestandteil von Azure Search seit seiner Einführung durch den Datentyp `Edm.GeographyPoint` bereitgestellt.
 
-- Bereitstellung in der Preview-Version von [Azure Management Portal](https://portal.azure.com). Azure Search war einer der wenigen Dienste, die nur im neuen Portal verfügbar waren.
+- Bereitstellung in der Preview-Version des [klassischen Azure-Portals](https://portal.azure.com). Azure Search war einer der wenigen Dienste, die nur im neuen Portal verfügbar waren.
 
 ##Management-API Version 2015-08-19
 **Veröffentlicht: 11. September 2015**
 
-Die [Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn832684.aspx) enthält die folgenden Updates.
+[Management-REST-API](https://msdn.microsoft.com/library/azure/dn832684.aspx) enthält die folgenden Updates.
 
 - „CheckNameAvailability“ überprüft, ob ein bestimmter Dienst bereits verwendet wird.
 - Replikatsbereich war zuvor 1 bis 6 und ist jetzt 1 bis 12.
@@ -125,4 +125,4 @@ Zur Unterstützung der programmgesteuerten Dienstverwaltung wurde die Preview-Ve
 
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -35,7 +35,7 @@ Azure App Service wird in fünf Stufen angeboten: Kostenlos, Freigegeben, Basic,
 
 ### Konfiguration
 
-Verwenden Sie das [Azure-Vorschauportal,](https://portal.azure.com/) um verschiedene Konfigurationsoptionen einzustellen. Weitere Informationen finden Sie unter [Konfigurieren von Web-Apps in Azure App Service](web-sites-configure.md). Hier sehen Sie eine kurze Checkliste:
+Verwenden Sie das [Azure-Portal](https://portal.azure.com/), um verschiedene Konfigurationsoptionen festzulegen. Weitere Informationen finden Sie unter [Konfigurieren von Web-Apps in Azure App Service](web-sites-configure.md). Hier sehen Sie eine kurze Checkliste:
 
 - Wählen Sie **Laufzeitversionen** für .NET, PHP, Java oder Python aus, falls erforderlich.
 - Aktivieren Sie **WebSockets**, wenn Ihre Web-App das WebSocket-Protokoll verwendet. (Dies beinhaltet Anwendungen, die [ASP.NET SignalR](http://www.asp.net/signalr) oder [socket.io](web-sites-nodejs-chat-app-socketio.md) verwenden.)
@@ -59,14 +59,14 @@ Bei der Ausführung Ihrer Web-App müssen Sie sicherstellen, dass sie verfügbar
 
 ### Überwachung
 
-- Über das Azure-Vorschauportal können Sie [Leistungsmetriken hinzufügen](web-sites-monitor.md), wie z. B. CPU-Auslastung und Anzahl der Clientanforderungen.
+- Über das Azure-Portal können Sie [Leistungsmetriken hinzufügen](web-sites-monitor.md), wie z. B. CPU-Auslastung und Anzahl der Clientanforderungen.
 - Für einen tieferen Einblick verwenden Sie New Relic zur Leistungsüberwachung und -verwaltung. Weitere Informationen finden Sie unter [.NET Web-App in Azure App Service mit Verwaltung der Anwendungsleistung mit New Relic](store-new-relic-web-sites-dotnet-application-performance-management.md).
 - [Skalieren Sie Ihre Web-App](web-sites-scale.md) entsprechend dem Verkehr. Abhängig von Ihrer Ebene können Sie die Anzahl von VMs und/oder die Größe der VM-Instanzen skalieren. Auf den Stufen Standard oder Premium können Sie auch automatische Skalierung einrichten, sodass Ihre Website automatisch skaliert wird, entweder nach einem festen Zeitplan oder entsprechend der Last.  
  
 ### Backups
 
 - Legen Sie [automatische Sicherungen](web-sites-backup.md) Ihrer Web-App fest. Erfahren Sie in [diesem Video](http://azure.microsoft.com/documentation/videos/azure-websites-automatic-and-easy-backup/) mehr über Backups.
-- Erfahren Sie mehr über die Optionen für die [Datenbankwiederherstellung](https://azure.microsoft.com/de-DE/documentation/articles/sql-database-business-continuity/) in der Azure SQL-Datenbank.
+- Erfahren Sie mehr über die Optionen für die [Datenbankwiederherstellung](../sql-database-business-continuity.md) in der Azure SQL-Datenbank.
 
 ### Problembehandlung
 
@@ -85,7 +85,7 @@ Wenn Sie automatische Sicherungen nicht aktiviert haben, können Sie eine [manue
 
 Ziehen Sie eine [gestaffelte Bereitstellung](web-sites-staged-publishing.md) in Betracht. Mit dieser Option können Sie Updates in Form einer gestaffelten Bereitstellung veröffentlichen, die parallel zu Ihrer Produktionsbereitstellung ausgeführt wird.
 
-Wenn Sie Visual Studio One verwenden, können Sie die fortlaufende Bereitstellung aus der Quellcodeverwaltung einstellen:
+Wenn Sie Visual Studio Team Services verwenden, können Sie die fortlaufende Bereitstellung aus der Quellcodeverwaltung festlegen:
 
 - [Verwendung von Team Foundation Version Control (TFVC)](../cloud-services-continuous-delivery-use-vso.md) 
 - [Verwendung von Git](../cloud-services-continuous-delivery-use-vso-git.md)
@@ -103,4 +103,4 @@ Wenn Sie Visual Studio One verwenden, können Sie die fortlaufende Bereitstellun
 
   
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

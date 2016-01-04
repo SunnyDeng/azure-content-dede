@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Wo finde ich Informationen zu den Vorteilen und Preisen der Azure-Dienste | Microsoft Azure"
-	description="Beschreibt die Informationen zu den Vorteilen und Preisen von Azure-Diensten."
+	pageTitle="Wo finde ich Informationen zu den Vorteilen und Preisen von Azure-Diensten? | Microsoft Azure"
+	description="Informationen zu den Vorteilen und Preisen von Azure-Diensten."
 	services="billing"
 	documentationCenter=""
 	authors="genlin"
@@ -20,6 +20,6 @@
 
 #Wo finde ich Informationen zu den Vorteilen und Preisen der Azure-Dienste?
 
-Mit Microsoft Azure können Sie Ihre Infrastruktur und Dienste schnell entsprechend Ihren Geschäftsanforderungen bereitstellen. Sie können Windows- und Linux-basierte Anwendungen in 19 Azure-Datencenterregionen bereitstellen und profitieren von SLAs auf Unternehmensniveau. Informationen zu den Vorteilen der Azure-Dienste finden Sie unter [Microsoft Azure-Angebotsdetails](https://azure.microsoft.com/de-DE/support/legal/offer-details/). Preisinformationen finden Sie in der [Azure-Preisübersicht](https://azure.microsoft.com/de-DE/pricing/).
+Mit Microsoft Azure können Sie Ihre Infrastruktur und Dienste schnell entsprechend Ihren Geschäftsanforderungen bereitstellen. Sie können Windows- und Linux-basierte Anwendungen in 19 Azure-Datencenterregionen bereitstellen und profitieren von SLAs auf Unternehmensniveau. Informationen zu den Vorteilen von Azure-Diensten finden Sie unter [Microsoft Azure-Angebotsdetails](https://azure.microsoft.com/support/legal/offer-details/). Preisinformationen finden Sie in der [Azure-Preisübersicht](https://azure.microsoft.com/pricing/).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -33,7 +33,7 @@ Die Ebene **Premium** bietet Ressourcenisolierung auf der CPU- und Arbeitsspeich
 
 Beachten Sie, dass die Standardbasisgebühr nur einmal pro Monat pro Azure-Abonnement berechnet wird. Dies bedeutet, dass Sie nach dem Erstellen eines einzelnen Service Bus-Namespaces der Ebene "Standard" oder "Premium" beliebig viele weitere Namespaces der Ebene "Standard" oder "Premium" unter dem gleichen Azure-Abonnement erstellen können, ohne dass zusätzliche Basisgebühren entstehen.
 
-Alle vorhandenen Service Bus-Namespaces, die vor dem 1. November 2014 erstellt wurden, werden automatisch der Ebene "Standard" zugeordnet. Dadurch wird sichergestellt, dass Sie auch weiterhin Zugriff auf alle Funktionen haben, die derzeit mit Service Bus verfügbar sind. Anschließend können Sie über das Azure-Portal bei Bedarf eine Herabstufung auf die Ebene "Basic" durchführen.
+Alle vorhandenen Service Bus-Namespaces, die vor dem 1. November 2014 erstellt wurden, werden automatisch der Ebene "Standard" zugeordnet. Dadurch wird sichergestellt, dass Sie auch weiterhin Zugriff auf alle Funktionen haben, die derzeit mit Service Bus verfügbar sind. Anschließend können Sie über das [klassische Azure-Portal][] bei Bedarf eine Herabstufung auf die Ebene „Basic“ durchführen.
 
 In der folgenden Tabelle sind die Funktionsunterschiede zwischen den Ebenen "Basic" und "Standard"/"Premium" zusammengefasst.
 
@@ -147,4 +147,6 @@ Ja. Es gibt keine Verbindungsgebühren für das Senden von Ereignissen über HTT
 
 [Service Bus-Preisdetails FAQ](service-bus-pricing-faq.md)
 
-<!---HONumber=Oct15_HO3-->
+[klassische Azure-Portal]: http://manage.windowsazure.com
+
+<!---HONumber=AcomDC_1203_2015-->

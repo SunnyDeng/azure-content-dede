@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Erstellen von Logik-App-Definitionen" 
+	pageTitle="Erstellen von Logik-App-Definitionen | Microsoft Azure" 
 	description="Erfahren Sie, wie die JSON-Definition für Logik-Apps geschrieben wird." 
 	authors="stepsic-microsoft-com" 
 	manager="dwrede" 
@@ -13,15 +13,15 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/08/2015"
+	ms.date="12/07/2015"
 	ms.author="stepsic"/>
 	
-#Erstellen von Logik-App-Definitionen
+# Erstellen von Logik-App-Definitionen
 In diesem Thema wird die Verwendung von Definitionen für [App Services-Logik-Apps](app-service-logic-what-are-logic-apps.md) erläutert. Diese sind in einer einfachen, deklarativen JSON-Sprache verfasst. Machen Sie sich zunächst [mit dem Erstellen neuer Logik-Apps](../app-service-create-a-logic-app.md) vertraut, falls Sie dies noch nicht getan haben. Sie können auch [das umfassende MSDN-Referenzmaterial zur Definitionssprache](https://msdn.microsoft.com/library/azure/dn948512.aspx) lesen.
 
 ## Wiederholt ausgeführte Schritte in einer Liste
 
-Häufig wird mit einem Schritt eine Liste mit Elementen abgerufen. Darüber hinaus gibt es noch zwei oder mehr Aktionen, die Sie für die Liste ausführen sollten.
+Häufig wird mit einem Schritt eine Liste mit Elementen abgerufen. Darüber hinaus gibt es noch zwei oder mehr Aktionen, die Sie für die Liste ausführen sollten:
 
 ![Wiederholen über Listen](./media/app-service-logic-author-definitions/repeatoverlists.png)
 
@@ -79,7 +79,7 @@ In der Aktion können Sie wahlweise die [`repeatItem()`](https://msdn.microsoft.
 
 ## Zuordnen von Elementen in einer Liste zu einer anderen Konfiguration
 
-Nehmen wir als Nächstes an, dass abhängig vom Wert einer Eigenschaft völlig unterschiedliche Inhalte abgerufen werden sollen. Wir können eine Zuordnung von Werten zu Zielen als Parameter erstellen.
+Nehmen wir als Nächstes an, dass abhängig vom Wert einer Eigenschaft völlig unterschiedliche Inhalte abgerufen werden sollen. Wir können eine Zuordnung von Werten zu Zielen als Parameter erstellen:
 
 ```
 {
@@ -234,14 +234,14 @@ In der untergeordneten Logik-App verwenden Sie dann die [`triggerBody()`](https:
 }
 ```
 
-Weitere Informationen zur [Aktion des Typs "Logik-App" finden Sie im MSDN](https://msdn.microsoft.com/de-DE/library/azure/dn948511.aspx).
+Weitere Informationen zur [Aktion des Typs "Logik-App" finden Sie im MSDN](https://msdn.microsoft.com/library/azure/dn948511.aspx).
 
 >[AZURE.NOTE]Der Logik-Apps-Designer unterstützt keine Aktionen des Typs "Logik-App", daher müssen Sie die Definition manuell bearbeiten.
 
 
 ## Ein Schritt zur Fehlerbehandlung, falls Fehler auftreten
 
-Üblicherweise möchten Sie einen *Korrekturschritt* schreiben können – Logik, die **ausschließlich dann ausgeführt wird**, wenn einer oder mehrere Ihrer Aufrufe fehlschlagen. In diesem Beispiel rufen wir Daten von unterschiedlichen Stellen ab, aber wenn der Aufruf fehlschlägt, soll irgendwo eine Nachricht hinterlassen werden, um den Fehler später ermitteln zu können.
+Üblicherweise möchten Sie einen *Korrekturschritt* schreiben können – Logik, die **ausschließlich dann ausgeführt wird**, wenn einer oder mehrere Ihrer Aufrufe fehlschlagen. In diesem Beispiel rufen wir Daten von unterschiedlichen Stellen ab, aber wenn der Aufruf fehlschlägt, soll irgendwo eine Nachricht hinterlassen werden, um den Fehler später ermitteln zu können:
 
 ```
 {
@@ -287,7 +287,7 @@ Weitere Informationen zur [Aktion des Typs "Logik-App" finden Sie im MSDN](https
 }
 ```
 
-Ich verwende zwei Bedingungen, da im ersten Schritt eine Iteration für eine Liste durchgeführt wird. Wenn Sie nur eine Aktion haben, benötigen Sie nur eine Bedingung (die erste). Beachten Sie außerdem, dass Sie die *Eingaben* für die fehlgeschlagene Aktion in Ihrem Korrekturschritt verwenden können – hier übergebe ich die fehlerhafte URL an den zweiten Schritt.
+Ich verwende zwei Bedingungen, da im ersten Schritt eine Iteration für eine Liste durchgeführt wird. Wenn Sie nur eine Aktion haben, benötigen Sie nur eine Bedingung (die erste). Beachten Sie außerdem, dass Sie die *Eingaben* für die fehlgeschlagene Aktion in Ihrem Korrekturschritt verwenden können – hier übergebe ich die fehlerhafte URL an den zweiten Schritt:
 
 ![Korrektur](./media/app-service-logic-author-definitions/remediation.png)
 
@@ -723,4 +723,4 @@ Sie verfügen möglicherweise über eine API, die Sie aufrufen, und Sie möchten
 
 In der [REST-API-Dokumentation](https://msdn.microsoft.com/library/azure/dn948513.aspx) finden Sie Informationen dazu, welche Möglichkeiten Sie zum Erstellen und Verwalten von Logik-Apps haben.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

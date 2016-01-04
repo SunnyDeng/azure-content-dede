@@ -1,7 +1,7 @@
 <properties
 	pageTitle="Twitter-Stimmungsanalyse in Echtzeit mit Stream Analytics | Microsoft Azure"
 	description="Erfahren Sie, wie Sie Stream Analytics für Twitter-Stimmungsanalysen in Echtzeit verwenden. Schrittweise Anleitung von der Ereignisgenerierung bis hin zu Daten im Live-Dashboard."
-	keywords="Echtzeit-Twitter,Stimmungsanalyse,Analyse von sozialen Medien,Analyse-Tools für soziale Medien"
+	keywords="Twitter-Trendanalyse in Echtzeit, Stimmungsanalyse, Analyse sozialer Medien, Beispiel für Trendanalysen"
 	services="stream-analytics"
 	documentationCenter=""
 	authors="jeffstokes72"
@@ -14,19 +14,19 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="big-data"
-	ms.date="11/06/2015"
+	ms.date="12/04/2015"
 	ms.author="jeffstok"/>
 
 
 # Soziale Medienanalyse: Twitter-Stimmungsanalyse in Echtzeit in Azure Stream Analytics
 
-In diesem Lernprogramm erfahren Sie, wie Sie eine Lösung für Stimmungsanalysen erstellen, indem Sie Twitter-Ereignisse in Echtzeit in Event Hubs einfügen, Stream Analytics-Abfragen zur Analyse der Daten schreiben und die Ergebnisse anschließend speichern oder ein Dashboard verwenden, um Echtzeitinformationen darzustellen.
+Erfahren Sie, wie Sie eine Lösung für Stimmungsanalysen zur Analyse sozialer Medien durch die Einbindung von Twitter-Echtzeitereignissen in Event Hubs erstellen können. Sie schreiben eine Stream Analytics-Abfrage, um die Daten zu analysieren, und speichern dann die Ergebnisse zur späteren Durchsicht oder verwenden ein Dashboard, um Einblicke in Echtzeit mit [Power BI](https://powerbi.com/) zu ermöglichen.
 
-Analysetools für soziale Medien können Unternehmen helfen, Thementrends zu verstehen, d. h. Themen und Einstellungen mit einer hohen Anzahl von Beiträgen in sozialen Medien. Für die Stimmungsanalyse – auch als Opinion Mining bezeichnet – werden Analysetools für soziale Medien verwendet, um Einstellungen zu einem Produkt, Meinungen usw. zu bestimmen.
+Analysetools für soziale Medien können Unternehmen helfen, Thementrends zu verstehen, d. h. Themen und Einstellungen mit einer hohen Anzahl von Beiträgen in sozialen Medien. Für die Stimmungsanalyse – auch als Opinion Mining bezeichnet – werden Analysetools für soziale Medien verwendet, um Einstellungen zu einem Produkt, Meinungen usw. zu bestimmen. Die Twitter-Trendanalyse in Echtzeit ist ein gutes Beispiel, da das Hashtag-Abonnementmodell es Ihnen ermöglicht, bestimmte Schlüsselwörter zu berücksichtigen und eine Stimmungsanalyse für den Feed zu entwickeln.
 
-## Szenario
+## Szenario – Stimmungsanalyse in Echtzeit
 
-Eine Nachrichtenwebsite ist daran interessiert, der Konkurrenz durch Seiteninhalte mit direkter Relevanz für die Leser voraus zu sein. Sie verwendet soziale Medienanalyse für Themen mit Relevanz für ihre Leser und führt dazu Stimmungsanalysen von Twitter-Daten in Echtzeit durch. Insbesondere werden Echtzeitanalysen des Tweet-Umfangs und der Stimmung im Hinblick auf wichtige Themen benötigt, um zu erkennen, welche Themen sich auf Twitter in Echtzeit zu Trendthemen entwickeln.
+Eine Nachrichtenwebsite ist daran interessiert, der Konkurrenz durch Seiteninhalte mit direkter Relevanz für die Leser voraus zu sein. Sie verwendet soziale Medienanalyse für Themen mit Relevanz für ihre Leser und führt dazu Stimmungsanalysen von Twitter-Daten in Echtzeit durch. Insbesondere werden Echtzeitanalysen des Tweet-Umfangs und der Stimmung im Hinblick auf wichtige Themen benötigt, um zu erkennen, welche Themen sich auf Twitter in Echtzeit zu Trendthemen entwickeln. Im Wesentlichen benötigen sie also ein Analysemodul für Stimmungsanalysen basierend auf diesem Feed in sozialen Medien.
 
 ## Voraussetzungen
 1.	Ein Twitter-Konto ist für dieses Lernprogramm erforderlich.  
@@ -34,7 +34,7 @@ Eine Nachrichtenwebsite ist daran interessiert, der Konkurrenz durch Seiteninhal
 
 ## Erstellen einer Event Hub-Eingabe und einer Verbrauchergruppe
 
-Die Beispielanwendung generiert Ereignisse und überträgt sie mithilfe von Push an eine Event Hubs-Instanz (kurz ein Event Hub). Service Bus Event Hubs sind die bevorzugte Methode der Ereigniserfassung für Stream Analytics. Weitere Informationen finden Sie unter „Event Hubs“ in der [Service Bus-Dokumentation](/documentation/services/service-bus/).
+Die Beispielanwendung generiert Ereignisse und überträgt sie mithilfe von Push an eine Event Hub-Instanz (kurz ein Event Hub). Service Bus Event Hubs sind die bevorzugte Methode der Ereigniserfassung für Stream Analytics. Weitere Informationen finden Sie unter „Event Hubs“ in der [Service Bus-Dokumentation](/documentation/services/service-bus/).
 
 Gehen Sie folgendermaßen vor, um einen Event Hub zu erstellen.
 
@@ -236,4 +236,4 @@ Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://so
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

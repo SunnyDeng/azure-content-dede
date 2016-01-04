@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/24/2015" 
+	ms.date="12/03/2015" 
 	ms.author="mandia"/>
 
 
@@ -31,17 +31,17 @@ In diesem Thema werden diese Schritte aufgeführt.
 
 ## <a name="CreateHybridConnection"></a>Erstellen einer Hybridverbindung
 
-Eine Hybridverbindung kann im Azure-Verwaltungsportal anhand von Web-Apps **oder** BizTalk Services erstellt werden.
+Eine Hybridverbindung kann im Azure-Portal anhand von Web-Apps **oder** BizTalk Services erstellt werden.
 
 **Informationen zum Erstellen von Hybridverbindungen mit Web-Apps** finden Sie unter [Verbinden von Azure-Web-Apps mit einer lokalen Ressource](../web-sites-hybrid-connection-get-started.md).
 
 **So erstellen Sie Hybridverbindungen in BizTalk Services**:
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=213885) an.
+1. Melden Sie sich beim [klassischen Azure-Portal](http://go.microsoft.com/fwlink/p/?LinkID=213885) an.
 2. Wählen Sie im linken Navigationsbereich die Option **BizTalk Services** aus, und wählen Sie dann Ihren BizTalk Service aus. 
 
 	Wenn Sie keinen vorhandenen BizTalk Service haben, können Sie [einen BizTalk Service erstellen](biztalk-provision-services.md).
-3. Wählen Sie die Registerkarte „Hybridverbindungen“ aus: ![Registerkarte "Hybridverbindungen"][HybridConnectionTab]
+3. Wählen Sie die Registerkarte **Hybridverbindungen** aus: ![Registerkarte "Hybridverbindungen"][HybridConnectionTab]
 
 4. Wählen Sie **Hybridverbindung erstellen** aus, oder klicken Sie auf die Schaltfläche **HINZUFÜGEN** in der Taskleiste. Geben Sie Folgendes ein:
 
@@ -70,7 +70,7 @@ Um die mobilen Azure-Apps mit einer vorhandenen Hybridverbindung zu verknüpfen,
 
 Nachdem eine Hybridverbindung erstellt wurde, installieren Sie den Hybrid Connection Manager auf der lokalen Ressource. Er kann aus den Azure-Web-Apps oder von BizTalk Service heruntergeladen werden. Schritte für BizTalk Services:
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=213885) an.
+1. Melden Sie sich beim [klassischen Azure-Portal](http://go.microsoft.com/fwlink/p/?LinkID=213885) an.
 2. Wählen Sie im linken Navigationsbereich die Option **BizTalk Services** aus, und wählen Sie dann Ihren BizTalk Service aus. 
 3. Wählen Sie die Registerkarte **Hybridverbindungen** aus: ![Registerkarte "Hybridverbindungen"][HybridConnectionTab]
 4. Wählen Sie auf der Taskleiste **Lokale Einrichtung** aus: ![Lokale Einrichtung][HCOnPremSetup]
@@ -112,14 +112,14 @@ Zum Verwalten der Hybridverbindungen haben Sie folgende Möglichkeiten:
 
 #### Kopieren Sie die Hybridverbindungszeichenfolgen oder generieren Sie diese erneut.
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=213885) an.
+1. Melden Sie sich beim [klassischen Azure-Portal](http://go.microsoft.com/fwlink/p/?LinkID=213885) an.
 2. Wählen Sie im linken Navigationsbereich die Option **BizTalk Services** aus, und wählen Sie dann Ihren BizTalk Service aus. 
 3. Wählen Sie die Registerkarte **Hybridverbindungen** aus: ![Registerkarte "Hybridverbindungen"][HybridConnectionTab]
 4. Wählen Sie die Hybridverbindung aus. Wählen Sie auf der Taskleiste **Verbindung verwalten** aus: ![Verwalten von Optionen][HCManageConnection]
 
 	**Verbindungen verwalten** führt die Anwendung und die Vor-Ort-Verbindungszeichenfolgen auf. Sie können die Verbindungszeichenfolgen kopieren oder den Zugriffsschlüssel in der Verbindungszeichenfolge regenerieren.
 
-	**Wenn Sie "Regenerieren" auswählen**, verändert sich der freigegebene Zugriffsschlüssel innerhalb der Verbindungszeichenfolge. Gehen Sie folgendermaßen vor: – Wählen Sie im Azure-Verwaltungsportal die Option **Synchronisierungsschlüssel** in der Azure-Anwendung aus. – Führen Sie das **lokale Setup** erneut aus. Wenn Sie das lokale Setup erneut ausführen, wird die lokale Ressource automatisch für die Verwendung der aktualisierten primären Verbindungszeichenfolge konfiguriert.
+	**Wenn Sie "Regenerieren" auswählen**, verändert sich der freigegebene Zugriffsschlüssel innerhalb der Verbindungszeichenfolge. Gehen Sie folgendermaßen vor: - Wählen Sie im klassischen Azure-Portal in der Azure-Anwendung die Option **Synchronisierungsschlüssel** aus. - Führen Sie das **lokale Setup** erneut aus. Wenn Sie das lokale Setup erneut ausführen, wird die lokale Ressource automatisch für die Verwendung der aktualisierten primären Verbindungszeichenfolge konfiguriert.
 
 
 #### Verwenden Sie Gruppenrichtlinien, um die von einer Hybridverbindung verwendeten lokalen Ressourcen zu steuern.
@@ -143,11 +143,11 @@ Nach dem Kopieren können Sie den Gruppenrichtlinien-Editor verwenden, um die Ri
 
 ## Weitere Informationen
 
-[REST-API zum Verwalten von BizTalk Services auf Microsoft Azure](http://msdn.microsoft.com/library/azure/dn232347.aspx) [BizTalk Services: Editionsübersicht](biztalk-editions-feature-chart.md) [Erstellen eines BizTalk Service mit dem Azure-Verwaltungsportal](biztalk-provision-services.md) [BizTalk Services: Registerkarten "Dashboard", "Überwachen" und "Skalieren"](biztalk-dashboard-monitor-scale-tabs.md)
+[REST-API für die Verwaltung von BizTalk Services in Azure](http://msdn.microsoft.com/library/azure/dn232347.aspx) [BizTalk Services: Editionsübersicht](biztalk-editions-feature-chart.md) [Erstellen eines BizTalk Service mit dem klassischen Azure-Portal](biztalk-provision-services.md) [BizTalk Services: Registerkarten „Dashboard“, „Überwachen“ und „Skalieren“](biztalk-dashboard-monitor-scale-tabs.md)
 
 
 [HybridConnectionTab]: ./media/integration-hybrid-connection-create-manage/WABS_HybridConnectionTab.png
 [HCOnPremSetup]: ./media/integration-hybrid-connection-create-manage/WABS_HybridConnectionOnPremSetup.png
 [HCManageConnection]: ./media/integration-hybrid-connection-create-manage/WABS_HybridConnectionManageConn.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

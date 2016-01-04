@@ -58,7 +58,7 @@ In diesem Abschnitt führen Sie die folgenden Aufgaben aus:
 
 ###Erstellen eines Active Directory-Diensts
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal](https://manage.windowsazure.com) an.
+1. Melden Sie sich beim [klassischen Azure-Portal](https://manage.windowsazure.com) an.
 
 2. Führen Sie im linken Navigationsbereich einen Bildlauf nach unten aus, und klicken Sie auf **Active Directory**.
 
@@ -204,4 +204,4 @@ Nach Abschluss dieses Lernprogramms empfiehlt es sich, mehr über die Dienstverw
 
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

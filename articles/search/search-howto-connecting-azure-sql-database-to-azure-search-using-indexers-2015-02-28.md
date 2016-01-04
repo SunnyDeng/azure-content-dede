@@ -28,7 +28,7 @@ In diesem Artikel wird die Verwendung von Indexern behandelt, aber wir werden au
 
 Um einen Azure SQL-Indexer einzurichten und zu konfigurieren, rufen Sie die [Azure Search-REST-API](http://go.microsoft.com/fwlink/p/?LinkID=528173) zum Erstellen und Verwalten mehrerer **Indexer** und **Datenquellen** auf.
 
-Sie können zum Erstellen und Planen eines Indexers auch die [Indexer-Klasse](https://msdn.microsoft.com/library/azure/microsoft.azure.search.models.indexer.aspx) im [.NET SDK](https://msdn.microsoft.com/library/azure/dn951165.aspx) oder den Datenimport-Assistenten im [Azure-Portal](https://portal.azure.com) verwenden.
+Sie können zum Erstellen und Planen eines Indexers auch die [Indexer-Klasse](https://msdn.microsoft.com/library/azure/microsoft.azure.search.models.indexer.aspx) im [.NET SDK](https://msdn.microsoft.com/library/azure/dn951165.aspx) oder den Datenimport-Assistenten im [klassischen Azure-Portal](https://portal.azure.com) verwenden.
 
 Eine **Datenquelle** gibt an, welche Daten indiziert werden müssen. Sie legt außerdem die Anmeldeinformationen für den Zugriff auf die Daten sowie die Richtlinien zur Aktivierung von Azure Search fest, um Änderungen an den Daten effizient identifizieren zu können (wie z. B. neue, geänderte oder gelöschte Zeilen). Die Datenquelle wird als unabhängige Ressource definiert, sodass sie von mehreren Indexern verwendet werden kann.
 
@@ -66,7 +66,7 @@ Erstellen Sie zunächst die Datenquelle:
 	}
 
 
-Sie können die Verbindungszeichenfolge mit der Option `ADO.NET connection string` aus dem [Azure-Portal](https://portal.azure.com) abrufen:
+Sie können die Verbindungszeichenfolge mit der Option `ADO.NET connection string` aus dem [klassischen Azure-Portal](https://portal.azure.com) abrufen:
 
 Dann erstellen Sie den Azure Search-Zielindex, sofern Sie bislang über keinen Index verfügen. Sie können dies von der Azure-[Portal-Benutzeroberfläche](https://portal.azure.com) aus tun oder indem Sie die [Create-Index-API](https://msdn.microsoft.com/library/azure/dn798941.aspx) verwenden. Stellen Sie sicher, dass das Schema des Zielindexes mit dem Schema der Quelltabelle kompatibel ist. Sie finden in der folgende Tabelle Informationen zum Zuordnen der SQL-Datentypen zu Azure Search-Datentypen.
 
@@ -279,4 +279,4 @@ A: Ja. Indexer werden auf einem der Knoten im Suchdienst ausgeführt, und die Re
 
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

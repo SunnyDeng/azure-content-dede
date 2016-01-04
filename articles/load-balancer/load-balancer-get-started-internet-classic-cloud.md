@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Erste Schritte zum Erstellen eines Lastenausgleichs für Internetzugriff in einem klassischen Bereitstellungsmodell für Clouddienste | Microsoft Azure"
-   description="Erfahren Sie, wie Sie für Clouddienste einen Lastenausgleich für den Internetzugriff in einem klassischen Bereitstellungsmodell erstellen."
+   pageTitle="Erste Schritte zum Erstellen eines Load Balancers mit Internetzugriff in einem klassischen Bereitstellungsmodell für Clouddienste | Microsoft Azure"
+   description="Erfahren Sie, wie Sie für Clouddienste einen Lastenausgleich mit Internetzugriff in einem klassischen Bereitstellungsmodell erstellen."
    services="load-balancer"
    documentationCenter="na"
    authors="joaoma"
@@ -14,20 +14,21 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/03/2015"
+   ms.date="11/30/2015"
    ms.author="joaoma" />
 
-# Erste Schritte zum Erstellen eines Lastenausgleichs für Internetzugriff für Clouddienste
+# Erste Schritte zum Erstellen eines Load Balancers mit Internetzugriff für Clouddienste
 
-[AZURE.INCLUDE [load-balancer-get-started-internet-classic-selectors-include.md](../../includes/load-balancer-get-started-internet-classic-selectors-include.md)]
+[AZURE.INCLUDE [Load-Balancer-Get-Started-Internet-Classic-Selectors-include.MD](../../includes/load-balancer-get-started-internet-classic-selectors-include.md)]
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-intro-include.md](../../includes/load-balancer-get-started-internet-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)]In diesem Artikel wird das klassische Bereitstellungsmodell erörtert. Informationen zum Bereitstellungsmodell des Azure-Ressourcen-Managers finden Sie unter [Erste Schritte zum Erstellen eines Lastenausgleichs für Internetzugriff mit dem Ressourcen-Manager](load-balancer-get-started-internet-arm-ps.md).
-
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)]Dieser Artikel gilt für das klassische Bereitstellungsmodell. Informationen zum Erstellen eines Load Balancers mit Internetzugriff unter Verwendung des Azure-Ressourcen-Managers finden Sie [hier](load-balancer-get-started-internet-arm-cli.md).
 
 Clouddienste werden automatisch mit einem Lastenausgleich konfiguriert und können über das Dienstmodell angepasst werden.
 
+## Erstellen eines Load Balancers mit der Dienstdefinitionsdatei
+ 
 Sie können das Azure SDK für .NET 2.5 verwenden, um Ihren Clouddienst zu aktualisieren. Endpunkteinstellungen für Clouddienste werden in der Dienstdefinitionsdatei ([.csdef](https://msdn.microsoft.com/library/azure/gg557553.aspx)) vorgenommen.
 
 Das folgende Beispiel zeigt, wie eine "servicedefinition.csdef"-Datei für eine Cloudbereitstellung konfiguriert wird:
@@ -57,7 +58,7 @@ Wenn Sie den von einer Cloudbereitstellung generierten Codeabschnitt für die CS
 
 
 
-### Überprüfen des Integritätsstatus des Lastenausgleichs für Clouddienste
+## Überprüfen des Integritätsstatus des Lastenausgleichs für Clouddienste
 
 
 Im Folgenden finden Sie ein Beispiel für das Erstellen eines Integritätstests:
@@ -82,4 +83,4 @@ Die Testdefinition steuert auch die Häufigkeit des Tests. In unserem Fall teste
 
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

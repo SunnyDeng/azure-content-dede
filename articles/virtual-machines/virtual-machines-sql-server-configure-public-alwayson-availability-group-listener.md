@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
-	ms.date="09/16/2015"
+	ms.date="11/13/2015"
 	ms.author="jroth" />
 
 # Konfigurieren eines externen Listeners für AlwaysOn-Verfügbarkeitsgruppen in Azure
@@ -29,15 +29,19 @@ In diesem Thema erfahren Sie, wie Sie einen Listener für eine AlwaysOn-Verfügb
 
 Ihre Verfügbarkeitsgruppe kann Replikate enthalten, die ausschließlich lokal, ausschließlich in Azure oder sowohl lokal als auch in Azure verfügbar sind (Hybridkonfigurationen). Azure-Replikate können sich innerhalb derselben Region oder in mehreren Regionen befinden, wobei mehrere virtuelle Netzwerke (VNets) verwendet werden. Bei den nachfolgenden Schritten wird davon ausgegangen, dass bereits eine [Verfügbarkeitsgruppe konfiguriert wurde](virtual-machines-sql-server-alwayson-availability-groups-gui.md), Sie jedoch noch keinen Listener konfiguriert haben.
 
-Beachten Sie die folgenden Einschränkungen für den Verfügbarkeitsgruppenlistener in Azure, wenn Sie die Bereitstellung mit der öffentlichen VIP-Adresse des Clouddiensts vornehmen:
+## Richtlinien und Einschränkungen für externe Listener
+
+Beachten Sie die folgenden Richtlinien für den Verfügbarkeitsgruppenlistener in Azure, wenn Sie die Bereitstellung mit der öffentlichen VIP-Adresse des Clouddiensts vornehmen:
 
 - Der Verfügbarkeitsgruppenlistener wird unter Windows Server 2008 R2, Windows Server 2012 und Windows Server 2012 R2 unterstützt.
 
 - Die Clientanwendung darf sich nicht in demselben Clouddienst befinden wie Ihre Verfügbarkeitsgruppen-VMs. Azure bietet keine Unterstützung für Direct Server Return, wenn sich Client und Server im selben Clouddienst befinden.
 
-- Da der Listener für die Verwendung der VIP-Adresse des Clouddiensts konfiguriert wird, wird pro Clouddienst maximal ein Verfügbarkeitsgruppenlistener unterstützt. Beachten Sie, dass diese Einschränkung weiterhin gilt, wenngleich Azure inzwischen die Erstellung mehrerer VIP-Adressen in einem Clouddienst unterstützt.
+- Standardmäßig zeigen die Schritte in diesem Artikel, wie Sie einen Listener konfigurieren, der die virtuelle IP-Adresse (VIP) des Clouddiensts verwendet. Allerdings ist es möglich, mehrere VIP-Adressen für den Clouddienst zu reservieren und zu erstellen. Daher können Sie anhand der Schritte in diesem Artikel mehrere Listener erstellen, die jeweils einer anderen VIP-Adresse zugeordnet sind. Informationen zum Erstellen von mehreren VIP-Adressen finden Sie unter [Mehrere VIPs pro Clouddienst](load-balancer-multivip.md).
 
 - Wenn Sie einen Listener für eine Hybridumgebung erstellen, muss das lokale Netzwerk zusätzlich zum Standort-zu-Standort-VPN mit dem virtuellen Azure-Netzwerk auch mit dem öffentlichen Internet verbunden sein. Im Azure-Subnetz ist der Verfügbarkeitsgruppenlistener nur über die öffentliche IP-Adresse des jeweiligen Clouddiensts erreichbar.
+
+- Nicht unterstützt wird die Erstellung eines externen Listeners in einem Clouddienst, in dem auch ein interner Listener vorhanden ist, der den internen Load Balancer (ILB) verwendet.
 
 ## Festlegen des Zugriffs auf den Listener
 
@@ -77,7 +81,7 @@ Der externe Lastenausgleich verwendet die öffentliche virtuelle IP-Adresse des 
 
 [AZURE.INCLUDE [Firewall](../../includes/virtual-machines-ag-listener-create-listener.md)]
 
-1. Für den externen Lastenausgleich müssen Sie die öffentliche virtuelle IP-Adresse des Clouddiensts abrufen, der Ihre Replikate enthält. Melden Sie sich beim Azure-Portal an. Navigieren Sie zu dem Clouddienst, der Ihren virtuellen Verfügbarkeitsgruppencomputer enthält. Öffnen Sie die Ansicht **Dashboard**. 
+1. Für den externen Lastenausgleich müssen Sie die öffentliche virtuelle IP-Adresse des Clouddiensts abrufen, der Ihre Replikate enthält. Melden Sie sich beim klassischen Azure-Portal an. Navigieren Sie zu dem Clouddienst, der Ihren virtuellen Verfügbarkeitsgruppencomputer enthält. Öffnen Sie die Ansicht **Dashboard**. 
 
 3. Beachten Sie die Adresse unter **Öffentliche virtuelle IP-Adresse (VIP)**. Wenn Ihre Lösung VNets umfasst, wiederholen Sie diesen Schritt für jeden Clouddienst mit einem virtuellen Computer, der ein Replikat hostet.
 
@@ -118,7 +122,7 @@ Für den Zugriff auf den Listener von außerhalb des virtuellen Netzwerks müsse
 
 	sqlcmd -S "mycloudservice.cloudapp.net,<EndpointPort>" -d "<DatabaseName>" -U "<LoginId>" -P "<Password>"  -Q "select @@servername, db_name()" -l 15
 
-Im Gegensatz zum vorherigen Beispiel muss die SQL-Authentifizierung verwendet werden, da der Aufrufer die Windows-Authentifizierung nicht über das Internet verwenden kann. Weitere Informationen finden Sie unter [AlwaysOn-Verfügbarkeitsgruppe auf einem virtuellen Azure-Computer: Clientkonnektivitätsszenarien](http://blogs.msdn.com/b/sqlcat/archive/2014/02/03/alwayson-availability-group-in-windows-azure-vm-client-connectivity-scenarios.aspx). Stellen Sie bei Verwendung der SQL-Authentifizierung sicher, dass Sie für beide Replikate dieselbe Anmeldung erstellen. Weitere Informationen zum Behandeln von Anmeldeproblemen bei Verfügbarkeitsgruppen finden Sie unter [Zuordnen von Anmeldungen oder Verwenden eines eigenständigen SQL-Datenbankbenutzers zum Verbinden mit anderen Replikaten und Zuordnen zu Verfügbarkeitsdatenbanken](http://blogs.msdn.com/b/alwaysonpro/archive/2014/02/19/how-to-map-logins-or-use-contained-sql-database-user-to-connect-to-other-replicas-and-map-to-availability-databases.aspx).
+Im Gegensatz zum vorherigen Beispiel muss die SQL-Authentifizierung verwendet werden, da der Aufrufer die Windows-Authentifizierung nicht über das Internet verwenden kann. Weitere Informationen finden Sie unter [AlwaysOn-Verfügbarkeitsgruppe auf einem virtuellen Azure-Computer: Clientkonnektivitätsszenarien](http://blogs.msdn.com/b/sqlcat/archive/2014/02/03/alwayson-availability-group-in-windows-azure-vm-client-connectivity-scenarios.aspx). Stellen Sie bei Verwendung der SQL-Authentifizierung sicher, dass Sie für beide Replikate dieselbe Anmeldung erstellen. Weitere Informationen zur Problembehandlung von Anmeldungen bei Verfügbarkeitsgruppen finden Sie unter [How to map logins or use contained SQL database user to connect to other replicas and map to availability databases](http://blogs.msdn.com/b/alwaysonpro/archive/2014/02/19/how-to-map-logins-or-use-contained-sql-database-user-to-connect-to-other-replicas-and-map-to-availability-databases.aspx) (in englischer Sprache).
 
 Wenn sich die AlwaysOn-Replikate in unterschiedlichen Subnetzen befinden, müssen Clients **MultisubnetFailover=True** in der Verbindungszeichenfolge angeben. Dies führt zu parallelen Verbindungsversuchen mit Replikaten in unterschiedlichen Subnetzen. Beachten Sie, dass zu diesem Szenario eine regionsübergreifende AlwaysOn-Verfügbarkeitsgruppenbereitstellung gehört.
 
@@ -126,4 +130,4 @@ Wenn sich die AlwaysOn-Replikate in unterschiedlichen Subnetzen befinden, müsse
 
 [AZURE.INCLUDE [Listener-Next-Steps](../../includes/virtual-machines-ag-listener-next-steps.md)]
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

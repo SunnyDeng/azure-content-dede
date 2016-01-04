@@ -375,14 +375,12 @@ Zum Löschen einer Warteschlange und aller darin enthaltenen Nachrichten rufen S
 
 Nachdem Sie sich nun mit den Grundlagen des Azure-Warteschlangenspeichers vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden:
 
-- Weitere Informationen finden Sie in der MSDN-Referenz [Azure-Speicher](http://msdn.microsoft.com/library/azure/gg433040.aspx).
 - Besuchen Sie den [Blog des Azure-Speicherteams](http://blogs.msdn.com/b/windowsazurestorage/).
 
 Weitere Informationen finden Sie außerdem im [PHP Developer Center](/develop/php/).
 
 [download]: http://go.microsoft.com/fwlink/?LinkID=252473
 [require_once]: http://www.php.net/manual/en/function.require-once.php
-[Azure Management Portal]: http://manage.windowsazure.com/
-[Storing and Accessing Data in Azure]: http://msdn.microsoft.com/library/azure/gg433040.aspx
+[Azure Portal]: portal.azure.com
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

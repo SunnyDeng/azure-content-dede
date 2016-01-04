@@ -50,9 +50,9 @@ In diesem Abschnitt erstellen Sie zwei Azure Active Directory-Anwendungen – ei
 
 Auf diese Weise wird die Logik-App bei Active Directory authentifiziert. Sie *müssen* dies nur einmal für das Verzeichnis ausführen. Sie können z. B. die gleiche Identität für alle Logik-Apps verwenden, Sie könnten bei Bedarf aber auch pro Logic-App eindeutige Identitäten erstellen. Sie können dies in der Benutzeroberfläche oder mithilfe von PowerShell durchführen.
 
-#### Erstellen der Anwendungsidentität mithilfe des Azure-Portals
+#### Erstellen der Anwendungsidentität mithilfe des klassischen Azure-Portals
 
-1. Navigieren Sie zu [Active Directory im Azure-Portal](https://manage.windowsazure.com/#Workspaces/ActiveDirectoryExtension/directory), und wählen Sie das Verzeichnis aus, das Sie für Ihre Web-App verwenden.
+1. Navigieren Sie [im klassischen Azure-Portal zu Active Directory](https://manage.windowsazure.com/#Workspaces/ActiveDirectoryExtension/directory), und wählen Sie das Verzeichnis aus, das Sie für Ihre Web-App verwenden.
 2. Klicken Sie auf die Registerkarte **Anwendungen**.
 3. Klicken Sie in der Befehlsleiste am unteren Rand der Seite auf **Hinzufügen**.
 4. Geben Sie Ihrer Identität einen Namen, klicken Sie dann auf den Pfeil "Weiter".
@@ -81,7 +81,7 @@ Wenn Ihre Web-App bereits bereitgestellt wurde, können Sie sie einfach im Porta
 
 An diesem Punkt wird eine Anwendung automatisch für Sie erstellt. Sie benötigen die Client-ID dieser Anwendung für Teil 3, daher müssen Sie folgende Schritte ausführen:
 
-1. Wechseln Sie zu [Active Directory im Azure-Portal](https://manage.windowsazure.com/#Workspaces/ActiveDirectoryExtension/directory), und wählen Sie Ihr Verzeichnis aus. 
+1. Wechseln Sie zu [Active Directory im klassischen Azure-Portal](https://manage.windowsazure.com/#Workspaces/ActiveDirectoryExtension/directory), und wählen Sie Ihr Verzeichnis aus. 
 2. Suchen Sie mit dem Suchfeld nach der App.
 3. Klicken Sie in der Liste darauf.
 4. Klicken Sie auf die Registerkarte **Konfigurieren**.
@@ -91,7 +91,7 @@ An diesem Punkt wird eine Anwendung automatisch für Sie erstellt. Sie benötige
 
 Zunächst müssen Sie eine Anwendung für Ihre Web-App erstellen. Dies sollte eine andere Anwendung sein als die, die für Ihre Logik-App verwendet wird. Folgen Sie den Schritten in Teil 1 oben, verwenden Sie aber nun für **HomePage** und **IdentifierUris** den tatsächlichen Wert für https://**URL** der Web-App.
 
->[AZURE.NOTE]Wenn Sie die Anwendung für Ihre Web-App erstellen, müssen Sie das [Azure-Portal](https://manage.windowsazure.com/#Workspaces/ActiveDirectoryExtension/directory) verwenden, da mit dem PowerShell-Cmdlet die erforderlichen Berechtigungen zum Anmelden von Benutzern bei einer Website nicht eingerichtet werden.
+>[AZURE.NOTE]Wenn Sie die Anwendung für Ihre Web-App erstellen, müssen Sie das [klassische Azure-Portal](https://manage.windowsazure.com/#Workspaces/ActiveDirectoryExtension/directory) verwenden, da mit dem PowerShell-Cmdlet die erforderlichen Berechtigungen zum Anmelden von Benutzern bei einer Website nicht eingerichtet werden.
 
 Sobald Sie über die Client-ID und die Mandanten-ID verfügen, nehmen Sie Folgendes als untergeordnete Ressource der Web-App in die Bereitstellungsvorlage auf:
 
@@ -170,4 +170,4 @@ Wenn Sie dies darüber hinaus vollständig in Ihrem eigenen Code implementieren 
 
 Sie müssen dennoch die obigen Schritte ausführen, um die Anwendungsidentität für Ihre Logik-App zu erstellen und diese zum Aufrufen der API zu verwenden.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

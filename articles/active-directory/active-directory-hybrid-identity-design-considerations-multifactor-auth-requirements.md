@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Überlegungen zum Entwurf der Azure Active Directory-Hybrid-Identität – Ermitteln der Anforderungen für die Multi-Factor Authentication"
+	pageTitle="Überlegungen zum Entwurf der Azure Active Directory-Hybrididentität – Ermitteln der Anforderungen für die Multi-Factor Authentication"
 	description="Mit der bedingten Zugriffssteuerung überprüft Azure Active Directory die besonderen Bedingungen, die Sie beim Authentifizieren des Benutzers und vor dem Gewähren des Zugriffs auf die Anwendung auswählen. Nachdem diese Bedingungen erfüllt sind, wird der Benutzer authentifiziert und erhält Zugriff auf die Anwendung."
 	documentationCenter=""
 	services="active-directory"
@@ -13,7 +13,7 @@
 	ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity" 
-	ms.date="11/11/2015"
+	ms.date="12/07/2015"
 	ms.author="billmath"/>
 
 # Ermitteln der Anforderungen an die Multi-Factor Authentication für Ihre Hybrid-Identitätslösung
@@ -51,10 +51,10 @@ Nach der Beantwortung der obigen Fragen wissen Sie, ob lokal bereits eine Multi-
 
 
 ## Nächste Schritte
-[Definieren einer Strategie zur Einführung der Hybrid-Identität](active-directory-hybrid-identity-design-considerations-identity-adoption-strategy.md)
+[Definieren einer Strategie zur Hybrididentitätsübernahme](active-directory-hybrid-identity-design-considerations-identity-adoption-strategy.md)
 
 
 ## Weitere Informationen
-[Überlegungen zum Entwurf – Übersicht](active-directory-hybrid-identity-design-considerations-directory-overview.md)
+[Überlegungen zum Entwurf – Übersicht](active-directory-hybrid-identity-design-considerations-overview.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

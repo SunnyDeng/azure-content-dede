@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/29/2015" 
+	ms.date="12/10/2015" 
 	ms.author="cephalin"/>
 
 
@@ -33,9 +33,9 @@ Im Folgenden finden Sie ein Beispiel einer in App Service-Web-Apps ausgeführten
 
 Sie können entweder mithilfe eines gängigen CMS aus dem Katalog neue Websites erstellen, oder Sie verschieben Ihre vorhandenen Webressourcen in App Service-Web-Apps – in verschiedenen Sprachen und mit verschiedenen Frameworks.
 
-Der Azure Marketplace bietet Vorlagen für gängige Website-CMS (Content Management System), wie z. B. Orchard, Umbraco, Drupal und [WordPress]. Sie können eine Web-App mit Ihrem bevorzugten CMS erstellen. Sie können aus verschiedenen Datenbank-Back-Ends auswählen, um Ihre Anforderungen zu erfüllen, darunter [Azure SQL-Datenbank] und [MySQL].
+Der Azure Marketplace bietet Vorlagen für gängige Website-CMS (Content Management System), z. B. Orchard, Umbraco, Drupal und [WordPress]. Sie können eine Web-App mit Ihrem bevorzugten CMS erstellen. Sie können aus verschiedenen Datenbank-Back-Ends auswählen, um Ihre Anforderungen zu erfüllen, darunter [Azure SQL-Datenbank] und [MySQL].
 
-Ihre vorhandenen Webressourcen können in App Service-Web-Apps ausgeführt werden, unabhängig davon, ob es sich um .NET, PHP, Java, Node.js oder Python handelt. Sie können die Ressourcen mithilfe Ihrer bevorzugten [FTP]-Tools oder über Ihr System zur Quellcodeverwaltung in Web-Apps verschieben. Web-Apps unterstützen eine direkte Veröffentlichung aus gängigen Quellcodeverwaltungssystemen, wie z. B. [Visual Studio], [Visual Studio Online] und [Git] (lokal), GitHub, BitBucket, Dropbox, Mercurial usw.
+Ihre vorhandenen Webressourcen können in App Service-Web-Apps ausgeführt werden, unabhängig davon, ob es sich um .NET, PHP, Java, Node.js oder Python handelt. Sie können die Ressourcen mithilfe Ihrer bevorzugten [FTP]-Tools oder über Ihr System zur Quellcodeverwaltung in Web-Apps verschieben. Web-Apps unterstützen eine direkte Veröffentlichung aus gängigen Quellcodeverwaltungen, wie z. B. [Visual Studio], [Visual Studio Team Services] und [Git] – lokal, GitHub, BitBucket, Dropbox, Mercurial usw.
 
 ## Zuverlässig veröffentlichen
 
@@ -49,7 +49,7 @@ Wenn Sie Änderungen an einer bereits veröffentlichten Website vornehmen möcht
 
 Verwenden Sie die kostenlose App Service-Web-App-Domäne, oder nehmen Sie zu eine Zuordnung zu Ihrem registrierten Domänennamen vor, und sorgen Sie anschließend für Sicherheit mit einem von einer Zertifizierungsstelle signierten SSL-Zertifikat.
 
-Die Domäne ***.azurewebsites.net** ist kostenlos, wenn Sie Ihre Website in Web-Apps ausführen. Alternativ können Sie Ihre Website einer [benutzerdefinierten Domäne] (z. B. „contoso.com“) zuordnen, die Sie von einer DNS-Registrierungsstelle wie z. B. GoDaddy bezogen haben.
+Die Domäne ***.azurewebsites.net** ist kostenlos, wenn Sie Ihre Website in Web-Apps ausführen. Alternativ können Sie Ihre Website einer [benutzerdefinierten Domäne] (z. B. "contoso.com") zuordnen, die Sie von einer DNS-Registrierungsstelle (z. B. GoDaddy) bezogen haben.
 
 Wenn Sie Benutzerinformationen erfassen, E-Commerce betreiben oder andere sensible Daten verwalten, können Sie den Ruf Ihres Unternehmens und Ihre Kunden mit [HTTPS] schützen. Der Domänenname ***.azurewebsites.net** umfasst bereits ein SSL-Zertifikat, und wenn Sie eine benutzerdefinierte Domäne nutzen, können Sie Ihr SSL-Zertifikat in Web-Apps weiterhin verwenden. Für jedes SSL-Zertifikat fällt eine monatliche Gebühr an (abgerechnet nach Stunden). Weitere Informationen finden Sie unter [App Service-Preisdetails].
 
@@ -65,7 +65,7 @@ Stellen Sie durch das [Integrieren Ihrer Web-App in Azure CDN] statische Inhalte
 
 Optimieren Sie Ihre Organisationswebsite über eine automatische Skalierung mit "Autoskalierung", eine Zwischenspeicherung mit Azure Redis Cache, die Ausführung von Hintergrundaufgaben mithilfe von WebJobs, und sorgen Sie mit Azure Traffic Manager für eine gleichbleibend hohe Verfügbarkeit.
 
-Die [flexible Skalierbarkeit] von App Service-Web-Apps ist ideal für Ihre Organisationswebsite – unabhängig von Ihrem Workload. Skalieren Sie Ihre Website manuell über das [Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715), programmgesteuert über die [Dienstverwaltungs-API] oder über [PowerShell-Skripts] oder automatisch über die Funktion "Autoskalierung". Im Hostingplan **Standard** kann eine Website mithilfe der Autoskalierung abhängig von der CPU-Auslastung automatisch skaliert werden. Bewährte Methoden finden Sie auf der Website von [Troy Hunt]\: [10 things I learned about rapidly scaling websites with Azure] (10 Dinge, die ich über eine schnelle Skalierung von Websites mit Azure gelernt habe, in englischer Sprache).
+Die [flexible Skalierbarkeit] von App Service-Web-Apps ist ideal für Ihre Organisationswebsite – unabhängig von Ihrem Workload. Skalieren Sie Ihre Website manuell über das [Azure-Portal](https://portal.azure.com), programmgesteuert über die [Dienstverwaltungs-API] oder [PowerShell-Skripts] oder automatisch über die Funktion „Autoskalierung“. Im Hostingplan **Standard** kann eine Website mithilfe der Autoskalierung abhängig von der CPU-Auslastung automatisch skaliert werden. Bewährte Methoden finden Sie auf der Website von [Troy Hunt]\: [10 things I learned about rapidly scaling websites with Azure] (10 Dinge, die ich über eine schnelle Skalierung von Websites mit Azure gelernt habe, in englischer Sprache).
 
 Erhöhen Sie die Reaktionsfähigkeit Ihrer Website mit [Azure Redis Cache]. Nutzen Sie diese Funktion zum Zwischenspeichern von Daten aus Back-End-Datenbanken und anderen Daten, beispielsweise [ASP.NET-Sitzungszustand] und [Ausgabecache].
 
@@ -75,7 +75,7 @@ Stellen Sie mithilfe von [Azure Traffic Manager] eine hohe Verfügbarkeit Ihrer 
 
 Sorgen Sie mit Azure oder Tools von Drittanbietern für eine optimale Leistung Ihrer Website. Empfangen Sie Warnungen zu kritischen Websiteereignissen. Erhalten Sie problemlos Benutzereinblick über Application Insights oder eine Webprotokollanalyse aus HDInsight.
 
-Im [Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715) finden Sie auf dem Blatt der Web-App eine [Übersicht] über die aktuellen Leistungskennzahlen und Ressourcenkontingente der Website. Eine 360-Grad-Ansicht Ihrer Anwendung, einschließlich von Daten zu Verfügbarkeit, Leistung und Auslastung, erhalten Sie mit [Azure Application Insights]. So erhalten Sie schnell aussagekräftige Erkenntnisse zu Problembehandlung, Diagnose und Nutzung. Alternativ können Sie ein Drittanbietertool wie [New Relic] nutzen, um weiterführende Überwachungsdaten für Ihre Websites zu erhalten.
+Auf dem Blatt der Web-App im [Azure-Portal](https://portal.azure.com) erhalten Sie eine [Übersicht] über die aktuellen Leistungsmetriken und Ressourcenkontingente der Website. Eine 360-Grad-Ansicht Ihrer Anwendung, einschließlich von Daten zu Verfügbarkeit, Leistung und Auslastung, erhalten Sie mit [Azure Application Insights]. So erhalten Sie schnell aussagekräftige Erkenntnisse zu Problembehandlung, Diagnose und Nutzung. Alternativ können Sie ein Drittanbietertool wie [New Relic] nutzen, um weiterführende Überwachungsdaten für Ihre Websites zu erhalten.
 
 Im Hostingplan **Standard** erhalten für die Websiteüberwachung verantwortliche Benutzer E-Mail-Benachrichtigungen, wenn die Website nicht mehr reagiert. Weitere Informationen finden Sie unter [Empfangen von Warnbenachrichtigungen und Verwalten von Warnregeln in Azure].
 
@@ -102,7 +102,7 @@ Erhöhen Sie den Anreiz Ihrer Website mit Rich Media:
 [Azure SQL-Datenbank]: web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database.md
 [FTP]: web-sites-deploy.md#ftp
 [Visual Studio]: web-sites-dotnet-get-started.md
-[Visual Studio Online]: ../cloud-services-continuous-delivery-use-vso.md
+[Visual Studio Team Services]: ../cloud-services-continuous-delivery-use-vso.md
 [Git]: web-sites-publish-source-control.md
 
 [Bereitstellung in einem Stagingslot]: web-sites-staged-publishing.md
@@ -137,4 +137,4 @@ Erhöhen Sie den Anreiz Ihrer Website mit Rich Media:
 
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1217_2015-->

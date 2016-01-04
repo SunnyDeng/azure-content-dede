@@ -22,7 +22,7 @@
 
 Dieser Artikel listet die Standard- und Höchstwerte bestimmter Ressourcen auf, die Sie mit dem Azure Batch-Dienst verwenden können. Die meisten dieser Limits sind Kontingente, die Azure auf Ihr Abonnement oder Batch-Konten anwendet.
 
-Wenn Sie Batch-Workloads in der Produktion ausführen möchten, müssen Sie möglicherweise ein oder mehrere Kontingente über den Standardwert erhöhen. Zum Erhöhen eines Kontingents können Sie kostenlos eine Anfrage an den Onlinekundensupport richten.
+Wenn Sie Batch-Workloads in der Produktion ausführen möchten, müssen Sie möglicherweise ein oder mehrere Kontingente über den Standardwert erhöhen. Wenn Sie ein Kontingent erhöhen möchten, können Sie kostenlos eine Anfrage an den Onlinekundensupport richten.
 
 >[AZURE.NOTE]Bei einem Kontingent handelt es sich um ein Kreditlimit und keine Kapazitätsgarantie. Wenn Sie einen umfangreichen Kapazitätsbedarf haben, wenden Sie sich an den Azure-Support.
 
@@ -41,9 +41,9 @@ Aufgaben pro Serverknoten|4 x Anzahl der Kerne des Knotens
 
 ## Anzeigen von Batch-Kontingenten
 
-Sie können die Kontingente Ihres Batch-Kontos im [Azure-Vorschauportal](https://portal.azure.com) anzeigen.
+Sie können die Kontingente Ihres Batch-Kontos im [Azure-Portal](https://portal.azure.com) anzeigen.
 
-1. Klicken Sie im Vorschauportal auf **Batch-Konten** und dann auf den Namen Ihres Batch-Kontos.
+1. Klicken Sie im Portal auf **Batch-Konten** und dann auf den Namen Ihres Batch-Kontos.
 
 2. Klicken Sie auf dem Blatt für Ihr Konto auf **Einstellungen** > **Eigenschaften**.
 
@@ -53,7 +53,7 @@ Sie können die Kontingente Ihres Batch-Kontos im [Azure-Vorschauportal](https:/
 
 ## Erhöhen eines Kontingents
 
-Anhand der folgenden Schritte können Sie die Erhöhung eines Kontingents im Azure-Vorschauportal anfordern (Sie können die Erhöhung auch im [Azure-Portal](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) anfragen).
+Anhand der folgenden Schritte können Sie die Erhöhung eines Kontingents im Azure-Portal anfordern (Sie können die Erhöhung auch im [klassischen Azure-Portal](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) beantragen).
 
 1. Klicken Sie auf dem Dashboard des Vorschauportals auf **Hilfe und Support**.
 
@@ -87,12 +87,12 @@ Der Azure-Support tritt mit Ihnen in Kontakt. Die Bearbeitung der Anfrage kann b
 
 ## Verwandte Themen
 
-* [Erstellen und Verwalten eines Batch Azure-Kontos](batch-account-create-portal.md)
+* [Erstellen und Verwalten eines Azure Batch-Kontos](batch-account-create-portal.md)
 
-* [API-Grundlagen für Azure Batch](batch-api-basics.md)
+* [Übersicht über Azure Batch-Features](batch-api-basics.md)
 
 * [Einschränkungen für Azure-Abonnements und Dienste, Kontingente und Einschränkungen](../azure-subscription-service-limits.md)
 
 [account_quotas]: ./media/batch-quota-limit/accountquota_portal.PNG
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1210_2015-->

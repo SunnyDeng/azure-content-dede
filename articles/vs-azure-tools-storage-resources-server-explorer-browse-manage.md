@@ -1,11 +1,11 @@
 <properties
-   pageTitle="Durchsuchen und Verwalten von Speicherressourcen mit dem Server-Explorer"
+   pageTitle="Durchsuchen und Verwalten von Speicherressourcen mit dem Server-Explorer | Microsoft Azure"
    description="Durchsuchen und Verwalten von Speicherressourcen mit dem Server-Explorer"
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tlee" />
+   editor="" />
 <tags
    ms.service="storage"
    ms.devlang="multiple"
@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="08/24/2015"
-   ms.author="kempb" />
+   ms.author="tarcher" />
 
 # Durchsuchen und Verwalten von Speicherressourcen mit dem Server-Explorer
 
@@ -199,7 +199,7 @@ Die Tabelle ist in Entitäten (Anzeige in Zeilen) und Eigenschaften (Anzeige in 
 
     - Eine Eigenschaft mit dem Namen "Timestamp" kann nicht erstellt werden, da von den Azure Storage-Diensten eine Eigenschaft mit diesem Namen verwendet wird.
 
-    - DateTime-Werte müssen den Regions- und Spracheinstellungen des Computers (Beispiel: TT.MM.JJJJ HH:MM:SS für Deutschland) entsprechend eingegeben werden.  
+    - DateTime-Werte müssen den Regions- und Spracheinstellungen des Computers (Beispiel: TT.MM.JJJJ HH:MM:SS für Deutschland) entsprechend eingegeben werden.
 
 ### So fügen Sie Entitäten hinzu
 
@@ -313,4 +313,4 @@ Es gibt zwei Möglichkeiten, Speicherkonten mithilfe des Server-Explorers hinzuz
 
 Weitere Informationen dazu, wie Azure Storage Services verwendet wird, finden Sie unter [Zugreifen auf Azure Storage Services](https://msdn.microsoft.com/library/azure/ee405490.aspx).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

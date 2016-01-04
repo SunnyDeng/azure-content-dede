@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="identity"
-	ms.date="10/12/2015"
+	ms.date="12/04/2015"
 	ms.author="inhenk"/>
 
 #RBAC: Integrierte Rollen
@@ -27,7 +27,7 @@ Klicken Sie auf den entsprechenden Link, um die **Aktions**- und **Nicht-Aktions
 
 | Rollenname | Beschreibung |
 | --------- | ----------- |
-| [Mitwirkender des API-Verwaltungsdiensts](#api-management-service-contributor) | Kann Application Insights-Komponenten verwalten |
+| [Mitwirkender des API-Verwaltungsdiensts](#api-management-service-contributor) | Kann API-Verwaltungsdienste verwalten |
 | [Mitwirkender der Application Insights-Komponente](#application-insights-component-contributor) | Kann Application Insights-Komponenten verwalten |
 | [Operator für Automation](#automation-operator) | Kann Aufträge starten, unterbrechen und fortsetzen |
 | [Mitwirkender von BizTalk](#biztalk-contributor) | Kann BizTalk-Dienste verwalten |
@@ -53,7 +53,7 @@ Klicken Sie auf den entsprechenden Link, um die **Aktions**- und **Nicht-Aktions
 | [Benutzerzugriffsadministrator](#user-access-administrator) | Kann den Benutzerzugriff auf Azure-Ressourcen verwalten |
 | [Mitwirkender von klassischen virtuellen Computern](#classic-virtual-machine-contributor) | Kann klassische virtuelle Computer verwalten, jedoch nicht das virtuelle Netzwerk oder Speicherkonto, mit dem sie verbunden sind |
 | [Mitwirkender von virtuellen Computern](#virtual-machine-contributor) | Kann virtuelle Computer verwalten, jedoch nicht das virtuelle Netzwerk oder Speicherkonto, mit dem sie verbunden sind |
-| [Mitwirkender von klassischem Netzwerk](#classic-network-contributor) | Kann virtuelle Computer verwalten, jedoch nicht das virtuelle Netzwerk oder Speicherkonto, mit dem sie verbunden sind |
+| [Mitwirkender von klassischem Netzwerk](#classic-network-contributor) | Kann klassische virtuelle Netzwerke und reservierte IP-Adressen verwalten |
 | [Mitwirkender von Webplan](#web-plan-contributor) | Kann Webpläne verwalten |
 | [Mitwirkender von Website](#website-contributor) | Kann Websites verwalten, jedoch nicht die Webpläne, mit denen sie verbunden sind |
 
@@ -133,7 +133,9 @@ Mitwirkende können alles mit Ausnahme des Zugriffs verwalten.
 | **Aktionen** ||
 | ------- | ------ |
 | * | Erstellen und Verwalten von Ressourcen aller Typen |
-| ****Nicht-Aktionen | | | Microsoft.Authorization/*/Write | Kann keine Rollen und Rollenzuweisungen erstellen | | Microsoft.Authorization/*/Delete | Kann keine Rollen und Rollenzuweisungen löschen |
+| ****Nicht-Aktionen | |
+| Microsoft.Authorization/*/Write | Kann keine Rollen und Rollenzuweisungen erstellen |
+| Microsoft.Authorization/*/Delete | Kann keine Rollen und Rollenzuweisungen löschen |
 
 ### Mitwirkender von Data Factory
 Kann Data Factorys verwalten
@@ -480,4 +482,4 @@ Kann Websites verwalten, jedoch nicht die Webpläne, mit denen sie verbunden sin
 ## RBAC-Themen
 [AZURE.INCLUDE [role-based-access-control-toc.md](../../includes/role-based-access-control-toc.md)]
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

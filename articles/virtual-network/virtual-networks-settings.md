@@ -4,7 +4,7 @@
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor="tysonn" />
 <tags 
    ms.service="virtual-network"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="09/02/2015"
+   ms.date="12/11/2015"
    ms.author="telmos" />
 
 # Gewusst wie: Verwalten der Eigenschaften eines Virtual Network (VNet)
@@ -100,4 +100,4 @@ Nach der Bereitstellung des virtuellen Netzwerks können nur bestimmte Einstellu
 
 [Gewusst wie: Löschen eines virtuellen Netzwerks (VNet)](../virtual-networks-delete-vnet)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

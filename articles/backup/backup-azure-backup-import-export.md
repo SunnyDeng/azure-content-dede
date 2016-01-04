@@ -6,7 +6,7 @@
    authors="aashishr"
    manager="shreeshd"
    editor=""/>
-<tags  ms.service="backup" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="storage-backup-recovery" ms.date="08/28/2015" ms.author="aashishr"; "jimpark"/>
+<tags  ms.service="backup" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="storage-backup-recovery" ms.date="11/25/2015" ms.author="aashishr"; "jimpark"/>
 
 # Workflow zur Offlinesicherung in Azure Backup
 
@@ -27,7 +27,7 @@ Mit Azure Backup und Azure Import/Export können die Daten einfach und unkompliz
 7. Laden Sie das Azure Import/Export-Tool von [hier](http://go.microsoft.com/fwlink/?LinkID=301900&clcid=0x409) auf den Computer herunter, mit dem der SATA-Laufwerkswriter verbunden ist.
 
 ## Workflow
-Die in diesem Abschnitt bereitgestellten Informationen dienen zum Abschließen des Workflows zur **Offlinesicherung**, damit Ihre Daten an ein Azure-Datencenter versandt und in den Azure-Speicher hochgeladen werden können. Wenn Sie Fragen zum Importdienst oder zu einem anderen Aspekt des Prozesses haben, finden Sie weitere Informationen in der [oben](../storage-import-export-service.md) referenzierten Übersicht über den Importdienst.
+Die in diesem Abschnitt bereitgestellten Informationen dienen zum Abschließen des Workflows zur **Offlinesicherung**, damit Ihre Daten an ein Azure-Datencenter versandt und in den Azure-Speicher hochgeladen werden können. Wenn Sie Fragen zum Importdienst oder zu einem anderen Aspekt des Prozesses haben, finden Sie weitere Informationen in der oben referenzierten [Dokumentation mit der Übersicht über den Importdienst](../storage-import-export-service.md).
 
 ### Initiieren der Offlinesicherung
 
@@ -108,4 +108,4 @@ Sobald die ersten Sicherungsdaten im Speicherkonto verfügbar sind, kopiert der 
 - Wenn Sie Fragen zum Azure Import/Export-Workflow haben, finden Sie weitere Informationen in diesem [Artikel](../storage-import-export-service.md).
 - Bei Fragen zum Workflow finden Sie weitere Informationen im Abschnitt zur Offlinesicherung in den [häufig gestellten Fragen](backup-azure-backup-faq.md) zu Azure Backup.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

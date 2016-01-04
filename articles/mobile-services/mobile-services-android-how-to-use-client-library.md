@@ -13,11 +13,15 @@
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="java"
 	ms.topic="article"
-	ms.date="10/05/2015" 
+	ms.date="10/05/2015"
 	ms.author="ricksal"/>
 
 
 # Verwenden der Android-Clientbibliothek für Mobile Services
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
 
 [AZURE.INCLUDE [mobile-services-selector-client-library](../../includes/mobile-services-selector-client-library.md)]
 
@@ -55,9 +59,9 @@ Der folgende Code erstellt das [MobileServiceClient](http://dl.windowsazure.com/
 				"AppKey", 			// replace with the Application Key
 				this)
 
-Ersetzen Sie im obigen Code `MobileServiceUrl` und `AppKey` durch die URL und den Anwendungsschlüssel des mobilen Diensts. Beide Werte finden Sie im Azure-Verwaltungsportal, indem Sie Ihren mobilen Dienst auswählen und auf *Dashboard* klicken.
+Ersetzen Sie im obigen Code `MobileServiceUrl` und `AppKey` durch die URL und den Anwendungsschlüssel des mobilen Diensts in dieser Reihenfolge. Beide Werte finden Sie im klassischen Azure-Portal, indem Sie Ihren mobilen Dienst auswählen und auf *Dashboard* klicken.
 
-##<a name="instantiating"></a>Gewusst wie: Erstellen von Tabellenverweisen
+##<a name="instantiating"></a>Erstellen von Tabellenverweisen
 
 Der einfachste Weg zum Abfragen oder Ändern von Daten in mobilen Diensten ist das *typisierte Programmiermodell*, da Java eine stark typisierte Sprache ist (später besprechen wir das *untypisierte* Modell). Dieses Modell bietet eine nahtlose Serialisierung und Deserialisierung in JSON mithilfe der [gson](http://go.microsoft.com/fwlink/p/?LinkId=290801)-Bibliothek, wenn Daten zwischen dem Client und dem mobilen Dienst gesendet werden: Der Entwickler muss nicht eingreifen, da das Framework alle Aufgaben übernimmt.
 
@@ -133,7 +137,7 @@ Der folgende Code gibt alle Elemente der *ToDoItem*-Tabelle zurück, deren *comp
                     final MobileServiceList<ToDoItem> result =
 						mToDoTable.where().field("complete").eq(false).execute().get();
 					for (ToDoItem item : result) {
-                		Log.i(TAG, "Read object with ID " + item.id);  
+                		Log.i(TAG, "Read object with ID " + item.id);
 					}
                 } catch (Exception exception) {
                     createAndShowDialog(exception, "Error");
@@ -371,7 +375,7 @@ Der folgende Code zeigt, wie Sie Daten in einer Tabelle löschen können. Er lö
 	}
 
 
-Der folgende Code zeigt eine weitere Möglichkeit, dies zu erreichen. Der Code löscht ein existierendes Element in der ToDoItem-Tabelle, indem er den Wert des id-Felds der zu löschenden Zeile angibt (in diesem Fall "2FA404AB-E458-44CD-BC1B-3BC847EF0902"). In einer realen App würden Sie die ID auf irgendeine Art erfassen und als Variable übergeben. Um hier das Testen zu vereinfachen, können Sie zum Azure Mobile Services-Portal für den Dienst wechseln, auf **Daten** klicken und eine ID kopieren, die Sie für den Test verwenden möchten.
+Der folgende Code zeigt eine weitere Möglichkeit, dies zu erreichen. Der Code löscht ein existierendes Element in der ToDoItem-Tabelle, indem er den Wert des id-Felds der zu löschenden Zeile angibt (in diesem Fall "2FA404AB-E458-44CD-BC1B-3BC847EF0902"). In einer realen App würden Sie die ID auf irgendeine Art aufnehmen und als Variable übergeben. Um hier das Testen zu vereinfachen, können Sie im klassischen Azure-Portal zu Ihrem Dienst wechseln, auf **Daten** klicken und eine ID kopieren, die Sie für den Test verwenden möchten.
 
     public void deleteItem(View view) {
 
@@ -396,7 +400,7 @@ Der folgende Code zeigt eine weitere Möglichkeit, dies zu erreichen. Der Code l
     }
 
 ##<a name="lookup"></a>Gewusst wie: Abfragen bestimmter Elemente
-Manchmal müssen Sie ein bestimmtes Objekt anhand dessen *id* abfragen im Gegensatz zu Abfragen, bei denen Sie eine Reihe von Objekten erhalten, die bestimmte Kriterien erfüllen. Der folgende Code zeigt, wie Sie dies für einen *ID*-Wert von `0380BAFB-BCFF-443C-B7D5-30199F730335` durchführen können. In einer realen App würden Sie die ID auf irgendeine Art aufnehmen und als Variable übergeben. Um hier das Testen zu vereinfachen, können Sie zum Azure Mobile Services-Portal für den Dienst wechseln, auf die Registerkarte **Daten** klicken und eine ID kopieren, die Sie für den Test verwenden möchten.
+Manchmal müssen Sie ein bestimmtes Objekt anhand dessen *id* abfragen im Gegensatz zu Abfragen, bei denen Sie eine Reihe von Objekten erhalten, die bestimmte Kriterien erfüllen. Der folgende Code zeigt, wie Sie dies für einen *ID*-Wert von `0380BAFB-BCFF-443C-B7D5-30199F730335` durchführen können. In einer realen App würden Sie die ID auf irgendeine Art aufnehmen und als Variable übergeben. Um hier das Testen zu vereinfachen, können Sie im klassischen Azure-Portal zu Ihrem Dienst wechseln, auf die Registerkarte **Daten** klicken und eine ID kopieren, die Sie für den Test verwenden möchten.
 
     /**
      * Lookup specific item from table and UI
@@ -424,7 +428,7 @@ Manchmal müssen Sie ein bestimmtes Objekt anhand dessen *id* abfragen im Gegens
         }.execute();
     }
 
-##<a name="untyped"></a>Gewusst wie: Arbeiten mit nicht typisierten Daten
+##<a name="untyped"></a>Arbeiten mit nicht typisierten Daten
 
 Mit dem untypisierten Programmiermodell erhalten Sie vollständige Kontrolle über die JSON-Serialisierung. Dies ist hilfreich in bestimmten Szenarien, z. B. wenn eine Tabelle in Ihrem mobilen Dienst eine große Anzahl an Spalten enthält, und Sie nur einige wenige Spalten benötigen. Im typisierten Modell müssen Sie alle Spalten der Tabelle in Ihrem mobilen Dienst in Ihrer Datenklasse definieren. Im untypisierten Modell definieren Sie dagegen nur die Spalten, die Sie verwenden möchten.
 
@@ -679,7 +683,7 @@ Mobile Services unterstützt die folgenden existierenden Identitätsanbieter fü
 
 Sie können Berechtigungen für Tabellen vergeben, um den Zugriff auf bestimmte Operationen auf authentifizierte Benutzer zu beschränken. Außerdem können Sie die IDs authentifizierter Benutzer verwenden, um Anfragen zu verändern.
 
-Diese beiden ersten Aufgaben können Sie im [Azure-Verwaltungsportal](https://manage.windowsazure.com/) erledigen. Weitere Informationen finden Sie unter [Get started with authentication](http://go.microsoft.com/fwlink/p/?LinkId=296316) (Erste Schritte zur Authentifizierung, in englischer Sprache).
+Diese beiden ersten Aufgaben können Sie im [klassischen Azure-Portal](https://manage.windowsazure.com/) erledigen. Weitere Informationen finden Sie unter [Get started with authentication](http://go.microsoft.com/fwlink/p/?LinkId=296316) (Erste Schritte zur Authentifizierung, in englischer Sprache).
 
 ### <a name="caching"></a>Hinzufügen des Authentifizierungscodes zur App
 
@@ -933,4 +937,4 @@ Sie können diese allgemeine Methode immer dann verwenden, wenn Sie mit komplexe
 [Erste Schritte mit Mobile Services]: mobile-services-android-get-started.md
 [ASCII-Steuerzeichen C0 und C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

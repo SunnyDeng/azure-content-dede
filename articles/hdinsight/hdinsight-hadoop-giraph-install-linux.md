@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/26/2015"
+	ms.date="12/04/2015"
 	ms.author="larryfr"/>
 
 # Installieren von Giraph in HDInsight Hadoop-Clustern und Verwenden von Giraph zur Verarbeitung großer Diagramme
@@ -42,7 +42,7 @@ Dieses Skript führt folgende Aktionen aus:
 
 ## <a name="install"></a>Installation von Giraph mithilfe von Skriptaktionen
 
-Ein Beispielskript zum Installieren von Giraph in einem HDInsight-Cluster steht in einem schreibgeschützten Azure-Speicherblob unter [https://hdiconfigactions.blob.core.windows.net/linuxgiraphconfigactionv01/giraph-installer-v01.sh](https://hdiconfigactions.blob.core.windows.net/linuxgiraphconfigactionv01/giraph-installer-v01.sh) zur Verfügung. Dieser Abschnitt enthält Anweisungen zur Verwendung des Beispielskripts während der Erstellung des Clusters mithilfe des Azure-Portals.
+Ein Beispielskript zum Installieren von Giraph in einem HDInsight-Cluster steht in einem schreibgeschützten Azure-Speicherblob unter [https://hdiconfigactions.blob.core.windows.net/linuxgiraphconfigactionv01/giraph-installer-v01.sh](https://hdiconfigactions.blob.core.windows.net/linuxgiraphconfigactionv01/giraph-installer-v01.sh) zur Verfügung. Dieser Abschnitt enthält Anweisungen zur Verwendung des Beispielskripts während der Erstellung des Clusters mithilfe des klassischen Azure-Portals.
 
 > [AZURE.NOTE]Sie können auch Azure PowerShell oder das HDInsight .NET SDK zum Erstellen eines Clusters mit diesem Skript verwenden. Weitere Informationen zur Verwendung dieser Methoden finden Sie unter [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen](hdinsight-hadoop-customize-cluster-linux.md).
 
@@ -59,7 +59,7 @@ Ein Beispielskript zum Installieren von Giraph in einem HDInsight-Cluster steht 
 
 3. Verwenden Sie am unteren Rand der **Skriptaktionen** die Schaltfläche **Auswählen**, um die Konfiguration zu speichern. Verwenden Sie schließlich die Schaltfläche **Auswählen** am unteren Rand des Blatts **Optionale Konfiguration**, um die optionalen Konfigurationsinformationen zu speichern.
 
-4. Setzen Sie die Erstellung des Clusters wie unter [Erstellen Linux-basierter HDInsight-Cluster](hdinsight-provision-linux-clusters.md#portal) beschrieben fort.
+4. Setzen Sie die Erstellung des Clusters wie unter [Erstellen Linux-basierter HDInsight-Cluster](hdinsight-hadoop-create-linux-clusters-portal.md) beschrieben fort.
 
 ## <a name="usegiraph"></a>Wie verwende ich Giraph in HDInsight?
 
@@ -103,7 +103,7 @@ Sobald die Clustererstellung abgeschlossen ist, gehen Sie folgendermaßen vor, u
 
         hostname -f
         
-4. Führen Sie das Beispiel „SimpleShortstPathsComputation“ mit dem folgenden Befehl aus. Ersetzen Sie __HEADNODE__ mit dem FQDN aus dem vorherigen Schritt:
+4. Führen Sie das Beispiel "SimpleShortstPathsComputation" mit dem folgenden Befehl aus. Ersetzen Sie __HEADNODE__ mit dem FQDN aus dem vorherigen Schritt:
 
 		 hadoop jar /usr/hdp/current/giraph/giraph-examples.jar org.apache.giraph.GiraphRunner org.apache.giraph.examples.SimpleShortestPathsComputation -ca mapred.job.tracker=HEADNODE:9010 -vif org.apache.giraph.io.formats.JsonLongDoubleFloatDoubleVertexInputFormat -vip /example/data/tiny_graph.txt -vof org.apache.giraph.io.formats.IdWithValueTextOutputFormat -op /example/output/shortestpaths -w 2
 
@@ -123,7 +123,7 @@ Sobald die Clustererstellung abgeschlossen ist, gehen Sie folgendermaßen vor, u
 
 	Weitere Informationen zu diesen und anderen mit Giraph-Beispielen verwendeten Parametern finden Sie unter [Giraph Schnellstart](http://giraph.apache.org/quick_start.html).
 
-5. Nach Abschluss des Auftrags werden die Ergebnisse im Verzeichnis „\_\___wasb:///example/out/shotestpaths__“ gespeichert. Die erstellten Dateien beginnen mit __part-m-__ und enden mit einer Zahl, welche die erste, zweite, usw. Datei anzeigt. Verwenden Sie den folgenden Befehl, um die Ausgabe anzuzeigen:
+5. Nach Abschluss des Auftrags werden die Ergebnisse im Verzeichnis "\_\___wasb:///example/out/shotestpaths__" gespeichert. Die erstellten Dateien beginnen mit __part-m-__ und enden mit einer Zahl, die die erste, zweite, usw. Datei anzeigt. Verwenden Sie den folgenden Befehl, um die Ausgabe anzuzeigen:
 
 		hadoop fs -text /example/output/shortestpaths/*
 
@@ -152,4 +152,4 @@ Sobald die Clustererstellung abgeschlossen ist, gehen Sie folgendermaßen vor, u
 
 - [Installieren von Solr in HDInsight-Clustern](hdinsight-hadoop-solr-install-linux.md). Verwenden Sie die Clusteranpassung, um Solr in HDInsight Hadoop-Clustern zu installieren. Solr ermöglicht es Ihnen, leistungsstarke Suchvorgänge für gespeicherte Daten durchzuführen.
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Verbinden einer Web-App mit einer API-App in Azure App Service" 
-	description="In diesem Lernprogramm wird veranschaulicht, wie eine API-App in einer in Azure App Service gehosteten ASP.NET-Web-App genutzt wird." 
+	description="In diesem Tutorial wird veranschaulicht, wie eine API-App in einer in Azure App Service gehosteten ASP.NET-Web-App genutzt wird." 
 	services="app-service\web" 
 	documentationCenter=".net" 
 	authors="syntaxc4" 
@@ -18,11 +18,11 @@
 
 # Verbinden einer Web-App mit einer API-App in Azure App Service
 
-In diesem Lernprogramm wird veranschaulicht, wie eine API-App in einer in [App Service](../app-service.md) gehosteten ASP.NET-Web-App genutzt wird.
+In diesem Tutorial wird veranschaulicht, wie eine API-App in einer in [App Service](../app-service.md) gehosteten ASP.NET-Web-App genutzt wird.
 
 ## Voraussetzungen
 
-Dieses Lernprogramm baut auf der Reihe der API-App-Lernprogramme auf:
+Dieses Tutorial baut auf der Reihe der API-App-Tutorials auf:
 
 1. [Erstellen einer Azure API-App](../app-service-dotnet-create-api-app)
 3. [Bereitstellen einer Azure API-App](../app-service-dotnet-deploy-api-app)
@@ -30,7 +30,7 @@ Dieses Lernprogramm baut auf der Reihe der API-App-Lernprogramme auf:
 
 ## Ermöglichen des öffentlichen Zugriffs auf die API-App
 
-Wählen Sie die API-App im [Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715) aus. Klicken Sie auf der Befehlsleiste auf die Schaltfläche **Einstellungen**. Ändern Sie im Blatt **Anwendungseinstellungen** die **Zugriffsebene** in **Öffentlich (authentifiziert)**.
+Wählen Sie im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) die API-App aus. Klicken Sie auf der Befehlsleiste auf die Schaltfläche **Einstellungen**. Ändern Sie im Blatt **Anwendungseinstellungen** die **Zugriffsebene** in **Öffentlich (authentifiziert)**.
 
 ![](./media/app-service-web-connect-web-app-to-saas-api/4-5-Change-Access-Level-To-Public.png)
 
@@ -93,7 +93,6 @@ Befolgen Sie die Anweisungen unter [Bereitstellen einer Azure Web-App](web-sites
 
 ## Änderungen
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

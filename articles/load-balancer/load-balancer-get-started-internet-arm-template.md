@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Erstellen eines Lastenausgleichsmoduls mit Internetzugriff in Ressourcen-Manager mithilfe eine Vorlage | Microsoft Azure"
-   description="Erfahren Sie, wie Sie ein Lastenausgleichsmodul mit Internetzugriff in Ressourcen-Manager mithilfe einer Vorlage erstellen"
+   pageTitle="Erstellen eines Load Balancers mit Internetzugriff im Ressourcen-Manager unter Verwendung einer Vorlage | Microsoft Azure"
+   description="Erfahren Sie, wie Sie einen Load Balancer mit Internetzugriff im Ressourcen-Manager unter Verwendung einer ARM-Vorlage erstellen."
    services="load-balancer"
    documentationCenter="na"
    authors="joaoma"
@@ -14,16 +14,16 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="10/21/2015"
+   ms.date="11/20/2015"
    ms.author="joaoma" />
 
-# Erstellen eines Lastenausgleichsmoduls mit Internetzugriff mittels einer Vorlage
+# Erste Schritte zum Erstellen eines Load Balancers mit Internetzugriff unter Verwendung einer ARM-Vorlage
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-arm-selectors-include.md](../../includes/load-balancer-get-started-internet-arm-selectors-include.md)]
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-intro-include.md](../../includes/load-balancer-get-started-internet-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)]Dieser Artikel gilt für das Ressourcen-Manager-Bereitstellungsmodell. Informationen zum klassischen Azure-Bereitstellungsmodell finden Sie unter [Erste Schritte zum Erstellen eines Load Balancers für Internetzugriff in einem klassischen Bereitstellungsmodell](load-balancer-get-started-internet-classic-portal.md).
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)]Dieser Artikel gilt für das Ressourcen-Manager-Bereitstellungsmodell. Sie können auch erfahren, wie Sie [mithilfe des klassischen Bereitstellungsmodells einen Load Balancer mit Internetzugriff erstellen](load-balancer-get-started-internet-classic-portal.md).
 
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-scenario-include.md](../../includes/load-balancer-get-started-internet-scenario-include.md)]
@@ -66,9 +66,17 @@ Führen Sie zum Bereitstellen der ARM-Vorlage mithilfe der Azure-Befehlszeilensc
 
 		info:    New mode is arm
 
-3. Navigieren Sie im Browser zu ****https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-2-vms-loadbalancer-natrules/azuredeploy.parameters.json**, kopieren Sie den Inhalt der JSON-Datei, und fügen Sie ihn in eine neue Datei auf Ihrem Computer ein. Für dieses Szenario kopieren Sie die unten angegebenen Werte in eine Datei mit dem Namen **c:\\udr\\azuredeploy.parameters.json**.
-4. Führen Sie das Cmdlet **azure group deployment create** aus, um das neue Lastenausgleichsmodul mithilfe der heruntergeladenen und geänderten Vorlage und Parameterdateien bereitzustellen. In der nach der Ausgabe angezeigten Liste werden die verwendeten Parameter erläutert.
+3. Navigieren Sie im Browser zu ****https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-2-vms-loadbalancer-natrules/azuredeploy.parameters.json**, kopieren Sie den Inhalt der JSON-Datei, und fügen Sie ihn in eine neue Datei auf Ihrem Computer ein. Für dieses Szenario kopieren Sie die unten angegebenen Werte in eine Datei mit dem Namen **c:\\lb\\azuredeploy.parameters.json**.
+4. Führen Sie das Cmdlet **azure group deployment create** aus, um den neuen Load Balancer mithilfe der heruntergeladenen und geänderten Vorlage und Parameterdateien bereitzustellen. In der nach der Ausgabe angezeigten Liste werden die verwendeten Parameter erläutert.
 
 		azure group create -n TestRG -l westus -f 'https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-2-vms-loadbalancer-natrules/azuredeploy.json' -e 'c:\lb\azuredeploy.parameters.json'
 
-<!---HONumber=Nov15_HO3-->
+## Nächste Schritte
+
+[Erste Schritte zum Konfigurieren des internen Lastenausgleichs](load-balancer-internal-getstarted.md)
+
+[Konfigurieren eines Lastenausgleichs-Verteilungsmodus](load-balancer-distribution-mode.md)
+
+[Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
+
+<!---HONumber=AcomDC_1203_2015-->

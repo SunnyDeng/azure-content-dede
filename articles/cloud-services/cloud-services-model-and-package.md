@@ -201,7 +201,7 @@ Die [Azure-Laufzeitbibliothek](https://msdn.microsoft.com/library/azure/dn511024
 ## ServicePackage.cspkg
 Um eine Anwendung als Clouddienst in Azure bereitzustellen, müssen Sie zunächst die Anwendung im entsprechenden Format packen. Als Alternative zu Visual Studio können Sie das Befehlszeilentool **CSPack** (wird mit dem [Azure SDK](http://azure.microsoft.com/downloads/) installiert) verwenden, um die Paketdatei zu erstellen.
 
-**CSPack** verwendet den Inhalt der Dienstdefinitionsdatei und Dienstkonfigurationsdatei, um den Inhalt des Pakets zu definieren. **CSPack** generiert eine Anwendungspaketdatei (.cspkg), die Sie über das [Azure-Verwaltungsportal](cloud-services-how-to-create-deploy/#how-to-deploy-a-cloud-service) in Azure hochladen können. Standardmäßig erhält das Paket den Namen `[ServiceDefinitionFileName].cspkg`, durch Verwendung der Option `/out` von **CSPack** können Sie jedoch auch einen anderen Namen angeben.
+**CSPack** verwendet den Inhalt der Dienstdefinitionsdatei und Dienstkonfigurationsdatei, um den Inhalt des Pakets zu definieren. **CSPack** generiert eine Anwendungspaketdatei (.cspkg), die Sie über das [klassische Azure-Portal](cloud-services-how-to-create-deploy/#how-to-deploy-a-cloud-service) in Azure hochladen können. Standardmäßig erhält das Paket den Namen `[ServiceDefinitionFileName].cspkg`, durch Verwendung der Option `/out` von **CSPack** können Sie jedoch auch einen anderen Namen angeben.
 
 ###### Speicherort des CSPack-Tools (unter Windows)
 | SDK-Version | Path |
@@ -270,4 +270,4 @@ Ich verwende Visual Studio und möchte ...
 [vs_reconfigure]: https://msdn.microsoft.com/library/ee405486.aspx
 [vs_create]: https://msdn.microsoft.com/library/ee405487.aspx
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

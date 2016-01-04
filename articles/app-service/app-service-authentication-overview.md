@@ -18,6 +18,8 @@
 
 # Authentifizierung für API-Apps und mobile Apps in Azure App Service
 
+[AZURE.INCLUDE [app-service-api-v2-note](../../includes/app-service-api-v2-note.md)]
+
 ## Übersicht
 
 In diesem Artikel werden die integrierten Authentifizierungsfeatures für [API-Apps](../app-service-api/app-service-api-apps-why-best-platform.md) und [mobile Apps](../app-service-mobile/app-service-mobile-value-prop-preview.md) beschrieben.
@@ -180,9 +182,9 @@ In diesem Artikel wurden die Authentifizierungsdienste von Azure App Service fü
 
 ### <a id="oauth"></a>OAuth 2.0, OpenID Connect und JSON Web Tokens (JWT)
 
-* [Getting started with OAuth 2.0](http://shop.oreilly.com/product/0636920021810.do "Getting started with OAuth 2.0 (in englischer Sprache)") (in englischer Sprache) 
-* [Introduction to OAuth2, OpenID Connect and JSON Web Tokens (JWT) - PluralSight Course](http://www.pluralsight.com/courses/oauth2-json-web-tokens-openid-connect-introduction) (in englischer Sprache) 
-* [Building and Securing a RESTful API for Multiple Clients in ASP.NET - PluralSight course](http://www.pluralsight.com/courses/building-securing-restful-api-aspdotnet) (in englischer Sprache)
+* [Getting started with OAuth 2.0 (in englischer Sprache)](http://shop.oreilly.com/product/0636920021810.do "Getting started with OAuth 2.0 (in englischer Sprache)") 
+* [Introduction to OAuth2, OpenID Connect and JSON Web Tokens (JWT) - PluralSight Course (in englischer Sprache)](http://www.pluralsight.com/courses/oauth2-json-web-tokens-openid-connect-introduction) 
+* [Building and Securing a RESTful API for Multiple Clients in ASP.NET - PluralSight course (in englischer Sprache)](http://www.pluralsight.com/courses/building-securing-restful-api-aspdotnet)
 
 ### <a id="apiaclient"></a>API-Apps – Clientfluss
 
@@ -214,4 +216,4 @@ In diesem Artikel wurden die Authentifizierungsdienste von Azure App Service fü
 
 * [Abrufen eines Zugriffstokens und Aufrufen der SharePoint-API in einer mobilen App](../app-service-mobile/app-service-mobile-dotnet-backend-get-started-connect-to-enterprise.md#obtain-token)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows-phone"
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
-	ms.date="10/23/2015"
+	ms.date="12/14/2015"
 	ms.author="wesmc"/>
 
 # Erste Schritte mit Notification Hubs für Windows Phone
@@ -92,7 +92,12 @@ Der Hub ist jetzt erstellt und so konfiguriert, dass nicht authentifizierte Bena
         channel.ChannelUriUpdated += new EventHandler<NotificationChannelUriEventArgs>(async (o, args) =>
         {
             var hub = new NotificationHub("<hub name>", "<connection string>");
-            await hub.RegisterNativeAsync(args.ChannelUri.ToString());
+            var result = await hub.RegisterNativeAsync(args.ChannelUri.ToString());
+
+            System.Windows.Deployment.Current.Dispatcher.BeginInvoke(() =>
+            {
+                MessageBox.Show("Registration :" + result.RegistrationId, "Registered", MessageBoxButton.OK);
+            });
         });
 
     Stellen Sie sicher, dass Sie den Namen des Hubs und die Verbindungszeichenfolge **DefaultListenSharedAccessSignature** einfügen, die Sie im vorigen Abschnitt erhalten haben. Dieser Code ruft den Kanal-URI für die App von MPNS ab und registriert dann diesen Kanal-URI bei Ihrem Benachrichtigungshub. Er sorgt außerdem dafür, dass der Kanal-URI in Ihrem Benachrichtigungshub registriert ist, sobald die Anwendung gestartet wird.
@@ -103,11 +108,14 @@ Der Hub ist jetzt erstellt und so konfiguriert, dass nicht authentifizierte Bena
 
    	![][14]
 
+
    	Damit stellen Sie sicher, dass Ihre App Pushbenachrichtigungen empfangen kann.
 
 7. Drücken Sie die Taste F5, um die App auszuführen.
 
 	Es wird eine Registrierungsmeldung angezeigt.
+
+8. Schließen Sie die App. Sie müssen die App schließen, um die Popupbenachrichtigung zu empfangen.
 
 ##Senden der Benachrichtigung vom Back-End aus
 
@@ -190,7 +198,6 @@ In diesem einfachen Beispiel haben Sie Benachrichtigungen an all Ihre Windows Ph
 
 <!-- URLs. -->
 [Visual Studio 2012 Express für Windows Phone]: https://go.microsoft.com/fwLink/p/?LinkID=268374
-[Azure portal]: https://manage.windowsazure.com/
 [Benachrichtigungshubs-Anleitung]: http://msdn.microsoft.com/library/jj927170.aspx
 [MPNS authenticated mode]: http://msdn.microsoft.com/library/windowsphone/develop/ff941099(v=vs.105).aspx
 [Benachrichtigen von Benutzern mit Benachrichtigungshubs]: notification-hubs-aspnet-backend-windows-dotnet-notify-users.md
@@ -199,4 +206,4 @@ In diesem einfachen Beispiel haben Sie Benachrichtigungen an all Ihre Windows Ph
 [Kachelkatalog]: http://msdn.microsoft.com/library/windowsphone/develop/hh202948(v=vs.105).aspx
 [Notification Hub - WP Silverlight tutorial]: https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSLPhoneApp
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1217_2015-->

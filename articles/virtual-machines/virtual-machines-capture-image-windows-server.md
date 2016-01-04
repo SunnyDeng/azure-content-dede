@@ -40,7 +40,7 @@ Er dient nicht zum Erstellen einer Sicherungskopie eines virtuellen Computers. E
 
 ##Erfassen des virtuellen Computers
 
-1. Stellen Sie im [Azure-Portal](http://manage.windowsazure.com) eine **Verbindung** mit dem virtuellen Computer her. Ausführliche Informationen finden Sie unter [Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird][].
+1. Stellen Sie im [klassischen Azure-Portal](http://manage.windowsazure.com) eine **Verbindung** mit dem virtuellen Computer her. Ausführliche Informationen finden Sie unter [Anmelden bei einem virtuellen Computer, auf dem Windows Server ausgeführt wird][].
 
 2.	Öffnen Sie ein Eingabeaufforderungsfenster als ein Administrator.
 
@@ -56,9 +56,9 @@ Er dient nicht zum Erstellen einer Sicherungskopie eines virtuellen Computers. E
 
 	![Sysprep ausführen](./media/virtual-machines-capture-image-windows-server/SysprepGeneral.png)
 
-7.	Sysprep fährt den virtuellen Computer herunter. Dadurch wird der Status des virtuellen Computers im Azure-Portal in **Angehalten** geändert.
+7.	Sysprep fährt den virtuellen Computer herunter. Dadurch wird der Status des virtuellen Computers im klassischen Azure-Portal in **Angehalten** geändert.
 
-8.	Klicken Sie im Azure-Portal auf **Virtuelle Computer**, und wählen Sie den virtuellen Computer aus, den Sie erfassen möchten.
+8.	Klicken Sie im klassischen Azure-Portal auf **Virtuelle Computer**, und wählen Sie den virtuellen Computer aus, den Sie erfassen möchten.
 
 9.	Klicken Sie in der Befehlsleiste auf **Aufnehmen**.
 
@@ -90,4 +90,4 @@ Das Image kann jetzt zum Erstellen virtueller Computer verwendet werden. Dazu er
 [Image capture successful]: ./media/virtual-machines-capture-image-windows-server/CaptureSuccess.png
 [Use the captured image]: ./media/virtual-machines-capture-image-windows-server/MyImagesWindows.png
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

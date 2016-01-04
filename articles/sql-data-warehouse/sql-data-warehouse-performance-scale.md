@@ -36,9 +36,9 @@ Wenn Sie eine Anwendung mit wechselnder Workload haben, verschieben Sie die Leis
 ## Aufwärts- und Abwärtsskalieren von Compute-Ressourcen
 Unabhängig vom Cloudspeicher ermöglicht Ihnen die Flexibilität von SQL Data Warehouse das Vergrößern, Verkleinern oder Anhalten der Rechenleistung mithilfe eines Schiebereglers für Data Warehouse-Einheiten (DWUs). Dies bietet Ihnen die Flexibilität, die Rechenleistung auf einen Idealwert für Ihr Unternehmen zu optimieren.
 
-Um die Rechenleistung zu erhöhen, können Sie mithilfe des Schiebereglers für die Skalierung im Azure-Portal weitere DWUs hinzufügen. Sie können auch mithilfe von T-SQL, REST-APIs oder Powershell-Cmdlets DWUs hinzufügen. Durch Aufwärts- und Abwärtsskalieren werden alle laufenden oder sich in einer Warteschlange befindenden Aktivitäten abgebrochen, aber in wenigen Sekunden abgeschlossen, sodass Sie mit mehr oder weniger Rechenleistung fortfahren können.
+Um die Rechenleistung zu erhöhen, können Sie mithilfe des Schiebereglers für die Skalierung im klassischen Azure-Portal weitere DWUs hinzufügen. Sie können auch mithilfe von T-SQL, REST-APIs oder Powershell-Cmdlets DWUs hinzufügen. Durch Aufwärts- und Abwärtsskalieren werden alle laufenden oder sich in einer Warteschlange befindenden Aktivitäten abgebrochen, aber in wenigen Sekunden abgeschlossen, sodass Sie mit mehr oder weniger Rechenleistung fortfahren können.
 
-Im [Azure-Portal][] können Sie oben auf der SQL Data Warehouse-Seite auf das Symbol zum Skalieren klicken und anschließend mithilfe des Schiebereglers die Anzahl der DWUs, die auf Data Warehouse angewendet werden, erhöhen oder verringern. Klicken Sie anschließend auf „Speichern“. Wenn Sie die Skalierung lieber programmgesteuert ändern, zeigt der folgende T-SQL-Code, wie Sie die DWU-Zuordnung für Ihr SQL Data Warehouse anpassen:
+Im [klassischen Azure-Portal][] können Sie oben auf der SQL Data Warehouse-Seite auf das Symbol zum Skalieren klicken und anschließend mithilfe des Schiebereglers die Anzahl der DWUs, die auf Data Warehouse angewendet werden, erhöhen oder verringern. Klicken Sie anschließend auf „Speichern“. Wenn Sie die Skalierung lieber programmgesteuert ändern, zeigt der folgende T-SQL-Code, wie Sie die DWU-Zuordnung für Ihr SQL Data Warehouse anpassen:
 
 ```
 ALTER DATABASE MySQLDW 
@@ -58,7 +58,7 @@ SQL Data Warehouse bietet die einzigartige Möglichkeit zum Pausieren und Fortse
 
 Durch das Pausieren werden die Serverressourcen zurück an den Pool der verfügbaren Ressourcen im Rechenzentrum gegeben, und das Fortsetzen ruft die erforderlichen Serverressourcen für die DWUs ab, die Sie festgelegt haben, und weist sie der Data Warehouse-Instanz zu.
 
-Das Pausieren und Fortsetzen der Rechenleistung erfolgt über das [Azure-Portal][], über REST-APIs oder über Powershell. Durch das Pausieren werden alle ausgeführten oder sich in einer Warteschlange befindenden Aktivitäten abgebrochen. Wenn Sie zurückkehren, können Sie die Compute-Ressourcen innerhalb weniger Sekunden wieder in Betrieb nehmen.
+Das Pausieren und Fortsetzen der Rechenleistung erfolgt über das [klassische Azure-Portal][], über REST-APIs oder über Powershell. Durch das Pausieren werden alle ausgeführten oder sich in einer Warteschlange befindenden Aktivitäten abgebrochen. Wenn Sie zurückkehren, können Sie die Compute-Ressourcen innerhalb weniger Sekunden wieder in Betrieb nehmen.
 
 Der folgende Code zeigt, wie Sie eine Pause mithilfe von PowerShell ausführen:
 
@@ -91,6 +91,7 @@ Die Leistungsübersicht finden Sie unter [Leistungsübersicht][].
 
 <!--Other Web references-->
 
-[Azure-Portal]: http://portal.azure.com/
+[klassische Azure-Portal]: http://portal.azure.com/
+[klassischen Azure-Portal]: http://portal.azure.com/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -14,10 +14,15 @@
 	ms.tgt_pltfrm="NA"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="09/14/2015"
+	ms.date="12/07/2015"
 	ms.author="glenga"/>
 
 # Ändern des Datenmodells eines mobilen .NET-Backend-Dienstes
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 In diesem Thema wird erläutert, wie Sie Code First-Migrationen in Entity Framework zum Ändern des Datenmodells einer vorhandenen Azure SQL-Datenbank verwenden, um den Verlust vorhandener Daten zu vermeiden. Bei diesem Verfahren wird vorausgesetzt, dass Sie Ihr .NET-Back-End-Projekt bereits in Azure veröffentlicht haben, dass ihre Datenbank Daten enthält und dass das remote und das lokale Datenmodell noch synchron sind. Außerdem werden in diesem Thema die standardmäßigen von Azure Mobile Services implementierten Code First-Initialisierer beschrieben, die während der Entwicklung verwendet werden. Mit diesen Initialisierern können Sie einfach Schemaänderungen ohne Verwendung von Code First-Migrationen ausführen, wenn keine vorhandenen Daten beibehalten werden müssen.
 
@@ -41,7 +46,7 @@ Mobile Services stellt in einem Projekt für mobile .NET-Back-End-Dienste zwei B
 
 Durch beide Initialisierer werden alle Tabellen, Sichten, Funktionen und Prozeduren in dem vom mobilen Dienst verwendeten Schema aus der Datenbank gelöscht.
 
-+ **ClearDatabaseSchemaIfModelChanges** <br/> Schemaobjekte werden nur gelöscht, wenn Code First eine Änderung im Datenmodell erkennt. Der Standardinitialisierer in einem .NET-Back-End-Projekt, das vom [Azure-Verwaltungsportal] heruntergeladen wurde, erbt von dieser Basisklasse.
++ **ClearDatabaseSchemaIfModelChanges** <br/> Schemaobjekte werden nur gelöscht, wenn Code First eine Änderung im Datenmodell erkennt. Der Standardinitialisierer in einem .NET-Back-End-Projekt, das vom [klassischen Azure-Portal] heruntergeladen wurde, erbt von dieser Basisklasse.
 
 + **ClearDatabaseSchemaAlways**: <br/> Schemaobjekte werden bei jedem Zugriff auf das Datenmodell gelöscht. Verwenden Sie diese Basisklasse, um die Datenbank zurückzusetzen, ohne dass Sie eine Änderung am Datenmodell vornehmen müssen.
 
@@ -109,7 +114,7 @@ Gehen Sie folgendermaßen vor, um Migrations zu aktivieren und Änderungen des D
 
 10. Veröffentlichen Sie den mobilen Dienst wieder in Azure, führen Sie dann die Client-App aus, um auf die Daten zugreifen zu können, und prüfen Sie, ob die Daten geladen werden und kein Fehler auftritt.
 
-13. (Optional) Wählen Sie im [Azure-Verwaltungsportal] Ihren mobilen Dienst aus, und klicken Sie auf **Konfigurieren** > **SQL-Datenbank**. Die SQL-Datenbankseite für die Datenbank Ihres mobilen Dienstes wird aufgerufen.
+13. (Optional) Wählen Sie im [klassischen Azure-Portal] Ihren mobilen Dienst aus, und klicken Sie auf **Konfigurieren** > **SQL-Datenbank**. Die SQL-Datenbankseite für die Datenbank Ihres mobilen Dienstes wird aufgerufen.
 
 14. (Optional) Klicken Sie auf **Manage**, melden Sie sich auf Ihrem SQL-Datenbankserver an, klicken Sie dann auf **Design**, und prüfen Sie, ob die Schemaänderungen in Azure durchgeführt wurden.
 
@@ -122,7 +127,7 @@ Bevor Sie Code First-Migrationen mit Ihrem .NET-Back-End-Projekt verwenden, soll
         AutomaticMigrationsEnabled = false;
         SetSqlGenerator("System.Data.SqlClient", new EntityTableSqlGenerator());
     }
-    
+
 ##<a name="seeding"></a>Seeding von Daten bei Migrationen
 
 Sie können veranlassen, dass Migrations bei Ausführung einer Migration Seeddaten in die Datenbank einfügt. Die **Configuration**-Klasse verfügt über eine **Seed**-Methode, die Sie überschreiben können, um Daten einzufügen oder zu aktualisieren. Die Codedatei Configuration.cs wird in den Migrations-Ordner eingefügt, wenn Migrations aktiviert wird. Die nachfolgenden Beispiele zeigen, wie die [Seed]-Methode überschrieben wird, um durch Seeding Daten in die Tabelle **TodoItems** einzufügen. Die [Seed]-Methode wird im Anschluss an die Migration zur neuesten Version aufgerufen.
@@ -169,11 +174,11 @@ Dieser Code ruft die Hilfserweiterungsmethode [AddOrUpdate] auf, um Seed-Daten i
 <!-- URLs -->
 [DropCreateDatabaseIfModelChanges]: http://msdn.microsoft.com/library/gg679604(v=vs.113).aspx
 [Seed]: http://msdn.microsoft.com/library/hh829453(v=vs.113).aspx
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
+[klassischen Azure-Portal]: https://manage.windowsazure.com/
 [DbContext]: http://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.113).aspx
 [AddOrUpdate]: http://msdn.microsoft.com/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx
 [TableController<TEntity>]: https://msdn.microsoft.com/library/azure/dn643359.aspx
 [EntityData]: https://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobile.service.entitydata.aspx
 [DbSet<T>]: https://msdn.microsoft.com/library/azure/gg696460.aspx
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

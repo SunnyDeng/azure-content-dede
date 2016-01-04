@@ -72,7 +72,7 @@ Sie können mit den Azure-Vorlagen beginnen, indem Sie die verschiedenen Tools z
 
 ### Azure-Portal
 
-Das Azure-Portal bietet weiterhin die Möglichkeit, virtuelle Computer und virtuelle Computer (Preview) zugleich bereitzustellen. Im Azure-Portal sind auch Bereitstellungen benutzerdefinierter Vorlagen möglich.
+Das Azure-Portal bietet weiterhin die Möglichkeit, virtuelle Computer gleichzeitig mit dem klassischen Bereitstellungsmodell und mit dem Ressourcen-Manager-Bereitstellungsmodell bereitzustellen. Im Azure-Portal sind auch Bereitstellungen mit benutzerdefinierten Vorlagen möglich.
 
 ### Windows Azure PowerShell
 
@@ -116,4 +116,4 @@ Dies wird zurzeit nicht unterstützt. Die mit den neuen Azure-Ressourcen-Manager
 
 Einen umfassenden Satz von Startervorlagen finden Sie unter [Schnellstartvorlagen für den Azure-Ressourcen-Manager](http://azure.microsoft.com/documentation/templates/).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -29,7 +29,7 @@ Im Allgemeinen sollten Sie immer Folgendes sicherstellen:
 2. Sie verwenden die neueste Version der Plattform-SDKs. 
 3. Führen Sie Tests auf einem Originalgerät und einem Emulator durch, da bestimmte Probleme nur beim Emulator auftreten. 
 4. Es treten keine der Beschränkungen/Drosselungen für Mobile Engagement auf, die [hier](azure-subscription-service-limits.md) dokumentiert sind.
-5. Wenn Sie keine Verbindung mit dem Engagement Mobile Service Back-End herstellen können oder festzustellen, dass Daten nicht kontinuierlich geladen werden, vergewissern Sie sich [hier](https://azure.microsoft.com/de-DE/status/), dass keine aktiven Servicevorfälle vorliegen.
+5. Wenn Sie keine Verbindung mit dem Engagement Mobile Service Back-End herstellen können oder festzustellen, dass Daten nicht kontinuierlich geladen werden, vergewissern Sie sich [hier](https://azure.microsoft.com/status/), dass keine aktiven Servicevorfälle vorliegen.
 
 ## Probleme beim „Überwachen“
 
@@ -78,7 +78,9 @@ Im Folgenden finden Sie weitere plattformspezifische Anweisungen zur Problembeha
 
 	- Stellen Sie sicher, dass die Zertifikate für iOS-Pushbenachrichtigungen gültig und nicht abgelaufen sind. 
 	- Vergewissern Sie sich, dass Sie ein *Produktionszertifikat* in Ihrer Mobile Engagement-App korrekt konfiguriert haben. 
+	- Stellen Sie sicher, dass Sie den Test auf eine *realen, physischen Gerät* durchführen. Der iOS-Simulator kann keine Pushnachrichten verarbeiten.
 	- Stellen Sie sicher, dass die Bündel-ID in der mobilen App ordnungsgemäß konfiguriert ist. Anweisungen finden Sie [hier](https://developer.apple.com/library/prerelease/ios/documentation/IDEs/Conceptual/AppDistributionGuide/AddingCapabilities/AddingCapabilities.html#//apple_ref/doc/uid/TP40012582-CH26-SW6).
+	- Verwenden Sie beim Testen die „Ad Hoc“-Verteilung in Ihrem mobile Bereitstellungsprofil. Sie werden nicht benachrichtigt, wenn Ihre App mithilfe von „Debug“ kompiliert wird.
 
 2. **Android**
 
@@ -87,7 +89,7 @@ Im Folgenden finden Sie weitere plattformspezifische Anweisungen zur Problembeha
 	    	<meta-data android:name="engagement:gcm:sender" android:value="************\n" />
 	    
 	- Stellen Sie sicher, dass in der Android-Manifestdatei keine Berechtigungen fehlen oder falsch konfiguriert sind.
-	- Wenn Sie Systembenachrichtigungen empfangen, aber keine In-App-Benachrichtigungen, überprüfen Sie den Abschnitt [Geben Sie ein Symbol für Benachrichtigungen an](mobile-engagement-android-get-started.md), da in der Android-Manifestdatei wahrscheinlich nicht das richtige Symbol angegeben ist. 
+	- Wenn Sie Systembenachrichtigungen empfangen, aber keine In-App-Benachrichtigungen, überprüfen Sie den Abschnitt [Angeben eines Symbol für Benachrichtigungen](mobile-engagement-android-get-started.md), da in der Android-Manifestdatei wahrscheinlich nicht das richtige Symbol angegeben ist. 
 	- Wenn Sie eine BigPicture-Benachrichtigung senden und über externe Bildserver verfügen, müssen diese "GET" und "HEAD" für HTTP unterstützen.
 
 3. **Windows**
@@ -118,4 +120,4 @@ Wenn Sie das Problem nicht selbst beheben können, haben Sie folgende Möglichke
 	- Mobile Engagement SDK-Version (z. B. „Android SDK v2.1.0“)
 	- Fehlerdetails mit der genauen Fehlermeldung und dem Fehlerszenario
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1217_2015-->

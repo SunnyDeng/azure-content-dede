@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/26/2015"
+	ms.date="11/24/2015"
 	ms.author="femila"/>
 
 # Konfigurieren der automatischen Geräteregistrierung für in eine Domäne eingebundene Windows 7-Geräte
@@ -52,4 +52,12 @@ Sie können die Registrierung Ihrer in eine Domäne eingebundenen Windows 7-Ger�
 
 Das Windows-Ereignisprotokoll auf dem Windows 7-Computer zeigt Meldungen im Zusammenhang mit der Arbeitsbereichverknüpfung an. Sie finden dort sowohl Meldungen zu erfolgreichen als auch fehlgeschlagenen Arbeitsbereichverknüpfungs-Ereignissen. Das Ereignisprotokoll finden Sie in der Ereignisanzeige unter "Anwendungs- und Dienstprotokolle > Microsoft -Arbeitsbereichverknüpfung".
 
-<!---HONumber=Nov15_HO1-->
+## Weitere Themen
+
+- [Azure Active Directory-Geräteregistrierung – Übersicht](active-directory-conditional-access-device-registration-overview.md)
+- [Automatische Geräteregistrierung bei Azure Active Directory für in Domänen eingebundene Windows-Geräte](active-directory-conditional-access-automatic-device-registration.md)
+- [Konfigurieren der automatischen Geräteregistrierung für in eine Domäne eingebundene Windows 8.1-Geräte](active-directory-conditional-access-automatic-device-registration-windows8_1.md)
+
+ 
+
+<!---HONumber=AcomDC_1203_2015-->

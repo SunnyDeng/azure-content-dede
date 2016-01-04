@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="10/15/2015"
+   ms.date="12/02/2015"
    ms.author="v-sharos" />
 
 # Verwenden des StorSimple Snapshot Managers zum Anzeigen und Verwalten von Volumes
@@ -103,7 +103,7 @@ Gehen Sie folgendermaßen vor, um Informationen zu lokalen und Azure StorSimple-
     :--------------|:-------------
     Name | Die Spalte **Name** enthält den Laufwerkbuchstaben, der den jeweiligen ermittelten Volumes zugeordnet wurde.
     Gerät | Die Spalte **Gerät** enthält die IP-Adresse des mit dem Hostcomputer verbundenen Geräts.
-    Device Volume Name | Die Spalte **Device Volume Name** enthält den Namen des Gerätevolumes, zu dem das ausgewählte Volume gehört. Dies ist der im Azure-Verwaltungsportal für das Volume festgelegte Volumename.
+    Device Volume Name | Die Spalte **Device Volume Name** enthält den Namen des Gerätevolumes, zu dem das ausgewählte Volume gehört. Dies ist der im klassischen Azure-Portal für das Volume festgelegte Volumename.
     Access Paths | Die Spalte **Access Paths** zeigt den Zugriffspfad zum Volume an. Dies ist der Laufwerkbuchstabe oder der Bereitstellungspunkt, über den auf dem Hostcomputer auf das Volume zugegriffen werden kann.
  
 ## Löschen von Volumes
@@ -153,7 +153,7 @@ Wenden Sie das folgende Verfahren an, um eine Sicherung eines Basisvolumes zu ko
 
 Vorbereitungen
 
-- Stellen Sie sicher, dass das StorSimple-Gerät und der Hostcomputer ordnungsgemäß konfiguriert sind. Weitere Informationen finden Sie unter [Bereitstellen lokaler StorSimple-Geräte](storsimple-deployment-walkthrough.md).
+- Stellen Sie sicher, dass das StorSimple-Gerät und der Hostcomputer ordnungsgemäß konfiguriert sind. Weitere Informationen finden Sie unter [Bereitstellen des lokalen StorSimple-Geräts](storsimple-deployment-walkthrough.md).
 
 - Installieren und konfigurieren Sie den StorSimple Snapshot Manager. Weitere Informationen finden Sie unter [Bereitstellen des StorSimple Snapshot Managers](storsimple-snapshot-manager-deployment.md).
 
@@ -195,7 +195,7 @@ Führen Sie die folgenden Schritte aus, um die Sicherung eines dynamisch gespieg
 
 Vorbereitungen
 
-- Stellen Sie sicher, dass das StorSimple-Gerät und der Hostcomputer ordnungsgemäß konfiguriert sind. Weitere Informationen finden Sie unter [Bereitstellen lokaler StorSimple-Geräte](storsimple-deployment-walkthrough.md).
+- Stellen Sie sicher, dass das StorSimple-Gerät und der Hostcomputer ordnungsgemäß konfiguriert sind. Weitere Informationen finden Sie unter [Bereitstellen des lokalen StorSimple-Geräts](storsimple-deployment-walkthrough.md).
 
 - Installieren und konfigurieren Sie den StorSimple Snapshot Manager. Weitere Informationen finden Sie unter [Bereitstellen des StorSimple Snapshot Managers](storsimple-snapshot-manager-deployment.md).
 
@@ -265,10 +265,10 @@ Verwenden Sie das folgende Verfahren zum Konfigurieren eines dynamisch gespiegel
 
 ## Nächste Schritte
 
-- Informationen zum [Verwenden von StorSimple Snapshot Manager zum Verwalten der StorSimple-Lösung](storsimple-snapshot-manager-admin.md).
+- Erfahren Sie mehr über das [Verwenden von StorSimple Snapshot Manager zum Verwalten der StorSimple-Lösung](storsimple-snapshot-manager-admin.md).
 - Erfahren Sie mehr über das [Verwenden des StorSimple Snapshot Managers zum Erstellen und Verwalten von Volumegruppen](storsimple-snapshot-manager-manage-volume-groups.md).
 
 <!--Reference links-->
 [1]: https://msdn.microsoft.com/library/ee338480(v=ws.10).aspx
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

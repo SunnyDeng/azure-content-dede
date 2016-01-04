@@ -18,6 +18,14 @@
 
 #Windows Universal Apps SDK-Versionshinweise
 
+##3\.2.0 (20.11.2015)
+
+-   Unterstützung für universelle Windows 10-Plattform-Anwendungen hinzugefügt.
+-   Freigabefunktion für Pushkanal hinzugefügt, um Kanalkonflikte zu beheben (jetzt kompatibel mit Azure Notification Hubs).
+-   Absturz beim Anfordern der Geräte-ID direkt nach der Initialisierung behoben.
+-   Verbesserungen bei Konsolenprotokollen.
+-   Absturz beim Analysieren einiger nicht behandelter Ausnahmen behoben.
+
 ##3\.1.0 (21.05.2015)
 
 -   Die Mobile Engagement-Geräte-ID basiert jetzt auf einer während der Installation generierten GUID.
@@ -41,4 +49,4 @@
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

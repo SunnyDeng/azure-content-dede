@@ -44,6 +44,8 @@ Dieser Ordner enthält alle von Mobile Engagement benötigten Ressourcen. Sie k�
 
 ### /overlay-Ordner
 
+- `EngagementBaseOverlay.cs`: Der Basiscode, der von den Überlagerungen `Announcement` und `Notification` verwendet wird.
+
 - `EngagementOverlayAnnouncement.xaml` : Der xaml-Entwurf für `Announcement`
 
 - `EngagementOverlayAnnouncement.xaml.cs` : Der mit `EngagementOverlayAnnouncement.xaml` verknüpfte Code
@@ -55,4 +57,4 @@ Dieser Ordner enthält alle von Mobile Engagement benötigten Ressourcen. Sie k�
 - `EngagementPageOverlay.cs` : Der Anzeigecode der `Overlay`-Ankündigung und -Benachrichtigung.
   
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

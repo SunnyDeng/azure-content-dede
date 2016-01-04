@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="09/07/2015"  
+	ms.date="12/05/2015"  
 	ms.author="juliako"/>
 
 # Einrichten der Umgebung
@@ -24,9 +24,11 @@
 - [REST](https://msdn.microsoft.com/library/azure/dn167014.aspx)
 <a id="create_account"></a>
 
+Die folgenden Schritte beschreiben die erforderlichen Voraussetzungen für die Entwicklung mit Azure Media Services.
+
 ## Erstellen eines Media Services-Kontos
 
-Verwenden Sie das Azure-Portal, das .NET-SDK oder die REST-API zum Erstellen eines Azure Media Services-Kontos.
+Verwenden Sie das klassische Azure-Portal, das .NET-SDK oder die REST-API zum Erstellen eines Azure Media Services-Kontos.
 
 <a id="setup_dev_env"></a>
 ## Einrichten der Entwicklungsumgebung  
@@ -51,4 +53,4 @@ Wählen Sie .NET oder REST API, um eine programmgesteuerte Verbindung mit Azure 
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

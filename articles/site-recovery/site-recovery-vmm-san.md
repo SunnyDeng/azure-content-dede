@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Einrichten von Schutz zwischen lokalen VMM-Standorten mit einem SAN"
+	pageTitle="Einrichten von Schutz zwischen lokalen VMM-Standorten mit SAN mit Azure Site Recovery | Microsoft Azure"
 	description="Azure Site Recovery koordiniert Replikation, Failover und Wiederherstellung von virtuellen Hyper-V-Computern zwischen lokalen Standorten mithilfe der SAN-Replikation."
 	services="site-recovery"
 	documentationCenter=""
@@ -16,7 +16,7 @@
 	ms.date="10/12/2015"
 	ms.author="raynew"/>
 
-# Einrichten von Schutz zwischen lokalen VMM-Standorten mit einem SAN
+# Einrichten von Schutz zwischen lokalen VMM-Standorten mit SAN mit Azure Site Recovery
 
 Azure Site Recovery unterstützt Ihre Strategie für Geschäftskontinuität und Notfallwiederherstellung, indem Replikation, Failover und Wiederherstellung virtueller Computer und physischer Server aufeinander abgestimmt werden. Informationen zu möglichen Bereitstellungsszenarios finden Sie unter [Übersicht über Azure Site Recovery](site-recovery-overview.md).
 
@@ -105,7 +105,7 @@ Die Vorbereitung der VMM-Infrastruktur umfasst folgende Schritte:
 
 Site Recovery orchestriert den Schutz für virtuelle Computer auf lokalen Hyper-V-Hostservern in VMM-Clouds. Sie müssen sicherstellen, dass diese Clouds ordnungsgemäß eingerichtet sind, bevor Sie mit der Bereitstellung von Site Recovery beginnen. Hilfreiche Ressourcen:
 
-- [What’s New in Private Cloud](http://go.microsoft.com/fwlink/?LinkId=324952) (Neues in der Private Cloud; in englischer Sprache)
+- [What’s New in Private Cloud (Neues in der Private Cloud; in englischer Sprache)](http://go.microsoft.com/fwlink/?LinkId=324952)
 - [VMM 2012 and the Clouds](http://go.microsoft.com/fwlink/?LinkId=324956) (VMM 2012 und die Clouds; in englischer Sprache) im Blog von Gunter Danzeisen.
 - [Vorbereiten der VMM-Infrastruktur – SAN](https://msdn.microsoft.com/library/azure/dn883636.aspx#BKMK_Fabric)
 - [Erstellen einer privaten Cloud in VMM](http://go.microsoft.com/fwlink/?LinkId=324953)
@@ -218,7 +218,7 @@ Wenn Sie eine Netzwerkzuordnung konfigurieren möchten, gehen Sie wie folgt vor:
 
 5. Geben Sie auf der Seite **Internetverbindung** an, wie sich der Anbieter auf dem VMM-Server mit dem Internet verbinden soll. Wählen Sie *Proxyeinstellungen des Systems verwenden* aus, um die Standard-Internetverbindungseinstellungen auf dem Server zu verwenden.
 
-	![Interneteinstellungen](./media/site-recovery-vmm-san/VMMASRRegisterProxyDetailsScreen.png) – Wenn Sie einen benutzerdefinierten Proxy verwenden möchten, sollten Sie diesen vor der Installation des Anbieters einrichten. Wenn Sie benutzerdefinierte Proxyeinstellungen konfigurieren, wird ein Test ausgeführt, um die Proxyverbindung zu überprüfen. – Wenn Sie einen benutzerdefinierten Proxy verwenden oder Ihr Standardproxy eine Authentifizierung erfordert, müssen Sie die Proxydetails einschließlich der Proxyadresse und des Proxyports eingeben. – Der VMM-Server und die Hyper-V-Hosts müssen auf die folgenden URLs Zugriff haben. – *.hypervrecoverymanager.windowsazure.com – *.accesscontrol.windows.net – *.backup.windowsazure.com – *.blob.core.windows.net – *.store.core.windows.net – Erlauben Sie die unter [IP-Bereiche des Azure-Rechenzentrums](http://go.microsoft.com/fwlink/?LinkId=511094) beschriebenen IP-Adressen und das HTTPS (443)-Protokoll. Fügen Sie die IP-Adressbereiche der zu verwendenden Azure-Region sowie die IP-Adressbereiche der westlichen USA einer Positivliste hinzu.
+	![Interneteinstellungen](./media/site-recovery-vmm-san/VMMASRRegisterProxyDetailsScreen.png) - Wenn Sie einen benutzerdefinierten Proxy verwenden möchten, sollten Sie diesen vor der Installation des Anbieters einrichten. Wenn Sie benutzerdefinierte Proxyeinstellungen konfigurieren, wird ein Test ausgeführt, um die Proxyverbindung zu überprüfen. - Wenn Sie einen benutzerdefinierten Proxy verwenden oder Ihr Standardproxy eine Authentifizierung erfordert, müssen Sie die Proxydetails einschließlich der Proxyadresse und des Proxyports eingeben. - Der VMM-Server und die Hyper-V-Hosts müssen auf die folgenden URLs Zugriff haben. - *.hypervrecoverymanager.windowsazure.com - *.accesscontrol.windows.net - *.backup.windowsazure.com - *.blob.core.windows.net - *.store.core.windows.net - Erlauben Sie die unter [IP-Bereiche des Azure-Rechenzentrums](http://go.microsoft.com/fwlink/?LinkId=511094) beschriebenen IP-Adressen und das HTTPS (443)-Protokoll. Fügen Sie die IP-Adressbereiche der zu verwendenden Azure-Region sowie die IP-Adressbereiche der westlichen USA einer Positivliste hinzu.
 
 	- Wenn Sie einen benutzerdefinierten Proxy verwenden, wird ein ausführendes VMM-Konto (DRAProxyAccount) automatisch mit den angegebenen Proxyanmeldeinformationen erstellt. Konfigurieren Sie den Proxyserver so, dass dieses Konto erfolgreich authentifiziert werden kann. In der VMM-Konsole können die Einstellungen des ausführenden VMM-Kontos geändert werden. Zu diesem Zweck öffnen Sie den Arbeitsbereich "Einstellungen", erweitern Sie "Sicherheit", klicken Sie auf "Ausführende Konten", und ändern Sie das Kennwort für DRAProxyAccount. Sie müssen den VMM-Dienst neu starten, damit diese Einstellung wirksam wird.
 
@@ -383,4 +383,4 @@ Auf der Registerkarte **Jobs** können Sie Aufträge anzeigen, ein Drill-Down zu
 
 Weitere Informationen zur Interaktion mit Aufträgen und dem Dashboard finden Sie unter [Betrieb und Überwachung](http://go.microsoft.com/fwlink/?LinkId=398534).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

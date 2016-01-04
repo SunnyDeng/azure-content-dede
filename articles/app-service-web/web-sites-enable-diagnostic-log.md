@@ -22,7 +22,7 @@
 
 Azure bietet integrierte Diagnosefunktionen zur Unterstützung beim Debuggen einer [App Service-Web-App](http://go.microsoft.com/fwlink/?LinkId=529714). In diesem Artikel erfahren Sie, wie Sie die Diagnoseprotokollierung aktivieren und Ihrer Anwendung Instrumentierung hinzufügen sowie wie Sie die von Azure protokollierten Informationen abrufen.
 
-In diesem Artikel wird die Verwendung von Diagnoseprotokollen mit dem [Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715), Azure PowerShell und der Azure-Befehlszeilenschnittstelle (Azure-CLI) beschrieben. Informationen zum Arbeiten mit Diagnoseprotokollen in Visual Studio finden Sie unter [Problembehandlung von Azure in Visual Studio](web-sites-dotnet-troubleshoot-visual-studio.md).
+In diesem Artikel wird die Verwendung von Diagnoseprotokollen mit dem [Azure-Portal](https://portal.azure.com), Azure PowerShell und der Azure-Befehlszeilenschnittstelle (Azure-CLI) beschrieben. Informationen zum Arbeiten mit Diagnoseprotokollen in Visual Studio finden Sie unter [Problembehandlung von Azure in Visual Studio](web-sites-dotnet-troubleshoot-visual-studio.md).
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
@@ -50,7 +50,7 @@ App Service-Web-Apps protokollieren auch Bereitstellungsinformationen, wenn Sie 
 
 ## <a name="enablediag"></a>Aktivieren der Diagnose
 
-Zum Aktivieren der Diagnose im [Azure-Vorschauportal](https://portal.azure.com) navigieren Sie zum Blatt für Ihre Web-App und klicken auf **Einstellungen > Diagnoseprotokolle**.
+Zum Aktivieren der Diagnose im [Azure-Portal](https://portal.azure.com) navigieren Sie zum Blatt für Ihre Web-App und klicken auf **Einstellungen > Diagnoseprotokolle**.
 
 <!-- todo:cleanup dogfood addresses in screenshot -->
 ![Protokolle Teil](./media/web-sites-enable-diagnostic-log/logspart.png)
@@ -59,9 +59,9 @@ Wenn Sie die **Anwendungsdiagnose** aktivieren, können Sie auch die **Ebene** a
 
 > [AZURE.NOTE]Im Gegensatz zum Ändern der Datei "web.config" wird durch das Aktivieren der Anwendungsdiagnose oder durch das Ändern des Diagnoseprotokollumfangs nicht die Anwendungsdomäne neu gestartet, in der die Anwendung ausgeführt wird.
 
-Im [Azure-Portal](https://manage.windowsazure.com) der Web-App auf der Registerkarte **Konfigurieren** können Sie **Speicher** oder **Dateisystem** für **Webserverprotokollierung** auswählen. Durch Auswahl von **storage** können Sie ein Speicherkonto festlegen und dann einen Blob-Container hinzufügen, in den die Protokolle geschrieben werden. Alle anderen Protokolle für **site diagnostics** werden nur in das Dateisystem geschrieben.
+Im [klassischen Portal](https://manage.windowsazure.com) der Web-App auf der Registerkarte **Konfigurieren** können Sie **Speicher** oder **Dateisystem** für **Webserverprotokollierung** auswählen. Durch Auswahl von **storage** können Sie ein Speicherkonto festlegen und dann einen Blob-Container hinzufügen, in den die Protokolle geschrieben werden. Alle anderen Protokolle für **site diagnostics** werden nur in das Dateisystem geschrieben.
 
-Die Registerkarte **Konfigurieren** im [Azure-Portal](https://manage.windowsazure.com) der Web-App verfügt außerdem über zusätzliche Einstellungen für die Anwendungsdiagnose:
+Die Registerkarte **Konfigurieren** im [klassischen Portal](https://manage.windowsazure.com) der Web-App verfügt außerdem über zusätzliche Einstellungen für die Anwendungsdiagnose:
 
 * **Dateisystem** - Speichert die Anwendungsdiagnoseinformationen im Dateisystem der Web-App. Diese Dateien können über FTP aufgerufen werden oder als ZIP-Archiv mit Azure PowerShell oder mit der Azure-Befehlszeilenschnittstelle (Azure-CLI) heruntergeladen werden.
 * **Table storage** - Speichert die Anwendungsdiagnoseinformationen im angegebenen Azure-Speicherkonto unter dem Tabellennamen.
@@ -99,7 +99,7 @@ Protokolle werden in der folgenden Verzeichnisstruktur gespeichert:
 
 ### FTP
 
-Um Diagnoseinformationen über FTP aufzurufen, wechseln Sie im [Azure-Portal](https://manage.windowsazure.com) zur Seite **Dashboard** Ihrer Web-App. Im Abschnitt **quick glance** können Sie den Link **FTP Diagnostic Logs** verwenden, um die Protokolldateien über FTP aufzurufen. Der Eintrag **Deployment/FTP User** listet den Benutzernamen auf, der zum Zugriff auf die FTP-Site verwendet werden sollte.
+Um Diagnoseinformationen über FTP aufzurufen, wechseln Sie im [klassischen Portal](https://manage.windowsazure.com) zur Seite **Dashboard** Ihrer Web-App. Im Abschnitt **quick glance** können Sie den Link **FTP Diagnostic Logs** verwenden, um die Protokolldateien über FTP aufzurufen. Der Eintrag **Deployment/FTP User** listet den Benutzernamen auf, der zum Zugriff auf die FTP-Site verwendet werden sollte.
 
 > [AZURE.NOTE]Falls der Eintrag **Bereitstellung/FTP-Benutzer** nicht festgelegt ist oder Sie das Kennwort für diesen Benutzer vergessen haben, können Sie einen neuen Benutzer mit zugehörigem Kennwort über den Link **Anmeldeinformationen für die Bereitstellung zurücksetzen** im Abschnitt **Auf einen Blick** im **Dashboard** erstellen.
 
@@ -132,7 +132,7 @@ Visual Studio Application Insights bietet Tools zum Filtern und Suchen von Proto
 2. Fügen Sie Ihrem Projekt das Ablaufverfolgungs-Listener-Paket hinzu.
  * Klicken Sie mit der rechten Maustaste auf Ihr Projekt, und wählen Sie "NuGet-Pakete verwalten" aus. Wählen Sie `Microsoft.ApplicationInsights.TraceListener` [Weitere Informationen](../application-insights/app-insights-asp-net-trace-logs.md) aus
 3. Laden Sie das Projekt hoch, und führen sie es zum Generieren von Protokolldaten aus.
-4. Navigieren Sie im [Azure-Vorschauportal](http://portal.azure.com/) zu der neuen Application Insights-Ressource, und öffnen Sie **Suche**. Ihre Protokolldaten werden zusammen mit der Anforderung, Nutzung und sonstiger Telemetrie angezeigt. Einige Telemetrie kann einige Minuten in Anspruch nehmen, bis sie angezeigt wird: Klicken Sie auf "Aktualisieren". [Weitere Informationen](../application-insights/app-insights-diagnostic-search.md)
+4. Navigieren Sie im [Azure-Portal](http://portal.azure.com/) zu der neuen Application Insights-Ressource, und öffnen Sie **Suche**. Ihre Protokolldaten werden zusammen mit der Anforderung, Nutzung und sonstiger Telemetrie angezeigt. Einige Telemetrie kann einige Minuten in Anspruch nehmen, bis sie angezeigt wird: Klicken Sie auf "Aktualisieren". [Weitere Informationen](../application-insights/app-insights-diagnostic-search.md)
 
 [Erfahren Sie mehr über die Leistungsüberwachung mit Application Insights](../insights-perf-analytics.md)
 
@@ -259,7 +259,7 @@ Webserverprotokolle werden im [erweiterten W3C-Protokolldateiformat](http://msdn
 
 ##<a name="nextsteps"></a> Nächste Schritte
 
-- [Überwachen von Web-Apps](/de-DE/manage/services/web-sites/how-to-monitor-websites/)
+- [Überwachen von Web-Apps](/manage/services/web-sites/how-to-monitor-websites/)
 - [Problembehandlung von Azure-Web-Apps in Visual Studio](web-sites-dotnet-troubleshoot-visual-studio.md)
 - [Analyse von Web-App-Protokollen in HDInsight](http://gallery.technet.microsoft.com/scriptcenter/Analyses-Windows-Azure-web-0b27d413)
 
@@ -270,4 +270,4 @@ Webserverprotokolle werden im [erweiterten W3C-Protokolldateiformat](http://msdn
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

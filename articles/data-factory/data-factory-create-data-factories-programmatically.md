@@ -261,7 +261,7 @@ Sie können Azure Data Factorys mithilfe des Data Factory .NET SDK programmgeste
 
 	
 
-12. Fügen Sie die folgende Hilfsmethode, die von der Methode **Main** verwendet wird, zur **Program**-Klasse hinzu. Diese Methode öffnet ein Dialogfeld, in dem Sie den **Benutzernamen** und das **Kennwort** bereitstellen können, mit denen Sie sich beim Azure-Portal anmelden.
+12. Fügen Sie die folgende Hilfsmethode, die von der Methode **Main** verwendet wird, zur **Program**-Klasse hinzu. Diese Methode öffnet ein Dialogfeld, in dem Sie den **Benutzernamen** und das **Kennwort** bereitstellen können, mit denen Sie sich beim klassischen Azure-Portal anmelden.
  
 		public static string GetAuthorizationHeader()
         {
@@ -371,7 +371,7 @@ Sie können Azure Data Factorys mithilfe des Data Factory .NET SDK programmgeste
 		Jane, Doe
 	 
 17. Führen Sie das Beispiel aus, indem Sie im Menü auf **Debuggen** -> **Debuggen starten** klicken. Wenn angezeigt wird, dass die **Ausführungsdetails für einen Datenslice** abgerufen werden, warten Sie einige Minuten, und drücken Sie dann die **EINGABETASTE**.
-18. Verwenden Sie das Azure-Vorschauportal, um Folgendes für die Data Factory zu überprüfen: **APITutorialFactory** wird mit folgenden Artefakten erstellt: 
+18. Verwenden Sie das Azure-Portal, um Folgendes für die Data Factory zu überprüfen: **APITutorialFactory** wird mit folgenden Artefakten erstellt: 
 	- Verknüpfter Dienst: **LinkedService\_AzureStorage** 
 	- DataSet: **DatasetBlobSource** und **DatasetBlobDestination**.
 	- Pipeline: **PipelineBlobSample** 
@@ -392,4 +392,4 @@ Sie können Azure Data Factorys mithilfe des Data Factory .NET SDK programmgeste
 [azure-developer-center]: http://azure.microsoft.com/downloads/
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

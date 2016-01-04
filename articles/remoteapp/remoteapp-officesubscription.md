@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="article" 
-    ms.date="09/24/2015" 
+    ms.date="12/14/2015" 
     ms.author="elizapo" />
 
 
@@ -21,6 +21,9 @@
 # Verwenden Ihres Office 365-Abonnements mit Azure RemoteApp
 
 Wussten Sie, dass Sie über Ihr vorhandenes Office 365-Abonnement in Azure RemoteApp Office-Apps aus der Cloud freigeben können? Hier erhalten Sie Informationen über die Optionen von Office 365 und Azure RemoteApp, einschließlich Links zu Artikeln zu Office 365, mit denen Sie Ihr Abonnement in vollem Umfang nutzen können.
+
+## Wie verwende ich Office 365-Konten für Azure RemoteApp?
+Sie finden alle Informationen in Peters neuem Artikel: [Verwenden von Azure RemoteApp mit Office 365-Benutzerkonten](remoteapp-o365user.md)
 
 ## Kann ich mein Office 365-Abonnement für die Ausführung von Office-Anwendungen in Azure RemoteApp verwenden?
 
@@ -120,4 +123,4 @@ Sie benötigen weitere Informationen zur Verwendung des Office-Bereitstellungsto
 - [Deploying and Updating Office 365 ProPlus Using the Office Deployment Tool](https://channel9.msdn.com/Events/Ignite/2015/BRK3168) (Video, in englischer Sprache)
 - [Konfigurieren von Updateeinstellungen für Office 365 ProPlus](https://technet.microsoft.com/library/dn761708.aspx)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

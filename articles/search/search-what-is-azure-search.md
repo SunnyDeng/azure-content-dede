@@ -29,7 +29,7 @@ Azure Search ist ein API-basierter Dienst für Entwickler und Systemintegratoren
 
 Azure Search ist ein [PaaS-Dienst](https://wikipedia.org/wiki/Platform_as_a_service), der die Verwaltung von Server- und Infrastrukturtechnologien an Microsoft delegiert, sodass Ihnen ein einsatzbereiter Dienst zur Verfügung steht, dem Sie Suchdaten übergeben können und auf den Sie anschließend von Ihrer Anwendung aus zugreifen können. Je nachdem, wie Sie den Dienst konfigurieren, verwenden Sie entweder den kostenlosen Dienst, der auch von anderen Abonnenten Azure Search-Abonnenten verwendet wird, oder den Standardtarif, der dedizierte Ressourcen bietet, die nur von Ihrem Dienst verwendet werden. Die Standardsuche ist skalierbar und stellt Optionen bereit, um höhere Anforderungen von Speicher- oder Abfragelasten erfüllen zu können.
 
-Azure Search speichert die Daten in einem Index, der mit Volltextabfragen durchsucht werden kann. Das Schema dieser Indizes kann entweder im Azure-Portal oder programmgesteuert mithilfe der Clientbibliothek oder REST-APIs erstellt werden. Nachdem das Schema definiert wurde, können Sie Ihre Daten in den Azure Search-Dienst hochladen, wo sie anschließend indiziert werden.
+Azure Search speichert die Daten in einem Index, der mit Volltextabfragen durchsucht werden kann. Das Schema dieser Indizes kann entweder im klassischen Azure-Portal oder programmgesteuert mithilfe der Clientbibliothek oder REST-APIs erstellt werden. Nachdem das Schema definiert wurde, können Sie Ihre Daten in den Azure Search-Dienst hochladen, wo sie anschließend indiziert werden.
 
 Sie können ein Push- oder Pullmodell zum Hochladen von Daten in den Index verwenden. Das Pullmodell wird über Indexer bereitgestellt, die für bedarfsabhängige oder geplante Aktualisierungen konfiguriert werden können (siehe [Indizierungsvorgänge (REST-API für den Azure Search-Dienst)](https://msdn.microsoft.com/library/azure/dn946891.aspx)), sodass Sie leicht Daten und Datenänderungen einer Azure-DocumentDB, Azure SQL-Datenbank oder eines in einer Azure-VM gehosteten SQL-Servers erfassen können. Das Pushmodell wird über das SDK oder die REST-APIs bereitgestellt, die zum Senden von aktualisierten Dokumenten an einen Index verwendet werden. Sie können Daten aus praktisch jedem Dataset übertragen, solange diese im JSON-Format vorliegen. Anleitungen zum Laden von Daten finden Sie unter [Hinzufügen, Aktualisieren oder Löschen von Dokumenten](https://msdn.microsoft.com/library/azure/dn798930.aspx) oder [Verwenden des .NET SDK](search-howto-dotnet-sdk.md).
 
@@ -131,4 +131,4 @@ Sie können auch diese Lernprogramme ausprobieren:
 
 [Verwenden von Azure Search in .NET](search-howto-dotnet-sdk.md) [Erste Schritte mit Azure Search .NET](search-get-started-dotnet.md) [Azure Search: Lernprogramme, Videodemos und Beispiele](search-video-demo-tutorial-list.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

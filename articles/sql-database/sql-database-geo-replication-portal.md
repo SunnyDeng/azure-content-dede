@@ -1,6 +1,6 @@
 <properties 
-    pageTitle="Konfigurieren der Georeplikation für Azure SQL-Datenbank mit dem Azure-Vorschauportal | Microsoft Azure" 
-    description="Konfigurieren der Georeplikation für Azure SQL-Datenbank mit dem Azure-Vorschauportal" 
+    pageTitle="Konfigurieren der Georeplikation für eine Azure SQL-Datenbank mit dem Azure-Portal | Microsoft Azure" 
+    description="Konfigurieren der Georeplikation für eine Azure SQL-Datenbank mit dem Azure-Portal" 
     services="sql-database" 
     documentationCenter="" 
     authors="stevestein" 
@@ -13,25 +13,25 @@
     ms.topic="article"
     ms.tgt_pltfrm="NA"
     ms.workload="data-management" 
-    ms.date="11/10/2015"
+    ms.date="12/01/2015"
     ms.author="sstein"/>
 
-# Konfigurieren der Georeplikation für Azure SQL-Datenbank mit dem Azure-Vorschauportal
+# Konfigurieren der Georeplikation für die Azure SQL-Datenbank mit dem Azure-Portal
 
 
 > [AZURE.SELECTOR]
-- [Azure preview portal](sql-database-geo-replication-portal.md)
+- [Azure portal](sql-database-geo-replication-portal.md)
 - [PowerShell](sql-database-geo-replication-powershell.md)
 - [Transact-SQL](sql-database-geo-replication-transact-sql.md)
 
 
-In diesem Artikel wird beschrieben, wie Sie die Georeplikation für SQL-Datenbank mit dem [Azure-Vorschauportal](https://portal.azure.com) konfigurieren.
+In diesem Artikel wird beschrieben, wie Sie die Georeplikation für eine SQL-Datenbank mit dem [Azure-Portal](https://portal.azure.com) konfigurieren.
 
-Die Georeplikation ermöglicht das Erstellen von bis zu vier (sekundären) Replikatdatenbanken in verschiedenen Rechenzentrumregionen. Sekundäre Datenbanken stehen zur Verfügung, wenn ein Rechenzentrum ausgefallen ist oder keine Verbindung mit der primären Datenbank möglich ist.
+Die Georeplikation ermöglicht das Erstellen von bis zu vier (sekundären) Replikatdatenbanken in verschiedenen Datencenterregionen. Sekundäre Datenbanken stehen zur Verfügung, wenn ein Datencenter ausgefallen ist oder keine Verbindung mit der primären Datenbank möglich ist.
 
 Die Georeplikation ist nur für Standard- und Premium-Datenbanken verfügbar.
 
-Standard-Datenbanken können über eine nicht lesbare sekundäre Datenbank verfügen und müssen die empfohlene Region verwenden. Premium-Datenbanken können bis zu vier lesbare sekundäre Datenbanken in beliebigen verfügbaren Regionen aufweisen.
+Standard-Datenbanken können über eine nicht lesbare sekundäre Datenbank verfügen und müssen die empfohlene Region verwenden. Premium-Datenbanken können bis zu vier lesbare sekundäre Datenbanken in beliebigen der verfügbaren Regionen aufweisen.
 
 
 Zum Konfigurieren der Georeplikation benötigen Sie Folgendes:
@@ -54,9 +54,9 @@ Die sekundäre Datenbank hat den gleichen Namen wie die primäre Datenbank und s
 
 
 
-### Hinzufügen einer sekundären Datenbank
+### Sekundäre Datenbank hinzufügen
 
-1. Navigieren Sie im [Azure-Vorschauportal](https://portal.azure.com) zu der Datenbank, die Sie für die Georeplikation einrichten möchten.
+1. Navigieren Sie im [Azure-Portal](https://portal.azure.com) zu der Datenbank, die Sie für die Georeplikation einrichten möchten.
 2. Wählen Sie auf dem Blatt „SQL-Datenbank“ die Option **Alle Einstellungen** > **Georeplikation**.
 3. Wählen Sie die Region für die Erstellung der sekundären Datenbank aus. Premium-Datenbanken können für eine sekundäre Datenbank eine beliebige Region verwenden. Für Standard-Datenbanken muss die empfohlene Region verwendet werden:
 
@@ -89,7 +89,7 @@ Die sekundäre Datenbank hat den gleichen Namen wie die primäre Datenbank und s
 
 Mit diesem Vorgang wird die Replikation zur sekundären Datenbank dauerhaft beendet, und die Rolle der sekundären Datenbank wird in eine normale Datenbank mit Lese-/Schreibzugriff geändert. Wenn die Verbindung mit der sekundären Datenbank unterbrochen wird, ist der Befehl zwar erfolgreich, aber die sekundäre Datenbank wird erst mit Lese-/ Schreibzugriff versehen, nachdem die Verbindung wiederhergestellt wurde.
 
-1. Navigieren Sie im [Azure-Vorschauportal](https://portal.azure.com) zur primären Datenbank in der Georeplikationspartnerschaft.
+1. Navigieren Sie im [Azure-Portal](https://portal.azure.com) zur primären Datenbank in der Georeplikationspartnerschaft.
 2. Wählen Sie auf dem Blatt „SQL-Datenbank“ die Option **Alle Einstellungen** > **Georeplikation**.
 3. Wählen Sie in der Liste **SEKUNDÄRE DATENBANKEN** die Datenbank aus, die Sie aus der Georeplikationspartnerschaft entfernen möchten.
 4. Klicken Sie auf **Replikation beenden**.
@@ -108,7 +108,7 @@ Mit diesem Vorgang wird die Replikation zur sekundären Datenbank dauerhaft been
 
 Für die sekundäre Datenbank kann ein Wechsel durchgeführt werden, bei dem sie zur primären Datenbank wird.
 
-1. Navigieren Sie im [Azure-Vorschauportal](https://portal.azure.com) zur primären Datenbank in der Georeplikationspartnerschaft.
+1. Navigieren Sie im [Azure-Portal](https://portal.azure.com) zur primären Datenbank in der Georeplikationspartnerschaft.
 2. Wählen Sie auf dem Blatt „SQL-Datenbank“ die Option **Alle Einstellungen** > **Georeplikation**.
 3. Wählen Sie in der Liste **SEKUNDÄRE DATENBANKEN** die Datenbank aus, die zur neuen primären Datenbank werden soll.
 4. Klicken Sie auf **Failover**.
@@ -121,7 +121,7 @@ Der Befehl hat den folgenden Workflow:
 
 2. Die primären und sekundären Rollen der beiden Datenbanken in der Georeplikationspartnerschaft werden getauscht.
 
-Für ein geplantes Failover wird mit dieser Abfolge sichergestellt, dass kein Datenverlust auftritt. Es gibt einen kurzen Zeitraum, in dem beide Datenbanken während des Rollenwechsels (ca. 0 bis 25 Sekunden) nicht verfügbar sind. Unter normalen Umständen dauert der gesamte Vorgang nicht länger als eine Minute.
+Für ein geplantes Failover wird mit dieser Abfolge sichergestellt, dass kein Datenverlust auftritt. Es gibt einen kurzer Zeitraum, in dem beide Datenbanken während des Rollenwechsels (ca. 0 bis 25 Sekunden) nicht verfügbar sind. Unter normalen Umständen dauert der gesamte Vorgang nicht länger als 1 Minute.
 
    
 
@@ -151,4 +151,4 @@ Für ein geplantes Failover wird mit dieser Abfolge sichergestellt, dass kein Da
 [9]: ./media/sql-database-geo-replication-portal/seeding-complete.png
 [10]: ./media/sql-database-geo-replication-portal/failover.png
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

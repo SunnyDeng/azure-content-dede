@@ -13,14 +13,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="11/04/2015"
+   ms.date="12/07/2015"
    ms.author="tomfitz"/>
 
 # Erstellen von Azure-Ressourcen-Manager-Vorlagen
 
 Azure-Anwendungen erfordern i. d. R. eine Kombination von Ressourcen (z. B. Datenbankserver, Datenbanken oder Websites), um die gewünschten Ziele zu erreichen. Anstatt jede Ressource gesondert bereitzustellen und zu verwalten, können Sie eine Azure-Ressourcen-Manager-Vorlage erstellen, die für die Bereitstellung aller Ressourcen für Ihre Anwendung in einem einzigen koordinierten Vorgang sorgt. In der Vorlage müssen Sie die Ressourcen definieren, die für die Anwendung erforderlich sind, und Bereitstellungsparameter für die Eingabe von Werten für unterschiedliche Umgebungen angeben. Die Vorlage besteht aus JSON und Ausdrücken, mit denen Sie Werte für die Bereitstellung erstellen können.
 
-In diesem Thema werden die Abschnitte der Vorlage beschrieben. Die tatsächlichen Schemas finden Sie unter [Schemas des Azure-Ressourcen-Manager](https://github.com/Azure/azure-resource-manager-schemas).
+In diesem Thema werden die Abschnitte der Vorlage beschrieben. Die tatsächlichen Schemas finden Sie unter [Schemas des Azure-Ressourcen-Manager](https://github.com/Azure/azure-resource-manager-schemas). Visual Studio bietet Tools, welche die Erstellung von Vorlagen erleichtern. Weitere Informationen zum Verwenden von Visual Studio mit Vorlagen finden Sie unter [Erstellen und Bereitstellen von Azure-Ressourcengruppen über Visual Studio](vs-azure-tools-resource-groups-deployment-projects-create-deploy.md) und [Bearbeiten von Ressourcen-Manager-Vorlagen mit Visual Studio](vs-azure-tools-resource-group-adding-resources.md).
 
 Sie müssen die Größe der Vorlage auf 1 MB und jede Parameterdatei auf 64 KB beschränken. Die 1-MB-Beschränkung gilt für den endgültigen Status der Vorlage, nachdem sie durch iterative Ressourcendefinitionen und Werte für Variablen und Parametern erweitert wurde.
 
@@ -54,7 +54,7 @@ Die grundlegende Syntax der Vorlage ist JSON. Allerdings erweitern Ausdrücke un
 
 In der Regel verwenden Sie Ausdrücke mit Funktionen, um Vorgänge zum Konfigurieren der Bereitstellung durchzuführen. Genau wie in JavaScript haben Funktionsaufrufe das Format **functionName(arg1,arg2,arg3)**. Auf Eigenschaften verweisen Sie mithilfe der Operatoren Punkt und [Index].
 
-Das folgende Beispiel zeigt, wie Sie einige Funktionen beim Erstellen von Werten verwenden:
+Das folgende Beispiel zeigt, wie Sie verschiedene Funktionen beim Erstellen von Werten verwenden:
  
     "variables": {
        "location": "[resourceGroup().location]",
@@ -228,7 +228,7 @@ Sie definieren Ressourcen mit der folgenden Struktur:
 
 | Elementname | Erforderlich | Beschreibung
 | :----------------------: | :------: | :----------
-| apiVersion | Ja | Die Version der API, die die Ressource unterstützt. Die verfügbaren Versionen und Schemas für Ressourcen finden Sie unter [Schemas des Azure-Ressourcen-Managers](https://github.com/Azure/azure-resource-manager-schemas).
+| apiVersion | Ja | Version der REST-API zum Erstellen der Ressource. Wie Sie die verfügbaren Versionsnummern für einen bestimmten Ressourcentyp ermitteln, erfahren Sie unter [Unterstützte API-Versionen](../resource-manager-supported-services/#supported-api-versions).
 | type | Ja | Der Typ der Ressource. Dieser Wert ist eine Kombination aus dem Namespace des Ressourcenanbieters und dem Ressourcentyp, den der Ressourcenanbieter unterstützt.
 | Name | Ja | Der Name der Ressource. Der Name muss die Einschränkungen für URI-Komponenten laut Definition in RFC3986 erfüllen.
 | location | Nein | Unterstützte Standorte der angegebenen Ressource
@@ -236,11 +236,11 @@ Sie definieren Ressourcen mit der folgenden Struktur:
 | Kommentare | Nein | Ihre Notizen zur Dokumentierung der Ressourcen in Ihrer Vorlage
 | dependsOn | Nein | Ressourcen, von denen die definierte Ressource abhängig ist. Die Abhängigkeiten zwischen den Ressourcen werden ausgewertet, und die Ressourcen werden in ihrer Abhängigkeitsreihenfolge bereitgestellt. Wenn Ressourcen nicht voneinander abhängig sind, wird versucht, sie parallel bereitzustellen. Der Wert kann eine durch Trennzeichen getrennte Liste von Ressourcennamen oder eindeutigen Ressourcenbezeichnern sein.
 | Eigenschaften | Nein | Ressourcenspezifische Konfigurationseinstellungen
-| angeben | Nein | Untergeordnete Ressourcen, die von der definierten Ressource abhängig sind.
+| angeben | Nein | Untergeordnete Ressourcen, die von der definierten Ressource abhängig sind. Sie können nur Ressourcentypen bereitstellen, die laut Schema der übergeordneten Ressource zulässig sind. Der vollqualifizierte Name des untergeordneten Ressourcentyps enthält den übergeordneten Ressourcentyp, z. B. **Microsoft.Web/sites/extensions**.
 
 Wenn der Ressourcenname nicht eindeutig ist, können Sie mit der **resourceId**-Hilfsfunktion (weiter unten beschrieben) den eindeutigen Bezeichner für eine Ressource abrufen.
 
-Die Werte für das **properties**-Element sind mit den Werten identisch, die Sie im Anforderungstext für den REST-API-Vorgang (PUT-Methode) angegeben haben, um die Ressource zu erstellen. Informationen zu den REST-API-Vorgängen für die Ressource, die Sie bereitstellen möchten, finden Sie in der [Azure-Referenz](https://msdn.microsoft.com/library/azure/mt420159.aspx).
+Die Werte für das **properties**-Element sind mit den Werten identisch, die Sie im Anforderungstext für den REST-API-Vorgang (PUT-Methode) angegeben haben, um die Ressource zu erstellen. Informationen zu den REST-API-Vorgängen für die Ressource, die Sie bereitstellen möchten, finden Sie unter [Azure-Referenz](https://msdn.microsoft.com/library/azure/mt420159.aspx).
 
 Das folgende Beispiel zeigt eine **Microsoft.Web/serverfarms**-Ressource und eine **Microsoft.Web/Sites**-Ressource mit einer verschachtelten **Extensions**-Ressource:
 
@@ -278,6 +278,9 @@ Das folgende Beispiel zeigt eine **Microsoft.Web/serverfarms**-Ressource und ein
                   "apiVersion": "2014-06-01",
                   "type": "Extensions",
                   "name": "MSDeploy",
+                  "dependsOn": [
+                      "[resourceId('Microsoft.Web/sites', parameters('siteName'))]"
+                  ],
                   "properties": {
                     "packageUri": "https://auxmktplceprod.blob.core.windows.net/packages/StarterSite-modified.zip",
                     "dbType": "None",
@@ -418,4 +421,4 @@ Die folgende Vorlage stellt eine Web-App bereit und stattet sie mit Code aus ein
 - Ein ausführliches Beispiel für die Bereitstellung einer Anwendung finden Sie unter [Vorhersagbares Bereitstellen von Microservices in Azure](app-service-web/app-service-deploy-complex-application-predictably.md).
 - Die verfügbaren Schemas finden Sie unter [Schemas des Azure-Ressourcen-Managers](https://github.com/Azure/azure-resource-manager-schemas).
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1210_2015-->

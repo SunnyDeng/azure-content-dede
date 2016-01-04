@@ -1,11 +1,11 @@
 <properties
-   pageTitle="Verwalten von Dienstkonfigurationen und Profilen"
+   pageTitle="Verwalten von Dienstkonfigurationen und Profilen | Microsoft Azure"
    description="Erfahren Sie, wie Sie mit Dienstkonfigurationen und Profilkonfigurationsdateien arbeiten,| in denen Einstellungen für die Bereitstellungsumgebungen gespeichert und Einstellungen für Clouddienste veröffentlicht werden."
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tglee" />
+   editor="" />
 <tags
    ms.service="multiple"
    ms.devlang="dotnet"
@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="multiple"
    ms.date="08/13/2015"
-   ms.author="kempb" />
+   ms.author="tarcher" />
 
 # Verwalten von Dienstkonfigurationen und Profilen
 
@@ -131,4 +131,4 @@ Wenn Sie den Assistenten zum ersten Mal ausführen, wird ein Standardprofil erst
 
 Informationen zum Konfigurieren anderer Teile des Azure-Projekts in Visual Studio finden Sie unter [Konfigurieren eines Azure-Projekts](http://go.microsoft.com/fwlink/p/?LinkID=623075).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

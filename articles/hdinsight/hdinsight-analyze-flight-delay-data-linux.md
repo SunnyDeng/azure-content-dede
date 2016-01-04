@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/09/2015" 
+	ms.date="12/04/2015" 
 	ms.author="larryfr"/>
 
 #Analysieren von Flugverspätungsdaten mit Hive in HDInsight
@@ -31,9 +31,9 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
 - __Einen HDInsight-Cluster__. Schritte zum Erstellen eines neuen Linux-basierten HDInsight-Clusters finden Sie unter [Erste Schritte bei der Verwendung von Hadoop mit Hive in HDInsight unter Linux](hdinsight-hadoop-linux-tutorial-get-started.md).
 
-- __Azure SQL-Datenbank__. Sie verwenden eine Azure SQL-Datenbank als Zieldatenspeicher. Falls Sie noch keine SQL-Datenbank besitzen, lesen Sie das Thema [Erstellen und Konfigurieren einer Azure SQL-Datenbank](../sql-database/sql-database-create-configure.md).
+- __Azure SQL-Datenbank__. Sie verwenden eine Azure SQL-Datenbank als Zieldatenspeicher. Falls Sie noch keine SQL-Datenbank besitzen, lesen Sie das Thema [Erstellen einer Azure SQL-Datenbank](../sql-database/sql-database-create.md).
 
-- __Azure-Befehlszeilenschnittstelle__ Wenn Sie die Azure-Befehlszeilenschnittstelle noch nicht installiert haben, finden Sie unter [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md) weitere Schritte.
+- __Azure-Befehlszeilenschnittstelle__. Wenn Sie die Azure-Befehlszeilenschnittstelle noch nicht installiert haben, finden Sie unter [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md) weitere Schritte.
 
 
 ##Herunterladen der Flugdaten
@@ -63,7 +63,7 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 	
 	* [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Linux, Unix oder OS X](hdinsight-hadoop-linux-use-ssh-unix.md)
 
-	* [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Windows](hdinsight-hadoop-linux-use-ssh-windows)
+	* [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Windows](hdinsight-hadoop-linux-use-ssh-windows.md)
 	
 3. Extrahieren Sie nach dem Herstellen einer Verbindung die ZIP-Datei wie folgt:
 
@@ -285,7 +285,6 @@ Jetzt wissen Sie, wie Sie eine Datei in den Azure-Blobspeicher hochladen, eine H
 
 [rita-website]: http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time
 [cindygross-hive-tables]: http://blogs.msdn.com/b/cindygross/archive/2013/02/06/hdinsight-hive-internal-and-external-tables-intro.aspx
-[powershell-install-configure]: ../install-configure-powershell.md
 
 [hdinsight-use-oozie]: hdinsight-use-oozie-linux-mac.md
 [hdinsight-use-hive]: hdinsight-use-hive.md
@@ -305,4 +304,4 @@ Jetzt wissen Sie, wie Sie eine Datei in den Azure-Blobspeicher hochladen, eine H
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

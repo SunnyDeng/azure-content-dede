@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Hinzufügen von Azure Automation-Runbooks zu Wiederherstellungsplänen" 
+   pageTitle="Hinzufügen von Azure Automation-Runbooks zu Wiederherstellungsplänen | Microsoft Azure" 
    description="In diesem Artikel erfahren Sie, wie Sie mit Azure Site Recovery und Azure Automation Wiederherstellungspläne erweitern und komplexe Aufgaben bei der Wiederherstellung zu Azure durchführen können." 
    services="site-recovery" 
    documentationCenter="" 
@@ -13,11 +13,9 @@
    ms.tgt_pltfrm="na"
    ms.topic="article"
    ms.workload="required" 
-   ms.date="10/07/2015"
+   ms.date="12/14/2015"
    ms.author="ruturajd@microsoft.com"/>
 
-  
-   
 
 # Hinzufügen von Azure Automation-Runbooks zu Wiederherstellungsplänen
 
@@ -158,69 +156,68 @@ Erstellen Sie nun das Runbook, um auf dem virtuellen Front-End-Computer den Port
 
 1.  Erstellen Sie im Azure Automation-Konto ein neues Runbook mit dem Namen **OpenPort80**.
 
-![](media/site-recovery-runbook-automation/14.png)
+	![](media/site-recovery-runbook-automation/14.png)
 
 2.  Navigieren Sie zur Erstelleransicht des Runbooks, und starten Sie den Entwurfsmodus.
 
 3.  Geben Sie zunächst die Variable für den Wiederherstellungsplankontext an.
-
-```
-	param (
-		[Object]$RecoveryPlanContext
-	)
-
-```
   
+	```
+		param (
+			[Object]$RecoveryPlanContext
+		)
+
+	```
 
 4.  Stellen Sie dann unter Angabe der Anmeldeinformationen und des Abonnementnamens eine Verbindung mit dem Abonnement her.
 
-```
-	$Cred = Get-AutomationPSCredential -Name 'AzureCredential'
+	```
+		$Cred = Get-AutomationPSCredential -Name 'AzureCredential'
 	
-	# Connect to Azure
-	$AzureAccount = Add-AzureAccount -Credential $Cred
-	$AzureSubscriptionName = Get-AutomationVariable –Name ‘AzureSubscriptionName’
-	Select-AzureSubscription -SubscriptionName $AzureSubscriptionName
-```
+		# Connect to Azure
+		$AzureAccount = Add-AzureAccount -Credential $Cred
+		$AzureSubscriptionName = Get-AutomationVariable –Name ‘AzureSubscriptionName’
+		Select-AzureSubscription -SubscriptionName $AzureSubscriptionName
+	```
 
-> Hinweis: Hier werden die Azure-Ressourcen **AzureCredential** und **AzureSubscriptionName** verwendet.
+	Hinweis: Hier werden die Azure-Ressourcen **AzureCredential** und **AzureSubscriptionName** verwendet.
 
-5.  Geben Sie die Endpunktdetails und die GUID des virtuellen Computers an, für den Sie den Endpunkt verfügbar machen möchten (in diesem Fall der virtuelle Front-End-Computer).
+5.  Geben Sie die Endpunktdetails und die GUID des virtuellen Computers an, für den Sie den Endpunkt verfügbar machen möchten. In diesem Fall handelt es sich um den virtuellen Front-End-Computer.
 
-```
-	# Specify the parameters to be used by the script
-	$AEProtocol = "TCP"
-	$AELocalPort = 80
-	$AEPublicPort = 80
-	$AEName = "Port 80 for HTTP"
-	$VMGUID = "7a1069c6-c1d6-49c5-8c5d-33bfce8dd183"
-```
+	```
+		# Specify the parameters to be used by the script
+		$AEProtocol = "TCP"
+		$AELocalPort = 80
+		$AEPublicPort = 80
+		$AEName = "Port 80 for HTTP"
+		$VMGUID = "7a1069c6-c1d6-49c5-8c5d-33bfce8dd183"
+	```
 
-Hierbei werden das Azure-Endpunktprotokoll, der lokale Port auf dem virtuellen Computer und der ihm zugeordnete öffentliche Port angegeben. Bei diesen Variablen handelt es sich um erforderliche Parameter für die Azure-Befehle, die virtuellen Computern Endpunkte hinzufügen. Der VMGUID-Parameter enthält die GUID des virtuellen Computers, auf dem Sie arbeiten müssen.
+	Hierbei werden das Azure-Endpunktprotokoll, der lokale Port auf dem virtuellen Computer und der ihm zugeordnete öffentliche Port angegeben. Bei diesen Variablen handelt es sich um erforderliche Parameter für die Azure-Befehle, die virtuellen Computern Endpunkte hinzufügen. Der VMGUID-Parameter enthält die GUID des virtuellen Computers, auf dem Sie arbeiten müssen.
 
 6.  Das Skript extrahiert nun den Kontext für die angegebene VM-GUID und erstellt einen Endpunkt auf dem entsprechenden virtuellen Computer.
 
-```
-	#Read the VM GUID from the context
-	$VM = $RecoveryPlanContext.VmMap.$VMGUID
+	```
+		#Read the VM GUID from the context
+		$VM = $RecoveryPlanContext.VmMap.$VMGUID
 
-	if ($VM -ne $null)
-	{
-		# Invoke pipeline commands within an InlineScript
+		if ($VM -ne $null)
+		{
+			# Invoke pipeline commands within an InlineScript
 
-		$EndpointStatus = InlineScript {
-			# Invoke the necessary pipeline commands to add a Azure Endpoint to a specified Virtual Machine
-			# This set of commands includes: Get-AzureVM | Add-AzureEndpoint | Update-AzureVM (including necessary parameters)
+			$EndpointStatus = InlineScript {
+				# Invoke the necessary pipeline commands to add a Azure Endpoint to a specified Virtual Machine
+				# Commands include: Get-AzureVM | Add-AzureEndpoint | Update-AzureVM (including parameters)
 
-			$Status = Get-AzureVM -ServiceName $Using:VM.CloudServiceName -Name $Using:VM.RoleName | `
-				Add-AzureEndpoint -Name $Using:AEName -Protocol $Using:AEProtocol -PublicPort $Using:AEPublicPort -LocalPort $Using:AELocalPort | `
-				Update-AzureVM
-			Write-Output $Status
+				$Status = Get-AzureVM -ServiceName $Using:VM.CloudServiceName -Name $Using:VM.RoleName | `
+					Add-AzureEndpoint -Name $Using:AEName -Protocol $Using:AEProtocol -PublicPort $Using:AEPublicPort -LocalPort $Using:AELocalPort | `
+					Update-AzureVM
+				Write-Output $Status
+			}
 		}
-	}
-```
+	```
 
-7. Klicken Sie anschließend auf die Veröffentlichungsoption (![](media/site-recovery-runbook-automation/20.png)), um das Skript für die Ausführung verfügbar zu machen. 
+7. Klicken Sie anschließend auf die Veröffentlichungsoption (![](media/site-recovery-runbook-automation/20.png)), um das Skript für die Ausführung verfügbar zu machen.
 
 Hier sehen Sie noch einmal das gesamte Skript:
 
@@ -313,4 +310,4 @@ In diesem Lernprogramm haben Sie gesehen, wie Sie eine häufig verwendete Aufgab
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

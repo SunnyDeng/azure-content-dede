@@ -21,7 +21,7 @@
 | Kurzübersicht |
 | --------------- |
 | [Logik-Apps – Definitionssprache](https://msdn.microsoft.com/library/azure/dn948512.aspx?f=255&MSPPError=-2147217396) |
-| [Logik-Apps – Connector-Dokumentation](https://azure.microsoft.com/de-DE/documentation/articles/app-service-logic-connectors-list/) |
+| [Logik-Apps – Connector-Dokumentation](https://azure.microsoft.com/documentation/articles/app-service-logic-connectors-list/) |
 | [Logik-Apps – Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=azurelogicapps) |
 
 Azure App Service ist eine vollständig verwaltete PaaS-Lösung (Platform-as-a-Service) für Entwickler, die das Erstellen von Web-, mobilen und Integrations-Apps vereinfacht. Logik-Apps sind ein Teil dieser Produktfamilie und ermöglichen technisch orientierten Benutzern und Entwicklern das Automatisieren der Ausführung von Geschäftsprozessen und des Workflows mithilfe eines leicht zu bedienenden visuellen Designers.
@@ -75,4 +75,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 [templates]: app-service-logic-use-logic-app-templates.md
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

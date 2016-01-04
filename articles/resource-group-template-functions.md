@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Vorlagenfunktionen im Ressourcen-Manager | Microsoft Azure"
+   pageTitle="Vorlagenausdrücke des Ressourcen-Managers | Microsoft Azure"
    description="Es werden die Funktionen beschrieben, die in einer Azure-Ressourcen-Manager-Vorlage zum Abrufen von Werten, Arbeiten mit Zeichenfolgen und numerischen Werten sowie Abrufen von Bereitstellungsinformationen verwendet werden."
    services="azure-resource-manager"
    documentationCenter="na"
@@ -13,16 +13,31 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="11/09/2015"
+   ms.date="12/07/2015"
    ms.author="tomfitz"/>
 
-# Vorlagenfunktionen im Azure-Ressourcen-Manager
+# Vorlagenausdrücke des Azure-Ressourcen-Managers
 
-Dieses Thema beschreibt alle Funktionen, die Sie in einer Azure Resource Manager-Vorlage verwenden können.
+Dieses Thema beschreibt alle Ausdrücke, die Sie in einer Azure-Ressourcen-Manager-Vorlage verwenden können.
 
-Bei Vorlagenfunktionen und ihren Parametern wird Groß-und Kleinschreibung unterschieden. Der Ressourcen-Manager löst beispielsweise **variables('var1')** und **VARIABLES('VAR1')** identisch auf. Bei der Auswertung wird die Groß-/Kleinschreibung beibehalten, sofern diese nicht ausdrücklich durch die Funktion geändert wird (z. B. mit „toUpper“ oder „toLower“). Für spezielle Ressourcentypen gelten möglicherweise ungeachtet der Auswertungsweise von Ausdrücken bestimmte Anforderungen hinsichtlich der Groß-/Kleinschreibung.
+Bei Vorlagenausdrücken und ihren Parametern ist die Groß-und Kleinschreibung nicht relevant. Der Ressourcen-Manager löst beispielsweise **variables('var1')** und **VARIABLES('VAR1')** identisch auf. Bei der Auswertung wird die Groß-/Kleinschreibung beibehalten, sofern diese nicht ausdrücklich durch den Ausdruck geändert wird (z. B. mit „toUpper“ oder „toLower“). Für spezielle Ressourcentypen gelten möglicherweise ungeachtet der Auswertungsweise von Ausdrücken bestimmte Anforderungen hinsichtlich der Groß-/Kleinschreibung.
 
-## Hinzufügen
+## Numerische Ausdrücke
+
+Der Ressourcen-Manager stellt die folgenden Ausdrücke für das Arbeiten mit ganzen Zahlen bereit:
+
+- [Hinzufügen](#add)
+- [copyIndex](#copyindex)
+- [div](#div)
+- [int](#int)
+- [Länge](#length)
+- [mod](#mod)
+- [mul](#mul)
+- [sub](#sub)
+
+
+<a id="add" />
+### Hinzufügen
 
 **add(operand1, operand2)**
 
@@ -34,72 +49,18 @@ Gibt die Summe der beiden angegebenen ganzen Zahlen zurück.
 | operand2 | Ja | Zweiter zu verwendender Operand.
 
 
-## base64
-
-**base64 (InputString)**
-
-Rückkehr zur base64-Darstellung der Eingabezeichenfolge.
-
-| Parameter | Erforderlich | Beschreibung
-| :--------------------------------: | :------: | :----------
-| inputString | Ja | Der Zeichenfolgewert, der als base64-Darstellung zurückgegeben wird.
-
-Das folgende Beispiel zeigt die Funktionsweise der base64-Funktion.
-
-    "variables": {
-      "usernameAndPassword": "[concat('parameters('username'), ':', parameters('password'))]",
-      "authorizationHeader": "[concat('Basic ', base64(variables('usernameAndPassword')))]"
-    }
-
-## concat
-
-**concat (arg1, arg2, arg3, ...)**
-
-Kombiniert mehrere Zeichenfolgewerte und gibt den resultierenden Zeichenfolgewert zurück. Diese Funktion kann eine beliebige Anzahl an Argumenten entgegennehmen.
-
-Das folgende Beispiel zeigt die Kombinationsweise mehrerer Werte, um einen Wert zurückzugeben.
-
-    "outputs": {
-        "siteUri": {
-          "type": "string",
-          "value": "[concat('http://',reference(resourceId('Microsoft.Web/sites', parameters('siteName'))).hostNames[0])]"
-        }
-    }
-
-## copyIndex
+<a id="copyindex" />
+### copyIndex
 
 **copyIndex(offset)**
 
-Gibt den aktuellen Index einer Iterationsschleife zurück. Beispiele zur Verwendung dieser Funktion finden Sie unter [Erstellen mehrerer Instanzen von Ressourcen im Azure-Ressourcen-Manager](resource-group-create-multiple.md).
+Gibt den aktuellen Index einer Iterationsschleife zurück.
 
-## deployment
+Dieser Ausdruck wird immer mit einem **copy**-Objekt verwendet. Beispiele zur Verwendung von **copyIndex** finden Sie unter [Erstellen mehrerer Instanzen von Ressourcen im Azure-Ressourcen-Manager](resource-group-create-multiple.md).
 
-**deployment()**
 
-Gibt Informationen zum aktuellen Bereitstellungsvorgang zurück.
-
-Die Informationen zur Bereitstellung werden als Objekt mit den folgenden Eigenschaften zurückgegeben:
-
-    {
-      "name": "",
-      "properties": {
-        "template": {},
-        "parameters": {},
-        "mode": "",
-        "provisioningState": ""
-      }
-    }
-
-Im folgenden Beispiel wird veranschaulicht, wie Bereitstellungsinformationen im Abschnitt „outputs“ zurückgegeben werden.
-
-    "outputs": {
-      "exampleOutput": {
-        "value": "[deployment()]",
-        "type" : "object"
-      }
-    }
-
-## div
+<a id="div" />
+### div
 
 **div(operand1, operand2)**
 
@@ -110,7 +71,9 @@ Gibt die Ganzzahldivision der beiden angegebenen ganzen Zahlen zurück.
 | operand1 | Ja | Die zu teilende Zahl.
 | operand2 | Ja | Die Zahl, durch die geteilt wird. Muss ungleich 0 sein.
 
-## int
+
+<a id="int" />
+### int
 
 **int(valueToConvert)**
 
@@ -129,33 +92,33 @@ Im folgenden Beispiel wird der vom Benutzer angegebene Parameterwert in eine gan
         "intValue": "[int(parameters('appId'))]"
     }
 
-## Länge
 
-**length(array)**
+<a id="length" />
+### Länge
 
-Gibt die Anzahl der Elemente in einem Array zurück. Wird normalerweise verwendet, um bei der Erstellung von Ressourcen die Anzahl der Iterationen anzugeben. Ein Beispiel zur Verwendung dieser Funktion finden Sie unter [Erstellen mehrerer Instanzen von Ressourcen im Azure-Ressourcen-Manager](resource-group-create-multiple.md).
+**Länge ("Array" oder "String")**
 
-## listKeys
+Gibt die Anzahl der Elemente in einem Array oder die Anzahl der Zeichen in einer Zeichenfolge zurück. Sie können diese Funktion mit einem Array verwenden, um bei der Erstellung von Ressourcen die Anzahl der Iterationen anzugeben. Im folgenden Beispiel bezieht sich der Parameter **siteNames** auf ein Array von Namen, die bei der Erstellung der Websites verwendet werden.
 
-**listKeys (resourceName oder resourceIdentifier, [apiVersion])**
+    "copy": {
+        "name": "websitescopy",
+        "count": "[length(parameters('siteNames'))]"
+    }
 
-Gibt die Schlüssel eines Speicherkontos zurück. Die Ressourcen-ID kann mithilfe der [Ressourcen-ID-Funktion](./#resourceid) oder mithilfe des Formats **providerNamespaces/resourceType/resourceName** angegeben werden. Sie können die Funktion nutzen um den Primär- und Sekundärschlüssel abzurufen.
-  
-| Parameter | Erforderlich | Beschreibung
-| :--------------------------------: | :------: | :----------
-| resourceName oder resourceIdentifier | Ja | Eindeutiger Bezeichner eines Speicherkontos.
-| "apiVersion": | Ja | API-Version eines Ressourcen-Laufzeitstatus.
+Weitere Informationen zur Verwendung dieser Funktion mit einem Array finden Sie unter [Erstellen mehrerer Instanzen von Ressourcen im Azure-Ressourcen-Manager](resource-group-create-multiple.md).
 
-Das folgende Beispiel zeigt, wie die Schlüssel von einem Speicherkonto in die Ausgabeabschnitte zurückgegeben werden können.
+Sie können auch eine Zeichenfolge verwenden:
 
-    "outputs": { 
-      "exampleOutput": { 
-        "value": "[listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName')), '2015-05-01-preview')]", 
-        "type" : "object" 
-      } 
-    } 
+    "parameters": {
+        "appName": { "type": "string" }
+    },
+    "variables": { 
+        "nameLength": "[length(parameters('appName'))]"
+    }
 
-## mod
+
+<a id="mod" />
+### mod
 
 **mod(operand1, operand2)**
 
@@ -167,7 +130,9 @@ Gibt den Rest der Ganzzahldivision mit den beiden angegebenen ganzen Zahlen zur�
 | operand2 | Ja | Die Zahl, durch die geteilt wird. Muss ungleich 0 sein.
 
 
-## mul
+
+<a id="mul" />
+### mul
 
 **mul(operand1, operand2)**
 
@@ -179,7 +144,73 @@ Gibt die Multiplikation der beiden angegebenen ganzen Zahlen zurück.
 | operand2 | Ja | Zweiter zu verwendender Operand.
 
 
-## padLeft
+<a id="sub" />
+### sub
+
+**sub(operand1, operand2)**
+
+Gibt die Differenz der beiden angegebenen ganzen Zahlen zurück.
+
+| Parameter | Erforderlich | Beschreibung
+| :--------------------------------: | :------: | :----------
+| operand1 | Ja | Zahl, von der subtrahiert werden soll.
+| operand2 | Ja | Zahl, die subtrahiert werden soll.
+
+
+## Zeichenfolgenausdrücke
+
+Der Ressourcen-Manager stellt die folgenden Ausdrücke für das Arbeiten mit Zeichenfolgen bereit:
+
+- [base64](#base64)
+- [concat](#concat)
+- [padLeft](#padleft)
+- [replace](#replace)
+- [split](#split)
+- [string](#string)
+- [toLower](#tolower)
+- [toUpper](#toupper)
+- [trim](#trim)
+- [uniqueString](#uniquestring)
+- [uri](#uri)
+
+Die Anzahl der Zeichen in einer Zeichenfolge oder einem Array ermitteln Sie mit [length](#length).
+
+<a id="base64" />
+### base64
+
+**base64 (InputString)**
+
+Rückkehr zur base64-Darstellung der Eingabezeichenfolge.
+
+| Parameter | Erforderlich | Beschreibung
+| :--------------------------------: | :------: | :----------
+| inputString | Ja | Der Zeichenfolgewert, der als base64-Darstellung zurückgegeben wird.
+
+Das folgende Beispiel zeigt die Funktionsweise der base64-Funktion.
+
+    "variables": {
+      "usernameAndPassword": "[concat('parameters('username'), ':', parameters('password'))]",
+      "authorizationHeader": "[concat('Basic ', base64(variables('usernameAndPassword')))]"
+    }
+
+<a id="concat" />
+### concat
+
+**concat (arg1, arg2, arg3, ...)**
+
+Kombiniert mehrere Zeichenfolgewerte und gibt den resultierenden Zeichenfolgewert zurück. Diese Funktion kann eine beliebige Anzahl an Argumenten entgegennehmen.
+
+Das folgende Beispiel zeigt die Kombinationsweise mehrerer Werte, um einen Wert zurückzugeben.
+
+    "outputs": {
+        "siteUri": {
+          "type": "string",
+          "value": "[concat('http://',reference(resourceId('Microsoft.Web/sites', parameters('siteName'))).hostNames[0])]"
+        }
+    }
+
+<a id="padleft" />
+### padLeft
 
 **padLeft(stringToPad, totalLength, paddingCharacter)**
 
@@ -200,8 +231,242 @@ Im folgenden Beispiel wird veranschaulicht, wie Sie den vom Benutzer angegebenen
         "paddedAppName": "[padLeft(parameters('appName'),10,'0')]"
     }
 
+<a id="replace" />
+### replace
 
-## parameters
+**replace(originalString, oldCharacter, newCharacter)**
+
+Gibt eine neue Zeichenfolge zurück, in der alle Instanzen eines Zeichens in der angegebenen Zeichenfolge durch ein anderes Zeichen ersetzt wurden.
+
+| Parameter | Erforderlich | Beschreibung
+| :--------------------------------: | :------: | :----------
+| originalString | Ja | Die Zeichenfolge, für die alle Instanzen eines Zeichens durch ein anderes Zeichen ersetzt werden sollen.
+| oldCharacter | Ja | Das Zeichen, das aus der ursprünglichen Zeichenfolge entfernt werden soll.
+| newCharacter | Ja | Das Zeichen, das für das entfernte Zeichen eingefügt werden soll.
+
+Im folgenden Beispiel wird veranschaulicht, wie Sie alle Bindestriche aus einer vom Benutzer angegebenen Zeichenfolge entfernen.
+
+    "parameters": {
+        "identifier": { "type": "string" }
+    },
+    "variables": { 
+        "newidentifier": "[replace(parameters('identifier'),'-','')]"
+    }
+
+<a id="split" />
+### split
+
+**split(inputString, Trennzeichen)** **split(inputString, [Trennzeichen])**
+
+Gibt ein Array von Zeichenfolgen zurück, das die Teilzeichenfolgen der Eingabezeichenfolge enthält, die durch die gesendeten Trennzeichen getrennt sind.
+
+| Parameter | Erforderlich | Beschreibung
+| :--------------------------------: | :------: | :----------
+| inputString | Ja | Die zu teilende Zeichenfolge.
+| Trennzeichen | Ja | Das verwendete Trennzeichen. Kann eine einzelne Zeichenfolge oder ein Array von Zeichenfolgen sein.
+
+Im folgenden Beispiel wird die Eingabezeichenfolge durch ein Komma unterteilt.
+
+    "parameters": {
+        "inputString": { "type": "string" }
+    },
+    "variables": { 
+        "stringPieces": "[split(parameters('inputString'), ',')]"
+    }
+
+<a id="string" />
+### string
+
+**string(valueToConvert)**
+
+Konvertiert den angegebenen Wert in eine Zeichenfolge (String).
+
+| Parameter | Erforderlich | Beschreibung
+| :--------------------------------: | :------: | :----------
+| valueToConvert | Ja | Der Wert, der in eine Zeichenfolge konvertiert werden soll. Der Wert kann nur den Typ „Boolean“, „Integer“ oder „String“ haben.
+
+Im folgenden Beispiel wird der vom Benutzer angegebene Parameterwert in eine Zeichenfolge konvertiert.
+
+    "parameters": {
+        "appId": { "type": "int" }
+    },
+    "variables": { 
+        "stringValue": "[string(parameters('appId'))]"
+    }
+
+<a id="tolower" />
+### toLower
+
+**toLower(stringToChange)**
+
+Konvertiert die angegebene Zeichenfolge in Kleinbuchstaben.
+
+| Parameter | Erforderlich | Beschreibung
+| :--------------------------------: | :------: | :----------
+| stringToChange | Ja | Die Zeichenfolge, die in Kleinbuchstaben konvertiert werden soll.
+
+Im folgenden Beispiel wird der vom Benutzer angegebene Parameterwert in Kleinbuchstaben konvertiert.
+
+    "parameters": {
+        "appName": { "type": "string" }
+    },
+    "variables": { 
+        "lowerCaseAppName": "[toLower(parameters('appName'))]"
+    }
+
+<a id="toupper" />
+### toUpper
+
+**toUpper(stringToChange)**
+
+Konvertiert die angegebene Zeichenfolge in Großbuchstaben.
+
+| Parameter | Erforderlich | Beschreibung
+| :--------------------------------: | :------: | :----------
+| stringToChange | Ja | Die Zeichenfolge, die in Großbuchstaben konvertiert werden soll.
+
+Im folgenden Beispiel wird der vom Benutzer angegebene Parameterwert in Großbuchstaben konvertiert.
+
+    "parameters": {
+        "appName": { "type": "string" }
+    },
+    "variables": { 
+        "upperCaseAppName": "[toUpper(parameters('appName'))]"
+    }
+
+<a id="trim" />
+### trim
+
+**trim (stringToTrim)**
+
+Entfernt alle führenden und nachgestellten Leerzeichen aus der angegebenen Zeichenfolge.
+
+| Parameter | Erforderlich | Beschreibung
+| :--------------------------------: | :------: | :----------
+| stringToTrim | Ja | Die zu kürzende Zeichenfolgen.
+
+Im folgenden Beispiel werden die Leerzeichen aus dem vom Benutzer bereitgestellten Parameterwert entfernt.
+
+    "parameters": {
+        "appName": { "type": "string" }
+    },
+    "variables": { 
+        "trimAppName": "[trim(parameters('appName'))]"
+    }
+
+<a id="uniquestring" />
+### uniqueString
+
+**uniqueString (stringForCreatingUniqueString, ...)**
+
+Führt einen 64-Bit-Hash mit den bereitgestellten Zeichenfolgen durch, um eine eindeutige Zeichenfolge zu erstellen. Diese Funktion ist hilfreich, wenn Sie einen eindeutigen Namen für eine Ressource erstellen müssen. Sie geben Parameterwerte an, die die Ebene der Eindeutigkeit für das Ergebnis darstellen. Sie können angeben, ob der Name für Ihr Abonnement, die Ressourcengruppe oder die Bereitstellung eindeutig ist.
+
+| Parameter | Erforderlich | Beschreibung
+| :--------------------------------: | :------: | :----------
+| stringForCreatingUniqueString | Ja | Die Basiszeichenfolge, die in der Hashfunktion verwendet wird, um eine eindeutige Zeichenfolge zu erstellen.
+| Zusätzliche Parameter nach Bedarf. | Nein | Sie können beliebig viele Zeichenfolgen hinzufügen, ganz wie sie zum Erstellen des Werts benötigt werden, der die Ebene der Eindeutigkeit angibt.
+
+Der zurückgegebene Wert ist keine vollständig zufällige Zeichenfolge, sondern eher das Ergebnis einer Hashfunktion. Der zurückgegebene Wert ist 13 Zeichen lang. Es ist nicht garantiert, dass er global eindeutig ist. Möglicherweise sollten Sie den Wert mit einem Präfix aus Ihren Benennungskonventionen kombinieren, um einen besser geeigneten Anzeigenamen zu erstellen.
+
+Die folgenden Beispiele zeigen, wie Sie mithilfe von uniqueString einen eindeutigen Wert für verschiedene, häufig verwendete Ebenen erstellen können.
+
+Eindeutig auf Grundlage des Abonnements
+
+    "[uniqueString(subscription().subscriptionId)]"
+
+Eindeutig auf Grundlage der Ressourcengruppe
+
+    "[uniqueString(resourceGroup().id)]"
+
+Eindeutig auf Grundlage der Bereitstellung für eine Ressourcengruppe
+
+    "[uniqueString(resourceGroup().id, deployment().name)]"
+    
+Das folgende Beispiel zeigt, wie Sie einen eindeutigen Namen für ein Speicherkonto auf Grundlage seiner Ressourcengruppe erstellen.
+
+    "resources": [{ 
+        "name": "[concat('ContosoStorage', uniqueString(resourceGroup().id))]", 
+        "type": "Microsoft.Storage/storageAccounts", 
+        ...
+
+<a id="uri" />
+### uri
+
+**uri (baseUri, relativeUri)**
+
+Erstellt einen absoluten URI durch Kombinieren der baseUri- und der relativeUri-Zeichenfolge.
+
+| Parameter | Erforderlich | Beschreibung
+| :--------------------------------: | :------: | :----------
+| baseUri | Ja | Die Zeichenfolge mit dem Basis-URI.
+| relativeUri | Ja | Der Zeichenfolge mit dem relativen URI, die der Zeichenfolge mit dem Basis-URI hinzugefügt werden soll.
+
+Der Wert für den **baseUri**-Parameter kann eine bestimmte Datei enthalten, beim Erstellen des URI wird jedoch nur der Basispfad verwendet. Beispielsweise führt das Übergeben von ****http://contoso.com/resources/azuredeploy.json** als BaseUri-Parameter zu einem Basis-URI von ****http://contoso.com/resources/**.
+
+Im folgenden Beispiel wird veranschaulicht, wie basierend auf dem Wert der übergeordneten Vorlage eine Verknüpfung zu einer geschachtelten Vorlage erstellt wird.
+
+    "templateLink": "[uri(deployment().properties.templateLink.uri, 'nested/azuredeploy.json')]"
+
+
+
+## Bereitstellungswertausdrücke
+
+Der Ressourcen-Manager stellt die folgenden Ausdrücke zum Abrufen von Werten aus Vorlagenabschnitten sowie von bereitstellungsbezogenen Werten bereit:
+
+- [deployment](#deployment)
+- [parameters](#parameters)
+- [Variablen](#variables)
+
+Informationen zum Abrufen von Werten aus Ressourcen, Ressourcengruppen oder Abonnements finden Sie unter [Ressourcenausdrücke](#resource-expressions).
+
+<a id="deployment" />
+### deployment
+
+**deployment()**
+
+Gibt Informationen zum aktuellen Bereitstellungsvorgang zurück.
+
+Dieser Ausdruck gibt das Objekt zurück, das während der Bereitstellung übergeben wird. Die Eigenschaften im zurückgegebenen Objekt hängen davon ab, ob das Bereitstellungsobjekt als Link oder als Inline-Objekt übergeben wird. Wenn das Bereitstellungsobjekt als Inlineobjekt übergeben wird, z. B. bei Verwendung des **-TemplateFile**-Parameters in Azure PowerShell zum Verweisen auf eine lokale Datei, hat das zurückgegebene Objekt folgendes Format:
+
+    {
+        "name": "",
+        "properties": {
+            "template": {
+                "$schema": "",
+                "contentVersion": "",
+                "resources": [
+                ],
+                "outputs": {}
+            },
+            "parameters": {},
+            "mode": "",
+            "provisioningState": ""
+        }
+    }
+
+Wenn das Objekt als Link übergeben wird, z. B. bei Verwendung des **-TemplateUri**-Parameters zum Verweisen auf ein Remoteobjekt, hat das zurückgegebene Objekt folgendes Format:
+
+    {
+        "name": "",
+        "properties": {
+            "templateLink": {
+                "uri": "",
+                "contentVersion": ""
+            },
+            "mode": "",
+            "provisioningState": ""
+        }
+    }
+
+Im folgenden Beispiel wird veranschaulicht, wie die Bereitstellung() verwendet wird, um zu einer anderen Vorlage basierend auf dem URI der übergeordneten Vorlage eine Verknüpfung erstellt wird.
+
+    "variables": {  
+        "sharedTemplateUrl": "[uri(deployment().properties.templateLink.uri, 'shared-resources.json')]"  
+    }  
+
+
+<a id="parameters" />
+### parameters
 
 **Parameter (parameterName)**
 
@@ -227,7 +492,55 @@ Die folgenden Beispiele zeigen eine vereinfachte Nutzungsweise der Parameterfunk
        }
     ]
 
-## providers
+<a id="variables" />
+### Variablen
+
+**Variablen (variableName)**
+
+Gibt den Wert der Variablen zurück. Der angegebene Variablenname muss im Variablenabschnitt der Vorlage definiert werden.
+
+| Parameter | Erforderlich | Beschreibung
+| :--------------------------------: | :------: | :----------
+| Variablenname | Ja | Der Name der zurückzugebenden Variable.
+
+
+
+## Ressourcenausdrücke
+
+Der Ressourcen-Manager stellt die folgenden Ausdrücke zum Abrufen von Ressourcenwerten bereit:
+
+- [listkeys](#listkeys)
+- [providers](#providers)
+- [Referenz](#reference)
+- [Ressourcengruppe](#resourcegroup)
+- [Ressourcen-ID](#resourceid)
+- [Abonnement](#subscription)
+
+Informationen zum Abrufen von Werten aus Parametern, Variablen oder der aktuellen Bereitstellung finden Sie unter [Bereitstellungswertausdrücke](#deployment-value-expressions).
+
+<a id="listkeys" />
+### listKeys
+
+**listKeys (resourceName oder resourceIdentifier, [apiVersion])**
+
+Gibt die Schlüssel eines Speicherkontos zurück. Die Ressourcen-ID kann mithilfe der [Ressourcen-ID-Funktion](./#resourceid) oder mithilfe des Formats **providerNamespaces/resourceType/resourceName** angegeben werden. Sie können die Funktion nutzen um den Primär- und Sekundärschlüssel abzurufen.
+  
+| Parameter | Erforderlich | Beschreibung
+| :--------------------------------: | :------: | :----------
+| resourceName oder resourceIdentifier | Ja | Eindeutiger Bezeichner eines Speicherkontos.
+| "apiVersion": | Ja | API-Version eines Ressourcen-Laufzeitstatus.
+
+Das folgende Beispiel zeigt, wie die Schlüssel von einem Speicherkonto in die Ausgabeabschnitte zurückgegeben werden können.
+
+    "outputs": { 
+      "exampleOutput": { 
+        "value": "[listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccountName')), '2015-05-01-preview')]", 
+        "type" : "object" 
+      } 
+    } 
+
+<a id="providers" />
+### providers
 
 **providers (providerNamespace, [resourceType])**
 
@@ -255,7 +568,8 @@ Das folgende Beispiel zeigt die Nutzungsweise der Anbieterfunktion:
 	    }
     }
 
-## Referenz
+<a id="reference" />
+### Referenz
 
 **reference (resourceName oder resourceIdentifier, [apiVersion])**
 
@@ -263,42 +577,60 @@ Aktiviert einen Ausdruck, um seinen Wert vom Laufzeitstatus einer anderen Ressou
 
 | Parameter | Erforderlich | Beschreibung
 | :--------------------------------: | :------: | :----------
-| resourceName oder resourceIdentifier | Ja | Name oder eindeutiger Bezeichner einer Ressource.
-| "apiVersion": | Nein | API-Version eines Ressourcen-Laufzeitstatus. Parameter sollten verwendet werden, wenn die Ressource nicht innerhalb der gleichen Vorlage zur Verfügung gestellt ist.
+| resourceName oder resourceIdentifier | Ja | Name oder eindeutiger Bezeichner einer Ressource
+| "apiVersion": | Nein | API-Version der angegebenen Ressource. Sie müssen diesen Parameter einschließen, wenn die Ressource nicht innerhalb der gleichen Vorlage bereitgestellt wird.
 
 Die **Referenz**-Funktion leitet ihren Wert von einem Laufzeitstatus ab und kann somit nicht im Variablen-Abschnitt verwendet werden. Sie kann in Ausgabeabschnitten einer Vorlage verwendet werden.
 
-Mithilfe des Referenzausdrucks können Sie implizit deklarieren, dass eine Ressource von einer anderen abhängt, wenn die referenzierte Ressource innerhalb der gleichen Vorlage zur Verfügung gestellt wird. Sie müssen nicht zusätzlich die **dependsOn**-Eigenschaft verwenden. Der Ausdruck wird nicht ausgewertet, bis die Ressource, auf die verwiesen wird, die Bereitstellung abgeschlossen hat.
+Mithilfe des Referenzausdrucks können Sie implizit deklarieren, dass eine Ressource von einer anderen abhängt, wenn die referenzierte Ressource innerhalb der gleichen Vorlage zur Verfügung gestellt wird. Sie müssen nicht zusätzlich die Eigenschaft **dependsOn** verwenden. Der Ausdruck wird nicht ausgewertet, bis die Ressource, auf die verwiesen wird, die Bereitstellung abgeschlossen hat.
+
+Im folgenden Beispiel wird auf ein Speicherkonto verwiesen, das in der gleichen Vorlage bereitgestellt wird.
 
     "outputs": {
-      "siteUri": {
-          "type": "string",
-          "value": "[concat('http://',reference(resourceId('Microsoft.Web/sites', parameters('siteName'))).hostNames[0])]"
-      }
-    }
+		"NewStorage": {
+			"value": "[reference(parameters('storageAccountName'))]",
+			"type" : "object"
+		}
+	}
 
-## replace
+Im folgenden Beispiel wird auf ein Speicherkonto verwiesen, das nicht in dieser Vorlage bereitgestellt wird, aber innerhalb der gleichen Ressourcengruppe wie die bereitgestellten Ressourcen enthalten ist.
 
-**replace(originalString, oldCharacter, newCharacter)**
+    "outputs": {
+		"ExistingStorage": {
+			"value": "[reference(concat('Microsoft.Storage/storageAccounts/', parameters('storageAccountName')), '2015-06-15')]",
+			"type" : "object"
+		}
+	}
 
-Gibt eine neue Zeichenfolge zurück, in der alle Instanzen eines Zeichens in der angegebenen Zeichenfolge durch ein anderes Zeichen ersetzt wurden.
+Sie können wie folgt über das zurückgegebene Objekt, beispielsweise den Blob-Endpunkt-URI, einen bestimmten Wert abrufen:
 
-| Parameter | Erforderlich | Beschreibung
-| :--------------------------------: | :------: | :----------
-| originalString | Ja | Die Zeichenfolge, für die alle Instanzen eines Zeichens durch ein anderes Zeichen ersetzt werden sollen.
-| oldCharacter | Ja | Das Zeichen, das aus der ursprünglichen Zeichenfolge entfernt werden soll.
-| newCharacter | Ja | Das Zeichen, das für das entfernte Zeichen eingefügt werden soll.
+    "outputs": {
+		"BlobUri": {
+			"value": "[reference(concat('Microsoft.Storage/storageAccounts/', parameters('storageAccountName')), '2015-06-15').primaryEndpoints.blob]",
+			"type" : "string"
+		}
+	}
 
-Im folgenden Beispiel wird veranschaulicht, wie Sie alle Bindestriche aus einer vom Benutzer angegebenen Zeichenfolge entfernen.
+Wenn Sie die API-Version in Ihrer Vorlage nicht direkt angeben möchten, können Sie wie folgt mithilfe des Ausdrucks **providers** einen der Werte abrufen, etwa die aktuelle Version:
 
-    "parameters": {
-        "identifier": { "type": "string" }
-    },
-    "variables": { 
-        "newidentifier": "[replace(parameters('identifier'),'-','')]"
-    }
+    "outputs": {
+		"BlobUri": {
+			"value": "[reference(concat('Microsoft.Storage/storageAccounts/', parameters('storageAccountName')), providers('Microsoft.Storage', 'storageAccounts').apiVersions[0]).primaryEndpoints.blob]",
+			"type" : "string"
+		}
+	}
 
-## Ressourcengruppe
+Im folgenden Beispiel wird auf ein Speicherkonto in einer anderen Ressourcengruppe verwiesen:
+
+    "outputs": {
+		"BlobUri": {
+			"value": "[reference(resourceId(parameters('relatedGroup'), 'Microsoft.Storage/storageAccounts/', parameters('storageAccountName')), '2015-06-15').primaryEndpoints.blob]",
+			"type" : "string"
+		}
+	}
+
+<a id="resourcegroup" />
+### Ressourcengruppe
 
 **resourceGroup()**
 
@@ -322,7 +654,8 @@ Das folgende Beispiel nutzt den Speicherort der Ressourcengruppe, um einer Websi
        }
     ]
 
-## Ressourcen-ID
+<a id="resourceid" />
+### Ressourcen-ID
 
 **resourceId ([resourceGroupName], resourceType, resourceName1, [resourceName2]...)**
 
@@ -385,58 +718,8 @@ Sie müssen diese Funktion oft nutzen, wenn Sie ein Speicherkonto oder einen vir
       }]
     }
 
-## split
-
-**split(inputString, Trennzeichen)** **split(inputString, [Trennzeichen])**
-
-Gibt ein Array von Zeichenfolgen zurück, das die Teilzeichenfolgen der Eingabezeichenfolge enthält, die durch die gesendeten Trennzeichen getrennt sind.
-
-| Parameter | Erforderlich | Beschreibung
-| :--------------------------------: | :------: | :----------
-| inputString | Ja | Die zu teilende Zeichenfolge.
-| Trennzeichen | Ja | Das verwendete Trennzeichen. Kann eine einzelne Zeichenfolge oder ein Array von Zeichenfolgen sein.
-
-Im folgenden Beispiel wird die Eingabezeichenfolge durch ein Komma unterteilt.
-
-    "parameters": {
-        "inputString": { "type": "string" }
-    },
-    "variables": { 
-        "stringPieces": "[split(parameters('inputString'), ',')]"
-    }
-
-## string
-
-**string(valueToConvert)**
-
-Konvertiert den angegebenen Wert in eine Zeichenfolge (String).
-
-| Parameter | Erforderlich | Beschreibung
-| :--------------------------------: | :------: | :----------
-| valueToConvert | Ja | Der Wert, der in eine Zeichenfolge konvertiert werden soll. Der Wert kann nur den Typ „Boolean“, „Integer“ oder „String“ haben.
-
-Im folgenden Beispiel wird der vom Benutzer angegebene Parameterwert in eine Zeichenfolge konvertiert.
-
-    "parameters": {
-        "appId": { "type": "int" }
-    },
-    "variables": { 
-        "stringValue": "[string(parameters('appId'))]"
-    }
-
-## sub
-
-**sub(operand1, operand2)**
-
-Gibt die Differenz der beiden angegebenen ganzen Zahlen zurück.
-
-| Parameter | Erforderlich | Beschreibung
-| :--------------------------------: | :------: | :----------
-| operand1 | Ja | Zahl, von der subtrahiert werden soll.
-| operand2 | Ja | Zahl, die subtrahiert werden soll.
-
-
-## Abonnement
+<a id="subscription" />
+### Abonnement
 
 **subscription()**
 
@@ -456,90 +739,6 @@ Das folgende Beispiel zeigt ein Abrufen der Abonnement-Funktion im Ausgabeabschn
       } 
     } 
 
-## toLower
-
-**toLower(stringToChange)**
-
-Konvertiert die angegebene Zeichenfolge in Kleinbuchstaben.
-
-| Parameter | Erforderlich | Beschreibung
-| :--------------------------------: | :------: | :----------
-| stringToChange | Ja | Die Zeichenfolge, die in Kleinbuchstaben konvertiert werden soll.
-
-Im folgenden Beispiel wird der vom Benutzer angegebene Parameterwert in Kleinbuchstaben konvertiert.
-
-    "parameters": {
-        "appName": { "type": "string" }
-    },
-    "variables": { 
-        "lowerCaseAppName": "[toLower(parameters('appName'))]"
-    }
-
-## toUpper
-
-**toUpper(stringToChange)**
-
-Konvertiert die angegebene Zeichenfolge in Großbuchstaben.
-
-| Parameter | Erforderlich | Beschreibung
-| :--------------------------------: | :------: | :----------
-| stringToChange | Ja | Die Zeichenfolge, die in Großbuchstaben konvertiert werden soll.
-
-Im folgenden Beispiel wird der vom Benutzer angegebene Parameterwert in Großbuchstaben konvertiert.
-
-    "parameters": {
-        "appName": { "type": "string" }
-    },
-    "variables": { 
-        "upperCaseAppName": "[toUpper(parameters('appName'))]"
-    }
-
-
-## uniqueString
-
-**uniqueString (stringForCreatingUniqueString, ...)**
-
-Führt einen 64-Bit-Hash mit den bereitgestellten Zeichenfolgen durch, um eine eindeutige Zeichenfolge zu erstellen. Diese Funktion ist hilfreich, wenn Sie einen eindeutigen Namen für eine Ressource erstellen müssen. Sie geben Parameterwerte an, die die Ebene der Eindeutigkeit für das Ergebnis darstellen. Sie können angeben, ob der Name für Ihr Abonnement, die Ressourcengruppe oder die Bereitstellung eindeutig ist.
-
-| Parameter | Erforderlich | Beschreibung
-| :--------------------------------: | :------: | :----------
-| stringForCreatingUniqueString | Ja | Die Basiszeichenfolge, die in der Hashfunktion verwendet wird, um eine eindeutige Zeichenfolge zu erstellen.
-| Zusätzliche Parameter nach Bedarf. | Nein | Sie können beliebig viele Zeichenfolgen hinzufügen, ganz wie sie zum Erstellen des Werts benötigt werden, der die Ebene der Eindeutigkeit angibt.
-
-Der zurückgegebene Wert ist keine vollständig zufällige Zeichenfolge, sondern eher das Ergebnis einer Hashfunktion. Der zurückgegebene Wert ist 13 Zeichen lang. Es ist nicht garantiert, dass er global eindeutig ist. Möglicherweise sollten Sie den Wert mit einem Präfix aus Ihren Benennungskonventionen kombinieren, um einen besser geeigneten Anzeigenamen zu erstellen.
-
-Die folgenden Beispiele zeigen, wie Sie mithilfe von uniqueString einen eindeutigen Wert für verschiedene, häufig verwendete Ebenen erstellen können.
-
-Eindeutig auf Grundlage des Abonnements
-
-    "[uniqueString(subscription().subscriptionId)]"
-
-Eindeutig auf Grundlage der Ressourcengruppe
-
-    "[uniqueString(resourceGroup().id)]"
-
-Eindeutig auf Grundlage der Bereitstellung für eine Ressourcengruppe
-
-    "[uniqueString(resourceGroup().id, deployment().name)]"
-    
-Das folgende Beispiel zeigt, wie Sie einen eindeutigen Namen für ein Speicherkonto auf Grundlage seiner Ressourcengruppe erstellen.
-
-    "resources": [{ 
-        "name": "[concat('ContosoStorage', uniqueString(resourceGroup().id))]", 
-        "type": "Microsoft.Storage/storageAccounts", 
-        ...
-
-
-## Variablen
-
-**Variablen (variableName)**
-
-Gibt den Wert der Variablen zurück. Der angegebene Variablenname muss im Variablenabschnitt der Vorlage definiert werden.
-
-| Parameter | Erforderlich | Beschreibung
-| :--------------------------------: | :------: | :----------
-| Variablenname | Ja | Der Name der zurückzugebenden Variable.
-
 
 ## Nächste Schritte
 - Eine Beschreibung der Abschnitte in einer Azure-Ressourcen-Manager-Vorlage finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md).
@@ -547,4 +746,4 @@ Gibt den Wert der Variablen zurück. Der angegebene Variablenname muss im Variab
 - Informationen dazu, wie Sie beim Erstellen eines Ressourcentyps eine bestimmte Anzahl von Durchläufen ausführen, finden Sie unter [Erstellen mehrerer Instanzen von Ressourcen im Azure-Ressourcen-Manager](resource-group-create-multiple.md).
 - Informationen zum Bereitstellen der erstellten Vorlage finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](resource-group-template-deploy.md).
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

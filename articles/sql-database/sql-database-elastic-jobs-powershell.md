@@ -17,12 +17,12 @@
 # Erstellen und Verwalten von Aufträgen für die elastische SQL-Datenbank mithilfe von PowerShell (Vorschau)
 
 > [AZURE.SELECTOR]
-- [Azure portal](sql-database-elastic-jobs-create-and-manage.md)
+- [Azure Classic Portal](sql-database-elastic-jobs-create-and-manage.md)
 - [PowerShell](sql-database-elastic-jobs-powershell.md)
 
 
 
-Mit den PowerShell-APIs für **Aufträge für die elastische Datenbank** (Vorschauversion) können Sie eine Gruppe von Datenbanken definieren, für die Skripts ausgeführt werden sollen. In diesem Artikel wird das Erstellen und Verwalten von Aufträgen für die elastische Datenbank mithilfe von PowerShell-Cmdlets veranschaulicht. Weitere Informationen finden Sie unter [Übersicht über Aufträge für die elastische Datenbank](sql-database-elastic-jobs-overview.md).
+Mit den PowerShell-APIs für **Aufträge für die elastische Datenbank** (Vorschauversion) können Sie eine Gruppe von Datenbanken definieren, für die Skripts ausgeführt werden sollen. In diesem Artikel wird das Erstellen und Verwalten von **Aufträgen für die elastische Datenbank** mithilfe von PowerShell-Cmdlets veranschaulicht. Weitere Informationen finden Sie unter [Übersicht über Aufträge für die elastische Datenbank](sql-database-elastic-jobs-overview.md).
 
 ## Voraussetzungen
 * Ein Azure-Abonnement. Eine kostenlose Testversion finden Sie unter [Einen Monat kostenlos testen](http://azure.microsoft.com/pricing/free-trial/).
@@ -32,7 +32,7 @@ Mit den PowerShell-APIs für **Aufträge für die elastische Datenbank** (Vorsch
 
 ### Auswählen des Azure-Abonnements
 
-Zum Auswählen des Abonnements benötigen Sie Ihre Abonnement-ID (**-SubscriptionId**) oder Ihren Abonnementnamen (**-SubscriptionName**). Falls Sie über mehrere Abonnements verfügen, können Sie sie über das Cmdlet **Get-AzureSubscription** abrufen und die gewünschten Abonnementinformationen aus dem Resultset kopieren. Nachdem Sie Ihre Abonnementinformationen ermittelt haben, führen Sie das folgende Cmdlet aus, um das betreffende Abonnement als Standard festzulegen, insbesondere als Ziel für das Erstellen und Verwalten von Aufträgen:
+Zur Auswahl des Abonnements benötigen Sie Ihre Abonnement-ID (**-SubscriptionId**) oder den Abonnementnamen (**-SubscriptionName**). Falls Sie über mehrere Abonnements verfügen, können Sie sie über das Cmdlet **Get-AzureSubscription** abrufen und die gewünschten Abonnementinformationen aus dem Resultset kopieren. Nachdem Sie Ihre Abonnementinformationen ermittelt haben, führen Sie das folgende Cmdlet aus, um das betreffende Abonnement als Standard festzulegen, insbesondere als Ziel für das Erstellen und Verwalten von Aufträgen:
 
 	Select-AzureSubscription -SubscriptionId {SubscriptionID}
 
@@ -40,7 +40,7 @@ Die [PowerShell-ISE](https://technet.microsoft.com/library/dd315244.aspx) wird z
 
 ## Auftragsobjekte für die elastische Datenbank
 
-In der folgenden Tabelle sind alle Objekttypen von Aufträgen für die elastische Datenbank zusammen mit einer Beschreibung und den relevanten PowerShell-APIs aufgelistet:
+In der folgenden Tabelle sind alle Objekttypen von **Aufträgen für die elastische Datenbank** zusammen mit einer Beschreibung und den relevanten PowerShell-APIs aufgelistet.
 
 <table style="width:100%">
   <tr>
@@ -209,7 +209,7 @@ Vor der Verwendung der Auftrags-APIs muss eine Verbindung mit der *Verwaltungsda
 
 Datenbankanmeldeinformationen können mit verschlüsseltem Kennwort in die *Verwaltungsdatenbank* der Aufträge eingefügt werden. Die Anmeldeinformationen müssen gespeichert werden, um die Ausführung von Aufträgen zu einem späteren Zeitpunkt (unter Verwendung von Auftragszeitplänen) zu ermöglichen.
  
-Verschlüsselung funktioniert mithilfe eines Zertifikats, das im Rahmen des Installationsskripts erstellt wird. Das Installationsskript erstellt das Zertifikat und lädt es zwecks Entschlüsselung der gespeicherten verschlüsselten Kennwörter auf den Azure Cloud Service hoch. Der Azure-Clouddienst speichert den öffentlichen Schlüssel anschließend in der *Verwaltungsdatenbank* der Aufträge, was die Verschlüsselung eines übergebenen Kennworts durch die PowerShell-API oder die Azure-Portalschnittstelle ermöglicht, ohne dass das Zertifikat dazu lokal installiert sein muss.
+Verschlüsselung funktioniert mithilfe eines Zertifikats, das im Rahmen des Installationsskripts erstellt wird. Das Installationsskript erstellt das Zertifikat und lädt es zwecks Entschlüsselung der gespeicherten verschlüsselten Kennwörter auf den Azure Cloud Service hoch. Der Azure-Clouddienst speichert den öffentlichen Schlüssel anschließend in der *Verwaltungsdatenbank* der Aufträge. Dies ermöglicht die Verschlüsselung eines übergebenen Kennworts durch die PowerShell-API oder die Schnittstelle des klassischen Azure-Portals, ohne dass das Zertifikat dazu lokal installiert sein muss.
  
 Die Kennwörter der Anmeldeinformationen werden verschlüsselt und sind vor Benutzern mit schreibgeschütztem Zugriff auf Auftragsobjekte für die elastische Datenbank geschützt. Böswillige Benutzer mit Lese-/Schreibzugriff auf Auftragsobjekte für die elastische Datenbank können jedoch ein Kennwort extrahieren. Die Anmeldeinformationen sind für die erneute Verwendung bei der Auftragsausführung bestimmt. Die Anmeldeinformationen werden beim Einrichten der Verbindungen an die Zieldatenbanken übergeben. Derzeit gibt es keinerlei Einschränkungen für die Zieldatenbanken, die für die einzelnen Anmeldeinformationen verwendet werden. Ein böswilliger Benutzer könnte also ein Datenbankziel für eine von ihm kontrollierte Datenbank hinzufügen. Der Benutzer könnte daraufhin einen Auftrag für diese Datenbank starten, um sich das Kennwort der Anmeldeinformationen zu beschaffen.
 
@@ -242,13 +242,13 @@ Führen Sie einen Auftrag für alle Datenbanken in einem Shardsatz (der mithilfe
 
 Dieses Beispiel erstellt einen Shardzuordnungs-Manager und mehrere Shards und fügt anschließend Daten in die Shards ein.
 
-1. Erstellen Sie die Beispielanwendung aus **Erste Schritte mit den Tools für die elastische Datenbank**, und führen Sie sie aus. Führen Sie die Schritte bis zu Schritt 7 aus dem Abschnitt [Herunterladen und Ausführen der Beispiel-App](sql-database-elastic-scale-get-started.md#Getting-started-with-elastic-database-tools) aus. Am Ende von Schritt 7 wird die folgende Eingabeaufforderung angezeigt:
+1. Erstellen Sie die Beispielanwendung aus **Erste Schritte mit den Tools für die elastische Datenbank**, und führen Sie sie aus. Führen Sie die Schritte bis Schritt 7 im Abschnitt [Herunterladen und Ausführen der Beispiel-App](sql-database-elastic-scale-get-started.md#Getting-started-with-elastic-database-tools) aus. Am Ende von Schritt 7 wird die folgende Eingabeaufforderung angezeigt:
 
 	![Eingabeaufforderung][1]
 
-2.  Geben Sie im Befehlsfenster „1“ ein, und drücken Sie die EINGABETASTE. Dadurch wird der Shardzuordnungs-Manager erstellt, und es werden zwei Shards zum Server hinzugefügt. Geben Sie dann „3“ ein, und drücken Sie die EINGABETASTE. Wiederholen Sie den Vorgang viermal. Dadurch werden Beispieldatenzeilen in die Shards eingefügt.
+2.  Geben Sie im Befehlsfenster "1" ein, und drücken Sie die **EINGABETASTE**. Dadurch wird der Shardzuordnungs-Manager erstellt, und es werden zwei Shards zum Server hinzugefügt. Geben Sie dann "3" ein, und drücken Sie die **EINGABETASTE**. Wiederholen Sie den Vorgang viermal. Dadurch werden Beispieldatenzeilen in die Shards eingefügt.
   
-3.  Im [Azure-Vorschauportal](https://portal.azure.com) werden drei neue Datenbanken auf dem V12-Server angezeigt:
+3.  Im [Azure-Portal](https://portal.azure.com) sollten drei neue Datenbanken auf dem V12-Server angezeigt werden:
 
 	![Visual Studio-Bestätigung][2]
 
@@ -360,7 +360,7 @@ Verwenden Sie das Cmdlet [**Get-AzureSqlJobExecution**](https://msdn.microsoft.c
 	$jobExecution = Get-AzureSqlJobExecution -JobExecutionId $jobExecutionId
 	Write-Output $jobExecution
 
-Verwenden Sie das Cmdlet **Get-AzureSqlJobExecution** mit dem Parameter **IncludeChildren**, um den Ausführungsstatus untergeordneter Aufträge anzuzeigen (insbesondere den spezifischen Status für die Ausführung der einzelnen Aufträge für jede der im Auftrag enthaltenen Datenbanken).
+Verwenden Sie das gleiche Cmdlet **Get-AzureSqlJobExecution** mit dem Parameter **IncludeChildren**, um den Ausführungsstatus untergeordneter Aufträge anzuzeigen, insbesondere den spezifischen Status für die Ausführung der einzelnen Aufträge auf jeder der im Auftrag enthaltenen Datenbanken.
 
 	$jobExecutionId = "{Job Execution Id}"
 	$jobExecutions = Get-AzureSqlJobExecution -JobExecutionId $jobExecutionId -IncludeChildren
@@ -419,7 +419,7 @@ Das folgende PowerShell-Skript kann zum Anzeigen der Ausführungsdetails einer A
 
 ## So rufen Sie Ausführungsfehler innerhalb von Auftragsaufgaben ab
 
-Das Objekt **JobTaskExecution** beinhaltet eine Eigenschaft für den Lebenszyklus der Aufgabe sowie eine Meldungseigenschaft. Bei einem Ausführungsfehler für eine Auftragsaufgabe wird die Lebenszykluseigenschaft auf *Failed* und die Meldungseigenschaft auf die resultierende Ausnahmemeldung und deren Stapel festgelegt. Wenn ein Auftrag nicht erfolgreich abgeschlossen wurde, müssen die Details der Auftragsaufgaben angezeigt werden, die für einen bestimmten Auftrag nicht erfolgreich abgeschlossen wurden.
+Das **JobTaskExecution**-Objekt beinhaltet eine Eigenschaft für den Lebenszyklus der Aufgabe sowie eine Meldungseigenschaft. Bei einem Ausführungsfehler für eine Auftragsaufgabe wird die Lebenszykluseigenschaft auf *Failed* und die Meldungseigenschaft auf die resultierende Ausnahmemeldung und deren Stapel festgelegt. Wenn ein Auftrag nicht erfolgreich abgeschlossen wurde, müssen die Details der Auftragsaufgaben angezeigt werden, die für einen bestimmten Auftrag nicht erfolgreich abgeschlossen wurden.
 
 	$jobExecutionId = "{Job Execution Id}"
 	$jobTaskExecutions = Get-AzureSqlJobTaskExecution -JobExecutionId $jobExecutionId
@@ -514,7 +514,7 @@ Verwenden Sie zum Auslösen der Löschung von Aufträgen das Cmdlet [**Remove-Az
  
 ## So erstellen Sie ein benutzerdefiniertes Datenbankziel
 
-Benutzerdefinierte Datenbankziele können für die direkte Ausführung oder für die Aufnahme in eine benutzerdefinierte Gruppe definiert werden. Da beispielsweise **elastische Datenbankpools** durch die PowerShell-APIs noch nicht direkt unterstützt werden, können Sie einfach ein benutzerdefiniertes Datenbankziel und ein benutzerdefiniertes Datenbanksammlungsziel erstellen, das sämtliche Datenbanken im Pool enthält.
+Benutzerdefinierte Datenbankziele können für die direkte Ausführung oder für die Aufnahme in eine benutzerdefinierte Gruppe definiert werden. Da beispielsweise **Pools für elastische Datenbanken** durch die PowerShell-APIs noch nicht direkt unterstützt werden, können Sie einfach ein benutzerdefiniertes Datenbankziel und ein benutzerdefiniertes Datenbanksammlungsziel erstellen, das sämtliche Datenbanken im Pool enthält.
 
 Legen Sie die folgenden Variablen fest, um die gewünschten Datenbankinformationen anzugeben:
 
@@ -531,7 +531,7 @@ Legen Sie die folgenden Variablen fest, um die gewünschte Konfiguration für da
 	$customCollectionName = "{Custom Database Collection Name}"
 	New-AzureSqlJobTarget -CustomCollectionName $customCollectionName 
 
-### So fügen Sie Datenbanken zu einem benutzerdefinierten Datenbanksammlungsziel hinzu
+### So fügen Sie einem benutzerdefinierten Datenbanksammlungsziel Datenbanken hinzu
 
 Verwenden Sie das Cmdlet [**Add-AzureSqlJobChildTarget**](https://msdn.microsoft.comlibrary/mt346064.aspx), um eine Datenbank zu einer bestimmten benutzerdefinierten Sammlung hinzuzufügen.
 
@@ -565,7 +565,7 @@ Verwenden Sie das Cmdlet [**New-AzureSqlJob**](https://msdn.microsoft.com/librar
 
 Sie können mithilfe eines Auftrags eine Abfrage für eine Gruppe von Datenbanken ausführen und die Ergebnisse an eine bestimmte Tabelle senden. Anschließend kann eine Abfrage für die Tabelle ausgeführt werden, um die Ergebnisse der Abfrage für die einzelnen Datenbanken anzuzeigen. Dadurch erhalten Sie eine asynchrone Methode zum übergreifenden Ausführen einer Abfrage in vielen Datenbanken. Zur Behandlung nicht erfolgreicher Versuche werden automatisch Wiederholungen ausgeführt.
 
-Die angegebene Zieltabelle wird automatisch erstellt, sofern noch nicht vorhanden. Die neue Tabelle entspricht dem Schema des zurückgegebenen Resultsets. Gibt ein Skript mehrere Resultsets zurück, wird jeweils nur das erste an die Zieltabelle gesendet.
+Die angegebene Zieltabelle wird automatisch erstellt, sofern noch nicht vorhanden. Die neue Tabelle entspricht dem Schema des zurückgegebenen Resultsets. Gibt ein Skript mehrere Resultsets zurück, senden Aufträge für die elastische Datenbank jeweils nur das erste an die Zieltabelle.
 
 Das folgende PowerShell-Skript führt ein Skript aus und sammelt die Ergebnisse in einer angegebenen Tabelle. In dem Skript wird vorausgesetzt, dass ein T-SQL-Skript, das eine einzelne Ergebnismenge ausgibt, sowie ein benutzerdefiniertes Datenbanksammlungsziel erstellt wurde.
 
@@ -582,7 +582,7 @@ Dieses Skript verwendet das Cmdlet [**Get-AzureSqlJobTarget**](https://msdn.micr
 	$destinationTableName = "{Destination Table Name}"
 	$target = Get-AzureSqlJobTarget -CustomCollectionName $customCollectionName
 
-### So erstellen und starten Sie einen Auftrag für Datensammlungsszenarien
+### So erstellen und starten Sie einen Auftrag für Datensammlungsszenarios
 
 Dieses Skript verwendet das Cmdlet [**Start-AzureSqlJobExecution**](https://msdn.microsoft.com/library/mt346055.aspx).
  
@@ -655,7 +655,7 @@ Verwenden Sie [Get-AzureSqlJobTrigger](https://msdn.microsoft.com/library/mt3460
 
 ## So erstellen Sie eine Datenschichtanwendung (Data-tier Application, DACPAC) für die datenbankübergreifende Ausführung
 
-Informationen zur DACPAC-Erstellung finden Sie unter [Datenschichtanwendungen](https://msdn.microsoft.com/library/ee210546.aspx). Verwenden Sie für die DACPAC-Bereitstellung das Cmdlet [New-AzureSqlJobContent](https://msdn.microsoft.com/library/mt346085.aspx). Der Dienst muss Zugriff auf das DACPAC haben. Es empfiehlt sich, ein erstelltes DACPAC an Azure Storage hochzuladen und eine [Shared Access Signature](storage-dotnet-shared-access-signature-part-1.md) (SAS) für das DACPAC zu erstellen.
+Informationen zur DACPAC-Erstellung finden Sie unter [Datenschichtanwendungen](https://msdn.microsoft.com/library/ee210546.aspx). Verwenden Sie für die DACPAC-Bereitstellung das Cmdlet [New-AzureSqlJobContent](https://msdn.microsoft.com/library/mt346085.aspx). Der Dienst muss Zugriff auf das DACPAC haben. Es empfiehlt sich, ein erstelltes DACPAC nach Azure Storage hochzuladen und eine [Shared Access Signature](storage-dotnet-shared-access-signature-part-1.md) (SAS) für das DACPAC zu erstellen.
 
 	$dacpacUri = "{Uri}"
 	$dacpacName = "{Dacpac Name}"
@@ -694,4 +694,4 @@ Nach der Erstellung eines DACPACs in Aufträge für die elastische Datenbank kan
 [2]: ./media/sql-database-elastic-jobs-powershell/portal.png
 <!--anchors-->
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

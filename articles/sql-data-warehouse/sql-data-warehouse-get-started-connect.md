@@ -26,16 +26,16 @@ In dieser exemplarischen Vorgehensweise wird das Verbinden mit einer Azure SQL D
 
 ## Voraussetzungen
 
-+ AdventureWorksDW-Beispieldatenbank in SQL Data Warehouse Informationen zum Erstellen dieser Datenbank finden Sie unter [Erstellen einer SQL Data Warehouse-Datenbank](sql-data-warehouse-get-started-create.md). 
-+ SQL Server Data Tools für Visual Studio Installationshinweise und Optionen finden Sie unter [Installieren von Visual Studio und/oder SSDT](sql-data-warehouse-install-visual-studio.md).
++ AdventureWorksDW-Beispieldatenbank in SQL Data Warehouse. Informationen zum Erstellen dieser Datenbank finden Sie unter [Erstellen einer SQL Data Warehouse-Datenbank](sql-data-warehouse-get-started-create.md). 
++ SQL Server Data Tools für Visual Studio. Installationshinweise und Optionen finden Sie unter [Installieren von Visual Studio und/oder SSDT](sql-data-warehouse-install-visual-studio.md).
 
 ## Schritt 1: Ermitteln des vollqualifizierten Namens des SQL Azure-Servers
 
 Ihre Datenbank ist einem Azure SQL-Server zugeordnet. Um eine Verbindung mit Ihrer Datenbank herzustellen, benötigen Sie den vollqualifizierten Namen des Servers (**Servername**.database.windows.net*).
 
-So ermitteln Sie den vollqualifizierten Servername:
+So ermitteln Sie den vollqualifizierten Servernamen:
 
-1. Öffnen Sie das [Azure-Vorschauportal](https://portal.azure.com).
+1. Öffnen Sie das [Azure-Portal](https://portal.azure.com).
 2. Klicken Sie auf **SQL-Datenbanken**, und klicken Sie auf die Datenbank, mit der Sie eine Verbindung herstellen möchten. In diesem Beispiel wird die AdventureWorksDW-Beispieldatenbank verwendet.
 3. Suchen Sie den vollständigen Servernamen.
 
@@ -54,7 +54,7 @@ So ermitteln Sie den vollqualifizierten Servername:
 
 1. Füllen Sie die Felder im Fenster zum Herstellen einer Verbindung mit dem Server aus.
 
-    ![Mit Server verbinden][4]
+    ![Verbindung mit dem Server herstellen][4]
 
     - **Servername**. Geben Sie den zuvor ermittelten *Servernamen* ein.
     - **Authentifizierung**. Wählen Sie SQL Server-Authentifizierung.
@@ -108,4 +108,4 @@ Nachdem Sie eine Verbindung hergestellt haben und Abfragen senden können, versu
 [7]: ./media/sql-data-warehouse-get-started-connect/run-query.png
 [8]: ./media/sql-data-warehouse-get-started-connect/query-results.png
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

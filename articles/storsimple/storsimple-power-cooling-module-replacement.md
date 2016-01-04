@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="08/31/2015"
+   ms.date="12/02/2015"
    ms.author="alkohli" />
 
 # Austauschen eines Moduls für Stromversorgung und Kühlung eines StorSimple-Geräts
@@ -48,7 +48,7 @@ Gehen Sie entsprechend der folgenden Anleitung vor, wenn Sie ein Modul für Stro
 
 #### So bauen Sie ein PCM aus
 
-1. Klicken Sie im Verwaltungsportal auf **Geräte** > **Wartung** > **Hardwarestatus**. Prüfen Sie den Status der PCM-Komponenten unter **Freigegebene Komponenten**, um zu ermitteln, welches PCM ausgefallen ist:
+1. Klicken Sie im klassischen Azure-Portal auf **Geräte** > **Wartung** > **Hardwarestatus**. Prüfen Sie den Status der PCM-Komponenten unter **Freigegebene Komponenten**, um zu ermitteln, welches PCM ausgefallen ist:
 
      - Ist eine Stromversorgung in PCM 0 ausgefallen, leuchtet die Status-LED für **Stromversorgung in PCM 0** rot.
 
@@ -144,7 +144,7 @@ Folgen Sie diesen Anweisungen, um ein PCM in Ihrem StorSimple-Gerät einzubauen.
 
 7. Schalten Sie das PCM ein.
 
-8. Vergewissern Sie sich, dass der Austausch erfolgreich war: Navigieren Sie im Verwaltungsportal Ihres StorSimple Manager-Diensts zu **Geräte** > **Wartung** > **Hardwarestatus**. Unter **Freigegebene Komponenten** muss die Status-LED des PCM grün leuchten.
+8. Vergewissern Sie sich, dass der Austausch erfolgreich war: Navigieren Sie im klassischen Azure-Portal Ihres StorSimple Manager-Diensts zu **Geräte** > **Wartung** > **Hardwarestatus**. Unter **Freigegebene Komponenten** muss die Status-LED des PCM grün leuchten.
 										
     >[AZURE.NOTE]Es kann einige Minuten dauern, bis das Austausch-PCM vollständig initialisiert ist.
 
@@ -152,4 +152,4 @@ Folgen Sie diesen Anweisungen, um ein PCM in Ihrem StorSimple-Gerät einzubauen.
 
 Weitere Informationen zum [Austauschen von StorSimple-Hardwarekomponenten](storsimple-hardware-component-replacement.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -22,9 +22,9 @@ Im [ersten Artikel](iot-hub-device-sdk-c-intro.md) dieser Serie wurde das **Micr
 
 Im vorherigen Artikel wurde beschrieben, wie Sie die **IoTHubClient**-Bibliothek verwenden können, um Ereignisse an IoT Hub zu senden und Nachrichten zu empfangen. In diesem Artikel erklären wir Ihnen, wie Sie präziser bestimmen können, *wann* Sie Daten senden und empfangen. Dazu stellen wir Ihnen die **Low-Level-APIs** vor. Wir erläutern zudem, wie Sie Eigenschaften mithilfe der Eigenschaftsverarbeitungsfunktionen in der **IoTHubClient**-Bibliothek an Ereignisse anfügen (und sie von Nachrichten abrufen) können. Außerdem erfahren Sie mehr über die verschiedenen Methoden zum Verarbeiten von Nachrichten vom IoT Hub.
 
-Am Ende dieses Artikels werden verschiedene Themen besprochen, u. a. weitere Informationen zu Geräteanmeldeinformationen und zum Ändern des Verhalten des **IoTHubClient** über Konfigurationsoptionen.
+Am Ende dieses Artikels werden verschiedene Themen besprochen, u. a. weitere Informationen zu Geräteanmeldeinformationen und zum Ändern des Verhaltens von **IoTHubClient** über Konfigurationsoptionen.
 
-Zur Erläuterung dieser Themen verwenden wir die **IoTHubClient**-SDK-Beispiele. Sehen Sie sich für weitere Informationen die **iothub\_client\_sample\_http**- und **iothub\_client\_sample\_amqp**-Anwendungen an, die im Azure IoT-Geräte-SDK für C enthalten sind. Alles nachfolgend beschriebene wird in diesen Beispielen veranschaulicht.
+Zur Erläuterung dieser Themen verwenden wir die **IoTHubClient**-SDK-Beispiele. Sehen Sie sich für weitere Informationen die **iothub\_client\_sample\_http**- und **iothub\_client\_sample\_amqp**-Anwendungen an, die im Azure IoT-Geräte-SDK für C enthalten sind. Alles nachfolgend Beschriebene wird in diesen Beispielen veranschaulicht.
 
 ## Die Low-Level-APIs
 
@@ -35,7 +35,7 @@ IOTHUB_CLIENT_HANDLE iotHubClientHandle;
 iotHubClientHandle = IoTHubClient_CreateFromConnectionString(connectionString, AMQP_Protocol);
 ```
 
-Zudem haben wir erklärt, wie Ereignisse mit diesem Funktionsaufruf gesendet wurden.
+Zudem haben wir erklärt, wie Ereignisse mit dem folgenden Funktionsaufruf gesendet wurden.
 
 ```
 IoTHubClient_SendEventAsync(iotHubClientHandle, message.messageHandle, SendConfirmationCallback, &message);
@@ -67,7 +67,7 @@ Für jede dieser APIs gibt es jedoch Begleitfunktionen:
 
 Der API-Name all dieser Funktionen beinhaltet die Zeichenfolge "LL". Abgesehen davon sind die Parameter für alle diese Funktionen mit ihren Nicht-LL-Gegenstücken identisch. Das Verhalten dieser Funktionen unterscheidet sich jedoch in einem wichtigen Punkt.
 
-Beim Aufruf von **IoTHubClient\_CreateFromConnectionString** erstellen die zugrunde liegenden Bibliotheken einen neuen Thread, der im Hintergrund ausgeführt wird. Dieser Thread sendet Ereignisse an den IoT Hub und empfängt Nachrichten vom IoT Hub. Bei der Arbeit mit den „LL“-APIs wird kein solcher Thread erstellt. Die Erstellung des Hintergrundthreads stellt eine Vereinfachung für den Entwickler dar. Sie müssen sich nicht darum kümmern, dass Ereignisse explizit an den IoT Hub gesendet und Nachrichten vom IoT Hub empfangen werden; dies erfolgt automatisch im Hintergrund. Im Gegensatz dazu bieten die „LL“-APIs Ihnen bei Bedarf eine explizite Kontrolle über die Kommunikation mit dem IoT Hub.
+Beim Aufruf von **IoTHubClient\_CreateFromConnectionString** erstellen die zugrunde liegenden Bibliotheken einen neuen Thread, der im Hintergrund ausgeführt wird. Dieser Thread sendet Ereignisse an den IoT Hub und empfängt Nachrichten vom IoT Hub. Bei der Arbeit mit den "LL"-APIs wird kein solcher Thread erstellt. Die Erstellung des Hintergrundthreads stellt eine Vereinfachung für den Entwickler dar. Sie müssen sich nicht darum kümmern, dass Ereignisse explizit an den IoT Hub gesendet und Nachrichten vom IoT Hub empfangen werden; dies erfolgt automatisch im Hintergrund. Im Gegensatz dazu bieten die "LL"-APIs Ihnen bei Bedarf eine explizite Kontrolle über die Kommunikation mit dem IoT Hub.
 
 Sehen Sie sich zur Veranschaulichung das folgende Beispiel an:
 
@@ -75,7 +75,7 @@ Beim Aufruf von **IoTHubClient\_SendEventAsync** wird im Grunde das Ereignis in 
 
 Gleichermaßen gilt: Beim Registrieren einer Rückruffunktion für Nachrichten mit **IoTHubClient\_SetMessageCallback** rufen Sie das SDK auf, damit der Hintergrundthread die Rückruffunktion aufruft, wenn eine Nachricht empfangen wird – und das unabhängig vom Hauptthread.
 
-Die „LL“-APIs erstellen keinen Hintergrundthread. Stattdessen muss eine neue API aufgerufen werden, um explizit Daten zu senden und vom IoT Hub zu empfangen. Dies wird im folgenden Beispiel veranschaulicht.
+Die "LL"-APIs erstellen keinen Hintergrundthread. Stattdessen muss eine neue API aufgerufen werden, um explizit Daten zu senden und vom IoT Hub zu empfangen. Dies wird im folgenden Beispiel veranschaulicht.
 
 Die **iothub\_client\_sample\_http**-Anwendung, die im SDK enthalten ist, zeigt die Low-Level-APIs. In diesem Beispiel werden Ereignisse mit Code wie dem Folgenden an den IoT Hub gesendet:
 
@@ -115,7 +115,7 @@ while ((IoTHubClient_LL_GetSendStatus(iotHubClientHandle, &status) == IOTHUB_CLI
 }
 ```
 
-Dieser Code ruft **IoTHubClient\_LL\_DoWork** auf, bis alle Ereignisse im Puffer an den IoT Hub gesendet wurden. Achtung: Das nicht bedeutet nicht, dass alle Nachrichten in der Warteschlange empfangen wurden. Das liegt zum Teil daran, dass die Überprüfung auf „alle“ Nachrichten keine allzu deterministische Aktion ist. Was würde geschehen, wenn Sie „alle“ Nachrichten abrufen und dann eine weitere direkt danach an das Gerät gesendet wird? Eine bessere Möglichkeit für dieses Problem ist ein programmierter Timeout. Die Nachrichtenrückruffunktion könnte beispielsweise jedes Mal einen Timer zurücksetzen, wenn sie aufgerufen wird. Anschließend schreiben Sie die Logik, um die Verarbeitung fortzusetzen, wenn in den letzten *x* Sekunden keine Nachrichten empfangen wurden.
+Dieser Code ruft **IoTHubClient\_LL\_DoWork** auf, bis alle Ereignisse im Puffer an den IoT Hub gesendet wurden. Achtung: Das bedeutet nicht, dass alle Nachrichten in der Warteschlange empfangen wurden. Das liegt zum Teil daran, dass die Überprüfung auf „alle“ Nachrichten keine allzu deterministische Aktion ist. Was würde geschehen, wenn Sie „alle“ Nachrichten abrufen und dann eine weitere direkt danach an das Gerät gesendet wird? Eine bessere Möglichkeit für dieses Problem ist ein programmierter Timeout. Die Nachrichtenrückruffunktion könnte beispielsweise jedes Mal einen Timer zurücksetzen, wenn sie aufgerufen wird. Anschließend schreiben Sie die Logik, um die Verarbeitung fortzusetzen, wenn z. B. in den letzten *x* Sekunden keine Nachrichten empfangen wurden.
 
 Stellen Sie nach Abschluss der Übergabe von Ereignissen und des Empfangs von Nachrichten sicher, dass Sie die entsprechende Funktion aufrufen, um die Ressourcen zu bereinigen.
 
@@ -137,7 +137,7 @@ Unabhängig davon, für welches Modell Sie sich entscheiden, sollten Sie bei der
 
 Das Gleiche gilt auch für den umgekehrten Fall: Wenn Sie mit **IoTHubClient\_CreateFromConnectionString** beginnen, dann verwenden Sie für jede weitere Verarbeitung die Nicht-LL-APIs.
 
-Rufen Sie aus dem Azure IoT-Geräte-SDK für C die **iothub\_client\_sample\_http**-Anwendung auf, um ein vollständiges Beispiel für die Low-Level-APIs zu erhalten. Ein vollständiges Beispiel für Nicht-LL-APIs finden Sie unter der **iothub\_client\_sample\_amqp**-Anwendung.
+Die **iothub\_client\_sample\_http**-Anwendung im Azure IoT-Geräte-SDK für C bietet ein vollständiges Beispiel für die Low-Level-APIs. Ein vollständiges Beispiel für Nicht-LL-APIs finden Sie unter der **iothub\_client\_sample\_amqp**-Anwendung.
 
 ## Verarbeitung von Eigenschaften
 
@@ -150,7 +150,7 @@ message.messageHandle = IoTHubMessage_CreateFromByteArray((const unsigned char*)
 IoTHubClient_LL_SendEventAsync(iotHubClientHandle, message.messageHandle, SendConfirmationCallback, &message)
 ```
 
-In diesem Beispiel wird eine Nachricht mit dem Text „Hello World“ an den IoT Hub gesendet. Der IoT Hub ermöglicht jedoch auch, dass Eigenschaften an jede Nachricht angefügt werden. Eigenschaften sind Name-Wert-Paare, die an die Nachricht angefügt werden können. Wir können beispielsweise den vorherigen Code ändern, um eine Eigenschaft an die Nachricht anzufügen:
+In diesem Beispiel wird eine Nachricht mit dem Text "Hello World" an den IoT Hub gesendet. Der IoT Hub ermöglicht jedoch auch, dass Eigenschaften an jede Nachricht angefügt werden. Eigenschaften sind Name-Wert-Paare, die an die Nachricht angefügt werden können. Wir können beispielsweise den vorherigen Code ändern, um eine Eigenschaft an die Nachricht anzufügen:
 
 ```
 MAP_HANDLE propMap = IoTHubMessage_Properties(message.messageHandle);
@@ -158,9 +158,9 @@ sprintf_s(propText, sizeof(propText), "%d", i);
 Map_AddOrUpdate(propMap, "SequenceNumber", propText);
 ```
 
-Zunächst wird **IoTHubMessage\_Properties** aufgerufen, an die die Verarbeitung der Nachricht übertragen wird. Wir erhalten einen **MAP\_HANDLE**-Verweis, der uns ermöglicht, Eigenschaften hinzuzufügen. Letzteres wird durch Aufruf von **Map\_AddOrUpdate** erzielt, das einen Verweis auf ein MAP\_HANDLE, den Eigenschaftennamen und den Eigenschaftswert akzeptiert. Mit dieser API können wir so viele Eigenschaften wie gewünscht hinzufügen.
+Zunächst wird **IoTHubMessage\_Properties** aufgerufen, an die die Verarbeitung der Nachricht übertragen wird. Wir erhalten einen **MAP\_HANDLE**-Verweis, der es uns ermöglicht, Eigenschaften hinzuzufügen. Letzteres wird durch Aufruf von **Map\_AddOrUpdate** erzielt, das einen Verweis auf ein MAP\_HANDLE, den Eigenschaftennamen und den Eigenschaftswert akzeptiert. Mit dieser API können wir so viele Eigenschaften wie gewünscht hinzufügen.
 
-Wenn das Ereignis vom **Ereignis-Hub** gelesen wird, kann der Empfänger die Eigenschaften auflisten und die entsprechenden Werte abrufen. In .NET würde dies z. B. durch den Zugriff auf die [Properties-Auflistung des EventData-Objekts](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventdata.properties.aspx) durchgeführt werden.
+Wenn das Ereignis vom **Event Hub** gelesen wird, kann der Empfänger die Eigenschaften auflisten und die entsprechenden Werte abrufen. In .NET würde dies z. B. durch den Zugriff auf die [Properties-Auflistung des EventData-Objekts](https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventdata.properties.aspx) durchgeführt werden.
 
 Im vorherigen Beispiel werden Eigenschaften an ein Ereignis angefügt, das an den IoT Hub gesendet wird. Eigenschaften können jedoch auch an Nachrichten angefügt werden, die vom IoT Hub empfangen wurden. Wenn Eigenschaften aus einer Nachricht abgerufen werden sollen, können wir Code wie den Folgenden in der Nachrichtenrückruffunktion verwenden:
 
@@ -194,7 +194,7 @@ static IOTHUBMESSAGE_DISPOSITION_RESULT ReceiveMessageCallback(IOTHUB_MESSAGE_HA
 }
 ```
 
-Durch den Aufruf von **IoTHubMessage\_Properties** wird der **MAP\_HANDLE**-Verweis zurückgegeben. Diesen Verweis übergeben wir dann an **Map\_GetInternals**, um einen Verweis auf ein Array von Name-Wert-Paaren (sowie die Anzahl der Eigenschaften) zu erhalten. An dieser Stelle geht es nur darum, die Eigenschaften aufzulisten, um die gewünschten Werte abzurufen.
+Durch den Aufruf von **IoTHubMessage\_Properties** wird der **MAP\_HANDLE**-Verweis zurückgegeben. Diesen Verweis übergeben wir dann an **Map\_GetInternals**, um einen Verweis auf ein Array von Name-Wert-Paaren (sowie die Anzahl der Eigenschaften) zu erhalten. An dieser Stelle geht es nur darum, die Eigenschaften aufzulisten, um die gewünschten Werte zu erhalten.
 
 Sie müssen keine Eigenschaften in der Anwendung verwenden. Wenn Sie sie jedoch für Ereignisse festlegen oder aus Nachrichten abrufen müssen, wird dies durch die **IoTHubClient**-Bibliothek vereinfacht.
 
@@ -218,7 +218,7 @@ Beachten Sie, dass der Rückgabetyp **IOTHUBMESSAGE\_DISPOSITION\_RESULT** ist u
 
 -   **IOTHUBMESSAGE\_ABANDONED**: Die Nachricht wurde nicht erfolgreich verarbeitet, die **IoTHubClient**-Bibliothek soll die Rückruffunktion jedoch erneut mit der gleichen Nachricht aufrufen.
 
-Bei den ersten beiden Rückgabecodes sendet die **IoTHubClient**-Bibliothek eine Nachricht an IoT Hub und gibt an, dass die Nachricht aus der Warteschlange des Geräts gelöscht und nicht erneut übermittelt werden soll. Das Endergebnis ist dasselbe (die Nachricht wird aus der Warteschlange des Geräts gelöscht), aber darüber hinaus wird weiterhin aufgezeichnet, ob die Nachricht akzeptiert oder abgelehnt wurde. Die Aufzeichnung dieses Unterschieds ist nützlich für Absender der Nachricht, die damit Feedback abrufen und herausfinden können, ob ein Gerät eine bestimmte Nachricht akzeptiert oder abgelehnt hat.
+Bei den ersten beiden Rückgabecodes sendet die **IoTHubClient**-Bibliothek eine Nachricht an den IoT Hub und gibt an, dass die Nachricht aus der Warteschlange des Geräts gelöscht und nicht erneut übermittelt werden soll. Das Endergebnis ist dasselbe (die Nachricht wird aus der Warteschlange des Geräts gelöscht), aber darüber hinaus wird weiterhin aufgezeichnet, ob die Nachricht akzeptiert oder abgelehnt wurde. Die Aufzeichnung dieses Unterschieds ist nützlich für Absender der Nachricht, die damit Feedback abrufen und herausfinden können, ob ein Gerät eine bestimmte Nachricht akzeptiert oder abgelehnt hat.
 
 Im zweiten Fall wird eine Nachricht auch an den IoT Hub gesendet, in der jedoch darauf hingewiesen wird, dass die Nachricht erneut zugestellt werden soll. In der Regel verwerfen Sie eine Nachricht, wenn ein Fehler auftritt, Sie die Verarbeitung der Nachricht jedoch erneut versuchen möchten. Im Gegensatz dazu ist eine Ablehnung der Nachricht angemessen, wenn ein nicht behebbarer Fehler auftritt (oder wenn Sie einfach entscheiden, dass Sie die Nachricht nicht verarbeiten möchten).
 
@@ -239,7 +239,7 @@ Bei den Argumenten von **IoTHubClient\_CreateFromConnectionString** handelt es s
 HostName=IOTHUBNAME.IOTHUBSUFFIX;DeviceId=DEVICEID;SharedAccessKey=SHAREDACCESSKEY
 ```
 
-Diese Zeichenfolge enthält vier Arten von Informationen: IoT Hub-Name, IoT Hub-Suffix, Geräte-ID und den Schlüssel für den gemeinsamen Zugriff. Beim Erstellen der IoT Hub-Instanz im Azure-Verwaltungsportal erhalten Sie den vollqualifizierten Domänennamen (FQDN) eines IoT Hubs: Damit erhalten Sie zugleich den IoT Hub-Namen (der erste Teil des FQDN) und das IoT Hub-Suffix (der Rest des FQDN). Die Geräte-ID und den Schlüssel für den gemeinsamen Zugriff erhalten Sie, wenn Sie das Gerät beim IoT Hub registrieren (wie im [vorherigen Artikel](iot-hub-device-sdk-c-intro.md) beschrieben).
+Diese Zeichenfolge enthält vier Arten von Informationen: IoT Hub-Name, IoT Hub-Suffix, Geräte-ID und den gemeinsamen Zugriffsschlüssel. Beim Erstellen der IoT Hub-Instanz im Azure-Portal rufen Sie den vollqualifizierten Domänennamen (FQDN) eines IoT Hubs ab: Damit erhalten Sie zugleich den IoT Hub-Namen (der erste Teil des FQDNs) und das IoT Hub-Suffix (der Rest des FQDNs). Die Geräte-ID und den gemeinsamen Zugriffsschlüssel erhalten Sie, wenn Sie das Gerät beim IoT Hub registrieren (wie im [vorherigen Artikel](iot-hub-device-sdk-c-intro.md) beschrieben).
 
 **IoTHubClient\_CreateFromConnectionString** bietet eine Möglichkeit, die Bibliothek zu initialisieren. Sie können auch ein neues **IOTHUB\_CLIENT\_HANDLE** mithilfe der einzelnen Parameter anstelle der Verbindungszeichenfolge erstellen. Verwenden Sie dafür den folgenden Code:
 
@@ -268,7 +268,7 @@ IoTHubClient_LL_SetOption(iotHubClientHandle, "timeout", &timeout);
 
 Es gibt eine Reihe von Optionen, die häufig verwendet werden:
 
--   **SetBatching** (Bool): Bei **true** werden an den IoT Hub gesendete Daten in Batches gesendet. Bei **false** werden Nachrichten einzeln gesendet. Die Standardeinstellung ist **false**.
+-   **SetBatching** (boolesch): Bei **true** werden an den IoT Hub gesendete Daten in Batches gesendet. Bei **false** werden Nachrichten einzeln gesendet. Die Standardeinstellung ist **false**.
 
 -   **Timeout** (ganze Zahl ohne Vorzeichen): Dieser Wert wird in Millisekunden dargestellt. Wenn das Senden einer HTTP-Anforderung oder der Empfang einer Antwort länger dauert, kommt es zu einem Timeout der Verbindung.
 
@@ -278,4 +278,4 @@ Die Batchverarbeitung ist eine wichtige Option. Standardmäßig übergibt die Bi
 
 In diesem Artikel wird das Verhalten der **IoTHubClient**-Bibliothek im **Azure IoT-Geräte-SDK für C** ausführlich beschrieben. Diese Informationen sollten Ihnen eine umfassende Übersicht über die Funktionen der **IoTHubClient**-Bibliothek bieten. Im [nächsten Artikel](iot-hub-device-sdk-c-serializer.md) stellen wir ähnliche Details zur Bibliothek des **Serialisierungsprogramms** vor.
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

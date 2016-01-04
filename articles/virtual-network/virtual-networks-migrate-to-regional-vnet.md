@@ -4,7 +4,7 @@
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor="tysonn" />
 <tags 
    ms.service="virtual-network"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="09/02/2015"
+   ms.date="12/11/2015"
    ms.author="telmos" />
 
 # Migrieren von Affinitätsgruppen zu einem regionalen virtuellen Netzwerk (VNet)
@@ -66,4 +66,4 @@ Virtuelle Computer, die sich derzeit in einer Affinitätsgruppe befinden, müsse
 Die Bereitstellung eines virtuellen Computers erfolgt in einer einzelnen Skalierungseinheit. Affinitätsgruppen können zwar den Satz verfügbarer VM-Größen für eine neue VM-Bereitstellung einschränken, alle vorhandenen und bereits bereitgestellten virtuellen Computer sind jedoch bereits auf den Satz von VM-Größen beschränkt, der in der entsprechenden Skalierungseinheit verfügbar ist. Daher hat das Entfernen eines virtuellen Computers aus der Affinitätsgruppe keinerlei Auswirkungen.
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1217_2015-->

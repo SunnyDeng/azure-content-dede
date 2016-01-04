@@ -4,9 +4,9 @@ Führen Sie zum Bereitstellen der mithilfe von PowerShell heruntergeladenen ARM-
 
 1. Wenn Sie Azure PowerShell noch nie verwendet haben, lesen Sie [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md), und befolgen Sie die komplette Anleitung, um sich bei Azure anzumelden und Ihr Abonnement auszuwählen.
 
-3. Führen Sie bei Bedarf das Cmdlet **New-AzureRMResourceGroup** aus, um eine neue Ressourcengruppe zu erstellen. Mit dem folgenden Befehl wird eine Ressourcengruppe mit dem Namen *TestRG* in der Azure-Region *USA, Mitte* erstellt. Weitere Informationen zu Ressourcengruppen finden Sie unter [Übersicht über den Azure-Ressourcen-Manager.](resource-group-overview.md)
+3. Führen Sie bei Bedarf das Cmdlet **New-AzureRmResourceGroup** aus, um eine neue Ressourcengruppe zu erstellen. Mit dem folgenden Befehl wird eine Ressourcengruppe mit dem Namen *TestRG* in der Azure-Region *USA, Mitte* erstellt. Weitere Informationen zu Ressourcengruppen finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](resource-group-overview.md).
 
-		New-AzureRMResourceGroup -Name TestRG -Location centralus
+		New-AzureRmResourceGroup -Name TestRG -Location centralus
 		
 	Hier ist die erwartete Ausgabe des obigen Befehls:
 
@@ -20,9 +20,9 @@ Führen Sie zum Bereitstellen der mithilfe von PowerShell heruntergeladenen ARM-
 		                    *
 		ResourceId        : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG
 
-4. Führen Sie das Cmdlet **New-AzureRMResourceGroupDeployment** aus, um das neue VNet mithilfe der zuvor heruntergeladenen und geänderten Vorlage und Parameterdateien bereitzustellen.
+4. Führen Sie das Cmdlet **New-AzureRmResourceGroupDeployment** aus, um das neue VNET mithilfe der zuvor heruntergeladenen und geänderten Vorlage und Parameterdateien bereitzustellen.
 
-		New-AzureRMResourceGroupDeployment -Name TestVNetDeployment -ResourceGroupName TestRG `
+		New-AzureRmResourceGroupDeployment -Name TestVNetDeployment -ResourceGroupName TestRG `
 			-TemplateFile C:\ARM\azuredeploy.json -TemplateParameterFile C:\ARM\azuredeploy-parameters.json
 			
 	Hier ist die erwartete Ausgabe des obigen Befehls:
@@ -46,10 +46,10 @@ Führen Sie zum Bereitstellen der mithilfe von PowerShell heruntergeladenen ARM-
 		
 		Outputs           :
 
-5. Führen Sie das Cmdlet **Get-AzureRMVirtualNetwork** aus, um die Eigenschaften des neuen VNet anzuzeigen, wie unten dargestellt.
+5. Führen Sie das Cmdlet **Get-AzureRmVirtualNetwork** aus, um die Eigenschaften des neuen VNET anzuzeigen, wie unten dargestellt.
 
 
-		Get-AzureRMVirtualNetwork -ResourceGroupName TestRG -Name TestVNet
+		Get-AzureRmVirtualNetwork -ResourceGroupName TestRG -Name TestVNet
 		
 	Hier ist die erwartete Ausgabe des obigen Befehls:
 		
@@ -92,4 +92,4 @@ Führen Sie zum Bereitstellen der mithilfe von PowerShell heruntergeladenen ARM-
 		                      }
 		                    ]
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

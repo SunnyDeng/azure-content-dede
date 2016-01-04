@@ -1,5 +1,5 @@
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal] an. Klicken Sie auf **Mobile Services** und dann auf Ihre App.
+1. Melden Sie sich beim [klassischen Azure-Portal](https://manage.windowsazure.com/) an, klicken Sie auf **Mobile Services**, und klicken Sie dann auf Ihre App.
 
 	![](./media/mobile-services-create-new-push-table/mobile-services-selection.png)
 
@@ -17,7 +17,4 @@
 
 Als Nächstes ändern Sie die App so, dass Pushbenachrichtigungen unterstützt werden.
 
-<!-- URLs -->
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -1,4 +1,4 @@
-1. Klicken Sie auf die Registerkarte **Anwendungen** auf Ihrer Verzeichnisseite im [Azure-Verwaltungsportal](https://manage.windowsazure.com/).
+1. Klicken Sie auf die Registerkarte **Anwendungen** auf Ihrer Verzeichnisseite im [klassischen Azure-Portal](https://manage.windowsazure.com/).
   
 2. Klicken Sie auf die Registrierung zu Ihrer integrierten Anwendung.
 
@@ -13,7 +13,7 @@
     ![](./media/mobile-services-generate-aad-app-registration-access-key/app-perms.png)
 
 
-7. Navigieren Sie im [Azure-Verwaltungsportal](https://manage.windowsazure.com/) zurück zu Ihrem mobilen Dienst, und klicken Sie auf die Registerkarte **Konfigurieren**. Blättern Sie nach unten zum Abschnitt **App-Einstellungen**, fügen Sie die folgenden App-Einstellungen hinzu, und klicken Sie auf **Speichern**.
+7. Navigieren Sie im [klassischen Azure-Portal](https://manage.windowsazure.com/) zurück zu Ihrem mobilen Dienst, und klicken Sie auf die Registerkarte **Konfigurieren**. Blättern Sie nach unten zum Abschnitt **App-Einstellungen**, fügen Sie die folgenden App-Einstellungen hinzu, und klicken Sie auf **Speichern**.
 
     <table border="1">
     <tr> <th>Name der App-Einstellung</th><th>Beschreibung</th>
@@ -33,4 +33,4 @@
     ![](./media/mobile-services-generate-aad-app-registration-access-key/aad-app-settings.png)
   
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

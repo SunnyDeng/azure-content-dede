@@ -1,4 +1,4 @@
-1. Klicken Sie im [Azure-Verwaltungsportal] auf den neuen mobilen Dienst oder auf die Registerkarte mit dem Cloudsymbol, um zur Übersichtsseite zu gelangen.
+1. Klicken Sie im [klassischen Azure-Portal](https://manage.windowsazure.com/) auf den neuen mobilen Dienst oder auf die Registerkarte mit dem Cloudsymbol, um zur Übersichtsseite zu gelangen.
 
     ![](./media/mobile-services-ios-download-service-locally/mobile-portal-quickstart-ios.png)
 
@@ -19,11 +19,4 @@
 
     ![](./media/mobile-services-ios-download-service-locally/download-publish-profile.png)
 
-
-
-
-
-<!-- URLs. -->
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
-
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

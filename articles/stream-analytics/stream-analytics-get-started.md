@@ -1,7 +1,7 @@
 <properties
 	pageTitle="Erste Schritte mit Azure Stream Analytics: Betrugserkennung in Echtzeit | Microsoft Azure"
 	description="Erfahren Sie, wie Sie mit Stream Analytics eine Lösung zur Betrugserkennung in Echtzeit erstellen können. Verwenden Sie einen Event Hub für die Ereignisverarbeitung in Echtzeit."
-	keywords="Event Hub,Betrugserkennung,Echtzeit,Echtzeitverarbeitung"
+	keywords="Erkennung von Anomalien, Betrugserkennung, Erkennung von Anomalien in Echtzeit"
 	services="stream-analytics"
 	documentationCenter=""
 	authors="jeffstokes72"
@@ -14,14 +14,14 @@
 	ms.topic="hero-article"
 	ms.tgt_pltfrm="na"
 	ms.workload="data-services"
-	ms.date="11/06/2015"
+	ms.date="12/04/2015"
 	ms.author="jeffstok" />
 
 
 
 # Erste Schritte mit Azure Stream Analytics: Betrugserkennung in Echtzeit
 
-Erfahren Sie, wie Sie mit Azure Stream Analytics eine End-to-End-Lösung zur Betrugserkennung in Echtzeit erstellen können. Binden Sie Ereignisse in Azure Event Hubs ein, schreiben Sie Stream Analytics-Abfragen für das Erfassen von Daten oder für Warnungen, und senden Sie das Ergebnis an eine Ausgabesenke, um in Echtzeit einen Dateneinblick zu erhalten.
+Erfahren Sie, wie Sie mit Azure Stream Analytics eine End-to-End-Lösung zur Betrugserkennung in Echtzeit erstellen können. Binden Sie Ereignisse in Azure Event Hubs ein, schreiben Sie Stream Analytics-Abfragen für das Erfassen von Daten oder für Warnungen, und senden Sie das Ergebnis an eine Ausgabesenke, um in Echtzeit einen Dateneinblick zu erhalten. Anomalienerkennung in Echtzeit für Telekommunikation wird abgedeckt, aber die Beispieltechnik eignet sich gleichermaßen für andere Arten von Betrugserkennung, z. B. Kreditkarten- oder Identitätsdiebstahlszenarien.
 
 Stream Analytics ist ein vollständig verwalteter Dienst, der eine geringe Latenz, Hochverfügbarkeit und eine skalierbare komplexe Ereignisverarbeitung für das Streaming von Daten in der Cloud bietet. Weitere Informationen finden Sie unter [Einführung in Azure Stream Analytics](stream-analytics-introduction.md).
 
@@ -34,7 +34,7 @@ In typischen Szenarien des Internet der Dinge (IoT) werden unzählige Telemetrie
 
 ## Voraussetzungen
 
-Für dieses Szenario wird ein Ereignisgenerator verwendet, der sich auf GitHub befindet. Laden Sie ihn [hier](https://github.com/Azure/azure-stream-analytics/tree/master/DataGenerators/TelcoGenerator) herunter, und befolgen Sie die Schritte dieses Lernprogramms, um Ihre Lösung einzurichten.
+Für dieses Szenario wird ein Ereignisgenerator verwendet, der sich auf GitHub befindet. Laden Sie ihn [hier](https://github.com/Azure/azure-stream-analytics/tree/master/DataGenerators/TelcoGenerator) herunter, und befolgen Sie die Schritte dieses Tutorials, um Ihre Lösung einzurichten.
 
 ## Erstellen einer Azure Event Hub-Eingabe und einer Consumergruppe
 
@@ -112,7 +112,7 @@ Nun, da wir einen Datenstrom von Telekommunikationsereignissen haben, können wi
 
 	* **Event Hub-Name**: Wählen Sie den Namen des Event Hubs aus.
 
-	* **Event Hub Policy Name**: Wählen Sie die Event Hub-Richtlinie aus, die Sie zuvor in diesem Lernprogramm erstellt haben.
+	* **Event Hub Policy Name**: Wählen Sie die Event Hub-Richtlinie aus, die Sie zuvor in diesem Tutorial erstellt haben.
 
 	* **Event Hub-Consumergruppe**: Geben Sie die Consumergruppe ein, die Sie zuvor in diesem Tutorial erstellt haben.
 5.	Klicken Sie auf die rechte Taste.
@@ -124,7 +124,7 @@ Nun, da wir einen Datenstrom von Telekommunikationsereignissen haben, können wi
 
 ### Festlegen der Auftragsabfrage
 
-Stream Analytics unterstützt ein einfaches, deklaratives Abfragemodell zum Beschreiben der Transformationen für Echtzeitverarbeitung. Weitere Informationen zur Sprache finden Sie in der [Stream Analytics Query Language Reference](https://msdn.microsoft.com/library/dn834998.aspx) (in englischer Sprache). Dieses Lernprogramm hilft Ihnen beim Erstellen und Testen mehrerer Abfragen über Ihren Anrufdatenstrom in Echtzeit.
+Stream Analytics unterstützt ein einfaches, deklaratives Abfragemodell zum Beschreiben der Transformationen für Echtzeitverarbeitung. Weitere Informationen zur Sprache finden Sie in der [Stream Analytics Query Language Reference](https://msdn.microsoft.com/library/dn834998.aspx) (in englischer Sprache). Dieses Tutorial hilft Ihnen beim Erstellen und Testen mehrerer Abfragen über Ihren Anrufdatenstrom in Echtzeit.
 
 #### Optional: Beispieleingabedaten
 Um die Abfrage mit den tatsächlichen Auftragsdaten zu überprüfen, können Sie die **Beispieldaten**-Funktion verwenden, um Ereignisse aus Ihrem Datenstrom zu extrahieren und eine JSON-Datei der Ereignisse zum Testen zu erstellen. Die folgenden Schritte veranschaulichen die Vorgehensweise. Zudem finden Sie die Beispieldatei [Telco.json](https://github.com/Azure/azure-stream-analytics/blob/master/Sample%20Data/telco.json) für Testzwecke.
@@ -257,4 +257,4 @@ Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://so
 - [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

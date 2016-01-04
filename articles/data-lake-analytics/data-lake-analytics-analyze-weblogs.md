@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="11/09/2015"
+   ms.date="12/01/2015"
    ms.author="jgao"/>
 
 # Tutorial: Analysieren von Websiteprotokollen mit Azure Data Lake Analytics
@@ -30,17 +30,17 @@ Erfahren Sie, wie Sie Websiteprotokolle mit Azure Data Lake Analytics analysiere
 
 	Nachdem die Data Lake-Tools für Visual Studio installiert wurden, wird in Visual Studio das Menü **Data Lake** angezeigt:
 	
-	![Menü „U-SQL“ in Visual Studio](./media/data-lake-analytics-data-lake-tools-get-started/data-lake-analytics-data-lake-tools-menu.png)
+	![U-SQL-Menü in Visual Studio](./media/data-lake-analytics-data-lake-tools-get-started/data-lake-analytics-data-lake-tools-menu.png)
 
 - **Grundkenntnisse in Data Lake Analytics und Data Lake-Tools für Visual Studio**. Informationen zu den ersten Schritten finden Sie unter:
  
-	- [Erste Schritte mit Azure Data Lake Analytics mithilfe des Azure-Vorschauportals](data-lake-analytics-get-started-portal.md)
-	- [Entwickeln von U-SQL-Skripts mit den Data Lake-Tools für Visual Studio](data-lake-analytics-data-lake-tools-get-started.md)
+	- [Erste Schritte mit Azure Data Lake Analytics mithilfe des Azure-Portals](data-lake-analytics-get-started-portal.md).
+	- [Entwickeln von U-SQL-Skripts mit den Data Lake-Tools für Visual Studio](data-lake-analytics-data-lake-tools-get-started.md).
 
-- **Data Lake Analytics-Konto.** Siehe [Erstellen eines Azure Data Lake Analytics-Kontos](data-lake-analytics-get-started-portal.md#create_adl_analytics_account).
+- **Data Lake Analytics-Konto**. Siehe [Erstellen eines Azure Data Lake Analytics-Kontos](data-lake-analytics-get-started-portal.md#create_adl_analytics_account).
 
-	In den Data Lake-Tools wird das Erstellen von Data Lake Analytics-Konten nicht unterstützt. Sie müssen sie also über das Azure-Vorschauportal, Azure PowerShell, das .NET SDK oder die Azure-Befehlszeilenschnittstelle erstellen. 
-- **Hochladen der Beispieldaten in das Data Lake Analytics-Konto.** Siehe [Hochladen von „SearchLog.tsv“ in das standardmäßige Data Lake Storage-Konto](data-lake-analytics-get-started-portal.md#update-data-to-the-default-adl-storage-account).
+	Für die Data Lake-Tools wird das Erstellen von Data Lake Analytics-Konten nicht unterstützt. Sie müssen sie also mit dem Azure-Portal oder über Azure PowerShell, das .NET SDK oder die Azure-Befehlszeilenschnittstelle erstellen. 
+- **Upload der Beispieldaten in das Data Lake Analytics-Konto**. Siehe [Hochladen von „SearchLog.tsv“ in das standardmäßige Data Lake Storage-Konto](data-lake-analytics-get-started-portal.md#update-data-to-the-default-adl-storage-account).
 
     Zum Ausführen eines Data Lake Analytics-Auftrags benötigen Sie einige Daten. Auch wenn die Data Lake-Tools das Hochladen von Daten unterstützen, verwenden Sie das Portal zum Hochladen der Beispieldaten, um das Durcharbeiten dieses Tutorials zu vereinfachen.
  
@@ -58,7 +58,7 @@ Bevor Sie U-SQL-Skripts erstellen und testen können, müssen Sie zuerst eine Ve
 **So durchsuchen Sie Ihre Data Lake Analytics-Konten**
 
 1. Öffnen Sie in Visual Studio den **Server-Explorer**, indem Sie **STRG+ALT+S** drücken.
-2. Erweitern Sie in **Server-Explorer** erst **Azure** und dann **Data Lake Analytics**. Es wird eine Liste mit Ihren Data Lake Analytics-Konten angezeigt, falls Konten vorhanden sind. Es ist nicht möglich, Data Lake Analytics-Konten über Visual Studio zu erstellen. Informationen zum Erstellen eines Kontos finden Sie unter [Erste Schritte mit Azure Data Lake Analytics mithilfe des Azure-Vorschauportals](data-lake-analytics-get-started-portal.md) oder [Erste Schritte mit Azure Data Lake Analytics mithilfe von Azure PowerShell](data-lake-analytics-get-started-powershell.md).
+2. Erweitern Sie in **Server-Explorer** erst **Azure** und dann **Data Lake Analytics**. Es wird eine Liste mit Ihren Data Lake Analytics-Konten angezeigt, falls Konten vorhanden sind. Es ist nicht möglich, Data Lake Analytics-Konten über Visual Studio zu erstellen. Informationen zum Erstellen eines Kontos finden Sie unter [Erste Schritte mit Azure Data Lake Analytics mithilfe des Azure-Portals](data-lake-analytics-get-started-portal.md) oder [Erste Schritte mit Azure Data Lake Analytics mithilfe von Azure PowerShell](data-lake-analytics-get-started-powershell.md).
 
 ## Entwickeln einer U-SQL-Anwendung 
 
@@ -170,8 +170,8 @@ Sie können der Anwendung außerdem benutzerdefinierte Operatoren hinzufügen. W
 6. Wechseln Sie zurück zum ersten U-SQL-Skript, und geben Sie neben der Schaltfläche **Senden** Ihr Analytics-Konto an.
 7. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf **Script.usql**, und klicken Sie dann auf **Skript erstellen**. Überprüfen Sie das Ergebnis im Ausgabebereich.
 8. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf **Script.usql**, und klicken Sie dann auf **Skript senden**.
-9. Überprüfen Sie, ob das **Analytics-Konto** jenes ist, in dem Sie den Auftrag ausführen möchten, und klicken Sie dann auf **Senden**. Nach Abschluss der Übermittlung werden im Fenster „Ergebnisse“ von Data Lake-Tools für Visual Studio Ergebnisse und ein Auftragslink angezeigt.
-10. Warten Sie, bis der Auftrag erfolgreich abgeschlossen wurde. Sollte der Auftrag misslingen, fehlt meist die Quelldatei. Siehe den Abschnitt „Voraussetzung“ in diesem Tutorial. Weitere Informationen zur Problembehandlung finden Sie unter [Überwachung und Problembehandlung von Azure Data Lake Analytics-Aufträgen](data-lake-analytics-monitor-and-troubleshoot-jobs-tutorial.md).
+9. Überprüfen Sie, ob das **Analytics-Konto** jenes ist, in dem Sie den Auftrag ausführen möchten, und klicken Sie dann auf **Senden**. Die Sendeergebnisse und die Auftragsverknüpfung sind im Ergebnisfenster der Data Lake-Tools für Visual Studio verfügbar, nachdem die Übermittlung abgeschlossen ist.
+10. Warten Sie, bis der Auftrag erfolgreich abgeschlossen wurde. Falls für den Auftrag ein Fehler auftritt, fehlt meist die Quelldatei. Siehe den Abschnitt „Voraussetzung“ in diesem Tutorial. Weitere Informationen zur Problembehandlung finden Sie unter [Überwachung und Problembehandlung von Azure Data Lake Analytics-Aufträgen](data-lake-analytics-monitor-and-troubleshoot-jobs-tutorial.md).
 
     Nach Abschluss des Auftrags sollte der folgende Bildschirm angezeigt werden:
     
@@ -192,14 +192,14 @@ Sie können der Anwendung außerdem benutzerdefinierte Operatoren hinzufügen. W
 
 Informationen zu den ersten Schritten mit Data Lake Analytics unter Verwendung unterschiedlicher Tools finden Sie unter:
 
-- [Erste Schritte mit Data Lake Analytics mithilfe des Azure-Vorschauportals](data-lake-analytics-get-started-portal.md)
+- [Erste Schritte mit Data Lake Analytics mithilfe des Azure-Portals](data-lake-analytics-get-started-portal.md)
 - [Erste Schritte mit Data Lake Analytics mithilfe von Azure PowerShell](data-lake-analytics-get-started-powershell.md)
 - [Erste Schritte mit Data Lake Analytics mithilfe des .NET SDK](data-lake-analytics-get-started-net-sdk.md)
 
 Weitere Themen zur Entwicklung:
 
 - [Entwickeln von U-SQL-Skripts mit Data Lake-Tools für Visual Studio](data-lake-analytics-data-lake-tools-get-started.md)
-- [Erste Schritte mit der Sprache U-SQL für Azure Data Lake Analytics](data-lake-analytics-u-sql-get-started.md)
+- [Erste Schritte mit Azure Data Lake Analytics-U-SQL-Sprache](data-lake-analytics-u-sql-get-started.md)
 - [Entwickeln von benutzerdefinierten U-SQL-Operatoren für Data Lake Analytics-Aufträge](data-lake-analytics-u-sql-user-defined-operators.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

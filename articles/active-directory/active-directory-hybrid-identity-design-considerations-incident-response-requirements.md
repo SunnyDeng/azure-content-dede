@@ -59,7 +59,7 @@ Während der Phase der Schadensbegrenzung und Risikominderung ist es wichtig, di
 ## Nächste Schritte
 [Definieren der Strategie zum Schutz von Daten](active-directory-hybrid-identity-design-considerations-data-protection-strategy.md)
 
-## Siehe auch
-[Überlegungen zum Entwurf – Übersicht](active-directory-hybrid-identity-design-considerations-directory-overview.md)
+## Weitere Informationen
+[Überlegungen zum Entwurf – Übersicht](active-directory-hybrid-identity-design-considerations-overview.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

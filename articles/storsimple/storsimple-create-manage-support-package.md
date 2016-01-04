@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="09/15/2015"
+   ms.date="12/02/2015"
    ms.author="alkohli" />
 
 
@@ -33,13 +33,13 @@ In diesem Tutorial lernen Sie Folgendes:
 - Entschlüsseln und Bearbeiten eines Unterstützungspakets
 
 
-## Erstellen eines Unterstützungspakets im Verwaltungsportal
+## Erstellen eines Unterstützungspakets im klassischen Azure-Portal
 
-Zur Behandlung möglicher Probleme mit dem StorSimple Manager-Dienst können Sie im Verwaltungsportal über die Wartungsseite des Diensts ein Unterstützungspaket erstellen und an die Microsoft Support-Website hochladen. Für den Upload wird ein Unterstützungshauptschlüssel benötigt. Den Unterstützungshauptschlüssel erhalten Sie per E-Mail vom zuständigen Supporttechniker. Ein unverschlüsseltes, komprimiertes Unterstützungspaket (CAB-Datei) wird erstellt. Dieses Paket kann dann vom Supporttechniker über die Support-Website abgerufen werden, wenn er den Hauptschlüssel bereitstellt.
+Zur Behandlung möglicher Probleme mit dem StorSimple Manager-Dienst können Sie im klassischen Azure-Portal über die Seite **Wartung** des Diensts ein Unterstützungspaket erstellen und an die Microsoft Support-Website hochladen. Für den Upload wird ein Unterstützungshauptschlüssel benötigt. Den Unterstützungshauptschlüssel erhalten Sie per E-Mail vom zuständigen Supporttechniker. Ein unverschlüsseltes, komprimiertes Unterstützungspaket (CAB-Datei) wird erstellt. Dieses Paket kann dann vom Supporttechniker über die Support-Website abgerufen werden, wenn er den Hauptschlüssel bereitstellt.
 
-Führen Sie im Verwaltungsportal die folgenden Schritte aus, um ein Unterstützungspaket zu erstellen:
+Führen Sie im klassischen Portal die folgenden Schritte aus, um ein Unterstützungspaket zu erstellen:
 
-#### So erstellen Sie ein Unterstützungspaket im Verwaltungsportal
+#### Erstellen eines Unterstützungspakets im klassischen Azure-Portal
 
 1. Navigieren Sie zu **Geräte > Wartung**.
 
@@ -123,7 +123,7 @@ Die folgende Tabelle enthält die verschiedenen Parameter, die für das Cmdlet �
 
 Unter Umständen muss ein Unterstützungspaket nach der Generierung bearbeitet werden, um kundenspezifische Informationen wie Volumenamen, Geräte-IP-Adressen und Sicherungsnamen aus den Protokolldateien zu entfernen.
 
-> [AZURE.IMPORTANT]Unterstützungspakete können nur bearbeitet werden, wenn sie mit Windows PowerShell für StorSimple generiert wurden. Pakete, die im Verwaltungsportal mit dem StorSimple Manager-Dienst erstellt wurden, können nicht bearbeitet werden.
+> [AZURE.IMPORTANT]Unterstützungspakete können nur bearbeitet werden, wenn sie mit Windows PowerShell für StorSimple generiert wurden. Pakete, die im klassischen Azure-Portal mit dem StorSimple Manager-Dienst erstellt wurden, können nicht bearbeitet werden.
 
 Wenn Sie ein Unterstützungspaket vor dem Hochladen an die Microsoft Support-Website bearbeiten möchten, müssen Sie es entschlüsseln, die Dateien bearbeiten und es anschließend wieder verschlüsseln. Führen Sie zum Bearbeiten eines Unterstützungspakets die folgenden Schritte aus:
 
@@ -199,4 +199,4 @@ Das folgende Beispiel veranschaulicht das Entschlüsseln, Bearbeiten und erneute
 - Informieren Sie sich darüber, wie Sie [mithilfe von Unterstützungspaketen und Geräteprotokollen Probleme bei der Gerätebereitstellung behandeln](storsimple-troubleshoot-deployment.md#support-packages-and-device-logs-available-for-troubleshooting). 
 - Erfahren Sie mehr über das [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

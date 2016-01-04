@@ -13,10 +13,15 @@
 	ms.tgt_pltfrm="mobile-windows-store"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="08/18/2015" 
+	ms.date="08/18/2015"
 	ms.author="wesmc"/>
 
 # Authentifizieren Ihrer App mit der Active Directory-Bibliothek für einmaliges Anmelden
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 [AZURE.INCLUDE [mobile-services-selector-adal-sso](../../includes/mobile-services-selector-adal-sso.md)]
 
@@ -85,7 +90,7 @@ Nun müssen Sie die Paket-SID abrufen, die in den systemeigenen App-Einstellunge
 
 ###Erstellen der systemeigenen App-Registrierung
 
-1. Navigieren Sie im **Azure-Verwaltungsportal** zu [Active Directory], und klicken Sie dann auf Ihr Verzeichnis.
+1. Navigieren Sie im [klassischen Azure-Portal] zu **Active Directory**, und klicken Sie dann auf Ihr Verzeichnis.
 
     ![][7]
 
@@ -162,7 +167,7 @@ Der mobile Dienst ist jetzt in AAD so konfiguriert, dass er SSO-Anmeldungen von 
             }
         }
 
-6. Ersetzen Sie im Code für die oben angegebene `AuthenticateAsync`-Methode **INSERT-AUTHORITY-HERE** durch den Namen des Mandanten, in dem Sie Ihre Anwendung bereitgestellt haben. Das Format sollte https://login.windows.net/tenant-name.onmicrosoft.com sein. Sie können diesen Wert in der Registerkarte Domäne in Ihrem Azure Active Directory im [Azure-Verwaltungsportal] kopieren.
+6. Ersetzen Sie im Code für die oben angegebene `AuthenticateAsync`-Methode **INSERT-AUTHORITY-HERE** durch den Namen des Mandanten, in dem Sie Ihre Anwendung bereitgestellt haben. Das Format sollte https://login.windows.net/tenant-name.onmicrosoft.com sein. Sie können diesen Wert in der Registerkarte "Domäne" in Ihrem Azure Active Directory im [klassischen Azure-Portal] kopieren.
 
 7. Ersetzen Sie im Code für die oben angegebene `AuthenticateAsync`-Methode **INSERT-RESOURCE-URI-HERE** durch die **URI der APP-ID** für Ihren mobilen Dienst. Wenn Sie das Thema [Registrieren in Azure Active Directory] befolgt haben, sollte der URI Ihrer App-ID in etwa so aussehen: https://todolist.azure-mobile.net/login/aad.
 
@@ -184,7 +189,7 @@ Der mobile Dienst ist jetzt in AAD so konfiguriert, dass er SSO-Anmeldungen von 
 ##Testen des Clients mit Authentifizierung
 
 1. Führen Sie die Client-App in Visual Studio aus.
-2. Sie werden aufgefordert, sich bei Ihrem Azure Active Directory anzumelden.  
+2. Sie werden aufgefordert, sich bei Ihrem Azure Active Directory anzumelden.
 3. Die App wird authentifiziert sich und gibt die TodoItem-Elemente zurück.
 
     ![][15]
@@ -211,9 +216,8 @@ Der mobile Dienst ist jetzt in AAD so konfiguriert, dass er SSO-Anmeldungen von 
 
 <!-- URLs. -->
 [Registrieren in Azure Active Directory]: mobile-services-how-to-register-active-directory-authentication.md
-[Active Directory]: https://manage.windowsazure.com/
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
+[klassischen Azure-Portal]: https://manage.windowsazure.com/
 [Erste Schritte mit Mobile Services]: mobile-services-dotnet-backend-windows-store-dotnet-get-started.md
 [Windows Dev Center-Dashboard]: http://go.microsoft.com/fwlink/p/?LinkID=266734
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

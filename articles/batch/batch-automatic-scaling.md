@@ -4,7 +4,7 @@
 	description="Aktivieren Sie das automatische Skalieren in einem Cloudpool, um die Anzahl von Computeknoten im Pool dynamisch anzupassen."
 	services="batch"
 	documentationCenter=""
-	authors="davidmu1"
+	authors="mmacy"
 	manager="timlt"
 	editor="tysonn"/>
 
@@ -14,14 +14,14 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows"
 	ms.workload="multiple"
-	ms.date="08/26/2015"
-	ms.author="davidmu"/>
+	ms.date="12/04/2015"
+	ms.author="marsma"/>
 
 # Automatisches Skalieren von Computeknoten in einem Azure Batch-Pool
 
-Das automatische Skalieren von Computeknoten in einem Azure Batch-Pool ist die dynamische Anpassung der Verarbeitungsleistung, die von der Anwendung beansprucht wird. Durch diese einfache Anpassung sparen Sie Zeit und Geld. Weitere Informationen zu Computeknoten und Pools finden Sie unter [Azure Batch – Technische Übersicht](batch-technical-overview.md).
+Das automatische Skalieren von Computeknoten in einem Azure Batch-Pool ist die dynamische Anpassung der Verarbeitungsleistung, die von der Anwendung beansprucht wird. Durch diese einfache Anpassung sparen Sie Zeit und Geld. Weitere Informationen zu Computeknoten und Pools finden Sie unter [Azure Batch – Grundlagen](batch-technical-overview.md).
 
-Automatisches Skalieren findet statt, wenn diese Funktion für einen Pool aktiviert und dem Pool eine Formel zugeordnet ist. Die Formel wird verwendet, um die Anzahl der Computeknoten zu bestimmen, die erforderlich sind, um die Anwendung zu bearbeiten. Unter Bezugnahme auf Samplewerte, die regelmäßig erfasst werden, wird die Anzahl der verfügbaren Computeknoten im Pool alle 15 Minuten auf Basis der zugeordneten Formel angepasst.
+Automatisches Skalieren findet statt, wenn diese Funktion für einen Pool aktiviert und dem Pool eine Formel zugeordnet ist. Die Formel wird verwendet, um die Anzahl der Computeknoten zu bestimmen, die erforderlich sind, um die Anwendung zu bearbeiten. Unter Bezugnahme auf Stichprobenwerte, die regelmäßig erfasst werden, wird die Anzahl der verfügbaren Computeknoten im Pool alle 15 Minuten auf Basis der zugeordneten Formel angepasst.
 
 Automatisches Skalieren kann beim Erstellen eines Pools festgelegt oder später für einen bereits vorhandenen Pool aktiviert werden. Die Formel kann in einem Pool, in dem automatisches Skalieren zuvor aktiviert wurde, auch nachträglich aktualisiert werden. Es empfiehlt sich stets, eine Formel vor der Zuweisung zu einem Pool auszuwerten, und es ist wichtig, den Status der Durchläufe des automatischen Skalierens zu überwachen. Auf diese Themen wird weiter unten näher eingegangen.
 
@@ -70,7 +70,7 @@ Sie können den Wert dieser **vom System definierten Variablen** *abrufen* und *
    </tr>
 </table>
 
-Sie können die Werte dieser **vom System definierten Variablen** *abrufen*, um anhand der Metriken aus den Samplewerten der Computeknoten Anpassungen vorzunehmen. Diese Variablen sind schreibgeschützt.
+Sie können die Werte dieser **vom System definierten Variablen** *abrufen*, um anhand der Metriken aus den Stichprobenwerten der Computeknoten Anpassungen vorzunehmen. Diese Variablen sind schreibgeschützt.
 
 <table>
   <tr>
@@ -336,17 +336,17 @@ Folgende vordefinierte **Funktionen** stehen zum Definieren einer Formel für da
 
 Einige der in der obigen Tabelle beschriebenen Funktionen akzeptieren eine Liste als Argument. Die durch Komma getrennte Liste ist eine beliebige Kombination aus *double* und *doubleVec*. Beispiel:
 
-	doubleVecList := ( (double | doubleVec)+(, (double | doubleVec) )* )?
+`doubleVecList := ( (double | doubleVec)+(, (double | doubleVec) )* )?`
 
-Der *doubleVecList*-Wert wird vor der Auswertung in einen einzelnen *doubleVec* konvertiert. Falls beispielsweise v = [1, 2, 3] ist, dann entspricht der Aufruf avg(v) dem Aufruf avg(1,2,3), und avg (v, 7) entspricht dem Aufruf avg(1,2,3,7).
+Der *doubleVecList*-Wert wird vor der Auswertung in einen einzelnen *doubleVec* konvertiert. Falls beispielsweise `v = [1,2,3]` ist, entspricht der Aufruf `avg(v)` dem Aufruf `avg(1,2,3)`, und `avg(v, 7)` entspricht dem Aufruf `avg(1,2,3,7)`.
 
-### Abrufen von Sampledaten
+### Erfassen von Stichprobendaten
 
 Die oben beschriebenen, vom System definierten Variablen sind Objekte, die Methoden für den Zugriff auf die zugeordneten Daten bereitstellen. Der folgende Ausdruck zeigt z. B. eine Anforderung zum Abrufen der letzten fünf Minuten der CPU-Auslastung:
 
-	$CPUPercent.GetSample(TimeInterval_Minute*5)
+`$CPUPercent.GetSample(TimeInterval_Minute * 5)`
 
-Folgende Methoden können zum Abrufen von Sampledaten verwendet werden.
+Folgende Methoden können zum Erfassen von Stichprobendaten verwendet werden.
 
 <table>
   <tr>
@@ -355,33 +355,35 @@ Folgende Methoden können zum Abrufen von Sampledaten verwendet werden.
   </tr>
   <tr>
     <td>Count()</td>
-    <td>Liefert die Gesamtzahl der Samplewerte im Metrikverlauf zurück.</td>
+    <td>Liefert die Gesamtzahl der Stichprobenwerte im Metrikverlauf zurück.</td>
   </tr>
   <tr>
     <td>GetSample()</td>
-    <td><p>Liefert einen Vektor aus Samplewerten zurück. Beispiel:</p>
+    <td><p>Liefert einen Vektor aus Stichprobenwerten zurück.
+	<p>Eine Stichprobe entspricht in 30&#160;Sekunden erfassten Metrikdaten. Stichproben werden als alle 30&#160;Sekunden erfasst, doch wie weiter unten angemerkt, gibt es eine Verzögerung zwischen dem Zeitpunkt der Erfassung einer Stichprobe und ihrer Verfügbarkeit für eine Formel. Daher stehen möglicherweise nicht alle Stichproben für einen bestimmten Zeitraum für die Bewertung durch eine Formel zur Verfügung.
         <ul>
-          <li><p><b>doubleVec GetSample(double count)</b>: legt die Anzahl der Samplewerte fest, die von der jüngsten Datenerfassung benötigt werden.</p>
-				  <p>Eine Datenerfassung entspricht 5&#160;Sekunden Metrikdaten. GetSample(1) gibt den letzten verfügbaren Samplewert zurück, aber Sie sollten diese Funktion nicht für Metriken wie $CPUPercent verwenden, da nicht festgestellt werden kann, wann der Samplewert erfasst wurde. Möglicherweise ist der Wert aktuell, er kann jedoch aufgrund von Systemeigenschaften auch deutlich älter sein. Es ist besser, ein Zeitintervall zu verwenden, wie unten dargestellt.</p></li>
-          <li><p><b>doubleVec GetSample((timestamp | timeinterval) startTime [, double samplePercent])</b>: legt einen Zeitrahmen für das Erfassen von Beispieldaten und optional den Prozentsatz der Samplewerte fest, die im angeforderten Bereich liegen müssen.</p>
-          <p>$CPUPercent.GetSample(TimeInterval\_Minute*10), sollte 200&#160;Samplewerte zurückliefern, wenn alle Samplewerte der letzten zehn Minuten im CPUPercent-Verlauf vorhanden sind. Wenn der Verlauf der letzten Minute noch nicht vorhanden ist, werden nur 180&#160;Samplewerte zurückgegeben.</p>
-					<p>$CPUPercent.GetSample (TimeInterval\_Minute\ * 10, 80) wird erfolgreich ausgeführt, $CPUPercent.GetSample(TimeInterval_Minute*10, 95) schlägt fehl.</p></li>
+          <li><p><b>doubleVec GetSample(double count)</b>: Gibt die Anzahl der Stichproben an, die aus den letzten erfassten Stichproben abgerufen werden soll.</p>
+				  <p>„GetSample(1)“ gibt die letzte verfügbare Stichprobe zurück. Für Metriken wie „$CPUPercent“ sollte diese allerdings nicht verwendet werden, da es unmöglich feststellbar ist, <em>wann</em> die Stichprobe erfasst wurde. Sie kann aktuell oder aber aufgrund von Systemproblemen auch wesentlich älter sein. Es ist besser, wie unten dargestellt, ein Intervall zu verwenden.</p></li>
+          <li><p><b>doubleVec GetSample((timestamp | timeinterval) startTime [, double samplePercent])</b>: Legt einen Zeitrahmen für das Erfassen von Stichprobendaten und optional den Prozentsatz der Stichproben fest, die im angeforderten Zeitrahmen liegen müssen.</p>
+          <p><em>$CPUPercent.GetSample(TimeInterval\_Minute*10)</em> sollte 20&#160;Stichproben zurückgeben, wenn alle Stichproben der letzten zehn Minuten im Verlauf von „CPUPercent“ vorhanden sind. Wenn jedoch die letzte Minute des Verlaufs nicht verfügbar ist, werden nur 18&#160;Stichproben zurückgegeben, was bedeutet, dass:<br/>
+		  &#160;&#160;&#160;&#160;<em>$CPUPercent.GetSample(TimeInterval_Minute * 10, 95)</em> misslingen würde, da nur 90&#160;% der Stichproben verfügbar sind, und<br/>
+		  &#160;&#160;&#160;&#160;<em>$CPUPercent.GetSample(TimeInterval_Minute * 10, 80)</em> Erfolg hätte.</p></li>
           <li><p><b>doubleVec GetSample((timestamp | timeinterval) startTime, (timestamp | timeinterval) endTime [, double samplePercent])</b>: legt einen Zeitrahmen für die Datenerfassung mit einer Startzeit und Endzeit fest.</p></li></ul>
-		  <p>Beachten Sie, dass zwischen dem Erfassen eines Samplewerts und dessen Verfügbarkeit für eine Formel eine Verzögerung besteht. Dies muss beim Verwenden der GetSample-Methode berücksichtigt werden (siehe "GetSamplePercent" unten).</td>
+		  <p>Wie bereits erwähnt, gibt es eine Verzögerung zwischen dem Zeitpunkt der Erfassung der Stichprobe und ihrer Verfügbarkeit für eine Formel. Diese Verzögerung muss bei Verwendung der <em>GetSample</em>-Methode berücksichtigt werden (siehe <em>GetSamplePercent</em> im Anschluss).</td>
   </tr>
   <tr>
     <td>GetSamplePeriod()</td>
-    <td>Liefert den Zeitraum der Samplingwerte in einem vergangenen Sample-DataSet zurück.</td>
+    <td>Liefert den Zeitraum der Stichprobenwerte in einem vergangenen Stichproben-Dataset zurück.</td>
   </tr>
   <tr>
     <td>HistoryBeginTime()</td>
-    <td>Liefert den Zeitstempel des ältesten verfügbaren Samplewerts für die Metrik zurück.</td>
+    <td>Liefert den Zeitstempel des ältesten verfügbaren Stichprobenwerts für die Metrik zurück.</td>
   </tr>
   <tr>
     <td>GetSamplePercent()</td>
-    <td><p>Gibt den Prozentsatz der Samplewerte zurück, die ein Verlauf derzeit für ein bestimmtes Zeitintervall enthält. Beispiel:</p>
+    <td><p>Gibt den Prozentsatz der Stichprobenwerte zurück, die ein Verlauf derzeit für ein bestimmtes Zeitintervall enthält. Beispiel:</p>
     <p><b>doubleVec GetSamplePercent( (timestamp | timeinterval) startTime [, (timestamp | timeinterval) endTime] )</b>
-	<p>Da die GetSample-Methode fehlschlägt, wenn der Prozentsatz der Samplewerte geringer ist als der angegebene samplePercent-Wert, können Sie mithilfe der GetSamplePercent-Methode die Anzahl zunächst prüfen und dann eventuell eine andere Aktion ausführen, wenn nicht genug Samplewerte vorhanden sind, ohne die Auswertung für das automatische Skalieren anzuhalten.</p></td>
+	<p>Da die GetSample-Methode fehlschlägt, wenn der Prozentsatz der Stichprobenwerte geringer ist als der angegebene samplePercent-Wert, können Sie mithilfe der GetSamplePercent-Methode die Anzahl zunächst prüfen und dann eventuell eine andere Aktion ausführen, wenn nicht genug Stichprobenwerte vorhanden sind, ohne die Auswertung für das automatische Skalieren anzuhalten.</p></td>
   </tr>
 </table>
 
@@ -557,11 +559,13 @@ Die folgenden Beispiele zeigen mehrere Möglichkeiten auf, wie Computeressourcen
 
 Möglicherweise möchten Sie die Größe des Pools basierend auf Wochentag und Uhrzeit anpassen und die Anzahl der Knoten im Pool entsprechend erhöhen bzw. reduzieren:
 
-		$CurTime=time();
-		$WorkHours=$CurTime.hour>=8 && $CurTime.hour<18;
-		$IsWeekday=$CurTime.weekday>=1 && $CurTime.weekday<=5;
-		$IsWorkingWeekdayHour=$WorkHours && $IsWeekday;
-		$TargetDedicated=$IsWorkingWeekdayHour?20:10;
+```
+$CurTime=time();
+$WorkHours=$CurTime.hour>=8 && $CurTime.hour<18;
+$IsWeekday=$CurTime.weekday>=1 && $CurTime.weekday<=5;
+$IsWorkingWeekdayHour=$WorkHours && $IsWeekday;
+$TargetDedicated=$IsWorkingWeekdayHour?20:10;
+```
 
 Diese Formel ruft zunächst die aktuelle Uhrzeit ab. Wenn es sich um einen Wochentag (1 bis 5) handelt und der Wert innerhalb der Geschäftszeiten (8:00 Uhr bis 18:00 Uhr) liegt, wird die Zielgröße des Pools auf 20 Knoten festgelegt. Andernfalls wird die Poolgröße auf 10 Knoten festgelegt.
 
@@ -569,35 +573,65 @@ Diese Formel ruft zunächst die aktuelle Uhrzeit ab. Wenn es sich um einen Woche
 
 In diesem Beispiel wird die Größe des Pools basierend auf der Anzahl der Aufgaben in der Warteschlange angepasst. Beachten Sie, dass in Formelzeichenfolgen sowohl Kommentare als auch Zeilenumbrüche verwendet werden können.
 
-	    // Get pending tasks for the past 15 minutes.
-	    $Samples = $ActiveTasks.GetSamplePercent(TimeInterval_Minute * 15);
-	    // If we have less than 70% data points, we use the last sample point, otherwise we use the maximum of
-		// last sample point and the history average.
-	    $Tasks = $Samples < 70 ? max(0,$ActiveTasks.GetSample(1)) : max( $ActiveTasks.GetSample(1), avg($ActiveTasks.GetSample(TimeInterval_Minute * 15)));
-	    // If number of pending tasks is not 0, set targetVM to pending tasks, otherwise half of current dedicated.
-	    $TargetVMs = $Tasks > 0? $Tasks:max(0, $TargetDedicated/2);
-	    // The pool size is capped at 20, if target VM value is more than that, set it to 20. This value
-		// should be adjusted according to your use case.
-	    $TargetDedicated = max(0,min($TargetVMs,20));
-	    // Set node deallocation mode - keep nodes active only until tasks finish
-	    $NodeDeallocationOption = taskcompletion;
+```
+// Get pending tasks for the past 15 minutes.
+$Samples = $ActiveTasks.GetSamplePercent(TimeInterval_Minute * 15);
+// If we have less than 70% data points, we use the last sample point, otherwise we use the maximum of
+// last sample point and the history average.
+$Tasks = $Samples < 70 ? max(0,$ActiveTasks.GetSample(1)) : max( $ActiveTasks.GetSample(1), avg($ActiveTasks.GetSample(TimeInterval_Minute * 15)));
+// If number of pending tasks is not 0, set targetVM to pending tasks, otherwise half of current dedicated.
+$TargetVMs = $Tasks > 0? $Tasks:max(0, $TargetDedicated/2);
+// The pool size is capped at 20, if target VM value is more than that, set it to 20. This value
+// should be adjusted according to your use case.
+$TargetDedicated = max(0,min($TargetVMs,20));
+// Set node deallocation mode - keep nodes active only until tasks finish
+$NodeDeallocationOption = taskcompletion;
+```
 
 ### Beispiel 3
 
 In diesem Beispiel wird die Größe des Pools ebenfalls basierend auf der Anzahl der Aufgaben angepasst. Diese Formel berücksichtigt jedoch darüber hinaus den [MaxTasksPerComputeNode](https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudpool.maxtaskspercomputenode.aspx)-Wert, der für den Pool festgelegt wurde. Dies ist besonders nützlich in Situationen, in denen eine parallele Ausführung von Aufgaben auf Computeknoten gewünscht wird.
 
-		// Determine whether 70% of the samples have been recorded in the past 15 minutes; if not, use last sample
-		$Samples = $ActiveTasks.GetSamplePercent(TimeInterval_Minute * 15);
-		$Tasks = $Samples < 70 ? max(0,$ActiveTasks.GetSample(1)) : max( $ActiveTasks.GetSample(1),avg($ActiveTasks.GetSample(TimeInterval_Minute * 15)));
-		// Set the number of nodes to add to one-fourth the number of active tasks (the MaxTasksPerComputeNode
-		// property on this pool is set to 4, adjust this number for your use case)
-		$Cores = $TargetDedicated * 4;
-		$ExtraVMs = ($Tasks - $Cores) / 4;
-		$TargetVMs = ($TargetDedicated+$ExtraVMs);
-		// Attempt to grow the number of compute nodes to match the number of active tasks, with a maximum of 3
-		$TargetDedicated = max(0,min($TargetVMs,3));
-		// Keep the nodes active until the tasks finish
-		$NodeDeallocationOption = taskcompletion;
+```
+// Determine whether 70% of the samples have been recorded in the past 15 minutes; if not, use last sample
+$Samples = $ActiveTasks.GetSamplePercent(TimeInterval_Minute * 15);
+$Tasks = $Samples < 70 ? max(0,$ActiveTasks.GetSample(1)) : max( $ActiveTasks.GetSample(1),avg($ActiveTasks.GetSample(TimeInterval_Minute * 15)));
+// Set the number of nodes to add to one-fourth the number of active tasks (the MaxTasksPerComputeNode
+// property on this pool is set to 4, adjust this number for your use case)
+$Cores = $TargetDedicated * 4;
+$ExtraVMs = (($Tasks - $Cores) + 3) / 4;
+$TargetVMs = ($TargetDedicated+$ExtraVMs);
+// Attempt to grow the number of compute nodes to match the number of active tasks, with a maximum of 3
+$TargetDedicated = max(0,min($TargetVMs,3));
+// Keep the nodes active until the tasks finish
+$NodeDeallocationOption = taskcompletion;
+```
+
+### Beispiel 4
+
+Dieses Beispiel zeigt eine Formel für die automatische Skalierung, die die Poolgröße für einen anfänglichen Zeitraum auf eine bestimmte Anzahl von Knoten festlegt. Anschließend wird die Poolgröße basierend auf der Anzahl ausgeführter und aktiver Aufgaben nach Ablauf des anfänglichen Zeitraums angepasst.
+
+```
+string now = DateTime.UtcNow.ToString("r");
+string formula = string.Format(@"
+
+	$TargetDedicated = {1};
+	lifespan         = time() - time(""{0}"");
+	span             = TimeInterval_Minute * 60;
+	startup          = TimeInterval_Minute * 10;
+	ratio            = 50;
+
+	$TargetDedicated = (lifespan > startup ? (max($RunningTasks.GetSample(span, ratio), $ActiveTasks.GetSample(span, ratio)) == 0 ? 0 : $TargetDedicated) : {1});
+	", now, 4);
+```
+
+Die Formel im obigen Codeausschnitt weist folgende Merkmale auf:
+
+- Die anfängliche Poolgröße wird auf 4 Knoten festgelegt.
+- Die Größe des Pools wird innerhalb der ersten 10 Minuten des Lebenszyklus des Pools nicht angepasst.
+- Nach 10 Minuten wird die maximale Anzahl ausgeführter und aktiver Aufgaben in den letzten 60 Minuten abgerufen.
+  - Falls beide Werte 0 sind (was heißt, dass in den letzten 60 Minuten keine Aufgaben ausgeführt wurden oder aktiv waren), wird die Poolgröße auf 0 festgelegt.
+  - Wenn einer der Werte größer als null ist, erfolgt keine Änderung.
 
 ## Nächste Schritte
 
@@ -612,4 +646,4 @@ In diesem Beispiel wird die Größe des Pools ebenfalls basierend auf der Anzahl
         * [Get-AzureBatchRDPFile](https://msdn.microsoft.com/library/mt149851.aspx): Dieses PowerShell-Cmdlet ruft die RDP-Datei aus dem angegebenen Computeknoten ab und speichert sie am festgelegten Speicherort oder in einen Stream.
 2.	Einige Anwendungen erzeugen große Datenmengen, die nur schwer zu verarbeiten sind. Eine Möglichkeit zur Lösung dieses Problems ist die Verwendung [effizienter Listenabfragen](batch-efficient-list-queries.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

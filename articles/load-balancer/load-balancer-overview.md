@@ -12,11 +12,11 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="10/16/2015"
+   ms.date="12/09/2015"
    ms.author="joaoma" />
 
 
-# Was versteht man unter einem Azure-Lastenausgleichsmodul?
+# Was ist der Azure Load Balancer?
  
 Der Azure-Lastenausgleich bietet hohe Verfügbarkeit und Netzwerkleistung für Ihre Anwendungen. Es handelt sich um einen Lastenausgleich des Layer-4-Typs (TCP, UDP), der eingehenden Datenverkehr zwischen funktionierenden Dienstinstanzen in Clouddiensten oder auf virtuelle Computer verteilt, die in einem Lastenausgleich definiert wurden.
  
@@ -26,6 +26,38 @@ Es gibt folgende Konfigurationsmöglichkeiten:
 - Lastenausgleich für Datenverkehr zwischen virtuellen Computern in einem virtuellen Netzwerk, zwischen virtuellen Computern in Clouddiensten oder zwischen lokalen und virtuellen Computern in einem standortübergreifenden virtuellen Netzwerk. Wir bezeichnen dies als [Internen Lastenausgleich (ILB)](load-balancer-internal-overview.md).
 - 	Weiterleiten von externem Datenverkehr an eine bestimmte Instanz eines virtuellen Computers
 
+## Grundlegendes zum Azure Load Balancer im klassischen Azure und Azure-Ressourcen-Manager (ARM)
+
+Alle Ressourcen in der Cloud benötigen eine öffentliche IP-Adresse, damit sie im Internet erreichbar sind. Die Cloudinfrastruktur in Microsoft Azure verwendet nicht routbare IP-Adressen in ihren Ressourcen und Netzwerkadressübersetzung (Network Address Translation, NAT) mit öffentlichen IP-Adressen zur Kommunikation mit dem Internet.
+
+Es gibt 2 Bereitstellungsmodelle in Microsoft Azure und ihre Lastenausgleichsimplementierungen:
+
+ 
+### Klassisches Azure
+
+Klassisches Azure ist das erste in Microsoft Azure implementierte Bereitstellungsmodell. In diesem Modell sind eine öffentliche IP-Adresse und ein FQDN einem Clouddienst zugewiesen, und in einem Clouddienst bereitgestellte virtuelle Computer können gruppiert werden, um einen Lastenausgleich zu verwenden. Der Lastenausgleich übernimmt Portübersetzung und Lastenausgleich im Netzwerkdatenverkehr, wobei die öffentliche IP-Adresse für den Clouddienst genutzt wird.
+
+In einem klassischen Bereitstellungsmodell erfolgt die Portübersetzung mit Endpunkten, die eine 1:1-Beziehung zwischen dem öffentlichen zugewiesenen Port der öffentlichen IP-Adresse und dem lokalen Port bilden, der zum Senden von Datenverkehr an einen bestimmten virtuellen Computer zugewiesen wurde.
+
+Lastenausgleich erfolgt über vom Load Balancer festgelegte Endpunkte. Diese Endpunkte bilden eine 1:n-Beziehung zwischen der öffentlichen IP-Adresse und lokalen Ports, die allen virtuellen Computern in der Gruppe zugewiesen wurden, die auf den ausgeglichenen Netzwerkverkehr reagieren.
+
+Die Domänenbezeichnung für die öffentliche IP-Adresse, die ein Lastenausgleich in diesem Bereitstellungsmodell verwenden würde, wäre `<cloud service name>.cloudapp.net`.
+
+Dies ist eine grafische Darstellung eines Lastenausgleichs in einem klassischen Bereitstellungsmodell: ![Lastenausgleich auf Hashbasis](./media/load-balancer-overview/asm-lb.png)
+
+### Azure-Ressourcen-Manager
+ 
+Das Konzept des Lastenausgleichs ändert sich beim Azure-Ressourcen-Manager (ARM), da dort keine Notwendigkeit besteht, dass ein Clouddienst einen Lastenausgleich erstellt.
+
+In ARM ist eine öffentliche IP-Adresse ihre eigene Ressource und kann einer Domänenbezeichnung oder einem DNS-Namen zugeordnet werden. Die öffentliche IP-Adresse ist in diesem Fall der Lastenausgleichsressource zugeordnet, sodass Lastenausgleichsregeln, eingehende NAT-Regeln die öffentliche IP-Adresse als Internetendpunkt für die Ressourcen verwenden, die ausgeglichenen Netzwerkverkehr empfangen.
+
+Eine Netzwerkschnittstellenressource (NIC) enthält die IP-Adresskonfiguration (private oder öffentliche IP) für einen virtuellen Computer. Sobald eine NIC einem Lastenausgleichs-Back-End-IP-Adresspool hinzugefügt wurde, beginnt der Lastenausgleich, ausgeglichenen Netzwerkverkehr basierend auf den Lastenausgleichsregeln zu senden.
+
+Eine Verfügbarkeitsgruppe ist die Gruppierungsmethode, die verwendet wird, um virtuelle Computer dem Lastenausgleich hinzuzufügen. Die Verfügbarkeitsgruppe garantiert, dass die virtuellen Computer sich nicht auf der gleichen physischen Hardware befinden, sodass bei einem Fehler im Zusammenhang mit der physischen Cloudinfrastruktur sichergestellt ist, dass der Lastenausgleich immer über einen virtuellen Computer verfügt, der ausgeglichenen Netzwerkverkehr empfängt.
+
+Dies ist eine grafische Darstellung eines Lastenausgleichs im Azure-Ressourcen-Manager (ARM):
+
+![Lastenausgleich auf Hashbasis](./media/load-balancer-overview/arm-lb.png)
 
 ## Lastenausgleichsfunktionen
 
@@ -76,8 +108,6 @@ Auf den gesamten ausgehenden Internetdatenverkehr, der vom Dienst stammt, wird Q
 
 Die Azure-Lastenausgleichskonfiguration unterstützt vollständige Cone-NAT für UDP. Vollständige Cone-NAT ist ein NAT-Typ, bei dem der Port eingehende Verbindungen von jedem externen Host (als Reaktion auf eine externe Anforderung) erlaubt.
 
-![SNAT](./media/load-balancer-overview/load-balancer-snat.png)
-
 
 >[AZURE.NOTE]Beachten Sie, dass für jede neue ausgehende Verbindung, die von einem virtuellen Computer initiiert wurde, auch ein ausgehender Port vom Azure-Lastenausgleich zugeordnet wird. Dem externen Host wird eingehender Datenverkehr über eine VIP mit zugewiesenem Port angezeigt. Wenn Ihre Szenarios eine große Anzahl ausgehender Verbindungen benötigen, empfiehlt es sich, dass die virtuellen Computer öffentliche IP-Adressen auf Instanzebene verwenden, damit diese über eine festgelegte ausgehende IP für die Quell-NAT (SNAT, Source Network Address Translation) verfügen. Dies reduziert das Risiko von Portauslastung.
 >
@@ -88,7 +118,7 @@ Die Azure-Lastenausgleichskonfiguration unterstützt vollständige Cone-NAT für
 
 Sie können einer Gruppe von virtuellen Computern mehr als eine öffentliche IP-Adresse mit Lastenausgleich zuweisen. Mit dieser Funktion können Sie mehrere SSL-Websites und/oder mehrere Listener für SQL-AlwaysOn-Verfügbarkeitsgruppen in der gleichen Gruppe von virtuellen Computern hosten. Weitere Informationen finden Sie unter [Mehrere VIPs pro Clouddienst](load-balancer-multivip.md)
 
-****Vorlagenbasierte Bereitstellungen mithilfe des Azure-Ressourcen-Managers ** Azure-Ressourcen-Manager (ARM) ist das neue Verwaltungsframework für Dienste in Azure. Der Azure-Lastenausgleich kann jetzt mithilfe von APIs und Tools auf Basis von Azure-Ressourcen-Manager verwaltet werden. Weitere Informationen zum Azure-Ressourcen-Manager finden Sie unter [Iaas just got easier with Azure Resource Manager](http://azure.microsoft.com/blog/2015/04/29/iaas-just-got-easier-again/) (in englischer Sprache).
+****Vorlagenbasierte Bereitstellungen mithilfe des Azure-Ressourcen-Managers** Azure-Ressourcen-Manager (ARM) ist das neue Verwaltungsframework für Dienste in Azure. Der Azure-Lastenausgleich kann jetzt mithilfe von APIs und Tools auf Basis von Azure-Ressourcen-Manager verwaltet werden. Weitere Informationen zum Azure-Ressourcen-Manager finden Sie unter [Iaas just got easier with Azure Resource Manager](http://azure.microsoft.com/blog/2015/04/29/iaas-just-got-easier-again/) (in englischer Sprache).
 
 
 ## Nächste Schritte
@@ -100,4 +130,4 @@ Sie können einer Gruppe von virtuellen Computern mehr als eine öffentliche IP-
 [Erste Schritte – Lastenausgleich für Internetzugriff](load-balancer-internet-getstarted.md)
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1217_2015-->

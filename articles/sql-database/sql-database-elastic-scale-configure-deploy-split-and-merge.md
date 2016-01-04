@@ -1,11 +1,11 @@
 <properties
-	title="Elastic database Split-Merge tool tutorial"
 	pageTitle="Lernprogramm zum Split-Merge-Tool für elastische Datenbanken | Microsoft Azure"
 	description="Aufteilen und Zusammenführen mit Tools für elastische Datenbanken"
-	metaKeywords="elastic database tools, split and merge, Azure SQL Database sharding, elastic scale, splitting and merging elastic databases"
-	services="sql-database" documentationCenter=""  
+	services="sql-database"  
+	documentationCenter=""
+	authors="sidneyh"
 	manager="jeffreyg"
-	authors="sidneyh"/>
+	editor=""/>
 
 <tags
 	ms.service="sql-database"
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/14/2015"
+	ms.date="12/01/2015"
 	ms.author="sidneyh" />
 
 # Lernprogramm zum Split-Merge-Tool für elastische Datenbanken
@@ -33,9 +33,9 @@ Mit den oben genannten Schritten werden die Split-Merge-Dateien in das aktuelle 
 
     ![Zulässige Dienste][1]
 
-3. Erstellen Sie ein Azure Storage-Konto, das für die Diagnoseausgabe verwendet wird. Öffnen Sie das Azure-Vorschauportal. Klicken Sie in der linken Leiste auf **Neu**, klicken Sie auf **Daten + Speicher**, und anschließend auf **Speicher**.
+3. Erstellen Sie ein Azure Storage-Konto, das für die Diagnoseausgabe verwendet wird. Öffnen Sie das Azure-Portal. Klicken Sie in der linken Leiste auf **Neu**, klicken Sie auf **Daten + Speicher**, und anschließend auf **Speicher**.
 
-4. Erstellen Sie einen Azure-Cloud-Dienst, der den Split-Merge-Dienst enthält. Öffnen Sie das Azure-Vorschauportal. Klicken Sie in der linken Leiste auf **Neu**, dann auf **Berechnen**, **Clouddienst**, und**Erstellen**.
+4. Erstellen Sie einen Azure-Cloud-Dienst, der den Split-Merge-Dienst enthält. Öffnen Sie das Azure-Portal. Klicken Sie in der linken Leiste auf **Neu**, dann auf **Berechnen**, **Clouddienst**, und**Erstellen**.
 
 
 ## Konfigurieren des Split-Merge-Diensts
@@ -60,7 +60,7 @@ Mit den oben genannten Schritten werden die Split-Merge-Dateien in das aktuelle 
 ### Konfigurieren der Sicherheit
 Ausführliche Anweisungen zum Konfigurieren der Dienstsicherheit finden Sie unter [Split-Merge-Sicherheitskonfiguration](sql-database-elastic-scale-split-merge-security-configuration.md).
 
-Für eine einfache Testbereitstellung, die zum Ausführen dieses Lernprogramms geeignet ist, führen Sie einige wenige Konfigurationsschritte aus, um den Dienst zu aktivieren und auszuführen. Durch diese Schritte werden nur ein Computer und Konto für die Kommunikation mit dem Dienst aktiviert.
+Für eine einfache Testbereitstellung, die für dieses Tutorial geeignet ist, führen Sie einige wenige Konfigurationsschritte aus, um den Dienst zu aktivieren und auszuführen. Durch diese Schritte werden nur ein Computer und Konto für die Kommunikation mit dem Dienst aktiviert.
 
 ### Erstellen eines selbstsignierten Zertifikats
 
@@ -91,7 +91,7 @@ Führen Sie den folgenden Befehl im gleichen Fenster aus, in dem „makecert“ 
 
 ### Hochladen der PFX-Datei in den Cloud-Dienst
 
-Öffnen Sie das [Azure-Vorschauportal](https://portal.azure.com).
+Öffnen Sie das [Azure-Portal](https://portal.azure.com).
 
 1. Wählen Sie **Cloud-Dienste**.
 2. Wählen Sie den oben für den Split-Merge-Dienst erstellten Cloud-Dienst aus.
@@ -154,7 +154,7 @@ Wenn die Workerrolle nicht online geschaltet wird, während der Vorgang bei der 
 
 ### Herstellen einer Verbindung mit einem Webbrowser
 
-Ermitteln Sie den Webendpunkt Ihres Split-Merge-Diensts. Sie finden diesen im Azure-Verwaltungsportal im **Dashboard** Ihres Cloud-Dienstes unter **Website-URL** auf der rechten Seite. Ersetzen Sie ****http://** durch ****https://**, da der HTTP-Endpunkt durch die Standardsicherheitseinstellungen deaktiviert wird. Laden Sie die Seite für diese URL in Ihrem Browser.
+Ermitteln Sie den Webendpunkt Ihres Split-Merge-Diensts. Sie finden diesen im klassischen Azure-Portal im **Dashboard** Ihres Cloud-Dienstes unter **Website-URL** auf der rechten Seite. Ersetzen Sie ****http://** durch ****https://**, da der HTTP-Endpunkt durch die Standardsicherheitseinstellungen deaktiviert wird. Laden Sie die Seite für diese URL in Ihrem Browser.
 
 ### Testen mit PowerShell-Skripts
 
@@ -334,4 +334,4 @@ Wenn Sie keine Anforderungen übermitteln können, wird möglicherweise Folgende
 [5]: ./media/sql-database-elastic-scale-configure-deploy-split-and-merge/storage.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

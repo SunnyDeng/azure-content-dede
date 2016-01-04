@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Erste Schritte mit Mobile App-Back-Ends für HTML- und JavaScript-Apps | Azure App Service Mobile Apps"
-	description="Befolgen Sie dieses Lernprogramm für die ersten Schritte bei der Verwendung mobiler Azure-App-Back-Ends für die Entwicklung von Web-Apps in HTML5 und JavaScript."
+	description="Befolgen Sie dieses Tutorial für die ersten Schritte bei der Verwendung mobiler Azure-App-Back-Ends für die Entwicklung von Web-Apps in HTML5 und JavaScript."
 	services="app-service\mobile"
 	documentationCenter=""
 	authors="ggailey777"
@@ -13,39 +13,45 @@
 	ms.tgt_pltfrm="mobile-html5"
 	ms.devlang="javascript"
 	ms.topic="get-started-article"
-	ms.date="10/05/2015"
+	ms.date="11/18/2015"
 	ms.author="glenga"/>
 
 
 #Erstellen einer HTML-App
 
-[AZURE.INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]
+[AZURE.INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)] 
 &nbsp;  
-[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
+<!--- [AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]-->
+
+>[AZURE.IMPORTANT]Dieses Thema wird von Mobile Apps derzeit nicht unterstützt, da der Schnellstart für HTML-/JavaScript-Apps vorübergehend aus dem Azure-Portal entfernt wurde. Diese Option soll in naher Zukunft wieder unterstützt werden. Vielen Dank für Ihre Geduld.
 
 ##Übersicht
 
-Dieses Lernprogramm zeigt Ihnen, wie Sie einen cloudbasierten Back-End-Dienst mithilfe eines mobilen Azure-App-Back-Ends zu einer HTML5- oder JavaScript-Web-App hinzufügen. Sie erstellen sowohl ein neues mobiles App-Back-End als auch eine einfache *Todo list*-Web-App, die App-Daten in Azure speichert.
+Dieses Tutorial zeigt, wie Sie einen cloudbasierten Back-End-Dienst zu einer HTML5-/JavaScript-Web-App hinzufügen. Weitere Informationen finden Sie unter [Was sind Mobile Apps?](app-service-mobile-value-prop.md)
 
 Unten sehen Sie einen Screenshot aus der fertigen App:
 
 ![Screenshot der fertigen App](./media/app-service-mobile-html-get-started/mobile-quickstart-completed-html.png)
 
-Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen Mobile Apps-Lernprogramme für HTML-Apps.
+Das Abschließen dieses Tutorials ist eine Voraussetzung für alle anderen Mobile Apps-Tutorials für HTML-Apps.
 
 ##Voraussetzungen
 
-Für dieses Lernprogramm benötigen Sie Folgendes:
+Für dieses Tutorial benötigen Sie Folgendes:
 
 * Ein aktives Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Apps, die Sie auch nach Ablauf der Testversion weiter nutzen können. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/).
 
 * [Visual Studio Community 2013] oder höher.
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751&appServiceName=mobile) sofort kostenlos eine kurzlebige mobile Starter-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](https://tryappservice.azure.com/?appServiceName=mobile) sofort kostenlos eine kurzlebige mobile Starter-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ##Erstellen eines neuen mobilen App-Back-Ends
 
+Führen Sie die folgenden Schritte aus, um ein neues mobiles App-Back-End zu erstellen.
+
 [AZURE.INCLUDE [app-service-mobile-dotnet-backend-create-new-service](../../includes/app-service-mobile-dotnet-backend-create-new-service.md)]
+
+Sie haben nun ein Azure-Back-End für mobile Apps bereitgestellt, das von Ihren mobilen Clientanwendungen verwendet werden kann. Als Nächstes laden Sie ein Serverprojekt für ein einfaches "Aufgabenlisten"-Back-End herunter und veröffentlichen es in Azure.
 
 ## Herunterladen des Serverprojekts
 
@@ -103,7 +109,7 @@ Dann stellen Sie das CORS-fähige Projekt in Azure bereit.
 
 4. Öffnen Sie die URL <a href="http://localhost:8000/" target="_blank">http://localhost:8000/</a> in einem Webbrowser, um die App zu starten. Die Client-App wird zum Herstellen einer Verbindung mit dem mobilen App-Back-End in Azure konfiguriert.
 
-5. Geben Sie in der App in _Neue Aufgabe eingeben_ eine Beschreibung ein, wie zum Beispiel **Lernprogramm ausführen**, und klicken Sie dann auf **Hinzufügen**.
+5. Geben Sie in der App in _Neue Aufgabe eingeben_ eine Beschreibung ein, wie zum Beispiel **Tutorial ausführen**, und klicken Sie dann auf **Hinzufügen**.
 
    	![Ausführen der App](./media/app-service-mobile-html-get-started/mobile-quickstart-startup-html.png)
 
@@ -121,4 +127,4 @@ Dann stellen Sie das CORS-fähige Projekt in Azure bereit.
 [Visual Studio Community 2013]: https://www.visualstudio.com/downloads
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015--->

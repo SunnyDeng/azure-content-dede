@@ -50,7 +50,7 @@ Das Feature [App Service-Web-Apps](/services/app-service/web/) bietet Ihnen bei 
 
 ####	Nachverfolgen der Dienstintegrität
 
-Microsoft Azure informiert jeweils aktuell über Dienstunterbrechungen oder Leistungsabfälle. Sie können die Integrität des Diensts im [Azure-Vorschauportal](https://portal.azure.com/) nachverfolgen. Weitere Informationen finden Sie unter [Nachverfolgen der Dienstintegrität](insights-service-health.md).
+Microsoft Azure informiert jeweils aktuell über Dienstunterbrechungen oder Leistungsbeeinträchtigungen. Sie können die Integrität des Diensts im [Azure-Portal](https://portal.azure.com/) nachverfolgen. Weitere Informationen finden Sie unter [Nachverfolgen der Dienstintegrität](insights-service-health.md).
 
 ####	Überwachen Ihrer Web-App
 
@@ -101,7 +101,7 @@ Sie können über den Link **https://&lt;Your App-Name>.scm.azurewebsites.net/**
 Die Kudu-Konsole bietet z. B. folgende Funktionen:
 
 -	Umgebungseinstellungen für Ihre Anwendung
--	Protokollstream
+-	Protokolldatenstrom
 -	Speicherabbild zu Diagnosezwecken
 -	Debugkonsole zum Ausführen von Powershell-Cmdlets und grundlegenden DOS-Befehlen
 
@@ -115,27 +115,27 @@ Weitere Informationen zu den verfügbaren Funktionen in Kudu finden Sie unter [O
 
 ####	Skalieren der Web-App
 
-In Azure App Service können Sie zum Steigern der Leistung und des Durchsatzes die Skalierung anpassen, mit der Sie Ihre Anwendung ausführen. Zum zentralen Hochskalieren einer Web-App müssen Sie zwei zusammenhängende Schritte ausführen: Der App Service-Plan muss in einen höheren Tarif geändert werden, und nach dem Wechsel zum höheren Tarif müssen bestimmte Einstellungen konfiguriert werden.
+In Azure App Service können Sie zum Steigern der Leistung und des Durchsatzes die Skalierung anpassen, mit der Sie Ihre Anwendung ausführen. Zum Hochskalieren einer Web-App müssen Sie zwei zusammenhängende Schritte ausführen: Für den App Service-Plan muss ein höherer Tarif verwendet und nach dem Tarifwechsel müssen bestimmte Einstellungen konfiguriert werden.
 
 Weitere Informationen zur Skalierung finden Sie unter [Skalieren einer Web-App in Azure App Service](web-sites-scale.md).
 
-Außerdem haben Sie die Möglichkeit, Ihre Anwendung auf mehreren Instanzen auszuführen. Dies erhöht nicht nur die Verarbeitungskapazität, sondern bietet auch ein gewisses Maß an Fehlertoleranz. Wenn der Prozess auf einer Instanz ausfällt, werden Anforderungen weiterhin von der anderen Instanz verarbeitet.
+Außerdem haben Sie die Möglichkeit, Ihre Anwendung auf mehreren Instanzen auszuführen. Dies erhöht nicht nur die Verarbeitungskapazität, sondern bietet auch ein gewisses Maß an Fehlertoleranz. Wenn der Prozess in einer Instanz ausfällt, kann die andere Instanz weiterhin Anfragen verarbeiten.
 
 Sie können die Skalierung auf „Manuell“ oder „Automatisch“ festlegen.
 
 ####	Verwenden von „AutoHeal“
 
-„AutoHeal“ startet den Arbeitsprozess für Ihre App basierend auf von Ihnen ausgewählten Einstellungen neu (z. B. Konfigurationsänderungen, Anforderungen, speicherbasierte Grenzwerte oder zum Ausführen einer Anforderung benötigte Zeit). In den meisten Fällen ist das Neustarten des Prozesses die schnellste Methode zum Beheben eines Problems. Sie können die Web-App zwar immer direkt im Azure-Vorschauportal neu starten, „AutoHeal“ führt diesen Schritt jedoch automatisch für Sie aus. Sie müssen lediglich einige Trigger in der Stammdatei „web.config“ Ihrer Web-App hinzufügen. Beachten Sie, dass diese Einstellungen immer auf die gleiche Weise angewendet werden, auch dann, wenn es sich bei Ihrer Anwendung nicht um eine .Net-Anwendung handelt.
+„AutoHeal“ startet den Arbeitsprozess für Ihre App basierend auf von Ihnen ausgewählten Einstellungen neu (z. B. Konfigurationsänderungen, Anforderungen, speicherbasierte Grenzwerte oder zum Ausführen einer Anforderung benötigte Zeit). In den meisten Fällen ist das Neustarten des Prozesses die schnellste Methode zum Beheben eines Problems. Sie können die Web-App zwar immer direkt im Azure-Portal neu starten, „AutoHeal“ führt diesen Schritt jedoch automatisch für Sie aus. Sie müssen lediglich einige Trigger in der Stammdatei „web.config“ Ihrer Web-App hinzufügen. Beachten Sie, dass diese Einstellungen immer auf die gleiche Weise angewendet werden, auch dann, wenn es sich bei Ihrer Anwendung nicht um eine .Net-Anwendung handelt.
 
 Weitere Informationen finden Sie unter [Automatische Reparatur von Azure-Websites](/blog/auto-healing-windows-azure-web-sites/).
 
 
 ####	Neustarten der Web-App
 
-Dies ist oft die einfachste Methode zum Beheben einmaliger Probleme. Im [Azure-Vorschauportal](https://portal.azure.com) stehen Ihnen auf dem Blatt Ihrer Web-App Optionen zum Beenden oder Neustarten der App zur Verfügung.
+Dies ist oft die einfachste Methode zum Beheben einmaliger Probleme. Im [Azure-Portal](https://portal.azure.com) stehen auf dem Blatt Ihrer Web-App Optionen zum Beenden oder Neustarten der App zur Verfügung.
 
  ![](./media/app-service-web-troubleshoot-HTTP-502-503/2-restart.png)
 
 Sie können Ihre Web-App auch mit Azure PowerShell verwalten. Weitere Informationen finden Sie unter [Verwenden von Azure PowerShell mit dem Azure-Ressourcen-Manager](powershell-azure-resource-manager.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

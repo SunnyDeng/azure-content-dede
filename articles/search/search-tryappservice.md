@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Testen von Azure App Service mit Azure Search | Microsoft Azure | Gehosteter Cloudsuchdienst" 
-   description="Testen Sie Azure Search, einen in Microsoft Azure gehosteten Cloudsuchdienst, gratis bis zu einer Stunde, indem Sie die „TryAzureAppService“-Vorlage nutzen." 
+   pageTitle="Kostenloses Testen von Azure Search mit Azure App Service | Microsoft Azure"
+   description="Testen Sie Azure Search gratis bis zu einer Stunde lang, indem Sie die Azure App Service-Vorlage nutzen."
    services="search" 
    documentationCenter="" 
    authors="HeidiSteen" 
@@ -13,43 +13,42 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="search" 
-   ms.date="11/04/2015"
+   ms.date="07/13/2015"
    ms.author="heidist"/>
 
-# Testen von Azure App Service mit Azure Search
+# Kostenloses Testen von Azure Search mit Azure App Service
 
-[Testen von Azure App Service ](https://tryappservice.azure.com/) bietet eine neue, vollständig kostenlose Möglichkeit, ausgewählte Azure-Dienste inklusive Azure Search bis zu einer Stunde lang ohne Anmeldung für ein Azure-Abonnement zu testen.
+[Azure App Service ](https://tryappservice.azure.com/) bietet eine neue, vollständig kostenlose Möglichkeit, ausgewählte Azure-Dienste inklusive Azure Search bis zu einer Stunde lang ohne Anmeldung für ein Azure-Abonnement zu testen.
 
 Die Website bietet Ihnen mehrere Vorlagen zur Auswahl. Bei Auswahl der ASP.NET-Vorlage, die Azure Search umfasst, erhalten Sie eine Stunde unterstützt von den ausgewählten Diensten Zugriff auf eine voll funktionsfähige Website. Sie können keine von Azure Search verwalteten Daten aktualisieren oder löschen, aber Sie können Abfragen ausführen und eine beliebige Anzahl von Codeänderungen vornehmen, was die Benutzerfreundlichkeit entsprechend verändert. Wenn eine Sitzung abläuft, bevor Sie mit dem Ausprobieren fertig sind, können Sie immer wieder mit einer neuen Sitzung beginnen oder mit einem Test- oder Vollabonnement fortfahren, wenn Sie einen Index direkt erstellen möchten.
 
-Auf der Seite [Try Azure App Service](https://tryappservice.azure.com/) (auf Englisch) ist Azure Search Teil der Web-App-Vorlage und bietet eine umfassende Volltext-Suchfunktion sowie eine Fülle suchorientierter Funktionen, die nur in diesem Dienst auf der Azure-Plattform verfügbar sind.
+Auf der Website [Azure App Service](https://tryappservice.azure.com/) ist Azure Search Teil der Web-App-Vorlage und bietet eine umfassende Volltextsuchfunktion sowie eine Fülle suchorientierter Funktionen, die nur in diesem Dienst auf der Azure-Plattform verfügbar sind.
 
-Obwohl andere Azure-Dienste wie z. B. SQL-Datenbank die Volltextsuche bieten, kann ein Dienst wie Azure Search die Suche optimieren und bietet das Paginieren und Zählen, Trefferhervorhebungen, Abfragevorschläge automatisch vervollständigen, natürliche Sprachunterstützung, Facettennavigation, Filter und vieles mehr. Wie viele unserer [Beispiele](https://github.com/AzureSearch) veranschaulichen, ist es möglich, eine voll funktionsfähige suchbasierte Anwendung nur mit Azure Search und ASP.NET zu entwickeln.
+Obwohl andere Azure-Dienste wie z. B. SQL-Datenbank die Volltextsuche bieten, kann ein Dienst wie Azure Search die Suche optimieren und bietet das Paginieren und Zählen, Trefferhervorhebungen, Abfragevorschläge automatisch vervollständigen, natürliche Sprachunterstützung, Facettennavigation, Filter und vieles mehr. Wie viele unserer [Beispiele](https://github.com/Azure-Samples?utf8=%E2%9C%93&query=search) veranschaulichen, ist es möglich, eine voll funktionsfähige suchbasierte Anwendung nur mit Azure Search und ASP.NET zu entwickeln.
 
-Als Teil des Online-Angebots [Try Azure App Service](https://tryappservice.azure.com/) ist Azure Search schreibgeschützt, d. h. Sie müssen den Suchkorpus nutzen, der in der Sitzung bereitgestellt wird. Sie können keine eigenen Indizes oder Daten hochladen. Sie arbeiten mit Daten aus der [United States Geological Survey (USGS)](), bestehend aus ca. 3 Millionen Zeilen mit Sehenswürdigkeiten, historischen Stätten, Gebäuden und Landmarken in den USA.
+Im Rahmen des [Azure App Service](https://tryappservice.azure.com/)-Angebots wurde der von Ihnen verwendete Azure Search-Dienst bereits für Sie erstellt und kann für Suchabfragen verwendet werden. Sie können keine eigenen Indizes oder Daten hochladen. Sie arbeiten mit Daten aus der [United States Geological Survey (USGS)](http://geonames.usgs.gov/domestic/download_data.htm), bestehend aus ca. 3 Millionen Zeilen mit Sehenswürdigkeiten, historischen Stätten, Gebäuden und Landmarken in den USA.
 
 Damit Sie Ihre einstündige Sitzung optimal nutzen können, führen Sie die folgenden Anweisungen durch die Abfragen und den Code.
 
 Bevor es weitergeht, sollten Sie sich ein paar Minuten Zeit nehmen und einige wichtige Punkte zum Code, dem Dienst und die durchsuchbaren Daten durchlesen. Ein paar Hintergrundinformationen können sich als nützlich erweisen, wenn Sie nicht bereits mit der Azure Search vertraut sind.
 
-##Fakten zum Code und Azure Search
+## Fakten zum Code und Azure Search
 
-Azure Search ist ein Dienst-plus-Daten-[PaaS](https://en.wikipedia.org/wiki/Platform_as_a_service)-Angebot, bestehend aus einem vollständig verwalteten Suchdienst, sowie durchsuchbaren Daten, die Sie hochladen, wenn Sie eine nicht eingeschränkte Instanz von Azure Search verwenden (d. h., wenn Sie nicht die Testen-von-Azure-Diensten-Option nutzen).
+Azure Search ist ein vollständig verwalteter Platform as a Service ([PaaS](https://en.wikipedia.org/wiki/Platform_as_a_service))-Dienst, mit dem Entwickler großartige Suchfunktionen in Web- und Mobilanwendungen integrieren können. Daten, die bei Suchvorgängen verwendet werden, werden mit dem Search-Dienst in Azure gespeichert, wobei die Nähe von den Daten zu den Vorgängen eine niedrige Latenz und konsistentes Sucheverhalten sicherstellen. Wir betrachten dies noch näher:
 
-Daten, die bei Suchvorgängen verwendet werden, werden mit dem Search-Dienst in Azure gespeichert, wobei die Nähe von den Daten zu den Vorgängen eine niedrige Latenz und konsistentes Sucheverhalten sicherstellen. Zurzeit gibt es keinen Support für die Offline- oder remote Speicherung von durchsuchbaren Daten. Wir betrachten dies noch näher:
-
-- Suchdaten werden in einem von Azure Search verwalteten Index gespeichert, das mit Dokumenten aufgefüllt ist, ein Dokument pro Suchelement. 
-- Die meisten Indizes werden aus einem einzelnen Datensatz geladen, indem Sie im Voraus so vorbereitet werden, dass sie nur Felder enthalten, die im Kontext von Suchvorgängen nützlich sind. 
+- Durchsuchbare Daten werden in einem von Azure Search verwalteten Index gespeichert.
 - Das Schema, das Ihren Index definiert, ist benutzerdefiniert und gibt durchsuchbare Felder und nicht durchsuchbare Felder an, die in einem Filterausdruck und Konstrukten wie bei der Bewertung von Profile für die Optimierung der Ergebnisse nützlich sein können.
+- Ein Suchindex enthält mehrere Dokumente (ähnlich einer Zeile in einer Tabelle), die durchsucht und abgerufen werden können.
+- Die meisten Indizes werden aus einem einzelnen Datensatz geladen, indem Sie im Voraus so vorbereitet werden, dass sie nur Felder enthalten, die im Kontext von Suchvorgängen nützlich sind. 
 - Daten können automatisch von einem Indexer (nur für Azure SQL-Datenbank oder Azure DocumentDB unterstützt) geladen oder in einem Suchindex über eine der Azure Search-APIs abgelegt werden. Mit der API können Sie Daten aus einer beliebigen Datenquelle übertragen, solange sie im JSON-Format vorliegen.
 
-Mit der Option [Try Azure App Service](https://tryappservice.azure.com/) bietet die ASP.NET- und Azure Search-Websitevorlage den Quellcode für die Webanwendung, die in Visual Studio Online bearbeitet werden kann (verfügbar als Teil der einstündigen Sitzung). Zum Anzeigen oder Ändern des Codes sind keine separaten Entwicklungstools erforderlich.
+Mit der Option [Azure App Service](https://tryappservice.azure.com/) enthält die Vorlage „ASP.NET + Azure Search Site“ den Quellcode für die Webanwendung, die in Visual Studio Team Services bearbeitet werden kann (verfügbar als Teil der einstündigen Sitzung). Zum Anzeigen oder Ändern des Codes sind keine separaten Entwicklungstools erforderlich.
 
 Code wird mithilfe der [Azure Search-.NET-Clientbibliothek](https://msdn.microsoft.com/library/dn951165.aspx) in C# geschrieben, zum Ausführen von Abfragen gegen den Index, zum Bereitstellen der Facettennavigation, und zum Anzeigen von Zahlen und Suchergebnissen auf einer Webseite.
 
 Anderer Code, der nicht in die Vorlage eingefügt ist, wurde dazu verwendet, den USGS-Suchindex zu erstellen und zu laden. Da der Dienst schreibgeschützt ist, mussten alle Vorgänge, die einen Schreibzugriff erfordern, im Voraus abgeschlossen werden. Sie sehen eine [Kopie des Schemas](#schema), die am Ende dieses Artikels dazu verwendet wird, das Schema zu erstellen.
 
-##Erste Schritte
+## Erste Schritte
 
 Wenn die einstündige Sitzung noch nicht begonnen hat, gehen Sie wie folgt vor, um loszulegen.
 
@@ -68,8 +67,8 @@ Wenn die einstündige Sitzung noch nicht begonnen hat, gehen Sie wie folgt vor, 
 
     ![][3]
 
-7. Wählen Sie **Edit with Visual Studio Online**, um die Lösung anzuzeigen und die Website zu durchsuchen.
-9. Erweitern Sie in Visual Studio Online die Sitzungsoptionen am oberen Rand der Seite, und klicken Sie dann auf **Website durchsuchen**.
+7. Wählen Sie **Mit Visual Studio Online bearbeiten**, um die Lösung anzuzeigen und die Website zu durchsuchen.
+9. Erweitern Sie in Visual Studio Team Services die Sitzungsoptionen am oberen Rand der Seite, und klicken Sie dann auf **Website durchsuchen**.
 
     ![][4]
 
@@ -82,7 +81,8 @@ Wenn die einstündige Sitzung noch nicht begonnen hat, gehen Sie wie folgt vor, 
     ![][6]
 
 
-##Anfängliche Vorgehensweise
+## Anfängliche Vorgehensweise
+
 Da der Suchindex voll funktionsfähig ist, ist es ein guter erster Schritt, einige Abfragen auszuprobieren. Azure Search unterstützt alle Standardsuchoperatoren (+, -, |), Anführungszeichen für Übereinstimmungen bei Zeichenfolgenliteralen, Platzhalter (*) und die Rangfolge von Operatoren. Sie können den Syntaxverweis der Abfrage für die vollständige Liste der Operatoren überprüfen.
 
 - Beginnen Sie mit einer Platzhaltersuche durch Hinzufügen eines Sternchens (`*`). Damit sehen Sie, wie viele Dokumente im Index gefunden werden: 2.262.578.
@@ -93,7 +93,7 @@ Da der Suchindex voll funktionsfähig ist, ist es ein guter erster Schritt, eini
 
 Möchten Sie fortfahren? Ändern Sie ein paar Codezeilen, um die Auswirkungen auf die Volltext-Suchvorgänge zu sehen.
 
-##Ändern Sie „SearchMode.All“.
+## Ändern Sie „SearchMode.All“.
 
 Azure Search bietet eine konfigurierbare **SearchMode**-Eigenschaft, die Sie verwenden können, um das Suchverhalten des Operators zu steuern. Gültige Werte für diese Eigenschaft sind `Any`(Standard) oder `All`. Weitere Anleitungen zum Festlegen dieser Optionen finden Sie unter [Einfache Abfragesyntax](https://msdn.microsoft.com/library/dn798920.aspx).
 
@@ -104,7 +104,7 @@ Azure Search bietet eine konfigurierbare **SearchMode**-Eigenschaft, die Sie ver
 
 In dieser Aufgabe ändern Sie **SearchMode** und vergleichen auf dem Modus basierend die Ergebnisse der Suche.
 
-1. Öffnen Sie das Browserfenster mit der Beispielanwendung und wählen Sie **Mit Visual Studio Online verbinden**.
+1. Öffnen Sie das Browserfenster mit der Beispielanwendung, und wählen Sie **Mit Visual Studio Team Services verbinden**.
 
     ![][8]
 
@@ -130,7 +130,7 @@ Dieses Szenario ist zwar zugegebenermaßen unwahrscheinlich, veranschaulicht abe
 
 Um mit diesem Lernprogramm fortzufahren, setzen Sie **SearchMode** wieder auf den ursprünglichen Wert zurück (auf `All` in Zeile 39 festgelegt), führen Sie das Programm aus, und verwenden Sie die neu erstellte App für die verbleibenden Vorgänge.
  
-##Hinzufügen eines globalen Filters für den Bundesstaat Washington
+## Hinzufügen eines globalen Filters für den Bundesstaat Washington
 
 Wenn Sie normalerweise eine Teilmenge verfügbarer Daten durchsuchen wollen, würden Sie den Filter in der Datenquelle beim Importieren von Daten festlegen. Zu Lernzwecken und da mit schreibgeschützten Daten gearbeitet wird, müssen wir den Filter in unserer Anwendung so festlegen, dass nur die Dokumente zurückgegeben werden, die den US-Bundesstaat Washington enthalten.
 
@@ -161,7 +161,7 @@ Filter werden mit OData-Syntax angegeben und häufig mit der Facettennavigation 
 
    ![][12]
 
-##Hinzufügen von Trefferhervorhebungen
+## Hinzufügen von Trefferhervorhebungen
 
 Nun, da Sie eine Reihe von einzeiligen Codeänderungen vorgenommen haben, empfiehlt es sich, detailliertere Änderungen zu versuchen, die Codeänderungen an mehreren Orten benötigen. Die folgende Version von **Search.cshtml** kann direkt über die Search.cshtml-Datei in der aktuellen Sitzung eingefügt werden.
 
@@ -308,7 +308,7 @@ Möglicherweise möchten Sie eine Kopie der Originaldatei **Search.cshtml** spei
     }
 
 
-##Nächste Schritte
+## Nächste Schritte
 
 Mithilfe des schreibgeschützten Dienstes gemäß der [Try Azur App Service](https://tryappservice.azure.com/)-Website, haben Sie die Abfragesyntax und die Volltextsuche in Aktion gesehen, von SearchMode und Filtern erfahren, und für die Suchanwendung Trefferhervorhebungen hinzugefügt. Im nächsten Schritt sollten Sie Indizes erstellen und aktualisieren. Dadurch entsteht die Möglichkeit:
 
@@ -321,13 +321,13 @@ Um alle Aufgaben durchführen zu können, benötigen Sie ein Azure-Abonnement, d
 Weitere Informationen zu Azure Search finden Sie in der [Azure Search-Dokumentation](http://azure.microsoft.com/documentation/services/search/) auf [http://azure.microsoft.com](http://azure.microsoft.com), oder sehen Sie sich eine beliebige Anzahl von [Beispielen und Videos](search-video-demo-tutorial-list.md) an, die die ganze Bandbreite von Azure Search-Funktionen abdecken.
 
 <a name="Schema"></a>
-##Zum Schema
+## Zum Schema
 
 Der folgende Screenshot zeigt das verwendete Schema, um den in dieser Vorlage verwendeten Index zu erstellen.
  
    ![][13]
 
-###Schema.JSON-Datei
+### Schema.JSON-Datei
 
     {
       "@odata.context": "https://tryappservice.search.windows.net/$metadata#indexes/$entity",
@@ -512,7 +512,6 @@ Der folgende Screenshot zeigt das verwendete Schema, um den in dieser Vorlage ve
       ]
     }
 
-
 <!--Image references-->
 [1]: ./media/search-tryappservice/AzSearch-TryAppService-TemplateTile.png
 [2]: ./media/search-tryappservice/AzSearch-TryAppService-LoginAccount.png
@@ -529,4 +528,4 @@ Der folgende Screenshot zeigt das verwendete Schema, um den in dieser Vorlage ve
 [13]: ./media/search-tryappservice/AzSearch-TryAppService-Schema.png
 [14]: ./media/search-tryappservice/AzSearch-TryAppService-HitHighlight.png
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

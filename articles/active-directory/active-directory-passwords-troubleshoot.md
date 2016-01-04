@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/08/2015" 
+	ms.date="11/16/2015" 
 	ms.author="asteen"/>
 
 # Problembehandlung für die Kennwortverwaltung
@@ -373,11 +373,11 @@ Wenn beim Zurücksetzen eines Kennworts für einen Benutzer ein Fehler auftritt,
               <p>Microsoft implementiert einen automatischen Drosselungsmechanismus, um Benutzer daran zu hindern, ihre Kennwörter innerhalb eines kurzen Zeitraums zu häufig zurückzusetzen. Dieser Mechanismus greift in den folgenden Fällen:</p>
               <ol class="ordered">
                 <li>
-										Der Benutzer versucht, innerhalb von einer Stunde fünfmal, eine Telefonnummer zu überprüfen.&lt;br>&lt;br></li>
+										Der Benutzer versucht, innerhalb von einer Stunde fünfmal, eine Telefonnummer zu überprüfen.<br\><br\></li>
                 <li>
-										Der Benutzer versucht innerhalb von einer Stunde fünfmal, die Überprüfung mithilfe von Sicherheitsfragen zu verwenden.&lt;br>&lt;br></li>
+										Der Benutzer versucht innerhalb von einer Stunde fünfmal, die Überprüfung mithilfe von Sicherheitsfragen zu verwenden.<br\><br\></li>
                 <li>
-										Der Benutzer versucht innerhalb von einer Stunde fünfmal, ein Kennwort für dasselbe Benutzerkonto zurückzusetzen.&lt;br>&lt;br></li>
+										Der Benutzer versucht innerhalb von einer Stunde fünfmal, ein Kennwort für dasselbe Benutzerkonto zurückzusetzen.<br\><br\></li>
               </ol>
               <p>Weisen Sie den Benutzer zur Problembehandlung an, 24&#160;Stunden abzuwarten, bevor der nächste Versuch unternommen wird. Nach Ablauf dieses Zeitraums kann der Benutzer sein Kennwort wieder zurücksetzen.</p>
             </td>
@@ -469,11 +469,11 @@ Wenn beim Aktivieren, Deaktivieren oder Verwenden der Kennwortrückschreibung ei
               <p>Dieser Fehler tritt in den folgenden beiden Fällen auf:</p>
               <ul>
                 <li class="unordered">
-										Sie haben zu Beginn der Azure AD Connect-Installation ein falsches Kennwort für das globale Administratorkonto angegeben.&lt;br>&lt;br></li>
+										Sie haben zu Beginn der Azure AD Connect-Installation ein falsches Kennwort für das globale Administratorkonto angegeben.<br\><br\></li>
               </ul>
               <ul>
                 <li class="unordered">
-										Sie haben versucht, zu Beginn der Azure AD Connect-Installation einen Verbundbenutzer für das globale Administratorkonto zu verwenden.&lt;br>&lt;br> </li>
+										Sie haben versucht, zu Beginn der Azure AD Connect-Installation einen Verbundbenutzer für das globale Administratorkonto zu verwenden.<br\><br\> </li>
               </ul>
               <p>Stellen Sie zur Beseitigung dieses Fehlers sicher, dass Sie zu Beginn der Azure AD Connect-Installation kein Verbundkonto für den globalen Administrator angegeben haben, und dass das angegebene Kennwort richtig ist.</p>
             </td>
@@ -500,11 +500,11 @@ Wenn beim Aktivieren, Deaktivieren oder Verwenden der Kennwortrückschreibung ei
               <p>Stellen Sie sicher, dass Ihre Firewall die folgenden ausgehenden Verbindungen zulässt:</p>
               <ul>
                 <li class="unordered">
-										Sämtlicher Datenverkehr über TCP&#160;443 (HTTPS)&lt;br>&lt;br></li>
+										Sämtlicher Datenverkehr über TCP&#160;443 (HTTPS)<br\><br\></li>
               </ul>
               <ul>
                 <li class="unordered">
-										Ausgehende Verbindungen mit &lt;br>&lt;br></li>
+										Ausgehende Verbindungen mit <br\><br\></li>
               </ul>
               <p>
                 
@@ -558,11 +558,11 @@ Wenn beim Aktivieren, Deaktivieren oder Verwenden der Kennwortrückschreibung ei
               <p>Dies ist ein bekannter Fehler in der veröffentlichten Version von Azure AD Connect, der in der folgenden Situation auftritt:</p>
               <ol class="ordered">
                 <li>
-										Sie konfigurieren Azure AD Connect für den Mandanten "abc.com" (überprüfte Domäne) mithilfe von Anmeldeinformationen. Dies führt dazu, dass ein AAD-Connector namens "abc.com – AAD" erstellt wird.&lt;br>&lt;br></li>
+										Sie konfigurieren Azure AD Connect für den Mandanten "abc.com" (überprüfte Domäne) mithilfe von Anmeldeinformationen. Dies führt dazu, dass ein AAD-Connector namens "abc.com – AAD" erstellt wird.<br\><br\></li>
                 <li>
-										Anschließend ändern Sie die AAD-Anmeldeinformationen (mithilfe der alten Benutzeroberfläche) für den Connector (beachten Sie, dass der Mandant derselbe ist, aber der Domänenname abweicht). &lt;br>&lt;br></li>
+										Anschließend ändern Sie die AAD-Anmeldeinformationen (mithilfe der alten Benutzeroberfläche) für den Connector (beachten Sie, dass der Mandant derselbe ist, aber der Domänenname abweicht). <br\><br\></li>
                 <li>
-										Jetzt versuchen Sie, die Kennwortrückschreibung zu aktivieren/zu deaktivieren. Der Assistent setzt den Namen des Connectors mithilfe der Anmeldeinformationen "abc.onmicrosoft.com – AAD" zusammen und übergibt diesen an das Cmdlet für die Kennwortrückschreibung. Dies führt zu einem Fehler, da kein Connector mit diesem Namen erstellt wurde.&lt;br>&lt;br></li>
+										Jetzt versuchen Sie, die Kennwortrückschreibung zu aktivieren/zu deaktivieren. Der Assistent setzt den Namen des Connectors mithilfe der Anmeldeinformationen "abc.onmicrosoft.com – AAD" zusammen und übergibt diesen an das Cmdlet für die Kennwortrückschreibung. Dies führt zu einem Fehler, da kein Connector mit diesem Namen erstellt wurde.<br\><br\></li>
               </ol>
               <p>Dieser Fehler wurde in den aktuellen Builds behoben. Wenn Sie einen älteren Build verwenden, können Sie diesen Fehler umgehen, indem Sie das PowerShell-Cmdlet zum Aktivieren/Deaktivieren des Features verwenden. Weitere Informationen zur Vorgehensweise finden Sie unter "Schritt&#160;2: Aktivieren der Kennwortrückschreibung auf dem Computer zur Verzeichnissynchronisierung &amp; Konfigurieren von Firewallregeln" in <a href="../active-directory-passwords-getting-started#enable-users-to-reset-or-change-their-ad-passwords">Aktivieren/Deaktivieren der Kennwortrückschreibung</a>.</p>
             </td>
@@ -685,20 +685,36 @@ Eine bewährte Methode bei der Problembehandlung für die Kennwortrückschreibun
               <p>Dieses Ereignis tritt auf, wenn der Dienst für die Kennwortrückschreibung versucht, ein Kennwort für Ihr lokales Verzeichnis festzulegen, das die in der Domäne geltenden Anforderungen im Hinblick auf Alter, Verlauf, Komplexität oder Filterung für Kennwörter nicht erfüllt.</p>
               <ul>
                 <li class="unordered">
-										Wenn Sie ein Mindestkennwortalter festgelegt habe und das Kennwort kürzlich geändert wurde, können Sie das Kennwort erst wieder ändern, wenn es das für Ihre Domäne festgelegte Kennwortalter erreicht hat. Zu Testzwecken sollte das Mindestalter auf&#160;0 festgelegt werden.&lt;br>&lt;br></li>
+										Wenn Sie ein Mindestkennwortalter festgelegt habe und das Kennwort kürzlich geändert wurde, können Sie das Kennwort erst wieder ändern, wenn es das für Ihre Domäne festgelegte Kennwortalter erreicht hat. Zu Testzwecken sollte das Mindestalter auf&#160;0 festgelegt werden.<br\><br\></li>
               </ul>
               <ul>
                 <li class="unordered">
-										Wenn Sie Anforderungen für den Kennwortverlauf festgelegt haben, müssen Sie ein Kennwort auswählen, das die letzten n Male nicht verwendet wurde, wobei "n" für die Einstellung des Kennwortverlaufs steht. Wenn Sie ein Kennwort auswählen, das die letzten n Male verwendet wurde, wird dieser Fehler angezeigt. Zu Testzwecken sollte der Verlauf auf&#160;0 festgelegt werden.&lt;br>&lt;br></li>
+										Wenn Sie Anforderungen für den Kennwortverlauf festgelegt haben, müssen Sie ein Kennwort auswählen, das die letzten n Male nicht verwendet wurde, wobei "n" für die Einstellung des Kennwortverlaufs steht. Wenn Sie ein Kennwort auswählen, das die letzten n Male verwendet wurde, wird dieser Fehler angezeigt. Zu Testzwecken sollte der Verlauf auf&#160;0 festgelegt werden.<br\><br\></li>
               </ul>
               <ul>
                 <li class="unordered">
-										Wenn Anforderungen an die Kennwortkomplexität gelten, werden diese erzwungen, wenn der Benutzer versucht, ein Kennwort zu ändern oder zurückzusetzen.&lt;br>&lt;br></li>
+										Wenn Anforderungen an die Kennwortkomplexität gelten, werden diese erzwungen, wenn der Benutzer versucht, ein Kennwort zu ändern oder zurückzusetzen.<br\><br\></li>
               </ul>
               <ul>
                 <li class="unordered">
-										Wenn Sie Kennwortfilter aktiviert haben und ein Benutzer versucht, ein Kennwort auszuwählen, das nicht den Filterkriterien entspricht, tritt bei der Kennwortänderung oder -zurücksetzung ein Fehler auf.&lt;br>&lt;br></li>
+										Wenn Sie Kennwortfilter aktiviert haben und ein Benutzer versucht, ein Kennwort auszuwählen, das nicht den Filterkriterien entspricht, tritt bei der Kennwortänderung oder -zurücksetzung ein Fehler auf.<br\><br\></li>
               </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>HR 8023042</p>
+            </td>
+            <td>
+              <p>Synchronisierungsmodul gibt folgenden Fehler wieder: hr&#160;=&#160;80230402, Meldung = Versuch zum Abrufen eines Objekts ist fehlgeschlagen, weil doppelte Einträge mit dem gleichen Anker vorhanden sind</p>
+            </td>
+            <td>
+              <p>ADSync</p>
+            </td>
+            <td>
+              <p>Dieses Ereignis tritt auf, wenn die gleiche Benutzer-ID in mehreren Domänen aktiviert ist. Beispielsweise tritt dieser Fehler auf, wenn Sie Konto-/Ressourcengesamtstrukturen synchronisieren, und währenddessen die gleiche Benutzer-ID verwendet wird und aktiviert ist.  </p>
+              <p>Dieser Fehler tritt auf, wenn Sie ein nicht eindeutiges Anker-Attribut (wie z.&#160;B ein Alias oder einen UPN) verwenden und zwei Benutzer das gleiche Anker-Attribut teilen.</p>
+              <p>Um dieses Problem zu beheben, stellen Sie sicher, dass kein Benutzer in Ihren Domänen doppelt vorhanden ist und Sie ein eindeutiges Ankerattribut für jeden Benutzer verwenden.</p>
             </td>
           </tr>
           <tr>
@@ -743,15 +759,15 @@ Eine bewährte Methode bei der Problembehandlung für die Kennwortrückschreibun
               <p>Dieses Ereignis weist darauf hin, dass ein Benutzer ein Kennwort ausgewählt hat, und dass dieses Kennwort erfolgreich in der lokalen Umgebung empfangen wurde. Bei dem Versuch, das Kennwort in der lokalen AD-Umgebung festzulegen, ist jedoch ein Fehler aufgetreten. Dies kann aus verschiedenen Gründen passieren:</p>
               <ul>
                 <li class="unordered">
-										Das Benutzerkennwort entspricht nicht den für die Domäne geltenden Anforderungen in Bezug auf Alter, Verlauf, Komplexität oder Kennwortfilter. Versuchen Sie, den Fehler durch Auswahl eines komplett neuen Kennworts zu beheben.&lt;br>&lt;br></li>
+										Das Benutzerkennwort entspricht nicht den für die Domäne geltenden Anforderungen in Bezug auf Alter, Verlauf, Komplexität oder Kennwortfilter. Versuchen Sie, den Fehler durch Auswahl eines komplett neuen Kennworts zu beheben.<br\><br\></li>
               </ul>
               <ul>
                 <li class="unordered">
-										Das MA-Dienstkonto weist nicht die geeigneten Berechtigungen zum Festlegen des neuen Kennworts für das betreffende Benutzerkonto auf.&lt;br>&lt;br></li>
+										Das MA-Dienstkonto weist nicht die geeigneten Berechtigungen zum Festlegen des neuen Kennworts für das betreffende Benutzerkonto auf.<br\><br\></li>
               </ul>
               <ul>
                 <li class="unordered">
-										Das Benutzerkonto befindet sich in einer geschützten Gruppe, z.&#160;B. "Domänen-Admins" oder "Unternehmensadministratoren". Für diese Gruppen ist eine Kennwortverwaltung nicht möglich.&lt;br>&lt;br></li>
+										Das Benutzerkonto befindet sich in einer geschützten Gruppe, z.&#160;B. "Domänen-Admins" oder "Unternehmensadministratoren". Für diese Gruppen ist eine Kennwortverwaltung nicht möglich.<br\><br\></li>
               </ul>
               <p>Informationen zu weiteren Situationen, die diesen Fehler auslösen können, finden Sie unter <a href="#troubleshoot-password-writeback">Problembehandlung: Kennwortrückschreibung</a>.</p>
             </td>
@@ -826,15 +842,15 @@ Eine bewährte Methode bei der Problembehandlung für die Kennwortrückschreibun
               <p>Dieses Ereignis weist darauf hin, dass ein Benutzer ein Kennwort ausgewählt hat, und dass dieses Kennwort erfolgreich in der lokalen Umgebung empfangen wurde. Bei dem Versuch, das Kennwort in der lokalen AD-Umgebung festzulegen, ist jedoch ein Fehler aufgetreten. Dies kann aus verschiedenen Gründen passieren:</p>
               <ul>
                 <li class="unordered">
-										Das Benutzerkennwort entspricht nicht den für die Domäne geltenden Anforderungen in Bezug auf Alter, Verlauf, Komplexität oder Kennwortfilter. Versuchen Sie, den Fehler durch Auswahl eines komplett neuen Kennworts zu beheben.&lt;br>&lt;br></li>
+										Das Benutzerkennwort entspricht nicht den für die Domäne geltenden Anforderungen in Bezug auf Alter, Verlauf, Komplexität oder Kennwortfilter. Versuchen Sie, den Fehler durch Auswahl eines komplett neuen Kennworts zu beheben.<br\><br\></li>
               </ul>
               <ul>
                 <li class="unordered">
-										Das MA-Dienstkonto weist nicht die geeigneten Berechtigungen zum Festlegen des neuen Kennworts für das betreffende Benutzerkonto auf.&lt;br>&lt;br></li>
+										Das MA-Dienstkonto weist nicht die geeigneten Berechtigungen zum Festlegen des neuen Kennworts für das betreffende Benutzerkonto auf.<br\><br\></li>
               </ul>
               <ul>
                 <li class="unordered">
-										Das Benutzerkonto befindet sich in einer geschützten Gruppe, z.&#160;B. "Domänen-Admins" oder "Unternehmensadministratoren". Für diese Gruppen ist eine Kennwortverwaltung nicht möglich.&lt;br>&lt;br></li>
+										Das Benutzerkonto befindet sich in einer geschützten Gruppe, z.&#160;B. "Domänen-Admins" oder "Unternehmensadministratoren". Für diese Gruppen ist eine Kennwortverwaltung nicht möglich.<br\><br\></li>
               </ul>
               <p>Informationen zu weiteren Situationen, die diesen Fehler auslösen können, finden Sie unter <a href="#troubleshoot-password-writeback">Problembehandlung: Kennwortrückschreibung</a>.</p>
             </td>
@@ -881,15 +897,15 @@ Eine bewährte Methode bei der Problembehandlung für die Kennwortrückschreibun
               <p>Der Administrator hat im Namen eines Benutzers ein Kennwort ausgewählt, und dieses Kennwort wurde erfolgreich in der lokalen Umgebung empfangen. Bei dem Versuch, das Kennwort in der lokalen AD-Umgebung festzulegen, ist jedoch ein Fehler aufgetreten. Dies kann aus verschiedenen Gründen passieren:</p>
               <ul>
                 <li class="unordered">
-										Das Benutzerkennwort entspricht nicht den für die Domäne geltenden Anforderungen in Bezug auf Alter, Verlauf, Komplexität oder Kennwortfilter. Versuchen Sie, den Fehler durch Auswahl eines komplett neuen Kennworts zu beheben.&lt;br>&lt;br></li>
+										Das Benutzerkennwort entspricht nicht den für die Domäne geltenden Anforderungen in Bezug auf Alter, Verlauf, Komplexität oder Kennwortfilter. Versuchen Sie, den Fehler durch Auswahl eines komplett neuen Kennworts zu beheben.<br\><br\></li>
               </ul>
               <ul>
                 <li class="unordered">
-										Das MA-Dienstkonto weist nicht die geeigneten Berechtigungen zum Festlegen des neuen Kennworts für das betreffende Benutzerkonto auf.&lt;br>&lt;br></li>
+										Das MA-Dienstkonto weist nicht die geeigneten Berechtigungen zum Festlegen des neuen Kennworts für das betreffende Benutzerkonto auf.<br\><br\></li>
               </ul>
               <ul>
                 <li class="unordered">
-										Das Benutzerkonto befindet sich in einer geschützten Gruppe, z.&#160;B. "Domänen-Admins" oder "Unternehmensadministratoren". Für diese Gruppen ist eine Kennwortverwaltung nicht möglich.&lt;br>&lt;br></li>
+										Das Benutzerkonto befindet sich in einer geschützten Gruppe, z.&#160;B. "Domänen-Admins" oder "Unternehmensadministratoren". Für diese Gruppen ist eine Kennwortverwaltung nicht möglich.<br\><br\></li>
               </ul>
               <p>Informationen zu weiteren Situationen, die diesen Fehler auslösen können, finden Sie unter <a href="#troubleshoot-password-writeback">Problembehandlung: Kennwortrückschreibung</a>.</p>
             </td>
@@ -1328,19 +1344,19 @@ Eine bewährte Methode bei der Problembehandlung für die Kennwortrückschreibun
               <p>Dieses Ereignis tritt auf, wenn der Dienst für die Kennwortrückschreibung versucht, ein Kennwort für Ihr lokales Verzeichnis festzulegen, das die in der Domäne geltenden Anforderungen im Hinblick auf Alter, Verlauf, Komplexität oder Filterung für Kennwörter nicht erfüllt.</p>
               <ul>
                 <li class="unordered">
-										Wenn Sie ein Mindestkennwortalter festgelegt habe und das Kennwort kürzlich geändert wurde, können Sie das Kennwort erst wieder ändern, wenn es das für Ihre Domäne festgelegte Kennwortalter erreicht hat. Zu Testzwecken sollte das Mindestalter auf&#160;0 festgelegt werden.&lt;br>&lt;br></li>
+										Wenn Sie ein Mindestkennwortalter festgelegt habe und das Kennwort kürzlich geändert wurde, können Sie das Kennwort erst wieder ändern, wenn es das für Ihre Domäne festgelegte Kennwortalter erreicht hat. Zu Testzwecken sollte das Mindestalter auf&#160;0 festgelegt werden.<br\><br\></li>
               </ul>
               <ul>
                 <li class="unordered">
-										Wenn Sie Anforderungen für den Kennwortverlauf festgelegt haben, müssen Sie ein Kennwort auswählen, das die letzten n Male nicht verwendet wurde, wobei "n" für die Einstellung des Kennwortverlaufs steht. Wenn Sie ein Kennwort auswählen, das die letzten n Male verwendet wurde, wird dieser Fehler angezeigt. Zu Testzwecken sollte der Verlauf auf&#160;0 festgelegt werden.&lt;br>&lt;br></li>
+										Wenn Sie Anforderungen für den Kennwortverlauf festgelegt haben, müssen Sie ein Kennwort auswählen, das die letzten n Male nicht verwendet wurde, wobei "n" für die Einstellung des Kennwortverlaufs steht. Wenn Sie ein Kennwort auswählen, das die letzten n Male verwendet wurde, wird dieser Fehler angezeigt. Zu Testzwecken sollte der Verlauf auf&#160;0 festgelegt werden.<br\><br\></li>
               </ul>
               <ul>
                 <li class="unordered">
-										Wenn Anforderungen an die Kennwortkomplexität gelten, werden diese erzwungen, wenn der Benutzer versucht, ein Kennwort zu ändern oder zurückzusetzen.&lt;br>&lt;br></li>
+										Wenn Anforderungen an die Kennwortkomplexität gelten, werden diese erzwungen, wenn der Benutzer versucht, ein Kennwort zu ändern oder zurückzusetzen.<br\><br\></li>
               </ul>
               <ul>
                 <li class="unordered">
-										Wenn Sie Kennwortfilter aktiviert haben und ein Benutzer versucht, ein Kennwort auszuwählen, das nicht den Filterkriterien entspricht, tritt bei der Kennwortänderung oder -zurücksetzung ein Fehler auf.&lt;br>&lt;br></li>
+										Wenn Sie Kennwortfilter aktiviert haben und ein Benutzer versucht, ein Kennwort auszuwählen, das nicht den Filterkriterien entspricht, tritt bei der Kennwortänderung oder -zurücksetzung ein Fehler auf.<br\><br\></li>
               </ul>
             </td>
           </tr>
@@ -1463,19 +1479,17 @@ Wenn das Problem anschließend weiterhin besteht, wird empfohlen, unter [Problem
 
 <br/> <br/> <br/>
 
-**Zusätzliche Ressourcen**
+## Links zur Dokumentation für die Kennwortzurücksetzung
+Im Folgenden finden Sie Links zu allen Webseiten mit Informationen zur Kennwortzurücksetzung für Azure AD:
 
-
-* [Was ist die Kennwortverwaltung?](active-directory-passwords.md)
-* [Funktionsweise der Kennwortverwaltung](active-directory-passwords-how-it-works.md)
-* [Erste Schritte mit der Kennwortverwaltung](active-directory-passwords-getting-started.md)
-* [Anpassen der Kennwortverwaltung](active-directory-passwords-customize.md)
-* [Best Practices für die Kennwortverwaltung](active-directory-passwords-best-practices.md)
-* [Operative Einblicke durch Berichte zur Kennwortverwaltung](active-directory-passwords-get-insights.md)
-* [Häufig gestellte Fragen zur Kennwortverwaltung](active-directory-passwords-faq.md)
-* [Weitere Informationen](active-directory-passwords-learn-more.md)
-* [Kennwortverwaltung auf MSDN](https://msdn.microsoft.com/library/azure/dn510386.aspx)
-
+* [**Zurücksetzen Ihres eigenen Kennworts**](active-directory-passwords-update-your-own-password.md): Hier erhalten Sie Informationen zum Zurücksetzen oder Ändern Ihres eigenen Kennworts als Benutzer des Systems.
+* [**Funktionsweise**](active-directory-passwords-how-it-works.md) – Erfahren Sie mehr über die sechs verschiedenen Komponenten des Diensts und deren Funktionen.
+* [**Erste Schritte**](active-directory-passwords-getting-started.md) – Erfahren Sie, wie Sie Benutzern das Zurücksetzen und Ändern ihrer Cloud- oder lokalen Kennwörter erlauben.
+* [**Anpassen**](active-directory-passwords-customize.md) – Erfahren Sie, wie Sie das Aussehen und Verhalten des Diensts an die Anforderungen Ihrer Organisation anpassen.
+* [**Best Practices**](active-directory-passwords-best-practices.md) – Erfahren Sie, wie Sie Kennwörter in Ihrer Organisation schnell bereitstellen und effektiv verwalten.
+* [**Einblicke erhalten**](active-directory-passwords-get-insights.md) – Erfahren Sie mehr über unsere integrierten Berichtsfunktionen.
+* [**Häufig gestellte Fragen**](active-directory-passwords-faq.md) – Hier erhalten Sie Antworten auf häufig gestellte Fragen.
+* [**Weitere Informationen**](active-directory-passwords-learn-more.md) – Erhalten Sie tiefgehende technische Details zur Funktionsweise des Diensts.
 
 
 
@@ -1484,4 +1498,4 @@ Wenn das Problem anschließend weiterhin besteht, wird empfohlen, unter [Problem
 [003]: ./media/active-directory-passwords-troubleshoot/003.jpg "Image_003.jpg"
 [004]: ./media/active-directory-passwords-troubleshoot/004.jpg "Image_004.jpg"
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

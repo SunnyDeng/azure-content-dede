@@ -22,7 +22,7 @@
 - [PowerShell](powershell-install-configure.md)
 - [Azure CLI](xplat-cli-install.md)
 
-Die Azure-Befehlszeilenschnittstelle stellt eine Reihe von plattformübergreifenden Open Source-Befehlen für die Arbeit mit der Azure-Plattform bereit. Sie bietet ähnliche Funktionen wie das Azure-Verwaltungsportal – etwa die Verwaltung von Websites, virtuellen Computern, mobilen Diensten, SQL-Datenbanken und anderen Diensten, die über die Azure-Plattform bereitgestellt werden.
+Die Azure-Befehlszeilenschnittstelle stellt eine Reihe von plattformübergreifenden Open Source-Befehlen für die Arbeit mit der Azure-Plattform bereit. Die Azure-Befehlszeilenschnittstelle bietet ähnliche Funktionen wie das Azure-Portal – etwa die Verwaltung von Websites, virtuellen Computern, mobilen Diensten, SQL-Datenbanken und anderen Diensten, die über Azure Platform bereitgestellt werden.
 
 Die Azure-Befehlszeilenschnittstelle basiert auf JavaScript und erfordert „Node.js“. Sie wird mithilfe des Azure SDK für Node.js implementiert und unter einer Apache 2.0-Lizenz veröffentlicht. Das Projekt-Repository befindet sich unter [https://github.com/WindowsAzure/azure-sdk-tools-xplat](https://github.com/azure/azure-xplat-cli).
 
@@ -281,4 +281,4 @@ Wenn Sie ein Skript schreiben, das auf dem Beendigungsstatus basiert, müssen Si
 [signuporg]: http://www.windowsazure.com/documentation/articles/sign-up-organization/
 [Using the Azure CLI]: virtual-machines-command-line-tools.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

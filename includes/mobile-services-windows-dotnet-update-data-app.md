@@ -1,9 +1,5 @@
 
-1. Fügen Sie in der Datei "MainPage.xaml.cs" die folgenden "using"-Anweisungen hinzu, oder heben Sie deren Auskommentierung auf: 
-
-		using Microsoft.WindowsAzure.MobileServices;
-
-2. Ersetzen Sie die TodoItem-Klassendefinition durch den folgenden Code:
+2. Ersetzen Sie die TodoItem-Klassendefinition durch den folgenden Code: 
 
 	    public class TodoItem
 	    {
@@ -20,13 +16,19 @@
 
 	>[AZURE.NOTE]In einem universellen Windows-App-Projekt wird die TodoItem-Klasse in der separaten Codedatei im gemeinsam genutzten Ordner "DataModel" definiert.
 
-3. Löschen Sie in der Datei "MainPage.xaml.cs" die Zeile mit der Definition der vorhandenen Eintragssammlung, oder kommentieren Sie diese Zeile aus. Heben Sie dann die Auskommentierung der folgenden Zeilen auf, oder fügen Sie die entsprechenden Zeilen hinzu, und ersetzen Sie _&lt;yourClient&gt;_ durch das Feld `MobileServiceClient`, das der Datei "App.xaml.cs" beim Verbinden Ihres Projekts mit dem mobilen Dienst hinzugefügt wurde:
+1. Fügen Sie in der Datei "MainPage.cs" die folgenden Anweisungen hinzu, oder heben Sie deren Auskommentierung auf:
+
+		using Microsoft.WindowsAzure.MobileServices;
+
+
+4. Löschen Sie die Zeile mit der Definition der vorhandenen Eintragssammlung, oder kommentieren Sie diese Zeile aus. Heben Sie dann die Auskommentierung der folgenden Zeilen auf, oder fügen Sie die entsprechenden Zeilen hinzu, und ersetzen Sie _&lt;yourClient&gt;_ durch das Feld `MobileServiceClient`, das der Datei "App.xaml.cs" beim Verbinden Ihres Projekts mit dem mobilen Dienst hinzugefügt wurde:
 
 		private MobileServiceCollection<TodoItem, TodoItem> items;
 		private IMobileServiceTable<TodoItem> todoTable = 
 		    App.<yourClient>.GetTable<TodoItem>();
 		  
 	Dieser Code erstellt eine mobile dienstunterstützende Bindungssammlung (items) und eine Proxyklasse für die Datenbanktabelle (todoTable).
+
 
 4. Entfernen Sie aus der **InsertTodoItem**-Methode die Codezeile, in der die **TodoItem.Id**-Eigenschaft festgelegt wird, fügen Sie der Methode den **async**-Modifizierer hinzu, und heben Sie die Auskommentierung der folgenden Codezeile auf:
 
@@ -70,4 +72,4 @@
 
 Nachdem nun die App für die Verwendung von Mobile Services als Back-End-Speicher aktualisiert ist, können Sie die App mit Mobile Services testen.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

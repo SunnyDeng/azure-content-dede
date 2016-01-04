@@ -68,7 +68,7 @@ Das DocumentDB-Zugriffssteuerungsmodell definiert mit Berücksichtigung der oben
 Wie bereits erwähnt, bieten DocumentDB-Hauptschlüssel vollen Administratorzugriff auf alle Ressourcen in einem DocumentDB-Konto, während Schlüssel mit Leseberechtigung schreibgeschützten Zugriff auf alle Ressourcen in einem Konto ermöglichen. Der folgende Codeausschnitt veranschaulicht, wie mit einem DocumentDB-Kontoendpunkt und einem Hauptschlüssel DocumentClient instanziiert und eine neue Datenbank erstellt werden kann.
 
     //Read the DocumentDB endpointUrl and authorization keys from config.
-    //These values are available from the Azure Management Portal on the DocumentDB Account Blade under "Keys".
+    //These values are available from the Azure Classic Portal on the DocumentDB Account Blade under "Keys".
     //NB > Keep these values in a safe and secure location. Together they provide Administrative access to your DocDB account.
     
 	private static readonly string endpointUrl = ConfigurationManager.AppSettings["EndPointUrl"];
@@ -163,4 +163,4 @@ Um alle einem bestimmten Benutzer zugeordneten Berechtigungsressourcen abzurufen
 - Informationen zum Erstellen von DocumentDB-Autorisierungstoken finden klicken Sie [hier](https://msdn.microsoft.com/library/azure/dn783368.aspx)
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

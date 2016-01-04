@@ -6,7 +6,7 @@
 	authors="HeidiSteen"
 	manager="mblythe"
 	editor=""
-    tags="Azure portal"/>
+    tags="Azure Classic Portal"/>
 
 <tags
 	ms.service="search"
@@ -25,7 +25,7 @@
 - [REST API](search-import-data-rest-api.md)
 - [Indexers](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers-2015-02-28.md)
 
-Das Azure-Portal bietet den Befehl **Daten importieren** im Azure Search-Dashboard, der Sie durch die Erfassung von Daten in Azure Search begleitet. Der Befehl setzt auf der integrierten Indexerfunktion auf, die eine vorhandene Datenquelle durchforstet und Dokumente basierend auf dem in der Datenquelle gefundenen Rowset erstellt oder hochlädt.
+Das klassische Azure-Portal bietet den Befehl **Daten importieren** im Azure Search-Dashboard, der Sie durch die Erfassung von Daten in Azure Search begleitet. Der Befehl setzt auf der integrierten Indexerfunktion auf, die eine vorhandene Datenquelle durchforstet und Dokumente basierend auf dem in der Datenquelle gefundenen Rowset erstellt oder hochlädt.
 
 Bei Verwenden des Assistenten besteht der Datenimport aus drei Teilen:
 
@@ -39,9 +39,9 @@ Sie können Daten nur aus einer einzelnen Tabelle, Sicht oder entsprechenden Dat
 
 ##Konfigurieren des Datenimports
 
-1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
+1. Melden Sie sich am [klassischen Azure-Portal](https://portal.azure.com) an.
 
-2. Öffnen Sie das Dashboard des Azure Search-Diensts. Im Anschluss finden Sie einige Möglichkeiten, um zum Dashboard zu gelangen.
+2. Öffnen Sie das Service-Dashboard des Azure-Suchdiensts. Im Anschluss finden Sie einige Möglichkeiten, um zum Dashboard zu gelangen.
 	- Klicken Sie auf der Navigationsleiste auf **Startseite**. Auf der Startseite befinden sich die Kacheln für die in Ihrem Abonnement enthaltenen Dienste. Klicken Sie auf die Kachel, um das Service-Dashboard zu öffnen.
 	- Klicken Sie auf der Navigationsleiste auf **Alle durchsuchen** > **Filtern nach** > **Search-Dienste**, um Ihren Search-Dienst in der Liste zu finden.
 
@@ -74,4 +74,4 @@ Beim gerade abgeschlossenen Datenimportvorgang wird im Hintergrund ein Indexer e
 
 Doppelklicken Sie im Dashboard des Diensts auf die Kachel „Indexer“, um eine Liste aller Indexer einzublenden, die für Ihr Abonnement erstellt wurden. Doppelklicken Sie auf einen der Indexer, um ihn auszuführen, zu bearbeiten oder zu löschen.
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

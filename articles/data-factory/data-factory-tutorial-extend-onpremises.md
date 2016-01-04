@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Kopieren von Ausgabedaten in eine lokale SQL Server-Datenbank (Azure-Portal)" 
-	description="Diese exemplarische Vorgehensweise baut auf dem Tutorial mit dem Data Factory-Editor im Azure-Portal auf, indem die Pipeline Ausgabedaten in eine SQL Server-Datenbank kopiert."
+	pageTitle="Kopieren von Ausgabedaten in eine lokale SQL Server-Datenbank (klassisches Azure-Portal)" 
+	description="Diese exemplarische Vorgehensweise baut auf dem Lernprogramm mit dem Data Factory-Editor im klassischen Azure-Portal auf, indem die Pipeline Ausgabedaten in eine SQL Server-Datenbank kopiert."
 	services="data-factory" 
 	documentationCenter="" 
 	authors="spelluru" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/25/2015" 
+	ms.date="11/12/2015" 
 	ms.author="spelluru"/>
 
 
@@ -51,7 +51,7 @@ Sie müssen mindestens ein Gateway in Ihrer Unternehmensumgebung installiert hab
 
 Wenn Sie ein vorhandenes Datengateway haben, das Sie verwenden können, überspringen Sie diesen Schritt.
 
-1.	Erstellen eines logischen Datengateways. Klicken Sie im **Azure-Vorschauportal** auf dem Blatt **DATA FACTORY** auf **Verknüpfte Dienste**.
+1.	Erstellen eines logischen Datengateways. Klicken Sie im **klassischen Azure-Portal** auf dem Blatt **DATA FACTORY** auf **Verknüpfte Dienste**.
 2.	Klicken Sie in der Befehlsleiste auf **(+) Datengateway hinzufügen**.  
 3.	Klicken Sie auf dem Blatt **Neues Datengateway** auf **ERSTELLEN**.
 4.	Geben Sie auf dem Blatt **Erstellen** als **Namen** für das Datengateway **MyGateway**.
@@ -97,7 +97,7 @@ Zunächst müssen Sie die SQL Server-Datenbank, die Tabelle, benutzerdefinierte 
 
 ### Erstellen des verknüpften Diensts
 
-1.	Klicken Sie im **Azure-Vorschauportal** auf dem Blatt **DATA FACTORY** für **LogProcessingFactory** auf die Kachel **Erstellen und bereitstellen**.
+1.	Klicken Sie im **Azure-Portal** auf dem Blatt **DATA FACTORY** für **LogProcessingFactory** auf die Kachel **Erstellen und bereitstellen**.
 2.	Klicken Sie in **Data Factory Editor** in der Symbolleiste auf **Neuer Datenspeicher**, und wählen Sie **Lokale SQL Server-Datenbank**.
 3.	Führen Sie im JSON-Skript folgende Schritte aus: 
 	1.	Ersetzen Sie **<servername>** durch den Namen des Servers, auf dem die SQL Server-Datenbank gehostet wird.
@@ -153,7 +153,7 @@ Glückwunsch! Sie haben die exemplarische Vorgehensweise zur Verwendung Ihrer lo
 [adfintroduction]: data-factory-introduction.md
 [useonpremisesdatasources]: data-factory-move-data-between-onprem-and-cloud.md
 
-[azure-preview-portal]: http://portal.azure.com
+[azure-portal]: http://portal.azure.com
 [azure-purchase-options]: http://azure.microsoft.com/pricing/purchase-options/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
 [azure-free-trial]: http://azure.microsoft.com/pricing/free-trial/
@@ -169,4 +169,4 @@ Glückwunsch! Sie haben die exemplarische Vorgehensweise zur Verwendung Ihrer lo
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

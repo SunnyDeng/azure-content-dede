@@ -1,6 +1,7 @@
 <properties
-	pageTitle="Erstellen eines Azure SQL-Datenbank-Pools für elastische Datenbanken mit dem Azure-Vorschauportal | Microsoft Azure"
-	description="Erstellen Sie einen Pool für elastische Datenbanken, um Ressourcen in mehreren Azure SQL-Datenbanken freizugeben."
+	pageTitle="Hinzufügen skalierbarer Pools elastischer Datenbanken | Microsoft Azure"
+	description="Informationen zum Hinzufügen eines skalierbaren Pools elastischer Datenbanken zu Ihrer SQL-Datenbankkonfiguration für eine einfachere Verwaltung und Ressourcenfreigabe zwischen zahlreichen Datenbanken."
+	keywords="Skalierbare Datenbank, Datenbankkonfiguration"
 	services="sql-database"
 	documentationCenter=""
 	authors="stevestein"
@@ -10,26 +11,26 @@
 <tags
 	ms.service="sql-database"
 	ms.devlang="NA"
-	ms.date="11/06/2015"
+	ms.date="12/01/2015"
 	ms.author="sstein"
 	ms.workload="data-management"
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="NA"/>
 
 
-# Erstellen eines Pools für elastische Datenbanken mit dem Azure-Vorschauportal
+# Erstellen eines skalierbaren Pools für elastische SQL-Datenbanken im Azure-Portal
 
 > [AZURE.SELECTOR]
-- [Azure preview portal](sql-database-elastic-pool-portal.md)
+- [Azure portal](sql-database-elastic-pool-portal.md)
 - [C#](sql-database-elastic-pool-csharp.md)
 - [PowerShell](sql-database-elastic-pool-powershell.md)
 
-Dieser Artikel beschreibt, wie Sie einen [Pool für elastische Datenbanken](sql-database-elastic-pool.md) mit dem Azure-Vorschauportal erstellen.
+Dieser Artikel beschreibt, wie Sie im Azure-Portal einen skalierbaren [Pool für elastische Datenbanken](sql-database-elastic-pool.md) erstellen. Eine SQL-Datenbankkonfiguration mit Pools für elastische Datenbanken vereinfacht die Verwaltung und Ressourcenfreigabe zwischen mehreren Datenbanken.
 
 > [AZURE.NOTE]Pools für elastische Datenbanken sind derzeit als Vorschauversion ausschließlich für Server mit SQL-Datenbank V12 verfügbar. Wenn Sie über einen SQL-Datenbank V11-Server verfügen, können Sie in einem Schritt [mithilfe von PowerShell auf V12 aktualisieren und einen Pool erstellen](sql-database-upgrade-server.md).
 
 
-Bevor Sie beginnen, benötigen Sie eine Datenbank auf einem SQL-Datenbank V12-Server. Wenn Sie keine besitzen, finden Sie Informationen zum Erstellen einer Datenbank in weniger als fünf Minuten unter [Erstellen Sie Ihre erste Azure SQL-Datenbank](sql-database-get-started.md). Oder wenn Sie bereits über einen SQL-Datenbank V11-Server verfügen, können Sie [im Portal auf V12 aktualisieren](sql-database-v12-upgrade.md), dann zurückkommen, und diese Anleitung zum Erstellen eines Pools befolgen.
+Bevor Sie beginnen, benötigen Sie eine Datenbank auf einem SQL-Datenbank V12-Server. Wenn Sie keine besitzen, finden Sie Informationen zum Erstellen einer Datenbank in weniger als fünf Minuten unter [Erstellen Sie Ihre erste Azure SQL-Datenbank](sql-database-get-started.md). Oder wenn Sie bereits über einen SQL-Datenbank V11-Server verfügen, können Sie [im Portal auf V12 aktualisieren](sql-database-v12-upgrade.md), dann zurückkehren und diese Anleitung zum Erstellen eines Pools befolgen.
 
 
 ## Schritt 1: Hinzufügen eines Pools zu einem Server
@@ -37,15 +38,15 @@ Bevor Sie beginnen, benötigen Sie eine Datenbank auf einem SQL-Datenbank V12-Se
 Erstellen Sie einen elastischen Datenbankpool, indem Sie einen neuen Pool zu einem Server hinzufügen. Sie können mehrere Pools zu einem Server hinzufügen, aber jedem Pool kann jeweils nur ein (1) Server zugeordnet werden. Darüber hinaus können alle oder einige der Datenbanken auf einem Server zu einem Pool hinzugefügt werden.
 
 
-Klicken Sie im [Azure-Vorschauportal](https://ms.portal.azure.com/) auf **SQL-Server**, klicken Sie auf Server, die die Datenbanken hosten, die Sie zum Pool hinzufügen möchten, und klicken Sie dann auf **Pool hinzufügen**.
+Klicken Sie im [Azure-Portal](https://portal.azure.com/) auf **SQL-Server**, klicken Sie auf den Server, der die Datenbanken hostet, die Sie zum Pool hinzufügen möchten, und klicken Sie dann auf **Pool hinzufügen**.
 
 ![Hinzufügen eines Pools zu einem Server](./media/sql-database-elastic-pool-portal/elastic-pool-add-pool.png)
 
 Oder
 
 Wird eine Meldung angezeigt, der zu entnehmen ist, dass es einen empfohlenen Pool für einen Server gibt, klicken Sie darauf, um auf einfache Weise einen Pool zu überprüfen und zu erstellen, der für die Datenbanken Ihres Servers optimiert ist. Ausführliche Informationen finden Sie unter [Empfohlene Pools für elastische Datenbanken](sql-database-elastic-pool-portal.md#recommended-elastic-database-pools).
-   
-  
+
+
 ![Erstellen eines elastischen Pools][1]
 
 
@@ -68,7 +69,7 @@ Der Tarif für den Pool legt die Features für die elastischen Datenbanken im Po
 
 Der SQL-Datenbankdienst bewertet den Nutzungsverlauf und empfiehlt einen oder mehrere elastische Datenbankpools, wenn dies kostengünstiger als die Verwendung einzelner Datenbanken ist.
 
-Tarife mit einem Stern (![Stern][10]) stellen Empfehlungen auf der Grundlage Ihrer Datenbankworkloads dar.
+Tarife mit einem Stern (![Stern][10]) stellen Empfehlungen auf der Grundlage Ihrer Datenbanknutzung dar.
 
 Wenn mehrere Tarife empfohlen werden, bedeutet dies, dass mehrere elastische Datenbankpools erstellt werden sollen. Jede Empfehlung ist mit einer eindeutigen Teilmenge der Datenbanken des Servers konfiguriert, die optimal in den Pool passen.
 
@@ -126,9 +127,9 @@ Navigieren Sie zu einem SQL-Datenbank V12-Server. Möglicherweise wird dann eine
 ### Erstellen eines empfohlenen Pools
 
 1. Klicken Sie auf die Meldung, um eine Liste mit den empfohlenen Pools anzuzeigen:
- 
+
      ![Empfohlene Pools][12]
-  
+
 1. Klicken Sie auf einen Pool, um die ausführlichen Empfehlungseinstellungen anzuzeigen.
 2. Bearbeiten Sie einfach den Poolnamen, und klicken Sie auf **OK**, um den Pool zu erstellen. (Empfohlene Pools können erst nach der Erstellung geändert werden.)
 
@@ -201,4 +202,4 @@ Nach dem Erstellen eines Pools für elastische Datenbanken können Sie die Daten
 [11]: ./media/sql-database-elastic-pool-portal/recommended-pool.png
 [12]: ./media/sql-database-elastic-pool-portal/pools-message.png
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

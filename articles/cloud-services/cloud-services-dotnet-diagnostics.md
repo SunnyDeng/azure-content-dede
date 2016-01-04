@@ -154,7 +154,7 @@ Ersetzen Sie den Inhalt von "WorkerRole.cs" durch den folgenden Code. Die von de
 4.	Geben Sie im Dialogfeld **Clouddienst und Speicherkonto erstellen** im Feld **Name** einen Namen ein (z. B. "WadExample"), und wählen Sie eine Region oder Affinitätsgruppe aus.
 5.	Legen Sie **Umgebung** auf **Staging** fest.
 6.	Ändern Sie unter **Einstellungen** weitere Einstellungen nach Bedarf, und klicken Sie dann auf **Veröffentlichen**.
-7.	Überprüfen Sie nach Abschluss der Bereitstellung im Azure-Portal, ob sich Ihr Cloud-Dienst im Status **Wird ausgeführt** befindet.
+7.	Überprüfen Sie nach Abschluss der Bereitstellung im klassischen Azure-Portal, ob Ihr Clouddienst den Status **Wird ausgeführt** hat.
 
 ### Schritt 4: Erstellen der Diagnosekonfigurationsdatei und Installieren der Erweiterung
 1.	Laden Sie die Schemadefinition für die öffentliche Konfigurationsdatei mit dem folgenden PowerShell-Befehl herunter:
@@ -512,4 +512,4 @@ Manifestbasiertes ETW|Nein|Tabelle|Von einem beliebigen Prozess generierte ETW-E
 [Remove-AzureServiceDiagnosticsExtension]: http://msdn.microsoft.com/library/dn495168.aspx
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

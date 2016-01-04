@@ -13,7 +13,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="web" 
-	ms.date="10/14/2015" 
+	ms.date="12/10/2015" 
 	ms.author="cephalin"/>
 
 # Erstellen einer .NET MVC-Web-App in Azure App Service mit Azure Active Directory-Authentifizierung #
@@ -46,8 +46,8 @@ Sie benötigen Folgendes zum Bearbeiten dieses Lernprogramms:
 
 - Einen Azure Active Directory-Mandanten mit Benutzern in verschiedenen Gruppen
 - Berechtigungen zum Erstellen von Anwendungen auf dem Azure Active Directory-Mandanten
-- Visual Studio 2013
-- [Azure SDK 2.5.1](http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409) oder höher
+- Visual Studio 2013 oder höher
+- [Azure SDK 2.8.1](http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409) oder höher
 
 <a name="bkmk_sample"></a>
 ## Verwenden der Beispielanwendung für die Vorlage der Branchenanwendung ##
@@ -66,15 +66,15 @@ Die Beispielanwendung in diesem Tutorial ([WebApp-RoleClaims-DotNet](https://git
 2.	Befolgen Sie die Anweisungen unter [How To Run The Sample as a Single Tenant App](https://github.com/Azure-Samples/active-directory-dotnet-webapp-roleclaims#how-to-run-the-sample-as-a-single-tenant-app) (Ausführen des Beispiels als Einzelinstanz-App, in englischer Sprache), um die Azure Active Directory-Anwendung und das Projekt einzurichten.
 Achten Sie darauf, dass Sie alle Anweisungen befolgen, um die Anwendung von einer mehrinstanzenfähigen Anwendung in eine Einzelinstanzanwendung zu konvertieren.
 
-3.	Klicken Sie in der Ansicht [Azure-Portal](https://manage.windowsazure.com) für Ihre Azure Active Directory-Anwendung, die Sie gerade erstellt haben, auf die Registerkarte **BENUTZER**. Weisen Sie die gewünschten Benutzer anschließend den gewünschten Rollen zu.
+3.	Klicken Sie in der Ansicht [Klassisches Azure-Portal](https://manage.windowsazure.com) für Ihre Azure Active Directory-Anwendung, die Sie gerade erstellt haben, auf die Registerkarte **BENUTZER**. Weisen Sie die gewünschten Benutzer anschließend den gewünschten Rollen zu.
 
-	>[AZURE.NOTE] Wenn Sie den Gruppen zusätzlich zu Benutzern Rollen zuweisen möchten, müssen Sie für Ihren Azure Active Directory-Mandanten ein Upgrade auf [Azure Active Directory Premium](/pricing/details/active-directory/) durchführen. Wenn auf der Portaloberfläche Ihrer Anwendung die Registerkarte **BENUTZER** anstelle der Registerkarte **BENUTZER UND GRUPPEN angezeigt wird, können Sie Azure Active Directory Premium ausprobieren, indem Sie auf die Registerkarte **LIZENZEN** Ihres Azure Active Directory-Mandanten zugreifen.
+	>[AZURE.NOTE]Wenn Sie den Gruppen zusätzlich zu Benutzern Rollen zuweisen möchten, müssen Sie für Ihren Azure Active Directory-Mandanten ein Upgrade auf [Azure Active Directory Premium](/pricing/details/active-directory/) durchführen. Wenn auf der klassischen Portaloberfläche Ihrer Anwendung die Registerkarte **BENUTZER** anstelle der Registerkarte **BENUTZER UND GRUPPEN angezeigt wird, können Sie Azure Active Directory Premium ausprobieren, indem Sie auf die Registerkarte **LIZENZEN** Ihres Azure Active Directory-Mandanten zugreifen.
 
 3.	Nachdem Sie mit dem Konfigurieren der Anwendung fertig sind, geben Sie in Visual Studio `F5` ein, um die ASP.NET-Anwendung auszuführen.
 
-4.	Klicken Sie nach dem Laden der Anwendung auf **Anmelden**, und melden Sie sich als Benutzer an, der im Azure-Portal über die Administratorrolle verfügt.
+4.	Klicken Sie nach dem Laden der Anwendung auf **Anmelden**, und melden Sie sich als Benutzer an, der im klassischen Azure-Portal über die Administratorrolle verfügt.
 
-5.	Wenn Sie die Azure Active Directory-Anwendung richtig konfiguriert und die entsprechenden Einstellungen in der Datei "Web.config" festgelegt haben, werden Sie an die Anmeldung umgeleitet. Melden Sie sich einfach mit dem Konto an, das Sie zum Erstellen der Azure Active Directory-Anwendung im Azure-Portal verwendet haben. Dies ist der standardmäßige Besitzer der Azure Active Directory-Anwendung.
+5.	Wenn Sie die Azure Active Directory-Anwendung richtig konfiguriert und die entsprechenden Einstellungen in der Datei "Web.config" festgelegt haben, werden Sie an die Anmeldung umgeleitet. Melden Sie sich einfach mit dem Konto an, das Sie zum Erstellen der Azure Active Directory-Anwendung im klassischen Azure-Portal verwendet haben. Dies ist der standardmäßige Besitzer der Azure Active Directory-Anwendung.
 	
 <a name="bkmk_deploy"></a>
 ## Bereitstellen der Beispielanwendung in App Service-Web-Apps
@@ -91,9 +91,17 @@ Sie veröffentlichen nun die Anwendung in einer Web-App in Azure App Service. Di
 
 4. Klicken Sie nach der Anmeldung auf **Neu**, um eine neue Web-App in Azure zu erstellen.
 
-5. Füllen Sie alle erforderlichen Felder aus. Sie benötigen eine Datenbankverbindung, damit diese Anwendung Rollenzuordnungen zwischengespeicherte Token und eine Anwendungsdaten speichern kann.
+5. Füllen Sie in **Hosting** alle erforderlichen Felder aus.
 
 	![](./media/web-sites-dotnet-lob-application-azure-ad/4-create-website.png)
+
+5. Sie benötigen eine Datenbankverbindung, damit diese Anwendung Rollenzuordnungen zwischengespeicherte Token und eine Anwendungsdaten speichern kann. Klicken Sie im Dialogfeld **App Service erstellen** auf **Dienste**. Klicken Sie neben **SQL-Datenbank** auf das Pluszeichen, um eine neue Datenbank hinzuzufügen.
+
+	![](./media/web-sites-dotnet-lob-application-azure-ad/4-create-database.png)
+
+5. Wählen Sie im Dialogfeld **SQL-Datenbank konfigurieren** einen Server aus, oder erstellen Sie einen. Legen Sie anschließend einen Namen fest, und klicken Sie auf **OK**.
+
+	 ![](./media/web-sites-dotnet-lob-application-azure-ad/4-config-database.png)
 
 6. Klicken Sie auf **Erstellen**. Nachdem die Web-App erstellt wurde, wird das Dialogfeld **Web veröffentlichen** geöffnet.
 
@@ -109,7 +117,7 @@ Sie veröffentlichen nun die Anwendung in einer Web-App in Azure App Service. Di
 
 9. Um das Veröffentlichen im Web fortzusetzen, klicken Sie nicht auf **Veröffentlichen**, sondern auf **Schließen**. Klicken Sie auf **Ja**, um die Änderungen am Veröffentlichungsprofil zu speichern.
 
-2. Navigieren Sie im [Azure-Verwaltungsportal](https://manage.windowsazure.com) zu Ihrem Azure Active Directory-Mandanten, und klicken Sie auf die Registerkarte **Anwendungen**.
+2. Navigieren Sie im [klassischen Azure-Portal](https://manage.windowsazure.com) zu Ihrem Azure Active Directory-Mandanten, und klicken Sie auf die Registerkarte **Anwendungen**.
 
 2. Klicken Sie unten auf der Seite auf **Hinzufügen**.
 
@@ -125,7 +133,7 @@ Sie veröffentlichen nun die Anwendung in einer Web-App in Azure App Service. Di
 
 2.	Aktualisieren Sie das Anwendungsmanifest nach Erstellung der Anwendung, wie Sie dies bereits gemäß den Anweisungen unter [Define your Application Roles](https://github.com/Azure-Samples/active-directory-dotnet-webapp-roleclaims#step-2-define-your-application-roles) (Definieren der Anwendungsrollen, in englischer Sprache) durchgeführt haben.
 
-3.	Klicken Sie in der Ansicht [Azure-Portal](https://manage.windowsazure.com) für Ihre Azure Active Directory-Anwendung, die Sie gerade erstellt haben, auf die Registerkarte **BENUTZER**. Weisen Sie die gewünschten Benutzer anschließend den gewünschten Rollen zu.
+3.	Klicken Sie in der Ansicht des [klassischen Azure-Portals](https://manage.windowsazure.com) für Ihre Azure Active Directory-Anwendung, die Sie gerade erstellt haben, auf die Registerkarte **BENUTZER**. Weisen Sie die gewünschten Benutzer anschließend den gewünschten Rollen zu.
 
 6. Klicken Sie auf die Registerkarte **KONFIGURIEREN**.
 
@@ -156,7 +164,7 @@ Sie veröffentlichen nun die Anwendung in einer Web-App in Azure App Service. Di
 
 2. Klicken Sie auf **Veröffentlichen**, um die Anwendung in der Azure App Service-Web-App zu veröffentlichen.
 
-Wenn Sie fertig sind, sind zwei Azure Active Directory-Anwendungen im Azure-Verwaltungsportal konfiguriert, eine für Ihre Debugumgebung in Visual Studio und eine für die veröffentlichte Web-App in Azure. Während des Debuggens werden die App-Einstellungen in der Datei "Web.config" verwendet, damit die **Debug**-Konfiguration in Azure Active Directory funktioniert. Bei der Veröffentlichung (standardmäßig wird die **Release**-Konfiguration veröffentlicht) wird eine transformierte Datei "Web.config" hochgeladen, welche die geänderten App-Einstellungen der Datei "Web.Release.config" enthält.
+Wenn Sie fertig sind, sind zwei Azure Active Directory-Anwendungen im klassischen Azure-Portal konfiguriert, eine für Ihre Debugumgebung in Visual Studio und eine für die veröffentlichte Web-App in Azure. Während des Debuggens werden die App-Einstellungen in der Datei "Web.config" verwendet, damit die **Debug**-Konfiguration in Azure Active Directory funktioniert. Bei der Veröffentlichung (standardmäßig wird die **Release**-Konfiguration veröffentlicht) wird eine transformierte Datei "Web.config" hochgeladen, welche die geänderten App-Einstellungen der Datei "Web.Release.config" enthält.
 
 Wenn Sie die veröffentlichte Web-App dem Debugger anfügen möchten (Sie müssen Debugsymbole Ihres Codes in der veröffentlichten Web-App hochladen), können Sie einen Klon der Debugkonfiguration für das Debuggen von Azure erstellen, jedoch mit einer eigenen benutzerdefinierten "Web.config"-Transformation (z. B. "Web.AzureDebug.config"), welche die Azure Active Directory-Einstellungen der Datei "Web.Release.config" verwendet. Auf diese Weise können Sie eine statische Konfiguration in verschiedenen Umgebungen beibehalten.
 
@@ -343,7 +351,7 @@ In diesem Teil des Lernprogramms erfahren Sie, wie Sie die gewünschte Branchenf
 	
 	}</pre>
 
-	Im Skript ruft das AadPicker-Objekt die [Azure Active Directory Graph-API](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog) auf, um nach Benutzern und Gruppen zu suchen, die für die Eingabe eine Übereinstimmung ergeben.
+}</pre>Im Skript ruft das AadPicker-Objekt die [Azure Active Directory Graph-API](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog) auf, um nach Benutzern und Gruppen zu suchen, die für die Eingabe eine Übereinstimmung ergeben.
 
 15. Öffnen Sie die [Paket-Manager-Konsole](http://docs.nuget.org/Consume/Package-Manager-Console), und führen Sie **Enable-Migrations –EnableAutomaticMigrations** aus. Ähnlich wie die Option, die Sie beim Veröffentlichen der App unter Azure gewählt haben, dient dieser Befehl der Aktualisierung des Datenbankschemas Ihrer App in [LocalDB](https://msdn.microsoft.com/library/hh510202.aspx), wenn Sie das Debuggen in Visual Studio durchführen.
 
@@ -371,8 +379,8 @@ Nachdem Sie die Autorisierungen und die Branchenfunktionalität für die verschi
 - [Erstellen einer .NET MVC-Web-App in Azure App Service mit AD FS-Authentifizierung](web-sites-dotnet-lob-application-adfs.md)
 - [Microsoft Azure Active Directory – Beispiele und Dokumentation](https://github.com/AzureADSamples)
 - [Blog von Vittorio Bertocci](http://blogs.msdn.com/b/vbertocci/)
-- [Migrate a VS2013 Web Project From WIF to Katana](http://www.cloudidentity.com/blog/2014/09/15/MIGRATE-A-VS2013-WEB-PROJECT-FROM-WIF-TO-KATANA/) (Migrieren eines VS2013-Webprojekts von WIF nach Katana, in englischer Sprache)
-- [Azure's new Hybrid Connections not your father's #hybridCloud](/documentation/videos/new-hybrid-connections-not-your-fathers-hybridcloud/) (Die neuen Hybridverbindungen von Azure – not your father's #hybridCloud, Video in englischer Sprache)
+- [Migrate a VS2013 Web Project From WIF to Katana (Migrieren eines VS2013-Webprojekts von WIF nach Katana, in englischer Sprache)](http://www.cloudidentity.com/blog/2014/09/15/MIGRATE-A-VS2013-WEB-PROJECT-FROM-WIF-TO-KATANA/)
+- [Azure's new Hybrid Connections not your father's #hybridCloud (Die neuen Hybridverbindungen von Azure – not your father's #hybridCloud, Video in englischer Sprache)](/documentation/videos/new-hybrid-connections-not-your-fathers-hybridcloud/)
 - [Ähnlichkeiten zwischen Active Directory und Azure AD](http://technet.microsoft.com/library/dn518177.aspx)
 - [DirSync mit einmaligem Anmelden](http://technet.microsoft.com/library/dn441213.aspx)
 - [Unterstützte Token- und Anspruchstypen](http://msdn.microsoft.com/library/azure/dn195587.aspx)
@@ -382,4 +390,4 @@ Nachdem Sie die Autorisierungen und die Branchenfunktionalität für die verschi
 [AZURE.INCLUDE [app-service-web-try-app-service](../../includes/app-service-web-try-app-service.md)]
  
 
-<!-----HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1217_2015-->

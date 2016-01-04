@@ -21,7 +21,7 @@
 
 In diesem Abschnitt wird gezeigt, wie Sie einen virtuellen CentOS Linux-Computer mit Azure Virtual Machines erstellen und die Apache Qpid Proton-C-Bibliothek zusammen mit den Python- und PHP-Sprachbindungen herunterladen, erstellen und installieren. Nachdem Sie diese Schritte ausgeführt haben, können Sie die Python- und PHP-Beispiele ausführen, die in diesem Leitfaden enthalten sind.
 
-Der erste Schritt wird mit dem [Azure-Portal][] ausgeführt. Der folgende Screenshot zeigt die Erstellung eines virtuellen CentOS-Computers mit dem Namen „scott-centos“:
+Der erste Schritt wird mit dem [klassischen Azure-Portal][] ausgeführt. Der folgende Screenshot zeigt die Erstellung eines virtuellen CentOS-Computers mit dem Namen „scott-centos“:
 
 ![Proton auf einem virtuellen Azure-Linux-Computer][0]
 
@@ -29,7 +29,7 @@ Nach der Bereitstellung wird im Portal Folgendes angezeigt:
 
 ![Proton auf einem virtuellen Azure-Linux-Computer][1]
 
-Um sich am Computer anzumelden, müssen Sie den Endpunktport für SSH kennen. Sie können diesen Wert aus dem Portal abrufen, indem Sie den neu erstellten virtuellen Computer auswählen und auf die Registerkarte **Endpunkte** klicken. Der folgende Screenshot zeigt, dass der öffentliche SSH-Port für diesen Computer 57146 lautet.
+Um sich am Computer anzumelden, müssen Sie den Endpunktport für SSH kennen. Sie können diesen Wert aus dem [klassischen Azure-Portal][] abrufen, indem Sie den neu erstellten virtuellen Computer auswählen und auf die Registerkarte **Endpunkte** klicken. Der folgende Screenshot zeigt, dass der öffentliche SSH-Port für diesen Computer 57146 lautet.
 
 ![Proton auf einem virtuellen Azure-Linux-Computer][2]
 
@@ -112,6 +112,6 @@ Möchten Sie mehr erfahren? Nutzen Sie die folgenden Links:
 [2]: ./media/service-bus-amqp-apache/amqp-apache-3.png
 [3]: ./media/service-bus-amqp-apache/amqp-apache-4.png
 
-[Azure-Portal]: http://manage.windowsazure.com
+[klassischen Azure-Portal]: http://manage.windowsazure.com
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -66,7 +66,7 @@ Mit *Azure App Service* können Sie jetzt mehrere private Test- und Stagingumgeb
 
 
 
-Sobald die Funktion *Mobile Azure App Service-App* allgemein verfügbar wird, stellen wir eine nahtlose Migrationsmöglichkeit für Ihre vorhandenen Mobile Services auf App Service bereit, falls Sie die Migration durchführen möchten. In der Zwischenzeit können Sie sich mithilfe dieses [Lernprogramms](app-service-mobile-dotnet-backend-migrating-from-mobile-services.md) mit *App Service* vertraut machen und die Vorteile von *App Service* für Ihre vorhandenen Mobile Service-Projekte nutzen.
+Sobald die Funktion *Mobile Azure App Service-App* allgemein verfügbar wird, stellen wir eine nahtlose Migrationsmöglichkeit für Ihre vorhandenen Mobile Services auf App Service bereit, falls Sie die Migration durchführen möchten. In der Zwischenzeit können Sie sich mithilfe dieses [Lernprogramms](app-service-mobile-migrating-from-mobile-services.md) mit *App Service* vertraut machen und die Vorteile von *App Service* für Ihre vorhandenen Mobile Service-Projekte nutzen.
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1210_2015-->

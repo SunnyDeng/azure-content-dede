@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/14/2015" 
+	ms.date="12/04/2015" 
 	ms.author="huvalo;bradsev" />
 
 
@@ -82,7 +82,7 @@ Um das Autorisierungstoken zu erhalten, führen Sie eine der folgenden Aktionen 
 
 1. Fragen Sie bei einem Besitzer nach einem Token. Besitzer können auf ihren Autorisierungstoken auf der Seite „Einstellungen“ von ihrem Arbeitsbereich im Studio zugreifen. Wählen Sie im linken Bereich auf **Einstellungen** und klicken Sie auf **AUTORISIERUNGSTOKEN**, um die primären und sekundären Token zu sehen. Im Codebeispiel können zwar entweder das primäre oder das sekundäre Autorisierungstoken verwendet werden, es empfiehlt sich jedoch, dass Besitzer nur das sekundäre Autorisierungstoken freigeben.
 
-    ![](http://i.imgur.com/h33GoZX.jpg)
+![](./media/machine-learning-python-data-access/ml-python-access-settings-tokens.png)
 
 2. Bitten Sie darum, zur Rolle „Besitzer“ hochgestuft zu werden. Zu diesem Zweck muss ein aktueller Besitzer des Arbeitsbereichs Sie zuerst aus dem Arbeitsbereich entfernen und dann erneut als Besitzer einladen.
 
@@ -367,4 +367,4 @@ Wenn Ihre Daten bereits serialisiert sind, verwenden Sie `update_from_raw_data` 
 [split]: https://msdn.microsoft.com/library/azure/70530644-c97a-4ab6-85f7-88bf30a8be5f/
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

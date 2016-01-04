@@ -1,18 +1,16 @@
 ## Erstellen einer simulierten Geräte-App
 
-In diesem Abschnitt schreiben Sie eine Windows-Konsolenanwendung, die simuliert, wie ein Gerät Gerät-an-Cloud-Nachrichten an einen IoT-Hub sendet.
+In diesem Abschnitt erstellen Sie eine Windows-Konsolenanwendung, die ein Gerät simuliert, das D2C-Nachrichten (Device-to-Cloud, Gerät-an-Cloud) an einen IoT Hub sendet.
 
-1. Klicken Sie in der aktuellen Visual Studio-Lösung auf **Datei -> Hinzufügen -> Projekt**, um mithilfe der Projektvorlage **Konsolenanwendung** ein neues Visual C#-Desktopanwendungsprojekt zu erstellen. Nennen Sie das Projekt **SimulatedDevice**.
+1. Fügen Sie in Visual Studio in der aktuellen Projektmappe mithilfe der Projektvorlage **Konsolenanwendung** ein neues Visual C#-Projekt für den klassischen Windows-Desktop hinzu. Nennen Sie das Projekt **SimulatedDevice**.
 
    	![][30]
 
-2. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf die Projektmappe, und klicken Sie dann auf **NuGet-Pakete verwalten...**
+2. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt **SimulatedDevice**, und klicken Sie dann auf **NuGet-Pakete verwalten**.
 
-	Daraufhin wird das Fenster „NuGet-Pakete verwalten“ angezeigt.
+3. Stellen Sie im Fenster **NuGet-Paket-Manager** sicher, dass die Option **Vorabversion einbeziehen** aktiviert ist. Suchen Sie anschließend nach **Microsoft Azure-Geräteclient**, klicken Sie auf **Installieren**, und akzeptieren Sie die Nutzungsbedingungen.
 
-3. Suchen Sie nach `Microsoft Azure Devices Client`, klicken Sie auf **Installieren**, und akzeptieren Sie die Nutzungsbedingungen.
-
-	Daraufhin wird das [NuGet-Paket mit dem Geräte-SDK für Azure IoT] heruntergeladen und installiert und dem Projekt ein Verweis auf das Paket hinzugefügt.
+	Daraufhin wird das [NuGet-Paket mit dem Geräte-SDK für Azure IoT][lnk-device-nuget] heruntergeladen und installiert und dem Projekt ein Verweis auf das Paket hinzugefügt.
 
 4. Fügen Sie am Anfang der Datei **Program.cs** die folgenden `using`-Anweisungen hinzu:
 
@@ -20,11 +18,11 @@ In diesem Abschnitt schreiben Sie eine Windows-Konsolenanwendung, die simuliert,
         using Newtonsoft.Json;
         using System.Threading;
 
-5. Fügen Sie die folgenden Felder zur **Programm**-Klasse hinzu, wobei die Platzhalterwerte durch den IoT Hub-URI und den Geräteschlüssel ersetzt werden, die in den Abschnitten **Erstellen eines IoT Hubs** beziehungsweise **Erstellen einer Geräteidentität** abgerufen werden:
+5. Fügen Sie der **Program**-Klasse die folgenden Felder hinzu, und ersetzen Sie dabei die Platzhalterwerte durch den IoT-Hostnamen, den Sie im Abschnitt *Erstellen eines IoT Hubs* abgerufen haben, und durch den Geräteschlüssel, den Sie im Abschnitt *Erstellen einer Geräteidentität* abgerufen haben:
 
 		static DeviceClient deviceClient;
-        static string iotHubUri = "{iot hub URI}";
-        static string deviceKey = "{deviceKey}";
+        static string iotHubUri = "{iot hub hostname}";
+        static string deviceKey = "{device key}";
 
 6. Fügen Sie der **Program**-Klasse die folgende Methode hinzu:
 
@@ -52,7 +50,7 @@ In diesem Abschnitt schreiben Sie eine Windows-Konsolenanwendung, die simuliert,
             }
         }
 
-	Diese Methode sendet jede Sekunde eine neue Gerät-an-Cloud-Nachricht und enthält ein JSON-serialisiertes Objekt mit der Geräte-ID und eine zufällig generierte Zahl, die einen simulierte Windgeschwindigkeitssensor darstellt.
+	Diese Methode sendet jede Sekunde eine neue D2C-Nachricht. Die Nachricht enthält ein JSON-serialisiertes Objekt mit der Geräte-ID sowie eine zufällig generierte Zahl, um einen Windgeschwindigkeitssensor zu simulieren.
 
 7. Fügen Sie abschließend der **Main**-Methode die folgenden Zeilen hinzu:
 
@@ -62,17 +60,17 @@ In diesem Abschnitt schreiben Sie eine Windows-Konsolenanwendung, die simuliert,
         SendDeviceToCloudMessagesAsync();
         Console.ReadLine();
 
-  In der Standardeinstellung erstellt die **Create** -Methode einen **DeviceClient**, der das AMQP-Protokoll für die Kommunikation mit IoT Hub verwendet. Um das HTTPS-Protokoll zu verwenden, nutzen Sie die Überschreibung der **Create**-Methode, um das Protokoll anzugeben. Wenn Sie das HTTPS-Protokoll verwenden möchten, müssen Sie Ihrem Projekt auch das NuGet-Paket **Microsoft.AspNet.WebApi.Client** hinzufügen, um den **System.Net.Http.Formatting**-Namespace einzubeziehen.
+  In der Standardeinstellung erstellt die **Create** -Methode einen **DeviceClient**, der das AMQP-Protokoll für die Kommunikation mit dem IoT Hub verwendet. Um das HTTPS-Protokoll zu verwenden, nutzen Sie die Überschreibung der **Create**-Methode, bei der Sie das Protokoll angeben können. Wenn Sie das HTTPS-Protokoll verwenden möchten, müssen Sie Ihrem Projekt auch das NuGet-Paket **Microsoft.AspNet.WebApi.Client** hinzufügen, um den **System.Net.Http.Formatting**-Namespace einzuschließen.
 
 
-> [AZURE.NOTE]Der Einfachheit halber wird in diesem Lernprogramm keine Wiederholungsrichtlinie implementiert. Es wird empfohlen, im Produktionscode Wiederholungsrichtlinien zu implementieren (z. B. einen exponentiellen Backoff), wie im MSDN-Artikel zum [Behandeln vorübergehender Fehler] beschrieben.
+> [AZURE.NOTE]Der Einfachheit halber wird in diesem Tutorial keine Wiederholungsrichtlinie implementiert. Im Produktionscode sollten Sie Wiederholungsrichtlinien implementieren (z. B. einen exponentiellen Backoff), wie im MSDN-Artikel zum [Behandeln vorübergehender Fehler][lnk-transient-faults] beschrieben.
 
 <!-- Links -->
 
-[NuGet-Paket mit dem Geräte-SDK für Azure IoT]: https://www.nuget.org/packages/Microsoft.Azure.Devices.Client/
-[Behandeln vorübergehender Fehler]: https://msdn.microsoft.com/de-DE/library/hh680901(v=pandp.50).aspx
+[lnk-device-nuget]: https://www.nuget.org/packages/Microsoft.Azure.Devices.Client/
+[lnk-transient-faults]: https://msdn.microsoft.com/de-DE/library/hh680901(v=pandp.50).aspx
 
 <!-- Images -->
 [30]: ./media/iot-hub-getstarted-device-csharp/create-identity-csharp1.png
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1217_2015-->

@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/28/2015" 
+	ms.date="11/23/2015" 
 	ms.author="awills"/>
  
 # Untersuchen von Metriken in Application Insights
@@ -67,6 +67,8 @@ Die verfügbaren Granularitäten hängen vom ausgewählten Zeitbereich ab. Die e
 ## Metrik-Explorer
 
 Klicken Sie sich auf dem Blatt "Übersicht" durch ein beliebiges Diagramm, um eine detailliertere Gruppe zusammengehöriger Diagramme und Raster anzuzeigen. Sie können diese Diagramme und Raster bearbeiten, um sich auf die Details zu konzentrieren, die Sie interessieren.
+
+Sie können auch einfach im Metrik-Explorer auf die Kopfzeile des Übersichtsblatts klicken.
 
 Klicken Sie sich z. B. durch das Diagramm "Anforderungsfehler" der Web-App:
 
@@ -161,7 +163,7 @@ Um das Blatt erneut zu verwenden, **wechseln Sie zum Blatt "Übersicht"** und ö
 
 ![Wählen Sie "Favoriten" auf dem Blatt "Übersicht" aus](./media/app-insights-metrics-explorer/22-favorite-get.png)
 
-Wenn Sie beim Speichern den Zeitbereich "Relativ" ausgewählt haben, wird das Blatt mit den neuesten Metriken aktualisiert. Wenn Sie den Zeitraum "Absolut" gewählt haben, werden jedes Mal dieselben Daten gezeigt.
+Wenn Sie beim Speichern den Zeitbereich "Relativ" ausgewählt haben, wird das Fenster mit den neuesten Metriken aktualisiert. Wenn Sie den Zeitraum "Absolut" gewählt haben, werden jedes Mal dieselben Daten gezeigt.
 
 ## Zurücksetzen des Blatts
 
@@ -196,7 +198,7 @@ Wenn Sie Daten zur externen Verarbeitung fortlaufend exportieren möchten, sollt
 
 ### Power BI
 
-Wenn Sie umfangreichere Ansichten der Daten wünschen, können Sie sie [nach Power BI exportieren](app-insights-export-power-bi.md).
+Wenn Sie umfangreichere Ansichten der Daten wünschen, können Sie sie [nach Power BI exportieren](http://blogs.msdn.com/b/powerbi/archive/2015/11/04/explore-your-application-insights-data-with-power-bi.aspx).
 
 ## Nächste Schritte
 
@@ -212,4 +214,4 @@ Wenn Sie umfangreichere Ansichten der Daten wünschen, können Sie sie [nach Pow
 
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

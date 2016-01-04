@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Debuggen Ihrer Anwendung in Visual Studio | Microsoft Azure"
+   pageTitle="Debuggen der Anwendung in Visual Studio | Microsoft Azure"
    description="Verbessern Sie die Zuverlässigkeit und Leistung Ihrer Dienste, indem Sie sie in Visual Studio und einem lokalen Entwicklungscluster entwickeln und debuggen."
    services="service-fabric"
    documentationCenter=".net"
@@ -16,7 +16,7 @@
    ms.date="10/15/2015"
    ms.author="jesseb"/>
 
-# Debuggen einer Service Fabric-Anwendung in Visual Studio
+# Debuggen der Service Fabric-Anwendung in Visual Studio
 
 Sie können Zeit und Geld sparen, indem Sie Ihre Service Fabric-Anwendung in einem Cluster für die Entwicklung auf einem lokalen Computer bereitstellen und debuggen. Visual Studio kann die Anwendung im lokalen Cluster bereitstellen und den Debugger automatisch mit allen Instanzen der Anwendung verbinden.
 
@@ -55,7 +55,7 @@ Sie können Zeit und Geld sparen, indem Sie Ihre Service Fabric-Anwendung in ein
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## Nächste Schritte
 
-- [Testen eines Service Fabric-Diensts](service-fabric-test-your-service-index.md)
+- [Testen eines Service Fabric-Diensts](service-fabric-testability-overview.md)
 - [Verwalten von Service Fabric-Anwendungen in Visual Studio](service-fabric-manage-application-in-visual-studio.md)
 
 <!--Image references-->
@@ -64,6 +64,5 @@ Sie können Zeit und Geld sparen, indem Sie Ihre Service Fabric-Anwendung in ein
 [viewdiagnosticevents]: ./media/service-fabric-debugging-your-application/viewdiagnosticevents.png
 [diagnosticeventsactions]: ./media/service-fabric-debugging-your-application/diagnosticeventsactions.png
 [breakpoint]: ./media/service-fabric-debugging-your-application/breakpoint.png
- 
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1217_2015-->

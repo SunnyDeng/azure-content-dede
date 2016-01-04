@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Erste Schritte bei der Überwachung von SQL-Datenbank | Microsoft Azure"
-	description="Erste Schritte bei der Überwachung von SQL- Datenbank"
+	description="Erste Schritte bei der Überwachung von SQL-Datenbank"
 	services="sql-database"
 	documentationCenter=""
 	authors="jeffgoll"
@@ -16,7 +16,7 @@
 	ms.date="11/12/2015"
 	ms.author="jeffreyg; ronitr"/>
  
-# Erste Schritte bei der Überwachung von SQL- Datenbank
+# Erste Schritte bei der Überwachung von SQL-Datenbank
 Die Azure SQL-Datenbanküberwachung verfolgt Datenbankereignisse und schreibt überwachte Ereignisse in ein Überwachungsprotokoll in Ihr Azure-Speicherkonto. Die Überwachung ist in den Tarifen Basic, Standard und Premium allgemein verfügbar.
 
 Die Überwachung kann Ihnen dabei helfen, die gesetzlichen Bestimmungen einzuhalten, die Datenbankaktivität zu verstehen und Einblicke in Abweichungen und Anomalien zu erhalten, die auf geschäftsspezifische Bedenken oder mutmaßliche Sicherheitsverstöße hinweisen können.
@@ -29,9 +29,9 @@ Die Überwachung kann Ihnen dabei helfen, die gesetzlichen Bestimmungen einzuhal
 
 ##<a id="subheading-1"></a>Grundlagen zur Überwachung von Azure SQL-Datenbank
 
-In den folgenden Abschnitten wird die Konfiguration der Überwachung mit dem Azure-Vorschauportal beschrieben. Alternativ können Sie das klassische Portal verwenden ([Einrichten der Überwachung für Ihre Datenbank über das klassische Azure-Portal]).
+In den folgenden Abschnitten wird die Konfiguration der Überwachung mit dem Azure-Portal beschrieben. Alternativ können Sie das klassische Portal verwenden, siehe [Einrichten der Überwachung für Ihre Datenbank über das klassische Azure-Portal].
 
-Bei der Überwachung von SQL-Datenbank haben Sie folgende Möglichkeiten:
+Die Überwachung von SQL-Datenbank bietet folgende Möglichkeiten:
 
 - **Beibehalten** eines Überwachungspfads von ausgewählten Ereignissen. Sie können Kategorien für zu protokollierende Datenbankaktionen und -ereignisse konfigurieren.
 - **Melden** von Datenbankaktivitäten. Sie können vorkonfigurierte Berichte und ein Dashboard verwenden, um schnell mit der Berichterstattung über Aktivitäten und Ereignisse zu beginnen.
@@ -62,7 +62,7 @@ Eine Überwachungsrichtlinie kann für eine spezifische Datenbank oder als Stand
 
 ##<a id="subheading-2"></a>Einrichten der Überwachung für Ihre Datenbank
 
-1. Starten Sie das [Azure-Vorschauportal](https://portal.azure.com) unter https://portal.azure.com. Alternativ können Sie auch das [klassische Azure-Portal](https://manage.windowsazure.com/) unter https://manage.windowsazure.com/ starten. Details finden Sie weiter unten.
+1. Starten Sie das [Azure-Portal](https://portal.azure.com) unter https://portal.azure.com. Alternativ können Sie auch das [klassische Azure-Portal](https://manage.windowsazure.com/) unter https://manage.windowsazure.com/ starten. Details finden Sie weiter unten.
 
 2. Navigieren Sie zum Blatt mit den Einstellungen der SQL-Datenbank-/SQL Server-Instanz, die Sie überwachen möchten. Wählen Sie auf dem Blatt mit den Einstellungen die Option für **Überwachung und Bedrohungserkennung**.
 
@@ -123,7 +123,7 @@ Sie können Ihre Überwachungsprotokolle über das Azure-Speicherkonto mit Power
 
 
 ##<a id="subheading-5">Methoden zur Verwendung in der Produktion</a>
-Die Beschreibung in diesem Abschnitt bezieht sich auf die obigen Screenshots. Sie können entweder das [Azure-Vorschauportal](https://portal.azure.com) oder das [klassische Azure-Portal](https://manage.windowsazure.com/) verwenden.
+Die Beschreibung in diesem Abschnitt bezieht sich auf die obigen Screenshots. Sie können entweder das [Azure-Portal](https://portal.azure.com) oder das [klassische Azure-Portal](https://manage.windowsazure.com/) verwenden.
 
 
 ##<a id="subheading-6"></a>Erneute Speicherschlüsselgenerierung
@@ -178,4 +178,4 @@ Es gibt mehrere PowerShell-Cmdlets, die Sie zum Konfigurieren der Überwachung i
 
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

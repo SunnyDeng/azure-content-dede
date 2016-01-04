@@ -19,8 +19,7 @@
 
 # Bereitstellen einer mobilen ASP.NET MVC 5-Web-App in Azure App Service.
 
-In diesem Lernprogramm lernen Sie die grundlegenden Schritte kennen, mit denen Sie eine für Mobiltelefone optimierte ASP.NET MVC-5-Web-App erstellen und in Azure App Service bereitstellen. Für dieses Lernprogramm benötigen Sie [Visual Studio Express 2013 für Web][Visual Studio Express 2013] oder Visual Studio Professional, falls bereits vorhanden.
-Sie können [Visual Studio 2015] verwenden, allerdings unterscheiden sich die Screenshots und Sie müssen ASP.NET 4.x-Vorlagen nutzen.
+In diesem Lernprogramm lernen Sie die grundlegenden Schritte kennen, mit denen Sie eine für Mobiltelefone optimierte ASP.NET MVC-5-Web-App erstellen und in Azure App Service bereitstellen. Für dieses Lernprogramm benötigen Sie [Visual Studio Express 2013 für Web][Visual Studio Express 2013] oder Visual Studio Professional, falls bereits vorhanden. Sie können [Visual Studio 2015] verwenden, allerdings unterscheiden sich die Screenshots und Sie müssen ASP.NET 4.x-Vorlagen nutzen.
 
 [AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
@@ -545,8 +544,7 @@ In diesem Lernprogramm haben Sie erfahren, wie Sie mit ASP.NET MVC 5 Webanwendun
 -   [W3C-Empfehlungskandidaten für Medienabfragen][]
 
 ## Änderungen
-* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
+* Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 
 <!-- Internal Links -->
 [Deploy the starter project to an Azure web app]: #bkmk_DeployStarterProject
@@ -618,4 +616,4 @@ In diesem Lernprogramm haben Sie erfahren, wie Sie mit ASP.NET MVC 5 Webanwendun
 [SessionByCodeFixed3-644]: ./media/web-sites-dotnet-deploy-aspnet-mvc-mobile-app/SessionByCode-Fixed-3-644.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

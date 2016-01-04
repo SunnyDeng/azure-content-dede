@@ -1,5 +1,5 @@
 <properties 
-    pageTitle="Elastic Scale – Sicherheitskonfigurationen | Microsoft Azure" 
+    pageTitle="Elastische Skalierung – Sicherheitskonfigurationen | Microsoft Azure" 
     description="Einrichten von x409-Zertifikaten für die Verschlüsselung" 
     metaKeywords="Elastic Database certificates security" 
     services="sql-database" documentationCenter="" 
@@ -453,7 +453,7 @@ Gehen Sie im Zertifikatimport-Assistenten wie folgt vor:
 
 ## Hochladen des Zertifikats
 
-Im [Azure-Verwaltungsportal](http://portal.azure.com/):
+Im [klassischen Azure-Portal](http://portal.azure.com/)
 
 1. Wählen Sie **Cloud-Dienste**.
 2. Wählen Sie den Clouddienst aus.
@@ -473,4 +473,4 @@ In dieser Datenbank gespeicherte Anmeldeinformationen werden verschlüsselt. Ste
 
 [AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

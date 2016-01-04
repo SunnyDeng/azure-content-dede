@@ -24,7 +24,7 @@ Dieser Artikel beschreibt die Grundlagen zum Sichern der Azure SQL Data Warehous
 
 Verbindungssicherheit bezieht sich darauf, auf welche Weise Sie die Verbindungen zu Ihrer Datenbank mithilfe von Firewall-Regeln und Verbindungsverschlüsselung einschränken und sichern.
 
-Firewall-Regeln werden vom Server und der Datenbank verwendet, um Verbindungsversuche von IP-Adressen abzuwehren, die nicht explizit der weißen Liste hinzugefügt wurden. Damit Ihre Anwendung oder die öffentliche IP-Adresse Ihres Clientcomputers eine Verbindung mit einer neuen Datenbank herstellen kann, müssen Sie zuerst über das Azure-Verwaltungsportal, über REST-API oder PowerShell eine Firewall-Regel auf Serverebene erstellen. Eine bewährte Methode besteht darin, die von der Server-Firewall zugelassenen IP-Adressbereiche so weit wie möglich einzuschränken. Weitere Informationen finden Sie unter [Firewall für die Azure SQL-Datenbank][].
+Firewall-Regeln werden vom Server und der Datenbank verwendet, um Verbindungsversuche von IP-Adressen abzuwehren, die nicht explizit der weißen Liste hinzugefügt wurden. Damit Ihre Anwendung oder die öffentliche IP-Adresse Ihres Clientcomputers eine Verbindung mit einer neuen Datenbank herstellen kann, müssen Sie zuerst über das klassische Azure-Portal, über REST-API oder PowerShell eine Firewall-Regel auf Serverebene erstellen. Eine bewährte Methode besteht darin, die von der Server-Firewall zugelassenen IP-Adressbereiche so weit wie möglich einzuschränken. Weitere Informationen finden Sie unter [Firewall für die Azure SQL-Datenbank][].
 
 
 ## Authentifizierung
@@ -72,13 +72,13 @@ Es gibt Möglichkeiten, Benutzerberechtigungen für die Azure SQL-Datenbank noch
 - Mithilfe von granularen [Berechtigungen][] können Sie steuern, welche Aufgaben in einzelnen Spalten, Tabellen, Ansichten, Prozeduren und anderen Objekten in der Datenbank ausgeführt werden dürfen.
 - [Gespeicherten Prozeduren][] können verwendet werden, um die Aktionen zu begrenzen, die in der Datenbank ausgeführt werden können.
 
-Die Verwaltung von Datenbanken und logischen Servern über das Azure-Verwaltungsportal oder mit der Azure-Ressourcen-Manager-API wird durch die Rollenzuweisungen Ihres Portal-Benutzerkontos gesteuert. Weitere Informationen zu diesem Thema finden Sie unter [Rollenbasierte Zugriffssteuerung im Azure-Vorschauportal][].
+Die Verwaltung von Datenbanken und logischen Servern über das klassische Azure-Portal oder mit der Azure-Ressourcen-Manager-API wird durch die Rollenzuweisungen Ihres Portal-Benutzerkontos gesteuert. Weitere Informationen zu diesem Thema finden Sie unter [Rollenbasierte Zugriffssteuerung im Azure-Portal][].
 
 
 
 ## Verschlüsselung
 
-Durch [Transparent Data Encryption][] kann SQL Data Warehouse zum Schutz Ihrer Daten beitragen, indem ruhende oder in Datenbankdateien und Sicherungen gespeicherte Daten verschlüsselt werden. Um Ihre Datenbank zu verschlüsseln, stellen Sie auf Ihrem Server eine Verbindung mit der Masterdatenbank her und führen Folgendes aus:
+Durch [Transparent Data Encryption][] kann die Azure SQL-Datenbank zum Schutz Ihrer Daten beitragen, indem ruhende oder in Datenbankdateien und Sicherungen gespeicherte Daten verschlüsselt werden. Um Ihre Datenbank zu verschlüsseln, stellen Sie auf Ihrem Server eine Verbindung mit der Masterdatenbank her und führen Folgendes aus:
 
 
 ```
@@ -87,7 +87,7 @@ ALTER DATABASE [AdventureWorks] SET ENCRYPTION ON;
 
 ```
 
-Sie können Transparent Data Encryption auch über die Datenbankeinstellungen im [Azure-Portal][] aktivieren.
+Sie können Transparent Data Encryption auch über die Datenbankeinstellungen im [klassischen Azure-Portal][] aktivieren.
 
 
 
@@ -114,9 +114,9 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 [Gespeicherten Prozeduren]: https://msdn.microsoft.com/library/ms190782.aspx
 [Transparent Data Encryption]: http://go.microsoft.com/fwlink/?LinkId=526242
 [Erste Schritte mit der SQL-Datenbanküberwachung]: sql-database-auditing-get-started.md
-[Azure-Portal]: https://portal.azure.com/
+[klassischen Azure-Portal]: https://portal.azure.com/
 
 <!--Other Web references-->
-[Rollenbasierte Zugriffssteuerung im Azure-Vorschauportal]: http://azure.microsoft.com/documentation/articles/role-based-access-control-configure.aspx
+[Rollenbasierte Zugriffssteuerung im Azure-Portal]: http://azure.microsoft.com/documentation/articles/role-based-access-control-configure.aspx
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

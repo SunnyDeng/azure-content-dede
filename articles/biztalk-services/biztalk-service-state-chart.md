@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/26/2015" 
+	ms.date="12/02/2015" 
 	ms.author="mandia"/>
 
 
@@ -21,13 +21,13 @@
 # BizTalk Services: Dienststatusübersicht
 Je nach aktuellem Status des BizTalk-Diensts stehen Vorgänge bereit, die Sie in eben diesem BizTalk-Dienst entweder ausführen können oder nicht ausführen können.
 
-Sie stellen beispielsweise einen neuen BizTalk-Dienst im Azure-Verwaltungsportal bereit. Wenn dieser Vorgang erfolgreich abgeschlossen ist, befindet sich der BizTalk-Dienst im aktiven Status. Im aktiven Status können Sie den BizTalk-Dienst beenden. Wenn das Beenden erfolgreich durchgeführt wird, geht der BizTalk-Dienst in den Status "Beendet" über. Wenn das Beenden fehlschlägt, geht der BizTalk-Dienst in den Status "StopFailed" über. Im Status "StopFailed" können Sie den BizTalk-Dienst neu starten. Wenn Sie einen nicht zulässigen Vorgang auszuführen versuchen, wie etwa die Wiederaufnahme des BizTalk-Diensts, tritt der folgende Fehler auf:
+Sie stellen beispielsweise einen neuen BizTalk-Dienst im klassischen Azure-Portal bereit. Wenn dieser Vorgang erfolgreich abgeschlossen ist, befindet sich der BizTalk-Dienst im aktiven Status. Im aktiven Status können Sie den BizTalk-Dienst beenden. Wenn das Beenden erfolgreich durchgeführt wird, geht der BizTalk-Dienst in den Status "Beendet" über. Wenn das Beenden fehlschlägt, geht der BizTalk-Dienst in den Status "StopFailed" über. Im Status "StopFailed" können Sie den BizTalk-Dienst neu starten. Wenn Sie einen nicht zulässigen Vorgang auszuführen versuchen, wie etwa die Wiederaufnahme des BizTalk-Diensts, tritt der folgende Fehler auf:
 
 **Vorgang nicht zulässig**
 
-Informationen zum Bereitstellen eines BizTalk Service finden Sie unter [BizTalk Services: Bereitstellen mit dem Azure-Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=302280).
+Informationen zum Bereitstellen eines BizTalk Service finden Sie unter [BizTalk Services: Bereitstellen mit dem klassischen Azure-Portal](http://go.microsoft.com/fwlink/p/?LinkID=302280).
 
-In den folgenden Tabellen sind diejenigen Vorgänge oder Aktionen aufgelistet, die ausgeführt werden können, wenn sich der BizTalk Service in einem spezifischen Status befindet. Ein Häkchen bedeutet dabei, dass der Vorgang zulässig ist, wenn der betreffende Status zutrifft. Ein leerer Eintrag bedeutet dagegen, dass der Vorgang nicht ausgeführt werden kann, wenn der betreffende Status zutrifft.
+In den folgenden Tabellen sind diejenigen Vorgänge oder Aktionen aufgelistet, die ausgeführt werden können, wenn sich der BizTalk Service in einem spezifischen Status befindet. Ein ✔ bedeutet dabei, dass der Vorgang zulässig ist, wenn der betreffende Status zutrifft. Ein leerer Eintrag bedeutet dagegen, dass der Vorgang nicht ausgeführt werden kann, wenn der betreffende Status zutrifft.
 
 ## Vorgänge zum Starten, Beenden, Neustarten, Anhalten, Wiederaufnehmen und Löschen
 <table border="1">
@@ -50,11 +50,11 @@ In den folgenden Tabellen sind diejenigen Vorgänge oder Aktionen aufgelistet, d
 <tr>
 <td bgcolor="FAF9F9"><b>Aktiv</b></td>
 <td> </td>
-<td><center>x</center></td>
-<td><center>x</center></td>
-<td><center>x</center></td>
+<td><center>✔</center></td>
+<td><center>✔</center></td>
+<td><center>✔</center></td>
 <td> </td>
-<td><center>x</center></td>
+<td><center>✔</center></td>
 </tr>
 <tr>
 <td bgcolor="FAF9F9"><b>Deaktiviert</b></td>
@@ -63,7 +63,7 @@ In den folgenden Tabellen sind diejenigen Vorgänge oder Aktionen aufgelistet, d
 <td> </td>
 <td> </td>
 <td> </td>
-<td><center>x</center></td>
+<td><center>✔</center></td>
 </tr>
 <tr>
 <td bgcolor="FAF9F9"><b>Angehalten</b></td>
@@ -71,17 +71,17 @@ In den folgenden Tabellen sind diejenigen Vorgänge oder Aktionen aufgelistet, d
 <td> </td>
 <td> </td>
 <td> </td>
-<td><center>x</center></td>
-<td><center>x</center></td>
+<td><center>✔</center></td>
+<td><center>✔</center></td>
 </tr>
 <tr>
 <td bgcolor="FAF9F9"><b>Beendet</b></td>
-<td><center>x</center></td>
+<td><center>✔</center></td>
 <td> </td>
-<td><center>x</center></td>
+<td><center>✔</center></td>
 <td> </td>
 <td> </td>
-<td><center>x</center></td>
+<td><center>✔</center></td>
 </tr>
 <tr>
 <td bgcolor="FAF9F9"><b>Fehler beim Dienstupdate</b></td>
@@ -90,7 +90,7 @@ In den folgenden Tabellen sind diejenigen Vorgänge oder Aktionen aufgelistet, d
 <td> </td>
 <td> </td>
 <td> </td>
-<td><center>x</center></td>
+<td><center>✔</center></td>
 </tr>
 <tr>
 <td bgcolor="FAF9F9"><b>DisableFailed</b></td>
@@ -99,7 +99,7 @@ In den folgenden Tabellen sind diejenigen Vorgänge oder Aktionen aufgelistet, d
 <td> </td>
 <td> </td>
 <td> </td>
-<td><center>x</center></td>
+<td><center>✔</center></td>
 </tr>
 <tr>
 <td bgcolor="FAF9F9"><b>EnableFailed</b></td>
@@ -108,18 +108,18 @@ In den folgenden Tabellen sind diejenigen Vorgänge oder Aktionen aufgelistet, d
 <td> </td>
 <td> </td>
 <td> </td>
-<td><center>x</center></td>
+<td><center>✔</center></td>
 </tr>
 <tr>
 <td bgcolor="FAF9F9"><b>StartFailed<br/>
 StopFailed<br/>
 RestartFailed</b></td>
-<td><center>x</center></td>
-<td><center>x</center></td>
-<td><center>x</center></td>
+<td><center>✔</center></td>
+<td><center>✔</center></td>
+<td><center>✔</center></td>
 <td> </td>
 <td> </td>
-<td><center>x</center></td>
+<td><center>✔</center></td>
 </tr>
 <tr>
 <td bgcolor="FAF9F9"><b>SuspendedFailed<br/>
@@ -127,9 +127,9 @@ ResumeFailed</b></td>
 <td> </td>
 <td> </td>
 <td> </td>
-<td><center>x</center></td>
-<td><center>x</center></td>
-<td><center>x</center></td>
+<td><center>✔</center></td>
+<td><center>✔</center></td>
+<td><center>✔</center></td>
 </tr>
 <tr>
 <td bgcolor="FAF9F9"><b>CreatedFailed<br/>
@@ -139,16 +139,16 @@ RestoreFailed<br/></b></td>
 <td> </td>
 <td> </td>
 <td> </td>
-<td><center>x</center></td>
+<td><center>✔</center></td>
 </tr>
 <tr>
 <td bgcolor="FAF9F9"><b>ConfigUpdateFailed</b></td>
 <td> </td>
 <td> </td>
-<td><center>x</center></td>
+<td><center>✔</center></td>
 <td> </td>
 <td> </td>
-<td><center>x</center></td>
+<td><center>✔</center></td>
 </tr>
 <tr>
 <td bgcolor="FAF9F9"><b>ScaleFailed</b></td>
@@ -157,7 +157,7 @@ RestoreFailed<br/></b></td>
 <td> </td>
 <td> </td>
 <td> </td>
-<td><center>x</center></td>
+<td><center>✔</center></td>
 </tr>
 </table>
 <br/>
@@ -179,9 +179,9 @@ RestoreFailed<br/></b></td>
 </tr>
 <tr>
 <td bgcolor="FAF9F9"><b>Aktiv</b></td>
-<td><center>x</center></td>
-<td><center>x</center></td>
-<td><center>x</center></td>
+<td><center>✔</center></td>
+<td><center>✔</center></td>
+<td><center>✔</center></td>
 </tr>
 <tr>
 <td bgcolor="FAF9F9"><b>Deaktiviert</b></td>
@@ -193,13 +193,13 @@ RestoreFailed<br/></b></td>
 <td bgcolor="FAF9F9"><b>Angehalten</b></td>
 <td> </td>
 <td> </td>
-<td><center>x</center></td>
+<td><center>✔</center></td>
 </tr>
 <tr>
 <td bgcolor="FAF9F9"><b>Beendet</b></td>
 <td> </td>
 <td> </td>
-<td><center>x</center></td>
+<td><center>✔</center></td>
 </tr>
 <tr>
 <td bgcolor="FAF9F9"><b>Fehler beim Dienstupdate</b></td>
@@ -224,7 +224,7 @@ RestoreFailed<br/></b></td>
 StopFailed<br/>
 RestartFailed</b></td>
 <td> </td>
-<td><center>x</center></td>
+<td><center>✔</center></td>
 <td> </td>
 </tr>
 <tr>
@@ -244,19 +244,19 @@ RestoreFailed<br/></b></td>
 <tr>
 <td bgcolor="FAF9F9"><b>ConfigUpdateFailed</b></td>
 <td> </td>
-<td><center>x</center></td>
+<td><center>✔</center></td>
 <td> </td>
 </tr>
 <tr>
 <td bgcolor="FAF9F9"><b>ScaleFailed</b></td>
-<td><center>x</center></td>
+<td><center>✔</center></td>
 <td> </td>
 <td> </td>
 </tr>
 </table>
 
 ## Weitere Informationen
-- [BizTalk Services: Erstellen eines BizTalk Service im Azure-Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=302280)<br/>
+- [BizTalk Services: Bereitstellung mithilfe des klassischen Azure-Portals](http://go.microsoft.com/fwlink/p/?LinkID=302280)<br/>
 - [BizTalk Services: Registerkarten "Dashboard", "Überwachen" und "Skalieren"](http://go.microsoft.com/fwlink/p/?LinkID=302281)<br/>
 - [BizTalk Services: Editionsübersicht](http://go.microsoft.com/fwlink/p/?LinkID=302279)<br/>
 - [BizTalk Services: Sichern und Wiederherstellen](http://go.microsoft.com/fwlink/p/?LinkID=329873)<br/>
@@ -267,4 +267,4 @@ RestoreFailed<br/></b></td>
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

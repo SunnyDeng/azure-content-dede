@@ -26,7 +26,7 @@ In diesem Artikel wird erklärt, wie Sie die Brokermessagingfunktionen (Wartesch
 
 ## Erste Schritte mit Service Bus
 
-In diesem Artikel wird davon ausgegangen, dass Sie bereits einen Service Bus-Namespace haben, der eine Warteschlange mit dem Namen "queue1" enthält. Falls nicht, können Sie den Namespace und die Warteschlange im [Azure-Portal](http://manage.windowsazure.com) erstellen. Weitere Informationen zum Erstellen von Namespaces und Warteschlangen für Service Bus finden Sie unter [Verwenden von Service Bus-Warteschlangen](service-bus-dotnet-how-to-use-queues.md).
+In diesem Artikel wird davon ausgegangen, dass Sie bereits einen Service Bus-Namespace haben, der eine Warteschlange mit dem Namen "queue1" enthält. Falls nicht, können Sie den Namespace und die Warteschlange im [klassischen Azure-Portal](http://manage.windowsazure.com) erstellen. Weitere Informationen zum Erstellen von Namespaces und Warteschlangen für Service Bus finden Sie unter [Verwenden von Service Bus-Warteschlangen](service-bus-dotnet-how-to-use-queues.md).
 
 ## Herunterladen des Servicebus-SDKs
 
@@ -63,7 +63,7 @@ Beim Wert der Einstellung **Microsoft.ServiceBus.ConnectionString** handelt es s
 Endpoint=sb://[namespace].servicebus.windows.net;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=[SAS key];TransportType=Amqp
 ```
 
-`[namespace]` und `[SAS key]` werden aus dem Azure-Portal bezogen. Weitere Informationen finden Sie unter [Verwenden von Servicebus-Warteschlangen][].
+`[namespace]` und `[SAS key]` werden aus dem [klassischen Azure-Portal][] bezogen. Weitere Informationen finden Sie unter [Verwenden von Service Bus-Warteschlangen][].
 
 Wenn AMQP zum Einsatz kommt, wird `;TransportType=Amqp` an die Verbindungszeichenfolge angehängt, sodass die Clientbibliothek angewiesen wird, mithilfe von AMQP 1.0 eine Verbindung mit Service Bus herzustellen.
 
@@ -322,5 +322,6 @@ Nachdem Sie sich einen Überblick über Service Bus und AMQP mit .NET verschafft
 * [Verwenden der JMS-Programmierschnittstelle (Java Message Service) mit Service Bus & AMQP 1.0](service-bus-java-how-to-use-jms-api-amqp.md)
 * [Verwenden von Servicebus-Warteschlangen](service-bus-dotnet-how-to-use-queues.md)
  
+[klassischen Azure-Portal]: http://manage.windowsazure.com
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

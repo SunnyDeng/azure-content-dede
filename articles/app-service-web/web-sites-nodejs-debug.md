@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="nodejs"
 	ms.topic="article"
-	ms.date="08/11/2015"
+	ms.date="11/18/2015"
 	ms.author="tarcher"/>
 
 # Debuggen einer Node.js-Web-App in Azure App Service
@@ -46,7 +46,7 @@ Wenn die Datei **IISNode.yml** in Ihrer Anwendung zuvor noch nicht vorhanden war
 
 > [AZURE.NOTE]Wenn Sie die Web-App mit den Azure-Befehlszeilentools oder Azure-PowerShell-Cmdlets erstellt haben, wird automatisch eine standardmäßige **IISNode.yml**-Datei erstellt.
 
-Um die Web-App neu zu starten, wählen Sie die Web-App im [Azure-Vorschauportal](https://portal.azure.com) aus, und klicken Sie dann auf die Schaltfläche **NEU STARTEN**:
+Um die Web-App neu zu starten, wählen Sie die Web-App im [Azure-Portal](https://portal.azure.com) aus, und klicken Sie dann auf die Schaltfläche **NEU STARTEN**:
 
 ![Schaltfläche 'Neustart'][restart-button]
 
@@ -63,17 +63,17 @@ Es gibt drei Möglichkeiten zum Zugreifen auf Diagnoseprotokolle: über das File
 
 	npm install azure-cli -g
 
-Nachdem sie installiert wurden, können Sie mit dem Befehl "azure" auf die Tools zugreifen. Sie müssen die Befehlszeilentools zunächst für die Verwendung Ihrer Azure-Abonnements konfigurieren. Informationen hierzu finden Sie im Abschnitt **Herunterladen und Importieren der Veröffentlichungseinstellungen** des Artikels "Verwenden der Azure-Befehlszeilentools".
+Nachdem sie installiert wurden, können Sie mit dem Befehl "azure" auf die Tools zugreifen. Sie müssen die Befehlszeilentools zunächst für die Verwendung Ihrer Azure-Abonnements konfigurieren. Informationen hierzu finden Sie im Abschnitt **Herunterladen und Importieren der Veröffentlichungseinstellungen** des Artikels [Verwenden der Azure-Befehlszeilentools](../xplat-cli-connect).
 
 ###FTP
 
-Um per FTP auf die Diagnoseinformationen zuzugreifen, rufen Sie das [Azure-Vorschauportal](https://portal.azure.com) auf, wählen Sie Ihre Web-App aus, und wählen Sie dann **DASHBOARD** aus. Im Abschnitt **QuickLinks** bieten die Links **FTP DIAGNOSTIC LOGS** und **FTPS DIAGNOSTIC LOGS** Zugriff auf die Protokolldateien per FTP.
+Um per FTP auf die Diagnoseinformationen zuzugreifen, rufen Sie das [Azure-Portal](https://portal.azure.com) auf, wählen Sie Ihre Web-App aus, und wählen Sie dann **DASHBOARD** aus. Im Abschnitt **QuickLinks** bieten die Links **FTP DIAGNOSTIC LOGS** und **FTPS DIAGNOSTIC LOGS** Zugriff auf die Protokolldateien per FTP.
 
 > [AZURE.NOTE]Wenn Sie noch keinen Benutzernamen und kein Kennwort für FTP oder die Bereitstellung konfiguriert haben, können Sie dies auf der **QuickStart**-Verwaltungsseite durchführen, indem Sie **Set up deployment credentials** auswählen.
 
 Die im Dashboard zurückgegebene FTP-URL gilt für das Verzeichnis **LogFiles**, das folgende Unterverzeichnisse enthält:
 
-* [Bereitstellungsmethode] – Wenn Sie eine Bereitstellungsmethode wie Git verwenden, wird ein Verzeichnis mit dem gleichen Namen erstellt, das die Informationen in Bezug auf die Bereitstellungen enthält.
+* [Bereitstellungsmethode](web-sites-deploy) – Wenn Sie eine Bereitstellungsmethode wie Git verwenden, wird ein Verzeichnis mit dem gleichen Namen erstellt, das die Informationen in Bezug auf die Bereitstellungen enthält.
 
 * nodejs – von "stdout" und "stderr" erfasste Informationen für alle Instanzen der Anwendung (wenn "loggingEnabled" auf "true" gesetzt ist)
 
@@ -89,7 +89,7 @@ Hierdurch wird eine **diagnostics.zip**-Datei in das aktuelle Verzeichnis herunt
 
 * LogFiles
 
-	* [Bereitstellungsmethode] – Wenn Sie eine Bereitstellungsmethode wie Git verwenden, wird ein Verzeichnis mit dem gleichen Namen erstellt, das die Informationen in Bezug auf die Bereitstellungen enthält.
+	* [Bereitstellungsmethode](web-sites-deploy) – Wenn Sie eine Bereitstellungsmethode wie Git verwenden, wird ein Verzeichnis mit dem gleichen Namen erstellt, das die Informationen in Bezug auf die Bereitstellungen enthält.
 
 	* nodejs – von "stdout" und "stderr" erfasste Informationen für alle Instanzen der Anwendung (wenn "loggingEnabled" auf "true" gesetzt ist)
 
@@ -106,7 +106,7 @@ Hierdurch werden Sie in einem Livestream über Protokollereignisse informiert, s
 
 In diesem Artikel haben Sie erfahren, wie Sie Diagnoseinformationen für Azure aktivieren und darauf zugreifen. Diese Informationen sind nützlich, um in der Anwendung auftretende Probleme zu analysieren, sie können jedoch auch auf ein Problem mit einem von Ihnen verwendeten Modul hinweisen oder angeben, dass die von App Service-Web-Apps verwendete Version von Node.js sich von der in Ihrer Entwicklungsumgebung verwendeten Version unterscheidet.
 
-Weitere Informationen zur Arbeit mit Modulen in Azure finden Sie unter [Verwenden von Node.js-Modulen mit Azure-Anwendungen].
+Weitere Informationen zur Arbeit mit Modulen in Azure finden Sie unter [Verwenden von Node.js-Modulen mit Azure-Anwendungen](../nodejs-use-node-modules-azure-apps).
 
 Weitere Informationen zum Festlegen einer Node.js-Version für Ihre Anwendung finden Sie unter [Festlegen einer Node.js-Version in einer Azure-Anwendung].
 
@@ -114,17 +114,16 @@ Weitere Informationen finden Sie außerdem im [Node.js Developer Center](/develo
 
 ## Änderungen
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
 
 >[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 [IISNode]: https://github.com/tjanczuk/iisnode
 [IISNode Readme]: https://github.com/tjanczuk/iisnode#readme
 [How to Use The Azure Command-Line Interface]: ../xplat-cli-install.md
-[Verwenden von Node.js-Modulen mit Azure-Anwendungen]: ../nodejs-use-node-modules-azure-apps.md
+[Using Node.js Modules with Azure Applications]: ../nodejs-use-node-modules-azure-apps.md
 [Festlegen einer Node.js-Version in einer Azure-Anwendung]: ../nodejs-specify-node-version-azure-apps.md
 
 [restart-button]: ./media/web-sites-nodejs-debug/restartbutton.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

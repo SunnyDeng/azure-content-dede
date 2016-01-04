@@ -4,7 +4,7 @@
    services="traffic-manager"
    documentationCenter=""
    authors="kwill-MSFT"
-   manager="adinah"
+   manager="carmonm"
    editor="joaoma" />
 
 <tags 
@@ -13,12 +13,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/19/2015"
+   ms.date="12/02/2015"
    ms.author="joaoma" />
 
-# Problembehandlung beim Status "Heruntergestuft" in Azure Traffic Manager
-Auf dieser Seite wird beschrieben, wie Probleme bei einem Azure Traffic Manager-Profil mit dem Status "Heruntergestuft" behoben werden können. Weiterhin werden einige wichtige Punkte zu Traffic Manager-Tests erörtert.
+# Problembehandlung beim Status "Heruntergestuft" in Traffic Manager
 
+Auf dieser Seite wird beschrieben, wie Probleme bei einem Azure Traffic Manager-Profil mit dem Status "Heruntergestuft" behoben werden können. Weiterhin werden einige wichtige Punkte zu Traffic Manager-Tests erörtert.
 
 Sie haben ein Traffic Manager-Profil konfiguriert, das auf einige Ihrer in cloudapp.net gehosteten Dienste verweist. Nach einigen Sekunden wird der Status als "Heruntergestuft" angezeigt.
 
@@ -80,4 +80,4 @@ Wenn bei dem Test das HTTPs-Protokoll verwendet wird, sollten Sie in Wget den Pa
 [Azure Traffic Manager-Cmdlets](http://go.microsoft.com/fwlink/p/?LinkId=400769)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

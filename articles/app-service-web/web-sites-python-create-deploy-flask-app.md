@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="python" 
 	ms.topic="article" 
-	ms.date="08/30/2015"
-	ms.author="huguesv"/>
+	ms.date="11/17/2015"
+	ms.author="huvalo"/>
 
 
 # Erstellen von Web-Apps mit Flask in Azure
@@ -56,7 +56,7 @@ Sie sollten Python und Git bereits installiert haben, doch stellen Sie sicher, d
 Der erste Schritt beim Erstellen einer App ist das Erstellen der Web-App über das [Azure-Portal](https://portal.azure.com).
 
 1. Klicken Sie im Azure-Portal in der unteren linken Ecke auf **NEU**. 
-2. Klicken Sie auf **Web + Mobile** > **Azure Marketplace** > **Web-Apps**.
+2. Klicken Sie auf **Web und mobil**.
 3. Geben Sie im Suchfeld "python" ein.
 4. Wählen Sie in den Suchergebnissen **Flask** aus, und klicken Sie dann auf **Erstellen**.
 5. Konfigurieren Sie die neue Flask-App, indem Sie beispielsweise einen neuen App Service-Plan und eine neue Ressourcengruppe dafür erstellen. Klicken Sie dann auf **Erstellen**.
@@ -299,6 +299,7 @@ Für Python 2.7:
 Für Python 3.4:
 
     python -m venv env
+oder pyvenv env
 
 Installieren Sie alle externen Pakete, die Ihre Anwendung benötigt. Sie können die Datei "requirements.txt" im Stammverzeichnis des Repositorys verwenden, um die Pakete in der virtuellen Umgebung zu installieren:
 
@@ -402,4 +403,4 @@ Weitere Informationen finden Sie außerdem im [Python Developer Center](/develop
 [Dokumentation zu Flask]: http://flask.pocoo.org/
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

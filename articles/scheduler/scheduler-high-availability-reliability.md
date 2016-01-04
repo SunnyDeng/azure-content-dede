@@ -12,7 +12,7 @@
  ms.tgt_pltfrm="na" 
  ms.devlang="dotnet" 
  ms.topic="article" 
- ms.date="08/04/2015" 
+ ms.date="12/04/2015" 
  ms.author="krisragh"/>
  
  
@@ -61,24 +61,25 @@ Beachten Sie, dass die gleiche Wiederholungsrichtlinie sowohl für die ursprüng
 Weitere Informationen zum Konfigurieren eines alternativen Endpunkts finden Sie unter [errorAction](scheduler-concepts-terms.md#action-and-erroraction).
 
 ## Siehe auch
- 
+
  [Was ist Azure Scheduler?](scheduler-intro.md)
  
- [Scheduler Concepts, Terminology, and Entity Hierarchy](scheduler-concepts-terms.md) (in englischer Sprache)
- 
- [Get Started Using Scheduler in the Management Portal](scheduler-get-started-portal.md) (in englischer Sprache)
- 
- [Plans and Billing in Azure Scheduler](scheduler-plans-billing.md) (in englischer Sprache)
- 
- [How to Build Complex Schedules and Advanced Recurrence with Azure Scheduler](scheduler-advanced-complexity.md) (in englischer Sprache)
- 
- [Zeitplanungsmodul-REST-API – Referenz](https://msdn.microsoft.com/library/dn528946)
- 
- [Scheduler – PowerShell-Cmdlets-Referenz](scheduler-powershell-reference.md)
- 
- [Scheduler Limits, Defaults, and Error Codes](scheduler-limits-defaults-errors.md) (in englischer Sprache)
- 
- [Scheduler Outbound Authentication](scheduler-outbound-authentication.md) (in englischer Sprache)
+ [Konzepte, Terminologie und Entitätshierarchie für Azure Scheduler](scheduler-concepts-terms.md)
+
+ [Erste Schritte mit dem Scheduler im Azure-Portal](scheduler-get-started-portal.md)
+
+ [Pläne und Abrechnung in Azure Scheduler](scheduler-plans-billing.md)
+
+ [Erstellen komplexer Zeitpläne und erweiterter Serien mit Azure Scheduler](scheduler-advanced-complexity.md)
+
+ [Azure Scheduler-REST-API – Referenz](https://msdn.microsoft.com/library/dn528946)
+
+ [Azure Scheduler – PowerShell-Cmdlets-Referenz](scheduler-powershell-reference.md)
+
+
+ [Einschränkungen, Standardwerte und Fehlercodes für Azure Scheduler](scheduler-limits-defaults-errors.md)
+
+ [Ausgehende Authentifizierung von Azure Scheduler](scheduler-outbound-authentication.md)
  
  
 [1]: ./media/scheduler-high-availability-reliability/scheduler-high-availability-reliability-image1.png
@@ -87,4 +88,4 @@ Weitere Informationen zum Konfigurieren eines alternativen Endpunkts finden Sie 
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

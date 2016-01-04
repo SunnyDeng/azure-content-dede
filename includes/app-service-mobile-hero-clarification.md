@@ -1,0 +1,4 @@
+
+In diesem Thema erstellen Sie einen neuen mobilen App-Back-End, laden das Serverprojekt herunter, veröffentlichen es und laden eine "Aufgabenliste"-Clientanwendung zur Verbindung mit dem neuen mobilen App-Back-End herunter. Mobile Apps bietet Ihnen die gesamte Back-End-Funktionalität von App Services, stellt jedoch darüber hinaus Funktionen für mobile Entwickler bereit, einschließlich der Offline-Synchronisierung und Pushbenachrichtigungen. Client-SDKs vereinfachen die Cloud-basierte Datenspeicherung und Authentifizierung in Ihren Apps. Weitere Informationen finden Sie unter [Was sind Mobile Apps?](app-service-mobile-value-prop.md)
+
+<!---HONumber=Nov15_HO4-->

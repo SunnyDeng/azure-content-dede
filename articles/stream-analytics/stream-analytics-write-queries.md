@@ -1,6 +1,7 @@
 <properties 
-	pageTitle="Schreiben von Abfragen| Microsoft Azure" 
-	description="Schreiben von Abfragen – Lernpfadsegment"
+	pageTitle="Schreiben von Abfragen in Stream Analytics | Microsoft Azure" 
+	description="Schreiben von Abfragen in Stream Analytics und Abfragen von Daten | Lernpfadsegment."
+	keywords="Vorgehensweise für das Schreiben von Abfragen, Abfragen von Daten, Schreiben einer Abfrage, Schreiben von Abfragen"
 	documentationCenter=""
 	services="stream-analytics"
 	authors="jeffstokes72" 
@@ -13,14 +14,14 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="11/06/2015" 
+	ms.date="12/11/2015" 
 	ms.author="jeffstok"/>
 
-# Schreiben von Abfragen
+# Schreiben von Abfragen in Stream Analytics
 
-Die Stream-Verarbeitungslogik in Azure-Stream Analytics wird als "stehende Abfrage" implementiert, die vor Starten eines Auftrags definiert wird und auf Daten ausgeführt wird, während sie den Auftrag erreicht. Die Datenumwandlung wird in einer SQL-ähnlichen Abfragesprache ausgedrückt, die größtenteils eine Teilmenge von T-SQL mit einigen hinzugefügten Spracherweiterungen wie [Windowing](https://msdn.microsoft.com/library/azure/dn835019.aspx) ist, die zum Ausdrücken von zeitlicher Semantik verwendet wird.
+Das Schreiben von Abfragen für die Datenstrom-Verarbeitungslogik in Azure Stream Analytics wird als „beständige Abfrage“ implementiert, die vor dem Starten eines Auftrags definiert und für Daten ausgeführt wird, während sie den Auftrag erreicht. Die Datenumwandlung wird in einer SQL-ähnlichen Abfragesprache ausgedrückt, die größtenteils eine Teilmenge von T-SQL mit einigen hinzugefügten Spracherweiterungen wie [Windowing](https://msdn.microsoft.com/library/azure/dn835019.aspx) ist, die zum Ausdrücken von zeitlicher Semantik verwendet wird.
 
-## So erstellen Sie eine Stream Analytics-Abfrage: ##
+## Schreiben von Abfragen: ##
 
 1. Klicken Sie im Stream Analytics-Auftrag im Azure-Verwaltungsportal auf **Abfrage**.
 
@@ -33,11 +34,11 @@ Die Stream-Verarbeitungslogik in Azure-Stream Analytics wird als "stehende Abfra
 2.	Neue Aufträge verfügen über Abfragevorlagen, die Ihnen beim Einstieg helfen. Abfragevorlagen führen eine "Pass-Through"-Abfrage durch, die alle Felder aus den Eingabeereignissen in die Ausgabe überträgt.
 
     - Wenn Sie mindestens eine Eingabe und Ausgabe für den Auftrag definiert haben, können Sie den Platzhalter "[YourOutputAlias]" und die Felder "[YourInputAlias]" durch die Aliase der Eingabe und Ausgabe ersetzen, die Sie zuerst verwenden möchten. Darüber hinaus können Sie die Abfrage noch immer im Azure-Portal erstellen und testen, ohne Eingaben und Ausgaben für den Auftrag zu definieren.
-    - Wenn Sie mehr als eine einfache Pass-Through-Abfrage verarbeiten möchten, können Sie die Abfragedefinition bearbeiten. Betrachten Sie zum Einstieg in die Erstellung von Abfragen einige der [hier](stream-analytics-query-patterns) erfassten allgemeinen Abfragemuster.  
+    - Wenn Sie mehr als eine einfache Pass-Through-Abfrage verarbeiten möchten, können Sie die Abfragedefinition bearbeiten. Betrachten Sie zum Einstieg in die Erstellung von Abfragen einige der [hier](stream-analytics-stream-analytics-query-patterns.md) erfassten allgemeinen Abfragemuster.  
   
-    ![Abfragefenster](./media/stream-analytics-write-queries/2-stream-analytics-write-queries.png)
+    ![Fenster mit Abfragedaten](./media/stream-analytics-write-queries/2-stream-analytics-write-queries.png)
 
-## So testen Sie eine Abfrage: ##
+## Zum Überprüfen, ob die Abfrage von Daten funktioniert: ##
 
 Sie können testen, ob sich die Abfrage wie erwartet verhält, indem Sie sie im Browser über eine oder mehrere lokale JSON-Dateien mit den Testdaten ausführen. Dadurch wird weder der Auftrag gestartet noch gibt es Auswirkungen auf die Abrechnung.
 
@@ -45,11 +46,11 @@ Sie können testen, ob sich die Abfrage wie erwartet verhält, indem Sie sie im 
 
 1.	Stellen Sie sicher, dass keine Fehler in der Abfrage enthalten sind (andernfalls ist die Schaltfläche "Testen" deaktiviert), und klicken Sie dann auf die Schaltfläche "Testen".  
 
-    ![Abfragetest](./media/stream-analytics-write-queries/3-stream-analytics-write-queries.png)
+    ![Testen der Abfrage von Daten](./media/stream-analytics-write-queries/3-stream-analytics-write-queries.png)
 
 2.	Sie werden aufgefordert, für jede Eingabe die Dateien anzugeben, auf die in der Abfrage verwiesen wird. In diesem Beispiel bleibt die Vorlageabfrage so, wie sie ist, damit Sie im Dialogfeld dazu aufgefordert werden, eine Eingabe mit dem Namen "yourinputalias" vorzunehmen.
 
-    ![Testdaten](./media/stream-analytics-write-queries/4-stream-analytics-write-queries.png)
+    ![Testen der Datenabfrage](./media/stream-analytics-write-queries/4-stream-analytics-write-queries.png)
 
 3.	Navigieren Sie zu einer Testdatei. Es sind mehrere Beispieldateien auf [Github] (https://github.com/Azure/azure-stream-analytics/tree/master/Sample Daten) erhältlich und Sie können auch Beispieldaten aus Ihren eigenen Datenstromeingaben über die Funktion "Beispieldaten" in der Eingaberegisterkarte abrufen.
 
@@ -70,4 +71,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

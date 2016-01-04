@@ -13,13 +13,15 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/25/2015" 
+	ms.date="11/12/2015" 
 	ms.author="spelluru"/>
 
 # Problembehandlung bei Data Factory
-Sie können Azure Data Factory-Probleme mithilfe vom Azure-Portal (oder) Azure PowerShell-Cmdlets beheben. Dieses Thema enthält exemplarische Vorgehensweisen, die Ihnen zeigen, wie Sie das Azure-Portal verwenden, um schnell Fehler zu beheben, die bei Data Factory auftreten.
+Sie können Azure Data Factory-Probleme mithilfe vom klassischen Azure-Portal (oder) Azure PowerShell-Cmdlets beheben. Dieses Thema enthält exemplarische Vorgehensweisen, die Ihnen zeigen, wie Sie das klassische Azure-Portal verwenden, um schnell Fehler zu beheben, die bei Data Factory auftreten.
 
 ## Problem: Data Factory-Cmdlets können nicht ausgeführt werden.
+Wenn Sie eine Azure PowerShell-Version vor 1.0 verwenden:
+ 
 Wechseln Sie zum Beheben des Problems in den Azure-Modus **AzureResourceManager**:
 
 Starten Sie **Azure PowerShell**, und führen Sie den folgenden Befehl aus, um in den Modus **AzureResourceManager** zu wechseln. Die Azure Data Factory-Cmdlets sind im Modus **AzureResourceManager** verfügbar.
@@ -31,23 +33,23 @@ Sie verwenden wahrscheinlich nicht das richtige Azure-Konto oder -Abonnement fü
 
 1. Add-AzureAccount: Verwenden Sie die richtige Benutzer-ID und das richtige Kennwort.
 2. Get-AzureSubscription: Zeigen Sie alle Abonnements für das Konto an. 
-3. Select-AzureSubscription<subscription name>: Wählen Sie das richtige Abonnement. Verwenden Sie dasselbe Abonnement wie zum Erstellen einer Data Factory im Azure-Vorschauportal.
+3. Select-AzureSubscription<subscription name>: Wählen Sie das richtige Abonnement. Verwenden Sie dasselbe Abonnement wie zum Erstellen einer Data Factory im Azure-Portal.
 
-## Problem: Das Express-Setup für das Datengateway kann vom Azure-Portal aus nicht gestartet werden.
+## Problem: Das Express-Setup für das Datengateway kann vom klassischen Azure-Portal aus nicht gestartet werden.
 Für das Express-Setup des Datengateways ist Internet Explorer oder ein mit Microsoft ClickOnce kompatibler Webbrowser erforderlich. Wenn das Express-Setup nicht startet, haben Sie folgende Möglichkeiten:
 
 1. Wechseln Sie zu Internet Explorer, wenn andere Browser nicht funktionieren. Oder
 2. Verwenden Sie die auf dem gleichen Blatt im Portal angezeigten Links "Manuelles Setup", um die Installation durchzuführen. Kopieren Sie den auf dem Bildschirm angezeigten Schlüssel, und fügen Sie ihn ein, sobald die Konfiguration des Datenverwaltungsgateways bereit ist. Falls das Gateway nicht gestartet wird, überprüfen Sie das Startmenü auf "Microsoft-Datenverwaltungsgateway", und fügen Sie beim Start den Schlüssel ein. 
 
 
-## Problem: Fehler beim Starten des Anmeldeinformations-Managers im Azure-Portal
-Beim Einrichten oder Aktualisieren eines mit SQL Server verknüpften Diensts über das Azure-Portal wird der Anmeldeinformations-Manager gestartet, um die Zugriffssicherheit zu gewährleisten. Hierfür ist Internet Explorer oder ein mit Microsoft ClickOnce kompatibler Webbrowser erforderlich. Falls andere Browser nicht funktionieren, können Sie zu Internet Explorer wechseln.
+## Problem: Fehler beim Starten des Anmeldeinformations-Managers im klassischen Azure-Portal
+Beim Einrichten oder Aktualisieren eines mit SQL Server verknüpften Diensts über das klassische Azure-Portal wird der Anmeldeinformations-Manager gestartet, um die Zugriffssicherheit zu gewährleisten. Hierfür ist Internet Explorer oder ein mit Microsoft ClickOnce kompatibler Webbrowser erforderlich. Falls andere Browser nicht funktionieren, können Sie zu Internet Explorer wechseln.
 
 ## Problem: Fehler beim Herstellen einer Verbindung mit der lokalen SQL Server-Datenbank 
 Stellen Sie sicher, dass SQL Server von dem Computer, auf dem das Gateway installiert ist, erreichbar ist. Sie haben auf dem Computer mit dem installierten Gateway folgende Möglichkeiten:
 
 1. Pingen Sie den Computer, auf dem SQL Server installiert ist. Oder
-2. Versuchen Sie unter Verwendung der Anmeldeinformationen, die Sie im Azure-Portal mithilfe von SQL Server Management Studio (SSMS) angegeben haben, eine Verbindung mit der SQL Server-Instanz herzustellen.
+2. Versuchen Sie unter Verwendung der Anmeldeinformationen, die Sie im klassischen Azure-Portal mithilfe von SQL Server Management Studio (SSMS) angegeben haben, eine Verbindung mit der SQL Server-Instanz herzustellen.
 
 
 ## Problem: Eingabeslices haben permanent den Status "PendingExecution" oder "PendingValidation".
@@ -92,7 +94,7 @@ Im Thema "Tabellen" in der [Referenz zur JSON-Skripterstellung][json-scripting-r
 ## Problem: Fehler beim Hybridkopiervorgang
 So erhalten Sie weitere Details:
 
-1. Starten Sie den Konfigurations-Manager für das Datenverwaltungsgateway auf dem Computer, auf dem das Gateway installiert wurde. Stellen Sie Folgendes sicher: Als **Gatewayname** ist der logische Gatewayname im **Azure-Portal** festgelegt, der **Schlüsselstatus des Gateways** ist **registriert** und der **Dienststatus** ist **gestartet**. 
+1. Starten Sie den Konfigurations-Manager für das Datenverwaltungsgateway auf dem Computer, auf dem das Gateway installiert wurde. Stellen Sie Folgendes sicher: Als **Gatewayname** ist der logische Gatewayname im **klassischen Azure-Portal** festgelegt, der **Schlüsselstatus des Gateways** ist **registriert** und der **Dienststatus** ist **gestartet**. 
 2. Starten Sie die **Ereignisanzeige**. Erweitern Sie **Anwendungs- und Dienstprotokolle**, und klicken Sie auf **Datenverwaltungsgateway**. Überprüfen Sie, ob es Fehler im Zusammenhang mit Data Management Gateway gibt. 
 
 ## Problem: Fehler bei der bedarfsgesteuerten HDInsight-Bereitstellung
@@ -110,11 +112,11 @@ Darüber hinaus können in der weiteren JSON-Eigenschaft "additionalLinkedServic
 ## Problem: Fehler bei benutzerdefinierter Aktivität
 Bei Verwendung einer benutzerdefinierten Aktivität in Azure Data Factory (Pipeline-Aktivitätstyp "CustomActivity") wird die benutzerdefinierte Anwendung im festgelegten Dienst, der mit HDInsight verknüpft ist, als auf "Map" beschränkter MapReduce-Streamingauftrag ausgeführt.
 
-Wenn die benutzerdefinierte Aktivität ausgeführt wird, kann Azure Data Factory diese Ausgabe aus dem HDInsight-Cluster erfassen und im Speichercontainer *adfjobs* in Ihrem Azure-Blobspeicherkonto speichern. Bei einem Fehler finden Sie Einzelheiten in der Ausgabetextdatei **stderr**. Die Dateien sind im Azure-Portal zugänglich und können von dort in einem Webbrowser gelesen werden. Zudem ist es möglich, die im Speichercontainer enthaltenen Dateien mithilfe von Speicher-Explorer-Tools direkt im Azure-Blobspeicher aufzurufen.
+Wenn die benutzerdefinierte Aktivität ausgeführt wird, kann Azure Data Factory diese Ausgabe aus dem HDInsight-Cluster erfassen und im Speichercontainer *adfjobs* in Ihrem Azure-Blobspeicherkonto speichern. Bei einem Fehler finden Sie Einzelheiten in der Ausgabetextdatei **stderr**. Die Dateien sind im klassischen Azure-Portal zugänglich und können von dort in einem Webbrowser gelesen werden. Zudem ist es möglich, die im Speichercontainer enthaltenen Dateien mithilfe von Speicher-Explorer-Tools direkt im Azure-Blobspeicher aufzurufen.
 
 Zum Auflisten und Lesen der Protokolle einer bestimmten benutzerdefinierten Aktivität können Sie eine der anschaulichen exemplarischen Vorgehensweisen weiter unten auf dieser Seite befolgen. Zusammenfassung:
 
-1.  Klicken Sie im Azure-Portal auf **Durchsuchen**, um zu Ihrer Data Factory zu navigieren.
+1.  Klicken Sie im klassischen Azure-Portal auf **Durchsuchen**, um zu Ihrer Data Factory zu navigieren.
 2.  Klicken Sie auf die Schaltfläche **Diagramm**, um das Data Factory-Diagramm anzuzeigen. Klicken Sie dann auf die Tabelle **Dataset**, die der spezifischen **Pipeline** mit der benutzerdefinierten Aktivität folgt. 
 3.  Klicken Sie auf dem Blatt **Tabelle** in **Problemslices** auf den gewünschten Slice für den zu untersuchenden Zeitraum.
 4.  Das detaillierte Blatt **Datenslice** wird angezeigt. Es kann mehrere **Aktivitätsausführungen** für den Slice beinhalten. Klicken Sie in der Liste auf eine **Aktivität**. 
@@ -168,7 +170,7 @@ Wenn Sie die nicht mehr unterstützten Versionen von Azure PowerShell SDK verwen
 
 
 ## <a name="copywalkthrough"></a> Exemplarische Vorgehensweise: Beheben eines Fehlers beim Kopieren von Daten
-In dieser exemplarischen Vorgehensweise führen Sie einen Fehler in das Lernprogramm aus dem Artikel „Erste Schritte mit Data Factory“ und erfahren, wie Sie das Azure-Portal verwenden können, um den Fehler zu beheben.
+In dieser exemplarischen Vorgehensweise führen Sie einen Fehler in das Lernprogramm aus dem Artikel „Erste Schritte mit Data Factory“ und erfahren, wie Sie das klassische Azure-Portal verwenden können, um den Fehler zu beheben.
 
 ### Voraussetzungen
 1. Schließen Sie das Lernprogramm im Artikel [Erste Schritte mit Azure Data Factory][adfgetstarted] ab.
@@ -177,14 +179,14 @@ In dieser exemplarischen Vorgehensweise führen Sie einen Fehler in das Lernprog
 4. Führen Sie den folgenden Befehl in **Azure PowerShell** aus, um den aktiven Zeitraum für die Pipeline zu aktualisieren, sodass sie versucht, Daten in die Tabelle **emp** zu schreiben, die nicht mehr existiert.
 
          
-		Set-AzureDataFactoryPipelineActivePeriod -ResourceGroupName ADFTutorialResourceGroup -DataFactoryName ADFTutorialDataFactory -StartDateTime 2014-09-29 –EndDateTime 2014-09-30 –Name ADFTutorialPipeline
+		Set-AzureRmDataFactoryPipelineActivePeriod -ResourceGroupName ADFTutorialResourceGroup -DataFactoryName ADFTutorialDataFactory -StartDateTime 2014-09-29 –EndDateTime 2014-09-30 –Name ADFTutorialPipeline
 	
 	Ersetzen Sie den Wert **StartDateTime** durch den aktuellen Tag und den Wert **EndDateTime** durch den nächsten Tag.
 
 
-### Verwenden des Azure-Vorschauportals, um den Fehler zu beheben
+### Verwenden des Azure-Portals, um den Fehler zu beheben
 
-1.	Melden Sie sich beim [Azure-Vorschauportal][azure-preview-portal] an. 
+1.	Melden Sie sich beim [Azure-Portal][azure-portal] an. 
 2.	Klicken Sie im **Startmenü** auf **ADFTutorialDataFactory**. Wenn Sie den Data Factory-Link nicht im **Startmenü** sehen, klicken Sie auf den Hub **DURCHSUCHEN** und dann auf **Alles**. Klicken Sie auf dem Blatt **Durchsuchen** auf **Data Factorys…** und dann auf **ADFTutorialDataFactory**.
 3.	Wie Sie sehen, wird auf der Kachel **Datasets** die Option **Mit Fehlern** angezeigt. Klicken Sie auf **Mit Fehlern**. Das Blatt **Datasets mit Fehlern** sollte nun angezeigt werden.
 
@@ -214,17 +216,12 @@ Um dieses Problem zu beheben, erstellen Sie die Tabelle **emp** mit dem SQL-Skri
 
 ### Verwenden von Azure PowerShell-Cmdlets, um den Fehler zu beheben
 1.	Starten Sie **Azure PowerShell**. 
-2.	Wechseln Sie in den Modus **AzureResourceManager**, da Data Factory-Cmdlets nur in diesem Modus verfügbar sind.
+3. Führen Sie den Befehl „Get-AzureRmDataFactorySlice“ aus, um die Slices und deren Status anzuzeigen. Ein Slice mit dem Status "Fehler" sollte angezeigt werden.	
 
          
-		switch-azuremode AzureResourceManager
+		Get-AzureRmDataFactorySlice -ResourceGroupName ADFTutorialResourceGroup -DataFactoryName ADFTutorialDataFactory -TableName EmpSQLTable -StartDateTime 2014-10-15
 
-3. Führen Sie den Befehl Get-AzureDataFactorySlice aus, um die Slices und deren Status anzuzeigen. Ein Slice mit dem Status "Fehler" sollte angezeigt werden.
-
-         
-		Get-AzureDataFactorySlice -ResourceGroupName ADFTutorialResourceGroup -DataFactoryName ADFTutorialDataFactory -TableName EmpSQLTable -StartDateTime 2014-10-15
-
-	Ersetzen Sie **StartDateTime** durch den für **Set-AzureDataFactoryPipelineActivePeriod** festgelegten "StartDateTime"-Wert.
+	Ersetzen Sie **StartDateTime** durch den für **Set-AzureRmDataFactoryPipelineActivePeriod** festgelegten StartDateTime-Wert.
 
 		ResourceGroupName 		: ADFTutorialResourceGroup
 		DataFactoryName   		: ADFTutorialDataFactory
@@ -237,9 +234,9 @@ Um dieses Problem zu beheben, erstellen Sie die Tabelle **emp** mit dem SQL-Skri
 		LongRetryCount    		: 0
 
 	Beachten Sie in der Ausgabe die **Startzeit** für den Problemslice (den Slice mit dem **Status**: **Fehler**). 
-4. Führen Sie nun das Cmdlet **Get-AzureDataFactoryRun** zum Abrufen von Details zur Aktivitätsausführung für den Slice aus.
+4. Führen Sie nun das Cmdlet **Get-AzureRmDataFactoryRun** zum Abrufen von Details zur Aktivitätsausführung für den Slice aus.
          
-		Get-AzureDataFactoryRun -ResourceGroupName ADFTutorialResourceGroup -DataFactoryName ADFTutorialDataFactory -TableName EmpSQLTable -StartDateTime "10/15/2014 4:00:00 PM"
+		Get-AzureRmDataFactoryRun -ResourceGroupName ADFTutorialResourceGroup -DataFactoryName ADFTutorialDataFactory -TableName EmpSQLTable -StartDateTime "10/15/2014 4:00:00 PM"
 
 	Der Wert von **StartDateTime** ist die Startzeit für den Fehler-/Problemslice, den Sie im vorherigen Schritt notiert haben. Datum und Uhrzeit sollte in doppelte Anführungszeichen eingeschlossen werden.
 5. Die Ausgabe mit Einzelheiten zu dem Fehler (ähnlich der folgenden) sollte angezeigt werden:
@@ -267,10 +264,10 @@ Um dieses Problem zu beheben, erstellen Sie die Tabelle **emp** mit dem SQL-Skri
  
 
 ## <a name="pighivewalkthrough"></a> Exemplarische Vorgehensweise: Beheben eines Fehlers mit Hive/Pig-Verarbeitung
-Diese exemplarische Vorgehensweise enthält Schritte zum Beheben der Fehler mit Hive/Pig-Verarbeitung mithilfe des Azure-Vorschauportals und Azure PowerShell.
+Diese exemplarische Vorgehensweise enthält Schritte zum Beheben der Fehler mit Hive/Pig-Verarbeitung mithilfe des Azure-Portals und Azure PowerShell.
 
 
-### Exemplarische Vorgehensweise: Verwenden des Azure-Portals zur Problembehandlung bei der Pig/Hive-Verarbeitung
+### Exemplarische Vorgehensweise: Verwenden des klassischen Azure-Portals zur Problembehandlung bei der Pig/Hive-Verarbeitung
 In diesem Szenario ist Datensatz aufgrund eines Fehlers in der Hive-Verarbeitung auf einen HDInsight-Cluster in einem Fehlerzustand.
 
 1. Klicken Sie auf der Startseite von **DATA FACTORY** auf der Kachel **Datasets** auf **Mit Fehlern**.
@@ -296,17 +293,12 @@ In diesem Szenario ist Datensatz aufgrund eines Fehlers in der Hive-Verarbeitung
     
 ### Exemplarische Vorgehensweise: Verwenden von Azure PowerShell zur Problembehandlung bei der Pig/Hive-Verarbeitung
 1.	Starten Sie **Azure PowerShell**. 
-2.	Wechseln Sie in den Modus **AzureResourceManager**, da Data Factory-Cmdlets nur in diesem Modus verfügbar sind.
+3. Führen Sie den Befehl „Get-AzureRmDataFactorySlice“ aus, um die Slices und deren Status anzuzeigen. Ein Slice mit dem Status "Fehler" sollte angezeigt werden.	
 
          
-		switch-azuremode AzureResourceManager
+		Get-AzureRmDataFactorySlice -ResourceGroupName ADF -DataFactoryName LogProcessingFactory -TableName EnrichedGameEventsTable -StartDateTime 2014-05-04 20:00:00
 
-3. Führen Sie den Befehl Get-AzureDataFactorySlice aus, um die Slices und deren Status anzuzeigen. Ein Slice mit dem Status "Fehler" sollte angezeigt werden.
-
-         
-		Get-AzureDataFactorySlice -ResourceGroupName ADF -DataFactoryName LogProcessingFactory -TableName EnrichedGameEventsTable -StartDateTime 2014-05-04 20:00:00
-
-	Ersetzen Sie **StartDateTime** durch den für **Set-AzureDataFactoryPipelineActivePeriod** festgelegten "StartDateTime"-Wert.
+	Ersetzen Sie **StartDateTime** durch den für **Set-AzureRmDataFactoryPipelineActivePeriod** festgelegten StartDateTime-Wert.
 
 		ResourceGroupName : ADF
 		DataFactoryName   : LogProcessingFactory
@@ -320,9 +312,9 @@ In diesem Szenario ist Datensatz aufgrund eines Fehlers in der Hive-Verarbeitung
 
 
 	Beachten Sie in der Ausgabe die **Startzeit** für den Problemslice (den Slice mit dem **Status**: **Fehler**). 
-4. Führen Sie nun das Cmdlet **Get-AzureDataFactoryRun** zum Abrufen von Details zur Aktivitätsausführung für den Slice aus.
+4. Führen Sie nun das Cmdlet **Get-AzureRmDataFactoryRun** zum Abrufen von Details zur Aktivitätsausführung für den Slice aus.
          
-		Get-AzureDataFactoryRun -ResourceGroupName ADF -DataFactoryName LogProcessingFactory -TableName EnrichedGameEventsTable -StartDateTime "5/5/2014 12:00:00 AM"
+		Get-AzureRmDataFactoryRun -ResourceGroupName ADF -DataFactoryName LogProcessingFactory -TableName EnrichedGameEventsTable -StartDateTime "5/5/2014 12:00:00 AM"
 
 	Der Wert von **StartDateTime** ist die Startzeit für den Fehler-/Problemslice, den Sie im vorherigen Schritt notiert haben. Datum und Uhrzeit sollte in doppelte Anführungszeichen eingeschlossen werden.
 5. Die Ausgabe mit Einzelheiten zu dem Fehler (ähnlich der folgenden) sollte angezeigt werden:
@@ -346,7 +338,7 @@ In diesem Szenario ist Datensatz aufgrund eines Fehlers in der Hive-Verarbeitung
 		PipelineName        : EnrichGameLogsPipeline
 		Type                :
 
-6. Sie können das Cmdlet **Save-AzureDataFactoryLog** mit dem ID-Wert ausführen, den Sie in der oben genannten Ausgabe finden, und die Protokolldateien mithilfe der Option **-DownloadLogs** für das Cmdlet herunterladen.
+6. Sie können das Cmdlet **Save-AzureRmDataFactoryLog** mit dem ID-Wert ausführen, den Sie in der oben genannten Ausgabe finden, und die Protokolldateien mithilfe der Option **-DownloadLogs** für das Cmdlet herunterladen.
 
 
 
@@ -359,7 +351,7 @@ In diesem Szenario ist Datensatz aufgrund eines Fehlers in der Hive-Verarbeitung
 [cmdlet-reference]: http://go.microsoft.com/fwlink/?LinkId=517456
 [json-scripting-reference]: http://go.microsoft.com/fwlink/?LinkId=516971
 
-[azure-preview-portal]: https://portal.azure.com/
+[azure-portal]: https://portal.azure.com/
 
 [image-data-factory-troubleshoot-with-error-link]: ./media/data-factory-troubleshoot/DataFactoryWithErrorLink.png
 
@@ -382,4 +374,4 @@ In diesem Szenario ist Datensatz aufgrund eines Fehlers in der Hive-Verarbeitung
 [image-data-factory-troubleshoot-activity-run-details]: ./media/data-factory-troubleshoot/Walkthrough2ActivityRunDetails.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

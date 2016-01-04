@@ -13,13 +13,13 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="09/10/2015"   
+	ms.date="12/05/2015"   
 	ms.author="juliako"/>
 
 
 # Ausführen von Aufgaben zur statischen Paketerstellung mithilfe von Azure Media Packager
 
->[AZURE.NOTE]Das Ende der Nutzung von Windows Azure Media Packager und Windows Azure Media Encryptor ist am 1. März 2016 erreicht. Ab diesem Zeitpunkt sind diese Komponenten nicht mehr verfügbar. Die Funktionen zur Formatkonvertierung und Verschlüsselung stehen dann über die dynamische Paketerstellung und die dynamische Verschlüsselung zur Verfügung.
+>[AZURE.NOTE]Das Ende der Nutzung von Microsoft Azure Media Packager und Microsoft Azure Media Encryptor ist am 1. März 2016 erreicht. Ab diesem Zeitpunkt sind diese Komponenten nicht mehr verfügbar. Die Funktionen zur Formatkonvertierung und Verschlüsselung stehen dann über die dynamische Paketerstellung und die dynamische Verschlüsselung zur Verfügung.
 
 ## Übersicht
 
@@ -1447,4 +1447,4 @@ Media Services bietet jetzt einen Dienst für die Bereitstellung von Microsoft P
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

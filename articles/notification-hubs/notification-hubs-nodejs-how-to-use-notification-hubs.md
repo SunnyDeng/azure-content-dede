@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="javascript"
 	ms.topic="article"
-	ms.date="09/24/2015"
+	ms.date="12/10/2015"
 	ms.author="wesmc"/>
 
 # Verwenden von Notification Hubs mit Node.js
@@ -67,9 +67,9 @@ Das **NotificationHubService**-Objekt ermöglicht Ihnen das Arbeiten mit Notific
 
     var notificationHubService = azure.createNotificationHubService('hubname','connectionstring');
 
-Führen Sie die folgenden Schritte im Azure-Verwaltungsportal durch, um den Wert für **connectionstring** zu erhalten:
+Führen Sie die folgenden Schritte im [klassischen Azure-Portal] durch, um den Wert für **connectionstring** zu erhalten:
 
-1. Wählen Sie im Azure-Verwaltungsportal **Service Bus** aus, und wählen Sie anschließend den Namespace aus, der das Notification Hub enthält.
+1. Wählen Sie im [klassischen Azure-Portal] **Service Bus** aus, und wählen Sie anschließend den Namespace aus, der den Notification Hub enthält.
 
 2. Klicken Sie auf **NOTIFICATION HUBS** und wählen Sie das gewünschte Hub aus.
 
@@ -197,7 +197,7 @@ Nachdem Sie nun mit der Verwendung von Notification Hubs grundlegend vertraut si
   [How to: Delete Topics and Subscriptions]: #How_to_Delete_Topics_and_Subscriptions
   [1]: #Next_Steps
   [Topic Concepts]: .media/notification-hubs-nodejs-how-to-use-notification-hubs/sb-topics-01.png
-  [Azure Management Portal]: http://manage.windowsazure.com
+  [klassischen Azure-Portal]: http://manage.windowsazure.com
   [image]: .media/notification-hubs-nodejs-how-to-use-notification-hubs/sb-queues-03.png
   [2]: .media/notification-hubs-nodejs-how-to-use-notification-hubs/sb-queues-04.png
   [3]: .media/notification-hubs-nodejs-how-to-use-notification-hubs/sb-queues-05.png
@@ -213,4 +213,4 @@ Nachdem Sie nun mit der Verwendung von Notification Hubs grundlegend vertraut si
   [Node.js Cloud Service with Storage]: /develop/nodejs/tutorials/web-app-with-storage/
   [Node.js Web Application with Storage]: /develop/nodejs/tutorials/web-site-with-storage/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

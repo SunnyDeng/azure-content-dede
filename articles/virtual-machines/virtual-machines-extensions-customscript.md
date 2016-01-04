@@ -23,7 +23,8 @@ Der vorliegende Artikel bietet einen Überblick über die Verwendung der benutze
 
 Mit den Erweiterungen virtueller Computer, die von Microsoft und vertrauenswürdigen Drittanbietern entwickelt werden, wird die Funktionalität des virtuellen Computers erweitert. Eine Übersicht über die Erweiterungen virtueller Computer finden Sie unter [Erweiterungen virtueller Azure-Computer und Features](virtual-machines-extensions-features.md).
 
-Link:[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](virtual-machines-extensions-customscript%20-with%20template.md).
+Link:
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] [Ressourcen-Manager-Modell](virtual-machines-extensions-customscript%20-with%20template.md).
 
 
 ## Übersicht über benutzerdefinierte Skripterweiterungen
@@ -71,9 +72,9 @@ Dieses Szenario zeigt, wie ein Nicht-Standardspeicher verwendet wird, entweder i
       Get-AzureVM -Name $name -ServiceName $servicename | Set-AzureVMCustomScriptExtension -StorageAccountName $storageaccount -StorageAccountKey $storagekey -ContainerName $container -FileUri $fileUrl1, $fileUrl2 -Run 'file.ps1' | Update-AzureVM
 
 
-### Hinzufügen einer benutzerdefinierten Skripterweiterung aus dem Portal
+### Hinzufügen einer benutzerdefinierten Skripterweiterung aus dem Azure-Portal
 
-Navigieren Sie im <a href="https://portal.azure.com/ " target="_blank">Azure-Vorschauportal</a> zum virtuellen Computer, und fügen Sie die Erweiterung hinzu, indem Sie die auszuführende Skriptdatei angeben.
+Navigieren Sie im <a href="https://portal.azure.com/ " target="_blank">Azure-Portal</a> zum virtuellen Computer, und fügen Sie die Erweiterung hinzu, indem Sie die auszuführende Skriptdatei angeben.
 
   ![][5]
 
@@ -91,4 +92,5 @@ Um Informationen zur Verwendung der benutzerdefinierten Skripterweiterung mit Vo
 <!--Image references-->
 [5]: ./media/virtual-machines-extensions-customscript/addcse.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->
+

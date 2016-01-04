@@ -1,16 +1,17 @@
 <properties
    pageTitle="Häufig gestellte Fragen zu Azure Backup | Microsoft Azure"
-   description="Häufig gestellte Fragen zum Azure Backup-Dienst"
+   description="Häufig gestellte Fragen zur Azure Backup-Lösung – Der Backup-Agent, Sicherung und Aufbewahrung sowie Wiederherstellung, Sicherheit und andere wiederkehrende Fragen zum Azure-Backup-Dienst."
    services="backup"
    documentationCenter=""
    authors="Jim-Parker"
    manager="shreeshd"
-   editor=""/>
+   editor=""
+   keywords="Backup-Lösung; Backup-Dienst"/>
 
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/07/2015" ms.author="trinadhk";"giridham"; "arunak"; "jimpark"; "aashishr"/>
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/17/2015" ms.author="trinadhk";"giridham"; "arunak"; "jimpark"; "aashishr"/>
 
-# Azure Backup – Häufig gestellte Fragen
-Im Folgenden finden Sie eine Liste häufig gestellter Fragen zu Azure Backup. Weitere Fragen zu Azure Backup können im [Diskussionsforum](https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazureonlinebackup) gestellt werden. Ein Mitglied der Community hilft Ihnen dabei, Ihre Antworten zu erhalten. Wenn eine Frage häufiger gestellt wird, fügen wir sie diesem Artikel hinzu, damit sie schnell und einfach gefunden werden kann.
+# Azure Backup-Dienst – FAQ
+Im Folgenden finden Sie eine Liste häufig gestellter Fragen zu Azure Backup. Weitere Fragen zur Azure Backup-Lösung können Sie im [Diskussionsforum](https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazureonlinebackup) stellen. Ein Mitglied der Community hilft Ihnen dabei, Ihre Antworten zu erhalten. Wenn eine Frage häufiger gestellt wird, fügen wir sie diesem Artikel hinzu, damit sie schnell und einfach gefunden werden kann.
 
 ## Installation und Konfiguration
 **F1. Welche Betriebssysteme werden für die Sicherung in Azure mithilfe von Azure Backup unterstützt?** <br/> A1. Folgende Betriebssysteme werden von Azure Backup unterstützt:
@@ -175,4 +176,4 @@ Die Größe der Datenquelle wird wie folgt gemessen.
 
 Sobald die Sicherungen erfolgreich mit dem neuen Cachespeicherort ausgeführt werden, können Sie den ursprünglichen Cacheordner entfernen.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

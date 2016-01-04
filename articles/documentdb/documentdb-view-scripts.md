@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Anzeigen von gespeicherten Prozeduren, Triggern und benutzerdefinierten Funktionen mit dem DocumentDB-Skript-Explorer | Microsoft Azure"
-	description="Erfahren Sie mehr über den DocumentDB-Skript-Explorer, ein Azure-Vorschauportaltool, das Ihnen die Anzeige von serverseitigen DocumentDB-Programmierartefakten ermöglicht, z. B. gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen."
+	description="Erfahren Sie mehr über den DocumentDB-Skript-Explorer, ein Azure-Portaltool, das Ihnen die Anzeige von serverseitigen DocumentDB-Programmierartefakten ermöglicht, z. B. gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen."
 	services="documentdb"
 	authors="AndrewHoh"
 	manager="jhubbard"
@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article" 
-	ms.date="09/02/2015"
+	ms.date="12/01/2015"
 	ms.author="anhoh"/>
 
 # Anzeigen, Bearbeiten und Erstellen von gespeicherten Prozeduren, Triggern und benutzerdefinierten Funktionen mit dem DocumentDB-Skript-Explorer
 
-Dieser Artikel bietet eine Übersicht über den [Microsoft Azure DocumentDB](http://azure.microsoft.com/services/documentdb/)-Skript-Explorer, ein Azure-Vorschauportaltool, das Ihnen die Anzeige von serverseitigen DocumentDB-Programmierartefakten ermöglicht, z. B. gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen. Weitere Informationen über die serverseitige DocumentDB-Programmierung finden Sie [hier](documentdb-programming.md).
+Dieser Artikel bietet eine Übersicht über den [Microsoft Azure DocumentDB](http://azure.microsoft.com/services/documentdb/)-Skript-Explorer, ein Azure-Portaltool, das Ihnen die Anzeige von serverseitigen DocumentDB-Programmierartefakten ermöglicht, z. B. gespeicherte Prozeduren, Trigger und benutzerdefinierte Funktionen. Weitere Informationen über die serverseitige DocumentDB-Programmierung finden Sie [hier](documentdb-programming.md).
 
 Nach Abschluss dieses Lernprogramms können Sie die folgenden Fragen beantworten:
 
@@ -106,4 +106,4 @@ Mit dem Skript-Explorer können Sie problemlos CRUD-Vorgänge an serverseitigen 
 Um weitere Informationen zu DocumentDB zu erhalten, klicken Sie [hier](http://azure.com/docdb).
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="multiple"
    ms.workload="na"
-   ms.date="10/30/2015"
+   ms.date="11/18/2015"
    ms.author="tomfitz"/>
 
 # Authentifizieren eines Dienstprinzipals mit dem Azure-Ressourcen-Manager
@@ -22,7 +22,7 @@ In diesem Thema erfahren Sie, wie Sie einem Dienstprinzipal (z. B. einem automat
 
 Es wird ebenfalls erläutert, wie die Authentifizierung entweder mithilfe eines Benutzernamens und Kennworts oder mit einem Zertifikat erfolgt.
 
-Sie können entweder Azure PowerShell oder die Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows verwenden. Wenn Azure PowerShell noch nicht installiert ist, lesen Sie [Installieren und Konfigurieren von Azure PowerShell](./powershell-install-configure.md). Wenn noch keine Azure-Befehlszeilenschnittstelle installiert ist, lesen [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](xplat-cli-install.md).
+Sie können entweder Azure PowerShell oder die Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows verwenden. Wenn Azure PowerShell noch nicht installiert ist, lesen Sie [Installieren und Konfigurieren von Azure PowerShell](./powershell-install-configure.md). Wenn noch keine Azure-Befehlszeilenschnittstelle installiert ist, lesen [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](xplat-cli-install.md). Informationen über die Verwendung des Portals zum Ausführen dieser Schritte finden Sie unter [Erstellen einer Active Directory-Anwendung und eines Dienstprinzipals mithilfe des Portals](resource-group-create-service-principal-portal.md)
 
 ## Konzepte
 1. Azure Active Directory (AAD): Dies ist ein Clouddienst zur Identitäts- und Zugriffsverwaltung. Weitere Informationen finden Sie unter [What is Azure Active Directory?](active-directory/active-directory-whatis.md) (Was ist Azure Active Directory?).
@@ -78,7 +78,7 @@ In diesem Abschnitt führen Sie folgende Schritte aus: Erstellen eines Dienstpri
 
      Sie haben nun einen Dienstprinzipal im Verzeichnis erstellt. Dieser Dienstprinzipal verfügt jedoch noch nicht über Berechtigungen, und ihm wurde auch noch kein Bereich zugewiesen. Sie müssen dem Dienstprinzipal ausdrücklich die Berechtigungen zum Ausführen von Aktionen in einem bestimmten Bereich gewähren.
 
-3. Gewähren Sie dem Dienstprinzipal Berechtigungen für Ihr Abonnement. In diesem Beispiel wird dem Dienstprinzipal die Berechtigung zum Lesen aller Ressourcen im Abonnement gewährt. Geben Sie beim Parameter **ServicePrincipalName** entweder die **ApplicationId** oder die **IdentifierUris** an, die Sie beim Erstellen der Anwendung verwendet haben. Weitere Informationen zur rollenbasierten Zugriffssteuerung finden Sie unter [Managing and Auditing Access to Resources](resource-group-rbac.md) (Verwalten und Überwachen des Zugriffs auf Ressourcen).
+3. Gewähren Sie dem Dienstprinzipal Berechtigungen für Ihr Abonnement. In diesem Beispiel wird dem Dienstprinzipal die Berechtigung zum Lesen aller Ressourcen im Abonnement gewährt. Geben Sie beim **ServicePrincipalName**-Parameter entweder die **ApplicationId** oder die **IdentifierUris** an, die Sie beim Erstellen der Anwendung verwendet haben. Weitere Informationen zur rollenbasierten Zugriffssteuerung finden Sie unter [Managing and Auditing Access to Resources](resource-group-rbac.md) (Verwalten und Überwachen des Zugriffs auf Ressourcen).
 
         PS C:\> New-AzureRmRoleAssignment -RoleDefinitionName Reader -ServicePrincipalName $azureAdApplication.ApplicationId
 
@@ -88,7 +88,7 @@ In diesem Abschnitt führen Sie folgende Schritte aus: Erstellen eines Dienstpri
 
      Wenn die Rollenzuweisung in einem anderen Abonnement als dem aktuell ausgewählten erstellt wurde, können Sie einen der Parameter **SubscriptoinId** oder **SubscriptionName** angeben, um ein anderes Abonnement abzurufen.
 
-5. Erstellen Sie ein neues **PSCredential**-Objekt, das Ihre Anmeldeinformationen enthält, indem Sie den Befehl **Get-Credential** ausführen.
+5. Um sich als Dienstprinzipal über PowerShell anzumelden, erstellen Sie ein neues **PSCredential**-Objekt, das Ihre Anmeldeinformationen enthält, indem Sie den Befehl **Get-Credential** ausführen.
 
         PS C:\> $creds = Get-Credential
 
@@ -98,10 +98,9 @@ In diesem Abschnitt führen Sie folgende Schritte aus: Erstellen eines Dienstpri
 
      Verwenden Sie als Benutzernamen die **ApplicationId** oder die **IdentifierUris**, die Sie beim Erstellen der Anwendung verwendet haben. Verwenden Sie das Kennwort, das Sie beim Erstellen des Kontos angegeben haben.
 
-6. Verwenden Sie die Anmeldeinformationen, die Sie als Eingabe für das Cmdlet **Add-AzureAccount** verwendet haben, von welchem der Dienstprinzipal angemeldet wird:
+     Verwenden Sie die Anmeldeinformationen, die Sie als Eingabe für das Cmdlet **Login-AzureRmAccount** verwendet haben, von welchem der Dienstprinzipal angemeldet wird:
 
         PS C:\> Login-AzureRmAccount -Credential $creds -ServicePrincipal -Tenant $subscription.TenantId
-        
         Environment           : AzureCloud
         Account               : {guid}
         Tenant                : {guid}
@@ -110,9 +109,9 @@ In diesem Abschnitt führen Sie folgende Schritte aus: Erstellen eines Dienstpri
 
      Die Authentifizierung des Dienstprinzipals für die ADD-Anwendung, die Sie erstellt haben, ist hiermit abgeschlossen.
 
-7. Zur Authentifizierung aus einer Anwendung heraus fügen Sie folgenden .NET-Code ein. Nach dem Abrufen des Tokens können Sie auf Ressourcen im Abonnement zugreifen.
+6. Zur Authentifizierung aus einer Anwendung heraus fügen Sie folgenden .NET-Code ein. Nach dem Abrufen des Tokens können Sie auf Ressourcen im Abonnement zugreifen.
 
-        public static string GetAToken()
+        public static string GetAccessToken()
         {
           var authenticationContext = new AuthenticationContext("https://login.windows.net/{tenantId or tenant name}");  
           var credential = new ClientCredential(clientId: "{application id}", clientSecret: "{application password}");
@@ -143,7 +142,7 @@ Zunächst müssen Sie einige Werte in PowerShell festlegen, die Sie später beim
 
 1. Unabhängig davon, welches Verfahren Sie verwenden möchten, erstellen Sie ein X509Certificate-Objekt aus Ihrem Zertifikat, und rufen Sie den Schlüsselwert ab. Verwenden Sie den Pfad zu Ihrem Zertifikat und das Kennwort für das Zertifikat.
 
-        $cert = New-Object System.Security.Cryptography.X509Certificates.X509Certificate("C:\certificates\examplecert.pfx", "yourpassword")
+        $cert = New-Object -TypeName System.Security.Cryptography.X509Certificates.X509Certificate -ArgumentList @("C:\certificates\examplecert.pfx", "yourpassword")
         $keyValue = [System.Convert]::ToBase64String($cert.GetRawCertData())
 
 2. Wenn Sie Schlüsselanmeldeinformationen verwenden, erstellen Sie das Objekt für diese Informationen, und legen Sie den Wert für dieses Objekt auf den `$keyValue`-Wert aus dem vorherigen Schritt fest.
@@ -202,7 +201,7 @@ Zunächst müssen Sie einige Werte in PowerShell festlegen, die Sie später beim
 
     Sie haben nun einen Dienstprinzipal im Verzeichnis erstellt. Dieser Dienstprinzipal verfügt jedoch noch nicht über Berechtigungen, und ihm wurde auch noch kein Bereich zugewiesen. Sie müssen dem Dienstprinzipal ausdrücklich die Berechtigungen zum Ausführen von Aktionen in einem bestimmten Bereich gewähren.
 
-5. Gewähren Sie dem Dienstprinzipal Berechtigungen für Ihr Abonnement. In diesem Beispiel wird dem Dienstprinzipal die Berechtigung zum Lesen aller Ressourcen im Abonnement gewährt. Geben Sie beim Parameter **ServicePrincipalName** entweder die **ApplicationId** oder die **IdentifierUris** an, die Sie beim Erstellen der Anwendung verwendet haben. Weitere Informationen zur rollenbasierten Zugriffssteuerung finden Sie unter [Managing and Auditing Access to Resources](resource-group-rbac.md) (Verwalten und Überwachen des Zugriffs auf Ressourcen).
+5. Gewähren Sie dem Dienstprinzipal Berechtigungen für Ihr Abonnement. In diesem Beispiel wird dem Dienstprinzipal die Berechtigung zum Lesen aller Ressourcen im Abonnement gewährt. Geben Sie beim **ServicePrincipalName**-Parameter entweder die **ApplicationId** oder die **IdentifierUris** an, die Sie beim Erstellen der Anwendung verwendet haben. Weitere Informationen zur rollenbasierten Zugriffssteuerung finden Sie unter [Managing and Auditing Access to Resources](resource-group-rbac.md) (Verwalten und Überwachen des Zugriffs auf Ressourcen).
 
         PS C:\> New-AzureRmRoleAssignment -RoleDefinitionName Reader -ServicePrincipalName $azureAdApplication.ApplicationId
 
@@ -275,7 +274,7 @@ Zunächst wird ein Dienstprinzipal erstellt. Dazu muss im Verzeichnis eine Anwen
 
     Sie haben nun einen Dienstprinzipal im Verzeichnis erstellt. Dieser Dienstprinzipal verfügt jedoch noch nicht über Berechtigungen, und ihm wurde auch noch kein Bereich zugewiesen. Sie müssen dem Dienstprinzipal ausdrücklich die Berechtigungen zum Ausführen von Aktionen in einem bestimmten Bereich gewähren.
 
-4. Gewähren Sie dem Dienstprinzipal Berechtigungen für Ihr Abonnement. In diesem Beispiel wird dem Dienstprinzipal die Berechtigung zum Lesen aller Ressourcen im Abonnement gewährt. Geben Sie beim Parameter **ServicePrincipalName** entweder die **ApplicationId** oder die **IdentifierUris** an, die Sie beim Erstellen der Anwendung verwendet haben. Weitere Informationen zur rollenbasierten Zugriffssteuerung finden Sie unter [Managing and Auditing Access to Resources](resource-group-rbac.md) (Verwalten und Überwachen des Zugriffs auf Ressourcen).
+4. Gewähren Sie dem Dienstprinzipal Berechtigungen für Ihr Abonnement. In diesem Beispiel wird dem Dienstprinzipal die Berechtigung zum Lesen aller Ressourcen im Abonnement gewährt. Geben Sie beim **ServicePrincipalName**-Parameter entweder die **ApplicationId** oder die **IdentifierUris** an, die Sie beim Erstellen der Anwendung verwendet haben. Weitere Informationen zur rollenbasierten Zugriffssteuerung finden Sie unter [Managing and Auditing Access to Resources](resource-group-rbac.md) (Verwalten und Überwachen des Zugriffs auf Ressourcen).
 
         azure role assignment create --objectId 47193a0a-63e4-46bd-9bee-6a9f6f9c03cb -o Reader -c /subscriptions/{subscriptionId}/
 
@@ -289,9 +288,23 @@ Zunächst wird ein Dienstprinzipal erstellt. Dazu muss im Verzeichnis eine Anwen
 
     Die Authentifizierung des Dienstprinzipals für die ADD-Anwendung, die Sie erstellt haben, ist hiermit abgeschlossen.
 
+## Authentifizieren des Dienstprinzipals mit einem Zertifikat – Azure CLI
+
+In diesem Abschnitt führen Sie die Schritte zum Erstellen eines Dienstprinzipals für eine Azure Active Directory-Anwendung aus, die ein Zertifikat zur Authentifizierung verwendet. In diesem Thema wird davon ausgegangen, dass ein Zertifikat für Sie ausgestellt wurde und dass Sie [OpenSSL](http://www.openssl.org/) installiert haben.
+
+1. Erstellen Sie eine **PEM**-Datei mit:
+
+        openssl.exe pkcs12 -in examplecert.pfx -out examplecert.pem -nodes
+
+2. Öffnen Sie die **PEM** Datei, und kopieren Sie die Zertifikatdaten.
+
+3. Erstellen Sie eine neue AAD-Anwendung durch Ausführen des Befehls **azure ad app create**, und geben Sie die Zertifikatdaten, die Sie im vorherigen Schritt kopiert haben, als Schlüsselwert an.
+
+        azure ad app create -n "<your application name>" --home-page "<https://YourApplicationHomePage>" -i "<https://YouApplicationUri>" --key-value <certificate data>
+
 ## Nächste Schritte
   
-- Eine Übersicht über die rollenbasierte Zugriffssteuerung finden Sie unter [Verwalten und Überwachen des Zugriffs auf Ressourcen](resource-group-rbac.md).  
+- Einen Überblick über die rollenbasierte Zugriffssteuerung finden Sie unter [Verwalten und Überwachen des Zugriffs auf Ressourcen](resource-group-rbac.md).  
 - Informationen zum Verwenden des Portals mit Dienstprinzipalen finden Sie unter [Erstellen eines neuen Azure-Dienstprinzipals mit dem Azure-Portal](./resource-group-create-service-principal-portal.md).  
 - Anleitungen für die Implementierung von Sicherheitseinstellungen mit dem Azure-Ressourcen-Manager finden Sie unter [Sicherheitsaspekte für Azure-Ressourcen-Manager](best-practices-resource-manager-security.md).
 
@@ -299,4 +312,4 @@ Zunächst wird ein Dienstprinzipal erstellt. Dazu muss im Verzeichnis eine Anwen
 <!-- Images. -->
 [1]: ./media/resource-group-authenticate-service-principal/arm-get-credential.png
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1217_2015-->

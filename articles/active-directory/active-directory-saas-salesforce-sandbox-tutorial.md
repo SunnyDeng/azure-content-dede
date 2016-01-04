@@ -68,7 +68,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![App-URL konfigurieren](./media/active-directory-saas-salesforce-sandbox-tutorial/IC781022.png "App-URL konfigurieren")
 
-4. Wenn Sie bereits einmaliges Anmelden für eine andere Instanz von Salesforce Sandbox in Ihrem Verzeichnis konfiguriert haben, müssen Sie die **Aussteller-URL** auf den gleichen Wert wie die **Anmelde-URL** konfigurieren. Das Feld **Aussteller-URL** wird angezeigt, wenn Sie das Kontrollkästchen **Erweiterte Einstellungen anzeigen** auf der Seite **App-URL konfigurieren** des Dialogfelds aktivieren.
+4. Wenn Sie bereits einmaliges Anmelden für eine andere Instanz von Salesforce Sandbox in Ihrem Verzeichnis konfiguriert haben, müssen Sie den **Bezeichner** auf den gleichen Wert wie die **Anmelde-URL** konfigurieren. Das Feld **Bezeichner** wird angezeigt, wenn Sie das Kontrollkästchen **Erweiterte Einstellungen anzeigen** auf der Seite **App-URL konfigurieren** des Dialogfelds aktivieren.
 
 4.  Klicken Sie auf der Seite **Einmaliges Anmelden konfigurieren um Salesforce Sandbox** auf **Zertifikat herunterladen**, und speichern Sie das Zertifikat auf Ihrem Computer.
 
@@ -106,7 +106,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
     9.  Wählen Sie für **Service Provider Initiated Request Binding** die Option **HTTP Post** aus.
     10. Klicken Sie auf **Speichern**.
 
-10. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
+10. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-salesforce-sandbox-tutorial/IC781028.png "Einmaliges Anmelden konfigurieren")
 
@@ -183,7 +183,7 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
 
     ![Benutzer zuweisen](./media/active-directory-saas-salesforce-sandbox-tutorial/IC769574.png "Benutzer zuweisen")
 
-3.  Wählen Sie den Testbenutzer aus, und klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen.
+3.  Wählen Sie den Testbenutzer aus, klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen.
 
     ![Ja](./media/active-directory-saas-salesforce-sandbox-tutorial/IC767830.png "Ja")
   
@@ -191,4 +191,4 @@ Nach 10 Minuten können Sie überprüfen, ob das Konto mit Salesforce Sandbox s
   
 Wenn Sie die Einstellungen für einmaliges Anmelden testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](https://msdn.microsoft.com/library/dn308586).
 
-<!----HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

@@ -23,7 +23,7 @@ In dieser Aufgabe definieren Sie die Strategie zur Hybrididentitätsübernahme f
 
 - [Ermitteln von Geschäftsanforderungen](active-directory-hybrid-identity-design-considerations-business-needs.md)
 - [Ermitteln der Anforderungen an die Verzeichnissynchronisierung](active-directory-hybrid-identity-design-considerations-directory-sync-requirements.md)
-- [Ermitteln der Anforderungen für die mehrstufige Authentifizierung](active-directory-hybrid-identity-design-considerations-multifactor-auth-requirements.md)
+- [Ermitteln der Anforderungen für die Multi-Factor Authentication](active-directory-hybrid-identity-design-considerations-multifactor-auth-requirements.md)
 
 ## Definieren der Strategie für Geschäftsanforderungen
 Die erste Aufgabe ist, die Geschäftsanforderungen der Organisation zu ermitteln. Dies kann sehr umfangreich sein, und Sie müssen darauf achten, sich auf das Wesentliche zu konzentrieren. Der Entwurf sollte zu Anfang einfach sein, jedoch planen Sie stets ein, dass er in der Zukunft leicht geändert werden kann. Für einfache und äußerst komplexe Entwürfe ist Azure Active Directory die Microsoft Identity-Plattform, die Office 365, Microsoft Online Services und cloudtaugliche Anwendungen unterstützt.
@@ -39,7 +39,7 @@ In der obigen Abbildung sind folgende Szenarien definiert:
 - **Synchronisiert**: Hierbei handelt es sich um Identitäten, die lokal vorhanden sind und in der Cloud. Mithilfe von Azure AD Connect werden diese Benutzer entweder erstellt oder mit vorhandenen Azure AD-Konten verknüpft. Das Kennworthash des Benutzers in der lokalen Umgebung wird mit der Cloud synchronisiert. Beim Synchronisieren ist allerdings Folgendes zu beachten: Wenn ein Benutzer in der lokalen Umgebung deaktiviert ist, kann es bis zu 3 Stunden dauern, bis der Kontostatus in Azure AD angezeigt wird. Dies liegt am Zeitintervall für die Synchronisierung.
 - **Im Verbund**: Diese Identitäten sind sowohl lokal als auch in der Cloud vorhanden. Mithilfe von Azure AD Connect werden diese Benutzer entweder erstellt oder mit vorhandenen Azure AD-Konten verknüpft.  
  
->[AZURE.NOTE]Weitere Informationen zu den Optionen für die Synchronisierung finden Sie unter [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](https://azure.microsoft.com/de-DE/documentation/articles/active-directory-aadconnect/).
+>[AZURE.NOTE]Weitere Informationen zu den Optionen für die Synchronisierung finden Sie unter [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
 Die folgende Tabelle hilft Ihnen bei der Bestimmung der Vor- und Nachteile der folgenden Strategien:
 
@@ -114,7 +114,7 @@ Wenn dies der Fall ist, sollte die einzelne Azure AD-Topologie mit mehreren Gesa
 - Wenn kein Postfach für den Benutzer vorhanden ist, kann jede Gesamtstruktur verwendet werden, um diese Werte beizutragen.
 - Wenn Sie ein verknüpftes Postfach haben, dann wird auch ein anderes Konto in einer anderen Gesamtstruktur für die Anmeldung verwendet.
 
->[AZURE.NOTE]Objekte, die sowohl lokal als auch in der Cloud vorhanden sind, werden über einen eindeutigen Bezeichner „verbunden“. Dieser eindeutige Bezeichner wird im Kontext der Verzeichnissynchronisierung als „SourceAnchor“ bezeichnet. Im Kontext des einmaligen Anmeldens wird er als „ImmutableId“ bezeichnet. In [Entwurfskonzepte für Azure AD Connect](https://azure.microsoft.com/de-DE/documentation/articles/active-directory-aadconnect-design-concepts/#sourceanchor) finden Sie weitere Überlegungen zur Verwendung von „SourceAnchor“.
+>[AZURE.NOTE]Objekte, die sowohl lokal als auch in der Cloud vorhanden sind, werden über einen eindeutigen Bezeichner „verbunden“. Dieser eindeutige Bezeichner wird im Kontext der Verzeichnissynchronisierung als „SourceAnchor“ bezeichnet. Im Kontext des einmaligen Anmeldens wird er als „ImmutableId“ bezeichnet. In [Entwurfskonzepte für Azure AD Connect](active-directory-aadconnect-design-concepts.md#sourceanchor) finden Sie weitere Überlegungen zur Verwendung von „SourceAnchor“.
 
 Wenn die obigen nicht zutreffen und Sie mehrere aktive Konten oder Postfächer haben, wählt Azure AD Connect eines von ihnen aus und ignoriert die anderen. Wenn Sie verknüpfte Postfächer, jedoch kein anderes Konto haben, werden diese Konten nicht in Azure AD exportiert, und dieser Benutzer wird nicht Mitglied einer Gruppe. Dies ist ein beabsichtigter Unterschied zur früheren Situation mit DirSync und soll diese Szenarien mit mehreren Gesamtstrukturen besser unterstützen. Ein Szenario mit mehreren Gesamtstrukturen ist in der folgenden Abbildung dargestellt.
  
@@ -153,7 +153,7 @@ Achten Sie darauf, dass Folgendes nicht unterstützt wird und nicht als Implemen
 
 >[AZURE.NOTE]Für den Fall, dass Ihre Organisation die Verbindung von Computern Ihres Netzwerks mit dem Internet einschränkt, werden in diesem Artikel die Endpunkte aufgeführt (FQDNs, IPv4- und IPv6-Adressbereiche), die Sie in Ihre Ausgangszulassungslisten und Zone vertrauenswürdiger Sites von Clientcomputern im Internet Explorer einbeziehen sollten, um sicherzustellen, dass Ihre Computer Office 365 erfolgreich verwenden können. Weitere Informationen finden Sie unter [URLs und IP-Adressbereiche von Office 365](https://support.office.com/article/Office-365-URLs-and-IP-address-ranges-8548a211-3fe7-47cb-abb1-355ea5aa88a2?ui=de-DE&rs=de-DE&ad=US).
 
-## Definieren der Strategie zur mehrstufigen Authentifizierung
+## Definieren der Multi-Factor Authentication-Strategie
 In dieser Aufgabe definieren Sie die Strategie der zu verwendenden mehrstufigen Authentifizierung. Azure Multi-Factor Authentication ist in zwei verschiedenen Versionen verfügbar. Eine ist cloudbasiert und die andere lokal basiert mit Einsatz des Azure MFA-Servers. Basierend auf der Auswertung, die Sie oben ausgeführt haben, können Sie die richtige Lösung für Ihre Strategie ermitteln. Bestimmen Sie mithilfe der folgenden Tabelle, welche Entwurfsoption für die Sicherheitsanforderungen Ihres Unternehmens optimal ist:
 
 Mehrstufige Entwurfsoptionen:
@@ -176,10 +176,10 @@ Selbst wenn Sie sich für eine Lösung für Ihre Strategie entschieden haben, m�
 | Azure AD und lokales AD mit Azure AD Connect mit Kennwortsynchronisierung | Beides |
 | Lokales AD | Multi-Factor Authentication-Server |
 
->[AZURE.NOTE]Sie sollten außerdem sicherstellen, dass die ausgewählte Entwurfsoption für die mehrstufige Authentifizierung die Features unterstützt, die für Ihren Entwurf erforderlich sind. Weitere Informationen finden Sie unter [Auswählen der richtigen mehrstufigen Sicherheitslösung](https://azure.microsoft.com/documentation/articles/multi-factor-authentication-get-started/#what-am-i-trying-to-secure).
+>[AZURE.NOTE]Sie sollten außerdem sicherstellen, dass die ausgewählte Entwurfsoption für die mehrstufige Authentifizierung die Features unterstützt, die für Ihren Entwurf erforderlich sind. Weitere Informationen finden Sie unter [Auswählen der richtigen mehrstufigen Sicherheitslösung](../multi-factor-authentication-get-started.md#what-am-i-trying-to-secure).
 
 ## Multi-Factor Authentication-Anbieter
-Multi-Factor Authentication ist standardmäßig für globale Administratoren verfügbar, die über einen Azure Active Directory-Mandanten verfügen. Wenn Sie jedoch die mehrstufige Authentifizierung für alle Benutzer verfügbar machen möchten und/oder wenn Sie möchten, dass die globalen Administratoren Features wie das Verwaltungsportal, benutzerdefinierte Grußformeln und Berichte nutzen können, müssen Sie einen Multi-Factor Authentication-Anbieter erwerben und konfigurieren.
+Multi-Factor Authentication ist standardmäßig für globale Administratoren verfügbar, die über einen Azure Active Directory-Mandanten verfügen. Wenn Sie jedoch Multi-Factor Authentication für alle Benutzer verfügbar machen möchten und/oder wenn Sie möchten, dass die globalen Administratoren Features wie das Verwaltungsportal, benutzerdefinierte Grußformeln und Berichte nutzen können, müssen Sie einen Multi-Factor Authentication-Anbieter erwerben und konfigurieren.
 
 >[AZURE.NOTE]Sie sollten außerdem sicherstellen, dass die ausgewählte Entwurfsoption für die mehrstufige Authentifizierung die Features unterstützt, die für Ihren Entwurf erforderlich sind.
 
@@ -187,6 +187,6 @@ Multi-Factor Authentication ist standardmäßig für globale Administratoren ver
 [Bestimmen der Datenschutzanforderungen](active-directory-hybrid-identity-design-considerations-dataprotection-requirements.md)
 
 ## Weitere Informationen
-[Überlegungen zum Entwurf – Übersicht](active-directory-hybrid-identity-design-considerations-directory-overview.md)
+[Überlegungen zum Entwurf – Übersicht](active-directory-hybrid-identity-design-considerations-overview.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

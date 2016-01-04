@@ -1,20 +1,20 @@
-<properties 
-	pageTitle="Erstellen von virtuellen Oracle Database-Computern im Azure-Portal | Microsoft Azure" 
-	description="Erfarhen Sie, wie Sie virtuelle Computer mit einer Oracle-Datenbank mit dem klassischen Bereitstellungsmodell und dem Azure-Vorschauportal erstellen." 
-	services="virtual-machines" 
-	authors="bbenz" 
+<properties
+	pageTitle="Erstellen von virtuellen Oracle Database-Computern im klassischen Azure-Portal | Microsoft Azure"
+	description="Erfahren Sie, wie Sie virtuelle Computer mit einer Oracle-Datenbank mit dem klassischen Bereitstellungsmodell und dem Azure-Portal erstellen."
+	services="virtual-machines"
+	authors="bbenz"
 	documentationCenter=""
 	tags="azure-service-management"/>
-	
-<tags 
-	ms.service="virtual-machines" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="Windows" 
-	ms.workload="infrastructure-services" 
-	ms.date="06/22/2015" 
+
+<tags
+	ms.service="virtual-machines"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="Windows"
+	ms.workload="infrastructure-services"
+	ms.date="06/22/2015"
 	ms.author="bbenz" />
-	
+
 #Erstellen eines virtuellen Oracle Database-Computers in Azure
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
@@ -176,9 +176,9 @@ Um Remoteverbindungen mit Ihrer Datenbank zuzulassen (z. B. für einen Clientco
 10. Klicken Sie auf **OK**.
 
 ##Aktivieren des Remotezugriffs auf Oracle Database Enterprise Manager
-Wenn Sie den Remotezugriff für Oracle Database Enterprise Manager aktivieren möchten, öffnen Sie Port 5500 in der Firewall, und erstellen Sie im Azure-Portal einen VM-Endpunkt für 5500. (Verwenden Sie dazu die weiter oben angegebenen Schritte für das Öffnen von Port 1521 und das Erstellen eines Endpunkts für 1521.) Öffnen Sie dann einen Browser mit der URL im Format `http://<<unique_domain_name>>:5500/em`, um Oracle Enterprise Manager auf dem Remotecomputer auszuführen.
+Wenn Sie den Remotezugriff für Oracle Database Enterprise Manager aktivieren möchten, öffnen Sie Port 5500 in der Firewall, und erstellen Sie im klassischen Azure-Portal einen VM-Endpunkt für 5500. (Verwenden Sie dazu die weiter oben angegebenen Schritte für das Öffnen von Port 1521 und das Erstellen eines Endpunkts für 1521.) Öffnen Sie dann einen Browser mit der URL im Format `http://<<unique_domain_name>>:5500/em`, um Oracle Enterprise Manager auf dem Remotecomputer auszuführen.
 
-> [AZURE.NOTE]Sie können den Wert für *<<unique\_domain\_name>>* im [Azure-Portal](https://ms.portal.azure.com/) festlegen, indem Sie auf **Virtuelle Computer** klicken und dann den virtuellen Computer auswählen, den Sie zum Ausführen von Oracle Database verwenden.
+> [AZURE.NOTE]Sie können den Wert für *\<\<unique\_domain\_name\>\>* im [klassischen Azure-Portal](https://ms.portal.azure.com/) festlegen, indem Sie auf **Virtuelle Computer** klicken und dann den virtuellen Computer auswählen, den Sie zum Ausführen von Oracle Database verwenden.
 
 ##Konfigurieren von Popular Options- und Advanced Options-Bündeln
 Wenn Sie das Bündel **Oracle Database with Popular Options** oder **Oracle Database with Advanced Options** verwenden, müssen Sie als Nächstes die Add-On-Funktionen in der Oracle-Installation konfigurieren. Anweisungen zum Einrichten dieser Funktionen unter Windows finden Sie in der Oracle-Dokumentation. Die Konfigurationen können je nach Anforderungen der einzelnen Komponenten stark variieren.
@@ -200,4 +200,4 @@ Nachdem Sie den virtuellen Computer eingerichtet und die Datenbank erstellt habe
 
 -	[Oracle Database 2 Day DBA 12c Release 1](http://docs.oracle.com/cd/E16655_01/server.121/e17643/toc.htm)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

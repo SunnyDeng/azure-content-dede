@@ -18,6 +18,8 @@
 
 # Debuggen einer API-App in Azure App Service
 
+[AZURE.INCLUDE [app-service-api-v2-note](../../includes/app-service-api-v2-note.md)]
+
 ## Übersicht
 
 In diesem Lernprogramm erfahren Sie, wie Sie ASP.NET-Web-API-Code debuggen, der zur Ausführung in einer [API-App](app-service-api-apps-why-best-platform.md) in [Azure App Service](../app-service/app-service-value-prop-what-is.md) konfiguriert ist. Sie debuggen den Code, während er lokal und remote in Azure ausgeführt wird.
@@ -136,4 +138,4 @@ In diesem Lernprogramm haben Sie erfahren, wie das Debuggen bei API-Apps erfolgt
 
 Weitere Informationen zur Problembehandlung finden Sie unter [Problembehandlung von Web-Apps in Azure App Service in Visual Studio](../app-service-web/web-sites-dotnet-troubleshoot-visual-studio.md). Da API-Apps Web-Apps sind, die über zusätzliche Features zum Hosten von Webdiensten verfügen, können Sie dieselben Debugging- und Problembehandlungstools für API-Apps verwenden, die Sie für Web-Apps nutzen.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

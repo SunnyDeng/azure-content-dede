@@ -53,7 +53,7 @@ Sie können jetzt die Anwendung ausführen.
 
 1.  Klicken Sie in Visual Studio mit der rechten Maustaste auf Ihre Projektmappe, und wählen Sie **Startprojekte festlegen** aus. Wählen Sie **Mehrere Startprojekte** aus, und wählen Sie dann die Aktion **Starten** für die Anwendungen **SimulatedDevice** und **SendCloudToDevice** aus.
 
-2.  Drücken Sie **F5**. Alle Anwendungen sollten gestartet werden. Wählen Sie das Fenster **SendCloudToDevice** aus, und drücken Sie eine Taste. Sie sehen, dass das simulierte Gerät eine Nachricht ausgibt, wenn die Datei hochgeladen wurde. Die Anwendung **SendCloudToDevice** zeigt den erfolgreichen Empfang des Feedbacks an. Sie können im [Azure-Vorschauportal] oder im Visual Studio Server-Explorer überprüfen, ob die Datei in Ihrem Speicherkonto vorhanden ist.
+2.  Drücken Sie **F5**. Alle Anwendungen sollten gestartet werden. Wählen Sie das Fenster **SendCloudToDevice** aus, und drücken Sie eine Taste. Sie sehen, dass das simulierte Gerät eine Nachricht ausgibt, wenn die Datei hochgeladen wurde. Die Anwendung **SendCloudToDevice** zeigt den erfolgreichen Empfang des Feedbacks an. Sie können im [Azure-Portal] oder in Visual Studio Server-Explorer überprüfen, ob die Datei in Ihrem Speicherkonto vorhanden ist.
 
   ![][50]
 
@@ -78,9 +78,9 @@ Weitere Informationen zu IoT Hub:
 
 <!-- Links -->
 
-[Send Cloud-to-Device messages with IoT Hub]: iot-hub-csharp-csharp-c2d.md
+[Senden von Cloud-zu-Gerät-Nachrichten mit IoT Hub]: iot-hub-csharp-csharp-c2d.md
 
-[Azure-Vorschauportal]: https://portal.azure.com/
+[Azure-Portal]: https://portal.azure.com/
 
 [Azure Data Factory]: https://azure.microsoft.com/de-DE/documentation/services/data-factory/
 [Hadoop]: https://azure.microsoft.com/de-DE/documentation/services/hdinsight/
@@ -98,4 +98,4 @@ Weitere Informationen zu IoT Hub:
 [Supported devices]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/tested_configurations.md
 [Azure IoT Developer Center]: http://www.azure.com/develop/iot
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

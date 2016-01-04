@@ -142,6 +142,6 @@ Wenn Sie in Szenario 2 und 3 „fileCfg“ oder „perfCfg“ aktiviert haben,
 
 ## Bekannte Probleme
 - In Version 2.0 kann auf die Rsyslog-Informationen und die benutzerdefinierte Protokolldatei nur über Skripts zugegriffen werden.
-- Wenn Sie in Version 2.0 die Linux-Diagnoseerweiterung zuerst über ein Skript aktiviert haben, können Sie die Daten nicht über das Azure-Portal anzeigen. Wenn Sie die Erweiterung dagegen zuerst im Portal aktivieren, funktionieren die Skripts weiterhin.
+- Wenn Sie in Version 2.0 die Linux-Diagnoseerweiterung zunächst über ein Skript aktiviert haben, können Sie die Daten nicht im Portal anzeigen. Wenn Sie die Erweiterung dagegen zuerst im Portal aktivieren, funktionieren die Skripts weiterhin.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

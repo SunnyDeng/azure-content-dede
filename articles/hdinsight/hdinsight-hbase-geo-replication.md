@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="07/08/2015"
+   ms.date="12/02/2015"
    ms.author="jgao"/>
 
 # Konfigurieren von HBase-Georeplikation in HDInsight
@@ -67,7 +67,7 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
 In [Konfigurieren einer VPN-Verbindung zwischen zwei virtuellen Netzwerken in Azure][hdinsight-hbase-replication-vnet] haben Sie ein virtuelles Netzwerk in einem Rechenzentrum in Europa und ein virtuelles Netzwerks in einem US-Rechenzentrum erstellt. Die beiden virtuellen Netzwerke sind über VPN verbunden. In dieser Sitzung werden Sie einen HBase-Cluster in den einzelnen virtuellen Netzwerken bereitstellen. Später in diesem Lernprogramm erstellen Sie eines der HBase-Cluster, um das andere HBase-Cluster zu replizieren.
 
-Das Azure-Portal unterstützt die Bereitstellung von HDInsight-Clustern mit benutzerdefinierten Konfigurationsoptionen nicht. Stellen Sie z. B. *hbase.replication* auf *true* ein. Wenn Sie nach der Bereitstellung eines Clusters den Wert in der Konfigurationsdatei festgelegen, verlieren Sie die Einstellung nach dem Reimaging des Clusters. Weitere Informationen finden Sie unter [Bereitstellung eines Hadoop-Clusters in HDInsight][hdinsight-provision]. Eine der Optionen zum Bereitstellen von HDInsight-Clustern mit benutzerdefinierten Optionen ist die Verwendung von Azure PowerShell.
+Das klassische Azure-Portal unterstützt die Bereitstellung von HDInsight-Clustern mit benutzerdefinierten Konfigurationsoptionen nicht. Stellen Sie z. B. *hbase.replication* auf *true* ein. Wenn Sie nach der Bereitstellung eines Clusters den Wert in der Konfigurationsdatei festgelegen, verlieren Sie die Einstellung nach dem Reimaging des Clusters. Weitere Informationen finden Sie unter [Bereitstellung eines Hadoop-Clusters in HDInsight][hdinsight-provision]. Eine der Optionen zum Bereitstellen von HDInsight-Clustern mit benutzerdefinierten Optionen ist die Verwendung von Azure PowerShell.
 
 
 **Bereitstellen eines HBase-Clusters in Contoso-VNet-EU**
@@ -156,7 +156,7 @@ Um bedingte Weiterleitung zu konfigurieren, müssen Sie die Domänenendungen der
 
 **Finden der Domänenendungen der beiden HBase-Cluster**
 
-1. RDP in **Contoso-HBase-EU-**. Anweisungen finden Sie in [Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Verwaltungsportal][hdinsight-manage-portal] Tatsächlich handelt es sich um headnode0 des Clusters.
+1. RDP in **Contoso-HBase-EU-**. Anweisungen finden Sie in [Verwalten von Hadoop-Clustern in HDInsight mit dem klassischen Azure-Portal][hdinsight-manage-portal]. Tatsächlich handelt es sich um headnode0 des Clusters.
 2. Öffnen Sie eine Windows PowerShell-Konsole oder eine Eingabeaufforderung.
 3. Führen Sie **Ipconfig** aus und notieren Sie sich **verbindungsspezifische DNS-Endungen**.
 4. Bitte schließen Sie die RDP-Sitzung nicht. Sie benötigen diese später, um die Auflösung des Domänennamens zu testen.
@@ -311,4 +311,4 @@ In diesem Lernprogramm haben Sie gelernt, HBase-Replikation über zwei Rechenzen
 [hdinsight-hbase-provision-vnet]: hdinsight-hbase-provision-vnet.md
 [hdinsight-hbase-get-started]: ../hdinsight-hbase-get-started.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

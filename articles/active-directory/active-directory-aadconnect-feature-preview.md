@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure AD Connect-Funktionen in der Preview | Microsoft Azure"
+   pageTitle="Azure AD Connect: Funktionen in der Vorschau | Microsoft Azure"
    description="In diesem Thema werden Funktionen detaillierter beschrieben, die sich in Azure AD Connect in der Preview befinden."
    services="active-directory"
    documentationCenter=""
@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.devlang="na"
    ms.topic="article"
-   ms.date="10/13/2015"
+   ms.date="12/02/2015"
    ms.author="andkjell;billmath"/>
 
 # Weitere Informationen zu den Funktionen in der Preview
@@ -58,6 +58,6 @@ Diese Attribute sind jetzt über Graph verfügbar:
 ## Nächste Schritte
 Fahren Sie mit Ihrer [benutzerdefinierten Installation von Azure AD Connect](active-directory-aadconnect-get-started-custom.md) fort.
 
-Weitere Informationen zum [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md)
+Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -307,7 +307,7 @@ Um eine Entität zu aktualisieren, rufen Sie sie aus dem Tabellendienst ab, änd
 
 ## Abfragen einer Teilmenge von Entitätseigenschaften
 
-Mit einer Tabellenabfrage können nicht nur alle, sondern auch nur einige Eigenschaften aus einer Entität abgerufen werden. Bei dieser Methode, der sogenannten Projektion, wird die Bandbreite reduziert und die Abfrageleistung gesteigert, vor allem bei großen Entitäten. Mit der Abfrage im folgenden Code werden nur die E-Mail-Adressen von Entitäten in der Tabelle zurückgegeben. Dies geschieht durch die Verwendung einer Abfrage von **DynamicTableEntity** und **EntityResolver**. Weitere Informationen zur Projektion finden Sie im Blogbeitrag [Windows Azure Tables: Introducing Upsert and Query Projection][]. Beachten Sie, dass Projektion nicht auf dem lokalen Speicheremulator unterstützt wird, weshalb dieser Code nur ausgeführt wird, wenn Sie ein Konto für den Tabellendienst verwenden.
+Mit einer Tabellenabfrage können nicht nur alle, sondern auch nur einige Eigenschaften aus einer Entität abgerufen werden. Bei dieser Methode, der sogenannten Projektion, wird die Bandbreite reduziert und die Abfrageleistung gesteigert, vor allem bei großen Entitäten. Mit der Abfrage im folgenden Code werden nur die E-Mail-Adressen von Entitäten in der Tabelle zurückgegeben. Dies geschieht durch die Verwendung einer Abfrage von **DynamicTableEntity** und **EntityResolver**. Weitere Informationen zur Projektion finden Sie im Blogbeitrag [Microsoft Azure Tables: Introducing Upsert and Query Projection][]. Beachten Sie, dass Projektion nicht auf dem lokalen Speicheremulator unterstützt wird, weshalb dieser Code nur ausgeführt wird, wenn Sie ein Konto für den Tabellendienst verwenden.
 
     // Retrieve the storage account from the connection string.
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
@@ -414,24 +414,13 @@ Wenn Sie eine große Anzahl von Entitäten lesen und die Entitäten verarbeiten/
 
 Nachdem Sie sich nun mit den Grundlagen des Tabellenspeichers vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden.
 
-<ul>
-<li>In der Referenzdokumentation für den Tabellenspeicherdienst finden Sie alle Details zu verfügbaren APIs:
-  <ul>
-    <li><a href="http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409">Referenz zur Storage-Clientbibliothek für .NET</a>
-    </li>
-    <li><a href="http://msdn.microsoft.com/library/azure/dd179355">REST-API-Referenz</a></li>
-  </ul>
-</li>
-<li>Weitere Informationen zu fortgeschrittenen Aufgaben, die Sie mit Azure Storage ausführen können, finden Sie in der <a href="http://msdn.microsoft.com/library/azure/gg433040.aspx">Azure Storage-Dokumentation</a>.</li>
-<li>Erfahren Sie, wie Sie mithilfe des <a href="../websites-dotnet-webjobs-sdk/">Azure WebJobs SDK</a> den geschriebenen Code so vereinfachen, dass er mit Azure Storage funktioniert.</li>
-<li>Weitere Informationen zu zusätzlichen Optionen für das Speichern von Daten in Azure finden Sie in den anderen Featureleitfäden:
-  <ul>
-    <li>Verwenden Sie <a href="/documentation/articles/storage-dotnet-how-to-use-blobs/">BLOB-Speicher</a>, um unstrukturierte Daten zu speichern.</li>
-    <li>Verwenden Sie <a href="/documentation/articles/storage-dotnet-how-to-use-queues/">Warteschlangenspeicher</a>, um strukturierte Daten zu speichern.</li>
-    <li>Verwenden Sie eine <a href="/documentation/articles/sql-database-dotnet-how-to-use/">SQL-Datenbank</a> zum Speichern relationaler Daten.</li>
-  </ul>
-</li>
-</ul>
+- In der Referenzdokumentation für den Tabellenspeicherdienst finden Sie alle Details zu verfügbaren APIs:
+    - [Referenz zur Storage-Clientbibliothek für .NET](http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409)
+    - [REST-API-Referenz](http://msdn.microsoft.com/library/azure/dd179355)
+- Erfahren Sie, wie Sie mithilfe des [Azure WebJobs SDK](../app-service-web/websites-dotnet-webjobs-sdk-get-started.md) den geschriebenen Code so vereinfachen, dass er mit Azure Storage funktioniert.
+- Weitere Informationen zu zusätzlichen Optionen für das Speichern von Daten in Azure finden Sie in den anderen Featureleitfäden.
+    - Verwenden Sie [Blobspeicher](storage-dotnet-how-to-use-blobs.md) zum Speichern unstrukturierter Daten.
+    - Verwenden Sie eine [SQL-Datenbank](sql-database-dotnet-how-to-use.md) zum Speichern relationaler Daten.
 
   [Download and install the Azure SDK for .NET]: /develop/net/
   [Creating an Azure Project in Visual Studio]: http://msdn.microsoft.com/library/azure/ee405487.aspx
@@ -442,9 +431,8 @@ Nachdem Sie sich nun mit den Grundlagen des Tabellenspeichers vertraut gemacht h
   [Blob8]: ./media/storage-dotnet-how-to-use-table-storage/blob8.png
   [Blob9]: ./media/storage-dotnet-how-to-use-table-storage/blob9.png
 
-  [Windows Azure Tables: Introducing Upsert and Query Projection]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/windows-azure-tables-introducing-upsert-and-query-projection.aspx
+  [Microsoft Azure Tables: Introducing Upsert and Query Projection]: http://blogs.msdn.com/b/windowsazurestorage/archive/2011/09/15/windows-azure-tables-introducing-upsert-and-query-projection.aspx
   [.NET Client Library reference]: http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409
-  [Storing and accessing data in Azure]: http://msdn.microsoft.com/library/azure/gg433040.aspx
   [Azure Storage Team blog]: http://blogs.msdn.com/b/windowsazurestorage/
   [Configure Azure Storage connection strings]: http://msdn.microsoft.com/library/azure/ee758697.aspx
   [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
@@ -452,4 +440,4 @@ Nachdem Sie sich nun mit den Grundlagen des Tabellenspeichers vertraut gemacht h
   [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
   [How to: Programmatically access Table storage]: #tablestorage
 
-<!---HONumber=Oct15_HO3-->
+<!----HONumber=AcomDC_1203_2015-->

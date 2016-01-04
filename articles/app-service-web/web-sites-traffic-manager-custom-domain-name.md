@@ -1,11 +1,4 @@
-<properties 
-	pageTitle="Konfigurieren eines benutzerdefinierten Domänennamens für eine Web-App in Azure App Services, der Traffic Manager verwendet." 
-	description="Verwenden Sie einen benutzerdefinierten Domänennamen für eine Web-App in Azure App Services mit Traffic Manager für den Lastenausgleich." 
-	services="app-service\web" 
-	documentationCenter="" 
-	authors="MikeWasson" 
-	manager="wpickett" 
-	editor=""/>
+<properties pageTitle="Konfigurieren eines benutzerdefinierten Domänennamens für eine Web-App in Azure App Services, der Traffic Manager verwendet."wpickett"Verwenden Sie einen benutzerdefinierten Domänennamen für eine Web-App in Azure App Services mit Traffic Manager für den Lastenausgleich." description="Verwenden Sie einen benutzerdefinierten Domänennamen für eine Web-App in Azure App Services mit Traffic Manager für den Lastenausgleich." services="app-service\\web" documentationCenter="" authors="rmcmurray" manager="wpickett" editor=""/>
 
 <tags 
 	ms.service="app-service-web" 
@@ -13,8 +6,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/18/2015" 
-	ms.author="mwasson"/>
+	ms.date="11/18/2015" 
+	ms.author="robmcm"/>
 
 #Konfigurieren eines benutzerdefinierten Domänennamens für eine Web-App in Azure App Services, der Traffic Manager verwendet.
 
@@ -39,11 +32,9 @@ Dieser Artikel enthält allgemeine Anweisungen zur Verwendung eines benutzerdefi
 [AZURE.INCLUDE [Modi](../../includes/custom-dns-web-site-modes-traffic-manager.md)]
 
 <a name="bkmk_configurecname"></a>
-## Hinzufügen eines DNS-Eintrags für Ihre benutzerdefinierte Domäne
+## Hinzufügen eines DNS-Datensatzes zu Ihrer benutzerdefinierten Domäne
 
-
-> [AZURE.NOTE]Wenn Sie eine Domäne über Azure App Service-Web-Apps erworben haben, überspringen Sie die folgenden Schritte und lesen Sie den letzten Schritt des Artikels zum <a href="/documentation/articles/custom-dns-web-site-buydomains-web-app" title="Web Apps" class="current">Erwerben einer Domäne für Web-Apps</a>.
-
+> [AZURE.NOTE]Wenn Sie eine Domäne über Azure App Service-Web-Apps erworben haben, überspringen Sie die folgenden Schritte, und lesen Sie den letzten Schritt des Artikels zum [Erwerb einer Domäne für Web-Apps](custom-dns-web-site-buydomains-web-app.md).
 
 Um Ihrer benutzerdefinierten Domäne eine Web-App in Azure App Services zuzuweisen, müssen Sie in der DNS-Tabelle für Ihre benutzerdefinierte Domäne mithilfe der von der Domänenregistrierungsstelle bereitgestellten Tools einen neuen Eintrag hinzufügen. Gehen Sie wie folgt vor, um die DNS-Tools zu suchen und zu verwenden:
 
@@ -70,4 +61,4 @@ Um Ihrer benutzerdefinierten Domäne eine Web-App in Azure App Services zuzuweis
  
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

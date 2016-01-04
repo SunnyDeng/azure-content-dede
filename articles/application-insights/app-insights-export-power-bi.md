@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Anzeigen von Application Insights-Daten in Power BI" 
-	description="Verwenden Sie Power BI zum Überwachen der Leistung und der Nutzung Ihrer Anwendung." 
+	pageTitle="Verwenden von Stream Analytics für den Export von Application Insights nach Power BI" 
+	description="Erläutert, wie Stream Analytics zur Verarbeitung exportierter Daten eingesetzt wird." 
 	services="application-insights" 
     documentationCenter=""
 	authors="noamben" 
@@ -12,27 +12,36 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/23/2015" 
+	ms.date="11/25/2015" 
 	ms.author="awills"/>
  
-# Power BI-Ansichten von Application Insights-Daten
+# Verwenden Sie Stream Analytics für Power BI-Ansichten von Application Insights
 
-[Microsoft Power BI](https://powerbi.microsoft.com/) stellt die Daten mit umfangreichen und unterschiedlichen Grafiken dar und bietet die Möglichkeit, Informationen aus mehreren Quellen zu kombinieren. Sie können die Telemetriedaten über die Leistung und Nutzung Ihrer Web- oder Gerät-Apps von Application Insights zu Power BI streamen.
+Dieser Artikel beschreibt, wie Sie [Stream Analytics](http://azure.microsoft.com/services/stream-analytics/) zum Verarbeiten von Daten verwenden, die aus [Visual Studio Application Insights](app-insights-overview.md) [exportiert](app-insights-export-telemetry.md) wurden. Als Beispielziel senden wir die Daten an [Microsoft Power BI](https://powerbi.microsoft.com/).
+
+
+> [AZURE.NOTE]Am einfachsten lassen sich Daten von Application Insights in Power BI [mithilfe des Adapters](https://powerbi.microsoft.com/de-DE/documentation/powerbi-content-pack-application-insights/) importieren, den Sie im Power BI-Katalog unter „Dienste“ finden. Das in diesem Artikel beschriebene Vorgehen ist aktuell flexibler, doch soll hier demonstrieren, wie Stream Analytics mit Application Insights verwendet wird.
+
+[Microsoft Power BI](https://powerbi.microsoft.com/) stellt die Daten mit umfangreichen und unterschiedlichen Grafiken dar und bietet die Möglichkeit, Informationen aus mehreren Quellen zu kombinieren.
+
 
 ![Beispiel für eine Power BI-Ansicht der Application Insights-Nutzungsdaten](./media/app-insights-export-power-bi/010.png)
 
-In diesem Artikel zeigen wir, wie Daten von Application Insights exportiert werden und wie Stream Analytics zum Verschieben der Daten nach Power BI verwendet wird. [Stream Analytics](http://azure.microsoft.com/services/stream-analytics/) ist ein Azure-Dienst, der als Adapter verwendet wird.
+[Stream Analytics](http://azure.microsoft.com/services/stream-analytics/) ist ein Azure-Dienst, der als Adapter ständig die aus Application Insights exportierten Daten verarbeitet.
 
 ![Beispiel für eine Power BI-Ansicht der Application Insights-Nutzungsdaten](./media/app-insights-export-power-bi/020.png)
 
 
-> [AZURE.NOTE]Sie benötigen ein Geschäfts- oder Schulkonto (MSDN-Organisationskonto) zum Senden von Daten aus Stream Analytics an Power BI.
+
 
 ## Video
 
 Noam Ben Zeev zeigt, was in diesem Artikel beschrieben wird.
 
 > [AZURE.VIDEO export-to-power-bi-from-application-insights]
+
+
+**Stichproben** Wenn Ihre Anwendung eine große Menge von Daten sendet und Sie das Application Insights-SDK für ASP.NET Version 2.0.0-beta3 oder höher verwenden, wird möglicherweise die adaptive Stichprobenerstellung verwendet, bei der nur ein bestimmter Prozentsatz der Telemetriedaten übermittelt wird. [Erfahren Sie mehr über das Erstellen von Stichproben.](app-insights-sampling.md)
 
 ## Überwachen Ihrer App mit Application Insights
 
@@ -205,7 +214,28 @@ Fügen Sie diese Abfrage ein:
 
 * Diese Abfrage führt einen Drilldown in die Telemetrie der Metriken durch, um die Uhrzeit und den metrischen Wert des Ereignisses abzurufen. Die metrischen Werte befinden sich in einem Array, daher verwenden wir das Muster „OUTER APPLY GetElements“ zum Extrahieren der Zeilen. In diesem Fall lautet der Name der Metrik „myMetric“. 
 
+#### Abfrage zum Anzeigen von Dimensionseigenschaften
 
+```SQL
+
+    WITH flat AS (
+    SELECT
+      MySource.context.data.eventTime as eventTime,
+      InstanceId = MyDimension.ArrayValue.InstanceId.value,
+      BusinessUnitId = MyDimension.ArrayValue.BusinessUnitId.value
+    FROM MySource
+    OUTER APPLY GetArrayElements(MySource.context.custom.dimensions) MyDimension
+    )
+    SELECT
+     eventTime,
+     InstanceId,
+     BusinessUnitId
+    INTO AIOutput
+    FROM flat
+
+```
+
+* Diese Abfrage enthält Dimensionseigenschaftswerte, ohne dabei davon abhängig zu sein, dass eine bestimmte Dimension in einem festen Index im Dimensionsarray liegt.
 
 ## Ausführen des Auftrags
 
@@ -239,4 +269,4 @@ Noam Ben Zeev zeigt, wie nach Power BI exportiert wird.
 * [Application Insights](app-insights-overview.md)
 * [Weitere Beispiele und exemplarische Vorgehensweisen](app-insights-code-samples.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

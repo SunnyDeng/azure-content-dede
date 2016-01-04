@@ -22,7 +22,7 @@
 
 In der Vergangenheit musste ein App-Entwickler, der sowohl Unterstützung für Microsoft-Konten als auch für Azure Active Directory benötigte, die Integration für zwei separate Systeme bereitstellen. Mit dem App-Modell, Version 2.0 können Sie nun Benutzer mit beiden Kontotypen anmelden. Mit einer einzelnen Implementierung können Sie eine Zielgruppe erreichen, die Millionen von Benutzern sowohl mit privaten als auch geschäftlichen Konten umfasst.
 
-Ihre Apps können auch auf einen [Satz von Office 365-REST-APIs](https://www.msdn.com/office/office365/howto/authenticate-Office-365-APIs-using-v2) mit einem der Kontentypen zurückgreifen. Derzeit umfasst dies Outlook-APIs für E-Mail, Kontakte und Kalender. Demnächst werden weitere Dienste hinzugefügt.
+Ihre Apps können auch auf einen [Satz von Office 365-REST-APIs](https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2) mit einem der Kontentypen zurückgreifen. Derzeit umfasst dies Outlook-APIs für E-Mail, Kontakte und Kalender. Demnächst werden weitere Dienste hinzugefügt.
 <!-- TODO: customer reference article -->
 <!-- Several apps have already begun to bridge the gap between consumer and enterprise accounts, including: [Boomerang](), [TripIt](), & [Uber](). -->
 
@@ -49,7 +49,7 @@ Die folgenden Links bieten ausführliche Informationen zur Plattform:
 - Teilen Sie uns Ihre Meinung zur Vorschau über [User Voice](http://feedback.azure.com/forums/169401-azure-active-directory) mit. Verwenden Sie den Ausdruck "AppModelv2:" im Titel Ihres Beitrags, damit wir ihn einfacher finden können.
 - [App-Modell, Version 2.0 –Protokollreferenz](active-directory-v2-protocols.md)
 - [App-Modell, Version 2.0 –Tokenreferenz](active-directory-v2-tokens.md)
-- [Office 365-REST-API-Referenz](https://www.msdn.com/office/office365/howto/authenticate-Office-365-APIs-using-v2)
+- [Office 365-REST-API-Referenz](https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2)
 - [Bereiche und Consent im v2-Endpunkt](active-directory-v2-scopes.md)
 
 <!-- TODO: These articles
@@ -57,4 +57,4 @@ Die folgenden Links bieten ausführliche Informationen zur Plattform:
 - [v2 Endpoint FAQs](active-directory-v2-faq.md)
 -->
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

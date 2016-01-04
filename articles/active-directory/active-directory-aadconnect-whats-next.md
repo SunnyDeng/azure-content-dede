@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Verwalten von Azure AD Connect | Microsoft Azure"
+	pageTitle="Azure AD Connect: Nächste Schritte und Verwalten von Azure AD Connect | Microsoft Azure"
 	description="Erfahren Sie, wie die Standardkonfiguration und Betriebsaufgaben für Azure AD Connect erweitert werden."
 	services="active-directory"
 	documentationCenter=""
@@ -16,7 +16,7 @@
 	ms.date="10/01/2015"
 	ms.author="billmath"/>
 
-# Verwalten von Azure AD Connect
+# Nächste Schritte und Verwalten von Azure AD Connect
 Anhand der Anweisungen in den folgenden weiterführenden Themen können Sie Azure Active Directory Connect entsprechend den Bedürfnissen und Anforderungen Ihrer Organisation anpassen.
 
 ## Zuweisen von Lizenzen für Benutzer von Azure AD Premium und Enterprise Mobility
@@ -67,6 +67,6 @@ Synchronisierungsoptionen anpassen | Hiermit können Sie die aktuelle Konfigurat
 Stagingmodus aktivieren | Hiermit können Sie Informationen bereitstellen, die später synchronisiert, jedoch nicht in Azure AD oder Active Directory exportiert werden. Auf diese Weise können Sie die Synchronisierungen in der Vorschau anzeigen, bevor sie ausgeführt werden.
 
 ## Nächste Schritte
-Weitere Informationen zum [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md)
+Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

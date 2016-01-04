@@ -13,7 +13,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="tbd" 
-	ms.date="07/29/2015" 
+	ms.date="12/11/2015" 
 	ms.author="bradsev;ankarloff" />
 
 
@@ -38,7 +38,7 @@ Ein benutzerdefiniertes R-Modul wird durch eine ZIP-Datei definiert, die mindest
 Weitere Zusatzdateien können auch in der ZIP-Datei eingeschlossen werden und Funktionen bereitstellen, auf die vom benutzerdefinierten Modul zugegriffen werden kann. Diese Option wird weiter unten erläutert.
 
 ## Schnellstart-Beispiel: Definieren, Zusammenfassen und Registrieren eines benutzerdefinierten R-Moduls
-In diesem Beispiel wird veranschaulicht, wie die erforderlichen Dateien für ein benutzerdefiniertes R-Modul erstellt und in einer ZIP-Datei komprimiert werden und dann das Modul im Machine Learning-Arbeitsbereich registriert wird. Das Beispiel-Zip-Paket und die Beispiel-Dateien können [hier](http://go.microsoft.com/fwlink/?LinkID=524916&clcid=0x409) heruntergeladen werden.
+In diesem Beispiel wird veranschaulicht, wie die erforderlichen Dateien für ein benutzerdefiniertes R-Modul erstellt und in einer ZIP-Datei komprimiert werden und dann das Modul im Machine Learning-Arbeitsbereich registriert wird. Das Beispiel-ZIP-Paket und die Beispiel-Dateien können [hier](http://go.microsoft.com/fwlink/?LinkID=524916&clcid=0x409) heruntergeladen werden.
 
 Denken Sie zum Beispiel an ein benutzerdefiniertes Modul **Add Rows**, das die Standardimplementierung des Moduls "Add Rows" ändert, welches zum Verketten von Zeilen (Vorkommen) aus zwei DataSets (DataFrames) verwendet wird. Das Standardmodul "Add Rows" hängt die Zeilen des zweiten Eingabe-DataSets mit dem "rbind"-Algorithmus am Ende des ersten Eingabe-DataSets an. Die benutzerdefinierte `CustomAddRows`Funktion akzeptiert auf ähnliche Weise zwei DataSets, aber auch einen zusätzlichen booleschen "swap"-Parameter als Eingabe. Wenn der "swap"-Parameter **FALSE** ist, wird dasselbe DataSet wie bei der Standard-Implementierung zurückgegeben. Wenn der "swap"-Parameter jedoch **TRUE** ist, werden stattdessen Zeilen des ersten Eingabe-DataSet an das Ende des zweiten DataSet angehängt. Die Datei, die die R `CustomAddRows` Funktion implementiert, die vom Modul **Custom Add Rows** offengelegt wird, enthält den folgenden R-Code.
 
@@ -93,7 +93,7 @@ Speichern Sie diese beiden Dateien als *CustomAddRows.R* und *CustomAddRows.xml*
 
 Um sie im Machine Learning-Arbeitsbereich zu registrieren, besuchen Sie den Arbeitsbereich in Machine Learning Studio, klicken Sie unten auf die Schaltfläche **+NEW** und wählen Sie **MODULE -> FROM ZIP PACKAGE**, um das neue Modul "Custom Add Rows" hochzuladen.
 
-![](http://i.imgur.com/RFJhCls.png)
+![ZIP-Datei hochladen](./media/machine-learning-custom-r-modules/upload-from-zip-package.png)
 
 Auf das Modul **Custom Add Rows** kann jetzt von Machine Learning-Experimenten aus zugegriffen werden.
 
@@ -364,4 +364,4 @@ Die Ausführungsumgebung für das R-Skript verwendet die gleiche Version von R w
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

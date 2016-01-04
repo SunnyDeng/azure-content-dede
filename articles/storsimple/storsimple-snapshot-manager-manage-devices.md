@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="09/15/2015"
+   ms.date="12/02/2015"
    ms.author="v-sharos" />
 
 # Verwenden des StorSimple Snapshot Managers zum Verbinden und Verwalten von StorSimple-Geräten
@@ -30,7 +30,7 @@ Je nach Ihrer Auswahl für die **Ansicht** werden im **Ergebnisbereich** die fol
 
 | Ergebnisspalte |Beschreibung |
 |:----------------|:--------------------| 
-| Name | Der Name des Geräts wie im Microsoft Azure-Verwaltungsportal konfiguriert|
+| Name | Der Name des Geräts wie im klassischen Azure-Portal konfiguriert|
 | Modell | Die Modellnummer des Geräts|
 | Version | Die Version der auf dem Gerät installierten Software |
 | Status | Gibt an, ob das Gerät verfügbar ist |
@@ -82,7 +82,7 @@ Gehen Sie folgendermaßen vor, um ein StorSimple-Gerät hinzuzufügen oder zu er
 
 3. Wählen Sie in der Dropdownliste **Gerät** die IP-Adresse des Geräts oder des virtuellen Geräts aus.
 
-4. Geben Sie im Textfeld **Kennwort** das StorSimple Snapshot Manager-Kennwort ein, das Sie im Azure-Verwaltungsportal für das Gerät erstellt haben. Klicken Sie auf **OK**. Der StorSimple Snapshot Manager sucht nach dem angegebenen Gerät.
+4. Geben Sie im Textfeld **Kennwort** das StorSimple Snapshot Manager-Kennwort ein, das Sie im klassischen Azure-Portal für das Gerät erstellt haben. Klicken Sie auf **OK**. Der StorSimple Snapshot Manager sucht nach dem angegebenen Gerät.
 
     - Wenn das Gerät verfügbar ist, fügt der StorSimple Snapshot Manager eine Verbindung hinzu. 
 
@@ -190,11 +190,11 @@ Gehen Sie folgendermaßen vor, um die Konfiguration eines einzelnen mit StorSimp
 
 ## Ändern eines abgelaufenen Gerätekennworts
 
-Sie müssen ein Kennwort eingeben, um ein StorSimple-Gerät im StorSimple Snapshot Manager zu authentifizieren. Sie konfigurieren dieses Kennwort, wenn Sie das Gerät mit der Windows PowerShell-Schnittstelle einrichten. Allerdings kann das Kennwort ablaufen. In diesem Fall können Sie das Kennwort im Microsoft Azure-Verwaltungsportal ändern. Da das Gerät im StorSimple Snapshot Manager konfiguriert wurde, bevor das Kennwort abgelaufen ist, müssen Sie das Gerät im StorSimple Snapshot Manager anschließend erneut authentifizieren.
+Sie müssen ein Kennwort eingeben, um ein StorSimple-Gerät im StorSimple Snapshot Manager zu authentifizieren. Sie konfigurieren dieses Kennwort, wenn Sie das Gerät mit der Windows PowerShell-Schnittstelle einrichten. Allerdings kann das Kennwort ablaufen. In diesem Fall können Sie das Kennwort im klassischen Azure-Portal ändern. Da das Gerät im StorSimple Snapshot Manager konfiguriert wurde, bevor das Kennwort abgelaufen ist, müssen Sie das Gerät im StorSimple Snapshot Manager anschließend erneut authentifizieren.
 
 #### So ändern Sie das abgelaufene Kennwort
 
-1. Starten Sie im Verwaltungsportal den StorSimple Manager-Dienst.
+1. Starten Sie im klassischen Azure-Portal den StorSimple Manager-Dienst.
 
 2. Klicken Sie auf **Geräte** > **Konfigurieren** für das Gerät.
 
@@ -263,4 +263,4 @@ Wenn ein StorSimple-Gerät ausfällt und durch ein Austauschgerät ersetzt wird 
 - Weitere Informationen zum [Verwenden von StorSimple Snapshot Manager zum Verwalten der StorSimple-Lösung](storsimple-snapshot-manager-admin.md).
 - Weitere Informationen zum [Verwenden von StorSimple Snapshot Manager zum Anzeigen und Verwalten von Volumes](storsimple-snapshot-manager-manage-volumes.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

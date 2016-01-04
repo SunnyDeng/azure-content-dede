@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/04/2015" 
+	ms.date="11/04/2015" 
 	ms.author="awills"/>
 
 #  Application Insights für Microsoft Azure-Apps
@@ -26,9 +26,9 @@ Die Konfiguration ist sehr einfach und liefert nach wenigen Minuten Resultate.
 
 Welche Art von App verwenden Sie?
 
-* [Azure-Web-App](insights-perf-analytics.md)
+* [Azure-Web-App](app-insights-asp-net.md)
 * [Azure Cloud Services-App – Web- und Workerrollen](app-insights-cloudservices.md)
-* [Web-App unter IIS in Azure VM](../insights-perf-analytics.md)
+* [Web-App unter IIS in Azure VM](../app-insights-asp-net.md)
 * [Anwendung außerhalb von Azure](app-insights-overview.md)
 
 
@@ -40,4 +40,4 @@ Welche Art von App verwenden Sie?
 
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

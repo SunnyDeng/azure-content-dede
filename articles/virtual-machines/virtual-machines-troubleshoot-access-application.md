@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/05/2015"
+	ms.date="11/17/2015"
 	ms.author="dkshir"/>
 
 # Problembehandlung beim Zugriff auf eine Anwendung, die auf einem virtuellen Azure-Computer ausgeführt wird
@@ -100,9 +100,21 @@ Wenn Sie auf die Anwendung zugreifen können, stellen Sie sicher, dass Ihre Inte
 - Den ausgehenden Anwendungsanforderungs-Datenverkehr vom Clientcomputer zum virtuellen Azure-Computer.
 - Den eingehenden Anwendungs-Antwortdatenverkehr vom virtuellen Azure-Computer.
 
+## Problembehandlung bei Endpunktverbindungen
+
+Wenn Probleme beim Verbinden mit einem Endpunkt, z. B. Remotedesktop-Endpunkt, auftreten, können Sie die folgenden allgemeinen Schritte zur Fehlerbehebung ausprobieren:
+
+- Neustarten des virtuellen Computers
+- Neuerstellen des Endpunkts
+- Herstellen einer Verbindung von einem anderen Standort
+- Ändern der Größe des virtuellen Computers
+- Neuerstellen des virtuellen Computers
+
+Weitere Informationen finden Sie unter [Problembehandlung bei Endpunktverbindungen (RDP/SSH/HTTP-Fehler usw.)](https://social.msdn.microsoft.com/Forums/azure/de-DE/538a8f18-7c1f-4d6e-b81c-70c00e25c93d/troubleshooting-endpoint-connectivity-rdpsshhttp-etc-failures?forum=WAVirtualMachinesforWindows).
+
 ## Nächste Schritte
 
-Wenn Sie die Schritte 1 bis 3 in diesem Artikel ausgeführt haben und zur Behebung des Problems weitere Hilfe benötigen, haben Sie folgende Möglichkeiten:
+Wenn Sie die obigen Schritte in diesem Artikel ausgeführt haben und zur Behebung des Problems weitere Hilfe benötigen, haben Sie folgende Möglichkeiten:
 
 - Lassen Sie sich von Azure-Experten auf der ganzen Welt weiterhelfen. Posten Sie Ihr Problem in den MSDN Azure- oder Stack Overflow-Foren. Weitere Informationen finden Sie unter [Microsoft Azure-Foren](http://azure.microsoft.com/support/forums/).
 - Erstellen Sie einen Azure-Supportfall. Klicken Sie auf der [Azure-Support-Website](http://azure.microsoft.com/support/options/) unter **Technischer und Abrechnungssupport** auf **Support erhalten**.
@@ -113,4 +125,4 @@ Wenn Sie die Schritte 1 bis 3 in diesem Artikel ausgeführt haben und zur Behebu
 
 [Behandeln von Problemen mit Secure Shell (SSH)-Verbindungen mit einem Linux-basierten virtuellen Azure-Computer](virtual-machines-troubleshoot-ssh-connections.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

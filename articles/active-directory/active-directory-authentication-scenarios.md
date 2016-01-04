@@ -204,7 +204,7 @@ Die Sitzung des Benutzers läuft ab, wenn die Gültigkeitsdauer des von Azure A
 ### Single-Page-Anwendung (SPA)
 
 
-Dieser Abschnitt beschreibt die Authentifizierung für eine Single-Page-Anwendung, deren Web-API-Back-End von Azure AD gesichert wird. Single-Page-Anwendungen setzen sich in der Regel aus einer im Browser ausgeführten JavaScript-Darstellungsschicht (Front-End) und einem Web-API-Back-End zusammen, das auf einem Server ausgeführt wird und die Geschäftslogik der Anwendung implementiert. In diesem Szenario verwendet das JavaScript-Front-End bei der Benutzeranmeldung die Vorschau der [Active Directory-Authentifizierungsbibliothek für JavaScript (ADAL. JS)](https://github.com/AzureAD/azure-activedirectory-library-for-js/tree/dev) und das implizite OAuth 2.0-Gewährungsprotokoll, um ein ID-Token (id\_token) von Azure AD zu erhalten. Das Token wird zwischengespeichert und der Anforderung als Trägertoken angefügt, wenn der Client Aufrufe an das durch die OWIN-Middleware gesicherte Web-API-Back-End sendet.
+Dieser Abschnitt beschreibt die Authentifizierung für eine Single-Page-Anwendung, deren Web-API-Back-End von Azure AD gesichert wird. Single-Page-Anwendungen setzen sich in der Regel aus einer im Browser ausgeführten JavaScript-Darstellungsschicht (Front-End) und einem Web-API-Back-End zusammen, das auf einem Server ausgeführt wird und die Geschäftslogik der Anwendung implementiert. In diesem Szenario verwendet das JavaScript-Front-End bei der Benutzeranmeldung die [Active Directory-Authentifizierungsbibliothek für JavaScript (ADAL. JS)](https://github.com/AzureAD/azure-activedirectory-library-for-js/tree/dev) und das implizite OAuth 2.0-Gewährungsprotokoll, um ein ID-Token (id\_token) von Azure AD zu erhalten. Das Token wird zwischengespeichert und der Anforderung als Trägertoken angefügt, wenn der Client Aufrufe an das durch die OWIN-Middleware gesicherte Web-API-Back-End sendet.
 
 
 #### Diagramm
@@ -467,4 +467,4 @@ Wenn die erste Anwendung mithilfe ihres Autorisierungscodes ein JWT-Zugriffstoke
 
 [OAuth 2.0 in Azure AD](https://msdn.microsoft.com/library/azure/dn645545.aspx)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

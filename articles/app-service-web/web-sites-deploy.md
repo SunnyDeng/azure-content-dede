@@ -26,24 +26,24 @@ Für die Bereitstellung einer Web-App ist es am einfachsten, einen [Workflow fü
 
 ##### Bereitstellen über ein in der Cloud gehostetes Quellcodeverwaltungssystem
 
-* [Fortlaufende Bereitstellung mithilfe von Visual Studio Online](#vso)
+* [Continuous Delivery mithilfe von Visual Studio Team Services](#vsts)
 * [Repositorywebsites über Git](#git)
 * [Repositorywebsites über Mercurial](#mercurial)
 * [Automatisieren der Bereitstellung von Dropbox aus](#dropbox)
 
 ##### Bereitstellen über lokale Quellcodeverwaltungssysteme
 
-* [Kontinuierliche Bereitstellung mit Team Foundation Server (TFS)](#tfs)
+* [Continuous Delivery mit Team Foundation Server (TFS)](#tfs)
 * [Lokale Git- oder Mercurial-Repositorys](#onpremises)
 
 ##### Automatisieren der Bereitstellung mit Befehlszeilentools
 
-* [Automatisieren der Bereitstellung mit PowerShell](#msbuild)
+* [Automatisieren der Bereitstellung mit MSBuild](#msbuild)
 * [Kopieren von Dateien mit FTP-Tools und Skripts](#ftp)
-* Automatisieren der Bereitstellung mit Windows PowerShell(#powershell)
+* [Automatisieren der Bereitstellung mit Windows PowerShell](#powershell)
 * [Automatisieren der Bereitstellung mit .NET Verwaltungs-API](#api)
 * [Bereitstellen über die Azure-Befehlszeilenschnittstelle (Azure-CLI)](#cli)
-* [Bereitstellen über die Web Deploy-Befehlszeile](#webdeploy)
+* [Bereitstellen über die Web Deploy-Befehlszeile](#webdeploy)
  
 ##### Bereitstellen über Ihre integrierte Entwicklungsumgebung (IDE)
 
@@ -52,14 +52,14 @@ Für die Bereitstellung einer Web-App ist es am einfachsten, einen [Workflow fü
 
 Eine weitere Möglichkeit der Bereitstellung ist die Nutzung eines cloudbasierten Diensts, wie z. B. [Octopus Deploy](http://en.wikipedia.org/wiki/Octopus_Deploy). Weitere Informationen finden Sie unter [Bereitstellen von ASP.NET-Anwendungen für Azure-Websites](https://octopusdeploy.com/blog/deploy-aspnet-applications-to-azure-websites).
 
-##<a name="vso"></a>Fortlaufende Bereitstellung mithilfe von Visual Studio Online
+##<a name="vsts"></a>Continuous Delivery mithilfe von Visual Studio Team Services
 
-[Visual Studio Online](http://www.visualstudio.com/) (zuvor Team Foundation Service) ist die cloudbasierte Lösung von Microsoft für die Quellcodeverwaltung und die Teamzusammenarbeit. Für ein Team mit bis zu 5 Entwicklern ist dieser Dienst kostenlos. Sie können eine kontinuierliche Bereitstellung in einer App Service-Web-App gewährleisten und für das Repository entweder [Git oder TFVC](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control#gittfs) verwenden.
+[Visual Studio Team Services](http://www.visualstudio.com/) (ehemals Team Foundation Service) ist die cloudbasierte Lösung von Microsoft für Quellcodeverwaltung und Teamzusammenarbeit. Für ein Team mit bis zu 5 Entwicklern ist dieser Dienst kostenlos. Sie können eine kontinuierliche Bereitstellung in einer App Service-Web-App gewährleisten und für das Repository entweder [Git oder TFVC](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control#gittfs) verwenden.
 
 Weitere Informationen finden Sie in den folgenden Ressourcen:
 
-* [Kontinuierliche Bereitstellung aus Azure mit Visual Studio Online und TFVC](../cloud-services-continuous-delivery-use-vso.md). In diesem Lernprogramm wird Schritt für Schritt gezeigt, wie die kontinuierliche Bereitstellung aus Visual Studio Online in einer Web-App mithilfe von TFVC eingerichtet wird. Bei TFVC handelt es sich um die zentralisierte Quellcodeverwaltungsoption. Git ist hingegen die dezentralisierte Quellcodeverwaltungsoption.
-* [Kontinuierliche Bereitstellung aus Azure mit Visual Studio Online und Git](../cloud-services-continuous-delivery-use-vso-git.md). Dieses Lernprogramm ist vergleichbar mit dem vorangehenden Lernprogramm, verwendet jedoch anstelle von TFVC das Verwaltungstool Git.
+* [Continuous Delivery für Azure mithilfe von Visual Studio Team Services und TFVC](../cloud-services-continuous-delivery-use-vso.md). In diesem Tutorial erfahren Sie Schritt für Schritt, wie Continuous Delivery über Visual Studio Team Services für eine Web-App mithilfe von TFVC eingerichtet wird. Bei TFVC handelt es sich um die zentralisierte Quellcodeverwaltungsoption. Git ist hingegen die dezentralisierte Quellcodeverwaltungsoption.
+* [Continuous Delivery für Azure mithilfe von Visual Studio Team Services und Git](../cloud-services-continuous-delivery-use-vso-git.md) Dieses Lernprogramm ist vergleichbar mit dem vorangehenden Lernprogramm, verwendet jedoch anstelle von TFVC das Verwaltungstool Git.
 
 ##<a name="git"></a>Repositorywebsites über Git
 
@@ -81,7 +81,7 @@ Weitere Informationen zur Bereitstellung mithilfe von Mercurial finden Sie in de
 * [Veröffentlichen aus der Quellcodeverwaltung in Web-Apps mit Git](web-sites-publish-source-control.md). Obwohl in diesem Lernprogramm die Veröffentlichung eines Git-Repositorys gezeigt wird, ist der Vorgang bei Mercurial-Repositorys, die in CodePlex oder BitBucket gehostet werden, ähnlich.
 * [Azure-Forum für Git, Mercurial und DropBox](http://social.msdn.microsoft.com/Forums/windowsazure/home?forum=azuregit)
 
-##<a name="dropbox"></a>Automatisieren der Bereitstellung von Dropbox aus
+##<a name="dropbox"></a>Automatisieren der Bereitstellung über Dropbox
 
 [DropBox](https://www.dropbox.com/) stellt kein Quellcodeverwaltungssystem dar. Wenn Sie allerdings den Quellcode in DropBox speichern, können Sie die Bereitstellung über Ihr DropBox-Konto automatisieren.
 
@@ -112,7 +112,7 @@ Weitere Informationen finden Sie in den folgenden Ressourcen:
 
 * [Erstellen einer PHP-MySQL-Web-App und Bereitstellen über FTP](web-sites-php-mysql-deploy-use-ftp.md).
 
-##<a name="tfs"></a>Kontinuierliche Bereitstellung mit Team Foundation Server (TFS)
+##<a name="tfs"></a>Continuous Delivery mit Team Foundation Server (TFS)
 
 Bei Team Foundation Server handelt es sich um die lokale Lösung von Microsoft für die Quellcodeverwaltung und die Teamzusammenarbeit. Sie können TFS für die kontinuierliche Bereitstellung in einer Web-App einrichten.
 
@@ -162,7 +162,7 @@ Weitere Informationen finden Sie in den folgenden Ressourcen:
 * [Building Real-World Cloud Apps with Azure - Automate Everything (Erstellen von Cloud-Anwendungen mit Azure – Automatisierung, in englischer Sprache)](http://asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything). In diesem E-Book-Kapitel wird erklärt, wie die im E-Book dargestellte Beispielanwendung Windows PowerShell-Skripte nutzt, um eine Azure-Testumgebung zu erstellen und wie die Bereitstellung für diese Umgebung erfolgt. Im Abschnitt [Ressourcen](http://asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything#resources) finden Sie Links für die weiterführende Azure PowerShell-Dokumentation.
 * [Veröffentlichung in Entwicklungs- und Testumgebungen mithilfe von Windows PowerShell-Skripts](http://msdn.microsoft.com/library/dn642480.aspx). Hier erfahren Sie, wie Sie Windows PowerShell-Bereitstellungsskripts verwenden, die von Visual Studio generiert werden.
 
-##<a name="api"></a>Automatisieren der Bereitstellung mit .NET Verwaltungs-API
+##<a name="api"></a>Automatisieren der Bereitstellung mit der .NET-Verwaltungs-API
 
 Sie können C#-Code schreiben, um die MSBuild- oder FTP-Funktionen für die Bereitstellung auszuführen. Wenn Sie dies tun, können Sie auf die Azure-REST-Verwaltungs-API zugreifen, um die Website-Verwaltungsfunktionen auszuführen.
 
@@ -178,9 +178,9 @@ Weitere Informationen finden Sie in der folgenden Ressource:
 
 * [Azure-Befehlszeilentools](/downloads/#cmd-line-tools). Portalseite auf Azure.com mit Informationen zu Befehlszeilentools.
 
-##<a name="webdeploy"></a>Bereitstellen über die Web Deploy-Befehlszeile
+##<a name="webdeploy"></a>Bereitstellen über die Web Deploy-Befehlszeile
 
-Bei [Web Deploy](http://www.iis.net/downloads/microsoft/web-deploy) handelt es sich um Microsoft-Software für die Bereitstellung in IIS, wobei neben den Funktionen für die intelligente Dateisynchronisierung auch viele andere Aufgaben, die mit der Bereitstellung in Zusammenhang stehen und bei der Verwendung von FTP nicht automatisierbar sind, ausgeführt und koordiniert werden können. Mithilfe von Web Deploy können beispielsweise neue Datenbanken oder Datenbank-Updates in Ihrer Web-App bereitgestellt werden. Auch die Zeit, die zum Aktualisieren einer vorhandenen Website erforderlich ist, kann mit Web Deploy verringert werden, da dieses Programm auf intelligente Weise lediglich geänderte Dateien kopiert. Microsoft WebMatrix, Visual Studio, Visual Studio Online und Team Foundation Server verfügen über die integrierte Unterstützung für Web Deploy. Sie können Web Deploy aber auch direkt über die Befehlszeile verwenden, um die Bereitstellung zu automatisieren. Die Web Deploy-Befehle sind äußerst leistungsstark, stellen aber einen gewaltigen Lernprozess dar.
+Bei [Web Deploy](http://www.iis.net/downloads/microsoft/web-deploy) handelt es sich um Microsoft-Software für die Bereitstellung in IIS, wobei neben den Funktionen für die intelligente Dateisynchronisierung auch viele andere Aufgaben, die mit der Bereitstellung in Zusammenhang stehen und bei der Verwendung von FTP nicht automatisierbar sind, ausgeführt und koordiniert werden können. Mithilfe von Web Deploy können beispielsweise neue Datenbanken oder Datenbank-Updates in Ihrer Web-App bereitgestellt werden. Auch die Zeit, die zum Aktualisieren einer vorhandenen Website erforderlich ist, kann mit Web Deploy verringert werden, da dieses Programm auf intelligente Weise lediglich geänderte Dateien kopiert. Bei Microsoft WebMatrix, Visual Studio, Visual Studio Team Services und Team Foundation Server ist die Web Deploy-Unterstützung bereits integriert. Sie können Web Deploy aber auch direkt über die Befehlszeile verwenden, um die Bereitstellung zu automatisieren. Die Web Deploy-Befehle sind äußerst leistungsstark, stellen aber einen gewaltigen Lernprozess dar.
 
 Weitere Informationen finden Sie in der folgenden Ressource:
 
@@ -201,8 +201,7 @@ Informationen zur Verwendung der rollenbasierten Zugriffssteuerung von Azure zum
 Informationen zu weiteren Bereitstellungsthemen finden Sie in den entsprechenden Abschnitten der [Web-App-Dokumentation](/documentation/services/web-sites/).
 
 ## Änderungen
-* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
+* Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

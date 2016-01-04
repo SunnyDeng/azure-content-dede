@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Konfigurieren von Übermittlungsrichtlinien für Assets mit der Media Services-REST-API" 
-	description="In diesem Thema wird die Konfiguration verschiedener Übermittlungsrichtlinien für Assets mit der Media Services-REST-API erläutert." 
+	pageTitle="Konfigurieren von Übermittlungsrichtlinien für Medienobjekte mit der Media Services-REST-API" 
+	description="In diesem Thema wird die Konfiguration verschiedener Übermittlungsrichtlinien für Medienobjekte mit der Media Services-REST-API erläutert." 
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
@@ -16,23 +16,23 @@
 	ms.date="10/18/2015" 
 	ms.author="juliako"/>
 
-#Vorgehensweise: Konfigurieren von Übermittlungsrichtlinien für Assets
+#Vorgehensweise: Konfigurieren von Übermittlungsrichtlinien für Medienobjekte
 
 [AZURE.INCLUDE [media-services-selector-asset-delivery-policy](../../includes/media-services-selector-asset-delivery-policy.md)]
 
-Wenn Sie dynamisch verschlüsselte Assets übermitteln möchten, ist einer der Schritte im Workflow zur Inhaltsübermittlung in Media Services das Konfigurieren von Übermittlungsrichtlinien. Anhand der Übermittlungsrichtlinie für Assets kann Media Services ermitteln, wie das Asset übermittelt werden soll, also mit welchem Streamingprotokoll das Asset dynamisch verpackt werden soll (z. B. MPEG-DASH, HLS, Smooth Streaming oder alle) und ob und wie das Asset ggf. dynamisch verschlüsselt werden soll (Umschlag- oder allgemeine Verschlüsselung).
+Wenn Sie dynamisch verschlüsselte Medienobjekte übermitteln möchten, ist einer der Schritte im Workflow zur Inhaltsübermittlung in Media Services das Konfigurieren von Übermittlungsrichtlinien. Anhand der Übermittlungsrichtlinie für Medienobjekte kann Media Services ermitteln, wie das Medienobjekt übermittelt werden soll, also mit welchem Streamingprotokoll das Medienobjekt dynamisch verpackt werden soll (z. B. MPEG-DASH, HLS, Smooth Streaming oder alle) und ob und wie das Medienobjekt ggf. dynamisch verschlüsselt werden soll (Umschlag- oder allgemeine Verschlüsselung).
 
 In diesem Thema wird erläutert, warum und wie Übermittlungsrichtlinien für Medienobjekte erstellt und konfiguriert werden.
 
 >[AZURE.NOTE]Zur Verwendung der dynamischen Paketerstellung und Verschlüsselung müssen Sie über mindestens eine Skalierungseinheit (auch als Streamingeinheit bezeichnet) verfügen. Weitere Informationen finden Sie unter [Skalieren eines Mediendiensts](media-services-manage-origins.md#scale_streaming_endpoints).
 >
->Darüber hinaus muss Ihr Asset einen MP4-Satz bzw. Smooth Streaming-Dateien mit adaptiver Bitrate enthalten.
+>Darüber hinaus muss Ihr Medienobjekt einen MP4-Satz bzw. Smooth Streaming-Dateien mit adaptiver Bitrate enthalten.
 
 Sie können verschiedene Richtlinien auf dasselbe Medienobjekt anwenden. Sie könnten z. B. eine PlayReady-Verschlüsselung auf Smooth Streaming und AES-Umschlagverschlüsselung auf MPEG-DASH und HLS anwenden. Alle Protokolle, die nicht in einer Übermittlungsrichtlinie definiert sind (wenn Sie z. B. eine einzelne Richtlinie hinzufügen, die nur HLS als Protokoll angibt), werden vom Streaming ausgeschlossen. Die einzige Ausnahme besteht darin, wenn Sie überhaupt keine Übermittlungsrichtlinie für Medienobjekte definiert haben. In diesem Fall sind alle Protokolle ohne Verschlüsselung zulässig.
 
-Wenn Sie ein speicherverschlüsseltes Asset übermitteln möchten, müssen Sie die Übermittlungsrichtlinie für Assets konfigurieren. Bevor das Asset gestreamt werden kann, wird die Speicherverschlüsselung vom Streamingserver entfernt und der Inhalt mithilfe der angegebenen Übermittlungsrichtlinie gestreamt. Wenn Sie ein Asset für die Übermittlung beispielsweise mit einem Schlüssel für die AES (Advanced Encryption Standard)-Umschlagverschlüsselung verschlüsseln möchten, legen Sie den Richtlinientyp auf **DynamicEnvelopeEncryption** fest. Um die Speicherverschlüsselung zu entfernen und das Asset unverschlüsselt zu streamen, legen Sie den Richtlinientyp auf **NoDynamicEncryption** fest. In den folgenden Beispielen wird die Konfiguration dieser Richtlinientypen veranschaulicht.
+Wenn Sie ein speicherverschlüsseltes Medienobjekt übermitteln möchten, müssen Sie die Übermittlungsrichtlinie für Medienobjekte konfigurieren. Bevor das Medienobjekt gestreamt werden kann, wird die Speicherverschlüsselung vom Streamingserver entfernt und der Inhalt mithilfe der angegebenen Übermittlungsrichtlinie gestreamt. Wenn Sie ein Medienobjekt für die Übermittlung beispielsweise mit einem Schlüssel für die AES (Advanced Encryption Standard)-Umschlagverschlüsselung verschlüsseln möchten, legen Sie den Richtlinientyp auf **DynamicEnvelopeEncryption** fest. Um die Speicherverschlüsselung zu entfernen und das Medienobjekt unverschlüsselt zu streamen, legen Sie den Richtlinientyp auf **NoDynamicEncryption** fest. In den folgenden Beispielen wird die Konfiguration dieser Richtlinientypen veranschaulicht.
 
-Je nachdem, wie Sie die Übermittlungsrichtlinie für Assets konfigurieren, können Sie die folgenden Streamingprotokolle dynamisch verpacken, dynamisch verschlüsseln und streamen: Smooth Streaming-, HLS-, MPEG DASH- und HDS-Streams.
+Je nachdem, wie Sie die Übermittlungsrichtlinie für Medienobjekte konfigurieren, können Sie die folgenden Streamingprotokolle dynamisch verpacken, dynamisch verschlüsseln und streamen: Smooth Streaming-, HLS-, MPEG DASH- und HDS-Streams.
 
 Die folgende Liste enthält die Formate, die Sie zum Streamen von Smooth, HLS, DASH und HDS verwenden.
 
@@ -52,7 +52,7 @@ HDS
 
 	{streaming endpoint name-media services account name}.streaming.mediaservices.windows.net/{locator ID}/{filename}.ism/Manifest(format=f4m-f4f)
 
-Anweisungen zum Veröffentlichen eines Assets und Erstellen einer Streaming-URL finden Sie unter [Erstellen einer Streaming-URL](media-services-deliver-streaming-content.md).
+Anweisungen zum Veröffentlichen eines Medienobjekts und Erstellen einer Streaming-URL finden Sie unter [Erstellen einer Streaming-URL](media-services-deliver-streaming-content.md).
 
 >[AZURE.NOTE]Beim Verwenden der Media Services REST-API gelten die folgenden Überlegungen:
 >
@@ -61,10 +61,10 @@ Anweisungen zum Veröffentlichen eines Assets und Erstellen einer Streaming-URL 
 >Nach der erfolgreichen Verbindung mit https://media.windows.net erhalten Sie eine 301 Redirect-Antwort, in der ein anderer Media Services-URI angegeben ist. Entsprechend der Beschreibung unter [Herstellen einer Verbindung mit einem Media Services-Konto über die Media Services-REST-API](media-services-rest-connect_programmatically.md) müssen Sie nachfolgende Aufrufe an den neuen URI senden.
 
 
-##Löschen einer Übermittlungsrichtlinie für Assets 
+##Löschen einer Übermittlungsrichtlinie für Medienobjekte 
 
-###<a id="create_asset_delivery_policy"></a>Erstellen einer Übermittlungsrichtlinie für Assets
-Durch die folgende HTTP-Anforderung wird eine Übermittlungsrichtlinie für Assets erstellt. Diese gibt an, dass keine dynamische Verschlüsselung angewendet und der Stream mit einem der folgenden Protokolle übermittelt wird: MPEG DASH, HLS und Smooth Streaming-Protokolle.
+###<a id="create_asset_delivery_policy"></a>Erstellen einer Übermittlungsrichtlinie für Medienobjekte
+Durch die folgende HTTP-Anforderung wird eine Übermittlungsrichtlinie für Medienobjekte erstellt. Diese gibt an, dass keine dynamische Verschlüsselung angewendet und der Stream mit einem der folgenden Protokolle übermittelt wird: MPEG DASH, HLS und Smooth Streaming-Protokolle.
 
 Im Abschnitt [Beim Definieren von AssetDeliveryPolicy verwendete Typen](#types) wird erläutert, welche Werte Sie beim Erstellen von AssetDeliveryPolicy angeben
 
@@ -113,9 +113,9 @@ Antwort:
 	"Created":"2015-02-08T06:21:27.6908329Z",
 	"LastModified":"2015-02-08T06:21:27.6908329Z"}
 	
-###<a id="link_asset_with_asset_delivery_policy"></a>Verknüpfen des Assets mit einer Übermittlungsrichtlinie für Assets
+###<a id="link_asset_with_asset_delivery_policy"></a>Verknüpfen des Medienobjekts mit einer Übermittlungsrichtlinie für Medienobjekte
 
-Die folgende HTTP-Anforderung verknüpft das angegebene Asset mit der Übermittlungsrichtlinie für Assets.
+Die folgende HTTP-Anforderung verknüpft das angegebene Medienobjekt mit der Übermittlungsrichtlinie für Medienobjekte.
 
 Anforderung:
 
@@ -137,11 +137,11 @@ Antwort:
 	HTTP/1.1 204 No Content
 
 
-##DynamicEnvelopeEncryption-Übermittlungsrichtlinie für Assets 
+##DynamicEnvelopeEncryption-Übermittlungsrichtlinie für Medienobjekte 
 
-###Erstellen eines Inhaltsschlüssels des EnvelopeEncryption-Typs und Verknüpfen des Schlüssels mit dem Asset
+###Erstellen eines Inhaltsschlüssels des EnvelopeEncryption-Typs und Verknüpfen des Schlüssels mit dem Medienobjekt
 
-Wenn Sie die DynamicEnvelopeEncryption-Übermittlungsrichtlinie angeben, müssen Sie sicherstellen, dass Ihr Asset mit einem Inhaltsschlüssel des EnvelopeEncryption-Typs verknüpft wird. Weitere Informationen finden Sie unter [Erstellen eines Inhaltsschlüssels](media-services-rest-create-contentkey.md)).
+Wenn Sie die DynamicEnvelopeEncryption-Übermittlungsrichtlinie angeben, müssen Sie sicherstellen, dass Ihr Medienobjekt mit einem Inhaltsschlüssel des EnvelopeEncryption-Typs verknüpft wird. Weitere Informationen finden Sie unter [Erstellen eines Inhaltsschlüssels](media-services-rest-create-contentkey.md)).
 
 
 ###<a id="get_delivery_url"></a>Abrufen der Übermittlungs-URL
@@ -183,7 +183,7 @@ Antwort:
 	{"odata.metadata":"media.windows.net/api/$metadata#Edm.String","value":"https://amsaccount1.keydelivery.mediaservices.windows.net/?KID=dc88f996-2859-4cf7-a279-c52a9d6b2f04"}
 
 
-###Erstellen einer Übermittlungsrichtlinie für Assets
+###Erstellen einer Übermittlungsrichtlinie für Medienobjekte
 
 Durch die folgende HTTP-Anforderung wird die **AssetDeliveryPolicy** erstellt. Die Richtlinie ist so konfiguriert, dass sie die dynamische Umschlagsverschlüsselung (**DynamicEnvelopeEncryption**) auf das **HLS**-Protokoll anwendet (andere Protokolle in diesem Beispiel sind vom Streaming ausgeschlossen).
 
@@ -226,22 +226,22 @@ Antwort:
 	{"odata.metadata":"media.windows.net/api/$metadata#AssetDeliveryPolicies/@Element","Id":"nb:adpid:UUID:ec9b994e-672c-4a5b-8490-a464eeb7964b","Name":"AssetDeliveryPolicy","AssetDeliveryProtocol":4,"AssetDeliveryPolicyType":3,"AssetDeliveryConfiguration":"[{"Key":2,"Value":"https:\\/\\/amsaccount1.keydelivery.mediaservices.windows.net\\/"}]","Created":"2015-02-09T05:24:38.9167436Z","LastModified":"2015-02-09T05:24:38.9167436Z"}
 
 
-###Verknüpfen des Assets mit einer Übermittlungsrichtlinie für Assets
+###Verknüpfen des Medienobjekts mit einer Übermittlungsrichtlinie für Medienobjekte
 
-Weitere Informationen finden Sie unter [Verknüpfen des Assets mit einer Übermittlungsrichtlinie für Assets](#link_asset_with_asset_delivery_policy).
+Weitere Informationen finden Sie unter [Verknüpfen des Medienobjekts mit einer Übermittlungsrichtlinie für Medienobjekte](#link_asset_with_asset_delivery_policy).
 
-##DynamicCommonEncryption-Übermittlungsrichtlinie für Assets 
+##DynamicCommonEncryption-Übermittlungsrichtlinie für Medienobjekte 
 
-###Erstellen eines Inhaltsschlüssels des CommonEncryption-Typs und Verknüpfen des Schlüssels mit dem Asset
+###Erstellen eines Inhaltsschlüssels des CommonEncryption-Typs und Verknüpfen des Schlüssels mit dem Medienobjekt
 
-Wenn Sie die DynamicCommonEncryption-Übermittlungsrichtlinie angeben, müssen Sie sicherstellen, dass Ihr Asset mit einem Inhaltsschlüssel des CommonEncryption-Typs verknüpft wird. Weitere Informationen finden Sie unter [Erstellen eines Inhaltsschlüssels](media-services-rest-create-contentkey.md)).
+Wenn Sie die DynamicCommonEncryption-Übermittlungsrichtlinie angeben, müssen Sie sicherstellen, dass Ihr Medienobjekt mit einem Inhaltsschlüssel des CommonEncryption-Typs verknüpft wird. Weitere Informationen finden Sie unter [Erstellen eines Inhaltsschlüssels](media-services-rest-create-contentkey.md)).
 
 
 ###Abrufen der übermittlungs-URL
 
 Rufen Sie die Übermittlungs-URL für die PlayReady-Übermittlungsmethode des Inhaltsschlüssels auf, den Sie im vorherigen Schritt erstellt haben. Ein Client verwendet die zurückgegebene URL, um eine PlayReady-Lizenz zur Wiedergabe des geschützten Inhalts anzufordern. Weitere Informationen finden Sie unter [Abrufen der Übermittlungs-URL](#get_delivery_url).
 
-###Erstellen einer Übermittlungsrichtlinie für Assets
+###Erstellen einer Übermittlungsrichtlinie für Medienobjekte
 
 Durch die folgende HTTP-Anforderung wird die **AssetDeliveryPolicy** erstellt. Die Richtlinie ist so konfiguriert, dass sie die dynamische allgemeine Verschlüsselung (**DynamicCommonEncryption**) auf das **Smooth Streaming**-Protokoll anwendet (andere Protokolle in diesem Beispiel sind vom Streaming ausgeschlossen).
 
@@ -274,9 +274,9 @@ Beispiel:
 
 >[AZURE.NOTE]Wenn Sie mit Widevine verschlüsseln, können Sie nur über DASH übermitteln. Geben Sie DASH (2) im Übermittlungsprotokoll für Medienobjekte an.
   
-###Verknüpfen des Assets mit einer Übermittlungsrichtlinie für Assets
+###Verknüpfen des Medienobjekts mit einer Übermittlungsrichtlinie für Medienobjekte
 
-Weitere Informationen finden Sie unter [Verknüpfen des Assets mit einer Übermittlungsrichtlinie für Assets](#link_asset_with_asset_delivery_policy).
+Weitere Informationen finden Sie unter [Verknüpfen des Medienobjekts mit einer Übermittlungsrichtlinie für Medienobjekte](#link_asset_with_asset_delivery_policy).
 
 
 ##<a id="types"></a>Beim Definieren von AssetDeliveryPolicy verwendete Typen
@@ -352,30 +352,43 @@ Weitere Informationen finden Sie unter [Verknüpfen des Assets mit einer Übermi
         /// Apply Dynamic Common encryption.
         /// </summary>
         DynamicCommonEncryption
-    }
+        }
 
 ###ContentKeyDeliveryType
 
+
     /// <summary>
     /// Delivery method of the content key to the client.
-    /// </summary>
+    ///
+    </summary>
     public enum ContentKeyDeliveryType
     {
         /// <summary>
         /// None.
-        /// </summary>
-        None,
+        ///
+        </summary>
+        None = 0,
 
         /// <summary>
         /// Use PlayReady License acquistion protocol
-        /// </summary>
-        PlayReadyLicense,
+        ///
+        </summary>
+        PlayReadyLicense = 1,
 
         /// <summary>
         /// Use MPEG Baseline HTTP key protocol.
-        /// </summary>
-        BaselineHttp
+        ///
+        </summary>
+        BaselineHttp = 2,
+
+        /// <summary>
+        /// Use Widevine License acquistion protocol
+        ///
+        </summary>
+        Widevine = 3
+
     }
+
 
 ###AssetDeliveryPolicyConfigurationKey
 
@@ -435,4 +448,4 @@ Weitere Informationen finden Sie unter [Verknüpfen des Assets mit einer Übermi
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

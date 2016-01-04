@@ -13,11 +13,16 @@
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="09/10/2015"
+	ms.date="12/07/2015"
 	ms.author="glenga"/>
 
 
 # Vorgehensweise beim Definieren eines benutzerdefinierten API-Endpunkts in einem mobilen .NET-Back-End-Dienst
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 > [AZURE.SELECTOR]
 - [JavaScript backend](./mobile-services-javascript-backend-define-custom-api.md)
@@ -36,4 +41,4 @@ Informationen zum Aufrufen einer benutzerdefinierten API in Ihrer App mithilfe e
 
 <!-- URLs. -->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

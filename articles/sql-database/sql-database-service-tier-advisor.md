@@ -13,14 +13,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="data-management" 
-   ms.date="10/02/2015"
+   ms.date="12/01/2015"
    ms.author="sstein"/>
 
 # Tarifempfehlungen für SQL-Datenbank
 
  Es werden Tarifempfehlungen bereitgestellt, die die Dienstebene und die Leistungsebene empfehlen, die am besten geeignet sind, den Workload einer vorhandenen Azure SQL-Datenbank auszuführen.
 
-> [AZURE.NOTE]Tarifempfehlungen sind nur für Web- und Business-Datenbanken sowie für Pools für elastische Datenbanken verfügbar – und sie sind nur im [Azure-Vorschauportal](https://portal.azure.com/) verfügbar.
+> [AZURE.NOTE]Tarifempfehlungen sind nur für Web- und Business-Datenbanken sowie für Pools für elastische Datenbanken verfügbar – und sie sind nur im [Azure-Portal](https://portal.azure.com/) verfügbar.
 
 
 Sie erhalten Tarifempfehlungen während der folgenden Aufgaben:
@@ -58,7 +58,7 @@ Basierend auf Ihrer Datenbanknutzung können derzeit 2 Kategorien von Empfehlung
 
 Zum Abrufen von Tarifempfehlungen wählen Sie eine vorhandene Web- oder Business-Datenbank aus, und klicken Sie dann auf die Kachel **Tarif** . (Tarifempfehlungen sind auch verfügbar, wenn Sie die [Schritte für das Upgrade auf Azure SQL-Datenbank V12](sql-database-v12-upgrade.md) ausführen.)
 
-1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com/) an.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/) an.
 2. Klicken auf **DURCHSUCHEN** > **SQL-Datenbanken**.
 4. Klicken Sie im Blatt **SQL-Datenbanken** auf die Datenbank, für die Sie eine Empfehlung anzeigen möchten:
 
@@ -87,7 +87,7 @@ Tarifempfehlungen bieten eine automatisierte Möglichkeit zum Erfassen von Telem
 
 ## Nächste Schritte
 
-Abhängig von den Details Ihrer speziellen Datenbank erfolgt die Durchführung eines Upgrades oder Downgrades in der Regel nicht sofort. Das Verwaltungsportal stellt während des Übergangs der Datenbank auf einen neuen Tarif Benachrichtigungen bereit. Sie können den Upgradestatus jedoch auch überwachen, indem Sie die Sicht [Sys. dm\_operation\_status (Azure SQL-Datenbank)](https://msdn.microsoft.com/library/dn270022.aspx) in der Master-Datenbank des SQL-Datenbankservers abfragen.
+Abhängig von den Details Ihrer speziellen Datenbank erfolgt die Durchführung eines Upgrades oder Downgrades in der Regel nicht sofort. Das Portal stellt während des Übergangs der Datenbank auf einen neuen Tarif Benachrichtigungen bereit. Sie können den Upgradestatus jedoch auch überwachen, indem Sie die Sicht [Sys.dm\_operation\_status (Azure SQL-Datenbank)](https://msdn.microsoft.com/library/dn270022.aspx) in der Master-Datenbank des SQL-Datenbankservers abfragen.
 
 
 <!--Image references-->
@@ -100,4 +100,4 @@ Abhängig von den Details Ihrer speziellen Datenbank erfolgt die Durchführung e
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

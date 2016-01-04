@@ -24,7 +24,7 @@
 In diesem Thema werden die Planung und die Vorbereitungen beschrieben, die Sie ausführen müssen, um das Upgrade Ihrer Azure SQL-Datenbanken von Version V11 auf V12 vorzunehmen.
 
 
-Ein neues [Azure-Vorschauportal](http://portal.azure.com/) ist verfügbar, um Sie bei der Durchführung des Upgrades auf V12 zu unterstützen.
+Es ist ein neues [Azure-Portal](http://portal.azure.com/) verfügbar, um Ihr Upgrade auf V12 zu unterstützten.
 
 
 In der folgenden Tabelle sind weitere Hilfethemen für V12 aufgeführt.
@@ -91,7 +91,7 @@ Der Tarif des Web- und Business-Diensts wird unter V12 nicht unterstützt.
 Wenn Ihre V11 Azure SQL-Datenbank eine Web- oder Business-Datenbank ist, bietet Ihnen der Upgradevorgang an, Ihre Datenbank in eine unterstützte Ebene umzuschalten. Das Upgrade empfiehlt eine Ebene, die dem Workloadverlauf Ihrer Datenbank entspricht. Sie können jedoch jede gewünschte Ebene auswählen, die unterstützt wird.
 
 
-Sie können die Schritte verringern, die während des Upgrades erforderlich sind, indem Sie Ihre V11-Datenbank von der Web- und Business-Ebene abkoppeln, bevor Sie mit dem Upgrade beginnen. Dies kann mithilfe des neuen [Azure-Vorschauportals](http://portal.azure.com/) erfolgen.
+Sie können die Schritte verringern, die während des Upgrades erforderlich sind, indem Sie Ihre V11-Datenbank von der Web- und Business-Ebene abkoppeln, bevor Sie mit dem Upgrade beginnen. Dies kann mithilfe des neuen [Azure-Portals](http://portal.azure.com/) erfolgen.
 
 
 Wenn Sie sich nicht sicher sind, auf welche Dienstebene Sie wechseln sollten, kann die S2-Stufe der Standardebene eine sinnvolle Wahl für den Anfang sein. Alle niedrigeren Ebenen verfügen über weniger Ressourcen als bei der Web- und Business-Ebene verfügbar waren.
@@ -127,17 +127,17 @@ Klicken Sie auf [hier](sql-database-develop-direct-route-ports-adonet-v12.md), u
 Es gibt drei Portale für Azure, wobei jedes über unterschiedliche Funktionen im Hinblick auf SQL-Datenbank V12 verfügt.
 
 
-- [http://portal.azure.com/](http://portal.azure.com/)<br/>Dieses Azure-Vorschauportal ist neu und befindet sich noch im Vorschaustatus. Dieses Portal hat noch nicht vollständig die allgemeine Verfügbarkeit erreicht. Dieses Portal:
+- [http://portal.azure.com/](http://portal.azure.com/)<br/>Dieses Azure-Portal ist neu und befindet sich noch im Vorschaustatus. Dieses Portal hat noch nicht vollständig die allgemeine Verfügbarkeit erreicht. Dieses Portal:
  - Kann Ihre V12-Server und -Datenbanken verwalten.
  - Kann ein Upgrade Ihrer V11-Datenbank auf V12 durchführen.
 
 
-- [http://manage.windowsazure.com/](http://manage.windowsazure.com/)<br/>Dieses Azure-Portal wird möglicherweise abgeschafft. Dieses Portal:
+- [http://manage.windowsazure.com/](http://manage.windowsazure.com/)<br/>Dieses klassische Azure-Portal wird möglicherweise abgeschafft. Dieses Portal:
  - Kann Ihre V12-Server und -Datenbanken verwalten.
  - Kann *kein* Upgrade Ihrer V11-Datenbank auf V12 durchführen.
 
 
-- (http://*yourservername*.database.windows.net)<br/> Azure SQL-Datenbankverwaltungsportal:
+- (http://*yourservername*.database.windows.net)<br/> Klassisches Portal für Azure SQL-Datenbanken:
  - Kann V12-Server *nicht* verwalten.
 
 
@@ -149,10 +149,10 @@ Wir empfehlen Kunden, die Verbindung zu ihren Azure SQL-Datenbanken mit Visual S
 - Entwickeln einer Datenbank, entweder online oder offline
 
 
-Sie können die Verbindung stattdessen mit [Visual Studio Community 2013](https://www.visualstudio.com/en-us/news/vs2013-community-vs.aspx/) herstellen, bei dem es sich um eine kostenlose, voll funktionsfähige Version von VS2013 handelt.
+Sie können die Verbindung stattdessen mit [Visual Studio Community 2013](https://www.visualstudio.com/de-DE/news/vs2013-community-vs.aspx/) herstellen, bei dem es sich um eine kostenlose, voll funktionsfähige Version von VS2013 handelt.
 
 
-Im älteren Azure-Portal können Sie auf der Datenbankseite auf **In Visual Studio öffnen** klicken, um VS2013 auf Ihrem Computer zu starten und die Verbindung zu Ihrer Azure SQL-Datenbank herzustellen.
+Im älteren klassischen Azure-Portal können Sie auf der Datenbankseite auf **In Visual Studio öffnen** klicken, um VS2013 auf Ihrem Computer zu starten und die Verbindung zu Ihrer Azure SQL-Datenbank herzustellen.
 
 
 Als weitere Alternative können Sie SQL Server Management Studio (SSMS) 2014 mit[CU6](http://support.microsoft.com/kb/3031047/) verwenden, um die Verbindung zur Azure SQL-Datenbank herzustellen. Weitere Informationen finden Sie in diesem Blogbeitrag:<br/>[Clienttool-Updates für Azure SQL-Datenbank](http://azure.microsoft.com/blog/2014/12/22/client-tooling-updates-for-azure-sql-database/).
@@ -184,7 +184,7 @@ Während des Upgrades auf V12 kann weiterhin auf Daten in V11-Datenbanken zugegr
 ### Exportieren und Importieren *nach* Upgrades auf V12
 
 
-Sie können eine V12-Datenbank über das [Azure-Vorschauportal](http://portal.azure.com/) exportieren oder importieren. Alternativ können Sie den Export oder Import mithilfe der folgenden Tools ausführen:
+Sie können eine V12-Datenbank mithilfe des [Azure-Portals](http://portal.azure.com/) exportieren oder importieren. Alternativ können Sie den Export oder Import mithilfe der folgenden Tools ausführen:
 
 
 - SQL Server Management Studio (SSMS)
@@ -254,4 +254,4 @@ Wenn aus einem bestimmten Grund ein Upgradefehler auftritt, bleibt Ihre V11-Date
 [Subheading 1]: #subheading-1
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

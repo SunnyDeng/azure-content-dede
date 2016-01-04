@@ -134,7 +134,7 @@ Befolgen Sie die Anweisungen zum Migrieren Ihrer Website in den folgenden Abschn
 
 6. Klicken Sie auf **Senden**. Sie werden informiert, wenn der Import erfolgreich war.
 
-8. Starten Sie, nachdem Sie alle Schritte abgeschlossen haben, Ihre Website auf dem Blatt der Web-App im [Azure-Vorschauportal][mgmtportal] neu.
+8. Starten Sie, nachdem Sie alle Schritte abgeschlossen haben, Ihre Website auf dem Blatt der Web-App im [Azure-Portal][mgmtportal] neu.
 
 Nach dem Importieren der Website müssen Sie ggf. die folgenden Schritte ausführen, um nicht in der Importdatei enthaltene Einstellungen zu aktivieren.
 
@@ -161,7 +161,7 @@ Bei Verwendung von | Maßnahme
 
 4. Erstellen Sie im Azure-Verwaltungsportal eine neue Web-App, und veröffentlichen Sie die WordPress-Sicherung.
 
-	1. Erstellen Sie im [Azure-Vorschauportal][mgmtportal] eine neue Web-App mit einer Datenbank, indem Sie **Neu** -> **Web + Mobile** -> **Azure Marketplace** -> **Web-Apps** -> **Web-App + SQL** (oder **Web-App + MySQL**) -> **Erstellen** auswählen. Konfigurieren Sie alle erforderlichen Einstellungen, um eine leere Web-App zu erstellen.
+	1. Erstellen Sie im [Azure-Portal][mgmtportal] eine neue Web-App mit einer Datenbank, indem Sie **Neu** -> **Web und mobil** -> **Azure Marketplace** -> **Web-Apps** -> **Web-App + SQL** (oder **Web-App + MySQL**) -> **Erstellen** auswählen. Konfigurieren Sie alle erforderlichen Einstellungen, um eine leere Web-App zu erstellen.
 
 	2. Suchen Sie in Ihrer WordPress-Sicherung die Datei **wp-config.php**, und öffnen Sie sie in einem Editor. Ersetzen Sie die folgenden Einträge durch die Informationen für Ihre neue MySQL-Datenbank.
 
@@ -196,47 +196,46 @@ Maßnahme | Option
 
 ## Nächste Schritte
 
-* [WordPress optimization](http://codex.wordpress.org/WordPress_Optimization) (WordPress-Optimierung, in englischer Sprache)
+* [WordPress optimization (WordPress-Optimierung, in englischer Sprache)](http://codex.wordpress.org/WordPress_Optimization)
 
 * [Konvertieren von WordPress in Multisite in Azure App Service](web-sites-php-convert-wordpress-multisite.md)
 
-* [ClearDB upgrade wizard for Azure](http://www.cleardb.com/store/azure/upgrade) (ClearDB-Upgrade-Assistent für Azure, in englischer Sprache)
+* [ClearDB upgrade wizard for Azure (ClearDB-Upgrade-Assistent für Azure, in englischer Sprache)](http://www.cleardb.com/store/azure/upgrade)
 
-* [Hosting WordPress in a subfolder of your web app in Azure App Service](http://blogs.msdn.com/b/webapps/archive/2013/02/13/hosting-wordpress-in-a-subfolder-of-your-windows-azure-web-site.aspx) (Hosten von WordPress in einem Unterordner Ihrer Web-App in Azure App Service, in englischer Sprache)
+* [Hosting WordPress in a subfolder of your web app in Azure App Service (Hosten von WordPress in einem Unterordner Ihrer Web-App in Azure App Service, in englischer Sprache)](http://blogs.msdn.com/b/webapps/archive/2013/02/13/hosting-wordpress-in-a-subfolder-of-your-windows-azure-web-site.aspx)
 
-* [Step-By-Step: Create a WordPress site using Azure](http://blogs.technet.com/b/blainbar/archive/2013/08/07/article-create-a-wordpress-site-using-windows-azure-read-on.aspx) (Schritt für Schritt: Erstellen einer WordPress-Website mit Azure, in englischer Sprache)
+* [Step-By-Step: Create a WordPress site using Azure (Schritt für Schritt: Erstellen einer WordPress-Website mit Azure, in englischer Sprache)](http://blogs.technet.com/b/blainbar/archive/2013/08/07/article-create-a-wordpress-site-using-windows-azure-read-on.aspx)
 
-* [Host your existing WordPress blog on Azure](http://blogs.msdn.com/b/msgulfcommunity/archive/2013/08/26/migrating-a-self-hosted-wordpress-blog-to-windows-azure.aspx) (Hosten Ihres vorhandenen WordPress-Blogs in Azure, in englischer Sprache)
+* [Host your existing WordPress blog on Azure (Hosten Ihres vorhandenen WordPress-Blogs in Azure, in englischer Sprache)](http://blogs.msdn.com/b/msgulfcommunity/archive/2013/08/26/migrating-a-self-hosted-wordpress-blog-to-windows-azure.aspx)
 
-* [Enabling pretty permalinks in WordPress](http://www.iis.net/learn/extensions/url-rewrite-module/enabling-pretty-permalinks-in-wordpress) (Verwenden von benutzerfreundlichen Permalinks in WordPress, in englischer Sprache)
+* [Enabling pretty permalinks in WordPress (Verwenden von benutzerfreundlichen Permalinks in WordPress, in englischer Sprache)](http://www.iis.net/learn/extensions/url-rewrite-module/enabling-pretty-permalinks-in-wordpress)
 
-* [How to migrate and run your WordPress blog on Azure App Service](http://www.kefalidis.me/2012/06/how-to-migrate-and-run-your-wordpress-blog-on-windows-azure-websites/) (Gewusst wie: Migrieren und Ausführen Ihres WordPress-Blogs in Azure App Service, in englischer Sprache)
+* [How to migrate and run your WordPress blog on Azure App Service (Gewusst wie: Migrieren und Ausführen Ihres WordPress-Blogs in Azure App Service, in englischer Sprache)](http://www.kefalidis.me/2012/06/how-to-migrate-and-run-your-wordpress-blog-on-windows-azure-websites/)
 
-* [How to run WordPress on Azure App Service for free](http://architects.dzone.com/articles/how-run-wordpress-azure) (Gewusst wie: Kostenloses Ausführen von WordPress in Azure App Service, in englischer Sprache)
+* [How to run WordPress on Azure App Service for free (Gewusst wie: Kostenloses Ausführen von WordPress in Azure App Service, in englischer Sprache)](http://architects.dzone.com/articles/how-run-wordpress-azure)
 
-* [WordPress on Azure in 2 minutes or less](http://www.sitepoint.com/wordpress-windows-azure-2-minutes-less/) (WordPress in Azure – in maximal 2 Minuten, in englischer Sprache)
+* [WordPress on Azure in 2 minutes or less (WordPress in Azure – in maximal 2 Minuten, in englischer Sprache)](http://www.sitepoint.com/wordpress-windows-azure-2-minutes-less/)
 
-* [Moving a WordPress blog to Azure – Part 1: Creating a WordPress blog on Azure](http://www.davebost.com/2013/07/10/moving-a-wordpress-blog-to-windows-azure-part-1) (Verschieben eines WordPress-Blogs nach Azure – Teil 1: Erstellen eines WordPress-Blogs in Azure, in englischer Sprache)
+* [Moving a WordPress blog to Azure – Part 1: Creating a WordPress blog on Azure (Verschieben eines WordPress-Blogs nach Azure – Teil 1: Erstellen eines WordPress-Blogs in Azure, in englischer Sprache)](http://www.davebost.com/2013/07/10/moving-a-wordpress-blog-to-windows-azure-part-1)
 
-* [Moving a WordPress blog to Azure – Part 2: Transferring your content](http://www.davebost.com/2013/07/11/moving-a-wordpress-blog-to-windows-azure-transferring-your-content) (Verschieben eines WordPress-Blogs nach Azure – Teil 2: Übertragen der Inhalte, in englischer Sprache)
+* [Moving a WordPress blog to Azure – Part 2: Transferring your content (Verschieben eines WordPress-Blogs nach Azure – Teil 2: Übertragen der Inhalte, in englischer Sprache)](http://www.davebost.com/2013/07/11/moving-a-wordpress-blog-to-windows-azure-transferring-your-content)
 
-* [Moving a WordPress blog to Azure – Part 3: Setting up your custom domain](http://www.davebost.com/2013/07/11/moving-a-wordpress-blog-to-windows-azure-part-3-setting-up-your-custom-domain) (Verschieben eines WordPress-Blogs nach Azure – Teil 3: Einrichten der benutzerdefinierten Domäne, in englischer Sprache)
+* [Moving a WordPress blog to Azure – Part 3: Setting up your custom domain (Verschieben eines WordPress-Blogs nach Azure – Teil 3: Einrichten der benutzerdefinierten Domäne, in englischer Sprache)](http://www.davebost.com/2013/07/11/moving-a-wordpress-blog-to-windows-azure-part-3-setting-up-your-custom-domain)
 
-* [Moving a WordPress blog to Azure – Part 4: Pretty permalinks and URL Rewrite rules](http://www.davebost.com/2013/07/11/moving-a-wordpress-blog-to-windows-azure-part-4-pretty-permalinks-and-url-rewrite-rules) (Verschieben eines WordPress-Blogs nach Azure – Teil 4: Benutzerfreundliche Permalinks und URL-Rewrite-Regeln, in englischer Sprache)
+* [Moving a WordPress blog to Azure – Part 4: Pretty permalinks and URL Rewrite rules (Verschieben eines WordPress-Blogs nach Azure – Teil 4: Benutzerfreundliche Permalinks und URL-Rewrite-Regeln, in englischer Sprache)](http://www.davebost.com/2013/07/11/moving-a-wordpress-blog-to-windows-azure-part-4-pretty-permalinks-and-url-rewrite-rules)
 
-* [Moving a WordPress blog to Azure – Part 5: Moving from a subfolder to the root](http://www.davebost.com/2013/07/11/moving-a-wordpress-blog-to-windows-azure-part-5-moving-from-a-subfolder-to-the-root) (Verschieben eines WordPress-Blogs nach Azure – Teil 5: Verschieben aus einem Unterordner in den Stammordner, in englischer Sprache)
+* [Moving a WordPress blog to Azure – Part 5: Moving from a subfolder to the root (Verschieben eines WordPress-Blogs nach Azure – Teil 5: Verschieben aus einem Unterordner in den Stammordner, in englischer Sprache)](http://www.davebost.com/2013/07/11/moving-a-wordpress-blog-to-windows-azure-part-5-moving-from-a-subfolder-to-the-root)
 
-* [How to set up a WordPress web app in your Azure account](http://www.itexperience.net/2014/01/20/how-to-set-up-a-wordpress-website-in-your-windows-azure-account/) (Gewusst wie: Einrichten einer WordPress-Web-App in Ihrem Azure-Konto, in englischer Sprache)
+* [How to set up a WordPress web app in your Azure account (Gewusst wie: Einrichten einer WordPress-Web-App in Ihrem Azure-Konto, in englischer Sprache)](http://www.itexperience.net/2014/01/20/how-to-set-up-a-wordpress-website-in-your-windows-azure-account/)
 
-* [Propping up WordPress on Azure](http://www.johnpapa.net/wordpress-on-azure/) (Unterstützen von WordPress in Azure, in englischer Sprache)
+* [Propping up WordPress on Azure (Unterstützen von WordPress in Azure, in englischer Sprache)](http://www.johnpapa.net/wordpress-on-azure/)
 
-* [Tips for WordPress on Azure](http://www.johnpapa.net/azurecleardbmysql/) (Tipps für WordPress in Azure, in englischer Sprache)
+* [Tips for WordPress on Azure (Tipps für WordPress in Azure, in englischer Sprache)](http://www.johnpapa.net/azurecleardbmysql/)
 
 >[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Änderungen
-* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des Portals gegenüber dem Vorschauportal finden Sie unter [Referenz zur Navigation im Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715).
+* Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 
 [performance-diagram]: ./media/web-sites-php-enterprise-wordpress/performance-diagram.png
 [basic-diagram]: ./media/web-sites-php-enterprise-wordpress/basic-diagram.png
@@ -283,4 +282,4 @@ Maßnahme | Option
 [cdn]: ../cdn-how-to-use.md
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

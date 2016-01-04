@@ -27,9 +27,9 @@ In diesem Tutorial erfahren Sie, wie Sie ein Mobile Apps-.NET-Back-End so anpass
 
 ## Voraussetzungen ##
 
-Für dieses Lernprogramm müssen Sie über Folgendes verfügen:
+Für dieses Tutorial müssen Sie über Folgendes verfügen:
 
-- **Ein vorhandenes mobiles Apps-Back-End** <br/>Folgen Sie dem [Schnellstart-Lernprogramm](app-service-mobile-windows-store-dotnet-get-started.md) zum Erstellen und Herunterladen einer neuen mobilen .NET-Back-End-App aus dem [Azure-Portal].
+- **Ein vorhandenes Back-End für mobile Apps** <br/>Folgen Sie dem [Schnellstarttutorial](app-service-mobile-windows-store-dotnet-get-started.md) zum Erstellen und Herunterladen einer neuen mobilen .NET-Back-End-App aus dem [Azure-Portal].
 
 [AZURE.INCLUDE [hybrid-connections-prerequisites](../../includes/hybrid-connections-prerequisites.md)]
 
@@ -77,7 +77,7 @@ In diesem Schritt definieren Sie eine Verbindungszeichenfolge für die lokale Da
 
 1. Öffnen Sie in Visual Studio 2013 das Projekt, in dem das mobile App-Back-End definiert wird.
 
-	Weitere Informationen zum Herunterladen des .NET Back-End-Projekts finden Sie unter [Schnellstart-Lernprogramm](app-service-mobile-windows-store-dotnet-get-started.md).
+	Weitere Informationen zum Herunterladen des .NET Back-End-Projekts finden Sie unter [Schnellstarttutorial](app-service-mobile-windows-store-dotnet-get-started.md).
 
 2. Öffnen Sie im Projektmappen-Explorer die Datei "Web.config", suchen Sie den Abschnitt **connectionStrings**, fügen Sie einen neuen SqlClient-Eintrag, der auf die lokale SQL Server-Datenbank verweist, wie folgt hinzu:
 
@@ -137,15 +137,13 @@ Abschließend müssen Sie das mobile App-Back-End auf Azure veröffentlichen und
 
 3. Klicken Sie abschließend auf **Veröffentlichen**.
 
-	Nach Abschluss der Veröffentlichung wird der Dienst neu gestartet wird und die Back-End-Startseite angezeigt.
+	Nach Abschluss der Veröffentlichung wird der Dienst neu gestartet, und die Back-End-Startseite wird angezeigt.
 
-4. Rufen Sie mit <!--- either the **Try it now** button on the start page as before or using --> einer Client-App, die mit Ihrer mobilen App verbunden ist, einige Vorgänge auf, die Datenbankänderungen generieren.
-<!--- This try it now is not longer on the page after it is published. 
-	>[AZURE.NOTE]When you use the **Try it now** button to launch the Help API pages, remember to supply your application key as the password (with a blank username).
--->
-4. Stellen Sie in SQL Server Management Studio eine Verbindung mit der SQL Server-Instanz her, öffnen Sie den Objekt-Explorer, erweitern Sie die **OnPremisesDB**-Datenbank, und erweitern Sie **Tabellen**.
+4. Rufen Sie mithilfe einer Client-App, die mit Ihrer mobilen App verbunden ist, einige Vorgänge auf, die Datenbankänderungen generieren.
 
-5. Klicken Sie mit der rechten Maustaste auf die Tabelle **hybridService1.TodoItems**, und wählen Sie **Top 1000 Zeilen auswählen** aus, um die Ergebnisse anzuzeigen.
+5. Stellen Sie in SQL Server Management Studio eine Verbindung mit der SQL Server-Instanz her, öffnen Sie den Objekt-Explorer, erweitern Sie die **OnPremisesDB**-Datenbank, und erweitern Sie **Tabellen**.
+
+6. Klicken Sie mit der rechten Maustaste auf die Tabelle **hybridService1.TodoItems**, und wählen Sie **Top 1000 Zeilen auswählen** aus, um die Ergebnisse anzuzeigen.
 
 	Beachten Sie, dass Änderungen in Ihrer Client-App durch Ihr mobiles App-Back-End in der lokalen Datenbank unter Verwendung der Hybridverbindung gespeichert werden.
 
@@ -161,7 +159,7 @@ Abschließend müssen Sie das mobile App-Back-End auf Azure veröffentlichen und
 
 <!-- Links -->
 [Azure-Portal]: https://portal.azure.com/
-[Azure Management Portal]: http://go.microsoft.com/fwlink/p/?linkid=213885
+[Azure classic portal]: http://go.microsoft.com/fwlink/p/?linkid=213885
 [Get started with Mobile Services]: ../mobile-services-windows-store-dotnet-get-started.md
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

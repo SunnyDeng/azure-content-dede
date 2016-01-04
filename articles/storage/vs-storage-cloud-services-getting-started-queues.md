@@ -1,31 +1,22 @@
-<properties 
+<properties
     pageTitle="Erste Schritte mit Warteschlangenspeicher und verbundenen Visual Studio-Diensten (Cloud Services) | Microsoft Azure"
 	description="Erfahren Sie etwas über die ersten Schritte mit Azure-Warteschlangenspeicher in einem Clouddienstprojekt in Visual Studio, nachdem Sie mithilfe von verbundenen Visual Studio-Diensten eine Verbindung mit einem Speicherkonto hergestellt haben."
-	services="storage" 
-	documentationCenter="" 
-	authors="TomArcher" 
-	manager="douge" 
-	editor="tglee"/>
+	services="storage"
+	documentationCenter=""
+	authors="TomArcher"
+	manager="douge"
+	editor=""/>
 
-<tags 
-	ms.service="storage" 
-	ms.workload="web" 
+<tags
+	ms.service="storage"
+	ms.workload="web"
 	ms.tgt_pltfrm="vs-getting-started" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/03/2015" 
+	ms.devlang="na"
+	ms.topic="article"
+  ms.date="12/16/2015"
 	ms.author="tarcher"/>
 
 # Erste Schritte mit Azure-Warteschlangenspeicher und verbundenen Visual Studio-Diensten (Clouddienstprojekte)
-
-> [AZURE.SELECTOR]
-> - [Getting started](vs-storage-cloud-services-getting-started-queues.md)
-> - [What happened](vs-storage-cloud-services-what-happened.md)
-
-> [AZURE.SELECTOR]
-> - [Blobs](vs-storage-cloud-services-getting-started-blobs.md)
-> - [Queues](vs-storage-cloud-services-getting-started-queues.md)
-> - [Tables](vs-storage-cloud-services-getting-started-tables.md)
 
 ## Übersicht
 
@@ -76,9 +67,9 @@ Um auf Warteschlangen in Projekten der Visual Studio-Clouddienste zuzugreifen, m
 
 Fügen Sie zum Erstellen einer Warteschlange in Code einfach einen Aufruf von **CreateIfNotExists** hinzu.
 
-    // Get a reference to a CloudQueue object with the variable name 'messageQueue' 
+    // Get a reference to a CloudQueue object with the variable name 'messageQueue'
     // as described in the "Access queues in code" section.
-	
+
 	// Create the CloudQueue if it does not exist
 	messageQueue.CreateIfNotExists();
 
@@ -90,7 +81,7 @@ Ein **CloudQueueMessage**-Objekt kann aus einer Zeichenfolge (im UTF-8-Format) o
 
 Hier ist ein Beispiel, dass die Nachricht "Hello, World" eingefügt.
 
-    // Get a reference to a CloudQueue object with the variable name 'messageQueue' as described in 
+    // Get a reference to a CloudQueue object with the variable name 'messageQueue' as described in
     // the "Access queues in code" section.
 
 	// Create a message and add it to the queue.
@@ -101,9 +92,9 @@ Hier ist ein Beispiel, dass die Nachricht "Hello, World" eingefügt.
 
 Sie können einen Blick auf die Nachricht am Anfang einer Warteschlange werfen, ohne sie aus der Warteschlange zu entfernen, indem Sie die Methode **PeekMessage** aufrufen.
 
-    // Get a reference to a CloudQueue object with the variable name 'messageQueue' 
+    // Get a reference to a CloudQueue object with the variable name 'messageQueue'
     // as described in the "Access queues in code" section.
-	
+
 	// Peek at the next message
     CloudQueueMessage peekedMessage = messageQueue.PeekMessage();
 
@@ -116,9 +107,9 @@ Ihr Code kann eine Nachricht in zwei Schritten aus der Warteschlange entfernen.
 
 Dieser zweistufige Prozess zum Entfernen von Nachrichten stellt sicher, dass eine andere Codeinstanz dieselbe Nachricht erneut abrufen kann, falls die Verarbeitung aufgrund eines Hardware- oder Softwarefehlers fehlschlägt. Der folgende Code ruft **DeleteMessage** direkt nach der Verarbeitung der Nachricht auf.
 
-    // Get a reference to a CloudQueue object with the variable name 'messageQueue' 
+    // Get a reference to a CloudQueue object with the variable name 'messageQueue'
     // as described in the "Access queues in code" section.
-	
+
 	// Get the next message in the queue.
 	CloudQueueMessage retrievedMessage = messageQueue.GetMessage();
 
@@ -137,25 +128,25 @@ Es gibt zwei Möglichkeiten, wie Sie das Abrufen von Nachrichten aus der Wartesc
 
 Hier sehen Sie ein Beispiel:
 
-    // Get a reference to a CloudQueue object with the variable name 'messageQueue' 
+    // Get a reference to a CloudQueue object with the variable name 'messageQueue'
     // as described in the "Access queues in code" section.
-	
+
     foreach (CloudQueueMessage message in messageQueue.GetMessages(20, TimeSpan.FromMinutes(5)))
     {
         // Process all messages in less than 5 minutes, deleting each message after processing.
-    
+
         // Then delete the message after processing
         messageQueue.DeleteMessage(message);
-    
+
     }
 
 ## Abrufen der Warteschlangenlänge
 
 Sie können die Anzahl der Nachrichten in einer Warteschlange schätzen lassen. Die Methode **FetchAttributes** fordert den Warteschlangendienst auf, die Warteschlangenattribute einschließlich der Nachrichtenanzahl abzurufen. Die Eigenschaft **ApproximateMethodCount** gibt den letzten von der Methode **FetchAttributes** abgerufenen Wert zurück, ohne den Warteschlangendienst aufzurufen.
 
-    // Get a reference to a CloudQueue object with the variable name 'messageQueue' 
+    // Get a reference to a CloudQueue object with the variable name 'messageQueue'
     // as described in the "Access queues in code" section.
-	
+
 	// Fetch the queue attributes.
 	messageQueue.FetchAttributes();
 
@@ -169,9 +160,9 @@ Sie können die Anzahl der Nachrichten in einer Warteschlange schätzen lassen. 
 
 In diesem Beispiel wird veranschaulicht, wie das Async-Await-Muster mit allgemeinen Azure-Warteschlangen-APIs verwendet wird. Im Beispiel werden jeweils die asynchronen Versionen der angegebenen Methoden aufgerufen, was am Postfix **Async** der einzelnen Methoden erkennbar ist. Wenn eine asynchrone Methode verwendet wird, hält das Async-Await-Muster die lokale Ausführung an, bis der Aufruf abgeschlossen ist. Durch dieses Verhalten kann der aktuelle Thread eine andere Aktion ausführen, wodurch Leistungsengpässe vermieden werden und die allgemeine Reaktionsfähigkeit der Anwendung verbessert wird. Weitere Informationen zur Verwendung des Async-Await-Musters in .NET finden Sie unter [Async und Await (C# und Visual Basic)](https://msdn.microsoft.com/library/hh191443.aspx)
 
-    // Get a reference to a CloudQueue object with the variable name 'messageQueue' 
+    // Get a reference to a CloudQueue object with the variable name 'messageQueue'
     // as described in the "Access queues in code" section.
-	
+
     // Create a message to put in the queue
     CloudQueueMessage cloudQueueMessage = new CloudQueueMessage("My message");
 
@@ -191,15 +182,14 @@ In diesem Beispiel wird veranschaulicht, wie das Async-Await-Muster mit allgemei
 
 Zum Löschen einer Warteschlange und aller darin enthaltenen Nachrichten rufen Sie die Methode **Delete** für das Warteschlangenobjekt auf.
 
-    // Get a reference to a CloudQueue object with the variable name 'messageQueue' 
+    // Get a reference to a CloudQueue object with the variable name 'messageQueue'
     // as described in the "Access queues in code" section.
-	
+
     // Delete the queue.
     messageQueue.Delete();
 
 ## Nächste Schritte
 
 [AZURE.INCLUDE [vs-storage-dotnet-queues-next-steps](../../includes/vs-storage-dotnet-queues-next-steps.md)]
-			
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

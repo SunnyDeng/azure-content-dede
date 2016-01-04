@@ -1,11 +1,12 @@
-<properties 
-	pageTitle="Hochladen von Bildern in Azure-Blobspeicher über eine universelle Windows-App | Microsoft Azure" 
-	description="Erfahren Sie, wie mithilfe eines mobilen .NET Back-End-Dienstes Bilder in Azure-BLOB-Speicher hochladen und dann über Ihre universelle Windows-App darauf zugreifen." 
-	documentationCenter="windows" 
-	authors="ggailey777" 
-	services="mobile-services,storage" 
-	manager="dwrede" 
+<properties
+	pageTitle="Hochladen von Bildern in Azure-Blobspeicher über eine universelle Windows-App | Microsoft Azure"
+	description="Erfahren Sie, wie mithilfe eines mobilen .NET Back-End-Dienstes Bilder in Azure-BLOB-Speicher hochladen und dann über Ihre universelle Windows-App darauf zugreifen."
+	documentationCenter="windows"
+	authors="ggailey777"
+	services="mobile-services,storage"
+	manager="dwrede"
 	editor=""/>
+
 
 <tags 
 	ms.service="mobile-services" 
@@ -13,10 +14,15 @@
 	ms.tgt_pltfrm="mobile-windows-store" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="07/13/2015" 
+	ms.date="12/01/2015" 
 	ms.author="glenga"/>
 
 # Verwenden von Mobile Services zum Hochladen von Bildern in Azure Storage
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 [AZURE.INCLUDE [mobile-services-selector-upload-data-blob-storage](../../includes/mobile-services-selector-upload-data-blob-storage.md)]
 
@@ -52,7 +58,7 @@ Nachdem Sie nun gelernt haben, Ihre Bilder durch die Integration Ihres mobilen D
 + [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz](../mobile-services-windows-dotnet-how-to-use-client-library.md)
 
      Lernen Sie mehr über die Verwendung von Mobile Services mit .NET
- 
+
 <!-- Anchors. -->
 [Install the Storage Client library]: #install-storage-client
 [Update the client app to capture images]: #add-select-images
@@ -66,9 +72,7 @@ Nachdem Sie nun gelernt haben, Ihre Bilder durch die Integration Ihres mobilen D
 
 <!-- URLs. -->
 [Erste Schritte mit Mobile Services]: ../mobile-services-windows-store-dotnet-get-started.md
-[Azure Management Portal]: https://manage.windowsazure.com/
 [How To Create a Storage Account]: ../storage-create-storage-account.md
 [Azure Storage Client library for Store apps]: http://go.microsoft.com/fwlink/p/?LinkId=276866
- 
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -52,17 +52,26 @@ Um auf den Azure-Blob-Speicher zugreifen zu können, müssen Sie datenbankbezoge
 2. Erstellen Sie mithilfe von [CREATE MASTER KEY (Transact-SQL)][] einen Hauptschlüssel für Ihre Datenbank. Wenn Ihre Datenbank bereits über einen Hauptschlüssel verfügt, müssen Sie keinen weiteren Schlüssel erstellen. Dieser Schlüssel wird im nächsten Schritt zum Verschlüsseln des geheimen Schlüssels für Ihre Anmeldeinformationen verwendet.
 
     ```
-    -- Create a E master key
+    -- Create a master key
     CREATE MASTER KEY;
     ```
 
 1. Überprüfen Sie, ob bereits Datenbankanmeldeinformationen vorhanden sind. Verwenden Sie hierzu die Systemansicht „sys.database\_credentials“ und nicht „sys.credentials“, da diese Ansicht nur die Serveranmeldeinformationen enthält.
 
-    ``` -- Check for existing database-scoped credentials. SELECT * FROM sys.database\_credentials;
+    ```
+    -- Check for existing database-scoped credentials.
+    SELECT * FROM sys.database_credentials;
+    ```
 
 3. Erstellen Sie mit [CREATE CREDENTIAL (Transact-SQL)][] datenbankbezogene Anmeldeinformationen für alle Azure-Speicherkonten, auf die Sie zugreifen möchten. In diesem Beispiel steht IDENTITY für den Anzeigenamen für die Anmeldeinformationen. Er hat keine Auswirkungen auf die Authentifizierung für den Azure-Speicher. SECRET ist der Azure-Speicherkontoschlüssel.
 
-    -- Create a database scoped credential CREATE DATABASE SCOPED CREDENTIAL ASBSecret WITH IDENTITY = 'joe' , Secret = '<azure_storage_account_key>' ; ```
+    ```
+    -- Create a database scoped credential
+    CREATE DATABASE SCOPED CREDENTIAL ASBSecret 
+    WITH IDENTITY = 'joe'
+    ,    Secret = '<azure_storage_account_key>'
+    ;
+    ```
 
 1. Verwenden Sie zum Löschen datenbankbezogener Anmeldeinformationen [DROP CREDENTIAL (Transact-SQL)][]\:
 
@@ -73,7 +82,7 @@ DROP DATABASE SCOPED CREDENTIAL ASBSecret
 ```
 
 ## Schritt 2: Erstellen einer externen Datenquelle
-Die externe Datenquelle ist ein Datenbankobjekt, in dem der Speicherort der Daten des Azure-Blob-Speichers und Ihre Zugriffsinformationen gespeichert sind. Definieren Sie mithilfe von [CREATE EXTERNAL DATA SOURCE (Transact-SQL)][] eine externe Datenquelle für alle Azure-Speicherblobs, auf die Sie zugreifen möchten.
+Die externe Datenquelle ist ein Datenbankobjekt, in dem der Speicherort der Daten des Azure-Blob-Speichers und Ihre Zugriffsinformationen gespeichert sind. Definieren Sie mithilfe von [CREATE EXTERNAL DATA SOURCE (Transact-SQL)][] eine externe Datenquelle für alle Azure Storage-Blobs, auf die Sie zugreifen möchten.
 
     ```
     -- Create an external data source for an Azure storage blob
@@ -169,7 +178,7 @@ DROP EXTERNAL TABLE [ext].[CarSensor_Data]
 
 > [AZURE.NOTE]Wenn Sie eine externe Tabelle löschen, müssen Sie `DROP EXTERNAL TABLE` verwenden. `DROP TABLE` **kann nicht** verwendet werden.
 
-Referenzthema: [DROP EXTERNAL TABLE (Transact-SQL)][].
+Referenzthema: [DROP EXTERNAL TABLE (Transact-SQL)][]
 
 Es ist auch zu erwähnen, dass externe Tabellen sowohl in `sys.tables`- als auch insbesondere in `sys.external_tables`-Katalogsichten angezeigt werden.
 
@@ -234,7 +243,7 @@ Siehe [CREATE TABLE AS SELECT (Transact-SQL)][].
 
 ## Erstellen von Statistiken für die neu geladenen Daten
 
-Azure SQL Data Warehouse bietet noch keine Unterstützung für die automatische Erstellung oder die automatische Aktualisierung von Statistiken. Um die beste Leistung bei Abfragen zu erhalten, ist es wichtig, dass die Statistiken für alle Spalten aller Tabellen nach dem ersten Laden oder nach allen wesentlichen Datenänderungen erstellt werden. Eine ausführliche Erläuterung der Statistik finden Sie im Thema [Statistiken][] in der Entwicklungsgruppe der Themen. Es folgt ein kurzes Beispiel, wie Sie Statistiken für die in diesem Beispiel geladene Tabelle erstellen können.
+Azure SQL Data Warehouse bietet noch keine Unterstützung für die automatische Erstellung oder die automatische Aktualisierung von Statistiken. Um die beste Leistung bei Abfragen zu erhalten, ist es wichtig, dass die Statistiken für alle Spalten aller Tabellen nach dem ersten Laden oder nach allen wesentlichen Datenänderungen erstellt werden. Eine ausführliche Erläuterung der Statistik finden Sie unter dem Thema [Statistik][] in der Entwicklungsgruppe der Themen. Es folgt ein kurzes Beispiel, wie Sie Statistiken für die in diesem Beispiel geladene Tabelle erstellen können.
 
 ```
 create statistics [SensorKey] on [Customer_Speed] ([SensorKey]);
@@ -244,7 +253,7 @@ create statistics [Speed] on [Customer_Speed] ([Speed]);
 create statistics [YearMeasured] on [Customer_Speed] ([YearMeasured]);
 ```
 
-## Exportieren von Daten in Azure-BLOB-Speicher
+## Exportieren von Daten in Azure Blob Storage
 In diesem Abschnitt wird veranschaulicht, wie Sie Daten aus SQL Data Warehouse in Azure-BLOB-Speicher exportieren. In diesem Beispiel wird CREATE EXTERNAL TABLE AS SELECT verwendet. Dies ist eine sehr leistungsfähige Transact-SQL-Anweisung, mit der die Daten parallel von allen Compute-Knoten exportiert werden.
 
 Im folgenden Beispiel wird die externe Tabelle „Weblogs2014“ erstellt, indem Spaltendefinitionen und Daten aus der Tabelle „dbo.Weblogs“ verwendet werden. Die Definition der externen Tabelle wird in SQL Data Warehouse gespeichert, und die Ergebnisse der SELECT-Anweisung werden in das Verzeichnis „/archive/log2014/“ unter dem BLOB-Container exportiert, der von der Datenquelle angegeben wird. Die Daten werden im angegebenen Textdateiformat exportiert.
@@ -334,7 +343,7 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 [Load with PolyBase]: sql-data-warehouse-load-with-polybase.md
 [solution partners]: sql-data-warehouse-solution-partners.md
 [Entwicklungsübersicht]: sql-data-warehouse-overview-develop.md
-[Statistiken]: sql-data-warehouse-develop-statistics.md
+[Statistik]: sql-data-warehouse-develop-statistics.md
 
 <!--MSDN references-->
 [supported source/sink]: https://msdn.microsoft.com/library/dn894007.aspx
@@ -348,13 +357,13 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 [CREATE EXTERNAL FILE FORMAT (Transact-SQL)]: https://msdn.microsoft.com/library/dn935026(v=sql.130).aspx
 [CREATE EXTERNAL TABLE (Transact-SQL)]: https://msdn.microsoft.com/library/dn935021(v=sql.130).aspx
 
-[DROP EXTERNAL DATA SOURCE (Transact-SQL)]: https://msdn.microsoft.com/de-DE/library/mt146367.aspx
-[DROP EXTERNAL FILE FORMAT (Transact-SQL)]: https://msdn.microsoft.com/de-DE/library/mt146379.aspx
-[DROP EXTERNAL TABLE (Transact-SQL)]: https://msdn.microsoft.com/de-DE/library/mt130698.aspx
+[DROP EXTERNAL DATA SOURCE (Transact-SQL)]: https://msdn.microsoft.com/library/mt146367.aspx
+[DROP EXTERNAL FILE FORMAT (Transact-SQL)]: https://msdn.microsoft.com/library/mt146379.aspx
+[DROP EXTERNAL TABLE (Transact-SQL)]: https://msdn.microsoft.com/library/mt130698.aspx
 
 [CREATE TABLE AS SELECT (Transact-SQL)]: https://msdn.microsoft.com/library/mt204041.aspx
-[CREATE MASTER KEY (Transact-SQL)]: https://msdn.microsoft.com/de-DE/library/ms174382.aspx
-[CREATE CREDENTIAL (Transact-SQL)]: https://msdn.microsoft.com/de-DE/library/ms189522.aspx
-[DROP CREDENTIAL (Transact-SQL)]: https://msdn.microsoft.com/de-DE/library/ms189450.aspx
+[CREATE MASTER KEY (Transact-SQL)]: https://msdn.microsoft.com/library/ms174382.aspx
+[CREATE CREDENTIAL (Transact-SQL)]: https://msdn.microsoft.com/library/ms189522.aspx
+[DROP CREDENTIAL (Transact-SQL)]: https://msdn.microsoft.com/library/ms189450.aspx
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

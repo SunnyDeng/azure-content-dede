@@ -4,7 +4,7 @@
    services="dns"
    documentationCenter="na"
    authors="joaoma"
-   manager="Adinah"
+   manager="carmonm"
    editor=""/>
 
 <tags
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="09/22/2015"
+   ms.date="11/24/2015"
    ms.author="joaoma"/>
 
 
@@ -22,7 +22,7 @@
 
 > [AZURE.SELECTOR]
 - [Azure CLI](dns-getstarted-create-recordset-cli.md)
-- [Azure Powershell steps](dns-getstarted-create-recordset.md)
+- [PowerShell](dns-getstarted-create-recordset.md)
 
 Nach dem Erstellen der DNS-Zone müssen Sie die DNS-Einträge für Ihre Domäne hinzufügen. Zu diesem Zweck müssen Sie zunächst Grundlegendes zu DNS-Einträgen und Datensatzgruppen verstehen.
 
@@ -60,7 +60,7 @@ Das folgende Beispiel zeigt, wie Sie eine Datensatzgruppe und Einträge erstelle
 
 Erstellen Sie einen Datensatzeintrag, und weisen Sie ihn der Variablen "$rs" zu.
 
-	PS C:\>$rs = New-AzureDnsRecordSet -Name "www" -RecordType "A" -ZoneName "contoso.com" -ResourceGroupName "MyAzureResourceGroup" -Ttl 60
+	PS C:\>$rs = New-AzureRmDnsRecordSet -Name "www" -RecordType "A" -ZoneName "contoso.com" -ResourceGroupName "MyAzureResourceGroup" -Ttl 60
 
 Die Datensatzgruppe hat den relativen Namen "www" in der DNS-Zone "contoso.com", somit lautet der vollqualifizierte Name der Einträge "www.contoso.com". Der Eintragstyp ist "A", und die Gültigkeitsdauer beträgt 60 Sekunden.
 
@@ -72,21 +72,21 @@ Die Datensatzgruppe ist leer, und wir müssen Einträge hinzufügen, um die neu 
 
 Fügen Sie die IPv4-A-Einträge der www-Datensatzgruppe mithilfe der $rs-Variablen hinzu, die beim Erstellen der Datensatzgruppen in Schritt 1 zugewiesen wurden:
 
-	PS C:\> Add-AzureDnsRecordConfig -RecordSet $rs -Ipv4Address 134.170.185.46
-	PS C:\> Add-AzureDnsRecordConfig -RecordSet $rs -Ipv4Address 134.170.188.221
+	PS C:\> Add-AzureRmDnsRecordConfig -RecordSet $rs -Ipv4Address 134.170.185.46
+	PS C:\> Add-AzureRmDnsRecordConfig -RecordSet $rs -Ipv4Address 134.170.188.221
 
-Das Hinzufügen von Einträgen zu einer Datensatzgruppe mithilfe von AzureDnsRecordConfig ist ein Offline-Vorgang. Nur die lokale Variable "$rs" wird aktualisiert.
+Das Hinzufügen von Einträgen zu einer Datensatzgruppe mithilfe von Add-AzureRmDnsRecordConfig ist ein Offlinevorgang. Nur die lokale Variable "$rs" wird aktualisiert.
 
 ### Schritt 3
-Übergeben Sie die Änderungen an die Datensatzgruppe. Verwenden Sie Set-AzureDnsRecordSet, um Änderungen an der Datensatzgruppe nach Azure DNS hochzuladen:
+Übergeben Sie die Änderungen an die Datensatzgruppe. Verwenden Sie „Set-AzureRmDnsRecordSet“, um Änderungen an der Datensatzgruppe in Azure DNS hochzuladen:
 
 
-	Set-AzureDnsRecordSet -RecordSet $rs
+	Set-AzureRmDnsRecordSet -RecordSet $rs
 
-Damit sind die Änderungen abgeschlossen. Sie können die Datensatzgruppe von Azure DNS mithilfe von Get-AzureDnsRecordSet abrufen:
+Damit sind die Änderungen abgeschlossen. Sie können die Datensatzgruppe von Azure DNS mithilfe von Get-AzureRmDnsRecordSet abrufen:
 
 
-	PS C:\> Get-AzureDnsRecordSet –Name www –RecordType A -ZoneName contoso.com -ResourceGroupName MyAzureResourceGroup
+	PS C:\> Get-AzureRmDnsRecordSet –Name www –RecordType A -ZoneName contoso.com -ResourceGroupName MyAzureResourceGroup
 
 
 	Name              : www
@@ -117,6 +117,7 @@ Sie können auch nslookup oder andere DNS-Tools verwenden, um die neue Datensatz
 
 
 ## Nächste Schritte
+
 [Verwalten von DNS-Zonen](dns-operations-dnszones.md)
 
 [Verwalten von DNS-Einträgen](dns-operations-recordsets.md)<BR>
@@ -124,4 +125,4 @@ Sie können auch nslookup oder andere DNS-Tools verwenden, um die neue Datensatz
 [Automatisieren von Azure-Vorgängen mit dem .NET SDK](dns-sdk.md)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

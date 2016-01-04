@@ -20,7 +20,7 @@
 # Erstellen einer SQL Data Warehouse-Datenbank mithilfe von Transact-SQL (TSQL)
 
 > [AZURE.SELECTOR]
-- [Azure preview portal](sql-data-warehouse-get-started-provision.md)
+- [Azure Portal](sql-data-warehouse-get-started-provision.md)
 - [TSQL](sql-data-warehouse-get-started-create-database-tsql.md)
 - [PowerShell](sql-data-warehouse-get-started-provision-powershell.md)
 
@@ -32,7 +32,7 @@ Damit Sie die in diesem Artikel aufgeführten Schritte ausführen können, benö
 
 - Ein Azure-Abonnement. Wenn Sie ein Azure-Abonnement benötigen, müssen Sie lediglich oben auf dieser Seite auf den Link **Kostenlose Testversion** klicken. Lesen Sie anschließend den Artikel weiter.
 - Visual Studio. Eine kostenlose Version von Visual Studio finden Sie auf der Seite [Visual Studio-Downloads](https://www.visualstudio.com/downloads/download-visual-studio-vs).
-- Einen logischen V12-Server. Sie benötigen einen V12-SQL-Server zum Erstellen des SQL Data Warehouse. Wenn Sie keinen logischen V12-SQL-Server haben, erfahren Sie im [Azure-Vorschauportal in einem Tutorial][], wie Sie einen erstellen.
+- Einen logischen V12-Server. Sie benötigen einen V12-SQL-Server zum Erstellen des SQL Data Warehouse. Wenn Sie keinen logischen V12-SQL-Server haben, erfahren Sie [in einem Tutorial im Azure-Portal][], wie Sie einen erstellen.
 
 ## Erstellen einer Datenbank mit Visual Studio
 
@@ -53,7 +53,7 @@ SERVICE\_OBJECTIVE gibt die Anzahl der DWUs an, mit der Ihre Instanz gestartet w
 ## Nächste Schritte
 Nach der SQL Data Warehouse-Bereitstellung können Sie [Beispieldaten laden][] oder die Schritte zum [Entwickeln][], [Laden][] oder [Migrieren][] erlernen.
 
-[Azure-Vorschauportal in einem Tutorial]: ./sql-data-warehouse-get-started-provision.md
+[in einem Tutorial im Azure-Portal]: ./sql-data-warehouse-get-started-provision.md
 [Verbindungsherstellung und Abfragen]: ./sql-data-warehouse-get-started-connect.md
 [Migrieren]: ./sql-data-warehouse-overview-migrate.md
 [Entwickeln]: ./sql-data-warehouse-overview-develop.md
@@ -61,4 +61,4 @@ Nach der SQL Data Warehouse-Bereitstellung können Sie [Beispieldaten laden][] o
 [Beispieldaten laden]: ./sql-data-warehouse-get-started-manually-load-samples.md
 [Preisgestaltung]: https://azure.microsoft.com/pricing/details/sql-data-warehouse/
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

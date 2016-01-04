@@ -32,7 +32,7 @@
 
 ##<a name="websitemetrics"></a>Vorgehensweise: Hinzufügen von Web-App-Kennzahlen
 
-1. Klicken Sie im [Azure-Portal](https://manage.windowsazure.com) auf der Seite der Web-App auf die Registerkarte **Überwachen**, um die Verwaltungsseite **Überwachung** anzuzeigen. Standardmäßig zeigt das Diagramm auf der Seite **Monitor** dieselben Kennzahlen wie das Diagramm auf der Seite **Dashboard** an.
+1. Klicken Sie im [klassischen Portal](https://manage.windowsazure.com) auf der Seite der Web-App auf die Registerkarte **Überwachen**, um die Verwaltungsseite **Überwachung** anzuzeigen. Standardmäßig zeigt das Diagramm auf der Seite **Monitor** dieselben Kennzahlen wie das Diagramm auf der Seite **Dashboard** an.
 
 2. Zum Anzeigen zusätzlicher Metriken für die Web-App klicken Sie unten auf der Seite auf **Metriken hinzufügen**, um das Dialogfeld **Metriken auswählen** anzuzeigen.
 
@@ -48,18 +48,18 @@
 
 ##<a name="howtoreceivealerts"></a>Vorgehensweise: Empfangen von Warnungen mittels Web-App-Kennzahlen
 
-Im Web-App-Modus **Standard** können Sie basierend auf den Web-App-Überwachungskennzahlen Warnungen empfangen. Zur Verwendung der Warnfunktion müssen Sie zuerst ein Web-Endgerät zur Überwachung auswählen, was Sie im Abschnitt **Monitoring** der Seite **Configure** tun können. Sie können auch festlegen, dass eine E-Mail gesendet wird, wenn eine ausgewählte Metrik den angegebenen Wert erreicht. Weitere Informationen finden Sie unter [Empfangen von Warnbenachrichtigungen und Verwalten von Warnregeln in Azure](http://go.microsoft.com/fwlink/?LinkId=309356).
+Im Web-App-Modus **Standard** können Sie basierend auf den Web-App-Überwachungskennzahlen Warnungen empfangen. Zur Verwendung der Warnfunktion müssen Sie zuerst einen Web-Endpunkt zur Überwachung auswählen, was Sie im Abschnitt **Monitoring** der Seite **Configure** tun können. Sie können auch festlegen, dass eine E-Mail gesendet wird, wenn eine ausgewählte Metrik den angegebenen Wert erreicht. Weitere Informationen finden Sie unter [Empfangen von Warnbenachrichtigungen und Verwalten von Warnregeln in Azure](http://go.microsoft.com/fwlink/?LinkId=309356).
 
 ##<a name="howtoviewusage"></a>Vorgehensweise: Anzeigen der Nutzungskontingente für eine Web-App
 
-Web-Apps können im [Azure-Portal](https://manage.windowsazure.com) auf der Verwaltungsseite **Skalierung** der Web-App zur Ausführung entweder im Modus **Shared** oder **Standard** konfiguriert werden. Jedes Azure-Abonnement hat Zugriff auf einen Ressourcenpool, der für die Ausführung von bis zu 100 Web-Apps pro Region im Modus **Shared** bereitgestellt wird. Der für jedes Web-App-Abonnement für diesen Zweck bereitgestellte Ressourcenpool wird in derselben geografischen Region auch von anderen Web-Apps genutzt, die im Modus **Shared** konfiguriert sind. Da diese Ressourcen von anderen Web-Apps ebenfalls genutzt werden, verfügen alle Abonnements über begrenzte Ressourcennutzung. Die Höchstgrenzen für die Ressourcennutzung von Abonnements werden als Nutzungskontingente bezeichnet und sind im Abschnitt "Nutzungsübersicht" der Verwaltungsseite **Dashboard** jeder Web-App aufgelistet.
+Web-Apps können im [klassischen Portal](https://manage.windowsazure.com) auf der Verwaltungsseite **Skalierung** der Web-App zur Ausführung entweder im Modus **Shared** oder **Standard** konfiguriert werden. Jedes Azure-Abonnement hat Zugriff auf einen Ressourcenpool, der für die Ausführung von bis zu 100 Web-Apps pro Region im Modus **Shared** bereitgestellt wird. Der für jedes Web-App-Abonnement für diesen Zweck bereitgestellte Ressourcenpool wird in derselben geografischen Region auch von anderen Web-Apps genutzt, die im Modus **Shared** konfiguriert sind. Da diese Ressourcen von anderen Web-Apps ebenfalls genutzt werden, verfügen alle Abonnements über begrenzte Ressourcennutzung. Die Höchstgrenzen für die Ressourcennutzung von Abonnements werden als Nutzungskontingente bezeichnet und sind im Abschnitt "Nutzungsübersicht" der Verwaltungsseite **Dashboard** jeder Web-App aufgelistet.
 
 >[AZURE.NOTE]Wenn eine Web-App für die Ausführung im Modus **Standard** konfiguriert ist, werden ihr dedizierte Ressourcen entsprechend der Größe **Klein** (Standard), **Mittel** oder **Groß** des virtuellen Computers zugewiesen, die in der Tabelle unter [Größen virtueller Computer und Clouddienste für Azure][vmsizes] aufgelistet sind. Es gibt kein Limit, wie viele Ressourcen ein Abonnement zum Ausführen von Web-Apps im **Standard**-Modus verwenden kann. Die Anzahl der im **Standard**-Modus erstellten Web-Apps pro Region ist jedoch auf 500 begrenzt.
 
 ### Vorgehensweise: Anzeigen der Nutzungskontingente für Web-Apps, die für den Modus "Freigegeben" konfiguriert sind ###
 Um zu bestimmen, in welchem Umfang eine Web-App sich auf die Ressourcennutzungskontingente auswirkt, führen Sie folgende Schritte aus:
 
-1. Öffnen Sie die Verwaltungsseite **Dashboard** der Web-App im [Azure-Portal](https://manage.windowsazure.com).
+1. Öffnen Sie die Verwaltungsseite **Dashboard** der Web-App im [klassischen Portal](https://manage.windowsazure.com).
 2. Im Abschnitt **Nutzungsübersicht** werden die Nutzungskontingente für den jeweiligen [App Service](http://go.microsoft.com/fwlink/?LinkId=529714)-Plan angezeigt, der eine Teilmenge von Folgendem darstellt:
 	-	**Ausgehende Daten**, **CPU-Zeit** und **Arbeitsspeicher** – Wird das Kontingent überschritten, beendet Azure die Web-App für den Rest des aktuellen Kontingentintervalls. Azure startet die Web-Apps zu Beginn des nächsten Kontingentintervalls erneut.
 	-	**Dateisystemspeicher** - Wenn dieses Kontingent erreicht wird, bleibt der Dateisystemspeicher für Lesevorgänge weiterhin erreichbar. Alle Schreibvorgänge sind jedoch blockiert, einschließlich derjenigen, die für normale Web-App-Aktivitäten erforderlich sind. Schreibvorgänge werden wieder aufgenommen, wenn Sie die Dateinutzung verringern oder die Web-App in einen App Service-Plan mit einem höheren Kontingent verschieben.
@@ -76,7 +76,7 @@ Kontingente sind keine Angelegenheit von Leistung oder Kosten, sondern stellen d
 
 ##<a name="howtoconfigdiagnostics"></a>Vorgehensweise: Konfigurieren der Diagnose und Herunterladen von Protokollen für eine Web-App
 
-Diagnosen werden auf der Registerkarte **Konfigurieren** für die Web-App im [Azure-Portal](https://manage.windowsazure.com) aktiviert. Es gibt zwei Arten von Diagnosen: **Anwendungsdiagnose** und **Websitediagnose**.
+Diagnosen werden auf der Registerkarte **Konfigurieren** für die Web-App im [klassischen Portal](https://manage.windowsazure.com) aktiviert. Es gibt zwei Arten von Diagnosen: **Anwendungsdiagnose** und **Websitediagnose**.
 
 #### Anwendungsdiagnose ####
 
@@ -164,7 +164,7 @@ Protokolldateien können per FTP, mit Azure PowerShell oder mit der Azure-Befehl
 
 **FTP**
 
-1. Öffnen Sie die Verwaltungsseite **Dashboard** der Web-App im [Azure-Portal](https://manage.windowsazure.com), und notieren Sie die unter **Diagnoseprotokolle** aufgelistete FTP-Website sowie das unter **Bereitstellungsbenutzer** aufgeführte Konto. Auf der FTP-Site befinden sich die Protokolldateien, und das unter "Deployment User" aufgelistete Konto wird zur Authentifizierung bei der FTP-Site verwendet.
+1. Öffnen Sie die Verwaltungsseite **Dashboard** der Web-App im [klassischen Portal](https://manage.windowsazure.com), und notieren Sie die unter **Diagnoseprotokolle** aufgelistete FTP-Website sowie das unter **Bereitstellungsbenutzer** aufgeführte Konto. Auf der FTP-Site befinden sich die Protokolldateien, und das unter "Deployment User" aufgelistete Konto wird zur Authentifizierung bei der FTP-Site verwendet.
 2. Falls Sie noch keine Bereitstellungsanmeldeinformationen erstellt haben, wird das Konto unter **Bereitstellungsbenutzer** als **Nicht festgelegt** aufgeführt. In diesem Fall müssen Sie die Bereitstellungsanmeldeinformationen wie im Abschnitt "Zurücksetzen der Bereitstellungsanmeldeinformationen" des Dashboards beschrieben erstellen, da diese Anmeldeinformationen zur Authentifizierung bei der FTP-Site erforderlich sind, wo die Protokolldateien gespeichert werden. Azure unterstützt keine Authentifizierung bei der FTP-Site mittels Live ID-Anmeldung.
 3. Verwenden Sie einen FTP-Client wie [FileZilla][fzilla] für die Verbindung mit der FTP-Site. Ein FTP-Client vereinfacht die Eingabe der Anmeldeinformationen und das Anzeigen der Ordner auf der FTP-Site gegenüber der Verwendung eines Browsers.
 4. Kopieren Sie die Protokolldateien von der FTP-Site auf Ihren lokalen Computer.
@@ -242,42 +242,42 @@ Die HTM-Dateien umfassen die folgenden Abschnitte:
 - Lesen Sie Dateien mit: Log Parser. Dient zum Analysieren und Abfragen von IIS-Protokolldateien. Log Parser 2.2 ist im Microsoft Download Center unter <a href="http://go.microsoft.com/fwlink/?LinkId=246619">http://go.microsoft.com/fwlink/?LinkId=246619</a> verfügbar.
 
 
-##<a name="webendpointstatus"></a> Vorgehensweise: Überwachen des Web-Endgerätestatus
+##<a name="webendpointstatus"></a> Vorgehensweise: Überwachen des Web-Endpunktstatus
 
-Mit dieser Funktion, die im **Standard**-Modus verfügbar ist, können Sie bis zu 2 Endgeräte von 3 geografischen Standorten aus überwachen.
+Mit dieser Funktion, die im **Standard**-Modus verfügbar ist, können Sie bis zu 2 Endpunkte von 3 geografischen Standorten aus überwachen.
 
-Endgerätüberwachung konfiguriert Webtests von geografisch verteilten Standorten zum Testen der Reaktionszeit und der Verfügbarkeit von Web-URLs. Der Test führt einen HTTP GET-Aufruf der Web-URL durch, um die Reaktionszeit und Verfügbarkeit von jedem Standort zu bestimmen. Jeder konfigurierte Standort führt alle fünf Minuten einen Test aus.
+Endpunktüberwachung konfiguriert Webtests von geografisch verteilten Standorten zum Testen der Reaktionszeit und der Verfügbarkeit von Web-URLs. Der Test führt einen HTTP GET-Aufruf der Web-URL durch, um die Reaktionszeit und Verfügbarkeit von jedem Standort zu bestimmen. Jeder konfigurierte Standort führt alle fünf Minuten einen Test aus.
 
 Die Verfügbarkeit wird mit HTTP-Antwortcodes überwacht, und die Reaktionszeit wird in Millisekunden gemessen. Die Verfügbarkeit gilt als 100 %, wenn die Reaktionszeit unter 30 Sekunden beträgt und der HTTP-Statuscode unter 400 liegt. Die Verfügbarkeit beträgt 0%, wenn die Reaktionszeit über 30 Sekunden beträgt und der HTTP-Statuscode über 400 liegt.
 
-Nachdem Sie die Endgerätüberwachung konfiguriert haben, können Sie Details zu den einzelnen Endgeräten aufrufen, um die Reaktionszeit und den Verfügbarkeitsstatus für das Überwachungsintervall von jedem der Teststandorte anzuzeigen. Sie können beispielsweise auch eine Warnungsregel einrichten, wenn das Endgerät zu lange für eine Reaktion braucht.
+Nachdem Sie die Endpunktüberwachung konfiguriert haben, können Sie Details zu den einzelnen Endpunkten aufrufen, um die Reaktionszeit und den Verfügbarkeitsstatus für das Überwachungsintervall von jedem der Teststandorte anzuzeigen. Sie können beispielsweise auch eine Warnungsregel einrichten, wenn der Endpunkt zu lange für eine Reaktion braucht.
 
-**So konfigurieren Sie die Endgerätüberwachung:**
+**So konfigurieren Sie die Endpunktüberwachung:**
 
-1.	Öffnen Sie **Web-Apps**. Klicken Sie auf den Namen der Web-App, die Sie konfigurieren möchten.
+1.	Öffnen Sie **Web- Apps**. Klicken Sie auf den Namen der Web-App, die Sie konfigurieren möchten.
 2.	Klicken Sie auf die Registerkarte **Konfigurieren**.
-3.     Wechseln Sie zum Abschnitt **Überwachung**, um Ihre Endgeräteinstellungen einzugeben.
-4.	Geben Sie einen Namen für das Endgerät ein.
+3.     Wechseln Sie zum Abschnitt **Überwachung**, um Ihre Endpunkteinstellungen einzugeben.
+4.	Geben Sie einen Namen für den Endpunkt ein.
 5.	Geben Sie die URL für den Teil der Web-App ein, den Sie überwachen möchten. Zum Beispiel: [http://contoso.azurewebsites.net/archive](http://contoso.azurewebsites.net/archive)
 6.	Wählen Sie einen oder mehrere geografische Standorte aus der Liste aus.
-7.	Sie können optional die vorherigen Schritte wiederholen, um ein zweites Endgerät zu erstellen.
-8.	Klicken Sie auf **Speichern**. Es kann einige Zeit dauern, bis die Daten der Web-Endgerätüberwachung auf den Registerkarten **Dashboard** und **Monitor** verfügbar sind.
+7.	Sie können optional die vorherigen Schritte wiederholen, um einen zweiten Endpunkt zu erstellen.
+8.	Klicken Sie auf **Speichern**. Es kann einige Zeit dauern, bis die Daten der Web-Endpunktüberwachung auf den Registerkarten **Dashboard** und **Monitor** verfügbar sind.
 
 	Gehen Sie folgendermaßen vor, um eine E-Mail-Regel zu erstellen:
 
 9.	Klicken Sie in der Diensteleiste links auf **Verwaltungsdienste**.
 10.	Klicken Sie unten auf **Regel hinzufügen**.
-11.	Wählen Sie in **Diensttyp** die Option **Web-App** aus und dann die Web-App, für die Sie zuvor die Endgerätüberwachung konfiguriert haben. Klicken Sie auf **Weiter**.
-12.	In **Metrik** können Sie jetzt weitere Kennzahlen für das von Ihnen konfigurierte Endgerät auswählen. Beispiel: **Reaktionszeit (Homepage/USA: IL-Chicago)**. Wählen Sie die Metrik "Reaktionszeit", und geben Sie in **Schwellenwert** den Wert "3" ein. Dadurch werden 3 Sekunden als Grenzwert festlegt.
+11.	Wählen Sie in **Diensttyp** die Option **Web-App** aus und dann die Web-App, für die Sie zuvor die Endpunktüberwachung konfiguriert haben. Klicken Sie auf **Weiter**.
+12.	In **Metrik** können Sie jetzt weitere Kennzahlen für den von Ihnen konfigurierten Endpunkt auswählen. Beispiel: **Reaktionszeit (Homepage/USA: IL-Chicago)**. Wählen Sie die Metrik "Reaktionszeit", und geben Sie in **Schwellenwert** den Wert "3" ein. Dadurch werden 3 Sekunden als Grenzwert festlegt.
 13.	Wählen Sie**E-Mail an Dienstadministrator und Co-Administratoren senden**. Klicken Sie auf **Fertig stellen**.
 
-	Azure überwacht nun aktiv das Endgerät und sendet eine E-Mail-Mitteilung, wenn die Antwortzeit 3 Sekunden überschreitet.
+	Azure überwacht nun aktiv den Endpunkt und sendet eine E-Mail-Mitteilung, wenn die Antwortzeit 3 Sekunden überschreitet.
 
-Weitere Informationen zur Web-App-Endgerätüberwachung erhalten Sie in den folgenden Videos:
+Weitere Informationen zur Web-App-Endpunktüberwachung erhalten Sie in den folgenden Videos:
 
-- [Scott Guthrie mit einer Einführung zu Azure-Websites und Einrichtung der Endgerätüberwachung](/documentation/videos/websites-and-endpoint-monitoring-scottgu/)
+- [Scott Guthrie mit einer Einführung zu Azure-Websites und Einrichtung der Endpunktüberwachung](/documentation/videos/websites-and-endpoint-monitoring-scottgu/)
 
-- [Pflegen von Azure-Websites plus Endgerätüberwachung - mit Stefan Schackow](/documentation/videos/azure-web-sites-endpoint-monitoring-and-staying-up/)
+- [Pflegen von Azure-Websites plus Endpunktüberwachung - mit Stefan Schackow](/documentation/videos/azure-web-sites-endpoint-monitoring-and-staying-up/)
 
 >[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
@@ -289,4 +289,4 @@ Weitere Informationen zur Web-App-Endgerätüberwachung erhalten Sie in den folg
 [vmsizes]: http://go.microsoft.com/fwlink/?LinkID=309169
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

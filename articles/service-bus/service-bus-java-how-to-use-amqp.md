@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Verwenden von AMQP 1.0 mit der Java Service Bus-API | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie den Java Message Service (JMS) mit Azure Service Bus und Advanced Message Queuing verwenden."
+	description="Erfahren Sie, wie Sie den Java Message Service (JMS) mit Azure Service Bus und Advanced Message Queueing verwenden."
 	services="service-bus"
 	documentationCenter="java"
 	authors="sethmanheim"  
@@ -26,7 +26,7 @@ In diesem Leitfaden wird beschrieben, wie die gebrokerten Messagingfunktionen vo
 
 ## Erste Schritte mit Service Bus
 
-In diesem Leitfaden wird davon ausgegangen, dass Sie bereits einen Service Bus-Namespace haben, der eine Warteschlange mit dem Namen **queue1** enthält. Falls nicht, können Sie den Namespace und die Warteschlange im [Azure-Portal](http://manage.windowsazure.com) erstellen. Weitere Informationen zum Erstellen von Namespaces und Warteschlangen für Service Bus finden Sie unter [Verwenden von Service Bus-Warteschlangen](service-bus-dotnet-how-to-use-queues.md).
+In diesem Leitfaden wird davon ausgegangen, dass Sie bereits einen Service Bus-Namespace haben, der eine Warteschlange mit dem Namen **queue1** enthält. Falls nicht, können Sie den Namespace und die Warteschlange im [klassischen Azure-Portal](http://manage.windowsazure.com) erstellen. Weitere Informationen zum Erstellen von Namespaces und Warteschlangen für Service Bus finden Sie unter [Verwenden von Service Bus-Warteschlangen](service-bus-dotnet-how-to-use-queues.md).
 
 ### Herunterladen der AMQP 1.0 JMS-Clientbibliothek
 
@@ -332,4 +332,4 @@ Sie können Service Bus AMQP 1.0 auch mit anderen Sprachen verwenden, unter ande
 * [Verwenden von Service Bus-Warteschlangen](service-bus-dotnet-how-to-use-queues.md)
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

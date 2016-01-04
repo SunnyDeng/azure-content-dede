@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/15/2015" 
+	ms.date="11/19/2015" 
 	ms.author="billmath"/>
 
 # Bewährte Sicherheitsmethoden beim Einsatz von Azure Multi-Factor Authentication mit Azure AD-Konten
@@ -88,14 +88,14 @@ Dieses Portal wird über eine IIS-Website (Internetinformationsdienste) ausgefü
 
 
 ### App-Kennwörter
-Wenn für Ihr Unternehmen ein SSO-Verbund mit Azure AD konfiguriert ist und Sie Multi-Factor Authentication verwenden möchten, sollten Sie bei Verwendung von App-Kennwörtern Folgendes berücksichtigen (beachten Sie, dass dies nur bei Verwendung von SSO in einer Verbundkonfiguration gilt):
+Wenn für Ihr Unternehmen ein SSO-Verbund mit Azure AD konfiguriert ist und Sie Azure MFA verwenden möchten, sollten Sie bei Verwendung von App-Kennwörtern Folgendes berücksichtigen (beachten Sie, dass dies nur bei Verwendung von SSO in einer Verbundkonfiguration gilt):
 
-- Das App-Kennwort wird von Azure AD überprüft, sodass der Partnerverbund umgangen wird. Der Partnerverbund wird nur beim Einrichten des App-Kennworts verwendet.
+- Das App-Kennwort wird von Azure AD überprüft, sodass der Verbund umgangen wird. Der Verbund wird nur beim Einrichten des App-Kennworts verwendet.
 - Die Kennwörter der SSO-Verbundbenutzer werden in der Organisations-ID gespeichert. Wenn der Benutzer das Unternehmen verlässt, muss diese Information zur Organisations-ID übertragen werden, und zwar mithilfe von DirSync in Echtzeit. Das Deaktivieren oder Löschen von Konten kann bis zu drei Stunden bei der Synchronisierung dauern, sodass das Deaktivieren bzw. Löschen des App-Kennworts verzögert wird.
 - Lokale Einstellungen für die Clientzugriffssteuerung werden vom App-Kennwort nicht berücksichtigt.
 - Für das App-Kennwort ist keine lokale Authentifizierung-Protokollierung / -Überwachungsfunktion verfügbar.
 - Weitere Schulungen für Endbenutzer sind für den Microsoft Lync 2013-Client erforderlich. 
-- Bestimmte erweiterte Architekturentwürfe erfordert möglicherweise, dass eine Kombination aus Organisationsbenutzername und Kennwörter sowie App-Kennwörter bei der Verwendung der Multi-Factor Authentication mit Clients erforderlich ist, je nachdem, wo die Authentifizierung stattfindet. Bei Clients, die sich gegenüber einer lokalen Infrastruktur authentifizieren, verwenden Sie einen Organisationsbenutzernamen und ein Organisationskennwort. Für Clients, die bei Azure AD authentifizieren, verwenden Sie das App-Kennwort.
+- Bestimmte erweiterte Architekturentwürfe erfordert möglicherweise, dass eine Kombination aus Organisationsbenutzername und Kennwörter sowie App-Kennwörter bei der Verwendung der Multi-Factor Authentication mit Clients erforderlich ist, je nachdem, wo die Authentifizierung stattfindet. Bei Clients, die sich bei einer lokalen Infrastruktur authentifizieren, verwenden Sie einen Organisationsbenutzernamen und ein Organisationskennwort. Für Clients, die bei Azure AD authentifizieren, verwenden Sie das App-Kennwort.
 - Benutzer können standardmäßig keine App-Kennwörter erstellen. Sollte dies in Ihrem Unternehmen oder in bestimmten Szenarien erforderlich sein, müssen Sie sicherstellen, dass die Option „Benutzern das Erstellen von App-Kennwörtern zum Anmelden bei nicht browserbasierten Apps gestatten“ ausgewählt ist.
 
 ## Weitere Überlegungen
@@ -121,4 +121,4 @@ In diesem Artikel sind einige bewährte Methoden für Azure MFA beschrieben. Zus
 - [Einrichten von Azure Multi-Factor Authentication](multi-factor-authentication-end-user-first-time.md)
 - [Azure Multi-Factor Authentication – Häufig gestellte Fragen](multi-factor-authentication-faq.md)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1125_2015-->

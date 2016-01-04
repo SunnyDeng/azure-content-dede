@@ -1,6 +1,6 @@
 
 <properties
-	pageTitle="Überlegungen zum Entwurf der Azure Active Directory-Hybrididentität – Ermitteln der Strategie für die Übernahme des Hybrididentitätslebenszyklus | Microsoft Azure"
+	pageTitle="Überlegungen zum Entwurf der Azure Active Directory-Hybrididentität – Ermitteln der Strategie für die Übernahme des Hybrididentitäts-Lebenszyklus | Microsoft Azure"
 	description="Hilft, die Aufgaben der Verwaltung der Hybrididentität gemäß der für die einzelnen Phasen des Lebenszyklus verfügbaren Optionen zu definieren."
 	documentationCenter=""
 	services="active-directory"
@@ -14,7 +14,7 @@
 	ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="identity" 
-	ms.date="11/11/2015"
+	ms.date="12/07/2015"
 	ms.author="femila"/>
 
 
@@ -90,7 +90,7 @@ Vergleichen Sie die Synchronisierungsoptionen anhand folgender Tabelle:
 >[AZURE.NOTE]Weitere Informationen finden Sie unter [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
 
-## Siehe auch
-[Überlegungen zum Entwurf – Übersicht](active-directory-hybrid-identity-design-considerations-directory-overview.md)
+## Weitere Informationen
+[Überlegungen zum Entwurf – Übersicht](active-directory-hybrid-identity-design-considerations-overview.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

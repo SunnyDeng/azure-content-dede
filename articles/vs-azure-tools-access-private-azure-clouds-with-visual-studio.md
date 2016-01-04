@@ -3,9 +3,9 @@
    description="Erfahren Sie, wie Sie mithilfe von Visual Studio auf private Cloudressourcen zugreifen."
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tglee" />
+   editor="" />
 <tags 
    ms.service="multiple"
    ms.devlang="dotnet"
@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="multiple"
    ms.date="08/13/2015"
-   ms.author="kempb" />
+   ms.author="tarcher" />
 
 # Zugreifen auf private Azure-Clouds mit Visual Studio
 
@@ -43,4 +43,4 @@ Visual Studio unterstützt standardmäßig REST-Endpunkte der öffentlichen Azur
 
 [Vorgehensweise: Herunterladen und Importieren von Veröffentlichungseinstellungen und Abonnementinformationen] (https://msdn.microsoft.com/library/dn385850(v=nav.70).aspx)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

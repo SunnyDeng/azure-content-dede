@@ -43,7 +43,7 @@ Suchen Sie in der Palette von DataSets und Modulen auf der linken Seite im Exper
 Wählen Sie das Reader-Modul aus, und füllen Sie das Eigenschaftenfenster aus.
 
 1. Wählen Sie „Azure SQL-Datenbank“ als Datenquelle aus.
-2. Datenbank-Servername: Geben Sie den Namen des Servers ein. Diese Angaben finden Sie im [Azure-Portal][].
+2. Datenbank-Servername: Geben Sie den Namen des Servers ein. Diese Angaben finden Sie im [klassischen Azure-Portal][].
 
 ![][server_name]
 
@@ -101,7 +101,7 @@ Suchen Sie in der Palette von DataSets und Modulen auf der linken Seite im Exper
 Wählen Sie das Writer-Modul aus, und füllen Sie das Eigenschaftenfenster aus.
 
 1. Wählen Sie "Azure SQL-Datenbank" als Datenziel aus.
-2. Datenbank-Servername: Geben Sie den Namen des Servers ein. Diese Angaben finden Sie im [Azure-Portal][]. 
+2. Datenbank-Servername: Geben Sie den Namen des Servers ein. Diese Angaben finden Sie im [klassischen Azure-Portal][]. 
 3. Datenbankname: Geben Sie den Namen einer Datenbank auf dem Server ein, den Sie soeben angegeben haben. 
 4. Server user account name: Geben Sie den Benutzernamen eines Kontos ein, das über Schreibberechtigungen für die Datenbank verfügt. 
 5. Server user account password: Geben Sie das Kennwort für das angegebene Benutzerkonto ein.
@@ -120,7 +120,7 @@ Wählen Sie das Writer-Modul aus, und füllen Sie das Eigenschaftenfenster aus.
 
 ## Nächste Schritte
 
-Eine Übersicht über die Integration finden Sie unter [SQL Data Warehouse-Integration (Übersicht)][].
+Einen Überblick über die Integration finden Sie unter [SQL Data Warehouse-Integration (Übersicht)][].
 
 Weitere Hinweise zur Entwicklung finden Sie in der [SQL Data Warehouse-Entwicklungsübersicht][].
 
@@ -141,7 +141,7 @@ Weitere Hinweise zur Entwicklung finden Sie in der [SQL Data Warehouse-Entwicklu
 [Lernprogramm zum Erstellen eines Experiments]: https://azure.microsoft.com/de-DE/documentation/articles/machine-learning-create-experiment/
 [Einführung in Machine Learning in Azure]: https://azure.microsoft.com/de-DE/documentation/articles/machine-learning-what-is-machine-learning/
 [Azure Machine Learning Studio]: https://studio.azureml.net/Home
-[Azure-Portal]: https://portal.azure.com/
+[klassischen Azure-Portal]: https://portal.azure.com/
 
 <!--MSDN references-->
 
@@ -149,4 +149,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [SQL Data Warehouse-Entwicklu
 
 [Azure Machine Learning documentation]: http://azure.microsoft.com/documentation/services/machine-learning/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

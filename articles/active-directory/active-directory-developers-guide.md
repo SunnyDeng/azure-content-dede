@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="11/06/2015"
+   ms.date="12/10/2015"
    ms.author="mbaldwin"/>
 
 
@@ -29,7 +29,7 @@ Als Plattform vom Typ "Identity Management as a Service (IDMaaS)" stellt Azure A
 
 1. [Integrieren von Anwendungen in Azure Active Directory](active-directory-integrating-applications.md): Weitere Informationen, wie Sie Anwendungen in Azure Active Directory hinzufügen, aktualisieren und entfernen, sowie zu den Brandingrichtlinien für integrierte Apps.
 
-1. [Azure Active Directory Graph-API](active-directory-graph-api.md): Verwenden Sie die Azure Active Directory Graph-API, um über REST-API-Endpunkte programmgesteuert auf Azure Active Directory zuzugreifen.
+1. [Azure Active Directory Graph-API](active-directory-graph-api.md): Verwenden Sie die Azure Active Directory Graph-API, um über REST-API-Endpunkte programmgesteuert auf Azure Active Directory zuzugreifen. Beachten Sie, dass die Azure AD Graph-API auch über [Microsoft Graph](https://graph.microsoft.io/) möglich ist, eine einheitliche API, die Zugriff auf mehrere Microsoft Clouddienst-APIs über einen einzelnen Endpunkt für den REST-API und mit einem einzelnen Zugriffstoken ermöglicht.
 
 1. [Azure Active Directory-Authentifizierungsbibliotheken](active-directory-authentication-libraries.md): Nutzen Sie die einfache Authentifizierung von Benutzern, um Zugriffstoken über die Azure-Authentifizierungsbibliotheken zu erhalten.
 
@@ -70,7 +70,7 @@ In diesen Artikeln wird beschrieben, wie Sie mit Azure Active Directory bestimmt
 - [Auflisten Ihrer Anwendung im Azure Active Directory-Anwendungskatalog](active-directory-app-gallery-listing.md)
 - [Grundlegendes zum Azure Active Directory-Anwendungsmanifest](active-directory-application-manifest.md)
 - [Erstellen einer App mit Office 365-APIs](https://msdn.microsoft.com/office/office365/howto/getting-started-Office-365-APIs)
-- [Übertragen von Web-Apps für Office 365 an das Verkäuferdashboard](https://msdn.microsoft.com/office/office365/howto/submit-web-apps-seller-dashboard) (in englischer Sprache)
+- [Übertragen von Web-Apps für Office 365 an das Verkäuferdashboard (in englischer Sprache)](https://msdn.microsoft.com/office/office365/howto/submit-web-apps-seller-dashboard)
 - [Vorschau: Erstellen von Apps, bei denen sich Benutzer sowohl mit persönlichen als auch mit Arbeits- oder Schulkonten anmelden können](active-directory-appmodel-v2-overview.md)
 - [Vorschau: Erstellen von Apps, die Kunden registrieren und anmelden](active-directory-b2c-overview.md)
 
@@ -138,4 +138,4 @@ In diesen Übersichtspräsentationen zur Entwicklung von Apps mithilfe von Azure
 
 - [Azure Active Directory auf Twitter](https://twitter.com/azuread): Azure Active Directory-Ankündigungen in höchstens 140 Zeichen.
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

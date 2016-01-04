@@ -15,7 +15,7 @@ Die neuen Twitter v1.1 APIs erfordern eine Authentifizierung Ihrer App, um auf R
 	+ **Access token**
 	+ **Access token secret**
 
-4. Melden Sie sich beim [Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services** und dann auf Ihren mobilen Dienst.
+4. Melden Sie sich beim [klassischen Azure-Portal](https://manage.windowsazure.com/) an, klicken Sie auf **Mobile Services** und dann auf Ihren mobilen Dienst.
 
 5. Klicken Sie auf die Registerkarte **Identität**, geben Sie die von Twitter erhaltenen Werte für **Consumer key** und **Consumer secret** ein, und klicken Sie dann auf **Speichern**.
 
@@ -32,9 +32,8 @@ Die neuen Twitter v1.1 APIs erfordern eine Authentifizierung Ihrer App, um auf R
 
 <!-- URLs. -->
 [Mobile Services server script reference]: http://go.microsoft.com/fwlink/?LinkId=262293
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Register your apps for Twitter login with Mobile Services]: ../articles/mobile-services/mobile-services-how-to-register-twitter-authentication.md
 [Twitter Developers]: http://go.microsoft.com/fwlink/p/?LinkId=268300
 [App-Einstellungen]: http://msdn.microsoft.com/library/azure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

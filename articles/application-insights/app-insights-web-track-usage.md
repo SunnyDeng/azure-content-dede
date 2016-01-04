@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/24/2015" 
+	ms.date="11/25/2015" 
 	ms.author="awills"/>
  
 # Verwendungsanalyse für Webanwendungen mit Application Insights
@@ -26,25 +26,9 @@ Visual Studio Application Insights bietet Nutzungsverfolgung auf zwei Ebenen:
 
 ## Einrichten
 
-Nutzungsdaten aus einer Webanwendung werden vom Clientbrowser gesendet.
+Öffnen Sie eine Application Insights-Ressource im [Azure-Portal](https://portal.azure.com), klicken Sie auf das leere Diagramm „Browser page loads“, und folgen Sie den Einrichtungsanweisungen.
 
-#### Einrichten einer Application Insights-Ressource 
-
-Mithilfe einer Application Insights-Ressource werden in Microsoft Azure Telemetriedaten aus Ihrer App analysiert und angezeigt. Möglicherweise haben Sie bereits eine solche Ressource eingerichtet, um serverseitige Daten Ihrer App in [ASP.NET][greenbrown] oder [J2EE][java] anzuzeigen. Andernfalls wäre jetzt ein guter Zeitpunkt dafür.
-
-Es empfiehlt sich üblicherweise, die Nutzungsdaten vom Webclient in der gleichen Ressource anzuzeigen wie die Daten vom Server. Auf diese Weise können Sie Diagnosedaten und Metriken beider Seiten korrelieren. Wenn Sie bereits eine Ressource eingerichtet haben, fahren Sie mit dem nächsten Schritt fort.
-
-#### Einfügen von Code in Webseiten
-
-Öffnen Sie "Schnellstart" in Ihrer Ressource im [Azure-Portal][portal], und rufen Sie den Codeausschnitt zur Überwachung von Webseiten ab.
-
-![](./media/app-insights-web-track-usage/02-monitor-web-page.png)
-
-Fügen Sie den Code in eine Masterseite wie (in .NET) \_Layout.cshtml oder in eine Includedatei ein, um sicherzustellen, dass er in all Ihren Seiten eingefügt wird.
-
-Der Codeausschnitt enthält den Instrumentationsschlüssel (iKey), der Ihre Ressource identifiziert. Um Daten an eine andere Ressource zu senden – beispielsweise zum Testen –, müssen Sie nur den iKey ersetzen.
-
-Veröffentlichen Sie Ihre Webseiten, oder verwenden Sie sie im Debugmodus, um Telemetriedaten zu generieren.
+[Weitere Informationen](app-insights-javascript.md)
 
 
 ## Wie beliebt ist meine Webanwendung?
@@ -383,7 +367,7 @@ Wenn Sie mit Analysen arbeiten, werden diese zu einem integrierten Bestandteil I
 [availability]: app-insights-monitor-web-app-availability.md
 [client]: app-insights-javascript.md
 [diagnostic]: app-insights-diagnostic-search.md
-[greenbrown]: app-insights-start-monitoring-app-health-usage.md
+[greenbrown]: app-insights-asp-net.md
 [java]: app-insights-java-get-started.md
 [metrics]: app-insights-metrics-explorer.md
 [portal]: http://portal.azure.com/
@@ -391,4 +375,4 @@ Wenn Sie mit Analysen arbeiten, werden diese zu einem integrierten Bestandteil I
 
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

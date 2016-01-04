@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/10/2015" 
+	ms.date="12/07/2015" 
 	ms.author="sdanie"/>
 
 # Importieren einer API-Definition mit Operationen in Azure API Management
@@ -29,7 +29,7 @@ Diese Anleitung beschreibt die Erstellung einer neuen API und den Import von Ope
 
 ## <a name="import-api"> </a>Importieren einer API
 
-APIs werden im Herausgeberportal erstellt und konfiguriert. Um auf das Herausgeberportal zuzugreifen, klicken Sie im Azure-Portal für Ihren API Management-Dienst auf **Verwalten**. Falls Sie noch keine API Management-Dienstinstanz erstellt haben, finden Sie weitere Informationen im Abschnitt [Erstellen einer API Management-Dienstinstanz][] im Lernprogramm [Erste Schritte mit Azure API Management][].
+APIs werden im Herausgeberportal erstellt und konfiguriert. Um auf das Herausgeberportal zuzugreifen, klicken Sie im klassischen Azure-Portal für Ihren API Management-Dienst auf **Verwalten**. Falls Sie noch keine API Management-Dienstinstanz erstellt haben, finden Sie weitere Informationen im Abschnitt [Erstellen einer API Management-Dienstinstanz][] im Lernprogramm [Erste Schritte mit Azure API Management][].
 
 ![Herausgeberportal][api-management-management-console]
 
@@ -95,4 +95,4 @@ Nachdem Sie die API erstellt und die Operationen importiert haben, können Sie z
 [Erstellen von APIs]: api-management-howto-create-apis.md
 [Konfigurieren von API-Einstellungen]: api-management-howto-create-apis.md#configure-api-settings
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

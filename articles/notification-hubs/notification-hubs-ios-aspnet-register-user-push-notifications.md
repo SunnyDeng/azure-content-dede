@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="ios"
 	ms.devlang="objective-c"
 	ms.topic="article"
-	ms.date="09/24/2015"
+	ms.date="12/16/2015"
 	ms.author="wesmc"/>
 
 # Registrieren des aktuellen Benutzers für Pushbenachrichtigungen mit ASP.NET
@@ -111,7 +111,7 @@ In diesem Artikel erfahren Sie, wie Sie Pushbenachrichtigungs-Registrierungen mi
 
 	Dieser Code legt das Geräte-Token für die Anfrage fest.
 
-	> [AZURE.NOTE]Die Methode sollte nun keinen weiteren Code mehr enthalten. Falls Sie bereits einen Aufruf der **registerNativeWithDeviceToken**-Methode aus dem Lernprogramm [Erste Schritte mit Notification Hubs](/manage/services/notification-hubs/get-started-notification-hubs-ios/%20target="_blank") haben, müssen Sie diesen Aufruf auskommentieren oder entfernen.
+	> [AZURE.NOTE]Die Methode sollte nun keinen weiteren Code mehr enthalten. Falls Sie bereits einen Aufruf der **registerNativeWithDeviceToken**-Methode aus dem Lernprogramm [Erste Schritte mit Notification Hubs](/manage/services/notification-hubs/get-started-notification-hubs-ios/) haben, müssen Sie diesen Aufruf auskommentieren oder entfernen.
 
 10.	Fügen Sie in der Datei PushToUserAppDelegate.m die folgende Handlermethode hinzu:
 
@@ -235,7 +235,6 @@ Nun haben Sie die Client-App aktualisiert und können zum Thema [Benachrichtigen
 <!-- URLs. -->
 [Benachrichtigen von Benutzern mit Notification Hubs]: /manage/services/notification-hubs/notify-users-aspnet
 
-[Azure Management Portal]: https://manage.windowsazure.com/
 [Erste Schritte mit Notification Hubs]: /manage/services/notification-hubs/get-started-notification-hubs-ios
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

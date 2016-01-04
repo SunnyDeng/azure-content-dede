@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="data-management" 
-   ms.date="09/22/2015"
+   ms.date="12/01/2015"
    ms.author="sstein"/>
 
 # SQL Database Index Advisor
@@ -22,12 +22,12 @@ Der SQL Database Index Advisor empfiehlt neue Indizes für vorhandene SQL-Datenb
 
 Der SQL-Datenbankdienst bewertet die Indexleistung durch eine Analyse des Ressourcennutzungsverlaufs für eine SQL-Datenbank, und es werden die Indizes empfohlen, die sich am besten zur Ausführung typischer Datenbankworkloads eignen.
 
-Der Index Advisor erleichtert die Indexverwaltung durch Empfehlungen zu den zu erstellenden Indizes. Bei V12-Servern kann der Index Advisor auch Indizes mit wenigen Mausklicks im [Azure-Vorschauportal](https://portal.azure.com/) erstellen und überprüfen. Nachdem der Index erstellt wurde, analysiert der SQL-Datenbankdienst die Leistung der Datenbankworkload und stellt ausführliche Informationen zu den Auswirkungen des neuen Index bereit. Ergibt die Analyse, dass ein empfohlener Index negative Auswirkungen auf die Leistung hat, wird der Index automatisch wiederhergestellt.
+Der Index Advisor erleichtert die Indexverwaltung durch Empfehlungen zu den zu erstellenden Indizes. Bei V12-Servern kann der Index Advisor auch Indizes mit wenigen Mausklicks im [Azure-Portal](https://portal.azure.com/) erstellen und überprüfen. Nachdem der Index erstellt wurde, analysiert der SQL-Datenbankdienst die Leistung der Datenbankworkload und stellt ausführliche Informationen zu den Auswirkungen des neuen Index bereit. Ergibt die Analyse, dass ein empfohlener Index negative Auswirkungen auf die Leistung hat, wird der Index automatisch wiederhergestellt.
 
 Mit dem Index Advisor können Sie Zeit bei der Optimierung der Datenbankleistung einsparen.
 
 
-> [AZURE.NOTE]Der Index Advisor befindet sich derzeit in der Vorschau und steht nur im [Azure-Vorschauportal](https://portal.azure.com/) zur Verfügung.
+> [AZURE.NOTE]Der Index Advisor befindet sich derzeit in der Vorschau und steht nur im [Azure-Portal](https://portal.azure.com/) zur Verfügung.
 
 
 ## Überlegungen zur Vorschau
@@ -57,11 +57,11 @@ Der Index Advisor ist einfach zu verwenden. Gehen Sie zur Vereinfachung der Inde
 
 ## Überprüfen der empfohlenen Indizes
 
-Der Index Advisor stellt eine Liste von Indexempfehlungen im Fenster „Datenbank“ im [Azure-Vorschauportal](https://portal.azure.com/) zur Verfügung. Die obersten ausgewählten Empfehlungen werden für alle Tabellen in der ausgewählten Datenbank angezeigt, für die das Erstellen eines neuen Index Leistungssteigerungen bringen kann.
+Der Index Advisor stellt eine Liste von Indexempfehlungen auf dem Blatt „Datenbank“ im [Azure-Portal](https://portal.azure.com/) zur Verfügung. Die obersten ausgewählten Empfehlungen werden für alle Tabellen in der ausgewählten Datenbank angezeigt, für die das Erstellen eines neuen Index Leistungssteigerungen bringen kann.
 
 ### So überprüfen Sie die derzeit verfügbaren Indexempfehlungen
 
-1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com/) an.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/) an.
 2. Klicken Sie im linken Menü auf **DURCHSUCHEN**.
 3. Klicken Sie im Blatt **Durchsuchen** auf **SQL-Datenbanken**.
 4. Klicken Sie im Blatt **SQL-Datenbanken** auf die Datenbank, für die Sie die empfohlenen Indizes anzeigen möchten.
@@ -171,4 +171,4 @@ Indexempfehlungen bieten eine automatisierte Lösung für die Indexerstellung un
 [3]: ./media/sql-database-index-advisor/recommended-indexes.png
 [4]: ./media/sql-database-index-advisor/index-operations.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

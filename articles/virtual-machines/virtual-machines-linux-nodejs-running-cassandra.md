@@ -1,4 +1,4 @@
-<properties pageTitle="Ausführen von Cassandra mit Linux in Azure | Microsoft Azure" description="Ausführen eines Cassandra-Clusters unter Linux auf virtuellen Azure-Computern aus einer Node.js-Anwendung." services="virtual-machines" documentationCenter="nodejs" authors="MikeWasson" manager="wpickett" editor="" azure-service-management"/>
+<properties pageTitle="Ausführen von Cassandra mit Linux in Azure | Microsoft Azure" description="Ausführen eines Cassandra-Clusters unter Linux auf virtuellen Azure-Computern aus einer Node.js-Anwendung." services="virtual-machines" documentationCenter="nodejs" authors="rmcmurray" manager="wpickett" editor="" azure-service-management"/>
 
 <tags 
 	ms.service="virtual-machines" 
@@ -6,8 +6,8 @@
 	ms.tgt_pltfrm="vm-linux" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/30/2015" 
-	ms.author="mwasson"/>
+	ms.date="11/20/2015" 
+	ms.author="robmcm"/>
 
 
 # Ausführen von Cassandra mit Linux auf Azure und Zugreifen aus Node.js 
@@ -111,7 +111,7 @@ Die folgenden Softwareversionen werden während der Bereitstellung verwendet:
 <tr><td>JRE	</td><td>[JRE 8](http://www.oracle.com/technetwork/java/javase/downloads/server-jre8-downloads-2133154.html) </td><td>8U5</td></tr>
 <tr><td>JNA	</td><td>[JNA] (https://github.com/twall/jna) </td><td> 3.2.7</td></tr>
 <tr><td>Cassandra</td><td>[Apache Cassandra 2.0.8](http://www.apache.org/dist/cassandra/2.0.8/apache-cassandra-2.0.8-bin.tar.gz)</td><td> 2.0.8</td></tr>
-<tr><td>Ubuntu	</td><td>[Microsoft Azure-Portal](http://azure.microsoft.com) </td><td>14.04 LTS</td></tr>
+<tr><td>Ubuntu	</td><td>[Microsoft Azure](http://azure.microsoft.com) </td><td>14.04 LTS</td></tr>
 </table>
 
 Da für das Herunterladen von JRE eine manuelle Zustimmung zur Oracle-Lizenz erforderlich ist, sollten Sie zur Vereinfachung der Bereitstellung die gesamte erforderliche Software auf den Desktop herunterladen, um sie später in das Ubuntu-Vorlagenimage hochzuladen, das als Vorstufe der Clusterbereitstellung erstellt wird.
@@ -124,7 +124,7 @@ In diesem Schritt des Vorgangs wird das Ubuntu-Image mit der erforderlichen Soft
 Azure benötigt einen öffentlichen X509-Schlüssel, der bei seiner Bereitstellung PEM- oder DER-codiert ist. Erstellen Sie ein öffentlich/privates Schlüsselpaar, indem Sie die Anleitungen unter "Verwenden von SSH mit Linux in Azure" befolgen. Wenn Sie "putty.exe" als SSH-Client unter Windows oder Linux verwenden möchten, müssen Sie den PEM-codierten privaten RSA-Schlüssel mithilfe von "puttygen.exe" in das PPK-Format konvertieren. Anleitungen dazu finden Sie auf der oben genannten Webseite.
 
 ####Schritt 2: Erstellen des virtuellen Ubuntu-Vorlagencomputers
-Melden Sie sich zum Erstellen des virtuellen Vorlagencomputers am azure.microsoft.com-Portal an, und verwenden Sie dann die folgenden Schritte: Klicken Sie auf NEU, SERVER, VIRTUELLER COMPUTER, AUS KATALOG, UBUNTU, Ubuntu Server 14.04. LTS und dann auf den Pfeil nach rechts. Ein Lernprogramm, das die Erstellung eines virtuellen Linux-Computers beschreibt, finden Sie unter "Erstellen eines virtuellen Linux-Computers".
+Melden Sie sich zum Erstellen des virtuellen Vorlagencomputers beim klassischen Azure-Portal an, und führen Sie dann die folgenden Schritte aus: Klicken Sie auf NEU, COMPUTE, VIRTUELLER COMPUTER, AUS KATALOG, UBUNTU, Ubuntu Server 14.04 LTS und dann auf den Pfeil nach rechts. Ein Lernprogramm, das die Erstellung eines virtuellen Linux-Computers beschreibt, finden Sie unter "Erstellen eines virtuellen Linux-Computers".
 
 Geben Sie die folgenden Informationen auf dem Bildschirm Nr. 1 "Konfiguration des virtuellen Computers" ein:
 
@@ -293,7 +293,7 @@ Stellen Sie sicher, dass der virtuelle Computer markiert ist, und klicken Sie da
 Nach einigen Sekunden sollte das Image im Abschnitt "EIGENE IMAGES" des Image-Katalogs verfügbar sein. Der virtuelle Quellcomputer wird automatisch gelöscht, nachdem das Image erfolgreich erfasst wurde.
 
 ##Bereitstellungsvorgang in einer Region
-**Schritt 1: Erstellen des virtuellen Netzwerks** Melden Sie sich am Verwaltungsportal an, und erstellen Sie ein virtuelles Netzwerk mit den in der Tabelle angegebenen Attributen. Eine ausführliche Beschreibung der erforderlichen Schritte finden Sie unter [Konfigurieren eines virtuellen Nur-Cloud-Netzwerks im Verwaltungsportal](../virtual-network/virtual-networks-create-vnet.md).
+**Schritt 1: Erstellen des virtuellen Netzwerks** Melden Sie sich beim klassischen Azure-Portal an, und erstellen Sie ein virtuelles Netzwerk mit den in der Tabelle angegebenen Attributen. Eine ausführliche Beschreibung der erforderlichen Schritte finden Sie unter [Konfigurieren eines virtuellen Netzwerks nur für die Cloud im klassischen Azure-Portal](../virtual-network/virtual-networks-create-vnet.md).
 
 <table>
 <tr><th>Attributname des virtuellen Computers</th><th>Wert</th><th>Anmerkungen</th></tr>
@@ -340,7 +340,7 @@ Für das Erstellen der oben aufgeführten Liste der virtuellen Computer ist der 
 3.	Hinzufügen eines internen Lastenausgleichsmoduls zum Clouddienst und Anfügen des Moduls an das Subnetz "data"
 4.	Hinzufügen eines Endpunkts mit Lastenausgleich für Thrift-Datenverkehr über eine Gruppe mit Lastenausgleich, die mit dem zuvor erstellten internen Lastenausgleichsmodul verbunden ist, für jeden virtuellen Computer, der zuvor erstellt wurde.
 
-Das oben beschriebene Verfahren kann mithilfe des Azure-Verwaltungsportals ausgeführt werden. Verwenden Sie einen Windows-Computer (verwenden Sie einen virtuellen Computer in Azure, wenn Sie keinen Zugriff auf einen Windows-Computer besitzen). Verwenden Sie das folgende PowerShell-Skript, um alle acht virtuellen Computer automatisch bereitzustellen.
+Das oben beschriebene Verfahren kann über das klassische Azure-Portal ausgeführt werden. Verwenden Sie einen Windows-Computer (wenn Sie keinen Zugriff auf einen Windows-Computer besitzen, verwenden Sie einen virtuellen Computer in Azure). Stellen Sie alle acht virtuellen Computer automatisch mithilfe des folgenden PowerShell-Skripts bereit.
 
 **List1: PowerShell-Skript für die Bereitstellung virtueller Computer**
 		
@@ -459,7 +459,7 @@ Bitte beachten Sie, dass der in Schritt 4 erstellte Keyspace SimpleStrategy mit 
 Bei diesem Verfahren wird die abgeschlossene Bereitstellung in einer Region genutzt und der gleiche Vorgang für die Installation in der zweiten Region wiederholt. Der Hauptunterschied zwischen einer Bereitstellung in einer Region und in mehreren Regionen besteht in der Einrichtung des VPN-Tunnels für die Kommunikation zwischen den Regionen. Wir beginnen mit der Netzwerkinstallation, stellen die virtuellen Computer bereit und konfigurieren dann Cassandra.
 
 ###Schritt 1: Erstellen des virtuellen Netzwerks in der zweiten Region
-Melden Sie sich am Verwaltungsportal an, und erstellen Sie ein virtuelles Netzwerk mit den in der Tabelle angegebenen Attributen. Eine ausführliche Beschreibung der erforderlichen Schritte finden Sie unter [Konfigurieren eines virtuellen Nur-Cloud-Netzwerks im Verwaltungsportal](../virtual-network/virtual-networks-create-vnet.md).
+Melden Sie sich beim klassischen Azure-Portal an, und erstellen Sie ein virtuelles Netzwerk mit den in der Tabelle angegebenen Attributen. Eine ausführliche Beschreibung der erforderlichen Schritte finden Sie unter [Konfigurieren eines virtuellen Netzwerks nur für die Cloud im klassischen Azure-Portal](../virtual-network/virtual-networks-create-vnet.md).
 
 <table>
 <tr><th>Attributname    </th><th>Wert	</th><th>Anmerkungen</th></tr>
@@ -488,10 +488,10 @@ Erstellen Sie zwei lokale Netzwerke mit den folgenden Details:
 
 
 ###Schritt 3: Zuordnen des "lokalen" Netzwerks zu den entsprechenden VNETs
-Wählen Sie im Service Management Portal jedes VNet aus, klicken Sie auf "Konfigurieren", aktivieren Sie "Eine Verbindung mit dem lokalen Netzwerk herstellen", und wählen Sie dann die lokalen Netzwerke mit den folgenden Details aus:
+Wählen Sie im klassischen Azure-Portal jedes VNet aus, klicken Sie auf „Konfigurieren“, aktivieren Sie „Eine Verbindung mit dem lokalen Netzwerk herstellen“, und wählen Sie dann die lokalen Netzwerke mit den folgenden Details aus:
 
 
-| Virtuelles Netzwerk | Lokales Netzwerk |
+| Virtual Network | Lokales Netzwerk |
 | --------------- | ------------- |
 | hk-vnet-west-us | hk-lnet-map-to-east-us |
 | hk-vnet-east-us | hk-lnet-map-to-west-us |
@@ -512,7 +512,7 @@ Bearbeiten Sie die lokalen Netzwerke, um die IP-Platzhalteradressen der Gateways
 Verwenden Sie das folgende PowerShell-Skript zum Aktualisieren des IPSec-Schlüssels jedes VPN-Gateways. [Verwenden Sie den gleichen Schlüssel für beide Gateways]: Set-AzureVNetGatewayKey -VNetName hk-vnet-east-us -LocalNetworkSiteName hk-lnet-map-to-west-us -SharedKey D9E76BKK Set-AzureVNetGatewayKey -VNetName hk-vnet-west-us -LocalNetworkSiteName hk-lnet-map-to-east-us -SharedKey D9E76BKK
 
 ###Schritt 6: Einrichten der VNET-zu-VNET-Verbindung
-Verwenden Sie im Azure-Verwaltungsportal das Menü "DASHBOARD" der beiden virtuellen Netzwerke, um die Gateway-zu-Gateway-Verbindung herzustellen. Verwenden Sie die Menüelemente "VERBINDEN" in der unteren Symbolleiste. Nach einigen Minuten sollte das Dashboard die Verbindungsdetails in grafischer Form anzeigen.
+Verwenden Sie im klassischen Azure-Portal das Menü „DASHBOARD“ der beiden virtuellen Netzwerke, um die Gateway-zu-Gateway-Verbindung herzustellen. Verwenden Sie die Menüelemente "VERBINDEN" in der unteren Symbolleiste. Nach einigen Minuten sollte das Dashboard die Verbindungsdetails in grafischer Form anzeigen.
 
 ###Schritt 7: Erstellen der virtuellen Computer in der Region Nr. 2 
 Erstellen Sie das Ubuntu-Image wie für die Bereitstellung in der Region Nr. 1 beschrieben, indem Sie die gleichen Schritte ausführen, oder kopieren Sie die VHD-Imagedatei in das Azure-Speicherkonto in der Region Nr. 2, und erstellen Sie dann das Image. Verwenden Sie dieses Image, und erstellen Sie die folgende Liste virtueller Computer in einem neuen Clouddienst "hk-c-svc-east-us":
@@ -692,4 +692,4 @@ Microsoft Azure ist eine flexible Plattform, die das Ausführen von Microsoft- s
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="09/23/2015"
+   ms.date="12/04/2015"
    ms.author="larryfr"/>
 
 # Analysieren von Sensordaten mit Apache Storm, Event Hub und HBase in HDInsight (Hadoop)
@@ -93,7 +93,7 @@ Bevor Sie dieses Beispiel verwenden können, müssen Sie einen Azure Event Hub e
 
 Event Hub ist die Datenquelle für dieses Beispiel. Führen Sie die folgenden Schritte aus, um einen neuen Event Hub zu erstellen.
 
-1. Wählen Sie im [Azure-Portal](https://manage.windowsazure.com) die Optionen **NEU | Service Bus | Event Hub | Benutzerdefiniert erstellen**.
+1. Wählen Sie im [klassischen Azure-Portal](https://manage.windowsazure.com) die Optionen **NEU | Service Bus | Event Hub | Benutzerdefiniert erstellen**.
 
 2. Geben Sie im Dialogfeld **Neuen Event Hub hinzufügen** einen **Event Hub-Namen** ein, wählen Sie die **Region** aus, in der der Hub erstellt werden soll, und erstellen Sie einen neuen Namespace, oder wählen einen vorhandenen Namespace aus. Klicken Sie zum Schluss auf den Pfeil, um fortzufahren.
 
@@ -113,7 +113,7 @@ Event Hub ist die Datenquelle für dieses Beispiel. Führen Sie die folgenden Sc
 
 ### Erstellen des Storm in HDInsight-Clusters
 
-1. Melden Sie sich beim [Azure-Portal](https://manage.windowsazure.com/) an.
+1. Melden Sie sich beim [klassischen Azure-Portal](https://manage.windowsazure.com/) an.
 
 2. Klicken Sie links auf **HDInsight** und anschließend unten links auf der Seite auf **+NEU**.
 
@@ -258,7 +258,7 @@ Führen Sie die folgenden Schritte in Ihrer Entwicklungsumgebung aus, um die Tem
 
 1. Um das Dashboard für eine Azure-Website bereitzustellen, folgen Sie den Anweisungen unter [Erstellen und Bereitstellen einer Node.js-Website für Azure](../web-sites-nodejs-develop-deploy-mac.md). Notieren Sie sich die URL der Website, die ungefähr folgendermaßen lautet: **mywebsite.azurewebsites.net**.
 
-2. Wenn die Website erstellt wurde, wechseln Sie im Azure-Portal zur Website, und wählen Sie die Registerkarte **Konfigurieren** aus. Aktivieren Sie **Websockets**, und klicken Sie dann unten auf der Seite auf **Speichern**.
+2. Wenn die Website erstellt wurde, wechseln Sie im klassischen Azure-Portal zur Website, und wählen Sie die Registerkarte **Konfigurieren** aus. Aktivieren Sie **Websockets**, und klicken Sie dann unten auf der Seite auf **Speichern**.
 
 2. Öffnen Sie **hdinsight-eventhub-example\\TemperatureMonitor\\src\\main\\java\\com\\microsoft\\examples\\bolts\\DashboardBolt.java**, und ändern Sie die folgende Zeile so, dass sie auf die URL des veröffentlichten Dashboards verweist:
 
@@ -288,7 +288,7 @@ Um Storm und HBase gemeinsam zu verwenden, müssen Sie zunächst ein virtuelles 
 
 Wenn Sie HBase mit diesem Beispiel verwenden möchten, müssen Sie ein virtuelles Netzwerk in Azure erstellen, das einen Storm in HDInsight-Cluster und einen HBase in HDInsight-Cluster enthält.
 
-1. Melden Sie sich beim [Azure-Portal](https://manage.windowsazure.com) an.
+1. Melden Sie sich beim [klassischen Azure-Portal](https://manage.windowsazure.com) an.
 
 2. Klicken Sie unten auf der Seite auf **+NEU** > **Network Services** > **Virtual Network** > **Schnellerfassung**.
 
@@ -324,7 +324,7 @@ Wenn Sie HBase mit diesem Beispiel verwenden möchten, müssen Sie ein virtuelle
 
 ### Erstellen eines Storm- und HBase-Clusters im virtuellen Netzwerk
 
-1. Melden Sie sich beim [Azure-Portal](https://manage.windowsazure.com/) an.
+1. Melden Sie sich beim [klassischen Azure-Portal](https://manage.windowsazure.com/) an.
 
 2. Klicken Sie links auf **HDInsight** und anschließend unten links auf der Seite auf **+NEU**.
 
@@ -422,4 +422,4 @@ Sie haben gelernt, wie Sie Daten mithilfe von Storm aus einem Event Hub lesen un
 
 [azure-portal]: https://manage.windowsazure.com/
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -35,13 +35,13 @@ Wenn Sie beim Lesen dieses Artikels feststellen, dass Sie weitere Hilfe benötig
 
 ## Übersicht
 
-Wenn Sie noch keinen externen Domänennamen registriert haben (d. h. nicht „*.azurewebsites.net“), ist die einfachste Möglichkeit zum Einrichten einer benutzerdefinierten Domäne der direkte Kauf im [Azure-Vorschauportal](https://portal.azure.com). Mit dieser Vorgehensweise können Sie den Domänennamen Ihrer Web-Apps direkt im Portal verwalten, anstatt auf einer Website von Drittanbietern wie GoDaddy. Außerdem wird das Konfigurieren des Domänennamens in Ihrer Web-App erheblich vereinfacht, und zwar unabhängig davon, ob Ihre Web-App [Azure Traffic Manager](web-sites-traffic-manager-custom-domain-name.md) verwendet oder nicht. Weitere Informationen finden Sie unter [Kaufen und Konfigurieren eines benutzerdefinierten Domänennamens in Azure App Service](custom-dns-web-site-buydomains-web-app.md).
+Wenn Sie noch keinen externen Domänennamen registriert haben (d. h. nicht „*.azurewebsites.net“), ist die einfachste Möglichkeit zum Einrichten einer benutzerdefinierten Domäne der direkte Kauf im [Azure-Portal](https://portal.azure.com). Mit dieser Vorgehensweise können Sie den Domänennamen Ihrer Web-Apps direkt im Portal verwalten, anstatt auf einer Website von Drittanbietern wie GoDaddy. Außerdem wird das Konfigurieren des Domänennamens in Ihrer Web-App erheblich vereinfacht, und zwar unabhängig davon, ob Ihre Web-App [Azure Traffic Manager](web-sites-traffic-manager-custom-domain-name.md) verwendet oder nicht. Weitere Informationen finden Sie unter [Kaufen und Konfigurieren eines benutzerdefinierten Domänennamens in Azure App Service](custom-dns-web-site-buydomains-web-app.md).
 
 Wenn Sie bereits über einen Domänennamen verfügen oder eine Domäne aus anderen Domänenregistrierungsstellen reservieren möchten, führen Sie die folgenden allgemeinen Schritte aus, um einen benutzerdefinierten Domänennamen für Web-Apps zu verwenden (weitere Informationen finden Sie in den [Anweisungen für GoDaddy.com](web-sites-godaddy-custom-domain-name.md)):
 
 1. Reservieren Sie Ihren Domänennamen. Diese Schritte werden in diesem Artikel jedoch nicht erläutert. Es gibt zahlreiche Domänenregistrierungsstellen, unter denen Sie auswählen können. Wenn Sie sich registrieren, werden Sie auf der Website durch die erforderlichen Schritte geführt.
 1. Erstellen Sie DNS-Einträge, die die Domäne Ihrer Azure-Web-App zuordnen.
-1. Fügen Sie den Domänennamen im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) hinzu.
+1. Fügen Sie den Domänennamen im [Azure-Portal](https://portal.azure.com) hinzu.
 
 In diesem grundlegenden Entwurf sind eine Sonderfälle zu berücksichtigen:
 
@@ -74,13 +74,13 @@ Wenn sich die IP-Adresse ändert, bleibt der CNAME-Entrag gültig, während ein 
 4.	Klicken Sie auf den Namen der Web-App.
 5.	Klicken Sie auf der Seite **Essentials** auf **Alle Einstellungen**.
 6.	Klicken Sie auf **Benutzerdefinierte Domänen und SSL**.
-7.	Klicken Sie auf dem Blatt **Benutzerdefinierte Domänen und SSL** auf **Bring External Domains**. Die IP-Adresse befindet sich unten in diesem Bereich.
+7.	Klicken Sie auf dem Blatt **Benutzerdefinierte Domänen und SSL** auf **Externe Domänen einreichen**. Die IP-Adresse befindet sich unten in diesem Bereich.
 
 ## Erstellen von DNS-Einträgen
 
 Melden Sie sich bei Ihrer Domänenregistrierungsstelle an, und verwenden Sie die verfügbaren Tools, um einen A-Eintrag oder einen CNAME-Eintrag zu erstellen. Die Web-Apps der einzelnen Registrierungsstellen unterscheiden sich geringfügig voneinander, folgen jedoch gemeinsamen Grundregeln.
 
-1.	Suchen Sie die Seite für die Verwaltung von DNS-Einträgen. Suchen Sie nach Links oder Bereichen der Website, die als **Domänenname**, **DNS** oder **Namenserververwaltung** bezeichnet werden. Häufig finden Sie in Ihren Kontoinformationen einen Link auf diese Seite. Suchen Sie anschließend nach einem Link, der Sie zu Ihren eigenen Domänen führt.
+1.	Suchen Sie die Seite für die Verwaltung von DSN-Einträgen. Suchen Sie nach Links oder Bereichen der Website, die als **Domänenname**, **DNS** oder **Namenserververwaltung** bezeichnet werden. Häufig finden Sie in Ihren Kontoinformationen einen Link auf diese Seite. Suchen Sie anschließend nach einem Link, der Sie zu Ihren eigenen Domänen führt.
 2.	Wenn Sie die Verwaltungsseite finden, suchen Sie nach einen Link, über den Sie DNS-Einträge hinzufügen oder bearbeiten können. Dieser Konfigurationslink kann als **Zone file** (Zonendatei), **DNS Records** (DNS-Eintrag) oder als **Advanced** (Erweitert) bezeichnet werden.
 
 Auf der Seite werden A-Einträge und CNAME-Einträge separat aufgeführt, oder es steht eine Dropdownliste zur Auswahl eines Eintragstyps zur Verfügung. Möglicherweise werden auch andere Namen für die Eintragstypen verwendet wie **IP-Adresseintrag** anstelle von A-Eintrag oder **Aliaseintrag** anstelle von CNAME-Eintrag. Normalerweise erstellt die Registrierungsstelle einige Einträge für Sie, sodass Einträge für die Stammdomäne oder allgemeine Unterdomänen wie **www** bereits vorhanden sein können.
@@ -143,8 +143,7 @@ Es kann nach Abschluss der Konfigurationsschritte einige Zeit dauern, bis die Ä
 Weitere Informationen finden Sie unter [Erste Schritte mit Azure DNS](../dns/dns-getstarted-create-dnszone.md) sowie unter [Delegieren von Domänen an Azure DNS](../dns/dns-domain-delegation.md).
 
 ## Änderungen
-* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
+* Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 
 <!-- Anchors. -->
 [Overview]: #overview
@@ -156,4 +155,4 @@ Weitere Informationen finden Sie unter [Erste Schritte mit Azure DNS](../dns/dns
 <!-- Images -->
 [subdomain]: media/web-sites-custom-domain-name/azurewebsites-subdomain.png
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -3,7 +3,7 @@
 	description="Hier erfahren Sie, wie Sie eine Ruby on Rails-basierte Website auf Azure mithilfe eines virtuellen Linux-Computers einrichten und hosten."
 	services="virtual-machines"
 	documentationCenter="ruby"
-	authors="MikeWasson"
+	authors="rmcmurray"
 	manager="wpickett"
 	editor=""
 	tags="azure-service-management"/>
@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="ruby"
 	ms.topic="article"
-	ms.date="06/09/2015"
-	ms.author="mwasson"/>
+	ms.date="11/20/2015"
+	ms.author="robmcm"/>
 
 
 
@@ -34,11 +34,11 @@ Dieses Lernprogramm wurde mit Ubuntu Server 14.04 LTS getestet. Wenn Sie eine a
 
 Beginnen Sie, indem Sie eine Azure-VM mit einem Linux-Image erstellen.
 
-Zur Erstellung des virtuellen Computers können Sie das Azure-Verwaltungsportal oder die Azure-Befehlszeilenschnittstelle (CLI) verwenden.
+Zur Erstellung des virtuellen Computers können Sie das klassische Azure-Portal oder die Azure-Befehlszeilenschnittstelle (CLI) verwenden.
 
 ### Azure-Verwaltungsportal
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal](http://manage.windowsazure.com) an.
+1. Melden Sie sich beim [klassischen Azure-Portal](http://manage.windowsazure.com) an.
 2. Klicken Sie auf **Neu** > **Compute** > **Virtueller Computer** > **Schnellerfassung**. Wählen Sie ein Linux-Image aus.
 3. Geben Sie ein Kennwort ein.
 
@@ -97,7 +97,7 @@ Eine Ausgabe ähnlich der folgenden sollte angezeigt werden.
 
 ## Hinzufügen eines Endpunkts
 
-1. Öffnen Sie das [Azure-Verwaltungsportal][management-portal], und wählen Sie Ihren virtuellen Computer aus.
+1. Öffnen Sie das [klassische Azure-Portal][management-portal], und wählen Sie Ihren virtuellen Computer aus.
 
 	![Liste der virtuellen Computer][vmlist]
 
@@ -175,4 +175,4 @@ Informationen zum Verwenden von Azure-Diensten in der Ruby-Anwendung finden Sie 
 
 [new-endpoint1]: ./media/virtual-machines-ruby-rails-web-app-linux/newendpoint1.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

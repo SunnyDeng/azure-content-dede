@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/10/2015" 
+	ms.date="12/07/2015" 
 	ms.author="sdanie"/>
 
 # Hinzufügen von Operationen zu einer API in Azure API Management
@@ -22,13 +22,13 @@ Bevor eine API in API Management verwendet werden kann, müssen Operationen hinz
 
 ## <a name="add-operation"> </a>Hinzufügen einer Operation
 
-Operationen werden einer API im Herausgeberportal hinzugefügt und in diesem konfiguriert. Um auf das Herausgeberportal zuzugreifen, klicken Sie im Azure-Portal für Ihren API Management-Dienst auf **Verwalten**.
+Operationen werden einer API im Herausgeberportal hinzugefügt und in diesem konfiguriert. Um auf das Herausgeberportal zuzugreifen, klicken Sie im klassischen Azure-Portal für Ihren API Management-Dienst auf **Verwalten**.
 
 ![Herausgeberportal][api-management-management-console]
 
->Falls Sie noch keine API Management-Dienstinstanz erstellt haben, finden Sie weitere Informationen im Abschnitt [Erstellen einer API Management-Dienstinstanz][] im Lernprogramm [Erste Schritte mit Azure API Management][].
+>Falls Sie noch keine API Management-Dienstinstanz erstellt haben, finden Sie weitere Informationen im Abschnitt [Erstellen einer API Management-Instanz][] im Lernprogramm [Erste Schritte mit Azure API Management][].
 
-Wählen Sie die gewünschte API im API Management-Portal aus, und öffnen Sie die Registerkarte **Operationen**.
+Wählen Sie die gewünschte API im Herausgeberportal aus, und öffnen Sie die Registerkarte **Vorgänge**.
 
 ![Operationen][api-management-operations]
 
@@ -158,10 +158,10 @@ Nachdem Sie die Operationen zur API hinzugefügt haben, können Sie die API zu e
 [Next steps]: #next-steps
 
 [Erste Schritte mit Azure API Management]: api-management-get-started.md
-[Erstellen einer API Management-Dienstinstanz]: api-management-get-started.md#create-service-instance
+[Erstellen einer API Management-Instanz]: api-management-get-started.md#create-service-instance
 
 [How to add operations to an API]: api-management-howto-add-operations.md
 [Erstellen und Veröffentlichen eines Produkts]: api-management-howto-add-products.md
 [Zwischenspeichern von Operationsergebnissen in Azure API Management]: api-management-howto-cache.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

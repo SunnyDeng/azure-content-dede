@@ -92,7 +92,7 @@ Das Microsoft Azure IoT-Dienste-SDK für Java wurde unter den folgenden Konfigur
 
 ## CSharp
 
-Das [Microsoft Azure IoT-Geräte-SDK für .NET](https://github.com/Azure/azure-iot-sdks/blob/master/csharp/readme.md) wurde unter den folgenden Konfigurationen getestet:
+Das [Microsoft Azure IoT-Geräte-SDK für .NET](https://github.com/Azure/azure-iot-sdks/blob/master/csharp/device/readme.md) wurde unter den folgenden Konfigurationen getestet:
 
 |Betriebssystemplattform| Version|Protokolle|
 |:---------|:----------:|:----------:|
@@ -116,18 +116,32 @@ Die Kompatibilität jedes Geräts mit unserem SDK unter dem Betriebssystem und i
 
 |Gerät| Getestetes Betriebssystem |Sprache|
 |:---------|:----------|:----------|
-|Raspberry Pi 2| Raspbian | C, JavaScript, Java |
-|Raspberry Pi 2| Windows 10 IoT Core| C, JavaScript, C#|
-|BeagleBone Black| Debian |C, JavaScript, Java|
-|BeagleBone Green|Debian |C, JavaScript, Java|
-|TI CC3200 | TI-RTOS 2.x|C|
-|Intel Edison |Yocto |C, JavaScript|
-|Minnowboard Max |Windows 7, 8, 10 |C#|
-|Arrow DragonBoard 410c |Windows 10 IoT Core | C#|
-|Freescale FRDM K64 |mbed 2.0 | C|
+|[ADLINK MXE-202i](http://www.adlinktech.com/PD/web/PD_detail.php?cKind=&pid=1505&seq=&id=&sid=&category=Fanless-Embedded-Computer_Integrated-Embedded-Computer&utm_source=) |Wind River | JavaScript|
+|[Ankaa](http://www.e-consystems.com/iMX6-development-board.asp) |Ubuntu | C|
+|[Apalis iMX6](https://www.toradex.com/computer-on-modules/apalis-arm-family/freescale-imx-6) |Linux Angstrom(Yocto) | JavaScript, Java|
+|[Apalis T30](https://www.toradex.com/computer-on-modules/apalis-arm-family/nvidia-tegra-3) |Linux Angstrom(Yocto) | JavaScript, Java|
+|[Arrow DragonBoard 410c](http://partners.arrow.com/campaigns-na/qualcomm/dragonboard-410c/) |Windows 10 IoT Core | C#|
+|[ARTIK](http://developer.samsung.com/artik) |Fedora | C|
+|[BeagleBone Black](http://beagleboard.org/black) | Debian | C, JavaScript, Java|
+|[BeagleBone Green](http://beagleboard.org/green) |Debian | C, JavaScript, Java|
+|[Toradex Colibri iMX6](https://www.toradex.com/computer-on-modules/colibri-arm-family/freescale-imx6) |Linux Angstrom(Yocto) | JavaScript, Java|
+|[Toradex Colibri T20](https://www.toradex.com/computer-on-modules/colibri-arm-family/nvidia-tegra-2) |Linux Angstrom(Yocto) | Java|
+|[Toradex Colibri T30](https://www.toradex.com/computer-on-modules/colibri-arm-family/nvidia-tegra-3) |Windows 10 IoT Core | C#|
+|[Toradex Colibri VF61](https://www.toradex.com/computer-on-modules/colibri-arm-family/freescale-vybrid-vf6xx) |Linux Angstrom(Yocto) | JavaScript, Java|
+|[Freescale FRDM K64](http://www.freescale.com/products/arm-processors/kinetis-cortex-m/k-series/k6x-ethernet-mcus/freescale-freedom-development-platform-for-kinetis-k64-k63-and-k24-mcus:FRDM-K64F) |mbed 2.0 | C|
+|[Intel Edison](http://www.intel.com/content/www/us/en/do-it-yourself/edison.html) |Yocto | C, JavaScript|
+|[LogicMachine-Serie](http://openrb.com/products/) |Benutzerdefiniertes Linux | C|
+|[Minnowboard Max](http://www.minnowboard.org/meet-minnowboard-max/) |Windows 7, 8, 10 | C#|
+|[NEXCOM NISE 50C](http://www.nexcom.com/Products/industrial-computing-solutions/industrial-fanless-computer/atom-compact/fanless-computer-nise-50c) |Windows 10 IoT Core | C#|
+|[Raspberry Pi 2](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/) | Raspbian | C, JavaScript, Java |
+|[Raspberry Pi 2](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/) | Windows 10 IoT Core| C, JavaScript, C#|
+|[STM32 Nucleo](http://www.st.com/stm32nucleo) |STM32Cube | C|
+|[TI CC3200](http://www.ti.com/product/cc3200) |TI-RTOS 2.x | C|
+
+[Verbinden Sie Ihr Gerät mit Azure IoT Hub](https://azure.microsoft.com/develop/iot/get-started/), oder besuchen Sie unser GitHub-[Repository](https://github.com/Azure/azure-iot-sdks) (in englischer Sprache), und durchsuchen Sie die Gerätedokumentation nach Sprache.
 
 ## Nächste Schritte
 
-Weitere Informationen zum Entwickeln von Lösungen mit **für IoT zertifizierten Geräten** finden Sie [hier](http://azure.com/iotdev).
+Erfahren Sie mehr zum Entwickeln von Lösungen mit [für IoT zertifizierten Geräten](http://azure.com/iotdev).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

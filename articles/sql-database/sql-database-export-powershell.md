@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.devlang="NA"
-	ms.date="10/23/2015"
+	ms.date="12/01/2015"
 	ms.author="sstein"
 	ms.workload="data-management"
 	ms.topic="article"
@@ -22,13 +22,13 @@
 **Einzeldatenbank**
 
 > [AZURE.SELECTOR]
-- [Azure Preview Portal](sql-database-export.md)
+- [Azure portal](sql-database-export.md)
 - [PowerShell](sql-database-export-powershell.md)
 
 
 Dieser Artikel enthält Anweisungen zum Exportieren einer BACPAC-Datei der Azure SQL-Datenbank mit PowerShell.
 
-[BACPAC](https://msdn.microsoft.com/library/ee210546.aspx#Anchor_4) ist eine BACPAC-Datei, die ein Datenbankschema und Daten enthält. Der Hauptverwendungszweck einer BACPAC-Datei besteht darin, eine Datenbank von einem Server auf einen anderen zu verschieben, [eine lokale Datenbank in die Cloud zu migrieren](sql-database-cloud-migrate.md) und eine vorhandene Datenbank in einem offenen Format zu archivieren.
+Ein [BACPAC](https://msdn.microsoft.com/library/ee210546.aspx#Anchor_4) ist eine .bacpac-Datei, die ein Datenbankschema und Daten enthält. Der Hauptverwendungszweck einer BACPAC-Datei besteht darin, eine Datenbank von einem Server auf einen anderen zu verschieben, [eine lokale Datenbank in die Cloud zu migrieren](sql-database-cloud-migrate.md) und eine vorhandene Datenbank in einem offenen Format zu archivieren.
 
 > [AZURE.NOTE]BACPAC-Dateien eignen sich nicht für Backup- und Wiederherstellungsvorgänge. Azure SQL-Datenbank erstellt für jede Benutzerdatenbank automatisch Sicherungen. Weitere Informationen finden Sie unter [Übersicht über die Geschäftskontinuität](sql-database-business-continuity.md).
 
@@ -39,8 +39,8 @@ Das BACPAC wird in einen Azure-Speicherblobcontainer exportiert, den Sie nach de
 Damit Sie die Anweisungen in diesem Artikel ausführen können, benötigen Sie Folgendes:
 
 - Ein Azure-Abonnement. Wenn Sie ein Azure-Abonnement benötigen, müssen Sie lediglich oben auf dieser Seite auf den Link **Kostenlose Testversion** klicken. Lesen Sie anschließend den Artikel weiter.
-- Azure SQL-Datenbank. Wenn Sie nicht über eine SQL-Datenbank Server der Version 12 verfügen, erstellen Sie ihn anhand der Schritte in dem Artikel [Erstellen der ersten Azure SQL-Datenbank](sql-database-get-started.md).
-- Ein [Azure-Speicherkonto](storage-create-storage-account.md) mit einem Blob-Container zum Speichern der BACPAC-Datei. Derzeit muss für das Speicherkonto das klassische Bereitstellungsmodell verwendet werden. Wählen Sie also **Klassisch**, wenn Sie ein Speicherkonto erstellen.
+- Azure SQL-Datenbank. Wenn Sie nicht über eine SQL-Datenbank verfügen, können Sie die Erstellung anhand der Schritte im folgenden Artikel durchführen: [Erstellen der ersten Azure SQL-Datenbank](sql-database-get-started.md).
+- Ein [Azure-Speicherkonto](storage-create-storage-account.md) mit einem BLOB-Container zum Speichern des BACPAC. Derzeit muss für das Speicherkonto das klassische Bereitstellungsmodell verwendet werden. Wählen Sie also **Klassisch**, wenn Sie ein Speicherkonto erstellen.
 - Azure PowerShell. Sie können die Azure PowerShell-Module herunterladen und installieren, indem Sie den [Microsoft-Webplattform-Installer](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409) ausführen. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md).
 
 
@@ -60,7 +60,7 @@ Zur Auswahl des Abonnements benötigen Sie Ihre Abonnement-ID oder den Anmeldena
 
 	Select-AzureSubscription -SubscriptionId 4cac86b0-1e56-bbbb-aaaa-000000000000
 
-Nach dem erfolgreichen Ausführen von **Select-AzureSubscription** kehren Sie automatisch zur PowerShell-Eingabeaufforderung zurück. Wenn Sie über mehrere Abonnements verfügen, können Sie **Get-AzureSubscription** ausführen und überprüfen, ob das gewünschte Abonnement den Wert **IsCurrent: True** aufweist.
+Nach dem erfolgreichen Ausführen von **Select-AzureSubscription** kehren Sie zur PowerShell-Eingabeaufforderung zurück. Wenn Sie über mehrere Abonnements verfügen, können Sie **Get-AzureSubscription** ausführen und überprüfen, ob das gewünschte Abonnement den Wert **IsCurrent: True** aufweist.
 
 
 ## Einrichten der Variablen für Ihre jeweilige Umgebung
@@ -73,7 +73,7 @@ Ersetzen Sie den Server- und Datenbanknamen durch den derzeitigen Server und die
     $DatabaseName = "nameofdatabasetoexport"
     $BlobName = "filename.bacpac"
 
-Navigieren Sie im [Azure-Vorschauportal](https://portal.azure.com) zu Ihrem Speicherkonto, um diese Werte zu erhalten. Sie können auf den primären Zugriffsschlüssel zugreifen, indem Sie auf dem Blatt Ihres Speicherkontos auf **Alle Einstellungen** und auf **Schlüssel** klicken.
+Navigieren Sie im [Azure-Portal](https://portal.azure.com) zu Ihrem Speicherkonto, um diese Werte zu erhalten. Sie können auf den primären Zugriffsschlüssel zugreifen, indem Sie auf dem Blatt Ihres Speicherkontos auf **Alle Einstellungen** und auf **Schlüssel** klicken.
 
     $StorageName = "storageaccountname"
     $ContainerName = "blobcontainername"
@@ -148,4 +148,4 @@ Beim Ausführen dieses Befehls werden Sie zur Eingabe eines Kennworts aufgeforde
 - [Warnungen zur Notfallwiederherstellung](sql-database-disaster-recovery-drills.md)
 - [SQL-Datenbank-Dokumentation](https://azure.microsoft.com/documentation/services/sql-database/)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

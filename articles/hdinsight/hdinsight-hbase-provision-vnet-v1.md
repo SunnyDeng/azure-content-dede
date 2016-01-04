@@ -10,12 +10,12 @@
 
 <tags
    ms.service="hdinsight"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="na"
-	ms.workload="big-data"
-	ms.date="08/07/2015"
-	ms.author="jgao"/>
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="12/02/2015"
+   ms.author="jgao"/>
 
 # Bereitstellen von HBase-Clustern im virtuellen Azure-Netzwerk
 
@@ -51,9 +51,9 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
 Vor der Bereitstellung eines HBase-Clusters müssen Sie ein virtuelles Azure-Netzwerk erstellen.
 
-**So erstellen Sie ein virtuelles Netzwerk im Azure-Portal**
+**So erstellen Sie ein virtuelles Netzwerk im klassischen Azure-Portal**
 
-1. Melden Sie sich beim [Azure-Portal][azure-portal] an.
+1. Melden Sie sich beim [klassischen Azure-Portal][azure-portal] an.
 2. Klicken Sie links unten auf **NEU**, klicken Sie auf **NETWORK SERVICES**, auf **VIRTUAL NETWORK** und dann auf **SCHNELLERFASSUNG**.
 3. Geben Sie die folgenden Werte ein, oder wählen Sie sie aus:
 
@@ -86,9 +86,9 @@ Ein DNS-Server ist optional, aber in einigen Fällen erforderlich. Die Vorgehens
 
 > [AZURE.NOTE]HDInsight-Cluster nutzen den Azure-BLOB-Speicher zum Speichern von Daten. Weitere Informationen finden Sie unter [Verwenden von Azure Blob-Speicher mit HDInsight](../hdinsight-use-blob-storage.md). Sie benötigen ein Speicherkonto und einen Blob-Speichercontainer. Der Speicherort des Speicherkontos muss dem Speicherort des virtuellen Netzwerks und des Clusters entsprechen.
 
-Wie andere HDInsight-Cluster erfordert ein HBase-Cluster ein Azure-Speicherkonto und einen Blobspeichercontainer als Standarddateisystem. Der Speicherort des Speicherkontos muss dem Speicherort des virtuellen Netzwerks und des Clusters entsprechen. Weitere Informationen finden Sie unter [Verwenden von Azure Blob-Speicher mit HDInsight][hdinsight-storage]. Wenn Sie einen HBase-Cluster bereitstellen, können Sie entweder ein neues Speicherkonto und einen neuen Blobspeichercontainer erstellen oder ein vorhandenes Speicherkonto und einen vorhandenen Blobspeichercontainer verwenden. Mit den folgenden Schritten wird veranschaulicht, wie Sie ein Speicherkonto und einen Blobspeichercontainer im Azure-Portal erstellen.
+Wie andere HDInsight-Cluster erfordert ein HBase-Cluster ein Azure-Speicherkonto und einen Blobspeichercontainer als Standarddateisystem. Der Speicherort des Speicherkontos muss dem Speicherort des virtuellen Netzwerks und des Clusters entsprechen. Weitere Informationen finden Sie unter [Verwenden von Azure Blob-Speicher mit HDInsight][hdinsight-storage]. Wenn Sie einen HBase-Cluster bereitstellen, können Sie entweder ein neues Speicherkonto und einen neuen Blobspeichercontainer erstellen oder ein vorhandenes Speicherkonto und einen vorhandenen Blobspeichercontainer verwenden. Mit den folgenden Schritten wird veranschaulicht, wie Sie ein Speicherkonto und einen Blobspeichercontainer im klassischen Azure-Portal erstellen.
 
-1. Melden Sie sich beim [Azure-Portal][azure-portal] an.
+1. Melden Sie sich beim [klassischen Azure-Portal][azure-portal] an.
 2. Klicken Sie links unten auf **NEU**, zeigen Sie auf **DATA SERVICES**, auf **SPEICHER**, und klicken Sie anschließend auf **SCHNELLERFASSUNG**.
 
 3. Geben Sie die folgenden Werte ein, oder wählen Sie sie aus:
@@ -107,11 +107,11 @@ Wie andere HDInsight-Cluster erfordert ein HBase-Cluster ein Azure-Speicherkonto
 11. Geben Sie den Containernamen ein. Dieser Container wird als Standardcontainer für den HBase-Cluster verwendet. Standardmäßig entspricht der Standard-Containername dem Clusternamen. Wählen Sie für das Feld **ACCESS** die Einstellung **Private** aus.  
 12. Klicken Sie auf das Häkchen, um den Container zu erstellen.
 
-**So stellen Sie einen HBase-Cluster im Azure-Portal bereit**
+**So stellen Sie einen HBase-Cluster im klassischen Azure-Portal bereit**
 
 > [AZURE.NOTE]Informationen zum Bereitstellen eines neuen HBase-Clusters mit Azure PowerShell finden Sie unter [Bereitstellen eines HBase-Clusters mit Azure PowerShell](#powershell).
 
-1. Melden Sie sich beim [Azure-Portal][azure-portal] an.
+1. Melden Sie sich beim [klassischen Azure-Portal][azure-portal] an.
 
 2. Klicken Sie unten links auf **NEU**, zeigen Sie auf **DATA SERVICES** und auf **HDINSIGHT**, und klicken Sie dann auf **BENUTZERDEFINIERT ERSTELLEN**.
 
@@ -308,7 +308,7 @@ Führen Sie die Schritte unter [Erste Schritte mit HBase mit Hadoop in HDInsight
 
 		Daraufhin wird das DNS-Suffix zurückgegeben. Zum Beispiel: **yourclustername.b4.internal.cloudapp.net**.
 
-	> [AZURE.NOTE]Sie können auch per Remotedesktop eine Verbindung mit dem HBase-Cluster herstellen (wobei Sie eine Verbindung mit dem Hauptknoten herstellen) und **ipconfig** in einer Eingabeaufforderung ausführen, um das DNS-Suffix abzurufen. Anweisungen zum Aktivieren des Remotedesktopprotokolls (RDP) und zum Herstellen einer Verbindung mit dem Cluster mithilfe des RDP finden Sie unter [Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Portal][hdinsight-admin-portal].
+	> [AZURE.NOTE]Sie können auch per Remotedesktop eine Verbindung mit dem HBase-Cluster herstellen (wobei Sie eine Verbindung mit dem Hauptknoten herstellen) und **ipconfig** in einer Eingabeaufforderung ausführen, um das DNS-Suffix abzurufen. Anweisungen zum Aktivieren des Remotedesktopprotokolls (RDP) und zum Herstellen einer Verbindung mit dem Cluster mithilfe des RDP finden Sie unter [Verwalten von Hadoop-Clustern in HDInsight mit dem klassischen Azure-Portal][hdinsight-admin-portal].
 	>
 	> ![hdinsight.hbase.dns.surffix][img-dns-surffix]
 
@@ -374,7 +374,7 @@ Führen Sie die unter [Verwenden von Maven zur Entwicklung von Java-Anwendungen,
 
 
 3. Klicken Sie auf **Skript ausführen** oder drücken Sie **F5**.
-4. Wenn Sie den Cluster überprüfen möchten, können Sie ihn entweder über das Azure-Portal prüfen oder im unteren Bereich das folgende Azure PowerShell-Cmdlet ausführen:
+4. Wenn Sie den Cluster überprüfen möchten, können Sie ihn entweder über das klassische Azure-Portal prüfen oder im unteren Bereich das folgende Azure PowerShell-Cmdlet ausführen:
 
 	Get-AzureHDInsightCluster
 
@@ -434,4 +434,4 @@ In diesem Lernprogramm haben Sie erfahren, wie Sie einen HBase-Cluster bereitste
 [img-provision-cluster-page1]: ./media/hdinsight-hbase-provision-vnet/hbasewizard1.png "Bereitstellen von Details für den neuen HBase-Cluster"
 [img-provision-cluster-page5]: ./media/hdinsight-hbase-provision-vnet/hbasewizard5.png "Verwenden von Skriptaktionen zum Anpassen eines HBase-Clusters"
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

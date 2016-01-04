@@ -13,17 +13,18 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/07/2015" 
+	ms.date="12/05/2015" 
 	ms.author="juliako"/>
 
 
 #Verwalten von Media Services-Medienobjekten für mehrere Speicherkonten
 
-Ab Microsoft Azure Media Services 2.2 können Sie an ein Media Services-Konto mehrere Speicherkonten anfügen. Die Möglichkeit, mehrere Speicherkonten an ein Media Services-Konto anzufügen, bietet die folgenden Vorteile: Lastenausgleich der Medienobjekte für mehrere Speicherkonten.
+Ab Microsoft Azure Media Services 2.2 können Sie an ein Media Services-Konto mehrere Speicherkonten anfügen. Die Möglichkeit, mehrere Speicherkonten an ein Media Services-Konto anzufügen, bietet die folgenden Vorteile:
 
-Skalierung von Media Services für umfangreiche Inhaltsverarbeitung (derzeit ist ein Speicherkonto auf eine maximale Größe von 500 TB beschränkt).
+- Lastenausgleich der Assets für mehrere Speicherkonten.
+- Skalierung von Media Services für umfangreiche Inhaltsverarbeitung (derzeit ist ein Speicherkonto auf eine maximale Größe von 500 TB beschränkt). 
 
-In diesem Thema wird erläutert, wie mehrere Speicherkonten mit der [Azure-Dienstverwaltungs-REST-API](https://msdn.microsoft.com/library/azure/ee460799.aspx) an ein Media Services-Konto angefügt werden. Es wird zudem beschrieben, wie beim Erstellen von Medienobjekten mit dem Media Services-SDK verschiedene Speicherkonten angegeben werden.
+In diesem Thema wird erläutert, wie mehrere Speicherkonten mit der Azure-Dienstverwaltungs-REST-API an ein Media Services-Konto angefügt werden. Es wird zudem beschrieben, wie beim Erstellen von Medienobjekten mit dem Media Services-SDK verschiedene Speicherkonten angegeben werden.
 
 ##Überlegungen
 
@@ -39,7 +40,7 @@ Media Services verwendet beim Erstellen von URLs für den Streaminginhalt den We
 
 ##So fügen Sie ein Speicherkonto mit der Azure-Dienstverwaltungs-REST-API an
 
-Zum gegenwärtigen Zeitpunkt können mehrere Speicherkonten nur mithilfe der [Azure-Dienstverwaltungs-REST-API](https://msdn.microsoft.com/library/azure/ee460799.aspx) angefügt werden. Im Codebeispiel im Thema [Vorgehensweise: Verwenden der Media Services-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn167656.aspx) wird die **AttachStorageAccountToMediaServiceAccount**-Methode definiert, mit der ein Speicherkonto an ein angegebenes Media Services-Konto angefügt wird. Der Code im gleichen Thema definiert die **ListStorageAccountDetails**-Methode, mit der alle an das angegebene Media Services-Konto angefügten Speicherkonten aufgelistet werden.
+Zum gegenwärtigen Zeitpunkt können mehrere Speicherkonten nur mithilfe der [Azure-Dienstverwaltungs-REST-API](http://msdn.microsoft.com/library/azure/dn167014.aspx) angefügt werden. Im Codebeispiel im Thema [Vorgehensweise: Verwenden der Media Services-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn167656.aspx) wird die **AttachStorageAccountToMediaServiceAccount**-Methode definiert, mit der ein Speicherkonto an ein angegebenes Media Services-Konto angefügt wird. Der Code im gleichen Thema definiert die **ListStorageAccountDetails**-Methode, mit der alle an das angegebene Media Services-Konto angefügten Speicherkonten aufgelistet werden.
 
 
 ##So verwalten Sie Media Services-Medienobjekte für mehrere Speicherkonten
@@ -258,4 +259,4 @@ Im folgenden Code werden mit dem aktuellen Media Services-SDK die folgenden Aufg
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

@@ -13,22 +13,22 @@
    ms.topic="article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/05/2015"
+   ms.date="11/12/2015"
    ms.author="cherylmc"/>
 
-# Erstellen und Ändern des Routings einer ExpressRoute-Verbindung mit dem Azure-Ressourcen-Manager und mit PowerShell
+# Erstellen und Ändern des Routings einer ExpressRoute-Verbindung mit Azure-Ressourcen-Manager und PowerShell
 
 > [AZURE.SELECTOR]
 [PowerShell - Classic](expressroute-howto-routing-classic.md)
 [PowerShell - Resource Manager](expressroute-howto-routing-arm.md)
 
-In diesem Artikel werden Sie durch die Schritte zum Erstellen und Verwalten der Routingkonfiguration einer ExpressRoute-Verbindung mithilfe von PowerShell-Cmdlets und des Azure-Ressourcen-Manager-Bereitstellungsmodells geführt. In den Schritten unten wird auch veranschaulicht, wie Sie den Status prüfen, ein Update durchführen oder Peerings für eine ExpressRoute-Verbindung löschen oder deren Bereitstellung aufheben.
+In diesem Artikel erfahren Sie, wie Sie die Routingkonfiguration einer ExpressRoute-Verbindung mithilfe von PowerShell-Cmdlets und des Azure-Ressourcen-Manager-Bereitstellungsmodells erstellen und verwalten. In den Schritten unten wird auch veranschaulicht, wie Sie den Status prüfen, ein Update durchführen oder Peerings für eine ExpressRoute-Verbindung löschen oder deren Bereitstellung aufheben.
 
 [AZURE.INCLUDE [vpn-gateway-sm-rm](../../includes/vpn-gateway-sm-rm-include.md)]
 
 ## Konfigurationsvoraussetzungen
 
-- Sie benötigen die neueste Version der Azure PowerShell-Module, d. h. Version 1.0 oder höher. 
+- Sie benötigen die neueste Version der Azure PowerShell-Module (also mindestens Version 1.0). 
 - Stellen Sie sicher, dass Sie vor Beginn der Konfiguration die Seiten [Voraussetzungen](expressroute-prerequisites.md), [Routinganforderungen](expressroute-routing.md) und [Workflows](expressroute-workflows.md) gelesen haben.
 - Sie benötigen eine aktive ExpressRoute-Verbindung. Führen Sie die Schritte zum [Erstellen einer ExpressRoute-Verbindung](expressroute-howto-circuit-classic.md) aus, und lassen Sie sie vom Konnektivitätsanbieter aktivieren, bevor Sie fortfahren. Die ExpressRoute-Verbindung muss sich im Zustand „provisioned“ und „enabled“ befinden, damit Sie die unten beschriebenen Cmdlets ausführen können.
 
@@ -133,7 +133,7 @@ Sie können die Konfigurationsdetails mit dem folgenden Cmdlet abrufen.
 
 		$ckt = Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
 
-		Get-AzureRmExpressRouteCircuitPeeringConfig -Name "AzurePublicPeering" -Circuit $ckt	
+		Get-AzureRmExpressRouteCircuitPeeringConfig -Name "AzurePrivatePeering" -Circuit $ckt	
 
 
 ### So aktualisieren Sie die Konfiguration für privates Azure-Peering
@@ -256,7 +256,7 @@ Sie können die Konfigurationsdetails mit dem folgenden Cmdlet abrufen.
 		Get-AzureRmExpressRouteCircuitPeeringConfig -Name "AzurePublicPeering" -Circuit $ckt
 
 
-### So aktualisieren Sie die Konfiguration für öffentliches Azure-Peering
+### Aktualisieren der Konfiguration für öffentliches Azure-Peering
 
 Sie können einen beliebigen Teil der Konfiguration mit dem folgenden Cmdlet aktualisieren.
 
@@ -266,7 +266,7 @@ Sie können einen beliebigen Teil der Konfiguration mit dem folgenden Cmdlet akt
 
 Die VLAN-ID der Verbindung wird im obigen Beispiel von 200 in 600 geändert.
 
-### So löschen Sie öffentliches Azure-Peering
+### So löschen Sie ein öffentliches Azure-Peering
 
 Sie können Ihre Peeringkonfiguration entfernen, indem Sie das folgende Cmdlet ausführen.
 
@@ -349,7 +349,7 @@ Dieser Abschnitt enthält Anweisungen zum Erstellen, Abrufen, Aktualisieren und 
 	- Angekündigte Präfixe: Sie müssen eine Liste mit allen Präfixen bereitstellen, die Sie über die BGP-Sitzung ankündigen möchten. Nur öffentliche IP-Adresspräfixe werden akzeptiert. Sie können eine kommagetrennte Liste senden, wenn Sie planen, einen Satz mit Präfixen zu senden. Diese Präfixe müssen über eine RIR/IRR-Registrierung für Sie verfügen.
 	- Kunden-ASN: Wenn Sie Präfixe ankündigen, die nicht für die Peering-AS-Nummer registriert sind, können Sie die AS-Nummer angeben, unter der sie registriert sind. **Dies ist optional**.
 	- Routing-Registrierungsname: Sie können den RIR/IRR-Wert angeben, unter dem die AS-Nummer und die Präfixe registriert sind.
-	- Ein MD5-Hash, wenn Sie sich für dessen Einsatz entscheiden. **Dies ist optional**.
+	- Ein MD5-Hash, wenn Sie sich für dessen Einsatz entscheiden. **Dies ist optional.**
 	
 	Sie können das folgende Cmdlet ausführen, um das Microsoft-Peering für Ihre Verbindung zu konfigurieren.
 
@@ -389,10 +389,10 @@ Sie können Ihre Peeringkonfiguration entfernen, indem Sie das folgende Cmdlet a
 Verknüpfen Sie als Nächstes ein VNet mit einer ExpressRoute-Verbindung. Sie können für die Arbeit mit dem Azure-Ressourcen-Manager-Bereitstellungsmodell [diese Vorlage](https://github.com/Azure/azure-quickstart-templates/tree/ecad62c231848ace2fbdc36cbe3dc04a96edd58c/301-expressroute-circuit-vnet-connection) verwenden. Wir arbeiten derzeit mit PowerShell-Schritten.
 
 
--  Weitere Informationen zu ExpressRoute-finden Sie unter [ExpressRoute-Workflows](expressroute-workflows.md).
+-  Weitere Informationen zu ExpressRoute-Workflows finden Sie unter [ExpressRoute-Workflows](expressroute-workflows.md).
 
 -  Weitere Informationen zum Verbindungspeering finden Sie unter [ExpressRoute-Verbindungen und Routingdomänen](expressroute-circuit-peerings.md).
 
 -  Weitere Informationen zur Arbeit mit virtuellen Netzwerken finden Sie unter [Virtuelle Netzwerke im Überblick](../virtual-network/virtual-networks-overview.md).
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

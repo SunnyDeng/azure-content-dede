@@ -13,10 +13,10 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 
 	Beachten Sie, dass nach dem Starten der App im vorhergehenden Schritt gespeicherte Daten aus dem mobilen Dienst geladen werden.
  
-4. Zurück im Verwaltungsportal klicken Sie auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItem**.
+4. Zurück im [klassischen Azure-Portal](https://manage.windowsazure.com/) klicken Sie auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItems**.
 
    	Nun können Sie die von der App in die Tabelle eingefügten Daten durchsuchen.
 
    	![](./media/mobile-services-javascript-backend-run-app/mobile-data-browse.png)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

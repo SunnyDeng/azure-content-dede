@@ -40,7 +40,7 @@ In diesem Lernprogramm verwenden Sie die folgenden Tools. Da dies keine umfassen
 
 ### Azure-Ressourcen-Manager-Vorlagen (JSON) ###
  
-Jedes Mal, wenn Sie beispielsweise eine Web-App in Azure App Service erstellen, verwendet der Azure-Ressourcen-Manager eine JSON-Vorlage zum Erstellen der gesamten Ressourcengruppe mit den Komponentenressourcen. Eine komplexe Vorlage aus [Azure Marketplace](/marketplace) wie die App [Scalable WordPress](/marketplace/partners/wordpress/scalablewordpress/) kann die MySQL-Datenbank, Speicherkonten, den App Service-Plan, die Web-App selbst, Warnregeln, App-Einstellungen, Einstellungen für die automatische Skalierung und mehr enthalten, und alle diese Vorlagen stehen Ihnen über PowerShell zur Verfügung. Informationen zum Herunterladen und Verwenden dieser Vorlagen finden Sie unter [Verwenden von Azure PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md).
+Jedes Mal, wenn Sie beispielsweise eine Web-App in Azure App Service erstellen, verwendet der Azure-Ressourcen-Manager eine JSON-Vorlage zum Erstellen der gesamten Ressourcengruppe mit den Komponentenressourcen. Eine komplexe Vorlage aus [Azure Marketplace](/marketplace) wie die App [Scalable WordPress](/marketplace/partners/wordpress/scalablewordpress/) kann die MySQL-Datenbank, Speicherkonten, den App Service-Plan, die Web-App selbst, Warnregeln, App-Einstellungen, Einstellungen für die automatische Skalierung und mehr enthalten, und alle diese Vorlagen stehen Ihnen über PowerShell zur Verfügung. Informationen zum Herunterladen und Verwenden dieser Vorlagen finden Sie unter [Verwenden von Windows PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md).
 
 Weitere Informationen zu den Azure-Ressourcen-Manager-Vorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](../resource-group-authoring-templates.md).
 
@@ -58,7 +58,7 @@ Weitere Informationen finden Sie unter [Verwenden von Windows PowerShell mit dem
 
 ### Azure-Ressourcen-Explorer ###
 
-Dieses [Vorschautool](https://resources.azure.com) ermöglicht es Ihnen, die JSON-Definitionen aller Ressourcengruppen in Ihrem Abonnement und der einzelnen Ressourcen zu untersuchen. Im Tool können Sie die JSON-Definitionen einer Ressource bearbeiten, eine vollständige Hierarchie von Ressourcen löschen und neue Ressourcen erstellen. Die in diesem Tool verfügbaren Informationen sind sehr hilfreich für die Vorlagenerstellung, da sie zeigen, welche Eigenschaften Sie für einen bestimmten Typ von Ressource festlegen müssen, die richtigen Werte vorgeben usw. Sie können sogar die Ressourcengruppe im [Azure-Vorschauportal](https://portal.azure.com) erstellen, dann ihre JSON-Definitionen im Explorer-Tool untersuchen, um aus der Ressourcengruppe eine Vorlage zu machen.
+Dieses [Vorschautool](https://resources.azure.com) ermöglicht es Ihnen, die JSON-Definitionen aller Ressourcengruppen in Ihrem Abonnement und der einzelnen Ressourcen zu untersuchen. Im Tool können Sie die JSON-Definitionen einer Ressource bearbeiten, eine vollständige Hierarchie von Ressourcen löschen und neue Ressourcen erstellen. Die in diesem Tool verfügbaren Informationen sind sehr hilfreich für die Vorlagenerstellung, da sie zeigen, welche Eigenschaften Sie für einen bestimmten Typ von Ressource festlegen müssen, die richtigen Werte vorgeben usw. Sie können sogar die Ressourcengruppe im [Azure-Portal](https://portal.azure.com) erstellen, dann ihre JSON-Definitionen im Explorer-Tool untersuchen, um aus der Ressourcengruppe eine Vorlage zu machen.
 
 ### Schaltfläche zum Bereitstellen in Azure ###
 
@@ -188,11 +188,11 @@ Die Einstellungen für die Quellcodeverwaltung werden auch als geschachtelte Res
 
 Beachten Sie im `dependsOn`-Element, dass zusätzlich zur Abhängigkeit von der Web-App-Ressource selbst `sourcecontrols/web` auch von `config/appsettings` und `config/connectionstrings` abhängt. Der Grund hierfür ist, dass, sobald `sourcecontrols/web` konfiguriert ist, der Azure-Bereitstellungsprozess automatisch versucht, den Anwendungscode bereitzustellen, zu erstellen und zu starten. Daher können Sie durch das Einfügen dieser Abhängigkeit sicherstellen, dass die Anwendung über Zugriff auf die erforderlichen App-Einstellungen und Verbindungszeichenfolgen verfügt, bevor der Anwendungscode ausgeführt wird. [Aufgabe: Sie müssen überprüfen, ob dies der Fall ist.]
 
->[AZURE.NOTE]Beachten Sie auch, dass `IsManualIntegration` auf `true` festgelegt ist. Diese Eigenschaft ist in diesem Lernprogramm erforderlich, da Sie das GitHub-Repository nicht besitzen und daher Azure nicht die Berechtigung erteilen können, die kontinuierliche Veröffentlichung von [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) zu konfigurieren (d. h. automatische Updates im Repository in Azure zu übernehmen). Sie können den Standardwert `false` für das angegebene Repository nur verwenden, wenn Sie die GitHub-Anmeldeinformationen für den Besitzer zuvor im [Azure-Vorschauportal](https://portal.azure.com) konfiguriert haben. Anders ausgedrückt, wenn Sie zuvor mit Ihren Benutzeranmeldeinformationen die Quellcodeverwaltung für GitHub oder BitBucket für eine App im [Azure-Vorschauportal](https://portal.azure.com) eingerichtet haben, werden die Anmeldeinformationen in Azure gespeichert und verwendet, wenn Sie später eine App über GitHub oder BitBucket bereitstellen. Wenn dies jedoch noch nicht geschehen ist, schlägt die Bereitstellung der JSON-Vorlage fehl, wenn der Azure-Ressourcen-Manager versucht, die Quellcodeeinstellungen der Web-App zu konfigurieren, da mit den Anmeldeinformationen des Repositorybesitzers eine Anmeldung bei GitHub oder BitBucket nicht möglich ist.
+>[AZURE.NOTE]Beachten Sie auch, dass `IsManualIntegration` auf `true` festgelegt ist. Diese Eigenschaft ist in diesem Lernprogramm erforderlich, da Sie das GitHub-Repository nicht besitzen und daher Azure nicht die Berechtigung erteilen können, die kontinuierliche Veröffentlichung von [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) zu konfigurieren (d. h. automatische Updates im Repository in Azure zu übernehmen). Sie können den Standardwert `false` für das angegebene Repository nur verwenden, wenn Sie die GitHub-Anmeldeinformationen für den Besitzer zuvor im [Azure-Vorschauportal](https://portal.azure.com) konfiguriert haben. Anders ausgedrückt, wenn Sie zuvor mit Ihren Benutzeranmeldeinformationen die Quellcodeverwaltung für GitHub oder BitBucket für eine App im [Azure-Portal](https://portal.azure.com) eingerichtet haben, werden die Anmeldeinformationen in Azure gespeichert und verwendet, wenn Sie später eine App über GitHub oder BitBucket bereitstellen. Wenn dies jedoch noch nicht geschehen ist, schlägt die Bereitstellung der JSON-Vorlage fehl, wenn der Azure-Ressourcen-Manager versucht, die Quellcodeeinstellungen der Web-App zu konfigurieren, da mit den Anmeldeinformationen des Repositorybesitzers eine Anmeldung bei GitHub oder BitBucket nicht möglich ist.
 
 ## Vergleichen der JSON-Vorlage mit der bereitgestellten Ressourcengruppe ##
 
-Hier können Sie alle Blätter der Web-App im [Vorschauportal](https://portal.azure.com) durchgehen, es gibt aber ein weiteres Tool, das möglicherweise noch nützlicher ist. Wechseln Sie zum Vorschautool [Azure-Ressourcen-Explorer](https://resources.azure.com), in dem Sie eine JSON-Darstellung aller Ressourcengruppen in Ihren Abonnements erhalten, so wie sie tatsächlich im Azure-Back-End vorhanden sind. Sie können auch sehen, dass die JSON-Hierarchie der Ressourcengruppe in Azure der Hierarchie in der Vorlagendatei entspricht, die für die Erstellung verwendet wurde.
+Hier können Sie alle Blätter der Web-App im [Azure-Portal](https://portal.azure.com) durchgehen, es gibt aber ein weiteres Tool, das möglicherweise noch nützlicher ist. Wechseln Sie zum Vorschautool [Azure-Ressourcen-Explorer](https://resources.azure.com), in dem Sie eine JSON-Darstellung aller Ressourcengruppen in Ihren Abonnements erhalten, so wie sie tatsächlich im Azure-Back-End vorhanden sind. Sie können auch sehen, dass die JSON-Hierarchie der Ressourcengruppe in Azure der Hierarchie in der Vorlagendatei entspricht, die für die Erstellung verwendet wurde.
 
 Beispiel: Wenn das Tool [Azure-Ressourcen-Explorer](https://resources.azure.com) aufgerufen und die Knoten im Explorer erweitern werden, werden die Ressourcengruppe und die Ressourcen auf Stammebene angezeigt, die unter den jeweiligen Ressourcentypen gesammelt werden.
 
@@ -268,7 +268,7 @@ Die Schaltfläche **Deploy to Azure** ist großartig, aber sie können damit die
 	
 16.	Klicken Sie auf **Bereitstellen**. Bei Auswahl von **Kennwörter speichern** wird das Kennwort in der Parameterdatei als **reiner Text** gespeichert. Andernfalls werden Sie während des Bereitstellungsprozesses zur Eingabe des Datenbankkennworts aufgefordert.
 
-Fertig! Nun müssen Sie einfach zum [Vorschauportal](https://portal.azure.com) und zum Tool [Azure-Ressourcen-Explorer](https://resources.azure.com) wechseln, um die neuen Warnungen und die Einstellungen zum automatischen Skalieren zu sehen, die Ihrer mit JSON bereitstellten Anwendung hinzugefügt wurden.
+Fertig! Nun müssen Sie einfach zum [Azure Portal](https://portal.azure.com) und zum Tool [Azure-Ressourcen-Explorer](https://resources.azure.com) wechseln, um die neuen Warnungen und die Einstellungen zum automatischen Skalieren zu sehen, die Ihrer mit JSON bereitstellten Anwendung hinzugefügt wurden.
 
 Mit den Schritten in diesem Abschnitt haben Sie im Wesentlichen Folgendes erreicht:
 
@@ -293,16 +293,16 @@ Erfahren Sie, wie Sie [agile Methoden umsetzen und eine aus Microservices besteh
 <a name="resources"></a>
 ## Weitere Ressourcen ##
 
--	[Azure-Ressourcen-Manager-Vorlagensprache](../resource-group-authoring-templates.md)
+-	[Azure Resource Manager-Vorlagensprache](../resource-group-authoring-templates.md)
 -	[Erstellen von Azure-Ressourcen-Manager-Vorlagen](../resource-group-authoring-templates.md)
 -	[Vorlagenfunktionen im Azure-Ressourcen-Manager](../resource-group-template-functions.md)
 -	[Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](../resource-group-template-deploy.md)
--	[Verwenden von Azure PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md)
--	[Troubleshooting Resource Group Deployments in Azure](../resource-group-deploy-debug.md) (Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure)
+-	[Verwenden von Windows PowerShell mit dem Azure-Ressourcen-Manager](../powershell-azure-resource-manager.md)
+-	[Troubleshooting Resource Group Deployments in Azure (Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure)](../resource-group-deploy-debug.md)
 
 
 
 
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

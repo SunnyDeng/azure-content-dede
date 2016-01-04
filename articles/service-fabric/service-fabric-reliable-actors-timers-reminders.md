@@ -23,11 +23,11 @@ Actor-Timer bieten einen einfachen Wrapper um .NET-Timer, wodurch die Rückrufme
 Actor können sich mithilfe der Methoden `RegisterTimer` und `UnregisterTimer` ihrer Basisklasse bei ihren Timern an- und abmelden. Das folgende Beispiel zeigt die Verwendung von Timer-APIs. Die APIs sind dem .NET-Timer sehr ähnlich. Im Beispiel unten wird bei Ablauf des Timers von der Actor-Laufzeit die Methode `MoveObject` aufgerufen. Sie respektiert garantiert die wechselseitige Parallelität, sodass bis zum Abschluss des Rückrufs keine anderen Actor-Methoden oder Timer-/Erinnerungsrückrufe ausgeführt werden.
 
 ```csharp
-class VisualObjectActor : Actor<VisualObject>, IVisualObject
+class VisualObjectActor : StatefulActor<VisualObject>, IVisualObject
 {
     private IActorTimer _updateTimer;
 
-    public override Task OnActivateAsync()
+    protected override Task OnActivateAsync()
     {
         ...
 
@@ -40,7 +40,7 @@ class VisualObjectActor : Actor<VisualObject>, IVisualObject
         return base.OnActivateAsync();
     }
 
-    public override Task OnDeactivateAsync()
+    protected override Task OnDeactivateAsync()
     {
         if (_updateTimer != null)
         {
@@ -53,7 +53,7 @@ class VisualObjectActor : Actor<VisualObject>, IVisualObject
     private Task MoveObject(object state)
     {
         ...
-        return TaskDone.Done;
+        return Task.FromResult(true);
     }
 }
 ```
@@ -87,7 +87,7 @@ Im Beispiel oben ist `"Pay cell phone bill"` der Erinnerungsname, d. h. eine Ze
 Actor, die Erinnerungen verwenden, müssen die Schnittstelle `IRemindable` implementieren, wie im folgenden Beispiel gezeigt.
 
 ```csharp
-public class ToDoListActor : Actor<ToDoList>, IToDoListActor, IRemindable
+public class ToDoListActor : StatefulActor<ToDoList>, IToDoListActor, IRemindable
 {
     public Task ReceiveReminderAsync(string reminderName, byte[] context, TimeSpan dueTime, TimeSpan period)
     {
@@ -114,4 +114,4 @@ Task reminderUnregistration = UnregisterReminder(reminder);
 
 Wie oben gezeigt, akzeptiert die Methode `UnregisterReminder` die Schnittstelle `IActorReminder`. Die Basisklasse des Actors unterstützt die Methode `GetReminder`, die zum Abrufen der Schnittstelle `IActorReminder` durch Übergabe des Erinnerungsnamens verwendet werden kann. Dies ist praktisch, da der Actor die Schnittstelle `IActorReminder` nicht beibehalten muss, die bei Aufruf der Methode `RegisterReminder` zurückgegeben wurde.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

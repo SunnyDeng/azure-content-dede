@@ -41,7 +41,7 @@ Azure Data Lake Analytics ist ein neuer Dienst zur Vereinfachung von Big Data-An
 
     Data Lake Analytics kann vorhandene IT-Systeme für Identitäten, Verwaltung, Sicherheit und Data Warehousing verwenden. Dies trägt zur Vereinfachung von Datengovernance und zur problemlosen Erweiterung aktueller Datenanwendungen dar. Data Lake Analytics ist für die Benutzerverwaltung und Berechtigungsvergabe in Active Directory integriert und enthält Überwachungs- und Auditierungsfunktionen.
 
-- **Erschwinglich und kosteneffektiv **
+- **Erschwinglich und kosteneffektiv**
 
     Data Lake Analytics ist eine kosteneffektive Lösung für die Ausführung von Big Data-Workloads. Die Bezahlung erfolgt bei Datenverarbeitung pro Auftrag. Sie benötigen weder Hardware noch Lizenzen oder dienstspezifische Supportvereinbarungen. Wenn Aufträge gestartet oder beendet werden, wird das System automatisch zentral hoch- oder herunterskaliert. So bezahlen Sie stets nur für die tatsächlich in Anspruch genommene Ressourcenmenge.
 
@@ -52,7 +52,7 @@ Azure Data Lake Analytics ist ein neuer Dienst zur Vereinfachung von Big Data-An
 ## Weitere Informationen
 
 - Erste Schritte
-    - [Erste Schritte mit Data Lake Analytics mithilfe des Azure-Vorschauportals](data-lake-analytics-get-started-portal.md)
+    - [Erste Schritte mit Data Lake Analytics mithilfe des Azure-Portals](data-lake-analytics-get-started-portal.md)
     - [Erste Schritte mit Data Lake Analytics mithilfe von Azure PowerShell](data-lake-analytics-get-started-powershell.md)
     - [Erste Schritte mit Data Lake Analytics mithilfe des Azure .NET SDK](data-lake-analytics-get-started-net-sdk.md)
     - [Entwickeln von U-SQL-Skripts mit Data Lake-Tools für Visual Studio](data-lake-analytics-data-lake-tools-get-started.md)
@@ -64,9 +64,9 @@ Azure Data Lake Analytics ist ein neuer Dienst zur Vereinfachung von Big Data-An
     - [Entwickeln von benutzerdefinierten U-SQL-Operatoren für Data Lake Analytics-Aufträge](data-lake-analtyics-u-sql-develop-user-defined-operators.md)
     
 - Verwaltung
-    - [Verwalten von Azure Data Lake Analytics mithilfe des Azure-Vorschauportals](data-lake-analytics-manage-use-portal.md)
+    - [Verwalten von Azure Data Lake Analytics mithilfe des Azure-Portals](data-lake-analytics-manage-use-portal.md)
     - [Verwalten von Azure Data Lake Analytics mithilfe von Azure PowerShell](data-lake-analytics-manage-use-powershell.md)
-    - [Überwachen und Problembehandeln von Azure Data Lake Analytics-Aufträgen mithilfe des Azure-Vorschauportals](data-lake-analytics-monitor-and-troubleshoot-jobs-tutorial.md)
+    - [Überwachen und Problembehandeln von Azure Data Lake Analytics-Aufträgen mithilfe des Azure-Portals](data-lake-analytics-monitor-and-troubleshoot-jobs-tutorial.md)
 
 - Komplettes Lernprogramm
     - [Verwenden interaktiver Lernprogramme zu Azure Data Lake Analytics](data-lake-analytics-use-interactive-tutorials.md)
@@ -74,7 +74,7 @@ Azure Data Lake Analytics ist ein neuer Dienst zur Vereinfachung von Big Data-An
 
 - Teilen Sie uns Ihre Meinung mit
     - [Kommentieren Sie unseren Dokumentationsrückstand mit Vorschlägen für weitere Dokumentation](data-lake-analytics-documentation-backlog.md)
-    - [Feature anfordern (in englischer Sprache)](http://aka.ms/adlafeedback)
-    - [Hilfe im Forum (in englischer Sprache)](http://aka.ms/adlaforums)
+    - [Feature anfordern](http://aka.ms/adlafeedback)
+    - [Hilfe in Foren](http://aka.ms/adlaforums)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

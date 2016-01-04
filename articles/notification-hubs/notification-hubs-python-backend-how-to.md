@@ -3,7 +3,7 @@
 	description="Erfahren Sie mehr über die Verwendung von Azure Notification Hubs aus einem Python-Back-End." 
 	services="notification-hubs" 
 	documentationCenter="" 
-	authors="ysxu" 
+	authors="wesmc7777"
 	manager="dwrede" 
 	editor=""/>
 
@@ -42,6 +42,7 @@ Den gesamten verfügbaren Code finden Sie im [Beispiel für Python-REST-Wrapper]
 
 So erstellen Sie beispielsweise einen Client:
 
+	isDebug = True
 	hub = NotificationHub("myConnectionString", "myNotificationHubName", isDebug)
 	
 So senden Sie eine Windows-Popupbenachrichtigung
@@ -392,4 +393,4 @@ In diesem Thema haben wir gezeigt, wie Sie einen einfachen Python-REST-Client f�
 [5]: ./media/notification-hubs-python-backend-how-to/TemplatedNotification.png
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="09/11/2015"
+   ms.date="11/20/2015"
    ms.author="derrickv"/>
 
 # Erste Schritte mit Azure Data Catalog
@@ -38,7 +38,7 @@ In dieser Übung installieren Sie die Adventure Works-Beispieldaten für das SQL
 
 Die Adventure Works OLTP-Datenbank unterstützt standardmäßige Onlinetransaktionsverarbeitung-Szenarios für einen fiktiven Fahrradhersteller (Adventure Works Cycles), z. B. für die Bereiche Fertigung, Vertrieb und Einkauf. Anhand der Adventure Works DW-Datenbank wird veranschaulicht, wie Sie ein Data Warehouse erstellen.
 
-Die Datenbanken befinden sich unter http://msftdbprodsamples.codeplex.com/ und können installiert werden, indem die Schritte unter [So wird‘s gemacht: Installieren der Adventure Works 2014-Beispieldatenbanken] ausgeführt werden.
+Die Datenbanken befinden sich unter [CodePlex.com](http://msftdbprodsamples.codeplex.com/) und können gemäß den Schritten unter [Infodatei für Adventure Works-Beispieldatenbanken 2014](https://msftdbprodsamples.codeplex.com/downloads/get/880669) installiert werden.
 
 In dieser Übung haben Sie die Adventure Works-Beispieldatenbanken installiert, die in den restlichen Übungen verwendet werden. Wenn Sie diese Übung übersprungen haben und Datenquellen Ihres eigenen Unternehmens verwenden, sollten Sie darauf vorbereitet sein, sich Namen, Tags und andere Metadaten zu merken.
 
@@ -232,4 +232,4 @@ In diesem Lernprogramm haben Sie wichtige Funktionen der Preview-Version von **A
 [12]: ./media/data-catalog-get-started/ownership.png
 [13]: ./media/data-catalog-get-started/crowdsource.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

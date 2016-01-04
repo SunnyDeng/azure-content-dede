@@ -85,7 +85,7 @@ Die [DetectMappingDifferences-Methode](https://msdn.microsoft.com/library/azure/
 
 ## So lösen Sie Zuordnungsunterschiede auf
 
-Die [ResolveMappingDifferences-Methode](https://msdn.microsoft.com/de-DE/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.recovery.recoverymanager.resolvemappingdifferences.aspx) wählt eine der Shardzuordnungen (entweder lokal oder global) als gültige Quelle aus und stimmt Zuordnungen in beiden Shardzuordnungen (GSM und LSM) darauf ab.
+Die [ResolveMappingDifferences-Methode](https://msdn.microsoft.com/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.recovery.recoverymanager.resolvemappingdifferences.aspx) wählt eine der Shardzuordnungen (entweder lokal oder global) als gültige Quelle aus und stimmt Zuordnungen in beiden Shardzuordnungen (GSM und LSM) darauf ab.
 
 	ResolveMappingDifferences (RecoveryToken, MappingDifferenceResolution);
    
@@ -157,4 +157,4 @@ In diesem Beispiel werden die folgende Schritte ausgeführt: 1. Entfernen von Sh
 [1]: ./media/sql-database-elastic-database-recovery-manager/recovery-manager.png
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -12,8 +12,8 @@
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
-   ms.workload="tbd"
-   ms.date="08/14/2015"
+   ms.workload="na"
+   ms.date="12/09/2015"
    ms.author="sethm"/>
 
 # Verwenden von PowerShell zum Verwalten von Service Bus- und Event Hub-Ressourcen
@@ -24,9 +24,9 @@ Microsoft Azure PowerShell ist eine Skriptumgebung, mit der Sie die Bereitstellu
 
 Bevor Sie beginnen, benötigen Sie Folgendes:
 
-- Ein Azure-Abonnement. Azure ist eine abonnementbasierte Plattform. Weitere Informationen zum Erwerb eines Abonnements finden Sie unter [Azure erwerben], [Spezielle Angebote] oder [Einen Monat kostenlos testen!].
+- Ein Azure-Abonnement. Azure ist eine abonnementbasierte Plattform. Weitere Informationen zum Erwerb eines Abonnements finden Sie unter [Azure erwerben][], [Spezielle Angebote][] oder [Einen Monat kostenlos testen!][].
 
-- Einen Computer mit Azure PowerShell. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell].
+- Einen Computer mit Azure PowerShell. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][].
 
 - Allgemeine Kenntnisse über PowerShell-Skripts, NuGet-Pakete und .NET Framework.
 
@@ -253,14 +253,16 @@ Führen Sie zum Erstellen einer Warteschlange oder eines Themas wie im vorherige
 
 ## Nächste Schritte
 
-Dieser Artikel beschreibt die grundlegenden Schritte zur Bereitstellung von Service Bus-Entitäten mithilfe von PowerShell. Auch wenn es nur eine begrenzte Anzahl von PowerShell-Cmdlets zur Verwaltung von Service Bus-Nachrichtenentitäten gibt, können durch Verweise auf die Assembly "Microsoft.Servicebus.dll" über die .NET-Clientbibliotheken praktisch alle Vorgänge auch in einem PowerShell-Skript ausgeführt werden.
+In diesem Artikel wurden die grundlegenden Schritte zur Bereitstellung von Service Bus-Entitäten mithilfe von PowerShell beschrieben. Auch wenn es nur eine begrenzte Anzahl von PowerShell-Cmdlets zur Verwaltung von Service Bus-Nachrichtenentitäten gibt, können durch Verweise auf die Assembly "Microsoft.Servicebus.dll" über die .NET-Clientbibliotheken praktisch alle Vorgänge auch in einem PowerShell-Skript ausgeführt werden.
 
-In folgenden Blogbeiträgen finden Sie ausführlichere Beispiele:
+In den folgenden Blogbeiträgen finden Sie ausführlichere Beispiele:
 
-- [How to create Service Bus queues, topics and subscriptions using a PowerShell script](http://blogs.msdn.com/b/paolos/archive/2014/12/02/how-to-create-a-service-bus-queues-topics-and-subscriptions-using-a-powershell-script.aspx) (Erstellen von Service Bus-Warteschlangen, -Themen und -Abonnements mithilfe eines PowerShell-Skripts, in englischer Sprache)
-- [How to create a Service Bus Namespace and an Event Hub using a PowerShell script](http://blogs.msdn.com/b/paolos/archive/2014/12/01/how-to-create-a-service-bus-namespace-and-an-event-hub-using-a-powershell-script.aspx) (Erstellen eines Service Bus-Namespace und eines Event Hubs mithilfe eines PowerShell-Skripts, in englischer Sprache)
+- [How to create Service Bus queues, topics and subscriptions using a PowerShell script (Erstellen von Service Bus-Warteschlangen, -Themen und -Abonnements mithilfe eines PowerShell-Skripts, in englischer Sprache)](http://blogs.msdn.com/b/paolos/archive/2014/12/02/how-to-create-a-service-bus-queues-topics-and-subscriptions-using-a-powershell-script.aspx)
+- [How to create a Service Bus Namespace and an Event Hub using a PowerShell script (Erstellen eines Service Bus-Namespace und eines Event Hubs mithilfe eines PowerShell-Skripts, in englischer Sprache)](http://blogs.msdn.com/b/paolos/archive/2014/12/01/how-to-create-a-service-bus-namespace-and-an-event-hub-using-a-powershell-script.aspx)
 
-Es stehen auch einige einsatzbereite Skripts zum Download zur Verfügung: [Service Bus-PowerShell-Skripts](https://code.msdn.microsoft.com/windowsazure/Service-Bus-PowerShell-a46b7059)
+Es stehen auch einige einsatzbereite Skripts zum Download zur Verfügung:
+
+- [Service Bus PowerShell-Skripts](https://code.msdn.microsoft.com/Service-Bus-PowerShell-a46b7059)
 
 <!--Anchors-->
 
@@ -271,7 +273,7 @@ Es stehen auch einige einsatzbereite Skripts zum Download zur Verfügung: [Servi
 [Get-AzureSBNamespace]: https://msdn.microsoft.com/library/azure/dn495122.aspx
 [New-AzureSBNamespace]: https://msdn.microsoft.com/library/azure/dn495165.aspx
 [Get-AzureSBAuthorizationRule]: https://msdn.microsoft.com/library/azure/dn495113.aspx
-[.NET-API für Service Bus]: https://msdn.microsoft.com/library/microsoft.servicebus.aspx
+[.NET-API für Service Bus]: https://msdn.microsoft.com/de-DE/library/azure/mt419900.aspx
 [Installieren und Konfigurieren von Azure PowerShell]: ../install-configure-powershell.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

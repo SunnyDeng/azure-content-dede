@@ -3,7 +3,7 @@
 	
 	![Listener-Einrichtung](./media/app-service-hybrid-connections-manager-install/D04ClickListenerSetup.png)
 	
-4. Das Blatt **Hybridverbindungseigenschaften** wird geöffnet. Wählen Sie unter **Lokaler Hybrid Connection Manager** die Option **Manuell herunterladen und konfigurieren**, speichern Sie das heruntergeladene HybridConnectionManager.msi-Paket, und kopieren Sie die Gatewayverbindungszeichenfolge.
+4. Der Fensterbereich **Hybrid connection properties** wird geöffnet. Wählen Sie unter **Manager für lokale Hybridverbindungen** die Option **Herunterladen und manuell konfigurieren** aus, speichern Sie das heruntergeladene Paket „HybridConnectionManager.msi“, und kopieren Sie die Gatewayverbindungszeichenfolge.
 	
 	![Zum Installieren hier klicken](./media/app-service-hybrid-connections-manager-install/D05ClickToInstallHCM.png)
 	
@@ -25,4 +25,4 @@
 	
 	![Status Verbunden](./media/app-service-hybrid-connections-manager-install/D10HCStatusConnected.png)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

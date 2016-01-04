@@ -16,7 +16,7 @@
 	ms.date="10/15/2015"  
 	ms.author="juliako"/>
 
-#Verwenden des FMLE zum Senden eines Single-Bitrate-Livedatenstroms 
+#Verwenden des FMLE zum Senden eines Single-Bitrate-Livedatenstroms
 
 > [AZURE.SELECTOR]
 - [FMLE](media-services-configure-fmle-live-encoder.md)
@@ -26,34 +26,34 @@
 
 In diesem Thema wird beschrieben, wie Sie den [Flash Media Live Encoder](http://www.adobe.com/products/flash-media-encoder.html) (FMLE) zum Senden eines Single-Bitrate-Datenstroms an AMS-Kanäle konfigurieren, die für Livecodierung aktiviert sind. Weitere Informationen finden Sie unter [Arbeiten mit Kanälen, die zum Ausführen von Livecodierung mit Azure Media Services aktiviert wurden](media-services-manage-live-encoder-enabled-channels.md).
 
-In diesem Tutorial wird gezeigt, wie Sie Azure Media Services (AMS) mit dem Tool Azure Media Services Explorer (AMSE) verwalten. Dieses Tool kann nur auf Windows-PCs ausgeführt werden. Unter Mac OS oder Linux verwenden Sie das Azure-Verwaltungsportal, um [Kanäle](media-services-portal-creating-live-encoder-enabled-channel.md#create-a-channel) und [Programme](media-services-portal-creating-live-encoder-enabled-channel#create-and-manage-a-program) zu erstellen.
+In diesem Tutorial wird gezeigt, wie Sie Azure Media Services (AMS) mit dem Tool Azure Media Services Explorer (AMSE) verwalten. Dieses Tool kann nur auf Windows-PCs ausgeführt werden. Unter Mac OS oder Linux verwenden Sie das klassische Azure-Portal, um [Kanäle](media-services-portal-creating-live-encoder-enabled-channel.md#create-a-channel) und [Programme](media-services-portal-creating-live-encoder-enabled-channel#create-and-manage-a-program) zu erstellen.
 
 Beachten Sie, dass in diesem Tutorial AAC verwendet wird. AAC wird jedoch vom FMLE nicht standardmäßig unterstützt. Sie müssen ggf. ein Plug-In für AAC-Codierung erwerben, z. B. von MainConcept: [AAC-Plug-In](http://www.mainconcept.com/products/plug-ins/plug-ins-for-adobe/aac-encoder-fmle.html)
 
 ##Voraussetzungen
 
 - [Erstellen eines Azure Media Services-Kontos](media-services-create-account.md)
-- Stellen Sie sicher, dass ein Streamingendpunkt mit mindestens einer zugeordneten Streamingeinheit ausgeführt wird. Weitere Informationen finden Sie unter [Verwalten von Streamingendpunkten in einem Media Services-Konto](media-services-manage-origins.md). 
-- Installieren Sie die neueste Version des [AMSE](https://github.com/Azure/Azure-Media-Services-Explorer)-Tools. 
+- Stellen Sie sicher, dass ein Streamingendpunkt mit mindestens einer zugeordneten Streamingeinheit ausgeführt wird. Weitere Informationen finden Sie unter [Verwalten von Streamingendpunkten in einem Media Services-Konto](media-services-manage-origins.md)
+- Installieren Sie die neueste Version des [AMSE](https://github.com/Azure/Azure-Media-Services-Explorer)-Tools.
 - Starten Sie das Tool, und stellen Sie eine Verbindung mit Ihrem AMS-Konto her.
 
 ##Tipps
 
-- Verwenden Sie nach Möglichkeit eine Kabelverbindung zum Internet. 
-- Als Faustregel zum Bestimmen der erforderlichen Bandbreite verdoppeln Sie die Streamingbitraten. Dies ist zwar keine zwingende Voraussetzung, aber hilfreich, um die Auswirkungen einer Überlastung des Netzwerks zu verringern.  
+- Verwenden Sie nach Möglichkeit eine Kabelverbindung zum Internet.
+- Als Faustregel zum Bestimmen der erforderlichen Bandbreite verdoppeln Sie die Streamingbitraten. Dies ist zwar keine zwingende Voraussetzung, aber hilfreich, um die Auswirkungen einer Überlastung des Netzwerks zu verringern.
 - Bei der Verwendung softwarebasierter Encoder schließen Sie alle nicht benötigten Programme.
- 
+
 ## Erstellen eines Kanals
 
-1.  Navigieren Sie im AMSE-Tool zur Registerkarte **Live**, und klicken Sie mit der rechten Maustaste in den Kanalbereich. Wählen Sie im Menü die Option **Kanal erstellen** aus.  
+1.  Navigieren Sie im AMSE-Tool zur Registerkarte **Live**, und klicken Sie mit der rechten Maustaste in den Kanalbereich. Wählen Sie im Menü die Option **Kanal erstellen** aus.
 
-	![FMLE](./media/media-services-fmle-live-encoder/media-services-fmle1.png)
+![FMLE](./media/media-services-fmle-live-encoder/media-services-fmle1.png)
 
 2. Geben Sie einen Kanalnamen und optional eine Beschreibung ein. Wählen Sie unter "Kanaleinstellungen" **Standard** für die Option "Livecodierung" aus, und legen Sie das Eingabeprotokoll auf **RTMP** fest. Alle anderen Einstellungen können Sie unverändert lassen.
 
 
-	 Stellen Sie sicher, dass die Option **Neuen Kanal jetzt starten** ausgewählt ist.
- 
+Stellen Sie sicher, dass die Option **Neuen Kanal jetzt starten** ausgewählt ist.
+
 3. Klicken Sie auf **Kanal erstellen**. ![FMLE](./media/media-services-fmle-live-encoder/media-services-fmle2.png)
 
 >[AZURE.NOTE]Das Starten des Kanals kann bis zu 20 Minuten dauern.
@@ -170,4 +170,4 @@ Eine Anleitung finden Sie im Thema [Problembehandlung](media-services-troublesho
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

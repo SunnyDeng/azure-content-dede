@@ -13,10 +13,12 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="identity"
-	ms.date="09/29/2015"
+	ms.date="12/07/2015"
 	ms.author="kenhoff"/>
 
 # Suche in Azure Active Directory-Berichten
+
+*Diese Dokumentation ist Teil des [Handbuchs für Azure Active Directory Reporting](active-directory-reporting-guide.md).*
 
 Azure Active Directory bietet Verzeichnisadministratoren die Möglichkeit, in mehreren Berichten nach Benutzersicherheit, Aktivität und Überwachungsereignissen zu suchen.
 
@@ -56,4 +58,4 @@ Nutzung von RMS-Geräten | Nein
  - [Azure Active Directory-Berichte](active-directory-view-access-usage-reports.md)
  - [Azure Active Directory-Überwachungsberichtsereignisse](active-directory-reporting-audit-events.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

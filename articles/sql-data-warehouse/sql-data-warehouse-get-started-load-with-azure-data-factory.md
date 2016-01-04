@@ -13,14 +13,14 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="10/20/2015"
+   ms.date="11/19/2015"
    ms.author="lodipalm"/>
 
 # Laden von Daten mit Azure Data Factory
 
 > [AZURE.SELECTOR]
 - [Data Factory](sql-data-warehouse-get-started-load-with-azure-data-factory.md)
-- [PolyBase](sql-data-warehouse-load-with-polybase-short.md)
+- [PolyBase](sql-data-warehouse-get-started-load-with-polybase.md)
 - [BCP](sql-data-warehouse-load-with-bcp.md)
 
  In diesem Tutorial wird gezeigt, wie Sie eine Pipeline in Azure Data Factory erstellen, mit deren Hilfe Daten aus Azure Storage-Blobs in ein SQL Data Warehouse verschoben werden. Mit den folgenden Schritten können Sie folgende Aktionen ausführen:
@@ -59,7 +59,7 @@ Nun stehen unsere Daten bereit, und wir können zu Data Factory wechseln und die
 
 ## Verwenden von Azure Data Factory
 
-Nachdem wir alle Teile eingerichtet haben, können wir mit dem Einrichten der Pipeline beginnen, indem wir im Azure-Vorschauportal zu Ihrer Azure Data Factory-Instanz wechseln. Wechseln Sie hierfür zum [Azure-Portal](portal.azure.com), und wählen Sie im Menü auf der linken Seite Ihre Data Factory aus.
+Nachdem wir alle Teile eingerichtet haben, können wir mit dem Einrichten der Pipeline beginnen, indem wir im Azure-Portal zu Ihrer Azure Data Factory-Instanz wechseln. Wechseln Sie hierfür zum [klassischen Azure-Portal](portal.azure.com), und wählen Sie im Menü auf der linken Seite Ihre Data Factory aus.
 
 Von hier aus sind drei Schritte zur Einrichtung einer Azure Data Factory-Pipeline erforderlich, um Daten in Ihr Data Warehouse zu übertragen: das Verknüpfen Ihrer Dienste, das Definieren Ihrer Datasets und das Erstellen der Pipeline.
 
@@ -206,4 +206,4 @@ Klicken Sie im Abschnitt „Erstellen und Bereitstellen“ nun auf „Weitere Be
 	}
 	
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

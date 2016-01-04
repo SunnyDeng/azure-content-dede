@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/14/2015"
+	ms.date="12/08/2015"
 	ms.author="rasquill"/>
 
 
@@ -81,6 +81,6 @@ Weitere Informationen finden Sie unter [cloud-init documentation for Ubuntu](htt
 <!--Link references-->
 [REST-API-Referenz zur Dienstverwaltung mit "Add Role"](http://msdn.microsoft.com/library/azure/jj157186.aspx)
 
-[Azure-Befehlszeilenschnittstelle](https://github.com/Azure/azure-sdk-tools-xplat)
+[Azure-Befehlszeilenschnittstelle](https://github.com/Azure/azure-xplat-cli)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

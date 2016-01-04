@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/08/2015" 
+	ms.date="12/01/2015" 
 	ms.author="spelluru"/>
 
 # Azure Data Factory – Häufig gestellte Fragen
@@ -57,7 +57,7 @@ Preisinformationen zu Azure Data Factory finden Sie auf der Seite [Data Factory 
   
 ### Wie können Kunden auf Data Factory zugreifen?
 
-Kunden können über das [Azure-Vorschauportal][azure-preview-portal] auf Data Factory zugreifen.
+Kunden können über das [Azure-Portal][azure-portal] auf Data Factory zugreifen.
 
 ### In welchen Regionen ist Data Factory verfügbar?
 
@@ -72,7 +72,7 @@ Weitere Informationen finden Sie im Abschnitt **Einschränkungen von Azure Data 
 
 Sie können Data Factorys mithilfe einer der folgenden Methoden erstellen:
 
-- **Azure-Vorschauportal** Die Data Factory-Blätter im Azure-Vorschauportal bieten eine umfassende Benutzeroberfläche zum Erstellen von Factorys und zugehöriger Dienste. Der **Data Factory-Editor**, der auch Teil des Portals ist, ermöglicht Ihnen die einfache Erstellung von verknüpften Diensten, Tabellen, Datasets und Pipelines durch Angabe von JSON-Definitionen für diese Artefakte. Unter [Data Factory-Editor][data-factory-editor] finden Sie eine Übersicht über den Editor und unter [Erste Schritte mit Data Factory][datafactory-getstarted] ein Beispiel für das Verwenden des Portals/Editors zum Erstellen und Bereitstellen einer Data Factory.   
+- **Azure-Portal** Die Data Factory-Blätter im Azure-Portal bieten eine umfassende Benutzeroberfläche zum Erstellen von Factorys und zugehöriger Dienste. Der **Data Factory-Editor**, der auch Teil des Portals ist, ermöglicht Ihnen die einfache Erstellung von verknüpften Diensten, Tabellen, Datasets und Pipelines durch Angabe von JSON-Definitionen für diese Artefakte. Unter [Data Factory-Editor][data-factory-editor] finden Sie eine Übersicht über den Editor und unter [Erste Schritte mit Data Factory][datafactory-getstarted] ein Beispiel für das Verwenden des Portals/Editors zum Erstellen und Bereitstellen einer Data Factory.   
 - **Azure PowerShell**. Wenn Sie ein PowerShell-Benutzer sind und PowerShell anstelle der Portalbenutzeroberfläche nutzen möchten, können Sie Azure Data Factory-Cmdlets einsetzen, die als Teil von Azure PowerShell zum Erstellen und Bereitstellen von Data Factorys dienen. Unter [Erstellen und Überwachen von Azure Data Factory mit Azure PowerShell][create-data-factory-using-powershell] finden Sie ein einfaches Beispiel. Unter [Lernprogramm: Verschieben und Verarbeiten von Protokolldateien mithilfe von Data Factory][adf-tutorial] finden Sie ein erweitertes Beispiel der Verwendung von PowerShell-Cmdlets zum Erstellen und Bereitstellen einer Data Factory. In der [Data Factory-Cmdlet-Referenz][adf-powershell-reference] in der MSDN-Bibliothek finden Sie eine umfassende Dokumentation zu Data Factory-Cmdlets.  
 - **Visual Studio** Sie können Visual Studio auch dazu verwenden, programmgesteuert Data Factorys zu erstellen, zu überwachen und zu verwalten. Unter dem Artikel [Erstellen, Überwachen und Verwalten von Azure-Data-Factorys mithilfe des Data Factory .NET SDK](data-factory-create-data-factories-programmatically) finden Sie weitere Informationen.  
 - **Klassenbibliothek von .NET**. Sie können Daten Factorys mithilfe des Data Factory .NET SDK programmgesteuert erstellen. Unter [Erstellen, Überwachen und Verwalten von Daten Factorys mit dem .NET SDK][create-factory-using-dotnet-sdk] finden Sie eine exemplarische Vorgehensweise zum Erstellen einer Data Factory mit dem .NET SDK. Unter [Data Factory-Klassenbibliotheksreferenz][msdn-class-library-reference] finden Sie eine umfassende Dokumentation zum Data Factory .NET SDK.  
@@ -132,11 +132,11 @@ Im obigen Beispiel stellen "otherLinkedServiceName1" und "otherLinkedServiceName
 Sie können einen Slice auf eine der folgenden Arten erneut ausführen:
 
 - Klicken Sie im Portal auf der Befehlsleiste für den Slice auf dem Blatt **DATENSLICE** auf **Ausführen**. 
-- Führen Sie das Cmdlet **Set AzureDataFactorySliceStatus** mit auf **PendingExecution** festgelegtem Status für den Slice aus.   
+- Führen Sie das Cmdlet **Set-AzureRmDataFactorySliceStatus** aus, und legen Sie dabei den Status für den Slice auf **PendingExecution** fest.   
 	
-		Set-AzureDataFactorySliceStatus -Status PendingExecution -ResourceGroupName $ResourceGroup -DataFactoryName $df -TableName $table -StartDateTime "02/26/2015 19:00:00" -EndDateTime "02/26/2015 20:00:00" 
+		Set-AzureRmDataFactorySliceStatus -Status PendingExecution -ResourceGroupName $ResourceGroup -DataFactoryName $df -TableName $table -StartDateTime "02/26/2015 19:00:00" -EndDateTime "02/26/2015 20:00:00" 
 
-Unter [Set AzureDataFactorySliceStatus][set-azure-datafactory-slice-status] finden Sie ausführliche Informationen zum Cmdlet.
+Unter [Set-AzureRmDataFactorySliceStatus][set-azure-datafactory-slice-status] finden Sie ausführliche Informationen zum Cmdlet.
 
 ### Wie lange hat die Verarbeitung eines Slices gedauert?
 1. Klicken Sie auf der Kachel **Datasets** auf das Blatt **DATA FACTORY** für Ihre Data Factory.
@@ -147,7 +147,7 @@ Unter [Set AzureDataFactorySliceStatus][set-azure-datafactory-slice-status] find
 6. Daraufhin sollte das Feld **Dauer** mit einem Wert angezeigt werden. Dies ist die Verarbeitungszeit des Slices.   
 
 ### Wie wird ein ausgeführter Slice beendet?
-Wenn Sie die Ausführung der Pipeline beenden müssen, können Sie das Cmdlet [Suspend-AzureDataFactoryPipeline](https://msdn.microsoft.com/library/dn834939.aspx) verwenden. Derzeit werden laufende Sliceausführungen bei Anhalten der Pipeline nicht beendet. Sobald die laufenden Ausführungen abgeschlossen sind, wird kein zusätzlicher Slice ausgewählt.
+Wenn Sie die Ausführung der Pipeline beenden müssen, können Sie das Cmdlet [Suspend-AzureRmDataFactoryPipeline](https://msdn.microsoft.com/library/mt603721.aspx) verwenden. Derzeit werden laufende Sliceausführungen bei Anhalten der Pipeline nicht beendet. Sobald die laufenden Ausführungen abgeschlossen sind, wird kein zusätzlicher Slice ausgewählt.
 
 Wenn Sie alle Ausführungen wirklich sofort beenden möchten, ist die einzige Möglichkeit das Löschen und erneute Erstellen der Pipeline. Wenn Sie die Pipeline löschen, müssen Sie keine Tabellen und verknüpften Dienste löschen, die von der Pipeline verwendet werden.
 
@@ -168,8 +168,8 @@ Wenn Sie alle Ausführungen wirklich sofort beenden möchten, ist die einzige M�
 
 [adf-powershell-reference]: https://msdn.microsoft.com/library/dn820234.aspx
 [adf-documentation-landingpage]: http://go.microsoft.com/fwlink/?LinkId=516909
-[azure-preview-portal]: http://portal.azure.com
-[set-azure-datafactory-slice-status]: https://msdn.microsoft.com/library/azure/dn835095.aspx
+[azure-portal]: http://portal.azure.com
+[set-azure-datafactory-slice-status]: https://msdn.microsoft.com/library/mt603522.aspx
 
 [adf-pricing-details]: http://go.microsoft.com/fwlink/?LinkId=517777
 [hdinsight-supported-regions]: http://azure.microsoft.com/pricing/details/hdinsight/
@@ -177,4 +177,4 @@ Wenn Sie alle Ausführungen wirklich sofort beenden möchten, ist die einzige M�
 [hdinsight-alternate-storage-2]: http://blogs.msdn.com/b/cindygross/archive/2014/05/05/use-additional-storage-accounts-with-hdinsight-hive.aspx
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

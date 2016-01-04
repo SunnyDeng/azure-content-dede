@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/26/2015"
+	ms.date="12/04/2015"
 	ms.author="larryfr"/>
 
 #Verwenden von Maven zur Entwicklung von Java-Anwendungen, die HBase mit HDInsight (Hadoop) nutzen
@@ -38,13 +38,13 @@ Erfahren Sie, wie Sie eine [Apache HBase](http://hbase.apache.org/)-Anwendung in
 
 ##Erstellen des Projekts
 
-1. Ändern Sie an der Befehlszeile Ihrer Entwicklungsumgebung die Verzeichnisse für den Speicherort, an dem Sie das Projekt erstellen möchten (z. B. `cd code/hdinsight`).
+1. Ändern Sie an der Befehlszeile Ihrer Entwicklungsumgebung die Verzeichnisse auf den Speicherort, an dem Sie das Projekt erstellen möchten, beispielsweise `cd code/hdinsight`.
 
 2. Verwenden Sie den Befehl __mvn__, der mit Maven installiert wird, um das Gerüst für das Projekt zu erstellen.
 
 		mvn archetype:generate -DgroupId=com.microsoft.examples -DartifactId=hbaseapp -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 
-	Damit wird im aktuellen Verzeichnis ein neues Verzeichnis erstellt. Dieses weist den vom Parameter __artifactID__ festgelegten Namen auf (in diesem Beispiel **hbaseapp**). Dieses Verzeichnis enthält die folgenden Elemente:
+	Damit wird ein neues Verzeichnis im aktuellen erstellt, das den Namen trägt, der vom Parameter __artifactID__ (in diesem Beispiel **hbaseapp**) festgelegt wurde. Dieses Verzeichnis enthält die folgenden Elemente:
 
 	* __pom.xml__: Das Projektobjektmodell ([POM](http://maven.apache.org/guides/introduction/introduction-to-the-pom.html)) enthält Informationen und Konfigurationsdetails zum Erstellen des Projekts.
 
@@ -125,7 +125,7 @@ Erfahren Sie, wie Sie eine [Apache HBase](http://hbase.apache.org/)-Anwendung in
 
 		scp USERNAME@CLUSTERNAME-ssh.azurehdinsight.net:/etc/hbase/conf/hbase-site.xml ./conf/hbase-site.xml
 
-	> [AZURE.NOTE]Wenn Sie ein Kennwort für das SSH-Konto verwendet haben, werden Sie zur Eingabe dieses Kennworts aufgefordert. Wenn Sie einen SSH-Schlüssel mit dem Konto verwendet haben, müssen Sie mithilfe des `-i`-Parameters möglicherweise den Pfad zur Schlüsseldatei angeben. Im folgenden Beispiel wird der private Schlüssel aus `~/.ssh/id_rsa` geladen:
+	> [AZURE.NOTE]Wenn Sie ein Kennwort für das SSH-Konto verwendet haben, werden Sie zur Eingabe dieses Kennworts aufgefordert. Wenn Sie einen SSH-Schlüssel mit dem Konto verwendet haben, müssen Sie möglicherweise den `-i`-Parameter verwenden, um den Pfad zur Schlüsseldatei anzugeben. Im folgenden Beispiel wird der private Schlüssel aus `~/.ssh/id_rsa` geladen:
 	>
 	> `scp -i ~/.ssh/id_rsa USERNAME@CLUSTERNAME-ssh.azurehdinsight.net:/etc/hbase/conf/hbase-site.xml ./conf/hbase-site.xml`
 
@@ -200,7 +200,7 @@ Erfahren Sie, wie Sie eine [Apache HBase](http://hbase.apache.org/)-Anwendung in
 		  }
 		}
 
-	Dies ist die Klasse __CreateTable__, die eine Tabelle namens __people__ erzeugt und sie mit einigen vordefinierten Benutzern auffüllt.
+	Das ist die Klasse __CreateTable__, die eine Tabelle namens __people__ erzeugt und sie mit einigen vordefinierten Benutzern füllt.
 
 3. Speichern Sie die Datei __CreateTable.java__.
 
@@ -303,7 +303,7 @@ Erfahren Sie, wie Sie eine [Apache HBase](http://hbase.apache.org/)-Anwendung in
 		  }
 		}
 
-	Diese Klasse dient zum Bereinigen dieses Beispiels. Sie deaktiviert die von der Klasse __CreateTable__ erstellte Tabelle und verwirft sie.
+	Diese Klasse dient zum Aufräumen dieses Beispiels. Sie deaktiviert die von der Klasse __CreateTable__ erstellte Tabelle und verwirft sie.
 
 7. Speichern Sie die Datei __DeleteTable.java__.
 
@@ -327,15 +327,15 @@ Erfahren Sie, wie Sie eine [Apache HBase](http://hbase.apache.org/)-Anwendung in
 
 	Dadurch wird die Datei in das Basisverzeichnis für Ihr SSH-Benutzerkonto hochgeladen.
 
-	> [AZURE.NOTE]Wenn Sie ein Kennwort für das SSH-Konto verwendet haben, werden Sie zur Eingabe dieses Kennworts aufgefordert. Wenn Sie einen SSH-Schlüssel mit dem Konto verwendet haben, müssen Sie mithilfe des `-i`-Parameters möglicherweise den Pfad zur Schlüsseldatei angeben. Im folgenden Beispiel wird der private Schlüssel aus `~/.ssh/id_rsa` geladen:
+	> [AZURE.NOTE]Wenn Sie ein Kennwort für das SSH-Konto verwendet haben, werden Sie zur Eingabe dieses Kennworts aufgefordert. Wenn Sie einen SSH-Schlüssel mit dem Konto verwendet haben, müssen Sie möglicherweise den `-i`-Parameter verwenden, um den Pfad zur Schlüsseldatei anzugeben. Im folgenden Beispiel wird der private Schlüssel aus `~/.ssh/id_rsa` geladen:
 	>
 	> `scp -i ~/.ssh/id_rsa ./target/hbaseapp-1.0-SNAPSHOT.jar USERNAME@CLUSTERNAME-ssh.azurehdinsight.net:.`
 
-2. Stellen Sie mithilfe von SSH eine Verbindung mit dem HDInsight-Cluster her. Ersetzen Sie **USERNAME** durch den Namen der SSH-Anmeldung. Ersetzen Sie **CLUSTERNAME** durch den Namen Ihres HDInsight-Clusters:
+2. Stellen Sie mithilfe von SSH eine Verbindung mit dem HDInsight-Cluster her. Ersetzen Sie **USERNAME** durch den Namen des SSH-Anmeldung. Ersetzen Sie **CLUSTERNAME** durch den Namen Ihres HDInsight-Clusters:
 
 		ssh USERNAME@CLUSTERNAME-ssh.azurehdinsight.net
 
-	> [AZURE.NOTE]Wenn Sie ein Kennwort für das SSH-Konto verwendet haben, werden Sie zur Eingabe dieses Kennworts aufgefordert. Wenn Sie einen SSH-Schlüssel mit dem Konto verwendet haben, müssen Sie mithilfe des `-i`-Parameters möglicherweise den Pfad zur Schlüsseldatei angeben. Im folgenden Beispiel wird der private Schlüssel aus `~/.ssh/id_rsa` geladen:
+	> [AZURE.NOTE]Wenn Sie ein Kennwort für das SSH-Konto verwendet haben, werden Sie zur Eingabe dieses Kennworts aufgefordert. Wenn Sie einen SSH-Schlüssel mit dem Konto verwendet haben, müssen Sie möglicherweise den `-i`-Parameter verwenden, um den Pfad zur Schlüsseldatei anzugeben. Im folgenden Beispiel wird der private Schlüssel aus `~/.ssh/id_rsa` geladen:
 	>
 	> `ssh -i ~/.ssh/id_rsa USERNAME@CLUSTERNAME-ssh.azurehdinsight.net`
 
@@ -364,4 +364,4 @@ Wenn Sie mit dem Beispiel fertig sind, verwenden Sie den folgenden Befehl aus de
 
 	hadoop jar hbaseapp-1.0-SNAPSHOT.jar com.microsoft.examples.DeleteTable
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -1,8 +1,8 @@
 Um App-Daten im neuen mobilen Dienst speichern zu können, müssen Sie zuerst eine neue Tabelle in der verknüpften SQL-Datenbankinstanz erstellen.
 
-1. Klicken Sie im Verwaltungsportal auf **Mobile Services** und dann auf den mobilen Dienst, den Sie gerade erstellt haben.
+1. Klicken Sie im [klassischen Azure-Portal](https://manage.windowsazure.com/) auf **Mobile Services** und anschließend auf den mobilen Dienst, den Sie gerade erstellt haben.
 
-2. Klicken Sie auf die Registerkarte **Daten** und anschließend auf **+Erstellen**.
+2. Klicken Sie auf die Registerkarte **Daten** und dann auf **+Erstellen**.
 
    	Das Dialogfeld **Neue Tabelle erstellen** wird angezeigt.
 
@@ -51,4 +51,4 @@ Um App-Daten im neuen mobilen Dienst speichern zu können, müssen Sie zuerst ei
 
 Sie können den neuen mobilen Dienst nun als Datenspeicher für die App verwenden.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

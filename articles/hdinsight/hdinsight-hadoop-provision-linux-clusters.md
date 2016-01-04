@@ -101,11 +101,11 @@ Sie können diesen grundlegenden Typen mithilfe von [Skriptaktionen](#scriptacti
 
 Sie können HDInsight-Cluster unter einem der beiden folgenden Betriebssysteme bereitstellen:
 
-- **HDInsight unter Windows (Windows Server 2012 R2 Datacenter)**: Wählen Sie diese Option aus, wenn eine Integration in Windows-basierte Dienste und -Technologien erforderlich ist, die im Hadoop-Cluster ausgeführt werden, oder wenn Sie eine Migration von einer vorhandenen Windows-basierten Hadoop-Distribution durchführen.
+- **HDInsight unter Windows (Windows Server 2012 R2 Datacenter)**: Wählen Sie diese Option, wenn eine Integration in Windows-basierte Dienste und Technologien erforderlich ist, die im Hadoop-Cluster ausgeführt werden, oder wenn Sie eine Migration von einer vorhandenen Windows-basierten Hadoop-Distribution durchführen.
 
-- **HDInsight unter Linux (Ubuntu 12.04 LTS für Linux)**: Wählen Sie diese Option aus, wenn Sie mit Linux oder Unix vertraut sind, eine Migration von einer vorhandenen Linux-basierten Hadoop-Lösung durchführen oder wenn Sie eine einfache Integration in Komponenten des Hadoop-Systems wünschen, die für Linux konzipiert wurden. Weitere Informationen finden Sie unter [Erste Schritte mit Hadoop unter Linux in HDInsight](hdinsight-hadoop-linux-get-started.md).
+- **HDInsight unter Linux (Ubuntu 12.04 LTS für Linux)**: Wählen Sie diese Lösung, wenn Sie mit Linux oder Unix vertraut sind, eine Migration von einer vorhandenen Linux-basierten Hadoop-Lösung durchführen oder wenn Sie eine einfache Integration mit Komponenten des Hadoop-Systems wünschen, die für Linux konzipiert wurden. Weitere Informationen finden Sie unter [Erste Schritte mit Hadoop unter Linux in HDInsight](hdinsight-hadoop-linux-get-started.md).
 
-> [AZURE.NOTE]Bei den Informationen in diesem Artikel wird angenommen, dass Sie einen Linux-basierten HDInsight-Cluster verwenden. Spezifische Informationen für Windows-basierte Cluster finden Sie unter [Erstellen von Hadoop-Clustern in HDInsight](hdinsight-provision-clusters.md).
+> [AZURE.NOTE]Bei den Informationen in diesem Artikel wird angenommen, dass Sie einen Linux-basierten HDInsight-Cluster verwenden. Spezifische Informationen für Windows-basierte Cluster finden Sie unter [Erstellen von Windows-basierten Hadoop-Clustern in HDInsight](hdinsight-provision-clusters.md).
 
 ###Abonnementname
 
@@ -158,9 +158,9 @@ Unterschiedliche Clustertypen weisen verschiedene Knotentypen, eine unterschiedl
 
 > [AZURE.IMPORTANT]Wenn Sie mehr als 32 Workerknoten planen, entweder bei Erstellung des Clusters oder durch eine Skalierung des Clusters nach der Erstellung, müssen Sie eine Hauptknotengröße von mindestens 8 Kernen und 14 GB Arbeitsspeicher (RAM) auswählen.
 
-Wenn Sie das Azure-Vorschauportal zum Konfigurieren des Clusters verwenden, wird die Knotengröße auf dem Blatt __Knotentarif__ offengelegt. Hier werden auch die Kosten für die verschiedenen Knotengrößen angezeigt.
+Wenn Sie das Azure-Portal zum Konfigurieren des Clusters verwenden, ist die Knotengröße auf dem Blatt __Knotentarif__ verfügbar. Hier werden auch die Kosten für die verschiedenen Knotengrößen angezeigt.
 
-> [AZURE.IMPORTANT]Die Abrechnung beginnt, sobald ein Cluster erstellt wurde, und endet erst, wenn der Cluster gelöscht wird. Weitere Informationen zu den Preisen finden Sie unter [HDInsight Preise](https://azure.microsoft.com/pricing/details/hdinsight/).
+> [AZURE.IMPORTANT]Die Abrechnung beginnt, sobald ein Cluster erstellt wurde, und endet erst, wenn der Cluster gelöscht wird. Weitere Informationen zu den Preisen finden Sie unter [HDInsight – Preise](https://azure.microsoft.com/pricing/details/hdinsight/).
 
 ##<a id="optionalconfiguration"></a>Optionale Konfiguration
 
@@ -191,21 +191,23 @@ Weitere Informationen zu Features, Vorteilen und Funktionen von virtuellen Netzw
 > Azure HDInsight unterstützt nur standortbasierte virtuelle Netzwerke und kann momentan nicht mit affinitätsgruppenbasierten virtuellen Netzwerken verwendet werden. Verwenden Sie das Azure PowerShell-Cmdlet "Get-AzureVNetConfig", um zu prüfen, ob ein vorhandenes virtuelles Netzwerk in Azure standortbasiert ist. Wenn das virtuelle Netzwerk nicht standortbasiert ist, haben Sie die folgenden Optionen:
 >
 > - Exportieren Sie die vorhandene virtuelle Netzwerkkonfiguration, und erstellen Sie ein neues virtuelles Netzwerk. Alle neuen virtuellen Netzwerke sind standardmäßig standortbasiert.
-> - Migrieren Sie zu einem standortbasierten virtuellen Netzwerk. Siehe [Migrating Existing Services to Regional Scope](http://azure.microsoft.com/blog/2014/11/26/migrating-existing-services-to-regional-scope/) (in englischer Sprache).
+> - Migrieren Sie zu einem standortbasierten virtuellen Netzwerk. Siehe [Migrieren vorhandener Dienste in einen Regionsbereich](http://azure.microsoft.com/blog/2014/11/26/migrating-existing-services-to-regional-scope/).
 >
 > Sie sollten unbedingt ein einziges Subnetz pro Cluster verwenden.
 >
 > Derzeit (25.8.2015) können Sie nur einen Linux-basierten Cluster in einem virtuellen Azure-Netzwerk bereitstellen.
 >
-> Sie können kein virtuelles Azure-Netzwerk der Version 1 (klassisch) mit Linux-basiertem HDInsight verwenden. Das virtuelle Netzwerk muss Version 2 aufweisen (Azure-Ressourcen-Manager), damit es beim Erstellen des Clusters im Azure-Vorschauportal als Option angezeigt wird bzw. beim Erstellen eines Clusters über die Azure-Befehlszeilenschnittstelle oder Azure PowerShell verwendet werden kann.
+> Sie können kein virtuelles Azure-Netzwerk der Version 1 (klassisch) mit Linux-basiertem HDInsight verwenden. Das virtuelle Netzwerk muss Version 2 aufweisen (Azure-Ressourcen-Manager), damit es beim Erstellen des Clusters im Azure-Portal als Option angezeigt wird bzw. beim Erstellen eines Clusters über die Azure-Befehlszeilenschnittstelle oder Azure PowerShell verwendet werden kann.
 >
-> Wenn Ressourcen in einem v1-Netzwerk vorhanden sind und diesen Ressourcen über ein virtuelles Netzwerk ein direkter Zugriff auf HDInsight ermöglicht werden soll, finden Sie unter [Herstellen einer Verbindung zwischen klassischen VNets und neuen VNets](../virtual-network/virtual-networks-arm-asm-s2s.md) Informationen zum Erstellen einer Verbindung zwischen einem virtuellen v2-Netzwerk und einem virtuellen v1-Netzwerk. Nachdem diese Verbindung eingerichtet wurde, können Sie den HDInsight-Cluster im virtuellen v2-Netzwerk erstellen.
+> Wenn Sie über Ressourcen in einem v1-Netzwerk verfügen und möchten, dass diese Ressourcen über ein virtuelles Netzwerk direkt auf HDInsight zugreifen können, finden Sie unter [Herstellen einer Verbindung zwischen klassischen VNets und neuen VNets](../virtual-network/virtual-networks-arm-asm-s2s.md) Informationen zum Verbinden eines virtuellen v2-Netzwerks mit einem virtuellen v1-Netzwerk. Nachdem diese Verbindung eingerichtet wurde, können Sie den HDInsight-Cluster im virtuellen v2-Netzwerk erstellen.
 
 ### Metastore
 
 Metastore enthält Hive- und Oozie-Metadaten, wie z. B. Informationen zu Hive-Tabellen, -Partitionen, -Schemata und -Spalten. Mithilfe von Metastore können Sie Ihre Hive- und Oozie-Metadaten beibehalten, sodass Sie Hive-Tabellen oder Oozie-Aufträge nicht neu erstellen müssen, wenn Sie einen neuen Cluster erstellen.
 
 Mit der Metastore-Konfigurationsoption können Sie einen externen Metastore angeben, der eine SQL-Datenbank verwendet. Auf diese Weise bleiben die Metadateninformationen erhalten, wenn Sie einen Cluster löschen, da diese extern in der Datenbank gespeichert sind. Informationen zum Erstellen einer SQL-Datenbank in Azure finden Sie unter [Erstellen einer ersten Azure SQL-Datenbank](sql-database-get-started.md).
+
+> [AZURE.NOTE]Für HBase-Clustertypen ist keine Metastore-Konfiguration verfügbar.
 
 ###<a id="scriptaction"></a>Skriptaktion
 
@@ -225,7 +227,7 @@ In diesem Artikel haben Sie grundlegende Informationen zum Erstellen eines Linux
 
 | Clustererstellung | Webbrowser | Befehlszeile | REST-API | SDK | Linux, Mac OS X oder Unix | Windows |
 | ------------------------------- |:----------------------:|:--------------------:|:------------------:|:------------:|:-----------------------------:|:------------:|
-| [Azure-Vorschauportal](hdinsight-hadoop-create-linux-clusters-portal.md) | ✔ | &nbsp; | &nbsp; | &nbsp; | ✔ | ✔ |
+| [Azure-Portal](hdinsight-hadoop-create-linux-clusters-portal.md) | ✔ | &nbsp; | &nbsp; | &nbsp; | ✔ | ✔ |
 | [Azure-Befehlszeilenschnittstelle](hdinsight-hadoop-create-linux-clusters-azure-cli.md) | &nbsp; | ✔ | &nbsp; | &nbsp; | ✔ | ✔ |
 | [Azure PowerShell](hdinsight-hadoop-create-linux-clusters-azure-powershell.md) | &nbsp; | ✔ | &nbsp; | &nbsp; | &nbsp; | ✔ |
 | [cURL](hdinsight-hadoop-create-linux-clusters-curl.md) | &nbsp; | ✔ | ✔ | &nbsp; | ✔ | ✔ |
@@ -278,6 +280,6 @@ In diesem Artikel haben Sie grundlegende Informationen zum Erstellen eines Linux
 
 [img-hdi-cluster]: ./media/hdinsight-hadoop-provision-linux-clusters/HDI.Cluster.png
 
-  [89e2276a]: /documentation/articles/hdinsight-use-sqoop/ "Verwenden von Sqoop mit HDInsight"
+[89e2276a]: /documentation/articles/hdinsight-use-sqoop/ "Verwenden von Sqoop mit HDInsight"
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

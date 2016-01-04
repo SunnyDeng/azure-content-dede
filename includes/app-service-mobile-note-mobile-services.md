@@ -1,5 +1,5 @@
 >[AZURE.NOTE]Dies ist ein Thema zu **Azure Mobile Apps**. Informationen zu Mobile Services-Inhalten finden Sie im [Mobile Services-Dokumentationscenter](/documentation/services/mobile-services/).
 >
->Azure Mobile Apps [bietet Ihnen weitere Vorteile](app-service-mobile-value-prop-migration-from-mobile-services.md) im Vergleich zu Mobile Services. Mobile Apps befindet sich jedoch derzeit in der Vorschauphase. Vom Einsatz in einer Produktionsumgebung wird noch abgeraten. Änderungen an SDK- und API-Verträgen für Nebenversionen sind vorbehalten. Für Produktions-Apps sollten Sie stattdessen Mobile Services verwenden.
+>Mobile App Service-Apps ist unsere neueste Back-End-Plattform für mobile Apps. Sie bietet Ihnen im Vergleich zu Mobile Services [einige zusätzliche Vorteile](app-service-mobile-value-prop-migration-from-mobile-services.md). Kunden, die das .NET-Back-End-SDK verwenden, wird eine [Migration zu App Service](app-service-mobile-migrating-from-mobile-services) empfohlen. Das [Node SDK für Mobile Apps](https://github.com/azure/azure-mobile-apps-node) befindet sich jedoch derzeit in der Vorschauphase. Vom Einsatz in einer Produktionsumgebung wird noch abgeraten. Änderungen an SDK- und API-Verträgen für Nebenversionen sind vorbehalten.
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1210_2015-->

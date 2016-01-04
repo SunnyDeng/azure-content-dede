@@ -27,9 +27,9 @@ Der erste Schritt umfasst die Einrichtung des Dienstnamespace und das Abrufen ei
 
 ### So erstellen Sie einen Dienstnamespace und rufen einen SAS-Schlüssel an
 
-1. Um einen Namespace im Azure-Portal zu erstellen, führen Sie die Schritte unter [Gewusst wie: Erstellen oder Ändern eines Service Bus-Dienstnamespace](https://msdn.microsoft.com/library/hh690931.aspx) aus.
+1. Um einen Namespace im [klassischen Azure-Portal][] zu erstellen, führen Sie die Schritte unter [Erstellen oder Ändern eines Service Bus-Dienstnamespace](https://msdn.microsoft.com/library/hh690931.aspx) aus.
 
-2. Klicken Sie im Hauptfenster des Azure-Portals auf den Namen des Dienstnamespace, den Sie im vorherigen Schritt erstellt haben.
+2. Klicken Sie im Hauptfenster des Portals auf den Namen des Dienstnamespace, den Sie im vorherigen Schritt erstellt haben.
 
 3. Klicken Sie auf **Konfigurieren**, um die gemeinsam genutzten Zugriffsrichtlinien für Ihren Namespace anzuzeigen.
 
@@ -300,7 +300,7 @@ Wie bei den vorherigen Schritten gibt es nur wenige Unterschiede zwischen der Im
 
 	Dieser Schritt konfiguriert einen Dienst, der die zuvor definierte standardmäßige **WebHttpRelayBinding**-Bindung verwendet. Darüber hinaus verwendet er den standardmäßigen **SbTokenProvider**-Anbieter, die im nächsten Schritt definiert wird.
 
-6. Erstellen Sie nach dem `<services>`-Element ein `<behaviors>`-Element mit dem folgenden Inhalt, der "SAS\_KEY" gegen den *Shared Access Signature*-Schlüssel (SAS) ersetzt, den Sie in Schritt 1 aus dem Azure-Portal abgerufen haben.
+6. Erstellen Sie nach dem `<services>`-Element ein `<behaviors>`-Element mit dem folgenden Inhalt, der „SAS\_KEY“ durch den *Shared Access Signature*-Schlüssel (SAS) ersetzt, den Sie in Schritt 1 aus dem [klassischen Azure-Portal][] abgerufen haben.
 
 	```
 	<behaviors>
@@ -582,4 +582,6 @@ Da Sie jetzt eine Anwendung erstellt haben, die den Service Bus Relay-Dienst ver
 
 - [Verwenden des Service Bus Relay-Diensts](service-bus-dotnet-how-to-use-relay.md)
 
-<!---HONumber=Oct15_HO3-->
+[klassischen Azure-Portal]: http://manage.windowsazure.com
+
+<!---HONumber=AcomDC_1203_2015-->

@@ -114,7 +114,7 @@ Einige Lernalgorithmen treffen bestimmte Annahmen über die Struktur der Daten o
 |[Locally Deep Support Vector Machine (lokal tiefe SVM)](https://msdn.microsoft.com/library/azure/dn913070.aspx)|○| | |8|Für große Merkmalssätze geeignet|
 |[Bayes' Point Machine](https://msdn.microsoft.com/library/azure/dn905930.aspx)| |○|●|3| |
 |**Klassifizierung mit mehreren Klassen**| | | | | |
-|[Logistische Regression](https://msdn.microsoft.com/de-DE/library/azure/dn905853.aspx)| |●|●|5| |
+|[Logistische Regression](https://msdn.microsoft.com/library/azure/dn905853.aspx)| |●|●|5| |
 |[Decision Forest (Entscheidungswald)](https://msdn.microsoft.com/library/azure/dn906015.aspx)|●|○| |6| |
 |[Decision Jungle (Entscheidungsdschungel)](https://msdn.microsoft.com/library/azure/dn905963.aspx)|●|○| |6|Niedriger Speicherbedarf|
 |[Neuronales Netzwerk](https://msdn.microsoft.com/library/azure/dn906030.aspx)|●| | |9|[Zusätzliche Anpassung möglich](http://go.microsoft.com/fwlink/?LinkId=402867)|
@@ -237,4 +237,4 @@ Azure Machine Learning umfasst außerdem Zugriff auf ein leistungsfähiges Machi
 [9]: ./media/machine-learning-algorithm-choice/image9.png
 [10]: ./media/machine-learning-algorithm-choice/image10.png
 
-<!----HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -22,7 +22,7 @@
 
 Die Azure-Speicheranalyse führt die Protokollierung aus und stellt Metrikdaten für ein Speicherkonto bereit. Mit diesen Daten können Sie Anforderungen verfolgen, Verwendungstrends analysieren und Probleme mit dem Speicherkonto diagnostizieren.
 
-Zum Verwenden der Speicheranalyse müssen Sie sie einzeln für jeden zu überwachenden Dienst aktivieren. Sie können sie über das [Azure-Portal](https://manage.windowsazure.com/) aktivieren. Ausführliche Informationen finden Sie unter [Überwachen eines Speicherkontos](http://www.azure.com/manage/services/storage/how-to-monitor-a-storage-account/). Sie können die Speicheranalyse auch programmgesteuert über die REST-API oder die Clientbibliothek aktivieren. Über die Vorgänge [Blob-Diensteigenschaften abrufen](https://msdn.microsoft.com/library/hh452239.aspx), [Warteschlangendiensteigenschaften abrufen](https://msdn.microsoft.com/library/hh452243.aspx) und [Tabellendiensteigenschaften abrufen](https://msdn.microsoft.com/library/hh452238.aspx) können Sie die Speicheranalyse für jeden Dienst aktivieren.
+Zum Verwenden der Speicheranalyse müssen Sie sie einzeln für jeden zu überwachenden Dienst aktivieren. Sie können sie über das [Azure-Portal](portal.azure.com) aktivieren. Ausführliche Informationen finden Sie unter [Überwachen eines Speicherkontos](http://www.azure.com/manage/services/storage/how-to-monitor-a-storage-account/). Sie können die Speicheranalyse auch programmgesteuert über die REST-API oder die Clientbibliothek aktivieren. Über die Vorgänge [Blob-Diensteigenschaften abrufen](https://msdn.microsoft.com/library/hh452239.aspx), [Warteschlangendiensteigenschaften abrufen](https://msdn.microsoft.com/library/hh452243.aspx) und [Tabellendiensteigenschaften abrufen](https://msdn.microsoft.com/library/hh452238.aspx) können Sie die Speicheranalyse für jeden Dienst aktivieren.
 
 Die aggregierten Daten werden in einem bekannten BLOB (zur Protokollierung) und in bekannten Tabellen (als Metrik) gespeichert. Der Zugriff erfolgt über APIs für den BLOB-Dienst und Tabellendienst.
 
@@ -126,7 +126,7 @@ Auf alle Daten im Container `$logs` kann mithilfe der Blob-Dienst-APIs zugegriff
 
 Von der Speicheranalyse können Metriken gespeichert werden, zu denen aggregierte Transaktionsstatistiken und Kapazitätsdaten für die an einen Speicherdienst gesendeten Anforderungen zählen. Berichte zu Transaktionen werden sowohl auf API-Vorgangsebene als auch auf Speicherdienstebene erstellt, während Berichte zur Kapazität nur auf Speicherdienstebene erstellt werden. Mit den Metrikdaten können die Speicherdienstnutzung analysiert, Probleme mit Anforderungen für den Speicherdienst diagnostiziert und die Leistung von Anwendungen verbessert werden, die einen Dienst verwenden.
 
-Zum Verwenden der Speicheranalyse müssen Sie sie einzeln für jeden zu überwachenden Dienst aktivieren. Sie können sie über das [Azure-Portal](https://manage.windowsazure.com/) aktivieren. Ausführliche Informationen finden Sie unter [Überwachen eines Speicherkontos](../how-to-monitor-a-storage-account.md). Sie können die Speicheranalyse auch programmgesteuert über die REST-API oder die Clientbibliothek aktivieren. Über die Vorgänge [Blob-Diensteigenschaften abrufen, Warteschlangendiensteigenschaften abrufen](https://msdn.microsoft.com/library/hh452239.aspx) und [Tabellendiensteigenschaften abrufen](https://msdn.microsoft.com/library/hh452238.aspx) können Sie die Speicheranalyse für jeden Dienst aktivieren.
+Zum Verwenden der Speicheranalyse müssen Sie sie einzeln für jeden zu überwachenden Dienst aktivieren. Sie können sie über das [Azure-Portal](portal.azure.com) aktivieren. Ausführliche Informationen finden Sie unter [Überwachen eines Speicherkontos](../how-to-monitor-a-storage-account.md). Sie können die Speicheranalyse auch programmgesteuert über die REST-API oder die Clientbibliothek aktivieren. Über die Vorgänge [Blob-Diensteigenschaften abrufen, Warteschlangendiensteigenschaften abrufen](https://msdn.microsoft.com/library/hh452239.aspx) und [Tabellendiensteigenschaften abrufen](https://msdn.microsoft.com/library/hh452238.aspx) können Sie die Speicheranalyse für jeden Dienst aktivieren.
 
 ### Transaktionsmetriken
 
@@ -206,4 +206,4 @@ Wenn Sie Speicheranalysedaten überprüfen, können Sie anhand der Tabellen im T
 - [Schema der Tabellen für Speicheranalysemetriken](https://msdn.microsoft.com/library/hh343264.aspx)
 - [Protokollierte Speicheranalysevorgänge und Statusmeldungen](https://msdn.microsoft.com/library/hh343260.aspx)  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

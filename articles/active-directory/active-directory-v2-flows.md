@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/11/2015"
+	ms.date="12/09/2015"
 	ms.author="dastrock"/>
 
 # App-Modell v2.0 (Vorschauversion): App-Typen
@@ -95,25 +95,27 @@ Eine Web-API kann Zugriffstoken von allen Apptypen empfangen, einschließlich We
 
 ![Abbildung der Web-App-Web-API-Verantwortlichkeitsbereiche](../media/active-directory-v2-flows/convergence_scenarios_webapp_webapi.png)
 
-Weitere Informationen zu Autorisierungscodes, Aktualisierungstoken und die detaillierten Schritte zum Abrufen von Zugriffstoken finden Sie im [OAuth 2.0-Protokoll](active-directory-v2-protocols.md#oauth2-authorization-code-flow).
+Weitere Informationen zu Autorisierungscodes, Aktualisierungstoken und die detaillierten Schritte zum Abrufen von Zugriffstoken finden Sie im [OAuth 2.0-Protokoll](active-directory-v2-protocols-oauth-code.md).
 
 Weitere Informationen zum Sichern einer Web-API mit den App-Modell v2.0- und OAuth 2.0-Zugriffstoken finden Sie in den Web-API-Codebeispielen im [Abschnitt "Erste Schritte"](active-directory-appmodel-v2-overview.md#getting-started).
 
 
 ## Mobile und systemeigene Apps
-Auf einem Gerät installierte Apps wie mobile und Desktop-Apps benötigen häufig Zugriff auf Back-End-Dienste oder Web-APIs, die Daten speichern und verschiedene Funktionen im Auftrag eines Benutzers ausführen. Diese Apps können sich auf Back-End-Diensten anmelden und die Autorisierung hinzufügen, und zwar mithilfe des v2.0-Modells und des [OAuth 2.0-Autorisierungscodeflusses](active-directory-v2-protocols.md#oauth2-authorization-code-flow).
+Auf einem Gerät installierte Apps wie mobile und Desktop-Apps benötigen häufig Zugriff auf Back-End-Dienste oder Web-APIs, die Daten speichern und verschiedene Funktionen im Auftrag eines Benutzers ausführen. Diese Apps können sich auf Back-End-Diensten anmelden und die Autorisierung hinzufügen, und zwar mithilfe des v2.0-Modells und des [OAuth 2.0-Autorisierungscodeflusses](active-directory-v2-protocols-oauth-code.md).
 
 Bei diesem Vorgang empfängt die App bei der Anmeldung des Benutzers einen Autorisierungscode vom v2.0-Endpunkt, der die Berechtigung für die App darstellt, Back-End-Dienste für den derzeit angemeldeten Benutzer aufzurufen. Die App kann den Autorisierungscode dann in den Hintergrund treten lassen und gegen ein OAuth 2.0-Zugriffstoken und ein -Aktualisierungstoken austauschen. Die App kann mithilfe des Zugriffstokens Web-APIs in HTTP-Anforderungen authentifizieren und kann das Aktualisierungstoken verwenden, um neue Zugriffstoken zu erhalten, wenn die älteren abgelaufen sind.
 
 ![Abbildung der Verantwortlichkeitsbereiche systemeigener Apps](../media/active-directory-v2-flows/convergence_scenarios_native.png)
 
+## Singe Page-Apps (Javascript)
+Viele moderne Apps verfügen über ein Single Page-App-Front-End, das in erster Linie in Javascript geschrieben ist und häufig SPA-Frameworks wie z. B. AngularJS, Ember.js oder Durandal verwendet. Version 2.0 des Azure AD-App-Modells unterstützt diese Apps mithilfe des [impliziten OAuth 2.0-Flusses](active-directory-v2-protocols-implicit.md).
+
+In diesem Datenfluss empfängt die App Token vom Autorisierungsendpunkt der Version 2.0 direkt, ohne dass eine Kommunikation zwischen Back-End-Server und Server stattfindet. Dadurch können sämtliche Authentifizierungslogik und die Verarbeitung der Sitzung vollständig im JavaScript-Client erfolgen, ohne Seitenumleitungen durchzuführen.
+
+Um dieses Szenario in Aktion zu sehen, testen Sie eines der Codebeispiele für die App mit einer einzigen Seite im Abschnitt [Erste Schritte](active-directory-appmodel-v2-overview.md#getting-started).
+
 ## Aktuelle Einschränkungen der Vorschau
 Diese Typen von Apps werden derzeit von der App-Modell v2.0-Vorschau nicht unterstützt, sind jedoch in Planung, um bei allgemeiner Verfügbarkeit rechtzeitig unterstützt zu werden. Zusätzliche Einschränkungen für die öffentliche Vorschauversion von App-Modell v2.0 werden im [Artikel „Einschränkungen der v2.0-Vorschau“](active-directory-v2-limitations.md) beschrieben.
-
-### Singe Page-Apps (Javascript)
-Viele moderne Apps verfügen über ein Single Page-App-Front-End, das in erster Linie in Javascript geschrieben ist und häufig SPA-Frameworks wie z. B. AngularJS, Ember.js oder Durandal verwendet. Der allgemein verfügbare Azure AD-Dienst unterstützt diese Apps mithilfe des [impliziten OAuth 2.0-Ablaufs](active-directory-v2-protocols.md#oauth2-implicit-flow). Dieser Ablauf steht jedoch für das App-Modell v2.0 noch nicht zur Verfügung. Dies wird sich in Kürze ändern.
-
-Wenn Sie darauf gespannt sind, wie eine SPA mit dem App-Modell v2.0 funktioniert, können Sie die Authentifizierung mit dem [Webserver-Appvorgang](#web-apps) wie oben beschrieben implementieren. Dies ist allerdings nicht die empfohlene Vorgehensweise, und die Dokumentation für dieses Szenario ist begrenzt. Wenn Sie ein Gefühl für das SPA-Szenario bekommen möchten, sehen Sie sich das [allgemein verfügbare Azure AD-SPA-Codebeispiel](active-directory-devquickstarts-angular.md) an.
 
 ### Daemons und serverseitige Apps
 Apps, die lang andauernde Prozesse enthalten oder ohne das Vorhandensein eines Benutzers arbeiten, benötigen ebenfalls die Möglichkeit, auf sichere Ressourcen wie Web-APIs zuzugreifen. Diese Apps können mithilfe der App-Identität (anstelle der delegierten Benutzeridentität) die Authentifizierung durchführen und Token erhalten. Dies funktioniert über den [OAuth 2.0-Client-Anmeldeinformationsfluss](active-directory-v2-protocols.md#oauth2-client-credentials-grant-flow).
@@ -125,4 +127,4 @@ Viele Architekturen umfassen eine Web-API, die eine andere heruntergestreamte We
 
 Dieses Szenario der verketteten Web-API kann mithilfe der Berechtigung für Anmeldeinformationen über den OAuth 2.0-JWT-Bearer unterstützt werden, auch bekannt als [Im-Auftrag-von-Vorgang](active-directory-v2-protocols.md#oauth2-on-behalf-of-flow). Der Im-Auftrag-von-Vorgang ist in der Vorschaufunktion des App-Modells v2.0 derzeit noch nicht implementiert. Um sich die Funktionsweise dieses Vorgangs im allgemein verfügbaren Azure AD-Dienst anzusehen, wechseln Sie zum [Im-Auftrag-von-Codebeispiel auf GitHub](https://github.com/AzureADSamples/WebAPI-OnBehalfOf-DotNet).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

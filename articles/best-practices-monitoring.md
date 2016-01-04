@@ -101,7 +101,7 @@ Sie können den Prozentsatz der Verfügbarkeit eines Diensts über einen Zeitrau
 %Availability =  ((Total Time – Total Downtime) / Total Time ) * 100
 ```
 
-Dies ist nützlich für die Vereinbarung zum Servicelevel ([SLA-Überwachung](#SLA-monitoring) wird weiter unten in diesem Handbuch ausführlicher beschrieben). Die Definition der _Ausfallzeiten_ hängt vom Dienst ab. Visual Studio Online definiert Ausfallzeiten z. B. als den Zeitraum, in dem ein Kunde mit dem Dienst länger als 120 Sekunden eine Verbindung herstellen möchte und alle grundlegenden Lese- und Schreibvorgänge fehlschlagen, nachdem das Herstellen der Verbindung innerhalb dieses Zeitraums erfolgreich war.
+Dies ist nützlich für die Vereinbarung zum Servicelevel ([SLA-Überwachung](#SLA-monitoring) wird weiter unten in diesem Handbuch ausführlicher beschrieben). Die Definition der _Ausfallzeiten_ hängt vom Dienst ab. Visual Studio Team Services z. B. definiert Ausfallzeiten als den Zeitraum, in dem ein Kunde mit dem Dienst länger als 120 Sekunden eine Verbindung herstellen möchte und alle grundlegenden Lese- und Schreibvorgänge fehlschlagen, nachdem das Herstellen der Verbindung innerhalb dieses Zeitraums erfolgreich war.
 
 ## Leistungsüberwachung
 Während das System von mehr und mehr Benutzern und der Größe der Datensätze, auf die diese Benutzer verstärkt zugreifen können, unter Belastung steht, wird ein mögliches Fehlschlagen einer oder mehrerer Komponenten wahrscheinlich. Häufig ist eine Abnahme der Leistung Komponentenfehlern vorangestellt. Wenn Sie in der Lage sind, eine solche Leistungsabnahme zu erkennen, können Sie proaktive Schritte zur Abhilfe ergreifen.
@@ -612,4 +612,4 @@ In vielen Fällen können Berichte in Batchprozessen nach einem bestimmten Zeitp
 - Die Seite [Grundlegendes zur Überwachung von Warnungen und Benachrichtigungen in Azure](https://msdn.microsoft.com/library/azure/dn306639.aspx) auf der Microsoft-Website.
 - Die Seite [Application Insights](app-insights-get-started/) auf der Microsoft-Website.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

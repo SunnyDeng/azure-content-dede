@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/16/2015" 
+	ms.date="11/25/2015" 
 	ms.author="awills"/>
  
 # Erste Schritte mit Application Insights mit Java in Eclipse
@@ -99,7 +99,7 @@ Fügen Sie den Codeausschnitt im Kopf der HTML-Dateien ein.
 
 #### Anzeigen von clientseitigen Daten
 
-Öffnen Sie die aktualisierten Webseiten, und verwenden Sie sie. Warten Sie ein oder zwei Minuten, kehren Sie dann zurück zu Application Insights, und aktualisieren Sie das Blatt "Verwendung".
+Öffnen Sie die aktualisierten Webseiten, und verwenden Sie sie. Warten Sie ein oder zwei Minuten, kehren Sie dann zurück zu Application Insights, und öffnen Sie das Blatt "Verwendung". (Führen Sie auf dem Blatt "Übersicht" einen Bildlauf nach unten durch, und klicken Sie auf "Verwendung".)
 
 Seitenansichts-, Benutzer- und Sitzungsmetriken werden auf dem Blatt "Verwendung" angezeigt:
 
@@ -129,7 +129,7 @@ Jetzt veröffentlichen Sie Ihre App auf dem Server, erlauben deren Benutzung und
 
 Nicht behandelte Ausnahmen werden automatisch gesammelt:
 
-![](./media/app-insights-java-get-started/21-exceptions.png)
+![](./media/app-insights-java-eclipse/21-exceptions.png)
 
 Um Daten zu anderen Ausnahmen zu erfassen, haben Sie zwei Möglichkeiten:
 
@@ -144,10 +144,10 @@ Um Daten zu anderen Ausnahmen zu erfassen, haben Sie zwei Möglichkeiten:
 
 ## Leistungsindikatoren
 
-Klicken Sie auf die Kachel **Server**. Ein Bereich mit Leistungsindikatoren wird angezeigt.
+Führen Sie auf dem Blatt "Übersicht" einen Bildlauf nach unten aus, und klicken Sie auf die Kachel **Server**. Ein Bereich mit Leistungsindikatoren wird angezeigt.
 
 
-![](./media/app-insights-java-get-started/11-perf-counters.png)
+![Scrollen Sie nach unten aus und klicken Sie auf die Kachel „Server“.](./media/app-insights-java-eclipse/11-perf-counters.png)
 
 ### Anpassen der Erfassung von Leistungsindikatoren
 
@@ -198,7 +198,7 @@ Jeder [Windows-Leistungsindikator](https://msdn.microsoft.com/library/windows/de
 
 Ihre Leistungsindikatoren werden im [Metrik-Explorer][metrics] als benutzerdefinierte Metriken angezeigt.
 
-![](./media/app-insights-java-get-started/12-custom-perfs.png)
+![](./media/app-insights-java-eclipse/12-custom-perfs.png)
 
 
 ### Unix-Leistungsindikatoren
@@ -207,7 +207,9 @@ Ihre Leistungsindikatoren werden im [Metrik-Explorer][metrics] als benutzerdefin
 
 ## Verfügbarkeitswebtests
 
-Application Insights kann Ihre Website in regelmäßigen Abständen testen, um zu überprüfen, ob sie betriebsbereit ist und gut reagiert. Um dies einzurichten, klicken Sie sich durch das leere Webtestdiagramm auf dem Blatt "Übersicht", und geben Sie Ihre öffentliche URL an.
+Application Insights kann Ihre Website in regelmäßigen Abständen testen, um zu überprüfen, ob sie betriebsbereit ist und gut reagiert. Zum [Einzurichten][availability] scrollen Sie nach unten und klicken auf „Verfügbarkeit“.
+
+![Scrollen Sie nach unten, klicken Sie auf „Verfügbarkeit“ und dann auf „Webtest hinzufügen“.](./media/app-insights-java-eclipse/31-config-web-test.png)
 
 Sie erhalten Diagramme von Reaktionszeiten sowie E-Mail-Benachrichtigungen, falls Ihre Website ausfällt.
 
@@ -258,4 +260,4 @@ Sie können Code sowohl in das JavaScript der Webseite als auch in serverseitige
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

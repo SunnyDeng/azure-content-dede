@@ -3,9 +3,9 @@
    description="Lernen Sie die Verfahren zum Einrichten von Cloud- und Speicherkontodiensten und zum Konfigurieren Ihrer Azure-Anwendung kennen."
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tglee" />
+   editor="" />
 <tags
    ms.service="multiple"
    ms.devlang="dotnet"
@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="multiple"
    ms.date="09/28/2015"
-   ms.author="kempb" />
+   ms.author="tarcher" />
 
 # Veröffentlichen und Bereitstellen einer Azure-Anwendung in Visual Studio
 
@@ -74,7 +74,7 @@ Ein Speicherkonto bietet Zugriff auf die Blob-, Warteschlangen- und Tabellendien
 
     ![Erstellen eines neuen Azure-Speicherkontos](./media/vs-azure-tools-cloud-service-publish-set-up-required-services-in-visual-studio/IC744166.png)
 
-1. Im Dialogfeld **Speicherkonto erstellen** können Sie die folgenden Informationen für das neue Speicherkonto auswählen oder eingeben.
+1. Wählen Sie im Dialogfeld **Speicherkonto erstellen** die folgenden Informationen aus, oder geben Sie sie ein.
     - Das Azure-Abonnement, dem Sie das Speicherkonto hinzufügen möchten
     - Den Namen, den Sie für das neue Speicherkonto verwenden möchten
     - Die Region oder Affinitätsgruppe (z. B. USA, Westen oder Ostasien)
@@ -153,4 +153,4 @@ Sie müssen alle Rollen, die auf Speicherdienste zugreifen, für das Verwenden d
 
 Weitere Informationen zum Veröffentlichen von Anwendungen in Azure aus Visual Studio finden Sie unter [Veröffentlichen eines Clouddiensts mit den Azure Tools](vs-azure-tools-publishing-a-cloud-service.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

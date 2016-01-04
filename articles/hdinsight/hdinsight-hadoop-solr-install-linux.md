@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/26/2015"
+	ms.date="12/04/2015"
 	ms.author="larryfr"/>
 
 # Installieren und Verwenden von Solr in HDInsight Hadoop-Clustern
@@ -57,7 +57,7 @@ Ein Beispielskript zum Installieren von Solr in einem HDInsight-Cluster steht in
 
 3. Verwenden Sie am unteren Rand der **Skriptaktionen** die Schaltfläche **Auswählen**, um die Konfiguration zu speichern. Verwenden Sie schließlich die Schaltfläche **Auswählen** am unteren Rand des Blatts **Optionale Konfiguration**, um die optionalen Konfigurationsinformationen zu speichern.
 
-4. Setzen Sie die Bereitstellung des Clusters wie unter [Bereitstellen Linux-basierter HDInsight-Cluster](hdinsight-provision-linux-clusters.md#portal) beschrieben fort.
+4. Setzen Sie die Bereitstellung des Clusters wie unter [Bereitstellen Linux-basierter HDInsight-Cluster](hdinsight-hadoop-create-linux-clusters-portal.md) beschrieben fort.
 
 ## <a name="usesolr"></a>Wie verwende ich Solr in HDInsight?
 
@@ -172,7 +172,7 @@ Wenn Sie einen SSH-Tunnel eingerichtet haben, gehen Sie folgendermaßen vor, um 
 
 	![Bild des Solr-Dashboards](./media/hdinsight-hadoop-solr-install-linux/solrdashboard.png)
 
-2. Wählen Sie im linken Bereich in der Dropdownliste **Core-Auswahl** den Eintrag **collection1** aus. Mehrere Einträge sollten unterhalb von __collection1__ erscheinen.
+2. Wählen Sie im linken Bereich in der Dropdownliste **Core Selector** den Eintrag **collection1** aus. Mehrere Einträge sollten unterhalb von __collection1__ erscheinen.
 
 3. Wählen Sie aus den Einträgen unter __collection1__ __Abfrage__ aus. Verwenden Sie die folgenden Werte zum Auffüllen der Suchseite:
 
@@ -285,7 +285,7 @@ Bewährt hat sich auch das Sichern der indizierten Daten auf den Solr-Clusterkno
 
 	> [AZURE.NOTE]Möglicherweise möchten Sie ein dediziertes Verzeichnis für Solr-Momentaufnahmen erstellen. Beispiel: `hadoop fs -mkdir /solrbackup`.
 
-Weitere Informationen zum Arbeiten mit Solr-Backups und -Wiederherstellungen finden Sie unter [Making and restoring backups of SolrCores](https://cwiki.apache.org/confluence/display/solr/Making+and+Restoring+Backups+of+SolrCores) (Erstellen und Wiederherstellen von Backups von SolrCore; in englischer Sprache).
+Weitere Informationen zum Arbeiten mit Solr-Backups und -Wiederherstellungen finden Sie unter [Making and restoring backups of SolrCores](https://cwiki.apache.org/confluence/display/solr/Making+and+Restoring+Backups+of+SolrCores) (auf Englisch).
 
 
 ## Weitere Informationen
@@ -302,10 +302,8 @@ Weitere Informationen zum Arbeiten mit Solr-Backups und -Wiederherstellungen fin
 
 
 
-
-[hdinsight-provision]: hdinsight-provision-clusters-linux.md
 [hdinsight-install-r]: hdinsight-hadoop-r-scripts-linux.md
 [hdinsight-install-spark]: hdinsight-hadoop-spark-install-linux.md
 [hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster-linux.md
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1210_2015-->

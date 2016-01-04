@@ -13,12 +13,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="08/21/2015"
+   ms.date="11/20/2015"
    ms.author="maroche"/>
 
 # Was ist Azure Data Catalog?
 
-Microsoft **Azure Data Catalog** ist ein vollständig verwalteter Clouddienst, der als Registrierungs- und Ermittlungssystem für die Datenquellen von Unternehmen dient. **Azure Data Catalog** enthält Funktionen, mit denen alle Benutzer – von Analysten über Datenwissenschaftler bis zu Entwicklern – Datenquellen registrieren, ermitteln, verstehen und nutzen können.
+Microsoft **Azure Data Catalog** ist ein vollständig verwalteter Clouddienst, der als Registrierungs- und Ermittlungssystem für die Datenquellen von Unternehmen dient. **Azure Data Catalog** enthält Funktionen, mit denen alle Benutzer – von Analysten über Datenwissenschaftler bis zu Entwicklern – Datenquellen ermitteln, verstehen und nutzen können. Hier haben sie die Möglichkeit, mit ihrem Wissen dazu beizutragen, eine Daten-Community und -Kultur zu errichten und zu pflegen.
 
 ## Beschreibung des Problems – Motivation und Übersicht
 
@@ -48,7 +48,9 @@ Zusammen stellen diese Probleme eine erhebliche Hürde für Unternehmen dar, die
 
 Nachdem eine Datenquelle registriert wurde, können die dazugehörigen Metadaten erweitert werden. Dies kann entweder von dem Benutzer übernommen werden, der die Registrierung durchgeführt hat, oder von anderen Benutzern des Unternehmens. Alle Benutzer können eine Datenquelle mit Anmerkungen versehen, indem Beschreibungen, Tags oder andere Metadaten bereitgestellt werden, z. B. Dokumentation und Prozesse für das Anfordern des Datenquellenzugriffs. Diese beschreibenden Metadaten sind eine Erweiterung der strukturellen Metadaten (z. B. Spaltennamen und Datentypen), die für die Datenquelle registriert wurden, um die Ermittlung und das Verständnis zu erleichtern.
 
-Das Ermitteln und Verstehen von Datenquellen und ihrer Nutzung sind der Hauptzweck bei der Registrierung von Quellen. Wenn Benutzer in Unternehmen Daten für ihre Arbeit benötigen (z. B. Business Intelligence, Anwendungsentwicklung, Datenwissenschaft oder andere Aufgaben, die spezielle Daten erfordern), können sie die **Azure Data Catalog**-Ermittlungsoberfläche verwenden. Hiermit können sie schnell die passenden Daten für ihre Anforderungen finden, Daten verstehen, um ihre Eignung sicherzustellen, und Daten nutzen, indem sie die Datenquelle im Tool ihrer Wahl öffnen.
+Das Ermitteln und Verstehen von Datenquellen und ihrer Nutzung sind der Hauptzweck bei der Registrierung von Quellen. Wenn Benutzer in Unternehmen Daten für ihre Arbeit benötigen (z. B. Business Intelligence, Anwendungsentwicklung, Datenwissenschaft oder andere Aufgaben, die spezielle Daten erfordern), können sie die **Azure Data Catalog**-Ermittlungsoberfläche verwenden. Hiermit können sie schnell die passenden Daten für ihre Anforderungen finden, Daten verstehen, um ihre Eignung sicherzustellen, und Daten nutzen, indem sie die Datenquelle im Tool ihrer Wahl öffnen. Zugleich ermöglicht **Azure Data Catalog** Benutzern durch das Markieren, Dokumentieren und Kommentieren bereits registrierter Datenquellen sowie die Registrierung neuer Datenquellen, welche dann wiederum von anderen Nutzern des Katalogs entdeckt, durchdrungen und verarbeitet werden können, am Katalog mitzuarbeiten.
+
+![Funktionen von Azure Data Catalog](./media/data-catalog-what-is-data-catalog/data-catalog-capabilities.png)
 
 ## Registrieren von Datenquellen
 
@@ -66,6 +68,8 @@ Der Registrierungsprozess umfasst drei grundlegende Schritte:
 - SQL Server-Ansicht
 - Oracle Database-Tabelle
 - Oracle Database-Ansicht
+- Teradata-Tabelle
+- Teradata-Sicht
 - SQL Server Analysis Services – Mehrdimensionale Dimension
 - SQL Server Analysis Services – Mehrdimensionales Measure
 - SQL Server Analysis Services – Mehrdimensionaler KPI
@@ -73,6 +77,9 @@ Der Registrierungsprozess umfasst drei grundlegende Schritte:
 - SQL Server Reporting Services-Bericht
 - Azure Storage-Blob
 - Azure-Speicherverzeichnis
+- HDFS-Datei
+- HDFS-Verzeichnis
+- Hive-Tabelle
 
 Zusätzliche Datenquellen und Assettypen werden während der **Azure Data Catalog**-Preview-Phase hinzugefügt.
 
@@ -86,7 +93,7 @@ Nachdem die Registrierung abgeschlossen ist, können die Datenquellen ermittelt 
 -	Die registrierten Datenquellen sind nach ihrer Ermittlung leichter verständlich. Die von Benutzern bereitgestellten Metadaten werden allen **Azure Data Catalog**-Benutzern angezeigt, die die mit Anmerkungen versehene Datenquelle aufrufen, damit zusätzlicher Kontext und zusätzliche Informationen vorhanden sind. Die meisten Datenquellen enthalten häufig keine aussagekräftigen Beschreibungen oder Dokumentation, und wenn dies doch einmal der Fall ist, liegt der Schwerpunkt häufig auf technischen DBA-Angaben oder Informationen für Datenbankentwickler. Indem Datenquellen in **Azure Data Catalog** mit Beschreibungen und Tags versehen werden, die für die Zielgruppen relevant sind, können Benutzer mit dazu beitragen, dass bei der Ermittlung die Details und die beabsichtigte Nutzung verstanden werden.
 -  Jede registrierte Datenquelle kann Informationen zur Zugriffsanforderung einschließen, sodass Benutzer vorhandene Prozesse einfach verstehen und ausführen können, um Zugriff auf die Datenquelle und ihre Daten anzufordern.
 
-> [AZURE.NOTE]Jeder **Azure Data Catalog**-Benutzer kann eigene Tags und Beschreibungen für Datenassets und Attribute hinzufügen. **Azure Data Catalog** verfolgt den Nutzen und die Quelle jeder Anmerkung und zeigt den Benutzer und das Datum an, an dem die Anmerkung hinzugefügt wurde. Mit diesem Crowdsourcing-Ansatz für Metadaten wird sichergestellt, dass jeder Benutzer mit Bezug zu den Daten und ihrer Nutzung Meinungen und Ressourcen mit der gesamten Community teilen kann.
+> [AZURE.NOTE]Jeder **Azure Data Catalog**-Benutzer kann eigene Tags und Beschreibungen für Datenassets und Attribute hinzufügen. **Azure Data Catalog** verfolgt den Nutzen und die Quelle jeder Anmerkung und zeigt den Benutzer, der die Anmerkung hinzugefügt hat. Mit diesem Crowdsourcing-Ansatz für Metadaten wird sichergestellt, dass jeder Benutzer mit Bezug zu den Daten und ihrer Nutzung Meinungen und Ressourcen mit der gesamten Community teilen kann.
 
 ## Untersuchen, Ermitteln und Verstehen
 
@@ -122,4 +129,4 @@ Das ultimative Ziel der Datenermittlung besteht darin, die erforderlichen Daten 
 
 > [AZURE.NOTE]Für die Vorschauversion von Azure Data Catalog werden nur Microsoft Excel und der SQL Server Reporting Services-Berichts-Manager direkt unterstützt. Beide Optionen sind im Menü **Öffnen in** verfügbar.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

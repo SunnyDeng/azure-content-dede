@@ -18,9 +18,13 @@
 
 # Was ist Azure IoT Hub?
 
-Willkommen bei Azure IoT Hub. In diesem Artikel erhalten Sie eine Übersicht über Azure IoT Hub. Es wird beschrieben, warum die Verwendung dieses Diensts hilfreich sein kann, wenn Sie eine IoT-Lösung implementieren.
+Willkommen bei Azure IoT Hub. In diesem Artikel erhalten Sie eine Übersicht über Azure IoT Hub. Es wird beschrieben, warum die Verwendung dieses Diensts empfehlenswert ist, wenn Sie eine IoT-Lösung implementieren.
 
-Azure IoT Hub ist ein vollständig verwalteter Dienst, der eine zuverlässige und sichere bidirektionale Kommunikation zwischen Millionen von IoT-Geräten und einem Lösungs-Back-End ermöglicht. Azure IoT Hub bietet zuverlässiges D2C- und C2D-Messaging für jeden Umfang, ermöglicht die sichere Kommunikation durch gerätespezifische Sicherheitsanmeldeinformationen und Zugriffssteuerung und umfasst Gerätebibliotheken für die am häufigsten verwendeten Sprachen und Plattformen.
+Azure IoT Hub ist ein vollständig verwalteter Dienst, der eine zuverlässige und sichere bidirektionale Kommunikation zwischen Millionen von IoT-Geräten und einem Lösungs-Back-End ermöglicht. Azure IoT Hub:
+
+- Ermöglicht ein zuverlässiges Messaging zwischen Geräten und Cloud im großen Maßstab
+- Erlaubt eine sichere Kommunikation unter Verwendung von Zugriffssteuerung und Sicherheitsanmeldeinformationen auf Gerätebasis
+- Bietet Gerätebibliotheken für die gängigsten Sprachen und Plattformen
 
 ![IoT Hub als Cloudgateway?][img-architecture]
 
@@ -42,7 +46,7 @@ Zusätzlich zu den obigen Anforderungen muss jede IoT-Lösung auch Skalierbarkei
 
 Mit Azure IoT Hub werden die Verbindungsanforderungen für Geräte wie folgt erfüllt:
 
--   **Authentifizierung pro Gerät und sichere Verbindung:** Sie können jedes Gerät mit seinem eigenen Sicherheitsschlüssel bereitstellen, damit es eine Verbindung mit IoT Hub herstellen kann. Das Back-End einer Lösung kann einzelne Geräte einer Positiv- oder Negativliste hinzufügen und die vollständige Kontrolle über den Gerätezugriff erlangen.
+-   **Authentifizierung pro Gerät und sichere Verbindung:** Sie können jedes Gerät mit seinem eigenen Sicherheitsschlüssel bereitstellen, damit es eine Verbindung mit IoT Hub herstellen kann. Die [IoT Hub-Identitätsregistrierung][lnk-devguide-identityregistry] speichert Geräteidentitäten und Schlüssel in einer Lösung. Das Back-End einer Lösung kann einzelne Geräte einer Positiv- oder Negativliste hinzufügen und die vollständige Kontrolle über den Gerätezugriff erlangen.
 
 -   **Umfassender Satz von Gerätebibliotheken:** Azure IoT-Geräte-SDKs sind für die unterschiedlichsten Sprachen und Plattformen verfügbar und werden dafür unterstützt: C für viele Linux-Distributionen, Windows und RTOS. Azure IoT-Geräte-SDKs unterstützen auch verwaltete Sprachen wie C#, Java und JavaScript.
 
@@ -58,6 +62,16 @@ Diese Vorteile gelten für viele Kommunikationsmuster. Mit IoT Hub haben Sie der
 
 Sie können auch andere gängige Muster implementieren, z. B. Dateiupload und -download, indem Sie die speziellen IoT-Features in IoT Hub nutzen. Beispiele hierfür sind die einheitliche Identitätsverwaltung für Geräte, Verbindungsüberwachung und Skalierung.
 
+Im Artikel zum [Vergleich von IoT Hub und Event Hubs][lnk-compare] werden die wesentlichen Unterschiede zwischen diesen beiden Diensten beschrieben. Besonderer Fokus liegt dabei auf den Vorteilen der Verwendung von IoT-Hub in IoT-Lösungn .
+
+## Gateways
+
+Ein Gateway in einer IoT-Lösung ist i. d. R. entweder ein in der Cloud bereitgestelltes [Protokollgateway][lnk-gateway] oder ein [Bereichsgateway][lnk-field-gateway], das lokal mit Ihren Geräten bereitgestellt wird. Ein Protokollgateway führt die Protokollübersetzung, z. B. von MQTT in AMQP, durch. Ein Bereichsgateway bietet lokale Verwaltungsdienste für Ihre Geräte. Es kann ein spezielles Gerät oder eine Software sein, die auf einer vorhandenen Hardware ausgeführt wird. Beide Gatewaytypen fungieren als Vermittler zwischen Ihren Geräten und IoT Hub.
+
+Ein Bereichsgateway unterscheidet sich von einem einfachen Gerät für das Routing von Datenverkehr (z. B. einem NAT-Gerät oder einer Firewall), da es üblicherweise eine aktive Rolle bei der Verwaltung des Zugriffs und des Informationsflusses in der Lösung hat.
+
+Eine Lösung kann sowohl Protokoll- als auch Bereichsgateways enthalten.
+
 ## Funktionsweise von IoT Hub
 
 Azure IoT Hub implementiert das Muster für die [dienstgestützte Kommunikation][lnk-service-assisted-pattern], um die Interaktionen zwischen Ihren Geräten und dem Back-End der Lösung zu vermitteln. Das Ziel der dienstgestützten Kommunikation ist die Einrichtung von vertrauenswürdigen, bidirektionalen Kommunikationspfaden zwischen Steuersystemen, z. B. IoT Hub, und speziellen Geräten, die im nicht vertrauenswürdigen physischen Raum bereitgestellt werden. Für das Muster gelten die folgenden Grundsätze:
@@ -70,22 +84,29 @@ Azure IoT Hub implementiert das Muster für die [dienstgestützte Kommunikation]
 - Die bidirektionale Kommunikation für Geräte, die aufgrund von Stromversorgungs- oder Verbindungsaspekten nur selten eine Verbindung herstellen, wird erreicht, indem Befehle und Gerätebenachrichtigungen beibehalten werden, bis ein Gerät eine Verbindung herstellt und diese Informationen empfängt. IoT Hub verfügt über spezielle Gerätewarteschlangen für die gesendeten Befehle.
 - Die Nutzlastdaten der Anwendung werden für die geschützte Übertragung über Gateways an einen bestimmten Dienst separat geschützt.
 
-Das dienstgestützte Kommunikationsmuster wurde in großem Umfang erfolgreich in der Mobilgerätebranche eingesetzt, um Pushbenachrichtigungsdienste wie [Windows-Pushbenachrichtigungsdienst](https://msdn.microsoft.com/library/windows/apps/mt187203.aspx), [Google Cloud Messaging](https://developers.google.com/cloud-messaging/) und [Apple Push Notification Service](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW9) zu implementieren.
+Das dienstgestützte Kommunikationsmuster wurde in großem Umfang erfolgreich in der Mobilgerätebranche eingesetzt, um Pushbenachrichtigungsdienste wie [Windows-Pushbenachrichtigungsdienst (WNS)][lnk-wns], [Google Cloud Messaging][lnk-google-messaging] und [Apple Push Notification Service][lnk-apple-push] zu implementieren.
 
 ## Nächste Schritte
 
 Weitere Informationen zu Azure IoT Hub finden Sie unter den folgenden Links:
 
-* [Erste Schritte mit IoT Hub]
-* [Verbinden Ihres Geräts]
-* [Verarbeiten von Gerät-zu-Cloud-Nachrichten]
+* [Erste Schritte mit IoT Hub][lnk-get-started]
+* [Verbinden Ihres Geräts][lnk-connect-device]
+* [Verarbeiten von Gerät-zu-Cloud-Nachrichten][lnk-d2c]
 
-[Erste Schritte mit IoT Hub]: iot-hub-csharp-csharp-getstarted.md
-[Verbinden Ihres Geräts]: https://azure.microsoft.com/develop/iot/
-[Verarbeiten von Gerät-zu-Cloud-Nachrichten]: iot-hub-csharp-csharp-process-d2c.md
-[protocol-gateway]: https://github.com/Azure/azure-iot-protocol-gateway/blob/master/README.md
 [img-architecture]: media/iot-hub-what-is-iot-hub/hubarchitecture.png
 
+[lnk-get-started]: iot-hub-csharp-csharp-getstarted.md
+[lnk-connect-device]: https://azure.microsoft.com/develop/iot/
+[lnk-d2c]: iot-hub-csharp-csharp-process-d2c.md
+[protocol-gateway]: https://github.com/Azure/azure-iot-protocol-gateway/blob/master/README.md
 [lnk-service-assisted-pattern]: http://blogs.msdn.com/b/clemensv/archive/2014/02/10/service-assisted-communication-for-connected-devices.aspx "Dienstgestützte Kommunikation, Blogbeitrag von Clemens Vasters"
+[lnk-compare]: iot-hub-compare-event-hubs.md
+[lnk-gateway]: iot-hub-protocol-gateway.md
+[lnk-field-gateway]: iot-hub-guidance.md#field-gateways
+[lnk-devguide-identityregistry]: iot-hub-devguide.md#identityregistry
+[lnk-wns]: https://msdn.microsoft.com/library/windows/apps/mt187203.aspx
+[lnk-google-messaging]: https://developers.google.com/cloud-messaging/
+[lnk-apple-push]: https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW9
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

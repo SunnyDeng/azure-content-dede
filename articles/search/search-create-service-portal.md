@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Erstellen eines Azure Search-Diensts im Portal | Microsoft Azure | Gehosteter Cloudsuchdienst"
-	description="Fügen Sie Azure Search (Free oder Standard) über das Azure-Portal einem vorhandenen Abonnement hinzu. Azure Search ist ein in der Cloud gehosteter Suchdienst für benutzerdefinierte Apps."
+	description="Fügen Sie Azure Search (Free oder Standard) über das klassische Azure-Portal einem vorhandenen Abonnement hinzu. Azure Search ist ein in der Cloud gehosteter Suchdienst für benutzerdefinierte Apps."
 	services="search"
 	documentationCenter=""
 	authors="HeidiSteen"
@@ -17,15 +17,15 @@
 	ms.date="11/04/2015"
 	ms.author="heidist"/>
 
-# Erstellen eines Azure Search-Diensts im Azure-Portal
+# Erstellen eines Azure Search-Diensts im klassischen Azure-Portal
 
-Microsoft Azure Search ist ein gehosteter Cloudsuchdienst, mit dem Sie Suchfunktionen in benutzerdefinierte Anwendungen einbetten können. Er stellt eine Suchmaschine und Speicherplatz für Ihre Suchdaten zur Verfügung. Zugriff und Verwaltung können über das Azure-Portal, über ein .NET-SDK oder über eine REST-API erfolgen. Zu den zentralen Features zählen Abfragen mit automatischer Vervollständigung, Fuzzyübereinstimmung, Trefferhervorhebung, Facettennavigation, Bewertungsprofile und Unterstützung mehrerer Sprachen. Weitere Informationen zu den Funktionen von Azure Search finden unter [Was ist Azure Search](seach-what-is-search.md).
+Microsoft Azure Search ist ein gehosteter Cloudsuchdienst, mit dem Sie Suchfunktionen in benutzerdefinierte Anwendungen einbetten können. Er stellt eine Suchmaschine und Speicherplatz für Ihre Suchdaten zur Verfügung. Zugriff und Verwaltung können über das klassische Azure-Portal, ein .NET SDK oder eine REST-API erfolgen. Zu den zentralen Features zählen Abfragen mit automatischer Vervollständigung, Fuzzyübereinstimmung, Trefferhervorhebung, Facettennavigation, Bewertungsprofile und Unterstützung mehrerer Sprachen. Weitere Informationen zu den Funktionen von Azure Search finden unter [Was ist Azure Search?](search-what-is-azure-search.md).
 
 ## Kostenloses Hinzufügen von Azure Search zu Ihrem Abonnement
 
-Bei Verwendung der Shared-Option können Administratoren Azure Search kostenlos zu einem vorhandenen Azure-Abonnement hinzufügen. Bei Verwendung fest zugeordneter Ressourcen gilt der Standardtarif.
+Bei Verwendung der Option „Shared“ können Administratoren Azure Search einem vorhandenen Azure-Abonnement kostenlos hinzufügen. Bei Verwendung fest zugeordneter Ressourcen gilt der Standardtarif.
 
-1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
+1. Melden Sie sich am [klassischen Azure-Portal](https://portal.azure.com) an.
 
 2. Navigieren Sie über die seitliche Navigationsleiste zu **Neu** > **Daten + Speicher** > **Search**.
 
@@ -35,9 +35,9 @@ Bei Verwendung der Shared-Option können Administratoren Azure Search kostenlos 
 
      ![][2]
 
-	- Der **Dienstname** muss eindeutig sein und aus weniger als 15 Kleinbuchstaben ohne Leerzeichen bestehen. Dieser Name wird Bestandteil des Endpunkts Ihres Azure Search-Diensts. Weitere Informationen zu den Benennungskonventionen finden Sie unter [Benennungsregeln](https://msdn.microsoft.com/library/azure/dn857353.aspx).
+	- Der **Dienstname** muss eindeutig sein und aus weniger als 15 Kleinbuchstaben ohne Leerzeichen bestehen. Dieser Name wird Bestandteil des Endpunkts Ihres Azure Search-Diensts. Weitere Informationen zu den Benennungsregeln finden Sie unter [Benennungskonventionen](https://msdn.microsoft.com/library/azure/dn857353.aspx).
 
-	- Der **Tarif** bestimmt die Kapazität und die Abrechnung. Beide Tarife bieten die gleichen Features, aber mit unterschiedlichen Ressourcen.
+	- Der **Tarif** bestimmt Kapazität und Abrechnung. Beide Tarife bieten die gleichen Features, aber mit unterschiedlichen Ressourcen.
 
 		- **Free** wird auf Clustern ausgeführt, die gemeinsam mit anderen Abonnenten genutzt werden. Diese Version bietet genügend Kapazität für Tutorials sowie zum Schreiben von Code für Machbarkeitsstudien, eignet sich jedoch nicht für den Einsatz in Produktionsumgebungen. Die Bereitstellung eines kostenlosen Diensts dauert in der Regel nur wenige Minuten.
 		- **Standard** wird auf fest zugeordneten Ressourcen ausgeführt und ist flexibel skalierbar. Ein Standarddienst wird zunächst mit einem Replikat und einer Partition bereitgestellt, die Kapazität kann nach der Diensterstellung jedoch angepasst werden. Die Bereitstellung eines Standarddiensts dauert länger (üblicherweise etwa 15 Minuten).
@@ -55,7 +55,7 @@ Achten Sie auf Benachrichtigungen in der Navigationsleiste. Wenn der Dienst verw
 <a id="sub-3"></a>
 ## Hinzufügen eines Suchdiensts im Tarif „Standard“, um fest zugeordnete Ressourcen zu erhalten
 
-Viele Kunden beginnen mit dem kostenlosen Dienst und wechseln dann zum Tarif „Standard“, um größere Workloads zu bewältigen. Mit dem Tarif „Standard“ erhalten Sie fest zugeordnete Ressourcen in einem Azure-Rechenzentrum, die ausschließlich von Ihnen genutzt werden können.
+Viele Kunden beginnen mit dem kostenlosen Dienst und wechseln dann zum Tarif „Standard“, um größere Workloads zu bewältigen. Mit dem Tarif „Standard“ erhalten Sie fest zugeordnete Ressourcen in einem Azure-Datencenter, die ausschließlich von Ihnen genutzt werden können.
 
 Für Azure Search-Vorgänge benötigen Sie sowohl Speicher als auch Dienstreplikate. Im Gegensatz zum kostenlosen Dienst, der über keine Option zum Hinzufügen von Ressourcen verfügt, können Sie mit dem Tarif „Standard“ eine Skalierung durchführen, um mehr Speicher- oder Abfrageunterstützung hinzufügen, sodass Sie die für Ihr Szenario wichtigere Ressource stärken können.
 
@@ -73,12 +73,12 @@ Ein Azure Search-Dienst auf der Standard-Ebene wird mit je einem Replikat und ei
 
 Zusätzliche Replikate und Partitionen werden in Sucheinheiten abgerechnet. Die insgesamt benötigten Sucheinheiten zum Unterstützen einer bestimmten Ressourcenkonfiguration werden auf der Seite angezeigt, während Sie Ressourcen hinzufügen.
 
-Unter [Preisdetails](http://go.microsoft.com/fwlink/p/?LinkID=509792) finden Sie Abrechnungsinformationen pro Einheit. Eine Entscheidungshilfe für die Konfiguration von Partitions- und Replikatkombinationen finden Sie unter [Grenzen und Einschränkungen](search-limits-quotas-capacity.md).
+Unter [Preisdetails](http://go.microsoft.com/fwlink/p/?LinkID=509792) finden Sie Abrechnungsinformationen pro Einheit. Eine Entscheidungshilfe für die Konfiguration von Partitions- und Replikatkombinationen finden Sie unter [Limits und Einschränkungen](search-limits-quotas-capacity.md).
 
 <a id="sub-2"></a>
 ## Ermitteln des Dienstnamens und der API-Schlüssel Ihres Azure Search-Diensts
 
-Nach der Diensterstellung können Sie zum Azure-Portal zurückkehren, um die URL oder den API-Schlüssel (`api-key`) zu ermitteln. Für Verbindungen mit Ihrem Azure Search-Dienst benötigen Sie sowohl die URL als auch einen API-Schlüssel (`api-key`), um den Aufruf zu authentifizieren.
+Nach der Diensterstellung können Sie zum klassischen Azure-Portal zurückkehren, um die URL oder den API-Schlüssel (`api-key`) zu ermitteln. Für Verbindungen mit Ihrem Azure Search-Dienst benötigen Sie sowohl die URL als auch einen API-Schlüssel (`api-key`), um den Aufruf zu authentifizieren.
 
 1. Klicken Sie auf der Navigationsleiste auf **Startseite** und anschließend auf den Azure Search-Dienst, um das Service-Dashboard zu öffnen.
 
@@ -123,4 +123,4 @@ Unter den folgenden Links finden Sie weitere Informationen zur Erstellung und Ve
 [2]: ./media/search-create-service-portal/create-search-portal-2.PNG
 [3]: ./media/search-create-service-portal/create-search-portal-3.PNG
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

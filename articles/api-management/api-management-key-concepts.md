@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/05/2015" 
+	ms.date="12/07/2015" 
 	ms.author="sdanie"/>
 
 #Was ist API Management?
@@ -88,7 +88,7 @@ Eine vollständige Liste der Richtlinien für API Management finden Sie unter [G
 
 ## <a name="developer-portal"> </a> Entwicklerportal
 
-Im Entwicklerportal können Entwickler auf Ihre APIs zugreifen, Operationen anzeigen und aufrufen und Produkte abonnieren. Potenzielle Kunden können das Entwicklerportal besuchen, APIs und Operationen anzeigen und sich anmelden. Sie finden die URL Ihres Entwicklerportals im Dashboard des Azure-Portals für Ihre API Management-Dienstinstanz.
+Im Entwicklerportal können Entwickler auf Ihre APIs zugreifen, Operationen anzeigen und aufrufen und Produkte abonnieren. Potenzielle Kunden können das Entwicklerportal besuchen, APIs und Operationen anzeigen und sich anmelden. Sie finden die URL Ihres Entwicklerportals im Dashboard des klassischen Azure-Portals für Ihre API Management-Dienstinstanz.
 
 Sie können das Erscheinungsbild Ihres Entwicklerportals konfigurieren, indem Sie eigene Inhalte hinzufügen, Stilregeln anpassen und Ihr Markenbild einfügen.
 
@@ -114,4 +114,4 @@ Sie können das Erscheinungsbild Ihres Entwicklerportals konfigurieren, indem Si
 
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

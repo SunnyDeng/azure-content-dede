@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/07/2015" 
+	ms.date="12/05/2015" 
 	ms.author="juliako"/>
 
 #Arbeiten mit Azure Media Services-Aufträgen
@@ -33,7 +33,7 @@ Rufen Sie mithilfe von **.NET** oder **REST API** einen Medienprozessor ab.
 
 [AZURE.INCLUDE [media-services-selector-get-media-processor](../../includes/media-services-selector-get-media-processor.md)]
 
-##Erstellen von Aufträgen 
+##Erstellen von Aufträgen
 
 Ein Auftrag ist eine Entität, die Metadaten zu einer Reihe von Aufgaben enthält (z. B. Codierung oder Indizierung). Jede Aufgabe führt einen unteilbaren Vorgang für das (oder die) Eingangsmedienobjekt(e) durch. Ein Beispiel zum Erstellen von Codierungsaufträgen finden Sie hier:
 
@@ -43,22 +43,34 @@ Ein Auftrag ist eine Entität, die Metadaten zu einer Reihe von Aufgaben enthäl
 
 [AZURE.INCLUDE [media-services-selector-index-content](../../includes/media-services-selector-index-content.md)]
 
-##Codieren 
+##Codieren
 
-Führen Sie die Codierung mit **Azure Media Encoder** mithilfe des **Azure-Verwaltungsportals**, mithilfe von **.NET**, oder **REST-API** aus.
- 
+Führen Sie die Codierung mit **Azure Media Encoder** mithilfe des klassischen **Azure-Portals**, mithilfe von **.NET**, oder **REST-API** aus.
+
 [AZURE.INCLUDE [media-services-selector-encode](../../includes/media-services-selector-encode.md)]
 
 ##Überwachen des Auftragsfortschritts
 
-Überwachen Sie den Auftragsfortschritt mit dem **Azure-Verwaltungsportal**, **.NET** oder der **REST-API**.
+Überwachen Sie den Auftragsfortschritt mit dem klassischen **Azure-Portal**, **.NET** oder der **REST-API**.
 
 [AZURE.INCLUDE [media-services-selector-job-progress](../../includes/media-services-selector-job-progress.md)]
+
+##Auflisten 
+
+> [AZURE.SELECTOR]
+- [.NET](media-services-dotnet-manage-entities.md/#list-jobs-and-assets)
+- [REST](media-services-rest-manage-entities.md/#querying-entities)
+
+##Löschen von Aufträgen
+
+> [AZURE.SELECTOR]
+- [.NET](media-services-dotnet-manage-entities.md/#delete-a-job)
+- [REST](media-services-rest-manage-entities.md/##deleting-entities)
 
 ##Verwandte Links
 
 [Kontingente und Einschränkungen](media-services-quotas-and-limitations.md): Beschreibt verwendete Kontingente und Einschränkungen für den Media Services Encoder
- 
+
 
 ##Media Services-Lernpfade
 
@@ -68,4 +80,4 @@ Führen Sie die Codierung mit **Azure Media Encoder** mithilfe des **Azure-Verwa
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

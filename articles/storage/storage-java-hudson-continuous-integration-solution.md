@@ -86,11 +86,11 @@ Um den Blob-Dienst mit Hudson verwenden zu können, müssen Sie das Azure-Speich
 2. Klicken Sie auf der Seite **Hudson verwalten** auf **System konfigurieren**.
 3. Führen Sie im Bereich **Microsoft Azure Storage Account Configuration** folgende Schritte aus:
 
-    a. Geben Sie Ihren Speicherkontonamen ein, den Sie aus dem [Azure-Portal](https://manage.windowsazure.com) abrufen können.
+    a. Geben Sie Ihren Speicherkontonamen ein, den Sie aus dem [Azure-Portal](portal.azure.com) abrufen können.
 
-    b. Geben Sie Ihren Speicherkontoschlüssel ein, der ebenfalls über das Azure-Portal erhältlich ist.
+    b. Geben Sie Ihren Speicherkontoschlüssel ein, der ebenfalls über das [Azure-Portal](portal.azure.com) abrufbar ist.
 
-    c. Verwenden Sie den Standardwert für **Blob Service Endpoint URL**, wenn Sie die öffentliche Azure-Cloud verwenden. Wenn Sie mit einer anderen Azure-Cloud arbeiten, verwenden Sie das Endgerät, das im Azure-Portal für Ihr Speicherkonto angegeben ist.
+    c. Verwenden Sie den Standardwert für **Blob Service Endpoint URL**, wenn Sie die öffentliche Azure-Cloud verwenden. Wenn Sie mit einer anderen Azure-Cloud arbeiten, verwenden Sie den Endpunkt, der im [Azure-Portal](portal.azure.com) für Ihr Speicherkonto angegeben ist.
 
     d. Klicken Sie auf **Validate storage credentials**, um Ihr Speicherkonto zu validieren.
 
@@ -129,7 +129,7 @@ Für das Lernprogramm müssen wir zunächst einen Auftrag erstellen, der mehrere
 13. Klicken Sie im Jenkins-Dashboard auf **Build Now**, um **MyJob** auszuführen. Prüfen Sie den Status in der Ausgabe der Konsole. Statusmeldungen für Azure Storage werden in die Ausgabe der Konsole aufgenommen, wenn die Postbuildaktion mit dem Hochladen von Buildartefakten beginnt.
 14. Nach erfolgreichem Abschluss des Auftrags können Sie die Buildartefakte überprüfen, indem Sie den öffentlichen Blob öffnen.
 
-    a. Melden Sie sich beim [Azure-Portal](https://manage.windowsazure.com) an.
+    a. Melden Sie sich beim [Azure-Portal](portal.azure.com) an.
 
     b. Klicken Sie auf **Storage**.
 
@@ -166,7 +166,7 @@ Im Folgenden erhalten Sie einen Überblick über die Komponenten des Blob-Dienst
 
     `http://storageaccount.blob.core.windows.net/container_name/blob_name`
 
-    (Das Format oben gilt für die öffentliche Azure-Cloud. Wenn Sie mit einer anderen Azure-Cloud arbeiten, verwenden Sie das Endgerät im Azure-Portal, um Ihr URL-Endgerät zu ermitteln.)
+    (Das Format oben gilt für die öffentliche Azure-Cloud. Wenn Sie mit einer anderen Azure-Cloud arbeiten, verwenden Sie den Endpunkt im [Azure-Portal](portal.azure.com), um Ihren URL-Endpunkt zu bestimmen.)
 
     Bei obigem Format steht `storageaccount` für den Namen Ihres Speicherkontos, `container_name` für den Namen des Containers und `blob_name` für den Namen des Blobs. Der Containername kann mehrere Pfade umfassen, die durch einen Schrägstrich (**/**) getrennt sind. Der Beispielcontainername in diesem Lernprogramm war **MyJob**, und **${BUILD\_ID}/${BUILD\_NUMBER}** wurde für den gemeinsamen virtuellen Pfad verwendet. Der Blob hat also eine URL in folgendem Format:
 
@@ -177,4 +177,4 @@ Im Folgenden erhalten Sie einen Überblick über die Komponenten des Blob-Dienst
   [Erstellen eines Speicherkontos]: http://go.microsoft.com/fwlink/?LinkId=279823
   [Meet Hudson]: http://wiki.eclipse.org/Hudson-ci/Meet_Hudson
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

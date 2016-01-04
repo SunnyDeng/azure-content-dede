@@ -18,6 +18,8 @@
 
 # Bereitstellen und Konfigurieren einer SaaS-Connector-API-App in Azure App Service
 
+[AZURE.INCLUDE [app-service-api-v2-note](../../includes/app-service-api-v2-note.md)]
+
 ## Übersicht
 
 In diesem Lernprogramm wird gezeigt, wie Sie einen [SaaS-Connector (Software-as-a-Service)](../app-service-logic-what-are-bizTalk-api-apps.md) in [Azure App Service](/documentation/services/app-service/) installieren, konfigurieren und testen, um ihn programmgesteuert aufzurufen, beispielsweise aus einer mobilen App. Ein SaaS-Connector ist eine [API-App](app-service-api-apps-why-best-platform.md), welche die Interaktion mit einer SaaS-Plattform wie z. B. Office 365, Salesforce, Facebook und Dropbox vereinfacht wird. Wenn Sie anstatt einen vorgefertigten Connector zu verwenden, eine benutzerdefinierte .NET API-App erstellen möchten, lesen Sie [Verbinden mit einer SaaS-Plattform über eine ASP.NET-API-App](app-service-api-dotnet-connect-to-saas.md).
@@ -237,4 +239,4 @@ Sie haben erfahren Sie wie einen SaaS-Connector installieren, konfigurieren und 
 [Azure-Portal]: https://manage.windowsazure.com/
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

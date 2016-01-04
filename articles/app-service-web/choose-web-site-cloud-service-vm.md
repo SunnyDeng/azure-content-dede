@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article" 
-	ms.date="08/10/2015"
+	ms.date="11/19/2015"
 	ms.author="tdykstra"/>
 
 # Azure App Service, Cloud Services und Virtual Machines im Vergleich
@@ -50,7 +50,7 @@ Im Folgenden sind einige Anwendungsszenarien mit Empfehlungen zur Auswahl der ge
 
 ### <a id="onprem"></a> Ich benötige ein Web-Front-End mit Hintergrundverarbeitung und Datenbank-Back-End, um Geschäftsanwendungen mit integrierten lokalen Medienobjekten auszuführen.
 
-Azure App Service stellt eine hervorragende Lösung für komplexe Geschäftsanwendungen dar. Mit Azure App Service können Sie Apps entwickeln, die automatisch auf einer Lastenausgleichsplattform skaliert, mit Active Directory geschützt und mit Ihren lokalen Ressourcen verbunden werden können. Das Verwalten dieser Apps wird dank eines erstklassigen Verwaltungsportals und mithilfe von APIs erleichtert. Sie erhalten außerdem mithilfe von App Insight-Tools Einblicke darin, wie Kunden die Apps verwenden. Mit der Funktion [WebJobs][] können Sie Hintergrundprozesse und Aufgaben als Teil der Webebene ausführen, während Hybridkonnektivität und die [VNET-Funktionen](../fundamentals-introduction-to-azure.md#networking/) die Verbindung zurück zu den lokalen Ressourcen ermöglichen. Azure App Service bietet eine SLA mit 99,9 % Verfügbarkeit für Web-Apps und stellt folgende Möglichkeiten bereit:
+Azure App Service stellt eine hervorragende Lösung für komplexe Geschäftsanwendungen dar. Mit Azure App Service können Sie Apps entwickeln, die automatisch auf einer Lastenausgleichsplattform skaliert, mit Active Directory geschützt und mit Ihren lokalen Ressourcen verbunden werden können. Das Verwalten dieser Apps wird dank eines erstklassigen Pportals und mithilfe von APIs erleichtert. Sie erhalten außerdem mithilfe von App Insight-Tools Einblicke darin, wie Kunden die Apps verwenden. Mit der Funktion [WebJobs][] können Sie Hintergrundprozesse und Aufgaben als Teil der Webebene ausführen, während Hybridkonnektivität und die [VNET-Funktionen](../fundamentals-introduction-to-azure.md#networking/) die Verbindung zurück zu den lokalen Ressourcen ermöglichen. Azure App Service bietet eine SLA mit 99,9 % Verfügbarkeit für Web-Apps und stellt folgende Möglichkeiten bereit:
 
 * Zuverlässige Ausführung Ihrer Anwendungen auf einer Cloudplattform mit Selbstreparatur und automatischem Patching.
 * Automatische Skalierung in einem globalen Netzwerk von Datencentern.
@@ -71,7 +71,7 @@ Azure App Service stellt eine hervorragende Lösung für das Hosten von Unterneh
 
 ### <a id="iis6"></a> Ich verfüge über eine IIS6-Anwendung, die unter Windows Server 2003 ausgeführt wird.
 
-Mit Azure App Service lassen sich die mit dem Migrieren von älteren IIS6-Anwendungen verbundenen Infrastrukturkosten ganz einfach vermeiden. Microsoft hat [einfach zu verwendende Migrationstools und eine detaillierte Migrationsanleitung](https://www.movemetowebsites.net/) erstellt, mit deren Hilfe Sie die Kompatibilität überprüfen und etwaige vorzunehmende Änderungen identifizieren können. Die Integration in Visual Studio, TFS oder allgemeine CMS-Tools erleichtert die Bereitstellung von IIS6-Anwendungen direkt in der Cloud. Sobald eine Bereitstellung erfolgt ist, stellt das Azure-Verwaltungsportal stabile Verwaltungstools zur Verfügung. Mit diesen können Sie eine Skalierung nach unten oder oben vornehmen, um je nach Bedarf Kosten zu verwalten oder Anforderungen zu erfüllen. Mit dem Migrationstool können Sie folgende Aktionen vornehmen:
+Mit Azure App Service lassen sich die mit dem Migrieren von älteren IIS6-Anwendungen verbundenen Infrastrukturkosten ganz einfach vermeiden. Microsoft hat [einfach zu verwendende Migrationstools und eine detaillierte Migrationsanleitung](https://www.movemetowebsites.net/) erstellt, mit deren Hilfe Sie die Kompatibilität überprüfen und etwaige vorzunehmende Änderungen identifizieren können. Die Integration in Visual Studio, TFS oder allgemeine CMS-Tools erleichtert die Bereitstellung von IIS6-Anwendungen direkt in der Cloud. Sobald eine Bereitstellung erfolgt ist, stellt das Azure-Portal stabile Verwaltungstools zur Verfügung. Mit diesen können Sie eine Skalierung nach unten oder oben vornehmen, um je nach Bedarf Kosten zu verwalten oder Anforderungen zu erfüllen. Mit dem Migrationstool können Sie folgende Aktionen vornehmen:
 
 * Schnelles und einfaches Migrieren der Windows Server 2003 Legacy-Webanwendungen zur Cloud.
 * Optionale lokale Konfiguration der angehängten SQL-Datenbank, um eine Hybridanwendung zu erstellen.
@@ -153,16 +153,16 @@ Bereitstellung von Code mit Web Deploy|X||X|Cloud Services unterstützt die Verw
 Unterstützung von WebMatrix|X||X|
 Zugriff auf Dienste wie Service Bus, Storage und SQL-Datenbank|X|X|X|
 Hosten der Web- oder Webdienstebene einer mehrschichtigen Architektur|X|X|X|
-Hosten der mittleren Ebene einer mehrschichtigen Architektur|X|X|X|App Service kann problemlos für das Hosten einer REST-API der mittleren Ebene genutzt werden, über die Funktion [WebJobs](http://go.microsoft.com/fwlink/?linkid=390226) können Hintergrundverarbeitungsaufträge gehostet werden. Sie können WebJobs auf einer dedizierten Website ausführen, um eine unabhängige Skalierbarkeit für die entsprechende Ebene zu erzielen. Die Vorschaufunktion [API-Apps](../app-service-api/app-service-api-apps-why-best-platform/) bietet sogar noch mehr Funktionen für das Hosten von REST-Diensten.
-Integrierte Unterstützung von MySQL-as-a-Service|X|X|X|Cloud Services kann in MySQL-as-a-Service über Angebote von ClearDB integriert werden, jedoch nicht als Bestandteil des Verwaltungsportal-Workflows.
+Hosten der mittleren Ebene einer mehrschichtigen Architektur|X|X|X|App Service kann problemlos für das Hosten einer REST-API der mittleren Ebene genutzt werden, über die Funktion [WebJobs](http://go.microsoft.com/fwlink/?linkid=390226) können Hintergrundverarbeitungsaufträge gehostet werden. Sie können WebJobs auf einer dedizierten Website ausführen, um eine unabhängige Skalierbarkeit für die entsprechende Ebene zu erzielen. Die Vorschaufunktion [API-Apps](../app-service-api/app-service-api-apps-why-best-platform.md) bietet sogar noch mehr Funktionen für das Hosten von REST-Diensten.
+Integrierte Unterstützung von MySQL-as-a-Service|X|X|X|Cloud Services können in MySQL-as-a-Service über Angebote von ClearDB integriert werden, jedoch nicht als Bestandteil des Azure-Portal-Workflows.
 Unterstützung von ASP.NET, klassischem ASP, Node.js, PHP, Python|X|X|X|
 Horizontale Skalierung auf mehrere Instanzen ohne erneute Bereitstellung|X|X|X|Bei virtuellen Computern ist eine horizontale Skalierung auf mehrere Instanzen möglich. Die Dienste, die auf diesen Computern ausgeführt werden, müssen jedoch so geschrieben werden, dass sie diese horizontale Skalierung unterstützen. Sie müssen einen Lastenausgleich konfigurieren, um Anforderungen über die Computer weiterzuleiten. Zudem müssen Sie eine Affinitätsgruppe erstellen, um gleichzeitigen Neustarts aller Instanzen aufgrund von Wartungs- oder Hardware-Fehlern vorzubeugen.
-SSL-Unterstützung|X|X|X|Für App Service-Web-Apps wird SSL für benutzerdefinierte Domänen nur in den Modi "Basic" und "Standard" unterstützt. Weitere Informationen zur Verwendung von SSL mit Web-Apps finden Sie unter [Konfigurieren eines SSL-Zertifikats für eine Azure-Website](../app-service-web/web-sites-configure-ssl-certificate/).
+SSL-Unterstützung|X|X|X|Für App Service-Web-Apps wird SSL für benutzerdefinierte Domänen nur in den Modi "Basic" und "Standard" unterstützt. Weitere Informationen zur Verwendung von SSL mit Web-Apps finden Sie unter [Konfigurieren eines SSL-Zertifikats für eine Azure-Website](../app-service-web/web-sites-configure-ssl-certificate.md).
 Visual Studio-Integration|X|X|X|
 Remotedebugging|X|X|X|
 Bereitstellung von Code mit TFS|X|X|X|
-Netzwerkisolierung mit [Azure Virtual Network](../services/virtual-network/)|X|X|X|Siehe auch [Virtual Network-Integration in Azure Websites](../blog/2014/09/15/azure-websites-virtual-network-integration/)
-Unterstützung für [Azure Traffic Manager](../services/traffic-manager/)|X|X|X|
+Netzwerkisolierung mit [Azure Virtual Network](/services/virtual-network/)|X|X|X|Siehe auch [Virtual Network-Integration in Azure Websites](/blog/2014/09/15/azure-websites-virtual-network-integration/)
+Unterstützung für [Azure Traffic Manager](/services/traffic-manager/)|X|X|X|
 Integrierte Endpunktüberwachung|X|X|X|
 Remotedesktopzugriff auf Server||X|X|
 Installieren einer beliebigen benutzerdefinierten MSI||X|X|
@@ -204,4 +204,4 @@ Informationen zum Einstieg in die gewählte(n) Optionen für Ihre Anwendungen fi
   [Storage]: http://www.windowsazure.com/documentation/services/storage/
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

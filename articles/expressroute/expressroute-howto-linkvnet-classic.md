@@ -16,13 +16,14 @@
    ms.date="11/02/2015"
    ms.author="cherylmc" />
 
-# Verknüpfen von VNets mit ExpressRoute-Verbindungen
+# Verknüpfen von virtuellen Netzwerken mit ExpressRoute-Verbindungen
 
 > [AZURE.SELECTOR]
 - [PowerShell - Classic](expressroute-howto-linkvnet-classic.md)
+- [PowerShell - Resource Manager] (expressroute-howto-linkvnet-arm.md)  
 - [Template - Azure Resource Manager](https://github.com/Azure/azure-quickstart-templates/tree/ecad62c231848ace2fbdc36cbe3dc04a96edd58c/301-expressroute-circuit-vnet-connection)
 
-In diesem Artikel erhalten Sie einen Überblick über das Verknüpfen von virtuellen Netzwerken (VNets) mit ExpressRoute-Verbindungen. Virtuelle Netzwerke können Teil desselben Abonnements sein oder zu einem anderen Abonnement gehören. Dieser Artikel gilt für virtuelle Netzwerke, für die das klassische Bereitstellungsmodell verwendet wird. Wenn Sie ein virtuelles Netzwerk verknüpfen möchten, das mit der Azure-Ressourcen-Manager-Bereitstellungsmethode bereitgestellt wurde, können Sie dazu eine Vorlage verwenden. Über die Registerkarte oben können Sie zur Vorlage navigieren.
+In diesem Artikel erhalten Sie eine Übersicht über das Verknüpfen von virtuellen Netzwerken (VNETs) mit ExpressRoute-Verbindungen. Virtuelle Netzwerke können Teil desselben Abonnements sein oder zu einem anderen Abonnement gehören. Dieser Artikel gilt für virtuelle Netzwerke, für die das klassische Bereitstellungsmodell verwendet wird. Wenn Sie ein virtuelles Netzwerk verknüpfen möchten, das mit der Azure-Ressourcen-Manager-Bereitstellungsmethode bereitgestellt wurde, können Sie dazu eine Vorlage verwenden. Über die Registerkarte oben können Sie zur Vorlage navigieren.
 
 [AZURE.INCLUDE [vpn-gateway-sm-rm](../../includes/vpn-gateway-sm-rm-include.md)]
 
@@ -31,7 +32,7 @@ In diesem Artikel erhalten Sie einen Überblick über das Verknüpfen von virtue
 - Sie benötigen die neueste Version der Azure PowerShell-Module. Sie können das neueste PowerShell-Modul aus dem PowerShell-Abschnitt der [Azure-Downloadseite](http://azure.microsoft.com/downloads) herunterladen. Befolgen Sie die Anleitung auf der Seite [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md). Sie erhalten dort eine Schritt-für-Schritt-Anleitung zum Konfigurieren des Computers für die Verwendung der Azure PowerShell-Module. 
 - Stellen Sie sicher, dass Sie vor Beginn der Konfiguration die Seiten [Voraussetzungen](expressroute-prerequisites.md), [Routinganforderungen](expressroute-routing.md) und [Workflows](expressroute-workflows.md) gelesen haben.
 - Sie benötigen eine aktive ExpressRoute-Verbindung. 
-	- Führen Sie die Schritte zum [Erstellen einer ExpressRoute-Verbindung](expressroute-howto-circuit-classic.md) aus, und lassen Sie die Verbindung vom Konnektivitätsanbieter aktivieren. 
+	- Führen Sie die Schritte zum [Erstellen einer ExpressRoute-Verbindung](expressroute-howto-circuit-classic.md) aus, und lassen Sie sie vom Konnektivitätsanbieter aktivieren. 
 	- Stellen Sie sicher, dass privates Azure-Peering für die Verbindung konfiguriert ist. Informationen zum Routing finden Sie unter [Konfigurieren des Routings](expressroute-howto-routing-classic.md). 
 	- Das private Azure-Peering muss konfiguriert sein, und das BGP-Peering zwischen Ihrem Netzwerk und Microsoft muss aktiv sein, damit End-to-End-Konnektivität bereitgestellt werden kann.
 
@@ -54,7 +55,7 @@ Eine ExpressRoute-Verbindung kann für mehrere Abonnements freigegeben werden. D
 
 ### Verwaltung
 
-Der *Verbindungsbesitzer* ist der Administrator/Co-Administrator des Abonnements, in dem die ExpressRoute-Verbindung erstellt wird. Der Verbindungsbesitzer kann Administratoren/Co-Administratoren anderer Abonnements (im Workflowdiagramm *Verbindungsbenutzer* genannt) für die Nutzung der dedizierten Verbindung in seinem Besitz autorisieren. Verbindungsbenutzer, die für die Nutzung der ExpressRoute-Verbindung einer Organisation autorisiert sind, können ein VNet in ihrem Abonnement mit der ExpressRoute-Verbindung verknüpfen, sobald sie autorisiert wurden.
+Der *Verbindungsbesitzer* ist der Administrator/Co-Administrator des Abonnements, in dem die ExpressRoute-Verbindung erstellt wird. Der Besitzer der Verbindung kann Administratoren/Co-Administratoren anderer Abonnements (im Workflowdiagramm *Verbindungsbenutzer* genannt) für die Nutzung der dedizierten Verbindung in seinem Besitz autorisieren. Verbindungsbenutzer, die für die Nutzung der ExpressRoute-Verbindung einer Organisation autorisiert sind, können ein VNet in ihrem Abonnement mit der ExpressRoute-Verbindung verknüpfen, sobald sie autorisiert wurden.
 
 Der Besitzer der Verbindung hat die Möglichkeit, Autorisierungen jederzeit zu ändern und aufzuheben. Das Aufheben einer Autorisierung führt dazu, dass alle Verknüpfungen aus dem Abonnement gelöscht werden, dessen Zugriff aufgehoben wurde.
 
@@ -149,4 +150,4 @@ Mit dem folgenden Cmdlet können Benutzer einer Verbindung eine Verknüpfungsaut
 
 Weitere Informationen über ExpressRoute finden Sie unter [ExpressRoute – FAQ](expressroute-faqs.md).
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1217_2015-->

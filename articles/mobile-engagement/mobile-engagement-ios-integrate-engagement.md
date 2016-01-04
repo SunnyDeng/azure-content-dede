@@ -32,7 +32,7 @@ Die folgenden Schritte sind ausreichend, um den Bericht von Protokollen zu aktiv
 
 ##Einbetten des Engagement-SDKs in Ihr iOS-Projekt
 
-Fügen Sie das Engagement-SDK zum iOS-Projekt hinzu. Klicken Sie in Xcode mit der rechten Maustaste auf das Projekt, und wählen Sie **„Add files to ...“** und anschließend den Ordner `EngagementSDK` aus.
+Laden Sie das iOS-SDK [hier](http://aka.ms/qk2rnj) herunter. Fügen Sie das Engagement-SDK zum iOS-Projekt hinzu. Klicken Sie in Xcode mit der rechten Maustaste auf das Projekt, und wählen Sie **„Add files to ...“** und anschließend den Ordner `EngagementSDK` aus.
 
 Engagement erfordert, dass zusätzliche Frameworks funktionieren: Öffnen Sie im Projektexplorer Ihren Projektbereich, und wählen Sie das richtige Ziel aus. Öffnen Sie dann die Registerkarte **„Build phases“**. Fügen Sie anschließend im Menü **„Link Binary With Libraries“** die folgenden Frameworks hinzu:
 
@@ -207,4 +207,4 @@ Das folgende Beispiel von `Settings.bundle` veranschaulicht die Implementierung:
 [startMonitoringSignificantLocationChanges]: http://developer.apple.com/library/IOs/#documentation/CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html#//apple_ref/occ/instm/CLLocationManager/startMonitoringSignificantLocationChanges
 [IDFA]: https://developer.apple.com/library/ios/documentation/AdSupport/Reference/ASIdentifierManager_Ref/ASIdentifierManager.html#//apple_ref/occ/instp/ASIdentifierManager/advertisingIdentifier
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/06/2015" 
+	ms.date="11/11/2015" 
 	ms.author="awills"/>
 
 # Application Insights-Exportdatenmodell
@@ -314,7 +314,7 @@ Es gibt mehrere [Beispiele](app-insights-export-telemetry.md#code-samples), die 
 
     string context.application.version      Max: 100
 * 
-    Die Anwendungsversion der Clientanwendung. 
+    Die Anwendungsversion der Clientanwendung. Nicht verfügbar, wenn auf "Unbekannt" festgelegt. 
 
     *Beispiele*<br/> 2015.5.21.3<br/>NokiaMailBye\_CD\_20150227.4
 
@@ -374,39 +374,12 @@ Es gibt mehrere [Beispiele](app-insights-export-telemetry.md#code-samples), die 
 * 
     Die Bereitstellungs-ID des Servers. 
 
-**deviceId**
-
-    string context.device.id      Max: 100
-* 
-    Eine eindeutige Identität des Clients. Eine generierte ID, die lokal auf dem Gerät gespeichert werden muss. Sie darf keine personenbezogenen Daten, wie z. B. eine MAC-Adresse oder ähnliche unveränderliche ID, enthalten.   
-
-**deviceModel**
-
-    string context.device.devicemodel      Max: 100
-* 
-    Das Gerätemodell des mobilen Hardwareclients. 
-
-    *Beispiele*<br/> Sonstige<br/>iPad<br/>Nokia 503s
 
 **deviceName**
 
     string context.device.name      Max: 100
 * 
     Der Name des Geräts, auf dem die App ausgeführt wird. 
-
-**deviceType**
-
-    string context.device.type      Max: 100
-* 
-    Der Gerätetyp der Clienthardware. 
-
-    *Beispiele*<br/> PC<br/>Mobilgerät<br/>Tablet
-
-**language**
-
-    string context.device.language      Max: 100
-* 
-    Die Sprache der App auf dem Client. Falls nicht explizit im Telemetrieelement enthalten, wird sie durch die Verarbeitung des Benutzer-Agent-Felds bestimmt. 
 
 **locale**
 
@@ -422,17 +395,6 @@ Es gibt mehrere [Beispiele](app-insights-export-telemetry.md#code-samples), die 
 * 
     Der Computername des Servers. Für virtualisierte Computer entspricht dieses Datenelement dem zugrunde liegenden Host. Für physische Computer ist dies der Name des Computers. 
 
-**networkType**
-
-    string context.device.network      Max: 100
-* 
-    Der Netzwerktyp des Clients. 
-
-**oemName**
-
-    string context.device.oemname      Max: 100
-* 
-    Die OEM-Name des mobilen Hardwareclients. 
 
 **operatingSystem**
 
@@ -590,7 +552,8 @@ Es gibt mehrere [Beispiele](app-insights-export-telemetry.md#code-samples), die 
 
 **accountAcquisitionDate**
 
-    datetime context.user.accountAcquisitionDate      
+    datetime context.user.accountAcquisitionDate  
+    
 **anonUserId**
 
     string context.user.anonId      Max: 100
@@ -602,9 +565,11 @@ Es gibt mehrere [Beispiele](app-insights-export-telemetry.md#code-samples), die 
 **anonymousUserAcquisitionDate**
 
     datetime context.user.anonAcquisitionDate      
+
 **authenticatedUserAcquisitionDate**
 
-    datetime context.user.authAcquisitionDate      
+    datetime context.user.authAcquisitionDate     
+ 
 **authUserId**
 
     string context.user.authId      Max: 100
@@ -662,7 +627,7 @@ Es gibt mehrere [Beispiele](app-insights-export-telemetry.md#code-samples), die 
 * 
     Der Name der Remoteabhängigkeit. 
 
-    *Ableitung:* Standardisierung zu „&lt;telemetryType.name&gt;“
+    *Ableitung*: Standardisierung zu "&lt;telemetryType.name&gt;"
 
 **remoteDependencyType**
 
@@ -1024,4 +989,4 @@ Es gibt mehrere [Beispiele](app-insights-export-telemetry.md#code-samples), die 
 * [Fortlaufender Export](app-insights-export-telemetry.md)
 * [Codebeispiele](app-insights-export-telemetry.md#code-samples)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

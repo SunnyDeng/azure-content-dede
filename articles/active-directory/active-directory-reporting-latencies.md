@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Latenzzeiten von Azure Active Directory-Berichten | Microsoft Azure"
+   pageTitle="Wartezeiten von Azure Active Directory-Berichten | Microsoft Azure"
    description="Der erforderliche Zeitraum, bis Ereignisse in Ihrem Azure Active Directory-Bericht angezeigt werden."
    services="active-directory"
    documentationCenter=""
@@ -13,10 +13,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="11/09/2015"
+   ms.date="12/07/2015"
    ms.author="kenhoff"/>
 
-# Latenzzeiten von Azure Active Directory-Berichten
+# Wartezeiten von Azure Active Directory-Berichten
+
+*Diese Dokumentation ist Teil des [Handbuchs für Azure Active Directory Reporting](active-directory-reporting-guide.md).*
 
 Bericht | Minimum | Durchschnitt | Maximum
 ------------------------------------------------------- | -------- | ---------- | ----------
@@ -50,4 +52,4 @@ Nutzung RMS-fähiger Anwendungen | 2 Stunden | 4 Stunden | 8 Stunden
 **Private Berichtsvorschau** | | |
 Alle Benutzeranmeldeaktivitäten | 2 Stunden | 4 Stunden | 8 Stunden
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

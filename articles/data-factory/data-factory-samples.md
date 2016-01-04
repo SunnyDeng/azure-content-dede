@@ -18,8 +18,8 @@
 
 # Azure Data Factory Editor – Beispiele
 
-## Beispiele im Azure-Portal
-Auf dem Blatt **Beispielpipelines** im Azure-Portal können Sie ein Azure Data Factory-Beispiel schnell bereitstellen, überprüfen und testen.
+## Beispiele im klassischen Azure-Portal
+Auf dem Blatt **Beispielpipelines** im klassischen Azure-Portal können Sie ein Azure Data Factory-Beispiel schnell bereitstellen, überprüfen und testen.
 
 1. Erstellen Sie eine neue Data Factory, oder öffnen Sie eine vorhandene Data Factory. Unter [Erste Schritte mit Azure Data Factory][data-factory-get-started] finden Sie Schritte zum Erstellen einer Data Factory.
 2. Klicken Sie auf dem Blatt **DATA FACTORY** für die Data Factory auf die Kachel **Beispielpipelines**.
@@ -57,4 +57,4 @@ Das [Azure-DataFactory-Repository auf GitHub](https://github.com/azure/azure-dat
 
 [data-factory-get-started]: data-factory-get-started.md#CreateDataFactory
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

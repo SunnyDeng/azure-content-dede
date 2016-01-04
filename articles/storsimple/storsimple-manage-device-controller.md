@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="09/15/2015"
+   ms.date="12/02/2015"
    ms.author="alkohli" />
 
 # Verwalten von StorSimple-Gerätecontrollern
@@ -47,14 +47,11 @@ Das Neustarten eines Geräts hat keine schädlichen Auswirkungen auf verbundene 
 
 > - Das folgende Verfahren gilt nur für das physische StorSimple-Gerät. Informationen zum Starten, Beenden und Neustarten des virtuellen Geräts finden Sie unter [Arbeiten mit dem virtuellen Gerät](storsimple-virtual-device-u1.md#work-with-the-storsimple-virtual-device).
 
-Sie können einen einzelnen Gerätecontroller wie folgt neu starten oder herunterfahren:
+Sie können einen einzelnen Gerätecontroller neu starten oder herunterfahren, indem Sie das klassische Azure-Portal des StorSimple Manager-Dienstes oder Windows PowerShell für StorSimple verwenden.
 
-- Verwaltungsportal des StorSimple Manager-Diensts
-- Windows PowerShell für StorSimple 
+Führen Sie die unten angegebenen Schritte aus, um Gerätecontroller über das klassischen Azure-Portal zu verwalten.
 
-Führen Sie die unten angegebenen Schritte aus, um Gerätecontroller über das Verwaltungsportal zu verwalten.
-
-#### So starten Sie einen Controller im Verwaltungsportal neu oder fahren ihn herunter
+#### Neustarten oder Herunterfahren eines Controller im klassischen Portal
 
 1. Navigieren Sie zu **Geräte > Wartung**.
 
@@ -96,7 +93,7 @@ Der Controller wird neu gestartet bzw. heruntergefahren. In der folgenden Tabell
 
 
 #### So starten Sie einen Controller in Windows PowerShell für StorSimple neu oder fahren ihn herunter
-Führen Sie die folgenden Schritte aus, um einen einzelnen Controller auf dem StorSimple-Gerät über das Verwaltungsportal herunterzufahren oder neu zu starten.
+Führen Sie die folgenden Schritte aus, um einen einzelnen Controller auf dem StorSimple-Gerät über das klassische Azure-Portal herunterzufahren oder neu zu starten.
 
 
 1. Greifen Sie auf das Gerät zu, indem Sie die serielle Konsole oder eine Telnet-Sitzung von einem Remotecomputer verwenden. Stellen Sie eine Verbindung mit Controller 0 oder Controller 1 her, indem Sie die Schritte unter [Verwenden von PuTTY für das Herstellen einer Verbindung mit der seriellen Gerätekonsole](storsimple-deployment-walkthrough.md#use-putty-to-connect-to-the-device-serial-console) ausführen.
@@ -128,7 +125,7 @@ In diesem Abschnitt wird erklärt, wie Sie ein aktives oder ausgefallenes StorSi
 
 #### So fahren Sie ein StorSimple-Gerät herunter
 
-1. Verwenden Sie das Verfahren [Neustarten oder Herunterfahren eines Controllers](#restart-or-shut-down-a-single-controller), um den passiven Controller auf Ihrem Gerät zu identifizieren und herunterzufahren. Sie können diesen Vorgang im Verwaltungsportal oder in Windows PowerShell für StorSimple durchführen.
+1. Verwenden Sie das Verfahren [Neustarten oder Herunterfahren eines Controllers](#restart-or-shut-down-a-single-controller), um den passiven Controller auf Ihrem Gerät zu identifizieren und herunterzufahren. Sie können diesen Vorgang im klassischen Azure-Portal oder in Windows PowerShell für StorSimple durchführen.
 2. Wiederholen Sie den obigen Schritt, um den aktiven Controller herunterzufahren.
 3. Achten Sie hierbei auf die Rückwandplatine des Geräts. Nachdem die beiden Controller vollständig heruntergefahren wurden, sollten die Status-LEDs für beide Controller rot blinken. Wenn Sie das Gerät nun vollständig ausschalten müssen, bewegen Sie die Schalter an beiden Modulen (Power and Cooling Modules, PCMs) in die Position AUS. Das Gerät sollte hierdurch ausgeschaltet werden.
 
@@ -224,4 +221,4 @@ In diesem Abschnitt haben wir einige der häufig gestellten Fragen zur Verwaltun
 
 - Weitere Informationen zum Verwenden des StorSimple Manager-Diensts finden Sie unter [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

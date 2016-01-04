@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/16/2015" 
+	ms.date="12/10/2015" 
 	ms.author="cephalin"/>
 
 # Skalieren einer Web-App in Azure App Service #
@@ -24,7 +24,7 @@ Zur Steigerung von Leistung und Durchsatz für Ihre Web-Apps unter Microsoft Azu
 
 Das Skalieren von Azure-Web-Apps umfasst zwei zusammenhängende Vorgänge: Ändern des App Service-Plan-Modus auf einen höhere Servicelevel und Konfigurieren bestimmter Einstellungen nach dem Wechsel zum höheren Servicelevel. Beide Themen werden in diesem Artikel erläutert. Höhere Servicelevel wie die Modi **Standard** und **Premium** bieten bessere Stabilität und Flexibilität bei der Festlegung, wie Ressourcen auf Azure verwendet werden.
 
-Die Modusänderung und die Konfiguration erfolgt ganz einfach über die Registerkarte "Scale" des Verwaltungsportals. Sie können nach Bedarf hoch- oder runterskalieren. Diese Änderungen werden innerhalb von Sekunden angewendet und wirken sich auf alle Web-Apps im App Service-Plan aus. Dafür muss weder der Code geändert noch Anwendungen erneut bereitgestellt werden.
+Diese Skalierungseinstellungen werden innerhalb von Sekunden angewendet und wirken sich auf alle Web-Apps im App Service-Plan aus. Dafür muss weder der Code geändert noch Anwendungen erneut bereitgestellt werden.
 
 Weitere Informationen zu App Service-Plänen finden Sie unter [Was ist ein App Service-Plan?](../web-sites-web-hosting-plan-overview.md) und [Azure App Service-Pläne – Detaillierte Übersicht](../app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md). Informationen zur Preisgestaltung und zu den Funktionen der einzelnen App Service-Pläne finden Sie unter [App Service-Preisdetails](/pricing/details/web-sites/).
 
@@ -45,7 +45,7 @@ Weitere Informationen zu App Service-Plänen finden Sie unter [Was ist ein App S
 	
 	Auf der Registerkarte **Benachrichtigungen** wird in grüner Schrift der Text **ERFOLGREICH** angezeigt, sobald der Vorgang abgeschlossen wurde.
 	
-5. Schieben Sie den Schieberegler **Instanz** von links nach rechts, um die Anzahl von Instanzen zu erhöhen, und klicken Sie in der Befehlsleiste auf **Speichern**. Die Instanzgrößenoption ist im Modus **Freigegeben** nicht verfügbar. Weitere Informationen zu den Instanzgrößen finden Sie unter [Größen virtueller Computer und Clouddienste für Windows Azure][vmsizes].
+5. Schieben Sie den Schieberegler **Instanz** von links nach rechts, um die Anzahl von Instanzen zu erhöhen, und klicken Sie in der Befehlsleiste auf **Speichern**. Die Instanzgrößenoption ist im Modus **Freigegeben** nicht verfügbar. Weitere Informationen zu den Instanzgrößen finden Sie unter [Größen virtueller Computer und Clouddienste für Microsoft Azure][vmsizes].
 	
 	![Instanzgröße für Basic-Modus][ChooseBasicInstances]
 	
@@ -160,7 +160,7 @@ Je nach Modus der Web-App stehen die folgenden entwicklungsbezogenen Funktionen 
 	
 	[Preisdetails für SQL-Datenbanken](/pricing/details/sql-database/)
 	
-	[Größen virtueller Computer und Clouddienste für Windows Azure][vmsizes]
+	[Größen virtueller Computer und Clouddienste für Microsoft Azure][vmsizes]
 	
 	[App-Service-Preisdetails](/pricing/details/web-sites/)
 	
@@ -175,8 +175,7 @@ Je nach Modus der Web-App stehen die folgenden entwicklungsbezogenen Funktionen 
 	- [Wie sollte man Azure-Websites skalieren? - Mit Stefan Schackow](/documentation/videos/how-azure-web-sites-scale/)
 
 ## Änderungen
-* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
+* Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 
 <!-- LINKS -->
 [vmsizes]: http://go.microsoft.com/fwlink/?LinkId=309169
@@ -201,4 +200,4 @@ Je nach Modus der Web-App stehen die folgenden entwicklungsbezogenen Funktionen 
 [GeoReplication]: ./media/web-sites-scale/scale12SQLGeoReplication.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!----HONumber=AcomDC_1217_2015-->

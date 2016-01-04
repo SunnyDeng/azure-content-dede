@@ -13,12 +13,30 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="11/06/2015"
+   ms.date="11/20/2015"
    ms.author="maroche"/>
 
 # Neuigkeiten in Azure Data Catalog
 
 Updates für **Azure Data Catalog** werden in regelmäßigen Abständen veröffentlicht. Nicht jede Version umfasst neue Funktionen für Benutzer, da sich einige Versionen auf Back-End-Dienstfunktionen konzentrieren. Auf dieser Seite werden neue Funktionen für Benutzer aufgezeigt, die dem Dienst **Azure Data Catalog** hinzugefügt wurden.
+
+## Neuigkeiten in der Version der Woche ab dem 20. November 2015
+
+In der Woche ab dem 20. November 2015 wurden **Azure Data Catalog** die folgenden Funktionen hinzugefügt:
+
+- Möglichkeit zum Anzeigen und Kopieren von Verbindungszeichenfolgen über das **Azure Data Catalog**-Portal für SQL Server- (einschließlich Azure SQL-Datenbank) und Oracle-Datenquellen. Benutzer können in den Verbindungsinformationen für eine Tabelle, Ansicht oder Datenbank von SQL Server oder Oracle auf den Link „Verbindungszeichenfolgen anzeigen“ klicken, um die Verbindungszeichenfolgen zum Herstellen der Verbindung mit der Datenquelle anzuzeigen. Für SQL Server-Datenquellen werden ADO.NET-, ODBC-, OLEDB- und JDBC-Verbindungszeichenfolgen bereitgestellt. Für Oracle-Datenquellen werden ODBC- und OLEDB-Verbindungszeichenfolgen bereitgestellt.
+- Unterstützung für das Einbinden von Datenprofilen, wenn Teradata-Tabellen und -Ansichten registriert werden.
+- Unterstützung für „Open in Power BI Desktop“ für SQL Server-Datenquellen (einschließlich Azure SQL-Datenbank und Azure SQL Data Warehouse), SQL Server Analysis Services-, Azure Storage- und HDFS-Quellen.  
+
+> [AZURE.NOTE]Für „Open in Power BI Desktop“ muss eine aktuelle Version der Anwendung Power BI Desktop installiert sein. Wenn bei der Verwendung dieser Funktion Probleme oder Fehler auftreten, vergewissern Sie sich, dass Sie die neueste Version von Power BI Desktop von [PowerBI.com](https://powerbi.com) heruntergeladen haben.
+
+## Neuigkeiten in der Version der Woche ab dem 13. November 2015
+
+In der Woche ab dem 13. November 2015 wurden **Azure Data Catalog** die folgenden Funktionen hinzugefügt:
+
+- Unterstützung für die LDAP-Authentifizierung für Teradata-Datenquellen. Bei der Registrierung von Teradata-Tabellen und -Ansichten können Benutzer festlegen, dass die Herstellung der Verbindung mit Teradata mithilfe der LDAP-Authentifizierung und der TD2-Authentifizierung erfolgt.
+- Unterstützung für „In Excel öffnen“ für Teradata-Datenquellen.
+- Unterstützung für zuletzt verwendete Suchbegriffe im **Azure Data Catalog**-Portal. Bei der Suche im Portal können Benutzer die zuletzt verwendeten Suchbegriffe auswählen, um den Ermittlungsvorgang zu beschleunigen.
 
 ## Neuigkeiten in der Version der Woche ab dem 6. November 2015
 
@@ -27,14 +45,14 @@ In der Woche ab dem 6. November 2015 wurden **Azure Data Catalog** die folgende
 - Unterstützung für die Vorschau für Teradata-Datenquellen. Beim Registrieren von Teradata-Tabellen und -Sichten können Benutzer festlegen, dass Momentaufnahmedatensätze mit den extrahierten Metadaten aus der Datenquelle eingeschlossen werden sollen.
 - Unterstützung für „In Excel öffnen“ für Azure SQL Data Warehouse-Datenquellen
 - Unterstützung für die Definition und Bearbeitung von Schemas auf Spaltenebene für manuell registrierte Datenassets. Nach dem manuellen Erstellen eines Datenassets mit dem **Azure Data Catalog**-Portal können Benutzer in den Eigenschaften der Datenassets Spaltendefinitionen hinzufügen.
-- Unterstützung für Abfragen vom Typ „has“ beim Durchsuchen von **Azure Data Catalog**, um die Ermittlung von registrierten Datenassets mit bestimmten Metadaten zu ermöglichen. Die **Azure Data Catalog**-Abfragesyntax enthält nun Folgendes:
+- Unterstützung für Abfragen vom Typ „has“ beim Durchsuchen von **Azure Data Catalog**, um die Ermittlung von registrierten Datenressourcen mit bestimmten Metadaten zu ermöglichen. Die **Azure Data Catalog**-Abfragesyntax enthält nun Folgendes:
 
 | Abfragesyntax | Zweck |
 |-------------------------|---------|
 | has:previews | Sucht nach Datenassets, die eine Vorschau beinhalten. |
 | has:documentation | Sucht nach Datenassets, für die eine Dokumentation bereitgestellt wurde. |
 | has:tableDataProfiles | Sucht nach Datenassets mit Datenprofilinformationen auf Tabellenebene. |
-| has:columnsDataProfiles | Sucht nach Datenassets mit Datenprofilinformationen auf Spaltenebene. |
+| has:columnsDataProfiles | Sucht nach Datenressourcen mit Datenprofilinformationen auf Spaltenebene. |
 
 
 ## Neuigkeiten in der Version der Woche ab dem 30. Oktober 2015
@@ -47,7 +65,7 @@ In der Woche ab dem 30. Oktober 2015 wurden **Azure Data Catalog** die folgend
 
 In der Woche ab dem 23. Oktober 2015 wurden **Azure Data Catalog** die folgenden Funktionen hinzugefügt:
 
-- Unterstützung für Teradata-Datenquellen. Benutzer können nun Teradata-Tabellen und -Sichten registrieren und ermitteln.
+- Unterstützung für Teradata-Datenquellen. Benutzer können nun Teradata-Tabellen und -Ansichten registrieren und ermitteln.
 
 > [AZURE.NOTE]Bei der aktuellen Version wird nur die Teradata TD2-Authentifizierung unterstützt. Zusätzliche Authentifizierungsmethoden werden in zukünftigen Versionen hinzugefügt.
 
@@ -63,7 +81,7 @@ In der Woche ab dem 16. Oktober 2015 wurden **Azure Data Catalog** die folgend
 
 In der Woche ab dem 9. Oktober 2015 wurden **Azure Data Catalog** die folgenden Funktionen hinzugefügt:
 
-- Unterstützung für Rich Text-Dokumentation für registrierte Datenbestände und Container im Azure Data Catalog-Portal. Benutzer können jetzt Dokumentation für Datenbestände, z. B. Tabellen, Ansichten und Berichte, sowie für Container, z. B. Datenbanken und Modelle, für Szenarios bereitstellen, bei denen Tags und Beschreibungen nicht ausreichen.
+- Unterstützung für Rich Text-Dokumentation für registrierte Datenbestände und Container im Azure Data Catalog-Portal. Benutzer können jetzt Dokumentation für Datenbestände, z. B. Tabellen, Ansichten und Berichte, sowie für Container, z. B. Datenbanken und Modelle, für Szenarien bereitstellen, bei denen Tags und Beschreibungen nicht ausreichen.
 
 ## Neuigkeiten in der Version der Woche ab dem 2. Oktober 2015
 
@@ -80,7 +98,7 @@ In der Woche ab dem 2. Oktober 2015 wurden **Azure Data Catalog** die folgende
 In der Woche ab dem 25. September 2015 wurden **Azure Data Catalog** die folgenden Funktionen hinzugefügt:
 
 - Unterstützung für das Einbinden von Datenprofilen, wenn Hive-Datenquellen registriert werden.
-- Unterstützung für programmgesteuertes Ermitteln der Katalog-API, wodurch es einfacher wird, Anwendungen auf **Azure Data Catalog** abzustimmen.
+- Unterstützung für programmgesteuertes Ermitteln der Catalog-API, wodurch es einfacher wird, Anwendungen in **Azure Data Catalog** zu integrieren.
 
 ## Neuigkeiten in der Version der Woche ab dem 18. September 2015
 
@@ -114,7 +132,7 @@ In der Woche ab dem 4. September 2015 wurden **Azure Data Catalog** die folgend
 
 ## Neuigkeiten in der Version der Woche ab dem 28. August 2015
 
-In der Woche ab dem 28. August 2015 wurden **Azure Data Catalog** die folgenden Funktionen hinzugefügt:
+In der Woche ab dem 28. August 2015 wurden **Azure Data Catalog** die folgenden Funktionen hinzugefügt:
 
 - Unterstützung für die Datenprofilerstellung von SQL Server- und Oracle-Datenquellen. Beim Registrieren von SQL Server- und Oracle-Tabellen und -Sichten können Benutzer optional Datenprofilinformationen für die registrierten Objekte einbeziehen. Das Datenprofil umfasst Statistiken auf Objektebene und auf Spaltenebene.
 - Unterstützung für Hadoop HDFS-Datenquellen. Benutzer können nun HDFS-Dateien und -Verzeichnisse registrieren und ermitteln.
@@ -129,4 +147,4 @@ Ab der Woche beginnend am 21. August 2015 wurden **Azure Data Catalog** die folg
 - Nur Standard Edition: Beim Hinzufügen von Besitzern zu Datenbeständen unterstützt **Azure Data Catalog** jetzt sowohl Benutzerkonten als auch Sicherheitsgruppen als Besitzer. Um eine Sicherheitsgruppe als Besitzer für ausgewählte Datenasset hinzuzufügen, können Sie entweder den Anzeigenamen der Gruppe oder die UPN-E-Mail-Adresse der Gruppe (sofern vorhanden) eingeben.
 - Unterstützung für Datenquellen in Azure-Blob-Speichern. Benutzer können nun Azure Storage-Blobs und -Verzeichnisse registrieren und ermitteln.
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

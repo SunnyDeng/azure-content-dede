@@ -19,7 +19,7 @@ Um mit der Verwendung von Service Bus-Warteschlangen in Azure beginnen zu könne
 
 So erstellen Sie einen Dienstnamespace:
 
-1.  Melden Sie sich beim [Azure-Portal][] an.
+1.  Melden Sie sich beim [klassischen Azure-Portal][] an.
 
 2.  Klicken Sie im linken Navigationsbereich des Portals auf **Service Bus**.
 
@@ -41,7 +41,7 @@ Der neue Namespace wird innerhalb kurzer Zeit aktiviert und anschließend im Azu
 
 ## Abrufen der Standard-Anmeldeinformationen für den Namespace
 
-Wenn Sie Verwaltungsvorgänge ausführen möchten, z. B. die Erstellung einer Warteschlange im neuen Namespace, müssen Sie die Anmeldeinformationen für den Namespace abrufen. Diese Anmeldeinformation erhalten Sie im Azure-Portal.
+Wenn Sie Verwaltungsvorgänge ausführen möchten, z. B. die Erstellung einer Warteschlange im neuen Namespace, müssen Sie die Anmeldeinformationen für den Namespace abrufen. Diese Anmeldeinformation erhalten Sie im Portal.
 
 ###So rufen Sie die Anmeldeinformationen im Verwaltungsportal ab
 
@@ -55,8 +55,8 @@ Wenn Sie Verwaltungsvorgänge ausführen möchten, z. B. die Erstellung einer W
 
 4.  Notieren Sie den Primärschlüssel oder kopieren Sie ihn in die Zwischenablage.
 
-  [Azure-Portal]: http://manage.windowsazure.com
+  [klassischen Azure-Portal]: http://manage.windowsazure.com
 
   [34]: ./media/service-bus-java-how-to-create-queue/VSProperties.png
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

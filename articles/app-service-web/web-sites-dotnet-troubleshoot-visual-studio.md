@@ -20,7 +20,7 @@
 
 ## Übersicht
 
-In diesem Lernprogramm lernen Sie die Visual Studio-Tools zum Debuggen von Web-Apps kennen, während diese in [App Service](http://go.microsoft.com/fwlink/?LinkId=529714) ausgeführt werden. Sie führen die App entweder remote im [Debugmodus](http://www.visualstudio.com/de-DE/get-started/debug-your-app-vs.aspx) aus oder arbeiten mit Anwendungs- und Webserverprotokollen.
+In diesem Lernprogramm lernen Sie die Visual Studio-Tools zum Debuggen von Web-Apps kennen, während diese in [App Service](http://go.microsoft.com/fwlink/?LinkId=529714) ausgeführt werden. Sie führen die App entweder remote im [Debugmodus](http://www.visualstudio.com/get-started/debug-your-app-vs.aspx) aus oder arbeiten mit Anwendungs- und Webserverprotokollen.
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
@@ -71,7 +71,7 @@ Visual Studio bietet Zugriff auf einen Teil der Web-App-Verwaltungsfunktionen un
    
 	Weitere Informationen zu den Feldern für App-Einstellungen und Verbindungszeichenfolgen in diesem Fenster finden Sie unter [Azure-Web-Apps: Funktionsweise von Anwendungs- und Verbindungszeichenfolgen](http://blogs.msdn.com/b/windowsazure/archive/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work.aspx).
 
-	Falls Sie eine Web-App-Verwaltungsaufgabe ausführen möchten, die in diesem Fenster nicht ausgeführt werden kann, klicken Sie auf **Im Verwaltungsportal öffnen** klicken, um ein Browserfenster für das Azure-Vorschauportal zu öffnen. Weitere Informationen finden Sie unter [Konfigurieren von Web-Apps](/de-DE/manage/services/web-sites/how-to-configure-websites/#howtochangeconfig).
+	Falls Sie eine Web-App-Verwaltungsaufgabe ausführen möchten, die in diesem Fenster nicht ausgeführt werden kann, klicken Sie auf **Im Verwaltungsportal öffnen**, um ein Browserfenster für das klassische Azure-Portal zu öffnen. Weitere Informationen finden Sie unter [Konfigurieren von Web-Apps](/manage/services/web-sites/how-to-configure-websites/#howtochangeconfig).
 
 ## <a name="remoteview"></a>Zugreifen auf Web-App-Dateien im Server-Explorer
 
@@ -156,7 +156,7 @@ Dieser Abschnitt zeigt, wie Sie das in [Erste Schritte mit Windows Azure und ASP
 
 6. Für Visual Studio 2012 mit Update 4 oder höher:<a id="vs2012"></a>
 
-	* Navigieren Sie im Azure-Verwaltungsportal zu **Einstellungen > Anwendungseinstellungen** für Ihre Web-App, und führen Sie einen Bildlauf nach unten zum Abschnitt **Debugging** durch.
+	* Navigieren Sie im klassischen Azure-Portal zu **Einstellungen > Anwendungseinstellungen** für Ihre Web-App, und scrollen Sie nach unten zum Abschnitt **Debugging**.
 
 	* Stellen Sie** Remotedebuggen** auf **Ein**, und stellen Sie **Remote Visual Studio-Version** auf **2012**.
 
@@ -166,7 +166,7 @@ Dieser Abschnitt zeigt, wie Sie das in [Erste Schritte mit Windows Azure und ASP
 
 	* Wählen Sie **Prozesse aller Benutzer anzeigen** aus.
 
-	* Wenn Sie zur Eingabe der Anmeldeinformationen aufgefordert werden, geben Sie den Benutzernamen mit dem zugehörigen Kennwort eines Benutzers ein, der die notwendigen Berechtigungen zum Bereitstellen von Inhalten in der Web-App hat. Sie erhalten diese Anmeldeinformationen, indem Sie die Dashboard-Registerkarte für Ihre Web-App im Verwaltungsportal öffnen und auf **Veröffentlichungsprofil herunterladen** klicken. Wenn Sie die Datei in einem Text-Editor öffnen, finden Sie Benutzername und Passwort nach den ersten Vorkommnissen von **userName=** und **userPWD=**.
+	* Wenn Sie zur Eingabe der Anmeldeinformationen aufgefordert werden, geben Sie den Benutzernamen mit dem zugehörigen Kennwort eines Benutzers ein, der die notwendigen Berechtigungen zum Bereitstellen von Inhalten in der Web-App hat. Sie erhalten diese Anmeldeinformationen, indem Sie die Dashboard-Registerkarte für Ihre Web-App im klassischen Portal öffnen und auf **Veröffentlichungsprofil herunterladen** klicken. Wenn Sie die Datei in einem Text-Editor öffnen, finden Sie Benutzername und Passwort nach den ersten Vorkommnissen von **userName=** und **userPWD=**.
 
 	* Wenn die Prozesse in der Tabelle **Verfügbare Prozesse** angezeigt werden, wählen Sie **w3wp.exe** aus und klicken Sie auf **Anhängen**.
 
@@ -475,9 +475,9 @@ Webserverprotokolle zeichnen sämtliche HTTP-Aktivitäten für die Web-App auf. 
 	![Webserverprotokolle im Ausgabefenster](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-wslogs.png)
 
 
-Bei der ersten Aktivierung der Webserverprotokolle in Visual Studio schreibt Azure die Protokolle standardmäßig in das Dateisystem. Alternativ können Sie im Verwaltungsportal angeben, dass die Webserverprotokolle in einen Blobcontainer in einem Speicherkonto geschrieben werden sollen. Weitere Informationen finden Sie im Abschnitt **Diagnose** unter [Konfigurieren von Websites](/manage/services/web-sites/how-to-configure-websites/#howtochangeconfig).
+Bei der ersten Aktivierung der Webserverprotokolle in Visual Studio schreibt Azure die Protokolle standardmäßig in das Dateisystem. Alternativ können Sie im klassischen Portal angeben, dass die Webserverprotokolle in einen Blobcontainer in einem Speicherkonto geschrieben werden sollen. Weitere Informationen finden Sie im Abschnitt **Diagnose** unter [Konfigurieren von Websites](/manage/services/web-sites/how-to-configure-websites/#howtochangeconfig).
 
-Wenn Sie die Webserverprotokollierung für ein Azure-Speicherkonto im Verwaltungsportal aktivieren und die Protokollierung anschließend in Visual Studio deaktivieren, werden die Speicherkontoeinstellungen bei der nächsten Aktivierung wiederhergestellt.
+Wenn Sie die Webserverprotokollierung für ein Azure-Speicherkonto im klassischen Portal aktivieren und die Protokollierung anschließend in Visual Studio deaktivieren, werden die Speicherkontoeinstellungen bei der nächsten Aktivierung wiederhergestellt.
 
 ## <a name="detailederrorlogs"></a>Anzeigen detaillierter Fehlermeldungsprotokolle
 
@@ -527,7 +527,7 @@ Alle Protokolle, die Sie im **Ausgabefenster** überwachen können, lassen sich 
 
 ## <a name="storagelogs"></a>Anzeigen von Speicherprotokollen
 
-Ablaufverfolgungsprotokolle von Anwendungen können auch an Azure-Speicherkonten geschickt und anschließend in Visual Studio angezeigt werden. Dazu müssen Sie ein Speicherkonto erstellen, Speicherprotokolle im Verwaltungsportal aktivieren und diese anschließend auf der Registerkarte **Protokolle** im Fenster** Azure-Web-App** anzeigen.
+Ablaufverfolgungsprotokolle von Anwendungen können auch an Azure-Speicherkonten geschickt und anschließend in Visual Studio angezeigt werden. Dazu müssen Sie ein Speicherkonto erstellen, Speicherprotokolle im klassischen Portal aktivieren und diese anschließend auf der Registerkarte **Protokolle** im Fenster** Azure-Web-App** anzeigen.
 
 Sie können die Protokolle an eines oder alle dieser drei Ziele schicken:
 
@@ -570,9 +570,9 @@ Speicherkonten bieten mehr Speicherplatz und längere Aufbewahrungszeiten für P
     <!-- todo:screenshot of new portal if the VS page link goes to new portal -->
 	![Konfigurieren der Protokollierung](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-configlogging.png)
 
-	Damit öffnen Sie im Azure-Portal die Registerkarte **Konfigurieren** für Ihre Web-App.
+	Damit öffnen Sie im klassischen Portal die Registerkarte **Konfigurieren** für Ihre Web-App.
 
-2. Blättern Sie in der Registerkarte **Konfigurieren** des Portals nach unten bis zum Bereich Anwendungsdiagnose und ändern Sie den Wert von **Anwendungsprotokollierung (Tabellenspeicher)** in **Ein**.
+2. Blättern Sie in der Registerkarte **Konfigurieren** des klassischen Portals nach unten bis zum Bereich Anwendungsdiagnose und ändern Sie den Wert von **Anwendungsprotokollierung (Tabellenspeicher)** in **Ein**.
 
 3. Ändern Sie **Protokollierungsstufe** auf **Information**.
 
@@ -586,7 +586,7 @@ Speicherkonten bieten mehr Speicherplatz und längere Aufbewahrungszeiten für P
 
 6. Setzen Sie das Häkchen im Feld **Tabellenspeicher für Anwendungsdiagnose verwalten**, um das Fenster zu schließen.
 
-6. Klicken Sie auf der Portalregisterkarte **Konfigurieren** auf **Speichern**.
+6. Klicken Sie auf der Registerkarte **Konfigurieren** des klassischen Portals auf **Speichern**.
 
 7. Klicken Sie im Browserfenster, in dem die Anwendung der Web-App angezeigt wird, auf **Home**, anschließend auf **About** und dann auf **Contact**.
 
@@ -638,13 +638,13 @@ Sie können die Protokolle für fehlgeschlagene Anforderungen entweder direkt ü
 
 2. Klicken Sie in Visual Studio auf der Registerkarte **Konfiguration** im Fenster **Azure-Web-App** auf **Im Verwaltungsportal öffnen**.
 
-3. Klicken Sie im Azure-Vorschauportal auf der Seite für Ihre Web-App auf **Einstellungen > Anmeldeinformationen für die Bereitstellung**, und geben Sie dann einen neuen Benutzernamen und ein neues Kennwort.
+3. Klicken Sie im Azure-Portal (https://portal.azure.com) auf der Seite für Ihre Web-App auf **Einstellungen > Anmeldeinformationen für die Bereitstellung**, und geben Sie dann einen neuen Benutzernamen und ein neues Kennwort ein.
 
 	![Neuer FTP-Benutzername und neues Passwort](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-enterftpcredentials.png)
 
 	****Wenn Sie sich anmelden, müssen Sie den vollständigen Benutzernamen mit dem vorangestellten Namen der Web-App verwenden. Angenommen, Sie geben „meine-id" als einen Benutzernamen ein, und die Website ist „meinbeispiel“, dann melden Sie sich als „meinbeispiel\\meine-id“ an.
 
-5. Öffnen Sie in einem neuen Browserfenster die URL, die auf der **Web-App**-Portalseite für Ihre Web-App unter **FTP-Hostname** oder unter **FTPS-Hostname** angezeigt wird.
+5. Öffnen Sie in einem neuen Browserfenster die URL, die auf dem **Web-App**-Blatt für Ihre Web-App unter **FTP-Hostname** oder unter **FTPS-Hostname** angezeigt wird.
 
 6. Melden Sie sich mit den zuvor erstellten FTP-Anmeldeinformationen an (inklusive dem vor dem Benutzernamen vorangestelltem Namen der Web-App).
 
@@ -762,4 +762,4 @@ Informationen darüber, wie Sie statt einer Web-App einen Azure-Cloud-Dienst deb
 [GetStartedWJ]: websites-dotnet-webjobs-sdk.md
  
 
-<!---HONumber=Oct15_HO3-->
+<!----HONumber=AcomDC_1203_2015-->

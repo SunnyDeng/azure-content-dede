@@ -1,6 +1,7 @@
 <properties 
 	pageTitle="Azure App Service-Pläne – Detaillierte Übersicht" 
 	description="Erfahren Sie, wie App Service-Pläne für Azure App Service funktionieren, und wie Ihre Verwaltungsumgebung davon profitiert." 
+	keywords="App-Dienst, Azure App Service, Skalierung, skalierbar, App Services-Plan, App Service-Kosten"
 	services="app-service" 
 	documentationCenter="" 
 	authors="btardif" 
@@ -13,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/07/2015" 
+	ms.date="12/08/2015" 
 	ms.author="byvinyal"/>
 
 #Azure App Service-Pläne – Detaillierte Übersicht#
@@ -55,6 +56,8 @@ Klicken Sie hierzu im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=5297
 Sie können dann den App Service-Plan für die neue Anwendung auswählen oder erstellen.
   
  ![][createASP]
+
+Um einen neuen App Service-Plan zu erstellen, klicken Sie auf **+ Neu erstellen**, geben Sie den Namen für den **App Services-Plan** ein, und wählen Sie einen geeigneten **Speicherort** aus. Klicken Sie auf **Tarif**, und wählen Sie einen dem Dienst angemessenen Tarif aus. Wählen Sie **Alle anzeigen** aus, um mehr Tarifoptionen anzuzeigen, z. B. **Free** und **Shared**. Klicken Sie nach dem Auswählen des Tarifs auf die Schaltfläche **Auswählen**.
  
 ## Wie kann ich eine App in einen anderen App Service-Plan verschieben?
 
@@ -87,7 +90,6 @@ App Service-Pläne stellen einen Satz an Funktionen und Kapazitäten dar, die Si
 ## Änderungen
 
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
  
  
  
@@ -98,4 +100,4 @@ App Service-Pläne stellen einen Satz an Funktionen und Kapazitäten dar, die Si
 [createASP]: ./media/azure-web-sites-web-hosting-plans-in-depth-overview/create-appserviceplan.png
 [createWebApp]: ./media/azure-web-sites-web-hosting-plans-in-depth-overview/create-web-app.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

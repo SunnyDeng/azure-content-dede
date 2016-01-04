@@ -1,42 +1,42 @@
-<properties 
-	pageTitle="Integration des Azure Mobile Engagement Android SDKs" 
+<properties
+	pageTitle="Integration des Azure Mobile Engagement Android SDKs"
 	description="Neueste Updates und Verfahren für das Android SDK für Azure Mobile Engagement"
-	services="mobile-engagement" 
-	documentationCenter="mobile" 
-	authors="piyushjo" 
-	manager="dwrede" 
+	services="mobile-engagement"
+	documentationCenter="mobile"
+	authors="piyushjo"
+	manager="dwrede"
 	editor="" />
 
-<tags 
-	ms.service="mobile-engagement" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-android" 
-	ms.devlang="Java" 
-	ms.topic="article" 
-	ms.date="08/10/2015" 
+<tags
+	ms.service="mobile-engagement"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-android"
+	ms.devlang="Java"
+	ms.topic="article"
+	ms.date="08/10/2015"
 	ms.author="piyushjo" />
 
 #Integrieren von Mobile Engagement unter Android
 
-> [AZURE.SELECTOR] 
-- [Windows Universal](mobile-engagement-windows-store-integrate-engagement.md) 
-- [Windows Phone Silverlight](mobile-engagement-windows-phone-integrate-engagement.md) 
-- [iOS](mobile-engagement-ios-integrate-engagement.md) 
-- [Android](mobile-engagement-android-integrate-engagement.md) 
+> [AZURE.SELECTOR]
+- [Windows Universal](mobile-engagement-windows-store-integrate-engagement.md)
+- [Windows Phone Silverlight](mobile-engagement-windows-phone-integrate-engagement.md)
+- [iOS](mobile-engagement-ios-integrate-engagement.md)
+- [Android](mobile-engagement-android-integrate-engagement.md)
 
 In diesem Verfahren wird die einfachste Art der Aktivierung der Analyse- und Überwachungsfunktionen von Mobile Engagement in Ihrer Android-Anwendung beschrieben.
 
 > [AZURE.IMPORTANT]Die minimale API-Ebene des Android-SDKs muss „Level 10“ oder höher sein (Android 2.3.3 oder höher).
- 
+
 Mithilfe der folgenden Schritte kann der Protokollbericht aktiviert werden, der zum Berechnen aller Statistiken zu Benutzern, Sitzungen, Aktivitäten, Abstürzen und technischen Informationen erforderlich ist. Der Bericht von Protokollen, die zur Berechnung anderer Statistiken wie Ereignisse, Fehler und Aufträge erforderlich ist, muss manuell mithilfe der Engagement-API erfolgen (siehe [So verwenden Sie die erweiterte Mobile Engagement API für Tags in Ihrer Android-App](mobile-engagement-android-use-engagement-api.md)), da diese Statistiken von der Anwendung abhängig sind.
 
 ##Einbetten des Engagement-SDKs und des Diensts in Ihr Android-Projekt
 
-Laden Sie das Android-SDK [hier](http://go.microsoft.com/?linkid=9863935&clcid=0x409) herunter. Rufen Sie `mobile-engagement-VERSION.jar` ab, und fügen Sie dies zum `libs`-Ordner des Android-Projekts hinzu (erstellen Sie den Ordner "libs", sofern dieser noch nicht vorhanden ist).
+Laden Sie das Android-SDK [hier](https://aka.ms/vq9mfn) herunter. Rufen Sie `mobile-engagement-VERSION.jar` ab, und fügen Sie dies zum `libs`-Ordner des Android-Projekts hinzu (erstellen Sie den Ordner "libs", sofern dieser noch nicht vorhanden ist).
 
 > [AZURE.IMPORTANT]Wenn Sie das Anwendungspaket mithilfe von ProGuard erstellen, müssen Sie einige Klassen behalten. Sie können den folgenden Codeausschnitt der Konfiguration verwenden:
 >
-> 
+>
 			-keep public class * extends android.os.IInterface
 			-keep class com.microsoft.azure.engagement.reach.activity.EngagementWebAnnouncementActivity$EngagementReachContentJS {
 			<methods>;
@@ -77,7 +77,7 @@ Wenn Sie `Application.onCreate()` außer Kraft setzen, wird empfohlen, den folge
 			 {
 			   if (EngagementAgentUtils.isInDedicatedEngagementProcess(this))
 			     return;
-			
+
 			   ... Your code...
 			 }
 
@@ -94,10 +94,10 @@ Um den Bericht für alle Protokolle zu aktivieren, die von Engagement zum Berech
 **Ohne Engagement:**
 
 			package com.company.myapp;
-			
+
 			import android.app.Activity;
 			import android.os.Bundle;
-			
+
 			public class MyApp extends Activity
 			{
 			  @Override
@@ -111,10 +111,10 @@ Um den Bericht für alle Protokolle zu aktivieren, die von Engagement zum Berech
 **Mit Engagement:**
 
 			package com.company.myapp;
-			
+
 			import com.microsoft.azure.engagement.activity.EngagementActivity;
 			import android.os.Bundle;
-			
+
 			public class MyApp extends EngagementActivity
 			{
 			  @Override
@@ -148,7 +148,7 @@ Beispiel:
 			    String activityNameOnEngagement = EngagementAgentUtils.buildEngagementActivityName(getClass()); // Uses short class name and removes "Activity" at the end.
 			    EngagementAgent.getInstance(this).startActivity(this, activityNameOnEngagement, null);
 			  }
-			
+
 			  @Override
 			  protected void onPause()
 			  {
@@ -270,7 +270,7 @@ Hier ist ein Codebeispiel, dass Sie in einer Aktivität Ihrer Anwendung verwende
     public void onCreate(Bundle savedInstanceState)
     {
       /* Other code... */
-    
+
       /* Request permissions */
       requestPermissions();
     }
@@ -288,7 +288,7 @@ Hier ist ein Codebeispiel, dass Sie in einer Aktivität Ihrer Anwendung verwende
          */
         if (checkSelfPermission(android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED)
           requestPermissions(new String[] { android.Manifest.permission.ACCESS_FINE_LOCATION }, 0);
-    
+
         /* Only if you want to keep features using external storage */
         if (checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
           requestPermissions(new String[] { android.Manifest.permission.WRITE_EXTERNAL_STORAGE }, 1);
@@ -380,6 +380,5 @@ Dann können Sie `CheckBoxPreference` wie folgt im Einstellungslayout hinzufüge
 
 <!-- URLs. -->
 [Device API]: http://go.microsoft.com/?linkid=9876094
- 
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

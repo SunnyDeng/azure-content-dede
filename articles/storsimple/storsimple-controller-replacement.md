@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="09/10/2015"
+   ms.date="12/02/2015"
    ms.author="alkohli" />
 
 # Ersetzen des Controllermoduls auf dem StorSimple-Gerät
@@ -37,7 +37,7 @@ In der folgenden Tabelle werden die unterstützten Controlleraustauschszenarios 
 |3|Die Controller aus dem gleichen Gerät oder aus verschiedenen Geräten werden ausgetauscht. Das Gehäuse, die Laufwerke und die Laufwerkgehäuse sind fehlerfrei.|Es wird eine Warnung bezüglich des falschen Steckplatzes angezeigt.|
 |4|Ein Domänencontroller ist nicht vorhanden, und der andere Controller ist fehlerhaft.|[Austauschen zweier Controller](#replace-both-controllers). Es werden sowohl die [Logik hinter dem Austauschen zweier Controller](#dual-controller-replacement-logic) als auch die [Schritte für den Austausch](#dual-controller-replacement-steps) beschrieben.|
 |5|Ein oder beide Domänencontroller sind ausgefallen. Auf das Gerät kann nicht über die serielle Konsole oder Windows PowerShell-Remoteverbindung zugegriffen werden.|[Wenden Sie sich an den Microsoft Support](storsimple-contact-microsoft-support.md), um Anweisungen zum manuellen Controlleraustausch zu erhalten.|
-|6|Die Controller haben unterschiedliche Buildversionen. Dies kann folgende Ursachen haben:<ul><li>Controller haben eine unterschiedliche Softwareversion.</li><li>Controller haben eine unterschiedliche Firmwareversion.</li></ul>|Wenn sich die Controller-Softwareversionen unterscheiden, erkennt dies die Austauschlogik und aktualisiert die Software auf dem Ersatzcontroller.<br><br>Wenn sich die Controller-Firmwareversionen unterscheiden und die alte Firmwareversion **nicht** automatisch aktualisiert werden kann, wird eine Warnung im Verwaltungsportal angezeigt. Sie sollten nach Updates suchen und die Firmwareupdates installieren.</br></br>Wenn sich die Controller-Firmwareversionen unterscheiden und die alte Firmwareversion automatisch aktualisiert werden kann, erkennt dies die Ersatzcontrollerlogik, und nach dem Start des Controllers wird die Firmware automatisch aktualisiert.|
+|6|Die Controller haben unterschiedliche Buildversionen. Dies kann folgende Ursachen haben:<ul><li>Controller haben eine unterschiedliche Softwareversion.</li><li>Controller haben eine unterschiedliche Firmwareversion.</li></ul>|Wenn sich die Controller-Softwareversionen unterscheiden, erkennt dies die Austauschlogik und aktualisiert die Software auf dem Ersatzcontroller.<br><br>Wenn sich die Controller-Firmwareversionen unterscheiden und die alte Firmwareversion **nicht** automatisch aktualisiert werden kann, wird eine Warnung im klassischen Azure-Portal angezeigt. Sie sollten nach Updates suchen und die Firmwareupdates installieren.</br></br>Wenn sich die Controller-Firmwareversionen unterscheiden und die alte Firmwareversion automatisch aktualisiert werden kann, erkennt dies die Ersatzcontrollerlogik, und nach dem Start des Controllers wird die Firmware automatisch aktualisiert.|
 
 Sie müssen ein Controllermodul entfernen, wenn es einen Fehler verursacht hat. Ein oder beide Controllermodule können Fehler aufweisen. Dies kann den Austausch eines einzelnen oder beider Controller zur Folge haben. Beschreibungen der Austauschvorgehensweisen und der jeweils zugehörigen Logik finden Sie in den folgenden Abschnitten:
 
@@ -75,7 +75,7 @@ Führen Sie folgende Schritte aus, wenn einer der Controller in Ihrem Microsoft 
 
 #### So entfernen Sie ein einzelnes fehlerhaftes Controllermodul
 
-1. Klicken Sie im Verwaltungsportal des StorSimple Manager-Diensts auf die Registerkarte **Geräte**, und klicken Sie dann auf den Namen des Geräts, das Sie überwachen möchten.
+1. Klicken Sie im klassischen Azure-Portal des StorSimple Manager-Diensts auf die Registerkarte **Geräte**, und klicken Sie dann auf den Namen des Geräts, das Sie überwachen möchten.
 
 2. Klicken Sie auf die Registerkarte **Wartung**, und navigieren Sie zu **Hardwarestatus**. Der Status von Controller 0 oder von Controller 1 wird rot dargestellt. Dies zeigt einen Fehler an.
 
@@ -102,7 +102,7 @@ Führen Sie folgende Schritte aus, wenn einer der Controller in Ihrem Microsoft 
 
 7. Während die Logik zum Austauschen einzelner Controller im Hintergrund ausgeführt wird, schließen Sie die Kabel wieder an. Achten Sie darauf, alle Kabel genau auf die gleiche Weise zu verbinden wie vor dem Austausch.
 
-8. Überprüfen Sie nach dem Neustart des Controllers den **Controllerstatus** und den **Clusterstatus** im Verwaltungsportal. Stellen Sie sicher, dass sich der Controller wieder in einwandfreiem Zustand und im Standbymodus befindet.
+8. Überprüfen Sie nach dem Neustart des Controllers den **Controllerstatus** und den **Clusterstatus** im klassischen Azure-Portal. Stellen Sie sicher, dass sich der Controller wieder in einwandfreiem Zustand und im Standbymodus befindet.
 
 >[AZURE.NOTE]Wenn Sie das Gerät über die serielle Konsole überwachen, können mehrere Neustarts durchgeführt werden, während der Controller aus dem Austauschverfahren wiederhergestellt wird. Wenn das Menü der seriellen Konsole angezeigt wird, wissen Sie, dass der Austausch abgeschlossen ist. Wenn das Menü nicht innerhalb von zwei Stunden nach Beginn des Controlleraustauschs angezeigt wird, [wenden Sie sich an den Microsoft Support Service](storsimple-contact-microsoft-support.md).
 
@@ -214,13 +214,13 @@ Gehen Sie folgendermaßen vor, um ein neues Controllermodul zu installieren, nac
 
     >[AZURE.NOTE]Es kann bis zu 5 Minuten dauern, bis Controller und LED aktiviert werden.
 
-5. Um sicherzustellen, dass der Austausch erfolgreich war, navigieren Sie im Verwaltungsportal zu **Geräte** > **Wartung** > **Hardwarestatus**, und stellen Sie sicher, dass Controller 0 und Controller 1 fehlerfrei sind (Status wird grün angezeigt).
+5. Um sicherzustellen, dass der Austausch erfolgreich war, navigieren Sie im klassischen Azure-Portal zu **Geräte** > **Wartung** > **Hardwarestatus**, und stellen Sie sicher, dass Controller 0 und Controller 1 fehlerfrei sind (Status wird grün angezeigt).
 
 ## Identifizieren des aktiven Controllers im Gerät
 
 Es gibt viele Situationen, wie beispielsweise die erstmalige Registrierung des Geräts oder der Austausch eines Controllers, in denen es erforderlich ist, den aktiven Controller auf einem StorSimple-Gerät festzustellen. Der aktive Controller verarbeitet alle Datenträgerfirmware- und Netzwerkvorgänge. Zum Identifizieren des aktiven Controllers können Sie eine der folgenden Methoden verwenden:
 
-- [Verwenden des Verwaltungsportals zum Identifizieren des aktiven Controllers](#use-the-management-portal-to-identify-the-active-controller)
+- [Verwenden des klassischen Azure-Portals zum Identifizieren des aktiven Controllers](#use-the-azure-classic-portal-to-identify-the-active-controller)
 
 - [Verwenden von Windows PowerShell für StorSimple zum Identifizieren des aktiven Controllers](#use-windows-powershell-for-storsimple-to-identify-the-active-controller)
 
@@ -228,13 +228,13 @@ Es gibt viele Situationen, wie beispielsweise die erstmalige Registrierung des G
 
 Jedes dieser Verfahren wird im Folgenden beschrieben.
 
-### Verwenden des Verwaltungsportals zum Identifizieren des aktiven Controllers
+### Verwenden des klassischen Azure-Portals zum Identifizieren des aktiven Controllers
 
 Navigieren Sie im Verwaltungsportal zu **Geräte** > **Wartung**, und scrollen Sie zum Abschnitt **Controller**. Hier können Sie überprüfen, welcher Domänencontroller aktiv ist.
 
 ![Identifizieren des aktiven Controllers im Verwaltungsportal](./media/storsimple-controller-replacement/IC752072.png)
 
-**Abbildung 6:** Verwaltungsportal mit aktivem Controller
+**Abbildung 6** Der aktive Controller wird im klassischen Azure-Portal angezeigt.
 
 ### Verwenden von Windows PowerShell für StorSimple zum Identifizieren des aktiven Controllers
 
@@ -266,4 +266,4 @@ Wenn diese LED blinkt, ist der Controller aktiv, und der andere Controller befin
 
 Weitere Informationen zum [Austauschen von StorSimple-Hardwarekomponenten](storsimple-hardware-component-replacement.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -14,7 +14,7 @@
    	ms.topic="article"
    	ms.tgt_pltfrm="na"
    	ms.workload="big-data"
-   	ms.date="10/23/2015"
+   	ms.date="12/04/2015"
    	ms.author="larryfr"/>
 
 #Erstellen von Linux-basierten Clustern in HDInsight mithilfe von cURL und der Azure-REST-API
@@ -25,19 +25,19 @@ Mit der Azure-REST-API können Sie Verwaltungsvorgänge für Dienste durchführe
 
 > [AZURE.IMPORTANT]Bei den Schritten in diesem Dokument wird die Standardanzahl von Workerknoten (4) für einen HDInsight-Cluster verwendet. Wenn Sie mehr als 32 Workerknoten planen, entweder bei Erstellung des Clusters oder durch eine Skalierung des Clusters nach der Erstellung, müssen Sie eine Hauptknotengröße von mindestens 8 Kernen und 14 GB Arbeitsspeicher (RAM) auswählen.
 >
-> Weitere Informationen zu Knotengrößen und damit verbundenen Kosten finden Sie unter [HDInsight Preise](https://azure.microsoft.com/pricing/details/hdinsight/).
+> Weitere Informationen zu Knotengrößen und damit verbundenen Kosten finden Sie unter [HDInsight – Preise](https://azure.microsoft.com/pricing/details/hdinsight/).
 
 ##Voraussetzungen
 
 - **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 
-- __Azure-Befehlszeilenschnittstelle__ Die Azure-Befehlszeilenschnittstelle wird verwendet, um einen Dienstprinzipal zu erstellen, der zum Generieren von Authentifizierungstoken für Anforderungen an die Azure-REST-API verwendet wird.
+- __Azure-Befehlszeilenschnittstelle__. Die Azure-Befehlszeilenschnittstelle wird verwendet, um einen Dienstprinzipal zu erstellen, der zum Generieren von Authentifizierungstoken für Anforderungen an die Azure-REST-API verwendet wird.
 
-    Informationen zum Installieren der Befehlszeilenschnittstelle finden Sie unter [Installieren der Azure-Befehlszeilenschnittstelle](xplat-cli-install.md).
+    Informationen zum Installieren der Befehlszeilenschnittstelle finden Sie unter [Installieren der Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md).
 
 - __cURL__. Dieses Hilfsprogramm ist über Ihr Paketverwaltungssystem verfügbar oder kann hier heruntergeladen werden: [http://curl.haxx.se/](http://curl.haxx.se/).
 
-    > [AZURE.NOTE]Wenn Sie PowerShell zum Ausführen der Befehle in diesem Dokument verwenden, müssen Sie zuerst den `curl`-Alias entfernen, der standardmäßig erstellt wird. Wenn Sie den `curl`-Befehl von einer PowerShell-Eingabeaufforderung ausführen, verwendet dieser Alias das PowerShell-Cmdlet „Invoke-WebRequest“ anstelle von cURL und gibt für viele der in diesem Dokument angegebenen Befehle Fehler zurück.
+    > [AZURE.NOTE]Wenn Sie PowerShell zum Ausführen der Befehle in diesem Dokument verwenden, müssen Sie zuerst den `curl`-Alias entfernen, der standardmäßig erstellt wird. Wenn Sie den `curl`-Befehl von einer PowerShell-Eingabeaufforderung ausführen, verwendet dieser Alias das PowerShell-Cmdlet "Invoke-WebRequest" anstelle von cURL und gibt für viele der in diesem Dokument angegebenen Befehle Fehler zurück.
     > 
     > Um diesen Alias zu entfernen, verwenden Sie folgenden Befehl in der PowerShell-Eingabeaufforderung:
     >
@@ -259,7 +259,7 @@ Dieses Beispiel wird in den Schritten im vorliegenden Dokument verwendet. Sie m�
 
 ##Anmelden bei Ihrem Azure-Abonnement
 
-Führen Sie die Schritte aus, die unter [Herstellen einer Verbindung mit einem Azure-Abonnement von der Azure Befehlszeilenschnittstelle (Azure-CLI)](xplat-cli-connect.md) dokumentiert sind, und stellen Sie über die __login__-Methode eine Verbindung mit Ihrem Abonnement her.
+Führen Sie die Schritte aus, die unter [Herstellen einer Verbindung mit einem Azure-Abonnement von der Azure Befehlszeilenschnittstelle (Azure-CLI)](../xplat-cli-connect.md) dokumentiert sind, und stellen Sie über die __login__-Methode eine Verbindung mit Ihrem Abonnement her.
 
 ##Erstellen eines Dienstprinzipals
 
@@ -269,12 +269,12 @@ Führen Sie die Schritte aus, die unter [Herstellen einer Verbindung mit einem A
 >
 > Sie müssen auch die folgenden in diesem Prozess verwendeten Informationen speichern:
 > 
-> * Abonnement-ID: wird bei der Verwendung von `azure account list` empfangen
-> * Mandanten-ID: wird bei der Verwendung von `azure account list` empfangen
+> * Abonnement-ID: wird bei Verwendung von `azure account list` empfangen
+> * Mandanten-ID: wird bei Verwendung von `azure account list` empfangen
 > * Anwendungs-ID: wird bei Erstellung des Dienstprinzipals zurückgegeben
 > * Kennwort für den Dienstprinzipal: wird bei Erstellung des Dienstprinzipals verwendet
 
-Befolgen Sie die Schritte im Abschnitt _Authentifizieren des Dienstprinzipals mit einem Kennwort – Azure-Befehlszeilenschnittstelle_ des Dokuments [Authentifizieren eines Dienstprinzipals mit dem Azure-Ressourcen-Manager](https://azure.microsoft.com/de-DE/documentation/articles/resource-group-authenticate-service-principal/#authenticate-service-principal-with-password---azure-cli). Damit wird ein neuer Dienstprinzipal erstellt, der zur Authentifizierung der Anforderung zur Clustererstellung verwendet werden kann.
+Befolgen Sie die Schritte im Abschnitt _Authentifizieren des Dienstprinzipals mit einem Kennwort – Azure-Befehlszeilenschnittstelle_ des Dokuments [Authentifizieren eines Dienstprinzipals mit dem Azure-Ressourcen-Manager](https://azure.microsoft.com/documentation/articles/resource-group-authenticate-service-principal/#authenticate-service-principal-with-password---azure-cli). Damit wird ein neuer Dienstprinzipal erstellt, der zur Authentifizierung der Anforderung zur Clustererstellung verwendet werden kann.
 
 ##Abrufen eines Authentifizierungstokens
 
@@ -346,13 +346,13 @@ Nachdem Sie einen HDInsight-Cluster erfolgreich erstellt haben, nutzen Sie die f
 
 ###HBase-Cluster
 
-* [Erste Schritte mit HBase in HDInsight](hdinsight-hbase-tutorial-get-stared-linux.md)
-* [Entwickeln von Java-Anwendungen für HBase in HDInsight](hdinsight-hbase-build-java-maven-linux)
+* [Erste Schritte mit HBase in HDInsight](hdinsight-hbase-tutorial-get-started-linux.md)
+* [Entwickeln von Java-Anwendungen für HBase in HDInsight](hdinsight-hbase-build-java-maven-linux.md)
 
 ###Storm-Cluster
 
 * [Entwickeln von Java-Topologien für Storm in HDInsight](hdinsight-storm-develop-java-topology.md)
-* [Verwenden von Python-Komponenten in Storm in HDInsight](hdinsight-storm-develop-python.md)
+* [Verwenden von Python-Komponenten in Storm in HDInsight](hdinsight-storm-develop-python-topology.md)
 * [Bereitstellen und Überwachen von Topologien mit Storm in HDInsight](hdinsight-storm-deploy-monitor-topology-linux.md)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1210_2015-->

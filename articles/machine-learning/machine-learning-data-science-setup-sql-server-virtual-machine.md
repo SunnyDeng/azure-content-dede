@@ -28,11 +28,11 @@ In der Galerie der virtuellen Computer von Azure sind verschiedene Images zu fin
  >[AZURE.NOTE]Das SQL Server 2012 SP2 Enterprise-Image **enthält keinen Datenträger**. Sie müssen einen oder mehrere virtuelle Festplatten zum Speichern von Daten hinzufügen und/oder anfügen. Wenn Sie einen virtuellen Azure-Computer erstellen, hat dieser einen Datenträger für das Betriebssystem, der Laufwerk C zugeordnet ist, und einen temporären Datenträger, der Laufwerk D zugeordnet ist. Verwenden Sie Laufwerk D nicht zum Speichern von Daten. Wie der Name schon sagt, bietet dieser Datenträger nur temporäre Speicherung. Er ermöglicht keine Redundanz oder Sicherung, da er sich nicht im Azure-Speicher befindet.
 
 
-##<a name="Provision"></a>Verbinden mit dem Azure-Verwaltungsportal und Bereitstellen eines virtuellen Computers mit SQL Server
+##<a name="Provision"></a>Verbinden mit dem klassischen Azure-Portal und Bereitstellen eines virtuellen Computers mit SQL Server
 
-1.  Melden Sie sich auf dem [Azure-Verwaltungsportal](http://manage.windowsazure.com/) bei Ihrem Konto an. Wenn Sie kein Azure-Konto haben, sollten Sie die Seite [Kostenlose einmonatige Testversion](http://www.windowsazure.com/pricing/free-trial/) besuchen.
+1.  Melden Sie sich mit Ihrem Konto beim [klassischen Azure-Portal](http://manage.windowsazure.com/) an. Wenn Sie kein Azure-Konto haben, sollten Sie die Seite [Kostenlose einmonatige Testversion](http://www.windowsazure.com/pricing/free-trial/) besuchen.
 
-2.  Klicken Sie im Azure-Verwaltungsportal unten links auf der Webseite auf **+NEU**, klicken Sie auf **COMPUTE**, klicken Sie auf **VIRTUELLER COMPUTER** und dann auf **AUS GALERIE**.
+2.  Klicken Sie im klassischen Azure-Portal unten links auf der Webseite auf **+NEU**, und klicken Sie dann nacheinander auf **COMPUTE**, auf **VIRTUELLER COMPUTER** und dann auf **AUS KATALOG**.
 
 3.  Wählen Sie auf der Seite **Virtuellen Computer erstellen** ein Image eines virtuellen Computers aus, das SQL Server enthält und Ihren Datenanforderungen entspricht, und klicken Sie dann unten rechts auf den Pfeil für die nächste Seite. Die aktuellsten Informationen zu den unterstützen SQL Server-Images auf Azure finden Sie unter [Erste Schritte mit SQL Server auf Windows Azure-Virtuellen Computern](http://go.microsoft.com/fwlink/p/?LinkId=294720) in der Dokumentation [SQL Server auf Windows Azure Virtual Machines](http://go.microsoft.com/fwlink/p/?LinkId=294719).
 
@@ -223,7 +223,7 @@ So erstellen Sie mit SQL Server Management Studio neue SQL Server-Anmeldungen:
 
 Um sich von einem anderen Computer aus mit dem SQL Server-Datenbankmodul zu verbinden, müssen Sie den DNS-Namen (Domain Name System) des virtuellen Computers kennen. (Dies ist der Name, den das Internet verwendet, um den virtuellen Computer zu identifizieren. Sie können die IP-Adresse verwenden, aber die IP-Adresse ändert sich möglicherweise, wenn Azure aufgrund von Redundanz oder Wartungsarbeiten Ressourcen verschiebt. Der DNS-Name bleibt bestehen, da er zu einer neuen IP-Adresse weitergeleitet werden kann.)
 
-1.  Wählen Sie im Azure-Verwaltungsportal (oder aus dem vorherigen Schritt) **VIRTUELLE COMPUTER**.
+1.  Wählen Sie im klassischen Azure-Portal (oder aus dem vorherigen Schritt) **VIRTUELLE COMPUTER**.
 
 2.  Kopieren Sie auf der Seite **INSTANZEN VIRTUELLER COMPUTER** in der Spalte **DNS-NAME** den DNS-Namen für den virtuellen Computer, der auf ****http://** folgt. (In der Benutzeroberfläche wird möglicherweise nicht der gesamte Name angezeigt, aber Sie können mit der rechten Maustaste darauf klicken und diese kopieren.)
 
@@ -259,11 +259,11 @@ In späteren Phasen des Advanced Analytics Process and Technology (ADAPT) verwen
 
 Virtuelle Azure-Computer werden **nach Nutzung abgerechnet**. Damit Sie nicht für ungenutzte virtuelle Computer bezahlen müssen, sollten Sie diese in den Status **Angehalten (Freigegeben)** versetzen.
 
-> [AZURE.NOTE]Beim Herunterfahren virtueller Computer aus der VM heraus (mithilfe der Windows-Energieoptionen) wird der virtuelle Computer beendet, er bleibt jedoch weiterhin zugeordnet. Um sicherzustellen, dass virtuelle Computer nicht abgerechnet werden, beenden Sie sie immer im [Azure-Verwaltungsportal](http://manage.windowsazure.com/). Sie können die VM auch über PowerShell beenden, indem Sie ShutdownRoleOperation mit der "PostShutdownAction" "StoppedDeallocated" aufrufen.
+> [AZURE.NOTE]Beim Herunterfahren virtueller Computer aus der VM heraus (mithilfe der Windows-Energieoptionen) wird der virtuelle Computer beendet, er bleibt jedoch weiterhin zugeordnet. Um sicherzustellen, dass virtuelle Computer nicht abgerechnet werden, beenden Sie sie immer im [klassischen Azure-Portal](http://manage.windowsazure.com/). Sie können die VM auch über PowerShell beenden, indem Sie ShutdownRoleOperation mit der "PostShutdownAction" "StoppedDeallocated" aufrufen.
 
 So fahren Sie den virtuellen Computer herunter und heben die Zuordnung auf:
 
-1. Melden Sie sich auf dem [Azure-Verwaltungsportal](http://manage.windowsazure.com/) bei Ihrem Konto an.  
+1. Melden Sie sich mit Ihrem Konto beim [klassischen Azure-Portal](http://manage.windowsazure.com/) an.  
 
 2. Wählen Sie in der Navigationsleiste links **VIRTUAL MACHINES** aus.
 
@@ -273,7 +273,7 @@ So fahren Sie den virtuellen Computer herunter und heben die Zuordnung auf:
 
 ![Herunterfahren virtueller Computer][15]
 
-Der virtuelle Computer wird freigegeben, aber nicht gelöscht. Sie können den virtuellen Computer jederzeit im Azure-Verwaltungsportal neu starten.
+Der virtuelle Computer wird freigegeben, aber nicht gelöscht. Sie können den virtuellen Computer jederzeit im klassischen Azure-Portal neu starten.
 
 ## Ihre Azure SQL Server-VM ist damit einsatzbereit. Wie lauten die nächsten Schritte?
 
@@ -298,4 +298,4 @@ Die nächsten Schritte des Datenanalyseprozesses sind unter [Leitfaden: Erweiter
 [15]: ./media/machine-learning-data-science-setup-sql-server-virtual-machine/vmshutdown.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

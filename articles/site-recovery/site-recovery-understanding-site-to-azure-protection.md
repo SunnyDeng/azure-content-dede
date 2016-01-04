@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Grundlegendes zum Schutz von Standort auf Azure" 
+	pageTitle="Grundlegendes zur Hyper-V-Replikation mit Azure Site Recovery | Microsoft Azure" 
 	description="Verwenden Sie diesen Artikel, um die technischen Konzepte zu verstehen, mit denen Sie Azure Site Recovery erfolgreich installieren, konfigurieren und verwalten können." 
 	services="site-recovery" 
 	documentationCenter="" 
@@ -13,11 +13,11 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery" 
-	ms.date="09/01/2015" 
+	ms.date="12/14/2015" 
 	ms.author="anbacker"/>
 
 
-# Grundlegendes zum Schutz von Hyper-V- oder VMM-Standorten auf Azure
+# Grundlegendes zur Hyper-V-Replikation mit Azure Site Recovery
 
 Dieser Artikel beschreibt die technischen Konzepte, die Ihnen beim erfolgreichen Konfigurieren und Verwalten des Schutzes von Hyper-V- oder VMM-Standorten auf Azure mithilfe von Azure Site Recovery helfen.
 
@@ -79,4 +79,4 @@ Es gibt eine integrierte Wiederholungslogik, wenn Replikationsfehler auftreten. 
 - [Microsoft-Support](./site-recovery-monitoring-and-troubleshooting.md#reaching-out-for-microsoft-support)
 - [Häufige Fehler bei der automatischen Systemwiederherstellung und deren Lösungen](./site-recovery-monitoring-and-troubleshooting.md#common-asr-errors-and-their-resolutions)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

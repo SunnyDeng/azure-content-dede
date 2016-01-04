@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="python"
 	ms.topic="article"
-	ms.date="08/25/2015"
+	ms.date="12/11/2015"
 	ms.author="emgerner"/>
 
 
@@ -133,15 +133,13 @@ Mit dem folgenden Code wird eine Tabelle aus einem Speicherkonto gelöscht.
 
 Nachdem Sie sich nun mit den Grundlagen des Tabellenspeichers vertraut gemacht haben, folgen Sie diesen Links, um zu erfahren, wie komplexere Speicheraufgaben ausgeführt werden:
 
--   Weitere Informationen finden Sie in der MSDN-Referenz [Azure-Speicher][].
+-   Weitere Informationen finden Sie in der MSDN-Referenz zum [Azure-Speicher][].
 -   Besuchen Sie den [Blog des Azure-Speicherteams][].
 
 Weitere Informationen finden Sie außerdem im [Python Developer Center](/develop/python/).
 
-
-[Azure-Speicher]: http://msdn.microsoft.com/library/azure/gg433040.aspx
 [Blog des Azure-Speicherteams]: http://blogs.msdn.com/b/windowsazurestorage/
 [Python Azure-Pakets]: https://pypi.python.org/pypi/azure
 [Python Azure Storage-Paket]: https://pypi.python.org/pypi/azure-storage
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

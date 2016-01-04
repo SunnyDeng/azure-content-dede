@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Vergleich von Tools für die Verzeichnisintegration | Microsoft Azure"
+	pageTitle="Azure AD Connect: Vergleich von Tools für die Verzeichnisintegration | Microsoft Azure"
 	description="Diese Seite enthält umfassende Tabellen zum Vergleich der verschiedenen Tools für die Verzeichnisintegration."
 	services="active-directory"
 	documentationCenter=""
@@ -89,6 +89,6 @@ Zulassen der Entfernung von Attributen aus dem Attributfluss von AD nach Azure 
 Zulassen einer erweiterten Anpassung des Attributflusses | ● | ● | | ●  
 
 ## Nächste Schritte
-Weitere Informationen zum [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md)
+Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

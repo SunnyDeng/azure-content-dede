@@ -81,7 +81,7 @@ storedProcedureParameters | Geben Sie Werte für Parameter der gespeicherten Pro
 	> [AZURE.IMPORTANT]**Name** und **Groß- und Kleinschreibung** des Parameters ("DateTime" in diesem Beispiel) müssen mit dem Parameter übereinstimmen, der in der JSON der Pipeline/Aktivität angegeben ist. Stellen Sie bei der Definition der gespeicherten Prozedur sicher, dass **@** als Präfix für den Parameter verwendet wird.
 	
 ### Erstellen einer Data Factory  
-4. Nach der Anmeldung beim [Azure-Vorschauportal](http://portal.azure.com/) gehen Sie wie folgt vor:
+4. Nach der Anmeldung beim [Azure-Portal](http://portal.azure.com/) gehen Sie wie folgt vor:
 	1.	Klicken Sie im linken Menü auf **NEU**. 
 	2.	Klicken Sie auf dem Blatt **Erstellen** auf **Datenanalyse**.
 	3.	Klicken Sie auf dem Blatt **Datenanalyse** auf **Data Factory**.
@@ -93,7 +93,7 @@ storedProcedureParameters | Geben Sie Werte für Parameter der gespeicherten Pro
 	4.	Klicken Sie auf **OK**.
 4.	Nachdem Sie die Ressourcengruppe ausgewählt haben, stellen Sie sicher, dass Sie das richtige Abonnement verwenden, in dem die Data Factory erstellt werden soll.
 5.	Klicken Sie auf dem Blatt **Neue Data Factory** auf **Erstellen**.
-6.	Sie sehen die erstellte Data Factory im **Startmenü** des Azure-Vorschauportals: Nachdem die Data Factory erfolgreich erstellt wurde, sehen Sie die Data Factory-Seite mit dem Inhalt der Data Factory.
+6.	Sie sehen die erstellte Data Factory im **Startmenü** des Azure-Portals: Nachdem die Data Factory erfolgreich erstellt wurde, sehen Sie die Data Factory-Seite mit dem Inhalt der Data Factory.
 
 ### Erstellen eines mit Azure SQL verknüpften Diensts  
 Nach dem Erstellen der Data Factory erstellen Sie einen mit Azure SQL verknüpften Dienst, der Ihre Azure SQL-Datenbank mit der Data Factory verknüpft. Dies ist die Datenbank, die die Beispieltabelle "sampletable" und die gespeicherte Prozedur "sp\_sample" enthält.
@@ -199,4 +199,4 @@ Um dies zu erreichen, übergeben Sie den Parameter "Scenario" und den Wert aus d
 		}
 	}
 
-<!----HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

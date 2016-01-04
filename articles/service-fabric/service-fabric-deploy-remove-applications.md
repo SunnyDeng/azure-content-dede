@@ -1,9 +1,9 @@
 <properties
-   pageTitle="Service Fabric-Anwendungsbereitstellung"
+   pageTitle="Service Fabric-Anwendungsbereitstellung | Microsoft Azure"
    description="Bereitstellen und Entfernen von Anwendungen in Service Fabric"
    services="service-fabric"
    documentationCenter=".net"
-   authors="alexwun"
+   authors="seanmck"
    manager="timlt"
    editor=""/>
 
@@ -13,24 +13,24 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="09/23/2015"
-   ms.author="alexwun"/>
+   ms.date="12/10/2015"
+   ms.author="seanmck"/>
 
 # Bereitstellen von Anwendungen
 
-Sobald der [Anwendungstyp gepackt][10] wurde, ist die Anwendung für die Bereitstellung im Service Fabric-Cluster bereit. Die Bereitstellung umfasst die folgenden drei Schritte:
+Sobald der [Anwendungstyp gepackt][10] wurde, ist die Anwendung für die Bereitstellung in einem Azure Service Fabric-Cluster bereit. Die Bereitstellung umfasst die folgenden drei Schritte:
 
 1. Hochladen des Anwendungspakets
 2. Registrieren des Anwendungstyps
 3. Erstellen der Anwendungsinstanz
 
->[AZURE.NOTE]Wenn Sie Visual Studio zum Bereitstellen und Debuggen von Anwendungen in Ihrem lokalen Entwicklungscluster verwenden, werden alle im Folgenden beschriebenen Schritte automatisch durch Aufrufen der PowerShell-Skripts im Ordner "Skripts" des Anwendungsprojekts ausgeführt. In diesem Artikel wird die grundlegende Funktionsweise der Skripts erläutert, sodass Sie die gleichen Vorgänge außerhalb von Visual Studio ausführen können.
+>[AZURE.NOTE]Wenn Sie Visual Studio zum Bereitstellen und Debuggen von Anwendungen in Ihrem lokalen Entwicklungscluster verwenden, werden alle im Folgenden beschriebenen Schritte automatisch über ein PowerShell-Skript im Ordner „Scripts“ des Anwendungsprojekts ausgeführt. In diesem Artikel wird die grundlegende Funktionsweise der Skripts erläutert, sodass Sie die gleichen Vorgänge außerhalb von Visual Studio ausführen können.
 
 ## Hochladen des Anwendungspakets
 
-Beim Hochladen des Anwendungspakets wird das Paket an einem Speicherort verfügbar gemacht, an dem interne Service Fabric-Komponenten auf das Paket zugreifen können. Zum Hochladen kann PowerShell verwendet werden. Bevor Sie die in diesem Artikel aufgeführten Befehle ausführen, stellen Sie immer zuerst eine Verbindung zum Service Fabric-Cluster mit **Connect-ServiceFabricCluster** her.
+Beim Hochladen des Anwendungspakets wird das Paket an einem Speicherort gespeichert, an dem interne Service Fabric-Komponenten auf das Paket zugreifen können. Zum Hochladen können Sie PowerShell verwenden. Bevor Sie die in diesem Artikel aufgeführten Befehle ausführen, stellen Sie immer zuerst eine Verbindung zum Service Fabric-Cluster mit **Connect-ServiceFabricCluster** her.
 
-Wenn Sie beispielsweise einen Ordner namens *MyApplicationType* haben, der das erforderliche Anwendungsmanifest, Dienstmanifest(e) und Code-/Konfigurations-/Datenpakete enthält, verwenden Sie zum Hochladen des Pakets den Befehl **Copy-ServiceFabricApplicationPackage**. Beispiel:
+Angenommen, Sie haben einen Ordner namens *MyApplicationType*, der die erforderlichen Anwendungs- und Dienstmanifeste sowie Code-/Konfigurations-/Datenpakete enthält. Mit dem Befehl **Copy-ServiceFabricApplicationPackage** wird das Paket hochgeladen. Beispiel:
 
 ~~~
 PS D:\temp> dir
@@ -67,7 +67,7 @@ PS D:\temp>
 
 ## Registrieren des Anwendungspakets
 
-Beim Registrieren des Anwendungspakets wird der Anwendungstyp und die Version im verfügbaren Anwendungsmanifest deklariert. Das System liest das im vorherigen Schritt hochgeladene Paket, überprüft es (entspricht der lokalen Ausführung von**Test-ServiceFabricApplicationPackage**), verarbeitet den Inhalt des Pakets und kopiert das verarbeitete Paket in einen internen Systemspeicherort.
+Beim Registrieren des Anwendungspakets werden der Anwendungstyp und die Version im verfügbaren Anwendungsmanifest deklariert. Das System liest das im vorherigen Schritt hochgeladene Paket, überprüft es (entspricht der lokalen Ausführung von**Test-ServiceFabricApplicationPackage**), verarbeitet den Inhalt des Pakets und kopiert das verarbeitete Paket in einen internen Systemspeicherort.
 
 ~~~
 PS D:\temp> Register-ServiceFabricApplicationType MyApplicationType
@@ -82,13 +82,13 @@ DefaultParameters      : {}
 PS D:\temp>
 ~~~
 
-Der Befehl **Register-ServiceFabricApplicationType** wird erst zurückgegeben, wenn das Paket vom System erfolgreich kopiert wurde. Die Dauer des Kopiervorgangs hängt vom Inhalt des Anwendungspakets ab. Verwenden Sie den Parameter**-TimeoutSec**, wenn ein längeres Zeitlimit erforderlich ist (das Standardzeitlimit beträgt 60 Sekunden).
+Der Befehl **Register-ServiceFabricApplicationType** wird erst zurückgegeben, wenn das Paket vom System erfolgreich kopiert wurde. Die Dauer des Kopiervorgangs hängt vom Inhalt des Anwendungspakets ab. Verwenden Sie den Parameter**-TimeoutSec**, wenn ein längeres Zeitlimit erforderlich ist. (Das Standardzeitlimit beträgt 60 Sekunden.)
 
 Der Befehl **Get-ServiceFabricApplicationType** listet alle erfolgreich registrierten Anwendungstypversionen auf.
 
 ## Erstellen der Anwendung
 
-Eine Anwendung kann mit einer beliebigen Version des Anwendungstyps instanziiert werden, die mit dem Befehl **New-ServiceFabricApplication** erfolgreich registriert wurde. Der Name jeder Anwendung muss mit dem *fabric:*-Schema beginnen und für jede Anwendungsinstanz eindeutig sein. Wenn im Anwendungsmanifest des Zielanwendungstyps Standarddienste festgelegt wurden, werden diese ebenfalls in diesem Schritt erstellt.
+Sie können eine Anwendung mit einer beliebigen Version des Anwendungstyps instanziieren, die mit dem Befehl **New-ServiceFabricApplication** erfolgreich registriert wurde. Der Name jeder Anwendung muss mit dem *fabric:*-Schema beginnen und für jede Anwendungsinstanz eindeutig sein. Wenn im Anwendungsmanifest des Zielanwendungstyps Standarddienste festgelegt wurden, werden diese ebenfalls in diesem Schritt erstellt.
 
 ~~~
 PS D:\temp> New-ServiceFabricApplication fabric:/MyApp MyApplicationType AppManifestVersion1
@@ -128,7 +128,7 @@ Für jede Version des registrierten Anwendungstyps können mehrere Anwendungsins
 
 ## Entfernen einer Anwendung
 
-Wird eine Instanz der Anwendung nicht mehr benötigt, kann diese mit dem Befehl **Remove-ServiceFabricApplication** dauerhaft entfernt werden. Hierbei werden auch alle Dienste automatisch entfernt, die mit der Anwendung verknüpft sind, d. h., der Dienstzustand wird vollständig und dauerhaft entfernt. Dieser Vorgang kann nicht rückgängig gemacht werden, und der Anwendungsstatus kann nicht wiederhergestellt werden.
+Wird eine Anwendungsinstanz nicht mehr benötigt, kann diese mit dem Befehl **Remove-ServiceFabricApplication** dauerhaft entfernt werden. Mit diesem Befehl werden auch alle Dienste automatisch entfernt, die mit der Anwendung verknüpft sind, d. h., der Dienstzustand wird vollständig und dauerhaft entfernt. Dieser Vorgang kann nicht rückgängig gemacht werden, und der Anwendungsstatus kann nicht wiederhergestellt werden.
 
 ~~~
 PS D:\temp> Remove-ServiceFabricApplication fabric:/MyApp
@@ -217,13 +217,12 @@ PS D:\temp>
 
 [Einführung in Service Fabric-Integrität](service-fabric-health-introduction.md)
 
-[Diagnose und Problembehandlung von Service Fabric-Diensten](service-fabric-diagnose-monitor-your-service-index.md)
+[Diagnose und Problembehandlung von Service Fabric-Diensten](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md)
 
 [Modellieren einer Anwendung in Service Fabric](service-fabric-application-model.md)
 
 <!--Link references--In actual articles, you only need a single period before the slash-->
 [10]: service-fabric-application-model.md
 [11]: service-fabric-application-upgrade.md
- 
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

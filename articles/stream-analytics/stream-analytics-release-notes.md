@@ -13,10 +13,19 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="11/12/2015" 
+	ms.date="12/10/2015" 
 	ms.author="jeffstok"/>
 
 #Microsoft Stream Analytic – Hinweise zu dieser Version
+
+## Hinweise zur Stream Analytics-Version vom 10.12.2015 ##
+
+Diese Version enthält das folgende Update.
+
+Titel | Beschreibung
+---|---
+REST-API-Versionsupdate | Die REST-API-Version wurde auf 2015-10-01 aktualisiert. Details finden Sie auf MSDN unter [Stream Analytics-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx) und [Machine Learning-Integration in Stream Analytics](stream-analytics-how-to-configure-azure-machine-learning-endpoints-in-stream-analytics.md).
+Azure Machine Learning-Integration | Mit dieser Version wird die Unterstützung für benutzerdefinierte Azure Machine Learning-Funktionen eingeführt. Sie finden [hier](stream-analytics-machine-learning-tutorial.md) ein Tutorial und [hier](http://blogs.technet.com/b/machinelearning/archive/2015/12/10/apply-azure-ml-as-a-function-in-azure-stream-analytics.aspx) die allgemeine Blog-Ankündigung.
 
 ## Hinweise zur Version von Stream Analytics vom 12.11.2015 ##
 
@@ -32,10 +41,10 @@ Diese Version enthält die folgenden Updates.
 
 Titel | Beschreibung
 ---|---
-Zusätzliche Features für die Abfragesprache | Stream Analytics hat die Abfragesprache um die folgenden Features erweitert: [ABS](https://msdn.microsoft.com/library/azure/mt574054.aspx), [CEILING](https://msdn.microsoft.com/library/azure/mt605286.aspx), [EXP](https://msdn.microsoft.com/library/azure/mt605289.aspx), [FLOOR](https://msdn.microsoft.com/library/azure/mt605240.aspx), [POWER](https://msdn.microsoft.com/library/azure/mt605287.aspx), [SIGN](https://msdn.microsoft.com/library/azure/mt605290.aspx), [SQUARE](https://msdn.microsoft.com/library/azure/mt605288.aspx) und [SQRT](https://msdn.microsoft.com/library/azure/mt605238.aspx).
+Zusätzliche Features für die Abfragesprache | In Stream Analytics wurde die Abfragesprache um die folgenden Features erweitert: [ABS](https://msdn.microsoft.com/library/azure/mt574054.aspx), [CEILING](https://msdn.microsoft.com/library/azure/mt605286.aspx), [EXP](https://msdn.microsoft.com/library/azure/mt605289.aspx), [FLOOR](https://msdn.microsoft.com/library/azure/mt605240.aspx), [POWER](https://msdn.microsoft.com/library/azure/mt605287.aspx), [SIGN](https://msdn.microsoft.com/library/azure/mt605290.aspx), [SQUARE](https://msdn.microsoft.com/library/azure/mt605288.aspx) und [SQRT](https://msdn.microsoft.com/library/azure/mt605238.aspx).
 Aggregatbeschränkungen aufgehoben | Mit dieser Version wird die Beschränkung auf 15 Aggregate pro Abfrage aufgehoben. Es gibt jetzt keine Beschränkung für die Anzahl der Aggregate pro Abfrage mehr.
 Feature „GROUP BY System.Timestamp“ hinzugefügt | Die [GROUP BY](https://msdn.microsoft.com/library/azure/dn835023.aspx)-Funktion ermöglicht jetzt entweder „window\_type“ oder [System.Timestamp](https://msdn.microsoft.com/library/azure/mt598501.aspx).
-OFFSET für Tumbling- und Hopping-Fenster hinzugefügt | [Tumbling](https://msdn.microsoft.com/library/azure/dn835055.aspx)- und [Hopping](https://msdn.microsoft.com/library/azure/dn835041.aspx)-Fenster sind standardmäßig an der Nullzeit ausgerichtet (1.1.0001 12:00:00 AM UTC). Der neue (optionale) Parameter „offsetsize“ ermöglicht das Angeben eines benutzerdefinierten Versatzes (oder einer Ausrichtung).
+OFFSET für Tumbling- und Hopping-Fenster hinzugefügt | [Tumbling](https://msdn.microsoft.com/library/azure/dn835055.aspx)- und [Hopping](https://msdn.microsoft.com/library/azure/dn835041.aspx)-Fenster sind standardmäßig an der Nullzeit ausgerichtet (1.1.0001 0:00:00 UTC). Der neue (optionale) Parameter „offsetsize“ ermöglicht das Angeben eines benutzerdefinierten Versatzes (oder einer Ausrichtung).
 
 
 ## Hinweise zur Version von Stream Analytics vom 29.09.2015 ##
@@ -124,4 +133,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

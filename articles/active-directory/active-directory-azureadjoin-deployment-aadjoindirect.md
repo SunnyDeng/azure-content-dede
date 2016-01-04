@@ -1,11 +1,12 @@
 <properties 
 	pageTitle="Verwendungsszenarios und Bereitstellungsaspekte für Azure AD Join| Microsoft Azure" 
-	description="Listet die verschiedenen Bereitstellungsszenarien für Azure AD Join auf, und erläutert sie." 
+	description="Erläutert, wie Administratoren Azure AD Join für Ihre Endbenutzer (Mitarbeiter, Studenten und andere Benutzer) einrichten können. Zudem werden die unterschiedlichen Praxis-Szenarios, die bei der Verwendung von Azure AD Join möglich sind, erläutert." 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="femila" 
 	manager="stevenpo" 
-	editor=""/>
+	editor=""
+	tags="azure-classic-portal"/>
 
 <tags 
 	ms.service="active-directory" 
@@ -13,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/21/2015" 
+	ms.date="11/19/2015" 
 	ms.author="femila"/>
 
 # Verwendungsszenarios und Bereitstellungsaspekte für Azure AD Join 
@@ -53,7 +54,7 @@ Unternehmen können Nur-Cloud-Konten für Partnerunternehmen und Organisationen 
 *	Windows 10 (Professional- und Enterprise-SKUs)
 
 ### Administratoraufgaben
-* [Einrichten der Geräteregistrierung und MFA](active-directory-azureadjoin-setup.md)
+* [Einrichten der Geräteregistrierung](active-directory-azureadjoin-setup.md)
 
 ### Benutzeraufgaben
 * [Einrichten eines neuen Windows 10-Geräts mit Azure AD während des Setups](active-directory-azureadjoin-user-frx.md)
@@ -68,7 +69,7 @@ Sie können Ihre Benutzer und Mitarbeiter so einrichten, dass sie ihre persönli
 ### Voraussetzungen
 **Auf Unternehmensebene (Administrator)**
 
-*	Azure AD-Abonnement
+*	Azure AD-Abonnement
 
 **Auf Benutzerebene**
 
@@ -77,14 +78,18 @@ Sie können Ihre Benutzer und Mitarbeiter so einrichten, dass sie ihre persönli
 
 ### Administratoraufgaben
 
-* [Einrichten der Geräteregistrierung und MFA](active-directory-azureadjoin-setup.md)
+* [Einrichten der Geräteregistrierung](active-directory-azureadjoin-setup.md)
 
 ### Benutzeraufgaben
 * [Verknüpfen eines persönlichen Windows 10-Geräts mit Ihrer Organisation](active-directory-azureadjoin-personal-device.md)
 
 
 ## Zusätzliche Informationen
-* [Erweitern von Cloudfunktionen auf Windows 10-Geräte über Azure Active Directory Join](active-directory-azureadjoin-overview.md)
+* [Windows 10 für Unternehmen: Möglichkeiten der geschäftlichen Nutzung von Geräten](active-directory-azureadjoin-windows10-devices-overview.md)
+* [Erweitern von Cloudfunktionen auf Windows 10-Geräte über Azure Active Directory Join](active-directory-azureadjoin-user-upgrade.md)
+* [Authentifizieren von Identitäten ohne Kennwörter über Microsoft Passport](active-directory-azureadjoin-passport.md)
+* [Weitere Informationen zu Verwendungsszenarios für Azure AD Join](active-directory-azureadjoin-deployment-aadjoindirect.md)
+* [Verbinden von einer Domäne beigetretenen Geräten mit Azure AD für Windows 10-Benutzeroberflächen](active-directory-azureadjoin-devices-group-policy.md)
 * [Einrichten von Azure AD Join](active-directory-azureadjoin-setup.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

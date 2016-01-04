@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.devlang="javascript"
 	ms.topic="article"
-	ms.date="09/10/2015"
+	ms.date="12/07/2015"
 	ms.author="glenga"/>
 
 
@@ -36,4 +36,4 @@ Informationen zum Aufrufen einer benutzerdefinierten API in Ihrer App mithilfe e
 
 <!-- URLs. -->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

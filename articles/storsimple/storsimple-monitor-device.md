@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="11/05/2015"
+   ms.date="12/02/2015"
    ms.author="alkohli" />
 
 # Verwenden des StorSimple Manager-Diensts zum Überwachen Ihres StorSimple-Geräts 
@@ -21,7 +21,7 @@
 
 Sie können den StorSimple Manager-Dienst verwenden, um bestimmte Geräte innerhalb Ihrer StorSimple-Lösung zu überwachen. Sie können benutzerdefinierte Diagramme basierend auf Metriken zu EA-Leistung, Kapazitätsauslastung, Netzwerkdurchsatz und Geräteleistung erstellen.
 
-Um die Überwachungsinformationen für ein bestimmtes Gerät anzuzeigen, wählen Sie im Azure-Portal den StorSimple Manager-Dienst aus, klicken Sie auf die Registerkarte **Überwachen**, und wählen Sie das gewünschte Gerät aus der Geräteliste aus. Die Seite **Überwachen** enthält die folgenden Informationen.
+Um die Überwachungsinformationen für ein bestimmtes Gerät anzuzeigen, wählen Sie im klassischen Azure-Portal den StorSimple Manager-Dienst aus, klicken Sie auf die Registerkarte **Überwachen**, und wählen Sie das gewünschte Gerät aus der Geräteliste aus. Die Seite **Überwachen** enthält die folgenden Informationen.
 
 ## E/A-Leistung 
 
@@ -121,4 +121,4 @@ Das Diagramm unten stellt den Netzwerkdurchsatz für „Data 0“ und „Data 4�
 
 - Informationen zum [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

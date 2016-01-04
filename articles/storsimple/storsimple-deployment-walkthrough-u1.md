@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="09/17/2015"
+   ms.date="12/01/2015"
    ms.author="alkohli" />
 
 # Bereitstellen lokaler StorSimple-Geräte (Update 1)
@@ -71,7 +71,7 @@ Die folgende Konfigurationsprüfliste für die Bereitstellung enthält die Infor
 | **Konfigurieren und Registrieren des Geräts** | DATA 0-Netzwerkeinstellungen | DATA 0-IP-Adresse:</br>Subnetzmaske:</br>Gateway:</br>Primärer DNS-Server:</br>Primärer NTP-Server:</br>Webproxyserver-IP/FQDN (optional):</br>Webproxyport:| |
 | | Geräteadministratorkennwort | Das Kennwort muss zwischen 8 und 15 Zeichen lang sein und Kleinbuchstaben, Großbuchstaben, Ziffern und Sonderzeichen umfassen. | |
 | | StorSimple Snapshot Manager-Kennwort | Das Kennwort muss 14 oder 15 Zeichen lang sein und Kleinbuchstaben, Großbuchstaben, Ziffern und Sonderzeichen umfassen.| |
-| | Dienstregistrierungsschlüssel | Dieser Schlüssel wird im Azure-Portal generiert. | |
+| | Dienstregistrierungsschlüssel | Dieser Schlüssel wird im klassischen Azure-Portal generiert. | |
 | | Verschlüsselungsschlüssel für Dienstdaten | Dieser Schlüssel wird erstellt, wenn das Gerät über die Windows PowerShell für StorSimple beim Verwaltungsdienst registriert wird. Kopieren Sie diesen Schlüssel, und bewahren Sie ihn an einem sicheren Ort auf.| |
 | | | | |
 | **Abschließen der minimalen Gerätekonfiguration** | Anzeigename für Ihr Gerät | Dies ist ein beschreibender Name für das Gerät. | |
@@ -152,7 +152,7 @@ Ein StorSimple-Manager-Dienst kann mehrere StorSimple-Geräte verwalten. Führen
 
 Nachdem der StorSimple-Manager-Dienst eingerichtet wurde und ausgeführt wird, müssen Sie den Dienstregistrierungsschlüssel abrufen. Dieser Schlüssel wird zum Registrieren Ihres StorSimple-Geräts sowie zum Herstellen einer Verbindung mit dem Dienst verwendet.
 
-Führen Sie die folgenden Schritte im Verwaltungsportal aus.
+Führen Sie die folgenden Schritte im klassischen Azure-Portal aus.
 
 [AZURE.INCLUDE [storsimple-get-service-registration-key](../../includes/storsimple-get-service-registration-key.md)]
 
@@ -171,7 +171,7 @@ Sie müssen für die Gerätemindestkonfiguration des StorSimple-Geräts die folg
 - Aktivieren von iSCSI an mindestens einer Netzwerkschnittstelle
 - Zuweisen fester IP-Adressen an beide Controller
 
-Führen Sie die folgenden Schritte im Verwaltungsportal aus, um das mindestens erforderliche Setup für das Gerät auszuführen:
+Führen Sie die folgenden Schritte im klassischen Azure-Portal aus, um die minimale Gerätekonfiguration auszuführen.
 
 [AZURE.INCLUDE [storsimple-complete-minimum-device-setup](../../includes/storsimple-complete-minimum-device-setup-u1.md)]
 
@@ -179,13 +179,13 @@ Führen Sie die folgenden Schritte im Verwaltungsportal aus, um das mindestens e
 
 Ein Volumecontainer verfügt über Einstellungen für das Speicherkonto, die Bandbreite und die Verschlüsselung für alle darin enthaltenen Volumes. Sie müssen einen Volumecontainer erstellen, bevor Sie mit der Bereitstellung von Volumes auf Ihrem StorSimple-Gerät beginnen können.
 
-Führen Sie die folgenden Schritte im Verwaltungsportal aus, um einen Volumecontainer zu erstellen.
+Führen Sie die folgenden Schritte im klassischen Azure-Portal aus, um einen Volumecontainer zu erstellen.
 
 [AZURE.INCLUDE [storsimple-create-volume-container](../../includes/storsimple-create-volume-container.md)]
 
 ## Schritt 6: Erstellen eines Volumes
 
-Nach dem Erstellen eines Volumecontainers können Sie ein Speichervolume auf dem StorSimple-Gerät für Ihre Server bereitstellen. Führen Sie die folgenden Schritte im Verwaltungsportal aus, um ein Volume zu erstellen:
+Nach dem Erstellen eines Volumecontainers können Sie ein Speichervolume auf dem StorSimple-Gerät für Ihre Server bereitstellen. Führen Sie die folgenden Schritte im klassischen Azure-Portal aus, um ein Volume zu erstellen.
 
 > [AZURE.IMPORTANT]Mit StorSimple Manager können nur mit schlanker Speicherzuweisung bereitgestellte Volumes erstellt werden. Sie können keine vollständig oder teilweise bereitgestellten Volumes erstellen.
 
@@ -212,7 +212,7 @@ Wenn Sie MPIO nicht konfigurieren, führen Sie die folgenden Schritte aus, um Ih
 
 Sicherungen stellen Zeitpunktschutz für Volumes zur Verfügung und verbessern die Wiederherstellbarkeit bei gleichzeitiger Minimierung der Wiederherstellungszeiten. Für Ihr StorSimple-Gerät können zwei Arten von Sicherungen angefertigt werden: lokale Momentaufnahmen und Cloudmomentaufnahmen. Jeder dieser Sicherungstypen kann **geplant** sein oder **manuell** erfolgen.
 
-Führen Sie die folgenden Schritte im Verwaltungsportal aus, um eine geplante Sicherung zu erstellen.
+Führen Sie die folgenden Schritte im klassischen Azure-Portal aus, um eine geplante Sicherung zu erstellen.
 
 [AZURE.INCLUDE [storsimple-take-backup](../../includes/storsimple-take-backup.md)]
 
@@ -224,7 +224,7 @@ Dies ist ein optionaler Schritt, den Sie nur dann ausführen müssen, wenn Sie n
 
 Wenn Sie ein Azure-Speicherkonto in einer anderen Region erstellen müssen, finden Sie unter [Informationen zu Azure-Speicherkonten](../storage/storage-create-storage-account.md) schrittweise Anweisungen.
 
-Führen Sie die folgenden Schritte im Verwaltungsportal auf der Seite für den **StorSimple-Manager-Dienst** aus.
+Führen Sie die folgenden Schritte im klassischen Azure-Portal auf der Seite **StorSimple Manager-Dienst** aus.
 
 [AZURE.INCLUDE [storsimple-configure-new-storage-account-u1](../../includes/storsimple-configure-new-storage-account-u1.md)]
 
@@ -238,10 +238,9 @@ Zum Herstellen einer Verbindung mit Windows PowerShell für StorSimple benötige
 
 ## Suchen nach und Anwenden von Updates
 
-Die Aktualisierung eines Geräts kann mehrere Stunden dauern. Führen Sie die folgenden Schritte aus, um nach Updates für Ihr Gerät zu suchen und diese anzuwenden.
-<!-- > can take 1-4 hours-->
+Die Aktualisierung eines Geräts kann mehrere Stunden dauern. Führen Sie die folgenden Schritte aus, um nach Updates für Ihr Gerät zu suchen und diese anzuwenden. <!--can take 1-4 hours-->
 
-<!-- > [AZURE.NOTE] Wenn das Gateway für eine andere Netzwerkschnittstelle als DATA 0 konfiguriert ist, müssen Sie die Netzwerkschnittstellen DATA 2 und DATA 3 deaktivieren, bevor Sie das Update installieren. Wechseln Sie zu **Geräte > Konfigurieren**, und deaktivieren Sie die Schnittstellen DATA 2 und DATA 3. Sie sollten diese Schnittstellen nach der Aktualisierung des Geräts wieder aktivieren.-->
+<!--If you have a gateway configured on a network interface other than Data 0, you will need to disable Data 2 and Data 3 network interfaces before installing the update. Go to **Devices > Configure** and disable Data 2 and Data 3 interfaces. You should re-enable these interfaces after the device is updated.-->
 
 #### So aktualisieren Sie Ihr Gerät
 
@@ -265,7 +264,7 @@ Führen Sie die folgenden Schritte aus, um den IQN (iSCSI Qualified Name) eines 
 
 ## Erstellen einer manuellen Sicherung
 
-Führen Sie die folgenden Schritte im Verwaltungsportal aus, um nach Bedarf eine manuelle Sicherung eines einzelnen Volumes auf dem StorSimple-Gerät zu erstellen.
+Führen Sie die folgenden Schritte im klassischen Azure-Portal aus, um bei Bedarf eine manuelle Sicherung eines einzelnen Volumes auf dem StorSimple-Gerät zu erstellen.
 
 [AZURE.INCLUDE [Erstellen einer manuellen Sicherung](../../includes/storsimple-create-manual-backup.md)]
 
@@ -287,4 +286,4 @@ Konfigurieren eines [virtuellen Geräts](storsimple-virtual-device.md)
 Verwenden des [StorSimple-Manager-Diensts](storsimple-manager-service-administration.md) für das Verwalten Ihres StorSimple-Geräts
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

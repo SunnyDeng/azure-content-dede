@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/07/2015" 
+	ms.date="12/05/2015" 
 	ms.author="juliako"/>
 
 
@@ -72,4 +72,4 @@ Sie sind nun in der Lage, eine Medienprozessor-Instanz zu erstellen, und können
 [Task Preset Strings for the Azure Media Encoder]: http://msdn.microsoft.com/library/jj129582.aspx
 [Vorgehensweise: Programmgesteuertes Verbinden mit Media Services]: ../media-services-set-up-computer/
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

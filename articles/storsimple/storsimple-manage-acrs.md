@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="09/15/2015"
+   ms.date="12/02/2015"
    ms.author="alkohli" />
 
 # Verwalten von Zugriffssteuerungsdatensätzen mithilfe des StorSimple Manager-Diensts
@@ -48,13 +48,13 @@ Führen Sie die folgenden Schritte aus, um einen ACR hinzuzufügen:
 
    - Starten Sie den Microsoft iSCSI-Initiator auf dem Windows-Host.
    - Wählen Sie im Fenster "iSCSI Initiator Properties" auf der Registerkarte "Configuration" die Zeichenfolge im Feld "Initiator Name" aus, und kopieren Sie sie.
-   - Fügen Sie diese Zeichenfolge im Verwaltungsportal in das Feld **iSCSI-Initiatorname** der ACR-Tabelle ein.
+   - Fügen Sie diese Zeichenfolge im klassischen Azure-Portal in das Feld **iSCSI-Initiatorname** der ACR-Tabelle ein.
 
 4. Klicken Sie auf **Speichern**, um den neu erstellten ACR zu speichern. Die tabellarische Auflistung wird mit dem hinzugefügten Eintrag aktualisiert.
 
 ## Bearbeiten von Zugriffssteuerungsdatensätzen
 
-Navigieren Sie im Verwaltungsportal zur Seite **Konfigurieren**, um ACRs zu bearbeiten.
+Navigieren Sie im klassischen Azure-Portal zur Seite **Konfigurieren**, um ACRs zu bearbeiten.
 
 > [AZURE.NOTE]Sie können nur die ACRs ändern, die derzeit nicht verwendet werden. Zum Bearbeiten eines ACR, der einem das momentan verwendeten Volume zugeordnet ist, müssen Sie zunächst das Volume offline schalten.
 
@@ -72,7 +72,7 @@ Führen Sie die folgenden Schritte aus, um einen ACR zu bearbeiten:
 
 ## Löschen von Zugriffssteuerungsdatensätzen
 
-Navigieren Sie im Verwaltungsportal zur Seite **Konfigurieren**, um ACRs zu löschen.
+Navigieren Sie im klassischen Azure-Portal zur Seite **Konfigurieren**, um ACRs zu löschen.
 
 > [AZURE.NOTE]Sie können nur die ACRs löschen, die derzeit nicht verwendet werden. Zum Löschen eines ACR, der einem momentan verwendeten Volume zugeordnet ist, müssen Sie zunächst das Volume offline schalten.
 
@@ -94,4 +94,4 @@ Führen Sie die folgenden Schritte aus, um einen Zugriffssteuerungsdatensatz zu 
 - Erfahren Sie mehr zum [Verwenden Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

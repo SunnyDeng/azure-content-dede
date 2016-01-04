@@ -32,7 +32,7 @@ Nun müssen Sie eine App in Ihrem B2C-Verzeichnis erstellen, sodass Azure AD die
 - Fügen Sie der Anwendung eine **Web-App/Web-API** hinzu.
 - Geben Sie `http://localhost:3000/auth/openid/return` als **Antwort-URL** ein – dies ist die Standard-URL für dieses Codebeispiel.
 - Erstellen Sie einen **geheimen Schlüssel für Ihre Anwendung**, und notieren Sie ihn sich. Sie benötigen ihn später.
-- Notieren Sie sich die **Anwendungs-ID**, die Ihrer App zugewiesen ist. Sie benötigen sie ebenfalls in Kürze.
+- Notieren Sie die **Anwendungs-ID**, die Ihrer App zugewiesen ist. Sie benötigen sie ebenfalls in Kürze.
 
 [AZURE.INCLUDE [active-directory-b2c-devquickstarts-v2-apps](../../includes/active-directory-b2c-devquickstarts-v2-apps.md)]
 
@@ -48,7 +48,7 @@ In Azure AD B2C wird jede Benutzeroberfläche durch eine [**Richtlinie**](active
 
 Nachdem Sie die drei Richtlinien erfolgreich erstellt haben, können Sie Ihre App erstellen.
 
-Beachten Sie, dass in diesem Artikel nicht behandelt wird, wie die gerade erstellten Richtlinien verwendet werden. Weitere Informationen zur Funktionsweise von Richtlinien in Azure AD B2C finden Sie im [Lernprogramm "Erste Schritte mit .NET-Web-Apps"](active-directory-b2c-devquickstarts-web-dotnet.md).
+Beachten Sie, dass in diesem Artikel nicht behandelt wird, wie die gerade erstellten Richtlinien verwendet werden. Weitere Informationen zur Funktionsweise von Richtlinien in Azure AD B2C finden Sie im [Tutorial "Erste Schritte mit .NET-Web-Apps"](active-directory-b2c-devquickstarts-web-dotnet.md).
 
 ## 4\. Herunterladen des Codes
 
@@ -80,14 +80,13 @@ Damit die iOS-Aufgaben-App mit Azure AD B2C kommunizieren kann, müssen Sie eini
 	<key>authority</key>
 	<string>https://login.microsoftonline.com/<your tenant name>.onmicrosoft.com/</string>
 	<key>clientId</key>
-	<string><Enter the Application Id assinged to your app by the Azure portal, e.g.580e250c-8f26-49d0-bee8-1c078add1609></string>
+	<string><Enter the Application Id assigned to your app by the Azure portal, e.g.580e250c-8f26-49d0-bee8-1c078add1609></string>
 	<key>scopes</key>
 	<array>
-		<string><Enter the Application Id assinged to your app by the Azure portal, e.g.580e250c-8f26-49d0-bee8-1c078add1609></string>
+		<string><Enter the Application Id assigned to your app by the Azure portal, e.g.580e250c-8f26-49d0-bee8-1c078add1609></string>
 	</array>
 	<key>additionalScopes</key>
 	<array>
-		<string></string>
 	</array>
 	<key>redirectUri</key>
 	<string>urn:ietf:wg:oauth:2.0:oob</string>
@@ -233,9 +232,7 @@ completionBlock:(void (^) (ADProfileInfo* userInfo, NSError* error)) completionB
         [self readApplicationSettings];
     }
     
-    NSDictionary* params = [self convertPolicyToDictionary:policy];
-    
-    [self getClaimsWithPolicyClearingCache:NO policy:policy params:params parent:parent completionHandler:^(ADProfileInfo* userInfo, NSError* error) {
+    [self getClaimsWithPolicyClearingCache:NO policy:policy params:nil parent:parent completionHandler:^(ADProfileInfo* userInfo, NSError* error) {
         
         if (userInfo == nil)
         {
@@ -256,42 +253,8 @@ completionBlock:(void (^) (ADProfileInfo* userInfo, NSError* error)) completionB
 Sie sehen, dass diese Methode ziemlich einfach ist. Als Eingabe werden das weiter oben erstellte `samplesPolicyData`-Objekt, das übergeordnete ViewController-Element und dann ein Rückruf verwendet. Der Rückruf ist interessant, weshalb wir Schritt für Schritt vorgehen.
 
 1. Sie sehen, dass `completionBlock` über ADProfileInfo als Typ verfügt, der mit einem `userInfo`-Objekt zurückgegeben wird. ADProfileInfo ist der Typ, der alle Antworten vom Server enthält, vor allem Ansprüche. 
-
 2. Sie sehen, dass wir `readApplicationSettings` verwenden. Hiermit werden die Daten gelesen, die wir in `settings.plist` angegeben haben.
-3. Sie sehen eine `convertPolicyToDictionary:policy`-Methode, mit der unsere Richtlinie als URL formatiert wird, die an den Server gesendet werden kann. Als Nächstes schreiben wir diese Hilfsmethode.
-4. Schließlich ist noch eine ziemlich umfangreiche `getClaimsWithPolicyClearingCache`-Methode vorhanden. Dies ist der eigentliche Aufruf von ADAL für iOS, den wir schreiben müssen. Dies werden wir später erledigen.
-
-
-Als Nächstes schreiben wir die `convertPolicyToDictionary`-Methode unter den Code, den wir gerade geschrieben haben:
-
-```
-// Here we have some converstion helpers that allow us to parse passed items in to dictionaries for URLEncoding later.
-
-+(NSDictionary*) convertTaskToDictionary:(samplesTaskItem*)task
-{
-    NSMutableDictionary* dictionary = [[NSMutableDictionary alloc]init];
-    
-    if (task.itemName){
-        [dictionary setValue:task.itemName forKey:@"task"];
-    }
-    
-    return dictionary;
-}
-
-+(NSDictionary*) convertPolicyToDictionary:(samplesPolicyData*)policy
-{
-    NSMutableDictionary* dictionary = [[NSMutableDictionary alloc]init];
-
-    
-    if (policy.policyID){
-        [dictionary setValue:policy.policyID forKey:@"p"];
-    }
-    
-    return dictionary;
-}
-
-```
-Mit diesem recht einfachen Code wird lediglich ein "p" an unsere Richtlinie angefügt, sodass die Abfrage wie folgt "?p=<policy>" lautet.
+3. Schließlich ist noch eine ziemlich umfangreiche `getClaimsWithPolicyClearingCache`-Methode vorhanden. Dies ist der eigentliche Aufruf von ADAL für iOS, den wir schreiben müssen. Dies werden wir später erledigen.
 
 Jetzt schreiben wir unsere umfangreiche `getClaimsWithPolicyClearingCache`-Methode. Aufgrund ihres Umfangs wird sie in einem separaten Abschnitt beschrieben.
 
@@ -652,4 +615,4 @@ Sie können nun mit den B2C-Themen für fortgeschrittenere Benutzer fortfahren. 
 
 [Anpassen der Benutzeroberfläche einer B2C-App >>]()
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

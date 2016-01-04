@@ -1,7 +1,7 @@
 <properties 
-	pageTitle="Erstellen einer Webanwendung mit ASP.NET MVC unter Verwendung von DocumentDB | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie mithilfe von DocumentDB und .NET eine To-Do-List-Webanwendung erstellen. Das Speichern von und der Zugriff auf Daten erfolgt über eine ASP.NET MVC-Webanwendung, die in Azure-Websites gehostet wird." 
-	keywords="GitHub, Visual Studio, Webanwendungsentwicklung, Anwendungsentwicklung, Datenbanktutorial, MVC-Anwendungen, JSON-Daten, DocumentDB, Azure, Microsoft Azure"
+	pageTitle="ASP.NET MVC-Tutorial für DocumentDB: Entwicklung von Webanwendungen | Microsoft Azure" 
+	description="Schließen Sie dieses ASP.NET MVC-Tutorial ab, um eine MVC-Webanwendung mit DocumentDB zu erstellen. Sie speichern JSON- und Zugriffsdaten über eine Todo-App, die in Azure Websites gehostet wird." 
+	keywords="asp.net mvc tutorial, web application development, mvc web application, asp net mvc tutorial step by step"
 	services="documentdb" 
 	documentationCenter=".net" 
 	authors="ryancrawcour" 
@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="hero-article" 
-	ms.date="10/20/2015" 
+	ms.date="11/18/2015" 
 	ms.author="ryancraw"/>
 
 #<a name="_Toc395809351"></a>Erstellen einer Webanwendung mit ASP.NET MVC unter Verwendung von DocumentDB
@@ -26,9 +26,9 @@
 - [Java](documentdb-java-application.md)
 - [Python](documentdb-python-application.md) 
 
-In diesem Artikel wird mithilfe einer umfassenden exemplarischen Vorgehensweise verdeutlicht, wie Sie Azure DocumentDB effizient zum Speichern und Abfragen von JSON-Dokumenten einsetzen, indem das Erstellen einer To-Do-List-Webanwendung unter Verwendung von Azure DocumentDB erläutert wird. Die Aufgaben werden als JSON-Dokumente in Azure DocumentDB gespeichert.
+Um zu verdeutlichen, wie Sie Azure DocumentDB effizient zum Speichern und Abfragen von JSON-Dokumenten einsetzen, wird in diesem Artikel anhand einer umfassenden exemplarischen Vorgehensweise das Erstellen einer Todo-App mithilfe von Azure DocumentDB erläutert. Die Aufgaben werden als JSON-Dokumente in Azure DocumentDB gespeichert.
 
-![Screenshot der in diesem Lernprogramm erstellten Webanwendung "Aufgabenliste"](./media/documentdb-dotnet-application/image1.png)
+![Screenshot der in diesem Tutorial erstellten MVC-Webanwendung für Todo-Listen – Schrittanleitung im ASP NET MVC-Tutorial](./media/documentdb-dotnet-application/asp-net-mvc-tutorial-image1.png)
 
 In dieser exemplarischen Vorgehensweise wird veranschaulicht, wie Sie mit dem von Azure bereitgestellten DocumentDB-Dienst Daten aus einer in Azure gehosteten ASP.NET MVC-Webanwendung speichern und auf diese zugreifen.
 
@@ -63,7 +63,7 @@ Nun, da Sie über ein Konto verfügen, erstellen wir unser neues ASP.NET-Projekt
    	Das Dialogfeld **Neues Projekt** wird angezeigt.
 2. Erweitern Sie im Bereich **Projekttypen** die Einträge **Vorlagen**, **Visual C#**, **Web**, und wählen Sie dann **ASP.NET-Webanwendung** aus.
 
-  	![Screenshot des Dialogfelds "Neues Projekt", bei dem der Projekttyp der ASP.NET-Webanwendung hervorgehoben ist](./media/documentdb-dotnet-application/image10.png)
+  	![Screenshot des Dialogfelds "Neues Projekt", bei dem der Projekttyp der ASP.NET-Webanwendung hervorgehoben ist](./media/documentdb-dotnet-application/asp-net-mvc-tutorial-image10.png)
 
 3. Geben Sie im Feld **Name** den Namen des Projekts ein. In diesem Lernprogramm wird der Name "Todo" (Aufgabe) verwendet. Wenn Sie einen anderen Namen verwenden, müssen Sie immer dann, wenn im Lernprogramm der Todo-Namespace genannt wird, die bereitgestellten Codebeispiele auf den von Ihnen verwendeten Namen für Ihre Anwendung ändern.
 
@@ -71,7 +71,7 @@ Nun, da Sie über ein Konto verfügen, erstellen wir unser neues ASP.NET-Projekt
 
   	Das Dialogfeld **Neues ASP.NET-Projekt** wird angezeigt.
 
-  	![Screenshot des Dialogfelds "Neues ASP.NET-Projekt", in dem die MVC-Anwendungsvorlage hervorgehoben und das Feld "Host in der Cloud" aktiviert ist](./media/documentdb-dotnet-application/image11.png)
+  	![Screenshot des Dialogfelds "Neues ASP.NET-Projekt", in dem die MVC-Anwendungsvorlage hervorgehoben und das Feld "Host in der Cloud" aktiviert ist](./media/documentdb-dotnet-application/asp-net-mvc-tutorial-image11.png)
 
 5. Wählen Sie im Vorlagenbereich **MVC** aus.
 
@@ -81,7 +81,7 @@ Nun, da Sie über ein Konto verfügen, erstellen wir unser neues ASP.NET-Projekt
 
 8. Wenn Sie das Hosten in der Cloud ausgewählt haben, wird mindestens ein zusätzlicher Bildschirm angezeigt, in dem Sie dazu aufgefordert werden, sich bei Ihrem Azure-Konto anzumelden und einige Werte für Ihre neue Website anzugeben. Geben Sie alle zusätzlichen Werte an, und fahren Sie fort.
 
-  	In diesem Beispiel wurde kein "Datenbankserver" ausgewählt, da kein Azure SQL-Datenbankserver verwendet wird. Ein neues Azure DocumentDB-Konto wird zu einem späteren Zeitpunkt im Azure-Vorschauportal erstellt.
+  	In diesem Beispiel wurde kein "Datenbankserver" ausgewählt, da kein Azure SQL-Datenbankserver verwendet wird. Ein neues Azure DocumentDB-Konto wird zu einem späteren Zeitpunkt im Azure-Portal erstellt.
 
 	Weitere Informationen zum Auswählen eines **App Service-Plans** und einer **Ressourcengruppe** finden Sie unter [Azure App Service-Pläne – Detaillierte Übersicht](azure-web-sites-web-hosting-plans-in-depth-overview.md).
 
@@ -91,9 +91,9 @@ Nun, da Sie über ein Konto verfügen, erstellen wir unser neues ASP.NET-Projekt
 
 	Die lokale Ausführung des Projekts wird übersprungen, da sicher alle von Ihnen die ASP.NET-Anwendung "Hello World" gesehen haben. Betrachten wir im Folgenden das Hinzufügen von DocumentDB zu diesem Projekt, und das Erstellen unserer Anwendung.
 
-## <a name="_Toc395637767"></a>Schritt 3: Hinzufügen von DocumentDB zu Ihrem Webanwendungsprojekt
+## <a name="_Toc395637767"></a>Schritt 3: Hinzufügen von DocumentDB zu Ihrem MVC-Webanwendungsprojekt
 
-Nun, da ein Großteil des für diese Lösung benötigten ASP.NET MVC-Frameworks steht, kommen wir zum wesentlichen Teil dieses Lernprogramms, dem Hinzufügen von Azure DocumentDB zu unserer Webapplikation.
+Nun, da ein Großteil des für diese Lösung benötigten ASP.NET MVC-Frameworks steht, kommen wir zum wesentlichen Teil dieses Tutorials: dem Hinzufügen von Azure DocumentDB zu unserer MVC-Webanwendung.
 
 1. Das DocumentDB .NET SDK wird als NuGet-Paket verpackt und verteilt. Verwenden Sie zum Abrufen des NuGet-Pakets in Visual Studio den NuGet-Paket-Manager in Visual Studio, indem Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt klicken und dann auf **NuGet-Pakete verwalten** klicken.
 
@@ -255,7 +255,7 @@ In diesem Abschnitt fügen wir Code zur Ausführung folgender Aufgaben hinzu:
 - [Hinzufügen von Elementen](#_Toc395637771).
 - [Bearbeiten von Elementen](#_Toc395637772).
 
-### <a name="_Toc395637770"></a>Auflisten unvollständiger Elemente in Ihrer Webanwendung
+### <a name="_Toc395637770"></a>Auflisten unvollständiger Elemente in Ihrer MVC-Webanwendung
 
 Hier muss zunächst eine Klasse hinzugefügt werden, die die gesamte Logik zur Verbindung mit und Verwendung der DocumentDB enthält. Für dieses Lernprogramm kapseln wir die gesamte Logik in einer Repository-Klasse namens DocumentDBRepository.
 
@@ -401,12 +401,12 @@ Hier muss zunächst eine Klasse hinzugefügt werden, die die gesamte Logik zur V
 
 3. Nun werden einige Werte aus der Konfiguration gelesen. Öffnen Sie die Datei **Web.config** Ihrer Anwendung, und fügen Sie die folgenden Zeilen unter dem Abschnitt `<AppSettings>` hinzu.
 	
-    	<add key="endpoint" value="enter the URI from the Keys blade of the Azure Preview portal"/>
-    	<add key="authKey" value="enter the PRIMARY KEY, or the SECONDARY KEY, from the Keys blade of the Azure  Preview portal"/>
+    	<add key="endpoint" value="enter the URI from the Keys blade of the Azure Portal"/>
+    	<add key="authKey" value="enter the PRIMARY KEY, or the SECONDARY KEY, from the Keys blade of the Azure  Portal"/>
     	<add key="database" value="ToDoList"/>
     	<add key="collection" value="Items"/>
 	
-4. Aktualisieren Sie nun über das Blatt „Schlüssel“ des Azure-Vorschauportals die Werte für *endpoint* und *authKey*. Verwenden Sie die **URI** aus dem Blatt "Schlüssel" als Wert für die Endpunkt-Einstellung, und verwenden Sie den **PRIMÄRSCHLÜSSEL** oder den **SEKUNDÄRSCHLÜSSEL** aus dem Blatt "Schlüssel" als Wert für die authKey-Einstellung.
+4. Aktualisieren Sie nun die Werte für *Endpunkt* und *AuthKey*, indem Sie das Blatt „Schlüssel“ im Azure-Portal verwenden. Verwenden Sie die **URI** aus dem Blatt "Schlüssel" als Wert für die Endpunkt-Einstellung, und verwenden Sie den **PRIMÄRSCHLÜSSEL** oder den **SEKUNDÄRSCHLÜSSEL** aus dem Blatt "Schlüssel" als Wert für die authKey-Einstellung.
 
 
     Auf diese Weise wird das DocumentDB-Repository verknüpft. Fügen wir jetzt unsere Anwendungslogik hinzu.
@@ -454,7 +454,7 @@ Wenn Sie die Anwendung jetzt ausführen, werden Sie zum **HomeController** und d
 
 Damit weiß ASP.NET MVC, dass Sie keinen Wert in der URL angegeben haben, um das Routingverhalten zu steuern, dass anstelle von **Home** **Item** als Controller und den Benutzer-**Index** als Ansicht verwendet.
 
-Wenn Sie jetzt die Anwendung ausführen, wird Ihr **ItemController** aufgerufen. In diesem wird die „Repository“-Klasse aufgerufen und die „GetItems“-Methode verwendet, um alle unvollständigen Elemente an die Ansicht **Ansichten**\**Element**\**Index** zurückzugeben.
+Wenn Sie jetzt die Anwendung ausführen, wird Ihr **ItemController** aufgerufen. In diesem wird die „Repository“-Klasse aufgerufen und die „GetItems“-Methode verwendet, um alle unvollständigen Elemente an die Ansicht **Ansichten**\\**Element**\\**Index** zurückzugeben.
 
 Wenn Sie dieses Projekt jetzt erstellen und ausführen, sollte ein Ergebnis ähnlich dem folgenden angezeigt werden.
 
@@ -501,7 +501,7 @@ Jetzt fügen wir zur DocumentDBRepository und zum ItemController etwas Code hinz
  
 	**Sicherheitshinweis**: Das **ValidateAntiForgeryToken**-Attribut wird hier verwendet, um den Schutz dieser Anwendung vor websiteübergreifenden Anforderungsfälschungen zu unterstützen. Das Hinzufügen dieses Attributs reicht jedoch nicht aus, Ihre Ansichten müssen auch mit diesem Antifälschungstoken zusammenarbeiten. Weitere Informationen zum Thema und Beispiele für eine ordnungsgemäße Implementierung finden Sie unter [Verhindern der websiteübergreifenden Anforderungsfälschung][]. Der auf [GitHub][] bereitgestellte Quellcode enthält die vollständige Implementierung.
 
-	**Sicherheitshinweis**: Wir verwenden außerdem das **Bind**-Attribut im Methodenparameter, um Schutz vor Overposting-Angriffen bereitzustellen. Weitere Informationen finden Sie unter [Grundlegende CRUD-Vorgänge in ASP.NET MVC][].
+	**Sicherheitshinweis**: Wir verwenden außerdem das Attribut **Bind** im Methodenparameter, um Schutz vor Overposting-Angriffen bereitzustellen. Weitere Informationen finden Sie unter [Grundlegende CRUD-Vorgänge in ASP.NET MVC][].
 
 Damit ist der für das Hinzufügen neuer Elemente zur Datenbank erforderliche Code komplett.
 
@@ -615,15 +615,15 @@ Nachdem die vollständige Anwendung korrekt mit DocumentDB zusammenarbeitet, ste
 
 2. Alles sollte bereits Ihren Anmeldeinformationen entsprechend konfiguriert sein; tatsächlich wurde die Website bereits unter der angezeigten **Ziel-URL** in Azure erstellt, Sie müssen lediglich noch auf **Veröffentlichen** klicken.
 
-    ![Screenshots des Dialogfelds "Web veröffentlichen" in Visual Studio](./media/documentdb-dotnet-application/image29.png)
+    ![Screenshot des Dialogfelds "Web veröffentlichen" in Visual Studio – Schrittanleitung im ASP NET MVC-Tutorial](./media/documentdb-dotnet-application/image29.png)
 
 Dann schließt Visual Studio die Veröffentlichung Ihrer Webanwendung in wenigen Sekunden ab und startet einen Browser, in dem das Ergebnis Ihrer Arbeit in Azure ausgeführt wird!
 
 ##<a name="_Toc395637775"></a>Nächste Schritte
 
-Glückwunsch! Sie haben soeben Ihre erste ASP.NET MVC-Anwendung unter Verwendung von Azure DocumentDB erstellt und in Azure-Websites veröffentlicht. Der Quellcode für die vollständige Anwendung, einschließlich der Detail- und Löschfunktionen, die in diesem Lernprogramm nicht enthalten waren, kann von [GitHub][] heruntergeladen oder geklont werden. Wenn Sie diese Funktionen also zu Ihrer App hinzufügen möchten, laden Sie den Code herunter, und fügen Sie ihn dieser App hinzu.
+Glückwunsch! Sie haben soeben Ihre erste ASP.NET MVC-Webanwendung unter Verwendung von Azure DocumentDB erstellt und in Azure Websites veröffentlicht. Der Quellcode für die vollständige Anwendung, einschließlich der Detail- und Löschfunktionen, die in diesem Lernprogramm nicht enthalten waren, kann von [GitHub][] heruntergeladen oder geklont werden. Wenn Sie diese Funktionen also zu Ihrer App hinzufügen möchten, laden Sie den Code herunter, und fügen Sie ihn dieser App hinzu.
 
-Wenn Sie Ihrer Anwendung zusätzliche Funktionen hinzufügen möchten, sehen Sie sich die APIs in der [DocumentDB .NET-Bibliothek](http://msdn.microsoft.com/library/azure/dn783362.aspx) an. Sie können auch gerne eigene Beiträge zur DocumentDB .NET-Bibliothek auf [GitHub][] schreiben.
+Wenn Sie Ihrer Anwendung zusätzliche Funktionen hinzufügen möchten, sehen Sie sich die APIs in der [DocumentDB .NET-Bibliothek](https://msdn.microsoft.com/library/azure/dn948556.aspx) an. Sie können auch gerne eigene Beiträge zur DocumentDB .NET-Bibliothek auf [GitHub][] schreiben.
 
 
 [*]: https://microsoft.sharepoint.com/teams/DocDB/Shared%20Documents/Documentation/Docs.LatestVersions/PicExportError
@@ -633,4 +633,4 @@ Wenn Sie Ihrer Anwendung zusätzliche Funktionen hinzufügen möchten, sehen Sie
 [Grundlegende CRUD-Vorgänge in ASP.NET MVC]: http://go.microsoft.com/fwlink/?LinkId=317598
 [GitHub]: https://github.com/Azure-Samples/documentdb-net-todo-app
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

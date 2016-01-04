@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="data-management"
-   ms.date="08/20/2015"
+   ms.date="11/24/2015"
    ms.author="rickbyh"/>
 
 # Sicherheitsrichtlinien und Einschränkungen von Azure SQL-Datenbank
@@ -25,7 +25,7 @@ In diesem Thema werden die Richtlinien und Einschränkungen von Microsoft Azure 
 
 Der Azure SQL-Datenbank-Dienst ist nur über TCP-Port 1433 verfügbar. Wenn Sie von Ihrem Computer auf eine SQL-Datenbank zugreifen möchten, sollten Sie sicherstellen, dass für Ihre Firewall die ausgehende TCP-Kommunikation über TCP-Port 1433 zugelassen ist. Im Rahmen des Verbindungsprozesses werden Verbindungen von virtuellen Azure-Computern an eine andere IP-Adresse und einen anderen Port umgeleitet, wobei diese Angaben für jede Workerrolle jeweils eindeutig sind. Die Portnummer liegt im Bereich von 11.000 bis 11.999.
 
-Bevor Sie zum ersten Mal eine Verbindung mit dem Azure SQL-Datenbank-Server herstellen können, müssen Sie das [Azure-Portal](https://portal.azure.com) oder das [Azure Platform-Verwaltungsportal](https://manage.windowsazure.com/microsoft.onmicrosoft.com#Workspaces/All/dashboard) verwenden, um die Firewall von Azure SQL-Datenbank zu konfigurieren. Sie müssen eine Firewalleinstellung auf Serverebene erstellen, die Verbindungsversuche von Ihrem Computer oder Azure zum Azure SQL-Datenbank-Server ermöglicht. Falls Sie den Zugriff auf bestimmte Datenbanken Ihres Azure SQL-Datenbank-Servers steuern möchten, müssen Sie für die jeweiligen Datenbanken außerdem jeweils Firewallregeln auf Datenbankebene erstellen. Weitere Informationen finden Sie unter [Firewall für die Azure SQL-Datenbank](sql-database-firewall-configure.md).
+Bevor Sie zum ersten Mal eine Verbindung mit dem Azure SQL-Datenbankserver herstellen können, müssen Sie das [klassische Azure-Portal](https://portal.azure.com) oder das [klassische Azure Platform-Portal](https://manage.windowsazure.com/microsoft.onmicrosoft.com#Workspaces/All/dashboard) verwenden, um die Firewall der Azure SQL-Datenbank zu konfigurieren. Sie müssen eine Firewalleinstellung auf Serverebene erstellen, die Verbindungsversuche von Ihrem Computer oder Azure zum Azure SQL-Datenbank-Server ermöglicht. Falls Sie den Zugriff auf bestimmte Datenbanken Ihres Azure SQL-Datenbank-Servers steuern möchten, müssen Sie für die jeweiligen Datenbanken außerdem jeweils Firewallregeln auf Datenbankebene erstellen. Weitere Informationen finden Sie unter [Firewall für die Azure SQL-Datenbank](sql-database-firewall-configure.md).
 
 ## Verbindungsverschlüsselung und Zertifikatüberprüfung
 
@@ -109,4 +109,6 @@ Berücksichtigen Sie die folgenden Punkte, um Ihre Azure SQL-Datenbank-Anwendung
 
 [Verwalten von Datenbanken und Anmeldungen in der Azure SQL-Datenbank](sql-database-manage-logins.md)
 
-<!---HONumber=Nov15_HO3-->
+[Sicherheitscenter für SQL Server-Datenbankmodul und Azure SQL-Datenbank](https://msdn.microsoft.com/library/bb510589)
+
+<!---HONumber=AcomDC_1203_2015-->

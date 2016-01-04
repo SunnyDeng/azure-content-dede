@@ -18,21 +18,17 @@
 
 # Erstellen einer ASP.NET-API-App in Azure App Service
 
-> [AZURE.SELECTOR]
-- [.NET - Visual Studio 2015](app-service-dotnet-create-api-app.md)
-- [.NET - Visual Studio Code](app-service-create-aspnet-api-app-using-vscode.md)
-- [Node.js](app-service-api-nodejs-api-app.md)
-- [Java](app-service-api-java-api-app.md)
+[AZURE.INCLUDE [app-service-api-v2-note](../../includes/app-service-api-v2-note.md)]
 
 ## Übersicht
 
-In diesem Lernprogramm wird gezeigt, wie Sie ein ASP.NET-Web-API-Projekt erstellen, das zur Bereitstellung in der Cloud als [API-App in Azure App Service](app-service-api-apps-why-best-platform.md) konfiguriert wird. Informationen zum Konfigurieren eines vorhandenen Web-API-Projekts zur Bereitstellung als API-App finden Sie unter [Konfigurieren eines Web-API-Projekts als API-App](app-service-dotnet-create-api-app-visual-studio.md).
+In diesem Tutorial wird gezeigt, wie Sie ein ASP.NET-Web-API-Projekt erstellen, das zur Bereitstellung in der Cloud als [API-App in Azure App Service](app-service-api-apps-why-best-platform.md) konfiguriert wird. Informationen zum Konfigurieren eines vorhandenen Web-API-Projekts zur Bereitstellung als API-App finden Sie unter [Konfigurieren eines Web-API-Projekts als API-App](app-service-dotnet-create-api-app-visual-studio.md).
 
 Dies ist ein schnelles und einfaches Tutorial, in dem Sie nur erfahren, wie Sie ein Visual Studio-Projekt mit einer Vorlage erstellen. Dies ist das erste Tutorial einer Reihe, in der Sie auch lernen, wie Sie das in diesem Tutorial erstellte API-App-Projekt [bereitstellen](app-service-dotnet-deploy-api-app.md) und [debuggen](../app-service-dotnet-remotely-debug-api-app.md) können. Weitere detaillierte Informationen zum Arbeiten mit API-Apps finden Sie im Abschnitt [Nächste Schritte](#next-steps) am Ende des Tutorials.
 
 [AZURE.INCLUDE [install-sdk-2015-2013](../../includes/install-sdk-2015-2013.md)]
 
-Für dieses Lernprogramm ist die Version 2.6 des Azure-SDK für .NET erforderlich.
+Für dieses Tutorial ist die Version 2.6 des Azure-SDK für .NET erforderlich.
 
 ## Erstellen eines API-App-Projekts
 
@@ -48,7 +44,7 @@ Wenn Sie in den Anweisungen aufgefordert werden, einen Namen für das Projekt ei
 
 ## Nächste Schritte
 
-Ihre API-App kann jetzt bereitgestellt werden. Dazu können Sie das Lernprogramm [Bereitstellen einer API-App](app-service-dotnet-deploy-api-app.md) befolgen.
+Ihre API-App kann jetzt bereitgestellt werden. Dazu können Sie das Tutorial [Bereitstellen einer API-App](app-service-dotnet-deploy-api-app.md) befolgen.
 
 Informationen zur Verwendung von automatisch generiertem Clientcode zum Aufrufen von API-Apps, finden Sie unter [Nutzen einer API-App in Azure App Service aus einem .NET-Client](app-service-api-dotnet-consume.md).
 
@@ -60,4 +56,4 @@ Informationen zur Authentifizierung von API-Apps-Benutzern finden Sie unter [Aut
 
 Informationen zu API-Apps-Funktionen finden Sie unter [Was sind API-Apps?](app-service-api-apps-why-best-platform.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

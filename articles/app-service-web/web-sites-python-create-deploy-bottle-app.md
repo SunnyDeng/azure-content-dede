@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="python" 
 	ms.topic="article" 
-	ms.date="08/30/2015"
-	ms.author="huguesv"/>
+	ms.date="11/17/2015"
+	ms.author="huvalo"/>
 
 
 # Erstellen von Web-Apps mit Bottle in Azure
@@ -51,12 +51,12 @@ Wir empfehlen auch die Installation von [Python Tools 2.2 für Visual Studio]. D
 Sie sollten Python und Git bereits installiert haben, doch stellen Sie sicher, dass Sie über Python 2.7 oder 3.4 verfügen.
 
 
-## Web-App-Erstellung im Azure-Vorschauportal
+## Web-App-Erstellung im Azure-Portal
 
-Der erste Schritt beim Erstellen einer App besteht im Erstellen der Web-App über das [Azure-Vorschauportal](https://portal.azure.com).
+Der erste Schritt beim Erstellen einer App ist das Erstellen der Web-App über das [Azure-Portal](https://portal.azure.com).
 
-1. Klicken Sie im Azure-Vorschauportal in der linken unteren Ecke auf **NEU**. 
-2. Klicken Sie auf **Web + Mobile** > **Azure Marketplace** > **Web-Apps**.
+1. Klicken Sie im Azure-Portal in der unteren linken Ecke auf **NEU**. 
+2. Klicken Sie auf **Web und mobil**.
 3. Geben Sie im Suchfeld "python" ein.
 4. Wählen Sie in den Suchergebnissen **Bottle** aus, und klicken Sie dann auf **Erstellen**.
 5. Konfigurieren Sie die neue Bottle-App, indem Sie beispielsweise einen neuen App Service-Plan und eine neue Ressourcengruppe dafür erstellen. Klicken Sie dann auf **Erstellen**.
@@ -132,7 +132,7 @@ In den nächsten 3 Abschnitten wird beschrieben, wie Sie die Web-App-Entwicklung
 
 ### Klonen des Repositorys
 
-Klonen Sie zunächst das Repository mithilfe der URL, die im Azure-Vorschauportal angegeben ist. Weitere Informationen finden Sie unter [Kontinuierliche Bereitstellung mit GIT in Azure App Service](web-sites-publish-source-control.md).
+Klonen Sie zunächst das Repository mithilfe der URL, die im Azure-Portal bereitgestellt ist. Weitere Informationen finden Sie unter [Kontinuierliche Bereitstellung mit GIT in Azure App Service](web-sites-publish-source-control.md).
 
 Öffnen Sie die Projektmappendatei (.sln), die im Stammverzeichnis des Repositorys enthalten ist.
 
@@ -144,7 +144,7 @@ Jetzt erstellen wir eine virtuelle Umgebung für die lokale Entwicklung. Klicken
 
 - Stellen Sie sicher, dass der Name der Umgebung `env` lautet.
 
-- Wählen Sie den Basisinterpreter. Achten Sie darauf, die gleiche Version von Python zu verwenden, die auch für Ihre Web-App ausgewählt ist (in "runtime.txt" oder auf dem Blatt **Anwendungseinstellungen** Ihrer Web-App im Azure-Vorschauportal).
+- Wählen Sie den Basisinterpreter. Achten Sie darauf, die gleiche Version von Python zu verwenden, die für Ihre Web-App ausgewählt ist (in runtime.txt oder im Blatt **Anwendungseinstellungen** Ihrer Web-App im Azure-Portal).
 
 - Stellen Sie sicher, dass die Option zum Herunterladen und Installieren von Paketen aktiviert ist.
 
@@ -199,7 +199,7 @@ Navigieren Sie zur Azure-URL, um die Änderungen anzuzeigen.
 
 ### Klonen des Repositorys
 
-Klonen Sie zunächst das Repository mithilfe der URL, die im Azure-Vorschauportal angegeben ist, und fügen Sie das Azure-Repository als Remoterepository hinzu. Weitere Informationen finden Sie unter [Kontinuierliche Bereitstellung mit GIT in Azure App Service](web-sites-publish-source-control.md).
+Klonen Sie zunächst das Repository mithilfe der URL, die im Azure-Portal bereitgestellt ist, und fügen Sie das Azure-Repository als Remoterepository hinzu. Weitere Informationen finden Sie unter [Kontinuierliche Bereitstellung mit GIT in Azure App Service](web-sites-publish-source-control.md).
 
     git clone <repo-url>
     cd <repo-folder>
@@ -209,7 +209,7 @@ Klonen Sie zunächst das Repository mithilfe der URL, die im Azure-Vorschauporta
 
 Wir erstellen eine neue virtuelle Umgebung zu Entwicklungszwecken (die nicht dem Repository hinzugefügt werden darf). Virtuelle Umgebungen in Python sind nicht verschiebbar, sodass jeder Entwickler, der an der Anwendung arbeitet, seine eigene lokal erstellen muss.
 
-Achten Sie darauf, die gleiche Version von Python zu verwenden, die auch für Ihre Web-App ausgewählt ist (in "runtime.txt" oder auf dem Blatt "Anwendungseinstellungen" für Ihre Web-App im Azure-Vorschauportal).
+Achten Sie darauf, die gleiche Version von Python zu verwenden, die für Ihre Web-App ausgewählt ist (in „runtime.txt“ oder auf dem Blatt „Anwendungseinstellungen“ Ihrer Web-App im Azure-Portal).
 
 Für Python 2.7:
 
@@ -278,7 +278,7 @@ Navigieren Sie zur Azure-URL, um die Änderungen anzuzeigen.
 
 ### Klonen des Repositorys
 
-Klonen Sie zunächst das Repository mithilfe der URL, die im Azure-Vorschauportal angegeben ist, und fügen Sie das Azure-Repository als Remoterepository hinzu. Weitere Informationen finden Sie unter [Kontinuierliche Bereitstellung mit GIT in Azure App Service](web-sites-publish-source-control.md).
+Klonen Sie zunächst das Repository mithilfe der URL, die im Azure-Portal bereitgestellt ist, und fügen Sie das Azure-Repository als Remoterepository hinzu. Weitere Informationen finden Sie unter [Kontinuierliche Bereitstellung mit GIT in Azure App Service](web-sites-publish-source-control.md).
 
     git clone <repo-url>
     cd <repo-folder>
@@ -288,7 +288,7 @@ Klonen Sie zunächst das Repository mithilfe der URL, die im Azure-Vorschauporta
 
 Wir erstellen eine neue virtuelle Umgebung zu Entwicklungszwecken (die nicht dem Repository hinzugefügt werden darf). Virtuelle Umgebungen in Python sind nicht verschiebbar, sodass jeder Entwickler, der an der Anwendung arbeitet, seine eigene lokal erstellen muss.
 
-Achten Sie darauf, die gleiche Version von Python zu verwenden, die auch für Ihre Web-App ausgewählt ist (in "runtime.txt" oder auf dem Blatt "Anwendungseinstellungen" Ihrer Web-App im Azure-Vorschauportal).
+Achten Sie darauf, die gleiche Version von Python zu verwenden, die für Ihre Web-App ausgewählt ist (in runtime.txt oder im Blatt "Anwendungseinstellungen" Ihrer Web-App im Azure-Portal).
 
 Für Python 2.7:
 
@@ -297,6 +297,7 @@ Für Python 2.7:
 Für Python 3.4:
 
     python -m venv env
+oder pyvenv env
 
 Installieren Sie alle externen Pakete, die Ihre Anwendung benötigt. Sie können die Datei "requirements.txt" im Stammverzeichnis des Repositorys verwenden, um die Pakete in der virtuellen Umgebung zu installieren:
 
@@ -377,7 +378,6 @@ Weitere Informationen zur Verwendung von Azure Table Storage und MongoDB:
 
 ## Änderungen
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
 
 
 <!--Link references-->
@@ -399,4 +399,4 @@ Weitere Informationen zur Verwendung von Azure Table Storage und MongoDB:
 [Dokumentation zu Bottle]: http://bottlepy.org/docs/dev/index.html
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

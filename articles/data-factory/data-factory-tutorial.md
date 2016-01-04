@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Verschieben und Verarbeiten von Protokolldateien mit Azure Data Factory (Azure-Portal)" 
-	description="In diesem fortgeschrittenen Tutorial wird ein sehr praxisnahes Szenario beschrieben und mithilfe des Azure Data Factory-Diensts und des Data Factory-Editors im Azure-Portal implementiert." 
+	pageTitle="Verschieben und Verarbeiten von Protokolldateien mit Azure Data Factory (klassisches Azure-Portal)" 
+	description="In diesem fortgeschrittenen Lernprogramm wird ein sehr praxisnahes Szenario beschrieben und mithilfe des Azure Data Factory-Diensts und des Data Factory-Editors im klassischen Azure-Portal implementiert." 
 	services="data-factory" 
 	documentationCenter="" 
 	authors="spelluru" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/25/2015" 
+	ms.date="11/12/2015" 
 	ms.author="spelluru"/>
 
 # Lernprogramm: Messen der Wirksamkeit von Marketingkampagnen  
@@ -48,9 +48,9 @@ In diesem Lernprogramm erstellen Sie Data Factory-Pipelines, um die Wirksamkeit
 	- **Azure SQL-Datenbank**: Server, Datenbank, Benutzername und Kennwort.
 	- **Azure HDInsight-Cluster**: Name des HDInsight-Clusters, Benutzername, Kennwort und Kontoname sowie Kontoschlüssel für den mit diesem Cluster verknüpften Azure-Speicher. Wenn Sie anstelle Ihres eigenen HDInsight-Clusters einen bedarfsgesteuerten HDInsight-Cluster verwenden möchten, können Sie diesen Schritt überspringen.  
 8. Starten Sie **Azure PowerShell**, und führen Sie die folgenden Befehle aus. Lassen Sie Azure PowerShell geöffnet. Wenn Sie PowerShell schließen und erneut öffnen, müssen Sie die Befehle erneut ausführen.
-	- Führen Sie **Add-AzureAccount** aus, und geben Sie den Benutzernamen und das Kennwort ein, den bzw. das Sie bei der Anmeldung für das Azure-Vorschauportal verwendet haben.  
+	- Führen Sie **Add-AzureAccount** aus, und geben Sie den Benutzernamen und das Kennwort ein, den bzw. das Sie bei der Anmeldung beim Azure-Portal verwendet haben.  
 	- Führen Sie **Get-AzureSubscription** aus, um alle Abonnements für dieses Konto anzuzeigen.
-	- Führen Sie **Select-AzureSubscription** aus, um das Abonnement auszuwählen, mit dem Sie arbeiten möchten. Dieses Abonnement sollte dasselbe sein, das Sie im Azure-Vorschauportal verwendet haben.	
+	- Führen Sie **Select-AzureSubscription** aus, um das Abonnement auszuwählen, mit dem Sie arbeiten möchten. Dieses Abonnement sollte dasselbe sein, das Sie im Azure-Portal verwendet haben.	
 
 ## Übersicht
 Nachfolgend ist der End-to-End-Workflow dargestellt:
@@ -99,7 +99,7 @@ Nachfolgend ist der End-to-End-Workflow dargestellt:
 		![MarketingCampaignPipeline][image-data-factory-tutorial-analyze-marketing-campaign-pipeline]
 
 
-6. [Schritt 6: Überwachen von Pipelines und Datenslices](#MainStep6). In diesem Schritt überwachen Sie die Pipelines, Tabellen und Datenslices mithilfe des Azure-Portals.
+6. [Schritt 6: Überwachen von Pipelines und Datenslices](#MainStep6). In diesem Schritt überwachen Sie die Pipelines, Tabellen und Datenslices mithilfe des klassischen Azure-Portals.
 
 ## <a name="MainStep1"></a> Schritt 1: Hochladen von Beispieldaten und Skripts
 In diesem Schritt laden Sie alle Beispieldaten (einschließlich aller Protokolle und Verweisdaten) sowie Hive-/Pig-Skripts hoch, die von den Workflows ausgeführt werden. Die Skripts, die Sie ausführen, erstellen auch eine Azure SQL-Datenbank namens **MarketingCampaigns** sowie Tabellen, benutzerdefinierte Typen und gespeicherte Prozeduren.
@@ -120,7 +120,7 @@ Die Tabellen, benutzerdefinierten Typen und gespeicherten Prozeduren werden beim
 	
 	Sie können auch die Dateien im Ordner "C:\\ADFWalkthrough\\Scripts" verwenden, um Pig-/Hive-Skripts und Beispieldateien in den ADFWalkthrough-Container im Blob-Speicher hochzuladen und die Tabelle "MarketingCampaignEffectiveness" in der Azure SQL-Datenbank "MarketingCamapaigns" zu erstellen.
    
-2. Bestätigen Sie, dass der lokale Computer auf die Azure SQL-Datenbank zugreifen darf. Verwenden Sie das Azure-Verwaltungsportal oder **sp\_set\_firewall\_rule** in der Masterdatenbank, um eine Firewallregel für die IP-Adresse auf dem Computer zu erstellen und so den Zugriff zu aktivieren. Es kann bis zu fünf Minuten dauert, bis diese Änderung wirksam wird. Unter [Festlegen von Firewallregeln für Azure SQL][azure-sql-firewall] finden Sie weitere Informationen.
+2. Bestätigen Sie, dass der lokale Computer auf die Azure SQL-Datenbank zugreifen darf. Verwenden Sie das [klassische Azure-Portal](http://manage.windowsazure.com) oder **sp\_set\_firewall\_rule** in der Masterdatenbank, um eine Firewallregel für die IP-Adresse auf dem Computer zu erstellen und so den Zugriff zu aktivieren. Es kann bis zu fünf Minuten dauert, bis diese Änderung wirksam wird. Unter [Festlegen von Firewallregeln für Azure SQL][azure-sql-firewall] finden Sie weitere Informationen.
 4. Navigieren Sie in Azure PowerShell zu dem Ordner, in dem Sie die Beispiele extrahiert haben (z. B. **C:\\ADFWalkthrough**).
 5. Führen Sie **uploadSampleDataAndScripts.ps1** aus. 
 6. Wenn das Skript erfolgreich ausgeführt wird, wird Folgendes angezeigt:
@@ -157,7 +157,7 @@ Die Tabellen, benutzerdefinierten Typen und gespeicherten Prozeduren werden beim
 ## <a name="MainStep2"></a> Schritt 2: Erstellen einer Azure Data Factory
 In diesem Schritt erstellen Sie eine Azure Data Factory mit dem Namen **LogProcessingFactory**.
 
-1.	Klicken Sie nach der Anmeldung beim [Azure-Vorschauportal][azure-preview-portal] links unten auf **NEU**, auf dem Blatt **Erstellen** auf **Datenanalyse** und anschließend auf dem Blatt **Datenanalyse** auf **Data Factory**. 
+1.	Klicken Sie nach der Anmeldung beim [Azure-Portal][azure-portal] links unten auf **NEU**, auf dem Blatt **Erstellen** auf **Datenanalyse** und anschließend auf dem Blatt **Datenanalyse** auf **Data Factory**. 
 
 	![Neu -> Data Factory][image-data-factory-new-datafactory-menu]
 
@@ -173,7 +173,7 @@ In diesem Schritt erstellen Sie eine Azure Data Factory mit dem Namen **LogProce
 	
 		![Ressourcengruppe erstellen][image-data-factory-tutorial-create-resourcegroup]
 7. Wählen Sie **ADF** als **RESSOURCENGRUPPENNAME**.  
-8.	Hinweis: Auf dem Blatt **Neue Data Factory** ist standardmäßig **Zum Startmenü hinzufügen** aktiviert. Dadurch wird eine Verknüpfung zur Data Factory im Startmenü (was Sie sehen, wenn Sie sich beim Azure-Vorschauportal anmelden) hinzugefügt.
+8.	Hinweis: Auf dem Blatt **Neue Data Factory** ist standardmäßig **Zum Startmenü hinzufügen** aktiviert. Dadurch wird eine Verknüpfung zur Data Factory im Startmenü (was Sie sehen, wenn Sie sich beim Azure-Portal anmelden) hinzugefügt.
 
 	![Blatt „Data Factory erstellen“][image-data-factory-tutorial-create-datafactory]
 
@@ -192,7 +192,7 @@ In diesem Schritt erstellen Sie eine Azure Data Factory mit dem Namen **LogProce
  
 ## <a name="MainStep3"></a> Schritt 3: Erstellen von verknüpften Diensten
 
-> [AZURE.NOTE]In diesem Artikel werden mithilfe des Azure-Portals und insbesondere des Data Factory-Editors verknüpfte Dienste, Tabellen und Pipelines erstellt. Wenn Sie dieses Lernprogramm mit Azure PowerShell ausführen möchten, lesen Sie unter [Lernprogramm mit Azure PowerShell][adftutorial-using-powershell] weiter.
+> [AZURE.NOTE]In diesem Artikel werden mithilfe des klassischen Azure-Portals und insbesondere des Data Factory-Editors verknüpfte Dienste, Tabellen und Pipelines erstellt. Wenn Sie dieses Lernprogramm mit Azure PowerShell ausführen möchten, lesen Sie unter [Lernprogramm mit Azure PowerShell][adftutorial-using-powershell] weiter.
 
 In diesem Schritt erstellen Sie die folgenden verknüpften Dienste:
 
@@ -238,24 +238,25 @@ Der Azure Data Factory-Dienst unterstützt das Erstellen eines Clusters bei Beda
 1. Klicken Sie auf der Befehlsleiste auf **Neu -> Compute**, und wählen Sie im Menü **On-Demand-HDInsight-Cluster** aus.
 2. Führen Sie im JSON-Skript folgende Schritte aus: 
 	1. Geben Sie für die Eigenschaft **clusterSize** die Größe des HDInsight-Clusters an.
-	2. Geben Sie für die Eigenschaft **jobsContainer** den Namen des Standardcontainers an, in dem die Clusterprotokolle gespeichert werden sollen. Geben Sie im Rahmen dieses Lernprogramms **adfjobscontainer** an.
 	3. Geben Sie für die **timeToLive**-Eigenschaft an, wie lange sich der Cluster im Leerlauf befinden darf, bevor er gelöscht wird. 
 	4. Geben Sie für die **version**-Eigenschaft die HDInsight-Version an, die Sie verwenden möchten. Wenn Sie diese Eigenschaft ausschließen, wird die neueste Version verwendet.  
 	5. Geben Sie für **linkedServiceName** die Zeichenfolge **HDInsightStorageLinkedService** an. Diesen Dienst haben Sie im Lernprogramm „Erste Schritte“ erstellt. 
 
 			{
-		    	"name": "HDInsightLinkedService",
-				    "properties": {
-		    	    "type": "HDInsightOnDemandLinkedService",
-		    	    "clusterSize": "4",
-		    	    "jobsContainer": "adfjobscontainer",
-		    	    "timeToLive": "00:05:00",
-		    	    "version": "3.1",
-		    	    "linkedServiceName": "HDInsightStorageLinkedService"
-		    	}
+			    "name": "HDInsightOnDemandLinkedService",
+			    "properties": {
+			        "type": "HDInsightOnDemand",
+			        "description": "",
+			        "typeProperties": {
+			            "clusterSize": "4",
+			            "timeToLive": "00:30:00",
+			            "version": "3.2",
+			            "linkedServiceName": "StorageLinkedService"
+			        }
+			    }
 			}
 
-		Achten Sie darauf, dass **type** für den verknüpften Dienst auf **HDInsightOnDemandLinkedService** festgelegt ist.
+		Achten Sie darauf, dass **type** für den verknüpften Dienst auf **HDInsightOnDemand** festgelegt ist.
 
 2. Klicken Sie auf der Befehlsleiste auf **Bereitstellen**, um den verknüpften Dienst bereitzustellen.
    
@@ -323,7 +324,8 @@ In diesem Schritt erstellen Sie die folgenden Pipelines:
         "isPaused": false
 
 	Beachten Sie, dass die Start- und Endzeiten auf 05/01/2014 und 05/05/2014 festgelegt sind, da sich die Beispieldaten in dieser exemplarischen Vorgehensweise auf den Zeitraum von 05/01/2014 bis 05/05/2014 beziehen.
- 
+ 	
+	Wenn Sie den bedarfsgesteuerten verknüpften HDInsight-Dienst verwenden, legen Sie die **linkedServiceName**-Eigenschaft auf **HDInsightOnDemandLinkedService** fest.
 3. Klicken Sie in der Symbolleiste auf **Bereitstellen**, um die Pipeline bereitzustellen. Vergewissern Sie sich, dass die Nachricht **PIPELINE ERFOLGREICH ERSTELLT** in der Titelleiste des Editors angezeigt wird.
 4. Wiederholen Sie die Schritte 1 bis 3 mit dem Inhalt der folgenden Dateien: 
 	1. EnrichGameLogsPipeline.json
@@ -357,11 +359,7 @@ In diesem Schritt erstellen Sie die folgenden Pipelines:
 
 		![Überwachung – Startmenü][image-data-factory-monitoring-startboard]
 
-	2. Klicken Sie auf den Hub **DURCHSUCHEN** und dann auf **Alles**.
-	 	
-		![Hub „Überwachung“ – Alles][image-data-factory-monitoring-hub-everything]
-
-		Wählen Sie auf dem Blatt **Durchsuchen** die Option **Data Factorys** und auf dem Blatt **Data Factorys** die Option **LogProcessingFactory** aus.
+	2. Klicken Sie auf dem Blatt **Durchsuchen** auf **DURCHSUCHEN**, wählen Sie die Option **Data Factorys** und auf dem Blatt **Data Factorys** die Option **LogProcessingFactory** aus.
 
 		![Überwachung – Data Factorys durchsuchen][image-data-factory-monitoring-browse-datafactories]
 2. Sie haben mehrere Möglichkeiten, um Ihre Data Factory zu überwachen. Sie können mit Pipelines oder Datasets beginnen. Wir beginnen mit Pipelines und arbeiten uns dann weiter vor. 
@@ -377,7 +375,7 @@ In diesem Schritt erstellen Sie die folgenden Pipelines:
 
 	Die Listen **Letzte aktualisierte Slices** und **Letzte fehlerhafte Slices** werden nach **UHRZEIT DER LETZTEN AKTUALISIERUNG** sortiert. Der Zeitpunkt der Aktualisierung eines Slices wird in den folgenden Situationen geändert.
 
-	-  Sie haben den Status eines Slices manuell aktualisiert, z. B. mit dem Cmdlet **Set AzureDataFactorySliceStatus** oder durch Klicken auf **Ausführen** auf dem Blatt **SLICE** des Slices.
+	-  Sie haben den Status eines Slices manuell aktualisiert, z. B. mit dem Cmdlet **Set-AzureRmDataFactorySliceStatus** oder durch Klicken auf **AUSFÜHREN** auf dem Blatt **SLICE** des Slices.
 	-  Der Status des Slices ändert sich aufgrund einer Ausführung (z. B. Ausführung gestartet, Ausführung mit Fehler beendet, Ausführung erfolgreich beendet usw.).
  
 	Klicken Sie auf den Titel der Listen oder auf **...** (Auslassungspunkte), um eine umfangreichere Liste mit Slices anzuzeigen. Klicken Sie auf der Symbolleiste auf **Filter**, um die Slices zu filtern.
@@ -433,7 +431,7 @@ In [Exemplarische Vorgehensweise: Verwenden einer lokalen Datenquelle][tutorial-
 [tutorial-onpremises]: data-factory-tutorial-extend-onpremises.md
 [download-azure-powershell]: ../powershell-install-configure.md
 
-[azure-preview-portal]: http://portal.azure.com
+[azure-portal]: http://portal.azure.com
 [azure-purchase-options]: http://azure.microsoft.com/pricing/purchase-options/
 [azure-member-offers]: http://azure.microsoft.com/pricing/member-offers/
 [azure-free-trial]: http://azure.microsoft.com/pricing/free-trial/
@@ -526,4 +524,4 @@ In [Exemplarische Vorgehensweise: Verwenden einer lokalen Datenquelle][tutorial-
 
 [image-data-factory-new-datafactory-create-button]: ./media/data-factory-tutorial/DataFactoryCreateButton.png
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

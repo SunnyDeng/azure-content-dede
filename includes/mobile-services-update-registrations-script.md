@@ -1,6 +1,6 @@
 
 
-1. Klicken Sie im Verwaltungsportal auf die Registerkarte **Daten** und dann auf die Tabelle **Registrations**. 
+1. Klicken Sie im [klassischen Azure-Portal](https://manage.windowsazure.com/) auf die Registerkarte **Daten** und dann auf die Tabelle **Registrations**. 
 
 	![](./media/mobile-services-update-registrations-script/mobile-portal-data-tables-registrations.png)
 
@@ -28,4 +28,4 @@
 
    Auf diese Weise wird ein neues Einfügeskript registriert, das die Registrierungsinformationen in der neuen Tabelle speichert.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

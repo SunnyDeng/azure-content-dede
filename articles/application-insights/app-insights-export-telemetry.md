@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/23/2015" 
+	ms.date="11/15/2015" 
 	ms.author="awills"/>
  
 # Exportieren von Telemetriedaten aus Application Insights
@@ -21,9 +21,9 @@ Möchten Sie Ihre Telemetriedaten einer angepassten Analyse unterziehen? Oder m�
 
 Der fortlaufende Export ist im kostenlosen Testzeitraum und in den [Standard- und Premium-Preisplänen](http://azure.microsoft.com/pricing/details/application-insights/) verfügbar.
 
-(Wenn Sie die Daten in einem Ihrer Blätter "Metriken" oder "Suchen" nur [einmal exportieren](app-insights-metrics-explorer.md#export-to-excel) möchten, klicken Sie oben im Blatt auf "Export".)
+(Wenn Sie die Daten in einem Ihrer Blätter "Metriken" oder "Suchen" nur [einmal exportieren](app-insights-metrics-explorer.md#export-to-excel) möchten, klicken Sie oben im Blatt auf "Export". Und wenn Sie sich Daten in Power BI anzeigen lassen möchten, greifen Sie auf [den Adapter](http://blogs.msdn.com/b/powerbi/archive/2015/11/04/explore-your-application-insights-data-with-power-bi.aspx) zurück – der *keinen* fortlaufenden Export verwendet.)
 
-## Erstellen eines Speicherkontos
+## Erstellen Sie ein Speicherkonto.
 
 Wenn Sie noch nicht über ein "klassisches" Speicherkonto verfügen, erstellen Sie jetzt eins.
 
@@ -74,6 +74,8 @@ Bei den exportierten Daten handelt es sich um die Telemetrierohdaten, die wir vo
 Andere berechnete Metriken sind nicht enthalten. Wir exportieren z. B. nicht die durchschnittliche CPU-Auslastung, doch wir exportieren die rohen Telemetriedaten, anhand derer der Durchschnitt berechnet wird.
 
 Die Daten umfassen außerdem die Ergebnisse von [Verfügbarkeitswebtests](app-insights-monitor-web-app-availability.md), die Sie eventuell eingerichtet haben.
+
+> [AZURE.NOTE]**Stichproben** Wenn Ihre Anwendung eine große Menge von Daten sendet und Sie das Application Insights-SDK für ASP.NET Version 2.0.0-beta3 oder höher verwenden, wird möglicherweise die adaptive Stichprobenerstellung verwendet, bei der nur ein bestimmter Prozentsatz der Telemetriedaten übermittelt wird. [Erfahren Sie mehr über das Erstellen von Stichproben.](app-insights-sampling.md)
 
 ## <a name="get"></a>Untersuchen der Daten
 
@@ -141,22 +143,13 @@ Wenn Sie den Schlüssel zu Ihrem Speicher ändern, funktioniert der fortlaufende
 
 Der fortlaufende Export wird neu gestartet.
 
-## Exportieren nach Power BI
+## Export-Beispiele
 
-[Microsoft Power BI](https://powerbi.microsoft.com/) stellt die Daten mit umfangreichen und unterschiedlichen Grafiken dar und bietet die Möglichkeit, Informationen aus mehreren Quellen zu kombinieren. Sie können die Telemetriedaten über die Leistung und Nutzung Ihrer Apps von Application Insights zu Power BI streamen.
-
-[Streamen von Application Insights zu Power BI](app-insights-export-power-bi.md)
-
-![Beispiel für eine Power BI-Ansicht der Application Insights-Nutzungsdaten](./media/app-insights-export-telemetry/210.png)
-
-## Exportieren in SQL
-
-Eine weitere Option ist das Verschieben von Daten in eine SQL-Datenbank, in der Sie leistungsstärkere Analysen durchführen können.
-
-In Beispielen werden zwei alternative Methoden zum Verschieben der Daten aus dem Blobspeicher in eine Datenbank veranschaulicht:
 
 * [Exportieren in SQL über eine Workerrolle][exportcode]
 * [Exportieren in SQL mit Stream Analytics][exportasa]
+* [Exportieren in Power BI mit Stream Analytics](app-insights-export-power-bi.md)
+ * Beachten Sie, dass es sich hier nicht um die standardmäßige Verwendung von Power BI handelt. Es gibt [einen Adapter](http://blogs.msdn.com/b/powerbi/archive/2015/11/04/explore-your-application-insights-data-with-power-bi.aspx), der keinen fortlaufenden Export erfordert.
 
 
 Bei größeren Dimensionen sollten Sie [HDInsight](http://azure.microsoft.com/services/hdinsight/)-Hadoop-Cluster in der Cloud erwägen. HDInsight bietet eine Vielzahl von Technologien für die Verwaltung und Analyse riesiger Datenmengen.
@@ -217,4 +210,4 @@ Bei größeren Dimensionen sollten Sie [HDInsight](http://azure.microsoft.com/se
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -1,11 +1,12 @@
 <properties 
-   pageTitle="Erstellen einer Azure SQL-Datenbank mit C#" 
-   description="In diesem Artikel wird gezeigt, wie Sie eine Azure SQL-Datenbank mithilfe von C# und der Azure SQL-Datenbankbibliothek für .NET erstellen." 
-   services="sql-database" 
-   documentationCenter="" 
-   authors="stevestein" 
-   manager="jeffreyg" 
-   editor=""/>
+	pageTitle="Ausprobieren von SQL-Datenbank: Erstellen einer SQL-Datenbank mit C# | Microsoft Azure" 
+	description="Probieren Sie SQL-Datenbank für das Entwickeln von SQL- und C#-Apps aus, und erstellen Sie eine Azure SQL-Datenbank mithilfe der SQL-Datenbankbibliothek für .NET." 
+	keywords="Ausprobieren von SQL, SQL C#"   
+	services="sql-database" 
+	documentationCenter="" 
+	authors="stevestein" 
+	manager="jeffreyg" 
+	editor="cgronlun"/>
 
 <tags
    ms.service="sql-database"
@@ -13,23 +14,23 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="powershell"
    ms.workload="data-management" 
-   ms.date="09/01/2015"
+   ms.date="12/01/2015"
    ms.author="sstein"/>
 
-# Erstellen einer SQL-Datenbank mit C&#x23;
+# Ausprobieren von SQL-Datenbank: Verwenden von C# zum Erstellen einer SQL-Datenbank mithilfe der SQL-Datenbankbibliothek für .NET 
 
 **Einzeldatenbank**
 
 > [AZURE.SELECTOR]
-- [Azure Preview Portal](sql-database-get-started.md)
+- [Azure portal](sql-database-get-started.md)
 - [C#](sql-database-get-started-csharp.md)
 - [PowerShell](sql-database-get-started-powershell.md)
 
 
 
-Dieser Artikel enthält Befehle zum Erstellen einer Azure SQL-Datenbank mithilfe von C# und der [Azure SQL-Datenbankbibliothek für .NET](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql).
+Erfahren Sie, wie Sie C#-Befehle zum Erstellen einer Azure SQL-Datenbank mithilfe der [Azure SQL-Datenbankbibliothek für .NET](https://www.nuget.org/packages/Microsoft.Azure.Management.Sql) erstellen.
 
-In diesem Artikel wird erläutert, wie Sie eine Einzeldatenbank erstellen. Informationen zum Erstellen elastischer Datenbanken finden Sie unter [Erstellen eines Pools für elastische Datenbanken](sql-database-elastic-pool-portal.md).
+Sie können SQL-Datenbank ausprobieren, indem Sie mit SQL und C# eine Einzeldatenbank erstellen. Informationen zum Erstellen elastischer Datenbanken finden Sie unter [Erstellen eines Pools für elastische Datenbanken](sql-database-elastic-pool-portal.md).
 
 Aus Gründen der Übersichtlichkeit beschränken sich die Beispiele auf einzelne Codeausschnitte. In dem Abschnitt am Ende dieses Artikels sind alle Befehle in einer Beispielkonsolenanwendung zusammengeführt.
 
@@ -49,7 +50,7 @@ Damit Sie die in diesem Artikel aufgeführten Schritte ausführen können, benö
 
 ## Installieren der erforderlichen Bibliotheken
 
-Rufen Sie die erforderlichen Verwaltungsbibliotheken ab, indem Sie die folgenden Pakete mithilfe der [Paket-Manager-Konsole](http://docs.nuget.org/Consume/Package-Manager-Console) installieren:
+Zum Einrichten einer SQL-Datenbank mit C# rufen Sie die erforderlichen Verwaltungsbibliotheken ab, indem Sie die folgenden Pakete mithilfe der [Paket-Manager-Konsole](http://docs.nuget.org/Consume/Package-Manager-Console) installieren:
 
     PM> Install-Package Microsoft.Azure.Management.Sql –Pre
     PM> Install-Package Microsoft.Azure.Management.Resources –Pre
@@ -62,47 +63,47 @@ Zuerst müssen Sie der Clientanwendung den Zugriff auf die REST-API ermöglichen
 
 Die [APIs des Azure-Ressourcen-Managers](https://msdn.microsoft.com/library/azure/dn948464.aspx) nutzen Azure Active Directory für die Authentifizierung.
 
-Zur Authentifizierung der Clientanwendung basierend auf dem aktuellen Benutzer, müssen Sie die Anwendung zuerst in der AAD-Domäne registrieren, die dem Abonnement zugeordnet ist, unter dem die Azure-Ressourcen erstellt wurden. Wenn das Azure-Abonnement mit einem Microsoft-Konto anstelle eines Geschäfts-, Schul- oder Unikontos erstellt wurde, verfügen Sie bereits über eine AAD-Standarddomäne. Die Anwendung kann im [Azure-Portal](https://manage.windowsazure.com/) registriert werden.
+Zur Authentifizierung der Clientanwendung basierend auf dem aktuellen Benutzer, müssen Sie die Anwendung zuerst in der AAD-Domäne registrieren, die dem Abonnement zugeordnet ist, unter dem die Azure-Ressourcen erstellt wurden. Wenn das Azure-Abonnement mit einem Microsoft-Konto anstelle eines Geschäfts-, Schul- oder Unikontos erstellt wurde, verfügen Sie bereits über eine AAD-Standarddomäne. Die Anwendung kann im [klassischen Azure-Portal](https://manage.windowsazure.com/) registriert werden.
 
 Um eine neue Anwendung zu erstellen und im richtigen Active Directory zu registrieren, führen Sie die folgenden Schritte aus:
 
 1. Führen Sie im Menü auf der linken Seite einen Bildlauf durch, um den Dienst **Active Directory** zu suchen und zu öffnen.
 
-    ![AAD][1]
+    ![Ausprobieren von SQL-Datenbank: Einrichten von Azure Active Directory (AAD).][1]
 
 2. Wählen Sie das Verzeichnis zum Authentifizieren Ihrer Anwendung aus, und klicken Sie auf seinen **Namen**.
 
-    ![Verzeichnisse][4]
+    ![Wählen Sie das Verzeichnis zum Authentifizieren Ihrer SQL-C#-Anwendung aus.][4]
 
 3. Klicken Sie auf der Verzeichnisseite auf **ANWENDUNGEN**.
 
-    ![Anwendungen][5]
+    ![Die Verzeichnisseite mit Anwendungen.][5]
 
-4. Klicken Sie auf **HINZUFÜGEN**, um eine neue Anwendung zu erstellen.
+4. Klicken Sie auf **HINZUFÜGEN**, um eine neue C#-Anwendung für Ihre SQL-Datenbank zu erstellen.
 
-    ![Anwendung hinzufügen][6]
+    ![Fügen Sie Ihre SQL-C#-Anwendung hinzu.][6]
 
 5. Wählen Sie **Eine von meinem Unternehmen entwickelte Anwendung hinzufügen** aus.
 
 5. Geben Sie im Feld **NAME** einen Namen für die App ein, und wählen Sie **SYSTEMEIGENE CLIENTANWENDUNG** aus.
 
-    ![Anwendung hinzufügen][7]
+    ![Geben Sie Informationen zu Ihrer SQL C#-Anwendung an.][7]
 
 6. Geben Sie einen **UMLEITUNGS-URI** an. Es muss kein tatsächlicher Endpunkt sein, lediglich ein gültiger URI.
 
-    ![Anwendung hinzufügen][8]
+    ![Fügen Sie eine Umleitungs-URL für Ihre SQL-C#-Anwendung hinzu.][8]
 
 7. Beenden Sie das Erstellen der App, klicken Sie auf **KONFIGURIEREN**, und kopieren Sie die **CLIENT-ID** (Sie benötigen die Client-ID in Ihrem Code).
 
-    ![Client-ID abrufen][9]
+    ![Rufen Sie die Client-ID Ihrer Anwendung ab.][9]
 
 
 1. Klicken Sie unten auf der Seite auf **Anwendung hinzufügen**.
 1. Wählen Sie **Microsoft-Apps** aus.
-1. Wählen Sie **Azure-Dienstverwaltungs-API** aus, und schließen Sie dann den Assistenten ab.
+1. Wählen Sie **Azure Service-Verwaltungs-API** aus, und schließen Sie dann den Assistenten ab.
 2. Nun müssen Sie bei ausgewählter API die jeweiligen Berechtigungen für den Zugriff auf diese API erteilen, indem Sie **Auf Azure-Dienstverwaltung (Vorschauversion) zugreifen** auswählen.
 
-    ![Berechtigungen][2]
+    ![Legen Sie Berechtigungen fest.][2]
 
 2. Klicken Sie auf **SPEICHERN**.
 
@@ -112,10 +113,10 @@ Um eine neue Anwendung zu erstellen und im richtigen Active Directory zu registr
 
 Der Domänenname ist für den Code erforderlich. Es folgt eine einfache Möglichkeit zum Ermitteln des richtigen Domänennamens:
 
-1. Öffnen Sie das [Azure-Vorschauportal](https://portal.azure.com).
+1. Öffnen Sie das [Azure-Portal](https://portal.azure.com).
 2. Zeigen Sie auf Ihren Namen in der oberen rechten Ecke, und notieren Sie sich die Domäne, die im Popupfenster angezeigt wird.
 
-    ![Domänenname ermitteln][3]
+    ![Ermitteln Sie den Domänennamen.][3]
 
 
 
@@ -223,9 +224,9 @@ Im folgenden Beispiel wird eine Regel erstellt, die den Zugriff auf den Server v
 Damit andere Azure-Dienste auf einen Server zugreifen können, fügen Sie eine Firewallregel hinzu, und setzen Sie sowohl "StartIpAddress" als auch "EndIpAddress" auf "0.0.0.0". Beachten Sie, dass dadurch Azure-Datenverkehr aus *jedem* Azure-Abonnement auf den Server zugreifen kann.
 
 
-## Erstellen einer Datenbank
+## Verwenden von C# zum Erstellen einer SQL-Datenbank vom Typ „Basic“
 
-Mit dem folgenden Befehl wird eine neue Basic-Datenbank erstellt, wenn keine Datenbank mit demselben Namen auf dem Server vorhanden ist. Ist eine Datenbank mit demselben Namen vorhanden, wird diese aktualisiert.
+Mit dem folgenden C#-Befehl wird eine neue Basic-Datenbank erstellt, sofern nicht bereits eine Datenbank mit demselben Namen auf dem Server vorhanden ist. Ist eine Datenbank mit demselben Namen vorhanden, wird diese aktualisiert.
 
         // Create a database
 
@@ -250,7 +251,7 @@ Mit dem folgenden Befehl wird eine neue Basic-Datenbank erstellt, wenn keine Dat
 
 
 
-## Beispielkonsolenanwendung
+## C#-Beispielkonsolenanwendung
 
 
     using Microsoft.Azure;
@@ -411,6 +412,7 @@ Mit dem folgenden Befehl wird eine neue Basic-Datenbank erstellt, wenn keine Dat
 
 
 ## Nächste Schritte
+Nachdem Sie SQL-Datenbank ausprobiert und mit C# eine Datenbank erstellt haben, bietet sich die folgenden Artikel an:
 
 - [Verbinden mit und Abfragen der SQL-Datenbank mit C#](sql-database-connect-query.md)
 - [Herstellen einer Verbindung mit SQL Server Management Studio (SSMS)](sql-database-connect-to-database.md)
@@ -434,4 +436,4 @@ Mit dem folgenden Befehl wird eine neue Basic-Datenbank erstellt, wenn keine Dat
 [8]: ./media/sql-database-get-started-csharp/add-application2.png
 [9]: ./media/sql-database-get-started-csharp/clientid.png
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -59,7 +59,7 @@ Wenn Sie noch nicht über ein Azure-Konto verfügen, erhalten Sie unter [Einen M
 
 Zuerst erstellen Sie das Azure Virtual Network „TestLab“, in dem das Corpnet-Subnetz der Basiskonfiguration gehostet wird.
 
-1.	Klicken Sie in der Taskleiste des [Azure-Portals](https://manage.windowsazure.com) auf **Neu > Network Services > Virtual Network > Benutzerdefiniert erstellen**.
+1.	Klicken Sie in der Taskleiste des [klassischen Azure-Portals](https://manage.windowsazure.com) auf **Neu > Network Services > Virtual Network > Benutzerdefiniert erstellen**.
 2.	Geben Sie auf der Seite „Details zum virtuellen Netzwerk“ unter **Name** den Namen **TestLab** ein.
 3.	Wählen Sie unter **Location** (Standort) die entsprechende Region aus.
 4.	Klicken Sie auf den „Weiter“-Pfeil.
@@ -126,7 +126,7 @@ Zunächst geben Sie den Namen des Clouddiensts an und führen mithilfe der Azure
 
 Stellen Sie dann eine Verbindung mit dem virtuellen Computer DC1 her.
 
-1.	Klicken Sie im Azure-Verwaltungsportal im linken Bereich auf **Virtuelle Computer** und dann in der Spalte **Status** des virtuellen Computers DC1 auf **Gestartet**.  
+1.	Klicken Sie im klassischen Azure-Portal im linken Bereich auf **Virtuelle Computer** und dann in der Spalte **Status** des virtuellen Computers „DC1“ auf **Gestartet**.  
 2.	Klicken Sie in der Taskleiste auf **Verbinden**.
 3.	Wenn Sie zum Öffnen von „DC1.rdp“ aufgefordert werden, klicken Sie auf **Öffnen**.
 4.	Wenn ein Meldungsfeld der Remotedesktopverbindung angezeigt wird, klicken Sie auf **Verbinden**.
@@ -155,7 +155,7 @@ Als Nächstes konfigurieren Sie DC1 als Domänencontroller und DNS-Server für d
 
 Stellen Sie nach dem Neustart des virtuellen Computers DC1 erneut eine Verbindung mit DC1 her.
 
-1.	Klicken Sie im Azure-Verwaltungsportal auf der Seite „Virtuelle Computer“ beim virtuellen Computer DC1 in der Spalte **Status** auf **Ausführen**.
+1.	Klicken Sie im klassischen Azure-Portal auf der Seite „Virtuelle Computer“ beim virtuellen Computer „DC1“ in der Spalte **Status** auf **Wird ausgeführt**.
 2.	Klicken Sie in der Taskleiste auf **Verbinden**.
 3.	Wenn Sie zum Öffnen von „DC1.rdp“ aufgefordert werden, klicken Sie auf **Öffnen**.
 4.	Wenn ein Meldungsfeld der Remotedesktopverbindung angezeigt wird, klicken Sie auf **Verbinden**.
@@ -256,7 +256,7 @@ Die Basiskonfiguration in Azure kann nun zur Anwendungsentwicklung, zu Testzweck
 
 [Azure Test Lab](http://social.technet.microsoft.com/wiki/contents/articles/24092.azure-test-lab.aspx)
 
-[Hybrid cloud test environments](../virtual-network/virtual-networks-setup-hybrid-cloud-environment-testing.md) (Testumgebungen für Hybridclouds)
+[Hybrid cloud test environments (Testumgebungen für Hybridclouds)](../virtual-network/virtual-networks-setup-hybrid-cloud-environment-testing.md)
 
 [Testumgebung für die Basiskonfiguration mit Azure-Ressourcen-Manager](virtual-machines-base-configuration-test-environment-resource-manager.md)
 
@@ -288,4 +288,4 @@ Zum Starten der virtuellen Computer in der angegebenen Reihenfolge mit Azure Pow
 	Start-AzureVM -ServiceName $serviceName -Name "APP1"
 	Start-AzureVM -ServiceName $serviceName -Name "CLIENT1"
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

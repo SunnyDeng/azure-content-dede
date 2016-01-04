@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Konfigurieren einer Verfügbarkeitsgruppe für virtuelle Computer | Microsoft Azure"
-	description="Konfigurieren Sie eine Verfügbarkeitsgruppe für einen neuen oder vorhandenen virtuellen Computer im klassischen Bereitstellungsmodell mithilfe des Azure-Portals und mit Azure PowerShell."
+	description="Konfigurieren Sie eine Verfügbarkeitsgruppe für einen neuen oder vorhandenen virtuellen Computer im klassischen Bereitstellungsmodell mithilfe des klassischen Azure-Portals und mit Azure PowerShell."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -35,11 +35,11 @@ Mithilfe einer der beiden folgenden Optionen können Sie einen virtuellen Comput
 
 ## <a id="createset"> </a>Option 1: Erstellen Sie gleichzeitig einen virtuellen Computer und eine Verfügbarkeitsgruppe##
 
-Dafür können Sie entweder das Azure-Portal oder die Azure PowerShell-Befehle verwenden.
+Dafür können Sie entweder das klassische Azure-Portal oder die Azure PowerShell-Befehle verwenden.
 
-So verwenden Sie das Azure-Portal:
+Verwenden des klassischen Azure-Portals:
 
-1. Melden Sie sich beim Azure-Portal an, falls Sie dies noch nicht getan haben.
+1. Melden Sie sich beim klassischen Azure-Portal an, falls noch nicht geschehen.
 
 2. Klicken Sie in der Befehlsleiste auf **Neu**.
 
@@ -72,9 +72,9 @@ Beachten Sie Folgendes, wenn Sie einen virtuellen Azure-Computer mithilfe von Az
 
 ## <a id="addmachine"> </a>Option 2: Fügen Sie einer Verfügbarkeitsgruppe einen vorhandenen virtuellen Computer hinzu##
 
-Im Azur-Portal können Sie einer vorhandenen Verfügbarkeitsgruppe vorhandene virtuelle Computer hinzufügen oder einen neuen virtuellen Computer für sie erstellen. (Beachten Sie, dass die virtuellen Computer in derselben Verfügbarkeitsgruppe zum selben Clouddienst gehören müssen.) Die Schritte sind beinah identisch. Mit Azure PowerShell können Sie einer vorhandenen Verfügbarkeitsgruppe den virtuellen Computer hinzufügen.
+Im klassischen Azur-Portal können Sie einer vorhandenen Verfügbarkeitsgruppe vorhandene virtuelle Computer hinzufügen oder einen neuen virtuellen Computer für sie erstellen. (Beachten Sie, dass die virtuellen Computer in derselben Verfügbarkeitsgruppe zum selben Clouddienst gehören müssen.) Die Schritte sind beinah identisch. Mit Azure PowerShell können Sie einer vorhandenen Verfügbarkeitsgruppe den virtuellen Computer hinzufügen.
 
-1. Melden Sie sich beim Azure-Portal an, falls Sie dies noch nicht getan haben.
+1. Melden Sie sich beim klassischen Azure-Portal an, falls noch nicht geschehen.
 
 2. Klicken Sie in der Befehlsleiste auf **Virtuelle Computer**.
 
@@ -112,4 +112,4 @@ Um Azure PowerShell-Befehle zu verwenden, öffnen Sie eine Azure PowerShell-Sitz
 [Virtuelle Netzwerke im Überblick]: virtual-networks-overview.md
 [Artikel zu virtuellen Computern in der Dienstverwaltung]: virtual-machines-service-management-articles.md
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -143,9 +143,9 @@ Es gibt verschiedene Methoden, um die Eigenschaft "Anwendungsversion" festzulege
 
     Um das Generieren von Versionsnummern in MSBuild zu ermöglichen, legen Sie in "AssemblyReference.cs" die Version fest, z. B. `1.0.*`.
 
-## Überwachen von Back-End-Servern
+## Überwachen von Back-End-Servern und Desktop-Apps
 
-[Verwenden der grundlegenden API](app-insights-windows-desktop.md)
+[Verwenden Sie das Windows Server-SDK-Modul](app-insights-windows-desktop.md).
 
 
 ## Visualisieren von Daten
@@ -185,15 +185,15 @@ Anschließend können Sie folgende Aktionen ausführen:
 
 ## Ändern von Eigenschaftennamen oder -werten
 
-Erstellen Sie einen Filter (app-insights-api-filtering-sampling.md#filtering). So können Sie Telemetrie ändern oder filtern, bevor sie von Ihrer App aus an Application Insights gesendet wird.
+Erstellen Sie einen [Filter](app-insights-api-filtering-sampling.md#filtering). So können Sie Telemetrie ändern oder filtern, bevor sie von Ihrer App aus an Application Insights gesendet wird.
 
 ## Auflisten bestimmter Benutzer und deren Nutzung
 
-Wenn Sie nur [nach bestimmten Benutzern suchen möchten](#search-specific-users), können Sie die [ID für authentifizierte Benutzer](app-insights-api-custom-events-metrics/#authenticated-users) festlegen.
+Wenn Sie nur [nach bestimmten Benutzern suchen möchten](#search-specific-users), können Sie die [ID für authentifizierte Benutzer](app-insights-api-custom-events-metrics.md#authenticated-users) festlegen.
 
 Wenn Sie eine Liste von Benutzern mit bestimmten Daten erstellen möchten, z. B., welche Seiten sich die Benutzer ansehen oder wie oft sie sich anmelden, haben Sie zwei Möglichkeiten:
 
-* [Legen Sie die ID für authentifizierte Benutzer fest](app-insights-api-custom-events-metrics/#authenticated-users), [exportieren Sie die Daten in eine Datenbank](app-insights-code-sample-export-sql-stream-analytics.md), und analysieren Sie dort die Benutzerdaten mit den entsprechenden Tools.
+* [Legen Sie die ID für authentifizierte Benutzer fest](app-insights-api-custom-events-metrics.md#authenticated-users), [exportieren Sie die Daten in eine Datenbank](app-insights-code-sample-export-sql-stream-analytics.md), und analysieren Sie dort die Benutzerdaten mit den entsprechenden Tools.
 * Wenn Sie nur über eine kleine Anzahl von Benutzern verfügen, senden Sie benutzerdefinierte Ereignisse oder Metriken, verwenden Sie dabei die relevanten Daten als Metrikwert oder Ereignisname, und legen Sie die Benutzer-ID als Eigenschaft fest. Um Seitenansichten zu analysieren, ersetzen Sie den standardmäßigen JavaScript-trackPageView-Aufruf. Um die serverseitige Telemetrie zu analysieren, fügen Sie die Benutzer-ID mithilfe eines Telemetrieinitialisierers allen Servertelemetriedaten hinzu. Sie können dann Metriken und Suchvorgänge nach der Benutzer-ID filtern und segmentieren.
 
 
@@ -219,7 +219,7 @@ So können Sie die Sammlung und Übermittlung von Telemetriedaten aus dem Server
 
 
 
-Um **ausgewählte Standardsammlungen zu deaktivieren** – z. B. Leistungsindikatoren, HTTP-Anforderungen oder Abhängigkeiten – löschen Sie die entsprechenden Zeilen in [ApplicationInsights.config](app-insights-api-custom-events-metrics.md) oder kommentieren Sie sie aus. Diese Vorgehensweise bietet sich z. B. an, wenn Sie Ihre eigenen TrackRequest-Daten senden möchten.
+Um **ausgewählte Standardsammlungen zu deaktivieren** – z. B. Leistungsindikatoren, HTTP-Anforderungen oder die Abhängigkeiten –, löschen oder kommentieren Sie die entsprechenden Zeilen in [ApplicationInsights.config](app-insights-api-custom-events-metrics.md). Diese Vorgehensweise bietet sich z. B. an, wenn Sie Ihre eigenen TrackRequest-Daten senden möchten.
 
 
 
@@ -233,11 +233,11 @@ Zu den Metriken, die Sie im Metrik-Explorer anzeigen können, zählt u. a. eine
 
 * **IIS-Server** auf Ihrem eigenen oder auf einem virtuellen Computer. [Installieren Sie den Statusmonitor](app-insights-monitor-performance-live-website-now.md). 
 * **Azure-Website** – Leistungsindikatoren werden noch nicht unterstützt. Sie können jedoch mehrere Metriken über die Systemsteuerung der Azure-Website standardmäßig abrufen.
-* **Unix-Server** – [Installieren Sie „collectd“](app-insights-java-collectd.md).
+* **Unix-Server** – [Installieren Sie collectd](app-insights-java-collectd.md).
 
 ### Anzeigen weiterer Leistungsindikatoren
 
 * Fügen Sie zunächst [ein neues Diagramm hinzu](app-insights-metrics-explorer.md), und prüfen Sie dann, ob der gewünschte Leistungsindikator im angebotenen grundlegenden Satz enthalten ist.
 * Wenn dies nicht der Fall ist, [fügen Sie den Leistungsindikator dem über das Leistungsindikatormodul erfassten Satz hinzu](app-insights-web-monitor-performance.md#system-performance-counters).
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO4-->

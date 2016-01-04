@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Überlegungen zu Sicherheit und Datenschutz in Cloud App Discovery"
+	pageTitle="Überlegungen zu Sicherheit und Datenschutz in Cloud App Discovery | Microsoft Azure"
 	description="Dieses Thema beschreibt Überlegungen zu Sicherheit und Datenschutz in Zusammenhang mit Cloud App Discovery."
 	services="active-directory"
 	documentationCenter=""
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/03/2015"
+	ms.date="12/01/2015"
 	ms.author="markusvi"/>
 
 # Überlegungen zu Sicherheit und Datenschutz in Cloud App Discovery
@@ -177,4 +177,4 @@ Um die Sicherheit der erfassten Metadaten zu gewährleisten, haben standardmäß
 
 * [Wie ermittle ich nicht genehmigte Cloud-Apps, die in meiner Organisation verwendet werden?](active-directory-cloudappdiscovery-whatis.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

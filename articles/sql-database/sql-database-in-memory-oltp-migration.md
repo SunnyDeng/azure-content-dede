@@ -14,13 +14,13 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="hero-article"
-	ms.date="11/10/2015"
+	ms.date="11/16/2015"
 	ms.author="jodebrui"/>
 
 
-# Verwenden von In-Memory (Vorschau) zur Verbesserung der Anwendungsleistung in der SQL-Datenbank
+# Verwenden von In-Memory (Vorschau) zur Verbesserung der Anwendungsleistung in SQL-Datenbank
 
-Führen Sie die folgenden Schritte aus, um die Transaktionsleistung Ihrer vorhandenen [Premium](sql-database-service-tiers.md) Azure SQL-Datenbank mit dem Feature [In-Memory](sql-database-in-memory.md) zu optimieren.
+Führen Sie die folgenden Schritte aus, um die Transaktionsleistung Ihrer vorhandenen [Premium](sql-database-service-tiers.md)-Azure SQL-Datenbank mit dem Feature [In-Memory](sql-database-in-memory.md) zu optimieren.
 
 
 ## Schritt 1: Stellen Sie sicher, dass die Premium-Datenbank In-Memory unterstützt
@@ -39,9 +39,9 @@ Wenn die vorhandene Datenbank in eine neue V12 Premium-Datenbank verschoben werd
 
 Exportieren Sie Ihre Produktionsdatenbank mithilfe einer der folgenden Funktionen in eine bacpac-Datei:
 
-- Die Funktion [Export](sql-database-export.md) im [Portal](https://portal.azure.com/).
+- Die Funktion [Exportieren](sql-database-export.md) im [Portal](https://portal.azure.com/).
 
-- Die Funktion **Datenebenenanwendung exportieren** in einer [aktuellen „SSMS.exe“](http://msdn.microsoft.com/library/mt238290.aspx) (SQL Server Management Studio).
+- Die Funktion **Datenebenenanwendung exportieren** in einer [aktuellen Version von „SSMS.exe“](http://msdn.microsoft.com/library/mt238290.aspx) (SQL Server Management Studio).
  1. Erweitern Sie im **Objekt-Explorer** den Knoten **Datenbanken**.
  2. Klicken Sie mit der rechten Maustaste auf den Datenbankknoten.
  3. Klicken Sie auf **Aufgaben** > **Datenebenenanwendung exportieren**.
@@ -50,10 +50,10 @@ Exportieren Sie Ihre Produktionsdatenbank mithilfe einer der folgenden Funktione
 
 #### Importschritte
 
-Importieren Sie die bacpac-Datei in eine neue Premium-Datenbank.
+Importieren Sie die „bacpac“-Datei in eine neue Premium-Datenbank.
 
-1. Im Azure-[Portal](http://portal.azure.com/)
- - navigieren Sie zum Server.
+1. Navigieren Sie im [Azure-Vorschauportal](http://portal.azure.com/)
+ - zum Server.
  - Wählen Sie die Option [Datenbank importieren](sql-database-import.md).
  - Wählen Sie einen Premium-Tarif aus.
 
@@ -140,7 +140,7 @@ INSERT INTO <new_memory_optimized_table>
 ```
 
 
-## Schritt 5 (optional): Migrieren von gespeicherten Prozeduren 
+## Schritt 5 (optional): Migrieren von gespeicherten Prozeduren
 
 Das In-Memory-Feature kann auch eine gespeicherte Prozedur zur Verbesserung der Leistung ändern.
 
@@ -154,7 +154,7 @@ Für die T-SQL-WITH-Klausel einer systemeigen kompilierten gespeicherten Prozedu
 - SCHEMABINDING: Bezieht sich auf Tabellen, deren Spaltendefinitionen nicht in einer Weise geändert werden dürfen, die sich auf die gespeicherte Prozedur auswirkt, sofern Sie die gespeicherte Prozedur nicht löschen.
 
 
-Ein systemeigenes Modul muss einen großen [ATOMIC-Block](http://msdn.microsoft.com/library/dn452281.aspx) zum Verwalten von Transaktionen verwenden. Es gibt keine Rolle für ein explizites BEGIN TRANSACTION.
+Ein systemeigenes Modul muss einen großen [ATOMIC-Block](http://msdn.microsoft.com/library/dn452281.aspx) zum Verwalten von Transaktionen verwenden. Es gibt keine Rolle für ein explizites BEGIN TRANSACTION oder ROLLBACK TRANSACTION. Wenn Ihr Code einen Verstoß gegen eine Geschäftsregel erkennt, kann er den atomischen Block mit einer [Throw](http://msdn.microsoft.com/library/ee677615.aspx)-Anweisung beenden.
 
 
 ### In der Regel CREATE PROCEDURE für systemeigen kompilierte gespeicherte Prozeduren verwenden
@@ -184,7 +184,7 @@ CREATE PROCEDURE schemaname.procedurename
 
 ### Migrieren einer gespeicherten Prozedur
 
-Die Migrationsschritte sind:
+Die Migrationsschritte sind wie folgt:
 
 
 1. Rufen Sie das CREATE PROCEDURE-Skript für die regulär übersetzte gespeicherte Prozedur auf.
@@ -192,7 +192,7 @@ Die Migrationsschritte sind:
 2. Schreiben Sie ihren Header entsprechend der vorherigen Vorlage neu.
 
 3. Prüfen Sie, ob der T-SQL-Code der gespeicherten Prozedur Features verwendet, die für systemeigen kompilierte gespeicherte Prozeduren nicht unterstützt werden. Implementieren Sie ggf. Problemumgehungen.
- - Weitere Informationen finden Sie unter [Migrationsprobleme bei systemintern kompilierten gespeicherten Prozeduren](http://msdn.microsoft.com/library/dn296678.aspx).
+ - Weitere Informationen finden Sie unter [Migrationsprobleme bei systemeigen kompilierten gespeicherten Prozeduren](http://msdn.microsoft.com/library/dn296678.aspx).
 
 4. Benennen Sie die alte gespeicherte Prozedur mithilfe von SP\_RENAME um. Oder löschen Sie sie einfach (DROP).
 
@@ -210,7 +210,7 @@ Wichtige Attribute der Workload sind:
 - Lese-/Schreib-Verhältnis.
 
 
-Zum Anpassen und Ausführen der Workload sollten Sie das praktische Tool „ostress.exe“ verwenden, das [hier](sql-database-in-memory.md) dargestellt wird.
+Zum Anpassen und Ausführen der Testworkload empfiehlt Sie praktische Tool „ostress.exe“, das [hier](sql-database-in-memory.md) dargestellt wird.
 
 
 Um die Netzwerklatenz zu minimieren, führen Sie den Test in der gleichen geografischen Azure-Region aus, in der die Datenbank vorhanden ist.
@@ -233,4 +233,4 @@ Sie sollten die Leistungseffekte Ihrer In-Memory-Implementierungen in der Produk
 
 - [Ratgeber für die Speicheroptimierung](http://msdn.microsoft.com/library/dn284308.aspx)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

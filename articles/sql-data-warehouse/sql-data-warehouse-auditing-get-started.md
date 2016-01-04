@@ -59,7 +59,7 @@ Eine Überwachungsrichtlinie kann für eine spezifische Datenbank oder als Stand
 
 ##<a id="subheading-2"></a>Einrichten der Überwachung für Ihre Datenbank
 
-1. Starten Sie das <a href="https://portal.azure.com" target="_blank">Azure-Vorschauportal</a>.
+1. Starten Sie das <a href="https://portal.azure.com" target="_blank">Azure-Portal</a>.
 
 2. Navigieren Sie zum Blatt "Konfiguration" der SQL Data Warehouse-Datenbank/SQL Server-Instanz, die Sie überwachen möchten. Klicken Sie oben auf die Schaltfläche **Einstellungen**, und wählen Sie auf dem Blatt "Einstellungen" die Option **Überwachung**.
 
@@ -102,7 +102,7 @@ Ausführlichere Anweisungen zum Arbeiten mit der Berichtvorlage finden Sie unter
 
 
 ##<a id="subheading-4">Methoden zur Verwendung in der Produktion</a>
-Die Beschreibung in diesem Abschnitt bezieht sich auf die obigen Screenshots. Sie können entweder das <a href="https://portal.azure.com" target="_blank">Azure-Vorschauportal</a> oder das <a href= "https://manage.windowsazure.com/" target="_bank">klassische Azure-Portal</a> verwenden.
+Die Beschreibung in diesem Abschnitt bezieht sich auf die obigen Screenshots. Sie können entweder das <a href="https://portal.azure.com" target="_blank">Azure-Portal</a> oder das <a href= "https://manage.windowsazure.com/" target="_bank">klassische Azure-Portal</a> verwenden.
  
 
 ##<a id="subheading-5"></a>Erneute Speicherschlüsselgenerierung
@@ -141,4 +141,4 @@ Wenn Sie im Azure-Ressourcen-Manager-Modus arbeiten, führen Sie `Get-Command *A
 
 <!--Link references-->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->
