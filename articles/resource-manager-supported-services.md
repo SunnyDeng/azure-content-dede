@@ -61,7 +61,8 @@ Ressourcen des Typs "Virtuelle Computer (klassisch)" können in neue Ressourceng
 | SQL-Datenbank | Ja | [Ja](https://portal.azure.com/#create/Microsoft.SQLDatabase.1.0.3) | Ja | [Erstellen einer Datenbank](https://msdn.microsoft.com/library/azure/mt163685.aspx) | [2014-04-01-preview](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2014-04-01-preview/Microsoft.Sql.json) |
 | Suchen | Ja | [Ja](https://portal.azure.com/#create/Microsoft.Search) | Ja | [Azure-Suchdienst-REST-API](https://msdn.microsoft.com/library/azure/dn798935.aspx) | |
 | SQL Data Warehouse | Ja | [Ja](https://portal.azure.com/#create/Microsoft.SQLDataWarehouse.0.1.13-preview) | | | |
-| StorSimple | Nein | Nein | - | - | - | | Verwalteter Cache | Nein | Nein | - | - | - |
+| StorSimple | Nein | Nein | - | - | - | 
+| Verwalteter Cache | Nein | Nein | - | - | - |
 
 ## Web- und mobile Anwendungen
 
@@ -104,13 +105,16 @@ Bei der Arbeit mit Web-Apps können Sie nicht nur einen App Services-Plan versch
 | ------- | ------- | -------------- | -------------- | -------- | ------ |
 | BizTalk Services | Ja | Nein | | | [2014-04-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2014-04-01/Microsoft.BizTalkServices.json) |
 | Service Bus | Ja | Nein | | [Service Bus REST-API-Referenz](https://msdn.microsoft.com/library/azure/hh780717.aspx) | |
-| Backup | Nein | Nein | - | - | - | | Site Recovery | Nein | Nein | - | - | - |
+| Backup | Nein | Nein | - | - | - | 
+| Site Recovery | Nein | Nein | - | - | - |
 
 ## Identitäts- und Zugriffsverwaltung 
 
 | Dienst | Ressourcen-Manager aktiviert | Portal | Ressourcen verschieben | REST-API | Schema |
 | ------- | ------- | -------------- | -------------- | -------- | ------ |
-| Azure Active Directory | Nein | Nein | - | - | - | | Azure Actice Directory B2C | Nein | Nein | - | - | - | | Multi-Factor Authentication | Nein | Nein | - | - | - |
+| Azure Active Directory | Nein | Nein | - | - | - | 
+| Azure Actice Directory B2C | Nein | Nein | - | - | - | 
+| Multi-Factor Authentication | Nein | Nein | - | - | - |
 
 ## Entwicklerdienste 
 

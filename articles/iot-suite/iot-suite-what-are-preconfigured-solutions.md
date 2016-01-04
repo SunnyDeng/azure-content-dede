@@ -36,7 +36,8 @@ In der folgenden Tabelle wird gezeigt, wie diese vorkonfigurierten Lösungen bes
 
 | Lösung | Datenerfassung | Geräteidentität | Befehl und Steuerung | Regeln und Aktionen | Predictive Analytics |
 |------------------------|-----|-----|-----|-----|-----|
-| Remoteüberwachung | Ja | Ja | Ja | Ja | – | | Vorbeugende Wartung | Ja | Ja | Ja | Ja | Ja |
+| Remoteüberwachung | Ja | Ja | Ja | Ja | – |
+| Vorbeugende Wartung | Ja | Ja | Ja | Ja | Ja |
 
 ## Übersicht über die vorkonfigurierte Lösung zur Remoteüberwachung
 
