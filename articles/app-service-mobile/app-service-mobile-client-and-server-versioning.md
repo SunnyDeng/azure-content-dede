@@ -80,9 +80,10 @@ Hinweis: Die Mobile Services-Client-SDKs senden *keinen* Headerwert für `ZUMO-A
 
 ### Mobile *Services*-Server-SDKs
 
-| Serverplattform | Version | Akzeptierter Versionsheader |
+| Serverplattform | Version                                                                                                        | Akzeptierter Versionsheader |
 | ---------------- | ------------------------------------------------------------                                                   | ----------------------- |
-| .NET | [WindowsAzure.MobileServices.Backend.* Version 1.0.x](https://www.nuget.org/packages/WindowsAzure.MobileServices.Backend/) | **** Kein Versionsheader ** || Node.js | (demnächst verfügbar) | **Kein Versionsheader** |
+| .NET             | [WindowsAzure.MobileServices.Backend.* Version 1.0.x](https://www.nuget.org/packages/WindowsAzure.MobileServices.Backend/) | ** Kein Versionsheader ** |
+| Node.js          | (demnächst verfügbar) |                        **Kein Versionsheader** |
 
 <!-- TODO: add Node npm version -->
 
@@ -140,4 +141,4 @@ Die Versionsüberprüfung ist in den folgenden Versionen des Server-SDK enthalte
 [Mobile App Server SDK]: http://www.nuget.org/packages/microsoft.azure.mobile.server
 [Migrieren eines Mobile Service zu Azure App Service]: app-service-mobile-migrating-from-mobile-services.md
 
-<!---HONumber=AcomDC_1217_2015-->
+<!----HONumber=AcomDC_1217_2015-->

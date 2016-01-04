@@ -143,7 +143,7 @@ In einer tatsächlichen Anwendung würden Sie normalerweise separate Konten für
 
 6. Öffnen Sie die Datei *App.config* für das ContosoAdsWebJob-Projekt.
 
-	Die Datei enthält zwei Verbindungszeichenfolgen: eine für die Anwendungsdaten und eine für die Protokollierung. In diesem Lernprogramm verwenden Sie dasselbe Konto für beide Funktionen. Die Verbindungszeichenfolgen enthalten Platzhalter für die Speicherkontoschlüssel.
+	Die Datei enthält zwei Verbindungszeichenfolgen: eine für die Anwendungsdaten und eine für die Protokollierung. Sie können separate Speicherkonten für Anwendungsdaten und Protokollierung und [mehrere Speicherkonten für Daten](https://github.com/Azure/azure-webjobs-sdk/blob/master/test/Microsoft.Azure.WebJobs.Host.EndToEndTests/MultipleStorageAccountsEndToEndTests.cs) verwenden. In diesem Tutorial verwenden Sie nur ein einziges Speicherkonto. Die Verbindungszeichenfolgen enthalten Platzhalter für die Speicherkontoschlüssel.
   	<pre class="prettyprint">&lt;configuration&gt;
     &lt;connectionStrings&gt;
         &lt;add name="AzureWebJobsDashboard" connectionString="DefaultEndpointsProtocol=https;AccountName=<mark>[accountname]</mark>;AccountKey=<mark>[accesskey]</mark>"/&gt;
@@ -814,4 +814,4 @@ Weitere Informationen finden Sie unter [Einrichten eines Dashboards für die lok
 
 Weitere Informationen finden Sie unter [Dokumentationsressourcen für Azure WebJobs](http://go.microsoft.com/fwlink/?LinkId=390226).
 
-<!---HONumber=AcomDC_1217_2015-->
+<!----HONumber=AcomDC_1217_2015-->
