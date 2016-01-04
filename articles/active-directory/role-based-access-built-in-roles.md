@@ -133,7 +133,9 @@ Mitwirkende können alles mit Ausnahme des Zugriffs verwalten.
 | **Aktionen** ||
 | ------- | ------ |
 | * | Erstellen und Verwalten von Ressourcen aller Typen |
-| ****Nicht-Aktionen | | | Microsoft.Authorization/*/Write | Kann keine Rollen und Rollenzuweisungen erstellen | | Microsoft.Authorization/*/Delete | Kann keine Rollen und Rollenzuweisungen löschen |
+| ****Nicht-Aktionen | |
+| Microsoft.Authorization/*/Write | Kann keine Rollen und Rollenzuweisungen erstellen |
+| Microsoft.Authorization/*/Delete | Kann keine Rollen und Rollenzuweisungen löschen |
 
 ### Mitwirkender von Data Factory
 Kann Data Factorys verwalten
