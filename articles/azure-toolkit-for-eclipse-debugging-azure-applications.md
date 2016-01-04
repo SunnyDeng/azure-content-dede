@@ -35,14 +35,16 @@ Wir verwenden die Anwendung aus dem Tutorial [Verwenden der Azure-Dienstlaufzeit
 1. Erstellen Sie Ihr Projekt für das Testen im Emulator: Klicken Sie im Projektexplorer von Eclipse mit der rechten Maustaste auf **MyAzureProject**, klicken Sie auf **Properties** und anschließend auf **Azure**, und legen Sie bei **Build for** die Einstellung **Deployment to cloud** fest.
 1. Erstellen Sie Ihr Projekt neu: Klicken Sie im Eclipse-Menü auf **Project** und dann auf **Build All**.
 1. Stellen Sie Ihre Anwendung unter *Staging* in Azure bereit.
-    >[AZURE.IMPORTANT]Wie oben erwähnt: Es wird dringend empfohlen, dass Sie das Debuggen in den allermeisten Fällen im Serveremulator ausführen und nur dann in der Stagingumgebung debuggen, wenn ein zusätzliches Debuggen erforderlich ist. Es wird empfohlen, nicht in der Produktionsumgebung zu debuggen.
+
+    >[AZURE.IMPORTANT] Wie oben erwähnt: Es wird dringend empfohlen, dass Sie das Debuggen in den allermeisten Fällen im Serveremulator ausführen und nur dann in der Stagingumgebung debuggen, wenn ein zusätzliches Debuggen erforderlich ist. Es wird empfohlen, nicht in der Produktionsumgebung zu debuggen.
 1. Wenn die Bereitstellung in Azure abgeschlossen ist, suchen und notieren Sie den DNS-Namen im [Azure-Verwaltungsportal][]. Eine Stagingbereitstellung hat einen DNS-Namen in der Form http://*&lt;guid&gt;*.cloudapp.net, wobei *&lt;guid&gt;* ein von Azure zugeordneter GUID-Wert ist.
 1. Klicken Sie im Projektexplorer von Eclipse mit der rechten Maustaste auf **WorkerRole1**, klicken Sie auf **Azure** und dann auf **Debugging**.
 1. Gehen Sie im Dialogfeld **Properties for WorkerRole1 Debugging** wie folgt vor:
     1. Aktivieren Sie das Kontrollkästchen **Enable remote debugging for this role**.
     1. Verwenden Sie für **Input endpoint to use** den Wert **Debugging (public:8090, private:8090)**.
     1. Stellen Sie sicher, dass die Option **Start JVM in suspended mode, waiting for a debugger connection** nicht aktiviert ist.
-        >[AZURE.IMPORTANT]Die Option **Start JVM in suspended mode, waiting for a debugger connection** ist für komplexere Debugszenarien im Serveremulator vorgesehen (nicht für Cloudbereitstellungen). Beim Verwenden der Option **Start JVM in suspended mode, waiting for a debugger connection** wird der Startprozess des Servers solange angehalten, bis der Eclipse-Debugger mit seiner JVM verbunden ist. Sie können diese Option zwar für eine Debugsitzung mit dem Serveremulator nutzen, aber für eine Debugsitzung in einer Cloudbereitstellung dürfen Sie sie nicht verwenden. Im Zuge einer Startaufgabe von Azure wird ein Server initialisiert, und die Azure-Cloud macht öffentliche Endpunkte erst verfügbar, wenn die Startaufgabe abgeschlossen ist. Bei Aktivierung dieser Option in einer Cloudbereitstellung wird ein Startprozess nicht erfolgreich abgeschlossen, weil er keine Verbindung von einem externen Eclipse-Client empfangen kann.
+
+        >[AZURE.IMPORTANT] Die Option **Start JVM in suspended mode, waiting for a debugger connection** ist für komplexere Debugszenarien im Serveremulator vorgesehen (nicht für Cloudbereitstellungen). Beim Verwenden der Option **Start JVM in suspended mode, waiting for a debugger connection** wird der Startprozess des Servers solange angehalten, bis der Eclipse-Debugger mit seiner JVM verbunden ist. Sie können diese Option zwar für eine Debugsitzung mit dem Serveremulator nutzen, aber für eine Debugsitzung in einer Cloudbereitstellung dürfen Sie sie nicht verwenden. Im Zuge einer Startaufgabe von Azure wird ein Server initialisiert, und die Azure-Cloud macht öffentliche Endpunkte erst verfügbar, wenn die Startaufgabe abgeschlossen ist. Bei Aktivierung dieser Option in einer Cloudbereitstellung wird ein Startprozess nicht erfolgreich abgeschlossen, weil er keine Verbindung von einem externen Eclipse-Client empfangen kann.
     1. Klicken Sie auf **Create Debug Configurations**.
 1. Gehen Sie im Dialogfeld **Azure Debug Configuration** wie folgt vor:
     1. Wählen Sie bei **Java project to debug** das Projekt **MyHelloWorld** aus.
@@ -131,4 +133,4 @@ Weitere Informationen zum Verwenden von Azure mit Java finden Sie im [Azure Java
 [ic719504]: ./media/azure-toolkit-for-eclipse-debugging-azure-applications/ic719504.png
 [ic551537]: ./media/azure-toolkit-for-eclipse-debugging-azure-applications/ic551537.png
 
-<!---HONumber=AcomDC_1210_2015-->
+<!----HONumber=AcomDC_1210_2015-->
