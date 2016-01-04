@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Funktionsweise von Azure AD"
-	description="Azure AD bietet eine Identitätslösung, die Sie in der Cloud verwalten können. Sie kann mit Ihrem lokalen Identitätssystem verbunden oder unabhängig verwendet werden."
+	pageTitle="Funktionsweise von Azure Active Directory | Microsoft Azure"
+	description="Azure Active Directory bietet eine Identitätslösung, die Sie in der Cloud verwalten können. Sie kann mit Ihrem lokalen Identitätssystem verbunden oder unabhängig verwendet werden."
 	services="active-directory"
 	documentationCenter=""
 	authors="curtand"
@@ -13,19 +13,18 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/21/2015"
+	ms.date="12/01/2015"
 	ms.author="curtand"/>
 
 
 
 # Funktionsweise von Azure Active Directory
 
-
 ###Weitere Artikel zu diesem Thema
 [Was ist Azure AD?](active-directory-whatis.md)<br> [Wie funktioniert Azure AD?](active-directory-works.md)<br> [Erste Schritte](active-directory-get-started.md)<br> [Nächste Schritte](active-directory-next-steps.md)<br> [Weitere Informationen](active-directory-learn-map.md)
 
 
-Azure AD bietet eine Identitätslösung, die Sie in der Cloud verwalten können. Sie kann mit Ihrem lokalen Identitätssystem verbunden oder unabhängig verwendet werden.
+Azure Active Directory (Azure AD) bietet eine Identitätslösung, die Sie in der Cloud verwalten können. Sie kann mit Ihrem lokalen Identitätssystem verbunden oder unabhängig verwendet werden.
 
 Stellen Sie sich ein Konto in Azure AD als Führerschein für die Cloud vor. Es handelt sich um Ihre eindeutige ID für den Zugriff auf Onlinedienste. In diesem Sinne funktioniert Azure AD wie Ihre eigene private Registrierungsstelle in der Cloud für diese Führerscheine. Azure AD ermöglicht das Verwenden von Identitäten überall in der Cloud und verbessert die Mobilität für Benutzer, die lokal auf Ressourcen zugreifen.
 
@@ -49,4 +48,4 @@ Wünschen Sie weitere Informationen zum Verwalten von Azure AD? Wie wird ein Ver
 * [Als Organisation für Azure registrieren](sign-up-organization.md)
 * [Azure-Identität](fundamentals-identity.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

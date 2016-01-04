@@ -1,6 +1,6 @@
 <properties
    pageTitle="Abschließen der wiederhergestellten Azure SQL-Datenbank"
-   description="Zeitpunktwiederherstellung, Microsoft Azure SQL-Datenbank, Datenbank wiederherstellen, Azure-Verwaltungsportal, Azure-Portal"
+   description="Point-in-Time-Wiederherstellung, Microsoft Azure SQL-Datenbank, Datenbank wiederherstellen, Datenbankwiederherstellung, klassisches Azure-Portal, klassisches Azure-Portal"
    services="sql-database"
    documentationCenter=""
    authors="elfisher"
@@ -56,4 +56,4 @@ Weitere Informationen zu Datenbank-Warnungsregeln finden Sie unter [Vorgehenswei
 Wenn für den Zugriff auf die Datenbank Überwachung erforderlich ist, müssen Sie nach der Wiederherstellung der Datenbank die Überwachung aktivieren. Es ist ein guter Indikator für die Notwendigkeit von Überwachung, wenn Clientanwendungen sichere Verbindungszeichenfolgen in einem Muster von *.database.secure.windows.net verwenden. Weitere Informationen finden Sie unter [Erste Schritte mit der SQL-Datenbanküberwachung](sql-database-auditing-get-started.md).
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

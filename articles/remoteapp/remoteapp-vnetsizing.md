@@ -1,19 +1,19 @@
 
-<properties 
-    pageTitle="Größeninformationen für ein VNET in Azure RemoteApp"
-    description="Erfahren Sie mehr über die Anforderungen für IP-Adressen für ein VNET mit Azure RemoteApp." 
-    services="remoteapp" 
-    documentationCenter="" 
-    authors="lizap" 
+<properties
+    pageTitle="Größeninformationen für ein VNET in Azure RemoteApp | Microsoft Azure"
+    description="Erfahren Sie mehr über die Anforderungen für IP-Adressen für ein VNET mit Azure RemoteApp."
+    services="remoteapp"
+    documentationCenter=""
+    authors="lizap"
     manager="mbaldwin" />
 
-<tags 
-    ms.service="remoteapp" 
-    ms.workload="compute" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="article" 
-    ms.date="09/02/2015" 
+<tags
+    ms.service="remoteapp"
+    ms.workload="compute"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="12/05/2015"
     ms.author="elizapo" />
 
 
@@ -28,7 +28,5 @@ Sehen Sie sich die folgenden Informationen an, um sicherzustellen, dass Ihr VNET
 
 - [Migrieren Sie von einem persönlichen VNET zu einem Azure-VNET](remoteapp-migratevnet.md)
 - [Überprüfen des Azure-VNET für die Verwendung mit Azure RemoteApp](remoteapp-vnet.md)
-  
- 
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

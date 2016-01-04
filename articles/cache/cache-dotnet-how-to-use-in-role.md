@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="11/03/2015" 
+	ms.date="12/03/2015" 
 	ms.author="sdanie"/>
 
 
@@ -25,7 +25,7 @@
 
 Dieser Leitfaden zeigt Ihnen die ersten Schritte mit **In-Role Cache für Azure Cache**. Die Beispiele sind in C#-Code geschrieben und verwenden die .NET API. Es werden folgende Szenarien vorgestellt: **Konfigurieren eines Cacheclusters**, **Konfigurieren von Cacheclients**, **Hinzufügen und Entfernen von Objekten vom Cache, Speichern des ASP.NET-Sitzungszustands im Cache** und **Aktivieren des ASP.NET-Seitenausgabecaches mithilfe des Cache**. Weitere Informationen zur Verwendung des In-Role Cache erhalten Sie unter [Nächste Schritte][].
 
->[AZURE.NOTE]Hilfestellung bei der Auswahl des für Ihre Anwendung geeigneten Azure Cache-Angebots finden Sie unter [Welches Azure Cache-Angebot ist für mich das richtige?][].
+>[AZURE.IMPORTANT]Wir geben die Deaktivierung der Dienste Azure Managed Cache Service und Azure In-Role Cache zum 30. November 2016 bekannt. Es wird empfohlen, als Vorbereitung für diese Einstellung dieser Dienste zu Azure Redis Cache zu migrieren. Weitere Informationen zu Daten und Hinweise zur Migration finden Sie unter [Welches Azure Cache-Angebot ist für mich das richtige?](../redis-cache/cache-faq.md#which-azure-cache-offering-is-right-for-me)
 
 <a name="what-is"></a>
 ## Was ist In-Role Cache?
@@ -38,7 +38,7 @@ In-Role Caches bieten eine Caching-Schicht für Azure-Anwendungen. Das Caching e
 
 In-Role Cache stellt eine Möglichkeit zum Durchführen von Cachingaktionen bereit, indem ein Teil des Arbeitsspeichers der virtuellen Maschinen verwendet wird, in denen die Rolleninstanzen Ihrer Azure-Clouddienste (auch als gehostete Dienste bekannt) gehostet werden. Dadurch erhalten Sie eine höhere Flexibilität bei der Bereitstellung, die Caches können sehr groß sein und es gibt keine Cache-spezifischen Beschränkungen.
 
->[AZURE.NOTE]Ab Azure SDK 2.6 verwendet In-Role Cache das Microsoft Azure Storage SDK, Version 4.3. In früheren Versionen des Azure SDK verwendete In-Role Cache das Azure Storage SDK 1.7. Anwendungen, die In-Role Cache mit Azure SDK-Versionen vor 2.6 verwenden, sollten zu Azure SDK 2.6 migriert werden, bevor Azure Storage Version 2011-08-18 am 9. Dezember 2015 außer Betrieb gesetzt wird. Weitere Informationen finden Sie unter [Versionshinweise zu Azure SDK 2.6 – In-Role Cache](../azure-sdk-dotnet-release-notes-2_6.md#in-role-cache-updates) und [Microsoft Azure Storage Service Version Removal](http://azure.microsoft.com/blog/2014/08/04/microsoft-azure-storage-service-version-removal/).
+>[AZURE.IMPORTANT]Ab Azure SDK 2.6 verwendet In-Role Cache das Microsoft Azure Storage SDK, Version 4.3. In früheren Versionen des Azure SDK verwendete In-Role Cache das Azure Storage SDK 1.7. Anwendungen, die In-Role Cache mit Azure SDK-Versionen vor 2.6 verwenden, sollten zu Azure SDK 2.6 migriert werden, bevor Azure Storage Version 2011-08-18 am 1. August 2016 außer Betrieb gesetzt wird. Weitere Informationen finden Sie unter [Versionshinweise zu Azure SDK 2.6 – In-Role Cache](../azure-sdk-dotnet-release-notes-2_6.md#in-role-cache-updates) und [Aktualisierung bezüglich der Entfernung der Version Microsoft Azure Storage: Verlängerung bis 2016](http://blogs.msdn.com/b/windowsazurestorage/archive/2015/10/19/microsoft-azure-storage-service-version-removal-update-extension-to-2016.aspx).
 
 Das Caching von Rolleninstanzen bietet folgende Vorteile:
 
@@ -405,10 +405,9 @@ Nachdem Sie sich nun mit den Grundlagen von In-Role Cache vertraut gemacht haben
 [Team Blog]: http://blogs.msdn.com/b/windowsazure/
 [Problembehebung und Diagnose für In-Role Caches]: http://msdn.microsoft.com/library/windowsazure/hh914135.aspx
 [Azure AppFabric Cache: Caching Session State]: http://www.microsoft.com/showcase/details.aspx?uuid=87c833e9-97a9-42b2-8bb1-7601f9b5ca20
-[Azure Management Portal]: http://windows.azure.com/
 [Azure Shared Caching]: http://msdn.microsoft.com/library/windowsazure/gg278356.aspx
 
-[Welches Azure Cache-Angebot ist für mich das richtige?]: cache-faq.md#which-azure-cache-offering-is-right-for-me
+[Which Azure Cache offering is right for me?]: cache-faq.md#which-azure-cache-offering-is-right-for-me
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1210_2015-->

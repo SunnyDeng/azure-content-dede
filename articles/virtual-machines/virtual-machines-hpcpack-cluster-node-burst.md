@@ -27,7 +27,7 @@ In diesem Artikel wird erläutert, wie Sie Azure-Burstknoten (Workerrolleninstan
 
 >[AZURE.TIP]Bei Verwendung des [HPC Pack IaaS-Bereitstellungsskripts](virtual-machines-hpcpack-cluster-powershell-script.md) zum Erstellen des Clusters in Azure können Sie Azure-Burstknoten in die automatisierte Bereitstellung integrieren.
 
-Anhand der Schritte in diesem Artikel können Sie Azure-Knoten auf schnelle Weise zu einem cloudbasierten virtuellen Computer für den HPC Pack-Hauptknoten für Tests oder Machbarkeitsstudien hinzufügen. Der Vorgang entspricht im Wesentlichen dem "Burst-auf-Azure"-Vorgang zum Hinzufügen von Cloudcomputekapazität zu einem lokalen HPC Pack-Cluster. Ein entsprechendes Lernprogramm finden Sie unter [Einrichten eines Hybrid-Rechenclusters mit Microsoft HPC Pack](../cloud-services/cloud-services-setup-hybrid-hpcpack-cluster.md). Ausführliche Anweisungen und Überlegungen zu Produktionsbereitstellungen finden Sie unter [Burst to Azure with Microsoft HPC Pack](http://go.microsoft.com/fwlink/p/?LinkID=200493) (in englischer Sprache).
+Anhand der Schritte in diesem Artikel können Sie Azure-Knoten auf schnelle Weise zu einem cloudbasierten virtuellen Computer für den HPC Pack-Hauptknoten für Tests oder Machbarkeitsstudien hinzufügen. Der Vorgang entspricht im Wesentlichen dem "Burst-auf-Azure"-Vorgang zum Hinzufügen von Cloudcomputekapazität zu einem lokalen HPC Pack-Cluster. Ein entsprechendes Lernprogramm finden Sie unter [Einrichten eines Hybrid-Rechenclusters mit Microsoft HPC Pack](../cloud-services/cloud-services-setup-hybrid-hpcpack-cluster.md). Ausführliche Anweisungen und Überlegungen zu Produktionsbereitstellungen finden Sie unter [Burst to Azure with Microsoft HPC Pack](https://technet.microsoft.com/library/gg481749.aspx) (in englischer Sprache).
 
 Wenn Sie die rechenintensive A8- oder A9-Instanzengröße verwenden möchten, finden Sie entsprechende Informationen unter [Informationen zu den rechenintensiven A8-, A9-, A10- und A11-Instanzen](virtual-machines-a8-a9-a10-a11-specs.md).
 
@@ -41,7 +41,7 @@ Wenn Sie die rechenintensive A8- oder A9-Instanzengröße verwenden möchten, fi
 
 ## Schritt 1: Erstellen eines Clouddiensts und eines Speicherkontos zum Hinzufügen von Azure-Knoten
 
-Verwenden Sie das Azure-Portal oder entsprechende Tools, um die folgenden Komponenten zu konfigurieren, die für die Bereitstellung von Azure-Knoten erforderlich sind:
+Verwenden Sie das klassische Azure-Portal oder entsprechende Tools, um die folgenden Komponenten zu konfigurieren, die für die Bereitstellung von Azure-Knoten erforderlich sind:
 
 * Einen neuen Azure-Clouddienst
 * Ein neues Azure-Speicherkonto
@@ -83,9 +83,9 @@ Wenn bei der Bereitstellung von Azure-Knoten Probleme auftreten, finden Sie unte
 
 ## Nächste Schritte
 
-* Wenn Sie die Azure-Computeressourcen entsprechend dem aktuellen Workload der Aufträge und Aufgaben im Cluster automatisch vergrößern oder verkleinern möchten, finden Sie entsprechende Informationen unter [Automatisches Hoch- und Herunterskalieren von Azure-Computeressourcen in einem HPC Pack-Cluster entsprechend dem Clusterworkload](virtual-machines-hpcpack-cluster-node-autogrowshrink.md).
+* Wenn Sie die Azure-Computeressourcen entsprechend der aktuellen Workload der Aufträge und Aufgaben im Cluster automatisch vergrößern oder verkleinern möchten, finden Sie entsprechende Informationen unter [Automatisches Hoch- und Herunterskalieren von Azure-Computeressourcen in einem HPC Pack-Cluster](virtual-machines-hpcpack-cluster-node-autogrowshrink.md).
 
 <!--Image references-->
 [burst]: ./media/virtual-machines-hpcpack-cluster-node-burst/burst.png
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

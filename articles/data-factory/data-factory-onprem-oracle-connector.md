@@ -13,12 +13,19 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/26/2015" 
+	ms.date="11/12/2015" 
 	ms.author="spelluru"/>
 
 # Verschieben von Daten aus lokalem Oracle mithilfe von Azure Data Factory 
 
 Dieser Artikel beschreibt, wie Sie die Data Factory-Kopieraktivität zum Verschieben von Daten aus Oracle in einen anderen Datenspeicher verwenden können. Dieser Artikel baut auf dem Artikel [Datenverschiebungsaktivitäten](data-factory-data-movement-activities.md) auf, der eine allgemeine Übersicht zur Datenverschiebung mit Kopieraktivität und unterstützten Datenspeicherkombinationen bietet.
+
+## Installation 
+Damit der Azure Data Factory-Dienst eine Verbindung mit Ihrer lokalen Oracle-Datenbank herstellen kann, muss Folgendes installiert werden:
+
+- Datenverwaltungsgateway auf dem Computer, der die Datenbank hostet, oder auf einem separaten Computer, um zu vermeiden, dass der Computer mit der Datenbank um Ressourcen konkurriert. Datenverwaltungsgateway ist eine Software, die lokale Datenquellen mit Cloud-Diensten auf sichere, verwaltete Weise verbindet. Weitere Informationen zum Datenverwaltungsgateway finden Sie im Artikel [Verschieben von Daten zwischen lokalen Quellen und der Cloud](data-factory-move-data-between-onprem-and-cloud.md). 
+- [Oracle Data Access Components (ODAC) für Windows](http://www.oracle.com/technetwork/topics/dotnet/downloads/index.html). Diese Komponente muss auf dem Hostcomputer installiert werden, auf dem das Gateway installiert ist.
+
 
 ## Beispiel: Kopieren von Daten aus Oracle in Azure-Blob
 
@@ -217,22 +224,22 @@ Der Abschnitt "typeProperties" unterscheidet sich bei jedem Typ von Dataset und 
 
 Eigenschaft | Beschreibung | Erforderlich
 -------- | ----------- | --------
-tableName | Name der Tabelle in der Oracle Database, auf die der verknüpfte Dienst verweist. | Ja
+tableName | Name der Tabelle in der Oracle Database, auf die der verknüpfte Dienst verweist. | Nein (wenn **OracleReaderQuery** von **SqlSource** angegeben ist)
 
 ## Eigenschaften von Oracle-Kopieraktivitätstyp
 
 Eine vollständige Liste der Abschnitte und Eigenschaften zum Definieren von Aktivitäten finden Sie im Artikel [Erstellen von Pipelines](data-factory-create-pipelines.md). Eigenschaften wie Name, Beschreibung, Eingabe- und Ausgabetabellen, verschiedene Richtlinien usw. sind für alle Arten von Aktivitäten verfügbar.
 
-**Hinweis:** Die Kopieraktivität verwendet nur eine Eingabe und erzeugt nur eine Ausgabe.
+**Hinweis**: Die Kopieraktivität verwendet nur eine Eingabe und erzeugt nur eine Ausgabe.
 
 Im Abschnitt "typeProperties" der Aktivität verfügbare Eigenschaften variieren hingegen bei jedem Aktivitätstyp. Bei der Kopieraktivität variieren sie je nach Typ der Quellen und Senken.
 
-Wenn bei der Kopieraktivität "source" den Typ "SqlSource" hat, sind im Abschnitt "typeProperties" die folgenden Eigenschaften verfügbar:
+Wenn bei der Kopieraktivität „source“ den Typ **OracleSource** hat, sind im Abschnitt **typeProperties** die folgenden Eigenschaften verfügbar:
 
 Eigenschaft | Beschreibung |Zulässige Werte | Erforderlich
 -------- | ----------- | ------------- | --------
 oracleReaderQuery | Verwendet die benutzerdefinierte Abfrage zum Lesen von Daten. | SQL-Abfragezeichenfolge. 
-Beispiel: select * from MyTable <p>Falls nicht angegeben, die SQL-Anweisung, die ausgeführt wird: select * from MyTable</p> | Nein
+Beispiel: select * from MyTable <p>Falls nicht angegeben, die SQL-Anweisung, die ausgeführt wird: select * from MyTable</p> | Nein (wenn **tableName** von **Dataset** angegeben ist)
 
 [AZURE.INCLUDE [data-factory-structure-for-rectangular-datasets](../../includes/data-factory-structure-for-rectangualr-datasets.md)]
 
@@ -271,7 +278,26 @@ UNSIGNED INTEGER | Number
 VARCHAR2 | String
 XML | String
 
+## Tipps zur Problembehandlung
+
+**** Problem: ** Folgende **Fehlermeldung** wird angezeigt: Bei der Kopieraktivität wurden ungültige Parameter gefunden: UnknownParameterName. Detaillierte Meldung: Der angeforderte .Net Framework-Datenprovider kann nicht gefunden werden. Er ist ggf. nicht installiert.
+
+**Mögliche Ursachen**
+
+1. Der .NET Framework-Datenanbieter für Oracle wurde nicht installiert.
+2. Der .NET Framework-Datenanbieter für Oracle wurde für .NET Framework 2.0 installiert und in den Ordnern für .NET Framework 4.0 nicht gefunden. 
+
+**Lösung/Problemumgehung**
+
+1. Falls Sie den .NET Framework-Datenanbieter für Oracle nicht installiert haben, [Installieren Sie ihn](http://www.oracle.com/technetwork/topics/dotnet/utilsoft-086879.html), und wiederholen Sie anschließend das Szenario. 
+2. Falls Sie die Fehlermeldung auch nach der Installation des Anbieters erhalten, führen Sie folgende Schritte aus: 
+	1. Öffnen Sie die Computerkonfiguration von .NET 2.0 im folgenden Ordner: <system disk>:\\Windows\\Microsoft.NET\\Framework64\\v2.0.50727\\CONFIG\\machine.config.
+	2. Suchen Sie nach **Oracle-Datenanbieter für .NET**. Daraufhin sollte unter **system.data** -> **DbProviderFactories** ein Eintrag wie der Folgende angezeigt werden: „<add name="Oracle Data Provider for .NET" invariant="Oracle.DataAccess.Client" description="Oracle Data Provider for .NET" type="Oracle.DataAccess.Client.OracleClientFactory, Oracle.DataAccess, Version=2.112.3.0, Culture=neutral, PublicKeyToken=89b483f429c47342" />“
+2.	Kopieren Sie diesen Eintrag in die Datei „machine.config“ im v4.0-Ordner „<system disk>:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\Config\\machine.config“, und ändern Sie die Version in „4.xxx.x.x“.
+3.	Führen Sie „gacutil /i [Anbieterpfad]“ aus, um „<ODP.NET Installed Path>\\11.2.0\\client\_1\\odp.net\\bin\\4\\Oracle.DataAccess.dll“ im globalen Assemblycache (GAC) zu installieren.
+
+
 
 [AZURE.INCLUDE [data-factory-column-mapping](../../includes/data-factory-column-mapping.md)]
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

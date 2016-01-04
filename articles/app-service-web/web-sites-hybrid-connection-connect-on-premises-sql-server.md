@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/01/2015"
+	ms.date="11/13/2015"
 	ms.author="cephalin"/>
 
 # Verbinden eines lokalen SQL-Servers von einer Web-App in Azure App Service über Hybridverbindungen
@@ -24,7 +24,7 @@ In diesem Tutorial erfahren Sie, wie Sie eine App Service-Web-App im [Azure-Vors
 
 >[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 >
->Der Web-App-Teil der Funktion "Hybridverbindung" ist nur im [Azure-Vorschauportal](https://portal.azure.com) verfügbar. Informationen zum Erstellen einer Verbindung in BizTalk-Diensten finden Sie unter [Hybridverbindungen](http://go.microsoft.com/fwlink/p/?LinkID=397274).
+>Der Web-Apps-Teil der Funktion "Hybridverbindungen" ist nur im [Azure-Portal](https://portal.azure.com) verfügbar. Informationen zum Erstellen einer Verbindung in BizTalk-Diensten finden Sie unter [Hybridverbindungen](http://go.microsoft.com/fwlink/p/?LinkID=397274).
 
 ## Voraussetzungen ##
 
@@ -116,11 +116,11 @@ Für Ihre Visual Studio-Webanwendung benötigen Sie eine Mitgliedschaftsdatenban
 	![MembershipDB wurde erstellt][SSMSMembershipDBCreated]
 
 <a name="CreateSite"></a>
-## B. Erstellen einer Web-App im Azure-Vorschauportal ##
+## B. Erstellen einer Web-App im Azure-Portal ##
 
-> [AZURE.NOTE]Wenn Sie im Azure-Vorschauportal bereits eine Web-App erstellt haben, die Sie für dieses Tutorial verwenden möchten, können Sie gleich mit [Eine Hybridverbindung und einen BizTalk-Dienst erstellen](#CreateHC) fortfahren.
+> [AZURE.NOTE]Wenn Sie im Azure-Portal bereits eine Web-App erstellt haben, die Sie für dieses Tutorial verwenden möchten, können Sie gleich mit [Erstellen einer Hybridverbindung und eines BizTalk-Diensts](#CreateHC) fortfahren.
 
-1. Klicken Sie im [Azure-Vorschauportal](https://portal.azure.com) auf **Neu** > **Web + Mobile** > **Web-App**.
+1. Klicken Sie im [Azure-Portal](https://portal.azure.com) auf **Neu** > **Web und mobil** > **Web-App**.
 
 	![Schaltfläche "Neu"][New]
 
@@ -139,7 +139,7 @@ Als Nächstes erstellen Sie eine Hybridverbindung und einen BizTalk-Dienst für 
 <a name="CreateHC"></a>
 ## C. Erstellen einer Hybridverbindung und eines BizTalk-Diensts ##
 
-1. Scrollen Sie zurück im Portal zum Blatt für Ihre Web-App, und klicken Sie auf **///Netzwerkfunktionsstatus** > **Hybridverbindungsendpunkte konfigurieren**.
+1. Wechseln Sie wieder im Verwaltungsportal zu den Einstellungen, und klicken Sie auf **Netzwerk** > **Configure your hybrid connection endpoints**.
 
 	![Hybridverbindungen][CreateHCHCIcon]
 
@@ -239,7 +239,7 @@ Nun veröffentlichen Sie Ihre Anwendung auf Ihrer App Service-Web-App und testen
 
 ### Die Webanwendung veröffentlichen ###
 
-1. Sie können Ihr Veröffentlichungsprofil für die App Service-Web-App im Azure-Vorschauportal herunterladen. Klicken Sie im Blatt für Ihre Web-App auf **Veröffentlichungsprofil herunterladen**, und speichern Sie die Datei dann auf Ihrem Computer.
+1. Sie können Ihr Veröffentlichungsprofil für die App Service-Web-App im Azure-Portal herunterladen. Klicken Sie im Blatt für Ihre Web-App auf **Veröffentlichungsprofil herunterladen**, und speichern Sie die Datei dann auf Ihrem Computer.
 
 	![Veröffentlichungsprofil herunterladen][PortalDownloadPublishProfile]
 
@@ -363,4 +363,4 @@ Sie haben jetzt eine ASP.NET-Webanwendung erstellt und bereitgestellt, die eine 
 [HCTestSSMSTree]: ./media/web-sites-hybrid-connection-connect-on-premises-sql-server/F10HCTestSSMSTree.png
 [HCTestShowMemberDb]: ./media/web-sites-hybrid-connection-connect-on-premises-sql-server/F11HCTestShowMemberDb.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

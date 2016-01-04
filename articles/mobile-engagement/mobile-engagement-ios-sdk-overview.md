@@ -32,12 +32,9 @@ Klicken Sie, um den [SDK-Inhalt](mobile-engagement-ios-sdk-content.md) anzuzeige
 
 ##Versionshinweise
 
-##3\.2.0 (08.10.2015)
+###3\.2.1 (11.12.2015)
 
--   Bitcode im SDK aktiviert, um die Verwendung mit **Xcode 7** zu ermöglichen.
--   Fehler im Zusammenhang mit In-App-Benachrichtigungen behoben.
--   Die Zuverlässigkeit von In-App-Benachrichtigungen bei niedriger Akkukapazität und in ähnlichen Szenarien verbessert.
--   Zusätzliche Konsolenprotokolle entfernt, die von Drittanbieterbibliothek generiert werden.
+-   Es wurde eine Verzögerung behoben, wenn eine neue Instanz der App durch eine Benachrichtigung mit Deep-Links ausgelöst wird. 
 
 Eine frühere Version finden Sie unter [Vollständige Versionshinweise](mobile-engagement-ios-release-notes.md)
 
@@ -62,4 +59,4 @@ Die Methode `application:didReceiveRemoteNotification:` muss in Ihrem Anwendungs
 	-(void)didFailToRetrieveLaunchMessage;
 	-(void)didReceiveLaunchMessage:(AEPushMessage*)launchMessage;
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

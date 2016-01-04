@@ -138,9 +138,9 @@ Wählen Sie in der Ambari-Webbenutzeroberfläche den Dienst aus, für den Sie Pr
 
 Die Größe des Hauptknotens kann nur beim Erstellen des Clusters ausgewählt werden. Die Standardgröße für Hauptknoten ist **A3**, d. h. vier Kerne, 7 GB Arbeitsspeicher und 285 GB lokaler Speicher. Eine Liste der verschiedenen VM-Größen, die für HDInsight verfügbar sind (einschließlich Kerne, Arbeitsspeicher und lokaler Speicher), finden Sie auf der Seite [HDInsight-Preisdetails](http://azure.microsoft.com/pricing/details/hdinsight/).
 
-Beim Erstellen eines neuen Clusters können Sie die Größe der Knoten angeben. Die Größe kann wie folgt im [Azure-Vorschauportal][preview-portal], mit [Azure PowerShell][azure-powershell] und mit der [Azure-Befehlszeilenschnittstelle][azure-cli] festgelegt werden:
+Beim Erstellen eines neuen Clusters können Sie die Größe der Knoten angeben. Die Größe kann wie folgt im [Azure-Portal][preview-portal], mit [Azure PowerShell][azure-powershell] und mit der [Azure-Befehlszeilenschnittstelle][azure-cli] festgelegt werden:
 
-* **Azure-Vorschauportal**: Beim Erstellen eines neuen Clusters haben Sie die Möglichkeit, die Größe (Tarif) der Haupt- und Datenknoten (Workerknoten) für den Cluster festzulegen:
+* **Azure-Portal**: Beim Erstellen eines neuen Clusters haben Sie die Möglichkeit, die Größe (Tarif) der Haupt- und Datenknoten (Workerknoten) für den Cluster festzulegen:
 
 	![Screenshot des Assistenten zur Clustererstellung mit der Auswahl der Knotengröße](./media/hdinsight-high-availability-linux/headnodesize.png)
 
@@ -166,4 +166,4 @@ In diesem Dokument haben Sie erfahren, wie Azure HDInsight hohe Verfügbarkeit f
 [azure-powershell]: ../powershell-install-configure.md
 [azure-cli]: ../xplat-cli-install.md
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

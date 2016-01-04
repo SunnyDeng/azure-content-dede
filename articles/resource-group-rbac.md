@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="AzurePortal"
    ms.workload="na"
-   ms.date="10/28/2015"
+   ms.date="11/28/2015"
    ms.author="tomfitz"/>
 
 # Verwalten des Zugriffs auf Ressourcen
@@ -26,10 +26,21 @@ Dieses Thema konzentriert sich auf die Befehle zum Zuweisen von Rollen und Berec
 
 Es gibt einige Schlüsselkonzepte bei der rollenbasierten Zugriffssteuerung, die Sie kennen sollten:
 
-1. Prinzipal - Entität, der die Berechtigung erteilt wurde, wie z. B. ein Benutzer, eine Sicherheitsgruppe oder eine Anwendung.
-2. Rolle - Satz zulässiger Aktionen
-3. Umfang - Ebene, für die eine Rolle gilt, z. B. Abonnement, Ressourcengruppe oder Ressource.
-3. Rollenzuweisung – Prozess des Zuweisens eines Prinzipals zu einer Rolle und des Festlegens des Umfangs
+1. Prinzipal – Entität, der die Berechtigung erteilt wurde, wie z. B. ein Azure Active Directory-Benutzer, eine Sicherheitsgruppe oder eine Anwendung.
+2. Rolle – eine Reihe von zugelassenen und ausgeschlossenen Aktionen.
+3. Aktion – eine Aktion, die für eine Ressource ausgeführt wird (z. B. lesen, erstellen). 
+4. Umfang - Ebene, für die eine Rolle gilt, z. B. Abonnement, Ressourcengruppe oder Ressource.
+5. Rollenzuweisung – Prozess des Zuweisens eines Prinzipals zu einer Rolle und des Festlegens des Umfangs.
+
+Sie erhalten eine Liste der unterstützten **Aktionen** mithilfe des plattformübergreifenden (xPlat-) Befehlszeilenschnittstellentools von Azure oder des Azure PowerShell-Moduls.
+
+Verwenden Sie für das plattformübergreifende Befehlszeilenschnittstellentool von Azure folgenden Befehl, um **alle** Aktionen für alle Ressourcenanbieter aufzulisten.
+
+    azure provider operations show --operationSearchString '*';
+
+Wenn Sie das Azure-Ressourcen-Manager-PowerShell-Modul (AzureRm) verwenden, nutzen Sie folgenden Befehl, um **alle** Aktionen für **alle** Ressourcenanbieter aufzulisten.
+
+    Get-AzureRmProviderOperation -OperationSearchString *;
 
 ## Beispiele für Rollen
 Um RBAC-Konzepte zu verstehen, betrachten wir einige Beispiele allgemeiner Rollendefinitionen:
@@ -263,10 +274,10 @@ Erstellen Sie die Rollenzuweisung.
 ## Nächste Schritte
 
 - Weitere Informationen zur rollenbasierten Zugriffssteuerung finden Sie unter [Rollenbasierte Zugriffssteuerung im Microsoft Azure-Portal](role-based-access-control-configure.md).
-- Weitere Informationen zum Arbeiten mit Dienstprinzipalen zum Verwalten des Zugriffs für Anwendungen in Ihrem Abonnement finden Sie unter [Authentifizieren eines Dienstprinzipals über den Azure-Ressourcen-Manager](resource-group-authenticate-service-principal.md) und [Erstellen eines neuen Azure-Dienstprinzipals über das klassische Azure-Portal](../resource-group-create-service-principal-portal.md).
+- Weitere Informationen zum Arbeiten mit Dienstprinzipalen zum Verwalten des Zugriffs für Anwendungen in Ihrem Abonnement finden Sie unter [Authentifizieren eines Dienstprinzipals über Azure Resource Manager](resource-group-authenticate-service-principal.md) und [Erstellen eines neuen Azure-Dienstprinzipals über das klassische Azure-Portal](../resource-group-create-service-principal-portal.md).
 - Weitere Informationen zum Überwachen von Vorgängen in Ihrer Organisation finden Sie unter [Überwachen von Vorgängen mit dem Ressourcen-Manager](resource-group-audit.md).
 - Sie können mithilfe benutzerdefinierter Richtlinien Einschränkungen und Konventionen für Ihr Abonnement festlegen. Weitere Informationen finden Sie unter [Verwenden von Richtlinien für Ressourcenverwaltung und Zugriffssteuerung](resource-manager-policy.md).
 
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

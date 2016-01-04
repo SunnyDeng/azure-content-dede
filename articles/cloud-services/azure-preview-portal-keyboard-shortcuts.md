@@ -1,10 +1,10 @@
 <properties
-   pageTitle="Tastenkombinationen für das Azure-Portal | Microsoft Azure"
-   description="Dieser Artikel enthält stets eine aktuelle Liste der Tastaturkombinationen, die im Azure-Portal verwendet werden können. Einzelne Dienste nutzen möglicherweise eigene, spezialisierte Tastenkombinationen."
+   pageTitle="Tastenkombinationen für das klassische Azure-Portal | Microsoft Azure"
+   description="Dieser Artikel enthält stets eine aktuelle Liste der Tastaturkombinationen, die im klassischen Azure-Portal verwendet werden können. Einzelne Dienste nutzen möglicherweise eigene, spezialisierte Tastenkombinationen."
    services="cloud-services"
    documentationCenter=""
    authors="curtand"
-   manager="msStevenPo"
+   manager="stevenpo"
    editor=""/>
 
 <tags
@@ -13,10 +13,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="na"
-   ms.date="09/10/2015"
+   ms.date="12/01/2015"
    ms.author="curtand"/>
 
-# Tastenkombinationen für das Azure-Portal
+# Tastenkombinationen für das klassische Azure-Portal
 
 ## Hubs öffnen
 
@@ -48,6 +48,6 @@
 
 ## Nächste Schritte
 
-Weitere Informationen zum Azure-Portal: http://azure.microsoft.com.
+Weitere Informationen zum klassischen Azure-Portal: http://azure.microsoft.com.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

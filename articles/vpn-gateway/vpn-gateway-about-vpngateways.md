@@ -1,10 +1,10 @@
 <properties 
-   pageTitle="Informationen zu VPN-Gateways für virtuelle Netzwerke | Microsoft Azure"
-   description="Sie erhalten Informationen zu VPN-Gateway-SKUs vom Typ Basic, Standard und Leistung, zur gemeinsamen Verwendung von VPN-Gateways und ExpressRoute, zu Gatewaytypen mit statischem und dynamischem Routing und zu den Gatewayanforderungen für die Konnektivität virtueller Netzwerke."
+   pageTitle="Informationen zu VPN-Gateways für standortübergreifende Verbindungen in Virtual Network | Microsoft Azure"
+   description="Erhalten Sie Informationen zu VPN-Gateways, die für standortübergreifende Verbindungen für Hybridkonfigurationen verwendet werden können. Dieser Artikel enthält Informationen zu Gateway-SKUs (Basis, Standard und Hochleistung), zur gemeinsamen Verwendung von VPN-Gateways und ExpressRoute, zu Gatewayroutingtypen (statisch, dynamisch, richtlinienbasiert und routenbasiert) und zu den Gatewayanforderungen für die Konnektivität virtueller Netzwerke."
    services="vpn-gateway"
    documentationCenter="na"
    authors="cherylmc"
-   manager="adinah"
+   manager="carolz"
    editor="tysonn" />
 <tags 
    ms.service="vpn-gateway"
@@ -12,15 +12,28 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="10/12/2015"
+   ms.date="12/15/2015"
    ms.author="cherylmc" />
 
 # Informationen zu VPN-Gateways
 
-VPN-Gateways werden zum Senden von Netzwerkdatenverkehr zwischen virtuellen Netzwerken und lokalen Standorten oder zwischen mehreren virtuellen Netzwerken (VNet-zu-VNet) verwendet. Beim Erstellen eines Gateways müssen Sie einige Faktoren berücksichtigen. Sie müssen folgende Informationen besitzen: Welche Gateway-SKU Sie nutzen möchten, den für die Konfiguration erforderlichen Routingtyp (dynamisch oder statisch) und das VPN-Gerät, das Sie verwenden möchten, wenn ein VPN-Gerät für Ihre Konfiguration benötigt wird.
+VPN-Gateways werden zum Senden von Netzwerkdatenverkehr zwischen virtuellen Netzwerken und lokalen Standorten verwendet. Außerdem dienen sie zum Senden von Datenverkehr zwischen mehreren virtuellen Netzwerken in Azure. Beim Erstellen eines Gateways müssen Sie einige Faktoren berücksichtigen.
+ 
+Beachten Sie bei der Planung die folgenden Elemente:
+
+- Die Gateway-SKU, die Sie verwenden möchten
+- Den Gatewayroutingtyp für die Verbindung
+- Das VPN-Gerät, falls dies für die Verbindung erforderlich ist
 
 ## Gateway-SKUs
-Es gibt drei VPN-Gateway-SKUs: Basic, Standard und Leistung. In der folgenden Tabelle sind die Gatewaytypen und der geschätzte zusammengefasste Durchsatz angegeben. Für die einzelnen Gateway-SKUs gelten unterschiedliche Preise. Informationen zu den Preisen finden Sie unter [VPN-Gateway – Preise](http://azure.microsoft.com/pricing/details/vpn-gateway/).
+
+Es gibt drei VPN-Gateway-SKUs:
+
+- Basic
+- Standard
+- Leistung
+
+In der folgenden Tabelle sind die Gatewaytypen und der geschätzte zusammengefasste Durchsatz angegeben. Für die einzelnen Gateway-SKUs gelten unterschiedliche Preise. Informationen zu den Preisen finden Sie unter [VPN-Gateway – Preise](http://azure.microsoft.com/pricing/details/vpn-gateway/).
 
 | SKU | Gemeinsame Verwendung von VPN-Gateway und ExpressRoute | ExpressRoute-Gateway-Durchsatz | VPN-Gateway-Durchsatz | Max. IPsec-Tunnel für VPN-Gateway |
 |-------------|-----------------------------------|---------------------------------|------------------------|-------------------------------|
@@ -30,28 +43,27 @@ Es gibt drei VPN-Gateway-SKUs: Basic, Standard und Leistung. In der folgenden Ta
 
 **Hinweis:** Der VPN-Durchsatz ist eine grobe Schätzung, die auf Messungen zwischen den VNets einer Azure-Region basiert. Dies ist keine Garantie für den Wert, den Sie für standortübergreifende Verbindungen über das Internet erzielen können. Die Angabe sollte stattdessen als maximal möglicher Wert angesehen werden.
 
-## Gatewaytypen
+## Gatewayroutingtypen
 
-Es gibt zwei Gatewaytypen: *statisches Routing* (auch als richtlinienbasiertes VPN bezeichnet) und *dynamisches Routing* (auch als weiterleitungsbasiertes VPN bezeichnet). Einige Konfigurationen funktionieren nur mit einem speziellen Routingtyp, und auch einige VPN-Geräte funktionieren nur mit einem bestimmten Routingtyp. Beim Erstellen eines VPN-Gateways wählen Sie den Gatewaytyp aus, der für Ihre Konfiguration erforderlich ist. Dabei stellen Sie sicher, dass das gewählte VPN-Gerät diesen Routingtyp auch unterstützt.
+Es gibt zwei Gatewayroutingtypen:
 
-Wenn Sie beispielsweise die Verwendung einer Site-to-Site-Konfiguration parallel zu einer Punkt-zu-Site-Konfiguration planen, müssen Sie ein VPN-Gateway mit dynamischem Routing konfigurieren. Es ist zwar richtig, dass Site-to-Site-Konfigurationen mit Gateways mit statischem Routing funktionieren, aber für Punkt-zu-Site-Konfigurationen ist ein Gateway mit dynamischem Routing erforderlich. Da beide Verbindungen über das gleiche Gateway führen, müssen Sie das Gateway auswählen, von dem beide Konfigurationen unterstützt werden.
+- **Richtlinienbasiert:** Richtlinienbasierte Gateways wurden zuvor als *Statische Gateways* bezeichnet. Die Funktionalität eines statischen Gateways wurde nicht geändert, auch wenn sich der Name geändert hat. Diese Art von Gateway unterstützt richtlinienbasierte VPNs. Bei richtlinienbasierten VPNs werden Pakete durch IPsec-Tunnel geleitet. Dies geschieht anhand von Datenverkehrselektoren basierend auf den Kombinationen der Adresspräfixe zwischen Ihrem lokalen Netzwerk und Ihrem Azure VNet. Die Datenverkehrselektoren bzw. Richtlinien werden normalerweise als Zugriffslisten in Ihren VPN-Konfigurationen festgelegt.
+ 
+- **Routenbasiert:** Routenbasierte Gateways wurden zuvor als *Dynamische Gateways* bezeichnet. Die Funktionalität eines dynamischen Gateways wurde nicht geändert, auch wenn sich der Name geändert hat. Routenbasierte Gateways implementieren routenbasierte VPNs. Bei routenbasierten VPNs werden die „Routen“ der IP-Weiterleitungs- oder -Routingtabelle verwendet, um Pakete an die entsprechenden VPN-Tunnelschnittstellen zu leiten. Über die Tunnelschnittstellen werden die Pakete für die Tunnel dann ver- oder entschlüsselt (ein- und ausgehend). Die Richtlinie bzw. der Datenverkehrselektor für routenbasierte VPNs werden im Any-to-Any-Format (bzw. als Platzhalter) konfiguriert.
 
-Außerdem sollten Sie überprüfen, ob Ihr VPN-Gerät den Gatewaytyp sowie die IPsec/IKE-Parameter und die benötigte Konfiguration unterstützt. Wenn Sie beispielsweise ein dynamisches Gateway erstellen möchten und Ihr VPN-Gerät keine weiterleitungsbasierten VPNs unterstützt, müssen Sie Ihre Planung überdenken. Sie können entweder ein anderes VPN-Gerät kaufen, das dynamische Gateways unterstützt, oder eine VPN-Gatewayverbindung erstellen, die ein Gateway mit statischem Routing unterstützt. Wenn Sie später ein VPN-Gerät mit Unterstützung eines Gateways mit dynamischem Routing erwerben, können Sie das Gateway immer noch als dynamisches Gateway neu erstellen, um das Gerät zu verwenden. Sie müssen dann lediglich das Gateway neu erstellen. Es ist nicht erforderlich, das virtuelle Netzwerk neu zu erstellen.
+Einige Verbindungen (z. B. Punkt-zu-Standort- und VNet-zu-VNet-Verbindungen) funktionieren nur mit einem bestimmten Gatewayroutingtyp. Die Gatewayanforderungen sind in dem Artikel aufgeführt, der dem gewünschten Verbindungsszenario entspricht.
 
-Unten sind die beiden Gatewaytypen angegeben:
+VPN-Geräte weisen auch Konfigurationseinschränkungen auf. Beim Erstellen eines VPN-Gateways wählen Sie den Gatewayroutingtyp aus, der für Ihre Verbindung erforderlich ist. Dabei stellen Sie sicher, dass das gewünschte VPN-Gerät diesen Routingtyp auch unterstützt. Weitere Informationen finden Sie unter [Informationen zu VPN-Geräten](vpn-gateway-about-vpn-devices.md).
 
-- **Statisches Routing:** Gateways mit statischem Routing unterstützen **richtlinienbasierte VPNs**. Bei richtlinienbasierten VPNs werden Pakete mit Datenverkehrselektoren durch IPsec-Tunnel geleitet. Dies basiert auf den Kombinationen der Adresspräfixe zwischen Ihrem lokalen Netzwerk und Ihrem Azure VNet. Die Datenverkehrselektoren bzw. Richtlinien werden normalerweise als Zugriffslisten in Ihren VPN-Konfigurationen festgelegt.
+Wenn Sie beispielsweise die Verwendung einer Standort-zu-Standort-Verbindung parallel zu einer Punkt-zu-Standort-Verbindung planen, müssen Sie ein routenbasiertes VPN-Gateway konfigurieren. Auch wenn Standort-zu-Standort-Verbindungen mit richtlinienbasierten Gateways funktionieren, ist für Punkt-zu-Standort-Verbindungen ein routenbasierter Gatewaytyp erforderlich. Da beide Verbindungen über das gleiche Gateway führen, müssen Sie den Gatewaytyp auswählen, von dem beide Verbindungen unterstützt werden. Darüber hinaus muss das verwendete VPN-Gerät auch routenbasierte Konfigurationen unterstützen.
 
-	>[AZURE.NOTE]Nicht alle Konfigurationen sind mit VPN-Gateways mit statischem Routing kompatibel. Für Konfigurationen für mehrere Standorte, VNet-zu-VNet-Konfigurationen und Punkt-zu-Site-Verbindungen sind beispielsweise jeweils Gateways mit dynamischem Routing erforderlich. Die Gatewayanforderungen sind in den Artikeln für jede Konfiguration angegeben.
-
-- **Dynamisches Routing:** Mit Gateways mit dynamischem Routing werden **weiterleitungsbasierte VPNs** implementiert. Bei weiterleitungsbasierten VPNs werden die „Routen“ der IP-Weiterleitungs- oder -Routingtabelle verwendet, um Pakete an die entsprechenden VPN-Tunnelschnittstellen zu leiten. Über die Tunnelschnittstellen werden die Pakete für die Tunnel dann ver- oder entschlüsselt (ein- und ausgehend). Die Richtlinie bzw. der Datenverkehrselektor für weiterleitungsbasierte VPNs werden im Any-to-Any-Format (bzw. als Platzhalter) konfiguriert.
 
 ## Gatewayanforderungen
 
 In der folgenden Tabelle sind die Anforderungen für statische und dynamische VPN-Gateways aufgeführt.
 
 
-| **Eigenschaft** | **VPN-Gateway mit statischem Routing** | **VPN-Gateway mit dynamischem Routing** | **Standard-VPN-Gateway** | **VPN-Hochleistungsgateway** |
+| **Eigenschaft** | **Richtlinienbasiertes VPN-Gateway** | **Routenbasiertes VPN-Gateway** | **Standard-VPN-Gateway** | **VPN-Hochleistungsgateway** |
 |-----------------------------------------|--------------------------------|-----------------------------------------------------------------------|-----------------------------------|----------------------------------|
 | Site-to-Site-Konnektivität (S2S) | Richtlinienbasierte VPN-Konfiguration | Weiterleitungsbasierte VPN-Konfiguration | Weiterleitungsbasierte VPN-Konfiguration | Weiterleitungsbasierte VPN-Konfiguration |
 | Punkt-zu-Site-Konnektivität (P2S) | Nicht unterstützt | Unterstützt (gemeinsame Verwendung mit S2S möglich) | Unterstützt (gemeinsame Verwendung mit S2S möglich) | Unterstützt (gemeinsame Verwendung mit S2S möglich) |
@@ -63,20 +75,12 @@ In der folgenden Tabelle sind die Anforderungen für statische und dynamische VP
 
 ## Nächste Schritte
 
-Wählen Sie das VPN-Gerät für Ihre Konfiguration aus. Weitere Informationen finden Sie unter [Informationen zu VPN-Geräten](http://go.microsoft.com/fwlink/p/?LinkID=615934).
+Wählen Sie das VPN-Gerät für Ihre Konfiguration aus. Weitere Informationen finden Sie unter [Informationen zu VPN-Geräten](vpn-gateway-about-vpn-devices.md).
 
-Konfigurieren Sie Ihr virtuelles Netzwerk. Informationen zu standortübergreifenden Verbindungen finden Sie in den folgenden Artikeln:
 
-- [Konfigurieren einer standortübergreifenden Site-to-Site-Verbindung mit einem Azure Virtual Network](vpn-gateway-site-to-site-create.md)
-- [Konfigurieren einer Punkt-zu-Site-VPN-Verbindung mit einem Azure Virtual Network](vpn-gateway-point-to-site-create.md)
-- [Konfigurieren eines Site-to-Site-VPN mit Windows Server 2012 RRAS (Routing- und RAS-Dienst)](https://msdn.microsoft.com/library/dn636917.aspx)
 
-Informationen zum Konfigurieren eines VPN-Gateways finden Sie unter [Konfigurieren eines VPN-Gateways](vpn-gateway-configure-vpn-gateway-mp.md).
 
-Informationen zum Ändern des VPN-Gatewaytyps finden Sie unter [Ändern des Routingtyps von VPN-Gateways eines virtuellen Netzwerks](vpn-gateway-configure-vpn-gateway-mp.md).
-
-Informationen zum Verbinden mehrerer Standorte zu einem virtuellen Netzwerk finden Sie unter [Verbinden mehrerer lokaler Standorte mit einem virtuellen Netzwerk](http://go.microsoft.com/fwlink/p/?LinkID=615106).
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

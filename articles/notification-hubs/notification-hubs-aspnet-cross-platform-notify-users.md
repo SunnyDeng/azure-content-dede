@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="mobile-windows"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="08/18/2015" 
+	ms.date="12/11/2015" 
 	ms.author="wesmc"/>
 
 # Senden plattformübergreifender Benachrichtigungen an Benutzer mit Benachrichtigungs-Hubs
@@ -88,9 +88,6 @@ Nach Abschluss dieses Lernprogramms finden Sie weitere Informationen über Notif
 
 +  **[Übersicht über Benachrichtigungshubs][Templates]**<br/>Dieser Übersichtsartikel enthält weitere Detailinformationen zu Vorlagen.
 
-+  **[Notification Hub How to for Windows Store]** (in englischer Sprache)<br/>Enthält eine Sprachreferenz für Vorlagen.
-
-
 
 <!-- Anchors. -->
 
@@ -104,11 +101,10 @@ Nach Abschluss dieses Lernprogramms finden Sie weitere Informationen über Notif
 [Push to users Mobile Services]: /manage/services/notification-hubs/notify-users/
 [Visual Studio 2012 Express for Windows 8]: http://go.microsoft.com/fwlink/?LinkId=257546
 
-[Management Portal]: https://manage.windowsazure.com/
 [Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten ]: notification-hubs-windows-store-dotnet-send-breaking-news.md
 [Azure Notification Hubs]: http://go.microsoft.com/fwlink/p/?LinkId=314257
 [Benachrichtigen von Benutzern mit Notification Hubs]: notification-hubs-aspnet-backend-windows-dotnet-notify-users.md
 [Templates]: http://go.microsoft.com/fwlink/p/?LinkId=317339
 [Notification Hub How to for Windows Store]: http://msdn.microsoft.com/library/windowsazure/jj927172.aspx
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

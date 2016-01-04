@@ -1,6 +1,7 @@
 <properties 
 	pageTitle="Aufrufen einer API-Anwendung von einem authentifizierten Client" 
 	description="Erfahren Sie, wie Sie eine Azure API-App von einem durch Azure Active Directory authentifizierten Web-App-Client aufrufen." 
+	keywords="App Service,Azure App Service,Authentifizierung,Azure-Authentifizierung,API,Authentifizierungs-API"
 	services="app-service\api" 
 	documentationCenter=".net" 
 	authors="tdykstra" 
@@ -227,4 +228,4 @@ Sie haben eine Clientflussauthentifizierung für App Service API-Apps kennengele
 [Azure-Portal]: https://manage.windowsazure.com/
 [Azure-Vorschauportal]: https://portal.azure.com/
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

@@ -1,11 +1,11 @@
 <properties
-   pageTitle="WCF-basierter Kommunikationsstapel der Reliable Services-API"
-   description="Dieser Artikel beschreibt den WCF-basierten Kommunikationsstapel, der von der Reliable Services-API bereitgestellt wird."
+   pageTitle="Zuverlässige WCF-Dienste Kommunikationsstapel von Reliable Services | Microsoft Azure"
+   description="Der integrierte WCF Kommunikationsstapel in Reliable Services bietet Clientdienst-WCF-Kommunikation für Reliable Services."
    services="service-fabric"
    documentationCenter=".net"
    authors="BharatNarasimman"
    manager="timlt"
-   editor=""/>
+   editor="vturecek"/>
 
 <tags
    ms.service="service-fabric"
@@ -13,24 +13,22 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="required"
-   ms.date="08/27/2015"
+   ms.date="11/17/2015"
    ms.author="bharatn@microsoft.com"/>
 
 # WCF-basierter Kommunikationsstapel für Reliable Services
-Das Reliable Services-Framework ermöglicht Dienstautoren, den Kommunikationsstapel für ihren Dienst zu wählen. Sie können den gewünschten Kommunikationsstapel als Plug-In über `ICommunicationListener` verwenden, der von der Methode [`CreateCommunicationListener`](../service-fabric-reliable-service-communication.md) zurückgegeben wird. Das Framework bietet eine WCF-basierten Implementierung des Kommunikationstapels für Dienstautoren, die eine WCF-basierte Kommunikation verwenden möchten.
+Das Reliable Services-Framework ermöglicht Dienstautoren, den Kommunikationsstapel für ihren Dienst zu wählen. Sie können den Kommunikationsstapel Ihrer Wahl über den von der [CreateServiceReplicaListeners- oder CreateServiceInstanceListeners](service-fabric-reliable-service-communication.md)-Methode zurückgegebenen `ICommunicationListener` implementieren. Das Framework bietet eine WCF-basierten Implementierung des Kommunikationstapels für Dienstautoren, die eine WCF-basierte Kommunikation verwenden möchten.
 
 ## WCF-Kommunikationslistener
-Die spezielle WCF-Implementierung von `ICommunicationListener` erfolgt über die Klasse `WcfCommunicationListener`.
+Die spezielle WCF-Implementierung von `ICommunicationListener` erfolgt über die Klasse `Microsoft.ServiceFabric.Services.Communication.Wcf.Runtime.WcfCommunicationListener`.
 
 ```csharp
 
-public WcfCommunicationListener(
-    Type communicationInterfaceType,
-    Type communicationImplementationType);
-
-protected override ICommunicationListener CreateCommunicationListener()
-    {
-        WcfCommunicationListener communicationListener = new WcfCommunicationListener(typeof(ICalculator), this)
+protected override IEnumerable<ServiceReplicaListener> CreateServiceReplicaListeners()
+{
+    // TODO: If your service needs to handle user requests, return a list of ServiceReplicaListeners here.
+    return new[] { new ServiceReplicaListener(parameters =>
+        new WcfCommunicationListener(typeof(ICalculator), this)
         {
             //
             // The name of the endpoint configured in the ServiceManifest under the Endpoints section
@@ -42,15 +40,14 @@ protected override ICommunicationListener CreateCommunicationListener()
             // Populate the binding information that you want the service to use.
             //
             Binding = this.CreateListenBinding()
-        };
-
-        return communicationListener;
-    }
+        }
+    )};
+}
 
 ```
 
 ## Schreiben von Clients für WCF-Kommunikationsstapel
-Für das Schreiben von Clients, die über WCF mit Diensten kommunizieren, bietet das Framework `WcfClientCommunicationFactory`. Dies ist die spezielle WCF-Implementierung von [`ClientCommunicationFactoryBase`](../service-fabric-reliable-service-communication.md).
+Für das Schreiben von Clients, die über WCF mit Diensten kommunizieren, bietet das Framework `WcfClientCommunicationFactory`. Dies ist die spezielle WCF-Implementierung von [`ClientCommunicationFactoryBase`](service-fabric-reliable-service-communication.md).
 
 ```csharp
 
@@ -110,8 +107,11 @@ var calculatorServicePartitionClient = new ServicePartitionClient<WcfCommunicati
 var result = calculatorServicePartitionClient.InvokeWithRetryAsync(
     client => client.Channel.AddAsync(2, 3)).Result;
 
-
 ```
  
+## Nächste Schritte
+* [Remoteprozeduraufruf mit Reliable Services-Remoting](service-fabric-reliable-services-communication-remoting.md)
 
-<!---HONumber=Nov15_HO1-->
+* [Web-API mit OWIN in Reliable Services](service-fabric-reliable-services-communication-webapi.md)
+
+<!---HONumber=AcomDC_1125_2015-->

@@ -1,7 +1,7 @@
 <properties
 	pageTitle="Skalieren von Stream Analytics-Aufträge zur Erhöhung des Durchsatzes | Microsoft Azure"
 	description="Erfahren Sie, wie Sie Stream Analytics-Aufträge durch Konfiguration von Eingabepartitionen, Optimierung der Abfragedefinition und Einstellung von Auftrags-Streaming-Einheiten skalieren."
-	keywords="Analytics-Aufträge,Datenstrom,Datenstreaming"
+	keywords="Datenstreaming, Datenströme verarbeiten, Analysen optimieren"
 	services="stream-analytics"
 	documentationCenter=""
 	authors="jeffstokes72"
@@ -14,15 +14,15 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="data-services"
-	ms.date="11/06/2015"
+	ms.date="12/16/2015"
 	ms.author="jeffstok"/>
 
-# Skalieren von Azure Stream Analytics-Aufträge zur Erhöhung des Durchsatzes #
+# Skalieren von Azure Stream Analytics-Aufträgen zur Erhöhung des Durchsatzes bei der Streamingdatenverarbeitung #
 
-Erfahren Sie, wie Sie *Streaming-Einheiten* für einen Stream Analytics-Auftrag berechnen und Stream Analytics-Aufträge durch Konfiguration von Eingabepartitionen, Optimierung der Abfragedefinition und Einstellung von Auftrags-Streaming-Einheiten skalieren.
+Erfahren Sie, wie Sie Analyseaufträge optimieren, *Streamingeinheiten* für einen Stream Analytics-Auftrag berechnen und Stream Analytics-Aufträge durch Konfiguration von Eingabepartitionen, Optimierung der Abfragedefinition und Einstellung von Streamingeinheiten für Aufträge skalieren.
 
 ## Welche Teile hat ein Stream Analytics-Auftrag? ##
-Eine Azure Stream Analytics-Auftragsdefinition umfasst Eingaben, Abfrage und Ausgabe. Bei der Eingabe liest der Auftrag den eingehenden Datenstrom, bei der Ausgabe sendet der Auftrag die Auftragsergebnisse, und bei der Abfrage wird der Dateneingabestrom umgewandelt.
+Eine Stream Analytics-Auftragsdefinition umfasst Eingaben, Abfrage und Ausgabe. Bei der Eingabe liest der Auftrag den eingehenden Datenstrom, bei der Ausgabe sendet der Auftrag die Auftragsergebnisse, und bei der Abfrage wird der Dateneingabestrom umgewandelt.
 
 Für einen Auftrag wird mindestens eine Eingabequelle für Datenstreaming benötigt. Die Datenstrom-Eingabequelle kann entweder ein Azure Service Bus Event Hub oder ein Azure-BLOB-Speicher sein. Weitere Informationen finden Sie unter [Einführung in Azure Stream Analytics](stream-analytics-introduction.md), [Erste Schritte mit Azure Stream Analytics](stream-analytics-get-started.md) und [Azure Stream Analytics-Entwicklerhandbuch](../stream-analytics-developer-guide.md).
 
@@ -61,7 +61,7 @@ Die vorherige Abfrage umfasst zwei Schritte.
 
 Für die Partitionierung eines Schrittes gelten die folgenden Voraussetzungen:
 
-- Die Eingabequelle muss partitioniert sein. Siehe [Azure Stream Analytics-Entwicklerhandbuch](../stream-analytics-developer-guide.md) und [Azure Event Hubs-Entwicklerhandbuch](../azure-event-hubs-developer-guide.md).
+- Die Eingabequelle muss partitioniert sein. Siehe [Azure Stream Analytics-Entwicklerhandbuch](../stream-analytics-developer-guide.md) und [Azure Event Hubs-Entwicklerhandbuch](../event-hubs/event-hubs-programming-guide.md).
 - Die SELECT-Anweisung der Abfrage muss aus einer partitionierten Eingabequelle lesen.
 - Die Abfrage im Schritt muss das Schlüsselwort **Partition By** aufweisen.
 
@@ -164,7 +164,7 @@ Im Azure-Vorschauportal können Sie unter „Einstellungen“ auf die Skalierung
 
 ![Überwachen von Aufträgen in Azure Stream Analytics][img.stream.analytics.monitor.job]
 
-Berechnen Sie den erwarteten Durchsatz der Workload in Ereignissen/Sekunde. Für den Fall, dass der Durchsatz kleiner als erwartet ist, optimieren Sie die Eingabepartition und die Abfrage, und fügen Sie dem Auftrag zusätzliche Streaming-Einheiten hinzu.
+Berechnen Sie den erwarteten Durchsatz der Arbeitsauslastung in Ereignissen/Sekunde. Für den Fall, dass der Durchsatz kleiner als erwartet ist, optimieren Sie die Eingabepartition und die Abfrage, und fügen Sie dem Auftrag zusätzliche Streaming-Einheiten hinzu.
 
 ## Skalierter ASA-Durchsatz – Raspberry Pi-Szenario ##
 
@@ -265,4 +265,4 @@ Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://so
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

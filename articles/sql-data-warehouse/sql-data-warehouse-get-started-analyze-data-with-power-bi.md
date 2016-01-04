@@ -30,8 +30,8 @@ In diesem Lernprogramm erfahren Sie, wie Sie Power BI zum Herstellen einer Verbi
 
 Gehen Sie wie folgt vor, um Power BI zu öffnen und eine Verbindung mit der AdventureWorksDW-Datenbank herzustellen:
 
-1. Melden Sie sich am [Azure-Vorschauportal][] an.
-2. Klicken Sie auf **SQL-Datenbanken**, und wählen Sie Ihre SQL Data Warehouse-AdventureWorks-Datenbank aus. 
+1. Melden Sie sich beim [Azure-Portal][] an.
+2. Klicken Sie auf **SQL-Datenbanken**, und wählen Sie Ihre AdventureWorks SQL Data Warehouse-Datenbank aus. 
 
     ![Datenbank suchen][1]
 
@@ -105,9 +105,9 @@ Nachdem Sie sich schon etwas mit den Beispieldaten vertraut gemacht haben, könn
 [Entwicklung]: ./sql-data-warehouse-overview-develop.md
 [Laden]: ./sql-data-warehouse-overview-load.md
 [Beispieldaten manuell laden]: ./sql-data-warehouse-get-started-manually-load-samples.md
-[Azure-Vorschauportal]: https://portal.azure.com/
+[Azure-Portal]: https://portal.azure.com/
 [Power BI]: http://www.powerbi.com/
 [connecting to SQL Data Warehouse]: ./sql-data-warehouse-integrate-power-bi.md
 [Create a SQL Data Warehouse]: ./sql-data-warehouse-get-started-provision.md
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

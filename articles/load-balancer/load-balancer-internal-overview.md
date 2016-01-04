@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/12/2015"
+   ms.date="12/09/2015"
    ms.author="joaoma" />
 
 
@@ -23,7 +23,7 @@ Der interne Lastenausgleich (ILB) stellt eine Sicherheitsverbesserung gegenüber
 			
 Die Infrastruktur schränkt den Zugriff ein und erstellt eine Vertrauensgrenze zwischen virtuellen IP-Adressen mit Lastenausgleich und Clouddienst oder einem virtuellen Netzwerk, und sie wird nie direkt einem Internetendpunkt verfügbar gemacht. Dies ermöglicht die Ausführung interner Line-of-Business-Anwendungen in Azure und Zugriff in der Cloud oder lokal.
 
-## Szenarios für den internen Lastenausgleich
+## Szenarios für den internen Load Balancer
 
 Sie können den ILB in zahlreichen neuen Konfigurationen verwenden, darunter die folgenden:
 
@@ -92,4 +92,4 @@ Ein weiteres Szenario für LOB ist ein Standort-zu-Standort-VPN mit dem virtuell
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

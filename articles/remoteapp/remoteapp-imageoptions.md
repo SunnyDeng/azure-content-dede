@@ -1,18 +1,18 @@
-<properties 
-    pageTitle="Erstellen von Azure RemoteApp-Images"
-    description="Erfahren Sie mehr über die verfügbaren Optionen zum Erstellen von Images für Azure RemoteApp." 
-    services="remoteapp" 
-    documentationCenter="" 
-    authors="lizap" 
+<properties
+    pageTitle="Erstellen von Azure RemoteApp-Images | Microsoft Azure"
+    description="Erfahren Sie mehr über die verfügbaren Optionen zum Erstellen von Images für Azure RemoteApp."
+    services="remoteapp"
+    documentationCenter=""
+    authors="lizap"
     manager="mbaldwin" />
 
-<tags 
-    ms.service="remoteapp" 
-    ms.workload="compute" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="article" 
-    ms.date="08/12/2015" 
+<tags
+    ms.service="remoteapp"
+    ms.workload="compute"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="12/05/2015"
     ms.author="elizapo" />
 
 
@@ -30,6 +30,5 @@ Bei Images haben Sie die folgenden Möglichkeiten:
 - Verwenden Sie eines der [Vorlagenimages](remoteapp-images.md), die in Ihrem RemoteApp-Abonnement enthalten sind. Diese Images werden vom RemoteApp-Team erstellt und verwaltet und enthalten einige Standardanwendungen (z. B. die Office-Suite), die Sie Ihren Benutzern zur Verfügung stellen können. Beachten Sie, dass nur das Office 365 Pro Plus-Image in einer Produktionsumgebung verwendet werden kann.
 
 Unabhängig davon, wo Sie Ihr Image erhalten oder wie Sie es erstellen, sollten Sie sicherstellen, dass Sie die [Anwendungsanforderungen](remoteapp-appreqs.md) verstehen, sodass Ihre Anwendung in RemoteApp gut funktioniert. Der nächste Schritt ist die Erstellung einer [Cloudsammlung](remoteapp-create-cloud-deployment.md) oder [Hybridsammlung](remoteapp-create-hybrid-deployment.md).
- 
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

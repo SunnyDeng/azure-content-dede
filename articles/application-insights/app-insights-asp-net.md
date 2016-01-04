@@ -12,26 +12,20 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/13/2015" 
+	ms.date="11/17/2015" 
 	ms.author="awills"/>
 
 
 # Einrichten von Application Insights für ASP.NET
 
-*Application Insights befindet sich in der Vorschau.*
-
-<a name="selector1"></a>
-
-[Visual Studio Application Insights](http://azure.microsoft.com/services/application-insights) überwacht Ihre Live-Anwendung. So können Sie [Leistungsprobleme und -ausnahmen erkennen und diagnostizieren][detect] und zudem [ermitteln, wie Ihre App verwendet wird][knowUsers]. Hierfür müssen Sie ein SDK in Ihrer App installieren. Das SDK sendet Telemetriedaten über Ihre App an den Application Insights-Dienst, mit dem Sie das Verhalten der App analysieren und darstellen können.
-
 
 [AZURE.INCLUDE [app-insights-selector-get-started-dotnet](../../includes/app-insights-selector-get-started-dotnet.md)]
 
-Wenn Sie das SDK in Visual Studio zu Ihrer App hinzufügen, erhalten Sie Diagramme zu Serveranforderungen, Antwortzeiten und Fehlern.
+Das Application Insights SDK sendet Telemetriedaten über Ihre live-Web-Anwendung zum Azure-Portal, wo Sie sich anmelden und Diagramme zur Leistung und Nutzung Ihrer App sehen können.
 
 ![Beispiel für Leistungsüberwachungsdiagramm](./media/app-insights-asp-net/10-perf.png)
 
-Sie können mit der API auch die Nutzung im Detail überwachen.
+Ebenso werden Sie bestimmte Anforderungen, Ausnahmen und Protokollereignisse untersuchen und miteinander in Beziehung setzen können. Mit der API lassen sich Telemetriedaten zum detaillierten Überwachen der Leistung und Auslastung hinzufügen.
 
 #### Vorbereitung
 
@@ -129,10 +123,12 @@ Beim Betrieb im Debugmodus wird Telemetrie über die Pipeline geliefert, sodass 
 
 Weitere Informationen finden Sie in [diesem Artikel zur Problembehandlung](app-insights-troubleshoot-faq.md#NuGetBuild).
 
+> [AZURE.NOTE]Wenn die Anwendung viele Telemetriedaten generiert (und Sie Version 2.0.0-beta3 oder höher des ASP.NET-SDK verwenden), reduziert das adaptive Stichprobenmodul automatisch die an das Portal gesendete Datenmenge, indem nur ein repräsentativer Bruchteil der Ereignisse gesendet wird. Ereignisse, die mit derselben Anforderung im Zusammenhang stehen, werden als Gruppe aus- oder abgewählt, sodass Sie zwischen verwandten Ereignissen navigieren können. [Erfahren Sie mehr über das Erstellen von Stichproben.](app-insights-sampling.md)
+
 ## Nächste Schritte
 
 - [Daten zu Seiten und Benutzern](../article/application-insights/app-insights-asp-net-client.md#selector1)
-- [Exceptions](../article/application-insights/app-insights-asp-net-exception-mvc.md#selector1)
+- [Ausnahmen](../article/application-insights/app-insights-asp-net-exception-mvc.md#selector1)
 - [Abhängigkeiten](../article/application-insights/app-insights-asp-net-dependencies.md#selector1)
 - [Verfügbarkeit](../article/application-insights/app-insights-monitor-web-app-availability.md#selector1)
 
@@ -174,4 +170,4 @@ Wenn Sie Anpassungen an der Datei "ApplicationInsights.config" vorgenommen haben
 
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

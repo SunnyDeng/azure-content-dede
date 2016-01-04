@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/01/2015" 
+	ms.date="12/08/2015" 
 	ms.author="luisca"/>
 
 #Veröffentlichung und Verwendung von Machine Learning-Apps im Azure Marketplace: Häufig gestellte Fragen
@@ -40,9 +40,9 @@ Sie sollten Ihr Marketplace-Konto als den Benutzernamen und den primären Kontos
 
 Mindestens ein Eingabeparameter Ihres Webdiensts hat möglicherweise die maximale Länge bei der Nutzung des Webdiensts auf der Marketplace-Seite **Dieses Dataset durchsuchen** überschritten. Die Dienste können durch Verwendung von HTTP POST-Methoden mit einer längeren Eingabezeichenfolge aufgerufen werden. Beispiele finden Sie unter [Beispiellösungen für Machine Learning, die R verwenden und im Marketplace veröffentlicht wurden](machine-learning-r-csharp-web-service-examples.md).
 
-**4. Warum wird mir auf der Registerkarte "API EXPLORER" im Store des Azure-Verwaltungsportals nichts angezeigt?**
+**4. Warum wird mir auf der Registerkarte "API EXPLORER" im Store des klassischen Azure-Portals nichts angezeigt?**
 
-Dies ist ein bekanntes Problem mit dem Marketplace im Azure-Verwaltungsportal. Das Team arbeitet an einer Lösung zur Behebung dieses Problems.
+Dies ist ein bekanntes Problem mit dem Marketplace im klassischen Azure-Portal. Das Team arbeitet an einer Lösung zur Behebung dieses Problems.
 
 
 ##Fragen zur Veröffentlichung aus Azure Machine Learning im Marketplace
@@ -77,4 +77,4 @@ Wenden Sie sich unter <datamarketbd@microsoft.com> an das Azure Marketplace-Team
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

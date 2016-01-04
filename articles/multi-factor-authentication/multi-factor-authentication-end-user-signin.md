@@ -13,11 +13,11 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/15/2015" 
+	ms.date="11/19/2015" 
 	ms.author="billmath"/>
 
 # Der Anmeldevorgang mit Azure Multi-Factor Authentication
-> [AZURE.NOTE]Die Dokumentation auf dieser Seite zeigt eine normale Anmeldeumgebung. Hilfe zur Anmeldung finden Sie unter [Beheben von Problemen mit Azure Multi-Factor Authentication](multi-factor-authentication-end-user-manage-settings.md).
+> [AZURE.NOTE]Die folgende Dokumentation auf dieser Seite zeigt eine normale Anmeldeumgebung. Hilfe zur Anmeldung finden Sie unter [Beheben von Problemen mit Azure Multi-Factor Authentication](multi-factor-authentication-end-user-manage-settings.md).
 
 
 
@@ -103,4 +103,4 @@ Im folgenden Abschnitt erfahren Sie, wie Sie sich über eine alternative Methode
 
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

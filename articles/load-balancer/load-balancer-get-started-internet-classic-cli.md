@@ -19,11 +19,11 @@
 
 # Erste Schritte zum Erstellen eines Load Balancers mit Internetzugriff (klassisch) mithilfe der Azure-Befehlszeilenschnittstelle
 
-[AZURE.INCLUDE [load-balancer-get-started-internet-classic-selectors-include.md](../../includes/load-balancer-get-started-internet-classic-selectors-include.md)]
+[AZURE.INCLUDE [Load-Balancer-Get-Started-Internet-Classic-Selectors-include.MD](../../includes/load-balancer-get-started-internet-classic-selectors-include.md)]
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-intro-include.md](../../includes/load-balancer-get-started-internet-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)]Dieser Artikel gilt für das klassische Bereitstellungsmodell. Sie können auch [nachlesen, wie Sie einen Load Balancer mit Internetzugriff mithilfe des Azure-Ressourcen-Managers erstellen](load-balancer-get-started-internet-arm-cli.md).
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)]Dieser Artikel gilt für das klassische Bereitstellungsmodell. Sie können auch [erfahren, wie Sie mit dem Azure-Ressourcen-Manager einen Load Balancer mit Internetzugriff erstellen](load-balancer-get-started-internet-arm-ps.md).
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-scenario-include.md](../../includes/load-balancer-get-started-internet-scenario-include.md)]
 
@@ -45,25 +45,28 @@ In diesem Handbuch erfahren Sie, wie Sie auf der Grundlage des oben beschriebene
 
 ## Erstellen eines Endpunkts und einer Load Balancer-Gruppe 
 
-Das Szenario setzt voraus, dass die virtuellen Computer „web1“ und „web2“ erstellt wurden. Dieses Handbuch erstellt eine Load Balancer-Gruppe, die Port 80 als öffentlichen Port und Port 80 als lokalen Port verwendet. An Port 80 wird zudem ein Testport konfiguriert, der als Load Balancer-Gruppe „lbset“ bezeichnet wird.
+Das Szenario setzt voraus, dass die virtuellen Computer „web1“ und „web2“ erstellt wurden. In diesem Leitfaden wird eine Load Balancer-Gruppe erstellt, die Port 80 als öffentlichen Port und Port 80 als lokalen Port verwendet. An Port 80 wird zudem ein Testport konfiguriert und als Load Balancer-Gruppe „lbset“ bezeichnet.
 
 
 ### Schritt 1 
 
-Erstellen eines ersten Endpunkts und einer Load Balancer-Gruppe für den virtuellen Computer „web1“ mithilfe von `azure network vm endpoint create`
+Erstellen des ersten Endpunkts und einer Load Balancer-Gruppe für den virtuellen Computer „web1“ mithilfe von `azure network vm endpoint create`.
 
-	azure network endpoint create web1 80 -k 80 -o tcp -t 80 -b lbset 
+	azure vm endpoint create web1 80 -k 80 -o tcp -t 80 -b lbset 
 
+Verwendete Parameter:
 
+**-k** - Port des lokalen virtuellen Computers<br> **-o** - Protokoll<BR> **-t** -Testport<BR> **-b** - Load Balancer-Name<BR>
+ 
 ## Schritt 2 
 
 Hinzufügen eines zweiten virtuellen Computers namens „web2“ zur Load Balancer-Gruppe
 
-	azure network endpoint create web2 80 -k 80 -o tcp -t 80 -b lbset
+	azure vm endpoint create web2 80 -k 80 -o tcp -t 80 -b lbset
 
 ## Schritt 3 
 
-Überprüfen der Load Balancer-Konfiguration mithilfe von `azure vm show`
+Überprüfen der Load Balancer-Konfiguration mithilfe von `azure vm show`.
 
 	azure vm show web1
 
@@ -140,4 +143,4 @@ Sie müssen den der Load Balancer-Gruppe zugeordneten Endpunkt vom virtuellen Co
 
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

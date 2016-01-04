@@ -3,7 +3,7 @@
 	description="Einrichten eines virtuellen Computers für Data Science"
 	services="machine-learning"
 	documentationCenter=""
-	authors="msolhab"
+	authors="bradsev"
 	manager="paulettm" 
 	editor="cgronlun"  />
 
@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/01/2015"
+	ms.date="11/23/2015"
 	ms.author="mohabib;xibingao;bradsev" />
 
 # Virtuelle Data Science-Computer in Azure
 
-Dieses Menü enthält Links zu Themen, in denen das Einrichten der verschiedenen Data Science-Umgebungen, die vom Cortana-Analyseprozess (CAP) verwendet werden, beschrieben wird.
+Dieses Menü enthält Links zu Themen, in denen das Einrichten der verschiedenen vom Cortana-Analyseprozess (CAP) verwendeten Data Science-Umgebungen beschrieben wird.
 
 [AZURE.INCLUDE [data-science-environment-setup](../../includes/cap-setup-environments.md)]
 
@@ -34,10 +34,10 @@ Sie erhalten Anweisungen zum Einrichten einer Azure-VM und einer Azure-VM mit SQ
 
 * Unter [Einrichten einer Azure SQL Server-VM als IPython Notebook-Server für die erweiterte Analyse](machine-learning-data-science-setup-sql-server-virtual-machine.md) wird beschrieben, wie Sie mit IPython Notebook und anderen Tools eine Azure SQL Server-VM bereitstellen, die für Data Science-Fälle eingesetzt wird, bei denen die Daten in einer SQL-Datenbank gespeichert werden.
 
-Nach der Bereitstellung und Konfiguration können diese virtuellen Computer als IPython Notebook-Server für das Untersuchen und Verarbeiten von Daten sowie für andere Aufgaben in Verbindung mit Azure Machine Learning und dem Cloud Data Science-Vorgang verwendet werden. Die nächsten Schritte im Data Science-Prozess sind unter [Leitfaden: Erweiterte Datenverarbeitung in Azure](machine-learning-data-science-advanced-data-processing.md) aufgeführt. Dazu gehören auch das Verschieben von Daten nach SQL Server oder HDInsight sowie das Verarbeiten und Extrahieren von Stichproben für die Gewinnung von Informationen aus den Daten mithilfe von Azure Machine Learning.
+Nach der Bereitstellung und Konfiguration können diese virtuellen Computer als IPython Notebook-Server für das Untersuchen und Verarbeiten von Daten sowie für andere Aufgaben in Verbindung mit Azure Machine Learning und dem Cortana-Analyseprozess (CAP) verwendet werden. Die nächsten Schritte im Data Science-Prozess sind unter [CAP-Lernpfad](https://azure.microsoft.com/documentation/learning-paths/cortana-analytics-process/) (in englischer Sprache) aufgeführt. Dazu gehören auch das Verschieben von Daten nach SQL Server oder HDInsight sowie das Verarbeiten und Extrahieren von Stichproben für die Gewinnung von Informationen aus den Daten mithilfe von Azure Machine Learning.
 
 
-> [AZURE.NOTE]Virtuelle Azure-Computer werden **nach Nutzung abgerechnet**. Damit Sie nicht für ungenutzte virtuelle Computer bezahlen müssen, müssen Sie diese im [Azure-Verwaltungsportal](http://manage.windowsazure.com/) in den Status **Angehalten (Zuordnung aufgehoben)** versetzen. Eine Schrittanleitung dazu, wie Sie die Zuordnung Ihrer virtuellen Computer aufheben, finden Sie unter [Herunterfahren und Freigeben von nicht genutzten virtuellen Computern](machine-learning-data-science-setup-virtual-machine.md#shutdown).
+> [AZURE.NOTE]Virtuelle Azure-Computer werden **nach Nutzung abgerechnet**. Damit Sie nicht für ungenutzte virtuelle Computer bezahlen müssen, müssen Sie diese im [klassischen Azure-Portal](http://manage.windowsazure.com/) in den Status **Angehalten (Zuordnung aufgehoben)** versetzen. Eine Schrittanleitung dazu, wie Sie die Zuordnung Ihrer virtuellen Computer aufheben, finden Sie unter [Herunterfahren und Freigeben von nicht genutzten virtuellen Computern](machine-learning-data-science-setup-virtual-machine.md#shutdown).
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

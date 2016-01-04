@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="08/25/2015" 
+	ms.date="12/03/2015" 
 	ms.author="sdanie"/>
 
 # Azure Redis Cache – Beispiele 
@@ -65,7 +65,7 @@ Das Beispiel [Verwalten von Azure Redis Cache mithilfe von Microsoft Azure-Verwa
 
 ## Beispiel einer benutzerdefinierten Überwachung
 
-Das Beispiel [Zugreifen auf Redis Cache-Überwachungsdaten](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring) demonstriert, wie Sie außerhalb des Azure-Vorschauportals auf Überwachungsdaten für Ihren Azure Redis Cache zugreifen können.
+Das Beispiel [Access Redis Cache Monitoring data](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring) (in englischer Sprache) demonstriert, wie Sie außerhalb des Azure-Portals auf Überwachungsdaten für Ihren Azure Redis Cache zugreifen können.
 
 ## Ein Klon im Stil von Twitter, geschrieben mit PHP und Redis
 
@@ -75,4 +75,4 @@ Das Beispiel [Retwis](https://github.com/SyntaxC4-MSFT/retwis) ist die Hello-Wor
 
 Das Beispiel [Bandbreitenüberwachung](https://github.com/JonCole/SampleCode/tree/master/BandWidthMonitor) ermöglicht die Überwachung der auf dem Client genutzten Bandbreite. Um die Bandbreite zu messen, führen Sie das Beispiel auf dem Cacheclientcomputer aus, rufen Sie den Cache auf, und beobachten Sie die durch das Beispiel gemeldete Bandbreite.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

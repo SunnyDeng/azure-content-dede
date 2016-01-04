@@ -3,7 +3,7 @@
 	description="In diesem Tutorial erlernen Sie das Bereitstellen einer vorkonfigurierten Azure IoT Suite-Lösung."
 	services=""
 	documentationCenter=""
-	authors="aguilaaj"
+	authors="dominicbetts"
 	manager="timlt"
 	editor=""/>
 
@@ -13,106 +13,150 @@
      ms.topic="hero-article"
      ms.tgt_pltfrm="na"
      ms.workload="na"
-     ms.date="09/29/2015"
-     ms.author="araguila"/>
+     ms.date="12/03/2015"
+     ms.author="dobett"/>
 
 # Tutorial: Erste Schritte mit den vorkonfigurierten IoT-Lösungen
 
 ## Einführung
 
-Die vorkonfigurierten Lösungen in der Azure IoT Suite kombinieren eine Reihe von Azure IoT-Diensten, um eine umfassende Lösung für ein Geschäftsszenario des Internets der Dinge (Internet of Things, IoT) zu veranschaulichen.
+[Vorkonfigurierte Lösungen][lnk-preconfigured-solutions] der Azure IoT- Suite kombinieren mehrere Azure IoT-Dienste, um durchgängige Lösungen bereitzustellen, die allgemeine IoT-Unternehmensszenarien implementieren.
 
-In diesem Lernprogramm wird gezeigt, wie Sie eine vorkonfigurierte Lösung für die **Remoteüberwachung** bereitstellen. In ihm wird außerdem gezeigt, wie Sie die grundlegenden Funktionen der vorkonfigurierten Lösung für die Remoteüberwachung anzeigen.
+Dieses Tutorial zeigt, wie Sie eine vorkonfigurierte Lösung für die *Remoteüberwachung* bereitstellen. Außerdem lernen Sie die grundlegenden Funktionen der vorkonfigurierten Lösung für die Remoteüberwachung kennen.
 
-Zum Durchführen dieses Tutorials benötigen Sie Folgendes:
+Sie benötigen ein aktives Azure-Abonnement, um dieses Lernprogramm auszuführen.
 
--   Ein aktives Azure-Abonnement.
-
-    Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion][].
+> [AZURE.NOTE]Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion][lnk_free_trial].
 
 ## Bereitstellen einer vorkonfigurierten Lösung für die Remoteüberwachung
 
-1.  Melden Sie sich bei https://www.azureiotsuite.com an, und klicken Sie auf **+**, um eine neue Lösung zu erstellen.
+1.  Melden Sie sich mit den Anmeldeinformationen für Ihr Azure-Konto bei [azureiotsuite.com][lnk-azureiotsuite] an, und klicken Sie auf **+**, um eine neue Lösung zu erstellen.
 
-2.  Wählen Sie als Lösungstyp **Remoteüberwachung** aus.
+2.  Klicken Sie auf der Kachel **Remoteüberwachung** auf **Auswählen**.
 
-3.  Geben Sie einen **Lösungsnamen** für die vorkonfigurierte Remoteüberwachungslösung ein.
+3.  Geben Sie einen **Lösungsnamen** für Ihre vorkonfigurierte Remoteüberwachungslösung ein.
 
-4.  Überprüfen Sie die **Region** und das **Abonnement** für die Bereitstellung der Lösung.
+4.  Wählen Sie die **Region** und das **Abonnement**, die Sie zum Bereitstellen der Lösung verwenden möchten.
 
-5.  Klicken Sie auf **Lösung erstellen**.
+5.  Klicken Sie auf **Lösung erstellen**, um den Bereitstellungsprozess zu beginnen. Dies dauert normalerweise einige Minuten.
 
 ## Anzeigen des Dashboards der Remoteüberwachungslösung
 
-1.  Wenn die Bereitstellung abgeschlossen ist und auf der Kachel für die vorkonfigurierte Lösung **Bereit** angezeigt wird, klicken Sie auf **Starten**, um das Dashboard der Remoteüberwachungslösung auf einer neuen Registerkarte zu öffnen.
+1.  Wenn die Bereitstellung abgeschlossen ist und auf der Kachel für die vorkonfigurierte Lösung **Bereit** angezeigt wird, klicken Sie auf **Starten**, um das Portal der Remoteüberwachungslösung auf einer neuen Registerkarte zu öffnen.
 
-2.  Standardmäßig ist das **Dashboard** im linken Menü ausgewählt. Dies ist das Dashboard der Lösung.
+    ![][img-launch-solution]
+
+2.  Standardmäßig zeigt das Lösungsportal das *Lösungsdashboard* an. Sie können im linken Menü andere Ansichten auswählen.
+
+    ![][img-dashboard]
 
 ## Anzeigen der Lösungsgeräteliste
 
-1.  Klicken Sie im linken Menü auf **Geräte**, um zur Geräteliste für diese Lösung zu navigieren.
+1.  Klicken Sie im linken Menü auf **Geräte**, um die *Geräteliste* für diese Lösung anzuzeigen.
 
-2.  Bei der Bereitstellung werden vier simulierte bereitgestellte Geräte angezeigt.
+    ![][img-devicelist]
 
-3.  Klicken Sie auf ein **einzelnes Gerät** in der Geräteliste, um die Details dieses Geräts anzuzeigen.
+2.  Wie Sie sehen, gibt es vier simulierte Geräte, die im Rahmen des Bereitstellungsprozesses erstellt werden.
+
+3.  Klicken Sie auf ein Gerät in der Geräteliste, um die Gerätedetails anzuzeigen.
+
+    ![][img-devicedetails]
 
 ## Senden eines Befehls an ein Gerät
 
-1.  Klicken Sie im Bereich mit den Gerätedetails für das ausgewählte simulierte Gerät auf **Befehl senden**.
+1.  Klicken Sie im Bereich mit den Gerätedetails für das ausgewählte Gerät auf **Befehle**.
+
+    ![][img-devicecommands]
 
 2.  Wählen Sie in der Befehlsliste **PingDevice** aus.
 
 3.  Klicken Sie auf **Befehl senden**.
 
-4.  Beachten Sie den Status des Befehls, der im Befehlsverlauf angezeigt wird.
+4.  Sie sehen den Status des Befehls im Befehlsverlauf.
+
+    ![][img-pingcommand]
 
 ## Hinzufügen eines neuen simulierten Geräts
 
-1.  Klicken Sie auf **←** (Rückwärtspfeil), um zur Geräteliste zurückzukehren.
+1.  Navigieren Sie zurück zur Geräteliste.
 
 2.  Klicken Sie in der unteren linken Ecke auf **+ Gerät hinzufügen**, um ein neues Gerät hinzuzufügen.
 
-3.  Klicken Sie für **Simuliertes Gerät** auf **Neues hinzufügen**.
+    ![][img-adddevice]
 
-4.  Wählen Sie **Let me define my own Device ID** aus, und fügen Sie einen eindeutigen Geräte-ID-Namen hinzu.
+3.  Klicken Sie auf der Kachel **Simuliertes Gerät** auf **Neues hinzufügen**.
+
+    ![][img-addnew]
+
+4.  Wählen Sie **Eigene Geräte-ID definieren** aus, und geben Sie einen eindeutigen Geräte-ID-Namen wie **mydevice\_01** ein.
 
 5.  Klicken Sie auf **Erstellen**.
 
-6.  Klicken Sie auf **←** (Rückwärtspfeil), um zur Geräteliste zurückzukehren.
+    ![][img-definedevice]
 
-7.  Beachten Sie in der Geräteliste den Status **Wird ausgeführt**.
+6. Klicken Sie in Schritt 3 von **Simuliertes Gerät hinzufügen** auf **Fertig**, um zur Geräteliste zurückzukehren.
+
+7.  Ihr Gerät wird mit **Wird ausgeführt** in der Geräteliste angezeigt.
+
+    ![][img-runningnew]
 
 ## Anzeigen und Bearbeiten von Lösungsregeln
 
-1.  Beachten Sie im **Solution Dashboard** die Tabelle **Alarm History**.
+1.  Kehren Sie zum Lösungsdashboard zurück, und zeigen Sie die Kachel **Alarmverlauf** an.
 
-2.  Diese Alarme werden durch die in **Regeln** angegebene Ausgabe der Regel **AlarmTemp** ausgelöst.
+    ![][img-alarmhistory]
 
-3.  Klicken Sie im linken Menü auf **Regeln**, um zu den Regeln für diese Lösung zu navigieren.
+2.  Die Regel **AlarmTemp** löst diese Alarme aus.
 
-4.  Bei der Bereitstellung ist eine Regel bereits aktiviert.
+3.  Klicken Sie im linken Menü auf **Regeln**, um die Regeln für diese Lösung anzuzeigen.
 
-5.  Klicken Sie in der Liste der Regeln auf die **Regel**, um die zugehörigen Regeleigenschaften anzuzeigen.
+    ![][img-rules]
+
+4.  Die vorkonfigurierte Lösung stellt zwei Regeln bereit.
+
+5.  Klicken Sie in der Liste der Regeln auf **Temperatur**, um die Regeleigenschaften anzuzeigen.
 
 6.  Klicken Sie im Eigenschaftenbereich der Regel auf **Bearbeiten**.
+
+    ![][img-displayrule]
 
 7.  Ändern Sie den **Schwellenwert** in 30, und lassen Sie alle anderen Eigenschaften unverändert.
 
 8.  Klicken Sie auf **Save and View Rules**.
 
-9.  Kehren Sie zur Tabelle **Alarm History** im **Solution Dashboard** zurück, und beachten Sie die durch die aktualisierte Regel verursachte Änderung beim Auslöser.
+    ![][img-editrule]
+
+9.  Kehren Sie zur Tabelle **Alarmverlauf** im **Lösungsdashboard** zurück, und beachten Sie die durch die aktualisierte Regel verursachte Verhaltensänderung.
+
+    ![][img-newhistory]
 
 ## Nächste Schritte
 
 Nachdem Sie jetzt eine funktionsfähige vorkonfigurierte Lösung erstellt haben, können Sie mit den folgenden Szenarios fortfahren:
 
--   [Anleitung zum Anpassen vorkonfigurierter Lösungen][]
+-   [Anleitung zum Anpassen vorkonfigurierter Lösungen][lnk-customize]
+-   [Übersicht über die vorkonfigurierte Lösung für vorhersagbaren Wartungsbedarf][lnk-predictive]
 
--   [Übersicht über IoT Suite][]
+[img-launch-solution]: media/iot-suite-getstarted-preconfigured-solutions/launch.png
+[img-dashboard]: media/iot-suite-getstarted-preconfigured-solutions/dashboard.png
+[img-devicelist]: media/iot-suite-getstarted-preconfigured-solutions/devicelist.png
+[img-devicedetails]: media/iot-suite-getstarted-preconfigured-solutions/devicedetails.png
+[img-devicecommands]: media/iot-suite-getstarted-preconfigured-solutions/devicecommands.png
+[img-pingcommand]: media/iot-suite-getstarted-preconfigured-solutions/pingcommand.png
+[img-adddevice]: media/iot-suite-getstarted-preconfigured-solutions/adddevice.png
+[img-addnew]: media/iot-suite-getstarted-preconfigured-solutions/addnew.png
+[img-definedevice]: media/iot-suite-getstarted-preconfigured-solutions/definedevice.png
+[img-runningnew]: media/iot-suite-getstarted-preconfigured-solutions/runningnew.png
+[img-alarmhistory]: media/iot-suite-getstarted-preconfigured-solutions/alarmhistory.png
+[img-rules]: media/iot-suite-getstarted-preconfigured-solutions/rules.png
+[img-displayrule]: media/iot-suite-getstarted-preconfigured-solutions/displayrule.png
+[img-editrule]: media/iot-suite-getstarted-preconfigured-solutions/editrule.png
+[img-newhistory]: media/iot-suite-getstarted-preconfigured-solutions/newhistory.png
 
-[Kostenlose Azure-Testversion]: http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F%20target=
+[lnk_free_trial]: http://azure.microsoft.com/pricing/free-trial/
+[lnk-preconfigured-solutions]: iot-suite-what-are-preconfigured-solutions.md
+[lnk-azureiotsuite]: https://www.azureiotsuite.com
+[lnk-customize]: iot-suite-guidance-on-customizing-preconfigured-solutions.md
+[lnk-predictive]: iot-suite-predictive-overview.md
 
-[Anleitung zum Anpassen vorkonfigurierter Lösungen]: https://azure.microsoft.com/documentation/articles/iot-suite-guidance-on-customizing-preconfigured-solutions/
-[Übersicht über IoT Suite]: https://azure.microsoft.com/documentation/articles/iot-suite-overview/
-
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -34,7 +34,7 @@ Damit Azure Service Bus verwendet werden kann, laden Sie das Node.js-Azure-Paket
 
 ### Verwenden von Node Package Manager (NPM) zum Beziehen des Pakets
 
-1. Verwenden Sie das Befehlsfenster von **Windows PowerShell für Node.js**, um zum Ordner **c:\\node\\sbqueues\\WebRole1** zu navigieren, in dem Sie Ihre Beispielanwendung erstellt haben.
+1. Verwenden Sie das Befehlsfenster von **Windows PowerShell für Node.js**, um zum Ordner **c:\\\node\\\sbqueues\\\WebRole1** zu navigieren, in dem Sie Ihre Beispielanwendung erstellt haben.
 
 2. Geben Sie **npm install azure** im Befehlsfenster ein. Die Ausgabe sollte in etwa wie folgt aussehen:
 
@@ -68,7 +68,7 @@ Das Azure-Modul liest die Umgebungsvariablen AZURE\_STORAGE\_ACCOUNT und AZURE\_
 
 Ein Beispiel zum Festlegen der Umgebungsvariablen in einer Konfigurationsdatei für einen Azure-Clouddienst finden Sie unter [Node.js-Clouddienst mit Speicher][].
 
-Ein Beispiel zum Festlegen der Umgebungsvariablen im Azure-Portal für eine Azure-Website finden Sie unter [Node.js-Webanwendung mit Speicher][].
+Ein Beispiel zum Festlegen der Umgebungsvariablen im [klassischen Azure-Portal][] für eine Azure-Website finden Sie unter [Node.js-Webanwendung mit Speicher][].
 
 ## Erstellen einer Warteschlange
 
@@ -189,10 +189,10 @@ Weitere Informationen finden Sie in den folgenden Ressourcen:
 
 -   [Warteschlangen, Themen und Abonnements][]
 -   [Azure SDK für Node][]-Repository auf GitHub
--   [Node.js Developer Center](/develop/nodejs/) (in englischer Sprache)
+-   [Node.js Developer Center (in englischer Sprache)](/develop/nodejs/)
 
   [Azure SDK für Node]: https://github.com/Azure/azure-sdk-for-node
-  [Azure portal]: http://manage.windowsazure.com
+  [klassischen Azure-Portal]: http://manage.windowsazure.com
   
   [Node.js-Clouddienst]: ../cloud-services/cloud-services-nodejs-develop-deploy-app.md
   [Warteschlangen, Themen und Abonnements]: service-bus-queues-topics-subscriptions.md
@@ -202,4 +202,4 @@ Weitere Informationen finden Sie in den folgenden Ressourcen:
   [Azure-Warteschlangen und Service Bus-Warteschlangen]: service-bus-azure-and-service-bus-queues-compared-contrasted.md#capacity-and-quotas
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

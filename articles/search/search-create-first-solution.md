@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Erstellen der ersten Suchlösung mit Azure Search | Microsoft Azure | Gehosteter Cloudsuchdienst" 
+	pageTitle="Erstellen Ihrer ersten Suchlösung mit Azure Search | Microsoft Azure | Gehosteter Cloudsuchdienst" 
 	description="Erstellen Sie Ihre ersten Suchlösung mit Azure Search, einem in Microsoft Azure gehosteten Cloudsuchdienst." 
 	services="search" 
 	documentationCenter="" 
@@ -35,7 +35,7 @@ Die Demo ermöglicht Ihnen mit folgenden Übungen einen Einstieg in Azure Search
 <a id="sub-1"></a>
 ## Voraussetzungen
 
-+	Ein [Azure-Abonnement](../includes/free-trial-note.md). Wenn Sie sich noch nicht für ein Testabonnement registrieren möchten, können Sie dieses Lernprogramm überspringen und stattdessen [Azure App Service testen](https://tryappservice.azure.com/). Bei dieser Alternativoption erhalten Sie Azure Search mit einer ASP.NET-Web-App kostenlos – eine Stunde pro Sitzung, ganz ohne Abonnement.
++	Ein [Azure-Abonnement](../includes/free-trial-note.md). Wenn Sie sich noch nicht für ein Testabonnement registrieren möchten, können Sie dieses Lernprogramm überspringen und stattdessen Azure App Service testen[](https://tryappservice.azure.com/). Bei dieser Alternativoption erhalten Sie Azure Search mit einer ASP.NET-Web-App kostenlos – eine Stunde pro Sitzung, ganz ohne Abonnement.
 +	Visual Studio 2012 oder höher mit installiertem ASP.NET MVC 4 und SQL Server. Falls diese Software noch nicht installiert ist, können Sie jeweils die kostenlose Express-Edition herunterladen: [Visual Studio 2013 Express](http://www.visualstudio.com/products/visual-studio-express-vs.aspx) und [Microsoft SQL Server 2014 Express](http://msdn.microsoft.com/evalcenter/dn434042.aspx).
 +	Ein Azure Search-Dienst. Sie benötigen den Search-Dienstnamen sowie den Administratorschlüssel. Ausführliche Informationen finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](search-create-service-portal.md).
 +	[Azure Search-Demoprojekt zu Adventure Works auf CodePlex](http://go.microsoft.com/fwlink/p/?LinkID=510972). Klicken Sie auf der Registerkarte "Source" (Quelle) auf **Download**, um eine ZIP-Datei der Lösung herunterzuladen. 
@@ -73,7 +73,7 @@ Drücken Sie die **Eingabetaste**, um die Anwendung zu schließen. Damit ist die
 > Starten Sie Visual Studio mit der Option **Als Administrator ausführen**. 
 > Öffnen Sie die Projektmappe, erstellen Sie sie, und drücken Sie dann **F5**, um den Index zu erstellen.
 
-Navigieren Sie im [Azure-Verwaltungsportal](https://portal.azure.com) zum Dashboard des Search-Diensts, um die Indexerstellung und das Hochladen der Dokumente zu überprüfen. Unter "Verwendung" muss der Indexzähler um eins erhöht worden sein, und es sollten 294 Dokumente vorhanden sein, eines für jedes Produkt in der Datenbank.
+Um das Erstellen des Index und das Hochladen der Dokumente zu überprüfen, gehen Sie im [klassischen Azure-Portal](https://portal.azure.com) zum Suchdienst-Dashboard. Unter "Verwendung" muss der Indexzähler um eins erhöht worden sein, und es sollten 294 Dokumente vorhanden sein, eines für jedes Produkt in der Datenbank.
 
 Klicken Sie auf die Kachel **Indizes**, um die Indexliste anzuzeigen. Die Indexliste fährt heraus und zeigt die neue Index- und Dokumentanzahl an. Beachten Sie, dass im Tarif „Free“ bis zu drei Indizes zur Verfügung stehen. Falls bereits drei Indizes vorhanden sind, müssen Sie einen der Indizes löschen, um Platz für neue Indizes zu schaffen.
 
@@ -209,4 +209,4 @@ Informationen finden Sie auch unter [Azure Search REST-API](http://msdn.microsof
 [11]: ./media/search-create-first-solution/AzureSearch_Create1_Suggestions.PNG
 [12]: ./media/search-create-first-solution/AzureSearch_Create1_CodeplexDownload.PNG
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

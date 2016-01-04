@@ -14,7 +14,7 @@
    	ms.topic="article"
    	ms.tgt_pltfrm="na"
    	ms.workload="big-data"
-   	ms.date="10/23/2015"
+   	ms.date="11/17/2015"
    	ms.author="larryfr"/>
 
 #Erstellen von Linux-basierten Clustern in HDInsight mithilfe der Azure-Befehlszeilenschnittstelle
@@ -23,23 +23,23 @@
 
 Die Azure-Befehlszeilenschnittstelle ist ein plattformübergreifendes Befehlszeilentool zur Verwaltung von Azure-Diensten. Es kann mit Azure-Ressourcen-Manager-Vorlagen zum Erstellen eines HDInsight-Clusters verwendet werden, zusammen mit zugeordneten Speicherkonten und anderen Diensten.
 
-Bei Azure-Ressourcen-Manager-Vorlagen handelt es sich um JSON-Dokumente, mit denen eine __Ressourcengruppe__ und alle darin enthaltenen Ressourcen (z. B. HDInsight) beschrieben werden. Dieser vorlagenbasierte Ansatz ermöglicht Ihnen das Definieren aller Ressourcen, die Sie für HDInsight innerhalb einer Vorlage benötigen, und das Verwalten von Änderungen an der gesamten Gruppe durch __Bereitstellungen__, mit denen Änderungen an der Gruppe vorgenommen werden.
+Bei Azure-Ressourcen-Manager-Vorlagen handelt es sich um JSON-Dokumente, mit denen eine __Ressourcengruppe__ und alle darin enthaltenen Ressourcen (z. B. HDInsight) beschrieben werden. Dieser vorlagenbasierte Ansatz ermöglicht Ihnen das Definieren aller für HDInsight benötigten Ressourcen in einer einzigen Vorlage sowie das Verwalten von Änderungen an der gesamten Gruppe durch __Bereitstellungen__, mit denen Änderungen an der Gruppe vorgenommen werden.
 
 Anhand der Schritte in diesem Dokument werden Sie durch die Erstellung eines neuen HDInsight-Clusters mithilfe der Azure-Befehlszeilenschnittstelle und einer Vorlage geführt.
 
 > [AZURE.IMPORTANT]Bei den Schritten in diesem Dokument wird die Standardanzahl von Workerknoten (4) für einen HDInsight-Cluster verwendet. Wenn Sie mehr als 32 Workerknoten planen, entweder bei Erstellung des Clusters oder durch eine Skalierung des Clusters nach der Erstellung, müssen Sie eine Hauptknotengröße von mindestens 8 Kernen und 14 GB Arbeitsspeicher (RAM) auswählen.
 >
-> Weitere Informationen zu Knotengrößen und damit verbundenen Kosten finden Sie unter [HDInsight Preise](https://azure.microsoft.com/pricing/details/hdinsight/).
+> Weitere Informationen zu Knotengrößen und den damit verbundenen Kosten finden Sie unter [HDInsight – Preise](https://azure.microsoft.com/pricing/details/hdinsight/).
 
 ##Voraussetzungen
 
 - **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 
-- __Azure-Befehlszeilenschnittstelle__ Informationen zum Installieren der Befehlszeilenschnittstelle finden Sie unter [Installieren der Azure-Befehlszeilenschnittstelle](xplat-cli-install.md).
+- __Azure-Befehlszeilenschnittstelle__. Informationen zum Installieren der Befehlszeilenschnittstelle finden Sie unter [Installieren der Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md).
 
 ##Anmelden bei Ihrem Azure-Abonnement
 
-Führen Sie die Schritte aus, die unter [Herstellen einer Verbindung mit einem Azure-Abonnement von der Azure Befehlszeilenschnittstelle (Azure-CLI)](xplat-cli-connect.md) dokumentiert sind, und stellen Sie über die __login__-Methode eine Verbindung mit Ihrem Abonnement her.
+Führen Sie die Schritte aus, die unter [Herstellen einer Verbindung mit einem Azure-Abonnement von der Azure Befehlszeilenschnittstelle (Azure CLI)](../xplat-cli-connect.md) dokumentiert sind, und stellen Sie eine Verbindung mit Ihrem Abonnement über die __login__-Methode her.
 
 ##Erstellen eines Clusters
 
@@ -70,7 +70,7 @@ Die folgenden Schritte müssen in einer Befehlszeilen-, Shell- oder Terminalsitz
     * __clusterName__: Der Name des HDInsight-Clusters. Dieser Name muss eindeutig sein, da für die Bereitstellung sonst ein Fehler auftritt.
     * __clusterStorageAccountName__: Der Name des Azure-Speicherkontos, das für den HDInsight-Cluster erstellt wird. Dieser Name muss eindeutig sein, da für die Bereitstellung sonst ein Fehler auftritt.
     * __clusterLoginPassword__: Das Kennwort des Clusteradministratorbenutzers. Dies sollte ein sicheres Kennwort sein, weil damit auf Websites und REST-Dienste im Cluster zugegriffen wird.
-    * __sshUserName__: Der Name des ersten SSH-Benutzers, der für diesen Cluster erstellt wird. SSH wird verwendet, um mit diesem Konto per Remoteverbindung auf diesen Cluster zuzugreifen. Der Name muss eindeutig sein, und es darf sich nicht um den Namen eines Kontos handeln, das im Cluster bereits verwendet wird. Beispiele für ungültige Namen sind „root“, „storm“ und „hbase“.
+    * __sshUserName__: Der Name des ersten SSH-Benutzers, der für diesen Cluster erstellt wird. SSH wird verwendet, um mit diesem Konto per Remoteverbindung auf diesen Cluster zuzugreifen.
     * __sshPublicKey__: Wenn Sie die Vorlage nutzen, die einen öffentlichen SSH-Schlüssel erfordert, müssen Sie den öffentlichen Schlüssel in dieser Zeile hinzufügen. Weitere Informationen zum Generieren von öffentlichen Schlüsseln und zu ihrer Verwendung finden Sie in den folgenden Artikeln:
 
         * [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Linux, Unix oder OS X](hdinsight-hadoop-linux-use-ssh-unix.md)
@@ -112,13 +112,13 @@ Nachdem Sie einen HDInsight-Cluster erfolgreich erstellt haben, nutzen Sie die f
 
 ###HBase-Cluster
 
-* [Erste Schritte mit HBase in HDInsight](hdinsight-hbase-tutorial-get-stared-linux.md)
-* [Entwickeln von Java-Anwendungen für HBase in HDInsight](hdinsight-hbase-build-java-maven-linux)
+* [Erste Schritte mit HBase in HDInsight](hdinsight-hbase-tutorial-get-started-linux.md)
+* [Entwickeln von Java-Anwendungen für HBase in HDInsight](hdinsight-hbase-build-java-maven-linux.md)
 
 ###Storm-Cluster
 
 * [Entwickeln von Java-Topologien für Storm in HDInsight](hdinsight-storm-develop-java-topology.md)
-* [Verwenden von Python-Komponenten in Storm in HDInsight](hdinsight-storm-develop-python.md)
+* [Verwenden von Python-Komponenten in Storm in HDInsight](hdinsight-storm-develop-python-topology.md)
 * [Bereitstellen und Überwachen von Topologien mit Storm in HDInsight](hdinsight-storm-deploy-monitor-topology-linux.md)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1210_2015-->

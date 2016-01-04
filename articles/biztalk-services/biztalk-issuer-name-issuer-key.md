@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/26/2015" 
+	ms.date="12/02/2015" 
 	ms.author="mandia"/>
 
 
@@ -39,7 +39,7 @@ Access Control-Ausstellername und -schlüssel werden von den folgenden Komponent
 
 ### So kopieren Sie Access Control-Ausstellername und -schlüssel und fügen sie ein
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=213885) an.
+1. Melden Sie sich am [klassischen Azure-Portal](http://go.microsoft.com/fwlink/p/?LinkID=213885) an.
 2. Klicken Sie im linken Navigationsbereich auf **BizTalk Services**.
 3. Wählen Sie Ihren BizTalk Service aus. 
 4. Wählen Sie **Connection Information** in der Taskleiste aus. Dort sind Access Control-Namespace, -Standardaussteller (Ausstellername) und -Standardschlüssel (Ausstellerschlüssel) aufgelistet. Sie können diese Werte kopieren und einfügen.  
@@ -49,7 +49,7 @@ Zusammenfassung: Ausstellername = Standardaussteller Ausstellerschlüssel = Stan
 
 Alternativ können Sie auf **ACS-Verwaltungsportal öffnen** klicken, um die Access Control-Werte abzurufen:
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=213885) an.
+1. Melden Sie sich am [klassischen Azure-Portal](http://go.microsoft.com/fwlink/p/?LinkID=213885) an.
 2. Klicken Sie im linken Navigationsbereich auf **BizTalk Services**.
 3. Wählen Sie Ihren BizTalk Service aus.
 4. Klicken Sie auf die Schaltfläche "Verbindungsinformationen", und wählen Sie **ACS-Verwaltungsportal öffnen** aus.
@@ -67,7 +67,7 @@ Service Bus-Ausstellername und -schlüssel werden von BizTalk-Adapterdiensten ve
 
 ### Abrufen von Service Bus-Ausstellername und -schlüssel
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal](http://go.microsoft.com/fwlink/p/?LinkID=213885) an.
+1. Melden Sie sich am [klassischen Azure-Portal](http://go.microsoft.com/fwlink/p/?LinkID=213885) an.
 2. Klicken Sie im linken Navigationsbereich auf **Service Bus**.
 3. Wählen Sie Ihren Namespace aus. Klicken Sie in der Taskleiste auf **Verbindungsinformationen**: Daraufhin werden **Standardaussteller** (Ausstellername) und **Standardschlüssel** (Ausstellerschlüssel) angezeigt. Diese Werte können kopiert werden.  
 
@@ -87,11 +87,11 @@ Zusätzliche Azure BizTalk Services-Themen:
 ## Weitere Informationen
 -  [Verwenden des ACS-Verwaltungsdiensts zum Konfigurieren von Dienstidentitäten](http://go.microsoft.com/fwlink/p/?LinkID=303942)<br/>
 - [BizTalk Services: Editionsübersicht](http://go.microsoft.com/fwlink/p/?LinkID=302279)<br/>
-- [Konfigurieren von BizTalk Services im Azure-Portal](http://go.microsoft.com/fwlink/p/?LinkID=302280)<br/>
+- [BizTalk Services: Bereitstellen mithilfe des klassischen Azure-Portals](http://go.microsoft.com/fwlink/p/?LinkID=302280)<br/>
 - [BizTalk Services: Bereitstellungsstatusübersicht](http://go.microsoft.com/fwlink/p/?LinkID=329870)<br/>
 - [BizTalk Services: Registerkarten "Dashboard", "Überwachen" und "Skalieren"](http://go.microsoft.com/fwlink/p/?LinkID=302281)<br/>
 - [BizTalk Services: Sichern und Wiederherstellen](http://go.microsoft.com/fwlink/p/?LinkID=329873)<br/>
 - [BizTalk Services: Drosselung](http://go.microsoft.com/fwlink/p/?LinkID=302282)<br/>
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

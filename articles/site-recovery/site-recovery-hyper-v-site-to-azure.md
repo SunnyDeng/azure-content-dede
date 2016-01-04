@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Einrichten von Schutz zwischen einem lokalen Hyper-V-Standort und Azure"
+	pageTitle="Replizieren zwischen lokalen virtuellen Hyper-V-Maschinen und Azure (ohne VMM) mit Site Recovery | Microsoft Azure"
 	description="Azure Site Recovery koordiniert Replikation, Failover und Wiederherstellung virtueller Computer auf lokalen Hyper-V-Servern zu Azure."
 	services="site-recovery"
 	documentationCenter=""
@@ -13,25 +13,19 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery"
-	ms.date="10/12/2015"
+	ms.date="12/10/2015"
 	ms.author="raynew"/>
 
 
-# Einrichten von Schutz zwischen einem lokalen Hyper-V-Standort und Azure
+# Replizieren zwischen lokalen virtuellen Hyper-V-Maschinen und Azure (ohne VMM) mit Azure Site Recovery
 
+Azure Site Recovery unterstützt Ihre Strategie für Geschäftskontinuität und Notfallwiederherstellung, indem Replikation, Failover und Wiederherstellung virtueller Maschinen und physischer Server in einer Vielzahl von Bereitstellungsszenarios aufeinander abgestimmt werden. Lesen Sie die [weiteren Informationen](site-recovery-overview.md) zu Site Recovery.
 
 ## Übersicht
 
-Azure Site Recovery unterstützt Ihre Strategie für Geschäftskontinuität und Notfallwiederherstellung, indem Replikation, Failover und Wiederherstellung virtueller Computer und physischer Server aufeinander abgestimmt werden. Informationen zu möglichen Bereitstellungsszenarien finden Sie unter [Übersicht über Site Recovery](site-recovery-overview.md).
+In diesem Artikel wird beschrieben, wie Sie Site Recovery für die Replikation von virtuellen Hyper-V-Maschinen bereitstellen, wenn Hyper-V-Hosts mit Windows Server 2012 R2 nicht in einer System Center Virtual Machine Manager-Cloud (VMM) verwaltet werden.
 
-In diesem Artikel erfahren Sie, wie Sie Site Recovery bereitstellen, um virtuelle Computer auf lokalen Hyper-V-Servern unter Windows Server 2012 R2 zu replizieren. Die Replikation zu Azure-Speicher wird von Site Recovery orchestriert. Diese Bereitstellung ist besonders hilfreich, wenn Sie Hyper-V-Server verwenden und System Center Virtual Machine Manager (VMM) nicht bereitgestellt ist.
-
-
-## Informationen zum Artikel
-
-Dieser Artikel enthält eine Zusammenfassung der Bereitstellungsvoraussetzungen und unterstützt Sie beim Konfigurieren der Replikationseinstellungen sowie beim Aktivieren des Schutzes für virtuelle Computer. Zum Schluss wird das Failover getestet, um sicherzustellen, dass alles wie erwartet funktioniert.
-
-Sollten Probleme auftreten, besuchen Sie das [Azure Recovery Services-Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
+Dieser Artikel enthält eine Zusammenfassung der Bereitstellungsvoraussetzungen und unterstützt Sie beim Konfigurieren der Replikationseinstellungen sowie beim Aktivieren des Schutzes für virtuelle Computer. Zum Schluss wird das Failover getestet, um sicherzustellen, dass alles wie erwartet funktioniert. Sollten Probleme auftreten, besuchen Sie das [Azure Recovery Services-Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
 
 
 ## Vorbereitung
@@ -41,23 +35,23 @@ Vergewissern Sie sich, dass Sie alle Voraussetzungen erfüllen, ehe Sie starten.
 ### Voraussetzungen für Azure
 
 - Sie benötigen ein [Microsoft Azure](http://azure.microsoft.com/)-Konto. Für den Einstieg steht ein [kostenloses Testkonto](pricing/free-trial/) zur Verfügung.
-- Sie benötigen ein Azure-Speicherkonto, um replizierte Daten zu speichern. Für das Konto muss Georeplikation aktiviert sein. Es muss sich in der gleichen Region wie der Azure Site Recovery-Tresor befinden und dem gleichen Abonnement zugeordnet sein. Weitere Informationen finden Sie unter [Einführung in Microsoft Azure Storage](../storage/storage-introduction.md).
-- Sie benötigen ein virtuelles Azure-Netzwerk, damit die replizierten virtuellen Computer nach einem Failover mit einem Netzwerk verbunden sind.
+- Sie benötigen ein Azure-Speicherkonto, um replizierte Daten zu speichern. Für das Konto muss Georeplikation aktiviert sein. Es muss sich in der gleichen Region wie der Azure Site Recovery-Tresor befinden und dem gleichen Abonnement zugeordnet sein. [Hier erhalten Sie weitere Informationen zu Azure Storage](../storage/storage-introduction.md).
+- Sie benötigen ein virtuelles Azure-Netzwerk, damit für virtuelle Azure-Maschinen eine Netzwerkverbindung besteht, wenn Sie ein Failover von Ihrem primären Standort durchführen.
 
 ### Hyper-V-Voraussetzungen
 
-- Am lokalen Quellstandort muss mindestens ein Server mit Windows Server 2012 R2 und der Hyper-V-Rolle vorhanden sein.
-- Der Hyper-V-Server muss mindestens einen virtuellen Computer enthalten.
-- Hyper-V-Server müssen entweder direkt oder über einen Proxy mit dem Internet verbunden sein.
-- Auf Hyper-V-Servern sollten die in [KB2961977](https://support.microsoft.com/en-us/kb/2961977 "KB2961977") genannten Fehlerbehebungen installiert sein.
+- Am lokalen Quellstandort benötigen Sie mindestens einen Server mit Windows Server 2012 R2 und installierter Hyper-V-Rolle. Für diesen Server sollten folgende Anforderungen erfüllt sein:
+- Er enthält eine oder mehrere virtuelle Maschinen.
+- Er muss entweder direkt oder über einen Proxy mit dem Internet verbunden sein.
+- Es müssen die unter KB [2961977](https://support.microsoft.com/de-DE/kb/2961977 "KB2961977") beschriebenen Fixes ausgeführt werden.
 
 ### Voraussetzungen für virtuelle Computer
 
-Die zu schützenden virtuellen Computer müssen die [Voraussetzungen für virtuelle Computer](site-recovery-best-practices.md#virtual-machines) erfüllen.
+Die zu schützenden virtuellen Maschinen müssen die [Voraussetzungen für virtuelle Maschinen](site-recovery-best-practices.md#virtual-machines) erfüllen.
 
 ### Voraussetzungen für Anbieter und Agent
 
-Im Rahmen der Azure Site Recovery-Bereitstellung werden auf jedem Hyper-V-Server, der über zu schützende virtuelle Computer verfügt, der Azure Site Recovery-Anbieter und der Azure Recovery Services-Agent installiert. Beachten Sie Folgendes:
+Im Rahmen der Azure Site Recovery-Bereitstellung werden auf jedem Hyper-V-Server der Azure Site Recovery-Anbieter und der Azure Recovery Services-Agent installiert. Beachten Sie Folgendes:
 
 - Verwenden Sie jeweils die neueste Anbieter- und Agent-Version.
 - Alle Hyper-V-Server in einem Tresor müssen die gleiche Version aufweisen.
@@ -70,7 +64,8 @@ Im Rahmen der Azure Site Recovery-Bereitstellung werden auf jedem Hyper-V-Serv
  
 - Wenn Sie einen benutzerdefinierten Proxyserver verwenden möchten, richten Sie diesen vor der Installation des Anbieters ein. Bei der Anbieterinstallation müssen Sie dann die Adresse und den Port des Proxyservers sowie die Anmeldeinformationen für den Zugriff angeben. Beachten Sie, dass HTTPS-basierte Proxys nicht unterstützt werden.
 
-Die folgende Abbildung zeigt die verschiedenen Kommunikationskanäle und Ports, die Azure Site Recovery für die Orchestrierung und Replikation verwendet.
+
+Diese Grafik zeigt die verschiedenen Kommunikationskanäle und Ports, die Site Recovery für die Orchestrierung und Replikation verwendet.
 
 ![B2A-Topology](./media/site-recovery-hyper-v-site-to-azure/B2ATopology.png)
 
@@ -87,7 +82,7 @@ Die folgende Abbildung zeigt die verschiedenen Kommunikationskanäle und Ports, 
 
 4. Geben Sie unter **Name** einen Anzeigenamen ein, über den der Tresor identifiziert wird.
 
-5. Wählen Sie unter **Region** die geografische Region für den Tresor aus. Eine Liste mit den unterstützten Regionen finden Sie in den [Preisübersicht zu Azure Site Recovery](pricing/details/site-recovery/) unter „Geografische Verfügbarkeit“.
+5. Wählen Sie unter **Region** die geografische Region für den Tresor aus. Eine Liste mit den unterstützten Regionen finden Sie in den [Preisdetails zu Azure Site Recovery](pricing/details/site-recovery/) unter „Geografische Verfügbarkeit“.
 
 6. Klicken Sie auf **Tresor erstellen**.
 
@@ -112,7 +107,9 @@ Die folgende Abbildung zeigt die verschiedenen Kommunikationskanäle und Ports, 
 
 
 ## Schritt 3: Installieren des Anbieters und des Agents
-Installieren Sie Anbieter und Agent. Wenn Sie die Installation für einen Hyper-V-Cluster vornehmen, führen Sie die Schritte 5 bis 11 auf jedem Knoten des Failoverclusters durch. Wenn alle Knoten registriert sind und der Schutz aktiviert wurde, sind die virtuellen Computer sogar bei der knotenübergreifenden Migration innerhalb des Failoverclusters geschützt.
+Installieren Sie den Anbieter und den Agent auf allen Hyper-V-Servern, die zu schützende VMs enthalten.
+
+Wenn Sie die Installation für einen Hyper-V-Cluster vornehmen, führen Sie die Schritte 5 bis 11 auf jedem Knoten des Failoverclusters durch. Wenn alle Knoten registriert sind und der Schutz aktiviert wurde, sind die virtuellen Computer sogar bei der knotenübergreifenden Migration innerhalb des Clusters geschützt.
 
 1. Klicken Sie unter **Hyper-V-Server vorbereiten** auf **Registrierungsschlüssel herunterladen**.
 2. Klicken Sie auf der Seite **Registrierungsschlüssel herunterladen** neben dem Standort auf **Herunterladen**. Laden Sie den Schlüssel an einen sicheren Speicherort herunter, auf den der Hyper-V-Server einfach zugreifen kann. Der Schlüssel ist nach der Erstellung 5 Tage lang gültig.
@@ -140,19 +137,6 @@ Installieren Sie Anbieter und Agent. Wenn Sie die Installation für einen Hyper-
 
 	![Interneteinstellungen](./media/site-recovery-hyper-v-site-to-azure/SRHVSite_Provider4.png)
 
-	Beachten Sie Folgendes:
-
-	- Wenn für den Standardproxy des Hyper-V-Servers eine Authentifizierung erforderlich ist, müssen Sie die Option für den benutzerdefinierten Proxyserver auswählen. Geben Sie die Details zum Standardproxy sowie die Anmeldeinformationen ein.
-	- Wenn Sie einen benutzerdefinierten Proxyserver verwenden möchten, richten Sie diesen vor der Anbieterinstallation ein.
-	- Der Hyper-V-Host sollte auf die folgenden URLs Zugriff haben:
-		- *.hypervrecoverymanager.windowsazure.com
-		- *.accesscontrol.windows.net
-		- *.backup.windowsazure.com
-		- *.blob.core.windows.net
-		- *.store.core.windows.net
-
-	- Lassen Sie die unter [IP-Bereiche des Azure-Rechenzentrums](http://go.microsoft.com/fwlink/?LinkId=511094) angegebenen IP-Adressen sowie das HTTPS-Protokoll (443) zu. Fügen Sie die IP-Adressbereiche der zu verwendenden Azure-Region sowie die IP-Adressbereiche der westlichen USA einer Positivliste hinzu.
-
 9. Klicken Sie auf der Seite **Tresoreinstellungen** auf **Durchsuchen**, um die Schlüsseldatei auszuwählen. Geben Sie das Azure Site Recovery-Abonnement, den Tresornamen und den Hyper-V-Standort an, zu dem der Hyper-V-Server gehört.
 
 	![Serverregistrierung](./media/site-recovery-hyper-v-site-to-azure/SRHVSite_SelectKey.png)
@@ -166,36 +150,35 @@ Installieren Sie Anbieter und Agent. Wenn Sie die Installation für einen Hyper-
 
 	![Serverregistrierung](./media/site-recovery-hyper-v-site-to-azure/SRHVSite_Provider7.png)
 
-	> [AZURE.NOTE]Der Azure Site Recovery-Anbieter kann auch über die folgende Befehlszeile installiert werden. Mit dieser Methode kann der Anbieter in Server Core für Windows Server 2012 R2 installiert werden.
-	>
-	>1. Laden Sie die Installationsdatei und den Registrierungsschlüssel des Anbieters in einen Ordner herunter, z. B. in "C:\\ASR".
-	>2. Extrahieren Sie das Installationsprogramm für den Anbieter, indem Sie die folgenden Befehle über eine Befehlszeile mit **Administratorrechten** ausführen.
-	>
-	    	C:\Windows\System32> CD C:\ASR
-	    	C:\ASR> AzureSiteRecoveryProvider.exe /x:. /q
-	>4. Installieren Sie den Anbieter mithilfe des folgenden Befehls:
-	>
-			C:\ASR> setupdr.exe /i
-	>5. Registrieren Sie den Anbieter mithilfe des folgenden Befehls:
-	>
-	    	CD C:\Program Files\Microsoft Azure Site Recovery Provider\
-	    	C:\Program Files\Microsoft Azure Site Recovery Provider> DRConfigurator.exe /r  /Friendlyname <friendly name of the server> /Credentials <path of the credentials file>
+
+### Installieren des Anbieters über die Befehlszeile
+
+Alternativ können Sie den Azure Site Recovery-Anbieter auch über die Befehlszeile installieren. Verwenden Sie dieses Verfahren, wenn Sie den Anbieter auf einem Computer mit Windows Server Core 2012 R2 installieren möchten. Führen Sie über die Befehlszeile Folgendes aus:
+
+1. Laden Sie die Installationsdatei und den Registrierungsschlüssel des Anbieters in einen Ordner herunter. Beispiel: C:\\ASR.
+2. Führen Sie eine Eingabeaufforderung als Administrator aus, und geben Sie Folgendes ein:
+
+    	C:\Windows\System32> CD C:\ASR
+    	C:\ASR> AzureSiteRecoveryProvider.exe /x:. /q
+
+3. Führen Sie anschließend den folgenden Befehl aus, um den Anbieter zu installieren:
+
+		C:\ASR> setupdr.exe /i
+
+4. Führen Sie Folgendes aus, um die Registrierung abzuschließen:
+
+    	CD C:\Program Files\Microsoft Azure Site Recovery Provider
+    	C:\Program Files\Microsoft Azure Site Recovery Provider> DRConfigurator.exe /r  /Friendlyname <friendly name of the server> /Credentials <path of the credentials file> /EncryptionEnabled <full file name to save the encryption certificate>         
+
+Parameter:
+
+- **/Credentials**: Geben Sie den Speicherort des heruntergeladenen Registrierungsschlüssels an.
+- **/FriendlyName**: Geben Sie einen Namen zur Identifizierung des Hyper-V-Hostservers an. Dieser Name wird im Portal angezeigt.
+- **/EncryptionEnabled**: Optional. Geben Sie an, ob Sie virtuelle Replikatmaschinen in Azure verschlüsseln möchten (Verschlüsselung im ruhenden Zustand).
+- **/proxyAddress**; **/proxyport**; **/proxyUsername**; **/proxyPassword**: Optional. Geben Sie Proxyparameter ein, wenn Sie einen benutzerdefinierten Proxyserver verwenden möchten oder falls für den vorhandenen Proxy eine Authentifizierung erforderlich ist.
 
 
-	>----------
-          
-	>####Parameter für die Installation über die Befehlszeile####
-	>- **/Credentials**: erforderlicher Parameter zum Angeben des Speicherorts der Registrierungsschlüsseldatei.  
-	> - **/FriendlyName**: erforderlicher Parameter für den Namen des Hyper-V-Hostservers, der im Azure Site Recovery-Portal angezeigt wird.
-	> - **/proxyAddress**: optionaler Parameter, der die Adresse des Proxyservers angibt.
-	> - **/proxyport**: optionaler Parameter, der den Port des Proxyservers angibt.
-	> - **/proxyUsername**: optionaler Parameter, der den Proxybenutzernamen angibt (sofern der Proxy eine Authentifizierung erfordert).
-	> - **/proxyPassword**: optionaler Parameter, der das Kennwort für die Authentifizierung mit dem Proxyserver angibt (sofern der Proxy eine Authentifizierung erfordert).
-
->[AZURE.TIP]Sie können jeden einzelnen Hyper-V-Host so konfigurieren, dass unterschiedliche Netzwerk-Bandbreiteneinstellungen verwendet werden, um virtuelle Computer in Azure zu replizieren. Weitere Informationen über das [Verwalten der Netzwerkbandbreitennutzung für den Schutz zwischen einem lokalen Standort und Azure](https://support.microsoft.com/en-us/kb/3056159)
-
-
-## Schritt 4: Erstellen der Azure-Ressourcen
+## Schritt 4: Erstellen eines Azure-Speicherkontos 
 
 1. Wählen Sie unter **Ressourcen vorbereiten** die Option **Speicherkonto erstellen** aus, um ein Azure-Speicherkonto zu erstellen, sofern noch nicht vorhanden. Für das Konto muss Georeplikation aktiviert sein. Es muss sich in der gleichen Region befinden wie der Azure Site Recovery-Tresor und dem gleichen Abonnement zugeordnet sein.
 
@@ -203,7 +186,9 @@ Installieren Sie Anbieter und Agent. Wenn Sie die Installation für einen Hyper-
 
 ## Schritt 5: Erstellen und Konfigurieren von Schutzgruppen
 
-Schutzgruppen sind logische Gruppen virtueller Computer, für die die gleichen Schutzeinstellungen gelten sollen. Sie weisen einer Schutzgruppe Schutzeinstellungen zu, die für alle virtuellen Computer gelten, die Sie der Gruppe hinzufügen. 1. Klicken Sie in **Schutzgruppen erstellen und konfigurieren** auf **Schutzgruppe erstellen**. Falls nicht alle Voraussetzungen erfüllt sind, erscheint eine entsprechende Meldung. Klicken Sie auf **Details anzeigen**, um weitere Informationen zu erhalten.
+Schutzgruppen sind logische Gruppen virtueller Computer, für die die gleichen Schutzeinstellungen gelten sollen. Sie weisen einer Schutzgruppe Schutzeinstellungen zu, die für alle virtuellen Computer gelten, die Sie der Gruppe hinzufügen.
+
+1. Klicken Sie in **Schutzgruppen erstellen und konfigurieren** auf **Schutzgruppe erstellen**. Falls nicht alle Voraussetzungen erfüllt sind, erscheint eine entsprechende Meldung. Klicken Sie auf **Details anzeigen**, um weitere Informationen zu erhalten.
 
 2. Fügen Sie auf der Registerkarte **Schutzgruppen** eine neue Schutzgruppe hinzu. Geben Sie einen Namen, den Hyper-V-Quellstandort, das Ziel in **Azure**, den Namen Ihres Azure Site Recovery-Abonnements und das Azure-Speicherkonto an.
 
@@ -223,6 +208,8 @@ Schutzgruppen sind logische Gruppen virtueller Computer, für die die gleichen S
 
 Fügen Sie einer Schutzgruppe virtuelle Computer hinzu, um sie zu schützen.
 
+>[AZURE.NOTE]Das Schützen von VMs, auf denen Linux mit einer statischen IP-Adresse ausgeführt wird, wird nicht unterstützt.
+
 1. Klicken Sie auf der Registerkarte **Virtuelle Computer** der Schutzgruppe auf **Virtuelle Computer zum Aktivieren von Schutz zu Schutzgruppen hinzufügen**.
 2. Wählen Sie auf der Seite **Schutz für virtuelle Computer aktivieren** die virtuellen Computer aus, die Sie schützen möchten.
 
@@ -239,15 +226,10 @@ Fügen Sie einer Schutzgruppe virtuelle Computer hinzu, um sie zu schützen.
 		![Konfigurieren der Eigenschaften virtueller Computer](./media/site-recovery-hyper-v-site-to-azure/VMProperties.png)
 	- Konfigurieren weiterer Einstellungen für den virtuellen Computer unter *Geschützte Elemente** > **Schutzgruppen** > *<Name der Schutzgruppe>* > **Virtuelle Computer** > *<Name des virtuellen Computers>* > **Konfigurieren**. Hierzu zählen:
 
-		- **Netzwerkadapter**: Die Anzahl der Netzwerkadapter hängt von der Größe ab, die Sie für den virtuellen Zielcomputer angeben.
-			- Groß (A3) und A6: 2
-			- Extragroß (A4) und A7:
-			- A9: 2
-			- D3: 2
-			- D4: 4
-			- D13: 4
+		- **Netzwerkadapter**: Die Anzahl der Netzwerkadapter hängt von der Größe ab, die Sie für den virtuellen Zielcomputer angeben. Überprüfen Sie in den [Spezifikationen für virtuelle Computer](../virtual-machines/virtual-machines-size-specs.md#size-tables), wie viele Netzwerkschnittstellenkarten von virtuellen Maschinen einer bestimmten Größe unterstützt werden.
 
-			Wenn Sie die Größe für einen virtuellen Computer ändern und die Einstellungen speichern, werden beim nächsten Öffnen der Seite **Konfigurieren** die Netzwerkadapter angezeigt. Die Anzahl der Adapter für einen virtuellen Computer wird wie folgt bestimmt:
+
+			Wenn Sie die Größe für einen virtuellen Computer ändern und die Einstellungen speichern, wird die Anzahl der Netzwerkadapter beim nächsten Öffnen der Seite **Konfigurieren** geändert. Die Anzahl der Netzwerkadapter der virtuellen Zielcomputer entspricht mindestens der Anzahl der Netzwerkadapter auf virtuellen Quellcomputern und der maximalen Anzahl der Netzwerkadapter, die nach der unterstützten Größe des virtuellen Computers ausgewählt werden. Hierzu eine kurze Erläuterung:
 
 
 			- Wenn die Anzahl der Netzwerkadapter des Quellcomputers maximal der Anzahl der Netzwerkadapter entspricht, die für die Größe des Zielcomputers zulässig ist, hat der Zielcomputer die gleiche Anzahl von Netzwerkadaptern wie der Quellcomputer.
@@ -255,29 +237,34 @@ Fügen Sie einer Schutzgruppe virtuelle Computer hinzu, um sie zu schützen.
 			- Ein Beispiel: Wenn ein Quellcomputer zwei Netzwerkadapter besitzt und der Zielcomputer aufgrund seiner Größe vier Adapter unterstützt, erhält der Zielcomputer zwei Adapter. Wenn der Quellcomputer dagegen zwei Netzwerkadapter besitzt und der Zielcomputer aufgrund seiner Größe nur einen Adapter unterstützt, erhält der Zielcomputer nur einen Adapter. 	
 		- **Azure-Netzwerk**: Geben Sie das Failover-Zielnetzwerk für den virtuellen Computer an. Wenn der virtuelle Computer mehrere Netzwerkadapter besitzt, müssen alle Adapter mit dem gleichen Azure-Netzwerk verbunden werden.
 		- **Subnetz**: Wählen Sie für jeden Netzwerkadapter des virtuellen Computers das Subnetz im Azure-Netzwerk aus, mit dem der Computer nach einem Failover eine Verbindung herstellen soll.
-		- **Ziel-IP-Adresse**: Wenn der Netzwerkadapter des virtuellen Quellcomputers für die Verwendung einer statischen IP-Adresse konfiguriert ist, können Sie die IP-Adresse für den virtuellen Zielcomputer angeben, um sicherzustellen, dass der Computer nach dem Failover die gleiche IP-Adresse besitzt. Wenn Sie keine IP-Adresse angeben, wird beim Failover eine der verfügbaren Adressen zugewiesen. Wenn Sie eine Adresse angeben, die bereits verwendet wird, ist das Failover nicht erfolgreich.
+		- **Ziel-IP-Adresse**: Wenn der Netzwerkadapter der virtuellen Quellmaschine für die Verwendung einer statischen IP-Adresse konfiguriert ist, können Sie die IP-Adresse für die virtuelle Zielmaschine angeben, um sicherzustellen, dass die Maschine nach dem Failover die gleiche IP-Adresse besitzt. Wenn Sie keine IP-Adresse angeben, wird beim Failover eine der verfügbaren Adressen zugewiesen. Wenn Sie eine Adresse angeben, die bereits verwendet wird, ist das Failover nicht erfolgreich.
 
 		![Konfigurieren der Eigenschaften virtueller Computer](./media/site-recovery-hyper-v-site-to-azure/SRHVSite_VMMultipleNic.png)
 
+
+
+
 ## Schritt 7: Erstellen eines Wiederherstellungsplans
 
-Zum Testen der Bereitstellung können Sie ein Test-Failover für einen einzelnen virtuellen Computer durchführen. Alternativ können Sie einen Wiederherstellungsplan erstellen, der mehrere virtuelle Computer enthält. Zum Erstellen eines Wiederherstellungsplans [befolgen Sie diese Anweisungen](site-recovery-create-recovery-plans.md).
+Zum Testen der Bereitstellung können Sie ein Test-Failover für einen einzelnen virtuellen Computer durchführen. Alternativ können Sie einen Wiederherstellungsplan erstellen, der mehrere virtuelle Computer enthält. Lesen Sie die [weiteren Informationen](site-recovery-create-recovery-plans.md) zur Erstellung eines Wiederherstellungsplans.
 
 ## Schritt 8: Testen der Bereitstellung
 
 Es gibt zwei Möglichkeiten, ein Testfailover in Azure auszuführen.
 
-- Testfailover ohne Azure-Netzwerk – Bei dieser Art von Testfailover wird überprüft, dass der virtuelle Computer in Azure ordnungsgemäß hochgefahren wird. Der virtuelle Computer wird nach einem Failover mit keinem Azure-Netzwerk verbunden.
-- Testfailover mit Azure-Netzwerk – Bei dieser Art von Failover wird überprüft, ob die gesamte Replikationsumgebung wie erwartet hochgefahren wird und die betreffenden virtuellen Computer mit dem angegebenen Azure-Zielnetzwerk verbunden werden. Bei der Subnetzverarbeitung wird für das Testfailover das Subnetz des virtuellen Testcomputers basierend auf dem Subnetz des virtuellen Replikatcomputers festgelegt. Dies unterscheidet sich von der regulären Replikation, bei der das Subnetz des virtuellen Replikatcomputers auf dem Subnetz des virtuellen Quellcomputers basiert.
+- **Testfailover ohne Azure-Netzwerk**: Bei dieser Art von Testfailover wird überprüft, ob die virtuelle Maschine in Azure richtig hochgefahren wird. Der virtuelle Computer wird nach einem Failover mit keinem Azure-Netzwerk verbunden.
+- **Testfailover mit Azure-Netzwerk**: Bei dieser Art von Failover wird überprüft, ob die gesamte Replikationsumgebung wie erwartet hochgefahren wird und die betreffenden virtuellen Maschinen mit dem angegebenen Azure-Zielnetzwerk verbunden werden. Beachten Sie Folgendes: Beim Testfailover wird das Subnetz der virtuellen Testmaschine basierend auf dem Subnetz der virtuellen Replikatmaschine festgelegt. Dies unterscheidet sich von der regulären Replikation, bei der das Subnetz des virtuellen Replikatcomputers auf dem Subnetz des virtuellen Quellcomputers basiert.
 
-Wenn Sie ein Testfailover für einen virtuellen Computer, der für den Schutz in Azure aktiviert ist, ohne Angabe eines Azure-Zielnetzwerks durchführen möchten, müssen Sie nichts vorbereiten. Für ein Testfailover mit einem Azure-Zielnetzwerk müssen Sie ein neues Azure-Netzwerk erstellen, das von Ihrem Azure-Produktionsnetzwerk isoliert ist (Standardverhalten bei der Erstellung eines neuen Netzwerks in Azure). Unter [Ausführen eines Testfailovers](site-recovery-failover.md#run-a-test-failover) finden Sie weitere Details.
+Wenn Sie ein Testfailover durchführen möchten, ohne ein Azure-Netzwerk anzugeben, müssen Sie keine Vorbereitungen treffen.
+
+Für ein Testfailover mit einem Azure-Zielnetzwerk müssen Sie ein neues Azure-Netzwerk erstellen, das von Ihrem Azure-Produktionsnetzwerk isoliert ist (Standardverhalten bei der Erstellung eines neuen Netzwerks in Azure). Unter [Ausführen eines Testfailovers](site-recovery-failover.md#run-a-test-failover) finden Sie weitere Details.
 
 
-Sie müssen außerdem die Infrastruktur so einrichten, dass der replizierte virtuelle Computer erwartungsgemäß funktioniert. So kann beispielsweise ein virtueller Computer mit Domänencontroller und DNS mithilfe von Azure Site Recovery zu Azure repliziert und mittels Testfailover im Testnetzwerk erstellt werden. Unter [Überlegungen zum Testfailover für Active Directory](site-recovery-active-directory.md#considerations-for-test-failover) finden Sie weitere Details.
+Um Ihre Replikation und Netzwerkbereitstellung vollständig zu testen, müssen Sie die Infrastruktur einrichten, damit die replizierte virtuelle Maschine wie erwartet funktioniert. Eine Möglichkeit ist: Richten Sie eine virtuelle Maschine als Domänencontroller mit DNS ein, und replizieren Sie sie zu Azure. Verwenden Sie Site Recovery für die Erstellung im Testnetzwerk, indem Sie ein Testfailover ausführen. Lesen Sie sich die [weiteren Informationen](site-recovery-active-directory.md#considerations-for-test-failover) zu den Testfailover-Aspekten für Active Directory durch.
 
-Gehen Sie wie folgt vor, um das Testfailover durchzuführen:
+Führen Sie das Testfailover wie folgt aus:
 
-1. Wählen Sie auf der Registerkarte **Wiederherstellungspläne** den gewünschten Plan aus, und klicken Sie auf **Testfailover**.
+1. Wählen Sie auf der Registerkarte **Wiederherstellungspläne** den gewünschten Wiederherstellungsplan aus, und klicken Sie auf **Testfailover**.
 2. Wählen Sie auf der Seite **Testfailover bestätigen** den Eintrag **Kein** oder ein bestimmtes Azure-Netzwerk aus. Beachten Sie, dass ein Testfailover bei Auswahl von **Kein** zwar prüft, ob der virtuelle Computer ordnungsgemäß zu Azure repliziert wurde, die Konfiguration des Replikationsnetzwerks wird jedoch nicht geprüft.
 
 	![Testfailover](./media/site-recovery-hyper-v-site-to-azure/SRHVSite_TestFailoverNoNetwork.png)
@@ -305,4 +292,4 @@ Gehen Sie wie folgt vor, um das Testfailover durchzuführen:
 
 Wenn die Bereitstellung eingerichtet ist und ausgeführt wird, informieren Sie sich über [Failover](site-recovery-failover.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

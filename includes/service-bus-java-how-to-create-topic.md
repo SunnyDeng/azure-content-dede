@@ -14,13 +14,13 @@ Mit Service Bus-Themen und -Abonnements können Sie sehr viele Nachrichten an se
 
 Um mit der Verwendung von Service Bus-Themen und -Abonnements in Azure beginnen zu können, müssen Sie zuerst einen Dienstnamespace erstellen. Ein Dienstnamespace ist eine Bereichseinheit zur Adressierung von Servicebus-Ressourcen innerhalb Ihrer Anwendung.
 
-So erstellen Sie einen Dienstnamespace
+So erstellen Sie einen Dienstnamespace:
 
-1.  Melden Sie sich auf dem [Azure-Verwaltungsportal][] an.
+1.  Melden Sie sich beim [klassischen Azure-Portal][] an.
 
-2.  Klicken Sie im linken Navigationsbereich des Verwaltungsportals auf **Servicebus**.
+2.  Klicken Sie im linken Navigationsbereich des Portals auf **Service Bus**.
 
-3.  Klicken Sie im unteren Bereich des Verwaltungsportals auf **Erstellen**. ![][0]
+3.  Klicken Sie im unteren Bereich des Portals auf **Erstellen**. ![][0]
 
 4.  Geben Sie im Dialogfeld **Add a new namespace** einen Namen für den Namespace ein. Das System prüft sofort, ob dieser Name verfügbar ist.![][2]
 
@@ -35,7 +35,7 @@ So erstellen Sie einen Dienstnamespace
 
 ## Abrufen der Standard-Anmeldeinformationen für den Namespace
 
-Wenn Sie Verwaltungsvorgänge ausführen möchten, z. B. die Erstellung eines Themas oder Abonnements im neuen Namespace, müssen Sie die Anmeldeinformationen für den Namespace abrufen. Diese Anmeldeinformation erhalten Sie im Azure-Verwaltungsportal.
+Wenn Sie Verwaltungsvorgänge ausführen möchten, z. B. die Erstellung eines Themas oder Abonnements im neuen Namespace, müssen Sie die Anmeldeinformationen für den Namespace abrufen. Diese Anmeldeinformation erhalten Sie im Portal.
 
 ### So rufen Sie die Anmeldeinformationen im Verwaltungsportal ab
 
@@ -48,7 +48,7 @@ Wenn Sie Verwaltungsvorgänge ausführen möchten, z. B. die Erstellung eines T
 4.  Notieren Sie den Primärschlüssel oder kopieren Sie ihn in die Zwischenablage.
 
 
-  [Azure-Verwaltungsportal]: http://manage.windowsazure.com
+  [Azure portal]: http://manage.windowsazure.com
   [0]: ./media/service-bus-java-how-to-create-topic/sb-queues-13.png
   [2]: ./media/service-bus-java-how-to-create-topic/sb-queues-04.png
   [3]: ./media/service-bus-java-how-to-create-topic/sb-queues-09.png
@@ -57,4 +57,4 @@ Wenn Sie Verwaltungsvorgänge ausführen möchten, z. B. die Erstellung eines T
   [6]: ./media/service-bus-java-how-to-create-topic/getting-started-multi-tier-27.png
   [34]: ./media/service-bus-java-how-to-create-topic/VSProperties.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

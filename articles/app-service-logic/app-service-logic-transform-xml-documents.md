@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="BizTalk-Transformation" 
+	pageTitle="Verwendung der BizTalk-Transformation in Logik-Apps in Azure App Service | Microsoft Azure" 
 	description="Erfahren Sie, wie XML-Dokumente von einem Schema in ein anderes transformiert werden." 
 	authors="anuragdalmia" 
 	manager="dwrede" 
@@ -13,10 +13,10 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/01/2015"
+	ms.date="12/07/2015"
 	ms.author="anuragdalmia"/>
 
-#BizTalk-Transformation
+# BizTalk-Transformation
 
 
 ## Übersicht
@@ -45,11 +45,11 @@ Sie können die XML-Schemas für Connectors, z. B. SQL, SAP und SharePoint, von
 ## Erstellen und Hinzufügen der Zuordnung
 Transformationen und Zuordnungen werden in Visual Studio mithilfe des [Microsoft Azure BizTalk Services SDK](http://www.microsoft.com/download/details.aspx?id=39087) erstellt, das kostenlos heruntergeladen werden kann.
 
-Hilfe zum Erstellen einer Zuordnung finden Sie in [Erstellen einer Zuordnung in Visual Studio](http://aka.ms/createamapinvs). Nachdem die Zuordnung erstellt wurde und für die Produktion bereit ist, können Sie die Zuordnung (TRFM-Datei) der BizTalk-Transformations-API-App hinzufügen, die Sie im Azure-Verwaltungsportal erstellt haben.
+Hilfe zum Erstellen einer Zuordnung finden Sie in [Erstellen einer Zuordnung in Visual Studio](http://aka.ms/createamapinvs). Nachdem die Zuordnung erstellt wurde und für die Produktion bereit ist, können Sie die Zuordnung (TRFM-Datei) der BizTalk-Transformations-API-App hinzufügen, die Sie im Azure-Portal erstellt haben.
 
 Wenn sich die Zuordnung ändert oder nach dem Hochladen geändert wird, können Sie die aktualisierte Zuordnung hochladen, die die vorhandene Zuordnung in der Transformations-API-App ersetzt.
 
-1.	Klicken Sie im Azure-Verwaltungsportal (links auf dem Bildschirm) auf **Durchsuchen**, und wählen Sie **API-Apps** aus. Wenn **API-Apps** nicht angezeigt wird, wählen Sie **Alles** und anschließend in der Liste "Verfügbar" **API-Apps** aus:
+1.	Klicken Sie im Azure-Portal (links auf dem Bildschirm) auf **Durchsuchen**, und wählen Sie **API-Apps** aus. Wenn **API-Apps** nicht angezeigt wird, wählen Sie **Alles** und anschließend in der Liste "Verfügbar" **API-Apps** aus:
 
 	![][7]
 
@@ -116,4 +116,4 @@ Nachdem die Zuordnung erstellt und getestet wurde, steht sie jetzt zur Nutzung b
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

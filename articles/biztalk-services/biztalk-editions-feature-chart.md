@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="09/08/2015"
+	ms.date="12/08/2015"
 	ms.author="mandia"/>
 
 
@@ -237,7 +237,10 @@ Sie können dann keine neuen Brücken mehr bereitstellen bzw. keine neuen Verein
 
 #### Wie kann ich von einer Ebene von BizTalk Services zu einer anderen Ebene migrieren?
 
-Verwenden Sie den Workflow zum Sichern und Wiederherstellen, um von einer Ebene zu einer anderen Ebene zu migrieren. Nicht alle Migrationspfade werden unterstützt. Weitere Informationen zu den unterstützten Migrationspfaden finden Sie unter [BizTalk Services: Sichern und Wiederherstellen](biztalk-backup-restore.md).
+Die Edition „Free“ kann nicht migriert oder auf einen anderen Tarif hochgestuft werden und auch nicht gesichert und in einem anderen Tarif wiederhergestellt werden. Wenn Sie einen anderen Tarif benötigen, erstellen Sie einen neuen BizTalk Service mithilfe des neuen Tarifs. Alle Artefakte, die mit der Edition „Free“ erstellt wurden, einschließlich Hybridverbindungen, müssen im neuen BizTalk Service erneut erstellt werden.
+
+Verwenden Sie für die anderen Editionen die Sicherungs- und Wiederherstellungsoptionen zum Migrieren Ihrer Artefakte aus einem Tarif in einen anderen. Sie können beispielsweise Ihre Artefakte im Tarif „Standard“ sichern und im Tarif „Premium“ wiederherstellen. In [BizTalk Services: Sichern und Wiederherstellen](biztalk-backup-restore.md) werden die unterstützten Migrationspfade beschrieben und die gesicherten Artefakte aufgelistet. Beachten Sie, dass Hybridverbindungen nicht gesichert werden. Nach dem Sichern und Wiederherstellen in einem neuen Tarif müssen Sie die Hybridverbindungen neu erstellen.
+
 
 #### Ist der BizTalk-Adapterdienst im Dienst enthalten? Wie erhalte ich die Software?
 
@@ -256,4 +259,4 @@ Um Azure BizTalk Services im Azure-Portal zu erstellen, wechseln Sie zu [BizTalk
 - [BizTalk Services: Name und Schlüssel des Ausstellers](biztalk-issuer-name-issuer-key.md)<br/>
 - [Wie verwende ich das Azure BizTalk Services SDK?](http://go.microsoft.com/fwlink/p/?LinkID=302335)<br/>
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

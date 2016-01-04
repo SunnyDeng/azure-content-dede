@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Azure AD Connect – Benutzeranmeldung | Microsoft Azure"
+	pageTitle="Azure AD Connect: Benutzeranmeldung | Microsoft Azure"
 	description="Azure AD Connect-Benutzeranmeldung für benutzerdefinierte Einstellungen."
 	services="active-directory"
 	documentationCenter=""
@@ -35,7 +35,7 @@ Die Kennwortsynchronisierung kann mit der Kennwortrückschreibung kombiniert wer
 ### Verbund mit einem neuen oder vorhandenen AD FS in einer Windows Server 2012 R2-Farm
 Mit der Verbundanmeldung können sich Ihre Benutzer bei Azure AD-basierten Dienste mit ihren lokalen Kennwörtern anmelden. Während sie in ihrem Unternehmensnetzwerk angemeldet sind, können sie auf Cloudressourcen zugreifen, ohne ihre Kennwörter erneut eingeben zu müssen. Mit der Verbundoption für AD FS können Sie eine neue Windows Server 2012 R2-Farm bereitstellen oder eine Farm angeben. Wenn Sie eine vorhandene Farm angeben, konfiguriert Azure AD Connect die Vertrauensstellung zwischen der Farm und Azure AD, sodass sich Ihre Benutzer anmelden können.
 
-<center>![Cloud](./media/active-directory-aadconnect-user-signin/federatedsignin.png)</center>
+<center>![Cloud](. / media/active-directory-aadconnect-user-signin/federatedsignin.png)</center>
 
 #### Voraussetzungen für den Verbund mit AD FS unter Windows Server 2012 R2
 Wenn Sie eine neue Farm bereitstellen:
@@ -65,4 +65,8 @@ Einige Organisationen benötigen jedoch eine Option zur Verbundanmeldung, z. B. 
 	- Funktionen für die Active Directory-Integration, z. B. die vorläufige Kontosperrung oder die AD-Kennwort- und Arbeitsstundenrichtlinie
 	- Bedingte Zugriff auf lokale und Cloudressourcen mithilfe der Geräteregistrierung, Azure AD-Einbindung oder Intune-MDM-Richtlinien
 
-<!----HONumber=Oct15_HO3-->
+
+## Nächste Schritte
+Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
+
+<!---HONumber=AcomDC_1203_2015-->

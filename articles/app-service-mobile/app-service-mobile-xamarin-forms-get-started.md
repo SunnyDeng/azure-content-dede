@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-xamarin"
 	ms.devlang="dotnet"
 	ms.topic="get-started-article"
-	ms.date="11/03/2015"
+	ms.date="11/23/2015"
 	ms.author="normesta"/>
 
 #Erstellen einer Xamarin.Forms-App
@@ -38,27 +38,30 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
 
 * Ein Mac, auf dem [Xcode] Version 7.0 oder höher und [Xamarin Studio] installiert ist. Wenn Sie beabsichtigen, Ihre App mit Visual Studio auf einem Windows-Computer zu erstellen, benötigen Sie weiterhin Zugriff auf einen vernetzten Mac.
  
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751&appServiceName=mobile) sofort kostenlos eine mobile Starter-App mit kurzer Gültigkeitsdauer in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](https://tryappservice.azure.com/?appServiceName=mobile) sofort kostenlos eine kurzlebige mobile Starter-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Erstellen eines neuen Azure Mobile App-Back-Ends
 
+Führen Sie die folgenden Schritte aus, um ein neues mobiles App-Back-End zu erstellen.
+
 [AZURE.INCLUDE [app-service-mobile-dotnet-backend-create-new-service](../../includes/app-service-mobile-dotnet-backend-create-new-service.md)]
 
-## Herunterladen des Serverprojekts
 
-1. Besuchen Sie auf dem PC das [Azure-Portal]. Klicken Sie auf **Alle durchsuchen** > **Mobile Apps**, und klicken Sie dann auf das Back-End, das Sie gerade erstellt haben.
+Sie haben nun ein Azure-Back-End für mobile Apps bereitgestellt, das von Ihren mobilen Clientanwendungen verwendet werden kann. Als Nächstes laden Sie ein Serverprojekt für ein einfaches "Aufgabenlisten"-Back-End herunter und veröffentlichen es in Azure.
 
-2. Klicken Sie auf dem Blatt „Mobile Anwendung“ auf **Einstellungen**, und klicken Sie unter **Mobile App** auf **Schnellstart** > **Xamarin.Forms**.
+## Konfigurieren des Serverprojekts
+
+Befolgen Sie die nachstehenden Anweisungen zum Konfigurieren des Serverprojekts für die Verwendung des Node.js- oder .NET-Back-Ends.
+
+[AZURE.INCLUDE [app-service-mobile-configure-new-backend](../../includes/app-service-mobile-configure-new-backend.md)]
+
  
-3. Klicken Sie unter **Serverprojekt herunterladen und ausführen** auf **Herunterladen**. Extrahieren Sie die komprimierten Projektdateien auf Ihrem PC, und öffnen Sie die Projektmappe in Visual Studio.
- 
-## Testen Sie das Back-End-Projekt lokal.
+## (Optional) Lokales Testen Ihres Back-End-Projekts
+
+Wenn Sie zuvor eine .NET-Back-End-Konfiguration gewählt haben, können Sie das Back-End optional lokal testen.
 
 [AZURE.INCLUDE [app-service-mobile-dotnet-backend-test-local-service](../../includes/app-service-mobile-dotnet-backend-test-local-service.md)]
 
-## Veröffentlichen des Serverprojekts in Azure
-
-[AZURE.INCLUDE [app-service-mobile-dotnet-backend-publish-service](../../includes/app-service-mobile-dotnet-backend-publish-service.md)]
 
 ##Herunterladen und Ausführen der Xamarin.Forms-Lösung
 
@@ -71,7 +74,7 @@ Hier stehen Ihnen einige Optionen zur Verfügung. Sie können die Lösung auf ei
 Vor diesem Hintergrund fahren wir fort.
 
  1. Öffnen Sie auf Ihrem Mac oder Ihrem Windows-Computer das [Azure-Portal] in einem Browserfenster.
- 2. Klicken Sie unter **Xamarin.Forms-Projekt herunterladen und ausführen** auf die Schaltfläche **Herunterladen**.
+ 2. Klicken Sie auf dem Blatt „Einstellungen“ für Ihre mobile App auf **Erste Schritte** (unter „Mobil“) > **Xamarin.Forms**. Klicken Sie unter Schritt 3 auf **Neue App erstellen**, falls noch nicht ausgewählt. Klicken Sie dann auf die Schaltfläche **Herunterladen**.
 
     Dadurch wird ein Projekt heruntergeladen, das eine Clientanwendung enthält, die mit der mobilen App verbunden ist. Speichern Sie die komprimierte Projektdatei auf dem lokalen Computer und merken Sie sich, wo Sie sie gespeichert haben.
 
@@ -81,64 +84,72 @@ Vor diesem Hintergrund fahren wir fort.
 
 	![][8]
 
-###Ausführen des iOS-Projekts
+##(Optional) Ausführen des iOS-Projekts
+
+Dieser Abschnitt bezieht sich auf das Ausführen des Xamarin iOS-Projekts für iOS-Geräte. Wenn Sie nicht mit iOS-Geräten arbeiten, können Sie diesen Abschnitt überspringen.
 
 ####In Xamarin Studio
 
 1. Klicken Sie mit der rechten Maustaste auf das iOS-Projekt, und klicken Sie dann auf **Als Startprojekt festlegen**.
-2. Klicken Sie im Menü **Ausführen** auf **Debuggen starten**, um das Projekt zu erstellen und die App im iPhone-Emulator zu starten.
+2. Klicken Sie im Menü **Ausführen** auf **Debuggen starten**, um das Projekt zu erstellen und die App im iPhone-Simulator zu starten.
 
 ####In Visual Studio
 1. Klicken Sie mit der rechten Maustaste auf das iOS-Projekt, und klicken Sie dann auf **Als Startprojekt festlegen**.
-2. Klicken Sie im Menü **Erstellen** auf **Konfigurations-Manager**. 
-3. Aktivieren Sie im Dialogfeld **Konfigurations-Manager** die Kontrollkästchen **Erstellen** und **Bereitstellen** des iOS-Projekts.
-4. Drücken Sie **F5**, um das Projekt zu erstellen und die App im iPhone-Emulator zu starten.
+2. Klicken Sie im Menü **Build** auf **Konfigurations-Manager**. 
+3. Aktivieren Sie im Dialogfeld **Konfigurationsmanager** die Kontrollkästchen **Erstellen** und **Bereitstellen** des iOS-Projekts.
+4. Drücken Sie **F5**, um das Projekt zu erstellen und die App im iPhone-Simulator zu starten.
 
-Geben Sie in der App einen aussagekräftigen Text ein, z. B. _Xamarin kennen lernen_, und klicken Sie dann auf die Schaltfläche **+**.
+Geben Sie in der App sinnvollen Text ein, z. B. _Xamarin kennenlernen_, und klicken Sie dann auf die Schaltfläche **+**.
 
 ![][10]
 
-Dadurch wird eine POST-Anforderung an das neue in Azure gehostete mobile App-Back-End gesendet. Daten von der Anforderung werden in die TodoItem-Tabelle eingefügt. In der Tabelle gespeicherte Einträge werden vom mobilen App-Back-End zurückgegeben, und die Daten werden in der Liste angezeigt.
+Dadurch wird eine POST-Anforderung an das neue in Azure gehostete mobile App-Back-End gesendet. Daten von der Anforderung werden in die TodoItem-Tabelle eingefügt. In der Tabelle gespeicherte Einträge werden von dem mobilen App-Back-End zurückgegeben, und die Daten werden in der Liste angezeigt.
 
-> [AZURE.NOTE]Sie finden den Code, der auf Ihr mobiles App-Back-End zugreift, in der C#-Datei "ToDoActivity.cs" des portablen Klassenbibliotheksprojekts Ihrer Lösung.
+> [AZURE.NOTE]Sie finden den Code, der auf Ihr mobiles App-Back-End zugreift, in der C#-Datei „TodoItemManager.cs“ des Portable Class Library-Projekts Ihrer Projektmappe.
 
-###Ausführen des Android-Projekts
+##(Optional) Ausführen des Android-Projekts
+
+Dieser Abschnitt bezieht sich auf das Ausführen des Xamarin Android-Projekts für Android. Wenn Sie nicht mit Android-Geräten arbeiten, können Sie diesen Abschnitt überspringen.
 
 ####In Xamarin Studio
 
 1. Klicken Sie mit der rechten Maustaste auf das Android-Projekt, und klicken Sie dann auf **Als Startprojekt festlegen**.
-2. Klicken Sie im Menü **Ausführen** auf **Debuggen starten**, um das Projekt zu erstellen und die App in einem Android-Emulator zu starten.
+2. Klicken Sie im Menü **Ausführen** auf **Debuggen starten**, um das Projekt zu erstellen und die App im Android-Emulator zu starten.
 
 ####In Visual Studio
 1. Klicken Sie mit der rechten Maustaste auf das Android-Projekt, und klicken Sie dann auf **Als Startprojekt festlegen**.
-4. Klicken Sie im Menü **Erstellen** auf **Konfigurations-Manager**. 
-5. Aktivieren Sie im Dialogfeld **Konfigurations-Manager** die Kontrollkästchen **Erstellen** und **Bereitstellen** des Android-Projekts.
+4. Klicken Sie im Menü **Build** auf **Konfigurations-Manager**. 
+5. Aktivieren Sie im Dialogfeld **Konfigurationsmanager** die Kontrollkästchen **Erstellen** und **Bereitstellen** des Android-Projekts.
 6. Drücken Sie **F5**, um das Projekt zu erstellen und die App in einem Android-Emulator zu starten.
 
-Geben Sie in der App einen aussagekräftigen Text ein, z. B. _Xamarin kennen lernen_, und klicken Sie dann auf die Schaltfläche **+**.
+Geben Sie in der App sinnvollen Text ein, z. B. _Xamarin kennenlernen_, und klicken Sie dann auf die Schaltfläche **+**.
 
 ![][11]
 
-Dadurch wird eine POST-Anforderung an das neue in Azure gehostete mobile App-Back-End gesendet. Daten von der Anforderung werden in die TodoItem-Tabelle eingefügt. In der Tabelle gespeicherte Einträge werden vom mobilen App-Back-End zurückgegeben, und die Daten werden in der Liste angezeigt.
+Dadurch wird eine POST-Anforderung an das neue in Azure gehostete mobile App-Back-End gesendet. Daten von der Anforderung werden in die TodoItem-Tabelle eingefügt. In der Tabelle gespeicherte Einträge werden von dem mobilen App-Back-End zurückgegeben, und die Daten werden in der Liste angezeigt.
 
-> [AZURE.NOTE]Sie finden den Code, der auf Ihr mobiles App-Back-End zugreift, in der C#-Datei "ToDoActivity.cs" des portablen Klassenbibliotheksprojekts Ihrer Lösung.
+> [AZURE.NOTE]Sie finden den Code, der auf Ihr mobiles App-Back-End zugreift, in der C#-Datei „TodoItemManager.cs“ des Portable Class Library-Projekts Ihrer Projektmappe.
 
 
-###Ausführen des Windows-Projekts
+##(Optional) Ausführen des Windows-Projekts
+
+
+Dieser Abschnitt bezieht sich auf das Ausführen des Xamarin WinApp-Projekts für Windows-Geräte. Wenn Sie nicht mit Windows-Geräten arbeiten, können Sie diesen Abschnitt überspringen.
+
 
 ####In Visual Studio
 1. Klicken Sie mit der rechten Maustaste auf eines der Windows-Projekte, und klicken Sie dann auf **Als Startprojekt festlegen**.
-4. Klicken Sie im Menü **Erstellen** auf **Konfigurations-Manager**. 
-5. Aktivieren Sie im Dialogfeld **Konfigurations-Manager** die Kontrollkästchen **Erstellen** und **Bereitstellen** des ausgewählten Windows-Projekts.
-6. Drücken Sie **F5**, um das Projekt zu erstellen und die App in einem Windows-Emulator zu starten.
+4. Klicken Sie im Menü **Build** auf **Konfigurations-Manager**. 
+5. Aktivieren Sie im Dialogfeld **Konfigurationsmanager** die Kontrollkästchen **Erstellen** und **Bereitstellen** des ausgewählten Windows-Projekts.
+6. Drücken Sie **F5**, um das Projekt zu erstellen und die App im Windows-Emulator zu starten.
 
-Geben Sie in der App einen aussagekräftigen Text ein, z. B. _Xamarin kennen lernen_, und klicken Sie dann auf die Schaltfläche **+**.
+Geben Sie in der App sinnvollen Text ein, z. B. _Xamarin kennenlernen_, und klicken Sie dann auf die Schaltfläche **+**.
 	
 Dadurch wird eine POST-Anforderung an das neue in Azure gehostete mobile App-Back-End gesendet. Daten von der Anforderung werden in die TodoItem-Tabelle eingefügt. In der Tabelle gespeicherte Einträge werden vom mobilen App-Back-End zurückgegeben, und die Daten werden in der Liste angezeigt.
 
 ![][12]
 	
-> [AZURE.NOTE]Sie finden den Code, der auf Ihr mobiles App-Back-End zugreift, in der C#-Datei "ToDoActivity.cs" des portablen Klassenbibliotheksprojekts Ihrer Lösung.
+> [AZURE.NOTE]Sie finden den Code, der auf Ihr mobiles App-Back-End zugreift, in der C#-Datei „TodoItemManager.cs“ des Portable Class Library-Projekts Ihrer Projektmappe.
 
 <!-- Anchors. -->
 [Getting started with mobile app backends]: #getting-started
@@ -168,4 +179,4 @@ Dadurch wird eine POST-Anforderung an das neue in Azure gehostete mobile App-Bac
 [Installation von Xamarin.iOS auf Windows]: http://developer.xamarin.com/guides/ios/getting_started/installation/windows/
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015--->

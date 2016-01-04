@@ -22,7 +22,7 @@
 
 Der Azure-Dateispeicher stellt über das standardmäßige SMB-Protokoll Dateifreigaben in der Cloud bereit. Der Dateispeicher ist jetzt allgemein verfügbar und unterstützt sowohl SMB 3.0 als auch SMB 2.1.
 
-Sie können Azure-Dateifreigaben mit dem Azure-Vorschauportal, den Azure Storage-PowerShell-Cmdlets, den Azure Storage-Clientbibliotheken oder der Azure Storage-REST-API erstellen. Da es sich bei den Dateifreigaben um SMB-Freigaben handelt, können Sie darauf außerdem über standardmäßige und vertraute Dateisystem-APIs zugreifen.
+Sie können Azure-Dateifreigaben mit dem [Azure-Portal](portal.azure.com), den Azure Storage-PowerShell-Cmdlets, den Azure Storage-Clientbibliotheken oder der Azure Storage-REST-API erstellen. Da es sich bei den Dateifreigaben um SMB-Freigaben handelt, können Sie darauf außerdem über standardmäßige und vertraute Dateisystem-APIs zugreifen.
 
 Anwendungen, die in Azure ausgeführt werden, können Dateifreigaben von virtuellen Azure-Computern problemlos einbinden. Mit der neuesten Version des Dateispeichers können Sie außerdem eine Dateifreigabe aus einer lokalen Anwendung einbinden, die SMB 3.0 unterstützt.
 
@@ -91,7 +91,7 @@ Wenn Sie die Open SUSE 13.2 verwenden, können Sie die Datei wie folgt einbinden
 
 ## Verwalten der Dateifreigabe ##
 
-Das [Azure-Vorschauportal](https://portal.azure.com/) bietet nun eine Benutzeroberfläche zum Verwalten von Azure File Storage. Sie können in Ihrem Webbrowser die folgenden Aktionen ausführen:
+Das [Azure-Portal](portal.azure.com) bietet eine Benutzeroberfläche zum Verwalten von Azure File Storage. Sie können in Ihrem Webbrowser die folgenden Aktionen ausführen:
 
 - Hoch- und Herunterladen von Dateien für die Dateifreigabe
 - Überwachen der tatsächlichen Nutzung der einzelnen Dateifreigaben
@@ -120,6 +120,7 @@ Weitere Informationen zum Azure-Dateispeicher erhalten Sie über diese Links.
 
 - [Azure-Dateispeicher: ein reibungsloses Cloud-SMB-Dateisystem für Windows und Linux](https://azure.microsoft.com/documentation/videos/azurecon-2015-azure-files-storage-a-frictionless-cloud-smb-file-system-for-windows-and-linux/)
 - [Verwenden des Azure-Dateispeichers unter Windows](storage-dotnet-how-to-use-files.md)
+- [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy)
 
 ### Toolunterstützung für Dateispeicher
 
@@ -137,4 +138,4 @@ Weitere Informationen zum Azure-Dateispeicher erhalten Sie über diese Links.
 - [Einführung in den Microsoft Azure-Dateidienst](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 - [Beibehalten von Verbindungen zu Microsoft Azure-Dateien](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1217_2015-->

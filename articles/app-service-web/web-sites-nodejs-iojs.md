@@ -3,9 +3,9 @@
 	description="Erfahren Sie, wie Sie eine Web-App in Azure App Service mit io.js verwenden." 
 	services="app-service\web" 
 	documentationCenter="nodejs" 
-	authors="felixrieseberg" 
+	authors="rmcmurray" 
 	manager="wpickett" 
-	editor="mollybos"/>
+	editor=""/>
 
 <tags 
 	ms.service="app-service-web" 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="nodejs" 
 	ms.topic="article" 
-	ms.date="08/03/2015"
-	ms.author="mwasson" />
+	ms.date="11/20/2015"
+	ms.author="robmcm" />
 
 # Verwenden von io.js mit Azure App Service-Web-Apps
 
@@ -27,9 +27,9 @@ Während in [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714)-W
 
 Bei der Bereitstellung einer Node.js-App führen App Service-Web-Apps eine Reihe kleiner Befehle aus, um sicherzustellen, dass die Umgebung ordnungsgemäß konfiguriert ist. Mit einem Bereitstellungsskript kann dieser Prozess angepasst werden, sodass er das Herunterladen und die Konfiguration der Datei "io.js" umfasst.
 
-Das [io.js-Bereitstellungsskript] ist auf GitHub verfügbar. Um io.js in Ihrer Web-App zu aktivieren, kopieren Sie einfach **.deployment**, **deploy.cmd** und **IISNode.yml** in das Stammverzeichnis des Anwendungsordners und stellen die Dateien für Web-Apps bereit.
+Das [io.js-Bereitstellungsskript](https://github.com/felixrieseberg/iojs-azure) ist auf GitHub verfügbar. Um io.js in Ihrer Web-App zu aktivieren, kopieren Sie einfach **.deployment**, **deploy.cmd** und **IISNode.yml** in das Stammverzeichnis des Anwendungsordners und stellen die Dateien für Web-Apps bereit.
 
-Die erste Datei, **.deployment**, weist Web-Apps an, **deploy.cmd** bei der Bereitstellung auszuführen. Dieses Skript führt alle üblichen Schritte für eine Node.js-Anwendung aus, lädt jedoch auch die neueste Version von "io.js" herunter. **IISNode.yml** schließlich konfiguriert die Web-Apps für die Verwendung der soeben heruntergeladenen io.js-Binärdatei anstelle einer vorinstallierten Node.js-Binärdatei.
+Die erste Datei, **.deployment**, weist Web-Apps an, **deploy.cmd** bei der Bereitstellung auszuführen. Dieses Skript führt alle üblichen Schritte für eine Node.js-Anwendung aus, lädt jedoch auch die neueste Version von „io.js“ herunter. **IISNode.yml** schließlich konfiguriert die Web-Apps für die Verwendung der soeben heruntergeladenen io.js-Binärdatei anstelle einer vorinstallierten Node.js-Binärdatei.
 
 > [AZURE.NOTE]Um die verwendete io.js-Binärdatei zu aktualisieren, stellen Sie die Anwendung einfach erneut bereit. Das Skript lädt bei jeder Bereitstellung der Anwendung eine neue Version der Datei "io.js" herunter.
 
@@ -51,14 +51,13 @@ In diesem Artikel haben Sie erfahren, wie io.js sowohl mithilfe der vorhandenen 
 
 ## Änderungen
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
 
 >[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 [io.js]: https://iojs.org
 [io.js-Distribution]: https://iojs.org/dist/
 [io.js auf GitHub]: https://github.com/iojs/io.js
-[io.js-Bereitstellungsskript]: https://github.com/felixrieseberg/iojs-azure
+[io.js Deployment Script]: https://github.com/felixrieseberg/iojs-azure
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

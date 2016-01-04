@@ -28,7 +28,7 @@ Weitere Informationen zu App Service-Plänen finden Sie unter [Was ist ein App S
 
 Die Skalierung funktioniert anders, wenn Sie eine dedizierte [App Service-Umgebung](app-service-app-service-environment-intro.md) verwenden möchten. Weitere Details finden Sie unter [Skalieren von Web-Apps in einer App Service-Umgebung](app-service-web-scale-a-web-app-in-an-app-service-environment.md).
 
-> [AZURE.NOTE]Bevor Sie Web-Apps vom Modus **Free** zum Modus **Basic**, **Standard **oder **Premium** wechseln, müssen Sie zunächst das Ausgabenlimit für Ihr Azure App Service-Abonnement aufheben. Informationen zum Anzeigen oder Ändern von Optionen für Ihr Microsoft Azure App Service-Abonnement finden Sie unter [Microsoft Azure-Abonnement][azuresubscriptions].
+> [AZURE.NOTE]Bevor Sie vom Modus **Free** zum Modus **Basic**, **Standard** oder **Premium** wechseln, müssen Sie zunächst das Ausgabenlimit für Ihr Azure App Service-Abonnement aufheben. Informationen zum Anzeigen oder Ändern von Optionen für Ihr Microsoft Azure App Service-Abonnement finden Sie unter [Microsoft Azure-Abonnement][azuresubscriptions].
 
 <a name="scalingsharedorbasic"></a> <a name="scalingstandard"></a>
 
@@ -116,8 +116,7 @@ Je nach Preisstufe stehen die folgenden entwicklungsbezogenen Funktionen zur Ver
 	- [Wie sollte man Azure-Websites skalieren? - Mit Stefan Schackow](/documentation/videos/how-azure-web-sites-scale/)
 
 ## Änderungen
-* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
+* Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 
 <!-- LINKS -->
 [vmsizes]: http://go.microsoft.com/fwlink/?LinkId=309169
@@ -131,4 +130,4 @@ Je nach Preisstufe stehen die folgenden entwicklungsbezogenen Funktionen zur Ver
 [GeoReplication]: ./media/web-sites-scale/scale12SQLGeoReplication.png
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

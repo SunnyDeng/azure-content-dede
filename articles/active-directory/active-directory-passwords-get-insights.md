@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/08/2015" 
+	ms.date="11/16/2015" 
 	ms.author="asteen"/>
 
 # Operative Einblicke durch Berichte zur Kennwortverwaltung
@@ -153,18 +153,17 @@ Der Benutzer ist kein Mitglied der Benutzergruppe für Kennwortzurücksetzung. F
 Die Kennwortzurücksetzung wurde für diesen Mandanten vollständig deaktiviert. [Hier](http://aka.ms/ssprtroubleshoot) finden Sie Informationen zur Lösung des Problems. | Fehler
 Benutzer hat das Kennwort erfolgreich zurückgesetzt.|Succeeded
 
-**Weitere Ressourcen**
+## Links zu Informationen zur Kennwortzurücksetzung
+Im Folgenden finden Sie Links zu allen Webseiten mit Informationen zur Kennwortzurücksetzung für Azure AD:
 
-
-* [Was ist die Kennwortverwaltung?](active-directory-passwords.md)
-* [Funktionsweise der Kennwortverwaltung](active-directory-passwords-how-it-works.md)
-* [Erste Schritte mit der Kennwortverwaltung](active-directory-passwords-getting-started.md)
-* [Anpassen der Kennwortverwaltung](active-directory-passwords-customize.md)
-* [Best Practices für die Kennwortverwaltung](active-directory-passwords-best-practices.md)
-* [Häufig gestellte Fragen zur Kennwortverwaltung](active-directory-passwords-faq.md)
-* [Problembehandlung für die Kennwortverwaltung](active-directory-passwords-troubleshoot.md)
-* [Weitere Informationen](active-directory-passwords-learn-more.md)
-* [Kennwortverwaltung auf MSDN](https://msdn.microsoft.com/library/azure/dn510386.aspx)
+* [**Zurücksetzen Ihres eigenen Kennworts**](active-directory-passwords-update-your-own-password.md): Hier erhalten Sie Informationen zum Zurücksetzen oder Ändern Ihres eigenen Kennworts als Benutzer des Systems.
+* [**Funktionsweise**](active-directory-passwords-how-it-works.md) – Erfahren Sie mehr über die sechs verschiedenen Komponenten des Diensts und deren Funktionen.
+* [**Erste Schritte**](active-directory-passwords-getting-started.md) – Erfahren Sie, wie Sie Benutzern das Zurücksetzen und Ändern ihrer Cloud- oder lokalen Kennwörter erlauben.
+* [**Anpassen**](active-directory-passwords-customize.md) – Erfahren Sie, wie Sie das Aussehen und Verhalten des Diensts an die Anforderungen Ihrer Organisation anpassen.
+* [**Best Practices**](active-directory-passwords-best-practices.md) – Erfahren Sie, wie Sie Kennwörter in Ihrer Organisation schnell bereitstellen und effektiv verwalten.
+* [**Häufig gestellte Fragen**](active-directory-passwords-faq.md) – Hier erhalten Sie Antworten auf häufig gestellte Fragen.
+* [**Problembehandlung**](active-directory-passwords-troubleshoot.md) – Erfahren Sie, wie Sie Probleme mit dem Dienst schnell beheben.
+* [**Weitere Informationen**](active-directory-passwords-learn-more.md) – Erhalten Sie tiefgehende technische Details zur Funktionsweise des Diensts.
 
 
 
@@ -172,4 +171,4 @@ Benutzer hat das Kennwort erfolgreich zurückgesetzt.|Succeeded
 [002]: ./media/active-directory-passwords-get-insights/002.jpg "Image_002.jpg"
 [003]: ./media/active-directory-passwords-get-insights/003.jpg "Image_003.jpg"
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

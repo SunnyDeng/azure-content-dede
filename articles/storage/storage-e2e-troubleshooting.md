@@ -12,10 +12,12 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="09/03/2015" 
+	ms.date="12/01/2015" 
 	ms.author="tamram"/>
 
 # End-to-End-Problembehandlung mit Azure-Speichermetriken und -Protokollen sowie AzCopy und Message Analyzer 
+
+[AZURE.INCLUDE [storage-selector-portal-e2e-troubleshooting](../../includes/storage-selector-portal-e2e-troubleshooting.md)]
 
 ## Übersicht
 
@@ -34,11 +36,9 @@ Um Probleme in Clientanwendungen mit Microsoft Azure-Speicher zu beheben, könne
 
 	- **Speicherprotokollierung** erfasst jede Anfrage an die Azure-Speicherdienste in einem serverseitigen Protokoll. Das Protokoll erfasst ausführliche Daten für jede Anfrage, einschließlich des ausgeführten Vorgangs, des Status des Vorgangs und der Latenzinformationen. Weitere Informationen zu den Anfrage- und Antwortdaten, die von der Speicheranalyse in die Protokolle geschrieben werden, finden Sie unter [Protokollformat der Speicheranalyse](http://msdn.microsoft.com/library/azure/hh343259.aspx).
 
-- **Das Azure-Verwaltungsportal**. Sie können die Protokollierung und Metriken für das Speicherkonto im Portal konfigurieren. Sie können auch Diagramme und Grafiken anzeigen, die darstellen, welche Leistung die Anwendung über einen gewissen Zeitraum hinweg erbringt, und Warnungen im Portal konfigurieren, die Sie benachrichtigen, wenn die Leistung bezüglich einer bestimmten Metrik von den Erwartungen abweicht.
+- **Azure-Portal**. Sie können die Protokollierung und Metriken für das Speicherkonto im [Azure-Portal](portal.azure.com) konfigurieren. Sie können auch Diagramme und Grafiken anzeigen, die darstellen, welche Leistung die Anwendung über einen gewissen Zeitraum hinweg erbringt, und Warnungen konfigurieren, die Sie benachrichtigen, wenn die Leistung bezüglich einer bestimmten Metrik von den Erwartungen abweicht.
 	
-	In diesem Lernprogramm wird gezeigt, wie Sie Ihr Speicherkonto mithilfe des [Azure-Verwaltungsportals](https://manage.windowsazure.com/) überwachen können. Informationen zum Konfigurieren der Überwachung im Portal finden Sie unter [Überwachen eines Speicherkontos](storage-monitor-storage-account.md).
-
-	Sie können auch das [Azure-Vorschauportal](https://portal.azure.com/) für die neueste Funktionalität verwenden, jedoch handelt es sich hierbei noch um eine Vorschauversion.
+	Informationen zum Konfigurieren der Überwachung im Azure-Portal finden Sie unter [Überwachen eines Speicherkontos](storage-monitor-storage-account.md).
 
 - **AzCopy**. Serverprotokolle für den Azure-Speicher werden als Blobs gespeichert, damit Sie AzCopy verwenden können, um die Protokoll-Blobs für die Analyse mithilfe von Microsoft Message Analyzer in ein lokales Verzeichnis zu kopieren. Weitere Informationen zu AzCopy finden Sie unter [Verwenden von AzCopy mit Microsoft Azure Storage](storage-use-azcopy.md).
 
@@ -46,7 +46,7 @@ Um Probleme in Clientanwendungen mit Microsoft Azure-Speicher zu beheben, könne
 
 ## Informationen zum Beispielszenario
 
-Für dieses Lernprogramm wird ein Szenario untersucht, in dem Metriken des Azure-Speichers für eine Anwendung, die den Azure-Speicher aufruft, eine niedrige prozentuale Erfolgsrate anzeigen. Die Metrik zur niedrigen prozentualen Erfolgsrate (im Azure-Portal und den Metrikentabellen als **PercentSuccess** angezeigt) erfasst Vorgänge, die zwar erfolgreich waren, aber einen HTTP-Statuscode über 299 zurückgeben. In den serverseitigen Speicher-Protokollierungsdateien sind diese Vorgänge mit dem Transaktionsstatus **ClientOtherErrors** erfasst. Ausführliche Informationen zur Metrik zur niedrigen prozentualen Erfolgsrate finden Sie unter [Metriken zeigen niedrigen PercentSuccess an, oder Analyse-Protokolleinträge enthalten Vorgänge mit Transaktionsstatus "ClientOtherErrors"](storage-monitoring-diagnosing-troubleshooting.md#metrics-show-low-percent-success).
+Für dieses Lernprogramm wird ein Szenario untersucht, in dem Metriken des Azure-Speichers für eine Anwendung, die den Azure-Speicher aufruft, eine niedrige prozentuale Erfolgsrate anzeigen. Die Metrik zur niedrigen prozentualen Erfolgsrate (im [Azure-Portal](portal.azure.com) und den Metrikentabellen als **PercentSuccess** angezeigt) erfasst Vorgänge, die zwar erfolgreich waren, aber einen HTTP-Statuscode über 299 zurückgeben. In den serverseitigen Speicher-Protokollierungsdateien sind diese Vorgänge mit dem Transaktionsstatus **ClientOtherErrors** erfasst. Ausführliche Informationen zur Metrik zur niedrigen prozentualen Erfolgsrate finden Sie unter [Metriken zeigen niedrigen PercentSuccess an, oder Analyse-Protokolleinträge enthalten Vorgänge mit Transaktionsstatus "ClientOtherErrors"](storage-monitoring-diagnosing-troubleshooting.md#metrics-show-low-percent-success).
 
 Azure-Speichervorgänge geben möglicherweise als Teil ihrer normalen Funktionalität HTTP-Statuscodes zurück, die höher sind als 299. Diese Fehler zeigen jedoch in einigen Fällen an, dass Sie Ihre Clientanwendung optimieren können, um eine bessere Leistung zu erzielen.
 
@@ -88,15 +88,15 @@ In diesem Lernprogramm verwenden wir Message Analyzer, um mit drei verschiedenen
 
 ### Konfigurieren der serverseitigen Protokollierung und Metriken
 
-Zunächst müssen wir die Azure-Speicherprotokollierung und -metriken konfigurieren, damit uns Daten von der Clientanwendung zur Analyse vorliegen. Sie können die Protokollierung und die Metriken auf verschiedene Arten konfigurieren: über das Azure-Verwaltungsportal, mithilfe von PowerShell oder programmgesteuert. Weitere Informationen zum Konfigurieren der Protokollierung und der Metriken finden Sie unter [Aktivieren der Speichermetriken und Anzeigen von Metrikdaten](http://msdn.microsoft.com/library/azure/dn782843.aspx) und [Aktivieren der Speicherprotokollierung und Zugreifen auf Protokolldaten](http://msdn.microsoft.com/library/azure/dn782840.aspx) auf MSDN.
+Zunächst müssen wir die Azure-Speicherprotokollierung und -metriken konfigurieren, damit uns Daten von der Clientanwendung zur Analyse vorliegen. Sie können die Protokollierung und die Metriken auf verschiedene Arten konfigurieren: über das [Azure-Portal](portal.azure.com), mithilfe von PowerShell oder programmgesteuert. Weitere Informationen zum Konfigurieren der Protokollierung und der Metriken finden Sie unter [Aktivieren der Speichermetriken und Anzeigen von Metrikdaten](http://msdn.microsoft.com/library/azure/dn782843.aspx) und [Aktivieren der Speicherprotokollierung und Zugreifen auf Protokolldaten](http://msdn.microsoft.com/library/azure/dn782840.aspx) auf MSDN.
 
-**Über das Verwaltungsportal**
+**Über das Azure-Portal**
 
-Folgen Sie zum Konfigurieren der Protokollierung und der Metriken für das Speicherkonto den Anweisungen unter [Überwachen eines Speicherkontos](storage-monitor-storage-account.md).
+Folgen Sie zum Konfigurieren der Protokollierung und der Metriken für das Speicherkonto mit dem [Azure-Portal](portal.azure.com) den Anweisungen unter [Überwachen eines Speicherkontos](storage-monitor-storage-account.md).
 
-> [AZURE.NOTE]Es ist nicht möglich, mithilfe des Azure-Verwaltungsportals Minutenmetriken festzulegen. Allerdings empfiehlt es sich für dieses Lernprogramm sowie für die Untersuchung von Leistungsproblemen mit Ihrer Anwendung, diese Metriken festzulegen. Sie können die Minutenmetriken wie unten beschrieben mithilfe von PowerShell, programmgesteuert oder über das Azure-Vorschauportal festlegen.
+> [AZURE.NOTE]Es ist nicht möglich, mithilfe des Azure-Portals Minutenmetriken festzulegen. Allerdings empfiehlt es sich für dieses Lernprogramm sowie für die Untersuchung von Leistungsproblemen mit Ihrer Anwendung, diese Metriken festzulegen. Sie können die Minutenmetriken wie unten beschrieben mithilfe von PowerShell oder programmgesteuert mithilfe der Speicherclientbibliothek festlegen.
 >
-> Beachten Sie, dass das Azure-Verwaltungsportal keine Minutenmetriken, sondern nur Stundenmetriken anzeigen kann.
+> Beachten Sie, dass das Azure-Portal keine Minutenmetriken, sondern nur Stundenmetriken anzeigen kann.
 
 **Über PowerShell**
 
@@ -108,7 +108,7 @@ Informationen zum Einstieg in PowerShell für Azure finden Sie unter [Installier
 	Add-AzureAccount
 	```
 
-2. Geben Sie im Fenster **Bei Windows Azure anmelden** die dem Konto zugeordnete E-Mail-Adresse und das zugehörige Kennwort ein. Die Anmeldeinformationen werden von Azure authentifiziert und gespeichert, dann wird das Fenster geschlossen.
+2. Geben Sie im Fenster **Bei Microsoft Azure anmelden** die dem Konto zugeordnete E-Mail-Adresse und das zugehörige Kennwort ein. Die Anmeldeinformationen werden von Azure authentifiziert und gespeichert, dann wird das Fenster geschlossen.
 3. Legen Sie als Standardspeicherkonto das Speicherkonto fest, das Sie für das Lernprogramm verwenden, indem Sie die folgenden Befehle im PowerShell-Fenster ausführen:
 
 	```
@@ -168,23 +168,15 @@ Erfassen und speichern Sie für das Lernprogramm zunächst eine Netzwerkablaufve
 
 Weitere Informationen finden Sie unter [Using the Network Tracing Features](http://technet.microsoft.com/library/jj674819.aspx) (in englischer Sprache) auf Technet.
 
-## Überprüfen der Metrikdaten im Portal
+## Überprüfen der Metrikdaten im Azure-Portal
 
-Sobald die Anwendung über einen bestimmten Zeitraum hinweg ausgeführt wurde, können Sie die Metrikdiagramme überprüfen, die im Portal zur Untersuchung der Dienstleistung angezeigt werden. Zunächst fügen wir die Metrik **Prozentsatz erfolgreich** auf der Seite "Überwachen" hinzu:
+Sobald die Anwendung über einen bestimmten Zeitraum hinweg ausgeführt wurde, können Sie die Metrikdiagramme überprüfen, die im [Azure-Portal](portal.azure.com) zur Untersuchung der Dienstleistung angezeigt werden. Zunächst navigieren Sie zu Ihrem Speicherkonto im Azure-Portal und fügen ein Diagramm für die Metrik **Prozentsatz erfolgreich** hinzu.
 
-1. Navigieren Sie im Verwaltungsportal zum Dashboard für das Speicherkonto, und wählen Sie "Überwachen" aus, um die Überwachungsseite anzuzeigen.
-2. Klicken Sie auf **Metriken hinzufügen** zum Anzeigen des Dialogfelds **Metriken auswählen**.
-3. Scrollen Sie nach unten zur Gruppe **Prozentsatz erfolgreich**, erweitern Sie sie, und wählen Sie dann wie in der folgenden Abbildung dargestellt **Aggregate** aus. Diese Metrik führt Daten zum erfolgreichen Prozentsatz aus allen Blobvorgängen zusammen.
-
-![Auswählen von Metriken](./media/storage-e2e-troubleshooting/choose-metrics-portal-1.png)
-
-Im Portal wird nun **Prozentsatz erfolgreich** im Überwachungsdiagramm neben sämtlichen anderen Metriken angezeigt, die Sie möglicherweise hinzugefügt haben (bis zu sechs Metriken können gleichzeitig im Diagramm angezeigt werden). Die folgende Abbildung zeigt, dass die prozentuale Erfolgsrate unter 100 % liegt. Dies ist das Szenario, das wir im Folgenden durch die Analyse der Protokolle in Message Analyzer untersuchen:
-
-![Metrikdiagramm im Verwaltungsportal](./media/storage-e2e-troubleshooting/portal-metrics-chart-1.png)
+Im Azure-Portal wird nun **Prozentsatz erfolgreich** im Überwachungsdiagramm neben sämtlichen anderen Metriken angezeigt, die Sie möglicherweise hinzugefügt haben. Im Szenario, das wir im Folgenden durch die Analyse der Protokolle in Message Analyzer untersuchen, liegt die prozentuale Erfolgsrate unter 100 %.
 
 Weitere Informationen zum Hinzufügen von Metriken auf der Seite "Überwachen" finden Sie unter [Hinzufügen von Metriken zur Metrikentabelle](storage-monitor-storage-account.md#addmonitoringmetrics).
 
-> [AZURE.NOTE]Es dauert einige Zeit, bis die Metrikdaten im Portal angezeigt werden, nachdem Sie die Speichermetriken aktiviert haben. Dies liegt daran, dass stündliche Metriken für die vergangene Stunde erst angezeigt werden, wenn die Stunde vergangen ist. Darüber hinaus werden Minutenmetriken derzeit nicht im Portal angezeigt. Je nach Zeitpunkt der Metrikaktivierung kann es also bis zu zwei Stunden dauern, bis die Metrikdaten angezeigt werden.
+> [AZURE.NOTE]Es dauert einige Zeit, bis die Metrikdaten im Azure-Portal angezeigt werden, nachdem Sie die Speichermetriken aktiviert haben. Dies liegt daran, dass stündliche Metriken für die vergangene Stunde dort erst angezeigt werden, wenn die Stunde vergangen ist. Darüber hinaus werden Minutenmetriken derzeit nicht im Azure-Portal angezeigt. Je nach Zeitpunkt der Metrikaktivierung kann es also bis zu zwei Stunden dauern, bis die Metrikdaten angezeigt werden.
 
 ## Verwenden von AzCopy zum Kopieren von Serverprotokollen in ein lokales Verzeichnis
 
@@ -356,12 +348,12 @@ Nachdem Sie nun mit der Verwendung von Message Analyzer zum Analysieren Ihrer Da
 
 Weitere Informationen zur Problembehandlung in End-to-End-Szenarien im Azure-Speicher finden Sie hier:
 
-- [Monitor, diagnose, and troubleshoot Storage](storage-monitoring-diagnosing-troubleshooting.md) (in englischer Sprache)
+- [Monitor, diagnose, and troubleshoot Storage (in englischer Sprache)](storage-monitoring-diagnosing-troubleshooting.md)
 - [Speicheranalyse](http://msdn.microsoft.com/library/azure/hh343270.aspx)
 - [Überwachen eines Speicherkontos](storage-monitor-storage-account.md)
-- [Verwenden von AzCopy mit Microsoft Azure Storage](storage-use-azcopy.md)
-- [Microsoft Message Analyzer Operating Guide](http://technet.microsoft.com/library/jj649776.aspx) (in englischer Sprache)
+- [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy)
+- [Microsoft Message Analyzer Operating Guide (in englischer Sprache)](http://technet.microsoft.com/library/jj649776.aspx)
  
  
 
-<!---HONumber=Oct15_HO3-->
+<!----HONumber=AcomDC_1217_2015-->

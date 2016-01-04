@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="dotnet" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/12/2015" 
+	ms.date="12/14/2015" 
 	ms.author="erikre"/>
 
 # Erstellen einer ASP.NET 5-Web-App in Visual Studio
@@ -31,9 +31,7 @@ In diesem Lernprogramm erfahren Sie, wie Sie eine ASP.NET 5-Web-App mit [Visual
 * Installieren Sie Git (entweder über [Chocolatey](https://chocolatey.org/packages/git) oder über [git-scm.com](http://git-scm.com/downloads)). Falls Sie noch keine Erfahrung mit Git haben, entscheiden Sie sich für [git-scm.com](http://git-scm.com/downloads), und wählen Sie die Option **Git über die Windows-Eingabeaufforderung verwenden** aus. Legen Sie nach der Installation von Git den Git-Benutzernamen und die dazugehörige E-Mail-Adresse fest, da diese Angaben später in diesem Lernprogramm (beim Ausführen eines Commits in VS Code) benötigt werden.  
 
 ## Installieren von ASP.NET 5 und DNX
-ASP.NET 5/DNX ist ein schlanker .NET-Stapel für die Erstellung moderner Cloud- und Web-Apps für OS X, Linux und Windows. Er wurde von Grund auf neu als optimiertes Entwicklungsframework für Apps konzipiert, die entweder in der Cloud bereitgestellt oder lokal ausgeführt werden. Er besteht aus modularen Komponenten mit minimalem Mehraufwand und ermöglicht Ihnen eine flexible Lösungsentwicklung.
-
-> [AZURE.NOTE]ASP.NET 5 und DNX (die .NET-Ausführungsumgebung) befinden sich für OS X und Linux noch in einer frühen Beta-/Vorschauphase.
+ASP.NET 5/DNX (die .NET-Ausführungsumgebung) ist ein schlanker .NET-Stapel für die Erstellung moderner Cloud- und Web-Apps für OS X, Linux und Windows. Er wurde von Grund auf neu als optimiertes Entwicklungsframework für Apps konzipiert, die entweder in der Cloud bereitgestellt oder lokal ausgeführt werden. Er besteht aus modularen Komponenten mit minimalem Mehraufwand und ermöglicht Ihnen eine flexible Lösungsentwicklung.
 
 Dieses Lernprogramm unterstützt Sie beim Einstieg in die Anwendungserstellung mit den neuesten Entwicklungsversionen von ASP.NET 5 und DNX. Die folgenden Anweisungen beziehen sich explizit auf Windows. Ausführlichere Installationsanweisungen für OS X, Linux und Windows finden Sie unter [Installing ASP.NET 5 and DNX](https://code.visualstudio.com/Docs/ASPnet5#_installing-aspnet-5-and-dnx) (Installieren von ASP.NET 5 und DNX; in englischer Sprache).
 
@@ -43,9 +41,9 @@ Dieses Lernprogramm unterstützt Sie beim Einstieg in die Anwendungserstellung m
 
 	Dadurch wird das DNVM-Skript herunterladen und Ihrem Benutzerprofilverzeichnis hinzugefügt.
 
-2. Starten Sie Windows neu, um die DNVM-Installation abzuschließen.
+2. **Starten Sie Windows neu**, um die DNVM-Installation abzuschließen.
 
-3. Öffnen Sie eine Eingabeaufforderung, und überprüfen Sie den Speicherort von DNVM mithilfe des folgenden Befehls:
+	Nach dem Neustart von Windows können Sie die Eingabeaufforderung öffnen, um den Speicherort von DNVM zu überprüfen. Geben Sie dazu Folgendes ein:
 
 		where dnvm
 
@@ -53,11 +51,11 @@ Dieses Lernprogramm unterstützt Sie beim Einstieg in die Anwendungserstellung m
 
 	![DNVM-Speicherort](./media/web-sites-create-web-app-using-vscode/00-where-dnvm.png)
 
-4. Nachdem Sie nun über DNVM verfügen, müssen Sie damit DNX herunterladen, um Ihre Anwendungen ausführen zu können. Führen Sie über die Eingabeaufforderung den folgenden Befehl aus:
+3. Nachdem Sie nun über DNVM verfügen, müssen Sie damit DNX herunterladen, um Ihre Anwendungen ausführen zu können. Führen Sie über die Eingabeaufforderung den folgenden Befehl aus:
 
 		dnvm upgrade
 
-5. Überprüfen Sie DNVM, und zeigen Sie die aktive Laufzeit an, indem Sie an der Eingabeaufforderung Folgendes eingeben:
+	Überprüfen Sie DNVM, und zeigen Sie die aktive Laufzeit an, indem Sie an der Eingabeaufforderung Folgendes eingeben:
 
 		dnvm list
 
@@ -65,9 +63,9 @@ Dieses Lernprogramm unterstützt Sie beim Einstieg in die Anwendungserstellung m
 
 	![DNVM-Speicherort](./media/web-sites-create-web-app-using-vscode/00b-dnvm-list.png)
 
-6. Sollten mehrere DNX-Laufzeiten aufgeführt sein, geben Sie an der Eingabeaufforderung Folgendes ein, um die aktive DNX-Laufzeit auf die gleiche Version festzulegen, die auch vom ASP.NET 5-Generator verwendet wird, wenn Sie weiter unten in diesem Lernprogramm Ihre Web-App erstellen: *Sie müssen die aktive Laufzeit ggf. nicht ändern, wenn sie auf die neueste verfügbare festgelegt ist.*
+	Wenn mehrere DNX-Laufzeiten aufgeführt sind, können Sie an der Eingabeaufforderung die folgende Version (oder eine neuere Version) eingeben, um die aktive DNX-Laufzeit festzulegen. Legen Sie sie auf die gleiche Version fest, die auch vom ASP.NET 5-Generator verwendet wird, wenn Sie weiter unten in diesem Tutorial Ihre Web-App erstellen. *Sie müssen die aktive Laufzeit ggf. nicht ändern, wenn sie auf die neueste verfügbare festgelegt ist.*
 
-		dnvm use 1.0.0-beta4 –p
+		dnvm use 1.0.0-update1 –p
 
 > [AZURE.NOTE]Ausführlichere Installationsanweisungen für OS X, Linux und Windows finden Sie unter [Installing ASP.NET 5 and DNX](https://code.visualstudio.com/Docs/ASPnet5#_installing-aspnet-5-and-dnx) (Installieren von ASP.NET 5 und DNX; in englischer Sprache).
 
@@ -81,69 +79,63 @@ In diesem Abschnitt erfahren Sie, wie Sie das Gerüst für eine neue ASP.NET-Web
 
 		npm install -g yo grunt-cli generator-aspnet bower
 
+	> [AZURE.NOTE]Möglicherweise werden Sie in einer Warnmeldung darauf hingewiesen, dass die npm-Version veraltet ist. Diese Warnung sollte keine Auswirkung auf dieses Tutorial haben.
+
 3. Geben Sie an der Eingabeaufforderung Folgendes ein, um den Projektordner und das Gerüst für die App zu erstellen:
 
 		yo aspnet
 
-4. Wählen Sie im ASP.NET 5-Generatormenü mithilfe der Pfeiltasten den Typ **Webanwendung** aus, und drücken Sie anschließend die **EINGABETASTE**.
+4. Wählen Sie im ASP.NET 5-Generatormenü mithilfe der Pfeiltasten den Typ **Webanwendung Basic** aus, und drücken Sie anschließend die **EINGABETASTE**.
 
 	![Yeoman – ASP.NET 5-Generator](./media/web-sites-create-web-app-using-vscode/01-yo-aspnet.png)
 
 5. Legen Sie den Namen Ihrer neuen ASP.NET-Web-App auf **SampleWebApp** fest. Dieser Name wird im gesamten Lernprogramm verwendet. Wenn Sie einen anderen Namen verwenden, müssen jedes Vorkommen von **SampleWebApp** durch diesen Namen ersetzen. Wenn Sie die **EINGABETASTE** drücken, erstellt Yeoman einen neuen Ordner namens **SampleWebApp** sowie die erforderlichen Dateien für Ihre neue App.
 
-6. Geben Sie an der Eingabeaufforderung den folgenden Befehl ein, um VS Code zu öffnen:
+6. Verschieben Sie an der Eingabeaufforderung die Verzeichnisse in Ihren neuen Projektordner:
+
+		cd SampleWebApp
+
+7. Geben Sie an der Eingabeaufforderung auch den folgenden Befehl ein, um die erforderlichen NuGet-Pakete zum Ausführen der Anwendung zu installieren:
+
+		dnu restore
+
+8. Geben Sie an der Eingabeaufforderung den folgenden Befehl ein, um VS Code zu öffnen:
 
 		code .
-
-7. Wählen Sie in VS Code **Datei > Ordner öffnen** und anschließend den Ordner mit Ihrer ASP.NET-Web-App aus.
-
-	![Dialogfeld "Ordner auswählen"](./media/web-sites-create-web-app-using-vscode/02-open-folder.png)
-
-	VS Code lädt Ihr Projekt und zeigt die Dateien im Fenster **Durchsuchen** an.
-
-	![Anzeige des Projekts "SampleWebApp" in VS Code](./media/web-sites-create-web-app-using-vscode/03-vscode-project.png)
-
-8. Wählen Sie **Ansicht > Befehlspalette**.
-
-9. Geben Sie unter **Befehlspalette** die folgenden Befehle ein:
-
-		dnx:dnu restore - (SampleWebApp)
-
-	Wenn Sie mit der Eingabe beginnen, erscheint die vollständige Befehlszeile aus der Liste.
-
-	![Befehl "Restore"](./media/web-sites-create-web-app-using-vscode/04-dnu-restore.png)
-
-	Der Befehl "Restore" installiert die NuGet-Pakete, die zum Ausführen der Anwendung erforderlich sind. Nach Abschluss des Vorgangs wird eine Eingabeaufforderung mit einem entsprechenden Hinweis angezeigt.
 
 ## Ausführen der Web-App (lokal)
 
 Nachdem Sie die Web-App erstellt und alle erforderlichen NuGet-Pakete abgerufen haben, können Sie die Web-App lokal ausführen.
 
-1. Geben Sie in VS Code unter **Befehlspalette** den folgenden Befehl ein, um die App lokal auszuführen:
+1. Geben Sie in VS Code unter **Befehlspalette** den folgenden Befehl ein, um die verfügbaren Optionen für die Befehlsausführung anzuzeigen:
 
-		dnx: kestrel - (SampleWebApp, Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.Kestrel --config hosting.ini)
+		dnx: Run Command
 
-	Im Befehlsfenster wird *Gestartet* angezeigt. Sollte im Befehlsfenster nicht *Gestartet* angezeigt werden, überprüfen Sie, ob links unten in VS Code Fehler für Ihr Projekt angezeigt werden.
+	> [AZURE.NOTE]Wenn der Omnisharp-Server aktuell nicht ausgeführt wird, wird er gestartet. Geben Sie den oben aufgeführten Befehl erneut ein.
+
+	Wählen Sie dann den folgenden Befehl zum Ausführen der Web-App aus:
+		
+		dnx web - (SampleWebApp)
+
+	Im Befehlsfenster wird angezeigt, dass die Anwendung gestartet wurde. Wenn diese Meldung im Befehlsfenster nicht angezeigt wird, überprüfen Sie, ob links unten in VS Code Fehler für Ihr Projekt angezeigt werden.
 	
-	> [AZURE.NOTE]Zum Aufrufen eines Befehls über die **Befehlspalette** ist das Zeichen **>** am Anfang der Befehlszeile erforderlich. Sie können auch die Details des Befehls "kestrel" in der Datei *project.json* anzeigen.
+	> [AZURE.NOTE]Zum Aufrufen eines Befehls über die **Befehlspalette** ist das Zeichen **>** am Anfang der Befehlszeile erforderlich. Sie können die Details des Befehls **web** in der Datei *project.json* anzeigen.
 
 2. Öffnen Sie einen Browser, und navigieren Sie zur folgenden URL:
 
 	**http://localhost:5000**
 
-	> [AZURE.NOTE]Der in der Datei *project.json* angegebene Befehl "kestrel" zeigt auf eine Datei mit Hostingdetails (*hosting.ini*), die den lokalen App-Speicherort angibt. In diesem Fall kann die App über die zuvor genannte URL angezeigt werden.
-
 	Die Standardseite der Web-App wird wie folgt angezeigt:
 
 	![Lokale Web-App in einem Browser](./media/web-sites-create-web-app-using-vscode/08-web-app.png)
 
-3. Schließen Sie Ihren Browser. Drücken Sie im Befehlsfenster zum Herunterfahren der Anwendung oder Schließen des Befehlsfensters **STRG+C**.
+3. Schließen Sie Ihren Browser. Drücken Sie im **Befehlsfenster** die Tastenkombination **STRG+C**, um die Anwendung zu beenden und das **Befehlsfenster** zu schließen.
 
-## Erstellen einer Web-App im Azure-Vorschauportal
+## Erstellen einer Web-App im Azure-Portal
 
-Die folgenden Schritte dienen zum Erstellen einer Web-App im Azure-Vorschauportal:
+Die folgenden Schritte dienen zum Erstellen einer Web-App im Azure-Portal:
 
-1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
 
 2. Klicken Sie links oben im Portal auf **NEU**.
 
@@ -165,7 +157,7 @@ Die folgenden Schritte dienen zum Erstellen einer Web-App im Azure-Vorschauporta
 
 Git ist ein verteiltes Versionskontrollsystem, mit dem Sie Ihre Azure App Service-Web-App bereitstellen können. Dazu speichern Sie den Code, den Sie für Ihre Web-App geschrieben haben, in einem lokalen Git-Repository und stellen ihn anschließend mithilfe eines Pushvorgangs zu einem Remoterepository in Azure bereit.
 
-1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
 
 2. Klicken Sie auf **Durchsuchen**.
 
@@ -258,7 +250,7 @@ Dies kann auf zwei Arten erfolgen:
 
 		http://SampleWebAppDemo.azurewebsites.net
  
-* Navigieren Sie im Azure-Vorschauportal zum Blatt für Ihre Web-App, und klicken Sie auf **Durchsuchen**, um Ihre App 
+* Navigieren Sie im Azure-Portal zum Blatt für Ihre Web-App, und klicken Sie auf **Durchsuchen**, um Ihre App anzuzeigen.
 * in Ihrem Standardbrowser anzuzeigen.
 
 ![Azure-Web-App](./media/web-sites-create-web-app-using-vscode/21-azurewebapp.png)
@@ -266,4 +258,4 @@ Dies kann auf zwei Arten erfolgen:
 ## Zusammenfassung
 In diesem Lernprogramm wurde gezeigt, wie Sie eine Web-App in VS Code erstellen und in Azure bereitstellen. Weitere Informationen zu VS Code finden Sie im Artikel [Why Visual Studio Code?](https://code.visualstudio.com/Docs/) (Argumente für Visual Studio Code; in englischer Sprache). Informationen zu App Service-Web-Apps finden Sie unter [Web-Apps – Übersicht](app-service-web-overview.md).
 
-<!----HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

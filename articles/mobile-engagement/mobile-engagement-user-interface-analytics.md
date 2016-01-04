@@ -13,36 +13,27 @@
    ms.topic="article"
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="mobile" 
-   ms.date="08/10/2015"
+   ms.date="11/29/2015"
    ms.author="piyushjo"/>
 
 # Gewusst wie: Analysieren von Verlaufsdaten zu Ihrer Anwendung
-Der Abschnitt "Analyse" der Benutzeroberfläche enthält basierend auf Verlaufsdaten zusammengefasste Informationen zu Ihren Anwendungen, die alle 24 Stunden aktualisiert werden. Die Informationen werden auf verschiedenen Dashboards angezeigt, die aus Linien-/Balken-/Kreisdiagrammen, Rastern und Karten bestehen. Die Daten können auch als CSV-Dateien heruntergeladen werden. Die meisten dieser Informationen sind im Abschnitt "Überwachen" der Benutzeroberfläche in Echtzeit verfügbar. Ein Zugriff ist auch über die Analytics-API möglich. Das "Glossar" in "Konzepte" enthält die Definitionen der Begriffe und Abkürzungen in Analysen und Überwachung, wie z. B. die folgenden: Aktiver Benutzer, Neuer Benutzer, Benutzer beibehalten, Sitzung, Benutzerpfadgraph, Benutzer zuordnen, Nachverfolgen von URLs, Trends, Aktivität, Ereignis, Auftrag, Fehler, Zusätzliche Informationen, Absturz und App-Info.
 
-### Weitere Informationen
--  [Konzepte - Glossar][Link 6], [Handbuch zur Problembehandlung - Analyse][Link 21]
+In diesem Artikel wird die Registerkarte **ANALYSE** im Portal **Mobile Engagement** beschrieben. Verwenden Sie das Portal **Mobile Engagement**, um Ihre mobilen Apps zu überwachen und zu verwalten. Beachten Sie, dass Sie zur Verwendung des Portals zuerst ein **Azure Mobile Engagement**-Konto erstellen müssen. Weitere Informationen finden Sie unter [Erstellen eines Azure Mobile Engagement-Kontos](mobile-engagement-create-account.md).
+
+
+Der Abschnitt "Analyse" der Benutzeroberfläche enthält basierend auf Verlaufsdaten zusammengefasste Informationen zu Ihren Anwendungen, die alle 24 Stunden aktualisiert werden. Die Informationen werden auf verschiedenen Dashboards angezeigt, die aus Linien-/Balken-/Kreisdiagrammen, Rastern und Karten bestehen. Die Daten können auch als CSV-Dateien heruntergeladen werden. Die meisten dieser Informationen sind im Abschnitt "Überwachen" der Benutzeroberfläche in Echtzeit verfügbar. Ein Zugriff ist auch über die Analytics-API möglich.
+
+>[AZURE.NOTE]Viele Abschnitte der Benutzeroberfläche des **Mobile Engagement**-Portals enthalten die Schaltfläche **HILFE ANZEIGEN**. Drücken Sie diese Schaltfläche, um weitere Kontextinformationen zu einem bestimmten Bereich zu erhalten.
 
 ## Standard- und benutzerdefinierte Analyse
-Azure Mobile Service bietet eine Reihe grundlegender standardmäßiger Analyseinformationen zu Ihren Anwendungen, die grafisch dargestellt werden können, sobald Sie Ihre App mit dem SDK integrieren. Azure Mobile Engagement bietet auch die Möglichkeit, zusätzliche benutzerdefinierte Analyseinformationen zu sammeln, die Sie zum Verhalten Ihrer Endbenutzer wünschen. Sie erreichen dies durch Erstellen eines Tagplans mit benutzerdefinierten "App-Infotags", die im Abschnitt "Einstellungen" erstellt werden, sodass Azure Mobile Engagement diese zusätzlichen Daten für Sie sammeln kann.
 
-### Weitere Informationen
--  [Dokumentation zur Benutzeroberfläche – Einstellungen][Link 20]
- 
-## Analyseüberschrift
-- Elementname: Bezeichnet das zu zählende Element
-- Hilfe anzeigen: Zeigt Kontextinformationen zu diesem Abschnitt
-- Versionen: Ermöglicht Ihnen, verschiedene Analyseinformationen für jede Version Ihrer Anwendung oder Informationen für alle Versionen anzuzeigen. (Hinweis: Beim Filtern Ihre Analysedaten auf der Benutzeroberfläche werden alle Beispiele dieses Typs unabhängig von der Version Ihrer App angezeigt. "Abstürzt" nach Name gefiltert zeigt Ihnen beispielsweise Daten aus Version 1 und Version 2 der App.)
-- Zeitraum: Letzte 7 Tage, Letzte 30 Tage, Gesamte Zeit, Benutzerdefiniert
-- Rate: Pro Stunde, Tag, Woche, Monat
-- Ansicht: Liniendiagramm, Raster, "Zum Dashboard senden", "CSV-Datei herunterladen"
- 
-![Analytics1][10]
+Azure Mobile Service bietet eine Reihe grundlegender standardmäßiger Analyseinformationen zu Ihren Anwendungen, die grafisch dargestellt werden können, sobald Sie Ihre App mit dem SDK integrieren. Azure Mobile Engagement bietet auch die Möglichkeit, zusätzliche benutzerdefinierte Analyseinformationen zu sammeln, die Sie zum Verhalten Ihrer Endbenutzer wünschen. Sie erreichen dies durch Erstellen eines Tagplans mit benutzerdefinierten „Tags (App-Info)“, die im Abschnitt **Einstellungen** erstellt werden, sodass Azure Mobile Engagement diese zusätzlichen Daten für Sie sammeln kann.
 
+ 
+ 
 ## Analyse
 - Dashboard: Zeigt allgemeine Informationen zu neuen und aktiven Benutzern sowie deren Trends an.
 - Benutzer: Benutzer werden anhand ihres Gerätebezeichners (ID) identifiziert. Diese ID ist eindeutig für jedes Gerät (ein neuer Benutzer ist tatsächlich ein neues Gerät). Ein Benutzer gilt in einem bestimmten Zeitintervall als neu, wenn er während dieses Intervalls seine erste Sitzung gestartet hat. Ein Benutzer gilt als vermerkt, wenn er während der letzten 7 Tage mindestens eine Sitzung durchgeführt hat. Aktive Benutzer sind Benutzer, die während eines bestimmten Zeitraums mindestens eine Sitzung durchgeführt haben. Sie können nach monatlichen, wöchentlichen, täglichen oder stündlichen Zeiträumen sortieren. Alle Diagramme sehen ähnlich aus, ermöglichen Ihnen jedoch das Filtern anhand verschiedener Merkmale, z. B. Version der Anwendung, und dann das Sortieren anhand eines Zeitraums. Die Standardinformationen, die durch Integrieren des SDK gesammelt werden können, sind u. a. folgende: Aktive Benutzer, Neuer Benutzer, Anzahl von Sitzungen, Dauer jeder Sitzung, technische Informationen zu Land, Gebietsschema, Ort, Sprache, Netzbetreiber, Geräten, Firmware, Netzwerk (WLAN) und zu der von Kunden verwendeten Version von App und SDK. Diese Informationen können im Abschnitt "Überwachen" in Echtzeit angezeigt werden. 
-- "Nachverfolgung nach Quelle" zeigt die Anzahl der neuen Benutzer, die die App aufgrund einer bestimmten Werbekampagne heruntergeladen haben. Benutzer werden anhand ihres Gerätebezeichners (ID) identifiziert. Diese ID ist eindeutig für jedes Gerät (ein neuer Benutzer ist tatsächlich ein neues Gerät). Ein Benutzer gilt in einem bestimmten Zeitintervall als neu, wenn er während dieses Intervalls seine erste Sitzung gestartet hat.
-- "Nachverfolgung nach Store" zeigt die Anzahl der neuen Benutzer, die die Anwendung aus einem bestimmten Store heruntergeladen haben. Benutzer werden anhand ihres Gerätebezeichners (ID) identifiziert. Diese ID ist eindeutig für jedes Gerät (ein neuer Benutzer ist tatsächlich ein neues Gerät). Ein Benutzer gilt in einem bestimmten Zeitintervall als neu, wenn er während dieses Intervalls seine erste Sitzung gestartet hat.
 
 > Hinweis: Der Zeitraum basiert auf dem Datum in den Geräteeinstellungen des Benutzers, sodass ein Benutzer, auf dessen Telefon das Datum falsch festgelegt ist, im falschen Zeitraum angezeigt werden kann.
 
@@ -77,6 +68,12 @@ Die Bindungsübersicht wird in der Mitte in mehrere Karten aufgeteilt, die jewei
 3.    Dieser visuelle Indikator bietet dieselben Informationen wie oben grafisch dargestellt. (Die 3 im Kreis gehört zum Wert 33 %.) Die Farbe gibt zusätzliche Informationen an: Grün gibt an, dass diese Zahl im Vergleich zur vorherigen Berechnung wächst. Gelb bedeutet stabil, Rot verringern.
 4.    Hiermit werden die für die Berechnung verwendeten Werte angegeben.
 5.    Dies ist eine Sparkline des Verlaufs der Bindungswerte. Sie können die Werte in der Vergangenheit prüfen, um sich einen umfassenden Einblick in die Entwicklung zu verschaffen.
+
+
+## Weitere Informationen
+
+- [Konzepte][Link 6]
+- [Handbuch zur Problembehandlung – Dienst][Link 24]
 
 <!--Image references-->
 [1]: ./media/mobile-engagement-user-interface-navigation/navigation1.png
@@ -174,4 +171,4 @@ Die Bindungsübersicht wird in der Mitte in mehrere Karten aufgeteilt, die jewei
 [Link 33]: ../mobile-engagement-how-tos-web-view.md
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

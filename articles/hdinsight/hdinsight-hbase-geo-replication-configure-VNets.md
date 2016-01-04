@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="07/08/2015"
+   ms.date="12/02/2015"
    ms.author="jgao"/>
 
 # Konfigurieren einer VPN-Verbindung zwischen zwei virtuellen Netzwerken in Azure  
@@ -71,7 +71,7 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
 **Zum Erstellen eines virtuellen Netzwerks namens Contoso-VNet-EU in Nordeuropa**
 
-1.	Melden Sie sich auf dem [Azure-Portal][azure-portal] an.
+1.	Melden Sie sich beim [klassischen Azure-Portal][azure-portal] an.
 2.	Klicken Sie auf **NEU**, **NETWORK SERVICES**, **VIRTUELLES NETZWERK**, ** BENUTZERDEFINIERT ERSTELLEN**.
 3.	Geben Sie Folgendes ein:
 
@@ -144,7 +144,7 @@ Wenn Sie eine VNet-zu-VNet-Konfiguration erstellen, müssen Sie jedes VNet so ko
 
 **Erstellen Sie ein lokales Netzwerk mit dem Namen Contoso-LNet-EU das mit dem Contoso-VNet-EU-Netzwerk-Adressbereich übereinstimmt**
 
-1. Klicken Sie im Azure-Portal auf **NEU**, **NETWORK SERVICES**, **VIRTUELLES NETZWERK**, **LOKALES NETZWERK HINZUFÜGEN**.
+1. Klicken Sie im klassischen Azure-Portal auf **NEU**, **NETWORK SERVICES**, **VIRTUELLES NETZWERK**, **LOKALES NETZWERK HINZUFÜGEN**.
 3. Geben Sie Folgendes ein:
 
 	- **NAME**: Contoso-LNet-EU
@@ -175,7 +175,7 @@ Diese Konfiguration umfasst zwei Teile. Zunächst konfigurieren Sie eine VNet-St
 
 **Zum Konfigurieren der Contoso-VNet-EU Standort-zu-Standort-Verbindung auf Contoso-LNet-US**
 
-1.	Klicken Sie im Azure-Portal auf **NETZWERKE** auf der linken Seite,
+1.	Klicken Sie im klassischen Azure-Portal auf **NETZWERKE** auf der linken Seite.
 2.	Klicken Sie auf **Contoso-VNet-EU**
 3.	Klicken Sie auf die Registerkarte **KONFIGURIEREN**.
 4.	Aktivieren Sie **Herstellen einer Verbindung mit dem lokalen Netzwerk**.
@@ -187,7 +187,7 @@ Diese Konfiguration umfasst zwei Teile. Zunächst konfigurieren Sie eine VNet-St
 
 **Erstellen eines VPN-Gateway für Contoso-VNet-EU**
 
-1.	Klicken Sie im Azure-Portal auf die Registerkarte **DASHBOARD**.
+1.	Klicken Sie im klassischen Azure-Portal auf die Registerkarte **DASHBOARD**.
 4.	Klicken Sie auf unten auf der Seite auf **GATEWAY ERSTELLEN** und anschließend auf **Dynamisches Routing**.
 5.	Klicken Sie auf **Ja**, um zu bestätigen. Die Gatewaygrafik auf der Seite wechselt zu Gelb und zeigt „Gateway wird erstellt“ an. Die Erstellung des Gateways nimmt normalerweise 15 Minuten in Anspruch.
 
@@ -205,7 +205,7 @@ Im letzten Abschnitt können Sie ein VPN-Gateway für jedes der VNets erstellen.
 
 **So konfigurieren Sie die IP-Adresse des VPN-Geräts für Contoso-LNet-EU**
 
-1.	Klicken Sie im Azure-Portal auf **NETZWERKE** auf der linken Seite.
+1.	Klicken Sie im klassischen Azure-Portal auf **NETZWERKE** auf der linken Seite.
 2.	Klicken Sie oben auf **LOKALE NETZWERKE**.
 3.	Klicken Sie auf **Contoso-LNet-EU-** und klicken Sie dann unten auf **BEARBEITEN**.
 4.	Aktualisieren der **IP-ADRESSE DES VPN-GERÄTS**. Das ist die Adresse, die Sie von der Registerkarte DASHBOARD von Contoso-VNET-EU erhalten.
@@ -218,7 +218,7 @@ Im letzten Abschnitt können Sie ein VPN-Gateway für jedes der VNets erstellen.
 
 ###VNet-Gateway-Schlüssel festlegen
 
-Die Vnet-Gateways verwenden einen gemeinsamen Schlüssel zum Authentifizieren von Verbindungen zwischen den virtuellen Netzwerken. Der Schlüssel kann nicht aus dem Azure-Portal konfiguriert werden. Sie müssen PowerShell oder .NET SDK verwenden.
+Die Vnet-Gateways verwenden einen gemeinsamen Schlüssel zum Authentifizieren von Verbindungen zwischen den virtuellen Netzwerken. Der Schlüssel kann nicht aus dem klassischen Azure-Portal konfiguriert werden. Sie müssen PowerShell oder .NET SDK verwenden.
 
 **Festlegen der Schlüssel**
 
@@ -233,7 +233,7 @@ Die Vnet-Gateways verwenden einen gemeinsamen Schlüssel zum Authentifizieren vo
 
 ##Überprüfen Sie die VPN-Verbindung 
 
-Ohne VMs für die VNets bereitgestellt wurden, können Sie das die visuelle Darstellung des virtuellen Netzwerks der VNet-Dashboard-Seite im Azure-Portal verwenden, um den Status der Verbindung zu überprüfen:
+Ohne VMs für die VNets bereitgestellt wurden, können Sie das die visuelle Darstellung des virtuellen Netzwerks der VNet-Dashboard-Seite im klassischen Azure-Portal verwenden, um den Status der Verbindung zu überprüfen:
 
 ![HDInsight HBase Replikation virtuelles Netzwerk Verbindungsstatus][img-vpn-status]
   
@@ -270,4 +270,4 @@ In diesem Lernprogramm haben Sie gelernt, eine VPN-Verbindung zwischen zwei virt
 [img-vnet-lnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-VNets/HDInsight.HBase.VPN.LNet.diagram.png
 [img-vpn-status]: ./media/hdinsight-hbase-geo-replication-configure-VNets/HDInsight.HBase.VPN.status.png
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

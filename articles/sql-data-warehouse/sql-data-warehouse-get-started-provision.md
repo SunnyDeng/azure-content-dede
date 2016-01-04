@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Erstellen einer SQL Data Warehouse-Datenbank im Azure-Vorschauportal | Microsoft Azure"
-	description="Erfahren Sie, wie Sie ein Azure SQL Data Warehouse im Azure-Vorschauportal erstellen."
+	pageTitle="Erstellen einer SQL Data Warehouse-Datenbank im Azure-Portal | Microsoft Azure"
+	description="Erfahren Sie, wie Sie ein Azure SQL Data Warehouse im Azure-Portal erstellen."
 	services="sql-data-warehouse"
 	documentationCenter="NA"
 	authors="barbkess"
@@ -13,28 +13,32 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="10/21/2015"
+   ms.date="12/15/2015"
    ms.author="lodipalm;barbkess"/>
 
-# Erstellen eines SQL Data Warehouse im Azure-Vorschauportal#
+# Erstellen eines SQL Data Warehouse
 
 > [AZURE.SELECTOR]
-- [Azure preview portal](sql-data-warehouse-get-started-provision.md)
+- [Azure Portal](sql-data-warehouse-get-started-provision.md)
 - [TSQL](sql-data-warehouse-get-started-create-database-tsql.md)
 - [PowerShell](sql-data-warehouse-get-started-provision-powershell.md)
 
-In diesem Tutorial wird das Erstellen einer Azure SQL Data Warehouse-Datenbank veranschaulicht, was im Azure-Vorschauportal nur wenige Minuten dauert.
+In diesem Tutorial wird das Erstellen einer Azure SQL Data Warehouse-Datenbank veranschaulicht, was im Azure-Portal nur wenige Minuten dauert.
 
 In diesem Lernprogramm führen Sie folgende Schritte aus:
 
 - Erstellen eines Servers, der die Datenbank hostet
 - Erstellen einer Datenbank, die die AdventureWorksDW-Beispieldatenbank enthält
 
+Wenn Sie versuchen, eine vorhandene Datenbank zu SQL Data Warehouse zu migrieren, lesen Sie die [Übersicht über die Migration](./sql-data-warehouse-get-started-overview-migrate.md), oder verwenden Sie das [Migrationshilfsprogramm ](./sql-data-warehouse-migrate-migration-utility.md).
+
+Um Daten in SQL Data Warehouse zu laden, lesen Sie [Laden von Daten in SQL Data Warehouse](./sql-data-warehouse-overview-load.md).
+
 [AZURE.INCLUDE [free-trial-note](../../includes/free-trial-note.md)]
 
 ## Schritt 1: Anmelden und erste Schritte
 
-1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
 
 2. Klicken Sie auf **Neu** > **Daten + Speicher** > **SQL Data Warehouse**.
 
@@ -46,6 +50,7 @@ In diesem Lernprogramm führen Sie folgende Schritte aus:
 
 
 ## Schritt 2: Konfigurieren und Erstellen eines Servers
+
 In Azure SQL-Datenbank und SQL Data Warehouse wird jede Datenbank einem Server und jeder Server einem geografischen Standort zugewiesen. Der Server wird als logischer SQL Server bezeichnet.
 
 > [AZURE.NOTE]<a name="note"></a>Ein logischer SQL Server:
@@ -75,6 +80,7 @@ In Azure SQL-Datenbank und SQL Data Warehouse wird jede Datenbank einem Server u
     ![Konfigurieren des neuen Servers](./media/sql-data-warehouse-get-started-provision/configure-server.png)
 
 ## Schritt 3: Konfigurieren und Erstellen einer Datenbank
+
 Nachdem Sie Ihren logischen SQL-Server ausgewählt haben, können Sie die Erstellung der Datenbank abschließen.
  
 2. Füllen Sie auf dem Blatt **SQL Data Warehouse** die restlichen Felder aus. 
@@ -97,12 +103,13 @@ Nachdem Sie Ihren logischen SQL-Server ausgewählt haben, können Sie die Erstel
 
 1. Klicken Sie auf **Erstellen**, um die SQL Data Warehouse-Datenbank zu erstellen.
 
-1. Warten Sie einige Minuten, bis die Datenbank bereit ist. Im Anschluss sollten sich wieder im [Azure-Vorschauportal](https://portal.azure.com) befinden. Beachten Sie, dass die SQL Data Warehouse-Datenbank Ihrem Dashboard hinzugefügt wurde.
+1. Warten Sie einige Minuten, bis die Datenbank bereit ist. Im Anschluss sollten Sie sich wieder im [Azure-Portal](https://portal.azure.com) befinden. Beachten Sie, dass die SQL Data Warehouse-Datenbank Ihrem Dashboard hinzugefügt wurde.
 
     ![Portalansicht](./media/sql-data-warehouse-get-started-provision/database-portal-view.png)
 
 
 ## Schritt 4: Konfigurieren des Serverfirewall-Zugriffs für Ihre Client-IP-Adresse
+
 Um über Ihre aktuelle IP-Adresse auf den Server zuzugreifen, fügen Sie Ihre Client-IP-Adresse den Firewallregeln hinzu. Dies wird im folgenden Schritt gezeigt.
 
 1. Klicken Sie auf **Durchsuchen** > **SQL Server** > Server wählen> **Einstellungen** > **Firewall**.
@@ -128,4 +135,4 @@ Da Sie jetzt die Firewall konfiguriert haben, können Sie Verbindungen zwischen 
 
 Nachdem Sie eine Beispieldatenbank für SQL Data Warehouse erstellt haben, sind Sie bereit, eine [Verbindung](./sql-data-warehouse-get-started-connect.md) mit der Datenbank herzustellen.
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1217_2015-->

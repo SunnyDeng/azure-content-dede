@@ -37,7 +37,7 @@ Der folgende Screenshot zeigt die fertige Anwendung.
 
 ![][0]
 
-> [AZURE.NOTE]Azure bietet ebenfalls Funktionen für Speicher-Warteschlangen. Weitere Informationen zu Speicher- und Service Bus-Warteschlangen in Azure finden Sie unter [Windows Azure-Warteschlangen und Windows Azure Service Bus-Warteschlangen – Vergleich und Gegenüberstellung][sbqueuecomparison].
+> [AZURE.NOTE]Azure bietet ebenfalls Funktionen für Speicher-Warteschlangen. Weitere Informationen zu Speicher- und Service Bus-Warteschlangen in Azure finden Sie unter [Microsoft Azure-Warteschlangen und Microsoft Azure Service Bus-Warteschlangen – Vergleich und Gegenüberstellung][sbqueuecomparison].
 
 ## Szenario-Übersicht: Kommunikation zwischen Rollen
 
@@ -87,13 +87,13 @@ Bevor Sie mit der Entwicklung Ihrer Azure-Anwendung beginnen können, laden Sie 
 
 Der nächste Schritt ist die Einrichtung des Dienstnamespace und das Abrufen eines SAS (Shared Access Signature)-Schlüssels. Ein Namespace stellt eine Anwendungsgrenze für jede Anwendung bereit, die über Service Bus zur Verfügung steht. Das System generiert einen SAS-Schlüssel, wenn ein Dienstnamespace erstellt wird. Namespace und SAS-Schlüssel bilden gemeinsam die Anmeldeinformationen, mit denen sich der Service Bus bei der Anwendung authentifiziert.
 
-### Einrichten eines Namespace über das Azure-Portal
+### Einrichten des Namespace im klassischen Azure-Portal:
 
-1.  Melden Sie sich beim [Azure-Portal][] an.
+1.  Melden Sie sich beim [klassischen Azure-Portal][] an.
 
-2.  Klicken Sie im linken Navigationsbereich des Azure-Portals auf **Service Bus**.
+2.  Klicken Sie im linken Navigationsbereich des Portals auf **Service Bus**.
 
-3.  Klicken Sie im unteren Bereich des Azure-Portals auf **Erstellen**.
+3.  Klicken Sie im unteren Bereich des Portals auf **Erstellen**.
 
     ![][6]
 
@@ -269,7 +269,7 @@ Sie fügen nun den Code für die Übermittlung von Elementen in die Warteschlang
 
 2.  Geben Sie der Klasse den Namen "QueueConnector.cs". Klicken Sie auf **Hinzufügen**, um die Klasse zu erstellen.
 
-3.  Sie fügen nun den Code hinzu, der Ihre Verbindungsinformationen kapselt und die Verbindung zur Service Bus-Warteschlange initialisiert. Fügen Sie in „QueueConnector.cs“ den folgenden Code hinzu, und geben Sie Werte für **Namespace** (Ihren Dienstnamespace) und **yourKey** ein. Hierbei handelt es sich um den SAS-Schlüssel, den Sie weiter oben über das [Azure-Portal][Azure portal] erhalten haben.
+3.  Sie fügen nun den Code hinzu, der Ihre Verbindungsinformationen kapselt und die Verbindung zur Service Bus-Warteschlange initialisiert. Fügen Sie in „QueueConnector.cs“ den folgenden Code hinzu, und geben Sie Werte für **Namespace** (Ihren Dienstnamespace) und **yourKey** ein. Hierbei handelt es sich um den SAS-Schlüssel, den Sie zuvor über das [klassische Azure-Portal][] erhalten haben.
 
         using System;
         using System.Collections.Generic;
@@ -286,7 +286,7 @@ Sie fügen nun den Code für die Übermittlung von Elementen in die Warteschlang
                 // on every request.
                 public static QueueClient OrdersQueueClient;
 
-                // Obtain these values from the Azure portal.
+                // Obtain these values from the portal.
                 public const string Namespace = "your service bus namespace";
 
                 // The name of your queue.
@@ -510,8 +510,8 @@ Informationen zum Bereitstellen des Front-Ends auf einer Azure-Website finden Si
 
   [EventHubClient]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventhubclient.aspx
 
-  [Azure portal]: http://manage.windowsazure.com
-  [Azure-Portal]: http://manage.windowsazure.com
+  [klassische Azure-Portal]: http://manage.windowsazure.com
+  [klassischen Azure-Portal]: http://manage.windowsazure.com
   [6]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/sb-queues-03.png
   [7]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/sb-queues-04.png
   [8]: ./media/service-bus-dotnet-multi-tier-app-using-service-bus-queues/getting-started-multi-tier-09.png
@@ -545,4 +545,4 @@ Informationen zum Bereitstellen des Front-Ends auf einer Azure-Website finden Si
   [mutitierstorage]: https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36
   [executionmodels]: ../cloud-services/fundamentals-application-models.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

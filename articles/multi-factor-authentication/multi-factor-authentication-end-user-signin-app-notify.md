@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/24/2015" 
+	ms.date="11/19/2015" 
 	ms.author="billmath"/>
 
 # Anmelden bei der mobilen App mithilfe einer Benachrichtigung mit Azure Multi-Factor Authentication
@@ -38,4 +38,4 @@ Die folgenden Informationen beschreiben die Verwendung von Multi-Factor Authenti
 
 <li>Sie sollten jetzt angemeldet sein.</li>
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

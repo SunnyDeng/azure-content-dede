@@ -24,13 +24,13 @@ Eine der häufigsten Fragen, die wir von Azure Notification Hubs-Kunden hören, 
 
 Zunächst einmal ist es wichtig, zu verstehen, wie Azure Notification Hubs Benachrichtigungen mithilfe von Push an die Geräte überträgt. ![][0]
 
-In einem typischen Benachrichtigung senden-Fluss wird die Nachricht vom **Anwendungs-Back-End** zum **Azure Notification Hub (NH)** (Benachrichtigungshub) gesendet, der wiederum einige Verarbeitung für alle Registrierungen ausführt, wobei die konfigurierten Tags und Tagausdrücke berücksichtigt werden, um „Ziele“ (targets) zu ermitteln, d. h. alle Registrierungen, die die Pushbenachrichtigung empfangen müssen. Diese Registrierungen können sich über einige oder sämtliche unserer unterstützten Plattformen erstrecken - iOS, Google, Windows, Windows Phone, Kindle und Baidu für China Android. Nachdem die Ziele eingerichtet sind, überträgt NH dann mithilfe von Push auf mehrere Registrierungsbatches aufgeteilte Benachrichtigungen an den geräteplattformspezifischen **Pushbenachrichtigungsdienst (Push Notification Service, PNS)** – z. B. APNS für Apple, GCM für Google usw. NH authentifiziert sich bei dem entsprechenden PNS anhand der Anmeldeinformationen, die Sie im Azure-Portal auf der Seite "Configure Notification Hub" festgelegt haben. Danach leitet der PNS die Benachrichtigungen an die entsprechenden **Clientgeräte** weiter. Dies ist die für Plattformen empfohlene Methode zum Übermitteln von Pushbenachrichtigungen, und Sie sollten beachten, dass der letzte Abschnitt einer Benachrichtigungsübermittlung zwischen dem Plattform-PNS und dem Gerät erfolgt. Daher gibt es vier Hauptkomponenten – *Client*, *Anwendungs-Back-End*, *Azure Notification Hubs (NH)* und *Push Notification Services (PNS)*. Jede dieser Komponenten kann dafür verantwortlich sein, dass Benachrichtigungen verworfen werden. Weitere Informationen zu dieser Architektur finden Sie unter [Übersicht über Benachrichtigungshubs].
+In einem typischen Benachrichtigung senden-Fluss wird die Nachricht vom **Anwendungs-Back-End** zum **Azure Notification Hub (NH)** (Benachrichtigungshub) gesendet, der wiederum einige Verarbeitung für alle Registrierungen ausführt, wobei die konfigurierten Tags und Tagausdrücke berücksichtigt werden, um „Ziele“ (targets) zu ermitteln, d. h. alle Registrierungen, die die Pushbenachrichtigung empfangen müssen. Diese Registrierungen können sich über einige oder sämtliche unserer unterstützten Plattformen erstrecken - iOS, Google, Windows, Windows Phone, Kindle und Baidu für China Android. Nachdem die Ziele eingerichtet sind, überträgt NH dann mithilfe von Push auf mehrere Registrierungsbatches aufgeteilte Benachrichtigungen an den geräteplattformspezifischen **Pushbenachrichtigungsdienst (Push Notification Service, PNS)** – z. B. APNS für Apple, GCM für Google usw. NH authentifiziert sich bei dem entsprechenden PNS anhand der Anmeldeinformationen, die Sie im klassischen Azure-Portal auf der Seite „Notification Hub konfigurieren“ festgelegt haben. Danach leitet der PNS die Benachrichtigungen an die entsprechenden **Clientgeräte** weiter. Dies ist die für Plattformen empfohlene Methode zum Übermitteln von Pushbenachrichtigungen, und Sie sollten beachten, dass der letzte Abschnitt einer Benachrichtigungsübermittlung zwischen dem Plattform-PNS und dem Gerät erfolgt. Daher gibt es vier Hauptkomponenten – *Client*, *Anwendungs-Back-End*, *Azure Notification Hubs (NH)* und *Push Notification Services (PNS)*. Jede dieser Komponenten kann dafür verantwortlich sein, dass Benachrichtigungen verworfen werden. Weitere Informationen zu dieser Architektur finden Sie unter [Übersicht über Benachrichtigungshubs].
 
 Fehler beim Übermitteln von Benachrichtigungen können während der ersten Test-/Stagingphase vorkommen, wodurch ein mögliches Konfigurationsproblem angezeigt wird, oder können während der Produktion vorkommen, wenn eventuell alle oder einige der Benachrichtigungen gelöscht werden, was ein Hinweis auf ein umfassenderes Anwendungs- oder Messagingmusterproblem sein kann. Im folgenden Abschnitt werden verschiedene Szenarien für gelöschte Benachrichtigungen betrachtet. Dies reicht von üblichen bis selteneren Szenarien, von denen Sie einige möglicherweise als offensichtlich und einige andere als nicht so offensichtlich ansehen.
 
 ##Fehlerhafte Konfiguration von Azure Notification Hubs 
 
-Azure Notification Hubs muss sich selbst im Kontext der Anwendung des Entwicklers authentifizieren, um in der Lage zu sein, Benachrichtigungen erfolgreich an den jeweiligen PNS zu senden. Dies wird ermöglicht, indem der Entwickler ein Entwicklerkonto für die jeweilige Plattform (Google, Apple, Windows usw.) erstellt und dann seine Anwendung registriert, wobei er Anmeldeinformationen erhält, die im Azure-Portal im Konfigurationsabschnitt für Benachrichtigungshubs konfiguriert werden müssen. Wenn keine Benachrichtigungen weitergeleitet werden, sollte im ersten Schritt sichergestellt werden, dass die richtigen Anmeldeinformationen im Benachrichtigungshub konfiguriert sind. Gleichen Sie dazu die Anmeldeinformationen mit der Anwendung ab, die unter dem jeweiligen plattformspezifischen Entwicklerkonto erstellt wurde. Dabei können unsere [Erste Schritte-Lernprogramme] nützlich sein, um diesen Prozess Schritt für Schritt zu durchlaufen. Dies sind einige übliche fehlerhafte Konfigurationen:
+Azure Notification Hubs muss sich selbst im Kontext der Anwendung des Entwicklers authentifizieren, um in der Lage zu sein, Benachrichtigungen erfolgreich an den jeweiligen PNS zu senden. Dies wird ermöglicht, indem der Entwickler ein Entwicklerkonto für die jeweilige Plattform (Google, Apple, Windows usw.) erstellt und dann seine Anwendung registriert, wobei er Anmeldeinformationen erhält, die im Portal im Konfigurationsabschnitt für Notification Hubs konfiguriert werden müssen. Wenn keine Benachrichtigungen weitergeleitet werden, sollte im ersten Schritt sichergestellt werden, dass die richtigen Anmeldeinformationen im Benachrichtigungshub konfiguriert sind. Gleichen Sie dazu die Anmeldeinformationen mit der Anwendung ab, die unter dem jeweiligen plattformspezifischen Entwicklerkonto erstellt wurde. Dabei können unsere [Erste Schritte-Lernprogramme] nützlich sein, um diesen Prozess Schritt für Schritt zu durchlaufen. Dies sind einige übliche fehlerhafte Konfigurationen:
 
 1. **Allgemein**
  
@@ -97,7 +97,7 @@ Im Folgenden werden die verschiedenen Möglichkeiten vorgestellt, wie Benachrich
 
 	Überprüfen Sie die Anmeldeinformationen auf dem jeweiligen PNS-Entwicklerportal (APNS, GCM, WNS usw.) über unsere [Erste-Schritte-Lernprogramme].
 
-2. **Azure-Verwaltungsportal**
+2. **Klassisches Azure-Portal**
 
 	Navigieren Sie zur Registerkarte „Konfigurieren“, um die Anmeldeinformationen zu überprüfen und mit denjenigen zu vergleichen, die Sie aus dem PNS-Entwicklerportal übernommen haben.
 
@@ -115,7 +115,7 @@ Im Folgenden werden die verschiedenen Möglichkeiten vorgestellt, wie Benachrich
 
 	![][8]
  
-	> [AZURE.NOTE]Die Visual Studio-Funktionen zum Bearbeiten von Registrierungen sollten nur beim Entwickeln/Testen mit begrenzter Anzahl von Registrierungen verwendet werden. Wenn es erforderlich wird, Ihre Registrierungen in einem Sammelvorgang zu korrigieren, bietet es sich an, die Export/Import-Registrierungsfunktionalität zu verwenden, die unter [Registrierungen exportieren/importieren](https://msdn.microsoft.com/library/dn790624.aspx) beschrieben ist.
+	> [AZURE.NOTE]Die Visual Studio-Funktionen zum Bearbeiten von Registrierungen sollten nur beim Entwickeln/Testen mit begrenzter Anzahl von Registrierungen verwendet werden. Wenn es erforderlich wird, Ihre Registrierungen in einem Sammelvorgang zu korrigieren, bietet es sich an, die Export/Import-Registrierungsfunktionalität zu verwenden, die unter [Exportieren und Ändern von Registrierungen](https://msdn.microsoft.com/library/dn790624.aspx) beschrieben ist.
 
 2. **Service Bus-Explorer**
 
@@ -123,7 +123,7 @@ Im Folgenden werden die verschiedenen Möglichkeiten vorgestellt, wie Benachrich
 
 ###Überprüfen von Benachrichtigungen
 
-1. **Azure-Portal**
+1. **Klassisches Azure-Portal**
 
 	Sie können zur Registerkarte „Debuggen“ navigieren, um Testbenachrichtigungen an Ihre Clients zu senden, ohne dass ein Dienst-Back-End eingerichtet sein und ausgeführt werden muss.
 
@@ -183,9 +183,9 @@ Diese Meldung gibt entweder an, dass im Benachrichtigungshub ungültige Anmeldei
 
 ###Überprüfen der Telemetrie 
 
-1. **Verwenden des Azure-Portals**
+1. **Verwenden des klassischen Azure-Portals**
 
-	Das Azure-Portal ermöglicht Ihnen einen schnellen Überblick über alle Aktivitäten in Ihrem Benachrichtigungshub.
+	Das Portal bietet Ihnen einen schnellen Überblick über alle Aktivitäten in Ihrem Notification Hub.
 	
 	a) Auf der Registerkarte "Dashboard" können Sie eine aggregierte Ansicht der Registrierungen, Benachrichtigungen sowie Fehler pro Plattform anzeigen.
 	
@@ -206,7 +206,7 @@ Ausführlichere Informationen finden Sie hier:
 - [Programmgesteuerter Telemetriezugriff]
 - [Telemetriezugriff über APIs – Beispiel] 
 
-> [AZURE.NOTE]Mehrere telemetriebezogene Funktionen wie **Registrierungen exportieren/importieren**, **Telemetriezugriff über APIs** usw. sind nur auf der Stufe „Standard“ verfügbar. Wenn Sie versuchen, diese Funktionen zu verwenden, wenn Sie sich auf der Stufe „Free“ oder „Basic“ befinden, erhalten Sie hierzu eine Ausnahmemeldung, sofern Sie das SDK verwenden, und einen HTTP-Fehler 403 (Verboten), sofern Sie die Funktionen direkt über die REST-APIs verwenden. Nehmen Sie ggf. über das Azure-Verwaltungsportal einen Wechsel zur Stufe „Standard“ vor.
+> [AZURE.NOTE]Mehrere telemetriebezogene Funktionen wie **Registrierungen exportieren/importieren**, **Telemetriezugriff über APIs** usw. sind nur auf der Stufe „Standard“ verfügbar. Wenn Sie versuchen, diese Funktionen zu verwenden, wenn Sie sich auf der Stufe „Free“ oder „Basic“ befinden, erhalten Sie hierzu eine Ausnahmemeldung, sofern Sie das SDK verwenden, und einen HTTP-Fehler 403 (Verboten), sofern Sie die Funktionen direkt über die REST-APIs verwenden. Vergewissern Sie sich, dass Sie über das klassische Azure-Portal in den Tarif „Standard“ gewechselt sind.
 
 <!-- IMAGES -->
 [0]: ./media/notification-hubs-diagnosing/Architecture.png
@@ -240,4 +240,4 @@ Ausführlichere Informationen finden Sie hier:
 
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1210_2015-->

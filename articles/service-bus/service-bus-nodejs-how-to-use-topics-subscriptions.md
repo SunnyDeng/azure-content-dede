@@ -69,7 +69,7 @@ Das Azure-Modul liest die Umgebungsvariablen AZURE\_SERVICEBUS\_NAMESPACE und AZ
 
 Ein Beispiel zum Festlegen der Umgebungsvariablen in einer Konfigurationsdatei für einen Azure-Clouddienst finden Sie unter [Node.js-Clouddienst mit Speicher][].
 
-Ein Beispiel zum Festlegen der Umgebungsvariablen im Azure-Portal für eine Azure-Website finden Sie unter [Node.js-Webanwendung mit Speicher][].
+Ein Beispiel zum Festlegen der Umgebungsvariablen im [klassischen Azure-Portal][] für eine Azure-Website finden Sie unter [Node.js-Webanwendung mit Speicher][].
 
 ## Erstellen eines Themas
 
@@ -292,7 +292,7 @@ Falls die Anwendung nach der Verarbeitung der Nachricht, aber vor Abrufen der **
 
 ## Löschen von Themen und Abonnements
 
-Themen und Abonnements sind persistent und müssen über das Azure-Portal oder programmgesteuert explizit gelöscht werden. Das folgende Beispiel zeigt das Löschen des Themas `MyTopic`:
+Themen und Abonnements sind persistent und müssen über das [klassische Azure-Portal][] oder programmgesteuert explizit gelöscht werden. Das folgende Beispiel zeigt das Löschen des Themas `MyTopic`:
 
     serviceBusService.deleteTopic('MyTopic', function (error) {
         if (error) {
@@ -317,7 +317,8 @@ Nachdem Sie nun mit den Grundlagen der Service Bus-Themen vertraut sind, finden 
 -   Besuchen Sie das [Azure SDK für Node][]-Repository auf GitHub.
 
   [Azure SDK für Node]: https://github.com/WindowsAzure/azure-sdk-for-node
-  [Azure portal]: http://manage.windowsazure.com
+  [klassische Azure-Portal]: http://manage.windowsazure.com
+  [klassischen Azure-Portal]: http://manage.windowsazure.com
   [SqlFilter.SqlExpression]: http://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.sqlfilter.sqlexpression.aspx
   [Service Bus-Warteschlangen, -Themen und -Abonnements]: service-bus-queues-topics-subscriptions.md
   [SqlFilter]: http://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.sqlfilter.aspx
@@ -327,4 +328,4 @@ Nachdem Sie nun mit den Grundlagen der Service Bus-Themen vertraut sind, finden 
   [Node.js-Webanwendung mit Speicher]: ../cloud-services/storage-nodejs-use-table-storage-cloud-service-app.md
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

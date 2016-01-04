@@ -35,7 +35,7 @@ Administratoren können den Suchdienst bei der Auswahl des gemeinsam genutzten D
 
 Abonnenten erhalten kostenlosen Zugriff auf einen gemeinsam genutzten mehrinstanzenfähigen Suchdienst, den Sie zu Lernzwecken, zum Testen von Machbarkeitsstudien oder zur Entwicklung kleiner Suchprojekte nutzen können. Führen Sie die folgenden Schritte aus, um sich für die kostenlose Version anzumelden.
 
-1. Melden Sie sich mit Ihrem bestehenden Abonnement beim [Azure-Portal](https://portal.azure.com) an. Beachten Sie, dass diese URL zum Vorschauportal führt. Die Verwendung des Vorschauportals ist zwingend notwendig. 
+1. Melden Sie sich mit Ihrem bestehenden Abonnement beim [klassischen Azure-Portal](https://portal.azure.com) an. Beachten Sie, dass diese URL zum Portal führt. Die Verwendung des Portals ist zwingend notwendig. 
 
 2. Klicken Sie am oberen Seitenrand auf **Neu**.
  
@@ -78,7 +78,7 @@ Die Einrichtung fest zugeordneter Ressourcen kann einige Zeit in Anspruch nehmen
 
 **Schritt 1 - Erstellen eines neuen Diensts mit dem Tarif "Standard"**
 
-1. Melden Sie sich mit Ihrem bestehenden Abonnement beim [Azure-Portal](https://portal.azure.com) an. 
+1. Melden Sie sich mit Ihrem bestehenden Abonnement beim [klassischen Azure-Portal](https://portal.azure.com) an. 
 
 2. Klicken Sie unten auf der Seite auf **New**.
 
@@ -310,7 +310,7 @@ Sie können auch das System abfragen, um Dokumentenanzahl oder Speicherverbrauch
 
 Falls Sie eine Auffrischung brauchen, um die Konfigurationsseiten zu finden, folgen Sie den folgenden Schritten, um zum Dienst-Dashboard zu gelangen.
 
-1.	Melden Sie sich mit Ihrem bestehenden Abonnement beim [Azure-Portal](https://portal.azure.com) an. 
+1.	Melden Sie sich mit Ihrem bestehenden Abonnement beim [klassischen Azure-Portal](https://portal.azure.com) an. 
 2.	Klicken Sie auf **Startseite** und anschließend auf die Kachel für Ihren Search-Dienst.
 
  	![][22]
@@ -378,4 +378,4 @@ Bereit für den nächsten Schritt? Unter den folgenden Links finden Sie zusätzl
 [Create your first azure search solution]: search-create-first-solution.md
 [Create a geospatial search app using Azure Search]: search-create-geospatial.md
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -4,7 +4,7 @@
    services="traffic-manager"
    documentationCenter=""
    authors="joaoma"
-   manager="adinah"
+   manager="carmonm"
    editor="tysonn" />
 <tags
    ms.service="traffic-manager"
@@ -12,7 +12,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/19/2015"
+   ms.date="11/12/2015"
    ms.author="joaoma" />
 
 # Verweisen einer Unternehmensinternetdomäne auf eine Azure Traffic Manager-Domäne
@@ -29,12 +29,10 @@ Alle Datenverkehrsanforderungen an *www.contoso.com* werden jetzt an *contoso.tr
 
 ## Nächste Schritte
 
-[Informationen zu Traffic Manager-Routingmethoden für Datenverkehr](traffic-manager-load-balancing-methods.md)
+[Traffic Manager-Routingmethoden](traffic-manager-routing-methods.md)
 
 [Deaktivieren, Aktivieren oder Löschen eines Traffic Manager-Profils](disable-enable-or-delete-a-profile.md)
 
 [Deaktivieren oder Aktivieren eines Traffic Manager-Endpunkts](disable-or-enable-an-endpoint.md)
 
-[Was ist Traffic Manager?](traffic-manager-overview.md)
-
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/09/2015" 
+	ms.date="12/01/2015" 
 	ms.author="ddove; sidneyh"/>
 
 #Deinstallieren von Komponenten der Aufträge für die elastische Datenbank
@@ -64,4 +64,4 @@ Weitere Informationen zu Aufträgen für die elastische Datenbank finden Sie unt
 [1]: ./media/sql-database-elastic-job-uninstall/
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

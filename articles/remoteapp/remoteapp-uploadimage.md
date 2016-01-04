@@ -1,19 +1,19 @@
 
-<properties 
-    pageTitle="Hochladen eines benutzerdefinierten Images für Azure RemoteApp"
-    description="Erfahren Sie, wie Sie ein benutzerdefiniertes Image für Azure RemoteApp hochladen." 
-    services="remoteapp" 
-    documentationCenter="" 
-    authors="ericorman" 
+<properties
+    pageTitle="Hochladen eines benutzerdefinierten Images für Azure RemoteApp | Microsoft Azure"
+    description="Erfahren Sie, wie Sie ein benutzerdefiniertes Image für Azure RemoteApp hochladen."
+    services="remoteapp"
+    documentationCenter=""
+    authors="ericorman"
     manager="mbaldwin" />
 
-<tags 
-    ms.service="remoteapp" 
-    ms.workload="compute" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="article" 
-    ms.date="08/12/2015" 
+<tags
+    ms.service="remoteapp"
+    ms.workload="compute"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="12/05/2015"
     ms.author="ericor" />
 
 
@@ -32,7 +32,7 @@ Nachdem Sie Ihr benutzerdefiniertes Vorlagenimage erstellt oder aktualisiert hab
 
 1.      Öffnen Sie das Azure-Verwaltungsportal, und navigieren Sie zur RemoteApp-Seite.
 2.      Klicken Sie unten auf der Registerkarte **Vorlagenimages** auf **Hochladen**.
-4.      Geben Sie einen aussagekräftigen Namen für Ihr Image und einen Speicherort im Speicherkonto an. Achten Sie darauf, dass der Speicherort mit dem Ihrer RemoteApp-Sammlung übereinstimmt (oder an dem Sie planen, sie zu erstellen). 
+4.      Geben Sie einen aussagekräftigen Namen für Ihr Image und einen Speicherort im Speicherkonto an. Achten Sie darauf, dass der Speicherort mit dem Ihrer RemoteApp-Sammlung übereinstimmt (oder an dem Sie planen, sie zu erstellen).
 5.      Laden Sie, wenn Sie dazu aufgefordert werden, das Skript auf Ihren lokalen Computer herunter.
 6.      Kopieren Sie die Befehlsparameter im Textfeld in die Zwischenablage.
 7.      Öffnen Sie ein Windows PowerShell-Fenster mit erhöhten Rechten.
@@ -47,9 +47,8 @@ Nachdem Sie Ihr benutzerdefiniertes Vorlagenimage erstellt oder aktualisiert hab
 
 ## Häufiger auftretende Probleme
 
-- Vergewissern Sie sich, dass Sie Windows PowerShell, nicht Azure PowerShell verwenden. Sie müssen das Azure PowerShell-Modul installieren, da bestimmte Module während des Uploads erforderlich sind. 
+- Vergewissern Sie sich, dass Sie Windows PowerShell, nicht Azure PowerShell verwenden. Sie müssen das Azure PowerShell-Modul installieren, da bestimmte Module während des Uploads erforderlich sind.
 - Nehmen Sie keine Änderungen am Skript vor, die Überprüfungen sollen Ihnen helfen.
 - Wenn die VHD-Datei beim Upload ausgesperrt wird, kopieren oder verschieben Sie sie an den neuen Speicherort, und wiederholen Sie den Upload. Möglicherweise verhindern bestimmte Windows-Prozesse den Upload.  
- 
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

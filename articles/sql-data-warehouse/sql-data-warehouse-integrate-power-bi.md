@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="09/23/2015"
+   ms.date="10/06/2015"
    ms.author="lodipalm"/>
 
 # Verwenden von Power BI mit SQL Data Warehouse
@@ -33,7 +33,7 @@ Diese Einschränkungen und Hinweise können sich ändern, da wir die Umgebung we
 ## Mithilfe der Schaltfläche "Open in Power BI"
 Die einfachste Möglichkeit zum Navigieren zwischen Ihrem SQL Data Warehouse und Power BI ist über die Schaltfläche "Open in Power BI". Mit dieser Schaltfläche können Sie nahtlos beginnen, neue Dashboards in Power BI zu erstellen.
 
-1.	Navigieren Sie zunächst zu Ihrer SQL Data Warehouse-Instanz im Azure-Portal.
+1.	Navigieren Sie zunächst zu Ihrer SQL Data Warehouse-Instanz im klassischen Azure-Portal.
 2.	Klicken Sie auf die Schaltfläche "Open in Power BI".
 3.	Wenn Sie nicht direkt angemeldet werden können oder wenn Sie nicht über ein Power BI-Konto verfügen, müssen Sie sich anmelden.  
 4.	Sie werden auf die SQL Data Warehouse-Verbindungsseite weitergeleitet, die bereits mit den Informationen aus dem SQL Data Warehouse ausgefüllt ist.
@@ -50,7 +50,7 @@ Zusätzlich zur Schaltfläche "Open in Power BI" können Benutzer auch über das
 6.	 Sie können auf das neue Dataset klicken, um alle Tabellen und Sichten in der Datenbank zu untersuchen. Durch die Auswahl einer Spalte wird eine Abfrage zurück an die Quelle gesendet und dynamisch ein visuelles Element erstellt. Diese visuellen Elemente können in einem neuen Bericht gespeichert und wieder an Ihr Dashboard angeheftet werden.
 
 ## Suchen nach Parameterwerten
-Ihre vollqualifizierten Servernamen und Datenbanknamen finden Sie im Azure-Verwaltungsportal. Bitte beachten Sie, dass SQL Data Warehouse zu diesem Zeitpunkt nur im Azure-Vorschauportal verfügbar ist.
+Ihre vollqualifizierten Servernamen und Datenbanknamen finden Sie im klassischen Azure-Portal. Bitte beachten Sie, dass SQL Data Warehouse zu diesem Zeitpunkt nur im Azure-Portal verfügbar ist.
 
 
 <!--Image references-->
@@ -63,4 +63,4 @@ Ihre vollqualifizierten Servernamen und Datenbanknamen finden Sie im Azure-Verwa
 
 <!--Other Web references-->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

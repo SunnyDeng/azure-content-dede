@@ -121,7 +121,7 @@ Sie erhalten die Antwort "HTTP 201 Created", wenn die Datenquelle erfolgreich er
 
 ##<a id="CreateIndex"></a>Schritt 2: Erstellen eines Index
 
-Erstellen Sie einen Azure Search-Zielindex, wenn Sie bislang noch über keinen verfügen. Sie können dies auf der [Azure-Portal-Benutzeroberfläche](../search-get-started.md#test-service-operations) tun, oder indem Sie [Index-API erstellen](https://msdn.microsoft.com/library/azure/dn798941.aspx) verwenden.
+Erstellen Sie einen Azure Search-Zielindex, wenn Sie bislang noch über keinen verfügen. Sie können dies auf der [klassischen Azure-Portal-Benutzeroberfläche](../search-get-started.md#test-service-operations) tun, oder indem Sie [Index-API erstellen](https://msdn.microsoft.com/library/azure/dn798941.aspx) verwenden.
 
 	POST https://[Search service name].search.windows.net/indexes?api-version=[api-version]
 	Content-Type: application/json
@@ -270,4 +270,4 @@ Glückwunsch! Sie wissen nun, wie Azure DocumentDB mit Azure Search unter Verwen
  - Klicken Sie [hier](/services/search/), um weitere Informationen zu Azure Search zu erhalten.
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

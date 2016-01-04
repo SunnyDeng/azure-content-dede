@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/10/2015" 
+	ms.date="12/07/2015" 
 	ms.author="sdanie"/>
 
 # Autorisieren von Entwicklerkonten mithilfe von Active Directory in Azure API Management
@@ -26,7 +26,7 @@ Dieser Leitfaden zeigt, wie Sie den Zugriff auf das Entwicklerportal für alle B
 
 ## Autorisieren von Entwicklerkonten mithilfe von Active Directory
 
-Klicken Sie zunächst im Azure-Portal für Ihren API Management-Dienst auf **Verwalten**. Daraufhin gelangen Sie zum API Management-Herausgeberportal.
+Klicken Sie zunächst im klassischen Azure-Portal für Ihren API Management-Dienst auf **Verwalten**. Daraufhin gelangen Sie zum API Management-Herausgeberportal.
 
 ![Herausgeberportal][api-management-management-console]
 
@@ -36,7 +36,7 @@ Klicken Sie im Menü **API Management** auf der linken Seite auf **Sicherheit**,
 
 ![Externe Identitäten][api-management-security-external-identities]
 
-Klicken Sie auf **Azure Active Directory**. Notieren Sie sich den Wert für **Umleitungs-URL**, und wechseln Sie zu Azure Active Directory im Azure-Portal.
+Klicken Sie auf **Azure Active Directory**. Notieren Sie sich den Wert für **Umleitungs-URL**, und wechseln Sie im klassischen Azure-Portal zu Azure Active Directory.
 
 ![Externe Identitäten][api-management-security-aad-new]
 
@@ -228,4 +228,4 @@ Der Benutzer ist jetzt beim Entwicklerportal für Ihre API Management-Dienstinst
 
 [Anmelden beim Entwicklerportal mit einem Azure Active Directory-Konto]: #Log-in-to-the-Developer-portal-using-an-Azure-Active-Directory-account
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -13,15 +13,16 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="09/28/2015" 
+	ms.date="11/12/2015" 
 	ms.author="tamram;selcint"/>
 
 # Erste Schritte mit Azure Storage – Einstieg in fünf Minuten 
 
-Der Einstieg in die Entwicklung mit Azure Storage ist einfach. In diesem Lernprogramm erfahren Sie, wie Ihre Anwendungen in Azure Storage in kürzester Zeit betriebsbereit sind. Wir zeigen Ihnen zwei Szenarien für einen einfachen Einstieg in Azure Storage:
+## Übersicht
 
-- [Lokales Ausführen Ihrer ersten Azure Storage-Anwendung im Azure-Speicheremulator](#run-your-first-azure-storage-application-locally-against-the-azure-storage-emulator)
-- [Ausführen Ihrer ersten Azure Storage-Anwendung über Azure Storage in der Cloud](#run-your-first-azure-storage-application-against-azure-storage-in-the-cloud)
+Das Azure SDK enthält Schnellstart-Vorlagen für die Verwendung von Azure-Speicher in Microsoft Visual Studio. Sie können
+
+Der Einstieg in die Entwicklung mit Azure Storage ist einfach. In diesem Lernprogramm erfahren Sie, wie Ihre Anwendungen in Azure Storage in kürzester Zeit betriebsbereit sind. Wir zeigen Ihnen zwei Szenarien für einen einfachen Einstieg in Azure Storage:
 
 Wenn Sie mehr über Azure Storage erfahren möchten, bevor Sie am Code arbeiten, finden Sie die entsprechenden Informationen unter [Nächste Schritte](#next-steps).
 
@@ -40,7 +41,7 @@ Die neueste Version der Azure Storage Client Library-Binärdateien erhalten Sie 
 
 Wenn Sie eine Anwendung entwickeln, die Azure Storage verwendet, können Sie sie im [Azure-Speicheremulator](storage-use-emulator.md) ausführen. Der Speicheremulator bietet eine lokale Umgebung, die die Azure-Blob-, -Warteschlangen- und -Tabellenspeicherdienste für Entwicklungszwecke emuliert. Sie können den Speicheremulator verwenden, um Ihre Anwendung lokal zu testen, ohne ein Azure-Abonnement oder ein Speicherkonto zu benötigen und ohne dass Kosten anfallen.
 
-Um dies auszuprobieren, erstellen wir nun eine einfache Azure Storage-Anwendung mithilfe eines der Azure-Schnellstart-Beispielprojekte in Visual Studio. Dieses Lernprogramm konzentriert sich auf Beispielprojekte mit **Azure-Blobspeicher**, **Azure-Tabellenspeicher** und **Azure-Warteschlangenspeicher**.
+Um dies auszuprobieren, erstellen wir nun eine einfache Azure Storage-Anwendung mit einem der Azure-Schnellstart-Beispielprojekte in Visual Studio. Dieses Lernprogramm konzentriert sich auf Beispielprojekte mit **Azure-Blobspeicher**, **Azure-Tabellenspeicher** und **Azure-Warteschlangenspeicher**.
 
 1. Starten Sie Visual Studio.
 2. Klicken Sie im Menü **Datei** auf **Neues Projekt**.
@@ -100,6 +101,7 @@ Weitere Informationen zu Azure Storage finden Sie in den folgenden Ressourcen:
 * [Verwenden des Blob-Speichers mit .NET](storage-dotnet-how-to-use-blobs.md)
 * [Verwenden des Tabellenspeichers mit .NET](storage-dotnet-how-to-use-tables.md)
 * [Verwenden des Warteschlangenspeichers mit .NET](storage-dotnet-how-to-use-queues.md)
+* [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy)
 * [Azure-Speicherdokumentation](http://azure.microsoft.com/documentation/services/storage/)
 * [Azure Storage Client Library](https://msdn.microsoft.com/library/azure/wa_storage_30_reference_home.aspx)
 * [Azure Storage-REST-API](https://msdn.microsoft.com/library/azure/dd179355.aspx)
@@ -107,4 +109,4 @@ Weitere Informationen zu Azure Storage finden Sie in den folgenden Ressourcen:
 [Image1]: ./media/storage-getting-started-guide/QuickStart.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

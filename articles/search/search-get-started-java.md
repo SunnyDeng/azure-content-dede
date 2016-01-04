@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Erste Schritte mit Azure Search in Java | Microsoft Azure | Gehosteter Cloudsuchdienst"
-	description="Erstellen einer gehosteten Cloudsuchanwendung in Azure mit der Programmiersprache Java."
+	description="Informationen zum Erstellen einer gehosteten Cloudsuchanwendung in Azure mit der Programmiersprache Java."
 	services="search"
 	documentationCenter=""
 	authors="HeidiSteen"
@@ -28,7 +28,7 @@ Zum Erstellen und Testen dieses Beispiels wurde die folgende Software verwendet:
 
 - [Apache Tomcat 8.0](http://tomcat.apache.org/download-80.cgi)
 
-Um dieses Beispiel auszuführen, benötigen Sie einen Azure Search-Dienst, für den Sie sich im [Azure-Verwaltungsportal](https://portal.azure.com) anmelden können.
+Um dieses Beispiel auszuführen, benötigen Sie einen Azure Search-Dienst, für den Sie sich am [klassischen Azure-Portal](https://portal.azure.com) anmelden können.
 
 > [AZURE.TIP]Laden Sie den Quellcode für dieses Lernprogramm von [Azure Search Java demo](http://go.microsoft.com/fwlink/p/?LinkId=530197) von Github herunter.
 
@@ -55,7 +55,7 @@ Die folgende Liste beschreibt die Dateien, die für dieses Beispiel relevant sin
 
 ## Erstellen des Diensts
 
-1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
+1. Melden Sie sich am [klassischen Azure-Portal](https://portal.azure.com) an.
 
 2. Navigieren Sie über die seitliche Navigationsleiste zu **Neu** > **Daten + Speicher** > **Search**.
 
@@ -123,7 +123,7 @@ Alle nachfolgenden Dateiänderungen und Ausführungsanweisungen werden an den Da
 
 1. Doppelklicken Sie in **Project Explorer** auf **config.properties**, um die Konfigurationseinstellungen zu bearbeiten, die den Servernamen und den API-Schlüssel enthalten.
 
-2. Schlagen Sie die Schritte weiter oben in diesem Artikel nach, mit denen Sie die Dienst-URL und den API-Schlüssel im [Azure-Portal](https://portal.azure.com) ermittelt haben, um die Werte zu erhalten, die Sie jetzt in **config.properties** eingeben.
+2. Schlagen Sie die Schritte weiter oben in diesem Artikel nach, mit denen Sie die Dienst-URL und den API-Schlüssel im [klassischen Azure-Portal](https://portal.azure.com) ermittelt haben, um die Werte zu erhalten, die Sie jetzt in **config.properties** eingeben.
 
 3. Ersetzen Sie in der Datei **config.properties**, "API Key" durch den API-Schlüssel ihres Diensts. Anschließend ersetzen Sie in der gleichen Datei "service name" durch den Dienstname (die erste Komponente der URL http://servicename.search.windows.net).
 
@@ -231,4 +231,4 @@ Neu bei Azure Search? Es wird empfohlen, auch andere Lernprogramme zu bearbeiten
 [11]: ./media/search-get-started-java/rogerwilliamsschool1.PNG
 [12]: ./media/search-get-started-java/AzSearch-Java-SelectProject.png
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

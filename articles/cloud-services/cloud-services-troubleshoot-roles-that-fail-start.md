@@ -41,7 +41,7 @@ Lösung: Zur Untersuchung dieser Probleme gibt es drei empfohlene Methoden.
 
 Sie navigieren zu einer Website, die in einer Webrolle bereitgestellt ist, und der Browser zeigt einen Serverfehler ähnlich dem folgenden an:
 
-![Serverfehler in Anwendung '/'](./media/cloud-services-troubleshoot-roles-that-fail-start/ic503388.png)
+![Serverfehler in Anwendung '/'.](./media/cloud-services-troubleshoot-roles-that-fail-start/ic503388.png)
 
 ## Diagnostizieren von Problemen durch Deaktivieren von benutzerdefinierten Fehlern
 
@@ -59,7 +59,7 @@ So zeigen Sie umfassendere Fehlerinformationen an, ohne Remotedesktop zu verwend
     <customErrors mode="Off" />
     ```
 
-4. Speichern Sie die Datei .
+4. Speichern Sie die Datei.
 
 5. Packen Sie den Dienst neu, und stellen Sie ihn erneut bereit.
 
@@ -73,7 +73,7 @@ Sie können Remotedesktop verwenden, um remote auf die Rolle zuzugreifen und vol
 
 2. Wählen Sie während der Bereitstellung der Projektmappe mithilfe von Visual Studio die Option zum Konfigurieren von Remotedesktopverbindungen. Weitere Informationen hierzu finden Sie unter [Verwenden von Remotedesktop mit Azure-Rollen](https://msdn.microsoft.com/library/gg443832.aspx).
 
-3. Wenn die Instanz im Microsoft Azure-Verwaltungsportal den Status **Bereit** zeigt, klicken Sie auf eine der Rolleninstanzen.
+3. Wenn die Instanz im klassischen Microsoft Azure-Portal den Status **Bereit** zeigt, klicken Sie auf eine der Rolleninstanzen.
 
 4. Klicken Sie im Menübandbereich **Remotezugriff** auf das Symbol **Verbinden**.
 
@@ -97,7 +97,7 @@ Wenn Sie jetzt zu der Website navigieren, werden ausführlichere Fehlermeldungen
 
 * Ausnahmedetails: System.IO.FIleNotFoundException: Die Datei oder Assembly "Microsoft.WindowsAzure.StorageClient, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf856ad364e35" oder eine Abhängigkeit davon wurde nicht gefunden. Die angegebene Datei wurde nicht gefunden.
 
-Zum Beispiel:
+Beispiel:
 
 ![Expliziter Serverfehler in Anwendung '/'](./media/cloud-services-troubleshoot-roles-that-fail-start/ic503389.png)
 
@@ -165,4 +165,4 @@ Nachdem Sie sichergestellt haben, dass alle Fehler behoben wurden, können Sie d
 
 Sehen Sie sich weitere [Artikel zur Problembehandlung](..\?tag=top-support-issue&service=cloud-services) für Clouddienste an.
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/29/2015" 
+	ms.date="12/10/2015" 
 	ms.author="cephalin"/>
 
 # Erstellen digitaler Marketingkampagnen in Azure App Service-Web-Apps
@@ -31,9 +31,9 @@ Nachstehend sehen Sie ein Beispiel für eine globale, über mehrere Kanäle durc
 
 Sie können entweder mithilfe eines gängigen CMS aus dem Katalog neue Web-Apps erstellen, oder Sie verschieben Ihre vorhandenen Webressourcen in App Service-Web-Apps – in verschiedenen Sprachen und mit verschiedenen Frameworks.
 
-Der Azure Marketplace bietet Vorlagen für gängige Website-CMS (Content Management System), wie z. B. Orchard, Umbraco, Drupal und [WordPress]. Sie können eine Web-App mit Ihrem bevorzugten CMS erstellen. Sie können aus verschiedenen Datenbank-Back-Ends auswählen, um Ihre Anforderungen zu erfüllen, darunter [Azure SQL-Datenbank] und [MySQL].
+Der Azure Marketplace bietet Vorlagen für gängige Website-CMS (Content Management System), z. B. Orchard, Umbraco, Drupal und [WordPress]. Sie können eine Web-App mit Ihrem bevorzugten CMS erstellen. Sie können aus verschiedenen Datenbank-Back-Ends auswählen, um Ihre Anforderungen zu erfüllen, darunter [Azure SQL-Datenbank] und [MySQL].
 
-Ihre vorhandenen Webressourcen können in Web-Apps ausgeführt werden, unabhängig davon, ob es sich um .NET, PHP, Java, Node.js oder Python handelt. Sie können die Ressourcen mithilfe Ihrer bevorzugten [FTP]-Tools in Web-Apps verschieben. Wenn Sie häufig digitale Marketingkampagnen erstellen, verfügen Sie möglicherweise bereits über Webressourcen in einem Quellcodeverwaltungssystem. Web-Apps unterstützen eine direkte Bereitstellung aus gängigen Quellcodeverwaltungssystemen wie z. B. [Visual Studio], [Visual Studio Online] oder [Git] (lokal), GitHub, BitBucket, Dropbox, Mercurial usw.
+Ihre vorhandenen Webressourcen können in Web-Apps ausgeführt werden, unabhängig davon, ob es sich um .NET, PHP, Java, Node.js oder Python handelt. Sie können die Ressourcen mithilfe Ihrer bevorzugten [FTP]-Tools in Web-Apps verschieben. Wenn Sie häufig digitale Marketingkampagnen erstellen, verfügen Sie möglicherweise bereits über Webressourcen in einem Quellcodeverwaltungssystem. Web-Apps unterstützen eine direkte Bereitstellung aus gängigen Quellcodeverwaltungssystemen wie [Visual Studio], [Visual Studio Online] oder [Git] – lokal, GitHub, BitBucket, Dropbox, Mercurial usw.
 
 ## Bleiben Sie flexibel
 
@@ -71,7 +71,7 @@ Stellen Sie durch das [Integrieren Ihrer Web-App in Azure CDN] statische Inhalte
 
 Optimieren Sie Ihre Web-App über eine automatische Skalierung mit "Autoskalierung", eine Zwischenspeicherung mit Azure Redis Cache und die Ausführung von Hintergrundaufgaben mithilfe von WebJobs, und sorgen Sie mit Azure Traffic Manager für eine gleichbleibend hohe Verfügbarkeit.
 
-Die Fähigkeit von App Service-Web-Apps, eine [flexible Skalierung] zu ermöglichen, ist perfekt für unvorhersehbare Workloads wie bei digitalen Marketingkampagnen geeignet. Skalieren Sie Ihre Web-App manuell über das [Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715), programmgesteuert über die [Dienstverwaltungs-API] oder über [PowerShell-Skripts] oder automatisch über die Funktion "Autoskalierung". Im Modus **Standard** können Sie eine Web-App mithilfe von "Autoskalierung" basierend auf der CPU-Auslastung automatisch horizontal hochskalieren. Diese Funktion ermöglicht maximale Flexibilität bei minimalen Kosten, da die Web-App nur dann skaliert wird, wenn dies basierend auf der Benutzeraktivität erforderlich ist. Bewährte Methoden finden Sie auf der Website von [Troy Hunt]\: [10 things I learned about rapidly scaling websites with Azure] (10 Dinge, die ich über eine schnelle Skalierung von Websites mit Azure gelernt habe, in englischer Sprache).
+Die Fähigkeit von App Service-Web-Apps, eine [flexible Skalierung] zu ermöglichen, ist perfekt für unvorhersehbare Workloads wie bei digitalen Marketingkampagnen geeignet. Skalieren Sie Ihre Web-App manuell über das [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715), programmgesteuert über die [Dienstverwaltungs-API] oder [PowerShell-Skripts] oder automatisch über die Funktion „Autoskalierung“. Im Modus **Standard** können Sie eine Web-App mithilfe von "Autoskalierung" basierend auf der CPU-Auslastung automatisch horizontal hochskalieren. Diese Funktion ermöglicht maximale Flexibilität bei minimalen Kosten, da die Web-App nur dann skaliert wird, wenn dies basierend auf der Benutzeraktivität erforderlich ist. Bewährte Methoden finden Sie auf der Website von [Troy Hunt]\: [10 things I learned about rapidly scaling websites with Azure] (10 Dinge, die ich über eine schnelle Skalierung von Websites mit Azure gelernt habe, in englischer Sprache).
 
 Erhöhen Sie die Reaktionsfähigkeit Ihrer Web-App mit [Azure Redis Cache]. Nutzen Sie diese Funktion zum Zwischenspeichern von Daten aus Back-End-Datenbanken und anderen Daten, beispielsweise [ASP.NET-Sitzungszustand] und [Ausgabecache].
 
@@ -81,7 +81,7 @@ Stellen Sie mithilfe von [Azure Traffic Manager] eine hohe Verfügbarkeit Ihrer 
 
 Sorgen Sie mit Azure oder Tools von Drittanbietern für eine optimale Leistung Ihrer Web-App. Empfangen Sie Warnungen zu kritischen Web-App-Ereignissen. Erhalten Sie problemlos Benutzereinblick über Application Insights oder eine Webprotokollanalyse aus HDInsight.
 
-Im Blatt der Web-App im [Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715) erhalten Sie eine [Übersicht] über die aktuellen Leistungskennzahlen und Ressourcenkontingente der Web-App. Eine 360-Grad-Ansicht Ihrer Anwendung, einschließlich von Daten zu Verfügbarkeit, Leistung und Auslastung, erhalten Sie mit [Azure Application Insights]. So erhalten Sie schnell aussagekräftige Erkenntnisse zu Problembehandlung, Diagnose und Nutzung. Sie können auch ein Drittanbietertool wie [New Relic] nutzen, um weiterführende Überwachungsdaten zu Ihren Web-Apps zu erhalten.
+Auf dem Blatt der Web-App im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) erhalten Sie eine [Übersicht] über die aktuellen Leistungsmetriken und Ressourcenkontingente der Web-App. Eine 360-Grad-Ansicht Ihrer Anwendung, einschließlich von Daten zu Verfügbarkeit, Leistung und Auslastung, erhalten Sie mit [Azure Application Insights]. So erhalten Sie schnell aussagekräftige Erkenntnisse zu Problembehandlung, Diagnose und Nutzung. Sie können auch ein Drittanbietertool wie [New Relic] nutzen, um weiterführende Überwachungsdaten zu Ihren Web-Apps zu erhalten.
 
 Im Modus **Standard** erhalten die für die Web-App-Überwachung verantwortlichen Benutzer E-Mail-Benachrichtigungen, wenn die Web-App nicht mehr reagiert. Weitere Informationen finden Sie unter [Empfangen von Warnbenachrichtigungen und Verwalten von Warnregeln in Azure].
 
@@ -138,4 +138,4 @@ Im Modus **Standard** erhalten die für die Web-App-Überwachung verantwortliche
   [gitstaging]: http://www.bradygaster.com/post/multiple-environments-with-windows-azure-web-sites
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1217_2015-->

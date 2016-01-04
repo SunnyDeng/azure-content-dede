@@ -45,7 +45,7 @@ Sie müssen Folgendes auf Ihrem Computer installiert haben: – Visual Studio 20
 
 	![Dialogfeld "Neues Projekt"](./media/data-factory-get-started-using-vs/new-project-dialog.png)
 
-3. Füllen Sie für das Projekt die Felder **Name**, **Speicherort** und **Lösung** aus, und klicken Sie auf **OK**.
+3. Füllen Sie für das Projekt die Felder **Name**, **Speicherort** und **Lösung** aus, und klicken Sie auf**OK**.
 
 	![Projektmappen-Explorer](./media/data-factory-get-started-using-vs/solution-explorer.png)
 
@@ -57,7 +57,7 @@ In diesem Schritt erstellen Sie zwei verknüpfte Dienste: **AzureStorageLinkedSe
 ##### Erstellen des mit Azure Storage verknüpften Diensts
 
 4. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf **Verknüpfte Dienste**, zeigen Sie auf **Hinzufügen**, und klicken Sie auf **Neues Element**.      
-5. Wählen Sie im Dialogfeld **Neues Element hinzufügen** die Option **Azure Storage Linked Service** aus der Liste aus, und klicken Sie auf **Hinzufügen**. 
+5. Wählen Sie im Dialogfeld **Neues Element hinzufügen** die Option **Mit Azure-Speicher verknüpfter Dienst** aus der Liste aus, und klicken Sie auf **Hinzufügen**. 
 
 	![Neuer verknüpfter Dienst](./media/data-factory-get-started-using-vs/new-linked-service-dialog.png)
  
@@ -80,9 +80,9 @@ Im vorherigen Schritt haben Sie die verknüpften Dienste **AzureStorageLinkedSer
 
 #### Erstellen der Eingabetabelle
 
-9. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf **Tabellen**, zeigen Sie auf **Hinzufügen**, und klicken Sie auf **Neues Element**.
+9. Klicken Sie mit der rechten Maustaste auf **Tabellen** im **Projektmappen-Explorer**, zeigen Sie auf **Hinzufügen**, und klicken Sie auf **Neues Element**.
 10. Wählen Sie im Dialogfeld **Neues Element hinzufügen** die Option **Azure-Blob** aus, und klicken Sie auf **Hinzufügen**.   
-10. Ersetzen Sie den JSON-Text durch den folgenden Text, und speichern Sie die Datei **AzureBlobLocation1.json**. 
+10. Ersetzen Sie den JSON-Text durch den folgenden Text, und speichern Sie die **AzureBlobLocation1.json**-Datei. 
 
 		{
 		  "name": "EmpTableFromBlob",
@@ -232,8 +232,8 @@ Um die Azure Data Factory-Tools für Visual Studio zu aktualisieren, führen Sie
 
 1. Klicken Sie im Menü auf **Extras**, und wählen Sie**Erweiterungen und Updates** aus. 
 2. Wählen Sie im linken Bereich **Updates** und dann **Visual Studio Gallery** aus.
-4. Wählen Sie **Azure Data Factory tools for Visual Studio** aus, und klicken Sie auf **Aktualisieren**. Wenn dieser Eintrag nicht angezeigt wird, verfügen Sie bereits über die neueste Version der Tools. 
+4. Wählen Sie **Azure Data Factory tools for Visual Studio** aus, und klicken Sie auf **Update**. Wenn dieser Eintrag nicht angezeigt wird, verfügen Sie bereits über die neueste Version der Tools. 
 
-Unter [Überwachen von DataSets und Pipelines](data-factory-get-started-using-editor.md#MonitorDataSetsAndPipeline) finden Sie eine Anleitung zum Überwachen der in dieser Anleitung erstellten Pipeline und DataSets über das Azure-Vorschauportal.
+Unter [Überwachen von Datasets und Pipelines](data-factory-get-started-using-editor.md#MonitorDataSetsAndPipeline) finden Sie eine Anleitung zum Überwachen der in diesem Tutorial erstellten Pipeline und Datasets über das Azure-Portal.
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

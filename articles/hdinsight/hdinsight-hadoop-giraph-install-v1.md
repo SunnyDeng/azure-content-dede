@@ -24,7 +24,7 @@ Mithilfe von *Skriptaktionen* können Sie Giraph in einem beliebigen Clustertyp 
 
 **Verwandte Artikel**
 
-- [Installieren von Giraph in HDInsight-Clustern](hdinsight-hadoop-giraph-install.md): Installieren von Giraph über das Azure-Vorschauportal
+- [Installieren von Giraph in HDInsight-Clustern](hdinsight-hadoop-giraph-install.md): Installieren von Giraph über das Azure-Portal
 - [Installieren von Giraph in HDInsight Hadoop-Clustern (Linux)](hdinsight-hadoop-giraph-install-linux.md)
 - [Erstellen von Hadoop-Clustern in HDInsight](hdinsight-provision-clusters.md): Allgemeine Informationen zum Erstellen von HDInsight-Clustern
 - [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen][hdinsight-cluster-customize]\: Allgemeine Informationen zum Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen
@@ -116,7 +116,7 @@ Das Beispiel "SimpleShortestPathsComputation" demonstriert die grundlegende <a h
 
 	Ersetzen Sie im Beispiel oben **clustername** durch den Namen Ihres HDInsight-Clusters, in dem Giraph installiert ist.
 
-5. Zeigen Sie die Ergebnisse an. Nach Abschluss des Auftrags werden die Ergebnisse in zwei Ausgabedateien im Ordner "\_\___wasb:///example/out/shotestpaths__" gespeichert. Die Dateien heißen __part-m-00001__ und __part-m-00002__. Führen Sie die folgenden Schritte aus, um die Ausgabe herunterzuladen und anzuzeigen:
+5. Zeigen Sie die Ergebnisse an. Nach Abschluss des Auftrags werden die Ergebnisse in zwei Ausgabedateien im Ordner „\_\___wasb:///example/out/shotestpaths__“gespeichert. Die Dateien heißen __part-m-00001__ und __part-m-00002__. Führen Sie die folgenden Schritte aus, um die Ausgabe herunterzuladen und anzuzeigen:
 
 		$subscriptionName = "<SubscriptionName>"       # Azure subscription name
 		$storageAccountName = "<StorageAccountName>"   # Azure Storage account name
@@ -171,7 +171,7 @@ Weitere Informationen finden Sie unter [Anpassen von HDInsight-Clustern mithilfe
 
 ## Weitere Informationen
 
-- [Installieren von Giraph in HDInsight-Clustern](hdinsight-hadoop-giraph-install.md): Installieren von Giraph über das Azure-Vorschauportal
+- [Installieren von Giraph in HDInsight-Clustern](hdinsight-hadoop-giraph-install.md): Installieren von Giraph über das Azure-Portal
 - [Installieren von Giraph in HDInsight Hadoop-Clustern (Linux)](hdinsight-hadoop-giraph-install-linux.md)
 - [Erstellen von Hadoop-Clustern in HDInsight](hdinsight-provision-clusters.md): Allgemeine Informationen zum Erstellen von HDInsight-Clustern
 - [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen][hdinsight-cluster-customize]\: Allgemeine Informationen zum Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen
@@ -190,4 +190,4 @@ Weitere Informationen finden Sie unter [Anpassen von HDInsight-Clustern mithilfe
 [hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster.md
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -8,4 +8,4 @@ Beachten Sie bei der Verwendung des virtuellen StorSimple-Geräts die folgenden 
 
 - Das virtuelle Gerät wird im Microsoft Azure-Datencenter gehostet.
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1217_2015-->

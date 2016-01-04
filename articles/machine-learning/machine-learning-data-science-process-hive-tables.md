@@ -13,35 +13,35 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/01/2015"
+	ms.date="12/11/2015"
 	ms.author="hangzh;bradsev" />
 
 #<a name="heading"></a> Übermitteln von Hive-Abfragen an HDInsight Hadoop-Cluster im erweiterten Analyseprozess 
 
-In diesem Dokument werden die verschiedenen Möglichkeiten zum Übermitteln von Hive-Abfragen an Hadoop-Cluster beschrieben, die durch einen HDInsight-Dienst in Azure verwaltet werden. Diese Aufgabe gehört zur Advanced Analytics Process and Technology (ADAPT), die von Azure Machine Learning bereitgestellt wird. Es werden mehrere Aufgaben zum Analysieren von Daten erläutert: das Durchsuchen von Daten und das Generieren von Funktionen. Generische Hive-Abfragen zeigen, wie Sie mit Hive in Azure HDInsight Hadoop-Clustern Daten durchsuchen oder Funktionen generieren. Diese Hive-Abfragen verwenden eingebettete Hive-UDFs (User Defined Function, benutzerdefinierte Funktion), die bereitgestellt werden.
+In diesem Dokument werden die verschiedenen Möglichkeiten zum Übermitteln von Hive-Abfragen an Hadoop-Cluster beschrieben, die durch einen HDInsight-Dienst in Azure verwaltet werden. Diese Aufgabe ist ein Teil des Cortana-Analyseprozesses (CAP). Es werden mehrere Aufgaben zum Analysieren von Daten erläutert: das Durchsuchen von Daten und das Generieren von Funktionen. Es werden generische Hive-Abfragen, die zeigen, wie Sie mit Hive in Azure HDInsight Hadoop-Clustern Daten durchsuchen oder Funktionen generieren, vorgeführt. Diese Hive-Abfragen verwenden eingebettete Hive-UDFs (User Defined Function, benutzerdefinierte Funktion), die bereitgestellt werden.
 
 Beispiele für Abfragen speziell für Szenarios mit den [NYC Taxi Trip-Daten](http://chriswhong.com/open-data/foil_nyc_taxi/) stehen auch im [GitHub-Repository](https://github.com/Azure/Azure-MachineLearning-DataScience/tree/master/Misc/DataScienceProcess/DataScienceScripts) bereit. Für diese Abfragen ist bereits ein Datenschema angegeben, sodass sie bereit für die Übermittlung zur Ausführung sind.
 
-Im letzten Abschnitt werden Parameter beschrieben, mit denen Sie die Leistung der Hive-Abfragen optimieren können.
+Im letzten Abschnitt werden Parameter beschrieben, mit denen Sie die Leistung der Hive-Abfragen abstimmen und verbessern können.
 
 ## Voraussetzungen
 In diesem Artikel wird davon ausgegangen, dass Sie Folgendes abgeschlossen haben:
 
 * Sie haben ein Azure-Speicherkonto erstellt. Anweisungen finden Sie unter [Erstellen eines Azure-Speicherkontos](../hdinsight-get-started.md#storage)
-* Sie haben einen angepassten Hadoop-Cluster mit dem HDInsight-Dienst bereitgestellt. Anweisungen dazu finden Sie unter [Anpassen von Azure HDInsight Hadoop-Clustern für die erweiterte Analyse](machine-learning-data-science-customize-hadoop-cluster.md).
+* Sie haben einen angepassten Hadoop-Cluster mit dem HDInsight-Dienst bereitgestellt. Anweisungen hierzu finden Sie unter [Anpassen von Azure HDInsight Hadoop-Clustern für die erweiterte Analyse](machine-learning-data-science-customize-hadoop-cluster.md).
 * Sie haben die Daten in Hive-Tabellen auf Azure HDInsight Hadoop-Clustern hochgeladen. Wenn dies nicht der Fall ist, führen Sie die unter [Erstellen und Laden von Daten in Hive-Tabellen](machine-learning-data-science-move-hive-tables.md) beschriebenen Schritte zum Hochladen von Daten in Hive-Tabellen aus.
 * Sie haben den Remotezugriff auf den Cluster aktiviert. Anweisungen finden Sie unter [Zugreifen auf den Hauptknoten von Hadoop-Clustern](machine-learning-data-science-customize-hadoop-cluster.md#headnode).
 
 
 ## <a name="submit"></a>Übermitteln von Hive-Abfragen
-Hive-Abfragen können folgendermaßen übermittelt werden:
+Hive-Abfragen können mithilfe der folgenden Anwendungen übermittelt werden:
 
-* an der Hadoop-Befehlszeile auf dem Hauptknoten des Clusters
-* in einem IPython Notebook
-* im Hive-Editor
-* mit Azure PowerShell-Skripts
+* **Hadoop-Befehlszeilenkonsole** auf dem Hauptknoten des Clusters
+* **IPython Notebook**
+* **Hive-Editor**
+* **PowerShell**-Skripte
 
-Hive-Abfragen sind ähnlich wie SQL-Abfragen. Mit SQL vertraute Benutzer finden möglicherweise das <a href="http://hortonworks.com/wp-content/uploads/downloads/2013/08/Hortonworks.CheatSheet.SQLtoHive.pdf" target="_blank">Cheat Sheet "Hive for SQL Users"</a> nützlich.
+Hive-Abfragen sind ähnlich wie SQL-Abfragen. Mit SQL vertraute Benutzer finden möglicherweise das <a href="http://hortonworks.com/wp-content/uploads/downloads/2013/08/Hortonworks.CheatSheet.SQLtoHive.pdf" target="_blank">Cheat Sheet „Hive for SQL Users“</a> nützlich.
 
 Beim Übermitteln von Hive-Abfragen können Sie auch das Ziel der Ausgabe der Hive-Abfragen steuern. Diese kann auf den Bildschirm, in eine lokale Datei auf dem Hauptknoten oder in ein Azure-Blob erfolgen.
 
@@ -67,7 +67,7 @@ Sie können z. B. folgende Befehle ausführen:
 
 Damit übermitteln sie die Hive-Abfragen direkt an der Hadoop-Befehlszeile. Hier ist ein Beispiel. Das rote Kästchen enthält den Befehl, der die Hive-Abfrage übermittelt, und das grüne Kästchen umschließt die Ausgabe der Hive-Abfrage.
 
-![Arbeitsbereich erstellen][10]
+![Arbeitsbereich erstellen](./media/machine-learning-data-science-process-hive-tables/run-hive-queries-1.png)
 
 #### Übermitteln der Hive-Abfragen in HQL-Dateien
 
@@ -87,7 +87,7 @@ Standardmäßig wird bei Hive-Abfragen, die über die Hadoop-Befehlszeile überm
 
 Sie können auch die Hive-Befehlskonsole starten, indem Sie den `hive`-Befehl an der Hadoop-Befehlszeile eingeben und dann Hive-Abfragen über die Hive-Befehlskonsole an der Eingabeaufforderung **hive>** übermitteln. Beispiel:
 
-![Arbeitsbereich erstellen][11]
+![Arbeitsbereich erstellen](./media/machine-learning-data-science-process-hive-tables/run-hive-queries-2.png)
 
 In diesem Beispiel kennzeichnen die beiden roten Kästchen die Befehle, die zum Starten der Hive-Befehlskonsole verwendet werden, und die Hive-Abfrage, die über die Hive-Befehlskonsole übermittelt wird. Das grüne Kästchen markiert die Ausgabe der Hive-Abfrage.
 
@@ -108,11 +108,11 @@ Sie können die Hive-Abfrageergebnisse auch in ein Azure-Blob im Standardcontain
 
 Im folgenden Beispiel wird die Ausgabe der Hive-Abfrage in das Blob-Verzeichnis `queryoutputdir` innerhalb des Standardcontainer des Hadoop-Cluster geschrieben. Hier müssen Sie nur den Namen des Verzeichnisses ohne den Namen des Blobs angeben. Es wird ein Fehler ausgelöst, wenn Sie sowohl den Verzeichnis- als auch den Blobnamen angeben, z. B. **wasb:///queryoutputdir/queryoutput.txt*.
 
-![Arbeitsbereich erstellen][13]
+![Arbeitsbereich erstellen](./media/machine-learning-data-science-process-hive-tables/output-hive-results-2.png)
 
 Sie können die Ausgabe der Hive-Abfrage im Blob-Speicher anzeigen, indem Sie den Standardcontainer des Hadoop-Clusters mithilfe des Azure-Speicher-Explorers (oder eines ähnlichen Tools) öffnen. Sie können Filter (markiert durch den roten Kasten) anwenden, um nur das Blob mit den angegebenen Buchstaben im Namen abzurufen.
 
-![Arbeitsbereich erstellen][14]
+![Arbeitsbereich erstellen](./media/machine-learning-data-science-process-hive-tables/output-hive-results-3.png)
 
 ### Über den Hive-Editor oder Azure PowerShell-Befehle
 
@@ -226,7 +226,7 @@ Hive bietet eine Reihe von UDFs für die Verarbeitung von "datetime"-Feldern. In
     	select day(<datetime field>), month(<datetime field>)
 		from <databasename>.<tablename>;
 
-Bei dieser Hive-Abfrage wird vorausgesetzt, dass das *&#60;Datum/Uhrzeit-Feld>* im Standardformat für "datetime" vorliegt.
+Bei dieser Hive-Abfrage wird vorausgesetzt, dass das *&#60;Datum/Uhrzeit-Feld>* im Standardformat für „datetime“ vorliegt.
 
 Liegt ein "datetime"-Feld nicht im Standardformat vor, muss zunächst das "datetime"-Feld in einen Unix-Zeitstempel konvertierten werden, der dann in eine "datetime"-Zeichenfolge im Standardformat konvertiert wird. Wenn "datetime" das Standardformat aufweist, können Sie die eingebetteten "datetime"-UDFs anwenden, um Funktionen zu extrahieren.
 
@@ -270,17 +270,17 @@ Die in dieser Abfrage verwendeten Felder sind GPS-Koordinaten von Start- und Zie
 		and dropoff_latitude between 30 and 90
 		limit 10;
 
-Die mathematischen Gleichungen zur Berechnung der Entfernung zwischen zwei GPS-Koordinaten finden Sie auf der Website <a href="http://www.movable-type.co.uk/scripts/latlong.html" target="_blank">Movable Type Scripts</a> von Peter Lapisu. In seinem JavaScript-Code ist die `toRad()`-Funktion nur *lat\_or\_lon*pi/180* und rechnet Grad in Radianten um. Hierbei ist *lat\_or\_lon* der Längen- oder Breitengrad. Da Hive keine `atan2`-Funktion bereitstellt, jedoch die `atan`-Funktion, wird die `atan2`-Funktion in der oben angegebenen Hive-Abfrage durch die `atan`-Funktion anhand der in <a href="http://en.wikipedia.org/wiki/Atan2" target="_blank">Wikipedia</a> angegebenen Definition implementiert.
+Die mathematischen Gleichungen zur Berechnung der Entfernung zwischen zwei GPS-Koordinaten finden Sie auf der Website <a href="http://www.movable-type.co.uk/scripts/latlong.html" target="_blank">Movable Type Scripts</a> von Peter Lapisu. In seinem JavaScript-Code ist die `toRad()`-Funktion nur *lat\_or\_lon*pi/180* und rechnet Grad in Radianten um. Hierbei ist *lat\_or\_lon* der Längen- oder Breitengrad. Da Hive keine `atan2`-Funktion bereitstellt, jedoch die `atan`-Funktion, wird die `atan2`-Funktion in der oben angegebenen Hive-Abfrage anhand der in <a href="http://en.wikipedia.org/wiki/Atan2" target="_blank">Wikipedia</a> angegebenen Definition durch die `atan`-Funktion implementiert.
 
-![Arbeitsbereich erstellen][1]
+![test](./media/machine-learning-data-science-process-hive-tables/atan2new.png)
 
-Eine vollständige Liste der eingebettete Hive-UDFs finden Sie im Abschnitt **Built-in Functions** im <a href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF#LanguageManualUDF-MathematicalFunctions" target="_blank">Apache Hive-Wiki</a>.
+Eine vollständige Liste der eingebetteten Hive-UDFs finden Sie im Abschnitt **Built-in Functions** im <a href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF#LanguageManualUDF-MathematicalFunctions" target="_blank">Apache Hive-Wiki</a>.
 
 ## <a name="tuning"></a>Weiterführende Themen: Optimieren von Hive-Parametern zur Verbesserung der Abfrage-Geschwindigkeit
 
 Die Standardeinstellungen für die Parameter von Hive-Clustern eignen sich möglicherweise nicht für die Hive-Abfragen und die von den Abfragen verarbeiteten Daten. In diesem Abschnitt werden einige Parameter beschrieben, mit denen Sie die Leistung der Hive-Abfragen optimieren können. Sie müssen die Abfragen zur Parameteroptimierung vor den Abfragen der Verarbeitungsdaten einfügen.
 
-1. **Java-Heapspeicher**: Für Abfragen, bei denen große Datasets zusammengeführt oder lange Datensätze verarbeitet werden, besteht ein typischer Fehler darin, **dass nicht über genügend Heapspeicher verfügt**. Dies kann durch Festlegen der Parameter *mapreduce.map.java.opts* und *mapreduce.task.io.sort.mb* auf die gewünschten Werte optimiert werden. Beispiel:
+1. **Java-Heapspeicher**: Für Abfragen, bei denen große Datasets zusammengeführt oder lange Datensätze verarbeitet werden, besteht ein typischer Fehler darin, **dass nicht genügend Heapspeicher verfügbar ist**. Dies kann durch Festlegen der Parameter *mapreduce.map.java.opts* und *mapreduce.task.io.sort.mb* auf die gewünschten Werte optimiert werden. Beispiel:
 
 		set mapreduce.map.java.opts=-Xmx4096m;
 		set mapreduce.task.io.sort.mb=-Xmx1024m;
@@ -292,7 +292,7 @@ Die Standardeinstellungen für die Parameter von Hive-Clustern eignen sich mögl
 
 		set dfs.block.size=128m;
 
-3. **Optimieren von Join-Vorgängen in Hive**: Join-Vorgänge im Map/Reduce-Framework erfolgen meist in der Reduce-Phase. In einigen Fällen können jedoch enorme Vorteile erzielt werden, indem die Join-Vorgänge in die Map-Phase verlegt werden (so genannte "mapjoins"). Damit Hive dies möglichst häufig durchführt, legen Sie Folgendes fest:
+3. **Optimieren von Join-Vorgängen in Hive**: Join-Vorgänge im Map/Reduce-Framework erfolgen meist in der Reduce-Phase. In einigen Fällen können jedoch enorme Vorteile erzielt werden, indem die Join-Vorgänge in die Map-Phase verlegt werden (so genannte „mapjoins“). Damit Hive dies möglichst häufig durchführt, legen Sie Folgendes fest:
 
 		set hive.auto.convert.join=true;
 
@@ -300,9 +300,9 @@ Die Standardeinstellungen für die Parameter von Hive-Clustern eignen sich mögl
 
 		num_maps = max(mapred.min.split.size, min(mapred.max.split.size, dfs.block.size))
 
-	Der Standardwert von *mapred.min.split.size* ist 0, der von *mapred.max.split.size* ist **Long.MAX** und der von *dfs.block.size* ist 64 MB. Bei entsprechender Datengröße können Sie durch Festlegen dieser Parameter die Anzahl der verwendeten Mapper optimieren.
+	Der Standardwert von *mapred.min.split.size* ist 0, der von *mapred.max.split.size* ist **Long.MAX** und der von *dfs.block.size* ist 64 MB. Bei entsprechender Datengröße können Sie durch Festlegen dieser Parameter die Anzahl der verwendeten Mapper optimieren.
 
-5. Einige andere **weiterführende Optionen** zur Optimierung der Leistung finden Sie unten. Diese ermöglichen das Festlegen des zugeordneten Speichers für "map"- und "reduce"-Aufgaben, die beim Optimieren der Leistung nützlich sein können. Beachten Sie aber, dass *mapreduce.reduce.memory.mb* nicht größer sein darf als die Größe des physischen Speichers der einzelnen Workerknoten im Hadoop-Cluster.
+5. Einige andere **weiterführende Optionen** zur Optimierung der Hive-Leistung finden Sie unten. Diese ermöglichen das Festlegen des zugeordneten Speichers für "map"- und "reduce"-Aufgaben, die beim Optimieren der Leistung nützlich sein können. Beachten Sie aber, dass *mapreduce.reduce.memory.mb* nicht größer sein darf als die Größe des physischen Speichers der einzelnen Workerknoten im Hadoop-Cluster.
 
 		set mapreduce.map.memory.mb = 2048;
 		set mapreduce.reduce.memory.mb=6144;
@@ -310,13 +310,8 @@ Die Standardeinstellungen für die Parameter von Hive-Clustern eignen sich mögl
 		set mapred.reduce.tasks=128;
 		set mapred.tasktracker.reduce.tasks.maximum=128;
 
-[1]: ./media/machine-learning-data-science-process-hive-tables/atan2new.png
-[10]: ./media/machine-learning-data-science-process-hive-tables/run-hive-queries-1.png
-[11]: ./media/machine-learning-data-science-process-hive-tables/run-hive-queries-2.png
-[12]: ./media/machine-learning-data-science-process-hive-tables/output-hive-results-1.png
-[13]: ./media/machine-learning-data-science-process-hive-tables/output-hive-results-2.png
-[14]: ./media/machine-learning-data-science-process-hive-tables/output-hive-results-3.png
-[15]: ./media/machine-learning-data-science-process-hive-tables/run-hive-queries-3.png
+
+
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1217_2015-->

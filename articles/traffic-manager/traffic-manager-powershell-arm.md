@@ -4,7 +4,7 @@
    services="traffic-manager"
    documentationCenter="na"
    authors="joaoma"
-   manager="adinah"
+   manager="carmonm"
    editor="tysonn" />
 <tags
    ms.service="traffic-manager"
@@ -12,10 +12,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/19/2015"
+   ms.date="11/19/2015"
    ms.author="joaoma" />
-
-
 
 
 
@@ -36,7 +34,7 @@ In ARM wird jedes Traffic Manager-Profil durch eine ARM-Ressource vom Typ „Tr
 
 ## Vergleich mit Azure Traffic Manager-Dienstverwaltungs-API
 
-Durch die Verwendung von ARM zum Konfigurieren von Traffic Manager-Profilen erhalten Sie Zugriff auf die gleichen Traffic Manager-Features wie mit der Nicht-ARM-Dienstverwaltungs-API. Eine Ausnahme stellen die unten aufgeführten Einschränkungen der Vorschau dar.
+Durch die Verwendung von ARM zum Konfigurieren von Traffic Manager-Profilen erhalten Sie Zugriff auf die gleichen Traffic Manager-Features wie mit der Azure-Service-Verwaltungs-API. Eine Ausnahme stellen die unten aufgeführten Einschränkungen der Vorschau dar.
 
 Die Features sind zwar die gleichen, die Terminologie hat sich jedoch geändert:
 
@@ -49,82 +47,79 @@ Die Features sind zwar die gleichen, die Terminologie hat sich jedoch geändert:
 ## Einschränkungen der Vorschau
 Da die Azure-Ressourcen-Manager-Unterstützung für Traffic Manager ein Vorschaudienst ist, liegen derzeit einige Einschränkungen vor:
 
-- Traffic Manager-Profile, die mit der vorhandenen Nicht-ARM-Dienstverwaltungs-API, den vorhandenen Tools und dem vorhandenen Portal erstellt wurden, sind nicht über ARM verfügbar. Dies gilt auch im umgekehrten Fall. Die Migration von Profilen von Nicht-ARM-APIS zu ARM-APIs wird derzeit nicht unterstützt.
+- Traffic Manager-Profile, die mit der vorhandenen Nicht-ARM-Azure-Service-Verwaltungs-API, den vorhandenen Tools und dem klassischen Portal erstellt wurden, sind nicht über ARM verfügbar. Dies gilt auch im umgekehrten Fall. Die Migration von Profilen von der Azure-Service-Verwaltung zu ARM-APIs wird derzeit nicht unterstützt. Die einzige Möglichkeit ist das Löschen und Neuerstellen des Profils.
 
-- 	Die REST-API unterstützt das Patching von Traffic Manager-Profilen nicht. Zum Aktualisieren einer Profileigenschaft müssen Sie das Profil abrufen (GET) und das geänderte Profil speichern (PUT).
-- 	Nur externe Endpunkte werden unterstützt. Diese können immer noch zur Verwendung von Traffic Manager mit Azure-basierten Diensten genutzt werden. In diesem Fall werden die Endpunkte zum Tarif interner Endpunkte abgerechnet. (Die einzige Auswirkung der Verwendung externer Endpunkte ist, dass sie nicht automatisch deaktiviert oder gelöscht werden, wenn der zugrunde liegende Azure-Dienst deaktiviert oder gelöscht wird. Stattdessen müssen Sie den Endpunkt manuell deaktivieren oder löschen).
--	Azure Traffic Manager ist noch nicht im Azure-Portal, sondern nur im klassischen Portal verfügbar.
+- Geschachtelte Traffic Manager-Endpunkte werden derzeit in der ARM-API nicht unterstützt.
+
+- Azure Traffic Manager ist noch nicht im Azure-Vorschauportal, sondern nur im klassischen Portal verfügbar.
 
 ## Einrichten von Azure PowerShell
 
 Diese Anweisungen verwenden Microsoft Azure PowerShell, die mithilfe der folgenden Schritte konfiguriert werden muss.
 
-Benutzer, die nicht PowerShell verwenden, können die gleichen Vorgänge auch über andere Schnittstellen ausführen.
+Bei Benutzern, die nicht PowerShell oder Windows benutzen, können analoge Vorgänge über die Azure-Befehlszeilenschnittstelle ausgeführt werden.
 
 ### Schritt 1
 Installieren Sie die neueste Azure PowerShell, die auf der Azure-Downloadseite zur Verfügung steht.
-### Schritt 2
-Wechseln Sie den PowerShell-Modus, um die ARM-Cmdlets zu verwenden. Weitere Informationen finden Sie unter „Verwenden von Windows PowerShell mit dem Ressourcen-Manager“.
 
-	PS C:\> Switch-AzureMode -Name AzureResourceManager
-### Schritt 3
+### Schritt 2
 Melden Sie sich beim Azure-Konto an.
 
-	PS C:\> Add-AzureAccount
+	PS C:\> Login-AzureRmAccopunt
 
 Sie werden zur Authentifizierung mit Ihren Anmeldeinformationen aufgefordert.
 
-### Schritt 4
+### Schritt 3
 Wählen Sie aus, welches Azure-Abonnement Sie verwenden möchten.
 
-	PS C:\> Select-AzureSubscription -SubscriptionName "MySubscription"
+	PS C:\> Select-AzureRmContext -SubscriptionName "MySubscription"
 
-Um eine Liste der verfügbaren Abonnements anzuzeigen, verwenden Sie das Cmdlet „Get-AzureSubscription“.
+Um eine Liste der verfügbaren Abonnements anzuzeigen, verwenden Sie das Cmdlet „Get-AzureRmSubscription“.
 
-### Schritt 5
+### Schritt 4
 
- Der Traffic Manager-Dienst wird vom Ressourcenanbieter „Microsoft.Network“ verwaltet. Ihr Azure-Abonnement muss für die Verwendung dieses Ressourcenanbieters registriert werden, bevor Sie Traffic Manager über ARM verwenden können. Dieser Schritt muss für jedes Abonnement einmal ausgeführt werden.
+Der Traffic Manager-Dienst wird vom Ressourcenanbieter „Microsoft.Network“ verwaltet. Ihr Azure-Abonnement muss für die Verwendung dieses Ressourcenanbieters registriert werden, bevor Sie Traffic Manager über ARM verwenden können. Dieser Schritt muss für jedes Abonnement einmal ausgeführt werden.
 
-	PS C:\> Register-AzureProvider –ProviderNamespace Microsoft.Network
+	PS C:\> Register-AzureRmResourceProvider –ProviderNamespace Microsoft.Network
 
-### Schritt 6
+### Schritt 5
 Erstellen Sie eine Ressourcengruppe (überspringen Sie diesen Schritt, wenn Sie eine vorhandene Ressourcengruppe verwenden).
 
-	PS C:\> New-AzureResourceGroup -Name MyAzureResourceGroup -location "West US"
+	PS C:\> New-AzureRmResourceGroup -Name MyAzureResourceGroup -Location "West US"
 
 Der Azure-Ressourcen-Manager erfordert, dass alle Ressourcengruppen einen Speicherort angeben. Dieser wird als Standardspeicherort für Ressourcen in dieser Ressourcengruppe verwendet. Da alle Traffic Manager-Profilressourcen global und nicht regional sind, hat die Auswahl des Speicherorts für die Ressourcengruppe jedoch keine Auswirkungen auf Azure Traffic Manager.
 
 ## Erstellen eines Traffic Manager-Profils
 
-Verwenden Sie zum Erstellen eines Traffic Manager-Profils das Cmdlet „New-AzureTrafficManagerProfile“:
+Verwenden Sie zum Erstellen eines Traffic Manager-Profils das Cmdlet „New-AzureRmTrafficManagerProfile“:
 
-	PS C:\> $profile = New-AzureTrafficManagerProfile –Name MyProfile -ResourceGroupName MyAzureResourceGroup -TrafficRoutingMethod Performance -RelativeDnsName contoso -Ttl 30 -MonitorProtocol HTTP -MonitorPort 80 -MonitorPath "/"
+	PS C:\> $profile = New-AzureRmTrafficManagerProfile –Name MyProfile -ResourceGroupName MyAzureResourceGroup -TrafficRoutingMethod Performance -RelativeDnsName contoso -Ttl 30 -MonitorProtocol HTTP -MonitorPort 80 -MonitorPath "/"
 
 Die Parameter lauten wie folgt:
 
 - Name: Der ARM-Ressourcenname für die Traffic Manager-Profilressource. Profile in der gleichen Ressourcengruppe müssen eindeutige Namen aufweisen. Dieser Name unterscheidet sich von den DNS-Namen, die für DNS-Abfragen verwendet werden.
 
--	ResourceGroupName: Der Name der ARM-Ressourcengruppe mit der Profilressource
+- ResourceGroupName: Der Name der ARM-Ressourcengruppe mit der Profilressource
 
--	TrafficRoutingMethod: Gibt die Routingmethode an. Hiermit wird ermittelt, welcher Endpunkt als Reaktion auf eingehende DNS-Abfragen zurückgegeben wird. Mögliche Werte sind „Leistung“, „Gewichtung“ und „Priorität“.
+- TrafficRoutingMethod: Gibt die Routingmethode an. Hiermit wird ermittelt, welcher Endpunkt als Reaktion auf eingehende DNS-Abfragen zurückgegeben wird. Mögliche Werte sind „Leistung“, „Gewichtung“ und „Priorität“.
 
--	RelativeDnsName: Gibt den relativen DNS-Namen an, der von diesem Traffic Manager-Profil bereitgestellt wird. Dieser Wert wird mit dem DNS-Domänennamen kombiniert, der von Azure Traffic Manager zum Erstellen des vollqualifizierten Domänennamens (FQDN) des Profils verwendet wird. Beispielsweise ergibt der Wert „contoso“ ein Traffic Manager-Profil mit dem vollqualifizierten Namen „contoso.trafficmanager.net“.
+- RelativeDnsName: Gibt den relativen DNS-Namen an, der von diesem Traffic Manager-Profil bereitgestellt wird. Dieser Wert wird mit dem DNS-Domänennamen kombiniert, der von Azure Traffic Manager zum Erstellen des vollqualifizierten Domänennamens (FQDN) des Profils verwendet wird. Beispielsweise ergibt der Wert „contoso“ ein Traffic Manager-Profil mit dem vollqualifizierten Namen „contoso.trafficmanager.net“.
 
--	TTL: Gibt die DNS-Gültigkeitsdauer (Time-To-Live, TTL) in Sekunden an. Dadurch werden die lokale DNS-Auflösung und DNS-Clients informiert, wie lange die von diesem Traffic Manager-Profil bereitgestellten DNS-Antworten zwischengespeichert werden sollen.
+- TTL: Gibt die DNS-Gültigkeitsdauer (Time-To-Live, TTL) in Sekunden an. Dadurch werden die lokale DNS-Auflösung und DNS-Clients informiert, wie lange die von diesem Traffic Manager-Profil bereitgestellten DNS-Antworten zwischengespeichert werden sollen.
 
--	MonitorProtocol: Gibt das Protokoll an, mit dem die Endpunktintegrität überwacht werden soll. Mögliche Werte sind „HTTP“ und „HTTPS“.
+- MonitorProtocol: Gibt das Protokoll an, mit dem die Endpunktintegrität überwacht werden soll. Mögliche Werte sind „HTTP“ und „HTTPS“.
 
--	MonitorPort: Gibt den TCP-Port an, mit dem die Endpunktintegrität überwacht wird.
+- MonitorPort: Gibt den TCP-Port an, mit dem die Endpunktintegrität überwacht wird.
 
--	MonitorPath: Gibt den Pfad relativ zum Endpunktdomänennamen an, mit dem die Endpunktintegrität getestet wird.
+- MonitorPath: Gibt den Pfad relativ zum Endpunktdomänennamen an, mit dem die Endpunktintegrität getestet wird.
 
-Das Cmdlet erstellt ein Traffic Manager-Profil in Azure Traffic Manager und gibt ein entsprechendes Profilobjekt zurück. Das Profil enthält zu diesem Zeitpunkt keine Endpunkte. Ausführliche Informationen zum Hinzufügen von Endpunkten zu einem Traffic Manager-Profil finden Sie unter [Aktualisieren eines Traffic Manager-Profils](#update-a-traffic-manager-profile) .
+Das Cmdlet erstellt ein Traffic Manager-Profil in Azure Traffic Manager und gibt ein entsprechendes Profilobjekt zurück. Das Profil enthält zu diesem Zeitpunkt keine Endpunkte. Ausführliche Informationen zum Hinzufügen von Endpunkten zu einem Traffic Manager-Profil finden Sie unter [Hinzufügen von Traffic Manager-Endpunkten](#adding-traffic-manager-endpoints).
 
 ## Abrufen eines Traffic Manager-Profils
 
-Rufen Sie ein vorhandenes Traffic Manager-Profilobjekt mit dem Cmdlet „Get-AzureTrafficManagerProfle“ ab:
+Rufen Sie ein vorhandenes Traffic Manager-Profilobjekt mit dem Cmdlet „Get-AzureRmTrafficManagerProfle“ ab:
 
-	PS C:\> $profile = Get-AzureTrafficManagerProfile –Name MyProfile -ResourceGroupName MyAzureResourceGroup
+	PS C:\> $profile = Get-AzureRmTrafficManagerProfile –Name MyProfile -ResourceGroupName MyAzureResourceGroup
 
 Dieses Cmdlet gibt ein Traffic Manager-Profilobjekt zurück.
 
@@ -132,67 +127,126 @@ Dieses Cmdlet gibt ein Traffic Manager-Profilobjekt zurück.
 
 Traffic Manager-Profile werden mithilfe von 3 Schritten geändert. Mit diesen Schritten können Sie beispielsweise Endpunkte hinzufügen oder löschen oder Profileinstellungen ändern:
 
-1.	Rufen Sie das Profil mithilfe von „Get-AzureTrafficManagerProfile“ ab (oder verwenden Sie das von „New-AzureTrafficManagerProfile“ zurückgegebene Profil).
+1.	Rufen Sie das Profil mithilfe von „Get-AzureRmTrafficManagerProfile“ ab (oder verwenden Sie das von „New-AzureRmTrafficManagerProfile“ zurückgegebene Profil).
 
-2.	Ändern Sie das Profil, indem Sie Endpunkte hinzufügen, Endpunkte entfernen oder die Endpunktparameter oder Profilparameter ändern. Diese Änderungen sind offline – nur das lokale Objekt, das das Profil darstellt, wird geändert.
+2.	Ändern Sie das Profil, indem Sie Endpunkte hinzufügen, Endpunkte entfernen oder die Endpunktparameter oder Profilparameter ändern. Bei diesen Änderungen handelt es sich um Offlinevorgänge – nur das lokale Objekt, das das Profil darstellt, wird geändert.
 
-3.	Übernehmen Sie Ihre Änderungen mithilfe des Cmdlets „Set-AzureTrafficManagerProfile“. Dadurch wird das vorhandene Profil in Azure Traffic Manager durch das bereitgestellte Profil ersetzt.
+3.	Übernehmen Sie Ihre Änderungen mithilfe des Cmdlets „Set-AzureRmTrafficManagerProfile“. Dadurch wird das vorhandene Profil in Azure Traffic Manager durch das bereitgestellte Profil ersetzt.
 
-Dies wird anhand der folgenden Beispiele ausführlicher erläutert:
+Alle Profileigenschaften können geändert werden. Ausnahme: Das RelativeDnsName-Element des Profils kann nicht geändert werden, nachdem das Profil erstellt wurde (wenn Sie diesen Wert ändern möchten, müssen Sie das Profil löschen und erneut erstellen).
 
-### Hinzufügen von Endpunkten zu einem Profil
-
-Endpunkte können einem Traffic Manager-Profil mithilfe des Cmdlets „Add-AzureTrafficManagerEndpointConfig“ hinzugefügt werden:
-
-	PS C:\> $profile = Get-AzureTrafficManagerProfile –Name MyProfile -ResourceGroupName MyAzureResourceGroup
-	PS C:\> Add-AzureTrafficManagerEndpointConfig –EndpointName site1 –TrafficManagerProfile $profile –Type ExternalEndpoints –Target site1.contoso.com –EndpointStatus Enabled –Weight 10 –Priority 1 –EndpointLocation “West US”
-	PS C:\> Set-AzureTrafficManagerProfile –TrafficManagerProfile $profile
-
-Die Parameter von „Add-AzureTrafficManagerEndpointConfig“ lauten folgendermaßen:
-
-- EndpointName: Der Name des Endpunkts. Endpunkte im selben Profil müssen unterschiedliche Namen haben. Dadurch wird bei Dienstverwaltungsvorgängen auf den Endpunkt verwiesen. Es handelt sich dabei nicht um den DNS-Namen des Endpunkts.
-
--	TrafficManagerProfile: Das Traffic Manager Profilobjekt, dem der Endpunkt hinzugefügt wird.
-
--	Type: Der Typ des Traffic Manager-Endpunkts. Derzeit wird über die ARM-API nur der Typ „ExternalEndpoint“ unterstützt (siehe [Einschränkungen der Vorschau](#preview-limitations)).
-
--	Target: Der vollqualifizierte DNS-Name des Endpunkts. Traffic Manager gibt diesen Wert in DNS-Antworten zurück, um Datenverkehr an diesen Endpunkt weiterzuleiten.
-
--	EndpointStatus: Gibt den Status des Endpunkts an. Ist der Endpunkt aktiviert, wird die Endpunktintegrität getestet und in die Datenverkehr-Routingmethode aufgenommen. Mögliche Werte sind „Aktiviert“ oder „Deaktiviert“.
-
--	Weight: Gibt die dem Endpunkt zugeordnete Gewichtung an. Dieser Parameter wird nur verwendet, wenn das Traffic Manager-Profil für die Verwendung der gewichteten Datenverkehr-Routingmethode konfiguriert ist. Mögliche Werte: 1 bis 1.000
-
--	Priority: Gibt die Priorität dieses Endpunkts an, wenn die Datenverkehr-Routingmethode „Priorität“ verwendet wird. Die Priorität muss im Bereich von 1 bis 1.000 liegen. Niedrigere Werte stellen eine höhere Priorität dar.
-
--	EndpointLocation: Gibt den Speicherort des externen Endpunkts an. Wird für die Datenverkehr-Routingmethode „Leistung“ verwendet. Eine Liste der möglichen Speicherorte finden Sie unter „Get-AzureLocation“.
-
-Endpunktstatus, Gewichtung und Priorität sind optionale Parameter. Werden sie nicht angegeben, werden sie nicht an PowerShell übergeben. In diesem Fall gelten die serverseitigen Standardwerte.
-
-### Entfernen von Endpunkten aus einem Profil
-
-Um einen Endpunkt aus einem Profil zu entfernen, verwenden Sie „Remove-AzureTrafficmanagerEndpointConfig“, und geben Sie dabei den Namen des Endpunkts an, der entfernt werden soll:
-
-	PS C:\> $profile = Get-AzureTrafficManagerProfile –Name MyProfile -ResourceGroupName MyAzureResourceGroup
-	PS C:\> Remove-AzureTrafficManagerEndpointConfig –EndpointName site1 –TrafficManagerProfile $profile
-	PS C:\> Set-AzureTrafficManagerProfile –TrafficManagerProfile $profile
-
-Die Reihenfolge der Vorgänge zum Hinzufügen oder Entfernen von Endpunkten kann auch weitergeleitet werden. Das Profilobjekt wird über die Pipe und nicht als Parameter übergeben. Beispiel:
-
-	PS C:\> Get-AzureTrafficManagerProfile –Name MyProfile -ResourceGroupName MyAzureResourceGroup | Remove-AzureTrafficManagerEndpointConfig –EndpointName site1 | Set-AzureTrafficManagerProfile
-
-### Ändern von Profil- oder Endpunkteinstellungen
-
-Profil- und Endpunktparameter können offline geändert werden. Die Änderungen werden mithilfe von „Set-AzureTrafficManagerProfile“ übernommen. Einzige Ausnahme: Das RelativeDnsName-Element des Profils kann nicht geändert werden, nachdem das Profil erstellt wurde (wenn Sie diesen Wert ändern möchten, müssen Sie das Profil löschen und erneut erstellen). So ändern Sie beispielsweise die Profilgültigkeitsdauer und den Status des ersten Endpunkts:
+So ändern Sie beispielsweise die Profilgültigkeitsdauer:
 
 	PS C:\> $profile = Get-AzureTrafficManagerProfile –Name MyProfile -ResourceGroupName MyAzureResourceGroup
 	PS C:\> $profile.Ttl = 300
-	PS C:\> $profile.Endpoints[0].EndpointStatus = "Disabled"
 	PS C:\> Set-AzureTrafficManagerProfile –TrafficManagerProfile $profile
 
-### Löschen eines Traffic Manager-Profils
-Verwenden Sie zum Löschen eines Traffic Manager-Profils das Cmdlet „Remove-AzureTrafficManagerProfile“. Geben Sie dabei den Profilnamen und die Ressourcengruppennamen an:
+## Hinzufügen von Traffic Manager-Endpunkten[](#adding-traffic-manager-endpoints)
+Es gibt drei Arten von Traffic Manager-Endpunkten: 1. Azure-Endpunkte: Diese Endpunkte stellen in Azure gehostete Dienste dar. 2. Externe Endpunkte: Diese Endpunkte stellen außerhalb von Azure gehostete Dienste dar. 3. Geschachtelte Endpunkte: Diese Endpunkte werden verwendet, um geschachtelte Hierarchien von Traffic Manager-Profilen zu erstellen und dadurch erweiterte Konfigurationen für Datenverkehrrouting für komplexere Anwendungen zu ermöglichen. Sie werden über die ARM-API noch nicht unterstützt.
 
-	PS C:\> Remove-AzureTrafficManagerProfile –Name MyProfile -ResourceGroupName MyAzureResourceGroup [-Force]
+In allen drei Fällen können Endpunkte auf zwei Arten hinzugefügt werden: 1. Mithilfe von drei Schritten, die dem unter [Aktualisieren eines Traffic Manager-Profils](#update-traffic-manager-profile) beschriebenen Vorgang ähneln: Abrufen des Profilobjekts mithilfe von „Get-AzureRmTrafficManagerProfile“, Aktualisieren im Offlinemodus zum Hinzufügen eines Endpunkts mithilfe von „Add-AzureRmTrafficManagerEndpointConfig“ und Hochladen von Änderungen in Azure Traffic Manager mithilfe von „Set-AzureRmTrafficManagerProfile“. Der Vorteil dieser Methode besteht darin, dass mehrere Änderungen am Endpunkt mit nur einer Aktualisierung vorgenommen werden können. 2. Mithilfe des Cmdlets „New-AzureRmTrafficManagerEndpoint“. Mit diesem Cmdlet wird einem vorhandenen Traffic Manager-Profil in einem Schritt ein Endpunkt hinzugefügt.
+
+### Hinzufügen von Azure-Endpunkten
+Azure-Endpunkte verweisen auf andere in Azure gehostete Dienste. Derzeit werden 3 Arten von Azure-Endpunkten unterstützt: 1. Azure-Web-Apps 2. Klassische Clouddienste (die entweder einen PaaS-Dienst oder virtuelle IaaS-Computer enthalten können) 3. ARM Microsoft.Network/publicIpAddress-Ressourcen (die an einen Load Balancer oder an die Netzwerkkarte eines virtuellen Computers angefügt werden können). Beachten Sie, dass der publicIpAddress-Ressource ein DNS-Name zugewiesen werden muss, damit sie in Traffic Manager verwendet werden kann.
+
+In jedem Fall gilt: - Der Dienst wird mithilfe des Parameters „targetResourceId“ von „Add-AzureRmTrafficManagerEndpointConfig“ oder „New-AzureRmTrafficManagerEndpoint“ angegeben. - Die Parameter „Target“ und „EndpointLocation“ müssen nicht angegeben werden. Sie werden von dem oben angegebenen TargetResourceId-Element impliziert. - Die Angabe von „Weight“ ist optional. „Weights“ wird nur verwendet, wenn das Profil für die Verwendung der Datenverkehr-Routingmethode „Weighted“ konfiguriert ist, andernfalls wird der Parameter ignoriert. Wird der Parameter angegeben, muss er im Bereich 1 bis 1.000 liegen. Der Standardwert lautet „1“. - Die Angabe der Priorität ist optional. Prioritäten werden nur verwendet, wenn das Profil für die Verwendung der Datenverkehr-Routingmethode „Priority“ konfiguriert ist, andernfalls wird der Parameter ignoriert. Gültige Werte liegen zwischen 1 und 1.000 (niedrigere Werte stehen für eine höhere Priorität). Wenn Sie für einen Endpunkt Prioritäten angeben, müssen Sie für alle Endpunkte Prioritäten angeben. Wenn keine Prioritäten angegeben werden, werden Standardwerte beginnend mit 1, 2, 3 usw. in der Reihenfolge angewendet, in der Endpunkte bereitgestellt werden.
+
+#### Beispiel 1: Hinzufügen von Web-App-Endpunkten mithilfe von „Add-AzureRmTrafficManagerEndpointConfig“
+In diesem Beispiel erstellen wir ein neues Traffic Manager-Profil und fügen zwei Web-App-Endpunkte mithilfe des Cmdlets „Add-AzureRmTrafficManagerEndpointConfig“ hinzu. Anschließend übergeben wir das aktualisierte Profil mithilfe von „Set-AzureRmTrafficManagerProfile“ an Azure Traffic Manager.
+
+	PS C:\> $profile = New-AzureRmTrafficManagerProfile –Name myprofile -ResourceGroupName myrg -TrafficRoutingMethod Performance -RelativeDnsName myapp -Ttl 30 -MonitorProtocol HTTP -MonitorPort 80 -MonitorPath "/"
+	PS C:\> $webapp1 = Get-AzureRMWebApp -Name webapp1
+	PS C:\> Add-AzureRmTrafficManagerEndpointConfig –EndpointName webapp1ep –TrafficManagerProfile $profile –Type AzureEndpoints -TargetResourceId $webapp1.Id –EndpointStatus Enabled
+	PS C:\> $webapp2 = Get-AzureRMWebApp -Name webapp2
+	PS C:\> Add-AzureRmTrafficManagerEndpointConfig –EndpointName webapp2ep –TrafficManagerProfile $profile –Type AzureEndpoints -TargetResourceId $webapp2.Id –EndpointStatus Enabled
+	PS C:\> Set-AzureRmTrafficManagerProfile –TrafficManagerProfile $profile  
+
+#### Beispiel 2: Hinzufügen eines klassischen Clouddienst-Endpunkts mithilfe von „New-AzureRmTrafficManagerEndpoint“
+In diesem Beispiel wird einem Traffic Manager-Profil ein „klassischer“ Clouddienst-Endpunkt hinzugefügt. Beachten Sie, dass wir in diesem Fall das Profil mithilfe des Profilnamens und des Ressourcengruppennamens angegeben haben, anstatt ein Profilobjekt zu übergeben (beide Ansätze werden unterstützt).
+
+	PS C:\> $cloudService = Get-AzureRmResource -ResourceName MyCloudService -ResourceType "Microsoft.ClassicCompute/domainNames" -ResourceGroupName MyCloudService
+	PS C:\> New-AzureRmTrafficManagerEndpoint –Name MyCloudServiceEndpoint –ProfileName MyProfile -ResourceGroupName MyRG –Type AzureEndpoints -TargetResourceId $cloudService.Id –EndpointStatus Enabled
+
+#### Beispiel 3: Hinzufügen eines publicIpAddress-Endpunkts mithilfe von „New-AzureRmTrafficManagerEndpoint“
+In diesem Beispiel wird eine ARM-Ressource für eine öffentliche IP-Adresse zum Traffic Manager-Profil hinzugefügt. Für die öffentliche IP-Adresse muss ein DNS-Name konfiguriert sein. Sie kann an die Netzwerkkarte eines virtuellen Computers oder an einen Load Balancer gebunden sein.
+
+	PS C:\> $ip = Get-AzureRmPublicIpAddress -Name MyPublicIP -ResourceGroupName MyResourceGroup
+	PS C:\> New-AzureRmTrafficManagerEndpoint –Name MyIpEndpoint –ProfileName MyProfile -ResourceGroupName MyRG –Type AzureEndpoints -TargetResourceId $ip.Id –EndpointStatus Enabled
+
+### Hinzufügen externer Endpunkte
+Traffic Manager verwendet externe Endpunkte zum Weiterleiten von Datenverkehr an außerhalb von Azure gehostete Dienste. Wie bei Azure-Endpunkten können externe Endpunkte entweder mithilfe von „Add-AzureRmTrafficManagerEndpointConfig“ gefolgt von „Set-AzureRmTrafficManagerProfile“ oder mithilfe von „New-AzureRMTrafficManagerEndpoint“ hinzugefügt werden.
+
+Beim Angeben externer Endpunkte: - Der Domänenname des Endpunkts muss mithilfe des Parameters „Target“ angegeben werden. - „EndpointLocation“ ist erforderlich, wenn die Datenverkehr-Routingmethode „Performance“ verwendet wird. Andernfalls ist der Parameter optional. Der Wert muss ein [gültiger Azure-Regionsname](http://azure.microsoft.com/regions/) sein. - Die Parameter „Weight“ und „Priority“ sind wie bei Azure-Endpunkten optional.
+
+#### Beispiel 1: Hinzufügen externer Endpunkte mithilfe von „Add-AzureRmTrafficManagerEndpointConfig“ und „Set-AzureRmTrafficManagerProfile“
+In diesem Beispiel erstellen wir ein neues Traffic Manager-Profil, fügen zwei externe Endpunkte hinzu und übernehmen die Änderungen.
+
+	PS C:\> $profile = New-AzureRmTrafficManagerProfile –Name myprofile -ResourceGroupName myrg -TrafficRoutingMethod Performance -RelativeDnsName myapp -Ttl 30 -MonitorProtocol HTTP -MonitorPort 80 -MonitorPath "/"
+	PS C:\> Add-AzureRmTrafficManagerEndpointConfig –EndpointName eu-endpoint –TrafficManagerProfile $profile –Type ExternalEndpoints -Target app-eu.contoso.com –EndpointStatus Enabled
+	PS C:\> Add-AzureRmTrafficManagerEndpointConfig –EndpointName us-endpoint –TrafficManagerProfile $profile –Type ExternalEndpoints -Target app-us.contoso.com –EndpointStatus Enabled
+	PS C:\> Set-AzureRmTrafficManagerProfile –TrafficManagerProfile $profile  
+
+#### Beispiel 2: Hinzufügen externer Endpunkte mithilfe von „New-AzureRmTrafficManagerEndpoint“
+In diesem Beispiel fügen wir einem vorhandenen Profil, das durch den Profil- und den Ressourcengruppennamen angegeben wird, einen externen Endpunkt hinzu.
+
+	PS C:\> New-AzureRmTrafficManagerEndpoint –Name eu-endpoint –ProfileName MyProfile -ResourceGroupName MyRG –Type ExternalEndpoints -Target app-eu.contoso.com –EndpointStatus Enabled
+
+## Aktualisieren eines Traffic Manager-Endpunkts
+Es gibt zwei Möglichkeiten zum Aktualisieren eines vorhandenen Traffic Manager-Endpunkts: 1. Rufen Sie das Traffic Manager-Profil mithilfe von „Get-AzureRmTrafficManagerProfile“ ab, aktualisieren Sie die Endpunkteigenschaften im Profil, und übernehmen Sie anschließend die Änderungen mit „Set-AzureRmTrafficManagerProfile“. Diese Methode hat den Vorteil, dass mehrere Endpunkte in einem Schritt aktualisiert werden können. 2. Rufen Sie den Traffic Manager-Endpunkt mithilfe von „Get-AzureRmTrafficManagerEndpoint“ ab, aktualisieren Sie die Endpunkteigenschaften, und übernehmen Sie die Änderungen mit „Set-AzureRmTrafficManagerEndpoint“. Diese Methode ist einfacher, da keine Indizierung im Endpunktarray im Profil erforderlich ist.
+
+#### Beispiel 1: Aktualisieren von Endpunkten mithilfe von „Get-AzureRmTrafficManagerProfile“ und „Set-AzureRmTrafficManagerProfile“
+In diesem Beispiel ändern wir die Priorität für zwei Endpunkte innerhalb eines vorhandenen Profils.
+
+	PS C:\> $profile = Get-AzureRmTrafficManagerProfile –Name myprofile -ResourceGroupName myrg
+	PS C:\> $profile.Endpoints[0].Priority = 2
+	PS C:\> $profile.Endpoints[1].Priority = 1
+	PS C:\> Set-AzureRmTrafficManagerProfile –TrafficManagerProfile $profile
+
+#### Beispiel 2: Aktualisieren eines Endpunkts mithilfe von „Get-AzureRmTrafficManagerEndpoint“ und „Set-AzureRmTrafficManagerEndpoint“
+In diesem Beispiel ändern wir die Gewichtung für einen Endpunkt innerhalb eines vorhandenen Profils.
+
+	PS C:\> $endpoint = Get-AzureRmTrafficManagerEndpoint -Name myendpoint -ProfileName myprofile -ResourceGroupName myrg -Type ExternalEndpoints
+	PS C:\> $endpoint.Weight = 20
+	PS C:\> Set-AzureRmTrafficManagerEndpoint -TrafficManagerEndpoint $endpoint
+
+## Aktivieren und Deaktivieren von Endpunkten und Profilen
+Mit Traffic Manager können einzelne Endpunkte und sogar ganze Profile aktiviert und deaktiviert werden. Diese Änderungen können durch Abrufen, Aktualisieren und Festlegen des Endpunkts oder der Profilressourcen vorgenommen werden. Um diese allgemeinen Vorgänge zu vereinfachen, werden sie auch über dedizierte Cmdlets unterstützt.
+
+#### Beispiel 1: Aktivieren und Deaktivieren eines Traffic Manager-Profils
+Verwenden Sie zum Aktivieren eines Traffic Manager-Profils „Enable-AzureRmTrafficManagerProfile“. Das Profil kann mithilfe eines Profilobjekts angegeben werden. Dieses wird entweder über die Pipeline oder mithilfe des Parameters „-TrafficManagerProfile“ übergeben. Alternativ können Sie auch wie in diesem Beispiel direkt den Profil- und den Ressourcengruppennamen angeben.
+
+	PS C:\> Enable-AzureRmTrafficManagerProfile -Name MyProfile -ResourceGroupName MyResourceGroup
+
+Beim Deaktivieren des Traffic Manager-Profils gehen Sie ähnlich vor:
+
+	PS C:\> Disable-AzureRmTrafficManagerProfile -Name MyProfile -ResourceGroupName MyResourceGroup
+
+Das Cmdlet „Disable-AzureRmTrafficManagerProfile“ fordert Sie zur Bestätigung auf. Diese Aufforderung kann mithilfe des Parameters „-Force“ unterdrückt werden.
+
+#### Beispiel 2: Aktivieren und Deaktivieren eines Traffic Manager-Endpunkts
+Verwenden Sie zum Aktivieren eines Traffic Manager-Endpunkts „Enable-AzureRmTrafficManagerEndpoint“. Der Endpunkt kann mithilfe eines TrafficManagerEndpoint-Objekts angegeben werden. Dieses wird entweder über die Pipeline oder mithilfe des Parameters „-TrafficManagerEndpoint“ übergeben. Alternativ können Sie auch den Endpunktnamen, Endpunkttyp, Profilnamen und Ressourcengruppennamen verwenden:
+
+	PS C:\> Enable-AzureRmTrafficManagerEndpoint -Name MyEndpoint -Type AzureEndpoints -ProfileName MyProfile -ResourceGroupName MyResourceGroup
+
+Beim Deaktivieren des Traffic Manager-Profils gehen Sie ähnlich vor:
+
+ 	PS C:\> Disable-AzureRmTrafficManagerEndpoint -Name MyEndpoint -Type AzureEndpoints -ProfileName MyProfile -ResourceGroupName MyResourceGroup -Force
+
+Wie „Disable-AzureRmTrafficManagerProfile“ enthält auch das Cmdlet „Disable-AzureRmTrafficManagerEndpoint“ eine Bestätigungsaufforderung, die mithilfe des Parameters „-Force“ unterdrückt werden kann.
+
+## Löschen eines Traffic Manager-Endpunkts
+Ein Traffic Manager-Endpunkt kann beispielsweise durch Abrufen des Profilobjekts (mithilfe von „Get-AzureRmTrafficManagerProfile“), Aktualisieren der Endpunktliste im lokalen Profilobjekt und Übernehmen der Änderungen (mithilfe von „Set-AzureRmTrafficManagerProfile“) gelöscht werden. Diese Methode ermöglicht das Übernehmen mehrerer Endpunktänderungen in einem Schritt.
+
+Einzelne Endpunkte können auch mithilfe des Cmdlets „Remove-AzureRmTrafficManagerEndpoint“ entfernt werden:
+
+	PS C:\> Remove-AzureRmTrafficManagerEndpoint -Name MyEndpoint -Type AzureEndpoints -ProfileName MyProfile -ResourceGroupName MyResourceGroup
+	
+Dieses Cmdlet fordert Sie zur Bestätigung auf, es sei denn, die Aufforderung wird mit dem Parameter „-Force“ unterdrückt.
+
+## Löschen eines Traffic Manager-Profils
+Verwenden Sie zum Löschen eines Traffic Manager-Profils das Cmdlet „Remove-AzureRmTrafficManagerProfile“. Geben Sie dabei den Profilnamen und den Ressourcengruppennamen an:
+
+	PS C:\> Remove-AzureRmTrafficManagerProfile –Name MyProfile -ResourceGroupName MyAzureResourceGroup [-Force]
 
 Das Cmdlet fordert Sie zur Bestätigung auf. Mit dem optionalen Schalter „-Force“ kann diese Aufforderung unterdrückt werden. Das zu löschende Profil kann auch mithilfe eines Profilobjekts angegeben werden:
 
@@ -203,12 +257,11 @@ Diese Sequenz kann auch weitergeleitet werden:
 
 	PS C:\> Get-AzureTrafficManagerProfile –Name MyProfile -ResourceGroupName MyAzureResourceGroup | Remove-AzureTrafficManagerProfile [-Force]
 
+## Nächste Schritte
 
-## Siehe auch
+[Traffic Manager-Überwachung](traffic-manager-monitoring.md)
 
-[Was ist Traffic Manager?](traffic-manager-overview.md)
-
-[Erste Schritte mit Azure-Cmdlets](https://msdn.microsoft.com/library/jj554332.aspx)
+[Leistungsüberlegungen zu Traffic Manager](traffic-manager-performance-considerations.md)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

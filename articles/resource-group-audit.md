@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/27/2015" 
+	ms.date="12/02/2015" 
 	ms.author="tomfitz"/>
 
 # Überwachen von Vorgängen mit dem Ressourcen-Manager
@@ -27,13 +27,13 @@ Bei Überwachungsprotokollen müssen zwei wichtige Einschränkungen berücksicht
 1. Überwachungsprotokolle werden nur 90 Tage lang gespeichert.
 2. Eine Abfrage kann nur für maximal 15 Tage ausgeführt werden.
 
-Sie können Informationen aus den Überwachungsprotokollen über Azure PowerShell, die Azure-Befehlszeilenschnittstelle, eine REST-API oder das Azure-Vorschauportal abrufen.
+Sie können Informationen aus den Überwachungsprotokollen über Azure PowerShell, die Azure-Befehlszeilenschnittstelle, eine REST-API oder das Azure-Portal abrufen.
 
 ## PowerShell
 
 [AZURE.INCLUDE [powershell-preview-inline-include](../includes/powershell-preview-inline-include.md)]
 
-Führen Sie zum Abrufen von Protokolleinträgen den Befehl **Get-AzureRmLog** aus (oder **Get-AzureResourceGroupLog** für PowerShell-Versionen vor 1.0 Preview). Wenn Sie die Liste der Einträge filtern möchten, können Sie dem Befehl Parameter hinzufügen.
+Führen Sie zum Abrufen von Protokolleinträgen den Befehl **Get-AzureRmLog** aus (oder **Get-AzureResourceGroupLog** für PowerShell-Versionen vor 1.0). Wenn Sie die Liste der Einträge filtern möchten, können Sie dem Befehl Parameter hinzufügen.
 
 Das folgende Beispiel zeigt, wie Sie mithilfe des Überwachungsprotokolls nach Aktionen suchen können, die während der Lebensdauer der Lösung durchgeführt wurden. Sie können sehen, wann die Aktion durchgeführt wurde und wer sie angefordert hat. Die Start- und Enddaten werden in einem Datumsformat angegeben.
 
@@ -43,7 +43,7 @@ Alternativ können Sie mithilfe von Datumsfunktionen den Datumsbereich angeben, 
 
     PS C:\> Get-AzureRmLog -ResourceGroup ExampleGroup -StartTime (Get-Date).AddDays(-15)
 
-Je nachdem, welches Startdatum und welche Startzeit Sie angeben, kann der oben stehende Befehl eine sehr lange Liste mit Aktionen für diese Ressourcengruppe zurückgeben. Sie können die Ergebnisse filtern, indem Sie Suchkriterien eingeben. Wenn Sie beispielsweise herausfinden möchten, wie eine Web-App angehalten wurde, können Sie folgenden Befehl ausführen, und Sie werden feststellen, dass die Aktion von someone@example.com ausgeführt wurde.
+Je nachdem, welches Startdatum und welche Startzeit Sie angeben, kann der oben stehende Befehl eine sehr lange Liste mit Aktionen für diese Ressourcengruppe zurückgeben. Sie können die Ergebnisse filtern, indem Sie Suchkriterien eingeben. Wenn Sie beispielsweise herausfinden möchten, wie eine Web-App angehalten wurde, können Sie folgenden Befehl ausführen, und Sie werden feststellen, dass die Aktion durch someone@example.com durchgeführt wurde.
 
     PS C:\> Get-AzureRmLog -ResourceGroup ExampleGroup -StartTime (Get-Date).AddDays(-15) | Where-Object OperationName -eq Microsoft.Web/sites/stop/action
 
@@ -144,9 +144,9 @@ Wenn die Liste der Vorgänge seit der letzten Bereitstellung zu lang ist, könne
 
 Die REST-Vorgänge für die Arbeit mit Überwachungsprotokollen gehören zur [Insights-REST-API](https://msdn.microsoft.com/library/azure/dn931943.aspx). Informationen zum Abrufen von Überwachungsprotokollereignissen finden Sie unter [Auflisten der Verwaltungsereignisse in einem Abonnement](https://msdn.microsoft.com/library/azure/dn931934.aspx).
 
-## Vorschauportal
+## Portal
 
-Sie können protokollierte Vorgänge auch über das Vorschauportal anzeigen. Wählen Sie einfach das Blatt mit den Überwachungsprotokollen aus.
+Sie können protokollierte Vorgänge auch über das Portal anzeigen. Wählen Sie einfach das Blatt mit den Überwachungsprotokollen aus.
 
 ![Überwachungsprotokolle auswählen](./media/resource-group-audit/select-audit.png)
 
@@ -162,4 +162,4 @@ Sie können jeden Vorgang auswählen, um weitere Details anzuzeigen.
 - Informationen zum Gewähren des Zugriffs für einen Dienstprinzipal finden Sie unter [Authentifizieren eines Dienstprinzipals mit dem Azure-Ressourcen-Manager](resource-group-authenticate-service-principal.md).
 - Informationen zum Beschränken von Aktionen für eine Ressource für alle Benutzer finden Sie unter [Sperren von Ressourcen mit dem Azure-Ressourcen-Manager](resource-group-lock-resources.md).
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

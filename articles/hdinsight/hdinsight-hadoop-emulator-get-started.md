@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article" 
-	ms.date="08/07/2015"
+	ms.date="11/29/2015"
 	ms.author="nitinme"/>
 
 # Erste Schritte im Hadoop-Ökosystem mit dem HDInsight-Emulator (einer Hadoop-Sandbox)
@@ -37,8 +37,7 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
 - Der HDInsight Emulator benötigt eine 64-Bit-Version von Windows. Eine der folgenden Anforderungen muss erfüllt sein:
 
-	- Windows 7 Service Pack 1
-	- Windows Server 2008 R2 Service Pack 1
+	- Windows 10
 	- Windows 8
 	- Windows Server 2012
 
@@ -97,7 +96,7 @@ Anleitungen zum Installieren der HDInsight Visual Studio-Tools finden Sie [hier]
 
 	 ![Visual Studio-Ansicht: Menübefehl "Mit HDInsight-Emulator verbinden".](./media/hdinsight-hadoop-emulator-get-started/hdi.emulator.connect.vs.png)
 
-4. Überprüfen Sie im Dialogfeld "Mit HDInsight-Emulator verbinden" die Werte für die Endgeräte WebHCat, HiveServer2 und WebHDFS, und klicken Sie dann auf **Weiter**. Die standardmäßig aufgefüllten Werte sollten funktionieren, solange Sie keine Änderungen an der Standardkonfiguration des Emulators vorgenommen haben. Wenn Sie Änderungen vorgenommen haben, aktualisieren Sie die Werte im Dialogfeld und klicken dann auf "Weiter".
+4. Überprüfen Sie im Dialogfeld "Mit HDInsight-Emulator verbinden" die Werte für die Endpunkte WebHCat, HiveServer2 und WebHDFS, und klicken Sie dann auf **Weiter**. Die standardmäßig aufgefüllten Werte sollten funktionieren, solange Sie keine Änderungen an der Standardkonfiguration des Emulators vorgenommen haben. Wenn Sie Änderungen vorgenommen haben, aktualisieren Sie die Werte im Dialogfeld und klicken dann auf "Weiter".
 
 	![Dialogfeld "Mit HDInsight-Emulator verbinden" mit Einstellungen.](./media/hdinsight-hadoop-emulator-get-started/hdi.emulator.connect.vs.dialog.png)
 
@@ -397,7 +396,7 @@ Sie benötigen ein Speicherkonto, um die folgenden Schritte ausführen zu könne
 
 **So erstellen Sie einen Container**
 
-1. Melden Sie sich beim [Azure-Vorschauportal](https://ms.portal.azure.com/) an.
+1. Melden Sie sich beim [Azure-Portal](https://ms.portal.azure.com/) an.
 2. Klicken Sie auf der linken Seite auf **NEU**, auf **Daten + Speicher** und anschließend auf **Speicher**.
 3. Konfigurieren Sie auf dem Blatt „Speicherkonto“ die Eigenschaften wie im folgenden Screenshot dargestellt.
 	
@@ -498,4 +497,4 @@ In diesem Lernprogramm zu MapReduce haben Sie den HDInsight-Emulator – eine Ha
 [image-hdi-emulator-services]: ./media/hdinsight-hadoop-emulator-get-started/HDI.Emulator.Services.png
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

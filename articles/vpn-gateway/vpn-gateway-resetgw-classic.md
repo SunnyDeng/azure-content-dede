@@ -20,7 +20,7 @@
 # Zurücksetzen einer Azure VPN Gateway-Instanz mit PowerShell
 
 
-In diesem Artikel werden die Schritte zum Zurücksetzen einer Azure VPN Gateway-Instanz mithilfe von PowerShell-Cmdlets beschrieben. Diese Anweisungen gelten für das klassische Bereitstellungsmodell. Zum Zurücksetzen von VPN-Gateways für virtuelle Netzwerke, die mithilfe des Ressourcen-Manager-Bereitstellungsmodells erstellt wurden, sind noch keine Cmdlets oder REST-APIs verfügbar. Diese Cmdlets/APIs werden gegenwärtig entwickelt. Zeigen Sie Ihr virtuelles Netzwerk im Vorschauportal an, um zu ermitteln, ob Ihr VPN-Gateway mithilfe des klassischen Bereitstellungsmodells erstellt wurde. Virtuelle Netzwerke, die mithilfe des klassischen Bereitstellungsmodells erstellt wurden, werden im Vorschauportal im Bereich "Virtuelles Netzwerk (klassisch)" angezeigt.
+In diesem Artikel werden die Schritte zum Zurücksetzen einer Azure VPN Gateway-Instanz mithilfe von PowerShell-Cmdlets beschrieben. Diese Anweisungen gelten für das klassische Bereitstellungsmodell. Zum Zurücksetzen von VPN-Gateways für virtuelle Netzwerke, die mithilfe des Ressourcen-Manager-Bereitstellungsmodells erstellt wurden, sind noch keine Cmdlets oder REST-APIs verfügbar. Diese Cmdlets/APIs werden gegenwärtig entwickelt. Zeigen Sie Ihr virtuelles Netzwerk im Azure-Portal an, um zu ermitteln, ob Ihr VPN-Gateway mithilfe des klassischen Bereitstellungsmodells erstellt wurde. Virtuelle Netzwerke, die mithilfe des klassischen Bereitstellungsmodells erstellt wurden, werden im Azure-Portal im Bereich „Virtuelles Netzwerk (klassisch)“ angezeigt.
 
 Das Zurücksetzen von Azure VPN Gateway-Instanzen ist nützlich, wenn die standortübergreifende VPN-Verbindung bei mindestens einem S2S-VPN-Tunnel unterbrochen ist. In diesem Fall funktionieren Ihre lokalen VPN-Geräte ordnungsgemäß, können jedoch keine IPsec-Tunnelverbindungen mit Azure VPN Gateway-Instanzen herstellen. Bei Verwendung des Cmdlets *Reset-AzureVNetGateway* wird das Gateway neu gestartet, und die standortübergreifenden Konfigurationen werden erneut auf das Gateway angewendet. Die öffentliche IP-Adresse des Gateways bleibt unverändert. Die VPN-Routerkonfiguration muss also nicht mit einer neuen öffentlichen IP-Adresse für Azure VPN Gateway aktualisiert werden.
 
@@ -52,11 +52,11 @@ Im folgenden Beispiel wird die Azure VPN Gateway-Instanz für das virtuelle Netz
 
 Wenn die Verbindung nach dem ersten Neustart nicht wiederhergestellt wird, führen Sie denselben Befehl erneut aus, um die zweite VM-Instanz (das neue aktive Gateway) neu zu starten. Wenn die beiden Neustarts nacheinander angefordert werden, dauert der Neustart der beiden VM-Instanzen (aktive Instanz und Standbyinstanz) etwas länger. Der Neustart der beiden VMs kann 2 bis 4 Minuten dauern, sodass die VPN-Konnektivität etwas länger unterbrochen ist.
 
-Wenn nach den beiden Neustarts weiterhin standortübergreifende Konnektivitätsprobleme auftreten, erstellen Sie über das Azure-Portal ein Supportticket, um den Microsoft Azure-Support zu kontaktieren.
+Wenn nach den beiden Neustarts weiterhin standortübergreifende Konnektivitätsprobleme auftreten, erstellen Sie über das klassische Azure-Portal ein Supportticket, um den Microsoft Azure-Support zu kontaktieren.
 
 
 ## Nächste Schritte
 	
 Weitere Informationen zu diesem Cmdlet finden Sie in der [PowerShell-Referenz](https://msdn.microsoft.com/library/azure/mt270366.aspx).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

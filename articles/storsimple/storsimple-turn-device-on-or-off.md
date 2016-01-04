@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="09/04/2015"
+   ms.date="12/02/2015"
    ms.author="alkohli" />
 
 # Ein- und Ausschalten von StorSimple-Geräten 
@@ -189,11 +189,11 @@ Ein ausgeführtes Microsoft Azure StorSimple-Gerät muss möglicherweise herunte
 
 ### Gerät mit primärem Gehäuse <a name="8100a"> 
 
-Zurzeit gibt es keine Möglichkeit, ein ausgeführtes StorSimple-Gerät über das Verwaltungsportal herunterzufahren. Ein solches Gerät kann nur über Windows PowerShell für StorSimple heruntergefahren werden. Um das Gerät ordnungsgemäß und kontrolliert herunterzufahren, öffnen Sie Windows PowerShell für StorSimple, und führen Sie die unten stehenden Schritte aus.
+Zurzeit gibt es keine Möglichkeit, ein ausgeführtes StorSimple-Gerät über das klassische Azure-Portal herunterzufahren. Ein solches Gerät kann nur über Windows PowerShell für StorSimple heruntergefahren werden. Um das Gerät ordnungsgemäß und kontrolliert herunterzufahren, öffnen Sie Windows PowerShell für StorSimple, und führen Sie die unten stehenden Schritte aus.
 
 >[AZURE.IMPORTANT]Schalten Sie ein ausgeführtes Gerät nicht über den Netzschalter auf der Geräterückseite aus.
 >
->Bevor Sie das Gerät herunterfahren, vergewissern Sie sich, dass alle Gerätekomponenten fehlerfrei funktionieren. Navigieren Sie im Verwaltungsportal zu **Geräte** > **Wartung** > **Hardwarestatus**, und überprüfen Sie, ob der Status für alle Komponenten grün ist. Dies ist nur der Fall, wenn das System einwandfrei funktioniert. Wenn das System heruntergefahren wird, um eine fehlerhafte Komponente auszutauschen, wird für die jeweilige Komponente unter **Hardwarestatus** der Fehlerstatus (rot) oder der heruntergestufte Status (gelb) angezeigt.
+>Bevor Sie das Gerät herunterfahren, vergewissern Sie sich, dass alle Gerätekomponenten fehlerfrei funktionieren. Navigieren Sie im klassischen Azure-Portal zu **Geräte** > **Wartung** > **Hardwarestatus**, und überprüfen Sie, ob der Status für alle Komponenten grün ist. Dies ist nur der Fall, wenn das System einwandfrei funktioniert. Wenn das System heruntergefahren wird, um eine fehlerhafte Komponente auszutauschen, wird für die jeweilige Komponente unter **Hardwarestatus** der Fehlerstatus (rot) oder der heruntergestufte Status (gelb) angezeigt.
 
 Sie können über die serielle Gerätekonsole oder über Windows PowerShell-Remoting auf Windows PowerShell für StorSimple zugreifen. Führen Sie in Windows PowerShell für StorSimple die folgenden Schritte zum Herunterfahren eines ausgeführten Geräts aus.
 
@@ -225,7 +225,7 @@ Sie können über die serielle Gerätekonsole oder über Windows PowerShell-Remo
 
 ### Gerät mit EBOD-Gehäuse <a name="8600a">
 
->[AZURE.IMPORTANT]Bevor Sie das primäre und das EBOD-Gehäuse herunterfahren, stellen Sie sicher, dass sich alle Gerätekomponenten in fehlerfreiem Zustand befinden. Navigieren Sie im Verwaltungsportal zu **Geräte** > **Wartung** > **Hardwarestatus**, und überprüfen Sie, ob alle Komponenten fehlerfrei funktionieren.
+>[AZURE.IMPORTANT]Bevor Sie das primäre und das EBOD-Gehäuse herunterfahren, stellen Sie sicher, dass sich alle Gerätekomponenten in fehlerfreiem Zustand befinden. Navigieren Sie im klassischen Azure-Portal zu **Geräte** > **Wartung** > **Hardwarestatus**, und überprüfen Sie, ob alle Komponenten fehlerfrei funktionieren.
 
 #### So fahren Sie ein ausgeführtes Gerät mit EBOD-Gehäuse herunter
 
@@ -241,4 +241,4 @@ Sie können über die serielle Gerätekonsole oder über Windows PowerShell-Remo
 
 [Kontaktieren Sie den Microsoft-Support](storsimple-contact-microsoft-support.md), wenn beim Einschalten oder Herunterfahren eines StorSimple-Geräts Probleme auftreten.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

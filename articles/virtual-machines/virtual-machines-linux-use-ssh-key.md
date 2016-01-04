@@ -161,7 +161,7 @@ Sie können die PEM-Datei anschließend wie im folgenden Beispiel gezeigt mit de
 
 ## Herstellen einer Verbindung mit Ihrer VM
 
-Für den **SSH**-Befehl werden als Eingabeparameter ein Benutzername zur Anmeldung, die Netzwerkadresse des Computers und der Port, an dem die Verbindung mit der Adresse hergestellt werden soll, verwendet. Zudem sind viele weitere spezielle Varianten möglich. (Weitere Informationen zu **SSH** finden [hier](https://en.wikipedia.org/wiki/Secure_Shell).)
+Für den **SSH**-Befehl werden als Eingabeparameter ein Benutzername zur Anmeldung, die Netzwerkadresse des Computers und der Port, an dem die Verbindung mit der Adresse hergestellt werden soll, verwendet. Zudem sind viele weitere spezielle Varianten möglich. (Weitere Informationen zu **SSH** finden Sie in folgendem [Artikel über Secure Shell](https://en.wikipedia.org/wiki/Secure_Shell), in englischer Sprache.)
 
 Ein typisches Verwendungsbeispiel mit einer Ressourcen-Manager-Bereitstellung kann wie folgt aussehen, wenn Sie lediglich eine Unterdomäne und einen Bereitstellungsspeicherort angegeben haben:
 
@@ -298,4 +298,4 @@ Möglicherweise lässt sich das Problem mithilfe der Empfehlungen unter [Problem
  
 Nachdem Sie eine Verbindung mit Ihrer VM hergestellt haben, müssen Sie die ausgewählte Distribution vor der weiteren Verwendung unbedingt aktualisieren.
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

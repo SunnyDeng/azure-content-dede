@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="09/17/2015"
+   ms.date="12/02/2015"
    ms.author="v-sharos" />
 
 # Verwenden des Dashboards des StorSimple Manager-Diensts
@@ -45,7 +45,7 @@ Das Dashboard des StorSimple Manager-Diensts zeigt die folgenden Informationen a
 
 ## Anzeigen oder Neugenerieren des Dienstregistrierungsschlüssels
 
-Der Dienstregistrierungsschlüssel wird verwendet, um ein Microsoft Azure StorSimple-Gerät mit dem StorSimple Manager-Dienst zu registrieren, damit das Gerät im Microsoft Azure-Verwaltungsportal für weitere Verwaltungsvorgänge angezeigt wird. Der Schlüssel wird auf dem ersten Gerät erstellt und mit den übrigen Geräten gemeinsam genutzt.
+Der Dienstregistrierungsschlüssel wird verwendet, um ein Microsoft Azure StorSimple-Gerät mit dem StorSimple Manager-Dienst zu registrieren, damit das Gerät im klassischen Azure-Portal für weitere Verwaltungsvorgänge angezeigt wird. Der Schlüssel wird auf dem ersten Gerät erstellt und mit den übrigen Geräten gemeinsam genutzt.
 
 Durch Klicken auf **Registrierungsschlüssel** (unten auf der Seite) wird das Dialogfeld **Dienstregistrierungsschlüssel** geöffnet, über das Sie den aktuellen Dienstregistrierungsschlüssel in die Zwischenablage kopieren oder den Dienstregistrierungsschlüssel neu generieren können.
 
@@ -59,7 +59,7 @@ Dienstdaten-Verschlüsselungsschlüssel werden verwendet, um vertrauliche Kunden
 
 Das Ändern den Verschlüsselungsschlüssel für Dienstdaten wird in drei Schritten vollzogen:
 
-1. Sie autorisieren ein Gerät über das Verwaltungsportal, um den Verschlüsselungsschlüssel für Dienstdaten zu ändern.
+1. Sie autorisieren ein Gerät über das klassische Azure-Portal, um den Verschlüsselungsschlüssel für Dienstdaten zu ändern.
 2. Sie verwenden Windows PowerShell für StorSimple, um die Änderung des Verschlüsselungsschlüssels für Dienstdaten zu initialisieren.
 3. Wenn Sie über mehrere StorSimple-Geräte verfügen, aktualisieren Sie den Verschlüsselungsschlüssel für Dienstdaten auf den anderen Geräten.
 
@@ -78,4 +78,4 @@ Sie können die Vorgangsprotokolle anzeigen, indem Sie auf den entsprechenden Li
 
 - Erfahren Sie mehr über das [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

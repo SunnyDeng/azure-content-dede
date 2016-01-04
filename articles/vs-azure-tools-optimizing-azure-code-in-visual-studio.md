@@ -3,9 +3,9 @@
    description="Erfahren Sie, wie Sie Azure-Tools zur Codeoptimierung in Visual Studio nutzen können, um Ihren Code robuster und leistungsstärker zu machen."
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tglee" />
+   editor="" />
 <tags
    ms.service="multiple"
    ms.devlang="dotnet"
@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="multiple"
    ms.date="09/08/2015"
-   ms.author="kempb" />
+   ms.author="tarcher" />
 
 # Optimieren des Azure-Codes
 
@@ -532,4 +532,4 @@ public class BlogsController : Controller
 
 Weitere Informationen zur Optimierung und Problembehandlung von Azure-Apps finden Sie unter [Problembehandlung von Web-Apps in Azure App Service in Visual Studio](web-sites-dotnet-troubleshoot-visual-studio.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

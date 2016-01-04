@@ -33,7 +33,7 @@ Es gibt zwei Möglichkeiten, über die Azure-Befehlszeilenschnittstelle eine Ver
 
 Weitere Informationen zur Authentifizierung und Abonnementverwaltung finden Sie unter [Was ist der Unterschied zwischen kontobasierter Authentifizierung und zertifikatbasierter Authentifizierung][authandsub].
 
-Wenn Sie noch kein Azure-Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenlose Azure-Testversion][free-trial].
+Wenn Sie noch kein Azure-Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion][free-trial].
 
 >[AZURE.NOTE]Bei Verwendung einer älteren Version der Azure-Befehlszeilenschnittstelle als 0.9.10 können Sie den Befehl `azure login` nur mit Geschäfts- oder Schulkontoidentitäten verwenden, Microsoft-Kontoidentitäten werden dagegen nicht unterstützt. Mit der Azure-Befehlszeilenschnittstelle ab Version 0.9.10 können Sie sich jedoch mit dem interaktiven Befehl `azure login` mit jeder Identität bei Ihrem Konto anmelden.
 >
@@ -90,15 +90,15 @@ Geben Sie Ihr Kennwort ein, wenn Sie dazu aufgefordert werden.
 
 Wenn Sie nur die klassischen Befehle der Befehlszeilenschnittstelle (über die Dienstverwaltung) benötigen, können Sie die Verbindung mithilfe einer Datei mit Veröffentlichungseinstellungen herstellen.
 
-* Verwenden Sie den folgenden Befehl, um die **Datei mit den Veröffentlichungseinstellungen für Ihr Konto herunterzuladen**:
+* Mit dem folgenden Befehl können Sie die **Veröffentlichungseinstellungen für Ihr Konto herunterladen**:
 
 		azure account download
 
-Ihr Standardbrowser wird geöffnet, und Sie werden aufgefordert, sich beim [Azure-Portal][portal] anzumelden. Nach der Anmeldung wird eine `.publishsettings`-Datei heruntergeladen. Notieren Sie sich den Speicherort der Datei.
+Ihr Standardbrowser wird geöffnet, und Sie werden aufgefordert, sich beim [klassischen Azure-Portal][portal] anzumelden. Nach der Anmeldung wird eine `.publishsettings`-Datei heruntergeladen. Notieren Sie sich den Speicherort der Datei.
 
 	> [AZURE.NOTE] If your account is associated with multiple Azure Active Directory tenants, you may be prompted to select which Active Directory you wish to download a publish settings file for.
 	>
-	> Once selected using the download page, or by visiting the Azure portal, the selected Active Directory becomes the default used by the portal and download page. Once a default has been established, you will see the text '__click here to return to the selection page__' at the top of the download page. Use the provided link to return to the selection page.
+	> Once selected using the download page, or by visiting the Azure classic portal, the selected Active Directory becomes the default used by the classic portal and download page. Once a default has been established, you will see the text '__click here to return to the selection page__' at the top of the download page. Use the provided link to return to the selection page.
 
 * Führen Sie den folgenden Befehl aus, um die **Datei mit den Veröffentlichungseinstellungen zu importieren**:
 
@@ -143,7 +143,7 @@ Unabhängig davon, ob Sie sich mit einem Geschäfts- oder Schulkonto anmelden od
 
 * [Verwenden der Azure-Befehlszeilenschnittstelle mit Ressourcen-Manager-Befehlen][cliarm]
 
-* Wenn Sie weitere Informationen zur Azure-Befehlszeilenschnittstelle erhalten, den Quellcode herunterladen, Probleme melden oder etwas zum Projekt beitragen möchten, besuchen Sie die Webseite [GitHub repository for the Azure CLI](https://github.com/azure/azure-xplat-cli) (in englischer Sprache).
+* Wenn Sie weitere Informationen zur Azure-Befehlszeilenschnittstelle erhalten, den Quellcode herunterladen, Probleme melden oder etwas zum Projekt beitragen möchten, besuchen Sie die Webseite [GitHub repository for the Azure CLI](https://github.com/azure/azure-xplat-cli).
 
 * Wenn Sie Probleme bei der Verwendung der Azure-Befehlszeilenschnittstelle oder Azure haben, besuchen Sie die [Azure-Foren](http://social.msdn.microsoft.com/Forums/windowsazure/home).
 
@@ -158,4 +158,4 @@ Unabhängig davon, ob Sie sich mit einem Geschäfts- oder Schulkonto anmelden od
 [cliasm]: virtual-machines/virtual-machines-command-line-tools.md
 [cliarm]: xplat-cli-azure-resource-manager.md
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

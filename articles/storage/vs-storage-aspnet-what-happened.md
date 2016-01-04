@@ -5,7 +5,7 @@
 	documentationCenter=""
 	authors="TomArcher"
 	manager="douge"
-	editor="tglee"/>
+	editor=""/>
 
 <tags
 	ms.service="storage"
@@ -13,14 +13,10 @@
 	ms.tgt_pltfrm="vs-what-happened"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/03/2015"
+	ms.date="12/16/2015"
 	ms.author="tarcher"/>
 
 # Was ist mit dem ASP.NET-Projekt passiert (verbundene Visual Studio-Dienste für Azure Storage)?
-
-> [AZURE.SELECTOR]
-> - [Getting started](vs-storage-aspnet-getting-started-blobs.md)
-> - [What happened](vs-storage-aspnet-what-happened.md)
 
 ## Verweise wurden hinzugefügt
 
@@ -40,4 +36,4 @@ In der Datei web.config Ihres Projekts wurde ein Element mit der Verbindungszeic
 
 Weitere Informationen finden Sie unter [ASP.NET](http://www.asp.net).
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

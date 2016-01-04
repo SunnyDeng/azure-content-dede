@@ -18,6 +18,10 @@
 
 
 #Data Warehouse-Dienstprogramm für die Migration (Vorschau)
+
+> [AZURE.SELECTOR]
+- [Download Migration Utility](https://migrhoststorage.blob.core.windows.net/sqldwsample/DataWarehouseMigrationUtility.zip)
+
 Das Data Warehouse-Dienstprogramm für die Migration ist ein Tool zum Migrieren von Schemas und Daten aus SQL Server und der Azure SQL-Datenbank nach Azure SQL Data Warehouse. Während der Migration des Schemas ordnet das Tool automatisch das entsprechende Schema aus der Quelle zum Ziel zu. Nachdem das Schema migriert wurde, haben Benutzer außerdem die Möglichkeit, Daten über automatisch erstellte Skripts zu verschieben.
 
 Zusätzlich zur Schema- und Datenmigration bietet dieses Tool Benutzern die Option, Kompatibilitätsberichte zu generieren, die Inkompatibilitäten zwischen den Ziel- und Quellinstanzen zusammenzufassen, die eine optimierte Migration verhindern würden.
@@ -57,4 +61,4 @@ Nachdem Sie nun einige Daten migriert haben, schauen Sie sich an, die das [Entwi
 [Entwickeln]: https://azure.microsoft.com/de-DE/documentation/articles/sql-data-warehouse-overview-develop/
 [hier]: https://migrhoststorage.blob.core.windows.net/sqldwsample/DataWarehouseMigrationUtility.zip
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

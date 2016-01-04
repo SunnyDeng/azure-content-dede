@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/06/2015" 
+	ms.date="11/19/2015" 
 	ms.author="tomfitz"/>
 
 # Verschieben von Ressourcen in eine neue Ressourcengruppe oder ein neues Abonnement
@@ -28,7 +28,7 @@ Beim Verschieben einer Ressource sollten Sie einige wichtige Aspekte berücksich
 
 1. Sie können nicht den Speicherort der Ressource ändern. Wenn Sie ein Ressource verschieben, wird sie nur in eine neue Ressourcengruppe verschoben. Die neue Ressourcengruppe hat möglicherweise einen anderen Speicherort, das heißt jedoch nicht, dass der Speicherort der Ressource geändert wird.
 2. Die Zielressourcengruppe sollte nur Ressourcen enthalten, die den gleichen Anwendungslebenszyklus wie die verschobenen Ressourcen haben.
-3. Wenn Sie Azure PowerShell verwenden, stellen Sie sicher, dass Sie die neueste Version verwenden. Der **Move-AzureResource**-Befehl wird regelmäßig aktualisiert. Führen Sie zum Aktualisieren Ihrer Version den Microsoft-Webplattform-Installer aus, und überprüfen Sie, ob eine neue Version verfügbar ist. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md).
+3. Wenn Sie Azure PowerShell verwenden, stellen Sie sicher, dass Sie die neueste Version verwenden. Der **Move-AzureRmResource**-Befehl wird regelmäßig aktualisiert. Führen Sie zum Aktualisieren Ihrer Version den Microsoft-Webplattform-Installer aus, und überprüfen Sie, ob eine neue Version verfügbar ist. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md).
 4. Es kann einige Zeit dauern, bis der Verschiebevorgang abgeschlossen ist. Die PowerShell-Eingabeaufforderung wartet so lange, bis der Vorgang abgeschlossen ist.
 5. Beim Verschieben von Ressourcen werden die Quellgruppe und die Zielgruppe für die Dauer des Vorgangs gesperrt. Schreib- und Löschvorgänge in den Gruppen werden bis zum Abschluss der Verschiebung blockiert.
 
@@ -39,15 +39,20 @@ Nicht alle Dienste unterstützen derzeit die Möglichkeit, Ressourcen zu verschi
 Derzeit unterstützen die folgenden Dienste das Verschieben in eine neue Ressourcengruppe und ein neues Abonnement:
 
 - API Management
-- Azure DocumentDB
-- Azure Search
-- Azure-Web-Apps (es gelten einige [Einschränkungen](app-service-web/app-service-move-resources.md))
+- Automation
+- Batch
 - Data Factory
+- DocumentDB
+- HDInsight-Cluster
 - Schlüsseltresor
+- Logik-Apps
 - Mobile Engagement
+- Notification Hubs
 - Operational Insights
 - Redis-Cache
+- Suchen
 - SQL-Datenbank
+- Web-Apps (es gelten einige [Einschränkungen](app-service-web/app-service-move-resources.md))
 
 Die folgenden Dienste unterstützen das Verschieben in eine neue Ressourcengruppe, jedoch nicht in ein neues Abonnement:
 
@@ -58,6 +63,7 @@ Die folgenden Dienste unterstützen derzeit nicht das Verschieben einer Ressourc
 
 - Virtual Machines
 - Virtuelle Netzwerke
+- Speicher
 
 Bei der Arbeit mit Web-Apps können Sie nicht nur einen App Services-Plan verschieben. Zum Verschieben von Web-Apps stehen folgende Optionen bereit:
 
@@ -72,12 +78,13 @@ Verwenden Sie zum Verschieben vorhandener Ressourcen in eine andere Ressourcengr
 
 Das erste Beispiel zeigt, wie Sie eine Ressource in eine neue Ressourcengruppe verschieben.
 
-    PS C:\> Move-AzureRmResource -DestinationResourceGroupName TestRG -ResourceId /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/OtherExample/providers/Microsoft.ClassicStorage/storageAccounts/examplestorage
+    PS C:\> $resource = Get-AzureRmResource -ResourceName ExampleApp -ResourceGroupName OldRG
+    PS C:\> Move-AzureRmResource -DestinationResourceGroupName NewRG -ResourceId $resource.ResourceId
 
 Im zweiten Beispiel wird veranschaulicht, wie mehrere Ressourcen in eine neue Ressourcengruppe verschoben werden.
 
-    PS C:\> $webapp = Get-AzureRmResource -ResourceGroupName OldRG -ResourceName ExampleSite -ResourceType Microsoft.Web/sites
-    PS C:\> $plan = Get-AzureRmResource -ResourceGroupName OldRG -ResourceName ExamplePlan -ResourceType Microsoft.Web/serverFarms
+    PS C:\> $webapp = Get-AzureRmResource -ResourceGroupName OldRG -ResourceName ExampleSite
+    PS C:\> $plan = Get-AzureRmResource -ResourceGroupName OldRG -ResourceName ExamplePlan
     PS C:\> Move-AzureRmResource -DestinationResourceGroupName NewRG -ResourceId ($webapp.ResourceId, $plan.ResourceId)
 
 Um Ressourcen in ein neues Abonnement zu verschieben, schließen Sie einen Wert für den **DestinationSubscriptionId**-Parameter ein.
@@ -96,4 +103,4 @@ Geben Sie im Anforderungstext die Zielgruppe und die zu verschiebenden Ressource
 - [Verwenden des Azure-Portals zum Verwalten von Ressourcen](azure-portal/resource-group-portal.md)
 - [Verwenden von Tags zum Organisieren von Azure-Ressourcen](./resource-group-using-tags.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

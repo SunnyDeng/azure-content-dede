@@ -33,7 +33,7 @@ Es folgen einige administrative und vorbereitende Schritte, die Sie ausführen s
 
 1. Um einen Dienstnamespace im Azure-Portal zu erstellen, führen Sie die Schritte unter [Gewusst wie: Erstellen oder Ändern eines Service Bus-Dienstnamespace](https://msdn.microsoft.com/library/azure/hh690931.aspx) aus.
 
-1. Klicken Sie im Hauptfenster des Azure-Portals auf den Namen des Namespace, den Sie im vorherigen Schritt erstellt haben.
+1. Klicken Sie im Hauptfenster des [klassischen Azure-Portals][] auf den Namen des Namespaces, den Sie im vorherigen Schritt erstellt haben.
 
 1. Klicken Sie auf **Konfigurieren**.
 
@@ -106,8 +106,8 @@ Im nächsten Schritt erstellen Sie ein Visual Studio-Projekt und schreiben zwei 
 	    publicclass Program
 	    {
 	
-	        privatestatic DataTable issues;
-	        privatestatic List<BrokeredMessage> MessageList;
+	        private static DataTable issues;
+	        private static List<BrokeredMessage> MessageList;
 	```
 
 1. Definieren Sie außerhalb von `Main()` eine `ParseCSV()`-Methode, mit der die Liste mit den Nachrichten in der Datei „Data.csv“ analysiert wird und die Nachrichten wie hier gezeigt in eine [DataTable](https://msdn.microsoft.com/library/azure/system.data.datatable.aspx)-Tabelle geladen werden. Die Methode gibt ein **DataTable**-Objekt zurück.
@@ -169,7 +169,8 @@ Im nächsten Schritt erstellen Sie ein Visual Studio-Projekt und schreiben zwei 
 	    // Instantiate the brokered list object
 	    List<BrokeredMessage> result = new List<BrokeredMessage>();
 	
-	    // Iterate through the table and create a brokered message for each rowforeach (DataRow item in issues.Rows)
+	    // Iterate through the table and create a brokered message for each row
+	    foreach (DataRow item in issues.Rows)
 	    {
 	        BrokeredMessage message = new BrokeredMessage();
 	        foreach (DataColumn property in issues.Columns)
@@ -631,7 +632,7 @@ Klicken Sie in Visual Studio im Menü **Erstellen** auf **Projektmappe erstellen
 
 1. Vor dem Ausführen der Anwendung müssen Sie sicherstellen, dass Sie einen Dienstnamespace erstellt und einen SAS-Schlüssel abgerufen haben. Dies ist unter [Einführung und Voraussetzungen](#introduction-and-prerequisites) beschrieben.
 
-1. Öffnen Sie einen Webbrowser, und navigieren Sie zum [Azure-Portal](http://manage.windowsazure.com).
+1. Öffnen Sie einen Webbrowser, und navigieren Sie zum [klassischen Azure-Portal][].
 
 1. Klicken Sie im linken Bereich auf **Service Bus**.
 
@@ -643,10 +644,13 @@ Klicken Sie in Visual Studio im Menü **Erstellen** auf **Projektmappe erstellen
 
 In diesem Lernprogramm wurde gezeigt, wie Sie eine Service Bus-Clientanwendung und den dazugehörigen Dienst mit den Service Bus-Brokermessagingfunktionen erstellen. Ein ähnliches Lernprogramm, in dem die [Relaymessagingfunktionen](service-bus-messaging-overview.md/#Relayed-messaging) von Service Bus beschrieben werden, finden Sie unter [Lernprogramm zu Service Bus-Relaymessaging](service-bus-relay-tutorial.md).
 
-Weitere Informationen zum Service Bus finden Sie in den unten angegebenen Themen.
+Weitere Informationen zu [Service Bus](https://azure.microsoft.com/services/service-bus/) finden Sie in den folgenden Themen.
 
 - [Übersicht über Service Bus-Messaging](service-bus-messaging-overview.md)
 - [Service Bus – Grundlagen](service-bus-fundamentals-hybrid-solutions.md)
 - [Service Bus-Architektur](service-bus-architecture.md)
 
-<!---HONumber=Oct15_HO3-->
+[klassischen Azure-Portal]: http://manage.windowsazure.com
+[klassischen Azure-Portals]: http://manage.windowsazure.com
+
+<!---HONumber=AcomDC_1203_2015-->

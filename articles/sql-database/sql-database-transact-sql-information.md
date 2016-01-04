@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Azure SQL-Datenbank – Transact-SQL-Informationen | Microsoft Azure"
-   description="Transact-SQL-Anweisungen in Azure SQL-Datenbank"
+   pageTitle="Nicht unterstützte T-SLQ-Funktionen in Azure SQL-Datenbank | Microsoft Azure"
+   description="Transact-SQL-Anweisungen, die in Azure SQL-Datenbank nicht vollständig unterstützt werden"
    services="sql-database"
    documentationCenter=""
    authors="BYHAM"
@@ -14,18 +14,27 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="data-management"
-   ms.date="11/09/2015"
+   ms.date="12/14/2015"
    ms.author="rick.byham@microsoft.com"/>
 
-# Azure SQL-Datenbank – Transact-SQL-Informationen
+# Azure SQL-Datenbank – Abweichungen bei Transact-SQL
 
-Die meisten SQL Server 2016 Transact-SQL-Anweisungen werden in Microsoft Azure SQL-Datenbank vollständig unterstützt. Dies umfasst die Datentypen, Operatoren, Zeichenfolgen-, arithmetischen, logischen und Cursorfunktionen sowie die anderen Transact-SQL-Elemente von SQL Server, mit denen die meisten Programme arbeiten. Teilweise oder nicht unterstützte Funktionen steht meist in Zusammenhang mit den Unterschieden bei der Verwaltung der Datenbank durch Azure SQL-Datenbank (z. B. Datei-, Hochverfügbarkeits- und Sicherheitsfunktionen) und bei speziellen Features wie dem Service Broker. Da Azure SQL-Datenbank viele Features von der Abhängigkeit von der master-datenbank isoliert, sind viele Aktivitäten auf Serverebene ungeeignet und werden nicht unterstützt. Features, die in SQL Server veraltet sind, werden im Allgemeinen von Azure SQL-Datenbank nicht unterstützt.
+
+Die meisten Transact-SQL-Funktionen, von denen Anwendungen abhängen, werden in Microsoft SQL Server und Azure SQL-Datenbank unterstützt. Hier eine unvollständige Liste der für Anwendungen unterstützten Funktionen:
+
+- Datentypen
+- Operatoren
+- Zeichenfolgen-, arithmetische, logische und Cursorfunktionen
+
+Azure SQL-Datenbank ist jedoch so konzipiert, dass Funktionen von der Abhängigkeit von der **master**-Datenbank isoliert werden. Daher sind viele Aktivitäten auf Serverebene für SQL-Datenbank nicht geeignet und werden nicht unterstützt. In diesem Thema werden die Funktionen erläutert, die in SQL-Datenbank nicht vollständig unterstützt werden.
+
+Auch Funktionen, die in SQL Server veraltet sind, werden im Allgemeinen in Azure SQL-Datenbank nicht unterstützt.
 
 ## Upgrade auf Azure SQL-Datenbank V12
 
 In diesem Thema werden die Features behandelt, die mit Azure SQL-Datenbank bei einem Upgrade auf die kostenlose Azure SQL-Datenbank V12 verfügbar sind. Weitere Informationen zu V12 finden Sie unter [SQL-Datenbank V12 – Neuerungen](sql-database-v12-whats-new.md). Azure SQL-Datenbank V12 bietet Leistungs- und Verwaltungsverbesserungen sowie Unterstützung für zusätzliche Features. Die zusätzlichen Features sind nachstehend getrennt nach teilweise und vollständig unterstützten Features aufgeführt.
 
-## In Azure SQL-Datenbank V12 teilweise unterstützte Features
+## In Azure SQL-Datenbank V12 teilweise unterstützte Funktionen
 
 Azure SQL-Datenbank V12 unterstützt einige, aber nicht alle Argumente, die in den entsprechenden SQL Server 2016-Transact-SQL-Anweisungen vorhanden sind. Beispielsweise steht die CREATE PROCEDURE-Anweisung zur Verfügung, jedoch ohne die Option WITH ENCRYPTION. In den verlinkten Syntaxthemen finden Sie Einzelheiten zu den unterstützten Bereichen jeder Anweisung.
 
@@ -40,7 +49,7 @@ Azure SQL-Datenbank V12 unterstützt einige, aber nicht alle Argumente, die in d
 - Benutzer: [CREATE](https://msdn.microsoft.com/library/ms173463.aspx)/[ALTER USER](https://msdn.microsoft.com/library/ms176060.aspx)
 - Sichten: [CREATE](https://msdn.microsoft.com/library/ms187956.aspx)/[ALTER VIEW](https://msdn.microsoft.com/library/ms173846.aspx)
 
-## In Azure SQL-Datenbank V12 nicht unterstützte Features
+## In SQL-Datenbank nicht unterstützte Funktionen
 
 - Sortierung von Systemobjekten
 - Verbindungsbezogen: Endpunktanweisungen, ORIGINAL\_DB\_NAME. Die Windows-Authentifizierung ist für Anmeldungen oder eigenständige Datenbanken nicht verfügbar.
@@ -65,6 +74,7 @@ Azure SQL-Datenbank V12 unterstützt einige, aber nicht alle Argumente, die in d
 - KILL STATS JOB
 - Verknüpfte Server, OPENQUERY, OPENROWSET, OPENDATASOURCE, BULK INSERT, Namen mit 3 oder 4 Teilen
 - Master-/Zielserver
+- .NET Framework: [CLR-Integration in SQL Server](http://msdn.microsoft.com/library/ms254963.aspx)
 - Ressourcenkontrolle
 - Semantische Suche
 - Serveranmeldeinformationen
@@ -91,8 +101,10 @@ Weitere Informationen zu Transact-SQL-Grammatik und -Syntax sowie Beispiele find
 
 ### Informationen zu Tags vom Typ "Gilt für"
 
-Die Transact-SQL-Referenz enthält Themen im Zusammenhang mit SQL Server 2008, SQL Server 2008 R2, SQL Server 2012, SQL Server 2014 und Microsoft Azure SQL-Datenbank. Am oberen Rand jedes Themas ist ein Abschnitt, der angibt, welche Produkte den Betreff des Themas unterstützen. Wenn ein Produkt fehlt, ist das im Thema beschriebene Feature in diesem Produkt nicht verfügbar. Beispielsweise wurden Verfügbarkeitsgruppen in SQL Server 2012 eingeführt. Das Thema **VERFÜGBARKEITSGRUPPE ERSTELLEN** gibt an, dass es für **SQL Server (SQL Server 2012 bis zur aktuellen Version)** gilt. Es gilt nicht für SQL Server 2008, SQL Server 2008 R2 oder Microsoft Azure SQL-Datenbank.
+Die Transact-SQL-Referenz umfasst Themen zu SQL Server-Versionen ab 2008. Unter der Themenüberschrift sind normalerweise unter „Gilt für“ die SQL Server-Versionen und möglicherweise auch andere Produktnamen aufgeführt. Häufig ist dort auch Azure SQL-Datenbank aufgeführt. Wenn Azure SQL-Datenbank nicht angegeben ist, gilt der Inhalt des Themas nicht für Azure SQL-Datenbank. Wenn unter „Gilt für“ mehrere Produkte aufgeführt sind, wird mit einem kleinen Symbol angegeben, ob das Thema jeweils für die einzelnen Produkte gilt.
 
-In einigen Fällen kann der allgemeine Betreff eines Themas in einem Produkt verwendet werden, ohne dass alle Argumente unterstützt werden. Eigenständige Datenbanken wurden z. B. in SQL Server 2012 eingeführt. Die **CREATE USER**-Anweisung kann in allen SQL Server-Produkten, die **WITH PASSWORD**-Syntax jedoch nicht in älteren Versionen verwendet werden. In diesem Fall wurden zusätzliche **Gilt für**-Abschnitte in die entsprechenden Argumentbeschreibungen im Text des Themas eingefügt.
+ Beispielsweise wurden Verfügbarkeitsgruppen in SQL Server 2012 eingeführt. Das Thema **VERFÜGBARKEITSGRUPPE ERSTELLEN** gibt an, dass es für **SQL Server (SQL Server 2012 bis zur aktuellen Version)** gilt. Es gilt nicht für SQL Server 2008, SQL Server 2008 R2 oder Azure SQL-Datenbank.
 
-<!---HONumber=Nov15_HO3-->
+In einigen Fällen kann der allgemeine Gegenstand eines Themas in einem Produkt verwendet werden, es liegen jedoch kleine Unterschiede im Hinblick auf die verschiedenen Produkte vor. Die Unterschiede werden dann im Thema entsprechend angegeben.
+
+<!---HONumber=AcomDC_1217_2015-->

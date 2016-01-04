@@ -1,6 +1,7 @@
 <properties 
 	pageTitle="Stream Analytics: Austauschen von Anmeldeinformationen für Ein- und Ausgaben | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie die Anmeldeinformationen für Stream Analytics-Ein- und Ausgaben aktualisieren können." 
+	description="Erfahren Sie, wie Sie die Anmeldeinformationen für Stream Analytics-Ein- und Ausgaben aktualisieren können."
+	keywords="Anmeldeinformationen"
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
@@ -13,15 +14,15 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="11/06/2015" 
+	ms.date="12/04/2015" 
 	ms.author="jeffstok"/>
 
-#Austauschen der Anmeldeinformationen für die Eingabe-/Ausgabe
+#Austauschen von Anmeldeinformationen
 
 ##Zusammenfassung
 Derzeit unterstützt Azure Stream Analytics das Austauschen der Anmeldeinformationen für die Eingabe/Ausgabe nicht, während ein Auftrag ausgeführt wird.
 
-Während Azure Stream Analytics zwar das Fortsetzen eines Auftrags von der letzten Ausgabe an unterstützt, wollten wir den gesamten Prozess freigeben, um die Verzögerung zwischen dem Anhalten und Starten des Auftrags zu verkürzen.
+Während Azure Stream Analytics zwar das Fortsetzen eines Auftrags von der letzten Ausgabe an unterstützt, wollten wir den gesamten Prozess freigeben, um die Verzögerung zwischen dem Anhalten und Starten des Auftrags und dem Austauschen der Anmeldeinformationen zu verkürzen.
 
 ##Teil 1 – Vorbereiten des neuen Anmeldeinformationssatzes:
 Dieser Teil gilt für die folgenden Eingaben/Ausgaben:
@@ -193,4 +194,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 [graphic43]: ./media/stream-analytics-login-credentials-inputs-outputs/43-stream-analytics-login-credentials-inputs-outputs.png
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="08/11/2015" 
+	ms.date="12/11/2015" 
 	ms.author="cephalin"/>
 
 
@@ -70,7 +70,7 @@ In diesem Abschnitt erstellen Sie mit Visual Studio eine ASP.NET-Anwendung namen
 	![MVC-Vorlage auswählen][VS2013SelectMVCTemplate]
 
 1. Wenn Sie nicht bereits bei Microsoft Azure angemeldet sind, werden Sie aufgefordert, sich anzumelden. Folgen Sie den Anweisungen, um sich bei Azure anzumelden.
-2. Sobald Sie angemeldet sind, können Sie beginnen, Ihre App Service-Web-App zu konfigurieren. Nehmen Sie Eingaben in die Felder **Web-App-Name**, **App-Dienstplan**, **Ressourcengruppe** und **Region** vor, klicken Sie dann auf **OK**.
+2. Sobald Sie angemeldet sind, können Sie beginnen, Ihre App Service-Web-App zu konfigurieren. Nehmen Sie Eingaben in den Feldern **Web-App-Name**, **App Service-Plan**, **Ressourcengruppe** und **Region** vor, und klicken Sie dann auf **Erstellen**.
 
 	![](./media/web-sites-dotnet-store-data-mongodb-vm/VSConfigureWebAppSettings.png)
 
@@ -147,7 +147,9 @@ Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Proj
 	using System.Web;
 	using MyTaskListApp.Models;
 	using MongoDB.Driver;
+	using MongoDB.Bson;
 	using System.Configuration;
+	
 	
 	namespace MyTaskListApp
 	{
@@ -157,42 +159,42 @@ Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Proj
 	        private bool disposed = false;
 	
 	        // To do: update the connection string with the DNS name
-			// or IP address of your server. 
-			//For example, "mongodb://testlinux.cloudapp.net"
-	        private string connectionString = "mongodb://<vm-dns-name>";
+	        // or IP address of your server. 
+	        //For example, "mongodb://testlinux.cloudapp.net"
+	        private string connectionString = "mongodb://mongodbsrv20151211.cloudapp.net";
 	
 	        // This sample uses a database named "Tasks" and a 
-			//collection named "TasksList".  The database and collection 
-			//will be automatically created if they don't already exist.
+	        //collection named "TasksList".  The database and collection 
+	        //will be automatically created if they don't already exist.
 	        private string dbName = "Tasks";
 	        private string collectionName = "TasksList";
 	
 	        // Default constructor.        
 	        public Dal()
 	        {
-	        }        
+	        }
 	
 	        // Gets all Task items from the MongoDB server.        
 	        public List<MyTask> GetAllTasks()
 	        {
 	            try
 	            {
-	                MongoCollection<MyTask> collection = GetTasksCollection();
-	                return collection.FindAll().ToList<MyTask>();
+	                var collection = GetTasksCollection();
+	                return collection.Find(new BsonDocument()).ToList();
 	            }
 	            catch (MongoConnectionException)
 	            {
-	                return new List<MyTask >();
+	                return new List<MyTask>();
 	            }
 	        }
 	
 	        // Creates a Task and inserts it into the collection in MongoDB.
 	        public void CreateTask(MyTask task)
 	        {
-	            MongoCollection<MyTask> collection = GetTasksCollectionForEdit();
+	            var collection = GetTasksCollectionForEdit();
 	            try
 	            {
-	                collection.Insert(task, SafeMode.True);
+	                collection.InsertOne(task);
 	            }
 	            catch (MongoCommandException ex)
 	            {
@@ -200,19 +202,19 @@ Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Proj
 	            }
 	        }
 	
-	        private MongoCollection<MyTask> GetTasksCollection()
+	        private IMongoCollection<MyTask> GetTasksCollection()
 	        {
-	            MongoServer server = MongoServer.Create(connectionString);
-	            MongoDatabase database = server[dbName];
-	            MongoCollection<MyTask> todoTaskCollection = database.GetCollection<MyTask>(collectionName);
+	            MongoClient client = new MongoClient(connectionString);
+	            var database = client.GetDatabase(dbName);
+	            var todoTaskCollection = database.GetCollection<MyTask>(collectionName);
 	            return todoTaskCollection;
 	        }
 	
-	        private MongoCollection<MyTask> GetTasksCollectionForEdit()
+	        private IMongoCollection<MyTask> GetTasksCollectionForEdit()
 	        {
-	            MongoServer server = MongoServer.Create(connectionString);
-	            MongoDatabase database = server[dbName];
-	            MongoCollection<MyTask> todoTaskCollection = database.GetCollection<MyTask>(collectionName);
+	            MongoClient client = new MongoClient(connectionString);
+	            var database = client.GetDatabase(dbName);
+	            var todoTaskCollection = database.GetCollection<MyTask>(collectionName);
 	            return todoTaskCollection;
 	        }
 	
@@ -419,7 +421,7 @@ Der **Projektmappen-Explorer** sollte folgendermaßen aussehen:
 
 	private string connectionString = "mongodb://<vm-dns-name>";
 
-Ersetzen Sie `<vm-dns-name>` durch den DNS-Namen des virtuellen Computers, auf dem die MongoDB-Datenbank ausgeführt wird und den Sie in diesem Lernprogramm im Schritt [Erstellen eines virtuellen Computers und Installieren von MongoDB][] erstellt haben. Um den DNS-Namen des virtuellen Computers zu finden, gehen Sie zum Azure-Portal, wählen Sie **Virtuelle Computer** aus, und suchen Sie **DNS-Name**.
+Ersetzen Sie `<vm-dns-name>` durch den DNS-Namen des virtuellen Computers, auf dem die MongoDB-Datenbank ausgeführt wird und den Sie in diesem Lernprogramm im Schritt [Erstellen eines virtuellen Computers und Installieren von MongoDB][] erstellt haben. Um den DNS-Namen des virtuellen Computers zu finden, wechseln Sie zum Azure-Portal, wählen Sie **Virtuelle Computer** aus, und suchen Sie **DNS-Name**.
 
 Wenn der DNS-Name des virtuellen Computers "testlinuxvm.cloudapp.net" lautet und MongoDB am Standardport 27017 empfangsbereit ist, lautet die Verbindungszeichenfolge folgendermaßen:
 
@@ -499,4 +501,4 @@ Weitere Informationen zum Entwickeln von C#-Anwendungen für MongoDB finden Sie 
 [Deploy the ASP.NET application to the web site using Git]: #deployapp
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

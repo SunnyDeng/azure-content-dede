@@ -1,11 +1,12 @@
 <properties
-   pageTitle="Was ist SQL Database | Microsoft Azure"
-   description="Entdecken Sie die technischen Details und Funktionen der Azure SQL-Datenbank, das Microsoft Managementsystem für relationale Datenbanken (RDBMS) und die PaaS-Lösung in der Cloud."
-   services="sql-database"
-   documentationCenter=""
-   authors="shontnew"
-   manager="jeffreyg"
-   editor="monicar"/>
+	pageTitle="Was ist SQL Database? Einführung in SQL-Datenbank | Microsoft Azure"
+	description="Lernen Sie die technischen Details und Funktionen von SQL-Datenbank kennen, des relationalen Datenbankmanagementsystems von Microsoft in der Cloud."
+	keywords="Einführung in SQL, Was ist SQL-Datenbank?, DTU"
+	services="sql-database"
+	documentationCenter=""
+	authors="shontnew"
+	manager="jeffreyg"
+	editor="cgronlun"/>
 
 <tags
    ms.service="sql-database"
@@ -16,11 +17,11 @@
    ms.date="09/30/2015"
    ms.author="shkurhek"/>
 
-# Einführung in SQL-Datenbank
+# Was ist SQL Database? Einführung in SQL-Datenbank, technische Details und Erläuterung von DTUs
 
-SQL-Datenbank ist ein relationaler Datenbankdienst in der Cloud, der auf der marktführenden Microsoft SQL Server Engine basiert und betriebsnotwendige Funktionen beinhaltet. SQL-Datenbank bietet vorhersagbare Leistung, Skalierbarkeit ohne Ausfallzeiten, Geschäftskontinuität, Datenschutz und nahezu keinerlei Verwaltungsaufwand. Anstatt auf die Verwaltung virtueller Computer und der Infrastruktur können Sie sich auf die schnelle Entwicklung von Apps und eine beschleunigte Markteinführung konzentrieren. Da SQL-Datenbank auf dem [SQL Server](https://msdn.microsoft.com/library/bb545450.aspx)-Modul basiert, werden vorhandene SQL Server-Tools, -Bibliotheken und -APIs unterstützt, sodass diese einfacher in die Cloud verschoben und auf die Cloud ausgedehnt werden können.
+SQL-Datenbank ist ein relationaler Datenbankdienst in der Cloud, der auf dem marktführenden Microsoft SQL Server-Modul basiert und unternehmenswichtige Funktionen bietet. SQL-Datenbank bietet vorhersagbare Leistung, Skalierbarkeit ohne Ausfallzeiten, Geschäftskontinuität, Datenschutz und nahezu keinerlei Verwaltungsaufwand. Anstatt auf die Verwaltung virtueller Computer und der Infrastruktur können Sie sich auf die schnelle Entwicklung von Apps und eine beschleunigte Markteinführung konzentrieren. Da SQL-Datenbank auf dem [SQL Server](https://msdn.microsoft.com/library/bb545450.aspx)-Modul basiert, werden vorhandene SQL Server-Tools, -Bibliotheken und -APIs unterstützt, sodass diese einfacher in die Cloud verschoben und auf die Cloud ausgedehnt werden können.
 
-In diesem Artikel werden die grundlegenden Konzepte und Funktionen von SQL-Datenbank im Hinblick auf Leistung, Skalierbarkeit und Verwaltbarkeit mit Links zu detaillierten Informationen eingeführt. Wenn Sie sich damit vertraut gemacht haben, können Sie binnen Minuten [eine erste SQL-Datenbank erstellen](sql-database-get-started.md) oder [einen Pool für elastische Datenbanken erstellen und verwalten](sql-database-elastic-pool-portal.md). Wenn Sie eingehendere Informationen benötigen, finden Sie diese in diesem 30 Minuten langen Video.
+Dieser Artikel bietet eine Einführung in die wesentlichen Konzepte und Features von SQL-Datenbank im Hinblick auf Leistung, Skalierbarkeit und Verwaltbarkeit sowie Links zu detaillierten Informationen. Wenn Sie sich damit vertraut gemacht haben, können Sie binnen Minuten [eine erste SQL-Datenbank erstellen](sql-database-get-started.md) oder [einen Pool für elastische Datenbanken erstellen und verwalten](sql-database-elastic-pool-portal.md). Wenn Sie eingehendere Informationen benötigen, finden Sie diese in diesem 30 Minuten langen Video.
 
 
 > [AZURE.VIDEO azurecon-2015-get-started-with-azure-sql-database]
@@ -43,7 +44,7 @@ Aber wie können Sie nun die relative Leistung von Datenbanken und Datenbankpool
 
 ## Aufrechterhalten von App-Ausführung und Geschäftskontinuität
 
-Auf der Basis eines globalen Netzwerks von Microsoft-verwalteten Rechenzentren können wir für Azure eine branchenführende Verfügbarkeit von 99,99 % mit einer entsprechenden Vereinbarung zum Servicelevel [(SLA)](http://azure.microsoft.com/support/legal/sla/) sicherstellen. Ihre Apps werden also wirklich rund um die Uhr ausgeführt. Mit jeder SQL-Datenbank nutzen Sie den integrierten Datenschutz und die Fehlertoleranz, die Sie andernfalls entwerfen, kaufen, erstellen und verwalten müssten. Abhängig von Ihren Geschäftsanforderungen benötigen Sie möglicherweise dennoch weitere Schutzebenen, um sicherzustellen, dass Ihre App und Ihr Geschäftsbetrieb bei einem Notfall, einem Fehler o. Ä. schnell wiederhergestellt werden kann. Mit SQL-Datenbank bietet jede Dienstebene ein unterschiedliches Menü an Funktionen, über die Sie die Wiederherstellung durchführen können. Über die Point-in-Time-Wiederherstellung können Sie den früheren Status einer Datenbank für bis zu 35 Tage wiederherstellen. Bei einem Ausfall des Rechenzentrums, das Ihre Datenbanken hostet, können Sie darüber hinaus Datenbankreplikate in einer anderen Region nutzen. Zudem können Sie Replikate für Aktualisierungen oder zur Verlegung in andere Regionen verwenden.
+Durch die Unterstützung eines globalen Netzwerks von Microsoft-verwalteten Rechenzentren stellt die in der Branche führende Verfügbarkeit von Azure mit einer Vereinbarung zum Servicelevel [(SLA)](http://azure.microsoft.com/support/legal/sla/) von 99,99 % sicher, dass Ihre Apps rund um die Uhr ausgeführt werden. Mit jeder SQL-Datenbank nutzen Sie den integrierten Datenschutz und die Fehlertoleranz, die Sie andernfalls entwerfen, kaufen, erstellen und verwalten müssten. Abhängig von Ihren Geschäftsanforderungen benötigen Sie möglicherweise dennoch weitere Schutzebenen, um sicherzustellen, dass Ihre App und Ihr Geschäftsbetrieb bei einem Notfall, einem Fehler o. Ä. schnell wiederhergestellt werden kann. Mit SQL-Datenbank bietet jede Dienstebene ein unterschiedliches Menü an Funktionen, über die Sie die Wiederherstellung durchführen können. Über die Point-in-Time-Wiederherstellung können Sie den früheren Status einer Datenbank für bis zu 35 Tage wiederherstellen. Bei einem Ausfall des Rechenzentrums, das Ihre Datenbanken hostet, können Sie darüber hinaus Datenbankreplikate in einer anderen Region nutzen. Zudem können Sie Replikate für Aktualisierungen oder zur Verlegung in andere Regionen verwenden.
 
 ![SQL-Datenbank-Georeplikation](./media/sql-database-technical-overview/azure_sqldb_map.png)
 
@@ -51,12 +52,13 @@ Auf der Basis eines globalen Netzwerks von Microsoft-verwalteten Rechenzentren k
 Ausführliche Informationen zu den unterschiedlichen Funktionen der Geschäftskontinuität bei den verschiedenen Dienstebenen finden Sie unter [Übersicht über die Geschäftskontinuität](sql-database-business-continuity.md).
 
 ## Sichern der Daten
-SQL Server bietet traditionell eine solide Datensicherheit, die SQL-Datenbank mit Funktionen zur Zugriffseinschränkung, zum Datenschutz und zur Überwachung von Aktivitäten fortführt. Eine kurze Übersicht über die Sicherheitsoptionen in der SQL-Datenbank finden Sie unter [Sichern der SQL-Datenbank](sql-database-security.md). Ausführlichere Informationen zu den Sicherheitsfunktionen finden Sie unter [Sicherheitscenter für SQL Server-Datenbankmodul und Azure SQL-Datenbank](https://msdn.microsoft.com/library/bb510589). Schließlich finden Sie im [Azure Trust Center](http://azure.microsoft.com/support/trust-center/security/) Informationen zur Sicherheit der Azure-Plattform.
+SQL Server bietet traditionell eine solide Datensicherheit, die SQL-Datenbank mit Funktionen zur Zugriffseinschränkung, zum Datenschutz und zur Überwachung von Aktivitäten fortführt. Eine kurze Übersicht über die Sicherheitsoptionen in SQL-Datenbank finden Sie unter [Sichern der SQL-Datenbank](sql-database-security.md). Ausführlichere Informationen zu den Sicherheitsfunktionen finden Sie unter [Sicherheitscenter für SQL Server-Datenbankmodul und Azure SQL-Datenbank](https://msdn.microsoft.com/library/bb510589). Schließlich finden Sie im [Azure Trust Center](http://azure.microsoft.com/support/trust-center/security/) Informationen zur Sicherheit der Azure-Plattform.
 
 ## Nächste Schritte
+Nachdem Sie eine Einführung in SQL-Datenbank gelesen und die Frage „Was ist SQL-Datenbank?“ beantwortet haben, sind Sie bereit für Folgendes:
 
 - Unter [Preise](http://azure.microsoft.com/pricing/details/sql-database/) finden Sie Preisangaben und Messgrößen für Einzeldatenbanken und elastische Datenbanken.
 
 - Beginnen Sie mit dem [Erstellen einer ersten Azure SQL-Datenbank](sql-database-get-started.md). Erstellen Sie dann Ihre erste App in [C#](sql-database-connect-query.md), [Java](sql-database-develop-java-simple-windows.md), [Node.js](sql-database-develop-nodejs-simple-windows.md), [PHP](sql-database-develop-php-retry-windows.md), [Python](sql-database-develop-python-simple-windows.md) oder [Ruby](sql-database-develop-ruby-simple-linux).
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO4-->

@@ -1,22 +1,27 @@
-<properties 
-	pageTitle="Erste Schritte mit einem Cordova-Projekt für Mobile Services (Visual Studio Verbundene Dienste)" 
-	description="Beschreibt die ersten Schritte, die Sie ausführen können, nachdem Sie Ihr Cordova-Projekt mithilfe von Visual Studio Verbundene Dienste mit Azure Mobile Services verbunden haben." 
-	services="mobile-services" 
-	documentationCenter="" 
-	authors="TomArcher" 
-	manager="douge" 
+<properties
+	pageTitle="Erste Schritte mit einem Cordova-Projekt für Mobile Services (Visual Studio Verbundene Dienste)"
+	description="Beschreibt die ersten Schritte, die Sie ausführen können, nachdem Sie Ihr Cordova-Projekt mithilfe von Visual Studio Verbundene Dienste mit Azure Mobile Services verbunden haben."
+	services="mobile-services"
+	documentationCenter=""
+	authors="TomArcher"
+	manager="douge"
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="vs-getting-started" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="09/17/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="vs-getting-started"
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.date="09/17/2015"
 	ms.author="tarcher"/>
 
 # Erste Schritte mit Mobile Services (Cordova-Projekte)
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 > [AZURE.SELECTOR]
 > - [Getting Started](vs-mobile-services-cordova-getting-started.md)
@@ -47,7 +52,7 @@ Fügen Sie ein neues Element in eine Datentabelle ein. Eine ID (eine GUID vom Ty
         this.text = text;
         this.complete = false;
     }
-    
+
     var items = new Array();
     var insertTodoItem = function (todoItem) {
         todoTable.insert(todoItem).done(function (item) {
@@ -94,4 +99,4 @@ Löschen Sie eine Zeile aus einer Datentabelle mithilfe der Methode **del**. Ruf
 
 [Weitere Informationen zu mobilen Diensten](http://azure.microsoft.com/documentation/services/mobile-services/)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -1,7 +1,7 @@
 <properties 
-	pageTitle="Stream Analytics-Warnungen | Microsoft Azure" 
+	pageTitle="Einrichten von Warnungen für Abfragen in Stream Analytics | Microsoft Azure" 
 	description="Grundlegendes zu Stream Analytics-Warnungen" 
-	keywords="Big Data-Analysen,Clouddienst,Internet der Dinge,verwalteter Dienst,Datenstromverarbeitung, Streaming Analytics, Streamingdaten"
+	keywords="Einrichten von Warnungen"
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
@@ -14,19 +14,19 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="11/06/2015" 
+	ms.date="12/04/2015" 
 	ms.author="jeffstok"/>
 
 
-# Einrichten von Warnungen
+# Einrichten von Warnungen für Azure Stream Analytics-Aufträge
 
-## Seite "Überwachen"
+## Einführung: Seite „Überwachen“
 
-Sie können eine Regel einrichten, die eine Warnung auslöst, wenn eine Metrik eine von Ihnen angegebene Bedingung erreicht.
+Sie können Warnungen einrichten, die eine Warnung auslösen, wenn eine Metrik eine von Ihnen angegebene Bedingung erreicht.
 
 Zum Beispiel: "Wenn Ausgabeereignisse in den letzten 15 Minuten < 100, wird eine E-Mail-Benachrichtigung an die folgende E-Mail-ID gesendet: xyz@company.com”.
 
-Regeln können für Metriken über das Portal eingerichtet oder [programmgesteuert](https://code.msdn.microsoft.com/windowsazure/Receive-Email-Notifications-199e2c9a) über Ereignisprotokolldaten konfiguriert werden.
+Regeln können für Metriken über das Portal eingerichtet oder [programmgesteuert](https://code.msdn.microsoft.com/windowsazure/Receive-Email-Notifications-199e2c9a) über Vorgangsprotokolldaten konfiguriert werden.
 
 ## Einrichten von Warnungen über das Azure-Portal
 
@@ -35,7 +35,7 @@ Es gibt zwei Möglichkeiten, Warnungen im Azure-Verwaltungsportal einzurichten:
 1.	Die Registerkarte **Überwachen** in Ihrem Stream Analytics-Auftrag  
 2.	Das Vorgangsprotokoll in den Verwaltungsdiensten  
 
-## Warnungen über die Registerkarte "Überwachen" des Auftrags im Portal
+## Einrichten von Warnungen über die Registerkarte „Überwachen“ des Auftrags im Portal
 
 1.	Wählen Sie die Metrik auf der Registerkarte „Überwachen“ aus, klicken Sie auf die Schaltfläche **Regel hinzufügen** im unteren Teil des Dashboards, und richten Sie dann die Regeln ein.  
 
@@ -85,4 +85,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

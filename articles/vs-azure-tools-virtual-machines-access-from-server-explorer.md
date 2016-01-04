@@ -1,11 +1,11 @@
 <properties
-   pageTitle="Zugreifen auf virtuelle Computer in Azure über den Server-Explorer"
+   pageTitle="Zugreifen auf virtuelle Azure-Computer über den Server-Explorer | Microsoft Azure"
    description="In diesem Artikel erhalten Sie einen Überblick darüber, wie virtuelle Azure-Computer im Server-Explorer von Visual Studio angezeigt, erstellt und verwaltet werden können."
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tglee" />
+   editor="" />
 <tags
    ms.service="multiple"
    ms.devlang="dotnet"
@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="multiple"
    ms.date="09/30/2015"
-   ms.author="kempb" />
+   ms.author="tarcher" />
 
 # Zugreifen auf virtuelle Computer in Azure über den Server-Explorer
 
@@ -53,4 +53,4 @@ Wenn Sie in Azure gehostete virtuelle Computer verwenden, können Sie über den 
 
 Weitere Informationen zum Verwenden von Azure-Rollen in Visual Studio finden Sie unter [Verwenden von Remotedesktop mit Azure-Rollen](vs-azure-tools-remote-desktop-roles.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

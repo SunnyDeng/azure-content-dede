@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Verwenden des Azure-Portals, um Kanäle zu erstellen, von denen eine Livecodierung von Single-Bitrate- zu Multi-Bitrate-Datenströmen vorgenommen wird" 
-	description="In diesem Lernprogramm werden Sie durch die Schritte zum Erstellen eines Kanals über das Azure-Portal geführt, von dem ein Single-Bitrate-Livedatenstrom empfangen und in einen Multi-Bitrate-Datenstrom codiert wird." 
+	pageTitle="Verwenden des klassischen Azure-Portals, um Kanäle zu erstellen, von denen eine Livecodierung von Single-Bitrate- zu Multi-Bitrate-Datenströmen vorgenommen wird" 
+	description="In diesem Lernprogramm werden Sie durch die Schritte zum Erstellen eines Kanals über das klassische Azure-Portal geführt, von dem ein Single-Bitrate-Livedatenstrom empfangen und in einen Multi-Bitrate-Datenstrom codiert wird." 
 	services="media-services" 
 	documentationCenter="" 
 	authors="juliako,anilmur" 
@@ -17,7 +17,7 @@
 	ms.author="juliako"/>
 
 
-#Verwenden des Azure-Portals, um Kanäle zu erstellen, von denen eine Livecodierung von Single-Bitrate- zu Multi-Bitrate-Datenströmen vorgenommen wird
+#Verwenden des klassischen Azure-Portals, um Kanäle zu erstellen, von denen eine Livecodierung von Single-Bitrate- zu Multi-Bitrate-Datenströmen vorgenommen wird
 
 > [AZURE.SELECTOR]
 - [Portal](media-services-portal-creating-live-encoder-enabled-channel.md)
@@ -58,7 +58,7 @@ Im Folgenden werden grundlegende Schritte zum Erstellen allgemeiner Livestreamin
 
 ##Dieses Lernprogramm umfasst folgende Punkte
 
-In diesem Lernprogramm wird das Azure-Verwaltungsportal verwendet, um die folgenden Aufgaben ausführen:
+In diesem Lernprogramm wird das klassische Azure-Portal verwendet, um die folgenden Aufgaben auszuführen:
 
 2.  Konfigurieren von Streamingendpunkten
 3.  Erstellen eines Kanals, der zum Ausführen von Livecodierung aktiviert ist
@@ -85,7 +85,7 @@ Um die dynamische Paketerstellung nutzen zu können, ist mindestens eine Streami
 
 Um die Anzahl der Einheiten zu ändern, die für das Streaming reserviert sind, gehen Sie folgendermaßen vor:
 
-1. Klicken Sie im [Management Portal](https://manage.windowsazure.com/) auf **Media Services**. Klicken Sie anschließend auf den Namen des Mediendienstes.
+1. Klicken Sie im [klassischen Azure-Portal](https://manage.windowsazure.com/) auf **Media Services**. Klicken Sie anschließend auf den Namen des Media Service
 
 2. Wählen Sie die Seite STREAMING-ENDPUNKTE aus. Klicken Sie anschließend auf den Streaming-Endpunkt, den Sie ändern möchten.
 
@@ -100,12 +100,12 @@ Um die Anzahl der Einheiten zu ändern, die für das Streaming reserviert sind, 
 	 
 	>[AZURE.NOTE]Aktuell kann das Streaming bis zu eine Stunde lang deaktiviert werden, wenn Sie einen positiven Wert für die Streamingeinheiten zurück auf null setzen.
 	>
-	> Die höchste für den 24-Stunden-Zeitraum angegebene Anzahl an Einheiten wird zum Berechnen der Kosten verwendet. Informationen zu den Preisen finden Sie unter [Media Services – Preisdetails](http://go.microsoft.com/fwlink/?LinkId=275107).
+	> Die höchste für den 24-Stunden-Zeitraum angegebene Anzahl an Einheiten wird zum Berechnen der Kosten verwendet. Informationen zu den Preisen finden Sie unter [Media Services – Preisübersicht](http://go.microsoft.com/fwlink/?LinkId=275107).
 
  
 ##Erstellen eines KANALS
 
-1.	Klicken Sie im [Verwaltungsportal](http://manage.windowsazure.com/) auf „Media Services“ und dann auf den Media Services-Kontonamen.
+1.	Klicken Sie im [klassischen Azure-Portal](http://manage.windowsazure.com/) auf Media Services und dann auf den Media Services-Kontonamen.
 2.	Wählen Sie die Seite KANÄLE aus.
 3.	Klicken Sie auf „Hinzufügen“, um einen neuen Kanal hinzuzufügen.
 
@@ -276,4 +276,4 @@ Wenn die Streamingereignisse beendet sind und Sie die zuvor bereitgestellten Res
 [standard4]: ./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel-standard4.png
 [standard5]: ./media/media-services-portal-creating-live-encoder-enabled-channel/media-services-create-channel-standard_encode.png
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

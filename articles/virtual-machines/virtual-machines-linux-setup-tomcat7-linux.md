@@ -57,8 +57,8 @@ Führen Sie die folgenden Schritte aus, um den SSH-Authentifizierungsschlüssel 
 5.	Wählen Sie den öffentlichen Schlüssel in **Schlüssel** aus, kopieren Sie diesen, und speichern Sie ihn in einer Datei namens "publicKey.pem". Klicken Sie nicht auf **Öffentlichen Schlüssel speichern**, weil sich das Dateiformat des gespeicherten öffentlichen Schlüssels vom gewünschten öffentlichen Schlüssel unterscheidet.
 6.	Klicken Sie auf **Privaten Schlüssel speichern**, und speichern Sie den Schlüssel dann in einer Datei namens "privateKey.ppk".
 
-###Schritt 2: Erstellen des Bildes im Azure-Vorschauportal
-Klicken Sie im [Azure-Vorschauportal](https://portal.azure.com/) auf der Taskleiste auf **Neu**, und erstellen Sie ein Image. Wählen Sie dabei das Linux-Image aus, das Ihren Anforderungen gerecht wird. Dieses Beispiel verwendet das Ubuntu 14.04-Image. ![][3]
+###Schritt 2: Erstellen des Images im Azure-Portal
+Klicken Sie im [Azure-Portal](https://portal.azure.com/) auf der Taskleiste auf **Neu**, und erstellen Sie ein Image. Wählen Sie dabei das Linux-Image aus, das Ihren Anforderungen gerecht wird. Dieses Beispiel verwendet das Ubuntu 14.04-Image. ![][3]
 
 Geben Sie unter **Hostname** den Namen für die URL ein, die Sie und die Internetclients für den Zugriff auf diesen virtuellen Computer verwenden. Definieren Sie den letzten Teil des DNS-Namens (z. B. "tomcatdemo"), und Azure generiert die URL als "tomcatdemo.cloudapp.net".
 
@@ -73,7 +73,7 @@ Endpunkte in Azure bestehen aus einem Protokoll (TCP oder UDP) sowie aus einem �
 
 TCP-Port 8080 ist die Standardportnummer, an der Tomcat lauscht. Wenn Sie diesen Port mit einem Azure-Endpunkt öffnen, können Sie und andere Internetclients auf die Tomcat-Seiten zugreifen.
 
-1.	Klicken Sie im Azure-Vorschauportal auf **Durchsuchen** -> **Virtueller Computer**, und klicken Sie dann auf den virtuellen Computer, den Sie erstellt haben. ![][5]
+1.	Klicken Sie im Azure-Portal auf **Durchsuchen** -> **Virtueller Computer**, und klicken Sie dann auf den virtuellen Computer, den Sie erstellt haben. ![][5]
 2.	Klicken Sie zum Hinzufügen eines Endpunkts zu einem virtuellen Computer auf das Feld **Endpunkte**. ![][6]
 3.	Klicken Sie auf **Hinzufügen**.  
 	1.	Geben Sie für **Endpunkt** einen Endpunktnamen ein, und geben Sie dann unter **Öffentlicher Port** den Port "80" ein.  
@@ -90,7 +90,7 @@ TCP-Port 8080 ist die Standardportnummer, an der Tomcat lauscht. Wenn Sie diesen
 ###Schritt 2: Herstellen einer Verbindung mit dem Image, das Sie erstellt haben
 Sie können ein beliebiges SSH-Tool für das Herstellen einer Verbindung mit Ihrem virtuellen Computer auswählen. In diesem Beispiel wird Putty verwendet.
 
-Rufen Sie zunächst den DNS-Namen Ihres virtuellen Computers aus dem Azure-Vorschauportal ab. Klicken Sie auf **Durchsuchen** -> **Virtuelle Computer** -> Name Ihres virtuellen Computers -> **Eigenschaften**. Prüfen Sie dann das Feld **Domänenname** der Kachel **Eigenschaften**.
+Rufen Sie zunächst den DNS-Namen Ihres virtuellen Computers aus dem Azure-Portal ab. Klicken Sie auf **Durchsuchen** -> **Virtuelle Computer** -> Name Ihres virtuellen Computers -> **Eigenschaften**. Prüfen Sie dann das Feld **Domänenname** der Kachel **Eigenschaften**.
 
 Rufen Sie die Portnummer für SSH-Verbindungen aus dem Feld **SSH** ab. Beispiel: ![][8]
 
@@ -306,4 +306,4 @@ Nachdem die Verbindung hergestellt wurde, müsste in etwa Folgendes angezeigt we
 [17]: ./media/virtual-machines-linux-setup-tomcat7-linux/virtual-machines-linux-setup-tomcat7-linux-17.png
 [18]: ./media/virtual-machines-linux-setup-tomcat7-linux/virtual-machines-linux-setup-tomcat7-linux-18.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

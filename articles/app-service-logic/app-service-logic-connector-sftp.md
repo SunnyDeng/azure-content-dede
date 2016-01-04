@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/23/2015"
+	ms.date="11/30/2015"
 	ms.author="sameerch"/>
 
 # Erste Schritte mit dem SFTP-Connector und das Hinzufügen zur Logik-App
@@ -26,8 +26,7 @@ Ein Connector kann innerhalb einer Logik-App erstellt werden oder direkt aus dem
 
 1. Wählen Sie im Azure-Startmenü **Marketplace** aus.
 2. Suchen Sie nach "SFTP-Connector", wählen Sie ihn aus, und klicken Sie dann auf **Erstellen**.
-3. Konfigurieren Sie den SFTP-Connector wie folgt:  
-![][1]
+3. Konfigurieren Sie den SFTP-Connector wie folgt: ![][1]
 	- **Standort** – Wählen Sie den geografischen Standort, an dem Sie den Connector bereitstellen möchten.
 	- **Abonnement** – Wählen Sie ein Abonnement, in dem dieser Connector erstellt werden soll.
 	- **Ressourcengruppe** – Wählen oder erstellen Sie eine Ressourcengruppe, in der sich der Connector befinden soll.
@@ -43,23 +42,16 @@ Ein Connector kann innerhalb einer Logik-App erstellt werden oder direkt aus dem
 		- **Serverport** – Geben Sie die Portnummer des SFTP-Servers an.
 4. Klicken Sie auf "Erstellen". Es wird ein neuer SFTP-Connector erstellt.
 
-5. Navigieren Sie über "Durchsuchen" -> "API-Apps"-> <Name of the API App just created> zur soeben erstellten API-App. Sie werden bemerken, dass die Komponente "Sicherheit" noch nicht konfiguriert ist:  
-![][2]
-6. Klicken Sie auf die Komponente "Sicherheit", um die Sicherheitsoptionen (Benutzername, Kennwort, privater Schlüssel, PPK-Dateikennwort) für den SFTP-Connector zu konfigurieren. Wählen Sie auf der Registerkarte "Autorisierung" unter "Sicherheit" eine der Autorisierungsmethoden "Kennwort" oder "Privatekey" bzw. "MultiFactor" aus, und geben Sie die erforderlichen Eigenschaften an:  
-![][3]  
-![][4]  
-![][5]  
+5. Navigieren Sie über "Durchsuchen" -> "API-Apps"-> <Name of the API App just created> zur soeben erstellten API-App. Sie werden bemerken, dass die Komponente "Sicherheit" noch nicht konfiguriert ist: ![][2]
+6. Klicken Sie auf die Komponente "Sicherheit", um die Sicherheitsoptionen (Benutzername, Kennwort, privater Schlüssel, PPK-Dateikennwort) für den SFTP-Connector zu konfigurieren. Wählen Sie auf der Registerkarte "Autorisierung" unter "Sicherheit" eine der Autorisierungsmethoden "Kennwort" oder "Privatekey" bzw. "MultiFactor" aus, und geben Sie die erforderlichen Eigenschaften an: ![][3] ![][4] ![][5]  
 6. Sobald die Sicherheitskonfiguration gespeichert wurde, können Sie in derselben Ressourcengruppe eine Logik-App zur Verwendung des SFTP-Connectors erstellen.
 
 ## Verwenden des SFTP-Connectors in Logik-Apps ##
 Sobald Ihre API-App erstellt wurde, können Sie jetzt den SFTP-Connector als Trigger oder Aktion für Ihre Logik-App verwenden. Gehen Sie hierzu wie folgt vor:
 
-1.	Erstellen Sie eine neue Logik-App, und wählen Sie die Ressourcengruppe mit dem SFTP-Connector aus:  
-![][6]
-2.	Öffnen Sie "Trigger und Aktionen", um den Logik-Apps-Designer zu öffnen und den Datenfluss zu konfigurieren:  
-![][7]
-3.	Der SFTP-Connector wird im Abschnitt "API-Apps in dieser Ressourcengruppe" im Katalog auf der rechten Seite angezeigt:  
-![][8]
+1.	Erstellen Sie eine neue Logik-App, und wählen Sie die Ressourcengruppe mit dem SFTP-Connector aus: ![][6]
+2.	Öffnen Sie "Trigger und Aktionen", um den Logik-Apps-Designer zu öffnen und den Datenfluss zu konfigurieren: ![][7]
+3.	Der SFTP-Connector wird im Abschnitt "API-Apps in dieser Ressourcengruppe" im Katalog auf der rechten Seite angezeigt: ![][8]
 4.	Sie können die SFTP-Connector-API-App im Editor bearbeiten, indem Sie auf den "SFTP-Connector" klicken.
 
 5.	Sie können nun den SFTP-Connector im Datenfluss verwenden. Sie können die aus dem SFTP-Trigger abgerufene Datei ("TriggerOnFileAvailable") in anderen Datenflussaktionen verwenden.
@@ -113,4 +105,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [11]: ./media/app-service-logic-connector-sftp/img11.PNG
 [12]: ./media/app-service-logic-connector-sftp/img12.PNG
 
-<!----HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

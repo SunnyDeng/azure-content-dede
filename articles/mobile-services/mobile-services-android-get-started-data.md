@@ -18,12 +18,14 @@
 
 # Hinzufügen von Mobile Services zu einer vorhandenen Android-App (JavaScript-Back-End)
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
 ## Zusammenfassung
 
 <div class="dev-onpage-video-clear clearfix">
 <div class="dev-onpage-left-content">
 
-<p>Dieses Thema beschreibt die Nutzung von Azure Mobile Services zum Hinzufügen von persistenten Daten in einer Android-App. In diesem Lernprogramm laden Sie eine App herunter, die Daten im Arbeitsspeicher speichert, erstellen einen neuen mobilen Dienst, integrieren den mobilen Dienst in eine App, sodass diese Daten in Azure Mobile Services anstatt lokal aktualisiert und gespeichert werden, und melden sich dann beim Azure-Verwaltungsportal an, um Datenänderungen beim Ausführen der App anzuzeigen.</p>
+<p>Dieses Thema beschreibt die Nutzung von Azure Mobile Services zum Hinzufügen von persistenten Daten in einer Android-App. In diesem Lernprogramm laden Sie eine App herunter, die Daten im Arbeitsspeicher speichert, erstellen einen neuen mobilen Dienst, integrieren den mobilen Dienst in eine App, sodass diese Daten in Azure Mobile Services anstatt lokal aktualisiert und gespeichert werden, und melden sich dann beim klassischen Azure-Portal an, um Datenänderungen beim Ausführen der App anzuzeigen.</p>
 
 </div>
 
@@ -59,7 +61,7 @@ Den vollständigen Quellcode finden Sie <a href="https://github.com/Azure/mobile
 
 [AZURE.INCLUDE [mobile-services-android-run-sample-code](../../includes/mobile-services-android-run-sample-code.md)]
 
-## Erstellen eines neuen mobilen Diensts im Verwaltungsportal
+## Erstellen neuer mobiler Dienste im klassischen Azure-Portal
 
 [AZURE.INCLUDE [mobile-services-create-new-service-data](../../includes/mobile-services-create-new-service-data.md)]
 
@@ -82,9 +84,9 @@ Die App verwendet nun mobile Dienste als Back-End-Speicher, und Sie können sie 
 
 5. Geben Sie wie zuvor einen lesbaren Text ein und klicken Sie auf **Hinzufügen**.
 
-   	Dieser Code schickt ein neues einzufügendes Element an den mobilen Dienst.
+   	Auf diese Weise wird ein neuer Eintrag an den mobilen Service gesendet.
 
-3. Klicken Sie im [Verwaltungsportal] auf **Mobile Dienste** und dann auf Ihren mobilen Dienst.
+3. Klicken Sie im [klassischen Azure-Portal] auf **Mobile Services** und dann auf Ihren mobilen Dienst.
 
 4. Klicken Sie auf die Registerkarte **Daten** und dann auf **Durchsuchen**.
 
@@ -143,10 +145,9 @@ Nach Abschluss der Daten-Lernprogramme können Sie diese anderen Android-Lernpro
 [Erste Schritte mit der Authentifizierung]: /develop/mobile/tutorials/get-started-with-users-android
 [Erste Schritte mit Pushbenachrichtigungen]: /develop/mobile/tutorials/get-started-with-push-android
 
-[Azure Management Portal]: https://manage.windowsazure.com/
-[Verwaltungsportal]: https://manage.windowsazure.com/
+[klassischen Azure-Portal]: https://manage.windowsazure.com/
 [Azure Mobile Services Android SDK]: http://aka.ms/Iajk6q
 [GitHub]: http://go.microsoft.com/fwlink/p/?LinkID=282122
 [Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=280125
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

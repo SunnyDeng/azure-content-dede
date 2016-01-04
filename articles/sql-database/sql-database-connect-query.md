@@ -1,7 +1,8 @@
 <properties
-	pageTitle="Abfragen einer SQL-Datenbank mit C# | Microsoft Azure"
-	description="Details zu IP-Adressen, Verbindungszeichenfolgen, Konfigurationsdateien zur sicheren Anmeldung und kostenlosen Visual Studio-Versionen, damit Ihr C#-Programm mithilfe von ADO.NET eine Verbindung mit Ihrer Azure SQL-Datenbank in der Cloud herstellen kann."
+	pageTitle="Herstellen einer Verbindung mit SQL-Datenbank mithilfe einer C#-Abfrage | Microsoft Azure"
+	description="Schreiben Sie ein Programm in C# zum Abfragen und Herstellen einer Verbindung mit einer SQL-Datenbank. Informationen zu IP-Adressen, Verbindungszeichenfolgen, sicherer Anmeldung und kostenlosem Visual Studio."
 	services="sql-database"
+	keywords="C#-Datenbankabfrage, C#-Abfrage, mit Datenbank verbinden"
 	documentationCenter=""
 	authors="MightyPen"
 	manager="jeffreyg"
@@ -17,22 +18,22 @@
 	ms.author="genemi"/>
 
 
-# Verbinden mit der SQL-Datenbank und Abfragen von dieser mit C&#x23;
+# Schreiben eines Programms in C# zum Abfragen und Herstellen einer Verbindung mit einer SQL-Datenbank
 
 > [AZURE.SELECTOR]
 - [C#](sql-database-connect-query.md)
 - [SSMS](sql-database-connect-query-ssms.md)
 - [Excel](sql-database-connect-excel.md)
 
-Sie möchten ein C#-Programm schreiben, das mithilfe von ADO.NET eine Verbindung mit einer Azure SQL-Datenbank in der Cloud herstellt.
+Erfahren Sie, wie Sie ein C#-Programm schreiben, mit dem eine Verbindung mit einer Azure SQL-Datenbank hergestellt wird, um diese abzufragen.
 
-Dieses Thema beschreibt jeden Schritt für Personen, die mit Azure SQL-Datenbank und C# noch nicht vertraut sind. Andere Benutzer, die bereits Erfahrung mit Microsoft SQL Server und C# besitzen, können möglicherweise einige Schritte überspringen und sich auf die Schritte konzentrieren, die sich speziell auf die SQL-Datenbank beziehen.
+In diesem Artikel werden alle Schritte für Benutzer beschrieben, die mit Azure SQL-Datenbank, C# und ADO.NET noch nicht vertraut sind. Andere Benutzer, die bereits Erfahrung mit Microsoft SQL Server und C# besitzen, können möglicherweise einige Schritte überspringen und sich auf die Schritte konzentrieren, die sich speziell auf die SQL-Datenbank beziehen.
 
 
 ## Voraussetzungen
 
 
-Zum Ausführen des C#-Codebeispiels benötigen Sie:
+Zum Ausführen des C#-Abfragecodebeispiels benötigen Sie Folgendes:
 
 
 - Ein Azure-Konto und ein Azure-Abonnement. Sie können sich für eine [kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/) registrieren.
@@ -45,7 +46,7 @@ Zum Ausführen des C#-Codebeispiels benötigen Sie:
 - Visual Studio 2013, Update 4 (oder höher). Microsoft bietet Visual Studio Community jetzt *kostenlos* an.
  - [Download von Visual Studio Community](http://www.visualstudio.com/products/visual-studio-community-vs)
  - [Weitere Optionen für kostenlose Visual Studio-Versionen](http://www.visualstudio.com/products/free-developer-offers-vs.aspx)
- - Oder lesen Sie in einem [Schritt](#InstallVSForFree) weiter unten in diesem Thema, wie das [Azure-Vorschauportal](http://portal.azure.com/) Sie durch die Installation von Visual Studio begleitet.
+ - Oder lesen Sie in einem [Schritt](#InstallVSForFree) weiter unten in diesem Thema, wie das [Azure-Portal](http://portal.azure.com/) Ihnen bei der Installation von Visual Studio hilft.
 
 
 <a name="InstallVSForFree" id="InstallVSForFree"></a>
@@ -58,13 +59,13 @@ Zum Ausführen des C#-Codebeispiels benötigen Sie:
 Zur Installation von Visual Studio haben Sie folgende Möglichkeiten:
 
 - Installieren Sie Visual Studio Community kostenlos, indem Sie in Ihrem Browser die Visual Studio-Produktwebseiten aufrufen, auf denen kostenlose Downloads und andere Optionen angeboten werden.
-- Lassen Sie sich vom [Azure-Vorschauportal](http://portal.azure.com/) zur Downloadwebseite führen, die als Nächstes beschrieben wird.
+- Lassen Sie sich vom [Azure-Portal](http://portal.azure.com/) zur Downloadwebseite führen, die als Nächstes beschrieben wird.
 
 
-### Visual Studio über das Azure-Vorschauportal
+### Visual Studio über das Azure-Portal
 
 
-1. Melden Sie sich über das [Azure-Vorschauportal](http://portal.azure.com/) unter http://portal.azure.com/ an.
+1. Melden Sie sich über das [Azure-Portal](http://portal.azure.com/) unter http://portal.azure.com/ an.
 
 2. Klicken Sie auf **ALLE DURCHSUCHEN*** > **SQL-Datenbanken**. Ein Blatt für die Suche nach Datenbanken wird geöffnet.
 
@@ -75,7 +76,7 @@ Zur Installation von Visual Studio haben Sie folgende Möglichkeiten:
 5. Der Einfachheit halber klicken Sie für alle vorherigen Blätter auf das Steuerelement zum Minimieren.
 
 6. Klicken Sie im oberen Bereich des Blatts "Datenbank" auf die Schaltfläche **In Visual Studio öffnen**. Ein neues Blatt zu Visual Studio wird geöffnet. Es enthält Links zu den Speicherorten für die Visual Studio-Installation.
- 
+
 	![Schaltfläche "In Visual Studio öffnen"][20-OpenInVisualStudioButton]
 
 7. Klicken Sie auf den Link **Community (kostenlos)** oder einen ähnlichen Link. Eine neue Webseite wird hinzugefügt.
@@ -126,7 +127,7 @@ Unser C#-Beispiel verwendet die .NET Framework-Assembly **System.Configuration.d
 ## Schritt 4: Abrufen der Verbindungszeichenfolge
 
 
-Verwenden Sie das [Azure-Vorschauportal](http://portal.azure.com/), um die Verbindungszeichenfolge für die Datenbank zu kopieren.
+Kopieren Sie im [Azure-Portal](http://portal.azure.com/) die Verbindungszeichenfolge, die für das Verbinden mit der SQL-Datenbank benötigt wird.
 
 Ihre erste Verwendung dient zum Verbinden von Visual Studio mit der Azure SQL-Datenbank **AdventureWorksLT**.
 
@@ -145,10 +146,10 @@ Ihre erste Verwendung dient zum Verbinden von Visual Studio mit der Azure SQL-Da
 ```
 	<?xml version="1.0" encoding="utf-8" ?>
 	<configuration>
-	    <startup> 
+	    <startup>
 	        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" />
 	    </startup>
-	
+
 		<connectionStrings>
 			<clear />
 			<add name="ConnectionString4NoUserIDNoPassword"
@@ -172,9 +173,9 @@ Ihre erste Verwendung dient zum Verbinden von Visual Studio mit der Azure SQL-Da
 ## Schritt 6: Einfügen des C#-Beispielcodes
 
 
-1. Verwenden Sie in Visual Studio den Bereich **Projektmappen-Explorer**, um Ihre Datei **Program.cs** zu öffnen. 
+1. Verwenden Sie in Visual Studio den Bereich **Projektmappen-Explorer**, um Ihre Datei **Program.cs** zu öffnen.
 
-	![Einfügen des C#-Beispielprogrammcodes][40-VSProgramCsOverlay]
+	![Einfügen des C#-Abfragecodes][40-VSProgramCsOverlay]
 
 2. Überschreiben Sie den gesamten Startcode in "Program.cs" durch Einfügen des folgenden C#-Beispielcodes.
  - Wenn Sie ein kürzeres Codebeispiel verwenden möchten, können Sie der Variablen **SQLConnectionString** die gesamte Verbindungszeichenfolge als Literal zuweisen. Anschließend können Sie die beiden Methoden **GetConnectionStringFromExeConfig** und **GatherPasswordFromConsole** löschen.
@@ -186,7 +187,7 @@ using G = System.Configuration;   // System.Configuration.dll
 using D = System.Data;            // System.Data.dll
 using C = System.Data.SqlClient;  // System.Data.dll
 using T = System.Text;
-	
+
 namespace ConnectAndQuery_Example
 {
 	class Program
@@ -195,7 +196,7 @@ namespace ConnectAndQuery_Example
 		{
 			string connectionString4NoUserIDNoPassword,
 				password, userName, SQLConnectionString;
-	
+
 			// Get most of the connection string from ConnectAndQuery_Example.exe.config
 			// file, in the same directory where ConnectAndQuery_Example.exe resides.
 			connectionString4NoUserIDNoPassword = Program.GetConnectionStringFromExeConfig
@@ -205,17 +206,17 @@ namespace ConnectAndQuery_Example
 			userName = Console.ReadLine();
 			// Get the password from keyboard input.
 			password = Program.GatherPasswordFromConsole();
-	
+
 			SQLConnectionString = "Password=" + password + ';' +
 				"User ID=" + userName + ";" + connectionString4NoUserIDNoPassword;
-	
+
 			// Create an SqlConnection from the provided connection string.
 			using (C.SqlConnection connection = new C.SqlConnection(SQLConnectionString))
 			{
 				// Formulate the command.
 				C.SqlCommand command = new C.SqlCommand();
 				command.Connection = connection;
-	
+
 				// Specify the query to be executed.
 				command.CommandType = D.CommandType.Text;
 				command.CommandText = @"
@@ -224,7 +225,7 @@ namespace ConnectAndQuery_Example
 					";
 				// Open a connection to database.
 				connection.Open();
-	
+
 				// Read data returned for the query.
 				C.SqlDataReader reader = command.ExecuteReader();
 				while (reader.Read())
@@ -237,12 +238,12 @@ namespace ConnectAndQuery_Example
 			Console.ReadKey(true);
 		}
 		//----------------------------------------------------------------------------------
-	
+
 		static string GetConnectionStringFromExeConfig(string connectionStringNameInConfig)
 		{
 			G.ConnectionStringSettings connectionStringSettings =
 				G.ConfigurationManager.ConnectionStrings[connectionStringNameInConfig];
-	
+
 			if (connectionStringSettings == null)
 			{
 				throw new ApplicationException(String.Format
@@ -251,7 +252,7 @@ namespace ConnectAndQuery_Example
 			}
 				return connectionStringSettings.ConnectionString;
 		}
-	
+
 		static string GatherPasswordFromConsole()
 		{
 			T.StringBuilder passwordBuilder = new T.StringBuilder(32);
@@ -294,7 +295,7 @@ namespace ConnectAndQuery_Example
 
 2. Erfasst den Benutzernamen und das Kennwort über die Tastatur und fügt sie der Verbindungszeichenfolge hinzu, um diese zu vervollständigen.
 
-3. Verwendet die Verbindungszeichenfolge und ADO.NET-Klassen, um eine Verbindung mit der **AdventureWorksLT**-Demodatenbank in Azure SQL-Datenbank herzustellen.
+3. Verwendet die Verbindungszeichenfolge und ADO.NET-Klassen, um eine Verbindung mit der Demodatenbank **AdventureWorksLT** in Azure SQL-Datenbank herzustellen.
 
 4. Ruft den SQL-Befehl **SELECT** auf, um Einträge aus der Tabelle **SalesLT** auszulesen.
 
@@ -312,10 +313,10 @@ Wir versuchen, das C#-Beispiel kurz zu halten. Dennoch haben wir Code zum Lesen 
 ## Schritt 7: Hinzufügen eines zulässigen IP-Adressbereichs in der Serverfirewall
 
 
-Das C#-Clientprogramm kann erst dann eine Verbindung mit Azure SQL-Datenbank herstellen, wenn die IP-Adresse des Clientcomputers in der SQL-Datenbankfirewall hinzugefügt wurde. Das Programm gibt eine hilfreiche Fehlermeldung aus, in der die erforderliche IP-Adresse genannt wird.
+Das C#-Clientprogramm kann erst dann eine Verbindung mit Azure SQL-Datenbank herstellen, wenn die IP-Adresse des Clientcomputers der SQL-Datenbankfirewall hinzugefügt wurde. Das Programm gibt eine hilfreiche Fehlermeldung aus, in der die erforderliche IP-Adresse genannt wird.
 
 
-Sie können die IP-Adresse über das [Azure-Vorschauportal](http://portal.azure.com/) hinzufügen.
+Sie können die IP-Adresse über das [Azure-Portal](http://portal.azure.com/) hinzufügen.
 
 
 
@@ -327,10 +328,10 @@ Weitere Informationen finden Sie unter:<br/> [Konfigurieren der Firewalleinstell
 
 
 
-## Schritt 8: Auführen des Programms
+## Schritt 8: Ausführen des Programms
 
 
-1. Führen Sie das Programm in Visual Studio über das Menü **DEBUGGEN** > **Debuggen starten** aus. Ein Konsolenfenster wird angezeigt.
+1. Führen Sie die C#-Abfrage in Visual Studio über das Menü **DEBUGGEN** > **Debuggen starten** aus. Ein Konsolenfenster wird angezeigt.
 
 2. Geben Sie Ihren Benutzernamen und das Kennwort ein, wie beschrieben.
  - Für einige Verbindungstools ist es erforderlich, "@{Servername}" an den Benutzernamen anzuhängen. Für ADO.NET ist dieses Suffix optional. Sie müssen es an dieser Stelle nicht eingeben.
@@ -357,4 +358,4 @@ Weitere Informationen finden Sie unter:<br/> [Konfigurieren der Firewalleinstell
 
 [50-VSCopyToOutputDirectoryProperty]: ./media/sql-database-connect-query/connqry-vs-appconfig-copytoputputdir-h.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

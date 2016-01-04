@@ -1,20 +1,20 @@
 <properties 
-   pageTitle="Hochverfügbarkeit und Notfallwiederherstellung für SQL Server | Microsoft Azure"
-   description="In diesem Lernprogramm werden die mit dem klassischen Bereitstellungsmodell erstellten Ressourcen verwendet und die verschiedenen Typen von HADR-Strategien für SQL Server auf virtuellen Computern in Azure erläutert."
-   services="virtual-machines"
-   documentationCenter="na"
-   authors="rothja"
-   manager="jeffreyg"
-   editor="monicar" 
-   tags="azure-service-management"/>
+	pageTitle="Hochverfügbarkeit und Notfallwiederherstellung für SQL Server | Microsoft Azure"
+	description="In diesem Lernprogramm werden die mit dem klassischen Bereitstellungsmodell erstellten Ressourcen verwendet und die verschiedenen Typen von HADR-Strategien für SQL Server auf virtuellen Computern in Azure erläutert."
+	services="virtual-machines"
+	documentationCenter="na"
+	authors="rothja"
+	manager="jeffreyg"
+	editor="monicar" 
+	tags="azure-service-management"/>
 <tags 
-   ms.service="virtual-machines"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="vm-windows-sql-server"
-   ms.workload="infrastructure-services"
-   ms.date="08/17/2015"
-   ms.author="jroth" />
+	ms.service="virtual-machines"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-windows-sql-server"
+	ms.workload="infrastructure-services"
+	ms.date="11/13/2015"
+	ms.author="jroth" />
 
 # Hochverfügbarkeit und Notfallwiederherstellung für SQL Server in Azure Virtual Machines
 
@@ -57,7 +57,7 @@ Sie können eine Notfallwiederherstellungslösung für Ihre SQL Server-Datenban
 
 |Technologie|Beispielarchitekturen|
 |---|---|
-|**AlwaysOn-Verfügbarkeitsgruppen**|Die Replikate für die Verfügbarkeit werden in mehreren Rechenzentren auf virtuellen Azure-Computern für die Notfallwiederherstellung ausgeführt. Diese regionsübergreifende Lösung bietet einen Schutz vor dem Ausfall einzelner Standorte. <br/> ![AlwaysOn-Verfügbarkeitsgruppen](./media/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions/azure_only_dr_alwayson.png)<br/>Alle Replikate innerhalb einer Region sollten sich in demselben Clouddienst und im gleichen VNet befinden. Da jede Region ein gesondertes VNet besitzt, benötigen diese Lösungen VNet-zu-VNet-Verbindungen. Weitere Informationen finden Sie unter [Konfigurieren eines Site-to-Site-VPN im Verwaltungsportal](../vpn-gateway/vpn-gateway-site-to-site-create.md).|
+|**AlwaysOn-Verfügbarkeitsgruppen**|Die Replikate für die Verfügbarkeit werden in mehreren Rechenzentren auf virtuellen Azure-Computern für die Notfallwiederherstellung ausgeführt. Diese regionsübergreifende Lösung bietet einen Schutz vor dem Ausfall einzelner Standorte. <br/> ![AlwaysOn-Verfügbarkeitsgruppen](./media/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions/azure_only_dr_alwayson.png)<br/>Alle Replikate innerhalb einer Region sollten sich in demselben Clouddienst und im gleichen VNet befinden. Da jede Region ein gesondertes VNet besitzt, benötigen diese Lösungen VNet-zu-VNet-Verbindungen. Weitere Informationen finden Sie unter [Konfigurieren eines Standort-zu-Standort-VPN im klassischen Azure-Portal](../vpn-gateway/vpn-gateway-site-to-site-create.md).|
 |**Spiegeln von Datenbanken**|Prinzipale, Spiegelungen und Server werden in verschiedenen Rechenzentren für die Notfallwiederherstellung ausgeführt. Da sich eine Active Directory-Domäne über mehrere Rechenzentren erstrecken kann, müssen Sie die Bereitstellung mithilfe von Serverzertifikaten durchführen.<br/>![Spiegeln von Datenbanken](./media/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions/azure_only_dr_dbmirroring.gif)|
 |**Sicherung und Wiederherstellung mit dem Azure-Blob-Speicherdienst**|Die Produktionsdatenbanken werden direkt im Blob-Speicher in einem anderen Rechenzentrum für die Notfallwiederherstellung gesichert.<br/>![Sichern und Wiederherstellen](./media/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions/azure_only_dr_backup_restore.gif)<br/>Weitere Informationen finden Sie unter [Sicherung und Wiederherstellung für SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-backup-and-restore.md).|
 
@@ -104,9 +104,14 @@ Weitere Informationen finden Sie unter [Konfigurieren von AlwaysOn-Verfügbarkei
 
 ### Unterstützung für Verfügbarkeitsgruppenlistener
 
-Verfügbarkeitsgruppenlistener werden auf virtuellen Azure-Computern unter Windows Server 2008 R2, Windows Server 2012 und Windows Server 2012 R2 unterstützt. Möglich wird diese Unterstützung durch die Verwendung von Endpunkten mit Lastenausgleich mit Direct Server Return (DSR) auf den virtuellen Azure-Computern, die Verfügbarkeitsgruppenknoten sind. Sie müssen bestimmte Konfigurationsschritte für die Listener einhalten, damit sie sowohl für in Azure als auch lokal ausgeführte Clientanwendungen funktionieren.
+Verfügbarkeitsgruppenlistener werden auf virtuellen Azure-Computern unter Windows Server 2008 R2, Windows Server 2012 und Windows Server 2012 R2 unterstützt. Möglich wird diese Unterstützung durch die Verwendung von Endpunkten mit Lastenausgleich auf den virtuellen Azure-Computern, die Verfügbarkeitsgruppenknoten sind. Sie müssen bestimmte Konfigurationsschritte für die Listener einhalten, damit sie sowohl für in Azure als auch lokal ausgeführte Clientanwendungen funktionieren.
 
-Clients müssen von einem Computer, der nicht im gleichen Clouddienst wie die Knoten der AlwaysOn-Verfügbarkeitsgruppe ist, eine Verbindung mit dem Listener herstellen. Wenn die Verfügbarkeitsgruppe mehrere Azure-Subnetze umfasst (z. B. bei einer Bereitstellung über mehrere Azure-Regionen hinweg), muss die Client-Verbindungszeichenfolge "MultisubnetFailover = True" enthalten. Dies führt zu parallelen Verbindungsversuchen mit den Replikaten in unterschiedlichen Subnetzen. Weitere Informationen zum Einrichten eines Listeners finden Sie unter [Konfigurieren eines ILB-Listeners für AlwaysOn-Verfügbarkeitsgruppen in Azure](virtual-machines-sql-server-configure-ilb-alwayson-availability-group-listener.md).
+Es gibt zwei Hauptoptionen für das Einrichten des Listeners: extern (öffentlich) oder intern. Der externe (öffentliche) Listener ist mit einer öffentlichen VIP (Virtual IP) verknüpft, die über das Internet zugänglich ist. Bei einem externen Listener müssen Sie Direct Server Return (DSR) aktivieren, d. h. dass Sie von einem Computer, der sich nicht im selben Clouddienst wie die Knoten der AlwaysOn-Verfügbarkeitsgruppe befindet, eine Verbindung mit dem Listener herstellen müssen. Stattdessen können Sie auch einen internen Listener verwenden, der den internen Load Balancer (ILB) verwendet. Ein interner Listener unterstützt nur Clients im gleichen virtuellen Netzwerk.
+
+Wenn die Verfügbarkeitsgruppe mehrere Azure-Subnetze umfasst (z. B. bei einer Bereitstellung über mehrere Azure-Regionen hinweg), muss die Client-Verbindungszeichenfolge "**MultisubnetFailover = True**" enthalten. Dies führt zu parallelen Verbindungsversuchen mit den Replikaten in unterschiedlichen Subnetzen. Eine Anleitung zum Einrichten eines Listeners finden Sie unter
+
+- [Konfigurieren eines ILB-Listeners für AlwaysOn-Verfügbarkeitsgruppen in Azure](virtual-machines-sql-server-configure-ilb-alwayson-availability-group-listener.md).
+- [Konfigurieren eines externen Listeners für AlwaysOn-Verfügbarkeitsgruppen in Azure](virtual-machines-sql-server-configure-public-alwayson-availability-group-listener.md).
 
 Sie können weiterhin separate Verbindungen mit den einzelnen Verfügbarkeitsreplikaten herstellen, indem Sie eine direkte Verbindung mit der Serverinstanz herstellen. Da AlwaysOn-Verfügbarkeitsgruppen abwärtskompatibel mit Clients für die Datenbankspiegelung sind, können Sie außerdem Verbindungen mit Verfügbarkeitsreplikaten wie Datenbankspiegelungspartnern herstellen, sofern die Replikate ähnlich wie die Datenbankspiegelung konfiguriert sind:
 
@@ -122,7 +127,7 @@ Weitere Informationen zur Clientkonnektivität finden Sie unter:
 
 - [Verwenden von Schlüsselwörtern für Verbindungszeichenfolgen mit SQL Server Native Client](https://msdn.microsoft.com/library/ms130822.aspx)
 - [Verbinden von Clients mit einer Datenbank-Spiegelungssitzung (SQL Server)](https://technet.microsoft.com/library/ms175484.aspx)
-- [Connecting to Availability Group Listener in Hybrid IT](http://blogs.msdn.com/b/sqlalwayson/archive/2013/02/14/connecting-to-availability-group-listener-in-hybrid-it.aspx) (in englischer Sprache)
+- [Connecting to Availability Group Listener in Hybrid IT (in englischer Sprache)](http://blogs.msdn.com/b/sqlalwayson/archive/2013/02/14/connecting-to-availability-group-listener-in-hybrid-it.aspx)
 - [Verfügbarkeitsgruppenlistener, Clientkonnektivität und Anwendungsfailover (SQL Server)](https://technet.microsoft.com/library/hh213417.aspx)
 - [Verwenden von Verbindungszeichenfolgen für die Datenbankspiegelung mit Verfügbarkeitsgruppen](https://technet.microsoft.com/library/hh213417.aspx)
 
@@ -145,6 +150,6 @@ Weitere Informationen zum Ausführen von SQL Server auf virtuellen Azure-Comput
 ### Weitere Ressourcen:
 
 - [Installieren einer neuen Active Directory-Gesamtstruktur in Azure](../active-directory/active-directory-new-forest-virtual-machine.md)
-- [Create WSFC Cluster for AlwaysOn Availability Groups in Windows Azure VM](http://gallery.technet.microsoft.com/scriptcenter/Create-WSFC-Cluster-for-7c207d3a) (in englischer Sprache)
+- [Create WSFC Cluster for AlwaysOn Availability Groups in Windows Azure VM (in englischer Sprache)](http://gallery.technet.microsoft.com/scriptcenter/Create-WSFC-Cluster-for-7c207d3a)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

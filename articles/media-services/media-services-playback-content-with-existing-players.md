@@ -23,9 +23,9 @@ Azure Media Services unterstützt zahlreiche gängige Streamingformate wie Smoot
 
 >[AZURE.NOTE]Für die Wiedergabe dynamisch paketierter oder verschlüsselter Inhalte müssen Sie sicherstellen, dass mindestens eine Streamingeinheit für den Streamingendpunkt abgerufen wurde, über den die Inhalte bereitgestellt werden sollen. Informationen zum Skalieren von Streamingeinheiten finden Sie unter [Skalieren von Streamingeinheiten](media-services-manage-origins.md#scale_streaming_endpoints).
 
-###Azure-Verwaltungsportal – Media Services-Inhaltsplayer
+###Klassisches Azure-Portal – Media Services-Inhaltsplayer
 
-Im **Azure-Verwaltungsportal** wird ein Inhaltsplayer bereitgestellt, mit dem Sie Ihre Videos testen können.
+Im **klassischen Azure-Portal** wird ein Inhaltsplayer bereitgestellt, mit dem Sie Ihre Videos testen können.
 
 Klicken Sie auf den gewünschten Videoinhalt (vergewissern Sie sich, dass er [veröffentlicht](media-services-manage-content.md#publish) wurde), und klicken Sie auf die Schaltfläche **Abspielen** am unteren Rand des Portals.
  
@@ -93,4 +93,4 @@ Informationen zum Entwickeln eigener Player finden Sie unter [Entwickeln von Vid
  
 [AMSPlayer]: ./media/media-services-playback-content-with-existing-players/media-services-portal-player.png
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

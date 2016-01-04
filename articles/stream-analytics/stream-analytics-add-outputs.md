@@ -1,6 +1,7 @@
 <properties 
-	pageTitle="Ausgaben hinzufügen | Microsoft Azure" 
-	description="Ausgaben hinzufügen – Lernpfadsegment"
+	pageTitle="Konfigurieren von Datenausgaben für Stream Analytics-Aufträge | Microsoft Azure" 
+	description="Konfigurieren von Ausgaben für Stream Analytics-Aufträge | Lernpfadsegment."
+	keywords="Datenausgabe, Datenverschiebung"
 	documentationCenter=""
 	services="stream-analytics"
 	authors="jeffstokes72" 
@@ -13,14 +14,14 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="11/10/2015" 
+	ms.date="12/04/2015" 
 	ms.author="jeffstok"/>
 
-# Ausgaben hinzufügen
+# Konfigurieren von Datenausgaben für Stream Analytics-Aufträge
 
-Azure Stream Analytics-Aufträge können mit einer oder mehreren Ausgaben verknüpft werden, die eine Verbindung zu einer vorhandenen Datensenke definieren. Während Ihr Stream Analytics-Auftrag eingehende Daten verarbeitet und umwandelt, wird ein Strom von Ausgabeereignissen in die Ausgabe Ihres Auftrags geschrieben.
+Azure Stream Analytics-Aufträge können mit einer oder mehreren Datenausgaben verknüpft werden, die eine Verbindung mit einer vorhandenen Datensenke definieren. Während Ihr Stream Analytics-Auftrag eingehende Daten verarbeitet und umwandelt, wird ein Strom von Datenausgabeereignissen in die Ausgabe Ihres Auftrags geschrieben.
 
-Stream Analytics-Ausgaben können zum Beziehen von Echtzeitdashboards oder Warnungen, zum Auslösen von nachgelagerten Workflows oder einfach zum Archivieren von Daten für die spätere Stapelverarbeitung verwendet werden. Stream Analytics bietet eine erstklassige Integration in verschiedene Azure-Diensten, die hier ausführlich dokumentiert sind.
+Stream Analytics-Datenausgaben können als Quelle für Echtzeitdashboards oder Warnungen, zum Auslösen von Workflows für Datenverschiebungen oder einfach zum Archivieren von Daten für die spätere Batchverarbeitung verwendet werden. Stream Analytics bietet eine erstklassige Integration in verschiedene Azure-Diensten, die hier ausführlich dokumentiert sind.
 
 So fügen Sie Ihrem Stream Analytics-Auftrag eine Ausgabe hinzu:
 
@@ -34,23 +35,25 @@ So fügen Sie Ihrem Stream Analytics-Auftrag eine Ausgabe hinzu:
 
 2. Geben Sie den Typ der Ausgabe an:
 
-    ![Datentyp auswählen](./media/stream-analytics-add-outputs/2-stream-analytics-add-outputs.png)
+    ![Auswählen eines Datenverschiebungstyps](./media/stream-analytics-add-outputs/2-stream-analytics-add-outputs.png)
 
-    ![Azure-Vorschauportal – Datentyp auswählen](./media/stream-analytics-add-outputs/6-stream-analytics-add-outputs.png)
+    ![Azure-Vorschauportal – Datenverschiebungstyp auswählen](./media/stream-analytics-add-outputs/6-stream-analytics-add-outputs.png)
 
 3. Geben Sie im Feld **Ausgabealias** einen Anzeigenamen für diese Ausgabe ein. Dieser Name kann später in der Abfrage Ihres Auftrags zum Verweisen auf die Ausgabe verwendet werden.
     
     Geben Sie den Rest der erforderlichen Verbindungseigenschaften ein, um eine Verbindung mit Ihrer Ausgabe herzustellen. Diese Felder unterscheiden sich je nach Ausgabetyp und sind hier im Detail definiert.
 
-    ![Eigenschaften hinzufügen](./media/stream-analytics-add-outputs/3-stream-analytics-add-outputs.png)
+    ![Hinzufügen von Eigenschaften für die Datenausgabe](./media/stream-analytics-add-outputs/3-stream-analytics-add-outputs.png)
 
 4. Je nach Ausgabetyp müssen Sie möglicherweise angeben, wie die Daten serialisieren oder formatiert werden. Die spezifischen Serialisierungseinstellungen für die einzelnen Ausgabetypen sind hier dokumentiert.
 
     Geben Sie den Rest der erforderlichen Verbindungseigenschaften ein, um eine Verbindung mit Ihrer Datenquelle herzustellen. Diese Felder unterscheiden sich je nach Eingabe- und Quelltyp und sind [hier](stream-analytics-create-a-job.md) im Detail definiert.
 
-    ![Event Hub hinzufügen](./media/stream-analytics-add-outputs/4-stream-analytics-add-outputs.png)
+    ![Hinzufügen der Datenausgabe zum Event Hub](./media/stream-analytics-add-outputs/4-stream-analytics-add-outputs.png)
 
-    ![Azure-Vorschauportal – Event Hub hinzufügen](./media/stream-analytics-add-outputs/7-stream-analytics-add-outputs.png)
+    ![Azure-Vorschauportal – Datenausgabe für den Event Hub](./media/stream-analytics-add-outputs/7-stream-analytics-add-outputs.png)
+
+> [Azure.Note]Jedes Ausgabeelement, das dem Auftrag hinzugefügt wird, muss vorhanden sein, bevor der Auftrag gestartet wird und Ereignisse übertragen werden. Wird beispielsweise ein Blob Storage als Ausgabe verwendet, erstellt der Auftrag nicht automatisch ein Speicherkonto. Es muss vom Benutzer erstellt werden, bevor der ASA-Auftrag gestartet wird.
 
 ## Hier erhalten Sie Hilfe
 Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=AzureStreamAnalytics).
@@ -63,4 +66,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

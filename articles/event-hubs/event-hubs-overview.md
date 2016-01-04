@@ -17,7 +17,7 @@
 
 # Übersicht über Event Hubs
 
-Viele moderne Lösungen sind darauf ausgelegt, adaptive Kundenerfahrungen bereitzustellen oder durch fortlaufendes Feedback und automatisierte Telemetrie-Produkte zu verbessern. Solche Lösungen stehen der Herausforderung gegenüber, auf sichere und zuverlässige Weise sehr große Informationsmengen von vielen Herausgebern gleichzeitig verarbeiten zu müssen. Microsoft Azure Event Hubs ist ein verwalteter Plattformdienst, der eine Grundlage für die Aufnahme umfangreicher Daten in einer Vielzahl von Szenarios bereitstellt. Beispiele für solche Szenarios sind Verhaltensanalysen in mobilen Apps, Verkehrsinformationen von Webfarmen, Ereignisaufzeichnungen in Konsolenspielen oder von Industriemaschinen oder verbundenen Fahrzeugen erfasste Telemetriedaten. In Lösungsarchitekturen übernehmen Event Hubs im Allgemeinen eine Funktion als "Eingangstür" für eine Ereignispipeline, häufig als *Ereigniserfasser* bezeichnet. Ein Ereigniserfasser ist eine Komponente oder ein Dienst zwischen Ereigniserzeuger und Ereignisverarbeitung zum Entkoppeln der Erzeugung eines Ereignisstreams von der Verarbeitung dieser Ereignisse.
+Viele moderne Lösungen sind darauf ausgelegt, adaptive Kundenerfahrungen bereitzustellen oder durch fortlaufendes Feedback und automatisierte Telemetrie-Produkte zu verbessern. Solche Lösungen stehen der Herausforderung gegenüber, auf sichere und zuverlässige Weise sehr große Informationsmengen von vielen Herausgebern gleichzeitig verarbeiten zu müssen. Microsoft Azure Event Hubs ist ein verwalteter Plattformdienst, der eine Grundlage für die Aufnahme umfangreicher Daten in einer Vielzahl von Szenarios bereitstellt. Beispiele für solche Szenarios sind Verhaltensanalysen in mobilen Apps, Verkehrsinformationen von Webfarmen, Ereignisaufzeichnungen in Konsolenspielen oder von Industriemaschinen oder verbundenen Fahrzeugen erfasste Telemetriedaten. In Lösungsarchitekturen übernehmen Event Hubs im Allgemeinen eine Funktion als "Eingangstür" für eine Ereignispipeline, häufig als *Ereigniserfasser* bezeichnet. Ein Ereigniserfasser ist eine Komponente oder ein Dienst zwischen Ereignisherausgeber und Ereignisverarbeitung zum Entkoppeln der Erzeugung eines Ereignisstreams von der Verarbeitung dieser Ereignisse.
 
 ![Ereignis-Hubs](./media/event-hubs-overview/IC759856.png)
 
@@ -132,7 +132,7 @@ Die Durchsatzkapazität von Event Hubs wird durch Durchsatzeinheiten gesteuert. 
 
 - Ausgang: Bis 2 MB pro Sekunde.
 
-Der Eingang wird auf die Kapazität beschränkt, die der erworbenen Anzahl von Durchsatzeinheiten entspricht. Das Senden von Daten über diese Menge hinaus führt zur Ausnahme "Datenträgerkontingent überschritten". Diese Menge ist entweder 1 MB pro Sekunde oder 1000 Ereignisse pro Sekunde, je nachdem, was zuerst eintritt. Am Ausgang erfolgt keine Beschränkung, jedoch ist dieser auf Datenübertragungsmenge anhand der erworbenen Durchsatzeinheiten beschränkt: 2 MB pro Sekunde pro Durchsatzeinheit. Wenn Sie Ausnahmen für die Veröffentlichungsrate erhalten oder einen größeren Ausgang erwarten, überprüfen Sie, wie viele Durchsatzeinheiten Sie für den Namespace erworben haben, in dem der Event Hub erstellt wurde. Um weitere Durchsatzeinheiten zu erhalten, können Sie die Einstellung auf der Seite **Namespaces** auf der Registerkarte **Skalieren** im Azure-Portal anpassen. Sie können diese Einstellung auch mit den Azure-APIs ändern.
+Der Eingang wird auf die Kapazität beschränkt, die der erworbenen Anzahl von Durchsatzeinheiten entspricht. Das Senden von Daten über diese Menge hinaus führt zur Ausnahme "Datenträgerkontingent überschritten". Diese Menge ist entweder 1 MB pro Sekunde oder 1000 Ereignisse pro Sekunde, je nachdem, was zuerst eintritt. Am Ausgang erfolgt keine Beschränkung, jedoch ist dieser auf Datenübertragungsmenge anhand der erworbenen Durchsatzeinheiten beschränkt: 2 MB pro Sekunde pro Durchsatzeinheit. Wenn Sie Ausnahmen für die Veröffentlichungsrate erhalten oder einen größeren Ausgang erwarten, überprüfen Sie, wie viele Durchsatzeinheiten Sie für den Namespace erworben haben, in dem der Event Hub erstellt wurde. Um weitere Durchsatzeinheiten zu erhalten, können Sie die Einstellung auf der Seite **Namespaces** auf der Registerkarte **Skalieren** im [klassischen Azure-Portal][] anpassen. Sie können diese Einstellung auch mit den Azure-APIs ändern.
 
 Während Partitionen ein Datenorganisationskonzept sind, sind Durchsatzeinheiten ausschließlich ein Kapazitätskonzept. Durchsatzeinheiten werden auf Stundenbasis abgerechnet und im Voraus erworben. Nach dem Erwerb werden Durchsatzeinheiten für mit einem Minimum von einer Stunde in Rechnung gestellt. Bis zu 20 Durchsatzeinheiten können für einen Service Bus-Namespace erworben werden, und für ein Azure-Konto besteht ebenfalls eine Grenze von 20 Durchsatzeinheiten. Diese Durchsatzeinheiten werden für alle Event Hubs in einem bestimmten Namespace gemeinsam genutzt.
 
@@ -144,7 +144,7 @@ Preisinformationen finden Sie unter [Event Hubs Preise](http://azure.microsoft.c
 
 ### Herausgeberrichtlinie
 
-Event Hubs ermöglicht eine abgestufte Kontrolle über Ereigniserzeuger durch *Herausgeberrichtlinien*. Herausgeberrichtlinien sind eine Sammlung von Laufzeitfunktionen, mit denen große Mengen unabhängiger Erzeuger verwaltet werden können. Mit Herausgeberrichtlinien verwendet jeder Herausgeber einen eigenen eindeutigen Bezeichner für die Veröffentlichung von Ereignissen in einem Event Hub. Dabei kommt der folgende Mechanismen zum Einsatz:
+Event Hubs ermöglicht eine abgestufte Kontrolle über Ereignisherausgeber durch *Herausgeberrichtlinien*. Herausgeberrichtlinien sind eine Sammlung von Laufzeitfunktionen, mit denen große Mengen unabhängiger Herausgeber verwaltet werden können. Mit Herausgeberrichtlinien verwendet jeder Herausgeber einen eigenen eindeutigen Bezeichner für die Veröffentlichung von Ereignissen in einem Event Hub. Dabei kommt der folgende Mechanismen zum Einsatz:
 
 	//<my namespace>.servicebus.windows.net/<event hub name>/publishers/<my publisher name>
 
@@ -162,9 +162,10 @@ Nun, da Sie sich mit Event Hubs-Konzepten vertraut gemacht haben, können Sie mi
 - Eine vollständige [Beispielanwendung mit Verwendung von Ereignis-Hubs].
 - Eine [Messaginglösung mit Warteschlange] unter Verwendung von Service Bus-Warteschlangen.
 
+[klassischen Azure-Portal]: http://manage.windowsazure.com
 [Event Hubs-Lernprogramm]: event-hubs-csharp-ephcs-getstarted.md
 [Beispielanwendung mit Verwendung von Ereignis-Hubs]: https://code.msdn.microsoft.com/windowsazure/Service-Bus-Event-Hub-286fd097
 [Messaginglösung mit Warteschlange]: ../service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

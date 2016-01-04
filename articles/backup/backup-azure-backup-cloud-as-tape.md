@@ -6,7 +6,7 @@
    authors="Jim-Parker"
    manager="jwhit"
    editor=""/>
-<tags  ms.service="backup" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="storage-backup-recovery" ms.date="09/22/2015" ms.author="jimpark"; "aashishr"; "sammehta"/>
+<tags  ms.service="backup" ms.devlang="na" ms.topic="article" ms.tgt_pltfrm="na" ms.workload="storage-backup-recovery" ms.date="12/15/2015" ms.author="jimpark"; "aashishr"; "sammehta"/>
 
 # Verwenden von Azure Backup als Ersatz für Ihre Bandinfrastruktur
 Azure Backup- und System Center Data Protection Manager-Kunden haben folgende Möglichkeiten: - Sichern von Daten in Zeitplänen, welche am besten ihren Organisationsanforderungen entsprechen - Längeres Aufbewahren der Sicherungsdaten - Integrieren von Azure in ihre Anforderungen zur langfristigen Aufbewahrung (anstelle von Bändern)
@@ -60,4 +60,4 @@ Weitere Informationen zu Azure Backup finden Sie unter
 - [Einführung in Azure Backup](backup-introduction-to-azure-backup.md)
 - [Azure Backup testen](backup-try-azure-backup-in-10-mins)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

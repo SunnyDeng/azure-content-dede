@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Verwalten von Azure Data Lake Analytics mithilfe des Azure-Vorschauportals | Azure" 
+   pageTitle="Verwalten von Azure Data Lake Analytics mithilfe des Azure-Portals | Azure" 
    description="Erfahren Sie, wie Sie Data Lake Analytics-Konten, -Datenquellen, -Benutzer und -Aufträge verwalten." 
    services="data-lake-analytics" 
    documentationCenter="" 
@@ -16,17 +16,17 @@
    ms.date="10/27/2015"
    ms.author="jgao"/>
 
-# Verwalten von Azure Data Lake Analytics mithilfe des Azure-Vorschauportals
+# Verwalten von Azure Data Lake Analytics mithilfe des Azure-Portals
 
 [AZURE.INCLUDE [manage-selector](../../includes/data-lake-analytics-selector-manage.md)]
 
-Erfahren Sie, wie Sie Azure Data Lake Analytics-Konten, -Datenquellen, -Benutzer und -Aufträge mithilfe des Azure-Vorschauportals verwalten. Klicken Sie oben auf die Registerkartenauswahl, um Themen anzuzeigen, in denen die Verwaltung mit anderen Tools durchgeführt wird.
+Hier erfahren Sie, wie Sie Azure Data Lake Analytics-Konten, -Datenquellen, -Benutzer und -Aufträge mithilfe der Azure-Portals verwalten. Klicken Sie oben auf die Registerkartenauswahl, um Themen anzuzeigen, in denen die Verwaltung mit anderen Tools durchgeführt wird.
 
 **Voraussetzungen**
 
 Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
-- **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/de-DE/pricing/free-trial/).
+- **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/).
 
 
 
@@ -35,7 +35,7 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 <!-- ################################ -->
 ## Konten verwalten
 
-Zur Ausführung von Data Lake Analytics-Aufträgen ist ein Data Lake Analytics-Konto erforderlich. Im Gegensatz zu Azure HDInsight entstehen durch ein Analytics-Konto keine Kosten, solange darin kein Auftrag ausgeführt wird. Sie bezahlen nur für die Zeit, während der im Konto ein Auftrag ausgeführt wird. Weitere Informationen finden Sie unter [Azure Data Lake Analytics – Übersicht](data-lake-analytics-overview.md).
+Zur Ausführung von Data Lake Analytics-Aufträgen ist ein Data Lake Analytics-Konto erforderlich. Im Gegensatz zu Azure HDInsight entstehen durch ein Analytics-Konto keine Kosten, solange darin kein Auftrag ausgeführt wird. Sie bezahlen nur für die Zeit, während der in dem Konto ein Auftrag ausgeführt wird. Weitere Informationen finden Sie unter [Azure Data Lake Analytics – Übersicht](data-lake-analytics-overview.md).
 
 **So erstellen Sie Data Lake Analytics-Konten**
 
@@ -49,7 +49,7 @@ Zur Ausführung von Data Lake Analytics-Aufträgen ist ein Data Lake Analytics-K
 	- **Data Lake-Speicher**: Jedes Data Lake Analytics-Konto verfügt über ein abhängiges Azure Data Lake-Speicherkonto. Das Data Lake Analytics-Konto und das abhängige Data Lake-Speicherkonto müssen sich in demselben Azure-Rechenzentrum befinden. Führen Sie die Anweisungen zum Erstellen eines neuen Data Lake-Speicherkontos aus, oder wählen Sie ein vorhandenes Konto aus.
 	- **Abonnement**: Wählen Sie das Azure-Abonnement aus, das für das Analytics-Konto verwendet wird.
 	- **Ressourcengruppe**: Wählen Sie eine vorhandene Ressourcengruppe aus, oder erstellen Sie eine neue Ressourcengruppe. Mit dem Azure-Ressourcen-Manager (ARM) können Sie mit den Ressourcen in Ihrer Anwendung als Gruppe arbeiten. Weitere Informationen finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](resource-group-overview.md). 
-	- **Standort**: Wählen Sie ein Azure-Rechenzentrum für das Data Lake Analytics-Konto aus. 
+	- **Standort**. Wählen Sie ein Azure-Rechenzentrum für das Data Lake Analytics-Konto aus. 
 
 8. Klicken Sie auf **Erstellen**. Sie gelangen auf die Startseite des Portals. Dem Startmenü wird eine neue Kachel mit der Bezeichnung „Azure Data Lake Analytics wird bereitgestellt“ hinzugefügt. Es dauert einige Zeit, bis ein Data Lake Analytics-Konto erstellt wurde. Bei seiner Erstellung wird das Konto im Portal auf einem neuen Blatt geöffnet.
 
@@ -145,7 +145,7 @@ Beim Erstellen eines Data Lake Analytics-Kontos müssen Sie ein Azure Data Lake-
 
 <a name="upload-data-to-adls"></a> **So laden Sie Dateien in das Data Lake-Speicherkonto hoch**
 
-1. Klicken Sie im Vorschauportal im Menü auf der linken Seite auf **Durchsuchen** und dann auf **Data Lake-Speicher**.
+1. Klicken Sie imPortal im Menü auf der linken Seite auf **Durchsuchen** und dann auf **Data Lake-Speicher**.
 2. Klicken Sie auf das Data Lake-Speicherkonto, in das Sie Daten hochladen möchten. Informationen zum Suchen nach dem Data Lake-Standardspeicherkonto finden Sie [hier](#default-adl-account).
 3. Klicken Sie im Menü oben auf **Daten-Explorer**.
 4. Klicken Sie auf **Neues Verzeichnis**, um einen neuen Ordner zu erstellen, oder klicken Sie auf einen Ordnernamen, um den Ordner zu ändern.
@@ -210,7 +210,7 @@ Zum Ausführen von Aufträgen ist ein Data Lake Analytics-Konto erforderlich. We
 	|Name|Beschreibung|
 	|----|-----------|
 	|Auftragsname|Geben Sie den Namen des Auftrags ein.|
-	|Priorität|Je niedriger die Zahl ist, desto höher ist die Priorität. Wenn sich zwei Aufträge in der Warteschlange befinden, wird zuerst der Auftrag mit dem niedrigeren Prioritätswert ausgeführt.|
+	|Priority|Je niedriger die Zahl ist, desto höher ist die Priorität. Wenn sich zwei Aufträge in der Warteschlange befinden, wird zuerst der Auftrag mit dem niedrigeren Prioritätswert ausgeführt.|
 	|Parallelität |Gibt die maximale Anzahl von Compute-Prozessen an, die gleichzeitig möglich sind. Wenn Sie diesen Wert erhöhen, können Sie die Leistung steigern, aber auch die Kosten können sich erhöhen.|
 	|Skript|Geben Sie das U-SQL-Skript für den Auftrag ein.|
 
@@ -256,7 +256,7 @@ Weitere Informationen finden Sie unter [Überwachen von Data Lake Analytics-Auft
 
 ##Anzeigen des U-SQL-Katalogs
 
-Der [U-SQL-Katalog](data-lake-analytics-use-u-sql-catalog.md) wird zum Strukturieren von Daten und Code verwendet, damit diese von U-SQL-Skripts gemeinsam genutzt werden können. Der Katalog ermöglicht die höchstmögliche Leistung mit Daten in Azure Data Lake. Im Azure-Vorschauportal können Sie den U-SQL-Katalog anzeigen.
+Der [U-SQL-Katalog](data-lake-analytics-use-u-sql-catalog.md) wird zum Strukturieren von Daten und Code verwendet, damit diese von U-SQL-Skripts gemeinsam genutzt werden können. Der Katalog ermöglicht die höchstmögliche Leistung mit Daten in Azure Data Lake. Im Azure-Portal können Sie den U-SQL-Katalog anzeigen.
 
 **So durchsuchen Sie den U-SQL-Katalog**
 
@@ -275,24 +275,24 @@ Anwendungen bestehen normalerweise aus vielen Komponenten, z. B. Web-App, Daten
 
 Ein Data Lake Analytics-Dienst kann folgende Komponenten enthalten:
 
-- Azure Data Lake Analytics-Konto
+- Azure Data Lake Analytics-Konto
 - Erforderliches Azure Data Lake-Standardspeicherkonto
 - Zusätzliche Azure Data Lake-Speicherkonten
 - Zusätzliche Azure-Speicherkonten
 
-Alle diese Komponenten lassen sich zur leichteren Verwaltung unter einer ARM-Gruppe erstellen.
+Alle diese Komponenten lassen sich zur einfacheren Verwaltung unter einer ARM-Gruppe erstellen.
 
 ![Azure Data Lake Analytics-Konto und -Speicher](./media/data-lake-analytics-manage-use-portal/data-lake-analytics-arm-structure.png)
 
-Ein Data Lake Analytics-Konto und das zugehörige Speicherkonto müssen sich in demselben Azure-Rechenzentrum befinden. Die ARM-Gruppe kann sich jedoch in einem anderen Rechenzentrum befinden.
+Ein Data Lake Analytics-Konto und die dazugehörigen Speicherkonten müssen sich im gleichen Azure-Rechenzentrum befinden. Die ARM-Gruppe kann sich jedoch in einem anderen Rechenzentrum befinden.
 
 
 
 ##Weitere Informationen 
 
 - [Übersicht über Microsoft Azure Data Lake Analytics](data-lake-analytics-overview.md)
-- [Erste Schritte mit Data Lake Analytics mithilfe des Azure-Vorschauportals](data-lake-analytics-get-started-portal.md)
+- [Erste Schritte mit Data Lake Analytics mithilfe des Azure-Portals](data-lake-analytics-get-started-portal.md)
 - [Verwalten von Azure Data Lake Analytics mithilfe von Azure PowerShell](data-lake-analytics-use-powershell.md)
-- [Überwachung und Problembehandlung von Azure Data Lake Analytics-Aufträgen mithilfe des Azure-Vorschauportals](data-lake-analytics-monitor-and-troubleshoot-jobs-tutorial.md)
+- [Überwachen und Problembehandeln von Azure Data Lake Analytics-Aufträgen mithilfe des Azure-Portals](data-lake-analytics-monitor-and-troubleshoot-jobs-tutorial.md)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

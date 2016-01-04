@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/11/2015"
+	ms.date="12/09/2015"
 	ms.author="dastrock"/>
 
 # App-Modell v2.0 (Vorschauversion): Einschränkungen
@@ -85,4 +85,4 @@ Das App-Modell v2.0 unterstützt Open ID Connect und OAuth 2.0. Allerdings wurde
 
 Lesen Sie zum besseren Verständnis des Bereichs der Protokoll-Funktionalität im App-Modell v2.0 die [OpenID Connect- und OAuth 2.0-Protokollreferenz](active-directory-v2-protocols.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

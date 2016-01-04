@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Erste Schritte mit Fleet unter CoreOS | Microsoft Azure"
-	description="Stellt grundlegende Beispiele für die Verwendung von Fleet und Docker auf einem mit dem klassischen Bereitstellungsmodell erstellten virtuellen Linux-Computer mit CoreOS in Azure bereit."
+	description="Stellt grundlegende Beispiele für die Verwendung von Fleet und Docker in einem mit dem klassischen Bereitstellungsmodell erstellten Cluster mit virtuellen Linux-Computern mit CoreOS in Azure bereit."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="dlepow"
@@ -14,19 +14,17 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-linux"
 	ms.workload="infrastructure-services"
-	ms.date="08/03/2015"
+	ms.date="11/16/2015"
 	ms.author="danlep"/>
 
-# Erste Schritte mit Fleet unter CoreOS in Azure
+# Erste Schritte mit Fleet in einem Cluster von virtuellen CoreOS-Computern in Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](https://azure.microsoft.com/documentation/templates/coreos-with-fleet-multivm/).
 
 
 In diesem Artikel enthält zwei kurze Beispiele für die Verwendung von [Fleet](https://github.com/coreos/fleet) und [Docker](https://www.docker.com/) zum Ausführen von Anwendungen in einem Cluster von virtuellen [CoreOS]-Computern.
 
-Um diese Beispiele verwenden zu können, müssen Sie zunächst ein CoreOS-Cluster wie in [Gewusst wie: Verwenden von CoreOS in Azure] beschrieben einrichten. Danach verstehen Sie die grundlegenden Elemente einer CoreOS-Bereitstellung und verfügen über ein funktionierendes Cluster und den Clientcomputer. In diesen Beispielen verwenden wir denselben Clusternamen. Zudem wird in diesen Beispielen davon ausgegangen, dass Sie den lokalen Linux-Host zum Ausführen der **fleetctl**-Befehle verwenden.
-
-
+Um diese Beispiele verwenden zu können, müssen Sie zunächst ein CoreOS-Cluster wie in [Gewusst wie: Verwenden von CoreOS in Azure] beschrieben einrichten. Danach verstehen Sie die grundlegenden Elemente einer CoreOS-Bereitstellung und verfügen über ein funktionierendes Cluster und den Clientcomputer. In diesen Beispielen verwenden wir denselben Clusternamen. Zudem wird in diesen Beispielen davon ausgegangen, dass Sie den lokalen Linux-Host zum Ausführen der **fleetctl**-Befehle verwenden. Weitere Informationen zum **Fleetctl**-Client finden Sie unter [Verwenden des Clients](https://coreos.com/fleet/docs/latest/using-the-client.html).
 
 
 ## <a id='simple'>Beispiel 1: "Hello World" mit Docker</a>
@@ -90,30 +88,28 @@ fleetctl --tunnel coreos-cluster.cloudapp.net:22 unload helloworld.service
 ```
 
 
-## <a id='highavail'>Beispiel 2: Apache-Server mit hoher Verfügbarkeit</a>
+## <a id='highavail'>Beispiel 2: nginx-Server mit hoher Verfügbarkeit</a>
 
-Ein Vorteil der Verwendung von CoreOS, Docker und **fleet** besteht darin, dass dann Dienste problemlos mit hoher Verfügbarkeit ausgeführt werden können. In diesem Beispiel stellen Sie einen Dienst bereit, der aus drei identischen Containern besteht, in denen der Apache-Webserver ausgeführt wird. Der Container werden auf die drei virtuellen Computern im Cluster ausgeführt. Dieses Beispiel ähnelt dem Beispiel in [Starten von Containern mit fleet] und verwendet das [CoreOS-Image Apache Docker Hub].
+Ein Vorteil der Verwendung von CoreOS, Docker und **fleet** besteht darin, dass dann Dienste problemlos mit hoher Verfügbarkeit ausgeführt werden können. In diesem Beispiel stellen Sie einen Dienst bereit, der aus drei identischen Containern besteht, in denen der nginx-Webserver ausgeführt wird. Der Container werden auf die drei virtuellen Computern im Cluster ausgeführt. Dieses Beispiel ähnelt dem Beispiel in [Starten von Containern mit fleet] und verwendet das [nginx Docker Hub-Image].
 
->[AZURE.IMPORTANT]Um den Apache-Server mit hoher Verfügbarkeit auszuführen, müssen Sie auf den virtuellen Computern einen HTTP-Endpunkt mit Lastenausgleich konfigurieren (öffentlicher Port 80, privater Port 80). Sie können dies nach der Erstellung des CoreOS-Clusters im Azure-Portal oder mit dem Befehl **azure vm endpoint** tun. Weitere Informationen finden Sie unter [Konfigurieren einer Gruppe mit Lastenausgleich].
+>[AZURE.IMPORTANT]Um den Webserver mit hoher Verfügbarkeit auszuführen, müssen Sie auf den virtuellen Computern einen HTTP-Endpunkt mit Lastenausgleich konfigurieren (öffentlicher Port 80, privater Port 80). Sie können dies nach der Erstellung des CoreOS-Clusters im klassischen Azure-Portal oder mit dem Befehl **azure vm endpoint** tun. Weitere Informationen finden Sie unter [Konfigurieren einer Gruppe mit Lastenausgleich].
 
-Erstellen Sie auf dem Clientcomputer mit Ihrem bevorzugten Texteditor eine **systemd**-Unit-Vorlagendatei namens apache@.service. Sie verwenden diese Vorlage zum Starten von drei separaten Instanzen namens apache@1.service, apache@2.service und apache@3.service:
+Erstellen Sie auf dem Clientcomputer mit Ihrem bevorzugten Texteditor eine **systemd**-Unit-Vorlagendatei namens nginx@.service. Sie verwenden diese einfache Vorlage zum Starten von drei separaten Instanzen namens nginx@1.service, nginx@2.service und nginx@3.service:
 
 ```
 [Unit]
-Description=High Availability Apache
+Description=High Availability Nginx
 After=docker.service
 Requires=docker.service
 
 [Service]
 TimeoutStartSec=0
-ExecStartPre=-/usr/bin/docker kill apache1
-ExecStartPre=-/usr/bin/docker rm apache1
-ExecStartPre=/usr/bin/docker pull coreos/apache
-ExecStart=/usr/bin/docker run -rm --name apache1 -p 80:80 coreos/apache /usr/sbin/apache2ctl -D FOREGROUND
-ExecStop=/usr/bin/docker stop apache1
+ExecStartPre=/usr/bin/docker pull nginx
+ExecStart=/usr/bin/docker run --rm --name nginx1 -p 80:80 nginx
+ExecStop=/usr/bin/docker stop nginx1
 
 [X-Fleet]
-X-Conflicts=apache@*.service
+X-Conflicts=nginx@*.service
 ```
 
 >[AZURE.NOTE]Das `X-Conflicts`-Attribut weist CoreOS an, dass nur eine Instanz dieses Containers auf einem bestimmten CoreOS-Host ausgeführt werden kann. Weitere Informationen finden Sie unter [Unit Files].
@@ -121,33 +117,53 @@ X-Conflicts=apache@*.service
 Jetzt starten Sie die Unit-Instanzen im CoreOS-Cluster. Sie sollten sehen, dass sie auf drei verschiedenen Computern ausgeführt werden:
 
 ```
-fleetctl --tunnel coreos-cluster.cloudapp.net:22 start apache@{1,2,3}.service
+fleetctl --tunnel coreos-cluster.cloudapp.net:22 start nginx@{1,2,3}.service
 
-unit apache@3.service launched on 00c927e4.../100.79.62.16
-unit apache@1.\service launched on 62f0f66e.../100.79.86.62
-unit apache@2.service launched on df85f2d1.../100.78.126.15
+unit nginx@3.service launched on 00c927e4.../100.79.62.16
+unit nginx@1.service launched on 62f0f66e.../100.79.86.62
+unit nginx@2.service launched on df85f2d1.../100.78.126.15
 
 ```
-Um den Apache-Server, der in einer dieser Units ausgeführt wird, zu erreichen, senden Sie eine einfache Anforderung an den Clouddienst, der das CoreOS-Cluster hostet.
+Um den Webserver, der in einer dieser Einheiten ausgeführt wird, zu erreichen, senden Sie eine einfache Anforderung an den Clouddienst, der das CoreOS-Cluster hostet.
 
 `curl http://coreos-cluster.cloudapp.net`
 
-Sie sehen Standardtext, der vom Apache-Server zurückgegeben wird und etwa wie folgt lautet:
+Sie sehen Standardtext, der vom nginx-Server zurückgegeben wird und etwa wie folgt lautet:
 
 ```
-<html><body><h1>It works!</h1>
-<p>This is the default web page for this server.</p>
-<p>The web server software is running but no content has been added, yet.</p>
-</body></html>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
 ```
 
-Sie können versuchen, einen oder mehrere virtuelle Computer im Cluster herunterzufahren, um zu überprüfen, ob der Apache-Dienst weiterhin ausgeführt wird.
+Sie können versuchen, einen oder mehrere virtuelle Computer im Cluster herunterzufahren, um zu überprüfen, ob der Webdienst weiterhin ausgeführt wird.
 
 Abschließend beenden und entladen Sie die Units.
 
 ```
-fleetctl --tunnel coreos-cluster.cloudapp.net:22 stop apache@{1,2,3}.service
-fleetctl --tunnel coreos-cluster.cloudapp.net:22 unload apache@{1,2,3}.service
+fleetctl --tunnel coreos-cluster.cloudapp.net:22 stop nginx@{1,2,3}.service
+fleetctl --tunnel coreos-cluster.cloudapp.net:22 unload nginx@{1,2,3}.service
 
 ```
 
@@ -173,7 +189,7 @@ fleetctl --tunnel coreos-cluster.cloudapp.net:22 unload apache@{1,2,3}.service
 [Starten von Containern mit fleet]: https://coreos.com/docs/launching-containers/launching/launching-containers-fleet/
 [Unit Files]: https://coreos.com/docs/launching-containers/launching/fleet-unit-files/
 [Docker-Hub-Image BusyBox]: https://registry.hub.docker.com/_/busybox/
-[CoreOS-Image Apache Docker Hub]: https://registry.hub.docker.com/u/coreos/apache/
+[nginx Docker Hub-Image]: https://hub.docker.com/_/nginx/
 [Linux- und Open Source-Computing in Azure]: virtual-machines-linux-opensource.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

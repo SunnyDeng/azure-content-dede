@@ -18,6 +18,8 @@
 
 # Nutzen einer API-App in Azure App Service aus einem .NET-Client 
 
+[AZURE.INCLUDE [app-service-api-v2-note](../../includes/app-service-api-v2-note.md)]
+
 ## Übersicht
 
 In diesem Lernprogramm wird gezeigt, wie Sie das App Service-SDK zum Schreiben von Code verwenden, mit dem eine [API-App](app-service-api-apps-why-best-platform.md) aufgerufen wird, die für die Zugriffsebene **Öffentlich (anonym)** oder **Öffentlich (authentifiziert)** konfiguriert wurde. In diesem Artikel werden die folgenden Beispielszenarien behandelt:
@@ -205,4 +207,4 @@ Um weitere Codebeispiele für den Aufruf einer API-App aus einem .NET-Client zu 
 Informationen zur Authentifizierung in API-Apps finden Sie unter [Authentifizierung für API-Apps und mobile Apps in Azure App Service](../app-service/app-service-authentication-overview.md).
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

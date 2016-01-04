@@ -30,7 +30,7 @@ True author is: authors="sonalmm" , ms.author="sonalm".
 
 | Erstellen einer Datenbank | Screenshot |
 | :--- | :--- |
-| 1\. Melden Sie sich bei [http://portal.azure.com/](http://portal.azure.com/) an. | ![Neues Azure-Portal][1] |
+| 1\. Melden Sie sich bei [http://portal.azure.com/](http://portal.azure.com/) an. | ![Neues klassisches Azure-Portal][1] |
 | 2\. Klicken Sie unten links auf der Seite auf **Neu**. | ![Initiieren eines neuen Diensts][2]|
 | 3\. Klicken Sie auf **SQL-Datenbank**.| ![Verschiedene Dienste zur Auswahl][3] |
 | 4\. Ein Blatt **SQL-Datenbank** wird geöffnet. Geben Sie im Feld **Name** einen Datenbanknamen an. | ![Name der Datenbank][4] |
@@ -66,4 +66,4 @@ True author is: authors="sonalmm" , ms.author="sonalm".
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

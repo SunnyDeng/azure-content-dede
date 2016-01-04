@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="hero-article"
-	ms.date="10/27/2015"
+	ms.date="12/07/2015"
 	ms.author="sdanie"/>
 
 # Verwalten Ihrer ersten API in Azure API Management
@@ -61,7 +61,7 @@ Das System setzt sich aus den folgenden Komponenten zusammen:
 
 >[AZURE.NOTE]Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion][].
 
-Der erste Schritt bei der Arbeit mit API Management ist die Erstellung einer Dienstinstanz. Melden Sie sich beim [Azure-Portal][] an, und klicken Sie auf **Neu**, **App Services**, **API Management** und **Erstellen**.
+Der erste Schritt bei der Arbeit mit API Management ist die Erstellung einer Dienstinstanz. Melden Sie sich beim [klassischen Azure-Portal][] an, und klicken Sie auf **Neu**, **App Services**, **API Management** und **Erstellen**.
 
 ![Neue API Management-Instanz][api-management-create-instance-menu]
 
@@ -95,7 +95,7 @@ Sie können eine API manuell erstellen (und ihr Operationen hinzufügen), oder S
 
 >[AZURE.NOTE]Anleitungen zur manuellen Erstellung von APIs und zum Hinzufügen von Operationen finden Sie unter [Erstellen von APIs](api-management-howto-create-apis.md) und [Hinzufügen von Operationen zu einer API](api-management-howto-add-operations.md).
 
-APIs werden im Herausgeberportal konfiguriert, das über das Azure-Portal erreichbar ist. Um auf das Herausgeberportal zuzugreifen, klicken Sie im Azure-Portal für Ihren API Management-Dienst auf **Verwalten**.
+APIs werden im Herausgeberportal konfiguriert, das über das klassische Azure-Portal erreichbar ist. Um auf das Herausgeberportal zuzugreifen, klicken Sie im klassischen Azure-Portal für Ihren API Management-Dienst auf **Verwalten**.
 
 ![Herausgeberportal][api-management-management-console]
 
@@ -116,7 +116,7 @@ Sobald die API importiert wurde, wird die Zusammenfassungsseite für die API im 
 
 ![API-Zusammenfassung][api-management-imported-api-summary]
 
-Der API-Bereich umfasst verschiedene Registerkarten. Die Registerkarte **Zusammenfassung** enthält grundlegende Metriken und Informationen über die API. Auf der Registerkarte [Einstellungen](api-management-howto-create-apis.md#configure-api-settings) können Sie die Konfiguration einer API anzeigen und bearbeiten. Mithilfe der Registerkarte [Operationen](api-management-howto-add-operations.md) können Sie die API-Operationen verwalten. Auf der Registerkarte **Sicherheit** können Sie die Proxyauthentifizierung für den Back-End-Server konfigurieren, indem Sie die Standardauthentifizierung oder die [Gegenseitige Zertifikatauthentifizierung](api-management-howto-mutual-certificates.md) festlegen und die [Benutzerautorisierung mithilfe von OAuth 2.0](api-management-howto-oauth2.md) konfigurieren. Die Registerkarte **Probleme** dient zum Anzeigen der Probleme, die von den Entwicklern gemeldet werden, die Ihre APIs verwenden. Auf der Registerkarte **Produkte** werden die Produkte konfiguriert, die diese API enthalten.
+Der API-Bereich umfasst verschiedene Registerkarten. Die Registerkarte **Zusammenfassung** enthält grundlegende Metriken und Informationen über die API. Auf der Registerkarte [Einstellungen](api-management-howto-create-apis.md#configure-api-settings) können Sie die Konfiguration einer API anzeigen und bearbeiten. Mithilfe der Registerkarte [Operationen](api-management-howto-add-operations.md) können Sie die API-Operationen verwalten. Auf der Registerkarte **Sicherheit** können Sie die Gatewayauthentifizierung für den Back-End-Server konfigurieren, indem Sie die Standardauthentifizierung oder die [gegenseitige Zertifikatauthentifizierung](api-management-howto-mutual-certificates.md) verwenden, und Sie können die [Benutzerautorisierung mithilfe von OAuth 2.0](api-management-howto-oauth2.md) konfigurieren. Die Registerkarte **Probleme** dient zum Anzeigen der Probleme, die von den Entwicklern gemeldet werden, die Ihre APIs verwenden. Auf der Registerkarte **Produkte** werden die Produkte konfiguriert, die diese API enthalten.
 
 Standardmäßig enthält jede API Management-Instanz zwei Beispielprodukte:
 
@@ -206,7 +206,7 @@ Der Abschnitt **Analyse** enthält die folgenden vier Registerkarten:
 [Erste Schritte bei der erweiterten API-Konfiguration]: api-management-get-started-advanced.md
 [API Management-Preise]: http://azure.microsoft.com/pricing/details/api-management/
 
-[Azure-Portal]: https://manage.windowsazure.com/
+[klassischen Azure-Portal]: https://manage.windowsazure.com/
 
 [api-management-management-console]: ./media/api-management-get-started/api-management-management-console.png
 [api-management-create-instance-menu]: ./media/api-management-get-started/api-management-create-instance-menu.png
@@ -243,4 +243,4 @@ Der Abschnitt **Analyse** enthält die folgenden vier Registerkarten:
 [api-management-]: ./media/api-management-get-started/api-management-.png
 [api-management-]: ./media/api-management-get-started/api-management-.png
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -13,10 +13,12 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na"
 	ms.topic="article" 
-	ms.date="09/08/2015" 
+	ms.date="12/04/2015" 
 	ms.author="tdykstra"/>
 
 # Verwalten von API-Apps in Azure App Service
+
+[AZURE.INCLUDE [app-service-api-v2-note](../../includes/app-service-api-v2-note.md)]
 
 Dieser Artikel zeigt, wie Sie das [Azure-Vorschauportal](https://portal.azure.com/) zum Ausführen verschiedener Verwaltungsaufgaben für API-Apps sowie für Überwachungsaufgaben einsetzen. Sie können u. a. die folgenden Aufgaben ausführen:
 
@@ -134,4 +136,4 @@ Dieser Artikel hat gezeigt, wie Sie das Azure-Portal zum Ausführen verschiedene
 
 Informationen zum Verwalten von API-Apps über die Befehlszeile finden Sie in den Artikeln im Abschnitt **Automatisieren**, die links neben dem Artikel (bei breiten Browserfenstern) oder oben über dem Artikel (bei schmalen Browserfenstern) angezeigt werden.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

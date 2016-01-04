@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/29/2015" 
+	ms.date="12/10/2015" 
 	ms.author="cephalin"/>
 
 
@@ -38,7 +38,7 @@ Im Folgenden finden Sie ein Beispiel einer in App Service-Web-Apps ausgeführten
 
 Nutzen Sie vorhandene Webressourcen in App Service-Web-Apps in den unterschiedlichsten Sprachen und Frameworks.
 
-Ihre vorhandenen Webressourcen können in App Service-Web-Apps ausgeführt werden, unabhängig davon, ob es sich um .NET, PHP, Java, Node.js oder Python handelt. Sie können die Ressourcen mithilfe Ihrer bevorzugten [FTP]-Tools oder über Ihr System zur Quellcodeverwaltung in Web-Apps verschieben. Web-Apps unterstützen eine direkte Veröffentlichung aus gängigen Quellcodeverwaltungen, wie z. B. [Visual Studio], [Visual Studio Online] und [Git] – lokal, GitHub, BitBucket, Dropbox, Mercurial usw.
+Ihre vorhandenen Webressourcen können in App Service-Web-Apps ausgeführt werden, unabhängig davon, ob es sich um .NET, PHP, Java, Node.js oder Python handelt. Sie können die Ressourcen mithilfe Ihrer bevorzugten [FTP]-Tools oder über Ihr System zur Quellcodeverwaltung in Web-Apps verschieben. Web-Apps unterstützen eine direkte Veröffentlichung aus gängigen Quellcodeverwaltungen, wie z. B. [Visual Studio], [Visual Studio Team Services] und [Git] – lokal, GitHub, BitBucket, Dropbox, Mercurial usw.
 
 ## Schützen Sie Ihre Ressourcen
 
@@ -62,7 +62,7 @@ Möglicherweise ist es für Ihr Unternehmen jedoch erforderlich, die zugehörige
 
 Optimieren Sie Ihre Branchenanwendung über eine automatische Skalierung mit "Autoskalierung", eine Zwischenspeicherung mit Azure Redis Cache, die Ausführung von Hintergrundaufgaben mithilfe von WebJobs, und sorgen Sie mit Azure Traffic Manager für eine gleichbleibend hohe Verfügbarkeit.
 
-Die Fähigkeit von App Service-Web-Apps, eine [vertikale und horizontale Skalierung] zu bieten, ist optimal für Ihre Branchenanwendung geeignet, unabhängig von der Arbeitsauslastung. Skalieren Sie Ihre Web-App manuell über das [Azure-Verwaltungsportal], programmgesteuert über die [Dienstverwaltungs-API] oder [PowerShell-Skripts] oder automatisch über die Funktion "Autoskalierung". Im Modus **Standard** können Sie eine Web-App mithilfe von "Autoskalierung" basierend auf der CPU-Auslastung automatisch horizontal hochskalieren. Bewährte Methoden finden Sie auf der Website von [Troy Hunt]\: [10 things I learned about rapidly scaling websites with Azure] (10 Dinge, die ich über eine schnelle Skalierung von Websites mit Azure gelernt habe, in englischer Sprache).
+Die Fähigkeit von App Service-Web-Apps, eine [vertikale und horizontale Skalierung] zu bieten, ist optimal für Ihre Branchenanwendung geeignet, unabhängig von der Arbeitsauslastung. Skalieren Sie Ihre Web-App manuell über das [Azure-Portal], programmgesteuert über die [Dienstverwaltungs-API] oder [PowerShell-Skripts] oder automatisch über die Funktion „Autoskalierung“. Im Modus **Standard** können Sie eine Web-App mithilfe von "Autoskalierung" basierend auf der CPU-Auslastung automatisch horizontal hochskalieren. Bewährte Methoden finden Sie auf der Website von [Troy Hunt]\: [10 things I learned about rapidly scaling websites with Azure] (10 Dinge, die ich über eine schnelle Skalierung von Websites mit Azure gelernt habe, in englischer Sprache).
 
 Erhöhen Sie die Reaktionsfähigkeit Ihrer Web-App mit [Azure Redis Cache]. Nutzen Sie diese Funktion zum Zwischenspeichern von Daten aus Back-End-Datenbanken und anderen Daten, beispielsweise [ASP.NET-Sitzungszustand] und [Ausgabecache].
 
@@ -72,7 +72,7 @@ Stellen Sie mithilfe von [Azure Traffic Manager] eine hohe Verfügbarkeit Ihrer 
 
 Sorgen Sie mit Azure oder Tools von Drittanbietern für eine optimale Leistung Ihrer Web-App. Empfangen Sie Warnungen zu kritischen Web-App-Ereignissen. Erhalten Sie problemlos Benutzereinblick über Application Insights oder eine Webprotokollanalyse aus HDInsight.
 
-Im Blatt der Web-App im [Azure-Vorschauportal](http://go.microsoft.com/fwlink/?LinkId=529715) erhalten Sie eine [Übersicht] über die aktuellen Leistungskennzahlen und Ressourcenkontingente der Web-App. Eine 360-Grad-Ansicht Ihrer Anwendung, einschließlich von Daten zu Verfügbarkeit, Leistung und Auslastung, erhalten Sie mit [Azure Application Insights]. So erhalten Sie schnell aussagekräftige Erkenntnisse zu Problembehandlung, Diagnose und Nutzung. Sie können auch ein Drittanbietertool wie [New Relic] nutzen, um weiterführende Überwachungsdaten zu Ihren Web-Apps zu erhalten.
+Auf dem Blatt der Web-App im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) erhalten Sie eine [Übersicht] über die aktuellen Leistungsmetriken und Ressourcenkontingente der Web-App. Eine 360-Grad-Ansicht Ihrer Anwendung, einschließlich von Daten zu Verfügbarkeit, Leistung und Auslastung, erhalten Sie mit [Azure Application Insights]. So erhalten Sie schnell aussagekräftige Erkenntnisse zu Problembehandlung, Diagnose und Nutzung. Sie können auch ein Drittanbietertool wie [New Relic] nutzen, um weiterführende Überwachungsdaten zu Ihren Web-Apps zu erhalten.
 
 Im Modus **Standard** erhalten die für die Web-App-Überwachung verantwortlichen Benutzer E-Mail-Benachrichtigungen, wenn die Anwendung nicht mehr reagiert. Weitere Informationen finden Sie unter [Empfangen von Warnbenachrichtigungen und Verwalten von Warnregeln in Azure].
 
@@ -92,7 +92,7 @@ Im Modus **Standard** erhalten die für die Web-App-Überwachung verantwortliche
 
 [FTP]: web-sites-deploy.md#ftp
 [Visual Studio]: web-sites-dotnet-get-started.md
-[Visual Studio Online]: ../cloud-services-continuous-delivery-use-vso.md
+[Visual Studio Team Services]: ../cloud-services-continuous-delivery-use-vso.md
 [Git]: web-sites-publish-source-control.md
 
 [HTTPS]: web-sites-configure-ssl-certificate.md
@@ -108,7 +108,7 @@ Im Modus **Standard** erhalten die für die Web-App-Überwachung verantwortliche
 [Azure Virtual Network]: web-sites-integrate-with-vnet.md
 
 [vertikale und horizontale Skalierung]: web-sites-scale.md
-[Azure-Verwaltungsportal]: http://manage.windowsazure.com/
+[Azure-Portal]: http://portal.azure.com/
 [Dienstverwaltungs-API]: http://msdn.microsoft.com/library/windowsazure/ee460799.aspx
 [PowerShell-Skripts]: http://msdn.microsoft.com/library/windowsazure/jj152841.aspx
 [Troy Hunt]: https://twitter.com/troyhunt
@@ -124,4 +124,4 @@ Im Modus **Standard** erhalten die für die Web-App-Überwachung verantwortliche
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

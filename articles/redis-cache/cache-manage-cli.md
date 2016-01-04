@@ -13,10 +13,14 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/30/2015" 
+	ms.date="12/02/2015" 
 	ms.author="sdanie"/>
 
 # Erstellen und Verwalten von Azure Redis Cache mithilfe der Azure-Befehlszeilenschnittstelle (Azure CLI)
+
+> [AZURE.SELECTOR]
+- [PowerShell](cache-howto-manage-redis-cache-powershell.md)
+- [Azure CLI](cache-manage-cli.md)
 
 Die Azure-Befehlszeilenschnittstelle ist eine hervorragende Methode, um Ihre Azure-Infrastruktur von einer beliebigen Plattform aus zu verwalten. In diesem Artikel wird das Erstellen und Verwalten Ihrer Azure Redis Cache-Instanzen mit der Azure-Befehlszeilenschnittstelle beschrieben.
 
@@ -254,4 +258,4 @@ Wenn Sie weitere Informationen zu diesem Befehl benötigen, führen Sie den `azu
 	help:
 	help:    Current Mode: arm (Azure Resource Management)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -39,11 +39,11 @@ SQL Database bietet relationalen Datenspeicher sowie Zugriff und Verwaltungsdien
 
 ## Erstellen und Konfigurieren von SQL-Datenbank.
 
-Als Nächstes erstellen und konfigurieren Sie eine Datenbank und einen Server. Im Azure-Verwaltungsportal können Sie mit überarbeiteten Workflows zunächst eine Datenbank erstellen und anschließend einen Server einrichten.
+Als Nächstes erstellen und konfigurieren Sie eine Datenbank und einen Server. Im klassischen Azure-Portal können Sie mit überarbeiteten Workflows zunächst eine Datenbank erstellen und anschließend einen Server einrichten.
 
 **Erstellen von Datenbank und logischem Server**
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal](http://manage.windowsazure.com) an.
+1. Melden Sie sich beim [klassischen Azure-Portal](http://manage.windowsazure.com) an.
 
 2. Klicken Sie unten auf der Seite auf **New**.
 
@@ -77,7 +77,7 @@ Als Nächstes erstellen und konfigurieren Sie eine Datenbank und einen Server. I
 
 12. Wählen Sie eine Region aus. Die Region bestimmt den geografischen Standort des Servers. Die Region kann nicht einfach geändert werden, wählen Sie also einen sinnvollen Standort für den Server aus. Wählen Sie den nächstgelegenen Standort aus. Wenn Sie Ihre Azure-Anwendung und -Datenbank in derselben Region platzieren, sparen Sie Zugangskosten für Bandbreite und Datenlatenz.
 
-13. Lassen Sie **Allow Azure Services to access the server** aktiviert, damit Sie über das Verwaltungsportal für SQL Database, Speicherdienste und andere Dienste in Azure eine Verbindung zur Datenbank herstellen können.
+13. Lassen Sie **Azure-Diensten Zugriff auf den Server erlauben** aktiviert, damit Sie über das klassische Portal für SQL Database, Speicherdienste und andere Dienste in Azure eine Verbindung zur Datenbank herstellen können.
 
 14. Klicken Sie abschließend auf das Häkchen unten auf der Seite.
 
@@ -211,4 +211,4 @@ Weitere Informationen finden Sie unter [EntityClient-Anbieter für das Entity Fr
 Nachdem Sie nun die Grundlagen der Verbindung mit der SQL-Datenbank kennengelernt haben, informieren Sie sich weiter unter [Entwicklung: Gewusst-wie-Themen (SQL-Datenbank)](http://msdn.microsoft.com/library/windowsazure/ee621787.aspx)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

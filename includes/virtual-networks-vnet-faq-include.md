@@ -8,7 +8,7 @@ Verwenden Sie VNets für Folgendes:
 
 - Erstellen eines dedizierten privaten virtuellen Nur-Cloud-Netzwerks
 									
-	Manchmal benötigen Sie keine standortübergreifende Konfiguration für Ihre Lösung. Wenn Sie ein VNet erstellen, können die Dienste und virtuellen Computer des VNet direkt und sicher in der Cloud miteinander kommunizieren. Auf diese Weise verbleibt der Datenverkehr sicher im VNet, Sie können jedoch trotzdem in Ihrer Lösung Endgerätverbindungen für die virtuellen Computer und Dienste konfigurieren, die eine Internetkommunikation erfordern.
+	Manchmal benötigen Sie keine standortübergreifende Konfiguration für Ihre Lösung. Wenn Sie ein VNet erstellen, können die Dienste und virtuellen Computer des VNet direkt und sicher in der Cloud miteinander kommunizieren. Auf diese Weise verbleibt der Datenverkehr sicher im VNet, Sie können jedoch trotzdem in Ihrer Lösung Endpunktverbindungen für die virtuellen Computer und Dienste konfigurieren, die eine Internetkommunikation erfordern.
 
 - Sicheres Erweitern des Rechenzentrums
 									
@@ -106,7 +106,7 @@ Ja. Sie können die in einem VNet verwendeten CIDR-Blöcke hinzufügen, entferne
 
 ### Kann eine Verbindung mit dem Internet hergestellt werden, wenn Dienste in einem VNet ausgeführt werden?
 
-Ja. Alle Dienste, die innerhalb eines VNet bereitgestellt werden, können eine Verbindung mit dem Internet herstellen. Jeder in Azure bereitgestellte Clouddienst verfügt über eine öffentlich adressierbare, zugewiesene VIP-Adresse. Sie müssen Eingabeendgeräte für PaaS-Rollen und Endgeräte für virtuelle Computer definieren, damit diese Dienste Verbindungen über das Internet annehmen können.
+Ja. Alle Dienste, die innerhalb eines VNet bereitgestellt werden, können eine Verbindung mit dem Internet herstellen. Jeder in Azure bereitgestellte Clouddienst verfügt über eine öffentlich adressierbare, zugewiesene VIP-Adresse. Sie müssen Eingabeendpunkte für PaaS-Rollen und Endpunkte für virtuelle Computer definieren, damit diese Dienste Verbindungen über das Internet annehmen können.
 
 ### Unterstützen VNets IPv6?
 
@@ -205,11 +205,11 @@ Nein. Eine MAC-Adresse kann nicht statisch konfiguriert werden.
 
 ### Bleibt die MAC-Adresse eines virtuellen Computers nach ihrer Erstellung unverändert?
 
-Nein. Die MAC-Adresse eines virtuellen Computers kann sich aus verschiedenen Gründen ändern. Wenn der virtuelle Computer aufgrund einer Größenänderung, Dienstreparatur oder geplanten Wartung des Hostservers in den Status "Beendet (Zuordnung aufgehoben)" versetzt wird, wird die MAC-Adresse nicht beibehalten.
+Nein, aber sie wird nur verändert, wenn der virtuelle Computer in den Status „Beendet (Zuordnung aufgehoben)“ versetzt wird. Wenn Sie die Größe des virtuellen Computers ändern, neu starten oder im Falle von Dienstkorrekturen oder einer geplanten Wartung des Hostservers, wird die MAC-Adresse beibehalten.
 
 ### Kann ich von einem virtuellen Computer in einem VNet eine Verbindung mit dem Internet herstellen?
 
-Ja. Alle Dienste, die innerhalb eines VNet bereitgestellt werden, können eine Verbindung mit dem Internet herstellen. Zusätzlich verfügt jeder in Azure bereitgestellte Clouddienst über eine öffentlich adressierbare zugewiesene VIP-Adresse. Sie müssen Eingabeendgeräte für PaaS-Rollen und Endgeräte für virtuelle Computer definieren, damit diese Dienste Verbindungen über das Internet annehmen können.
+Ja. Alle Dienste, die innerhalb eines VNet bereitgestellt werden, können eine Verbindung mit dem Internet herstellen. Zusätzlich verfügt jeder in Azure bereitgestellte Clouddienst über eine öffentlich adressierbare zugewiesene VIP-Adresse. Sie müssen Eingabeendpunkte für PaaS-Rollen und Endpunkte für virtuelle Computer definieren, damit diese Dienste Verbindungen über das Internet annehmen können.
 
 ## VNets und Dienste
 
@@ -222,11 +222,11 @@ Sie können innerhalb von VNets ausschließlich Compute Services verwenden. Comp
 Ja. Sie können Web-Apps in einem VNet mit ASE (App Service Environment, App Service-Umgebung) bereitstellen. Web-Apps können außerdem eine sichere Verbindung herstellen und auf Ressourcen im Azure-VNet zugreifen, wenn Sie für Ihr VNet „Punkt-zu-Site“ konfiguriert haben. Weitere Informationen finden Sie unter den folgenden Links:
 
 
-- [Erstellen von Web-Apps in einer App Service-Umgebung](https://azure.microsoft.com/de-DE/documentation/articles/app-service-web-how-to-create-a-web-app-in-an-ase/)
+- [Erstellen von Web-Apps in einer App Service-Umgebung](app-service-web-how-to-create-a-web-app-in-an-ase.md)
 
-- [Web Apps Virtual Network Integration](http://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/) (in englischer Sprache)
+- [Web Apps Virtual Network Integration (in englischer Sprache)](http://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/)
 
-- [Using VNet Integration and Hybrid Connections with Web Apps](http://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/) (in englischer Sprache)
+- [Using VNet Integration and Hybrid Connections with Web Apps (in englischer Sprache)](http://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/)
 
 - [Integrieren einer Web-App in einem Azure Virtual Network](web-sites-integrate-with-vnet.md)
 
@@ -250,7 +250,7 @@ VNets werden von anderen VNets und anderen in der Azure-Infrastruktur gehosteten
 
 ### Können ACLs oder NSGs für VNets definiert werden?
 
-Nein. Sie können VNets keine ACLs oder NSGs zuordnen. ACLs können jedoch für Eingabeendgeräte virtueller Computer definiert werden, die in einem VNet bereitgestellt wurden. NSGs können Subnetzen oder NICs zugeordnet werden.
+Nein. Sie können VNets keine ACLs oder NSGs zuordnen. ACLs können jedoch für Eingabeendpunkte virtueller Computer definiert werden, die in einem VNet bereitgestellt wurden. NSGs können Subnetzen oder NICs zugeordnet werden.
 
 ### Gibt es ein Whitepaper zum Thema VNet-Sicherheit?
 
@@ -266,4 +266,4 @@ Ja. VNets und die standortübergreifende Konnektivität können mithilfe von RES
 
 Ja. Sie können PowerShell und Befehlszeilentools für zahlreiche Plattformen verwenden. Weitere Informationen finden Sie [hier](http://go.microsoft.com/fwlink/?LinkId=317721).
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

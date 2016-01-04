@@ -1,4 +1,11 @@
-<properties pageTitle="Azure AD B2C-Vorschau: Aufrufen von Web-APIs aus einer Android-Anwendung | Microsoft Azure" description="In diesem Artikel wird beschrieben, wie Sie eine Android-App für Aufgabenlisten erstellen, die eine node.js-Web-API mithilfe von OAuth 2.0-Bearertoken aufruft. Sowohl die Android-App als auch die Web-API verwenden Azure AD B2C zum Verwalten von Benutzeridentitäten und zum Authentifizieren von Benutzern." services="active-directory-b2c" documentationCenter="android" authors="brandwe" manager="msmbaldwin" editor=""/>
+<properties
+	pageTitle="Azure AD B2C-Vorschau: Aufrufen von Web-APIs aus einer Android-Anwendung | Microsoft Azure"
+	description="In diesem Artikel wird beschrieben, wie Sie eine Android-App für Aufgabenlisten erstellen, die eine node.js-Web-API mithilfe von OAuth 2.0-Bearertoken aufruft. Sowohl die Android-App als auch die Web-API verwenden Azure AD B2C zum Verwalten von Benutzeridentitäten und zum Authentifizieren von Benutzern."
+	services="active-directory-b2c"
+	documentationCenter="android"
+	authors="brandwe"
+	manager="msmbaldwin"
+	editor=""/>
 
 <tags
 	ms.service="active-directory-b2c"
@@ -6,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="java"
 	ms.topic="article"
-	ms.date="09/22/2015"
+	ms.date="11/19/2015"
 	ms.author="brandwe"/>
 
 # Azure AD B2C-Vorschau: Aufrufen von Web-APIs aus einer Android-Anwendung
@@ -16,10 +23,12 @@ Mit Azure AD B2C können Sie Ihren Android-Apps und Web-APIs in wenigen Schritt
 [AZURE.INCLUDE [active-directory-b2c-preview-note](../../includes/active-directory-b2c-preview-note.md)]
 
  	
-> [AZURE.NOTE]Für diesen Schnellstart benötigen Sie als Voraussetzung eine Web-API, die durch Azure AD mit B2C geschützt wird. Wir haben sowohl für .NET als auch für node.js eine für Sie vorbereitet. Bei dieser exemplarischen Vorgehensweise wird davon ausgegangen, dass das node.js-Web-API-Beispiel konfiguriert wurde. Weitere Informationen dazu finden Sie unter [Azure AD B2C-Web-API-Lernprogramm für Node.js](active-directory-b2c-devquickstarts-api-node.md).
+> [AZURE.NOTE]
+	Für diesen Schnellstart benötigen Sie als Voraussetzung eine Web-API, die durch Azure AD mit B2C geschützt wird. Wir haben sowohl für .NET als auch für node.js eine für Sie vorbereitet. Bei dieser exemplarischen Vorgehensweise wird davon ausgegangen, dass das node.js-Web-API-Beispiel konfiguriert wurde. Weitere Informationen dazu finden Sie unter [Azure AD B2C-Web-API-Lernprogramm für Node.js](active-directory-b2c-devquickstarts-api-node.md).
 
  
-> [AZURE.NOTE]Dieser Artikel behandelt nicht das Implementieren der Anmeldung, Registrierung und Profilverwaltung mit Azure AD B2C. Er konzentriert sich auf das Aufrufen von Web-APIs aufrufen, nachdem der Benutzer bereits authentifiziert wurde. Wenn nicht bereits erfolgt, sollten Sie mit dem [Lernprogramm "Erste Schritte mit .NET-Web-App"](active-directory-b2c-devquickstarts-web-dotnet.md) beginnen, um Informationen zu den Grundlagen von Azure AD B2C zu erhalten.
+> [AZURE.NOTE]
+	Dieser Artikel behandelt nicht das Implementieren der Anmeldung, Registrierung und Profilverwaltung mit Azure AD B2C. Er konzentriert sich auf das Aufrufen von Web-APIs aufrufen, nachdem der Benutzer bereits authentifiziert wurde. Wenn nicht bereits erfolgt, sollten Sie mit dem [Lernprogramm "Erste Schritte mit .NET-Web-App"](active-directory-b2c-devquickstarts-web-dotnet.md) beginnen, um Informationen zu den Grundlagen von Azure AD B2C zu erhalten.
 
 
 Für Android-Clients, die auf geschützte Ressourcen zugreifen müssen, ist unter Azure AD die Active Directory-Authentifizierungsbibliothek (ADAL) verfügbar. Die einzige Aufgabe der ADAL besteht darin, Ihrer App das Abrufen von Zugriffstoken zu erleichtern. Um Ihnen zu zeigen, wie einfach es geht, erstellen wir hier eine Android-Anwendung mit einer Aufgabenliste, mit der folgende Aktionen ausgeführt werden können:
@@ -41,7 +50,7 @@ Nun müssen Sie eine App in Ihrem B2C-Verzeichnis erstellen, sodass Azure AD die
 - Fügen Sie der Anwendung eine **Web-App/Web-API** hinzu.
 - Geben Sie `urn:ietf:wg:oauth:2.0:oob` als **Antwort-URL** ein – dies ist die Standard-URL für dieses Codebeispiel.
 - Erstellen Sie einen **geheimen Schlüssel für Ihre Anwendung**, und notieren Sie ihn sich. Sie benötigen ihn später.
-- Notieren Sie sich die **Anwendungs-ID**, die Ihrer App zugewiesen ist. Sie benötigen sie ebenfalls in Kürze.
+- Notieren Sie die **Anwendungs-ID**, die Ihrer App zugewiesen ist. Sie benötigen sie ebenfalls in Kürze.
 
 [AZURE.INCLUDE [active-directory-b2c-devquickstarts-v2-apps](../../includes/active-directory-b2c-devquickstarts-v2-apps.md)]
 
@@ -69,7 +78,7 @@ Der Code für dieses Lernprogramm wird [auf GitHub](https://github.com/AzureADQu
 git clone --branch skeleton https://github.com/AzureADQuickStarts/B2C-NativeClient-Android.git
 ```
 
-> [AZURE.NOTE]**Zur Durchführung dieses Lernprogramms ist das Herunterladen des Gerüsts erforderlich.** Aufgrund der Komplexität der Implementierung einer voll funktionsfähigen Anwendung unter Android verfügt das **Gerüst** über UX-Code, der ausgeführt wird, nachdem Sie das folgende Lernprogramm abgeschlossen haben. Mit dieser Maßnahme sollen Entwickler Zeit sparen. Der UX-Code ist für das Thema des Hinzufügens von B2C zu einer Android-Anwendung nicht von Belang.
+> [AZURE.NOTE]**Das Herunterladen des Gerüsts ist für das Abschließen dieses Lernprogramms erforderlich.** Aufgrund der Komplexität der Implementierung einer voll funktionsfähigen Anwendung unter Android verfügt das **Gerüst** über UX-Code, der ausgeführt wird, nachdem Sie das folgende Lernprogramm abgeschlossen haben. Mit dieser Maßnahme sollen Entwickler Zeit sparen. Der UX-Code ist für das Thema des Hinzufügens von B2C zu einer Android-Anwendung nicht von Belang.
 
 Die fertige App ist ebenfalls [als ZIP-Datei verfügbar](https://github.com/AzureADQuickStarts/B2C-NativeClient-Android/archive/complete.zip) oder unter der Verzweigung `complete` im gleichen Repository enthalten.
 
@@ -113,9 +122,9 @@ repositories {
 }
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile('com.microsoft.aad:adal:2.0-alpha') {
+    compile('com.microsoft.aad:adal:2.0.1-alpha') {
         exclude group: 'com.android.support'
-    } // Recent version is 2.0-alpha
+    } // Recent version is 2.0.1-alpha
 }
 ```
 
@@ -127,7 +136,7 @@ Wenn Sie in Eclipse das m2e-Plug-In verwenden, können Sie die Abhängigkeit in 
 <dependency>
     <groupId>com.microsoft.aad</groupId>
     <artifactId>adal</artifactId>
-    <version>2.0-alpha</version>
+    <version>2.0.1-alpha</version>
     <type>aar</type>
 </dependency>
 ```
@@ -189,7 +198,14 @@ public class Constants {
 
 
 ```
-**SCOPES**: Die Bereiche, die wir an den Server übergeben und die wir vom Server für den anzumeldenden Benutzer anfordern möchten. Für B2C Preview übergeben wir die „client\_id“. Zukünftig wird sich dies für das Lesen von Bereichen jedoch ändern. Dieses Dokument wird dann aktualisiert. **ADDITIONAL\_SCOPES**: Hierbei handelt es sich um zusätzliche Bereiche, die Sie möglicherweise für Ihre Anwendung verwenden möchten. Wird zukünftig verwendet. **CLIENT\_ID**: Die Anwendungs-ID, die Sie aus dem Portal erhalten haben. **REDIRECT\_URL**: Die Umleitung, die für das Postback des Tokens erwartet wird. **EXTRA\_QP**: Alle anderen Daten, die Sie im URL-codierten Format an den Server übergeben möchten. **FB\_POLICY**: Die Richtlinie, die Sie aufrufen. Der wichtigste Teil dieser exemplarischen Vorgehensweise. **EMAIL\_SIGNIN\_POLICY**: Die Richtlinie, die Sie aufrufen. Der wichtigste Teil dieser exemplarischen Vorgehensweise. **EMAIL\_SIGNUP\_POLICY**: Die Richtlinie, die Sie aufrufen. Der wichtigste Teil dieser exemplarischen Vorgehensweise.
+**SCOPES**: Die Bereiche, die wir an den Server übergeben und die wir vom Server für den anzumeldenden Benutzer anfordern möchten. Für B2C Preview übergeben wir die „client\_id“. Zukünftig wird sich dies für das Lesen von Bereichen jedoch ändern. Dieses Dokument wird dann aktualisiert.
+**ADDITIONAL\_SCOPES**: Hierbei handelt es sich um zusätzliche Bereiche, die Sie möglicherweise für Ihre Anwendung verwenden möchten. Wird zukünftig verwendet.
+**CLIENT\_ID**: Die Anwendungs-ID, die Sie aus dem Portal erhalten haben.
+**REDIRECT\_URL**: Die Umleitung, die für das Postback des Tokens erwartet wird.
+**EXTRA\_QP**: Alle anderen Daten, die Sie im URL-codierten Format an den Server übergeben möchten.
+**FB\_POLICY**: Die Richtlinie, die Sie aufrufen. Der wichtigste Teil dieser exemplarischen Vorgehensweise.
+**EMAIL\_SIGNIN\_POLICY**: Die Richtlinie, die Sie aufrufen. Der wichtigste Teil dieser exemplarischen Vorgehensweise.
+**EMAIL\_SIGNUP\_POLICY**: Die Richtlinie, die Sie aufrufen. Der wichtigste Teil dieser exemplarischen Vorgehensweise.
 
 ### Schritt 7: Hinzufügen von Verweisen auf die ADAL für Android zum Projekt
 
@@ -891,7 +907,16 @@ Zuerst schreiben wir unser `getTask`-Element:
  
  **In derselben Datei** mit dem Namen `ToDoActivity.java`
  
- ``` private URL getEndpointUrl() { URL endpoint = null; try { endpoint = new URL(Constants.SERVICE\_URL); } catch (MalformedURLException e) { e.printStackTrace(); } return endpoint; }
+ ```
+    private URL getEndpointUrl() {
+        URL endpoint = null;
+        try {
+            endpoint = new URL(Constants.SERVICE_URL);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        return endpoint;
+    }
 
  ```
 
@@ -976,12 +1001,16 @@ Mit ADAL werden die Token verschlüsselt und standardmäßig unter SharedPrefere
 
 #### Sitzungscookies in Webview
 
-In Android Webview werden Sitzungscookies nach dem Schließen der App nicht gelöscht. Sie können dies mit dem unten angegebenen Beispielcode behandeln: ```
+In Android Webview werden Sitzungscookies nach dem Schließen der App nicht gelöscht. Sie können dies mit dem unten angegebenen Beispielcode behandeln:
+```
 CookieSyncManager.createInstance(getApplicationContext());
 CookieManager cookieManager = CookieManager.getInstance();
 cookieManager.removeSessionCookie();
 CookieSyncManager.getInstance().sync();
-``` Weitere Informationen zu Cookies: http://developer.android.com/reference/android/webkit/CookieSyncManager.html
+```
+Weitere Informationen zu Cookies: http://developer.android.com/reference/android/webkit/CookieSyncManager.html
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->
+
+

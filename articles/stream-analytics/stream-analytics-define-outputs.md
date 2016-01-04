@@ -1,27 +1,27 @@
-<properties 
-	pageTitle="Definieren von Ausgaben | Microsoft Azure" 
-	description="Grundlegendes zu Stream Analytics-Ausgaben" 
-	keywords="Big Data-Analysen,Clouddienst,Internet der Dinge,verwalteter Dienst,Datenstromverarbeitung, Streaming Analytics, Streamingdaten"
-	services="stream-analytics,documentdb,sql-database,event-hubs,service-bus,storage" 
-	documentationCenter="" 
-	authors="jeffstokes72" 
-	manager="paulettm" 
+<properties
+	pageTitle="Datentransformationsausgaben: Optionen für Speicher und Analysen | Microsoft Azure"
+	description="Erfahren Sie , wie Sie Stream Analytics-Datentransformationsausgaben auf Datenspeicheroptionen ausrichten können. Verwenden Sie außerdem Power BI für die Analyseergebnisse."
+	keywords="Datentransformation, Analyseergebnisse, Datenspeicheroptionen"
+	services="stream-analytics,documentdb,sql-database,event-hubs,service-bus,storage"
+	documentationCenter=""
+	authors="jeffstokes72"
+	manager="paulettm"
 	editor="cgronlun"/>
 
-<tags 
-	ms.service="stream-analytics" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.tgt_pltfrm="na" 
-	ms.workload="data-services" 
-	ms.date="11/12/2015" 
+<tags
+	ms.service="stream-analytics"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="data-services"
+	ms.date="12/01/2015"
 	ms.author="jeffstok"/>
 
-# Grundlegendes zu Stream Analytics-Ausgaben
+# Ausrichten von Stream Analytics-Datentransformationsausgaben auf Analysetools und Datenspeicheroptionen
 
-Beim Erstellen eines Stream Analytics-Auftrags muss unter anderem beachtet werden, wie die Ausgabe des Auftrags genutzt (konsumiert) wird. Wie sehen sich die Consumer der Datentransformation die Ergebnisse des Stream Analytics-Auftrags an? Welche Tools verwenden die Consumer, um die Ausgabe zu analysieren? Ist Beibehaltung von Daten oder Data Warehousing erforderlich?
+Überlegen Sie beim Erstellen eines Stream Analytics-Auftrags, wie die Datentransformationsausgabe genutzt wird. Wie möchten Sie die Ergebnisse des Stream Analytics-Auftrags anzeigen? Welche Tools verwenden Sie zum Anzeigen der Ergebnisse der Datenanalyse? Ist eine Datenspeicheroption notwendig?
 
-Um verschiedene Anwendungsmuster zu aktivieren, stellt Azure Stream Analytics sieben verschiedene Methoden zum Speichern und Anzeigen von Auftragsausgaben bereit. Unterstützte Ausgaben sind: SQL-Datenbank, Blobspeicher, Event Hubs, Service Bus-Warteschlangen, Service Bus-Themen, Power BI und Tabellenspeicher. Dadurch wird sowohl einfaches Anzeigen von Auftragsausgabe als auch Flexibilität bei der Nutzung und Speicherung der Auftragsausgabe für Data Warehousing und andere Zwecke erreicht.
+Um verschiedene Anwendungsmuster zu ermöglichen, stellt Azure Stream Analytics verschiedene Optionen zum Speichern der Ausgabe und zum Anzeigen von Analyseergebnissen bereit. Dadurch wird sowohl einfaches Anzeigen der Auftragsausgabe als auch Flexibilität bei der Nutzung und Speicherung der Auftragsausgabe für Data Warehousing und andere Zwecke erreicht. Jede Ausgabe, die im Auftrag konfiguriert wird, muss vorhanden sein, bevor der Auftrag gestartet wird und Ereignisse übertragen werden. Wird beispielsweise ein Blob Storage als Ausgabe verwendet, erstellt der Auftrag nicht automatisch ein Speicherkonto. Es muss vom Benutzer erstellt werden, bevor der ASA-Auftrag gestartet wird.
 
 
 ## SQL-Datenbank ##
@@ -63,7 +63,7 @@ Die folgende Tabelle enthält die Eigenschaftennamen und die entsprechenden Besc
 </tr>
 <tr>
 <td>Speichercontainer</td>
-<td>Container stellen eine logische Gruppierung für Blobs bereit, die im Microsoft Azure-Blob-Dienst gespeichert sind. Wenn Sie ein Blob in den Blob-Dienst hochladen, müssen Sie einen Container für das Blob angeben.</td>
+<td>Container stellen eine logische Gruppierung für Blobs bereit, die im Microsoft Azure-Blobdienst gespeichert sind. Wenn Sie ein Blob in den Blobdienst hochladen, müssen Sie einen Container für das Blob angeben.</td>
 </tr>
 <tr>
 <td>Präfixmusters des Pfads [optional]</td>
@@ -116,9 +116,9 @@ Es gibt einige Parameter, die erforderlich sind, um Event Hub-Datenströme als A
 | Format | Gilt nur für den JSON-Typ. "Separate Zeile" gibt an, dass die Ausgabe so formatiert wird, dass jedes JSON-Objekt in einer neuen Zeile enthalten ist. "Array" gibt an, dass die Ausgabe als Array aus JSON-Objekten formatiert wird. |
 ## Power BI
 
-[Power BI](https://powerbi.microsoft.com/) kann als Ausgabe für einen Stream Analytics-Auftrag verwendet werden, um Stream Analytics-Benutzern eine umfassende Visualisierungsumgebung bereitzustellen. Diese Funktionalität kann für betriebliche Dashboards, Erstellung von Berichten und metrikgesteuerte Berichterstellung verwendet werden.
+[Power BI](https://powerbi.microsoft.com/) kann als Ausgabe für einen Stream Analytics-Auftrag verwendet werden, um eine umfassende Visualisierungsumgebung für die Analyseergebnisse bereitzustellen. Diese Funktionalität kann für betriebliche Dashboards, die Erstellung von Berichten und eine metrikgesteuerte Berichterstellung verwendet werden.
 
-> [AZURE.NOTE]Zurzeit wird die Erstellung und Konfiguration von Power BI-Ausgaben im Azure-Vorschauportal nicht unterstützt.
+> [AZURE.NOTE]Zu diesem Zeitpunkt wird die Erstellung und Konfiguration von Power BI-Ausgaben im Azure-Vorschauportal nicht unterstützt.
 
 ### Autorisieren eines Power BI-Kontos
 
@@ -222,7 +222,7 @@ Die folgende Tabelle enthält die Eigenschaftennamen und die entsprechenden Besc
 </tr>
 <tr>
 <td>Kontoname</td>
-<td>Der Name des DocumentDB-Kontos. Dies kann auch das Endgerät für das Konto sein.</td>
+<td>Der Name des DocumentDB-Kontos. Dies kann auch der Endpunkt für das Konto sein.</td>
 </tr>
 <tr>
 <td>Kontoschlüssel</td>
@@ -267,4 +267,4 @@ Sie haben nun Stream Analytics kennengelernt, einen verwalteten Dienst für Stre
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

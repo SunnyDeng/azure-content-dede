@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration" 
-   ms.date="08/26/2015"
+   ms.date="11/18/2015"
    ms.author="juliako"/>
 
 
@@ -87,7 +87,7 @@ In Cloud Explorer wird Folgendes unterstützt:
 - Integrierter Bereich "Eigenschaften", in dem entwicklerbezogene Eigenschaften angezeigt werden, die häufig beim Entwickeln und Testen benötigt werden. 
 - Schnelles Wechseln des Kontos beim Auflisten von Ressourcen (über den Befehl "Einstellungen" in der Symbolleiste) 
 - Filtern von Abonnements beim Auflisten von Ressourcen (über den Befehl "Einstellungen" in der Symbolleiste) 
-- Deep-Links zum Azure-Vorschauportal für die Verwaltung von Ressourcen und Ressourcengruppen 
+- Deep-Links zum Azure-Portal für die Verwaltung von Ressourcen und Ressourcengruppen 
  
  
 ###Azure-Ressourcen-Manager-Tools 
@@ -131,7 +131,7 @@ Eine ausführlichere Erläuterung zu den Updates für die HDInsight-Tools finden
 
 	Visualisierung ist sehr wichtig, um festzustellen, ob die Topologie wie erwartet funktioniert. In dieser Version wurde eine Visualisierung für Storm-Diagramme hinzugefügt. Sie können die wichtigen Metriken für die Topologie visuell darstellen (eine Farbe gibt z. B. an, ob ein bestimmter Bolt "ausgelastet" oder nicht). Sie können auch auf Bolts/Spouts doppelklicken, um weitere Details anzuzeigen.
 
-- Unterstützung für HDInsight-Cluster, die im neuen Azure-Portal (Programmfehlerbehebung) erstellt wurden
+- Unterstützung für HDInsight-Cluster, die im Azure-Portal erstellt wurden (Programmfehlerbehebung)
 
 	Sie können nun Visual Studio zum Anzeigen und Übermitteln von Aufträgen an alle HDInsight-Cluster verwenden, unabhängig davon, wo der Cluster erstellt wurde.
 
@@ -153,10 +153,10 @@ Bei der Installation des Azure SDK 2.6 oder 2.7.1 für Visual Studio Community 2
 LightSwitch-Projekte sind mit dieser Version nicht kompatibel. Dieses Problem wird in der nächsten SDK-Version behoben.
 
 ##Siehe auch
-[Ankündigungsbeitrag zu Azure SDK 2.7.1](http://go.microsoft.com/fwlink/?LinkId=623850) (in englischer Sprache)
+[Ankündigungsbeitrag zu Azure SDK 2.7.1 (in englischer Sprache)](http://go.microsoft.com/fwlink/?LinkId=623850)
 
-[Ankündigungsbeitrag zu Azure SDK 2.7](https://azure.microsoft.com/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/) (in englischer Sprache)
+[Ankündigungsbeitrag zu Azure SDK 2.7 (in englischer Sprache)](https://azure.microsoft.com/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)
 
 [Unterstützungs- und Deaktivierungsinformationen zum Azure SDK für .NET und APIs](https://msdn.microsoft.com/library/azure/dn479282.aspx/)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

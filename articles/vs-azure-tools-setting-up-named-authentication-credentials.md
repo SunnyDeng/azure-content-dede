@@ -1,11 +1,11 @@
 <properties
-   pageTitle="Einrichten von benannten Authentifizierungsanmeldeinformationen"
+   pageTitle="Einrichten benannter Authentifizierungsanmeldeinformationen | Microsoft Azure"
    description="Erfahren Sie, wie Sie die Anmeldeinformationen angeben, mit denen Visual Studio Anforderungen für Azure authentifizieren kann, um eine Anwendung von Visual Studio aus in Azure zu veröffentlichen oder einen vorhandenen Clouddienst zu überwachen."
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tglee" />
+   editor="" />
 <tags
    ms.service="multiple"
    ms.devlang="dotnet"
@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="multiple"
    ms.date="09/02/2015"
-   ms.author="kempb" />
+   ms.author="tarcher" />
 
 # Einrichten benannter Authentifizierungsanmeldeinformationen
 
@@ -71,4 +71,4 @@ Bei der folgenden Vorgehensweise wird davon ausgegangen, dass das Dialogfeld **N
 
     1. Fügen Sie den vollständigen Pfad der erstellten CER-Datei ein, und geben Sie dann das festgelegte Kennwort ein.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

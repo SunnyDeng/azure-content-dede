@@ -21,7 +21,7 @@ Dieser Artikel zeigt, wie Sie Ihre Telemetriedaten aus [Visual Studio Applicatio
 
 Beim fortlaufenden Export werden die Telemetriedaten im JSON-Format in Azure Storage verschoben. Wir analysieren die JSON-Objekte mithilfe von Azure Stream Analytics und erstellen Zeilen in einer Datenbanktabelle.
 
-(Allgemeiner ausgedrückt, bietet der fortlaufende Export Ihnen die Möglichkeit, selbst eine Analyse der Telemetriedaten durchzuführen, die Ihre Apps an Application Insights senden. Sie können dieses Codebeispiel für andere Aufgaben mit der exportierten Telemetrie anpassen, z. B. die Aggregation der Daten und die Veröffentlichung der Daten in der PowerBI-Visualisierungssuite.)
+(Allgemeiner ausgedrückt, bietet der fortlaufende Export Ihnen die Möglichkeit, selbst eine Analyse der Telemetriedaten durchzuführen, die Ihre Apps an Application Insights senden. Sie können dieses Codebeispiel für andere Aufgaben mit den exportierten Telemetriedaten, wie beispielsweise die Aggregation der Daten, anpassen.)
 
 Zu Beginn gehen wir davon aus, dass Sie bereits über die App verfügen, die Sie überwachen möchten.
 
@@ -300,6 +300,7 @@ Nach einigen Minuten wechseln Sie zurück zu den SQL Server-Verwaltungstools, un
 ## Verwandte Artikel
 
 * [Exportieren in SQL über eine Workerrolle](app-insights-code-sample-export-telemetry-sql-database.md)
+* [Exportieren in PowerBI mit Stream Analytics](app-insights-export-power-bi.md)
 * [Detaillierte Datenmodellreferenz für die Eigenschaftstypen und -werte.](app-insights-export-data-model.md)
 * [Fortlaufender Export in Application Insights](app-insights-export-telemetry.md)
 * [Application Insights](https://azure.microsoft.com/services/application-insights/)
@@ -314,4 +315,4 @@ Nach einigen Minuten wechseln Sie zurück zu den SQL Server-Verwaltungstools, un
 
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=Nov15_HO4-->

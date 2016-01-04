@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/18/2015" 
+	ms.date="12/05/2015" 
 	ms.author="juliako"/>
 
 #Erste Schritte zum Bereitstellen von Inhalten nach Bedarf mit der REST-API
@@ -47,7 +47,7 @@ Die folgenden Aufgaben werden in diesem Schnellstart beschrieben.
 
 ## <a id="create_ams"></a>Erstellen eines Media Services-Kontos mithilfe des Portals
 
-1. Klicken Sie im [Verwaltungsportal][] auf **Neu**, klicken Sie auf **Mediendienst** und dann auf **Schnellerfassung**.
+1. Klicken Sie im [klassischen Azure-Portal][] auf **Neu**, **Mediendienst** und dann auf **Schnellerfassung**.
    
 	![Media Services-Schnellerfassung](./media/media-services-rest-get-started/wams-QuickCreate.png)
 
@@ -88,12 +88,12 @@ Die folgenden Schritte beschreiben den am häufigsten verwendeten Workflow, der 
 	> Möglicherweise empfangen Sie auch eine HTTP/1.1 200-Antwort, die die Beschreibung der ODATA-API-Metadaten enthält.
 3. Senden nachfolgender API-Aufrufe an die neue URL. 
 	
-	Wenn nach einem Verbindungsversuch folgende Meldung angezeigt wird:
+		Wenn nach einem Verbindungsversuch folgende Meldung angezeigt wird:
 		
 		HTTP/1.1 301 Moved Permanently
 		Location: https://wamsbayclus001rest-hs.cloudapp.net/api/
 
-	Senden Sie nachfolgende API-Aufrufe an https://wamsbayclus001rest-hs.cloudapp.net/api/.
+		Senden Sie nachfolgende API-Aufrufe an https://wamsbayclus001rest-hs.cloudapp.net/api/.
 
 ###Abrufen eines Zugriffstokens
 
@@ -1208,9 +1208,6 @@ Wenn dieses Thema nicht die erwarteten Informationen enthält, Informationen feh
 
 
 <!-- URLs. -->
-  [Verwaltungsportal]: http://manage.windowsazure.com/
+  [klassischen Azure-Portal]: http://manage.windowsazure.com/
 
-
- 
-
-<!---HONumber=Nov15_HO3-->
+<!----HONumber=AcomDC_1210_2015-->

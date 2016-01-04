@@ -33,7 +33,7 @@ Von einem Event Hub genutzte Ereignisse sowie Verwaltungsvorgänge und Kontrolla
 
 ## Was sind Event Hubs-Durchsatzeinheiten?
 
-Event Hubs-Durchsatzeinheiten werden vom Benutzer explizit ausgewählt, entweder über das Azure-Portal oder Event Hubs-Verwaltungs-APIs. Durchsatzeinheiten betreffen alle Event Hubs in einem Service Bus-Namespace, und jede Durchsatzeinheit gibt dem Namespace die Berechtigung für folgende Funktionen:
+Event Hubs-Durchsatzeinheiten werden vom Benutzer explizit ausgewählt, entweder über das klassische Azure-Portal oder Event Hubs-Verwaltungs-APIs. Durchsatzeinheiten betreffen alle Event Hubs in einem Service Bus-Namespace, und jede Durchsatzeinheit gibt dem Namespace die Berechtigung für folgende Funktionen:
 
 - Eingangsereignisse bis zu 1 MB pro Sekunde (Ereignisse, die an einen Event Hub gesendet werden), aber nicht mehr als 1.000 Eingangsereignisse, Verwaltungsvorgänge oder Steuer-API-Aufrufe pro Sekunde.
 
@@ -110,4 +110,4 @@ Weitere Informationen zu Event Hubs finden Sie in den folgenden Artikeln:
 [Beispielanwendung mit Verwendung von Ereignis-Hubs]: https://code.msdn.microsoft.com/Service-Bus-Event-Hub-286fd097
 [Messaginglösung mit Warteschlange]: ../service-bus/service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

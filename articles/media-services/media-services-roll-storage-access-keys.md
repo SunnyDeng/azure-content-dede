@@ -13,22 +13,20 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/15/2015"
+	ms.date="12/15/2015"
 	ms.author="juliako"/>
 
 #Gewusst wie: Aktualisieren von Media Services nach dem Austausch der Speicherschlüssel
 
-Wenn Sie ein neues Azure Media Services-Konto erstellen, müssen Sie auch ein Azure-Speicherkonto auswählen, das zum Speichern Ihrer Medieninhalte verwendet wird. Beachten Sie, dass Sie Ihrem Media Services-Konto mehrere Speicherkonten hinzufügen können.
+Wenn Sie ein neues Azure Media Services-Konto erstellen, müssen Sie auch ein Azure-Speicherkonto auswählen, das zum Speichern Ihrer Medieninhalte verwendet wird. Beachten Sie, dass Sie Ihrem Media Services-Konto [mehrere Speicherkonten](meda-services-managing-multiple-storage-accounts.md) hinzufügen können.
 
 Wenn ein neues Speicherkonto erstellt wird, generiert Azure zwei 512-Bit-Speicherzugriffsschlüssel, die zum Authentifizieren des Zugriffs auf das Speicherkonto verwendet werden. Um Ihre Speicherverbindungen sicherer zu gestalten, sollten Sie Ihre Speicherzugriffsschlüssel in regelmäßigen Abständen neu generieren und austauschen. Zwei Zugriffsschlüssel (primär und sekundär) werden zugewiesen, damit Sie Verbindungen zum Speicherkonto mit einem Zugriffsschlüssel aufrechterhalten können, während Sie den anderen Zugriffsschlüssel neu generieren. Dieser Vorgang wird als Austausch der Zugriffsschlüssel bezeichnet.
 
-Media Services ist auf einen der Speicherschlüssel angewiesen (primär oder sekundär). Insbesondere hängen die Locator, mit denen Ihre Assets gestreamt oder heruntergeladen werden, vom Zugriffsschlüssel ab. Beim Austausch der Speicherzugriffsschlüssel müssen Sie auch sicherstellen, dass Ihre Locator aktualisiert werden, damit keine Unterbrechungen Ihres Streamingdiensts auftreten.
+Für Media Services muss ein Speicherschlüssel bereitgestellt werden. Insbesondere hängen die Locators, mit denen Ihre Assets gestreamt oder heruntergeladen werden, vom angegebenen Speicherzugriffsschlüssel ab. Beim Erstellen eines AMS-Kontos wird standardmäßig die Abhängigkeit vom primären Speicherzugriffsschlüssel übernommen. Sie können als Benutzer aber den Speicherschlüssel von AMS aktualisieren. Sie müssen Media Services darüber informieren, welcher Schlüssel verwendet werden soll. Führen Sie dazu die Schritte in diesem Thema aus. Außerdem müssen Sie beim Austausch der Speicherzugriffsschlüssel sicherstellen, dass Ihre Locators aktualisiert werden, damit keine Unterbrechungen Ihres Streamingdiensts auftreten (dieser Schritt wird in diesem Thema ebenfalls beschrieben).
 
->[AZURE.NOTE]Nachdem Sie einen Speicherschlüssel neu generiert haben, müssen Sie diese Aktualisierung mit Media Services synchronisieren.
-
-In diesem Thema werden die Schritte zum Austausch der Speicherschlüssel und zum Aktualisieren von Media Services für die Verwendung des entsprechenden Schlüssels beschrieben. Beachten Sie, dass Sie dieses Verfahren für jedes Speicherkonto einzeln ausführen müssen.
-
->[AZURE.NOTE]Sie sollten vor der Ausführung der in diesem Thema beschriebenen Schritte unter einem Produktionskonto zunächst einen Test unter einem Vorproduktionskonto durchführen.
+>[AZURE.NOTE]Wenn Sie mehrere Speicherkonten verwenden, müssen Sie dieses Verfahren für jedes Speicherkonto einzeln ausführen.
+>
+>Sie sollten vor der Ausführung der in diesem Thema beschriebenen Schritte unter einem Produktionskonto zunächst einen Test unter einem Vorproduktionskonto durchführen.
 
 
 ## Schritt 1: Erneutes Generieren des sekundären Speicherzugriffsschlüssels
@@ -39,11 +37,11 @@ Beginnen Sie mit dem Neugenerieren des sekundären Speicherschlüssels. Standard
 
 Aktualisieren Sie Media Services, damit der sekundäre Speicherzugriffsschlüssel verwendet wird. Sie können eine der beiden folgenden Methoden anwenden, um den neu generierten Speicherschlüssel mit Media Services zu synchronisieren.
 
-- Im Azure-Portal: Wählen Sie Ihr Media Services-Konto aus, und klicken Sie unten im Portalfenster auf das Symbol "SCHLÜSSEL VERWALTEN". Je nachdem, welcher Speicherschlüssel mit Media Services synchronisiert werden soll, klicken Sie auf die Schaltfläche für das Synchronisieren des primären oder des sekundären Schlüssels. Verwenden Sie in diesem Fall den sekundären Schlüssel.
+- Im klassischen Azure-Portal: Wählen Sie Ihr Media Services-Konto aus, und klicken Sie unten im Portalfenster auf das Symbol "SCHLÜSSEL VERWALTEN". Je nachdem, welcher Speicherschlüssel mit Media Services synchronisiert werden soll, klicken Sie auf die Schaltfläche für das Synchronisieren des primären oder des sekundären Schlüssels. Verwenden Sie in diesem Fall den sekundären Schlüssel.
 
 - Mit der Media Services REST-API.
 
-	Im folgenden Codebeispiel wird veranschaulicht, wie die Abfrage "https://endpoint/<subscriptionId>/services/mediaservices/Accounts/<accountName>/StorageAccounts/<storageAccountName>/Key" erstellt wird, um den angegebenen Speicherschlüssel mit Media Services zu synchronisieren. In diesem Fall wird der Wert des sekundären Speicherschlüssels verwendet. Weitere Informationen finden Sie unter [Vorgehensweise: Verwenden der Media Services-Verwaltungs-REST-API](http://msdn.microsoft.com/library/azure/dn167656.aspx).
+Im folgenden Codebeispiel wird veranschaulicht, wie die Abfrage "https://endpoint/<subscriptionId>/services/mediaservices/Accounts/<accountName>/StorageAccounts/<storageAccountName>/Key" erstellt wird, um den angegebenen Speicherschlüssel mit Media Services zu synchronisieren. In diesem Fall wird der Wert des sekundären Speicherschlüssels verwendet. Weitere Informationen finden Sie unter [Vorgehensweise: Verwenden der Media Services-Verwaltungs-REST-API](http://msdn.microsoft.com/library/azure/dn167656.aspx).
  
 		public void UpdateMediaServicesWithStorageAccountKey(string mediaServicesAccount, string storageAccountName, string storageAccountKey)
 		{
@@ -79,13 +77,15 @@ Aktualisieren Sie Media Services, damit der sekundäre Speicherzugriffsschlüsse
 		    }
 		}
 
-Aktualisieren Sie anschließend die vorhandenen Locator (die vom alten Speicherschlüssel anhängig sind).
+Aktualisieren Sie nach diesem Schritt die vorhandenen Locators (die vom alten Speicherschlüssel anhängig sind). Die Vorgehensweise wird im nächsten Schritt beschrieben.
 
 >[AZURE.NOTE]Warten Sie 30 Minuten, bevor Sie Vorgänge mit Media Services durchführen (z. B. zum Erstellen neuer Locator), um Auswirkungen auf ausstehende Aufträge zu verhindern.
 
 ##Schritt 3: Aktualisieren der Locators 
 
-Nach 30 Minuten können Sie die OnDemand-Locators neu erstellen, damit sie den neuen sekundären Speicherschlüssel nutzen und die vorhandene URL beibehalten.
+>[AZURE.NOTE]Sie müssen beim Austausch der Speicherzugriffsschlüssel sicherstellen, dass Ihre vorhandenen Locators aktualisiert werden, damit keine Unterbrechungen Ihres Streamingdiensts auftreten.
+
+Warten Sie nach der Synchronisierung des neuen Speicherschlüssels mit AMS mindestens 30 Minuten. Anschließend können Sie die OnDemand-Locators neu erstellen, damit sie den angegebenen Speicherschlüssel nutzen und die vorhandene URL beibehalten.
 
 Beachten Sie, dass sich beim Aktualisieren (oder Neuerstellen) eines SAS-Locators die URL immer ändert.
 
@@ -159,4 +159,4 @@ Gehen Sie auf die gleiche Weise wie in [Schritt 3](media-services-roll-storage-a
 
 Wir möchten folgenden Personen für ihre Beiträge zur Erstellung dieses Dokuments danken: Cenk Dingiloglu, Milan Gada, Seva Titov.
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

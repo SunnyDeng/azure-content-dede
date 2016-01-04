@@ -31,7 +31,7 @@ Allgemein betrachtet, geschieht dies in drei Schritten:
 Nachdem Sie den Webdienst bereitgestellt haben, können Sie Folgendes tun:
 
 - **[Zugreifen auf den Webdienst]** über die Webdienst-API,
-- **[Verwalten des Webdiensts]** über das Azure-Verwaltungsportal und
+- **[Verwalten des Webdiensts]** über das klassische Azure-Portal und
 - **[Aktualisieren des Webdiensts]**, wenn sich das Modell ändert.
 
 [Erstellen eines Trainingsexperiments]: #create-a-training-experiment
@@ -76,7 +76,7 @@ Klicken Sie zum Testen des Webdiensts im Webdienst-Dashboard auf den Link **Test
 
 ![Testen des Webdiensts](./media/machine-learning-publish-a-machine-learning-web-service/figure-3.png)
 
-Auf der Registerkarte **CONFIGURATION** (KONFIGURATION) können Sie den Anzeigenamen des Dienstes ändern und eine Beschreibung dafür eingeben. Der Namen und die Beschreibung werden im Azure-Verwaltungsportal angezeigt, wo Sie Ihre Webdienste verwalten. Sie können eine Beschreibung für die Eingabedaten, Ausgabedaten und Webdienstparameter bereitstellen, indem Sie Zeichenfolgen für jede Spalte unter **EINGABESCHEMA**, **AUSGABESCHEMA** und **WEBDIENSTPARAMETER** eingeben. Diese Beschreibungen werden in der Beispielcodedokumentation für den Webdienst verwendet. Sie können auch die Protokollierung aktivieren, um Fehler zu diagnostizieren, die angezeigt werden, wenn Sie auf den Webdienst zugreifen.
+Auf der Registerkarte **CONFIGURATION** (KONFIGURATION) können Sie den Anzeigenamen des Dienstes ändern und eine Beschreibung dafür eingeben. Der Namen und die Beschreibung werden im klassischen Azure-Portal angezeigt, wo Sie Ihre Webdienste verwalten. Sie können eine Beschreibung für die Eingabedaten, Ausgabedaten und Webdienstparameter bereitstellen, indem Sie Zeichenfolgen für jede Spalte unter **EINGABESCHEMA**, **AUSGABESCHEMA** und **WEBDIENSTPARAMETER** eingeben. Diese Beschreibungen werden in der Beispielcodedokumentation für den Webdienst verwendet. Sie können auch die Protokollierung aktivieren, um Fehler zu diagnostizieren, die angezeigt werden, wenn Sie auf den Webdienst zugreifen.
 
 Weitere Informationen hierzu finden Sie unter [Aktivieren der Protokollierung für Machine Learning-Webdienste](machine-learning-web-services-logging.md).
 
@@ -92,9 +92,9 @@ Das Dashboard bietet alle Informationen, die Sie benötigen, um auf den Webdiens
 Weitere Informationen zum Zugreifen auf einen Machine Learning-Webdienst finden Sie unter [Nutzen eines bereitgestellten Azure Machine Learning-Webdiensts](machine-learning-consume-web-services.md).
 
 
-## Verwalten des Webdiensts im Azure-Verwaltungsportal
+## Verwalten des Webdiensts im klassischen Azure-Portal
 
-Im Azure-Verwaltungsportal können Sie Ihre Webdienste verwalten, indem Sie auf den Dienst **Machine Learning** klicken, den Machine Learning-Arbeitsbereich öffnen und anschließend auf der Registerkarte **Webdienste** den Webdienst öffnen. Auf dieser Seite aus können Sie den Webdienst überwachen, aktualisieren und löschen. Sie können auch zusätzlich zu dem Standardendpunkt, der beim Bereitstellen erstellt wird, einen zweiten Endpunkt für den Webdienst hinzufügen.
+Im klassischen Azure-Portal können Sie Ihre Webdienste verwalten, indem Sie auf den Dienst **Machine Learning** klicken, den Machine Learning-Arbeitsbereich öffnen und anschließend auf der Registerkarte **Webdienste** den Webdienst öffnen. Auf dieser Seite aus können Sie den Webdienst überwachen, aktualisieren und löschen. Sie können auch zusätzlich zu dem Standardendpunkt, der beim Bereitstellen erstellt wird, einen zweiten Endpunkt für den Webdienst hinzufügen.
 
 Weitere Informationen finden Sie unter [Verwalten eines Machine Learning-Arbeitsbereichs](machine-learning-manage-workspace.md).
 <!-- When this article gets published, fix the link and uncomment
@@ -112,4 +112,4 @@ Um den Webdienst zu aktualisieren, öffnen Sie das ursprüngliche Vorhersageexpe
 
 Eine Option zum Aktualisieren des Webdiensts ist das programmgesteuerte erneute Trainieren des Modells. Weitere Informationen finden Sie unter [Programmgesteuertes erneutes Trainieren von Machine Learning-Modellen](machine-learning-retrain-models-programmatically.md).
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

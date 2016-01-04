@@ -31,7 +31,7 @@ In diesem Thema wird Folgendes beschrieben:
 Informationen zum Erstellen von Docker-fähigen virtuellen Computern finden Sie unter:
 
 + [Verwenden der Docker-VM-Erweiterung über die Azure-Befehlszeilenschnittstelle]
-+ [Verwenden der Docker-VM-Erweiterung mit dem Azure-Portal]
++ [Verwenden der Docker-VM-Erweiterung mit dem klassischen Azure-Portal]
 + [Schneller Einstieg in Docker in Azure Marketplace]
 
 Weitere Informationen zur Erweiterung und Funktionsweise finden Sie im [Benutzerhandbuch für die Docker-Erweiterung](https://github.com/Azure/azure-docker-extension/blob/master/README.md).
@@ -69,19 +69,19 @@ Sie können das Portal zum Hinzufügen der Docker-VM-Erweiterung zu kompatiblen 
 Informationen zum Erstellen von Docker-fähigen virtuellen Computern finden Sie unter:
 
 + [Verwenden der Docker-VM-Erweiterung über die Azure-Befehlszeilenschnittstelle]
-+ [Verwenden der Docker-VM-Erweiterung mit dem Azure-Portal]
++ [Verwenden der Docker-VM-Erweiterung mit dem klassischen Azure-Portal]
 
 ## Erweiterungen für virtuelle Linux- und Windows-Computer
 Die [Docker-VM-Erweiterung für Azure](https://github.com/Azure/azure-docker-extension/blob/master/README.md) ist nur eine von vielen VM-Erweiterungen mit besonderen Funktionen. Weitere sind bereits in der Entwicklung. Beispielsweise ermöglichen es Ihnen einige Features der [Linux VM Agent-Erweiterung](virtual-machines-linux-agent-user-guide.md) unter anderem, den virtuellen Computer, einschließlich Sicherheits-, Kernel- und Netzwerkfeatures, zu ändern und zu verwalten. Mit der VMAccess-Erweiterung können Sie z. B. das Administratorkennwort oder den SSH-Schlüssel zurücksetzen.
 
-Eine vollständige Liste finden Sie unter [Azure VM-Erweiterungen](http://msdn.microsoft.com/library/azure/dn606311.aspx).
+Eine vollständige Liste finden Sie unter [Azure VM-Erweiterungen](virtual-machines-extensions-features.md).
 
 <!--Anchors-->
 [Verwenden der Docker-VM-Erweiterung über die Azure-Befehlszeilenschnittstelle]: http://azure.microsoft.com/documentation/articles/virtual-machines-docker-with-xplat-cli/
-[Verwenden der Docker-VM-Erweiterung mit dem Azure-Portal]: http://azure.microsoft.com/documentation/articles/virtual-machines-docker-with-portal/
+[Verwenden der Docker-VM-Erweiterung mit dem klassischen Azure-Portal]: http://azure.microsoft.com/documentation/articles/virtual-machines-docker-with-portal/
 [Schneller Einstieg in Docker in Azure Marketplace]: http://azure.microsoft.com/documentation/articles/virtual-machines-docker-ubuntu-quickstart/
 [Docker und Linux-Container]: #Docker-and-Linux-Containers
 [Verwenden der Docker-VM-Erweiterung mit Azure]: #How-to-use-the-Docker-VM-Extension-with-Azure
 [Erweiterungen für virtuelle Linux- und Windows-Computer]: #Virtual-Machine-Extensions-For-Linux-and-Windows
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1217_2015-->

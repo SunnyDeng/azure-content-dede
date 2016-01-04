@@ -16,31 +16,31 @@
 	ms.date="10/15/2015"  
 	ms.author="juliako"/>
 
-#Verwenden des Elemental Live-Encoders zum Senden eines Single-Bitrate-Livedatenstroms 
+#Verwenden des Elemental Live-Encoders zum Senden eines Single-Bitrate-Livedatenstroms
 
 > [AZURE.SELECTOR]
 - [Elemental Live](media-services-configure-elemental-live-encoder.md)
 - [Tricaster](media-services-configure-tricaster-live-encoder.md)
 - [Wirecast](media-services-configure-wirecast-live-encoder.md)
 - [FMLE](media-services-configure-fmle-live-encoder.md)
-  
+
 In diesem Thema wird beschrieben, wie Sie den [Elemental Live](http://www.elementaltechnologies.com/products/elemental-live)-Encoder zum Senden eines Single-Bitrate-Livedatenstroms an AMS-Kanäle konfigurieren, die für das Live Encoding aktiviert sind. Weitere Informationen finden Sie unter [Arbeiten mit Kanälen, die zum Ausführen von Live Encoding mit Azure Media Services aktiviert wurden](media-services-manage-live-encoder-enabled-channels.md).
 
-In diesem Tutorial wird gezeigt, wie Sie Azure Media Services (AMS) mit dem Tool Azure Media Services Explorer (AMSE) verwalten. Dieses Tool kann nur auf Windows-PCs ausgeführt werden. Unter Mac OS oder Linux verwenden Sie das Azure-Verwaltungsportal, um [Kanäle](media-services-portal-creating-live-encoder-enabled-channel.md#create-a-channel) und [Programme](media-services-portal-creating-live-encoder-enabled-channel#create-and-manage-a-program) zu erstellen.
+In diesem Tutorial wird gezeigt, wie Sie Azure Media Services (AMS) mit dem Tool Azure Media Services Explorer (AMSE) verwalten. Dieses Tool kann nur auf Windows-PCs ausgeführt werden. Unter Mac OS oder Linux verwenden Sie das klassische Azure-Portal, um [Kanäle](media-services-portal-creating-live-encoder-enabled-channel.md#create-a-channel) und [Programme](media-services-portal-creating-live-encoder-enabled-channel#create-and-manage-a-program) zu erstellen.
 
 ##Voraussetzungen
 
 - Zum Erstellen von Liveereignissen müssen Sie über ausreichende Kenntnisse in Bezug auf die Verwendung der Elemental Live-Webschnittstelle verfügen.
 - [Erstellen eines Azure Media Services-Kontos](media-services-create-account.md)
-- Stellen Sie sicher, dass ein Streamingendpunkt mit mindestens einer zugeordneten Streamingeinheit ausgeführt wird. Weitere Informationen finden Sie unter [Verwalten von Streamingendpunkten in einem Media Services-Konto](media-services-manage-origins.md). 
+- Stellen Sie sicher, dass ein Streamingendpunkt mit mindestens einer zugeordneten Streamingeinheit ausgeführt wird. Weitere Informationen finden Sie unter [Verwalten von Streamingendpunkten in einem Media Services-Konto](media-services-manage-origins.md)
 
 - Installieren Sie die neueste Version des [AMSE](https://github.com/Azure/Azure-Media-Services-Explorer)-Tools.
 - Starten Sie das Tool, und stellen Sie eine Verbindung mit Ihrem AMS-Konto her.
 
 ##Tipps
 
-- Verwenden Sie nach Möglichkeit eine Kabelverbindung zum Internet. 
-- Als Faustregel zum Bestimmen der erforderlichen Bandbreite verdoppeln Sie die Streamingbitraten. Dies ist zwar keine zwingende Voraussetzung, aber hilfreich, um die Auswirkungen einer Überlastung des Netzwerks zu verringern.  
+- Verwenden Sie nach Möglichkeit eine Kabelverbindung zum Internet.
+- Als Faustregel zum Bestimmen der erforderlichen Bandbreite verdoppeln Sie die Streamingbitraten. Dies ist zwar keine zwingende Voraussetzung, aber hilfreich, um die Auswirkungen einer Überlastung des Netzwerks zu verringern.
 - Bei Verwendung softwarebasierter Encoder sollten Sie alle nicht benötigten Programme schließen.
 
 ## Elemental Live mit RTP Ingest
@@ -49,15 +49,15 @@ In diesem Abschnitt wird veranschaulicht, wie Sie den Elemental Live-Encoder kon
 
 ### Erstellen eines Kanals
 
-1.  Navigieren Sie im AMSE-Tool zur Registerkarte **Live**, und klicken Sie mit der rechten Maustaste in den Kanalbereich. Wählen Sie im Menü die Option **Kanal erstellen...** aus.  
+1.  Navigieren Sie im AMSE-Tool zur Registerkarte **Live**, und klicken Sie mit der rechten Maustaste in den Kanalbereich. Wählen Sie im Menü die Option **Kanal erstellen** aus.
 
-	![Elemental](./media/media-services-elemental-live-encoder/media-services-elemental1.png)
+![Elemental](./media/media-services-elemental-live-encoder/media-services-elemental1.png)
 
 2. Geben Sie einen Kanalnamen und optional eine Beschreibung ein. Wählen Sie unter „Kanaleinstellungen“ die Option **Standard** für das Live Encoding aus, und legen Sie das Eingabeprotokoll auf **RTP (MPEG-TS)** fest. Sie können alle anderen Einstellungen unverändert lassen.
 
 
-	 Stellen Sie sicher, dass die Option **Neuen Kanal jetzt starten** ausgewählt ist.
- 
+Stellen Sie sicher, dass die Option **Neuen Kanal jetzt starten** ausgewählt ist.
+
 3. Klicken Sie auf **Kanal erstellen**. ![Elemental](./media/media-services-elemental-live-encoder/media-services-elemental12.png)
 
 >[AZURE.NOTE]Das Starten des Kanals kann bis zu 20 Minuten dauern.
@@ -149,7 +149,7 @@ Wenn eine Fehlermeldung angezeigt wird, müssen Sie den Kanal zurücksetzen und 
 
 	![Elemental](./media/media-services-elemental-live-encoder/media-services-elemental9.png)
 
-2. Benennen Sie die Anwendung, und passen Sie ggf. die **Archivfensterlänge** an (standardmäßig auf 4 Stunden festgelegt). Sie können außerdem einen Speicherort angeben oder die Standardeinstellung beibehalten.
+2. Benennen Sie die Anwendung, und passen Sie ggf. die **Archivfensterlänge** an (standardmäßig auf 4 Stunden festgelegt). Sie können außerdem einen Speicherort angeben oder die Standardeinstellung beibehalten.
 3. Aktivieren Sie das Kontrollkästchen **Programm jetzt starten**.
 4. Klicken Sie auf **Programm erstellen**.  
   
@@ -173,4 +173,4 @@ Eine Anleitung finden Sie im Thema [Problembehandlung](media-services-troublesho
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

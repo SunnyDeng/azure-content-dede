@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Topologien für Azure AD Connect | Microsoft Azure"
+   pageTitle="Azure AD Connect: Unterstützte Topologien | Microsoft Azure"
    description="In diesem Thema werden unterstützte und nicht unterstützte Topologien für Azure AD Connect behandelt."
    services="active-directory"
    documentationCenter=""
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="10/13/2015"
+   ms.date="12/02/2015"
    ms.author="andkjell"/>
 
 # Topologien für Azure AD Connect
@@ -108,8 +108,8 @@ Für einige Office 365-Workloads gelten bestimmte Einschränkungen für unterst
 
 | Workload | |
 | --------- | --------- |
-| Exchange Online |	Wenn mehrere Exchange-Organisationen lokal vorhanden sind (d. h. Exchange für mehrere Gesamtstrukturen bereitgestellt wurde), müssen Sie Exchange 2013 SP1 oder höher verwenden. Weitere Informationen finden Sie hier: [Hybrid-Bereitstellungen mit mehreren Active Directory-Gesamtstrukturen](https://technet.microsoft.com/en-us/library/jj873754.aspx) |
-| Skype for Business | Bei Verwendung mehrerer lokaler Gesamtstrukturen wird nur die Kontoressourcengesamtstruktur-Topologie unterstützt. Weitere Informationen zu unterstützten Topologien finden Sie hier: [Anforderungen an die Umgebung für Skype for Business Server 2015](https://technet.microsoft.com/en-us/library/dn933910.aspx) |
+| Exchange Online |	Wenn mehrere Exchange-Organisationen lokal vorhanden sind (d. h. Exchange für mehrere Gesamtstrukturen bereitgestellt wurde), müssen Sie Exchange 2013 SP1 oder höher verwenden. Weitere Informationen finden Sie hier: [Hybrid-Bereitstellungen mit mehreren Active Directory-Gesamtstrukturen](https://technet.microsoft.com/de-DE/library/jj873754.aspx) |
+| Skype for Business | Bei Verwendung mehrerer lokaler Gesamtstrukturen wird nur die Kontoressourcengesamtstruktur-Topologie unterstützt. Weitere Informationen zu unterstützten Topologien finden Sie hier: [Anforderungen an die Umgebung für Skype for Business Server 2015](https://technet.microsoft.com/de-DE/library/dn933910.aspx) |
 
 ## Stagingserver
 ![StagingServer](./media/active-directory-aadconnect-topologies/MultiForestStaging.png)
@@ -165,6 +165,6 @@ Weitere Informationen zum Installieren von Azure AD-Connect für diese Szenario
 
 Weitere Informationen zur Konfiguration der [Azure AD Connect-Synchronisierung](active-directory-aadconnectsync-whatis.md)
 
-Weitere Informationen zum [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md)
+Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

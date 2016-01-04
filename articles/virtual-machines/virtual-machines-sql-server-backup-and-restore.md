@@ -14,17 +14,16 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
-	ms.date="08/05/2015"
+	ms.date="11/13/2015"
 	ms.author="jroth" />
 
 # Sicherung und Wiederherstellung für SQL Server auf virtuellen Azure-Computern
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
-
-
 ## Übersicht
 
 Das Sichern von Daten in SQL Server-Datenbanken ist ein wichtiger Bestandteil der Strategie zum Schutz vor Datenverlust aufgrund von Anwendungs- oder Benutzerfehlern. Dies gilt in gleichem Maße auch für SQL Server auf virtuellen Azure-Computern (VMs).
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
 
 Für SQL Server auf Azure-VMs können Sie systemeigene Sicherungs- und Wiederherstellungsverfahren mit angefügten Datenträgern als Ziel der Sicherungsdateien verwenden. Die Anzahl von Datenträgern, die an einen virtuellen Azure-Computer angefügt werden können, ist allerdings je nach [Größe des virtuellen Computers](virtual-machines-size-specs.md) begrenzt. Zudem muss der Mehraufwand für die Datenträgerverwaltung berücksichtigt werden.
 
@@ -42,11 +41,11 @@ Wenn Ihre Datenbankdateien in Microsoft Azure-Blob-Speicher gespeichert werden, 
 
 - Sie müssen jedoch weiterhin Datenbanksicherungen zum Schutz vor Benutzerfehlern oder zu Archivierungszwecken, aus gesetzlichen Gründen oder zu administrativen Zwecken durchführen.
 
-- Die SQL Server-Funktion für die Sicherung anhand von Dateimomentaufnahmen in Microsoft SQL Server 2016 Community Technology Preview 2 (CTP2) ermöglicht nahezu sofortige Backups und schnelle Wiederherstellungen. Weitere Informationen finden Sie im Artikel zu [Dateimomentaufnahme-Sicherungen für Datenbankdateien in Azure](https://msdn.microsoft.com/library/mt169363.aspx).
+- Die SQL Server-Funktion für die Sicherung anhand von Dateimomentaufnahmen in Microsoft SQL Server 2016 Community Technology Preview 3 (CTP3) ermöglicht nahezu sofortige Sicherungen und schnelle Wiederherstellungen. Weitere Informationen finden Sie im Artikel zu [Dateimomentaufnahme-Sicherungen für Datenbankdateien in Azure](https://msdn.microsoft.com/library/mt169363.aspx).
 
-## Sicherung und Wiederherstellung in Microsoft SQL Server 2016 Community Technology Preview 2 (CTP2)
+## Sichern und Wiederherstellen in Microsoft SQL Server 2016 Community Technology Preview 3 (CTP3)
 
-Microsoft SQL Server 2016 Community Technology Preview 2 (CTP2) unterstützt die im Folgenden beschriebenen Funktionen zur [Sicherung und Wiederherstellung mit Azure-Blobs](https://msdn.microsoft.com/library/jj919148.aspx) von SQL Server 2014. Die Version enthält aber auch die folgenden Erweiterungen:
+Microsoft SQL Server 2016 Community Technology Preview 3 (CTP3) unterstützt die im Folgenden beschriebenen Funktionen zum [Sichern und Wiederherstellen mit Azure-Blobs](https://msdn.microsoft.com/library/jj919148.aspx) von SQL Server 2014. Die Version enthält aber auch die folgenden Erweiterungen:
 
 - **Striping**: Für Sicherungen in Microsoft Azure-Blob-Speicher unterstützt SQL Server 2016 das Sichern in mehreren Blobs, um die Sicherung großer Datenbanken mit bis zu 12,8 TB zu ermöglichen.
 
@@ -93,4 +92,4 @@ Obwohl Sie Ihre Daten durch Sicherung und Wiederherstellung migrieren können, s
 
 Lesen Sie auch die weiteren [Ressourcen für die Ausführung von SQL Server in Azure Virtual Machines](virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=Nov15_HO4-->

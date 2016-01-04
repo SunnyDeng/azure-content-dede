@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/02/2015" 
+	ms.date="11/13/2015" 
 	ms.author="genemi"/>
 
 
@@ -30,9 +30,9 @@ Dieses Thema ist ein guter Einstieg in die Client-Konnektivität für Azure SQL-
 
 
 - [Richtlinien zum programmgesteuerten Herstellen einer Verbindung mit einer Azure SQL-Datenbank](http://msdn.microsoft.com/library/azure/ee336282.aspx) – folgende Aspekte werden erörtert:
- - [Ports und Firewalls](sql-database-configure-firewall-settings.md/)
+ - [Ports und Firewalls](sql-database-configure-firewall-settings.md)
  - Verbindungszeichenfolgen
-- [Ressourcenverwaltung für die Azure SQL-Datenbank](https://msdn.microsoft.com/library/azure/dn338083.aspx) – folgende Aspekte werden erörtert:
+- [Ressourcenverwaltung für die Azure SQL-Datenbank](http://msdn.microsoft.com/library/azure/dn338083.aspx) – folgende Aspekte werden erörtert:
  - Ressourcenkontrolle
  - Durchsetzung von Grenzwerten
  - Drosselung
@@ -44,7 +44,7 @@ Dieses Thema ist ein guter Einstieg in die Client-Konnektivität für Azure SQL-
 
 
 - Verwenden Sie die Azure SQL-Datenbankauthentifizierung und nicht die Windows-Authentifizierung. Letztere ist in der Azure SQL-Datenbank nicht verfügbar.
-- Geben Sie eine bestimmte Datenbank an, anstatt automatisch die *Masterdatenbank* zu verwenden.
+- Geben Sie eine bestimmte Datenbank an, anstatt automatisch die *master*-Datenbank zu verwenden.
  - Sie können die Transact-SQL-Anweisung **USE myDatabaseName;** in SQL-Datenbanken nicht verwenden, um zu einer anderen Datenbank zu wechseln.
 
 
@@ -123,7 +123,7 @@ Eine Neukonfiguration führt jedoch u. U. dazu, dass die Verbindung zwischen Ih
 
 Wenn das Clientprogramm über Wiederholungslogik verfügt, kann es versuchen, erneut eine Verbindung herzustellen, nachdem der vorübergehende Fehler Zeit hatte, sich selbst zu korrigieren.
 
-Es wird empfohlen, dass vor dem ersten Wiederholungsversuch eine Verzögerung von fünf Sekunden eingestellt wird. Wiederholungsversuche nach einer Verzögerung von weniger als fünf Sekunden können den Clouddienst überfordern. Für jeden nachfolgenden Wiederholungsversuch sollte die Verzögerung exponentiell steigen, bis zu einem Maximum von 60 Sekunden.
+Es wird empfohlen, dass vor dem ersten Wiederholungsversuch eine Verzögerungszeit von fünf Sekunden verwendet wird. Wiederholungsversuche nach weniger als fünf Sekunden können den Clouddienst überfordern. Für jeden nachfolgenden Wiederholungsversuch sollte die Verzögerung exponentiell steigen, bis zu einem Maximum von 60 Sekunden.
 
 Eine Erörterung der *Sperrfrist* für Clients, die ADO.NET verwenden, finden Sie unter [SQL Server-Verbindungspooling (ADO.NET)](http://msdn.microsoft.com/library/8xx3tyca.aspx).
 
@@ -167,6 +167,6 @@ Für Clients, die unter Windows, Linux und Mac OS X ausgeführt werden, sind unt
 
 **Treiberbibliotheken:** Informationen zu Verbindungstreiberbibliotheken, einschließlich empfohlener Versionen, finden Sie unter:
 
-- [Connection Libraries for SQL Database and SQL Server](sql-database-libraries.md) (Verbindungsbibliotheken für SQL-Datenbanken und SQL Server, in englischer Sprache)
+- [Connection Libraries for SQL Database and SQL Server (Verbindungsbibliotheken für SQL-Datenbanken und SQL Server, in englischer Sprache)](sql-database-libraries.md)
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=Nov15_HO4-->

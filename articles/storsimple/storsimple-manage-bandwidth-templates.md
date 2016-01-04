@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="10/12/2015"
+   ms.date="12/02/2015"
    ms.author="alkohli" />
 
 # Verwalten von StorSimple-Bandbreitenvorlagen mithilfe des StorSimple Manager-Diensts
@@ -35,7 +35,7 @@ Dieses Feature steht nur für physische StorSimple-Geräte und nicht für virtue
 
 - **Used by:** die Anzahl der Datenträger, die das Speicherkonto verwenden.
 
-Verwenden Sie die Seite **Konfigurieren** des StorSimple Manager-Diensts im Verwaltungsportal, um die Bandbreitenvorlagen zu verwalten. Im Folgenden werden die häufigsten auf dieser Seite ausgeführten Aufgaben im Zusammenhang mit Bandbreitenvorlagen aufgeführt:
+Verwenden Sie die Seite **Konfigurieren** des StorSimple Manager-Diensts im klassischen Azure-Portal, um die Bandbreitenvorlagen zu verwalten. Im Folgenden werden die häufigsten auf dieser Seite ausgeführten Aufgaben im Zusammenhang mit Bandbreitenvorlagen aufgeführt:
 
 - Hinzufügen einer Bandbreitenvorlage
 - Bearbeiten einer Bandbreitenvorlage
@@ -176,4 +176,4 @@ Folgen Sie diesen Empfehlungen für Ihr StorSimple-Gerät:
 
 Weitere Informationen zum [Verwenden Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

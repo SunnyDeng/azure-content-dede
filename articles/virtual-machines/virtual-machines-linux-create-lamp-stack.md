@@ -51,7 +51,7 @@ Führen Sie die folgenden Schritte aus, um den SSH-Authentifizierungsschlüssel 
 -	Klicken Sie auf **Generieren**, um die Schlüssel zu generieren. Während des Vorgangs können Sie den Zufallsfaktor durch Bewegen der Maus über den leeren Bereich im Fenster erhöhen. ![][1]
 -	Nach dem Generierungsvorgang zeigt "Puttygen.exe" den generierten Schlüssel an. Beispiel: ![][2]
 -	Wählen Sie den öffentlichen Schlüssel in **Schlüssel** aus, kopieren Sie diesen, und speichern Sie ihn in einer Datei mit dem Namen **publicKey.pem**. Klicken Sie nicht auf **Öffentlichen Schlüssel speichern**, weil sich das Dateiformat des gespeicherten öffentlichen Schlüssels vom gewünschten öffentlichen Schlüssel unterscheidet.
--	Klicken Sie auf **Privaten Schlüssel speichern**, und speichern Sie den Schlüssel dann in einer Datei mit dem Namen **privateKey.ppk**.
+-	Klicken Sie auf **Privaten Schlüssel speichern**, und speichern Sie den Schlüssel dann in einer Datei namens **privateKey.ppk**.
 
 ###Schritt 2: Erstellen des Images im Azure-Portal
 Klicken Sie im [Azure-Portal](https://portal.azure.com/) auf der Taskleiste auf **Neu**, und erstellen Sie ein Image anhand dieser Anleitungen. Wählen Sie dabei das Linux-Image basierend auf Ihren Anforderungen aus. Dieses Beispiel verwendet das Ubuntu-Image 14.04.
@@ -350,7 +350,7 @@ Nachdem Sie den LAMP-Stapel erfolgreich eingerichtet haben, können Sie Ihre vor
 		sudo chgrp lampappgroup /var/www/html/  # Change the ownership to group lampappgroup
 		sudo chmod g+w /var/www/html/                 # grant write permission to group lampappgroup
 
-	>[AZURE.NOTE]Möglicherweise müssen Sie sich erneut anmelden, wenn Sie eine Datei in "/var/www/html/" ändern möchten.
+	>[AZURE.NOTE] Möglicherweise müssen Sie sich erneut anmelden, wenn Sie eine Datei in "/var/www/html/" ändern möchten.
 -	Verwenden Sie zum Herstellen einer Verbindung mit dem DNS-Namen Ihres virtuellen Computers (z. B. "lampdemo.cloudapp.net") einen beliebigen SFTP-Client (z. B. FileZilla), und navigieren Sie dann zu "/**var/www/html**", um Ihre Website zu veröffentlichen. ![][18]
 
 
@@ -456,4 +456,4 @@ Nachdem Sie den LAMP-Stapel erfolgreich eingerichtet haben, können Sie Ihre vor
 [17]: ./media/virtual-machines-linux-create-lamp-stack/virtual-machines-linux-create-lamp-stack-17.png
 [18]: ./media/virtual-machines-linux-create-lamp-stack/virtual-machines-linux-create-lamp-stack-18.jpg
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

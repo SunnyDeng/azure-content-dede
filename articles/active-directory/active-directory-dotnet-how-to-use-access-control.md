@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="09/02/2015" 
+	ms.date="12/05/2015" 
 	ms.author="mbaldwin"/>
 
 
@@ -156,7 +156,7 @@ In dieser Aufgabe werden Sie Ihre ASP.NET-Webanwendung mit ACS integrieren.
 
 	![][4]
 
-2.	Wählen Sie auf der Registerkarte **Anbieter** die Position **Windows Azure-Zugriffssteuerungsdienst verwenden** aus.
+2.	Wählen Sie auf der Registerkarte **Anbieter** die Position **Microsoft Azure-Zugriffssteuerungsdienst verwenden** aus.
 
     ![][44]
 
@@ -401,4 +401,4 @@ Wenn Sie die ACS-Funktionalität genauer erforschen und mit anderen Szenarien ex
   [19]: ./media/active-directory-dotnet-how-to-use-access-control/acsShowKey.png
   [20]: ./media/active-directory-dotnet-how-to-use-access-control/acsConfigAcsNamespace2.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -23,7 +23,7 @@ Für Windows Server, IIS und ASP.NET verfügbare Leistungsindikatoren können au
 
 Sie können Leistungsindikatordaten wie folgt untersuchen: 1. Direkt auf dem Anwendungshost mit dem Systemmonitor-Tool per Remotedesktop. 2. Mit System Center Operations Manager und Azure Management Pack. 3. Mit anderen Überwachungstools, mit denen auf die Diagnosedaten zugegriffen wird, die an den Azure-Speicher übertragen werden. Weitere Informationen finden Sie unter[Speichern und Anzeigen von Diagnosedaten im Azure-Speicher](https://msdn.microsoft.com/library/azure/hh411534.aspx).
 
-Weitere Informationen zum Überwachen der Leistung Ihrer Anwendung im [Azure-Verwaltungsportal](http://manage.azure.com/) finden Sie unter [Überwachen von Clouddiensten](https://www.azure.com/manage/services/cloud-services/how-to-monitor-a-cloud-service/).
+Weitere Informationen zum Überwachen der Leistung Ihrer Anwendung im [klassischen Azure-Portal](http://manage.azure.com/) finden Sie unter [Überwachen von Clouddiensten](https://www.azure.com/manage/services/cloud-services/how-to-monitor-a-cloud-service/).
 
 Weitere ausführliche Anweisungen zum Erstellen einer Protokollierungs- und Nachverfolgungsstrategie und zum Verwenden von Diagnose- und anderen Methoden zum Beheben von Problemen und Optimieren von Azure-Anwendungen finden Sie unter [Troubleshooting Best Practices for Developing Azure Applications](https://msdn.microsoft.com/library/azure/hh771389.aspx) (Bewährte Methoden zur Problembehandlung bei der Entwicklung von Azure-Anwendungen, in englischer Sprache).
 
@@ -38,7 +38,7 @@ Unter Azure wird eine Teilmenge der Leistungsindikatoren bereitgestellt, die fü
 
 |Leistungsindikatorkategorie: Objekt (Instanz)|Name des Leistungsindikators |Referenz|
 |---|---|---|
-|.NET CLR-Ausnahmen(_Global_)|Anzahl der ausgelösten Ausnahmen/Sek. |Ausnahmen-Leistungsindikatoren|
+|.NET CLR-Ausnahmen(_Global_)|Anzahl der ausgelösten Ausnahmen/Sek. |Ausnahmeleistungsindikatoren|
 |.NET CLR-Speicher(_Global_) |GC-Zeitdauer in Prozent |Arbeitsspeicher-Leistungsindikatoren|
 |ASP.NET |Anwendungsneustarts |Leistungsindikatoren für ASP.NET|
 |ASP.NET |Ausführungszeit der Anforderung |Leistungsindikatoren für ASP.NET|
@@ -81,9 +81,9 @@ Verwenden Sie das folgende Verfahren, um die Leistungsindikatoren in der Azure-A
 
 In diesem Abschnitt wird vorausgesetzt, dass Sie den Diagnosemonitor in Ihre Anwendung importiert und die Diagnosekonfigurationsdatei Ihrer Visual Studio-Projektmappe („diagnostics.wadcfg“ in SDK 2.4 und früher oder „diagnostics.wadcfgx“ in SDK 2.5 und höher) hinzugefügt haben. Weitere Informationen finden Sie in Schritt 1 und 2 unter [Aktivieren der Diagnose in Azure Cloud Services und Virtual Machines](./cloud-services-dotnet-diagnostics.md).
 
-## Schritt 1: Sammeln und Speichern von Daten der Leistungsindikatoren
+## Schritt 1: Sammeln und Speichern der Daten von Leistungsindikatoren
 
-Nachdem Sie der Visual Studio-Projektmappe die Diagnosedatei hinzugefügt haben, können Sie die Sammlung und Speicherung von Leistungsindikatordaten in einer Azure-Anwendung konfigurieren. Dazu werden der Diagnosedatei Leistungsindikatoren hinzugefügt. Die Diagnosedaten einschließlich der Leistungsindikatoren werden zuerst in der Instanz gesammelt. Die Daten werden dann in der Tabelle WADPerformanceCountersTable im Azure-Tabellendienst gespeichert, sodass Sie in Ihrer Anwendung auch das Speicherkonto angeben müssen. Wenn Sie Ihre Anwendung im Serveremulator lokal testen, können Sie die Diagnosedaten auch lokal im Speicheremulator speichern. Bevor Sie die Diagnosedaten speichern, müssen Sie das [Azure-Verwaltungsportal](http://manage.windowsazure.com/) aufrufen und ein Speicherkonto erstellen. Nach Möglichkeit sollten Sie Ihr Speicherkonto am selben geografischen Standort wie Ihre Azure-Anwendung platzieren, um Kosten für externe Bandbreite zu vermeiden und die Latenz zu verringern.
+Nachdem Sie der Visual Studio-Projektmappe die Diagnosedatei hinzugefügt haben, können Sie die Sammlung und Speicherung von Leistungsindikatordaten in einer Azure-Anwendung konfigurieren. Dazu werden der Diagnosedatei Leistungsindikatoren hinzugefügt. Die Diagnosedaten einschließlich der Leistungsindikatoren werden zuerst in der Instanz gesammelt. Die Daten werden dann in der Tabelle WADPerformanceCountersTable im Azure-Tabellendienst gespeichert, sodass Sie in Ihrer Anwendung auch das Speicherkonto angeben müssen. Wenn Sie Ihre Anwendung im Serveremulator lokal testen, können Sie die Diagnosedaten auch lokal im Speicheremulator speichern. Bevor Sie die Diagnosedaten speichern, müssen Sie das [klassische Azure-Portal](http://manage.windowsazure.com/) aufrufen und ein Speicherkonto erstellen. Nach Möglichkeit sollten Sie Ihr Speicherkonto am selben geografischen Standort wie Ihre Azure-Anwendung platzieren, um Kosten für externe Bandbreite zu vermeiden und die Latenz zu verringern.
 
 ### Hinzufügen von Leistungsindikatoren zur Diagnosedatei
 
@@ -136,7 +136,7 @@ Für Azure SDK 2.5 kann das Speicherkonto in der Datei „diagnostics.wadcfgx�
 
 So legen Sie die Verbindungszeichenfolgen fest:
 
-1. Öffnen Sie die Datei „ServiceConfiguration.Cloud.cscfg“ mit Ihrem bevorzugten Text-Editor, und legen Sie die Verbindungszeichenfolge für Ihren Speicher fest. Die Werte für *AccountName* und *AccountKey* finden Sie im Verwaltungsportal im Speicherkonto-Dashboard unter „Schlüssel verwalten“.
+1. Öffnen Sie die Datei „ServiceConfiguration.Cloud.cscfg“ mit Ihrem bevorzugten Text-Editor, und legen Sie die Verbindungszeichenfolge für Ihren Speicher fest. Die Werte für *AccountName* und *AccountKey* finden Sie im klassischen Azure-Portal im Speicherkonto-Dashboard unter „Schlüssel verwalten“.
 
     ```
     <ConfigurationSettings>
@@ -145,7 +145,7 @@ So legen Sie die Verbindungszeichenfolgen fest:
     ```
 2. Speichern Sie die Datei ServiceConfiguration.Cloud.cscfg.
 
-3. Öffnen Sie die Datei „ServiceConfiguration.Local.cscfg“, und prüfen Sie, ob „UseDevelopmentStorage“ auf „true“ eingestellt ist.
+3. Öffnen Sie die Datei „ServiceConfiguration.Local.cscfg“, und prüfen Sie, ob „UseDevelopmentStorage“ auf „true“ festgelegt ist.
 
     ```
     <ConfigurationSettings>
@@ -169,7 +169,7 @@ Führen Sie die folgenden Schritte aus, um einen einfachen benutzerdefinierten L
     ```
     <RuntimeexecutionContext="elevated"/>
     ```
-3. Speichern Sie die Datei .
+3. Speichern Sie die Datei.
 4. Öffnen Sie die Diagnosedatei („diagnostics.wadcfg“ in SDK 2.4 und früher oder „diagnostics.wadcfgx“ in SDK 2.5 und höher), und fügen Sie dem DiagnosticMonitorConfiguration-Element Folgendes hinzu: 
 
     ```
@@ -177,7 +177,7 @@ Führen Sie die folgenden Schritte aus, um einen einfachen benutzerdefinierten L
      <PerformanceCounterConfiguration counterSpecifier="\MyCustomCounterCategory\MyButton1Counter" sampleRate="PT30S"/>
     </PerformanceCounters>
     ```
-5. Speichern Sie die Datei .
+5. Speichern Sie die Datei.
 6. Erstellen Sie die benutzerdefinierte Leistungsindikatorkategorie in der OnStart-Methode Ihrer Rolle, bevor base.OnStart aufgerufen wird. Mit dem folgenden C#-Beispiel wird eine benutzerdefinierte Kategorie erstellt, falls noch keine vorhanden ist:
 
     ```
@@ -223,15 +223,15 @@ Führen Sie die folgenden Schritte aus, um einen einfachen benutzerdefinierten L
            button1Counter.RawValue.ToString();
         }
     ```
-8. Speichern Sie die Datei .  
+8. Speichern Sie die Datei.  
 
 Benutzerdefinierte Leistungsindikatordaten werden vom Azure-Diagnosemonitor jetzt erfasst.
 
 ## Schritt 3: Abfragen von Leistungsindikatordaten
 
-Wenn Ihre Anwendung bereitgestellt ist und ausgeführt wird, beginnt der Diagnosemonitor mit dem Erfassen von Leistungsindikatoren und dem Speichern dieser Daten im Azure-Speicher. Mit Tools wie Server-Explorer in Visual Studio, [Azure-Speicher-Explorer](http://azurestorageexplorer.codeplex.com/) oder [Azure-Diagnose-Manager](http://www.cerebrata.com/Products/AzureDiagnosticsManager/Default.aspx) von Cerebrata zeigen Sie die Daten der Leistungsindikatoren in der Tabelle WADPerformanceCountersTable an. Sie können den Tabellenspeicherdienst mit [C#](../storage/storage-dotnet-how-to-use-tables.d), [Java](../storage/storage-java-how-to-use-table-storage.md), [Node.js](../storage/storage-nodejs-how-to-use-table-storage.md), [Python](../storage/storage-python-how-to-use-table-storage.md), [Ruby](../storage/storage-ruby-how-to-use-table-storage.md) oder [PHP](../storage/storage-php-how-to-use-table-storage.md) auch programmgesteuert abfragen.
+Wenn Ihre Anwendung bereitgestellt ist und ausgeführt wird, beginnt der Diagnosemonitor mit dem Erfassen von Leistungsindikatoren und dem Speichern dieser Daten im Azure-Speicher. Mit Tools wie Server-Explorer in Visual Studio, [Azure-Speicher-Explorer](http://azurestorageexplorer.codeplex.com/) oder [Azure-Diagnose-Manager](http://www.cerebrata.com/Products/AzureDiagnosticsManager/Default.aspx) von Cerebrata zeigen Sie die Daten der Leistungsindikatoren in der Tabelle „WADPerformanceCountersTable“ an. Sie können den Tabellenspeicherdienst mit [C#](../storage/storage-dotnet-how-to-use-tables.d), [Java](../storage/storage-java-how-to-use-table-storage.md), [Node.js](../storage/storage-nodejs-how-to-use-table-storage.md), [Python](../storage/storage-python-how-to-use-table-storage.md), [Ruby](../storage/storage-ruby-how-to-use-table-storage.md) oder [PHP](../storage/storage-php-how-to-use-table-storage.md) auch programmgesteuert abfragen.
 
-Das folgende C#-Beispiel zeigt eine einfache Abfrage der Tabelle WADPerformanceCountersTable und speichert die Diagnosedaten in einer CSV-Datei. Wenn Sie die Leistungsindikatoren in einer CSV-Datei speichern, können Sie die Daten mit den grafischen Darstellungsfunktionen von Microsoft Excel oder eines anderen Tools darstellen. Fügen Sie einen Verweis auf die Datei Microsoft.WindowsAzure.Storage.dll hinzu, die im Azure SDK für .NET Oktober 2012 und höher enthalten ist. Die Assembly wird im Verzeichnis „%Programme%\\Microsoft SDKs\\Microsoft Azure.NET SDK\\version-num\\ref\\“ installiert.
+Das folgende C#-Beispiel zeigt eine einfache Abfrage der Tabelle WADPerformanceCountersTable und speichert die Diagnosedaten in einer CSV-Datei. Wenn Sie die Leistungsindikatoren in einer CSV-Datei speichern, können Sie die Daten mit den grafischen Darstellungsfunktionen von Microsoft Excel oder eines anderen Tools darstellen. Fügen Sie einen Verweis auf die Datei Microsoft.WindowsAzure.Storage.dll hinzu, die im Azure SDK für .NET Oktober 2012 und höher enthalten ist. Die Assembly wird im Verzeichnis „%Program Files%\\Microsoft SDKs\\Microsoft Azure.NET SDK\\Versionsnummer\\ref\\“ installiert.
 
 ```
     using Microsoft.WindowsAzure.Storage;
@@ -313,4 +313,4 @@ Nachdem Sie sich mit den Grundlagen der Erfassung von Leistungsindikatoren vertr
 
 [Überwachung von Clouddiensten](./how-to-monitor-a-cloud-service.md)
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

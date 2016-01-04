@@ -40,11 +40,11 @@ Das folgende Video zeigt, wie das Beispiel zur Twitter-Trendanalyse ausgeführt 
 
 <center><a href="https://www.youtube.com/embed/7ePbHot1SN4">https://www.youtube.com/embed/7ePbHot1SN4></a></center>
 
-Auf das Dashboard kann über „http://<YourHDInsightClusterName>.azurehdinsight.net/“ oder über das Azure-Vorschauportal zugegriffen werden.
+Zugriff auf das Dashboard ist über http://<YourHDInsightClusterName>.azurehdinsight.net/ oder das Azure-Portal möglich.
 
 **So führen Sie ein Beispiel aus der Galerie für erste Schritte aus**
 
-1. Melden Sie sich beim [Azure-Vorschauportal][azure.portal] an.
+1. Melden Sie sich beim [Azure-Portal][azure.portal] an.
 2. Klicken Sie im linken Menü auf **Durchsuchen**, klicken Sie auf **HDInsight-Cluster**, und klicken Sie dann auf Ihren Clusternamen.
 3. Klicken Sie im Hauptmenü auf **Dashboard**.
 4. Geben Sie den Benutzernamen und das Kennwort für den HTTP-Benutzer (auch als Clusterbenutzer bezeichnet) ein.
@@ -68,4 +68,4 @@ Andere Möglichkeiten zum Kennenlernen von HDInsight:
 [hdinsight.infographic]: http://go.microsoft.com/fwlink/?linkid=523960
 [azure.portal]: https://portal.azure.com
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

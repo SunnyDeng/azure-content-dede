@@ -4,9 +4,9 @@
    services="virtual-network"
    documentationCenter=""
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor=""
-   tags="classic"/>
+   tags="azure-service-management"/>
 
 <tags
    ms.service="virtual-network"
@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/21/2015"
+   ms.date="12/07/2015"
    ms.author="telmos"/>
 
 # Erstellen eines virtuellen Netzwerks (klassisch) über das Azure-Portal
@@ -33,4 +33,4 @@ Sie erfahren, wie Sie ein virtuelles Netzwerk aus dem Azure-Portal durch Verwend
 
 [AZURE.INCLUDE [virtual-networks-create-vnet-classic-netcfg-portal-include](../../includes/virtual-networks-create-vnet-classic-netcfg-portal-include.md)]
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

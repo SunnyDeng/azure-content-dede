@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/04/2015" 
+	ms.date="11/17/2015" 
 	ms.author="awills"/>
  
 # Exemplarische Vorgehensweise: Aktivieren von Telemetriedaten für Microsoft Dynamics CRM Online mithilfe von Application Insights
@@ -43,7 +43,7 @@ Zum Überwachen Ihrer Anwendung fügen Sie Ihrer Anwendung ein Application Insig
 ### Erstellen einer JavaScript-Webressource in Microsoft Dynamics CRM
 
 1. Öffnen Sie Ihre CRM Online-Instanz, und melden Sie sich mit Administratorrechten an.
-2. Öffnen Sie „Microsoft Dynamics CRM-Einstellungen“, „Anpassungen“ und „System anpassen“
+2. Öffnen Sie „Microsoft Dynamics CRM Settings“, „Anpassungen“, „System anpassen“.
 
     ![](./media/app-insights-sample-mscrm/04.png)
     
@@ -161,4 +161,4 @@ Sie können sogar eine tiefer gehende Analyse durchführen, wenn Sie [die Daten 
 
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1125_2015-->

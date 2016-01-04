@@ -29,7 +29,7 @@ Diese Anpassung macht viele beliebte Python-Module verfügbar, die Bestandteil v
 
 ## <a name="customize"></a>Anpassen von Azure HDInsight Hadoop-Clustern
 
-Zum Erstellen eines angepassten HDInsight Hadoop-Clusters müssen Sie sich beim [**Azure-Verwaltungsportal**](https://manage.windowsazure.com/) anmelden. Klicken Sie links unten auf **New** und wählen Sie dann DATA SERVICES -> HDINSIGHT -> **CUSTOM CREATE** aus, um das Fenster **Cluster Details** zu öffnen.
+Zum Erstellen eines angepassten HDInsight Hadoop-Clusters müssen Sie sich beim [**klassischen Azure-Portal**](https://manage.windowsazure.com/) anmelden. Klicken Sie links unten auf **New** und wählen Sie dann DATA SERVICES -> HDINSIGHT -> **CUSTOM CREATE** aus, um das Fenster **Cluster Details** zu öffnen.
 
 ![Arbeitsbereich erstellen][1]
 
@@ -68,7 +68,7 @@ Klicken Sie abschließend auf das Häkchen, um die Erstellung des benutzerdefini
 
 Sie müssen den Remotezugriff auf den Hadoop-Cluster in Azure aktivieren, damit Benutzer über RDP auf den Hauptknoten des Hadoop-Clusters zugreifen können.
 
-1. Melden Sie sich beim [**Azure-Verwaltungsportal**](https://manage.windowsazure.com/) an, und wählen Sie links **HDInsight** aus. Wählen Sie Ihren Hadoop-Cluster aus der Liste der Cluster aus, klicken Sie auf die Registerkarte **CONFIGURATION**, und klicken Sie dann unten auf der Seite auf das **ENABLE REMOTE**.
+1. Melden Sie sich beim [**klassischen Azure-Portal**](https://manage.windowsazure.com/) an, und wählen Sie links **HDInsight** aus. Wählen Sie Ihren Hadoop-Cluster aus der Liste der Cluster aus, klicken Sie auf die Registerkarte **CONFIGURATION**, und klicken Sie dann unten auf der Seite auf das Symbol **ENABLE REMOTE**.
 	
 	![Arbeitsbereich erstellen][7]
 
@@ -102,4 +102,4 @@ Unter [Übermitteln von Hive-Abfragen an HDInsight Hadoop-Cluster](machine-learn
 
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

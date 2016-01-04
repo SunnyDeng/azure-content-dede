@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/07/2015" 
+	ms.date="12/04/2015" 
 	ms.author="juliako"/>
 
 
@@ -26,7 +26,7 @@
 
 Mit Microsoft Azure Media Services können Sie Inhalte verschlüsselt übermitteln, und zwar mit AES (Advanced Encryption Standard unter Verwendung eines 128-Bit-Verschlüsselungsschlüssels) und PlayReady-DRM. Media Services bietet einen **Schlüssel-/Lizenzübermittlungsdienst**, von dem die Clients einen Schlüssel oder eine Lizenz zur Wiedergabe von verschlüsselten Inhalten abrufen können.
 
-In diesem Thema wird veranschaulicht, wie Sie das **Azure-Verwaltungsportal** zur Konfiguration der Autorisierungsrichtlinie für Inhaltsschlüssel verwenden. Der Schlüssel kann später verwendet werden, um Inhalte dynamisch zu verschlüsseln. Zur Zeit können Sie die folgenden Streamingformate verschlüsseln: HLS, MPEG DASH und Smooth Streaming. Das HDS-Streamingformat oder progressive Downloads können nicht verschlüsselt werden.
+In diesem Thema wird veranschaulicht, wie Sie das **klassische Azure-Portal** zur Konfiguration der Autorisierungsrichtlinie für Inhaltsschlüssel verwenden. Der Schlüssel kann später verwendet werden, um Inhalte dynamisch zu verschlüsseln. Zur Zeit können Sie die folgenden Streamingformate verschlüsseln: HLS, MPEG DASH und Smooth Streaming. Das HDS-Streamingformat oder progressive Downloads können nicht verschlüsselt werden.
  
 Wenn ein Player einen Datenstrom anfordert, der für die dynamische Verschlüsselung konfiguriert ist, verwendet Media Services den konfigurierten Schlüssel, um Inhalte dynamisch mit der AES- oder PlayReady-Verschlüsselung zu verschlüsseln. Um den Stream zu entschlüsseln, fordert der Player den Schlüssel vom Schlüsselübermittlungsdienst an. Um zu entscheiden, ob der Benutzer berechtigt ist, den Schlüssel zu erhalten, wertet der Dienst die Autorisierungsrichtlinien aus, die Sie für den Schlüssel angegeben haben.
 
@@ -40,7 +40,7 @@ Wenn Sie mehrere Inhaltsschlüssel verwenden oder eine andere **Schlüssel-/Lize
 ###Folgende Überlegungen sollten berücksichtigt werden:
 
 - Zur Verwendung der dynamischen Paketerstellung und Verschlüsselung müssen Sie über mindestens eine reservierte Einheit für das Streaming verfügen. Weitere Informationen finden Sie unter [Skalieren eines Mediendiensts](media-services-manage-origins.md#scale_streaming_endpoints). 
-- Ihr Asset muss einen Satz von MP4-Dateien bzw. Smooth Streaming-Dateien mit adaptiver Bitrate enthalten. Weitere Informationen finden Sie unter [Codieren von Medienobjekten](media-services-encode-asset.md).  
+- Ihr Medienobjekt muss einen Satz von MP4-Dateien bzw. Smooth Streaming-Dateien mit adaptiver Bitrate enthalten. Weitere Informationen finden Sie unter [Codieren von Medienobjekten](media-services-encode-asset.md).  
 - ContentKeyAuthorizationPolicy und die zugehörigen Objekte (Richtlinienoptionen und Einschränkungen) werden vom Schlüsselübermittlungsdienst für 15 Minuten zwischengespeichert. Wenn Sie ContentKeyAuthorizationPolicy erstellen und angeben, dass eine „Token“-Einschränkung verwendet werden soll, diese anschließend testen und dann die Richtlinie auf eine „Open“-Einschränkung aktualisieren, dauert es ungefähr 15 Minuten, bis die Richtlinie zur „Open“-Version der Richtlinie wechselt.
 
 
@@ -95,7 +95,7 @@ Klicken Sie auf die Schaltfläche **XML für Importrichtlinie**, und geben Sie a
 
 
 ##Nächste Schritte
-Nachdem Sie die Autorisierungsrichtlinie für den Inhaltsschlüssel konfiguriert haben, fahren Sie mit dem Thema [Aktivieren der Verschlüsselung im Azure-Verwaltungsportal](../media-services-manage-content#encrypt/) fort.
+Nachdem Sie die Autorisierungsrichtlinie für den Inhaltsschlüssel konfiguriert haben, fahren Sie mit dem Thema [Aktivieren der Verschlüsselung im klassischen Azure-Portal](../media-services-manage-content#encrypt/) fort.
 
 
 [open_policy]: ./media/media-services-portal-configure-content-key-auth-policy/media-services-protect-content-with-open-restriction.png
@@ -103,4 +103,4 @@ Nachdem Sie die Autorisierungsrichtlinie für den Inhaltsschlüssel konfiguriert
 
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -36,11 +36,11 @@ Der Azure Marketplace enthält Vorlagen für die Frameworks Bottle, Django und F
 - [Erstellen von Web-Apps mit Flask](web-sites-python-create-deploy-flask-app.md)
 
 
-## Web-App-Erstellung im Azure-Vorschauportal
+## Web-App-Erstellung im Azure-Portal
 
-Für dieses Lernprogramm wird davon ausgegangen, dass Sie über ein Azure-Abonnement verfügen und Zugriff auf das Azure-Vorschauportal haben.
+Für dieses Tutorial wird davon ausgegangen, dass Sie über ein Azure-Abonnement verfügen und Zugriff auf das Azure-Portal haben.
 
-Wenn Sie noch nicht über eine Web-App verfügen, können Sie eine über das [Azure-Vorschauportal](https://portal.azure.com) erstellen. Klicken Sie in der linken unteren Ecke auf "NEU" und anschließend auf **Web + Mobil** > **Web-App**.
+Wenn Sie noch nicht über eine Web-App verfügen, können Sie eine über das [Azure-Portal](https://portal.azure.com) erstellen. Klicken Sie in der linken unteren Ecke auf "NEU" und anschließend auf **Web + Mobil** > **Web-App**.
 
 ## Git-Veröffentlichung
 
@@ -377,8 +377,7 @@ Weitere Informationen finden Sie im [Python Developer Center](/develop/python/).
 >[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Änderungen
-* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
+* Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 
 
 
@@ -386,4 +385,4 @@ Weitere Informationen finden Sie im [Python Developer Center](/develop/python/).
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

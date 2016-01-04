@@ -54,7 +54,7 @@ In beiden Fällen können Sie die Verbindungszeichenfolge mit der [CloudConfigur
 
 ### Konfigurieren der Verbindungszeichenfolge bei Verwendung von Cloud Services
 
-Azure-Cloud-Dienst-Projekte bieten einen einzigartigen Dienstkonfigurationsmechanismus, mit dem Sie Ihre Konfigurationseinstellungen im Azure-Portal dynamisch ändern können, ohne Ihre Anwendung neu bereitstellen zu müssen. Fügen Sie beispielsweise der Dienstdefinitionsdatei (.csdef) eine `Setting`-Bezeichnung hinzu, wie im folgenden Beispiel gezeigt:
+Azure Cloud Services-Projekte bieten einen besonderen Dienstkonfigurationsmechanismus, mit dem Sie Ihre Konfigurationseinstellungen im [klassischen Azure-Portal][] dynamisch ändern können, ohne Ihre Anwendung neu bereitstellen zu müssen. Fügen Sie beispielsweise der Dienstdefinitionsdatei (.csdef) eine `Setting`-Bezeichnung hinzu, wie im folgenden Beispiel gezeigt:
 
 ```
 <ServiceDefinition name="Azure1">
@@ -82,7 +82,7 @@ Anschließend geben Sie Werte in der Dienstkonfigurationsdatei (.cscfg) an, wie 
 </ServiceConfiguration>
 ```
 
-Verwenden Sie die aus dem Azure-Portal abgerufenen SAS-Schlüsselwerte und -Schlüsselnamen (Shared Access Signature). Das Verfahren wurde im vorherigen Abschnitt beschrieben.
+Verwenden Sie die aus dem klassischen Azure-Portal abgerufenen SAS-Schlüsselwerte und -Schlüsselnamen (Shared Access Signature). Das Verfahren wurde im vorherigen Abschnitt beschrieben.
 
 ### Konfigurieren der Verbindungszeichenfolge bei Verwendung von Websites oder virtuellen Azure-Computern
 
@@ -97,7 +97,7 @@ Bei der Verwendung von Websites oder virtuellen Computern wird empfohlen, das .N
 </configuration>
 ```
 
-Verwenden Sie die aus dem Azure-Portal abgerufenen SAS-Namenswerte und -Schlüsselwerte. Das Verfahren wurde im vorherigen Abschnitt beschrieben.
+Verwenden Sie die aus dem klassischen Azure-Portal abgerufenen SAS-Namenswerte und -Schlüsselwerte. Das Verfahren wurde im vorherigen Abschnitt beschrieben.
 
 ## Erstellen einer Warteschlange
 
@@ -246,7 +246,7 @@ Nachdem Sie nun mit den Grundlagen der Servicebus-Warteschlangen vertraut sind, 
 -   Erstellen Sie eine Arbeitsanwendung, die Nachrichten an eine Service Bus-Warteschlange sendet und von dort empfängt, indem Sie das [.NET-Tutorial zu Service Bus-Brokermessaging][] verwenden.
 -   Laden Sie Service Bus-Beispiele unter [Azure-Beispiele][] herunter, oder sehen Sie sich die [Übersicht über Service Bus-Beispiele][] an.
 
-  [Azure portal]: http://manage.windowsazure.com
+  [klassischen Azure-Portal]: http://manage.windowsazure.com
   [7]: ./media/service-bus-dotnet-how-to-use-queues/getting-started-multi-tier-13.png
   [Warteschlangen, Themen und Abonnements]: service-bus-queues-topics-subscriptions.md
   [.NET-Tutorial zu Service Bus-Brokermessaging]: service-bus-brokered-tutorial-dotnet.md
@@ -259,4 +259,4 @@ Nachdem Sie nun mit den Grundlagen der Servicebus-Warteschlangen vertraut sind, 
   [QueueClient]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.queueclient.aspx
   [Complete]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.complete.aspx
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

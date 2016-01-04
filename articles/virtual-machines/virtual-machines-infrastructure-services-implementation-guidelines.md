@@ -21,7 +21,7 @@
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
-Azure ist eine hervorragende Plattform zur Implementierung von Konfigurationen für Entwicklung, Tests und Machbarkeitsstudien, da nur geringe Investitionen erforderlich sind, um einen bestimmten Implementierungsansatz für Lösungen zu testen. Sie müssen jedoch zwischen den einfachen Verfahren für Entwicklungs-/Testumgebungen und den schwierigeren und umfangreicheren Methoden für eine voll funktionsfähige, einsatzbereite Implementierung einer IT-Workload unterscheiden.
+Azure ist eine hervorragende Plattform zur Implementierung von Konfigurationen für Entwicklung, Tests und Machbarkeitsstudien, da nur geringe Investitionen erforderlich sind, um einen bestimmten Implementierungsansatz für Lösungen zu testen. Sie müssen jedoch zwischen den einfachen Verfahren für Entwicklungs-/Testumgebungen und den schwierigeren und umfangreicheren Methoden für eine voll funktionsfähige, einsatzbereite Implementierung einer IT-Arbeitsauslastung unterscheiden.
 
 In diesem Leitfaden werden viele Bereiche behandelt, bei denen Planung der Schlüssel zum Erfolg einer IT-Workload in Azure ist. Darüber hinaus sorgt die Planung für eine strukturierte Reihenfolge für die Erstellung der erforderlichen Ressourcen. Es gibt zwar eine gewisse Flexibilität, aber wir empfehlen dennoch, dass Sie die Struktur in diesem Artikel bei der Planung und Entscheidungsfindung anwenden.
 
@@ -39,7 +39,7 @@ Sie sollten den Satz von Benennungskonventionen im Voraus vereinbaren. Es gibt e
 
 ### Affixe
 
-Wenn Sie bestimmte Ressourcen erstellen, verwendet Azure einige Standards zur Vereinfachung der Verwaltung der Ressourcen, die diesen Ressourcen zugeordnet sind. Wenn Sie beispielsweise den ersten virtuellen Computer für einen neuen Clouddienst erstellen, versucht das Azure-Portal, den Namen des virtuellen Computers als Namen für einen neuen Clouddienst für den virtuellen Computer zu verwenden.
+Wenn Sie bestimmte Ressourcen erstellen, verwendet Azure einige Standards zur Vereinfachung der Verwaltung der Ressourcen, die diesen Ressourcen zugeordnet sind. Wenn Sie beispielsweise den ersten virtuellen Computer für einen neuen Clouddienst erstellen, versucht das klassische Azure-Portal, den Namen des virtuellen Computers als Namen für einen neuen Clouddienst für den virtuellen Computer zu verwenden.
 
 Daher ist es vorteilhaft, die Ressourcentypen zu ermitteln, die ein Affix zum Erkennen des Typs benötigen. Darüber hinaus sollten Sie eindeutig festlegen, an welcher Stelle sich das Affix befindet:
 
@@ -78,9 +78,9 @@ Sie sollten die einzelnen Ressourcentypen in der Benennungskonvention definieren
 - Subnetze
 - Verfügbarkeitsgruppen
 - Ressourcengruppen
-- Clouddienste
+- Cloud-Dienste
 - Virtuelle Computer
-- Endgeräte
+- Endpunkte
 - Netzwerksicherheitsgruppen
 - Rollen
 
@@ -204,15 +204,15 @@ Entscheidungen:
 
 Aufgabe:
 
-- Erstellen Sie die Gruppe von Speicherkonten mit Ihrer Benennungskonvention. Sie können das Azure-Vorschauportal, das Azure-Portal oder das PowerShell-Cmdlet **New-AzureStorageAccount** verwenden.
+- Erstellen Sie die Gruppe von Speicherkonten mit Ihrer Benennungskonvention. Sie können das Azure-Portal, das klassische Azure-Portal oder das PowerShell-Cmdlet **New-AzureStorageAccount** verwenden.
 
-## 4\. Clouddienste
+## 4\. Cloud-Dienste
 
 Clouddienste sind ein wesentlicher Baustein der Azure-Dienstverwaltung, sowohl für PaaS- als für auch IaaS-Dienste. Bei PaaS stellen Clouddienste eine Zuordnung von Rollen dar, deren Instanzen untereinander kommunizieren können. Clouddienste werden mit einer öffentlichen virtuellen IP-Adresse (VIP) und einem Lastenausgleich verknüpft, der eingehenden Datenverkehr aus dem Internet akzeptiert und diesen für die Rollen ausgleicht, die den Datenverkehr empfangen.
 
 Clouddienste bieten bei IaaS ähnliche Funktionalität, obwohl in den meisten Fällen die Lastenausgleichsfunktionen zum Weiterleiten von Datenverkehr an bestimmte TCP- oder UDP-Ports aus dem Internet an die vielen virtuellen Computer innerhalb des Clouddiensts verwendet wird.
 
-> [AZURE.NOTE]Clouddienste sind im Azure-Ressourcen-Manager nicht vorhanden. Eine Einführung in die Vorteile des Ressourcen-Managers finden Sie unter [Azure Compute-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager](../articles/virtual-machines/virtual-machines-azurerm-versus-azuresm.md).
+> [AZURE.NOTE]Clouddienste sind im Azure-Ressourcen-Manager nicht vorhanden. Eine Einführung in die Vorteile des Ressourcen-Managers finden Sie unter [Azure Computing-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager](../articles/virtual-machines/virtual-machines-azurerm-versus-azuresm.md).
 
 Clouddienstnamen sind in IaaS besonders wichtig, da Azure sie als Teil der Standard-Benennungskonvention für Datenträger verwendet. Der Name des Clouddiensts darf nur Buchstaben, Zahlen und Bindestriche enthalten. Das erste und das letzte Zeichen im Feld müssen Buchstaben oder Zahlen sein.
 
@@ -232,13 +232,13 @@ Entscheidung:
 
 Aufgabe:
 
-- Erstellen Sie die Gruppe von Clouddiensten mit Ihrer Benennungskonvention. Sie können das Azure-Portal oder das PowerShell-Cmdlet **New-AzureService** verwenden.
+- Erstellen Sie die Gruppe von Clouddiensten mit Ihrer Benennungskonvention. Sie können das klassische Azure-Portal oder das PowerShell-Cmdlet **New-AzureService** verwenden.
 
 ## 5\. Virtuelle Netzwerke
 
 Der nächste logische Schritt ist die Erstellung der virtuellen Netzwerke, die für die Kommunikation zwischen den virtuellen Computern in der Lösung erforderlich sind. Obwohl es möglich ist, mehrere virtuelle Computer einer IT-Workload in nur einem Clouddienst zu hosten, werden virtuelle Netzwerke empfohlen.
 
-Virtuelle Netzwerke sind Container für virtuelle Computer, für die auch Subnetze, benutzerdefinierte Adressierung und DNS-Konfigurationsoptionen festgelegt werden können. Virtuelle Computer können unabhängig davon, welchem Clouddienst sie angehören, direkt mit anderen Computern im gleichen virtuellen Netzwerk kommunizieren. Innerhalb des virtuellen Netzwerks bleibt diese Kommunikation privat, ohne dass sie über die öffentlichen Endgeräte übermittelt werden muss. Diese Kommunikation kann mithilfe der IP-Adresse oder des Namens über einen DNS-Server im virtuellen Netzwerk oder lokal erfolgen, wenn der virtuelle Computer mit dem Unternehmensnetzwerk verbunden ist.
+Virtuelle Netzwerke sind Container für virtuelle Computer, für die auch Subnetze, benutzerdefinierte Adressierung und DNS-Konfigurationsoptionen festgelegt werden können. Virtuelle Computer können unabhängig davon, welchem Clouddienst sie angehören, direkt mit anderen Computern im gleichen virtuellen Netzwerk kommunizieren. Innerhalb des virtuellen Netzwerks bleibt diese Kommunikation privat, ohne dass sie über die öffentlichen Endpunkte übermittelt werden muss. Diese Kommunikation kann mithilfe der IP-Adresse oder des Namens über einen DNS-Server im virtuellen Netzwerk oder lokal erfolgen, wenn der virtuelle Computer mit dem Unternehmensnetzwerk verbunden ist.
 
 ### Standortkonnektivität
 Wenn lokale Benutzer und Computer nicht kontinuierlich mit virtuellen Computern im virtuellen Azure-Netzwerk verbunden sein müssen, erstellen Sie ein virtuelles Netzwerk auf ausschließlicher Cloudbasis.
@@ -290,7 +290,7 @@ Aufgaben:
 - Definieren Sie den Adressraum für das virtuelle Netzwerk.
 - Definieren Sie den Satz von Subnetzen und den Adressraum für die Netzwerke.
 - Definieren Sie für standortübergreifende virtuelle Netzwerke den Satz von LAN-Adressbereichen für lokale Speicherorte, die die virtuellen Computer im virtuellen Netzwerk erreichen müssen.
-- Erstellen Sie das virtuelle Netzwerk mit der Benennungskonvention. Sie können das Azure-Vorschauportal oder das Azure-Portal verwenden.
+- Erstellen Sie das virtuelle Netzwerk mit der Benennungskonvention. Sie können das Azure-Portal oder das klassische Azure-Portal verwenden.
 
 ## 6\. Verfügbarkeitsgruppen
 
@@ -314,7 +314,7 @@ Aufgabe:
 
 In Azure-PaaS verwaltet Azure virtuelle Computer und deren zugehörige Datenträger. Sie müssen Clouddienste und Rollen erstellen und benennen. Azure erstellt anschließend Instanzen, die diesen Rollen zugeordnet sind. Im Fall von Azure-IaaS können Sie selbst entscheiden, ob Sie Namen für Clouddienste, virtuelle Computer und zugehörige Datenträger angeben.
 
-Um den Verwaltungsaufwand zu reduzieren, verwendet das Azure-Portal den Computernamen als Standardnamen für den zugeordneten Clouddienst (wenn der Kunde einen neuen Clouddienst im Assistenten zur Erstellung des virtuellen Computers erstellt).
+Um den Verwaltungsaufwand zu reduzieren, verwendet das klassische Azure-Portal den Computernamen als Standardnamen für den zugeordneten Clouddienst (wenn der Kunde einen neuen Clouddienst im Assistenten zur Erstellung des virtuellen Computers erstellt).
 
 Darüber hinaus benennt Azure Datenträger und unterstützende VHD-Blobs mit einer Kombination aus Clouddienstname, Computername und Erstellungsdatum.
 
@@ -329,7 +329,7 @@ Entscheidung:
 Aufgaben:
 
 - Definieren Sie die Namen der einzelnen virtuellen Computer mit Ihren Benennungskonventionen.
-- Sie können virtuelle Computer über das Azure-Vorschauportal, das Azure-Portal, das PowerShell-Cmdlet **New-AzureVM**, die Azure-Befehlszeilenschnittstelle oder mit Ressourcen-Manager-Vorlagen erstellen.
+- Sie können virtuelle Computer über das Azure-Portal, das klassische Azure-Portal, das PowerShell-Cmdlet **New-AzureVM**, die Azure-Befehlszeilenschnittstelle oder mit Ressourcen-Manager-Vorlagen erstellen.
 
 ## Beispiel einer IT-Workload: Contoso-Finanzanalysemodul
 
@@ -377,7 +377,7 @@ Contoso hat festgestellt, dass zwei Speicherkonten erforderlich sind:
 
 Da das virtuelle Netzwerk keine fortlaufende Verbindung mit dem lokalen Netzwerk von Contoso benötigt, entschied sich Contoso für ein virtuelles Netzwerk auf ausschließlicher Cloudbasis.
 
-Sie haben ein virtuelles Netzwerk auf ausschließlicher Cloudbasis mit den folgenden Einstellungen über das Azure-Vorschauportal erstellt:
+Sie haben ein virtuelles Netzwerk auf ausschließlicher Cloudbasis mit den folgenden Einstellungen über das Azure-Portal erstellt:
 
 - Name: AZFAE-USE-VN01
 - Standort: East US 2
@@ -438,8 +438,8 @@ Diese Konfiguration umfasst:
 
 [Cloud Platform Integration Framework (Azure-Architekturmuster)](../azure-architectures-cpif-overview.md)
 
-[Datacenter extension reference architecture diagram](https://gallery.technet.microsoft.com/Datacenter-extension-687b1d84) (in englischer Sprache)
+[Datacenter extension reference architecture diagram (in englischer Sprache)](https://gallery.technet.microsoft.com/Datacenter-extension-687b1d84)
 
-[Azure Compute-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manage](../articles/virtual-machines/virtual-machines-azurerm-versus-azuresm.md)
+[Azure Compute-, Network- and Storage-Anbieter unter dem Azure-Ressourcen-Manager](../articles/virtual-machines/virtual-machines-azurerm-versus-azuresm.md)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

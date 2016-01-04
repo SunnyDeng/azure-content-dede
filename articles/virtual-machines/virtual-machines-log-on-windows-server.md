@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Anmelden bei einem virtuellen Computer | Microsoft Azure"
-	description="Verwenden Sie das Azure-Portal für die Anmeldung bei einem virtuellen Windows-Computer, der mit dem klassischen Bereitstellungsmodell erstellt wurde."
+	description="Verwenden Sie das klassische Azure-Portal für die Anmeldung bei einem virtuellen Windows-Computer, der mit dem klassischen Bereitstellungsmodell erstellt wurde."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -18,11 +18,11 @@
 	ms.author="cynthn"/>
 
 
-# Anmelden bei einem virtuellen Windows-Computer über das Azure-Portal
+# Anmelden bei einem virtuellen Windows-Computer über das klassische Azure-Portal
 
 
 
-Im Azure-Portal können Sie über die Schaltfläche **Verbinden** eine Remotedesktopsitzung starten und sich bei einem virtuellen Windows-Computer anmelden.
+Im klassischen Azure-Portal können Sie über die Schaltfläche **Verbinden** eine Remotedesktopsitzung starten und sich bei einem virtuellen Windows-Computer anmelden.
 
 Möchten Sie eine Verbindung mit einem virtuellen Linux-Computer herstellen? Siehe [Anmelden bei einem mit Linux betriebenen virtuellen Computer](virtual-machines-linux-how-to-log-on.md).
 
@@ -38,13 +38,13 @@ Hier finden Sie ein Video mit einer exemplarischen Vorgehensweise für die Schri
 
 ## Herstellen einer Verbindung mit dem virtuellen Computer
 
-1. Melden Sie sich beim Azure-Portal an.
+1. Melden Sie sich am klassischen Azure-Portal an.
 
 2. Klicken Sie auf **Virtuelle Computer**, und wählen Sie den virtuellen Computer aus.
 
 3. Klicken Sie in der Befehlsleiste am unteren Rand der Seite auf **Verbinden**.
 
-	![Melden Sie sich beim virtuellen Computer an.](./media/virtual-machines-log-on-windows-server/connectwindows.png)
+	![Anmelden beim virtuellen Computer](./media/virtual-machines-log-on-windows-server/connectwindows.png)
 	
 > [AZURE.TIP]Wenn die Schaltfläche "Verbinden" nicht verfügbar ist, finden Sie weitere Informationen in den Tipps zur Problembehandlung am Ende dieses Artikels.
 
@@ -61,4 +61,4 @@ Folgende Dinge können Sie ausprobieren:
 
 Wenn die Tipps nicht funktionieren oder nicht das Gesuchte sind, finden Sie entsprechende Informationen unter [Problembehandlung bei Remotedesktopverbindungen mit einem Windows-basierten virtuellen Azure-Computer](virtual-machines-troubleshoot-remote-desktop-connections.md). Dieser Artikel führt Sie durch die Diagnose und Behebung von häufigen Problemen.
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

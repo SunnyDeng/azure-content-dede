@@ -12,41 +12,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/10/2015"
+   ms.date="12/11/2015"
    ms.author="telmos" />
 
 # Was ist eine Netzwerksicherheitsgruppe (NSG)?
 
-Sie kennen wahrscheinlich die Verwendung von Firewalls und Zugriffssteuerungslisten (Access Control Lists, ACLs), um den Fluss des Netzwerk-Datenverkehrs zu Netzwerksegmenten, einzelnen Computern und sogar zu Netzwerkkarten (NICs) in einem Computer zu filtern. Auf ähnliche Weise können Sie auch den Netzwerk-Datenverkehr in Azure filtern. Es stehen Ihnen dafür folgende Möglichkeiten zur Verfügung:
-
-- **Endpunkt-ACLs**
-	- Können nur eingehenden Datenverkehr filtern.
-	- Können nur für Endpunkte verwendet werden, die für das Internet oder über einen internen Load Balancer verfügbar gemacht werden.
-	- Sind auf 50 ACL-Regeln pro Endpunkt beschränkt.
-	- Erfordern **KEIN** VNET (klassische Bereitstellungen).
-- **Netzwerksicherheitsgruppen**
-	- Lassen Datenverkehr auf Grundlage der Richtung, des Protokolls, der Quelladresse und des Quellports sowie der Zieladresse und des Zielports zu oder verweigern ihn.
-	- Steuern eingehenden und ausgehenden Datenverkehr auf virtuellen Computern oder Rolleninstanzen (klassische Bereitstellungen), Netzwerkkarten (Ressourcen-Manager-Bereitstellungen) und Subnetzen (alle Bereitstellungen). Dies schließt alle Ressourcen ein, die mit Subnetzen verbunden sind, z. B. Clouddienste und App Service-Umgebungen.
-	- Können nur auf Ressourcen angewendet werden, die mit einem regionalen VNET verbunden sind.
-	- Erfordern **KEINE** Verwaltung eines Firewallgeräts.
-	- Sind auf 100 NSGs mit jeweils 200 Regeln pro Region beschränkt.
-- **Firewallgeräte**
-	- Werden als virtuelle Computer im Azure-Netzwerk implementiert.
-	- Lassen Datenverkehr auf Grundlage der Richtung, des Protokolls, der Quelladresse und des Quellports sowie der Zieladresse und des Zielports zu oder verweigern ihn.
-	- Bieten zusätzliche Funktionen, je nach verwendetem Firewallgerät.
-
-Im Mittelpunkt dieses Artikels stehen Netzwerksicherheitsgruppen (NSGs). Weitere Informationen zu den weiteren Optionen zum Filtern des Datenverkehrs finden Sie unter den folgenden Links.
-
-- [Dokumentation zu ACLs](./virtual-networks-acl.md)
-- [Erstellen einer DMZ mit NSGs und Firewallgeräten](virtual-networks-dmz-nsg-fw-udr-asm.md)
-
-## Wie funktioniert eine NSG?
-
-Eine NSG enthält zwei Arten von Regeln: **Regeln für eingehenden Datenverkehr** und **Regeln für ausgehenden Datenverkehr**. Wenn Datenverkehr bei einem Azure-Server eingeht, der virtuelle Computer oder Rolleninstanzen hostet, lädt der Host je nach Richtung des Datenverkehrs alle NSG-Regeln für eingehenden oder ausgehenden Datenverkehr. Anschließend wendet der Host die Regeln in der Reihenfolge ihrer Priorität auf den Datenverkehr an und prüft ihn. Wenn eine Regel mit einem der vom Host analysierten Pakete übereinstimmt, wird die von der Regel vorgegebene Aktion (zulassen oder verweigern) ausgeführt. Wenn keine Regel mit dem Paket übereinstimmt, wird das Paket verworfen. Die folgende Abbildung zeigt diesen Entscheidungsablauf.
-
-![NSG-ACLs](./media/virtual-network-nsg-overview/figure3.png)
-
->[AZURE.NOTE]Die Regeln, die für einen vorhandenen virtuellen Computer oder eine Rolleninstanz gelten, können von mehreren NSGs stammen, weil eine NSG zu einem virtuellen Computer (klassische Bereitstellungen), einer Netzwerkkarte (Ressourcen-Manager-Bereitstellungen) oder einem Subnetz (alle Bereitstellungen) zugeordnet werden kann. Der Abschnitt [Zuordnen von NSGs](#Associating-NSGs) behandelt, wie Regeln von mehreren NSGs je nach Richtung des Datenverkehrs angewendet werden.
+Eine Netzwerksicherheitsgruppe (NSG) enthält eine Zugriffssteuerungsliste (Access control list, ACL) zum Zulassen/Verweigern von Netzwerktraffic an Ihre VM-Instanzen in einem virtuellen Netzwerkwerk. NSGs können Subnetzen oder einzelnen VM-Instanzen innerhalb dieses Subnetzes zugeordnet werden. Wenn eine NSG einem Subnetz zugeordnet ist, gelten die ACL-Regeln für alle VM-Instanzen in diesem Subnetz. Darüber hinaus kann Datenverkehr zu einer einzelnen virtuellen Maschine weiter beschränkt werden, indem eine NSG direkt diesem virtuellen Computer zugewiesen wird.
 
 NSGs haben die folgenden Eigenschaften:
 
@@ -72,8 +43,8 @@ NSG-Regeln haben die folgenden Eigenschaften:
 |**Quelladresspräfix**|Quelladresspräfix oder -tag entsprechend der Regel|Eine einzelne IP-Adresse (z. B. 10.10.10.10), ein IP-Subnetz (z. B. 192.168.1.0/24), ein [Standardtag](#Default-Tags) oder * (für alle Adressen)|Verwenden Sie nach Möglichkeit Bereiche, Tags und *, um die Anzahl von Regeln zu reduzieren.|
 |**Zieladresspräfix**|Zieladresspräfix oder -tag entsprechend der Regel|Eine einzelne IP-Adresse (z. B. 10.10.10.10), ein IP-Subnetz (z. B. 192.168.1.0/24), ein [Standardtag](#Default-Tags) oder * (für alle Adressen)|Verwenden Sie nach Möglichkeit Bereiche, Tags und *, um die Anzahl von Regeln zu reduzieren.|
 |**Richtung**|Richtung des Datenverkehrs entsprechend der Regel|Eingehend oder ausgehend|Die Regeln für eingehenden und ausgehenden Datenverkehr werden getrennt verarbeitet, abhängig von der Richtung.|
-|**Priorität**|Regeln werden in der Reihenfolge ihrer Priorität überprüft. Sobald eine Regel erfüllt ist, werden keine Übereinstimmungen mit weiteren Regeln gesucht.|Eine Zahl zwischen 100 und 65535|Vergeben Sie beim Erstellen von Regeln die Prioritäten am besten jeweils in Hunderterschritten, damit noch Platz für später hinzukommende Regeln bleibt, die von der Priorität her zwischen die bestehenden Regeln eingeordnet werden müssen.|
-|**Zugriff**|Typ des Zugriffs bei Übereinstimmung mit der Regel|Zulassen oder verweigern|Beachten Sie, dass ein Paket verworfen wird, wenn keine Zulassungsregel dafür gefunden wird.|
+|**Priority**|Regeln werden in der Reihenfolge ihrer Priorität überprüft. Sobald eine Regel erfüllt ist, werden keine Übereinstimmungen mit weiteren Regeln gesucht.|Eine Zahl zwischen 100 und 65535|Vergeben Sie beim Erstellen von Regeln die Prioritäten am besten jeweils in Hunderterschritten, damit noch Platz für später hinzukommende Regeln bleibt, die von der Priorität her zwischen die bestehenden Regeln eingeordnet werden müssen.|
+|**Access**|Typ des Zugriffs bei Übereinstimmung mit der Regel|Zulassen oder verweigern|Beachten Sie, dass ein Paket verworfen wird, wenn keine Zulassungsregel dafür gefunden wird.|
 
 ### Standardtags
 
@@ -93,7 +64,7 @@ Wie in den folgenden Standardregeln zu sehen, wird Datenverkehr aus einem bzw. a
 
 **Eingehende Standardregeln**
 
-| Name | Priorität | Quell-IP | Quellport | Ziel-IP | Zielport | Protokoll | Zugriff |
+| Name | Priorität | Quell-IP | Quellport | Ziel-IP | Zielport | Protokoll | Access |
 |-----------------------------------|----------|--------------------|-------------|-----------------|------------------|----------|--------|
 | ALLOW VNET INBOUND | 65000 | VIRTUAL\_NETWORK | * | VIRTUAL\_NETWORK | * | * | ZULASSEN |
 | ALLOW AZURE LOAD BALANCER INBOUND | 65001 | AZURE\_LOADBALANCER | * | * | * | * | ZULASSEN |
@@ -101,7 +72,7 @@ Wie in den folgenden Standardregeln zu sehen, wird Datenverkehr aus einem bzw. a
 
 **Ausgehende Standardregeln**
 
-| Name | Priorität | Quell-IP | Quellport | Ziel-IP | Zielport | Protokoll | Zugriff |
+| Name | Priorität | Quell-IP | Quellport | Ziel-IP | Zielport | Protokoll | Access |
 |-------------------------|----------|-----------------|-------------|-----------------|------------------|----------|--------|
 | ALLOW VNET OUTBOUND | 65000 | VIRTUAL\_NETWORK | * | VIRTUAL\_NETWORK | * | * | ZULASSEN |
 | ALLOW INTERNET OUTBOUND | 65001 | * | * | INTERNET | * | * | ZULASSEN |
@@ -113,9 +84,9 @@ Je nach verwendetem Bereitstellungsmodell können Sie eine NSG einem virtuellen 
 
 [AZURE.INCLUDE [learn-about-deployment-models-both-include.md](../../includes/learn-about-deployment-models-both-include.md)]
  
-- **Zuordnen einer NSG zu einem virtuellen Computer (nur klassische Bereitstellungen).** Wenn Sie eine NSG einem virtuellen Computer zuordnen, werden die Netzwerk-Zugriffsregeln in der NSG auf jeglichen Datenverkehr angewendet, der für den virtuellen Computer bestimmt ist oder diesen verlässt. 
+- **Zuordnen einer NSG zu einem virtuellen Computer (nur klassische Bereitstellungen).** Wenn Sie eine NSG einem virtuellen Computer zuordnen, werden die Netzwerkzugriffsregeln in der NSG auf jeglichen Datenverkehr angewendet, der für den virtuellen Computer bestimmt ist oder diesen verlässt. 
 
-- **Zuordnen einer NSG zu einer Netzwerkkarte (nur Ressourcen-Manager-Bereitstellungen).** Wenn Sie eine NSG zu einer Netzwerkkarte zuordnen, werden die Netzwerk-Zugriffsregeln in der NSG nur auf diese Netzwerkkarte angewendet. Für einen virtuellen Computer mit mehreren Netzwerkkarten bedeutet dies, dass sich eine NSG, die auf eine einzelne Netzwerkkarte angewendet wird, nicht auf die anderen Netzwerkkarten auswirkt.
+- **Zuordnen einer NSG zu einer Netzwerkkarte (nur Ressourcen-Manager-Bereitstellungen).** Wenn Sie eine NSG zu einer Netzwerkkarte zuordnen, werden die Netzwerkzugriffsregeln in der NSG nur auf diese Netzwerkkarte angewendet. Für einen virtuellen Computer mit mehreren Netzwerkkarten bedeutet dies, dass sich eine NSG, die auf eine einzelne Netzwerkkarte angewendet wird, nicht auf die anderen Netzwerkkarten auswirkt.
 
 - **Zuordnen einer NSG zu einem Subnetz (alle Bereitstellungen)**. Wenn Sie eine NSG einem Subnetz zuordnen, werden die Netzwerk-Zugriffsregeln in der NSG auf alle IaaS- und PaaS-Ressourcen im Subnetz angewendet.
 
@@ -130,7 +101,7 @@ Sie können verschiedene NSGs einem virtuellen Computer (oder einer Netzwerkkart
 
 ![NSG-ACLs](./media/virtual-network-nsg-overview/figure2.png)
 
->[AZURE.NOTE]Sie können einem Subnetz, einem virtuellen Computer oder einer Netzwerkkarte zwar nur eine einzelne NSG zuordnen, aber Sie können eine solche NSG beliebig vielen Ressourcen zuordnen.
+>[AZURE.NOTE]Sie können einem Subnetz, einem virtuellen Computer oder einer Netzwerkkarte zwar nur eine einzelne NSG zuordnen, Sie können eine solche NSG aber beliebig vielen Ressourcen zuordnen.
 
 ## Planung
 
@@ -146,7 +117,7 @@ Weitere Informationen zum Planen der Netzwerksicherheit in Azure finden Sie in d
 
 Wenn Sie die Antworten auf die Fragen im Abschnitt [Planung](#Planning) kennen, machen Sie sich mit dem Folgenden vertraut, bevor Sie Ihre NSGs definieren.
 
-### Einschränkungen
+### Grenzen
 
 Sie müssen die folgenden Begrenzungen berücksichtigen, wenn Sie Ihre NSGs entwerfen.
 
@@ -156,7 +127,7 @@ Sie müssen die folgenden Begrenzungen berücksichtigen, wenn Sie Ihre NSGs entw
 |NSGs pro Region und Abonnement|100|Standardmäßig wird für jeden im Azure-Portal erstellten virtuellen Computer eine neue NSG erstellt. Wenn Sie dieses Standardverhalten zulassen, werden Ihnen die NSGs schnell ausgehen. Denken Sie beim Entwurf an dieses Limit, und teilen Sie Ihre Ressourcen gegebenenfalls auf mehrere Regionen oder Abonnements auf. |
 |NSG-Regeln pro NSG|200|Verwenden Sie einen breiten Bereich von IP-Adressen und Ports, um dieses Limit nicht zu überschreiten. |
 
->[AZURE.IMPORTANT]Sehen Sie sich alle [Einschränkungen an, die es hinsichtlich der Netzwerkdienste in Azure gibt](../azure-subscription-service-limits/#networking-limits), bevor Sie Ihre Lösung entwerfen. Einige Limits lassen sich erhöhen, wenn Sie ein Supportticket öffnen.
+>[AZURE.IMPORTANT]Sehen Sie sich alle [Einschränkungen an, die es hinsichtlich der Netzwerkdienste in Azure gibt](../azure-subscription-service-limits/#networking-limits), bevor Sie Ihre Lösung entwerfen. Einige Einschränkungen können durch Öffnen eines Supporttickets erhöht werden.
 
 ### Entwurf von VNET und Subnetz
 
@@ -186,7 +157,7 @@ In NSG-Regeln kann derzeit als Protokoll nur *TCP* oder *UDP* angegeben werden. 
 - In klassischen Bereitstellungen erstellen Sie Endpunkte, die die Ports auf einem Load Balancer zu Ports auf den virtuellen Computern oder Rolleninstanzen zuordnen. In einer Ressourcen-Manager-Bereitstellung können Sie auch eigene öffentlich zugängliche Load Balancer erstellen. Wenn Sie den Datenverkehr zu virtuellen Computern und Rolleninstanzen, die Teil eines Back-End-Pools in einem Load Balancer sind, mit NSGs einschränken, müssen Sie Folgendes bedenken: Der Zielport für den eingehenden Datenverkehr ist der tatsächliche Port im virtuellen Computer oder in der Rolleninstanz und nicht der Port, der durch den Load Balancer verfügbar gemacht wird. Bedenken Sie außerdem, das der Quellport und die Quelladresse für die Verbindung mit dem virtuellen Computer ein Port und eine Adresse auf dem Remotecomputer im Internet sind und nicht der Port und die Adresse, die vom Load Balancer verfügbar gemacht wird.
 - Wenn Sie NSGs zum Filtern von Datenverkehr erstellen, der durch einen internen Load Balancer (ILB) geleitet wird, gilt Ähnliches wie bei öffentlich zugänglichen Load Balancern: Sie müssen berücksichtigen, dass der Quellport und der Quelladressbereich des Computers angewendet werden, von dem der Aufruf stammt, und nicht Port und Adresse des Load Balancers. Und der Zielport und der Zieladressbereich beziehen sich auf den Computer, bei dem der Datenverkehr eingeht, und nicht auf den Load Balancer.
 
-### Anderes
+### Andere
 
 - Endpunktbasierte ACLs und NSGs können nicht für die gleiche VM-Instanz verwendet werden. Wenn Sie eine NSG verwenden möchten und bereits eine Endpunkt-ACL eingerichtet ist, entfernen Sie zuerst die Endpunkt-ACL. Informationen über die Vorgehensweise finden Sie unter [Verwalten von Endpunkt-ACLs](virtual-networks-acl-powershell.md).
 - Im Bereitstellungsmodell mit Ressourcen-Manager können Sie eine NSG, die einer Netzwerkkarte zugeordnet ist, für virtuelle Computer mit mehreren Netzwerkkarten verwenden. Auf diese Weise wird eine Verwaltung (ein Remotezugriff) nach Netzwerkkarte und eine Trennung des Datenverkehrs ermöglicht.
@@ -209,7 +180,7 @@ Im Folgenden wird veranschaulicht, wie die Informationen in diesem Artikel prakt
 
 ![NSGs](./media/virtual-network-nsg-overview/figure1.png)
 
-Wie im Diagramm oben zu sehen, sind die virtuellen Computer *Web1* und *Web2* mit dem Subnetz *FrontEnd* verbunden, und die virtuellen Computer *DB1* und *DB2* sind mit dem Subnetz *BackEnd* verbunden. Beide Subnetze sind Teil des VNETs *TestVNet*. Alle Ressourcen sind der Azure-Region *USA, Westen* zugeordnet.
+Wie im Diagramm oben zu sehen, sind die virtuellen Maschinen *Web1* und *Web2* mit dem Subnetz *FrontEnd* verbunden, und die virtuellen Maschinen *DB1* und *DB2* sind mit dem Subnetz *BackEnd* verbunden. Beide Subnetze sind Teil des VNETs *TestVNet*. Alle Ressourcen sind der Azure-Region *USA, Westen* zugeordnet.
 
 Die Anforderungen 1–6 (außer 3) beschränken sich alle auf Subnetzräume. Die Anzahl der für die einzelnen NSGs nötigen Regeln soll möglichst gering sein, und es soll einfach sein, den Subnetzen weitere virtuelle Computer hinzuzufügen, die die gleichen Workloadarten ausführen. Deshalb werden die folgenden NSGs auf Subnetzebene implementiert.
 
@@ -217,7 +188,7 @@ Die Anforderungen 1–6 (außer 3) beschränken sich alle auf Subnetzräume. Die
 
 **Regeln für eingehenden Datenverkehr**
 
-|Regel|Zugriff|Priorität|Quelladressbereich|Quellport|Zieladressbereich|Zielport|Protokoll|
+|Regel|Access|Priority|Quelladressbereich|Quellport|Zieladressbereich|Zielport|Protokoll|
 |---|---|---|---|---|---|---|---|
 |HTTP zulassen|Zulassen|100|INTERNET|*|*|80|TCP|
 |RDP von FrontEnd zulassen|Zulassen|200|192\.168.1.0/24|*|*|3389|TCP|
@@ -225,7 +196,7 @@ Die Anforderungen 1–6 (außer 3) beschränken sich alle auf Subnetzräume. Die
 
 **Regeln für ausgehenden Datenverkehr**
 
-|Regel|Zugriff|Priorität|Quelladressbereich|Quellport|Zieladressbereich|Zielport|Protokoll|
+|Regel|Access|Priority|Quelladressbereich|Quellport|Zieladressbereich|Zielport|Protokoll|
 |---|---|---|---|---|---|---|---|
 |Internet verweigern|Verweigern|100|*|*|INTERNET|*|*|
 
@@ -233,13 +204,13 @@ Die Anforderungen 1–6 (außer 3) beschränken sich alle auf Subnetzräume. Die
 
 **Regeln für eingehenden Datenverkehr**
 
-|Regel|Zugriff|Priorität|Quelladressbereich|Quellport|Zieladressbereich|Zielport|Protokoll|
+|Regel|Access|Priority|Quelladressbereich|Quellport|Zieladressbereich|Zielport|Protokoll|
 |---|---|---|---|---|---|---|---|
 |Internet verweigern|Verweigern|100|INTERNET|*|*|*|*|
 
 **Regeln für ausgehenden Datenverkehr**
 
-|Regel|Zugriff|Priorität|Quelladressbereich|Quellport|Zieladressbereich|Zielport|Protokoll|
+|Regel|Access|Priority|Quelladressbereich|Quellport|Zieladressbereich|Zielport|Protokoll|
 |---|---|---|---|---|---|---|---|
 |Internet verweigern|Verweigern|100|*|*|INTERNET|*|*|
 
@@ -247,7 +218,7 @@ Die Anforderungen 1–6 (außer 3) beschränken sich alle auf Subnetzräume. Die
 
 **Regeln für eingehenden Datenverkehr**
 
-|Regel|Zugriff|Priorität|Quelladressbereich|Quellport|Zieladressbereich|Zielport|Protokoll|
+|Regel|Access|Priority|Quelladressbereich|Quellport|Zieladressbereich|Zielport|Protokoll|
 |---|---|---|---|---|---|---|---|
 |RDP aus dem Internet zulassen|Zulassen|100|INTERNET|**|*|3389|TCP|
 
@@ -257,7 +228,7 @@ Die Anforderungen 1–6 (außer 3) beschränken sich alle auf Subnetzräume. Die
 
 **Regeln für eingehenden Datenverkehr**
 
-|Regel|Zugriff|Priorität|Quelladressbereich|Quellport|Zieladressbereich|Zielport|Protokoll|
+|Regel|Access|Priority|Quelladressbereich|Quellport|Zieladressbereich|Zielport|Protokoll|
 |---|---|---|---|---|---|---|---|
 |RDP von FrontEnd zulassen|Zulassen|100|192\.168.1.0/24|**|*|3389|TCP|
 
@@ -265,7 +236,7 @@ Die Anforderungen 1–6 (außer 3) beschränken sich alle auf Subnetzräume. Die
 
 **Regeln für eingehenden Datenverkehr**
 
-|Regel|Zugriff|Priorität|Quelladressbereich|Quellport|Zieladressbereich|Zielport|Protokoll|
+|Regel|Access|Priority|Quelladressbereich|Quellport|Zieladressbereich|Zielport|Protokoll|
 |---|---|---|---|---|---|---|---|
 |SQL von FrontEnd zulassen|Zulassen|100|192\.168.1.0/24|**|*|1433|TCP|
 
@@ -277,4 +248,4 @@ Da einige der oben aufgeführten NSGs einzelnen Netzwerkkarten zugeordnet werden
 - [Bereitstellen von NSGs im Ressourcen-Manager](virtual-networks-create-nsg-arm-pportal.md)
 - [Verwalten von NSG-Protokollen](virtual-network-nsg-manage-log.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

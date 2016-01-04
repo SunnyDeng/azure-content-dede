@@ -12,7 +12,7 @@
  ms.tgt_pltfrm="na"
  ms.devlang="dotnet"
  ms.topic="article"
- ms.date="07/28/2015"
+ ms.date="12/04/2015"
  ms.author="krisragh"/>
 
 # Einschränkungen, Standardwerte und Fehlercodes für Scheduler
@@ -57,20 +57,25 @@ API-Vorgänge können ebenfalls zusätzliche Fehlerinformationen zurückgeben, d
 			<Message>detailed-error-message</Message>  
 		</Error>  
 
-## Siehe auch
+## Weitere Informationen
 
- [Scheduler Concepts, Terminology, and Entity Hierarchy](scheduler-concepts-terms.md) (in englischer Sprache)
 
- [Get Started Using Scheduler in the Management Portal](scheduler-get-started-portal.md) (in englischer Sprache)
+ [Was ist Azure Scheduler?](scheduler-intro.md)
+ 
+ [Konzepte, Terminologie und Entitätshierarchie für Azure Scheduler](scheduler-concepts-terms.md)
 
- [Plans and Billing in Azure Scheduler](scheduler-plans-billing.md) (in englischer Sprache)
+ [Erste Schritte mit dem Scheduler im Azure-Portal](scheduler-get-started-portal.md)
 
- [How to Build Complex Schedules and Advanced Recurrence with Azure Scheduler](scheduler-advanced-complexity.md) (in englischer Sprache)
+ [Pläne und Abrechnung in Azure Scheduler](scheduler-plans-billing.md)
 
- [Zeitplanungsmodul-REST-API – Referenz](https://msdn.microsoft.com/library/dn528946)
+ [Azure Scheduler-REST-API – Referenz](https://msdn.microsoft.com/library/dn528946)
 
- [Scheduler High-Availability and Reliability](scheduler-high-availability-reliability.md) (in englischer Sprache)
+ [Azure Scheduler – PowerShell-Cmdlets-Referenz](scheduler-powershell-reference.md)
 
- [Scheduler Outbound Authentication](scheduler-outbound-authentication.md) (in englischer Sprache)
+ [Hochverfügbarkeit und Zuverlässigkeit von Azure Scheduler](scheduler-high-availability-reliability.md)
 
-<!---HONumber=Oct15_HO3-->
+ [Ausgehende Authentifizierung von Azure Scheduler](scheduler-outbound-authentication.md)
+ 
+  
+
+<!---HONumber=AcomDC_1210_2015-->

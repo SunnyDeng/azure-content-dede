@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Überlegungen zur Netzwerkinfrastruktur für Site Recovery" 
+	pageTitle="Überlegungen zur Netzwerkinfrastruktur für Site Recovery | Microsoft Azure" 
 	description="Dieser Artikel beschreibt praktische Vorüberlegungen zum Netzwerkentwurf für Failover mit Site Recovery" 
 	services="site-recovery" 
 	documentationCenter="" 
@@ -13,7 +13,7 @@
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery" 
-	ms.date="08/10/2015" 
+	ms.date="12/14/2015" 
 	ms.author="raynew"/>
 
 #  Überlegungen zur Netzwerkinfrastruktur für Site Recovery
@@ -62,7 +62,7 @@ Bei einem Notfall können Workloads auf folgende Weise wiederhergestellt werden:
 ### VMM-Clusterserver
 
 
-Die [Bereitstellung von VMM in einem Cluster](https://technet.microsoft.com/de-DE/library/gg610675.aspx) bietet hohe Verfügbarkeit und Schutz vor einem Hardware-Failover. Wenn Sie den VMM-Cluster mit Site Recovery bereitstellen, beachten Sie Folgendes:
+Die [Bereitstellung von VMM in einem Cluster](https://technet.microsoft.com/library/gg610675.aspx) bietet hohe Verfügbarkeit und Schutz vor einem Hardware-Failover. Wenn Sie den VMM-Cluster mit Site Recovery bereitstellen, beachten Sie Folgendes:
 
 Der VMM-Server sollte in einem gestreckten Cluster über geografisch getrennte Standorte bereitgestellt werden. Die von VMM verwendete SQL Server-Datenbank muss mithilfe von AlwaysOn-Verfügbarkeitsgruppen (SQL Server) mit einem Replikat am sekundären Standort geschützt werden. Wenn ein Notfall eintritt, erfolgt automatisch ein Failover des VMM-Servers und des zugehörigen SQL-Servers an den Wiederherstellungsstandort. Sie können dann ein Failover der Workloads mithilfe von Site Recovery durchführen.
 
@@ -190,4 +190,4 @@ Im Blogbeitrag [Networking Infrastructure Setup for Microsoft Azure as a Disaste
 
 [Hier](site-recovery-network-mapping.md) erfahren Sie, wie Site Recovery Quell- und Zielnetzwerke zuordnet.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

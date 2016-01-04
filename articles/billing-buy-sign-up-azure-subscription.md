@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/20/2015"
+	ms.date="11/18/2015"
 	ms.author="genli"/>
 
 # Erwerben oder Registrieren eines Azure-Abonnements
@@ -25,7 +25,7 @@ Wenn Sie sich für ein kostenloses Azure-Testabonnement registrieren möchten, m
 
 >[AZURE.NOTE]Ihre Telefonnummer und Kreditkartendetails werden nur zur Überprüfung Ihrer Identität verwendet. Ihre Kreditkarte wird nicht belastet, aber Microsoft belegt sie mit einem sehr geringen Autorisierungsbetrag, um sicherzustellen, dass die Karte gültig ist. Je nach den Richtlinien Ihres Finanzinstituts wird dies nach drei bis fünf Geschäftstagen aufgehoben.
 
-1. Öffnen Sie die [Seite mit der kostenlosen Azure-Testversion](https://azure.microsoft.com/de-DE/pricing/free-trial/), und wählen Sie dann **Jetzt testen**.
+1. Öffnen Sie die [Seite mit der kostenlosen Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/), und wählen Sie dann **Jetzt testen**.
 2. Melden Sie sich mit Ihrem Microsoft-Konto oder Schul-/Geschäftskonto an.
 3. Geben Sie im Abschnitt **Persönliche Informationen** Ihre persönlichen Informationen ein. ![Screenshot der persönlichen Informationen](./media/billing-buy-sign-up-azure-subscription/AboutYou.png)
 
@@ -61,4 +61,4 @@ Befolgen Sie diese Schritte zum Aktivieren Ihres Abonnements, wenn Sie Azure in 
 2. Geben Sie den Product Key ein, und überprüfen Sie dann die Vereinbarungsoption.</br>![OSA-SCHLÜSSEL](./media/billing-buy-sign-up-azure-subscription/OSAkey.png)
 3. Wählen Sie **Aktivieren** aus.
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

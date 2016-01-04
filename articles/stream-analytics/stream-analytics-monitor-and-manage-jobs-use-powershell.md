@@ -1,7 +1,7 @@
 <properties 
 	pageTitle="Überwachen und Verwalten von Stream Analytics-Aufträgen mit von PowerShell | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie Stream Analytics-Aufträge mithilfe von PowerShell und Cmdlets überwachen und verwalten können." 
-	keywords="Azure PowerShell,Azure PowerShell-Cmdlets,PowerShell-Befehl"	
+	keywords="Azure PowerShell, Azure PowerShell-Cmdlets, PowerShell-Befehl, PowerShell-Skripts"	
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
@@ -14,14 +14,13 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="11/06/2015" 
+	ms.date="12/04/2015" 
 	ms.author="jeffstok"/>
 
 
 # Überwachen und Verwalten von Stream Analytics-Aufträgen mit PowerShell-Cmdlets
 
-Erfahren Sie, wie Sie Stream Analytics-Ressourcen mit PowerShell-Cmdlets, die grundlegende Stream Analytics-Aufgaben ausführen, überwachen und verwalten.
-
+Erfahren Sie, wie Sie Stream Analytics-Ressourcen mit Azure PowerShell-Cmdlets und -Skripts, die grundlegende Stream Analytics-Aufgaben ausführen, überwachen und verwalten.
 
 ## Voraussetzungen für das Ausführen von Azure PowerShell-Cmdlets für Stream Analytics
 
@@ -34,9 +33,12 @@ Erfahren Sie, wie Sie Stream Analytics-Ressourcen mit PowerShell-Cmdlets, die gr
 		# Select the Azure subscription you want to use to create the resource group
 		Select-AzureSubscription -SubscriptionName <subscription name>
  
-		# Create an Azure resource group	
+		# Set the appropriate Azure mode to access Stream Analytics cmdlets
+		Switch-AzureMode AzureResourceManager
+
+		# Optional - Create an Azure resource group	
 			# If Stream Analytics has not been registered to the subscription, remove remark symbol below (#) to run the Register-AzureRMProvider cmdlet to register the provider namespace
-			#Register-AzureRMProvider -Force -ProviderNamespace 'Microsoft.StreamAnalytics'
+		#Register-AzureProvider -Force -ProviderNamespace 'Microsoft.StreamAnalytics'
 
 		# Create an Azure resource group
 		New-AzureResourceGroup -Name <YOUR RESOURCE GROUP NAME> -Location <LOCATION>
@@ -287,4 +289,4 @@ Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://so
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

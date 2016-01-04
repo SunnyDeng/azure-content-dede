@@ -58,7 +58,7 @@ Das Flussdiagramm unten soll dem Verständnis des Upgradevorgangs einer Service 
 
 [Datenserialisierung](service-fabric-application-upgrade-data-serialization.md)
 
-[Weiterführende Themen](service-fabric-application-upgrade-advanced.md)
+[Manuelle Upgrades und Upgrades mit einem Diff-Paket](service-fabric-application-upgrade-advanced.md)
 
 [Problembehandlung bei Anwendungsupgrades](service-fabric-application-upgrade-troubleshooting.md)
 
@@ -67,4 +67,4 @@ Das Flussdiagramm unten soll dem Verständnis des Upgradevorgangs einer Service 
 [image]: media/service-fabric-application-upgrade/service-fabric-application-upgrade-flowchart.png
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1125_2015-->

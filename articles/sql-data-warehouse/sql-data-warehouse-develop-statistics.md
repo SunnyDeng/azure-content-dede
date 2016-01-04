@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="09/26/2015"
+   ms.date="12/11/2015"
    ms.author="JRJ@BigBangData.co.uk;barbkess"/>
 
 # Verwalten von Statistiken in SQL Data Warehouse
@@ -381,7 +381,7 @@ JOIN    sys.types           AS ty ON    co.[user_type_id]   = ty.[user_type_id]
 JOIN    sys.tables          AS tb ON  co.[object_id]        = tb.[object_id]
 JOIN    sys.schemas         AS sm ON  tb.[schema_id]        = sm.[schema_id]
 WHERE   1=1 
-AND     sts.[user_created] = 1
+AND     st.[user_created] = 1
 ;
 ```
 
@@ -441,8 +441,8 @@ Weitere Hinweise zur Entwicklung finden Sie in der [SQL Data Warehouse-Entwicklu
 <!--Image references-->
 
 <!--Link references--In actual articles, you only need a single period before the slash.-->
-[SQL Data Warehouse-Entwicklungsübersicht]: ./sql-data-warehouse-overview-develop/
-[Temporäre Tabellen]: ./sql-data-warehouse-develop-temporary-tables/
+[SQL Data Warehouse-Entwicklungsübersicht]: ./sql-data-warehouse-overview-develop.md
+[Temporäre Tabellen]: ./sql-data-warehouse-develop-temporary-tables.md
 
 <!-- External Links -->
 [Kardinalitätsschätzung]: https://msdn.microsoft.com/library/dn600374.aspx
@@ -459,4 +459,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [SQL Data Warehouse-Entwicklu
 [sys.table\_types]: https://msdn.microsoft.com/library/bb510623.aspx
 [Aktualisieren von Statistiken]: https://msdn.microsoft.com/library/ms187348.aspx
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

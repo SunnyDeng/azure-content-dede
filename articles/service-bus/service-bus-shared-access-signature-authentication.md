@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="09/04/2015"
+   ms.date="12/09/2015"
    ms.author="sethm" />
 
 # SAS-Authentifizierung bei Service Bus
@@ -94,7 +94,7 @@ Ein vollständiges praktisches Beispiel für eine Service Bus-Anwendung, die die
 
 ## Zugreifen auf SAS-Autorisierungsregeln für einen Namespace
 
-Vorgänge für den Service Bus-Namespacestamm erfordern eine Zertifikatauthentifizierung. Sie müssen ein Verwaltungszertifikat für Ihr Azure-Abonnement hochladen. Klicken Sie zum Hochladen eines Verwaltungszertifikats im linken Bereich des Azure-Portals auf **Einstellungen**. Weitere Informationen zu Azure-Verwaltungszertifikaten finden Sie unter [Erstellen eines Verwaltungszertifikats für Azure](https://msdn.microsoft.com/library/azure/gg551722.aspx).
+Vorgänge für den Service Bus-Namespacestamm erfordern eine Zertifikatauthentifizierung. Sie müssen ein Verwaltungszertifikat für Ihr Azure-Abonnement hochladen. Klicken Sie zum Hochladen eines Verwaltungszertifikats im linken Bereich des [klassischen Azure-Portals][] auf **Einstellungen**. Weitere Informationen zu Azure-Verwaltungszertifikaten finden Sie unter [Erstellen eines Verwaltungszertifikats für Azure](https://msdn.microsoft.com/library/azure/gg551722.aspx).
 
 Der Endpunkt für den Zugriff auf SAS-Autorisierungsregeln für einen Service Bus-Namespace lautet wie folgt:
 
@@ -256,4 +256,6 @@ Eine allgemeine Übersicht über SAS in Service Bus finden Sie unter [SAS (Share
 
 Weitere Hintergrundinformationen zur Service Bus-Authentifizierung finden Sie unter [Service Bus-Authentifizierung und -Autorisierung](service-bus-authentication-and-authorization.md).
 
-<!---HONumber=Oct15_HO3-->
+[klassischen Azure-Portals]: http://manage.windowsazure.com
+
+<!---HONumber=AcomDC_1217_2015-->

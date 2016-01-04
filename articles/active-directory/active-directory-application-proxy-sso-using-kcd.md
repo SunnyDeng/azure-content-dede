@@ -3,8 +3,8 @@
 	description="Erläutert das Bereitstellen von einmaligem Anmelden mit dem Azure AD-Anwendungsproxy."
 	services="active-directory"
 	documentationCenter=""
-	authors="rkarlin"
-	manager="StevenPo"
+	authors="kgremban"
+	manager="stevenpo"
 	editor=""/>
 
 <tags
@@ -14,12 +14,12 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="10/19/2015"
-	ms.author="rkarlin"/>
+	ms.author="kgremban"/>
 
 
 
 # Einmaliges Anmelden mit Anwendungsproxy
-Die einmalige Anmeldung ist ein wichtiges Element des Azure AD-Anwendungsproxys. Sie bietet optimale Benutzerfreundlichkeit: Ein Benutzer meldet sich bei der Cloud an, alle Sicherheitsprüfungen finden in der Cloud statt (Vorauthentifizierung), und wenn die Anforderung an die lokale Anwendung zurückgesendet wird, nimmt der Anwendungsproxyconnector die Identität des Benutzers an, damit die Back-End-Anwendung von einem regulären Benutzer eines mit einer Domäne verknüpften Geräts ausgeht. [](.media/active-directory-application-proxy-sso-using-kcd/app_proxy_sso_diff_id_diagram.png) Der Azure AD-Anwendungsproxy ermöglicht es, den Anwendern das benutzerfreundliche einmalige Anmelden (Single-Sign-on, SSO) anzubieten. Gehen Sie folgendermaßen vor, um Ihre Apps mit einmaligem Anmelden zu veröffentlichen:
+Die einmalige Anmeldung ist ein wichtiges Element des Azure AD-Anwendungsproxys. Sie bietet optimale Benutzerfreundlichkeit: Ein Benutzer meldet sich bei der Cloud an, alle Sicherheitsprüfungen finden in der Cloud statt (Vorauthentifizierung), und wenn die Anforderung an die lokale Anwendung gesendet wird, nimmt der Anwendungsproxyconnector die Identität des Benutzers an, damit die Back-End-Anwendung von einem regulären Benutzer eines mit einer Domäne verknüpften Geräts ausgeht. [](.media/active-directory-application-proxy-sso-using-kcd/app_proxy_sso_diff_id_diagram.png) Der Azure AD-Anwendungsproxy ermöglicht es, den Anwendern das benutzerfreundliche einmalige Anmelden (Single-Sign-on, SSO) anzubieten. Gehen Sie folgendermaßen vor, um Ihre Apps mit einmaligem Anmelden zu veröffentlichen:
 
 
 - Einmaliges Anmelden für lokale IWA-Apps unter Verwendung von KCD mit Anwendungsproxy
@@ -62,10 +62,10 @@ Die Active Directory-Konfiguration variiert in Abhängigkeit davon, ob Ihr Anwen
 
 
 
-1. Wechseln Sie in Active Directory zu **Extras** > **Benutzer und Computer**. 
-2. Wählen Sie den Server aus, der den Connector ausführt. 
-3. Klicken Sie mit der rechten Maustaste, und wählen Sie **Eigenschaften** > **Delegierung** aus. 
-4. Wählen Sie **Computer bei Delegierungen angegebener Dienste vertrauen** aus, und fügen Sie unter **Dienste, für die dieses Konto delegierte Anmeldeinformationen verwenden kann** den Wert für die Dienstprinzipalnamen-Identität (SPN) des Anwendungsservers hinzu. 
+1. Wechseln Sie in Active Directory zu **Extras** > **Benutzer und Computer**.
+2. Wählen Sie den Server aus, der den Connector ausführt.
+3. Klicken Sie mit der rechten Maustaste, und wählen Sie **Eigenschaften** > **Delegierung** aus.
+4. Wählen Sie **Computer bei Delegierungen angegebener Dienste vertrauen** aus, und fügen Sie unter **Dienste, für die dieses Konto delegierte Anmeldeinformationen verwenden kann** den Wert für die Dienstprinzipalnamen-Identität (SPN) des Anwendungsservers hinzu.
 5. Auf diese Weise kann der Anwendungsproxy-Connector die Identität von Benutzern in AD für die Anwendungen annehmen, die in der Liste definiert sind.
 
 ![Screenshot des Connector-SVR-Eigenschaftenfensters](./media/active-directory-application-proxy-sso-using-kcd/Properties.jpg)
@@ -111,7 +111,7 @@ Der Ablauf der Kerberos-Delegierung im Azure AD-Anwendungsproxy wird gestartet,
 ### Teilweise delegierte Identität
 Nicht-Windows-Anwendungen erhalten in der Regel die Benutzeridentität in Form eines Benutzernamens oder SAM-Kontonamens anstelle einer E-Mail-Adresse (username@domain). Dies unterscheidet sich von den meisten Windows-basierten Systemen, bei denen eher ein UPN bevorzugt wird, der aussagekräftiger ist und dafür sorgt, dass keine domänenübergreifende Duplizierung vorliegt. Aus diesem Grund lässt sich bei Anwendungsproxy für jede Anwendung festlegen, welche Identität im Kerberos-Ticket verwendet wird. Einige dieser Optionen eignen sich für Systeme, die kein E-Mail-Adressformat akzeptieren.<br>![](./media/active-directory-application-proxy-sso-using-kcd/app_proxy_sso_diff_id_upn.png) Wenn eine partielle Identität verwendet wird, die möglicherweise nicht für alle Domänen oder Gesamtstrukturen der Organisation eindeutig ist, kann es sinnvoll sein, die betreffenden Anwendungen zweimal mit zwei unterschiedlichen Connectorgruppen zu veröffentlichen. Da jede Anwendung einen anderen Benutzerkreis aufweist, lassen sich die Connectors mit einer unterschiedlichen Domäne verknüpfen.
 
- 
+
 ## Der Umgang mit SSO im lokalen Umfeld unterscheidet sich von dem mit Cloud-Identitäten.
 Sofern nicht anderweitig konfiguriert, geht der Anwendungsproxy davon aus, dass Benutzer in der Cloud genau dieselbe Identität wie lokal besitzen. Für jede Anwendung lässt sich festlegen, welche Identität beim Ausführen der einmaligen Anmeldung verwendet wird. Diese Funktion ermöglicht vielen Organisationen mit unterschiedlichen lokalen und Cloudidentitäten das einmalige Anmelden aus der Cloud auf lokale Apps, ohne dass der Benutzer unterschiedliche Benutzernamen und Kennwörter eingeben muss. Hierzu gehören Organisationen mit folgenden Merkmalen:
 
@@ -122,13 +122,13 @@ Sofern nicht anderweitig konfiguriert, geht der Anwendungsproxy davon aus, dass 
 - Besitzen intern einen nicht routingfähigen Domänennamen (joe@contoso.usa) und einen routingfähigen Namen in der Cloud.
 
 
-- Verwenden intern keine Domänennamen (Joe)
+- Sie verwenden intern keine Domänennamen (Joe).
 
 
-- Verwenden lokal und in der Cloud unterschiedliche Aliase. Beispiel: joe-johns@contoso.com und joej@contoso.com Dies hilft auch bei Anwendungen, die keine Adressen in Form von E-Mail-Adressen akzeptieren, ein häufiges Szenario bei nicht Windows-basierten Back-End-Servern.
-### Festlegen von SSO für lokal und in der Cloud unterschiedliche Identitäten
+- Sie verwenden lokal und in der Cloud unterschiedliche Aliase. Beispiel: joe-johns@contoso.com und joej@contoso.com Dies hilft auch bei Anwendungen, die keine Adressen in Form von E-Mail-Adressen akzeptieren, ein häufiges Szenario bei nicht Windows-basierten Back-End-Servern.
+### Festlegen von SSO für unterschiedliche lokale und cloudbasierte Identitäten
 1. Konfigurieren Sie die Azure AD Connect-Einstellungen so, dass die E-Mail-Adresse die Hauptidentität ist. Dies erfolgt als Teil des Anpassungsvorgangs durch Änderung des Benutzerprinzipalnamens in den Synchronisierungseinstellungen.<br>![](./media/active-directory-application-proxy-sso-using-kcd/app_proxy_sso_diff_id_connect_settings.png) HINWEIS: Diese Einstellungen bestimmen auch, wie sich Benutzer bei Office 365, Windows 10-Geräten und anderen Anwendungen anmelden, die Azure AD als Identitätsspeicher verwenden.
-2. Wählen Sie in den Anwendungskonfigurationseinstellungen für die zu modifizierende Anwendung die **Delegierte Identität für Anmeldung** aus: 
+2. Wählen Sie in den Anwendungskonfigurationseinstellungen für die zu modifizierende Anwendung die **Delegierte Identität für Anmeldung** aus:
 
 
 - Benutzerprinzipalname: joe@contoso.com
@@ -169,4 +169,4 @@ Der Anwendungsproxy bietet Ihnen noch viele weitere Möglichkeiten:
 - [Blog zum Anwendungsproxy aufrufen](http://blogs.technet.com/b/applicationproxyblog/)
 - [Sehen Sie sich unsere Videos auf Channel 9 an!](http://channel9.msdn.com/events/Ignite/2015/BRK3864)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

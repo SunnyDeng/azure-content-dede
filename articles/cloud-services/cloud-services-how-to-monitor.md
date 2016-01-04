@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Überwachen eines Clouddiensts| Microsoft Azure" 
-	description="Hier erfahren Sie mehr über die Überwachung von Clouddiensten im Azure-Verwaltungsportal." 
+	description="Hier erfahren Sie mehr über die Überwachung von Clouddiensten im klassischen Azure-Portal." 
 	services="cloud-services" 
 	documentationCenter="" 
 	authors="rboucher" 
@@ -21,9 +21,9 @@
 
 [AZURE.INCLUDE [Haftungsausschluss](../../includes/disclaimer.md)]
 
-Im Azure-Verwaltungsportal können Sie wichtige Leistungsmetriken Ihrer Clouddienste überwachen. Sie können die Überwachungsstufe für die einzelnen Dienstrollen auf minimal oder ausführlich einstellen und die Überwachungsanzeige anpassen. Ausführliche Überwachungsdaten werden in einem Speicherkonto gespeichert, auf das Sie außerhalb des Portals Zugriff haben.
+Im klassichen Azure-Portal können Sie wichtige Leistungsmetriken Ihrer Clouddienste überwachen. Sie können die Überwachungsstufe für die einzelnen Dienstrollen auf minimal oder ausführlich einstellen und die Überwachungsanzeige anpassen. Ausführliche Überwachungsdaten werden in einem Speicherkonto gespeichert, auf das Sie außerhalb des Portals Zugriff haben.
 
-Die Überwachungsanzeigen im Verwaltungsportal können ausführlich konfiguriert werden. Sie können die zu überwachenden Metriken in der Metrikenliste auf der Seite **Monitor** auswählen. Außerdem können Sie auswählen, welche Metriken in den Diagrammen auf der Seite **Monitor** und im Dashboard eingetragen werden sollen.
+Die Überwachungsanzeigen im klassischen Azure-Portal können ausführlich konfiguriert werden. Sie können die zu überwachenden Metriken in der Metrikenliste auf der Seite **Monitor** auswählen. Außerdem können Sie auswählen, welche Metriken in den Diagrammen auf der Seite **Monitor** und im Dashboard eingetragen werden sollen.
 
 ##Konzepte##
 
@@ -38,7 +38,7 @@ Beachten Sie, dass bei der ausführlichen Überwachung Ihre Speicherkosten für 
 
 ##Konfigurieren der Überwachung für Clouddienste##
 
-Führen Sie die folgenden Schritte aus, um im Verwaltungsportal ausführliche oder minimale Überwachung zu konfigurieren.
+Führen Sie die folgenden Schritte aus, um im klassischen Azure-Portal ausführliche oder minimale Überwachung zu konfigurieren.
 
 ###Voraussetzungen###
 
@@ -62,25 +62,25 @@ Stellen Sie sicher, dass die Diagnose-Verbindungszeichenfolge in der Konfigurati
 
 ###Ändern der Überwachungsstufe auf ausführlich oder minimal###
 
-1. Öffnen Sie im [Verwaltungsportal](https://manage.windowsazure.com/) die Seite **Konfigurieren** für die Clouddienst-Bereitstellung.
+1. Öffnen Sie im [klassischen Azure-Portal](https://manage.windowsazure.com/) die Seite **Konfigurieren** für die Clouddienst-Bereitstellung.
 
 2. Klicken Sie unter **Stufe** auf **Ausführlich** oder **Minimal**.
 
 3. Klicken Sie auf **Speichern**.
 
-Nachdem Sie die ausführliche Überwachung aktiviert haben, sollten Sie die Überwachungsdaten im Verwaltungsportal nach kurzer Zeit sehen können.
+Nachdem Sie die ausführliche Überwachung aktiviert haben, sollten Sie die Überwachungsdaten im klassischen Azure-Portal nach kurzer Zeit sehen können.
 
 Leistungsindikatordaten und aggregierte Überwachungsdaten werden im Speicherkonto in Tabellen abgelegt, deren Namen von der Bereitstellungs-ID der jeweiligen Rollen abhängen.
 
 ##Empfangen von Warnungen für Metriken von Clouddiensten##
 
-Sie können Warnungen auf Basis der Überwachungsmetriken Ihrer Clouddienste empfangen. Auf der Seite **Verwaltungsdienste** im Azure-Verwaltungsportal können Sie Regeln erstellen, die einen Alarm auslösen, wenn eine bestimmte Metrik einen von Ihnen ausgewählten Wert erreicht. Außerdem können Sie eine E-Mail senden, wenn der Alarm ausgelöst wird. Weitere Informationen finden Sie unter [Empfangen von Warnbenachrichtigungen und Verwalten von Warnregeln in Azure](http://go.microsoft.com/fwlink/?LinkId=309356).
+Sie können Warnungen auf Basis der Überwachungsmetriken Ihrer Clouddienste empfangen. Auf der Seite **Verwaltungsdienste** im klassische Azure-Portal können Sie Regeln erstellen, die einen Alarm auslösen, wenn eine bestimmte Metrik einen von Ihnen ausgewählten Wert erreicht. Außerdem können Sie eine E-Mail senden, wenn der Alarm ausgelöst wird. Weitere Informationen finden Sie unter [Empfangen von Warnbenachrichtigungen und Verwalten von Warnregeln in Azure](http://go.microsoft.com/fwlink/?LinkId=309356).
 
 ##Hinzufügen von Metriken zur Metrikentabelle##
 
-1. Öffnen Sie im [Verwaltungsportal](http://manage.windowsazure.com/) die Seite **Monitor** für den Clouddienst.
+1. Öffnen Sie im [klassischen Azure-Portal](http://manage.windowsazure.com/) die Seite **Monitor** für den Clouddienst.
 
-	Standardmäßig zeigt die Metrikentabelle eine Teilmenge der verfügbaren Metriken an. Die Abbildung zeit die Standardmetriken für Clouddienste. Diese sind beschränkt auf die Leistungsindikatoren für Speicher/verfügbare MByte, und die Daten werden auf Rollenebene aggregiert. Unter **Metriken hinzufügen** können Sie weitere aggregierte Metriken oder Metriken auf Rollenebene für die Überwachung im Verwaltungsportal auswählen.
+	Standardmäßig zeigt die Metrikentabelle eine Teilmenge der verfügbaren Metriken an. Die Abbildung zeit die Standardmetriken für Clouddienste. Diese sind beschränkt auf die Leistungsindikatoren für Speicher/verfügbare MByte, und die Daten werden auf Rollenebene aggregiert. Unter **Metriken hinzufügen** können Sie weitere aggregierte Metriken oder Metriken auf Rollenebene für die Überwachung im klassischen Azure-Portal auswählen.
 
 	![Ausführliche Anzeige](./media/cloud-services-how-to-monitor/CloudServices_DefaultVerboseDisplay.png)
  
@@ -133,7 +133,7 @@ Zum Anzeigen von benutzerdefinierten Leistungsindikatoren im Portal müssen Sie 
 	</PerformanceCounterConfiguration>
 	```
 4. Speichern Sie die Änderungen, und laden Sie die Konfigurationsdatei an demselben Speicherort hoch, wobei Sie die vorhandene Datei im Blob überschreiben.
-5. Wechseln Sie in der Konfiguration des Verwaltungsportals in den ausführlichen Modus. Wenn Sie bereits im ausführlichen Modus waren, müssen Sie zuerst auf "Minimal" umschalten und dann wieder auf "Ausführlich".
+5. Wechseln Sie in der Konfiguration des klassischen Azure-Portals in den ausführlichen Modus. Wenn Sie bereits im ausführlichen Modus waren, müssen Sie zuerst auf "Minimal" umschalten und dann wieder auf "Ausführlich".
 6. Der benutzerdefinierten Leistungsindikator steht jetzt im Dialogfeld **Metriken hinzufügen** zur Verfügung. 
 
 ##Anpassen des Metrikendiagramms##
@@ -159,7 +159,7 @@ Zum Anzeigen von benutzerdefinierten Leistungsindikatoren im Portal müssen Sie 
 
 2. Hinzufügen oder Entfernen von Metriken im Diagramm:
 
-	- Markieren Sie das Kontrollkästchen für die Metrik im Tabellenkopf, um eine neue Metrik anzuzeigen. Falls Sie auf einem kleinen Bildschirm arbeiten, klicken Sie auf ***n* Metriken**, um eine Metrik anzuzeigen, die im Tabellenkopf nicht angezeigt werden kann.
+	- Markieren Sie das Kontrollkästchen für die Metrik im Tabellenkopf, um eine neue Metrik anzuzeigen. Falls Sie auf einem kleinen Bildschirm arbeiten, klicken Sie auf ***n*??Metriken**, um eine Metrik anzuzeigen, die im Tabellenkopf nicht angezeigt werden kann.
 
 	- Heben Sie die Auswahl des entsprechenden Kontrollkästchens auf, um eine aktuell angezeigte Metrik zu löschen.
 
@@ -167,7 +167,7 @@ Zum Anzeigen von benutzerdefinierten Leistungsindikatoren im Portal müssen Sie 
 
 4. Wählen Sie aus, ob Daten für 1 Stunde, 24 Stunden oder 7 Tage angezeigt werden sollen.
 
-##Zugreifen auf ausführliche Überwachungsdaten außerhalb des Verwaltungsportals##
+##Gewusst wie: Zugreifen auf ausführliche Überwachungsdaten außerhalb des klassischen Azure-Portals##
 
 Ausführliche Überwachungsdaten werden in Tabellen in Speicherkonten gespeichert, die Sie für die einzelnen Rollen angeben. Pro Clouddienstbereitstellung werden sechs Tabellen für die Rolle erstellt. Jeweils zwei dieser Tabellen sind für die einzelnen Intervalle (5 Minuten, 1 Stunde und 12 Stunden). Eine dieser Tabellen speichert Aggregationen auf Rollenebene, und die andere Tabelle speichert Aggregationen für Rolleninstanzen.
 
@@ -192,4 +192,4 @@ Die folgenden Tabellen speichern z. B. ausführliche Überwachungsdaten aggregie
 	WAD8b7c4233802442b494d0cc9eb9d8dd9fPT1HRITable (hourly aggregations for role instances)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

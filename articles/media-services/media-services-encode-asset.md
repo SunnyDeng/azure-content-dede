@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Azure On-Demand Media Encoder – Übersicht und Vergleich" 
+	pageTitle="Azure On-Demand Media Encoder – Überblick und Vergleich" 
 	description="Dieses Thema bietet eine Übersicht und einen Vergleich über Azure On-Demand-Media Encoder." 
 	services="media-services" 
 	documentationCenter="" 
@@ -16,7 +16,7 @@
 	ms.date="10/29/2015"  
 	ms.author="juliako"/>
 
-#Azure On-Demand Media Encoder – Übersicht und Vergleich
+#Azure On-Demand Media Encoder – Überblick und Vergleich
 
 ##Übersicht über die Codierung
 
@@ -29,12 +29,12 @@ Media Services bietet dynamische Paketerstellung zum Übermitteln Ihrer MP4-Date
 Um die [dynamische Paketerstellung](media-services-dynamic-packaging-overview.md) nutzen zu können, müssen Sie folgende Schritte ausführen:
 
 - Codieren Ihrer Zwischendatei (Quelle) in einen Satz von MP4-Dateien oder Smooth Streaming-Dateien mit adaptiver Bitrate (die Codierungsschritte werden weiter unten in diesem Lernprogramm beschrieben)
-- Abrufen von mindestens einer On-Demand-Streamingeinheit für den Streamingendgerät, von dem aus Sie die Bereitstellung Ihrer Inhalte planen. Weitere Informationen finden Sie unter [Skalieren von reservierten Einheiten für bedarfsgesteuertes Streaming](media-services-manage-origins.md#scale_streaming_endpoints/).
+- Abrufen von mindestens einer On-Demand-Streamingeinheit für den Streamingendpunkt, von dem aus Sie die Bereitstellung Ihrer Inhalte planen. Weitere Informationen finden Sie unter [Skalieren von reservierten Einheiten für bedarfsgesteuertes Streaming](media-services-manage-origins.md#scale_streaming_endpoints/).
 
 Media Services unterstützt die folgenden On-Demand-Encoder, die in diesem Artikel beschrieben werden:
 
 - **Media Encoder Standard**
-- **Azure Media Encoder** 
+- **Azure Media Encoder**
 - **Media Encoder Premium Workflow**
 
 Dieser Artikel enthält eine kurze Übersicht über On-Demand-Media Encoder und stellt Links zu Artikeln bereit, die detailliertere Informationen bieten. Das Thema enthält auch einen Encodervergleich.
@@ -45,7 +45,7 @@ Beachten Sie, dass jedes Media Services-Konto standardmäßig je eine aktive Cod
 
 ###Übersicht
 
-Es wird empfohlen, den Media Encoder Standard-Encoder zu verwenden. Allerdings ist dieser über das Azure-Portal derzeit nicht verfügbar.
+Es wird empfohlen, den Media Encoder Standard-Encoder zu verwenden. Allerdings ist dieser über das klassische Azure-Portal derzeit nicht verfügbar.
 
 Im Vergleich zu Azure Media Encoder unterstützt dieser Encoder weitere Eingabe- und Ausgabeformate und Codecs. Weitere Vorteile sind:
 
@@ -142,9 +142,9 @@ Media Encoder Premium Workflow ist mit komplexen Workflows konfiguriert. Workflo
 
 Medienprozessorname|Geltende Preise|Hinweise
 ---|---|---
-**Media Encoder Standard** |ENCODER|Codieraufgaben werden gemäß der Summe der Größen von Ausgabeassets in GB berechnet, und zwar zur [hier][1] angegebenen Rate in der Spalte ENCODER.
-**Azure Media Encoder** |ENCODER|Codieraufgaben werden gemäß der Summe der Größen von Ausgabeassets in GB berechnet, und zwar zur [hier][1] angegebenen Rate in der Spalte ENCODER.
-**Media Encoder Premium Workflow** |PREMIUM ENCODER|Codieraufgaben werden gemäß der Summe der Größen von Ausgabeassets in GB berechnet, und zwar zur [hier][1] angegebenen Rate in der Spalte PREMIUM ENCODER.
+**Media Encoder Standard** |ENCODER|Codieraufgaben werden gemäß der Summe der Größen von Ausgabemedienobjekten in GB berechnet, und zwar zur [hier][1] angegebenen Rate in der Spalte ENCODER.
+**Azure Media Encoder** |ENCODER|Codieraufgaben werden gemäß der Summe der Größen von Ausgabemedienobjekten in GB berechnet, und zwar zur [hier][1] angegebenen Rate in der Spalte ENCODER.
+**Media Encoder Premium Workflow** |PREMIUM ENCODER|Codieraufgaben werden gemäß der Summe der Größen von Ausgabemedienobjekten in GB berechnet, und zwar zur [hier][1] angegebenen Rate in der Spalte PREMIUM ENCODER.
 
 
 In diesem Abschnitt werden die Codierungsfunktionen von **Media Encoder Standard**, **Azure Media Encoder** und **Media Encoder Premium Workflow** verglichen.
@@ -265,4 +265,4 @@ Windows Media Audio|Nein|Ja|Ja
 <!--Reference links in article-->
 [1]: http://azure.microsoft.com/pricing/details/media-services/
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

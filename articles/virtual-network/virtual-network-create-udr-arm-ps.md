@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="10/21/2015"
+   ms.date="11/20/2015"
    ms.author="telmos" />
 
 #Erstellen benutzerdefinierter Routen in PowerShell
@@ -38,29 +38,29 @@ Führen Sie zum Erstellen der Routingtabelle und der für das Front-End-Subnetz 
 
 3. Erstellen Sie eine Route, um den gesamten an das Back-End-Subnetz (192.168.2.0/24) gerichteten Datenverkehr an das virtuelle Gerät **FW1** (192.168.0.4) umzuleiten.
 
-		$route = New-AzureRouteConfig -Name RouteToBackEnd `
+		$route = New-AzureRmRouteConfig -Name RouteToBackEnd `
 		    -AddressPrefix 192.168.2.0/24 -NextHopType VirtualAppliance `
 		    -NextHopIpAddress 192.168.0.4
 
 4. Erstellen Sie in der Region **USA, Westen** eine Routingtabelle mit dem Namen **UDR-FrontEnd**, die die oben erstellte Route enthält.
 
-		$routeTable = New-AzureRouteTable -ResourceGroupName TestRG -Location westus `
+		$routeTable = New-AzureRmRouteTable -ResourceGroupName TestRG -Location westus `
 		    -Name UDR-FrontEnd -Route $route
 
 5. Erstellen Sie eine Variable, die das VNet mit dem Subnetz enthält. In diesem Szenario hat das VNET den Namen **TestVNet**.
 
-		$vnet = Get-AzureVirtualNetwork -ResourceGroupName TestRG -Name TestVNet
+		$vnet = Get-AzureRmVirtualNetwork -ResourceGroupName TestRG -Name TestVNet
 
 6. Ordnen Sie die oben erstellte Routingtabelle dem Subnetz **FrontEnd** zu.
 		
-		Set-AzureVirtualNetworkSubnetConfig -VirtualNetwork $vnet -Name FrontEnd `
+		Set-AzureRmVirtualNetworkSubnetConfig -VirtualNetwork $vnet -Name FrontEnd `
 			-AddressPrefix 192.168.1.0/24 -RouteTable $routeTable
 
 >[AZURE.WARNING]Die Ausgabe des obigen Befehls zeigt den Inhalt des Konfigurationsobjekts des virtuellen Netzwerks an, das nur auf dem Computer vorhanden ist, auf dem PowerShell ausgeführt wird. Zum Speichern der Änderungen in Azure müssen Sie das Cmdlet **Set-AzureVirtualNetwork** ausführen.
 
 7. Speichern Sie die neue Subnetzkonfiguration in Azure.
 
-		Set-AzureVirtualNetwork -VirtualNetwork $vnet
+		Set-AzureRmVirtualNetwork -VirtualNetwork $vnet
 
 	Erwartete Ausgabe:
 
@@ -115,23 +115,23 @@ Führen Sie zum Erstellen der Routingtabelle und der für das Back-End-Subnetz e
 
 1. Erstellen Sie eine Route, um den gesamten an das Front-End-Subnetz (192.168.1.0/24) gerichteten Datenverkehr an das virtuelle Gerät **FW1** (192.168.0.4) umzuleiten.
 
-		$route = New-AzureRouteConfig -Name RouteToFrontEnd `
+		$route = New-AzureRmRouteConfig -Name RouteToFrontEnd `
 		    -AddressPrefix 192.168.1.0/24 -NextHopType VirtualAppliance `
 		    -NextHopIpAddress 192.168.0.4
 
 4. Erstellen Sie in der Region **USA, Westen** eine Routingtabelle mit dem Namen **UDR-BackEnd**, die die oben erstellte Route enthält.
 
-		$routeTable = New-AzureRouteTable -ResourceGroupName TestRG -Location westus `
+		$routeTable = New-AzureRmRouteTable -ResourceGroupName TestRG -Location westus `
 		    -Name UDR-BackEnd -Route $route
 
 5. Ordnen Sie die oben erstellte Routingtabelle dem Subnetz **BackEnd** zu.
 
-		Set-AzureVirtualNetworkSubnetConfig -VirtualNetwork $vnet -Name BackEnd `
+		Set-AzureRmVirtualNetworkSubnetConfig -VirtualNetwork $vnet -Name BackEnd `
 			-AddressPrefix 192.168.2.0/24 -RouteTable $routeTable
 
 7. Speichern Sie die neue Subnetzkonfiguration in Azure.
 
-		Set-AzureVirtualNetwork -VirtualNetwork $vnet
+		Set-AzureRmVirtualNetwork -VirtualNetwork $vnet
 
 	Erwartete Ausgabe:
 
@@ -185,12 +185,12 @@ Führen Sie zum Aktivieren der IP-Weiterleitung in der von **FW1** verwendeten N
 
 1. Erstellen Sie eine Variable mit den Einstellungen für die von "FW1" verwendete Netzwerkkarte. In diesem Szenario hat die Netzwerkkarte die Bezeichnung **NICFW1**.
 
-		$nicfw1 = Get-AzureNetworkInterface -ResourceGroupName TestRG -Name NICFW1
+		$nicfw1 = Get-AzureRmNetworkInterface -ResourceGroupName TestRG -Name NICFW1
 
 2. Aktivieren Sie IP-Weiterleitung, und speichern Sie die Netzwerkkarteneinstellungen.
 
 		$nicfw1.EnableIPForwarding = 1
-		Set-AzureNetworkInterface -NetworkInterface $nicfw1
+		Set-AzureRmNetworkInterface -NetworkInterface $nicfw1
 
 	Erwartete Ausgabe:
 
@@ -236,4 +236,4 @@ Führen Sie zum Aktivieren der IP-Weiterleitung in der von **FW1** verwendeten N
 		NetworkSecurityGroup : null
 		Primary              : True
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

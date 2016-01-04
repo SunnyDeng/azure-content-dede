@@ -13,7 +13,7 @@
    ms.topic="article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/06/2015"
+   ms.date="12/04/2015"
    ms.author="cherylmc"/>
 
 # Erstellen und Ändern einer ExpressRoute-Verbindung mit dem Azure-Ressourcen-Manager und mit PowerShell
@@ -28,7 +28,7 @@ In diesem Artikel werden Sie durch die Schritte zum Erstellen einer ExpressRoute
 
 ## Konfigurationsvoraussetzungen
 
-- Sie benötigen die neueste Version der Azure PowerShell-Module, d. h. Version 1.0 oder höher. Befolgen Sie die Anleitung auf der Seite [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md). Sie erhalten dort eine Schritt-für-Schritt-Anleitung zum Konfigurieren des Computers für die Verwendung der Azure PowerShell-Module. 
+- Sie benötigen die neueste Version der Azure PowerShell-Module (also mindestens Version 1.0). Befolgen Sie die Anleitung auf der Seite [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md). Sie erhalten dort eine Schritt-für-Schritt-Anleitung zum Konfigurieren des Computers für die Verwendung der Azure PowerShell-Module. 
 - Stellen Sie sicher, dass Sie vor Beginn der Konfiguration die Seiten [Voraussetzungen](expressroute-prerequisites.md) und [Workflows](expressroute-workflows.md) gelesen haben.
 
 ## So können Sie eine ExpressRoute-Verbindung erstellen und bereitstellen
@@ -219,7 +219,7 @@ In diesem Artikel werden Sie durch die Schritte zum Erstellen einer ExpressRoute
 
 7. **Verknüpfen Sie ein VNet mit einer ExpressRoute-Verbindung.**
 
-	Verknüpfen Sie als Nächstes ein VNet mit der ExpressRoute-Verbindung. Eine Schritt-für-Schritt-Anleitung finden Sie unter [Verknüpfen von ExpressRoute-Verbindungen mit VNets](expressroute-howto-linkvnet-arm.md). Wenn Sie ein virtuelles Netzwerk für ExpressRoute erstellen möchten, hilft Ihnen die Anleitung unter [Erstellen eines virtuellen Netzwerks für ExpressRoute](expressroute-howto-createvnet-classic.md) weiter.
+	Verknüpfen Sie als Nächstes ein VNet mit der ExpressRoute-Verbindung. Sie können für die Arbeit mit dem Azure-Ressourcen-Manager-Bereitstellungsmodus [diese Vorlage](https://github.com/Azure/azure-quickstart-templates/tree/ecad62c231848ace2fbdc36cbe3dc04a96edd58c/301-expressroute-circuit-vnet-connection) verwenden. Wir arbeiten derzeit mit PowerShell-Schritten.
 
 ##  So rufen Sie den Status einer ExpressRoute-Verbindung ab
 
@@ -356,6 +356,5 @@ Wenn der Service Provider die Bereitstellung der Verbindung aufgehoben hat (Bere
 ## Nächste Schritte
 
 - [Konfigurieren des Routings](expressroute-howto-routing-arm.md)
-- [Verknüpfen eines VNet mit einer ExpressRoute-Verbindung](expressroute-howto-linkvnet-arm.md) 
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

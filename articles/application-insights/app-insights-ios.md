@@ -1,10 +1,10 @@
 <properties
-    pageTitle="Application Insights für iOS-Apps | Microsoft Azure"
-    description="Analysieren Sie die Nutzung und Leistung Ihrer iOS-App mit Application Insights."
+    pageTitle="Analysen für iOS-Apps | Microsoft Azure"
+    description="Analysieren Sie die Nutzung und Leistung Ihrer iOS-App."
     services="application-insights"
     documentationCenter="ios"
     authors="alancameronwills"
-    manager="ronmart"/>
+    manager="douge"/>
 
 <tags
     ms.service="application-insights"
@@ -12,129 +12,20 @@
     ms.tgt_pltfrm="ibiza"
     ms.devlang="na"
     ms.topic="get-started-article"
-    ms.date="04/27/2015"
+    ms.date="11/17/2015"
     ms.author="awills"/>
 
-# Application Insights für iOS-Apps
+# Analysen für iOS-Apps
 
-Mit Visual Studio Application Insights können Sie Ihre mobile Anwendung auf Nutzung, Ereignisse und Abstürze überwachen.
+Microsoft bietet zwei DevOps-Lösungen für Geräte: [HockeyApp](http://hockeyapp.net/) für DevOps-Workflow- und -Absturzanalysen und [Application Insights](app-insights-overview.md) für Nutzungs- und Absturzanalysen.
 
-## Anforderungen
-
-Sie benötigen Folgendes:
-
-* Ein Abonnement für [Microsoft Azure](http://azure.com). Sie melden sich mit einem Microsoft-Konto an, das Sie möglicherweise für Windows, XBox Live oder andere Microsoft-Clouddienste verwenden.
-* Xcode 6 oder höher.
-* Das SDK wird auf Geräten unter iOS 6.0 oder höher ausgeführt.
-
-## Erstellen einer Application Insights-Ressource
-
-Erstellen Sie im [Azure-Portal][portal] eine neue Application Insights-Ressource. Wählen Sie die iOS-Option.
-
-![Wählen Sie "Neu", "Entwicklerdienste", "Application Insights".](./media/app-insights-ios/11-new.png)
-
-Auf dem nun geöffneten Blatt werden die Leistungs- und Nutzungsdaten über Ihre App angezeigt. Um bei der nächsten Anmeldung bei Azure dorthin zu gelangen, sollten Sie eine Kachel auf dem Startbildschirm anlegen. Klicken Sie alternativ auf "Durchsuchen", um das Blatt zu finden.
-
-## Herunterladen von Application Insights für Mac
-
-(Falls Sie dies noch nicht durchgeführt haben.)
-
-1. Laden Sie [Application Insights für Mac](http://go.microsoft.com/fwlink/?LinkID=533209) herunter.
-
-2. Extrahieren Sie die ZIP-Datei.
-
-3. Klicken Sie auf das App-Symbol, um Application Insights für Mac zu starten.
-
-## <a name="signin"></a>Anmelden bei Azure
-
-1. Klicken Sie auf **Anmelden**.
-
-2. Melden Sie sich mit Ihrem Azure-Konto an.
-
-## Installieren des SDK in Ihrer Anwendung
-
-1. Klicken Sie auf **Integrieren**, um die SDK-Integration zu starten.
-
-2. Wählen Sie Ihr Xcode-Projekt in der Liste aus, oder klicken Sie auf **Open Other**, um das Projekt zu suchen, und klicken Sie dann auf **Integrieren**.
-
-3. Wählen Sie den Ordner für das Application Insights-SDK aus, und klicken Sie auf **Installieren**.
-
-4. Fügen Sie Ihren Buildphasen das folgende Ausführungsskript hinzu: [Add Run Script Phase](http://hockeyapp.net/help/runscriptbuildphase/).
-
-5. Fügen Sie dem Xcode-Projekt die fehlenden Frameworks hinzu.
-
-6. Ziehen Sie das Application Insights-Framework in das Xcode-Projekt, und klicken Sie dann auf **Weiter**.
-
-7. Wählen Sie für Ihr Ziel die Option **Integrate SDK into Target** aus.
-
-8. Klicken Sie auf **Neue Komponente erstellen**, um Ihre App im Application Insights-Portal zu erstellen.
-
-9. Wählen Sie Ihr Abonnement und die Ressourcengruppe aus, und geben Sie einen Komponentennamen ein. In den meisten Fällen sollte dieser dem Namen Ihrer App entsprechen. Bestätigen Sie den Vorgang mit der Schaltfläche **Ressource erstellen**.
-
-10. Stellen Sie sicher, dass die richtige Komponente ausgewählt ist, und klicken Sie auf **Weiter**.
-
-11. Ändern Sie den Quellcode entsprechend den Angaben im Assistenten, und klicken Sie dann auf **Fertig stellen**.
-
-12. Starten Sie Ihre App im iOS-Simulator mit **Erstellen und ausführen**.
-
-## Einfügen von Telemetrieaufrufen
-
-Wenn `[MSAIApplicationInsights start]` aufgerufen wird, beginnt das SDK mit dem Nachverfolgen von Sitzungen, Seitenaufrufen sowie unbehandelten Ausnahmen oder Abstürzen.
-
-Sie können zusätzliche Ereignisse wie folgt hinzufügen:
-
-    // Send an event with custom properties and measuremnts data
-    [MSAITelemetryManager trackEventWithName:@"Hello World event!"
-                                  properties:@{@"Test property 1":@"Some value",
-                                             @"Test property 2":@"Some other value"}
-                                 measurements:@{@"Test measurement 1":@(4.8),
-                                             @"Test measurement 2":@(15.16),
-                                             @"Test measurement 3":@(23.42)}];
-
-    // Send a message
-    [MSAITelemetryManager trackTraceWithMessage:@"Test message"];
-
-    // Manually send pageviews (note: this will also be done automatically)
-    [MSAITelemetryManager trackPageView:@"MyViewController"
-                               duration:300
-                             properties:@{@"Test measurement 1":@(4.8)}];
-
-    // Send custom metrics
-    [MSAITelemetryManager trackMetricWithName:@"Test metric"
-                                        value:42.2];
-
-## Anzeigen Ihrer Daten in Application Insights
-
-Kehren Sie zu http://portal.azure.com zurück, und navigieren Sie zur Application Insights-Ressource.
-
-Klicken Sie auf **Suchen**, um [Diagnosesuche][diagnostic] zu öffnen. Dort werden die ersten Ereignisse angezeigt. Wenn keine Ereignisse angezeigt werden, warten Sie eine oder zwei Minuten, und klicken Sie dann auf **Aktualisieren**.
-
-![Klicken Sie auf "Diagnosesuche".](./media/app-insights-ios/21-search.png)
-
-Während Ihre App verwendet wird, werden die Daten auf dem Blatt "Übersicht" angezeigt.
-
-![Blatt "Übersicht"](./media/app-insights-ios/22-oview.png)
-
-Klicken Sie auf ein beliebiges Diagramm, um weitere Details zu erhalten. Zum Beispiel zu Abstürzen:
-
-![Klicken Sie auf das Absturzdiagramm.](./media/app-insights-ios/23-crashes.png)
-## <a name="usage"></a>Nächste Schritte
-
-[Nachverfolgen der Nutzung Ihrer App][track]
-
-[Diagnosesuche][diagnostic]
-
-[Metrik-Explorer][metrics]
-
-[Problembehandlung][qna]
+[HockeyApp](http://hockeyapp.net/) ist unsere mobile DevOps-Lösung für das Erstellen von Apps auf iOS-, OS X-, Android- und Windows-Geräten sowie für plattformübergreifende Apps, die auf Xamarin, Cordova und Unity basieren. Mit dieser Lösung können Sie Builds an Betatester verteilen, Daten sammeln und Benutzerfeedback erhalten. Sie ist in Visual Studio Team Services integriert und ermöglicht einfache Bereitstellungen von Builds und die Integration von Arbeitsaufgaben. In der [HockeyApp Knowledge Base](http://support.hockeyapp.net/kb) finden Sie weitere Informationen. Über den [Blog zu HockeyApp](http://hockeyapp.net/blog/) bleiben Sie auf dem Laufenden.
 
 
-<!--Link references-->
+Nutzen Sie das [Application Insights SDK für iOS](https://github.com/Microsoft/ApplicationInsights-iOS) für Nutzungsanalysen. Wenn Ihre App serverseitige Komponenten aufweist, können Sie die Client- und Serverdaten an die gleiche Application Insights-Ressource senden.
 
-[diagnostic]: app-insights-diagnostic-search.md
-[metrics]: app-insights-metrics-explorer.md
-[portal]: http://portal.azure.com/
-[qna]: app-insights-troubleshoot-faq.md
-[track]: app-insights-api-custom-events-metrics.md
 
-<!---HONumber=Oct15_HO3-->
+* [Erste Schritte mit Application Insights für iOS](https://github.com/Microsoft/ApplicationInsights-iOS).
+* [Erste Schritte mit HockeyApp für Android](http://support.hockeyapp.net/kb/client-integration-ios-mac-os-x/hockeyapp-for-ios).
+
+<!---HONumber=AcomDC_1203_2015-->

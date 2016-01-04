@@ -1,7 +1,7 @@
 <properties
 	pageTitle="Verwenden der Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager | Microsoft Azure"
-	description="Erfahren Sie, wie Sie mit der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows Azure-Ressourcen mithilfe des Azure Ressourcen-Manager-Modus verwalten."
-	services="virtual-machines,mobile-services,cloud-services"
+	description="Erfahren Sie, wie Sie mit der Azure-Befehlszeilenschnittstelle für Mac, Linux und Microsoft Azure-Ressourcen mithilfe des Azure Ressourcen-Manager-Modus verwalten."
+	services="virtual-machines,virtual-network,mobile-services,cloud-services"
 	documentationCenter=""
 	authors="dlepow"
 	manager="timlt"
@@ -14,14 +14,14 @@
 	ms.tgt_pltfrm="command-line-interface"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/07/2015"
+	ms.date="11/18/2015"
 	ms.author="danlep"/>
 
 # Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Azure-Ressourcen-Manager
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](virtual-machines-command-line-tools.md)
 
-In diesem Artikel wird beschrieben, wie Sie mithilfe der Azure-Befehlszeilenschnittstelle (Azure CLI) im Azure-Ressourcen-Manager-Modus Dienste über die Befehlszeile von Windows-, Mac- und Linux-Computern erstellen, verwalten und löschen können. Sie können zahlreiche der gleichen Aufgaben mithilfe der verschiedenen Bibliotheken der Azure SDKs, mit Azure PowerShell und über das Azure-Vorschauportal ausführen.
+In diesem Artikel wird beschrieben, wie Sie mithilfe der Azure-Befehlszeilenschnittstelle (Azure CLI) im Azure-Ressourcen-Manager-Modus Dienste über die Befehlszeile von Windows-, Mac- und Linux-Computern erstellen, verwalten und löschen können. Sie können viele dieser Aufgaben mithilfe der verschiedenen Bibliotheken der Azure-SDKs, mit Azure PowerShell und über das Azure-Portal ausführen.
 
 Azure-Ressourcen-Manager ermöglicht Ihnen, eine Gruppe von Ressourcen – virtuelle Computer, Websites, Datenbanken usw. – als einzelne bereitstellbare Einheit zu erstellen. Sie können dann alle Ressourcen für Ihre Anwendung in einem einzigen, koordinierten Vorgang bereitstellen, aktualisieren oder löschen. Für die Bereitstellung beschreiben Sie die Gruppenressourcen in einer JSON-Vorlage, die Sie dann für unterschiedliche Umgebungen, wie z. B. Test, Staging und Produktion, verwenden können.
 
@@ -45,16 +45,16 @@ Die Einrichtungsanforderungen für die Verwendung des Ressourcen-Manager-Modus m
 
 - ein Azure-Konto ([hier erhalten Sie eine kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/))
 - [Installation der Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md)
-- [Konfiguration der Azure-Befehlszeilenschnittstelle](../xplat-cli-connect.md) zum Verwenden einer Azure Active Directory-Identität oder eines Dienstprinzipals
+
 
 Sobald Sie über ein Konto verfügen, und die Azure-Befehlszeilenschnittstelle installiert haben, müssen Sie
 
-- Wechseln Sie durch Eingabe von `azure config mode arm` in den Ressourcen-Manager-Modus.
-- Melden Sie sich bei Ihrem Azure-Konto durch Eingabe von `azure login` an, und geben Sie an den Eingabeaufforderungen Ihre Geschäfts- oder Schulidentität ein.
+- mit einem Geschäfts- oder Schul-Konto oder einer Microsoft-Kontoidentität [die Azure-Befehlszeilenschnittstelle konfigurieren](../xplat-cli-connect.md) 
+- durch Eingabe von `azure config mode arm` in den Ressourcen-Manager-Modus wechseln
 
 
-## azure account: Verwalten Ihrer Kontoinformationen und Veröffentlichen von Einstellungen
-Das Tool verwendet Ihre Azure-Kontoinformationen, um sich mit Ihrem Benutzerkonto zu verbinden. Sie finden diese Informationen im Azure-Portal in einer Einstellungsveröffentlichungsdatei, wie hier beschrieben. Sie können die Einstellungsveröffentlichungsdatei als persistente lokale Konfigurationseinstellung importieren, die das Tool dann in späteren Operationen verwendet. Sie müssen Ihre Veröffentlichungseinstellungen nur einmal importieren.
+## Azure-Konto: Verwalten Ihrer Kontoinformationen
+Das Tool verwendet Ihre Azure-Kontoinformationen, um sich mit Ihrem Benutzerkonto zu verbinden.
 
 **Auflisten der importierten Abonnements**
 
@@ -1252,18 +1252,19 @@ Erstellt eine öffentliche IP-Ressource. Sie erstellen die öffentliche IP-Resso
 
 
 Parameteroptionen:
-	-h, --help                                  output usage information
+
+	-h, --help                                   output usage information
 	-v, --verbose                                use verbose output
 	--json                                       use json output
 	-g, --resource-group <resource-group>        the name of the resource group
 	-n, --name <name>                            the name of the public ip
 	-l, --location <location>                    the location
 	-d, --domain-name-label <domain-name-label>  the domain name label.
-	Dies legt DNS auf <domain-name-label>.<location>.cloudapp.azure.com fest.
-	-a, --allocation-method <allocation-method>  die Zuordnungsmethode[Static][Dynamic]
-	-i, --idletimeout <idletimeout>              das Leerlauftimeout in Minuten
-	-f, --reverse-fqdn <reverse-fqdn>            der Reverse-FQDN
-	-t, --tags <tags>                            die Tagliste.
+	This set DNS to <domain-name-label>.<location>.cloudapp.azure.com
+	-a, --allocation-method <allocation-method>  the allocation method [Static][Dynamic]
+	-i, --idletimeout <idletimeout>              the idle timeout in minutes
+	-f, --reverse-fqdn <reverse-fqdn>            the reverse fqdn
+	-t, --tags <tags>                            the list of tags.
 	Can be multiple. In the format of "name=value".
 	Name is required and value is optional.
 	For example, -t tag1=value1;tag2
@@ -1759,4 +1760,123 @@ Parameteroptionen:
 	vm image list-skus [options] <location> <publisher> <offer>
 	vm image list [options] <location> <publisher> [offer] [sku]
 
-<!---HONumber=Nov15_HO3-->
+## azure hdinsight: Befehle für das Verwalten von HDInsight-Clustern
+
+**Befehle zum Erstellen oder Hinzufügen einer Cluster-Konfigurationsdatei**
+
+	hdinsight config create [options] <configFilePath> <overwrite>
+	hdinsight config add-config-values [options] <configFilePath>
+	hdinsight config add-script-action [options] <configFilePath>
+
+Beispiel: Erstellen einer Konfigurationsdatei mit einer Skriptaktion, die beim Erstellen eines Clusters ausgeführt wird.
+
+	hdinsight config create "C:\myFiles\configFile.config"
+	hdinsight config add-script-action --configFilePath "C:\myFiles\configFile.config" --nodeType HeadNode --uri <scriptActionURI> --name myScriptAction --parameters "-param value"
+
+**Befehl zum Erstellen eines Clusters in einer Ressourcengruppe**
+
+	hdinsight cluster create [options] <clusterName>
+	 
+Beispiel: Erstellen eines Storm-auf-Linux-Clusters
+
+	azure hdinsight cluster create -g mahirg001 -l westus -y Linux --clusterType Storm --version 3.2 --defaultStorageAccountName mystorageaccount --defaultStorageAccountKey <defaultStorageAccountKey> --defaultStorageContainer mycontainer --userName admin --password <clusterPassword> --sshUserName sshuser --sshPassword <sshPassword> --workerNodeCount 1 myNewCluster01
+	
+	info:    Executing command hdinsight cluster create
+	+ Submitting the request to create cluster...
+	info:    hdinsight cluster create command OK
+
+Beispiel: Erstellen eines Clusters mit einer Skriptaktion
+
+	azure hdinsight cluster create -g mahirg001 -l westus -y Linux --clusterType Hadoop --version 3.2 --defaultStorageAccountName mystorageaccount --defaultStorageAccountKey <defaultStorageAccountKey> --defaultStorageContainer mycontainer --userName admin --password <clusterPassword> --sshUserName sshuser --sshPassword <sshPassword> --workerNodeCount 1 –configurationPath "C:\myFiles\configFile.config" myNewCluster01
+	
+	info:    Executing command hdinsight cluster create
+	+ Submitting the request to create cluster...
+	info:    hdinsight cluster create command OK
+	
+Parameteroptionen:
+
+	-h, --help                                                 output usage information
+	-v, --verbose                                              use verbose output
+	-vv                                                        more verbose with debug output
+	--json                                                     use json output
+	-g --resource-group <resource-group>                       The name of the resource group
+	-c, --clusterName <clusterName>                            HDInsight cluster name
+	-l, --location <location>                                  Data center location for the cluster
+	-y, --osType <osType>                                      HDInsight cluster operating system
+	'Windows' or 'Linux'
+	--version <version>                                        HDInsight cluster version
+	--clusterType <clusterType>                                HDInsight cluster type.
+	Hadoop | HBase | Spark | Storm
+	--defaultStorageAccountName <storageAccountName>           Storage account url to use for default HDInsight storage
+	--defaultStorageAccountKey <storageAccountKey>             Key to the storage account to use for default HDInsight storage
+	--defaultStorageContainer <storageContainer>               Container in the storage account to use for HDInsight default storage
+	--headNodeSize <headNodeSize>                              (Optional) Head node size for the cluster
+	--workerNodeCount <workerNodeCount>                        Number of worker nodes to use for the cluster
+	--workerNodeSize <workerNodeSize>                          (Optional) Worker node size for the cluster)
+	--zookeeperNodeSize <zookeeperNodeSize>                    (Optional) Zookeeper node size for the cluster
+	--userName <userName>                                      Cluster username
+	--password <password>                                      Cluster password
+	--sshUserName <sshUserName>                                SSH username (only for Linux clusters)
+	--sshPassword <sshPassword>                                SSH password (only for Linux clusters)
+	--sshPublicKey <sshPublicKey>                              SSH public key (only for Linux clusters)
+	--rdpUserName <rdpUserName>                                RDP username (only for Windows clusters)
+	--rdpPassword <rdpPassword>                                RDP password (only for Windows clusters)
+	--rdpAccessExpiry <rdpAccessExpiry>                        RDP access expiry.
+	For example 12/12/2015 (only for Windows clusters)
+	--virtualNetworkId <virtualNetworkId>                      (Optional) Virtual network ID for the cluster. 
+	Value is a GUID for Windows cluster and ARM resource ID for Linux cluster)
+	--subnetName <subnetName>                                  (Optional) Subnet for the cluster
+	--additionalStorageAccounts <additionalStorageAccounts>    (Optional) Additional storage accounts.
+	Can be multiple.
+	In the format of 'accountName#accountKey'.
+	For example, --additionalStorageAccounts "acc1#key1;acc2#key2"
+	--hiveMetastoreServerName <hiveMetastoreServerName>        (Optional) SQL Server name for the external metastore for Hive
+	--hiveMetastoreDatabaseName <hiveMetastoreDatabaseName>    (Optional) Database name for the external metastore for Hive
+	--hiveMetastoreUserName <hiveMetastoreUserName>            (Optional) Database username for the external metastore for Hive
+	--hiveMetastorePassword <hiveMetastorePassword>            (Optional) Database password for the external metastore for Hive
+	--oozieMetastoreServerName <oozieMetastoreServerName>      (Optional) SQL Server name for the external metastore for Oozie
+	--oozieMetastoreDatabaseName <oozieMetastoreDatabaseName>  (Optional) Database name for the external metastore for Oozie
+	--oozieMetastoreUserName <oozieMetastoreUserName>          (Optional) Database username for the external metastore for Oozie
+	--oozieMetastorePassword <oozieMetastorePassword>          (Optional) Database password for the external metastore for Oozie
+	--configurationPath <configurationPath>                    (Optional) HDInsight cluster configuration file path
+	-s, --subscription <id>                                    The subscription id
+	--tags <tags>                                              Tags to set to the cluster.
+	Can be multiple.
+	In the format of 'name=value'.
+	Name is required and value is optional.
+	For example, --tags tag1=value1;tag2
+
+
+**Befehl zum Löschen eines Clusters**
+
+	hdinsight cluster delete [options] <clusterName>
+
+**Befehl zum Anzeigen von Clusterdetails**
+
+	hdinsight cluster show [options] <clusterName>
+
+**Befehl zum Auflisten aller Cluster (in einer bestimmten Ressourcengruppe, falls angegeben)**
+
+	hdinsight cluster list [options]
+
+**Befehl zur Größenänderung eines Clusters**
+
+	hdinsight cluster resize [options] <clusterName> <targetInstanceCount>
+
+**Befehl zum Aktivieren des HTTP-Zugriffs für einen Cluster**
+
+	hdinsight cluster enable-http-access [options] <clusterName> <userName> <password>
+
+**Befehl zum Deaktivieren des HTTP-Zugriffs für einen Cluster**
+
+	hdinsight cluster disable-http-access [options] <clusterName>
+
+**Befehl zum Aktivieren des RDP-Zugriffs für einen Cluster**
+
+	hdinsight cluster enable-rdp-access [options] <clusterName> <rdpUserName> <rdpPassword> <rdpExpiryDate>
+
+**Befehl zum Deaktivieren des HTTP-Zugriffs für einen Cluster**
+
+	hdinsight cluster disable-rdp-access [options] <clusterName>
+
+<!----HONumber=AcomDC_1217_2015-->

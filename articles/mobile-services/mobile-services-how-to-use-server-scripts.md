@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="javascript" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="08/17/2015" 
+	ms.date="12/01/2015" 
 	ms.author="ricksal"/>
 
 
@@ -89,7 +89,7 @@ Jedes Serverskript hat eine main-Funktion und weitere optionale Hilfsfunktionen.
 
 Sie können Serverskripts, die für einen Tabellenvorgang registriert sind, auf folgende Arten definieren:
 
-+ Im [Azure-Verwaltungsportal][Management Portal]. Sie finden die Skripts für Tabellenvorgänge in der Registerkarte **Skripts** für eine bestimmte Tabelle. Hier sehen Sie den Standardcode, der für das Insert-Skript der Tabelle `TodoItem` registriert ist. Sie können diesen Code mit Ihrer eigenen benutzerdefinierten Geschäftslogik überschreiben.
++ Im [klassischen Azure-Portal]. Sie finden die Skripts für Tabellenvorgänge in der Registerkarte **Skripts** für eine bestimmte Tabelle. Hier sehen Sie den Standardcode, der für das Insert-Skript der Tabelle `TodoItem` registriert ist. Sie können diesen Code mit Ihrer eigenen benutzerdefinierten Geschäftslogik überschreiben.
 
 	![1][1]
 	
@@ -289,7 +289,7 @@ In JavaScript ist dies eine kompakte Version des folgenden Codes:
 
 ###<a name="work-with-users"></a>Gewusst wie: Arbeiten mit Benutzern
 
-In Azure Mobile Services können Sie Benutzer mithilfe von Identitätsanbietern authentifizieren. Weitere Informationen finden Sie unter [Erste Schritte mit der Authentifizierung]. Wenn ein authentifizierter Benutzer einen Tabellenvorgang aufruft, verwendet Mobile Services das [Benutzerobjekt], um Informationen über den Benutzer an die registrierte Skriptfunktion zu liefern. Die **userId**-Eigenschaft kann zum Speichern und Abrufen benutzerspezifischer Informationen verwendet werden. Im folgenden Beispiel wird die owner-Eigenschaft eines Elements anhand der userId eines authentifizierten Benutzers gesetzt:
+In Azure Mobile Services können Sie Benutzer mithilfe von Identitätsanbietern authentifizieren. Weitere Informationen finden Sie unter [Erste Schritte mit der Authentifizierung]. Wenn ein authentifizierter Benutzer einen Tabellenvorgang aufruft, verwendet Mobile Services das [Benutzerobjekt], um Informationen über den Benutzer an die registrierte Skriptfunktion zu liefern. Die **userId**-Eigenschaft kann zum Speichern und Abrufen benutzerspezifischer Informationen verwendet werden. Im folgenden Beispiel wird die owner-Eigenschaft eines Elements anhand der **userId** eines authentifizierten Benutzers gesetzt:
 
 	function insert(item, user, request) {
 	    item.owner = user.userId;
@@ -336,7 +336,7 @@ Der globale Status bleibt zwischen Ausführungen erhalten.
 
 Sie können Serverskripts, die für HTTP-Methoden in einem Endpunkt einer benutzerdefinierten API registriert sind, auf folgende Arten definieren:
 
-+ Im [Azure-Verwaltungsportal][Management Portal]. Skripts für benutzerdefinierte APIs werden in der Registerkarte **API** erstellt und bearbeitet. Der Serverskript-Code befindet sich in der Registerkarte **Skripts** der jeweiligen benutzerdefinierten API. Im Folgenden wird das Skript gezeigt, das durch eine POST-Anforderung an den Endpunkt der benutzerdefinierten `CompleteAll`-API aufgerufen wird. 
++ Im [klassischen Azure-Portal]. Skripts für benutzerdefinierte APIs werden in der Registerkarte **API** erstellt und bearbeitet. Der Serverskript-Code befindet sich in der Registerkarte **Skripts** der jeweiligen benutzerdefinierten API. Im Folgenden wird das Skript gezeigt, das durch eine POST-Anforderung an den Endpunkt der benutzerdefinierten `CompleteAll`-API aufgerufen wird. 
 
 	![2][2]
 	
@@ -378,7 +378,7 @@ Sie können diese Funktion aufrufen, indem Sie eine HTTP GET-Anforderung an den 
 
 In Azure Mobile Services können Sie Benutzer mithilfe von Identitätsanbietern authentifizieren. Weitere Informationen finden Sie unter [Get started with authentication] (Erste Schritte zur Authentifizierung, in englischer Sprache). Wenn ein authentifizierter Benutzer eine benutzerdefinierte API aufruft, verwendet Mobile Services das [Benutzerobjekt], um Informationen über den Benutzer an den Code der benutzerdefinierten API zu liefern. Das [Benutzerobjekt] ist über die user-Eigenschaft des [Anforderungsobjekts] zugänglich. Die **userId**-Eigenschaft kann zum Speichern und Abrufen benutzerspezifischer Informationen verwendet werden.
 
-In der folgenden **OrderPizza**-Funktion einer benutzerdefinierten API wird die owner-Eigenschaft eines Elements anhand der userId eines authentifizierten Benutzers gesetzt:
+In der folgenden **OrderPizza**-Funktion einer benutzerdefinierten API wird die owner-Eigenschaft eines Elements anhand der **userId** eines authentifizierten Benutzers gesetzt:
 
 		exports.post = function(request, response) {
 			var userTable = request.service.tables.getTable('user');
@@ -443,17 +443,17 @@ Die beiden Routen im obigen Beispiel für eine benutzerdefinierte API können wi
 
 ##<a name="scheduler-scripts"></a>Auftragsplaner
 
-Mit Mobile Services können Sie Serverskripts definieren, die entweder als Aufträge nach festem Zeitplan oder bedarfsgesteuert über das Verwaltungsportal ausgeführt werden können. Planmäßige Aufträge sind hilfreich für periodische Aufgaben wie z. B: Aufräumvorgänge in Tabellendaten und Batchverarbeitungen. Weitere Informationen finden Sie unter [Geplante Aufträge].
+Mit Mobile Services können Sie Serverskripts definieren, die entweder als Aufträge nach festem Zeitplan oder bedarfsgesteuert über das klassische Azure-Portal ausgeführt werden können. Planmäßige Aufträge sind hilfreich für periodische Aufgaben wie z. B: Aufräumvorgänge in Tabellendaten und Batchverarbeitungen. Weitere Informationen finden Sie unter [Geplante Aufträge].
 
 Skripts, die für geplante Aufträge registriert sind, haben eine Hauptfunktion mit demselben Namen wie der geplante Auftrag. Da geplante Aufträge nicht über HTTP-Anforderungen aufgerufen werden, existiert kein Kontext, der von der Server-Runtime übergeben werden kann, und die Funktion nimmt keine Parameter entgegen. Wie auch andere Skriptarten können Sie Unterfunktionen definieren und freigegebene Module einbinden. Weitere Informationen finden Sie unter [Quellcodeverwaltung, freigegebener Code und Hilfsfunktionen].
 
 ###<a name="scheduler-scripts"></a>Gewusst wie: Definieren geplanter Auftragsskripts
 
-Serverskripts können Aufträgen zugewiesen werden, die im Mobile Service-Scheduler definiert sind. Diese Skripts gehören zum jeweiligen Auftrag und werden nach Auftragsplaner ausgeführt. (Sie können Aufträge auch über das [Verwaltungsportal] bei Bedarf ausführen.) Skripts, die geplante Aufträge definieren, haben keine Parameter, da Mobile Services keine Daten an sie übergeben. Sie werden stattdessen als normale JavaScript-Funktion aufgerufen und interagieren nicht direkt mit Mobile Services.
+Serverskripts können Aufträgen zugewiesen werden, die im Mobile Service-Scheduler definiert sind. Diese Skripts gehören zum jeweiligen Auftrag und werden nach Auftragsplaner ausgeführt. (Sie können Aufträge auch über das [klassische Azure-Portal] bei Bedarf ausführen.) Skripts, die geplante Aufträge definieren, haben keine Parameter, da Mobile Services keine Daten an sie übergeben. Sie werden stattdessen als normale JavaScript-Funktion aufgerufen und interagieren nicht direkt mit Mobile Services.
 
 Geplante Aufträge können auf zwei Arten definiert werden:
 
-+ Im [Azure-Verwaltungsportal][Management Portal] in der Registerkarte **Skript** im Scheduler:
++ Im [klassischen Azure-Portal] auf der Registerkarte **Skript** im Scheduler:
 
 	![3][3]
 
@@ -924,7 +924,7 @@ Debugging und Problembehandlung Ihrer Serverskript erledigen Sie am Besten, inde
 
 Verwenden Sie das globale [Konsolenobjekt], um in die Protokolle zu schreiben. Mit den Funktionen **log** oder **info** können Sie Warnungen auf der Informationsebene schreiben. Die Funktionen **warning** und **error** schreiben Einträge auf ihrer jeweiligen Ebene, die in den Protokollen hervorgehoben werden.
 
-> [AZURE.NOTE]Um die Protokolle für Ihren Mobile Service anzuzeigen, melden Sie sich am [Verwaltungsportal](https://manage.windowsazure.com/) an, wählen Sie Ihren Mobile Service aus und öffnen Sie die Registerkarte **Protokolle**.
+> [AZURE.NOTE]Um die Protokolle für Ihren Mobile Service anzuzeigen, melden Sie sich beim [klassischen Azure-Portal](https://manage.windowsazure.com/) an, wählen Sie Ihren Mobile Service aus, und wählen Sie die Registerkarte **Protokolle** aus.
 
 Sie können außerdem die Protokollfunktionen des [Konsolenobjekts] verwenden, um Ihre Nachrichten mithilfe von Parametern zu formatieren. Im folgenden Beispiel wird ein JSON-Objekt als Parameter an die Nachrichten-Zeichenfolge übergeben:
 
@@ -1023,8 +1023,8 @@ Um Ihr Protokoll nicht zu überladen, sollten Sie Aufrufe von console.log() entf
 [Überprüfen von Daten]: http://msdn.microsoft.com/library/windowsazure/jj631638.aspx
 [Ändern der Anforderung]: http://msdn.microsoft.com/library/windowsazure/jj631635.aspx
 [Ändern der Antwort]: http://msdn.microsoft.com/library/windowsazure/jj631631.aspx
-[Management Portal]: https://manage.windowsazure.com/
-[Verwaltungsportal]: https://manage.windowsazure.com/
+[klassische Azure-Portal]: https://manage.windowsazure.com/
+[klassischen Azure-Portal]: https://manage.windowsazure.com/
 [Geplante Aufträge]: http://msdn.microsoft.com/library/windowsazure/jj860528.aspx
 [Validate and modify data in Mobile Services by using server scripts]: /develop/mobile/tutorials/validate-modify-and-augment-data-dotnet/
 [Commands to manage Azure Mobile Services]: ../virtual-machines-command-line-tools.md#Mobile_Scripts
@@ -1056,4 +1056,4 @@ Um Ihr Protokoll nicht zu überladen, sollten Sie Aufrufe von console.log() entf
 [Support for package.json in Azure Mobile Services]: http://go.microsoft.com/fwlink/p/?LinkId=391036
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

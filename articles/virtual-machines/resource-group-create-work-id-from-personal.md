@@ -14,25 +14,24 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure"
-   ms.date="09/01/2015"
+   ms.date="12/08/2015"
    ms.author="rasquill"/>
 
 # Erstellen von Arbeits- oder Schulidentitäten in Azure Active Directory
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
-Wenn Sie ein persönliches Azure-Konto erstellt oder ein persönliches MSDN-Abonnement besitzen und das Azure-Konto erstellt haben, um das MSDN Azure-Guthaben nutzen zu können, haben Sie zum Erstellen als Identität ein *Microsoft-Konto* verwendet. Viele hervorragende Funktionen von Azure – beispielsweise [Ressourcengruppenvorlagen](../resource-group-overview.md) – erfordern ein Arbeits- oder Schulkonto (eine Identität, die von Azure Active Directory verwaltet wird).
+Wenn Sie ein persönliches Azure-Konto erstellt oder ein persönliches MSDN-Abonnement besitzen und das Azure-Konto erstellt haben, um das MSDN Azure-Guthaben nutzen zu können, haben Sie zum Erstellen als Identität ein *Microsoft-Konto* verwendet. Viele hervorragende Funktionen von Azure – beispielsweise [Ressourcengruppenvorlagen](../resource-group-overview.md) – erfordern ein Arbeits- oder Schulkonto (eine Identität, die von Azure Active Directory verwaltet wird). Zum Erstellen eines neuen Geschäfts- oder Schulkontos können Sie die Anweisungen unten befolgen, da einer der größten Vorteile Ihres persönlichen Azure-Kontos glücklicherweise darin liegt, dass eine Azure Active Directory-Standarddomäne enthalten ist, mit der Sie ein neues Arbeits- oder Schulkonto für die Azure-Funktionen, die dies erfordern, erstellen können.
 
-
-Glücklicherweise ist einer der größten Vorteile Ihres persönlichen Azure-Kontos, dass eine Azure Active Directory-Standarddomäne enthalten ist, mit der Sie ein neues Arbeits- oder Schulkonto für die Azure-Funktionen, die dies erfordern, erstellen können.
+Aufgrund aktueller Änderungen können Sie Ihr Abonnement jedoch mit jeder Art von Azure-Konto verwalten, wenn Sie die [hier](../xplat-cli-connect.md) beschriebene interaktive Anmeldemethode über den Befehl `azure login` anwenden. Sie können diese Methode anwenden oder die nachfolgenden Anweisungen befolgen.
 
 > [AZURE.NOTE]Wenn Sie einen Benutzernamen und ein Kennwort von einem Administrator erhalten haben, besteht eine hohe Wahrscheinlichkeit, dass Sie bereits eine Arbeits- oder Schul-ID (auch als *Organisations-ID* bezeichnet) besitzen. In diesem Fall können Sie sofort Ihr Azure-Konto verwenden, um auf entsprechende Azure-Ressourcen zuzugreifen. Wenn Sie feststellen, dass Sie diese Ressourcen nicht verwenden können, können Sie bei Bedarf zu diesem Artikel zurückkehren. Weitere Informationen finden Sie unter [Konten, die für die Anmeldung verwendet werden können](https://msdn.microsoft.com/library/azure/dn629581.aspx#BKMK_SignInAccounts) und insbesondere [Die Beziehung zwischen einem Azure-Abonnement und Azure AD](https://msdn.microsoft.com/library/azure/dn629581.aspx#BKMK_SubRelationToDir).
 
-Die Schritte sind einfach. Sie müssen Ihre angemeldete Identität im Azure-Portal suchen, Ihre Azure Active Directory-Standarddomäne ermitteln und als Azure-Co-Administrator einen neuen Benutzer hinzufügen.
+Die Schritte sind einfach. Sie müssen Ihre angemeldete Identität im klassischen Azure-Portal suchen, Ihre Azure Active Directory-Standarddomäne ermitteln und als Azure-Co-Administrator einen neuen Benutzer hinzufügen.
 
-## Suchen des Standardverzeichnisses im Azure-Verwaltungsportal
+## Suchen des Standardverzeichnisses im klassischen Azure-Portal
 
-Melden Sie sich als Erstes mit Ihrer persönlichen Microsoft-Kontoidentität beim [Azure-Portal](https://manage.windowsazure.com) an. Nachdem Sie angemeldet sind, scrollen Sie im blauen Bereich auf der linken Seite nach unten, und klicken Sie auf **ACTIVE DIRECTORY**.
+Melden Sie sich als Erstes mit Ihrer persönlichen Microsoft-Kontoidentität beim [klassischen Azure-Portal](https://manage.windowsazure.com) an. Nachdem Sie angemeldet sind, scrollen Sie im blauen Bereich auf der linken Seite nach unten, und klicken Sie auf **ACTIVE DIRECTORY**.
 
 ![Azure Active Directory](./media/resource-group-create-work-id-from-personal/azureactivedirectorywidget.png)
 
@@ -62,7 +61,7 @@ Klicken Sie unten auf der Seite auf **+BENUTZER HINZUFÜGEN**. Geben Sie im dara
 
 ![](./media/resource-group-create-work-id-from-personal/addingauserwithdirectorydropdown.png)
 
-Geben Sie hier weitere Details für Ahmet ein, stellen Sie dabei jedoch sicher, den entsprechenden Wert für **ROLLE** auszuwählen. Es kann einfach **Global Admin** ausgewählt werden, damit alles in jedem Fall funktioniert, aber wenn Sie eine Rolle mit geringeren Berechtigungen verwenden können, ist das eine gute Idee. In diesem Beispiel wird die Rolle **Benutzer** verwendet. (Weitere Informationen zu diesen Rollen finden Sie [hier](https://msdn.microsoft.com/library/azure/dn468213.aspx#BKMK_1).) Aktivieren Sie die mehrstufige Authentifizierung nicht, es sei denn, Sie möchten sie für jeden Anmeldevorgang verwenden. Klicken Sie anschließend auf den Pfeil zum Aufrufen der nächsten Seite.
+Geben Sie hier weitere Details für Ahmet ein, stellen Sie dabei jedoch sicher, den entsprechenden Wert für **ROLLE** auszuwählen. Es kann einfach **Global Admin** ausgewählt werden, damit alles in jedem Fall funktioniert, aber wenn Sie eine Rolle mit geringeren Berechtigungen verwenden können, ist das eine gute Idee. In diesem Beispiel wird die Rolle **Benutzer** verwendet. (Weitere Informationen finden Sie unter [Administratorberechtigungen nach Rolle](https://msdn.microsoft.com/library/azure/dn468213.aspx#BKMK_1).) Aktivieren Sie die mehrstufige Authentifizierung nicht, es sei denn, Sie möchten sie für jeden Anmeldevorgang verwenden. Klicken Sie anschließend auf den Pfeil zum Aufrufen der nächsten Seite.
 
 ![](./media/resource-group-create-work-id-from-personal/userprofileuseradmin.png)
 
@@ -113,9 +112,9 @@ Der Erfolg wird folgendermaßen angezeigt.
 
 ## Nächste Schritte
 
-Beispielsweise können Sie nun mit Ihrer neuen Azure Active Directory-Identität [Azure-Ressourcengruppenvorlagen](xplat-cli-azure-resource-manager.md) verwenden.
+Beispielsweise können Sie nun mit Ihrer neuen Azure Active Directory-Identität [Azure-Ressourcengruppenvorlagen](../xplat-cli-azure-resource-manager.md) verwenden.
 
-     azure login
+    azure login
     info:    Executing command login
     warn:    Please note that currently you can login only via Microsoft organizational account or service principal. For instructions on how to set them up, please read http://aka.ms/Dhf67j.
     Username: ahmet@aztrainpassxxxxxoutlook.onmicrosoft.com
@@ -144,4 +143,4 @@ Beispielsweise können Sie nun mit Ihrer neuen Azure Active Directory-Identität
     data:
     info:    group create command OK
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1217_2015-->

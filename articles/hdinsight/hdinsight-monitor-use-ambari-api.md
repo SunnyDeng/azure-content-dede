@@ -35,7 +35,7 @@ HDInsight unterstützt derzeit nur das Ambari-Überwachungsfeature. Ambari API 1
 
 Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
-- **Eine Arbeitsstation mit Azure PowerShell**. Siehe [Installieren und Verwenden von Azure PowerShell](http://azure.microsoft.com/documentation/videos/install-and-use-azure-powershell/).
+- **Eine Arbeitsstation mit Azure PowerShell**. Siehe [Installieren von Azure PowerShell 1.0 und höher](hdinsight-administer-use-powershell.md#install-azure-powershell-10-and-greater).
 
 
 - (Optional) [cURL][curl]. Informationen zur Installation finden Sie unter [cURL-Releases und Downloads][curl-download].
@@ -130,24 +130,24 @@ In der folgenden Tabelle sind einige der am häufigsten verwendeten Ambari-Über
 Überwachungs-API-Aufruf|URI|Beschreibung
 ---|---|---
 Cluster abrufen|`/api/v1/clusters`|
-Clusterinformationen abrufen.|`/api/v1/clusters/<ClusterName>.azurehdinsight.net`|Cluster, Dienste, Hosts
-Dienste abrufen|`/api/v1/clusters/<ClusterName>.azurehdinsight.net/services`|Services include: hdfs, mapreduce
-Dienstinformationen abrufen.|`/api/v1/clusters/<ClusterName>.azurehdinsight.net/services/<ServiceName>`|
-Dienstkomponenten abrufen|`/api/v1/clusters/<ClusterName>.azurehdinsight.net/services/<ServiceName>/components`|HDFS: namenode, datanode<br/>MapReduce: jobtracker; tasktracker
-Komponenteninformationen abrufen.|`/api/v1/clusters/<ClusterName>.azurehdinsight.net/services/<ServiceName>/components/<ComponentName>`|ServiceComponentInfo, Hostkomponenten, Metriken
-Hosts abrufen|`/api/v1/clusters/<ClusterName>.azurehdinsight.net/hosts`|headnode0, workernode0
-Hostinformationen abrufen.|`/api/v1/clusters/<ClusterName>.azurehdinsight.net/hosts/<HostName>`|
-Hostkomponenten abrufen|`/api/v1/clusters/<ClusterName>.azurehdinsight.net/hosts/<HostName>/host_components`|namenode, resourcemanager
-Host-Komponenteninformationen abrufen.|`/api/v1/clusters/<ClusterName>.azurehdinsight.net/hosts/<HostName>/host_components/<ComponentName>`|HostRoles, Komponente, Host, Metriken
-Konfigurationen abrufen|`/api/v1/clusters/<ClusterName>.azurehdinsight.net/configurations`|Config types: core-site, hdfs-site, mapred-site, hive-site
-Konfigurationsinformationen abrufen.|`/api/v1/clusters/<ClusterName>.azurehdinsight.net/configurations?type=<ConfigType>&tag=<VersionName>`|Config types: core-site, hdfs-site, mapred-site, hive-site
+Clusterinformationen abrufen.|`/api/v1/clusters/&lt;ClusterName&gt;.azurehdinsight.net`|Cluster, Dienste, Hosts
+Dienste abrufen|`/api/v1/clusters/&lt;ClusterName&gt;.azurehdinsight.net/services`|Services include: hdfs, mapreduce
+Dienstinformationen abrufen.|`/api/v1/clusters/&lt;ClusterName&gt;.azurehdinsight.net/services/&lt;ServiceName&gt;`|
+Dienstkomponenten abrufen|`/api/v1/clusters/&lt;ClusterName&gt;.azurehdinsight.net/services/&lt;ServiceName&gt;/components`|HDFS: namenode, datanode<br/>MapReduce: jobtracker; tasktracker
+Komponenteninformationen abrufen.|`/api/v1/clusters/&lt;ClusterName&gt;.azurehdinsight.net/services/&lt;ServiceName&gt;/components/&lt;ComponentName&gt;`|ServiceComponentInfo, Hostkomponenten, Metriken
+Hosts abrufen|`/api/v1/clusters/&lt;ClusterName&gt;.azurehdinsight.net/hosts`|headnode0, workernode0
+Hostinformationen abrufen.|`/api/v1/clusters/&lt;ClusterName&gt;.azurehdinsight.net/hosts/&lt;HostName&gt;`|
+Hostkomponenten abrufen|`/api/v1/clusters/&lt;ClusterName&gt;.azurehdinsight.net/hosts/&lt;HostName&gt;/host_components`|namenode, resourcemanager
+Host-Komponenteninformationen abrufen.|`/api/v1/clusters/&lt;ClusterName&gt;.azurehdinsight.net/hosts/&lt;HostName&gt;/host_components/&lt;ComponentName&gt;`|HostRoles, Komponente, Host, Metriken
+Konfigurationen abrufen|`/api/v1/clusters/&lt;ClusterName&gt;.azurehdinsight.net/configurations`|Config types: core-site, hdfs-site, mapred-site, hive-site
+Konfigurationsinformationen abrufen.|`/api/v1/clusters/&lt;ClusterName&gt;.azurehdinsight.net/configurations?type=&lt;ConfigType&gt;&tag=&lt;VersionName&gt;`|Config types: core-site, hdfs-site, mapred-site, hive-site
 
 
 ##Nächste Schritte
 
 Sie haben erfahren, wie Ambari-Überwachungs-API-Aufrufe verwendet werden. Weitere Informationen finden Sie unter:
 
-- [Verwalten von HDInsight-Clustern mit dem Azure-Vorschauportal][hdinsight-admin-portal]
+- [Verwalten von HDInsight-Clustern mit dem Azure-Portal][hdinsight-admin-portal]
 - [Verwalten von HDInsight-Clustern mit Azure PowerShell][hdinsight-admin-powershell]
 - [Verwalten von HDInsight-Clustern mit der Befehlszeilenschnittstelle][hdinsight-admin-cli]
 - [HDInsight-Dokumentation][hdinsight-documentation]
@@ -175,4 +175,4 @@ Sie haben erfahren, wie Ambari-Überwachungs-API-Aufrufe verwendet werden. Weite
 
 [img-jobtracker-output]: ./media/hdinsight-monitor-use-ambari-api/hdi.ambari.monitor.jobtracker.output.png
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

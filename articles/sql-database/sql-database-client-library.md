@@ -13,13 +13,13 @@
    ms.topic="article"
    ms.tgt_pltfrm="powershell"
    ms.workload="data-management" 
-   ms.date="08/25/2015"
+   ms.date="12/01/2015"
    ms.author="sstein"/>
 
 # Erstellen und Verwalten von SQL-Datenbanken mit C&#x23;
 
 > [AZURE.SELECTOR]
-- [Azure Preview Portal](sql-database-elastic-pool-portal.md)
+- [Azure Portal](sql-database-elastic-pool-portal.md)
 - [C#](sql-database-client-library.md)
 - [PowerShell](sql-database-elastic-pool-powershell.md)
 
@@ -55,7 +55,7 @@ Zuerst müssen Sie der Anwendung den Zugriff auf die REST-API ermöglichen, inde
 
 Die [REST-APIs des Azure-Ressourcen-Managers](https://msdn.microsoft.com/library/azure/dn948464.aspx) verwenden Azure Active Directory zur Authentifizierung und nicht die Zertifikate, die von den früheren REST-APIs für die Azure-Dienstverwaltung verwendet wurden.
 
-Zur Authentifizierung der Clientanwendung basierend auf dem aktuellen Benutzer, müssen Sie die Anwendung zuerst in der AAD-Domäne registrieren, die dem Abonnement zugeordnet ist, unter dem die Azure-Ressourcen erstellt wurden. Wenn das Azure-Abonnement mit einem Microsoft-Konto anstelle eines Geschäfts-, Schul- oder Unikontos erstellt wurde, verfügen Sie bereits über eine AAD-Standarddomäne. Das Registrieren der Anwendung kann im [Verwaltungsportal](https://manage.windowsazure.com/) erfolgen.
+Zur Authentifizierung der Clientanwendung basierend auf dem aktuellen Benutzer, müssen Sie die Anwendung zuerst in der AAD-Domäne registrieren, die dem Abonnement zugeordnet ist, unter dem die Azure-Ressourcen erstellt wurden. Wenn das Azure-Abonnement mit einem Microsoft-Konto anstelle eines Geschäfts-, Schul- oder Unikontos erstellt wurde, verfügen Sie bereits über eine AAD-Standarddomäne. Die Anwendung kann im [klassischen Portal](https://manage.windowsazure.com/) registriert werden.
 
 Um eine neue Anwendung zu erstellen und im richtigen Active Directory zu registrieren, führen Sie die folgenden Schritte aus:
 
@@ -63,7 +63,7 @@ Um eine neue Anwendung zu erstellen und im richtigen Active Directory zu registr
 
     ![AAD][1]
 
-2. Wählen Sie das Verzeichnis zum Authentifizieren Ihrer Anwendung aus, und klicken Sie auf dessen **Namen**.
+2. Wählen Sie das Verzeichnis zum Authentifizieren Ihrer Anwendung aus, und klicken Sie auf seinen **Namen**.
 
     ![Verzeichnisse][4]
 
@@ -77,7 +77,7 @@ Um eine neue Anwendung zu erstellen und im richtigen Active Directory zu registr
 
 5. Wählen Sie **Eine von meinem Unternehmen entwickelte Anwendung hinzufügen** aus.
 
-5. Geben Sie im Feld **NAME** einen Namen für die Anwendung an, und wählen Sie **SYSTEMEIGENE CLIENTANWENDUNG** aus.
+5. Geben Sie im Feld **NAME** einen Namen für die App ein, und wählen Sie **SYSTEMEIGENE CLIENTANWENDUNG** aus.
 
     ![Anwendung hinzufügen][7]
 
@@ -85,7 +85,7 @@ Um eine neue Anwendung zu erstellen und im richtigen Active Directory zu registr
 
     ![Anwendung hinzufügen][8]
 
-7. Beenden Sie das Erstellen der Anwendung, klicken Sie auf **KONFIGURIEREN**, und kopieren Sie die **CLIENT-ID** (Sie benötigen die Client-ID in Ihrem Code).
+7. Beenden Sie das Erstellen der App, klicken Sie auf **KONFIGURIEREN**, und kopieren Sie die **CLIENT-ID** (Sie benötigen die Client-ID in Ihrem Code).
 
     ![Client-ID abrufen][9]
 
@@ -93,7 +93,7 @@ Um eine neue Anwendung zu erstellen und im richtigen Active Directory zu registr
 1. Klicken Sie unten auf der Seite auf **Anwendung hinzufügen**.
 1. Wählen Sie **Microsoft-Apps** aus.
 1. Wählen Sie **Azure Service-Verwaltungs-API** aus, und schließen Sie dann den Assistenten ab.
-2. Nun müssen Sie bei ausgewählter API die jeweiligen Berechtigungen für den Zugriff auf diese API erteilen, indem Sie **Auf Azure Service-Verwaltung (Preview) zugreifen** auswählen.
+2. Nun müssen Sie bei ausgewählter API die jeweiligen Berechtigungen für den Zugriff auf diese API erteilen, indem Sie **Auf Azure-Dienstverwaltung (Vorschauversion) zugreifen** auswählen.
 
     ![Berechtigungen][2]
 
@@ -105,7 +105,7 @@ Um eine neue Anwendung zu erstellen und im richtigen Active Directory zu registr
 
 Der Domänenname ist für den Code erforderlich. Es folgt eine einfache Möglichkeit zum Ermitteln des richtigen Domänennamens:
 
-1. Öffnen Sie das [Azure-Vorschauportal](https://portal.azure.com).
+1. Öffnen Sie das [Azure-Portal](https://portal.azure.com).
 2. Zeigen Sie auf Ihren Namen in der oberen rechten Ecke, und notieren Sie sich die Domäne, die im Popupfenster angezeigt wird.
 
     ![Domänenname ermitteln][3]
@@ -218,7 +218,7 @@ Im folgenden Beispiel wird eine Regel erstellt, die den Zugriff auf den Server v
 
 
 
-Damit andere Azure-Dienste auf einen Server zugreifen können, fügen Sie eine Firewallregel hinzu, und setzen Sie sowohl "StartIpAddress" als auch "EndIpAddress" auf "0.0.0.0". Beachten Sie, dass dadurch Azure-Datenverkehr aus *jedem* Azure-Abonnement für den Zugriff auf den Server zulässig ist.
+Damit andere Azure-Dienste auf einen Server zugreifen können, fügen Sie eine Firewallregel hinzu, und setzen Sie sowohl "StartIpAddress" als auch "EndIpAddress" auf "0.0.0.0". Beachten Sie, dass dadurch Azure-Datenverkehr aus *jedem* Azure-Abonnement auf den Server zugreifen kann.
 
 
 ## Erstellen einer Datenbank
@@ -798,4 +798,4 @@ So löschen Sie eine Ressourcengruppe:
 [8]: ./media/sql-database-client-library/add-application2.png
 [9]: ./media/sql-database-client-library/clientid.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

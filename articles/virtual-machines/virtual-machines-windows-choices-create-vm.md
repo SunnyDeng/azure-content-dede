@@ -19,7 +19,7 @@
 
 # Verschiedene Möglichkeiten zum Erstellen eines virtuellen Windows-Computers mit Ressourcen-Manager
 
-Azure bietet verschiedene Möglichkeiten zum Erstellen eines virtuellen Computers, da virtuelle Computer für verschiedene Benutzer und Zwecke geeignet sind. Daher müssen Sie einige Optionen für den virtuellen Computer und dessen Erstellung auswählen. Dieser Artikel bietet eine Übersicht über diese Optionen sowie Links zu Anweisungen.
+Azure bietet verschiedene Möglichkeiten zum Erstellen eines virtuellen Computers, da virtuelle Computer für verschiedene Benutzer und Zwecke geeignet sind. Daher müssen Sie einige Optionen für den virtuellen Computer und dessen Erstellung auswählen. Dieser Artikel bietet einen Überblick über diese Optionen sowie Links zu Anweisungen.
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell.
 
@@ -27,9 +27,9 @@ Azure-Ressourcen-Manager-Vorlagen wurden vor Kurzem als eine Möglichkeit eingef
 
 ## Tool-Optionen
 
-### GUI: Das Azure-Vorschauportal
+### GUI: Azure-Portal
 
-Die grafische Benutzeroberfläche des Azure-Portals bietet eine einfache Möglichkeit zum Testen einer virtuellen Maschine. Dies gilt insbesondere dann, wenn Sie mit Azure beginnen. Virtuelle Computer erstellen Sie über das Azure-Vorschauportal
+Die grafische Benutzeroberfläche des klassischen Azure-Portals bietet eine einfache Möglichkeit zum Testen einer virtuellen Maschine. Dies gilt insbesondere dann, wenn Sie mit Azure beginnen. Verwenden des Azure-Portals zur Erstellung eines virtuellen Computers:
 
 [Erstellen eines virtuellen Computers unter Windows][]
 
@@ -51,7 +51,7 @@ Informationen zu Azure PowerShell finden Sie unter:
 
 ### Entwicklungsumgebung: Visual Studio
 
-[Bereitstellen von Azure-Ressourcen mithilfe der Compute-, Netzwerk- und Speicherbibliotheken von .NET][]
+[Bereitstellen von Azure-Ressourcen mithilfe der Computing-, Netzwerk- und Speicherbibliotheken von .NET][]
 
 ## Betriebssystem und Image-Optionen
 
@@ -71,7 +71,7 @@ Wählen Sie ein Image basierend auf dem Betriebssystem, das Sie ausführen möch
 
 
 [Navigieren zu und Auswählen von Images virtueller Azure-Computer mit Windows PowerShell und der Azure-Befehlszeilenschnittstelle]: resource-groups-vm-searching.md
-[Bereitstellen von Azure-Ressourcen mithilfe der Compute-, Netzwerk- und Speicherbibliotheken von .NET]: virtual-machines-arm-deployment.md
+[Bereitstellen von Azure-Ressourcen mithilfe der Computing-, Netzwerk- und Speicherbibliotheken von .NET]: virtual-machines-arm-deployment.md
 
 [Sign in to the virtual machine]: virtual-machines-log-on-windows-server.md
 
@@ -79,4 +79,4 @@ Wählen Sie ein Image basierend auf dem Betriebssystem, das Sie ausführen möch
 
 [Azure hybrid cloud test environments]: virtual-machines-hybrid-cloud-test-environments.md
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

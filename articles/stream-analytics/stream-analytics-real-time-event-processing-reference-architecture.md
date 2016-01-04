@@ -1,6 +1,7 @@
 <properties 
-	pageTitle="Echtzeitereignisverarbeitung mit Stream Analytics | Microsoft Azure" 
+	pageTitle="Echtzeitereignisverarbeitung mit der Ereignisverarbeitung in Stream Analytics | Microsoft Azure" 
 	description="Erfahren Sie, wie durch die Interaktion einer Reihe von Azure-Diensten Echtzeitereignisverarbeitung und Analysen ermöglicht werden." 
+    keywords="Ereignisverarbeitung in Echtzeit, Ereignisverarbeitung, Referenzarchitektur"
 	services="stream-analytics,event-hubs,storage,sql-database" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
@@ -13,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/06/2015" 
+	ms.date="12/04/2015" 
 	ms.author="jeffstok"/>
 
 # Referenzarchitektur: Echtzeitereignisverarbeitung mit Microsoft Azure Stream Analytics
@@ -62,4 +63,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

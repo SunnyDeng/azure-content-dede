@@ -1,7 +1,7 @@
 <properties
 	pageTitle="HBase-Lernprogramm: Erste Schritte mit HBase in Hadoop | Microsoft Azure"
 	description="Führen Sie dieses HBase-Lernprogramm aus, um sich in Apache HBase mit Hadoop in HDInsight einzuarbeiten. Erstellen Sie über die HBase-Shell Tabellen und fragen Sie diese mit Hive ab."
-	keywords="apache hbase,hbase,hbase shell,hbase tutorial"
+	keywords="Apache Hbase, Hbase, Hbase-Shell, Hbase-Tutorial"
 	services="hdinsight"
 	documentationCenter=""
 	authors="mumian"
@@ -14,14 +14,14 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="08/11/2015"
+	ms.date="12/02/2015"
 	ms.author="jgao"/>
 
 
 
 # HBase-Lernprogramm: Erste Schritte mit Apache HBase mit Hadoop in HDInsight
 
-Erfahren Sie, wie Sie einen HBase-Cluster in HDInsight bereitstellen, HBase-Tabellen erstellen und die Tabellen mit Hive abfragen. Allgemeine Informationen zu HBase finden Sie unter [Überblick zu HDInsight HBase][hdinsight-hbase-overview].
+Erfahren Sie, wie Sie einen HBase-Cluster in HDInsight erstellen, HBase-Tabellen erstellen und die Tabellen mit Hive abfragen. Allgemeine Informationen zu HBase finden Sie unter [Überblick zu HDInsight HBase][hdinsight-hbase-overview].
 
 [AZURE.INCLUDE [hdinsight-azure-portal](../../includes/hdinsight-azure-portal.md)]
 
@@ -43,11 +43,11 @@ Bevor Sie mit diesem Lernprogramm zu HBase beginnen können, benötigen Sie Folg
 - **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 - **Eine Arbeitsstation** mit Visual Studio 2013. Anweisungen hierzu finden Sie unter [Installieren von Visual Studio](http://msdn.microsoft.com/library/e2h7fzkw.aspx).
 
-## Bereitstellen eines HBase-Clusters
+## Erstellen eines HBase-Clusters
 
 [AZURE.INCLUDE [provisioningnote](../../includes/hdinsight-provisioning.md)]
 
-**So stellen Sie einen HBase-Cluster im Azure-Portal bereit**
+**So erstellen Sie einen HBase-Cluster im Azure-Portal**
 
 
 1. Melden Sie sich beim [Azure-Portal][azure-management-portal] an.
@@ -56,13 +56,13 @@ Bevor Sie mit diesem Lernprogramm zu HBase beginnen können, benötigen Sie Folg
 	>[AZURE.NOTE]Sie können auch die Option **Benutzerdefiniert erstellen** verwenden.
 3. Geben Sie den **Clusternamen**, die **Clustergröße**, das HTTP-Benutzerkennwort und das **Speicherkonto** ein.
 
-	![Bereitstellen eines HBase-Clusters in HDInsight][img-hdinsight-hbase-cluster-quick-create]
+	![Erstellen eines HBase-Clusters in HDInsight][img-hdinsight-hbase-cluster-quick-create]
 
 	Der Standard-HTTP-Benutzername ist "admin". Mit der Option für die benutzerdefinierte Erstellung können Sie den Namen anpassen.
 
-	Für die Standardbereitstellung von HBase ist ein Azure-Speicherkonto erforderlich. Informationen zu dessen Erstellung finden Sie unter [Erstellen eines Azure-Speicherkontos][azure-create-storageaccount]. Die Option für die benutzerdefinierte Erstellung bietet gleichzeitig mit der Bereitstellung des Clusters auch die Option zum Erstellen eines Speicherkontos.
+	Für die Standarderstellung von HBase ist ein Azure-Speicherkonto erforderlich. Informationen zu dessen Erstellung finden Sie unter [Erstellen eines Azure-Speicherkontos][azure-create-storageaccount]. Die Option für die benutzerdefinierte Erstellung bietet gleichzeitig mit der Erstellung des Clusters auch die Option zum Erstellen eines Speicherkontos.
 
-	> [AZURE.WARNING]Um die Hochverfügbarkeit der HBase-Dienste sicherzustellen, müssen Sie einen Cluster mit mindestens **drei** Knoten bereitstellen. Sollte in diesem Fall ein Knoten ausfallen, stehen die Datenbereiche von HBase noch auf den anderen Knoten zur Verfügung.
+	> [AZURE.WARNING]Um die Hochverfügbarkeit der HBase-Dienste sicherzustellen, müssen Sie einen Cluster mit mindestens **drei** Knoten erstellen. Sollte in diesem Fall ein Knoten ausfallen, stehen die Datenbereiche von HBase noch auf den anderen Knoten zur Verfügung.
 
 	> Solange Sie sich noch in HBase einarbeiten, sollten Sie als Clustergröße 1 festlegen und den Cluster nach jeder Verwendung löschen. Auf diese Weise halten Sie die Kosten für den Cluster auf ein Minimum.
 
@@ -179,7 +179,7 @@ Sie können Daten in HBase-Tabellen mit Hive abfragen. In diesem Abschnitt erste
 2. Klicken Sie im linken Bereich auf **HDINSIGHT**. Sie sehen eine Liste der Cluster, die auch den zuvor in diesem Lernprogramm erstellten Cluster enthält.
 3. Klicken Sie auf den Namen des Clusters, in dem Sie den Hive-Job ausführen möchten.
 4. Klicken Sie unten auf der Seite auf **ABFRAGEKONSOLE**, um das Cluster-Dashboard zu öffnen. Dadurch wird auf einer neuen Registerkarte im Browser eine Webseite geöffnet.
-5. Geben Sie den Benutzernamen und das Kennwort des Hadoop-Benutzerkontos ein. Der Standardbenutzername ist **admin**, und das Kennwort haben Sie bei der Bereitstellung ausgewählt. Im Browser wird eine neue Registerkarte geöffnet.
+5. Geben Sie den Benutzernamen und das Kennwort des Hadoop-Benutzerkontos ein. Der Standardbenutzername ist **admin**, und das Kennwort haben Sie bei der Erstellung ausgewählt. Im Browser wird eine neue Registerkarte geöffnet.
 6. Klicken Sie oben auf der Seite auf **Hive-Editor**. Der Hive-Editor sieht wie folgt aus:
 
 	![HDInsight-Cluster-Dashboard][img-hdinsight-hbase-hive-editor]
@@ -329,12 +329,12 @@ Sie müssen die Clientbibliothek der HBase-REST-API für .NET von GitHub herunte
 
 
 ## Wie geht es weiter?
-In diesem HBase-Lernprogramm für HDInsight haben Sie erfahren, wie Sie einen HBase-Cluster bereitstellen, Tabellen erstellen und die Daten in diesen Tabellen über die HBase-Shell anzeigen. Außerdem haben Sie gelernt, wie Sie an den Daten in HBase-Tabellen eine Hive-Abfrage ausführen und wie Sie mit den HBase C#-REST-APIs HBase-Tabellen erstellen und Daten aus diesen Tabellen abrufen.
+In diesem HBase-Tutorial für HDInsight haben Sie erfahren, wie Sie einen HBase-Cluster erstellen, Tabellen erstellen und die Daten in diesen Tabellen über die HBase-Shell anzeigen. Außerdem haben Sie gelernt, wie Sie an den Daten in HBase-Tabellen eine Hive-Abfrage ausführen und wie Sie mit den HBase C#-REST-APIs HBase-Tabellen erstellen und Daten aus diesen Tabellen abrufen.
 
 Weitere Informationen finden Sie unter:
 
 - [Übersicht HBase mit HDInsight][hdinsight-hbase-overview]\: HBase ist eine Open-Source-NoSQL-Datenbank von Apache, die auf Hadoop aufbaut und wahlfreien Zugriff sowie starke Konsistenz für große Mengen unstrukturierter und teilstrukturierter Daten bietet.
-- [Bereitstellen von HBase-Clustern im virtuellen Azure-Netzwerk][hdinsight-hbase-provision-vnet]\: Mit der Integration in virtuelle Netzwerke können HBase-Cluster im selben virtuellen Netzwerk bereitgestellt werden wie Ihre Anwendungen, sodass Anwendungen direkt mit HBase kommunizieren können.
+- [Erstellen von HBase-Clustern in Azure Virtual Network][hdinsight-hbase-provision-vnet]\: Mit der Integration in virtuelle Netzwerke können HBase-Cluster im gleichen virtuellen Netzwerk bereitgestellt werden wie Ihre Anwendungen, sodass Anwendungen direkt mit HBase kommunizieren können.
 - [Konfiguration von HBase-Replikation in HDInsight](hdinsight-hbase-geo-replication.md): Erfahren Sie, wie Sie HBase-Replikation über zwei Azure-Rechenzentren konfigurieren.
 - [Analysieren der Twitter-Stimmungen mit HBase in HDInsight][hbase-twitter-sentiment]\: Erfahren Sie, wie Sie in Echtzeit [Stimmungsanalysen](http://en.wikipedia.org/wiki/Sentiment_analysis) bei Big Data mithilfe von HBase in einem Hadoop-Cluster in HDInsight durchführen können.
 
@@ -365,4 +365,4 @@ Weitere Informationen finden Sie unter:
 [img-hbase-sample-data-tabular]: ./media/hdinsight-hbase-tutorial-get-started/hdinsight-hbase-contacts-tabular.png
 [img-hbase-sample-data-bigtable]: ./media/hdinsight-hbase-tutorial-get-started/hdinsight-hbase-contacts-bigtable.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

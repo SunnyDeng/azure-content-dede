@@ -1,22 +1,27 @@
-<properties 
-	pageTitle="Erstellen eines mobilen .NET-Back-End-Diensts, der den Tabellenspeicher verwendet | Azure Mobile Services" 
-	description="Erfahren Sie, wie Sie den Azure-Tabellenspeicher mit dem mobilen .NET-Back-End-Dienst verwenden." 
-	services="mobile-services" 
-	documentationCenter="" 
-	authors="ggailey777" 
-	manager="dwrede" 
+<properties
+	pageTitle="Erstellen eines mobilen .NET-Back-End-Diensts, der den Tabellenspeicher verwendet | Azure Mobile Services"
+	description="Erfahren Sie, wie Sie den Azure-Tabellenspeicher mit dem mobilen .NET-Back-End-Dienst verwenden."
+	services="mobile-services"
+	documentationCenter=""
+	authors="ggailey777"
+	manager="dwrede"
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="09/14/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="na"
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.date="12/11/2015"
 	ms.author="glenga"/>
 
 # Erstellen eines mobilen .NET-Back-End-Diensts, der den Tabellenspeicher verwendet
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 In diesem Thema erfahren Sie, wie Sie einen nicht relationalen Datenspeicher für Ihren mobilen .NET-Back-End-Dienst verwenden. In diesem Lernprogramm ändern Sie das Azure Mobile Services-Schnellstartprojekt, um den Azure-Tabellenspeicher statt des standardmäßigen Azure SQL-Datenbank-Datenspeichers zu verwenden.
 
@@ -36,10 +41,10 @@ Zunächst müssen Sie den mobilen Dienst und das .NET Back-End-Codeprojekt zum H
 
 3. Wenn Sie das Speicherkonto noch nicht erstellt haben, lesen Sie [So erstellen Sie ein Speicherkonto](../storage-create-storage-account.md).
 
-4. Klicken Sie im Verwaltungsportal auf **Speicher**, klicken Sie auf das Speicherkonto, und klicken Sie dann auf **Schlüssel verwalten**.
+4. Klicken Sie im [klassischen Azure-Portal] auf **Speicher**, klicken Sie auf das Speicherkonto, und klicken Sie dann auf **Schlüssel verwalten**.
 
 5. Notieren Sie sich **Speicherkontoname** und **Zugriffsschlüssel**.
- 
+
 6. Klicken Sie im mobilen Dienst auf die Registerkarte **Konfigurieren**, scrollen Sie nach unten zu **Verbindungszeichenfolgen**, und geben Sie eine neue Verbindungszeichenfolge mit dem **Namen** `StorageConnectionString` und einem **Wert**, der die Verbindungszeichenfolge Ihres Speicherkontos ist, in folgendem Format ein.
 
 		DefaultEndpointsProtocol=https;AccountName=<ACCOUNT_NAME>;AccountKey=<ACCESS_KEY>;
@@ -83,12 +88,12 @@ Da das TodoList-Schnellstartprojekt für die Ausführung mit einer SQL-Datenbank
         {
             base.Initialize(controllerContext);
 
-            // Create a new Azure Storage domain manager using the stored 
+            // Create a new Azure Storage domain manager using the stored
             // connection string and the name of the table exposed by the controller.
             string connectionStringName = "StorageConnectionString";
             var tableName = controllerContext.ControllerDescriptor.ControllerName.ToLowerInvariant();
-            DomainManager = new StorageDomainManager<TodoItem>(connectionStringName, 
-                tableName, Request, Services);          
+            DomainManager = new StorageDomainManager<TodoItem>(connectionStringName,
+                tableName, Request, Services);
         }
 
 	Hierdurch wird mit der Verbindungszeichenfolge für das Speicherkonto ein neuer Speicherdomänen-Manager für den angeforderten Controller erstellt.
@@ -99,7 +104,7 @@ Da das TodoList-Schnellstartprojekt für die Ausführung mit einer SQL-Datenbank
         {
             // Call QueryAsync, passing the supplied query options.
             return DomainManager.QueryAsync(options);
-        } 
+        }
 
 	Im Gegensatz zu einer SQL-Datenbank gibt diese Version nicht IQueryable<TEntity> zurück. Daher kann das Ergebnis an eine Abfrage gebunden, jedoch nicht in eine weitere Abfrage eingefügt werden.
 
@@ -119,8 +124,8 @@ Sie können jetzt die App testen.
 
 ## <a name="test-application"></a>Testen der Anwendung
 
-1. (Optional) Veröffentlichen Sie Ihr Mobile Services-Back-End-Projekt erneut. 
-	
+1. (Optional) Veröffentlichen Sie Ihr Mobile Services-Back-End-Projekt erneut.
+
 	Sie können auch den mobilen Dienst lokal testen, bevor Sie das .NET-Back-End-Projekt in Azure veröffentlichen. Der mobile Dienst verwendet den Azure-Tabellenspeicher, egal ob Sie ihn lokal oder in Azure testen.
 
 4. Führen Sie die Schnellstart-Client-App aus, die mit dem mobilen Dienst verbunden ist.
@@ -128,7 +133,7 @@ Sie können jetzt die App testen.
 	Beachten Sie, dass Elemente, die Sie zuvor mit dem Schnellstart-Lernprogramm hinzugefügt haben, nicht angezeigt werden. Der Grund dafür ist, dass der Tabellenspeicher derzeit leer ist.
 
 5. Fügen Sie neue Elemente hinzu, um Datenbankänderungen zu generieren.
- 
+
 	Das Verhalten der App und des mobilen Diensts bleibt unverändert, mit der Ausnahme, dass jetzt die Daten im nicht relationalen Speicher statt in der SQL-Datenbank gespeichert werden.
 
 ##Nächste Schritte
@@ -150,9 +155,8 @@ Da Sie jetzt gesehen haben, wie einfach sich der Tabellenspeicher mit dem .NET B
 
 <!-- URLs. -->
 [Erste Schritte mit Mobile Services]: mobile-services-dotnet-backend-windows-store-dotnet-get-started.md
-[Azure Management Portal]: https://manage.windowsazure.com/
+[klassischen Azure-Portal]: https://manage.windowsazure.com/
 [What is the Table Service]: ../storage-dotnet-how-to-use-tables.md#what-is
 [MongoLab Add-on Page]: /gallery/store/mongolab/mongolab
- 
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

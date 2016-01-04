@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
 	ms.topic="article"
-	ms.date="09/28/2015"
+	ms.date="11/30/2015"
 	ms.author="krisragh"/>
 
 # Verwenden der iOS-Clientbibliothek für Azure Mobile Apps
@@ -23,6 +23,10 @@
 [AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
 
 Dieser Artikel beschreibt gängige Szenarien für die Verwendung des aktuellsten [Azure Mobile Apps-iOS-SDKs](https://go.microsoft.com/fwLink/?LinkID=266533&clcid=0x409). Wenn Sie mit Azure Mobile Apps noch nicht vertraut sind, führen Sie zunächst den [Schnellstart von Azure Mobile Apps] durch, um ein Back-End und eine Tabelle zu erstellen und ein vorgefertigtes iOS-Xcode-Projekt herunterzuladen. In diesem Handbuch konzentrieren wir uns auf das clientseitige iOS-SDK. Weitere Informationen zum serverseitigen .NET-SDK für das Back-End finden Sie unter [Arbeiten mit dem .NET Back-End](app-service-mobile-dotnet-backend-how-to-use-server-sdk.md).
+
+## Referenzdokumentation
+
+Das Referenzdokumentation für das iOS-Client-SDK finden Sie hier: [Azure Mobile Apps iOS-Client-Referenz](http://azure.github.io/azure-mobile-services/iOS/v3/).
 
 ##<a name="Setup"></a>Einrichtung und Voraussetzungen
 
@@ -191,6 +195,21 @@ Geben Sie alternativ eine Zeilen-ID ein, um das Element zu löschen:
 
 Für Löschungen muss zumindest das `id`-Attribut gesetzt sein.
 
+##<a name="templates"></a>Gewusst wie: Registrieren von Pushvorlagen zum Senden plattformübergreifender Benachrichtigungen
+
+Um Vorlagen zu registrieren, übergeben Sie einfach die Vorlagen mit Ihrer **client.push registerDeviceToken**-Methode in Ihrer Client-App.
+
+        [client.push registerDeviceToken:deviceToken template:iOSTemplate completion:^(NSError *error) {
+        	...
+        }];
+
+Ihre Vorlagen vom Typ „NSDictionary“ und können mehrere Vorlagen im folgenden Format enthalten:
+
+        NSDictionary *iOSTemplate = @{ @"templateName": @{ @"body": @{ @"aps": @{ @"alert": @"$(message)" } } } };
+
+Beachten Sie, dass aus Sicherheitsgründen alle Tags entfernt werden. Informationen zum Hinzufügen von Tags zu Installationen bzw. Vorlagen innerhalb von Installationen finden Sie unter [Verwenden des .NET-Back-End-Server SDK für Azure Mobile Apps](app-service-mobile-dotnet-backend-how-to-use-server-sdk.md#tags).
+
+Zum Senden von Benachrichtigungen, die diese registrierten Vorlagen verwenden, arbeiten Sie mit den [Benachrichtigungs-Hub-APIs](https://msdn.microsoft.com/library/azure/dn495101.aspx).
 
 ##<a name="errors"></a>Gewusst wie: Fehlerbehandlung
 
@@ -249,4 +268,4 @@ Die Datei [`<WindowsAzureMobileServices/MSError.h>`](https://github.com/Azure/az
 [CLI to manage Mobile Services tables]: ../virtual-machines-command-line-tools.md#Mobile_Tables
 [Konflikthandler]: mobile-services-ios-handling-conflicts-offline-data.md#add-conflict-handling
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

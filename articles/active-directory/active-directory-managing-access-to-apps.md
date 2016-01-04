@@ -13,7 +13,7 @@
   ms.tgt_pltfrm="na"
   ms.devlang="na"
   ms.topic="article"
-  ms.date="10/16/2015"
+  ms.date="12/08/2015"
   ms.author="stevenpo"/>
 
 
@@ -25,13 +25,13 @@ Die fortwährende Zugriffsverwaltung sowie die Nutzungsauswertung und Berichters
 
  Azure AD unterstützt die weitreichende Zugriffsverwaltung für konfigurierte Anwendungen, sodass Organisationen mühelos geeignete Zugriffsrichtlinien einrichten können, die von Anwendungsfällen mit automatischer, attributbasierter Zuweisung (ABAC- oder RBAC-Szenarios) über Delegierung bis hin zur Verwaltung durch den Administrator reichen. Mit Azure AD lassen sich ohne Aufwand komplexe Richtlinien einrichten, bei denen für eine gegebene Anwendung mehrere Verwaltungsmodelle kombiniert werden, und einmal definierte Verwaltungsregeln lassen sich sogar auf weitere Anwendungen mit demselben Benutzerkreis ausweiten.
 
- - [Hinzufügen von neuen Anwendungen](active-directory-sso-newly-acquired-saas-apps.md)
- - [Hinzufügen von vorhandenen Anwendungen](active-directory-sso-integrate-existing-apps)
+ - [Hinzufügen von neuen oder vorhandenen Anwendungen](active-directory-sso-integrate-saas-apps.md)
+
 
  Die Anwendungszuweisung von Azure AD konzentriert sich auf zwei primäre Zuordnungsmodi:
 
-- **Einzelne Zuweisung**: Ein IT-Administrator mit globalen, Benutzer- oder AU-Berechtigungen kann einzelne Benutzerkonten auswählen und ihnen Zugriff auf die Anwendung gewähren.
-- **Gruppenbasierte Zuweisung (nur kostenpflichtiges Azure AD)**: Ein IT-Administrator mit globalen, Benutzer- oder AU-Berechtigungen kann der Anwendung eine Gruppe zuweisen. Die Zugriffsmöglichkeit eines bestimmten Benutzers ergibt sich daraus, ob dieser zum Zeitpunkt des Zugriffs auf die Anwendung Mitglied der festgelegten Gruppe ist. In diesem Modus kann der Administrator also im Grunde folgende Zuweisungsregel erstellen: "Jedes derzeitige Mitglied der zugewiesenen Gruppe hat Zugriff auf die Anwendung". Mit dieser Zuweisungsoption können Administratoren alle zur Verfügung stehenden Optionen zur Gruppenverwaltung nutzen, einschließlich attributbasierter dynamischer Gruppen, externer Systemgruppen (z. B. lokales AD oder werktags) und Administratorgruppen oder Gruppen mit Self-Service-Verwaltung. Eine einzelne Gruppe kann problemlos mehreren Apps zugewiesen werden, sodass sichergestellt wird, dass Anwendungen mit Zuweisungsaffinität dieselben Zuweisungsregeln verwenden, um die Verwaltungskomplexität insgesamt zu verringern.
+- **Einzelne Zuweisung**: Ein IT-Administrator mit den Verzeichnisberechtigungen eines globalen Administrators kann einzelne Benutzerkonten auswählen und ihnen Zugriff auf die Anwendung gewähren.
+- **Gruppenbasierte Zuweisung (nur kostenpflichtiges Azure AD)**: Ein IT-Administrator mit den Verzeichnisberechtigungen eines globalen Administrators kann der Anwendung eine Gruppe zuweisen. Die Zugriffsmöglichkeit eines bestimmten Benutzers ergibt sich daraus, ob dieser zum Zeitpunkt des Zugriffs auf die Anwendung Mitglied der festgelegten Gruppe ist. In diesem Modus kann der Administrator also im Grunde folgende Zuweisungsregel erstellen: "Jedes derzeitige Mitglied der zugewiesenen Gruppe hat Zugriff auf die Anwendung". Mit dieser Zuweisungsoption können Administratoren alle zur Verfügung stehenden Optionen zur Gruppenverwaltung nutzen, einschließlich attributbasierter dynamischer Gruppen, externer Systemgruppen (z. B. lokales AD oder Workday) und Administratorgruppen oder Gruppen mit Self-Service-Verwaltung. Eine einzelne Gruppe kann problemlos mehreren Apps zugewiesen werden, sodass sichergestellt wird, dass Anwendungen mit Zuweisungsaffinität dieselben Zuweisungsregeln verwenden, um die Verwaltungskomplexität insgesamt zu verringern. Beachten Sie, dass geschachtelte Gruppenmitgliedschaften für die gruppenbasierte Zuordnung zu Anwendungen derzeit nicht unterstützt werden.
 
 Durch Einsatz dieser beiden Zuweisungsmodi können Administratoren jeden gewünschten Ansatz zur Zuweisungsverwaltung realisieren.
 
@@ -39,14 +39,14 @@ Bei Azure AD ist die Berichterstellung über Nutzung und Zuweisung vollständig
 
 ## Komplexe Anwendungszuweisungen mit Azure AD
 
-Betrachten Sie eine Anwendung wie Salesforce. In vielen Organisationen wird Salesforce in erster Linie von der Marketingabteilung und im Vertrieb verwendet. Häufig haben Mitglieder des Marketingteams umfassende Berechtigungen für den Zugriff auf Salesforce, während Mitglieder des Vertriebsteams nur beschränkten Zugriff haben. In vielen Fällen hat ein großer Personenkreis eingeschränkten Zugriff auf die Anwendung. Ausnahmen von dieser Regel kommen erschwerend hinzu. Häufig ist es Sache der Marketing- oder Vertriebsleitung, Benutzern Zugriff zu gewähren oder ihre Rollen unabhängig von allgemeinen Regeln zu ändern.
+Betrachten Sie eine Anwendung wie Salesforce. In vielen Organisationen wird Salesforce in erster Linie von der Marketingabteilung und im Vertrieb verwendet. Häufig haben Mitglieder des Marketingteams umfassende Berechtigungen für den Zugriff auf Salesforce, während Mitglieder des Vertriebsteams nur beschränkten Zugriff haben. In vielen Fällen hat ein großer Personenkreis von Information-Workern eingeschränkten Zugriff auf die Anwendung. Ausnahmen von dieser Regel kommen erschwerend hinzu. Häufig ist es Sache der Marketing- oder Vertriebsleitung, Benutzern Zugriff zu gewähren oder ihre Rollen unabhängig von allgemeinen Regeln zu ändern.
 
 Mit Azure AD können Anwendungen wie Salesforce beispielsweise für einmaliges Anmelden (SSO) und automatisierte Bereitstellung vorkonfiguriert werden. Sobald die Anwendung konfiguriert ist, kann der Administrator die einmalige Aktion zum Erstellen und Zuweisen der entsprechenden Gruppen übernehmen. In diesem Beispiel könnte ein Administrator die folgenden Zuweisungen vornehmen:
 
 - Attributbasierte Gruppen lassen sich durch Verwendung von Attributen wie Abteilung oder Rolle derart definieren, dass sie alle Mitglieder der Vertriebs- und Marketingteams abbilden:
-    - Alle Mitglieder von Marketinggruppen würden in diesem Fall der Rolle "Marketing" in Salesforce zugewiesen.
-    - Alle Mitglieder von Vertriebsteamgruppen würden der Rolle "Vertrieb" in Salesforce zugewiesen werden. In einem Verfeinerungsschritt könnten mehrere Gruppen verwendet werden, die regionale, anderen Salesforce-Gruppen zugewiesene Vertriebsteams darstellen.
-- Zum Aktivieren des Ausnahmemechanismus könnte für jede Rolle eine Self-Service-Gruppe erstellt werden. Die Gruppe "Salesforce Marketingausnahme" kann beispielsweise als Self-Service-Gruppe erstellt werden. Diese Gruppe kann der Salesforce-Marketingrolle zugewiesen, und das Leadershipteam der Marketingabteilung kann als Besitzer festgelegt werden. Mitglieder des Leadershipteams der Marketingabteilung könnten somit Benutzer hinzufügen oder entfernen, eine Beitrittsrichtlinie einrichten oder sogar einzelne Beitrittsanfragen genehmigen oder verweigern. Dies wird auch durch ein für Information-Worker angemessenes Verfahren begünstigt, bei dem keine spezielle Schulung für Besitzer oder Mitglieder erforderlich ist.
+    - Alle Mitglieder von Marketinggruppen würden in diesem Fall der Rolle „Marketing“ in Salesforce zugewiesen.
+    - Alle Mitglieder von Vertriebsteamgruppen würden der Rolle „Vertrieb“ in Salesforce zugewiesen werden. In einem Verfeinerungsschritt könnten mehrere Gruppen verwendet werden, die regionale, anderen Salesforce-Gruppen zugewiesene Vertriebsteams darstellen.
+- Zum Aktivieren des Ausnahmemechanismus könnte für jede Rolle eine Self-Service-Gruppe erstellt werden. Die Gruppe „Salesforce Marketingausnahme“ kann beispielsweise als Self-Service-Gruppe erstellt werden. Diese Gruppe kann der Salesforce-Marketingrolle zugewiesen und das Leadershipteam der Marketingabteilung als deren Besitzer festgelegt werden. Mitglieder des Leadershipteams der Marketingabteilung könnten somit Benutzer hinzufügen oder entfernen, eine Beitrittsrichtlinie einrichten oder sogar einzelne Beitrittsanfragen genehmigen oder verweigern. Dies wird auch durch ein für Information-Worker angemessenes Verfahren begünstigt, bei dem keine spezielle Schulung für Besitzer oder Mitglieder erforderlich ist.
 
 In diesem Fall würde allen zugewiesenen Benutzern automatisch Salesforce bereitgestellt, und bei einem Wechsel in andere Gruppen würde ihre Rollenzuweisung in Salesforce aktualisiert. Die Benutzer könnten Salesforce über den Microsoft Zugriffsbereich für Anwendungen, Office-Webclients oder sogar durch Aufrufen der Salesforce-Anmeldeseite innerhalb der Organisation ermitteln und darauf zugreifen. Administratoren könnten in diesem Fall den Nutzungs- und Zuweisungszustand mithilfe von Azure AD-Berichten leicht anzeigen.
 
@@ -71,4 +71,4 @@ Zu den Azure AD-Features zur gemeinsamen Nutzung von Konten gehören folgende Fu
 - [Schützen von Apps durch bedingten Zugriff](active-directory-conditional-access.md)
 - [Self-Service-Gruppenverwaltung/SSAA](active-directory-accessmanagement-self-service-group-management.md)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1210_2015-->

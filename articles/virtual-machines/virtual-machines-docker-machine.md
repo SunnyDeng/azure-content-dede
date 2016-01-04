@@ -62,7 +62,7 @@ Wenn Sie Erfahrung mit Linux-Distributionen haben, stehen diese Dateien möglich
 
 		openssl x509 -inform pem -in mycert.pem -outform der -out mycert.cer
 
-2. Laden Sie die CER-Datei für Ihr Zertifikat nach Azure hoch. Klicken Sie im [Azure-Portal](https://manage.windowsazure.com) links unten im Dienstbereich auf **Einstellungen** (siehe unten),
+2. Laden Sie die CER-Datei für Ihr Zertifikat nach Azure hoch. Klicken Sie im [klassischen Azure-Portal](https://manage.windowsazure.com) links unten im Dienstbereich auf **Einstellungen** (siehe unten),
 
 	![][portalsettingsitem]
 
@@ -214,4 +214,4 @@ Rufen Sie das [Docker-Benutzerhandbuch](https://docs.docker.com/userguide/) auf,
 [Link 2 to another azure.microsoft.com documentation topic]: ../web-sites-custom-domain-name.md
 [Link 3 to another azure.microsoft.com documentation topic]: ../storage-whatis-account.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

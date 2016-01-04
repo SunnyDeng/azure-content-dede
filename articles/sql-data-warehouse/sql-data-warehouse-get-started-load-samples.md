@@ -20,12 +20,12 @@
 
 Während Sie eine SQL Data Warehouse-Instanz erstellen, können Sie auf einfache Weise einige Beispieldaten in die Instanz laden. Wenn Sie diesen Schritt während der Bereitstellung verpasst haben, können Sie [Beispieldaten auch manuell laden][].
 
-Im Folgenden erhalten Sie eine kurze Übersicht darüber, wie AdventureWorksDW in die Datenbank geladen werden kann. Dieses Dataset modelliert eine Data Warehouse-Beispielstruktur für ein fiktives Unternehmen namens AdventureWorks mit Daten, die Umsätze und Kunden für das Unternehmen darstellen.
+Im Folgenden erhalten Sie einen kurzen Überblick darüber, wie AdventureWorksDW in die Datenbank geladen werden kann. Dieses Dataset modelliert eine Data Warehouse-Beispielstruktur für ein fiktives Unternehmen namens AdventureWorks mit Daten, die Umsätze und Kunden für das Unternehmen darstellen.
 
 ## Hinzufügen von Beispieldaten während der Erstellung
 Sie können sicherstellen, dass diese Daten während der Bereitstellung in das SQL Data Warehouse geladen werden, indem Sie folgende Schritte ausführen:
 
-1. Starten Sie den Erstellungsprozess, indem Sie SQL Data Warehouse im [Azure-Portal][] durch Klicken auf „+Neu“ und anschließend auf „Daten und Speicher“ suchen oder im Marketplace, indem Sie nach „SQL Data Warehouse“ suchen. 
+1. Starten Sie den Erstellungsprozess, indem Sie SQL Data Warehouse im [klassischen Azure-Portal][] durch Klicken auf „+Neu“ und anschließend auf „Daten und Speicher“ suchen oder im Marketplace, indem Sie nach „SQL Data Warehouse“ suchen. 
  
 2. Sobald der Prozess gestartet wurde, müssen Sie auf die Option „Quelle auswählen“ klicken und sie dann auf „Beispiel“ festlegen. Wenn Sie keinen neuen Server erstellen, werden Sie ebenfalls dazu aufgefordert, die Anmeldung für den Server anzugeben, den Sie zur Erstellung verwenden.
 
@@ -35,7 +35,7 @@ Sie können sicherstellen, dass diese Daten während der Bereitstellung in das S
 
 ## Verwenden von Power BI zur Analyse von Adventureworks
 
-Die Nutzung des Beispieldatensatzes ist eine gute Möglichkeit, erste Schritte mit Power BI durchzuführen. Nach dem Laden der Beispieldaten können Sie eine Verbindung mit SQL Data Warehouse entweder durch Klicken auf die Schaltfläche „Öffnen in Power BI“ im Azure-Portal oder durch Wechseln zu [Power BI][] und [Herstellen einer Verbindung mit SQL Data Warehouse][] öffnen. Nachdem die Verbindung hergestellt ist, sollte ein neues Dataset mit dem gleichen Namen wie das Data Warehouse erstellt werden. Zum Vereinfachen der Analyse haben wir eine Ansicht namens „AggregateSales“ mit einigen der Metriken erstellt, die entscheidend für die Analyse des Umsatzes vom Unternehmen sind. Klicken Sie auf den Namen in dieser Ansicht, um sie zu erweitern, und sehen Sie die enthaltenen Spalten, sodass Sie mithilfe der folgenden Schritte einige schnelle Visualisierungen erstellen können:
+Die Nutzung des Beispieldatensatzes ist eine gute Möglichkeit, erste Schritte mit Power BI durchzuführen. Nach dem Laden der Beispieldaten können Sie eine Verbindung mit SQL Data Warehouse entweder durch Klicken auf die Schaltfläche „Öffnen in Power BI“ im klassischen Azure-Portal oder durch Wechseln zu [Power BI][] und [Herstellen einer Verbindung mit SQL Data Warehouse][] öffnen. Nachdem die Verbindung hergestellt ist, sollte ein neues Dataset mit dem gleichen Namen wie das Data Warehouse erstellt werden. Zum Vereinfachen der Analyse haben wir eine Ansicht namens „AggregateSales“ mit einigen der Metriken erstellt, die entscheidend für die Analyse des Umsatzes vom Unternehmen sind. Klicken Sie auf den Namen in dieser Ansicht, um sie zu erweitern, und sehen Sie die enthaltenen Spalten, sodass Sie mithilfe der folgenden Schritte einige schnelle Visualisierungen erstellen können:
 
 1. Zum Einstieg können wir einfach eine Übersicht über all unsere Umsätze durch Klicken auf die Spalten „PostalCode“ und „SalesAmount“ erstellen. Power BI erkennt dies sogar automatisch als geografische Daten und fügt Sie in einer Karte hinzu. 
 
@@ -85,7 +85,7 @@ Nachdem Sie sich schon etwas mit den Beispieldaten vertraut gemacht haben, könn
 [Migrieren von Code]: ./sql-data-warehouse-migrate-code.md
 [Beispieldaten auch manuell laden]: ./sql-data-warehouse-get-started-manually-load-samples.md
 [Beispieldaten manuell laden]: ./sql-data-warehouse-get-started-manually-load-samples.md
-[Azure-Portal]: https://portal.azure.com/
+[klassischen Azure-Portal]: https://portal.azure.com/
 [Power BI]: http://www.powerbi.com/
 [Herstellen einer Verbindung mit SQL Data Warehouse]: ./sql-data-warehouse-integrate-power-bi.md
 
@@ -95,4 +95,4 @@ Nachdem Sie sich schon etwas mit den Beispieldaten vertraut gemacht haben, könn
 <!--Other Web references-->
 [Sample Data Scripts]: https://migrhoststorage.blob.core.windows.net/sqldwsample/AdventureWorksPDW2012.zip/
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

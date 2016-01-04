@@ -25,7 +25,7 @@ Es gibt eine Reihe von Möglichkeiten, die REST-API zu nutzen und auf den Webdie
 
 Aber die schnellste und einfachste Möglichkeit, auf Ihren Webdienst zuzugreifen, bieten die Web-App-Vorlagen, die im [Azure Marketplace für Web-Apps](https://azure.microsoft.com/marketplace/web-applications/all/) verfügbar sind.
 
-[AZURE.INCLUDE [machine-learning-kostenlose-Testversion](../../includes/machine-learning-free-trial.md)]
+[AZURE.INCLUDE [machine-learning-free-trial](../../includes/machine-learning-free-trial.md)]
 
 ## Azure Machine Learning-Web-App-Vorlagen
 
@@ -56,7 +56,7 @@ Nachdem Sie den Webdienst bereitgestellt haben, können Sie den unten aufgeführ
 
 	![Anforderungs-URI][image4]
 
-3. Wechseln Sie zu [Azure ML-Web-App für den Anfrage-/Antwort-Dienst](https://azure.microsoft.com/marketplace/partners/microsoft/azuremlaspnettemplateforrrs/), und klicken Sie auf **Web-App erstellen**. Über die Vorlage gelangen Sie zum Microsoft Azure-Portal, wo die neue Web-App erstellt wird.
+3. Wechseln Sie zur [Azure ML-Web-App für den Anfrage-/Antwort-Dienst](https://azure.microsoft.com/marketplace/partners/microsoft/azuremlaspnettemplateforrrs/), und klicken Sie auf **Web-App erstellen**. Über die Vorlage gelangen Sie zum klassischen Azure-Portal von Microsoft, wo die neue Web-App erstellt wird.
 
 	- Geben Sie Ihrer Web-App einen eindeutigen Namen. Die URL der Web-App besteht aus diesem Namen gefolgt von `.azurewebsites.net.`. Beispiel: `http://carprediction.azurewebsites.net.`
 
@@ -86,7 +86,7 @@ Nachdem Sie den Webdienst bereitgestellt haben, können Sie den unten aufgeführ
 
 Wenn Sie zur Seite **Konfiguration** zurückkehren möchten, wechseln Sie zur Seite `setting.aspx` der Web-App. Beispiel: `http://carprediction.azurewebsites.net/setting.aspx.` Sie werden aufgefordert, den API-Schlüssel erneut einzugeben. Sie benötigen ihn, um auf die Seite zuzugreifen und die Einstellungen zu aktualisieren.
 
-Sie können die Web-App im Azure-Portal wie andere Web-Apps beenden, neu starten oder löschen. Solange sie ausgeführt wird, können Sie zur Webadresse der Startseite wechseln und neue Werte eingeben.
+Sie können die Web-App im klassischen Azure-Portal wie andere Web-Apps beenden, neu starten oder löschen. Solange sie ausgeführt wird, können Sie zur Webadresse der Startseite wechseln und neue Werte eingeben.
 
 ## Verwenden der Vorlage für den Batchausführungsdienst (BES)
 
@@ -125,4 +125,4 @@ Erfahren Sie mehr:
 [image6]: media\machine-learning-consume-web-service-with-web-app-template\web-service-info.png
 [image7]: media\machine-learning-consume-web-service-with-web-app-template\storage.png
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

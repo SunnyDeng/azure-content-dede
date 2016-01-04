@@ -3,8 +3,8 @@
 	description="Eine Checkliste mit bewährten Methoden für die Verwendung mit Azure Storage beim Entwickeln leistungsfähiger Anwendungen."
 	services="storage"
 	documentationCenter=""
-	authors="tamram"
-	manager="carolz"
+	authors="robinsh"
+	manager="carmonm"
 	editor=""/>
 
 <tags
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/03/2015" 
-	ms.author="tamram"/>
+	ms.date="12/04/2015" 
+	ms.author="robinsh"/>
 
 # Checkliste zu Leistung und Skalierbarkeit von Microsoft Azure Storage
 
@@ -30,8 +30,6 @@ Dieser Artikel unterteilt die bewährten Vorgehensweisen in Gruppen, die wie fol
 -	Blobs
 -	Tabellen
 -	Warteschlangen  
-
-Der Azure-Dateidienst befindet sich derzeit in der Vorschauphase; die bewährten Vorgehensweisen werden künftig hier hinzugefügt.
 
 |Vorgehensweise|	Bereich|	Kategorie|	Frage
 |----|------|-----------|-----------
@@ -387,4 +385,4 @@ Verwenden Sie Warteschlangen, um die Anwendungsarchitektur skalierbar zu machen.
 In diesem Artikel wurden einige der häufigsten bewährten Vorgehensweisen zur Leistungsoptimierung bei der Verwendung des Azure-Speichers erläutert. Wir empfehlen jedem Anwendungsentwickler, seine Anwendung anhand dieser Vorgehensweisen zu überprüfen und ggf. die Empfehlungen umzusetzen, um bessere Leistung für ihre Anwendungen zu erzielen, die Azure-Speicher verwenden.
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

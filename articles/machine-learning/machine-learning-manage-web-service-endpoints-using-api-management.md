@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/09/2015"
+	ms.date="12/08/2015"
 	ms.author="roalexan" />
 
 
@@ -26,7 +26,7 @@ Dieser Leitfaden beschreibt die ersten Schritte mit API Management zur Verwaltun
 
 ##Was ist Azure API Management?
 
-Azure API Management ist ein Azure-Dienst, mit dem Sie Ihre REST-API-Endgeräte verwalten können, indem Sie Benutzerzugriff, Nutzungseinschränkungen und Dashboardüberwachung definieren. Klicken Sie [hier](http://azure.microsoft.com/services/api-management/), um Informationen zu Azure API Management zu erhalten. Klicken Sie [hier](api-management/api-management-get-started.md), um eine Anleitung zum Einstieg in Azure API Management zu erhalten. Dieser Leitfaden (auf dem der vorliegende Leitfaden basiert) behandelt weitere Themen, z. B. Benachrichtigungskonfiguration, Tarife, Antwortverarbeitung, Benutzerauthentifizierung, Produkterstellung, Entwicklerabonnements und Nutzungsdashboards.
+Azure API Management ist ein Azure-Dienst, mit dem Sie Ihre REST-API-Endpunkte verwalten können, indem Sie Benutzerzugriff, Nutzungseinschränkungen und Dashboardüberwachung definieren. Klicken Sie [hier](http://azure.microsoft.com/services/api-management/), um Informationen zu Azure API Management zu erhalten. Klicken Sie [hier](api-management/api-management-get-started.md), um eine Anleitung zum Einstieg in Azure API Management zu erhalten. Dieser Leitfaden (auf dem der vorliegende Leitfaden basiert) behandelt weitere Themen, z. B. Benachrichtigungskonfiguration, Tarife, Antwortverarbeitung, Benutzerauthentifizierung, Produkterstellung, Entwicklerabonnements und Nutzungsdashboards.
 
 ##Was ist Azure ML?
 
@@ -42,7 +42,7 @@ Zum Durcharbeiten dieses Leitfadens benötigen Sie Folgendes:
 
 ##Erstellen einer API Management-Instanz
 
-Im Folgenden finden Sie die Schritte zur Verwendung von API Management zur Verwaltung Ihres Azure ML-Webdiensts. Erstellen Sie zuerst eine Instanz des Diensts. Melden Sie sich beim [Verwaltungsportal](https://manage.windowsazure.com/) an, und klicken Sie auf **Neu** > **App Services** > **API Management** > **Erstellen**.
+Im Folgenden finden Sie die Schritte zur Verwendung von API Management zur Verwaltung Ihres Azure ML-Webdiensts. Erstellen Sie zuerst eine Instanz des Diensts. Melden Sie sich beim [klassischen Portal](https://manage.windowsazure.com/) an, und klicken Sie auf **Neu** > **App Services** > **API Management** > **Erstellen**.
 
 ![create-instance](./media/machine-learning-manage-web-service-endpoints-using-api-management/create-instance.png)
 
@@ -60,11 +60,11 @@ Aktivieren Sie das Kontrollkästchen, um Ihre Dienstinstanz zu erstellen. *Die E
 
 Nach der Erstellung der Dienstinstanz können Sie die API erstellen. Eine API besteht aus einem Satz von Vorgängen, die aus Clientanwendungen aufgerufen werden können. API-Operationen funktionieren als Proxys für vorhandene Webdienste. In diesem Leitfaden werden APIs erstellt, die per Proxy an die vorhandenen Azure ML-Webdienste "RRS" und "BES" weiterleiten.
 
-APIs werden im API-Herausgeberportal erstellt und konfiguriert, das über das Azure-Verwaltungsportal erreichbar ist. Um auf das Herausgeberportal zuzugreifen, wählen Sie Ihre Dienstinstanz aus.
+APIs werden im API-Herausgeberportal erstellt und konfiguriert, das über das klassische Azure-Portal erreichbar ist. Um auf das Herausgeberportal zuzugreifen, wählen Sie Ihre Dienstinstanz aus.
 
 ![select-service-instance](./media/machine-learning-manage-web-service-endpoints-using-api-management/select-service-instance.png)
 
-Klicken Sie im Azure-Portal für Ihren API Management-Dienst auf **Verwalten**.
+Klicken Sie im klassischen Azure-Portal für Ihren API Management-Dienst auf **Verwalten**.
 
 ![manage-service](./media/machine-learning-manage-web-service-endpoints-using-api-management/manage-service.png)
 
@@ -116,7 +116,7 @@ Klicken Sie auf **Vorgang hinzufügen**, um der API den Azure ML-BES-Vorgang hi
 
 ##Aufrufen einer Operation aus dem Entwicklerportal
 
-Operationen können direkt aus dem Entwicklerportal aufgerufen werden. Dies ist ein einfacher Weg, um die Operationen einer API anzuzeigen und zu testen. In diesem Schritt rufen Sie die **RRS Execute**-Methode auf, die der **Azure ML-Demo-API** hinzugefügt wurde. Klicken Sie auf **Entwicklerportal** im Menü oben rechts im Verwaltungsportal.
+Operationen können direkt aus dem Entwicklerportal aufgerufen werden. Dies ist ein einfacher Weg, um die Operationen einer API anzuzeigen und zu testen. In diesem Schritt rufen Sie die **RRS Execute**-Methode auf, die der **Azure ML-Demo-API** hinzugefügt wurde. Klicken Sie im klassischen Portal im Menü oben rechts auf **Entwicklerportal**.
 
 ![developer-portal](./media/machine-learning-manage-web-service-endpoints-using-api-management/developer-portal.png)
 
@@ -198,7 +198,7 @@ Klicken Sie auf **Yes**, um das Experiment zu veröffentlichen.
 
 ###Testen des Webdiensts
 
-Ein Azure ML-Webdienst besteht aus RRS-Endgeräten (Request/Response Service, Anforderungs-/Antwortdienst) und BES-Endgeräten (Batch Execution Service, Batchausführungsdienst). RRS dient zur synchronen Ausführung. BES dient zur asynchronen Auftragsausführung. Um Ihren Webdienst mit dem unten aufgeführten Python-Beispielcode zu testen, müssen Sie möglicherweise das Azure-SDK für Python herunterladen und installieren (siehe [Installieren von Python und SDK](python-how-to-install.md)).
+Ein Azure ML-Webdienst besteht aus RRS-Endpunkten (Request/Response Service, Anforderungs-/Antwortdienst) und BES-Endpunkten (Batch Execution Service, Batchausführungsdienst). RRS dient zur synchronen Ausführung. BES dient zur asynchronen Auftragsausführung. Um Ihren Webdienst mit dem unten aufgeführten Python-Beispielcode zu testen, müssen Sie möglicherweise das Azure-SDK für Python herunterladen und installieren (siehe [Installieren von Python und SDK](python-how-to-install.md)).
 
 Sie benötigen auch den **Arbeitsbereich**, den **Dienst** und den **API-Schlüssel** Ihres Experiments für den unten stehenden Beispielcode. Sie finden den Arbeitsbereich und den Dienst, indem Sie im Webdienstdashboard für Ihr Experiment entweder auf **Anforderung/Antwort** oder auf **Batchausführung** klicken.
 
@@ -208,11 +208,11 @@ Den **API-Schlüssel** finden Sie, indem Sie im Webdienstdashboard auf Ihr Exper
 
 ![find-api-key](./media/machine-learning-manage-web-service-endpoints-using-api-management/find-api-key.png)
 
-####Testen des RRS-Endgeräts
+####Testen des RRS-Endpunkts
 
 #####Schaltfläche "Test"
 
-Um das RRS-Endgerät zu testen, können Sie ganz einfach auf dem Webdienstdashboard auf **Test** klicken.
+Um den RRS-Endpunkt zu testen, können Sie ganz einfach auf dem Webdienstdashboard auf **Test** klicken.
 
 ![test](./media/machine-learning-manage-web-service-endpoints-using-api-management/test.png)
 
@@ -257,7 +257,7 @@ Dieser Leitfaden zeigt ein funktionierendes Python-Beispiel. Sie müssen dieses 
     	print(error.info())
     	print(json.loads(error.read()))
 
-####Testen des BES-Endgeräts
+####Testen des BES-Endpunkts
 Klicken Sie auf dem Dashboard auf **Batchausführung**, und scrollen Sie bis zum Ende. Sie sehen Beispielcode für C#, Python und R. Sie sehen auch die Syntax der BES-Anforderungen zum Übermitteln, Starten, Abrufen des Status und Löschen eines Auftrags.
 
 Dieser Leitfaden zeigt ein funktionierendes Python-Beispiel. Sie müssen dieses Beispiel mit dem **Arbeitsbereich**, dem **Dienst** und dem **API-Schlüssel** Ihres Experiments bearbeiten. Darüber hinaus müssen Sie den **Speicherkontonamen**, den **Speicherkontoschlüssel** und den **Speichercontainernamen** ändern. Und schließlich müssen Sie den Speicherort der **Eingabedatei** und den Speicherort der **Ausgabedatei** bearbeiten.
@@ -384,4 +384,4 @@ Dieser Leitfaden zeigt ein funktionierendes Python-Beispiel. Sie müssen dieses 
 	return
 	invokeBatchExecutionService()
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1210_2015-->

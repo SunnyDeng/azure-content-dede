@@ -3,8 +3,8 @@
    description="Informationen zu den Skalierbarkeits- und Leistungszielen für Azure Storage, einschließlich Kapazität Anforderungsrate sowie eingehende und ausgehende Bandbreite für Standard- und Premium-Speicherkonten. Machen Sie sich mit den Leistungszielen für Partitionen in den einzelnen Azure Storage-Diensten vertraut."
    services="storage"
    documentationCenter="na"
-   authors="tamram"
-   manager="na"
+   authors="robinsh"
+   manager="carmonm"
    editor="na" />
 <tags 
    ms.service="storage"
@@ -12,10 +12,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="storage"
-   ms.date="09/27/2015"
-   ms.author="tamram" />
+   ms.date="12/04/2015"
+   ms.author="robinsh" />
 
 # Skalierbarkeits- und Leistungsziele für Azure Storage
+
+## Übersicht
 
 In diesem Thema werden die Skalierbarkeits- und Leistungsaspekte von Microsoft Azure Storage beschrieben. Eine Zusammenfassung anderer Einschränkungen von Azure, finden Sie unter [Einschränkungen für Azure-Abonnements und Dienste, Kontingente und Einschränkungen](../azure-subscription-service-limits.md).
 
@@ -29,15 +31,26 @@ In diesem Thema werden die Skalierbarkeits- und Leistungsaspekte von Microsoft A
 
 Wenn die Anforderungen Ihrer Anwendung die Skalierbarkeitsziele eines einzelnen Speicherkontos überschreiten, können Sie die Anwendung so erstellen, dass mehrere Speicherkonten verwendet werden, und die Datenobjekte in diesen Speicherkonten partitionieren. Informationen zu Volumenpreisen finden Sie unter [Speicherpreisdetails](http://azure.microsoft.com/pricing/details/storage/).
 
-## Skalierbarkeitsziele für Standardspeicherkonten
+
+## Skalierbarkeitsziele für Blobs, Warteschlangen, Tabellen und Dateien
 
 [AZURE.INCLUDE [azure-storage-limits](../../includes/azure-storage-limits.md)]
 
-## Skalierbarkeitsziele für Premium Storage-Konten
+## Skalierbarkeitsziele für Festplatten virtueller Computer 
 
-[AZURE.INCLUDE [azure-storage-limits-premium-storage](../../includes/azure-storage-limits-premium-storage.md)]
+[AZURE.INCLUDE [azure-storage-limits-vm-disks](../../includes/azure-storage-limits-vm-disks.md)]
 
-## Speichergrenzwerte - Azure-Ressourcen-Manager
+Weitere Informationen finden Sie unter [Größen virtueller Computer](../virtual-machines/virtual-machines-size-specs.md).
+
+### Standardspeicherkonten
+
+[AZURE.INCLUDE [azure-storage-limits-vm-disks-standard](../../includes/azure-storage-limits-vm-disks-standard.md)]
+
+### Storage Premium-Konten
+
+[AZURE.INCLUDE [azure-storage-limits-vm-disks-premium](../../includes/azure-storage-limits-vm-disks-premium.md)]
+
+## Skalierbarkeitsziele für Azure-Ressourcen-Manager
 
 [AZURE.INCLUDE [azure-storage-limits-azure-resource-manager](../../includes/azure-storage-limits-azure-resource-manager.md)]
 
@@ -70,10 +83,6 @@ Partitionen wirken sich wie folgt auf den Lastenausgleich und die Skalierbarkeit
 - [Premium-Speicher: Hochleistungsspeicher für Workloads in Azure Virtual Machine](storage-premium-storage-preview-portal/)
 - [Azure Storage-Replikation](storage-redundancy.md)
 - [Checkliste zu Leistung und Skalierbarkeit von Microsoft Azure Storage](storage-performance-checklist.md)
-- [Microsoft Azure Storage: A Highly Available Cloud Storage Service with Strong Consistency](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx) (in englischer Sprache)
+- [Microsoft Azure Storage: A Highly Available Cloud Storage Service with Strong Consistency (in englischer Sprache)](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)
 
-
-
- 
-
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

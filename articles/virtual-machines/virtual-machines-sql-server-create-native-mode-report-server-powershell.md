@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
-	ms.date="08/19/2015"
+	ms.date="12/11/2015"
 	ms.author="jroth" />
 
 # Verwenden von PowerShell zum Erstellen einer Azure-VM mit einem Berichtsserver im einheitlichen Modus
@@ -31,19 +31,19 @@ In diesem Thema wird beschrieben und sind Anleitungen enthalten, wie ein SQL Ser
 
 - **Azure-Abonnement**: Überprüfen Sie die Anzahl von Kernen, die in Ihrem Azure-Abonnement verfügbar sind. Wenn Sie den virtuellen Computer in der empfohlenen Größe **A3** erstellen, benötigen Sie **4** verfügbare Kerne. Wenn Sie einen virtuellen Computer der Größe **A2** verwenden, benötigen Sie **2** verfügbare Kerne.
 	
-	- Um die Kernebegrenzung Ihres Abonnements zu überprüfen, klicken Sie im Azure-Verwaltungsportal im linken Bereich auf EINSTELLUNGEN, und klicken Sie dann im oberen Menü auf VERWENDUNG.
+	- Um die Kernebegrenzung Ihres Abonnements zu überprüfen, klicken Sie im klassischen Azure-Portal im linken Bereich auf EINSTELLUNGEN und dann im oberen Menü auf VERWENDUNG.
 	
 	- Wenn Sie das Kernekontingent erhöhen möchten, wenden Sie sich an [Azure Support](http://azure.microsoft.com/support/options/). Informationen zur Größe eines virtuellen Computers finden Sie unter [Größen für Virtual Machines für Azure](virtual-machines-size-specs.md).
 
 - **Windows PowerShell-Skrips**: Für das Thema wird davon ausgegangen, dass Sie grundlegende Kenntnisse zu Windows PowerShell haben. Weitere Informationen zur Verwendung von Windows PowerShell finden Sie hier:
 
-	- [Starting Windows PowerShell on Windows Server](https://technet.microsoft.com/library/hh847814.aspx)
+	- [Starten von WindowsPowerShell unter WindowsServer](https://technet.microsoft.com/library/hh847814.aspx)
 	
-	- [Getting Started with Windows PowerShell](https://technet.microsoft.com/library/hh857337.aspx)
+	- [Erste Schritte mit WindowsPowerShell](https://technet.microsoft.com/library/hh857337.aspx)
 
 ## Schritt 1: Bereitstellen eines virtuellen Azure-Computers
 
-1. Navigieren Sie zum [Azure-Verwaltungsportal](https://manage.windowsazure.com).
+1. Navigieren Sie zum klassischen Azure-Portal.
 
 1. Klicken Sie im linken Bereich auf **Virtuelle Computer**.
 
@@ -111,7 +111,7 @@ In diesem Thema wird beschrieben und sind Anleitungen enthalten, wie ein SQL Ser
 
 Wenn Sie HTTPS auf dem virtuellen Computer verwenden möchten, benötigen Sie ein vertrauenswürdiges SSL-Zertifikat. Abhängig von Ihrem Szenario können Sie eine der beiden folgenden Methoden verwenden:
 
-- Ein gültiges SSL-Zertifikat, das von einer Zertifizierungsstelle ausgegeben wurde und von Microsoft als vertrauenswürdig eingestuft ist. Die Stammzertifikate einer Zertifizierungsstelle müssen über das Microsoft-Programm für Stammzertifikate (Microsoft Root Certificate Program) verteilt werden. Weitere Informationen zu diesem Programm finden Sie unter [Windows and Windows Phone 8 SSL Root Certificate Program (Member CAs)](http://social.technet.microsoft.com/wiki/contents/articles/14215.windows-and-windows-phone-8-ssl-root-certificate-program-member-cas.aspx) und [Introduction to The Microsoft Root Certificate Program](http://social.technet.microsoft.com/wiki/contents/articles/3281.introduction-to-the-microsoft-root-certificate-program.aspx).
+- Ein gültiges SSL-Zertifikat, das von einer Zertifizierungsstelle ausgegeben wurde und von Microsoft als vertrauenswürdig eingestuft ist. Die Stammzertifikate einer Zertifizierungsstelle müssen über das Microsoft-Programm für Stammzertifikate (Microsoft Root Certificate Program) verteilt werden. Weitere Informationen zu diesem Programm finden Sie unter [Windows und Windows Phone 8 SSL Root Certificate Program (Members CAs)](http://social.technet.microsoft.com/wiki/contents/articles/14215.windows-and-windows-phone-8-ssl-root-certificate-program-member-cas.aspx) und [Einführung in das Microsoft Root Certificate Program](http://social.technet.microsoft.com/wiki/contents/articles/3281.introduction-to-the-microsoft-root-certificate-program.aspx).
 
 - Ein selbstsigniertes Zertifikat. Selbstsignierte Zertifikate werden für Produktionsumgebungen nicht empfohlen.
 
@@ -131,7 +131,7 @@ Wenn Sie HTTPS auf dem virtuellen Computer verwenden möchten, benötigen Sie ei
 
 	>[AZURE.NOTE]Der Wert des Felds **Ausgestellt für** muss mit dem Namen übereinstimmen, den Sie in **DNS-Name des Clouddiensts** für den neuen virtuellen Computer verwendet haben.
 
-1. **Installieren Sie das Serverzertifikat auf dem Webserver**. In diesem Fall ist der Webserver der virtuelle Computer, der den Berichtsserver hostet, und die Website wird in späteren Schritten erstellt, wenn Sie Reporting Services konfigurieren. Weitere Informationen zum Installieren des Serverzertifikats auf dem Webserver mithilfe des MMC-Snap-Ins „Zertifikate“ finden Sie unter [Install a Server Certificate](https://technet.microsoft.com/library/cc740068).
+1. **Installieren Sie das Serverzertifikat auf dem Webserver**. In diesem Fall ist der Webserver der virtuelle Computer, der den Berichtsserver hostet, und die Website wird in späteren Schritten erstellt, wenn Sie Reporting Services konfigurieren. Weitere Informationen zum Installieren des Serverzertifikats auf dem Webserver mithilfe des MMC-Snap-Ins „Zertifikate“ finden Sie unter [Installieren eines Serverzertifikats](https://technet.microsoft.com/library/cc740068).
 	
 	Wenn Sie das in diesem Thema enthaltene Skript verwenden möchten, um den Berichtsserver zu konfigurieren, ist der Wert, der für das Zertifikat als **Fingerabdruck** angegeben ist, als Parameter des Skripts erforderlich. Ausführliche Informationen, wie Sie den Fingerabdruck des Zertifikats abrufen, finden Sie im nächsten Abschnitt.
 
@@ -141,9 +141,9 @@ Wenn Sie HTTPS auf dem virtuellen Computer verwenden möchten, benötigen Sie ei
 
 Bei der Bereitstellung des virtuellen Computer wurde auf ihm ein selbstsigniertes Zertifikat erstellt. Der Name des Zertifikats ist mit dem DNS-Namen des virtuellen Computers identisch. Damit keine Zertifikatfehler auftreten, ist es erforderlich, dass das Zertifikat sowohl auf dem virtuellen Computer selbst als auch von allen Benutzern der Website als vertrauenswürdig eingestuft wird.
 
-1. Damit der Stammzertifizierungsstelle des Zertifikats auf dem lokalen virtuellen Computer vertraut wird, fügen Sie das Zertifikat zu **Vertrauenswürdige Stammzertifizierungsstellen** hinzu. Es folgt eine Zusammenfassung der erforderlichen Schritte. Ausführliche Schritte dazu, wie die Zertifizierungsstelle als vertrauenswürdig eingestuft wird, finden Sie unter [Install a Server Certificate](https://technet.microsoft.com/library/cc740068).
+1. Damit der Stammzertifizierungsstelle des Zertifikats auf dem lokalen virtuellen Computer vertraut wird, fügen Sie das Zertifikat zu **Vertrauenswürdige Stammzertifizierungsstellen** hinzu. Es folgt eine Zusammenfassung der erforderlichen Schritte. Ausführliche Schritte dazu, wie die Zertifizierungsstelle als vertrauenswürdig eingestuft wird, finden Sie unter [Installieren eines Serverzertifikats](https://technet.microsoft.com/library/cc740068).
 
-	1. Wählen Sie im Azure-Verwaltungsportal den virtuellen Computer aus, und klicken Sie auf „Verbinden“. Abhängig von Ihrer Browserkonfiguration werden Sie möglicherweise aufgefordert, eine RDP-Datei zum Herstellen einer Verbindung mit dem virtuellen Computer zu speichern.
+	1. Wählen Sie im klassischen Azure-Portal den virtuellen Computer aus, und klicken Sie auf „Verbinden“. Abhängig von Ihrer Browserkonfiguration werden Sie möglicherweise aufgefordert, eine RDP-Datei zum Herstellen einer Verbindung mit dem virtuellen Computer zu speichern.
 	
 		![Verbindung mit virtuellem Computer herstellen](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC650112.gif) Verwenden Sie den Namen des virtuellen Computers, den Benutzernamen und das Kennwort, die Sie bei der Erstellung des virtuellen Computers konfiguriert haben.
 	
@@ -193,7 +193,7 @@ Ausführlichere Schritte finden Sie im Abschnitt [Herstellen einer Verbindung mi
 
 Wenn Sie das Windows PowerShell-Skript verwenden möchten, um den Berichtsserver zu konfigurieren, führen Sie die folgenden Schritte aus. Die Konfiguration umfasst HTTP, nicht HTTPS:
 
-1. Wählen Sie im Azure-Verwaltungsportal den virtuellen Computer aus, und klicken Sie auf „Verbinden“. Abhängig von Ihrer Browserkonfiguration werden Sie möglicherweise aufgefordert, eine RDP-Datei zum Herstellen einer Verbindung mit dem virtuellen Computer zu speichern.
+1. Wählen Sie im klassischen Azure-Portal den virtuellen Computer aus, und klicken Sie auf „Verbinden“. Abhängig von Ihrer Browserkonfiguration werden Sie möglicherweise aufgefordert, eine RDP-Datei zum Herstellen einer Verbindung mit dem virtuellen Computer zu speichern.
 
 	![Verbindung mit virtuellem Computer herstellen](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC650112.gif) Verwenden Sie den Namen des virtuellen Computers, den Benutzernamen und das Kennwort, die Sie bei der Erstellung des virtuellen Computers konfiguriert haben.
 
@@ -334,7 +334,7 @@ Wenn Sie das Windows PowerShell-Skript verwenden möchten, um den Berichtsserver
 
 Wenn Sie ein Windows PowerShell-Skript verwenden möchten, um den Berichtsserver zu konfigurieren, führen Sie die folgenden Schritte aus. Die Konfiguration umfasst HTTPS, nicht HTTP:
 
-1. Wählen Sie im Azure-Verwaltungsportal den virtuellen Computer aus, und klicken Sie auf „Verbinden“. Abhängig von Ihrer Browserkonfiguration werden Sie möglicherweise aufgefordert, eine RDP-Datei zum Herstellen einer Verbindung mit dem virtuellen Computer zu speichern.
+1. Wählen Sie im klassischen Azure-Portal den virtuellen Computer aus, und klicken Sie auf „Verbinden“. Abhängig von Ihrer Browserkonfiguration werden Sie möglicherweise aufgefordert, eine RDP-Datei zum Herstellen einer Verbindung mit dem virtuellen Computer zu speichern.
 
 	![Verbindung mit virtuellem Computer herstellen](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC650112.gif) Verwenden Sie den Namen des virtuellen Computers, den Benutzernamen und das Kennwort, die Sie bei der Erstellung des virtuellen Computers konfiguriert haben.
 
@@ -557,11 +557,11 @@ Das Ergebnis umfasst Folgendes:
 
 Wenn Sie nicht das PowerShell-Skript ausführen möchten, um den Berichtsserver zu konfigurieren, führen Sie die Schritte in diesem Abschnitt aus, in denen der Konfigurations-Manager für einheitlichen Modus für Reporting Services verwendet wird, um den Berichtsserver zu konfigurieren.
 
-1. Wählen Sie im Azure-Verwaltungsportal den virtuellen Computer aus, und klicken Sie auf „Verbinden“. Verwenden Sie den Benutzernamen und das Kennwort, den bzw. das Sie bei der Erstellung des virtuellen Computers konfiguriert haben.
+1. Wählen Sie im klassischen Azure-Portal den virtuellen Computer aus, und klicken Sie auf „Verbinden“. Verwenden Sie den Benutzernamen und das Kennwort, den bzw. das Sie bei der Erstellung des virtuellen Computers konfiguriert haben.
 
 	![Verbindung mit virtuellem Computer herstellen](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC650112.gif)
 
-1. Führen Sie Windows Update aus, und installieren Sie die Updates auf dem virtuellen Computer. Ist ein Neustart des virtuellen Computers erforderlich, starten Sie den virtuellen Computer neu, und stellen Sie aus dem Azure-Verwaltungsportal wieder eine Verbindung mit dem virtuellen Computer her.
+1. Führen Sie Windows Update aus, und installieren Sie die Updates auf dem virtuellen Computer. Ist ein Neustart des virtuellen Computers erforderlich, starten Sie den virtuellen Computer neu, und stellen Sie aus dem klassischen Azure-Portal wieder eine Verbindung mit dem virtuellen Computer her.
 
 1. Geben Sie über das Startmenü auf dem virtuellen Computer **Reporting Services** ein, und öffnen Sie den **Konfigurations-Manager für Reporting Services**.
 
@@ -633,7 +633,7 @@ Damit Sie sich vergewissern können, dass die grundlegenden Berichtsserverfunkti
 
 		http://localhost/Reports
 
-- Navigieren Sie auf Ihrem lokalen Computer zu dem **Remote**-Berichts-Manager auf dem virtuellen Computer. Aktualisieren Sie den DNS-Namen im folgenden Beispiel entsprechend Ihren Anforderungen. Wenn Sie zur Eingabe eines Kennworts aufgefordert werden, verwenden Sie die Administratoranmeldeinformationen, die Sie beim Bereitstellen des virtuellen Computers angegeben haben. Der Benutzername hat das Format [Domäne][Benutzername], wobei die Domäne dem Namen des virtuellen Computers entspricht, z. B. „ssrsnativecloud\\testuser“. Wenn Sie nicht HTTPS verwenden, entfernen Sie das **S** aus der URL. Informationen, wie Sie weitere Benutzer auf dem virtuellen Computer erstellen, finden Sie im nächsten Abschnitt.
+- Navigieren Sie auf Ihrem lokalen Computer zu dem **Remote**-Berichts-Manager auf dem virtuellen Computer. Aktualisieren Sie den DNS-Namen im folgenden Beispiel entsprechend Ihren Anforderungen. Wenn Sie zur Eingabe eines Kennworts aufgefordert werden, verwenden Sie die Administratoranmeldeinformationen, die Sie beim Bereitstellen des virtuellen Computers angegeben haben. Der Benutzername hat das Format [Domäne]\[Benutzername], wobei die Domäne dem Namen des virtuellen Computers entspricht, z. B. „ssrsnativecloud\\testuser“. Wenn Sie nicht HTTPS verwenden, entfernen Sie das **S** aus der URL. Informationen, wie Sie weitere Benutzer auf dem virtuellen Computer erstellen, finden Sie im nächsten Abschnitt.
 
 		https://ssrsnativecloud.cloudapp.net/Reports
 
@@ -647,7 +647,7 @@ Nach dem Konfigurieren und Überprüfen des Berichtsservers besteht eine der üb
 
 - [Erstellen eines lokalen Benutzerkontos](https://technet.microsoft.com/library/cc770642.aspx)
 
-- [Gewähren von Benutzerzugriff auf einen Berichtsserver (Berichts-Manager)](https://msdn.microsoft.com/library/ms156034.aspx))
+- [Gewähren von Benutzerzugriff auf einen Berichtsserver (Berichts-Manager)](https://msdn.microsoft.com/library/ms156034.aspx)
 
 - [Erstellen und Verwalten von Rollenzuweisungen](https://msdn.microsoft.com/library/ms155843.aspx)
 
@@ -655,7 +655,7 @@ Nach dem Konfigurieren und Überprüfen des Berichtsservers besteht eine der üb
 
 In der folgende Tabelle sind einige der Optionen zusammengefasst, mit denen vorhandene Berichte von einem lokalen Computer auf dem Berichtsserver veröffentlicht werden können, der auf dem virtuellen Microsoft Azure-Computer gehostet wird:
 
-- **RS.exe-Skript**: Verwenden Sie das RS.exe-Skript, um Berichtselemente von Ihrem sowie einen vorhandenen Berichtsserver auf Ihren virtuellen Microsoft Azure-Computer zu kopieren. Weitere Informationen finden Sie im Abschnitt „Einheitlicher Modus zu einheitlichem Modus – Virtueller Windows Azure-Computer“ in [Reporting Services-Beispielskript rs.exe zum Migrieren von Inhalten zwischen Berichtsservern](https://msdn.microsoft.com/library/dn531017.aspx).
+- **RS.exe-Skript**: Verwenden Sie das RS.exe-Skript, um Berichtselemente von Ihrem sowie einen vorhandenen Berichtsserver auf Ihren virtuellen Microsoft Azure-Computer zu kopieren. Weitere Informationen finden Sie im Abschnitt „Einheitlicher Modus zu einheitlichem Modus – Virtueller Microsoft Azure-Computer“ in [Reporting Services-Beispielskript rs.exe zum Migrieren von Inhalten zwischen Berichtsservern](https://msdn.microsoft.com/library/dn531017.aspx).
 
 - **Berichts-Generator**: Der virtuelle Computer umfasst die ClickOnce-Version von Microsoft SQL Server-Berichts-Generator. So starten Sie den Berichts-Generator das erste Mal auf dem virtuellen Computer:
 
@@ -683,7 +683,7 @@ In der folgende Tabelle sind einige der Optionen zusammengefasst, mit denen vorh
 
 ## Minimieren der Kosten, wenn Sie den virtuellen Computer nicht verwenden
 
->[AZURE.NOTE]Um die Kosten für Ihre virtuellen Azure-Computer zu minimieren, wenn diese nicht verwendet werden, fahren Sie die virtuellen Computer über das Azure-Verwaltungsportal herunter. Wenn Sie einen virtuellen Computer über dessen Windows-Energieoptionen herunterfahren, werden Ihnen weiterhin dieselben Kosten für den virtuellen Computer in Rechnung gestellt. Wenn Sie die Kosten verringern möchten, müssen Sie den virtuellen Computer im Azure-Verwaltungsportal herunterfahren. Wenn Sie den virtuellen Computer nicht mehr benötigen, sollten Sie den virtuellen Computer und die zugehörigen VHD-Dateien löschen, um Speicherkosten zu vermeiden. Weitere Informationen finden Sie im Abschnitt „FAQ“ unter [Virtuelle Computer Preise](http://azure.microsoft.com/pricing/details/virtual-machines).
+>[AZURE.NOTE]Um die Kosten für Ihre virtuellen Azure-Computer zu minimieren, fahren Sie die virtuellen Computer über das klassische Azure-Portal herunter, wenn diese nicht verwendet werden. Wenn Sie einen virtuellen Computer über dessen Windows-Energieoptionen herunterfahren, werden Ihnen weiterhin dieselben Kosten für den virtuellen Computer in Rechnung gestellt. Wenn Sie die Kosten verringern möchten, müssen Sie den virtuellen Computer im klassischen Azure-Portal herunterfahren. Wenn Sie den virtuellen Computer nicht mehr benötigen, sollten Sie den virtuellen Computer und die zugehörigen VHD-Dateien löschen, um Speicherkosten zu vermeiden. Weitere Informationen finden Sie im Abschnitt „FAQ“ unter [Virtuelle Computer Preise](http://azure.microsoft.com/pricing/details/virtual-machines).
 
 ## Weitere Informationen
 
@@ -705,4 +705,4 @@ In der folgende Tabelle sind einige der Optionen zusammengefasst, mit denen vorh
 
 [Übersicht zu SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-infrastructure-services.md)
 
-<!---HONumber=Oct15_HO3-->
+<!----HONumber=AcomDC_1217_2015-->

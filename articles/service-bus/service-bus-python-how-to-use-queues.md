@@ -44,7 +44,7 @@ bus_service = ServiceBusService(
 	shared_access_key_value='sharedaccesskey')
 ```
 
-Den Namen und Wert des SAS-Schlüssels finden Sie in den Verbindungsinformationen des **Azure-Portals** oder im [Eigenschaftenbereich][] von Visual Studio, wenn Sie den Service Bus-Namespace im Server-Explorer auswählen (wie im vorherigen Abschnitt gezeigt).
+Den Namen und Wert des SAS-Schlüssels finden Sie in den Verbindungsinformationen des **klassischen Azure-Portals** oder im [Eigenschaftenbereich][] von Visual Studio, wenn Sie den Service Bus-Namespace im Server-Explorer auswählen (wie im vorherigen Abschnitt gezeigt).
 
 ```
 bus_service.create_queue('taskqueue')
@@ -116,4 +116,4 @@ Nachdem Sie nun mit den Grundlagen der Service Bus-Warteschlangen vertraut sind,
 [Azure-Warteschlangen und Service Bus-Warteschlangen]: service-bus-azure-and-service-bus-queues-compared-contrasted.md#capacity-and-quotas
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

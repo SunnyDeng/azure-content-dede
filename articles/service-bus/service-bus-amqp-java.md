@@ -82,11 +82,11 @@ amqps://[username]:[password]@[namespace].servicebus.windows.net
 
 | Name | Bedeutung | | | | |
 |---------------|--------------------------------------------------------------------------------|---|---|---|---|
-| `[namespace]` | Der Service Bus-Namespace, der aus dem Azure-Portal abgerufen wird. | | | | |
-| `[username]` | Der Service Bus-Ausstellername, der aus dem Azure-Portal abgerufen wird. | | | | |
-| `[password]` | Die URL-codierte Form des Service Bus-Ausstellerschlüssels, der aus dem Azure-Portal abgerufen wird. | | | | |
+| `[namespace]` | Der Service Bus-Namespace, der aus dem [klassischen Azure-Portal][] abgerufen wird. | | | | |
+| `[username]` | Der Service Bus-Ausstellername, der aus dem [klassischen Azure-Portal][] abgerufen wird. | | | | |
+| `[password]` | Die URL-codierte Form des Service Bus-Ausstellerschlüssels, der aus dem [klassischen Azure-Portal][] abgerufen wird. | | | | |
 
-> [AZURE.NOTE]Sie müssen das Kennwort manuell als URL codieren. Ein nützliches URL-Codierungshilfsprogramm ist unter [http://www.w3schools.com/tags/ref\_urlencode.asp](http://www.w3schools.com/tags/ref_urlencode.asp) verfügbar.
+> [AZURE.NOTE]Sie müssen das Kennwort manuell URL-codieren. Ein nützliches URL-Codierungshilfsprogramm ist unter [http://www.w3schools.com/tags/ref\_urlencode.asp](http://www.w3schools.com/tags/ref_urlencode.asp) verfügbar.
 
 Angenommen, die aus dem Azure-Portal abgerufenen Informationen lauten wie folgt:
 
@@ -407,5 +407,6 @@ Möchten Sie mehr erfahren? Nutzen Sie die folgenden Links:
 [BrokeredMessage]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.aspx
 
 [Übersicht über Service Bus AMQP]: service-bus-amqp-overview.md
+[klassischen Azure-Portal]: http://manage.windowsazure.com
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

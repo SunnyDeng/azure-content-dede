@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-multiple"
 	ms.topic="article"
 	ms.devlang="javascript"
-	ms.date="08/25/2015"
+	ms.date="11/30/2015"
 	ms.author="krisragh"/>
 
 # Dienstseitige Autorisierung von Benutzern in Mobile Services
@@ -28,7 +28,7 @@ Dieses Lernprogramm basiert auf Mobile Services-Schnellstart und setzt auf dem L
 
 ## <a name="register-scripts"></a>Registrieren von Skripts
 
-1. Melden Sie sich beim [Azure-Verwaltungsportal] an, klicken Sie auf **Mobile Services** und dann auf Ihren mobilen Dienst. Klicken Sie auf die Registerkarte **Data**, dann auf die Tabelle **TodoItem**.
+1. Melden Sie sich beim [klassischen Azure-Portal] an, klicken Sie auf **Mobile Services** und dann auf Ihren mobilen Dienst. Klicken Sie auf die Registerkarte **Data**, dann auf die Tabelle **TodoItem**.
 
 2. Klicken Sie auf **Skript**, wählen Sie den Vorgang **Einfügen**, ersetzen Sie das vorhandene Skript durch die folgende Funktion, und klicken Sie dann auf **Save**.
 
@@ -67,7 +67,7 @@ Dieses Lernprogramm basiert auf Mobile Services-Schnellstart und setzt auf dem L
 [My Apps dashboard]: http://go.microsoft.com/fwlink/p/?LinkId=262039
 [Hinzufügen von Authentifizierung zu einer vorhandenen Mobile Services-App]: /develop/mobile/tutorials/get-started-with-users-ios
 
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
+[klassischen Azure-Portal]: https://manage.windowsazure.com/
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

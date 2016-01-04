@@ -22,26 +22,24 @@ Lesen Sie die Informationen zum Prozess vor Beginn sorgfältig durch, um nachvol
 ## Herunterladen der erforderlichen Tools und Anwendungen
 Sie sollten die folgenden Aufgaben ausgeführt haben, bevor Sie mit dem hier beschriebenen Verfahren beginnen:
 
-- Installieren Sie abhängig vom Zielbetriebssystem die Azure PowerShell-Cmdlets oder die Linux-Befehlszeilenschnittstelle über die Downloadseite von Azure.
+- Installieren Sie abhängig vom Zielbetriebssystem die Azure PowerShell-Cmdlets oder die Linux-Befehlszeilenschnittstelle über die Downloadseite von Azure.
 - Laden Sie den Azure-Speicher-Explorer aus CodePlex herunter.
-- Laden Sie das "Certification Test Tool for Azure Certified" (in englischer Sprache) herunter:
-  - [http://go.microsoft.com/fwlink/?LinkID=526913](http://go.microsoft.com/fwlink/?LinkID=526913). Sie benötigen einen Windows-basierten Computer zum Ausführen des Zertifizierungstools. Wenn kein Windows-basierter Computer zur Verfügung steht, können Sie das Tool unter Verwendung eines Windows-basierten virtuellen Computers in Azure ausführen.
+- Laden Sie „Certification Test Tool for Azure Certified“ herunter:
+  - [http://go.microsoft.com/fwlink/?LinkID=526913](http://go.microsoft.com/fwlink/?LinkID=526913). Zum Ausführen des Zertifizierungstools benötigen Sie einen Windows-basierten Computer. Wenn kein Windows-basierter Computer zur Verfügung steht, können Sie das Tool unter Verwendung eines Windows-basierten virtuellen Computers in Azure ausführen.
 
 ## Unterstützte Plattformen
-Sie können Azure-basierte virtuelle Computer unter Windows oder Linux erstellen. Für einige Aufgaben im Veröffentlichungsprozess – beispielsweise für das Erstellen einer mit Azure kompatiblen VHD – werden je nach verwendetem Betriebssystem andere Tools und Schritte verwendet.
+Sie können Azure-basierte virtuelle Computer unter Windows oder Linux erstellen. Für einige Aufgaben im Veröffentlichungsprozess – beispielsweise für das Erstellen einer mit Azure kompatiblen virtuellen Festplatte (Virtual Hard Disk, VHD) – werden je nach verwendetem Betriebssystem andere Tools und Schritte verwendet:
 
-- Wenn Sie Linux verwenden, finden Sie weitere Informationen im Abschnitt "Erstellen einer mit Azure kompatiblen VHD (Linux-basiert)" im [Leitfaden zum Veröffentlichen von VM-Images](marketplace-publishing-vm-image-creation.md).
-- Bei Einsatz von Windows finden Sie weitere Informationen im Abschnitt "Erstellen einer mit Azure kompatiblen VHD-Datei (Windows-basiert)" im [Leitfaden zum Veröffentlichen von VM-Images](marketplace-publishing-vm-image-creation.md).
+- Bei Verwendung von Linux finden Sie weitere Informationen im [Leitfaden zum Veröffentlichen von VM-Images](marketplace-publishing-vm-image-creation.md) im Abschnitt „Erstellen einer mit Azure kompatiblen VHD (Linux-basiert)“.
+- Bei Verwendung von Windows finden Sie weitere Informationen im [Leitfaden zum Veröffentlichen von VM-Images](marketplace-publishing-vm-image-creation.md) im Abschnitt „Erstellen einer mit Azure kompatiblen VHD (Windows-basiert)“.
 
-> [AZURE.NOTE]Sie benötigen Zugriff auf einen Windows-Computer, um folgende Aufgaben auszuführen:  
-– Ausführen des Tools für die Zertifizierungsprüfung  
-– Erstellen der VHD-SAS-URL zum Übermitteln der VHD-Zertifizierung
+> [AZURE.NOTE]Sie benötigen Zugriff auf einen Windows-basierten Computer, um folgende Aufgaben auszuführen: – Ausführen des Tools für die Zertifizierungsprüfung. – Erstellen der VHD-SAS-URL zum Übermitteln der VHD-Zertifizierung.
 
-## Entwickeln von VHDs
-Es ist möglich, Azure-VHDs in der **Cloud** oder **lokal** zu entwickeln.
+## Entwickeln Ihrer virtuellen Festplatte
+Azure-VHDs können in der Cloud oder lokal entwickelt werden:
 
 - Bei der cloudbasierten Entwicklung werden alle Entwicklungsschritte remote ausgeführt, die VHDs befinden sich in Azure.
-- Für die lokale Entwicklung müssen Sie eine VHD herunterladen und mithilfe der lokalen Infrastruktur entwickeln. Diese Vorgehensweise ist möglich, wird jedoch nicht empfohlen. Beachten Sie, dass bei einer lokalen Entwicklung für Windows oder SQL geeignete lokale Lizenzschlüssel vorliegen müssen. Sie können SQL Server nicht nach dem Erstellen eines virtuellen Computers einschließen oder installieren, und Ihr Angebot muss auf einem genehmigten SQL-Image aus dem Azure-Portal basieren. Wenn Sie sich für eine lokale Entwicklung entscheiden, müssen einige Schritte anders ausgeführt werden als bei der Entwicklung in der Cloud. Weitere Informationen hierzu finden Sie unter [Erstellen eines lokalen VM-Images](marketplace-publishing-vm-image-creation-on-premise.md).
+- Für die lokale Entwicklung müssen Sie eine VHD herunterladen und mithilfe der lokalen Infrastruktur entwickeln. Diese Vorgehensweise ist zwar möglich, wird jedoch nicht empfohlen. Beachten Sie, dass bei einer lokalen Entwicklung für Windows oder SQL geeignete lokale Lizenzschlüssel vorliegen müssen. SQL Server kann nach dem Erstellen eines virtuellen Computers nicht mehr eingeschlossen oder installiert werden. Außerdem muss Ihr Angebot auf einem genehmigten SQL-Image aus dem Azure-Portal basieren. Wenn Sie sich für eine lokale Entwicklung entscheiden, müssen einige Schritte anders ausgeführt werden als bei der Entwicklung in der Cloud. Informationen hierzu finden Sie unter [Erstellen eines lokalen VM-Image](marketplace-publishing-vm-image-creation-on-premise.md).
 
 ## Nächste Schritte
 Sie haben die Voraussetzungen überprüft und die erforderlichen Aufgaben ausgeführt und können nun mit dem Erstellen eines Angebots für Ihr VM-Image fortfahren. Ausführliche Informationen finden Sie unter [Leitfaden zum Veröffentlichen von VM-Images](marketplace-publishing-vm-image-creation.md).
@@ -53,4 +51,4 @@ Sie haben die Voraussetzungen überprüft und die erforderlichen Aufgaben ausgef
 
 [link-acct-creation]: marketplace-publishing-accounts-creation-registration.md
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

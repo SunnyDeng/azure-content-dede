@@ -106,7 +106,7 @@ Starten Sie den Xrdp-Dienst neu; verwenden Sie:
 
 
 ##Herstellen einer Verbindung mit Ihrem virtuellen Linux-Computer auf einem Windows-Computer
-Starten Sie auf einem Windows-Computer den Remotedesktopclient, geben Sie den DNS-Namen Ihres virtuellen Linux-Computers ein, oder wechseln Sie zum `Dashboard` Ihres virtuellen Computers im Azure-Portal, und klicken Sie auf `Connect`, um Ihren virtuellen Linux-Computer zu verbinden. Daraufhin wird das folgende Anmeldefenster angezeigt:
+Starten Sie auf einem Windows-Computer den Remotedesktopclient, geben Sie den DNS-Namen Ihres virtuellen Linux-Computers ein, oder wechseln Sie zum `Dashboard` Ihres virtuellen Computers im klassischen Azure-Portal, und klicken Sie auf `Connect`, um Ihren virtuellen Linux-Computer zu verbinden. Daraufhin wird das folgende Anmeldefenster angezeigt:
 
 ![image](./media/virtual-machines-linux-remote-desktop/no2.png)
 
@@ -116,4 +116,4 @@ Melden Sie sich mit dem `user` und dem `password` Ihres virtuellen Linux-Compute
 ##Weiter
 Weitere Informationen zur Verwendung von Xrdp finden Sie [hier](http://www.xrdp.org/).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

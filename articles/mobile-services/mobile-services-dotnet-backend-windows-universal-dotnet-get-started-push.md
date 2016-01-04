@@ -1,22 +1,27 @@
-<properties 
-	pageTitle="Hinzufügen von Pushbenachrichtigungen zu Ihrer universellen Windows 8.1-App | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie über einen mobilen .NET-Back-End-Dienst mithilfe von Azure Notification Hubs Pushbenachrichtigungen an Ihre universelle Windows 8.1-App senden können." 
-	services="mobile-services,notification-hubs" 
-	documentationCenter="windows" 
-	authors="ggailey777" 
-	manager="dwrede" 
+<properties
+	pageTitle="Hinzufügen von Pushbenachrichtigungen zu Ihrer universellen Windows 8.1-App | Microsoft Azure"
+	description="Erfahren Sie, wie Sie über einen mobilen .NET-Back-End-Dienst mithilfe von Azure Notification Hubs Pushbenachrichtigungen an Ihre universelle Windows 8.1-App senden können."
+	services="mobile-services,notification-hubs"
+	documentationCenter="windows"
+	authors="ggailey777"
+	manager="dwrede"
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-windows-store" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="11/02/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-windows-store"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="11/11/2015"
 	ms.author="glenga"/>
 
 # Hinzufügen von Pushbenachrichtigungen zur Mobile Services-App
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 [AZURE.INCLUDE [mobile-services-selector-get-started-push](../../includes/mobile-services-selector-get-started-push.md)]
 
@@ -26,14 +31,14 @@ In diesem Thema erfahren Sie, wie Sie mithilfe von Azure Mobile Services mit .NE
 Für dieses Lernprogramm benötigen Sie Folgendes:
 
 * Ein aktives [Microsoft Store-Konto](http://go.microsoft.com/fwlink/p/?LinkId=280045)
-* <a href="https://go.microsoft.com/fwLink/p/?LinkID=391934" target="_blank">Visual Studio Community 2013</a>. 
+* <a href="https://go.microsoft.com/fwLink/p/?LinkID=391934" target="_blank">Visual Studio Community 2013</a>.
 
 ##<a id="register"></a>Registrieren der App für Pushbenachrichtigungen
 
 [AZURE.INCLUDE [mobile-services-create-new-push-vs2013](../../includes/mobile-services-create-new-push-vs2013.md)]
 
 &nbsp;&nbsp;6. Navigieren Sie zum Projektordner `\Services\MobileServices\your_service_name`, öffnen Sie die generierte Codedatei "push.register.js", und überprüfen Sie die Methode **UploadChannel**, welche die Kanal-URL des Geräts beim Benachrichtigungshub registriert.
- 
+
 &nbsp;&nbsp;7. Öffnen Sie die gemeinsam genutzte Codedatei "App.xaml.cs". Beachten Sie den Aufruf der neuen Methode **UploadChannel**, der dem Ereignishandler **OnLaunched**hinzugefügt wurde. Dies stellt sicher, dass versucht wird, das Gerät zu registrieren, sobald die App gestartet wird.
 
 &nbsp;&nbsp;8. Führen Sie die vorherigen Schritte erneut aus, um dem Windows Phone Store-App-Projekt Pushbenachrichtigungen hinzuzufügen, und entfernen Sie dann in der gemeinsam genutzten Datei "App.xaml.cs" den zusätzlichen Aufruf von **UploadChannel** sowie den restlichen bedingten Wrapper `#if...#endif`. In beiden Projekten kann nun ein einziger Aufruf von **UploadChannel** verwendet werden.
@@ -107,4 +112,4 @@ Weitere Informationen zu Mobile Services und Benachrichtigungshubs finden Sie in
 [Verwenden eines .NET-Clients für Azure Mobile Services]: mobile-services-windows-dotnet-how-to-use-client-library.md
 [MobileServiceClient]: http://msdn.microsoft.com/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

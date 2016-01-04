@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Notfallwiederherstellung mit SQL Server und Azure Site Recovery" 
+	pageTitle="Schützen von SQL Server mit der Notfallwiederherstellung von SQL Server und Azure Site Recovery | Microsoft Azure" 
 	description="Azure Site Recovery koordiniert Replikation, Failover und Wiederherstellung von SQL Server zu einen lokalen Standort oder zu Azure." 
 	services="site-recovery" 
 	documentationCenter="" 
@@ -13,11 +13,11 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/09/2015" 
+	ms.date="12/14/2015" 
 	ms.author="raynew"/>
 
 
-# Notfallwiederherstellung mit SQL Server und Azure Site Recovery 
+# Schützen von SQL Server mit der Notfallwiederherstellung von SQL Server und Azure Site Recovery 
 
 Site Recovery (ein Azure-Dienst) bereichert Ihre Strategie für Geschäftskontinuität und Notfallwiederherstellung durch die Orchestrierung von Replikation, Failover und Wiederherstellung Ihrer virtuellen Computer und physischen Server. Site Recovery unterstützt eine Reihe von Replikationsmechanismen für konsistenten Schutz und einheitliche Replikations- und Failovervorgänge zu Azure oder zu einem sekundären Datencenter. Eine Übersicht über alle Bereitstellungsszenarien für Azure Site Recovery finden Sie [hier](site-recovery-overview.md).
 
@@ -105,7 +105,7 @@ Für den ordnungsgemäßen Betrieb von SQL Server muss Active Directory am seku
 
 Bei den Anweisungen in diesem Dokument wird davon ausgegangen, dass am sekundären Standort ein Domänencontroller verfügbar ist. Sie können [hier](http://aka.ms/asr-ad) auf den Leitfaden zur AD DR-Lösung zugreifen.
 
-##Einrichten des Schutzes von SQL AlwaysOn-Verfügbarkeitsgruppen
+## Integration mit SQL AlwaysOn in Azure
 
 ### Lokal zu Azure
 
@@ -113,7 +113,7 @@ Azure Site Recovery (ASR) bietet systemeigene Unterstützung von SQL AlwaysOn. W
 
 Diese Funktionalität ist derzeit in der Vorschauphase und verfügbar, wenn das primäre Datencenter von System Center Virtual Machine Manager (VMM) verwaltet wird.
 
-#### Vom VMM-Server verwaltete Umgebungen
+#### Von einem VMM-Server verwaltete Umgebungen
 Im ASR-Tresor sollte unter der Registerkarte "Geschützte Elemente" die Registerkarte "SQL Server" angezeigt werden.
 
 ![Geschützte Elemente](./media/site-recovery-sql/protected-items.png)
@@ -126,16 +126,16 @@ Es folgen die Schritte zum Integrieren von SQL AlwaysOn in ASR.
 - SQL-Verfügbarkeitsgruppe, die zwischen der lokalen und in Azure ausgeführten SQL Server-Instanz eingerichtet ist.
 - PowerShell-Remoting muss für die lokale SQL Server-Instanz aktiviert sein. Der VMM-Server muss PowerShell-Remoteaufrufe an SQL Server richten können.
 - Für die lokale SQL Server-Instanz muss ein Benutzerkonto in SQL-Benutzergruppen mit mindestens den folgenden Berechtigungen hinzugefügt werden:
-	- ALTER AVAILABILITY GROUP – [Verweis 1](https://msdn.microsoft.com/de-DE/library/hh231018.aspx), [Verweis 2](https://msdn.microsoft.com/de-DE/library/ff878601.aspx#Anchor_3)
-	- ALTER DATABASE – [Verweis 1](https://msdn.microsoft.com/de-DE/library/ff877956.aspx#Security)
+	- ALTER AVAILABILITY GROUP – [Verweis 1](https://msdn.microsoft.com/library/hh231018.aspx), [Verweis 2](https://msdn.microsoft.com/library/ff878601.aspx#Anchor_3)
+	- ALTER DATABASE – [Verweis 1](https://msdn.microsoft.com/library/ff877956.aspx#Security)
 - Ein ausführendes Konto muss auf dem VMM-Server für das Konto aus dem vorherigen Schritt erstellt werden.
 - Das SQL PS-Modul muss für SQL Server-Instanzen installiert werden, die lokal oder in virtuellen Azure-Computern ausgeführt werden.
 - Der VM-Agent muss in virtuellen Computern installiert werden, die in Azure ausgeführt werden.
 - NTAUTHORITY\\System benötigt folgende Berechtigungen für eine in virtuellen Computern in Azure ausgeführte SQL Server-Instanz:
-	- ALTER AVAILABILITY GROUP – [Verweis 1](https://msdn.microsoft.com/de-DE/library/hh231018.aspx), [Verweis 2](https://msdn.microsoft.com/de-DE/library/ff878601.aspx#Anchor_3)
-	- ALTER DATABASE – [Verweis 1](https://msdn.microsoft.com/de-DE/library/ff877956.aspx#Security)
+	- ALTER AVAILABILITY GROUP – [Verweis 1](https://msdn.microsoft.com/library/hh231018.aspx), [Verweis 2](https://msdn.microsoft.com/library/ff878601.aspx#Anchor_3)
+	- ALTER DATABASE – [Verweis 1](https://msdn.microsoft.com/library/ff877956.aspx#Security)
 
-##### Hinzufügen einer SQL Server-Instanz
+##### 1\. Hinzufügen einer SQL Server-Instanz
 
 Klicken Sie auf "SQL hinzufügen", um eine neue SQL Server-Instanz hinzufügen.
 
@@ -146,17 +146,17 @@ Geben Sie die Details der SQL Server-Instanz, von VMM und Anmeldeinformationen z
 ![Dialogfeld "SQL hinzufügen"](./media/site-recovery-sql/add-sql-dialog.png)
 
 ###### Parameter
-1. Name: Anzeigename, den Sie zum Verweisen auf diese SQL Server-Instanz verwenden möchten
-2. SQL Server (FQDN): Vollqualifizierter Domänenname (FQDN) der SQL Server-Quellinstanz, die Sie hinzufügen möchten. Für den Fall, dass die SQL Server-Instanz in einem Failovercluster installiert ist, geben Sie den FQDN des Clusters und nicht den eines der Clusterknoten an. 
-3. SQL Server-Instanz: Wählen Sie die Standard-SQL-Instanz, oder geben Sie den Namen der benutzerdefinierten SQL Server-Instanz an.
-4. VMM-Server: Wählen Sie einen der VMM-Server, der bereits bei Azure Site Recovery (ASR) registriert wurde. ASR nutzt diesen VMM-Server für die Kommunikation mit der SQL Server-Instanz.
-5. Ausführendes Konto: Geben Sie den Namen eines der ausführenden Konten an, die auf dem oben ausgewählten VMM-Server erstellt wurden. Dieses ausführende Konto wird verwendet, um auf die SQL Server-Instanz zuzugreifen und muss über die Berechtigungen "Lesen" und "Failover" für Verfügbarkeitsgruppen in dieser SQL Server-Instanz verfügen. 
+ - Name: Anzeigename, den Sie zum Verweisen auf diese SQL Server-Instanz verwenden möchten
+ - SQL Server (FQDN): Vollqualifizierter Domänenname (FQDN) der SQL Server-Quellinstanz, die Sie hinzufügen möchten. Für den Fall, dass die SQL Server-Instanz in einem Failovercluster installiert ist, geben Sie den FQDN des Clusters und nicht den eines der Clusterknoten an. 
+ - SQL Server-Instanz: Wählen Sie die Standard-SQL-Instanz, oder geben Sie den Namen der benutzerdefinierten SQL Server-Instanz an.
+ - VMM-Server: Wählen Sie einen der VMM-Server, der bereits bei Azure Site Recovery (ASR) registriert wurde. ASR nutzt diesen VMM-Server für die Kommunikation mit der SQL Server-Instanz.
+ - Ausführendes Konto: Geben Sie den Namen eines der ausführenden Konten an, die auf dem oben ausgewählten VMM-Server erstellt wurden. Dieses ausführende Konto wird verwendet, um auf die SQL Server-Instanz zuzugreifen und muss über die Berechtigungen "Lesen" und "Failover" für Verfügbarkeitsgruppen in dieser SQL Server-Instanz verfügen. 
 
 Nach dem Hinzufügen der SQL Server-Instanz wird sie auf der Registerkarte "SQL Server" angezeigt.
 
 ![SQL Server-Liste](./media/site-recovery-sql/sql-server-list.png)
 
-##### Hinzufügen einer SQL-Verfügbarkeitsgruppe
+##### 2\. Hinzufügen einer SQL-Verfügbarkeitsgruppe
 
 Nach dem Hinzufügen der SQL Server-Instanz ist der nächste Schritt das Hinzufügen der Verfügbarkeitsgruppen zu ASR. Führen Sie hierfür eine Detailsuche innerhalb der im vorherigen Schritt hinzugefügten SQL Server-Instanz durch, und klicken Sie dann auf "SQL-Verfügbarkeitsgruppe hinzufügen".
 
@@ -170,7 +170,7 @@ Bei einem Failover würde im obigen Beispiel die Verfügbarkeitsgruppe DB1-AG zu
 
 >[AZURE.NOTE]Nur die Verfügbarkeitsgruppen, die in der im vorigen Schritt hinzugefügten SQL Server-Instanz primär sind, stehen für das Hinzufügen zu ASR zur Verfügung. Wenn Sie in der SQL Server-Instanz eine Verfügbarkeitsgruppe als primär eingestuft haben oder der SQL Server-Instanz nach deren Hinzufügen mehrere Verfügbarkeitsgruppen hinzugefügt haben, aktualisieren Sie sie über die SQL Server-Option "Aktualisieren".
 
-#### Erstellen eines Wiederherstellungsplans
+#### 3\. Erstellen eines Wiederherstellungsplans
 
 Der nächste Schritt ist die Erstellung eines Wiederherstellungsplans mit virtuellen Computern und Verfügbarkeitsgruppen. Wählen Sie denselben in Schritt 1 verwendeten VMM-Server als Quelle und Microsoft Azure als Ziel aus.
 
@@ -184,7 +184,7 @@ Sie können den Wiederherstellungsplan weiter anpassen, indem Sie virtuelle Comp
 
 ![Wiederherstellungsplan anpassen](./media/site-recovery-sql/customize-rp.png)
 
-#### Failover
+#### 4\. Failover
 
 Andere Failoveroptionen sind verfügbar, nachdem eine Verfügbarkeitsgruppe einem Wiederherstellungsplan hinzugefügt wurde.
 
@@ -201,7 +201,7 @@ Ein Testfailover für SQL-Verfügbarkeitsgruppen wird nicht unterstützt. Wenn S
 
 Alternativen:
 
-######Option 1:
+###### Option 1:
 
 
 
@@ -209,12 +209,12 @@ Alternativen:
 
 2. Aktualisieren Sie die Anwendungsebene für den Zugriff auf die Replikatkopie im schreibgeschützten Modus, und führen Sie einen schreibgeschützten Test der Anwendung durch.
 
-######Option 2:
+###### Option 2:
 
 1.	Erstellen Sie eine Kopie der virtuellen SQL Server-Replikatcomputerinstanz (mit VMM-Klon bei Standort zu Standort oder mit Azure Backup), und machen Sie sie in einem Testnetzwerk verfügbar.
 2.	Führen Sie das Test-Failover mit dem Wiederherstellungsplan durch.
 
-##### Failback
+#### Failback
 
 Wenn Sie die Verfügbarkeitsgruppe für die lokale SQL Server-Instanz wieder als "Primär" festlegen möchten, müssen Sie dazu ein geplantes Failover für den Wiederherstellungsplan auslösen und die Richtung von Microsoft Azure zum lokalen VMM-Server wählen.
 
@@ -312,9 +312,9 @@ Wenn die SQL Server-Instanz Verfügbarkeitsgruppen für hohe Verfügbarkeit ver
 6. Erstellen Sie einen Verfügbarkeitsgruppenlistener, oder aktualisieren Sie den vorhandenen Listener, sodass er den asynchronen virtuellen Replikatcomputer enthält.
 7. Stellen Sie sicher, dass die Anwendungsfarm mit dem Listener konfiguriert ist. Sollte die Farm mit dem Namen des Datenbankservers konfiguriert sein, aktualisieren Sie sie so, dass sie den Listener verwendet. Andernfalls muss dieser Schritt nach dem Failover durchgeführt werden.
 
-Für Anwendungen, die verteilte Transaktionen verwenden, empfiehlt sich die Verwendung von [Site Recovery mit SAN-Replikation](site-recovery-vmm-san.md) oder der [VMWare-Standort-zu-Standort-Replikation](site-recovery-vmware-to-vmware.md).
+Für Anwendungen, die verteilte Transaktionen verwenden, empfiehlt sich die Verwendung von [Site Recovery mit SAN-Replikation](site-recovery-vmm-san.md) oder [VMWare-Standort-zu-Standort-Replikation](site-recovery-vmware-to-vmware.md).
 
-####Überlegungen zum Wiederherstellungsplan
+#### Überlegungen zum Wiederherstellungsplan
 
 1. Fügen Sie dieses Beispielskript der VMM-Bibliothek am primären und sekundären Standort hinzu.
 
@@ -328,7 +328,7 @@ Für Anwendungen, die verteilte Transaktionen verwenden, empfiehlt sich die Verw
 
 
 
-## Einrichten des Schutzes für eine eigenständige SQL Server-Instanz
+## Einrichten des Schutzes für einen eigenständigen SQL Server
 
 
 In dieser Konfiguration empfiehlt es sich, den SQL Server-Computer mithilfe der Site Recovery-Replikation zu schützen. Welche Schritte dafür konkret erforderlich sind, hängt davon ab, ob SQL Server als virtueller Computer oder als physischer Server eingerichtet ist und ob Sie Azure oder einen sekundären lokalen Standort als Replikationsziel verwenden möchten. Informationen zu allen Bereitstellungsszenarien finden Sie unter [Übersicht über Site Recovery](site-recovery-overview.md).
@@ -374,4 +374,4 @@ Bei SQL-Standardclustern ist für das Failback nach einem nicht geplanten Failov
 
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

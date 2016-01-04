@@ -1,6 +1,6 @@
 
 <properties
-	pageTitle="Einrichten von Schutz mit einem einzelnen VMM-Server"
+	pageTitle="Azure Site Recovery: Replizieren von virtuellen Hyper-V-Computern (einzelner VMM-Server)"
 	description="Azure Site Recovery koordiniert Replikation, Failover und Wiederherstellung von virtuellen Computern in lokalen VMM-Clouds zu Azure oder zu einer sekundären VMM-Cloud."
 	services="site-recovery"
 	documentationCenter=""
@@ -14,90 +14,68 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="backup-recovery"
-	ms.date="10/07/2015"
+	ms.date="12/01/2015"
 	ms.author="raynew"/>
 
-#  Einrichten von Schutz mit einem einzelnen VMM-Server
+#  Azure Site Recovery: Replizieren von virtuellen Hyper-V-Computern (einzelner VMM-Server)
+
+Azure Site Recovery ist Teil einer Lösung für Geschäftskontinuität und Notfallwiederherstellung (Business Continuity and Disaster Recovery, BCDR), die Orchestrierung und Automatisierung der Replikation lokaler physischer Server und virtueller Computer zu Azure oder zu einem sekundären lokalen Datencenter bietet. In diesem Artikel wird beschrieben, wie Sie Site Recovery zum Schutz von virtuellen Hyper-V-Computern in einer VMM-Cloud bereitstellen, wenn die Bereitstellung nur einen einzelnen VMM-Server enthält. Sollten Sie nach der Lektüre dieses Artikels noch Fragen haben, stellen Sie diese bitte im [Azure Recovery Services-Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
 
 ## Übersicht
 
-Azure Site Recovery unterstützt Ihre Strategie für Geschäftskontinuität und Notfallwiederherstellung, indem Replikation, Failover und Wiederherstellung virtueller Computer in einer Vielzahl von Bereitstellungsszenarios aufeinander abgestimmt werden. Eine vollständige Liste der Bereitstellungsszenarien finden Sie unter [Übersicht über Azure Site Recovery](site-recovery-overview.md).
+Sie können Hyper-V-VMs auf verschiedene Arten replizieren:
 
-Wenn Ihre Infrastruktur nur einen einzelnen VMM-Server enthält, können Sie Site Recovery bereitstellen, um virtuelle Computer in VMM-Clouds zu Azure zu replizieren oder eine Replikation zwischen Clouds auf einem einzelnen VMM-Server durchzuführen. Diese Bereitstellung sollte nur gewählt werden, wenn Sie nicht zwei VMM-Server (jeweils einen pro Standort) bereitstellen können, da hier keine nahtlosen Failover und Wiederherstellungen möglich sind. Für die Wiederherstellung müssen Sie von außerhalb der Azure Site Recovery-Konsole (mit Hyper-V-Replikat in der Hyper-V-Manager-Konsole) ein manuelles Failover des VMM-Servers durchführen.
+- Replizieren von Hyper-V-VMs, die sich auf Hyper-V-Hosts außerhalb einer VMM-Cloud befinden, zu Azure
+- Replizieren von Hyper-V-VMs, die sich auf Hyper-V-Hosts in einer VMM-Cloud befinden, zu Azure
+- Replizieren von Hyper-V-VMs, die sich auf Hyper-V-Hosts in einer VMM-Cloud befinden, zu Azure
 
-Für die Replikation mit einem einzelnen VMM-Server stehen verschiedene Einrichtungsoptionen zur Verfügung:
+Was geschieht aber, wenn Sie VMM verwenden möchten und nur über einen einzelnen VMM-Server in Ihrer Infrastruktur verfügen?
 
-### Eigenständige Bereitstellung
+In diesem Fall haben Sie mehrere Möglichkeiten:
 
-Stellen Sie einen eigenständigen VMM-Server als virtuellen Computer an einem primären Standort bereit, und replizieren Sie den virtuellen Computer mit Site Recovery und Hyper-V-Replikat zu einem sekundären Standort. Zur Verringerung von Ausfallzeiten kann SQL Server auf dem virtuellen VMM-Computer installiert werden. Wenn VMM einen Remotecomputer mit SQL Server verwendet, müssen Sie diesen vor dem VMM-Server wiederherstellen.
+- Replizieren Sie Ihre Hyper-V-VMs in Ihren VMM-Clouds zu Azure. [Hier](site-recovery-vmm-to-azure.md) finden Sie weitere Informationen zu diesem Szenario.
+- Replikation zwischen Clouds auf einem einzelnen VMM-Server
 
-![Eigenständiger virtueller VMM-Computer](./media/site-recovery-single-vmm/SingleVMMStandalone.png)
-
-### Clusterbereitstellung
-
-Wenn VMM hochverfügbar sein soll, können Sie VMM als virtuellen Computer in einem Windows-Failovercluster bereitstellen. Dies ist hilfreich, wenn kritische Workloads von VMM verwaltet werden, da so die Verfügbarkeit der Workloads gewährleistet ist und die Workloads vor Hardwareausfällen des Hosts geschützt sind, auf dem VMM ausgeführt wird. Wenn Sie einen einzelnen VMM-Server mit Site Recovery bereitstellen, muss der virtuelle VMM-Computer unter Verwendung eines Stretchclusters zwischen geografisch getrennten Standorten bereitgestellt werden. Die von VMM verwendete SQL Server-Datenbank muss mithilfe von AlwaysOn-Verfügbarkeitsgruppen (SQL Server) mit einem Replikat am sekundären Standort geschützt werden. Bei einem Notfall wird für den VMM-Server und die entsprechende SQL Server-Datenbank ein Failover durchgeführt, und der Zugriff erfolgt über den sekundären Standort.
-
-![Gruppierter virtueller VMM-Server](./media/site-recovery-single-vmm/SingleVMMCluster.png)
+Es empfiehlt sich, die erste Option zu verwenden, weil Failover und Wiederherstellung nicht nahtlos in die zweite Option integriert und einige manuelle Schritte erforderlich sind.
 
 
-## Vorbereitung
+### Replikation zwischen Standorten mit einem einzelnen, eigenständigen VMM-Server
 
-- Die Schritte der exemplarischen Vorgehensweise zeigen, wie Sie Site Recovery mit einem einzelnen eigenständigen VMM-Server bereitstellen.
-- Stellen Sie sicher, dass die [erforderlichen Komponenten](site-recovery-vmm-to-vmm.md/#before-you-start) vorhanden sind, bevor Sie mit der Bereitstellung beginnen.
-- Für den einzelnen VMM-Server müssen mindestens zwei Clouds konfiguriert sein. Eine Cloud fungiert als geschützte Cloud, die andere als schützende Cloud.
-- Die zu schützenden Clouds müssen Folgendes enthalten:
-	- Mindestens eine VMM-Hostgruppe
-	- Mindestens einen Hyper-V-Hostserver in jeder Hostgruppe
-	- Mindestens einen virtuellen Hyper-V-Computer auf jedem Hostserver
+In diesem Szenario stellen Sie den einzelnen, eigenständigen VMM-Server als virtuellen Computer an einem primären Standort bereit und replizieren diesen virtuellen Computer mit Site Recovery und Hyper-V-Replikat zu einem sekundären Standort. Gehen Sie dazu folgendermaßen vor:
 
-Sollten beim Einrichten dieses Szenarios Probleme auftreten, besuchen Sie das [Azure Recovery Services-Forum](https://social.msdn.microsoft.com/Forums/azure/home?forum=hypervrecovmgr).
+1. Richten Sie VMM auf einer Hyper-V-VM ein. Ziehen Sie das Verschieben der von VMM verwendeten SQL Server-Instanz auf demselben virtuellen Computer in Betracht. Dies spart Zeit, da nur ein virtueller Computer instanziiert werden muss. Wenn Sie eine Remoteinstanz verwenden möchten, und ein Ausfall auftritt, müssen Sie diese Instanz vor dem Wiederherstellen von VMM wiederherstellen.
+2. Stellen Sie sicher, dass für den VMM-Server mindestens zwei Clouds konfiguriert sind. Eine Cloud enthält die virtuellen Computer, die repliziert werden sollen, und die andere Cloud dient als sekundärer Standort. Die Cloud, die die zu schützenden VMs enthält, sollte über mindestens eine VMM-Hostgruppe mit einem oder mehreren Hyper-V-Hostservern in jeder Hostgruppe und mindestens einem virtuellen Hyper-V-Computer auf jedem Hostserver verfügen.
+2. Erstellen Sie einen Site Recovery-Tresor, generieren Sie einen Tresorregistrierungsschlüssel und laden Sie diesen herunter, und registrieren Sie den VMM-Server im Tresor.
+2. Richten Sie eine oder mehrere Clouds auf der VMM-VM ein, und fügen Sie die Hyper-V-Hosts, die zu schützende virtuelle Computer enthalten, zu diesen Clouds hinzu.
+3. Konfigurieren Sie in Azure Site Recovery Schutzeinstellungen für die Clouds. Geben Sie unter „Quellspeicherort“ und unter „Zielspeicherort“ jeweils den Namen des einzelnen VMM-Servers an. Bei der Konfiguration der Netzwerkzuordnung ordnen Sie das VM-Netzwerk für die Cloud, die zu schützende virtuelle Computer enthält, dem VM-Netzwerk für die Cloud zu, in die Sie die Replikation vornehmen möchten.
+4. Aktivieren Sie die Replikation für zu schützende virtuelle Computer unter Verwendung von **Über das Netzwerk** als Replikationsmethode, da sich beide Clouds auf demselben Server befinden.
+4. Aktivieren Sie in der Hyper-V-Manager-Konsole Hyper-V-Replikat auf dem Hyper-V-Host, der die VMM-VM enthält, und aktivieren Sie die Replikation auf dem virtuellen Computer. Fügen Sie die VMM-VM nicht zu Clouds hinzu, die von Site Recovery geschützt werden, um sicherzustellen, dass Einstellungen von Hyper-V Replikat nicht durch Site Recovery außer Kraft gesetzt werden.
+5. Wenn Sie Wiederherstellungspläne erstellen möchten, geben Sie den gleichen VMM-Server für Quelle und Ziel an. 
 
+Beim Auftreten von Ausfällen stellen Sie Arbeitslasten auf virtuellen Hyper-V-VMs wie folgt wieder her:
 
+1. Führen Sie unter Verwendung von Hyper-V-Manager mit einem geplanten Failover ein manuelles Failover der Replikat-VMM-VM an den sekundären Standort aus.
+2. Nach der Wiederherstellung der VMM-VM können Sie sich vom sekundären Standort aus beim Hyper-V-Wiederherstellungs-Manager anmelden und ein nicht geplantes Failover der virtuellen Computer vom primären zum sekundären Standort ausführen.
+3. Nach Abschluss des nicht geplanten Failovers können die Benutzer auf sämtliche Ressourcen am primären Standort zugreifen.
 
-## Konfigurieren einer Einzelserverbereitstellung
+Beachten Sie, dass ein manuelles Failover der VMM-VM an den sekundären Standort durchgeführt werden muss, bevor ein Failover der Workloads ausgeführt werden kann.
 
-1. Falls VMM nicht bereitgestellt ist, richten Sie VMM auf einem virtuellen Computer mit installierter SQL Server-Datenbank an. Lesen Sie die [Systemanforderungen](https://technet.microsoft.com/library/dn771747.aspx). 
-2. Richten Sie auf dem VMM-Server mindestens zwei Clouds ein. Weitere Informationen:
+![Eigenständiger virtueller VMM-Computer](./media/site-recovery-single-vmm/single-vmm-standalone.png)
 
-	- [What’s New in Private Cloud with System Center 2012 R2 VMM](http://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/MDC-B357#fbid=) (Neues in der Private Cloud mit System Center 2012 R2 VMM; in englischer Sprache) und [VMM 2012 and the Clouds](http://www.server-log.com/blog/2011/8/26/vmm-2012-and-the-clouds.html) (VMM 2012 und die Clouds; in englischer Sprache). 
-	- [Konfigurieren der VMM-Cloud-Struktur](https://msdn.microsoft.com/library/azure/dn469075.aspx#BKMK_Fabric)
-	- [Erstellen einer privaten Cloud in VMM](https://technet.microsoft.com/library/jj860425.aspx) und [Exemplarische Vorgehensweise: Erstellen von privaten Clouds mit System Center 2012 SP1 VMM](http://blogs.technet.com/b/keithmayer/archive/2013/04/18/walkthrough-creating-private-clouds-with-system-center-2012-sp1-virtual-machine-manager-build-your-private-cloud-in-a-month.aspx)
-3. Fügen Sie den Hyper-V-Quellhostserver mit dem zu schützenden virtuellen Computer der Cloud hinzu, die geschützt werden soll (Quellcloud). Fügen Sie den Hyper-V-Zielhostserver der schützenden Cloud auf dem VMM-Server hinzu.
-4. [Erstellen](site-recovery-vmm-to-vmm.md/#step-1-create-a-site-recovery-vault) Sie einen Azure Site Recovery-Tresor, und generieren Sie einen Tresorregistrierungsschlüssel.
-4. [Installieren](site-recovery-vmm-to-vmm.md/#step-3-install-the-azure-site-recovery-provider) Sie den Azure Site Recovery-Anbieter auf dem VMM-Server, und registrieren Sie den Server im Tresor. 
-5. Vergewissern Sie sich, dass die Clouds im Site Recovery-Portal angezeigt werden, und [konfigurieren Sie die Cloudschutzeinstellungen](site-recovery-vmm-to-vmm.md/#step-4-configure-cloud-protection-settings).
-	- Geben Sie unter **Quellenspeicherort** und unter **Zielspeicherort** jeweils den Namen des einzelnen VMM-Servers an.
-	- Wählen Sie für die erste Replikation unter **Replikationsmethode** die Option **Über das Netzwerk** aus, da sich die Clouds auf dem gleichen Server befinden.
+### Replikation zwischen Standorten mit einem einzelnen VMM-Server in einem gestreckten Cluster
 
-6. Optional: [Konfigurieren Sie die Netzwerkzuordnung](site-recovery-vmm-to-vmm.md/#step-5-configure-network-mapping):
+Anstatt einen eigenständigen VMM-Server als virtuellen Computer bereitzustellen, der zu einem sekundären Standort repliziert wird, können Sie VMM als virtuellen Computer in einem Windows-Failovercluster, der Arbeitslaststabilität und Schutz vor Hardwarefehlern bietet, bereitstellen und so hohe Verfügbarkeit erreichen. Zum Bereitstellen mit Site Recovery sollte VMM in einem gestreckten Cluster über geografisch getrennte Standorte bereitgestellt werden. Gehen Sie dazu folgendermaßen vor:
 
-	- Geben Sie unter **Quelle** und unter **Ziel** jeweils den Namen des einzelnen VMM-Servers an.
-	- Wählen Sie unter **Netzwerk auf Quelle** das für die geschützte Cloud konfigurierte VM-Netzwerk aus.
-	- Wählen Sie unter **Netzwerk am Ziel** das VM-Netzwerk aus, das für die Cloud konfiguriert ist, die zum Schutz verwendet werden soll.
-	- Die Netzwerkzuordnung kann zwischen zwei VM-Netzwerken auf dem gleichen VMM-Server konfiguriert werden. Wenn das gleiche VMM-Netzwerk an zwei unterschiedlichen Standorten vorhanden ist, kann die Zuordnung zwischen den gleichen Netzwerken erfolgen.
-7. [Aktivieren Sie den Schutz](site-recovery-vmm-to-vmm.md/#step-7-enable-virtual-machine-protection) für virtuelle Computer in der zu schützenden VMM-Cloud. 
-7. Richten Sie in der Hyper-V-Manager-Konsole die Replikation für den virtuellen VMM-Computer mit Hyper-V-Replikat ein. Der virtuelle VMM-Computer darf keiner VMM-Cloud hinzugefügt werden.
+1. Sie Installieren VMM auf einem virtuellen Computer in einem Windows-Failovercluster und wählen während der Installation die Option, den Server mit hoher Verfügbarkeit auszuführen.
+2. Die von VMM verwendete SQL Server-Instanz sollte mithilfe von AlwaysOn-Verfügbarkeitsgruppen (SQL Server) repliziert werden, damit ein Replikat der Datenbank am sekundären Standort verfügbar ist. 
+
+Bei Ausfällen wird für den VMM-Server und die entsprechende SQL Server-Datenbank ein Failover durchgeführt, und der Zugriff erfolgt über den sekundären Standort.
+
+![Gruppierter virtueller VMM-Server](./media/site-recovery-single-vmm/single-vmm-cluster.png)
 
 
-## Failover und Wiederherstellung
-
-### Erstellen von Wiederherstellungsplänen
-
-Wiederherstellungspläne dienen zum Gruppieren virtueller Computer, für die ein gemeinsames Failover und eine gemeinsame Wiederherstellung durchgeführt werden sollen.
-
-1. Geben Sie bei Erstellung eines Wiederherstellungsplans unter **Quelle** und unter **Ziel** jeweils den Namen des einzelnen VMM-Servers an. Unter **Virtuelle Computer auswählen** werden die virtuellen Computer angezeigt, die der primären Cloud zugeordnet sind.
-2. [Erstellen Sie Wiederherstellungspläne, und passen Sie sie an](https://msdn.microsoft.com/library/azure/dn337331.aspx).
-
-
-### Wiederherstellen
-
-Bei einem Notfall können Workloads auf folgende Weise wiederhergestellt werden:
-
-1. Führen Sie für den virtuellen VMM-Replikatcomputer mithilfe der Hyper-V-Manager-Konsole ein manuelles Failover zum Wiederherstellungsstandort durch.
-2. Nach der Wiederherstellung des virtuellen VMM-Computers können Sie sich über das Portal bei der Hyper-V-Wiederherstellungs-Manager-Konsole anmelden und ein nicht geplantes Failover der virtuellen Computer vom primären Standort zum Wiederherstellungsstandort durchführen.
-3.  Nach Abschluss des nicht geplanten Failovers können Benutzer auf sämtliche Ressourcen am primären Standort zugreifen.
 
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

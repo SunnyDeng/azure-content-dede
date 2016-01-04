@@ -155,13 +155,13 @@ TPM-Instanzname | Geben Sie den Namen der API-App **BizTalk Trading Partner Mana
 
 
 ## Hinzufügen Ihrer Partner, Vereinbarungen, Zertifikate und Schemas 
-Öffnen Sie im Azure-Verwaltungsportal Ihre TPM-API-App. Fügen Sie im Abschnitt **Komponenten** Ihre Partner, Vereinbarungen, Zertifikate und Schemas hinzu.
+Öffnen Sie im Azure-Portal Ihre TPM-API-App. Fügen Sie im Abschnitt **Komponenten** Ihre Partner, Vereinbarungen, Zertifikate und Schemas hinzu.
 
 Sie können Ihren AS2-Connectors, X12-API-Apps und EDIFACT-API-Apps auch Vereinbarungen hinzufügen.
 
 
 ## Überwachen Ihrer API-Apps
-Öffnen Sie im Azure-Verwaltungsportal Ihre TPM-API-App. Im Abschnitt **Vorgänge** können Sie verschiedene Verwaltungsvorgänge anzeigen. Dazu zählen z. B.:
+Öffnen Sie im Azure-Portal Ihre TPM-API-App. Im Abschnitt **Vorgänge** können Sie verschiedene Verwaltungsvorgänge anzeigen. Dazu zählen z. B.:
 
 - Anzeigen von Informations- und Fehlerereignissen
 - Anzeigen der Speicherauslastung und Threadanzahl des Arbeitsprozesses (w3wp)
@@ -206,4 +206,4 @@ Wenn Sie in Ihrer App die B2B-API-Apps aus dem Katalog auswählen, werden sie au
 
 [Liste mit Connectors und API-Apps](app-service-logic-connectors-list.md)<br/><br/> [Was sind Connectors und BizTalk-API-Apps?](app-service-logic-what-are-biztalk-api-apps.md)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1210_2015-->

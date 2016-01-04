@@ -7,7 +7,7 @@
 	manager="jwhit"
 	editor=""/>
 
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="10/01/2015" ms.author="jimpark"; "aashishr"; "sammehta"; "anuragm"/>
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/26/2015" ms.author="jimpark"; "aashishr"; "sammehta"; "anuragm"/>
 
 
 # Bereitstellen und Verwalten der Sicherung in Azure für Data Protection Manager (DPM)-Server mit PowerShell
@@ -32,7 +32,7 @@ Sample DPM scripts: Get-DPMSampleScript
 ## Einrichtung und Registrierung
 Vorbereitung:
 
-1. [Laden Sie die aktuelle PowerShell-Version herunter](https://github.com/Azure/azure-powershell/releases) (erforderliche Mindestversion ist 1.0.0).
+1. [Laden Sie die neueste PowerShell herunter](https://github.com/Azure/azure-powershell/releases) (erforderliche Mindestversion ist 1.0.0).
 2. Aktivieren Sie die Azure Backup-Cmdlets, indem Sie über das Cmdlet **Switch-AzureMode** in den *AzureResourceManager*-Modus wechseln:
 
 ```
@@ -225,7 +225,7 @@ PS C:\> Add-DPMChildDatasource -ProtectionGroup $MPG -ChildDatasource $DS
 Wiederholen Sie diesen Schritt, bis Sie der Schutzgruppe alle ausgewählten Datenquellen hinzugefügt haben. Sie können auch mit einer Datenquelle beginnen, die Schritte zum Erstellen der Schutzgruppe durchführen und der Schutzgruppe später weitere Datenquellen hinzufügen.
 
 ### Auswählen der Datenschutzmethode
-Nachdem die Datenquellen der Schutzgruppe hinzugefügt wurden, legen Sie als Nächstes mithilfe des [Set-DPMProtectionType](https://technet.microsoft.com/library/hh881725)-Cmdlets die Schutzmethode fest. In diesem Beispiel wird die Schutzgruppe für die Sicherung auf dem lokalen Datenträger und in der Cloud eingerichtet. Sie müssen auch die zu schützende Datenquelle mit dem Cmdlet [Add-DPMChildDatasource](https://technet.microsoft.com/en-us/library/hh881732.aspx) und dem "-Online"-Flag angeben.
+Nachdem die Datenquellen der Schutzgruppe hinzugefügt wurden, legen Sie als Nächstes mithilfe des [Set-DPMProtectionType](https://technet.microsoft.com/library/hh881725)-Cmdlets die Schutzmethode fest. In diesem Beispiel wird die Schutzgruppe für die Sicherung auf dem lokalen Datenträger und in der Cloud eingerichtet. Sie müssen auch die zu schützende Datenquelle mit dem Cmdlet [Add-DPMChildDatasource](https://technet.microsoft.com/library/hh881732.aspx) und dem "-Online"-Flag angeben.
 
 ```
 PS C:\> Set-DPMProtectionType -ProtectionGroup $MPG -ShortTerm Disk –LongTerm Online
@@ -280,7 +280,7 @@ Wenn Sie eine Datenquelle zum ersten Mal sichern, muss DPM ein erstes Replikat e
 PS C:\> Set-DPMReplicaCreationMethod -ProtectionGroup $MPG -NOW
 ```
 ### Ändern der Größe des DPM-Replikat- und des Wiederherstellungspunktvolumes
-Mit dem Cmdlet [Set-DPMDatasourceDiskAllocation](https://technet.microsoft.com/en-us/library/hh881618(v=sc.20).aspx) können Sie auch die Größe des DPM-Replikatvolumes sowie des Schattenkopievolumes ändern, wie im folgenden Beispiel gezeigt: Get-DatasourceDiskAllocation -Datasource $DS Set-DatasourceDiskAllocation -Datasource $DS -ProtectionGroup $MPG -manual -ReplicaArea (2gb) -ShadowCopyArea (2gb)
+Mit dem Cmdlet [Set-DPMDatasourceDiskAllocation](https://technet.microsoft.com/library/hh881618.aspx) können Sie auch die Größe des DPM-Replikatvolumes sowie des Schattenkopievolumes ändern (siehe das folgende Beispiel): Get-DatasourceDiskAllocation -Datasource $DS Set-DatasourceDiskAllocation -Datasource $DS -ProtectionGroup $MPG -manual -ReplicaArea (2gb) -ShadowCopyArea (2gb)
 
 ### Commit für Änderungen an der Schutzgruppe
 Zum Schluss muss für die Änderungen ein Commit ausgeführt werden, bevor DPM die Sicherung für die neue Schutzgruppenkonfiguration durchführen kann. Dazu wird das [Set-DPMProtectionGroup](https://technet.microsoft.com/library/hh881758)-Cmdlet verwendet.
@@ -319,6 +319,7 @@ PS C:\> Restore-DPMRecoverableItem -RecoverableItem $RecoveryPoints[0] -Recovery
 Die Befehle können mühelos für beliebige Datenquellentypen erweitert werden.
 
 ## Nächste Schritte
-Weitere Informationen zu Azure Backup für DPM finden Sie unter [Einführung in DPM Backup](backup-azure-dpm-introduction.md)
 
-<!---HONumber=Oct15_HO3-->
+- Weitere Informationen zu Azure Backup für DPM finden Sie unter [Einführung in DPM Backup](backup-azure-dpm-introduction.md)
+
+<!---HONumber=AcomDC_1203_2015-->

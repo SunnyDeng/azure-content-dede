@@ -1,11 +1,11 @@
 <properties 
-   pageTitle="Assistent zur Veröffentlichung einer Azure-Anwendung"
+   pageTitle="Assistent zum Veröffentlichen von Azure-Anwendungen | Microsoft Azure"
    description="Assistent zur Veröffentlichung einer Azure-Anwendung"
    services="visual-studio-online"
    documentationCenter="na"
-   authors="kempb"
+   authors="TomArcher"
    manager="douge"
-   editor="tlee" />
+   editor="" />
 <tags 
    ms.service="multiple"
    ms.devlang="multiple"
@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="na"
    ms.date="08/24/2015"
-   ms.author="kempb" />
+   ms.author="tarcher" />
 
 # Assistent zur Veröffentlichung einer Azure-Anwendung
 
@@ -141,4 +141,4 @@ Sie können die allgemeinen und erweiterten Einstellungen für eine Bereitstellu
 
 [Lokales Testen der Leistung eines Cloud-Diensts](https://msdn.microsoft.com/library/azure/hh369930.aspx)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

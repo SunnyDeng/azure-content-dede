@@ -35,7 +35,7 @@ Informationen zum Konfigurieren einer App Service-Umgebung finden Sie in [unsere
 Barracuda hat einen [ausführlichen Artikel](https://techlib.barracuda.com/WAF/AzureDeploy) zur Bereitstellung seiner WAF auf einem virtuellen Computer in Azure verfasst. Wir befolgen diese Anweisungen, wollen aber zugleich Redundanz und keine einzelne Fehlerquelle hinzufügen, weshalb wir mindestens 2 VMs mit WAF-Instanzen im selben Clouddienst bereitstellen.
 
 ### Hinzufügen von Endpunkten zum Clouddienst ###
-Sobald Ihr Clouddienst zwei oder mehr WAF VM-Instanzen aufweist, können Sie im [Azure-Verwaltungsportal](https://portal.azure.com) HTTP- und HTTPS-Endpunkte hinzufügen, die von Ihrer Anwendung verwendet werden (siehe die folgende Abbildung).
+Sobald Ihr Cloud Service zwei oder mehr WAF VM-Instanzen aufweist, können Sie im [Azure-Portal](https://portal.azure.com) HTTP- und HTTPS-Endpunkte hinzufügen, die von Ihrer Anwendung verwendet werden (siehe die folgende Abbildung).
 
 ![Endpunkt konfigurieren][ConfigureEndpoint]
 
@@ -66,11 +66,11 @@ Auf der Registerkarte "Dienste" können Sie Ihre WAF für die Dienste konfigurie
 > Hinweis: Je nachdem, wie Ihre Anwendungen konfiguriert sind und welche Features in Ihrer App Service-Umgebung verwendet werden, müssen Sie Datenverkehr für alle TCP-Ports außer 80 und 443 weiterleiten, wenn Sie IP-SSL für eine Webanwendung eingerichtet haben. Eine Liste der Netzwerkports, die in App Service-Umgebungen verwendet werden, finden Sie in der [Dokumentation zum Steuern des eingehenden Datenverkehrs](app-service-app-service-environment-control-inbound-traffic.md) im Abschnitt "Netzwerkports".
 
 ## Konfigurieren von Microsoft Azure Traffic Manager (optional) ##
-Wenn Ihre Anwendung in mehreren Regionen verfügbar ist, sollten Sie mithilfe von [Azure Traffic Manager](traffic-manager.md) für einen Lastenausgleich sorgen. Fügen Sie hierzu im [Azure-Verwaltungsportal](https://manage.azure.com) einen Endpunkt unter Angabe des Clouddienstnamens für Ihre WAF dem Traffic Manager-Profil hinzu (siehe die folgende Abbildung).
+Wenn Ihre Anwendung in mehreren Regionen verfügbar ist, sollten Sie mithilfe von [Azure Traffic Manager](traffic-manager.md) für einen Lastenausgleich sorgen. Fügen Sie hierzu im [klassischen Azure-Portal](https://manage.azure.com) einen Endpunkt unter Angabe des Cloud-Service-Namens für Ihre WAF dem Traffic Manager-Profil hinzu (siehe die folgende Abbildung).
 
 ![Traffic Manager-Endpunkt][TrafficManagerEndpoint]
 
-Wenn Ihre Anwendung eine Authentifizierung erfordert, stellen Sie sicher, dass Sie über eine Ressource verfügen, die keine Authentifizierung bei Traffic Manager benötigt, um ein Pingsignal zum Prüfen der Verfügbarkeit der Anwendung senden zu können. Sie können die URL im [Azure-Verwaltungsportal](https://manage.azure.com), wie nachstehend gezeigt, im Abschnitt "Konfigurieren" konfigurieren.
+Wenn Ihre Anwendung eine Authentifizierung erfordert, stellen Sie sicher, dass Sie über eine Ressource verfügen, die keine Authentifizierung bei Traffic Manager benötigt, um ein Pingsignal zum Prüfen der Verfügbarkeit der Anwendung senden zu können. Sie können die URL im [klassischen Azure-Portal](https://manage.azure.com), wie nachstehend gezeigt, im Abschnitt "Konfigurieren" konfigurieren.
 
 ![Traffic Manager konfigurieren][ConfigureTrafficManager]
 
@@ -99,4 +99,4 @@ Ersetzen Sie "SourceAddressPrefix" durch die virtuelle IP-Adresse (VIP) des Clou
 [ConfigureTrafficManager]: ./media/app-service-app-service-environment-web-application-firewall/ConfigureTrafficManager.png
 [WebsiteTranslations]: ./media/app-service-app-service-environment-web-application-firewall/WebsiteTranslations.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

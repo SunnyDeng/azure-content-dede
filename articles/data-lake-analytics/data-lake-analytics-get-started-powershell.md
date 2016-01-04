@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="10/22/2015"
+   ms.date="12/01/2015"
    ms.author="jgao"/>
 
 # Lernprogramm: Erste Schritte mit Azure Data Lake Analytics mithilfe von Azure PowerShell
@@ -22,46 +22,30 @@
 
 Enthält Informationen zum Verwenden von Azure PowerShell zum Erstellen von Azure Data Lake Analytics-Konten, zum Definieren von Data Lake Analytics-Aufträgen in [U-SQL](data-lake-analytics-u-sql-get-started.md) und zum Übermitteln von Aufträgen an Data Lake Analytics-Konten. Weitere Informationen zu Data Lake Analytics finden Sie unter [Übersicht über Azure Data Lake Analytics](data-lake-analytics-overview.md).
 
-In diesem Tutorial entwickeln Sie einen Auftrag, bei dem eine Datei mit tabulatorgetrennten Werten (TSV) gelesen und in eine Datei mit kommagetrennten Werten (CSV) konvertiert wird. Um das gleiche Tutorial unter Verwendung anderer unterstützter Tools zu durchlaufen, klicken Sie auf die Registerkarten oben in diesem Abschnitt.
+In diesem Tutorial entwickeln Sie einen Auftrag, bei dem eine Datei mit tabulatorgetrennten Werten (TSV) gelesen und in eine Datei mit kommagetrennten Werten (CSV) konvertiert wird. Um das gleiche Lernprogramm unter Verwendung anderer unterstützter Tools zu durchlaufen, klicken Sie auf die Registerkarten oben in diesem Abschnitt.
 
 **Der grundlegende Data Lake Analytics-Prozess:**
 
-![Prozessflussdiagramm für Azure Data Lake Analytics](./media/data-lake-analytics-get-started-portal/data-lake-analytics-process.png)
+![Azure Data Lake Analytics-Prozessflussdiagramm](./media/data-lake-analytics-get-started-portal/data-lake-analytics-process.png)
 
-1. Erstellen eines Data Lake Analytics-Kontos.
+1. Erstellen Sie ein Data Lake Analytics-Konto.
 2. Vorbereiten der Quelldaten. Data Lake Analytics-Aufträge können Daten entweder von Azure Data Lake-Speicherkonten oder von Azure Blob-Speicherkonten lesen.   
-3. Entwickeln eines U-SQL-Skripts.
-4. Übermitteln eines Auftrags (U-SQL-Skript) an das Data Lake Analytics-Konto. Für den Auftrag werden die Quelldaten gelesen, die Daten werden gemäß Anweisung im U-SQL-Skript verarbeitet, und anschließend wird die Ausgabe entweder in einem Data Lake-Speicherkonto oder einem BLOB-Speicherkonto gespeichert.
+3. Entwickeln Sie ein U-SQL-Skript.
+4. Übermitteln Sie einen Auftrag (U-SQL-Skript) an das Data Lake Analytics-Konto. Für den Auftrag werden die Quelldaten gelesen, die Daten werden gemäß Anweisung im U-SQL-Skript verarbeitet, und anschließend wird die Ausgabe entweder in einem Data Lake-Speicherkonto oder einem BLOB-Speicherkonto gespeichert.
 
 
 **Voraussetzungen**
 
 Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
-- **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/de-DE/pricing/free-trial/).
-- **Azure PowerShell 1.0 oder höher**. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md). Nach der Installation von Azure PowerShell 1.0 oder höher sollte folgendes Cmdlet ausgeführt werden, um das Azure Data Lake Analytics-Modul zu installieren.
-
-		Install-Module AzureRM.DataLakeStore
-		Install-Module AzureRM.DataLakeAnalytics
-
-	Weitere Informationen zum **AzureRM.DataLakeStore**-Modul finden Sie unter [PowerShell Gallery](http://www.powershellgallery.com/packages/AzureRM.DataLakeStore) (in englischer Sprache). Weitere Informationen über das **AzureRM.DataLakeAnalytics**-Modul finden Sie in der [PowerShell Gallery](http://www.powershellgallery.com/packages/AzureRM.DataLakeAnalytics).
-
-	Führen Sie beim erstmaligen Erstellen eines Data Lake-Kontos folgendes Cmdlet aus:
-
-		Register-AzureRmResourceProvider -ProviderNamespace "Microsoft.DataLakeStore"
-		Register-AzureRmResourceProvider -ProviderNamespace "Microsoft.DataLakeAnalytics"
-
-	Um die Verbindung mit Azure herzustellen, verwenden Sie folgende Cmdlets:
-
-		Login-AzureRmAccount
-		Get-AzureRmSubscription  # for finding the Azure Subscription ID
-		Set-AzureRmContext -SubscriptionID <Azure Subscription ID>
+- **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/).
+- **Eine Arbeitsstation mit Azure PowerShell**. Siehe [Installieren von Azure PowerShell 1.0 und höher](data-lake-analytics-manage-use-powershell.md#install-azure-powershell-10-and-greater).
 
 ##Erstellen eines Data Lake Analytics-Kontos
 
 Zum Ausführen von Aufträgen ist ein Data Lake Analytics-Konto erforderlich. Zum Erstellen eines Data Lake Analytics-Kontos müssen Sie Folgendes angeben:
 
-- **Azure-Ressourcengruppe**: Es muss ein Data Lake Analytics-Konto in einer Azure-Ressourcengruppe erstellt werden. Mit dem [Azure-Ressourcen-Manager](resource-group-overview.md) können Sie mit den Ressourcen in Ihrer Anwendung als Gruppe arbeiten. Sie können alle Ressourcen für Ihre Anwendung in einem einzigen, koordinierten Vorgang bereitstellen, aktualisieren oder löschen.  
+- **Azure-Ressourcengruppe**: Ein Data Lake Analytics-Konto muss in einer Azure-Ressourcengruppe erstellt werden. Mit dem [Azure-Ressourcen-Manager](resource-group-overview.md) können Sie mit den Ressourcen in Ihrer Anwendung als Gruppe arbeiten. Sie können alle Ressourcen für Ihre Anwendung in einem einzigen, koordinierten Vorgang bereitstellen, aktualisieren oder löschen.  
 
 	So listen Sie die Ressourcengruppen in Ihrem Abonnement auf:
     
@@ -74,10 +58,10 @@ Zum Ausführen von Aufträgen ist ein Data Lake Analytics-Konto erforderlich. Zu
 			-Location "<Azure Data Center>" # For example, "East US 2"
 
 - **Name des Data Lake Analytics-Kontos**
-- **Standort**: Eines der Azure-Rechenzentren, die Data Lake Analytics unterstützen.
+- **Standort**: eines der Azure-Rechenzentren, die Data Lake Analytics unterstützen.
 - **Data Lake-Standardkonto**: Jedes Data Lake Analytics-Konto verfügt über ein Data Lake-Standardkonto.
 
-	So erstellen Sie ein neues Data Lake-Konto:
+	So erstellen Sie ein neues Data Lake-Konto
 
 	    New-AzureRmDataLakeStoreAccount `
 	        -ResourceGroupName "<Your Azure resource group name>" `
@@ -123,9 +107,9 @@ Zum Ausführen von Aufträgen ist ein Data Lake Analytics-Konto erforderlich. Zu
 
 ##Hochladen von Daten in Data Lake
 
-In diesem Lernprogramm verarbeiten Sie Suchprotokolle. Das Suchprotokoll kann in einem Data Lake-Speicher oder in einem Azure-Blob-Speicher gespeichert werden.
+In diesem Tutorial verarbeiten Sie einige Suchprotokolle. Das Suchprotokoll kann entweder in einem Data Lake-Speicher oder einem Azure-BLOB-Speicher gespeichert werden.
 
-Eine Beispiel-Suchprotokolldatei wurde in einen öffentlichen Azure-Blob-Container kopiert. Verwenden Sie das folgende PowerShell-Skript, um die Datei auf die Arbeitsstation herunterzuladen, und laden Sie dann die Datei in das Data Lake-Standardspeicherkonto Ihres Data Lake Analytics-Kontos.
+Eine Beispiel-Suchprotokolldatei wurde in einen öffentlichen Azure-BLOB-Container kopiert. Verwenden Sie das folgende PowerShell-Skript, um die Datei auf die Arbeitsstation herunterzuladen, und laden Sie dann die Datei in das Data Lake-Standardspeicherkonto Ihres Data Lake Analytics-Kontos.
 
 	$dataLakeStoreName = "<The default Data Lake Store account name>"
 	
@@ -151,13 +135,13 @@ Das folgende PowerShell-Skript veranschaulicht das Abrufen des Data Lake-Standar
 	$dataLakeAnalyticsName = "<DataLakeAnalyticsAccountName>"
 	$dataLakeStoreName = (Get-AzureRmDataLakeAnalyticsAccount -ResourceGroupName $resourceGroupName -Name $dataLakeAnalyticName).Properties.DefaultDataLakeAccount
 
->[AZURE.NOTE]Das Azure-Vorschauportal bietet eine Benutzeroberfläche zum Kopieren der Beispieldatendateien in das Data Lake-Standardspeicherkonto. Anweisungen finden Sie unter [Erste Schritte mit Azure Data Lake Analytics mithilfe des Azure-Vorschauportals](data-lake-analytics-get-started-portal.md#upload-data-to-the-default-data-lake-store-account).
+>[AZURE.NOTE]Das Azure-Portal bietet eine Benutzeroberfläche zum Kopieren der Beispieldatendateien in das Data Lake-Standardspeicherkonto. Anweisungen finden Sie unter [Erste Schritte mit Azure Data Lake Analytics mithilfe des Azure-Portals](data-lake-analytics-get-started-portal.md#upload-data-to-the-default-data-lake-store-account).
 
-Data Lake Analytics hat auch Zugriff auf den Azure-Blob-Speicher. Informationen zum Hochladen von Daten in den Azure-Blob-Speicher finden Sie unter [Verwenden von Azure PowerShell mit Azure Storage](storage-powershell-guide-full.md).
+Data Lake Analytics hat auch Zugriff auf den Azure-Blob-Speicher. Informationen zum Hochladen von Daten in den Azure-BLOB-Speicher finden Sie unter [Verwenden von Azure PowerShell mit Azure Storage](storage-powershell-guide-full.md).
 
 ##Übermitteln von Data Lake Analytics-Aufträgen
 
-Die Data Lake Analytics-Aufträge werden in der Sprache U-SQL geschrieben. Weitere Informationen zu U-SQL finden Sie unter [Erste Schritte mit der Sprache U-SQL](data-lake-analytics-u-sql-get-started.md) und in der [U-SQL Language Reference](http://go.microsoft.com/fwlink/?LinkId=691348) (in englischer Sprache).
+Die Data Lake Analytics-Aufträge werden in der Sprache U-SQL geschrieben. Weitere Informationen zu U-SQL finden Sie unter [Erste Schritte mit der U-SQL-Sprache](data-lake-analytics-u-sql-get-started.md) und in der [U-SQL Language Reference](http://go.microsoft.com/fwlink/?LinkId=691348) (in englischer Sprache).
 
 **So erstellen Sie ein Skript für Data Lake Analytics-Aufträge**
 
@@ -186,7 +170,7 @@ Die Data Lake Analytics-Aufträge werden in der Sprache U-SQL geschrieben. Weite
     
         adl://<Data LakeStorageAccountName>.azuredatalakestore.net:443/Samples/Data/SearchLog.tsv
         
-    Absolute Pfade müssen verwendet werden, um auf Dateien in verknüpften Speicherkonten zuzugreifen. Die Syntax für Dateien, die unter verknüpften Azure-Speicherkonten gespeichert werden, lautet wie folgt:
+    Sie müssen absolute Pfade verwenden, um auf Dateien in verknüpften Speicherkonten zuzugreifen. Die Syntax für Dateien, die unter dem verknüpften Azure-Speicherkonto gespeichert werden, lautet wie folgt:
     
         wasb://<BlobContainerName>@<StorageAccountName>.blob.core.windows.net/Samples/Data/SearchLog.tsv
 
@@ -226,11 +210,11 @@ Nachdem der Auftrag abgeschlossen wurde, können Sie die folgenden Cmdlets verwe
 
 ## Weitere Informationen
 
-- Wenn Sie dasselbe Lernprogramm mit anderen Tools verwenden möchten, klicken Sie oben auf der Seite auf die Registerkartenauswahl.
+- Wenn Sie dasselbe Tutorial mit anderen Tools verwenden möchten, klicken Sie oben auf der Seite auf die Registerkartenauswahl.
 - Eine komplexere Abfrage finden Sie unter [Analysieren von Websiteprotokollen mit Azure Data Lake Analytics](data-lake-analytics-analyze-weblogs.md).
 - Informationen zu den ersten Schritten der Entwicklung von U-SQL-Anwendungen finden Sie unter [Entwickeln von U-SQL-Skripts mit Data Lake-Tools für Visual Studio](data-lake-analytics-data-lake-tools-get-started.md).
 - Informationen zum Erlernen von U-SQL finden Sie unter [Erste Schritte mit der Sprache U-SQL für Azure Data Lake Analytics](data-lake-analytics-u-sql-get-started.md).
-- Informationen zu Verwaltungsaufgaben finden Sie unter [Verwalten von Azure Data Lake Analytics mithilfe des Azure-Vorschauportals](data-lake-analytics-manage-use-portal.md).
+- Informationen zu Verwaltungsaufgaben finden Sie unter [Verwalten von Azure Data Lake Analytics mithilfe des Azure-Portals](data-lake-analytics-manage-use-portal.md).
 - Eine Übersicht über Data Lake Analytics finden Sie unter [Azure Data Lake Analytics – Übersicht](data-lake-analytics-overview.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -1,7 +1,7 @@
 <properties
-	pageTitle="Abfragemuster in Azure Stream Analytics | Microsoft Azure"
+	pageTitle="Abfragebeispiele für gängige Verwendungsmuster in Stream Analytics | Microsoft Azure"
 	description="Allgemeine Abfragemuster in Azure Stream Analytics"
-	keywords="Stream Analytics, Beispiel, Abfrage, Sprache, Anleitung, Muster"
+	keywords="Abfragebeispiele"
 	services="stream-analytics"
 	documentationCenter=""
 	authors="jeffstokes72"
@@ -14,18 +14,17 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="big-data"
-	ms.date="11/06/2015"
+	ms.date="12/04/2015"
 	ms.author="jeffstok"/>
 
 
-# Allgemeine Abfragemuster in Azure Stream Analytics  #
+# Abfragebeispiele für gängige Stream Analytics-Verwendungsmuster #
 
 ## Einführung ##
+
 Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache formuliert, die [hier](https://msdn.microsoft.com/library/azure/dn834998.aspx) dokumentiert ist. In diesem Dokument werden anhand von Praxisbeispielen Lösungen für mehrere allgemeine Abfragemuster veranschaulicht. Das Dokument wird nach und nach mit weiteren Mustern aktualisiert.
 
-## Grundlagen ##
-
-## Konvertierung von Datentypen ##
+## Abfragebeispiel: Konvertierungen von Datentypen ##
 **Beschreibung**: Definieren der Arten von Eigenschaften im Eingabedatenstrom. Beispiel: Das Fahrzeuggewicht ist im Eingabedatenstrom als Zeichenfolge angegeben und muss zur Summenbildung in INT konvertiert werden.
 
 **Eingabe**:
@@ -54,7 +53,7 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 
 **Erläuterung**: Verwenden Sie eine CAST-Anweisung für das Gewichtsfeld (Weight), um dessen Typ anzugeben. (Eine Liste mit unterstützten Datentypen finden Sie [hier](https://msdn.microsoft.com/library/azure/dn835065.aspx).)
 
-## Musterabgleich mithilfe von „Like“/„Not like“ ##
+## Abfragebeispiel: Musterabgleich mithilfe von „Like“/„Not like“ ##
 **Beschreibung**: Sicherstellen, dass ein Feldwert des Ereignisses einem bestimmten Muster entspricht. Beispiel: Zurückgeben von Nummernschildern, die mit „A“ beginnen und mit „9“ enden.
 
 **Eingabe**:
@@ -83,7 +82,7 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 
 **Erläuterung**: Verwenden Sie die LIKE-Anweisung, um sicherzustellen, dass der Wert im Feld „LicensePlate“ mit „A“ beginnt, anschließend eine beliebige Zeichenfolge mit null oder mehr Zeichen enthält und dann mit „9“ endet.
 
-## Logik für verschiedene Fälle/Werte (CASE-Anweisungen) ##
+## Abfragebeispiel: Logik für verschiedene Fälle/Werte (CASE-Anweisungen) ##
 **Beschreibung**: Angeben einer kriterienbasierten Berechnung für ein Feld. Beispiel: Bereitstellen einer Zeichenfolge, die beschreibt, wie viele Fahrzeuge der gleichen Marke vorbeigefahren sind (mit einem Sonderfall für „1“).
 
 **Eingabe**:
@@ -117,7 +116,7 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 
 **Erläuterung**: Mit der CASE-Klausel kann auf der Grundlage einiger Kriterien (in unserem Fall die Fahrzeuganzahl im Aggregierungszeitraum) eine abweichende Berechnung angegeben werden.
 
-## Senden von Daten an mehrere Ausgaben ##
+## Abfragebeispiel: Senden von Daten an mehrere Ausgaben ##
 **Beschreibung**: Senden von Daten an mehrere Ausgabeziele über einen einzelnen Auftrag. Beispiel: Analysieren von Daten für eine schwellenwertbasierte Warnung und Archivieren aller Ereignisse im BLOB-Speicher.
 
 **Eingabe**:
@@ -182,9 +181,7 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 	SELECT * INTO HondaOutput FROM AllRedCars WHERE Make = 'Honda'
 	SELECT * INTO ToyotaOutput FROM AllRedCars WHERE Make = 'Toyota'
 
-## Muster ##
-
-## Zählen eindeutiger Werte
+## Abfragebeispiel: Zählen eindeutiger Werte
 **Beschreibung**: Zählen der Anzahl eindeutiger Feldwerte, die im Datenstrom innerhalb eines bestimmten Zeitraums vorkommen. Beispiel: Wie viele individuelle Fahrzeugmarken passieren in einem Zeitraum von zwei Sekunden die Mautstation?
 
 **Eingabe**:
@@ -197,14 +194,14 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 | Toyota | 2015-01-01T00:00:02.0000000Z |
 | Toyota | 2015-01-01T00:00:03.0000000Z |
 
-**Ausgabe**:
+**Ausgabe:**
 
 | Count | Time |
 | --- | --- |
 | 2 | 2015-01-01T00:00:02.000Z |
 | 1 | 2015-01-01T00:00:04.000Z |
 
-**Lösung**:
+**Lösung:**
 
 	WITH Makes AS (
 	    SELECT
@@ -227,7 +224,7 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 
 **Erläuterung**: Bei einer ersten Aggregierung werden individuelle Marken innerhalb des Zeitraums ermittelt. Anschließend wird mithilfe einer Aggregierung deren Anzahl ermittelt. Wenn alle eindeutigen Werte in einem Zeitraum den gleichen Zeitstempel erhalten, muss der Zeitraum für die zweite Aggregierung sehr klein sein, damit nicht zwei Zeiträume aus dem ersten Schritt aggregiert werden.
 
-## Ermitteln, ob ein Wert geändert wurde ##
+## Abfragebeispiel: Ermitteln, ob ein Wert geändert wurde ##
 **Beschreibung**: Betrachten eines vorherigen Werts, um zu ermitteln, ob er sich vom aktuellen Wert unterscheidet. Beispiel: Handelt es sich beim aktuellen Fahrzeug auf der mautpflichtigen Straße um die gleiche Marke wie beim vorherigen Fahrzeug?
 
 **Eingabe**:
@@ -255,7 +252,7 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 
 **Erläuterung**: Verwenden Sie „LAG“, um im Eingabedatenstrom einen Blick auf das vorherige Ereignis zu werfen und den Make-Wert zu ermitteln. Vergleichen Sie ihn dann mit dem Make-Wert des aktuellen Ereignisses, und geben Sie das Ereignis aus, falls sich die Werte unterscheiden.
 
-## Ermitteln des ersten Ereignisses in einem Zeitraum ##
+## Abfragebeispiel: Ermitteln des ersten Ereignisses in einem Zeitraum ##
 **Beschreibung**: Ermitteln des jeweils ersten Fahrzeugs in einem Zehn-Minuten-Intervall.
 
 **Eingabe**:
@@ -309,7 +306,7 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 	WHERE 
 		IsFirst(minute, 10) OVER (PARTITION BY Make) = 1
 
-## Ermitteln des letzten Ereignisses in einem Zeitraum ##
+## Abfragebeispiel: Ermitteln des letzten Ereignisses in einem Zeitraum ##
 **Beschreibung**: Ermitteln des jeweils letzten Fahrzeugs in einem Zehn-Minuten-Intervall.
 
 **Eingabe**:
@@ -354,7 +351,7 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 
 **Erläuterung**: Die Abfrage umfasst zwei Schritte: Im ersten Schritt wird der neueste Zeitstempel des jeweiligen Zehn-Minuten-Intervalls gesucht. Im zweiten Schritt werden die Ergebnisse der ersten Abfrage mit dem ursprünglichen Datenstrom zusammengeführt, um nach Ereignissen zu suchen, die dem letzten Zeitstempel des jeweiligen Intervalls entsprechen.
 
-## Erkennen der Abwesenheit von Ereignissen ##
+## Abfragebeispiel: Erkennen der Abwesenheit von Ereignissen ##
 **Beschreibung**: Überprüfen, ob der Datenstrom einen Wert enthält, der einem bestimmten Kriterium entspricht. Beispiel: Wurde die mautpflichtige Straße in einem Zeitraum von 90 Sekunden von zwei aufeinanderfolgenden Fahrzeugen der gleichen Marke befahren?
 
 **Eingabe**:
@@ -387,7 +384,7 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 
 **Erläuterung**: Verwenden Sie „LAG“, um im Eingabedatenstrom einen Blick auf das vorherige Ereignis zu werfen und den Make-Wert zu ermitteln. Vergleichen Sie ihn dann mit dem Make-Wert des aktuellen Ereignisses, geben Sie das Ereignis aus, falls die Werte identisch sind, und rufen Sie mithilfe von „LAG“ Daten zum vorherigen Fahrzeug ab.
 
-## Ermitteln der Dauer einer Bedingung ##
+## Abfragebeispiel: Ermitteln der Dauer einer Bedingung ##
 **Beschreibung**: Ermitteln, wie lange eine Bedingung angedauert hat. Beispiel: Aufgrund eines Fehlers wurde für alle Fahrzeuge ein Gewicht von über 20.000 Pfund erfasst, und wir möchten nun ermitteln, wie lange dieser Fehler aufgetreten ist.
 
 **Eingabe**:
@@ -455,4 +452,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

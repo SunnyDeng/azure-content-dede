@@ -3,7 +3,7 @@
    description="Dieser Artikel enthält mehrere Themen zum Verwalten einer Azure Automation-Umgebung. Er enthält derzeit die Themen ";Datenaufbewahrung";, ";Sichern von Azure Automation"; und ";Notfallwiederherstellung in Azure Automation";."
    services="automation"
    documentationCenter=""
-   authors="bwren"
+   authors="SnehaGunda"
    manager="stevenka"
    editor="tysonn" />
 <tags 
@@ -36,7 +36,7 @@ Die folgende Tabelle zeigt die Aufbewahrungsrichtlinie für unterschiedliche Res
 |Aufträge|Löschung und dauerhafte Entfernung 90 Tage nach der letzten Änderung. Dies kann der Fall sein, wenn der Job abgeschlossen, gestoppt oder angehalten wurde.|
 |Knotenkonfigurationen/MOF-Dateien| Die alte Knotenkonfiguration wird 90 Tage nach dem Generieren einer neuen Knotenkonfiguration dauerhaft entfernt.|
 |DSC-Knoten| Diese werden 90 Tage nach Aufhebung der Registrierung im Automation-Konto über das Azure-Portal oder mit dem Cmdlet [Unregister-AzureRMAutomationDscNode](https://msdn.microsoft.com/library/mt603500.aspx) in Windows PowerShell dauerhaft entfernt. Wenn ein Benutzer das Konto löscht, in dem die Knoten enthalten sind, werden diese ebenfalls nach 90 Tagen dauerhaft entfernt. |
-|Knotenberichte:| 90 Tage nach dem Generieren eines neuen Berichts für diesen Knoten dauerhaft entfernt|
+|Knotenberichte| 90 Tage nach dem Generieren eines neuen Berichts für diesen Knoten dauerhaft entfernt|
 
 Die Datenaufbewahrungsrichtlinie gilt für alle Benutzer und kann zurzeit nicht angepasst werden.
 
@@ -65,7 +65,7 @@ Zertifikate können nicht aus Azure Automation exportiert werden. Sie müssen si
 
 ### DSC-Konfigurationen
 
-Sie können Ihre Konfigurationen entweder unter Verwendung des Azure-Verwaltungsportals oder mithilfe des Cmdlets [Export-AzureRmAutomationDscConfiguration](https://msdn.microsoft.com/library/mt603485.aspx) in Windows PowerShell in Skriptdateien exportieren. Diese Konfigurationen können in ein anderes Automation-Konto importiert und darin verwendet werden.
+Sie können Ihre Konfigurationen unter Verwendung des Azure-Verwaltungsportals oder mithilfe des Cmdlets [Export-AzureRmAutomationDscConfiguration](https://msdn.microsoft.com/library/mt603485.aspx) in Windows PowerShell in Skriptdateien exportieren. Diese Konfigurationen können in ein anderes Automation-Konto importiert und darin verwendet werden.
 
 
 ##Georeplikation in Azure Automation
@@ -84,4 +84,4 @@ In der folgenden Tabelle werden die verfügbaren Paare primärer und sekundärer
 
 Microsoft versucht im unwahrscheinlichen Fall, dass Daten der primären Region verloren gehen, diese wiederherzustellen. Wenn die Daten der primären Region nicht wiederhergestellt werden können, erfolgt ein Geofailover, über das die betroffenen Kunden durch ihr Abonnement benachrichtigt werden.
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

@@ -4,7 +4,7 @@
    services="dns"
    documentationCenter="na"
    authors="joaoma"
-   manager="Adinah"
+   manager="carmonm"
    editor=""/>
 
 <tags
@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="09/22/2015"
+   ms.date="12/15/2015"
    ms.author="joaoma"/>
 
 
@@ -71,8 +71,8 @@ Zum Einrichten der Delegierung müssen Sie den Namenserver für die Zone kennen.
 
 Mithilfe von Azure PowerShell können die autoritativen NS-Einträge folgendermaßen abgerufen werden. (Der Eintragsname "@" wird verwendet, um auf Einträge an der Spitze der Zone zu verweisen.).
 
-	PS C:\> $zone = Get-AzureDnsZone –Name contoso.com –ResourceGroupName MyAzureResourceGroup
-	PS C:\> Get-AzureDnsRecordSet –Name “@” –RecordType NS –Zone $zone
+	PS C:\> $zone = Get-AzureRmDnsZone –Name contoso.com –ResourceGroupName MyAzureResourceGroup
+	PS C:\> Get-AzureRmDnsRecordSet –Name “@” –RecordType NS –Zone $zone
 
 	Name              : @
 	ZoneName          : contoso.com
@@ -118,18 +118,18 @@ Der einzige Unterschied besteht darin, dass in Schritt 3 die NS-Datensätze in 
 
 Das folgende PowerShell-Beispiel dient als Veranschaulichung. Wir erstellen zuerst die übergeordnete und die untergeordnete Zone, die sich in der gleichen Ressourcengruppe oder in unterschiedlichen Ressourcengruppen befinden können.
 
-	PS C:\> $parent = New-AzureDnsZone -Name contoso.com -ResourceGroupName RG1
-	PS C:\> $child = New-AzureDnsZone -Name partners.contoso.com -ResourceGroupName RG1
+	PS C:\> $parent = New-AzureRmDnsZone -Name contoso.com -ResourceGroupName RG1
+	PS C:\> $child = New-AzureRmDnsZone -Name partners.contoso.com -ResourceGroupName RG1
 
 Dann rufen wir wie im folgenden Beispiel dargestellt die autoritativen NS-Datensätze aus der untergeordneten Zone ab.
 
-	PS C:\> $child_ns_recordset = Get-AzureDnsRecordSet -Zone $child -Name "@" -RecordType NS
+	PS C:\> $child_ns_recordset = Get-AzureRmDnsRecordSet -Zone $child -Name "@" -RecordType NS
 
 Schließlich erstellen wir den entsprechenden NS-Datensatz in der übergeordneten Zone, um die Delegierung abzuschließen (Beachten Sie, dass der Name des Datensatzes in der übergeordneten Zone mit dem Namen in der untergeordneten Zone übereinstimmt, in diesem Fall "partners").
 
-	PS C:\> $parent_ns_recordset = New-AzureDnsRecordSet -Zone $parent -Name "partners" -RecordType NS -Ttl 3600
+	PS C:\> $parent_ns_recordset = New-AzureRmDnsRecordSet -Zone $parent -Name "partners" -RecordType NS -Ttl 3600
 	PS C:\> $parent_ns_recordset.Records = $child_ns_recordset.Records
-	PS C:\> Set-AzureDnsRecordSet -RecordSet $parent_ns_recordset
+	PS C:\> Set-AzureRmDnsRecordSet -RecordSet $parent_ns_recordset
 
 Wie beim Delegieren mithilfe einer Registrierungsstelle können wir überprüfen, ob alles ordnungsgemäß eingerichtet ist, indem wir den SOA-Datensatz der untergeordneten Zone suchen.
 
@@ -149,14 +149,14 @@ Wie beim Delegieren mithilfe einer Registrierungsstelle können wir überprüfen
 
 ## Nächste Schritte
 
-[Verwalten von DNS-Zonen](../dns-operations-dnszones)
+[Verwalten von DNS-Zonen](dns-operations-dnszones.md)
 
-[Verwalten von DNS-Einträgen](../dns-operations-recordsets)
+[Verwalten von DNS-Einträgen](dns-operations-recordsets.md)
 
-[Traffic Manager – Übersicht](../traffic-manager-overview)
+[Traffic Manager – Übersicht](traffic-manager-overview.md)
 
-[Automatisieren von Azure-Vorgängen mit dem .NET SDK](../dns-sdk)
+[Automatisieren von Azure-Vorgängen mit dem .NET SDK](dns-sdk.md)
 
 [REST-API-Referenz für Azure DNS](https://msdn.microsoft.com/library/azure/mt163862.aspx)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

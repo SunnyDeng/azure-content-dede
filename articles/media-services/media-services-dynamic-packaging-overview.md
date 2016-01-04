@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/07/2015"
+	ms.date="12/05/2015"
 	ms.author="juliako"/>
 
 
@@ -60,11 +60,11 @@ Zum Vorbereiten Ihres Medienobjekts auf dynamisches Streaming haben Sie zwei Mö
 Informationen zum Hochladen und Codieren von Medienobjekten finden Sie in den folgenden Artikeln:
 
 
-Laden Sie Ihre Dateien mithilfe des **Azure-Verwaltungsportals**, mithilfe von **.NET** oder **REST-API** hoch.
+Laden Sie Ihre Dateien mithilfe des klassischen **Azure-Portals**, mithilfe von **.NET** oder **REST-API** hoch.
 
 [AZURE.INCLUDE [media-services-selector-upload-files](../../includes/media-services-selector-upload-files.md)]
 
-Führen Sie die Codierung mit **Azure Media Encoder** mithilfe des **Azure-Verwaltungsportals**, mithilfe von **.NET**, oder **REST-API** aus.
+Führen Sie die Codierung mit **Azure Media Encoder** mithilfe des klassischen **Azure-Portals**, mithilfe von **.NET**, oder **REST-API** aus.
 
 [AZURE.INCLUDE [media-services-selector-encode](../../includes/media-services-selector-encode.md)]
 
@@ -85,7 +85,7 @@ Konfigurieren von Übermittlungsrichtlinien für Medienobjekte mithilfe von **.N
 
 [AZURE.INCLUDE [media-services-selector-asset-delivery-policy](../../includes/media-services-selector-asset-delivery-policy.md)]
 
-Veröffentlichen von Medienobjekten (durch Locator-Erstellung) mithilfe des **Azure-Verwaltungsportals** oder mithilfe von **.NET**.
+Veröffentlichen von Medienobjekten (durch Locator-Erstellung) mithilfe des klassischen **Azure-Portals** oder mithilfe von **.NET**.
 
 [AZURE.INCLUDE [media-services-selector-publish](../../includes/media-services-selector-publish.md)]
 
@@ -105,4 +105,4 @@ Die folgenden Quelldateiformate werden von der dynamischen Paketerstellung nicht
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

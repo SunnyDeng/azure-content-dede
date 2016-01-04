@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="08/05/2015"
+   ms.date="11/13/2015"
    ms.author="vturecek"/>
 
 # Reliable Actors-Entwurfsmuster: Intelligenter Cache
@@ -51,7 +51,7 @@ Als Nächstes implementieren wir diese Schnittstelle. Dann verwenden wir die zwe
 ## Codebeispiel für intelligenten Cache – Leaderboard-Actor
 
 ```
-public class Leaderboard : Actor<LeaderboardCollection>, ILeaderboard
+public class Leaderboard : StatefulActor<LeaderboardCollection>, ILeaderboard
 {
     // Specialised collection, could be part of the actor
 
@@ -168,12 +168,12 @@ public class Job : IComparable<Job>
 }
 ```
 
-Zuletzt implementieren wir die IJobQueue-Schnittstelle auf Actor-Ebene. Beachten Sie, dass wir die Implementierungsdetails der Prioritätswarteschlange hier aus Gründen der Übersichtlichkeit weggelassen haben. Eine Beispielimplementierung finden Sie in den begleitenden Beispielen.
+Zuletzt implementieren wir die IJobQueue-Schnittstelle im Actor. Beachten Sie, dass wir die Implementierungsdetails der Prioritätswarteschlange hier aus Gründen der Übersichtlichkeit weggelassen haben. Eine Beispielimplementierung finden Sie in den begleitenden Beispielen.
 
 ## Codebeispiel für intelligenten Cache – Auftragswarteschlange
 
 ```
-public class JobQueue : Actor<List<Jobs>>, IJobQueue
+public class JobQueue : StatefulActor<List<Jobs>>, IJobQueue
 {
 
     public override Task OnActivateAsync()
@@ -240,7 +240,7 @@ In den obigen Beispielen, Leaderboard und JobQueue, wurden zwei verschiedene Ver
 
 * Andererseits haben wir im JobQueue-Beispiel den Actor als Prioritätswarteschlange selbst implementiert, anstatt auf ein an anderer Stelle definiertes Element zu verweisen.
 
-Actors bieten Entwicklern die Flexibilität, umfangreiche Objektstrukturen als Teil der Actors zu definieren oder auf Objektdiagramme außerhalb der Actors zu verweisen. In Caching-Begriffen ausgedrückt, können Actors Write-behind- oder Write-through verwenden, oder wir können unterschiedliche Techniken auf Membervariablen-Granularität verwenden. Anders ausgedrückt: Wir besitzen die vollständige Kontrolle darüber, was persistent beibehalten werden soll und wann es beibehalten werden soll. Ein transienter Status oder ein Status, der anhand eines gespeicherten Status erstellt werden kann, muss nicht beibehalten werden. Und wie sieht es dann mit dem Auffüllen der Caches dieser Actors aus? Es gibt eine Reihe von Möglichkeiten, dies zu erreichen. Actors informieren Benutzer mithilfe der virtuellen Methoden OnActivateAsync() und OnDectivateAsync, wenn eine Instanz des Actors aktiviert oder deaktiviert wird. Beachten Sie, dass der Actor bei Bedarf aktiviert wird, wenn eine erste Anforderung an ihn gesendet wird. Wir können OnActivateAsync() verwenden, um den Status bei Bedarf wie beim Read-through, vielleicht aus einem externen stabilen Speicher, auszufüllen. Oder der Status kann auf einem Timer ausgefüllt werden, z. B. einem Wechselkurs-Actor, der die Konvertierungsfunktion basierend auf den aktuellen Wechselkursen bereitstellt. Dieser Actor kann seinen Status in regelmäßigen Abständen über einen externen Dienst ausfüllen, z. B. alle 5 Sekunden, und den Status für die Konvertierungsfunktion verwenden. Betrachten Sie das folgende Beispiel:
+Akteure bieten Entwicklern die Flexibilität, umfangreiche Objektstrukturen als Teil der Akteure zu definieren oder auf Objektdiagramme außerhalb der Akteure zu verweisen. In Caching-Begriffen ausgedrückt, können Actors Write-behind- oder Write-through verwenden, oder wir können unterschiedliche Techniken auf Membervariablen-Granularität verwenden. Anders ausgedrückt: Wir besitzen die vollständige Kontrolle darüber, was persistent beibehalten werden soll und wann es beibehalten werden soll. Ein transienter Status oder ein Status, der anhand eines gespeicherten Status erstellt werden kann, muss nicht beibehalten werden. Und wie sieht es dann mit dem Auffüllen der Caches dieser Actors aus? Es gibt eine Reihe von Möglichkeiten, dies zu erreichen. Akteure informieren Benutzer mithilfe der virtuellen Methoden OnActivateAsync() und OnDectivateAsync, wenn eine Instanz des Akteurs aktiviert oder deaktiviert wird. Beachten Sie, dass der Actor bei Bedarf aktiviert wird, wenn eine erste Anforderung an ihn gesendet wird. Wir können OnActivateAsync() verwenden, um den Status bei Bedarf wie beim Read-through, vielleicht aus einem externen stabilen Speicher, auszufüllen. Oder der Status kann auf einem Timer ausgefüllt werden, z. B. einem Wechselkurs-Actor, der die Konvertierungsfunktion basierend auf den aktuellen Wechselkursen bereitstellt. Dieser Actor kann seinen Status in regelmäßigen Abständen über einen externen Dienst ausfüllen, z. B. alle 5 Sekunden, und den Status für die Konvertierungsfunktion verwenden. Betrachten Sie das folgende Beispiel:
 
 ## Codebeispiel für intelligenten Cache – Ratenkonvertierung
 
@@ -301,4 +301,4 @@ Im Wesentlichen bietet der Smart Cache Folgendes:
 <!--Image references-->
 [1]: ./media/service-fabric-reliable-actors-pattern-smart-cache/smartcache-arch.png
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

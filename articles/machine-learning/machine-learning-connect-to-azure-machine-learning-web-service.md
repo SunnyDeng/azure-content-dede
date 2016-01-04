@@ -41,12 +41,12 @@ Azure Machine Learning verfügt über zwei Arten von Diensten:
 Weitere Informationen zu Azure Machine Learning-Webdiensten finden Sie unter [Bereitstellen von Azure Machine Learning-Webdiensten](machine-learning-publish-a-machine-learning-web-service.md).
 
 ## Abrufen eines Autorisierungsschlüssels für Azure Machine Learning ##
-Sie erhalten einen Webdienst-API-Schlüssel von einem ML-Webdienst. Sie können ihn über Microsoft Azure Machine Learning Studio oder über das Azure-Verwaltungsportal abrufen.
+Sie erhalten einen Webdienst-API-Schlüssel von einem ML-Webdienst. Sie können ihn über Microsoft Azure Machine Learning Studio oder das klassische Azure-Portal abrufen.
 ### Microsoft Azure Machine Learning Studio ###
 1. Klicken Sie in Microsoft Azure Machine Learning Studio links auf **WEB SERVICES**.
 2. Klicken Sie auf einen Webdienst. Der "API Key" befindet sich auf der Registerkarte **DASHBOARD**.
 
-### Azure-Verwaltungsportal ###
+### Klassisches Azure-Portal ###
 
 1. Klicken Sie links auf **MACHINE LEARNING**.
 2. Klicken Sie auf einen Arbeitsbereich.
@@ -103,4 +103,4 @@ Verwenden Sie zum Verbinden mit einem Azure ML-Webdienst die **urllib2**-Bibliot
 2. Weisen Sie "apiKey" den Schlüssel von einem Webdienst zu. Weitere Informationen finden Sie unter "Abrufen eines Autorisierungsschlüssels für Azure ML".
 3. Weisen Sie "serviceUri" die Anforderungs-URI zu. Weitere Informationen finden Sie unter "Abrufen einer Anforderungs-URI".
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

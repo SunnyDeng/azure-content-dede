@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="10/12/2015"
+   ms.date="12/02/2015"
    ms.author="alkohli" />
 
 # Herstellen einer Remoteverbindung mit dem StorSimple-Gerät
@@ -37,9 +37,9 @@ Sie können eine Remoteverbindung mit der Windows PowerShell-Benutzeroberfläche
 
 Das Herstellen einer Verbindung mit Windows PowerShell für StorSimple über eine HTTP-Sitzung bietet mehr Sicherheit als das Herstellen einer Verbindung über die serielle Konsole des StorSimple-Geräts. Obwohl dies nicht die sicherste Methode ist, ist eine solche Verbindung bei vertrauenswürdigen Netzwerken akzeptabel.
 
-Sie können mit dem Azure-Portal oder der seriellen Konsole die Remoteverwaltung konfigurieren. Wählen Sie zwischen den folgenden Vorgehensweisen:
+Sie können mit dem klassischen Azure-Portal oder der seriellen Konsole die Remoteverwaltung konfigurieren. Wählen Sie zwischen den folgenden Vorgehensweisen:
 
-- [Verwenden des Azure-Portals zum Aktivieren der Remoteverwaltung über HTTP](#use-the-azure-portal-to-enable-remote-management-over-http)
+- [Verwenden des klassischen Azure-Portals zum Aktivieren der Remoteverwaltung über HTTP](#use-the-azure-classic-portal-to-enable-remote-management-over-http)
 
 - [Verwenden der seriellen Konsole zum Aktivieren der Remoteverwaltung über HTTP](#use-the-serial-console-to-enable-remote-management-over-http)
 
@@ -47,11 +47,11 @@ Nachdem Sie die Remoteverwaltung aktiviert haben, bereiten Sie den Client mit de
 
 - [Vorbereiten des Clients für eine Remoteverbindung](#prepare-the-client-for-remote-connection)
 
-### Verwenden des Azure-Portals zum Aktivieren der Remoteverwaltung über HTTP 
+### Verwenden des klassischen Azure-Portals zum Aktivieren der Remoteverwaltung über HTTP 
 
-Führen Sie die folgenden Schritte im Azure-Portal aus, um die Remoteverwaltung über HTTP zu aktivieren.
+Führen Sie die folgenden Schritte im klassischen Azure-Portal aus, um die Remoteverwaltung über HTTP zu aktivieren.
 
-#### So aktivieren Sie die Remoteverwaltung über das Azure-Portal
+#### So aktivieren Sie die Remoteverwaltung über das klassische Azure-Portal
 
 1. Greifen Sie auf **Geräte** > **Konfigurieren** für Ihr Gerät zu.
 
@@ -122,9 +122,9 @@ Führen Sie die folgenden Schritte auf dem Client aus, um die Remoteverwaltung z
 
 Das Herstellen einer Verbindung mit Windows PowerShell für StorSimple über eine HTTPS-Sitzung ist die sicherste und die empfohlene Methode zum Herstellen einer Remoteverbindung mit Ihrem Microsoft Azure StorSimple-Gerät. In den folgenden Vorgehensweisen wird erläutert, wie die serielle Konsole und der Clientcomputer so eingerichtet werden, dass Sie HTTPS verwenden können, um eine Verbindung mit Windows PowerShell für StorSimple herzustellen.
 
-Sie können mit dem Azure-Portal oder der seriellen Konsole die Remoteverwaltung konfigurieren. Wählen Sie zwischen den folgenden Vorgehensweisen:
+Sie können mit dem klassischen Azure-Portal oder der seriellen Konsole die Remoteverwaltung konfigurieren. Wählen Sie zwischen den folgenden Vorgehensweisen:
 
-- [Verwenden des Azure-Portals zum Aktivieren der Remoteverwaltung über HTTPS](#use-the-azure-portal-to-enable-remote-management-over-https)
+- [Verwenden des klassischen Azure-Portals zum Aktivieren der Remoteverwaltung über HTTPS](#use-the-azure-classic-portal-to-enable-remote-management-over-https)
 
 - [Verwenden der seriellen Konsole zum Aktivieren der Remoteverwaltung über HTTPS](#use-the-serial-console-to-enable-remote-management-over-https)
 
@@ -134,11 +134,11 @@ Nachdem Sie die Remoteverwaltung aktiviert haben, gehen Sie wie folgt vor, um de
 
 - [Herstellen einer Verbindung mit dem Gerät über den Remotehost](#connect-to-the-device-from-the-remote-host)
 
-### Verwenden des Azure-Portals zum Aktivieren der Remoteverwaltung über HTTPS
+### Verwenden des klassischen Azure-Portals zum Aktivieren der Remoteverwaltung über HTTPS
 
-Führen Sie die folgenden Schritte im Azure-Portal aus, um die Remoteverwaltung über HTTPS zu aktivieren.
+Führen Sie die folgenden Schritte im klassischen Azure-Portal aus, um die Remoteverwaltung über HTTPS zu aktivieren.
 
-#### So aktivieren Sie die Remoterwaltung über HTTPS im Azure-Portal
+#### So aktivieren Sie die Remoteverwaltung über HTTPS im klassischen Azure-Portal
 
 1. Greifen Sie auf **Geräte** > **Konfigurieren** für Ihr Gerät zu.
 
@@ -272,4 +272,4 @@ Führen Sie die folgenden Schritte auf dem Computer aus, über den Sie die Windo
 
 - Erfahren Sie mehr über das [Verwenden Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -26,7 +26,7 @@ Wenn Sie bereits über einen virtuellen Azure-Computer verfügen und darauf eine
 
 Bevor Sie mit der Erstellung eines virtuellen Computers in Azure beginnen, müssen Sie die Größe des Computers bestimmen, der zum Verarbeiten der Daten für das Projekt erforderlich ist. Kleinere Computer verfügen über weniger Arbeitsspeicher und weniger CPU-Kerne als leistungsstärkere Computer, aber sie sind auch preisgünstiger. Eine Liste der Computertypen und Preise finden Sie auf der Seite <a href="http://azure.microsoft.com/pricing/details/virtual-machines/" target="_blank">Virtual Machines – Preise</a>.
 
-1. Melden Sie sich am <a href="https://manage.windowsazure.com" target="_blank">Azure-Portal</a> an, und klicken Sie in der linken unteren Ecke auf **Neu**. Ein Fenster wird angezeigt. Wählen Sie **COMPUTE** -> **VIRTUELLER COMPUTER** -> **AUS KATALOG** aus.
+1. Melden Sie sich beim <a href="https://manage.windowsazure.com" target="_blank">klassischen Azure-Portal</a> an, und klicken Sie in der linken unteren Ecke auf **Neu**. Ein Fenster wird angezeigt. Wählen Sie **COMPUTE** -> **VIRTUELLER COMPUTER** -> **AUS KATALOG** aus.
 
 	![Arbeitsbereich erstellen][24]
 
@@ -60,7 +60,7 @@ Die Bereitstellung des virtuellen Computers dauert 15–25 Minuten. Nachdem der
 
 Wenn Sie den virtuellen Computer mithilfe der Anweisungen in Schritt 1 erstellt haben, wurde der Endpunkt für IPython Notebook bereits hinzugefügt. Sie können diesen Schritt deshalb überspringen.
 
-Wenn der virtuelle Computer bereits vorhanden ist und Sie einen Endpunkt für IPython Notebook (die Installation erfolgt in Schritt 3) hinzufügen möchten, melden Sie sich zunächst im Azure-Verwaltungsportal an, wählen Sie den virtuellen Computer aus, und fügen Sie den Endpunkt für den IPython Notebook-Server hinzu. Die folgende Abbildung zeigt einen Screenshot des Portals nach dem Hinzufügen des Endpunkts für IPython Notebook auf einem virtuellen Windows-Computer.
+Wenn der virtuelle Computer bereits vorhanden ist und Sie einen Endpunkt für IPython Notebook (die Installation erfolgt in Schritt 3) hinzufügen möchten, melden Sie sich zunächst im klassischen Azure-Portal an, wählen Sie den virtuellen Computer aus, und fügen Sie den Endpunkt für den IPython Notebook-Server hinzu. Die folgende Abbildung zeigt einen Screenshot des Portals nach dem Hinzufügen des Endpunkts für IPython Notebook auf einem virtuellen Windows-Computer.
 
 ![Arbeitsbereich erstellen][17]
 
@@ -79,7 +79,7 @@ Geben Sie, wenn Sie dazu aufgefordert werden, ein Kennwort für IPython Notebook
 ## <a name="access"></a>Schritt 4: Zugreifen auf IPython Notebooks von einem Webbrowser aus
 Öffnen Sie für den Zugriff auf den IPython Notebook-Server einen Webbrowser, und geben Sie in das Textfeld für die URL *https://&#60;virtualDNS-Name\_virtueller Computer>:&#60;Öffentlicher Port>*ein. Hierbei sollte für *&#60;Öffentlicher Port>* die Portnummer angegeben werden, die Sie beim Hinzufügen des IPython Notebook-Endpunkts angegeben haben.
 
-Den Wert für *&#60;DNS-Name\_virtueller Computer>* finden Sie im Azure-Verwaltungsportal. Klicken Sie nach der Anmeldung im Verwaltungsportal auf **VIRTUAL MACHINES**, wählen Sie den erstellten Computer aus, und wählen Sie dann das **DASHBOARD** aus. Der DNS-Name wird wie im folgenden Screenshot angezeigt:
+Den Wert für *&#60;DNS-Name\_virtueller Computer>* finden Sie im klassischen Azure-Portal. Klicken Sie nach der Anmeldung im klassischen Portal auf **VIRTUAL MACHINES**, wählen Sie den erstellten Computer aus, und wählen Sie dann das **DASHBOARD** aus. Der DNS-Name wird wie im folgenden Screenshot angezeigt:
 
 ![Arbeitsbereich erstellen][19]
 
@@ -104,11 +104,11 @@ IPython Notebooks bieten eine einfache Möglichkeit für das Hochladen vorhanden
 
 Virtuelle Azure-Computer werden **nach Nutzung abgerechnet**. Damit Sie nicht für ungenutzte virtuelle Computer bezahlen müssen, sollten Sie diese in den Status **Angehalten (Zuordnung aufgehoben)** versetzen, wenn sie nicht mehr benötigt werden.
 
-> [AZURE.NOTE]Beim Herunterfahren virtueller Computer aus der VM heraus (mithilfe der Windows-Energieoptionen) wird der virtuelle Computer beendet, er bleibt jedoch weiterhin zugeordnet. Um sicherzustellen, dass virtuelle Computer nicht weiterhin abgerechnet werden, beenden Sie sie immer im [Azure-Verwaltungsportal](http://manage.windowsazure.com/). Sie können die VM auch über PowerShell beenden, indem Sie **ShutdownRoleOperation** mit der "PostShutdownAction" "StoppedDeallocated" aufrufen.
+> [AZURE.NOTE]Beim Herunterfahren virtueller Computer aus der VM heraus (mithilfe der Windows-Energieoptionen) wird der virtuelle Computer beendet, er bleibt jedoch weiterhin zugeordnet. Um sicherzustellen, dass virtuelle Computer nicht weiterhin abgerechnet werden, beenden Sie sie immer im [klassischen Azure-Portal](http://manage.windowsazure.com/). Sie können die VM auch über PowerShell beenden, indem Sie **ShutdownRoleOperation** mit der "PostShutdownAction" "StoppedDeallocated" aufrufen.
 
 So fahren Sie den virtuellen Computer herunter und heben die Zuordnung auf:
 
-1. Melden Sie sich auf dem [Azure-Verwaltungsportal](http://manage.windowsazure.com/) bei Ihrem Konto an.  
+1. Melden Sie sich mit Ihrem Konto beim [klassischen Azure-Portal](http://manage.windowsazure.com/) an.  
 
 2. Wählen Sie in der Navigationsleiste links **VIRTUAL MACHINES** aus.
 
@@ -118,7 +118,7 @@ So fahren Sie den virtuellen Computer herunter und heben die Zuordnung auf:
 
 ![Herunterfahren virtueller Computer][15]
 
-Der virtuelle Computer wird freigegeben, aber nicht gelöscht. Sie können den virtuellen Computer jederzeit im Azure-Verwaltungsportal neu starten.
+Der virtuelle Computer wird freigegeben, aber nicht gelöscht. Sie können den virtuellen Computer jederzeit im klassischen Azure-Portal neu starten.
 
 ## Ihre Azure-VM ist damit einsatzbereit. Wie lauten die nächsten Schritte?
 
@@ -143,4 +143,4 @@ Die nächsten Schritte in Advanced Analytics Process and Technology sind unter [
 [29]: ./media/machine-learning-data-science-setup-virtual-machine/create-virtual-machine-6.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -27,7 +27,7 @@ Der erste Schritt umfasst die Einrichtung des Dienstnamespace und das Abrufen ei
 
 1. Umfassende Informationen zum Erstellen eines Dienstnamespace finden Sie im Thema [Vorgehensweise: Erstellen oder Ändern eines Service Bus-Dienstnamespace](https://msdn.microsoft.com/library/azure/hh690931.aspx) im Abschnitt [Verwalten von Service Bus-Dienstnamespaces](https://msdn.microsoft.com/library/azure/hh690928.aspx).
 
-1. Klicken Sie im Hauptfenster des Azure-Portals auf den Namen des Namespace, den Sie im vorherigen Schritt erstellt haben.
+1. Klicken Sie im Hauptfenster des [klassischen Azure-Portals][] auf den Namen des Namespaces, den Sie im vorherigen Schritt erstellt haben.
 
 1. Klicken Sie auf die Registerkarte **Konfigurieren**.
 
@@ -629,4 +629,6 @@ Weitere Informationen finden Sie in den folgenden Artikeln:
 - [Azure Service Bus – Grundlagen](fundamentals-service-bus-hybrid-solutions.md)
 - [REST-Lernprogramm zu Service Bus Relay](service-bus-relay-rest-tutorial.md)
 
-<!---HONumber=Oct15_HO3-->
+[klassischen Azure-Portals]: http://manage.windowsazure.com
+
+<!---HONumber=AcomDC_1203_2015-->

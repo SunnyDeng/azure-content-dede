@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Erste Schritte mit der dynamischen Datenmaskierung für SQL-Datenbanken (Azure-Portal)"
-   description="Einstieg in die dynamische Datenmaskierung für SQL-Datenbanken im Azure-Portal"
+   pageTitle="Erste Schritte mit der dynamischen Datenmaskierung für SQL-Datenbanken (klassisches Azure-Portal)"
+   description="Einstieg in die dynamische Datenmaskierung für SQL-Datenbanken im klassischen Azure-Portal"
    services="sql-database"
    documentationCenter=""
    authors="ronitr"
@@ -16,10 +16,10 @@
    ms.date="10/20/2015"
    ms.author="ronitr; ronmat; v-romcal; sstein"/>
 
-# Erste Schritte mit der dynamischen Datenmaskierung für SQL-Datenbanken (Azure-Portal)
+# Erste Schritte mit der dynamischen Datenmaskierung für SQL-Datenbanken (klassisches Azure-Portal)
 
 > [AZURE.SELECTOR]
-- [Dynamic Data Masking - Azure Preview portal](sql-database-dynamic-data-masking-get-started.md)
+- [Dynamic Data Masking - Azure Portal](sql-database-dynamic-data-masking-get-started.md)
 
 ## Übersicht
 
@@ -31,10 +31,10 @@ Ein Servicemitarbeiter in einem Callcenter kann Anrufer beispielsweise anhand me
 
 ## Grundlagen der dynamischen Datenmaskierung für SQL-Datenbanken
 
-Sie richten Sie dynamische Datenmaskierungsrichtlinie im Azure-Portal auf der Registerkarte "Überwachung und Sicherheit" für Ihre Datenbank ein.
+Sie richten die dynamische Datenmaskierungsrichtlinie im klassischen Azure-Portal auf der Registerkarte „Überwachung und Sicherheit“ für Ihre Datenbank ein.
 
 
-> [AZURE.NOTE]Informationen zum Einrichten der dynamischen Datenmaskierung im Azure-Vorschauportal finden Sie unter [Erste Schritte mit der dynamischen Datenmaskierung für SQL-Datenbanken (Azure-Vorschauportal)](sql-database-dynamic-data-masking-get-started.md).
+> [AZURE.NOTE]Informationen zum Einrichten der dynamischen Datenmaskierung im Azure-Portal finden Sie unter [Erste Schritte mit der dynamischen Datenmaskierung für SQL-Datenbanken (Azure-Portal)](sql-database-dynamic-data-masking-get-started.md).
 
 
 ### Berechtigungen für die dynamische Datenmaskierung
@@ -61,9 +61,9 @@ Die dynamische Datenmaskierung kann von den Rollen "Azure-Datenbankadministrator
 
 <a name="Anchor1"></a>
 
-## Einrichten der dynamischen Datenmaskierung für Ihre Datenbank im Azure-Portal
+## Einrichten der dynamischen Datenmaskierung für Ihre Datenbank im klassischen Azure-Portal
 
-1. Starten Sie das Azure-Portal unter [https://manage.windowsazure.com](https://manage.windowsazure.com).
+1. Starten Sie das klassische Azure-Portal unter [https://manage.windowsazure.com](https://manage.windowsazure.com).
 
 2. Klicken Sie auf die zu maskierende Datenbank und dann auf die Registerkarte **ÜBERPRÜFUNG UND SICHERHEIT**.
 
@@ -96,4 +96,4 @@ Siehe [Azure SQL-Datenbank-Cmdlets](https://msdn.microsoft.com/library/azure/mt5
 
 Siehe [Vorgänge für Azure SQL-Datenbanken](https://msdn.microsoft.com/library/dn505719.aspx).
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

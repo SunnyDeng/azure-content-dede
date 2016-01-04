@@ -19,7 +19,7 @@
 
 ## Übersicht
 
-Die Azure-Befehlszeilenschnittstelle stellt eine Reihe von plattformübergreifenden Open Source-Befehlen für die Arbeit mit der Azure-Plattform bereit. Sie bietet im Wesentlichen die gleiche Funktionalität wie das Azure-Verwaltungsportal sowie umfangreiche Datenzugriffsfunktionalität.
+Die Azure-Befehlszeilenschnittstelle stellt eine Reihe von plattformübergreifenden Open Source-Befehlen für die Arbeit mit der Azure-Plattform bereit. Sie bietet im Wesentlichen die gleiche Funktionalität wie das [Azure-Portal](portal.azure.com) sowie umfangreiche Datenzugriffsfunktionen.
 
 Diese Anleitung enthält Informationen zur Verwendung der [Azure-Befehlszeilenschnittstelle (Azure-CLI)](../xplat-cli-install.md) zum Ausführen einer Vielzahl von Entwicklungs- und Verwaltungsaufgaben mit Azure Storage. Sie sollten die neueste Azure-Befehlszeilenschnittstelle herunterladen und installieren bzw. ein Upgrade durchführen, bevor Sie diese Anleitung verwenden.
 
@@ -222,4 +222,4 @@ In den folgenden Artikeln und Ressourcen finden Sie weitere Informationen zum Az
 [Image1]: ./media/storage-azure-cli/azure_command.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

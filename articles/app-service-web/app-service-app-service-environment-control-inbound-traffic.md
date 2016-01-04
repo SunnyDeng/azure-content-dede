@@ -13,13 +13,15 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/11/2015" 
+	ms.date="12/08/2015" 
 	ms.author="stefsch"/>
 
 # Steuern von eingehendem Datenverkehr in eine App Service-Umgebung
 
 ## Übersicht ##
 Eine App Service-Umgebung wird immer in einem Subnetz eines regionalen klassischen [virtuellen "v1"-Netzwerks][virtualnetwork] erstellt. Ein neues regionales klassisches virtuelles "v1"-Netzwerk und ein neues Subnetz können bei der Erstellung einer App Service-Umgebung definiert werden. Alternativ kann eine App Service-Umgebung in einem bereits vorhandenen regionalen klassischen virtuellen "v1"-Netzwerk und einem bereits vorhandenen Subnetz erstellt werden. Weitere Informationen zum Erstellen einer App Service-Umgebung finden Sie unter [Erstellen einer App Service-Umgebung][HowToCreateAnAppServiceEnvironment].
+
+**Hinweis:** Eine App Service-Umgebung kann nicht in einem mit ARM verwalteten virtuellen Netzwerk des Typs „v2“ erstellt werden.
 
 Eine App Service-Umgebung muss immer innerhalb eines Subnetzes erstellt werden, da ein Subnetz eine Netzwerkgrenze bereitstellt, die zum Sperren von eingehendem Datenverkehr hinter Upstreamgeräten und -diensten verwendet werden kann. Auf diese Weise wird HTTP- und HTTPS-Datenverkehr nur von bestimmten Upstream-IP-Adressen akzeptiert.
 
@@ -45,16 +47,27 @@ Im Folgenden sehen Sie eine Liste der Ports, die von einer App Service-Umgebung 
 - 4020: Wird zum Remotedebuggen in Visual Studio 2015 verwendet. Dieser Port kann sicher blockiert werden, wenn die Funktion nicht verwendet wird.
 
 ## Ausgehende Verbindungen und DNS-Anforderungen ##
-Damit eine App Service-Umgebung ordnungsgemäß funktioniert, ist auch ein ausgehender Zugriff auf Azure Storage weltweit sowie eine SQL-Datenbank in derselben Azure-Region erforderlich. Wenn der ausgehende Internetzugriff im virtuellen Netzwerk blockiert ist, können App Service-Umgebungen nicht auf diese Azure-Endpunkte zugreifen.
+Damit eine App Service-Umgebung ordnungsgemäß funktioniert, sind ein ausgehender, weltweiter Zugriff auf Azure Storage sowie eine SQL-Datenbank in der gleichen Azure-Region erforderlich. Wenn der ausgehende Internetzugriff im virtuellen Netzwerk blockiert ist, können App Service-Umgebungen nicht auf diese Azure-Endpunkte zugreifen.
 
-Kunden können auch über benutzerdefinierte DNS-Server verfügen, die im virtuellen Netzwerk konfiguriert sind. App Service-Umgebungen müssen Azure-Endpunkte unter *.database.windows.net, *.file.core.windows.net und *.blob.core.windows.net auflösen können.
+App Service-Umgebungen erfordern zudem eine gültige DNS-Infrastruktur, die für das virtuelle Netzwerk konfiguriert ist. Falls die DNS-Konfiguration nach der Erstellung einer App Service-Umgebung geändert wird, können Entwickler erzwingen, dass eine App Service-Umgebung die neue DNS-Konfiguration übernimmt. Wird im [neuen Verwaltungsportal][NewPortal] über das Symbol „Neu starten“ oben auf dem Verwaltungsblatt der App Service-Umgebung ein paralleler Neustart der Umgebung ausgelöst, übernimmt diese die neue DNS-Konfiguration.
+
+Die folgende Liste enthält die Konnektivität und die DNS-Anforderungen für eine App Service-Umgebung:
+
+-  Ausgehende Netzwerkverbindungen mit Azure-Speicherendpunkten in der ganzen Welt. Dies beinhaltet sowohl Endpunkte, die sich in der gleichen Region wie die App Service-Umgebung befinden, als auch Speicherendpunkte in **anderen** Azure-Regionen. Azure Storage-Endpunkte werden unter den folgenden DNS-Domänen aufgelöst: *table.core.windows.net*, *blob.core.windows.net*, *queue.core.windows.net* und *file.core.windows.net*.  
+-  Ausgehende Netzwerkverbindungen mit SQL-Datenbankendpunkten, die sich in der gleichen Region wie die App Service-Umgebung befinden. SQL-Datenbankendpunkte werden unter der folgenden Domäne aufgelöst: *database.windows.net*.
+-  Ausgehende Netzwerkverbindungen mit den Endpunkten auf der Azure-Verwaltungsebene (ASM- und ARM-Endpunkte). Dies beinhaltet ausgehende Verbindungen mit *management.core.windows.net* und *management.azure.com*. 
+-  Ausgehende Netzwerkkonnektivität mit *ocsp.msocsp.com*. Dies ist zur Unterstützung von SSL-Funktionen erforderlich.
+-  Die DNS-Konfiguration für das virtuelle Netzwerk muss alle der zuvor genannten Endpunkte und Domänen auflösen können. Können diese Endpunkte nicht aufgelöst werden, schlägt die Erstellung von App Service-Umgebungen fehl, und vorhandene App Service-Umgebungen werden als fehlerhaft gekennzeichnet.
+-  Falls ein benutzerdefinierter DNS-Server am anderen Ende eines VPN-Gateways vorhanden ist, muss der DNS-Server über das Subnetz mit der App Service-Umgebung erreichbar sein. 
+-  Der ausgehende Netzwerkpfad kann weder durch interne Unternehmensproxys laufen noch zwangsweise zur lokalen Infrastruktur getunnelt werden. Andernfalls wird die tatsächliche NAT-Adresse des ausgehenden Netzwerkdatenverkehrs der App Service-Umgebung geändert. Das Ändern der NAT-Adresse des ausgehenden Netzwerkdatenverkehrs einer App Service-Umgebung verursacht bei vielen der oben genannten Endpunkte Verbindungsfehler. Dies führt zu Fehlern bei der Erstellung von App Service-Umgebungen und dazu, dass zuvor fehlerfreie App Service-Umgebungen als fehlerhaft gekennzeichnet werden.  
+-  Eingehender Netzwerkzugriff auf die erforderlichen Ports für App Service-Umgebungen muss entsprechend diesem [Artikel](app-service-app-service-environment-control-inbound-traffic.md) zugelassen werden.
 
 Es empfiehlt sich auch, benutzerdefinierte DNS-Server im VNET vor dem Erstellen einer App-Service-Umgebung einzurichten. Wenn die DNS-Konfiguration eines virtuellen Netzwerks geändert wird, während eine App Service-Umgebung erstellt wird, misslingt das Erstellen der App Service-Umgebung. Wenn ein benutzerdefinierter DNS-Server am anderen Ende eines VPN-Gateways vorhanden ist und der DNS-Server nicht erreichbar oder nicht verfügbar ist, kommt es ebenso zu einem Fehler beim Erstellen der App-Service-Umgebung.
 
 ## Erstellen einer Netzwerksicherheitsgruppe ##
 Einzelheiten zur Funktionsweise von Netzwerksicherheitsgruppen finden Sie in den folgenden [Informationen][NetworkSecurityGroups]. Die unten aufgeführten Details gehen kurz auf die wichtigsten Aspekte von Netzwerksicherheitsgruppen ein. Dabei liegt der Schwerpunkt auf dem Konfigurieren und Anwenden einer Netzwerksicherheitsgruppe auf ein Subnetz, das eine App Service-Umgebung enthält.
 
-**Hinweis:** Netzwerksicherheitsgruppen können nur mit den unten beschriebenen PowerShell-Cmdlets konfiguriert werden. Netzwerksicherheitsgruppen können nicht grafisch über das neue Portal (portal.azure.com) konfiguriert werden, da das neue Portal nur die grafische Konfiguration von NSGs zulässt, die virtuellen "v2"-Netzwerken zugeordnet sind. App Service-Umgebungen werden jedoch derzeit nur in klassischen virtuellen "v1"-Netzwerken unterstützt. Daher können nur PowerShell-Cmdlets verwendet werden, um Netzwerksicherheitsgruppen zu konfigurieren, die virtuellen "v1"-Netzwerken zugeordnet sind.
+**Hinweis:** Netzwerksicherheitsgruppen können nur mit den unten beschriebenen PowerShell-Cmdlets konfiguriert werden. Netzwerksicherheitsgruppen (NSGs) können nicht grafisch über das [Azure-Portal](portal.azure.com) konfiguriert werden, weil das Azure-Portal nur die grafische Konfiguration von NSGs zulässt, die virtuellen „v2“-Netzwerken zugeordnet sind. App Service-Umgebungen werden jedoch derzeit nur in klassischen virtuellen "v1"-Netzwerken unterstützt. Daher können nur PowerShell-Cmdlets verwendet werden, um Netzwerksicherheitsgruppen zu konfigurieren, die virtuellen "v1"-Netzwerken zugeordnet sind.
 
 Netzwerksicherheitsgruppen werden zuerst als eigenständige Entität erstellt, die einem Abonnement zugeordnet ist. Da Netzwerksicherheitsgruppen in einer Azure-Region erstellt werden, stellen Sie sicher, dass die Netzwerksicherheitsgruppe in derselben Region wie die App Service-Umgebung erstellt wird.
 
@@ -131,7 +144,8 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 [AzureAppService]: http://azure.microsoft.com/documentation/articles/app-service-value-prop-what-is/
 [IntroToAppServiceEnvironment]: http://azure.microsoft.com/documentation/articles/app-service-app-service-environment-intro/
 [SecurelyConnecttoBackend]: http://azure.microsoft.com/documentation/articles/app-service-app-service-environment-securely-connecting-to-backend-resources/
+[NewPortal]: https://portal.azure.com
 
 <!-- IMAGES -->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

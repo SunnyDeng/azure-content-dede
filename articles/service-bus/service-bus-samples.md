@@ -29,7 +29,7 @@ Beachten Sie, dass die Beispiele für Brokermessaging eine Verbindungszeichenfol
 
 ### So rufen Sie eine Verbindungszeichenfolge für Azure Service Bus ab
 
-1. Melden Sie sich beim [Azure-Portal](http://manage.windowsazure.com) an.
+1. Melden Sie sich beim [klassischen Azure-Portal](http://manage.windowsazure.com) an.
 
 1. Klicken Sie in der linken Spalte auf **Service Bus**.
 
@@ -132,4 +132,4 @@ Weitere Übersichten über Service Bus finden Sie in den folgenden Themen.
 - [Service Bus-Architektur](service-bus-architecture.md)
 - [Service Bus – Grundlagen](service-bus-fundamentals-hybrid-solutions.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

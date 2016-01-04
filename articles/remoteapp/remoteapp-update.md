@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="compute"
-   ms.date="09/03/2015"
+   ms.date="12/05/2015"
    ms.author="elizapo"/>
 
 # Aktualisieren einer Sammlung in Azure RemoteApp
@@ -29,11 +29,9 @@ In diesem Artikel erfahren Sie, wie Sie Ihre Sammlung aktualisieren. Es ist ganz
 3. Klicken Sie auf der Sammlungsseite auf **Aktualisieren**.
 4. Wählen Sie in der Liste **Vorlagenimage** das neue Image aus.
 4. Nun wird es etwas kniffliger: Sie müssen entscheiden, wie mit den Benutzern verfahren werden soll, die zurzeit eine App aus der Sammlung verwenden. Folgende Optionen stehen zur Auswahl:
-	- **Benutzern nach dem Update 60 Minuten geben**. Nach Abschluss der Aktualisierung werden alle aktiven Benutzer in einer Meldung aufgefordert, ihre Dateien zu speichern und sich ab- und wieder anzumelden. Nach 60 Minuten werden alle aktiven Benutzer, die sich nicht abgemeldet haben, automatisch abgemeldet. Die Benutzer können sich sofort wieder anmelden. 
+	- **Benutzern nach dem Update 60 Minuten geben**. Nach Abschluss der Aktualisierung werden alle aktiven Benutzer in einer Meldung aufgefordert, ihre Dateien zu speichern und sich ab- und wieder anzumelden. Nach 60 Minuten werden alle aktiven Benutzer, die sich nicht abgemeldet haben, automatisch abgemeldet. Die Benutzer können sich sofort wieder anmelden.
 	- **Benutzer sofort abmelden**. Bei dieser Option werden alle Benutzer ohne Vorwarnung automatisch abgemeldet, sobald die Aktualisierung abgeschlossen ist. Wenn Sie diese Option auswählen, gehen den Benutzern unter Umständen Daten verloren. Sie können sich aber umgehend wieder bei der App anmelden.
 
 1. Klicken Sie auf das Häkchen, um die Aktualisierung zu starten.
 
- 
-
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

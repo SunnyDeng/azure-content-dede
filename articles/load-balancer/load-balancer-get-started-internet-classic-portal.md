@@ -1,6 +1,7 @@
+
 <properties 
-   pageTitle="Erste Schritte zum Erstellen eines Lastenausgleichs für Internetzugriff in einem klassischen Bereitstellungsmodell im Azure-Portal | Microsoft Azure"
-   description="Erfahren Sie, wie Sie im Azure-Portal einen Load Balancer für den Internetzugriff in einem klassischen Bereitstellungsmodell erstellen"
+   pageTitle="Erste Schritte zum Erstellen eines Load Balancers mit Internetzugriff in einem klassischen Bereitstellungsmodell im klassischen Azure-Portal | Microsoft Azure"
+   description="Erfahren Sie, wie Sie im klassischen Azure-Portal einen Load Balancer mit Internetzugriff in einem klassischen Bereitstellungsmodell erstellen"
    services="load-balancer"
    documentationCenter="na"
    authors="joaoma"
@@ -14,16 +15,16 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/05/2015"
+   ms.date="12/07/2015"
    ms.author="joaoma" />
 
-# Erste Schritte zum Erstellen eines Load Balancers für Internetzugriff (klassisch) im Azure-Portal
+# Erste Schritte zum Erstellen eines Load Balancers mit Internetzugriff (klassisch) im klassischen Azure-Portal
 
 [AZURE.INCLUDE [Load-Balancer-Get-Started-Internet-Classic-Selectors-include.MD](../../includes/load-balancer-get-started-internet-classic-selectors-include.md)]
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-intro-include.md](../../includes/load-balancer-get-started-internet-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)]In diesem Artikel wird das klassische Bereitstellungsmodell erörtert. Informationen zum Bereitstellungsmodell des Azure-Ressourcen-Managers finden Sie unter [Erste Schritte zum Erstellen eines Load Balancers für Internetzugriff mit dem Ressourcen-Manager](load-balancer-get-started-internet-arm-ps.md).
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)]Dieser Artikel gilt für das klassische Bereitstellungsmodell. Sie können auch [erfahren, wie Sie mit dem Azure-Ressourcen-Manager einen Load Balancer mit Internetzugriff erstellen](load-balancer-get-started-internet-arm-ps.md).
 
 [AZURE.INCLUDE [load-balancer-get-started-internet-scenario-include.md](../../includes/load-balancer-get-started-internet-scenario-include.md)]
 
@@ -34,7 +35,7 @@ Um Lastenausgleich für Netzwerkverkehr aus dem Internet auf virtuellen Computer
 
 **So konfigurieren Sie eine Gruppe mit Lastenausgleich für virtuelle Computer**
 
-1. Klicken Sie im Azure-Portal auf **Virtuelle Computer** und anschließend auf den Namen eines virtuellen Computers in der Gruppe mit Lastenausgleich.
+1. Klicken Sie im klassischen Azure-Portal auf **Virtuelle Computer** und anschließend auf den Namen eines virtuellen Computers in der Gruppe mit Lastenausgleich.
 2.	Klicken Sie auf **Endpunkte** und anschließend auf **Hinzufügen**.
 
 4.	Klicken Sie auf der Seite **Endpunkt zu einem virtuellen Computer hinzufügen** auf den rechten Pfeil.
@@ -66,4 +67,4 @@ Um Lastenausgleich für Netzwerkverkehr aus dem Internet auf virtuellen Computer
 
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

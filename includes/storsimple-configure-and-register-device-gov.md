@@ -1,4 +1,4 @@
-<!--author=SharS last changed: 9/17/15-->
+<!--author=SharS last changed: 12/01/15-->
 
 ### So konfigurieren und registrieren Sie das Gerät
 
@@ -90,7 +90,7 @@
 
      Der Firmwarestatus sollte **UpToDate** lauten.
 
-10. Führen Sie das folgende Cmdlet aus, um das Gerät auf das Microsoft Azure-Portal für Behörden zu verweisen. (Es zeigt standardmäßig auf das öffentliche Azure-Verwaltungsportal.) Beide Controller werden dadurch neu gestartet. Es wird empfohlen, dass Sie zwei PuTTY-Sitzungen verwenden, um gleichzeitig eine Verbindung mit beiden Controllern herzustellen, sodass Sie sehen können, wenn jeder Controller neu gestartet wird.
+10. Führen Sie das folgende Cmdlet aus, um das Gerät auf das Microsoft Azure-Portal für Behörden zu verweisen. (Es wird standardmäßig auf das öffentliche klassische Azure-Portal verwiesen.) Beide Controller werden dadurch neu gestartet. Es wird empfohlen, dass Sie zwei PuTTY-Sitzungen verwenden, um gleichzeitig eine Verbindung mit beiden Controllern herzustellen, sodass Sie sehen können, wenn jeder Controller neu gestartet wird.
 
      `Set-CloudPlatform -AzureGovt_US`
 
@@ -124,7 +124,7 @@
 
 16. Schließen Sie die serielle Konsole.
 
-17. Kehren Sie zum Behörden-Portal zurück, und führen Sie die folgenden Schritte aus:
+17. Kehren Sie zum Azure-Portal für Behörden zurück, und führen Sie die folgenden Schritte aus:
   1. Doppelklicken auf Ihren StorSimple-Manager-Dienst, um auf die Seite **Schnellstart** zuzugreifen.
   2. Klicken Sie auf **View connected devices**.
   3. Vergewissern Sie sich auf der Seite **Geräte**, dass das Gerät erfolgreich mit dem Dienst verbunden wurde, indem Sie seinen Status überprüfen. Als Gerätestatus sollte **Online** angezeigt werden.
@@ -137,4 +137,4 @@
      
         
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

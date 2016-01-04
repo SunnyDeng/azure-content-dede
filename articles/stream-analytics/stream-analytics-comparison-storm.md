@@ -1,7 +1,7 @@
 <properties
-	pageTitle="Vergleich: Apache Storm vs. Azure Stream Analytics | Microsoft Azure"
-	description="Erfahren Sie, wie Sie Stream Analytics für Twitter-Stimmungsanalysen in Echtzeit verwenden. Schrittweise Anleitung von der Ereignisgenerierung bis hin zu Daten im Live-Dashboard."
-	keywords="Echtzeit-Twitter,Stimmungsanalyse,Analyse von sozialen Medien,Analyse-Tools für soziale Medien"
+	pageTitle="Analyseplattformen: Vergleich von Apache Storm mit Stream Analytics | Microsoft Azure"
+	description="Hier finden Sie anhand eines Vergleichs von Apache Storm mit Stream Analytics Hilfe beim Auswählen einer Cloudanalyseplattform. Lernen Sie die Funktionen und Unterschiede kennen."
+	keywords="Analyseplattform, Analyseplattformen, Cloudanalyseplattform, Storm-Vergleich"
 	services="stream-analytics"
 	documentationCenter=""
 	authors="jeffstokes72"
@@ -17,15 +17,13 @@
 	ms.date="11/06/2015"
 	ms.author="jeffstok"/>
 
-# Vergleich von Apache Storm und Azure Stream Analytics #
+# Hilfe beim Auswählen einer Stream Analytics-Plattform: Vergleich von Apache Storm mit Azure Stream Analytics
 
-## Einführung ##
+Hier finden Sie anhand eines Vergleichs von Apache Storm mit Azure Stream Analytics Hilfe beim Auswählen einer Cloudanalyseplattform. Finden Sie heraus, welche Wertbeiträge Stream Analytics im Vergleich mit Apache Storm als verwalteter Dienst in Azure HDInsight bietet, damit Sie die richtige Lösung für die Anwendungsfälle in Ihrem Unternehmen auswählen können.
 
-Dieses Dokument veranschaulicht die Positionierung von Azure Stream Analytics und Apache Storm als verwalteter Dienst auf HDInsight. Ziel ist es, Kunden dabei zu helfen, das Nutzenversprechen beider Dienste zu verstehen, und eine Entscheidung zu treffen, welche die richtige Wahl für ihren Business-Anwendungsfall ist.
+Beide Analyseplattformen bieten Vorteile einer PaaS-Lösung, es gibt aber einige charakteristische Hauptfunktionen, durch die sie sich unterscheiden. Funktionen sowie die Einschränkungen dieser Dienste sind im Folgenden aufgeführt, um Ihnen dabei zu helfen, die Lösung zu finden, die Sie benötigen, um Ihre Ziele zu erreichen.
 
-Während beide Vorteile die Vorteile einer PaaS-Lösung bieten, gibt es einige charakteristische Hauptfunktionen, die diese Dienste unterscheiden. Wir sind der Meinung, dass eine Auflistung der Funktionen dieser Dienste sowie deren Einschränkungen Kunden dabei hilft, auf die Lösung zu setzen, die Sie zum Erreichen ihrer Ziele benötigen.
-
-## Allgemein ##
+## Vergleich von Storm mit Stream Analytics: allgemeine Funktionen ##
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
@@ -138,7 +136,7 @@ Während beide Vorteile die Vorteile einer PaaS-Lösung bieten, gibt es einige c
         </tr>
     </tbody>
 </table>
-## Erstellen ##
+## Erstellung auf den Analyseplattformen ##
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
@@ -262,7 +260,7 @@ Während beide Vorteile die Vorteile einer PaaS-Lösung bieten, gibt es einige c
         </tr>
     </tbody>
 </table>
-## Eingabe und Ausgabe ##
+## Datenquellen und Ausgaben ##
 <table border="1" cellspacing="0" cellpadding="0">
     <tbody>
         <tr>
@@ -328,7 +326,7 @@ Während beide Vorteile die Vorteile einer PaaS-Lösung bieten, gibt es einige c
             </td>
             <td width="246" valign="top">
                 <p>
-                    Unterstützung für viele Ausgaben in einer Topologie, jede Ausgabe kann eine benutzerdefinierte Logik für die Downstreamverarbeitung haben. Standardmäßig enthält Storm Connectors für PowerBI, Azure Event Hubs, Azure-Blob-Speicher, Azure-DocumentDB, SQL und HBase. Nicht unterstützte Connectors können über benutzerdefinierten Code implementiert werden.
+                    Unterstützung für viele Ausgaben in einer Topologie, jede Ausgabe kann eine benutzerdefinierte Logik für die Downstreamverarbeitung haben. Standardmäßig enthält Storm Connectors für PowerBI, Ereignis-Hubs von Azure, Azure-Blob-Speicher, Azure-DocumentDB, SQL und HBase. Nicht unterstützte Connectors können über benutzerdefinierten Code implementiert werden.
                 </p>
             </td>
         </tr>
@@ -405,7 +403,7 @@ Während beide Vorteile die Vorteile einer PaaS-Lösung bieten, gibt es einige c
             </td>
             <td width="204" valign="top">
                 <p>
-                    Überwachung wird über das Azure-Portal und REST-APIs implementiert.
+                    Überwachung wird über Azure Portal und REST-APIs implementiert.
                 </p>
                 <p>
                     Der Benutzer kann auch Azure-Warnungen konfigurieren.
@@ -563,7 +561,7 @@ Während beide Vorteile die Vorteile einer PaaS-Lösung bieten, gibt es einige c
             </td>
             <td width="246" valign="top">
                 <p>
-                    Keine Beschränkungen für die Datengröße. Connectors sind für HBase, DocumentDB, SQL Server und Azure verfügbar. Nicht unterstützte Connectors können über benutzerdefinierten Code implementiert werden. 
+                    Keine Beschränkungen für die Datengröße. Connectors sind für HBase, DocumentDB, SQL Server und Azure verfügbar. Nicht unterstützte Connectors können über benutzerdefinierten Code implementiert werden.
                 </p>
                 <p>
                     Das Aktualisieren von Verweisdaten muss von benutzerdefiniertem Code behandelt werden.
@@ -590,4 +588,4 @@ Während beide Vorteile die Vorteile einer PaaS-Lösung bieten, gibt es einige c
     </tbody>
 </table>
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

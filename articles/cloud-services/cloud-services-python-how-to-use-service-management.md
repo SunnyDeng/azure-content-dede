@@ -18,13 +18,13 @@
 
 # Verwenden der Dienstverwaltung aus Python
 
-In diesem Leitfaden wird die programmgesteuerte Durchführung gängiger Dienstverwaltungsaufgaben aus Python erläutert. Die **ServiceManagementService**-Klasse im [Azure-SDK für Python](../python-how-to-install.md) unterstützt den programmgesteuerten Zugriff auf viele der Dienstverwaltungsfunktionen, die im [Verwaltungsportal][management-portal] zur Verfügung stehen (z. B. **Erstellen, Aktualisieren und Löschen von Clouddiensten, Bereitstellungen, Datenverwaltungsdiensten und virtuellen Computern**). Diese Funktionalität kann bei der Erstellung von Anwendungen hilfreich sein, die programmgesteuert auf Dienstverwaltungsfunktionen zugreifen müssen.
+In diesem Leitfaden wird die programmgesteuerte Durchführung gängiger Dienstverwaltungsaufgaben aus Python erläutert. Die **ServiceManagementService**-Klasse im [Azure-SDK für Python](../python-how-to-install.md) unterstützt den programmgesteuerten Zugriff auf viele der Dienstverwaltungsfunktionen, die im [klassischen Azure-Portal][management-portal] zur Verfügung stehen (z. B. **Erstellen, Aktualisieren und Löschen von Clouddiensten, Bereitstellungen, Datenverwaltungsdiensten und virtuellen Computern**). Diese Funktionalität kann bei der Erstellung von Anwendungen hilfreich sein, die programmgesteuert auf Dienstverwaltungsfunktionen zugreifen müssen.
 
 > [AZURE.NOTE]Die Dienstverwaltungs-API wird durch die neue Ressourcenverwaltungs-API ersetzt, die derzeit als Vorschauversion verfügbar ist. Weitere Informationen zur Verwendung der neuen Ressourcenverwaltungs-API von Python finden Sie in der [Dokumentation zur Azure-Ressourcenverwaltung](http://azure-sdk-for-python.readthedocs.org/).
 
 
 ## <a name="WhatIs"> </a>Was ist Dienstverwaltung?
-Die Dienstverwaltungs-API bietet programmgesteuerten Zugriff auf viele der im [Verwaltungsportal][management-portal] verfügbaren Dienstverwaltungsfunktionen. Mithilfe des Azure-SDK für Python können Sie Ihre Clouddienste und Speicherkonten verwalten.
+Die Dienstverwaltungs-API bietet programmgesteuerten Zugriff auf viele der im [klassischen Azure-Portal][management-portal] verfügbaren Dienstverwaltungsfunktionen. Mithilfe des Azure-SDK für Python können Sie Ihre Clouddienste und Speicherkonten verwalten.
 
 Um die Dienstverwaltungs-API verwenden zu können, müssen Sie [ein Azure-Konto erstellen](http://azure.microsoft.com/pricing/free-trial/).
 
@@ -32,7 +32,7 @@ Um die Dienstverwaltungs-API verwenden zu können, müssen Sie [ein Azure-Konto 
 Das Azure-SDK für Python umfasst die [Azure-Dienstverwaltungs-API][svc-mgmt-rest-api], eine REST-API. Alle API-Vorgänge werden über SSL ausgeführt und mithilfe von X.509s v3-Zertifikaten gegenseitig authentifiziert. Der Zugriff auf die Dienstverwaltung kann über einen in Azure ausgeführten Dienst erfolgen oder direkt über das Internet, und zwar von jeder Anwendung aus, die HTTPS-Anforderungen senden und HTTPS-Antworten empfangen kann.
 
 ## <a name="Connect"> </a>Herstellen einer Verbindung mit der Dienstverwaltung
-Um eine Verbindung zum Dienstverwaltungs-Endpunkt herzustellen, benötigen Sie Ihre Azure-Abonnement-ID und ein gültiges Verwaltungszertifikat. Ihre Abonnement-ID können Sie über das [Verwaltungsportal][management-portal] abrufen.
+Um eine Verbindung zum Dienstverwaltungs-Endpunkt herzustellen, benötigen Sie Ihre Azure-Abonnement-ID und ein gültiges Verwaltungszertifikat. Ihre Abonnement-ID können Sie über das [klassische Azure-Portal][management-portal] abrufen.
 
 > [AZURE.NOTE]Seit dem Azure-SDK für Python Version 0.8.0 ist es jetzt möglich, bei Ausführung von Windows Zertifikate zu verwenden, die mit OpenSSL erstellt wurden. Dafür ist Python 2.7.4 oder höher erforderlich. Es wird empfohlen, dass Benutzer OpenSSL anstelle von PFX verwenden, da die Unterstützung für die PFX-Zertifikate wahrscheinlich in der Zukunft entfernt werden wird.
 
@@ -47,7 +47,7 @@ Führen Sie zum Erstellen des `.cer`-Zertifikats Folgendes aus:
 
 Weitere Informationen zu Azure-Zertifikaten finden Sie unter [Übersicht über Zertifikate für Azure Cloud Services](./cloud-services-certs-create.md). Eine vollständige Beschreibung von OpenSSL-Parametern finden Sie in der Dokumentation auf [http://www.openssl.org/docs/apps/openssl.html](http://www.openssl.org/docs/apps/openssl.html).
 
-Nachdem Sie diese Dateien erstellt haben, müssen Sie die `.cer`-Datei mit der Aktion "Upload" auf der Registerkarte "Einstellungen" des [Verwaltungsportals][management-portal] zu Azure hochladen und sich den Speicherort der `.pem`-Datei notieren.
+Nachdem Sie diese Dateien erstellt haben, müssen Sie die `.cer`-Datei mit der Aktion "Upload" auf der Registerkarte „Einstellungen“ des [klassischen Azure-Portals][management-portal] zu Azure hochladen und sich den Speicherort der `.pem`-Datei notieren.
 
 Nachdem Sie Ihre Abonnement-ID abgerufen, ein Zertifikat erstellt und die `.cer`-Datei zu Azure hochgeladen haben, können Sie eine Verbindung zum Azure-Verwaltungsendpunkt herstellen, indem Sie die Abonnement-ID und den Pfad zur `.pem`-Datei an **ServiceManagementService** übergeben:
 
@@ -69,7 +69,7 @@ Mithilfe von `makecert.exe` können Sie auf Ihrem Computer ein selbstsigniertes 
 
 Mit dem Befehl wird die `.cer`-Datei erstellt und im **persönlichen** Zertifikatspeicher installiert. Weitere Informationen finden Sie unter [Übersicht über Zertifikate für Azure Cloud Services](./cloud-services-certs-create.md).
 
-Nachdem Sie das Zertifikat erstellt haben, müssen Sie die `.cer`-Datei mit der Aktion "Upload" auf der Registerkarte "Einstellungen" des [Verwaltungsportals][management-portal] zu Azure hochladen.
+Nachdem Sie das Zertifikat erstellt haben, müssen Sie die `.cer`-Datei mit der Aktion „Upload“ auf der Registerkarte „Einstellungen“ des [klassischen Azure-Portals][management-portal] zu Azure hochladen.
 
 Nachdem Sie Ihre Abonnement-ID abgerufen, ein Zertifikat erstellt und die `.cer`-Datei zu Azure hochgeladen haben, können Sie eine Verbindung mit dem Azure-Verwaltungsendpunkt herstellen, indem Sie die Abonnement-ID und den Speicherort des Zertifikats in Ihrem **persönlichen** Zertifikatspeicher an **ServiceManagementService** übergeben (ersetzen Sie auch hier *AzureCertificate* durch den Namen Ihres Zertifikats):
 
@@ -435,4 +435,4 @@ Weitere Informationen finden Sie im [Python Developer Center](/develop/python/).
 
 [Clouddienst]: https://azure.microsoft.com/de-DE/documentation/services/cloud-services/
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

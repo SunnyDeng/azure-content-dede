@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="09/15/2015"
+   ms.date="12/02/2015"
    ms.author="alkohli" />
 
 # Konfigurieren des Webproxys für Ihr StorSimple-Gerät
@@ -33,7 +33,7 @@ In diesem Tutorial erfahren Sie Folgendes:
 
 - Konfigurieren des Webproxys mithilfe von Setup-Assistent und Cmdlets
 - Aktivieren des Webproxys mithilfe von Cmdlets
-- Anzeigen der Webproxyeinstellungen im Verwaltungsportal
+- Anzeigen der Webproxyeinstellungen im klassischen Azure-Portal
 - Behandeln von Fehlern bei der Webproxykonfiguration
 
 
@@ -75,7 +75,7 @@ Der Setup-Assistent führt Sie durch die einzelnen Schritte für die Webproxykon
 
 Wenn Sie Ihr Gerät zum ersten Mal registrieren, fahren Sie mit der Registrierung fort. Wenn das Gerät bereits registriert wurde, wird der Assistent beendet. Die konfigurierten Einstellungen werden gespeichert.
 
-Der Webproxy wird außerdem aktiviert. Sie können den Schritt [Aktivieren des Webproxys](#enable-web-proxy) überspringen und direkt mit dem Schritt [Anzeigen der Webproxyeinstellungen im Verwaltungsportal](#view-web-proxy-settings-in-the-management-portal) fortfahren.
+Der Webproxy wird außerdem aktiviert. Sie können den Schritt [Aktivieren des Webproxys](#enable-web-proxy) überspringen und direkt mit dem Schritt [Anzeigen der Webproxyeinstellungen im klassischen Azure-Portal](#view-web-proxy-settings-in-the-azure-classic-portal) fortfahren.
 
 
 ## Konfigurieren des Webproxys über Cmdlets von Windows PowerShell für StorSimple
@@ -116,9 +116,9 @@ Führen Sie in Windows PowerShell für StorSimple die folgenden Schritte aus, um
 
 	![Konfigurieren des Webproxys auf StorSimple-Gerät 4](./media/storsimple-configure-web-proxy/IC751832.png)
 
-## Anzeigen der Webproxyeinstellungen im Verwaltungsportal
+## Anzeigen der Webproxyeinstellungen im klassischen Azure-Portal
 
-Die Webproxyeinstellungen werden über die Windows PowerShell-Schnittstelle konfiguriert und können nicht im Verwaltungsportal geändert werden. Sie können die konfigurierten Einstellungen allerdings im Verwaltungsportal anzeigen. Führen Sie die folgenden Schritte aus, um den Webproxy anzuzeigen:
+Die Webproxyeinstellungen werden über die Windows PowerShell-Schnittstelle konfiguriert und können nicht im klassischen Portal geändert werden. Sie können die konfigurierten Einstellungen allerdings im klassischen Portal anzeigen. Führen Sie die folgenden Schritte aus, um den Webproxy anzuzeigen:
 
 #### So zeigen Sie die Webproxyeinstellungen an
 1. Navigieren Sie zu **StorSimple Manager-Dienst > Geräte**. Klicken Sie auf ein Gerät, und navigieren Sie anschließend zu **Konfigurieren**.
@@ -143,7 +143,7 @@ Sind die Webproxyeinstellungen nicht korrekt konfiguriert, werden in Windows Pow
 > [AZURE.NOTE]
 > 
 > -  Die obige Liste mit Fehlermeldungen ist nicht vollständig. 
-> - Im Verwaltungsportal Ihres StorSimple Manager-Diensts werden keine Fehler für Webproxyeinstellungen angezeigt. Liegt nach Abschluss der Konfiguration ein Problem mit dem Webproxy vor, wechselt der Gerätestatus im Verwaltungsportal zu **Offline**.|
+> - Im klassischen Azure-Portal Ihres StorSimple Manager-Diensts werden keine Fehler für Webproxyeinstellungen angezeigt. Liegt nach Abschluss der Konfiguration ein Problem mit dem Webproxy vor, wechselt der Gerätestatus im klassischen Portal zu **Offline**.|
 
 ## Nächste Schritte
 
@@ -151,4 +151,4 @@ Sind die Webproxyeinstellungen nicht korrekt konfiguriert, werden in Windows Pow
 
 - Informationen zum Verwenden des StorSimple Manager-Diensts finden Sie unter [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

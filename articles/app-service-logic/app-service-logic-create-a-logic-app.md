@@ -21,7 +21,7 @@
 | Kurzübersicht |
 | --------------- |
 | [Logik-Apps – Definitionssprache](https://msdn.microsoft.com/library/azure/dn948512.aspx?f=255&MSPPError=-2147217396) |
-| [Logik-Apps – Connector-Dokumentation](https://azure.microsoft.com/de-DE/documentation/articles/app-service-logic-connectors-list/) |
+| [Logik-Apps – Connector-Dokumentation](https://azure.microsoft.com/documentation/articles/app-service-logic-connectors-list/) |
 | [Logik-Apps – Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=azurelogicapps) |
 
 In diesem Thema wird veranschaulicht, wie Sie in nur wenigen Minuten in [App Services-Logik-Apps](app-service-logic-what-are-logic-apps.md) einsteigen können. Wir durchlaufen einen Workflow, mit dessen Hilfe Sie eine Gruppe von Tweets, an denen Sie interessiert sind, an einen Dropbox-Ordner übermitteln können.
@@ -188,4 +188,4 @@ In weniger als 5 Minuten haben Sie eine einfache Logik-App eingerichtet, die in 
 [Use logic app features]: app-service-logic-use-logic-app-features.md
 [Verwenden von Logik-App-Features]: app-service-logic-use-logic-app-features.md
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

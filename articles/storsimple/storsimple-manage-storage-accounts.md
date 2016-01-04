@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="09/15/2015"
+   ms.date="12/01/2015"
    ms.author="v-sharos" />
 
 # Verwalten von Speicherkonten mithilfe des StorSimple Manager-Diensts
@@ -113,7 +113,7 @@ Wenn Sie ein Speicherkonto erstellen, generiert Microsoft Azure zwei 512-Bit-Spe
 
 In der Regel verwenden Anwendungen nur einen der Schlüssel, um auf Daten zuzugreifen. Sie können die Anwendungen so konfigurieren, dass sie nach einem bestimmten Zeitraum zum zweiten Schlüssel wechseln. Nachdem die Anwendungen zum sekundären Schlüssel gewechselt sind, können Sie den ersten Schlüssel zurückziehen und einen neuen Schlüssel generieren. Mit den beiden Schlüsseln haben Ihre Anwendungen die Möglichkeit, ohne Ausfallzeiten auf die Daten zuzugreifen.
 
-Die Speicherkontenschlüssel werden immer in verschlüsselter Form im Dienst gespeichert. Allerdings können diese über den StorSimple-Manager-Dienst zurückgesetzt werden. Der Dienst kann den primären und sekundären Schlüssel für alle Speicherkonten im selben Abonnement abrufen, einschließlich der im Speicherdienst erstellten Konten sowie der Standardspeicherkonten, die bei der ersten Erstellung des StorSimple-Manager-Diensts generiert wurden. Der StorSimple-Manager-Dienst ruft diese Schlüssel immer aus dem Verwaltungsportal ab und speichert sie dann in verschlüsselter Form.
+Die Speicherkontenschlüssel werden immer in verschlüsselter Form im Dienst gespeichert. Allerdings können diese über den StorSimple-Manager-Dienst zurückgesetzt werden. Der Dienst kann den primären und sekundären Schlüssel für alle Speicherkonten im selben Abonnement abrufen, einschließlich der im Speicherdienst erstellten Konten sowie der Standardspeicherkonten, die bei der ersten Erstellung des StorSimple-Manager-Diensts generiert wurden. Der StorSimple-Manager-Dienst ruft diese Schlüssel immer aus dem klassischen Azure-Portal ab und speichert sie dann in verschlüsselter Form.
 
 ## Rotationsworkflow
 
@@ -151,4 +151,4 @@ Um den StorSimple-Manager-Dienst über die Änderung zu informieren, müssen Sie
 - Weitere Informationen zur [StorSimple-Sicherheit](storsimple-security.md)
 - Weitere Informationen zum [Verwenden Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

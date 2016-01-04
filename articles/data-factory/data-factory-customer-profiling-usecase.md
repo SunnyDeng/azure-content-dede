@@ -36,7 +36,7 @@ Es gibt viele Herausforderungen, mit denen Spieleunternehmen bei dem Versuch kon
 
 Dieser einfache Anwendungsfall kann als Beispiel dafür dienen, wie Sie Azure Data Factory zum Erfassen, Vorbereiten, Transformieren, Analysieren und Veröffentlichen von Daten verwenden können.
 
-![Kompletter Workflow](./media/data-factory-customer-profiling-usecase/EndToEndWorkflow.png)In der obigen Abbildung wird dargestellt, wie die Datenpipelines in der Benutzeroberfläche des Azure-Portals angezeigt werden, nachdem sie bereitgestellt wurden.
+![Kompletter Workflow](./media/data-factory-customer-profiling-usecase/EndToEndWorkflow.png)In der obigen Abbildung wird dargestellt, wie die Datenpipelines in der Benutzeroberfläche des klassischen Azure-Portals angezeigt werden, nachdem sie bereitgestellt wurden.
 
 1.	Die **PartitionGameLogsPipeline** liest die Rohdaten der Spielereignisse aus dem Blobspeicher und erstellt Partitionen basierend auf Jahr, Monat und Tag.
 2.	Die **EnrichGameLogsPipeline** verknüpft partitionierte Spielereignisse mit geografisch codierten Verweisdaten und reichert die Daten an, indem sie die IP-Adressen entsprechenden geografischen Standorten zuordnet.
@@ -48,4 +48,4 @@ In diesem Beispielanwendungsfall wird Azure Data Factory verwendet, um die Aktiv
 
 Durch Optimieren der Benutzerprofilanalysen und deren Ausrichtung auf die Unternehmensziele kann das Spieleunternehmen schnell Verwendungsmuster sammeln und die Effektivität der Marketingkampagnen für alle Spiele analysieren.
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

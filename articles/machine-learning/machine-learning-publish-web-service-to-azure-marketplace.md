@@ -37,7 +37,7 @@ Die Veröffentlichung eines Azure Machine Learning-Webdiensts im Azure Marketpla
  Sofern noch nicht erfolgt, beachten Sie diese [exemplarische Vorgehensweise](machine-learning-walkthrough-5-publish-web-service.md).
 
 ###Schritt 2: Bereitstellen des Diensts in der Produktionsumgebung und Abrufen des API-Schlüssels und der OData-Endpunktdaten###
-1. Wählen Sie im [Azure-Verwaltungsportal](http://manage.windowsazure.com) in der linken Navigationsleiste die Option **MACHINE LEARNING** und anschließend den Arbeitsbereich aus. 
+1. Wählen Sie im klassischen [Azure-Portal](http://manage.windowsazure.com) in der linken Navigationsleiste die Option **MACHINE LEARNING** und anschließend den Arbeitsbereich aus. 
 
 2. Klicken Sie auf die Registerkarte **WEBDIENSTE**, und wählen Sie den Webdienst aus, den Sie im Marketplace veröffentlichen möchten.
 
@@ -84,7 +84,7 @@ Stellen Sie den Dienst in der Produktionsumgebung bereit.
 
 	![Azure Marketplace][image2]
 
-9.	Rufen Sie die Webdienst-URL und den API-Schlüssel vom Azure-Verwaltungsportal ab (siehe Schritt 2).
+9.	Rufen Sie die Webdienst-URL und den API-Schlüssel vom klassischen Azure-Portal aus ab (siehe Schritt 2).
 
 10.	Fügen Sie im Setupdialogfeld des Marketplace-Datendiensts die OData-Endpunktadresse in die **Dienst-URL** ein.
 
@@ -109,4 +109,4 @@ Stellen Sie den Dienst in der Produktionsumgebung bereit.
 [odata]: ./media/machine-learning-publish-web-service-to-azure-marketplace/odata.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

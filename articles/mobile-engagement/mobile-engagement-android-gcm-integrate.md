@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Integration des Azure Mobile Engagement Android SDKs" 
+<properties
+	pageTitle="Integration des Azure Mobile Engagement Android SDKs"
 	description="Neueste Updates und Verfahren für das Android SDK für Azure Mobile Engagement"
-	services="mobile-engagement" 
-	documentationCenter="mobile" 
-	authors="piyushjo" 
-	manager="dwrede" 
+	services="mobile-engagement"
+	documentationCenter="mobile"
+	authors="piyushjo"
+	manager="dwrede"
 	editor="" />
 
-<tags 
-	ms.service="mobile-engagement" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="mobile-android" 
-	ms.devlang="Java" 
-	ms.topic="article" 
-	ms.date="08/10/2015" 
+<tags
+	ms.service="mobile-engagement"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="mobile-android"
+	ms.devlang="Java"
+	ms.topic="article"
+	ms.date="08/10/2015"
 	ms.author="piyushjo" />
 
 #Integrieren von GCM mit Mobile Engagement
@@ -24,16 +24,11 @@
 
 ##Einführung
 
-Durch die Integration von GCM kann Ihre Anwendung selbst dann Pushnachrichten empfangen, wenn sie nicht ausgeführt wird.
+Durch die Integration von GCM kann Ihre Anwendung Pushnachrichten empfangen.
 
-Über GCM werden nicht tatsächlich Kampagnendaten gesendet, es handelt sich lediglich um ein Hintergrundsignal, mit dem die Anwendung angewiesen wird, die Engagement-Pushnachricht abzurufen. Wenn die Anwendung beim Empfang einer GCM-Pushnachricht nicht ausgeführt wird, wird eine Verbindung mit den Engagement-Servern zum Abrufen der Pushnachricht ausgelöst. Die Engagement-Verbindung bleibt für etwa eine Minute aktiv, falls der Benutzer die Anwendung als Reaktion auf die Pushnachricht startet.
+GCM-Nutzlasten, die mithilfe von Push an das SDK übertragen werden, enthalten immer den `azme`-Schlüssel im Datenobjekt. Wenn Sie GCM in Ihrer Anwendung also zu einem anderen Zweck verwenden, können Sie Push-Vorgänge basierend auf diesem Schlüssel filtern.
 
-Engagement verwendet ausschließlich [Send-to-Sync]-Nachrichten mit dem `engagement.tickle`-Ausblendschlüssel.
-
-> [AZURE.IMPORTANT]Über GCM können nur Geräte aktiviert werden, die über Android 2.2 oder höher verfügen, auf denen Google Play installiert ist und die über eine Google-Hintergrundverbindung verfügen. Dieser Code kann jedoch ohne Sicherheitsbedenken auch auf älteren Versionen des Android-SDK und auf Geräten integriert werden, die GCM nicht unterstützen (es werden nur "Intents" verwendet). Wenn die Anwendung nicht per GCM aktiviert werden kann, wird die Engagement-Benachrichtigung beim nächsten Anwendungsstart empfangen.
-
-
-> [AZURE.WARNING]Wenn Ihr eigener Clientcode C2DM-Registrierungs-IDs nutzt und das Engagement-SDK zur Verwendung von GCM konfiguriert ist, tritt ein Konflikt bei den Registrierungs-IDs auf. Verwenden Sie GCM nur dann in Engagement, wenn Ihr eigener Code nicht C2DM verwendet.
+> [AZURE.IMPORTANT]Über GCM können nur Geräte Pushnachrichten empfangen, die über Android 2.2 oder höher verfügen, auf denen Google Play installiert ist und die über eine Google-Hintergrundverbindung verfügen. Dieser Code kann jedoch ohne Sicherheitsbedenken auch auf Geräten integriert werden, die GCM nicht unterstützen (es werden nur „Intents“ verwendet).
 
 ##Anmelden bei GCM und Aktivieren des GCM-Diensts
 
@@ -74,7 +69,7 @@ Um die Registrierungs-ID des Geräts an den Engagement-Pushdienst zu übermittel
 			    <action android:name="com.microsoft.azure.engagement.intent.action.APPID_GOT" />
 			  </intent-filter>
 			</receiver>
-			
+
 			<receiver android:name="com.microsoft.azure.engagement.gcm.EngagementGCMReceiver" android:permission="com.google.android.c2dm.permission.SEND">
 			  <intent-filter>
 			    <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
@@ -115,12 +110,9 @@ Sie können jetzt beim Erstellen von Reach-Ankündigungen und -Umfragen die Opti
 Überprüfen Sie jetzt Ihre Integration, indem Sie den Abschnitt „Testen der Engagement-Integration unter Android“ lesen.
 
 
-[Send-to-Sync]: http://developer.android.com/google/gcm/adv.html#collapsible
 [<http://developer.android.com/guide/google/gcm/gs.html>]: http://developer.android.com/guide/google/gcm/gs.html
 [Google Developers Console]: https://cloud.google.com/console
 [GCM-Clientbibliothek]: http://developer.android.com/guide/google/gcm/gs.html#libs
 [Google Developers Console]: https://cloud.google.com/console
 
- 
-
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

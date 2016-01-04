@@ -42,7 +42,7 @@ Schlüsselaspekte der Twilio API sind Twilio-Verben und die Twilio Markup Langua
 ### <a id="Verbs"></a>Twilio-Verben
 Die API verwendet Twilio-Verben. So weist beispielsweise das Verb **&lt;Say&gt;** Twilio an, ein Nachricht in einem Anruf akustisch zu übermitteln.
 
-Nachfolgend finden Sie eine Liste mit Twilio-Verben. Andere Verben und Funktionen werden in der [Dokumentation zur Twilio Markup Language][http://www.twilio.com/docs/api/twiml] erläutert.
+Nachfolgend finden Sie eine Liste mit Twilio-Verben. Andere Verben und Funktionen werden in der [Dokumentation zur Twilio Markup Language](http://www.twilio.com/docs/api/twiml) erläutert.
 
 * **&lt;Dial&gt;**: verbindet den Anrufer mit einem anderen Telefon.
 * **&lt;Gather&gt;**: erfasst Ziffern, die über die Telefontasten eingegeben werden.

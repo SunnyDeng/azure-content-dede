@@ -1,4 +1,4 @@
-<!--author=SharS last changed: 9/17/15-->
+<!--author=SharS last changed: 11/16/15-->
 
 #### So installieren Sie Update 1.2 über Windows PowerShell für StorSimple
 
@@ -23,7 +23,7 @@
 
     6. Klicken Sie auf **Download**. Geben Sie einen lokalen Speicherort an, oder **navigieren** Sie zu einem lokalen Speicherort, in dem der Download abgelegt werden soll. Das Update wird in einem Ordner **StorSimple Update 1.2 Appliance Update bundle** (KB3063418) in den ausgewählten Speicherort heruntergeladen. Der Ordner kann auch in eine Netzwerkfreigabe kopiert werden, auf die vom Gerät aus zugegriffen werden kann.
     
-	Dieses Verfahren beschreibt, wie Softwaregeräteupdates als Hotfixes installiert werden, Firmwareupdates für Datenträger aus dem Microsoft Update-Server und LSI-Treiber und Windows-Updates aus dem Verwaltungsportal. Sie können jedoch auswählen, Firmwareupdates für Software, Treiber und Datenträger als Hotfixes zu installieren. Sie müssen dann das StorSimple 1.2 SAS Controller Update (KB3043005) und das StorSimple 1.2 Disk Firmware Update (KB3063416) herunterladen, und in denselben gemeinsamen Ordner kopieren. Um Firmwareupdates für Datenträger als Hotfixes zu installieren, führen Sie die unter [Installieren des Wartungsmodus-Hotfixes über Windows PowerShell für StorSimple](storsimple-update-device.md#install-hotfixes-via-windows-powershell-for-storsimple) beschriebenen Schritte aus.
+	Dieses Verfahren beschreibt, wie Softwaregeräteupdates als Hotfixes, Firmwareupdates für Datenträger vom Microsoft Update-Server und LSI-Treiber und Windows-Updates aus dem klassischen Azure-Portal installiert werden. Sie können jedoch auswählen, Firmwareupdates für Software, Treiber und Datenträger als Hotfixes zu installieren. Sie müssen dann das StorSimple 1.2 SAS Controller Update (KB3043005) und das StorSimple 1.2 Disk Firmware Update (KB3063416) herunterladen, und in denselben gemeinsamen Ordner kopieren. Um Firmwareupdates für Datenträger als Hotfixes zu installieren, führen Sie die unter [Installieren des Wartungsmodus-Hotfixes über Windows PowerShell für StorSimple](storsimple-update-device.md#install-hotfixes-via-windows-powershell-for-storsimple) beschriebenen Schritte aus.
     
 	> [AZURE.NOTE]Der Hotfix muss von beiden Controllern zum Erkennen von möglichen Fehlermeldungen vom Peercontroller aus zugänglich sein.
             
@@ -101,7 +101,7 @@
     
 9. Sie installieren nun die Firmwareupdates für Datenträger, die störend sind und etwa 30 bis 45 zum Abschließen benötigen. Sie können diese während eines geplanten Wartungsfensters durch Herstellen einer Verbindung mit der seriellen Konsole des Geräts installieren. Folgen Sie zum Installieren der Firmwareupdates für Datenträger den Anweisungen unter [Installieren von Wartungsmodus-Updates über Windows PowerShell für StorSimple](storsimple-update-device.md#install-maintenance-mode-updates-via-windows-powershell-for-storsimple).
 
-10. Nachdem die Firmwareupdates für Datenträger erfolgreich angewendet wurden und das Gerät den Wartungsmodus verlassen hat, kehren Sie zum Verwaltungsportal zurück. Updates im Wartungsmodus werden im Portal nicht aktualisiert, bis 24 Stunden vergangen sind. Sie müssen möglicherweise warten, bevor Sie die verbliebenenen unterbrechungsfreien Updates aus dem Verwaltungsportal anwenden.
+10. Nachdem die Firmwareupdates für Datenträger erfolgreich installiert wurden und das Gerät den Wartungsmodus verlassen hat, kehren Sie zum klassischen Azure-Portal zurück. Updates im Wartungsmodus werden im Portal nicht aktualisiert, bis 24 Stunden vergangen sind. Sie müssen möglicherweise warten, bevor Sie die verbliebenen unterbrechungsfreien Updates aus dem klassischen Azure-Portal anwenden.
 
 11. Wenn Sie bereit sind, Updates anzuwenden, navigieren Sie zur Seite **Wartung**, und klicken dann unten auf der Seite auf **Updates scannen**. Sie werden benachrichtigt, dass Updates verfügbar sind. Dazu gehören die Treiber und die Windows-Updates. Klicken Sie auf **Updates installieren**, um die Installation zu starten. Sie sind fertig, wenn alle Updates erfolgreich installiert wurden.
 
@@ -112,4 +112,4 @@
  
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -13,11 +13,11 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/08/2015" 
+	ms.date="11/16/2015" 
 	ms.author="asteen"/>
 
 # Weitere Informationen zur Kennwortverwaltung
-Wenn Sie die Kennwortverwaltung bereits bereitgestellt haben oder vor der Bereitstellung einfach nur mehr über die technischen Grundlagen erfahren möchten, liefert dieser Abschnitt eine gute Übersicht über die technischen Konzepte, die hinter dem Dienst stehen. In diesem Artikel werden die folgenden Themen abgedeckt:
+Wenn Sie die Kennwortverwaltung bereits bereitgestellt haben oder vor der Bereitstellung einfach nur mehr über die technischen Grundlagen erfahren möchten, liefert dieser Abschnitt einen guten Überblick über die technischen Konzepte, die hinter dem Dienst stehen. In diesem Artikel werden die folgenden Themen abgedeckt:
 
 * [**Übersicht über die Kennwortrückschreibung**](#password-writeback-overview)
   - [Funktionsweise der Kennwortrückschreibung](#how-password-writeback-works)
@@ -25,6 +25,7 @@ Wenn Sie die Kennwortverwaltung bereits bereitgestellt haben oder vor der Bereit
   - [Sicherheitsmodell für die Kennwortrückschreibung](#password-writeback-security-model)
 * [**Wie funktioniert das Portal für die Kennwortzurücksetzung?**](#how-does-the-password-reset-portal-work)
   - [Welche Daten werden bei der Kennwortzurücksetzung verwendet?](#what-data-is-used-by-password-reset)
+  - [Zugriff auf Daten zur Kennwortzurücksetzung für Ihre Benutzer](#how-to-access-password-reset-data-for-your-users)
 
 ## Übersicht über die Kennwortrückschreibung
 Die Kennwortrückschreibung ist eine Komponente von [Azure Active Directory Connect](active-directory-aadconnect), die von den aktuellen Abonnenten von Azure Active Directory Premium aktiviert und verwendet werden kann. Weitere Informationen finden Sie unter [Azure Active Directory-Editionen](active-directory-editions.md).
@@ -45,7 +46,7 @@ Die Kennwortrückschreibung umfasst drei Hauptkomponenten:
 
 - Einen Clouddienst für das Zurücksetzen von Kennwörtern (auch integriert in die Azure AD-Seiten für die Kennwortzurücksetzung)
 - Ein mandantenspezifisches Azure Service Bus Relay
-- Ein lokales Endgerät für die Kennwortzurücksetzung
+- Einen lokalen Endpunkt für die Kennwortzurücksetzung
 
 Diese Komponenten arbeiten folgendermaßen zusammen:
 
@@ -58,7 +59,7 @@ Wenn ein Verbundbenutzer oder ein Benutzer mit Kennworthashsynchronisierung ihr 
 3.	Der Benutzer wählt ein neues Kennwort aus und bestätigt es.
 4.	Beim Klicken auf "Senden" wird das Klartextkennwort mit einem symmetrischen Schlüssel verschlüsselt, der beim Einrichten der Kennwortrückschreibung erstellt wurde.
 5.	Nachdem das Kennwort verschlüsselt wurde, wird es in eine Nutzlast eingeschlossen, die über einen HTTPS-Kanal an das mandantenspezifische Service Bus Relay gesendet wird (dieses wurde ebenfalls beim Einrichten der Kennwortrückschreibung festgelegt). Dieses Relay wird durch ein zufällig generiertes Kennwort geschützt, das nur der lokalen Installation bekannt ist.
-6.	Sobald die Nachricht vom Service Bus empfangen wird, wird das Endgerät für die Kennwortzurücksetzung automatisch aktiviert und erkennt, dass eine Anforderung zur Kennwortzurücksetzung aussteht.
+6.	Sobald die Nachricht vom Service Bus empfangen wird, wird der Endpunkt für die Kennwortzurücksetzung automatisch aktiviert und erkennt, dass eine Anforderung zur Kennwortzurücksetzung aussteht.
 7.	Der Dienst sucht anschließend unter Verwendung des Cloudankerattributs nach dem betreffenden Benutzer. Wenn diese Suche erfolgreich war, muss das Benutzerobjekt im AD-Connectorbereich vorliegen, dem entsprechenden MV-Objekt und dem entsprechenden AAD-Connectorobjekt zugeordnet sein. Und schließlich muss – damit dieses Benutzerkonto über das Synchronisierungsmodul gefunden wird – für die Verbindung zwischen AD-Connectorobjekt und MV die Synchronisierungsregel `Microsoft.InfromADUserAccountEnabled.xxx` gelten. Dies ist erforderlich, weil der Aufruf von der Cloud eingeht, das Synchronisierungsmodul das cloudAnchor-Attribut verwendet, um das AAD-Connectorbereichsobjekt zu ermitteln, der Verbindung zum MV-Objekt und anschließend der Verbindung zurück zum AD-Objekt folgt. Da mehrere AD-Objekte (mehrere Gesamtstrukturen) für denselben Benutzer vorliegen können, wählt das Synchronisierungsmodul das richtige Objekt basierend auf der `Microsoft.InfromADUserAccountEnabled.xxx`-Verbindung aus.
 8.	Sobald das Benutzerkonto ermittelt wurde, wird versucht, das Kennwort direkt in der geeigneten AD-Gesamtstruktur zurückzusetzen.
 9.	Wenn die Kennwortzurücksetzung erfolgreich war, wird der Benutzer darüber informiert, dass das Kennwort geändert wurde, und der Vorgang ist damit abgeschlossen.
@@ -261,24 +262,121 @@ In der folgenden Tabelle wird beschrieben, wo und wie diese Daten während des V
           </tr>
         </tbody></table>
 
-<br/> <br/> <br/>
+###Zugriff auf Daten zur Kennwortzurücksetzung für Ihre Benutzer
+####Per Synchronisierung festlegbare Daten
+Die folgenden Felder können lokal synchronisiert werden:
 
-**Zusätzliche Ressourcen**
+* Mobiltelefon
+* Bürotelefon
 
+####Mit Azure AD PowerShell festlegbare Daten
+Auf die folgenden Felder können Sie mit Azure AD PowerShell und der Graph-API zugreifen:
 
-* [Was ist die Kennwortverwaltung?](active-directory-passwords.md)
-* [Funktionsweise der Kennwortverwaltung](active-directory-passwords-how-it-works.md)
-* [Erste Schritte mit der Kennwortverwaltung](active-directory-passwords-getting-started.md)
-* [Anpassen der Kennwortverwaltung](active-directory-passwords-customize.md)
-* [Best Practices für die Kennwortverwaltung](active-directory-passwords-best-practices.md)
-* [Operative Einblicke durch Berichte zur Kennwortverwaltung](active-directory-passwords-get-insights.md)
-* [Häufig gestellte Fragen zur Kennwortverwaltung](active-directory-passwords-faq.md)
-* [Problembehandlung für die Kennwortverwaltung](active-directory-passwords-troubleshoot.md)
-* [Kennwortverwaltung auf MSDN](https://msdn.microsoft.com/library/azure/dn510386.aspx)
+* Alternative E-Mail-Adresse
+* Mobiltelefon
+* Bürotelefon
+* Telefonnummer für Authentifizierung
+* E-Mail-Adresse für Authentifizierung
+
+####Nur über die Benutzeroberfläche für die Registrierung festlegbare Daten
+Auf die folgenden Felder können Sie nur über die Benutzeroberfläche für die SSPR-Registrierung zugreifen (https://aka.ms/ssprsetup):
+
+* Sicherheitsfragen und -antworten
+
+####Was geschieht bei Registrierung eines Benutzers?
+Wenn sich ein Benutzer registriert, zeigt die Registrierungsseite **immer** die folgenden Felder an:
+
+* Telefonnummer für Authentifizierung
+* E-Mail-Adresse für Authentifizierung
+* Sicherheitsfragen und -antworten
+
+Wenn Sie einen Wert für **Mobiltelefon** oder **Alternative E-Mail-Adresse** angegeben haben, können Benutzer diesen sofort verwenden, um ihre Kennwörter zurücksetzen, selbst wenn sie sich nicht für den Dienst registriert haben. Benutzer sehen diese Werte zudem bei der ersten Registrierung und können sie bei Bedarf ändern. Nachdem sie sich erfolgreich registriert haben, werden diese Werte jedoch in den Feldern **Telefonnummer für Authentifizierung** und **E-Mail-Adresse für Authentifizierung** beibehalten.
+
+Dies kann eine gute Möglichkeit darstellen, eine größere Anzahl von Benutzern zum Verwenden von SSPR zu entsperren und Benutzer dennoch zu ermöglichen, diese Informationen im Registrierungsprozess zu prüfen.
+
+####Festlegen der Daten zur Kennwortzurücksetzung mit PowerShell
+Sie können Werte für die folgenden Felder mit Azure AD PowerShell festlegen.
+
+* Alternative E-Mail-Adresse
+* Mobiltelefon
+* Bürotelefon
+
+Zunächst müssen Sie [das Azure AD PowerShell-Modul herunterladen und installieren](https://msdn.microsoft.com/library/azure/jj151815.aspx#bkmk_installmodule). Sobald Sie es installiert haben, können Sie die folgenden Schritte befolgen, um jedes Feld zu konfigurieren.
+
+#####Alternative E-Mail-Adresse
+```
+Connect-MsolService
+Set-MsolUser -UserPrincipalName user@domain.com -AlternateEmailAddresses @("email@domain.com")
+```
+
+#####Mobiltelefon
+```
+Connect-MsolService
+Set-MsolUser -UserPrincipalName user@domain.com -MobilePhone "+1 1234567890"
+```
+
+#####Bürotelefon
+```
+Connect-MsolService
+Set-MsolUser -UserPrincipalName user@domain.com -PhoneNumber "+1 1234567890"
+```
+
+####Lesen der Daten zur Kennwortzurücksetzung mit PowerShell
+Sie können Werte für die folgenden Felder mit Azure AD PowerShell lesen.
+
+* Alternative E-Mail-Adresse
+* Mobiltelefon
+* Bürotelefon
+* Telefonnummer für Authentifizierung
+* E-Mail-Adresse für Authentifizierung
+
+Zunächst müssen Sie [das Azure AD PowerShell-Modul herunterladen und installieren](https://msdn.microsoft.com/library/azure/jj151815.aspx#bkmk_installmodule). Sobald Sie es installiert haben, können Sie die folgenden Schritte befolgen, um jedes Feld zu konfigurieren.
+
+#####Alternative E-Mail-Adresse
+```
+Connect-MsolService
+Get-MsolUser -UserPrincipalName user@domain.com | select AlternateEmailAddresses
+```
+
+#####Mobiltelefon
+```
+Connect-MsolService
+Get-MsolUser -UserPrincipalName user@domain.com | select MobilePhone
+```
+
+#####Bürotelefon
+```
+Connect-MsolService
+Get-MsolUser -UserPrincipalName user@domain.com | select PhoneNumber
+```
+
+#####Telefonnummer für Authentifizierung
+```
+Connect-MsolService
+Get-MsolUser -UserPrincipalName user@domain.com | select -Expand StrongAuthenticationUserDetails | select PhoneNumber
+```
+
+#####E-Mail-Adresse für Authentifizierung
+```
+Connect-MsolService
+Get-MsolUser -UserPrincipalName user@domain.com | select -Expand StrongAuthenticationUserDetails | select Email
+```
+
+## Links zu Informationen zur Kennwortzurücksetzung
+Im Folgenden finden Sie Links zu allen Webseiten mit Informationen zur Kennwortzurücksetzung für Azure AD:
+
+* [**Zurücksetzen Ihres eigenen Kennworts**](active-directory-passwords-update-your-own-password.md): Hier erhalten Sie Informationen zum Zurücksetzen oder Ändern Ihres eigenen Kennworts als Benutzer des Systems.
+* [**Funktionsweise**](active-directory-passwords-how-it-works.md) – Erfahren Sie mehr über die sechs verschiedenen Komponenten des Diensts und deren Funktionen.
+* [**Erste Schritte**](active-directory-passwords-getting-started.md) – Erfahren Sie, wie Sie Benutzern das Zurücksetzen und Ändern ihrer Cloud- oder lokalen Kennwörter erlauben.
+* [**Anpassen**](active-directory-passwords-customize.md) – Erfahren Sie, wie Sie das Aussehen und Verhalten des Diensts an die Anforderungen Ihrer Organisation anpassen.
+* [**Best Practices**](active-directory-passwords-best-practices.md) – Erfahren Sie, wie Sie Kennwörter in Ihrer Organisation schnell bereitstellen und effektiv verwalten.
+* [**Einblicke erhalten**](active-directory-passwords-get-insights.md) – Erfahren Sie mehr über unsere integrierten Berichtsfunktionen.
+* [**Häufig gestellte Fragen**](active-directory-passwords-faq.md) – Hier erhalten Sie Antworten auf häufig gestellte Fragen.
+* [**Problembehandlung**](active-directory-passwords-troubleshoot.md) – Erfahren Sie, wie Sie Probleme mit dem Dienst schnell beheben.
 
 
 
 [001]: ./media/active-directory-passwords-learn-more/001.jpg "Image_001.jpg"
 [002]: ./media/active-directory-passwords-learn-more/002.jpg "Image_002.jpg"
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1125_2015-->

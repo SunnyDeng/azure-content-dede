@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/01/2015" 
+	ms.date="11/21/2015" 
 	ms.author="awills"/>
 
 # Erkennen und Diagnostizieren von Abstürzen in Windows Store- und Windows Phone-Apps mit Application Insights
@@ -102,4 +102,4 @@ Wenn Sie den Build im Freigabemodus erstellen, werden Ereignisse auf dem Gerät 
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

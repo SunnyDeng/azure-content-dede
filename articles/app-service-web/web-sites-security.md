@@ -54,7 +54,7 @@ Es ist üblich, Verbindungszeichenfolgen, Berechtigungsnachweise zur Authentisie
 
 Azure App Service ermöglicht es Ihnen, Konfigurationsdaten als Teil der Laufzeitumgebung von Web-Apps als **App-Einstellungen** und **Verbindungszeichenfolgen** zu speichern. Die Werte werden für Ihre Anwendung zur Laufzeit über *Umgebungsvariablen* für die meisten Programmiersprachen freigegeben. Bei .NET-Anwendungen werden diese Werte in Ihre .NET-Konfiguration zur Laufzeit eingegeben.
 
-**App-Einstellungen** und **Verbindungszeichenfolgen** können mit dem [Azure-Vorschauportal](http://portal.azure.com) oder mit Hilfsprogrammen wie PowerShell oder der Azure-Befehlszeilenschnittstelle konfiguriert werden.
+**Anwendungseinstellungen** und **Verbindungszeichenfolgen** können mit dem [Azure-Portal](http://portal.azure.com) oder mit Hilfsprogrammen wie PowerShell oder der Azure-Befehlszeilenschnittstelle konfiguriert werden.
 
 Weitere Informationen zu App-Einstellungen und Verbindungszeichenfolgen finden Sie unter [Konfigurieren von Web-Apps](web-sites-configure.md).
 
@@ -62,7 +62,7 @@ Weitere Informationen zu App-Einstellungen und Verbindungszeichenfolgen finden S
 
 Azure bietet sicheren FTP-Zugriff auf das Dateisystem für Ihre Web-App durch **FTPS**. Dadurch erhalten Sie sicheren Zugriff auf den Anwendungscode der Web-App sowie auf die Diagnoseprotokolle. Den FTPS-Link für Ihre Web-App finden Sie mit den folgenden Schritten:
 
-1. Öffnen Sie das [Azure-Vorschauportal](http://portal.azure.com).
+1. Öffnen Sie das [Azure-Portal](http://portal.azure.com).
 2. Wählen Sie **Alle durchsuchen** aus.
 3. Wählen Sie auf dem Blatt **Durchsuchen** die Option **Web-Apps** aus.
 4. Wählen Sie auf dem Blatt **Web-Apps** die gewünschte Web-App aus.
@@ -83,9 +83,6 @@ Weitere Informationen zu den Dateien **web.config** oder **applicationhost.confi
 Weitere Informationen zum Protokollieren von Informationen für Web-Apps, die sich bei der Erkennung von Angriffen als nützlich erweisen können, finden Sie unter [Aktivieren der Diagnoseprotokollierung](web-sites-enable-diagnostic-log.md).
 
 ## Änderungen
-* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
+* Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 
-* Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715)
- 
-
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

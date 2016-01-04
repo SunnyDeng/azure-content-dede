@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/24/2015" 
+	ms.date="11/19/2015" 
 	ms.author="billmath"/>
 
 # Erstellen von Multi-Factor Authentication in benutzerdefinierten Apps (SDK)
@@ -70,8 +70,8 @@ Das SDK enthält die folgenden Elemente:
 - **Quelldatei(en)** für Multi-Factor Authentication.
 - **Clientzertifikat** für die Kommunikation mit dem Multi-Factor Authentication-Dienst.
 - **Privater Schlüssel** für das Zertifikat.
-- **Aurufergebnisse**. Eine Liste mit Aurufergebniscodes. Um diese Datei zu öffnen, verwenden Sie eine Anwendung mit Textformatierung wie WordPad. Verwenden Sie die Aufrufergebniscodes, um die Implementierung der Multi-Factor Authentication in Ihrer Anwendung zu testen und Probleme zu behandeln. Dies sind keine Authentifizierungsstatuscodes.
-- **Beispiele**. Beispielcode für eine grundlegende, funktionsfähige Implementierung von Multi-Factor Authentication.
+- **Aurufergebnisse.** Eine Liste mit Aurufergebniscodes. Um diese Datei zu öffnen, verwenden Sie eine Anwendung mit Textformatierung wie WordPad. Verwenden Sie die Aufrufergebniscodes, um die Implementierung der Multi-Factor Authentication in Ihrer Anwendung zu testen und Probleme zu behandeln. Dies sind keine Authentifizierungsstatuscodes.
+- **Beispiele.** Beispielcode für eine grundlegende, funktionsfähige Implementierung von Multi-Factor Authentication.
 
 
 >[AZURE.WARNING]Das Client-Zertifikat ist ein eindeutiges, privates Zertifikat, das speziell für Sie generiert wurde. Geben Sie diese Datei nicht frei und verlieren Sie sie nicht. Sie ist der Schlüssel zum Gewährleisten der Sicherheit der Kommunikation mit dem Multi-Factor Authentication-Dienst.
@@ -191,4 +191,4 @@ Im folgenden serverseitigen Code wird Multi-Factor Authentication in Schritt 2 k
 	    }
 	}
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

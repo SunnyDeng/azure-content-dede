@@ -18,7 +18,7 @@
 
 # Durchsuchen von Stack Exchange-Daten mithilfe von Azure Search
 
-Dieser Artikel bietet eine exemplarische Vorgehensweise, in der einige der wichtigsten Volltextsuchfunktionen vorgestellt werden, die [Azure Search](https://azure.microsoft.com/de-DE/services/search/) zu bieten hat. Verwendet werden Daten, die von Stack Exchange für die Creative Commons-Nutzung mit der folgenden [Attribuierung](http://blog.stackoverflow.com/2009/06/attribution-required/) zur [Verfügung gestellt](https://archive.org/details/stackexchange) wurden.
+Dieser Artikel bietet eine exemplarische Vorgehensweise, in der einige der wichtigsten Volltextsuchfunktionen vorgestellt werden, die [Azure Search](https://azure.microsoft.com/services/search/) zu bieten hat. Verwendet werden Daten, die von Stack Exchange für die Creative Commons-Nutzung mit der folgenden [Attribuierung](http://blog.stackoverflow.com/2009/06/attribution-required/) zur [Verfügung gestellt](https://archive.org/details/stackexchange) wurden.
 
 ## Erste Schritte
 
@@ -104,9 +104,9 @@ Brent hat bereits viel harte Arbeit geleistet, indem gezeigt wird, wie das Stagi
       on PA.[OwnerUserId] = PUA.Id
       WHERE PQ.PostTypeId = 1
 
-Sobald dies erfolgt ist, können Sie im [Azure-Portal](https://portal.azure.com) Daten aus der obigen Azure SQL-Sicht importieren, woraufhin ein Azure Search-Index basierend auf dem Schema der Felder in der Sicht erstellt wird. Wenn Sie meine Azure SQL-Datenbank in der Stagingumgebung nutzen möchten, folgt hier die schreibgeschützte Verbindungszeichenfolge, die Sie dazu benötigen:
+Sobald dies erfolgt ist, können Sie im [klassischen Azure-Portal](https://portal.azure.com) Daten aus der obigen Azure SQL-Sicht importieren, woraufhin ein Azure Search-Index basierend auf dem Schema der Felder in der Sicht erstellt wird. Wenn Sie meine Azure SQL-Datenbank in der Stagingumgebung nutzen möchten, folgt hier die schreibgeschützte Verbindungszeichenfolge, die Sie dazu benötigen:
 
     Server=tcp:azs-playground.database.windows.net,1433;Database=StackExchange;User ID=reader@azs-playground;
     Password=EdrERBt3j6mZDP;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

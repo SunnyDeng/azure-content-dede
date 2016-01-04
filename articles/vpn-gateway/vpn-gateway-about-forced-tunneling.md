@@ -1,4 +1,4 @@
-<properties pageTitle="Konfigurieren der Tunnelerzwingung für Microsoft Azure-VPN-Gateways | Microsoft Azure" description="Sie können in einem virtuellen Netzwerk mit einem standortübergreifenden VPN-Gateway die Umleitung des gesamten Internetdatenverkehrs an Ihren lokalen Standort „erzwingen“. " services="vpn-gateway" documentationCenter="na" authors="cherylmc" manager="carolz" editor="" tags="azure-service-management"/>
+<properties pageTitle="Konfigurieren der Tunnelerzwingung für VPN-Gateways mit PowerShell | Microsoft Azure" description="Sie können in einem virtuellen Netzwerk mit einem standortübergreifenden VPN-Gateway die Umleitung des gesamten Internetdatenverkehrs an Ihren lokalen Standort „erzwingen“. Dieser Artikel gilt für VPN-Gateways, die mit dem klassischen Bereitstellungsmodell erstellt wurden. " services="vpn-gateway" documentationCenter="na" authors="cherylmc" manager="carolz" editor="" tags="azure-service-management"/>
 <tags  
    ms.service="vpn-gateway"
    ms.devlang="na"
@@ -10,9 +10,13 @@
 
 # Konfigurieren der Tunnelerzwingung
 
-Dieser Artikel bezieht sich auf VNETs und VPN-Gateways, die mithilfe des klassischen Bereitstellungsmodells erstellt wurden. Wenn eine Anleitung zum Konfigurieren der Tunnelerzwingung für VNETs und VPN-Gateways verfügbar ist, die mit dem Ressourcen-Manager-Modell erstellt wurde, werden wir am Anfang dieser Seite einen Link hinzufügen.
+> [AZURE.SELECTOR]
+- [PowerShell - Service Management](vpn-gateway-about-forced-tunneling.md)
+- [PowerShell - Resource Manager](vpn-gateway-forced-tunneling-rm.md)
 
->[AZURE.NOTE]Sie sollten wissen, dass Azure derzeit mit zwei Bereitstellungsmodellen arbeitet: der Bereitstellung mit dem Ressourcen-Manager und der klassischen Bereitstellung. Bevor Sie Ihre Konfiguration beginnen, sollten Sie sicherstellen, dass Sie die Bereitstellungsmodelle und -tools verstehen. Informationen zu den Bereitstellungsmodellen finden Sie unter [Azure-Bereitstellungsmodelle](../azure-classic-rm.md).
+Dieser Artikel bezieht sich auf die VNETs und VPN-Gateways, die mithilfe des klassischen Bereitstellungsmodells (auch als Dienstverwaltung bezeichnet) erstellt wurden. Informationen zum Konfigurieren der Tunnelerzwingung für VNETs und VPN-Gateways, die mit dem Ressourcen-Manager-Bereitstellungsmodell erstellt wurden, finden Sie unter [Konfigurieren der Tunnelerzwingung mithilfe von PowerShell und Azure-Ressourcen-Manager](vpn-gateway-forced-tunneling-rm.md).
+
+[AZURE.INCLUDE [vpn-gateway-sm-rm](../../includes/vpn-gateway-sm-rm-include.md)]
 
 ## Informationen zur Tunnelerzwingung
 
@@ -153,11 +157,4 @@ Im folgenden finden Sie einige weitere PowerShell-Cmdlets, die bei der Verwendun
 
 	Remove-AzureVnetGatewayDefaultSites -VNetName <virtualNetworkName>
 
-## Nächste Schritte
-
-
-Weitere Informationen zu UDR finden Sie unter [Benutzerdefinierte Routen und IP-Weiterleitung](../virtual-network/virtual-networks-udr-overview.md).
-
-Informationen zum Sichern des Netzwerkverkehrs finden Sie unter [Was ist eine Netzwerksicherheitsgruppe](../virtual-network/virtual-networks-nsg.md). Bedenken Sie, dass Sie nie eine Netzwerksicherheitsgruppe auf ein Azure VNET-Gatewaysubnetz anwenden sollten.
-
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1210_2015-->

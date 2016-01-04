@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Erste Schritte zum Bereitstellen von Inhalten nach Bedarf mit dem Azure-Portal | Microsoft Azure"
-	description="Dieses Lernprogramm führt Sie durch die Schritte zum Implementieren einer Anwendung zur Video-on-Demand (VoD)-Inhaltsübermittlung mit Azure Media Services mithilfe des Azure-Portals."
+	pageTitle="Erste Schritte zum Bereitstellen von Inhalten nach Bedarf mit dem klassischen Azure-Portal | Microsoft Azure"
+	description="Dieses Tutorial führt Sie durch die Schritte zum Implementieren einer Anwendung zur Video-on-Demand-Inhaltsübermittlung (VoD) mit Azure Media Services mithilfe des klassischen Azure-Portals."
 	services="media-services"
 	documentationCenter=""
 	authors="Juliako"
@@ -17,13 +17,13 @@
 	ms.author="juliako"/>
 
 
-# Erste Schritte zum Bereitstellen von Inhalten nach Bedarf mit dem Azure-Portal
+# Erste Schritte zum Bereitstellen von Inhalten nach Bedarf mit dem klassischen Azure-Portal
 
 
 [AZURE.INCLUDE [media-services-selector-get-started](../../includes/media-services-selector-get-started.md)]
 
 
-Dieses Lernprogramm führt Sie durch die Schritte zum Implementieren einer einfachen Anwendung zur Video-on-Demand (VoD)-Inhaltsübermittlung mithilfe des Azure-Portals.
+Dieses Tutorial führt Sie durch die Schritte zum Implementieren einer einfachen Anwendung zur Video-on-Demand-Inhaltsübermittlung (VoD) mithilfe des klassischen Azure-Portals.
 
 > [AZURE.NOTE]Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://www.windowsazure.com/pricing/free-trial/?WT.mc_id=A8A8397B5" target="_blank">Kostenlose Azure-Testversion</a>.
 
@@ -39,7 +39,7 @@ Dieses Lernprogramm enthält die folgenden Aufgaben:
 
 ## Erstellen eines Azure Media Services-Kontos
 
-1. Klicken Sie im [Azure-Portal](https://manage.windowsazure.com/) auf **Neu**, **Mediendienst** und dann auf **Schnellerfassung**.
+1. Klicken Sie im [klassischen Azure-Portal](https://manage.windowsazure.com/) auf **Neu**, **Mediendienst** und dann auf **Schnellerfassung**.
 
 	![Media Services-Schnellerfassung](./media/media-services-portal-get-started/wams-QuickCreate.png)
 
@@ -77,9 +77,9 @@ Um die dynamische Paketerstellung nutzen zu können, müssen Sie folgende Schrit
 
 Mit der dynamischen Paketerstellung müssen Sie die Dateien nur in einem Speicherformat speichern und bezahlen. Media Services erstellt und verarbeitet die entsprechende Antwort basierend auf Anforderungen von einem Client.
 
-Um die Anzahl der reservierten Einheiten für das Streaming zu ändern, gehen Sie folgendermaßen vor:
+Um die Anzahl der Einheiten zu ändern, die für das Streaming reserviert sind, gehen Sie folgendermaßen vor:
 
-1. Klicken Sie im [Azure-Portal](https://manage.windowsazure.com/) auf **Media Services**. Klicken Sie anschließend auf den Namen des Mediendienstes.
+1. Klicken Sie im [klassischen Azure-Portal](https://manage.windowsazure.com/) auf **Media Services**. Klicken Sie anschließend auf den Namen des Media Service
 
 2. Wählen Sie die Seite STREAMING-ENDPUNKTE aus. Klicken Sie anschließend auf das Streamingendgerät, das Sie ändern möchten.
 
@@ -98,7 +98,7 @@ Um die Anzahl der reservierten Einheiten für das Streaming zu ändern, gehen Si
 ## Hochladen von Inhalten
 
 
-1. Klicken Sie im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkID=256666&clcid=0x409) auf **Media Services** und dann auf den Media Services-Kontonamen.
+1. Klicken Sie im [klassischen Azure-Portal](http://go.microsoft.com/fwlink/?LinkID=256666&clcid=0x409) auf **Media Services** und dann auf den Media Services-Kontonamen.
 2. Wählen Sie die Seite "INHALT" aus.
 3. Klicken Sie auf der Seite oder unten im Portal auf **Hochladen**.
 4. Navigieren Sie im Dialogfeld **Inhalte hochladen** zur gewünschten Ressourcendatei. Klicken Sie auf die Datei und dann auf **Öffnen**, oder drücken Sie die EINGABETASTE.
@@ -137,7 +137,7 @@ Beachten Sie, dass die reservierten Einheiten für On-Demand-Streaming Ihnen zus
 
 ### Codieren
 
-Dieser Abschnitt beschreibt die Schritte, die Sie ausführen können, um Ihre Inhalte mit Azure Media Encoder im Azure-Portal zu codieren.
+Dieser Abschnitt beschreibt die Schritte, die Sie ausführen können, um Ihre Inhalte mit Azure Media Encoder im klassischen Azure-Portal zu codieren.
 
 1.  Wählen Sie die Datei aus, die Sie codieren möchten. Wenn die Codierung für diesen Dateityp unterstützt wird, wird die Schaltfläche **PROZESS** unten auf der Seite „INHALT“ aktiviert.
 4. Wählen Sie im Dialogfeld **Prozess** den **Azure Media Encoder-**Prozessor aus.
@@ -172,7 +172,7 @@ Dieser Abschnitt beschreibt die Schritte, die Sie ausführen können, um Ihre In
 
 Um Ihren Benutzern eine URL für das Streaming bzw. Herunterladen des Inhalts angeben zu können, müssen Sie zunächst das Medienobjekt "veröffentlichen", indem Sie einen Locator erstellen. Locator ermöglichen den Zugriff auf Dateien im Medienobjekt. Media Services unterstützt zwei Locator-Typen: OnDemandOrigin-Locator zum Streamen von Medien (z. B. MPEG DASH, HLS oder Smooth Streaming) und Access Signature (SAS)-Locator zum Herunterladen von Mediendateien.
 
-Wenn Sie Ihre Medienobjekte über das Azure-Portal veröffentlichen, werden die Locators für Sie erstellt und eine OnDemand-basierte URL (wenn Ihr Medienobjekt eine ISM-Datei enthält) oder eine SAS-URL bereitgestellt.
+Wenn Sie Ihre Medienobjekte über das klassische Azure-Portal veröffentlichen, werden die Locators für Sie erstellt und eine OnDemand-basierte URL (wenn Ihr Medienobjekt eine ISM-Datei enthält) oder eine SAS-URL bereitgestellt.
 
 Eine SAS-URL weist das folgende Format auf.
 
@@ -209,7 +209,7 @@ So veröffentlichen Sie ein Medienobjekt über das Portal:
 
 ## Wiedergeben von Inhalten im Portal
 
-Im Azure-Portal wird ein Inhaltsplayer bereitgestellt, mit dem Sie Ihre Videos testen können.
+Im klassischen Azure-Portal wird ein Inhaltsplayer bereitgestellt, mit dem Sie Ihre Videos testen können.
 
 Klicken Sie auf das gewünschte Video und dann auf die Schaltfläche **Wiedergeben** unten im Portal.
 
@@ -244,7 +244,7 @@ Wenn dieses Thema nicht die erwarteten Informationen enthält, Informationen feh
 
 
 <!-- URLs. -->
-[Azure portal]: http://manage.windowsazure.com/
+[Azure Classic Portal]: http://manage.windowsazure.com/
 
 
 <!-- Images -->
@@ -260,4 +260,4 @@ Wenn dieses Thema nicht die erwarteten Informationen enthält, Informationen feh
 [encrypt]: ./media/media-services-manage-content/media-services-encrypt-content.png
 [AMSPlayer]: ./media/media-services-portal-get-started/media-services-portal-player.png
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

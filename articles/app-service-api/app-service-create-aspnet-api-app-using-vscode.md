@@ -13,16 +13,12 @@
 	ms.tgt_pltfrm="dotnet" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/01/2015" 
+	ms.date="12/04/2015" 
 	ms.author="erikre"/>
 
 # Erstellen einer ASP.NET 5-API-App mit Visual Studio-Code
 
-> [AZURE.SELECTOR]
-- [.NET - Visual Studio 2015](app-service-dotnet-create-api-app.md)
-- [.NET - Visual Studio Code](app-service-create-aspnet-api-app-using-vscode.md)
-- [Node.js](app-service-api-nodejs-api-app.md)
-- [Java](app-service-api-java-api-app.md)
+[AZURE.INCLUDE [app-service-api-v2-note](../../includes/app-service-api-v2-note.md)]
 
 ## Übersicht
 
@@ -185,7 +181,7 @@ namespace ContactsList.Controllers
 
 5. Öffnen Sie einen Browser, und navigieren Sie zur folgenden URL:
 
-	****http://localhost:5001/api/Contacts**
+	**http://localhost:5001/api/Contacts**
 
 	Anschließend können Sie die Inhalte von *Contacts.json* anzeigen. In dieser Datei wird folgender Inhalt angezeigt:
 
@@ -433,8 +429,10 @@ git remote add azure [URL for remote repository]
 9. Übertragen Sie Ihre Änderungen mit dem folgenden Befehl per Push an Azure:
 
 	<pre class="prettyprint">
-git push azure master
-</pre>Sie werden aufgefordert, das zuvor erstellte Kennwort einzugeben. **Hinweis: Das Kennwort ist nicht sichtbar.**
+	git push azure master
+	</pre>
+
+	Sie werden aufgefordert, das zuvor erstellte Kennwort einzugeben. **Hinweis: Das Kennwort ist nicht sichtbar.**
 
 	Die Ausgabe des oben stehenden Befehls führt zu einer Meldung, dass die Bereitstellung erfolgreich durchgeführt wurde:
 
@@ -463,4 +461,4 @@ Wechseln Sie im Azure-Vorschauportal zum Blatt **API-App-Host** für Ihre API-Ap
 In diesem Lernprogramm haben Sie erfahren, wie Sie eine API-App in Visual Studio Code erstellen. Weitere Informationen zu Visual Studio Code finden Sie unter [Visual Studio Code](https://code.visualstudio.com/Docs/). Weitere Informationen zu API-Apps finden Sie unter [Was sind API-Apps?](app-service-api-apps-why-best-platform.md).
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

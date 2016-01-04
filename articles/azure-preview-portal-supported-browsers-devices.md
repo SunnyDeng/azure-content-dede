@@ -27,11 +27,9 @@ Das Portal funktioniert einwandfrei auf modernen PCs, Macs und Tablets. Mobiltel
 Die neuesten Versionen der folgenden Browser werden unterstützt:
 
 - Edge (neueste Version)
-- Internet Explorer (11 und höher)
-- Safari (7 und höher)
+- Internet Explorer 11
+- Safari (neueste, nur auf Mac)
 - Chrome (neueste Version)
 - Firefox (neueste Version)
 
-*Safari 6 und niedriger wird nicht unterstützt. Wenn Sie OS X verwenden, können Sie entweder Chrome bzw. Firefox verwenden oder auf OS X Mavericks aktualisieren, um Safari 7 zu erhalten.*
-
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

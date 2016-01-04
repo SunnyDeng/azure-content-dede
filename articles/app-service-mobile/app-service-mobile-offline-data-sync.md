@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="08/11/2015"
+	ms.date="11/30/2015"
 	ms.author="wesmc"/>
 
 # Synchronisierung von Offlinedaten in Azure Mobile Apps
@@ -127,4 +127,4 @@ Beim Synchronisieren von Tabellen steuert der Clientcode, wann lokale Änderunge
 [Windows 8.1: Aktivieren der Offline-Synchronisierung]: ../app-service-mobile-windows-store-dotnet-get-started-offline-data.md
 [Windows 8.1: Offlinesynchronisierung aktivieren]: ../app-service-mobile-windows-store-dotnet-get-started-offline-data.md
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

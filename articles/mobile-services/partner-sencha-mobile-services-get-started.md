@@ -18,13 +18,18 @@
 
 # <a name="getting-started"></a>Erste Schritte mit Mobile Services und Sencha Touch
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
+
 [AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]&nbsp;
 
 [AZURE.INCLUDE [mobile-services-hero-slug](../../includes/mobile-services-hero-slug.md)]
 
 ##Übersicht
 
-In diesem Lernprogramm erfahren Sie, wie Sie Azure Mobile Services in Ihrer Sencha Touch-Anwendung nutzen können. Sie werden mit Sencha Touch eine einfache *To-Do-Listen*-App erstellen, die einen Mobile Service verwendet, den Sie über das Verwaltungsportal festlegen. Dieses Lernprogramm richtet sich an Entwickler mit guten bis sehr guten Webanwendungskenntnissen, die in JavaScript bewandert sind und sich mit dem Sencha Touch-Framework auskennen.
+In diesem Lernprogramm erfahren Sie, wie Sie Azure Mobile Services in Ihrer Sencha Touch-Anwendung nutzen können. Sie werden mit Sencha Touch eine einfache *To-Do-Listen*-App erstellen, die einen Mobile Service verwendet, den Sie über das klassische Azure-Portal festlegen. Dieses Lernprogramm richtet sich an Entwickler mit guten bis sehr guten Webanwendungskenntnissen, die in JavaScript bewandert sind und sich mit dem Sencha Touch-Framework auskennen.
 
 Sie können auch ein Video zu diesem Thema ansehen. In diesem Clip werden dieselben Schritte behandelt wie in diesem Tutorial. Im Video erklärt Arthur Kay, wie Sie eine Sencha Touch-Anwendung mithilfe eines Azure Mobile Services-Back-Ends erstellen.
 
@@ -50,9 +55,9 @@ Unten finden Sie einen Screenshot aus der fertigen App:
 
 ##Erstellen einer TodoItems-Tabelle
 
-Sobald Sie den Mobile Service erstellt haben, können Sie einfach dem Schnellstart im Verwaltungsportal folgen, um eine neue Datenbanktabelle für die Verwendung im Mobile Service zu erstellen.
+Sobald Sie den Mobile Service erstellt haben, können Sie einfach der Schnellstartanleitung im klassischen Azure-Portal folgen, um eine neue Datenbanktabelle für die Verwendung im Mobile Service zu erstellen.
 
-1. Klicken Sie im Verwaltungsportal auf **Mobile Services** und anschließend auf den mobilen Dienst, den Sie gerade erstellt haben.
+1. Klicken Sie im [klassischen Azure-Portal] auf **Mobile Services** und anschließend auf den mobilen Dienst, den Sie gerade erstellt haben.
 
 2. Klicken Sie auf der Schnellstartregisterkarte auf **HTML** unter **Plattform auswählen**, und erweitern Sie die Option **Neue HTML-App erstellen**.
 
@@ -64,10 +69,10 @@ Sobald Sie den Mobile Service erstellt haben, können Sie einfach dem Schnellsta
 
 3. Klicken Sie auf **TodoItems-Tabelle erstellen**, um eine Tabelle zum Speichern der App-Daten zu erstellen.
 
-	> [AZURE.NOTE]Laden Sie NICHT die HTML-App aus dem Verwaltungsportal herunter. Wir werden stattdessen im Abschnitt unten manuell eine Sencha Touch-Anwendung erstellen.
+	> [AZURE.NOTE]Laden Sie NICHT die HTML-App aus dem klassischen Azure-Portal herunter. Wir werden stattdessen im Abschnitt unten manuell eine Sencha Touch-Anwendung erstellen.
 
 
-1. Notieren Sie sich **appKey** und **appUrl** im Verwaltungsportal. Sie werden diese in anderen Abschnitten dieses Lernprogramms benötigen.
+1. Notieren Sie sich **appKey** und **appUrl** im klassischen Azure-Portal. Sie werden diese in anderen Abschnitten dieses Lernprogramms benötigen.
 
     ![App-Schlüssel](./media/partner-sencha-mobile-services-get-started/mobile-app-key-portal.png)
 
@@ -95,13 +100,13 @@ Wenn Sie eine externe Klassenbibliothek hinzufügen möchten, laden Sie bei den 
 
 Sie können die Azure-Erweiterungen durch folgende Schritte manuell zur Anwendung hinzufügen:
 
-1. Laden Sie das Azure-Erweiterungenpaket [hier](https://market.sencha.com/extensions/sencha-extensions-for-microsoft-azure) herunter. (Sie können Ihre Sencha-Foren-ID verwenden, um Zugriff auf diesen Bereich zu erhalten.)
+1. Laden Sie das Azure-Erweiterungspaket [hier](https://market.sencha.com/extensions/sencha-extensions-for-microsoft-azure) herunter. (Sie können Ihre Sencha-Foren-ID verwenden, um Zugriff auf diesen Bereich zu erhalten.)
 
-2. Kopieren Sie das Azure-Erweiterungenpaket vom Downloadverzeichnis zum endgültigen Zielort, und entpacken Sie es:
+2. Kopieren Sie das Azure-Erweiterungspaket vom Downloadverzeichnis zum endgültigen Zielort, und entpacken Sie es:
 
         $ cd /path/to/application
 	    $ mv /download-location/azure.zip .
-    	$ unzip azure.zip  
+    	$ unzip azure.zip
 
     Dadurch wird ein **azure**-Verzeichnis erstellt, welches den gesamten Quellcode, Beispiele und die Dokumentation des Pakets enthält. Der Quellcode wird sich im Verzeichnis **azure/src** befinden.
 
@@ -110,7 +115,7 @@ Sie können die Azure-Erweiterungen durch folgende Schritte manuell zur Anwendun
 
 > [AZURE.NOTE]Sie können diese Methode nur verwenden, wenn Sie die Anwendung mithilfe des Befehls <code>sencha generate app</code> erstellt haben.
 
-Alle Anwendungen, die von Sencha Cmd erstellt wurden, haben im Stamm einen Paketeordner. Der Speicherort dieses Ordners kann konfiguriert werden, aber unabhängig vom Speicherort dient der Paketeordner auch als Speicher aller Pakete, die von der Anwendung verwendet wurden (oder von Anwendungen, wenn Sie einen Sencha Workspace erstellt haben).
+Alle Anwendungen, die von Sencha Cmd erstellt wurden, haben im Stamm einen Ordner „packages“. Der Speicherort dieses Ordners kann konfiguriert werden, aber unabhängig vom Speicherort dient der Ordner „packages“ auch als Speicher aller Pakete, die von der Anwendung verwendet wurden (oder von Anwendungen, wenn Sie einen Sencha Workspace erstellt haben).
 
 Da Ext.Azure ein Sencha Cmd-Paket ist, kann der Quellcode mit Sencha Cmd einfach installiert und in die Anwendung eingefügt werden. (Unter [Sencha Cmd Packages](http://docs.sencha.com/cmd/6.x/cmd_packages/cmd_packages.html) (in englischer Sprache) erhalten Sie weitere Informationen).
 
@@ -167,7 +172,7 @@ Nachdem die Azure-Erweiterung heruntergeladen und im Anwendungsverzeichnis insta
 
 	Auch wenn Sie das Konfigurationsobjekt direkt zur init-Methode weitergeben können, empfehlen wir die Erstellung einer Konfigurationseigenschaft der Sencha-Anwendung namens **azure** sowie die Platzierung aller zugehörigen Informationen an diesem Ort. Sie können diesen Eigenschaftenwert zur Methode Ext.Azure.init weitergeben.
 
-	Wenn Sie einen Mobile Service in Azure erstellen (siehe [Erste Schritte mit Windows Azure](http://senchaazuredocs.azurewebsites.net/#!/guide/getting_started)), werden ein Anwendungsschlüssel und eine URL zu diesem Dienst zugewiesen. Diese Information muss in Ihrem Azure-Paket angegeben werden, damit es eine Verbindung zum Dienst herstellen kann.
+	Wenn Sie einen Mobile Service in Azure erstellen (siehe [Erste Schritte mit Microsoft Azure](http://senchaazuredocs.azurewebsites.net/#!/guide/getting_started)), werden ein Anwendungsschlüssel und eine URL zu diesem Dienst zugewiesen. Diese Information muss in Ihrem Azure-Paket angegeben werden, damit es eine Verbindung zum Dienst herstellen kann.
 
 	Dieses Beispiel zeigt eine ganz einfache Azure-Konfiguration und Initialisierung, welche nur den Anwendungsschlüssel und die URL zur Verfügung stellt:
 
@@ -678,7 +683,7 @@ Der letzte Schritt dieses Lernprogramms besteht im Hosten und Ausführen der neu
 
     Dadurch wird eine POST-Anforderung an den neuen, in Azure gehosteten mobilen Dienst gesendet. Daten von der Anforderung werden in die TodoItem-Tabelle eingefügt.
 
-  5. Zurück im Verwaltungsportal klicken Sie auf die Registerkarte **Daten** und dann auf die Tabelle TodoItems.
+  5. Zurück im [klassischen Azure-Portal] klicken Sie auf die Registerkarte **Daten** und dann auf die Tabelle „TodoItems“.
 
     ![Tabelle TodoItems](./media/partner-sencha-mobile-services-get-started/mobile-data-tab.png)
 
@@ -717,4 +722,6 @@ Für weitere Informationen zu den ersten Schritten mit Sencha Touch besuchen Sie
 <!-- images -->
 [0]: ./media/partner-sencha-mobile-services-get-started/finished-app.png
 
-<!---HONumber=Nov15_HO3-->
+[klassischen Azure-Portal]: https://manage.windowsazure.com/
+
+<!----HONumber=AcomDC_1203_2015-->

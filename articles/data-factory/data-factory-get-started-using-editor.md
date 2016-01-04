@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Tutorial: Erstellen einer Pipeline mit Kopieraktivität mithilfe des Data Factory-Editors" 
-	description="In diesem Tutorial erstellen Sie eine Azure Data Factory-Pipeline mit Kopieraktivität mithilfe des Data Factory-Editors im Azure-Portal." 
+	description="In diesem Tutorial erstellen Sie eine Azure Data Factory-Pipeline mit Kopieraktivität mithilfe des Data Factory-Editors im klassischen Azure-Portal." 
 	services="data-factory" 
 	documentationCenter="" 
 	authors="spelluru" 
@@ -34,15 +34,15 @@ Schritt | Beschreibung
 [Schritt 2: Erstellen von verknüpften Diensten](#CreateLinkedServices) | In diesem Schritt erstellen Sie zwei verknüpfte Dienste: **StorageLinkedService** und **AzureSqlLinkedService**. "StorageLinkedService" verbindet den Azure-Speicher und "AzureSqlLinkedService" die Azure SQL-Datenbank mit "ADFTutorialDataFactory". Die Eingabedaten für die Pipeline befinden sich in einem Blobcontainer im Azure-Blobspeicher. Ausgabedaten werden in einer Tabelle in der Azure SQL-Datenbank gespeichert. Daher fügen Sie diese beiden Datenspeicher als verknüpfte Dienste der Data Factory hinzu.      
 [Schritt 3: Erstellen von Ein- und Ausgabetabellen](#CreateInputAndOutputDataSets) | Im vorherigen Schritt haben Sie verknüpfte Dienste erstellt, die auf Datenspeicher verweisen, die Ein- und Ausgabedaten enthalten. In diesem Schritt definieren Sie die beiden Data Factory-Tabellen **EmpTableFromBlob** und **EmpSQLTable**, die Ein- und Ausgabedaten darstellen, die in den Datenspeichern gespeichert sind. Für die Tabelle "EmpTableFromBlob" geben Sie den Blobcontainer an, der ein Blob mit den Quelldaten enthält. Für die Tabelle "EmpSQLTable" geben Sie die SQL-Tabelle an, in der die Ausgabedaten gespeichert werden sollen. Sie können auch andere Eigenschaften wie z. B. die Struktur der Daten, die Verfügbarkeit von Daten usw. angeben. 
 [Schritt 4: Erstellen und Ausführen einer Pipeline](#CreateAndRunAPipeline) | In diesem Schritt erstellen Sie die Pipeline **ADFTutorialPipeline** in der ADFTutorialDataFactory. Die Pipeline weist eine **Kopieraktivität** auf, die zum Kopieren von Eingabedaten aus dem Azure-Blob in die Azure SQL-Tabelle verwendet wird.
-[Schritt 5: Überwachen von Slices und Pipeline](#MonitorDataSetsAndPipeline) | In diesem Schritt überwachen Sie die Slices von Eingabe- und Tabellen im Azure-Vorschauportal.
+[Schritt 5: Überwachen von Slices und Pipeline](#MonitorDataSetsAndPipeline) | In diesem Schritt überwachen Sie die Slices von Eingabe- und Tabellen im Azure-Portal.
  
 
 ## <a name="CreateDataFactory"></a>Schritt 1: Erstellen einer Azure Data Factory
-In diesem Schritt erstellen Sie im Azure-Vorschauportal eine Azure Data Factory namens **ADFTutorialDataFactory**.
+In diesem Schritt erstellen Sie im Azure-Portal eine Azure Data Factory namens **ADFTutorialDataFactory**.
 
-1.	Nach der Anmeldung beim [Azure-Vorschauportal][azure-preview-portal] klicken Sie links unten auf **NEU**, wählen **Datenanalyse** auf dem Blatt **Erstellen** aus und klicken auf dem Blatt **Datenanalyse** auf **Data Factory**. 
+1.	Nach der Anmeldung beim [Azure-Portal][azure-portal] klicken Sie links unten auf **NEU**, wählen **Datenanalyse** auf dem Blatt **Erstellen** aus und klicken auf dem Blatt **Datenanalyse** auf **Data Factory**. 
 
-	![Neu->DataFactory][image-data-factory-new-datafactory-menu]
+	![Neu -> Data Factory][image-data-factory-new-datafactory-menu]
 
 6. Gehen Sie auf dem Blatt **Neue Data Factory** so vor:
 	1. Geben Sie **ADFTutorialDataFactory** als **Namen** ein. 
@@ -310,11 +310,11 @@ In diesem Schritt erstellen Sie eine Pipeline mit einer **Kopieraktivität**, di
  
 
 ## <a name="MonitorDataSetsAndPipeline"></a>Schritt 5: Überwachen der Datasets und Pipeline
-In diesem Schritt verwenden Sie das Azure-Portal zur Überwachung der Aktivitäten in einer Azure Data Factory. Sie können auch PowerShell-Cmdlets zum Überwachen von Datasets und Pipelines verwenden. Einzelheiten zur Verwendung von Cmdlets für die Überwachung finden Sie unter [Überwachen und Verwalten von Azure Data Factory mit PowerShell-Cmdlets][monitor-manage-using-powershell].
+In diesem Schritt verwenden Sie das klassische Azure-Portal zur Überwachung der Aktivitäten in einer Azure Data Factory. Sie können auch PowerShell-Cmdlets zum Überwachen von Datasets und Pipelines verwenden. Einzelheiten zur Verwendung von Cmdlets für die Überwachung finden Sie unter [Überwachen und Verwalten von Azure Data Factory mit PowerShell-Cmdlets][monitor-manage-using-powershell].
 
-1. Navigieren Sie zum [Azure-Vorschauportal][azure-preview-portal], sofern noch nicht geöffnet. 
+1. Navigieren Sie zum [klassischen Azure-Portal (Vorschau)][azure-portal], sofern noch nicht geöffnet. 
 2. Wenn das Blatt für **ADFTutorialDataFactory** nicht geöffnet ist, klicken Sie zum Öffnen im **Startmenü** auf **ADFTutorialDataFactory**. 
-3. Auf diesem Blatt sollten die Anzahl und Namen der erstellten Tabellen und der Pipeline angezeigt werden.
+3. In diesem Fenster sollten die Anzahl und Namen der erstellten Tabellen und der Pipeline angezeigt werden.
 
 	![Startseite mit Namen][image-data-factory-get-started-home-page-pipeline-tables]
 
@@ -327,7 +327,7 @@ In diesem Schritt verwenden Sie das Azure-Portal zur Überwachung der Aktivität
 	Die Listen **Letzte aktualisierte Slices** und **Letzte fehlerhafte Slices** werden anhand der **UHRZEIT DER LETZTEN AKTUALISIERUNG** sortiert. Der Zeitpunkt der Aktualisierung eines Slices wird in den folgenden Situationen geändert.
     
 
-	-  Sie haben den Status eines Slices manuell aktualisiert, z. B. mit dem Cmdlet **Set AzureDataFactorySliceStatus** oder durch Klicken auf **Ausführen** auf dem Blatt **SLICE** des Slices.
+	-  Sie haben den Status eines Slices manuell aktualisiert, z. B. mit dem Cmdlet **Set AzureRmDataFactorySliceStatus** oder durch Klicken auf **Ausführen** auf dem Blatt **SLICE** des Slices.
 	-  Der Status des Slices ändert sich aufgrund einer Ausführung (z. B. Ausführung gestartet, Ausführung mit Fehler beendet, Ausführung erfolgreich beendet usw.).
  
 	Klicken Sie auf den Titel der Listen oder auf **...** (Auslassungspunkte), um eine umfangreichere Liste mit Slices anzuzeigen. Klicken Sie auf der Symbolleiste auf **Filter**, um die Slices zu filtern.
@@ -363,7 +363,7 @@ In diesem Schritt verwenden Sie das Azure-Portal zur Überwachung der Aktivität
 	![Aktivitätsausführung – Details][image-data-factory-get-started-activity-run-details]
 
 	
-12. Klicken Sie auf **X**, um alle Blätter zu schließen, bis Sie such wieder auf dem Startblatt für **ADFTutorialDataFactory** befinden.
+12. Klicken Sie auf **X**, um alle Blätter zu schließen, bis Sie such wieder im Startfenster für **ADFTutorialDataFactory** befinden.
 14. (Optional) Klicken Sie auf der Startseite von **ADFTutorialDataFactory** auf **Pipelines**, dann auf dem Blatt **Pipelines** auf **ADFTutorialPipeline**, und führen Sie eine Detailsuche in den Eingabetabellen (**Consumed**) oder Ausgabetabellen (**Produced**) aus.
 15. Starten Sie **SQL Server Management Studio**, stellen Sie eine Verbindung mit der Azure SQL-Datenbank her, und überprüfen Sie, ob die Zeilen in die Tabelle **emp** der Datenbank eingefügt wurden.
 
@@ -371,7 +371,7 @@ In diesem Schritt verwenden Sie das Azure-Portal zur Überwachung der Aktivität
 
 
 ## Zusammenfassung 
-In diesem Lernprogramm haben Sie eine Azure Data Factory erstellt, um Daten aus einem Azure-Blob in eine Azure SQL-Datenbank zu kopieren. Sie haben mithilfe des Azure-Vorschauportals die Data Factory, verknüpfte Dienste, Tabellen und eine Pipeline erstellt. Nachfolgend sind die allgemeinen Schritte aufgeführt, die Sie in diesem Lernprogramm ausgeführt haben:
+In diesem Lernprogramm haben Sie eine Azure Data Factory erstellt, um Daten aus einem Azure-Blob in eine Azure SQL-Datenbank zu kopieren. Sie haben mithilfe des Azure-Portals die Data Factory, verknüpfte Dienste, Tabellen und eine Pipeline erstellt. Nachfolgend sind die allgemeinen Schritte aufgeführt, die Sie in diesem Lernprogramm ausgeführt haben:
 
 1.	Erstellen einer Azure **Data Factory**.
 2.	Erstellen von **verknüpften Diensten**, die Datenspeicher und Computes (sog. **verknüpfte Dienste**) mit der Data Factory verknüpfen.
@@ -393,7 +393,7 @@ Informationen zum Ausführen dieses Lernprogramms mit Azure PowerShell finden Si
 [msdn-linkedservices]: https://msdn.microsoft.com/library/dn834986.aspx
 [data-factory-naming-rules]: https://msdn.microsoft.com/library/azure/dn835027.aspx
 
-[azure-preview-portal]: https://portal.azure.com/
+[azure-portal]: https://portal.azure.com/
 [download-azure-powershell]: http://azure.microsoft.com/documentation/articles/install-configure-powershell
 [sql-management-studio]: http://azure.microsoft.com/documentation/articles/sql-database-manage-azure-ssms/#Step2
 [sql-cmd-exe]: https://msdn.microsoft.com/library/azure/ee336280.aspx
@@ -488,8 +488,6 @@ Informationen zum Ausführen dieses Lernprogramms mit Azure PowerShell finden Si
 
 [image-data-factory-create-resource-group]: ./media/data-factory-get-started-using-editor/CreateNewResourceGroup.png
 
-[image-data-factory-preview-storage-key]: ./media/data-factory-get-started-using-editor/PreviewPortalStorageKey.png
-
 [image-data-factory-database-connection-string]: ./media/data-factory-get-started-using-editor/DatabaseConnectionString.png
 
 [image-data-factory-new-datafactory-menu]: ./media/data-factory-get-started-using-editor/NewDataFactoryMenu.png
@@ -501,4 +499,4 @@ Informationen zum Ausführen dieses Lernprogramms mit Azure PowerShell finden Si
 [image-data-factory-name-not-available]: ./media/data-factory-get-started-using-editor/getstarted-data-factory-not-available.png
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

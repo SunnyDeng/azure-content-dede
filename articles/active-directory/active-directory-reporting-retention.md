@@ -13,10 +13,13 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="identity"
-	ms.date="10/02/2015"
+	ms.date="12/07/2015"
 	ms.author="kenhoff"/>
 
 # Aufbewahrungsrichtlinien für Azure Active Directory-Berichte
+
+*Diese Dokumentation ist Teil des [Handbuchs für Azure Active Directory Reporting](active-directory-reporting-guide.md).*
+
 Azure AD-Berichte werden für die hier angegebene Anzahl von Tagen aufbewahrt.
 
 Bericht | Beschreibung
@@ -45,4 +48,4 @@ Aktivste RMS-Benutzer | 30 Tage
 Nutzung von RMS-Geräten | 30 Tage
 Nutzung RMS-fähiger Anwendungen | 30 Tage
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

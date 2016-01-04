@@ -5,7 +5,7 @@
 	documentationCenter="" 
 	authors="TomArcher" 
 	manager="douge" 
-	editor="tglee"/>
+	editor=""/>
   
 <tags 
 	ms.service="active-directory" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="vs-getting-started" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/22/2015" 
+	ms.date="12/10/2015" 
 	ms.author="tarcher"/>
 
 # Fehler während der Authentifizierungserkennung
@@ -26,7 +26,7 @@ Beim Erkennen des vorherigen Authentifizierungscodes hat der Assistent einen nic
 
 ###Projekttypen
 
-Der Assistent überprüft, welche Art von Projekt Sie entwickeln, um die richtige Authentifizierungslogik in das Projekt einzufügen. Bei einem Domänencontroller, der im Projekt von `ApiController` abgeleitet wird, gilt es als WebAPI-Projekt. Wenn nur Domänencontroller vorhanden sind, die im Projekt von `MVC.Controller` abgeleitet sind, wird es als MVC-Projekt betrachtet. Alles andere wird vom Assistenten als nicht unterstützt betrachtet. WebForms-Projekte werden derzeit nicht unterstützt.
+Der Assistent überprüft, welche Art von Projekt Sie entwickeln, um die richtige Authentifizierungslogik in das Projekt einzufügen. Wenn ein Controller im Projekt von `ApiController` abgeleitet wird, gilt das Projekt als WebAPI-Projekt. Wenn alle Controller im Projekt von `MVC.Controller` abgeleitet werden, gilt das Projekt als MVC-Projekt. Alles andere wird vom Assistenten nicht unterstützt. WebForms-Projekte werden derzeit nicht unterstützt.
 
 ###Kompatibler Authentifizierungscode
 
@@ -95,6 +95,5 @@ Zum Erkennen der alten Form von Organisationskontoauthentifizierung sucht der As
 Wenn Sie den Authentifizierungstyp ändern möchten, entfernen Sie den inkompatiblen Authentifizierungstyp, und führen Sie den Assistenten dann erneut aus.
 
 Weitere Informationen finden Sie unter [Authentifizierungsszenarien für Azure AD](active-directory-authentication-scenarios.md).
- 
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

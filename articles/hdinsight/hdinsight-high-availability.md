@@ -50,7 +50,7 @@ Standardimplementierungen von Hadoop-Clustern verfügen in der Regel nur über e
 
 
 ## Überprüfen des Dienststatus für den aktiven Hauptknoten
-Um festzustellen, welcher Hauptknoten aktiv ist und den Status der dort laufenden Dienste zu prüfen, müssen Sie sich unter Verwendung des Remotedesktopprotokolls (RDP) mit dem Hadoop-Cluster verbinden. Anweisungen zu RDP finden Sie unter [Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Vorschauportal](hdinsight-administer-use-management-portal.md#connect-to-hdinsight-clusters-by-using-rdp). Sobald Sie eine Remoteverbindung zum Cluster hergestellt haben, doppelklicken Sie auf das Symbol **Hadoop-Dienst verfügbar** auf dem Desktop, um zu erfahren, auf welchem Hauptknoten die Dienste Namenode, Jobtracker, Templeton, Oozieservice, Metastore und Hiveserver2 bzw. im Fall von HDI 3.0 die Dienste Namenode, Resource Manager, History Server, Templeton, Oozieservice, Metastore und Hiveserver2 ausgeführt werden.
+Um festzustellen, welcher Hauptknoten aktiv ist und den Status der dort laufenden Dienste zu prüfen, müssen Sie sich unter Verwendung des Remotedesktopprotokolls (RDP) mit dem Hadoop-Cluster verbinden. Anweisungen zu RDP finden Sie unter [Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Portal](hdinsight-administer-use-management-portal.md#connect-to-hdinsight-clusters-by-using-rdp). Sobald Sie eine Remoteverbindung zum Cluster hergestellt haben, doppelklicken Sie auf das Symbol **Hadoop-Dienst verfügbar** auf dem Desktop, um zu erfahren, auf welchem Hauptknoten die Dienste Namenode, Jobtracker, Templeton, Oozieservice, Metastore und Hiveserver2 bzw. im Fall von HDI 3.0 die Dienste Namenode, Resource Manager, History Server, Templeton, Oozieservice, Metastore und Hiveserver2 ausgeführt werden.
 
 ![](./media/hdinsight-high-availability/Hadoop.Service.Availability.Status.png)
 
@@ -106,4 +106,4 @@ Das Verfahren für das SDK ist ähnlich. Die Erstellung und Bereitstellung eines
 - [Herstellen einer Verbindung zu HDInsight-Clustern mit RDP](hdinsight-administer-use-management-portal.md#rdp)
 - [Verwenden des HDInsight .NET SDK](hdinsight-provision-clusters.md#sdk)
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

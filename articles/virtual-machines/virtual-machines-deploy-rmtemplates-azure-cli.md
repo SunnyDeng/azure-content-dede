@@ -19,6 +19,14 @@
 
 # Bereitstellen und Verwalten von virtuellen Computern mit Azure-Ressourcen-Manager-Vorlagen und der Azure-CLI
 
+> [AZURE.SELECTOR]
+- [Azure PowerShell](virtual-machines-deploy-rmtemplates-powershell.md)
+- [Azure CLI](virtual-machines-deploy-rmtemplates-azure-cli.md)
+
+<br>
+
+
+
 In diesem Artikel wird gezeigt, wie mit Azure-Ressourcen-Manager-Vorlagen und der Azure-Befehlszeilenschnittstelle (Azure-CLI) die folgenden allgemeinen Aufgaben zum Bereitstellen und Verwalten von virtuellen Azure-Computern automatisiert werden. Weitere Vorlagen finden Sie unter [Azure-Schnellstartvorlagen](http://azure.microsoft.com/documentation/templates/) und [Erstellen von Anwendungsframeworks mithilfe von Vorlagen](virtual-machines-app-frameworks.md).
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell. Im klassischen Bereitstellungsmodell können Sie keine Vorlagen verwenden.
@@ -37,7 +45,7 @@ In diesem Artikel wird gezeigt, wie mit Azure-Ressourcen-Manager-Vorlagen und de
 
 ## Vorbereitung
 
-Vor der Verwendung von Azure-CLI mit Azure-Ressourcengruppen benötigen Sie die richtige Version von Azure-CLI und ein Azure-Konto. Wenn Sie nicht über die Azure-CLI verfügen, [installieren Sie sie](xplat-cli-install.md).
+Vor der Verwendung der Azure-CLI mit Azure-Ressourcengruppen benötigen Sie die richtige Version der Azure-CLI und ein Azure-Konto. Wenn Sie nicht über die Azure-CLI verfügen, [installieren Sie sie](xplat-cli-install.md).
 
 ### Aktualisieren Ihrer Azure-CLI auf Version 0.9.0 oder höher
 
@@ -85,7 +93,7 @@ Standardmäßig startet die Azure-CLI im Service Management-Modus (**asm**-Modus
 
 ## Grundlegendes zu Azure-Ressourcenvorlagen und -Ressourcengruppen
 
-Die meisten Anwendungen werden aus einer Kombination verschiedener Ressourcentypen (z. B. ein oder mehrere virtuelle Computer und Speicherkonten, SQL-Datenbank, virtuelles Netzwerk oder ein Content Delivery Network) erstellt. Die standardmäßige Azure-Service-Management-API und das Azure-Portal stellte diese Elemente mithilfe eines Ansatzes auf Dienstbasis dar. Bei dieser Vorgehensweise müssen Sie die einzelnen Dienste einzeln und nicht als eine logische Bereitstellungseinheit bereitstellen und verwalten (oder weitere Tools suchen, die dies ermöglichen).
+Die meisten Anwendungen werden aus einer Kombination verschiedener Ressourcentypen (z. B. ein oder mehrere virtuelle Computer und Speicherkonten, SQL-Datenbank, virtuelles Netzwerk oder ein Content Delivery Network) erstellt. Die standardmäßige Azure-Service-Management-API und das klassische Azure-Portal stellte diese Elemente mithilfe eines Ansatzes auf Dienstbasis dar. Bei dieser Vorgehensweise müssen Sie die einzelnen Dienste einzeln und nicht als eine logische Bereitstellungseinheit bereitstellen und verwalten (oder weitere Tools suchen, die dies ermöglichen).
 
 *Azure-Ressourcen-Manager-Vorlagen* ermöglichen Ihnen jedoch, diese verschiedenen Ressourcen als eine logische Bereitstellungseinheit auf deklarative Weise bereitzustellen und zu verwalten. Anstatt Azure imperativisch mitzuteilen, wie ein Befehl nach dem anderen bereitgestellt wird, beschreiben Sie die gesamte Bereitstellung in einer JSON-Datei – alle Ressourcen und zugeordnete Konfigurations- und Bereitstellungsparameter – und geben an Azure weiter, dass diese Ressourcen als eine Gruppe bereitgestellt werden sollen.
 
@@ -96,7 +104,7 @@ Sie können dann den gesamten Lebenszyklus der Gruppenressourcen mithilfe von Re
 - Vorgänge zu überwachen.
 - Ressourcen mit zusätzlichen Metadaten zur besseren Nachverfolgung auszuzeichnen.
 
-Weitere Informationen zu Azure-Ressourcengruppen und dazu, wie Sie sie nutzen können, finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md). Wenn Sie am Erstellen von Vorlagen interessiert sind, finden Sie Informationen unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](../resource-group-authoring-templates.md).
+Weitere Informationen zu Azure-Ressourcengruppen und wie Sie sie nutzen können finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md). Weitere Informationen zum Erstellen von Vorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](../resource-group-authoring-templates.md).
 
 ## <a id="quick-create-a-vm-in-azure"></a>Aufgabe: Schnelles Erstellen eines virtuellen Computers in Azure
 
@@ -118,7 +126,7 @@ Erstellen Sie zunächst die Ressourcengruppe.
     info:    group create command OK
 
 
-Zweitens benötigen Sie ein Image. Informationen zur Suche eines Images mit der Azure-CLI finden Sie unter [Navigieren zwischen und Aussuchen von Images virtueller Azure-Computer mit Windows PowerShell und der Azure-Befehlszeilenschnittstelle](resource-groups-vm-searching.md). Doch für diesen Artikel finden Sie hier eine kurze Liste beliebter Images. Für diese Schnellerfassung verwenden wir das CoreOSs Stable-Image.
+Zweitens benötigen Sie ein Image. Informationen zur Suche eines Images mit der Azure-CLI finden Sie unter [Navigieren zwischen und Aussuchen von Azure Virtual Machine-Images mit Windows PowerShell und der Azure-Befehlszeilenschnittstelle](resource-groups-vm-searching.md). Doch für diesen Artikel finden Sie hier eine kurze Liste beliebter Images. Für diese Schnellerfassung verwenden wir das CoreOSs Stable-Image.
 
 > [AZURE.NOTE]Sie können für "ComputeImageVersion" sowohl in der Vorlagensprache als auch in der Azure-Befehlszeilenschnittstelle auch einfach "latest" als Parameter angeben. Dies ermöglicht es Ihnen, immer die neueste gepatchte Version des Image zu verwenden, ohne Ihre Skripts oder Vorlagen ändern zu müssen. Dies wird nachfolgend gezeigt.
 
@@ -429,7 +437,7 @@ Sobald Sie diese Werte eingegeben haben, können Sie eine Gruppe erstellen und d
 
 Sobald Sie die Parameterwerte bereit haben, müssen Sie für die Vorlagenbereitstellung eine Ressourcengruppe erstellen und dann die Vorlage bereitstellen.
 
-Geben Sie zum Erstellen der Ressourcengruppe `azure group create <group name> <location>` mit dem Namen der gewünschten Gruppe ein sowie den Ort des Datencenters, in dem Sie die Gruppe bereitstellen möchten. Dies geschieht schnell:
+Geben Sie zum Erstellen der Ressourcengruppe `azure group create <group name> <location>` mit dem Namen der gewünschten Gruppe ein sowie den Ort des Rechenzentrums, in dem Sie die Gruppe bereitstellen möchten. Dies geschieht schnell:
 
     azure group create myResourceGroup westus
     info:    Executing command group create
@@ -687,7 +695,7 @@ Auch hier müssen Sie die Werte finden, die Sie für die Parameter eingeben, die
 
 Natürlich benötigen Sie dafür eine VHD-Datei. Sie können entweder eine bereits vorhandene Datei in Azure verwenden oder eine hochladen.
 
-Informationen zu einer Windows-basierten virtuellen Maschine finden Sie in [Erstellen und Hochladen einer Windows Server-VHD in Azure](virtual-machines-create-upload-vhd-windows-server.md).
+Informationen zu Windows-basierten virtuellen Computern finden Sie in [Erstellen und Hochladen einer Windows Server-VHD in Azure](virtual-machines-create-upload-vhd-windows-server.md).
 
 Anweisungen für Linux-basierte virtuelle Computer finden Sie unter [Erstellen und Hochladen einer virtuellen Festplatte, die das Linux-Betriebssystem enthält](virtual-machines-linux-create-upload-vhd.md).
 
@@ -757,7 +765,7 @@ Die Ausgabe sollte wie folgt angezeigt werden:
     info:    group deployment create command OK
 
 
-## <a id="deploy-a-multi-vm-application-that-uses-a-virtual-network-and-an-external-load-balancer"></a>Aufgabe: Bereitstellen einer Anwendung mit mehreren virtuellen Computern, die ein virtuelles Netzwerk und einen externen Load Balancer verwendet
+## <a id="deploy-a-multi-vm-application-that-uses-a-virtual-network-and-an-external-load-balancer"></a>Aufgabe: Bereitstellen einer Anwendung mit mehreren virtuellen Computern, die ein virtuelles Netzwerk und einen Load Balancer verwendet
 
 Mit dieser Vorlage können Sie zwei virtuelle Computer unter einem Load Balancer erstellen und eine Lastenausgleichsregel für Port 80 konfigurieren. Diese Vorlage stellt außerdem ein Speicherkonto, virtuelles Netzwerk, eine öffentliche IP-Adresse, Verfügbarkeitsgruppe und Netzwerkschnittstellen bereit.
 
@@ -767,7 +775,7 @@ Befolgen Sie diese Anweisungen zum Bereitstellen einer Anwendung mit mehreren vi
 
 ### Schritt 1: Untersuchen der JSON-Datei für die Vorlage
 
-Dies ist der Inhalt der JSON-Datei für die Vorlage. Wenn Sie die neueste Version möchten, diese finden Sie [hier](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-2-vms-loadbalancer-lbrules/azuredeploy.json). In diesem Thema wird der Switch `--template-uri` verwendet, um die Vorlage aufzurufen, aber Sie können auch den Switch `--template-file` nehmen, um eine lokale Version zu übergeben.
+Dies ist der Inhalt der JSON-Datei für die Vorlage. Die neueste Version befindet sich im [GitHub-Repository für Vorlagen](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-2-vms-loadbalancer-lbrules/azuredeploy.json) (in englischer Sprache). In diesem Thema wird der Switch `--template-uri` verwendet, um die Vorlage aufzurufen, aber Sie können auch den Switch `--template-file` nehmen, um eine lokale Version zu übergeben.
 
 
     {
@@ -1171,7 +1179,7 @@ Beachten Sie, dass diese Vorlage ein Windows Server-Image bereitstellt. Allerdin
 
 ## <a id="remove-a-resource-group"></a>Aufgabe: Entfernen einer Ressourcengruppe
 
-Beachten Sie, dass Sie zu einer Ressourcengruppe erneut bereitstellen können. Aber wenn Sie mit einer Gruppe fertig sind, können Sie sie mit `azure group delete <group name>` löschen.
+Beachten Sie, dass erneute Bereitstellungen in einer Ressourcengruppe möglich sind. Wenn Sie eine Ressourcengruppe jedoch nicht mehr benötigen, können Sie sie mit `azure group delete <group name>` löschen.
 
     azure group delete myResourceGroup
     info:    Executing command group delete
@@ -1183,7 +1191,7 @@ Beachten Sie, dass Sie zu einer Ressourcengruppe erneut bereitstellen können. A
 
 Dieses tritt häufig beim Erstellen oder Verwenden von Vorlagen auf. Der Aufruf zur Anzeige von Bereitstellungsprotokollen für eine Gruppe ist `azure group log show <groupname>`. Es werden eine Menge Informationen angezeigt, die für das Verständnis hilfreich sind, warum etwas passiert ist oder auch nicht. (Weitere Informationen zur Problembehandlung für Ihre Bereitstellungen sowie andere Informationen zu Problemen finden Sie unter [Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure](resource-group-deploy-debug.md).)
 
-Auf bestimmte Ziel-Fehler z. B. können Sie Tools wie **Jq** verwenden, um Dinge genauer abzufragen. Zum Beispiel, welche individuellen Fehler Sie korrigieren müssen. Im folgenden Beispiel wird **jq** zum Analysieren eines Bereitstellungsprotokolls für **lbgroup** verwendet, um nach Fehlern zu suchen.
+Auf bestimmte Ziel-Fehler z. B. können Sie Tools wie **Jq** verwenden, um Dinge genauer abzufragen. Zum Beispiel, welche individuellen Fehler Sie korrigieren müssen. Im folgenden Beispiel wird **jq** zum Analysieren eines Bereitstellungsprotokolls für die **lbgroup** verwendet, um nach Fehlern zu suchen.
 
     azure group log show lbgroup -l --json | jq '.[] | select(.status.value == "Failed") | .properties'
 
@@ -1264,7 +1272,7 @@ Suchen Sie dann nach "myVM1":
 
 ## <a id="log-on-to-a-linux-based-virtual-machine"></a>Aufgabe: Anmelden bei einem Linux-basierten virtuellen Computer
 
-In der Regel sind Linux-Computer über SSH verbunden. Weitere Informationen finden Sie unter [Gewusst wie: Verwenden von SSH mit Linux auf Azure](virtual-machines-linux-use-ssh-key.md).
+In der Regel sind Linux-Computer über SSH verbunden. Weitere Informationen finden Sie unter [Verwenden von SSH mit Linux auf Azure](virtual-machines-linux-use-ssh-key.md).
 
 ## <a id="stop-a-virtual-machine"></a>Aufgabe: Anhalten eines virtuellen Computers
 
@@ -1297,8 +1305,8 @@ Anschließend müssen Sie den Datenträger wie gewohnt in Linux (oder Windows) e
 
 ## Nächste Schritte
 
-Viele weitere Verwendungsbeispiele für die Azure-Befehlszeilenschnittstelle mit dem **arm**-Modus finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows mit dem Azure-Ressourcen-Manager](xplat-cli-azure-resource-manager.md). Weitere Informationen über die Konzepte und Azure-Ressourcen erhalten Sie unter [Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md).
+Viele weitere Verwendungsbeispiele für die Azure-Befehlszeilenschnittstelle mit dem **arm**-Modus finden Sie unter [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Azure-Ressourcen-Manager](xplat-cli-azure-resource-manager.md). Weitere Informationen zu Azure-Ressourcen und deren Konzepten erhalten Sie unter [Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md).
 
 Weitere Vorlagen finden Sie unter [Azure-Schnellstartvorlagen](http://azure.microsoft.com/documentation/templates/) und [Erstellen von Anwendungsframeworks mithilfe von Vorlagen](virtual-machines-app-frameworks.md).
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1217_2015-->

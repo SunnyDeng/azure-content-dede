@@ -1,27 +1,32 @@
-<properties 
-	pageTitle="Verwalten von Mobile Services über die Befehlszeile | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie Azure Mobile Services mithilfe von Befehlszeilentools erstellen, bereitstellen und verwalten." 
-	services="mobile-services" 
-	documentationCenter="Mobile" 
-	authors="ggailey777" 
-	manager="dwrede" 
+<properties
+	pageTitle="Verwalten von Mobile Services über die Befehlszeile | Microsoft Azure"
+	description="Erfahren Sie, wie Sie Azure Mobile Services mithilfe von Befehlszeilentools erstellen, bereitstellen und verwalten."
+	services="mobile-services"
+	documentationCenter="Mobile"
+	authors="ggailey777"
+	manager="dwrede"
 	editor=""/>
 
-<tags 
-	ms.service="mobile-services" 
-	ms.workload="mobile" 
-	ms.tgt_pltfrm="NA" 
-	ms.devlang="multiple" 
-	ms.topic="article" 
-	ms.date="11/02/2015" 
+<tags
+	ms.service="mobile-services"
+	ms.workload="mobile"
+	ms.tgt_pltfrm="NA"
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.date="11/02/2015"
 	ms.author="glenga"/>
 
-# Automatisieren von mobilen Diensten mit Befehlszeilentools 
+# Automatisieren von mobilen Diensten mit Befehlszeilentools
+
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 
 ##Übersicht
 
 In diesem Thema erfahren Sie, wie Sie die Azure-Befehlszeilentools verwenden, um das Erstellen und Verwalten von Azure Mobile Services zu automatisieren. In diesem Thema erfahren Sie, wie Sie mithilfe der Befehlszeilentools die Installation und die ersten Schritte vornehmen und wie Sie diese Tools einsetzen, um die wichtigsten Mobile Services-Aufgaben durchzuführen.
- 
+
 Bei der Zusammenführung in eine einzelne Skript- oder Batch-Datei automatisieren diese individuellen Befehle den Erstellungs-, den Verifizierungs- oder den Löschungsvorgang eines mobilen Diensts.
 
 In diesem Thema wird eine Auswahl von allgemeinen Verwaltungsaufgaben behandelt, die von den Azure-Befehlszeilentools unterstützt werden. Weitere Informationen finden Sie unter [Azure-Befehlszeilentools-Dokumentation][reference-docs].
@@ -46,7 +51,7 @@ Laden Sie zunächst Ihre Veröffentlichungseinstellungen herunter, und importier
 
 	azure account download
 
-Ihr Standardbrowser wird geöffnet, und Sie werden aufgefordert, sich beim Verwaltungsportal anzumelden. Nachdem Sie sich angemeldet haben, wird die `.publishsettings`-Datei heruntergeladen. Notieren Sie sich den Speicherort, unter dem die Datei gespeichert wird.
+Ihr Standardbrowser wird geöffnet, und Sie werden aufgefordert, sich beim klassischen Azure-Portal anzumelden. Nachdem Sie sich angemeldet haben, wird die `.publishsettings`-Datei heruntergeladen. Notieren Sie sich den Speicherort, unter dem die Datei gespeichert wird.
 
 Importieren Sie als Nächstes die `.publishsettings`-Datei, indem Sie den folgenden Befehl ausführen und dabei `<path-to-settings-file>` durch den Pfad zu Ihrer `.publishsettings`-Datei ersetzen:
 
@@ -104,9 +109,9 @@ Mit dem folgenden Befehl wird eine neue Tabelle erstellt, die die öffentliche B
 
 	azure mobile table create <service-name> <table-name> -p read=public,delete=admin
 
-Die folgende Tabelle enthält den Skriptberechtigungswert im Gegensatz zum Berechtigungswert im [Azure-Verwaltungsportal].
+Die folgende Tabelle enthält den Skriptberechtigungswert im Gegensatz zum Berechtigungswert im [klassischen Azure-Portal].
 
-|Skriptwert|Verwaltungsportalwert| |========|========| |`public`|Jeder| |`application`(Standard)|Jeder mit dem Anwendungsschlüssel| |`user`|Nur authentifizierte Benutzer| |`admin`|Nur Skripts und Admins|
+|Skriptwert|Portalwert| |========|========| |`public`|Jeder| |`application`(Standard)|Jeder mit dem Anwendungsschlüssel| |`user`|Nur authentifizierte Benutzer| |`admin`|Nur Skripts und Admins|
 
 Der Befehl `mobile table create` schlägt fehl, wenn die angegebene Tabelle bereits vorhanden ist. Sie sollten bei Ihren automatisierten Skripts eine Tabelle löschen, bevor Sie diese neu zu erstellen versuchen.
 
@@ -140,7 +145,7 @@ Die Funktionsdeklaration in der Skriptdatei muss ebenfalls mit dem registrierten
 
 	function insert(item, user, request) {
 	    ...
-	} 
+	}
 
 Weitere Informationen über das Registrieren von Skripts finden Sie unter [Mobile Services: Serverskriptreferenz].
 
@@ -173,7 +178,7 @@ Weitere Informationen über das Registrieren von Skripts finden Sie unter [Mobil
 <!-- URLs. -->
 [Mobile Services: Serverskriptreferenz]: http://go.microsoft.com/fwlink/p?LinkId=262293
 
-[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
+[klassischen Azure-Portal]: https://manage.windowsazure.com/
 [nodejs-org]: http://nodejs.org/
 [install-node-linux]: https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager
 
@@ -182,6 +187,4 @@ Weitere Informationen über das Registrieren von Skripts finden Sie unter [Mobil
 [reference-docs]: http://azure.microsoft.com/documentation/articles/virtual-machines-command-line-tools/#Commands_to_manage_mobile_services
 [Installation der Azure-Befehlszeilentools für Mac und Linux]: http://go.microsoft.com/fwlink/p/?LinkId=275795
 
- 
-
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

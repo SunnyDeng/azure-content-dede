@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Grundlegendes zu Azure Marketplace-Auszahlungsberichten | Microsoft Azure"
-   description="Informationen zum Überprüfen und Erfassen des Azure Marketplace-Auszahlungsberichts."
+   pageTitle="Grundlegendes zu Azure Marketplace-Auszahlungsberichten | Microsoft Azure"
+   description="Informationen zum Überprüfen und Erfassen des Azure Marketplace-Auszahlungsberichts."
    services="marketplace-publishing"
    documentationCenter="na"
    authors="v-jeana"
@@ -16,29 +16,29 @@
    ms.date="10/12/2015"
    ms.author="v-jeana; hascipio"/>
 
-# Grundlegendes zu Azure Marketplace-Auszahlungsberichten
+# Grundlegendes zu Azure Marketplace-Auszahlungsberichten
 
-## Zugriff auf Ihren Auszahlungsbericht
+## Aufrufen Ihres Auszahlungsberichts
 
 Einige Auszahlungsberichte stehen unter https://publish.windowsazure.com zur Verfügung. Berichte sind 45 Tage nach Ende des Quartals verfügbar und werden abzüglich etwaiger Rückerstattungen berechnet.
 
   ![accessingpayoutreport][1]
 
-  1. Navigieren Sie zum Veröffentlichungsportal unter https://publish.windowsazure.com.
+  1. Navigieren Sie zum Veröffentlichungsportal (https://publish.windowsazure.com).
   2. Klicken Sie im Abschnitt **Herausgeber** auf **Auszahlungsberichte**.
-  3. Wenn Sie auf die Dropdownliste klicken, werden alle verfügbaren vierteljährlichen Auszahlungsberichte angezeigt.
+  3. Klicken Sie auf die Dropdownliste, um alle verfügbaren vierteljährlichen Auszahlungsberichte anzuzeigen.
 
-## Lesen des Auszahlungsberichts
+## Lesen Ihres Auszahlungsberichts
 
-Im Auszahlungsbericht für jedes Quartal werden alle erfolgten Transaktionen im betreffenden Quartal aufgezeichnet.
+Im Auszahlungsbericht für die einzelnen Quartale werden alle Transaktionen für das betreffende Quartal erfasst.
 
-- Wenn Sie Kontoeinträge in Bezug auf ein bestimmtes Quartal suchen, wählen Sie in der Dropdownliste den Auszahlungsbericht für dieses Quartal. Wenn Sie z. B. an Kontoeinträgen für April bis zum 15. Juni interessiert sind, wählen Sie in der Dropdownliste "April – 15. Juni" aus.
-- Wenn Sie Details zu Auszahlungen in Bezug auf ein bestimmtes Quartal suchen, wählen Sie den Auszahlungsbericht für das nachfolgende Quartal aus. Wenn Sie beispielsweise an Auszahlungen von April bis zum 15. Juni Interesse haben, werden diese Auszahlungen im nachfolgenden Auszahlungsbericht für Juli bis zum 15. September angezeigt.
+- Wenn Sie nach Posten für ein bestimmtes Quartal suchen möchten, wählen Sie in der Dropdownliste den Auszahlungsbericht für das betreffende Quartal aus. Wenn Sie sich also beispielsweise für Posten zwischen April und Juni 2015 interessieren, wählen Sie in der Dropdownliste den entsprechenden Datumsbereich aus.
+- Wenn Sie nach Details zu Auszahlungen für ein bestimmtes Quartal suchen, wählen Sie den Auszahlungsbericht für das Folgequartal aus. Wenn Sie sich also etwa für die Auszahlungen zwischen April und Juni 2015 interessieren, finden Sie die entsprechenden Beträge im Auszahlungsbericht für Juli bis September 2015.
 
 ![readingpayoutreport][2]
 
-- Der Bereich mit der Finanzübersicht zeigt Salden, Soll und Haben nach Kategorie
-- Kontoeinträge mit einzelnen Transaktionen
+- Der Bereich mit der Finanzübersicht zeigt Salden sowie Soll und Haben nach Kategorie.
+- Posten zeigen einzelne Transaktionen.
 
 ## Definitionen
 
@@ -52,7 +52,7 @@ Im Auszahlungsbericht für jedes Quartal werden alle erfolgten Transaktionen im 
 
 ## Fragen zur Auszahlung
 
-Wenn Sie eine Frage im Zusammenhang mit Ihren Auszahlungen haben, wenden Sie sich an unser Supportteam.
+Wenden Sie sich bei Fragen zu Ihren Auszahlungen an unser Supportteam.
 
 ![payoutquestions][5]
 
@@ -61,9 +61,9 @@ Wenn Sie eine Frage im Zusammenhang mit Ihren Auszahlungen haben, wenden Sie sic
 3. Wählen Sie **Auf Auszahlungen bezogene Anfragen** aus.
 4. Klicken auf **Anforderung starten**.
 
-## Nächste Schritte: Andere Supportanfragen
+## Nächste Schritte
 
-Melden Sie für die folgenden Probleme das Problem bei https://portal.azure.com.
+Erstellen Sie bei anderen Problemen eine Supportanfrage unter https://portal.azure.com.
 
 [1]: ./media/marketplace-publishing-report-payout/accessingpayoutreport.png
 [2]: ./media/marketplace-publishing-report-payout/readingpayoutreport.png
@@ -71,4 +71,4 @@ Melden Sie für die folgenden Probleme das Problem bei https://portal.azure.com.
 [4]: ./media/marketplace-publishing-report-payout/ledgerdefinitions.png
 [5]: ./media/marketplace-publishing-report-payout/payoutquestions.png
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=Nov15_HO4-->

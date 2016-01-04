@@ -22,7 +22,7 @@
 
 Sie können Programme oder Skripts in WebJobs auf drei Arten in Ihrer [App Service](http://go.microsoft.com/fwlink/?LinkId=529714)-Web-App ausführen: bei Bedarf, kontinuierlich oder nach einem Zeitplan. Für die Nutzung von WebJobs fallen keine zusätzlichen Kosten an.
 
-Dieser Artikel zeigt, wie Sie WebJobs mithilfe des [Azure-Portals](http://go.microsoft.com/fwlink/?LinkId=529715) bereitstellen. Informationen zum Bereitstellen über Visual Studio oder einen kontinuierlichen Bereitstellungsprozess finden Sie unter [Bereitstellen von Azure WebJobs in Azure-Web-Apps](websites-dotnet-deploy-webjobs.md).
+Dieser Artikel zeigt, wie Sie WebJobs mithilfe des [Azure-Portals](https://portal.azure.com) bereitstellen. Informationen zum Bereitstellen über Visual Studio oder einen kontinuierlichen Bereitstellungsprozess finden Sie unter [Bereitstellen von Azure WebJobs in Azure-Web-Apps](websites-dotnet-deploy-webjobs.md).
 
 Das Azure WebJobs-SDK vereinfacht zahlreiche WebJobs-Programmieraufgaben. Weitere Informationen finden Sie unter [Was ist das WebJobs-SDK?](websites-dotnet-webjobs-sdk.md).
 
@@ -104,9 +104,9 @@ Weitere Beispiele für CRON-Zeitpläne:
 
 Bei dem folgenden alternativen Verfahren wird Azure Scheduler genutzt. In diesem Fall muss WebJob über keine direkten Kenntnis des Zeitplans verfügen. Azure Scheduler wird stattdessen so konfiguriert, dass der WebJob nach einem Zeitplan ausgelöst wird.
 
-Das Azure-Verwaltungsportal bietet noch nicht die Möglichkeit, einen geplanten Webauftrag zu erstellen. Bis diese Funktion implementiert wurde, können Sie hierfür das [alte Portal](http://manage.windowsazure.com) verwenden.
+Das Azure-Portal bietet noch nicht die Möglichkeit, einen geplanten Webauftrag zu erstellen. Bis diese Funktion implementiert wurde, können Sie hierfür das [klassische Portal](http://manage.windowsazure.com) verwenden.
 
-1. Navigieren Sie im [alten Portal](http://manage.windowsazure.com) zur Webauftragsseite, und klicken Sie auf **Hinzufügen**.
+1. Navigieren Sie im [klassischen Portal](http://manage.windowsazure.com) zur Webauftragsseite, und klicken Sie auf **Hinzufügen**.
 
 1. Wählen Sie im Feld **Ausführungshäufigkeit** die Option **Gemäß einem Zeitplan ausführen** aus.
 	
@@ -152,7 +152,7 @@ Das Azure-Verwaltungsportal bietet noch nicht die Möglichkeit, einen geplanten 
 	
 ### <a name="Scheduler"></a>Geplante Aufträge und Azure Scheduler
 
-Geplante Aufträge können auf den Seiten im Azure Scheduler des [alten Portals](http://manage.windowsazure.com) weiter konfiguriert werden.
+Geplante Aufträge können auf den Seiten im Azure Scheduler des [klassischen Portals](http://manage.windowsazure.com) weiter konfiguriert werden.
 
 1.	Klicken Sie auf der Seite **WebJobs** auf den Link Zeitplan des Auftrags, um zur Azure Scheduler-Portalseite zu navigieren. 
 	
@@ -239,4 +239,4 @@ Weitere Informationen finden Sie unter [Empfohlene Ressourcen für Azure WebJobs
 [JobActionPageInScheduler]: ./media/web-sites-create-web-jobs/33JobActionPageInScheduler.png
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

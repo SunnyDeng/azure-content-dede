@@ -1,19 +1,19 @@
 
-<properties 
-    pageTitle="Bewährte Methoden für Azure RemoteApp-Clients"
-    description="Erfahren Sie mehr über bewährte Methoden für die Verwendung der RemoteApp-Clients" 
-    services="remoteapp" 
-    documentationCenter="" 
-    authors="lizap" 
+<properties
+    pageTitle="Bewährte Methoden für Azure RemoteApp-Clients | Microsoft Azure"
+    description="Erfahren Sie mehr über bewährte Methoden für die Verwendung der RemoteApp-Clients"
+    services="remoteapp"
+    documentationCenter=""
+    authors="lizap"
     manager="mbaldwin" />
 
-<tags 
-    ms.service="remoteapp" 
-    ms.workload="compute" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="article" 
-    ms.date="08/12/2015" 
+<tags
+    ms.service="remoteapp"
+    ms.workload="compute"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="12/05/2015"
     ms.author="elizapo" />
 
 
@@ -25,6 +25,5 @@ Die folgenden Informationen können Ihnen bei der Verwendung von Azure RemoteApp
 - Verwenden Sie immer den neuesten Client. Dadurch wird sichergestellt, dass die Clientversion, die Sie ausführen, über die neuesten Fehlerbehebungen, Verbesserungen und Funktionen verfügt. Sie müssen sich möglicherweise beim entsprechenden Store anmelden, um automatisch Updates für den Client zu erhalten.
 
 - RemoteApp meldet Sie automatisch ab, wenn Sie für einen bestimmten Zeitraum inaktiv sind. Um Datenverluste zu vermeiden, wird empfohlen, Ihre Anwendungen zu schließen, wenn Sie die Nutzung des Diensts beenden.
- 
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

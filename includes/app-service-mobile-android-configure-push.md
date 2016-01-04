@@ -1,14 +1,15 @@
 
-1. Klicken Sie im Azure-Portal auf **Alle durchsuchen**, dann auf **Mobile Apps** und anschließend auf die mobile App, die Sie gerade erstellt haben.
+1. Klicken Sie im [Azure-Portal](https://azure.portal.com/) auf **Durchsuchen** > **Anwendungsdienste**, suchen Sie Ihr Mobile App-Back-End > **Alle Einstellungen** und klicken Sie darauf. Wählen Sie anschließend **Mobile** und klicken Sie auf **Push**.
 
-2. Klicken Sie auf dem Blatt im Abschnitt **Related** auf **Push notification services**, anschließend auf **Google Cloud Messaging**, geben Sie den im letzten Schritt von GCM erhaltenen **API-Schlüssel** ein, und klicken Sie dann auf **Speichern**.
+2. Im Pushbenachrichtigungsdienst klicken Sie auf **Google (GCM)**, geben den **API-Schlüssel** ein, den Sie von GCM im vorherigen Verfahren erhalten haben, und klicken dann auf **Speichern**.
 
-    ![][1]
+    ![Festlegen des GCM-API-Schlüssels im Portal](./media/app-service-mobile-android-configure-push/mobile-push-api-key.png)
+
+Das Mobile App-Back-End ist jetzt so konfiguriert, dass es auf GCM zurückgreift, um Pushbenachrichtigungen von Ihrer auf einem Android-Gerät ausgeführten App über den Benachrichtigungs-Hub zu senden.
 
 <!-- URLs. -->
-[Azure Portal]: https://azure.portal.com/
+
 
 <!-- images -->
-[1]: ./media/app-service-mobile-android-configure-push/mobile-push-api-key.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

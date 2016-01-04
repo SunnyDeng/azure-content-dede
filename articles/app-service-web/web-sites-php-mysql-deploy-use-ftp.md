@@ -46,7 +46,7 @@ Mithilfe dieses Lernprogramms erstellen Sie eine einfache Web-App für die Regis
 Befolgen Sie diese Schritte, um eine Web-App und eine MySQL-Datenbank zu erstellen:
 
 1. Melden Sie sich beim [Azure-Portal][management-portal] an.
-2. Klicken Sie unten links im Portal auf das Symbol **+ Neu**.
+2. Klicken Sie unten links im Azure-Portal auf das Symbol **+ Neu**.
 
 	![Neue Azure-Website erstellen][new-website]
 
@@ -300,4 +300,4 @@ Weitere Informationen finden Sie im [PHP Developer Center](/develop/php/).
 [download-publish-profile]: ./media/web-sites-php-mysql-deploy-use-ftp/download_publish_profile_3.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

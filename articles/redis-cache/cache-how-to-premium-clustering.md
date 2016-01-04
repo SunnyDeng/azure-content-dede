@@ -13,17 +13,15 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/09/2015" 
+	ms.date="12/11/2015" 
 	ms.author="sdanie"/>
 
 # Konfigurieren von Redis-Clustern für Azure Redis Cache vom Typ "Premium"
-Für Azure Redis Cache stehen verschiedene Cacheangebote bereit, die Flexibilität bei der Auswahl von Cachegröße und -funktionen bieten, einschließlich des neuen Premium-Tarifs, der sich derzeit in der Vorschauphase befindet.
+Für Azure Redis Cache stehen verschiedene Cacheangebote bereit, die Flexibilität bei der Auswahl von Cachegröße und -features bieten, einschließlich des neuen Premium-Tarifs.
 
 Der Premium-Tarif für Azure Redis Cache umfasst Clustering, Persistenz und Unterstützung des virtuellen Netzwerks. In diesem Artikel wird erläutert, wie Cluster in einer Azure Redis Cache-Instanz vom Typ "Premium" konfiguriert werden.
 
 Informationen zu anderen Funktionen des Premium-Caches finden Sie unter [Konfigurieren von Persistenz für Azure Redis Cache vom Typ "Premium"](cache-how-to-premium-persistence.md) und [Konfigurieren der Unterstützung virtueller Netzwerke für Azure Redis Cache vom Typ "Premium"](cache-how-to-premium-vnet.md).
-
->[AZURE.NOTE]Der Premium-Tarif von Azure Redis Cache befindet sich derzeit in der Vorschauphase.
 
 ## Was ist Redis Cluster?
 Azure Redis Cache umfasst Redis Cluster entsprechend der [Implementierung in Redis](http://redis.io/topics/cluster-tutorial). Redis Cluster bringt Ihnen die folgenden Vorteile.
@@ -38,11 +36,11 @@ Ausführliche Informationen zu Größe, Durchsatz und Bandbreite von Premium-Cac
 In Azure wird Redis Cluster als Modell aus primärem Cache und Replikatcache angeboten, in dem jeder Shard über ein Paar aus primärem Cache und Replikatcache mit Replikation verfügt und die Replikation mit dem Azure Redis Cache-Dienst verwaltet wird.
 
 ## Clustering
-Clustering wird während der Erstellung des Caches auf dem Blatt **Neuer Redis-Cache** konfiguriert. Um einen Cache zu erstellen, melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an, und klicken Sie auf **Neu** > **Daten und Speicher** > **Redis Cache**.
+Clustering wird während der Erstellung des Caches auf dem Blatt **Neuer Redis Cache** aktiviert. Um einen Cache zu erstellen, melden Sie sich beim [Azure-Portal](https://portal.azure.com) an, und klicken Sie auf **Neu** > **Daten und Speicher** > **Redis Cache**.
 
 ![Erstellen eines Redis-Cache][redis-cache-new-cache-menu]
 
-Zum Konfigurieren des Clustering wählen Sie zunächst auf dem Blatt **Wählen Sie Ihren Tarif** eine der **Premium**-Optionen für den Cache aus.
+Zum Konfigurieren des Clusterings wählen Sie zunächst auf dem Blatt **Wählen Sie Ihren Tarif** eine der **Premium**-Optionen für den Cache aus.
 
 ![Tarif auswählen][redis-cache-premium-pricing-tier]
 
@@ -57,6 +55,38 @@ Jeder Shard ist ein Paar aus primärem Cache und Replikatcache, das in Azure ver
 ![Clustering][redis-cache-clustering-selected]
 
 Nach der Erstellung des Caches können Sie eine Verbindung mit dem Cache herstellen und ihn genauso wie einen nicht gruppierten Cache verwenden. Redis verteilt die Daten auf alle Cache-Shards. Wenn die Diagnosefunktion [aktiviert](cache-how-to-monitor.md#enable-cache-diagnostics) ist, werden Metriken für jeden Shard separat erfasst und können auf dem Redis Cache-Blatt [angezeigt](cache-how-to-monitor.md) werden.
+
+>[AZURE.IMPORTANT]Wenn Sie mithilfe von StackExchange.Redis eine Verbindung zu einem Azure Redis Cache mit Clusterunterstützung herstellen, tritt möglicherweise ein Problem auf und Sie erhalten `MOVE`-Ausnahmen. Dazu kann es kommen, weil es kurze Zeit dauert, bis der StackExchange.Redis-Cacheclient die Informationen zu den Knoten im Cachecluster gesammelt hat. Diese Ausnahmen können auftreten, wenn Sie zum ersten Mal eine Verbindung mit dem Cache herstellen und direkt Aufrufe an ihn senden, bevor der Client mit dem Sammeln dieser Informationen fertig ist. Die einfachste Möglichkeit zur Lösung des Problems in Ihrer Anwendung ist, eine Verbindung mit dem Cache herzustellen und dann eine Sekunde zu warten, bevor Sie Aufrufe an den Cache senden. Dies erreichen Sie wie im folgenden Beispielcode gezeigt durch Hinzufügen von `Thread.Sleep(1000)`. Beachten Sie, dass `Thread.Sleep(1000)` nur während der ersten Verbindung mit dem Cache auftritt. Weitere Informationen finden Sie unter [StackExchange.Redis.RedisServerException – VERSCHOBEN #248](https://github.com/StackExchange/StackExchange.Redis/issues/248). Ein Update zur Behebung dieses Problems wird derzeit entwickelt. Alle Updates werden hier veröffentlicht.
+
+	private static Lazy<ConnectionMultiplexer> lazyConnection = new Lazy<ConnectionMultiplexer>(() =>
+	{
+        // Connect to the Redis cache for the first time
+	    var connection =  ConnectionMultiplexer.Connect("contoso5.redis.cache.windows.net,abortConnect=false,ssl=true,password=...");
+
+		// Wait for 1 second
+		Thread.Sleep(1000);
+
+		// Return the connected ConnectionMultiplexer
+		return connection;
+	});
+	
+	public static ConnectionMultiplexer Connection
+	{
+	    get
+	    {
+	        return lazyConnection.Value;
+	    }
+	}
+
+## Hinzufügen oder Entfernen von Shards aus einem ausgeführten Premium-Cache
+
+Klicken Sie zum Hinzufügen oder Entfernen von Shards aus einem ausgeführten Premium-Cache mit aktivierter Clusterunterstützung auf **(PREVIEW) Redis Cluster Size** auf dem Blatt **Einstellungen**.
+
+>[AZURE.NOTE]Beachten Sie, dass sich trotz allgemeiner Verfügbarkeit der Azure Redis Cache in der Premium-Stufe das Feature Redis-Clustergröße derzeit in der Vorschau befindet.
+
+![Redis-Clustergröße][redis-cache-redis-cluster-size]
+
+Um die Anzahl der Shards zu ändern, verwenden Sie den Schieberegler, oder geben Sie eine Zahl zwischen 1 und 10 im Textfeld **Shardanzahl** ein, und klicken Sie zum Speichern auf **OK**.
 
 ## Clustering – häufig gestellte Fragen
 
@@ -111,7 +141,7 @@ Ersetzen Sie für SSL `1300N` durch `1500N`.
 
 ## Kann ich das Clustering für einen bereits erstellten Cache konfigurieren?
 
-Während der Vorschauphase können Sie das Clustering nur bei der Erstellung eines Caches aktivieren und konfigurieren.
+Zu, aktuellen Zeitpunkt können Sie das Clustering nur aktivieren, wenn ein Cache erstellt wird. Sie können nach dem Erstellen des Caches die Anzahl der Shards ändern, jedoch einem Premium-Cache kein Clustering hinzufügen oder das Clustering von einem Premium-Cache entfernen, nachdem der Cache erstellt wurde. Ein Premium-Cache mit aktivierter Clusterunterstützung und nur einem Shard unterscheidet sich von einem Premium-Cache der gleichen Größe ohne Clustering.
 
 ## Kann ich das Clustering für einen Basic- oder Standard-Cache konfigurieren?
 
@@ -146,4 +176,6 @@ Informationen zur Verwendung weiterer Funktionen des Premium-Caches finden Sie i
 
 [redis-cache-clustering-selected]: ./media/cache-how-to-premium-clustering/redis-cache-clustering-selected.png
 
-<!---HONumber=Oct15_HO3-->
+[redis-cache-redis-cluster-size]: ./media/cache-how-to-premium-clustering/redis-cache-redis-cluster-size.png
+
+<!---HONumber=AcomDC_1217_2015-->

@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/04/2015"
+	ms.date="12/01/2015"
 	ms.author="jgao"/>
 
 # Verwalten von Hadoop-Clustern in HDInsight mit Azure PowerShell
@@ -30,13 +30,43 @@ Azure PowerShell ist eine leistungsstarke Skriptumgebung, mit der Sie die Bereit
 Bevor Sie mit diesem Artikel beginnen können, benötigen Sie Folgendes:
 
 - **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
-- **Eine Arbeitsstation mit Azure PowerShell**. Siehe [Install and use Azure PowerShell](http://azure.microsoft.com/documentation/videos/install-and-use-azure-powershell/) (Installieren und Verwenden von Azure PowerShell, in englischer Sprache).
 
-	> [AZURE.NOTE]Die in diesem Artikel bereitgestellten PowerShell-Skripts verwenden den Azure-Ressourcen-Manager-Modus. Laden Sie mit dem Microsoft-Webplattform-Installer die neueste Azure PowerShell-Version herunter, um sicherzustellen, dass die Beispiele funktionieren.
+##Installieren von Azure PowerShell 1.0 und höher
+
+Zunächst müssen Sie die 0.9x-Versionen deinstallieren.
+
+So überprüfen Sie die Version der installierten PowerShell:
+
+	Get-Module *azure*
+	
+Um die ältere Version zu deinstallieren, rufen Sie „Programme und Features“ in der Systemsteuerung auf.
+
+Es gibt zwei Hauptoptionen für die Installation von Azure PowerShell.
+
+- [PowerShell-Katalog](https://www.powershellgallery.com/). Führen Sie die folgenden Befehle in einer erweiterten PowerShell ISE oder einer Windows PowerShell-Konsole mit erhöhten Rechten aus:
+
+		# Install the Azure Resource Manager modules from PowerShell Gallery
+		Install-Module AzureRM
+		Install-AzureRM
+		
+		# Install the Azure Service Management module from PowerShell Gallery
+		Install-Module Azure
+		
+		# Import AzureRM modules for the given version manifest in the AzureRM module
+		Import-AzureRM
+		
+		# Import Azure Service Management module
+		Import-Module Azure
+
+	Weitere Informationen finden Sie unter [PowerShell Gallery](https://www.powershellgallery.com/) (in englischer Sprache).
+
+- [Microsoft Web Platform Installer (WebPI)](http://aka.ms/webpi-azps) (in englischer Sprache). Falls Sie Azure PowerShell 0.9.x installiert haben, werden Sie aufgefordert, diese Version zu deinstallieren. Wenn Sie Azure PowerShell-Module aus dem PowerShell-Katalog installiert haben, erfordert das Installationsprogramm, dass diese Module vor der Installation deinstalliert werden, um eine konsistente Azure PowerShell-Umgebung herzustellen. Anweisungen hierzu finden Sie unter [Installing Azure PowerShell 1.0 via WebPI](https://azure.microsoft.com/blog/azps-1-0/) (in englischer Sprache).
+
+WebPI wird monatlich aktualisiert. Der PowerShell-Katalog wird fortlaufend aktualisiert. Wenn Sie mit der Installation aus dem PowerShell-Katalog erst einmal vertraut sind, wird der Katalog sicherlich Ihre erste Anlaufstelle für die neusten und beliebtesten Cmdlets in Azure PowerShell.
 
 ##Erstellen von Clustern
 
-Ein HDInsight-Cluster erfordert eine Azure-Ressourcengruppe und einen Blobcontainer in einem Azure-Speicherkonto:
+Ein HDInsight-Cluster erfordert eine Azure-Ressourcengruppe und einen Blob-Container in einem Azure-Speicherkonto:
 
 - Eine Azure-Ressourcengruppe ist ein logischer Container für Azure-Ressourcen. Die Azure-Ressourcengruppe und der HDInsight-Cluster müssen sich nicht am gleichen Speicherort befinden. Weitere Informationen finden Sie unter [Verwenden von Azure PowerShell mit dem Azure-Ressourcen-Manager](powershell-azure-resource-manager.md).
 - HDInsight verwendet einen Blobcontainer eines Azure-Speicherkontos als Standarddateisystem. Sie benötigen ein Azure-Speicherkonto und einen Speichercontainer, bevor Sie ein HDInsight-Cluster erstellen können. Das Standardspeicherkonto und der HDInsight-Cluster müssen sich am gleichen Speicherort befinden.
@@ -64,7 +94,7 @@ Ein HDInsight-Cluster erfordert eine Azure-Ressourcengruppe und einen Blobcontai
 [AZURE.INCLUDE [Datencenter-Liste](../../includes/hdinsight-pricing-data-centers-clusters.md)]
 
 
-Informationen zum Erstellen eines Azure-Speicherkontos im Azure-Vorschauportal finden Sie unter [Informationen zu Azure-Speicherkonten](storage-create-storage-account.md).
+Informationen zum Erstellen eines Azure-Speicherkontos im Azure-Portal finden Sie unter [Informationen zu Azure-Speicherkonten](storage-create-storage-account.md).
 
 Falls Sie bereits ein Speicherkonto haben, jedoch den Kontonamen und den Kontoschlüssel nicht kennen, können Sie diese Informationen mit den folgenden Befehlen abrufen:
 
@@ -77,7 +107,7 @@ Ausführliche Informationen zum Abrufen dieser Informationen über das Vorschaup
 
 **So erstellen Sie einen Azure-Speichercontainer**
 
-Mit Azure PowerShell kann während der Erstellung des HDInsight-Clusters kein Blobcontainer erstellt werden. Sie können einen Container mit dem folgenden Skript erstellen:
+Mit Azure PowerShell kann während der Erstellung des HDInsight-Clusters kein Blob-Container erstellt werden. Sie können einen Container mit dem folgenden Skript erstellen:
 
 	$resourceGroupName = "<AzureResoureGroupName>"
 	$storageAccountName = "<Azure Storage Account Name>"
@@ -213,7 +243,7 @@ Zum Gewähren:
 
 >[AZURE.NOTE]Durch Gewähren/Widerrufen des Zugriffs werden der Benutzername und das Kennwort des Clusterbenutzers zurückgesetzt.
 
-Dies kann auch über das Vorschauportal erfolgen. Informationen finden Sie unter [Verwalten von HDInsight mit dem Azure-Vorschauportal][hdinsight-admin-portal].
+Dies kann auch über das Portal durchgeführt werden. Weitere Informationen finden Sie unter [Verwalten von HDInsight mit dem Azure-Portal][hdinsight-admin-portal]
 
 ##Aktualisieren von HTTP-Anmeldeinformationen
 
@@ -235,7 +265,7 @@ Das folgende PowerShell-Skript veranschaulicht, wie der Name und Schlüssel des 
 
 ##Suchen der Ressourcengruppe
 
-Im ARM-Modus gehört jeder HDInsight-Cluster einer Azure-Ressourcengruppe an. So suchen Sie die Ressourcengruppe:
+Im ARM-Modus gehört jeder HDInsight-Cluster einer Azure-Ressourcengruppe an. So finden Sie die Ressourcengruppe:
 
 	$clusterName = "<HDInsight Cluster Name>"
 	
@@ -247,15 +277,15 @@ Im ARM-Modus gehört jeder HDInsight-Cluster einer Azure-Ressourcengruppe an. So
 
 **So übermitteln Sie MapReduce-Aufträge**
 
-Siehe [Ausführen von Hadoop MapReduce-Beispielen in Windows-basiertem HDInsight](hdinsight-run-samples.md).
+Weitere Informationen finden Sie unter [Ausführen von Hadoop MapReduce-Beispielen in Windows-basiertem HDInsight](hdinsight-run-samples.md).
 
 **So übermitteln Sie Hive-Aufträge**
 
-Siehe [Ausführen von Hive-Abfragen mit PowerShell](hdinsight-hadoop-use-hive-powershell.md).
+Weitere Informationen finden Sie unter [Ausführen von Hive-Abfragen mit PowerShell](hdinsight-hadoop-use-hive-powershell.md).
 
 **So übermitteln Sie Pig-Aufträge**
 
-Siehe [Ausführen von Pig-Aufträgen mit PowerShell](hdinsight-hadoop-use-pig-powershell.md).
+Weitere Informationen finden Sie unter [Ausführen von Pig-Aufträgen mit PowerShell](hdinsight-hadoop-use-pig-powershell.md).
 
 **So übermitteln Sie Sqoop-Aufträge**
 
@@ -263,7 +293,7 @@ Weitere Informationen finden Sie unter [Verwenden von Sqoop mit HDInsight](hdins
 
 **So übermitteln Sie Oozie-Aufträge**
 
-Siehe [Verwenden von Oozie mit Hadoop zum Definieren und Ausführen eines Workflows in HDInsight](hdinsight-use-oozie.md).
+Weitere Informationen finden Sie unter [Verwenden von Oozie mit Hadoop zum Definieren und Ausführen eines Workflows in HDInsight](hdinsight-use-oozie.md).
 
 ##Hochladen von Daten in Azure-Blobspeicher
 Siehe [Hochladen von Daten in HDInsight][hdinsight-upload-data].
@@ -271,10 +301,10 @@ Siehe [Hochladen von Daten in HDInsight][hdinsight-upload-data].
 
 ## Weitere Informationen
 * [Referenzdokumentation zum HDInsight-Cmdlet][hdinsight-powershell-reference]
-* [Verwalten von HDInsight mit dem Azure-Vorschauportal][hdinsight-admin-portal]
+* [Verwalten von HDInsight mit dem Azure-Portal][hdinsight-admin-portal]
 * [Verwalten von HDInsight über eine Befehlszeilenschnittstelle][hdinsight-admin-cli]
-* [Erstellen von HDInsight-Clustern][hdinsight-provision]
-* [Hochladen von Daten zu HDInsight][hdinsight-upload-data]
+* [Erstellen von Hadoop-Clustern in HDInsight][hdinsight-provision]
+* [Hochladen von Daten in HDInsight][hdinsight-upload-data]
 * [Programmgesteuerte Übermittlung von Hadoop-Aufträgen][hdinsight-submit-jobs]
 * [Erste Schritte mit Azure HDInsight][hdinsight-get-started]
 
@@ -302,4 +332,4 @@ Siehe [Hochladen von Daten in HDInsight][hdinsight-upload-data].
 
 [image-hdi-ps-provision]: ./media/hdinsight-administer-use-powershell/HDI.PS.Provision.png
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

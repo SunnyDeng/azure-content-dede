@@ -13,7 +13,7 @@
       ms.topic="article"
       ms.tgt_pltfrm="na"
       ms.workload="na"
-      ms.date="10/08/2015"
+      ms.date="12/06/2015"
       ms.author="v-jeana; hascipio"/>
 
 # Beheben von häufig auftretenden Problemen mit dem Azure Marketplace für Herausgeber
@@ -21,23 +21,23 @@ In diesem Artikel wird im Folgenden erläutert, wie Sie einige häufige Marketpl
 
 ## Gutschriften und Rückerstattungen
 
-In einigen Fällen müssen Sie eine Gutschrift oder eine Erstattung im Auftrag eines Kunden anfordern. Der Microsoft-Support kann dabei helfen, dass Gutschrift- oder Rückerstattungsanforderungen für Ihren Kunden berücksichtigt werden und Sie rechtzeitig eine Antwort erhalten*.
+In einigen Fällen müssen Sie eine Gutschrift oder eine Erstattung im Auftrag eines Kunden anfordern. Der Microsoft-Support kann dabei helfen, dass Gutschrift- und Rückerstattungsanforderungen Ihrer Kunden berücksichtigt werden und Sie zeitnah eine Antwort erhalten.
 
-Im Folgenden erfahren Sie, wie Sie eine Gutschrift oder Erstattung im Auftrag eines Kunden anfordern.
+Im Folgenden erfahren Sie, wie Sie eine Gutschrift oder Rückerstattung im Auftrag eines Kunden anfordern.
 
-* [AZURE.NOTE]Wenn wir von einem Kunden oder einem Azure-Reseller um eine Erstattung oder eine Gutschrift gebeten werden, wenden wir dieselben Richtlinien an wie bei der Bereitstellung der Azure-Dienste. Für den Fall, dass gemäß unseren Richtlinien eine Erstattung oder Gutschrift zu entrichten ist, autorisieren Sie uns, diese Erstattung oder Gutschrift in Ihrem Namen an den Kunden oder Azure-Reseller zu leisten. Ist gemäß unseren Richtlinien keine Erstattung oder Gutschrift zu zahlen, bitten wir den Kunden oder Azure-Reseller unter Umständen, sich direkt mit Ihnen in Verbindung zu setzen.
+> [AZURE.NOTE]Wenn Microsoft von einem Kunden oder einem Azure-Reseller um eine Rückerstattung oder eine Gutschrift gebeten wird, wenden wir dieselben Richtlinien an wie bei der Bereitstellung der Azure-Dienste. Für den Fall, dass gemäß unseren Richtlinien eine Erstattung oder Gutschrift zu entrichten ist (und Sie uns in Ihrem Namen autorisieren), diese Erstattung oder Gutschrift an den Kunden oder Azure-Reseller zu leisten, werden wir diesen Vorgang proaktiv abwickeln. Ist gemäß unseren Richtlinien keine Rückerstattung oder Gutschrift zu zahlen, bitten wir den Kunden oder Azure-Reseller unter Umständen, sich direkt mit Ihnen in Verbindung zu setzen.
 
   ![1\_RequestRefund][1]
 
-  1. Navigieren zu den Supportseiten
-  2. Wählen Sie **Managing Customers** aus.
-  3. Wählen Sie **Approve or request a customer refund** aus.
-  4. Klicken Sie auf **Startanforderung**.
+  1. Navigieren Sie zu den Supportseiten.
+  2. Wählen Sie in der Dropdownliste **Problemtyp** den Eintrag **Kundenverwaltung** aus.
+  3. Wählen Sie im Feld **Kategorie** die Option **Genehmigen oder Anfordern einer Rückerstattung für Kunden** aus.
+  4. Klicken Sie auf **Anfrage starten**.
 
   ![2\_RequestRefund][2]
 
-5. Bereitstellen von Kontaktinformationen
-6. Schließen Sie "What is the issue" ab, und geben Sie folgende Informationen an:
+5. Angeben von Kontaktinformationen
+6. Geben Sie in das Feld **Was ist das Problem?** die folgenden Informationen ein:
 
     - Die Abonnement-ID des betroffenen Kunden
     - Den Namen des Kunden
@@ -46,7 +46,7 @@ Im Folgenden erfahren Sie, wie Sie eine Gutschrift oder Erstattung im Auftrag ei
     - Das Datum der Rechnung für diesen Zeitraum
     - Den Grund für die Gutschrift
 
-Sie erhalten innerhalb von 24 Stunden eine Bestätigungs-E-Mail, dass wir die angegebenen Informationen erhalten haben. Sobald eine Entscheidung bezüglich Ihrer Anfrage getroffen wurde, werden Sie über das Ergebnis informiert.
+Sie erhalten innerhalb von 24 Stunden eine Bestätigungs-E-Mail, dass wir Ihre Informationen erhalten haben. Nachdem eine Entscheidung bezüglich Ihrer Anfrage getroffen wurde, werden Sie über das Ergebnis informiert.
 
 ## Überprüfung des Kundenabonnements
 
@@ -55,7 +55,7 @@ In einigen Fällen müssen Sie möglicherweise die Abonnementdetails für einen 
   ![subscriptionvalidation][3]
 
 - Möglicherweise wendet sich ein Kunde an Sie und fordert Support an.
-- Eventuell wissen Sie nicht, wie Sie überprüfen können, ob der Kunde ein rechtmäßiger Kunde für dieses Angebot ist.
+- Eventuell wissen Sie nicht, wie Sie überprüfen können, ob der Kunde ein rechtmäßiger Kunde für ein Angebot ist.
 - Sie können eine Supportanfrage übermitteln, um das Abonnement des Kunden zu überprüfen.
 - Sie müssen eine Kundenabonnement-ID und eine Rechnungsadresse angeben.
 - Microsoft kontaktiert Sie, um zu bestätigen, dass die Rechnungsadresse und die Abonnement-ID bekannt sind.
@@ -63,26 +63,26 @@ In einigen Fällen müssen Sie möglicherweise die Abonnementdetails für einen 
 
 ## Wie aktualisiere ich mein Herausgeberprofil?
 
-Wenn Sie Ihr Herausgeberprofil aktualisieren möchten, kann dies über das Verkäuferdashboard erfolgen.
+Wenn Sie Ihr Herausgeberprofil aktualisieren möchten, kann dies über das Microsoft Developer Center erfolgen.
 
-**1. Melden Sie sich beim Verkäuferdashboard an.**
+**1. Melden Sie sich beim Microsoft Developer Center an**.
 
-- Öffnen Sie eine neue Chrome-Inkognito- oder IE-InPrivate-Browsersitzung, um sicherzustellen, dass Sie nicht bei einem persönlichen Konto angemeldet sind.
-- Besuchen Sie http://sellerdashboard.microsoft.com.
+- Öffnen Sie eine neue Chrome-Inkognito- oder Internet Explorer-InPrivate-Browsersitzung, um sicherzustellen, dass Sie nicht bei einem persönlichen Konto angemeldet sind.
+- Wechseln Sie zu [http://dev.windows.com/registration?accountprogram=azure](http://dev.windows.com/registration?accountprogram=azure).
 
 ![inprivate][4]
 
-**2. Melden Sie sich mit dem Microsoft-Konto (MSA) an, das Sie für Ihr Unternehmen registriert haben ** (z. B. AzureStore@yourcompany.com).
+**2. Melden Sie sich mit dem Geschäftskonto Ihres Unternehmens oder Ihrem Schulkonto an** (z. B. AzureStore@yourcompany.com).
 
 ![signin][5]
 
-**3. Schließen Sie die Überprüfung "Unterstützen Sie uns beim Schutz Ihres Kontos" ab.**
+**3. Schließen Sie die Überprüfung „Unterstützen Sie uns beim Schutz Ihres Kontos“ ab.**
 
-* [AZURE.NOTE]Sie können für die Überprüfung Ihre Telefonnummer oder Ihre E-Mail-Adresse angeben.
+> [AZURE.NOTE]Sie können für die Überprüfung Ihre Telefonnummer oder Ihre E-Mail-Adresse angeben.
 
 ![protectacct][6]
 
-**4. Navigieren Sie zu "Kontodetails" und "Unternehmensdetails".**
+**4. Navigieren Sie zu „Kontodetails“ und „Unternehmensdetails“.**
 
 ![acctdetails][7]
 
@@ -91,24 +91,24 @@ Wenn Sie Ihr Herausgeberprofil aktualisieren möchten, kann dies über das Verk�
 ![manageadmins][8]
 
 1. Navigieren Sie zum Veröffentlichungsportal.
-2. Wählen Sie "Herausgeber" aus.
-3. Wählen Sie "Administratoren" aus.
-4. Fügen Sie über die E-Mail-Adresse den Co-Administrator hinzu, oder entfernen Sie ihn.
-5. Klicken Sie zum Speichern der Änderungen auf "Speichern".
+2. Wählen Sie **Herausgeber** aus.
+3. Wählen Sie **Administratoren** aus.
+4. Fügen Sie die E-Mail-Adresse des Co-Administrators hinzu, den Sie hinzufügen oder entfernen möchten.
+5. Wählen Sie **Speichern** aus.
 
-## Nächste Schritte: andere Supportanfragen
+## Nächste Schritte: Andere Supportanfragen
 
-Melden Sie für die folgenden Probleme das Problem bei https://portal.azure.com.
+Übermitteln Sie für die folgenden Probleme eine Anfrage unter [https://portal.azure.com](https://portal.azure.com):
 
 - Wie melde ich einen Fehler in der Rechnung?
 - Ich habe in meinen Abrechnungs- oder Nutzungsaufstellungen Abweichungen festgestellt.
-- Ich benötige Hilfe beim Verständnis meiner Abrechnung.
+- Ich benötige Hilfe bei meiner Abrechnung.
 
 
-Richten Sie für die folgenden Probleme eine Supportanfrage an http://go.microsoft.com/fwlink/?LinkId=272975.
+Übermitteln Sie für die folgenden Probleme eine Supportanfrage unter [http://go.microsoft.com/fwlink/?LinkId=272975](http://go.microsoft.com/fwlink/?LinkId=272975):
 
 - Ich habe Probleme beim Verwalten von Webdiensten.
-- Wie ändere ich das MSA, das meinem Verkäuferkonto zugeordnet ist?
+- Wie ändere ich das Microsoft-Konto, das meinem Verkäuferkonto zugeordnet ist?
 
 
 [1]: ./media/marketplace-publishing-support-common-issues/requestrefund1.png
@@ -120,4 +120,4 @@ Richten Sie für die folgenden Probleme eine Supportanfrage an http://go.microso
 [7]: ./media/marketplace-publishing-support-common-issues/acctdetails.png
 [8]: ./media/marketplace-publishing-support-common-issues/manageadmins.png
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

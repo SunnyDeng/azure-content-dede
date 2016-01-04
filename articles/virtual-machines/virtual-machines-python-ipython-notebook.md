@@ -3,7 +3,7 @@
 	description="In diesem Artikel erfahren Sie, wie Sie Jupyter/IPython Notebook auf einem virtuellen Linux-Computer bereitstellen, der mit dem Ressourcen-Manager-Bereitstellungsmodell in Azure erstellt wurde."
 	services="virtual-machines"
 	documentationCenter="python"
-	authors="huguesv"
+	authors="crwilcox"
 	manager="wpickett"
 	editor=""
 	tags=“azure-service-management,azure-resource-manager"/>
@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="python"
 	ms.topic="article"
-	ms.date="05/20/2015"
-	ms.author="huvalo"/>
+	ms.date="11/10/2015"
+	ms.author="crwilcox"/>
 
 # Jupyter Notebook in Azure
 
@@ -41,7 +41,7 @@ Zunächst müssen Sie einen virtuellen Computer (VM) in Azure erstellen. Dieser 
 
 Befolgen Sie die [hier][portal-vm-linux] aufgeführten Anweisungen, um einen virtuellen Computer der *Ubuntu*-Distribution zu erstellen. In diesem Lernprogramm wird Ubuntu Server 14.04 LTS verwendet. Wir gehen vom Standardbenutzernamen *azureuser* aus.
 
-Nachdem der virtuelle Computer bereitgestellt wurde, muss eine Sicherheitsregel für die Netzwerksicherheitsgruppe geöffnet werden. Wechseln Sie im Portal zu **Netzwerksicherheitsgruppen**, und öffnen Sie die Registerkarte für die Sicherheitsgruppe, die Ihrem virtuellen Computer entspricht. Sie müssen eine Regel für die Sicherheit eingehender Verbindungen mit den folgenden Einstellungen hinzufügen: **TCP** für das Protokoll, ***** für den (öffentlichen) Quellport und **9999** für den (privaten) Zielport.
+Nachdem der virtuelle Computer bereitgestellt wurde, muss eine Sicherheitsregel für die Netzwerksicherheitsgruppe geöffnet werden. Wechseln Sie im Azure-Portal zu **Netzwerksicherheitsgruppen**, und öffnen Sie die Registerkarte für die Sicherheitsgruppe, die Ihrem virtuellen Computer entspricht. Sie müssen eine Regel für die Sicherheit eingehender Verbindungen mit den folgenden Einstellungen hinzufügen: **TCP** für das Protokoll, ***** für den (öffentlichen) Quellport und **9999** für den (privaten) Zielport.
 
 ![Screenshot](./media/virtual-machines-python-ipython-notebook/azure-add-endpoint.png)
 
@@ -199,4 +199,4 @@ Weitere Informationen finden Sie im [Python Developer Center](/develop/python/).
 [repository]: https://github.com/ipython/ipython
 [Python Tools for Visual Studio]: http://aka.ms/ptvs
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

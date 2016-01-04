@@ -21,7 +21,7 @@
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](virtual-machines-ps-create-preconfigure-windows-vms.md).
 
-Dieses Thema beschreibt das schnelle Erstellen und Verwalten eines virtuellen Windows Azure-Computers mithilfe von Azure-Ressourcen-Manager und PowerShell.
+Dieses Thema beschreibt das schnelle Erstellen und Verwalten eines virtuellen Microsoft Azure-Computers mithilfe von Azure-Ressourcen-Manager und PowerShell.
 
 ## Erstellen des virtuellen Windows-Computers
 
@@ -137,4 +137,4 @@ Es erscheint beispielsweise Folgendes:
 
 [Installieren und Konfigurieren von Azure PowerShell](install-configure-powershell.md)
 
-<!---HONumber=Nov15_HO3-->
+<!----HONumber=Nov15_HO3-->

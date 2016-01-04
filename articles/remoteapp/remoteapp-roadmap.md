@@ -12,28 +12,33 @@
     ms.tgt_pltfrm="NA"
     ms.devlang="NA"
     ms.topic="article"
-    ms.date="09/29/2015"
+    ms.date="12/16/2015"
     ms.author="elizapo" />
 
 # Geplante Neuerungen in Azure RemoteApp
 
 Wir arbeiten stetig daran, Azure RemoteApp mithilfe Ihres Feedbacks zu verbessern. Nachstehend finden Sie einen ungefähren Zeitrahmen für die Verfügbarkeit neuer Funktionen.
 
-|Funktion|Januar - März 2015|April - Juni 2015|Juli - September 2015|Oktober - Dezember 2015|
-|-----------|-------|-------|-------|-------|
-|PowerShell-Cmdlets für RemoteApp und SDK für die Bereitstellung und Verwaltung|X| | | |
-|Ein Image von einer Azure-VM erstellen und hochladen|X| | | |
-|Ohne Beitritt zu einer Domäne (Verbindung der Cloudsammlung zu den Azure-VMs) auf einem VNET bereitstellen ([Feedback](http://feedback.azure.com/forums/247748-azure-remoteapp/suggestions/5928457-provide-ability-to-add-vnet-to-cloud-deloyment-th))| |X| | |
-|Ein vorhandenes virtuelles Netzwerk für die RemoteApp-Hybridsammlung erneut verwenden (ermöglicht auch ExpressRoute) ([Feedback](http://feedback.azure.com/forums/247748-azure-remoteapp/suggestions/5933123-existing-virtual-network-does-not-appear-when-tryi))| |X| | |
-|ExpressRoute ([Feedback](http://feedback.azure.com/forums/247748-azure-remoteapp/suggestions/5933123-existing-virtual-network-does-not-appear-when-tryi))| |X| | |
-|Azure RemoteApp verfügbar im neuen [Azure-Vorschauportal](http://azure.microsoft.com/overview/preview-portal/)| | | |X|
-|Universelle Windows 10-Anwendung für die Vorschauversion von Azure RemoteApp| | |X| |
-|Möglichkeit zum Veröffentlichen einzelner Anwendungen für bestimmte Benutzer – **Öffentliche Vorschau** ([Feedback](http://feedback.azure.com/forums/247748-azure-remoteapp/suggestions/6067043-allow-the-ability-to-publish-specific-apps-to-spec))| | ||X|
-|Verteilbares Windows-MSI-Clientpaket ([Feedback](http://feedback.azure.com/forums/247748-azure-remoteapp/suggestions/6627191-client-deployment-provide-an-msi-package-to-allo))| | ||X|
+|Funktion|Januar - März 2016|April–Juni 2016|
+|-----------|-------|-------|
+|Azure RemoteApp ist sowohl im [klassischen Azure-Portal](http://manage.windowsazure.com) als auch im [Azure-Portal](http://portal.azure.com) verfügbar. |X | |
+|Universelle Windows 10-Anwendung für die Vorschauversion von Azure RemoteApp|X| |
+|Möglichkeit zum Veröffentlichen einzelner Anwendungen für bestimmte Benutzer – **Öffentliche Vorschau** ([Feedback](http://feedback.azure.com/forums/247748-azure-remoteapp/suggestions/6067043-allow-the-ability-to-publish-specific-apps-to-spec))|X | |
+|Verteilbares Windows-MSI-Clientpaket ([Feedback](http://feedback.azure.com/forums/247748-azure-remoteapp/suggestions/6627191-client-deployment-provide-an-msi-package-to-allo))| X| |
+|HTML5-basierter Client für Azure RemoteApp|X ||
+|Support für Azure-Ressourcen-Manager (ARM)||X|
+|Cloud-Lösungsanbieter (CSP)||X|
+|Verfügbarkeit in der Region Indien|X||
+|Verfügbarkeit in der Region Großbritannien||X|
 
 
 Weitere Verbesserungen, die dieses Jahr bereits hinzugefügt wurden:
 
+- Ohne Beitritt zu einer Domäne (Verbindung der Cloud-Sammlung mit den Azure-VMs) auf einem VNET bereitstellen
+- Ein vorhandenes virtuelles Netzwerk für die RemoteApp-Hybridsammlung erneut verwenden (ermöglicht auch ExpressRoute)
+- ExpressRoute
+- PowerShell-Cmdlets für RemoteApp und SDK für die Bereitstellung und Verwaltung
+- Ein Image von einer Azure-VM erstellen und hochladen
 - Hochladen von Branchenanwendungen in eine Cloudsammlung sowie in eine Hybridsammlung
 - Support für Windows Phone
 - Dashboard für Nutzungsmetriken
@@ -41,4 +46,4 @@ Weitere Verbesserungen, die dieses Jahr bereits hinzugefügt wurden:
 - Verfügbarkeit in australischen Rechenzentren
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

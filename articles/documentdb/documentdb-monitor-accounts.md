@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Überwachen eines DocumentDB-Kontos über das Azure-Vorschauportal | Microsoft Azure" 
+	pageTitle="Überwachen eines DocumentDB-Kontos über das Azure-Portal | Microsoft Azure" 
 	description="Erfahren Sie, wie Sie Ihr DocumentDB-Konto anhand von Leistungsmetriken (z. B. Anforderungen und Serverfehler) und Nutzungsmetriken (z. B. Speicherbelegung) überwachen." 
 	services="documentdb" 
 	documentationCenter="" 
@@ -13,15 +13,15 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/30/2015" 
+	ms.date="11/18/2015" 
 	ms.author="mimig"/>
 
-# Überwachen eines DocumentDB-Kontos über das Azure-Vorschauportal 
+# Überwachen eines DocumentDB-Kontos 
 
-Sie können Ihre DocumentDB-Konten im [Microsoft Azure-Vorschauportal](https://portal.azure.com/) überwachen. Für jedes DocumentDB-Konto sind sowohl Leistungsmetriken (wie Anforderungen und Serverfehler) als auch Nutzungsmetriken (wie belegter Speicher) verfügbar.
+Sie können Ihre DocumentDB-Konten im [Microsoft Azure-Portal](https://portal.azure.com/) überwachen. Für jedes DocumentDB-Konto sind sowohl Leistungsmetriken (wie Anforderungen und Serverfehler) als auch Nutzungsmetriken (wie belegter Speicher) verfügbar.
 
 ## Vorgehensweise: Anzeigen von Leistungsmetriken für ein DocumentDB-Konto
-1.	Klicken Sie im [Azure-Vorschauportal](https://portal.azure.com/) auf **Durchsuchen**, dann auf **DocumentDB-Konten** und anschließend auf den Namen des DocumentDB-Kontos, dessen Leistungsmetriken Sie anzeigen möchten.
+1.	Klicken Sie im [Azure-Portal](https://portal.azure.com/) auf **Durchsuchen**, dann auf **DocumentDB-Konten** und anschließend auf den Namen des DocumentDB-Kontos, dessen Leistungsmetriken Sie anzeigen möchten.
 2.	Innerhalb des Bereichs **Überwachung** sehen Sie standardmäßig Folgendes:
 	*	Gesamtanforderungen des aktuellen Tags.
 	*	Durchschnittliche Anfragen pro Sekunde des aktuellen Tags. 
@@ -48,7 +48,7 @@ Sie können Ihre DocumentDB-Konten im [Microsoft Azure-Vorschauportal](https://p
 
 
 ## Erstellen von nebeneinander liegenden Diagrammen mit Leistungsmetriken
-Im Azure-Vorschauportal können Sie nebeneinander stehende Metrikdiagramme erstellen.
+Im Azure-Portal können Sie nebeneinander stehende Metrikdiagramme erstellen.
 
 1.	Klicken Sie zuerst mit der rechten Maustaste auf das Diagramm, das Sie klonen und ändern möchten, und wählen Sie **Anpassen**. 
 
@@ -62,7 +62,7 @@ Im Azure-Vorschauportal können Sie nebeneinander stehende Metrikdiagramme erste
 Sie können diesen Bereich jetzt wie jeden anderen Metrikbereich behandeln und ihn sowie die dort angezeigte Zeitspanne anpassen. Auf diese Weise können Sie zwei verschiedene Metrikdiagramme gleichzeitig nebeneinander anzeigen. ![Screenshot des Diagramms "Anforderungen insgesamt" und des Diagramms "Anforderungen insgesamt – letzte Stunde"](./media/documentdb-monitor-accounts/madocdb8.png)
 
 ## Anzeigen von Nutzungsmetriken für ein DocumentDB-Konto
-1.	Klicken Sie im [Azure-Vorschauportal](https://portal.azure.com/) auf **Durchsuchen**, dann auf **DocumentDB-Konten** und anschließend auf den Namen des DocumentDB-Kontos, dessen Nutzungsmetriken Sie anzeigen möchten.
+1.	Klicken Sie im [Azure-Portal](https://portal.azure.com/) auf **Durchsuchen**, dann auf **DocumentDB-Konten** und anschließend auf den Namen des DocumentDB-Kontos, dessen Nutzungsmetriken Sie anzeigen möchten.
 2.	Innerhalb des Fokus **Nutzung** können Sie standardmäßig Folgendes anzeigen:
 	*	Die geschätzten Kosten bis dato des DocumentDB-Kontos im aktuellen Abrechnungszeitraum.
 	*	Im Konto belegter Speicher
@@ -73,7 +73,7 @@ Sie können diesen Bereich jetzt wie jeden anderen Metrikbereich behandeln und i
 	![Screenshot des Fokus "Nutzung"](./media/documentdb-monitor-accounts/madocdb9.png)
  
 ## Einrichten von Warnungen bei Leistungsmetriken für ein DocumentDB-Konto
-1.	Klicken Sie im [Azure-Vorschauportal](https://portal.azure.com/) auf **Alle durchsuchen**, dann auf **DocumentDB-Konten** und anschließend auf den Namen des DocumentDB-Kontos, für das Sie Warnungen zu Leistungsmetriken einrichten möchten.
+1.	Klicken Sie im [Azure-Portal](https://portal.azure.com/) auf **Alle durchsuchen**, dann auf **DocumentDB-Konten** und anschließend auf den Namen des DocumentDB-Kontos, für das Sie Warnungen zu Leistungsmetriken einrichten möchten.
 2.	Klicken Sie im Fokus **Vorgänge** auf das Detail **Warnungsregeln**.![Screenshot des Fokus "Vorgänge" mit ausgewähltem Detail "Warnungsregeln"](./media/documentdb-monitor-accounts/madocdb10.png)
 
 3.	Klicken Sie auf dem Blatt "Warnungsregeln" auf **Warnung hinzufügen**.![Screenshot des Blatts "Warnungsregeln" mit hervorgehobener Schaltfläche "Warnung hinzufügen"](./media/documentdb-monitor-accounts/madocdb11.png)
@@ -90,4 +90,4 @@ Sie können diesen Bereich jetzt wie jeden anderen Metrikbereich behandeln und i
 Weitere Informationen zur Kapazität von DocumentDB finden Sie unter [Verwalten der Kapazität von DocumentDB](documentdb-manage.md).
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

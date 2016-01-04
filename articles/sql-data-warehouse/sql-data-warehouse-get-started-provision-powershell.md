@@ -19,7 +19,7 @@
 # Erstellen von SQL Data Warehouse mithilfe von Powershell
 
 > [AZURE.SELECTOR]
-- [Azure preview portal](sql-data-warehouse-get-started-provision.md)
+- [Azure Portal](sql-data-warehouse-get-started-provision.md)
 - [TSQL](sql-data-warehouse-get-started-create-database-tsql.md)
 - [PowerShell](sql-data-warehouse-get-started-provision-powershell.md)
 
@@ -67,8 +67,8 @@ Weitere Informationen zur programmgesteuerten Verwaltung von SQL Data Warehouse 
 [Beispieldaten laden]: https://azure.microsoft.com/de-DE/documentation/articles/sql-data-warehouse-get-started-manually-load-samples/
 [Powershell]: https://azure.microsoft.com/de-DE/documentation/articles/sql-data-warehouse-reference-powershell-cmdlets/
 [REST-API]: https://msdn.microsoft.com/library/azure/dn505719.aspx
-[MSDN]: https://msdn.microsoft.com/de-DE/library/azure/dn546722.aspx
+[MSDN]: https://msdn.microsoft.com/library/azure/dn546722.aspx
 [firewall rules]: https://azure.microsoft.com/de-DE/documentation/articles/sql-database-configure-firewall-settings/
 [Installieren und Konfigurieren von Azure PowerShell]: powershell-install-configure.md
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1210_2015-->

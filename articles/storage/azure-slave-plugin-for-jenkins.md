@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="Java"
 	ms.topic="article"
-	ms.date="09/01/2015"
+	ms.date="11/19/2015"
     ms.author="v-dedomi"/>
 
 # Verwenden des Azure Slave-Plug-Ins mit Jenkins Continuous Integration
@@ -204,4 +204,4 @@ In diesem Abschnitt erstellen Sie eine Jenkins-Aufgabe, die auf einen untergeord
 
 Jenkins erstellt dann einen untergeordneten Knoten mithilfe der im vorherigen Abschnitt erstellten Vorlage und führt das Skript aus, das Sie im Buildschritt für diese Aufgabe angegeben haben.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1125_2015-->

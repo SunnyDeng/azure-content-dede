@@ -5,6 +5,7 @@
 
 		using Gcm.Client;
 		using Microsoft.WindowsAzure.MobileServices;
+		using Newtonsoft.Json.Linq;
 
 6. Fügen Sie die folgenden Berechtigungsanforderungen zwischen den **using**-Anweisungen und der **namespace**-Deklaration hinzu:
 
@@ -26,7 +27,7 @@
 	        Categories = new string[] { "@PACKAGE_NAME@" })]
 	    [IntentFilter(new string[] { Gcm.Client.Constants.INTENT_FROM_GCM_LIBRARY_RETRY }, 
         Categories = new string[] { "@PACKAGE_NAME@" })]
-        public class ToDoBroadcastReceiver : GcmBroadcastReceiverBase<GcmService>
+        public class ToDoBroadcastReceiver : GcmBroadcastReceiverBase<PushHandlerService>
         {
 	        // Set the Google app ID.
 	        public static string[] senderIDs = new string[] { "<PROJECT_NUMBER>" };
@@ -49,36 +50,46 @@
 
 	>[AZURE.NOTE]Die **GcmServiceBase**-Klasse implementiert die Methoden **OnRegistered()**, **OnUnRegistered()**, **OnMessage()** und **OnError()**. Sie müssen diese Methoden in der **PushHandlerService**-Klasse überschreiben.
 
-5. Fügen Sie den folgenden Code der **ToDoBroadcastReceiver**-Klasse hinzu, um den Ereignishandler **OnRegistered** zu überschreiben.
+5. Fügen Sie folgenden Code der **PushHandlerService**-Klasse hinzu, mit dem der **OnRegistered**-Ereignishandler überschrieben wird.
 
         protected override void OnRegistered(Context context, string registrationId)
         {
             System.Diagnostics.Debug.WriteLine("The device has been registered with GCM.", "Success!");
-            
+
             // Get the MobileServiceClient from the current activity instance.
-            MobileServiceClient client = ToDoActivity.CurrentActivity.CurrentClient;           
+            MobileServiceClient client = ToDoActivity.CurrentActivity.CurrentClient;
             var push = client.GetPush();
 
-            List<string> tags = null;
+            // Define a message body for GCM.
+            const string templateBodyGCM = "{"data":{"message":"$(messageParam)"}}";
 
-            //// (Optional) Uncomment to add tags to the registration.
-            //var tags = new List<string>() { "myTag" }; // create tags if you want
+            // Define the template registration as JSON.
+            JObject templates = new JObject();
+            templates["genericMessage"] = new JObject
+            {
+              {"body", templateBodyGCM }
+            };
 
             try
             {
                 // Make sure we run the registration on the same thread as the activity, 
                 // to avoid threading errors.
                 ToDoActivity.CurrentActivity.RunOnUiThread(
-                    async () => await push.RegisterNativeAsync(registrationId, tags));
+
+                    // Register the template with Notification Hubs.
+                    async () => await push.RegisterAsync(registrationId, templates));
+                
+                System.Diagnostics.Debug.WriteLine(
+                    string.Format("Push Installation Id", push.InstallationId.ToString()));
             }
             catch (Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine(
-                    string.Format("Error with Azure push registration: {0}", ex.Message));                
+                    string.Format("Error with Azure push registration: {0}", ex.Message));
             }
         }
 
-	Diese Methode verwendet die zurückgegebene GCM-Registrierungs-ID für die Pushbenachrichtigungsregistrierung bei Azure.
+	Diese Methode verwendet die zurückgegebene GCM-Registrierungs-ID für die Pushbenachrichtigungsregistrierung bei Azure. Tags können der Registrierung erst hinzugefügt werden, nachdem diese erstellt wurde. Weitere Informationen finden Sie unter: [Vorgehensweise: Hinzufügen von Tags zu einer Geräteinstallation für Push an Tags](../articles/app-service-mobile/app-service-mobile-dotnet-backend-how-to-use-server-sdk.md#tags).
 
 10. Überschreiben Sie die Methode **OnMessage** in **PushHandlerService** mit dem folgenden Code:
 
@@ -116,7 +127,7 @@
             }
         }
 
-12. Fügen Sie die folgenden Methodenüberschreibungen für **OnUnRegistered()** und **OnError()** hinzu. Diese sind erforderlich, um das Projekt zu kompilieren.
+12. Überschreiben Sie die **OnUnRegistered()**-Methode und die **OnError()**-Methoden mit folgendem Code.
 
         protected override void OnUnRegistered(Context context, string registrationId)
         {
@@ -129,4 +140,4 @@
                 string.Format("Error occurred in the notification: {0}.", errorId));
         }
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

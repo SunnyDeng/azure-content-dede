@@ -13,27 +13,26 @@
    ms.topic="article"
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="mobile" 
-   ms.date="08/10/2015"
+   ms.date="11/22/2015"
    ms.author="piyushjo"/>
 
-# Verwalten Ihres Konto-Profils und Testen der Geräte 
-Im Abschnitt "Mein Konto" der Benutzeroberfläche können Sie die Einstellungen im Zusammenhang mit Ihrem Konto anzeigen und ändern, einschließlich Ihrer Profileinstellungen und Testgeräte-IDs. Diese Einstellungen enthalten Elemente, auf die auch über die Device-API zugegriffen werden kann.
+# Verwalten Ihres Konto-Profils und Testen der Geräte
+ 
+In diesem Artikel wird die **Startseite** im Portal **Mobile Engagement** beschrieben. Verwenden Sie das Portal **Mobile Engagement**, um Ihre mobilen Apps zu überwachen und zu verwalten. Beachten Sie, dass Sie zur Verwendung des Portals zuerst ein **Azure Mobile Engagement**-Konto erstellen müssen. Weitere Informationen finden Sie unter [Erstellen eines Azure Mobile Engagement-Kontos](mobile-engagement-create-account.md).
+ 
+Klicken Sie oben auf der Seite auf Ihr Konto, um zur Seite „Mein Konto“ zu gelangen.
 
-### Weitere Informationen
--  [Handbuch zur Problembehandlung - Dienst][Link 24]
+Im Abschnitt "Mein Konto" der Benutzeroberfläche können Sie die Einstellungen im Zusammenhang mit Ihrem Konto anzeigen und ändern, einschließlich Ihrer Profileinstellungen und Testgeräte-IDs. Diese Einstellungen enthalten Elemente, auf die auch über die Device-API zugegriffen werden kann.
 
 ![MyAccount1][7]
 
 ## Profil:
-Sie können alle Einstellungen Ihres Kontos anzeigen oder ändern: Kennwort, Vorname, Nachname, Unternehmen, Telefonnummer, Zeitzone oder An- oder Abmelden für E-Mail-Updates. Sie können auch auf der "Startseite" anderen Benutzern die Berechtigung zur Nutzung Ihrer Anwendung basierend auf ihrer E-Mail-Adresse zuweisen.
-
-### Weitere Informationen
--  [Dokumentation zur Benutzeroberfläche - Startseite][Link 13]
+Sie können die unten angezeigten Einstellungen für das Konto anzeigen oder ändern. Sie können auf der [Startseite](mobile-engagement-interface-home.md) auch anderen Benutzern die Berechtigung zur Nutzung Ihrer Anwendung zuweisen, basierend auf ihrer E-Mail-Adresse.
 
 ![MyAccount2][8]
 
 ## Geräte:
-Sie können IDs der Testgeräte, die Sie verwenden können, um Ihre Reach- oder Push-Kampagnen zu testen, anzeigen, hinzufügen oder entfernen. Wenn Sie auf "Neues Gerät" klicken, werden kontextbezogene Anweisungen für das Bestimmen der Geräte-ID von Geräten für jede Plattform (iOS, Android, Windows Phone usw.) angezeigt.
+Sie können IDs der Testgeräte, die Sie verwenden können, um Ihre **Reach**- oder **Push**-Kampagnen zu testen, anzeigen, hinzufügen oder entfernen. Wenn Sie auf "Neues Gerät" klicken, werden kontextbezogene Anweisungen für das Bestimmen der Geräte-ID von Geräten für jede Plattform (iOS, Android, Windows Phone usw.) angezeigt.
  
 ![MyAccount3][9]
  
@@ -45,6 +44,13 @@ Zum Verwenden der Push-API oder Device-API müssen Sie die eindeutige Geräteken
 4. Wenn bei einer Reach-Webankündigung der HTML-Code der Ankündigung das {deviceid}-Muster enthält, wird es automatisch durch die ID des Geräts ersetzt, das die Webankündigung auslöst. Hier ist meine Geräte-ID: {deviceid} wird ersetzt durch: Hier ist meine Geräte-ID: XXXXXXXXXXXXXXXX
 5.  Öffnen Sie die Anwendung auf Ihrem Gerät, und lösen Sie ein Ereignis in Ihrer App aus, das mit einem Tag versehen wurde. In "Benutzeroberfläche - Ihre App - Überwachen - Ereignisse - Details" finden Sie das ausgelöste Ereignis in der Liste. Klicken Sie im Abschnitt "Überwachen" auf dieses Ereignis. Ihre Geräte-ID sollte in der Liste der Geräte vorhanden sein, auf denen dieses Ereignis erfolgt ist. Anschließend können Sie diese Geräte-ID kopieren und in "Benutzeroberfläche - Mein Konto - Geräte - Neues Gerät - Geräteplattform auswählen" registrieren.
 >(Bedenken Sie, dass wenn IDFA für iOS deaktiviert ist, die Geräte-ID sich mit der Zeit ändern kann, wenn Sie die App deinstallieren und neu installieren.)
+
+##Handbuch zur Problembehandlung
+-  [Handbuch zur Problembehandlung - Dienst][Link 24]
+
+## Weitere Informationen
+-  [Dokumentation zur Benutzeroberfläche - Startseite][Link 13]
+
 
 <!--Image references-->
 [1]: ./media/mobile-engagement-user-interface-navigation/navigation1.png
@@ -145,4 +151,4 @@ Zum Verwenden der Push-API oder Device-API müssen Sie die eindeutige Geräteken
  
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

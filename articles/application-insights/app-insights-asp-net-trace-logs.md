@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="08/19/2015" 
+	ms.date="11/25/2015" 
 	ms.author="awills"/>
  
 # Untersuchen von .NET-Ablaufverfolgungsprotokollen in Application Insights  
@@ -79,6 +79,7 @@ Sie haben beispielsweise folgende Möglichkeiten:
 * Finden weiterer Telemetriedaten im Zusammenhang mit derselben Benutzeranforderung (d. h. mit derselben OperationId) 
 * Speichern der Konfiguration dieser Seite als Favorit
 
+> [AZURE.NOTE]**Stichproben** Wenn Ihre Anwendung eine große Menge von Daten sendet und Sie das Application Insights-SDK für ASP.NET Version 2.0.0-beta3 oder höher verwenden, wird möglicherweise die adaptive Stichprobenerstellung verwendet, bei der nur ein bestimmter Prozentsatz der Telemetriedaten übermittelt wird. [Erfahren Sie mehr über das Erstellen von Stichproben.](app-insights-sampling.md)
 
 ## Nächste Schritte
 
@@ -104,6 +105,10 @@ Manchmal kann es eine Weile dauern, bis alle Ereignisse und Anforderungen über 
 
 Bis zu 500 Ereignisse pro Sekunde für jede Anwendung. Ereignisse werden sieben Tage lang aufbewahrt.
 
+### Ich kann einige erwartete Protokolleinträge nicht finden.
+
+Wenn Ihre Anwendung eine große Menge von Daten sendet und Sie das Application Insights-SDK für ASP.NET Version 2.0.0-beta3 oder höher verwenden, wird möglicherweise die adaptive Stichprobenerstellung verwendet, bei der nur ein bestimmter Prozentsatz der Telemetriedaten übermittelt wird. [Erfahren Sie mehr über das Erstellen von Stichproben.](app-insights-sampling.md)
+
 ## <a name="add"></a>Nächste Schritte
 
 * [Einrichten von Tests der Verfügbarkeit und Reaktionsfähigkeit][availability]
@@ -124,4 +129,4 @@ Bis zu 500 Ereignisse pro Sekunde für jede Anwendung. Ereignisse werden sieben 
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

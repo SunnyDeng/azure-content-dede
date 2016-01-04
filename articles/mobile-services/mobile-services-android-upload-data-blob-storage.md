@@ -18,6 +18,10 @@
 
 # Hochladen von Bildern auf Azure Storage aus einem Android-Gerät
 
+[AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
+
+&nbsp;
+
 [AZURE.INCLUDE [mobile-services-selector-upload-data-blob-storage](../../includes/mobile-services-selector-upload-data-blob-storage.md)]
 
 In diesem Thema wird gezeigt, wie Sie Ihre Android Azure Mobile Services-App für das Hochladen von Bildern in Azure Storage aktivieren können.
@@ -50,7 +54,7 @@ Es ist nicht sicher, die für das Hochladen der Daten in den Azure Storage-Diens
 ## Codebeispiel
 [Hier](https://github.com/Azure/mobile-services-samples/tree/master/UploadImages) finden Sie den abgeschlossenen Teil des Clientquellcodes dieser App. Damit Sie die App ausführen können, müssen Sie die Mobile Services-Back-End-Teile dieses Lernprogramms ausführen.
 
-## Aktualisieren des registrierten Einfügeskripts im Verwaltungsportal
+## Aktualisieren des registrierten Einfügeskripts im klassischen Azure-Portal
 
 [AZURE.INCLUDE [mobile-services-configure-blob-storage](../../includes/mobile-services-configure-blob-storage.md)]
 
@@ -369,7 +373,7 @@ Mit diesem Code wird eine Anforderung zum Einfügen eines neuen TodoItem-Element
 
 4. Drücken Sie **Hochladen**. Beachten Sie, wie das ToDoItem wie gewohnt in die Liste hinzugefügt wurde.
 
-5. Wechseln Sie im Microsoft Azure-Portal zu Ihrem Speicherkonto, und drücken Sie auf die Registerkarte **Container**, und anschließend auf den Namen des Containers in der Liste.
+5. Wechseln Sie im klassischen Azure-Portal zu Ihrem Speicherkonto, klicken Sie auf die Registerkarte **Container** und anschließend auf den Namen des Containers in der Liste.
 
 6. Eine Liste der hochgeladenen Blob-Dateien wird angezeigt. Wählen Sie eine aus, und drücken Sie **Herunterladen**.
 
@@ -416,10 +420,10 @@ Nachdem Sie nun gelernt haben, Ihre Bilder durch die Integration Ihres mobilen D
 [Mobile Services: Serverskriptreferenz]: mobile-services-how-to-use-server-scripts.md
 [Erste Schritte mit Mobile Services]: mobile-services-javascript-backend-windows-store-dotnet-get-started.md
 
-[Azure Management Portal]: https://manage.windowsazure.com/
+[Azure classic portal]: https://manage.windowsazure.com/
 [How To Create a Storage Account]: ../storage-create-storage-account.md
 [Azure Storage Client library for Store apps]: http://go.microsoft.com/fwlink/p/?LinkId=276866
 [Mobile Services .NET-Anleitungen: Konzeptionelle Referenz]: mobile-services-windows-dotnet-how-to-use-client-library.md
 [App settings]: http://msdn.microsoft.com/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

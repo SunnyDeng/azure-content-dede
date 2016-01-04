@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/10/2015" 
+	ms.date="12/07/2015" 
 	ms.author="sdanie"/>
 
 # Verwalten von Benutzerkonten in Azure API Management
@@ -22,7 +22,7 @@ In API Management sind Entwickler die Benutzer der APIs, die Sie mit API Managem
 
 ## <a name="create-developer"> </a>Erstellen eines neuen Entwicklers
 
-Klicken Sie im Azure-Portal für Ihren API Management-Dienst auf **Verwalten**, um einen neuen Entwickler zu erstellen. Daraufhin gelangen Sie zum API Management-Herausgeberportal. Falls Sie noch keine API Management-Dienstinstanz erstellt haben, finden Sie weitere Informationen im Abschnitt [Erstellen einer API Management-Dienstinstanz][] im Lernprogramm [Erste Schritte mit Azure API Management][].
+Klicken Sie im klassischen Azure-Portal für Ihren API Management-Dienst auf **Verwalten**, um einen neuen Entwickler zu erstellen. Daraufhin gelangen Sie zum API Management-Herausgeberportal. Falls Sie noch keine API Management-Dienstinstanz erstellt haben, finden Sie weitere Informationen im Abschnitt [Erstellen einer API Management-Dienstinstanz][] im Lernprogramm [Erste Schritte mit Azure API Management][].
 
 ![Herausgeberportal][api-management-management-console]
 
@@ -91,4 +91,4 @@ Nachdem Sie das Entwicklerkonto erstellt haben, können Sie das Konto zu Rollen 
 [Erstellen einer API Management-Dienstinstanz]: api-management-get-started.md#create-service-instance
 [E-Mail-Vorlagen konfigurieren]: api-management-howto-configure-notifications.md#email-templates
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="10/29/2015"
+    ms.date="12/04/2015"
     ms.author="larryfr"/>
 
 # Entwickeln von Skriptaktionen mit HDInsight
@@ -26,7 +26,7 @@ Skriptaktionen stellen eine Möglichkeit zum Anpassen von Azure HDInsight-Cluste
 
 Skriptaktionen sind Bash-Skripts, die während der Bereitstellung auf den Clusterknoten ausgeführt werden. Eine Skriptaktion wird als Stamm ausgeführt und bietet Vollzugriffsrechte auf die Clusterknoten.
 
-Skriptaktionen können bei der Bereitstellung eines Clusters über das __Azure-Vorschauportal__, __Azure PowerShell__ oder das __HDInsight .NET SDK__ verwendet werden.
+Skriptaktionen können bei der Bereitstellung eines Clusters über das __Azure-Portal__, __Azure PowerShell__ oder das __HDInsight .NET SDK__ verwendet werden.
 
 Eine exemplarische Vorgehensweise zum Anpassen eines Clusters mithilfe von Skriptaktionen finden Sie unter [Anpassen von HDInsight-Clustern mithilfe von Skriptaktion](hdinsight-hadoop-customize-cluster-linux.md).
 
@@ -43,7 +43,7 @@ Wenn Sie ein benutzerdefiniertes Skript für einen HDInsight-Cluster entwickeln,
 - [Schreiben von Informationen in STDOUT und STDERR](#bPS7)
 - [Speichern von Dateien im ASCII-Format mit LF-Zeilenenden](#bps8)
 
-> [AZURE.IMPORTANT]Skriptaktionen müssen innerhalb von 60 Minuten abgeschlossen sein, andernfalls werden sie mit Timeout abgebrochen. Während der Knotenbereitstellung wird das Skript gleichzeitig mit anderen Einrichtungs- und Konfigurationsprozessen ausgeführt. Der Wettbewerb um Ressourcen wie CPU-Zeit oder Netzwerkbandbreite kann dazu führen, dass es länger als in Ihrer Entwicklungsumgebung dauert, bis das Skript abgeschlossen ist.
+> [AZURE.IMPORTANT]Skriptaktionen müssen innerhalb von 60 Minuten abgeschlossen sein, andernfalls tritt ein Timeout ein. Während der Knotenbereitstellung wird das Skript gleichzeitig mit anderen Einrichtungs- und Konfigurationsprozessen ausgeführt. Der Wettbewerb um Ressourcen wie CPU-Zeit oder Netzwerkbandbreite kann dazu führen, dass es länger als in Ihrer Entwicklungsumgebung dauert, bis das Skript abgeschlossen ist.
 
 ### <a name="bPS1"></a>Auswählen der Hadoop-Version
 
@@ -220,4 +220,4 @@ Ersetzen Sie den oben aufgeführten Befehl __INFILE__ durch die Datei mit Bytere
 
 [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen](hdinsight-hadoop-customize-cluster-linux.md)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1210_2015-->

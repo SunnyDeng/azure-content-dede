@@ -14,13 +14,10 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services" 
-	ms.date="09/01/2015"
+	ms.date="11/12/2015"
 	ms.author="jroth"/>
 
 # Übersicht zu SQL Server auf virtuellen Azure-Computern
-
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
-
 
 ## Erste Schritte
 Sie können [SQL Server auf virtuellen Azure-Computern](http://azure.microsoft.com/services/virtual-machines/sql-server/) in einer Vielzahl von Konfigurationen hosten, die von einem einzelnen Datenbankserver bis hin zu einer Konfiguration mehrerer Computer mit AlwaysOn-Verfügbarkeitsgruppen und einem virtuellen Azure-Netzwerk reichen.
@@ -31,9 +28,9 @@ Um einen virtuellen Computer mit SQL Server in Azure zu erstellen, müssen Sie z
 
 ### Bereitstellen einer SQL Server-Instanz auf einem einzelnen virtuellen Computer
 
-Nachdem Sie sich für ein Abonnement angemeldet haben, besteht die einfachste Möglichkeit zum Bereitstellen eines virtuellen Computers mit SQL Server in Azure darin, [im Azure-Verwaltungsportal aus dem Imagekatalog ein Image eines virtuellen Computers mit SQL Server bereitzustellen](virtual-machines-provision-sql-server.md). Diese Images enthalten in den Preisen für den virtuellen Computer SQL Server-Lizenzen.
+Nachdem Sie sich für ein Abonnement angemeldet haben, besteht die einfachste Möglichkeit zum Bereitstellen eines virtuellen Computers mit SQL Server in Azure darin, [im klassischen Azure-Portal aus dem Imagekatalog ein Image eines virtuellen Computers mit SQL Server bereitzustellen](virtual-machines-provision-sql-server.md). Diese Images enthalten in den Preisen für den virtuellen Computer SQL Server-Lizenzen.
 
->[AZURE.NOTE]Nutzen Sie das [neue Portal](https://manage.windowsazure.com) zum Bereitstellen und Verwalten von virtuellen SQL Server-Computern. Es verwendet standardmäßig Storage Premium und bietet die automatisierte Anwendung von Patches, die automatisierte Sicherung und AlwaysOn-Konfigurationen.
+>[AZURE.NOTE]Nutzen Sie das Azure-Portal zum Bereitstellen und Verwalten von virtuellen SQL Server-Computern. Es verwendet standardmäßig Storage Premium und bietet die automatisierte Anwendung von Patches, die automatisierte Sicherung und AlwaysOn-Konfigurationen.
 
 Die folgende Tabelle enthält eine Matrix der SQL Server-Images, die im Katalog der virtuellen Computer verfügbar sind.
 
@@ -64,7 +61,7 @@ Nachdem Ihr virtueller SQL Server-Computer eingerichtet wurde und ausgeführt wi
 
 ## Hohe Verfügbarkeit
 
-Wenn Sie hohe Verfügbarkeit benötigen, sollten Sie SQL Server-AlwaysOn-Verfügbarkeitsgruppen konfigurieren. Dies beinhaltet mehrere Azure-VMs in einem virtuellen Netzwerk. Das Azure-Vorschauportal bietet eine Vorlage, die diese Konfiguration für Sie einrichtet. Weitere Informationen finden Sie unter [SQL Server AlwaysOn Offering in Microsoft Azure Portal Gallery](http://blogs.technet.com/b/dataplatforminsider/archive/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery.aspx) (in englischer Sprache).
+Wenn Sie hohe Verfügbarkeit benötigen, sollten Sie SQL Server-AlwaysOn-Verfügbarkeitsgruppen konfigurieren. Dies beinhaltet mehrere Azure-VMs in einem virtuellen Netzwerk. Das Azure-Portal bietet eine Vorlage, die diese Konfiguration für Sie einrichtet. Weitere Informationen finden Sie unter [SQL Server AlwaysOn Offering in Microsoft Azure Portal Gallery](http://blogs.technet.com/b/dataplatforminsider/archive/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery.aspx) (in englischer Sprache).
 
 Wenn Sie Ihre Verfügbarkeitsgruppe und den ihr zugeordneten Listener manuell konfigurieren möchten, lesen Sie die folgenden Artikel:
 
@@ -78,7 +75,7 @@ Weitere Informationen finden Sie unter [Hochverfügbarkeit und Notfallwiederhers
 ## Sichern und Wiederherstellen
 Bei lokalen Datenbanken kann Azure als sekundäres Datencenter zum Speichern von SQL Server-Sicherungsdateien fungieren. Eine Übersicht der Sicherungs- und Wiederherstellungsoptionen finden Sie unter [Sicherung und Wiederherstellung für SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-backup-and-restore.md).
 
-Die [SQL Server-URL-Sicherung](https://msdn.microsoft.com/library/dn435916.aspx) speichert Azure-Backupdateien im Azure-Blob-Speicher. Mithilfe von [SQL Server Managed Backup](https://msdn.microsoft.com/library/dn449496.aspx) können Sie eine Sicherung und Archivierung in Azure planen. Diese Dienste können mit lokalen SQL Server-Instanzen oder SQL Server auf virtuellen Azure-Computern verwendet werden. Azure-VMs können auch [automatisierte Sicherungen](virtual-machines-sql-server-automated-backup.md) und [automatische Anwendung von Patches](virtual-machines-sql-server-automated-patching.md) für SQL Server nutzen.
+Die [SQL Server-URL-Sicherung](https://msdn.microsoft.com/library/dn435916.aspx) speichert Azure-Sicherungsdateien im Azure-Blob-Speicher. Mithilfe von [SQL Server Managed Backup](https://msdn.microsoft.com/library/dn449496.aspx) können Sie eine Sicherung und Archivierung in Azure planen. Diese Dienste können mit lokalen SQL Server-Instanzen oder SQL Server auf virtuellen Azure-Computern verwendet werden. Azure-VMs können auch [automatisierte Sicherungen](virtual-machines-sql-server-automated-backup.md) und [automatische Anwendung von Patches](virtual-machines-sql-server-automated-patching.md) für SQL Server nutzen.
 
 ## Konfigurationsdetails eines Image eines virtuellen Computers mit SQL Server
 
@@ -141,7 +138,7 @@ Das [Programm zur Verbesserung der Benutzerfreundlichkeit](https://technet.micro
 
 Wenn Sie einen virtuellen Computer erstellen, indem Sie ein von der Plattform bereitgestelltes SQL Server-Image verwenden, finden Sie die SQL Server-Setup-Medien, die auf dem virtuellen Computer gespeichert sind, im Verzeichnis **C:\\SqlServer\_SQLMajorVersion.SQLMinorVersion\_Full**. Sie können Setup aus diesem Verzeichnis starten, um jegliche Installationsaktionen einschließlich Hinzufügen oder Entfernen von Features, Hinzufügen einer neuen Instanz oder Reparieren der Instanz auszuführen, wenn der Speicherplatz dies zulässt.
 
->[AZURE.NOTE]Azure stellt auf dem Portal mehrere Versionen der SQL Server-Images bereit. Hat das auf der Plattform bereitgestellte SQL Server-Image das Versionsfreigabedatum 15. Mai 2014 oder später, enthält es standardmäßig den Product Key. Wenn Sie einen virtuellen Computer über ein auf der Plattform bereitgestelltes SQL Server-Image bereitstellen, das vor diesem Datum veröffentlicht wurde, enthält dieser virtuelle Computer den Product Key nicht. Es empfiehlt sich, dass Sie immer die neueste Imageversion auswählen, wenn Sie einen neuen virtuellen Computer bereitstellen.
+>[AZURE.NOTE]Azure stellt mehrere Versionen der SQL Server-Images bereit. Hat das auf der Plattform bereitgestellte SQL Server-Image das Versionsfreigabedatum 15. Mai 2014 oder später, enthält es standardmäßig den Product Key. Wenn Sie einen virtuellen Computer über ein auf der Plattform bereitgestelltes SQL Server-Image bereitstellen, das vor diesem Datum veröffentlicht wurde, enthält dieser virtuelle Computer den Product Key nicht. Es empfiehlt sich, dass Sie immer die neueste Imageversion auswählen, wenn Sie einen neuen virtuellen Computer bereitstellen.
 
 ## Ressourcen
 
@@ -151,4 +148,4 @@ Wenn Sie einen virtuellen Computer erstellen, indem Sie ein von der Plattform be
 - [Anwendungsmuster und Entwicklungsstrategien für SQL Server auf Azure Virtual Machines](virtual-machines-sql-server-application-patterns-and-development-strategies.md)
 - [Dokumentation zu virtuellen Computern](virtual-machines-about.md) 
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

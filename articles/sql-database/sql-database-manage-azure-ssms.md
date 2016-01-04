@@ -21,7 +21,7 @@
 
 
 > [AZURE.SELECTOR]
-- [Azure Preview Portal](sql-database-manage-portal.md)
+- [Azure Portal](sql-database-manage-portal.md)
 - [SSMS](sql-database-manage-azure-ssms.md)
 - [PowerShell](sql-database-command-line-tools.md)
 
@@ -34,7 +34,7 @@ Es wird empfohlen, dass Sie die neueste Version von SSMS verwenden, wenn Sie mit
 
 Um eine Verbindung mit der SQL-Datenbank herstellen zu können, müssen Sie den Servernamen auf Azure kennen. Eventuell müssen Sie sich beim Portal anmelden, um diese Information zu erhalten.
 
-1.  Melden Sie sich beim [Azure-Verwaltungsportal](http://manage.windowsazure.com) an.
+1.  Melden Sie sich beim [klassischen Azure-Portal](http://manage.windowsazure.com) an.
 
 2.  Klicken Sie im linken Bereich auf **SQL-Datenbanken**.
 
@@ -192,4 +192,4 @@ SQL-Datenbank unterstützt mehrere Dynamic Management Views, mit denen Sie eine 
  
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

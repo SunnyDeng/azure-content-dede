@@ -20,7 +20,7 @@
 
 Azure Data Lake-Speicher ist ein unternehmensweites riesiges Repository für Big Data-Analyseworkloads. Azure Data Lake bietet Ihnen die Möglichkeit, Daten von beliebiger Größe, Art und Erfassungsgeschwindigkeit zur Durchführung operativer und explorativer Analysen an einem einzigen Ort zu erfassen.
 
-> [AZURE.TIP]Verwenden Sie den [Lernpfad für Data Lake-Speicher](https://azure.microsoft.com/de-DE/documentation/learning-paths/data-lake-store-self-guided-training/), um den Azure Data Lake-Speicherdienst zu erkunden.
+> [AZURE.TIP]Verwenden Sie den [Lernpfad für Data Lake-Speicher](https://azure.microsoft.com/documentation/learning-paths/data-lake-store-self-guided-training/), um den Azure Data Lake-Speicherdienst zu erkunden.
 
 Auf Azure Data Lake-Speicher kann über Hadoop (verfügbar mit HDInsight-Clustern) mithilfe der WebHDFS-kompatiblen REST-APIs zugegriffen werden. Er wurde speziell für Analysen der gespeicherten Daten konzipiert und für Datenanalyseszenarien leistungsoptimiert. Er enthält standardmäßig all die Funktionen auf Unternehmensniveau, die für reale Anwendungsfälle von Unternehmen erforderlich sind – Sicherheit, Verwaltbarkeit, Skalierbarkeit, Zuverlässigkeit und Verfügbarkeit.
 
@@ -48,7 +48,7 @@ Azure Data Lake-Speicher ist für die Ausführung großer Analysesysteme ausgele
 
 Azure Data Lake-Speicher bietet Verfügbarkeit und Zuverlässigkeit nach Industriestandard. Ihre Datenassets werden dauerhaft gespeichert, indem zum Schutz vor unerwarteten Fehlern redundante Kopien erstellt werden. Unternehmen können Azure Data Lake in ihren Lösungen als wesentlichen Bestandteil ihrer vorhandenen Datenplattform einsetzen.
 
-Data Lake-Speicher bietet außerdem Sicherheit auf Unternehmensniveau für die gespeicherten Daten. Weitere Informationen finden Sie unter [Sichern von Daten in Azure Data Lake-Store](#DataLakeStoreSecurity).
+Data Lake-Speicher bietet außerdem Sicherheit auf Unternehmensniveau für die gespeicherten Daten. Weitere Informationen finden Sie unter [Sichern von Daten in Azure Data Lake-Speicher](#DataLakeStoreSecurity).
 
 
 ### Alle Daten
@@ -79,11 +79,11 @@ Sie können mithilfe von `adl://<data_lake_store_name>.azuredatalakestore.net` a
 
 ## Wie verwende ich Azure Data Lake-Speicher?
 
-Informationen zur Bereitstellung eines Data Lake-Speichers über das Azure-Vorschauportal finden Sie unter [Erste Schritte mit Data Lake-Speicher mithilfe des Azure-Vorschauportals](data-lake-store-get-started-portal.md). Nachdem Sie Azure Data Lake bereitgestellt haben, können Sie sich darüber informieren, wie Big Data-Angebote wie Azure Data Lake Analytics oder Azure HDInsight mit Data Lake-Speicher verwendet werden. Sie können auch eine .NET-Anwendung zum Erstellen eines Azure Data Lake-Speicherkontos erstellen und Vorgänge wie das Hoch- und Herunterladen von Daten usw. durchführen.
+Informationen zur Bereitstellung eines Data Lake-Speichers über das Azure-Portal finden Sie unter [Erste Schritte mit Data Lake-Speicher mithilfe des Azure-Portals](data-lake-store-get-started-portal.md). Nachdem Sie Azure Data Lake bereitgestellt haben, können Sie sich darüber informieren, wie Big Data-Angebote wie Azure Data Lake Analytics oder Azure HDInsight mit Data Lake-Speicher verwendet werden. Sie können auch eine .NET-Anwendung zum Erstellen eines Azure Data Lake-Speicherkontos erstellen und Vorgänge wie das Hoch- und Herunterladen von Daten usw. durchführen.
 
 - [Erste Schritte mit Azure Data Lake Analytics](data-lake-analytics/data-lake-analytics-get-started-portal.md)
 - [Verwenden von Azure HDInsight mit Data Lake-Speicher](data-lake-store-hdinsight-hadoop-use-portal.md)
-- [Erste Schritte mit Azure Data Lake-Speicher mithilfe des .NET SDKs](data-lake-store-get-started-net-sdk.md)
+- [Erste Schritte mit Azure Data Lake-Speicher mithilfe des .NET SDK](data-lake-store-get-started-net-sdk.md)
   
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1203_2015-->

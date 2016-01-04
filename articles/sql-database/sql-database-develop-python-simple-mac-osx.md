@@ -1,20 +1,20 @@
-<properties 
-	pageTitle="Herstellen von Verbindungen mit SQL-Datenbanken mithilfe von Python unter Mac OS" 
+<properties
+	pageTitle="Herstellen von Verbindungen mit SQL-Datenbanken mithilfe von Python unter Mac OS"
 	description="Python-Codebeispiel zum Herstellen einer Verbindung mit Azure SQL-Datenbank auf einem Macintosh-Computer. Das Beispiel verwendet den pymssql-Treiber."
-	services="sql-database" 
-	documentationCenter="" 
-	authors="meet-bhagdev" 
-	manager="jeffreyg" 
+	services="sql-database"
+	documentationCenter=""
+	authors="meet-bhagdev"
+	manager="jeffreyg"
 	editor=""/>
 
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="python" 
-	ms.topic="article" 
-	ms.date="10/20/2015" 
+<tags
+	ms.service="sql-database"
+	ms.workload="data-management"
+	ms.tgt_pltfrm="na"
+	ms.devlang="python"
+	ms.topic="article"
+	ms.date="12/08/2015"
 	ms.author="meetb"/>
 
 
@@ -27,7 +27,7 @@
 Dieses Thema zeigt ein in Python geschriebenes Codebeispiel. Das Beispiel wird auf einem Macintosh-Computer ausgeführt. Das Beispiel stellt mithilfe des **pymssql**-Treibers eine Verbindung mit Azure SQL-Datenbank her. Nutzen Sie darüber hinaus bitte unser Video [Erste Schritte mit Python auf Mac](https://www.youtube.com/watch?v=OMpugPTwnTI), um diese Dokumentation zu ergänzen.
 
 
-## Anforderungen
+## Voraussetzungen
 
 
 - [Python 2.7.6](https://www.python.org/download/releases/2.7.6/).
@@ -46,19 +46,20 @@ Dieses Thema zeigt ein in Python geschriebenes Codebeispiel. Das Beispiel wird a
 **2) FreeTDS:** Führen Sie den folgenden Befehl über das Terminal aus. Damit wird FreeTDS auf Ihren Computer heruntergeladen. FreeTDS ist für die Ausführung von pymmsql erforderlich.
 
     brew install FreeTDS
-  
+
 **3) Pymmsql**: Führen Sie den folgenden Befehl über das Terminal aus. Damit wird pymmsql auf Ihrem Computer installiert.
 
     sudo -H pip install pymssql
 
-### Erstellen einer Datenbank und Abrufen der Verbindungszeichenfolge
+### Eine SQL-Datenbank
 
+Auf der [Seite für erste Schritte](sql-database-get-started.md) erhalten Sie Informationen zum Erstellen einer Beispieldatenbank. Sie sollten unbedingt die Anleitung zum Erstellen einer **AdventureWorks-Datenbankvorlage** befolgen. Die unten gezeigten Beispiele funktionieren nur mit dem **AdventureWorks-Schema**.
 
-Auf der Seite [Erste Schritte](sql-database-get-started.md) erhalten Sie Informationen zum Erstellen einer Beispieldatenbank und zum Abrufen der Verbindungszeichenfolge. Sie sollten unbedingt die Anleitung zum Erstellen einer **AdventureWorks-Datenbankvorlage** befolgen. Die unten gezeigten Beispiele funktionieren nur mit dem **AdventureWorks-Schema**.
+## Schritt 1: Abrufen der Verbindungsdetails
 
+[AZURE.INCLUDE [sql-database-include-connection-string-details-20-portalshots](../../includes/sql-database-include-connection-string-details-20-portalshots.md)]
 
-## Herstellen von Verbindungen mit der SQL-Datenbank
-
+## Schritt 2: Verbinden
 
 Die [pymssql.connect](http://pymssql.org/en/latest/ref/pymssql.html)-Funktion dient zum Herstellen einer Verbindung mit der SQL-Datenbank.
 
@@ -66,7 +67,7 @@ Die [pymssql.connect](http://pymssql.org/en/latest/ref/pymssql.html)-Funktion di
 	conn = pymssql.connect(server='yourserver.database.windows.net', user='yourusername@yourserver', password='yourpassword', database='AdventureWorks')
 
 
-## Ausführen von SQL-SELECT-Anweisungen
+## Schritt 3: Ausführen einer Abfrage
 
 Mit der [cursor.execute](http://pymssql.org/en/latest/ref/pymssql.html#pymssql.Cursor.execute)-Funktion können Sie ein Resultset aus einer Abfrage einer SQL-Datenbank abrufen. Diese Funktion akzeptiert praktisch jede Abfrage und gibt ein Resultset zurück, das mithilfe von [cursor.fetchone()](http://pymssql.org/en/latest/ref/pymssql.html#pymssql.Cursor.fetchone) durchlaufen werden kann.
 
@@ -81,9 +82,10 @@ Mit der [cursor.execute](http://pymssql.org/en/latest/ref/pymssql.html#pymssql.C
 	    row = cursor.fetchone()
 
 
-## Einfügen von Zeilen, Übergeben von Parametern und Abrufen von generierten Primärschlüsseln
+## Schritt 4: Einfügen einer Zeile
 
-In SQL-Datenbanken können die [IDENTITY](https://msdn.microsoft.com/library/ms186775.aspx)-Eigenschaft und das [SEQUENCE](https://msdn.microsoft.com/library/ff878058.aspx)-Objekt zum automatischen Generieren von Werten für [Primärschlüssel](https://msdn.microsoft.com/library/ms179610.aspx) verwendet werden.
+In diesem Beispiel erfahren Sie, wie Sie eine [INSERT](https://msdn.microsoft.com/library/ms174335.aspx)-Anweisung sicher ausführen, Parameter zum Schutz Ihrer Anwendung vor einer [Einschleusung von SQL-Befehlen](https://technet.microsoft.com/library/ms161953(v=sql.105).aspx) übergeben und den automatisch generierten [Primärschlüsselwert](https://msdn.microsoft.com/library/ms179610.aspx) abrufen.
+
 
 
 	import pymssql
@@ -96,7 +98,7 @@ In SQL-Datenbanken können die [IDENTITY](https://msdn.microsoft.com/library/ms1
 	    row = cursor.fetchone()
 
 
-## Transaktionen
+## Schritt 5: Durchführen eines Rollbacks für eine Transaktion
 
 
 Dieses Codebeispiel veranschaulicht die Verwendung von Transaktionen für folgende Aufgaben:
@@ -116,6 +118,9 @@ Dieses Codebeispiel veranschaulicht die Verwendung von Transaktionen für folgen
 	cursor.execute("INSERT SalesLT.Product (Name, ProductNumber, StandardCost, ListPrice, SellStartDate) OUTPUT INSERTED.ProductID VALUES ('SQL Server Express New', 'SQLEXPRESS New', 0, 0, CURRENT_TIMESTAMP)")
 	cnxn.rollback()
 
- 
 
-<!----HONumber=Oct15_HO4-->
+## Nächste Schritte
+
+Weitere Informationen finden Sie im [Python Developer Center](/develop/python/).
+
+<!---HONumber=AcomDC_1210_2015-->

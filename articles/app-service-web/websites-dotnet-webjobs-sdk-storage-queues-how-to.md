@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="09/22/2015" 
+	ms.date="12/14/2015" 
 	ms.author="tdykstra"/>
 
 # Verwenden von Azure-Warteschlangenspeicher mit dem WebJobs-SDK
@@ -22,7 +22,7 @@
 
 Diese Anleitung enthält C#-Codebeispiele, die zeigen, wie das Azure WebJobs-SDK (Version 1.x) mit dem Azure-Warteschlangenspeicherdienst verwendet wird.
 
-Im Handbuch wird davon ausgegangen, dass Sie wissen, [wie ein WebJobs-Projekt in Visual Studio mit Verbindungszeichenfolgen erstellt wird, die auf Ihr Speicherkonto verweisen](websites-dotnet-webjobs-sdk-get-started.md).
+In der Anleitung wird davon ausgegangen, dass Sie wissen, [wie ein WebJobs-Projekt in Visual Studio mit Verbindungszeichenfolgen erstellt wird, die auf Ihr Speicherkonto](websites-dotnet-webjobs-sdk-get-started.md#configure-storage) oder auf [mehrere Speicherkonten](https://github.com/Azure/azure-webjobs-sdk/blob/master/test/Microsoft.Azure.WebJobs.Host.EndToEndTests/MultipleStorageAccountsEndToEndTests.cs) verweisen.
 
 Wie in diesem Beispiel zeigen die meisten Codeausschnitte nur Funktionen, und nicht den Code, der das `JobHost`-Objekt erstellt:
 
@@ -62,7 +62,8 @@ Die Anleitung umfasst die folgenden Themen:
 	- Konfigurieren von "QueueTrigger"-Einstellungen
 	- Festlegen von Werten für WebJobs SDK-Konstruktorparametern im Code
 -   [Manuelles Auslösen einer Funktion](#manual)
--   [Schreiben von Protokollen](#logs)
+-   [Schreiben von Protokollen](#logs) 
+-   [Behandeln von Fehlern und Konfigurieren von Timeouts](#errors)
 -   [Nächste Schritte](#nextsteps)
 
 ## <a id="trigger"></a> Auslösen einer Funktion, wenn eine Warteschlangennachricht empfangen wird
@@ -131,13 +132,15 @@ Das SDK implementiert einen zufälligen exponentiellen Backoffalgorithmus, um di
 
 ### <a id="instances"></a> Mehrere Instanzen
 
-Wenn Ihre Web-App auf mehreren virtuellen Instanzen läuft, wird ein kontinuierlicher Webauftrag auf allen Computern ausgeführt, und jeder Computer wartet auf Auslöser und versucht, Funktionen auszuführen. In manchen Szenarien kann dies dazu führen, dass manche Funktionen dieselben Daten doppelt verarbeiten. Die Funktionen sollten daher "idempotent" geschrieben sein, d. h. beim wiederholten Aufrufen mit denselben Eingangsdaten dürfen keine duplizierten Resultate entstehen.
+Wenn Ihre Web-App auf mehreren Instanzen ausgeführt wird, wird ein kontinuierlicher WebJob auf allen Computern ausgeführt, und jeder Computer wartet auf Auslöser und versucht, Funktionen auszuführen. Mit dem WebJobs SDK-Trigger für Warteschlangen wird automatisch verhindert, dass eine Funktion Warteschlangenmeldungen mehrfach verarbeitet. Daher müssen keine idempotenten Funktionen geschrieben werden. Wenn Sie jedoch sicherstellen möchten, dass nur eine Instanz einer Funktion ausgeführt wird, auch wenn mehrere Instanzen der Host-Web-App vorhanden sind, können Sie das `Singleton`-Attribut verwenden.
 
 ### <a id="parallel"></a> Parallele Ausführung
 
 Wenn mehrere Funktionen unterschiedliche Warteschlangen überwachen, ruft das SDK diese parallel auf, wenn Nachrichten gleichzeitig empfangen werden.
 
-Das Gleiche gilt auch, wenn mehrere Nachrichten für eine einzige Warteschlange empfangen werden. Das SDK ruft standardmäßig jeweils einen Batch von 16 Warteschlangennachrichten auf und führt die Funktion, die diese verarbeitet, parallel aus. [Die Batchgröße ist konfigurierbar](#config). Wenn die zu verarbeitende Anzahl die Hälfte der Batchgröße erreicht, ruft das SDK einen weiteren Batch ab und beginnt mit der Verarbeitung dieser Nachrichten. Aus diesem Grund beträgt die maximale Anzahl der pro Funktion verarbeiteten Nachrichten die 1,5-fache Batchgröße. Dieser Grenzwert gilt separat für jede Funktion, die ein `QueueTrigger`-Attribut aufweist. Wenn Sie keine parallele Ausführung für in einer Warteschlange empfangene Nachrichten wünschen, legen Sie die Batchgröße auf 1 fest.
+Das Gleiche gilt auch, wenn mehrere Nachrichten für eine einzige Warteschlange empfangen werden. Das SDK ruft standardmäßig jeweils einen Batch von 16 Warteschlangennachrichten auf und führt die Funktion, die diese verarbeitet, parallel aus. [Die Batchgröße ist konfigurierbar](#config). Wenn die zu verarbeitende Anzahl die Hälfte der Batchgröße erreicht, ruft das SDK einen weiteren Batch ab und beginnt mit der Verarbeitung dieser Nachrichten. Aus diesem Grund beträgt die maximale Anzahl der pro Funktion verarbeiteten Nachrichten die 1,5-fache Batchgröße. Dieser Grenzwert gilt separat für jede Funktion, die ein `QueueTrigger`-Attribut aufweist.
+
+Wenn keine parallele Ausführung für in einer Warteschlange empfangene Nachrichten erfolgen soll, können Sie die Batchgröße auf „1“ festlegen. Siehe dazu auch **More control over Queue processing** (in englischer Sprache) im Blog zum [Azure WebJobs SDK 1.1.0 RTM](/blog/azure-webjobs-sdk-1-1-0-rtm/).
 
 ### <a id="queuemetadata"></a>Abrufen von Warteschlangen oder Metadaten zu Warteschlangennachrichten
 
@@ -581,9 +584,31 @@ In einer Azure-Tabelle sehen die Protokolle `Console.Out` und `Console.Error` wi
 
 ![Fehlerprotokoll in Tabelle](./media/websites-dotnet-webjobs-sdk-storage-queues-how-to/tableerror.png)
 
+Wenn Sie Ihren eigenen Logger anschließen möchten, finden Sie entsprechende Informationen in [diesem Beispiel](http://github.com/Azure/azure-webjobs-sdk-samples/blob/master/BasicSamples/MiscOperations/Program.cs).
+
+## <a id="errors"></a>Behandeln von Fehlern und Konfigurieren von Timeouts
+
+Das WebJobs-SDK enthält außerdem ein [Timeout](http://github.com/Azure/azure-webjobs-sdk-samples/blob/master/BasicSamples/MiscOperations/Functions.cs)-Attribut, mit dem Sie festlegen können, dass eine Funktion abgebrochen wird, wenn sie nicht innerhalb einer bestimmten Zeitspanne abgeschlossen wird. Und wenn eine Warnung ausgelöst werden soll, wenn innerhalb einer bestimmten Zeitspanne zu viele Fehler auftreten, können Sie das `ErrorTrigger`-Attribut verwenden. Hier ein [Beispiel für das ErrorTrigger-Attribut](https://github.com/Azure/azure-webjobs-sdk-extensions/wiki/Error-Monitoring).
+
+```
+public static void ErrorMonitor(
+[ErrorTrigger("00:01:00", 1)] TraceFilter filter, TextWriter log,
+[SendGrid(
+    To = "admin@emailaddress.com",
+    Subject = "Error!")]
+ SendGridMessage message)
+{
+    // log last 5 detailed errors to the Dashboard
+   log.WriteLine(filter.GetDetailedMessage(5));
+   message.Text = filter.GetDetailedMessage(1);
+}
+```
+
+Sie können zudem Funktionen dynamisch deaktivieren und aktivieren, um festzulegen, ob sie ausgelöst werden können. Dazu verwenden Sie einen Konfigurationsschalter, bei dem es sich um eine App-Einstellung oder einen Umgebungsvariablennamen handeln kann. Beispielcode finden Sie im `Disable`-Attribut im [Repository mit WebJobs SDK-Beispielen](https://github.com/Azure/azure-webjobs-sdk-samples/blob/master/BasicSamples/MiscOperations/Functions.cs).
+
 ## <a id="nextsteps"></a> Nächste Schritte
 
 In dieser Anleitung wurden Codebeispiele bereitgestellt, in denen veranschaulicht wird, wie häufige Szenarien für das Arbeiten mit Azure-Warteschlangen behandelt werden. Weitere Informationen zur Verwendung von Azure WebJobs und dem WebJobs-SDK finden Sie unter [Empfohlene Ressourcen für Azure WebJobs](http://go.microsoft.com/fwlink/?linkid=390226).
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

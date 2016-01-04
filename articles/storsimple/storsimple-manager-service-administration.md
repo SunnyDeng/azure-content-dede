@@ -1,6 +1,6 @@
 <properties 
    pageTitle="StorSimple Manager-Dienstverwaltung | Microsoft Azure"
-   description="Erfahren Sie, wie Sie Ihr StorSimple-Gerät mithilfe des StorSimple Manager-Diensts im Azure-Verwaltungsportal verwalten."
+   description="Erfahren Sie, wie Sie Ihr StorSimple-Gerät mithilfe des StorSimple Manager-Diensts im klassischen Azure-Portal verwalten."
    services="storsimple"
    documentationCenter=""
    authors="alkohli"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="09/11/2015"
+   ms.date="12/02/2015"
    ms.author="alkohli" />
 
 # Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts
@@ -30,13 +30,13 @@ In diesem Artikel lernen Sie Folgendes:
 
 ## Herstellen einer Verbindung mit dem StorSimple Manager-Dienst
 
-Der StorSimple Manager-Dienst wird in Microsoft Azure ausgeführt. Er stellt Verbindungen mit mehreren StorSimple-Geräten her. Diese Geräte werden über ein zentrales browserbasiertes Microsoft Azure-Verwaltungsportal verwaltet. Gehen Sie wie folgt vor, um eine Verbindung mit dem StorSimple Manager-Dienst herzustellen:
+Der StorSimple Manager-Dienst wird in Microsoft Azure ausgeführt. Er stellt Verbindungen mit mehreren StorSimple-Geräten her. Diese Geräte werden über ein zentrales browserbasiertes klassisches Microsoft Azure-Portal verwaltet. Gehen Sie wie folgt vor, um eine Verbindung mit dem StorSimple Manager-Dienst herzustellen:
 
 #### So stellen Sie eine Verbindung mit dem Dienst her
 
 1. Navigieren Sie zu [http://azure.microsoft.com/](http://azure.microsoft.com/).
 
-1. Melden Sie sich mit den Anmeldeinformationen Ihres Microsoft-Kontos beim Microsoft Azure-Verwaltungsportal (rechts oben) an.
+1. Melden Sie sich mit den Anmeldeinformationen Ihres Microsoft-Kontos beim klassischen Microsoft Azure-Portal (rechts oben) an.
 
 1. Führen Sie im linken Navigationsbereich einen Bildlauf nach unten durch, um auf den StorSimple Manager-Dienst zuzugreifen.
 
@@ -57,10 +57,10 @@ Die folgende Tabelle gibt Aufschluss über die Navigationshierarchie der Benutze
 |Zielseite|Seiten auf Dienstebene|Seiten auf Geräteebene|Seiten auf Geräteebene|
 |---|---|---|---|
 |StorSimple Manager-Dienst|Dienstdashboard|Gerätedashboard||
-||Geräte →|Überwachen| |
+||Geräte →|Überwachen| 
 ||Sicherungskatalog|Volumecontainer→|Volumes| 
 ||Konfigurieren (Dienst)|Sicherungsrichtlinien|| 
-||Aufträge|Konfigurieren (Gerät)||
+||Aufträge|Konfigurieren (Gerät)| 
 ||Warnungen|Wartung|
 
 ![Video verfügbar](./media/storsimple-manager-service-administration/Video_icon.png) **Video verfügbar**
@@ -105,7 +105,6 @@ Klicken Sie auf die Verfahren in der Tabelle, um weitere Informationen zu den ei
 |Unterstützungspaket erstellen|StorSimple Manager-Dienst → Geräte → Wartung|[Erstellen und Verwalten eines Unterstützungspakets](storsimple-create-manage-support-package.md)|
 |Softwareupdates installieren|StorSimple Manager-Dienst → Geräte → Wartung|[Aktualisieren Ihres Geräts](storsimple-update-device.md)|
 
-![Video verfügbar](./media/storsimple-manager-service-administration/Video_icon.png) **Video verfügbar**
 
 ##Nächste Schritte
 Informationen zu Problemen beim alltäglichen Betrieb Ihres StorSimple-Geräts oder zu Problemen mit dessen Hardwarekomponenten finden Sie hier:
@@ -117,4 +116,4 @@ Falls sich das Problem nicht beheben lässt und Sie eine Serviceanfrage erstelle
 
 -  [Kontaktaufnahme mit dem Microsoft-Support](storsimple-contact-microsoft-support.md)
 
-<!----HONumber=Oct15_HO4-->
+<!----HONumber=AcomDC_1203_2015-->

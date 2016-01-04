@@ -21,15 +21,15 @@
 
 Die in diesem Thema beschriebenen Fehlermeldungen sollen den Benutzern von Hadoop in Azure HDInsight dabei helfen, mögliche Fehlerbedingungen zu verstehen, auf die sie möglicherweise stoßen, wenn sie den Dienst mit Azure PowerShell verwalten. Es werden auch Schritte zur Behebung des Problems erörtert.
 
-Einige dieser Fehlermeldungen können auch im Azure-Vorschauportal angezeigt werden, wenn HDInsight-Cluster darüber verwaltet werden. Andere Fehlermeldungen, auf die Sie möglicherweise stoßen, sind jedoch eventuell weniger differenziert, da in diesem Kontext gewisse Beschränkungen für die Lösungsschritte bestehen. Andere Fehlermeldungen erscheinen in einem Kontext, in dem die Lösung offensichtlich ist. Wenn z. B. gegen die Beschränkungen für Parameter verstoßen wird, erscheint die Meldung rechts neben dem Feld, in das der Wert eingegeben wurde. Hier ein Fall, in dem zu viele Datenknoten angefordert wurden. Die Lösung besteht darin, die Anzahl auf einen zulässigen Wert von maximal 33 zu verringern.
+Einige dieser Fehlermeldungen können auch im Azure-Portal angezeigt werden, wenn HDInsight-Cluster darüber verwaltet werden. Andere Fehlermeldungen, auf die Sie möglicherweise stoßen, sind jedoch eventuell weniger differenziert, da in diesem Kontext gewisse Beschränkungen für die Lösungsschritte bestehen. Andere Fehlermeldungen erscheinen in einem Kontext, in dem die Lösung offensichtlich ist. Wenn z. B. gegen die Beschränkungen für Parameter verstoßen wird, erscheint die Meldung rechts neben dem Feld, in das der Wert eingegeben wurde. Hier ein Fall, in dem zu viele Datenknoten angefordert wurden. Die Lösung besteht darin, die Anzahl auf einen zulässigen Wert von maximal 33 zu verringern.
 
-![HDInsight-Fehlermeldung im Vorschauportal][image-hdi-debugging-error-messages-portal]
+![HDInsight-Fehlermeldung im Portal][image-hdi-debugging-error-messages-portal]
 
-In Situationen, in denen der Fehler spezifisch für Azure HDInsight ist, sollten Sie ermitteln, weshalb der Fehler aufgetreten ist. Unter [HDInsight-Fehlercodes](#hdi-error-codes) finden Sie Informationen zu den unterschiedlichen Fehlercodes und ihrer Behebung. In einigen Situationen sollten Sie auch auf die Hadoop-Protokolle selbst zugreifen. Dies ist direkt über das Azure-Vorschauportal möglich.
+In Situationen, in denen der Fehler spezifisch für Azure HDInsight ist, sollten Sie ermitteln, weshalb der Fehler aufgetreten ist. Unter [HDInsight-Fehlercodes](#hdi-error-codes) finden Sie Informationen zu den unterschiedlichen Fehlercodes und ihrer Behebung. In einigen Situationen sollten Sie auch auf die Hadoop-Protokolle selbst zugreifen. Dies ist direkt über das Azure-Portal möglich.
 
 ## Anzeigen von Clusterintegritäts- und Auftragsprotokollen
 
-* **Rufen Sie die Hadoop-Benutzeroberfläche auf**. Klicken Sie im Azure-Vorschauportal auf den Namen eines HDInsight-Clusters, um das Clusterblatt zu öffnen. Klicken Sie auf dem Clusterblatt auf **Dashboard**.
+* **Rufen Sie die Hadoop-Benutzeroberfläche auf**. Klicken Sie im Azure-Portal auf den Namen eines HDInsight-Clusters, um das Clusterblatt zu öffnen. Klicken Sie auf dem Clusterblatt auf **Dashboard**.
 
 	![Clusterdashboard starten](./media/hdinsight-debug-jobs/hdi-debug-launch-dashboard.png)
   
@@ -37,7 +37,7 @@ In Situationen, in denen der Fehler spezifisch für Azure HDInsight ist, sollten
 
 	![Hadoop-Benutzeroberfläche starten](./media/hdinsight-debug-jobs/hdi-debug-launch-dashboard-hadoop-ui.png)
 
-* **Rufen Sie die YARN-Benutzeroberfläche auf**. Klicken Sie im Azure-Vorschauportal auf den Namen eines HDInsight-Clusters, um das Clusterblatt zu öffnen. Klicken Sie auf dem Clusterblatt auf **Dashboard**. Geben Sie die Anmeldeinformationen für den Clusteradministrator ein, wenn Sie dazu aufgefordert werden. Klicken Sie in der daraufhin angezeigten Abfragekonsole auf **YARN UI**.
+* **Rufen Sie die YARN-Benutzeroberfläche auf**. Klicken Sie im Azure-Portal auf den Namen eines HDInsight-Clusters, um das Clusterblatt zu öffnen. Klicken Sie auf dem Clusterblatt auf **Dashboard**. Geben Sie die Anmeldeinformationen für den Clusteradministrator ein, wenn Sie dazu aufgefordert werden. Klicken Sie in der daraufhin angezeigten Abfragekonsole auf **YARN UI**.
 
 	Über die YARN-Benutzeroberfläche haben Sie folgende Möglichkeiten:
 
@@ -49,11 +49,11 @@ In Situationen, in denen der Fehler spezifisch für Azure HDInsight ist, sollten
 
 	* **Überwachen des Auftragsstatus**. Erweitern Sie im linken Bereich **Cluster**, und klicken Sie dann auf **Anwendungen**, um alle Aufträge im Cluster aufzulisten. Wenn Sie nur Aufträge in einem bestimmten Zustand betrachten möchten (z. B. neu, übermittelt, ausgeführt usw.), klicken Sie auf den entsprechenden Link unter **Anwendungen**. Sie können außerdem auf den Auftragsnamen klicken, um weitere Informationen zum Auftrag abzurufen, z. B. Ausgabe, Protokolle usw.
 
-* **Zugriff auf die HBase-Benutzeroberfläche**. Klicken Sie im Azure-Vorschauportal auf den Namen eines HDInsight HBase-Clusters, um das Clusterblatt zu öffnen. Klicken Sie auf dem Clusterblatt auf **Dashboard**. Geben Sie die Anmeldeinformationen für den Clusteradministrator ein, wenn Sie dazu aufgefordert werden. Klicken Sie in der daraufhin angezeigten Abfragekonsole auf **HBase UI**.
+* **Zugriff auf die HBase-Benutzeroberfläche**. Klicken Sie im Azure-Portal auf den Namen eines HDInsight HBase-Clusters, um das Clusterblatt zu öffnen. Klicken Sie auf dem Clusterblatt auf **Dashboard**. Geben Sie die Anmeldeinformationen für den Clusteradministrator ein, wenn Sie dazu aufgefordert werden. Klicken Sie in der daraufhin angezeigten Abfragekonsole auf **HBase UI**.
 
 ## <a id="hdi-error-codes"></a>HDInsight-Fehlercodes
 
-Die Fehler, auf die ein Benutzer in Azure PowerShell oder im Vorschauportal stoßen kann, werden unten alphabetisch nach Name aufgeführt. Die Fehler sind wiederum mit einem Eintrag im Abschnitt [Diagnose und Lösung von Fehlern](#discription-mitigation-errors) verknüpft, der folgende Informationen bereitstellt:
+Die Fehler, auf die ein Benutzer in Azure PowerShell oder im Portal stoßen kann, werden unten alphabetisch nach Name aufgeführt. Die Fehler sind wiederum mit einem Eintrag im Abschnitt [Diagnose und Lösung von Fehlern](#discription-mitigation-errors) verknüpft, der folgende Informationen bereitstellt:
 
 - **Beschreibung**: Fehlermeldung, die dem Benutzer angezeigt wird.
 - **Lösung**: Schritte, die zur Problembehebung unternommen werden können.
@@ -129,7 +129,7 @@ Die Fehler, auf die ein Benutzer in Azure PowerShell oder im Vorschauportal sto�
 
 ### <a id="ClusterNameUnavailable"></a>ClusterNameUnavailable
 - **Beschreibung**: Der Clustername *IhrClusterName* ist nicht verfügbar. Wählen Sie einen anderen Namen.  
-- **Lösung**: Der Benutzer sollte einen eindeutigen, noch nicht vorhandenen Clusternamen angeben und dann den Vorgang wiederholen. Wenn der Benutzer das Vorschauportal verwendet, wird er bei der Erstellung über die Benutzeroberfläche informiert, wenn ein Clustername bereits vorhanden ist.
+- **Lösung**: Der Benutzer sollte einen eindeutigen, noch nicht vorhandenen Clusternamen angeben und dann den Vorgang wiederholen. Wenn der Benutzer das Portal verwendet, wird er bei der Erstellung über die Benutzeroberfläche informiert, wenn ein Clustername bereits vorhanden ist.
 
 
 ### <a id="ClusterPasswordInvalid"></a>ClusterPasswordInvalid
@@ -258,7 +258,7 @@ Die Fehler, auf die ein Benutzer in Azure PowerShell oder im Vorschauportal sto�
 
 ### <a id="StorageAccountNotColocated"></a>StorageAccountNotColocated
 - **Beschreibung**: Das Speicherkonto *NameIhresSpeicherkontos* befindet sich in der Region *NameAktuellerRegion*. Sie sollte identisch mit der Clusterregion *IhrClusterRegionName* sein.  
-- **Lösung**: Geben Sie entweder ein Speicherkonto in der gleichen Region an, in dem sich Ihr Cluster befindet, oder erstellen Sie einen neuen Cluster in der gleichen Region wie das vorhandene Speicherkonto, wenn sich Ihre Daten bereits im Speicherkonto befinden. Wenn Sie das Vorschauportal verwenden, wird der Benutzer vorab über die Benutzeroberfläche über dieses Problem informiert.
+- **Lösung**: Geben Sie entweder ein Speicherkonto in der gleichen Region an, in dem sich Ihr Cluster befindet, oder erstellen Sie einen neuen Cluster in der gleichen Region wie das vorhandene Speicherkonto, wenn sich Ihre Daten bereits im Speicherkonto befinden. Wenn Sie das Portal verwenden, wird der Benutzer im Vorhinein über die Benutzeroberfläche über dieses Problem informiert.
 
 ### <a id="SubscriptionIdNotActive"></a>SubscriptionIdNotActive
 - **Beschreibung**: Die angegebene Abonnement-ID *IhreAbonnementID* ist nicht aktiv.  
@@ -300,4 +300,4 @@ Die Fehler, auf die ein Benutzer in Azure PowerShell oder im Vorschauportal sto�
 
 [image-hdi-debugging-error-messages-portal]: ./media/hdinsight-debug-jobs/hdi-debug-errormessages-portal.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

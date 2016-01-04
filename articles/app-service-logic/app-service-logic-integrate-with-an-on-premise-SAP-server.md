@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Integration in einen lokalen SAP-Server in Microsoft Azure App Service"
+	pageTitle="Integration in einen lokalen SAP-Server in Azure App Service | Microsoft Azure"
 	description="Informationen zur Integration in einen lokalen SAP-Server"
 	authors="rajeshramabathiran"
 	manager="dwrede"
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/01/2015"
+	ms.date="12/07/2015"
 	ms.author="sameerch"/>
 
 
@@ -40,15 +40,13 @@ Die SAP-spezifischen Clientbibliotheken sind auf dem Clientcomputer erforderlich
 
 
 ## Erstellen eines neuen SAP-Connectors
-1. Melden Sie sich beim Microsoft Azure-Verwaltungsportal an.
+1. Melden Sie sich beim Azure-Portal an.
 2. Wählen Sie **Neu** aus.
 3. Wählen Sie auf dem Blatt "Erstellen" **Compute** > **Azure Marketplace** aus.
-4. Wählen Sie auf dem Blatt "Marketplace" **API-Apps**, und suchen Sie auf der Suchleiste nach SAP:
-
-	![SAP-Connector-API-App][2]
+4. Wählen Sie auf dem Blatt „Marketplace“ die Option **API-Apps** aus, und suchen Sie auf der Suchleiste nach SAP: ![SAP-Connector-API-App][2]
 5. Wählen Sie den von Microsoft veröffentlichten **SAP-Connector** aus.
 6. Wählen Sie auf dem Blatt "SAP-Connector" **Erstellen** aus.
-7. Geben Sie auf dem neuen Blatt, das geöffnet wird, Folgendes ein:
+7. Geben Sie auf dem neuen Blatt, das geöffnet wird, Folgendes ein:  
 	1. **Standort** – Wählen Sie den geografischen Standort, an dem Sie den Connector bereitstellen möchten.
 	2. **Abonnement** – Wählen Sie ein Abonnement, in dem dieser Connector erstellt werden soll.
 	3. **Ressourcengruppe** – Wählen oder erstellen Sie eine Ressourcengruppe, in der sich der Connector befinden soll.
@@ -71,7 +69,7 @@ Die SAP-spezifischen Clientbibliotheken sind auf dem Clientcomputer erforderlich
 
 
 ## Installieren des Hybridlisteners
-Navigieren Sie über **Durchsuchen** > **API-Apps** > *Name des Connectors* zum SAP-Connector, den Sie erstellt haben.
+Navigieren Sie über **Durchsuchen** > **API-Apps** > *Name des Connectors* zu dem von Ihnen erstellten SAP-Connector.
 
 Auf dem Blatt des Connectors sehen Sie, dass der Hybridverbindungsstatus "Ausstehend" ist. Wählen Sie "Hybridverbindung" aus. Das Blatt "Hybridverbindung" wird geöffnet:
 
@@ -94,7 +92,7 @@ Klicken Sie auf **Installieren**, um die Hybrid Connection Manager-Einrichtung a
 ![Hybrid Connection Manager-Installation ist abgeschlossen][7]
 
 ## Überprüfen der Hybridverbindung
-Navigieren Sie über **Durchsuchen** > **API-Apps** > *Name des Connectors* zum SAP-Connector, den Sie erstellt haben.
+Navigieren Sie über **Durchsuchen** > **API-Apps** > *Name des Connectors* zu dem von Ihnen erstellten SAP-Connector.
 
 Auf dem Blatt des Connectors sehen Sie, dass der Hybridverbindungsstatus *Verbunden* lautet.
 
@@ -102,7 +100,7 @@ Auf dem Blatt des Connectors sehen Sie, dass der Hybridverbindungsstatus *Verbun
 
 
 ## Verwenden des SAP-Connectors in Logik-Apps
-Sobald der SAP-Connector erstellt wurde, kann es innerhalb des Workflows Ihrer Logik-Apps verwendet werden. Erstellen Sie dazu eine neue Logik-App über **Neu** > **Logik-Apps** > **Erstellen**. Geben Sie die Metadaten für die Logik-App samt Ressourcengruppe ein.
+Sobald der SAP-Connector erstellt wurde, kann es innerhalb des Workflows Ihrer Logik-Apps verwendet werden. Erstellen Sie dazu eine neue Logik-App über **Neu** > **Logik-Apps** > **Erstellen**. Geben Sie die Metadaten für die Logik-App mit der Ressourcengruppe ein.
 
 Wählen Sie **Triggers and actions** aus. Der Workflow-Designer für Logik-Apps wird geöffnet.
 
@@ -123,4 +121,4 @@ Für die ausgewählte Aktion sehen Sie die Eingabe- und Ausgabeparameter. Sie k�
 [8]: ./media/app-service-logic-integrate-with-an-on-premise-SAP-server/SAPConnector.HybridConnection.Connected.PNG
 [9]: http://download.microsoft.com/download/2/D/7/2D7CE8DF-A6C5-45F0-8319-14C3F1F9A0C7/InstallationGuide.htm
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

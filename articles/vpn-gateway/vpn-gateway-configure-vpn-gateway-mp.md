@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Konfigurieren eines VPN-Gateways im Azure-Portal | Microsoft Azure"
+   pageTitle="Konfigurieren eines VPN-Gateways im klassischen Azure-Portal | Microsoft Azure"
    description="In diesem Artikel erfahren Sie, wie Sie das VPN-Gateway Ihres virtuellen Netzwerks konfigurieren und zwischen dem statischen und dynamischen Routingtyp wechseln."
    services="vpn-gateway"
    documentationCenter="na"
@@ -17,17 +17,17 @@
    ms.date="10/21/2015"
    ms.author="cherylmc" />
 
-# Konfigurieren eines VPN-Gateways im Azure-Portal
+# Konfigurieren eines VPN-Gateways im klassischen Azure-Portal
 
 >[AZURE.NOTE]Sie sollten wissen, dass Azure derzeit mit zwei Bereitstellungsmodellen arbeitet: der Bereitstellung mit dem Ressourcen-Manager und der klassischen Bereitstellung. Bevor Sie Ihre Konfiguration beginnen, sollten Sie sicherstellen, dass Sie die Bereitstellungsmodelle und -tools verstehen. Informationen zu den Bereitstellungsmodellen finden Sie unter [Azure-Bereitstellungsmodelle](../azure-classic-rm.md).
 
-Dieser Artikel wurde für das klassische Bereitstellungsmodell und das Azure-Portal (nicht das Vorschau-Portal) geschrieben. Wenn Sie ein VPN-Gateway für das klassische Bereitstellungsmodell mithilfe eines Portals konfigurieren möchten, müssen Sie derzeit das Azure-Portal verwenden.
+Dieser Artikel wurde für das klassische Bereitstellungsmodell und das klassische Azure-Portal (nicht das Azure-Portal) geschrieben. Wenn Sie ein VPN-Gateway für das klassische Bereitstellungsmodell mithilfe eines Portals konfigurieren möchten, müssen Sie derzeit das klassische Azure-Portal verwenden.
 
 Wenn Sie eine sichere standortübergreifende Verbindung zwischen Azure und Ihrem lokalen Standort erstellen möchten, benötigen Sie ein konfiguriertes VPN-Gateway. Es gibt verschiedene Arten von Gateways, und die Art des zu erstellenden Gateways hängt sowohl von Ihrem Netzwerkentwurf als auch vom gewünschten lokalen VPN-Gerät ab. Einige Konnektivitätsoptionen (wie etwa Punkt-zu-Standort-Verbindungen) setzen ein Gateway mit dynamischem Routing voraus. Wenn Sie Ihr Gateway so konfigurieren möchten, dass es gleichzeitig Punkt-zu-Standort-Verbindungen (P2S) und eine Standort-zu-Standort-Verbindung (S2S) unterstützt, müssen Sie ein Gateway mit dynamischem Routing konfigurieren, auch wenn für die Standort-zu-Standort-Verbindung eigentlich ein beliebiger Gateway-Routingtyp konfiguriert werden kann. Darüber hinaus müssen Sie sicherstellen, dass das Gerät, das Sie für Ihre Standort-zu-Standort-Verbindung verwenden möchten, den gewünschten Gatewaytyp unterstützt. Siehe [Zu VPN-Gateways](vpn-gateway-about-vpngateways.md).
 
 ## Konfigurationsübersicht
 
-Das folgende Verfahren führt Sie durch die Konfiguration des VPN-Gateways im Azure-Portal. Diese Schritte gelten für Gateways für VNets, die mit dem Service Management-Modus erstellt wurden und im Azure-Portal sichtbar sind. Es handelt sich nicht um die Schritte zur Verwendung des Vorschauportals oder für VNets, die mithilfe des Ressourcen-Manager-Modus konfiguriert wurden. Informationen zum Erstellen von VNET-Gateways für virtuelle Netzwerke, die mit dem Ressourcen-Manager-Modus erstellt wurden, finden Sie unter [Erstellen eines virtuellen Netzwerks mit einer Standort-zu-Standort-Verbindung unter Verwendung von Azure-Ressourcen-Manager und PowerShell ](vpn-gateway-create-site-to-site-rm-powershell.md).
+Das folgende Verfahren führt Sie durch die Konfiguration des VPN-Gateways im klassischen Azure-Portal. Diese Schritte gelten für Gateways für VNets, die mit dem Service Management-Modus erstellt wurden und im klassischen Azure-Portal sichtbar sind. Es handelt sich nicht um die Schritte zur Verwendung des Vorschauportals oder für VNets, die mithilfe des Ressourcen-Manager-Modus konfiguriert wurden. Informationen zum Erstellen von VNET-Gateways für virtuelle Netzwerke, die mit dem Ressourcen-Manager-Modus erstellt wurden, finden Sie unter [Erstellen eines virtuellen Netzwerks mit einer Standort-zu-Standort-Verbindung unter Verwendung von Azure-Ressourcen-Manager und PowerShell ](vpn-gateway-create-site-to-site-rm-powershell.md).
 
 Vor dem Konfigurieren Ihres Gateways müssen Sie zuerst Ihr virtuelles Netzwerk erstellen. Die Schritte zum Erstellen eines virtuellen Netzwerks für standortübergreifende Verbindungen finden Sie unter [Konfigurieren eines virtuellen Netzwerks mit einer Standort-zu-Standort-VPN-Verbindung](vpn-gateway-site-to-site-create.md) bzw. unter [Konfigurieren eines virtuellen Netzwerks mit einer Punkt-zu-Standort-VPN-Verbindung](vpn-gateway-point-to-site-create.md). Führen Sie anschließend die folgenden Schritte durch, um das VPN-Gateway zu konfigurieren und die Informationen zu sammeln, die Sie zum Konfigurieren des VPN-Geräts benötigen.
 
@@ -43,7 +43,7 @@ Wenn Sie bereits über ein VPN-Gateway verfügen und den Routingtyp ändern möc
 
 ## Erstellen eines VPN-Gateways
 
-1. Vergewissern Sie sich, dass im Azure-Portal auf der Seite **Netzwerke** in der Statusspalte für Ihr virtuelles Netzwerk **Erstellt** angezeigt wird.
+1. Vergewissern Sie sich, dass im klassischen Azure-Portal auf der Seite **Netzwerke** in der Statusspalte für Ihr virtuelles Netzwerk **Erstellt** angezeigt wird.
 
 1. Klicken Sie in der Spalte **Name** auf den Namen Ihres virtuellen Netzwerks.
 
@@ -157,4 +157,4 @@ Wenn Sie eine Punkt-zu-Standort-VPN-Verbindung konfigurieren möchten, helfen Ih
 
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1203_2015-->

@@ -77,7 +77,7 @@ Debian ist eine wichtige Verteilung für Linux und Open-Source basierend auf der
 Die CentOS-Linux-Distribution ist eine stabile, vorhersehbare, verwaltbare und reproduzierbare Plattform, die aus den Quellen von Red Hat Enterprise Linux (RHEL) abgeleitet wurde.
 
 1. [MSOpenTech VM Depot](https://vmdepot.msopentech.com/List/Index?sort=Featured&search=centos)
-2. [Image-Katalog](http://azure.microsoft.com/en-in/marketplace/partners/OpenLogic/)
+2. [Image-Katalog](http://azure.microsoft.com/marketplace/partners/OpenLogic/)
 3. [Gewusst wie: Vorbereiten eines benutzerdefinierten CentOS-basierten virtuellen Computers für Azure](virtual-machines-linux-create-upload-vhd-centos.md)
 4. [Blog: Bereitstellen eines CentOS-VM-Images aus OpenLogic](http://azure.microsoft.com/blog/2013/01/11/deploying-openlogic-centos-images-on-windows-azure-virtual-machines/)
 6. [Gewusst wie: Installieren von Apache Qpid Proton-C für AMQP und Service Bus](http://msdn.microsoft.com/library/azure/dn235560.aspx)
@@ -96,7 +96,7 @@ Die CentOS-Linux-Distribution ist eine stabile, vorhersehbare, verwaltbare und r
 
 CoreOS ist eine kleine, optimierte Distribution für die reine Computingskalierung mit einem hohen Maß an Kontrolle hinsichtlich der Anpassung.
 
-10. [Image-Katalog](http://azure.microsoft.com/en-in/marketplace/partners/coreos/)  
+10. [Image-Katalog](http://azure.microsoft.com/marketplace/partners/coreos/)  
 11. [Gewusst wie: Verwenden von CoreOS in Azure](virtual-machines-linux-coreos-how-to.md)
 12. [Gewusst wie: Erste Schritte mit Fleet und Docker unter CoreOS in Azure](virtual-machines-linux-coreos-fleet-get-started.md)
 13. [Blog: TechEd Europe – Windows-Docker-Client und Linux-Container](http://azure.microsoft.com/blog/2014/10/28/new-docker-coreos-topics-linux-on-azure/)
@@ -121,7 +121,7 @@ CoreOS ist eine kleine, optimierte Distribution für die reine Computingskalieru
 1. [Grundlagen: Azure-Befehlszeilenschnittstelle (Azure-CLI)](../xplat-cli-install.md)
 4. [Grundlagen: Zertifikatverwendung und -verwaltung](http://msdn.microsoft.com/library/azure/gg981929.aspx)
 5. [Grundlagen: Auswählen von Linux-Benutzernamen](virtual-machines-linux-usernames.md)
-6. [Grundlagen: Anmelden bei einem virtuellen Linux-Computer über das Azure-Portal](virtual-machines-linux-how-to-log-on.md)
+6. [Grundlagen: Anmelden bei einem virtuellen Linux-Computer über das klassische Azure-Portal](virtual-machines-linux-how-to-log-on.md)
 7. [Grundlagen: SSH](virtual-machines-linux-use-ssh-key.md)
 8. [Grundlagen: Zurücksetzen von Kennwörtern oder SSH-Eigenschaften für Linux](virtual-machines-linux-use-vmaccess-reset-password-or-ssh.md)
 9. [Grundlagen: Verwenden von Root](virtual-machines-linux-use-root-privileges.md)
@@ -131,7 +131,7 @@ CoreOS ist eine kleine, optimierte Distribution für die reine Computingskalieru
 13. [Grundlagen: RAID](virtual-machines-linux-configure-raid.md)
 14. [Grundlagen: Erfassen eines virtuellen Linux-Computers zum Erstellen einer Vorlage](virtual-machines-linux-capture-image.md)
 15. [Grundlagen: Der Azure Linux-Agent](virtual-machines-linux-agent-user-guide.md)
-16. [Grundlagen: Azure-VM-Erweiterungen und -Features](http://msdn.microsoft.com/library/azure/dn606311.aspx)
+16. [Grundlagen: Azure-VM-Erweiterungen und -Features](virtual-machines-extensions-features.md)
 17. [Grundlagen: Einfügen benutzerdefinierter Daten in einen virtuellen Computer zur Verwendung mit "Cloud-init"](virtual-machines-how-to-inject-custom-data.md)
 18. [Blog zu den Grundlagen: Erstellen von Linux auf Azure in zwölf Schritten für Hochverfügbarkeit](http://blogs.technet.com/b/keithmayer/archive/2014/10/03/quick-start-guide-building-highly-available-linux-servers-in-the-cloud-on-microsoft-azure.aspx)
 19. [Blog zu den Grundlagen: Automatisieren der Bereitstellung von Linux auf Azure mit der Azure-CLI, node.js, jhawk](http://blogs.technet.com/b/keithmayer/archive/2014/11/24/step-by-step-automated-provisioning-for-linux-in-the-cloud-with-microsoft-azure-xplat-cli-json-and-node-js-part-1.aspx)
@@ -150,7 +150,7 @@ CoreOS ist eine kleine, optimierte Distribution für die reine Computingskalieru
 
 1. [Images](https://vmdepot.msopentech.com/List/Index?sort=Featured&search=java)
 2. [Gewusst wie: Verwenden von Service Bus aus Java mit AMQP 1.0](http://msdn.microsoft.com/library/azure/jj841073.aspx)
-3. [Gewusst wie: Einrichten von Tomcat7 auf Linux mit dem Azure-Portal](virtual-machines-linux-setup-tomcat7-linux.md)
+3. [Gewusst wie: Einrichten von Tomcat7 auf Linux mit dem klassischen Azure-Portal](virtual-machines-linux-setup-tomcat7-linux.md)
 4. [Video: Azure-Java-SDK für die Dienstverwaltung](http://channel9.msdn.com/Shows/Cloud+Cover/Episode-157-The-Java-SDK-for-Azure-Management-with-Brady-Gaster)
 5. [Blog: Erste Schritte mit Azure-Verwaltungsbibliotheken für Java](http://azure.microsoft.com/blog/2014/09/15/getting-started-with-the-azure-java-management-libraries/)
 5. [GitHub-Repository: Azure Toolkit für Eclipse mit Java](https://github.com/MSOpenTech/WindowsAzureToolkitForEclipseWithJava)
@@ -191,7 +191,7 @@ Es ist geplant, diesen Abschnitt in Kürze mit Inhalt zu füllen. Wenn Sie Vorsc
 4. [Video: Zugreifen auf Linux-basierten GUI auf Azure im Browser mit fernapp](http://channel9.msdn.com/Blogs/Open/Accessing-Linux-based-GUI-on-Azure-over-browser-with-fernapp)
 5. [Video: Freigegebener Speicher unter Linux mithilfe der Vorschau der Azure-Dateien – Teil 1](http://channel9.msdn.com/Blogs/Open/Shared-storage-on-Linux-via-Azure-Files-Preview-Part-1)
 6. [Video: Einbeziehen von Linux-Geräten auf Azure mithilfe von Service Bus und Websites](http://channel9.msdn.com/Blogs/Open/Embracing-Linux-devices-on-Azure-via-Service-Bus-and-Web-Sites)
-7. [Video: Verbinden einer nativen Linux-basierten zwischengespeicherten Anwendung mit Windows Azure](http://channel9.msdn.com/Blogs/Open/Connecting-a-Linux-based-native-memcache-application-to-Windows-Azure)
+7. [Video: Verbinden einer nativen Linux-basierten zwischengespeicherten Anwendung mit Microsoft Azure](http://channel9.msdn.com/Blogs/Open/Connecting-a-Linux-based-native-memcache-application-to-Windows-Azure)
 8. [Video: Lastenausgleich für hoch verfügbare Linux-Dienste auf Azure: OpenLDAP und MySQL](http://channel9.msdn.com/Blogs/Open/Load-balancing-highly-available-Linux-services-on-Windows-Azure-OpenLDAP-and-MySQL)
 
 
@@ -263,7 +263,7 @@ Dieser Abschnitt beginnt mit einem Blogeintrag mit einer Reihe von Videos unter 
 1. Docker
 	- [Docker-VM-Erweiterung für Linux auf Azure](virtual-machines-docker-vm-extension.md)
 	- [Verwenden der Docker-VM-Erweiterung aus der Azure-Befehlszeilenschnittstelle (Azure-CLI)](virtual-machines-docker-with-../xplat-cli-install.md)
-	- [Verwenden der Docker-VM-Erweiterung aus dem Azure-Vorschauportal](virtual-machines-docker-with-portal.md)
+	- [Verwenden der Docker-VM-Erweiterung über das Azure-Portal](virtual-machines-docker-with-portal.md)
 	- [Schneller Einstieg in Docker in Azure Marketplace](virtual-machines-docker-ubuntu-quickstart.md)
 	- [Verwenden von "docker-machine" auf Azure](virtual-machines-docker-machine.md)
 	- [Verwenden von Docker mit Swarm auf Azure](virtual-machines-docker-swarm.md)
@@ -282,7 +282,7 @@ Dieser Abschnitt beginnt mit einem Blogeintrag mit einer Reihe von Videos unter 
 	- [Drittanbieter: Hudson Speicher-Plug-In für Azure](https://github.com/hudson3-plugins/windows-azure-storage-plugin)
 10. Chef
 	- [Chef und virtuelle Computer](virtual-machines-windows-install-chef-client.md)
-	- [Video: Was ist Chef, und wie funktioniert es??](https://msopentech.com/blog/2014/03/31/using-chef-to-manage-azure-resources/)
+	- [Video: Was ist Chef, und wie funktioniert es?](https://msopentech.com/blog/2014/03/31/using-chef-to-manage-azure-resources/)
 
 12. Azure-Automatisierung
 	- [Video: Verwenden von Azure-Automatisierung mit virtuellen Linux-Computern](http://channel9.msdn.com/Shows/Azure-Friday/Azure-Automation-104-managing-Linux-and-creating-Modules-with-Joe-Levy)
@@ -311,4 +311,4 @@ Dieser Abschnitt beginnt mit einem Blogeintrag mit einer Reihe von Videos unter 
 [How to use docker-machine on Azure]: virtual-machines-docker-machine.md
 [How to use docker with swarm on Azure]: virtual-machines-docker-swarm.md
 
-<!---HONumber=Oct15_HO3-->
+<!----HONumber=AcomDC_1217_2015-->

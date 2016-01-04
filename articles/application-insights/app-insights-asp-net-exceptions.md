@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Diagnostizieren von Fehlern und Ausnahmen in ASP.NET-Anwendungen mit Application Insights" 
-	description="Konfigurieren Sie Ihre App für eine attraktive Diagnoseoberfläche, indem Sie Ausnahmen zusammen mit Anforderungstelemetrie erfassen." 
+	description="Erfassen von Ausnahmen von ASP.NET-Apps zusammen mit der Anforderungstelemetrie." 
 	services="application-insights" 
     documentationCenter=".net"
 	authors="alancameronwills" 
@@ -12,10 +12,14 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/07/2015" 
+	ms.date="11/17/2015" 
 	ms.author="awills"/>
- 
-# Diagnostizieren von Fehlern und Ausnahmen in ASP.NET-Anwendungen mit Application Insights  
+
+
+# Einrichten von Application Insights: Diagnose von Ausnahmen
+
+[AZURE.INCLUDE [app-insights-selector-get-started-dotnet](../../includes/app-insights-selector-get-started-dotnet.md)]
+
 
 Durch die Überwachung Ihrer Anwendung mit [Visual Studio Application Insights][start] können Sie Anforderungsfehler mit Ausnahmen und andere Ereignisse auf dem Client und auf dem Server zueinander in Beziehung setzen, damit Sie die Ursachen schnell diagnostizieren können.
 
@@ -73,6 +77,9 @@ Sie haben mehrere Möglichkeiten:
 
 
 ![Drillthrough](./media/app-insights-asp-net-exceptions/viewCustomEvents.png)
+
+
+> [AZURE.NOTE]Wenn die Anwendung viele Telemetriedaten generiert, reduziert das adaptive Stichprobenmodul automatisch die an das Verwaltungsportal gesendete Datenmenge, indem nur ein repräsentativer Bruchteil der Ereignisse gesendet wird. Ereignisse, die Teil des gleichen Vorgangs sind, werden als Gruppe aus- oder abgewählt, sodass Sie zwischen verwandten Ereignissen navigieren können. [Erfahren Sie mehr über das Erstellen von Stichproben](app-insights-sampling.md).
 
 ### Anzeigen von POST-Daten von Anforderungen
 
@@ -441,11 +448,11 @@ Beachten Sie, dass sich der Wert von der Anzahl der "Ausnahmen" unterscheidet, d
 [azure]: ../insights-perf-analytics.md
 [client]: app-insights-javascript.md
 [diagnostic]: app-insights-diagnostic-search.md
-[greenbrown]: app-insights-start-monitoring-app-health-usage.md
+[greenbrown]: app-insights-asp-net.md
 [netlogs]: app-insights-asp-net-trace-logs.md
 [redfield]: app-insights-monitor-performance-live-website-now.md
 [start]: app-insights-overview.md
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

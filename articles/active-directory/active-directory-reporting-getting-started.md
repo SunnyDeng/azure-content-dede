@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure AD Reporting: Erste Schritte"
+   pageTitle="Erste Schritte mit Azure Active Directory-Berichten | Microsoft Azure"
    description="Listet die verschiedenen verfügbaren Berichte in Azure Active Directory Reporting auf"
    services="active-directory"
    documentationCenter=""
@@ -13,14 +13,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="09/21/2015"
+   ms.date="12/01/2015"
    ms.author="curtand;kenhoff"/>
 
-# Erste Schritte mit Azure AD Reporting
+# Erste Schritte mit Azure Active Directory-Berichten
 
 ## Funktionsbeschreibung
 
-Azure Active Directory umfasst Sicherheits-, Aktivitäts- und Prüfberichte für Ihr Verzeichnis. Hier sehen Sie eine Liste der enthaltenen Berichte:
+Azure Active Directory (Azure AD) umfasst Sicherheits-, Aktivitäts- und Prüfberichte für Ihr Verzeichnis. Hier sehen Sie eine Liste der enthaltenen Berichte:
 
 ### Sicherheitsberichte
 
@@ -61,7 +61,7 @@ Die Berichterstellungspipeline umfasst drei wesentliche Schritte. Jedes Mal, wen
 
 - Erstens wird der Benutzer authentifiziert (erfolgreich oder nicht erfolgreich), und das Ergebnis wird in den Azure Active Directory-Dienstdatenbanken gespeichert.
 - In regelmäßigen Abständen werden alle aktuellen Anmeldungen verarbeitet. Dabei durchsuchen Algorithmen für Sicherheit und anomale Aktivität alle aktuellen Anmeldungen nach verdächtigen Aktivitäten.
-- Nach der Verarbeitung werden die Berichte geschrieben, zwischengespeichert und im Azure-Verwaltungsportal bereitgestellt.
+- Nach der Verarbeitung werden die Berichte geschrieben, zwischengespeichert und im klassischen Azure-Portal bereitgestellt.
 
 ### Berichterstellungszeiten
 
@@ -78,9 +78,9 @@ Sie finden die aktuellste verarbeitete Anmeldung im Hilfetext am oberen Rand jed
 ## Erste Schritte
 
 
-### Melden Sie sich beim Azure-Verwaltungsportal an.
+### Melden Sie sich beim klassischen Azure-Portal an.
 
-Zunächst müssen Sie sich beim [Azure-Verwaltungsportal](https://manage.windowsazure.com) als globaler oder Kompatibilitätsadministrator anmelden. Sie müssen außerdem ein Azure-Abonnementdienstadministrator oder -Co-Administrator sein, bzw. das Azure-Abonnement "Zugriff auf Azure AD" benutzen.
+Zunächst müssen Sie sich beim [klassischen Azure-Portal](https://manage.windowsazure.com) als globaler oder Kompatibilitätsadministrator anmelden. Sie müssen außerdem ein Azure-Abonnementdienstadministrator oder -Co-Administrator sein, bzw. das Azure-Abonnement "Zugriff auf Azure AD" benutzen.
 
 ### Navigieren zu Berichten
 
@@ -156,4 +156,4 @@ Unter der E-Mail-Adresse [aadreportinghelp@microsoft.com](mailto:aadreportinghel
 
 > [AZURE.TIP]Weitere Dokumentationen zu Azure AD Reporting finden Sie unter [Anzeigen von Zugriffs- und Nutzungsberichten](active-directory-view-access-usage-reports.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

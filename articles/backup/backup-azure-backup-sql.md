@@ -1,20 +1,22 @@
 <properties
-	pageTitle="Azure Backup für SQL-Workloads mit DPM | Microsoft Azure"
-	description="Eine Einführung in die Sicherung von SQL-Datenbanken mithilfe des Azure Backup-Diensts."
+	pageTitle="Azure Backup für SQL Server-Workloads mit DPM | Microsoft Azure"
+	description="Eine Einführung in die Sicherung von SQL Server-Datenbanken mithilfe des Azure Backup-Diensts."
 	services="backup"
 	documentationCenter=""
 	authors="giridharreddy"
 	manager="shreeshd"
 	editor=""/>
 
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="09/09/2015" ms.author="giridham"; "jimpark"/>
+<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/26/2015" ms.author="aashishr", "giridham"; "jimpark"/>
 
 
-# Azure Backup für SQL-Workloads mit DPM
+# Azure Backup für SQL Server-Workloads mit DPM
 
-In diesem Artikel werden Sie durch die Konfiguration von SQL-Sicherungen mithilfe von Azure Backup geleitet. Für die SQL-Sicherung in Azure benötigen Sie ein Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/).
+Dieser Artikel führt Sie durch die Konfigurationsschritte für die Sicherung von SQL Server-Datenbanken mithilfe von Azure Backup.
 
-Die Verwaltung der Sicherung und Wiederherstellung von SQL-Datenbanken umfasst drei Schritte:
+Für die Sicherung von SQL Server-Datenbanken in Azure benötigen Sie ein Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/).
+
+Die Verwaltung der Sicherung und Wiederherstellung von SQL-Datenbanken in und aus Azure umfasst drei Schritte:
 
 1. Erstellen einer Sicherungsrichtlinie zum Schutz von SQL Server-Datenbanken mithilfe von Azure
 2. Bedarfsgesteuertes Erstellen von Sicherungskopien in Azure
@@ -23,9 +25,9 @@ Die Verwaltung der Sicherung und Wiederherstellung von SQL-Datenbanken umfasst d
 ## Vorbereitung
 Vergewissern Sie sich zunächst, dass für den Schutz von Workloads mit Microsoft Azure Backup alle [Voraussetzungen](../backup-azure-dpm-introduction/#prerequisites) erfüllt sind. Die Voraussetzungen umfassen Aufgaben wie das Erstellen eines Sicherungstresors, das Herunterladen von Tresoranmeldedaten, das Installieren des Azure Backup-Agents und das Registrieren des Servers beim Tresor.
 
-## Erstellen einer Sicherungsrichtlinie zum Schutz von SQL-Datenbanken mithilfe von Azure
+## Erstellen einer Sicherungsrichtlinie zum Schutz von SQL Server-Datenbanken mithilfe von Azure
 
-1. Konfigurieren Sie auf dem DPM-Server eine neue Sicherungsrichtlinie für SQL-Datenbanken, indem Sie eine neue **Schutzgruppe** erstellen. Klicken Sie auf den Arbeitsbereich **Schutz**.
+1. Konfigurieren Sie auf dem DPM-Server eine neue Sicherungsrichtlinie für SQL Server-Datenbanken, indem Sie eine neue **Schutzgruppe** erstellen. Klicken Sie auf den Arbeitsbereich **Schutz**.
 
 2. Klicken Sie auf **Neu**, um eine neue Schutzgruppe zu erstellen.
 
@@ -37,7 +39,7 @@ Vergewissern Sie sich zunächst, dass für den Schutz von Workloads mit Microsof
 
     ![Auswählen des Schutzgruppentyp – "Server"](./media/backup-azure-backup-sql/pg-servers.png)
 
-5. Erweitern Sie die SQL Server-Instanz, auf der die zu sichernden SQL-Datenbanken installiert sind. DPM zeigt verschiedene Datenquellen, die auf diesem Server gesichert werden können. Erweitern Sie **Alle SQL-Freigaben**, und wählen Sie die SQL-Datenbanken aus, die Sie sichern möchten (in diesem Fall wurden die Datenbanken "ReportServer$MSDPM2012" und "ReportServer$MSDPM2012TempDB" ausgewählt). Klicken Sie auf **Weiter**.
+5. Erweitern Sie den SQL Server-Computer, auf dem die zu sichernden Datenbanken vorhanden sind. DPM zeigt verschiedene Datenquellen, die auf diesem Server gesichert werden können. Erweitern Sie **Alle SQL-Freigaben**, und wählen Sie die Datenbanken aus, die Sie sichern möchten (in diesem Fall wurden die Datenbanken "ReportServer$MSDPM2012" und "ReportServer$MSDPM2012TempDB" ausgewählt). Klicken Sie auf **Weiter**.
 
     Es wird ein ähnlicher Bildschirm wie der folgende angezeigt.
 
@@ -53,7 +55,7 @@ Vergewissern Sie sich zunächst, dass für den Schutz von Workloads mit Microsof
 
     ![Kurzfristige Ziele](./media/backup-azure-backup-sql/pg-shortterm.png)
 
-    >[AZURE.NOTE]Jeden Tag um 20:00 Uhr wird (in diesem Beispiel) ein Sicherungspunkt erstellt, indem die seit dem Sicherungspunkt am Vortag um 20:00 Uhr geänderten Daten übertragen werden. Dieser Vorgang wird als **Schnelle vollständige Sicherung** bezeichnet. Die SQL-Transaktionsprotokolle werden alle 15 Minuten synchronisiert. Falls um 21:00 Uhr die Datenbank wiederhergestellt werden muss, wird der Punkt erstellt, indem die Protokolle seit dem letzten vollständigen Sicherungspunkt (in diesem Fall 20:00 Uhr) wiedergegeben werden.
+    >[AZURE.NOTE]Jeden Tag um 20:00 Uhr wird (in diesem Beispiel) ein Sicherungspunkt erstellt, indem die seit dem Sicherungspunkt am Vortag um 20:00 Uhr geänderten Daten übertragen werden. Dieser Vorgang wird als **Schnelle vollständige Sicherung** bezeichnet. Die Transaktionsprotokolle werden alle 15 Minuten synchronisiert. Falls um 21:00 Uhr die Datenbank wiederhergestellt werden muss, wird der Punkt erstellt, indem die Protokolle seit dem letzten vollständigen Sicherungspunkt (in diesem Fall 20:00 Uhr) wiedergegeben werden.
 
 8. Klicken Sie auf **Weiter**.
 
@@ -61,7 +63,7 @@ Vergewissern Sie sich zunächst, dass für den Schutz von Workloads mit Microsof
 
     ![Datenträgerzuordnung](./media/backup-azure-backup-sql/pg-storage.png)
 
-    >[AZURE.NOTE]DPM erstellt ein Volume pro Datenquelle (SQL-Datenbank) zum Erstellen der anfänglichen Sicherungskopie. Bei diesem Ansatz ist DPM durch die Verwaltung logischer Datenträger auf den Schutz von maximal 300 Datenquellen (SQL-Datenbanken) beschränkt. Um dies zu vermeiden, nutzt DPM einen anderen Ansatz, bei dem ein einziges Volume für mehrere Datenquellen verwendet wird. Dies wird über die Option **Daten im DPM-Speicherpool zusammenstellen** erreicht. Mit diesem Ansatz kann DPM bis zu 2.000 SQL-Datenbanken schützen.
+    DPM erstellt ein Volume pro Datenquelle (SQL Server-Datenbank) zum Erstellen der anfänglichen Sicherungskopie. Bei diesem Ansatz ist DPM durch die Verwaltung logischer Datenträger auf den Schutz von maximal 300 Datenquellen (SQL Server-Datenbanken) beschränkt. Um dies zu vermeiden, nutzt DPM einen anderen Ansatz, bei dem ein einziges Volume für mehrere Datenquellen verwendet wird. Dies wird über die Option **Daten im DPM-Speicherpool zusammenstellen** erreicht. Mit diesem Ansatz kann DPM bis zu 2.000 SQL-Datenbanken schützen.
 
     DPM kann der Anforderung nach größeren Sicherungsvolumes aufgrund steigender Produktionsdaten Rechnung tragen, wenn die Option **Volumes automatisch erweitern** ausgewählt wird. Wenn Sie die Option **Volumes automatisch erweitern** deaktivieren, wird der Sicherungsspeicher zum Sichern der Datenquellen in der Schutzgruppe beschränkt.
 
@@ -69,7 +71,7 @@ Vergewissern Sie sich zunächst, dass für den Schutz von Workloads mit Microsof
 
     ![Methode für die anfängliche Replikation](./media/backup-azure-backup-sql/pg-manual.png)
 
-    >[AZURE.NOTE]Die anfängliche Sicherungskopie erfordert eine Übertragung der gesamten Datenquelle (SQL-Datenbank) vom Produktionsserver (SQL Server) zum DPM-Server. Diese Daten können mitunter sehr umfangreich sein, und ihre Übertragung über das Netzwerk kann zu einer Überschreitung der Bandbreite führen. Deshalb können Administratoren sich diese anfängliche Sicherung entweder **Manuell** durchführen, um eine Netzwerküberlastung zu vermeiden, oder die Daten **Automatisch** über das Netzwerk senden. Wenn Administratoren die Option **Netzwerk** auswählen, können Sie die anfängliche Sicherungskopie entweder **Jetzt** oder **Später** zu einem festgelegten Zeitpunkt durchführen.
+    Die anfängliche Sicherungskopie erfordert eine Übertragung der gesamten Datenquelle (SQL Server-Datenbank) vom Produktionsserver (SQL Server-Computer) zum DPM-Server. Diese Daten können mitunter sehr umfangreich sein, und ihre Übertragung über das Netzwerk kann zu einer Überschreitung der Bandbreite führen. Deshalb können Administratoren sich diese anfängliche Sicherung entweder **Manuell** durchführen, um eine Netzwerküberlastung zu vermeiden, oder die Daten **Automatisch** über das Netzwerk senden. Wenn Administratoren die Option **Netzwerk** auswählen, können Sie die anfängliche Sicherungskopie entweder **Jetzt** oder **Später** zu einem festgelegten Zeitpunkt durchführen.
 
     Sobald die anfängliche Sicherung abgeschlossen wurde, werden nur noch inkrementelle Sicherungen erstellt, die die anfängliche Sicherungskopie ergänzen. Diese inkrementellen Sicherungskopien sind im Allgemeinen sehr klein und werden über das Netzwerk übertragen.
 
@@ -77,7 +79,7 @@ Vergewissern Sie sich zunächst, dass für den Schutz von Workloads mit Microsof
 
     ![Konsistenzprüfung](./media/backup-azure-backup-sql/pg-consistent.png)
 
-    >[AZURE.NOTE]DPM kann eine Konsistenzprüfung durchführen, um die Integrität des Sicherungspunkts zu prüfen. Hierbei wird die Prüfsumme der Sicherungsdatei auf dem Produktionsserver (in diesem Szenario SQL Server) und der gesicherten Daten für diese Datei auf dem DPM-Server berechnet. Im Falle eines Konflikts wird davon ausgegangen, dass die gesicherte Datei auf dem DPM-Server beschädigt ist. DPM korrigiert die gesicherten Daten, indem die Datenblöcke gesendet werden, die nicht der Prüfsumme entsprechen. Da die Konsistenzprüfung ein ressourcenintensiver Vorgang ist, haben Administratoren die Möglichkeit, diese zeitlich zu planen oder automatisch auszuführen.
+    DPM kann eine Konsistenzprüfung durchführen, um die Integrität des Sicherungspunkts zu prüfen. Hierbei wird die Prüfsumme der Sicherungsdatei auf dem Produktionsserver (in diesem Szenario der SQL Server-Computer) und der gesicherten Daten für diese Datei auf dem DPM-Server berechnet. Im Falle eines Konflikts wird davon ausgegangen, dass die gesicherte Datei auf dem DPM-Server beschädigt ist. DPM korrigiert die gesicherten Daten, indem die Datenblöcke gesendet werden, die nicht der Prüfsumme entsprechen. Da die Konsistenzprüfung ein ressourcenintensiver Vorgang ist, haben Administratoren die Möglichkeit, diese zeitlich zu planen oder automatisch auszuführen.
 
 11. Um Onlineschutz für die Datenquellen festzulegen, wählen Sie die Datenbanken aus, die Sie mit Azure schützen möchten. Klicken Sie dann auf **Weiter**.
 
@@ -89,7 +91,7 @@ Vergewissern Sie sich zunächst, dass für den Schutz von Workloads mit Microsof
 
     In diesem Beispiel werden Sicherungen einmal täglich um 12:00 Uhr und um 20:00 Uhr ausgeführt (unterer Bildschirmbereich).
 
-    >[AZURE.NOTE]Es ist eine bewährte Methode, einige Wiederherstellungspunkte kurzfristig auf dem Datenträger beizubehalten, um eine schnelle Wiederherstellung zu ermöglichen. Dies wird als "operative Wiederherstellung" bezeichnet. Azure ist dank hoher SLAs und garantierter Verfügbarkeit eine gute Wahl als Offsitestandort. Für Mitte 2015 ist für DPM und Azure Backup ein zusätzliches Feature vorgesehen, mit dem mehrere "Generationen" (Großvater-Vater-Sohn-Prinzip) von Sicherungen angegeben werden können.
+    >[AZURE.NOTE]Es ist eine bewährte Methode, einige Wiederherstellungspunkte kurzfristig auf dem Datenträger beizubehalten, um eine schnelle Wiederherstellung zu ermöglichen. Dies wird als "operative Wiederherstellung" bezeichnet. Azure ist dank hoher SLAs und garantierter Verfügbarkeit eine gute Wahl als Offsitestandort.
 
     **Best Practice**: Stellen Sie sicher, dass Azure Backup-Sicherungen so geplant sind, dass sie nach Abschluss der lokalen Datenträgersicherungen mithilfe von DPM ausgeführt werden. Auf diese Weise wird sichergestellt, dass die neueste Datenträgersicherung nach Azure kopiert wird.
 
@@ -115,7 +117,7 @@ Vergewissern Sie sich zunächst, dass für den Schutz von Workloads mit Microsof
 
     ![Erstellen der Schutzgruppe – in Bearbeitung](./media/backup-azure-backup-sql/pg-summary.png)
 
-## Bedarfsgesteuerte Sicherung einer SQL-Datenbank
+## Bedarfsgesteuerte Sicherung einer SQL Server-Datenbank
 Anhand der zuvor beschriebenen Schritte wurde eine Sicherungsrichtlinie eingerichtet, ein "Wiederherstellungspunkt" wird jedoch erst bei Ausführung der ersten Sicherung erstellt. Statt darauf zu warten, dass die erste Sicherung durch den Scheduler ausgelöst wird, erstellen wir mithilfe der nachstehenden Schritte manuell einen Wiederherstellungspunkt.
 
 1. Warten Sie, bis der Status der Datenbank für die Schutzgruppe als **OK** angezeigt wird, bevor Sie den Wiederherstellungspunkt erstellen.
@@ -134,8 +136,8 @@ Anhand der zuvor beschriebenen Schritte wurde eine Sicherungsrichtlinie eingeric
 
     ![Konsole für die Überwachung](./media/backup-azure-backup-sql/sqlbackup-monitoring.png)
 
-## Wiederherstellen einer SQL-Datenbank aus Azure
-Die folgenden Schritte sind erforderlich, um eine geschützte Entität (SQL-Datenbank) aus Azure wiederherzustellen.
+## Wiederherstellen einer SQL Server-Datenbank aus Azure
+Die folgenden Schritte sind erforderlich, um eine geschützte Entität (SQL Server-Datenbank) aus Azure wiederherzustellen.
 
 1. Öffnen Sie die Verwaltungskonsole auf dem DPM-Server. Navigieren Sie zum Arbeitsbereich **Wiederherstellung**, in dem die mit DPM gesicherten Server angezeigt werden. Suchen Sie nach der erforderlichen Datenbank (in diesem Fall "ReportServer$MSDPM2012"). Wählen Sie unter **Wiederherstellung aus** eine Uhrzeit aus, die auf **Online** endet.
 
@@ -165,4 +167,4 @@ Die folgenden Schritte sind erforderlich, um eine geschützte Entität (SQL-Date
 
 • [Azure Backup – Häufig gestellte Fragen](backup-azure-backup-faq.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

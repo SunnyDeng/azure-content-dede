@@ -3,8 +3,8 @@
             description="Erstellen Sie eine Dateifreigabe in der Cloud, und verwalten Sie Dateiinhalte. Stellen Sie eine Dateifreigabe über einen virtuellen Azure-Computer oder eine lokale Anwendung bereit."
             services="storage"
             documentationCenter=".net"
-            authors="tamram"
-            manager="adinah"
+            authors="robinsh"
+            manager="carmonm"
             editor="" />
 
 <tags ms.service="storage"
@@ -12,8 +12,8 @@
       ms.tgt_pltfrm="na"
       ms.devlang="dotnet"
       ms.topic="hero-article"
-      ms.date="10/26/2015"
-      ms.author="tamram" />
+      ms.date="12/04/2015"
+      ms.author="robinsh" />
 
 # Verwenden des Azure-Dateispeichers unter Windows
 
@@ -23,7 +23,7 @@
 
 Der Azure-Dateispeicher verfügt über Dateifreigaben in der Cloud unter Verwendung des standardmäßigen SMB-Protokolls. Der Dateispeicher ist jetzt allgemein verfügbar und unterstützt sowohl SMB 2.1 als auch SMB 3.0.
 
-Sie können Azure-Dateifreigaben mit dem Azure-Vorschauportal, den Azure Storage-PowerShell-Cmdlets, den Azure Storage-Clientbibliotheken oder der Azure Storage-REST-API erstellen. Da es sich bei den Dateifreigaben um SMB-Freigaben handelt, können Sie darauf außerdem über standardmäßige und vertraute Dateisystem-APIs zugreifen.
+Sie können Azure-Dateifreigaben mit dem [Azure-Portal](portal.azure.com), den Azure Storage-PowerShell-Cmdlets, den Azure Storage-Clientbibliotheken oder der Azure Storage-REST-API erstellen. Da es sich bei den Dateifreigaben um SMB-Freigaben handelt, können Sie darauf außerdem über standardmäßige und vertraute Dateisystem-APIs zugreifen.
 
 Anwendungen, die in Azure ausgeführt werden, können Dateifreigaben von virtuellen Azure-Computern problemlos einbinden. Mit der neuesten Version des Dateispeichers können Sie zudem eine Dateifreigabe über eine lokale Anwendung bereitstellen, die SMB 3.0 unterstützt.
 
@@ -43,9 +43,9 @@ Dieses Video veranschaulicht das Erstellen und Verwenden von Azure-Dateifreigabe
 
 > [AZURE.VIDEO azure-file-storage-with-windows]
 
-## Informationen zu diesem Tutorial
+## Informationen zu diesem Lernprogramm
 
-In diesem Tutorial für die ersten Schritte veranschaulichen wir die Grundlagen der Verwendung des Microsoft Azure-Dateispeichers. In diesem Tutorial wird Folgendes beschrieben:
+In diesem Lernprogramm für die ersten Schritte veranschaulichen wir die Grundlagen der Verwendung des Microsoft Azure-Dateispeichers. In diesem Lernprogramm wird Folgendes beschrieben:
 
 - Verwenden von Azure PowerShell, um die Erstellung einer neuen Azure-Dateifreigabe, das Hinzufügen eines Verzeichnisses, das Hochladen einer lokalen Datei in die Freigabe und das Auflisten der Dateien in dem Verzeichnis zu veranschaulichen.
 - Bereitstellen der Dateifreigabe von einem virtuellen Azure-Computer, genau wie bei der Bereitstellung einer SMB-Freigabe.
@@ -58,9 +58,9 @@ In diesem Tutorial für die ersten Schritte veranschaulichen wir die Grundlagen 
 
 Der Dateispeicher wird jetzt für alle Speicherkonten unterstützt, sodass Sie entweder ein vorhandenes Speicherkonto verwenden oder ein neues Speicherkonto erstellen können. Informationen zum Erstellen eines neuen Speicherkontos finden Sie unter [Erstellen, Verwalten und Löschen eines Speicherkontos](storage-create-storage-account.md#create-a-storage-account).
 
-## Verwenden des Azure-Vorschauportals zum Verwalten einer Dateifreigabe
+## Verwenden des Azure-Portals zum Verwalten einer Dateifreigabe
 
-Das [Azure-Vorschauportal](https://ms.portal.azure.com/) enthält eine Benutzeroberfläche für Kunden zum Verwalten des Dateispeichers. Im Vorschauportal können Sie folgende Aktionen ausführen:
+Das [Azure-Portal](portal.azure.com) enthält eine Benutzeroberfläche für Kunden zum Verwalten des Dateispeichers. Im Vorschauportal können Sie folgende Aktionen ausführen:
 
 - Hoch- und Herunterladen von Dateien für die Dateifreigabe
 - Überwachen der tatsächlichen Nutzung der einzelnen Dateifreigaben
@@ -81,7 +81,7 @@ Laden Sie die Azure PowerShell-Cmdlets herunter und installieren Sie diese ansch
 
 ### Erstellen von Kontexten für Speicherkonten und -schlüssel
 
-Erstellen Sie nun den Speicherkonto-Kontext. Der Kontext kapselt den Speicherkontonamen und den Kontoschlüssel. Anweisungen zum Kopieren Ihres Kontoschlüssels im Azure-Portal finden Sie unter [Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln](storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys).
+Erstellen Sie nun den Speicherkonto-Kontext. Der Kontext kapselt den Speicherkontonamen und den Kontoschlüssel. Anweisungen zum Kopieren Ihres Kontoschlüssels im [Azure-Portal](portal.azure.com) finden Sie unter [Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln](storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys).
 
 Ersetzen Sie im folgenden Beispiel `storage-account-name` und `storage-account-key` durch Ihren Speicherkontonamen und -schlüssel.
 
@@ -198,14 +198,14 @@ Um die Dateifreigabe über einen lokalen Client bereitzustellen, müssen Sie zue
 
 ## Entwickeln mit Dateispeicher
 
-Zum programmgesteuerten Verwenden des Dateispeichers können Sie Speicherclientbibliotheken für .NET und Java oder die Azure Storage-REST-API verwenden. Das Beispiel in diesem Abschnitt veranschaulicht, wie Sie mit einer Dateifreigabe arbeiten, indem Sie die [Azure .NET-Speicherclientbibliothek](http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409) über eine einfache Konsolenanwendung verwenden, die auf dem Desktop ausgeführt wird.
+Zum programmgesteuerten Verwenden des Dateispeichers können Sie Speicherclientbibliotheken für .NET und Java oder die Azure Storage-REST-API verwenden. Mit dem Beispiel in diesem Abschnitt wird veranschaulicht, wie Sie mit einer Dateifreigabe arbeiten, indem Sie die [Azure .NET-Speicherclientbibliothek](http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409) über eine einfache Konsolenanwendung verwenden, die auf dem Desktop ausgeführt wird.
 
 ### Erstellen der Konsolenanwendung und Abrufen der Assembly
 
 So erstellen Sie eine neue Konsolenanwendung in Visual Studio und installieren das Azure Storage NuGet-Paket:
 
-1. Wählen Sie in Visual Studio **Datei -> Neues Projekt** und dann **Windows -> Konsolenanwendung** aus der Liste der Visual C#-Vorlagen aus.
-2. Geben Sie einen Namen für die Konsolenanwendung an, und klicken Sie dann auf **OK**.
+1. Wählen Sie in Visual Studio **Datei -> Neues Projekt**, und wählen Sie dann **Windows -> Konsolenanwendung** aus der Liste der Visual C#-Vorlagen aus.
+2. Stellen Sie einen Namen für die Konsolenanwendung bereit, und klicken Sie dann auf **OK**.
 3. Nachdem Ihr Projekt erstellt wurde, klicken Sie mit der rechten Maustaste im Projektmappen-Explorer auf das Projekt und wählen **NuGet-Pakete verwalten** aus. Suchen Sie online nach "WindowsAzure.Storage", und klicken Sie auf **Installieren**, um das Azure-Speicherpaket und die zugehörigen Abhängigkeiten zu installieren.
 
 ### Speichern Ihrer Speicherkonto-Anmeldeinformationen in der Datei „app.config“
@@ -362,7 +362,7 @@ Im folgenden Beispiel wird eine SAS-Richtlinie für eine Freigabe erstellt und d
         Console.WriteLine(fileSas.DownloadText());
     }
 
-Weitere Informationen zum Erstellen und Verwenden von Shared Access Signatures finden Sie unter [Shared Access Signatures: Grundlagen zum SAS-Modell](storage-dotnet-shared-access-signature-part-1.md) und [Erstellen und Verwenden einer SAS mit dem Blob-Dienst](storage-dotnet-shared-access-signature-part-2.md).
+Weitere Informationen zum Erstellen und Verwenden von Shared Access Signatures finden Sie unter [Shared Access Signatures: Grundlagen zum SAS-Modell](storage-dotnet-shared-access-signature-part-1.md) und [Erstellen und Verwenden einer SAS mit dem Blobdienst](storage-dotnet-shared-access-signature-part-2.md).
 
 ### Kopieren von Dateien
 
@@ -469,7 +469,7 @@ Auf gleiche Weise können Sie ein BLOB in eine Datei kopieren. Wenn das Quellobj
 
 Azure Storage Analytics unterstützt jetzt Metriken für Dateispeicher. Mit Metrikdaten können Sie Anforderungen verfolgen und Probleme diagnostizieren.
 
-Sie können Metriken für Dateispeicher über das Azure-Portal aktivieren. Sie können Metriken auch programmgesteuert aktivieren, indem Sie den Vorgang „Set File Service Properties“ über die REST API oder einen analogen Vorgang in der Speicherclientbibliothek aufrufen.
+Sie können Metriken für Dateispeicher über das [Azure-Portal](portal.azure.com) aktivieren. Sie können Metriken auch programmgesteuert aktivieren, indem Sie den Vorgang „Set File Service Properties“ über die REST API oder einen analogen Vorgang in der Speicherclientbibliothek aufrufen.
 
 ## Dateispeicher – Häufig gestellte Fragen
 
@@ -519,7 +519,7 @@ Sie können Metriken für Dateispeicher über das Azure-Portal aktivieren. Sie k
 
 	Sie verfügen nicht über dieses Maß an Kontrolle über Berechtigungen, wenn Sie die Dateifreigabe per SMB bereitstellen. Sie können dies aber erreichen, indem Sie über die REST-API oder Clientbibliotheken eine Shared Access Signature (SAS) erstellen.
 
-12. **Beim Entzippen von Dateien in den Dateispeicher war die Leistung schlecht. Wie soll ich vorgehen?**
+12. **Beim Versuch, Dateien in den Dateispeicher zu entzippen, war die Leistung schlecht. Wie soll ich vorgehen?**
 
 	Für die Übertragung größerer Mengen von Dateien in den Dateispeicher empfehlen wir die Verwendung von AzCopy, Azure Powershell (Windows) oder der Azure CLI (Linux/Unix), da diese Tools für die Netzwerkübertragung optimiert sind.
 
@@ -531,6 +531,7 @@ Weitere Informationen zum Azure-Dateispeicher erhalten Sie über diese Links.
 
 - [Azure-Dateispeicher: ein reibungsloses Cloud-SMB-Dateisystem für Windows und Linux](https://azure.microsoft.com/documentation/videos/azurecon-2015-azure-files-storage-a-frictionless-cloud-smb-file-system-for-windows-and-linux/)
 - [Verwenden des Azure-Dateispeichers unter Linux](storage-how-to-use-files-linux.md)
+- [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy)
 
 ### Toolunterstützung für Dateispeicher
 
@@ -550,4 +551,4 @@ Weitere Informationen zum Azure-Dateispeicher erhalten Sie über diese Links.
 - [Einführung in den Microsoft Azure-Dateidienst](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 - [Beibehalten von Verbindungen zu Microsoft Azure-Dateien](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1217_2015-->

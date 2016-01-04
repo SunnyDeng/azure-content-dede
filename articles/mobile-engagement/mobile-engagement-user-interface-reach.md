@@ -13,50 +13,53 @@
    ms.topic="article"
    ms.tgt_pltfrm="mobile-multiple"
    ms.workload="mobile" 
-   ms.date="08/10/2015"
+   ms.date="11/29/2015"
    ms.author="piyushjo"/>
 
 
 # Wie Sie die Benutzer Ihrer Anwendung mit Pushbenachrichtigungen erreichen
+
+In diesem Artikel wird die Registerkarte **REACH** im Portal **Mobile Engagement** beschrieben. Verwenden Sie das Portal **Mobile Engagement**, um Ihre mobilen Apps zu überwachen und zu verwalten. Beachten Sie, dass Sie zur Verwendung des Portals zuerst ein **Azure Mobile Engagement**-Konto erstellen müssen. Weitere Informationen finden Sie unter [Erstellen eines Azure Mobile Engagement-Kontos](mobile-engagement-create-account.md).
+
 Der Abschnitt "Reach" der Benutzeroberfläche ist das Verwaltungstool für Pushkampagnen, mit dem Sie Kampagnen und Merkmale von Pushbenachrichtigungen erstellen, bearbeiten, aktivieren, beenden und überwachen sowie entsprechende Statistiken abrufen können. Der Zugriff darauf ist auch über die Reach-API (und einige Elemente der untergeordneten Push-API) möglich. Vor der Verwendung von Reach-Kampagnen müssen Sie unabhängig davon, ob Sie die APIs oder Benutzeroberfläche verwenden, Azure Mobile Engagement und Reach für jede Plattform mit dem SDK in Ihre Anwendung integrieren.
 
-### Weitere Informationen
--  [API-Dokumentation – Reach-API][Link 4], [API-Dokumentation – Push-API][Link 4], [Handbuch zur Problembehandlung – Push/Reach][Link 23]
--  [Reach – Kampagne][Link 27], [Reach – Kriterium][Link 28], [Reach – Inhalt][Link 29], [Reach – Gewusst wie][Link 3]
+>[AZURE.NOTE]Viele Abschnitte der Benutzeroberfläche des **Mobile Engagement**-Portals enthalten die Schaltfläche **HILFE ANZEIGEN**. Drücken Sie diese Schaltfläche, um weitere Kontextinformationen zu einem bestimmten Bereich zu erhalten.
+
  
 ## Vier Arten von Pushbenachrichtigungen
 1.    Ankündigungen – Ermöglicht Ihnen das Senden von Werbebotschaften an Benutzer, über die diese zu einer anderen Stelle in Ihrer App umgeleitet oder zu einer Webseite oder einem Store außerhalb Ihrer App geleitet werden. 
 2.    Umfragen - Sie können Informationen zu Endbenutzern erfassen, indem Sie ihnen Fragen stellen.
 3.    Datenpushes - Ermöglicht Ihnen das Senden einer Binär- oder Base64-Datendatei. Die Informationen in einem Datenpush werden an Ihre Anwendung gesendet, um die aktuelle Benutzerumgebung in Ihrer App zu ändern. Die Anwendung muss die Daten in einem Datenpush verarbeiten können.
-4.    Kacheln (nur Windows Phone) – Ermöglicht Ihnen das Verwenden des Microsoft-Pushbenachrichtigungsdiensts (MPNS), um systemeigene Windows-Pushübertragungen mit XML-Daten zu senden. (Unterstützt ab der SDK-Version 0.9.0. Die endgültige Nutzlast für Kacheln darf 32 KB nicht überschreiten.)
 
-### Weitere Informationen
--  [Konzepte – Glossar][Link 6]
 
 ## Es werden drei Kategorien von Echtzeitstatistiken für jede Kampagne gezeigt
+
 1.    Anzahl der Pushvorgänge – Die Anzahl der Pushvorgänge, die anhand der in der Kampagne angegebenen Kriterien gesendet wurden. 
 2.    Geantwortet – Anzahl der Benutzer, die auf die Benachrichtigung reagiert haben, indem sie sie entweder außerhalb der App geöffnet oder innerhalb der App geschlossen haben. 
 3.    Aktion ausgeführt - Die Anzahl der Benutzer, die auf den Link in der Benachrichtigung geklickt haben, um zu einer neue Stelle in der App, zu einem Store oder zu einem Webbrowser umgeleitet zu werden. 
 
-> Hinweis: Ausführlichere Kampagnenstatistiken stehen über die Statistiken der Reach-API zur Verfügung.
+> [AZURE.NOTE]Ausführlichere Kampagnenstatistiken stehen über die Statistiken der Reach-API zur Verfügung.
 
-### Weitere Informationen
--  [Konzepte – Glossar][Link 6], [API-Dokumentation - Reach-API – Statistiken][Link 4]
 
 
 ## Kampagnendetails
+
 Sie können Kampagnen bearbeiten, klonen, löschen oder Kampagnen aktivieren, die noch nicht aktiviert wurden, indem Sie den Mauszeiger über deren Namen bewegen. Oder klicken Sie darauf, um sie zu öffnen. Sie können Kampagnen klonen, die bereits aktiviert wurden, indem Sie den Mauszeiger über deren Namen bewegen. Oder klicken Sie darauf, um sie zu öffnen. Eine einmal aktivierte Kampagne kann jedoch nicht geändert werden.
  
 ![Reach1][18]
 
 ## Reach-Feedback
-Sie können von der Detail- zur Statistikansicht einer geöffneten Kampagne wechseln, die bereits aktiviert wurde. Und Sie können von der einfachen zur erweiterten Ansicht der Statistiken wechseln, um (je nach Berechtigungen) detailliertere Informationen zu erhalten. Sie können auch die Reach-Feedbackinformationen aus einer vorherigen Kampagne als Zielkriterien in einer neuen Kampagne verwenden. Reach-Feedbackstatistiken können auch über die Reach-API mithilfe von "Stats" erfasst werden. Sie können auch die Zielgruppe Ihrer Pushkampagnen basierend auf früheren Kampagnen anpassen.
 
+Klicken Sie auf eine Kampagne, um Details oder Statistiken dazu zu sehen. Sie können dann von der Detail- zur Statistikansicht einer geöffneten Kampagne wechseln, die bereits aktiviert wurde. Und Sie können von der einfachen zur erweiterten Ansicht der Statistiken wechseln, um (je nach Berechtigungen) detailliertere Informationen zu erhalten. Sie können auch die Reach-Feedbackinformationen aus einer vorherigen Kampagne als Zielkriterien in einer neuen Kampagne verwenden. Reach-Feedbackstatistiken können auch über die Reach-API mithilfe von **Stats** erfasst werden. Sie können auch die Zielgruppe Ihrer Pushkampagnen basierend auf früheren Kampagnen anpassen.
 
-### Weitere Informationen 
--  [Dokumentation zur Benutzeroberfläche - Reach - Neue Pushkampagne][27], [API-Dokumentation - Reach-API – Statistiken][Link 4]
 
 ![Reach2][19]
+
+
+## Weitere Informationen
+
+- [Konzepte][Link 6]
+- [Handbuch zur Problembehandlung – Dienst][Link 24]
 
 <!--Image references-->
 [1]: ./media/mobile-engagement-user-interface-navigation/navigation1.png
@@ -150,4 +153,4 @@ Sie können von der Detail- zur Statistikansicht einer geöffneten Kampagne wech
 [Link 29]: mobile-engagement-user-interface-reach-content.md
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

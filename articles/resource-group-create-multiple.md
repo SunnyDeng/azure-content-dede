@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="10/20/2015"
+   ms.date="12/01/2015"
    ms.author="tomfitz"/>
 
 # Erstellen mehrerer Instanzen von Ressourcen im Azure-Ressourcen-Manager
@@ -151,9 +151,52 @@ Sie können angeben, dass eine Ressource nach einer anderen Ressource bereitgest
 	    "outputs": {}
     }
 
+## Schleifen an einer geschachtelten Ressource
+
+Sie können keine Kopieren-Schleife für eine geschachtelte Ressource verwenden. Wenn Sie mehrere Instanzen einer Ressource erstellen müssen, die Sie in der Regel als in einer anderen Ressource geschachtelt definieren, müssen Sie die Ressource stattdessen als eine Ressource der obersten Ebene erstellen und die Beziehung mit der übergeordneten Ressource über die **type** -und **name**-Eigenschaften definieren.
+
+Nehmen wir beispielsweise an, dass Sie ein DataSet in der Regel als geschachtelte Ressource innerhalb einer Data Factory definieren.
+
+    "resources": [
+    {
+        "type": "Microsoft.DataFactory/datafactories",
+        "name": "[variables('dataFactoryName')]",
+        ...
+        "resources": [
+        {
+            "type": "datasets",
+            "name": "[variables('dataSetName')]",
+            "dependsOn": [
+                "[variables('dataFactoryName')]"
+            ],
+            ...
+        }
+    }]
+    
+Um mehrere DataSet-Instanzen zu erstellen, müssten Sie die Vorlage ändern, wie unten dargestellt. Beachten Sie den voll qualifizierten Typ und den Namen, der den Namen der Data Factory enthält.
+
+    "resources": [
+    {
+        "type": "Microsoft.DataFactory/datafactories",
+        "name": "[variables('dataFactoryName')]",
+        ...
+    },
+    {
+        "type": "Microsoft.DataFactory/datafactories/datasets",
+        "name": "[concat(variables('dataFactoryName'), '/', variables('dataSetName'), copyIndex())]",
+        "dependsOn": [
+            "[variables('dataFactoryName')]"
+        ],
+        "copy": { 
+            "name": "datasetcopy", 
+            "count": "[parameters('count')]" 
+        } 
+        ...
+    }]
+
 ## Nächste Schritte
 - Informationen zu den Abschnitten einer Vorlage finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](./resource-group-authoring-templates.md).
 - Unter [Funktionen von Azure-Ressourcen-Manager-Vorlagen](./resource-group-template-functions.md) finden Sie alle Funktionen, die Sie in einer Vorlage verwenden können.
 - Informationen zum Bereitstellen Ihrer Vorlage finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](resource-group-template-deploy.md).
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1203_2015-->

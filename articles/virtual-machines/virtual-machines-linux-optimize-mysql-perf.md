@@ -38,11 +38,11 @@ Bitte beachten Sie, dass es hinsichtlich der Anzahl der Festplatten Beschränkun
 In diesem Artikel wird angenommen, dass Sie bereits einen virtuellen Linux-Computer erstellt und MySQL installiert und konfiguriert haben. Weitere Informationen zu den ersten Schritten finden Sie unter "Installieren von MySQL unter Azure".
 
 ###Einrichtung von RAID unter Azure
-Die folgenden Schritte beschreiben, wie Sie RAID mithilfe des Azure-Verwaltungsportals auf Azure erstellen können. Sie können RAID auch mithilfe von Windows PowerShell-Skripten einrichten. In diesem Beispiel wird RAID 0 mit 4 Datenträgern konfiguriert.
+Die folgenden Schritte beschreiben, wie Sie RAID mithilfe des klassischen Azure-Portal in Azure erstellen können. Sie können RAID auch mithilfe von Windows PowerShell-Skripten einrichten. In diesem Beispiel wird RAID 0 mit 4 Datenträgern konfiguriert.
 
 ####Schritt 1: Hinzufügen eines Datenträgers zum virtuellen Computer  
 
-Klicken Sie auf der Seite "Virtuelle Computer" im Azure-Verwaltungsportal auf den virtuellen Computer, dem Sie einen Datenträger hinzufügen möchten. In diesem Beispiel wird der virtuelle Computer "mysqlnode1" verwendet.
+Klicken Sie im klassischen Azure-Portal auf der Seite „Virtuelle Computer“ auf den virtuellen Computer, dem Sie einen Datenträger hinzufügen möchten. In diesem Beispiel wird der virtuelle Computer "mysqlnode1" verwendet.
 
 ![][1]
 
@@ -348,4 +348,4 @@ Weitere und detailliertere Konfigurationsparameter für die Optimierung finden S
 [13]: ./media/virtual-machines-linux-optimize-mysql-perf/virtual-machines-linux-optimize-mysql-perf-13.png
 [14]: ./media/virtual-machines-linux-optimize-mysql-perf/virtual-machines-linux-optimize-mysql-perf-14.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

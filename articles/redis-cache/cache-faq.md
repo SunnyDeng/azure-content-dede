@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/12/2015" 
+	ms.date="12/03/2015" 
 	ms.author="sdanie"/>
 
 # Azure Redis Cache – häufig gestellte Fragen
@@ -24,12 +24,12 @@ In diesem Artikel erhalten Sie Antworten auf häufig gestellte Fragen sowie Info
 ## Welches Redis Cache-Angebot und welche Redis Cache-Größe sollte ich verwenden?
 Jedes Azure Redis Cache-Angebot bietet unterschiedliche Optionen in Bezug auf **Größe**, **Bandbreite**, **Hochverfügbarkeit** und **SLA**.
 
-Nachfolgend sind verschiedene Aspekte aufgeführt, die Ihnen bei der Cacheauswahl helfen können.
+Nachfolgend sind verschiedene Aspekte aufgeführt, die Ihnen bei der Wahl helfen können.
 
 -	**Speicher**: Der Basic-Tarif und der Standard-Tarif bieten 250 MB bis 53 GB. Der Premium-Tarif bietet bis zu 530 GB, die [auf Anfrage](mailto:wapteams@microsoft.com?subject=Redis%20Cache%20quota%20increase) aufgestockt werden können. Weitere Informationen finden Sie unter [Azure Redis Cache Preise](https://azure.microsoft.com/pricing/details/cache/).
 -	**Netzwerkleistung**: Bei einer Workload, die einen hohen Durchsatz erfordert, bietet der Premium-Tarif im Vergleich zum Standard- oder Basic-Tarif eine größere Bandbreite. Zudem haben die größeren Caches aufgrund des zugrunde liegenden virtuellen Computers, der den Cache hostet, bei jedem Tarif eine höhere Bandbreite. Ausführliche Informationen finden Sie in der Tabelle weiter unten.
 -	**Durchsatz**: Der Premium-Tarif bietet den maximal verfügbaren Durchsatz. Wenn Cacheserver oder -clients die Bandbreitengrenzwerte erreichen, kommt es zu Timeouts auf Clientseite. Ausführliche Informationen finden Sie in der Tabelle weiter unten.
--	**Hohe Verfügbarkeit/SLA**: Azure Redis Cache garantiert, dass ein Standard-Cache oder Premium-Cache (SLA für den Premium-Tarif erst nach der Vorschauphase) mindestens 99,9 % der Zeit zur Verfügung steht. Weitere Informationen zu unserer SLA finden Sie unter [Azure Redis Cache Preise](https://azure.microsoft.com/pricing/details/cache/). Die SLA deckt nur die Konnektivität zu den Cache-Endpunkten ab. Sie bezieht sich dagegen nicht auf Schutz vor Datenverlusten. Es wird empfohlen, das Redis-Feature für Datenpersistenz im Premium-Tarif zu verwenden, um den Schutz vor Datenverlusten zu erhöhen.
+-	**Hohe Verfügbarkeit/SLA**: Azure Redis Cache garantiert, dass ein Standard-/Premium-Cache mindestens 99,9 % der Zeit zur Verfügung steht. Weitere Informationen zu unserer SLA finden Sie unter [Azure Redis Cache Preise](https://azure.microsoft.com/support/legal/sla/cache/v1_0/). Die SLA deckt nur die Konnektivität zu den Cache-Endpunkten ab. Sie bezieht sich dagegen nicht auf Schutz vor Datenverlusten. Es wird empfohlen, das Redis-Feature für Datenpersistenz im Premium-Tarif zu verwenden, um den Schutz vor Datenverlusten zu erhöhen.
 -	**Redis-Datenpersistenz**: Der Premium-Tarif ermöglicht die Persistenz der Cachedaten in einem Azure-Speicherkonto. In einem Basic- oder Standard-Cache werden alle Daten nur im Arbeitsspeicher gespeichert. Bei Problemen mit der zugrunde liegenden Infrastruktur kann es zu Datenverlusten kommen. Es wird empfohlen, das Redis-Feature für Datenpersistenz im Premium-Tarif zu verwenden, um den Schutz vor Datenverlusten zu erhöhen. Azure Redis Cache bietet RDB- und AOF-Optionen (demnächst verfügbar) bei der Redis-Persistenz. Weitere Informationen finden Sie unter [Konfigurieren von Persistenz für Azure Redis Cache vom Typ "Premium"](cache-how-to-premium-persistence.md).
 -	**Redis Cluster**: Wenn Sie Caches mit einer Größe über 53 GB erstellen oder Daten über mehrere Redis-Knoten horizontal partitionieren möchten, können Sie das im Premium-Tarif verfügbare Redis-Clustering verwenden. Für die hohe Verfügbarkeit besteht jeder Knoten aus einem Paar aus primärem Cache und Replikatcache. Weitere Informationen finden Sie unter [Konfigurieren von Clustern für Azure Redis Cache vom Typ "Premium"](cache-how-to-premium-clustering.md).
 -	**Erhöhte Sicherheit und Isolation**: Die Bereitstellung von Azure Virtual Network (VNET) bietet verbesserte Sicherheit und Isolation für den Azure Redis Cache sowie Subnetze, Zugriffssteuerungsrichtlinien und andere Features, mit denen der Zugriff weiter eingeschränkt wird. Weitere Informationen finden Sie unter [Konfigurieren der Unterstützung virtueller Netzwerke für Azure Redis Cache vom Typ "Premium"](cache-how-to-premium-vnet.md).
@@ -49,7 +49,7 @@ Aus dieser Tabelle können folgende Schlussfolgerungen gezogen werden.
 
 | Tarif | Größe | Verfügbare Bandbreite | 1 KB Schlüsselgröße |
 |----------------------|--------|----------------------------|--------------------------------|
-| **Standard-Cachegröße** | &nbsp; | **(MBit/s)** | **Anforderungen pro Sekunde (RPS)** |
+| **Standard-Cachegröße** | &nbsp; |**Megabits pro Sekunde (Mbit/s)** | **Anforderungen pro Sekunde (RPS)** |
 | C0 | 250 MB | 5 | 600 |
 | C1 | 1 GB | 100 | 12\.200 |
 | C2 | 2,5 GB | 200 | 24\.000 |
@@ -84,7 +84,7 @@ Timeouts treten auf dem Client auf, der mit Redis kommuniziert. In der Regel kom
 <a name="cache-monitor"></a>
 ## Wie überwache ich die Integrität und Leistung meines Caches?
 
-Microsoft Azure Redis Cache-Instanzen können im [Azure-Vorschauportal](https://portal.azure.com) überwacht werden. Sie können Metriken anzeigen, Metrikdiagramme an das Startmenü anheften, Daten- und Zeitbereiche für Überwachungsdiagramme anpassen, Metriken aus Diagrammen hinzufügen und entfernen sowie Warnungen festlegen, die ausgelöst werden, wenn bestimmte Bedingungen erfüllt sind. Diese Tools ermöglichen es Ihnen, die Integrität Ihrer Azure Redis Cache-Instanzen zu überwachen und unterstützen Sie beim Verwalten Ihrer Cachinganwendungen. Weitere Informationen zum Überwachen Ihrer Caches finden Sie unter [Überwachen von Azure Redis Cache](https://msdn.microsoft.com/library/azure/dn763945.aspx).
+Microsoft Azure Redis Cache-Instanzen können im [Azure-Portal](https://portal.azure.com) überwacht werden. Sie können Metriken anzeigen, Metrikdiagramme an das Startmenü anheften, Daten- und Zeitbereiche für Überwachungsdiagramme anpassen, Metriken aus Diagrammen hinzufügen und entfernen sowie Warnungen festlegen, die ausgelöst werden, wenn bestimmte Bedingungen erfüllt sind. Diese Tools ermöglichen es Ihnen, die Integrität Ihrer Azure Redis Cache-Instanzen zu überwachen und unterstützen Sie beim Verwalten Ihrer Cachinganwendungen. Weitere Informationen zum Überwachen Ihrer Caches finden Sie unter [Überwachen von Azure Redis Cache](https://msdn.microsoft.com/library/azure/dn763945.aspx).
 
 <a name="cache-disconnect"></a>
 ## Warum wurde mein Client vom Cache getrennt?
@@ -100,7 +100,7 @@ Nachfolgend werden einige Gründe dafür aufgeführt, warum ein Cache getrennt w
 	-	Die Bandbreitenschwellenwerte wurden erreicht.
 	-	Die Ausführung CPU-bezogener Vorgänge hat zu viel Zeit in Anspruch genommen.
 -	Gründe auf Serverseite
-	-	Im Standard-Cacheangebot initiiert der Azure Redis Cache Service ein Failover vom primären Knoten auf den sekundären Knoten.
+	-	Im Standard-Cacheangebot initiiert der Azure Redis Cache-Dienst ein Failover vom primären Knoten auf den sekundären Knoten.
 	-	Azure hat ein Patching der Instanz durchgeführt, auf dem der Cache bereitgestellt wurde.
 		-	Dies kann bei Redis-Serverupdates oder im Rahmen der allgemeinen VM-Wartung der Fall sein.
 
@@ -157,11 +157,11 @@ Anweisungen zum Herunterladen der Redis-Tools finden Sie im Abschnitt [Wie führ
 <a name="cache-benchmarking"></a>
 ## Wie kann ich die Leistung meines Caches messen und testen?
 
--	[Aktivieren Sie die Cachediagnose](https://msdn.microsoft.com/library/azure/dn763945.aspx#EnableDiagnostics), damit Sie die Integrität Ihres Caches [überwachen](https://msdn.microsoft.com/library/azure/dn763945.aspx) können. Sie können die Metriken im Vorschauportal anzeigen und sie anschließend mit einem Tool Ihrer Wahl [herunterladen und prüfen](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring).
+-	[Aktivieren Sie die Cachediagnose](https://msdn.microsoft.com/library/azure/dn763945.aspx#EnableDiagnostics), damit Sie die Integrität Ihres Caches [überwachen](https://msdn.microsoft.com/library/azure/dn763945.aspx) können. Sie können die Metriken im Azure-Portal anzeigen und anschließend mit einem Tool Ihrer Wahl [herunterladen und prüfen](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring).
 -	Mit "redis-benchmark.exe" können Sie Auslastungstests für Ihren Redis-Server durchführen.
 	-	Stellen Sie sicher, dass sich Client und Redis Cache für die Auslastungstests in derselben Region befinden.
 -	Verwenden Sie "redis-cli.exe", und überwachen Sie den Cache unter Verwendung des INFO-Befehls.
-	-	Wenn Ihre Datenlast zu einer hohen Arbeitsspeicherfragmentierung führt, sollte Sie eine zentrale Hochskalierung auf einen größeren Cache durchführen.
+	-	Wenn Ihre Datenlast zu einer hohen Arbeitsspeicherfragmentierung führt, sollte Sie eine zentrale Skalierung auf einen größeren Cache durchführen.
 -	Anweisungen zum Herunterladen der Redis-Tools finden Sie im Abschnitt [Wie führe ich Redis-Befehle aus?](#cache-commands).
 
 <a name="cache-commands"></a>
@@ -169,7 +169,7 @@ Anweisungen zum Herunterladen der Redis-Tools finden Sie im Abschnitt [Wie führ
 
 Sie können alle aufgelisteten [Redis-Befehle](http://redis.io/commands#) mit Ausnahme der Befehle verwenden, die unter [Redis-Befehle, die in Azure Redis Cache nicht unterstützt werden](cache-configure.md#redis-commands-not-supported-in-azure-redis-cache) aufgeführt sind. Für die Ausführung von Redis-Befehlen haben Sie mehrere Optionen.
 
--	Wenn Sie über einen Standard- oder Premium-Cache verfügen, können Sie Redis-Befehle über die [Redis-Konsole](cache-configure.md#redis-console) ausführen. Dies ist eine sichere Methode zum Ausführen von Redis-Befehlen im Vorschauportal.
+-	Wenn Sie über einen Standard- oder Premium-Cache verfügen, können Sie Redis-Befehle über die [Redis-Konsole](cache-configure.md#redis-console) ausführen. Dies ist eine sichere Methode zum Ausführen von Redis-Befehlen im Azure-Portal.
 -	Sie können auch die Redis-Befehlszeilentools verwenden. Führen Sie hierzu die folgenden Schritte aus:
 	-	Laden Sie die [Redis-Befehlszeilentools](https://github.com/MSOpenTech/redis/releases/download/win-2.8.19.1/redis-2.8.19.zip) herunter.
 	-	Stellen Sie über `redis-cli.exe` eine Verbindung mit dem Cache her. Übergeben Sie den Cacheendpunkt mithilfe des Schalters "-h" und dem Schlüssel mit Verwendung von "-a", wie im folgenden Beispiel gezeigt.
@@ -189,7 +189,7 @@ Sie können alle aufgelisteten [Redis-Befehle](http://redis.io/commands#) mit Au
 
 Microsoft Azure Redis Cache basiert auf dem populären quelloffenen Redis Cache und bietet Ihnen Zugriff auf einen sicheren, dedizierten Redis Cache, der von Microsoft verwaltet wird. Es stehen verschiedene [Redis-Clients](http://redis.io/clients) für zahlreiche Programmiersprachen zur Verfügung. Jeder Client verfügt über eine eigene API, die unter Verwendung von [Redis-Befehlen](http://redis.io/commands) Aufrufe an den Redis Cache sendet.
 
-Da jeder Client anders ist, gibt es nicht nur einen zentralen Klassenverweis in MSDN. Stattdessen verwaltet jeder Client seine eigene Verweisdokumentation. Zusätzlich zur Verweisdokumentation gibt es mehrere Lernprogramme auf "Azure.com". Diese stehen auf der Seite [Redis Cache-Dokumentation](http://azure.microsoft.com/documentatgion/services/redis-cache/) zur Verfügung und erleichtern Ihnen den Einstieg in die Verwendung von Azure Redis Cache mit verschiedenen Sprachen und Cacheclients.
+Da jeder Client anders ist, gibt es nicht nur einen zentralen Klassenverweis in MSDN. Stattdessen verwaltet jeder Client seine eigene Verweisdokumentation. Zusätzlich zur Verweisdokumentation gibt es mehrere Lernprogramme auf "Azure.com". Diese stehen auf der Seite [Redis Cache-Dokumentation](http://azure.microsoft.com/documentation/services/redis-cache/) zur Verfügung und erleichtern Ihnen den Einstieg in die Verwendung von Azure Redis Cache mit verschiedenen Sprachen und Cacheclients.
 
 
 ## Welches Azure-Cache-Angebot ist das Richtige für mich?
@@ -202,9 +202,20 @@ Azure Cache verfügt derzeit über drei Angebote:
 -	Azure Managed Cache Service
 -	Azure In-Role Cache
 
+>[AZURE.IMPORTANT]Wir geben die Deaktivierung der Dienste Azure Managed Cache Service und Azure In-Role Cache am 30. November 2016 bekannt. Sie sollten zur Vorbereitung für die Einstellung dieser Dienste zu Azure Redis Cache migrieren.
+>
+>Azure Redis Cache wird in Azure als Cachelösung empfohlen, seit der Dienst allgemein verfügbar ist, und ist jetzt in allen Azure-Regionen verfügbar, auch in China und für die US-Regierungsbehörden. Aufgrund dieser Verfügbarkeit kündigen wir die bevorstehende Einstellung von Managed Cache Service und In-Role Cache-Dienst an.
+>
+>Managed Cache Service und In-Role Cache-Dienst bleiben für Bestandskunden maximal 12 Monate ab dem Datum dieser Ankündigung am 30. November 2015 verfügbar – das Dienstendedatum für beide ist der 30. November 2016. Nach diesem Datum wird Managed Cache Service abgeschaltet, und der In-Role Cache-Dienst wird nicht mehr unterstützt.
+>
+>Wir entfernen die Unterstützung für das Erstellen neuer In-Role Caches aus der ersten Azure SDK-Version, die nach dem 1. Februar 2016 herauskommt. Kunden werden vorhandene Projekte öffnen können, die über In-Role Caches verfügen.
+>
+>Wir empfehlen allen Managed Cache Service- und In-Role Cache-Dienst-Kunden, während dieses Zeitraums zu Azure Redis Cache zu migrieren. Azure Redis Cache bietet mehr Funktionen und ist insgesamt höherwertig. Weitere Informationen zur Migration finden Sie auf der Dokumentationswebseite [Migrieren von Managed Cache Service zu Azure Redis Cache](cache-migrate-to-redis.md).
+>
+>Sollten Sie weitere Fragen haben, [kontaktieren Sie uns](https://azure.microsoft.com/support/options/?WT.mc_id=azurebg_email_Trans_933).
 
 ### Azure Redis Cache
-Azure Redis Cache ist allgemein verfügbar in Größen bis zu 53 GB mit einer Verfügbarkeits-SLA von 99,9 %. Der neue Tarif [Premium](cache-premium-tier.md) befindet sich noch in der Vorschauversion. Er bietet Größen bis 530 GB und unterstützt Clustering, VNET und Dauerhaftigkeit.
+Azure Redis Cache ist allgemein verfügbar in Größen bis zu 53 GB mit einer Verfügbarkeits-SLA von 99,9 %. Der neue [Premium-Tarif](cache-premium-tier.md) bietet Größen bis zu 530 GB und unterstützt Clustering, VNET und Persistenz mit einer SLA von 99,9 %.
 
 Azure Redis Cache ermöglicht den Kunden die Verwendung eines gesicherten, dedizierten Redis Cache, der von Microsoft verwaltet wird. Mit diesem Angebot können Sie die umfangreichen Features und die Umgebung von Redis nutzen und dabei von zuverlässigem Hosting und Überwachung durch Microsoft profitieren.
 
@@ -212,7 +223,7 @@ Im Gegensatz zu traditionellen Caches, die nur mit Schlüssel-Wert-Paaren arbeit
 
 Ein weiterer wichtiger Aspekt für den Erfolg von Redis ist das gesunde, lebendige Open Source-Ökosystem. Dies spiegelt sich in den verschiedenen verfügbaren Redis-Clients in mehreren Sprachen wider. Dadurch kann er für fast jede Workload verwendet werden, die Sie innerhalb von Azure erstellen können.
 
-Weitere Informationen zu den ersten Schritten mit Azure Redis Cache finden Sie unter [Verwenden von Azure Redis Cache](cache-dotnet-how-to-use-azure-redis-cache.md) und in der [Azure Redis Cache-Dokumentation](https://azure.microsoft.com/documentation/services/redis-cache/) (in englischer Sprache).
+Weitere Informationen zu den ersten Schritten mit Azure Redis Cache finden Sie unter [Verwenden von Azure Redis Cache](cache-dotnet-how-to-use-azure-redis-cache.md) und in der [Azure Redis Cache-Dokumentation](https://azure.microsoft.com/documentation/services/redis-cache/).
 
 ### Managed Cache Service
 Wenn Sie den Azure Managed Cache Service bereits nutzen, können Sie den vorhandenen Dienst weiter verwenden oder zu Azure Redis Cache migrieren, um vom Funktionsumfang dieses Diensts zu profitieren. Azure Managed Cache Service ist ebenfalls allgemein verfügbar und bietet eine Verfügbarkeits-SLA von 99,9 %.
@@ -220,4 +231,4 @@ Wenn Sie den Azure Managed Cache Service bereits nutzen, können Sie den vorhand
 ### In-Role Cache
 Wenn Sie Cache mithilfe des In-Role Caches selbst hosten, können Sie dies auch weiterhin tun. Da In-Role Cache eine selbst gehostete Softwarekomponente und kein von Microsoft gehosteter Dienst ist, bietet er keine SLA. Benutzer von In-Role Cache können zu Azure Redis Cache migrieren, um den umfassenden Featuresatz zu nutzen und eine SLA zu erhalten.
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1210_2015-->

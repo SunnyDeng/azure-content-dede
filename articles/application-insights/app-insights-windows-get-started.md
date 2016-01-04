@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Application Insights für Windows Phone- und Windows Store-Apps | Microsoft Azure"
-	description="Analysieren Sie die Nutzung und Leistung von Windows-Geräteanwendungen mit Application Insights."
+	pageTitle="Analysen für Windows Phone- und Windows Store-Apps | Microsoft Azure"
+	description="Analysieren Sie die Nutzung und Leistung von Windows-Geräteanwendungen."
 	services="application-insights"
     documentationCenter="windows"
 	authors="alancameronwills"
@@ -12,19 +12,23 @@
 	ms.tgt_pltfrm="ibiza"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="10/16/2015"
+	ms.date="11/21/2015"
 	ms.author="awills"/>
 
-# Application Insights für Windows Phone- und Windows Store-Apps
+# Analysen für Windows Phone- und Windows Store-Apps
 
-*Application Insights befindet sich in der Vorschau.*
+Microsoft bietet zwei DevOps-Lösungen für Geräte: [HockeyApp](http://hockeyapp.net/) für DevOps-Workflow- und -Absturzanalysen und [Application Insights](app-insights-overview.md) für Nutzungs- und Absturzanalysen.
 
-[AZURE.INCLUDE [app-insights-selector-get-started](../../includes/app-insights-selector-get-started.md)]
+[HockeyApp](http://hockeyapp.net/) ist unsere mobile DevOps-Lösung für Apps auf iOS-, OS X-, Android- und Windows-Geräten sowie für plattformübergreifende Apps, die auf Xamarin, Cordova und Unity basieren. Mit dieser Lösung können Sie Builds an Betatester verteilen, Daten sammeln und Benutzerfeedback erhalten. Sie ist in Visual Studio Team Services integriert und ermöglicht einfache Bereitstellungen von Builds und die Integration von Arbeitsaufgaben. In der [HockeyApp Knowledge Base](http://support.hockeyapp.net/kb) finden Sie weitere Informationen. Über den [Blog zu HockeyApp](http://hockeyapp.net/blog/) bleiben Sie auf dem Laufenden.
+
+Wenn Ihre App serverseitige Komponenten hat, verwenden Sie [Application Insights](app-insights-overview.md) zum Überwachen der Webserverseite der App in [ASP.NET](app-insights-asp-net.md) oder [J2EE](app-insights-java-get-started.md). Senden Sie die Telemetriedaten an dieselbe Application Insights-Ressource, um Ereignisse auf beiden Seiten zu korrelieren.
+
+Es gibt auch ein [Application Insights SDK für universelle C++-Apps](https://github.com/Microsoft/ApplicationInsights-CPP), das Telemetriedaten an das Application Insights-Portal sendet.
 
 Mit Visual Studio Application Insights können Sie Ihre veröffentlichte Anwendung auf Folgendes überwachen:
 
-* [**Nutzung**][windowsUsage] &#150; Erfahren Sie, wie viele Benutzer Ihre App hat, und was sie mit Ihrer App machen.
-* [**Abstürze**][windowsCrash] &#150; Rufen Sie Diagnoseberichte zu Abstürzen ab, und machen Sie sich mit den Auswirkungen auf die Benutzer vertraut.
+* [**Nutzung**][windowsUsage] – Erfahren Sie, wie viele Benutzer Ihre App hat und was sie mit Ihrer App machen.
+* [**Abstürze**][windowsCrash] – Rufen Sie Diagnoseberichte zu Abstürzen ab, und machen Sie sich mit den Auswirkungen auf die Benutzer vertraut.
 
 ![](./media/app-insights-windows-get-started/appinsights-d018-oview.png)
 
@@ -35,7 +39,7 @@ Sie benötigen Folgendes:
 * Ein Abonnement für [Microsoft Azure][azure]
 * Visual Studio 2013 oder höher
 
-## 1\. Erstellen einer Application Insights-Ressource
+## 1\. Erstellen einer Application Insights-Ressource 
 
 Erstellen Sie im [Azure-Portal][portal] eine neue Application Insights-Ressource.
 
@@ -45,7 +49,7 @@ Eine [Ressource][roles] in Azure ist eine Instanz eines Diensts. In dieser Resso
 
 #### Kopieren des Instrumentationsschlüssels
 
-Mit diesem Schlüssel wird die Ressource identifiziert. Sie benötigen ihn, um das SDK für das Senden der Daten an die Ressource zu konfigurieren.
+Mit diesem Schlüssel wird die Ressource identifiziert. Sie benötigen ihn in Kürze, um das SDK für das Senden der Daten an die Ressource zu konfigurieren.
 
 ![Öffnen Sie die Dropdownliste "Essentials", und wählen Sie den Instrumentationsschlüssel aus](./media/app-insights-windows-get-started/02-props.png)
 
@@ -64,34 +68,29 @@ Wenn es sich um eine universelle Windows App handelt, wiederholen Sie die Schrit
 
     ![](./media/app-insights-windows-get-started/04-ai-nuget.png)
 
-3. Wählen Sie **Application Insights für Windows-Anwendungen** aus.
+3. Wählen Sie **Application Insights für Windows-Anwendungen**.
 
 4. Fügen Sie die Datei "ApplicationInsights.config" im Stammverzeichnis des Projekts hinzu, und fügen Sie den im Portal kopierten Instrumentationsschlüssel ein. Nachfolgend sehen Sie einen XML-Beispielcode für diese Config-Datei.
 
 	```xml
-
 		<?xml version="1.0" encoding="utf-8" ?>
-		<ApplicationInsights xmlns="http://schemas.microsoft.com/ApplicationInsights/2013/Settings>
+		<ApplicationInsights>
 			<InstrumentationKey>YOUR COPIED INSTRUMENTATION KEY</InstrumentationKey>
 		</ApplicationInsights>
 	```
 
     Legen Sie die Eigenschaften der Datei "ApplicationInsights.config" fest: **Buildvorgang** = **Inhalt** und **In Ausgabeverzeichnis kopieren** = **Immer kopieren**.
-
+	
 	![](./media/app-insights-windows-get-started/AIConfigFileSettings.png)
 
 5. Fügen Sie den folgenden Initialisierungscode hinzu. Es ist am besten, diesen Code dem `App()`-Konstruktor hinzuzufügen. Wenn Sie ihn an anderer Stelle hinzufügen, könnten Sie die automatische Erfassung der ersten Seitenansichten verpassen.
 
 ```C#
-
-    using Microsoft.ApplicationInsights;
-    ...
-
 	public App()
 	{
-	   // Add this initilization line.
+	   // Add this initilization line. 
 	   WindowsAppInitializer.InitializeAsync();
-
+	
 	   this.InitializeComponent();
 	   this.Suspending += OnSuspending;
 	}  
@@ -101,7 +100,7 @@ Wenn es sich um eine universelle Windows App handelt, wiederholen Sie die Schrit
 
 ## <a name="network"></a>3. Aktivieren des Netzwerkzugriffs für Ihre App
 
-Wenn Ihre App noch keinen [Internetzugriff anfordert](https://msdn.microsoft.com/library/windows/apps/hh452752.aspx), müssen Sie diesen der Manifestdatei als [erforderliche Funktion](https://msdn.microsoft.com/library/windows/apps/br211477.aspx) hinzufügen.
+Wenn Ihre App noch nicht [den ausgehenden Netzwerkzugriff anfordert](https://msdn.microsoft.com/library/windows/apps/hh452752.aspx), müssen Sie diesen ihrer Manifestdatei als [erforderliche Funktion](https://msdn.microsoft.com/library/windows/apps/br211477.aspx) hinzufügen.
 
 ## <a name="run"></a>4. Ausführen des Projekts
 
@@ -116,13 +115,16 @@ Im Debugmodus werden Telemetriedaten gesendet, sobald sie generiert wurden. Im F
 
 ## <a name="monitor"></a>5. Anzeigen von Überwachungsdaten
 
-Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an, und öffnen Sie die Application Insights-Ressource, die Sie zuvor erstellt haben.
+Öffnen Sie Application Insights von Ihrem Projekt aus.
+
+![Klicken Sie mit der rechten Maustaste auf Ihr Projekt und öffnen Sie das Azure-Portal](./media/app-insights-windows-get-started/appinsights-04-openPortal.png)
+
 
 Zuerst sehen Sie lediglich einen oder zwei Punkte. Zum Beispiel:
 
 ![Klicken Sie, um weitere Daten anzuzeigen](./media/app-insights-windows-get-started/appinsights-26-devices-01.png)
 
-Klicken Sie nach einigen Sekunden auf **Aktualisieren**, wenn Sie mehr Daten erwarten.
+Klicken Sie nach einigen Sekunden auf "Aktualisieren", wenn Sie mehr Daten erwarten.
 
 Klicken Sie auf ein beliebiges Diagramm, um weitere Details anzuzeigen.
 
@@ -140,7 +142,7 @@ Das Application Insights SDK umfasst mehrere Sammler, die automatisch unterschie
     WindowsAppInitializer.InitializeAsync( "00000000-0000-0000-0000-000000000000",
        WindowsCollectors.Metadata
        | WindowsCollectors.PageView
-       | WindowsCollectors.Session
+       | WindowsCollectors.Session 
        | WindowsCollectors.UnhandledException);
 
 #### Senden eigener Telemetriedaten
@@ -167,7 +169,7 @@ Verwenden Sie die [API][api], um Ereignisse, Metriken und Diagnosedaten an Appli
 
 ```
 
-Weitere Informationen finden Sie unter [API-Übersicht: Benutzerdefinierte Ereignisse und Metriken][api].
+Weitere Informationen finden Sie unter [Benutzerdefinierte Ereignisse und Metriken][api].
 
 ## Wie geht es weiter?
 
@@ -180,28 +182,25 @@ Weitere Informationen finden Sie unter [API-Übersicht: Benutzerdefinierte Ereig
 
 Wenn Sie die Einrichtungsschritte lieber in Visual Studio ausführen möchten, ist dies bei Windows Phone-, Windows Store- und vielen andere Arten von Apps möglich.
 
-### <a name="new"></a>Wenn Sie ein neues Windows-Anwendungsprojekt erstellen ...
+###<a name="new"></a> Wenn Sie ein neues Windows-Anwendungsprojekt erstellen...
 
-Wählen Sie **Application Insights** im Dialogfeld **Neues Projekt** aus.
+Wählen Sie Application Insights im Dialogfeld "Neues Projekt" aus.
 
-Wenn Sie zur Anmeldung aufgefordert werden, verwenden Sie die Anmeldeinformationen für Ihr Azure-Konto.
+Wenn Sie aufgefordert werden, sich anzumelden, verwenden Sie die Anmeldeinformationen Ihres Azure-Kontos (das vom Visual Studio Team Services-Konto getrennt ist).
 
 ![](./media/app-insights-windows-get-started/appinsights-d21-new.png)
 
 
-### <a name="existing"></a>… oder falls es sich um ein vorhandenes Projekt handelt
+###<a name="existing"></a>Oder falls es sich um ein vorhandenes Projekt handelt ...
 
 Fügen Sie Application Insights im Projektmappen-Explorer hinzu.
 
 
 ![](./media/app-insights-windows-get-started/appinsights-d22-add.png)
 
-## Upgraden auf eine neue SDK-Version
+## So aktualisieren Sie auf eine neue SDK-Version
 
-Bei [Veröffentlichung einer neuen SDK-Version](app-insights-release-notes-windows.md):
-
-* Klicken Sie mit der rechten Maustaste auf das Projekt, und wählen Sie "NuGet-Pakete verwalten" aus.
-* Wählen Sie die installierten Application Insights-Pakete und dann die Aktion **Upgrade** aus.
+Gehen Sie bei [Veröffentlichung einer neuen SDK-Version](app-insights-release-notes-windows.md) folgendermaßen vor: Klicken Sie mit der rechten Maustaste auf Ihr Projekt, und wählen Sie "NuGet-Pakete verwalten". Wählen Sie die installierten Application Insights-Pakete und dann die Aktion "Upgrade" aus.
 
 
 ## <a name="usage"></a>Nächste Schritte
@@ -232,4 +231,4 @@ Bei [Veröffentlichung einer neuen SDK-Version](app-insights-release-notes-windo
 [windowsCrash]: app-insights-windows-crashes.md
 [windowsUsage]: app-insights-windows-usage.md
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1217_2015-->

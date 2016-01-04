@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/14/2015"
+	ms.date="11/24/2015"
 	ms.author="femila"/>
 
 # Automatische Geräteregistrierung bei Azure Active Directory für in Domänen eingebundene Windows-Geräte
@@ -34,7 +34,7 @@ Bereitstellen von AD FS und Verbinden mit Azure Active Directory mittels Azure A
 4. Wählen Sie auf der Registerkarte **Ausstellungstransformationsregeln** die Option **Regel hinzufügen** aus.
 5. Wählen Sie im Vorlagendropdownfeld **Anpruchsregel** die Option **Ansprüche mit benutzerdefinierter Regel senden** aus. Wählen Sie **Weiter**.
 6. Geben Sie *Authentifizierungsmethode Anspruchsregel* in das Textfeld **Anspruchsregelname:** ein.
-7. Geben Sie die folgende Anspruchsregel in das Textfeld **Anspruchsregel:** ein:
+7. Geben Sie die folgende Anspruchsregel in das Textfeld **Claim rule** ein:
 
         c:[Type == "http://schemas.microsoft.com/claims/authnmethodsreferences"]
         => issue(claim = c);
@@ -43,7 +43,7 @@ Bereitstellen von AD FS und Verbinden mit Azure Active Directory mittels Azure A
 
 Konfigurieren eines zusätzlichen Authentifizierungsklassenverweises für die Vertrauensstellung der vertrauenden Seite für Azure Active Directory
 -----------------------------------------------------------------------------------------------------
-9. Öffnen Sie auf Ihrem Verbundserver ein Windows PowerShell-Befehlsfenster, und geben Sie dann Folgendes ein:
+Öffnen Sie auf Ihrem Verbundserver ein Windows PowerShell-Befehlsfenster, und geben Sie dann Folgendes ein:
 
 
   `Set-AdfsRelyingPartyTrust -TargetName <RPObjectName> -AllowedAuthenticationClassReferences wiaormultiauthn`
@@ -52,21 +52,32 @@ Dabei ist <RPObjectName> der Objektname der vertrauenden Seite für Ihr Azure Ac
 
 Globale Authentifizierungsrichtlinie für AD FS
 -----------------------------------------------------------------------------
-1. Konfigurieren Sie die globale primäre Authentifizierungsrichtlinie für AD FS, um die integrierte Windows-Authentifizierung für das Intranet zuzulassen (Dies ist die Standardeinstellung).
+Konfigurieren Sie die globale primäre Authentifizierungsrichtlinie für AD FS, um die integrierte Windows-Authentifizierung für das Intranet zuzulassen (Dies ist die Standardeinstellung).
 
 
 Internet Explorer-Konfiguration
 ------------------------------------------------------------------------------
-1. Konfigurieren Sie die folgenden Einstellungen in Internet Explorer auf Ihren Windows-Geräten für die Sicherheitszone "Lokales Intranet":
-    * Fordern Sie keine Clientzertifikatauswahl auf, wenn nur ein Zertifikat vorhanden ist: **Aktivieren**
-    * Scripting zulassen: **Aktivieren**
-    * Automatisches Anmelden nur in der Intranetzone: **Markiert**
+Konfigurieren Sie die folgenden Einstellungen in Internet Explorer auf Ihren Windows-Geräten für die Sicherheitszone "Lokales Intranet":
+
+- Fordern Sie keine Clientzertifikatauswahl auf, wenn nur ein Zertifikat vorhanden ist: **Aktivieren**
+- Scripting zulassen: **Aktivieren**
+- Automatisches Anmelden nur in der Intranetzone: **Markiert**
 
 Dies sind die Standardeinstellungen für die Sicherheitszone "Lokales Intranet" des Internet Explorers. Sie können diese Einstellungen im Internet Explorer anzeigen oder verwalten, indem Sie zu **Internetoptionen** > **Sicherheit** > "Lokales Intranet > Stufe anpassen" navigieren. Sie können diese Einstellungen auch mithilfe der Active Directory-Gruppenrichtlinie konfigurieren.
 
 Netzwerkverbindung
 -------------------------------------------------------------
 In Domänen eingebundene Windows-Gerät müssen über eine Verbindung zu AD FS und Active Directory-Domänencontroller verfügen, um sich automatisch bei Azure AD zu registrieren. Dies bedeutet normalerweise, dass der Computer mit dem Unternehmensnetzwerk verbunden sein muss. Dies kann eine Kabelverbindung, Wi-Fi-Verbindung, DirectAccess oder VPN einschließen.
+
+## Konfigurieren der Ermittlung für die Azure Active Directory-Geräteregistrierung
+Windows 7 und Windows 8.1-Geräte ermitteln den Geräteregistrierungsserver, indem sie den Benutzerkontonamen mit dem Namen eines bekannten Geräteregistrierungsservers kombinieren. Sie müssen einen DNS CNAME-Eintrag erstellen, der auf den A-Eintrag verweist, der Ihrem Azure Active Directory-Geräteregistrierungsdienst zugeordnet ist. Der CNAME-Eintrag muss das bekannte Präfix **enterpriseregistration** verwenden, gefolgt vom UPN-Suffix, das von den Benutzerkonten in Ihrer Organisation verwendet wird. Wenn Ihre Organisation mehrere UPN-Suffixe verwendet, müssen in DNS mehrere CNAME-Einträge erstellt werden.
+
+Wenn Sie z. B. in Ihrer Organisation zwei UPN-Suffixe namens "@contoso.com" und "@region.contoso.com" verwenden, erstellen Sie die folgenden DNS-Einträge.
+
+| Eintrag | Typ | Adresse |
+|-------------------------------------------|-------|------------------------------------|
+| enterpriseregistration.contoso.com | CNAME | enterpriseregistration.windows.net |
+| enterpriseregistration.region.contoso.com | CNAME | enterpriseregistration.windows.net |
 
 ##Konfigurieren der automatischen Geräteregistrierung für in eine Domäne eingebundene Windows 7- und Windows 8.1-Geräte
 
@@ -83,6 +94,12 @@ Geräteregistrierung bei Azure AD bietet die breiteste Palette von Gerätefunkti
 
 Unternehmen, die sowohl mobile als auch herkömmliche Geräte oder Office 365, Azure AD oder andere Microsoft-Dienste verwenden, sollten Geräte bei Azure AD mithilfe des Azure AD-Geräteregistrierungsdienstes registrieren. Wenn Ihr Unternehmen keine mobilen Geräte und keine Microsoft-Dienste wie z. B. Office 365, Azure AD oder Microsoft Intune verwendet und stattdessen nur lokale Anwendungen hostet, dann können Sie Geräte mittels AD FS bei Active Directory registrieren.
 
-[Hier](https://technet.microsoft.com/de-DE/library/dn486831.aspx) erfahren Sie mehr über das Bereitstellen der Geräteregistrierung mit AD FS.
+[Hier](https://technet.microsoft.com/library/dn486831.aspx) erfahren Sie mehr über das Bereitstellen der Geräteregistrierung mit AD FS.
 
-<!---HONumber=Oct15_HO3-->
+## Weitere Themen
+
+- [Azure Active Directory-Geräteregistrierung – Übersicht](active-directory-conditional-access-device-registration-overview.md)
+- [Konfigurieren der automatischen Geräteregistrierung für in eine Domäne eingebundene Windows 7-Geräte](active-directory-conditional-access-automatic-device-registration-windows7.md)
+- [Konfigurieren der automatischen Geräteregistrierung für in eine Domäne eingebundene Windows 8.1-Geräte](active-directory-conditional-access-automatic-device-registration-windows8_1.md)
+
+<!---HONumber=AcomDC_1203_2015-->

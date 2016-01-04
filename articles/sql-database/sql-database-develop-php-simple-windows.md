@@ -1,5 +1,5 @@
 <properties
-	pageTitle="PHP unter Windows für SQL-Datenbank | Microsoft Azure"
+	pageTitle="Herstellen von Verbindungen mit SQL-Datenbanken mithilfe von PHP unter Windows"
 	description="Enthält ein PHP-Beispielprogramm, das eine Verbindung von einem Windows-Client mit Azure SQL-Datenbank herstellt, sowie Links zu den auf dem Client erforderlichen Softwarekomponenten."
 	services="sql-database"
 	documentationCenter=""
@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="php"
 	ms.topic="article"
-	ms.date="11/03/2015"
+	ms.date="12/08/2015"
 	ms.author="meetb"/>
 
 
@@ -29,14 +29,17 @@ In diesem Thema wird veranschaulicht, wie Sie von einer in PHP geschriebenen Cli
 
 [AZURE.INCLUDE [sql-database-develop-includes-prerequisites-php-windows](../../includes/sql-database-develop-includes-prerequisites-php-windows.md)]
 
+### Eine SQL-Datenbank
 
-## Erstellen einer Datenbank und Abrufen der Verbindungszeichenfolge
-
-
-Im Thema [Erste Schritte](sql-database-get-started.md) erhalten Sie Informationen zum Erstellen einer Beispieldatenbank und zum Abrufen der Verbindungszeichenfolge. Sie sollten unbedingt die Anleitung zum Erstellen einer **AdventureWorks-Datenbankvorlage** befolgen. Die unten gezeigten Beispiele funktionieren nur mit dem **AdventureWorks-Schema**.
+Auf der [Seite für erste Schritte](sql-database-get-started.md) erhalten Sie Informationen zum Erstellen einer Beispieldatenbank. Sie sollten unbedingt die Anleitung zum Erstellen einer **AdventureWorks-Datenbankvorlage** befolgen. Die unten gezeigten Beispiele funktionieren nur mit dem **AdventureWorks-Schema**.
 
 
-## Herstellen von Verbindungen mit der SQL-Datenbank
+## Schritt 1: Abrufen der Verbindungsdetails
+
+[AZURE.INCLUDE [sql-database-include-connection-string-details-20-portalshots](../../includes/sql-database-include-connection-string-details-20-portalshots.md)]
+
+
+## Schritt 2: Verbinden
 
 
 Diese **OpenConnection**-Funktion wird zu Beginn in allen im Folgenden aufgeführten Funktionen aufgerufen.
@@ -60,7 +63,7 @@ Diese **OpenConnection**-Funktion wird zu Beginn in allen im Folgenden aufgefüh
 	}
 
 
-## Ausführen einer Abfrage und Abrufen des Resultsets
+## Schritt 3: Ausführen einer Abfrage
 
 Mit der [sqlsrv\_query()](http://php.net/manual/en/function.sqlsrv-query.php)-Funktion können Sie ein Resultset aus einer Abfrage einer SQL-Datenbank abrufen. Diese Funktion akzeptiert praktisch jede Abfrage und das Verbindungsobjekt und gibt ein Resultset zurück, das mithilfe von [sqlsrv\_fetch\_array()](http://php.net/manual/en/function.sqlsrv-fetch-array.php) durchlaufen werden kann.
 
@@ -88,12 +91,11 @@ Mit der [sqlsrv\_query()](http://php.net/manual/en/function.sqlsrv-query.php)-Fu
 			echo("Error!");
 		}
 	}
-	
-
-## Einfügen von Zeilen, Übergeben von Parametern und Abrufen von generierten Primärschlüsseln
 
 
-In SQL-Datenbanken können die [IDENTITY](https://msdn.microsoft.com/library/ms186775.aspx)-Eigenschaft und das [SEQUENCE](https://msdn.microsoft.com/library/ff878058.aspx)-Objekt zum automatischen Generieren von Werten für [Primärschlüssel](https://msdn.microsoft.com/library/ms179610.aspx) verwendet werden.
+## Schritt 4: Einfügen einer Zeile
+
+In diesem Beispiel erfahren Sie, wie Sie eine [INSERT](https://msdn.microsoft.com/library/ms174335.aspx)-Anweisung sicher ausführen, Parameter zum Schutz Ihrer Anwendung vor einer [Einschleusung von SQL-Befehlen](https://technet.microsoft.com/library/ms161953(v=sql.105).aspx) übergeben und den automatisch generierten [Primärschlüsselwert](https://msdn.microsoft.com/library/ms179610.aspx) abrufen.
 
 
 	function InsertData()
@@ -107,7 +109,7 @@ In SQL-Datenbanken können die [IDENTITY](https://msdn.microsoft.com/library/ms1
 			$insertReview = sqlsrv_query($conn, $tsql);
 			if($insertReview == FALSE)
 				die(FormatErrors( sqlsrv_errors()));
-			echo "Product Key inserted is :";	
+			echo "Product Key inserted is :";
 			while($row = sqlsrv_fetch_array($insertReview, SQLSRV_FETCH_ASSOC))
 			{   
 				echo($row['ProductID']);
@@ -121,7 +123,7 @@ In SQL-Datenbanken können die [IDENTITY](https://msdn.microsoft.com/library/ms1
 		}
 	}
 
-## Transaktionen
+## Schritt 5: Durchführen eines Rollbacks für eine Transaktion
 
 
 Dieses Codebeispiel veranschaulicht die Verwendung von Transaktionen für folgende Aufgaben:
@@ -133,23 +135,23 @@ Dieses Codebeispiel veranschaulicht die Verwendung von Transaktionen für folgen
 - Durchführen eines Commits der Transaktion, wenn Einfügung und Aktualisierung erfolgreich waren, und eines Rollbacks der Transaktion, wenn ein Vorgang fehlgeschlagen ist
 
 
-	function Transactions()
-	{
-		try
+		function Transactions()
 		{
+			try
+			{
 			$conn = OpenConnection();
 
 			if (sqlsrv_begin_transaction($conn) == FALSE)
 				die(FormatErrors(sqlsrv_errors()));
 
-			$tsql1 = "INSERT INTO SalesLT.SalesOrderDetail (SalesOrderID,OrderQty,ProductID,UnitPrice) 
+			$tsql1 = "INSERT INTO SalesLT.SalesOrderDetail (SalesOrderID,OrderQty,ProductID,UnitPrice)
 			VALUES (71774, 22, 709, 33)";
 			$stmt1 = sqlsrv_query($conn, $tsql1);
-			
+
 			/* Set up and execute the second query. */
 			$tsql2 = "UPDATE SalesLT.SalesOrderDetail SET OrderQty = (OrderQty + 1) WHERE ProductID = 709";
 			$stmt2 = sqlsrv_query( $conn, $tsql2);
-			
+
 			/* If both queries were successful, commit the transaction. */
 			/* Otherwise, rollback the transaction. */
 			if($stmt1 && $stmt2)
@@ -170,14 +172,12 @@ Dieses Codebeispiel veranschaulicht die Verwendung von Transaktionen für folgen
 		{
 			echo("Error!");
 		}
-	}
+		}
 
 
-## Weitere nützliche Informationen
+## Nächste Schritte
 
 
 Weitere Informationen über die Installation und Verwendung von PHP finden Sie unter [Accessing SQL Server Databases with PHP](http://technet.microsoft.com/library/cc793139.aspx) (Zugreifen auf SQL Server-Datenbanken mit PHP, in englischer Sprache).
 
- 
-
-<!---HONumber=Nov15_HO2-->
+<!----HONumber=AcomDC_1210_2015-->

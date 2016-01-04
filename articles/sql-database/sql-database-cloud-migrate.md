@@ -31,7 +31,7 @@ Der Workflow für das Migrieren einer SQL Server-Datenbank zu Azure SQL-Datenban
 ## Ermitteln der Kompatibilität der Datenbank
 Es gibt zwei Hauptverfahren, mit denen Sie ermitteln können, ob Ihre Quelldatenbank kompatibel ist. - Export der Dateiebenenanwendung: Bei diesem Verfahren wird ein Assistent in Management Studio verwendet, um Ihre Datenbank zu analysieren und Probleme mit der Datenbankkompatibilität, falls vorhanden, auf der Konsole anzuzeigen. - SQLPackage: Bei diesem Verfahren wird das Befehlszeilenhilfsprogramm [sqlpackage.exe](https://msdn.microsoft.com/library/hh550080.aspx) eingesetzt, um die Datenbank zu analysieren und einen Bericht zu erstellen. SQLPackage ist im Lieferumfang von Visual Studio und SQL Server enthalten.
 
-> [AZURE.NOTE]Es gibt noch ein drittes Verfahren, bei dem Ablaufverfolgungsdateien als zusätzliche Quellinformationen verwendet werden, um die Kompatibilität auf Anwendungsebene und Datenbankebene zu testen. Dies ist der [SQL Azure-Migrations-Assistent](http://sqlazuremw.codeplex.com/), ein kostenloses Tool von Codeplex. Mit diesem Tool werden derzeit aber unter Umständen Kompatibilitätsfehler gefunden, die für Azure SQL-Datenbank V11 ein Problem darstellten, während dies für Azure SQL-Datenbank V12 nicht mehr der Fall ist.
+> [AZURE.NOTE]Es gibt noch ein drittes Verfahren, bei dem Ablaufverfolgungsdateien als zusätzliche Quellinformationen verwendet werden, um die Kompatibilität auf Anwendungsebene und Datenbankebene zu testen. Dies ist der [Azure SQL-Datenbankmigrations-Assistent](http://sqlazuremw.codeplex.com/), ein kostenloses Tool von Codeplex. Mit diesem Tool werden derzeit aber unter Umständen Kompatibilitätsfehler gefunden, die für Azure SQL-Datenbank V11 ein Problem darstellten, während dies für Azure SQL-Datenbank V12 nicht mehr der Fall ist.
 
 Wenn für die Datenbank Inkompatibilitäten erkannt werden, müssen Sie diese Inkompatibilitäten beheben, bevor Sie die Datenbank zu Azure SQL-Datenbank migrieren können. Eine Anleitung zum Beheben von Problemen mit der Datenbankkompatibilität finden Sie unter [Beheben von Problemen mit der Datenbankkompatibilität](#fix-database-compatibility-issues).
 
@@ -75,7 +75,7 @@ Wenn für die Datenbank Inkompatibilitäten erkannt werden, müssen Sie diese In
 
 	![Exporteinstellungen](./media/sql-database-cloud-migrate/TestForCompatibilityUsingSSMS02.png)
 
-5. Klicken Sie auf die Registerkarte **Erweitert**, und deaktivieren Sie das Kontrollkästchen **Alles markieren**, um das Exportieren von Daten zu überspringen. An diesem Punkt möchten wir nur die Kompatibilität testen.
+5. Klicken Sie auf die **Registerkarte „Erweitert“**, und deaktivieren Sie das Kontrollkästchen **Alles markieren**, um das Exportieren von Daten zu überspringen. An diesem Punkt möchten wir nur die Kompatibilität testen.
 
 	![Exporteinstellungen](./media/sql-database-cloud-migrate/TestForCompatibilityUsingSSMS03.png)
 
@@ -98,9 +98,9 @@ In der folgenden Liste sind die Optionen zum Migrieren einer kompatiblen Datenba
 
 > [AZURE.WARNING]Vergewissern Sie sich vor dem Migrieren der Datenbank mit einer dieser Methoden, dass keine aktiven Transaktionen vorhanden sind, um die Transaktionskonsistenz während der Migration sicherzustellen. Es gibt viele Methoden zum Stilllegen einer Datenbank: vom Deaktivieren der Clientkonnektivität bis zum Erstellen einer [Datenbankmomentaufnahme](https://msdn.microsoft.com/library/ms175876.aspx).
 
-- Für kleine und mittlere Datenbanken ist das Migrieren einer [kompatiblen](#determine-if-your-database-is-compatible) SQL Server 2005-Datenbank (oder höher) so einfach wie das Ausführen des [Assistenten zum Bereitstellen einer Datenbank unter Microsoft Azure](#use-the-deploy-database-to-microsoft-azure-database-wizard) in SQL Server Management Studio. Wenn Probleme mit der Konnektivität auftreten (keine Verbindung, geringe Bandbreite oder Zeitüberschreitungen), können Sie [ein BACPAC-Objekt verwenden, um eine SQL Server-Datenbank zu Azure SQL-Datenbank zu migrieren](#use-a-bacpac-to-migrate-a-database-to-azure-sql-database).
-- Für mittlere bis große Datenbanken oder bei Verbindungsproblemen können Sie [ein BACPAC-Objekt verwenden, um eine SQL Server-Datenbank zu Azure SQL-Datenbank zu migrieren](#use-a-bacpac-to-migrate-a-database-to-azure-sql-database). Bei dieser Methode verwenden Sie SQL Server Management Studio zum Exportieren der Daten und des Schemas in eine [BACPAC](https://msdn.microsoft.com/library/ee210546.aspx#Anchor_4)-Datei (lokal oder in einem Azure-Blob gespeichert) und importieren die BACPAC-Datei dann in Ihre Azure SQL-Instanz. Wenn Sie die BACPAC-Datei in einem Azure-Blob speichern, können Sie sie auch über das [Azure-Portal](sql-database-import.md) oder [per PowerShell](sql-database-import-powershell.md) importieren.
-- Bei größeren Datenbanken empfiehlt es sich, Schema und Daten separat zu migrieren. Mit dieser Methode erstellen Sie eine [BACPAC-Datei ohne Daten](#use-a-bacpac-to-migrate-a-database-to-azure-sql-database) und importieren diese BACPAC-Datei in Azure SQL-Datenbank. Nachdem das Schema in Azure SQL-Datenbank importiert wurde, verwenden Sie [BCP](https://msdn.microsoft.com/library/ms162802.aspx), um die Daten in Flatfiles zu extrahieren, und importieren diese Dateien dann in Azure SQL-Datenbank.
+- Für kleine und mittlere Datenbanken ist das Migrieren einer [kompatiblen](#determine-if-your-database-is-compatible) SQL Server 2005-Datenbank (oder höher) so einfach wie das Ausführen des [Assistenten zum Bereitstellen einer Datenbank unter Microsoft Azure](#use-deploy-database-to-microsoft-azure-database-wizard) in SQL Server Management Studio. Wenn Probleme mit der Konnektivität auftreten (keine Verbindung, geringe Bandbreite oder Zeitüberschreitungen), können Sie [ein BACPAC-Objekt verwenden, um eine SQL Server-Datenbank zu Azure SQL-Datenbank zu migrieren](#use-a-bacpac-to-migrate-a-sql-server-database-to-azure-sql-database).
+- Für mittlere bis große Datenbanken oder bei Verbindungsproblemen können Sie [ein BACPAC-Objekt verwenden, um eine SQL Server-Datenbank zu Azure SQL-Datenbank zu migrieren](#use-a-bacpac-to-migrate-a-sql-server-database-to-azure-sql-database). Bei dieser Methode verwenden Sie SQL Server Management Studio zum Exportieren der Daten und des Schemas in eine [BACPAC](https://msdn.microsoft.com/library/ee210546.aspx#Anchor_4)-Datei (lokal oder in einem Azure-Blob gespeichert) und importieren die BACPAC-Datei dann in Ihre Azure SQL-Instanz. Wenn Sie die BACPAC-Datei in einem Azure-Blob speichern, können Sie sie auch über das [Azure-Portal](sql-database-import.md) oder [per PowerShell](sql-database-import-powershell.md) importieren.
+- Bei größeren Datenbanken empfiehlt es sich, Schema und Daten separat zu migrieren. Mit dieser Methode erstellen Sie eine [BACPAC-Datei ohne Daten](#use-a-bacpac-to-migrate-a-sql-server-database-to-azure-sql-database) und importieren diese BACPAC-Datei in Azure SQL-Datenbank. Nachdem das Schema in Azure SQL-Datenbank importiert wurde, verwenden Sie [BCP](https://msdn.microsoft.com/library/ms162802.aspx), um die Daten in Flatfiles zu extrahieren, und importieren diese Dateien dann in Azure SQL-Datenbank.
 
 	 ![Diagramm der SSMS-Migration](./media/sql-database-cloud-migrate/01SSMSDiagram_new.png)
 
@@ -125,7 +125,7 @@ Sie können die Transaktionsreplikation auch zum Migrieren einer Teilmenge Ihrer
 
 Mit dem Assistenten zum Bereitstellen einer Datenbank unter Microsoft Azure in SQL Server Management Studio wird eine [kompatible](#determine-if-your-database-is-compatible) SQL Server 2005-Datenbank (oder höher) direkt zu Ihrer logischen Azure SQL-Serverinstanz migriert.
 
-> [AZURE.NOTE]Bei den folgenden Schritten wird davon ausgegangen, dass Sie Ihre logische SQL Azure-Instanz bereits [bereitgestellt](../sql-database-get-started.md) haben und dass Ihnen die Verbindungsinformationen vorliegen.
+> [AZURE.NOTE]Bei den folgenden Schritten wird davon ausgegangen, dass Sie Ihre logische Instanz von Azure SQL-Datenbank bereits [bereitgestellt](../sql-database-get-started.md) haben und dass Ihnen die Verbindungsinformationen vorliegen.
 
 1. Stellen Sie sicher, dass Sie über Version 13.0.600.65 oder höher von SQL Server Management Studio verfügen. Neue Versionen von Management Studio werden monatlich aktualisiert, damit sie mit Updates des Azure-Portals synchron sind.
 
@@ -144,7 +144,7 @@ Mit dem Assistenten zum Bereitstellen einer Datenbank unter Microsoft Azure in S
 
 	!["Bereitstellen in Azure" aus dem Menü "Aufgaben"](./media/sql-database-cloud-migrate/MigrateUsingDeploymentWizard00.png)
 
-5.	Geben Sie den **neuen Datenbanknamen** für die Datenbank unter Azure SQL-Datenbank an, und legen Sie **Edition von Microsoft Azure SQL-Datenbank** (Dienstebene), **Maximale Datenbankgröße**, **Serviceziel** (Leistungsebene) und **Temporärer Dateiname** für die BACPAC-Datei fest, die vom Assistenten während des Migrationsprozesses erstellt wird. Weitere Informationen zu Dienstebenen und Leistungsebenen finden Sie unter [Dienstebenen von Azure SQL-Datenbank](sql-database-service-tiers.md).
+5.	Geben Sie den **neuen Datenbanknamen** für die Datenbank unter Azure SQL-Datenbank an, legen Sie **Edition von Microsoft Azure SQL-Datenbank** (Dienstebene), **Maximale Datenbankgröße**, **Serviceziel** (Leistungsebene) und **Temporärer Dateiname** für die BACPAC-Datei fest, die vom Assistenten während des Migrationsprozesses erstellt wird. Weitere Informationen zu Dienstebenen und Leistungsebenen finden Sie unter [Dienstebenen von Azure SQL-Datenbank](sql-database-service-tiers.md).
 
 	![Exporteinstellungen](./media/sql-database-cloud-migrate/MigrateUsingDeploymentWizard02.png)
 
@@ -277,4 +277,4 @@ Wenn Sie ermitteln, dass Ihre SQL Server-Quelldatenbank nicht kompatibel ist, ha
 
 - SQL Server Management Studio. Sie können die Probleme in Management Studio mithilfe von verschiedenen Transact-SQL-Befehlen beheben, z. B. **ALTER DATABASE**.
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1210_2015-->

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Erstellen der ersten Pipeline mit Azure Data Factory"
+	pageTitle="Erste Schritte mit Azure Data Factory"
 	description="Dieses Tutorial zeigt, wie Sie eine Beispieldatenpipeline erstellen, die Daten mithilfe von Azure HDInsight transformiert."
 	services="data-factory"
 	documentationCenter=""
@@ -16,21 +16,22 @@
 	ms.date="11/02/2015"
 	ms.author="spelluru"/>
 
-# Erstellen der ersten Pipeline mit Azure Data Factory
+# Erste Schritte mit Azure Data Factory
 > [AZURE.SELECTOR]
 - [Tutorial Overview](data-factory-build-your-first-pipeline.md)
 - [Using Data Factory Editor](data-factory-build-your-first-pipeline-using-editor.md)
 - [Using PowerShell](data-factory-build-your-first-pipeline-using-powershell.md)
 - [Using Visual Studio](data-factory-build-your-first-pipeline-using-vs.md)
+- [Using Resource Manager Template](data-factory-build-your-first-pipeline-using-arm.md)
 
-Dieser Artikel veranschaulicht die ersten Schritten zur Erstellung Ihrer ersten Pipeline und ihrer Bereitstellung in Azure Data Factory.
+Dieser Artikel hilft Ihnen beim Einstieg in die Erstellung Ihrer ersten Azure Data Factory.
 
 > [AZURE.NOTE]Dieser Artikel bietet keine grundlegende Übersicht über den Azure Data Factory-Dienst. Eine ausführliche Übersicht über den Dienst finden Sie im Artikel [Einführung in Azure Data Factory](data-factory-introduction.md).
 
 ## Übersicht über das Tutorial
-Dieses Tutorial führt Sie durch die Schritte zum Einrichten und Ausführen Ihrer ersten Pipeline. Sie erstellen Pipelines von Grund auf neu und geben dabei alle erforderlichen Ressourcen an.
+Dieses Tutorial führt Sie durch die Schritte zum Erstellen Ihrer ersten Data Factory mit einer Pipeline. Sie erstellen eine Pipeline von Grund auf neu und geben dabei alle erforderlichen Ressourcen an.
 
-Wenn Sie die verschiedenen Funktionen der Data Factory schnell kennenlernen möchten, ohne eine Pipeline von Grund auf zu erstellen, können Sie die Beispiele verwenden, die wir im Azure-Vorschauportal bereitstellen. Unter [Azure Data Factory-Update: Vereinfachte Beispielbereitstellung](http://azure.microsoft.com/blog/2015/04/24/azure-data-factory-update-simplified-sample-deployment/) erfahren Sie, wie Sie mithilfe des Azure-Vorschauportals einen auf einem Beispiel basierenden Anwendungsfall bereitstellen.
+Wenn Sie die verschiedenen Funktionen der Data Factory schnell kennenlernen möchten, ohne eine Pipeline von Grund auf zu erstellen, können Sie die Beispiele verwenden, die wir im Azure-Portal bereitstellen. Unter [Azure Data Factory-Update: Vereinfachte Beispielbereitstellung](http://azure.microsoft.com/blog/2015/04/24/azure-data-factory-update-simplified-sample-deployment/) erfahren Sie, wie Sie mithilfe des Azure-Portals einen auf einem Beispiel basierenden Anwendungsfall bereitstellen.
 
 ## Voraussetzungen
 Bevor Sie mit diesem Tutorial beginnen, benötigten Sie Folgendes:
@@ -168,8 +169,8 @@ Bevor Sie mit dem Tutorial beginnen, müssen Sie den Azure-Speicher mit Dateien 
 
 Gehen Sie wie folgt vor:
 
-- Klicken Sie oben auf den Link [Data Factory-Editor verwenden](data-factory-build-your-first-pipeline-using-editor.md), um das Lernprogramm mithilfe des Data Factory-Editors auszuführen, der Teil des Azure-Portals ist.
+- Klicken Sie oben auf den Link [Data Factory-Editor verwenden](data-factory-build-your-first-pipeline-using-editor.md), um das Tutorial mithilfe des Data Factory-Editors auszuführen, der Teil des klassischen Azure-Portals ist.
 - Klicken Sie oben auf den Link [PowerShell verwenden](data-factory-build-your-first-pipeline-using-powershell.md), um das Lernprogramm mit Azure PowerShell auszuführen.
 - Klicken Sie oben auf den Link [Mit Visual Studio](data-factory-build-your-first-pipeline-using-vs.md), um das Tutorial mit Visual Studio auszuführen. 
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->

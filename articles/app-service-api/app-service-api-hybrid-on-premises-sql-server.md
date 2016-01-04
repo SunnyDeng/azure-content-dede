@@ -18,6 +18,8 @@
 
 # Verbinden eines lokalen SQL-Servers von einer API-App in Azure App Service über Hybridverbindungen
 
+[AZURE.INCLUDE [app-service-api-v2-note](../../includes/app-service-api-v2-note.md)]
+
 Hybridverbindungen ermöglichen die Verbindung von [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714)-API-Apps mit lokalen Ressourcen, die einen statischen TCP-Port verwenden. Zu den unterstützten Ressourcen gehören Microsoft SQL Server, MySQL, HTTP Web APIs, Mobile Services und die meisten benutzerdefinierten Webdienste.
 
 In diesem Tutorial erfahren Sie, wie eine App Service-API-App in der [Azure-Vorschau](http://go.microsoft.com/fwlink/?LinkId=529715) erstellt wird, die mithilfe der neuen Funktion für Hybridverbindungen eine Verbindung mit einer lokalen SQL Server-Datenbank herstellt. Bei diesem Tutorial wird davon ausgegangen, dass Sie noch keine Erfahrungen mit der Verwendung von Azure oder SQL Server haben.
@@ -430,4 +432,4 @@ Nachdem die Hybridverbindungsinfrastruktur jetzt vollständig ist, können Sie d
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../../includes/app-service-web-whats-changed.md)]
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1203_2015-->

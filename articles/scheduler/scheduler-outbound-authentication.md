@@ -12,7 +12,7 @@
  ms.tgt_pltfrm="na" 
  ms.devlang="dotnet" 
  ms.topic="article" 
- ms.date="08/04/2015" 
+ ms.date="12/04/2015" 
  ms.author="krisragh"/>
  
 # Ausgehende Authentifizierung von Scheduler
@@ -234,10 +234,14 @@ Wenn Sie die Authentifizierung mithilfe des Modells `ActiveDirectoryOAuth` hinzu
 |:--|:--|
 |_authentication (übergeordnetes Element)_ |Das Authentifizierungsobjekt für die Verwendung der ActiveDirectoryOAuth-Authentifizierung.|
 |_type_ |Erforderlich. Die Art der Authentifizierung. Für die ActiveDirectoryOAuth-Authentifizierung muss der Wert `ActiveDirectoryOAuth` lauten.|
-|_tenant_ |Erforderlich. Die Mandanten-ID dient zum Identifizieren des AD-Mandanten.|
+|_tenant_ |Erforderlich. Die Mandanten-ID für den Azure AD-Mandanten.|
 |_audience_ |Erforderlich. Dieser Wert wird auf https://management.core.windows.net/.| festgelegt.
 |_clientId_ |Erforderlich. Geben Sie die Client-ID für die Azure AD-Anwendung an.|
 |_secret_ |Erforderlich. Der geheime Schlüssel des Clients, der das Token anfordert.|
+
+### Ermitteln der Mandanten-ID
+
+Durch Ausführen von `Get-AzureAccount` in Azure PowerShell können Sie die Mandanten-ID für den Azure AD-Mandanten ermitteln.
 
 ## Antworttext für die ActiveDirectoryOAuth-Authentifizierung
 
@@ -247,7 +251,7 @@ Wenn eine Anforderung mit Authentifizierungsinformationen gesendet wird, enthäl
 |:--|:--|
 |_authentication (übergeordnetes Element)_ |Das Authentifizierungsobjekt für die Verwendung der ActiveDirectoryOAuth-Authentifizierung.|
 |_type_ |Die Art der Authentifizierung. Für die ActiveDirectoryOAuth-Authentifizierung lautet der Wert `ActiveDirectoryOAuth`.|
-|_tenant_ |Die Mandanten-ID zum Identifizieren des AD-Mandanten.|
+|_tenant_ |Die Mandanten-ID für den Azure AD-Mandanten. |
 |_audience_ |Dieser Wert wird auf https://management.core.windows.net/.| festgelegt.
 |_clientId_ |Die Client-ID für die Azure AD-Anwendung.|
 
@@ -272,7 +276,7 @@ Das folgende Beispiel führt eine PUT-Anforderung aus, die die Authentifizierung
 			"x-ms-version": "2013-03-01"
 		  },
 		  "authentication":{  
-			"tenant":"contoso.com",
+			"tenant":"01234567-89ab-cdef-0123-456789abcdef",
 			"audience":"https://management.core.windows.net/",
 			"clientId":"8a14db88-4d1a-46c7-8429-20323727dfab",
 			"secret": "&lt;secret-key&gt;",
@@ -310,7 +314,7 @@ Die Antwort auf diese Anforderung lautet wie folgt:
 			"x-ms-version": "2013-03-01"
 		  },
 		  "authentication":{  
-			"tenant":"contoso.com",
+			"tenant":"01234567-89ab-cdef-0123-456789abcdef",
 			"audience":"https://management.core.windows.net/",
 			"clientId":"8a14db88-4d1a-46c7-8429-20323727dfab",
 			"type":"ActiveDirectoryOAuth"
@@ -333,24 +337,27 @@ Die Antwort auf diese Anforderung lautet wie folgt:
 
 ## Siehe auch
  
+
  [Was ist Azure Scheduler?](scheduler-intro.md)
  
- [Scheduler Concepts, Terminology, and Entity Hierarchy](scheduler-concepts-terms.md) (in englischer Sprache)
- 
- [Get Started Using Scheduler in the Management Portal](scheduler-get-started-portal.md) (in englischer Sprache)
- 
- [Plans and Billing in Azure Scheduler](scheduler-plans-billing.md) (in englischer Sprache)
- 
- [How to Build Complex Schedules and Advanced Recurrence with Azure Scheduler](scheduler-advanced-complexity.md) (in englischer Sprache)
- 
- [Zeitplanungsmodul-REST-API – Referenz](https://msdn.microsoft.com/library/dn528946)
- 
- [Scheduler – PowerShell-Cmdlets-Referenz](scheduler-powershell-reference.md)
- 
- [Scheduler High-Availability and Reliability](scheduler-high-availability-reliability.md) (in englischer Sprache)
- 
- [Scheduler Limits, Defaults, and Error Codes](scheduler-limits-defaults-errors.md) (in englischer Sprache)
+ [Konzepte, Terminologie und Entitätshierarchie für Azure Scheduler](scheduler-concepts-terms.md)
+
+ [Erste Schritte mit dem Scheduler im Azure-Portal](scheduler-get-started-portal.md)
+
+ [Pläne und Abrechnung in Azure Scheduler](scheduler-plans-billing.md)
+
+ [Azure Scheduler-REST-API – Referenz](https://msdn.microsoft.com/library/dn528946)
+
+ [Azure Scheduler – PowerShell-Cmdlets-Referenz](scheduler-powershell-reference.md)
+
+ [Hochverfügbarkeit und Zuverlässigkeit von Azure Scheduler](scheduler-high-availability-reliability.md)
+
+ [Einschränkungen, Standardwerte und Fehlercodes für Azure Scheduler](scheduler-limits-defaults-errors.md)
+
+
+  
+
  
   
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1217_2015-->
