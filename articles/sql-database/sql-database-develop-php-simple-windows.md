@@ -128,17 +128,17 @@ In diesem Beispiel erfahren Sie, wie Sie eine [INSERT](https://msdn.microsoft.co
 
 Dieses Codebeispiel veranschaulicht die Verwendung von Transaktionen für folgende Aufgaben:
 
--Starten von Transaktionen
+- Starten von Transaktionen
 
--Hinzufügen einer Zeile mit Daten und Aktualisieren einer anderen Datenzeile
+- Hinzufügen einer Zeile mit Daten und Aktualisieren einer anderen Datenzeile
 
--Durchführen eines Commits der Transaktion, wenn Einfügung und Aktualisierung erfolgreich waren, und eines Rollbacks der Transaktion, wenn ein Vorgang fehlgeschlagen ist
+- Durchführen eines Commits der Transaktion, wenn Einfügung und Aktualisierung erfolgreich waren, und eines Rollbacks der Transaktion, wenn ein Vorgang fehlgeschlagen ist
 
 
-	function Transactions()
-	{
-		try
+		function Transactions()
 		{
+			try
+			{
 			$conn = OpenConnection();
 
 			if (sqlsrv_begin_transaction($conn) == FALSE)
@@ -172,7 +172,7 @@ Dieses Codebeispiel veranschaulicht die Verwendung von Transaktionen für folgen
 		{
 			echo("Error!");
 		}
-	}
+		}
 
 
 ## Nächste Schritte
@@ -180,4 +180,4 @@ Dieses Codebeispiel veranschaulicht die Verwendung von Transaktionen für folgen
 
 Weitere Informationen über die Installation und Verwendung von PHP finden Sie unter [Accessing SQL Server Databases with PHP](http://technet.microsoft.com/library/cc793139.aspx) (Zugreifen auf SQL Server-Datenbanken mit PHP, in englischer Sprache).
 
-<!---HONumber=AcomDC_1210_2015-->
+<!----HONumber=AcomDC_1210_2015-->

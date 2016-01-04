@@ -137,7 +137,7 @@ Die empfohlene Vorgehensweise zum Hinzufügen von Node.js-Modulen zu Ihrem mobil
 
 Nach Abschluss dieses Lernprogramms sind Sie in der Lage, Ihre Skripts in einer Quellcodeverwaltung zu speichern. Die folgenden Artikel enthalten weiterführende Informationen zu Serverskripts und benutzerdefinierten APIs:
 
-+ [Arbeiten mit Serverskripts in Mobile Services] <br/>
++ [Arbeiten mit Serverskripts in Mobile Services]  
 Beschreibt die Verwendung von Serverskripts, Auftragsplaner und benutzerdefinierten APIs.
 
 <!-- Anchors. -->
@@ -161,4 +161,4 @@ Beschreibt die Verwendung von Serverskripts, Auftragsplaner und benutzerdefinier
 [Module]: http://nodejs.org/api/modules.html
 [node-uuid]: https://npmjs.org/package/node-uuid
 
-<!---HONumber=AcomDC_1210_2015-->
+<!-----HONumber=AcomDC_1210_2015-->

@@ -200,4 +200,4 @@ Nachdem Ihr Konto erstellt und registriert wurde, klicken Sie auf den Artefaktty
 [link-devsvc-prereq]: marketplace-publishing-dev-service-creation-prerequisites.md
 [link-pushstaging]: marketplace-publishing-push-to-staging.md
 
-<!---HONumber=AcomDC_1210_2015-->
+<!----HONumber=AcomDC_1210_2015-->

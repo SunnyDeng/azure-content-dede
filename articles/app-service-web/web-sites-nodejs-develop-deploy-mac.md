@@ -184,7 +184,10 @@ In diesem Abschnitt erstellen Sie eine Datei **server.js**, die eine leicht abge
 
 ##Veröffentlichen von Änderungen an der Anwendung
 
-1. Öffnen Sie die Datei **server.js** in einem Texteditor, und ändern Sie "Hello World\\n" in "Hello Azure\\n". Speichern Sie die Datei.
+1. Öffnen Sie die Datei **server.js** in einem Texteditor, und ändern Sie "Hello World\\n" in "Hello Azure\\n". 
+
+2. Speichern Sie die Datei.
+
 2. Wechseln Sie über die Befehlszeile zum Verzeichnis **helloworld**, und führen Sie die folgenden Befehle aus:
 
 		git add .
@@ -223,4 +226,4 @@ Weitere Informationen zum Entwickeln von Node.js-Anwendungen in Azure finden Sie
 [deployment-credentials]: ./media/web-sites-nodejs-develop-deploy-mac/deployment-credentials.png
 [git-url]: ./media/web-sites-nodejs-develop-deploy-mac/git-url.png
 
-<!---HONumber=AcomDC_1217_2015-->
+<!----HONumber=AcomDC_1217_2015-->
