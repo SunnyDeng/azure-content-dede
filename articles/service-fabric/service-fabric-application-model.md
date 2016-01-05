@@ -232,6 +232,7 @@ Nachdem die Anwendung ordnungsgemäß gepackt und die Überprüfung erfolgreich 
 ## Nächste Schritte
 
 [Bereitstellen und Entfernen von Anwendungen][10]
+
 [Verwalten von Anwendungsparametern für mehrere Umgebungen][11]
 
 [RunAs: Ausführen einer Service Fabric-Anwendung mit verschiedenen Sicherheitsberechtigungen][12]
