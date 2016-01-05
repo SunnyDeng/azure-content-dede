@@ -35,7 +35,7 @@ Im weiteren Verlauf des Artikels erfahren Sie, wie ElasticSearch in Azure einger
 Am einfachsten lässt sich der ElasticSearch-Dienst für Azure mit [**Azure ARM-Vorlagen**](../resource-group-overview.md) einrichten. Eine umfassende [ARM-Schnellstartvorlage für ElasticSearch](https://github.com/Azure/azure-quickstart-templates/tree/master/elasticsearch) steht im Repository für Azure-Schnellstartvorlagen zur Verfügung. Diese Vorlage verwendet separate Speicherkonten für Skalierungseinheiten (Knotengruppen) und kann separate Client- und Serverknoten mit unterschiedlichen Konfigurationen und unterschiedlicher Anzahl von angefügten Datenträgern bereitstellen.
 
 In diesem Artikel verwenden wir allerdings eine Vorlage namens **ES-MultiNode** aus der [ELK-Verzweigung von Microsoft Patterns & Practices](https://github.com/mspnp/semantic-logging/tree/elk/). Diese Vorlage ist etwas einfacher zu verwenden und erstellt einen ElasticSearch-Cluster, der standardmäßig mittels HTTP-Standardauthentifizierung geschützt ist. Laden Sie bei GitHub zunächst das [ELK-Repository von Microsoft P & P](https://github.com/mspnp/semantic-logging/tree/elk/) auf Ihren Computer herunter. Klonen Sie hierzu entweder das Repository, oder laden Sie eine ZIP-Datei herunter. Die Vorlage „ES-MultiNode“ befindet sich im gleichnamigen Ordner.
->[AZURE.NOTE]„ES-MultiNode“ und die dazugehörigen Skripts unterstützen momentan Version 1.7 von ElasticSearch. Unterstützung für ElasticSearch 2.0 wird zu einem späteren Zeitpunkt hinzugefügt.
+>[AZURE.NOTE] "ES-MultiNode" und die dazugehörigen Skripts unterstützen momentan Version 1.7 von ElasticSearch. Unterstützung für ElasticSearch 2.0 wird zu einem späteren Zeitpunkt hinzugefügt.
 
 ### Vorbereiten eines Computers für die Ausführung von ElasticSearch-Installationsskripts
 Am einfachsten lässt sich die Vorlage „ES-MultiNode“ über das bereitgestellte PowerShell-Skript namens `CreateElasticSearchCluster` verwenden. Für die Verwendung dieses Skripts müssen Sie Azure PowerShell-Module und ein Tool namens „openssl“ installieren. Letzteres wird zum Erstellen eines SSH-Schlüssels benötigt, der die Remoteverwaltung Ihres ElasticSearch-Clusters ermöglicht.
@@ -246,4 +246,4 @@ Geschafft! Wenn der Dienst nun ausgeführt wird, sendet er Ablaufverfolgungen an
 [1]: ./media/service-fabric-diagnostics-how-to-use-elasticsearch/listener-lib-references.png
 [2]: ./media/service-fabric-diagnostics-how-to-use-elasticsearch/kibana.png
 
-<!---HONumber=AcomDC_1217_2015-->
+<!----HONumber=AcomDC_1217_2015-->
