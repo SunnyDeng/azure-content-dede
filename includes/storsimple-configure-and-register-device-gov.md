@@ -120,7 +120,9 @@
 	
 	![StorSimple – Registrieren des Geräts 7](./media/storsimple-configure-and-register-device-gov/HCS_RegisterYourDevice7_gov-include.png)
 
-      >[AZURE.IMPORTANT]Markieren Sie zum Kopieren des Texts aus dem Fenster der seriellen Konsole den Text einfach. Sie sollten Sie diese dann in die Zwischenablage kopieren und in einem beliebigen Texteditor einfügen können. > > VERWENDEN SIE NICHT STRG+C, um den Verschlüsselungsschlüssel für Dienstdaten zu kopieren. STRG+C bewirkt, dass der Installations-Assistent beendet wird. Dies führt dazu, dass das Geräteadministratorkennwort nicht geändert und das Gerät auf das Standardkennwort zurückgesetzt wird.
+      >[AZURE.IMPORTANT]Markieren Sie zum Kopieren des Texts aus dem Fenster der seriellen Konsole den Text einfach. Sie sollten Sie diese dann in die Zwischenablage kopieren und in einem beliebigen Texteditor einfügen können.
+      > 
+      > VERWENDEN SIE NICHT STRG+C, um den Verschlüsselungsschlüssel für Dienstdaten zu kopieren. STRG+C bewirkt, dass der Installations-Assistent beendet wird. Dies führt dazu, dass das Geräteadministratorkennwort nicht geändert und das Gerät auf das Standardkennwort zurückgesetzt wird.
 
 16. Schließen Sie die serielle Konsole.
 

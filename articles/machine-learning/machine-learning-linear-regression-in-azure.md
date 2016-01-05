@@ -82,9 +82,12 @@ Als wir die Empfehlungen umgesetzt hatten, konnten wir in Azure ML denselben Ben
 
 || Excel|Azure ML (erstes Modell)|Azure ML mit Least Squares|
 |---|:---:|:---:|:---:|
-|Bezeichneter Wert |Actuals (numerisch)|gleich|gleich| |Learner |Excel -> Data Analysis -> Regression|Linear Regression.|Linear Regression| |Learner options|–|Standard|ordinary least squares<br /> L2 = 0,005|
+|Bezeichneter Wert |Actuals (numerisch)|gleich|gleich|
+|Learner |Excel -> Data Analysis -> Regression|Linear Regression.|Linear Regression|
+|Learner options|–|Standard|ordinary least squares<br /> L2 = 0,005|
 |Data Set|26 Zeichen, 3 Features, 1 Bezeichnung. Alle numerisch|gleich|gleich|
-|Split: trainieren|Excel trainiert mit ersten 18 Zeilen, getestet an letzten 8 Zeilen|gleich|gleich| |Split: testen|Excel-Regressionsformel auf letzte 8 Zeilen angewendet|gleich|gleich|
+|Split: trainieren|Excel trainiert mit ersten 18 Zeilen, getestet an letzten 8 Zeilen|gleich|gleich|
+|Split: testen|Excel-Regressionsformel auf letzte 8 Zeilen angewendet|gleich|gleich|
 |**Leistung**||||
 |Angepasstes R-Quadrat|0,96|–||
 |Coefficient of Determination|–|0,78|0,952049|
