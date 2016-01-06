@@ -27,8 +27,8 @@ Die folgenden Schritte zeigen, wie Sie die Kennwortauthentifizierung für eine A
 
     - **{Display name}:** Ein Anzeigename für Ihre Anwendung, z. B. **MySampleApp**.
     - **{Home page URL}:** Die URL der Startseite der App, z. B. ****http://mysampleapp/home**. Diese URL muss nicht auf eine echte Anwendung verweisen.
-- **{Application identifier}:** Ein eindeutiger Bezeichner, z. B. ****http://mysampleapp**. Diese URL muss nicht auf eine echte Anwendung verweisen.
-- **{Password}:** Ein Kennwort, das Sie zur Authentifizierung mit Ihrer Anwendung verwenden werden.
+    - **{Application identifier}:** Ein eindeutiger Bezeichner, z. B. ****http://mysampleapp**. Diese URL muss nicht auf eine echte Anwendung verweisen.
+    - **{Password}:** Ein Kennwort, das Sie zur Authentifizierung mit Ihrer Anwendung verwenden werden.
 
     ```
     New-AzureRmADApplication -DisplayName {Display name} -HomePage {Home page URL} IdentifierUris {Application identifier} -Password {Password}
@@ -58,4 +58,4 @@ Sie haben jetzt eine Azure AD-Anwendung fertig erstellt, mit der die Authentifiz
 [lnk-authenticate-arm]: https://msdn.microsoft.com/library/azure/dn790557.aspx
 [lnk-powershell-install]: https://azure.microsoft.com/de-DE/blog/azps-1-0-pre/
 
-<!---HONumber=AcomDC_1203_2015-->
+<!----HONumber=AcomDC_1203_2015-->
