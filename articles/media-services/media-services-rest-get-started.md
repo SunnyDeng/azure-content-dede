@@ -85,15 +85,14 @@ Die folgenden Schritte beschreiben den am häufigsten verwendeten Workflow, der 
 	>[AZURE.NOTE]
 	Nach der erfolgreichen Verbindung mit https://media.windows.net erhalten Sie eine 301 Redirect-Antwort, in der ein anderer Media Services-URI angegeben ist. Nachfolgende Aufrufe müssen an den neuen URI gesendet werden.
 	> 
-	> Möglicherweise empfangen Sie auch eine HTTP/1.1 200-Antwort, die die Beschreibung der ODATA-API-Metadaten enthält.
-3. Senden nachfolgender API-Aufrufe an die neue URL. 
+	> Möglicherweise empfangen Sie auch eine HTTP/1.1 200-Antwort, die die Beschreibung der ODATA-API-Metadaten enthält. 3. Senden nachfolgender API-Aufrufe an die neue URL. 
 	
 	Wenn nach einem Verbindungsversuch folgende Meldung angezeigt wird:
 		
 		HTTP/1.1 301 Moved Permanently
 		Location: https://wamsbayclus001rest-hs.cloudapp.net/api/
 
-	Senden Sie nachfolgende API-Aufrufe an https://wamsbayclus001rest-hs.cloudapp.net/api/.
+		Senden Sie nachfolgende API-Aufrufe an https://wamsbayclus001rest-hs.cloudapp.net/api/.
 
 ###Abrufen eines Zugriffstokens
 
@@ -1210,4 +1209,5 @@ Wenn dieses Thema nicht die erwarteten Informationen enthält, Informationen feh
 <!-- URLs. -->
   [klassischen Azure-Portal]: http://manage.windowsazure.com/
 
-<!----HONumber=AcomDC_1210_2015-->
+<!-----HONumber=AcomDC_1210_2015-->
+
