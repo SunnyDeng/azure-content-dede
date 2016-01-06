@@ -54,7 +54,7 @@ Sie benötigen ein Facebook-Konto mit verifizierter E-Mail-Adresse und einer Mob
 11. Klicken Sie auf die Registerkarte **Erweitert**, fügen Sie den **Umleitungs-URI**Ihrer Anwendung zu **Gültige OAuth-Umleitungs-URIs** hinzu, und klicken Sie dann auf **Änderungen speichern**. Der Umleitungs-URI ist die URL Ihrer Anwendung, an die der Pfad _/.auth/login/facebook/callback_ angefügt wurde. Beispiel: `https://contoso.azurewebsites.net/.auth/login/facebook/callback`. Stellen Sie sicher, dass Sie das HTTPS-Schema verwenden.
 
 
-	> [AZURE.NOTE]Wenn anstelle der App Service-Authentifizierung/-Autorisierung das App Service-Gateway verwendet wird, greift Ihre Umleitungs-URL stattdessen auf die Gateway-URL mit dem Pfad _/signin-facebook_ zurück.
+> [AZURE.NOTE]Wenn anstelle der App Service-Authentifizierung/-Autorisierung das App Service-Gateway verwendet wird, greift Ihre Umleitungs-URL stattdessen auf die Gateway-URL mit dem Pfad _/signin-facebook_ zurück.
 
 
 12. Das zum Registrieren der Anwendung verwendete Facebook-Konto fungiert als Administrator der App. Zu diesem Zeitpunkt können sich nur Administratoren bei der Anwendung anmelden. Klicken Sie links im Navigationsbereich auf **Status und Überprüfung**, um andere Facebook-Konten zu authentifizieren. Klicken Sie dann auf **Ja**, um den allgemeinen öffentlichen Zugriff zu aktivieren.
@@ -93,4 +93,4 @@ Sie können nun Facebook für die Authentifizierung in Ihrer App verwenden.
 [Get started with authentication]: /de-DE/develop/mobile/tutorials/get-started-with-users-dotnet/
 [Azure-Portal]: https://portal.azure.com/
 
-<!---HONumber=AcomDC_1203_2015-->
+<!----HONumber=AcomDC_1203_2015-->
