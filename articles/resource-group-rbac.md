@@ -47,7 +47,8 @@ Um RBAC-Konzepte zu verstehen, betrachten wir einige Beispiele allgemeiner Rolle
 
 | Rolle | Zulässige Aktionen |
 | ------- | ----------------- |
-| Reader | **/Lesen (Lesezugriff für alles) | | Besitzer | * (Lese-/Schreibzugriff für alles) |
+| Reader | **/Lesen (Lesezugriff für alles) |
+| Besitzer | * (Lese-/Schreibzugriff für alles) |
 
 Um die Rolle **Leser** zu **Benutzer A** für die Ressourcengruppe mit dem Namen **ExampleGroup** und die Rolle **Besitzer** zu **Benutzer B** für das gesamte Abonnement zuzuweisen, würden Sie Folgendes zuweisen:
 
@@ -280,4 +281,4 @@ Erstellen Sie die Rollenzuweisung.
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!----HONumber=AcomDC_1203_2015-->

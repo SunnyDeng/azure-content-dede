@@ -466,7 +466,23 @@ Weitere Informationen finden Sie unter [Verwenden interaktiver Befehle zur Probl
 |Typ|Befehl|Beschreibung|
 |---|---|---|
 |**iSCSI**|`service iscsid start`|Starten des iSCSI-Diensts|
-||`service iscsid stop`|Beenden des iSCSI-Diensts| ||`service iscsid restart`|Neustarten des iSCSI-Diensts| ||`iscsiadm -m discovery -t sendtargets -p <TARGET_IP>`|Ermitteln verfügbarer Ziele an der angegebenen Adresse| ||`iscsiadm -m node --login -T <TARGET_IQN>`|Anmelden beim iSCSI-Ziel| ||`iscsiadm -m node --logout -p <Target_IP>`|Abmelden vom iSCSI-Ziel| ||`cat /etc/iscsi/initiatorname.iscsi`|Drucken des iSCSI-Initiatornamens| ||`iscsiadm –m session –s <sessionid> -P 3`|Prüfen des Status der iSCSI-Sitzung und des Volumes, die bzw. das auf dem Host ermittelt wurde| ||`iscsi –m session`|Anzeigen aller eingerichteten iSCSI-Sitzungen zwischen dem Host und dem StorSimple-Gerät| | | | | |**Multipathing**|`service multipathd start`|Starten des Multipfaddaemons| ||`service multipathd stop`|Beenden des Multipfaddaemons| ||`service multipathd restart`|Neustarten des Multipfaddaemons| ||`chkconfig multipathd on` </br> ODER </br> `mpathconf –with_chkconfig y`|Aktivieren des Multipfaddaemons zur Ausführung beim Start| ||`multipathd –k`|Starten der interaktiven Konsole für die Problembehandlung| ||`multipath –l`|Auflisten von Multipfadverbindungen und -geräten| ||`mpathconf --enable`|Erstellen einer Beispieldatei "multipath.conf" in `/etc/mulitpath.conf`| ||||
+||`service iscsid stop`|Beenden des iSCSI-Diensts|
+||`service iscsid restart`|Neustarten des iSCSI-Diensts|
+||`iscsiadm -m discovery -t sendtargets -p <TARGET_IP>`|Ermitteln verfügbarer Ziele an der angegebenen Adresse|
+||`iscsiadm -m node --login -T <TARGET_IQN>`|Anmelden beim iSCSI-Ziel|
+||`iscsiadm -m node --logout -p <Target_IP>`|Abmelden vom iSCSI-Ziel|
+||`cat /etc/iscsi/initiatorname.iscsi`|Drucken des iSCSI-Initiatornamens|
+||`iscsiadm –m session –s <sessionid> -P 3`|Prüfen des Status der iSCSI-Sitzung und des Volumes, die bzw. das auf dem Host ermittelt wurde|
+||`iscsi –m session`|Anzeigen aller eingerichteten iSCSI-Sitzungen zwischen dem Host und dem StorSimple-Gerät|
+| | | |
+|**Multipathing**|`service multipathd start`|Starten des Multipfaddaemons|
+||`service multipathd stop`|Beenden des Multipfaddaemons|
+||`service multipathd restart`|Neustarten des Multipfaddaemons|
+||`chkconfig multipathd on` </br> ODER </br> `mpathconf –with_chkconfig y`|Aktivieren des Multipfaddaemons zur Ausführung beim Start|
+||`multipathd –k`|Starten der interaktiven Konsole für die Problembehandlung|
+||`multipath –l`|Auflisten von Multipfadverbindungen und -geräten|
+||`mpathconf --enable`|Erstellen einer Beispieldatei "multipath.conf" in `/etc/mulitpath.conf`|
+||||
 
 ## Nächste Schritte
 
@@ -475,4 +491,4 @@ Wenn Sie MPIO auf einem Linux-Host konfigurieren, müssen Sie möglicherweise au
 - [Einrichten von MPIO auf CentOS](http://www.centos.org/docs/5/html/5.1/DM_Multipath/setup_procedure.html)
 - [Linux-Trainingshandbuch](http://linux-training.be/files/books/LinuxAdm.pdf)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!----HONumber=AcomDC_1203_2015-->
