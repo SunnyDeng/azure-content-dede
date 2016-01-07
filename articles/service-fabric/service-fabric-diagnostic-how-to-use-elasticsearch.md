@@ -24,9 +24,11 @@ ETW wird von der Service Fabric-Laufzeit zum Abrufen von Diagnoseinformationen 
 
 Damit die Ablaufverfolgungsdaten in ElasticSearch angezeigt werden können, müssen sie in Echtzeit (also während der Anwendungsausführung) an den Service Fabric-Clusterknoten erfasst und an den ElasticSearch-Endpunkt gesendet werden. Für die Erfassung von Ablaufverfolgungen stehen zwei Hauptoptionen zur Verfügung:
 
-+ **In-Process-Ablaufverfolgungserfassung**: Die Diagnosedaten werden von der Anwendung (genauer gesagt: vom Dienstprozess) an den Ablaufverfolgungsspeicher (ElasticSearch) gesendet.
++ **In-Process-Ablaufverfolgungserfassung**:  
+Die Diagnosedaten werden von der Anwendung (genauer gesagt: vom Dienstprozess) an den Ablaufverfolgungsspeicher (ElasticSearch) gesendet.
 
-+ **Out-of-Process-Ablaufverfolgungserfassung**: Die Ablaufverfolgungen von Dienstprozessen werden von einem separaten Agent erfasst und an den Ablaufverfolgungsspeicher gesendet.
++ **Out-of-Process-Ablaufverfolgungserfassung**:  
+Die Ablaufverfolgungen von Dienstprozessen werden von einem separaten Agent erfasst und an den Ablaufverfolgungsspeicher gesendet.
 
 Im weiteren Verlauf des Artikels erfahren Sie, wie ElasticSearch in Azure eingerichtet wird, welche Vor- und Nachteile die beiden Erfassungsoptionen haben und wie Sie einen Fabric-Dienst für das Senden von Daten an ElasticSearch konfigurieren.
 
@@ -34,7 +36,7 @@ Im weiteren Verlauf des Artikels erfahren Sie, wie ElasticSearch in Azure einger
 ## Einrichten von ElasticSearch für Azure
 Am einfachsten lässt sich der ElasticSearch-Dienst für Azure mit [**Azure ARM-Vorlagen**](../resource-group-overview.md) einrichten. Eine umfassende [ARM-Schnellstartvorlage für ElasticSearch](https://github.com/Azure/azure-quickstart-templates/tree/master/elasticsearch) steht im Repository für Azure-Schnellstartvorlagen zur Verfügung. Diese Vorlage verwendet separate Speicherkonten für Skalierungseinheiten (Knotengruppen) und kann separate Client- und Serverknoten mit unterschiedlichen Konfigurationen und unterschiedlicher Anzahl von angefügten Datenträgern bereitstellen.
 
-In diesem Artikel verwenden wir allerdings eine Vorlage namens **ES-MultiNode** aus der [ELK-Verzweigung von Microsoft Patterns & Practices](https://github.com/mspnp/semantic-logging/tree/elk/). Diese Vorlage ist etwas einfacher zu verwenden und erstellt einen ElasticSearch-Cluster, der standardmäßig mittels HTTP-Standardauthentifizierung geschützt ist. Laden Sie bei GitHub zunächst das [ELK-Repository von Microsoft P & P](https://github.com/mspnp/semantic-logging/tree/elk/) auf Ihren Computer herunter. Klonen Sie hierzu entweder das Repository, oder laden Sie eine ZIP-Datei herunter. Die Vorlage „ES-MultiNode“ befindet sich im gleichnamigen Ordner.
+In diesem Artikel verwenden wir allerdings eine Vorlage namens **ES-MultiNode** aus der [ELK-Verzweigung von Microsoft Patterns & Practices](https://github.com/mspnp/semantic-logging/tree/elk/). Diese Vorlage ist etwas einfacher zu verwenden und erstellt einen ElasticSearch-Cluster, der standardmäßig mittels HTTP-Standardauthentifizierung geschützt ist. Laden Sie bei GitHub zunächst das [ELK-Repository von Microsoft P & P](https://github.com/mspnp/semantic-logging/tree/elk/) auf Ihren Computer herunter. Klonen Sie hierzu entweder das Repository, oder laden Sie eine ZIP-Datei herunter. Die Vorlage „ES-MultiNode“ befindet sich im gleichnamigen Ordner.  
 >[AZURE.NOTE] "ES-MultiNode" und die dazugehörigen Skripts unterstützen momentan Version 1.7 von ElasticSearch. Unterstützung für ElasticSearch 2.0 wird zu einem späteren Zeitpunkt hinzugefügt.
 
 ### Vorbereiten eines Computers für die Ausführung von ElasticSearch-Installationsskripts
@@ -42,7 +44,7 @@ Am einfachsten lässt sich die Vorlage „ES-MultiNode“ über das bereitgestel
 
 Hinweis: Das Skript `CreateElasticSearchCluster` vereinfacht die Verwendung der Vorlage „ES-MultiNode“ auf einem Windows-Computer. Die Vorlage kann zwar auch auf einem Windows-fremden Computer verwendet werden, ein solches Szenario ist jedoch nicht Gegenstand dieses Artikels.
 
-1. Installieren Sie die [**Azure PowerShell-Module**](http://go.microsoft.com/fwlink/p/?linkid=320376), sofern sie noch nicht installiert sind. Klicken Sie in der Nachfrage auf „Ausführen“ und dann auf „Installieren“.
+1. Installieren Sie die [**Azure PowerShell-Module**](http://go.microsoft.com/fwlink/p/?linkid=320376), sofern sie noch nicht installiert sind. Klicken Sie in der Nachfrage auf „Ausführen“ und dann auf „Installieren“.  
 >[AZURE.NOTE]In Version 1.0 von Azure PowerShell gibt es eine wichtige Veränderung. „CreateElasticSearchCluster“ ist für Azure PowerShell 0.9.8 konzipiert. Die Vorschauversion von Azure PowerShell 1.0 wird noch nicht unterstützt. Ein mit Azure PowerShell 1.0 kompatibles Skript wird zu einem späteren Zeitpunkt bereitgestellt.
 
 2. Das Tool **openssl** ist in der Distribution von [**Git für Windows**](http://www.git-scm.com/downloads) enthalten. Installieren Sie jetzt [Git für Windows](http://www.git-scm.com/downloads) mit den standardmäßigen Installationsoptionen, sofern noch nicht geschehen.
@@ -246,4 +248,4 @@ Geschafft! Wenn der Dienst nun ausgeführt wird, sendet er Ablaufverfolgungen an
 [1]: ./media/service-fabric-diagnostics-how-to-use-elasticsearch/listener-lib-references.png
 [2]: ./media/service-fabric-diagnostics-how-to-use-elasticsearch/kibana.png
 
-<!----HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1217_2015-->
