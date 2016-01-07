@@ -34,7 +34,8 @@ Ein Connector kann innerhalb einer Logik-App oder direkt über den Azure Marketp
 
 	Name | Erforderlich | Beschreibung
 --- | --- | ---
-Website-URL | Ja | Geben Sie die vollständige URL der SharePoint-Website ein. Geben Sie z. B. Folgendes ein: **https://microsoft.sharepoint.com/teams/wabstest*. Document Library / List Relative URLs | Yes | Geben Sie die URLS von Dokumentbibliotheken/Listen relativ zur SharePoint-Website-URL ein, die vom Connector geändert werden dürfen. Geben Sie z. B. ein: *Listen/Aufgabe, Freigegebene Dokumente*.
+Website-URL | Ja | Geben Sie die vollständige URL der SharePoint-Website ein. Geben Sie z. B. Folgendes ein: **https://microsoft.sharepoint.com/teams/wabstest*.
+ Document Library / List Relative URLs | Yes | Geben Sie die URLS von Dokumentbibliotheken/Listen relativ zur SharePoint-Website-URL ein, die vom Connector geändert werden dürfen. Geben Sie z. B. ein: *Listen/Aufgabe, Freigegebene Dokumente*.
 
 5. Nach Abschluss des Vorgangs sehen die Paketeinstellungen etwa wie folgt aus: ![][1]
 
@@ -51,7 +52,8 @@ Ein Connector kann innerhalb einer Logik-App oder direkt über den Azure Marketp
 
 	Name | Erforderlich | Beschreibung
 --- | --- | ---
-Website-URL | Ja | Geben Sie die vollständige URL der SharePoint-Website ein. Geben Sie z. B. Folgendes ein: *https://microsoft.sharepoint.com/teams/wabstest*. Authentication Mode | Yes | Geben Sie den Authentifizierungsmodus zum Verbinden mit einer SharePoint-Website ein. Optionen umfassen:<ul><li>Standard</li><li>WindowsAuthentication</li><li>FormBasedAuthentication</li></ul><br/><br/>Wenn Sie "Standard" wählen, werden die Anmeldeinformationen für den SharePoint-Connector verwendet. Benutzername und Kennwort sind nicht erforderlich. Benutzername und Kennwort sind für andere Authentifizierungstypen erforderlich.<br/><br/>** Hinweis ** anonyme Authentifizierung wird nicht unterstützt.
+Website-URL | Ja | Geben Sie die vollständige URL der SharePoint-Website ein. Geben Sie z. B. Folgendes ein: *https://microsoft.sharepoint.com/teams/wabstest*.
+Authentication Mode | Yes | Geben Sie den Authentifizierungsmodus zum Verbinden mit einer SharePoint-Website ein. Optionen umfassen:<ul><li>Standard</li><li>WindowsAuthentication</li><li>FormBasedAuthentication</li></ul><br/><br/>Wenn Sie "Standard" wählen, werden die Anmeldeinformationen für den SharePoint-Connector verwendet. Benutzername und Kennwort sind nicht erforderlich. Benutzername und Kennwort sind für andere Authentifizierungstypen erforderlich.<br/><br/>** Hinweis ** anonyme Authentifizierung wird nicht unterstützt.
 Benutzername | Nein | Geben Sie einen gültigen Benutzernamen zum Verbinden mit einer SharePoint-Website ein, wenn als Authentifizierungsmodus nicht "Standard" verwendet wird.
 Kennwort | Nein | Geben Sie ein gültiges Kennwort zum Verbinden mit einer SharePoint-Website ein, wenn als Authentifizierungsmodus nicht "Standard" verwendet wird.
 Relative URLs zur Dokumentbibliothek/Liste | Ja | Geben Sie die URLS von Dokumentbibliotheken/Listen relativ zur SharePoint-Website-URL ein, die vom Connector geändert werden dürfen. Geben Sie z. B. ein: *Listen/Aufgabe, Freigegebene Dokumente*.
@@ -472,4 +474,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [6]: ./media/app-service-logic-connector-sharepoint/image_5.png
 [7]: ./media/app-service-logic-connector-sharepoint/image_6.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!----HONumber=AcomDC_1203_2015-->

@@ -26,7 +26,12 @@
 
 ##DocumentDB Java SDK
 
-<table> <tr><td>** Herunterladen **</td><td>[Maven](http://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb)</td></tr> <tr><td>** Mitwirken **</td><td>[GitHub](https://github.com/Azure/azure-documentdb-java/)</td></tr> <tr><td>** Dokumentation **</td><td>[Referenzdokumentation zum Java SDK](http://azure.github.io/azure-documentdb-java/)</td></tr> <tr><td>** Erste Schritte **</td><td>[Erste Schritte mit dem Java SDK](documentdb-java-application.md)</td></tr> <tr><td>** Derzeit unterstützte Laufzeit **</td><td>[JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)</td></tr> </table></br>
+<table>
+<tr><td>** Herunterladen **</td><td>[Maven](http://mvnrepository.com/artifact/com.microsoft.azure/azure-documentdb)</td></tr>
+<tr><td>** Mitwirken **</td><td>[GitHub](https://github.com/Azure/azure-documentdb-java/)</td></tr> 
+<tr><td>** Dokumentation **</td><td>[Referenzdokumentation zum Java SDK](http://azure.github.io/azure-documentdb-java/)</td></tr>
+<tr><td>** Erste Schritte **</td><td>[Erste Schritte mit dem Java SDK](documentdb-java-application.md)</td></tr>
+<tr><td>** Derzeit unterstützte Laufzeit **</td><td>[JDK 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)</td></tr> </table></br>
 
 ## Versionsinformationen
 
@@ -85,4 +90,4 @@ Anforderungen von DocumentDB mithilfe eines deaktivierten SDK werden vom Dienst 
 
 Weitere Informationen zu DocumentDB finden Sie auf der Seite zum Dienst [Microsoft Azure DocumentDB](https://azure.microsoft.com/services/documentdb/).
 
-<!---HONumber=AcomDC_1210_2015-->
+<!----HONumber=AcomDC_1210_2015-->
