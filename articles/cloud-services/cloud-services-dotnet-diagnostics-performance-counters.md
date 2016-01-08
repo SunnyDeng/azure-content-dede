@@ -21,7 +21,10 @@ In diesem Artikel werden die Vorteile von Leistungsindikatoren in Ihrer Azure-An
 
 Für Windows Server, IIS und ASP.NET verfügbare Leistungsindikatoren können auch erfasst und verwendet werden, um die Integrität von Webrollen, Workerrollen und virtuellen Computern von Azure zu bestimmen. Sie können auch benutzerdefinierte Leistungsindikatoren erstellen und verwenden.
 
-Sie können Leistungsindikatordaten wie folgt untersuchen: 1. Direkt auf dem Anwendungshost mit dem Systemmonitor-Tool per Remotedesktop. 2. Mit System Center Operations Manager und Azure Management Pack. 3. Mit anderen Überwachungstools, mit denen auf die Diagnosedaten zugegriffen wird, die an den Azure-Speicher übertragen werden. Weitere Informationen finden Sie unter[Speichern und Anzeigen von Diagnosedaten im Azure-Speicher](https://msdn.microsoft.com/library/azure/hh411534.aspx).
+Sie können Leistungsindikatordaten wie folgt untersuchen:
+1. Direkt auf dem Anwendungshost mit dem Systemmonitor-Tool per Remotedesktop.
+2. Mit System Center Operations Manager und Azure Management Pack.
+3. Mit anderen Überwachungstools, mit denen auf die Diagnosedaten zugegriffen wird, die an den Azure-Speicher übertragen werden. Weitere Informationen finden Sie unter[Speichern und Anzeigen von Diagnosedaten im Azure-Speicher](https://msdn.microsoft.com/library/azure/hh411534.aspx).
 
 Weitere Informationen zum Überwachen der Leistung Ihrer Anwendung im [klassischen Azure-Portal](http://manage.azure.com/) finden Sie unter [Überwachen von Clouddiensten](https://www.azure.com/manage/services/cloud-services/how-to-monitor-a-cloud-service/).
 
@@ -53,7 +56,16 @@ Unter Azure wird eine Teilmenge der Leistungsindikatoren bereitgestellt, die fü
 |ASP.NET v4.0.30319 |Zurückgewiesene Anforderungen |Leistungsindikatoren für ASP.NET|
 |Arbeitsspeicher |Verfügbare MB |Arbeitsspeicher-Leistungsindikatoren|
 |Arbeitsspeicher |Zugesicherte Bytes |Arbeitsspeicher-Leistungsindikatoren|
-|Prozessor(\_Gesamt) | Prozessorzeit (%) |Leistungsindikatoren für ASP.NET| |TCPv4 |Verbindungsfehler |TCP-Objekt| |TCPv4 |Hergestellte Verbindungen |TCP-Objekt| |TCPv4 |Zurückgesetzte Verbindungen |TCP-Objekt| |TCPv4 |Segmente gesendet/s |TCP-Objekt| |Netzwerkschnittstelle(*) |Empfangene Bytes/s |Netzwerkschnittstellenobjekt| |Netzwerkschnittstelle(*) |Bytes gesendet/s |Netzwerkschnittstellenobjekt| |Netzwerkschnittstelle(Netzwerkkarte für Microsoft Virtual Machine-Bus\_2)|Empfangene Bytes/s|Netzwerkschnittstellenobjekt| |Netzwerkschnittstelle(Netzwerkkarte für Microsoft Virtual Machine-Bus\_2)|Bytes gesendet/s|Netzwerkschnittstellenobjekt| |Netzwerkschnittstelle(Netzwerkkarte für Microsoft Virtual Machine-Bus\_2)|Bytes/s insgesamt|Netzwerkschnittstellenobjekt|
+|Prozessor(\_Gesamt) | Prozessorzeit (%) |Leistungsindikatoren für ASP.NET|
+|TCPv4 |Verbindungsfehler |TCP-Objekt|
+|TCPv4 |Hergestellte Verbindungen |TCP-Objekt|
+|TCPv4 |Zurückgesetzte Verbindungen |TCP-Objekt|
+|TCPv4 |Segmente gesendet/s |TCP-Objekt|
+|Netzwerkschnittstelle(*) |Empfangene Bytes/s |Netzwerkschnittstellenobjekt|
+|Netzwerkschnittstelle(*) |Bytes gesendet/s |Netzwerkschnittstellenobjekt|
+|Netzwerkschnittstelle(Netzwerkkarte für Microsoft Virtual Machine-Bus\_2)|Empfangene Bytes/s|Netzwerkschnittstellenobjekt|
+|Netzwerkschnittstelle(Netzwerkkarte für Microsoft Virtual Machine-Bus\_2)|Bytes gesendet/s|Netzwerkschnittstellenobjekt|
+|Netzwerkschnittstelle(Netzwerkkarte für Microsoft Virtual Machine-Bus\_2)|Bytes/s insgesamt|Netzwerkschnittstellenobjekt|
 
 ## Erstellen und Hinzufügen benutzerdefinierter Leistungsindikatoren zur Anwendung
 
@@ -313,4 +325,4 @@ Nachdem Sie sich mit den Grundlagen der Erfassung von Leistungsindikatoren vertr
 
 [Überwachung von Clouddiensten](./how-to-monitor-a-cloud-service.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!----HONumber=AcomDC_1203_2015-->

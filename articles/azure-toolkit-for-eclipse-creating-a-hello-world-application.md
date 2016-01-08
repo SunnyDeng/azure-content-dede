@@ -40,11 +40,12 @@ Zunächst beginnen wir mit der Erstellung eines Java-Projekts.
 
 *  Starten Sie Eclipse, klicken Sie im Menü auf **File**, auf **New** und anschließend auf **Dynamic Web Project**. (Wenn **Dynamic Web Project** nach Klicken auf **File** und **New** nicht als verfügbares Projekt aufgeführt ist, gehen Sie wie folgt vor: Klicken Sie auf **File**, anschließend auf **New** und dann auf **Project**. Erweitern Sie die Option **Web**, klicken Sie auf **Dynamic Web Project** und dann auf **Next**.)
 *  Nennen Sie das Projekt für die Zwecke dieses Tutorials **MyHelloWorld**. (Verwenden Sie diesen Namen unbedingt, weil in den weiteren Schritten dieses Tutorials erwartet wird, dass Ihre WAR-Datei „MyHelloWorld“ heißt). Ihr Bildschirm sieht dann in etwa wie folgt aus:
-    ![][ic589576]
+	![][ic589576]
 * Klicken Sie auf **Fertig stellen**.
 * Erweitern Sie in der Projektexplorer-Ansicht von Eclipse die Option **MyHelloWorld**. Klicken Sie mit der rechten Maustaste auf **WebContent**, und klicken Sie dann auf **New** sowie auf **JSP File**.
 * Geben Sie der Datei im Dialogfeld **New JSP File** den Namen **index.jsp**. Nennen Sie den übergeordneten Ordner wie im Folgenden gezeigt **MyHelloWorld/WebContent**:
-    ![][ic659262]
+
+	![][ic659262]
 * Wählen Sie im Dialogfeld **Select JSP Template** für die Zwecke dieses Tutorials **New JSP File (html)**, und klicken Sie dann auf **Finish**.
 * Wenn in Eclipse die Datei „index.jsp“ geöffnet wird, geben Sie den Text **Hello World!** ein, damit er im vorhandenen `<body>`-Element angezeigt wird. Der aktualisierte `<body>`-Inhalt sollte wie folgt aussehen:
 ```
@@ -70,7 +71,8 @@ Wenn Ihre Java-Webanwendung zum Testen bereit steht, können Sie sie auf einem a
         1. Klicken Sie auf **Import from PUBLISH-SETTINGS file**.
         1. Klicken Sie im Dialogfeld **Import Subscription Information** auf **Download PUBLISH-SETTINGS File**. Wenn Sie noch nicht bei Ihrem Azure-Konto angemeldet sind, werden Sie zur Anmeldung aufgefordert. Anschließend werden Sie aufgefordert, eine Datei mit Azure-Veröffentlichungseinstellungen zu speichern. Speichern Sie sie auf Ihrem lokalen Computer.
         1. Klicken Sie im Dialogfeld **Import Subscription Information** auf die Schaltfläche **Browse**, wählen Sie die im vorherigen Schritt lokal gespeicherte Datei mit den Veröffentlichungseinstellungen aus, und klicken Sie dann auf **Open**. Ihr Bildschirm sollte ähnlich dem folgenden aussehen:
-            ![][ic644267]
+
+			![][ic644267]
         1. Klicken Sie auf **OK**.
     1. Wählen Sie bei **Subscription** das Abonnement aus, das Sie für Ihre Bereitstellung verwenden möchten.
     1. Bei **Storage account** wählen Sie das zu verwendende Speicherkonto aus, oder klicken Sie auf **New**, um ein neues Speicherkonto zu erstellen.
@@ -193,4 +195,4 @@ Weitere Informationen zum Verwenden von Azure mit Java finden Sie im [Azure Java
 [ic719491]: ./media/azure-toolkit-for-eclipse-creating-a-hello-world-application/ic719491.png
 [ic789598]: ./media/azure-toolkit-for-eclipse-creating-a-hello-world-application/ic789598.png
 
-<!----HONumber=AcomDC_1210_2015-->
+<!-----HONumber=AcomDC_1210_2015-->

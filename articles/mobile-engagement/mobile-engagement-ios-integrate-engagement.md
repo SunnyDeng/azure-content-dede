@@ -37,16 +37,14 @@ Fügen Sie das Engagement-SDK zum iOS-Projekt hinzu. Klicken Sie in Xcode mit de
 
 Engagement erfordert, dass zusätzliche Frameworks funktionieren: Öffnen Sie im Projektexplorer Ihren Projektbereich, und wählen Sie das richtige Ziel aus. Öffnen Sie dann die Registerkarte **„Build phases“**. Fügen Sie anschließend im Menü **„Link Binary With Libraries“** die folgenden Frameworks hinzu:
 
-> -   `AdSupport.framework` – Legen Sie den Link als `Optional` fest.
-> -   `SystemConfiguration.framework`
-> -   `CoreTelephony.framework`
-> -   `CFNetwork.framework`
-> -   `CoreLocation.framework`
-> -   `libxml2.dylib`
-
-
+ -   `AdSupport.framework` – Legen Sie den Link als `Optional` fest.
+ -   `SystemConfiguration.framework`
+ -   `CoreTelephony.framework`
+ -   `CFNetwork.framework`
+ -   `CoreLocation.framework`
+ -   `libxml2.dylib`
+       
 > [AZURE.NOTE] Das AdSupport-Framework kann entfernt werden. Dieses Framework ist für Engagement zum Erfassen der IDFA erforderlich. Die IDFA-Erfassung kann jedoch mit \<ios-sdk-engagement-idfa\> deaktiviert werden, um der neuen Apple-Richtlinie zu dieser ID zu entsprechen.
-
 
 ##Initialisieren des Engagement-SDK
 
@@ -210,4 +208,4 @@ Das folgende Beispiel von `Settings.bundle` veranschaulicht die Implementierung:
 [startMonitoringSignificantLocationChanges]: http://developer.apple.com/library/IOs/#documentation/CoreLocation/Reference/CLLocationManager_Class/CLLocationManager/CLLocationManager.html#//apple_ref/occ/instm/CLLocationManager/startMonitoringSignificantLocationChanges
 [IDFA]: https://developer.apple.com/library/ios/documentation/AdSupport/Reference/ASIdentifierManager_Ref/ASIdentifierManager.html#//apple_ref/occ/instp/ASIdentifierManager/advertisingIdentifier
 
-<!---HONumber=AcomDC_1217_2015-->
+<!----HONumber=AcomDC_1217_2015-->
