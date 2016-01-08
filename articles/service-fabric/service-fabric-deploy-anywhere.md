@@ -44,7 +44,7 @@ Das Betreiben von Service Fabric-Clustern mithilfe von Azure Hosted Service biet
 
 * Azure-Portal: Das Azure-Portal erleichtert das Erstellen und Verwalten von Clustern.
 * Azure-Ressourcen-Manager: Der ARM vereinfacht die Verwaltung aller vom Cluster genutzten Ressourcen als Einheit sowie die Kostentransparenz und Abrechnung. 
-* Diagnose: In Azure bieten wir Ihnen Integration mit WAD (Windows Azure Diagnostics) und Operational Insights zu Diagnosezwecken.
+* Diagnose: In Azure bieten wir Ihnen Integration mit WAD (Microsoft Azure Diagnostics) und Operational Insights zu Diagnosezwecken.
 * Automatische Skalierung: Für in Azure gehostete Cluster bieten wir die integrierte automatische Skalierungsfunktionalität. Bei Verwenden der umgebungsunabhängigen Bereitstellung in anderen Umgebungen müssen Sie eine eigene automatische Skalierungsfunktion entwickeln oder eine manuelle Skalierung mithilfe der APIs vornehmen, die Service Fabric für die Skalierung von Clustern verfügbar macht.
 
 <!---HONumber=AcomDC_1203_2015-->

@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager | Microsoft Azure"
-	description="Verwenden Sie die Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows Azure, um mehrere Ressourcen als eine Ressourcengruppe bereitzustellen."
+	description="Verwenden Sie die Azure-Befehlszeilenschnittstelle für Mac, Linux und Microsoft Azure, um mehrere Ressourcen als eine Ressourcengruppe bereitzustellen."
 	editor=""
 	manager="timlt"
 	documentationCenter=""

@@ -36,11 +36,11 @@ Speicherverwaltung, Risiko eines Speicherausfalls, Zugriff auf Offsitespeicher u
 * Kostenvorteile: Sie zahlen nur für den tatsächlich genutzten Dienst. Die Option kann genauso kosteneffizient wie eine Offsitesicherungs-/-archivierungslösung sein. Weitere Informationen finden Sie im [Azure-Preisrechner](http://go.microsoft.com/fwlink/?LinkId=277060 "Preisrechner") und in der [Azure-Preisübersicht](http://go.microsoft.com/fwlink/?LinkId=277059 "Preisübersicht").
 * Verwenden von Speichermomentaufnahmen: Wenn Datenbankdateien in einem Azure-Blob gespeichert werden und Sie SQL Server 2016 verwenden, können Sie [Dateimomentaufnahme-Sicherung](http://msdn.microsoft.com/library/mt169363.aspx) für nahezu sofortige Sicherungen und äußerst schnelle Wiederherstellung verwenden.
 
-Weitere Details finden Sie unter [SQL Server-Sicherung und -Wiederherstellung mit dem Windows Azure-BLOB-Speicherdienst](http://go.microsoft.com/fwlink/?LinkId=271617).
+Weitere Details finden Sie unter [SQL Server-Sicherung und -Wiederherstellung mit dem Microsoft Azure-BLOB-Speicherdienst](http://go.microsoft.com/fwlink/?LinkId=271617).
 
 In den folgenden zwei Abschnitten werden der Azure-Blob-Speicherdienst und die SQL Server-Komponenten vorgestellt, die beim Sichern im oder Wiederherstellen aus dem Azure-Blob-Speicherdienst zum Einsatz kommen. Es ist wichtig, die Komponenten zu kennen und zu wissen, wie sie interagieren, wenn Sie Daten im Azure-Blob-Speicherdienst sichern oder daraus wiederherstellen möchten.
 
-Als Erstes muss ein Azure-Konto erstellt werden. Eine ausführliche Anleitung zum Erstellen eines Speicherkontos und zum Durchführen einer einfachen Wiederherstellung mit SQL Server 2014 finden Sie unter [Lernprogramm: SQL Server-Sicherung und -Wiederherstellung im Windows Azure-BLOB-Speicherdienst](https://msdn.microsoft.com/library/jj720558(v=sql.120).aspx). Eine ausführliche Anleitung zum Erstellen eines Speicherkontos und zum Durchführen einer einfachen Wiederherstellung mit SQL Server 2014 finden Sie unter [Lernprogramm: SQL Server-Datendateien im Windows Azure-Speicher](https://msdn.microsoft.com/library/dn466438.aspx).
+Als Erstes muss ein Azure-Konto erstellt werden. Eine ausführliche Anleitung zum Erstellen eines Speicherkontos und zum Durchführen einer einfachen Wiederherstellung mit SQL Server 2014 finden Sie unter [Lernprogramm: SQL Server-Sicherung und -Wiederherstellung im Microsoft Azure-BLOB-Speicherdienst](https://msdn.microsoft.com/library/jj720558(v=sql.120).aspx). Eine ausführliche Anleitung zum Erstellen eines Speicherkontos und zum Durchführen einer einfachen Wiederherstellung mit SQL Server 2014 finden Sie unter [Lernprogramm: SQL Server-Datendateien im Microsoft Azure-Speicher](https://msdn.microsoft.com/library/dn466438.aspx).
 
 ## Komponenten des Azure-Blob-Speicherdiensts
 
@@ -62,14 +62,14 @@ Als Erstes muss ein Azure-Konto erstellt werden. Eine ausführliche Anleitung zu
 
 **Konzepte, Überlegungen und Codebeispiele:**
 
-[SQL Server-Sicherung und -Wiederherstellung mit dem Windows Azure-BLOB-Speicherdienst](http://go.microsoft.com/fwlink/?LinkId=271617)
+[SQL Server-Sicherung und -Wiederherstellung mit dem Microsoft Azure-BLOB-Speicherdienst](http://go.microsoft.com/fwlink/?LinkId=271617)
 
 **Erste-Schritte-Lernprogramm:**
 
-[Lernprogramm: SQL Server-Datendateien im Windows Azure-Speicher](https://msdn.microsoft.com/library/dn466438.aspx)
+[Lernprogramm: SQL Server-Datendateien im Microsoft Azure-Speicher](https://msdn.microsoft.com/library/dn466438.aspx)
 
 **Bewährte Methoden, Problembehandlung:**
 
-[Bewährte Methoden für die Sicherung und Wiederherstellung (Windows Azure-BLOB-Speicherdienst)](http://go.microsoft.com/fwlink/?LinkId=272394)
+[Bewährte Methoden für die Sicherung und Wiederherstellung (Microsoft Azure-BLOB-Speicherdienst)](http://go.microsoft.com/fwlink/?LinkId=272394)
 
 <!---HONumber=Nov15_HO1-->

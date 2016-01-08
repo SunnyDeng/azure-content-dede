@@ -1,9 +1,9 @@
 
 # Erstellen eines virtuellen Windows Server-Computers #
 
-In diesem Lernprogramm erfahren Sie, wie Sie mithilfe der Imagegalerie im Windows Azure-Verwaltungsportal ganz einfach einen virtuellen Azure-Computer mit Windows Server erstellen. Die Image-Galerie bietet verschiedene Images, unter anderem von Windows-Betriebssystemen, Linux-basierten Betriebssystemen sowie Anwendungs-Images.
+In diesem Lernprogramm erfahren Sie, wie Sie mithilfe der Imagegalerie im Microsoft Azure-Verwaltungsportal ganz einfach einen virtuellen Azure-Computer mit Windows Server erstellen. Die Image-Galerie bietet verschiedene Images, unter anderem von Windows-Betriebssystemen, Linux-basierten Betriebssystemen sowie Anwendungs-Images.
 
-> [AZURE.NOTE]Sie benötigen keine Erfahrungen mit Azure-VMs, um dieses Lernprogramm auszuführen. Allerdings benötigen Sie ein Azure-Konto. Sie können ein kostenloses Textkonto in wenigen Minuten erstellen. Ausführliche Informationen finden Sie unter [Create a Windows Azure account (in englischer Sprache)](http://www.windowsazure.com/develop/php/tutorials/create-a-windows-azure-account/).
+> [AZURE.NOTE]Sie benötigen keine Erfahrungen mit Azure-VMs, um dieses Lernprogramm auszuführen. Allerdings benötigen Sie ein Azure-Konto. Sie können ein kostenloses Textkonto in wenigen Minuten erstellen. Ausführliche Informationen finden Sie unter [Create a Microsoft Azure account (in englischer Sprache)](http://www.windowsazure.com/develop/php/tutorials/create-a-windows-azure-account/).
 
 In diesem Lernprogramm wird Folgendes erläutert:
 
@@ -72,7 +72,7 @@ In diesem Abschnitt erfahren Sie, wie Sie einen leeren Datenträge an den virtue
 
 	![Größe des leeren Datenträgers festlegen](./media/CreateVirtualMachineWindowsTutorial/emptydisksize.png)
 	
-	>[AZURE.NOTE]Alle Datenträger werden aus einer VHD-Datei im Windows Azure-Speicher erstellt. Sie können unter **Dateiname** einen Namen für die VHD-Datei angeben, die dem Speicher hinzugefügt wird. Der Name des Datenträgers wird jedoch von Azure automatisch erzeugt.
+	>[AZURE.NOTE]Alle Datenträger werden aus einer VHD-Datei im Microsoft Azure-Speicher erstellt. Sie können unter **Dateiname** einen Namen für die VHD-Datei angeben, die dem Speicher hinzugefügt wird. Der Name des Datenträgers wird jedoch von Azure automatisch erzeugt.
 
 6. Kehren Sie zum Dashboard zurück, um zu überprüfen, ob der leere Datenträger erfolgreich an den virtuellen Computer angeschlossen wurde. Er wird als zweiter Datenträger in der Liste **Datenträger** zusammen mit dem Betriebssystem-Datenträger aufgelistet.
 

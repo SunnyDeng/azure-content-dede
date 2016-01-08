@@ -103,7 +103,7 @@ Wenn Sie **ÖFFENTLICHER SSH-SCHLÜSSEL** auswählen, können Sie den öffentlic
 
 Dadurch wird für den angegebenen Benutzer ein Anmeldename erstellt und die Kennwort- oder SSH-Schlüsselauthentifizierung ermöglicht.
 
-###Azure-Befehlszeilenschnittstelle (CLI) für Mac, Linux und Windows Azure
+###Azure-Befehlszeilenschnittstelle (CLI) für Mac, Linux und Microsoft Azure
 
 Sie können über die [Azure-CLI für Mac, Linux und Windows ](../xplat-cli-install.md) einen neuen Cluster mithilfe des Befehls `azure hdinsight cluster create` erstellen.
 

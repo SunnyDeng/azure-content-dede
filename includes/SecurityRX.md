@@ -65,7 +65,7 @@ Die beste Gegenmaßnahme gegen einen Angriff besteht darin, die von der Plattfor
 -   [Windows Identity Foundation-Laufzeit (.Net 3.5/4.0)](http://www.microsoft.com/download/details.aspx?id=17331) auf MSDN (in englischer Sprache).
 -   [Beispiele für Windows Identity Foundation 3.5/4.0 und Vorlagen für Visual Studio 2008/2010](http://www.microsoft.com/download/details.aspx?displaylang=en&id=4451) auf MSDN (in englischer Sprache).
 
-**Azure AD Access Control (vormals ACS genannt)**. Windows Azure AD Access Control ist ein Clouddienst, der den Sicherheitstokendienst (STS) bereitstellt und einen Verband mit verschiedenen Identitätsanbietern (IdPs), firmeneigenem Active Directory oder Internet-IdPs wie Windows Live ID/Microsoft-Konto, Facebook, Google, Yahoo! und OpenID 2.0 ermöglicht. In den folgenden Ressourcen finden Sie ausführliche Informationen zu Azure AD Access Control:
+**Azure AD Access Control (vormals ACS genannt)**. Microsoft Azure AD Access Control ist ein Clouddienst, der den Sicherheitstokendienst (STS) bereitstellt und einen Verband mit verschiedenen Identitätsanbietern (IdPs), firmeneigenem Active Directory oder Internet-IdPs wie Windows Live ID/Microsoft-Konto, Facebook, Google, Yahoo! und OpenID 2.0 ermöglicht. In den folgenden Ressourcen finden Sie ausführliche Informationen zu Azure AD Access Control:
 
 -   [Access Control Service 2.0](http://msdn.microsoft.com/library/gg429786.aspx) 
 -   [Szenarien und Lösungen mit ACS](http://msdn.microsoft.com/library/gg185920.aspx)
@@ -324,9 +324,9 @@ In-Memory-Cache (vormals Azure Cache genannt) stützt sich für die Authentifizi
 
 In den folgenden Ressourcen finden Sie Hinweise zum Lösen dieses Szenarios:
 
--   [Vorgehensweise: Programmgesteuertes Konfigurieren eines Cacheclients (freigegebene Windows Azure-Caches)](http://msdn.microsoft.com/library/windowsazure/gg618003.aspx)
--   [Vorgehensweise: Konfigurieren eines Cacheclients mithilfe der Anwendungskonfigurationsdatei (Windows Azure Shared Caching)](http://msdn.microsoft.com/library/windowsazure/gg278346.aspx)
--   [Windows Azure AppFabric-Beispiele](http://msdn.microsoft.com/library/ee706741.aspx) (im Abschnitt "Cachebeispiele")
+-   [Vorgehensweise: Programmgesteuertes Konfigurieren eines Cacheclients (freigegebene Microsoft Azure-Caches)](http://msdn.microsoft.com/library/windowsazure/gg618003.aspx)
+-   [Vorgehensweise: Konfigurieren eines Cacheclients mithilfe der Anwendungskonfigurationsdatei (Microsoft Azure Shared Caching)](http://msdn.microsoft.com/library/windowsazure/gg278346.aspx)
+-   [Microsoft Azure AppFabric-Beispiele](http://msdn.microsoft.com/library/ee706741.aspx) (im Abschnitt "Cachebeispiele")
 
 ##Azure Marketplace-Identität und Zugriffsszenarien
 

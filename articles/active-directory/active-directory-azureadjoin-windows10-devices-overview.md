@@ -19,7 +19,7 @@
 
 # Windows 10 für Unternehmen: Möglichkeiten der geschäftlichen Nutzung von Geräten
 
-Windows 10 bietet Ihnen die Möglichkeit, Azure Active Directory zu nutzen. Windows-10-Geräte können mit Azure AD verbunden sein, und Benutzer können sich mit Windows Azure AD-Konten anmelden oder ihre Azure-ID hinzufügen, um Zugriff auf Unternehmens-Apps und Ressourcen zu erhalten.
+Windows 10 bietet Ihnen die Möglichkeit, Azure Active Directory zu nutzen. Windows-10-Geräte können mit Azure AD verbunden sein, und Benutzer können sich mit Microsoft Azure AD-Konten anmelden oder ihre Azure-ID hinzufügen, um Zugriff auf Unternehmens-Apps und Ressourcen zu erhalten.
 
 ![](./media/active-directory-azureadjoin/windows10-overview.png)
 

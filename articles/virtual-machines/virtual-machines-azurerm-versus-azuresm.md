@@ -74,7 +74,7 @@ Sie können mit den Azure-Vorlagen beginnen, indem Sie die verschiedenen Tools z
 
 Das Azure-Portal bietet weiterhin die Möglichkeit, virtuelle Computer gleichzeitig mit dem klassischen Bereitstellungsmodell und mit dem Ressourcen-Manager-Bereitstellungsmodell bereitzustellen. Im Azure-Portal sind auch Bereitstellungen mit benutzerdefinierten Vorlagen möglich.
 
-### Windows Azure PowerShell
+### Microsoft Azure PowerShell
 
 Azure PowerShell wird zwei Bereitstellungsmodi bieten: den **AzureServiceManagement**-Modus und den **AzureResourceManager**-Modus. Der AzureResourceManager-Modus enthält jetzt auch die Cmdlets zum Verwalten von virtuellen Computern, virtuellen Netzwerken und Speicherkonten. Weitere Informationen dazu finden Sie [hier](../powershell-azure-resource-manager.md).
 

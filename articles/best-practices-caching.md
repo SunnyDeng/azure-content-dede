@@ -769,7 +769,7 @@ Eventuell sind für Sie auch folgende Muster interessant, wenn Sie in den Anwend
 - Seite [Transactions](http://redis.io/topics/transactions) (in englischer Sprache) auf der Redis-Website.
 - Seite [Redis Security](http://redis.io/topics/security) (in englischer Sprache) auf der Redis-Website.
 - Seite [Lap around Azure Redis Cache](http://azure.microsoft.com/blog/2014/06/04/lap-around-azure-redis-cache-preview/) (in englischer Sprache) im Azure-Blog.
-- Seite [Running Redis on a CentOS Linux VM in Windows Azure](http://blogs.msdn.com/b/tconte/archive/2012/06/08/running-redis-on-a-centos-linux-vm-in-windows-azure.aspx) (in englischer Sprache) auf der Microsoft-Website.
+- Seite [Running Redis on a CentOS Linux VM in Microsoft Azure](http://blogs.msdn.com/b/tconte/archive/2012/06/08/running-redis-on-a-centos-linux-vm-in-windows-azure.aspx) (in englischer Sprache) auf der Microsoft-Website.
 - Seite [ASP.NET-Sitzungsstatusbieter für den Azure Redis-Cache](http://msdn.microsoft.com/library/azure/dn690522.aspx) auf der Microsoft-Website.
 - Seite [ASP.NET-Ausgabecacheanbieter für den Azure Redis-Cache](http://msdn.microsoft.com/library/azure/dn798898.aspx) auf der Microsoft-Website.
 - Seite [Entwickeln für Azure Redis Cache](http://msdn.microsoft.com/library/azure/dn690520.aspx) auf der Azure-Website.

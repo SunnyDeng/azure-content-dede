@@ -166,8 +166,8 @@ Die Größe der Datenquelle wird wie folgt gemessen.
 
 	| Registrierungspfad | Registrierungsschlüssel | Wert |
 	| ------ | ------- | ------ |
-	| `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Azure Backup\Config` | ScratchLocation | <i>Neuer Speicherort des Cacheordners</i> |
-	| `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Azure Backup\Config\CloudBackupProvider` | ScratchLocation | <i>Neuer Speicherort des Cacheordners</i> |
+	| `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Azure Backup\Config` | ScratchLocation | <i>Neuer Speicherort des Cacheordners</i> |
+	| `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Azure Backup\Config\CloudBackupProvider` | ScratchLocation | <i>Neuer Speicherort des Cacheordners</i> |
 
 
 + Starten Sie die OBEngine durch Ausführen des nachfolgenden Befehls in einer Eingabeaufforderung mit erhöhten Rechten:

@@ -34,7 +34,7 @@ In der Galerie der virtuellen Computer von Azure sind verschiedene Images zu fin
 
 2.  Klicken Sie im klassischen Azure-Portal unten links auf der Webseite auf **+NEU**, und klicken Sie dann nacheinander auf **COMPUTE**, auf **VIRTUELLER COMPUTER** und dann auf **AUS KATALOG**.
 
-3.  Wählen Sie auf der Seite **Virtuellen Computer erstellen** ein Image eines virtuellen Computers aus, das SQL Server enthält und Ihren Datenanforderungen entspricht, und klicken Sie dann unten rechts auf den Pfeil für die nächste Seite. Die aktuellsten Informationen zu den unterstützen SQL Server-Images auf Azure finden Sie unter [Erste Schritte mit SQL Server auf Windows Azure-Virtuellen Computern](http://go.microsoft.com/fwlink/p/?LinkId=294720) in der Dokumentation [SQL Server auf Windows Azure Virtual Machines](http://go.microsoft.com/fwlink/p/?LinkId=294719).
+3.  Wählen Sie auf der Seite **Virtuellen Computer erstellen** ein Image eines virtuellen Computers aus, das SQL Server enthält und Ihren Datenanforderungen entspricht, und klicken Sie dann unten rechts auf den Pfeil für die nächste Seite. Die aktuellsten Informationen zu den unterstützen SQL Server-Images auf Azure finden Sie unter [Erste Schritte mit SQL Server auf Microsoft Azure-Virtuellen Computern](http://go.microsoft.com/fwlink/p/?LinkId=294720) in der Dokumentation [SQL Server auf Microsoft Azure Virtual Machines](http://go.microsoft.com/fwlink/p/?LinkId=294719).
 
 	![Auswählen des virtuellen SQL Server-Computer][1]
 

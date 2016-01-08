@@ -220,7 +220,7 @@ Es bestehen keine Unterschiede beim Warteschlangenspeicher im Emulator.
 - Die ausführbare Datei des Speicheremulators wurde in *AzureStorageEmulator.exe* umbenannt.
 
 ### Version 3.2
-- Der Speicheremulator unterstützt nun Version 2014-02-14 der Speicherdienste auf Blob-, Warteschlangen- und Dienstendpunkten. Beachten Sie, dass Endpunkte für den Dateidienst im Speicheremulator zurzeit nicht unterstützt werden. Ausführliche Informationen über die Version 2014-02-14 finden Sie unter [Versionsverwaltung für den Blob-Dienst, den Warteschlangendienst und den Tabellendienst in Windows Azure](https://msdn.microsoft.com/library/azure/dd894041.aspx).
+- Der Speicheremulator unterstützt nun Version 2014-02-14 der Speicherdienste auf Blob-, Warteschlangen- und Dienstendpunkten. Beachten Sie, dass Endpunkte für den Dateidienst im Speicheremulator zurzeit nicht unterstützt werden. Ausführliche Informationen über die Version 2014-02-14 finden Sie unter [Versionsverwaltung für den Blob-Dienst, den Warteschlangendienst und den Tabellendienst in Microsoft Azure](https://msdn.microsoft.com/library/azure/dd894041.aspx).
 
 ### Version 3.1
 - Lesezugriff auf den geografisch redundanten Speicher (RA-GRS) wird nun im Speicheremulator unterstützt. Die API-Vorgänge "Get Blob Service Stats", "Get Queue Service Stats" und "Get Table Service Stats" werden für das sekundäre Konto unterstützt. Sie geben immer den Wert des LastSyncTime-Antwortelements als aktuelle Uhrzeit der zugrunde liegenden SQL-Datenbank zurück. Für programmgesteuerten Zugriff auf den sekundären Speicherort mit dem Speicheremulator verwenden Sie die Speicherclientbibliothek für .NET, Version 3.2 oder höher. Ausführliche Informationen finden Sie in der Referenz zur Speicherclientbibliothek.
