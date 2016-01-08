@@ -38,7 +38,7 @@ Zu den in Azure unterstützten SQL Server-HADR-Technologien gehören:
 - [AlwaysOn-Verfügbarkeitsgruppen](https://technet.microsoft.com/library/hh510230.aspx)
 - [Datenbankspiegelung](https://technet.microsoft.com/library/ms189852.aspx)
 - [Protokollversand](https://technet.microsoft.com/library/ms187103.aspx)
-- [SQL Server-Sicherung und -Wiederherstellung mit dem Windows Azure-BLOB-Speicherdienst](https://msdn.microsoft.com/library/jj919148.aspx)
+- [SQL Server-Sicherung und -Wiederherstellung mit dem Microsoft Azure-BLOB-Speicherdienst](https://msdn.microsoft.com/library/jj919148.aspx)
 
 Es ist möglich, mehrere Technologie zu kombinieren, um eine SQL Server-Lösung zu implementieren, die sowohl Funktionen zur hohen Verfügbarkeit als auch zur Notfallwiederherstellung verfügt. Abhängig von der verwendeten Technologie erfordert eine Hybridbereitstellung einen VPN-Tunnel mit dem virtuellen Azure-Netzwerk. In den folgenden Abschnitte werden einige Beispiele für Bereitstellungsarchitekturen gezeigt.
 
@@ -150,6 +150,6 @@ Weitere Informationen zum Ausführen von SQL Server auf virtuellen Azure-Comput
 ### Weitere Ressourcen:
 
 - [Installieren einer neuen Active Directory-Gesamtstruktur in Azure](../active-directory/active-directory-new-forest-virtual-machine.md)
-- [Create WSFC Cluster for AlwaysOn Availability Groups in Windows Azure VM (in englischer Sprache)](http://gallery.technet.microsoft.com/scriptcenter/Create-WSFC-Cluster-for-7c207d3a)
+- [Create WSFC Cluster for AlwaysOn Availability Groups in Microsoft Azure VM (in englischer Sprache)](http://gallery.technet.microsoft.com/scriptcenter/Create-WSFC-Cluster-for-7c207d3a)
 
 <!---HONumber=AcomDC_1203_2015-->

@@ -108,7 +108,7 @@ Nachdem Sie Speichermetriken zum Überwachen Ihres Speicherkontos konfiguriert h
 - Konfigurieren von E-Mail-Benachrichtigungen bei Erreichen eines bestimmten Werts einer angegebenen Metrik.
 
 
-Wenn Sie die Metriken zur langfristigen Speicherung oder für eine lokale Analyse herunterladen möchten, müssen Sie ein Tool verwenden oder Code zum Lesen der Tabellen schreiben. Sie müssen die minütlichen Metriken für die Analyse herunterladen. Die Tabellen werden nicht angezeigt, wenn Sie alle Tabellen in Ihrem Speicherkonto auflisten. Sie können jedoch direkt anhand des Namens darauf zugreifen. Zahlreiche Drittanbietertools zum Durchsuchen des Speichers erkennen diese Tabellen und ermöglichen die direkte Anzeige (im Blogbeitrag [Windows Azure Storage Explorers](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx) finden Sie eine Liste der verfügbaren Tools).
+Wenn Sie die Metriken zur langfristigen Speicherung oder für eine lokale Analyse herunterladen möchten, müssen Sie ein Tool verwenden oder Code zum Lesen der Tabellen schreiben. Sie müssen die minütlichen Metriken für die Analyse herunterladen. Die Tabellen werden nicht angezeigt, wenn Sie alle Tabellen in Ihrem Speicherkonto auflisten. Sie können jedoch direkt anhand des Namens darauf zugreifen. Zahlreiche Drittanbietertools zum Durchsuchen des Speichers erkennen diese Tabellen und ermöglichen die direkte Anzeige (im Blogbeitrag [Microsoft Azure Storage Explorers](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx) finden Sie eine Liste der verfügbaren Tools).
 
 ### Stundenmetriken
 - $MetricsHourPrimaryTransactionsBlob

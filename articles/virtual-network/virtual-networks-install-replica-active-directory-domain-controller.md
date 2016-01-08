@@ -24,7 +24,7 @@ In diesem Thema wird gezeigt, wie zusätzliche Domänencontroller (die auch als 
 Folgende Themen könnten für Sie ebenfalls von Interesse sein:
 
 -  Sie können optional eine neue Active Directory-Gesamtstruktur in einem virtuellen Azure-Netzwerk installieren. Diese Schritte finden Sie unter [Installieren einer neuen Active Directory-Gesamtstruktur in einem virtuellen Azure-Netzwerk](../active-directory-new-forest-virtual-machine.md).
--  Weitere Anleitungen zu den Konzepten für die Installation von Active Directory-Domänendiensten (AD DS) auf einem virtuellen Azure-Netzwerk finden Sie unter [Richtlinien für die Bereitstellung von Windows Server Active Directory auf virtuellen Computern in Windows Azure](https://msdn.microsoft.com/library/azure/jj156090.aspx).
+-  Weitere Anleitungen zu den Konzepten für die Installation von Active Directory-Domänendiensten (AD DS) auf einem virtuellen Azure-Netzwerk finden Sie unter [Richtlinien für die Bereitstellung von Windows Server Active Directory auf virtuellen Computern in Microsoft Azure](https://msdn.microsoft.com/library/azure/jj156090.aspx).
 
 
 ## Szenario (Diagramm)

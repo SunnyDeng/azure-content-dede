@@ -35,7 +35,7 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
 
 - Ein Azure-Speicherkonto
 - Visual Studio 2013 oder höher
-- Windows Azure PowerShell 
+- Microsoft Azure PowerShell 
 
 
 ## Übersicht über die clientseitige Verschlüsselung

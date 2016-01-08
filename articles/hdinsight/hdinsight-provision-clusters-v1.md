@@ -234,7 +234,7 @@ Weitere Informationen zu Features, Vorteilen und Funktionen von virtuellen Netzw
 ## Bereitstellungstools
 
 - Das klassische Azure-Portal
-- Windows Azure PowerShell
+- Microsoft Azure PowerShell
 - .NET SDK
 - Befehlszeilenschnittstelle (CLI)
 
@@ -438,7 +438,7 @@ Bei der Bereitstellung eines Clusters können Sie andere Konfigurationsoptionen 
 
 ### Verwenden der Azure-CLI
 
-> [AZURE.NOTE]Zum Zeitpunkt der Erstellung dieses Dokuments am 29.8.2014 war der aktuelle Stand, dass die Azure-Befehlszeilenschnittstelle nicht verwendet werden kann, um Windows Azure einen Cluster zuzuordnen.
+> [AZURE.NOTE]Zum Zeitpunkt der Erstellung dieses Dokuments am 29.8.2014 war der aktuelle Stand, dass die Azure-Befehlszeilenschnittstelle nicht verwendet werden kann, um Microsoft Azure einen Cluster zuzuordnen.
 
 Eine weitere Möglichkeit zur Bereitstellung von HDInsight-Clustern ist die Azure-Befehlszeilenschnittstelle (Azure-CLI). Die Azure-Befehlszeilenschnittstelle ist in Node.js implementiert. Das Tool kann auf allen Plattformen verwendet werden, die Node.js unterstützen, einschließlich Windows, Mac und Linux. Sie können die Befehlszeilenschnittstelle an den folgenden Speicherorten installieren:
 

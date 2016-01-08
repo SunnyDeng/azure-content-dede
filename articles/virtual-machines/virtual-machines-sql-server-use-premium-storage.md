@@ -47,7 +47,7 @@ Es gibt einige Voraussetzungen für die Verwendung von Premium-Speicher.
 
 ### Größe des Computers
 
-Für die Verwendung von Premium-Speicher müssen Sie virtuelle Computer der DS-Serie verwenden. Wenn Sie bisher keine Computer der DS-Serie im Clouddienst verwendet haben, müssen Sie den vorhandenen virtuellen Computer löschen, die angefügten Datenträger beibehalten und dann einen neuen Clouddienst vor der erneuten Erstellung des virtuellen Computers mit DS*-Rollengröße erstellen. Weitere Informationen zu den Größen von virtuellen Computern finden Sie unter [Größen virtueller Computer und Clouddienste für Windows Azure](virtual-machines-size-specs.md).
+Für die Verwendung von Premium-Speicher müssen Sie virtuelle Computer der DS-Serie verwenden. Wenn Sie bisher keine Computer der DS-Serie im Clouddienst verwendet haben, müssen Sie den vorhandenen virtuellen Computer löschen, die angefügten Datenträger beibehalten und dann einen neuen Clouddienst vor der erneuten Erstellung des virtuellen Computers mit DS*-Rollengröße erstellen. Weitere Informationen zu den Größen von virtuellen Computern finden Sie unter [Größen virtueller Computer und Clouddienste für Microsoft Azure](virtual-machines-size-specs.md).
 
 ### Cloud Services
 

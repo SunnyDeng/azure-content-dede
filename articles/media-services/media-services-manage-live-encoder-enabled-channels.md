@@ -78,7 +78,7 @@ Im Folgenden werden grundlegende Schritte zum Erstellen allgemeiner Livestreamin
 
 >[AZURE.NOTE]Die maximal empfohlene Dauer eines Liveereignisses beträgt derzeit 8 Stunden. Wenden Sie sich an „AMSLiveD@microsoft.com“, wenn Sie einen Kanal für längere Zeit laufen lassen müssen. Beachten Sie, dass für das Live Encoding Gebühren berechnet werden und dass diese Gebühren stundenweise anfallen, wenn Sie einen Live Encoding-Kanal im Zustand „Wird ausgeführt“ belassen. Es wird empfohlen, die Ausführung der Kanäle sofort zu beenden, wenn das Livestreaming-Ereignis abgeschlossen ist, um das Anfallen zusätzlicher Stundengebühren zu vermeiden.
 
-1. Schließen Sie eine Videokamera an einen Computer an. Starten und konfigurieren Sie einen lokalen Liveencoder, von dem ein **Single**-Bitrate-Datenstrom in einem der folgenden Protokolle ausgegeben wird: RTMP, Smooth Streaming oder RTP (MPEG-TS). Weitere Informationen finden Sie unter [Windows Azure Media Services RTMP-Support und Liveencoder](http://go.microsoft.com/fwlink/?LinkId=532824).
+1. Schließen Sie eine Videokamera an einen Computer an. Starten und konfigurieren Sie einen lokalen Liveencoder, von dem ein **Single**-Bitrate-Datenstrom in einem der folgenden Protokolle ausgegeben wird: RTMP, Smooth Streaming oder RTP (MPEG-TS). Weitere Informationen finden Sie unter [Microsoft Azure Media Services RTMP-Support und Liveencoder](http://go.microsoft.com/fwlink/?LinkId=532824).
 	
 	Dieser Schritt kann auch nach der Erstellung des Kanals ausgeführt werden.
 
@@ -120,7 +120,7 @@ Wenn der **Encodertyp** die Einstellung **Standard** aufweist, gibt es folgende 
 - Single-Bitrate **RTMP**
 - Single-Bitrate **Fragmentiertes MP4** (Smooth Streaming)
 
-Weitere Informationen finden Sie unter [Windows Azure Media Services RTMP-Support und Liveencoder](http://go.microsoft.com/fwlink/?LinkId=532824).
+Weitere Informationen finden Sie unter [Microsoft Azure Media Services RTMP-Support und Liveencoder](http://go.microsoft.com/fwlink/?LinkId=532824).
 
 ####RTP (MPEG-TS) – MPEG-2-Transportdatenstrom über RTP.  
 

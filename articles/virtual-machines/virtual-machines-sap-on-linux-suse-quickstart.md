@@ -91,7 +91,7 @@ Mit der Installation von "waagent" sollten sich ebenfalls potenzielle Probleme v
 
 ## SAP-Lizenz und Hardwareschlüssel
 
-Für die offizielle SAP-Windows Azure-Zertifizierung wurde ein neuer Mechanismus eingeführt, um den SAP-Hardwareschlüssel zu berechnen, der für die SAP-Lizenz verwendet wird. Der SAP-Kernel musste angepasst werden, um diesen Mechanismus verwenden zu können. Die aktuellen SAP-Kernelversionen für Linux enthalten diese Codeänderung nicht. Daher kann es in bestimmten Situationen vorkommen (z. B. bei einer Änderung der Größe der Azure-VM), dass sich der SAP-Hardwareschlüssel ändert und die SAP-Lizenz ihre Gültigkeit verliert.
+Für die offizielle SAP-Microsoft Azure-Zertifizierung wurde ein neuer Mechanismus eingeführt, um den SAP-Hardwareschlüssel zu berechnen, der für die SAP-Lizenz verwendet wird. Der SAP-Kernel musste angepasst werden, um diesen Mechanismus verwenden zu können. Die aktuellen SAP-Kernelversionen für Linux enthalten diese Codeänderung nicht. Daher kann es in bestimmten Situationen vorkommen (z. B. bei einer Änderung der Größe der Azure-VM), dass sich der SAP-Hardwareschlüssel ändert und die SAP-Lizenz ihre Gültigkeit verliert.
 
 ## NFS-Freigabe in verteilten SAP-Installationen
 

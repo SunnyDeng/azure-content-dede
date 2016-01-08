@@ -90,7 +90,7 @@ Damit Sie die in diesem Artikel aufgeführten Schritte ausführen können, benö
 
 Sobald der Status des Auftrags zu **SUCCEEDED** wechselt, können Sie die Ergebnisse des Auftrags aus dem Azure-Blobspeicher abrufen. Der mit der Abfrage übergebene Parameter `statusdir` enthält den Speicherort der Ausgabedatei. In diesem Fall ****wasb:///example/pigcurl**. Diese Adresse speichert die Ausgabe des Auftrags im Verzeichnis **example/pigcurl** des Standardspeichercontainers, der von Ihrem HDInsight-Cluster verwendet wird.
 
-Sie können diese Dateien mithilfe von [CLI Mac, Linux und Windows Azure](../xplat-cli-install.md) auflisten und herunterladen. Wenn Sie z. B. Dateien im Verzeichnis **example/pigcurl** auflisten möchten, verwenden Sie den folgenden Befehl:
+Sie können diese Dateien mithilfe von [CLI Mac, Linux und Microsoft Azure](../xplat-cli-install.md) auflisten und herunterladen. Wenn Sie z. B. Dateien im Verzeichnis **example/pigcurl** auflisten möchten, verwenden Sie den folgenden Befehl:
 
 	azure storage blob list <container-name> example/pigcurl
 

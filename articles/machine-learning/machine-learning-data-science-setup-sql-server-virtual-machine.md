@@ -30,11 +30,11 @@ In der Galerie der virtuellen Computer von Azure sind verschiedene Images zu fin
 
 ##<a name="Provision"></a>Verbinden mit dem klassischen Azure-Portal und Bereitstellen eines virtuellen Computers mit SQL Server
 
-1.  Melden Sie sich mit Ihrem Konto beim [klassischen Azure-Portal](http://manage.windowsazure.com/) an. Wenn Sie kein Azure-Konto haben, sollten Sie die Seite [Kostenlose einmonatige Testversion](http://www.windowsazure.com/pricing/free-trial/) besuchen.
+1.  Melden Sie sich mit Ihrem Konto beim [klassischen Azure-Portal](http://manage.windowsazure.com/) an. Wenn Sie kein Azure-Konto haben, sollten Sie die Seite [Kostenlose einmonatige Testversion](http://www.microsoftazure.com/pricing/free-trial/) besuchen.
 
 2.  Klicken Sie im klassischen Azure-Portal unten links auf der Webseite auf **+NEU**, und klicken Sie dann nacheinander auf **COMPUTE**, auf **VIRTUELLER COMPUTER** und dann auf **AUS KATALOG**.
 
-3.  Wählen Sie auf der Seite **Virtuellen Computer erstellen** ein Image eines virtuellen Computers aus, das SQL Server enthält und Ihren Datenanforderungen entspricht, und klicken Sie dann unten rechts auf den Pfeil für die nächste Seite. Die aktuellsten Informationen zu den unterstützen SQL Server-Images auf Azure finden Sie unter [Erste Schritte mit SQL Server auf Windows Azure-Virtuellen Computern](http://go.microsoft.com/fwlink/p/?LinkId=294720) in der Dokumentation [SQL Server auf Windows Azure Virtual Machines](http://go.microsoft.com/fwlink/p/?LinkId=294719).
+3.  Wählen Sie auf der Seite **Virtuellen Computer erstellen** ein Image eines virtuellen Computers aus, das SQL Server enthält und Ihren Datenanforderungen entspricht, und klicken Sie dann unten rechts auf den Pfeil für die nächste Seite. Die aktuellsten Informationen zu den unterstützen SQL Server-Images auf Azure finden Sie unter [Erste Schritte mit SQL Server auf Microsoft Azure-Virtuellen Computern](http://go.microsoft.com/fwlink/p/?LinkId=294720) in der Dokumentation [SQL Server auf Microsoft Azure Virtual Machines](http://go.microsoft.com/fwlink/p/?LinkId=294719).
 
 	![Auswählen des virtuellen SQL Server-Computer][1]
 

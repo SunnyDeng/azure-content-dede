@@ -121,9 +121,9 @@ Falls die detaillierte Fehlermeldung nicht genügend Informationen liefert und s
 
 Remotedebuggen funktioniert nicht in den Express-Editionen von Visual Studio.
 
-Dieser Abschnitt zeigt, wie Sie das in [Erste Schritte mit Windows Azure und ASP.NET][GetStarted] erstellte Projekt remote debuggen können.
+Dieser Abschnitt zeigt, wie Sie das in [Erste Schritte mit Microsoft Azure und ASP.NET][GetStarted] erstellte Projekt remote debuggen können.
 
-1. Öffnen Sie das Webprojekt, das Sie in [Erste Schritte mit Windows Azure und ASP.NET][GetStarted] erstellt haben.
+1. Öffnen Sie das Webprojekt, das Sie in [Erste Schritte mit Microsoft Azure und ASP.NET][GetStarted] erstellt haben.
 
 1. Öffnen Sie die Datei *Controllers\\HomeController.cs*.
 
@@ -140,7 +140,7 @@ Dieser Abschnitt zeigt, wie Sie das in [Erste Schritte mit Windows Azure und ASP
 
 1. Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Projekt und anschließend auf **Veröffentlichen**.
 
-2. Wählen Sie in der Dropdownliste **Profil** dasselbe Profil aus, das Sie in [Erste Schritte mit Windows Azure und ASP.NET][GetStarted] verwendet haben.
+2. Wählen Sie in der Dropdownliste **Profil** dasselbe Profil aus, das Sie in [Erste Schritte mit Microsoft Azure und ASP.NET][GetStarted] verwendet haben.
 
 3. Wechseln Sie zur Registerkarte **Einstellungen**, ändern Sie **Konfiguration** auf **Debug** und klicken Sie anschließend auf **Veröffentlichen**.
 
