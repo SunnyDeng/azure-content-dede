@@ -339,9 +339,9 @@ Nachdem Sie nun mit der Verwendung von Message Analyzer zum Analysieren Ihrer Da
 | Zum Untersuchen von... | Verwenden Sie folgenden Filterausdruck... | Ausdruck gilt für Protokoll (Client, Server, Netzwerk, Alle) |
 |------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------|
 | Unerwartete Verzögerungen bei der Nachrichtenübermittlung in einer Warteschlange | AzureStorageClientDotNetV4.Description contains "Retrying failed operation." | Client |
-| HTTP-Zunahme von PercentThrottlingError | HTTP.Response.StatusCode == 500 | HTTP.Response.StatusCode == 503 | Netzwerk |
+| HTTP-Zunahme von PercentThrottlingError | HTTP.Response.StatusCode == 500 &#124;&#124; HTTP.Response.StatusCode == 503 | Netzwerk |
 | Zunahme von PercentTimeoutError | HTTP.Response.StatusCode == 500 | Netzwerk |
-| Zunahme von PercentTimeoutError (alle) |    **StatusCode == 500 | All |
+| Zunahme von PercentTimeoutError (alle) |    *StatusCode == 500 | All |
 | Zunahme von PercentNetworkError | AzureStorageClientDotNetV4.EventLogEntry.Level < 2 | Client |
 | HTTP 403 (Verboten)-Meldungen | HTTP.Response.StatusCode == 403 | Network |
 | HTTP 404 (Nicht gefunden)-Meldungen | HTTP.Response.StatusCode == 404 | Network |
