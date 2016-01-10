@@ -682,7 +682,7 @@ In der Abbildung unten sind die Nachrichten dargestellt, die von Azure Active Di
 * Für Anforderungen zum Abrufen von Gruppen wird vorgegeben, dass das members-Attribut aus allen Ressourcen ausgeschlossen wird, die als Antwort auf die Anforderung bereitgestellt werden.  
 * Bei Anforderungen für die Ermittlung, ob ein Referenzattribut einen bestimmten Wert hat, handelt es sich um Anforderungen zum members-Attribut.  
 
-![][5] * Abbildung: Sequenz der Durchführung und Aufhebung einer Gruppenbereitstellung*
+![][5] *Abbildung: Sequenz der Durchführung und Aufhebung einer Gruppenbereitstellung*
 
 	
 <!--Image references-->
@@ -692,4 +692,4 @@ In der Abbildung unten sind die Nachrichten dargestellt, die von Azure Active Di
 [4]: ./media/active-directory-scim-provisioning/scim-figure-4.PNG
 [5]: ./media/active-directory-scim-provisioning/scim-figure-5.PNG
 
-<!---HONumber=AcomDC_1203_2015-->
+<!----HONumber=AcomDC_1203_2015-->

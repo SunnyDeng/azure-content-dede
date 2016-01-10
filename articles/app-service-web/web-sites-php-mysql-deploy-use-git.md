@@ -213,7 +213,7 @@ Befolgen Sie die unten stehenden Schritte, um die Anwendung lokal zu erstellen u
 
 		php -S localhost:8000
 
-Nun können Sie zu ****http://localhost:8000/** navigieren, um die Anwendung zu testen.
+Nun können Sie zu **http://localhost:8000/** navigieren, um die Anwendung zu testen.
 
 
 ##Veröffentlichen der App
@@ -302,4 +302,4 @@ Weitere Informationen finden Sie im [PHP Developer Center](/develop/php/).
 [sql-database-editions]: http://msdn.microsoft.com/library/windowsazure/ee621788.aspx
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!----HONumber=AcomDC_1203_2015-->
