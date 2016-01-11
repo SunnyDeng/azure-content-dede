@@ -58,7 +58,7 @@ Eine ausführliche Anleitung zu Anforderungen und Konfigurationen finden Sie unt
 Überprüfen Sie die folgenden Ressourcen für weitere Informationen zu Office 365-Vorgaben.
 
 - [Planen des Netzwerks und Leistungsoptimierung für Office 365](http://aka.ms/tune)
-- [Verwaltung des Netzwerkdatenverkehrs für Office 365](https://msft.spoppe.com/teams/cpub/teams/IW_Admin/modsquad/_layouts/15/WopiFrame.aspx?sourcedoc=%7b23f09224-0668-4476-8627-aaff30931439%7d&action=edit&source=https%3A%2F%2Fmsft%2Espoppe%2Ecom%2Fteams%2Fcpub%2Fteams%2FIW%5FAdmin%2Fmodsquad%2FSitePages%2FHome%2Easpx)
+- [Verwaltung des Netzwerkdatenverkehrs für Office 365](https://support.office.com/article/Office-365-network-traffic-management-e1da26c6-2d39-4379-af6f-4da213218408)
 - Ausführliche Anleitungen zu QoS-Anforderungen und -Konfigurationen finden Sie im Artikel [Quality of Service (QoS)-Anforderungen für ExpressRoute](expressroute-qos.md). Fragen Sie bei Ihrem Konnektivitätsanbieter nach, ob mehrere Dienstklassen für Ihr VPN angeboten werden. 
 
 ## Nächste Schritte
@@ -71,4 +71,4 @@ Eine ausführliche Anleitung zu Anforderungen und Konfigurationen finden Sie unt
 	- [Konfigurieren des Routings](expressroute-howto-routing-classic.md)
 	- [Verknüpfen eines VNet mit einer ExpressRoute-Verbindung](expressroute-howto-linkvnet-classic.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1223_2015-->

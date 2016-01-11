@@ -11,7 +11,7 @@
 <tags
 	ms.service="sql-database"
 	ms.devlang="NA"
-	ms.date="12/01/2015"
+	ms.date="12/18/2015"
 	ms.author="sstein"
 	ms.workload="data-management"
 	ms.topic="get-started-article"
@@ -27,7 +27,7 @@
 
 Dieser Artikel beschreibt, wie Sie im Azure-Portal einen skalierbaren [Pool für elastische Datenbanken](sql-database-elastic-pool.md) erstellen. Eine SQL-Datenbankkonfiguration mit Pools für elastische Datenbanken vereinfacht die Verwaltung und Ressourcenfreigabe zwischen mehreren Datenbanken.
 
-> [AZURE.NOTE]Pools für elastische Datenbanken sind derzeit als Vorschauversion ausschließlich für Server mit SQL-Datenbank V12 verfügbar. Wenn Sie über einen SQL-Datenbank V11-Server verfügen, können Sie in einem Schritt [mithilfe von PowerShell auf V12 aktualisieren und einen Pool erstellen](sql-database-upgrade-server.md).
+> [AZURE.NOTE]Pools für elastische Datenbanken sind derzeit als Vorschauversion ausschließlich für Server mit SQL-Datenbank V12 verfügbar. Wenn Sie über einen SQL-Datenbank V11-Server verfügen, können Sie in einem Schritt [mithilfe von PowerShell auf V12 aktualisieren und einen Pool erstellen](sql-database-upgrade-server-powershell.md).
 
 
 Bevor Sie beginnen, benötigen Sie eine Datenbank auf einem SQL-Datenbank V12-Server. Wenn Sie keine besitzen, finden Sie Informationen zum Erstellen einer Datenbank in weniger als fünf Minuten unter [Erstellen Sie Ihre erste Azure SQL-Datenbank](sql-database-get-started.md). Oder wenn Sie bereits über einen SQL-Datenbank V11-Server verfügen, können Sie [im Portal auf V12 aktualisieren](sql-database-v12-upgrade.md), dann zurückkehren und diese Anleitung zum Erstellen eines Pools befolgen.
@@ -89,7 +89,9 @@ Der Dienst bewertet den Ressourcenbedarf und die Kosteneffizienz beim Verschiebe
 
 ## Schritt 3: Hinzufügen von Datenbanken zum Pool
 
-Sie können zu jedem Zeitpunkt bestimmte Datenbanken auswählen, die in den Pool aufgenommen werden sollen. Wenn Sie einen neuen Pool erstellen, empfiehlt Azure die Datenbanken, die von einem Pool profitieren, und kennzeichnet diese für die Aufnahme. Sie können alle auf dem Server verfügbaren Datenbanken hinzufügen, oder Sie aktivieren oder deaktivieren Datenbanken aus der ursprünglichen Liste nach Bedarf.
+Sie können zu jedem Zeitpunkt bestimmte Datenbanken auswählen, die in den Pool aufgenommen werden sollen. (Informationen zum Erstellen einer neuen Datenbank in einem Pool finden Sie weiter unten im Abschnitt [Hinzufügen und Entfernen von Datenbanken](sql-database-elastic-pool-portal.md#add-and-remove-databases-from-the-pool).)
+
+Wenn Sie einen neuen Pool erstellen, empfiehlt Azure die Datenbanken, die von einem Pool profitieren, und kennzeichnet diese für die Aufnahme. Sie können alle auf dem Server verfügbaren Datenbanken hinzufügen, oder Sie aktivieren oder deaktivieren Datenbanken aus der ursprünglichen Liste nach Bedarf.
 
    ![Hinzufügen von Datenbanken][5]
 
@@ -99,7 +101,7 @@ Bei Auswahl einer Datenbank für einen Pool müssen die folgenden Bedingungen er
 - Die aktuellen Features, die von der Datenbank verwendet werden, müssen im Pool verfügbar sein.
 
 
-## Schritt 4: Anpassen der Leistungsmerkmale
+## Schritt 4: Festlegen von Leistungsmerkmalen des Pools
 
 Sie konfigurieren die Leistung des Pools, indem Sie die Leistungsparameter für den Pool und die elastischen Datenbanken im Pool einrichten. Denken Sie daran, dass die **elastischen Datenbankeinstellungen** für alle Datenbanken im Pool gelten.
 
@@ -136,11 +138,25 @@ Navigieren Sie zu einem SQL-Datenbank V12-Server. Möglicherweise wird dann eine
     ![Empfohlener Pool][11]
 
 
-## Hinzufügen zum und Entfernen von Datenbanken aus dem Pool
+## Hinzufügen von Datenbanken zum und Entfernen von Datenbanken aus dem Pool
 
-Nachdem der Pool erstellt wurde, können Sie Datenbank zum Pool hinzufügen oder daraus entfernen, indem Sie Datenbanken auf der Seite **Datenbanken hinzufügen** aktivieren oder deaktivieren.
+### Hinzufügen einer vorhandenen Datenbank zum Pool
+
+Nachdem der Pool erstellt wurde, können Sie vorhandene Datenbanken zum Pool hinzufügen oder daraus entfernen, indem Sie Datenbanken auf der Seite **Elastische Datenbanken** hinzufügen oder entfernen (wechseln Sie in den Pool, und klicken Sie unter **Zusammenfassung** auf **Elastische Datenbanken**).
 
 Nach dem Erstellen eines Pools können Sie Transact-SQL auch zum Erstellen von neuen elastischen Datenbanken im Pool verwenden und Datenbanken in und aus Pools verschieben. Weitere Informationen finden Sie unter [Referenz für Pools für elastische Datenbanken – Transact-SQL](sql-database-elastic-pool-reference.md#Transact-SQL).*
+
+
+### Hinzufügen einer Datenbank zum Pool
+
+Erstellen Sie eine neue Datenbank in einem Pool, indem Sie zum gewünschten Pool navigieren und auf **Datenbank erstellen** klicken.
+
+Die SQL-Datenbank ist bereits für den richtigen Server und Pool konfiguriert. Geben Sie einen Namen ein, und wählen Sie die Datenbankoptionen aus. Klicken Sie dann auf **OK**, um die neue Datenbank zu erstellen:
+
+
+   ![Erstellen einer elastischen Datenbank][13]
+
+
 
 
 ## Überwachen und Verwalten elastischer Datenbankpools
@@ -201,5 +217,6 @@ Nach dem Erstellen eines Pools für elastische Datenbanken können Sie die Daten
 [10]: ./media/sql-database-elastic-pool-portal/star.png
 [11]: ./media/sql-database-elastic-pool-portal/recommended-pool.png
 [12]: ./media/sql-database-elastic-pool-portal/pools-message.png
+[13]: ./media/sql-database-elastic-pool-portal/create-database.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1223_2015-->

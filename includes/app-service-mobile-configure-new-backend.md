@@ -7,8 +7,8 @@
 	 
 		>[AZURE.IMPORTANT]Durch Wechseln der Sprache für eine vorhandene App zu Node.js werden alle Inhalte der Website überschrieben.
 
-	+ **.NET-Back-End (C#):** Klicken Sie auf **Herunterladen**, entpacken Sie die komprimierten Projektdateien auf Ihrem lokalen Computer, öffnen Sie die Projektmappe in Visual Studio, und erstellen Sie das Projekt, um die NuGet-Pakete wiederherzustellen. Anschließend stellen Sie das Projekt in Azure bereit. Informationen zum Bereitstellen eines .NET-Back-End-Servers in Azure finden Sie im Abschnitt *Bereitstellen des Projekts in der Web-App* des Artikels [Erstellen von ASP.NET-Web-Apps in Azure App Service](../articles/app-service-web/web-sites-dotnet-get-started.md#deploy-the-project-to-the-web-app). In App Service entspricht ein Back-End für mobile Apps einer Web-App.
+	+ **.NET-Back-End (C#):** Klicken Sie auf **Herunterladen**, entpacken Sie die komprimierten Projektdateien auf Ihrem lokalen Computer, öffnen Sie die Projektmappe in Visual Studio, und erstellen Sie das Projekt, um die NuGet-Pakete wiederherzustellen. Anschließend stellen Sie das Projekt in Azure bereit. Informationen dazu, wie Sie ein .NET-Back-End-Server-Projekt in Azure bereitstellen, finden Sie unter [Vorgehensweise: Veröffentlichen des Serverprojekts](app-service-mobile-dotnet-backend-how-to-use-server-sdk.md#publish-server-project) im .NET-Back-End-SDK-Thema.
 	 
 Das Back-End für mobile Apps kann jetzt für Ihre Clientanwendung eingesetzt werden.
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1223_2015-->

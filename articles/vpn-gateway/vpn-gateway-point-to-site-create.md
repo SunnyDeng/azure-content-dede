@@ -1,6 +1,6 @@
 <properties
    pageTitle="Konfigurieren einer Punkt-zu-Standort-VPN-Verbindung mit Azure Virtual Network | Microsoft Azure"
-   description="Herstellen einer sicheren Verbindung mit Ihrem virtuellen Azure-Netzwerk durch Erstellen einer Punkt-zu-Standort-VPN-Verbindung Anweisungen für VNets, die mit dem Dienstverwaltungs-Bereitstellungsmodell (klassisch) erstellt wurden."
+   description="Stellen Sie eine sichere Verbindung mit Ihrem Azure Virtual Network durch Erstellen einer Punkt-zu-Standort-VPN-Verbindung her. Anweisungen für VNets, die mit dem Dienstverwaltungs-Bereitstellungsmodell (klassisch) erstellt wurden."
    services="vpn-gateway"
    documentationCenter="na"
    authors="cherylmc"
@@ -14,21 +14,23 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/16/2015"
+   ms.date="12/16/2015"
    ms.author="cherylmc"/>
 
 # Konfigurieren einer Punkt-zu-Standort-VPN-Verbindung mit einem VNet
 
 
-Dieser Artikel gilt für Punkt-zu-Standort-Verbindungen für virtuelle Netzwerke, die mit dem klassischen Bereitstellungsmodell (Dienstverwaltung) erstellt werden.
+Dieser Artikel gilt für Punkt-zu-Standort-VPN-Gatewayverbindungen mit einem virtuellen Netzwerk, das mit dem klassischen Bereitstellungsmodell (Dienstverwaltung) erstellt wurde. Punkt-zu-Standort-Verbindungen mit einem virtuellen Netzwerk, das mit dem Azure-Ressourcen-Manager-Bereitstellungsmodell erstellt wurde, sind jetzt über REST-APIs und PowerShell verfügbar. Derzeit wird ein Artikel erstellt, der Sie schrittweise durch die Verwendung von PowerShell führt. Diese Seite wird mit dem entsprechenden Link aktualisiert, sobald der Artikel fertig ist. Dies ist zurzeit für Anfang Januar geplant.
 
-**Punkt-zu-Standort-Verbindungen mit einem virtuellen Netzwerk, das mit dem Azure-Ressourcen-Manager-Bereitstellungsmodell erstellt wurde, werden derzeit nicht unterstützt.** Diese Seite wird aktualisiert, wenn dieses Feature für das Ressourcen-Manager-Bereitstellungsmodell unterstützt wird.
+**Informationen zu Azure-Bereitstellungsmodellen**
 
-[AZURE.INCLUDE [vpn-gateway-sm-rm](../../includes/vpn-gateway-sm-rm-include.md)]
+[AZURE.INCLUDE [vpn-gateway-clasic-rm](../../includes/vpn-gateway-classic-rm-include.md)]
 
-Das folgende Verfahren führt Sie schrittweise durch den Erstellungsprozess einer sicheren Punkt-zu-Standort-Verbindung zu einem virtuellen Netzwerk. Auch wenn zum Konfigurieren einer Punkt-zu-Standort-Verbindung mehrere Schritte erforderlich sind, ist es eine hervorragende Möglichkeit, eine sichere Verbindung von Ihrem Computer mit dem virtuellen Netzwerk herzustellen, ohne ein VPN-Gerät kaufen und konfigurieren zu müssen.
+## Informationen zum Erstellen einer Punkt-zu-Standort-Verbindung
+ 
+Die folgenden Abschnitte führen Sie schrittweise durch den Erstellungsprozess einer sicheren Punkt-zu-Standort-Verbindung mit einem virtuellen Netzwerk. Auch wenn zum Konfigurieren einer Punkt-zu-Standort-Verbindung mehrere Schritte erforderlich sind, ist es eine hervorragende Möglichkeit, eine sichere Verbindung von Ihrem Computer mit dem virtuellen Netzwerk herzustellen, ohne ein VPN-Gerät kaufen und konfigurieren zu müssen.
 
-Das Konfigurieren einer Punkt-zu-Standort-Verbindung wird in drei Abschnitte untergliedert: Erstellen eines virtuellen Netzwerks und eines VPN-Gateways, Generieren und Hochladen der Zertifikate für die Authentifizierung sowie Konfigurieren des VPN-Clients, der für die Verbindung mit dem virtuellen Netzwerk verwendet wird. Da die Reihenfolge wichtig ist, in der Sie diese Komponenten konfigurieren, dürfen Sie keine Schritte überspringen oder vorgreifen.
+Die Konfiguration einer Punkt-zu-Standort-Verbindung ist in drei Abschnitte unterteilt. **Abschnitt 1** erläutert die Erstellung eines virtuellen Netzwerks und VPN-Gateways. **Abschnitt 2** bietet wichtige Informationen zum Erstellen der für die Authentifizierung erforderlichen Zertifikate. **Abschnitt 3** beschreibt die Schritte, die für den VPN-Client durchgeführt werden müssen, der zur Verbindung mit dem virtuellen Netzwerk verwendet wird. Da die Reihenfolge wichtig ist, in der Sie diese Komponenten konfigurieren, dürfen Sie keine Schritte überspringen oder vorgreifen.
 
 ## Abschnitt 1: Erstellen des virtuellen Netzwerks und eines VPN-Gateways
 
@@ -57,7 +59,7 @@ Schritt 2: Erstellen eines Gateways mit dynamischem Routing
  - **Adressraum**: Fügen Sie den internen IP-Adressbereich hinzu, den Sie für dieses virtuelle Netzwerk verwenden möchten, einschließlich Start-IP und Anzahl. Es ist wichtig, einen Bereich auszuwählen, der sich nicht mit den anderen Bereichen überschneidet, die für Ihr lokales Netzwerk verwendet werden. Sie müssen sich mit Ihrem Netzwerkadministrator abstimmen, der ggf. einen Bereich von IP-Adressen aus dem Adressraum Ihres lokalen Netzwerks reservieren muss, den Sie für Ihr virtuelles Netzwerk verwenden können.
  - **Subnetz hinzufügen**: Zusätzliche Subnetze sind nicht erforderlich, aber Sie können ein getrenntes Subnetz für virtuelle Computer erstellen, die über statische DIPs verfügen sollen. Vielleicht möchten Sie jedoch auch Ihre virtuellen Computer in einem Subnetz zusammenfassen, das von anderen Rolleninstanzen getrennt ist.
  - **Gatewaysubnetz hinzufügen**: Das Gatewaysubnetz ist für ein Punkt-zu-Standort-VPN erforderlich. Klicken Sie auf diese Option, um das Gatewaysubnetz hinzuzufügen. Das Gatewaysubnetz wird nur für das Gateway des virtuellen Netzwerks verwendet.
-1. Nachdem das virtuelle Netzwerk erstellt wurde, wird auf der Seite mit Netzwerken im klassischen Azure-Portal unter **Status** der Eintrag **Erstellt** angezeigt. Nachdem Ihr virtuelles Netzwerk erstellt wurde, können Sie das Gateway mit dynamischem Routing erstellen.
+1. Nachdem das virtuelle Netzwerk erstellt wurde, wird im klassischen Azure-Portal auf der Seite mit Netzwerken unter **Status** der Eintrag **Erstellt** angezeigt. Nachdem Ihr virtuelles Netzwerk erstellt wurde, können Sie das Gateway mit dynamischem Routing erstellen.
 
 ### Erstellen eines Gateways mit dynamischem Routing
 
@@ -156,7 +158,7 @@ Die folgenden Clientbetriebssysteme werden unterstützt:
 
 ### Installieren des VPN-Konfigurationspakets auf dem Client und Herstellen der Verbindung
 
-1. Kopieren Sie die Konfigurationsdatei lokal auf den Computer, den Sie mit dem virtuellen Netzwerk verbinden möchten, und doppelklicken Sie auf die EXE-Datei. Sobald das Paket installiert worden ist, können Sie die VPN-Verbindung starten. Beachten Sie, dass das Konfigurationspaket nicht von Microsoft signiert ist. Möglicherweise sollten Sie das Paket mithilfe des Signaturdiensts Ihres Unternehmens oder selbst mit [SignTool](http://go.microsoft.com/fwlink/p/?LinkId=699327) signieren. Sie können das Paket auch ohne Signatur verwenden. Wenn das Paket nicht signiert ist, wird jedoch bei der Installation des Pakets eine Warnung angezeigt.
+1. Kopieren Sie die Konfigurationsdatei lokal auf den Computer, den Sie mit dem virtuellen Netzwerk verbinden möchten, und doppelklicken Sie auf die EXE-Datei. Sobald das Paket installiert worden ist, können Sie die VPN-Verbindung starten. Beachten Sie, dass das Konfigurationspaket nicht von Microsoft signiert ist. Sie können das Paket mithilfe des Signaturdiensts Ihres Unternehmens oder mit [SignTool](http://go.microsoft.com/fwlink/p/?LinkId=699327) selbst signieren. Sie können das Paket auch ohne Signatur verwenden. Wenn das Paket nicht signiert ist, wird jedoch bei der Installation des Pakets eine Warnung angezeigt.
 2. Navigieren Sie auf dem Clientcomputer zu "VPN-Verbindungen", und suchen Sie die VPN-Verbindung, die Sie gerade erstellt haben. Sie hat den gleichen Namen wie das virtuelle Netzwerk. Klicken Sie auf **Verbinden**.
 3. Eine entsprechende Meldung wird angezeigt, die verwendet wird, um ein selbstsigniertes Zertifikat für den Gateway-Endpunkt zu erstellen. Klicken Sie auf **Weiter**, um Administratorrechte zu nutzen.
 4. Klicken Sie auf der Statusseite **Verbindung** auf **Verbinden**, um die Verbindung herzustellen.
@@ -185,12 +187,8 @@ Beispiel:
 
 ## Nächste Schritte
 
-Weitere Informationen zu den standortübergreifenden Verbindungen für virtuelle Netzwerke finden Sie unter [Informationen zu sicheren, standortübergreifenden virtuellen Netzwerkverbindungen](vpn-gateway-cross-premises-options.md).
-
-Wenn Sie eine Standort-zu-Standort-VPN-Verbindung konfigurieren möchten, lesen Sie [Konfigurieren eines virtuellen Netzwerks mit einer Standort-zu-Standort-VPN-Gatewayverbindung](vpn-gateway-site-to-site-create.md).
-
 Sie können dem virtuellen Netzwerk virtuelle Computer hinzufügen. Weitere Informationen finden Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers](../virtual-machines/virtual-machines-create-custom.md).
 
 Weitere Informationen über virtuelle Netzwerke erhalten Sie unter [Dokumentation zu virtuellen Netzwerken](https://azure.microsoft.com/documentation/services/virtual-network/).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1223_2015-->

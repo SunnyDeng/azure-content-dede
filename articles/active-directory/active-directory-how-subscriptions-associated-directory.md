@@ -100,7 +100,7 @@ Angenommen, Sie haben sich zuerst für Office 365 und dann für Azure registrier
 
 ### Ich habe mit meinem Microsoft-Konto ein Abonnement für Azure
 
-Wenn Sie sich für Office 365 mit einem Geschäfts- oder Schulkonto registriert und dann für Azure mit einem Microsoft-Konto registriert haben, stehen Ihnen zwei Verzeichnisse zur Verfügung: eines für Arbeit oder Schule und ein Standardverzeichnis, das erstellt wurde, als Sie sich bei Azure registriert haben.
+Wenn Sie sich für Office 365 mit einem Geschäfts- oder Schulkonto registriert und dann für Azure mit einem Microsoft-Konto registriert haben, stehen Ihnen zwei Verzeichnisse zur Verfügung: eines für Arbeit oder Schule und ein Standardverzeichnis, das erstellt wurde, als Sie sich bei Azure registriert haben.
 
 Führen Sie diese Schritte aus, um beide Verzeichnisse im klassischen Azure-Portal zu verwalten.
 
@@ -124,4 +124,4 @@ Führen Sie diese Schritte aus, um beide Verzeichnisse im klassischen Azure-Port
 [2]: ./media/active-directory-how-subscriptions-associated-directory/WAAD_OrgAccountSubscription.png
 [3]: ./media/active-directory-how-subscriptions-associated-directory/WAAD_SignInDisambiguation.PNG
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1223_2015-->

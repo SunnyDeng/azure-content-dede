@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
-	ms.date="11/08/2015"
+	ms.date="12/17/2015"
 	ms.author="juliako"/>
 
 
@@ -22,28 +22,18 @@
 [AZURE.INCLUDE [media-services-selector-get-started](../../includes/media-services-selector-get-started.md)]
 
 
->[AZURE.NOTE]Sie benötigen ein Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://www.windowsazure.com/pricing/free-trial/?WT.mc_id=A8A8397B5" target="_blank">Kostenlose Azure-Testversion</a>.
+>[AZURE.NOTE]Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](/pricing/free-trial/?WT.mc_id=A261C142F).
+ 
+##Übersicht 
 
 Dieses Lernprogramm führt Sie durch die Schritte zum Implementieren einer Anwendung zur Video-on-Demand (VoD)-Inhaltsübermittlung mithilfe des Azure Media Services (AMS) SDK für .NET.
 
 
 Das Lernprogramm stellt den Media Services-Arbeitsfluss und die gängigsten Programmierobjekte und Aufgaben für die Media Services-Entwicklung vor. Nach Abschluss des Lernprogramms sind Sie in der Lage, eine einfache Mediendatei zu streamen oder progressiv herunterzuladen, die Sie hochgeladen, codiert und heruntergeladen haben.
 
+## Sie lernen Folgendes
 
-##Beispiel herunterladen
-
-Laden Sie ein Beispiel von [hier](http://azure.microsoft.com/documentation/samples/media-services-dotnet-on-demand-encoding-with-media-encoder-standard/) herunter, und führen Sie es aus.
-
-
-## Voraussetzungen
-Die folgenden Voraussetzungen sind zum Einstieg in die Entwicklung mit dem Media Services SDK für .NET erforderlich.
-
-- Betriebssysteme: Windows 8 oder höher, Windows 2008 R2, Windows 7.
-- .NET Framework 4.5 oder .NET Framework 4.0
-- Visual Studio 2010 SP1 (Professional, Premium, Ultimate oder Express) oder neuere Versionen.
-
-
-Die folgenden Aufgaben werden in diesem Schnellstart beschrieben.
+Dieses Tutorial beschreibt die Durchführung der folgenden Aufgaben:
 
 1.  Erstellen eines Media Services-Kontos (mithilfe des klassischen Azure-Portals)
 2.  Konfigurieren von Streamingendpunkten (mithilfe des Portals)
@@ -52,12 +42,27 @@ Die folgenden Aufgaben werden in diesem Schnellstart beschrieben.
 6.  Erstellen eines neuen Medienobjekts und Hochladen einer Videodatei
 7.  Codieren der Quelldatei in einen Satz von MP4-Dateien mit adaptiver Bitrate
 8.  Veröffentlichen des Medienobjekts und Abrufen von URLs für Streaming und progressiven Download
-9.  Wiedergeben Ihrer Inhalte
+9.  Testen der Funktionalität durch Wiedergabe von Inhalten.
 
+## Voraussetzungen
+
+Zum Abschließen dieses Lernprogramms müssen folgende Voraussetzungen erfüllt sein:
+
+- Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. 
+	
+	Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](/pricing/free-trial/?WT.mc_id=A261C142F). Sie erhalten ein Guthaben, mit dem Sie andere kostenpflichtige Azure-Dienste ausprobieren können. Selbst, nachdem Sie dieses Guthaben aufgebraucht haben, können Sie das Konto behalten und kostenlose Azure-Dienste und -Features nutzen, z. B. das Web-Apps-Feature in Azure App Service.
+- Betriebssysteme: Windows 8 oder höher, Windows 2008 R2, Windows 7.
+- .NET Framework 4.0 oder höher
+- Visual Studio 2010 SP1 (Professional, Premium, Ultimate oder Express) oder höhere Versionen.
+
+
+##Beispiel herunterladen
+
+Laden Sie [hier](http://azure.microsoft.com/documentation/samples/media-services-dotnet-on-demand-encoding-with-media-encoder-standard/) ein Beispiel herunter, und führen Sie es aus.
 
 ##Erstellen eines Media Services-Kontos mithilfe des Portals
 
-1. Klicken Sie im klassischen Azure-Portal auf **Neu**, **Mediendienst** und dann auf **Schnellerfassung**.
+1. Klicken Sie im **klassischen Azure-Portal** auf **Mediendienst** und dann auf **Schnellerfassung**.
 
 ![Media Services-Schnellerfassung](./media/media-services-dotnet-get-started/wams-QuickCreate.png)
 
@@ -378,7 +383,7 @@ Fügen Sie die folgende Methode zur Program-Klasse hinzu.
         Console.WriteLine("Output asset files available at '{0}'.", Path.GetFullPath(outputFolder));
     }
 
-##Wiedergeben Ihrer Inhalte  
+##Testen der Funktionalität durch Wiedergabe von Inhalten  
 
 Nachdem Sie das im vorherigen Abschnitt definierte Programm ausgeführt haben, werden ähnliche URLs wie die folgenden im Konsolenfenster angezeigt.
 
@@ -441,4 +446,4 @@ Wenn dieses Thema nicht die erwarteten Informationen enthält, Informationen feh
   [Web Platform Installer]: http://go.microsoft.com/fwlink/?linkid=255386
   [Portal]: http://manage.windowsazure.com/
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1223_2015-->
