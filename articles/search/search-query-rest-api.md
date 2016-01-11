@@ -21,7 +21,6 @@
 > [AZURE.SELECTOR]
 - [Overview](search-query-overview.md)
 - [Fiddler](search-fiddler.md)
-- [Postman](search-chrome-postman.md)
 - [.NET](search-query-dotnet.md)
 - [REST](search-query-rest-api.md)
 
@@ -67,4 +66,4 @@ Durchsuchen des gesamten Indexes und Sortieren nach einem bestimmten Feld (lastR
 
 Bei erfolgreicher Abfrageanforderung wird der Statuscode „200 OK“ ausgegeben, und die Suchergebnisse liegen im Antworttext im JSON-Format vor. Weitere Informationen finden Sie im Abschnitt „Antwort“ [dieser Seite](https://msdn.microsoft.com/library/azure/dn798927.aspx).
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1223_2015-->

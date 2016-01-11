@@ -13,14 +13,13 @@
 	ms.workload="search"
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
-	ms.date="11/10/2015"
+	ms.date="12/18/2015"
 	ms.author="heidist"/>
 
 # Auswerten und Testen von Azure Search-REST-APIs mithilfe von Fiddler
 > [AZURE.SELECTOR]
 - [Overview](search-query-overview.md)
 - [Fiddler](search-fiddler.md)
-- [Postman](search-chrome-postman.md)
 - [.NET](search-query-dotnet.md)
 - [REST](search-query-rest-api.md)
 
@@ -43,7 +42,7 @@ Für diese Schritte benötigen Sie einen Azure Search-Dienst und `api-key`. Anw
 3. Geben Sie eine URL ein, die sich aus der Dienst-URL, Anforderungsattributen und der API-Version zusammensetzt. Beachten Sie dabei Folgendes:
    + Verwenden Sie das Präfix HTTPS.
    + Das Anfrageattribut ist "/indexes/hotels". Damit weisen Sie Search an, einen Index mit dem Namen "hotels" zu erstellen.
-   + Die API-Version ist in Kleinbuchstaben als „?api-version=2015-02-28“ angegeben. API-Versionen sind wichtig, da regelmäßig Updates für Azure Search bereitgestellt werden. In seltenen Fällen kann es passieren, dass ein Teil der API durch ein Update nicht mehr wie gewohnt funktioniert. Mit API-Versionen können Sie weiterhin Ihre bestehende Version verwenden und selbst bestimmen, wann Sie zur neueren Version wechseln möchten.
+   + Die API-Version ist in Kleinbuchstaben als „?api-version=2015-02-28“ angegeben. API-Versionen sind wichtig, da regelmäßig Updates für Azure Search bereitgestellt werden. In seltenen Fällen kann es passieren, dass ein Teil der API durch ein Update nicht mehr wie gewohnt funktioniert. Aus diesem Grund erfordert Azure Search eine API-Version für jede Anforderung, damit Sie steuern können, welche Version verwendet wird.
 
     Die komplette URL sollte in etwa wie folgt aussehen.
 
@@ -63,7 +62,7 @@ Für diese Schritte benötigen Sie einen Azure Search-Dienst und `api-key`. Anw
         "fields": [
           {"name": "hotelId", "type": "Edm.String", "key":true, "searchable": false},
           {"name": "baseRate", "type": "Edm.Double"},
-          {"name": "description", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false,},
+          {"name": "description", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false},
           {"name": "hotelName", "type": "Edm.String"},
           {"name": "category", "type": "Edm.String"},
           {"name": "tags", "type": "Collection(Edm.String)"},
@@ -229,10 +228,8 @@ Sie können auch das System abfragen, um Dokumentenanzahl oder Speicherverbrauch
 
 ## Nächste Schritte
 
-Unter den folgenden Links finden Sie weitere Informationen zur codefreien Verwaltung und Verwendung von Azure Search:
+Informationen zur Verwaltung und Verwendung von Azure Search ohne Code finden Sie unter [Verwalten Ihres Suchdiensts in Azure](search-manage.md).
 
--  [Verwalten Ihres Search-Diensts in Azure](search-manage.md)
--  [Verwenden von Chrome Postman mit Azure Search](search-chrome-postman.md)
 
 <!--Image References-->
 [1]: ./media/search-fiddler/AzureSearch_Fiddler1_PutIndex.png
@@ -241,4 +238,4 @@ Unter den folgenden Links finden Sie weitere Informationen zur codefreien Verwal
 [4]: ./media/search-fiddler/AzureSearch_Fiddler4_QueryResults.png
 [5]: ./media/search-fiddler/AzureSearch_Fiddler5_QueryStats.png
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1223_2015-->

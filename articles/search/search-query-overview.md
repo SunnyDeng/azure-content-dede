@@ -21,12 +21,11 @@
 > [AZURE.SELECTOR]
 - [Overview](search-query-overview.md)
 - [Fiddler](search-fiddler.md)
-- [Postman](search-chrome-postman.md)
 - [.NET](search-query-dotnet.md)
 - [REST](search-query-rest-api.md)
 
 Benutzerdefinierte Lösungen, die Azure Search als integrierte Suchumgebung nutzen, müssen Code einbeziehen, der die Suchabfrage erstellt und diese zur Verarbeitung an den Suchdienst sendet.
 
-Mit dem .NET SDK oder der REST-API können Sie Methoden für die Ausführung von Abfragen schreiben. Für vorläufige Tests oder Untersuchungen können Sie Tools wie Fiddler oder Chrome Postman nutzen, um Abfragen an Ihren Dienst zu senden.
+Mit dem .NET SDK oder der REST-API können Sie Methoden für die Ausführung von Abfragen schreiben. Für vorläufige Tests oder Untersuchungen können Sie Tools wie Fiddler nutzen, um Abfragen an Ihren Dienst zu senden.
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1223_2015-->

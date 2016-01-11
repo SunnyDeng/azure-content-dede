@@ -4,6 +4,8 @@ Eine Basic-Datenbank verfügt über 5 DTUs, was bedeutet, dass 5 Transaktionen
 
 ![Einführung in SQL-Datenbank: Einzeldatenbank-DTUs nach Tarif und Stufe.](./media/sql-database-understanding-dtus/single_db_dtus.png)
 
+>[AZURE.NOTE]Wenn Sie eine vorhandene SQL Server-Datenbank migrieren, können Sie ein Drittanbietertool, den [Azure SQL Database DTU Calculator](http://dtucalculator.azurewebsites.net/), verwenden, um eine Prognose der Leistungsstufe und Dienstebene zu erhalten, die für Ihre Datenbank in Azure SQL-Datenbank möglicherweise erforderlich sind.
+
 ### DTU im Vergleich zu eDTU
 
 Die DTU für Einzeldatenbanken kann direkt in die eDTU für elastische Datenbanken übertragen werden. Beispielsweise bietet eine Datenbank in einem Pool mit elastischen Basic-Datenbanken bis zu 5 eDTUs. Das ist eine ähnliche Leistung wie bei einer Basic-Einzeldatenbank. Der Unterschied besteht darin, dass elastische Datenbanken keine eDTUs aus dem Pool verwenden, bis dies erforderlich ist.
@@ -12,4 +14,4 @@ Die DTU für Einzeldatenbanken kann direkt in die eDTU für elastische Datenbank
 
 Ein einfaches Beispiel veranschaulicht dies. Nehmen Sie einen elastischen Basic-Datenbankpool mit 1.000 DTUs, in dem Sie 800 Datenbanken ablegen. Solange nur 200 der 800 Datenbanken zu einem beliebigen Zeitpunkt genutzt werden (5 DTU X 200 = 1.000), wird die maximale Kapazität des Pools nicht erreicht wird und die Leistung der Datenbank nicht beeinträchtigt. In diesem Beispiel wird aus Gründen der Übersichtlichkeit vereinfacht. In Wirklichkeit sind die Dinge ein wenig komplizierter. Das Portal erledigt die komplizierten Aufgaben für Sie und gibt eine Empfehlung basierend auf der bisherigen Verwendung der Datenbank ab. Weitere Informationen zu den Empfehlungen oder zum Selbermachen finden Sie unter [Überlegungen zum Preis und zur Leistung für einen elastischen Datenbankpool](../articles/sql-database/sql-database-elastic-pool-guidance.md).
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1223_2015-->

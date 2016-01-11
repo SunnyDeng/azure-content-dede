@@ -25,7 +25,7 @@ Microsoft Azure Search ist ein gehosteter Cloudsuchdienst, mit dem Sie Suchfunkt
 
 Bei Verwendung der Option „Shared“ können Administratoren Azure Search einem vorhandenen Azure-Abonnement kostenlos hinzufügen. Bei Verwendung fest zugeordneter Ressourcen gilt der Standardtarif.
 
-1. Melden Sie sich am [klassischen Azure-Portal](https://portal.azure.com) an.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
 
 2. Navigieren Sie über die seitliche Navigationsleiste zu **Neu** > **Daten + Speicher** > **Search**.
 
@@ -92,10 +92,7 @@ Nach der Diensterstellung können Sie zum klassischen Azure-Portal zurückkehren
 <a id="sub-4"></a>
 ## Testen der Dienstfunktionen
 
-Als letzter Schritt bei der Konfiguration von Azure Search überprüfen Sie, ob Ihr Dienst einsatzbereit ist und über eine Clientanwendung angesprochen werden kann. Unter den folgenden Links finden Sie jeweils eine codefreie Methode zum Überprüfen der Dienstverfügbarkeit:
-
-- [Verwenden von Chrome Postman mit Azure Search](search-chrome-postman.md)
-- [Verwenden von Telerik Fiddler mit Azure Search](search-fiddler.md)
+Als letzter Schritt bei der Konfiguration von Azure Search überprüfen Sie, ob Ihr Dienst einsatzbereit ist und über eine Clientanwendung angesprochen werden kann. Sie können [Fiddler mit Azure Search](search-fiddler.md) verwenden, um die Dienstverfügbarkeit zu überprüfen.
 
 <!--Next steps and links -->
 <a id="next-steps"></a>
@@ -123,4 +120,4 @@ Unter den folgenden Links finden Sie weitere Informationen zur Erstellung und Ve
 [2]: ./media/search-create-service-portal/create-search-portal-2.PNG
 [3]: ./media/search-create-service-portal/create-search-portal-3.PNG
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1223_2015-->

@@ -1,6 +1,6 @@
 <properties
-			pageTitle="Verwenden des Azure-Dateispeichers unter Windows | Microsoft Azure"
-            description="Erstellen Sie eine Dateifreigabe in der Cloud, und verwalten Sie Dateiinhalte. Stellen Sie eine Dateifreigabe über einen virtuellen Azure-Computer oder eine lokale Anwendung bereit."
+			pageTitle="Verwenden von Azure-Dateien mit Windows | Microsoft Azure"
+            description="Erstellen Sie mit diesem Schritt-für-Schritt-Tutorial eine Azure-Dateifreigabe in der Cloud. Verwalten Sie die Inhalte Ihrer Dateifreigaben, und stellen Sie eine Dateifreigabe aus einem virtuellen Azure-Computer oder einer lokalen Anwendung bereit."
             services="storage"
             documentationCenter=".net"
             authors="robinsh"
@@ -12,7 +12,7 @@
       ms.tgt_pltfrm="na"
       ms.devlang="dotnet"
       ms.topic="hero-article"
-      ms.date="12/04/2015"
+      ms.date="12/17/2015"
       ms.author="robinsh" />
 
 # Verwenden des Azure-Dateispeichers unter Windows
@@ -21,17 +21,16 @@
 
 ## Übersicht
 
-Der Azure-Dateispeicher verfügt über Dateifreigaben in der Cloud unter Verwendung des standardmäßigen SMB-Protokolls. Der Dateispeicher ist jetzt allgemein verfügbar und unterstützt sowohl SMB 2.1 als auch SMB 3.0.
+Der Azure-Dateispeicher verfügt über Dateifreigaben in der Cloud unter Verwendung des standardmäßigen SMB-Protokolls. Mit Azure Files können Sie auf Dateiservern basierende Unternehmensanwendungen zu Azure migrieren. Anwendungen, die in Azure ausgeführt werden, können Dateifreigaben von virtuellen Azure-Computern problemlos einbinden. Mit der neuesten Version des Dateispeichers können Sie außerdem eine Dateifreigabe aus einer lokalen Anwendung einbinden, die SMB 3.0 unterstützt.
 
 Sie können Azure-Dateifreigaben mit dem [Azure-Portal](portal.azure.com), den Azure Storage-PowerShell-Cmdlets, den Azure Storage-Clientbibliotheken oder der Azure Storage-REST-API erstellen. Da es sich bei den Dateifreigaben um SMB-Freigaben handelt, können Sie darauf außerdem über standardmäßige und vertraute Dateisystem-APIs zugreifen.
 
-Anwendungen, die in Azure ausgeführt werden, können Dateifreigaben von virtuellen Azure-Computern problemlos einbinden. Mit der neuesten Version des Dateispeichers können Sie zudem eine Dateifreigabe über eine lokale Anwendung bereitstellen, die SMB 3.0 unterstützt.
+Der Dateispeicher beruht auf der gleichen Technologie wie Blob-, Tabellen-, und Warteschlangenspeicher. Dies bedeutet, dass der Dateispeicher die in die Azure Storage-Plattform integrierte Verfügbarkeit, Dauerhaftigkeit, Skalierbarkeit und geografische Redundanz bietet. Weitere Informationen zu Leistungszielen und Grenzwerten des Dateispeichers finden Sie unter [Skalierbarkeits- und Leistungsziele für Azure Storage](storage-scalability-targets.md).
 
-Der Dateispeicher beruht auf der gleichen Technologie wie Blob-, Tabellen-, und Warteschlangendienste. Dies bedeutet, dass der Dateispeicher die vorhandene Verfügbarkeit, Dauerhaftigkeit, Skalierbarkeit und geografische Redundanz nutzt, die in die Azure Storage-Plattform integriert ist.
+Der Dateispeicher ist jetzt allgemein verfügbar und unterstützt sowohl SMB 2.1 als auch SMB 3.0. Zusätzliche Informationen zum Dateispeicher finden Sie unter [Dateidienst-REST-API](https://msdn.microsoft.com/library/azure/dn167006.aspx).
 
 Informationen zur Verwendung des Dateispeichers unter Linux finden Sie unter [Verwenden des Azure-Dateispeichers mit Linux](storage-how-to-use-files-linux.md).
 
-Informationen zu Skalierbarkeitszielen für den Dateispeicher finden Sie unter [Skalierbarkeits- und Leistungsziele für Azure Storage](storage-scalability-targets.md#scalability-targets-for-standard-storage-accounts).
 
 [AZURE.INCLUDE [storage-dotnet-client-library-version-include](../../includes/storage-dotnet-client-library-version-include.md)]
 
@@ -60,7 +59,7 @@ Der Dateispeicher wird jetzt für alle Speicherkonten unterstützt, sodass Sie e
 
 ## Verwenden des Azure-Portals zum Verwalten einer Dateifreigabe
 
-Das [Azure-Portal](portal.azure.com) enthält eine Benutzeroberfläche für Kunden zum Verwalten des Dateispeichers. Im Vorschauportal können Sie folgende Aktionen ausführen:
+Das [Azure-Portal](portal.azure.com) bietet eine Benutzeroberfläche, über die Kunden den Dateispeicher verwalten können. Im Vorschauportal können Sie folgende Aktionen ausführen:
 
 - Hoch- und Herunterladen von Dateien für die Dateifreigabe
 - Überwachen der tatsächlichen Nutzung der einzelnen Dateifreigaben
@@ -81,7 +80,7 @@ Laden Sie die Azure PowerShell-Cmdlets herunter und installieren Sie diese ansch
 
 ### Erstellen von Kontexten für Speicherkonten und -schlüssel
 
-Erstellen Sie nun den Speicherkonto-Kontext. Der Kontext kapselt den Speicherkontonamen und den Kontoschlüssel. Anweisungen zum Kopieren Ihres Kontoschlüssels im [Azure-Portal](portal.azure.com) finden Sie unter [Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln](storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys).
+Erstellen Sie nun den Speicherkonto-Kontext. Der Kontext kapselt den Speicherkontonamen und den Kontoschlüssel. Anweisungen zum Kopieren Ihres Kontoschlüssels aus dem [Azure-Portal](portal.azure.com) finden Sie unter [Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln](storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys).
 
 Ersetzen Sie im folgenden Beispiel `storage-account-name` und `storage-account-key` durch Ihren Speicherkontonamen und -schlüssel.
 
@@ -178,7 +177,7 @@ Nachdem Sie eine Remoteverbindung zu dem virtuellen Computer hergestellt haben, 
 
 Da Sie die Speicherkonto-Anmeldeinformationen im vorherigen Schritt dauerhaft gespeichert haben, müssen Sie diese nicht mit dem Befehl `net use` angeben. Wenn Sie Ihre Anmeldeinformationen noch nicht dauerhaft gespeichert haben, fügen Sie sie als Parameter hinzu, der an den Befehl `net use` übergeben wird, wie im folgenden Beispiel gezeigt.
 
-    net use <drive-letter>: \<storage-account-name>.file.core.windows.net<share-name> /u:<storage-account-name> <storage-account-key>
+    net use <drive-letter>: \\<storage-account-name>.file.core.windows.net\<share-name> /u:<storage-account-name> <storage-account-key>
 
 	example :
 	net use z: \\samples.file.core.windows.net\logs /u:samples <storage-account-key>
@@ -551,4 +550,4 @@ Weitere Informationen zum Azure-Dateispeicher erhalten Sie über diese Links.
 - [Einführung in den Microsoft Azure-Dateidienst](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx)
 - [Beibehalten von Verbindungen zu Microsoft Azure-Dateien](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1223_2015-->
