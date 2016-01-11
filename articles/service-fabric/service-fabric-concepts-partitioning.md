@@ -284,7 +284,9 @@ Beachten Sie auch, dass sich die veröffentlichte URL leicht vom Überwachungs-U
     Wir führen Sie schrittweise durch dieses Verfahren. Der Code liest den ersten Buchstaben des Zeichenabfolgeparameters `lastname` in ein char-Objekt ein. Anschließend bestimmt er den Partitionsschlüssel für diesen Buchstaben durch Abziehen des Hexwerts von `A` vom Hexwert des Anfangsbuchstabens des Nachnamens.
 
     ```CSharp
-    string lastname = context.Request.QueryString["lastname"]; char firstLetterOfLastName = lastname.First(); int partitionKey = Char.ToUpper(firstLetterOfLastName) - 'A';
+    string lastname = context.Request.QueryString["lastname"];
+    char firstLetterOfLastName = lastname.First();
+    int partitionKey = Char.ToUpper(firstLetterOfLastName) - 'A';
     ```
 
     Bedenken Sie, dass wir für dieses Beispiel 26 Partitionen mit einem Partitionsschlüssel pro Partition verwenden. Als Nächstes rufen wir die Dienstpartition `partition` für diesen Schlüssel ab, indem wir die `ResolveAsync`-Methode für das `servicePartitionResolver`-Objekt verwenden. `servicePartitionResolver` ist wie folgt definiert:
@@ -322,8 +324,10 @@ Beachten Sie auch, dass sich die veröffentlichte URL leicht vom Überwachungs-U
   </Parameters>
   ```
 
-16. Nach der Bereitstellung können Sie den Dienst und alle Partitionen im Service Fabric-Explorer überprüfen. ![Dienst](./media/service-fabric-concepts-partitioning/alphabetservicerunning.png)
-17. In einem Browser können Sie die Partitionierungslogik testen, indem Sie `http://localhost:8090/?lastname=somename` eingeben. Sie sehen, dass alle Nachnamen mit dem gleichen Anfangsbuchstaben in derselben Partition gespeichert werden. !["Browser"](./media/service-fabric-concepts-partitioning/alphabetinbrowser.png)
+16. Nach der Bereitstellung können Sie den Dienst und alle Partitionen im Service Fabric-Explorer überprüfen.
+![Dienst](./media/service-fabric-concepts-partitioning/alphabetservicerunning.png)
+17. In einem Browser können Sie die Partitionierungslogik testen, indem Sie `http://localhost:8090/?lastname=somename` eingeben. Sie sehen, dass alle Nachnamen mit dem gleichen Anfangsbuchstaben in derselben Partition gespeichert werden.
+!["Browser"](./media/service-fabric-concepts-partitioning/alphabetinbrowser.png)
 
 Den gesamten Quellcode des Beispiels finden Sie bei [GitHub](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/tree/master/Services/AlphabetPartitions).
 
