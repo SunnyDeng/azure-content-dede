@@ -127,7 +127,7 @@ Nachdem Sie die Web-App erstellt und alle erforderlichen NuGet-Pakete abgerufen 
 
 2. Öffnen Sie einen Browser, und navigieren Sie zur folgenden URL:
 
-	****http://localhost:5000**
+	**http://localhost:5000**
 
 	Die Standardseite der Web-App wird wie folgt angezeigt:
 

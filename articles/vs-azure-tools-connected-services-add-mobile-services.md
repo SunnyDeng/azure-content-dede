@@ -49,7 +49,9 @@ Mit dem Dialogfeld "Verbundene Dienste" können Sie in den folgenden Projekttype
 
 1. Wählen Sie im Dialogfeld **Azure Mobile Services** einen vorhandenen mobilen Dienst, sofern vorhanden. Wenn Sie einen neuen Azure Mobile Service erstellen müssen, befolgen Sie das im Folgenden geschilderte Verfahren. Gehen Sie andernfalls zum nächsten Schritt.
 
-    So erstellen Sie ein neues Konto für einen mobilen Dienst: 1. Wählen Sie den Link "Mobilen Service erstellen" unten im Dialogfeld aus. ![Fügen Sie einen neuen mobilen verbundenen Dienst hinzu](./media/vs-azure-tools-connected-services-add-mobile-services/IC797637.png)
+    So erstellen Sie ein neues Konto für einen mobilen Dienst:
+    1. Wählen Sie den Link "Mobilen Service erstellen" unten im Dialogfeld aus.
+        ![Fügen Sie einen neuen mobilen verbundenen Dienst hinzu](./media/vs-azure-tools-connected-services-add-mobile-services/IC797637.png)
 
 
 

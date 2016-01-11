@@ -49,7 +49,7 @@ Dieses Thema zeigt ein in Python geschriebenes Codebeispiel. Das Beispiel wird a
 **2) FreeTDS:** Führen Sie den folgenden Befehl über das Terminal aus. Damit wird FreeTDS auf Ihren Computer heruntergeladen. FreeTDS ist für die Ausführung von pymmsql erforderlich.
 
     brew install FreeTDS
-
+  
 **3) Pymmsql**: Führen Sie den folgenden Befehl über das Terminal aus. Damit wird pymmsql auf Ihrem Computer installiert.
 
     sudo -H pip install pymssql
@@ -107,11 +107,11 @@ In diesem Beispiel erfahren Sie, wie Sie eine [INSERT](https://msdn.microsoft.co
 Dieses Codebeispiel veranschaulicht die Verwendung von Transaktionen für folgende Aufgaben:
 
 
-- Starten von Transaktionen
+-Starten von Transaktionen
 
-- Einfügen von Zeilen mit Daten
+-Einfügen von Zeilen mit Daten
 
-- Durchführen von Rollbacks für Transaktionen zum Rückgängigmachen von Einfügungen
+-Durchführen von Rollbacks für Transaktionen zum Rückgängigmachen von Einfügungen
 
 
 	import pymssql

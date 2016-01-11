@@ -8,6 +8,7 @@
    editor=""
    tags=""/>
 
+
 <tags
    ms.service="best-practice"
    ms.devlang="na"
@@ -16,6 +17,7 @@
    ms.workload="na"
    ms.date="12/16/2015"
    ms.author="masashin"/>
+
 
 # Checkliste für die Skalierbarkeit
 
@@ -56,7 +58,7 @@
 - **Verkürzen Sie die Zeit, die Verbindungen und Ressourcen verwendet werden**. Verwalten Sie Verbindungen und Ressourcen nur, solange Sie sie verwenden müssen. Öffnen Sie Verbindungen z. B. so spät wie möglich und ermöglichen Sie die Rückgabe an den Verbindungspool so bald wie möglich. Greifen Sie auf die Ressourcen so spät wie möglich zu und entsorgen Sie sie so bald wie möglich.
 - **Minimieren Sie die Anzahl der benötigten Verbindungen.**. Dienstverbindungen absorbieren Ressourcen. Begrenzen Sie wenn möglich die erforderliche Anzahl und stellen Sie sicher, dass vorhandene Verbindungen möglichst wiederverwendet werden. Verwenden Sie z. B. nach dem Ausführen der Authentifizierung gegebenenfalls den Identitätswechsel, um einen Code als bestimmte Identität auszuführen. Dies kann dabei helfen, den Verbindungspool durch die Wiederverwendung von Verbindungen optimal zu nutzen. 
 
-	> [AZURE.NOTE]\: ** APIs verwenden Verbindungen für einige Dienste automatisch wieder, sofern dienstspezifische Richtlinien eingehalten werden. Es ist wichtig, dass Sie die Umstände verstehen, unter denen eine Verbindung für jeden Dienst, die die Anwendung nutzt, erneut verwendet werden kann.
+	> [AZURE.NOTE]: ** APIs verwenden Verbindungen für einige Dienste automatisch wieder, sofern dienstspezifische Richtlinien eingehalten werden. Es ist wichtig, dass Sie die Umstände verstehen, unter denen eine Verbindung für jeden Dienst, die die Anwendung nutzt, erneut verwendet werden kann.
 - **Stapelweises Senden von Anforderungen zur Netzwerknutzungsoptimierung**. Senden Sie z. B. Nachrichten stapelweise, wenn Sie auf eine Warteschlange zugreifen und führen Sie beim Zugriff auf Speicher oder einen Cache mehrere Lese- oder Schreibvorgänge als Batch aus. Dies kann helfen, die Effizienz der Dienste und Datenspeicher zu maximieren, indem die Anzahl der Aufrufe über das Netzwerk verringert wird.
 - **Vermeiden Sie eine Anforderung zum Speichern des serverseitigen Sitzungsstatus ** wenn möglich. Serverseitige Sitzungsstatusverwaltung erfordert in der Regel Clientaffinität (also Routing jeder Anforderung zur gleichen Serverinstanz), wodurch die Skalierungsfähigkeit des Systems beeinflusst wird. Im Idealfall sollten Sie die Clients in Bezug auf die Server, die er verwendet, statusfrei entwerfen. Speichern Sie jedoch vertrauliche Daten oder große Mengen von Client-Daten in einem verteilten serverseitigen Cache, auf den alle Instanzen der Anwendung zugreifen können, wenn die Anwendung den Sitzungszustand beibehalten muss.
 - **Optimieren Sie Tabellenspeicherschemas**. Bei der Verwendung von Tabellenspeichern, wie z. B. Azure-Tabellenspeicher, müssen die Tabellen- und Spaltennamen übergeben und mit jeder Abfrage verarbeitet werden. Erwägen Sie, kürzere Namen zu verwenden, um diesen zusätzlichen Aufwand zu reduzieren. Bewahren Sie allerdings Lesbarkeit und Verwaltbarkeit, obwohl Sie nicht-intuitive kompakte Namen verwenden.

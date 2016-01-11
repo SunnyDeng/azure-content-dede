@@ -1,10 +1,10 @@
-<properties
-	pageTitle="Herstellen von Verbindungen mit SQL-Datenbanken mithilfe von Python unter Windows"
+<properties 
+	pageTitle="Herstellen von Verbindungen mit SQL-Datenbanken mithilfe von Python unter Windows" 
 	description="Zeigt ein Python-Codebeispiel zum Herstellen einer Verbindung mit Azure SQL-Datenbank von einem Windows-Client aus. Das Beispiel verwendet den pymssql-Treiber."
-	services="sql-database"
-	documentationCenter=""
-	authors="meet-bhagdev"
-	manager="jeffreyg"
+	services="sql-database" 
+	documentationCenter="" 
+	authors="meet-bhagdev" 
+	manager="jeffreyg" 
 	editor=""/>
 
 
@@ -49,7 +49,7 @@ Stellen Sie sicher, dass Sie die richtige WHL-Datei auswählen.
 Wählen Sie z. B. bei Verwendung von Python 2.7 auf einem 64-Bit-Computer die Datei "pymssql‑2.1.1‑cp27‑none‑win\_amd64.whl" aus. Speichern Sie die WHL-Datei nach dem Herunterladen im Ordner "C:/Python27".
 
 Installieren Sie danach an der Befehlszeile mithilfe von pip den pymssql-Treiber. Wechseln Sie zum Laufwerk "C:/Python27", und führen Sie Folgendes aus:
-
+	
 	pip install pymssql‑2.1.1‑cp27‑none‑win_amd64.whl
 
 Anweisungen zum Aktivieren der Verwendung von pip erhalten Sie [hier](http://stackoverflow.com/questions/4750806/how-to-install-pip-on-windows).
@@ -109,11 +109,11 @@ In diesem Beispiel erfahren Sie, wie Sie eine [INSERT](https://msdn.microsoft.co
 Dieses Codebeispiel veranschaulicht die Verwendung von Transaktionen für folgende Aufgaben:
 
 
-- Starten von Transaktionen
+-Starten von Transaktionen
 
-- Einfügen von Zeilen mit Daten
+-Einfügen von Zeilen mit Daten
 
-- Durchführen von Rollbacks für Transaktionen zum Rückgängigmachen von Einfügungen
+-Durchführen von Rollbacks für Transaktionen zum Rückgängigmachen von Einfügungen
 
 
 	import pymssql
