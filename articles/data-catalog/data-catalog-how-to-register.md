@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="11/20/2015"
+   ms.date="12/18/2015"
    ms.author="maroche"/>
 
 
@@ -41,6 +41,8 @@ In der aktuellen Vorschauversion unterstützt **Azure Data Catalog** die Registr
 * HDFS-Dateien und -Verzeichnisse
 * Apache Hive-Tabellen
 * Teradata-Tabellen und -Sichten
+* Azure Data Lake-Speicherdatei und -Verzeichnisse
+* MySQL-Tabellen und -Sichten
 
 > [AZURE.NOTE]SQL Server unterstützt außerdem Microsoft Azure SQL-Datenbank sowie Microsoft Azure SQL Data Warehouse.
 
@@ -86,7 +88,6 @@ Diese statistischen Daten werden dann zusammen mit den strukturellen und beschre
 
 > [AZURE.NOTE]Für Text- oder Datumsspalten werden keine Durchschnitts- und Standardabweichungswerte in deren Datenprofile eingeschlossen.
 
-
 ## Aktualisieren von Registrierungen
 
 Durch das Registrieren einer Datenquelle kann diese in **Azure Data Catalog** anhand der Metadaten und der optionalen Vorschau ermittelt werden, die während der Registrierung extrahiert wurden. Wenn die Datenquelle im Katalog aktualisiert werden muss (z. B. wenn das Schema eines Objekts geändert wurde, ursprünglich ausgeschlossene Tabellen eingeschlossen werden sollen oder ein Benutzer die in der Vorschau enthaltenen Daten aktualisieren möchte), kann das Registrierungstool für Datenquellen erneut ausgeführt werden.
@@ -96,4 +97,4 @@ Beim erneuten Registrieren einer bereits registrierten Datenquelle werden neue O
 ## Zusammenfassung
 Durch die Registrierung einer Datenquelle in **Azure Data Catalog** werden strukturelle und beschreibende Metadaten aus der Datenquelle in den Katalogdienst kopiert, sodass die Datenquelle leichter zu ermitteln und zu verstehen ist. Nachdem eine Datenquelle registriert wurde, kann sie im **Azure Data Catalog**-Portal mit Anmerkungen versehen, verwaltet und ermittelt werden.
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1223_2015-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="11/20/2015"
+   ms.date="12/18/2015"
    ms.author="maroche"/>
 
 # Was ist Azure Data Catalog?
@@ -80,6 +80,10 @@ Der Registrierungsprozess umfasst drei grundlegende Schritte:
 - HDFS-Datei
 - HDFS-Verzeichnis
 - Hive-Tabelle
+- Azure Data Lake-Speicherdatei
+- Azure Data Lake-Speicherverzeichnis
+- MySQL-Tabelle
+- MySQL-Ansicht
 
 Zusätzliche Datenquellen und Assettypen werden während der **Azure Data Catalog**-Preview-Phase hinzugefügt.
 
@@ -93,7 +97,7 @@ Nachdem die Registrierung abgeschlossen ist, können die Datenquellen ermittelt 
 -	Die registrierten Datenquellen sind nach ihrer Ermittlung leichter verständlich. Die von Benutzern bereitgestellten Metadaten werden allen **Azure Data Catalog**-Benutzern angezeigt, die die mit Anmerkungen versehene Datenquelle aufrufen, damit zusätzlicher Kontext und zusätzliche Informationen vorhanden sind. Die meisten Datenquellen enthalten häufig keine aussagekräftigen Beschreibungen oder Dokumentation, und wenn dies doch einmal der Fall ist, liegt der Schwerpunkt häufig auf technischen DBA-Angaben oder Informationen für Datenbankentwickler. Indem Datenquellen in **Azure Data Catalog** mit Beschreibungen und Tags versehen werden, die für die Zielgruppen relevant sind, können Benutzer mit dazu beitragen, dass bei der Ermittlung die Details und die beabsichtigte Nutzung verstanden werden.
 -  Jede registrierte Datenquelle kann Informationen zur Zugriffsanforderung einschließen, sodass Benutzer vorhandene Prozesse einfach verstehen und ausführen können, um Zugriff auf die Datenquelle und ihre Daten anzufordern.
 
-> [AZURE.NOTE]Jeder **Azure Data Catalog**-Benutzer kann eigene Tags und Beschreibungen für Datenassets und Attribute hinzufügen. **Azure Data Catalog** verfolgt den Nutzen und die Quelle jeder Anmerkung und zeigt den Benutzer, der die Anmerkung hinzugefügt hat. Mit diesem Crowdsourcing-Ansatz für Metadaten wird sichergestellt, dass jeder Benutzer mit Bezug zu den Daten und ihrer Nutzung Meinungen und Ressourcen mit der gesamten Community teilen kann.
+> [AZURE.NOTE]Jeder **Azure Data Catalog**-Benutzer kann eigene Tags und Beschreibungen für Datenassets und Attribute hinzufügen. **Azure Data Catalog** verfolgt den Nutzen und die Quelle jeder Anmerkung und zeigt den Benutzer an, der die Anmerkung hinzugefügt hat. Mit diesem Crowdsourcing-Ansatz für Metadaten wird sichergestellt, dass jeder Benutzer mit Bezug zu den Daten und ihrer Nutzung Meinungen und Ressourcen mit der gesamten Community teilen kann.
 
 ## Untersuchen, Ermitteln und Verstehen
 
@@ -129,4 +133,4 @@ Das ultimative Ziel der Datenermittlung besteht darin, die erforderlichen Daten 
 
 > [AZURE.NOTE]Für die Vorschauversion von Azure Data Catalog werden nur Microsoft Excel und der SQL Server Reporting Services-Berichts-Manager direkt unterstützt. Beide Optionen sind im Menü **Öffnen in** verfügbar.
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1223_2015-->

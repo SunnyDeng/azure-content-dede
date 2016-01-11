@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager | Microsoft Azure"
-	description="Verwenden Sie die Azure-Befehlszeilenschnittstelle für Mac, Linux und Microsoft Azure, um mehrere Ressourcen als eine Ressourcengruppe bereitzustellen."
+	description="Verwenden Sie die Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows Azure, um mehrere Ressourcen als eine Ressourcengruppe bereitzustellen."
 	editor=""
 	manager="timlt"
 	documentationCenter=""
@@ -44,7 +44,7 @@ Wenn Sie den Azure-Ressourcen-Manager über die Azure-Befehlszeilenschnittstelle
 
 Weitere Informationen zur Authentifizierung bei Microsoft Azure finden Sie unter [Herstellen einer Verbindung mit einem Azure-Abonnement über die Azure-Befehlszeilenschnittstelle](xplat-cli-connect.md).
 
->[AZURE.NOTE]Bei Verwendung eines (von Azure Active Directory verwalteten) Geschäfts- oder Schulkontos können Sie auch die rollenbasierte Zugriffssteuerung (Role-Based Access Control, RBAC) von Azure nutzen, um den Zugriff auf und die Verwendung von Azure-Ressourcen zu verwalten. Ausführlichere Informationen finden Sie unter [Verwalten und Überwachen des Ressourcen-Zugriffs](resource-group-rbac.md).
+>[AZURE.NOTE]Bei Verwendung eines (von Azure Active Directory verwalteten) Geschäfts- oder Schulkontos können Sie auch die rollenbasierte Zugriffssteuerung (Role-Based Access Control, RBAC) von Azure nutzen, um den Zugriff auf und die Verwendung von Azure-Ressourcen zu verwalten. Weitere Informationen finden Sie unter [Rollenbasierte Zugriffssteuerung in Azure](./active-directory/role-based-access-control-configure.md).
 
 ## Festlegen des Azure-Ressourcen-Manager-Modus
 
@@ -77,7 +77,7 @@ Anschließend können Sie der Gruppe dann Ressourcen hinzufügen und sie für di
 
 Sie können [eine eigene Vorlage erstellen](resource-group-authoring-templates.md) oder eine der Vorlagen aus dem [Vorlagenkatalog](https://azure.microsoft.com/documentation/templates/) verwenden, die ebenfalls bei [GitHub](https://github.com/Azure/azure-quickstart-templates) verfügbar sind.
 
-Das Erstellen einer neuen Vorlage würde jedoch den Rahmen dieses Artikels sprengen. Daher verwenden wir zum Einstieg die bei [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/101-simple-linux-vm) verfügbare Vorlage _101-simple-vm-from-image_. Standardmäßig wird dabei ein einzelner virtueller Ubuntu 4.04.2-LTS-Computer in einem neuen virtuellen Netzwerk mit einem einzelnen Subnetz in der Region „Westen USA“ erstellt. Sie müssen nur die folgenden wenigen Parameter angeben, um diese Vorlage zu verwenden:
+Das Erstellen einer neuen Vorlage würde jedoch den Rahmen dieses Artikels sprengen. Daher verwenden wir zum Einstieg die bei [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/101-simple-linux-vm) verfügbare Vorlage _101-simple-vm-from-image_. Standardmäßig wird dabei ein einzelner virtueller Ubuntu 14.04.2-LTS-Computer in einem neuen virtuellen Netzwerk mit einem einzelnen Subnetz in der Region „Westen USA“ erstellt. Sie müssen nur die folgenden wenigen Parameter angeben, um diese Vorlage zu verwenden:
 
 * einen eindeutigen Speicherkontonamen
 * einen Administratorbenutzernamen für den virtuellen Computer
@@ -210,4 +210,4 @@ Verwenden Sie den Befehl `azure group log show`, um protokollierte Informationen
 [adtenant]: http://technet.microsoft.com/library/jj573650#createAzureTenant
 [psrm]: http://go.microsoft.com/fwlink/?LinkId=394760
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1223_2015-->

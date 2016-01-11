@@ -2,7 +2,7 @@
     pageTitle="Tutorial: Azure Active Directory-Integration mit EmpCenter | Microsoft Azure" 
     description="Hier erfahren Sie, wie Sie EmpCenter mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags 
@@ -11,8 +11,8 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/01/2015" 
-    ms.author="markvi" />
+    ms.date="12/18/2015" 
+    ms.author="jeedes" />
 
 #Tutorial: Azure Active Directory-Integration mit EmpCenter
   
@@ -21,7 +21,7 @@ In diesem Tutorial wird die Integration von Azure und EmpCenter erläutert. Das 
 -   Ein gültiges Azure-Abonnement
 -   Ein EmpCenter-Abonnement, für das einmaliges Anmelden aktiviert ist
   
-Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie EmpCenter zugewiesen haben, mittels einmaliger Anmeldung auf der EmpCenter-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
+Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, die Sie EmpCenter zugewiesen haben, mittels einmaliger Anmeldung auf der EmpCenter-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -55,7 +55,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Emp
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-empcenter-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie im **Suchfeld** den Suchbegriff **EmpCenter** ein.
+6.  Geben Sie im **Suchfeld** das Wort **EmpCenter** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-empcenter-tutorial/IC802917.png "Anwendungskatalog")
 
@@ -81,7 +81,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
     ![Konfigurieren von App-Einstellungen](./media/active-directory-saas-empcenter-tutorial/IC802921.png "Konfigurieren von App-Einstellungen")
 
     1.  Geben Sie im Textfeld **Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei der EmpCenter-Anwendung verwenden (z. B. **https://partner-authenticati.empcenter.com/workforce/SSO.do*).
-    2.  Klicken Sie auf **Weiter**.
+2.  Klicken Sie auf **Weiter**.
 
 4.  Klicken Sie auf der Seite **Einmaliges Anmelden konfigurieren für EmpCenter** auf **Metadaten herunterladen**, und speichern Sie die Metadatendatei auf Ihrem Computer.
 
@@ -112,10 +112,10 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
 
     ![Benutzer zuweisen](./media/active-directory-saas-empcenter-tutorial/IC802924.png "Benutzer zuweisen")
 
-3.  Wählen Sie den Testbenutzer aus, und klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen.
+3.  Wählen Sie den Testbenutzer aus, klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen.
 
     ![Ja](./media/active-directory-saas-empcenter-tutorial/IC767830.png "Ja")
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1223_2015-->

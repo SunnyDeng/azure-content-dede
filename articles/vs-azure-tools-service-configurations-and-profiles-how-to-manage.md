@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="multiple"
-   ms.date="08/13/2015"
+   ms.date="12/17/2015"
    ms.author="tarcher" />
 
 # Verwalten von Dienstkonfigurationen und Profilen
@@ -41,7 +41,7 @@ Sie können das Dialogfeld **Konfigurationen verwalten** auch über die Eigensch
 
 1. (Optional) Wählen Sie die neue Dienstkonfiguration in der Liste "Name" aus, um der Dienstkonfiguration einen neuen Namen zu geben, und klicken Sie dann auf die Schaltfläche **Umbenennen**. Geben Sie im Textfeld **Name** den Namen ein, den Sie für diese Dienstkonfiguration verwenden möchten, und klicken Sie dann auf **OK**.
 
-    Eine neue Dienstkonfigurationsdatei mit dem Namen "ServiceConfiguration.<New Name>.cscfg" wird dem Azure-Projekt im Projektmappen-Explorer hinzugefügt.
+    Eine neue Dienstkonfigurationsdatei mit dem Namen "ServiceConfiguration.[Neuer Name].cscfg" wird dem Azure-Projekt im Projektmappen-Explorer hinzugefügt.
 
 
 ### So löschen Sie eine Dienstkonfiguration
@@ -131,4 +131,4 @@ Wenn Sie den Assistenten zum ersten Mal ausführen, wird ein Standardprofil erst
 
 Informationen zum Konfigurieren anderer Teile des Azure-Projekts in Visual Studio finden Sie unter [Konfigurieren eines Azure-Projekts](http://go.microsoft.com/fwlink/p/?LinkID=623075).
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1223_2015-->

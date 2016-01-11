@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/05/2015"  
+	ms.date="12/17/2015"  
 	ms.author="juliako"/>
 
 
@@ -46,6 +46,7 @@ Verfahren Sie zum Erstellen des OnDemand-Streaminglocators und Abrufen von URLs 
    		
 	Wenn Sie einen progressiven Download ausführen möchten, rufen Sie die Namen der MP4-Dateien im Medienobjekt ab. 
    4. Erstellen Sie URLs für die Manifestdatei oder MP4-Dateien. 
+   5. Beachten Sie, dass Sie keinen Streaminglocator mit einer Zugriffsrichtlinie erstellen können, die Schreib- oder Leseberechtigungen umfasst.
 
 
 ###Erstellen einer Zugriffsrichtlinie
@@ -186,4 +187,8 @@ Beispiel:
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=AcomDC_1210_2015-->
+##Weitere Informationen
+
+[Konfigurieren der Übermittlungsrichtlinie für Medienobjekte](media-services-rest-configure-asset-delivery-policy.md)
+
+<!---HONumber=AcomDC_1223_2015-->

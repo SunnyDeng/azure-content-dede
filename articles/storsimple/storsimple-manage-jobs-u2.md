@@ -15,7 +15,7 @@
    ms.date="12/14/2015"
    ms.author="alkohli" />
 
-# Anzeigen und Verwalten von StorSimple-Aufträgen mithilfe des StorSimple Manager-Diensts
+# Anzeigen und Verwalten von StorSimple-Aufträgen mithilfe des StorSimple Manager-Diensts (Update 2)
 
 [AZURE.INCLUDE [storsimple-version-selector-manage-jobs](../../includes/storsimple-version-selector-manage-jobs.md)]
 
@@ -93,4 +93,4 @@ Dieser Auftrag wird nun abgebrochen.
 
 - Erfahren Sie mehr über das [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1223_2015-->

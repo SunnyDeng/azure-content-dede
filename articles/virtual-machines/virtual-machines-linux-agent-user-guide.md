@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="vm-linux" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/30/2015" 
-	ms.author="szark"/>
+	ms.date="12/14/2015" 
+	ms.author="mingzhan"/>
 
 
 
@@ -59,7 +59,7 @@ Der Informationsfluss von der Plattform zum Agenten erfolgt über zwei Kanäle:
 
 * Über eine beim Start angeschlossene DVD für IaaS-Bereitstellungen. Diese DVD enthält eine OVF-kompatible Konfigurationsdatei mit allen Bereitstellungsinformationen außer den tatsächlichen SSH-Schlüsselpaaren.
 
-* Über ein TCP-Endgerät, der eine REST-API verfügbar macht, um die Bereitstellungs- und Topologiekonfiguration abzurufen.
+* Über einen TCP-Endpunkt, der eine REST-API verfügbar macht, um die Bereitstellungs- und Topologiekonfiguration abzurufen.
 
 ###Beziehen des Linux-Agenten
 Sie können den neuesten Linux-Agent direkt von folgenden Quellen beziehen:
@@ -69,7 +69,7 @@ Sie können den neuesten Linux-Agent direkt von folgenden Quellen beziehen:
 
 
 ## Anforderungen
-Die folgenden Systeme funktionieren nachweislich mit dem Azure Linux-Agent. **Bitte beachten Sie, dass diese Liste von der offiziellen Liste der unterstützten Systemen auf der Microsoft Azure Platform abweichen kann.** Weitere Informationen finden Sie unter [http://support.microsoft.com/kb/2805216](http://support.microsoft.com/kb/2805216)
+Die folgenden Systeme funktionieren nachweislich mit dem Azure Linux-Agent. **Bitte beachten Sie, dass diese Liste von der offiziellen Liste der unterstützten Systemen auf der Microsoft Azure-Plattform abweichen kann.** Weitere Informationen finden Sie unter [http://support.microsoft.com/kb/2805216](http://support.microsoft.com/kb/2805216)
 
 ###Unterstützte Linux-Verteilungen
 
@@ -80,6 +80,7 @@ Die folgenden Systeme funktionieren nachweislich mit dem Azure Linux-Agent. **Bi
 * openSUSE 12.3+
 * SLES 11 SP2+
 * Oracle Linux 6.4+
+* Red Hat 6.7+
 
 Andere unterstützte Systeme:
 
@@ -320,4 +321,4 @@ Beachten Sie, dass Cloud Ubuntu-Images für zahlreiche Konfigurationsaufgaben, d
 
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1223_2015-->

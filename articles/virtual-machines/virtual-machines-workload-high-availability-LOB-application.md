@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="Windows" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/09/2015" 
+	ms.date="12/17/2015" 
 	ms.author="josephd"/>
 
 # Azure-Infrastrukturdienste-Workload: Branchenanwendung mit hoher Verfügbarkeit
@@ -58,41 +58,6 @@ Sie besteht aus folgenden Elementen:
 
 Eine Übersicht über die Branchenanwendungen finden Sie unter [Architekturblaupause für Branchenanwendungen](http://msdn.microsoft.com/dn630664).
 
-### Stückliste
-
-Diese Basiskonfiguration erfordert den folgenden Satz von Azure-Diensten und -Komponenten:
-
-- Sieben virtuelle Computer
-- Vier zusätzliche Datenträger für die Domänencontroller und die virtuellen Computer, auf denen SQL Server ausgeführt wird
-- Drei Verfügbarkeitsgruppen
-- Ein standortübergreifendes virtuelles Netzwerk
-- Zwei Speicherkonten
-
-Nachfolgend sind die virtuellen Computer und deren Standardgrößen für diese Konfiguration aufgeführt.
-
-Element | Beschreibung des virtuellen Computers | Katalogimage | Standardgröße 
---- | --- | --- | --- 
-1\. | Erster Domänencontroller | Windows Server 2012 R2 Datacenter | D1
-2\. | Zweiter Domänencontroller | Windows Server 2012 R2 Datacenter | D1
-3\. | Primärer Datenbankserver | Microsoft SQL Server 2014 Enterprise – Windows Server 2012 R2 | D4
-4\. | Sekundärer Datenbankserver | Microsoft SQL Server 2014 Enterprise – Windows Server 2012 R2 | D4
-5\. | Mehrheitsknoten des Clusters | Windows Server 2012 R2 Datacenter | D1
-6\. | Erster Webserver | Windows Server 2012 R2 Datacenter | D3
-7\. | Zweiter Webserver | Windows Server 2012 R2 Datacenter | D3
-
-Nutzen Sie zum Berechnen der geschätzten Kosten für diese Konfiguration den [Azure-Preisrechner](https://azure.microsoft.com/pricing/calculator/).
-
-1. Klicken Sie unter **Module** auf **Compute** und dann so oft auf **Virtuelle Computer**, bis Sie eine Liste mit sieben virtuellen Computern erstellt haben.
-2. Wählen Sie für jeden virtuellen Computer Folgendes:
-	- Die gewünschte Region
-	- **Windows** für den Typ
-	- **Standard** für die Preisstufe
-	- Die Standardgröße in der vorherigen Tabelle oder die gewünschte Größe für die **Instanzgröße**
-
-> [AZURE.NOTE]Der Azure-Preisrechner bezieht nicht die zusätzlichen Kosten für die SQL Server-Lizenz für die beiden virtuellen Computer ein, auf denen SQL Server 2014 Enterprise ausgeführt wird. Weitere Informationen finden Sie unter [Virtual Machine Preise – SQL](https://azure.microsoft.com/pricing/details/virtual-machines/#Sql).
-
-### Phasen der Bereitstellung
-
 Verwenden Sie zum Bereitstellen dieser Konfiguration das folgende Verfahren:
 
 - Phase 1: Konfigurieren von Azure 
@@ -117,16 +82,8 @@ Verwenden Sie zum Bereitstellen dieser Konfiguration das folgende Verfahren:
 
 Nach der Konfiguration können Sie diese Branchenanwendung problemlos erweitern, indem Sie dem Cluster weitere Webserver oder virtuelle Computer hinzufügen, auf denen SQL Server ausgeführt wird.
 
-## Zusätzliche Ressourcen
+## Nächster Schritt
 
-[Bereitstellen einer hochverfügbaren Branchenanwendung in Azure](virtual-machines-workload-high-availability-LOB-application-overview.md)
+- Verschaffen Sie sich einen [Überblick](virtual-machines-workload-high-availability-lob-application-overview.md) über den Produktions-Workload, bevor Sie sich die Konfiguration näher anschauen.
 
-[Architekturblaupause für Branchenanwendungen](http://msdn.microsoft.com/dn630664)
-
-[Einrichten einer webbasierten Branchenanwendung in einer Hybrid Cloud zu Testzwecken](../virtual-network/virtual-networks-setup-lobapp-hybrid-cloud-testing.md)
-
-[Implementierungsrichtlinien für Azure-Infrastrukturdienste](virtual-machines-infrastructure-services-implementation-guidelines.md)
-
-[Azure-Infrastrukturdienste-Workload: SharePoint Server 2013-Farm](virtual-machines-workload-intranet-sharepoint-farm.md)
-
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1223_2015-->

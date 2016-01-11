@@ -1,11 +1,11 @@
 <properties 
-	pageTitle="Erste Schritte mit Azure Active Directory und verbundenen Visual Studio-Diensten (MVC-Projekte)" 
+	pageTitle="Erste Schritte mit Azure Active Directory und verbundenen Visual Studio-Diensten (MVC-Projekte) | Microsoft Azure" 
 	description="Erfahren Sie etwas über die ersten Schritte mit Azure Active Directory in MVC-Projekten nach dem Herstellen einer Verbindung oder dem Erstellen eines Azure AD mithilfe von verbundenen Visual Studio-Diensten." 
 	services="active-directory" 
 	documentationCenter="" 
 	authors="TomArcher" 
 	manager="douge" 
-	editor="tglee"/>
+	editor=""/>
   
 <tags 
 	ms.service="active-directory" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="vs-getting-started" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/03/2015" 
+	ms.date="12/18/2015" 
 	ms.author="tarcher"/>
 
 # Erste Schritte mit Azure Active Directory und verbundenen Visual Studio-Diensten (MVC-Projekte)
@@ -77,4 +77,4 @@ Wenn Sie Ihrer Ansicht SignIn-/SignOut-Steuerelemente hinzufügen möchten, kön
 
 [Weitere Informationen zu Azure Active Directory](http://azure.microsoft.com/services/active-directory/)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1223_2015-->

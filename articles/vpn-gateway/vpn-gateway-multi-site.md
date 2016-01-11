@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Verbinden mehrerer lokaler Standorte mit einem virtuellen Netzwerk"
-   description="In diesem Artikel werden die Schritte zum Verbinden mehrerer lokaler Standorte mit einem virtuellen Netzwerk erläutert."
+   pageTitle="Verbinden mehrerer lokaler Standorte mit einem virtuellen Netzwerk mithilfe eines VPN-Gateways"
+   description="In diesem Artikel werden die Schritte zum Verbinden mehrerer lokaler Standorte mit einem virtuellen Netzwerk erläutert. Dabei wird ein VPN-Gateway im klassischen Bereitstellungsmodell verwendet."
    services="vpn-gateway"
    documentationCenter="na"
    authors="cherylmc"
@@ -14,18 +14,22 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="10/21/2015"
+   ms.date="12/17/2015"
    ms.author="cherylmc" />
 
 # Verbinden mehrerer lokaler Standorte mit einem virtuellen Netzwerk
 
->[AZURE.NOTE]Sie sollten wissen, dass Azure derzeit mit zwei Bereitstellungsmodellen arbeitet: der Bereitstellung mit dem Ressourcen-Manager und der klassischen Bereitstellung. Bevor Sie Ihre Konfiguration beginnen, sollten Sie sicherstellen, dass Sie die Bereitstellungsmodelle und -tools verstehen. Informationen zu den Bereitstellungsmodellen finden Sie unter [Azure-Bereitstellungsmodelle](../azure-classic-rm.md).
+Dieser Artikel behandelt das Verbinden mehrerer lokaler Standorte mit einem VNet, das mithilfe des klassischen Bereitstellungsmodells erstellt wurde (auch als Dienstverwaltung bezeichnet).
 
-Dieser Artikel bezieht sich auf die VNETs und VPN-Gateways, die mithilfe des klassischen Bereitstellungsmodells (Dienstverwaltung) erstellt wurden.
+**Informationen zu Azure-Bereitstellungsmodellen**
 
-Sie können mehrere lokale Standorte mit einem einzigen virtuellen Netzwerk verbinden. Dies ist besonders beim Erstellen von Hybrid Cloud-Lösungen interessant. Das Erstellen einer Multisite-Verbindung mit Ihrem virtuellen Azure-Netzwerkgateway ähnelt dem Erstellen anderer Standort-zu-Standort-Verbindungen. Tatsächlich können Sie ein vorhandenes Azure-VPN Gateway verwenden, sofern Sie ein routenbasiertes VPN Gateway (d. h. ein Gateway mit dynamischem Routing) für Ihr virtuelles Netzwerk konfiguriert haben.
+[AZURE.INCLUDE [vpn-gateway-clasic-rm](../../includes/vpn-gateway-classic-rm-include.md)]Wenn der Artikel mit den Schritten für VNets fertig ist, die mit dem Ressourcen-Manager-Bereitstellungsmodell erstellt wurden, wird ein Link darauf hier eingefügt.
 
-Wenn Ihr Gateway auf Richtlinien basiert (statisches Routing), ist es jederzeit möglich, den Gatewaytyp zu ändern, ohne das virtuelle Netzwerk zur Unterstützung mehrerer Standorte neu erstellen zu müssen. Allerdings müssen Sie sicherstellen, dass Ihr lokales VPN Gateway routenbasierte VPN-Konfigurationen unterstützt. Anschließend fügen Sie der Netzwerkkonfigurationsdatei einfach Konfigurationseinstellungen hinzu und erstellen mehrere VPN-Verbindungen zwischen Ihrem virtuellen Netzwerk und weiteren Standorten.
+## Über das Herstellen einer Verbindung
+
+Sie können mehrere lokale Standorte mit einem einzigen virtuellen Netzwerk verbinden. Dies ist besonders beim Erstellen von Hybrid Cloud-Lösungen interessant. Das Erstellen einer Mehrfachstandort- bzw. Multisite-Verbindung mit Ihrem virtuellen Azure-Netzwerkgateway ähnelt dem Erstellen anderer Standort-zu-Standort-Verbindungen. Sie können dafür ein vorhandenes Azure-VPN-Gateway verwenden, sofern das Gateway dynamisch (routenbasiert) ist.
+
+Wenn bereits ein statisches Gateway mit Ihrem virtuellen Netzwerk verbunden ist, können Sie den Gatewaytyp in „dynamisch“ ändern, um mehrere Standorte zu einzubinden. Sie brauchen das virtuelle Netzwerk dafür nicht neu zu erstellen. Stellen Sie vor dem Ändern des Routingtyps sicher, dass Ihr lokales VPN-Gateway routenbasierte VPN-Konfigurationen unterstützt.
 
 ![VPN mit mehreren Standorten](./media/vpn-gateway-multi-site/IC727363.png)
 
@@ -43,7 +47,7 @@ Vergewissern Sie sich vor Beginn der Konfiguration, dass Sie über Folgendes ver
 
 - Eine externe öffentliche IPv4-Adresse für jedes VPN-Gerät. Die IP-Adresse darf sich nicht hinter einer NAT befinden. Dies ist eine Voraussetzung
 
--   Die neueste Version von Azure PowerShell-Cmdlets. Sie können die neueste Version aus dem Abschnitt „Windows PowerShell“ der [Downloadseite](http://azure.microsoft.com/downloads/) herunterladen und installieren.
+- Die neueste Version von Azure PowerShell-Cmdlets. Sie können die neueste Version aus dem Abschnitt „Windows PowerShell“ der [Downloadseite](http://azure.microsoft.com/downloads/) herunterladen und installieren.
 
 - Eine Person, die sich mit der Konfiguration Ihrer VPN-Hardware auskennt. Es ist nicht möglich, automatisch generierte VPN-Skripts aus dem klassischen Azure-Portal zum Konfigurieren der VPN-Geräte zu verwenden. Daher müssen Sie über profunde Kenntnisse in der Konfiguration des VPN-Geräts verfügen oder jemanden mit entsprechenden Fachkenntnissen hinzuziehen.
 
@@ -53,17 +57,15 @@ Vergewissern Sie sich vor Beginn der Konfiguration, dass Sie über Folgendes ver
 
 ## Erstellen des virtuellen Netzwerks und Gateways
 
-1. **Erstellen Sie ein Standort-zu-Standort-VPN mit einem Gateway mit dynamischem Routing.** Wenn Sie bereits über ein solches VPN verfügen – großartig! In diesem Fall können Sie direkt mit dem [Exportieren der Konfigurationseinstellungen für das virtuelle Netzwerk](#export) fortfahren. Andernfalls führen Sie die folgenden Schritte aus:
+1. **Erstellen Sie ein Standort-zu-Standort-VPN mit einem Gateway mit dynamischem (routenbasiertem) Routing.** Wenn Sie bereits über ein solches VPN verfügen – großartig! In diesem Fall können Sie direkt mit dem [Exportieren der Konfigurationseinstellungen für das virtuelle Netzwerk](#export) fortfahren. Andernfalls führen Sie die folgenden Schritte aus:
 
-	**Wenn Sie bereits über ein virtuelles Standort-zu-Standort-Netzwerk verfügen, für dieses aber ein Gateway mit statischem Routing konfiguriert ist, gehen Sie wie folgt vor:****1.** Ändern Sie den Gatewaytyp in dynamisches Routing. Für ein VPN mit mehreren Standorten ist ein Gateway mit dynamischem Routing erforderlich. Um den Gatewaytyp zu ändern, müssen Sie zuerst das vorhandene Gateway löschen und dann ein neues erstellen. Anweisungen dazu finden Sie unter [Ändern des Routingtyps für ein VPN Gateway](vpn-gateway-configure-vpn-gateway-mp.md/#how-to-change-your-vpn-gateway-type). **2.** Konfigurieren Sie das neue Gateway, und erstellen Sie den VPN-Tunnel. Anweisungen dazu finden Sie unter [Konfigurieren eines VPN Gateways im klassischen Azure-Portal](vpn-gateway-configure-vpn-gateway-mp.md).
-	
-	**Wenn Sie nicht über ein virtuelles Standort-zu-Standort-Netzwerk verfügen, gehen Sie wie folgt vor:****1.** Erstellen Sie anhand der folgenden Anweisungen das virtuelle Standort-zu-Standort-Netzwerk: [Erstellen eines virtuellen Netzwerks mit einer Standort-zu-Standort-VPN-Verbindung im klassischen Azure-Portal](vpn-gateway-site-to-site-create.md). **2.** Konfigurieren Sie anhand der folgenden Anweisungen ein Gateway mit dynamischem Routing: [Konfigurieren eines VPN Gateways](vpn-gateway-configure-vpn-gateway-mp.md). Denken Sie daran, **dynamisches Routing** als Gatewaytyp auszuwählen.
+	**Wenn Sie bereits über ein virtuelles Standort-zu-Standort-Netzwerk verfügen, das aber ein statisches (richtlinienbasiertes) Gateway enthält:** Schritt 1: Ändern Sie den Gatewaytyp in dynamisches Routing. Für ein VPN mit mehreren Standorten ist ein Gateway mit dynamischem Routing erforderlich. Um den Gatewaytyp zu ändern, müssen Sie zuerst das vorhandene Gateway löschen und dann ein neues erstellen. Anweisungen dazu finden Sie unter [Ändern des Routingtyps für ein VPN-Gateway](vpn-gateway-configure-vpn-gateway-mp.md/#how-to-change-your-vpn-gateway-type). Schritt 2: Konfigurieren Sie das neue Gateway, und erstellen Sie den VPN-Tunnel. Eine Anleitung hierzu finden Sie unter [Konfigurieren eines VPN-Gateways im klassischen Azure-Portal](vpn-gateway-configure-vpn-gateway-mp.md). Ändern Sie zunächst den Gatewaytyp in dynamisches Routing.
 
+	**Wenn Sie nicht über ein virtuelles Standort-zu-Standort-Netzwerk verfügen:** Schritt 1: Erstellen Sie anhand der folgenden Anweisungen das virtuelle Standort-zu-Standort-Netzwerk: [Erstellen eines virtuellen Netzwerks mit einer Standort-zu-Standort-VPN-Verbindung im klassischen Azure-Portal](vpn-gateway-site-to-site-create.md). Schritt 2: Konfigurieren Sie anhand der folgenden Anweisungen ein Gateway mit dynamischem Routing: [Konfigurieren eines VPN-Gateways](vpn-gateway-configure-vpn-gateway-mp.md). Denken Sie daran, **dynamisches Routing** als Gatewaytyp auszuwählen.
 
+2. **<a name="export"></a>Exportieren Sie die Konfigurationseinstellungen für das virtuelle Netzwerk.** Informationen zum Exportieren der Netzwerkkonfigurationsdatei finden Sie unter [So exportieren Sie die Netzwerkeinstellungen](../virtual-network/virtual-networks-using-network-configuration-file.md). Die exportierte Datei wird zum Konfigurieren der neuen Multisite-Einstellungen verwendet.
 
-1. **<a name="export"></a>Exportieren Sie die Konfigurationseinstellungen für das virtuelle Netzwerk.** Informationen zum Exportieren der Netzwerkkonfigurationsdatei finden Sie unter [So exportieren Sie die Netzwerkeinstellungen](../virtual-network/virtual-networks-using-network-configuration-file.md). Die exportierte Datei wird zum Konfigurieren der neuen Multisite-Einstellungen verwendet.
-
-1. **Öffnen Sie die Netzwerkkonfigurationsdatei.** Öffnen Sie die Netzwerkkonfigurationsdatei, die Sie im letzten Schritt heruntergeladen haben. Verwenden Sie dazu einen beliebigen XML-Editor. Die Datei sollte in etwa wie folgt aussehen:
+3. **Öffnen Sie die Netzwerkkonfigurationsdatei.** Öffnen Sie die Netzwerkkonfigurationsdatei, die Sie im letzten Schritt heruntergeladen haben. Verwenden Sie dazu einen beliebigen XML-Editor. Die Datei sollte in etwa wie folgt aussehen:
 
 		<NetworkConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration">
 		  <VirtualNetworkConfiguration>
@@ -112,7 +114,7 @@ Vergewissern Sie sich vor Beginn der Konfiguration, dass Sie über Folgendes ver
 		  </VirtualNetworkConfiguration>
 		</NetworkConfiguration>
 
-1. Fügen Sie der Netzwerkkonfigurationsdatei mehrere Standortverweise hinzu. Beim Hinzufügen oder Entfernen der Informationen für Standortverweise nehmen Sie Konfigurationsänderungen an „ConnectionsToLocalNetwork/LocalNetworkSiteRef“ vor. Wenn Sie einen neuen Verweis für einen lokalen Standort hinzufügen, erstellt Azure einen neuen Tunnel. Das folgende Beispiel zeigt die Netzwerkkonfiguration für eine Einzelstandortverbindung.
+4. **Fügen Sie der Netzwerkkonfigurationsdatei mehrere Standortverweise hinzu**. Beim Hinzufügen oder Entfernen der Informationen für Standortverweise nehmen Sie Konfigurationsänderungen an „ConnectionsToLocalNetwork/LocalNetworkSiteRef“ vor. Wenn Sie einen neuen Verweis für einen lokalen Standort hinzufügen, erstellt Azure einen neuen Tunnel. Das folgende Beispiel zeigt die Netzwerkkonfiguration für eine Einzelstandortverbindung.
 
 		<Gateway>
           <ConnectionsToLocalNetwork>
@@ -129,17 +131,15 @@ Vergewissern Sie sich vor Beginn der Konfiguration, dass Sie über Folgendes ver
           </ConnectionsToLocalNetwork>
         </Gateway>
 
-1. **Speichern Sie die Netzwerkkonfigurationsdatei, und importieren Sie sie.** Informationen zum Importieren der Netzwerkkonfigurationsdatei finden Sie unter [So importieren Sie die Netzwerkeinstellungen](../virtual-network/../virtual-network/virtual-networks-using-network-configuration-file.md#export-and-import-virtual-network-settings-using-the-management-portal). Wenn Sie diese Datei mit den Änderungen importieren, werden die neuen Tunnel hinzugefügt. Die Tunnel verwenden das dynamische Gateway, das Sie zuvor erstellt haben.
+5. **Speichern Sie die Netzwerkkonfigurationsdatei, und importieren Sie sie.** Informationen zum Importieren der Netzwerkkonfigurationsdatei finden Sie unter [So importieren Sie die Netzwerkeinstellungen](../virtual-network/../virtual-network/virtual-networks-using-network-configuration-file.md#export-and-import-virtual-network-settings-using-the-management-portal). Wenn Sie diese Datei mit den Änderungen importieren, werden die neuen Tunnel hinzugefügt. Die Tunnel verwenden das dynamische Gateway, das Sie zuvor erstellt haben.
 
-
-
-1. **Laden Sie die vorinstallierten Schlüssel für die VPN-Tunnel herunter.** Nachdem die neuen Tunnel hinzugefügt wurden, rufen Sie mit dem PowerShell-Cmdlet „Get-AzureVNetGatewayKey“ die vorinstallierten IPSec-/IKE-Schlüssel für jeden Tunnel ab.
+6. **Laden Sie die vorinstallierten Schlüssel für die VPN-Tunnel herunter.** Nachdem die neuen Tunnel hinzugefügt wurden, rufen Sie mit dem PowerShell-Cmdlet „Get-AzureVNetGatewayKey“ die vorinstallierten IPSec-/IKE-Schlüssel für jeden Tunnel ab.
 
 	Beispiel:
 
-		PS C:\> Get-AzureVNetGatewayKey –VNetName "VNet1" –LocalNetworkSiteName "Site1"
+		Get-AzureVNetGatewayKey –VNetName "VNet1" –LocalNetworkSiteName "Site1"
 
-		PS C:\> Get-AzureVNetGatewayKey –VNetName "VNet1" –LocalNetworkSiteName "Site2"
+		Get-AzureVNetGatewayKey –VNetName "VNet1" –LocalNetworkSiteName "Site2"
 
 	Sie können auch die REST-API *Get Virtual Network Gateway Shared Key* zum Abrufen der vorinstallierten Schlüssel verwenden.
 
@@ -147,7 +147,7 @@ Vergewissern Sie sich vor Beginn der Konfiguration, dass Sie über Folgendes ver
 
 **Überprüfen Sie den Multisite-Tunnelstatus.** Nachdem Sie die Schlüssel für jeden Tunnel heruntergeladen haben, sollten Sie die Verbindungen überprüfen. Verwenden Sie wie im folgenden Beispiel gezeigt *Get-AzureVnetConnection*, um eine Liste der virtuellen Netzwerktunnel abzurufen. „VNet1“ ist der Name des VNets.
 
-		PS C:\Users\yushwang\Azure> Get-AzureVnetConnection -VNetName VNET1
+		Get-AzureVnetConnection -VNetName VNET1
 		
 		ConnectivityState         : Connected
 		EgressBytesTransferred    : 661530
@@ -175,6 +175,6 @@ Vergewissern Sie sich vor Beginn der Konfiguration, dass Sie über Folgendes ver
 
 ## Nächste Schritte
 
-Weitere Informationen zu VPN Gateways finden Sie unter [Informationen zu VPN Gateways](../vpn-gateway/vpn-gateway-about-vpngateways.md).
+Weitere Informationen zu VPN-Gateways finden Sie unter [Informationen zu VPN-Gateways](../vpn-gateway/vpn-gateway-about-vpngateways.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1223_2015-->

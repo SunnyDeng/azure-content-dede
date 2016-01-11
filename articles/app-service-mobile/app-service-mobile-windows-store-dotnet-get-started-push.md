@@ -18,9 +18,7 @@
 
 # Hinzufügen von Pushbenachrichtigungen zu Ihrer universellen Windows Runtime 8.1-App
 
-[AZURE.INCLUDE [app-service-mobile-selector-get-started-push](../../includes/app-service-mobile-selector-get-started-push.md)]
-&nbsp;  
-[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
+[AZURE.INCLUDE [app-service-mobile-selector-get-started-push](../../includes/app-service-mobile-selector-get-started-push.md)]&nbsp;[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
 
 ##Übersicht
 
@@ -103,9 +101,11 @@ Nachdem die Pushbenachrichtigungen in der App aktiviert wurden, müssen Sie ihr 
 	
 	Dieser Code weist das Benachrichtigungshub an, nach dem Einfügen eines neuen Elements eine Pushbenachrichtigung zu senden.
 
+4. Veröffentlichen Sie das Serverprojekt erneut.
+
 ### <a name="nodejs"></a>Node.js-Back-End-Projekt
 
-1. Falls nicht bereits geschehen, [laden Sie das Schnellstartprojekt herunter](app-service-mobile-node-backend-how-to-use-server-sdk.md#download-quickstart), oder verwenden Sie den [Online-Editor im Azure-Portal](app-service-mobile-node-backend-how-to-use-server-sdk.md#online-editor).
+1. Falls nicht bereits geschehen, [laden Sie das Schnellstartprojekt herunter](app-service-mobile-node-backend-how-to-use-server-sdk.md#download-quickstart) oder verwenden Sie den [Online-Editor im Azure-Portal](app-service-mobile-node-backend-how-to-use-server-sdk.md#online-editor).
 
 2. Ersetzen Sie den bestehenden Code in der Datei „todoitem.js“ durch den folgenden Code:
 
@@ -152,10 +152,6 @@ Nachdem die Pushbenachrichtigungen in der App aktiviert wurden, müssen Sie ihr 
 	Damit wird eine WNS-Popupbenachrichtigung gesendet, die „item.text“ enthält, wenn ein neues Todo-Element eingefügt wird.
 
 2. Beim Bearbeiten der Datei auf Ihrem lokalen Computer veröffentlichen Sie das Serverprojekt erneut.
-
-## <a name="publish-the-service"></a>Veröffentlichen des mobilen Back-Ends in Azure
-
-[AZURE.INCLUDE [app-service-mobile-dotnet-backend-publish-service](../../includes/app-service-mobile-dotnet-backend-publish-service.md)]
 
 ##<a id="update-service"></a>Hinzufügen von Pushbenachrichtigungen zur App
 
@@ -214,4 +210,4 @@ Ihre App kann jetzt Popupbenachrichtigungen empfangen.
 
 <!-- Images. -->
 
-<!---HONumber=AcomDC_1210_2015--->
+<!---HONumber=AcomDC_1223_2015-->

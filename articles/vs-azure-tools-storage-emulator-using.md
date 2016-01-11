@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="08/24/2015"
+   ms.date="12/18/2015"
    ms.author="tarcher" />
 
 # Konfigurieren und Verwenden des Speicheremulators mit Visual Studio
@@ -43,4 +43,4 @@ Der Speicheremulator verfügt über eine Benutzeroberfläche, auf der Sie den St
 
 Der Azure Storage-Knoten im Server-Explorer ermöglicht Ihnen die Anzeige von Daten und das Ändern von Einstellungen für Blob- und Tabellendaten in Ihren Speicherkonten, einschließlich des Speicheremulators. Weitere Informationen finden Sie unter [Durchsuchen und Verwalten von Speicherressourcen mit Server-Explorer](https://msdn.microsoft.com/library/azure/ff683677.aspx).
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1223_2015-->

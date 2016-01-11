@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Umgebungsunabhängige Bereitstellung mit Service Fabric (Windows Server und Linux)| Microsoft Azure"
-   description="Service Fabric-Cluster können unter Windows Server und Linux ausgeführt werden, sodass Service Fabric-Anwendungen überall dort bereitgestellt und gehostet werden können, wo Windows Server und Linux ausgeführt werden können."
+   pageTitle="Umgebungsunabhängige Bereitstellung mit Azure Service Fabric unter Windows Server und Linux| Microsoft Azure"
+   description="Service Fabric-Cluster können unter Windows Server und Linux ausgeführt werden, sodass Service Fabric-Anwendungen überall dort bereitgestellt und gehostet werden können, wo Windows Server und Linux ausgeführt werden können."
    services="service-fabric"
    documentationCenter=".net"
    authors="kunalds"
@@ -17,34 +17,40 @@
    ms.author="kunalds"/>
 
 # Umgebungsunabhängige Bereitstellung (Deploy Anywhere) unter Windows Server und Linux mit Service Fabric
-Service Fabric ermöglicht die Erstellung von Service Fabric-Clustern auf VMs oder Computern unter Windows Server oder Linux. Dies ermöglicht Service Fabric-Anwendungen die Bereitstellung und Ausführung in beliebigen Umgebungen, ob lokal oder in der Cloud, in denen sich verschiedene miteinander verbundene Computer mit Windows Server oder Linux befinden. Service Fabric bietet ein Setup-Paket zum Erstellen von Service Fabric-Clustern. Ein entscheidender Vorteil dieses Features (Deploy Anywhere) ist, dass es beim Erstellen einer Anwendung mit Service Fabric keine Anbieterabhängigkeit gibt, da Sie wählen, wo diese Anwendungen ausgeführt werden. Dadurch bietet sich auch ein größerer Potenzial, einen größeren Kundenstamm zu erreichen, da verschiedene Kunden unterschiedliche Anforderungen an die Umgebung zur Ausführung Ihrer Anwendungen haben können. Unternehmen im Gesundheitswesen und Finanzsektor haben ggf. andere Anforderungen als ein Autohersteller oder Reiseanbieter. Die Technical Preview-Version dieses Features wird voraussichtlich im 1. Quartal 2016 veröffentlicht.
+Mit „Deploy Anywhere“ (umgebungsunabhängige Bereitstellung) ermöglicht Azure Service Fabric die Erstellung von Service Fabric-Clustern auf beliebigen VMs oder Computern unter Windows Server oder Linux. Dadurch lassen sich Service Fabric-Anwendungen in jeder lokalen oder cloudbasierten Umgebung bereitstellen und ausführen, in der sich miteinander verbundene Computer unter Windows Server oder Linux befinden.
+
+ Service Fabric bietet ein Setuppaket zum Erstellen von Service Fabric-Clustern. Ein entscheidender Vorteil des Deploy Anywhere-Features besteht darin, dass Sie beim Erstellen einer Anwendung mit Service Fabric unabhängig vom Anbieter entscheiden können, wo die Anwendungen ausgeführt werden sollen. Dadurch können Sie sich einen größeren Kundenstamm erschließen, da Kunden hinsichtlich der Umgebungen, in denen sie Ihre Anwendungen ausführen möchten, unter Umständen unterschiedliche Anforderungen haben. So haben Unternehmen im Gesundheitswesen und Finanzsektor ggf. andere Anforderungen als ein Autohersteller oder Reiseanbieter.
+
+Die Technical Preview-Version dieses Features wird voraussichtlich im 1. Quartal 2016 veröffentlicht.
 
 ## Unterstützte Betriebssysteme
-Sie können Cluster auf VMs oder Computern mit diesen Betriebssystemen erstellen: Windows Server 2012 R2, Windows Server 2016 und Linux
+Sie können Cluster auf VMs oder Computern unter folgenden Betriebssystemen erstellen: * Windows Server 2012 R2 * Windows Server 2016 * Linux
 
 ## Unterstützte Programmiersprachen
-Sie können Service Fabric-Anwendungen mit diesen Programmiersprachen schreiben: C# und Java
+Service Fabric-Anwendungen können mit folgenden Programmiersprachen erstellt werden: * C# * Java
 
 ## Erstellung und Konfiguration von Clustern
-Service Fabric bietet ein Setup-Paket, das Sie aus dem Microsoft Download Center herunterladen können. Nachdem Sie dieses Paket heruntergeladen haben, müssen Sie eine Konfigurationsdatei bearbeiten, indem Sie die Einstellungen für Ihren Cluster angeben. Nachdem die Clustereinstellungen bearbeitet wurden, führen Sie ein Setupskript aus, mit dessen Hilfe der Cluster auf den Computern erstellt wird, die Sie in Ihren Clustereinstellungen angegeben haben. Die genauen Details des Setupvorgangs werden bekanntgegeben, sobald die Preview-Version dieser Funktionalität im 1. Quartal 2016 veröffentlicht wird.
+Service Fabric bietet ein Setup-Paket, das Sie aus dem Microsoft Download Center herunterladen können. Nach dem Herunterladen dieses Pakets müssen Sie eine Konfigurationsdatei bearbeiten, um die Einstellungen für Ihren Cluster anzugeben. Nach der Bearbeitung der Clustereinstellungen muss ein Setupskript ausgeführt werden, das den Cluster mit den Computern erstellt, die Sie in Ihren Clustereinstellungen angegeben haben.
 
-## Cloudbereitstellungen vs. lokale Bereitstellungen
-Der Prozess zum lokalen Erstellen eines Service Fabric-Clusters wird vergleichbar sein mit dem Prozess zum Erstellen eines Clusters in einer Cloud Ihrer Wahl, in der Sie über eine Gruppe von VMs verfügen. Die ersten Schritte zum Bereitstellen der VMs werden von der Cloud oder lokalen Umgebung gesteuert, die Sie nutzen. Doch sobald Sie über eine Gruppe von VMs verfügen, die über ein Netzwerk verbunden sind, sind die nächsten Schritte zum Einrichten des Service Fabric-Pakets, Bearbeiten der Clustereinstellungen und Ausführen der Skripts zum Erstellen und Verwalten des Clusters ähnlich. Dadurch wird sichergestellt, dass Ihre Kompetenz und Erfahrung beim Betreiben und Verwalten von Service Fabric-Clustern bei Wahl einer neuen Hostingumgebung übertragbar sind.
+Die genauen Details des Setupvorgangs werden bekanntgegeben, sobald die Preview-Version dieser Funktionalität im 1. Quartal 2016 veröffentlicht wird.
 
-## Vorteile des Features „Deploy Anywhere“ (umgebungsunabhängige Bereitstellung)
-* Keine Anbieterabhängigkeit.
-* Einmal entwickelte Service Fabric-Anwendungen können bei minimalen oder sogar ohne Änderungen in mehreren Hostingumgebungen ausgeführt werden.
+## Gegenüberstellung von cloudbasierten und lokalen Bereitstellungen
+Der Prozess zum lokalen Erstellen eines Service Fabric-Clusters ist vergleichbar mit der Erstellung eines Clusters in einer beliebigen Cloud mit einer Gruppe von VMs. Die ersten Schritte zum Bereitstellen der VMs sind abhängig von Ihrer Cloudumgebung bzw. von Ihrer lokalen Umgebung. Sobald Sie jedoch über eine Gruppe von VMs verfügen, die über ein Netzwerk verbunden sind, sind die Schritte zum Einrichten des Service Fabric-Pakets, Bearbeiten der Clustereinstellungen und Ausführen der Skripts zum Erstellen und Verwalten des Clusters ähnlich. Dadurch ist sichergestellt, dass Ihre Kompetenz und Erfahrung beim Betreiben und Verwalten von Service Fabric-Clustern bei Bedarf auf andere Hostingumgebungen übertragbar sind.
+
+## Vorteile des Deploy Anywhere-Features
+* Dank fehlender Anbieterabhängigkeit können Sie frei wählen, wo die Anwendungen ausgeführt werden sollen.
+* Einmal entwickelte Service Fabric-Anwendungen können mit minimalen oder sogar ganz ohne Änderungen in mehreren Hostingumgebungen ausgeführt werden.
 * Kenntnisse der Erstellung von Service Fabric-Anwendungen lassen sich auf andere Hostingplattformen übertragen.
 * Erfahrungen beim Betrieb von Service Fabric-Clustern lassen sich von einer Bereitstellungsumgebung auf andere übertragen.
 * Die Kundenreichweite wird nicht durch Einschränkungen bei der Hostingumgebung begrenzt.
-* Zusätzliches Maß an Zuverlässigkeit und Schutz vor weitreichenden Ausfällen, indem die Dienste in eine andere Bereitstellungsumgebung verlagert werden, sollte es in einem Datencenter oder bei einem Cloudanbieter einen Totalausfall geben.
+* Die Möglichkeit, Dienste im Falle eines Ausfalls in einem Datencenter oder bei einem Cloudanbieter in eine andere Bereitstellungsumgebung zu verlagern, sorgt für ein zusätzliches Maß an Zuverlässigkeit und schützt vor weitreichenden Ausfällen.
 
-## Unterschiede zwischen der umgebungsunabhängigen Bereitstellung und in Azure gehosteten Service Fabric-Clustern
-Das Betreiben von Service Fabric-Clustern mithilfe von Azure Hosted Service bietet verschiedene Vorteile im Vergleich zur Option der umgebungsunabhängigen Bereitstellung. Wenn also keine besonderen Anforderungen vorliegen, wo Sie Ihre Cluster ausführen, empfehlen wir deren Ausführung als in Azure gehostete Cluster. In Azure bieten wir die Integration mit anderen Azure-Features und -Diensten, die Betrieb und Verwaltung des Clusters vereinfachen:
+## Vorteile verwalteter Service Fabric-Cluster unter Azure gegenüber Service Fabric-Clustern, die mit Deploy Anywhere erstellt und verwaltet werden
+Die Verwendung von Service Fabric-Clustern unter Azure bietet gegenüber der Deploy Anywhere-Option einige Vorteile. Wenn Sie also hinsichtlich des Ausführungsorts Ihrer Cluster keine besondere Präferenz haben, empfiehlt sich die Ausführung unter Azure. Unter Azure profitieren Sie von der Integration anderer Azure-Features und -Dienste, die den Betrieb und die Verwaltung des Clusters vereinfachen:
 
-* Azure-Portal: Das Azure-Portal erleichtert das Erstellen und Verwalten von Clustern.
-* Azure-Ressourcen-Manager: Der ARM vereinfacht die Verwaltung aller vom Cluster genutzten Ressourcen als Einheit sowie die Kostentransparenz und Abrechnung. 
-* Diagnose: In Azure bieten wir Ihnen Integration mit WAD (Microsoft Azure Diagnostics) und Operational Insights zu Diagnosezwecken.
-* Automatische Skalierung: Für in Azure gehostete Cluster bieten wir die integrierte automatische Skalierungsfunktionalität. Bei Verwenden der umgebungsunabhängigen Bereitstellung in anderen Umgebungen müssen Sie eine eigene automatische Skalierungsfunktion entwickeln oder eine manuelle Skalierung mithilfe der APIs vornehmen, die Service Fabric für die Skalierung von Clustern verfügbar macht.
+* **Azure-Portal:** Erleichtert das Erstellen und Verwalten von Clustern.
+* **Azure-Ressourcen-Manager:** Vereinfacht die Verwaltung aller vom Cluster genutzten Ressourcen als Einheit sowie die Abrechnung und sorgt für Kostentransparenz.
+* **Diagnose:** Integration mit Azure Diagnostics und Operational Insights.
+* **Automatische Skalierung:** Integrierte automatische Skalierungsfunktion für in Azure gehostete Cluster. Bei Verwendung der umgebungsunabhängigen Bereitstellung in anderen Umgebungen müssen Sie eine eigene automatische Skalierung entwickeln oder mithilfe der APIs, die Service Fabric für die Skalierung von Clustern verfügbar macht, eine manuelle Skalierung vornehmen.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1223_2015-->

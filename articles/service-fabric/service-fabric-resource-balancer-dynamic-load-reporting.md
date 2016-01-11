@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Melden der dynamischen Auslastung"
-   description="Sie erhalten einen Überblick über das Melden der dynamischen Auslastung an den Resource Balancer."
+   pageTitle="Dynamisches Melden der Auslastung | Microsoft Azure"
+   description="Sie erhalten einen Überblick über das dynamische Melden der Auslastung an Resource Balancer."
    services="service-fabric"
    documentationCenter=".net"
    authors="GaugeField"
@@ -16,17 +16,17 @@
    ms.date="09/03/2015"
    ms.author="masnider"/>
 
-# Melden der dynamischen Auslastung – Übersicht
+# Übersicht über das dynamische Melden der Auslastung
 
-Zur Laufzeit können zustandsbehaftete und zustandslose Dienstobjekte die Auslastung über die ReportLoad-Methode melden (Member der Schnittstellen IStatefulServicePartition und IStatelessServicePartition). Das Melden von Auslastungswerten zur Laufzeit ist wichtig, weil damit das genaue Packen von Diensten in die Knoten ermöglicht wird. Außerdem wird sichergestellt, dass die Ressourcennutzung vom zentralen Service Fabric Resource Balancer so präzise nachverfolgt wird, wie sie für die Dienste auf den Knoten abläuft.
+Zur Laufzeit können zustandsbehaftete und zustandslose Dienstobjekte die Auslastung über die ReportLoad-Methode melden (Member der Schnittstellen IStatefulServicePartition und IStatelessServicePartition). Das Melden von Werten der Auslastung zur Laufzeit ist wichtig. Damit wird das genaue Packen von Diensten in die Knoten ermöglicht. Außerdem wird sichergestellt, dass die Ressourcennutzung von der zentralen Resource Balancer-Instanz in Azure Service Fabric so präzise nachverfolgt wird, wie sie für die Dienste auf den Knoten abläuft.
 
-Beachten Sie Folgendes: Wenn ein Replikat seine Auslastung meldet, wird diese Meldung zuerst mit anderen Auslastungsberichten lokal zusammengefasst, und anschließend wird ein gemeinsamer Bericht an den Resource Balancer gesendet. Dieser Prozess bedeutet, dass beim wiederholten und sehr schnellen Melden der Auslastung durch einen Dienst nur der letzte Bericht tatsächlich an den Resource Balancer gesendet wird.
+Beachten Sie Folgendes: Wenn ein Replikat seine Auslastung meldet, wird diese Meldung zuerst mit anderen Auslastungsberichten lokal zusammengefasst, und anschließend wird ein gemeinsamer Bericht an Resource Balancer gesendet. Dieser Prozess bedeutet, dass beim wiederholten und sehr schnellen Melden der Auslastung durch einen Dienst nur der letzte Bericht tatsächlich an Resource Balancer gesendet wird.
 
-Wenn der Service Fabric Resource Balancer ausgeführt wird, untersucht er die gesamten Auslastungsinformationen, die von allen Knoten zusammengefasst werden, und führt einige Überprüfungen durch. Zu diesen Überprüfungen gehören der Ausgleichsschwellenwert und der Aktivitätsschwellenwert für die Metriken gemäß der Definition im Clustermanifest. Damit wird bestimmt, ob die Unausgeglichenheit des Clusters ausreicht, um den Resource Balancer auszuführen. Außerdem wird ermittelt, ob für einen bestimmten Knoten die Kapazität für eine der Metriken überschritten wurde, für die eine Kapazität festgelegt wurde. Bei einer Kapazitätsüberschreitung werden vom Resource Balancer zuerst nur die Dienste auf dem Knoten bzw. den Knoten mit Kapazitätsüberschreitung berücksichtigt, von denen die überschreitende Metrik gemeinsam genutzt wird. Bei einer Unausgeglichenheit des Clusters berücksichtigt der Resource Balancer alle Dienste, die über Metriken mit Diensten verknüpft sind, von denen die unausgeglichene Metrik gemeldet wird. Wenn der Service Fabric Resource Balancer ermittelt, dass eine dieser Situationen eingetreten ist, führt er eine Simulation aus. Damit wird versucht, eine bessere Anordnung der Dienste zu erzielen.
+Wenn Service Fabric Resource Balancer ausgeführt wird, werden damit alle Auslastungsinformationen untersucht, die von allen Knoten aggregiert werden, und es werden einige Überprüfungen durchgeführt. Zu diesen Überprüfungen gehören der Ausgleichsschwellenwert und Aktivitätsschwellenwerte für die Metriken gemäß der Definition im Clustermanifest. Damit wird bestimmt, ob die Unausgeglichenheit des Clusters ausreicht, um Resource Balancer auszuführen. Außerdem wird ermittelt, ob für einen bestimmten Knoten die Kapazität für eine der Metriken überschritten wurde, für die eine Kapazität festgelegt wurde. Bei einer Kapazitätsüberschreitung werden von Resource Balancer zuerst nur die Dienste auf dem Knoten bzw. den Knoten mit Kapazitätsüberschreitung berücksichtigt, die diese Metrik aufweisen. Bei einer Unausgeglichenheit des Clusters berücksichtigt Resource Balancer alle Dienste, die über Metriken mit Diensten verknüpft sind, von denen die unausgeglichene Metrik gemeldet wird. Wenn Resource Balancer ermittelt, dass eine dieser Situationen eingetreten ist, wird eine Simulation ausgeführt. Damit wird versucht, eine bessere Anordnung der Dienste zu erreichen.
 
-Die Dienste sollten die Auslastung immer melden, wenn sich diese ändert, und selbst keine Aggregierung oder Glättung von Auslastungsberichten durchführen.
+Dienste sollen die Auslastung immer melden, wenn sie sich ändert. Sie sollen selbst keine Aggregierung oder Glättung von Auslastungsberichten ausführen.
 
-Beachten Sie Folgendes: Wenn ein Dienst die Auslastung meldet, ersetzen diese Auslastungsberichte die standardmäßigen primären und sekundären Auslastungswerte, die bei der Erstellung des Diensts definiert wurden. Sie werden zu den neuen Auslastungswerten, die verwendet werden, wenn der Service Fabric Resource Balancer ab diesem Zeitpunkt Lastenausgleichs- oder Platzierungsentscheidungen treffen muss.
+Beachten Sie Folgendes: Wenn ein Dienst die Auslastung meldet, ersetzen diese Auslastungsberichte die standardmäßigen primären und sekundären Auslastungswerte, die bei der Erstellung des Diensts definiert wurden. Sie werden zu den neuen Auslastungswerten, die verwendet werden, wenn Service Fabric Resource Balancer ab diesem Zeitpunkt Lastenausgleichs- oder Platzierungsentscheidungen treffen muss.
 
 
 
@@ -34,6 +34,5 @@ Beachten Sie Folgendes: Wenn ein Dienst die Auslastung meldet, ersetzen diese Au
 ## Nächste Schritte
 
 Weitere Informationen: [Resource Balancer-Architektur](service-fabric-resource-balancer-architecture.md)
- 
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1223_2015-->

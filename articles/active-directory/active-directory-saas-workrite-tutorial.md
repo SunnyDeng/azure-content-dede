@@ -3,7 +3,7 @@
 	description="Erfahren Sie, wie Sie das einmalige Anmelden zwischen Azure Active Directory und Workrite konfigurieren."
 	services="active-directory"
 	documentationCenter=""
-	authors="markusvi"
+	authors="jeevansd"
 	manager="stevenpo"
 	editor=""/>
 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/16/2015"
-	ms.author="markusvi"/>
+	ms.date="12/18/2015"
+	ms.author="jeedes"/>
 
 
 # Lernprogramm: Azure Active Directory-Integration mit Workrite
@@ -119,15 +119,15 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta S
 
 **Um einen Testbenutzer in Azure AD zu erstellen, führen Sie die folgenden Schritte aus:**
 
-1. Klicken Sie im linken Navigationsbereich des Azure-Verwaltungsportals auf **Active Directory**. <br><br>![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-workrite-tutorial/create_aaduser_09.png) <br> 
+1. Klicken Sie im linken Navigationsbereich des **Azure-Verwaltungsportals** auf **Active Directory**. <br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-workrite-tutorial/create_aaduser_09.png) <br> 
 
 2. Wählen Sie in der Liste **Verzeichnis** das Verzeichnis aus, für das Sie die Verzeichnisintegration aktivieren möchten.
 
-3. Klicken Sie zum Anzeigen der Liste der Benutzer im Menü oben auf **Benutzer**. <br><br> ![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-workrite-tutorial/create_aaduser_03.png) <br>
+3. Klicken Sie zum Anzeigen der Liste der Benutzer im Menü oben auf **Benutzer**. <br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-workrite-tutorial/create_aaduser_03.png) <br>
  
-4. Um das Dialogfeld **Benutzer hinzufügen** zu öffnen, klicken Sie auf der Symbolleiste unten auf **Benutzer hinzufügen**. <br><br> ![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-workrite-tutorial/create_aaduser_04.png) <br>
+4. Um das Dialogfeld **Benutzer hinzufügen** zu öffnen, klicken Sie auf der Symbolleiste unten auf **Benutzer hinzufügen**. <br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-workrite-tutorial/create_aaduser_04.png) <br>
 
-5. Führen Sie auf der Dialogfeldseite **Informationen über diesen Benutzer** die folgenden Schritte aus: <br><br> ![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-workrite-tutorial/create_aaduser_05.png) <br>
+5. Führen Sie auf der Dialogfeldseite **Informationen über diesen Benutzer** die folgenden Schritte aus: <br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-workrite-tutorial/create_aaduser_05.png) <br>
 
     a. Wählen Sie als "Benutzertyp" die Option "Neuer Benutzer in Ihrer Organisation" aus.
 
@@ -135,7 +135,7 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta S
 
     c. Klicken Sie auf **Weiter**.
 
-6.  Führen Sie auf der Dialogfeldseite **Benutzerprofil** die folgenden Schritte aus: <br><br>![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-workrite-tutorial/create_aaduser_06.png) <br>
+6.  Führen Sie auf der Dialogfeldseite **Benutzerprofil** die folgenden Schritte aus: <br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-workrite-tutorial/create_aaduser_06.png) <br>
  
     a. Geben Sie in das Textfeld **Vorname** den Namen **Britta** ein.
 
@@ -145,7 +145,7 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta S
 
     d. Wählen Sie in der Liste **Rolle** die Rolle **Benutzer** aus. e. Klicken Sie auf **Weiter**.
 
-7. Klicken Sie auf der Dialogfeldseite **Vorübergehendes Kennwort abrufen** auf **Erstellen**. <br><br> ![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-workrite-tutorial/create_aaduser_07.png) <br>
+7. Klicken Sie auf der Dialogfeldseite **Vorübergehendes Kennwort abrufen** auf **Erstellen**. <br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-workrite-tutorial/create_aaduser_07.png) <br>
  
 8. Führen Sie auf der Dialogfeldseite **Vorübergehendes Kennwort abrufen** die folgenden Schritte aus: <br><br>![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-workrite-tutorial/create_aaduser_08.png) <br>
   
@@ -231,4 +231,4 @@ Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für ein
 [401]: ./media/active-directory-saas-workrite-tutorial/tutorial_workrite_401.png
 [402]: ./media/active-directory-saas-workrite-tutorial/tutorial_workrite_402.png
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1223_2015-->

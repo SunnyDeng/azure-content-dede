@@ -78,7 +78,7 @@ In diesem Abschnitt führen Sie folgende Schritte aus: Erstellen eines Dienstpri
 
      Sie haben nun einen Dienstprinzipal im Verzeichnis erstellt. Dieser Dienstprinzipal verfügt jedoch noch nicht über Berechtigungen, und ihm wurde auch noch kein Bereich zugewiesen. Sie müssen dem Dienstprinzipal ausdrücklich die Berechtigungen zum Ausführen von Aktionen in einem bestimmten Bereich gewähren.
 
-3. Gewähren Sie dem Dienstprinzipal Berechtigungen für Ihr Abonnement. In diesem Beispiel wird dem Dienstprinzipal die Berechtigung zum Lesen aller Ressourcen im Abonnement gewährt. Geben Sie beim **ServicePrincipalName**-Parameter entweder die **ApplicationId** oder die **IdentifierUris** an, die Sie beim Erstellen der Anwendung verwendet haben. Weitere Informationen zur rollenbasierten Zugriffssteuerung finden Sie unter [Managing and Auditing Access to Resources](resource-group-rbac.md) (Verwalten und Überwachen des Zugriffs auf Ressourcen).
+3. Gewähren Sie dem Dienstprinzipal Berechtigungen für Ihr Abonnement. In diesem Beispiel wird dem Dienstprinzipal die Berechtigung zum Lesen aller Ressourcen im Abonnement gewährt. Geben Sie beim **ServicePrincipalName**-Parameter entweder die **ApplicationId** oder die **IdentifierUris** an, die Sie beim Erstellen der Anwendung verwendet haben. Weitere Informationen zur rollenbasierten Zugriffssteuerung finden Sie unter [Rollenbasierte Access Control in Azure](./active-directory/role-based-access-control-configure.md).
 
         PS C:\> New-AzureRmRoleAssignment -RoleDefinitionName Reader -ServicePrincipalName $azureAdApplication.ApplicationId
 
@@ -201,7 +201,7 @@ Zunächst müssen Sie einige Werte in PowerShell festlegen, die Sie später beim
 
     Sie haben nun einen Dienstprinzipal im Verzeichnis erstellt. Dieser Dienstprinzipal verfügt jedoch noch nicht über Berechtigungen, und ihm wurde auch noch kein Bereich zugewiesen. Sie müssen dem Dienstprinzipal ausdrücklich die Berechtigungen zum Ausführen von Aktionen in einem bestimmten Bereich gewähren.
 
-5. Gewähren Sie dem Dienstprinzipal Berechtigungen für Ihr Abonnement. In diesem Beispiel wird dem Dienstprinzipal die Berechtigung zum Lesen aller Ressourcen im Abonnement gewährt. Geben Sie beim **ServicePrincipalName**-Parameter entweder die **ApplicationId** oder die **IdentifierUris** an, die Sie beim Erstellen der Anwendung verwendet haben. Weitere Informationen zur rollenbasierten Zugriffssteuerung finden Sie unter [Managing and Auditing Access to Resources](resource-group-rbac.md) (Verwalten und Überwachen des Zugriffs auf Ressourcen).
+5. Gewähren Sie dem Dienstprinzipal Berechtigungen für Ihr Abonnement. In diesem Beispiel wird dem Dienstprinzipal die Berechtigung zum Lesen aller Ressourcen im Abonnement gewährt. Geben Sie beim **ServicePrincipalName**-Parameter entweder die **ApplicationId** oder die **IdentifierUris** an, die Sie beim Erstellen der Anwendung verwendet haben. Weitere Informationen zur rollenbasierten Zugriffssteuerung finden Sie unter [Rollenbasierte Access Control in Azure](./active-directory/role-based-access-control-configure.md).
 
         PS C:\> New-AzureRmRoleAssignment -RoleDefinitionName Reader -ServicePrincipalName $azureAdApplication.ApplicationId
 
@@ -274,7 +274,7 @@ Zunächst wird ein Dienstprinzipal erstellt. Dazu muss im Verzeichnis eine Anwen
 
     Sie haben nun einen Dienstprinzipal im Verzeichnis erstellt. Dieser Dienstprinzipal verfügt jedoch noch nicht über Berechtigungen, und ihm wurde auch noch kein Bereich zugewiesen. Sie müssen dem Dienstprinzipal ausdrücklich die Berechtigungen zum Ausführen von Aktionen in einem bestimmten Bereich gewähren.
 
-4. Gewähren Sie dem Dienstprinzipal Berechtigungen für Ihr Abonnement. In diesem Beispiel wird dem Dienstprinzipal die Berechtigung zum Lesen aller Ressourcen im Abonnement gewährt. Geben Sie beim **ServicePrincipalName**-Parameter entweder die **ApplicationId** oder die **IdentifierUris** an, die Sie beim Erstellen der Anwendung verwendet haben. Weitere Informationen zur rollenbasierten Zugriffssteuerung finden Sie unter [Managing and Auditing Access to Resources](resource-group-rbac.md) (Verwalten und Überwachen des Zugriffs auf Ressourcen).
+4. Gewähren Sie dem Dienstprinzipal Berechtigungen für Ihr Abonnement. In diesem Beispiel wird dem Dienstprinzipal die Berechtigung zum Lesen aller Ressourcen im Abonnement gewährt. Geben Sie beim **ServicePrincipalName**-Parameter entweder die **ApplicationId** oder die **IdentifierUris** an, die Sie beim Erstellen der Anwendung verwendet haben. Weitere Informationen zur rollenbasierten Zugriffssteuerung finden Sie unter [Rollenbasierte Access Control in Azure](./active-directory/role-based-access-control-configure.md).
 
         azure role assignment create --objectId 47193a0a-63e4-46bd-9bee-6a9f6f9c03cb -o Reader -c /subscriptions/{subscriptionId}/
 
@@ -304,7 +304,7 @@ In diesem Abschnitt führen Sie die Schritte zum Erstellen eines Dienstprinzipal
 
 ## Nächste Schritte
   
-- Einen Überblick über die rollenbasierte Zugriffssteuerung finden Sie unter [Verwalten und Überwachen des Zugriffs auf Ressourcen](resource-group-rbac.md).  
+- Einen Überblick über die rollenbasierte Zugriffssteuerung finden Sie unter [Rollenbasierte Access Control in Azure](./active-directory/role-based-access-control-configure.md).  
 - Informationen zum Verwenden des Portals mit Dienstprinzipalen finden Sie unter [Erstellen eines neuen Azure-Dienstprinzipals mit dem Azure-Portal](./resource-group-create-service-principal-portal.md).  
 - Anleitungen für die Implementierung von Sicherheitseinstellungen mit dem Azure-Ressourcen-Manager finden Sie unter [Sicherheitsaspekte für Azure-Ressourcen-Manager](best-practices-resource-manager-security.md).
 
@@ -312,4 +312,4 @@ In diesem Abschnitt führen Sie die Schritte zum Erstellen eines Dienstprinzipal
 <!-- Images. -->
 [1]: ./media/resource-group-authenticate-service-principal/arm-get-credential.png
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1223_2015-->

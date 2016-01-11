@@ -12,7 +12,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="cache-redis"
 	ms.workload="tbd"
-	ms.date="12/11/2015"
+	ms.date="12/16/2015"
 	ms.author="sdanie" />
 
 # Gewusst wie: Konfigurieren von Azure Redis Cache
@@ -118,15 +118,16 @@ Klicken Sie auf **OK**, um die Persistenzkonfiguration zu speichern.
 
 >[AZURE.IMPORTANT]Redis-Datenpersistenz ist nur für Premium-Caches verfügbar. Weitere Informationen finden Sie unter [Konfigurieren von Persistenz für Azure Redis Cache vom Typ "Premium"](cache-how-to-premium-persistence.md).
 
+<a name="cluster-size"></a>
 ## Redis-Clustergröße
 
-Klicken Sie zum Hinzufügen oder Entfernen von Shards aus einem ausgeführten Premium-Cache mit aktivierter Clusterunterstützung auf **(PREVIEW) Redis Cluster Size**.
+Klicken Sie zum Ändern der Clustergröße aus einem ausgeführten Premium-Cache mit aktivierter Clusterunterstützung auf **(PREVIEW) Redis Cluster Size**.
 
 >[AZURE.NOTE]Beachten Sie, dass sich trotz allgemeiner Verfügbarkeit der Azure Redis Cache in der Premium-Stufe das Feature Redis-Clustergröße derzeit in der Vorschau befindet.
 
 ![Redis-Clustergröße](./media/cache-configure/redis-cache-redis-cluster-size.png)
 
-Um die Anzahl der Shards zu ändern, verwenden Sie den Schieberegler, oder geben Sie eine Zahl zwischen 1 und 10 im Textfeld **Shardanzahl** ein, und klicken Sie zum Speichern auf **OK**.
+Um die Clustergröße zu ändern, verwenden Sie den Schieberegler oder geben Sie eine Zahl zwischen 1 und 10 im Textfeld **Shardanzahl** ein und klicken Sie zum Speichern auf **OK**.
 
 >[AZURE.IMPORTANT]Redis-Clustering ist nur für Premium-Caches verfügbar. Weitere Informationen finden Sie unter [Konfigurieren von Clustern für Azure Redis Cache vom Typ "Premium"](cache-how-to-premium-clustering.md).
 
@@ -147,7 +148,7 @@ Neue Azure Redis Cache-Instanzen werden mit den folgenden standardmäßigen Redi
 >
 >`StackExchange.Redis.RedisServerException: ERR unknown command 'CONFIG'`
 >  
->Alle Werte, die konfigurierbar sind, z. B. **max-memory-policy**, können über das Azure-Portal konfiguriert werden.
+>Alle Werte, die konfigurierbar sind, z. B. **max-memory-policy**, können über das Azure-Portal oder Befehlszeilenverwaltungstools wie die Azure-Befehlszeilenschnittstelle oder PowerShell konfiguriert werden.
 
 |Einstellung|Standardwert|Beschreibung|
 |---|---|---|
@@ -177,7 +178,7 @@ Neue Azure Redis Cache-Instanzen werden mit den folgenden standardmäßigen Redi
 
 ## Redis-Befehle, die in Azure Redis Cache nicht unterstützt werden.
 
->[AZURE.IMPORTANT]Da die Konfiguration und Verwaltung von Azure Redis Cache-Instanzen mit dem Azure-Portal durchgeführt wird, sind die folgenden Befehle deaktiviert. Wenn Sie versuchen, sie aufzurufen, erhalten Sie etwa folgende Fehlermeldung: `"(error) ERR unknown command"`.
+>[AZURE.IMPORTANT]Da die Konfiguration und Verwaltung von Azure Redis Cache-Instanzen von Microsoft verwaltet wird, sind die folgenden Befehle deaktiviert. Wenn Sie versuchen, sie aufzurufen, erhalten Sie etwa folgende Fehlermeldung: `"(error) ERR unknown command"`.
 >
 >-	BGREWRITEAOF
 >-	BGSAVE
@@ -212,4 +213,4 @@ Eine Liste der Redis-Befehle, die für Azure Redis Cache deaktiviert sind, finde
 ## Nächste Schritte
 -	Weitere Informationen zum Verwenden von Redis-Befehlen finden Sie unter [Wie führe ich Redis-Befehle aus?](cache-faq.md#how-can-i-run-redis-commands).
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1223_2015-->

@@ -39,7 +39,7 @@ Der temporäre Datenträger wird automatisch für Sie erstellt. Auf virtuellen W
 
 Ein Datenträger ist eine VHD, die zum Speichern von Anwendungsdaten oder anderen Daten, die Sie aufbewahren müssen, an einen virtuellen Computer angebunden ist. Datenträger werden als SCSI-Laufwerke registriert und mit einem von Ihnen ausgewählten Buchstaben gekennzeichnet. Jeder Datenträger hat eine maximale Kapazität von 1023 GB. Die Größe des virtuellen Computers bestimmt die Anzahl der Datenträger, die Sie anfügen können, und den Typ des Speichers, den Sie zum Hosten der Datenträger verwenden können.
 
-	For more details about virtual machines capacities, see [Sizes for virtual machines](virtual-machines-size-specs.md).
+>[AZURE.NOTE]Weitere Informationen zu Kapazitäten virtueller Computer finden Sie unter [Größen für virtuelle Computer](virtual-machines-size-specs.md).
 
 Azure erstellt einen Betriebssystem-Datenträger, wenn Sie einen virtuellen Computer aus einem Image erstellen. Wenn das verwendete Image Datenträger enthält, erstellt Azure auch diese Datenträger beim Erstellen des virtuellen Computers. (Sie können ein Image von Azure oder einem Partner oder ein eigenes Image verwenden.) Andernfalls fügen Sie die Datenträger nach dem Erstellen des virtuellen Computers hinzu.
 
@@ -74,4 +74,4 @@ Virtuelle Windows-Computer:
 -  [Erfassen eines virtuellen Windows-Computers](virtual-machines-capture-image-windows-server.md)
 -  [Trennen eines Datenträgers](storage-windows-detach-disk.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1223_2015-->

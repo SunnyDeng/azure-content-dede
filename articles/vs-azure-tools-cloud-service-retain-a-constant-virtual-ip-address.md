@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="multiple"
-   ms.date="09/08/2015"
+   ms.date="12/19/2015"
    ms.author="tarcher" />
 
 # Beibehalten einer konstanten virtuellen IP-Adresse für einen Clouddienst
@@ -45,4 +45,4 @@ Die VIP eines Clouddiensts wird zugeordnet, wenn der Clouddienst erstmalig in ei
 
 Weitere Informationen zur Veröffentlichung in Azure über Visual Studio finden Sie unter [Assistent zum Veröffentlichen der Azure-Anwendung](vs-azure-tools-publish-azure-application-wizard.md).
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1223_2015-->

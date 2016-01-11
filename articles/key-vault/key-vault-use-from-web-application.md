@@ -36,13 +36,13 @@ Dieses Lernprogramm richtet sich an Webentwickler, die die Grundlagen zum Erstel
 
 
 ## <a id="packages"></a>Hinzufügen von NuGet-Paketen ##
-Drei Pakete müssen für Ihre Webanwendung installiert sein.
+Zwei Pakete müssen für Ihre Webanwendung installiert sein.
 
 - Active Directory-Authentifizierungsbibliothek: enthält Methoden für die Interaktion mit Azure Active Directory und das Verwalten der Benutzeridentität
 - Azure-Schlüsseltresorbibliothek: enthält Methoden für die Interaktion mit dem Azure-Schlüsseltresor
 
 
-Alle drei Pakete können mithilfe der Paket-Manager-Konsole mit dem Befehl "Install-Package" installiert werden.
+Beide Pakete können mithilfe der Paket-Manager-Konsole mit dem Befehl "Install-Package" installiert werden.
 
 	// this is currently the latest stable version of ADAL
 	Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -Version 2.16.204221202
@@ -133,7 +133,7 @@ Eine weitere Möglichkeit zur Authentifizierung einer Azure AD-Anwendung bietet
 
 Notieren Sie sich das Enddatum und das Kennwort für die PFX-Datei (in diesem Beispiel: 31.07.2016 und "test123"). Sie benötigen sie später.
 
-Weitere Informationen zum Erstellen eines Testzertifikats finden Sie unter [How to: Create Your Own Test Certificate](https://msdn.microsoft.com/en-in/library/ff699202.aspx) (in englischer Sprache).
+Weitere Informationen zum Erstellen eines Testzertifikats finden Sie unter [How to: Create Your Own Test Certificate](https://msdn.microsoft.com/library/ff699202.aspx) (in englischer Sprache).
 
 
 **Zuordnen des Zertifikats zu einer Azure AD-Anwendung** Nachdem Sie ein Zertifikat erstellt haben, müssen Sie es einer Azure AD-Anwendung zuordnen. Dies wird jedoch noch nicht im Azure-Verwaltungsportal unterstützt. Sie müssen stattdessen PowerShell verwenden. Im Folgenden finden Sie die Befehle, die Sie ausführen müssen:
@@ -243,4 +243,4 @@ Eine Referenz zur Programmierung finden Sie unter [C#-Client-API-Referenz für d
 [2]: ./media/key-vault-use-from-web-application/PortalAddCertificate.png
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1223_2015-->

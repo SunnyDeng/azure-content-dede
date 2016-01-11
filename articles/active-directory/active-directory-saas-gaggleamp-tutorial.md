@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/14/2015"
+	ms.date="12/18/2015"
 	ms.author="v-aabrol"/>
 
 
@@ -64,7 +64,7 @@ Zum Konfigurieren der Integration von GaggleAMP in Azure AD müssen Sie GaggleA
 4. Klicken Sie unten auf der Seite auf **Hinzufügen**.<br><br> ![Anwendungen][3]<br>
 5. Klicken Sie im Dialogfeld **Was möchten Sie tun** auf **Anwendung aus dem Katalog hinzufügen**.<br><br> ![Anwendungen][4]<br>
 6. Geben Sie im Suchfeld als Suchbegriff **GaggleAMP** ein.<br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-gaggleamp-tutorial/tutorial_gaggleamp_01.png)<br>
-7. Wählen Sie im Ergebnisbereich **GaggleAMP** aus, und klicken Sie dann auf **Abschließen**, um die Anwendung hinzuzufügen. <br><br>
+7. Wählen Sie im Ergebnisbereich **GaggleAMP** aus und klicken Sie dann auf **Abschließen**, um die Anwendung hinzuzufügen. <br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-gaggleamp-tutorial/tutorial_gaggleamp_02.png)<br>
 
 ##  Konfigurieren und Testen der einmaligen Anmeldung von Azure AD
 In diesem Abschnitt soll anhand eines Testbenutzers namens „Britta Simon“ veranschaulicht werden, wie das einmalige Anmelden von Azure AD in GaggleAMP konfiguriert und getestet werden kann.
@@ -73,7 +73,7 @@ Damit einmaliges Anmelden funktioniert, muss Azure AD wissen, welcher Benutzer i
 
 Zum Konfigurieren und Testen des einmaligen Anmeldens mit Azure AD bei GaggleAMP müssen Sie die folgenden Bausteine ausführen:
 
-1. **[Konfigurieren des einmaligen Anmeldens von Azure AD](#configuring-azure-ad-single-single-sign-on)**, um Ihren Benutzern das Verwenden dieser Funktion zu ermöglichen.
+1. **[Konfigurieren von Azure AD – einmaliges Anmelden](#configuring-azure-ad-single-single-sign-on)**, um Ihren Benutzern das Verwenden dieser Funktion zu ermöglichen.
 2. **[Erstellen eines Azure AD-Testbenutzers](#creating-an-azure-ad-test-user)**, um das einmalige Anmelden mit Azure AD mit dem Testbenutzer Britta Simon zu testen.
 4. **[Erstellen eines GaggleAMP-Testbenutzers](#creating-a-GaggleAMP-test-user)**, um eine Entsprechung von Britta Simon in GaggleAMP zu erhalten, die mit ihrer Darstellung in Azure AD verknüpft ist.
 5. **[Zuweisen des Azure AD-Testbenutzers](#assigning-the-azure-ad-test-user)**, um Britta Simon für das einmalige Anmelden von Azure AD zu aktivieren.
@@ -103,25 +103,25 @@ Das Ziel dieses Abschnitts besteht darin, das einmalige Anmelden von Azure AD i
 
 4. Führen Sie auf der Seite **Einmaliges Anmelden konfigurieren für GaggleAMP** die folgenden Schritte aus: <br><br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-gaggleamp-tutorial/tutorial_gaggleamp_05.png) <br>
 
-    a. Klicken Sie auf **Zertifikat herunterladen**, und speichern Sie die Datei auf Ihrem Computer. Dieses Zertifikat und die Metadaten-URLs (Entitäts-ID, Anmelde-URL für SSO und Abmelde-URL für SSO) werden benötigt, um SSO (Single Sign-On, einmaliges Anmelden) aufseiten von GaggleAMP einzurichten.
+    a. Klicken Sie auf **Zertifikat herunterladen** und speichern Sie das Zertifikat auf Ihrem Computer. Dieses Zertifikat und die Metadaten-URLs (Entitäts-ID, Anmelde-URL für SSO und Abmelde-URL für SSO) werden benötigt, um SSO (Single Sign-On, einmaliges Anmelden) aufseiten von GaggleAMP einzurichten.
 
     b. Klicken Sie auf **Weiter**.
 
 
 5. Navigieren Sie in einer weiteren Browserinstanz zu der SAML-SSO-Seite, die das Gaggle-Supportteam für Sie erstellt hat (z. B.: **https://accounts.gaggleamp.com/saml_configurations/oXH8sQcP79dOzgFPqrMTyw/edit*).
 
-6. Führen Sie auf Seite **SAML SSO** die folgenden Schritte aus: <br><br>![Einmaliges Anmelden in GaggleAMP](./media/active-directory-saas-gaggleamp-tutorial/tutorial_gaggleamp_06.png) <br>
+6. Führen Sie auf der Seite **SAML-SSO** die folgenden Schritte aus: <br><br>![Einmaliges Anmelden in GaggleAMP](./media/active-directory-saas-gaggleamp-tutorial/tutorial_gaggleamp_06.png) <br>
 
-    a. Kopieren Sie im klassischen Azure-Portal die **Aussteller-URL**, und fügen Sie sie in das Textfeld **Identity Provider Issuer** ein.
+    a. Kopieren Sie im klassischen Azure-Portal die **Aussteller-URL** und fügen Sie sie in das Textfeld **Identity Provider Issuer** ein.
 
-    b. Kopieren Sie im klassischen Azure-Portal die **Dienst-URL für einmalige Anmeldung**, und fügen Sie sie in das Textfeld **Identity Provider Single Sign-On URL** ein.
+    b. Kopieren Sie im klassischen Azure-Portal die **Dienst-URL für einmalige Anmeldung** und fügen Sie sie in das Textfeld **Identity Provider Single Sign-On URL** ein.
 
     c. Klicken Sie auf **Speichern**.
     
     d. Senden Sie das heruntergeladene Zertifikat an das [Vertriebsteam von GaggleAMP](mailto:sales@gaggleamp.com).
 
 
-6. Wählen Sie im klassischen Azure-Portal die Bestätigung zur Konfiguration der einmaligen Anmeldung aus, und klicken Sie dann auf **Weiter**. <br><br>![Azure AD – einmaliges Anmelden][10]<br>
+6. Wählen Sie im klassischen Azure-Portal die Bestätigung zur Konfiguration der einmaligen Anmeldung aus und klicken Sie dann auf **Weiter**. <br><br>![Azure AD – einmaliges Anmelden][10]<br>
 
 7. Klicken Sie auf der Seite **Bestätigung zur einmaligen Anmeldung** auf **Fertig stellen**. <br><br>![Azure AD – einmaliges Anmelden][11]
 
@@ -133,7 +133,7 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta S
 
 **Um einen Testbenutzer in Azure AD zu erstellen, führen Sie die folgenden Schritte aus:**
 
-1. Klicken Sie im **klassischen Azure-Portal** im linken Navigationsbereich auf **Active Directory**. <br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-gaggleamp-tutorial/create_aaduser_09.png) <br>
+1. Klicken Sie im **klassischen Azure-Portal** im linken Navigationsbereich auf **Active Directory**. <br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-gaggleamp-tutorial/create_aaduser_09.png)<br>
 
 2. Wählen Sie in der Liste **Verzeichnis** das Verzeichnis aus, für das Sie die Verzeichnisintegration aktivieren möchten.
 
@@ -163,7 +163,7 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta S
 
 7. Klicken Sie auf der Dialogfeldseite **Vorübergehendes Kennwort abrufen** auf **Erstellen**. <br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-gaggleamp-tutorial/create_aaduser_07.png) <br>
 
-8. Führen Sie auf der Dialogfeldseite **Vorübergehendes Kennwort abrufen** die folgenden Schritte aus: <br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-gaggleamp-tutorial/create_aaduser_08.png) <br>
+8. Führen Sie auf der Dialogfeldseite **Vorübergehendes Kennwort abrufen** die folgenden Schritte aus: <br><br>![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-gaggleamp-tutorial/create_aaduser_08.png) <br>
 
     a. Notieren Sie den Wert von **Neues Kennwort**.
 
@@ -225,4 +225,4 @@ Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für einm
 [204]: ./media/active-directory-saas-gaggleamp-tutorial/tutorial_general_204.png
 [205]: ./media/active-directory-saas-gaggleamp-tutorial/tutorial_general_205.png
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1223_2015-->

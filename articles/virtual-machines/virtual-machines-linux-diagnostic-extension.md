@@ -15,7 +15,7 @@
 		ms.tgt_pltfrm="vm-linux"
 		ms.devlang="na"
 		ms.topic="article"
-		ms.date="07/20/2015"
+		ms.date="12/15/2015"
 		ms.author="Ning"/>
 
 
@@ -35,7 +35,7 @@ In Version 2.0 werden folgende Daten verarbeitet:
 - Alle in [diesem Dokument](https://scx.codeplex.com/wikipage?title=xplatproviders") angegebenen Systemdaten.
 - Benutzerdefinierte Protokolldateien.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+Beachten Sie, dass diese Erweiterung sowohl mit dem klassischen als auch dem Ressourcen-Manager-Bereitstellungsmodell funktioniert.
 
 
 ## So aktivieren Sie die Erweiterung
@@ -142,6 +142,5 @@ Wenn Sie in Szenario 2 und 3 „fileCfg“ oder „perfCfg“ aktiviert haben,
 
 ## Bekannte Probleme
 - In Version 2.0 kann auf die Rsyslog-Informationen und die benutzerdefinierte Protokolldatei nur über Skripts zugegriffen werden.
-- Wenn Sie in Version 2.0 die Linux-Diagnoseerweiterung zunächst über ein Skript aktiviert haben, können Sie die Daten nicht im Portal anzeigen. Wenn Sie die Erweiterung dagegen zuerst im Portal aktivieren, funktionieren die Skripts weiterhin.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1223_2015-->

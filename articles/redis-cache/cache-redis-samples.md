@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="multiple" 
 	ms.topic="article" 
-	ms.date="12/03/2015" 
+	ms.date="12/17/2015" 
 	ms.author="sdanie"/>
 
 # Azure Redis Cache – Beispiele 
@@ -35,6 +35,7 @@ Dieses Beispiel zeigt Folgendes:
 -	Arbeiten mit Listen und sortierten Sätzen von Redis
 -	Speichern von .NET-Objekten mithilfe von JsonConvert-Serialisierungsprogrammen
 -	Verwenden von Redis-Sätzen zum Implementieren des Taggings
+-	Arbeiten mit dem Redis-Cluster
 
 Weitere Informationen finden Sie in der [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis)-Dokumentation auf GitHub, weitere Verwendungsszenarien finden Sie in den [StackExchange.Redis.Tests](https://github.com/StackExchange/StackExchange.Redis/tree/master/StackExchange.Redis.Tests)-Einheitentests.
 
@@ -75,4 +76,4 @@ Das Beispiel [Retwis](https://github.com/SyntaxC4-MSFT/retwis) ist die Hello-Wor
 
 Das Beispiel [Bandbreitenüberwachung](https://github.com/JonCole/SampleCode/tree/master/BandWidthMonitor) ermöglicht die Überwachung der auf dem Client genutzten Bandbreite. Um die Bandbreite zu messen, führen Sie das Beispiel auf dem Cacheclientcomputer aus, rufen Sie den Cache auf, und beobachten Sie die durch das Beispiel gemeldete Bandbreite.
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1223_2015-->

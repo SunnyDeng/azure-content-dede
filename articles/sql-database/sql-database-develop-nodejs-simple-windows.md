@@ -14,14 +14,20 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="nodejs"
 	ms.topic="article"
-	ms.date="12/08/2015"
+	ms.date="12/17/2015"
 	ms.author="meetb"/>
 
 
 # Herstellen von Verbindungen mit SQL-Datenbanken mithilfe von Node.js unter Windows
 
 
-[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
+> [AZURE.SELECTOR]
+- [C#](sql-database-develop-dotnet-simple.md)
+- [PHP](sql-database-develop-php-simple-windows.md)
+- [Python](sql-database-develop-python-simple-windows.md)
+- [Ruby](sql-database-develop-ruby-simple-windows.md)
+- [Java](sql-database-develop-java-simple-windows.md)
+- [Node.js](sql-database-develop-nodejs-simple-windows.md)
 
 
 Dieses Thema enthält ein Node.js-Codebeispiel zum Herstellen einer Verbindung mit Azure SQL-Datenbank. Das Node.js-Programm wird auf einem Windows-Clientcomputer ausgeführt. Zum Verwalten der Verbindung wird der msnodesql-Treiber verwendet.
@@ -54,7 +60,7 @@ Als Nächstes navigieren Sie zum Ordner „Node\_modules\\msnodesql“ und führ
 Auf der [Seite für erste Schritte](sql-database-get-started.md) erhalten Sie Informationen zum Erstellen einer Beispieldatenbank. Sie sollten unbedingt die Anleitung zum Erstellen einer **AdventureWorks-Datenbankvorlage** befolgen. Die unten gezeigten Beispiele funktionieren nur mit dem **AdventureWorks-Schema**.
 
 
-## Schritt 1: Abrufen der Verbindungsdetails
+## Schritt 1: Abrufen der Verbindungsdetails
 
 [AZURE.INCLUDE [sql-database-include-connection-string-details-20-portalshots](../../includes/sql-database-include-connection-string-details-20-portalshots.md)]
 
@@ -228,4 +234,4 @@ Damit dieses Codebeispiel funktioniert, müssen Sie zunächst eine gespeicherte 
 
 Weitere Informationen finden Sie im [Node.js Developer Center](/develop/nodejs/).
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1223_2015-->

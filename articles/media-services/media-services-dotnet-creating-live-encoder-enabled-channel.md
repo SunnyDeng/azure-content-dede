@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/08/2015"  
+	ms.date="12/17/2015"
 	ms.author="juliako"/>
 
 
@@ -24,11 +24,13 @@
 - [.NET](media-services-dotnet-creating-live-encoder-enabled-channel.md)
 - [REST API](https://msdn.microsoft.com/library/azure/dn783458.aspx)
 
+>[AZURE.NOTE]Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](/pricing/free-trial/?WT.mc_id=A261C142F).
+
 ##Übersicht
 
 In diesem Lernprogramm werden Sie durch die Schritte zum Erstellen eines **Kanals** geführt, von dem ein Single-Bitrate-Livedatenstrom empfangen und in einen Multi-Bitrate-Datenstrom codiert wird.
 
->[AZURE.NOTE]Weitere konzeptuelle Informationen zu Kanälen, bei denen Livecodierung aktiviert ist, finden Sie unter [Arbeiten mit Kanälen, von denen Livecodierung von Single-Bitrate- in Multi-Bitrate-Livedatenströme ausgeführt wird](media-services-manage-live-encoder-enabled-channels.md).
+Weitere konzeptuelle Informationen zu Kanälen, bei denen Livecodierung aktiviert ist, finden Sie unter [Arbeiten mit Kanälen, von denen Livecodierung von Single-Bitrate- in Multi-Bitrate-Livedatenströme ausgeführt wird](media-services-manage-live-encoder-enabled-channels.md).
 
 
 ##Allgemeines Livestreamingszenario
@@ -37,19 +39,19 @@ Im Folgenden werden die Schritte und Aufgaben zum Erstellen allgemeiner Livestre
 
 >[AZURE.NOTE]Die maximal empfohlene Dauer eines Liveereignisses beträgt derzeit 8 Stunden. Wenden Sie sich an Amslived unter Microsoft Punkt Com, wenn Sie einen Kanal für längere Zeit laufen lassen müssen.
 
-1. Schließen Sie eine Videokamera an einen Computer an. Starten und konfigurieren Sie einen lokalen Liveencoder, von dem ein Single-Bitrate-Datenstrom in einem der folgenden Protokolle ausgegeben wird: RTMP, Smooth Streaming oder RTP (MPEG-TS). Weitere Informationen finden Sie unter [Microsoft Azure Media Services RTMP-Support und Liveencoder](http://go.microsoft.com/fwlink/?LinkId=532824).
+1. Schließen Sie eine Videokamera an einen Computer an. Starten und konfigurieren Sie einen lokalen Liveencoder, von dem ein Single-Bitrate-Datenstrom in einem der folgenden Protokolle ausgegeben wird: RTMP, Smooth Streaming oder RTP (MPEG-TS). Weitere Informationen finden Sie unter [Windows Azure Media Services RTMP-Support und Liveencoder](http://go.microsoft.com/fwlink/?LinkId=532824).
 
-Dieser Schritt kann auch nach der Erstellung des Kanals ausgeführt werden.
+	Dieser Schritt kann auch nach der Erstellung des Kanals ausgeführt werden.
 
 1. Erstellen Sie einen Kanal, und starten Sie ihn.
 
 1. Rufen Sie die Erfassungs-URL des Kanals ab.
 
-Die Erfassungs-URL wird vom Liveencoder verwendet, um den Datenstrom an den Kanal zu senden.
+	Die Erfassungs-URL wird vom Liveencoder verwendet, um den Datenstrom an den Kanal zu senden.
 
 1. Rufen Sie die Vorschau-URL des Kanals ab.
 
-Verwenden Sie diese URL, um sicherzustellen, dass der Livedatenstrom ordnungsgemäß vom Kanal empfangen wird.
+	Verwenden Sie diese URL, um sicherzustellen, dass der Livedatenstrom ordnungsgemäß vom Kanal empfangen wird.
 
 2. Erstellen Sie ein Medienobjekt.
 3. Wenn das Medienobjekt während der Wiedergabe dynamisch verschlüsselt werden soll, führen Sie folgende Schritte aus:
@@ -59,14 +61,14 @@ Verwenden Sie diese URL, um sicherzustellen, dass der Livedatenstrom ordnungsgem
 3. Erstellen Sie ein Programm, und legen Sie fest, dass das erstellte Medienobjekt verwendet werden soll.
 1. Veröffentlichen Sie das dem Programm zugeordnete Medienobjekt, indem Sie einen OnDemand-Locator erstellen.
 
-Stellen Sie sicher, dass auf dem Streamingendpunkt, von dem Sie Inhalte streamen möchten, mindestens eine für das Streaming reservierte Einheit verfügbar ist.
+	Stellen Sie sicher, dass auf dem Streamingendpunkt, von dem Sie Inhalte streamen möchten, mindestens eine für das Streaming reservierte Einheit verfügbar ist.
 
 1. Wenn Sie zum Starten von Streaming und Archivierung bereit sind, starten Sie das Programm.
 2. Optional kann vom Liveencoder eine Ankündigung gestartet werden. Die Ankündigung wird in den Ausgabedatenstrom eingefügt.
 1. Sie können das Programm und damit das Streaming und die Archivierung des Ereignisses jederzeit beenden.
 1. Löschen Sie das Programm (und optional das Medienobjekt).
 
-##In diesem Thema
+## Sie lernen Folgendes
 
 In diesem Thema wird erläutert, wie mithilfe von Media Services .NET SDK verschiedene Vorgänge bei Kanälen und Programmen ausgeführt werden. Da viele Vorgänge langfristiger Art sind, werden .NET APIs verwendet, von denen langfristige Vorgänge verwaltet werden.
 
@@ -82,6 +84,18 @@ In diesem Thema erfahren Sie, wie Sie die folgenden Aufgaben ausführen:
 1. Bereinigen Sie den Kanal und alle zugehörigen Ressourcen.
 
 
+##Voraussetzungen
+
+Zum Abschließen dieses Lernprogramms müssen folgende Voraussetzungen erfüllt sein:
+
+- Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. 
+	
+	Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](/pricing/free-trial/?WT.mc_id=A261C142F). Sie erhalten ein Guthaben, mit dem Sie andere kostenpflichtige Azure-Dienste ausprobieren können. Selbst, nachdem Sie dieses Guthaben aufgebraucht haben, können Sie das Konto behalten und kostenlose Azure-Dienste und -Features nutzen, z. B. das Web-Apps-Feature in Azure App Service.
+- Media Services-Konto. Informationen zum Erstellen eines Media Services-Kontos finden Sie unter [Konto erstellen](media-services-create-account.md).
+- Visual Studio 2010 SP1 (Professional, Premium, Ultimate oder Express) oder höhere Versionen.
+- Sie müssen das Media Services .NET SDK, Version 3.2.0.0 oder höher, verwenden.
+- Sie benötigen eine Webcam und einen Encoder, von dem ein Single-Bitrate-Livedatenstrom gesendet wird.
+
 ##Überlegungen
 
 - Die maximal empfohlene Dauer eines Liveereignisses beträgt derzeit 8 Stunden. Wenden Sie sich an Amslived unter Microsoft Punkt Com, wenn Sie einen Kanal für längere Zeit laufen lassen müssen.
@@ -89,16 +103,8 @@ In diesem Thema erfahren Sie, wie Sie die folgenden Aufgaben ausführen:
 
 ##Beispiel herunterladen
 
-Laden Sie ein Beispiel von [hier](http://azure.microsoft.com/documentation/samples/media-services-dotnet-encode-live-stream-with-ams-clear/) herunter, und führen Sie es aus.
+Laden Sie [hier](http://azure.microsoft.com/documentation/samples/media-services-dotnet-encode-live-stream-with-ams-clear/) ein Beispiel herunter und führen Sie es aus.
 
-##Voraussetzungen
-Zum Abschließen dieses Lernprogramms müssen folgende Voraussetzungen erfüllt sein:
-
-- Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](azure.microsoft.com).
-- Media Services-Konto. Informationen zum Erstellen eines Media Services-Kontos finden Sie unter [Konto erstellen](media-services-create-account.md).
-- Sie benötigen Visual Studio 2010 SP1 oder höher.
-- Sie müssen das Media Services .NET SDK, Version 3.2.0.0 oder höher, verwenden.
-- Sie benötigen eine Webcam und einen Encoder, von dem ein Single-Bitrate-Livedatenstrom gesendet wird.
 
 ##Vorbereiten der Entwicklung mit Media Services SDK für .NET
 
@@ -334,6 +340,7 @@ Fügen Sie der app.config-Datei den Bereich „appSettings“ hinzu, und geben S
 	        /// <returns></returns>
 	        public static ILocator CreateLocatorForAsset(IAsset asset, TimeSpan ArchiveWindowLength)
 	        {
+             	// You cannot create a streaming locator using an AccessPolicy that includes write or delete permissions.            
 	            var locator = _context.Locators.CreateLocator
 	                (
 	                    LocatorType.OnDemandOrigin,
@@ -516,4 +523,4 @@ Fügen Sie der app.config-Datei den Bereich „appSettings“ hinzu, und geben S
 
 Wenn dieses Thema nicht die erwarteten Informationen enthält, Informationen fehlen oder auf andere Weise Ihre Erwartungen nicht erfüllt wurden, senden Sie uns bitte über den Disqus-Thread unten Ihr Feedback.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1223_2015-->

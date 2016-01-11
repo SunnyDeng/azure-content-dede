@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/14/2015"
+	ms.date="12/18/2015"
 	ms.author="v-aabrol"/>
 
 
@@ -64,7 +64,7 @@ Zum Konfigurieren der Integration von Fuse in Azure AD müssen Sie Fuse aus dem 
 4. Klicken Sie unten auf der Seite auf **Hinzufügen**.<br><br> ![Anwendungen][3]<br>
 5. Klicken Sie im Dialogfeld **Was möchten Sie tun** auf **Anwendung aus dem Katalog hinzufügen**.<br><br> ![Anwendungen][4]<br>
 6. Geben Sie im Suchfeld als Suchbegriff **Fuse** ein.<br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-fuse-tutorial/tutorial_fuse_01.png)<br>
-7. Wählen Sie im Ergebnisbereich **Fuse** aus, und klicken Sie dann auf **Abschließen**, um die Anwendung hinzuzufügen. <br><br>
+7. Wählen Sie im Ergebnisbereich **Fuse** aus und klicken Sie dann auf **Abschließen**, um die Anwendung hinzuzufügen. <br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-fuse-tutorial/tutorial_fuse_02.png)<br>
 
 ##  Konfigurieren und Testen der einmaligen Anmeldung von Azure AD
 In diesem Abschnitt soll veranschaulicht werden, wie basierend auf einem Testbenutzer namens „Britta Simon“ das einmalige Anmelden von Azure AD in Fuse konfiguriert und getestet werden kann.
@@ -73,7 +73,7 @@ Damit einmaliges Anmelden funktioniert, muss Azure AD wissen, welcher Benutzer i
 
 Zum Konfigurieren und Testen des einmaligen Anmeldens in Azure AD bei Fuse müssen Sie die folgenden Bausteine ausführen:
 
-1. **[Konfigurieren des einmaligen Anmeldens von Azure AD](#configuring-azure-ad-single-single-sign-on)**, um Ihren Benutzern das Verwenden dieser Funktion zu ermöglichen.
+1. **[Konfigurieren von Azure AD – einmaliges Anmelden](#configuring-azure-ad-single-single-sign-on)**, um Ihren Benutzern das Verwenden dieser Funktion zu ermöglichen.
 2. **[Erstellen eines Azure AD-Testbenutzers](#creating-an-azure-ad-test-user)**, um das einmalige Anmelden mit Azure AD mit dem Testbenutzer Britta Simon zu testen.
 4. **[Erstellen eines Fuse-Testbenutzers](#creating-a-fuse-test-user)**, um eine Entsprechung von Britta Simon in Fuse zu erhalten, die mit ihrer Darstellung in Azure AD verknüpft ist.
 5. **[Zuweisen des Azure AD-Testbenutzers](#assigning-the-azure-ad-test-user)**, um Britta Simon für das einmalige Anmelden von Azure AD zu aktivieren.
@@ -104,7 +104,7 @@ Das Ziel dieses Abschnitts besteht darin, das einmalige Anmelden von Azure AD im
 
     a. Klicken Sie auf **Zertifikat herunterladen**, und speichern Sie es auf Ihrem Computer.
 
-    b. Kopieren Sie die **Aussteller-URL**, die **Dienst-URL für einmalige Anmeldung** und die**Dienst-URL für einmalige Abmeldung**.
+    b. Kopieren Sie die **Aussteller-URL**, die **Dienst-URL für einmalige Anmeldung** und die **Dienst-URL für einmalige Abmeldung**.
 
    
 5. Lassen Sie das einmalige Anmelden (SSO, Single Sign-On) für Ihre Anwendung konfigurieren. Wenden Sie sich dazu über ****support@fusion-universal.com** an das Supportteam von Fuse, und fügen Sie die heruntergeladene Zertifikatsdatei an. Geben Sie außerdem die **Aussteller-URL**, die **Dienst-URL für einmalige Anmeldung** und die **Dienst-URL für einmalige Abmeldung an**.
@@ -122,7 +122,7 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta S
 
 **Um einen Testbenutzer in Azure AD zu erstellen, führen Sie die folgenden Schritte aus:**
 
-1. Klicken Sie im **klassischen Azure-Portal** im linken Navigationsbereich auf **Active Directory**. <br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-fuse-tutorial/create_aaduser_09.png) <br>
+1. Klicken Sie im **klassischen Azure-Portal** im linken Navigationsbereich auf **Active Directory**. <br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-fuse-tutorial/create_aaduser_09.png)<br>
 
 2. Wählen Sie in der Liste **Verzeichnis** das Verzeichnis aus, für das Sie die Verzeichnisintegration aktivieren möchten.
 
@@ -152,7 +152,7 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta S
 
 7. Klicken Sie auf der Dialogfeldseite **Vorübergehendes Kennwort abrufen** auf **Erstellen**. <br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-fuse-tutorial/create_aaduser_07.png) <br>
 
-8. Führen Sie auf der Dialogfeldseite **Vorübergehendes Kennwort abrufen** die folgenden Schritte aus: <br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-fuse-tutorial/create_aaduser_08.png) <br>
+8. Führen Sie auf der Dialogfeldseite **Vorübergehendes Kennwort abrufen** die folgenden Schritte aus: <br><br>![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-fuse-tutorial/create_aaduser_08.png) <br>
 
     a. Notieren Sie den Wert von **Neues Kennwort**.
 
@@ -164,7 +164,7 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta S
 
 Das Ziel dieses Abschnitts ist das Erstellen eines Benutzers namens Britta Simon in Fuse. Fuse unterstützt die Just-in-Time-Bereitstellung, die standardmäßig aktiviert ist.
 
-Für Sie steht in diesem Abschnitt kein Aktionselement zur Verfügung. Wenn noch kein Benutzer vorhanden ist, wird beim Zugreifen auf Fuse ein neuer Benutzer erstellt. [Konfigurieren des einmaligen Anmeldens von Azure AD](#configuring-azure-ad-single-single-sign-on).
+Für Sie steht in diesem Abschnitt kein Aktionselement zur Verfügung. Wenn noch kein Benutzer vorhanden ist, wird beim Zugreifen auf Fuse ein neuer Benutzer erstellt. [Konfigurieren der einmaligen Anmeldung in Azure AD](#configuring-azure-ad-single-single-sign-on).
 
 
 ### Zuweisen des Azure AD-Testbenutzers
@@ -214,4 +214,4 @@ Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für einm
 [204]: ./media/active-directory-saas-fuse-tutorial/tutorial_general_204.png
 [205]: ./media/active-directory-saas-fuse-tutorial/tutorial_general_205.png
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1223_2015-->

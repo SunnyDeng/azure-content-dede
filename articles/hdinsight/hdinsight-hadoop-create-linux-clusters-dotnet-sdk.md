@@ -1,6 +1,6 @@
 <properties
-   	pageTitle="Bereitstellen von Hadoop-, HBase- oder Storm-Clustern unter Linux in HDInsight mit cURL und der Azure-REST-API | Microsoft Azure"
-   	description="Erfahren Sie, wie Hadoop-, HBase- oder Storm-Cluster unter Linux für HDInsight mithilfe von cURL und der Azure-REST-API erstellt werden."
+   	pageTitle="Bereitstellen von Hadoop-, HBase-, Storm- oder Spark-Clustern unter Linux in HDInsight mithilfe der HDInsight .NET SDK | Microsoft Azure"
+   	description="Erfahren Sie, wie Hadoop-, HBase-, Storm- oder Spark-Cluster unter Linux für HDInsight mithilfe der HDInsight .NET SDK erstellt werden."
    	services="hdinsight"
    	documentationCenter=""
    	authors="mumian"
@@ -14,7 +14,7 @@
    	ms.topic="article"
    	ms.tgt_pltfrm="na"
    	ms.workload="big-data"
-   	ms.date="10/23/2015"
+   	ms.date="12/08/2015"
    	ms.author="jgao"/>
 
 #Erstellen von Linux-basierten Clustern in HDInsight mit dem .NET SDK
@@ -203,4 +203,12 @@ Nachdem Sie einen HDInsight-Cluster erfolgreich erstellt haben, nutzen Sie die f
 * [Verwenden von Python-Komponenten in Storm in HDInsight](hdinsight-storm-develop-python.md)
 * [Bereitstellen und Überwachen von Topologien mit Storm in HDInsight](hdinsight-storm-deploy-monitor-topology-linux.md)
 
-<!---HONumber=Nov15_HO1-->
+###Spark-Cluster
+
+* [Erstellen einer eigenständigen Anwendung mit Scala](hdinsight-apache-spark-create-standalone-application.md)
+* [Remoteausführung von Aufträgen in einem Spark-Cluster mithilfe von Livy](hdinsight-apache-spark-livy-rest-interface.md)
+* [Spark mit BI: Durchführen interaktiver Datenanalysen mithilfe von Spark in HDInsight mit BI-Tools](hdinsight-apache-spark-use-bi-tools.md)
+* [Spark mit Machine Learning: Vorhersage von Lebensmittelüberwachungsergebnissen mithilfe von Spark in HDInsight](hdinsight-apache-spark-machine-learning-mllib-ipython.md)
+* [Spark-Streaming: Erstellen von Echtzeit-Streaminganwendungen mithilfe von Spark in HDInsight](hdinsight-apache-spark-eventhub-streaming.md)
+
+<!---HONumber=AcomDC_1223_2015-->

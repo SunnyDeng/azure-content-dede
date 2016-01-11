@@ -1,6 +1,6 @@
 <properties
    pageTitle="Benutzerdefinierte Testszenarien | Microsoft Azure"
-   description="Informationen zum Absichern Ihrer Dienste bei ordnungsgemäßen und nicht ordnungsgemäßen Ausfälle."
+   description="Informationen zum Absichern Ihrer Dienste bei ordnungsgemäßen und nicht ordnungsgemäßen Ausfällen."
    services="service-fabric"
    documentationCenter=".net"
    authors="anmolah"
@@ -18,12 +18,12 @@
 
 # Simulieren von Ausfällen während der Bearbeitung von Dienstworkloads
 
-Dank der im Testability-Modul enthaltenen Szenarien müssen sich Entwickler keine Sorgen über den Umgang mit einzelnen Fehlern machen. Es gibt aber Szenarien, bei denen unter Umständen eine explizite Überlappung von Clientworkload und Fehlern erforderlich ist. Mit dem Überlappen von Clientworkload und Fehlern wird sichergestellt, dass der Dienst wirklich eine Aktion ausführt, wenn ein Fehler auftritt. Aufgrund des hohen Kontrollgrads des Testability-Moduls ist dies an präzisen Punkten der Workloadausführung möglich. Diese Auslösung von Fehlern bei unterschiedlichen Zuständen in der Anwendung kann zur Ermittlung von Fehlern und einer Verbesserung der Qualität führen.
+Dank der in Azure Service Fabric enthaltenen Testability-Szenarien müssen sich Entwickler keine Sorgen über den Umgang mit einzelnen Fehlern machen. Es gibt aber Szenarien, bei denen unter Umständen eine explizite Überlappung von Clientworkload und Fehlern erforderlich ist. Mit dem Überlappen von Clientworkload und Fehlern wird sichergestellt, dass der Dienst wirklich eine Aktion ausführt, wenn ein Fehler auftritt. Aufgrund des hohen Kontrollgrads, den die Testability bietet, ist dies an präzisen Punkten der Workloadausführung möglich. Diese Auslösung von Fehlern bei unterschiedlichen Zuständen in der Anwendung kann zur Ermittlung von Fehlern und einer Verbesserung der Qualität führen.
 
 ## Benutzerdefiniertes Beispielszenario
 Mit diesem Test wird ein Szenario veranschaulicht, bei dem eine Überlappung der Geschäftsworkload mit [ordnungsgemäßen und nicht ordnungsgemäßen Fehlern](service-fabric-testability-actions.md#graceful-vs-ungraceful-fault-actions) erfolgt. Die Fehler sollten in der Mitte von Dienstvorgängen oder bei der Berechnung der besten Ergebnisse ausgelöst werden.
 
-Wir gehen hier ein Beispiel für einen Dienst durch, der die vier Workloads A, B, C und D verfügbar macht. Jede Workload entspricht einer Gruppe von Workflows, und es kann sich dabei um eine Berechnung, Speicherung oder Mischung handeln. Der Einfachheit halber werden die Workloads im Beispiel abstrahiert. Die unterschiedlichen Fehler, die in diesem Beispiel ausgeführt werden, lauten: + RestartNode: Nicht ordnungsgemäßer Fehler zum Simulieren eines Computerneustarts + RestartDeployedCodePackage: Nicht ordnungsgemäßer Fehler zum Simulieren von Abstürzen des Dienstprozesshosts + RemoveReplica: Ordnungsgemäßer Fehler zum Simulieren einer Replikatentfernung + MovePrimary: Ordnungsgemäßer Fehler zum Simulieren von Replikatverschiebungen, die vom Service Fabric Load Balancer ausgelöst werden
+Wir gehen hier ein Beispiel für einen Dienst durch, der die vier Workloads A, B, C und D verfügbar macht. Jede Workload entspricht einer Gruppe von Workflows, und es kann sich dabei um eine Berechnung, Speicherung oder Mischung handeln. Der Einfachheit halber werden die Workloads im Beispiel abstrahiert. Die unterschiedlichen Fehler, die in diesem Beispiel ausgeführt werden, lauten: + RestartNode: Nicht ordnungsgemäßer Fehler zum Simulieren eines Computerneustarts. + RestartDeployedCodePackage: Nicht ordnungsgemäßer Fehler zum Simulieren von Abstürzen des Dienstprozesshosts. + RemoveReplica: Ordnungsgemäßer Fehler zum Simulieren einer Replikatentfernung. + MovePrimary: Ordnungsgemäßer Fehler zum Simulieren von Replikatverschiebungen, die vom Service Fabric Load Balancer ausgelöst werden.
 
 ```csharp
 // Add a reference to System.Fabric.Testability.dll and System.Fabric.dll.
@@ -39,7 +39,7 @@ class Test
 {
     public static int Main(string[] args)
     {
-        // Replace these strings with the actual version for your cluster and appliction.
+        // Replace these strings with the actual version for your cluster and application.
         string clusterConnection = "localhost:19000";
         Uri applicationName = new Uri("fabric:/samples/PersistentToDoListApp");
         Uri serviceName = new Uri("fabric:/samples/PersistentToDoListApp/PersistentToDoListService");
@@ -84,33 +84,33 @@ class Test
 
     public static async Task RunTestAsync(string clusterConnection, Uri applicationName, Uri serviceName)
     {
-        // Create FabricClient with connection & security information here.
+        // Create FabricClient with connection and security information here.
         FabricClient fabricClient = new FabricClient(clusterConnection);
-        // Maximum time to wait for a service to stabilize
+        // Maximum time to wait for a service to stabilize.
         TimeSpan maxServiceStabilizationTime = TimeSpan.FromSeconds(120);
 
-        // How many loops of faults you want to execute
+        // How many loops of faults you want to execute.
         uint testLoopCount = 20;
         Random random = new Random();
 
         for (var i = 0; i < testLoopCount; ++i)
         {
             var workload = SelectRandomValue<ServiceWorkloads>(random);
-            // Start workload and while it is running go and induce some fault
+            // Start the workload.
             var workloadTask = RunWorkloadAsync(workload);
 
-            // While task is executing induce faults into the service. It can be ungraceful faults like
-            // RestartNode and RestartDeployedCodePackage or graceful faults like RemoveReplica or MovePrimary
+            // While the task is running, induce faults into the service. They can be ungraceful faults like
+            // RestartNode and RestartDeployedCodePackage or graceful faults like RemoveReplica or MovePrimary.
             var fault = SelectRandomValue<ServiceFabricFaults>(random);
 
-            // Create a replica selector which will select a Primary replica from the given service to test
+            // Create a replica selector, which will select a primary replica from the given service to test.
             var replicaSelector = ReplicaSelector.PrimaryOf(PartitionSelector.RandomOf(serviceName));
-            // Run the selected random fault
+            // Run the selected random fault.
             await RunFaultAsync(applicationName, fault, replicaSelector, fabricClient);
             // Validate the health and stability of the service.
             await fabricClient.ServiceManager.ValidateServiceAsync(serviceName, maxServiceStabilizationTime);
 
-            // Wait for the workload to complete successfully
+            // Wait for the workload to finish successfully.
             await workloadTask;
         }
     }
@@ -137,10 +137,10 @@ class Test
     private static Task RunWorkloadAsync(ServiceWorkloads workload)
     {
         throw new NotImplementedException();
-        // This is where you trigger and complete your service workload
-        // Please note the faults induced while your service workload is running will
-        // fault the Primary service hence you will need to reconnect to complete or check
-        // the status of the workload
+        // This is where you trigger and complete your service workload.
+        // Note that the faults induced while your service workload is running will
+        // fault the primary service. Hence, you will need to reconnect to complete or check
+        // the status of the workload.
     }
 
     private static T SelectRandomValue<T>(Random random)
@@ -151,6 +151,5 @@ class Test
     }
 }
 ```
- 
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1223_2015-->

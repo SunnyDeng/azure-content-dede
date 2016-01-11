@@ -13,14 +13,12 @@
 	ms.tgt_pltfrm="mobile-xamarin-ios" 
 	ms.devlang="dotnet" 
 	ms.topic="article"
-	ms.date="12/01/2015" 
+	ms.date="12/18/2015" 
 	ms.author="wesmc"/>
 
 # Hinzufügen von Pushbenachrichtigungen zu Ihrer Xamarin iOS-App
 
-[AZURE.INCLUDE [app-service-mobile-selector-get-started-push](../../includes/app-service-mobile-selector-get-started-push.md)]
-&nbsp;  
-[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
+[AZURE.INCLUDE [app-service-mobile-selector-get-started-push](../../includes/app-service-mobile-selector-get-started-push.md)]&nbsp;[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
 
 ##Übersicht
 
@@ -55,17 +53,15 @@ Um Ihre App für das Senden von Benachrichtigungen zu konfigurieren, erstellen S
 
 2. Klicken Sie auf dem Blatt „Benachrichtigungs-Hub“ auf **Erstellen**.
 
-3. Klicken Sie auf **Push** > **Apple (APNS)** > **Zertifikat hochladen**. Laden Sie die P12-Pushzertifikatsdatei hoch, die Sie zuvor exportiert haben. Stellen Sie sicher, dass **Sandkasten** ausgewählt ist, wenn Sie ein Pushzertifikat für Entwicklung und Tests erstellt haben. Wählen Sie andernfalls **Produktion**. Ihr Dienst ist jetzt so konfiguriert, dass er mit Pushbenachrichtigungen unter iOS arbeitet.
+3. Klicken Sie auf **Push** > **Apple (APNS)** > **Zertifikat hochladen**. Laden Sie die P12-Pushzertifikatsdatei hoch, die Sie zuvor exportiert haben. Stellen Sie sicher, dass **Sandkasten** ausgewählt ist, wenn Sie ein Pushzertifikat für Entwicklung und Tests erstellt haben. Wählen Sie andernfalls **Produktion**.
 
 	![](./media/app-service-mobile-xamarin-ios-get-started-push/mobile-app-upload-apns-cert.png)
+
+Ihr Dienst ist jetzt so konfiguriert, dass er mit Pushbenachrichtigungen unter iOS arbeitet.
 
 ##Aktualisieren des Serverprojekts für das Senden von Pushbenachrichtigungen
 
 [AZURE.INCLUDE [app-service-mobile-update-server-project-for-push-template](../../includes/app-service-mobile-update-server-project-for-push-template.md)]
-
-##Bereitstellen des Serverprojekts in Azure
-
-[AZURE.INCLUDE [app-service-mobile-dotnet-backend-publish-service](../../includes/app-service-mobile-dotnet-backend-publish-service.md)]
 
 ##Konfigurieren des Xamarin.iOS-Projekts
 
@@ -110,7 +106,7 @@ Um Ihre App für das Senden von Benachrichtigungen zu konfigurieren, erstellen S
 
 3. Setzen Sie in derselben Datei das Ereignis **RegisteredForRemoteNotifications** außer Kraft: In diesem Code registrieren Sie sich für eine einfache Vorlagenbenachrichtigung, die vom Server an alle unterstützten Plattformen gesendet wird.
  
-	Weitere Informationen zu Vorlagen mit Benachrichtigungs-Hubs finden Sie unter [Vorlagen](../notification-hubs/notification-hubs-templates.md).
+	Weitere Informationen zu Vorlagen mit Notification Hubs finden Sie unter [Vorlagen](../notification-hubs/notification-hubs-templates.md).
 
 
         public override void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
@@ -176,4 +172,4 @@ Sie haben dieses Lernprogramm erfolgreich abgeschlossen.
 
  
 
-<!---HONumber=AcomDC_1203_2015--->
+<!---HONumber=AcomDC_1223_2015-->

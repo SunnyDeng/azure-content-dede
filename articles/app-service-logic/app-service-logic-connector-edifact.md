@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration" 
-   ms.date="11/30/2015"
+   ms.date="12/17/2015"
    ms.author="rajram"/>
 
 # Erste Schritte mit dem BizTalk Edifact-Connector und das Hinzufügen zur Logik-App  
@@ -32,7 +32,7 @@ Zur Verwendung des Edifact-Connectors müssen Sie zunächst eine Instanz der AS2
 ## Konfigurieren des Edifact-Connectors
 Handelspartner sind die Entitäten, die an einer B2B-Kommunikation (Business-to-Business) beteiligt sind. Wenn zwei Partner eine Beziehung eingehen, wird dies als "Vereinbarung" bezeichnet. Diese Vereinbarung basiert auf der Kommunikation, die beide Partner wünschen, und ist protokoll- oder transportspezifisch.
 
-Die Schritte zum Erstellen einer Handelspartnervereinbarung sind [hier][2] dokumentiert.
+Lesen Sie sich die Schritte zum [Erstellen einer Handelspartnervereinbarung][2] durch.
 
 ## Verwenden des Edifact-Connectors auf der Designeroberfläche von Logik-Apps
 Der Edifact-Connector kann als Trigger oder als Aktion verwendet werden.
@@ -89,4 +89,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [9]: ./media/app-service-logic-connector-edifact/EncodeInput.PNG
 [10]: ./media/app-service-logic-connector-edifact/EncodeConfigured.PNG
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1223_2015-->

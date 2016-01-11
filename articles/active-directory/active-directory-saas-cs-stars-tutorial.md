@@ -3,7 +3,7 @@
 	description="Erfahren Sie, wie Sie das einmalige Anmelden zwischen Azure Active Directory und CS Stars konfigurieren."
 	services="active-directory"
 	documentationCenter=""
-	authors="markusvi"
+	authors="jeevansd"
 	manager="stevenpo"
 	editor=""/>
 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/06/2015"
-	ms.author="markusvi"/>
+	ms.date="12/18/2015"
+	ms.author="jeedes"/>
 
 
 # Tutorial: Azure Active Directory-Integration mit CS Stars
@@ -120,27 +120,27 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta S
 
 **Um einen Testbenutzer in Azure AD zu erstellen, führen Sie die folgenden Schritte aus:**
 
-1. Klicken Sie im linken Navigationsbereich des **Azure-Verwaltungsportals** auf **Active Directory**. <br><br>![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-amazon-web-service/create_aaduser_02.png)<br> 
+1. Klicken Sie im linken Navigationsbereich des **Azure-Verwaltungsportals** auf **Active Directory**. <br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-amazon-web-service/create_aaduser_02.png)<br> 
 
 2. Wählen Sie in der Liste **Verzeichnis** das Verzeichnis aus, für das Sie die Verzeichnisintegration aktivieren möchten.
 
-3. Klicken Sie zum Anzeigen der Liste der Benutzer im Menü oben auf **Benutzer**. <br><br>![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-amazon-web-service/create_aaduser_03.png)<br>
+3. Klicken Sie zum Anzeigen der Liste der Benutzer im Menü oben auf **Benutzer**. <br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-amazon-web-service/create_aaduser_03.png)<br>
  
-4. Um das Dialogfeld **Benutzer hinzufügen** zu öffnen, klicken Sie auf der Symbolleiste unten auf **Benutzer hinzufügen**. <br><br>![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-amazon-web-service/create_aaduser_04.png)<br>
+4. Um das Dialogfeld **Benutzer hinzufügen** zu öffnen, klicken Sie auf der Symbolleiste unten auf **Benutzer hinzufügen**. <br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-amazon-web-service/create_aaduser_04.png)<br>
 
-5. Führen Sie auf der Dialogfeldseite **Informationen über diesen Benutzer** die folgenden Schritte aus: <br><br>![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-amazon-web-service/create_aaduser_05.png)<br>
+5. Führen Sie auf der Dialogfeldseite **Informationen über diesen Benutzer** die folgenden Schritte aus: <br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-amazon-web-service/create_aaduser_05.png)<br>
   1. Wählen Sie als "Benutzertyp" die Option "Neuer Benutzer in Ihrer Organisation" aus.
   2. Geben Sie in das Textfeld **Benutzername** den Text **BrittaSimon** ein.
   3. Klicken Sie auf Weiter.
 
-6.  Führen Sie auf der Dialogfeldseite **Benutzerprofil** die folgenden Schritte aus: <br><br>![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-amazon-web-service/create_aaduser_06.png)<br>
+6.  Führen Sie auf der Dialogfeldseite **Benutzerprofil** die folgenden Schritte aus: <br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-amazon-web-service/create_aaduser_06.png)<br>
   1. Geben Sie in das Textfeld **Vorname** den Text **Britta** ein.  
-  2. Geben Sie in das Textfeld **Nachname** den Text **Simon** ein.
+  2. Geben Sie in das Textfeld **Nachname** den Namen **Simon** ein.
   3. Geben Sie in das Textfeld **Anzeigename** den Text **Britta Simon** ein.
-  4. Wählen Sie in der Liste **Rolle** den Eintrag **Benutzer** aus.
+  4. Wählen Sie in der Liste **Rolle** **Benutzer** aus.
   5. Klicken Sie auf **Weiter**.
 
-7. Klicken Sie auf der Dialogfeldseite **Temporäres Kennwort abrufen** auf **Erstellen**. <br><br>![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-amazon-web-service/create_aaduser_07.png)<br>
+7. Klicken Sie auf der Dialogfeldseite **Temporäres Kennwort abrufen** auf **Erstellen**. <br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-amazon-web-service/create_aaduser_07.png)<br>
  
 8. Führen Sie auf der Dialogfeldseite **Temporäres Kennwort abrufen** die folgenden Schritte aus: <br><br>![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-amazon-web-service/create_aaduser_08.png)<br>
   1. Notieren Sie den Wert von **Neues Kennwort**.
@@ -205,4 +205,4 @@ Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für einm
 
 [400]: ./media/active-directory-saas-cs-stars-tutorial/tutorial_csstars_403.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1223_2015-->

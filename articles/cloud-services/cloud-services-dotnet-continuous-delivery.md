@@ -5,7 +5,7 @@
 	documentationCenter=""
 	authors="TomArcher"
 	manager="douge"
-	editor="tglee"/>
+	editor=""/>
 
 <tags
 	ms.service="cloud-services"
@@ -44,7 +44,7 @@ In diesem Abschnitt wird erläutert, wie ein MSBuild-Befehl konstruiert wird, de
 
 1.  Wenn Visual Studio auf dem Buildserver installiert ist, suchen Sie unter Windows im Ordner **Visual Studio Tools** nach **Visual Studio-Eingabeaufforderung**, und wählen Sie diese Option aus.
 
-    Wenn Visual Studio auf dem Buildserver nicht installiert ist, öffnen Sie eine Eingabeaufforderung, und stellen Sie sicher, dass MSBuild.exe im Pfad verfügbar ist. MSBuild wird mit .NET Framework unter "%WINDIR%\\Microsoft.NET\\Framework\\*Version*" installiert. Um z. B. MSBuild.exe der Umgebungsvariable PATH hinzuzufügen, wenn .NET Framework 4 installiert ist, geben Sie an der Eingabeaufforderung den folgenden Befehl ein:
+    Wenn Visual Studio auf dem Buildserver nicht installiert ist, öffnen Sie eine Eingabeaufforderung, und stellen Sie sicher, dass MSBuild.exe im Pfad verfügbar ist. MSBuild wird mit .NET Framework unter "%WINDIR%\\Microsoft.NET\\Framework\*Version*" installiert. Um z. B. MSBuild.exe der Umgebungsvariable PATH hinzuzufügen, wenn .NET Framework 4 installiert ist, geben Sie an der Eingabeaufforderung den folgenden Befehl ein:
 
         set PATH=%PATH%;"C:\Windows\Microsoft.NET\Framework\v4.0.30319"
 
@@ -58,7 +58,7 @@ In diesem Abschnitt wird erläutert, wie ein MSBuild-Befehl konstruiert wird, de
 
     Den Projektnamen können Sie optional als MSBuild-Parameter angeben. Wird er nicht angegeben, wird das aktuelle Verzeichnis verwendet. Weitere Informationen über MSBuild-Befehlszeilenoptionen finden Sie unter [MSBuild-Befehlszeilenreferenz][1].
 
-4.  Suchen Sie die Ausgabe. Standardmäßig erstellt dieser Befehl ein Verzeichnis unter dem Stammordner des Projekts, z. B. "*ProjectDir*\\bin\\*Configuration*\\app.publish\". Beim Erstellen eines Azure-Projekts werden zwei Dateien generiert, die Paketdatei selbst und die zugehörige Konfigurationsdatei:
+4.  Suchen Sie die Ausgabe. Standardmäßig erstellt dieser Befehl ein Verzeichnis unter dem Stammordner des Projekts, z. B. "*ProjectDir*\\bin\*Configuration*\\app.publish\". Beim Erstellen eines Azure-Projekts werden zwei Dateien generiert, die Paketdatei selbst und die zugehörige Konfigurationsdatei:
 
     -   Project.cspkg
     -   ServiceConfiguration.*Zielprofil*.cscfg
@@ -123,7 +123,7 @@ In diesem Abschnitt wird erläutert, wie ein Windows PowerShell-Skript erstellt 
 
     Damit werden Informationen über Ihr Abonnement angezeigt. Prüfen Sie, ob alles richtig ist.
 
-4.  Speichern Sie die am [Ende dieses Artikels][] bereitgestellte Skriptvorlage im Skriptordner unter "C:\\scripts\\WindowsAzure\\**PublishCloudService.ps1**".
+4.  Speichern Sie die am Ende dieses Artikels bereitgestellte Skriptvorlage im Skriptordner unter „C:\\scripts\\WindowsAzure\**PublishCloudService.ps1**“.
 
 5.  Prüfen Sie den Parameterabschnitt des Skripts. Fügen Sie Standardwerte hinzu, oder ändern Sie diese. Diese Werte können durch Übergabe expliziter Parameter stets überschrieben werden.
 
@@ -573,4 +573,4 @@ Informationen zum Aktivieren des Remotedebuggens bei Verwendung der kontinuierli
   [5]: ./media/cloud-services-dotnet-continuous-delivery/common-task-tfs-05.png
   [6]: ./media/cloud-services-dotnet-continuous-delivery/common-task-tfs-06.png
 
-<!----HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1223_2015-->

@@ -21,7 +21,7 @@
 
 Bei den Sicherheitsaspekten für Ihre Azure-Ressourcen-Manager-Vorlagen müssen mehrere Bereiche berücksichtigt werden: Schlüssel und geheime Schlüssel, rollenbasierte Zugriffssteuerung und Netzwerksicherheitsgruppen.
 
-Dieses Thema setzt voraus, dass Sie mit der rollenbasierten Zugriffssteuerung in Azure-Ressourcen-Manager vertraut sind. Weitere Informationen finden Sie unter [Rollenbasierte Zugriffssteuerung im Microsoft Azure-Portal](role-based-access-control-configure.md) und [Verwalten und Überwachen des Zugriffs auf Ressourcen](resource-group-rbac.md).
+Dieses Thema setzt voraus, dass Sie mit der rollenbasierten Zugriffssteuerung in Azure-Ressourcen-Manager vertraut sind. Weitere Informationen finden Sie unter [Rollenbasierte Access Control in Azure](./active-directory/role-based-access-control-configure.md).
 
 Dieses Thema ist Teil eines umfangreicheren Whitepapers. Um den vollständigen Artikel zu lesen, laden Sie [World Class ARM Templates Considerations and Proven Practices](http://download.microsoft.com/download/8/E/1/8E1DBEFA-CECE-4DC9-A813-93520A5D7CFE/World Class ARM Templates - Considerations and Proven Practices.pdf) herunter.
 
@@ -337,4 +337,4 @@ Dieser virtuelle Computer muss eingehenden Datenverkehr empfangen können, der n
 - Informationen zum Konfigurieren von Routing und der IP-Weiterleitung finden Sie unter [Erstellen von Routen und Aktivieren der IP-Weiterleitung in Azure](virtual-network/virtual-networks-udr-how-to.md). 
 - Eine Übersicht über die rollenbasierte Zugriffssteuerung finden Sie unter [Rollenbasierte Zugriffssteuerung über das Microsoft Azure-Portal](role-based-access-control-configure.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1223_2015-->

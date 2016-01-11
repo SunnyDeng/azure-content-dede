@@ -322,11 +322,21 @@ Die Vorbereitung eines virtuellen CentOS 7-Computers für Azure entspricht in et
 
 12.	Stellen Sie sicher, dass der SSH-Server installiert und konfiguriert ist, damit er beim Booten hochfährt. Dies ist für gewöhnlich die Standardeinstellung.
 
-13. Installieren Sie den Azure Linux Agent, indem Sie den folgenden Befehl ausführen:
+13.	**Nur, wenn Sie das Image aus VMWare, VirtualBox oder KVM erstellen:** Fügen Sie Hyper-V-Module zu initramfs hinzu:
+
+    Bearbeiten Sie `/etc/dracut.conf` und fügen Sie Inhalt hinzu:
+
+        add_drivers+=”hv_vmbus hv_netvsc hv_storvsc”
+
+    Erstellen Sie initramfs neu:
+
+        # dracut –f -v
+
+14. Installieren Sie den Azure Linux Agent, indem Sie den folgenden Befehl ausführen:
 
 		# sudo yum install WALinuxAgent
 
-14.	Richten Sie keinen SWAP-Raum auf dem BS-Datenträger ein.
+15.	Richten Sie keinen SWAP-Raum auf dem BS-Datenträger ein.
 
 	Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein *temporärer* Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Modifizieren Sie nach dem Installieren des Azure Linux Agent (siehe vorheriger Schritt) die folgenden Parameter in /etc/waagent.conf entsprechend:
 
@@ -336,12 +346,12 @@ Die Vorbereitung eines virtuellen CentOS 7-Computers für Azure entspricht in et
 		ResourceDisk.EnableSwap=y
 		ResourceDisk.SwapSizeMB=2048    ## NOTE: set this to whatever you need it to be.
 
-15.	Führen Sie die folgenden Befehle aus, um den virtuellen Computer zurückzusetzen und ihn für die Bereitstellung in Azure vorzubereiten:
+16.	Führen Sie die folgenden Befehle aus, um den virtuellen Computer zurückzusetzen und ihn für die Bereitstellung in Azure vorzubereiten:
 
 		# sudo waagent -force -deprovision
 		# export HISTSIZE=0
 		# logout
 
-16. Klicken Sie im Hyper-V-Manager auf **Aktion -> Herunterfahren**. Ihre Linux-VHD kann nun in Azure hochgeladen werden.
+17. Klicken Sie im Hyper-V-Manager auf **Aktion -> Herunterfahren**. Ihre Linux-VHD kann nun in Azure hochgeladen werden.
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_1223_2015-->

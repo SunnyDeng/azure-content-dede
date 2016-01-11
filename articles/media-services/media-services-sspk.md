@@ -61,7 +61,7 @@ Mit dieser Lizenz bietet Microsoft ein Smooth Streaming Client Porting Kit und d
 
 Eine einmalige Lizenzgebühr von 50.000 US-Dollar ermöglicht den Zugriff auf Smooth Streaming Client Porting Kit.
 
-###Microsoft Smooth Streaming Client Porting Kit Final Product License
+###Finale Produktlizenz für das Microsoft Smooth Streaming Client Porting Kit
 
 Mit dieser Lizenz bietet Microsoft alle erforderlichen Schutz- und Urheberrechte zum Erhalten von Smooth Streaming Client-Interimsprodukten von anderen Smooth Streaming Client Porting Kit-Lizenznehmern und zum Verteilen von firmeneigenen finalen Smooth Streaming Client-Produkten an Endbenutzer.
 
@@ -81,7 +81,7 @@ Registrierte Interimslizenznehmer können auf das [SSPK-Verteilungsportal](https
 
 Lizenznehmer von SSPK-Lizenzen (Interim und final) können sich bei technischen Fragen an [smoothpk@microsoft.com](mailto:smoothpk@microsoft.com) wenden.
 
-##Microsoft Smooth Streaming Client Interim Product Agreement
+##Lizenznehmer der Microsoft Smooth Streaming Client Interim Product Agreement
 
 - Adroit Business Solutions, Inc.
 - Advanced Digital Broadcast SA
@@ -99,6 +99,7 @@ Lizenznehmer von SSPK-Lizenzen (Interim und final) können sich bei technischen 
 - Fluendo SA
 - GIGABYTE Technology
 - Guangdong OPPO Mobile Telecommunications Corp., Ltd.
+- HANDAN BroadInfoCom Co., Ltd.
 - Infomir GMBH
 - Inside Secure
 - Irdeto USA Inc.
@@ -125,10 +126,9 @@ Lizenznehmer von SSPK-Lizenzen (Interim und final) können sich bei technischen 
 - Vestel Elektronik Sanayi ve Ticaret A.S.
 - VimpelCom (OJSC)
 - VisualOn, Inc.
-- WOOJEON & HANDAN Co., Ltd
 - ZTE Corporation
 
-##Lizenznehmer des Microsoft Smooth Streaming Client Final Product Agreement
+##Lizenznehmer der Microsoft Smooth Streaming Client Final Product Agreement
 
 - Advanced Digital Broadcast SA
 - AirTies Kablosuz Iletism Sanayive Dis Ticaret A.S.
@@ -150,6 +150,7 @@ Lizenznehmer von SSPK-Lizenzen (Interim und final) können sich bei technischen 
 - Fluendo SA
 - GIGABYTE Technology
 - Guangdong OPPO Mobile Telecommunications Corp., Ltd.
+- HANDAN BroadInfoCom Co., Ltd.
 - Hisense International Co., Ltd
 - Homecast Co.,Ltd
 - Hon Hai Precision Industry Co., Ltd.
@@ -181,7 +182,6 @@ Lizenznehmer von SSPK-Lizenzen (Interim und final) können sich bei technischen 
 - Virgin Media Limited
 - VIZIO, Inc.
 - Wistron Corporation
-- WOOJEON & HANDAN Co., Ltd
 - WOOX Innovations Limited
 - ZTE Corporation
 
@@ -193,4 +193,4 @@ Lizenznehmer von SSPK-Lizenzen (Interim und final) können sich bei technischen 
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1223_2015-->

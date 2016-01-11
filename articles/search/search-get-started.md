@@ -14,7 +14,7 @@
 	ms.workload="search" 
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
-	ms.date="11/04/2015" 
+	ms.date="12/18/2015" 
 	ms.author="heidist"/>
 
 # Erste Schritte mit Azure Search
@@ -78,7 +78,7 @@ Die Einrichtung fest zugeordneter Ressourcen kann einige Zeit in Anspruch nehmen
 
 **Schritt 1 - Erstellen eines neuen Diensts mit dem Tarif "Standard"**
 
-1. Melden Sie sich mit Ihrem bestehenden Abonnement beim [klassischen Azure-Portal](https://portal.azure.com) an. 
+1. Melden Sie sich mit Ihrem bestehenden Abonnement beim [Azure-Portal](https://portal.azure.com) an. 
 
 2. Klicken Sie unten auf der Seite auf **New**.
 
@@ -310,7 +310,7 @@ Sie können auch das System abfragen, um Dokumentenanzahl oder Speicherverbrauch
 
 Falls Sie eine Auffrischung brauchen, um die Konfigurationsseiten zu finden, folgen Sie den folgenden Schritten, um zum Dienst-Dashboard zu gelangen.
 
-1.	Melden Sie sich mit Ihrem bestehenden Abonnement beim [klassischen Azure-Portal](https://portal.azure.com) an. 
+1.	Melden Sie sich mit Ihrem bestehenden Abonnement beim [Azure-Portal](https://portal.azure.com) an. 
 2.	Klicken Sie auf **Startseite** und anschließend auf die Kachel für Ihren Search-Dienst.
 
  	![][22]
@@ -378,4 +378,4 @@ Bereit für den nächsten Schritt? Unter den folgenden Links finden Sie zusätzl
 [Create your first azure search solution]: search-create-first-solution.md
 [Create a geospatial search app using Azure Search]: search-create-geospatial.md
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1223_2015-->

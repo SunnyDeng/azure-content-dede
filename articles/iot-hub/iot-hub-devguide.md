@@ -289,7 +289,8 @@ Die folgende Tabelle zeigt den Satz an Systemeigenschaften in IoT Hub-Nachrichte
 | -------- | ----------- |
 | MessageId | Eine vom Benutzer festgelegte Kennung für die Nachricht, wird üblicherweise für Anforderung-Antwort-Muster verwendet. Format: Eine Zeichenfolge mit Berücksichtigung von Klein-/Großschreibung (bis zu 128 Zeichen lang), die aus alphanumerischen ASCII-Zeichen (7 Bit) + `{'-', ':',’.', '+', '%', '_', '#', '*', '?', '!', '(', ')', ',', '=', '@', ';', '$', '''}` besteht. |
 | Sequenznummer | Eine Nummer (für jede Gerätewarteschlange eindeutig), die jeder C2D-Nachricht von IoT Hub zugewiesen wird. |
-| To | Gibt in [C2D](#c2d)-Nachrichten das Ziel der Nachricht an.|
+| To  
+ | Gibt in [C2D](#c2d)-Nachrichten das Ziel der Nachricht an.|
 | ExpiryTimeUtc | Datum und Uhrzeit des Nachrichtenablaufs. |
 | EnqueuedTime | Zeitpunkt des Empfangs der Nachricht durch IoT Hub. |
 | CorrelationId | Zeichenfolgeneigenschaft, die üblicherweise die Nachrichten-ID der Anforderung bei Anforderung-Antwort-Mustern enthält. |
@@ -404,7 +405,7 @@ Jede C2D-Nachricht verfügt über eine Gültigkeitsdauer. Diese kann (in der Eig
 
 Beim Senden einer C2D-Nachricht kann der Dienst das Übermitteln von Feedback auf Nachrichtenbasis anfordern, um über den finalen Status dieser Nachricht informiert zu werden. Wenn die **Ack**-Eigenschaft auf **positive** festgelegt wird, generiert IoT Hub nur dann eine Feedbacknachricht, wenn die C2D-Nachricht den Status **Abgeschlossen** erreicht hat. Bei Festlegung der **Ack**-Eigenschaft auf **negative** generiert IoT Hub nur dann eine Feedbacknachricht, wenn die C2D-Nachricht den Status **Unzustellbar** erreicht. Bei Festlegung der **Ack**-Eigenschaft auf **full** generiert IoT Hub in beiden Fällen eine Feedbacknachricht.
 
-Wie im Abschnitt [Endpunkte](#endpoints) beschrieben, wird Feedback über einen dienstseitigen Endpunkt (`/messages/servicebound/feedback`) in Form von Nachrichten übermittelt. Die Semantik für den Empfang von Feedback stimmt mit der für C2D-Nachrichten überein, die den gleichen [Nachrichtenlebenszyklus aufweisen](#message lifecycle). Nachrichtenfeedback wird nach Möglichkeit in einer einzigen Nachricht zusammengefasst, die das folgende Format aufweist.
+Wie im Abschnitt [Endpunkte](#endpoints) beschrieben, wird Feedback über einen dienstseitigen Endpunkt (`/messages/servicebound/feedback`) in Form von Nachrichten übermittelt. Die Semantik für den Empfang von Feedback stimmt mit der für C2D-Nachrichten überein, die den gleichen Nachrichtenlebenszyklus aufweisen. Nachrichtenfeedback wird nach Möglichkeit in einer einzigen Nachricht zusammengefasst, die das folgende Format aufweist.
 
 Jede vom Feedbackendpunkt empfangene Nachricht umfasst die folgenden Eigenschaften:
 
@@ -475,7 +476,7 @@ Die nachfolgende Liste zeigt alle erzwungenen Werte für die Drosselung. Die Wer
 | -------- | ------------- |
 | Vorgänge in der Identitätsregistrierung (Erstellen, Abrufen, Aktualisieren, Löschen), einzelne Import-/Exportvorgänge oder Massenimport/-export | 100/Minute/Einheit, bis zu 5.000/Minute |
 | Geräteverbindungen | 100/Sekunde/Einheit |
-| D2C-Sendevorgänge | 2\.000/Minute/Einheit (für S2), 60/Minute/Einheit (für S1); mindestens 100/Sekunde |
+| D2C-Sendevorgänge | 120/Sekunden/Einheit (für S2), 12/Sekunden/Einheit (für S1); mindestens 100/Sekunde |
 | C2D-Vorgänge (Senden, Empfangen, Feedback) | 100/Minute/Einheit |
 
 **Hinweis**: Die Kontingente oder Drosselungsgrenzwerte können jederzeit angehoben werden, indem die Anzahl von bereitgestellten Einheiten in einem IoT Hub erhöht wird.
@@ -532,4 +533,4 @@ Nachdem Sie in diesem Dokument einen Überblick über die Entwicklung für IoT H
 [lnk-tls]: https://tools.ietf.org/html/rfc5246
 [lnk-iotdev]: https://azure.microsoft.com/develop/iot/
 
-<!----HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1223_2015-->

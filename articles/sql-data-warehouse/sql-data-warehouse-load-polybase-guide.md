@@ -5,7 +5,7 @@
    documentationCenter="NA"
    authors="sahaj08"
    manager="barbkess"
-   editor="jrowlandjones"/>
+   editor=""/>
 
 <tags
    ms.service="sql-data-warehouse"
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="11/19/2015"
+   ms.date="12/17/2015"
    ms.author="sahaj08;barbkess"/>
 
 
@@ -21,7 +21,7 @@
 
 Diese Anleitung bietet praktische Informationen zur Verwendung von PolyBase in SQL Data Warehouse.
 
-Zum Einstieg befolgen Sie das Lernprogramm [Laden von Daten mit PolyBase][].
+Zum Einstieg folgen Sie dem Tutorial [Laden von Daten mit PolyBase][].
 
 
 ## Wechseln von Speicherschlüsseln
@@ -181,7 +181,7 @@ Weitere Informationen zum Verschieben von Daten in SQL Data Warehouse finden Sie
 
 <!--Article references-->
 [Load data with bcp]: sql-data-warehouse-load-with-bcp.md
-[Laden von Daten mit PolyBase]: sql-data-warehouse-load-with-polybase.md
+[Laden von Daten mit PolyBase]: sql-data-warehouse-get-started-load-with-polybase.md
 [solution partners]: sql-data-warehouse-solution-partners.md
 [development overview]: sql-data-warehouse-overview-develop.md
 [Statistiken]: sql-data-warehouse-develop-statistics.md
@@ -210,4 +210,4 @@ Weitere Informationen zum Verschieben von Daten in SQL Data Warehouse finden Sie
 [CREATE DATABASE SCOPED CREDENTIAL (Transact-SQL)]: https://msdn.microsoft.com/library/mt270260.aspx
 [DROP CREDENTIAL (Transact-SQL)]: https://msdn.microsoft.com/library/ms189450.aspx
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1223_2015-->

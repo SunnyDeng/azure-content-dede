@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="12/07/2015"
+   ms.date="12/23/2015"
    ms.author="tomfitz"/>
 
 # Vorlagenausdrücke des Azure-Ressourcen-Managers
@@ -167,6 +167,7 @@ Der Ressourcen-Manager stellt die folgenden Ausdrücke für das Arbeiten mit Zei
 - [replace](#replace)
 - [split](#split)
 - [string](#string)
+- [substring](#substring)
 - [toLower](#tolower)
 - [toUpper](#toupper)
 - [trim](#trim)
@@ -292,6 +293,28 @@ Im folgenden Beispiel wird der vom Benutzer angegebene Parameterwert in eine Zei
     },
     "variables": { 
         "stringValue": "[string(parameters('appId'))]"
+    }
+
+<a id="substring" />
+### substring
+
+**substring(stringToParse, startIndex, length)**
+
+Gibt eine Teilzeichenfolge zurück, die an der angegebenen Zeichenposition beginnt und die angegebene Anzahl von Zeichen enthält.
+
+| Parameter | Erforderlich | Beschreibung
+| :--------------------------------: | :------: | :----------
+| stringToParse | Ja | Die ursprüngliche Zeichenfolge, aus der die Teilzeichenfolge extrahiert wird.
+| startIndex | Nein | Die nullbasierte Anfangsposition für die Teilzeichenfolge.
+| Länge | Nein | Die Anzahl der Zeichen der Teilzeichenfolge.
+
+Im folgenden Beispiel werden die ersten drei Zeichen aus einem Parameter extrahiert.
+
+    "parameters": {
+        "inputString": { "type": "string" }
+    },
+    "variables": { 
+        "prefix": "[substring(parameters('inputString'), 0, 3)]"
     }
 
 <a id="tolower" />
@@ -746,4 +769,4 @@ Das folgende Beispiel zeigt ein Abrufen der Abonnement-Funktion im Ausgabeabschn
 - Informationen dazu, wie Sie beim Erstellen eines Ressourcentyps eine bestimmte Anzahl von Durchläufen ausführen, finden Sie unter [Erstellen mehrerer Instanzen von Ressourcen im Azure-Ressourcen-Manager](resource-group-create-multiple.md).
 - Informationen zum Bereitstellen der erstellten Vorlage finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](resource-group-template-deploy.md).
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1223_2015-->

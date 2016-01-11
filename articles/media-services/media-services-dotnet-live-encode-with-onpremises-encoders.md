@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="ne" 
 	ms.topic="article" 
-	ms.date="10/15/2015"  
+	ms.date="12/17/2015" 
 	ms.author="juliako"/>
 
 #Durchführen von Live Encoding mit lokalen Encodern
@@ -29,7 +29,7 @@ Zum Abschließen dieses Lernprogramms müssen folgende Voraussetzungen erfüllt 
 
 Wir empfehlen, die folgenden Artikel zu lesen:
 
-- [Azure Media Services RTMP Support and Live Encoders](http://azure.microsoft.com/blog/2014/09/18/azure-media-services-rtmp-support-and-live-encoders/) (in englischer Sprache).
+- [Azure Media Services RTMP Support and Live Encoders (in englischer Sprache).](http://azure.microsoft.com/blog/2014/09/18/azure-media-services-rtmp-support-and-live-encoders/)
 - [Arbeiten mit Kanälen, die Livedatenströme mit mehreren Bitraten von lokalen Encodern empfangen](media-services-manage-channels-overview.md)
  
 
@@ -214,6 +214,8 @@ Informationen zum Konfigurieren eines Liveencoders finden Sie unter [Azure Media
 		
 		        public static ILocator CreateLocatorForAsset(IAsset asset, TimeSpan ArchiveWindowLength)
 		        {
+                	// You cannot create a streaming locator using an AccessPolicy that includes write or delete permissions.            
+
 		            var locator = _context.Locators.CreateLocator
 		                (
 		                    LocatorType.OnDemandOrigin,
@@ -383,4 +385,4 @@ Informationen zum Konfigurieren eines Liveencoders finden Sie unter [Azure Media
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1223_2015-->

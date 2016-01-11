@@ -5,14 +5,14 @@
    documentationCenter="n/a"
    authors="TomArcher"
    manager="douge"
-   editor="tlee" />
+   editor="" />
 <tags 
    ms.service="visual-studio-online"
    ms.devlang="multiple"
    ms.topic="article"
    ms.tgt_pltfrm="multiple"
    ms.workload="na"
-   ms.date="08/14/2015"
+   ms.date="12/17/2015"
    ms.author="tarcher" />
 
 
@@ -69,4 +69,4 @@ Sie können weiterhin in Visual Studio arbeiten, während die IntelliTrace-Proto
 
 [Debuggen von Cloud-Diensten.](https://msdn.microsoft.com/library/ee405479.aspx)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1223_2015-->

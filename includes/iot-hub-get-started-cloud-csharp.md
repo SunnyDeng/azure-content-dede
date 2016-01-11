@@ -8,18 +8,18 @@ In diesem Abschnitt erstellen Sie eine Windows-Konsolen-App, die eine neue Gerä
 
 2. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt **CreateDeviceIdentity**, und klicken Sie dann auf **NuGet-Pakete verwalten**.
 
-3. Stellen Sie im Fenster **NuGet-Paket-Manager** sicher, dass die Option **Vorabversion einbeziehen** aktiviert ist. Suchen Sie anschließend nach **Microsoft Azure-Geräte**, klicken Sie auf **Installieren**, und akzeptieren Sie die Nutzungsbedingungen.
+3. Stellen Sie im Fenster **NuGet-Paket-Manager** sicher, dass die Option **Vorabversion einbeziehen** aktiviert ist. Suchen Sie anschließend nach **Microsoft Azure-Geräte**, klicken Sie auf **Installieren** zum Installieren des **Microsoft.Azure.Devices**-Pakets und akzeptieren Sie die Nutzungsbedingungen.
 
 	![][11]
 
-4. Daraufhin wird das [NuGet-Paket mit dem Geräte-SDK für Microsoft Azure][lnk-nuget-device-sdk] heruntergeladen und installiert und dem Projekt ein Verweis auf das Paket hinzugefügt.
+4. Daraufhin wird das NuGet-Paket mit dem [Dienst-SDK für Microsoft Azure IoT][lnk-nuget-service-sdk] heruntergeladen, installiert und mit einem Verweis versehen.
 
 4. Fügen Sie am Anfang der Datei **Program.cs** die folgenden `using`-Anweisungen hinzu:
 
 		using Microsoft.Azure.Devices;
         using Microsoft.Azure.Devices.Common.Exceptions;
 
-5. Fügen Sie der **Program**-Klasse die folgenden Felder hinzu, und ersetzen Sie dabei den Platzhalterwert durch die Verbindungszeichenfolge für den im vorherigen Abschnitt erstellten IoT Hub:
+5. Fügen Sie der **Program**-Klasse die folgenden Felder hinzu und ersetzen Sie dabei den Platzhalterwert durch die Verbindungszeichenfolge für den im vorherigen Abschnitt erstellten IoT Hub:
 
 		static RegistryManager registryManager;
         static string connectionString = "{iothub connection string}";
@@ -65,7 +65,7 @@ In diesem Abschnitt erstellen Sie eine Windows-Konsolen-App, die D2C-Nachrichten
 
 2. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt **ReadDeviceToCloudMessages**, und klicken Sie dann auf **NuGet-Pakete verwalten**.
 
-3. Stellen Sie im Fenster **NuGet-Paket-Manager** sicher, dass die Option **Vorabversion einbeziehen** aktiviert ist. Suchen Sie nach **WindowsAzure.ServiceBus**, klicken Sie auf **Installieren**, und akzeptieren Sie die Nutzungsbedingungen.
+3. Stellen Sie im Fenster **NuGet-Paket-Manager** sicher, dass die Option **Vorabversion einbeziehen** aktiviert ist. Suchen Sie nach **WindowsAzure.ServiceBus**, klicken Sie auf **Installieren** und akzeptieren Sie die Nutzungsbedingungen.
 
     Daraufhin wird [Azure Service Bus][lnk-servicebus-nuget] mit allen Abhängigkeiten heruntergeladen, installiert und mit einem Verweis versehen.
 
@@ -117,7 +117,7 @@ In diesem Abschnitt erstellen Sie eine Windows-Konsolen-App, die D2C-Nachrichten
 [lnk-servicebus-nuget]: https://www.nuget.org/packages/WindowsAzure.ServiceBus
 [lnk-event-hubs-overview]: event-hubs-overview.md
 
-[lnk-nuget-device-sdk]: https://www.nuget.org/packages/Microsoft.Azure.Devices/
+[lnk-nuget-service-sdk]: https://www.nuget.org/packages/Microsoft.Azure.Devices/
 [lnk-processd2c-tutorial]: iot-hub-csharp-csharp-process-d2c.md
 
 <!-- Images -->
@@ -125,4 +125,4 @@ In diesem Abschnitt erstellen Sie eine Windows-Konsolen-App, die D2C-Nachrichten
 [11]: ./media/iot-hub-getstarted-cloud-csharp/create-identity-csharp2.png
 [12]: ./media/iot-hub-getstarted-cloud-csharp/create-identity-csharp3.png
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1223_2015-->

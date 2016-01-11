@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="11/30/2015"
+   ms.date="12/17/2015"
    ms.author="sameerch"/>
 
 
@@ -53,7 +53,7 @@ Ein Connector kann innerhalb einer Logik-App oder direkt über den Azure Marketp
 5. Geben Sie andere erforderliche Einstellungen im Zusammenhang mit Connectorname, App Service und Ressourcengruppe ein.
 6.	Klicken Sie auf **Erstellen**.
 
-> [AZURE.NOTE]Wenn Sie Ihre Twitter-API mit der Umleitungs-URL zusätzlich absichern möchten, finden Sie die Details dazu [hier](app-service-logic-oauth-security.md).
+> [AZURE.NOTE]Wenn Sie Ihre Twitter-API mit der Umleitungs-URL zusätzlich absichern möchten, können Sie die [OAuth-Sicherheit](app-service-logic-oauth-security.md) verwenden.
 
 
 ## Verwenden des Twitter-Connectors in Ihrer Logik-App
@@ -90,4 +90,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [9]: ./media/app-service-logic-connector-twitter/settings.PNG
 [10]: ./media/app-service-logic-connector-twitter/TwitterAPISettings.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1223_2015-->

@@ -30,33 +30,33 @@ Die folgende Liste soll Ihnen einfach nur helfen, diverse potenzielle Fallstrick
 
 Für SAP-Tests auf Azure sollten nur SLES 11 SP4 und SLES 12 verwendet werden. Ein spezielles SUSE-Image befindet sich im Azure-Katalog für Images: "SLES 11 SP3 for SAP CAL". Dies ist jedoch nicht für die allgemeine Nutzung vorgesehen. Es ist für die SAP Cloud Appliance Library-Lösung mit Namen "SAP CAL" reserviert (<https://cal.sap.com/>). Es gab keine Möglichkeit, dieses Image für die Öffentlichkeit auszublenden. Also verwenden Sie es einfach nicht.
 
-Für alle neuen Tests in Azure sollte der Azure-Ressourcen-Manager verwendet werden. Für die Suche nach SUSE SLES-Images und Versionen mit Azure Powershell oder CLI verwenden Sie die nachstehenden Befehle. Die Ausgabe kann z. B. verwendet werden, um das OS-Image in einer json-Vorlage für die Bereitstellung einer neuen SUSE Linux-VM zu definieren:
+Für alle neuen Tests in Azure sollte der Azure-Ressourcen-Manager verwendet werden. Für die Suche nach SUSE SLES-Images und Versionen mit Azure Powershell oder CLI verwenden Sie die nachstehenden Befehle. Die Ausgabe kann dann z. B. verwendet werden, um das OS-Image in einer JSON-Vorlage für die Bereitstellung einer neuen SUSE Linux-VM zu definieren. Die folgenden PS-Befehle gelten für Azure Powershell Version 1.0.1 oder höher.
 
 * Suchen nach vorhandenen Herausgebern einschließlich SUSE:
 
    ```
-   PS  : Get-AzureVMImagePublisher -Location "West Europe"  | where-object { $_.publishername -like "*US*"  }
+   PS  : Get-AzureRmVMImagePublisher -Location "West Europe"  | where-object { $_.publishername -like "*US*"  }
    CLI : azure vm image list-publishers westeurope | grep "US"
    ```
 
 * Suchen nach vorhandenen Angeboten von SUSE:
       
    ```
-   PS  : Get-AzureVMImageOffer -Location "West Europe" -Publisher "SUSE"
+   PS  : Get-AzureRmVMImageOffer -Location "West Europe" -Publisher "SUSE"
    CLI : azure vm image list-offers westeurope SUSE
    ```
       
 * Suchen nach SUSE SLES-Angeboten:
       
    ```
-   PS  : Get-AzureVMImageSku -Location "West Europe" -Publisher "SUSE" -Offer "SLES"
+   PS  : Get-AzureRmVMImageSku -Location "West Europe" -Publisher "SUSE" -Offer "SLES"
    CLI : azure vm image list-skus westeurope SUSE SLES
    ```
       
 * Suchen nach einer bestimmten Version einer SLES-SKU:
       
    ```
-   PS  : Get-AzureVMImage -Location "West Europe" -Publisher "SUSE" -Offer "SLES" -skus "12"
+   PS  : Get-AzureRmVMImage -Location "West Europe" -Publisher "SUSE" -Offer "SLES" -skus "12"
    CLI : azure vm image list westeurope SUSE SLES 12
    ```
      
@@ -76,12 +76,16 @@ Stellen Sie NIEMALS Azure-Datenträger in einer Azure Linx-VM per Geräte-ID ber
 
 ## Hochladen einer SUSE-VM vom lokalen Standort nach Azure
 
-Diese Schritte werden im folgenden Blog beschrieben: <https://azure.microsoft.com/documentation/articles/virtual-machines-linux-create-upload-vhd-suse/>
+Diese Schritte werden im folgenden Blog beschrieben:
+
+<https://azure.microsoft.com/documentation/articles/virtual-machines-linux-create-upload-vhd-suse/>
 
 Wenn Sie eine VM hochladen möchten, ohne die Bereitstellung zum Schluss aufzuheben, z. B. eine vorhandene SAP-Installation sowie den Hostnamen, müssen die folgenden Elemente überprüft werden:
 
 * Vergewissern Sie sich, dass der Betriebssystemdatenträger über die UUID und NICHT über die Geräte-ID bereitgestellt wurde. Das alleinige Ändern der UUID in "/etc/fstab" ist für die Betriebssystemfestplatte NICHT ausreichend. Möglicherweise haben Sie auch vergessen, das Startladeprogramm über "yast" oder durch Bearbeiten von "boot/grub/menu.lst" anzupassen.
-* Für den Fall, dass Sie das VHDX-Format für die SUSE-Betriebssystemfestplatte verwendet und dieses für den Upload nach Azure nach VHD konvertiert haben, wurde das Netzwerkgerät höchstwahrscheinlich von "eth0" in "eth1" geändert. Um beim späteren Starten in Azure Probleme zu vermeiden, sollte das Netzwerkgerät wieder in "eth0" umbenannt werden, wie hier beschrieben: <https://dartron.wordpress.com/2013/09/27/fixing-eth1-in-cloned-sles-11-vmware/>
+* Für den Fall, dass Sie das VHDX-Format für die SUSE-Betriebssystemfestplatte verwendet und dieses für den Upload nach Azure nach VHD konvertiert haben, wurde das Netzwerkgerät höchstwahrscheinlich von "eth0" in "eth1" geändert. Um beim späteren Starten in Azure Probleme zu vermeiden, sollte das Netzwerkgerät wieder in „eth0“ umbenannt werden, wie hier beschrieben:
+
+<https://dartron.wordpress.com/2013/09/27/fixing-eth1-in-cloned-sles-11-vmware/>
 
 Neben den Erläuterungen in diesem Artikel empfiehlt es sich zudem, Folgendes zu entfernen:
 
@@ -89,9 +93,33 @@ Neben den Erläuterungen in diesem Artikel empfiehlt es sich zudem, Folgendes zu
 
 Mit der Installation von "waagent" sollten sich ebenfalls potenzielle Probleme vermeiden lassen, solange es nicht mehrere Netzwerkkarten gibt.
 
+## Bereitstellen einer SUSE-VM in Azure
+
+Neue virtuelle Computer sollten über JSON-Vorlagendateien im neuen Azure-Ressourcen-Manager-Modell erstellt werden. Nach der Erstellung der JSON-Vorlagendatei kann der virtuelle Computer mithilfe des folgenden CLI-Befehls als Alternative zu Powershell bereitgestellt werden:
+
+   ``` azure group deployment create "<deployment name>" -g "<resource group name>" --template-file "<../../filename.json>"
+   
+   ``` Weitere Informationen zu JSON-Vorlagendateien finden Sie hier:
+
+<https://azure.microsoft.com/documentation/articles/resource-group-authoring-templates/>
+
+<https://azure.microsoft.com/documentation/templates/>
+
+Weitere Informationen zu Befehlszeilenschnittstellen (CLI) und Azure-Ressourcen-Manager finden Sie hier:
+
+<https://azure.microsoft.com/documentation/articles/xplat-cli-azure-resource-manager/>
+
 ## SAP-Lizenz und Hardwareschlüssel
 
-Für die offizielle SAP-Microsoft Azure-Zertifizierung wurde ein neuer Mechanismus eingeführt, um den SAP-Hardwareschlüssel zu berechnen, der für die SAP-Lizenz verwendet wird. Der SAP-Kernel musste angepasst werden, um diesen Mechanismus verwenden zu können. Die aktuellen SAP-Kernelversionen für Linux enthalten diese Codeänderung nicht. Daher kann es in bestimmten Situationen vorkommen (z. B. bei einer Änderung der Größe der Azure-VM), dass sich der SAP-Hardwareschlüssel ändert und die SAP-Lizenz ihre Gültigkeit verliert.
+Für die offizielle SAP-Windows Azure-Zertifizierung wurde ein neuer Mechanismus eingeführt, um den SAP-Hardwareschlüssel zu berechnen, der für die SAP-Lizenz verwendet wird. Der SAP-Kernel musste angepasst werden, um diesen Mechanismus verwenden zu können. Die aktuellen SAP-Kernelversionen für Linux enthalten diese Codeänderung nicht. Daher kann es in bestimmten Situationen vorkommen (z. B. bei einer Änderung der Größe der Azure-VM), dass sich der SAP-Hardwareschlüssel ändert und die SAP-Lizenz ihre Gültigkeit verliert.
+
+## SUSE-Sapconf-Paket
+
+SUSE stellt ein Paket namens „Sapcon“ bereit, das für einen Satz an SAP-spezifischen Einstellungen zuständig ist. Ausführliche Informationen zu diesem Paket, deren Funktionsweise und der Installation und Verwendung finden Sie hier:
+
+<https://www.suse.com/communities/blog/using-sapconf-to-prepare-suse-linux-enterprise-server-to-run-sap-systems/>
+
+<http://scn.sap.com/community/linux/blog/2014/03/31/what-is-sapconf-or-how-to-prepare-a-suse-linux-enterprise-server-for-running-sap-systems>
 
 ## NFS-Freigabe in verteilten SAP-Installationen
 
@@ -133,4 +161,4 @@ Wenn Gnome Desktop für die Installation eines vollständigen SAP-Demosystems in
  
 Dies ist eher ein allgemeines als ein Azure-spezifisches Thema. Dennoch ist das Verständnis wichtig. Es gibt eine Supporteinschränkung von Oracle unter Linux in virtualisierten Umgebungen. Unter dem Strich bedeutet dies, dass SAP Oracle unter SUSE oder RedHat in einer öffentlichen Cloud wie Azure nicht unterstützt. Die Kunden sollten sich direkt an Oracle wenden, um das Thema zu diskutieren.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1223_2015-->

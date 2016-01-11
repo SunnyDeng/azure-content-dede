@@ -2,8 +2,7 @@ Die folgende Tabelle listet die Grenzwerte der verschiedenen Dienstebenen (S1, S
 
 | Ressource | S1 Standard | S2 Standard | F1 Free |
 | -------- | ----------- | ----------- | ------- |
-| Geräte/Einheit | 500 | 500 | 10 |
-| Nachrichten/Tag | 50\.000 | 1\.500.000 | 3\.000 |
+| Nachrichten/Tag | 400\.000 | 6\.000.000 | 8\.000 |
 | Maximale Anzahl der Einheiten | 200 | 200 | 1 |
 | Geräteaktualisierungen (Erstellen, Aktualisieren,<br/> Löschen) pro Einheit pro Tag | 1100 | 1100 | 1100 |
 
@@ -31,7 +30,7 @@ Der IoT Hub-Dienst drosselt Anforderungen, wenn die folgenden Kontingente übers
 | -------- | ------------- |
 | Vorgänge in der Identitätsregistrierung <br/> (Erstellen, Abrufen, Aktualisieren, Löschen), <br/> einzelne Import-/Exportvorgänge oder Massenimport/-export | 100/Minute/Einheit, bis zu 5.000/Minute |
 | Geräteverbindungen | 100/Sekunde/Einheit |
-| Senden von Nachrichten von Geräten an die Cloud | 2000/Minute/Einheit (für S2), 60/Minute/Einheit (für S1) <br/> Mindestens 100/Sek. |
+| Senden von Nachrichten von Geräten an die Cloud | 120/Sekunden/Einheit (für S2), 12/Sekunden/Einheit (für S1) <br/> Mindestens 100/Sekunde |
 | Vorgänge von Cloud zu Geräten <br/> (Senden, Empfangen, Feedback) | 100/Minute/Einheit |
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1223_2015-->

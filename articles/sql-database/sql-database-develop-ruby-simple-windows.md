@@ -14,13 +14,27 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="ruby"
 	ms.topic="article"
-	ms.date="12/08/2015"
-	ms.author="mebha"/>
+	ms.date="12/17/2015"
+	ms.author="meetb"/>
 
 
 # Herstellen von Verbindungen mit SQL-Datenbanken mithilfe von Ruby unter Windows
 
-[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
+
+<!--
+Older Selector technique, with dynamic drop-down lists.
+ [ A ZURE . I NCLUDE [s ql-database-develop-includes-selector-language-platform-depth](../../inclu des/sql-database-develop-includes-selector-language-platform-depth.m d)]
+-->
+
+
+> [AZURE.SELECTOR]
+- [C#](sql-database-develop-dotnet-simple.md)
+- [PHP](sql-database-develop-php-simple-windows.md)
+- [Python](sql-database-develop-python-simple-windows.md)
+- [Ruby](sql-database-develop-ruby-simple-windows.md)
+- [Java](sql-database-develop-java-simple-windows.md)
+- [Node.js](sql-database-develop-nodejs-simple-windows.md)
+
 
 Dieses Thema enthält ein Ruby-Codebeispiel, das auf einem Windows-Computer mit Windows 8.1 für die Verbindung mit einer Datenbank in Azure SQL-Datenbank ausgeführt wird.
 
@@ -130,4 +144,4 @@ Zum Ausrichten am [Datetime](http://msdn.microsoft.com/library/ms187819.aspx)-Fo
     puts row
     end
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1223_2015-->

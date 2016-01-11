@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="04/28/2015"
+   ms.date="12/18/2015"
    ms.author="masashin"/>
 
 # Anleitungen zum Caching
@@ -123,8 +123,7 @@ Achten Sie darauf, Ihre Lösungen nicht abhängig von der Verfügbarkeit eines g
 
 Ein Zurückgreifen auf den ursprünglichen Datenspeicher bei einem vorübergehenden Ausfall des Cache zieht aber womöglich ein Skalierbarkeitsproblem für das System nach sich. Während der Wiederherstellung des Cache wird der ursprüngliche Datenspeicher derart mit Datenanforderungen überschwemmt, dass es zu Zeitlimitüberschreitungen und Verbindungsfehlern kommt. In diesem Sinne ist es durchaus sinnvoll, eine Strategie zu überdenken, bei der zusätzlich zum freigegebenen Cache, auf den alle Anwendungsinstanzen zugreifen, für jede Anwendungsinstanz ein lokaler privater Cache implementiert wird. Beim Abrufen eines Elements kann die Anwendung zunächst in ihrem lokalen Cache, dann im freigegebenen Cache und schließlich im ursprünglichen Datenspeicher nachsehen. Der lokale Cache kann mit den Daten des freigegebenen Cache bzw., sollte dieser nicht verfügbar sein, mit den Daten aus der ursprünglichen Datenbank gefüllt werden. Bei dieser Strategie ist eine sorgfältige Konfiguration erforderlich. Es sollte verhindert werden, dass der lokale Cache gegenüber dem freigegebenen Cache zu sehr veraltet, gleichzeitig sollte er aber für den Fall, dass der freigegebene Cache nicht verfügbar ist, als Puffer fungieren. Eine solche Struktur sehen Sie in Abbildung 3.
 
-![Verwenden eines lokalen privaten Cache mit einem freigegebenen Cache\_](media/best-practices-caching/Caching3.png)
-_Abbildung 3: Verwenden eines lokalen privaten Cache mit einem gemeinsam genutzten Cache_
+![Verwenden eines lokalen privaten Cache mit einem freigegebenen Cache\_](media/best-practices-caching/Caching3.png) _Abbildung 3: Verwenden eines lokalen privaten Cache mit einem gemeinsam genutzten Cache_
 
 Zur Unterstützung großer Caches, die relativ langlebige Daten enthalten, bieten einige Cachedienste eine Option für hohe Verfügbarkeit, die für den Fall, dass der Cache nicht verfügbar ist, automatisches Failover implementiert. Diese Strategie schließt in der Regel die Replikation der auf einem primären Cacheserver zwischengespeicherten Daten auf einem sekundären Cacheserver ein, so dass bei einem Ausfall des primären Cacheservers bzw. einem Verlust der Konnektivität sofort zum sekundären Server gewechselt werden kann. Zur Verkürzung der Latenzzeit, die das Schreiben an mehrere Ziele mit sich bringt, kann die Replikation der Daten auf den sekundären Server auch asynchron zum Caching der Daten auf dem primären Server erfolgen. Diese Strategie birgt zwar das Risiko, dass einige der zwischengespeicherten Informationen bei einem Fehler während dieses Prozesses verloren gehen, der Verlustanteil sollte jedoch gegenüber der Gesamtgröße des Cache vernachlässigbar sein.
 
@@ -138,7 +137,7 @@ Vermutlich beinhalten viele Lese- und Schreibvorgänge nur einzelne Werte oder E
 
 Das Cache-Aside-Muster ist davon abhängig, dass die Anwendungsinstanz, die den Cache füllt, Zugang zur aktuellsten und konsistentesten Version der Daten hat. In einem System, das letztendlich Konsistenz bereitstellt (z. B. ein replizierter Datenspeicher), ist dies unter Umständen nicht der Fall. Es kann durchaus passieren, dass eine Anwendungsinstanz ein Datenelement ändert und damit die Version dieses Elements im Cache schon wieder ungültig macht. Eine andere Instanz der Anwendung versucht nun möglicherweise, dieses Element aus dem Cache einzulesen. Dabei kommt es zu einem Cachefehler, so dass die Instanz die Daten aus dem Datenspeicher einliest und dem Cache hinzufügt. Wurde der Datenspeicher allerdings nicht vollständig mit den anderen Replikaten synchronisiert, kann es passieren, dass die Anwendungsinstanz einen alten Wert einliest und diesen veralteten Wert in den Cache speichert.
 
-Weitere Informationen zur Aufrechterhaltung der Datenkonsistenz finden Sie auf der Seite „Data Consistency Guidance“ (in englischer Sprache) auf der Microsoft-Website.
+Weitere Informationen zur Aufrechterhaltung der Datenkonsistenz finden Sie auf der Seite [Einführung in die Datenkonsistenz](http://msdn.microsoft.com/library/dn589800.aspx) auf der Microsoft-Website.
 
 ### Schutz der Daten im Cache
 
@@ -164,7 +163,9 @@ Der Azure Redis-Cache ist mit zahlreichen der von Clientanwendungen verwendeten 
 
 > [AZURE.NOTE]Darüber hinaus bietet Azure den Managed Cache Service (Dienst für verwalteten Cache). Dieser Dienst basiert auf der Microsoft AppFabric Cache-Engine. Es ermöglicht die Erstellung eines verteilten Cache, der von lose verbundenen Anwendungen gemeinsam genutzt werden kann. Der Cache wird auf Hochleistungsservern im Azure-Datencenter bereitgestellt. Allerdings wird diese Option nicht mehr empfohlen und dient nur noch der Unterstützung vorhandener Anwendungen, die mit diesem Cachedienst entwickelt wurden. Für alle Neuentwicklungen sollten Sie stattdessen den Azure Redis-Cache verwenden.
 >
-> Außerdem unterstützt Azure In-Role-Caching. Mit diesem Feature können Sie einen Cache speziell für einen Clouddienst erstellen. Der Cache wird von Instanzen einer Web- oder Workerrolle gehostet, und der Zugriff darauf ist nur über Rollen möglich, die als Teil der gleichen Clouddienst-Bereitstellungseinheit implementiert sind (eine Bereitstellungseinheit ist eine Gruppe von Rolleninstanzen, die als Clouddienst in einer bestimmten Region bereitgestellt werden). Der Cache ist geclustert, und alle Instanzen der Rolle innerhalb der gleichen Bereitstellungseinheit, die den Cache hostet, werden Teil des gleichen Cacheclusters. Bestehende Anwendungen, die bereits In-Role-Caching verwenden, können diese Art des Caching weiterhin nutzen, jedoch wäre eine Migration zum Azure Redis-Cache auch in diesem Fall vermutlich von Vorteil. Entscheidungshilfen zur Verwendung des Azure Redis-Cache bzw. des In-Role-Cache finden Sie auf der Seite [Welches Azure-Cacheangebot eignet sich am besten für mich?](http://msdn.microsoft.com/library/azure/dn766201.aspx) auf der Microsoft-Website.
+> Außerdem unterstützt Azure In-Role-Caching. Mit diesem Feature können Sie einen Cache speziell für einen Clouddienst erstellen. Der Cache wird von Instanzen einer Web- oder Workerrolle gehostet, und der Zugriff darauf ist nur über Rollen möglich, die als Teil der gleichen Clouddienst-Bereitstellungseinheit implementiert sind (eine Bereitstellungseinheit ist eine Gruppe von Rolleninstanzen, die als Clouddienst in einer bestimmten Region bereitgestellt werden). Der Cache ist geclustert, und alle Instanzen der Rolle innerhalb der gleichen Bereitstellungseinheit, die den Cache hostet, werden Teil des gleichen Cacheclusters. Allerdings wird diese Option nicht mehr empfohlen und dient nur noch der Unterstützung vorhandener Anwendungen, die mit diesem Cachedienst entwickelt wurden. Für alle Neuentwicklungen sollten Sie stattdessen den Azure Redis-Cache verwenden.
+>
+> Sowohl Azure Managed Cache Service also auch Azure In-Role Cache sind derzeit für die Deaktivierung am 16. November 2016 vorgesehen. Sie sollten zur Vorbereitung für die Einstellung dieser Dienste zu Azure Redis Cache migrieren. Weitere Informationen finden Sie auf der Seite [Welches Redis Cache-Angebot und welche Redis Cache-Größe sollte ich verwenden?](redis-cache/cache-faq.md#what-redis-cache-offering-and-size-should-i-use) auf der Microsoft-Website.
 
 
 ### Features von Redis
@@ -186,8 +187,6 @@ Redis ist ein Schlüssel-/Wertspeicher, dessen Werte einfache Typen oder komplex
 Zur Sicherstellung einer hohen Verfügbarkeit und eines hohen Durchsatzes unterstützt Redis eine hierarchische Master/Slave-Replikation. Schreibvorgänge an einem Redis-Masterknoten werden an einen oder mehrere untergeordnete Knoten repliziert, und Lesevorgänge können vom Masterknoten oder einem der untergeordnete Knoten bedient werden. Im Falle einer Netzwerkpartition können untergeordnete Knoten weiterhin Daten bereitstellen und sich später transparent mit dem Master synchronisieren, sobald die Verbindung wiederhergestellt ist. Weitere Informationen finden Sie auf der Seite [Replication](http://redis.io/topics/replication) (in englischer Sprache) auf der Redis-Website.
 
 Darüber hinaus bietet Redis Clustering-Features, mit denen Daten auf Servern transparent in Shards partitioniert werden können, um so die Last zu verteilen. Dieses Feature verbessert die Skalierbarkeit, da neue Redis-Server hinzugefügt und die Daten neu partitioniert werden können, während der Cache anwächst. Darüber hinaus kann jeder Server im Cluster mithilfe der Master/Slave-Replikation repliziert werden, so dass die Daten auf jedem Knoten im Cluster verfügbar sind. Weitere Informationen zu Clustering und Sharding finden Sie auf der Seite [Redis Cluster Tutorial](http://redis.io/topics/cluster-tutorial) (in englischer Sprache) auf der Redis-Website.
-
-> [AZURE.NOTE]Das Redis-Cache von Azure unterstützt derzeit kein Clustering. Wenn Sie einen Redis-Cluster erstellen möchten, können Sie einen eigenen benutzerdefinierten Redis-Server erstellen. Weitere Informationen finden Sie im Abschnitt „Erstellen eines benutzerdefinierten Redis-Cache“ weiter unten in diesem Dokument.
 
 ### Arbeitsspeichernutzung in Redis
 
@@ -225,8 +224,6 @@ Das Azure-Verwaltungsportal bietet eine praktische grafische Übersicht, mit der
 
 Sie können auch die CPU-, Arbeitsspeicher- und Netzwerkauslastung des Cache überwachen.
 
-> [AZURE.NOTE]Der Redis-Cache von Azure ist ausschließlich als Cache, nicht als Datenbank vorgesehen. Daher stellt er zurzeit auch nicht die Persistenz von Redis bereit.
-
 Weitere Informationen und Beispiele zum Erstellen und Konfigurieren eines Azure Redis-Cache finden Sie auf der Seite [Lap around Azure Redis Cache](http://azure.microsoft.com/blog/2014/06/04/lap-around-azure-redis-cache-preview/) (in englischer Sprache) im Azure-Blog.
 
 ## Caching von Sitzungsstatus und HTML-Ausgabe
@@ -239,11 +236,11 @@ Die Verwendung des Sitzungsstatusanbieters mit dem Azure Redis-Cache bietet vers
 - Ein kontrollierter gleichzeitiger Zugriff auf die gleichen Sitzungsstatusdaten für mehrere Reader und einen einzigen Writer wird unterstützt.
 - Zur Einsparung von Arbeitsspeicher und Verbesserung der Netzwerkleistung kann Komprimierung verwendet werden.
 
-Weitere Informationen finden Sie auf der Seite [ASP.NET-Sitzungsstatusbieter für den Azure Redis-Cache](http://msdn.microsoft.com/library/azure/dn690522.aspx) auf der Microsoft-Website.
+Weitere Informationen finden Sie auf der Seite [ASP.NET-Sitzungsstatusbieter für den Azure Redis-Cache](redis-cache/cache-asp.net-session-state-provider.md) auf der Microsoft-Website.
 
 > [AZURE.NOTE]Für ASP.NET-Anwendungen, die außerhalb der Azure-Umgebung ausgeführt werden, sollte der Sitzungsstatusanbieter für den Azure Redis-Cache nicht verwendet werden. Die Latenzzeiten für den Zugriff auf den Cache außerhalb von Azure können die Leistungsvorteile des Caching zunichte machen.
 
-Auf ähnliche Weise ermöglicht Ihnen der Ausgabecacheanbieter für den Azure Redis-Cache das Speichern der von einer ASP.NET-Webanwendung generierten HTTP-Antworten. Der Ausgabecacheanbieter kann in Verbindung mit dem Azure Redis-Cache die Antwortzeiten von Anwendungen mit komplexen HTML-Ausgaben verbessern. Anwendungsinstanzen, die ähnliche Antworten generieren, können auf freigegebene Ausgabefragmente im Cache zurückgreifen, anstatt die HTML-Ausgabe völlig neu generieren zu müssen. Weitere Informationen finden Sie auf der Seite [ASP.NET-Ausgabecacheanbieter für den Azure Redis-Cache](http://msdn.microsoft.com/library/azure/dn798898.aspx) auf der Microsoft-Website.
+Auf ähnliche Weise ermöglicht Ihnen der Ausgabecacheanbieter für den Azure Redis-Cache das Speichern der von einer ASP.NET-Webanwendung generierten HTTP-Antworten. Der Ausgabecacheanbieter kann in Verbindung mit dem Azure Redis-Cache die Antwortzeiten von Anwendungen mit komplexen HTML-Ausgaben verbessern. Anwendungsinstanzen, die ähnliche Antworten generieren, können auf freigegebene Ausgabefragmente im Cache zurückgreifen, anstatt die HTML-Ausgabe völlig neu generieren zu müssen. Weitere Informationen finden Sie auf der Seite [ASP.NET-Ausgabecacheanbieter für den Azure Redis-Cache](redis-cache/cache-asp.net-output-cache-provider.md) auf der Microsoft-Website.
 
 ## Erstellen eines benutzerdefinierten Redis-Cache
 
@@ -264,9 +261,7 @@ Für einen Cache ist die häufigste Form der Partitionierung das Sharding. Bei d
 
 Für die Implementierung der Partitionierung in einem Redis-Cache können Sie nach einer der folgenden beiden Strategien vorgehen:
 
-- _Serverseitige Abfrageweiterleitung:_ Bei diesem Verfahren sendet eine Clientanwendung eine Anforderung an einen der Redis-Server im Cache (in der Regel an den geografisch nächstliegenden Server). Jeder Redis-Server speichert Metadaten, die die Partition auf diesem Server beschreiben. Zudem enthält er aber auch Informationen zu den Partitionen auf den anderen Servern. Der Redis-Server überprüft die Clientanforderung, und wenn sie lokal gelöst werden kann, führt er den angeforderten Vorgang durch. Andernfalls leitet er die Anforderung einen geeigneten Server weiter. Dieses Modell wird durch das Clustering-Feature von Redis implementiert und auf der Seite [Redis Cluster Tutorial](http://redis.io/topics/cluster-tutorial) (in englischer Sprache) auf der Redis-Website ausführlich beschrieben. Redis-Clustering ist für Clientanwendungen transparent, und dem Cluster können ohne Neukonfiguration der Clients weitere Redis-Server hinzugefügt (und die Daten neu partitioniert) werden.
-
-  >[AZURE.IMPORTANT]Der Redis-Cache von Azure unterstützt das Clustering-Feature von Redis derzeit nicht. Wenn Sie dieses Feature implementieren wollen, müssen Sie einen benutzerdefinierten Redis-Cache erstellen, wie zuvor beschrieben.
+- _Serverseitige Abfrageweiterleitung:_ Bei diesem Verfahren sendet eine Clientanwendung eine Anforderung an einen der Redis-Server im Cache (in der Regel an den geografisch nächstliegenden Server). Jeder Redis-Server speichert Metadaten, die die Partition auf diesem Server beschreiben. Zudem enthält er aber auch Informationen zu den Partitionen auf den anderen Servern. Der Redis-Server überprüft die Clientanforderung, und wenn sie lokal gelöst werden kann, führt er den angeforderten Vorgang durch. Andernfalls leitet er die Anforderung einen geeigneten Server weiter. Dieses Modell wird durch das Clustering-Feature von Redis implementiert und auf der Seite [Redis Cluster Tutorial](http://redis.io/topics/cluster-tutorial) (in englischer Sprache) auf der Redis-Website ausführlich beschrieben. Redis-Clustering ist für Clientanwendungen transparent und dem Cluster können zusätzliche Redis-Server hinzugefügt (und die Daten neu partitioniert) werden, ohne die Clients neu zu konfigurieren.
 
 - _Clientseitige Partitionierung:_ In diesem Modell enthält die Client-Anwendung Logik (möglicherweise in Form einer Bibliothek), die Anforderungen an einen geeigneten Redis-Server weiterleitet. Diese Strategie kann mit dem Redis-Cache von Azure verwendet werden. Erstellen Sie mehrere Azure Redis-Cache (einen für jede Datenpartition), und implementieren Sie die clientbasierte Logik, die die Anforderungen an den richtigen Cache weiterleitet. Wenn sich das Partitionierungsschema ändert (z. B. weil weitere Azure Redis-Cache hinzugefügt werden), müssen die Clientanwendungen unter Umständen neu konfiguriert werden.
 
@@ -416,7 +411,7 @@ var customer1 = cache.Wait(task1);
 var customer2 = cache.Wait(task2);
 ```
 
-Weitere Informationen zum Schreiben von Clientanwendungen, die den Redis-Cache von Azure verwenden können, finden Sie auf der Seite [Entwickeln für Azure Redis Cache](http://msdn.microsoft.com/library/azure/dn690520.aspx) auf der Microsoft-Website. Zusätzliche Informationen finden Sie auf der Seite [Basic Usage](https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/Basics.md) der StackExchange.Redis-Website, und die Seite [Pipelines und Multiplexers](https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/PipelinesMultiplexers.md) auf derselben Website bietet darüber hinaus Informationen zu asynchronen Vorgängen und Pipelining mit Redis und der StackExchange-Bibliothek (beide Seiten in englischer Sprache). Im Abschnitt „Anwendungsfälle für das Caching mit Redis“ weiter unten in diesem Dokument finden Sie Beispiele für erweiterte Techniken, die Sie für die Daten in einem Redis-Cache verwenden können.
+Weitere Informationen zum Schreiben von Clientanwendungen, die den Redis-Cache von Azure verwenden können, finden Sie auf der Seite [Azure Redis Cache-Dokumentation](http://azure.microsoft.com/documentation/services/cache/) auf der Microsoft-Website. Zusätzliche Informationen finden Sie auf der Seite [Basic Usage](https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/Basics.md) der StackExchange.Redis-Website, und die Seite [Pipelines und Multiplexers](https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/PipelinesMultiplexers.md) auf derselben Website bietet darüber hinaus Informationen zu asynchronen Vorgängen und Pipelining mit Redis und der StackExchange-Bibliothek (beide Seiten in englischer Sprache). Im Abschnitt „Anwendungsfälle für das Caching mit Redis“ weiter unten in diesem Dokument finden Sie Beispiele für erweiterte Techniken, die Sie für die Daten in einem Redis-Cache verwenden können.
 
 ## Anwendungsfälle für das Caching mit Redis
 
@@ -756,8 +751,8 @@ Eventuell sind für Sie auch folgende Muster interessant, wenn Sie in den Anwend
 ## Weitere Informationen
 
 - Seite [MemoryCache-Klasse](http://msdn.microsoft.com/library/system.runtime.caching.memorycache.aspx) auf der Microsoft-Website.
-- Seite [Microsoft Azure-Cache](http://msdn.microsoft.com/library/windowsazure/gg278356.aspx) auf der Microsoft-Website.
-- Seite [Welches Azure-Cacheangebot eignet sich am besten für mich?](http://msdn.microsoft.com/library/azure/dn766201.aspx) auf der Microsoft-Website.
+- Seite [Azure Redis Cache-Dokumentation](http://azure.microsoft.com/documentation/services/cache/) auf der Microsoft-Website.
+- Seite [Azure Redis Cache – häufig gestellte Fragen](redis-cache/cache-faq.md) auf der Microsoft-Website.
 - Seite [Konfigurationsmodell](http://msdn.microsoft.com/library/windowsazure/hh914149.aspx) auf der Microsoft-Website.
 - Seite [Aufgabenbasiertes asynchrones Muster](http://msdn.microsoft.com/library/hh873175.aspx) auf der Microsoft-Website.
 - Seite [Pipelines and Multiplexers](https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/PipelinesMultiplexers.md) (in englischer Sprache) im GitHub-Repository StackExchange.Redis.
@@ -769,13 +764,12 @@ Eventuell sind für Sie auch folgende Muster interessant, wenn Sie in den Anwend
 - Seite [Transactions](http://redis.io/topics/transactions) (in englischer Sprache) auf der Redis-Website.
 - Seite [Redis Security](http://redis.io/topics/security) (in englischer Sprache) auf der Redis-Website.
 - Seite [Lap around Azure Redis Cache](http://azure.microsoft.com/blog/2014/06/04/lap-around-azure-redis-cache-preview/) (in englischer Sprache) im Azure-Blog.
-- Seite [Running Redis on a CentOS Linux VM in Microsoft Azure](http://blogs.msdn.com/b/tconte/archive/2012/06/08/running-redis-on-a-centos-linux-vm-in-windows-azure.aspx) (in englischer Sprache) auf der Microsoft-Website.
-- Seite [ASP.NET-Sitzungsstatusbieter für den Azure Redis-Cache](http://msdn.microsoft.com/library/azure/dn690522.aspx) auf der Microsoft-Website.
-- Seite [ASP.NET-Ausgabecacheanbieter für den Azure Redis-Cache](http://msdn.microsoft.com/library/azure/dn798898.aspx) auf der Microsoft-Website.
-- Seite [Entwickeln für Azure Redis Cache](http://msdn.microsoft.com/library/azure/dn690520.aspx) auf der Azure-Website.
-- Seite [An Introduction to Redis data types and abstractions](http://redis.io/topics/data-types-intro) (in englischer Sprache) auf der Redis-Website.
+- Seite [Running Redis on a CentOS Linux VM in Windows Azure](http://blogs.msdn.com/b/tconte/archive/2012/06/08/running-redis-on-a-centos-linux-vm-in-windows-azure.aspx) (in englischer Sprache) auf der Microsoft-Website.
+- Seite [ASP.NET-Sitzungsstatusbieter für den Azure Redis-Cache](redis-cache/cache-asp.net-session-state-provider.md) auf der Microsoft-Website.
+- Seite [ASP.NET-Ausgabecacheanbieter für den Azure Redis-Cache](redis-cache/cache-asp.net-output-cache-provider.md) auf der Microsoft-Website.
+- Die Seite [An Introduction to Redis data types and abstractions](http://redis.io/topics/data-types-intro) (in englischer Sprache) auf der Redis-Website.
 - Seite [Basic Usage](https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/Basics.md) (in englischer Sprache) auf der StackExchange.Redis-Website.
 - Seite [Transactions in Redis](https://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/Transactions.md) (in englischer Sprache) im GitHub-Repository StackExchange.Redis.
 - Seite [Data Partitioning Guidance](http://msdn.microsoft.com/library/dn589795.aspx) (in englischer Sprache) auf der Microsoft-Website.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1223_2015-->

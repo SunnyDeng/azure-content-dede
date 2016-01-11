@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="12/08/2015"
+   ms.date="12/23/2015"
    ms.author="tomfitz"/>
 
 # Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage
@@ -38,7 +38,7 @@ Standardmäßig behandelt Ressourcen-Manager Bereitstellungen als inkrementelle 
 - Ressourcen **hinzufügen**, die in der Vorlage angegeben, jedoch nicht in der Ressourcengruppe vorhanden sind. 
 - **das erneute Bereitstellen von Ressourcen unterlassen**, die in der Ressourcengruppe gemäß der in der Vorlage definierten Bedingung vorhanden sind.
  
-Die Art der Bereitstellung wird mithilfe der Eigenschaft **Mode** angegeben.
+Sie gebenden Bereitstellungstyp über die **Mode**-Eigenschaft an, wie in den Beispielen unten für PowerShell und der REST-API gezeigt.
 
 ## Bereitstellen mit PowerShell
 
@@ -100,9 +100,9 @@ Die Art der Bereitstellung wird mithilfe der Eigenschaft **Mode** angegeben.
           Mode              : Incremental
           ...
 
-     Legen Sie zum Ausführen einer vollständigen Bereitstellung **Mode** auf **Complete** fest.
+     Legen Sie zum Ausführen einer vollständigen Bereitstellung **Mode** auf **Complete** fest. Beachten Sie, dass Sie dazu aufgefordert werden, zu bestätigen, dass Sie den „Complete“-Modus verwenden möchten, was das Löschen von Ressourcen umfassen kann.
 
-          PS C:\> New-AzureRmResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName ExampleResourceGroup -TemplateFile <PathOrLinkToTemplate> -Mode Complete
+          PS C:\> New-AzureRmResourceGroupDeployment -Name ExampleDeployment -Mode Complete -ResourceGroupName ExampleResourceGroup -TemplateFile <PathOrLinkToTemplate> 
           Confirm
           Are you sure you want to use the complete deployment mode? Resources in the resource group 'ExampleResourceGroup' which are not
           included in the template will be deleted.
@@ -203,7 +203,7 @@ Wenn Sie die Azure-Befehlszeilenschnittstelle noch nicht mit dem Ressourcen-Mana
              }
            }
    
-3. Erstellen einer neuen Ressourcengruppenbereitstellung Geben Sie Ihre Abonnement-ID, den Namen der bereitzustellenden Ressourcengruppe, den Namen der Bereitstellung und den Speicherort der Vorlage an. Informationen über die Vorlagendatei finden Sie unter [Parameterdatei](./#parameter-file). Weitere Informationen über die REST-API zum Erstellen einer Ressourcengruppe finden Sie unter [Erstellen einer Vorlagenbereitstellung](https://msdn.microsoft.com/library/azure/dn790564.aspx). Legen Sie zum Ausführen einer vollständigen Bereitstellung **Mode** auf **Complete** fest.
+3. Erstellen einer neuen Ressourcengruppenbereitstellung Geben Sie Ihre Abonnement-ID, den Namen der bereitzustellenden Ressourcengruppe, den Namen der Bereitstellung und den Speicherort der Vorlage an. Informationen über die Vorlagendatei finden Sie unter [Parameterdatei](./#parameter-file). Weitere Informationen über die REST-API zum Erstellen einer Ressourcengruppe finden Sie unter [Erstellen einer Vorlagenbereitstellung](https://msdn.microsoft.com/library/azure/dn790564.aspx). Beachten Sie, dass **Mode** auf **Incremental** festgelegt ist. Legen Sie zum Ausführen einer vollständigen Bereitstellung **Mode** auf **Complete** fest.
     
          PUT https://management.azure.com/subscriptions/<YourSubscriptionId>/resourcegroups/<YourResourceGroupName>/providers/Microsoft.Resources/deployments/<YourDeploymentName>?api-version=2015-01-01
             <common headers>
@@ -272,4 +272,4 @@ Die Parameterdatei darf nicht größer als 64 KB sein.
 
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1223_2015-->

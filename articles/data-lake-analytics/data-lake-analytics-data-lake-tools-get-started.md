@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="12/02/2015"
+   ms.date="12/21/2015"
    ms.author="jgao"/>
 
 # Tutorial: Entwickeln von U-SQL-Skripts mit Data Lake-Tools für Visual Studio
@@ -26,10 +26,10 @@ Erfahren Sie, wie Sie Data Lake-Tools für Visual Studio installieren und zum Sc
 U-SQL ist eine hyperskalierbare, hochgradig erweiterbare Sprache zum Vorbereiten, Transformieren und Analysieren aller Daten im „Data Lake“ und darüber hinaus. Weitere Informationen finden Sie unter [U-SQL-Referenz](http://go.microsoft.com/fwlink/p/?LinkId=691348).
 
 
-**Voraussetzungen**
+###Voraussetzungen
 
 - **Visual Studio 2015, Visual Studio 2013 Update 4 oder Visual Studio 2012 mit Installation von Visual C++** 
-- **Microsoft Azure SDK für .NET Version 2.7 oder höher**. Führen Sie die Installation mit dem [Webplattform-Installer](http://www.microsoft.com/web/downloads/platform.aspx) durch.
+- **Microsoft Azure SDK für .NET ab Version 2.7.1**. Führen Sie die Installation mit dem [Webplattform-Installer](http://www.microsoft.com/web/downloads/platform.aspx) durch.
 - **[Data Lake-Tools für Visual Studio](http://aka.ms/adltoolsvs)** 
 
     Nachdem die Installation der Data Lake-Tools für Visual Studio abgeschlossen ist, wird in Visual Studio ein Data Lake-Menü angezeigt:
@@ -41,6 +41,8 @@ U-SQL ist eine hyperskalierbare, hochgradig erweiterbare Sprache zum Vorbereiten
 	- [Erstellen eines Azure Data Lake Analytics-Kontos](data-lake-analytics-get-started-portal.md#create_adl_analytics_account)
 	- [Hochladen von „SearchLog.tsv“ in das standardmäßige Data Lake-Speicherkonto](data-lake-analytics-get-started-portal.md#update-data-to-the-default-adl-storage-account)
 
+    Zur Vereinfachung stellen wir Ihnen ein PowerShell-Beispielskript zur Verfügung, mit dem Sie einen Data Lake Analytics-Dienst erstellen und die Quelldatendatei hochladen können. Sie finden dieses Skript unter [Anhang A: PowerShell-Beispiel zur Vorbereitung des Tutorials](data-lake-analytics-data-lake-tools-get-started.md#appx-a-powershell-sample-for-preparing-the-tutorial).
+    
 	Für die Data Lake-Tools wird das Erstellen von Data Lake Analytics-Konten nicht unterstützt. Sie müssen sie also mit dem Azure-Portal oder über Azure PowerShell, das .NET SDK oder die Azure-Befehlszeilenschnittstelle erstellen. Zum Ausführen eines Data Lake Analytics-Auftrags benötigen Sie einige Daten. Auch wenn die Data Lake-Tools das Hochladen von Daten unterstützen, verwenden Sie das Portal zum Hochladen der Beispieldaten, um das Durcharbeiten dieses Tutorials zu vereinfachen.
 
 ## Herstellen einer Verbindung mit Azure
@@ -48,14 +50,9 @@ U-SQL ist eine hyperskalierbare, hochgradig erweiterbare Sprache zum Vorbereiten
 **So stellen Sie eine Verbindung mit Data Lake Analytics her**
 
 1. Öffnen Sie Visual Studio.
-2. Klicken Sie im Menü **U-SQL** auf **Optionen und Einstellungen**.
-4. Klicken Sie auf **Anmelden** oder **Benutzer wechseln**, wenn eine Person angemeldet ist, und befolgen Sie die Schritte für die Anmeldung.
-5. Klicken Sie auf **OK**, um das Dialogfeld „Optionen und Einstellungen“ zu schließen.
-
-**So durchsuchen Sie Ihre Data Lake Analytics-Konten**
-
-1. Öffnen Sie in Visual Studio den **Server-Explorer**, indem Sie **STRG+ALT+S** drücken.
-2. Erweitern Sie in **Server-Explorer** erst **Azure** und dann **Data Lake Analytics**. Es wird eine Liste mit Ihren Data Lake Analytics-Konten angezeigt, falls Konten vorhanden sind. Es ist nicht möglich, Data Lake Analytics-Konten über Visual Studio zu erstellen. Informationen zum Erstellen eines Kontos finden Sie unter [Erste Schritte mit Azure Data Lake Analytics mithilfe des Azure-Portals](data-lake-analytics-get-started-portal.md) oder [Erste Schritte mit Azure Data Lake Analytics mithilfe von Azure PowerShell](knoa-get-started-powershell.md).
+2. Klicken Sie im Menü **Ansicht** auf **Server-Explorer**, um den Server-Explorer zu öffnen. Oder drücken Sie **STRG+ALT+S**.
+3. Klicken Sie mit der rechten Maustaste auf **Azure**, klicken Sie auf „Verbindung mit Microsoft Azure-Abonnement herstellen“, und befolgen Sie die Anweisungen.
+4. Erweitern Sie in **Server-Explorer** erst **Azure** und dann **Data Lake Analytics**. Es wird eine Liste mit Ihren Data Lake Analytics-Konten angezeigt, falls Konten vorhanden sind. Es ist nicht möglich, Data Lake Analytics-Konten über Visual Studio zu erstellen. Informationen zum Erstellen eines Kontos finden Sie unter [Erste Schritte mit Azure Data Lake Analytics mithilfe des Azure-Portals](data-lake-analytics-get-started-portal.md) oder [Erste Schritte mit Azure Data Lake Analytics mithilfe von Azure PowerShell](data-lake-analytics--get-started-powershell.md).
 
 ## Hochladen von Quelldatendateien
 
@@ -72,7 +69,7 @@ Falls Sie Ihre eigenen Daten verwenden möchten, können Sie die hier angegebene
 
 	![Visual Studio-U-SQL-Projekt](./media/data-lake-analytics-data-lake-tools-get-started/data-lake-analytics-data-lake-tools-upload-files.png)
 
-**So laden Sie die Datei in ein Azure-BLOB-Speicherkonto hoch**
+**So laden Sie die Datei in ein Azure Blob Storage-Konto hoch**
 
 1. Erweitern Sie in **Server-Explorer** nacheinander die Optionen **Azure** und **Data Lake Analytics** und dann Ihr Data Lake Analytics-Konto und die Option **Speicherkonten**. Sie sehen das standardmäßige Data Lake-Speicherkonto und die verknüpften Data Lake-Speicherkonten sowie die verknüpften Azure-Speicherkonten. 
 2. Erweitern Sie das Azure-Speicherkonto.
@@ -82,7 +79,7 @@ Falls Sie Ihre eigenen Daten verwenden möchten, können Sie die hier angegebene
 
 ## Entwickeln eines U-SQL-Skripts 
 
-Die Data Lake Analytics-Aufträge werden in der Sprache U-SQL geschrieben. Weitere Informationen zu U-SQL finden Sie unter [Erste Schritte mit der U-SQL-Sprache](data-lake-analytics-u-sql-get-started.md) und in der [Referenz zur U-SQL-Sprache](http://go.microsoft.com/fwlink/?LinkId=691348) (in englischer Sprache).
+Die Data Lake Analytics-Aufträge werden in der Sprache U-SQL geschrieben. Weitere Informationen zu U-SQL finden Sie unter [Erste Schritte mit der U-SQL-Sprache](data-lake-analytics-u-sql-get-started.md) und in der [U-SQL Language Reference](http://go.microsoft.com/fwlink/?LinkId=691348) (in englischer Sprache).
 
 **So erstellen und übermitteln Sie einen Data Lake Analytics-Auftrag**
 
@@ -109,7 +106,7 @@ Die Data Lake Analytics-Aufträge werden in der Sprache U-SQL geschrieben. Weite
             TO "/Output/SearchLog-from-Data-Lake.csv"
         USING Outputters.Csv();
 
-	Mit diesem U-SQL-Skript wird die Quelldatei mithilfe von **Extractors.Tsv()** gelesen, und anschließend wird eine CSV-Datei mithilfe von **Outputters.Csv()** erstellt.
+	Mit diesem U-SQL-Skript wird die Quelldatendatei mithilfe von **Extractors.Tsv()** gelesen, und anschließend wird eine CSV-Datei mithilfe von **Outputters.Csv()** erstellt.
     
     Ändern Sie die beiden Pfade nur, wenn Sie die Quelldatei an einen anderen Speicherort kopiert haben. Data Lake Analytics erstellt den Ausgabeordner, falls er nicht vorhanden ist.
 	
@@ -131,11 +128,17 @@ Die Data Lake Analytics-Aufträge werden in der Sprache U-SQL geschrieben. Weite
 		 
 		IntelliSense für Katalogentitäten (Datenbanken, Schemas, Tabellen, UDOs usw.) bezieht sich auf Ihr Compute-Konto. Sie können das aktuelle aktive Compute-Konto, die Datenbank und das Schema in der obersten Symbolleiste überprüfen und über die Dropdownlisten wechseln.
  
+    - **Erweitern von Spalten mit ***
+
+        Klicken Sie rechts neben das Sternchen-Symbol („*“), und dann sehen Sie unter dem Sternchen eine blaue Unterstreichung. Zeigen Sie mit dem Mauszeiger auf die blaue Unterstreichung, und klicken Sie auf den Pfeil nach unten. ![Data Lake visual studio tools expand *](./media/data-lake-analytics-data-lake-tools-get-started/data-lake-analytics-data-lake-tools-expand-asterisk.png)
+
+        Klicken Sie auf **Spalten erweitern**, und das Tool ersetzt das Sternchen („*“) durch die Spaltennamen.
+    
 	- **Automatische Formatierung**
 	
 		Benutzer können den Einzug des Scope-Skripts basierend auf der Codestruktur unter „Bearbeiten“ -> „Erweitert“ ändern:
   
-		- Dokument formatieren (STRG+E, D) : Das gesamte Dokument wird formatiert.   
+		- Dokument formatieren (STRG+E, D): Das gesamte Dokument wird formatiert.   
 		- Auswahl formatieren (STRG+K, STRG+F): Die Auswahl wird formatiert. Wenn keine Auswahl getroffen wurde, wird mit dieser Tastenkombination die Zeile formatiert, in der sich der Cursor befindet.  
 		
 		Sie können alle Formatierungsregeln unter „Extras“ -> „Optionen“ -> „Text-Editor“ - > „SIP“ -> „Formatierung“ konfigurieren.  
@@ -176,7 +179,7 @@ Die Data Lake Analytics-Aufträge werden in der Sprache U-SQL geschrieben. Weite
 	
 **So überprüfen Sie den Auftragsstatus**
 
-1. Erweitern Sie in Server-Explorer nacheinander die Optionen **Azure** und **Data Lake Analytics** und dann Ihr Data Lake Analytics-Konto.
+1. Erweitern Sie in Server-Explorer nacheinander die Optionen **Azure** und **Data Lake Analytics** und dann Ihren Data Lake Analytics-Kontonamen.
 2. Doppelklicken Sie auf **Aufträge**, um eine Liste mit den Aufträgen anzuzeigen.
 2. Klicken Sie auf einen Auftrag, um seinen Zustand anzuzeigen.
 
@@ -208,9 +211,9 @@ Mithilfe der U-SQL-Oberfläche zum lokalen Ausführen in Visual Studio können S
 
 - U-SQL-Skripts zusammen mit C#-Assemblys lokal ausführen 
 - C#-Assemblys lokal debuggen 
-- Lokale Tabellen und Assemblys in Server-Explorer so anzeigen, wie Sie es auch für Ihren Azure Data Lake Analytics-Dienst können 
+- Lokale Datenbanken, Assemblys, Schemas und Tabellen in Server-Explorer so erstellen, löschen und anzeigen, wie Sie es auch für Ihren Azure Data Lake Analytics-Dienst können. 
 
-In Visual Studio wird ein Konto *Lokale* angezeigt, und das Installationsprogramm erstellt einen Ordner *DataRoot* im Pfad *C:\\LocalRunRoot*. Der Ordner „DataRoot“ wird wie folgt verwendet:
+In Visual Studio wird ein Konto *Lokal* angezeigt, und das Installationsprogramm erstellt einen Ordner *DataRoot* im Pfad *C:\\LocalRunRoot*. Der Ordner „DataRoot“ wird wie folgt verwendet:
 
 - Speichern von Metadaten, einschließlich Tabellen, Datenbanken, TVFs usw.
 - Für ein bestimmtes Skript: Wenn in Eingabe-/Ausgabepfaden auf einen relativen Pfad verwiesen wird, wird DataRoot nachgeschlagen (sowie der Pfad des Skripts, wenn er zur Eingabe gehört).
@@ -218,7 +221,7 @@ In Visual Studio wird ein Konto *Lokale* angezeigt, und das Installationsprogram
 
 ### Bekannte Probleme und Einschränkungen
 
-- Die lokale Ausführung von U-SQL unterstützt keine lokalen Abfragen von Dateigruppen. Siehe [U-SQL-Dateigruppen](https://msdn.microsoft.com/library/azure/mt621294.aspx). Dies wird in Zukunft behoben.
+- Die lokale Ausführung von U-SQL unterstützt keine lokalen Abfragen von Dateigruppen. Weitere Informationen finden Sie unter [U-SQL-Dateigruppen](https://msdn.microsoft.com/library/azure/mt621294.aspx). Dies wird in Zukunft behoben.
 - Langsame Leistung aufgrund geringer Parallelität, da Auftragspläne nacheinander in einem einzelnen Prozess ausgeführt werden. 
 - Die lokale Ausführung kann keine Auftragsdiagramme in Visual Studio anzeigen. Dies wird in Zukunft behoben. 
 - In Server-Explorer kann keine Tabelle/Datenbank usw. für das lokale Konto erstellt werden.
@@ -232,7 +235,7 @@ In Visual Studio wird ein Konto *Lokale* angezeigt, und das Installationsprogram
     Bei Skripts, die im Data Lake-Dienst ausgeführt werden, wird das Standardspeicherkonto als Stammordner verwendet und dementsprechend durchsucht.
 
 ### Lokales Testen von U-SQL-Skripts
-Anleitungen zur Entwicklung von U-SQL-Skripts finden Sie unter [Entwickeln von U-SQL-Skripts](#develop-and-test-u-sql-scripts). Wählen Sie zum Erstellen und Ausführen von U-SQL-Skripts in der Cluster-Dropdownliste **(Lokal)** aus, und klicken Sie dann auf **Senden**. Stellen Sie sicher, dass Sie auf die richtigen Daten verweisen – verweisen Sie entweder auf den absoluten Pfad, oder legen Sie die Daten im Ordner „DataRoot“ ab.
+Anleitungen zur Entwicklung von U-SQL-Skripts finden Sie unter [Entwickeln eines U-SQL-Skripts](#develop-and-test-u-sql-scripts). Wählen Sie zum lokalen Erstellen und Ausführen von U-SQL-Skripts in der Cluster-Dropdownliste **(Lokal)** aus, und klicken Sie dann auf **Senden**. Stellen Sie sicher, dass Sie auf die richtigen Daten verweisen – verweisen Sie entweder auf den absoluten Pfad, oder legen Sie die Daten im Ordner „DataRoot“ ab.
 
 ![Lokales Senden von Visual Studio-U-SQL-Projekten](./media/data-lake-analytics-data-lake-tools-get-started/data-lake-analytics-data-lake-tools-submit-job-local-run.png)
 
@@ -251,22 +254,16 @@ Es gibt zwei Möglichkeiten zum Ausführen der angepassten C#-Dateien:
 
 Sie können C#-Assemblys debuggen, ohne sie zu senden und beim Azure Data Lake Analytics-Dienst zu registrieren. Sie können sowohl in der Code-Behind-Datei als auch in einem referenzierten C#-Projekt Haltepunkte festlegen.
 
-**So debuggen Sie lokalen Code in der CodeBehind-Datei** 1. Legen Sie Haltepunkte in der CodeBehind-Datei fest. 2. Drücken Sie **F5**, um das Skript lokal zu debuggen.
+**So debuggen Sie lokalen Code in der CodeBehind-Datei:** 1. Legen Sie Haltepunkte in der CodeBehind-Datei fest. 2. Drücken Sie **F5**, um das Skript lokal zu debuggen.
 
 Das folgende Verfahren funktioniert nur in Visual Studio 2015. In älteren Versionen von Visual Studio müssen Sie eventuell die PDB-Dateien manuell hinzufügen.
 
-**So debuggen Sie lokalen Code in einem referenzierten C#-Projekt** 1. Erstellen Sie ein C#-Assemblyprojekt, und erstellen Sie es, um die Ausgabe-DLL zu generieren. 2. Registrieren Sie die DLL mithilfe einer U-SQL-Anweisung:
+**So debuggen Sie lokalen Code in einem referenzierten C#-Projekt:** 1. Erstellen Sie ein C#-Assemblyprojekt, und erstellen Sie es, um die Ausgabe-DLL zu generieren. 2. Registrieren Sie die DLL mithilfe einer U-SQL-Anweisung:
 
         CREATE ASSEMBLY assemblyname FROM @"..\..\path\to\output\.dll";
 3.	Legen Sie Haltepunkte im C#-Code fest.
 4.	Drücken Sie **F5**, um das Skript mit Verweis auf die C#-DLL lokal zu debuggen.  
  
-
-
-
-
-
-
 
 
 ##Weitere Informationen
@@ -284,4 +281,76 @@ Weitere Themen zur Entwicklung:
 - [Erste Schritte mit Azure Data Lake Analytics-U-SQL-Sprache](data-lake-analytics-u-sql-get-started.md)
 - [Entwickeln von benutzerdefinierten U-SQL-Operatoren für Data Lake Analytics-Aufträge](data-lake-analytics-u-sql-user-defined-operators.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+##Anhang A: PowerShell-Beispiel zur Vorbereitung des Tutorials
+
+Mit dem folgenden PowerShell-Skript werden das Azure Data Lake Analytics-Konto und die Quelldaten für Sie vorbereitetet, sodass Sie zu [Entwickeln eines U-SQL-Skripts](data-lake-analytics-data-lake-tools-get-started.md#develop-u-sql-scripts) springen können.
+
+    #region - used for creating Azure service names
+    $nameToken = "<Enter an alias>" 
+    $namePrefix = $nameToken.ToLower() + (Get-Date -Format "MMdd")
+    #endregion
+
+    #region - service names
+    $resourceGroupName = $namePrefix + "rg"
+    $dataLakeStoreName = $namePrefix + "adas"
+    $dataLakeAnalyticsName = $namePrefix + "adla"
+    $location = "East US 2"
+    #endregion
+
+
+    # Treat all errors as terminating
+    $ErrorActionPreference = "Stop"
+
+    #region - Connect to Azure subscription
+    Write-Host "`nConnecting to your Azure subscription ..." -ForegroundColor Green
+    try{Get-AzureRmContext}
+    catch{Login-AzureRmAccount}
+    #endregion
+
+    #region - Create an Azure Data Lake Analytics service account
+    Write-Host "Create a resource group ..." -ForegroundColor Green
+    New-AzureRmResourceGroup `
+        -Name  $resourceGroupName `
+        -Location $location
+
+    Write-Host "Create a Data Lake account ..."  -ForegroundColor Green
+    New-AzureRmDataLakeStoreAccount `
+        -ResourceGroupName $resourceGroupName `
+        -Name $dataLakeStoreName `
+        -Location $location 
+
+    Write-Host "Create a Data Lake Analytics account ..."  -ForegroundColor Green
+    New-AzureRmDataLakeAnalyticsAccount `
+        -Name $dataLakeAnalyticsName `
+        -ResourceGroupName $resourceGroupName `
+        -Location $location `
+        -DefaultDataLake $dataLakeStoreName
+
+    Write-Host "The newly created Data Lake Analytics account ..."  -ForegroundColor Green
+    Get-AzureRmDataLakeAnalyticsAccount `
+        -ResourceGroupName $resourceGroupName `
+        -Name $dataLakeAnalyticsName  
+    #endregion
+
+    #region - prepare the source data
+    Write-Host "Import the source data ..."  -ForegroundColor Green
+    $localFolder = "C:\Tutorials\Downloads" # A temp location for the file. 
+    $storageAccount = "adltutorials"  # Don't modify this value.
+    $container = "adls-sample-data"  #Don't modify this value.
+
+    # Create the temp location  
+    New-Item -Path $localFolder -ItemType Directory -Force 
+
+    # Download the sample file from Azure Blob storage
+    $context = New-AzureStorageContext -StorageAccountName $storageAccount -Anonymous
+    $blobs = Azure\Get-AzureStorageBlob -Container $container -Context $context
+    $blobs | Get-AzureStorageBlobContent -Context $context -Destination $localFolder
+
+    # Upload the file to the default Data Lake Store account    
+    Import-AzureRmDataLakeStoreItem -AccountName $dataLakeStoreName -Path $localFolder"SearchLog.tsv" -Destination "/Samples/Data/SearchLog.tsv"
+
+    Write-Host "List the source data ..."  -ForegroundColor Green
+    Get-AzureRmDataLakeStoreChildItem -Account $dataLakeStoreName -Path  "/Samples/Data/"
+    #endregion
+
+<!---HONumber=AcomDC_1223_2015-->

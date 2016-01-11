@@ -3,7 +3,7 @@
 	description="Erfahren Sie, wie Sie das einmalige Anmelden zwischen Azure Active Directory und @Task konfigurieren."
 	services="active-directory"
 	documentationCenter=""
-	authors="markusvi"
+	authors="jeevansd"
 	manager="stevenpo"
 	editor=""/>
 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/12/2015"
-	ms.author="markusvi"/>
+	ms.date="12/18/2015"
+	ms.author="jeedes"/>
 
 
 # Tutorial: Azure Active Directory-Integration mit @Task.
@@ -137,15 +137,15 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta S
 
 **Um einen Testbenutzer in Azure AD zu erstellen, führen Sie die folgenden Schritte aus:**
 
-1. Klicken Sie im linken Navigationsbereich des **Azure-Verwaltungsportals** auf **Active Directory**.<br> ![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-attask-tutorial/create_aaduser_02.png) 
+1. Klicken Sie im linken Navigationsbereich des **Azure-Verwaltungsportals** auf **Active Directory**.<br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-attask-tutorial/create_aaduser_02.png) 
 
 2. Wählen Sie in der Liste **Verzeichnis** das Verzeichnis aus, für das Sie die Verzeichnisintegration aktivieren möchten.
 
-3. Klicken Sie zum Anzeigen der Liste der Benutzer im Menü oben auf **Benutzer**.<br>![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-attask-tutorial/create_aaduser_03.png)
+3. Klicken Sie zum Anzeigen der Liste der Benutzer im Menü oben auf **Benutzer**.<br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-attask-tutorial/create_aaduser_03.png)
  
-4. Um das Dialogfeld **Benutzer hinzufügen** zu öffnen, klicken Sie auf der Symbolleiste unten auf **Benutzer hinzufügen**. <br>![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-attask-tutorial/create_aaduser_04.png)
+4. Um das Dialogfeld **Benutzer hinzufügen** zu öffnen, klicken Sie auf der Symbolleiste unten auf **Benutzer hinzufügen**. <br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-attask-tutorial/create_aaduser_04.png)
 
-5. Führen Sie auf der Dialogfeldseite **Informationen über diesen Benutzer** die folgenden Schritte aus: <br>![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-attask-tutorial/create_aaduser_05.png)
+5. Führen Sie auf der Dialogfeldseite **Informationen über diesen Benutzer** die folgenden Schritte aus: <br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-attask-tutorial/create_aaduser_05.png)
 
     a. Wählen Sie als "Benutzertyp" die Option "Neuer Benutzer in Ihrer Organisation" aus.
 
@@ -153,7 +153,7 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta S
 
     c. Klicken Sie auf **Weiter**.
 
-6.  Führen Sie auf der Dialogfeldseite **Benutzerprofil** die folgenden Schritte aus: <br><br>![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-attask-tutorial/create_aaduser_06.png) <br>
+6.  Führen Sie auf der Dialogfeldseite **Benutzerprofil** die folgenden Schritte aus: <br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-attask-tutorial/create_aaduser_06.png) <br>
  
     a. Geben Sie in das Textfeld **Vorname** den Namen **Britta** ein.
 
@@ -163,7 +163,7 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta S
 
     d. Wählen Sie in der Liste **Rolle** die Rolle **Benutzer** aus. e. Klicken Sie auf **Weiter**.
 
-7. Klicken Sie auf der Dialogfeldseite **Vorübergehendes Kennwort abrufen** auf **Erstellen**. <br><br> ![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-attask-tutorial/create_aaduser_07.png) <br>
+7. Klicken Sie auf der Dialogfeldseite **Vorübergehendes Kennwort abrufen** auf **Erstellen**. <br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-attask-tutorial/create_aaduser_07.png) <br>
  
 8. Führen Sie auf der Dialogfeldseite **Vorübergehendes Kennwort abrufen** die folgenden Schritte aus: <br><br>![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-attask-tutorial/create_aaduser_08.png) <br>
   
@@ -257,4 +257,4 @@ Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für ein
 [204]: ./media/active-directory-saas-attask-tutorial/tutorial_general_204.png
 [205]: ./media/active-directory-saas-attask-tutorial/tutorial_general_205.png
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1223_2015-->

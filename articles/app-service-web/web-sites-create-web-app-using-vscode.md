@@ -13,14 +13,18 @@
 	ms.tgt_pltfrm="dotnet" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/14/2015" 
+	ms.date="12/17/2015" 
 	ms.author="erikre"/>
 
 # Erstellen einer ASP.NET 5-Web-App in Visual Studio
 
 ## Übersicht
 
-In diesem Lernprogramm erfahren Sie, wie Sie eine ASP.NET 5-Web-App mit [Visual Studio Code (VS Code)](http://code.visualstudio.com//Docs/whyvscode) erstellen und in [Azure App Service](../app-service/app-service-value-prop-what-is.md) bereitstellen. Das Design von ASP.NET wurde für ASP.NET 5 deutlich verändert. ASP.NET 5 ist ein neues plattformübergreifendes Open Source-Framework zum Erstellen moderner cloudbasierter Web-Apps mit .NET. Weitere Informationen finden Sie unter [Introduction to ASP.NET 5](http://docs.asp.net/en/latest/conceptual-overview/aspnet.html) (Einführung in ASP.NET 5; in englischer Sprache). Informationen zu Azure App Service-Web-Apps finden Sie unter [Web-Apps – Übersicht](app-service-web-overview.md).
+In diesem Lernprogramm erfahren Sie, wie Sie eine ASP.NET 5-Web-App mit [Visual Studio Code (VS Code)](http://code.visualstudio.com//Docs/whyvscode) erstellen und in [Azure App Service](../app-service/app-service-value-prop-what-is.md) bereitstellen.
+
+> [AZURE.NOTE]Obwohl sich dieser Artikel auf Web-Apps bezieht, gilt er auch für API-Apps und mobile Apps.
+
+Das Design von ASP.NET wurde für ASP.NET 5 deutlich verändert. ASP.NET 5 ist ein neues plattformübergreifendes Open Source-Framework zum Erstellen moderner cloudbasierter Web-Apps mit .NET. Weitere Informationen finden Sie unter [Introduction to ASP.NET 5](http://docs.asp.net/en/latest/conceptual-overview/aspnet.html) (Einführung in ASP.NET 5; in englischer Sprache). Informationen zu Azure App Service-Web-Apps finden Sie unter [Web-Apps – Übersicht](app-service-web-overview.md).
 
 [AZURE.INCLUDE [app-service-web-try-app-service.md](../../includes/app-service-web-try-app-service.md)]
 
@@ -28,7 +32,7 @@ In diesem Lernprogramm erfahren Sie, wie Sie eine ASP.NET 5-Web-App mit [Visual
 
 * Installieren Sie [VS Code](http://code.visualstudio.com/Docs/setup).
 * Installieren Sie [Node.js](http://nodejs.org). Node.js ist eine Plattform für die Erstellung schneller und skalierbarer Serveranwendungen mit JavaScript. Node ist die Laufzeit, [npm](http://www.npmjs.com/) der Paket-Manager für Node-Module. In diesem Lernprogramm erstellen Sie mithilfe von npm das Gerüst für eine ASP.NET 5-Web-App.
-* Installieren Sie Git (entweder über [Chocolatey](https://chocolatey.org/packages/git) oder über [git-scm.com](http://git-scm.com/downloads)). Falls Sie noch keine Erfahrung mit Git haben, entscheiden Sie sich für [git-scm.com](http://git-scm.com/downloads), und wählen Sie die Option **Git über die Windows-Eingabeaufforderung verwenden** aus. Legen Sie nach der Installation von Git den Git-Benutzernamen und die dazugehörige E-Mail-Adresse fest, da diese Angaben später in diesem Lernprogramm (beim Ausführen eines Commits in VS Code) benötigt werden.  
+* Installieren Sie Git (entweder über [Chocolatey](https://chocolatey.org/packages/git) oder über [git-scm.com](http://git-scm.com/downloads)). Falls Sie noch keine Erfahrung mit Git haben, entscheiden Sie sich für [git-scm.com](http://git-scm.com/downloads) und wählen Sie die Option **Git über die Windows-Eingabeaufforderung verwenden** aus. Legen Sie nach der Installation von Git den Git-Benutzernamen und die dazugehörige E-Mail-Adresse fest, da diese Angaben später in diesem Lernprogramm (beim Ausführen eines Commits in VS Code) benötigt werden.  
 
 ## Installieren von ASP.NET 5 und DNX
 ASP.NET 5/DNX (die .NET-Ausführungsumgebung) ist ein schlanker .NET-Stapel für die Erstellung moderner Cloud- und Web-Apps für OS X, Linux und Windows. Er wurde von Grund auf neu als optimiertes Entwicklungsframework für Apps konzipiert, die entweder in der Cloud bereitgestellt oder lokal ausgeführt werden. Er besteht aus modularen Komponenten mit minimalem Mehraufwand und ermöglicht Ihnen eine flexible Lösungsentwicklung.
@@ -85,7 +89,7 @@ In diesem Abschnitt erfahren Sie, wie Sie das Gerüst für eine neue ASP.NET-Web
 
 		yo aspnet
 
-4. Wählen Sie im ASP.NET 5-Generatormenü mithilfe der Pfeiltasten den Typ **Webanwendung Basic** aus, und drücken Sie anschließend die **EINGABETASTE**.
+4. Wählen Sie im ASP.NET 5-Generatormenü mithilfe der Pfeiltasten den Typ **Webanwendung Basic** aus und drücken Sie anschließend die **EINGABETASTE**.
 
 	![Yeoman – ASP.NET 5-Generator](./media/web-sites-create-web-app-using-vscode/01-yo-aspnet.png)
 
@@ -123,7 +127,7 @@ Nachdem Sie die Web-App erstellt und alle erforderlichen NuGet-Pakete abgerufen 
 
 2. Öffnen Sie einen Browser, und navigieren Sie zur folgenden URL:
 
-	**http://localhost:5000**
+	****http://localhost:5000**
 
 	Die Standardseite der Web-App wird wie folgt angezeigt:
 
@@ -250,7 +254,7 @@ Dies kann auf zwei Arten erfolgen:
 
 		http://SampleWebAppDemo.azurewebsites.net
  
-* Navigieren Sie im Azure-Portal zum Blatt für Ihre Web-App, und klicken Sie auf **Durchsuchen**, um Ihre App anzuzeigen.
+* Navigieren Sie im Azure-Portal zum Blatt für Ihre Web-App und klicken Sie auf **Durchsuchen**, um Ihre App anzuzeigen.
 * in Ihrem Standardbrowser anzuzeigen.
 
 ![Azure-Web-App](./media/web-sites-create-web-app-using-vscode/21-azurewebapp.png)
@@ -258,4 +262,4 @@ Dies kann auf zwei Arten erfolgen:
 ## Zusammenfassung
 In diesem Lernprogramm wurde gezeigt, wie Sie eine Web-App in VS Code erstellen und in Azure bereitstellen. Weitere Informationen zu VS Code finden Sie im Artikel [Why Visual Studio Code?](https://code.visualstudio.com/Docs/) (Argumente für Visual Studio Code; in englischer Sprache). Informationen zu App Service-Web-Apps finden Sie unter [Web-Apps – Übersicht](app-service-web-overview.md).
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1223_2015-->

@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="na"
-	ms.date="11/10/2015"
+	ms.date="12/18/2015"
 	ms.author="gauravbh;tomfitz"/>
 
 # Verwenden von Richtlinien für Ressourcenverwaltung und Zugriffssteuerung
@@ -22,7 +22,7 @@ Sie können nun den Azure-Ressourcen-Manager zum Steuern des Zugriffs über benu
 
 Sie erstellen Richtliniendefinitionen, die die Aktionen oder Ressourcen beschreiben, die spezifisch verweigert werden. Sie weisen diese Richtliniendefinitionen dem gewünschten Ziel zu, z. B. einem Abonnement, einer Ressourcengruppe oder einer einzelnen Ressource.
 
-In diesem Artikel wird die grundlegende Struktur der Richtliniendefinitionssprache erläutert, mit der Sie Richtlinien erstellen. Anschließend wird beschrieben, wie Sie diese Richtlinien auf verschiedene Ziele anwenden. Abschließend finden Sie einige Beispiele dafür, wie Sie dies auch über die REST-API erreichen können.
+In diesem Artikel wird die grundlegende Struktur der Richtliniendefinitionssprache erläutert, mit der Sie Richtlinien erstellen. Anschließend wird beschrieben, wie Sie diese Richtlinien auf verschiedene Ziele anwenden. Zum Schluss finden Sie einige Beispiele dafür, wie Sie dies auch über die REST-API erreichen können.
 
 Die Richtlinie ist zurzeit als Vorschau verfügbar.
 
@@ -70,11 +70,11 @@ Die unterstützten logischen Operatoren sind zusammen mit der Syntax nachfolgend
 
 | Name des Operators | Syntax |
 | :------------- | :------------- |
-| Not | "not" : {&lt;Bedingung oder Operator &gt;} |
-| Und | "allOf" : [ {&lt;Bedingung1&gt;},{&lt;Bedingung2&gt;}] |
-| Oder | "anyOf" : [ {&lt;Bedingung1&gt;},{&lt;Bedingung2&gt;}] |
+| Nicht | "not" : {&lt;Bedingung oder Operator &gt;} |
+| Und | "allOf" : [ {&lt;Bedingung oder Operator &gt;},{&lt;Bedingung oder Operator &gt;}] |
+| Oder | "anyOf" : [ {&lt;Bedingung oder Operator &gt;},{&lt;Bedingung oder Operator &gt;}] |
 
-Geschachtelte Bedingungen werden nicht unterstützt.
+Mit dem Ressourcen-Manager können Sie über geschachtelte Operatoren eine komplexe Logik in Ihrer Richtlinie angeben. Sie können z. B. das Erstellen von Ressourcen an einem bestimmten Speicherort für einen angegebenen Ressourcentyp verweigern. Ein Beispiel für geschachtelte Operatoren ist unten dargestellt.
 
 ## Bedingungen
 
@@ -88,7 +88,6 @@ Eine Bedingung prüft, ob ein **Feld** oder eine **Quelle** bestimmte Kriterien 
 | Geben Sie in | "in" : [ "&lt;Wert1&gt;","&lt;Wert2&gt;" ]|
 | ContainsKey | "containsKey" : "&lt;Schlüsselname&gt;" |
 
-
 ## Felder und Quellen
 
 Bedingungen werden mithilfe von Feldern und Quellen gebildet. Ein Feld stellt Eigenschaften in der Anforderungsnutzlast der Ressource dar. Eine Quelle stellt Merkmale der Anforderung selbst dar.
@@ -99,7 +98,7 @@ Felder: **name**, **kind**, **type**, **location**, **tags**, **tags.***.
 
 Quellen: **action**
 
-Weitere Informationen zu Aktionen finden Sie unter [RBAC – Integrierte Rollen](active-directory/role-based-access-built-in-roles.md).
+Weitere Informationen zu Aktionen finden Sie unter [RBAC – Integrierte Rollen](active-directory/role-based-access-built-in-roles.md). Derzeit gilt die Richtlinie nur bei PUT-Anforderungen.
 
 ## Beispiele für Richtliniendefinitionen
 
@@ -184,6 +183,30 @@ Das folgende Beispiel veranschaulicht die Verwendung von Platzhalterzeichen, die
       "then" : {
         "effect" : "deny"
       }
+    }
+    
+### Taganforderung nur für Speicherressourcen
+
+Das folgende Beispiel zeigt, wie logische Operatoren so verschachtelt werden, dass ein Anwendungstag nur für Speicherressourcen benötigt wird.
+
+    {
+        "if": {
+            "allOf": [
+              {
+                "not": {
+                  "field": "tags",
+                  "containsKey": "application"
+                }
+              },
+              {
+                "source": "action",
+                "like": "Microsoft.Storage/*"
+              }
+            ]
+        },
+        "then": {
+            "effect": "audit"
+        }
     }
 
 ## Richtlinienzuweisung
@@ -291,4 +314,17 @@ Sie können Richtliniendefinitionen mithilfe der Cmdlets "Get-AzureRmPolicyDefin
 
 Ähnlich können Sie Richtlinienzuweisungen mithilfe der Cmdlets "Get-AzureRmPolicyAssignment", "Set-AzureRmPolicyAssignment" bzw. "Remove-AzureRmPolicyAssignment" abrufen, ändern oder entfernen.
 
-<!---HONumber=Nov15_HO3-->
+##Richtlinie zur Überwachung von Ereignissen
+
+Nachdem Sie die Richtlinie angewendet haben, werden Sie richtlinienbezogene Ereignisse sehen können. Sie können entweder zum Portal wechseln oder PowerShell verwenden, um diese Daten abzurufen.
+
+Zum Anzeigen aller Ereignisse, die mit dem Verweigerungseffekt in Verbindung stehen, können Sie den folgenden Befehl verwenden.
+
+    Get-AzureRmLog | where {$_.subStatus -eq "Forbidden"}     
+
+Zum Anzeigen aller Ereignisse, die mit dem Überwachungseffekt in Verbindung stehen, können Sie den folgenden Befehl verwenden.
+
+    Get-AzureRmLog | where {$_.OperationName -eq "Microsoft.Authorization/policies/audit/action"} 
+    
+
+<!---HONumber=AcomDC_1223_2015-->

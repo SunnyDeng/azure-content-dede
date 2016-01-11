@@ -3,7 +3,7 @@
 	description="Hier erfahren Sie, wie Sie Amazon Web Services (AWS) mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen."
 	services="active-directory"
 	documentationCenter=""
-	authors="markusvi"
+	authors="jeevansd"
 	manager="stevenpo"
 	editor=""/>
 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/30/2015"
-	ms.author="markvi"/>
+	ms.date="12/18/2015"
+	ms.author="jeedes"/>
 
 
 # Tutorial: Azure Active Directory-Integration mit Amazon Web Service (AWS)
@@ -320,4 +320,4 @@ Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für einm
 [33]: ./media/active-directory-saas-amazon-web-service/ic7950252.png
 [34]: ./media/active-directory-saas-amazon-web-service/ic7950253.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1223_2015-->

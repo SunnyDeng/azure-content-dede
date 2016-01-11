@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="08/24/2015"
+   ms.date="12/18/2015"
    ms.author="tarcher" />
 
 # Assistent zur Veröffentlichung einer Azure-Anwendung
@@ -141,4 +141,4 @@ Sie können die allgemeinen und erweiterten Einstellungen für eine Bereitstellu
 
 [Lokales Testen der Leistung eines Cloud-Diensts](https://msdn.microsoft.com/library/azure/hh369930.aspx)
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1223_2015-->

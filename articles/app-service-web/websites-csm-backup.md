@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Verwenden von REST zum Sichern und Wiederherstellen von Azure-Web-Apps"
-	description="Sie erfahren, wie Sie RESTful-API-Aufrufe zum Sichern und Wiederherstellen einer Web-App in Azure App Service verwenden."
+	pageTitle="Verwenden von REST zum Sichern und Wiederherstellen von App Service-Apps"
+	description="Sie erfahren, wie Sie RESTful-API-Aufrufe zum Sichern und Wiederherstellen einer App in Azure App Service verwenden."
 	services="app-service"
 	documentationCenter=""
 	authors="nking92"
@@ -16,31 +16,31 @@
 	ms.date="11/18/2015"
 	ms.author="nicking"/>
 
-# Verwenden von REST zum Sichern und Wiederherstellen von Azure-Web-Apps
-[Azure-Web-Apps](https://azure.microsoft.com/services/app-service/web/) können als Blobs in Azure-Speicher gesichert werden. Das Backup kann auch die Datenbanken der App enthalten. Falls die App versehentlich gelöscht wird oder falls die App auf eine vorherige Version zurückgesetzt werden muss, ist die Wiederherstellung aus einem früheren Backup möglich. Sicherungen können jederzeit bedarfsgesteuert durchgeführt oder in geeigneten Abständen geplant werden.
+# Verwenden von REST zum Sichern und Wiederherstellen von App Service-Apps
+[App Service-Apps](https://azure.microsoft.com/services/app-service/web/) können als Blobs in Azure Storage gesichert werden. Das Backup kann auch die Datenbanken der App enthalten. Falls die App versehentlich gelöscht wird oder falls die App auf eine vorherige Version zurückgesetzt werden muss, ist die Wiederherstellung aus einem früheren Backup möglich. Sicherungen können jederzeit bedarfsgesteuert durchgeführt oder in geeigneten Abständen geplant werden.
 
-In diesem Artikel wird erläutert, wie Sie eine Azure-Web-App mit RESTful-API-Anforderungen sichern und wiederherstellen. Wenn Sie Web-App-Backups grafisch über das Azure-Portal erstellen und verwalten möchten, helfen Ihnen die Informationen unter [Sichern von Web-Apps in Azure App Service](web-sites-backup.md) weiter.
+In diesem Artikel wird erläutert, wie Sie eine App mit RESTful-API-Anforderungen sichern und wiederherstellen. Wenn Sie App-Backups grafisch über das Azure-Portal erstellen und verwalten möchten, helfen Ihnen die Informationen unter [Sichern von Web-Apps in Azure App Service](web-sites-backup.md) weiter.
 
 <a name="gettingstarted"></a>
 ## Erste Schritte
-Um REST-Anforderungen senden zu können, müssen Sie **Name**, **Ressourcengruppe** und **Abonnement-ID** Ihrer Web-App kennen. Sie erhalten diese Informationen, indem Sie im [Azure-Vorschauportal](https://portal.azure.com) auf dem Blatt **Web-Apps** auf Ihre Web-App klicken. Für die Beispiele in diesem Artikel konfigurieren wir die Website `backuprestoreapiexamples.azurewebsites.net`. Sie ist in der Ressourcengruppe „Default-Web-WestUS“ gespeichert und wird unter einem Abonnement mit der ID 00001111-2222-3333-4444-555566667777 ausgeführt.
+Um REST-Anforderungen senden zu können, müssen Sie **Name**, **Ressourcengruppe** und **Abonnement-ID** Ihrer App kennen. Sie erhalten diese Informationen, indem Sie im [Azure-Portal](https://portal.azure.com) auf dem Blatt **App Service** auf Ihre App klicken. Für die Beispiele in diesem Artikel konfigurieren wir die Website `backuprestoreapiexamples.azurewebsites.net`. Sie ist in der Ressourcengruppe „Default-Web-WestUS“ gespeichert und wird unter einem Abonnement mit der ID 00001111-2222-3333-4444-555566667777 ausgeführt.
 
 ![Beispielwebsite-Informationen][SampleWebsiteInformation]
 
 <a name="backup-restore-rest-api"></a>
 ## Sichern und Wiederherstellen einer REST-API
-Es folgen mehrere Beispiele dafür, wie Sie die REST-API zum Sichern und Wiederherstellen einer Azure-Web-App verwenden. Jedes Beispiel enthält eine URL und einen HTTP-Anforderungstext. Die Beispiel-URL enthält Platzhalter, die in geschweiften Klammern stehen, z. B. {subscriptionId}. Ersetzen Sie diese Platzhalter durch die entsprechenden Informationen für Ihre Web-App. Zu Referenzzwecken werden hier kurz die Platzhalter beschrieben, die in den Beispiel-URLs verwendet werden.
+Es folgen mehrere Beispiele dafür, wie Sie die REST-API zum Sichern und Wiederherstellen einer App verwenden. Jedes Beispiel enthält eine URL und einen HTTP-Anforderungstext. Die Beispiel-URL enthält Platzhalter, die in geschweiften Klammern stehen, z. B. {subscriptionId}. Ersetzen Sie diese Platzhalter durch die entsprechenden Informationen für Ihre App. Zu Referenzzwecken werden hier kurz die Platzhalter beschrieben, die in den Beispiel-URLs verwendet werden.
 
-* subscriptionId – ID des Azure-Abonnements, in dem die Web-App enthalten ist
-* resourceGroupName – Name der Ressourcengruppe, in der die Web-App enthalten ist
-* sitename – Name der Azure-Web-App
-* backupId – ID des Web-App-Backups
+* subscriptionId – ID des Azure-Abonnements, in dem die App enthalten ist
+* resourceGroupName – Name der Ressourcengruppe, in der die App enthalten ist
+* sitename – Name der App
+* backupId – ID des App-Backups
 
 Die vollständige Dokumentation der API, einschließlich verschiedener optionaler Parameter, die in der HTTP-Anforderung enthalten sein können, finden Sie unter [Azure-Ressourcen-Explorer](https://resources.azure.com/).
 
 <a name="backup-on-demand"></a>
-## Bedarfsgesteuertes Sichern einer Web-App
-Wenn Sie eine Web-App sofort sichern möchten, senden Sie eine **POST**-Anforderung an `https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{sitename}/backup/`.
+## Bedarfsgesteuertes Sichern einer App
+Wenn Sie eine App sofort sichern möchten, senden Sie eine **POST**-Anforderung an `https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{sitename}/backup/`.
 
 Hier ist dargestellt, wie die URL für unsere Beispielwebsite aussieht. `https://management.azure.com/subscriptions/00001111-2222-3333-4444-555566667777/resourceGroups/Default-Web-WestUS/providers/Microsoft.Web/sites/backuprestoreapiexamples/backup/`
 
@@ -62,7 +62,7 @@ Sie müssen im Text der Anforderung ein JSON-Objekt bereitstellen, um anzugeben,
 }
 ```
 
-Ein Backup der Web-App beginnt sofort, nachdem die Anforderung empfangen wurde. Der Backupprozess kann unter Umständen sehr lange dauern. Die HTTP-Antwort enthält eine ID, die Sie in einer anderen Anforderung verwenden können, um den Status des Backups anzuzeigen. Dies ist ein Beispiel für den Text der HTTP-Antwort auf die Backupanforderung.
+Ein Backup der App beginnt sofort, nachdem die Anforderung empfangen wurde. Der Backupprozess kann unter Umständen sehr lange dauern. Die HTTP-Antwort enthält eine ID, die Sie in einer anderen Anforderung verwenden können, um den Status des Backups anzuzeigen. Dies ist ein Beispiel für den Text der HTTP-Antwort auf die Backupanforderung.
 
 ```
 {
@@ -96,7 +96,7 @@ Ein Backup der Web-App beginnt sofort, nachdem die Anforderung empfangen wurde. 
 
 <a name="schedule-automatic-backups"></a>
 ## Planen von automatischen Backups
-Sie können eine Web-App nicht nur bedarfsgesteuert sichern, sondern auch planen, dass ein Backup automatisch durchgeführt wird.
+Sie können eine App nicht nur bedarfsgesteuert sichern, sondern auch planen, dass ein Backup automatisch durchgeführt wird.
 
 ### Einrichten eines neuen Zeitplans für automatische Backups
 Um einen Sicherungszeitplan einzurichten, senden Sie eine **PUT**-Anforderung an `https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/backup`.
@@ -108,7 +108,7 @@ Der Anforderungstext muss ein JSON-Objekt enthalten, mit dem die Konfiguration d
 ```
 {
     "location": "WestUS",
-    "properties": // Represents a web app restore request
+    "properties": // Represents an app restore request
     {
         "backupSchedule": { // Required for automatically scheduled backups
             "frequencyInterval": "7",
@@ -128,13 +128,13 @@ Im Beispiel wird die App so konfiguriert, dass alle sieben Tage ein automatische
 Alte Backups werden automatisch aus dem Speicherkonto entfernt. Sie können steuern, wie alt die Backups sein sollen, indem Sie den Parameter **retentionPeriodInDays** festlegen. Wenn unabhängig vom Alter immer mindestens ein Backup gespeichert sein soll, legen Sie **keepAtLeastOneBackup** auf „true“ fest.
 
 ### Abrufen des automatischen Sicherungszeitplans
-Um die Backupkonfiguration einer Web-App abzurufen, senden Sie eine **POST**-Anforderung an die URL ` https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/backup/list`.
+Um die Backupkonfiguration einer App abzurufen, senden Sie eine **POST**-Anforderung an die URL ` https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/backup/list`.
 
 Die URL für unsere Beispielwebsite lautet `https://management.azure.com/subscriptions/00001111-2222-3333-4444-555566667777/resourceGroups/Default-Web-WestUS/providers/Microsoft.Web/sites/backuprestoreapiexamples/config/backup/list`.
 
 <a name="get-backup-status"></a>
 ## Abrufen des Status eines Backups
-Je nachdem, wie groß die Web-App ist, kann die Erstellung eines Backups einige Zeit dauern. Für Backups können auch Fehler oder eine Zeitüberschreitung auftreten, oder sie können teilweise erfolgreich sein. Um den Status aller Backups einer Web-App anzuzeigen, senden Sie eine **GET**-Anforderung an die URL `https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/backups`.
+Je nachdem, wie groß die App ist, kann die Erstellung eines Backups einige Zeit dauern. Für Backups können auch Fehler oder eine Zeitüberschreitung auftreten, oder sie können teilweise erfolgreich sein. Um den Status aller Backups einer App anzuzeigen, senden Sie eine **GET**-Anforderung an die URL `https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/backups`.
 
 Um den Status eines bestimmten Backups anzuzeigen, senden Sie eine GET-Anforderung an die URL `https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/backups/{backupId}`.
 
@@ -174,9 +174,9 @@ Der Status eines Backups ist ein enumerierter Typ. Hier sind alle möglichen Sta
 * 8 – DeleteFailed: Das Backup konnte nicht gelöscht werden. Dies kann auftreten, wenn die SAS-URL, die zum Erstellen des Backups verwendet wurde, abgelaufen ist.
 * 9 – Deleted: Das Backup wurde erfolgreich gelöscht.
 
-<a name="restore-web-app"></a>
-## Wiederherstellen einer Web-App aus einem Backup
-Wenn die Web-App gelöscht wurde oder wenn Sie die Web-App auf eine vorherige Version zurücksetzen möchten, können Sie die App aus einem Backup wiederherstellen. Um eine Wiederherstellung aufzurufen, senden Sie eine **POST**-Anforderung an die URL `https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/backups/{id}/restore`.
+<a name="restore-app"></a>
+## Wiederherstellen einer App aus einem Backup
+Wenn die App gelöscht wurde oder wenn Sie die App auf eine vorherige Version zurücksetzen möchten, können Sie die App aus einem Backup wiederherstellen. Um eine Wiederherstellung aufzurufen, senden Sie eine **POST**-Anforderung an die URL `https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/backups/{id}/restore`.
 
 Hier ist dargestellt, wie die URL für unsere Beispielwebsite aussieht. `https://management.azure.com/subscriptions/00001111-2222-3333-4444-555566667777/resourceGroups/Default-Web-WestUS/providers/Microsoft.Web/sites/backuprestoreapiexamples/backups/1/restore`
 
@@ -199,18 +199,18 @@ Senden Sie im Anforderungstext ein JSON-Objekt, das die Eigenschaften für den W
 }
 ```
 
-### Wiederherstellen einer neuen Web-App
-Es kann vorkommen, dass Sie beim Wiederherstellen eines Backups eine neue Web-App erstellen möchten, anstatt eine bereits vorhandene Web-App zu überschreiben. Ändern Sie hierfür die Anforderungs-URL so, dass sie auf die neue Web-App zeigt, die Sie erstellen möchten. Ändern Sie außerdem die **overwrite**-Eigenschaft im JSON-Code in **false**.
+### Wiederherstellen als neue App
+Es kann vorkommen, dass Sie beim Wiederherstellen eines Backups eine neue App erstellen möchten, anstatt eine bereits vorhandene App zu überschreiben. Ändern Sie hierfür die Anforderungs-URL so, dass sie auf die neue App zeigt, die Sie erstellen möchten. Ändern Sie außerdem die **overwrite**-Eigenschaft im JSON-Code in **false**.
 
 <a name="delete-app-backup"></a>
-## Löschen eines Web-App-Backups
+## Löschen eines App-Backups
 Wenn Sie ein Backup löschen möchten, senden Sie eine **DELETE**-Anforderung an die URL `https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/backups/{backupId}`.
 
 Hier ist dargestellt, wie die URL für unsere Beispielwebsite aussieht. `https://management.azure.com/subscriptions/00001111-2222-3333-4444-555566667777/resourceGroups/Default-Web-WestUS/providers/Microsoft.Web/sites/backuprestoreapiexamples/backups/1`
 
 <a name="manage-sas-url"></a>
 ## Verwalten der SAS-URL eines Backups
-Von Azure-Web-Apps wird versucht, Ihr Backup aus dem Azure-Speicher zu löschen, indem die SAS-URL verwendet wird, die beim Erstellen des Backups angegeben wurde. Wenn diese SAS-URL nicht mehr gültig ist, kann das Backup nicht über die REST-API gelöscht werden. Aber Sie können die SAS-URL, die einem Backup zugeordnet ist, aktualisieren, indem Sie eine **POST**-Anforderung an die URL `https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/backups/{id}/list` senden.
+Azure App Service versucht, Ihr Backup aus Azure Storage zu löschen. Dazu wird die beim Erstellen des Backups angegebene SAS-URL verwendet. Wenn diese SAS-URL nicht mehr gültig ist, kann das Backup nicht über die REST-API gelöscht werden. Aber Sie können die SAS-URL, die einem Backup zugeordnet ist, aktualisieren, indem Sie eine **POST**-Anforderung an die URL `https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/backups/{id}/list` senden.
 
 Hier ist dargestellt, wie die URL für unsere Beispielwebsite aussieht. `https://management.azure.com/subscriptions/00001111-2222-3333-4444-555566667777/resourceGroups/Default-Web-WestUS/providers/Microsoft.Web/sites/backuprestoreapiexamples/backups/1/list`
 
@@ -230,4 +230,4 @@ Senden Sie im Anforderungstext ein JSON-Objekt, das die neue SAS-URL enthält. B
 <!-- IMAGES -->
 [SampleWebsiteInformation]: ./media/websites-csm-backup/01siteconfig.png
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1223_2015-->

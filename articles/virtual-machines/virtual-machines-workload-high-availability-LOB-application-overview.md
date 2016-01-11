@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="Windows" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/09/2015" 
+	ms.date="12/17/2015" 
 	ms.author="josephd"/>
 
 # Bereitstellen einer hochverfügbaren Branchenanwendung in Azure
@@ -34,10 +34,45 @@ Hier die Konfiguration mit Platzhalternamen für die Server:
  
 Mindestens zwei Computer pro Rolle stellen eine hohe Verfügbarkeit sicher. Alle virtuellen Computer befinden sich an einem einzigen Azure-Standort (auch als "Region" bezeichnet). Jede Gruppe virtueller Computer einer bestimmten Rolle befindet sich in einer eigenen Verfügbarkeitsgruppe.
 
+## Stückliste
+
+Diese Basiskonfiguration erfordert den folgenden Satz von Azure-Diensten und -Komponenten:
+
+- Sieben virtuelle Computer
+- Vier zusätzliche Datenträger für die Domänencontroller und die virtuellen Computer, auf denen SQL Server ausgeführt wird
+- Drei Verfügbarkeitsgruppen
+- Ein standortübergreifendes virtuelles Netzwerk
+- Zwei Speicherkonten
+
+Nachfolgend sind die virtuellen Computer und deren Standardgrößen für diese Konfiguration aufgeführt.
+
+Element | Beschreibung des virtuellen Computers | Katalogimage | Standardgröße 
+--- | --- | --- | --- 
+1\. | Erster Domänencontroller | Windows Server 2012 R2 Datacenter | D1
+2\. | Zweiter Domänencontroller | Windows Server 2012 R2 Datacenter | D1
+3\. | Primärer Datenbankserver | Microsoft SQL Server 2014 Enterprise – Windows Server 2012 R2 | D4
+4\. | Sekundärer Datenbankserver | Microsoft SQL Server 2014 Enterprise – Windows Server 2012 R2 | D4
+5\. | Mehrheitsknoten des Clusters | Windows Server 2012 R2 Datacenter | D1
+6\. | Erster Webserver | Windows Server 2012 R2 Datacenter | D3
+7\. | Zweiter Webserver | Windows Server 2012 R2 Datacenter | D3
+
+Nutzen Sie zum Berechnen der geschätzten Kosten für diese Konfiguration den [Azure-Preisrechner](https://azure.microsoft.com/pricing/calculator/).
+
+1. Klicken Sie unter **Module** auf **Compute** und dann so oft auf **Virtuelle Computer**, bis Sie eine Liste mit sieben virtuellen Computern erstellt haben.
+2. Wählen Sie für jeden virtuellen Computer Folgendes:
+	- Die gewünschte Region
+	- **Windows** für den Typ
+	- **Standard** für die Preisstufe
+	- Die Standardgröße in der vorherigen Tabelle oder die gewünschte Größe für die **Instanzgröße**
+
+> [AZURE.NOTE]Der Azure-Preisrechner bezieht nicht die zusätzlichen Kosten für die SQL Server-Lizenz für die beiden virtuellen Computer ein, auf denen SQL Server 2014 Enterprise ausgeführt wird. Weitere Informationen finden Sie unter [Virtual Machines-Preise – SQL](https://azure.microsoft.com/pricing/details/virtual-machines/#Sql).
+
+## Bereitstellungsphasen
+
 Sie stellen diese Konfiguration in den folgenden Phasen bereit:
 
 - [Phase 1: Konfigurieren von Azure](virtual-machines-workload-high-availability-LOB-application-phase1.md): Erstellen Sie Speicherkonten, Verfügbarkeitsgruppen und ein standortübergreifendes virtuelles Netzwerk.
-- [Phase 2: Konfigurieren der Domänencontroller](virtual-machines-workload-high-availability-LOB-application-phase2.md): Erstellen und konfigurieren Sie Replikate der Domänencontroller für Active Directory-Domänendienste (AD DS).
+- [Phase 2: Konfigurieren der Domänencontroller](virtual-machines-workload-high-availability-LOB-application-phase2.md): Erstellen und konfigurieren Sie Replikate der Domänencontroller für Active Directory Domain Services (AD DS).
 - [Phase 3: Konfigurieren der SQL Server-Infrastruktur](virtual-machines-workload-high-availability-LOB-application-phase3.md): Erstellen und konfigurieren Sie die virtuellen Computer, auf denen SQL Server ausgeführt wird, und aktivieren Sie SQL Server-AlwaysOn-Verfügbarkeitsgruppen.
 - [Phase 4: Konfigurieren der Webserver](virtual-machines-workload-high-availability-LOB-application-phase4.md): Erstellen und konfigurieren Sie die beiden virtuellen Webservercomputer.
 - [Phase 5: Hinzufügen der Anwendungsdatenbanken zu einer SQL Server-AlwaysOn-Verfügbarkeitsgruppe](virtual-machines-workload-high-availability-LOB-application-phase5.md): Bereiten Sie die Datenbanken für die Branchenanwendung vor, und fügen Sie sie zu einer SQL Server-AlwaysOn-Verfügbarkeitsgruppe hinzu.
@@ -58,14 +93,4 @@ Weitere Informationen zum Entwickeln von IT-Workloads für Azure finden Sie in d
 
 Zum Starten der Konfiguration für diese Arbeitsauslastung gehen Sie zu [Phase 1: Konfigurieren von Azure](virtual-machines-workload-high-availability-LOB-application-phase1.md).
 
-## Zusätzliche Ressourcen
-
-[Architekturblaupause für Branchenanwendungen](http://msdn.microsoft.com/dn630664)
-
-[Einrichten einer webbasierten Branchenanwendung in einer Hybrid Cloud zu Testzwecken](../virtual-network/virtual-networks-setup-lobapp-hybrid-cloud-testing.md)
-
-[Implementierungsrichtlinien für Azure-Infrastrukturdienste](virtual-machines-infrastructure-services-implementation-guidelines.md)
-
-[Azure-Infrastrukturdienste-Workload: SharePoint Server 2013-Farm](virtual-machines-workload-intranet-sharepoint-farm.md)
-
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1223_2015-->
