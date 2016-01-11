@@ -1,10 +1,10 @@
-<properties
-	pageTitle="Herstellen von Verbindungen mit SQL-Datenbanken mithilfe von Python unter Windows"
+<properties 
+	pageTitle="Herstellen von Verbindungen mit SQL-Datenbanken mithilfe von Python unter Windows" 
 	description="Zeigt ein Python-Codebeispiel zum Herstellen einer Verbindung mit Azure SQL-Datenbank von einem Windows-Client aus. Das Beispiel verwendet den pymssql-Treiber."
-	services="sql-database"
-	documentationCenter=""
-	authors="meet-bhagdev"
-	manager="jeffreyg"
+	services="sql-database" 
+	documentationCenter="" 
+	authors="meet-bhagdev" 
+	manager="jeffreyg" 
 	editor=""/>
 
 
@@ -14,14 +14,20 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="python"
 	ms.topic="article"
-	ms.date="12/08/2015"
+	ms.date="12/17/2015"
 	ms.author="meetb"/>
 
 
 # Herstellen von Verbindungen mit SQL-Datenbanken mithilfe von Python unter Windows
 
 
-[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
+> [AZURE.SELECTOR]
+- [C#](sql-database-develop-dotnet-simple.md)
+- [PHP](sql-database-develop-php-simple-windows.md)
+- [Python](sql-database-develop-python-simple-windows.md)
+- [Ruby](sql-database-develop-ruby-simple-windows.md)
+- [Java](sql-database-develop-java-simple-windows.md)
+- [Node.js](sql-database-develop-nodejs-simple-windows.md)
 
 
 Dieses Thema zeigt ein in Python geschriebenes Codebeispiel. Das Beispiel wird auf einem Computer unter Windows ausgeführt. Das Beispiel stellt mithilfe des **pymssql**-Treibers eine Verbindung mit Azure SQL-Datenbank her.
@@ -43,7 +49,7 @@ Stellen Sie sicher, dass Sie die richtige WHL-Datei auswählen.
 Wählen Sie z. B. bei Verwendung von Python 2.7 auf einem 64-Bit-Computer die Datei "pymssql‑2.1.1‑cp27‑none‑win\_amd64.whl" aus. Speichern Sie die WHL-Datei nach dem Herunterladen im Ordner "C:/Python27".
 
 Installieren Sie danach an der Befehlszeile mithilfe von pip den pymssql-Treiber. Wechseln Sie zum Laufwerk "C:/Python27", und führen Sie Folgendes aus:
-
+	
 	pip install pymssql‑2.1.1‑cp27‑none‑win_amd64.whl
 
 Anweisungen zum Aktivieren der Verwendung von pip erhalten Sie [hier](http://stackoverflow.com/questions/4750806/how-to-install-pip-on-windows).
@@ -97,7 +103,7 @@ In diesem Beispiel erfahren Sie, wie Sie eine [INSERT](https://msdn.microsoft.co
 	    row = cursor.fetchone()
 
 
-## Schritt 5: Durchführen eines Rollbacks für eine Transaktion
+## Schritt 5: Durchführen eines Rollbacks für eine Transaktion
 
 
 Dieses Codebeispiel veranschaulicht die Verwendung von Transaktionen für folgende Aufgaben:
@@ -121,4 +127,4 @@ Dieses Codebeispiel veranschaulicht die Verwendung von Transaktionen für folgen
 
 Weitere Informationen finden Sie im [Python Developer Center](/develop/python/).
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1223_2015-->

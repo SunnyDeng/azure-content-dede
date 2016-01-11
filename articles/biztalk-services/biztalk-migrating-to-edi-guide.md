@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/07/2015"
+	ms.date="12/17/2015"
 	ms.author="mandia"/>
 
 
@@ -104,21 +104,21 @@ Ein weiteres Beispiel ist der Ausdruckszuordnungsvorgang **If-Then-Else**. Im Bi
 
 ### Migrieren von BizTalk Server-Zuordnungen
 
-Microsoft Azure BizTalk Services bietet ein Tool zum Migrieren von BizTalk Server-Zuordnungen zu BizTalk Services-Transformationen. Das **BTMMigrationTool** ist Teil des Toolpakets aus dem BizTalk Services-SDK und kann [hier](http://go.microsoft.com/fwlink/p/?LinkId=235057) heruntergeladen werden. Weitere Informationen zum Tool finden Sie unter [Konvertieren einer BizTalk-Zuordnung in eine BizTalk Services-Transformation](https://msdn.microsoft.com/library/windowsazure/hh949812.aspx).
+Microsoft Azure BizTalk Services bietet ein Tool zum Migrieren von BizTalk Server-Zuordnungen zu BizTalk Services-Transformationen. Das **BTMMigrationTool** ist als Teil des **Tool**-Pakets verfügbar, das mit dem [Download für das BizTalk Services-SDK](http://go.microsoft.com/fwlink/p/?LinkId=235057) verfügbar ist. Weitere Informationen zum Tool finden Sie unter [Konvertieren einer BizTalk-Zuordnung in eine BizTalk Services-Transformation](https://msdn.microsoft.com/library/windowsazure/hh949812.aspx).
 
-Sie können sich auch das Beispiel von BizTalk-MVP Sandro Pereira zum Migrieren von BizTalk Server-Zuordnungen zu BizTalk Services-Transformationen ansehen. Dieses Beispiel finden Sie [hier](http://social.technet.microsoft.com/wiki/contents/articles/23220.migrating-biztalk-server-maps-to-windows-azure-biztalk-services-wabs-maps.aspx).
+Sie können sich auch das Beispiel von BizTalk-MVP Sandro Pereira zum [Migrieren von BizTalk Server-Zuordnungen zu BizTalk Services-Transformationen](http://social.technet.microsoft.com/wiki/contents/articles/23220.migrating-biztalk-server-maps-to-windows-azure-biztalk-services-wabs-maps.aspx) ansehen.
 
 ## Orchestrierungen
 
 Wenn Sie BizTalk Server-Orchestrierungen zu Microsoft Azure migrieren möchten, müssen die Orchestrierungen neu geschrieben werden, da Microsoft Azure die Ausführung von BizTalk Server-Orchestrierungen nicht unterstützt. Die Orchestrierungsfunktion kann zu einem Windows Workflow Foundation 4.0 (WF4)-Dienst umgeschrieben werden. Dies wäre eine vollständige Überarbeitung, da derzeit keine Migration von BizTalk Server-Orchestrierungen zu WF4 zur Verfügung steht. Im Anschluss finden Sie einige Ressourcen für Windows Workflow:
 
-- *So integrieren Sie einen Dienst für WCF-Workflows mit Service Bus-Warteschlangen und -Themen* von Paolo Salvatori. Klicken Sie [hier](https://msdn.microsoft.com/library/azure/hh709041.aspx).
+- [*So integrieren Sie einen Dienst für WCF-Workflows mit Service Bus-Warteschlangen und -Themen*](https://msdn.microsoft.com/library/azure/hh709041.aspx) von Paolo Salvatori. 
 
-- *Erstellen von Apps mit Windows Workflow Foundation und Azure* von der Build 2011-Konferenz. Klicken Sie [hier](http://go.microsoft.com/fwlink/p/?LinkId=237314).
+- [*Erstellen von Apps mit Windows Workflow Foundation und Azure*](http://go.microsoft.com/fwlink/p/?LinkId=237314) von der Build 2011-Konferenz.
 
-- *Windows Workflow Foundation Developer Center bei MSDN*. Klicken Sie [hier](http://go.microsoft.com/fwlink/p/?LinkId=237315).
+- [*Windows Workflow Foundation Developer Center*](http://go.microsoft.com/fwlink/p/?LinkId=237315) auf MSDN.
 
-- *Dokumentation zu Windows Workflow Foundation 4 (WF4) bei MSDN*. Klicken Sie [hier](https://msdn.microsoft.com/library/dd489441(v=vs.100).aspx).
+- [*Dokumentation zu Windows Workflow Foundation 4 (WF4)*](https://msdn.microsoft.com/library/dd489441.aspx) auf MSDN.
 
 ## Weitere Überlegungen
 
@@ -142,4 +142,4 @@ Microsoft Azure BizTalk Services wird regelmäßig mit weiteren Features und Fun
 
 [EDImessageflow]: ./media/biztalk-migrating-to-edi-guide/IC719455.png
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1223_2015-->

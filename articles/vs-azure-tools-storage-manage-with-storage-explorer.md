@@ -3,7 +3,7 @@
 	description="Beschreibt die Erstellung und Verwaltung von Azure-Speicherressourcen mithilfe der Vorschauversion des Microsoft Azure-Speicher-Explorers."
 	services="visual-studio-online"
 	documentationCenter="na"
-	authors="kempb"
+	authors="TomArcher"
 	manager="douge"
 	editor="tlee" />
 
@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="na"
 	ms.date="11/17/2015"
-	ms.author="kempb" />
+	ms.author="tarcher" />
 
 # Verwalten von Azure-Speicherressourcen mit dem Speicher-Explorer (Vorschauversion)
 
@@ -182,4 +182,4 @@ Informieren Sie sich in den Artikeln unter [Einführung in Microsoft Azure Stora
 [19]: ./media/vs-azure-tools-storage-manage-with-storage-explorer/ManageSAS3c.png
 [20]: ./media/vs-azure-tools-storage-manage-with-storage-explorer/ManageSAS4c.png
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1223_2015-->

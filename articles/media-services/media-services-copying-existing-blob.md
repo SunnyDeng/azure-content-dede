@@ -26,7 +26,7 @@ Ihre Blobs können sich in einem Speicherkonto befinden, das einem oder das kein
 
 ##Beispiel herunterladen
 
-Laden Sie [hier](http://azure.microsoft.com/documentation/samples/media-services-dotnet-copy-blob-into-asset/) ein Beispiel herunter, und führen Sie es aus.
+Laden Sie [hier](http://azure.microsoft.com/documentation/samples/media-services-dotnet-copy-blob-into-asset/) ein Beispiel herunter und führen Sie es aus.
 
 ##Voraussetzungen
 
@@ -227,6 +227,7 @@ Mit dem Codebeispiel unten werden die folgenden Aufgaben ausgeführt:
 		            Where(f => f.Name.EndsWith(".ism", StringComparison.OrdinalIgnoreCase)).First();
 		
 		        // Create a 30-day readonly access policy. 
+            // You cannot create a streaming locator using an AccessPolicy that includes write or delete permissions.            
 		        IAccessPolicy policy = _context.AccessPolicies.Create("Streaming policy",
 		            TimeSpan.FromDays(30),
 		            AccessPermissions.Read);
@@ -315,4 +316,4 @@ Mit dem Codebeispiel unten werden die folgenden Aufgaben ausgeführt:
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1223_2015-->

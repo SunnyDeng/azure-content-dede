@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Azure-Suchdienst-REST-API Version 2015-02-28-Preview | Microsoft Azure | Gehosteter Cloudsuchdienst"
-   description="Azure-Suchdienst-REST-API Version 2015-02-28-Preview beinhaltet experimentelle Features wie Lucene-Abfragesyntax und moreLikeThis-Suchvorgänge."
+   pageTitle="Azure-Suchdienst-REST-API Version 2015-02-28-Preview | Microsoft Azure"
+   description="Azure-Suchdienst-REST-API Version 2015-02-28-Preview beinhaltet experimentelle Features wie Lucene-Abfragesyntax und benutzerdefinierte Analysen."
    services="search"
    documentationCenter="na"
    authors="HeidiSteen"
@@ -13,26 +13,20 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="search"
-   ms.date="11/04/2015"
+   ms.date="12/21/2015"
    ms.author="heidist"/>
 
 # Azure-Suchdienst-REST-API: Version 2015-02-28-Preview
 
-Azure Search ist ein in Microsoft Azure gehosteter Cloudsuchdienst. Dieser Artikel bildet die Referenzdokumentation zu `api-version=2015-02-28-Preview`. Diese Vorschauversion erweitert die aktuelle allgemein verfügbare Version [api-version=2015-02-28](https://msdn.microsoft.com/library/dn798935.aspx) durch folgende experimentelle Features erweitert:
+Dieser Artikel bildet die Referenzdokumentation zu `api-version=2015-02-28-Preview`. Diese Vorschauversion erweitert die aktuelle allgemein verfügbare Version [api-version=2015-02-28](https://msdn.microsoft.com/library/dn798935.aspx) durch folgende experimentelle Features erweitert:
 
-- Die [Lucene-Abfragesyntax](https://msdn.microsoft.com/library/azure/mt589323.aspx) ist eine Implementierung des [Lucene-Abfrageparsers](https://lucene.apache.org/core/4_10_0/queryparser/org/apache/lucene/queryparser/classic/package-summary.html), die Sie mit dem queryType-Parameter in den [Suchvorgängen](#SearchDocs) angeben können.
+- [Lucene-Abfragesyntax](https://msdn.microsoft.com/library/mt589323.aspx) kann jetzt für Abfragen in Azure Search verwendet werden. Zum Verwenden des Lucene-Abfrageparsers geben Sie bei Suchvorgängen `queryType` an.
+- [Benutzerdefinierte Analysen](https://msdn.microsoft.com/library/azure/mt605304.aspx) ermöglichen es Ihnen, die Kontrolle über den Prozess der Konvertierung von Text in indizierbare/durchsuchbare Token zu übernehmen.
 - `moreLikeThis` ist ein in [Suchvorgängen](#SearchDocs) verwendeter Abfrageparameter, mit dem zu einem bestimmten Dokument weitere damit verbundene Dokumente ermittelt werden.
-
-Weitere zusätzliche Features in `2015-02-28-Preview` werden separat dokumentiert. Diese umfassen:
-
-- [Bewertungsprofile](search-api-scoring-profiles-2015-02-28-preview.md)
-- [Indexer](search-api-indexers-2015-02-28-preview.md)
 
 Der Azure-Suchdienst ist in mehreren Versionen verfügbar. Weitere Informationen erhalten Sie im Artikel [Versionsverwaltung für den Azure-Suchdienst](http://msdn.microsoft.com/library/azure/dn864560.aspx).
 
 ##In diesem Dokument behandelte APIs
-
-Die Azure Search-Dienst-API unterstützt zwei URL-Syntaxversionen für API-Vorgänge: einfach und OData (Details finden Sie unter [Unterstützung für OData (Azure Search-API)](http://msdn.microsoft.com/library/azure/dn798932.aspx)). Die folgende Liste zeigt die einfache Syntax.
 
 [Index erstellen](#CreateIndex)
 
@@ -153,7 +147,7 @@ In der folgenden Liste werden die erforderlichen und optionalen Anforderungshead
 - `api-key`: Erforderlich. Mit dem `api-key` wird
 - die Anforderung für den Suchdienst authentifiziert. Es handelt sich um einen für Ihren Dienst eindeutigen Zeichenfolgewert. Die Anforderung **Index erstellen** muss einen `api-key`-Header enthalten, der auf Ihren Administratorschlüssel (keinen Abfrageschlüssel) festgelegt ist.
 
-Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im klassischen Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdiensts im Portal](search-create-service-portal.md).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdiensts im Portal](search-create-service-portal.md).
 
 <a name="RequestData"></a> **Syntax des Anforderungstexts**
 
@@ -185,8 +179,10 @@ Die Syntax für die Strukturierung der Anforderungsnutzlast ist wie folgt. Eine 
           "sortable": true (default where applicable) | false (Collection(Edm.String) fields cannot be sortable),
           "facetable": true (default where applicable) | false (Edm.GeographyPoint fields cannot be facetable),
           "key": true | false (default, only Edm.String fields can be keys),
-          "retrievable": true (default) | false,
-		  "analyzer": "name of text analyzer"
+          "retrievable": true (default) | false,		      
+          "analyzer": "name of the analyzer used for search and indexing", (only if 'searchAnalyzer' and 'indexAnalyzer' are not set)
+          "searchAnalyzer": "name of the search analyzer", (only if 'indexAnalyzer' is set and 'analyzer' is not set)
+          "indexAnalyzer": "name of the indexing analyzer" (only if 'searchAnalyzer' is set and 'analyzer' is not set)
         }
       ],
       "suggesters": [
@@ -267,7 +263,11 @@ Beim Erstellen eines Indexes können die folgenden Attribute festgelegt werden. 
 
 `retrievable`: Legt fest, ob das Feld in einem Suchergebnis zurückgegeben werden kann. Dies ist hilfreich, wenn Sie ein Feld (z. B. die Gewinnspanne) zum Filtern, Sortieren oder Bewerten verwenden möchten, das Feld jedoch für den Endbenutzer nicht sichtbar sein soll. Dieses Attribut muss für `key`-Felder auf `true` gesetzt sein.
 
-`analyzer`: Legt den Namen der für das Feld zu verwendenden Textanalyse fest. Die zulässigen Werte finden Sie unter [Sprachunterstützung](#LanguageSupport). Diese Option kann nur mit Feldern vom Typ `searchable` verwendet werden. Eine einmal für ein Feld gewählte Analysemethode kann nicht mehr geändert werden.
+`analyzer` – Legt den Namen des zu verwendenden Analyseprogramms für das Feld zur Such- und Indizierungszeit fest. Die zulässigen Werte finden Sie unter [Analysen](https://msdn.microsoft.com/library/mt605304.aspx). Diese Option kann nur mit `searchable`-Feldern verwendet und nicht zusammen mit `searchAnalyzer` oder `indexAnalyzer` festgelegt werden. Eine einmal für ein Feld gewählte Analysemethode kann nicht mehr geändert werden.
+
+`searchAnalyzer` – Legt den Namen des Analyseprogramms für das Feld zur Suchzeit fest. Die zulässigen Werte finden Sie unter [Analysen](https://msdn.microsoft.com/library/mt605304.aspx). Diese Option kann nur mit Feldern vom Typ `searchable` verwendet werden. Sie muss zusammen mit `indexAnalyzer` festgelegt werden und kann nicht zusammen mit der Option `analyzer` festgelegt werden. Eine einmal für ein Feld gewählte Analysemethode kann nicht mehr geändert werden.
+
+`indexAnalyzer` – Legt den Namen des Analyseprogramms für das Feld zur Indizierungszeit fest. Die zulässigen Werte finden Sie unter [Analysen](https://msdn.microsoft.com/library/mt605304.aspx). Diese Option kann nur mit Feldern vom Typ `searchable` verwendet werden. Sie muss zusammen mit `searchAnalyzer` festgelegt werden und kann nicht zusammen mit der Option `analyzer` festgelegt werden. Eine einmal für ein Feld gewählte Analysemethode kann nicht mehr geändert werden.
 
 `suggesters`: Legt den Suchmodus und die Felder fest, die als Quelle für den Inhalt von Vorschlägen dienen. Details finden Sie unter [Vorschläge](#Suggesters).
 
@@ -455,7 +455,7 @@ Es folgt die Liste der unterstützten Sprachen sowie die Namen der Lucene- und M
 	</tr>
     <tr>
 		<td>Koreanisch</td>
-		<td></td>
+		<td>ko.microsoft</td>
 		<td>ko.lucene</td>
 	</tr>
     <tr>
@@ -733,7 +733,7 @@ In der folgenden Liste werden die erforderlichen und optionalen Anforderungshead
 - `Content-Type`: Erforderlich. Auf `application/json` festlegen.
 - `api-key`: Erforderlich. `api-key` wird zum Authentifizieren der Anforderung beim Search-Dienst verwendet. Es handelt sich um einen für Ihren Dienst eindeutigen Zeichenfolgewert. Die Anforderung **Index aktualisieren** muss einen `api-key`-Header enthalten, der auf Ihren Administratorschlüssel (keinen Abfrageschlüssel) festgelegt ist.
 
-Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im klassischen Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdiensts im Portal](search-create-service-portal.md).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdienstes im Portal](search-create-service-portal.md).
 
 **Syntax des Anforderungstextes**
 
@@ -752,8 +752,10 @@ Die für die Indexerstellung verwendete Schemasyntax ist der Einfachheit halber 
           "sortable": true (default where applicable) | false (Collection(Edm.String) fields cannot be sortable),
           "facetable": true (default where applicable) | false (Edm.GeographyPoint fields cannot be facetable),
           "key": true | false (default, only Edm.String fields can be keys),
-          "retrievable": true (default) | false,
-		  "analyzer": "name of text analyzer"
+          "retrievable": true (default) | false, 
+		  "analyzer": "name of the analyzer used for search and indexing", (only if 'searchAnalyzer' and 'indexAnalyzer' are not set)
+          "searchAnalyzer": "name of the search analyzer", (only if 'indexAnalyzer' is set and 'analyzer' is not set)
+          "indexAnalyzer": "name of the indexing analyzer" (only if 'searchAnalyzer' is set and 'analyzer' is not set)
         }
       ],
       "suggesters": [
@@ -833,7 +835,7 @@ In der folgenden Liste werden die erforderlichen und optionalen Anforderungshead
 
 - `api-key`: Erforderlich. `api-key` wird zum Authentifizieren der Anforderung beim Search-Dienst verwendet. Es handelt sich um einen für Ihren Dienst eindeutigen Zeichenfolgewert. Die Anforderung **Index auflisten** muss einen `api-key` enthalten, der auf einen Administratorschlüssel (keinen Abfrageschlüssel) festgelegt ist.
 
-Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im klassischen Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdiensts im Portal](search-create-service-portal.md).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdienstes im Portal](search-create-service-portal.md).
 
 **Anforderungstext**
 
@@ -900,7 +902,7 @@ In der folgenden Liste werden die erforderlichen und optionalen Anforderungshead
 
 - `api-key`: Mit `api-key` wird die Anforderung bei Ihrem Suchdienst authentifiziert. Es handelt sich um einen für Ihren Dienst eindeutigen Zeichenfolgewert. Die Anforderung **Index abrufen** muss einen `api-key` enthalten, der auf einen Administratorschlüssel (keinen Abfrageschlüssel) festgelegt ist.
 
-Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im klassischen Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdiensts im Portal](search-create-service-portal.md).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdienstes im Portal](search-create-service-portal.md).
 
 **Anforderungstext**
 
@@ -915,7 +917,7 @@ Unter [Erstellen und Aktualisieren eines Index](#CreateUpdateIndexExample) wird 
 <a name="DeleteIndex"></a>
 ## Index löschen
 
-Mit dem Vorgang **Index löschen** wird ein Index samt den damit verknüpften Dokumenten aus Ihrem Azure Search-Dienst entfernt. Sie können den Indexnamen im Dienst-Dashboard im klassischen Azure-Portal oder von der API abrufen. Details finden Sie unter [Indizes auflisten](#ListIndexes).
+Mit dem Vorgang **Index löschen** wird ein Index samt den damit verknüpften Dokumenten aus Ihrem Azure-Suchdienst entfernt. Sie können den Indexnamen im Dienst-Dashboard im Azure-Portal oder von der API abrufen. Details finden Sie unter [Indizes auflisten](#ListIndexes).
 
     DELETE https://[service name].search.windows.net/indexes/[index name]?api-version=[api-version]
     api-key: [admin key]
@@ -934,7 +936,7 @@ In der folgenden Liste werden die erforderlichen und optionalen Anforderungshead
 
 - `api-key`: Erforderlich. `api-key` wird zum Authentifizieren der Anforderung beim Search-Dienst verwendet. Es handelt sich um einen für Ihre Dienst-URL eindeutigen Zeichenfolgewert. Die Anforderung **Index löschen** muss einen `api-key`-Header enthalten, der auf Ihren Administratorschlüssel (keinen Abfrageschlüssel) festgelegt ist.
 
-Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im klassischen Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdiensts im Portal](search-create-service-portal.md).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdienstes im Portal](search-create-service-portal.md).
 
 **Anforderungstext**
 
@@ -967,7 +969,7 @@ In der folgenden Liste werden die erforderlichen und optionalen Anforderungshead
 
 - `api-key`: Mit `api-key` wird die Anforderung bei Ihrem Suchdienst authentifiziert. Es handelt sich um einen für Ihren Dienst eindeutigen Zeichenfolgewert. Die Anforderung **Indexstatistik abrufen** muss einen `api-key` enthalten, der auf einen Administratorschlüssel (keinen Abfrageschlüssel) festgelegt ist.
 
-Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im klassischen Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdiensts im Portal](search-create-service-portal.md).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdienstes im Portal](search-create-service-portal.md).
 
 **Anforderungstext**
 
@@ -1022,7 +1024,7 @@ In der folgenden Liste werden die erforderlichen und optionalen Anforderungshead
 - `Content-Type`: Erforderlich. Auf `application/json` festlegen.
 - `api-key`: Erforderlich. `api-key` wird zum Authentifizieren der Anforderung beim Search-Dienst verwendet. Es handelt sich um einen für Ihren Dienst eindeutigen Zeichenfolgewert. Die Anforderung **Index hinzufügen** muss einen `api-key`-Header enthalten, der auf Ihren Administratorschlüssel (keinen Abfrageschlüssel) festgelegt ist.
 
-Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im klassischen Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdiensts im Portal](.search-create-service-portal.md).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdienstes im Portal](.search-create-service-portal.md).
 
 **Anforderungstext**
 
@@ -1174,7 +1176,7 @@ Darüber hinaus ist die URL-Codierung nur erforderlich, wenn Sie die REST-API di
 
 `searchFields=[string]` (optional): Die Liste der kommagetrennten Feldnamen, die für den angegebenen Text durchsucht werden. Zielfelder müssen als `searchable` gekennzeichnet sein.
 
-`queryType=simple|full` (optional, Standardeinstellung ist `simple`): Bei Einstellung auf „Einfach“ wird Suchtext mit einer einfachen Abfragesprache interpretiert, bei der Symbole wie +, * und "" zulässig sind. Abfragen werden in jedem Dokument standardmäßig über alle durchsuchbaren Felder (bzw. in `searchFields` angegebene Felder) hinweg ausgewertet. Wenn der Abfragetyp auf `full` festgelegt ist, wird Suchtext mithilfe der Lucene-Abfragesprache interpretiert, bei der feldspezifische und gewichtete Suchen möglich sind. Ausführlichere Informationen zur Suchsyntax finden Sie unter [Einfache Abfragesyntax](https://msdn.microsoft.com/library/dn798920.aspx) und [Lucene-Abfragesyntax](https://msdn.microsoft.com/library/azure/mt589323.aspx).
+`queryType=simple|full` (optional, Standardeinstellung ist `simple`): Bei Einstellung auf „Einfach“ wird Suchtext mit einer einfachen Abfragesprache interpretiert, bei der Symbole wie +, * und "" zulässig sind. Abfragen werden in jedem Dokument standardmäßig über alle durchsuchbaren Felder (bzw. in `searchFields` angegebene Felder) hinweg ausgewertet. Wenn der Abfragetyp auf `full` festgelegt ist, wird Suchtext mithilfe der Lucene-Abfragesprache interpretiert, bei der feldspezifische und gewichtete Suchen möglich sind. Ausführlichere Informationen zur Suchsyntax finden Sie unter [Einfache Abfragesyntax](https://msdn.microsoft.com/library/dn798920.aspx) und [Lucene-Abfragesyntax](https://msdn.microsoft.com/library/mt589323.aspx).
  
 > [AZURE.NOTE]Die Bereichssuche wird in der Lucene-Abfragesprache nicht unterstützt, sondern nur $filter mit ähnlichen Funktionen.
 
@@ -1186,11 +1188,9 @@ Darüber hinaus ist die URL-Codierung nur erforderlich, wenn Sie die REST-API di
 
 `$top=#` (optional): Die Anzahl der abzurufenden Suchergebnisse. Kann mit `$skip` kombiniert werden, um clientseitiges Paging von Suchergebnissen zu implementieren.
 
-> [AZURE.NOTE]Azure Search verwendet ***serverseitiges Paging***, um zu verhindern, dass bei Abfragen zu viele Dokumente auf einmal abgerufen werden. Die Standardseitengröße ist 50, die maximale Seitengröße ist 1000. Standardmäßig werden also von **Search** ohne Angabe von `$top` maximal 50 Ergebnisse zurückgegeben. Sind mehr als 50 Ergebnisse vorhanden, enthält die Antwort Informationen zum Abrufen der nächsten Seite mit ebenfalls maximal 50 Ergebnissen (siehe `@odata.nextLink` und `@search.nextPageParameters` im [folgenden Beispiel](#SearchResponse)). Analog dazu gilt: Wenn Sie für `$top` einen Wert über 1000 angeben und mehr als 1000 Ergebnisse vorliegen, werden lediglich die ersten 1000 Ergebnisse sowie Informationen zum Abrufen der nächsten Seite (ebenfalls mit maximal 1000 Ergebnissen) zurückgegeben.
-
 > [AZURE.NOTE]Wenn Sie **Search** mithilfe von „POST“ aufrufen, heißt dieser Parameter nicht `$top`, sondern `top`.
 
-`$count=true|false` (optional, Standardwert ist `false`): Gibt an, ob alle Ergebnisse abgerufen werden sollen. Wenn Sie diesen Wert auf `true` setzen, kann sich dies auf die Leistung auswirken. Beachten Sie, dass die zurückgegebene Anzahl ein Näherungswert ist.
+`$count=true|false` (optional, Standardwert ist `false`): Gibt an, ob alle Ergebnisse abgerufen werden sollen. Dies ist die Anzahl aller Dokumente, die den Parametern `search` und `$filter` entsprechen, wobei `$top` und `$skip` ignoriert werden. Wenn Sie diesen Wert auf `true` setzen, kann sich dies auf die Leistung auswirken. Beachten Sie, dass die zurückgegebene Anzahl ein Näherungswert ist.
 
 > [AZURE.NOTE]Wenn Sie **Search** mithilfe von „POST“ aufrufen, heißt dieser Parameter nicht `$count`, sondern `count`.
 
@@ -1254,7 +1254,7 @@ In der folgenden Liste werden die erforderlichen und optionalen Anforderungshead
 
 - `api-key`: Mit `api-key` wird die Anforderung bei Ihrem Suchdienst authentifiziert. Es handelt sich um einen für Ihre Dienst-URL eindeutigen Zeichenfolgewert. Für die **Suchanforderung** kann ein Administratorschlüssel oder ein Abfrageschlüssel für `api-key` festgelegt werden.
 
-Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im klassischen Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdiensts im Portal](search-create-service-portal.md).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdienstes im Portal](search-create-service-portal.md).
 
 **Anforderungstext**
 
@@ -1282,6 +1282,12 @@ POST:
       "top": #
     }
 
+**Fortsetzung der Teilsuchantworten**
+
+Manchmal kann Azure Search nicht alle angeforderten Ergebnisse in einer einzelnen Suchantwort zurückgeben. Dafür gibt es verschiedene Gründe, z. B. wenn die Abfrage zu viele Dokumente anfordert, da `$top` nicht angegeben ist, oder einen zu großen Wert für `$top` angibt. In solchen Fällen fügt Azure Search die Anmerkung `@odata.nextLink` im Antworttext ein, und wenn es sich um eine POST-Anforderung handelt, wird auch `@search.nextPageParameters` angegeben. Die Werte dieser Anmerkungen können Sie zum Formulieren einer weiteren Suchanforderung zum Abrufen des nächsten Teils der Suchantwort verwenden. Dies wird als ***Fortsetzung*** der ursprünglichen Suchanforderung bezeichnet, und die Anmerkungen werden in der Regel als ***Fortsetzungstoken*** bezeichnet. Im [folgenden Beispiel](#SearchResponse) finden Sie Details zur Syntax dieser Anmerkungen und wo diese im Antworttext angezeigt werden.
+
+Die Gründe für das Zurückgeben von Fortsetzungstoken durch Azure Search sind implementierungsspezifisch und können sich ändern. Stabile Clients sollten für die Behandlung von Fällen bereit sein, in denen weniger Dokumente als erwartet zurückgegeben werden und ein Fortsetzungstoken zum Abrufen von Dokumenten enthalten ist. Beachten Sie außerdem, dass Sie dieselbe HTTP-Methode wie die ursprüngliche Anforderung verwenden müssen, um den Vorgang fortzusetzen. Wenn Sie beispielsweise eine GET-Anforderung gesendet haben, muss auch für alle Fortsetzungsanforderungen, die Sie senden, GET verwendet werden (dasselbe gilt für POST).
+
 <a name="SearchResponse"></a> **Antwort**
 
 Bei erfolgreicher Antwort wird der Statuscode "200 OK" zurückgegeben.
@@ -1300,7 +1306,7 @@ Bei erfolgreicher Antwort wird der Statuscode "200 OK" zurückgegeben.
         ],
         ...
       },
-      "@search.nextPageParameters": { (request body to fetch the next page of results if result count exceeds page size and Search was called with POST)
+      "@search.nextPageParameters": { (request body to fetch the next page of results if not all results could be returned in this response and Search was called with POST)
         "count": ... (value from request body if present),
         "facets": ... (value from request body if present),
         "filter": ... (value from request body if present),
@@ -1332,7 +1338,7 @@ Bei erfolgreicher Antwort wird der Statuscode "200 OK" zurückgegeben.
         },
         ...
       ],
-      "@odata.nextLink": (URL to fetch the next page of results if result count exceeds page size; Applies to both GET and POST)
+      "@odata.nextLink": (URL to fetch the next page of results if not all results could be returned in this response; Applies to both GET and POST)
     }
 
 **Beispiele:**
@@ -1486,7 +1492,7 @@ Beachten Sie, dass jeweils nur ein Index abgefragt werden kann. Erstellen Sie f�
 
 Beachten Sie oben die Verwendung von `searchMode=all`. Durch Einbeziehen dieses Parameters wird der Standardwert für `searchMode=any` außer Kraft gesetzt. Dies stellt sicher, dass `-motel` "AND NOT" und nicht "OR NOT" bedeutet. Ohne `searchMode=all` wird "OR NOT" verwendet, womit Suchergebnisse erweitert anstatt eingeschränkt werden. Dies kann für manche Benutzer widersinnig sein.
 
-15) Suchen Sie Dokumente im Index mithilfe der [Lucene-Abfragesyntax](http://lucene.apache.org/core/4_10_4/queryparser/org/apache/lucene/queryparser/classic/package-summary.html#Overview). Bei dieser Abfrage werden Hotels zurückgegeben, bei denen das Kategoriefeld den Begriff „budget“ enthält und alle durchsuchbaren Felder die Wörter „recently renovated“ enthalten. Dokumente mit den Wörtern „recently renovated“ werden aufgrund des Term Boost-Werts (3) höher eingestuft.
+15) Suchen Sie Dokumente im Index mithilfe der [Lucene-Abfragesyntax](https://msdn.microsoft.com/library/mt589323.aspx). Bei dieser Abfrage werden Hotels zurückgegeben, bei denen das Kategoriefeld den Begriff „budget“ enthält und alle durchsuchbaren Felder die Wörter „recently renovated“ enthalten. Dokumente mit den Wörtern „recently renovated“ werden aufgrund des Term Boost-Werts (3) höher eingestuft.
 
     GET /indexes/hotels/docs?search=category:budget AND "recently renovated"^3&searchMode=all&api-version=2015-02-28-Preview&querytype=full
 
@@ -1531,7 +1537,7 @@ In der folgenden Liste werden die erforderlichen und optionalen Anforderungshead
 
 - `api-key`: Mit `api-key` wird die Anforderung bei Ihrem Suchdienst authentifiziert. Es handelt sich um einen für Ihre Dienst-URL eindeutigen Zeichenfolgewert. Für die Anforderung **Dokument suchen** kann ein Administratorschlüssel oder ein Abfrageschlüssel für `api-key` festgelegt werden.
 
-Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im klassischen Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdiensts im Portal](search-create-service-portal.md).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdienstes im Portal](search-create-service-portal.md).
 
 **Anforderungstext**
 
@@ -1579,7 +1585,7 @@ In der folgenden Liste werden die erforderlichen und optionalen Anforderungshead
 - `Accept`: Dieser Wert muss auf `text/plain` gesetzt werden.
 - `api-key`: Mit `api-key` wird die Anforderung bei Ihrem Suchdienst authentifiziert. Es handelt sich um einen für Ihre Dienst-URL eindeutigen Zeichenfolgewert. Für die Anforderung **Dokumentanzahl** kann ein Administratorschlüssel oder ein Abfrageschlüssel für `api-key` festgelegt werden.
 
-Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im klassischen Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdiensts im Portal](search-create-service-portal.md).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdienstes im Portal](search-create-service-portal.md).
 
 **Anforderungstext**
 
@@ -1660,7 +1666,7 @@ Darüber hinaus ist die URL-Codierung nur erforderlich, wenn Sie die REST-API di
 
 > [AZURE.NOTE]Wenn Sie **Suggestions** mithilfe von „POST“ aufrufen, heißt dieser Parameter nicht `$orderby`, sondern `orderby`.
 
-`$select=[string]` (optional): Eine Liste mit kommagetrennten Feldern, die abgerufen werden sollen. Wenn nicht anders angegeben, werden nur der Dokumentschlüssel und der Vorschlagstext zurückgegeben.
+`$select=[string]` (optional): Eine Liste mit kommagetrennten Feldern, die abgerufen werden sollen. Wenn nicht anders angegeben, werden nur der Dokumentschlüssel und der Vorschlagstext zurückgegeben. Sie können alle Felder explizit anfordern, indem Sie diesen Parameter auf `*` setzen.
 
 > [AZURE.NOTE]Wenn Sie **Suggestions** mithilfe von „POST“ aufrufen, heißt dieser Parameter nicht `$select`, sondern `select`.
 
@@ -1678,7 +1684,7 @@ In der folgenden Liste werden die erforderlichen und optionalen Anforderungshead
 
 - `api-key`: Mit `api-key` wird die Anforderung bei Ihrem Suchdienst authentifiziert. Es handelt sich um einen für Ihre Dienst-URL eindeutigen Zeichenfolgewert. Für die Anforderung **Vorschläge** kann ein Administratorschlüssel oder ein Abfrageschlüssel für `api-key` festgelegt werden.
 
-Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im klassischen Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdiensts im Portal](search-create-service-portal.md).
+Sie benötigen außerdem den Dienstnamen, um die URL der Anforderung zu erstellen. Sie können den Dienstnamen und den `api-key` in Ihrem Dienst-Dashboard im Azure-Portal abrufen. Hilfe bei der Seitennavigation finden Sie unter [Erstellen eines Azure-Suchdienstes im Portal](search-create-service-portal.md).
 
 **Anforderungstext**
 
@@ -1742,4 +1748,4 @@ Rufen Sie 5 Vorschläge mit der Teilsuche nach "lux" ab.
       "suggesterName": "sg"
     }
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1223_2015-->

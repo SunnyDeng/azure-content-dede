@@ -79,7 +79,7 @@ Gehen Sie folgendermaßen vor, um die PHP-Clientbibliotheken für Azure als PEAR
 		pear channel-discover pear.windowsazure.com
 3. Installieren Sie das PEAR-Paket:
 
-		pear install pear.windowsazure.com/WindowsAzure-0.4.0
+		pear install pear.windowsazure.com/WindowsAzure-0.4.1
 
 Nach dem Abschluss der Installation können Sie in Ihrer Anwendung einen Verweis auf die Klassenbibliotheken anlegen.
 
@@ -130,4 +130,4 @@ Weitere Informationen finden Sie im [PHP Developer Center](/develop/php/).
 [php-sdk-github]: http://go.microsoft.com/fwlink/?LinkId=252719
 [install-git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1223_2015-->

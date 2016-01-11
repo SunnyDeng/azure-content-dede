@@ -59,7 +59,7 @@ Sie können jetzt Benachrichtigungen senden, indem Sie diesen **user\_name** ver
 
 ![][4]
 
-> [AZURE.NOTE]Alle Benutzer, für die die App-Information „user\_name“ nicht festgelegt ist, erhalten keine Benachrichtigung.
+> [AZURE.NOTE]Alle Benutzer, für die die App-Information „user\_name“ nicht festgelegt ist, erhalten keine Benachrichtigung. Wenn die Benachrichtigungskampagne im Testmodus ausgeführt wird und Sie keine App-Informationen festgelegt haben, senden wir das „?“-Zeichen, um den Platzhalter zu ersetzen.
 
 2) Wenn von Mobile Engagement ein Gerät zum Senden dieser Benachrichtigung ausgewählt wird, wird diese App-Information geprüft, und der Wert im Platzhalter wird ersetzt. Wenn wir für einen Benutzer beispielsweise `str = "Scott"` festgelegt haben, wird die Geräteregistrierung mit der App-Information **user\_name = SCOTT** für den Benutzer zugeordnet, und dem Benutzer wird außerhalb der App eine Pushbenachrichtigung im folgenden Format angezeigt:
 
@@ -72,4 +72,4 @@ Sie können jetzt Benachrichtigungen senden, indem Sie diesen **user\_name** ver
 [4]: ./media/mobile-engagement-send-personalized-notifications/personal-notification.png
 [5]: ./media/mobile-engagement-send-personalized-notifications/notification.png
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1223_2015-->

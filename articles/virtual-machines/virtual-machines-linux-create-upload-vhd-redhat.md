@@ -262,7 +262,7 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
 
 8.	Registrieren Sie mit dem folgenden Befehl das Red Hat-Abonnement, um die Installation von Paketen aus dem RHEL-Repository zu ermöglichen:
 
-        # subscription-manager register –auto-attach --username=XXX --password=XXX
+        # subscription-manager register --auto-attach --username=XXX --password=XXX
 
 9.	Modifizieren Sie die Boot-Zeile des Kernels in Ihrer Grub-Konfiguration, um zusätzliche Kernel-Parameter für Azure einzubinden. Öffnen Sie dafür `/boot/grub/menu.lst` in einem Text-Editor, und stellen Sie sicher, dass der Standardkernel die folgenden Parameter enthält:
 
@@ -379,7 +379,7 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
 
 7.	Registrieren Sie mit dem folgenden Befehl das Red Hat-Abonnement, um die Installation von Paketen aus dem RHEL-Repository zu ermöglichen:
 
-        # subscription-manager register –auto-attach --username=XXX --password=XXX
+        # subscription-manager register --auto-attach --username=XXX --password=XXX
 
 8.	Modifizieren Sie die Boot-Zeile des Kernels in Ihrer Grub-Konfiguration, um zusätzliche Kernel-Parameter für Azure einzubinden. Öffnen Sie dazu `/etc/default/grub` in einem Text-Editor, und bearbeiten Sie den Parameter **GRUB\_CMDLINE\_LINUX**. Beispiel:
 
@@ -396,12 +396,22 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
 9.	Sobald Sie die oben beschriebene Bearbeitung von `/etc/default/grub` abgeschlossen haben, führen Sie den folgenden Befehl zum erneuten Erstellen der Grub-Konfiguration aus:
 
         # grub2-mkconfig -o /boot/grub2/grub.cfg
+        
+10.	Fügen Sie Hyper-V-Module zu initramfs hinzu:
 
-10.	Deinstallieren Sie die Cloud-Initialisierung:
+    Bearbeiten Sie `/etc/dracut.conf` und fügen Sie Inhalt hinzu:
+
+        add_drivers+=”hv_vmbus hv_netvsc hv_storvsc”
+
+    Erstellen Sie initramfs neu:
+
+        # dracut –f -v
+        
+11.	Deinstallieren Sie die Cloud-Initialisierung:
 
         # yum remove cloud-init
 
-11.	Stellen Sie sicher, dass der SSH-Server installiert und konfiguriert ist, damit er beim Starten hochfährt:
+12.	Stellen Sie sicher, dass der SSH-Server installiert und konfiguriert ist, damit er beim Starten hochfährt:
 
         # systemctl enable sshd
 
@@ -414,12 +424,12 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
 
         systemctl restart sshd	
 
-12.	Das WALinuxAgent-Paket `WALinuxAgent-<version>` wurde in das Fedora EPEL 6-Repository übertragen. Aktivieren Sie das EPEL-Repository, indem Sie den folgenden Befehl ausführen:
+13.	Das WALinuxAgent-Paket `WALinuxAgent-<version>` wurde in das Fedora EPEL 6-Repository übertragen. Aktivieren Sie das EPEL-Repository, indem Sie den folgenden Befehl ausführen:
 
         # wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
         # rpm -ivh epel-release-7-5.noarch.rpm
 
-13.	Installieren Sie den Azure Linux Agent, indem Sie den folgenden Befehl ausführen:
+14.	Installieren Sie den Azure Linux Agent, indem Sie den folgenden Befehl ausführen:
 
         # yum install WALinuxAgent
 
@@ -427,7 +437,7 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
 
         # systemctl enable waagent.service
 
-14.	Richten Sie keinen SWAP-Raum auf dem BS-Datenträger ein. Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein temporärer Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Passen Sie nach dem Installieren des Azure Linux-Agents (siehe vorheriger Schritt) die folgenden Parameter in `/etc/waagent.conf` an:
+15.	Richten Sie keinen SWAP-Raum auf dem BS-Datenträger ein. Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein temporärer Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Passen Sie nach dem Installieren des Azure Linux-Agents (siehe vorheriger Schritt) die folgenden Parameter in `/etc/waagent.conf` an:
 
         ResourceDisk.Format=y
         ResourceDisk.Filesystem=ext4
@@ -435,19 +445,19 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
         ResourceDisk.EnableSwap=y
         ResourceDisk.SwapSizeMB=2048    ## NOTE: set this to whatever you need it to be.
 
-15.	Heben Sie das Abonnement (falls erforderlich) auf, indem Sie den folgenden Befehl ausführen:
+16.	Heben Sie das Abonnement (falls erforderlich) auf, indem Sie den folgenden Befehl ausführen:
 
         # subscription-manager unregister
 
-16.	Führen Sie die folgenden Befehle aus, um den virtuellen Computer zurückzusetzen und ihn für die Bereitstellung in Azure vorzubereiten:
+17.	Führen Sie die folgenden Befehle aus, um den virtuellen Computer zurückzusetzen und ihn für die Bereitstellung in Azure vorzubereiten:
 
         # sudo waagent -force -deprovision
         # export HISTSIZE=0
         # logout
 
-17.	Fahren Sie den virtuellen Computer in KVM herunter.
+18.	Fahren Sie den virtuellen Computer in KVM herunter.
 
-18.	Konvertieren Sie das qcow2-Image in das vhd-Format:
+19.	Konvertieren Sie das qcow2-Image in das vhd-Format:
 
     Konvertieren Sie das Bild zuerst in das raw-Format:
 
@@ -603,7 +613,7 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits einen virtuellen Co
 
         # sudo subscription-manager register --auto-attach --username=XXX --password=XXX
 
-5.	Modifizieren Sie die Boot-Zeile des Kernels in Ihrer Grub-Konfiguration, um zusätzliche Kernel-Parameter für Azure einzubinden. Öffnen Sie dazu `/etc/default/grub` in einem Text-Editor, und bearbeiten Sie den Parameter **GRUB\_CMDLINE\_LINUX**. Beispiel:
+5.	Modifizieren Sie die Boot-Zeile des Kernels in Ihrer Grub-Konfiguration, um zusätzliche Kernel-Parameter für Azure einzubinden. Öffnen Sie dazu `/etc/default/grub` in einem Text-Editor und bearbeiten Sie den Parameter **GRUB\_CMDLINE\_LINUX**. Beispiel:
 
         GRUB_CMDLINE_LINUX="rootdelay=300 
         console=ttyS0 
@@ -621,7 +631,7 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits einen virtuellen Co
 
 7.	Fügen Sie Hyper-V-Module zu initramfs hinzu:
 
-    Bearbeiten Sie `/etc/dracut.conf`, und fügen Sie Inhalt hinzu:
+    Bearbeiten Sie `/etc/dracut.conf` und fügen Sie Inhalt hinzu:
 
         add_drivers+=”hv_vmbus hv_netvsc hv_storvsc”
 
@@ -684,7 +694,7 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits einen virtuellen Co
 ##Mit Kickstart-Datei automatisch aus ISO vorbereiten
 ###RHEL 7.1/7.2
 
-1.	Erstellen Sie die Kickstart-Datei mit folgendem Inhalt, und speichern Sie die Datei. Weitere Informationen zur Kickstartinstallation finden Sie unter [KICKSTART INSTALLATIONS](https://access.redhat.com/documentation/de-DE/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/chap-kickstart-installations.html) (in englischer Sprache).
+1.	Erstellen Sie die Kickstart-Datei mit folgendem Inhalt, und speichern Sie die Datei. Weitere Informationen zur Kickstartinstallation finden Sie unter [Kickstartinstallationen](https://access.redhat.com/documentation/de-DE/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/chap-kickstart-installations.html).
 
 
         # Kickstart for provisioning a RHEL 7 Azure VM
@@ -798,11 +808,11 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits einen virtuellen Co
 
 2.	Legen Sie die Kickstart-Datei an einem Ort ab, der aus dem gesamten Installationssystem erreichbar ist.
  
-3.	Erstellen Sie in Hyper-V Manager einen neuen virtuellen Computer. Wählen Sie auf der Seite **Virtuelle Festplatte verbinden** die Option **Virtuelle Festplatte später zuordnen** aus, und schließen Sie den Assistenten für neue virtuelle Computer ab.
+3.	Erstellen Sie in Hyper-V Manager einen neuen virtuellen Computer. Wählen Sie auf der Seite **Virtuelle Festplatte verbinden** die Option **Virtuelle Festplatte später zuordnen** aus und schließen Sie den Assistenten für neue virtuelle Computer ab.
 
 4.	Öffnen Sie die VM-Einstellungen:
 
-    a. Ordnen Sie dem virtuellen Computer eine neue virtuelle Festplatte zu, und wählen Sie **VHD-Format** und **Feste Größe** aus.
+    a. Ordnen Sie dem virtuellen Computer eine neue virtuelle Festplatte zu und wählen Sie **VHD-Format** und **Feste Größe** aus.
     
     b. Ordnen Sie die ISO-Installation dem DVD-Laufwerk zu.
 
@@ -810,7 +820,7 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits einen virtuellen Co
 
 5.	Starten Sie den virtuellen Computer. Wenn die Installationsanweisungen angezeigt werden, drücken Sie die **TAB-TASTE**, um die Startoptionen zu konfigurieren.
 
-6.	Geben Sie am Ende der Startoptionen `inst.ks=<the location of the Kickstart file>` ein, und drücken Sie die **EINGABETASTE**.
+6.	Geben Sie am Ende der Startoptionen `inst.ks=<the location of the Kickstart file>` ein und drücken Sie die **EINGABETASTE**.
 
 7.	Warten Sie, bis die Installation abgeschlossen ist. Der virtuelle Computer wird dann automatisch heruntergefahren. Ihre Linux-VHD kann nun in Azure hochgeladen werden.
 
@@ -834,4 +844,4 @@ Dieses Problem tritt zeitweise auf, jedoch öfter während häufigen Datenträge
 ## Nächste Schritte
 Nun können Sie mit Ihrer Red Hat Enterprise Linux-VHD-Datei neue virtuelle Azure-Computer in Azure erstellen. Weitere Informationen zu den Hypervisoren, die zum Ausführen von Red Hat Enterprise Linux zertifiziert sind, finden Sie auf der [Red Hat-Website](https://access.redhat.com/certified-hypervisors).
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1223_2015-->

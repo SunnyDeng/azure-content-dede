@@ -42,7 +42,7 @@ Darüber hinaus sind die mit API-Apps, Web-Apps und Mobile Apps angebotenen Funk
 
 >[AZURE.NOTE]Mit [Azure API Management](../api-management/api-management-key-concepts.md) können Sie den Clientzugriff auf APIs steuern, die von App Service-API-Apps gehostet werden. API-Apps bietet zwar Authentifizierungsdienste, jedoch nicht andere Features zur Zugriffsverwaltung, die API Management bietet, z. B. Endpunktkonsolidierung und Drosselung.
 
-## API-Apps – Konzepte ##
+## <a id="concepts"></a> API-Apps – Konzepte
 
 - **Swagger**: – Ein Framework für die Dokumentation und Erkennung einer RESTful-API, wird in API-Apps standardmäßig verwendet. Weitere Informationen finden Sie unter [http://swagger.io/](http://swagger.io/).
 - **Cross Origin Resource Sharing (CORS)**: Ein Mechanismus, der die JavaScript-Ausführung in einem Browser ermöglicht, damit eine API aufgerufen werden kann, die auf einer anderen Domäne gehostet wird als die, von der die Webseite geladen wurde. Weitere Informationen finden Sie unter [Nutzen einer API-App aus JavaScript mit CORS](app-service-api-cors-consume-javascript.md). 
@@ -57,4 +57,4 @@ Eine Liste der bekannten Probleme mit API-Apps finden Sie in dem entsprechenden 
 
 Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure App Service](../app-service/app-service-value-prop-what-is.md).
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1223_2015-->

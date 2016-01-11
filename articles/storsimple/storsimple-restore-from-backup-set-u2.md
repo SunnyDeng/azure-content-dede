@@ -15,7 +15,7 @@
    ms.date="12/14/2015"
    ms.author="v-sharos" />
 
-# Wiederherstellen eines StorSimple-Volumes aus einem Sicherungssatz
+# Wiederherstellen eines StorSimple-Volumes aus einem Sicherungssatz (Update 2)
 
 [AZURE.INCLUDE [storsimple-version-selector-restore-from-backup](../../includes/storsimple-version-selector-restore-from-backup.md)]
 
@@ -115,4 +115,4 @@ Um den Wiederherstellungsvorgang erfolgreich abzuschließen, schalten Sie das Vo
 
 - Erfahren Sie, wie Sie [Ihr StorSimple-Gerät mithilfe des StorSimple Manager-Diensts verwalten](storsimple-manager-service-administration-u2.md).
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1223_2015-->

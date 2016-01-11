@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/26/2015" 
+	ms.date="12/17/2015" 
 	ms.author="bradsev" />
 
 
@@ -91,10 +91,24 @@ Nach der VM-Erstellung können Sie sich mithilfe von Remotedesktop mit den Anmel
 
 Sobald Ihre VM erstellt und bereitgestellt wurde, können Sie beginnen, die installierten und konfigurierten Tools zu verwenden. Für viele der Tools gibt es Desktopsymbole und Kacheln im Startmenü.
 
+## Erstellen eines sicheren Kennworts in der Data Science Virtual Machine
+
+Führen Sie den folgenden Befehl von der Befehlszeile der Data Science Virtual Machine aus, um Ihr eigenes sicheres Kennwort für den virtuellen Computer zu erstellen.
+
+	c:\anaconda\python.exe -c "import IPython;print IPython.lib.passwd()"
+
+Geben Sie Ihr Kennwort ein, wenn Sie dazu aufgefordert werden.
+
+Der Kennworthash wird in der Ausgabe im Format "sha1:xxxxxx" angezeigt. Kopieren Sie diesen Kennworthash, und ersetzen Sie den vorhandenen Hash in Ihrer Notebook-Konfigurationsdatei in diesem Verzeichnis: **C:\\Aaqs.ipython\\profile\_nbserver\\ipython\_notebook\_config.py**. Verwenden Sie den Parameternamen ***c.NotebookApp.password***.
+
+Ersetzen Sie nur den vorhandenen Hashwert innerhalb der Anführungszeichen. Die Anführungszeichen und das Präfix ***sha1:*** für den Parameterwert müssen beibehalten werden.
+
+Zum Schluss müssen Sie den IPython-Server, der auf dem virtuellen Computer als geplanter Windows-Task mit der Bezeichnung „Start\_IPython\_Notebook“ ausgeführt wird, anhalten und erneut starten. Wenn das neue Kennwort nach dem Neustart dieses Tasks nicht akzeptiert wird, starten Sie den virtuellen Computer neu.
+
 ## In der Microsoft Data Science Virtual Machine installierte Tools
 
 ### R
-Wenn Sie R für die Analysen verwenden möchten, ist auf der VM Revolution R Open (RRO) installiert. Dies ist eine Open-Source-Distribution von R, und sie ist vollständig mit CRAN-R kompatibel. RRO enthält das neueste Open-Source-R-Modul und die Intel Math Kernel Library. Eine IDE namens „RRO RGui“ ist ebenfalls auf der VM vorhanden. Sie können nach Wunsch auch andere IDEs wie [RStudio](http://www.rstudio.com) herunterladen und verwenden.
+Wenn Sie R für die Analysen verwenden möchten, ist auf der VM Revolution R Open (RRO) installiert. Dies ist eine Open-Source-Distribution von R, und sie ist vollständig mit CRAN-R kompatibel. RRO enthält das neueste Open-Source-R-Modul und die Intel Math Kernel Library. Eine IDE namens „RRO RGui“ ist ebenfalls auf der VM vorhanden. Sie können auch andere IDEs wie [RStudio](http://www.rstudio.com) herunterladen und verwenden.
 
 ### Python
 Für die Entwicklung mithilfe von Python wurde Anaconda Python Distribution 2.7 installiert. Diese Distribution enthält die Python-Basisversion sowie etwa 300 der beliebtesten Pakete für Mathematik, Entwicklung und Datenanalysen. Sie können die Python-Tools für Visual Studio (PTVS), die mit der Visual Studio 2015 Community Edition installiert werden, oder eine der mit Anaconda gebündelten IDEs wie IDLE oder Spyder verwenden. Sie können eines dieser Tools über eine Suche auf der Suchleiste starten (**Windows-Taste**+**S**).
@@ -111,7 +125,7 @@ Hinweis: Es könnte eine Meldung angezeigt werden, die besagt, dass der Evaluier
 Eine eingeschränkte Version von SQL Server gehört ebenfalls zu Visual Studio Community Edition. Sie können auf die SQL Server-Instanz zugreifen, indem Sie **SQL Server Management Studio** starten. Ihr VM-Name wird als Servernamen angegeben. Verwenden Sie die Windows-Authentifizierung, wenn Sie als Administrator unter Windows angemeldet sind. Sobald SQL Server Management Studio gestartet wurde, können Sie andere Benutzer erstellen, Datenbanken erstellen, Daten importieren und SQL-Abfragen ausführen.
 
 ### Azure 
-Mehrere Azure-Tools sind auf der VM installiert: Es gibt eine Desktopverknüpfung für den Zugriff auf die Azure SDK-Dokumentation. – **AzCopy** wird zum Verschieben von Daten in das und aus dem Microsoft Azure Storage-Konto verwendet. – **Azure Storage Explorer** wird verwendet, um die Objekte zu durchsuchen, die in Ihrem Azure-Speicherkonto gespeichert sind. – **Microsoft Azure PowerShell** ist eine Skriptsprache zur Verwaltung von Azure-Ressourcen in einer Skriptsprache, die auch auf Ihrer VM installiert ist.
+Mehrere Azure-Tools sind auf der VM installiert: Es gibt eine Desktopverknüpfung für den Zugriff auf die Azure SDK-Dokumentation. – **AzCopy** wird zum Verschieben von Daten in das und aus dem Microsoft Azure Storage-Konto verwendet. – **Azure Storage Explorer** wird verwendet, um die Objekte zu durchsuchen, die in Ihrem Azure Storage-Konto gespeichert sind. – **Microsoft Azure PowerShell** ist eine Skriptsprache zur Verwaltung von Azure-Ressourcen und ebenfalls auf Ihrer VM installiert.
 
 ###Power BI
 
@@ -120,6 +134,6 @@ Um Dashboards und aussagekräftige Visualisierungen zu erstellen, wurde **Power 
 Hinweis: Für den Zugriff auf Power BI benötigen Sie ein Office 365-Konto.
 
 ## Zusätzliche Microsoft-Entwicklungstools
-Der [**Microsoft-Webplattform-Installer**](https://www.microsoft.com/web/downloads/platform.aspx) kann verwendet werden, um andere Microsoft-Entwicklungstools zu suchen und herunterzuladen. Es gibt auch eine Verknüpfung mit dem Tool auf dem Desktop der Microsoft Data Science Virtual Machine.
+Der [**Microsoft-Webplattform-Installer**](https://www.microsoft.com/web/downloads/platform.aspx) kann verwendet werden, um weitere Microsoft-Entwicklungstools zu suchen und herunterzuladen. Es gibt auch eine Verknüpfung mit dem Tool auf dem Desktop der Microsoft Data Science Virtual Machine.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1223_2015-->

@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="multiple"
-   ms.date="09/08/2015"
+   ms.date="12/19/2015"
    ms.author="tarcher" />
 
 # Verwalten von Rollen in den Azure-Clouddienstprojekten mit Visual Studio
@@ -58,4 +58,4 @@ Beispielsweise könnten Sie eine Webdienstrolle entfernen und diese Rolle späte
 
 Weitere Informationen zum Konfigurieren von Rollen in Visual Studio finden Sie unter [Konfigurieren der Rollen für einen Azure-Clouddienst mit Visual Studio](vs-azure-tools-configure-roles-for-cloud-service.md).
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1223_2015-->

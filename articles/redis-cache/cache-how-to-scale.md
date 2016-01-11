@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/11/2015" 
+	ms.date="12/16/2015" 
 	ms.author="sdanie"/>
 
 # Skalieren von Azure Redis Cache
 
->[AZURE.NOTE]Die Skalierungsfunktion von Azure Redis Cache befindet sich derzeit in der Vorschau. Während des Vorschauzeitraums können Sie nicht auf einen Premium-Tarif-Cache herauf bzw. davon herunter skalieren, aber Sie können den Tarif innerhalb eines Premium-Caches ändern.
+>[AZURE.NOTE]Die Skalierungsfunktion von Azure Redis Cache befindet sich derzeit in der Vorschau. Während des Vorschauzeitraums können Sie nicht auf einen Premium-Tarif-Cache herauf bzw. davon herunter skalieren, aber Sie können den Tarif innerhalb eines Premium-Caches ändern. Bei einem Premium-Cache mit aktivierter Clusterunterstützung können Sie außerdem [die Clustergröße ändern](cache-how-to-premium-clustering.md#cluster-size).
 
 Für Azure Redis Cache stehen verschiedene Cacheangebote bereit, die Flexibilität bei der Auswahl von Cachegröße und -funktionen bieten. Wenn sich die Anforderungen Ihrer Anwendung ändern, nachdem der Cache erstellt wurde, können Sie die Größe des Caches auf dem Blatt **Ändern des Tarifs** im [Azure-Portal](https://portal.azure.com) skalieren.
 
@@ -61,7 +61,25 @@ Wenn die Skalierung abgeschlossen ist, ändert sich der Status von **Wird skalie
 
 ## Automatisieren eines Skalierungsvorgangs
 
-Sie können Ihre Azure Redis Cache-Instanz nicht nur über das Azure-Portal skalieren, sondern auch mithilfe der [Microsoft Azure-Verwaltungsbibliotheken](http://azure.microsoft.com/updates/management-libraries-for-net-release-announcement/). Um Ihren Cache zu skalieren, rufen Sie die `IRedisOperations.CreateOrUpdate`-Methode auf, und übergeben Sie die neue Größe für `RedisProperties.SKU.Capacity`.
+Sie können Ihre Azure Redis Cache-Instanzen nicht nur über das Azure-Portal skalieren, sondern auch mithilfe der Azure Redis Cache-PowerShell-Cmdlets, über die Azure-Befehlszeilenschnittstelle (Azure CLI) und mithilfe der Microsoft Azure-Verwaltungsbibliotheken.
+
+### Skalieren mithilfe von PowerShell
+
+Sie können die Azure Redis Cache-Instanzen mithilfe von PowerShell skalieren. Dazu verwenden Sie das Cmdlet [Set-AzureRmRedisCache](https://msdn.microsoft.com/library/azure/mt634518.aspx) und ändern die Eigenschaften `Size`, `Sku` oder `ShardCount`. Das folgende Beispiel veranschaulicht, wie ein Cache mit dem Namen `myCache` zu einem 2,5-GB-Cache skaliert wird.
+
+	Set-AzureRmRedisCache -ResourceGroupName myGroup -Name myCache -Size 2.5GB
+
+Weitere Informationen zum Skalieren mithilfe von PowerShell finden Sie unter[Skalieren eines Redis-Caches mit PowerShell](cache-howto-manage-redis-cache-powershell.md#scale).
+
+### Skalieren über die Azure-Befehlszeilenschnittstelle
+
+Wenn Sie die Azure Redis Cache-Instanzen über die Azure-Befehlszeilenschnittstelle (CLI) skalieren möchten, rufen Sie den Befehl `azure rediscache set` auf und übergeben die gewünschten Konfigurationsänderungen. Abhängig vom gewünschten Skalierungsvorgang zählen dazu die neue Größe, die SKU oder die Clustergröße.
+
+Weitere Informationen zum Skalieren über die Azure-Befehlszeilenschnittstelle finden Sie unter [Ändern der Einstellungen eines vorhandenen Redis-Cache](cache-manage-cli.md#scale).
+
+### Skalieren mithilfe der Microsoft Azure-Verwaltungsbibliotheken
+
+Wenn Sie die Azure Redis Cache-Instanzen mithilfe der [Microsoft Azure-Verwaltungsbibliotheken](http://azure.microsoft.com/updates/management-libraries-for-net-release-announcement/) (MAML, Microsoft Azure Management Libraries) skalieren möchten, rufen Sie die Methode `IRedisOperations.CreateOrUpdate` auf und übergeben die neue Größe für `RedisProperties.SKU.Capacity`.
 
     static void Main(string[] args)
     {
@@ -92,7 +110,7 @@ Die folgende Liste enthält Antworten auf häufig gestellte Fragen zur Skalierun
 -	Eine Skalierung auf einen **Premium**-Cachetarif von den Tarifen **Basic** oder **Standard** ist nicht möglich.
 -	Eine Skalierung von einem **Premium**-Cachetarif auf die Tarife **Basic** oder **Standard** ist nicht möglich.
 -	Eine Skalierung von einem bestimmten **Premium**-Cachetarif zu einem anderen ist jedoch möglich.
--	Wenn Sie beim Erstellen des **Premium**-Caches die Clusterunterstützung aktiviert haben, können Sie die Anzahl der Shards nach oben oder unten skalieren.
+-	Wenn Sie beim Erstellen des **Premium**-Caches die Clusterunterstützung aktiviert haben, können Sie die [Clustergröße ändern](cache-how-to-premium-clustering.md#cluster-size).
 
 Weitere Informationen finden Sie unter [Konfigurieren von Clustern für Azure Redis Cache vom Typ "Premium"](cache-how-to-premium-clustering.md).
 
@@ -106,7 +124,7 @@ Wenn ein **Basic**-Cache auf eine andere Größe skaliert wird, wird er herunter
 
 Wenn ein **Basic**-Cache auf einen **Standard**-Cache skaliert wird, wird ein Replikatcache bereitgestellt, und die Daten werden aus dem primären Cache in den Replikatcache kopiert. Der Cache bleibt während des Skalierungsvorgangs verfügbar.
 
-Wenn ein **Standard**-Cache auf eine andere Größe skaliert wird, wird eines der Replikate heruntergefahren und mit der neuen Größe bereitgestellt, und die Daten werden übertragen. Anschließend führt das andere Replikat ein Failover aus, bevor es erneut bereitgestellt wird. Dieser Prozess ähnelt dem Prozess, der beim Ausfall eines Cacheknotens durchgeführt wird.
+Wenn ein **Standard**-Cache auf eine andere Größe skaliert wird, wird eines der Replikate heruntergefahren und mit der neuen Größe erneut bereitgestellt, und die Daten werden übertragen. Anschließend führt das andere Replikat ein Failover aus, bevor es erneut bereitgestellt wird. Dieser Prozess ähnelt dem Prozess, der beim Ausfall eines Cacheknotens durchgeführt wird.
 
 ## Gehen während der Skalierung Daten aus dem Cache verloren?
 
@@ -160,4 +178,4 @@ Wir haben die Funktion veröffentlicht, um Feedback zu erhalten. Basierend auf d
 
 [redis-cache-scaling]: ./media/cache-how-to-scale/redis-cache-scaling.png
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1223_2015-->

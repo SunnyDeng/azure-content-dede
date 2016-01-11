@@ -58,12 +58,6 @@ Momentaufnahmen werden asynchron in eine Azure-Remoteregion kopiert, um im Falle
 
 SQL Data Warehouse speichert die Daten auf einem oder mehreren Serverknoten, auf denen jeweils einige Benutzerdaten gespeichert sind, über die die Abfrageausführung für diese Daten gesteuert wird. Im Rahmen der massiven parallelen Verarbeitungsarchitektur (MPP-Architektur) werden die Abfragen parallel über die Serverknoten hinweg ausgeführt. SQL Data Warehouse erkennt und minimiert automatisch Ausfälle von Serverknoten. Während der Preview besteht jedoch die Möglichkeit, dass ein Vorgang (z. B. Laden von Daten oder Abfrage) aufgrund des Ausfalls einzelner Knoten fehlschlägt. Während der Preview nehmen wir fortlaufend Verbesserungen vor, damit Vorgänge trotz Knotenausfällen erfolgreich abgeschlossen werden können.
 
-Aufgrund von Fernübertragungsdaten schätzen wir aktuell die Zuverlässigkeit von Azure SQL Data Warehouse auf 98 %. Dies bedeutet, dass im Schnitt 2 von 100 Abfragen aufgrund von Systemfehlern fehlschlagen können. Das ist kein Wert für ein SLA. Die Wahrscheinlichkeit einer fehlerhaften Abfrage erhöht sich mit der Ausführungsdauer. Bei einer Abfrage beispielsweise, die länger als 2 Stunden ausgeführt wird, ist die Wahrscheinlichkeit sehr viel höher als bei einer Abfrage, die weniger als 10 Minuten ausgeführt wird. Während der Preview werden wir die Zuverlässigkeit erhöhen, damit wir ungeachtet der Ausführungsdauer das gleiche Maß an Zuverlässigkeit für alle Vorgänge garantieren können. Bei Freigabe der entsprechenden Verbesserungen werden wir die voraussichtliche Zuverlässigkeit aktualisieren. Bei Erreichen der allgemeinen Verfügbarkeit wird die Zuverlässigkeit durch ein SLA unterstützt.
-
-### Verfügbarkeit des Diensts
-
-Für Azure SQL Data Warehouse gibt es möglicherweise bis zu vier Wartungsmaßnahmen pro Monat, um wichtige Updates zu installieren. Während der einzelnen Maßnahmen können bis zu zwei Stunden lang Fehler bei Abfragen auftreten. Die Dauer hängt von der Anzahl der DWUs ab, die dem Dienst zugeordnet sind.
-
 
 ## Nächste Schritte
 
@@ -78,4 +72,4 @@ Für Azure SQL Data Warehouse gibt es möglicherweise bis zu vier Wartungsmaßna
 
 <!--Other Web references-->
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1223_2015-->

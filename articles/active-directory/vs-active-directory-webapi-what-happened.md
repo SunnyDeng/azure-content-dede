@@ -1,4 +1,11 @@
-<properties pageTitle="Was ist mit meinem WebApi-Projekt passiert (verbundene Visual Studio-Dienste für Azure Active Directory) |Microsoft Azure " description="Erfahren Sie, was mit Ihrem WebApi-Projekt passiert, wenn Sie mithilfe von Visual Studio-Diensten eine Verbindung mit Azure AD herstellen.="active-directory" services="active-directory" documentationCenter="" authors="TomArcher" manager="douge" editor="tglee"/>
+<properties
+	pageTitle="Was ist mit dem WebApi-Projekt passiert (verbundene Visual Studio-Dienste für Azure Active Directory)? | Microsoft Azure"
+	description="Beschreibt, was mit der MVC-Projekt-WebApi geschieht, wenn Sie mithilfe von Visual Studio eine Verbindung mit Azure AD herstellen"
+  services="active-directory"
+	documentationCenter=""
+	authors="TomArcher"
+	manager="douge"
+	editor=""/>
 
 <tags
 	ms.service="active-directory"
@@ -6,7 +13,7 @@
 	ms.tgt_pltfrm="vs-what-happened"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/03/2015"
+	ms.date="12/18/2015"
 	ms.author="tarcher"/>
 
 # Was ist mit dem WebApi-Projekt passiert (verbundene Visual Studio-Dienste für Azure Active Directory)?
@@ -109,4 +116,4 @@ Ihre Azure Active Directory-App wurde aktualisiert und enthält nun die Berechti
 
 [Weitere Informationen zu Azure Active Directory](http://azure.microsoft.com/services/active-directory/)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1223_2015-->

@@ -5,18 +5,16 @@ Azure DNS ist ein Hostingdienst für DNS-Domänen, der die Namensauflösung mith
 
 | Eigenschaft | Beschreibung | Beispielwert |
 |---|---|---|
-| DNS-Zonen | Domänenzoneninformationen zum Hosten von DNS-Einträgen einer bestimmten Domäne | /subscriptions/{guid}/.../providers/Microsoft.Network/dnszones/contoso.com",
-providers/Microsoft.Network/dnszones/contoso.com/A/www |
-| DNS-Zonen | Domänenzoneninformationen zum Hosten von DNS-Einträgen einer bestimmten Domäne | /subscriptions/{guid}/.../providers/Microsoft.Network/dnszones/contoso.com“
+| **DNSzones** | Domänenzoneninformationen zum Hosten von DNS-Einträgen einer bestimmten Domäne | /subscriptions/{guid}/.../providers/Microsoft.Network/dnszones/contoso.com“| 
 
 
-### DNS-Datensatzgruppen
+### DNS-Ressourceneintragssätze
 
 DNS-Zonen haben ein als Datensatzgruppe bezeichnetes untergeordnetes Objekt. Datensatzgruppen sind eine nach Typ geordnete Sammlung von Hostdatensätzen für eine DNS-Zone. Datensatztypen sind A, AAAA, CNAME, MX, NS, SOA, SRV und TXT.
 
 | Eigenschaft | Beschreibung | Beispielwert |
 |---|---|---|
-| Eine Datei | IPv4-Datensatztyp | /subscriptions/{guid}/.../providers/Microsoft.Network/dnszones/contoso.com/A/www |
+| A | IPv4-Datensatztyp | /subscriptions/{guid}/.../providers/Microsoft.Network/dnszones/contoso.com/A/www |
 | AAAA | IPv6-Datensatztyp| /subscriptions/{guid}/.../providers/Microsoft.Network/dnszones/contoso.com/AAAA/hostrecord |
 | CNAME | Datensatztyp kanonischen Namens <sup>1</sup> | /subscriptions/{guid}/.../providers/Microsoft.Network/dnszones/contoso.com/CNAME/www |
 | MX | Maildatensatztyp | /subscriptions/{guid}/.../providers/Microsoft.Network/dnszones/contoso.com/MX/mail |
@@ -83,10 +81,10 @@ DNS-Zonenbeispiel im Json-Format:
 	  	]
 	}
 
-## Zusätzliche Ressourcen
+## Weitere Ressourcen
 
-Weitere Informationen erhalten Sie in der [REST-API-Dokumentation für DNS-Zonen](https://msdn.microsoft.com/library/azure/mt130626.aspx).
+Lesen Sie die [REST-API-Dokumentation für DNS-Zonen](https://msdn.microsoft.com/library/azure/mt130626.aspx), um weitere Informationen zu erhalten.
 
-Weitere Informationen erhalten Sie in der [REST-API-Dokumentation für DNS-Datensatzgruppen](https://msdn.microsoft.com/library/azure/mt130626.aspx).
+Weitere Informationen erhalten Sie in der [REST-API-Dokumentation für DNS-Ressourceneintragssätze](https://msdn.microsoft.com/library/azure/mt130626.aspx).
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1223_2015-->

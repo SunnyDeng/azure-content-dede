@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na" 
-   ms.date="12/09/2015"
+   ms.date="12/17/2015"
    ms.author="guayan"/>
 
 # Registrieren einer Microsoft-verwalteten API oder einer IT-verwalteten API
@@ -56,7 +56,7 @@ API | Beschreibung | Link zu Schritten
 ![][34] | **Google Drive**<br/><br/> Sie können Elemente abrufen, aktualisieren, löschen usw. | [**Erste Schritte**](powerapps-create-api-googledrive.md)
 ![][35] | **Microsoft Translator**<br/><br/>Übersetzt Texte, erkennt Sprachen und vieles mehr. | [**Erste Schritte**](powerapps-create-api-microsofttranslator.md)
 ![][36] | **Office 365 Outlook**<br/><br/>Verwalten Sie Ihre E-Mails. | [**Erste Schritte**](powerapps-create-api-office365-outlook.md)
-![][37] | **Office 365 Users**<br/><br/>Zugriff auf Benutzerprofile, zugehörige Vorgesetzte, unterstellte Mitarbeiter und vieles mehr. | [**Erste Schritte**](powerapps-create-api-office365-users.md)
+![][37] | **Office 365-Benutzer**<br/><br/>Zugriff auf Benutzerprofile, zugehörige Vorgesetzte, unterstellte Mitarbeiter und vieles mehr. | [**Erste Schritte**](powerapps-create-api-office365-users.md)
 ![][38] | **OneDrive**<br/><br/> Sie können Elemente abrufen, aktualisieren, löschen usw. | [**Erste Schritte**](powerapps-create-api-onedrive.md)
 ![][39] | **Salesforce**<br/><br/> Sie können Elemente abrufen, aktualisieren, löschen usw. | [**Erste Schritte**](powerapps-create-api-salesforce.md)
 ![][40] | **SharePoint Online**<br/><br/> Sie können Elemente abrufen, aktualisieren, löschen usw. | [**Erste Schritte**](powerapps-create-api-sharepointonline.md)
@@ -70,7 +70,7 @@ Einige zusätzliche Vorteile sind:
 
 - Die Ressourcen, einschließlich Netzwerk, Arbeitsspeicher oder Sicherheitskonfigurationen, werden von Ihnen überwacht. Wenn Sie beispielsweise mehr Arbeitsspeicher benötigen, um Excel-Daten in Ihrer App anzuzeigen, steuern Sie, wie viel Arbeitsspeicher in Ihrer Umgebung hinzugefügt werden soll. 
 - Sie richten Sie die Vertrauensstellung zwischen Ihren Apps und der API ein und kontrollieren die Sicherheit zwischen den Apps und der API. Beispielsweise bestimmen Sie, ob die Office 365-API Microsoft-verwaltet sein kann (automatische Vertrauensstellung), oder ob die Office 365-API in Ihrer Umgebung (erstellen Sie Ihre eigene Vertrauensstellung) verwendet werden soll. 
-- **Alle** Microsoft-verwalteten APIs können auch IT-verwaltete APIs sein. Dies ist z. B. möglich, wenn Sie eine eigene Instanz von Office 365 erstellen und vollständige Kontrolle über diese Instanz haben. Sie können dann Ihre IT-verwaltete Office365-API und die Microsoft-verwaltete Office365-API in derselben Umgebung verwenden. Dies hängt tatsächlich von den Anforderungen Ihrer App ab.
+- **Alle** Microsoft-verwalteten APIs können auch IT-verwaltete APIs sein. Dies ist z. B. möglich, wenn Sie eine eigene Instanz von Office 365 erstellen und vollständige Kontrolle über diese Instanz haben. Sie können dann Ihre IT-verwaltete Office 365-API und die Microsoft-verwaltete Office 365-API in derselben Umgebung verwenden. Dies hängt tatsächlich von den Anforderungen Ihrer App ab.
 - Wenn Sie Verbindungen mit lokalen Systemen herstellen oder die Bing-Suche-API verwenden, steuern Sie Sicherheit, Authentifizierung, Lizenzierung und vieles mehr.
 
 
@@ -151,4 +151,4 @@ In diesem Thema haben Sie erfahren, wie Sie eine eigene Instanz der verfügbaren
 [42]: ./media/powerapps-register-from-available-apis/sqlserver.png
 [43]: ./media/powerapps-register-from-available-apis/twitter.png
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1223_2015-->

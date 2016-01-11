@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="vm-linux" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/28/2015" 
+	ms.date="12/15/2015" 
 	ms.author="rasquill"/>
 
 #Verwenden von SSH mit Linux und Mac in Azure
@@ -86,7 +86,7 @@ Nachdem Sie die benötigten Dateien erstellt haben, stehen Ihnen viele Möglichk
 
 ### Beispiel: Erstellen einer VM mit der Datei „id\_rsa.pub“
 
-Das häufigste Szenario ist die imperative Erstellung einer VM – oder das Hochladen einer Vorlage zum Erstellen einer VM. Das folgende Codebeispiel veranschaulicht die Erstellung einer neuen, sicheren Linux-VM in Azure, indem der Name der öffentlichen Datei (in diesem Fall die Standarddatei `~/.ssh/id_rsa`) an den Befehl `azure vm create` übergeben wird. (Die anderen Argumente wurden zuvor erstellt.)
+Das häufigste Szenario ist die imperative Erstellung einer VM – oder das Hochladen einer Vorlage zum Erstellen einer VM. Das folgende Codebeispiel veranschaulicht die Erstellung einer neuen, sicheren Linux-VM in Azure, indem der Name der öffentlichen Datei (in diesem Fall die Standarddatei `~/.ssh/id_rsa.pub`) an den Befehl `azure vm create` übergeben wird. (Die anderen Argumente wurden zuvor erstellt.)
 
 	azure vm create \
 	--nic-name testnic \
@@ -96,7 +96,7 @@ Das häufigste Szenario ist die imperative Erstellung einer VM – oder das Hoc
 	--storage-account-name computeteststore 
 	--image-urn canonical:UbuntuServer:14.04.3-LTS:latest \
 	--username ops \
-	-ssh-publickey-file ~/.ssh/id_rsa \
+	-ssh-publickey-file ~/.ssh/id_rsa.pub \
 	testrg testvm westeurope linux
 
 Das nächste Beispiel zeigt, wie das **SSH-RSA**-Format mit einer Ressourcen-Manager-Vorlage und der Azure-Befehlszeilenschnittstelle verwendet wird, um eine Ubuntu-VM zu erstellen, die durch einen Benutzernamen und den Inhalt der Datei `~/.ssh/id_rsa.pub` in Form einer Zeichenfolge gesichert wird. (In diesem Fall wurde die Zeichenfolge des öffentlichen Schlüssels zum Verbessern der Lesbarkeit gekürzt.)
@@ -264,7 +264,7 @@ Wenn Sie eine VM anhand einer PEM-Datei erstellt haben, die aus Ihrer Datei `~/.
 	Are you sure you want to continue connecting (yes/no)? yes
 	Warning: Permanently added 'testpemasm.cloudapp.net,40.83.178.221' (RSA) to the list of known hosts.
 	Saving password to keychain failed
-	Identity added: /Users/rasquill/.ssh/id_rsa (/Users/rasquill/.ssh/id_rsa)
+	Identity added: /Users/user/.ssh/id_rsa.pub (/Users/user/.ssh/id_rsa.pub)
 	Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.19.0-28-generic x86_64)
 
 	* Documentation:  https://help.ubuntu.com/
@@ -298,4 +298,4 @@ Möglicherweise lässt sich das Problem mithilfe der Empfehlungen unter [Problem
  
 Nachdem Sie eine Verbindung mit Ihrer VM hergestellt haben, müssen Sie die ausgewählte Distribution vor der weiteren Verwendung unbedingt aktualisieren.
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1223_2015-->

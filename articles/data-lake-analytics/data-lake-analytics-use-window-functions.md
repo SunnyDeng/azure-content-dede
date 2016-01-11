@@ -604,7 +604,7 @@ Es gibt in der Partition 6 Zeilen mit dem Partitionsschlüssel „Web“ (ab de
 
 - Es gibt 6 Zeilen mit einem Wert kleiner gleich 500, sodass der CUME\_DIST-Wert 6:6 = 1 entspricht.
 - Es gibt fünf Zeilen mit einem Wert kleiner gleich 400, sodass der CUME\_DIST-Wert 5:6 = 0,83 entspricht.
-- Es gibt vier Zeilen mit einem Wert kleiner gleich 300, sodass der CUME\_DIST-Wert 5:6 = 0,66 entspricht.
+- Es gibt 4 Zeilen mit einem Wert kleiner gleich 300, sodass der CUME\_DIST-Wert 4:6 = 0,66 entspricht.
 - Es gibt drei Zeilen mit einem Wert kleiner gleich 200, sodass der CUME\_DIST-Wert 3:6 = 0,5 entspricht. Es gibt zwei Zeilen mit demselben Latenzwert.
 - Es gibt eine Zeile mit einem Wert kleiner gleich 100, sodass der CUME\_DIST-Wert 1:6 = 0,16 entspricht. 
 
@@ -743,4 +743,4 @@ PERCENTILE\_DISC interpoliert keine Werte, weshalb der Median für „Web“ 200
 - [Verwalten von Azure Data Lake Analytics mithilfe von Azure PowerShell](data-lake-analytics-use-powershell.md)
 - [Überwachen und Problembehandeln von Azure Data Lake Analytics-Aufträgen mithilfe des Azure-Portals](data-lake-analytics-monitor-and-troubleshoot-jobs-tutorial.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1223_2015-->

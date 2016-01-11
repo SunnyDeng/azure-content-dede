@@ -14,11 +14,17 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="10/16/2015" 
+	ms.date="12/17/2015" 
 	ms.author="genemi"/>
 
 
 # Codebeispiel: Wiederholungslogik aus Enterprise Library 6 in C&#x23; für das Herstellen einer Verbindung mit SQL-Datenbank
+
+
+> [AZURE.SELECTOR]
+- [PHP](sql-database-develop-php-retry-windows.md)
+- [C#](sql-database-develop-csharp-retry-windows.md)
+- [C# EntLib6](sql-database-develop-entlib-csharp-retry-windows.md)
 
 
 Dieses Thema enthält ein vollständiges Codebeispiel, das die Enterprise Library (EntLib) veranschaulicht. EntLib vereinfacht eine Reihe von Aufgaben für Clientprogramme, die mit Clouddiensten wie Azure SQL-Datenbank interagieren. Der Schwerpunkt unseres Beispiels liegt auf der wichtigen Aufgabe, Wiederholungslogik für vorübergehende Fehler zu integrieren.
@@ -29,7 +35,11 @@ Bei EntLib-Klassen wird zwischen zwei Kategorien von Laufzeitfehlern unterschied
 - Fehler, die nicht von selbst behoben werden, z. B. ein falsch geschriebener Servername.
 - Vorübergehende Fehler, z. B. Situationen, in denen der Server für einige Sekunden keine neuen Verbindungen akzeptiert, während das Azure-System einen Lastenausgleich ausführt.
 
+
 Enterprise Library 6 (EntLib60) ist die aktuelle Version und wurde im April 2013 veröffentlicht.
+
+- Microsoft stellt den Quellcode für die Öffentlichkeit zur Verfügung.
+- Microsoft plant keine weitere Verwaltung des Quellcodes.
 
 
 ## Voraussetzungen
@@ -320,4 +330,4 @@ SELECT TOP 3
 
 - [Clientcodebeispiele für die ersten Schritte mit SQL-Datenbank](sql-database-develop-quick-start-client-code-samples.md)
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_1223_2015-->

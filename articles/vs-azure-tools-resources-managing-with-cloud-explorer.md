@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Verwalten von Azure-Ressourcen mit dem Cloud-Explorer"
+   pageTitle="Verwalten von Azure-Ressourcen mit dem Cloud-Explorer | Microsoft Azure"
    description="Informationen dazu, wie Sie Azure-Ressourcen mit dem Cloud-Explorer innerhalb von Visual Studio durchsuchen und verwalten."
    services="visual-studio-online"
    documentationCenter="na"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="multiple"
-   ms.date="08/13/2015"
+   ms.date="12/17/2015"
    ms.author="tarcher" />
 
 # Verwalten von Azure-Ressourcen mit dem Cloud-Explorer
@@ -95,4 +95,4 @@ Um in Ihren Azure-Kontoabonnements Ressourcen mit einem bestimmten Namen zu such
 
 Bei der Eingabe von Zeichen in das Feld "Suchen" werden nur die Ressourcen in der Ressourcenstruktur angezeigt, die diesen Zeichen entsprechen.
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1223_2015-->

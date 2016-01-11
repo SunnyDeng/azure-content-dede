@@ -4,8 +4,8 @@ Der Traffic Manager und seine untergeordnete Endpunkt-Ressource ermöglichen das
 
 | Eigenschaft | Beschreibung |
 |---|---|
-|**Methode für Datenverkehrrouting**| Mögliche Werte sind *Leistung*, *Gewichtung* und *Priorität*. | 
-| **DNS-Konfiguration** | FQDN für das Profil | 
+|**trafficRoutingMethod**| Mögliche Werte sind *Leistung*, *Gewichtung* und *Priorität*. | 
+| **dnsConfig** | FQDN für das Profil | 
 | **Protokoll** | Überwachungsprotokoll, mögliche Werte sind *HTTP* und *HTTPS*|
 | **Port** | Überwachungsport |  
 | **Path** | Überwachungspfad |
@@ -18,8 +18,8 @@ Ein Endpunkt ist eine dem Traffic Manager-Profil untergeordnete Ressource. Er st
 | Eigenschaft | Beschreibung | 
 |---|---| 
 | **Typ** | Der Typ des Endpunkts, mögliche Werte sind *Azure-Endpunkt*, *externer Endpunkt* und *verschachtelter Endpunkt* | 
-| **Zielressourcen-ID** | Öffentliche IP-Adresse eines Dienst- oder Webendpunktes. Dabei kann es sich um einen Azure- oder externen Endpunkt handeln. | 
-| **Gewicht** | Endpunkt-Gewichtung, die für die Datenverkehrsverwaltung verwendet wird. | 
+| **targetResourceId** | Öffentliche IP-Adresse eines Dienst- oder Webendpunktes. Dabei kann es sich um einen Azure- oder externen Endpunkt handeln. | 
+| **Weight** | Endpunkt-Gewichtung, die für die Datenverkehrsverwaltung verwendet wird. | 
 | **Priority** | Priorität des Endpunktes, die zum Definieren einer Failover-Aktion verwendet wird |
 
 Beispiel von Traffic Manager im JSON-Format:
@@ -80,8 +80,8 @@ Beispiel von Traffic Manager im JSON-Format:
         }
 
  
-## Zusätzliche Ressourcen
+## Weitere Ressourcen
 
 Weitere Informationen erhalten Sie in der [REST-API-Dokumentation für Traffic Manager](https://msdn.microsoft.com/library/azure/mt163664.aspx).
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1223_2015-->

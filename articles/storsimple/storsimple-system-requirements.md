@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD" 
-   ms.date="12/14/2015"
+   ms.date="12/18/2015"
    ms.author="alkohli"/>
 
 # StorSimple-Software, hohe Verfügbarkeit und Netzwerkanforderungen
@@ -103,17 +103,12 @@ Update 2 umfasst mehrere netzwerkbezogene Verbesserungen, und die Routingmetrik 
 
 - Ein Satz vordefinierter Werte wurde Netzwerkschnittstellen zugewiesen. 	
 		
-- Betrachten Sie die unten aufgeführte Beispieltabelle mit Beispielwerten, die den verschiedenen Netzwerkschnittstellen zugewiesen sind, wenn sie für die Cloud aktiviert oder mit konfiguriertem Gateway für die Cloud deaktiviert sind.
+- Betrachten Sie die unten aufgeführte Beispieltabelle mit Werten, die den verschiedenen Netzwerkschnittstellen zugewiesen sind, wenn sie für die Cloud aktiviert oder mit konfiguriertem Gateway für die Cloud deaktiviert sind. Beachten Sie, dass die hier zugewiesenen Werte nur Beispielwerte sind.
 
 		
 	| Netzwerkschnittstelle | Cloudfähig | Nicht cloudfähig mit Gateway |
 	|-----|---------------|---------------------------|
-	| Data 0 | 1 | - |
-	| Data 1 | 2 | 20 |
-	| Data 2 | 3 | 30 |
-	| Data 3 | 4 | 40 |
-	| Data 4 | 5 | 50 |
-	| Data 5 | 6 | 60 |
+	| Data 0 | 1 | - | | Data 1 | 2 | 20 | | Data 2 | 3 | 30 | | Data 3 | 4 | 40 | | Data 4 | 5 | 50 | | Data 5 | 6 | 60 |
 
 
 - Der Clouddatenverkehr wird in folgender Reihenfolge über die Netzwerkschnittstellen weitergeleitet:
@@ -136,7 +131,7 @@ Update 2 umfasst mehrere netzwerkbezogene Verbesserungen, und die Routingmetrik 
 - Wenn ein VIP-Fehler für eine iSCSI-aktivierte Netzwerkschnittstelle vorliegt, werden drei Wiederholungsversuche mit einer Verzögerung von 2 Sekunden unternommen. Dieses Verhalten ist seit früheren Versionen gleich geblieben. Wenn alle iSCSI-Netzwerkschnittstellen einen Fehler verursachen, wird ein Controllerfailover (zusammen mit einem Neustart) durchgeführt.
 
 
-- Außerdem wird eine Warnung auf dem StorSimple-Gerät ausgelöst, wenn ein VIP-Fehler vorliegt. Weitere Informationen finden Sie unter [Warnung für VIP-Fehler](storsimple-manage-alerts.md).
+- Außerdem wird eine Warnung auf dem StorSimple-Gerät ausgelöst, wenn ein VIP-Fehler vorliegt. Weitere Informationen finden Sie unter [Kurzübersicht zu Warnungen](storsimple-manage-alerts.md).
 	
 - Im Hinblick auf Wiederholungsversuche erhält iSCSI Vorrang vor der Cloud.
 
@@ -261,4 +256,4 @@ Lesen Sie sich diese bewährten Methoden sorgfältig durch, um eine hohe Verfüg
 <!--Reference links-->
 [1]: https://technet.microsoft.com/library/cc731844(v=WS.10).aspx
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1223_2015-->

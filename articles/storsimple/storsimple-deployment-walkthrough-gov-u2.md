@@ -15,7 +15,7 @@
    ms.date="12/09/2015"
    ms.author="v-sharos" />
 
-# Bereitstellen lokaler StorSimple-Geräte im Government-Portal
+# Bereitstellen lokaler StorSimple-Geräte im Government-Portal (Update 2)
 
 [AZURE.INCLUDE [storsimple-version-selector-deploy-gov](../../includes/storsimple-version-selector-deploy-gov.md)]
 
@@ -243,4 +243,4 @@ Konfigurieren eines [virtuellen Geräts](storsimple-virtual-device.md)
 Verwenden des [StorSimple-Manager-Diensts](https://msdn.microsoft.com/library/azure/dn772396.aspx) für das Verwalten Ihres StorSimple-Geräts
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1223_2015-->

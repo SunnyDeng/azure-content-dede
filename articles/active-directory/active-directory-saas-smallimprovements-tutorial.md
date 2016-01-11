@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/14/2015"
+	ms.date="12/18/2015"
 	ms.author="jeedes"/>
 
 
@@ -64,7 +64,7 @@ Zum Konfigurieren der Integration von Small Improvements in Azure AD müssen Si
 4. Klicken Sie unten auf der Seite auf **Hinzufügen**.<br><br> ![Anwendungen][3]<br>
 5. Klicken Sie im Dialogfeld **Was möchten Sie tun** auf **Anwendung aus dem Katalog hinzufügen**.<br><br> ![Anwendungen][4]<br>
 6. Geben Sie in das Suchfeld als Suchbegriff **Small Improvements** ein.<br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-smallimprovements-tutorial/tutorial_smallimprovements_01.png)<br>
-7. Wählen Sie im Ergebnisbereich **Small Improvements** aus, und klicken Sie dann auf **Abschließen**, um die Anwendung hinzuzufügen. <br><br>
+7. Wählen Sie im Ergebnisbereich **Small Improvements** aus, und klicken Sie dann auf **Abschließen**, um die Anwendung hinzuzufügen. <br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-smallimprovements-tutorial/tutorial_smallimprovements_02.png)<br>
 
 ##  Konfigurieren und Testen der einmaligen Anmeldung von Azure AD
 In diesem Abschnitt soll anhand eines Testbenutzers namens „Britta Simon“ veranschaulicht werden, wie das einmalige Anmelden von Azure AD in Small Improvements konfiguriert und getestet werden kann.
@@ -73,7 +73,7 @@ Damit einmaliges Anmelden funktioniert, muss Azure AD wissen, welcher Benutzer 
 
 Zum Konfigurieren und Testen des einmaligen Anmeldens in Azure AD bei Small Improvements müssen Sie die folgenden Bausteine ausführen:
 
-1. **[Konfigurieren des einmaligen Anmeldens von Azure AD](#configuring-azure-ad-single-single-sign-on)**, um Ihren Benutzern das Verwenden dieser Funktion zu ermöglichen.
+1. **[Konfigurieren von Azure AD – einmaliges Anmelden](#configuring-azure-ad-single-single-sign-on)**, um Ihren Benutzern das Verwenden dieser Funktion zu ermöglichen.
 2. **[Erstellen eines Azure AD-Testbenutzers](#creating-an-azure-ad-test-user)**, um das einmalige Anmelden mit Azure AD mit dem Testbenutzer Britta Simon zu testen.
 4. **[Erstellen eines Small Improvements-Testbenutzers](#creating-a-small-improvements-test-user)**, um eine Entsprechung von Britta Simon in Small Improvements zu erhalten, die mit ihrer Darstellung in Azure AD verknüpft ist.
 5. **[Zuweisen des Azure AD-Testbenutzers](#assigning-the-azure-ad-test-user)**, um Britta Simon für das einmalige Anmelden von Azure AD zu aktivieren.
@@ -89,11 +89,11 @@ Das Ziel dieses Abschnitts besteht darin, das einmalige Anmelden von Azure AD i
 
 1. Klicken Sie im klassischen Azure-Portal auf der Anwendungsintegrationsseite für **Small Improvements** auf **Einmaliges Anmelden konfigurieren**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu öffnen. <br><br> ![Einmaliges Anmelden konfigurieren][6] <br>
 
-2. Wählen Sie auf der Seite **Wie sollen sich Benutzer bei Small Improvements anmelden** die Option **Azure AD – einmaliges Anmelden** aus, und klicken Sie dann auf **Weiter**. <br><br> ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-smallimprovements-tutorial/tutorial_smallimprovements_03.png)<br>
+2. Wählen Sie auf der Seite **Wie sollen sich Benutzer bei Small Improvements anmelden** die Option **Azure AD – einmaliges Anmelden** aus und klicken Sie dann auf **Weiter**. <br><br> ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-smallimprovements-tutorial/tutorial_smallimprovements_03.png)<br>
 
 3. Führen Sie auf der Dialogseite **App-Einstellungen konfigurieren** die folgenden Schritte aus: <br><br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-smallimprovements-tutorial/tutorial_smallimprovements_04.png) <br>
 
-    > [AZURE.NOTE]Wenden Sie sich unter [Support@small-improvements.com](mailto:support@small-improvements.com) an das Supportteam von Small Improvements, und bitten Sie darum, einen Domänennamen für Ihr Konto zu konfigurieren. Dies ist erforderlich, damit das einmalige Anmelden funktioniert.
+    > [AZURE.NOTE]Wenden Sie sich unter [Support@small-improvements.com](mailto:support@small-improvements.com) an das Supportteam von Small Improvements und bitten Sie darum, einen Domänennamen für Ihr Konto zu konfigurieren. Dies ist erforderlich, damit das einmalige Anmelden funktioniert.
 
 
     a. Geben Sie im Textfeld **Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei der Small Improvements-Anwendung verwenden. b. Klicken Sie auf **Weiter**.
@@ -116,18 +116,18 @@ Das Ziel dieses Abschnitts besteht darin, das einmalige Anmelden von Azure AD i
 
 1. Führen Sie auf der Seite für die SSO-Einrichtung die folgenden Schritte aus: <br><br>![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-smallimprovements-tutorial/tutorial_smallimprovements_08.png) <br>
 
-    a. Kopieren Sie im klassischen Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Small Improvements** den Wert aus dem Feld **SAML-SSO-URL**, und fügen Sie ihn in das Textfeld **HTTP Endpoint** ein.
+    a. Kopieren Sie im klassischen Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Small Improvements** den Wert aus dem Feld **SAML-SSO-URL** und fügen Sie ihn in das Textfeld **HTTP Endpoint** ein.
 
-    b. Öffnen Sie das heruntergeladene Zertifikat im Editor, kopieren Sie den Inhalt, und fügen Sie ihn anschließend in das Textfeld **x509 Certificate** ein.
+    b. Öffnen Sie das heruntergeladene Zertifikat im Editor, kopieren Sie den Inhalt und fügen Sie ihn anschließend in das Textfeld **x509 Certificate** ein.
 
     c. Wenn Sie möchten, dass sich die Benutzer sowohl per einmaligem Anmelden (SSO, Single Sign-On) als auch über ein Anmeldeformular anmelden können, aktivieren Sie das Kontrollkästchen **Enable access via login/password too**.
   
 	d. Geben Sie im Textfeld **SAML Prompt** einen geeigneten Namen für die SSO-Anmeldeschaltfläche ein.
 
-	e. Klicken Sie auf **Save**.
+	e. Klicken Sie auf **Speichern**.
 
 
-6. Wählen Sie im klassischen Azure-Portal die Bestätigung zur Konfiguration der einmaligen Anmeldung aus, und klicken Sie dann auf **Weiter**. <br><br>![Azure AD – einmaliges Anmelden][10]<br>
+6. Wählen Sie im klassischen Azure-Portal die Bestätigung zur Konfiguration der einmaligen Anmeldung aus und klicken Sie dann auf **Weiter**. <br><br>![Azure AD – einmaliges Anmelden][10]<br>
 
 7. Klicken Sie auf der Seite **Bestätigung zur einmaligen Anmeldung** auf **Fertig stellen**. <br><br>![Azure AD – einmaliges Anmelden][11]
 
@@ -139,7 +139,7 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta S
 
 **Um einen Testbenutzer in Azure AD zu erstellen, führen Sie die folgenden Schritte aus:**
 
-1. Klicken Sie im **klassischen Azure-Portal** im linken Navigationsbereich auf **Active Directory**. <br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-smallimprovements-tutorial/create_aaduser_09.png) <br>
+1. Klicken Sie im **klassischen Azure-Portal** im linken Navigationsbereich auf **Active Directory**. <br><br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-smallimprovements-tutorial/create_aaduser_09.png)<br>
 
 2. Wählen Sie in der Liste **Verzeichnis** das Verzeichnis aus, für das Sie die Verzeichnisintegration aktivieren möchten.
 
@@ -177,7 +177,7 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta S
 
 ### Erstellen eines Small Improvements-Testbenutzers
 
-Das Ziel dieses Abschnitts ist das Erstellen eines Benutzers namens Britta Simon in Small Improvements. Sie haben Britta Simon bereits unter [Konfigurieren des einmaligen Anmeldens von Azure AD](#configuring-azure-ad-single-single-sign-on) als Benutzer aktiviert.
+Das Ziel dieses Abschnitts ist das Erstellen eines Benutzers namens Britta Simon in Small Improvements. Sie haben sie bereits unter [Konfigurieren der einmaligen Anmeldung in Azure AD](#configuring-azure-ad-single-single-sign-on) aktiviert.
 
 
 **Um einen Benutzer namens Britta Simon in Small Improvements zu erstellen, führen Sie die folgenden Schritte aus:**
@@ -188,9 +188,9 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Benutzers namens Britta Simon
 
 1. Klicken Sie im Abschnitt „User Management“ auf die Schaltfläche **User Directory**. <br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-smallimprovements-tutorial/tutorial_smallimprovements_10.png) <br>
 
-1. Klicken Sie auf **Add Team Member**. <br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-smallimprovements-tutorial/tutorial_smallimprovements_11.png) <br>
+1. Klicken Sie auf **Teammitglied hinzufügen**. <br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-smallimprovements-tutorial/tutorial_smallimprovements_11.png) <br>
 
-1. Geben Sie in die entsprechenden Textfelder den **Vornamen**, den **Nachnamen** und die **E-Mail-Adresse** eines gültigen bereitzustellenden Benutzers ein. <br><br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-smallimprovements-tutorial/tutorial_smallimprovements_12.png) <br>
+1. Geben Sie in die entsprechenden Textfelder den **Vornamen**, den **Nachnamen** und die **E-Mail-Adresse** eines gültigen bereitzustellenden Benutzers ein. <br><br>![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-smallimprovements-tutorial/tutorial_smallimprovements_12.png) <br>
 
 1. Im Feld **Send notification email** können Sie nach Wunsch eine persönliche Nachricht eingeben. Wenn Sie keine Benachrichtigung senden möchten, deaktivieren Sie dieses Kontrollkästchen.
 
@@ -243,4 +243,4 @@ Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für einm
 [204]: ./media/active-directory-saas-smallimprovements-tutorial/tutorial_general_204.png
 [205]: ./media/active-directory-saas-smallimprovements-tutorial/tutorial_general_205.png
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1223_2015-->

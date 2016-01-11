@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="05/13/2015"
+   ms.date="12/17/2015"
    ms.author="masashin"/>
 
 # API-Implementierungsleitfaden
@@ -247,26 +247,26 @@ Nachdem eine Anforderung einer Clientanwendung erfolgreich an eine Methode in ei
 	...
 	Content-Length: ...
 	{"CustomerID":2,"CustomerName":"Bert","Links":[
-	  {"Relationship":"self",
-	   "HRef":"http://adventure-works.com/customers/2",
-	   "Action":"GET",
-	   "LinkedResourceMIMETypes":["text/xml","application/json"]},
-	  {"Relationship":"self",
-	   "HRef":"http://adventure-works.com/customers/2",
-	   "Action":"PUT",
-	   "LinkedResourceMIMETypes":["application/x-www-form-urlencoded"]},
-	  {"Relationship":"self",
-	   "HRef":"http://adventure-works.com/customers/2",
-	   "Action":"DELETE",
-	   "LinkedResourceMIMETypes":[]},
-	  {"Relationship":"orders",
-	   "HRef":"http://adventure-works.com/customers/2/orders",
-	   "Action":"GET",
-	   "LinkedResourceMIMETypes":["text/xml","application/json"]},
-	  {"Relationship":"orders",
-	   "HRef":"http://adventure-works.com/customers/2/orders",
-	   "Action":"POST",
-	   "LinkedResourceMIMETypes":["application/x-www-form-urlencoded"]}
+	  {"rel":"self",
+	   "href":"http://adventure-works.com/customers/2",
+	   "action":"GET",
+	   "types":["text/xml","application/json"]},
+	  {"rel":"self",
+	   "href":"http://adventure-works.com/customers/2",
+	   "action":"PUT",
+	   "types":["application/x-www-form-urlencoded"]},
+	  {"rel":"self",
+	   "href":"http://adventure-works.com/customers/2",
+	   "action":"DELETE",
+	   "types":[]},
+	  {"rel":"orders",
+	   "href":"http://adventure-works.com/customers/2/orders",
+	   "action":"GET",
+	   "types":["text/xml","application/json"]},
+	  {"rel":"orders",
+	   "href":"http://adventure-works.com/customers/2/orders",
+	   "action":"POST",
+	   "types":["application/x-www-form-urlencoded"]}
 	]}
 	```
 
@@ -283,10 +283,10 @@ Nachdem eine Anforderung einer Clientanwendung erfolgreich an eine Methode in ei
 
 	public class Link
 	{
-    	public string Relationship { get; set; }
-    	public string HRef { get; set; }
+    	public string Rel { get; set; }
+    	public string Href { get; set; }
     	public string Action { get; set; }
-    	public string [] LinkedResourceMIMETypes { get; set; }
+    	public string [] Types { get; set; }
 	}
 	```
 
@@ -294,11 +294,11 @@ Nachdem eine Anforderung einer Clientanwendung erfolgreich an eine Methode in ei
 
 	- Die Beziehung zwischen dem zurückgegebenen Objekt und dem Objekt, das vom Link beschrieben wird. Hierbei wird mit „self“ angegeben, dass der Link ein Verweis zurück auf das Objekt selbst ist (ähnlich wie bei einem `this`-Zeiger in vielen objektorientierten Sprachen), und „orders“ ist der Name einer Auflistung, in der die dazugehörigen Bestellinformationen enthalten sind.
 
-	- Der Hyperlink (`HRef`) für das Objekt, das mit dem Link beschrieben wird, in Form eines URI.
+	- Der Hyperlink (`Href`) für das Objekt, das mit dem Link beschrieben wird, in Form eines URI.
 
 	- Der Typ der HTTP-Anforderung (`Action`), die an diesen URI gesendet werden kann.
 
-	- Das Format der Daten (`LinkedResourceMIMETypes`), die in der HTTP-Anforderung bereitgestellt werden sollen oder die je nach Art der Anforderung in der Antwort zurückgegeben werden können.
+	- Das Format der Daten (`Types`), die in der HTTP-Anforderung bereitgestellt werden sollen oder die je nach Art der Anforderung in der Antwort zurückgegeben werden können.
 
 	Mit den HATEOAS-Links in der HTTP-Beispielantwort wird angegeben, dass eine Clientanwendung die folgenden Vorgänge durchführen kann:
 
@@ -406,7 +406,7 @@ In einer verteilten Umgebung, z. B. mit einem Webserver und Clientanwendungen, 
 	Cache-Control: max-age=600, private
 	Content-Type: text/json; charset=utf-8
 	Content-Length: ...
-	{"OrderID":2,"ProductID":4,"Quantity":2,"OrderValue":10.00}
+	{"orderID":2,"productID":4,"quantity":2,"orderValue":10.00}
 	```
 
 	In diesem Beispiel wird mit dem Cache-Control-Header angegeben, dass die zurückgegebenen Daten nach 600 Sekunden ablaufen sollen. Außerdem sind sie nur für einen einzelnen Client geeignet und dürfen nicht in einem freigegebenen Cache gespeichert werden, der von anderen Clients verwendet wird (sie sind _private_). Im Cache-Control-Header kann anstelle von _private_ auch _public_ angegeben werden, damit die Daten in einem freigegebenen Cache gespeichert werden können. Oder es kann _no-store_ angegeben werden, wenn die Daten vom Client **nicht** zwischengespeichert werden dürfen. Im folgenden Codebeispiel wird veranschaulicht, wie Sie einen Cache-Control-Header in einer Antwortnachricht erstellen:
@@ -514,7 +514,7 @@ In einer verteilten Umgebung, z. B. mit einem Webserver und Clientanwendungen, 
 	Content-Type: text/json; charset=utf-8
 	ETag: "2147483648"
 	Content-Length: ...
-	{"OrderID":2,"ProductID":4,"Quantity":2,"OrderValue":10.00}
+	{"orderID":2,"productID":4,"quantity":2,"orderValue":10.00}
 	```
 
 	> [AZURE.TIP]Aus Sicherheitsgründen sollten Sie nicht zulassen, dass sensible Daten oder Daten, die über eine authentifizierte Verbindung (HTTPS) zurückgegeben werden, zwischengespeichert werden.
@@ -646,7 +646,7 @@ In einer verteilten Umgebung, z. B. mit einem Webserver und Clientanwendungen, 
 	...
 	Date: Fri, 12 Sep 2014 09:18:37 GMT
 	Content-Length: ...
-	ProductID=3&Quantity=5&OrderValue=250
+	productID=3&quantity=5&orderValue=250
 	```
 
 	- Der PUT-Vorgang in der Web-API ruft das aktuelle ETag für die angeforderten Daten ab („Order 1“ im obigen Beispiel) und vergleicht es mit dem Wert im If-Match-Header.
@@ -1152,4 +1152,4 @@ Anhand dieser Informationen können Sie bestimmen, ob eine bestimmte Web-API ode
 - Auf der Seite [Überprüfen von Code mithilfe von Komponententests](https://msdn.microsoft.com/library/dd264975.aspx) der Microsoft-Website werden ausführliche Informationen zum Erstellen und Verwalten von Komponententests mit Visual Studio bereitgestellt.
 - Auf der Seite [Ausführen von Leistungstests für Ihre App](https://msdn.microsoft.com/library/dn250793.aspx) der Microsoft-Website wird beschrieben, wie Sie Visual Studio Ultimate zum Erstellen eines Projekts zum Testen der Webleistung und Auslastung verwenden.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1223_2015-->

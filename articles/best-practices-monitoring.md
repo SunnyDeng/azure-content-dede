@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="04/28/2015"
+   ms.date="12/17/2015"
    ms.author="masashin"/>
 
 # Anleitung zur Überwachung und Diagnose
@@ -92,7 +92,7 @@ Die Instrumentationsdaten müssen zusammengefasst und korreliert werden, um die 
 
 - Die sofortige Verfügbarkeit des Systems und der Subsysteme.
 - Die Fehlerraten für die Verfügbarkeit des Systems und der Subsysteme. Im Idealfall sollte ein Operator Fehler bei bestimmten Aktivitäten in Beziehung setzen können: Was ist passiert, als das System fehlschlug?
-- Eine Verlaufsansicht mit den Fehlerraten des Systems oder der Subsysteme in einem angegeben Zeitraum und das Laden auf dem System (z. B. Anzahl der Benutzeranforderungen), wenn ein Fehler aufgetreten ist.
+- Eine Verlaufsansicht mit den Fehlerraten des Systems oder der Subsysteme in einem angegeben Zeitraum und die Ladung auf dem System (z. B. Anzahl der Benutzeranforderungen), wenn ein Fehler aufgetreten ist.
 - Die Gründe für die Nichtverfügbarkeit des Systems oder eines Subsystems. Wenn beispielsweise ein Dienst nicht ausgeführt wird, bei Verlust der Konnektivität, wenn ein Timeout trotz Verbindung auftritt und zurückgegebene Fehler trotz Verbindung.
 
 Sie können den Prozentsatz der Verfügbarkeit eines Diensts über einen Zeitraum mit folgender Formel berechnen:
@@ -101,7 +101,7 @@ Sie können den Prozentsatz der Verfügbarkeit eines Diensts über einen Zeitrau
 %Availability =  ((Total Time – Total Downtime) / Total Time ) * 100
 ```
 
-Dies ist nützlich für die Vereinbarung zum Servicelevel ([SLA-Überwachung](#SLA-monitoring) wird weiter unten in diesem Handbuch ausführlicher beschrieben). Die Definition der _Ausfallzeiten_ hängt vom Dienst ab. Visual Studio Team Services z. B. definiert Ausfallzeiten als den Zeitraum, in dem ein Kunde mit dem Dienst länger als 120 Sekunden eine Verbindung herstellen möchte und alle grundlegenden Lese- und Schreibvorgänge fehlschlagen, nachdem das Herstellen der Verbindung innerhalb dieses Zeitraums erfolgreich war.
+Dies ist nützlich für die Vereinbarung zum Servicelevel ([SLA-Überwachung](#SLA-monitoring) wird weiter unten in diesem Handbuch ausführlicher beschrieben). Die Definition der _Ausfallzeiten_ hängt vom Dienst ab. Z. B. definiert der Visual Studio Team Services-Builddienst Ausfallzeiten als den Zeitraum (Gesamtzahl der Minuten), in dem der Builddienst nicht verfügbar ist. Eine Minute wird als nicht verfügbar betrachtet, wenn alle fortlaufenden an den Builddienst gesendeten HTTP-Anforderungen zum Ausführen von Vorgängen, die vom Kunden initiiert wurden, während dieser Minute einen Fehlercode zur Folge haben oder keine Antwort zurückgeben.
 
 ## Leistungsüberwachung
 Während das System von mehr und mehr Benutzern und der Größe der Datensätze, auf die diese Benutzer verstärkt zugreifen können, unter Belastung steht, wird ein mögliches Fehlschlagen einer oder mehrerer Komponenten wahrscheinlich. Häufig ist eine Abnahme der Leistung Komponentenfehlern vorangestellt. Wenn Sie in der Lage sind, eine solche Leistungsabnahme zu erkennen, können Sie proaktive Schritte zur Abhilfe ergreifen.
@@ -283,14 +283,14 @@ Um die Systemleistung zu untersuchen, muss ein Operator in der Regel Information
 - Die Größe des Datenspeichers, der von jedem Benutzer belegt wird.
 - Die Ressourcen, auf die jeder einzelne Benutzer zugreift.
 
-Ein Operator sollte auch Diagramme generieren können, z. B. zur Anzeige von Benutzern, die am meisten Ressourcen verschlingen, oder von den am häufigsten verwendeten Ressourcen.
+Ein Operator sollte auch Diagramme generieren können, z. B. zur Anzeige von Benutzern, die am meisten Ressourcen verschlingen, oder von den am häufigsten verwendeten Ressourcen oder Systemfunktionen.
 
 ### Datenquellen, Instrumentation und Anforderungen für die Datensammlung
 Die Nachverfolgung der Nutzung kann auf einer relativ hohen Ebene durchgeführt werden, wobei Anfangs- und Endzeit jeder Anforderung und die Art der Anforderung erfasst werden (Lesen, Schreiben usw., abhängig von der betreffenden Ressource). Sie erhalten diese Informationen durch:
 
 - Ablaufverfolgung der Benutzeraktivität.
 - Erfassen von Leistungsindikatoren, die die Auslastung für jede Ressource messen.
-- Überwachung der CPU- und E/A-Auslastung für Vorgänge, die von jedem Benutzer ausgeführt werden.
+- Überwachen des Ressourcenverbrauchs durch jeden Benutzer.
 
 Zu Zwecken der Messung müssen Sie auch erkennen können, welcher Benutzer für das Durchführen welcher Vorgänge verantwortlich ist, und Ressourcen, die diese Vorgänge verwenden. Die gesammelten Informationen sollten ausreichen, um eine genaue Abrechnung zu ermöglichen.
 
@@ -324,7 +324,7 @@ Für die Ablaufverfolgung unerwarteter Ereignisse und anderer Probleme ist es wi
 ### Datenquellen, Instrumentation und Anforderungen für die Datensammlung
 Die Problembehandlung kann die Ablaufverfolgung aller Methoden (und ihrer Parameter) beinhalten, die als Teil eines Vorgangs aufgerufen werden, um eine Struktur zu erstellen, die den logischen Ablauf des Systems darstellt, wenn ein Kunde eine bestimmte Anforderung sendet. Vom System als Ergebnis dieses Ablaufs generierte Ausnahmen und Warnungen müssen erfasst und protokolliert werden.
 
-Um das Debuggen zu unterstützen, kann das System Hooks bereitstellen, mit denen einen Operator Zustandsinformationen an wichtigen Stellen im System erfassen kann oder detaillierte Schritt-für-Schritt-Informationen liefern kann, während die ausgewählten Vorgänge fortschreiten. Das Sammeln von Daten auf dieser Detailebene kann eine zusätzliche Belastung für das System bedeuten, sodass dies ein temporärer Vorgang sein sollte, der hauptsächlich verwendet wird, wenn eine ungewöhnliche Serie an Ereignissen auftritt, die schwer zu replizieren ist, oder wenn eine neue Version eines oder mehrerer Element in einem System eine sorgfältige Überwachung erfordert, um das erwartungsgemäße Funktionieren sicherzustellen.
+Um das Debuggen zu unterstützen, kann das System Hooks bereitstellen, mit denen einen Operator Zustandsinformationen an wichtigen Stellen im System erfassen kann oder detaillierte Schritt-für-Schritt-Informationen liefern kann, während die ausgewählten Vorgänge fortschreiten. Das Sammeln von Daten auf dieser Detailebene kann eine zusätzliche Belastung für das System bedeuten und sollte ein temporärer Vorgang sein, der hauptsächlich verwendet wird, wenn eine ungewöhnliche Serie an Ereignissen auftritt, die schwer zu replizieren ist, oder wenn eine neue Version eines oder mehrerer Element in einem System eine sorgfältige Überwachung erfordert, um das erwartungsgemäße Funktionieren sicherzustellen.
 
 ## Überwachungs- und Diagnosepipeline
 Die Überwachung von einem umfassenden verteilten System stellt eine erhebliche Herausforderung dar, und jedes der im vorherigen Abschnitt erläuterten Szenarios sollte nicht unbedingt als isoliert betrachtet werden. Es gibt wahrscheinlich erhebliche Überlappungen bei der Überwachung und Diagnose von Daten, die für jede Situation erforderlich sind, auch wenn diese Daten auf verschiedene Weise verarbeitet und dargestellt werden. Aus diesen Gründen sollten Sie die Überwachung und Diagnose ganzheitlich betrachten.
@@ -446,7 +446,6 @@ Bitte beachten Sie, dass dies eine vereinfachte Ansicht ist. Der Erfassungsdiens
 
 Für Azure-Anwendungen und -Dienste bietet Azure Diagnostics (WAD) eine mögliche Lösung für das Erfassen von Daten. WAD sammelt Daten aus den folgenden Quellen für jeden Computeknoten, verdichtet sie und lädt sie dann in den Azure-Speicher hoch:
 
-- Azure-Protokolle
 - IIS-Protokolle
 - Protokolle zu IIS-Anforderungsfehlern
 - Windows-Ereignisprotokolle
@@ -454,6 +453,8 @@ Für Azure-Anwendungen und -Dienste bietet Azure Diagnostics (WAD) eine möglich
 - Absturzabbilder
 - Infrastrukturprotokolle der Azure-Diagnose  
 - Benutzerdefinierte Fehlerprotokolle
+- .NET-EventSource
+- Manifestbasiertes ETW
 
 Weitere Informationen finden Sie im Artikel [Azure: Telemetrie-Grundlagen und Problembehandlung](http://social.technet.microsoft.com/wiki/contents/articles/18146.windows-azure-telemetry-basics-and-troubleshooting.aspx) auf der Microsoft-Website.
 
@@ -465,7 +466,7 @@ Um die Verwendung der Bandbreite zu optimieren, können Sie festlegen, dass weni
 #### _Pullen und Pushen von Instrumentationsdaten_
 Das Subsystem für die Instrumentationsdatensammlung kann Instrumentationsdaten entweder aktiv aus verschiedenen Protokollen und anderen Quellen für jede Instanz der Anwendung abrufen (das _Pullmodell_), oder es kann als passiver Empfänger auf Daten warten, die aus den Komponenten gesendet werden, die jede Instanz der Anwendung bilden (das _Pushmodell_).
 
-Ein Ansatz zum Implementieren des Pullmodells ist die Verwendung von Überwachungsagents, die lokal mit jeder Instanz der Anwendung ausgeführt werden. Ein Überwachungsagent ist ein separater Prozess, der in regelmäßigen Abständen (Pulls) Telemetriedaten abruft, die vom lokalen Knoten gesammelt werden, und diese Informationen direkt in den zentralen Speicher schreibt, der von allen Instanzen der Anwendung gemeinsam verwendet wird. Dies ist der Mechanismus, der von WAD implementiert wird. Jede Instanz einer Azure-Web- oder Workerrolle kann so konfiguriert werden, dass Diagnose- und andere lokal gespeicherte Ablaufverfolgungsinformationen erfasst werden. Der Überwachungsagent, der nebenbei ausgeführt wird, kopiert jeweils die angegebenen Daten in den Azure-Speicher. Auf der Seite [Konfigurieren von Diagnose für Azure Cloud Services und Virtual Machines](https://msdn.microsoft.com/library/azure/dn186185.aspx) auf der Microsoft-Website finden Sie nähere Einzelheiten. Einige Elemente, wie z. B. IIS-Protokolle, Absturzabbilder und benutzerdefinierte Fehlerprotokolle werden in Blob-Speicher geschrieben, während Daten aus dem Windows-Ereignisprotokoll, ETW-Ereignisse und Leistungsindikatoren im Tabellenspeicher erfasst werden. Dieser Mechanismus ist in Abbildung 3 dargestellt:
+Ein Ansatz zum Implementieren des Pullmodells ist die Verwendung von Überwachungsagents, die lokal mit jeder Instanz der Anwendung ausgeführt werden. Ein Überwachungsagent ist ein separater Prozess, der in regelmäßigen Abständen (Pulls) Telemetriedaten abruft, die vom lokalen Knoten gesammelt werden, und diese Informationen direkt in den zentralen Speicher schreibt, der von allen Instanzen der Anwendung gemeinsam verwendet wird. Dies ist der Mechanismus, der von WAD implementiert wird. Jede Instanz einer Azure-Web- oder Workerrolle kann so konfiguriert werden, dass Diagnose- und andere lokal gespeicherte Ablaufverfolgungsinformationen erfasst werden. Der Überwachungsagent, der nebenbei ausgeführt wird, kopiert jeweils die angegebenen Daten in den Azure-Speicher. Auf der Seite [Aktivieren der Diagnose in Azure Cloud Services und Virtual Machines](cloud-services-dotnet-diagnostics.md) auf der Microsoft-Website finden Sie nähere Einzelheiten. Einige Elemente, wie z. B. IIS-Protokolle, Absturzabbilder und benutzerdefinierte Fehlerprotokolle werden in Blob-Speicher geschrieben, während Daten aus dem Windows-Ereignisprotokoll, ETW-Ereignisse und Leistungsindikatoren im Tabellenspeicher erfasst werden. Dieser Mechanismus ist in Abbildung 3 dargestellt:
 
 ![](media/best-practices-monitoring/PullModel.png)
 
@@ -473,7 +474,6 @@ _Abbildung 3: Verwenden eines Überwachungs-Agents zum Abrufen von Informatione
 
 > [AZURE.NOTE]Überwachungsagents sind ideal dazu geeignet, Instrumentationsdaten zu erfassen, die naturgemäß aus einer Datenquelle abgerufen werden, z. B. Informationen aus SQL Server Management Views oder die Länge einer Azure Service Bus-Warteschlange.
 
-Informationen zum Konfigurieren und Verwenden von Azure Diagnostics finden Sie auf der Seite [Sammeln von Protokollierungsdaten mit Azure Diagnostics](https://msdn.microsoft.com/library/azure/gg433048.aspx) auf der Microsoft-Website.
 
 Telemetriedaten für eine kleine Anwendung, die auf einer begrenzten Anzahl von Knoten ausgeführt wird, können an einem einzigen Ort mithilfe des Ansatzes gespeichert werden, der gerade beschrieben wurde. Eine komplexe, hochgradig skalierbare, globale Cloud-Anwendung kann jedoch problemlos große Mengen von Daten aus Hunderten von Web-und Workerrollen, Datenbankshards und anderen Diensten generieren. Diese Datenflut kann die E/A-Bandbreite mit einfachem, zentralem Speicher schnell überlasten. Daher muss Ihre Telemetrielösung skalierbar sein, damit sie bei erweitertem System nicht zum Engpass wird, und im Idealfall ein Maß an Redundanz integrieren, um das Risiko zu reduzieren, wichtige Überwachungsinformationen zu verlieren (wie Überwachungs- und Abrechnungsdaten), wenn ein Teil des Systems fehlschlägt.
 
@@ -604,12 +604,11 @@ In vielen Fällen können Berichte in Batchprozessen nach einem bestimmten Zeitp
 ## Weitere Informationen
 - Der Artikel [Microsoft Azure Storage: Überwachung, Diagnose und Problembehandlung](storage-monitoring-diagnosing-troubleshooting.md) auf der Microsoft-Website.
 - Der Artikel [Azure: Telemetrie-Grundlagen und Problembehandlung](http://social.technet.microsoft.com/wiki/contents/articles/18146.windows-azure-telemetry-basics-and-troubleshooting.aspx) auf der Microsoft-Website.
-- Die Seite [Sammeln von Protokollierungsdaten mit Azure Diagnostics](https://msdn.microsoft.com/library/azure/gg433048.aspx) auf der Microsoft-Website.
-- Die Seite [Konfigurieren von Diagnose für Azure Cloud Services und Virtual Machines](https://msdn.microsoft.com/library/azure/dn186185.aspx) auf der Microsoft-Website.
+- Die Seite [Aktivieren der Diagnose in Azure Cloud Services und Virtual Machines](cloud-services-dotnet-diagnostics.md) auf der Microsoft-Website.
 - Die Seiten [Azure Redis Cache](http://azure.microsoft.com/services/cache/), [Azure DocumentDB](http://azure.microsoft.com/services/documentdb/), und [HDInsight](http://azure.microsoft.com/services/hdinsight/) auf der Microsoft-Website.
-- Die Seite [Verwenden von Service Bus-Warteschlangen](http://azure.microsoft.com/) auf der Microsoft-Website.
+- Die Seite [Verwenden von Service Bus-Warteschlangen](service-bus-dotnet-how-to-use-queues.md) auf der Microsoft-Website.
 - Der Artikel [SQL Server Business Intelligence auf virtuellen Azure-Computern](./virtual-machines/virtual-machines-sql-server-business-intelligence.md) auf der Microsoft-Website.
-- Die Seite [Grundlegendes zur Überwachung von Warnungen und Benachrichtigungen in Azure](https://msdn.microsoft.com/library/azure/dn306639.aspx) auf der Microsoft-Website.
-- Die Seite [Application Insights](app-insights-get-started/) auf der Microsoft-Website.
+- Die Seiten [Empfangen von Warnbenachrichtigungen](insights-receive-alert-notifications.md) und [Nachverfolgen der Dienstintegrität](insights-service-health.md) auf der Microsoft-Website.
+- Die Seite [Application Insights](app-insights-get-started.md) auf der Microsoft-Website.
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1223_2015-->

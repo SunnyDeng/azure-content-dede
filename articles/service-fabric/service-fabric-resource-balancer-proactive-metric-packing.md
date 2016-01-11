@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Proaktives Packen von Metriken"
-   description="Sie erhalten einen Überblick über das proaktive Packen von Metriken im Resource Balancer."
+   pageTitle="Proaktives Packen von Metriken | Microsoft Azure"
+   description="Übersicht über das proaktive Packen von Metriken im Resource Balancer"
    services="service-fabric"
    documentationCenter=".net"
    authors="GaugeField"
@@ -18,20 +18,20 @@
 
 # Proaktives Packen von Metriken
 
-Eine häufig verwendete Konfiguration für den Service Fabric Resource Balancer hat das Ziel, für jede Metrik auf jedem Knoten die gleiche Auslastung zu erreichen. Der Resource Balancer hat außerdem die Aufgabe, einen Platz für einen Dienst zu finden, wenn neue Dienstanforderungen eingehen. Falls nicht genügend freier Speicherplatz zum Platzieren neuer Dienstreplikate vorhanden ist (alle Replikate aller Dienstpartitionen), versucht der Resource Balancer, dafür Speicherplatz zu schaffen, indem vorhandene Workloads anders verteilt werden. Dies ist zwar ein völlig normaler Vorgang, aber er kann relativ viel Zeit in Anspruch nehmen. Dies hängt davon ab, wie voll der Cluster ist und welcher Fragmentierungsgrad für die Workload besteht.
+Eine häufig verwendete Konfiguration für den Resource Balancer in Azure Service Fabric zielt darauf ab, für jede Metrik auf jedem Knoten eine gleichmäßige Auslastung zu erreichen. Der Resource Balancer hat außerdem die Aufgabe, bei Eingang neuer Dienstanforderungen einen Platz für Dienste zu finden. Sollte für neue Dienstreplikate (alle Replikate aller Dienstpartitionen) nicht genügend Platz vorhanden sein, versucht der Resource Balancer, durch Umverteilung vorhandener Workloads Platz zu schaffen. Dieser Vorgang ist ganz normal, kann aber zeitaufwendig sein. Das hängt davon ab, wie voll der Cluster ist und welcher Fragmentierungsgrad für die Workload besteht.
 
-Wenn der Cluster relativ stark ausgelastet ist und der Kunde einen neuen Dienst mit einer hohen Standardauslastung hinzufügen möchte (z. B. maximale Knotenkapazität für eine oder mehrere Metriken), muss der Resource Balancer unter Umständen viele Replikate verschieben, um den neuen Dienst platzieren zu können. Wenn Dienste zustandsbehaftet und groß sind, kann das Ausführen der erforderlichen Verschiebungen einige Zeit in Anspruch nehmen, weil Daten kopiert werden müssen. Diese beiden Aspekte können zu einer Verlängerung der Diensterstellungsdauer führen. Im Allgemeinen sollten Dienste gelegentliche längere Erstellungsdauern zwar tolerieren, aber einige Workloads sind weniger tolerant und verlangen eine schnellstmögliche Erstellung. Dies bedeutet, dass der Resource Balancer im stabilen Zustand sicherstellen muss, dass das Cluster „defragmentiert“ ist. Dies erhöht die Chance, dass genügend Platz für neue Workloads vorhanden ist.
+Wenn der Cluster beispielsweise ziemlich stark ausgelastet ist und der Kunde einen neuen Dienst mit einer hohen Standardauslastung hinzufügen möchte (z. B. maximale Knotenkapazität für eine oder mehrere Metriken), muss der Resource Balancer unter Umständen viele Replikate verschieben, um den neuen Dienst platzieren zu können. Wenn Dienste zustandsbehaftet und groß sind, kann das Ausführen der erforderlichen Verschiebungen einige Zeit in Anspruch nehmen, weil Daten kopiert werden müssen. Diese beiden Aspekte können zu einer Verlängerung der Diensterstellungsdauer führen. Im Allgemeinen wird eine gelegentlich länger dauernde Diensterstellung zwar toleriert, einige Workloads sind jedoch weniger tolerant und erwarten eine schnellstmögliche Erstellung. Das bedeutet, dass der Resource Balancer im stabilen Zustand die Defragmentierung des Clusters sicherstellen muss, um die Chance zu erhöhen, dass genügend Platz für neue Workloads vorhanden ist.
 
-Der Mechanismus zum proaktiven Packen von Metriken (Defragmentierung) wird als Teil der Resource Balancer-Ausgleichsphase mit dem Ziel ausgeführt, die Dauer der Diensterstellung zu verringern. Hierzu werden Workloads auf weniger Knoten angeordnet, anstatt sie wie beim Lastenausgleich weiträumiger zu verteilen. Wenn eine Metrik für die Defragmentierung konfiguriert ist, strebt der Resource Balancer die maximale durchschnittliche Standardabweichung an, und nicht die minimale durchschnittliche Standardabweichung wie beim Lastenausgleich.
+Der Mechanismus zum proaktiven Packen von Metriken (Defragmentierung) wird als Teil der Ausgleichsphase im Resource Balancer ausgeführt, um die Diensterstellung zu beschleunigen. Hierzu werden Workloads auf weniger Knoten platziert, anstatt sie wie beim Lastenausgleich zu verteilen. Wenn eine Metrik für die Defragmentierung konfiguriert ist, strebt der Resource Balancer nicht wie beim Lastenausgleich die minimale durchschnittliche Standardabweichung, sondern die maximale durchschnittliche Standardabweichung an.
 
-Bei der maximalen Abweichung versucht der Resource Balancer, auf einigen Knoten so viele Dienste wie möglich zu platzieren, während gleichzeitig so viele Knoten wie möglich leer gelassen werden. Eine der grundlegenden Einschränkungen für das Platzieren neuer Dienste lautet zudem, dass Replikate sich nicht in der derselben Upgradedomäne oder Fehlerdomäne befinden können. Da das Ziel das schnelle Hinzufügen neuer Dienste ist, sollte der Resource Balancer die minimale Standardabweichung der Lastenverteilung zwischen Upgradedomänen und Fehlerdomänen anstreben (Summe der Dienstauslastungen pro Upgradedomäne/Fehlerdomäne). Das Ergebnis ist, dass pro Upgradedomäne/Fehlerdomäne die gleiche Menge an freiem Speicherplatz vorhanden ist. Bei der Defragmentierung werden auch alle anderen Einschränkungen im System respektiert, z. B. Affinität, Platzierungseinschränkungen und Knotenmetrikkapazität.
+Bei der maximalen Abweichung versucht der Resource Balancer, möglichst viele Dienste auf einigen wenigen Knoten zu platzieren und dabei möglichst viele Knoten leer zu lassen. Eine der grundlegenden Einschränkungen für das Platzieren neuer Dienste ist zudem, dass sich Replikate nicht in der gleichen Upgrade- oder Fehlerdomäne befinden können. Da das Ziel das schnelle Hinzufügen neuer Dienste ist, muss der Resource Balancer die minimale Standardabweichung der Lastenverteilung zwischen Upgradedomänen und Fehlerdomänen anstreben (Summe der Dienstauslastungen pro Upgradedomäne/Fehlerdomäne). Das führt dann dazu, dass pro Upgradedomäne/Fehlerdomäne die gleiche Menge an freiem Speicherplatz vorhanden ist. Bei der Defragmentierung werden auch alle anderen Einschränkungen des Systems (etwa Affinität, Platzierungseinschränkungen und Knotenmetrikkapazität) respektiert.
 
-## Resource Balancer-Clusterkonfiguration
-Im Clustermanifest wird mit den folgenden unterschiedlichen Konfigurationswerten das allgemeine Verhalten der Funktion für das Packen von Metriken im Resource Balancer festgelegt:
+## Resource Balancer-Clusterkonfiguration
+Im Clustermanifest wird mit den folgenden Konfigurationswerten das allgemeine Verhalten des Features für das Packen von Metriken im Resource Balancer festgelegt:
 
-### DefragmentationMetrics: Metriken, die vom Resource Balancer für das proaktive Packen bzw. die Defragmentierung berücksichtigt werden sollten.
+### DefragmentationMetrics
 
-Alle konfigurierten Metriken sollten in dieser Liste angegeben werden (wie in den Listen mit den Aktivitäts- und Ausgleichsschwellenwerten). Wenn diese Metrik mit dem Wert „true“ angegeben wird, wird sie als Defragmentierungsmetrik behandelt. Mit dem Wert „false“ (oder bei fehlender Angabe in der Liste) wird sie für die Defragmentierung nicht berücksichtigt.
+Defragmentierungsmetriken sind Metriken, die vom Resource Balancer beim proaktiven Packen bzw. Defragmentieren berücksichtigt werden müssen. Alle konfigurierten Metriken müssen in dieser Liste angegeben werden (genau wie bei den Listen mit den Aktivitäts- und Ausgleichsschwellenwerten). Mit dem Wert „true“ angegebene Metriken werden als Defragmentierungsmetrik behandelt. Wenn die Metrik den Wert „false“ besitzt (oder nicht in der Liste angegeben ist), wird sie bei der Defragmentierung nicht berücksichtigt.
 
 ``` xml
 <FabricSettings>
@@ -42,21 +42,21 @@ Alle konfigurierten Metriken sollten in dieser Liste angegeben werden (wie in de
 </FabricSettings>
 ```
 
-### BalacingThreshholds
+### BalancingThreshholds
 
-Mit Ausgleichsschwellenwerten wird gesteuert, welchen Fragmentierungsgrad der Cluster für eine bestimmte Metrik aufweisen darf, bevor der Resource Balancer mit der Ausführung der Ausgleichsphase beginnt (mit der Logik für das Packen von Metriken). Wenn die Metrik als Defragmentierungsmetrik berücksichtigt wird, ist der Ausgleichsschwellenwert das minimale Verhältnis zwischen den maximal und minimal verwendeten Knoten pro Upgrade- oder Fehlerdomäne, die vom Resource Balancer vor Beginn der Defragmentierung im Cluster zugelassen werden. Wenn dieser Wert für eine Upgrade- oder Fehlerdomäne kleiner als der Schwellenwert ist, beginnt die Defragmentierungsphase.
+Mit Ausgleichsschwellenwerten wird gesteuert, welchen Fragmentierungsgrad der Cluster für eine bestimmte Metrik aufweisen darf, bevor der Resource Balancer die Ausgleichsphase (mit der Logik für das Packen von Metriken) ausführt. Wenn die Metrik als Defragmentierungsmetrik behandelt wird, ist der Ausgleichsschwellenwert das minimale Verhältnis zwischen den maximal und minimal verwendeten Knoten pro Upgrade- oder Fehlerdomäne, die vom Resource Balancer vor Beginn der Defragmentierung im Cluster zugelassen werden. Wenn dieses Verhältnis für eine Upgrade- oder Fehlerdomäne kleiner als der Schwellenwert ist, beginnt die Defragmentierungsphase.
 
-Die folgende Abbildung enthält zwei Beispiele, bei denen der Ausgleichsschwellenwert für die Metrik den Wert 10 hat.
+Die folgende Abbildung enthält zwei Beispiele, in denen der Ausgleichsschwellenwert für die Metrik den Wert 10 besitzt:
 
-![Ausgleichsschwellenwert][Image1]
+![Beispiele für Ausgleichsschwellenwerte][Image1]
 
-Beachten Sie, dass für die „Auslastung“ eines Knotens nicht die Größe des Knotens berücksichtigt wird, die anhand der Kapazität des Knotens bestimmt wurde. Es wird nur die absolute Nutzung berücksichtigt, die am Knoten für die angegebene Metrik gerade gemeldet wird.
+Beachten Sie, dass in diesem Fall bei der Auslastung eines Knotens nicht die durch die Kapazität des Knotens bestimmte Knotengröße berücksichtigt wird. Stattdessen wird nur die absolute Nutzung berücksichtigt, die am Knoten momentan für die angegebene Metrik gemeldet wird.
 
-Wenn die Metrik nicht angegeben ist, ist der Standardwert 1. In diesem Fall wird die Defragmentierung durchgeführt, bis der Cluster in jeder Upgradedomäne und Fehlerdomäne mindestens einen leeren Knoten enthält.
+Wenn die Metrik nicht angegeben ist, wird der Standardwert 1 verwendet. In diesem Fall wird die Defragmentierung durchgeführt, bis der Cluster in jeder Upgrade- und Fehlerdomäne mindestens einen leeren Knoten enthält.
 
-Der Wert 0 bedeutet, dass diese Metrik während der Lastenausgleichsphase nicht berücksichtigt werden soll – ob sie für die Defragmentierung berücksichtigt wird oder nicht.
+Der Wert 0 bedeutet, dass diese Metrik während der Lastenausgleichsphase nicht berücksichtigt werden soll – ganz gleich, ob sie für die Defragmentierung berücksichtigt wird.
 
-Im Codebeispiel wird veranschaulicht, dass Ausgleichsschwellenwerte für Metriken pro Metrik über das FabricSettings-Element im Clustermanifest konfiguriert werden.
+Das folgende Codebeispiel zeigt, dass metrikspezifische Ausgleichsschwellenwerte über das FabricSettings-Element im Clustermanifest konfiguriert werden:
 
 ``` xml
 <FabricSettings>
@@ -69,9 +69,8 @@ Im Codebeispiel wird veranschaulicht, dass Ausgleichsschwellenwerte für Metrike
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## Nächste Schritte
 
-Weitere Informationen: [Resource Balancer-Architektur](service-fabric-resource-balancer-architecture.md)
+Weitere Informationen: [Resource Balancer-Architektur](service-fabric-resource-balancer-architecture.md)
 
 [Image1]: media/service-fabric-resource-balancer-proactive-metric-packing/PMP.png
- 
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1223_2015-->

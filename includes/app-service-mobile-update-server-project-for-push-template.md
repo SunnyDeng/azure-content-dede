@@ -50,9 +50,13 @@ Nutzen Sie das Ihrem Back-End-Projekttyp entsprechende Verfahren: entweder [.NET
 
 	Weitere Informationen zu Vorlagen mit Notification Hubs finden Sie unter [Vorlagen](notification-hubs-templates.md).
 
+4. Veröffentlichen Sie das Serverprojekt erneut.
+
 ### <a name="nodejs"></a>Node.js-Back-End-Projekt
 
-1. Ersetzen Sie den bestehenden Code in der Datei „todoitem.js“ durch den folgenden Code:
+1. Falls nicht bereits geschehen, [laden Sie das Schnellstartprojekt herunter](app-service-mobile-node-backend-how-to-use-server-sdk.md#download-quickstart) oder verwenden Sie den [Online-Editor im Azure-Portal](app-service-mobile-node-backend-how-to-use-server-sdk.md#online-editor).
+
+2. Ersetzen Sie den bestehenden Code in der Datei „todoitem.js“ durch den folgenden Code:
 
 		var azureMobileApps = require('azure-mobile-apps'),
 	    promises = require('azure-mobile-apps/src/utilities/promises'),
@@ -97,4 +101,4 @@ Nutzen Sie das Ihrem Back-End-Projekttyp entsprechende Verfahren: entweder [.NET
 
 2. Beim Bearbeiten der Datei auf Ihrem lokalen Computer veröffentlichen Sie das Serverprojekt erneut.
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1223_2015-->

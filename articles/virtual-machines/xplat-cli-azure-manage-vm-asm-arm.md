@@ -14,11 +14,11 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="command-line-interface"
 	ms.workload="infrastructure-services"
-	ms.date="08/28/2015"
+	ms.date="12/14/2015"
 	ms.author="danlep"/>
 
 
-# Befehlsentsprechungen für den Ressourcen-Manager und die Dienstverwaltung für Aufgaben für virtuelle Computer mit der Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows
+# Befehlsentsprechungen für den Ressourcen-Manager und die Dienstverwaltung für Aufgaben für virtuelle Computer mit der Azure-Befehlszeilenschnittstelle
 In diesem Artikel werden die Entsprechungen für die Befehle der Microsoft Azure-Befehlszeilenschnittstelle (Azure CLI) zum Erstellen und Verwalten von virtuellen Azure-Computern in der Azure-Dienstverwaltung und im Azure-Ressourcen-Manager beschrieben. Verwenden Sie ihn als eine praktische Anleitung zum Migrieren von Skripts aus einem Befehlsmodus in einen anderen.
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
@@ -27,21 +27,21 @@ In diesem Artikel werden die Entsprechungen für die Befehle der Microsoft Azure
 
 * Wenn Sie die Azure-Befehlszeilenschnittstelle noch nicht installiert und mit Ihrem Abonnement verbunden haben, finden Sie unter [Installieren der Azure-Befehlszeilenschnittstelle ](../xplat-cli-install.md) und [Herstellen einer Verbindung mit einem Azure-Abonnement über die Azure-Befehlszeilenschnittstelle](../xplat-cli-connect.md). Wenn Sie die Befehle des Ressourcen-Manager-Modus verwenden möchten, achten Sie darauf, dass eine Verbindung mit der Anmeldemethode besteht.
 
-* Informationen zu den ersten Schritten mit dem Ressourcen-Manager-Modus der Azure-Befehlszeilenschnittstelle und zum Wechseln der Befehlsmodi finden Sie unter [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](xplat-cli-azure-resource-manager.md). Die Befehlszeilenschnittstelle wird standardmäßig im Dienstverwaltungsmodus gestartet. Wenn Sie in den Ressourcen-Manager-Modus wechseln möchten, führen Sie `azure config mode arm` aus. Wenn Sie zurück in den Dienstverwaltungsmodus wechseln möchten, führen Sie `azure config mode asm` aus.
+* Für die ersten Schritte mit dem Ressourcen-Manager-Modus in der Azure-Befehlszeilenschnittstelle müssen Sie möglicherweise die Befehlsmodi wechseln. Die Befehlszeilenschnittstelle wird standardmäßig im Dienstverwaltungsmodus gestartet. Wenn Sie in den Ressourcen-Manager-Modus wechseln möchten, führen Sie `azure config mode arm` aus. Wenn Sie zurück in den Dienstverwaltungsmodus wechseln möchten, führen Sie `azure config mode asm` aus.
 
 * Onlinehilfe zu den Befehlen und Optionen erhalten Sie durch Eingabe von `azure <command> <subcommand> --help` oder `azure help <command> <subcommand>`.
 
 ## Aufgaben für virtuelle Computer
 In der folgenden Tabelle werden allgemeine Aufgaben für virtuelle Computer verglichen, die Sie mit Befehlen der Azure-Befehlszeilenschnittstelle in der Dienstverwaltung und im Ressourcen-Manager ausführen können. Bei vielen Ressourcen-Manager-Befehlen müssen Sie den Namen einer vorhandenen Ressourcengruppe übergeben.
 
-> [AZURE.NOTE]Diese Beispiele umfassen keine vorlagenbasierten Vorgänge im Ressourcen-Manager. Weitere Informationen finden Sie unter [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](xplat-cli-azure-resource-manager.md).
+> [AZURE.NOTE]Diese Beispiele umfassen keine vorlagenbasierten Vorgänge, die im Allgemeinen für VM-Bereitstellungen im Ressourcen-Manager empfohlen werden. Informationen finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle mit Azure-Ressourcen-Manager](../xplat-cli-azure-resource-manager.md) und [Bereitstellen und Verwalten von virtuellen Computern mit Azure-Ressourcen-Manager-Vorlagen und der Azure-Befehlszeilenschnittstelle](virtual-machines-deploy-rmtemplates-azure-cli.md).
 
 Aufgabe | Dienstverwaltung | Ressourcen-Manager
 -------------- | ----------- | -------------------------
-Erstellen grundlegender virtueller Computer | `azure vm create [options] <dns-name> <image> [userName] [password]` | `azure vm quick-create [options] <resource-group> <name> <location> <os-type> <image-urn> <admin-username> <admin-password>`<br/><br/>(Rufen Sie `image-urn` aus dem Befehl `azure vm image list` ab.)
+Erstellen grundlegender virtueller Computer | `azure vm create [options] <dns-name> <image> [userName] [password]` | `azure vm quick-create [options] <resource-group> <name> <location> <os-type> <image-urn> <admin-username> <admin-password>`<br/><br/>(Rufen Sie `image-urn` aus dem Befehl `azure vm image list` ab. Nähere Einzelheiten finden Sie [in diesem Artikel](resource-groups-vm-searching.md).)
 Erstellen eines virtuellen Linux-Computers | `azure vm create [options] <dns-name> <image> [userName] [password]` | `azure  vm create [options] <resource-group> <name> <location> -y "Linux"`
 Erstellen eines virtuellen Windows-Computers | `azure vm create [options] <dns-name> <image> [userName] [password]` | `azure  vm create [options] <resource-group> <name> <location> -y "Windows"`
-Auflisten der virtuellen Computer | `azure  vm list [options]` | `azure  vm list [options] <resource_group>`
+Auflisten der virtuellen Computer | `azure  vm list [options]` | `azure  vm list [options]`
 Abrufen von Informationen zu einem virtuellen Computer | `azure  vm show [options] <vm_name>` | `azure  vm show [options] <resource_group> <name>`
 Starten eines virtuellen Computers | `azure vm start [options] <name>` | `azure vm start [options] <resource_group> <name>`
 Anhalten eines virtuellen Computers | `azure vm shutdown [options] <name>` | `azure vm stop [options] <resource_group> <name>`
@@ -59,8 +59,7 @@ Hinzufügen einer Docker-Erweiterung zu einem virtuellen Computer | `azure  vm d
 Hinzufügen einer Chef-Erweiterung zu einem virtuellen Computer | `azure  vm extension get-chef [options] <vm-name>` | Nicht verfügbar
 Deaktivieren einer VM-Erweiterung | `azure  vm extension set [options] –b <vm-name> <extension-name> <publisher-name> <version>` | Nicht verfügbar
 Entfernen einer VM-Erweiterung | `azure  vm extension set [options] –u <vm-name> <extension-name> <publisher-name> <version>` | `azure  vm extension set [options] –u <resource-group> <vm-name> <name> <publisher-name> <version>`
-Auflisten von VM-Erweiterungen | `azure vm extension list [options]` | `azure  vm extension get [options] <resource-group> <vm-name>`
-Auflisten von VM-Images | `azure vm image list [options]` | `azure vm image list [options] <location> <publisher> [offer] [sku]` – oder – <br/> `azure vm image list-publishers [options] <location>` – oder – <br/> `azure vm image list-offers [options] <location>` – oder – <br/> `azure vm image list-skus [options] <location>`
+Auflisten von VM-Erweiterungen | `azure vm extension list [options]` | Nicht verfügbar
 Anzeigen eines VM-Images | `azure vm image show [options]` | Nicht verfügbar
 Abrufen der Nutzung virtueller Computerressourcen | Nicht verfügbar | `azure vm list-usage [options] <location>`
 Abrufen Sie aller verfügbaren Größen von virtuellen Computern | Nicht verfügbar | `azure vm sizes [options]`
@@ -68,7 +67,6 @@ Abrufen Sie aller verfügbaren Größen von virtuellen Computern | Nicht verfüg
 
 ## Nächste Schritte
 
-* Weitere Informationen zur Verwendung der Azure-Befehlszeilenschnittstelle mit Ressourcen-Manager-Ressourcen finden Sie unter [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager](xplat-cli-azure-resource-manager.md) und [Verwalten der rollenbasierten Zugriffssteuerung mit der Azure-Befehlszeilenschnittstelle](../role-based-access-control-xplat-cli-install.md).
-* Weitere Beispiele für die Befehle der Befehlszeilenschnittstelle finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle mit der Azure-Dienstverwaltung](../virtual-machines-command-line-tools.md) und [Verwenden der Azure-Befehlszeilenschnittstelle mit dem Azure-Ressourcen-Manager](azure-cli-arm-commands.md).
+* Weitere Beispiele für die Befehle der Befehlszeilenschnittstelle finden Sie unter [Verwenden der Azure-Befehlszeilenschnittstelle mit der Azure-Dienstverwaltung](virtual-machines-command-line-tools.md) und [Verwenden der Azure-Befehlszeilenschnittstelle mit dem Azure-Ressourcen-Manager](azure-cli-arm-commands.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1223_2015-->

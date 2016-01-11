@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/12/2015"
+	ms.date="12/18/2015"
 	ms.author="billmath;andkjell"/>
 
 # Aktivieren des Geräterückschreibens in Azure AD Connect
@@ -26,6 +26,9 @@ Dies bietet zusätzliche Sicherheit und die Gewissheit, dass nur vertrauenswürd
 
 >[AZURE.NOTE]Für das Geräterückschreiben ist ein Azure AD Premium-Abonnement erforderlich.
 
+.
+
+>[AZURE.IMPORTANT]Geräte müssen sich in der gleichen Gesamtstruktur befinden wie die Benutzer. Da Geräte mit einer einzelnen Gesamtstruktur zurückgeschrieben werden müssen, unterstützt diese Funktion derzeit keine Bereitstellung mit mehreren Gesamtstrukturen für Benutzer.
 
 ## Teil 1: Installieren von Azure AD Connect
 1. Installieren Sie Azure AD Connect mit benutzerdefinierten Einstellungen oder Expresseinstellungen. Es wird empfohlen, zuerst alle Benutzer und Gruppen erfolgreich zu synchronisieren, bevor Sie das Geräterückschreiben aktivieren.
@@ -64,7 +67,7 @@ Parameter:
 Verwenden Sie das folgende Verfahren, um das Geräterückschreiben in Azure AD Connect zu aktivieren.
 
 1.	Führen Sie den Installations-Assistenten erneut aus. Wählen Sie auf der Seite „Weitere Aufgaben“ die Option **Synchronisierungsoptionen anpassen** aus, und klicken Sie auf **Weiter**. ![Benutzerdefinierte Installation](./media/active-directory-aadconnect-get-started-custom-device-writeback/devicewriteback2.png)
-2.	Auf der Seite "Optionale Features" wird das Geräterückschreiben nicht mehr abgeblendet dargestellt. Beachten Sie, dass auf der Seite "Optionale Features" das Geräterückschreiben abgeblendet dargestellt wird, wenn vorbereitende Azure AD Connect-Schritte nicht abgeschlossenen sind. Aktivieren Sie das Kontrollkästchen für das Geräterückschreiben, und klicken Sie auf **Weiter**. Wenn das Kontrollkästchen noch deaktiviert ist, helfen Ihnen die Informationen im [Abschnitt zur Problembehandlung](#the-writeback-checkbox-is-still-disabled) weiter. ![Geräterückschreiben](./media/active-directory-aadconnect-get-started-custom-device-writeback/devicewriteback3.png)
+2.	Auf der Seite "Optionale Features" wird das Geräterückschreiben nicht mehr abgeblendet dargestellt. Beachten Sie, dass auf der Seite "Optionale Features" das Geräterückschreiben abgeblendet dargestellt wird, wenn vorbereitende Azure AD Connect-Schritte nicht abgeschlossenen sind. Aktivieren Sie das Kontrollkästchen für das Geräterückschreiben und klicken Sie auf **Weiter**. Wenn das Kontrollkästchen noch deaktiviert ist, helfen Ihnen die Informationen im [Abschnitt zur Problembehandlung](#the-writeback-checkbox-is-still-disabled) weiter. ![Geräterückschreiben](./media/active-directory-aadconnect-get-started-custom-device-writeback/devicewriteback3.png)
 3.	Auf der Seite "Rückschreiben" sehen Sie die angegebene Domäne als die standardmäßige Gesamtstruktur für das Geräterückschreiben. ![Benutzerdefinierte Installation](./media/active-directory-aadconnect-get-started-custom-device-writeback/devicewriteback4.png)
 4.	Schließen Sie die Installation des Assistenten ohne zusätzliche Konfigurationsänderungen ab. Bei Bedarf finden Sie weitere Informationen unter [Benutzerdefinierte Installation von Azure AD Connect](active-directory-aadconnect-get-started-custom.md).
 
@@ -126,4 +129,4 @@ Zuerst die wichtigen Dinge:
 ## Nächste Schritte
 Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1223_2015-->

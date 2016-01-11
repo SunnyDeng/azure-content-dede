@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="cache-redis"
    ms.workload="tbd"
-   ms.date="12/03/2015"
+   ms.date="12/17/2015"
    ms.author="sdanie" />
 
 # ASP.NET-Sitzungszustandsanbieter für Azure Redis Cache
@@ -29,7 +29,7 @@ Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf das Proj
 
 Geben Sie **RedisSessionStateProvider** in das Textfeld „Online-Suche“ ein, wählen Sie in den Suchergebnissen das Paket aus, und klicken Sie auf „Installieren“.
 
->[AZURE.IMPORTANT]Wenn Sie das Clusteringfeature aus dem Premium-Tarif verwenden, müssen Sie [RedisSessionStateProvider](https://www.nuget.org/packages/Microsoft.Web.RedisSessionStateProvider) 2.0.0 oder höher verwenden. Andernfalls wird eine Ausnahme ausgelöst. Dies ist eine unterbrechende Änderung. Weitere Informationen finden Sie unter [v2.0.0 Breaking Change Details](https://github.com/Azure/aspnet-redis-providers/wiki/v2.0.0-Breaking-Change-Details) (in englischer Sprache).
+>[AZURE.IMPORTANT]Wenn Sie das Clusteringfeature aus dem Premium-Tarif verwenden, müssen Sie [RedisSessionStateProvider](https://www.nuget.org/packages/Microsoft.Web.RedisSessionStateProvider) 2.0.1 oder höher verwenden. Andernfalls wird eine Ausnahme ausgelöst. Dies ist eine unterbrechende Änderung. Weitere Informationen finden Sie unter [v2.0.0 Breaking Change Details](https://github.com/Azure/aspnet-redis-providers/wiki/v2.0.0-Breaking-Change-Details) (in englischer Sprache).
 
 ![Azure Redis Cache – Sitzungszustandsanbieter](./media/cache-asp.net-session-state-provider/IC751730.png)
 
@@ -106,4 +106,4 @@ Weitere Information über das Thema Sitzungszustand und andere bewährte Verfahr
 
 Lesen Sie [ASP.NET-Ausgabecacheanbieter für Azure Redis Cache](cache-asp.net-output-cache-provider.md).
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1223_2015-->

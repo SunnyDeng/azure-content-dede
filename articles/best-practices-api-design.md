@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="04/28/2015"
+   ms.date="12/17/2015"
    ms.author="masashin"/>
 
 # Leitfaden zum API-Design
@@ -51,14 +51,14 @@ GET http://adventure-works.com/orders HTTP/1.1
 ...
 ```
 
-Die unten gezeigte Antwort codiert die Bestellungen als XML-Listenstruktur. Die Liste enthält 7 Bestellungen:
+Die unten gezeigte Antwort codiert die Bestellungen als JSON-Listenstruktur:
 
 ```HTTP
 HTTP/1.1 200 OK
 ...
 Date: Fri, 22 Aug 2014 08:49:02 GMT
 Content-Length: ...
-<OrderList xmlns:i="..." xmlns="..."><Order><OrderID>1</OrderID><OrderValue>99.90</OrderValue><ProductID>1</ProductID><Quantity>1</Quantity></Order><Order><OrderID>2</OrderID><OrderValue>10.00</OrderValue><ProductID>4</ProductID><Quantity>2</Quantity></Order><Order><OrderID>3</OrderID><OrderValue>16.60</OrderValue><ProductID>2</ProductID><Quantity>4</Quantity></Order><Order><OrderID>4</OrderID><OrderValue>25.90</OrderValue><ProductID>3</ProductID><Quantity>1</Quantity></Order><Order><OrderID>7</OrderID><OrderValue>99.90</OrderValue><ProductID>1</ProductID><Quantity>1</Quantity></Order></OrderList>
+[{"orderId":1,"orderValue":99.90,"productId":1,"quantity":1},{"orderId":2,"orderValue":10.00,"productId":4,"quantity":2},{"orderId":3,"orderValue":16.60,"productId":2,"quantity":4},{"orderId":4,"orderValue":25.90,"productId":3,"quantity":1},{"orderId":5,"orderValue":99.90,"productId":1,"quantity":1}]
 ```
 Zum Abrufen einer einzelnen Bestellung muss der Bezeichner für die Bestellung aus der Ressource _Bestellungen_ angegeben werden, z. B. _/Bestellungen/2_:
 
@@ -72,11 +72,10 @@ HTTP/1.1 200 OK
 ...
 Date: Fri, 22 Aug 2014 08:49:02 GMT
 Content-Length: ...
-<Order xmlns:i="..." xmlns="...">
-<OrderID>2</OrderID><OrderValue>10.00</OrderValue><ProductID>4</ProductID><Quantity>2</Quantity></Order>
+{"orderId":2,"orderValue":10.00,"productId":4,"quantity":2}
 ```
 
-> [AZURE.NOTE]Der Einfachheit halber werden in diesen Beispielen die Informationen in zurückgegebenen Antworten als XML-Textdaten angezeigt. Es gibt jedoch kein Grund, warum Ressourcen keinen anderen von HTTP unterstützten Datentyp enthalten sollten, z. B. binäre oder verschlüsselte Informationen; der Inhaltstyp in der HTTP-Antwort sollte den Typ angeben. Zudem kann ein REST-Modell u. U. dieselben Daten in verschiedenen Formaten wie XML oder JSON zurückgeben. In diesem Fall sollte der Webdienst zur Inhaltsaushandlung mit dem Client, der die Anforderung stellt, in der Lage sein. Die Anforderung kann einen _Annehmen_-Header enthalten, der das bevorzugte Format angibt, das der Client erhalten möchte, und der Webdienst sollte versuchen, dieses Format nach Möglichkeit zu berücksichtigen.
+> [AZURE.NOTE]Der Einfachheit halber werden in diesen Beispielen die Informationen in zurückgegebenen Antworten als JSON-Textdaten angezeigt. Es gibt jedoch kein Grund, warum Ressourcen keinen anderen von HTTP unterstützten Datentyp enthalten sollten, z. B. binäre oder verschlüsselte Informationen; der Inhaltstyp in der HTTP-Antwort sollte den Typ angeben. Zudem kann ein REST-Modell u. U. dieselben Daten in verschiedenen Formaten wie XML oder JSON zurückgeben. In diesem Fall sollte der Webdienst zur Inhaltsaushandlung mit dem Client, der die Anforderung stellt, in der Lage sein. Die Anforderung kann einen _Annehmen_-Header enthalten, der das bevorzugte Format angibt, das der Client erhalten möchte, und der Webdienst sollte versuchen, dieses Format nach Möglichkeit zu berücksichtigen.
 
 Beachten Sie, dass die Antwort von einer REST-Anforderung die standardmäßigen HTTP-Statuscodes verwendet. Beispielsweise sollte eine Anforderung, die gültige Daten zurückgibt, den HTTP-Antwortcode 200 (OK) enthalten, während eine Anforderung, die eine bestimmte Ressource nicht finden oder löschen kann, eine Antwort zurückgeben sollte, die den HTTP-Statuscode 404 (Nicht gefunden) enthält.
 
@@ -166,10 +165,10 @@ Content-Type: application/json; charset=utf-8
 ...
 Date: Fri, 22 Aug 2014 09:18:37 GMT
 Content-Length: ...
-{"OrderID":2,"ProductID":4,"Quantity":2,"OrderValue":10.00}
+{"orderID":2,"productID":4,"quantity":2,"orderValue":10.00}
 ```
 
-Wenn der Webserver den angeforderten Medientyp nicht unterstützt, kann er diese Daten in einem anderen Format senden. In allen Fällen muss der Medientyp (z. B. _Text/XML_) im Content-Type-Header angegeben werden. Die Clientanwendung ist dafür verantwortlich, die Antwortnachricht zu analysieren und die Ergebnisse im Nachrichtentext richtig zu interpretieren.
+Wenn der Webserver den angeforderten Medientyp nicht unterstützt, kann er diese Daten in einem anderen Format senden. In allen Fällen muss der Medientyp (z. B. _Anwendung/JSON_) im Content-Type-Header angegeben werden. Die Clientanwendung ist dafür verantwortlich, die Antwortnachricht zu analysieren und die Ergebnisse im Nachrichtentext richtig zu interpretieren.
 
 Beachten Sie, dass der Webserver in diesem Beispiel die angeforderten Daten erfolgreich abruft und im Antwortheader den Statuscode für die erfolgreiche Ausführung zurückgibt. Werden keine übereinstimmenden Daten gefunden, sollte stattdessen der Statuscode 404 (Nicht gefunden) zurückgegeben werden, und der Text der Antwortnachricht kann zusätzliche Informationen enthalten. Das Format dieser Informationen wird wie im folgenden Beispiel gezeigt durch den Content-Type-Header angegeben:
 
@@ -189,7 +188,7 @@ Content-Type: application/json; charset=utf-8
 ...
 Date: Fri, 22 Aug 2014 09:18:37 GMT
 Content-Length: ...
-{"Message":"No such order"}
+{"message":"No such order"}
 ```
 
 Wenn eine Anwendung eine HTTP PUT-Anforderung zum Aktualisieren einer Ressource sendet, gibt sie den URI der Ressource an und stellt die zu ändernden Daten im Text der Anforderungsnachricht bereit. Außerdem sollte auch das Format dieser Daten mithilfe des Content-Type-Headers angegeben werden. Ein gängiges Format für textbasierte Informationen ist _application/x-www-form-urlencoded_, das einen Satz von Name-Wert-Paaren umfasst, die mit dem &-Zeichen getrennt sind. Das nächste Beispiel zeigt eine HTTP PUT-Anforderung, die die Informationen in Bestellung 1 ändert:
@@ -229,7 +228,7 @@ Content-Type: application/x-www-form-urlencoded
 ...
 Date: Fri, 22 Aug 2014 09:18:37 GMT
 Content-Length: ...
-ProductID=5&Quantity=15&OrderValue=400
+productID=5&quantity=15&orderValue=400
 ```
 
 Wenn die Anforderung erfolgreich ist, sollte der Webserver mit einer Nachricht mit dem Statuscode „HTTP 201“ (erstellt) reagieren. Der Location-Header sollte den URI der neu erstellten Ressource enthalten, und der Text der Antwort sollte eine Kopie der neuen Ressource enthalten; der Content-Type-Header gibt das Format dieser Daten an:
@@ -242,7 +241,7 @@ Location: http://adventure-works.com/orders/99
 ...
 Date: Fri, 22 Aug 2014 09:18:37 GMT
 Content-Length: ...
-{"OrderID":99,"ProductID":5,"Quantity":15,"OrderValue":400}
+{"orderID":99,"productID":5,"quantity":15,"orderValue":400}
 ```
 
 > [AZURE.TIP]Wenn die von einer PUT- oder POST-Anforderung bereitgestellten Daten ungültig sind, sollte der Webserver mit eine Nachricht mit dem Statuscode „HTTP 400“ (Ungültige Anforderung) reagieren. Der Text dieser Nachricht kann zusätzliche Informationen über das Problem mit der Anforderung und den erwarteten Formaten oder einen Link zu einer URL enthalten, die weitere Details bereitstellt.
@@ -289,7 +288,7 @@ Sie können diesen Ansatz erweitern, um die zurückgegebenen Felder zu begrenzen
 Eine einzelne Ressource kann große binäre Felder wie z. B. Dateien oder Bilder enthalten. Zum Beheben der Übertragungsprobleme, die durch unzuverlässige und unterbrochene Verbindungen verursacht werden, und zur Verbesserung der Antwortzeiten erwägen Sie das Bereitstellen von Vorgängen, die der Clientanwendung das Abrufen solcher Ressourcen in Segmenten ermöglicht. Dazu sollte die Web-API den Accept-Ranges-Header für GET-Anforderungen für große Ressourcen unterstützen und im Idealfall HTTP HEAD-Anforderungen für diese Ressourcen implementieren. Der Accept-Ranges-Header gibt an, dass der GET-Vorgang Teilergebnisse unterstützt, und dass eine Clientanwendung GET-Anforderungen senden kann, die eine Teilmenge einer Ressource als Folge von Bytes zurückgeben kann. Eine HEAD-Anforderung ähnelt einer GET-Anforderung, gibt jedoch nur einen Header zurück, der die Ressource beschreibt, sowie einen leeren Nachrichtentext. Eine Clientanwendung kann eine HEAD-Anforderung ausgeben, um zu bestimmen, ob eine Ressource mithilfe von partiellen GET-Anforderungen abgerufen wird. Das folgende Beispiel zeigt eine HEAD-Anforderung, die Informationen zu einem Produktabbild abruft:
 
 ```HTTP
-HEAD http://adventure-works.com/products/10?fields=ProductImage HTTP/1.1
+HEAD http://adventure-works.com/products/10?fields=productImage HTTP/1.1
 ...
 ```
 
@@ -307,7 +306,7 @@ Content-Length: 4580
 Die Clientanwendung kann diese Informationen verwenden, um eine Reihe von GET-Vorgängen zu erstellen, mit denen das Bild in kleineren Segmenten abgerufen wird. Die erste Anforderung Ruft die ersten 2500 Bytes mithilfe des Range-Headers ab:
 
 ```HTTP
-GET http://adventure-works.com/products/10?fields=ProductImage HTTP/1.1
+GET http://adventure-works.com/products/10?fields=productImage HTTP/1.1
 Range: bytes=0-2499
 ...
 ```
@@ -328,7 +327,7 @@ _{binary data not shown}_
 Eine nachfolgende Anforderung von der Clientanwendung kann mithilfe eines entsprechenden Range-Headers den Rest der Ressource abrufen:
 
 ```HTTP
-GET http://adventure-works.com/products/10?fields=ProductImage HTTP/1.1
+GET http://adventure-works.com/products/10?fields=productImage HTTP/1.1
 Range: bytes=2500-
 ...
 ```
@@ -359,7 +358,7 @@ Accept: application/json
 ...
 ```
 
-Der Text der Antwortnachricht enthält ein `Links`-Array (im Codebeispiel hervorgehoben), das die Art der Beziehung (_Kunde_), den URI des Kunden (\__http://adventure-works.com/customers/3_), die Methode zum Abrufen der Details dieses Kunden (_GET_) und die MIME-Typen angibt, die der Webserver Typen für das Abrufen dieser Informationen unterstützt (_text/xml_ und _application/json_). Dies sind alle Informationen, die eine Clientanwendung zum Abrufen der Details des Kunden benötigt. Das Links-Array enthält außerdem Links für andere Vorgänge, die ausgeführt werden können, z. B. PUT (zum Ändern des Kunden zusammen mit dem Format, das der Webserver vom Client erwartet) und DELETE.
+Der Text der Antwortnachricht enthält ein `links`-Array (im Codebeispiel hervorgehoben), das die Art der Beziehung (_Kunde_), den URI des Kunden (\__http://adventure-works.com/customers/3_), die Methode zum Abrufen der Details dieses Kunden (_GET_) und die MIME-Typen angibt, die der Webserver Typen für das Abrufen dieser Informationen unterstützt (_text/xml_ und _application/json_). Dies sind alle Informationen, die eine Clientanwendung zum Abrufen der Details des Kunden benötigt. Das Links-Array enthält außerdem Links für andere Vorgänge, die ausgeführt werden können, z. B. PUT (zum Ändern des Kunden zusammen mit dem Format, das der Webserver vom Client erwartet) und DELETE.
 
 ```HTTP
 HTTP/1.1 200 OK
@@ -367,8 +366,8 @@ HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 ...
 Content-Length: ...
-{"OrderID":3,"ProductID":2,"Quantity":4,"OrderValue":16.60,"Links":[(some links omitted){"Relationship":"customer","HRef":" http://adventure-works.com/customers/3", "Action":"GET","LinkedResourceMIMETypes":["text/xml","application/json"]},{"Relationship":"
-customer","HRef":" http://adventure-works.com /customers/3", "Action":"PUT","LinkedResourceMIMETypes":["application/x-www-form-urlencoded"]},{"Relationship":"customer","HRef":" http://adventure-works.com /customers/3","Action":"DELETE","LinkedResourceMIMETypes":[]}]}
+{"orderID":3,"productID":2,"quantity":4,"orderValue":16.60,"links":[(some links omitted){"rel":"customer","href":" http://adventure-works.com/customers/3", "action":"GET","types":["text/xml","application/json"]},{"rel":"
+customer","href":" http://adventure-works.com /customers/3", "action":"PUT","types":["application/x-www-form-urlencoded"]},{"rel":"customer","href":" http://adventure-works.com /customers/3","action":"DELETE","types":[]}]}
 ```
 
 Der Vollständigkeit halber sollte das Links-Array Links auch auf sich selbst verweisende Informationen enthalten, die sich auf die abgerufene Ressource beziehen. Diese Links wurden im vorherigen Beispiel weggelassen, sind jedoch im folgenden Code hervorgehoben. Beachten Sie, dass in diesen Links die Beziehung _selbst_ verwendet wurde, um anzugeben, dass es sich um einen Verweis auf die vom Vorgang zurückgegebene Ressource handelt:
@@ -379,8 +378,8 @@ HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 ...
 Content-Length: ...
-{"OrderID":3,"ProductID":2,"Quantity":4,"OrderValue":16.60,"Links":[{"Relationship":"self","HRef":" http://adventure-works.com/orders/3", "Action":"GET","LinkedResourceMIMETypes":["text/xml","application/json"]},{"Relationship":" self","HRef":" http://adventure-works.com /orders/3", "Action":"PUT","LinkedResourceMIMETypes":["application/x-www-form-urlencoded"]},{"Relationship":"self","HRef":" http://adventure-works.com /orders/3", "Action":"DELETE","LinkedResourceMIMETypes":[]},{"Relationship":"customer",
-"HRef":" http://adventure-works.com /customers/3", "Action":"GET","LinkedResourceMIMETypes":["text/xml","application/json"]},{"Relationship":" customer" (customer links omitted)}]}
+{"orderID":3,"productID":2,"quantity":4,"orderValue":16.60,"links":[{"rel":"self","href":" http://adventure-works.com/orders/3", "action":"GET","types":["text/xml","application/json"]},{"rel":" self","href":" http://adventure-works.com /orders/3", "action":"PUT","types":["application/x-www-form-urlencoded"]},{"rel":"self","href":" http://adventure-works.com /orders/3", "action":"DELETE","types":[]},{"rel":"customer",
+"href":" http://adventure-works.com /customers/3", "action":"GET","types":["text/xml","application/json"]},{"rel":" customer" (customer links omitted)}]}
 ```
 
 Damit dieser Ansatz effektiv ist, müssen Clientanwendungen zum Abrufen und Analysieren dieser zusätzlichen Informationen bereit sein.
@@ -395,7 +394,7 @@ Die Versionsverwaltung ermöglicht einer Web-API das Angeben der Funktionen und 
 
 Dies ist der einfachste Ansatz und ist möglicherweise für einige interne APIs akzeptabel. Umfassende Änderungen können als neue Ressourcen oder neue Links dargestellt werden. Das Hinzufügen von Inhalt zu vorhandenen Ressourcen stellt möglicherweise keine fehlerhafte Änderung dar, da Clientanwendungen, die diesen Inhalt nicht erwarten, ihn einfach ignorieren.
 
-Beispielsweise sollte eine Anforderung an den URI \__http://adventure-works.com/customers/3_ die Details eines einzelnen Kunden mit den von der Clientanwendung erwarteten Feldern `Id`, `Name`, und `Address` zurückgeben:
+Beispielsweise sollte eine Anforderung an den URI \__http://adventure-works.com/customers/3_ die Details eines einzelnen Kunden mit den von der Clientanwendung erwarteten Feldern `id`, `name`, und `address` zurückgeben:
 
 ```HTTP
 HTTP/1.1 200 OK
@@ -403,7 +402,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 ...
 Content-Length: ...
-[{"Id":3,"Name":"Contoso LLC","Address":"1 Microsoft Way Redmond WA 98053"}]
+{"id":3,"name":"Contoso LLC","address":"1 Microsoft Way Redmond WA 98053"}
 ```
 
 > [AZURE.NOTE]Der Einfachheit und Verständlichkeit halber enthalten die in diesem Abschnitt gezeigten Beispielantworten keine HATEOAS-Links.
@@ -416,7 +415,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 ...
 Content-Length: ...
-[{"Id":3,"Name":"Contoso LLC","DateCreated":"2014-09-04T12:11:38.0376089Z","Address":"1 Microsoft Way Redmond WA 98053"}]
+{"id":3,"name":"Contoso LLC","dateCreated":"2014-09-04T12:11:38.0376089Z","address":"1 Microsoft Way Redmond WA 98053"}
 ```
 
 Vorhandene Clientanwendungen werden möglicherweise weiterhin ordnungsgemäß ausgeführt, wenn sie in der Lage sind, unbekannte Felder zu ignorieren. Neue Clientanwendungen können für die Behandlung dieses neuen Felds konfiguriert werden. Allerdings können radikalere Änderungen am Schema von Ressourcen (z. B. das Entfernen oder Umbenennen von Feldern) oder Änderungen an den Beziehungen zwischen Ressourcen fehlerhafte Änderungen darstellen, die verhindern, dass vorhandene Clientanwendungen nicht ordnungsgemäß funktioniert. In diesen Fällen sollten Sie einen der folgenden Ansätze in Betracht ziehen.
@@ -425,7 +424,7 @@ Vorhandene Clientanwendungen werden möglicherweise weiterhin ordnungsgemäß au
 
 Bei jeder Änderung der Web-API oder des Ressourcenschemas fügen Sie eine für jede Ressource eine Versionsnummer für den URI hinzu. Die bereits vorhandenen URIs sollten weiterhin Ressourcen zurückgeben, die ihrem ursprünglichen Schema entsprechen.
 
-Erweiterung des vorherigen Beispiels: Wenn das Feld `Address` in untergeordnete Felder umstrukturiert wird, die jeden einzelnen Teil der Adresse enthalten (z. B. `StreetAddress`, `City`, `State` und `ZipCode`) kann diese Version der Ressource über einen URI verfügbar gemacht werden, die eine Versionsnummer enthält, z. B. http://adventure-works.com/v2/customers/3:
+Erweiterung des vorherigen Beispiels: Wenn das Feld `address` in untergeordnete Felder umstrukturiert wird, die jeden einzelnen Teil der Adresse enthalten (z. B. `streetAddress`, `city`, `state` und `zipCode`) kann diese Version der Ressource über einen URI verfügbar gemacht werden, die eine Versionsnummer enthält, z. B. http://adventure-works.com/v2/customers/3:
 
 ```HTTP
 HTTP/1.1 200 OK
@@ -433,7 +432,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 ...
 Content-Length: ...
-[{"Id":3,"Name":"Contoso LLC","DateCreated":"2014-09-04T12:11:38.0376089Z","Address":{"StreetAddress":"1 Microsoft Way","City":"Redmond","State":"WA","ZipCode":98053}}]
+{"id":3,"name":"Contoso LLC","dateCreated":"2014-09-04T12:11:38.0376089Z","address":{"streetAddress":"1 Microsoft Way","city":"Redmond","state":"WA","zipCode":98053}}
 ```
 
 Dieser Versionsverwaltungsmechanismus ist sehr einfach, hängt jedoch vom Server ab, der die Anforderung an das entsprechende Endgerät weiterleitet. Dieser Mechanismus kann jedoch schwerfällig werden, wenn die API mehrere Iterationen durchläuft und der Server eine Reihe von verschiedenen Versionen unterstützen muss. Aus der Sicht einer Puristen rufen die Clientanwendungen außerdem in allen Fällen dieselben Daten (Kunde 3) ab; daher sollte sich der URI im Grunde nicht abhängig von der Version unterscheiden. Dieses Schema erschwert zudem die Implementierung von HATEOAS, da alle Links die Versionsnummer in den URIs enthalten müssen.
@@ -465,7 +464,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 ...
 Content-Length: ...
-[{"Id":3,"Name":"Contoso LLC","Address":"1 Microsoft Way Redmond WA 98053"}]
+{"id":3,"name":"Contoso LLC","address":"1 Microsoft Way Redmond WA 98053"}
 ```
 
 Version 2:
@@ -483,7 +482,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json; charset=utf-8
 ...
 Content-Length: ...
-[{"Id":3,"Name":"Contoso LLC","DateCreated":"2014-09-04T12:11:38.0376089Z","Address":{"StreetAddress":"1 Microsoft Way","City":"Redmond","State":"WA","ZipCode":98053}}]
+{"id":3,"name":"Contoso LLC","dateCreated":"2014-09-04T12:11:38.0376089Z","address":{"streetAddress":"1 Microsoft Way","city":"Redmond","state":"WA","zipCode":98053}}
 ```
 
 Beachten Sie, dass die HATEOAS-Implementierung wie auch bei den beiden vorhergehenden Ansätzen die Angabe der entsprechenden benutzerdefinierten Header in allen Links erfordert.
@@ -507,7 +506,7 @@ HTTP/1.1 200 OK
 Content-Type: application/vnd.adventure-works.v1+json; charset=utf-8
 ...
 Content-Length: ...
-[{"Id":3,"Name":"Contoso LLC","Address":"1 Microsoft Way Redmond WA 98053"}]
+{"id":3,"name":"Contoso LLC","address":"1 Microsoft Way Redmond WA 98053"}
 ```
 
 Wenn im Accept-Header keine bekannten Medientypen angegeben sind, kann der Webserver eine Antwortnachricht vom Typ HTTP 406 (Nicht akzeptabel) generieren oder eine Nachricht mit einem Standardmedientyp zurückgeben.
@@ -523,4 +522,4 @@ Dieser Ansatz ist wohl der ursprünglichste Mechanismus zur Versionsverwaltung u
 - Das [RESTful-Cookbook](http://restcookbook.com/) enthält eine Einführung zum Erstellen von RESTful-APIs.
 - Die [Web-API-Checkliste](https://mathieu.fenniak.net/the-api-checklist/) enthält eine nützliche Liste der zu berücksichtigenden Punkte beim Entwerfen und Implementieren einer Web-API.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1223_2015-->

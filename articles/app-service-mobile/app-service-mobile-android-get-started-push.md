@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="java"
 	ms.topic="article"
-	ms.date="12/02/2015"
+	ms.date="12/18/2015"
 	ms.author="yuaxu"/>
 
 # Hinzufügen von Pushbenachrichtigungen zu Ihrer Android-App
@@ -49,11 +49,9 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
 
 [AZURE.INCLUDE [app-service-mobile-dotnet-backend-configure-push-google](../../includes/app-service-mobile-dotnet-backend-configure-push-google.md)]
 
-## <a name="publish-the-service"></a>Veröffentlichen des mobilen Back-Ends in Azure
-
-[AZURE.INCLUDE [app-service-mobile-dotnet-backend-publish-service](../../includes/app-service-mobile-dotnet-backend-publish-service.md)]
-
 ## Hinzufügen von Pushbenachrichtigungen zur App
+
+Sie müssen sicherstellen, dass Ihr Android-App-Projekt zur Verarbeitung von Pushbenachrichtigungen bereit ist.
 
 ###Prüfen der Version des Android-SDK
 
@@ -82,4 +80,4 @@ Sie können die App testen, indem Sie ein Android-Telefon direkt mit einem USB-K
 <!-- URLs -->
 [Android-Schnellstart]: app-service-mobile-android-get-started.md
 
-<!---HONumber=AcomDC_1210_2015--->
+<!----HONumber=AcomDC_1223_2015-->

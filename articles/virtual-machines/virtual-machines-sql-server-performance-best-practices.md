@@ -14,7 +14,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
-	ms.date="11/13/2015"
+	ms.date="12/22/2015"
 	ms.author="jroth" />
 
 # Optimale Verfahren für die Leistung für SQL Server auf virtuellen Computern in Azure
@@ -71,6 +71,8 @@ Das temporäre Speicherlaufwerk, das als Laufwerk **D**: bezeichnet wird, wird n
 
 Speichern Sie TempDB und/oder Pufferpoolerweiterungen nur dann auf dem Laufwerk **D**, wenn Sie virtuelle Computer der D-Serie oder G-Serie verwenden. Anders als bei anderen Serien für virtuelle Computer ist das Laufwerk **D** in virtuellen Computern der D-Serie oder G-Serie SSD-basiert. Dies kann die Leistung von Workloads verbessern, die starken Gebrauch von temporären Objekten machen oder über Arbeitssätze verfügen, die nicht in den Arbeitsspeicher passen. Weitere Informationen finden Sie unter [Using SSDs in Azure VMs to store SQL Server TempDB and Buffer Pool Extensions](http://blogs.technet.com/b/dataplatforminsider/archive/2014/09/25/using-ssds-in-azure-vms-to-store-sql-server-tempdb-and-buffer-pool-extensions.aspx).
 
+Für virtuelle Computer, die Storage Premium unterstützen, sollten Sie TempDB auf einem Datenträger speichern, der Storage Premium mit aktiviertem Lesecache unterstützt.
+
 ### Datenträger für Daten
 
 - **Anzahl von Datenträgern für Daten für Daten- und Protokolldateien**: Verwenden Sie mindestens 2 [P30-Datenträger](../storage/storage-premium-storage-preview-portal.md#scalability-and-performance-targets-whde-DEing-premium-storage), wobei sich auf einem Datenträger die Protokolldateien und auf dem anderen die Datendateien und TempDB befinden. Für einen höheren Durchsatz werden möglicherweise zusätzliche Datenträger benötigt. Um die Anzahl der Datenträger für Daten zu bestimmen, müssen Sie die Anzahl der für Ihre Daten- und Protokolldatei-Datenträger verfügbaren IOPS analysieren. Diese Informationen finden Sie in den Tabellen zu IOPS pro [Größe des virtuellen Computers](virtual-machines-size-specs.md) und Datenträgergröße in folgendem Artikel: [Premium-Speicher: Hochleistungsspeicher für Workloads auf virtuellen Azure-Computern](../storage/storage-premium-storage-preview-portal.md). Wenn Sie mehr Bandbreite benötigen, können Sie zusätzliche Datenträger hinzufügen und Datenträgerstriping verwenden. Wenn Sie Storage Premium nicht verwenden, lautet die Empfehlung, die für Ihre [Größe des virtuellen Computers](virtual-machines-size-specs.md) maximal unterstützte Anzahl von Datenträgern für Daten hinzuzufügen und Datenträgerstriping zu verwenden. Weitere Informationen zu Datenträgerstriping finden Sie unter dem entsprechenden Abschnitt unten.
@@ -103,16 +105,6 @@ Speichern Sie TempDB und/oder Pufferpoolerweiterungen nur dann auf dem Laufwerk 
 
 - Wenn Sie SQL Server 2012 ausführen, installieren Sie Service Pack 1, kumulatives Update 10. Dieses Update enthält ein Fix für schlechte E/A-Leistung beim Ausführen von SELECT in temporären Tabellenanweisungen in SQL Server 2012 Informationen hierzu finden Sie in diesem [Knowledge Base-Artikel](http://support.microsoft.com/kb/2958012).
 
-- Verschieben Sie Systemdatenbanken (z. B. msdb und TempDB), Sicherungen und die Standardverzeichnisse für Daten- und Protokolldateien von SQL Server auf nicht zwischengespeicherte Datenträger für Daten, um die Leistung zu verbessern. Führen Sie dann die folgenden Aktionen aus:
-
-	- Passen Sie die Pfade für XEvent- und Ablaufverfolgungsdateien an.
-	
-	- Passen Sie den Pfad für das SQL-Fehlerprotokoll an.
-	
-	- Passen Sie den Standardsicherungspfad an.
-	
-	- Passen Sie den Standarddatenbankspeicherort an.
-
 - Richten Sie gesperrte Seiten ein, um E/A- und Auslagerungsaktivitäten zu verringern.
 
 ## Überlegungen zur Leistung bestimmter Features
@@ -133,4 +125,4 @@ Bewährte Methoden für die Sicherheit finden Sie unter [Sicherheitsüberlegunge
 
 Weitere Themen zu virtuellen SQL Server-Computern finden Sie unter [Übersicht zu SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1223_2015--->

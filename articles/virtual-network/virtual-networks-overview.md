@@ -48,7 +48,7 @@ Die Azure-Infrastruktur übernimmt die Rolle des Routers und lässt ohne jeglich
 - **Konnektivität** VNets können mithilfe einer Standort-zu-Standort-VPN-Verbindung oder einer ExpressRoute-Verbindung miteinander und sogar mit Ihrem lokalen Datencenter verbunden werden. Weitere Informationen zu VPN-Gateways finden Sie unter [Informationen zu VPN-Gateways](./vpn-gateway-about-vpngateways.md). Weitere Informationen zu ExpressRoute finden Sie unter [ExpressRoute – Technische Übersicht](./expressroute-introduction.md).
 
     >[AZURE.NOTE]Vor der Bereitstellung von IaaS-VMs oder PaaS-Rolleninstanzen in Ihrer Azure-Umgebung müssen Sie ein VNet erstellen. ARM-basierte VMs erfordern ein VNet, und wenn Sie kein vorhandenes VNet angeben, erstellt Azure ein Standard-VNet, bei dem möglicherweise ein CIDR-Adressblockkonflikt mit Ihrem lokalen Netzwerk vorliegt. Wenn dies der Fall ist, ist es nicht möglich, das VNet mit Ihrem lokalen Netzwerk zu verbinden.
-    
+
 ## Subnetze
 
 Ein Subnetz ist ein Bereich von IP-Adressen im VNet. Sie können ein VNet aus Organisations- und Sicherheitsgründen in mehrere Subnetze unterteilen. VMs und PaaS-Rolleninstanzen, die in (denselben oder unterschiedlichen) Subnetzen in einem VNet bereitgestellt werden, können ohne zusätzliche Konfiguration miteinander kommunizieren. Sie können auch Routentabellen und NSGs zu einem Subnetz konfigurieren.
@@ -58,7 +58,7 @@ Ein Subnetz ist ein Bereich von IP-Adressen im VNet. Sie können ein VNet aus Or
 
 Es gibt zwei Arten von IP-Adressen, die Ressourcen in Azure zugewiesen werden: *öffentliche* und *private*. Mit öffentlichen IP-Adressen können Azure-Ressourcen mit dem Internet und anderen öffentlichen Azure-Diensten wie [Azure Redis Cache](https://azure.microsoft.com/services/cache/) und [Azure Event Hubs](https://azure.microsoft.com/documentation/services/event-hubs/) kommunizieren. Private IP-Adressen ermöglichen die Kommunikation zwischen Ressourcen in einem virtuellen Netzwerk sowie per VPN verbundenen Ressourcen ohne Verwendung von per Internet zugänglichen IP-Adressen.
 
-Weitere Informationen zu IP-Adressen in Azure finden Sie unter [IP-Adressen im virtuellen Netzwerk](virtual-network-ip-addresses-arm.md)
+Weitere Informationen zu IP-Adressen in Azure finden Sie unter [IP-Adressen im virtuellen Netzwerk](virtual-network-ip-addresses-overview-arm.md).
 
 ## Azure-Load Balancer
 
@@ -98,4 +98,4 @@ Für die Verwendung virtueller Netzwerke in Azure fallen keine Zusatzkosten an. 
 - [Reservieren einer öffentlichen IP-Adresse](../virtual-networks-reserved-public-ip.md)
 - Weitere Informationen zu [benutzerdefinierten Routen und IP-Weiterleitung](virtual-networks-udr-overview.md)
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1223_2015-->

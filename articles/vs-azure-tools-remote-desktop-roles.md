@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="08/24/2015"
+   ms.date="12/18/2015"
    ms.author="tarcher" />
 
 # Verwendung von Remotedesktop mit Azure-Rollen
@@ -37,7 +37,7 @@ Mit dem Azure SDK und Remotedesktopdiensten greifen Sie auf Azure-Rollen und vir
  
     Es wird ein Dropdownlistenfeld angezeigt, über das Sie ein Zertifikat erstellen oder auswählen können, damit Sie die Anmeldeinformationen beim Herstellen einer Verbindung über Remotedesktop verschlüsseln können.
 
-1. Wählen Sie in der Dropdownliste die Option **<Create>** oder ein vorhandenes Zertifikat in der Liste aus.
+1. Wählen Sie in der Dropdownliste die Option **&lt;Create>** oder ein vorhandenes Zertifikat in der Liste aus.
 
     Wenn Sie ein vorhandenes Zertifikat wählen, überspringen Sie die folgenden Schritte.
 
@@ -75,4 +75,4 @@ Nach der Veröffentlichung des Clouddiensts in Azure können Sie sich mit dem Se
 
 1. Geben Sie den Benutzernamen und das zuvor erstellte Kennwort ein. Sie sind nun bei Ihrer Remotesitzung angemeldet.
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1223_2015-->

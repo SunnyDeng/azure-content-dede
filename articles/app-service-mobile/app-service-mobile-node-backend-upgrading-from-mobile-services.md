@@ -3,7 +3,7 @@
 	description="Erfahren Sie, wie einfach Sie Ihre Mobile Services-Anwendung auf eine mobile App Service-App aktualisieren können."
 	services="app-service\mobile"
 	documentationCenter=""
-	authors="christopheranderson"
+	authors="adrianhall"
 	manager="dwrede"
 	editor=""/>
 
@@ -42,13 +42,13 @@ Bei einem Upgrade auf das neue [Mobile Apps-SDK](https://www.npmjs.com/package/a
 
 - Das Mobile Apps SDK ist für die plattformübergreifende und lokale Entwicklung ausgelegt. Es kann lokal auf Windows-, Linux- und OS X-Plattformen ausgeführt und zur Entwicklung genutzt werden. Es ist nun einfach, häufig verwendete Node-Entwicklungstechniken zu verwenden, z. B. das Ausführen von [Mocha](https://mochajs.org/)-Tests vor der Bereitstellung.
 
-- Sie können Redis mit systemeigenen Modulen wie [hiredis](https://www.npmjs.com/package/hiredis) verwenden. Da App Service Ihre npm-Pakete bei der Bereitstellung installiert, brauchen Sie keine Binärdateien in Ihre Bereitstellungspakete aufzunehmen.
+- Sie können Redis mit systemeigenen Module wie [hiredis](https://www.npmjs.com/package/hiredis) verwenden. Sie müssen keine Binärdateien in Ihre Bereitstellungspakete einbeziehen, da App Service Ihre Npm-Pakete für Sie installiert.
 
 ## <a name="overview"></a>Grundlegende Übersicht über den Upgradevorgang
 
 Anders als beim Mobile Apps-SDK für .NET lässt sich das Upgraden eines Node-Back-Ends von Mobile Services auf Mobile Apps nicht durch einen einfachen Austausch von Paketen bewerkstelligen. Sie besitzen nun den gesamten Anwendungsstapel, der sonst von Azure gesteuert wurde. Daher müssen Sie eine Express-Basis-App zum Hosten Ihres Mobil-Back-Ends erstellen. Für die Tabellen- und API-Controller sind die Konzepte ähnlich, aber Sie müssen jetzt Tabellenobjekte exportieren, und die Funktions-APIs wurden leicht geändert. Dieser Artikel führt Sie schrittweise durch die grundlegenden Strategien beim Upgrade. Bevor Sie die ersten Schritte für die Migration ausführen, sollten Sie jedoch die Anleitung [Verwenden des Node-SDK](app-service-mobile-node-backend-how-to-use-server-sdk.md) lesen.
 
->[AZURE.TIP]Es wird empfohlen, die restlichen Abschnitte in diesem Thema vollständig zu lesen, bevor Sie mit einem Upgrade beginnen. Notieren Sie sich alle Features, die Sie verwenden möchten und die nachfolgend behandelt werden.
+>[AZURE.TIP]Sie sollten die restlichen Abschnitte in diesem Thema vollständig lesen, bevor Sie mit einem Upgrade beginnen. Notieren Sie sich alle Features, die Sie verwenden möchten, und die nachfolgend behandelt werden.
 
 Die Mobile Services-Client-SDKs sind **nicht** mit dem neuen Mobile Apps-Server-SDK kompatibel. Um die Kontinuität von Diensten für Ihre App zu gewährleisten, sollten Sie keine Änderungen auf einer Website veröffentlichen, die derzeit veröffentlichte Clients bereitstellt. Stattdessen sollten Sie eine neue mobile App erstellen, die als Duplikat dient. Sie können diese Anwendung in den gleichen App Service-Plan aufnehmen, um zu vermeiden, dass zusätzliche Kosten anfallen.
 
@@ -56,10 +56,13 @@ Anschließend verfügen Sie über zwei Versionen der Anwendung: eine unveränder
 
 Der vollständige Überblick über den Upgradevorgang sieht wie folgt aus:
 
-1. Erstellen einer neuen mobilen App
-2. Aktualisieren des Projekts zur Verwendung der neuen Server-SDKs
-3. Veröffentlichen einer neuen Version Ihrer Clientanwendung
-4. Optional: Löschen der ursprünglichen migrierten Mobile Service-App
+1. Erstellen Sie eine neue mobile App.
+2. Aktualisieren Sie das Projekt zur Verwendung der neuen Server-SDKs.
+3. Veröffentlichen Sie das Projekt auf der neuen mobilen App.
+4. Veröffentlichen Sie eine neue Version Ihrer Clientanwendung, die die neue mobile App nutzt.
+5. (Optional) Löschen Sie die ursprünglich migrierte Mobile Service-App.
+
+Löschung kann auftreten, wenn Sie keinen Datenverkehr auf Ihrer ursprünglich migrierten Mobile Service-App feststellen.
 
 ## <a name="mobile-app-version"></a> Starten des Upgrades
 Der erste Schritt beim Upgrade besteht darin, die Mobile App-Ressource zum Hosten der neuen Version Ihrer Anwendung zu erstellen. Wenn Sie bereits einen vorhandenen mobilen Dienst migriert haben, sollten Sie diese Version im gleichen Hostingplan erstellen. Öffnen Sie das [Azure-Portal], und navigieren Sie zur migrierten Anwendung. Notieren Sie sich den App Service-Plan, in dem sie ausgeführt wird.
@@ -110,10 +113,13 @@ Jedes Node.js-Back-End von Azure Mobile App Service-Apps verhält sich am Anfang
            app.use(mobile);
 
            // Start listening on HTTP
-           app.listen(process.env.PORT || 3000);
-           console.log('Now listening on ' + (process.env.PORT || 3000)));
+           var port = process.env.PORT || 3000;
+           app.listen(port, function () {
+               console.log('Now listening on ', port)
+           });
         });
 
+Weitere Beispiele finden Sie in unseren [GitHub-Repository](https://github.com/Azure/azure-mobile-apps-node/tree/master/samples).
 
 ## Aktualisieren des Serverprojekts
 
@@ -144,7 +150,10 @@ Zum Portieren Ihrer Logik benötigen Sie für jede Ihrer `<tablename>.<operation
 
 Und zwar in einem Mobile Service mit einer TodoItem-Tabelle und einem read-Vorgang, der Elemente auf Basis der userID wie folgt filtert:
 
-  function(query, user, request) { query.where({ userId: user.userId}); request.execute(); }
+    function(query, user, request) {
+        query.where({ userId: user.userId});
+        request.execute();
+    }
 
 Die Funktion, die wir dem Azure Mobile Apps-Tabellencode hinzufügen, sieht wie folgt aus:
 
@@ -153,7 +162,22 @@ Die Funktion, die wir dem Azure Mobile Apps-Tabellencode hinzufügen, sieht wie 
         return context.execute();
     });
 
-Beim Untersuchen des Codes sehen Sie, dass die meisten der Funktionsparameter aus
+Abfrage, Benutzer und Anforderung werden in einem Kontext kombiniert. Die folgenden Felder sind im Kontextobjekt verfügbar:
+
+| Feld | Typ | Beschreibung |
+| :------ | :--------------------- | :---------- |
+| query | Queryjs/Abfrage | Die analysierte OData-Abfrage. |
+| id | Zeichenfolge oder Zahl | Die ID, die der Anforderung zugeordnet ist. |
+| item | Objekt | Das Element, das eingefügt oder gelöscht wird. |
+| req | express.Request | Das aktuelle Expressanforderungsobjekt. |
+| res | express.Response | Die aktuelle Expressantwortobjekt. |
+| data | data | Der konfigurierte Datenanbieter. |
+| tables | Funktion | Eine Funktion, die einen Tabellennamen als Zeichenfolge akzeptiert und ein Tabellenzugriffsobjekt zurückgibt. |
+| user | Auth/Benutzer | Das authentifizierte Benutzerobjekt. |
+| results | Objekt | Die Ergebnisse der Ausführung. |
+| push | NotificationHubService | Der Notification Hubs-Dienst, sofern konfiguriert. |
+
+Weitere Informationen finden Sie in der [aktuellen API-Dokumentation](http://azure.github.io/azure-mobile-apps-node).
 
 ### CORS
 
@@ -264,4 +288,4 @@ Wenn die neue Clientversion bereit ist, testen Sie sie mit dem aktualisierten Se
 [ExpressJS Middleware]: http://expressjs.com/guide/using-middleware.html
 [Winston]: https://github.com/winstonjs/winston
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1223_2015-->

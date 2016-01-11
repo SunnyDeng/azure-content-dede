@@ -11,8 +11,8 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/11/2015" 
-	ms.author="sergkanz"/>
+	ms.date="12/17/2015" 
+	ms.author="abaranch"/>
  
 # Versionshinweise für das Application Insights-SDK für .NET
 
@@ -35,11 +35,21 @@ Informationen dazu finden Sie unter [Application Insights – Beginnen Sie damit
 
 ## Version 2.0.0-beta3
 
-- [Adaptive Stichprobenerstellung](app-insights-sampling.md)
+- Die [adaptive Stichprobenerstellung](app-insights-sampling.md) ist im Server-Telemetriekanal standardmäßig aktiviert. 
+- Die feste Signatur von ```UseSampling```, um die Verkettung mit anderen Aufrufen an ```Use``` der Telemetrieprozessoren zu ermöglichen.  
+- Die Eigenschaft ```Request.ID``` wird zurückgegebenen. ```OperationContext``` verfügt jetzt über eine Eigenschaft ```ParentId``` für die End-to-End-Korrelationen.
+- ```TimestampTelemetryInitializer``` ist entfernt. Zeitstempel werden automatisch vom ```TelemetryClient``` hinzugefügt.
+- ```OperationCorrelationTelemetryInitializer``` ist standardmäßig aktiviert, um die Vorgangskorrelation zu aktivieren.
+- ```OperationCorrelationTelemetryInitializer``` wird anstelle von ```OperationIdTelemetryInitializer``` verwendet.
+- Der Benutzer-Agent wird standardmäßig nicht gesammelt. Der Benutzer-Agent-Telemetrieinitialisierer wurde entfernt.
+- Das ```DependencyTelemetry.Async```-Feld wird vom Telemetriemodul für die Abhängigkeitserfassung nicht gesammelt. 
+- Statische Inhalte und Diagnoseanforderungen werden vom Telemetriemodul für Anforderungen nicht gesammelt. Verwenden Sie ```HandlersToFilter``` aus der ```RequestTrackingTelemetryModule```-Sammlung zum Herausfiltern von Anforderungen, die von bestimmten HTTP-Handlern generiert werden. 
+- Automatisch generierte Anforderungstelemetriedaten sind jedoch über die HttpContext-Erweiterungsmethode verfügbar: System.Web.HttpContextExtension.GetRequestTelemetry  
+
 
 ## Version 2.0.0-beta2
 - Zusätzliche Unterstützung für ITelemetryProcessor und die Möglichkeit, per Code oder Konfigurationsdatei zu konfigurieren. [Aktiviert das benutzerdefinierte Filtern im SDK](app-insights-api-telemetry-processors/#telemetry-processors)
-- Kontextinitialisierer wurden entfernt. Verwenden Sie stattdessen [Telemetrieinitialisierer](https://azure.microsoft.com/documentation/articles/app-insights-api-telemetry-processors/#telemetry-initializers).
+- Kontextinitialisierer wurden entfernt. Verwenden Sie stattdessen [Telemetrieinitialisierer]( https://azure.microsoft.com/documentation/articles/app-insights-api-telemetry-processors/#telemetry-initializers).
 - Application Insights wurde für .NET Framework 4.6 aktualisiert. 
 - Die Namen von benutzerdefinierten Ereignissen können jetzt bis zu 512 Zeichen enthalten.
 - Die Eigenschaft ```OperationContext.Name``` wurde umbenannt in ```RootName```.
@@ -114,4 +124,4 @@ Für ältere Versionen sind keine Versionshinweise verfügbar.
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1223_2015--->

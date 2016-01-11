@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/05/2015" 
+	ms.date="12/17/2015" 
 	ms.author="juliako"/>
 
 
@@ -54,6 +54,7 @@ Erstellen von Streaming-URLs
 	{
 	
 	    // Create a 30-day readonly access policy. 
+      	// You cannot create a streaming locator using an AccessPolicy that includes write or delete permissions.
 	    IAccessPolicy policy = _context.AccessPolicies.Create("Streaming policy",
 	        TimeSpan.FromDays(30),
 	        AccessPermissions.Read);
@@ -166,8 +167,8 @@ Im folgenden Code werden .NET SDK-Erweiterungsmethoden aufgerufen, durch die ein
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-##Weitere Informationen
+##Siehe auch
 
-[Herunterladen von Medienobjekten](media-services-deliver-asset-download.md)
+[Herunterladen von Assets](media-services-deliver-asset-download.md) [Konfigurieren der Übermittlungsrichtlinie für Medienobjekte](media-services-dotnet-configure-asset-delivery-policy.md)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1223_2015-->

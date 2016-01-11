@@ -13,17 +13,16 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="09/02/2015"
+	ms.date="12/18/2015"
 	ms.author="tarcher"/>
 
-# Fortlaufende Bereitstellung für Azure mithilfe von Visual Studio Online
+# Continuous Delivery für Azure mithilfe von Visual Studio Team Services
 
 Sie können Ihre Teamprojekte in Visual Studio Team Services so konfigurieren, dass sie automatisch erstellt und in Azure-Web-Apps oder -Clouddiensten bereitgestellt werden. (Informationen zur Einrichtung eines Systems für kontinuierliche Erstellung und Bereitstellung mithilfe eines *lokalen* Team Foundation Servers finden Sie unter [Kontinuierliche Zustellung für Cloud Services in Azure](cloud-services-dotnet-continuous-delivery.md).)
 
 Bei diesem Lernprogramm wird davon ausgegangen, dass auf Ihrem Rechner Visual Studio 2013 und das Azure-SDK installiert sind. Wenn Sie Visual Studio 2013 nicht bereits installiert haben, laden Sie es herunter, indem Sie auf der Seite **www.visualstudio.com** auf den Link [Starten Sie kostenlos](http://www.visualstudio.com) klicken. Installieren Sie das Azure-SDK von [hier](http://go.microsoft.com/fwlink/?LinkId=239540) aus.
 
-> [AZURE.NOTE]Für dieses Tutorial benötigen Sie ein Visual Studio Team Services-Konto. 
-Dieses können Sie [kostenlos erstellen](http://go.microsoft.com/fwlink/p/?LinkId=512979).
+> [AZURE.NOTE]Für dieses Tutorial benötigen Sie ein Visual Studio Team Services-Konto. Dieses können Sie [kostenlos erstellen](http://go.microsoft.com/fwlink/p/?LinkId=512979).
 
 Gehen Sie wie folgt vor, um mithilfe von Visual Studio Team Services einen Clouddienst für die automatische Erstellung und Bereitstellung für Azure zu konfigurieren.
 
@@ -64,7 +63,7 @@ Wenn Sie eine Web-App erstellen möchten, wählen Sie die Projektvorlage "ASP.NE
 ## Schritt 3: Verbinden des Projekts mit Azure
 
 1. Nachdem Sie nun über ein VSTS-Teamprojekt mit Quellcode verfügen, können Sie Ihr Teamprojekt mit Azure verbinden. Wählen Sie im [klassischen Azure-Portal](http://manage.windowsazure.com) Ihren Clouddienst oder Ihre Web-App aus, oder erstellen Sie einen neuen Clouddienst oder eine neue Web-App, indem Sie auf das **+**-Symbol links unten sowie auf **Cloud Service** oder **Web-App** und anschließend auf **Schnellerstellung** klicken. Wählen Sie den Link **Veröffentlichung einrichten mit Visual Studio Team Services** aus.
-
+	
 	![][10]
 
 1. Geben Sie in das Textfeld des Assistenten den Namen Ihres Visual Studio Team Services-Kontos ein, und klicken Sie auf den Link **Jetzt autorisieren**. Eventuell werden Sie aufgefordert, sich anzumelden.
@@ -182,7 +181,7 @@ Wenn es sich dabei um einen Clouddienst handelt und Sie weitere Änderungen an I
 
 Dieser Schritt gilt nur für Clouddienste und ist optional. Wählen Sie im klassischen Azure-Portal eine frühere Bereitstellung aus, und klicken Sie dann auf die Schaltfläche **Erneut bereitstellen**, um Ihre Website auf einen früheren Eincheckvorgang zurückzusetzen. Beachten Sie, dass dadurch ein neuer Buildvorgang in TFS ausgelöst und in Ihrem Bereitstellungsverlauf ein neuer Eintrag erstellt wird.
 
-![][34]
+ ![][34]
 
 ## Schritt 6: Ändern der Produktionsbereitstellung
 
@@ -221,7 +220,7 @@ Dieser Schritt gilt nur für Web-Apps, nicht für Clouddienste. Für eine zusät
 		}
 		```
 
-4.  Bearbeiten Sie die Builddefinition, wählen Sie die Registerkarte **Prozess**, und erweitern Sie den **Testknoten**.
+1.  Bearbeiten Sie die Builddefinition, wählen Sie die Registerkarte **Prozess**, und erweitern Sie den **Testknoten**.
 
 
 5.  Legen Sie für **Buildfehler bei Testfehler** "True" fest. Dies bedeutet, dass die Bereitstellung erst erfolgt, wenn die Tests erfolgreich waren.<br/>
@@ -315,4 +314,4 @@ Weitere Informationen zu Komponententests in Visual Studio Team Services finden 
 [49]: ./media/cloud-services-continuous-delivery-use-vso/TestsFailed.PNG
 [50]: ./media/cloud-services-continuous-delivery-use-vso/TestsResultsFailed.PNG
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1223_2015-->

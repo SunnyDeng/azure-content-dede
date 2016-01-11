@@ -28,10 +28,6 @@ Dieses Thema zeigt, wie Sie gängige Aufgaben wie Erstellen, Aktualisieren und S
 
 ## Voraussetzungen
 
->[AZURE.IMPORTANT]Beim ersten Erstellen eines Redis-Caches in einem Abonnement mithilfe des Azure-Portals registriert das Portal den `Microsoft.Cache`-Namespace für dieses Abonnement. Wenn Sie versuchen, den ersten Redis-Cache in einem Abonnement mithilfe von PowerShell zu erstellen, müssen Sie zunächst diesen Namespace mit dem folgenden Befehl registrieren; andernfalls tritt bei Ausführung von Cmdlets wie `New-AzureRmRedisCache` und `Get-AzureRmRedisCache` ein Fehler auf.
->
->`Register-AzureRmResourceProvider -ProviderNamespace "Microsoft.Cache"`
-
 Wenn Sie bereits Azure PowerShell installiert haben, benötigen Sie Version 1.0.0 oder höher. Sie können die von Ihnen installierte Azure Power Shell-Version mit diesem Befehl über die Azure PowerShell-Eingabeaufforderung prüfen.
 
 	Get-Module azure | format-table version
@@ -79,7 +75,7 @@ Die folgende Tabelle enthält Eigenschaften und Beschreibungen für Parameter, d
 | RedisConfiguration | Gibt die Redis-Konfigurationseinstellungen für „maxmemory-delta“, „maxmemory-policy“ und „notify-keyspace-events“ an. Beachten Sie, dass „maxmemory-delta“ und „notify-keyspace-events“ nur für Standard- und Premium-Caches verfügbar sind. | |
 | EnableNonSslPort | Gibt an, ob der Nicht-SSL-Port aktiviert ist. | False |
 | MaxMemoryPolicy | Dieser Parameter ist veraltet – verwenden Sie stattdessen RedisConfiguration. | |
-| StaticIP | Wenn Sie den Cache in einem VNET hosten, geben Sie hiermit eine eindeutige IP-Adresse im Subnetz für den Cache an. | |
+| StaticIP | Wenn Sie den Cache in einem VNET hosten, geben Sie hiermit eine eindeutige IP-Adresse im Subnetz für den Cache an. Wird keine IP-Adresse angegeben, wird eine für Sie aus dem Subnetz ausgewählt. | |
 | Subnetz | Wenn Sie den Cache in einem VNET hosten, geben Sie hiermit den Namen des Subnetzes an, in dem der Cache bereitgestellt wird. | |
 | VirtualNetwork | Wenn Sie den Cache in einem VNET hosten, geben Sie hiermit die Ressourcen-ID des VNET an, in dem der Cache bereitgestellt wird. | |
 | KeyType | Gibt an, welcher Zugriffsschlüssel beim Erneuern der Zugriffsschlüssel neu generiert werden muss. Gültige Werte sind: Primary, Secondary | | | |
@@ -88,6 +84,10 @@ Die folgende Tabelle enthält Eigenschaften und Beschreibungen für Parameter, d
 ## So erstellen Sie einen Redis-Cache
 
 Neue Azure Redis Cache-Instanzen werden mit dem [New-AzureRmRedisCache](https://msdn.microsoft.com/library/azure/mt634517.aspx)-Cmdlet erstellt.
+
+>[AZURE.IMPORTANT]Beim ersten Erstellen eines Redis-Caches in einem Abonnement mithilfe des Azure-Portals registriert das Portal den `Microsoft.Cache`-Namespace für dieses Abonnement. Wenn Sie versuchen, den ersten Redis-Cache in einem Abonnement mithilfe von PowerShell zu erstellen, müssen Sie zunächst diesen Namespace mit dem folgenden Befehl registrieren; andernfalls tritt bei Ausführung von Cmdlets wie `New-AzureRmRedisCache` und `Get-AzureRmRedisCache` ein Fehler auf.
+>
+>`Register-AzureRmResourceProvider -ProviderNamespace "Microsoft.Cache"`
 
 Um eine Liste der verfügbaren Parameter und ihrer Beschreibungen für `New-AzureRmRedisCache` anzuzeigen, führen Sie den folgenden Befehl aus.
 
@@ -242,7 +242,8 @@ Der folgende Befehl aktualisiert die maxmemory-Richtlinie für den Redis-Cache m
 
 	Set-AzureRmRedisCache -ResourceGroupName "myGroup" -Name "myCache" -RedisConfiguration @{"maxmemory-policy" = "allkeys-random"}
 
-## Skalieren eines Redis-Caches mit PowerShell
+<a name="scale"></a>
+## Skalieren eines Redis-Cache
 
 `Set-AzureRmRedisCache` kann verwendet werden, um eine Azure Redis Cache-Instanz zu skalieren, wenn die Eigenschaften `Size`, `Sku` oder `ShardCount` geändert werden.
 
@@ -259,7 +260,7 @@ Das folgende Beispiel veranschaulicht, wie ein Cache mit Namen `myCache` zu eine
 
 	Set-AzureRmRedisCache -ResourceGroupName myGroup -Name myCache -Size 2.5GB
 
-Nach Eingabe dieses Befehls wird der Status des Caches zurückgegeben (ähnlich wie beim Aufruf von `Get-AzureRmRedisCache`). Beachten Sie, dass die `ProvisioningState` ist `Scaling`.
+Nach Eingabe dieses Befehls wird der Status des Caches zurückgegeben (ähnlich wie beim Aufruf von `Get-AzureRmRedisCache`). Beachten Sie, dass der `ProvisioningState` `Scaling` ist.
 
 	PS C:\> Set-AzureRmRedisCache -Name myCache -ResourceGroupName myGroup -Size 2.5GB
 	
@@ -294,7 +295,7 @@ Wenn der Skalierungsvorgang abgeschlossen ist, ändert sich `ProvisioningState` 
 
 ## Abrufen von Informationen zu einem Redis-Cache
 
-Sie können Informationen zu einem Cache mithilfe des [Get-AzureRmRedisCache](https://msdn.microsoft.com/library/azure/mt634514.aspx)-Cmdletsw abrufen.
+Sie können Informationen zu einem Cache mithilfe des [Get-AzureRmRedisCache](https://msdn.microsoft.com/library/azure/mt634514.aspx)-Cmdlets abrufen.
 
 Um eine Liste der verfügbaren Parameter und ihrer Beschreibungen für `Get-AzureRmRedisCache` anzuzeigen, führen Sie den folgenden Befehl aus.
 
@@ -403,7 +404,7 @@ Um eine Liste der verfügbaren Parameter und ihrer Beschreibungen für `Get-Azur
 	        OutBuffer, PipelineVariable, and OutVariable. For more information, see
 	        about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 
-Um die Schlüssel für Ihren Cache abzurufen, rufen Sie das `Get-AzureRmRedisCacheKey`-Cmdlet auf, und übergeben Sie im Namen Ihres Caches den Namen der Ressourcengruppe, die den Cache enthält.
+Um die Schlüssel für Ihren Cache abzurufen, rufen Sie das `Get-AzureRmRedisCacheKey`-Cmdlet auf und übergeben Sie im Namen Ihres Caches den Namen der Ressourcengruppe, die den Cache enthält.
 
 	PS C:\> Get-AzureRmRedisCacheKey -Name myCache -ResourceGroupName myGroup
 	
@@ -449,7 +450,7 @@ Um eine Liste der verfügbaren Parameter und ihrer Beschreibungen für `New-Azur
 	        OutBuffer, PipelineVariable, and OutVariable. For more information, see
 	        about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).
 	
-Um den primären oder sekundären Schlüssel für Ihren Cache erneut zu generieren, rufen Sie das `New-AzureRmRedisCacheKey`-Cmdlet auf, und übergeben Sie den Namen und die Ressourcengruppe, und geben Sie entweder `Primary` oder `Secondary` für den `KeyType`-Parameter an. Im folgenden Beispiel wird der sekundäre Zugriffsschlüssel für einen Cache erneut generiert.
+Um den primären oder sekundären Schlüssel für Ihren Cache erneut zu generieren, rufen Sie das `New-AzureRmRedisCacheKey`-Cmdlet auf und übergeben Sie den Namen und die Ressourcengruppe. Geben Sie entweder `Primary` oder `Secondary` für den `KeyType`-Parameter an. Im folgenden Beispiel wird der sekundäre Zugriffsschlüssel für einen Cache erneut generiert.
 
 	PS C:\> New-AzureRmRedisCacheKey -Name myCache -ResourceGroupName myGroup -KeyType Secondary
 	
@@ -463,7 +464,7 @@ Um den primären oder sekundären Schlüssel für Ihren Cache erneut zu generier
 
 ## Löschen eines Redis-Caches
 
-Um einen Redis-Cache zu löschen, verwenden Sie das [Remove-AzureRmRedisCache](https://msdn.microsoft.com/library/azure/mt634515.aspx) Cmdlet.
+Um einen Redis-Cache zu löschen, verwenden Sie das [Remove-AzureRmRedisCache](https://msdn.microsoft.com/library/azure/mt634515.aspx)-Cmdlet.
 
 Um eine Liste der verfügbaren Parameter und ihrer Beschreibungen für `Remove-AzureRmRedisCache` anzuzeigen, führen Sie den folgenden Befehl aus.
 
@@ -568,4 +569,4 @@ Weitere Informationen zur Verwendung von Windows PowerShell mit Azure finden Sie
 - [Windows PowerShell-Blog](http://blogs.msdn.com/powershell): Informationen zu neuen Funktionen in Windows PowerShell.
 - ["Hey, Scripting Guy!"- Blog](http://blogs.technet.com/b/heyscriptingguy/): Praktische Tipps und Tricks aus der Windows PowerShell-Community.
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1223_2015-->

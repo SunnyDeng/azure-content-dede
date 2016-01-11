@@ -109,4 +109,8 @@ Eigenschaften wie Name, Beschreibung, Eingabe- und Ausgabetabellen, verschiedene
 
 Bei der Kopieraktivität hängt der **typeProperties**-Abschnitt von den Typen der Quellen und Senken ab. Auf jeder der oben genannten Seiten für Datenspeicher sind diese Eigenschaften für den jeweiligen Datenspeichertyp dokumentiert.
 
-<!---HONumber=AcomDC_1203_2015-->
+
+### Leistung und Optimierung der Kopieraktivität 
+Der Artikel [Handbuch zur Leistung und Optimierung der Kopieraktivität](data-factory-copy-activity-performance.md) beschreibt wichtige Faktoren, die sich auf die Leistung der Datenverschiebung (Kopieraktivität) in Azure Data Factory auswirken. Außerdem wird die beobachtete Leistung bei internen Tests aufgeführt und verschiedene Methoden zur Optimierung der Leistung der Kopieraktivität erläutert.
+
+<!---HONumber=AcomDC_1223_2015-->

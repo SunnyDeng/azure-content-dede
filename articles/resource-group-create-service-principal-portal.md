@@ -13,15 +13,15 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="12/01/2015"
+   ms.date="12/17/2015"
    ms.author="tomfitz"/>
 
 # Erstellen einer Active Directory-Anwendung und eines Dienstprinzipals mithilfe des Portals
 
 ## Übersicht
-Wenn Sie einen automatisierte Prozess oder eine Anwendung haben, der bzw. die auf eine Ressource in Ihrem Abonnement zugreifen oder diese ändern muss, können Sie im Portal eine Active Directory-Anwendung erstellen und einer Rolle mit der ordnungsgemäßen Berechtigung zuweisen. Wenn Sie eine Active Directory-Anwendung über das Portal erstellen, wird eigentlich sowohl die Anwendung als auch ein Dienstprinzipal erstellt. Sie verwenden den Dienstprinzipal, wenn Sie die Berechtigungen festlegen.
+Wenn Sie einen automatisierten Prozess oder eine Anwendung haben, der bzw. die auf eine Ressource in Ihrem Abonnement zugreifen oder diese ändern muss, können Sie im klassischen Portal eine Active Directory-Anwendung erstellen und einer Rolle mit der ordnungsgemäßen Berechtigung zuweisen. Wenn Sie eine Active Directory-Anwendung über das klassische Portal erstellen, wird tatsächlich sowohl die Anwendung als auch ein Dienstprinzipal erstellt. Sie verwenden den Dienstprinzipal, wenn Sie die Berechtigungen festlegen.
 
-In diesem Thema wird erklärt, wie eine neue Anwendung und ein neuer Dienstprinzipal mithilfe des Azure-Portals erstellt werden. Derzeit müssen Sie das Microsoft Azure-Portal zum Erstellen einer neuen Active Directory-Anwendung verwenden. Das Azure-Vorschauportal wird in einer späteren Version um diese Möglichkeit erweitert. Im Vorschauportal können Sie die Anwendung einer Rolle zuweisen. Sie können diese Schritte auch über Azure PowerShell oder Azure CLI ausführen. Weitere Informationen finden Sie unter [Authentifizieren eines Dienstprinzipals mit dem Azure-Ressourcen-Manager](resource-group-authenticate-service-principal.md)
+In diesem Thema wird erklärt, wie eine neue Anwendung und ein neuer Dienstprinzipal mithilfe des klassischen Portals erstellt werden. Derzeit müssen Sie das klassische Portal zum Erstellen einer neuen Active Directory-Anwendung verwenden. Das Azure-Portal wird in einer späteren Version um diese Möglichkeit erweitert. Im Portal können Sie die Anwendung einer Rolle zuweisen. Sie können diese Schritte auch über Azure PowerShell oder Azure CLI ausführen. Informationen zur Verwendung von PowerShell oder CLI mit dem Dienstprinzipal finden Sie unter [Authentifizieren eines Dienstprinzipals mit dem Azure-Ressourcen-Manager](resource-group-authenticate-service-principal.md).
 
 ## Konzepte
 1. Azure Active Directory (AAD) - ein Cloud-Dienst für Identitäts- und Zugriffsverwaltung. Weitere Informationen finden Sie unter [Was ist das Azure Active Directory](active-directory/active-directory-whatis.md)
@@ -33,7 +33,7 @@ Eine ausführlichere Erläuterung zu Anwendungen und Dienstprinzipalen finden Si
 
 ## Erstellen der Anwendungs- und Dienstprinzipalobjekte
 
-1. Melden Sie sich über das [Portal](https://manage.windowsazure.com/) bei Ihrem Azure-Konto an.
+1. Melden Sie sich über das [klassische Portal](https://manage.windowsazure.com/) bei Ihrem Azure-Konto an.
 
 2. Wählen Sie im linken Bereich **Active Directory** aus.
 
@@ -101,15 +101,31 @@ Ihre Anwendung ist nun bereit und das Dienstprinzipal in Ihrem Mandanten erstell
 
 ## Zuweisen der Anwendung zu einer Rolle
 
-Sie müssen die Anwendung einer Rolle zuweisen, um ihr Berechtigungen zum Ausführen von Aktionen zu gewähren. Im [Vorschauportal](https://portal.azure.com) können Sie die Active Directory-Anwendung einer Rolle mit den entsprechenden Berechtigungen zuweisen.
+Sie müssen die Anwendung einer Rolle zuweisen, um ihr Berechtigungen zum Ausführen von Aktionen zu gewähren. Zum Zuweisen der Anwendung an eine Rolle wechseln Sie vom klassischen Portal zum [Azure-Portal](https://portal.azure.com). Sie müssen entscheiden, welcher Rolle die Anwendung in welchem Umfang hinzugefügt wird. Informationen zu verfügbaren Rollen finden Sie unter [RBAC: Integrierte Rollen](./active-directory/role-based-access-built-in-roles.md). Sie können den Umfang auf Abonnement-, Ressourcengruppen- oder Ressourcenebene festlegen. Die Berechtigungen werden in niedrigere Umfangsebenen übernommen (wird der Leserrolle für eine Ressourcengruppe beispielsweise eine Anwendung hinzugefügt, kann sie die Ressourcengruppe und alle darin enthaltenen Ressourcen lesen).
 
-Wählen Sie zum Einstieg in die Zugriffskontrolle im Vorschauportal das Symbol **Zugriff**.
+1. Navigieren Sie im Portal zur Umfangsebenene, der Sie die Anwendung zuweisen möchten. Für dieses Thema können Sie zu einer Ressourcengruppe navigieren und auf dem Blatt der Ressourcengruppe das Symbol **Zugriff** wählen.
 
-![Benutzer auswählen](./media/resource-group-create-service-principal-portal/select-users.png)
+     ![Benutzer auswählen](./media/resource-group-create-service-principal-portal/select-users.png)
 
-Wählen Sie die Rolle aus, der Sie die Anwendung zuweisen möchten, und suchen Sie die Anwendung.
+2. Wählen Sie **Hinzufügen**.
 
-![Benutzer auswählen](./media/resource-group-create-service-principal-portal/assign-to-role.png)
+     ![„Hinzufügen“ wählen](./media/resource-group-create-service-principal-portal/select-add.png)
+
+3. Wählen Sie die **Leser**-Rolle (bzw. die Rolle, der die Anwendung zugewiesen werden soll).
+
+     ![Rolle wählen](./media/resource-group-create-service-principal-portal/select-role.png)
+
+4. Beim ersten Anzeigen der Liste mit Benutzern, die Sie der Rolle hinzufügen können, werden keine Anwendungen angezeigt. Nur Gruppen und Benutzer werden angezeigt.
+
+     ![Benutzer anzeigen](./media/resource-group-create-service-principal-portal/show-users.png)
+
+5. Sie müssen nach Ihrer Anwendung suchen. Geben Sie den Anfang des Namens Ihrer Anwendung ein, und die Liste der verfügbaren Optionen ändert sich. Wählen Sie Ihre Anwendung aus, wenn Sie in der Liste angezeigt wird.
+
+     ![An Rolle zuweisen](./media/resource-group-create-service-principal-portal/assign-to-role.png)
+
+6. Wählen Sie **OK**, um das Zuweisen der Rolle abzuschließen. Jetzt sollten Sie Ihre Anwendung in der Liste der Benutzer sehen, die einer Rolle für die Ressourcengruppe zugewiesen sind.
+
+     ![einblenden](./media/resource-group-create-service-principal-portal/show-app.png)
 
 Weitere Informationen zum Zuweisen von Benutzern und Anwendungen zu Rollen über das Portal finden Sie unter [Verwalten des Zugriffs über das Azure-Verwaltungsportal](../role-based-access-control-configure/#manage-access-using-the-azure-management-portal).
 
@@ -141,7 +157,7 @@ Fügen Sie in Ihrer Anwendung eine Methode wie die folgende zum Abrufen des Toke
 
 ## Nächste Schritte
 
-- Informationen zum Festlegen von Sicherheitsrichtlinien finden Sie unter [Verwalten und Überwachen des Zugriffs auf Ressourcen](resource-group-rbac.md).  
+- Informationen zum Festlegen von Sicherheitsrichtlinien finden Sie unter [Rollenbasierte Zugriffssteuerung in Azure](./active-directory/role-based-access-control-configure.md).  
 - Eine Videodemo dieser Schritte finden Sie unter [Aktivieren der programmgesteuerten Verwaltung einer Azure-Ressource mit Azure Active Directory](https://channel9.msdn.com/Series/Azure-Active-Directory-Videos-Demos/Enabling-Programmatic-Management-of-an-Azure-Resource-with-Azure-Active-Directory).
 - Informationen zur Verwendung von Azure PowerShell oder der Azure-Befehlszeilenschnittstelle zum Arbeiten mit Active Directory-Anwendungen und Dienstprinzipalen, einschließlich der Verwendung eines Zertifikats für die Authentifizierung, finden Sie unter [Authentifizieren eines Dienstprinzipals mit dem Azure-Ressourcen-Manager](./resource-group-authenticate-service-principal.md).
 - Anleitungen für die Implementierung von Sicherheitseinstellungen mit dem Azure-Ressourcen-Manager finden Sie unter [Sicherheitsaspekte für Azure-Ressourcen-Manager](best-practices-resource-manager-security.md).
@@ -162,4 +178,4 @@ Fügen Sie in Ihrer Anwendung eine Methode wie die folgende zum Abrufen des Toke
 [12]: ./media/resource-group-create-service-principal-portal/add-icon.png
 [13]: ./media/resource-group-create-service-principal-portal/save-icon.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1223_2015-->
