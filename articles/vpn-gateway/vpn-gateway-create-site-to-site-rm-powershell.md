@@ -28,7 +28,7 @@ In diesem Artikel werden Sie durch das Erstellen eines virtuellen Netzwerks und 
 
 **Informationen zu Azure-Bereitstellungsmodellen**
 
-[AZURE.INCLUDE [vpn-gateway-clasic-rm](../../includes/vpn-gateway-classic-rm-include.md)]
+[AZURE.INCLUDE [vpn-gateway-clasic-rm](../../includes/vpn-gateway-classic-rm-include.md)] 
 
 ## Voraussetzungen
 
@@ -44,9 +44,9 @@ Vergewissern Sie sich vor Beginn der Konfiguration, dass Sie über Folgendes ver
 
 Sie benötigen die neueste Version der PowerShell-Cmdlets für Azure-Ressourcen-Manager zum Konfigurieren der Verbindung.
 	
-[AZURE.INCLUDE [vpn-gateway-ps-rm-howto](../../includes/vpn-gateway-ps-rm-howto-include.md)]
+[AZURE.INCLUDE [vpn-gateway-ps-rm-howto](../../includes/vpn-gateway-ps-rm-howto-include.md)] 
 
-## 1\. Verbinden mit Ihrem Abonnement 
+## 1. Verbinden mit Ihrem Abonnement 
 
 
 Stellen Sie sicher, dass Sie in den PowerShell-Modus wechseln, um die Ressourcen-Manager-Cmdlets zu verwenden. Weitere Informationen finden Sie unter [Verwenden von Windows PowerShell mit Resource Manager](../powershell-azure-resource-manager.md).
@@ -64,7 +64,7 @@ Geben Sie das Abonnement an, das Sie verwenden möchten.
 	Select-AzureRmSubscription -Subscriptionid "GUID of subscription"
 
 
-## 2\. Erstellen eines virtuelles Netzwerks und eines Gatewaysubnetzes
+## 2. Erstellen eines virtuelles Netzwerks und eines Gatewaysubnetzes
 
 - Wenn Sie bereits über ein virtuelles Netzwerk mit einem Gatewaysubnetz verfügen, können Sie direkt mit **Schritt 3: Hinzufügen Ihres lokalen Standorts** fortfahren. 
 - Falls Sie bereits über ein virtuelles Netzwerk verfügen und Sie dem VNet ein Gatewaysubnetz hinzufügen möchten, helfen Ihnen die Informationen unter [Hinzufügen eines Gatewaysubnetzes zu einem VNet](#gatewaysubnet) weiter.
@@ -99,7 +99,7 @@ Legen Sie jetzt die Konfiguration fest.
 
 	Set-AzureRmVirtualNetwork -VirtualNetwork $vnet
 
-## 3\. Hinzufügen Ihres lokalen Standorts
+## 3. Hinzufügen Ihres lokalen Standorts
 
 In einem virtuellen Netzwerk ist mit dem *lokalen Standort* in der Regel Ihr lokaler Standort gemeint. Sie müssen diesen Standort benennen, damit Azure darauf verweisen kann.
 
@@ -123,7 +123,7 @@ Gehen Sie wie folgt vor, um einen lokalen Standort mit mehreren Adresspräfixen 
 Es kann vorkommen, dass sich Ihre Präfixe für den lokalen Standort ändern. Die Schritte, die Sie zum Ändern der IP-Adresspräfixe ausführen, richten sich danach, ob Sie eine VPN Gateway-Verbindung erstellt haben. Weitere Informationen finden Sie unter [Ändern von IP-Adresspräfixen für einen lokalen Standort](#to-modify-ip-address-prefixes-for-a-local-site).
 
 
-## 4\. Anfordern einer öffentlichen IP-Adresse für das Gateway
+## 4. Anfordern einer öffentlichen IP-Adresse für das Gateway
 
 Als Nächstes müssen Sie eine öffentliche IP-Adresse anfordern, die Ihrem Azure-VNet-VPN-Gateway zugewiesen wird. Dies ist nicht die gleiche IP-Adresse, die dem VPN-Gerät zugewiesen wird. Sie wird stattdessen dem Azure-VPN-Gateway selbst zugewiesen. Sie können nicht die IP-Adresse angeben, die Sie verwenden möchten. Diese wird Ihrem Gateway dynamisch zugewiesen. Sie verwenden diese IP-Adresse bei der Konfiguration des lokalen VPN-Geräts für die Verbindung zum Gateway.
 
@@ -131,7 +131,7 @@ Verwenden Sie das folgende PowerShell-Beispiel. Die Zuordnungsmethode für diese
 
 	$gwpip= New-AzureRmPublicIpAddress -Name gwpip -ResourceGroupName testrg -Location 'West US' -AllocationMethod Dynamic
 
-## 5\. Erstellen der Gateway-IP-Adressierung
+## 5. Erstellen der Gateway-IP-Adressierung
 
 Die Gatewaykonfiguration definiert das zu verwendende Subnetz und die zu verwendende öffentliche IP-Adresse. Verwenden Sie das folgende Beispiel, um Ihre Gatewaykonfiguration zu erstellen.
 
@@ -139,7 +139,7 @@ Die Gatewaykonfiguration definiert das zu verwendende Subnetz und die zu verwend
 	$subnet = Get-AzureRmVirtualNetworkSubnetConfig -Name 'GatewaySubnet' -VirtualNetwork $vnet
 	$gwipconfig = New-AzureRmVirtualNetworkGatewayIpConfig -Name gwipconfig1 -SubnetId $subnet.Id -PublicIpAddressId $gwpip.Id 
 
-## 6\. Erstellen des Gateways
+## 6. Erstellen des Gateways
 
 In diesem Schritt erstellen Sie das Gateway des virtuellen Netzwerks. Beachten Sie, dass die Erstellung eines Gateways lange dauern kann. Häufig 20 Minuten oder länger.
 
@@ -150,7 +150,7 @@ Verwenden Sie die folgenden Werte:
 
 		New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg -Location 'West US' -IpConfigurations $gwipconfig -GatewayType Vpn -VpnType RouteBased
 
-## 7\. Konfigurieren des VPN-Geräts
+## 7. Konfigurieren des VPN-Geräts
 
 An diesem Punkt benötigen Sie die öffentliche IP-Adresse des Gateways des virtuellen Netzwerks für die Konfiguration Ihres lokalen VPN-Geräts. Halten Sie mit Ihrem Gerätehersteller für spezifische Informationen zur Konfiguration Rücksprache. Darüber hinaus finden Sie weitere Informationen unter [VPN-Geräte](http://go.microsoft.com/fwlink/p/?linkid=615099).
 
@@ -158,7 +158,7 @@ Um die öffentliche IP-Adresse des Gateways des virtuellen Netzwerks zu ermittel
 
 	Get-AzureRmPublicIpAddress -Name gwpip -ResourceGroupName testrg
 
-## 8\. Erstellen der VPN-Verbindung
+## 8. Erstellen der VPN-Verbindung
 
 Erstellen Sie als Nächstes die Site-to-Site-VPN-Verbindung zwischen dem Gateway Ihres virtuellen Netzwerks und Ihrem VPN-Gerät. Achten Sie darauf, dass Sie die Werte durch Ihre eigenen ersetzen. Der gemeinsame Schlüssel muss dem Wert entsprechen, den Sie für Ihre VPN-Gerätekonfiguration verwendet haben.
 
@@ -169,7 +169,7 @@ Erstellen Sie als Nächstes die Site-to-Site-VPN-Verbindung zwischen dem Gateway
 
 Die Verbindung wird nach kurzer Zeit hergestellt.
 
-## 9\. Überprüfen einer VPN-Verbindung
+## 9. Überprüfen einer VPN-Verbindung
 
 Zu diesem Zeitpunkt sind die Standort-zu-Standort-VPN-Verbindungen, die mit dem Ressourcen-Manager erstellt wurden, im Vorschauportal nicht sichtbar. Sie können aber überprüfen, ob Ihre Verbindung erfolgreich war, indem Sie *Get-AzureRmVirtualNetworkGatewayConnection –Debug* verwenden. In Zukunft wird hierfür ein Cmdlet verfügbar sein, und Sie können Ihre Verbindung dann auch im Vorschauportal anzeigen.
 

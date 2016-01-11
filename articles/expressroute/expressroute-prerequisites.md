@@ -39,7 +39,8 @@ Ausführliche Informationen zu Konnektivitätsmodellen finden Sie im Abschnitt z
 
 ## Redundanzanforderungen für die Konnektivität
 
-Es gibt keine Redundanzanforderungen an die physische Konnektivität zwischen der Infrastruktur des Kunden und der des Dienstanbieters. Microsoft erfordert die Redundanz in Schicht 3. Microsoft erfordert, dass das Redundanzrouting zwischen Edge von Microsoft und dem Kundennetzwerk über den Dienstanbieter für jeden der Peerings aktiviert wird. Wenn Routingsitzungen nicht auf redundante Weise konfiguriert sind, ist die SLA zur Dienstverfügarkeit nichtig.
+Es gibt keine Redundanzanforderungen an die physische Konnektivität zwischen der Infrastruktur des Kunden und der des Dienstanbieters. 
+Microsoft erfordert die Redundanz in Schicht 3. Microsoft erfordert, dass das Redundanzrouting zwischen Edge von Microsoft und dem Kundennetzwerk über den Dienstanbieter für jeden der Peerings aktiviert wird. Wenn Routingsitzungen nicht auf redundante Weise konfiguriert sind, ist die SLA zur Dienstverfügarkeit nichtig.
 
 ## Überlegungen zu IP-Adressen und Routing
 

@@ -226,9 +226,11 @@ Klicken Sie auf die Registerkarte **Verwenden des Data Factory-Editors**, um zu 
 
 ## Überwachen der Pipeline
  
-1.	Klicken Sie nach der Anmeldung beim [Azure-Portal](http://portal.azure.com/) auf **Durchsuchen**, und wählen Sie **Data Factorys** aus. ![Durchsuchen -> Data Factorys](./media/data-factory-build-your-first-pipeline-using-arm/BrowseDataFactories.png)
+1.	Klicken Sie nach der Anmeldung beim [Azure-Portal](http://portal.azure.com/) auf **Durchsuchen**, und wählen Sie **Data Factorys** aus. 
+		![Durchsuchen -> Data Factorys](./media/data-factory-build-your-first-pipeline-using-arm/BrowseDataFactories.png)
 2.	Klicken Sie im Blatt **Data Factorys** auf die von Ihnen erstellte Data Factory (**TutorialFactoryARM**).	
-2.	Klicken Sie im Blatt **Data Factory** für Ihre Data Factory auf **Diagramm**. ![Kachel „Diagramm“](./media/data-factory-build-your-first-pipeline-using-arm/DiagramTile.png)
+2.	Klicken Sie im Blatt **Data Factory** für Ihre Data Factory auf **Diagramm**. 
+		![Kachel „Diagramm“](./media/data-factory-build-your-first-pipeline-using-arm/DiagramTile.png)
 4.	In der **Diagrammansicht** sehen Sie eine Übersicht über die in diesem Tutorial verwendeten Pipelines und Datasets.
 	
 	![Diagrammansicht](./media/data-factory-build-your-first-pipeline-using-arm/DiagramView.png) 

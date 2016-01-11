@@ -60,7 +60,8 @@ Erstellen Sie zunächst ein DocumentDB-Konto. Wenn Sie bereits über ein Konto v
 
 [AZURE.INCLUDE [DocumentDB-Erstellen-DB-Account](../../includes/documentdb-create-dbaccount.md)]
 
-<br/> Im Folgenden wird erläutert, wie Sie eine Python Flask-Webanwendung von Grund auf neu erstellen.
+<br/> 
+Im Folgenden wird erläutert, wie Sie eine Python Flask-Webanwendung von Grund auf neu erstellen.
 
 ## Schritt 2: Erstellen einer neuen Python Flask-Webanwendung
 
@@ -320,7 +321,7 @@ def vote():
 	{% endblock %}
 	```
 
-### Hinzufügen einer Konfigurationsdatei und Ändern von \\_\\_init\\_\\_.py
+### Hinzufügen einer Konfigurationsdatei und Ändern von \_\_init\_\_.py
 
 1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt **tutorial**, klicken Sie nacheinander auf **Hinzufügen** und **Neues Element**, wählen Sie **Leere Python-Datei** aus, und benennen Sie die Datei **config.py**. Diese Konfiguration ist für Formulare in Flask erforderlich. Sie können damit auch einen geheimen Schlüssel bereitstellen. Dies ist jedoch für dieses Tutorial nicht erforderlich.
 

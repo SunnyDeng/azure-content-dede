@@ -24,7 +24,7 @@ Dieser Artikel gilt für Punkt-zu-Standort-VPN-Gatewayverbindungen mit einem vir
 
 **Informationen zu Azure-Bereitstellungsmodellen**
 
-[AZURE.INCLUDE [vpn-gateway-clasic-rm](../../includes/vpn-gateway-classic-rm-include.md)]
+[AZURE.INCLUDE [vpn-gateway-clasic-rm](../../includes/vpn-gateway-classic-rm-include.md)] 
 
 ## Informationen zum Erstellen einer Punkt-zu-Standort-Verbindung
  
