@@ -183,7 +183,8 @@ Dies ist für die anfängliche Einrichtung und Konfiguration erforderlich. Jetzt
 				
 		module.exports = DocDBUtils;
 
-> [AZURE.TIP]createCollection akzeptiert einen optionalen requestOptions-Parameter, der für die Festlegung des Angebotstyps für die Sammlung verwendet werden kann. Wenn kein requestOptions.offerType-Wert angegeben ist, wird die Sammlung mit den Standardangebotstyp erstellt. Weitere Informationen zu DocumentDB-Angebotstypen finden Sie in [Leistungsstufen in DocumentDB](documentdb-performance-levels.md)
+> [AZURE.TIP]createCollection akzeptiert einen optionalen requestOptions-Parameter, der für die Festlegung des Angebotstyps für die Sammlung verwendet werden kann. Wenn kein requestOptions.offerType-Wert angegeben ist, wird die Sammlung mit den Standardangebotstyp erstellt. 
+> Weitere Informationen zu DocumentDB-Angebotstypen finden Sie in [Leistungsstufen in DocumentDB](documentdb-performance-levels.md)
 		
 3. Speichern und schließen Sie die Datei **docdbUtils.js**.
 
@@ -505,7 +506,7 @@ Jetzt konzentrieren wir uns auf die Erstellung der Benutzeroberfläche, um den B
 	
 	Dies sollte jetzt alles sein, damit unsere Anwendung funktioniert.
 
-5. Öffnen Sie die Datei **style.css** im Verzeichnis **Public\\stylesheets**, und ersetzen Sie den Code durch Folgendes:
+5. Öffnen Sie die Datei **style.css** im Verzeichnis **Public\stylesheets**, und ersetzen Sie den Code durch Folgendes:
 
 		body {
 		  padding: 50px;

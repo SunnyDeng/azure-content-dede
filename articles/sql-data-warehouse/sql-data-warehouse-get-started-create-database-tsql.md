@@ -46,9 +46,9 @@ Sie können ein SQL Data Warehouse auch erstellen, indem Sie die Befehlszeile ö
 
         sqlcmd -S <Server Name>.database.windows.net -I -U <User> -P <Password> -Q "CREATE DATABASE <Name> (EDITION='datawarehouse', SERVICE_OBJECTIVE = '<Compute Size - DW####>', MAXSIZE= <Storage Size - #### GB>)"
 
-Beachten Sie beim Ausführen der oben genannten TSQL-Anweisungen die Parameter MAXSIZE und SERVICE\_OBJECTIVE. Diese bestimmen die anfängliche Speichergröße und Datenverarbeitungskapazität, die Ihrer Data Warehouse-Instanz zugewiesen sind. MAXSIZE akzeptiert die folgenden Größen. Wir empfehlen eine hohe Größe, um Wachstum unterstützen zu können: 250 GB, 500 GB, 750 GB, 1024 GB, 5120 GB, 10.240 GB, 20.480 GB, 30.720 GB, 40.960 GB, 51.200 GB.
+Beachten Sie beim Ausführen der oben genannten TSQL-Anweisungen die Parameter MAXSIZE und SERVICE_OBJECTIVE. Diese bestimmen die anfängliche Speichergröße und Datenverarbeitungskapazität, die Ihrer Data Warehouse-Instanz zugewiesen sind. MAXSIZE akzeptiert die folgenden Größen. Wir empfehlen eine hohe Größe, um Wachstum unterstützen zu können: 250 GB, 500 GB, 750 GB, 1024 GB, 5120 GB, 10.240 GB, 20.480 GB, 30.720 GB, 40.960 GB, 51.200 GB.
 
-SERVICE\_OBJECTIVE gibt die Anzahl der DWUs an, mit der Ihre Instanz gestartet wird, und akzeptiert die folgenden Werte: DW100, DW200, DW300, DW400, DW500, DW600, DW1000, DW1200, DW1500, DW2000. Informationen zur Auswirkung dieser Parameter auf die Abrechnung finden Sie auf unserer Seite zur [Preisgestaltung][].
+SERVICE_OBJECTIVE gibt die Anzahl der DWUs an, mit der Ihre Instanz gestartet wird, und akzeptiert die folgenden Werte: DW100, DW200, DW300, DW400, DW500, DW600, DW1000, DW1200, DW1500, DW2000. Informationen zur Auswirkung dieser Parameter auf die Abrechnung finden Sie auf unserer Seite zur [Preisgestaltung][].
 
 ## Nächste Schritte
 Nach der SQL Data Warehouse-Bereitstellung können Sie [Beispieldaten laden][] oder die Schritte zum [Entwickeln][], [Laden][] oder [Migrieren][] erlernen.

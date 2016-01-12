@@ -22,7 +22,7 @@
 
 Apache Storm ist ein skalierbares, fehlertolerantes, verteiltes Echtzeit-Berechnungssystem für die Verarbeitung von Datenströmen. Mit Storm in Azure HDInsight können Sie einen cloudbasierten Storm-Cluster erstellen, der Big Data-Analysen in Echtzeit durchführt.
 
-> [AZURE.NOTE]Mit den Schritten in diesem Artikel wird ein Linux-basierter HDInsight-Cluster erstellt. Schritte zum Erstellen eines Windows-basierten Storm in HDInsight-Clusters finden Sie unter [Apache Storm-Lernprogramm: Erste Schritte mit Storm-Starter-Beispielen für die Big Data-Analyse in HDInsight](hdinsight-apache-storm-tutorial-get-started.md).
+> [AZURE.NOTE] Mit den Schritten in diesem Artikel wird ein Linux-basierter HDInsight-Cluster erstellt. Schritte zum Erstellen eines Windows-basierten Storm in HDInsight-Clusters finden Sie unter [Apache Storm-Lernprogramm: Erste Schritte mit Storm-Starter-Beispielen für die Big Data-Analyse in HDInsight](hdinsight-apache-storm-tutorial-get-started.md).
 
 ## Voraussetzungen
 
@@ -164,7 +164,7 @@ Führen Sie die folgenden Schritte aus, um die Storm-Benutzeroberfläche anzuzei
 
     ![Storm-Benutzeroberfläche](./media/hdinsight-apache-storm-tutorial-get-started-linux/stormui.png)
 	
-	> [AZURE.NOTE]Wenn ein Fehler angezeigt wird, dass der Server nicht gefunden werden kann, haben Sie möglicherweise keinen SSH-Tunnel zum Cluster eingerichtet. Weitere Informationen finden Sie unter [Verwenden von SSH-Tunneling zum Zugriff auf die Ambari-Webbenutzeroberfläche, ResourceManager, JobHistory, NameNode, Oozie und andere Webbenutzeroberflächen](hdinsight-linux-ambari-ssh-tunnel.md).
+	> [AZURE.NOTE] Wenn ein Fehler angezeigt wird, dass der Server nicht gefunden werden kann, haben Sie möglicherweise keinen SSH-Tunnel zum Cluster eingerichtet. Weitere Informationen finden Sie unter [Verwenden von SSH-Tunneling zum Zugriff auf die Ambari-Webbenutzeroberfläche, ResourceManager, JobHistory, NameNode, Oozie und andere Webbenutzeroberflächen](hdinsight-linux-ambari-ssh-tunnel.md).
 
 4. Klicken Sie unter **Topologiezusammenfassung** in der Spalte **Name** auf den Eintrag **wordcount**. Dadurch werden weitere Informationen zur Topologie angezeigt.
 

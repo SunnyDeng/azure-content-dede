@@ -111,7 +111,7 @@ Nachdem Sie den virtuellen Computer erstellt haben, sollten Sie sich bei diesem 
 
 7. Klicken Sie auf **Ja**, um die Identität des virtuellen Computers zu bestätigen.
 
-Sie können jetzt mit dem virtuellen Computer wie mit jedem anderen Server arbeiten.
+	Sie können jetzt mit dem virtuellen Computer wie mit jedem anderen Server arbeiten.
 
 ## Nächste Schritte
 
