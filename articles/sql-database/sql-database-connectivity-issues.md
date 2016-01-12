@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="12/10/2015"
+	ms.date="01/06/2016"
 	ms.author="daleche"/>
 
 
@@ -144,7 +144,7 @@ Die für die Verbindung mit Azure SQL-Datenbank erforderliche Verbindungszeichen
 ### SqlConnection-Parameter von .NET für wiederholte Verbindungsversuche
 
 
-Wenn Ihr Clientprogramm mithilfe der .NET Framework-Klasse **System.Data.SqlClient.SqlConnection** eine Verbindung mit der Azure SQL-Datenbank herstellt, verwenden Sie .NET 4.5.1 oder höher, sodass Sie die Funktion für wiederholte Verbindungsversuche nutzen können. Details der Funktion finden Sie [hier](http://go.microsoft.com/fwlink/?linkid=393996).
+Wenn Ihr Clientprogramm mithilfe der .NET Framework-Klasse **System.Data.SqlClient.SqlConnection** eine Verbindung mit Azure SQL-Datenbank herstellt, sollten Sie .NET 4.6.1 oder höher verwenden, damit Sie die Funktion für wiederholte Verbindungsversuche nutzen können. Details der Funktion finden Sie [hier](http://go.microsoft.com/fwlink/?linkid=393996).
 
 
 <!--
@@ -228,19 +228,19 @@ Hintergrundinformationen zur Konfiguration von Ports und IP-Adressen finden Sie 
 
 <a id="d-connection-ado-net-4-5" name="d-connection-ado-net-4-5"></a>
 
-## Verbindung: ADO.NET 4.5
+## Verbindung: ADO.NET 4.6.1
 
 
-Wenn Ihr Programm ADO.NET-Klassen wie **System.Data.SqlClient.SqlConnection** für die Verbindung mit Azure SQL-Datenbank verwendet, sollten Sie .NET Framework 4.5 oder höher verwenden.
+Wenn Ihr Programm ADO.NET-Klassen wie **System.Data.SqlClient.SqlConnection** für die Verbindung mit Azure SQL-Datenbank verwendet, sollten Sie .NET Framework 4.6.1 oder höher verwenden.
 
 
-ADO.NET 4.5: für Unterstützung des TDS 7.4-Protokolls. Dies umfasst Verbindungserweiterungen, die über die Erweiterungen in ADO.NET 4.0 hinausgehen. Bietet Unterstützung für Verbindungspooling. Dies umfasst eine effiziente Überprüfung, ob das für Ihr Programm zur Verfügung gestellte Verbindungsobjekt funktioniert.
+ADO.NET 4.6.1: für Unterstützung des TDS 7.4-Protokolls. Dies umfasst Verbindungserweiterungen, die über die Erweiterungen in ADO.NET 4.0 hinausgehen. Bietet Unterstützung für Verbindungspooling. Dies umfasst eine effiziente Überprüfung, ob das für Ihr Programm zur Verfügung gestellte Verbindungsobjekt funktioniert.
 
 
 Bei Verwendung eines Verbindungsobjekts aus einem Verbindungspool sollte Ihr Programm die Verbindung vorübergehend schließen, wenn diese nicht umgehend verwendet wird. Das erneute Öffnen einer Verbindung ist weniger kostenintensiv als das Erstellen einer neuen Verbindung.
 
 
-Wenn Sie ADO.NET 4.0 oder früher verwenden, sollten Sie ein Upgrade auf die aktuelle ADO.NET-Version durchführen. Seit Juli 2015 können Sie [ADO.NET 4.6 herunterladen](http://blogs.msdn.com/b/dotnet/archive/2015/07/20/announcing-net-framework-4-6.aspx).
+Wenn Sie ADO.NET 4.0 oder eine ältere Version verwenden, sollten Sie ein Upgrade auf die aktuelle ADO.NET-Version durchführen. Seit November 2015 können Sie [ADO.NET 4.6.1 herunterladen](http://blogs.msdn.com/b/dotnet/archive/2015/11/30/net-framework-4-6-1-is-now-available.aspx).
 
 
 <a id="e-diagnostics-test-utilities-connect" name="e-diagnostics-test-utilities-connect"></a>
@@ -514,4 +514,4 @@ public bool IsTransient(Exception ex)
 
 - [*Retrying* ist eine Apache 2.0-lizenzierte Allzweckwiederholungsbibliothek, die in **Python** geschrieben wurde und das Hinzufügen von Wiederholungsverhalten zu praktisch jeglichen Elementen vereinfacht.](https://pypi.python.org/pypi/retrying)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0107_2016-->

@@ -1,20 +1,20 @@
 <properties
-    pageTitle="Erstellen eines Supporttickets für SQL Data Warehouse | Microsoft Azure"
-    description="Sie erfahren, wie Sie in Azure SQL Data Warehouse ein Supportticket erstellen."
-    services="sql-data-warehouse"
-    documentationCenter="NA"
-    authors="sahaj08"
-    manager="barbkess"
-    editor=""/>
+   pageTitle="Erstellen eines Supporttickets für SQL Data Warehouse | Microsoft Azure"
+   description="Sie erfahren, wie Sie in Azure SQL Data Warehouse ein Supportticket erstellen."
+   services="sql-data-warehouse"
+   documentationCenter="NA"
+   authors="sahaj08"
+   manager="barbkess"
+   editor=""/>
 
 <tags
-    ms.service="sql-data-warehouse"
-    ms.devlang="NA"
-    ms.topic="get-started-article"
-    ms.tgt_pltfrm="NA"
-    ms.workload="data-services"
-    ms.date="10/20/2015"
-    ms.author="sahaj08"/>
+   ms.service="sql-data-warehouse"
+   ms.devlang="NA"
+   ms.topic="get-started-article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="data-services"
+   ms.date="01/04/2016"
+   ms.author="sahaj08"/>
 
 # Erstellen eines Supporttickets für SQL Data Warehouse
  In diesem Artikel wird gezeigt, wie Sie ein Supportticket für SQL Data Warehouse erstellen.
@@ -84,4 +84,4 @@ Außerdem können Sie sich auch an der SQL Data Warehouse-Community beteiligen, 
 [Stack Overflow]: http://stackoverflow.com/questions/tagged/azure-sqldw/
 [Azure SQL Data Warehouse-MSDN-Forum]: https://social.msdn.microsoft.com/Forums/home?forum=AzureSQLDataWarehouse/
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

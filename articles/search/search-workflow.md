@@ -13,7 +13,7 @@
 	ms.workload="search"
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
-	ms.date="11/04/2015"
+	ms.date="12/29/2015"
 	ms.author="heidist"/>
 
 # Typischer Workflow für die Azure Search-Entwicklung
@@ -42,7 +42,7 @@ Es stehen zwei Tarife zur Auswahl. Es wird empfohlen, den (kostenlosen) Shared-T
 
 Nachdem Sie den Dienst erstellt haben, können Sie einen Index erstellen, beginnend mit der zugehörigen Schemadefinition.
 
-Am schnellsten und einfachsten kann ein Index über das klassische Azure-Portal erstellt werden. Jedes Dokument muss mindestens über einen eindeutigen Schlüssel und mindestens ein Feld mit durchsuchbaren Daten verfügen. Weitere Informationen für den Einstieg finden Sie unter [Erstellen eines Index im Portal](search-create-index-portal.md).
+Am schnellsten und einfachsten kann ein Index über das Azure-Portal erstellt werden. Jedes Dokument muss mindestens über einen eindeutigen Schlüssel und mindestens ein Feld mit durchsuchbaren Daten verfügen. Weitere Informationen für den Einstieg finden Sie unter [Erstellen eines Index im Portal](search-create-index-portal.md).
 
 > [AZURE.NOTE]Details zum Azure Search-Index
 >
@@ -73,7 +73,7 @@ Eine zweite Option besteht darin, mit der REST-API oder der .NET-Bibliothek ein 
 - [Hinzufügen, Aktualisieren oder Löschen von Dokumenten (REST-API)](https://msdn.microsoft.com/library/dn798930.aspx)
 - [DocumentOperationsExtensions Class](https://msdn.microsoft.com/library/microsoft.azure.search.documentoperationsextensions.aspx)
 
-Eine dritte Option besteht darin, für sehr kleine Datasets [Fiddler](search-fiddler.md) oder [Chrome Postman](search-chrome-postman.md) zum Hochladen von Dokumenten zu verwenden.
+Eine dritte Option besteht darin, für sehr kleine Datasets [Fiddler](search-fiddler.md) zum Hochladen von Dokumenten zu verwenden.
 
 Eine vierte Option, vielleicht die einfachste, besteht darin, Code entweder aus [Adventure Works – C#-REST-API-Beispiel](https://azuresearchadventureworksdemo.codeplex.com/), mit dem Dokumente aus einer eingebetteten Datenbank (.mdf) in das Projekt geladen werden, oder aus [Bewertungsprofile – C#-REST-API-Beispiel](https://azuresearchscoringprofiles.codeplex.com/) zu entlehnen, mit dem Daten aus im Projekt enthaltenen JSON-Datendateien geladen werden.
 
@@ -83,7 +83,7 @@ Eine vierte Option, vielleicht die einfachste, besteht darin, Code entweder aus 
 
 Sobald Dokumente in den Index geladen wurden, können Sie Ihre erste Abfrage schreiben.
 
-Die schnellste Methode, anfängliche Suchergebnisse vom Suchdienst zu erhalten, ist die Verwendung von [Fiddler](search-fiddler.md) oder [Chrome Postman](search-chrome-postman.md) zum Anzeigen einer Antwort. Tatsächlich aber werden Sie Code für eine einfache Benutzeroberfläche schreiben wollen, um die Ergebnisse in einem lesbaren Format anzuzeigen.
+Die schnellste Methode, anfängliche Suchergebnisse vom Suchdienst zu erhalten, ist die Verwendung von [Fiddler](search-fiddler.md) zum Anzeigen einer Antwort. Tatsächlich aber werden Sie Code für eine einfache Benutzeroberfläche schreiben wollen, um die Ergebnisse in einem lesbaren Format anzuzeigen.
 
 Zu den APIs für Suchvorgänge gehören:
 
@@ -140,7 +140,8 @@ Azure Search bietet zwei Programmiermodelle: die .NET-Bibliothek für verwaltete
 
 Aktuell ist ein kleiner Teil der Features noch nicht in der .NET-Bibliothek enthalten, d. h. auch wenn Sie verwalteten Code bevorzugen, müssen Sie auf die REST-API zurückgreifen, um die gewünschten Funktionen zu erhalten. Folgende Features sind nur in der REST-API enthalten:
 
-- [Microsoft NLPs (Natural Language Processors) – nur Vorschau](../search-api-2015-02-28-preview/)
+- [Benutzerdefinierte Analyse – nur Vorschau](https://msdn.microsoft.com/library/azure/mt605304.aspx)
+- [Lucene-Abfrageanalyse – nur Vorschau](https://msdn.microsoft.com/library/azure/mt589323.aspx)
 - [moreLikeThis-Funktion – nur Vorschau](../search-api-2015-02-28-preview/)
 - [Verwaltungs-API](https://msdn.microsoft.com/library/dn832684.aspx)
 
@@ -190,4 +191,4 @@ Denken Sie daran, dass nur im Standard-Tarif eine Skalierung durchgeführt werde
 <!--Image references-->
 [1]: ./media/search-workflow/AzSearch-Workflow.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

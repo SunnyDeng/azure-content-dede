@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Grundlagen des Azure Batch-Diensts | Microsoft Azure"
-	description="Erfahren Sie mehr über die Konzepte, Workflows und Szenarien des Azure Batch-Diensts für umfangreiche parallele und HPC-Workloads"
+	description="Hier erhalten Sie Informationen über den Azure Batch-Dienst für umfangreiche parallele Workloads und HPC-Workloads."
 	services="batch"
 	documentationCenter=""
 	authors="dlepow"
@@ -38,9 +38,9 @@ Beispiele:
 * Analyse genetischer Sequenzen
 * Testen von Software
 
-Batch kann auch parallele Berechnungen mit einem Reduzierungsschritt am Ende und andere kompliziertere parallele Workloads ausführen.
+Batch kann auch parallele Berechnungen mit einem abschließenden Reduzierungsschritt sowie komplexere HPC-Workloads ausführen, z. B. MPI-Anwendungen (Message Passing Interface).
 
->[AZURE.NOTE]Derzeit unterstützt Batch nur Workloads, die auf Windows Server-basierten virtuellen Computern ausgeführt werden. Zudem unterstützt Batch derzeit keine MPI-Anwendungen (Message Passing Interface).
+>[AZURE.NOTE]Derzeit unterstützt Batch nur Workloads, die auf Windows Server-basierten virtuellen Computern ausgeführt werden.
 
 Ein Vergleich von Batch mit anderen HPC-Lösungsoptionen in Azure finden Sie unter [Batch und HPC-Lösungen](batch-hpc-solutions.md).
 
@@ -103,4 +103,4 @@ Abbildung 2 zeigt einen Workflow, der die Batch .NET-Clientanwendung verwendet,
 [parallel]: ./media/batch-technical-overview/parallel.png
 [work_item_workflow]: ./media/batch-technical-overview/work_item_workflow.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

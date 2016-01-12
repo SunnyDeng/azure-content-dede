@@ -13,7 +13,7 @@
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="windows"
 	ms.workload="na"
-	ms.date="09/16/2015"
+	ms.date="12/24/2015"
 	ms.author="cfowler"/>
 
 # Verbinden einer Web-App in Azure App Service mit Redis-Cache über das Memcache-Protokoll
@@ -30,8 +30,8 @@ Der Web-Apps-Memcache-Shim kann mit jeder Anwendung verwendet werden, sofern die
 
 Führen Sie die Schritte in den folgenden Artikeln aus:
 
-* [Bereitstellen einer Instanz des Azure Redis Cache Service][1]
-* [Bereitstellen einer skalierbaren WordPress-Website in Azure][0]
+* [Bereitstellen einer Instanz des Azure Redis Cache Service][0]
+* [Bereitstellen einer skalierbaren WordPress-Website in Azure][1]
 
 Nachdem Sie die skalierbare WordPress-Website und eine Redis-Cache-Instanz bereitgestellt haben, können Sie damit fortfahren, den Memcache-Shim in Azure App Service-Web-Apps zu aktivieren.
 
@@ -124,7 +124,7 @@ $memcached_servers = array(
 
 Wenn dieser Code eingefügt wurde, speichert Monaco das Dokument automatisch.
 
-Im nächsten Schritt wird das Object-Cache-Plug-In aktiviert. Dazu wird die Datei **object-cache.php** per Drag & Drop aus dem Ordner **wp-content/memcached** in den Ordner **wp-content** kopiert, um die Funktionen des Memcached Object Cache zu aktivieren.
+Im nächsten Schritt wird das Object-Cache-Plug-In aktiviert. Dazu wird die Datei **object-cache.php** per Drag & Drop aus dem Ordner **wp-content/plugins/memcached** in den Ordner **wp-content** kopiert, um die Funktionen des Memcached Object Cache zu aktivieren.
 
 ![Memcache-Plug-In "object-cache.php" suchen](./media/web-sites-connect-to-redis-using-memcache-protocol/13-locate-memcache-object-cache-plugin.png)
 
@@ -166,7 +166,7 @@ Es wird angezeigt, dass der Nicht-SSL-Port nun geöffnet ist. Klicken Sie auf **
 redis-cli –h <hostname-for-redis-cache> –a <primary-key-for-redis-cache> –p 6379
 ```
 
-Ersetzen Sie **<hostname-for-redis-cache>** durch den tatsächlichen Hostnamen "xxxxx.redis.cache.windows.net" und **<primary-key-for-redis-cache>** durch den Zugriffsschlüssel für den Cache, und drücken Sie dann die EINGABETASTE. Sobald die CLI eine Verbindung mit der Redis-Cache-Instanz hergestellt hat, übermitteln Sie einen beliebigen Redis-Befehl. Im Screenshot unten liste ich die Schlüssel auf.
+Ersetzen Sie **&lt;hostname-for-redis-cache&gt;** durch den tatsächlichen Hostnamen „xxxxx.redis.cache.windows.net“ und **&lt;primary-key-for-redis-cache&gt;** durch den Zugriffsschlüssel für den Cache, und drücken Sie dann die **EINGABETASTE**. Sobald die CLI eine Verbindung mit der Redis-Cache-Instanz hergestellt hat, übermitteln Sie einen beliebigen Redis-Befehl. Im Screenshot unten liste ich die Schlüssel auf.
 
 ![Herstellen einer Verbindung mit Azure Redis Cache über die Redis-Befehlszeilenschnittstelle in Terminal](./media/web-sites-connect-to-redis-using-memcache-protocol/19-redis-cli-terminal.png)
 
@@ -182,7 +182,7 @@ Glückwunsch! Die WordPress-App verfügt jetzt über einen zentralen Cache im Ar
 * Hinweise zur Änderung von Websites zu App Service finden Sie unter: [Azure App Service und seine Auswirkungen auf vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 
 
-[0]: http://bit.ly/1F0m3tw
+[0]: ../redis-cache/cache-dotnet-how-to-use-azure-redis-cache.md#create-a-cache
 [1]: http://bit.ly/1t0KxBQ
 [2]: http://manage.windowsazure.com
 [3]: http://portal.azure.com
@@ -197,4 +197,4 @@ Glückwunsch! Die WordPress-App verfügt jetzt über einen zentralen Cache im Ar
 [12]: /services/cache/
 [13]: http://memcached.org
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

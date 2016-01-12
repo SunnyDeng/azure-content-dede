@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Mein erstes PowerShell Workflow-Runbook in Azure Automation | Microsoft Azure"
-	description="Tutorial, in dem Sie sich mit dem Erstellen, Testen und Veröffentlichen eines einfachen Textrunbooks unter Verwendung eines PowerShell-Workflows vertraut machen können. Dabei werden verschiedene Konzepte behandelt – beispielsweise die Authentifizierung gegenüber Azure-Ressourcen und Eingabeparameter."
+	description="Tutorial, in dem Sie sich mit dem Erstellen, Testen und Veröffentlichen eines einfachen Textrunbooks unter Verwendung eines PowerShell-Workflows vertraut machen können."
 	services="automation"
 	documentationCenter=""
 	authors="bwren"
@@ -22,6 +22,7 @@
 > [AZURE.SELECTOR]
 - [Graphical](automation-first-runbook-graphical.md)
 - [PowerShell Workflow](automation-first-runbook-textual.md)
+- [PowerShell](automation-first-runbook-textual-PowerShell.md)
 
 Dieses Tutorial führt Sie durch die Erstellung eines [PowerShell-Workflow-Runbooks](automation-runbook-types.md#powerShell-workflow-runbooks) in Azure Automation. Wir beginnen mit einem einfachen Runbook, das wir testen und veröffentlichen. Dabei erläutern wir, wie Sie den Status des Runbookauftrags nachverfolgen. Anschließend ändern wir das Runbook, um damit tatsächlich Azure-Ressourcen zu verwalten. Im vorliegenden Fall soll ein virtueller Azure-Computer gestartet werden. Danach fügen wir Runbookparameter hinzu, um die Stabilität des Runbooks zu erhöhen.
 
@@ -121,5 +122,6 @@ Unser Runbook startet zwar nun den virtuellen Computer, den wir im Runbook hartc
 ## Verwandte Artikel
 
 - [Mein erstes grafisches Runbook](automation-first-runbook-graphical.md)
+- [Mein erstes PowerShell-Runbook](automation-first-runbook-textual-PowerShell.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

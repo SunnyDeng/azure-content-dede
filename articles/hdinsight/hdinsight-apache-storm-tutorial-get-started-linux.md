@@ -14,7 +14,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="12/04/2015"
+   ms.date="01/05/2015"
    ms.author="larryfr"/>
 
 
@@ -51,6 +51,8 @@ Storm in HDInsight verwendet Azure-Blobspeicher zum Speichern der an den Cluster
 	![Clustername, Clustertyp und Betriebssystemtyp](./media/hdinsight-apache-storm-tutorial-get-started-linux/clustername.png)
 
 	Wählen Sie __Ubuntu__ aus, um einen Linux-basierten HDInsight-Cluster zu erstellen.
+    
+    > [AZURE.NOTE]Für die Schritte in diesem Dokument behalten Sie im Feld __Version__ den Standardwert bei.
 	
 4. Falls Sie mehrere Abonnements besitzen, wählen Sie den Eintrag __Abonnement__ aus, um das Azure-Abonnement für den Cluster auszuwählen.
 
@@ -75,6 +77,8 @@ Storm in HDInsight verwendet Azure-Blobspeicher zum Speichern der an den Cluster
 	Zurzeit kann ein Azure-Speicherkonto als Datenquelle für einen HDInsight-Cluster ausgewählt werden. Die Einträge auf dem Blatt __Datenquelle__ werden im Folgenden erläutert.
 	
 	- __Auswahlmethode__: Wählen Sie __Aus allen Abonnements__ aus, damit die Speicherkonten in Ihren Abonnements durchsucht werden können. Wählen Sie __Zugriffsschlüssel__ aus, wenn Sie den __Speichernamen__ und __Zugriffsschlüssel__ eines vorhandenen Speicherkontos eingeben möchten.
+    
+    - __Speicherkonto auswählen__: Wenn für Ihr Abonnement bereits ein Speicherkonto vorhanden ist, wählen Sie dieses als das für den Cluster zu verwendende Konto aus.
 	
 	- __Neu erstellen__: Hiermit können Sie ein neues Speicherkonto erstellen. Geben Sie den Namen des Speicherkontos in das angezeigte Feld ein. Wenn der Name verfügbar ist, wird ein grünes Häkchen angezeigt.
 	
@@ -83,6 +87,10 @@ Storm in HDInsight verwendet Azure-Blobspeicher zum Speichern der an den Cluster
 	- __Standort__: Die geografische Region, in der sich das Speicherkonto befindet bzw. in der es erstellt wird.
 	
 		> [AZURE.IMPORTANT]Durch die Auswahl des Standorts für die Standarddatenquelle wird auch der Standort des HDInsight-Clusters festgelegt. Der Cluster und die Standarddatenquelle müssen sich in der gleichen Region befinden.
+    
+    - __Azure Active Directory-Identität für den Cluster__: Mit dieser Option können Sie eine Azure Active Directory-Identität auswählen, mit der der Cluster auf den Azure Data Lake-Speicher zugreift.
+    
+        > [AZURE.NOTE]Diese Option wird in diesem Dokument nicht verwendet, Sie können daher den Standardwert beibehalten. Weitere Informationen zu dieser Option und zum Verwenden des Azure Data Lake-Speichers in Kombination mit HDInsight finden Sie unter [Erstellen eines HDInsight-Clusters, der den Azure Data Lake-Speicher verwendet](data-lake-store-hdinsight-hadoop-use-portal.md).
 		
 	- __Auswählen__: Hiermit speichern Sie die Datenquellenkonfiguration.
 	
@@ -90,11 +98,15 @@ Storm in HDInsight verwendet Azure-Blobspeicher zum Speichern der an den Cluster
 
 	![Blatt „Knotenpreistarife“](./media/hdinsight-apache-storm-tutorial-get-started-linux/nodepricingtiers.png)
 	
+    Sie können jeden Knotentyp auswählen, um den Typ des virtuellen Computers zu ändern, der für diese(n) Knoten in Ihrem Cluster verwendet wird. Für die Schritte in diesem Dokument behalten Sie die Standardeinstellungen bei.
+    
 	Klicken Sie auf die Schaltfläche __Auswählen__, um die Informationen zu den __Knotenpreistarifen__ zu speichern.
 
-8. Wählen Sie __Optionale Konfiguration__ aus. Auf diesem Blatt können Sie die Clusterversion auswählen und andere optionale Einstellungen konfigurieren. Sie können den Cluster z. B. einem __virtuellen Netzwerk__ hinzufügen oder einen __benutzerdefinierten Metastore__ zum Speichern von Daten für Hive und Oozie einrichten.
+8. Wählen Sie __Optionale Konfiguration__ aus. Auf diesem Blatt können Sie den Cluster zu einem __virtuellen Netzwerk__ hinzufügen, den Cluster mit __Skriptaktionen__ anpassen oder einen __benutzerdefinierten Metastore__ als Datenspeicher für Hive und Oozie verwenden.
 
 	![Blatt „Optionale Konfiguration“](./media/hdinsight-apache-storm-tutorial-get-started-linux/optionalconfiguration.png)
+    
+    Für die Schritte in diesem Dokument belassen Sie diese Einstellung auf __Nicht konfiguriert__.
 
 9. Stellen Sie sicher, dass __An Startmenü anheften__ ausgewählt ist, und klicken Sie dann auf __Erstellen__. Der Cluster wird erstellt, und dem Startmenü Ihres Azure-Portals wird eine Kachel für den Cluster hinzugefügt. Das Symbol zeigt an, dass der Cluster bereitgestellt wird. Sobald die Bereitstellung abgeschlossen ist, ändert es sich in das HDInsight-Symbol.
 
@@ -233,4 +245,4 @@ In diesem Lernprogramm zu Apache Storm lernen Sie anhand der Storm-Starter-Beisp
 [hdinsight-provision]: hdinsight-provision-clusters.md
 [preview-portal]: https://portal.azure.com/
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0107_2016-->
