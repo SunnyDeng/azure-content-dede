@@ -20,7 +20,7 @@
 
 # Informationen zu Ihrer Rechnung für Microsoft Azure
 
-Die Gebühren für Microsoft Azure-Abonnements variieren je nach Preisliste. Einige Tarife, z.B. Visual Studio Ultimate mit MSDN, umfassen monatliche Guthaben, die Sie Ihren Anforderungen entsprechend für jeden Azure-Dienst verwenden können.
+Die Gebühren für Microsoft Azure-Abonnements variieren je nach Preisliste. Einige Tarife, z. B. Visual Studio Ultimate mit MSDN, umfassen monatliche Guthaben, die Sie Ihren Anforderungen entsprechend für jeden Azure-Dienst verwenden können.
 
 Bitte beachten Sie, dass bis zu 24 Stunden an ruhendem Verbrauch von Ihrem vorherigen in den aktuellen Abrechnungszeitraum übertragen werden können.
 
