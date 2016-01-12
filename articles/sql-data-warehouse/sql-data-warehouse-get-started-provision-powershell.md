@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="10/20/2015"
+   ms.date="01/04/2016"
    ms.author="lodipalm"/>
 
 # Erstellen von SQL Data Warehouse mithilfe von Powershell
@@ -71,4 +71,4 @@ Weitere Informationen zur programmgesteuerten Verwaltung von SQL Data Warehouse 
 [firewall rules]: https://azure.microsoft.com/de-DE/documentation/articles/sql-database-configure-firewall-settings/
 [Installieren und Konfigurieren von Azure PowerShell]: powershell-install-configure.md
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0107_2016-->

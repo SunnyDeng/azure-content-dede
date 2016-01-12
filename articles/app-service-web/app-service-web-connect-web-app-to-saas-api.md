@@ -13,12 +13,12 @@
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
 	ms.workload="na" 
-	ms.date="09/15/2015"
+	ms.date="12/24/2015"
 	ms.author="cfowler"/>
 
 # Verbinden einer Web-App mit einer API-App in Azure App Service
 
-In diesem Tutorial wird veranschaulicht, wie eine API-App in einer in [App Service](../app-service.md) gehosteten ASP.NET-Web-App genutzt wird.
+In diesem Tutorial wird veranschaulicht, wie eine API-App in einer in [App Service](https://azure.microsoft.com/services/app-service/) gehosteten ASP.NET-Web-App genutzt wird.
 
 ## Voraussetzungen
 
@@ -28,11 +28,6 @@ Dieses Tutorial baut auf der Reihe der API-App-Tutorials auf:
 3. [Bereitstellen einer Azure API-App](../app-service-dotnet-deploy-api-app)
 4. [Debuggen einer Azure API-App](../app-service-dotnet-remotely-debug-api-app)
 
-## Ermöglichen des öffentlichen Zugriffs auf die API-App
-
-Wählen Sie im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) die API-App aus. Klicken Sie auf der Befehlsleiste auf die Schaltfläche **Einstellungen**. Ändern Sie im Blatt **Anwendungseinstellungen** die **Zugriffsebene** in **Öffentlich (authentifiziert)**.
-
-![](./media/app-service-web-connect-web-app-to-saas-api/4-5-Change-Access-Level-To-Public.png)
 
 ## Erstellen einer ASP.NET MVC-Anwendung in Visual Studio
 
@@ -44,11 +39,11 @@ Wählen Sie im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) die
 
 	![Neue ASP.NET-Webanwendung](./media/app-service-web-connect-web-app-to-saas-api/2-Change-Auth-To-No-Auth.png)
 
-1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das neu erstellte Webanwendungsprojekt, und wählen Sie **Azure App-Verweis hinzufügen**.
+1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das neu erstellte Webanwendungsprojekt, und wählen Sie **Hinzufügen** > **REST-API-Client...**.
 
 	![Azure API-App-Verweis hinzufügen...](./media/app-service-web-connect-web-app-to-saas-api/3-Add-Azure-API-App-SDK.png)
 
-1. Wählen Sie in der Dropdownliste **Vorhandene API-Apps** die API-App aus, mit der Sie eine Verbindung herstellen möchten.
+1. Wählen Sie unter **REST-API-Client hinzufügen** die Option „Aus Microsoft Azure API-App herunterladen“ aus, und klicken Sie auf „Durchsuchen“. Wählen sie die API-App aus, mit der eine Verbindung hergestellt werden soll.
 
 	![Auswählen einer vorhandenen API-App](./media/app-service-web-connect-web-app-to-saas-api/4-Add-Azure-API-App-SDK-Dialog.png)
 
@@ -57,15 +52,14 @@ Wählen Sie im [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715) die
 1. Um den generierten API-Code zu nutzen, öffnen Sie die Datei "HomeController.cs" und ersetzen die `Contact`-Aktion durch Folgendes:
 
 	    public async Task<ActionResult> Contact()
-	    {
-	        ViewBag.Message = "Your contact page.";
-	
-	        var contacts = new ContactsList();
-	        var response = await contacts.Contacts.GetAsync();
-	        var contactList = response.Body;
-	
-	        return View(contactList);
-	    }
+        {
+            ViewBag.Message = "Your contact page.";
+
+            var contacts = new ContactsList12242015();
+            var contactList = await contacts.Contacts.GetAsync();
+            
+            return View(contactList);
+        }
 
 	![Codeaktualisierung in "HomeController.cs"](./media/app-service-web-connect-web-app-to-saas-api/5-Write-Code-Which-Leverages-Swagger-Generated-Code.png)
 
@@ -92,7 +86,7 @@ Befolgen Sie die Anweisungen unter [Bereitstellen einer Azure Web-App](web-sites
 >[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Änderungen
-* Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
+* Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->
