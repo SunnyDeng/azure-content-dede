@@ -3,7 +3,7 @@
 	description="Beschreibt die Funktionsweise des PowerShell-Skripts im Bereitstellungsprojekt für Azure-Ressourcengruppen."
 	services="visual-studio-online"
 	documentationCenter="na"
-	authors="kempb"
+	authors="TomArcher"
 	manager="douge"
 	editor="tlee" />
 
@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.workload="na"
 	ms.date="11/17/2015"
-	ms.author="kempb" />
+	ms.author="tarcher" />
 
 # Übersicht über das Skript des Bereitstellungsprojekts für Azure-Ressourcengruppen
 
@@ -264,4 +264,4 @@ Weitere Informationen zum Azure-Ressourcen-Manager finden Sie unter [Übersicht 
 [4]: ./media/vs-azure-tools-resource-groups-how-script-works/deploy5c.png
 [5]: ./media/vs-azure-tools-resource-groups-how-script-works/deploy6c.png
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1223_2015-->

@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Verwenden der Azure-Befehlszeilenschnittstelle mit der Dienstverwaltung | Microsoft Azure"
-	description="Erfahren Sie, wie Sie mit den Befehlszeilentools für Mac, Linux und Windows Azure unter Verwendung der Azure-Befehlszeilenschnittstelle im klassischen (Azure Service Management-) Modus verwalten."
+	description="Erfahren Sie, wie Sie mit den Befehlszeilentools für Mac, Linux und Microsoft Azure unter Verwendung der Azure-Befehlszeilenschnittstelle im klassischen (Azure Service Management-) Modus verwalten."
 	services="virtual-machines, mobile-services, cloud-services"
 	documentationCenter=""
 	authors="dlepow"

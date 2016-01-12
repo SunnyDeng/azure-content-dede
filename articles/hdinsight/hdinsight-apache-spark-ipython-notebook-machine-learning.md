@@ -14,28 +14,30 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/30/2015" 
+	ms.date="12/22/2015" 
 	ms.author="nitinme"/>
 
 
-# Erstellen von Machine Learning-Anwendungen mit Apache Spark für Azure HDInsight
+# Erstellen von Machine Learning-Anwendungen mit Apache Spark für Azure HDInsight (Linux)
 
 Sie erfahren, wie Sie eine Machine Learning-Anwendung mit einem Apache Spark-Cluster in HDInsight erstellen. In diesem Artikel wird beschrieben, wie Sie das Jupyter Notebook für den Cluster zum Erstellen und Testen unserer Anwendung verwenden. Für die Anwendung werden die HVAC.csv-Beispieldaten genutzt, die standardmäßig auf allen Clustern verfügbar sind.
+
+> [AZURE.TIP]Dieses Tutorial steht auch als Jupyter-Notebook für einen Spark-Cluster (Linux) zur Verfügung, den Sie in HDInsight erstellen. In der Notebook-Umgebung können Sie die Python-Ausschnitte direkt im Notebook ausführen. Wenn Sie das Tutorial innerhalb eines Notebooks ausführen möchten, erstellen Sie einen Spark-Cluster, starten Sie ein Jupyter-Notebook (`https://CLUSTERNAME.azurehdinsight.net/jupyter`), und führen Sie dann das Notebook **Spark Machine Learning - Predict building temperature using HVAC data.ipynb** im Ordner **Python** aus.
 
 **Voraussetzungen:**
 
 Sie benötigen Folgendes:
 
-- Ein Azure-Abonnement. Siehe [Kostenlose Azure-Testversion](http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
-- Einen Apache Spark-Cluster. Eine Anleitung finden Sie unter [Bereitstellen von Apache Spark-Clustern in Azure HDInsight](hdinsight-apache-spark-provision-clusters.md). 
+- Ein Azure-Abonnement. Siehe [How to get Azure Free trial for testing Hadoop in HDInsight](http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/) (in englischer Sprache).
+- Einen Apache Spark-Cluster unter HDInsight (Linux). Anleitungen finden Sie unter [Erstellen von Apache Spark-Clustern in Azure HDInsight](hdinsight-apache-spark-jupyter-spark-sql.md). 
 
 ##<a name="data"></a>Anzeigen der Daten
 
 Bevor wir mit dem Erstellen der Anwendung beginnen, müssen wir uns zuerst mit der Struktur der Daten und der Art der Analyse vertraut machen, die wir für die Daten durchführen.
 
-In diesem Artikel verwenden wir die Beispieldatendatei **HVAC.csv**, die für alle HDInsight-Cluster standardmäßig unter **\\HdiSamples\\SensorSampleData\\hvac** verfügbar ist. Laden Sie die CSV-Datei herunter, und öffnen Sie sie, um eine Momentaufnahme der Daten zu erhalten.
+In diesem Artikel verwenden wir die Beispieldatendatei **HVAC.csv**, die für alle HDInsight-Cluster standardmäßig unter **\\HdiSamples\\HdiSamples\\SensorSampleData\\hvac** verfügbar ist. Laden Sie die CSV-Datei herunter, und öffnen Sie sie, um eine Momentaufnahme der Daten zu erhalten.
 
-![HVAC-Datenmomentaufnahmen](./media/hdinsight-apache-spark-ipython-notebook-machine-learning/HDI.Spark.ML.Show.Data.png "Momentaufnahme der HVAC-Daten")
+![HVAC-Datenmomentaufnahmen](./media/hdinsight-apache-spark-ipython-notebook-machine-learning/hdispark.ml.show.data.png "Momentaufnahme der HVAC-Daten")
 
 Die Daten zeigen die Zieltemperatur und die Ist-Temperatur eines Gebäudes an, in dem HVAC-Systeme installiert sind. Angenommen, die Spalte **System** enthält die System-ID und die Spalte **SystemAge** enthält eine Angabe in Jahren, wie lange das HVAC-System im Gebäude bereits verwendet wird.
 
@@ -43,7 +45,7 @@ Wir sagen anhand dieser Daten vorher, ob es in einem Gebäude basierend auf der 
 
 ##<a name="app"></a>Schreiben einer Machine Learning-Anwendung mit Spark MLlib
 
-1. Klicken Sie im [Azure-Portal](https://portal.azure.com/) im Startmenü auf die Kachel für Ihren Spark-Cluster (sofern Sie die Kachel ans Startmenü angeheftet haben). Sie können auch unter **Alle durchsuchen** > **HDInsight-Cluster** zu Ihrem Cluster navigieren.   
+1. Klicken Sie im [Azure-Vorschauportal](https://portal.azure.com/) im Startmenü auf die Kachel für Ihren Spark-Cluster (sofern Sie die Kachel ans Startmenü angeheftet haben). Sie können auch unter **Alle durchsuchen** > **HDInsight-Cluster** zu Ihrem Cluster navigieren.   
 
 2. Klicken Sie auf dem Blatt für den Spark-Cluster auf **Quicklinks** und anschließend auf dem Blatt **Cluster Dashboard** auf **Jupyter Notebook**. Geben Sie die Administratoranmeldeinformationen für den Cluster ein, wenn Sie dazu aufgefordert werden.
 
@@ -53,11 +55,11 @@ Wir sagen anhand dieser Daten vorher, ob es in einem Gebäude basierend auf der 
 
 2. Erstellen Sie ein neues Notebook. Klicken Sie auf **Neu** und dann auf **Python 2**.
 
-	![Erstellen eines neuen Jupyter Notebooks](./media/hdinsight-apache-spark-ipython-notebook-machine-learning/HDI.Spark.Note.Jupyter.CreateNotebook.png "Erstellen eines neuen Jupyter Notebooks")
+	![Erstellen eines neuen Jupyter Notebooks](./media/hdinsight-apache-spark-ipython-notebook-machine-learning/hdispark.note.jupyter.createnotebook.png "Erstellen eines neuen Jupyter Notebooks")
 
 3. Ein neues Notebook mit dem Namen „Untitled.pynb“ wird erstellt und geöffnet. Klicken Sie oben auf den Namen des Notebooks, und geben Sie einen Anzeigenamen ein.
 
-	![Angeben eines neuen Namens für das Notebook](./media/hdinsight-apache-spark-ipython-notebook-machine-learning/HDI.Spark.Note.Jupyter.Notebook.Name.png "Angeben eines neuen Namens für das Notebook")
+	![Angeben eines neuen Namens für das Notebook](./media/hdinsight-apache-spark-ipython-notebook-machine-learning/hdispark.note.jupyter.notebook.name.png "Angeben eines neuen Namens für das Notebook")
 
 3. Beginnen Sie mit der Erstellung Ihrer Machine Learning-Anwendung. In dieser Anwendung verwenden wir eine Spark ML-Pipeline, um eine Dokumentklassifizierung durchzuführen. In der Pipeline teilen wir das Dokument in Wörter auf, konvertieren die Wörter in einen numerischen Featurevektor und erstellen dann mit den Featurevektoren und Beschriftungen ein Vorhersagemodell.
 
@@ -82,7 +84,7 @@ Wir sagen anhand dieser Daten vorher, ob es in einem Gebäude basierend auf der 
 		
 		# Assign resources to the application
 		conf = SparkConf()
-		conf.setMaster('spark://headnodehost:7077')
+		conf.setMaster('yarn-client')
 		conf.setAppName('pysparkregression')
 		conf.set("spark.cores.max", "4")
 		conf.set("spark.executor.memory", "4g")
@@ -92,7 +94,7 @@ Wir sagen anhand dieser Daten vorher, ob es in einem Gebäude basierend auf der 
 
 	Bei jedem Ausführen eines Auftrags in Jupyter wird in der Titelleiste Ihres Webbrowserfensters neben dem Notebook-Titel der Status **(Beschäftigt)** angezeigt. Außerdem sehen Sie in der oberen rechten Ecke einen ausgefüllten Kreis neben dem Text **Python 2**. Wenn der Auftrag abgeschlossen ist, wird ein Kreis ohne Füllung angezeigt.
 
-	 ![Status eines Jupyter Notebook-Auftrags](./media/hdinsight-apache-spark-ipython-notebook-machine-learning/HDI.Spark.Jupyter.Job.Status.png "Status eines Jupyter Notebook-Auftrags")
+	 ![Status eines Jupyter Notebook-Auftrags](./media/hdinsight-apache-spark-ipython-notebook-machine-learning/hdispark.jupyter.job.status.png "Status eines Jupyter Notebook-Auftrags")
  
 4. Sie müssen die Daten (hvac.csv) jetzt laden, analysieren und zum Trainieren des Modells verwenden. Definieren Sie hierzu eine Funktion, mit der überprüft wird, ob die Ist-Temperatur des Gebäudes höher als die Zieltemperatur ist. Wenn die Ist-Temperatur höher ist, wird angegeben, dass es in dem Gebäude zu warm ist (Wert**1,0**). Wenn die Ist-Temperatur niedriger ist, wird angegeben, dass es in dem Gebäude zu kalt ist (Wert **0,0**).
 
@@ -127,7 +129,7 @@ Wir sagen anhand dieser Daten vorher, ob es in einem Gebäude basierend auf der 
     		return LabeledDocument((values[6]), textValue, hot)
 
 		# Load the raw HVAC.csv file, parse it using the function
-		data = sc.textFile("wasb:///HdiSamples/SensorSampleData/hvac/HVAC.csv")
+		data = sc.textFile("wasb:///HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv")
 
 		documents = data.filter(lambda s: "Date" not in s).map(parseDocument)
 		training = documents.toDF()
@@ -152,31 +154,35 @@ Wir sagen anhand dieser Daten vorher, ob es in einem Gebäude basierend auf der 
 
 	Sie sollten eine Ausgabe erhalten, die Folgendem ähnelt:
 
-		BuildingID SystemInfo label
-		4          13 20      0.0  
-		17         3 20       0.0  
-		18         17 20      1.0  
-		15         2 23       0.0  
-		3          16 9       1.0  
-		4          13 28      0.0  
-		2          12 24      0.0  
-		16         20 26      1.0  
-		9          16 9       1.0  
-		12         6 5        0.0  
-		15         10 17      1.0  
-		7          2 11       0.0  
-		15         14 2       1.0  
-		6          3 2        0.0  
-		20         19 22      0.0  
-		8          19 11      0.0  
-		6          15 7       0.0  
-		13         12 5       0.0  
-		4          8 22       0.0  
-		7          17 5       0.0
+		+----------+----------+-----+
+		|BuildingID|SystemInfo|label|
+		+----------+----------+-----+
+		|         4|     13 20|  0.0|
+		|        17|      3 20|  0.0|
+		|        18|     17 20|  1.0|
+		|        15|      2 23|  0.0|
+		|         3|      16 9|  1.0|
+		|         4|     13 28|  0.0|
+		|         2|     12 24|  0.0|
+		|        16|     20 26|  1.0|
+		|         9|      16 9|  1.0|
+		|        12|       6 5|  0.0|
+		|        15|     10 17|  1.0|
+		|         7|      2 11|  0.0|
+		|        15|      14 2|  1.0|
+		|         6|       3 2|  0.0|
+		|        20|     19 22|  0.0|
+		|         8|     19 11|  0.0|
+		|         6|      15 7|  0.0|
+		|        13|      12 5|  0.0|
+		|         4|      8 22|  0.0|
+		|         7|      17 5|  0.0|
+		+----------+----------+-----+
+
 
 	Wechseln Sie zurück, und überprüfen Sie die Ausgabe gegenüber der CSV-Rohdatei. Die erste Zeile der CSV-Datei enthält beispielsweise folgende Daten:
 
-	![HVAC-Datenmomentaufnahmen](./media/hdinsight-apache-spark-ipython-notebook-machine-learning/HDI.Spark.ML.Show.Data.First.Row.png "Momentaufnahme der HVAC-Daten")
+	![HVAC-Datenmomentaufnahmen](./media/hdinsight-apache-spark-ipython-notebook-machine-learning/hdispark.ml.show.data.first.row.png "Momentaufnahme der HVAC-Daten")
 
 	Beachten Sie, dass die Ist-Temperatur unterhalb der Zieltemperatur liegt. Im Gebäude ist es also zu kalt. In der Schulungsausgabe lautet der Wert **label** in der ersten Zeile daher **0,0**. Dies bedeutet, dass es im Gebäude nicht zu warm ist.
 
@@ -213,9 +219,7 @@ Wir sagen anhand dieser Daten vorher, ob es in einem Gebäude basierend auf der 
 
 	In der ersten Zeile der Vorhersage können Sie sehen, dass das Gebäude für ein HVAC-System mit ID 20 und einem Systemalter von 25 Jahren zu warm ist (**prediction=1.0**). Der erste Wert für DenseVector (0.49999) entspricht der Vorhersage 0,0, und der zweite Wert (0.5001) entspricht der Vorhersage 1,0. Obwohl der zweite Wert in der Ausgabe nur unwesentlich höher ist, zeigt das Modell **prediction=1.0** an.
 
-11. Sie können das Notebook jetzt beenden, indem Sie den Kernel neu starten. Klicken Sie in der oberen Menüleiste auf **Kernel** und **Neu starten**, und klicken Sie bei der Aufforderung noch einmal auf **Neu starten**.
-
-	![Neustarten des Jupyter-Kernels](./media/hdinsight-apache-spark-ipython-notebook-machine-learning/HDI.Spark.Jupyter.Restart.Kernel.png "Neustarten des Jupyter-Kernels")
+11. Nach Ausführen der Anwendung empfiehlt es sich, das Notebook herunterzufahren, um die Ressourcen freizugeben. Klicken Sie hierzu im Menü **Datei** des Notebooks auf die Option zum Schließen und Anhalten. Dadurch wird das Notebook heruntergefahren und geschlossen.
 	  	   
 
 ##<a name="anaconda"></a>Verwenden der Anaconda-scikit-learn-Bibliothek für Machine Learning
@@ -225,9 +229,31 @@ Apache Spark-Cluster unter HDInsight enthalten Anaconda-Bibliotheken. Dazu gehö
 ##<a name="seealso"></a>Weitere Informationen
 
 * [Übersicht: Apache Spark in Azure HDInsight](hdinsight-apache-spark-overview.md)
-* [Bereitstellen von Spark in einem HDInsight-Cluster](hdinsight-apache-spark-provision-clusters.md)
-* [Durchführen interaktiver Datenanalysen mithilfe von Spark in HDInsight mit BI-Tools](hdinsight-apache-spark-use-bi-tools.md)
-* [Verwenden von Spark in HDInsight zum Erstellen von Echtzeit-Streaminganwendungen](hdinsight-apache-spark-csharp-apache-zeppelin-eventhub-streaming.md)
+
+### Szenarios
+
+* [Spark mit BI: Durchführen interaktiver Datenanalysen mithilfe von Spark in HDInsight mit BI-Tools](hdinsight-apache-spark-use-bi-tools.md)
+
+* [Spark mit Machine Learning: Vorhersage von Lebensmittelkontrollergebnissen mithilfe von Spark in HDInsight](hdinsight-apache-spark-machine-learning-mllib-ipython.md)
+
+* [Spark-Streaming: Erstellen von Echtzeitstreaminganwendungen mithilfe von Spark in HDInsight](hdinsight-apache-spark-eventhub-streaming.md)
+
+* [Websiteprotokollanalyse mithilfe von Spark in HDInsight](hdinsight-apache-spark-custom-library-website-log-analysis.md)
+
+### Erstellen und Ausführen von Anwendungen
+
+* [Erstellen einer eigenständigen Anwendung mit Scala](hdinsight-apache-spark-create-standalone-application.md)
+
+* [Remoteausführung von Aufträgen in einem Spark-Cluster mithilfe von Livy](hdinsight-apache-spark-livy-rest-interface.md)
+
+### Erweiterungen
+
+* [Verwenden von Zeppelin-Notebooks mit einem Spark-Cluster in HDInsight](hdinsight-apache-spark-use-zeppelin-notebook.md)
+
+* [Verfügbare Kernels für Jupyter-Notebooks im Spark-Cluster für HDInsight](hdinsight-apache-spark-jupyter-notebook-kernels.md)
+
+### Verwalten von Ressourcen
+
 * [Verwalten von Ressourcen für den Apache Spark-Cluster in Azure HDInsight](hdinsight-apache-spark-resource-manager.md)
 
 
@@ -247,4 +273,4 @@ Apache Spark-Cluster unter HDInsight enthalten Anaconda-Bibliotheken. Dazu gehö
 [azure-management-portal]: https://manage.windowsazure.com/
 [azure-create-storageaccount]: ../storage-create-storage-account/
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1223_2015-->

@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Verwenden von Import/Export zum Übertragen von Daten in den Blob-Speicher | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie Import- und Exportaufträge im Azure-Verwaltungsportal erstellen, um Daten in den Blob-Speicher zu übertragen." 
+	description="Erfahren Sie, wie Sie Import- und Exportaufträge im klassischen Portal erstellen, um Daten in den Blob-Speicher zu übertragen." 
 	authors="robinsh" 
 	manager="carmonm" 
 	editor="" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/04/2015" 
+	ms.date="12/22/2015" 
 	ms.author="robinsh"/>
 
 
@@ -29,10 +29,10 @@ Sie können eine oder mehrere Festplatten mit Daten an ein Azure-Datacenter schi
 
 Es gibt zwei Möglichkeiten für die Erstellung und die Verwaltung von Import- und Exportaufträgen:
 
-- Über das Azure Verwaltungsportal
+- Über das klassische Azure-Portal
 - Über eine REST-Schnittstelle zum Dienst
 
-Dieser Artikel bietet eine Übersicht über den Import-/Export-Dienst und beschreibt die Verwendung des Verwaltungsportals für den Import-/Export-Dienst. Weitere Informationen zur REST-API finden Sie unter [Import/Export Service REST API Reference](http://go.microsoft.com/fwlink/?LinkID=329099) (Import-/Export-Dienst REST-API-Verweis, in englischer Sprache).
+Dieser Artikel bietet eine Übersicht über den Import-/Export-Dienst und beschreibt die Verwendung des klassischen Portals für den Import-/Export-Dienst. Weitere Informationen zur REST-API finden Sie unter [Import/Export Service REST API Reference](http://go.microsoft.com/fwlink/?LinkID=329099) (Import-/Export-Dienst REST-API-Verweis, in englischer Sprache).
 
 ## Einführung in den Import/Export-Dienst ##
 
@@ -60,7 +60,7 @@ Für die Erstellung eines Import- oder Exportauftrags benötigen Sie außerdem d
 
   >[AZURE.IMPORTANT]Externe Festplattenlaufwerke mit einem integrierten USB-Adapter werden von diesem Dienst nicht unterstützt. Bereiten Sie keine externe Festplatte vor. Der Datenträger im externen Gehäuse kann ebenfalls nicht für das Importieren von Daten verwendet werden. Verwenden Sie eine **interne** 3,5-Zoll-SATA II/III-Festplatte. Wenn Sie die SATA-Festplatte nicht direkt mit Ihrem Computer verbinden können, verwenden Sie einen externen SATA-auf-USB-Adapter. Im Abschnitt zu häufig gestellten Fragen finden Sie eine Liste empfohlener Adapter.
 
-## Erstellen eines Importauftrags im Verwaltungsportal##
+## Erstellen eines Importauftrags im klassischen Portal##
 
 Erstellen Sie einen Importauftrag, um den Import-/Export-Dienst darüber zu informieren, dass Sie ein oder mehrere Laufwerke mit Daten an das Datacenter schicken werden, um deren Inhalte in Ihr Speicherkonto zu importieren.
 
@@ -78,7 +78,7 @@ Das Microsoft Azure Import-/Exporttool generiert für jedes Laufwerk bei der Vor
 
 ### Importauftrag erstellen
 
-1.	Sobald Sie Ihr Laufwerk vorbereitet haben, navigieren Sie zum Speicherkonto im Verwaltungsportal, und zeigen Sie das Dashboard an. Klicken Sie unter **Schnelleinsicht** auf **Create an Import Job**. 
+1.	Sobald Sie Ihr Laufwerk vorbereitet haben, navigieren Sie zum Speicherkonto im klassischen Portal und zeigen das Dashboard an. Klicken Sie unter **Schnelleinsicht** auf **Create an Import Job**. 
  
 2.	Geben Sie im ersten Schritt des Assistenten an, dass Sie Ihr Laufwerk vorbereitet haben und dass Sie die Laufwerkprotokolldatei zur Hand haben.
  
@@ -98,17 +98,17 @@ Das Microsoft Azure Import-/Exporttool generiert für jedes Laufwerk bei der Vor
 
 	Wenn Sie noch keine Tracking-Nummer haben, wählen Sie **Ich gebe meine Versandinformationen für diesen Importauftrag an, nachdem ich mein Paket versendet habe**, und schließen Sie den Importprozess ab.
 
-7. Um Ihre Nachverfolgungsnummer einzugeben, nachdem Sie Ihr Paket verschickt haben, kehren Sie zur Seite **Import/Export** für Ihr Speicherkonto im Verwaltungsportal zurück, wählen Ihren Auftrag in der Liste aus und klicken auf **Versandinformationen**. Navigieren Sie durch den Assistenten und geben Sie Ihre Nachverfolgungsnummer in Schritt 2 ein.
+7. Um Ihre Nachverfolgungsnummer einzugeben, nachdem Sie Ihr Paket verschickt haben, kehren Sie zur Seite **Import/Export** für Ihr Speicherkonto im klassischen Portal zurück, wählen Ihren Auftrag in der Liste aus und klicken auf **Versandinformationen**. Navigieren Sie durch den Assistenten und geben Sie Ihre Nachverfolgungsnummer in Schritt 2 ein.
 	
 	Wenn die Nachverfolgungsnummer nicht innerhalb von zwei Wochen nach Erstellung des Auftrags aktualisiert wird, läuft der Auftrag ab.
 
 	Falls der Auftrag den Status "Erstellung", "Versand" oder "Übertragung" hat, können Sie außerdem Ihre Kontonummer beim Transportunternehmen in Schritt 2 des Assistenten eingeben. Falls der Auftrag den Status "Verpackung" hat, können Sie Ihre Kontonummer beim Transportunternehmen nicht mehr ändern.
 
-## Erstellen eines Exportauftrags im Verwaltungsportal##
+## Erstellen eines Exportauftrags im klassischen Portal##
 
 Erstellen Sie einen Exportauftrag, um den Import-/Export-Dienst darüber zu informieren, dass Sie ein oder mehrere leere Laufwerke an das Datacenter schicken. So können die Daten von Ihrem Speicherkonto auf die Laufwerke exportiert werden, und die Laufwerke werden Ihnen dann zugeschickt.
 
-1. 	Navigieren Sie zum Speicherkonto im Verwaltungsportal, und zeigen Sie das Dashboard an, um einen Exportauftrag zu erstellen. Klicken Sie unter **Schnelleinsicht** auf **Create an Export Job**, und fahren Sie mit dem Assistenten fort.
+1. 	Navigieren Sie zum Speicherkonto im klassischen Portal und zeigen Sie das Dashboard an, um einen Exportauftrag zu erstellen. Klicken Sie unter **Schnelleinsicht** auf **Create an Export Job**, und fahren Sie mit dem Assistenten fort.
 
 2. 	Geben Sie im zweiten Schritt die Kontaktinformationen des Ansprechpartners für diesen Exportauftrag an. Wenn Sie ausführliche Protokolldaten für den Exportauftrag speichern möchten, wählen Sie die Option **Das ausführliche Protokoll im Blobcontainer "waimportexport" speichern**.
 
@@ -142,7 +142,7 @@ Erstellen Sie einen Exportauftrag, um den Import-/Export-Dienst darüber zu info
 
 	Falls Sie noch keine Nachverfolgungsnummer haben, wählen Sie die Option **Ich werde die Versanddaten für diesen Exportauftrag angeben, sobald ich mein Paket verschickt habe** aus und schließen Sie den Exportvorgang ab.
 
-6. Um Ihre Nachverfolgungsnummer einzugeben, nachdem Sie Ihr Paket verschickt haben, kehren Sie zur Seite **Import/Export** für Ihr Speicherkonto im Verwaltungsportal zurück, wählen Ihren Auftrag in der Liste aus und klicken auf **Versandinformationen**. Navigieren Sie durch den Assistenten und geben Sie Ihre Nachverfolgungsnummer in Schritt 2 ein.
+6. Um Ihre Nachverfolgungsnummer einzugeben, nachdem Sie Ihr Paket verschickt haben, kehren Sie zur Seite **Import/Export** für Ihr Speicherkonto im klassischen Portal zurück, wählen Ihren Auftrag in der Liste aus und klicken auf **Versandinformationen**. Navigieren Sie durch den Assistenten und geben Sie Ihre Nachverfolgungsnummer in Schritt 2 ein.
 	
 	Wenn die Nachverfolgungsnummer nicht innerhalb von zwei Wochen nach Erstellung des Auftrags aktualisiert wird, läuft der Auftrag ab.
 
@@ -150,9 +150,9 @@ Erstellen Sie einen Exportauftrag, um den Import-/Export-Dienst darüber zu info
 
 > [AZURE.NOTE]Wenn das zu exportierende Blob während des Kopierens auf die Festplatte verwendet wird, erstellt der Azure Import/Export-Dienst eine Momentaufnahme des Blobs und kopiert die Momentaufnahme.
 
-## Auftragsstatus im Verwaltungsportal verfolgen##
+## Nachverfolgen des Auftragsstatus im klassischen Portal##
 
-Sie können den Status Ihrer Import- oder Exportaufträge im Verwaltungsportal nachverfolgen. Navigieren Sie im Verwaltungsportal zu Ihrem Speicherkonto, und klicken Sie auf die Registerkarte **Import/Export**. Eine Liste Ihrer Aufträge wird auf der Seite angezeigt. Sie können die Liste nach Auftragsstatus, Auftragsname, Auftragstyp oder Tracking-Nummer filtern.
+Sie können den Status Ihrer Import- oder Exportaufträge im klassischen Portal nachverfolgen. Navigieren Sie im klassischen Portal zu Ihrem Speicherkonto und klicken Sie auf die Registerkarte **Import/Export**. Eine Liste Ihrer Aufträge wird auf der Seite angezeigt. Sie können die Liste nach Auftragsstatus, Auftragsname, Auftragstyp oder Tracking-Nummer filtern.
 
 In der Tabelle sind die Bedeutungen der Auftragsstatus beschrieben:
 
@@ -167,7 +167,7 @@ Abgeschlossen|Ihre Festplatte wurde an Sie zurückgeschickt.
 
 ## BitLocker-Schlüssel für einen Exportauftrag anzeigen ##
 
-Bei Exportaufträgen können Sie die BitLocker-Schlüssel, die vom Dienst für Ihr Laufwerk erstellt wurden, anzeigen und kopieren, damit Sie Ihre exportierten Daten entschlüsseln können, sobald Sie die Laufwerke vom Azure-Datacenter erhalten. Navigieren Sie im Verwaltungsportal zu Ihrem Speicherkonto, und klicken Sie auf die Registerkarte **Import/Export**. Wählen Sie Ihren Exportauftrag in der Liste aus, und klicken Sie auf die Schaltfläche **View Keys**. Die BitLocker-Schlüssel werden wie abgebildet angezeigt:
+Bei Exportaufträgen können Sie die BitLocker-Schlüssel, die vom Dienst für Ihr Laufwerk erstellt wurden, anzeigen und kopieren, damit Sie Ihre exportierten Daten entschlüsseln können, sobald Sie die Laufwerke vom Azure-Datacenter erhalten. Navigieren Sie im klassischen Portal zu Ihrem Speicherkonto und klicken Sie auf die Registerkarte **Import/Export**. Wählen Sie Ihren Exportauftrag in der Liste aus, und klicken Sie auf die Schaltfläche **View Keys**. Die BitLocker-Schlüssel werden wie abgebildet angezeigt:
 
 ![BitLocker-Schlüssel für einen Exportauftrag anzeigen][export-job-bitlocker-keys]
 
@@ -212,7 +212,7 @@ Bei Exportaufträgen können Sie die BitLocker-Schlüssel, die vom Dienst für I
 
 - Sie können einen Auftrag stornieren, solange dieser den Status "Wird erstellt" oder "Wird versendet" hat.
 
-**Wie lange kann ich den Status abgeschlossener Aufträge im Verwaltungsportal anzeigen?**
+**Wie lange kann ich den Status abgeschlossener Aufträge im klassischen Portal anzeigen?**
 
 - Den Status abgeschlossener Aufträge können Sie bis zu 90 Tage lang anzeigen. Abgeschlossene Aufträge werden nach 90 Tagen gelöscht.
 
@@ -279,4 +279,4 @@ Bei Exportaufträgen können Sie die BitLocker-Schlüssel, die vom Dienst für I
 [export-job-bitlocker-keys]: ./media/storage-import-export-service-classic-portal/export-job-bitlocker-keys.png
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1223_2015-->

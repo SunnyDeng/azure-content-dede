@@ -17,13 +17,12 @@
    ms.author="anmola"/>
 
 # Testability-Szenarien
-Große verteilte Systeme, z. B. Cloudinfrastrukturen, sind häufig unzuverlässig. Mit Service Fabric können Entwickler Dienste schreiben, die für unzuverlässige Infrastrukturen ausgeführt werden. Um hochwertige Dienste schreiben zu können, müssen Entwickler dazu in der Lage sein, diese unzuverlässigen Infrastrukturen auszulösen, um die Stabilität ihrer Dienste testen zu können. Service Fabric ermöglicht Entwicklern das Auslösen von Fehleraktionen, um das Verhalten von Diensten beim Auftreten von Fehlern zu testen. Mit zielgerichteten simulierten Fehlern können Sie aber nicht alle Eventualitäten abdecken. Zur Erweiterung der Testoptionen enthält Service Fabric vorgefertigte Testszenarien. Mit den Szenarien werden im Cluster über längere Zeiträume hinweg fortlaufende überlappende Fehler simuliert (sowohl ordnungsgemäß als auch nicht ordnungsgemäß). Nachdem die Rate und die Art der Fehler konfiguriert wurde, wird dies als clientseitiges Tool ausgeführt. Hierbei werden entweder die C#-APIs oder PowerShell genutzt, um Fehler im Cluster und in Ihrem Dienst zu generieren. Das Testability-Feature bietet die folgenden Szenarien:
+Große verteilte Systeme, z. B. Cloudinfrastrukturen, sind häufig unzuverlässig. Mit Azure Service Fabric können Entwickler Dienste schreiben, die für unzuverlässige Infrastrukturen ausgeführt werden. Um hochwertige Dienste schreiben zu können, müssen Entwickler dazu in der Lage sein, diese unzuverlässigen Infrastrukturen auszulösen, um die Stabilität ihrer Dienste testen zu können.
 
-1.	Chaostest
-2.	Failovertest
+Service Fabric ermöglicht Entwicklern das Auslösen von Fehleraktionen, um das Verhalten von Diensten beim Auftreten von Fehlern zu testen. Mit zielgerichteten simulierten Fehlern können Sie aber nicht alle Eventualitäten abdecken. Um den Testumfang zu erweitern, können Sie die Testszenarien in Service Fabric verwenden: einen Chaostest und einen Failovertest. Mit diesen Szenarien werden im Cluster über längere Zeiträume hinweg fortlaufende überlappende Fehler simuliert (sowohl ordnungsgemäß als auch nicht ordnungsgemäß). Nachdem die Rate und die Art der Fehler für einen Test konfiguriert wurde, wird er als clientseitiges Tool ausgeführt. Hierbei werden entweder die C#-APIs oder PowerShell genutzt, um Fehler im Cluster und in Ihrem Dienst zu generieren.
 
 ## Chaostest
-Beim Chaosszenario werden Fehler über das gesamte Service Fabric-Cluster generiert. Fehler, die normalerweise in Zeiträumen von mehreren Monaten oder Jahren auftreten, werden auf wenige Stunden komprimiert. Bei dieser Kombination aus überlappenden Fehlern mit der hohen Fehlerrate werden auch Spezialfälle erkannt, die sonst nicht auffallen. Dies führt zu einer erheblichen Verbesserung bei der Codequalität des Diensts.
+Beim Chaosszenario werden Fehler im gesamten Service Fabric-Cluster generiert. Fehler, die normalerweise in Zeiträumen von mehreren Monaten oder Jahren auftreten, werden auf wenige Stunden komprimiert. Bei dieser Kombination aus überlappenden Fehlern mit der hohen Fehlerrate werden auch Spezialfälle erkannt, die sonst nicht auffallen. Dies führt zu einer erheblichen Verbesserung bei der Codequalität des Diensts.
 
 ### Beim Chaostest simulierte Fehler
  - Neustart eines Knotens
@@ -33,16 +32,20 @@ Beim Chaosszenario werden Fehler über das gesamte Service Fabric-Cluster generi
  - Verschiebung eines primären Replikats (optional)
  - Verschiebung eines sekundären Replikats (optional)
 
-Beim Chaostest werden im angegebenen Zeitraum mehrere Iterationen von Fehlern und Clusterüberprüfungen durchgeführt. Die Dauer der Stabilisierung des Clusters und die Überprüfung des Erfolgs kann ebenfalls konfiguriert werden. Das Szenario ist nicht erfolgreich, wenn es bei der Clusterüberprüfung zu einem Einzelfehler kommt. Angenommen, ein Test soll eine Stunde dauern und maximal drei gleichzeitige Fehler umfassen. Der Test löst drei Fehler aus, und anschließend wird die Clusterintegrität überprüft. Der Test durchläuft den vorherigen Schritt so lange, bis die Integrität des Clusters nicht mehr gewährleistet oder eine Stunde abgelaufen ist. Falls die Integrität des Clusters bei einer Iteration nicht mehr besteht, also keine Stabilisierung innerhalb eines konfigurierten Zeitraums möglich ist, ist der Test nicht erfolgreich, und es tritt eine Ausnahme auf. Mit der Ausnahme wird angegeben, dass ein Fehler aufgetreten ist, der weiter untersucht werden muss. In seiner derzeitigen Form enthält das Chaostestmodul zum Generieren von Fehlern nur sichere Fehler. Dies bedeutet, dass bei einem Nichtvorhandensein von externen Fehlern niemals ein Quorum- oder Datenverlust auftritt.
+Beim Chaostest werden im angegebenen Zeitraum mehrere Iterationen von Fehlern und Clusterüberprüfungen durchgeführt. Die Dauer der Stabilisierung des Clusters und des erfolgreichen Abschlusses der Überprüfung kann ebenfalls konfiguriert werden. Das Szenario ist nicht erfolgreich, wenn es bei der Clusterüberprüfung zu einem Einzelfehler kommt.
+
+Nehmen wir beispielsweise an, ein Test soll eine Stunde lang ausgeführt werden und maximal drei gleichzeitige Fehler umfassen. Während des Tests werden drei Fehler ausgelöst, und anschließend wird die Clusterintegrität überprüft. Der Test durchläuft den vorherigen Schritt so lange, bis die Integrität des Clusters nicht mehr gewährleistet oder eine Stunde vergangen ist. Falls die Integrität des Clusters bei einer Iteration nicht mehr besteht, also keine Stabilisierung innerhalb eines konfigurierten Zeitraums möglich ist, ist der Test nicht erfolgreich, und es tritt eine Ausnahme auf. Mit der Ausnahme wird angegeben, dass ein Fehler aufgetreten ist, der weiter untersucht werden muss.
+
+In seiner derzeitigen Form enthält das Fehlergenerierungsmodul des Chaostests nur sichere Fehler. Dies bedeutet, dass bei einem Nichtvorhandensein von externen Fehlern niemals ein Quorum- oder Datenverlust auftritt.
 
 ### Wichtige Konfigurationsoptionen
  - **TimeToRun**: Gesamtdauer der Ausführung des Tests, bevor er erfolgreich abgeschlossen wird. Beim Auftreten eines Überprüfungsfehlers kann der Test auch früher abgeschlossen werden.
- - **MaxClusterStabilizationTimeout**: Maximaler Zeitraum, wie lange auf die Wiederherstellung der Integrität des Clusters gewartet wird, bevor der Test als nicht erfolgreich gewertet wird. Folgende Überprüfungen werden durchgeführt: ob Clusterintegrität besteht, Dienstintegrität besteht, für die Dienstpartition die Größe der Zielreplikatgruppe erreicht wird und keine InBuild-Replikate vorhanden sind.
+ - **MaxClusterStabilizationTimeout**: Maximaler Zeitraum, wie lange auf die Wiederherstellung der Integrität des Clusters gewartet wird, bevor der Test als nicht erfolgreich gewertet wird. Folgende Überprüfungen werden durchgeführt: ob Clusterintegrität besteht, ob Dienstintegrität besteht, ob für die Dienstpartition die Größe der Zielreplikatgruppe erreicht wird und ob keine InBuild-Replikate vorhanden sind.
  - **MaxConcurrentFaults**: Maximale Anzahl von gleichzeitigen Fehlern, die bei jeder Iteration ausgelöst werden. Je höher die Anzahl ist, desto aggressiver ist der Test. Dies führt zu komplexeren Failovern und Übergangskombinationen. Mit dem Test wird garantiert, dass es bei einem Nichtvorhandensein von externen Fehlern nicht zu einem Quorum- oder Datenverlust kommt. Dabei spielt es keine Rolle, wie hoch der Wert für diese Konfiguration gewählt wurde.
  - **EnableMoveReplicaFaults**: Aktiviert oder deaktiviert die Fehler, die zur Verschiebung der primären oder sekundären Replikate führen. Diese Fehler sind standardmäßig deaktiviert.
  - **WaitTimeBetweenIterations**: Gibt an, wie lange zwischen Iterationen gewartet wird (also nach einer Fehlerrunde und der entsprechenden Überprüfung).
 
-### Gewusst wie: Ausführen des Chaostests
+### Ausführen des Chaostests
 C#-Beispiel
 
 ```csharp
@@ -89,10 +92,10 @@ class Test
         uint maxConcurrentFaults = 3;
         bool enableMoveReplicaFaults = true;
 
-        // Create FabricClient with connection & security information here.
+        // Create FabricClient with connection and security information here.
         FabricClient fabricClient = new FabricClient(clusterConnection);
 
-        // The Chaos Test Scenario should run at least 60 minutes or up until it fails.
+        // The chaos test scenario should run at least 60 minutes or until it fails.
         TimeSpan timeToRun = TimeSpan.FromMinutes(60);
         ChaosTestScenarioParameters scenarioParameters = new ChaosTestScenarioParameters(
           maxClusterStabilizationTimeout,
@@ -153,10 +156,10 @@ Beim Failovertest wird ein ausgewählter Fehler ausgelöst, und anschließend wi
 ### Wichtige Konfigurationsoptionen
  - **PartitionSelector**: Selektorobjekt zum Angeben der gewünschten Partition.
  - **TimeToRun**: Gesamtdauer der Ausführung des Tests, bevor er abgeschlossen wird.
- - **MaxServiceStabilizationTimeout**: Maximaler Zeitraum, wie lange auf die Wiederherstellung der Integrität des Clusters gewartet wird, bevor der Test als nicht erfolgreich gewertet wird. Folgende Überprüfungen werden durchgeführt: ob Dienstintegrität besteht, für die Dienstpartition die Größe der Zielreplikatgruppe erreicht wird und keine InBuild-Replikate vorhanden sind.
+ - **MaxServiceStabilizationTimeout**: Maximaler Zeitraum, wie lange auf die Wiederherstellung der Integrität des Clusters gewartet wird, bevor der Test als nicht erfolgreich gewertet wird. Folgende Überprüfungen werden durchgeführt: ob Dienstintegrität besteht, ob für die Dienstpartition die Größe der Zielreplikatgruppe erreicht wird und ob keine InBuild-Replikate vorhanden sind.
  - **WaitTimeBetweenFaults**: Gibt an, wie lange zwischen den einzelnen Fehler- und Überprüfungszyklen gewartet wird.
 
-### Gewusst wie: Ausführen des Failovertests
+### Ausführen des Failovertests
 C#-Beispiel
 
 ```csharp
@@ -203,10 +206,10 @@ class Test
         TimeSpan maxServiceStabilizationTimeout = TimeSpan.FromSeconds(180);
         PartitionSelector randomPartitionSelector = PartitionSelector.RandomOf(serviceName);
 
-        // Create FabricClient with connection & security information here.
+        // Create FabricClient with connection and security information here.
         FabricClient fabricClient = new FabricClient(clusterConnection);
 
-        // The Chaos Test Scenario should run at least 60 minutes or up until it fails.
+        // The chaos test scenario should run at least 60 minutes or until it fails.
         TimeSpan timeToRun = TimeSpan.FromMinutes(60);
         FailoverTestScenarioParameters scenarioParameters = new FailoverTestScenarioParameters(
           randomPartitionSelector,
@@ -249,6 +252,4 @@ Connect-ServiceFabricCluster $connection
 Invoke-ServiceFabricFailoverTestScenario -TimeToRunMinute $timeToRun -MaxServiceStabilizationTimeoutSec $maxStabilizationTimeSecs -WaitTimeBetweenFaultsSec $waitTimeBetweenFaultsSec -ServiceName $serviceName -PartitionKindSingleton
 ```
 
- 
-
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_1223_2015-->

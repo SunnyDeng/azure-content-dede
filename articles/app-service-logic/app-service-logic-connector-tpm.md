@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration" 
-   ms.date="11/30/2015"
+   ms.date="12/17/2015"
    ms.author="rajram"/>
 
 # Erste Schritte mit der BizTalk-Handelspartnerverwaltung und das Hinzufügen zur Logik-App
@@ -25,7 +25,7 @@ Die TPM-API-App ist die Basisanforderung des AS2-Connectors und der X12- oder ED
 - Leere SQL Azure-Datenbank – Sie müssen zuerst eine leere SQL Azure-Datenbank erstellen, bevor Sie eine neue TPM-API-App erstellen.
 
 ## Grundlegendes zu Partnern, Vereinbarungen und Profilen
-Klicken Sie [hier][1], um weitere Informationen zur Handelspartnervereinbarung zu erhalten.
+Erfahren Sie mehr über das [Erstellen einer Handelspartnervereinbarung][1].
 
 ## Mehr mit Ihrem Connector machen
 Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
@@ -39,4 +39,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 <!--References-->
 [1]: app-service-logic-create-a-trading-partner-agreement.md
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1223_2015-->

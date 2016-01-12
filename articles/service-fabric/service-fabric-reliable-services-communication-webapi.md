@@ -539,7 +539,7 @@ Nachdem nun alle Komponenten vorhanden sind, sollte Ihr Projekt wie eine typisch
 Falls Sie dies nicht bereits getan haben, [richten Sie die Entwicklungsumgebung ein](service-fabric-get-started.md).
 
 
-Sie können jetzt den Dienst erstellen und bereitstellen. Drücken Sie zum Erstellen und Bereitstellen der Anwendung in Visual Studio **F5**. Im Fenster für Diagnoseereignisse sollte eine Meldung angezeigt sein, dass der Webserver auf ****http://localhost:80/webapp/api** geöffnet wurde
+Sie können jetzt den Dienst erstellen und bereitstellen. Drücken Sie zum Erstellen und Bereitstellen der Anwendung in Visual Studio **F5**. Im Fenster für Diagnoseereignisse sollte eine Meldung angezeigt sein, dass der Webserver auf **http://localhost:80/webapp/api** geöffnet wurde
 
 
 ![](media/service-fabric-reliable-services-communication-webapi/webapi-diagnostics.png)
@@ -583,4 +583,4 @@ In ASP.NET 5 bleiben das Konzept und das Programmiermodell, bei dem die *Anwendu
 
 [Debuggen einer Service Fabric-Anwendung in Visual Studio](service-fabric-debugging-your-application.md)
 
-<!---HONumber=Nov15_HO4-->
+<!----HONumber=Nov15_HO4-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="11/25/2015"
+   ms.date="12/17/2015"
    ms.author="prkumar"/>
 
 
@@ -61,7 +61,7 @@ Sobald Ihre API-App erstellt wurde, können Sie jetzt den HTTP-Listener als Trig
 9.	Um schließlich eine Antwort zu senden, fügen Sie einen weiteren HTTP-Listener hinzu, und wählen Sie die Aktion zum Senden der HTTP-Antwort aus. Legen Sie die Anforderungs-ID auf die vom HTTP-Listener erhaltene "RequestID" fest, und füllen Sie den Antworttext und den HTTP-Status auf, der zurückgegeben werden soll: ![][9]
 
 ## Verwenden der HTTP-Aktion
-Die HTTP-Aktion wird systemeigen von Logik-Apps unterstützt. Zu ihrer Verwendung ist es nicht erforderlich, zuerst eine API-App zu erstellen. Sie können eine HTTP-Aktion an einem beliebigen Punkt in Ihrer Logik-App einfügen und den URI, die Header und den Text für den Aufruf auswählen. Die HTTP-Aktion unterstützt mehrere Optionen für die clientseitige Sicherheit. Informationen zu deren Verwendung finden Sie in [diesem](http://aka.ms/logicapphttpauth) Artikel.
+Die HTTP-Aktion wird systemeigen von Logik-Apps unterstützt. Zu ihrer Verwendung ist es nicht erforderlich, zuerst eine API-App zu erstellen. Sie können eine HTTP-Aktion an einem beliebigen Punkt in Ihrer Logik-App einfügen und den URI, die Header und den Text für den Aufruf auswählen. Die HTTP-Aktion unterstützt mehrere Optionen für die clientseitige Sicherheit. Siehe [clientseitige Sicherheitsoptionen](../scheduler-outbound-authentication.md).
 
 Die Ausgabe der HTTP-Aktion besteht aus Headern und Text und kann in ähnlicher Weise wie die Ausgabe anderer Aktionen und Connectors später im Datenfluss herangezogen werden.
 
@@ -86,4 +86,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [9]: ./media/app-service-logic-connector-http/9.png
 [10]: ./media/app-service-logic-connector-http/10.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1223_2015-->

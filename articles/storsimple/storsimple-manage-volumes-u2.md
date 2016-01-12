@@ -15,7 +15,7 @@
    ms.date="12/15/2015"
    ms.author="v-sharos" />
 
-# Verwalten von Volumes mithilfe des StorSimple Manager-Diensts
+# Verwalten von Volumes mithilfe des StorSimple Manager-Diensts (Update 2)
 
 [AZURE.INCLUDE [storsimple-version-selector-manage-volumes](../../includes/storsimple-version-selector-manage-volumes.md)]
 
@@ -291,4 +291,4 @@ Führen Sie die folgenden Schritte durch, um die Überwachung eines Volumes zu a
 
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1223_2015-->

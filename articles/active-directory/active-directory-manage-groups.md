@@ -52,6 +52,8 @@ Der Zugriff auf eine Ressource stammt aus einer externen Quelle, z. B. einer Gr
 
 Sie können ein kurzes Video anschauen, das nähere Informationen zum Thema bereitstellt.
 
+[Azure AD: Einführung in dynamische Mitgliedschaften für Gruppen](https://channel9.msdn.com/Series/Azure-Active-Directory-Videos-Demos/Azure-AD--Introduction-to-Dynamic-Memberships-for-Groups)
+
 > [AZURE.VIDEO azure-ad--introduction-to-dynamic-memberships-for-groups]
 
 ## Wie funktioniert die Zugriffsverwaltung in Azure Active Directory?
@@ -96,4 +98,4 @@ Diese Artikel enthalten zusätzliche Informationen zum Azure Active Directory.
 
 * [Graph-API-Referenz für Gruppen](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/groups-operations#GroupFunctions)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1223_2015-->

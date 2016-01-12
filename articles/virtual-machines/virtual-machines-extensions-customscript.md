@@ -34,7 +34,7 @@ Die benutzerdefinierte Skripterweiterung für Windows ermöglicht Ihnen das Ausf
 ### Voraussetzungen für das Ausführen der CustomScript-Erweiterung
 
 1. Installieren Sie über <a href="http://azure.microsoft.com/downloads" target="_blank">diesen Link</a> Azure PowerShell-Cmdlets der Version 0.8.0 oder höher.
-2. Wenn die Skripts auf einem vorhandenen virtuellen Computer ausgeführt werden, müssen Sie sicherstellen, dass der Agent des virtuellen Computers darauf aktiviert ist. Andernfalls folgen Sie den Anweisungen in <a href="https://msdn.microsoft.com/library/azure/dn832621.aspx" target="_blank">diesem Artikel</a>, um einen Agent zu installieren.
+2. Wenn die Skripts auf einem vorhandenen virtuellen Computer ausgeführt werden, müssen Sie sicherstellen, dass der Agent des virtuellen Computers darauf aktiviert ist. Andernfalls folgen Sie den Anweisungen in <a href="https://msdn.microsoft.com/library/azure/dn832621.aspx" target="_blank">diesem Artikel</a>, um einen Agent zu installieren. (Bei einer Bereitstellung des virtuellen Computers aus dem Azure-Katalog sind VM-Agents standardmäßig aktiviert; Sie müssen sie nicht mehr aktivieren.)
 3. Laden Sie die Skripts, die Sie auf der VM ausführen möchten, nach Azure Storage hoch. Die Skripts können aus einem einzelnen oder mehreren Speichercontainern stammen.
 4. Das Skript sollte so geschrieben sein, dass das Eingangsskript, das durch die Erweiterung gestartet wird, weitere Skripts startet.
 
@@ -87,10 +87,9 @@ Die CustomScript-Erweiterung kann mithilfe des folgenden Befehls vom virtuellen 
 
 ### Verwenden der benutzerdefinierten Skripterweiterung mit Vorlagen
 
-Um Informationen zur Verwendung der benutzerdefinierten Skripterweiterung mit Vorlagen zu erhalten, lesen Sie die Dokumentation [hier] (virtual-machines-extensions-customscript -with template.md).
+Informationen zum Verwenden der benutzerdefinierten Skripterweiterung mit Azure-Ressourcen-Manager-Vorlagen finden Sie in [dieser](virtual-machines-extensions-customscript%20-with%20template.md) Dokumentation.
 
 <!--Image references-->
 [5]: ./media/virtual-machines-extensions-customscript/addcse.png
 
-<!---HONumber=AcomDC_1203_2015-->
-
+<!---HONumber=AcomDC_1223_2015-->

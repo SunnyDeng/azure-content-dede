@@ -3,7 +3,7 @@
 	description="Erfahren Sie, wie Sie das einmalige Anmelden zwischen Azure Active Directory und O.C. Tanner – AppreciateHub konfigurieren."
 	services="active-directory"
 	documentationCenter=""
-	authors="markusvi"
+	authors="jeevansd"
 	manager="stevenpo"
 	editor=""/>
 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/09/2015"
-	ms.author="markusvi"/>
+	ms.date="12/18/2015"
+	ms.author="jeedes"/>
 
 
 # Lernprogramm: Azure Active Directory-Integration mit O.C. Tanner – AppreciateHub
@@ -60,7 +60,7 @@ Für das Konfigurieren der Integration von O.C. Tanner – AppreciateHub in Azur
 
 2. Wählen Sie in der Liste **Verzeichnis** das Verzeichnis aus, für das Sie die Verzeichnisintegration aktivieren möchten.
 
-3. Klicken Sie zum Öffnen der Anwendungsansicht in der oberen Menüleiste der Verzeichnisansicht auf **Anwendungen**. <br><br> ![Anwendungen][2] <br>
+3. Klicken Sie zum Öffnen der Anwendungsansicht im Hauptmenü der Verzeichnisansicht auf **Anwendungen**. <br><br> ![Anwendungen][2] <br>
 
 4. Klicken Sie unten auf der Seite auf **Hinzufügen**. <br><br> ![Anwendungen][3] <br>
 
@@ -127,15 +127,15 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta S
 
 **Um einen Testbenutzer in Azure AD zu erstellen, führen Sie die folgenden Schritte aus:**
 
-1. Klicken Sie im linken Navigationsbereich des **Azure-Verwaltungsportals** auf **Active Directory**.<br> ![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-oc-tanner-tutorial/create_aaduser_02.png) 
+1. Klicken Sie im linken Navigationsbereich des **Azure-Verwaltungsportals** auf **Active Directory**.<br> ![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-oc-tanner-tutorial/create_aaduser_02.png) 
 
 2. Wählen Sie in der Liste **Verzeichnis** das Verzeichnis aus, für das Sie die Verzeichnisintegration aktivieren möchten.
 
-3. Klicken Sie zum Anzeigen der Liste der Benutzer im Menü oben auf **Benutzer**.<br>![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-oc-tanner-tutorial/create_aaduser_03.png)
+3. Klicken Sie zum Anzeigen der Liste der Benutzer im Menü oben auf **Benutzer**.<br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-oc-tanner-tutorial/create_aaduser_03.png)
  
-4. Um das Dialogfeld **Benutzer hinzufügen** zu öffnen, klicken Sie auf der Symbolleiste unten auf **Benutzer hinzufügen**. <br>![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-oc-tanner-tutorial/create_aaduser_04.png)
+4. Um das Dialogfeld **Benutzer hinzufügen** zu öffnen, klicken Sie auf der Symbolleiste unten auf **Benutzer hinzufügen**. <br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-oc-tanner-tutorial/create_aaduser_04.png)
 
-5. Führen Sie auf der Dialogfeldseite **Informationen über diesen Benutzer** die folgenden Schritte aus: <br>![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-oc-tanner-tutorial/create_aaduser_05.png)
+5. Führen Sie auf der Dialogfeldseite **Informationen über diesen Benutzer** die folgenden Schritte aus: <br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-oc-tanner-tutorial/create_aaduser_05.png)
 
     a. Wählen Sie als "Benutzertyp" die Option "Neuer Benutzer in Ihrer Organisation" aus.
 
@@ -143,17 +143,17 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta S
 
     c. Klicken Sie auf **Weiter**.
 
-6.  Führen Sie auf der Dialogfeldseite **Benutzerprofil** die folgenden Schritte aus: <br>![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-oc-tanner-tutorial/create_aaduser_06.png)
+6.  Führen Sie auf der Dialogfeldseite **Benutzerprofil** die folgenden Schritte aus: <br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-oc-tanner-tutorial/create_aaduser_06.png)
  
-    a. Geben Sie in das Textfeld **Vorname** **Britta** ein.
+    a. Geben Sie in das Textfeld **Vorname** den Namen **Britta** ein.
 
     b. Geben Sie in das Textfeld **Nachname** den Namen **Simon** ein.
 
     c. Geben Sie in das Textfeld **Anzeigename** den Namen **Britta Simon** ein.
 
-    d. Wählen Sie in der Liste **Rolle** die Rolle **Benutzer** aus. Klicken Sie auf **Weiter**.
+    d. Wählen Sie in der Liste **Rolle** die Rolle **Benutzer** aus. e. Klicken Sie auf **Weiter**.
 
-7. Klicken Sie auf der Dialogfeldseite **Vorübergehendes Kennwort abrufen** auf **Erstellen**.<br>![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-oc-tanner-tutorial/create_aaduser_07.png)
+7. Klicken Sie auf der Dialogfeldseite **Vorübergehendes Kennwort abrufen** auf **Erstellen**.<br>![Erstellen eines Azure AD-Testbenutzers](./media/active-directory-saas-oc-tanner-tutorial/create_aaduser_07.png)
  
 8. Führen Sie auf der Dialogfeldseite **Vorübergehendes Kennwort abrufen** die folgenden Schritte aus:<br>![Erstellen einen Azure AD-Testbenutzers](./media/active-directory-saas-oc-tanner-tutorial/create_aaduser_08.png)
   
@@ -223,4 +223,4 @@ Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für ein
 [204]: ./media/active-directory-saas-oc-tanner-tutorial/tutorial_general_204.png
 [205]: ./media/active-directory-saas-oc-tanner-tutorial/tutorial_general_205.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1223_2015-->

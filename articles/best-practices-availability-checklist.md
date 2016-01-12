@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="04/28/2015"
+   ms.date="12/15/2015"
    ms.author="masashin"/>
 
 # Checkliste für die Verfügbarkeit
@@ -68,4 +68,4 @@
 - **Verfolgen Sie den Prozess von langwierigen Workflows**, und wiederholen Sie Vorgänge im Fehlerfall. Langwierige Workflows bestehen häufig aus mehreren Schritten. Beim Entwerfen von Workflows dieses Typs stellen Sie sicher, dass jeder Schritt unabhängig ist und wiederholt werden kann, um das Risiko zu minimieren, dass der gesamte Workflow rückgängig gemacht werden muss oder mehrere ausgleichende Transaktionen ausgeführt werden müssen. Überwachen Sie und verwalten Sie den Status langwieriger Workflows, indem Sie ein Muster wie Scheduler-Agent-Supervisor implementieren. Weitere Informationen finden Sie auf der Microsoft-Website unter [Scheduler Agent Supervisor Pattern](https://msdn.microsoft.com/library/dn589780.aspx) (Muster für Scheduler-Agent-Supervisor).
 - **Planen Sie die Wiederherstellung im Notfall.** Stellen Sie sicher, dass ein dokumentierter vereinbarter und vollständig getesteter Plan für die Wiederherstellung nach jeder Art von Ausfall vorhanden ist, durch den ein Teil des Hauptsystems oder das gesamte Hauptsystem nicht mehr verfügbar ist. Testen Sie diese Verfahren regelmäßig, und stellen Sie sicher, dass alle Mitarbeiter mit dem Prozess vertraut sind.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1223_2015-->

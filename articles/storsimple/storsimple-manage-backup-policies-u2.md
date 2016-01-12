@@ -15,7 +15,7 @@
    ms.date="12/14/2015"
    ms.author="v-sharos"/>
 
-# Verwalten von Sicherungsrichtlinien mithilfe des StorSimple Manager-Diensts
+# Verwalten von Sicherungsrichtlinien mithilfe des StorSimple Manager-Diensts (Update 2)
 
 [AZURE.INCLUDE [storsimple-version-selector-manage-backup-policies](../../includes/storsimple-version-selector-manage-backup-policies.md)]
 
@@ -96,4 +96,4 @@ Führen Sie die folgenden Schritte im klassischen Azure-Portal aus, um eine benu
 
 - Erfahren Sie mehr über das [Verwenden Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1223_2015-->

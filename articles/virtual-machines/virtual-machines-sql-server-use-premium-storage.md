@@ -47,7 +47,7 @@ Es gibt einige Voraussetzungen für die Verwendung von Premium-Speicher.
 
 ### Größe des Computers
 
-Für die Verwendung von Premium-Speicher müssen Sie virtuelle Computer der DS-Serie verwenden. Wenn Sie bisher keine Computer der DS-Serie im Clouddienst verwendet haben, müssen Sie den vorhandenen virtuellen Computer löschen, die angefügten Datenträger beibehalten und dann einen neuen Clouddienst vor der erneuten Erstellung des virtuellen Computers mit DS*-Rollengröße erstellen. Weitere Informationen zu den Größen von virtuellen Computern finden Sie unter [Größen virtueller Computer und Clouddienste für Windows Azure](virtual-machines-size-specs.md).
+Für die Verwendung von Premium-Speicher müssen Sie virtuelle Computer der DS-Serie verwenden. Wenn Sie bisher keine Computer der DS-Serie im Clouddienst verwendet haben, müssen Sie den vorhandenen virtuellen Computer löschen, die angefügten Datenträger beibehalten und dann einen neuen Clouddienst vor der erneuten Erstellung des virtuellen Computers mit DS*-Rollengröße erstellen. Weitere Informationen zu den Größen von virtuellen Computern finden Sie unter [Größen virtueller Computer und Clouddienste für Microsoft Azure](virtual-machines-size-specs.md).
 
 ### Cloud Services
 
@@ -401,8 +401,9 @@ Sie sollten Zeit für die Durchführung manueller Failover- und Chaostests auf d
 1. Erstellen Sie zwei neue SQL Server im neuen Clouddienst mit angefügtem Premium-Speicher.
 1. Kopieren Sie VOLLSTÄNDIGE Sicherungen, und stellen Sie sie mit **NORECOVERY** wieder her.
 1. Kopieren Sie abhängige Objekte aus der Benutzerdatenbank, wie z. B. Anmeldungen usw.
-1. Erstellen Sie einen neuen internen Lastenausgleich (ILB) oder verwenden Sie einen externen Lastenausgleich (ELB), und richten Sie Lastenausgleichs-Endpunkte auf beiden neuen Knoten ein.
-> [AZURE.NOTE]Prüfen Sie vor dem Fortfahren, ob alle Knoten die korrekte Endpunktkonfiguration besitzen.
+1. Erstellen Sie einen neuen internen Lastenausgleich (ILB) oder verwenden Sie einen externen Lastenausgleich (ELB), und richten Sie Lastenausgleichs-Endpunkte auf beiden neuen Knoten ein.  
+
+> [AZURE.NOTE] Prüfen Sie vor dem Fortfahren, ob alle Knoten die korrekte Endpunktkonfiguration besitzen.  
 
 1. Beenden Sie den Benutzer-/Anwendungszugriff auf SQL Server (bei Verwendung von Speicherpools).
 1. Beenden Sie SQL Server-Datenbankmoduldienste auf allen Knoten (bei Verwendung von Speicherpools).

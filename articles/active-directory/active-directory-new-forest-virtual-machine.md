@@ -24,8 +24,8 @@ In diesem Thema wird das Erstellen einer neuen Windows Server Active Directory-U
 Folgende Themen könnten für Sie ebenfalls von Interesse sein:
 
 - Ein Video, das diese Schritte veranschaulicht, finden Sie unter [Installieren einer neuen Active Directory-Gesamtstruktur in einem virtuellen Azure-Netzwerk](http://channel9.msdn.com/Series/Microsoft-Azure-Tutorials/How-to-install-a-new-Active-Directory-forest-on-an-Azure-virtual-network).
-- Optional können Sie ein [Standort-zu-Standort-VPN](../vpn-gateway/vpn-gateway-site-to-site-create.md) konfigurieren und dann entweder eine neue Gesamtstruktur installieren oder eine lokale Gesamtstruktur in einem virtuellen Azure-Netzwerk erweitern. Erläuterungen hierzu finden Sie unter [Installieren eines Active Directory-Replikatdomänencontrollers unter virtuellen Netzwerken in Windows Azure](../virtual-networks-install-replica-active-directory-domain-controller.md).
--  Weitere Anleitungen zu den Konzepten für die Installation von Active Directory-Domänendiensten (AD DS) auf einem virtuellen Azure-Netzwerk finden Sie unter [Richtlinien für die Bereitstellung von Windows Server Active Directory auf virtuellen Computern in Windows Azure](https://msdn.microsoft.com/library/azure/jj156090.aspx).
+- Optional können Sie ein [Standort-zu-Standort-VPN](../vpn-gateway/vpn-gateway-site-to-site-create.md) konfigurieren und dann entweder eine neue Gesamtstruktur installieren oder eine lokale Gesamtstruktur in einem virtuellen Azure-Netzwerk erweitern. Erläuterungen hierzu finden Sie unter [Installieren eines Active Directory-Replikatdomänencontrollers unter virtuellen Netzwerken in Microsot Azure](../virtual-networks-install-replica-active-directory-domain-controller.md).
+-  Weitere Anleitungen zu den Konzepten für die Installation von Active Directory-Domänendiensten (AD DS) auf einem virtuellen Azure-Netzwerk finden Sie unter [Richtlinien für die Bereitstellung von Windows Server Active Directory auf virtuellen Computern in Microsoft Azure](https://msdn.microsoft.com/library/azure/jj156090.aspx).
 
 ## Szenario (Diagramm)
 

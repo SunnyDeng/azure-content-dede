@@ -15,7 +15,10 @@ Eine Sicherheitsregel ist eine untergeordnete Ressource einer NSG, die die nachs
 |Eigenschaft|Beschreibung|Beispielwerte|
 |---|---|---|
 |**description**|Beschreibung der Regel|Eingehenden Datenverkehr für alle virtuellen Computer in Subnetz X zulassen|
-|**protocol**|Protokoll entsprechend der Regel|TCP, UDP oder *| |**sourcePortRange**|Quellportbereich entsprechend der Regel|80, 100-200, *| |**destinationPortRange**|Zielportbereich entsprechend der Regel|80, 100-200, *| |**sourceAddressPrefix**|Quelladresspräfix entsprechend der Regel|10\.10.10.1, 10.10.10.0/24, VirtualNetwork|
+|**protocol**|Protokoll entsprechend der Regel|TCP, UDP oder *|
+|**sourcePortRange**|Quellportbereich entsprechend der Regel|80, 100-200, *|
+|**destinationPortRange**|Zielportbereich entsprechend der Regel|80, 100-200, *|
+|**sourceAddressPrefix**|Quelladresspräfix entsprechend der Regel|10\.10.10.1, 10.10.10.0/24, VirtualNetwork|
 |**destinationAddressPrefix**|Zieladresspräfix entsprechend der Regel|10\.10.10.1, 10.10.10.0/24, VirtualNetwork|
 |**direction**|Richtung des Datenverkehrs entsprechend der Regel|Eingehend oder ausgehend|
 |**priority**|Priorität der Regel. Regeln werden in der Reihenfolge ihrer Priorität überprüft. Sobald eine Regel erfüllt ist, wird keine weitere Übereinstimmung mit der Regel gesucht.|10, 100, 65000|

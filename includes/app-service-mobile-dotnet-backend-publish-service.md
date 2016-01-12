@@ -1,4 +1,4 @@
-
+	
 + **.NET-Back-End (C#):**  
 
 	1. Klicken Sie in Visual Studio mit der rechten Maustaste auf **Veröffentlichen** > **Web veröffentlichen** > **Microsoft Azure-Web-Apps**, und melden Sie sich ggf. mit Ihren Azure-Anmeldeinformationen an. Bei der Anmeldung lädt Visual Studio die Veröffentlichungseinstellungen direkt von Azure herunter und speichert sie.
@@ -11,4 +11,4 @@
  	Befolgen Sie die [Anweisungen zum Bereitstellen von Node.js in einer Web-App](../articles/app-service-web/web-sites-nodejs-develop-deploy-mac.md).
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1223_2015-->

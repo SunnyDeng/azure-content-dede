@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="12/08/2015"
+   ms.date="12/22/2015"
    ms.author="tomfitz"/>
 
 # Übersicht über den Azure-Ressourcen-Manager
@@ -49,13 +49,19 @@ Eine Ressourcengruppe ist ein Container, der verwandte Ressourcen für eine Anwe
 
 Beim Definieren der Ressourcengruppe sind einige wichtige Faktoren zu beachten:
 
-1. Alle Ressourcen einer Gruppe müssen über den gleichen Lebenszyklus verfügen. Sie werden zusammen bereitgestellt, aktualisiert und gelöscht. Falls eine Ressource, z. B. ein Datenbankserver, in einem anderen Entwicklungszyklus vorhanden sein muss, sollte er in einer anderen Ressourcengruppe enthalten sein.
+1. Alle Ressourcen einer Gruppe sollten über den gleichen Lebenszyklus verfügen. Sie werden zusammen bereitgestellt, aktualisiert und gelöscht. Falls eine Ressource, z. B. ein Datenbankserver, in einem anderen Entwicklungszyklus vorhanden sein muss, sollte er in einer anderen Ressourcengruppe enthalten sein.
 2. Jede Ressource kann nur in einer Ressourcengruppe vorhanden sein.
 3. Sie können eine Ressource einer Ressourcengruppe jederzeit hinzufügen bzw. die Ressource daraus entfernen.
 4. Sie können eine Ressource aus einer Ressourcengruppe in eine andere Gruppe verschieben. Weitere Informationen finden Sie unter [Verschieben von Ressourcen in eine neue Ressourcengruppe oder ein neues Abonnement](resource-group-move-resources.md).
 4. Eine Ressourcengruppe kann Ressourcen enthalten, die sich in unterschiedlichen Regionen befinden.
 5. Eine Ressourcengruppe kann zum Festlegen der Zugriffssteuerung für administrative Aktionen verwendet werden.
 6. Eine Ressource kann mit einer Ressource in einer anderen Ressourcengruppe verknüpft werden, wenn die beiden Ressourcen miteinander interagieren müssen, aber nicht den gleichen Lebenszyklus aufweisen (z. B. mehrere Apps, die mit einer Datenbank verbunden werden). Weitere Informationen finden Sie unter [Verknüpfen von Ressourcen im Azure-Ressourcen-Manager](resource-group-link-resources.md).
+
+## Ressourcenanbieter
+
+Ein Ressourcenanbieter ist ein Dienst, über den Sie die Ressourcen beziehen, die Sie über den Ressourcen-Manager bereitstellen und verwalten können. Jeder Ressourcenanbieter bietet REST-API-Vorgänge zum Arbeiten mit den Ressourcen. Wenn Sie z. B. einen Azure Key Vault zum Speichern von Schlüsseln und Geheimnissen bereitstellen möchten, arbeiten Sie mit dem Ressourcenanbieter **Microsoft.KeyVault**. Der Ressourcenanbieter bietet einen Ressourcentyp namens **vaults** zum Erstellen des Schlüsseltresors, einen Ressourcentyp namens **vaults/secrets** zum Erstellen eines geheimen Schlüssels im Schlüsseltresor und eine Reihe von [REST-API-Vorgängen](https://msdn.microsoft.com/library/azure/dn903609.aspx).
+
+Um Ihre Infrastruktur bereitstellen und verwalten zu können, müssen Sie über einige Informationen zu den Ressourcenanbietern verfügen: welche Ressourcentypen sie umfassen, die Versionsnummern der REST-API-Vorgänge, die unterstützten Vorgänge sowie das Schema, das beim Festlegen der Werte für den zu erstellenden Ressourcentyp verwendet werden muss. Informationen zu den unterstützten Ressourcenanbietern finden Sie unter [Ressourcen-Manager-Anbieter, -Regionen, -API-Versionen und -Schemas](resource-manager-supported-services.md).
 
 ## Bereitstellung von Vorlagen
 
@@ -65,7 +71,7 @@ In der Vorlage definieren Sie die Infrastruktur für Ihre App, die Konfiguration
 
 Sie müssen nicht die gesamte Infrastruktur in einer einzelnen Vorlage definieren. Oftmals ist es sinnvoll, die Bereitstellungsanforderungen in eine Gruppe von spezifischen, zweckgebundenen Vorlagen zu unterteilen. Sie können diese Vorlagen mühelos für verschiedene Lösungen erneut verwenden. Um eine bestimmte Lösung bereitzustellen, erstellen Sie eine Mastervorlage, die alle erforderlichen Vorlagen verknüpft. Weitere Informationen finden Sie unter [Verwenden von verknüpften Vorlagen mit Azure-Ressourcen-Manager](resource-group-linked-templates.md).
 
-Sie können die Vorlage auch für Aktualisierungen der Infrastruktur verwenden. Beispielsweise können Sie Ihrer App eine neue Ressource sowie Konfigurationsregeln für die Ressourcen hinzufügen, die bereits bereitgestellt wurden. Wenn in der Vorlage die Erstellung einer neuen Ressource angegeben ist, diese aber bereits vorhanden ist, führt der Azure-Ressourcen-Manager anstelle der Erstellung einer neuen Ressource eine Aktualisierung durch. Der Azure-Ressourcen-Manager aktualisiert die vorhandene Ressource auf den Zustand, der für eine neue Ressource gelten würde. Oder Sie können angeben, dass Ressourcen-Manager Ressourcen löschen, die nicht in der Vorlage angegeben werden. Informationen über die Optionen für die Unterschiede bei der Bereitstellung finden Sie unter [Bereitstellen einer Anwendung mit Azure-Ressourcen-Manager-Vorlage](resource-group-template-deploy.md).
+Sie können die Vorlage auch für Aktualisierungen der Infrastruktur verwenden. Beispielsweise können Sie Ihrer App eine neue Ressource sowie Konfigurationsregeln für die Ressourcen hinzufügen, die bereits bereitgestellt wurden. Wenn in der Vorlage die Erstellung einer neuen Ressource angegeben ist, diese aber bereits vorhanden ist, führt der Azure-Ressourcen-Manager anstelle der Erstellung einer neuen Ressource eine Aktualisierung durch. Der Azure-Ressourcen-Manager aktualisiert die vorhandene Ressource auf den Zustand, der für eine neue Ressource gelten würde. Oder Sie können angeben, dass Ressourcen-Manager Ressourcen löschen, die nicht in der Vorlage angegeben werden. Informationen über die verschiedenen Optionen bei der Bereitstellung finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](resource-group-template-deploy.md).
 
 Sie können Parameter in Ihrer Vorlage angeben, um in Bezug auf die Bereitstellung für Anpassung und Flexibilität zu sorgen. Beispielsweise können Sie Parameterwerte übergeben, mit denen die Bereitstellung für Ihre Testumgebung angepasst wird. Durch das Angeben der Parameter können Sie dieselbe Vorlage für die Bereitstellung für alle Umgebungen Ihrer App verwenden.
 
@@ -76,8 +82,6 @@ Wenn Sie eine Lösung über den Marketplace erstellen, enthält die Lösung auto
 Die Vorlage wird schließlich zu einem Teil des Quellcodes für Ihre App. Sie können sie in das Quellcoderepository einchecken und im Verlauf der App-Entwicklung aktualisieren. Sie können die Vorlage mit Visual Studio bearbeiten.
 
 Weitere Informationen zum Definieren der Vorlage finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](./resource-group-authoring-templates.md).
-
-Vorlagenschemas finden Sie unter [Schemas des Azure-Ressourcen-Managers](https://github.com/Azure/azure-resource-manager-schemas).
 
 Informationen zum Verwenden einer Vorlage für die Bereitstellung finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](resource-group-template-deploy.md).
 
@@ -99,9 +103,7 @@ Mit dem Ressourcen-Manager können Sie steuern, wer Zugriff auf spezielle Aktion
 
 Der Ressourcen-Manager protokolliert automatisch Benutzeraktionen zu Überwachungszwecken. Informationen zum Arbeiten mit den Überwachungsprotokollen finden Sie unter [Überwachen von Vorgängen mit dem Ressourcen-Manager](resource-group-audit.md).
 
-Weitere Informationen zur rollenbasierten Zugriffssteuerung finden Sie unter [Rollenbasierte Zugriffssteuerung über das Azure-Vorschauportal](role-based-access-control-configure.md). Dieses Thema enthält eine Liste der integrierten Rollen und zulässigen Aktionen. Integrierte Rollen sind allgemeine Rollen, wie z. B. Besitzer, Leser und Mitwirkender, sowie servicespezifische Rollen, wie z. B. Virtual Machine Contributor, Virtual Network Contributor und SQL Security Manager (um nur einige der verfügbaren Rollen zu nennen).
-
-Beispiele zum Zuweisen von Rollen finden Sie unter [Verwalten des Zugriffs auf Ressourcen](resource-group-rbac.md).
+Weitere Informationen zur rollenbasierten Zugriffssteuerung finden Sie unter [Rollenbasierte Access Control in Azure](./active-directory/role-based-access-control-configure.md). Das Thema [RBAC: Integrierte Rollen](./active-directory/role-based-access-built-in-roles.md) enthält eine Liste der integrierten Rollen und zulässigen Aktionen. Integrierte Rollen sind allgemeine Rollen, wie z. B. Besitzer, Leser und Mitwirkender, sowie servicespezifische Rollen, wie z. B. Virtual Machine Contributor, Virtual Network Contributor und SQL Security Manager (um nur einige der verfügbaren Rollen zu nennen).
 
 Sie können kritische Ressourcen auch explizit sperren, um zu verhindern, dass sie von Benutzern gelöscht oder geändert werden. Weitere Informationen finden Sie unter [Sperren von Ressourcen mit dem Azure-Ressourcen-Manager](resource-group-lock-resources.md).
 
@@ -113,7 +115,7 @@ Mit dem Ressourcen-Manager können Sie benutzerdefinierte Richtlinien zum Verwal
 
 ## Einheitliche Verwaltungsebene
 
-Der Ressourcen-Manager bietet über Azure PowerShell, die Azure-Befehlszeilenschnittstelle für Mac, Linux, und Windows, das Azure-Vorschauportal und die REST-API vollständig kompatible Vorgänge. Sie können die Schnittstelle verwenden, die für Sie am besten geeignet ist, und schnell zwischen Schnittstellen wechseln, ohne dass Verwirrung entsteht. Im Portal werden sogar Benachrichtigungen für Aktionen angezeigt, die außerhalb des Portals durchgeführt werden.
+Der Ressourcen-Manager bietet vollständig kompatible Vorgänge für Azure PowerShell, die Azure-Befehlszeilenschnittstelle für Mac, Linux und Windows sowie das Azure-Portal und die REST-API. Sie können die Schnittstelle verwenden, die für Sie am besten geeignet ist, und schnell zwischen Schnittstellen wechseln, ohne dass Verwirrung entsteht. Im Portal werden sogar Benachrichtigungen für Aktionen angezeigt, die außerhalb des Portals durchgeführt werden.
 
 Weitere Informationen zu PowerShell finden Sie unter [Verwenden von Azure PowerShell mit dem Ressourcen-Manager](./powershell-azure-resource-manager.md) und [Azure-Ressourcen-Manager-Cmdlets](https://msdn.microsoft.com/library/azure/dn757692.aspx).
 
@@ -121,7 +123,7 @@ Informationen zur Azure-Befehlszeilenschnittstelle finden Sie unter [Verwenden d
 
 Informationen zur REST-API finden Sie unter [Referenz zur REST-API des Azure-Ressourcen-Managers](https://msdn.microsoft.com/library/azure/dn790568.aspx).
 
-Informationen zum Verwenden des Vorschauportals finden Sie unter [Verwenden des Azure-Vorschauportals zum Verwalten Ihrer Azure-Ressourcen](azure-portal/resource-group-portal.md).
+Informationen zum Verwenden des Portals finden Sie unter [Verwenden des Azure-Portals zum Verwalten Ihrer Azure-Ressourcen](azure-portal/resource-group-portal.md).
 
 Der Azure-Ressourcen-Manager unterstützt Cross-Origin Resource Sharing (CORS). Mit CORS können Sie die Ressourcen-Manager-REST-API oder die REST-API eines Azure-Diensts über eine Webanwendung aufrufen, die sich in einer anderen Domäne befindet. Ohne CORS-Unterstützung verhindert der Webbrowser, dass eine App in einer Domäne auf Ressourcen in einer anderen Domäne zugreifen kann. Der Ressourcen-Manager aktiviert CORS für alle Anforderungen mit gültigen Anmeldeinformationen für die Authentifizierung.
 
@@ -136,4 +138,4 @@ Hier sehen Sie eine Videodemonstration dieser Übersicht:
 
 [AZURE.VIDEO azure-resource-manager-overview]
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1223_2015-->

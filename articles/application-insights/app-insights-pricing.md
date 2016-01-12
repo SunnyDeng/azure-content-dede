@@ -49,15 +49,24 @@ Sie können jederzeit zur kostenlosen 30-Tage-Testversion des Premium-Tarifs wec
 
 ## Monatliches Kontingent
 
-* In jedem Kalendermonat kann Ihre Anwendung maximal eine bestimmte Menge an Telemetriedaten an Application Insights senden. Die genauen Zahlen können Sie der [Preisübersicht][pricing] entnehmen. 
+* In jedem Kalendermonat kann Ihre Anwendung maximal eine bestimmte Menge an Telemetriedaten an Application Insights senden. Derzeit liegt das Kontingent für den kostenlosen Tarif (Tarif „Free“) bei 5 Mio. Datenpunkten pro Monat. Bei den anderen Tarifen ist es deutlich höher. Ist das Kontingent erreicht, können Sie weitere dazukaufen. Die genauen Zahlen können Sie der [Preisübersicht][pricing] entnehmen. 
 * Das Kontingent hängt von dem Tarif ab, den Sie ausgewählt haben.
 * Das Kontingent beginnt um Mitternacht UTC am ersten Tag jedes Monats.
 * Das Datenpunktediagramm zeigt, wie viel von Ihrem Kontingent in diesem Monat verwendet wurde.
-* Das Kontingent wird in *Datenpunkten* gemessen. Ein einzelner Datenpunkt ist ein Aufruf einer der Nachverfolgungsmethoden, unabhängig davon, ob sie explizit in Ihrem Code oder durch eines der Standardtelemetriemodule aufgerufen wird. Datenpunkte enthalten Folgendes:
- * Alle Zeilen in der [Diagnosesuche](app-insights-diagnostic-search.md) 
- * Jede Rohmessung einer [Metrik](app-insights-metrics-explorer.md), etwa eines Leistungsindikators. (Die Punkte, die Sie in den Diagrammen sehen, sind normalerweise Aggregate von mehreren Rohdatenpunkten).
- * Alle Punkte in den Diagrammen zum [Webtest (Verfügbarkeit)](app-insights-monitor-web-app-availability.md). 
+* Das Kontingent wird in *Datenpunkten* gemessen. Ein einzelner Datenpunkt ist ein Aufruf einer der Nachverfolgungsmethoden, unabhängig davon, ob sie explizit in Ihrem Code oder durch eines der Standardtelemetriemodule aufgerufen wird. 
+* Datenpunkte werden generiert:
+ * Über [SDK-Module](app-insights-configuration-with-applicationinsights-config.md), die automatisch Daten sammeln, beispielsweise zum Melden einer Anforderung oder eines Absturzes oder zum Messen der Leistung.
+ * Über von Ihnen geschriebene [API](app-insights-api-custom-events-metrics.md)-`Track...`-Aufrufe, z. B. `TrackEvent` oder `trackPageView`.
+ * Über [Verfügbarkeitswebtests](app-insights-monitor-web-app-availability.md), die Sie eingerichtet haben.
+* Beim Debuggen können Sie die Datenpunkte sehen, die von Ihrer App im Visual Studio-Ausgabefenster gesendet werden. Client-Ereignisse können durch Öffnen der Registerkarte „Netzwerk“ im Debuggingbereich Ihres Browsers angezeigt werden (in der Regel mit F12).
 * *Sitzungsdaten* werden im Kontingent nicht berücksichtigt. Hierzu zählen die Anzahl von Benutzern oder Sitzungen sowie Umgebungs- und Gerätedaten.
+* Wenn Sie die Datenpunkte durch Überprüfung zählen möchten, sind diese an verschiedenen Orten zu finden:
+ * Jedes in der [Diagnosesuche](app-insights-diagnostic-search.md) angezeigte Element, einschließlich HTTP-Anforderungen, Ausnahmen, Protokollablaufverfolgungen, Seitenaufrufe, Abhängigkeitsereignisse und benutzerdefinierte Ereignisse.
+ * Jede Rohmessung einer [Metrik](app-insights-metrics-explorer.md), etwa eines Leistungsindikators. (Die Punkte, die Sie in den Diagrammen sehen, sind normalerweise Aggregate von mehreren Rohdatenpunkten).
+ * Jeder Punkt auf einem Web-Verfügbarkeitsdiagramm ist auch ein Aggregat von mehreren Datenpunkten.
+* Sie können auch einzelne Datenpunkte in der Quelle während des Debuggens überprüfen:
+ * Wenn Sie Ihre App im Debugmodus in Visual Studio ausführen, werden die Datenpunkte im Ausgabefenster protokolliert. 
+ * Um Clientdatenpunkte anzuzeigen, öffnen Sie den Debuggingbereich Ihres Browserfensters (in der Regel über F12) und die Registerkarte „Netzwerk“.
 
 
 ### Overage
@@ -88,7 +97,26 @@ Es gibt drei Buckets, die getrennt gezählt werden:
 * [Ausnahmen](app-insights-api-custom-events-metrics.md#track-exception), begrenzt auf 50 Punkte/s
 * Alle anderen Telemetriedaten (Seitenaufrufe, Sitzungen, Anforderungen, Abhängigkeiten, Metriken, benutzerdefinierte Ereignisse).
 
-Wenn die App mehrere Minuten lang mehr Daten sendet, als der Grenzwert zulässt, können einige Daten gelöscht werden. Sie erhalten zur Warnung eine Benachrichtigung, dass dies erfolgt ist.
+
+
+
+
+*Was geschieht, wenn meine App, das Pro-Sekunde-Volumen überschreitet?*
+
+* Die Datenmenge, die Ihre App sendet, wird minütlich gemessen. Wenn sie die pro Sekunde, über eine Minute gemittelt Datenmenge überschreitet, lehnt der Server einige Anforderungen ab. Einige Versionen des SDK versuchen in diesem Fall, die Daten erneut zu senden, sodass über Minuten hinweg die vielfache Menge gesendet wird; andere wie beispielsweise JavaScript SDK löschen die abgelehnten Daten einfach.
+
+Tritt eine Drosselung auf, erhalten Sie zur Warnung eine Benachrichtigung über diesen Vorgang.
+
+*Woher weiß ich, wie viele Datenpunkte meine App sendet?*
+
+* Öffnen Sie "Settings/Quota and Pricing", um das Diagramm mit dem Datenvolumen anzuzeigen.
+* Oder fügen Sie im Metrik-Explorer ein neues Diagramm hinzu, und wählen Sie **Datenpunktvolumen** als Metrik aus. Aktivieren Sie "Gruppierung", und gruppieren Sie nach **Datentyp**.
+
+*Wie kann ich die von meiner App gesendete Datenmenge reduzieren?*
+
+* Verwenden Sie [Stichproben](app-insights-sampling.md). Diese Technologie verringert die Datenrate, ohne die Metriken zu verzerren und ohne die Navigation zwischen verwandten Elementen bei der Suche zu stören. Die adaptive Stichprobenerstellung wird von ASP.NET SDK-2.0.0-beta3 standardmäßig aktiviert.
+* [Deaktivieren Sie Telemetriedaten-Sammlungsmodule](app-insights-configuration-with-applicationinsights-config.md), die Sie nicht benötigen.
+
 
 ### Tipps zur Reduzierung der Datenrate
 
@@ -101,7 +129,7 @@ Wenn Begrenzungsdrosselungen auftreten, können Sie verschiedene Schritte ausfü
 
 ### Begrenzungen von Namen
 
-1.	Bis zu 200 eindeutige Metriknamen und 200 eindeutige Eigenschaftennamen für Ihre Anwendung. Zu den Metriken gehören Daten, die über TrackMetric gesendet werden, sowie Messungen für andere Datentypen wie z. B. Ereignisse. [Metriken und Eigenschaftennamen][api] gelten global pro Instrumentationsschlüssel und werden nicht auf den Datentyp begrenzt.
+1.	Bis zu 200 eindeutige Metriknamen und 200 eindeutige Eigenschaftennamen für Ihre Anwendung. Zu den Metriken gehören Daten, die über TrackMetric gesendet werden, sowie Messungen für andere Datentypen wie z. B. Ereignisse. [Metriken und Eigenschaftennamen][api] gelten global pro Instrumentationsschlüssel und werden nicht auf den Datentyp begrenzt.
 2.	[Eigenschaften][apiproperties] können nur zur Filterung und zur Gruppierung verwendet werden, solange sie weniger als 100 eindeutige Werte für jede Eigenschaft aufweisen. Sobald es mehr als 100 eindeutige Werte gibt, kann die Eigenschaft zwar noch zur Suche und Filterung, jedoch nicht mehr für Filter verwendet werden.
 3.	Standardeigenschaften wie z. B. RequestName und die Seiten-URL, sind auf 1000 eindeutige Werte pro Woche beschränkt. Nach 1000 eindeutigen Werten werden zusätzliche Werte als "Andere Werte" gekennzeichnet. Der ursprüngliche Wert kann nach wie vor für die Volltextsuche und die Filterung verwendet werden.
 
@@ -136,4 +164,4 @@ Die Gebühren für Application Insights werden Ihrer Azure-Rechnung hinzugefügt
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1223_2015-->

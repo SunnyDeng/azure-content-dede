@@ -3,8 +3,8 @@
 	description="Erfahren Sie, wie Sie das einmalige Anmelden zwischen Azure Active Directory und der Questetra BPM Suite konfigurieren."
 	services="active-directory"
 	documentationCenter=""
-	authors="markusvi"
-	manager="msStevenPo"
+	authors="jeevansd"
+	manager="stevenpo"
 	editor=""/>
 
 <tags
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/02/2015"
-	ms.author="markusvi"/>
+	ms.date="12/18/2015"
+	ms.author="jeedes"/>
 
 
 # Lernprogramm: Azure Active Directory-Integration in Questetra BPM Suite
@@ -79,7 +79,7 @@ Zum Konfigurieren und Testen des einmaligen Anmeldens in Azure AD bei der Queste
 2. **[Erstellen eines Azure AD-Testbenutzers](#creating-an-azure-ad-test-user)** – um das einmalige Anmelden mit Azure AD mit dem Testbenutzer Britta Simon zu testen.
 4. **[Erstellen eines Questetra BPM Suite-Testbenutzers](#creating-a-questetra-bpm-suite-test-user)**, um eine Entsprechung von Britta Simon in der Questetra BPM Suite zu erhalten, die mit ihrer Darstellung in Azure AD verknüpft ist.
 5. **[Zuweisen des Azure AD-Testbenutzers](#assigning-the-azure-ad-test-user)** – um Britta Simon für das einmalige Anmelden von Azure AD zu aktivieren.
-5. **[Testen der einmaligen Anmeldung](#testing-single-sign-on)** – um zu überprüfen, ob die Konfiguration funktioniert.
+5. **[Testen der einmaligen Anmeldung](#testing-single-sign-on)**, um zu überprüfen, ob die Konfiguration funktioniert.
 
 ### Konfigurieren der einmaligen Anmeldung in Azure AD
 
@@ -138,7 +138,7 @@ Das Ziel dieses Abschnitts ist es, das einmalige Anmelden von Azure AD im Azure 
 9. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration der einmaligen Anmeldung aus, und klicken Sie dann auf **Weiter**. <br><br>![Was ist Azure AD Connect?][17]
 
 
-10. Klicken Sie auf der Seite **Bestätigung für einmaliges Anmelden** auf **Abschließen**. <br><br>![Was ist Azure AD Connect?][18]
+10. Klicken Sie auf der Seite **Bestätigung zur einmaligen Anmeldung** auf **Fertig stellen**.<br><br>![Was ist Azure AD Connect?][18]
 
 
 
@@ -212,7 +212,7 @@ Das Ziel dieses Abschnitts ist es, Britta Simon für das einmalige Anmelden bei 
 2. Wählen Sie in der Anwendungsliste **Questetra BPM Suite** aus. <br><br>![Was ist Azure AD Connect?][205]
 1. Klicken Sie im Menü oben auf **Benutzer**.<br> <br>![Was ist Azure AD Connect?][202]
 1. Wählen Sie in der Benutzerliste **Britta Simon** aus. <br><br>![Was ist Azure AD Connect?][203]
-2. Klicken Sie auf der Symbolleiste unten auf **Zuweisen**. <br><br>![Was ist Azure AD Connect?][204]
+2. Klicken Sie in der Symbolleiste unten auf **Zuweisen**. <br><br>![Was ist Azure AD Connect?][204]
 
 
 
@@ -265,4 +265,4 @@ Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für einm
 
 [300]: ./media/active-directory-saas-questetra-bpm-suite/questera_bpm_suite_11.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_1223_2015-->

@@ -158,8 +158,8 @@ Sie können jeden Vorgang auswählen, um weitere Details anzuzeigen.
 
 ## Nächste Schritte
 
-- Informationen zum Festlegen von Sicherheitsrichtlinien finden Sie unter [Verwalten des Zugriffs auf Ressourcen](resource-group-rbac.md).
+- Informationen zum Festlegen von Sicherheitsrichtlinien finden Sie unter [Rollenbasierte Access Control in Azure](./active-directory/role-based-access-control-configure.md).
 - Informationen zum Gewähren des Zugriffs für einen Dienstprinzipal finden Sie unter [Authentifizieren eines Dienstprinzipals mit dem Azure-Ressourcen-Manager](resource-group-authenticate-service-principal.md).
 - Informationen zum Beschränken von Aktionen für eine Ressource für alle Benutzer finden Sie unter [Sperren von Ressourcen mit dem Azure-Ressourcen-Manager](resource-group-lock-resources.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1223_2015-->

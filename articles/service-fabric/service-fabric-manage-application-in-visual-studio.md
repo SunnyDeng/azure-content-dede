@@ -18,15 +18,15 @@
 
 # Verwenden von Visual Studio zum Vereinfachen des Schreibens und Verwaltens Ihrer Service Fabric-Anwendung
 
-Sie können Ihre Service Fabric-Anwendungen und -Dienste in Visual Studio verwalten. Sobald Sie die [Einrichtung Ihrer Entwicklungsumgebung](service-fabric-setup-your-development-environment.md) abgeschlossen haben, können Sie mit Visual Studio Service Fabric-Anwendungen erstellen, Dienste hinzufügen und Anwendungen packen, registrieren und im lokalen Entwicklungscluster bereitstellen.
+Sie können Ihre Azure Service Fabric-Anwendungen und -Dienste in Visual Studio verwalten. Sobald Sie die [Einrichtung Ihrer Entwicklungsumgebung](service-fabric-setup-your-development-environment.md) abgeschlossen haben, können Sie mit Visual Studio Service Fabric-Anwendungen erstellen, Dienste hinzufügen und Anwendungen packen, registrieren und im lokalen Entwicklungscluster bereitstellen.
 
-Um Ihre Anwendung zu verwalten, klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Anwendungsprojekt.
+Um eine Anwendung zu verwalten, klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Anwendungsprojekt.
 
 ![Service Fabric-Anwendung mit Rechtsklick auf das Anwendungsprojekt verwalten][manageservicefabric]
 
-## Bereitstellen einer Service Fabric-Anwendung
+## Bereitstellen der Service Fabric-Anwendung
 
-Beim Bereitstellen einer Anwendung erfolgen die folgenden Schritte in einem Vorgang.
+Beim Bereitstellen einer Anwendung erfolgen die folgenden Schritte in einem einfachen Vorgang:
 
 1. Erstellen des Anwendungspakets
 2. Hochladen des Anwendungspakets in den Image-Speicher
@@ -34,13 +34,13 @@ Beim Bereitstellen einer Anwendung erfolgen die folgenden Schritte in einem Vorg
 4. Entfernen ausgeführter Anwendungsinstanzen
 5. Erstellen einer neuen Anwendungsinstanz
 
-Sie können in Visual Studio auch **F5** drücken, um die Anwendung bereitzustellen und den Debugger an alle Anwendungsinstanzen anzufügen. Sie können mithilfe von **STRG+F5** eine Anwendung ohne Debuggen bereitstellen oder in einem lokalen bzw. Remotecluster mit dem Veröffentlichungsprofil veröffentlichen. Weitere Informationen finden Sie unter [Veröffentlichen einer Anwendung in einem Remotecluster mit Visual Studio](service-fabric-publish-app-remote-cluster.md).
+Sie können in Visual Studio auch **F5** drücken, um die Anwendung bereitzustellen und den Debugger an alle Anwendungsinstanzen anzufügen. Sie können mithilfe von **STRG+F5** eine Anwendung ohne Debuggen bereitstellen oder sie in einem lokalen bzw. Remotecluster mit dem Veröffentlichungsprofil veröffentlichen. Weitere Informationen finden Sie unter [Veröffentlichen einer Anwendung in einem Remotecluster mit Visual Studio](service-fabric-publish-app-remote-cluster.md).
 
 ### Beibehalten von Daten zwischen Testläufen
 
-Häufig testen Sie Dienste lokal, indem Sie Testdateneingaben hinzufügen, einige Codeblöcke ändern und dann erneut lokal debuggen. Die Service Fabric-Tools von Visual Studio bieten eine nützliche Eigenschaft namens **Preserve Data on Start**, mit der die in der vorherigen Sitzung eingegebenen Daten beibehalten werden, um sie erneut zu verwenden.
+Häufig testen Sie Dienste lokal, indem Sie Testdateneingaben hinzufügen, einige Codeblöcke ändern und dann erneut lokal debuggen. Die Service Fabric-Tools von Visual Studio bieten eine nützliche Eigenschaft namens **Preserve Data on Start**, mit der die in der vorherigen Sitzung eingegebenen Daten beibehalten werden, sodass Sie sie erneut verwenden können.
 
-### So aktivieren Sie die Eigenschaft „Preserve Data on Start“
+#### So aktivieren Sie die Eigenschaft „Preserve Data on Start“
 
 1. Wählen Sie im Kontextmenü des Anwendungsprojekts **Eigenschaften** aus (oder drücken Sie **F4**).
 1. Legen Sie im Fenster **Eigenschaften** die Eigenschaft **Preserve Data on Start** auf **Ja** fest.
@@ -53,9 +53,9 @@ Wenn Sie die Anwendung erneut ausführen, behandelt das Bereitstellungsskript di
 
 Die Daten werden mithilfe der Upgradefunktion der Service Fabric-Plattform beibehalten. Weitere Informationen zum Upgrade einer Anwendung finden Sie unter [Service Fabric-Anwendungsupgrade](service-fabric-application-upgrade.md)
 
-## Hinzufügen von Diensten zur Service Fabric-Anwendung
+## Fügen Sie der Service Fabric-Anwendung einen Dienst hinzu.
 
-Sie können der Anwendung neue Fabric Services-Dienste hinzufügen, um die Funktionalität der Anwendung zu erweitern. Um sicherzustellen, dass der Dienst im Anwendungspaket enthalten ist, fügen Sie den Dienst über das Menüelement **Neue Fabric-Dienst** hinzu.
+Sie können der Anwendung neue Fabric-Dienste hinzufügen, um die Funktionalität der Anwendung zu erweitern. Um sicherzustellen, dass der Dienst in das Anwendungspaket aufgenommen wird, fügen Sie den Dienst über das Menüelement **Neuer Fabric-Dienst** hinzu.
 
 ![Neuen Fabric-Dienst zur Anwendung hinzufügen][newservice]
 
@@ -67,13 +67,13 @@ Der neue Dienst wird zur Projektmappe und dem vorhandenen Anwendungspaket hinzug
 
 ![Der neue Dienst wird zum Anwendungsmanifest hinzugefügt][newserviceapplicationmanifest]
 
-## Packen einer Service Fabric-Anwendung
+## Packen der Service Fabric-Anwendung
 
-Um die Anwendung und die zugehörigen Dienste in einem Cluster bereitzustellen, muss ein Anwendungspaket erstellt werden. Das Paket ordnet das Anwendungsmanifest, das bzw. die Dienstmanifeste und andere erforderliche Dateien in einem bestimmten Layout an. Visual Studio richtet das Paket im Projektordner der Anwendung im Verzeichnis "Pkg" ein und verwaltet es. Klicken Sie zum Erstellen oder Aktualisieren des Anwendungspakets im Kontextmenü der **Anwendung** auf **Packen**. Dies ist möglicherweise erforderlich, falls Sie die Anwendung mithilfe benutzerdefinierter PowerShell-Skripts bereitstellen möchten.
+Um die Anwendung und die zugehörigen Dienste in einem Cluster bereitzustellen, müssen Sie ein Anwendungspaket erstellen. Das Paket ordnet das Anwendungsmanifest, das bzw. die Dienstmanifeste und andere erforderliche Dateien in einem bestimmten Layout an. Visual Studio richtet das Paket im Projektordner der Anwendung im Verzeichnis "Pkg" ein und verwaltet es. Klicken Sie zum Erstellen oder Aktualisieren des Anwendungspakets im Kontextmenü der **Anwendung** auf **Packen**. Dies ist möglicherweise erforderlich, falls Sie die Anwendung mithilfe benutzerdefinierter PowerShell-Skripts bereitstellen möchten.
 
 ## Entfernen einer Anwendung
 
-Sie können die Bereitstellung eines Anwendungstyps aus Ihrem lokalen Cluster mit dem Service Fabric-Explorer aufheben. Der Cluster-Explorer ist über den HTTP-Gateway-Endpunkt des Clusters (in der Regel 19080 oder 19007) erreichbar, z. B. http://localhost:19080/Explorer. Hierbei werden die oben beschriebenen Bereitstellungsschritte rückgängig gemacht:
+Sie können die Bereitstellung eines Anwendungstyps in Ihrem lokalen Cluster mit dem Service Fabric-Explorer aufheben. Sie können auf den Cluster-Explorer über den HTTP-Gatewayendpunkt des Clusters (in der Regel 19080 oder 19007) zugreifen, z. B. http://localhost:19080/Explorer. Hierbei werden die oben beschriebenen Bereitstellungsschritte rückgängig gemacht:
 
 1. Entfernen ausgeführter Anwendungsinstanzen
 2. Aufheben der Registrierung des Anwendungstyps
@@ -97,4 +97,4 @@ Sie können die Bereitstellung eines Anwendungstyps aus Ihrem lokalen Cluster mi
 [preservedata]: ./media/service-fabric-manage-application-in-visual-studio/preservedata.png
 [preservedate]: ./media/service-fabric-manage-application-in-visual-studio/preservedate.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_1223_2015-->

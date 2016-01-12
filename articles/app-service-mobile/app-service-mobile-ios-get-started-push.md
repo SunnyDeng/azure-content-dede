@@ -44,10 +44,6 @@ Der [iOS-Simulator bietet keine Unterstützung für Pushbenachrichtigungen](http
 
 [AZURE.INCLUDE [app-service-mobile-dotnet-backend-configure-push-apns](../../includes/app-service-mobile-dotnet-backend-configure-push-apns.md)]
 
-## <a name="publish-the-service"></a>Bereitstellen des Serverprojekts in Azure
-
-[AZURE.INCLUDE [app-service-mobile-dotnet-backend-publish-service](../../includes/app-service-mobile-dotnet-backend-publish-service.md)]
-
 ## <a id="add-push"></a>Hinzufügen von Pushbenachrichtigungen zur App
 
 [AZURE.INCLUDE [app-service-mobile-add-push-notifications-to-ios-app.md](../../includes/app-service-mobile-add-push-notifications-to-ios-app.md)]
@@ -77,4 +73,4 @@ Der [iOS-Simulator bietet keine Unterstützung für Pushbenachrichtigungen](http
 [iOS-Schnellstartlernprogramm]: app-service-mobile-ios-get-started.md
 [iOS-Schnellstartprojekt]: app-service-mobile-ios-get-started.md
 
-<!---HONumber=AcomDC_1203_2015--->
+<!----HONumber=AcomDC_1223_2015-->

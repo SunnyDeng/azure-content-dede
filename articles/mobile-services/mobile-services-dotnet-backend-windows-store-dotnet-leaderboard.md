@@ -126,7 +126,7 @@ Klicken Sie mit der rechten Maustaste auf den Controller-Ordner, klicken Sie auf
 
 ![][6]
 
-Erweitern Sie im Dialogfeld **Add Scaffold** den Eintrag **Common** auf der linken Seite, und wählen Sie **Windows Azure Mobile Services** aus. Wählen Sie anschließend **Windows Azure Mobile Services Table Controller** aus. Klicken Sie auf **Hinzufügen**.
+Erweitern Sie im Dialogfeld **Add Scaffold** den Eintrag **Common** auf der linken Seite, und wählen Sie **Microsoft Azure Mobile Services** aus. Wählen Sie anschließend **Microsoft Azure Mobile Services Table Controller** aus. Klicken Sie auf **Hinzufügen**.
 
 ![][7]
 

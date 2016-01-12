@@ -14,19 +14,19 @@
 	ms.workload="na" 
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
-	ms.date="12/11/2015" 
+	ms.date="12/17/2015" 
 	ms.author="betorres"
 />
 
 
-# Aktivieren und Verwenden von „Datenverkehrsanalyse durchsuchen“ #
+# Aktivieren und Verwenden von „Datenverkehrsanalyse durchsuchen“
 
 „Datenverkehrsanalyse durchsuchen“ ist ein Azure Search-Feature, mit dem Sie Einblick in Ihren Suchdienst und Erkenntnisse über Ihre Benutzer und deren Verhalten erhalten. Wenn Sie dieses Feature aktivieren, werden Ihre Suchdienstdaten auf ein Speicherkonto Ihrer Wahl kopiert. Diese Daten umfassen die Suchdienstprotokolle und die aggregierten operativen Metriken. Dort können Sie die Nutzungsdaten in beliebiger Weise bearbeiten.
 
 
-## Aktivieren von „Datenverkehrsanalyse durchsuchen“ ##
+## Aktivieren von „Datenverkehrsanalyse durchsuchen“
 
-### 1\. Verwenden des Portals ###
+### 1\. Verwenden des Portals
 Öffnen Sie Ihren Azure Search-Dienst im [Azure-Portal](http://portal.azure.com). Unter „Einstellungen“ finden Sie die Option „Datenverkehrsanalyse durchsuchen“.
 
 ![][1]
@@ -40,7 +40,7 @@ Wählen Sie diese Option aus, und ein neues Blatt wird geöffnet. Ändern Sie de
 > 
 > Für dieses Speicherkonto fallen Standardgebühren an.
 
-### 2\. Mithilfe von PowerShell ###
+### 2\. Mithilfe von PowerShell
 
 Sie können dieses Feature auch aktivieren, indem Sie die folgenden PowerShell-Cmdlets ausführen.
 
@@ -68,7 +68,7 @@ Nach der Aktivierung beginnt innerhalb von 5 bis 10 Minuten der Datenfluss auf I
     insights-metrics-pt1m: aggregated metrics
 
 
-## Grundlegendes zu den Daten ##
+## Grundlegendes zu den Daten
 
 Die Daten werden in JSON-formatierten Azure Storage-Blobs gespeichert.
 
@@ -76,13 +76,13 @@ Es gibt einen Blob pro Stunde pro Container.
   
 Beispiel-Pfad: `resourceId=/subscriptions/<subscriptionID>/resourcegroups/<resourceGroupName>/providers/microsoft.search/searchservices/<searchServiceName>/y=2015/m=12/d=25/h=01/m=00/name=PT1H.json`
 
-### Logs ###
+### Logs
 
 Die Protokollblobs enthalten die Datenverkehrprotokolle des Suchdiensts.
 
 Jeder Blob hat ein Stammobjekt namens **records**, das ein Array von Protokollobjekten enthält.
 
-####Protokollschema####
+####Protokollschema
 
 Name |Typ |Beispiel |Hinweise 
 ------|-----|----|-----
@@ -96,7 +96,7 @@ resultSignature |int |200 |HTTP-Ergebniscode
 durationMS |int |50 |Dauer des Vorgangs in Millisekunden 
 Eigenschaften |Objekt |siehe unten |Objekt, das vorgangsspezifische Daten enthält
 
-####Eigenschaftsschema####
+####Eigenschaftsschema
 
 |Name |Typ |Beispiel |Hinweise|
 |------|-----|----|-----|
@@ -105,7 +105,7 @@ Eigenschaften |Objekt |siehe unten |Objekt, das vorgangsspezifische Daten enthä
 |Dokumente |int |42 |Anzahl von verarbeiteten Dokumenten|
 |IndexName |Zeichenfolge |„testindex“|Name des Indexes, der dem Vorgang zugeordnet ist |
 
-### Metriken ###
+### Metriken
 
 Die Metrikblobs enthalten aggregierte Werte für Ihren Suchdienst. Jede Datei hat ein Stammobjekt namens **records**, das ein Array von Metrikobjekten enthält.
 
@@ -113,7 +113,7 @@ Verfügbare Metriken:
 
 - Latenz
 
-####Metrikenschema####
+####Metrikenschema
 
 |Name |Typ |Beispiel |Hinweise|
 |------|-----|----|-----|
@@ -127,7 +127,7 @@ Verfügbare Metriken:
 |count |int |4 |Die Anzahl der unformatierten Beispiele, die zum Generieren der Metrik verwendet werden |
 |timegrain |Zeichenfolge |„PT1M“ |Das Aggregationsintervall der Metrik in ISO 8601|
 
-## Analysieren Ihrer Daten ##
+## Analysieren Ihrer Daten
 
 Die Daten befinden sich in Ihrem eigenen Speicherkonto, und Sie sollten diese Daten in der für Sie idealen Art und Weise untersuchen.
 
@@ -135,7 +135,7 @@ Zunächst sollten Sie Ihre Daten mit [Power BI Desktop](https://powerbi.microsof
 
 Sehen Sie sich die folgende Beispielabfrage an, mit der Sie Ihre eigenen Berichte in Power BI Desktop erstellen.
 
-### Anleitung ###
+### Anleitung
 
 1. Öffnen eines neuen Power BI Desktop-Berichts
 2. Wählen Sie „Daten abrufen -> Mehr...“
@@ -147,8 +147,8 @@ Sehen Sie sich die folgende Beispielabfrage an, mit der Sie Ihre eigenen Bericht
 	![][4]
 
 4. Geben Sie Namen und Kontoschlüssel des Speicherkontos ein.
-5. Klicken Sie mit der rechten Maustaste auf „insight-logs-operationlogs“, und wählen Sie „Laden“.
-6. Der Abfrage-Editor wird geöffnet. Öffnen Sie jetzt den erweiterten Editor durch Auswahl von „Ansicht -> Erweiterter Editor“.
+5. Wählen Sie „insight-logs-operationlogs“ und „insights-metrics-pt1mm“ und klicken Sie dann auf „Bearbeiten“.
+6. Der Abfrage-Editor wird geöffnet. Stellen Sie sicher, dass „insight-logs-operationlogs“ auf der linken Seite ausgewählt ist. Öffnen Sie jetzt den erweiterten Editor durch Auswahl von „Ansicht -> Erweiterter Editor“.
 
 	![][5]
 
@@ -156,7 +156,7 @@ Sehen Sie sich die folgende Beispielabfrage an, mit der Sie Ihre eigenen Bericht
 
 	>     #"insights-logs-operationlogs" = Source{[Name="insights-logs-operationlogs"]}[Data],
 	>     #"Sorted Rows" = Table.Sort(#"insights-logs-operationlogs",{{"Date modified", Order.Descending}}),
-	>     #"Kept First Rows" = Table.FirstN(#"Sorted Rows",288),
+	>     #"Kept First Rows" = Table.FirstN(#"Sorted Rows",744),
 	>     #"Removed Columns" = Table.RemoveColumns(#"Kept First Rows",{"Name", "Extension", "Date accessed", "Date modified", "Date created", "Attributes", "Folder Path"}),
 	>     #"Parsed JSON" = Table.TransformColumns(#"Removed Columns",{},Json.Document),
 	>     #"Expanded Content" = Table.ExpandRecordColumn(#"Parsed JSON", "Content", {"records"}, {"records"}),
@@ -181,11 +181,33 @@ Sehen Sie sich die folgende Beispielabfrage an, mit der Sie Ihre eigenen Bericht
 	>     in
 	>     #"Changed Type2"
 
-8. Klicken Sie auf „Fertig“, und wählen Sie dann auf der Registerkarte „Startseite“ „Schließen und Anwenden“.
+8. Klicken Sie auf „Done“.
 
-9. Ihre Daten können jetzt genutzt werden. Fahren Sie fort, und erstellen Sie einige [Visualisierungen](https://powerbi.microsoft.com/de-DE/documentation/powerbi-desktop-report-view/).
+9. Wählen Sie jetzt „insights-metrics-pt1m“ aus der Liste der Abfragen auf der linken Seite und öffnen Sie den erweiterten Editor erneut. Behalten Sie die ersten beiden Zeilen bei, und ersetzen Sie den Rest durch die folgende Abfrage:
 
-## Nächste Schritte ##
+	>     #"insights-metrics-pt1m1" = Source{[Name="insights-metrics-pt1m"]}[Data],
+	>     #"Sorted Rows" = Table.Sort(#"insights-metrics-pt1m1",{{"Date modified", Order.Descending}}),
+	>     #"Kept First Rows" = Table.FirstN(#"Sorted Rows",744),
+    	#"Removed Columns" = Table.RemoveColumns(#"Kept First Rows",{"Name", "Extension", "Date accessed", "Date modified", "Date created", "Attributes", "Folder Path"}),
+	>     #"Parsed JSON" = Table.TransformColumns(#"Removed Columns",{},Json.Document),
+	>     #"Expanded Content" = Table.ExpandRecordColumn(#"Parsed JSON", "Content", {"records"}, {"records"}),
+	>     #"Expanded records" = Table.ExpandListColumn(#"Expanded Content", "records"),
+	>     #"Expanded records1" = Table.ExpandRecordColumn(#"Expanded records", "records", {"resourceId", "metricName", "time", "average", "minimum", "maximum", "total", "count", "timeGrain"}, {"resourceId", "metricName", "time", "average", "minimum", "maximum", "total", "count", "timeGrain"}),
+	>     #"Filtered Rows" = Table.SelectRows(#"Expanded records1", each ([metricName] = "Latency")),
+	>     #"Removed Columns1" = Table.RemoveColumns(#"Filtered Rows",{"timeGrain"}),
+	>     #"Renamed Columns" = Table.RenameColumns(#"Removed Columns1",{{"time", "Datetime"}, {"resourceId", "ResourceId"}, {"metricName", "MetricName"}, {"average", "Average"}, {"minimum", "Minimum"}, {"maximum", "Maximum"}, {"total", "Total"}, {"count", "Count"}}),
+	>     #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"ResourceId", type text}, {"MetricName", type text}, {"Datetime", type datetimezone}, {"Average", type number}, {"Minimum", Int64.Type}, {"Maximum", Int64.Type}, {"Total", Int64.Type}, {"Count", Int64.Type}}),
+	>         Rounding = Table.TransformColumns(#"Changed Type",{{"Average", each Number.Round(_, 2)}}),
+	>     #"Changed Type1" = Table.TransformColumnTypes(Rounding,{{"Average", type number}}),
+	>     #"Inserted Date" = Table.AddColumn(#"Changed Type1", "Date", each DateTime.Date([Datetime]), type date)
+	>     in
+    	#"Inserted Date"
+
+10. Klicken Sie auf „Fertig“, und wählen Sie dann auf der Registerkarte „Startseite“ „Schließen und Anwenden“.
+
+11. Die Daten der letzten 30 Tage können jetzt verwendet werden. Fahren Sie fort, und erstellen Sie einige [Visualisierungen](https://powerbi.microsoft.com/de-DE/documentation/powerbi-desktop-report-view/).
+
+## Nächste Schritte
 
 Erhalten Sie weitere Informationen zu Syntax und Abfrageparametern. Details finden Sie unter [Suchen von Dokumenten (REST-API für den Azure Search-Dienst)](https://msdn.microsoft.com/library/azure/dn798927.aspx).
 
@@ -199,4 +221,4 @@ Erfahren Sie hier mehr über das Erstellen erstaunlicher Berichte. Weitere Infor
 [4]: ./media/search-traffic-analytics/BlobStorage.png
 [5]: ./media/search-traffic-analytics/QueryEditor.png
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1223_2015-->

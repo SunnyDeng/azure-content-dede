@@ -25,9 +25,11 @@ Azure Storage Premium bietet Datenträgerunterstützung für hohe Leistung mit g
 
 Ein virtueller Azure-Computer unterstützt das Anfügen mehrerer Storage Premium-Datenträger, damit Ihre Anwendung bis zu 64 TB Speicher pro virtuellem Computer nutzen kann. Mit Storage Premium können Ihre Anwendungen bis zu 80.000 IOPS (Input/Output Operations Per Second, E/A-Vorgänge pro Sekunde) pro virtuellem Computer nutzen sowie 2.000 MB Datenträgerdurchsatz pro Sekunde und virtuellem Computer mit äußerst niedriger Latenz für Lesevorgänge erzielen.
 
+Mit Storage Premium bietet Azure die Möglichkeit, anspruchsvollste Unternehmensanwendungen wie Dynamics AX, Dynamics CRM, Exchange Server, SharePoint-Farmen und SAP Business Suite in die Cloud zu verlagern. Sie können eine Vielzahl von leistungsintensiven Datenbankworkloads wie SQL Server, Oracle, MongoDB, MySQL und Redis ausführen, die eine konsistent hohe Leistung und eine geringe Latenz auf Storage Premium benötigen.
+
 >[AZURE.NOTE]Es wird empfohlen, alle Datenträger von virtuellen Computer, die eine hohe IOPS-Leistung erfordern, zu Azure Storage Premium zu migrieren, um die beste Leistung für Ihre Anwendung zu erzielen. Wenn Ihr Datenträger keine hohe IOPS-Leistung erfordert, können Sie die Kosten beschränken, indem Sie sie im Standard-Speicher belassen. Dieser Speicher speichert Daten auf Datenträgern virtueller Computer auf Festplatten (Hard Disk Drives, HDDs) anstelle von SSDs.
 
-Informationen zu den ersten Schritten mit Azure Premium-Speicher finden Sie auf der Seite [Starten Sie kostenlos](http://azure.microsoft.com/pricing/free-trial/). Informationen zur Migration Ihrer vorhandenen virtuellen Computer zu Premium-Speicher finden Sie unter [Migrieren zu Azure Premium-Speicher](storage-migration-to-premium-storage.md).
+Informationen zu den ersten Schritten mit Azure Premium-Speicher finden Sie auf der Seite [Starten Sie kostenlos](http://azure.microsoft.com/pricing/free-trial/). Informationen zur Migration der vorhandenen virtuellen Computer zu Storage Premium finden Sie unter [Migrieren zu Azure Storage Premium](storage-migration-to-premium-storage.md).
 
 ## Wichtige Informationen zum Premium-Speicher
 
@@ -35,7 +37,7 @@ Die folgende Liste führt wichtige Informationen auf, die vor oder bei der Verwe
 
 - Damit Sie den Premium-Speicher verwenden können, benötigen Sie ein Premium-Speicherkonto. Informationen zum Erstellen eines Premium-Speicherkontos finden Sie unter [Erstellen und Verwenden des Premium-Speicherkontos für Datenträger](#create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk).
 
-- Der Premium-Speicher ist im [Azure-Portal](portal.azure.com) verfügbar, und auf ihn kann über die folgenden SDK-Bibliotheken zugegriffen werden: [Speicher-REST-API](http://msdn.microsoft.com//library/azure/dd179355.aspx) Version 2014-02-14 oder höher, [Dienstverwaltungs-REST.API](http://msdn.microsoft.com/library/azure/ee460799.aspx) Version 2014-10-01 oder höher und [Azure PowerShell](../install-configure-powershell.md) Version 0.8.10 oder höher.
+- Storage Premium ist im [Azure-Portal](portal.azure.com) verfügbar. Sie können über die folgenden SDK-Bibliotheken darauf zugreifen: [Speicher-REST-API](http://msdn.microsoft.com//library/azure/dd179355.aspx) Version 2014-02-14 oder höher, [Dienstverwaltungs-REST.API](http://msdn.microsoft.com/library/azure/ee460799.aspx) Version 2014-10-01 oder höher und [Azure PowerShell](../install-configure-powershell.md) Version 0.8.10 oder höher.
 
 - Eine Liste der Regionen mit Unterstützung für Storage Premium finden Sie unter [Azure-Dienste nach Region](http://azure.microsoft.com/regions/#services).
 
@@ -59,7 +61,7 @@ Sie können den Premium-Speicher für Datenträger auf zwei Arten verwenden:
 
 Azure verwendet das Speicherkonto als Container für Ihr Betriebssystem und die Datenträger. Wenn Sie einen virtuellen Azure-Computer der DS- oder GS-Serie erstellen und ein Azure Premium-Speicherkonto auswählen, werden also Ihr Betriebssystem und die Datenträger in diesem Speicherkonto gespeichert.
 
-Informationen zur Migration der vorhandenen virtuellen Computer zu Storage Premium finden Sie unter [Migrieren zu Azure Premium-Speicher](storage-migration-to-premium-storage.md).
+Informationen zur Migration der vorhandenen virtuellen Computer zu Storage Premium finden Sie unter [Migrieren zu Azure Storage Premium](storage-migration-to-premium-storage.md).
 
 Damit Sie die Vorteile des Premium-Speichers nutzen können, erstellen Sie zuerst ein Premium-Speicherkonto vom Typ *Premium\_LRS*. Zu diesem Zweck können Sie das [Azure-Portal](portal.azure.com), [Azure PowerShell](../install-configure-powershell.md) oder die [Dienstverwaltungs-REST-API](http://msdn.microsoft.com/library/azure/ee460799.aspx) verwenden. Ausführliche Anleitungen finden Sie unter [Erstellen und Verwenden des Premium-Speicherkontos für Datenträger](#create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk).
 
@@ -327,7 +329,7 @@ azure storage account create "premiumtestaccount" -l "west us" --type PLRS
 ## Nächste Schritte
 
 - [Verwenden von Blob-Dienstvorgängen mit dem Azure Premium-Speicher](http://go.microsoft.com/fwlink/?LinkId=521969)
-- [Migrieren zu Azure Premium-Speicher](storage-migration-to-premium-storage.md)
+- [Migrieren zu Azure Storage Premium](storage-migration-to-premium-storage.md)
 - [Erstellen eines virtuellen Computers unter Windows](../virtual-machines-windows-tutorial-azure-preview.md)
 - [Größen virtueller Computer und Clouddienste für Azure](../virtual-machines/virtual-machines-size-specs.md)
 - [Speicherdokumentation](http://azure.microsoft.com/documentation/services/storage/)
@@ -335,4 +337,4 @@ azure storage account create "premiumtestaccount" -l "west us" --type PLRS
 [Image1]: ./media/storage-premium-storage-preview-portal/Azure_pricing_tier.png
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_1223_2015-->

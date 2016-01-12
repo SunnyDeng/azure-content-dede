@@ -16,25 +16,25 @@
    ms.date="10/15/2015"
    ms.author="jesseb"/>
 
-# Debuggen der Service Fabric-Anwendung in Visual Studio
+# Debuggen der Service Fabric-Anwendung mithilfe von Visual Studio
 
-Sie können Zeit und Geld sparen, indem Sie Ihre Service Fabric-Anwendung in einem Cluster für die Entwicklung auf einem lokalen Computer bereitstellen und debuggen. Visual Studio kann die Anwendung im lokalen Cluster bereitstellen und den Debugger automatisch mit allen Instanzen der Anwendung verbinden.
+Sie können Zeit und Geld sparen, indem Sie Ihre Azure Service Fabric-Anwendung in einem Cluster für die Entwicklung auf einem lokalen Computer bereitstellen und debuggen. Visual Studio kann die Anwendung im lokalen Cluster bereitstellen und den Debugger automatisch mit allen Instanzen der Anwendung verbinden.
 
 1. Um einen lokalen Cluster für die Entwicklung zu erstellen, folgen Sie den Schritten unter [Einrichten der Service Fabric-Entwicklungsumgebung](service-fabric-get-started.md).
 
-2. Drücken Sie **F5** oder klicken Sie auf **Debuggen** > **Debugging starten**
+2. Drücken Sie **F5** oder klicken Sie auf **Debuggen** > **Debugging starten**.
 
     ![Anwendung debuggen][startdebugging]
 
 3. Legen Sie Haltepunkte im Code fest und durchlaufen Sie die Anwendung mit den Befehlen im Menü **Debuggen**.
 
-    > [AZURE.NOTE]Visual Studio wird an alle Instanzen der Anwendung angefügt. Beim Durchlaufen des Codes können Haltepunkte von mehreren Prozessen gleichzeitig erreicht werden, sodass es zu gleichzeitigen Sitzungen kommt. Versuchen Sie, die Haltepunkte nach dem Erreichen zu deaktivieren, indem Sie den Haltepunkt von der Thread-ID abhängig machen, oder verwenden Sie Diagnoseereignisse.
+    > [AZURE.NOTE]Visual Studio wird an alle Instanzen der Anwendung angefügt. Wenn Sie den Code durchlaufen, können Haltepunkte von mehreren Prozessen gleichzeitig erreicht werden, sodass es zu gleichzeitigen Sitzungen kommt. Versuchen Sie, die Haltepunkte nach dem Erreichen zu deaktivieren, indem Sie jeden Haltepunkt von der Thread-ID abhängig machen oder Diagnoseereignisse verwenden.
 
-4. Das Fenster **Diagnoseereignisse** wird automatisch geöffnet, um die Diagnoseereignisse in Echtzeit anzuzeigen.
+4. Das Fenster **Diagnoseereignisse** wird automatisch geöffnet, sodass Sie die Diagnoseereignisse in Echtzeit anzeigen können.
 
     ![Diagnoseereignisse in Echtzeit anzeigen][diagnosticevents]
 
-5. Sie können das Fenster **Diagnoseereignisse** auch im Server-Explorer öffnen. Klicken Sie in **Azure** mit der rechten Maustaste auf **Service Fabric-Cluster** > **Diagnoseereignisse anzeigen...**.
+5. Sie können das Fenster **Diagnoseereignisse** auch in Server Explorer öffnen. Klicken Sie in **Azure** mit der rechten Maustaste auf **Service Fabric-Cluster** > **Diagnoseereignisse anzeigen**.
 
     ![Fenster mit Diagnoseereignissen öffnen][viewdiagnosticevents]
 
@@ -65,4 +65,4 @@ Sie können Zeit und Geld sparen, indem Sie Ihre Service Fabric-Anwendung in ein
 [diagnosticeventsactions]: ./media/service-fabric-debugging-your-application/diagnosticeventsactions.png
 [breakpoint]: ./media/service-fabric-debugging-your-application/breakpoint.png
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1223_2015-->

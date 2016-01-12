@@ -101,7 +101,7 @@ Je nach Preisstufe stehen die folgenden entwicklungsbezogenen Funktionen zur Ver
 	
 	[Preisdetails für SQL-Datenbanken](/pricing/details/sql-database/)
 	
-	[Größen virtueller Computer und Clouddienste für Windows Azure][vmsizes]
+	[Größen virtueller Computer und Clouddienste für Microsoft Azure][vmsizes]
 	
 	[App-Service-Preisdetails](/pricing/details/app-service/)
 	

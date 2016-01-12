@@ -19,7 +19,7 @@
 
 # Erstellen eines Application Gateways mit einer ARM-Vorlage
 
-Application Gateway verwendet einen Lastenausgleich der Ebene 7. Application Gateway bietet ein Failover sowie ein schnelles Routing von HTTP-Anforderungen zwischen verschiedenen Servern in der Cloud und der lokalen Umgebung. Application Gateways weisen folgende Anwendungsbereitstellungsfunktionen auf: HTTP-Lastenausgleich, cookiebasierte Sitzungsaffinität und SSL-Auslagerung.
+Application Gateway verwendet einen Lastenausgleich auf der Schicht 7 (Anwendungsschicht). Application Gateway bietet ein Failover sowie ein schnelles Routing von HTTP-Anforderungen zwischen verschiedenen Servern in der Cloud und der lokalen Umgebung. Application Gateways weisen folgende Anwendungsbereitstellungsfunktionen auf: HTTP-Lastenausgleich, cookiebasierte Sitzungsaffinität und SSL-Auslagerung.
 
 > [AZURE.SELECTOR]
 - [Azure Classic PowerShell](application-gateway-create-gateway.md)
@@ -31,11 +31,6 @@ Application Gateway verwendet einen Lastenausgleich der Ebene 7. Application Gat
 Sie erfahren, wie Sie eine vorhandene ARM-Vorlage von GitHub herunterladen und ändern sowie die Vorlage aus GitHub, PowerShell und der Azure-Befehlszeilenschnittstelle bereitstellen.
 
 Wenn Sie die ARM-Vorlage ohne Änderungen einfach direkt aus GitHub bereitstellen möchten, lesen Sie im Abschnitt zum Bereitstellen einer Vorlage aus GitHub weiter.
-
-
->[AZURE.IMPORTANT]Bevor Sie mit Azure-Ressourcen arbeiten, sollten Sie wissen, dass Azure derzeit über zwei Bereitstellungsmodelle verfügt: die Bereitstellung mit dem Ressourcen-Manager und die klassische Bereitstellung. Stellen Sie sicher, dass Sie die [Bereitstellungsmodelle und -tools](azure-classic-rm.md) verstanden haben, bevor Sie mit Azure-Ressourcen arbeiten. Sie können die Dokumentation für verschiedene Tools anzeigen, indem Sie auf die Registerkarten oben in diesem Artikel klicken. Dieses Dokument behandelt das Erstellen eines Application Gateways mit dem Azure-Ressourcen-Manager. Um die klassische Version zu verwenden, wechseln Sie zu [Erstellen einer klassischen Application Gateway-Bereitstellung mithilfe von PowerShell](application-gateway-create-gateway.md).
-
-
 
 
 ## Szenario
@@ -121,20 +116,36 @@ Sie können die vorhandene ARM-Vorlage zum Erstellen von einem VNet und zwei Sub
  
 ## Bereitstellen der ARM-Vorlage mithilfe von PowerShell
 
-1. Wenn Sie Azure PowerShell noch nie verwendet haben, lesen Sie [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md), und befolgen Sie die komplette Anleitung, um sich bei Azure anzumelden und Ihr Abonnement auszuwählen.
-2. Führen Sie an einer Azure PowerShell-Eingabeaufforderung das Cmdlet **Switch-AzureMode** aus, um zum Ressourcen-Manager-Modus zu wechseln, wie unten dargestellt.
+1. Wenn Sie Azure PowerShell zuvor noch nicht verwendet haben, lesen Sie [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md), und befolgen Sie die komplette Anleitung, um sich bei Azure anzumelden und Ihr Abonnement auszuwählen.
 
-		Switch-AzureMode AzureResourceManager
+### Schritt 1
+
+		Login-AzureRmAccount
+
+
+
+### Schritt 2
+
+Überprüfen Sie die Abonnements für das Konto.
+
+		get-AzureRmSubscription 
+
+Sie werden zur Authentifizierung mit Ihren Anmeldeinformationen aufgefordert.<BR>
+
+### Schritt 3 
+
+Wählen Sie aus, welches Azure-Abonnement Sie verwenden möchten.<BR>
+
+
+		Select-AzureRmSubscription -Subscriptionid "GUID of subscription"
+
+
+### Schritt 4
+
 	
-Erwartete Ausgabe:
+Erstellen Sie bei Bedarf mithilfe des `New-AzureResourceGroup`-Cmdlets eine neue Ressourcengruppe. In unten stehendem Beispiel wird eine neue Ressourcengruppe mit der Bezeichnung "AppgatewayRG" in der Region "East US" erstellt.
 
-		WARNING: The Switch-AzureMode cmdlet is deprecated and will be removed in a future release.
-
->[AZURE.WARNING]Das Cmdlet "Switch-AzureMode" ist demnächst veraltet. In diesem Fall werden alle Ressourcen-Manager-Cmdlets umbenannt.
-	
-3. Erstellen Sie bei Bedarf mithilfe des `New-AzureResourceGroup`-Cmdlets eine neue Ressourcengruppe. In unten stehendem Beispiel wird eine neue Ressourcengruppe mit der Bezeichnung "AppgatewayRG" in der Region "East US" erstellt.
-
-		PS C:\> New-AzureResourceGroup -Name AppgatewayRG -Location "East US"
+	 New-AzureRmResourceGroup -Name AppgatewayRG -Location "East US"
 		VERBOSE: 5:38:49 PM - Created resource group 'AppgatewayRG' in location 'eastus'
 
 
@@ -149,9 +160,9 @@ Erwartete Ausgabe:
 
 		ResourceId        : /subscriptions/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/resourceGroups/AppgatewayRG
 
-4. Führen Sie das New-AzureResourceGroupDeployment-Cmdlet aus, um das neue VNet mithilfe der oben heruntergeladenen und geänderten Vorlage und Parameterdateien bereitzustellen.
+4. Führen Sie das Cmdlet „New-AzureRmResourceGroupDeployment“ aus, um das neue VNet mithilfe der zuvor heruntergeladenen und geänderten Vorlage und Parameterdateien bereitzustellen.
 
-		New-AzureResourceGroupDeployment -Name TestAppgatewayDeployment -ResourceGroupName AppgatewayRG `
+		New-AzureRmResourceGroupDeployment -Name TestAppgatewayDeployment -ResourceGroupName AppgatewayRG `
  		   -TemplateFile C:\ARM\azuredeploy.json -TemplateParameterFile C:\ARM\azuredeploy-parameters.json
 
 Folgende Ausgabe wird von der Befehlszeile generiert:
@@ -273,4 +284,4 @@ Weitere Informationen zu Lastenausgleichsoptionen im Allgemeinen finden Sie unte
 - [Azure-Lastenausgleich](https://azure.microsoft.com/documentation/services/load-balancer/)
 - [Azure Traffic Manager](https://azure.microsoft.com/documentation/services/traffic-manager/)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

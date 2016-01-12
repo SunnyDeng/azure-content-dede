@@ -1,19 +1,20 @@
 <properties
-	pageTitle="Erstellen einer SQL Data Warehouse-Datenbank im Azure-Portal | Microsoft Azure"
-	description="Erfahren Sie, wie Sie ein Azure SQL Data Warehouse im Azure-Portal erstellen."
-	services="sql-data-warehouse"
-	documentationCenter="NA"
-	authors="barbkess"
-	manager="jhubbard"
-	editor=""
-	tags="azure-sql-data-warehouse"/>
+   pageTitle="Erstellen einer SQL Data Warehouse-Datenbank im Azure-Portal | Microsoft Azure"
+   description="Erfahren Sie, wie Sie ein Azure SQL Data Warehouse im Azure-Portal erstellen."
+   services="sql-data-warehouse"
+   documentationCenter="NA"
+   authors="barbkess"
+   manager="jhubbard"
+   editor=""
+   tags="azure-sql-data-warehouse"/>
+
 <tags
    ms.service="sql-data-warehouse"
    ms.devlang="NA"
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="12/15/2015"
+   ms.date="01/04/2016"
    ms.author="lodipalm;barbkess"/>
 
 # Erstellen eines SQL Data Warehouse
@@ -130,9 +131,8 @@ Um über Ihre aktuelle IP-Adresse auf den Server zuzugreifen, fügen Sie Ihre Cl
 
 Da Sie jetzt die Firewall konfiguriert haben, können Sie Verbindungen zwischen dem Desktop und der gerade erstellten Azure SQL Data Warehouse-Datenbank herstellen.
 
-
 ## Nächste Schritte
 
 Nachdem Sie eine Beispieldatenbank für SQL Data Warehouse erstellt haben, sind Sie bereit, eine [Verbindung](./sql-data-warehouse-get-started-connect.md) mit der Datenbank herzustellen.
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0107_2016-->

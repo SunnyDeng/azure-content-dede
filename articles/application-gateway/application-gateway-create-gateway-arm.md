@@ -18,7 +18,7 @@
 
 # Erstellen, Starten oder Löschen eines Application Gateways mit Azure-Ressourcen-Manager
 
-Application Gateways verfügen über Lastenausgleich der Ebene 7. Application Gateway bietet ein Failover sowie ein schnelles Routing von HTTP-Anforderungen zwischen verschiedenen Servern in der Cloud und der lokalen Umgebung. Application Gateways weisen folgende Anwendungsbereitstellungsfunktionen auf: HTTP-Lastenausgleich, cookiebasierte Sitzungsaffinität und SSL-Auslagerung.
+Application Gateway verwendet einen Lastenausgleich auf der Schicht 7 (Anwendungsschicht). Application Gateway bietet ein Failover sowie ein schnelles Routing von HTTP-Anforderungen zwischen verschiedenen Servern in der Cloud und der lokalen Umgebung. Application Gateways weisen folgende Anwendungsbereitstellungsfunktionen auf: HTTP-Lastenausgleich, cookiebasierte Sitzungsaffinität und SSL-Auslagerung.
 
 
 > [AZURE.SELECTOR]
@@ -71,11 +71,11 @@ Es folgen die erforderlichen Schritte zum Erstellen eines Application Gateways:
 
 ## Erstellen einer Ressourcengruppe für den Ressourcen-Manager
 
-Stellen Sie sicher, dass Sie in den PowerShell-Modus wechseln, um die ARM-Cmdlets zu verwenden. Weitere Informationen finden Sie unter [Verwenden von Windows PowerShell mit dem Ressourcen-Manager](powershell-azure-resource-manager.md).
+Stellen Sie sicher, dass Sie die neueste Version von Azure PowerShell verwenden. Weitere Informationen finden Sie unter [Verwenden von Windows PowerShell mit dem Ressourcen-Manager](powershell-azure-resource-manager.md).
 
 ### Schritt 1
 
-		PS C:\> Login-AzureRmAccount
+		Login-AzureRmAccount
 
 
 
@@ -83,7 +83,7 @@ Stellen Sie sicher, dass Sie in den PowerShell-Modus wechseln, um die ARM-Cmdlet
 
 Überprüfen Sie die Abonnements für das Konto.
 
-		PS C:\> get-AzureRmSubscription 
+		Get-AzureRmSubscription 
 
 Sie werden zur Authentifizierung mit Ihren Anmeldeinformationen aufgefordert.<BR>
 
@@ -92,7 +92,7 @@ Sie werden zur Authentifizierung mit Ihren Anmeldeinformationen aufgefordert.<BR
 Wählen Sie aus, welches Azure-Abonnement Sie verwenden möchten.<BR>
 
 
-		PS C:\> Select-AzureRmSubscription -Subscriptionid "GUID of subscription"
+		Select-AzureRmSubscription -Subscriptionid "GUID of subscription"
 
 
 ### Schritt 4
@@ -105,265 +105,108 @@ Der Azure-Ressourcen-Manager erfordert, dass alle Ressourcengruppen einen Speich
 
 Im oben stehenden Beispiel haben wir eine Ressourcengruppe namens "appgw-RG" mit dem Standort "USA, Westen" erstellt.
 
+
+>[AZURE.NOTE]Wenn Sie einen benutzerdefinierten Test für ein Application Gateway konfigurieren müssen, lesen Sie den Artikel [Erstellen eines Application Gateways mit benutzerdefinierten Tests mithilfe von PowerShell](application-gateway-create-probe-ps.md). Weitere Informationen finden Sie unter [Benutzerdefinierte Tests und Systemüberwachung](application-gateway-probe-overview.md).
+
+
+
 ## Erstellen eines virtuelles Netzwerks und Subnetzes für das Application Gateway
 
 Das folgende Beispiel zeigt, wie Sie mit dem Ressourcen-Manager ein virtuelles Netzwerk erstellen:
 
 ### Schritt 1	
 	
-	$subnet = New-AzureRmVirtualNetworkSubnetConfig -Name subnet01 -AddressPrefix 10.0.0.0/24
-
 Dieser Befehl weist den Adressbereich 10.0.0.0/24 der Subnetzvariablen zu, die zum Erstellen eines virtuelles Netzwerks verwendet wird.
 
+	$subnet = New-AzureRmVirtualNetworkSubnetConfig -Name subnet01 -AddressPrefix 10.0.0.0/24
+
+
 ### Schritt 2	
+
+Ein virtuelles Netzwerk mit dem Namen „appgwvnet“ wird in der Ressourcengruppe „appgw-rg“ für die Region „USA, Westen“ mit dem Präfix 10.0.0.0/16 und dem Subnetz 10.0.0.0/24 erstellt.
+
 	$vnet = New-AzureRmVirtualNetwork -Name appgwvnet -ResourceGroupName appgw-rg -Location "West US" -AddressPrefix 10.0.0.0/16 -Subnet $subnet
 
-Ein virtuelles Netzwerk mit dem Namen "appgwvnet" wird in der Ressourcengruppe "appw-rg" für die Region "USA, Westen" mit dem Präfix 10.0.0.0/16 und dem Subnetz 10.0.0.0/24 erstellt.
 
 ### Schritt 3
 	
+Weisen Sie eine Subnetzvariable zu, damit die nächsten Schritte beim Erstellen eines Application Gateways ausgeführt werden können.
+
 	$subnet=$vnet.Subnets[0]
 
 ## Erstellen der öffentlichen IP-Adresse für die Front-End-Konfiguration
 
-	$publicip = New-AzureRmPublicIpAddress -ResourceGroupName appgw-rg -name publicIP01 -location "West US" -AllocationMethod Dynamic
+Dieser Befehl dient zum Erstellen der öffentlichen IP-Ressource „publicIP01“ in der Ressourcengruppe „appgw-rg“ für die Region „USA, Westen“.
 
-Dieser Befehl dient zum Erstellen der öffentlichen IP-Ressource "publicIP01" in der Ressourcengruppe "appw-rg" für die Region USA, Westen.
+	$publicip = New-AzureRmPublicIpAddress -ResourceGroupName appgw-rg -name publicIP01 -location "West US" -AllocationMethod Dynamic
 
 
 ## Erstellen eines Konfigurationsobjekts für das Application Gateway
 
+Sie müssen alle Konfigurationselemente einrichten, bevor Sie das Application Gateway erstellen. Mit den folgenden Schritten erstellen Sie die Konfigurationselemente, die für eine Application Gateway-Ressource benötigt werden.
+
 ### Schritt 1
+
+Dieser Befehl erstellt eine IP-Konfiguration für das Anwendungsgateway mit dem Namen „gatewayIP01“. Beim Start des Application Gateways wählt es eine IP-Adresse aus dem konfigurierten Subnetz aus und leitet dann Netzwerkdatenverkehr an die IP-Adressen im Back-End-IP-Pool weiter. Beachten Sie, dass jede Instanz eine IP-Adresse verwendet.
+
 
 	$gipconfig = New-AzureRmApplicationGatewayIPConfiguration -Name gatewayIP01 -Subnet $subnet
 
-Dieser Befehl erstellt eine IP-Konfiguration für das Anwendungsgateway mit dem Namen „gatewayIP01“. Beim Start des Application Gateways wählt es eine IP-Adresse aus dem konfigurierten Subnetz aus und leitet dann Netzwerkdatenverkehr an die IP-Adressen im Back-End-IP-Pool weiter. Beachten Sie, dass jede Instanz eine IP-Adresse verwendet.
  
 ### Schritt 2
-
-	$pool = New-AzureRmApplicationGatewayBackendAddressPool -Name pool01 -BackendIPAddresses 134.170.185.46, 134.170.188.221,134.170.185.50
 
 Dieser Schritt dient zum Konfigurieren des Back-End-IP-Adresspools "pool01" mit den IP-Adressen 134.170.185.46, 134.170.188.221 und 134.170.185.50. Dies sind die IP-Adressen, die den Netzwerkdatenverkehr vom Front-End-IP-Adressendpunkt empfangen werden. Ersetzen Sie die obigen IP-Adressen durch Ihre eigenen IP-Adressendpunkte der Anwendung.
 
-### Schritt 3
+	$pool = New-AzureRmApplicationGatewayBackendAddressPool -Name pool01 -BackendIPAddresses 134.170.185.46, 134.170.188.221,134.170.185.50
 
-	$poolSetting = New-AzureRmApplicationGatewayBackendHttpSettings -Name poolsetting01 -Port 80 -Protocol Http -CookieBasedAffinity Disabled
+
+
+### Schritt 3
 
 Dient zum Konfigurieren der Application Gateway-Einstellungen "poolsetting01" für den Lastenausgleich des Netzwerkdatenverkehrs im Back-End-Pool.
 
-### Schritt 4
+	$poolSetting = New-AzureRmApplicationGatewayBackendHttpSettings -Name poolsetting01 -Port 80 -Protocol Http -CookieBasedAffinity Disabled
 
-	$fp = New-AzureRmApplicationGatewayFrontendPort -Name frontendport01  -Port 80
+
+### Schritt 4
 
 Dieser Befehl konfiguriert den Front-End-IP-Port mit dem Namen "frontendport01" für den öffentlichen IP-Adressendpunkt.
 
-### Schritt 5
+	$fp = New-AzureRmApplicationGatewayFrontendPort -Name frontendport01  -Port 80
 
-	$fipconfig = New-AzureRmApplicationGatewayFrontendIPConfig -Name fipconfig01 -PublicIPAddress $publicip
+
+### Schritt 5
 
 Hiermit wird die Front-End-IP-Adresskonfiguration namens „fipconfig01“ erstellt und die öffentliche IP-Adresse zugewiesen.
 
-### Schritt 6
+	$fipconfig = New-AzureRmApplicationGatewayFrontendIPConfig -Name fipconfig01 -PublicIPAddress $publicip
 
-	$listener = New-AzureRmApplicationGatewayHttpListener -Name listener01  -Protocol Http -FrontendIPConfiguration $fipconfig -FrontendPort $fp
+
+### Schritt 6
 
 Dieser Befehl dient zum Erstellen des Listeners „listener01“ und zum Zuweisen des Front-End-Ports zur Front-End-IP-Konfiguration.
 
-### Schritt 7 
+	$listener = New-AzureRmApplicationGatewayHttpListener -Name listener01  -Protocol Http -FrontendIPConfiguration $fipconfig -FrontendPort $fp
 
-	$rule = New-AzureRmApplicationGatewayRequestRoutingRule -Name rule01 -RuleType Basic -BackendHttpSettings $poolSetting -HttpListener $listener -BackendAddressPool $pool
+### Schritt 7 
 
 Erstellt die Load Balancer-Routingregel „rule01“ und konfiguriert das Load Balancer-Verhalten.
 
-### Schritt 8
+	$rule = New-AzureRmApplicationGatewayRequestRoutingRule -Name rule01 -RuleType Basic -BackendHttpSettings $poolSetting -HttpListener $listener -BackendAddressPool $pool
 
-	$sku = New-AzureRmApplicationGatewaySku -Name Standard_Small -Tier Standard -Capacity 2
+### Schritt 8
 
 Dieser Befehl konfiguriert die Instanzgröße des Application Gateways.
 
+	$sku = New-AzureRmApplicationGatewaySku -Name Standard_Small -Tier Standard -Capacity 2
+
 >[AZURE.NOTE]Der Standardwert für *InstanceCount* ist 2, der Maximalwert ist 10. Der Standardwert für *GatewaySize* ist "Medium". Sie können zwischen „Standard\_Small“, „Standard\_Medium“ und „Standard\_Large“ wählen.
 
-## Erstellen eines Application Gateways mit dem Cmdlet "New-AzureApplicationGateway"
-
-	$appgw = New-AzureRmApplicationGateway -Name appgwtest -ResourceGroupName appw-rg -Location "West US" -BackendAddressPools $pool -BackendHttpSettingsCollection $poolSetting -FrontendIpConfigurations $fipconfig  -GatewayIpConfigurations $gipconfig -FrontendPorts $fp -HttpListeners $listener -RequestRoutingRules $rule -Sku $sku
+## Erstellen eines Application Gateways mit dem Cmdlet „New-AzureRmApplicationGateway“
 
 Mit diesem Cmdlet wird ein Application Gateway mit allen Konfigurationselementen aus den vorangegangenen Schritten erstellt. Im Beispiel heißt das Application Gateway "appgwtest".
 
-
-## Starten des Application Gateways
-
-Sobald das Gateway konfiguriert ist, verwenden Sie das Cmdlet `Start-AzureRmApplicationGateway`, um es zu starten. Die Abrechnung für ein Application Gateway beginnt, nachdem das Gateway erfolgreich gestartet wurde.
-
-
-**Hinweis:** Bis zum Abschluss des `Start-AzureRmApplicationGateway`-Cmdlets können bis zu 15 – 20 Minuten vergehen.
-
-Im folgenden Beispiel heißt das Application Gateway "appgwtest" und die Ressourcengruppe "app-rg":
-
-
-### Schritt 1
-
-Rufen Sie das Application Gateway-Objekt ab, und ordnen Sie es der Variablen "$getgw" zu:
- 
-	$getgw =  Get-AzureRmApplicationGateway -Name appgwtest -ResourceGroupName app-rg
-
-### Schritt 2
-	 
-Verwenden Sie `Start-AzureRmApplicationGateway`, um das Application Gateway zu starten:
-
-	 Start-AzureRmApplicationGateway -ApplicationGateway $getgw  
-
-	
-
-## Überprüfen des Application Gateway-Status
-
-Überprüfen Sie mit dem Cmdlet `Get-AzureRmApplicationGateway` den Status des Gateways. Wenn *Start-AzureApplicationGateway* im vorherigen Schritt erfolgreich ausgeführt wurde, sollte der Status *Wird ausgeführt* lauten, und für "Vip" und "DnsName" sollten gültige Einträge vorliegen.
-
-Dieses Beispiel zeigt ein Application Gateway, das ausgeführt wird und Datenverkehr verarbeiten kann, der für `http://<generated-dns-name>.cloudapp.net` vorgesehen ist.
-
-	Get-AzureRmApplicationGateway -Name appgwtest -ResourceGroupName appgw-rg
-
-	Sku                               : Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySku
-	GatewayIPConfigurations           : {gatewayip01}
-	SslCertificates                   : {}
-	FrontendIPConfigurations          : {frontendip01}
-	FrontendPorts                     : {frontendport01}
-	BackendAddressPools               : {pool01}
-	BackendHttpSettingsCollection     : {setting01}
-	HttpListeners                     : {listener01}
-	RequestRoutingRules               : {rule01}
-	OperationalState                  : 
-	ProvisioningState                 : Succeeded
-	GatewayIpConfigurationsText       : [
-                                      {
-                                        "Subnet": {
-                                          "Id": "/subscriptions/###############################/resourceGroups/appgw-rg
-                                    /providers/Microsoft.Network/virtualNetworks/vnet01/subnets/subnet01"
-                                        },
-                                        "ProvisioningState": "Succeeded",
-                                        "Name": "gatewayip01",
-                                        "Etag": "W/"ddb0408e-a54c-4501-a7f8-8487c3530bd7"",
-                                        "Id": "/subscriptions/###############################/resourceGroups/appgw-rg/p
-                                    roviders/Microsoft.Network/applicationGateways/appgwtest/gatewayIPConfigurations/gatewayip
-                                    01"
-                                      }
-                                    ]
-	SslCertificatesText               : []
-	FrontendIpConfigurationsText      : [
-                                      {
-                                        "PrivateIPAddress": null,
-                                        "PrivateIPAllocationMethod": "Dynamic",
-                                        "Subnet": null,
-                                        "PublicIPAddress": {
-                                          "Id": "/subscriptions/###############################/resourceGroups/appgw-rg
-                                    /providers/Microsoft.Network/publicIPAddresses/publicip01"
-                                        },
-                                        "ProvisioningState": "Succeeded",
-                                        "Name": "frontendip01",
-                                        "Etag": "W/"ddb0408e-a54c-4501-a7f8-8487c3530bd7"",
-                                        "Id": "/subscriptions/###############################/resourceGroups/appgw-rg/p
-                                    roviders/Microsoft.Network/applicationGateways/appgwtest/frontendIPConfigurations/frontend
-                                    ip01"
-                                      }
-                                    ]
-	FrontendPortsText                 : [
-                                      {
-                                        "Port": 80,
-                                        "ProvisioningState": "Succeeded",
-                                        "Name": "frontendport01",
-                                        "Etag": "W/"ddb0408e-a54c-4501-a7f8-8487c3530bd7"",
-                                        "Id": "/subscriptions/###############################/resourceGroups/appgw-rg/p
-                                    roviders/Microsoft.Network/applicationGateways/appgwtest/frontendPorts/frontendport01"
-                                      }
-                                    ]
-	BackendAddressPoolsText           : [
-                                      {
-                                        "BackendAddresses": [
-                                          {
-                                            "Fqdn": null,
-                                            "IpAddress": "134.170.185.46"
-                                          },
-                                          {
-                                            "Fqdn": null,
-                                            "IpAddress": "134.170.188.221"
-                                          },
-                                          {
-                                            "Fqdn": null,
-                                            "IpAddress": "134.170.185.50"
-                                          }
-                                        ],
-                                        "BackendIpConfigurations": [],
-                                        "ProvisioningState": "Succeeded",
-                                        "Name": "pool01",
-                                        "Etag": "W/"ddb0408e-a54c-4501-a7f8-8487c3530bd7"",
-                                        "Id": "/subscriptions/###############################/resourceGroups/appgw-rg/p
-                                    roviders/Microsoft.Network/applicationGateways/appgwtest/backendAddressPools/pool01"
-                                      }
-                                    ]
-	BackendHttpSettingsCollectionText : [
-                                      {
-                                        "Port": 80,
-                                        "Protocol": "Http",
-                                        "CookieBasedAffinity": "Disabled",
-                                        "ProvisioningState": "Succeeded",
-                                        "Name": "setting01",
-                                        "Etag": "W/"ddb0408e-a54c-4501-a7f8-8487c3530bd7"",
-                                        "Id": "/subscriptions/###############################/resourceGroups/appgw-rg/p
-                                    roviders/Microsoft.Network/applicationGateways/appgwtest/backendHttpSettingsCollection/set
-                                    ting01"
-                                      }
-                                    ]
-	HttpListenersText                 : [
-                                      {
-                                        "FrontendIpConfiguration": {
-                                          "Id": "/subscriptions/###############################/resourceGroups/appgw-rg
-                                    /providers/Microsoft.Network/applicationGateways/appgwtest/frontendIPConfigurations/fronte
-                                    ndip01"
-                                        },
-                                        "FrontendPort": {
-                                          "Id": "/subscriptions/###############################/resourceGroups/appgw-rg
-                                    /providers/Microsoft.Network/applicationGateways/appgwtest/frontendPorts/frontendport01"
-                                        },
-                                        "Protocol": "Http",
-                                        "SslCertificate": null,
-                                        "ProvisioningState": "Succeeded",
-                                        "Name": "listener01",
-                                        "Etag": "W/"ddb0408e-a54c-4501-a7f8-8487c3530bd7"",
-                                        "Id": "/subscriptions/###############################/resourceGroups/appgw-rg/p
-                                    roviders/Microsoft.Network/applicationGateways/appgwtest/httpListeners/listener01"
-                                      }
-                                    ]
-	RequestRoutingRulesText           : [
-                                      {
-                                        "RuleType": "Basic",
-                                        "BackendAddressPool": {
-                                          "Id": "/subscriptions/###############################/resourceGroups/appgw-rg
-                                    /providers/Microsoft.Network/applicationGateways/appgwtest/backendAddressPools/pool01"
-                                        },
-                                        "BackendHttpSettings": {
-                                          "Id": "/subscriptions/###############################/resourceGroups/appgw-rg
-                                    /providers/Microsoft.Network/applicationGateways/appgwtest/backendHttpSettingsCollection/s
-                                    etting01"
-                                        },
-                                        "HttpListener": {
-                                          "Id": "/subscriptions/###############################/resourceGroups/appgw-rg
-                                    /providers/Microsoft.Network/applicationGateways/appgwtest/httpListeners/listener01"
-                                        },
-                                        "ProvisioningState": "Succeeded",
-                                        "Name": "rule01",
-                                        "Etag": "W/"ddb0408e-a54c-4501-a7f8-8487c3530bd7"",
-                                        "Id": "/subscriptions/###############################/resourceGroups/appgw-rg/p
-                                    roviders/Microsoft.Network/applicationGateways/appgwtest/requestRoutingRules/rule01"
-                                      }
-                                    ]
-	ResourceGroupName                 : appgw-rg
-	Location                          : westus
-		Tag                               : {}
-	TagsTable                         : 
-	Name                              : appgwtest
-	Etag                              : W/"ddb0408e-a54c-4501-a7f8-8487c3530bd7"
-	Id                                : /subscriptions/###############################/resourceGroups/appgw-rg/providers/Microsoft.Network/applicationGateways/appgwtest
-
-
+	$appgw = New-AzureRmApplicationGateway -Name appgwtest -ResourceGroupName appgw-rg -Location "West US" -BackendAddressPools $pool -BackendHttpSettingsCollection $poolSetting -FrontendIpConfigurations $fipconfig  -GatewayIpConfigurations $gipconfig -FrontendPorts $fp -HttpListeners $listener -RequestRoutingRules $rule -Sku $sku
 
 
 ## Löschen eines Application Gateways
@@ -373,7 +216,6 @@ Um ein Application Gateway zu löschen, müssen Sie die folgenden Schritte in de
 1. Verwenden Sie das Cmdlet `Stop-AzureRmApplicationGateway` zum Beenden des Gateways. 
 2. Verwenden Sie das Cmdlet `Remove-AzureRmApplicationGateway` zum Entfernen des Gateways.
 3. Überprüfen Sie mit dem Cmdlet `Get-AzureRmApplicationGateway`, ob das Gateway entfernt wurde.
-
 
 ### Schritt 1
 
@@ -396,7 +238,7 @@ Sobald das Application Gateway beendet wurde, verwenden Sie das Cmdlet `Remove-A
 	
 
 >[AZURE.NOTE]Mit dem optionalen Switch "-force" kann diese Bestätigungsmeldung unterdrückt werden.
->
+
 
 Mithilfe des Cmdlets `Get-AzureRmApplicationGateway` können Sie sicherstellen, dass der Dienst entfernt wurde. Dieser Schritt ist nicht erforderlich.
 
@@ -404,8 +246,6 @@ Mithilfe des Cmdlets `Get-AzureRmApplicationGateway` können Sie sicherstellen, 
 	Get-AzureRmApplicationGateway -Name appgwtest-ResourceGroupName appgw-rg
 
 	
-
-
 ## Nächste Schritte
 
 Wenn Sie die SSL-Auslagerung konfigurieren möchten, lesen Sie [Konfigurieren eines Application Gateways für die SSL-Auslagerung](application-gateway-ssl.md).
@@ -417,4 +257,4 @@ Weitere Informationen zu Lastenausgleichsoptionen im Allgemeinen finden Sie unte
 - [Azure-Lastenausgleich](https://azure.microsoft.com/documentation/services/load-balancer/)
 - [Azure Traffic Manager](https://azure.microsoft.com/documentation/services/traffic-manager/)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

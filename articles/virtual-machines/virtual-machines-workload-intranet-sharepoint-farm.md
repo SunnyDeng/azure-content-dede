@@ -6,7 +6,7 @@
 	authors="JoeDavies-MSFT"
 	manager="timlt"
 	editor=""
-	tags="azure-service-management"/>
+	tags="azure-resource-manager"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -14,16 +14,16 @@
 	ms.tgt_pltfrm="Windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/29/2015"
+	ms.date="12/17/2015"
 	ms.author="josephd"/>
 
 # Azure-Infrastrukturdienste-Workload: SharePoint-Intranetfarm
 
-[AZURE.INCLUDE [learn-about-deployment-models-classic-include](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Bereitstellungsmodell
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell.
 
 Richten Sie Ihre erste bzw. nächste SharePoint-Farm in Microsoft Azure ein. Dadurch erhalten Sie eine einfache Konfiguration und die Möglichkeit, die Farm schnell mit neuen Kapazitäten zu erweitern oder die wichtigsten Funktionen zu optimieren. Viele SharePoint-Farmen wachsen von einer standardmäßigen hochverfügbaren Konfiguration mit drei Ebenen zu einer Farm an, die unter Umständen über ein Dutzend oder mehr Server mit Optimierung für Performance oder separate Rollen verfügt, z. B. Distributed Caching oder Search.
 
-Mit den Funktionen für virtuelle Computer und virtuelle Netzwerke der Azure-Infrastrukturdienste können Sie eine SharePoint-Farm, die transparent mit Ihrem lokalen Netzwerk verbunden ist, schnell bereitstellen und ausführen. Beispielsweise können Sie das folgende Netzwerk einrichten:
+Mit den Funktionen für virtuelle Computer und virtuelle Netzwerke der Azure-Infrastrukturdienste können Sie eine SharePoint-Farm, die transparent mit Ihrem lokalen Netzwerk verbunden ist, schnell bereitstellen und ausführen. Beispielsweise können Sie Folgendes einrichten:
 
 ![](./media/virtual-machines-workload-intranet-sharepoint-farm/workload-spsqlao.png)
 
@@ -44,7 +44,7 @@ Sie haben zwei Möglichkeiten, wie Sie eine Entwicklungs- bzw. Testumgebung für
 - Virtuelles Nur-Cloud-Netzwerk
 - Standortübergreifendes virtuelles Netzwerk
 
-Sie können diese Entwicklungs- und Testumgebungen im Rahmen Ihres [MSDN-Abonnements](http://azure.microsoft.com/pricing/member-offers/msdn-benefits/) oder eines [Azure-Testabonnements](http://azure.microsoft.com/pricing/free-trial/) kostenlos erstellen.
+Sie können diese Entwicklungs- und Testumgebungen im Rahmen Ihres [Visual Studio-Abonnements](http://azure.microsoft.com/pricing/member-offers/msdn-benefits/) oder eines [Azure-Testabonnements](http://azure.microsoft.com/pricing/free-trial/) kostenlos erstellen.
 
 ### Virtuelles Nur-Cloud-Netzwerk
 
@@ -62,7 +62,7 @@ Der nächste Schritt ist die Erstellung einer SharePoint-Intranetfarm mit hoher 
 
 ## Bereitstellen einer in Azure gehosteten SharePoint-Intranetfarm
 
-Die grundlegende, repräsentative Konfiguration für eine funktionelle und hochverfügbare SharePoint-Intranetfarm wird im folgenden Beispiel gezeigt.
+Die grundlegende, repräsentative Konfiguration für eine funktionelle und hochverfügbare SharePoint-Intranetfarm sieht wie folgt aus:
 
 ![](./media/virtual-machines-workload-intranet-sharepoint-farm/workload-spsqlao.png)
 
@@ -70,58 +70,19 @@ Sie besteht aus folgenden Elementen:
 
 - SharePoint-Intranetfarm mit zwei Servern auf Web-, Anwendungs- und Datenbankebene
 - Eine Konfiguration mit SQL Server AlwaysOn-Verfügbarkeitsgruppen und zwei SQL-Servern sowie einem Hauptknotencomputer in einem Cluster
-- Azure Active Directory im virtuellen Netzwerk mit zwei Replikatdomänencontrollern
+- Zwei Replikatdomänencontroller einer lokalen Active Directory-Domäne.
 
 Diese Konfiguration finden Sie als Infografik unter [SharePoint mit SQL Server AlwaysOn](http://go.microsoft.com/fwlink/?LinkId=394788).
-
-### Stückliste
-
-Diese Basiskonfiguration erfordert den folgenden Satz von Azure-Diensten und -Komponenten:
-
-- Neun virtuelle Computer
-- Vier zusätzliche Datenträger für die Domänencontroller und SQL-Server
-- Drei Clouddienste
-- Vier Verfügbarkeitsgruppen
-- Ein standortübergreifendes virtuelles Netzwerk
-- Ein Speicherkonto
-- Ein Azure-Abonnement
-
-Nachfolgend sind die virtuellen Computer und deren Standardgrößen für diese Konfiguration aufgeführt.
-
-Element | Beschreibung des virtuellen Computers | Katalogimage | Standardgröße
---- | --- | --- | ---
-1\. | Erster Domänencontroller | Windows Server 2012 R2 Datacenter | A2 (Mittel)
-2\. | Zweiter Domänencontroller | Windows Server 2012 R2 Datacenter | A2 (Mittel)
-3\. | Erster Datenbankserver | Microsoft SQL Server 2014 Enterprise – Windows Server 2012 R2 | A5
-4\. | Zweiter Datenbankserver | Microsoft SQL Server 2014 Enterprise – Windows Server 2012 R2 | A5
-5\. | Mehrheitsknoten des Clusters | Windows Server 2012 R2 Datacenter | A1 (Klein)
-6\. | Erster SharePoint-Anwendungsserver | Microsoft SharePoint Server 2013-Testversion – Windows Server 2012 R2 | A4 (Extragroß)
-7\. | Zweiter SharePoint-Anwendungsserver | Microsoft SharePoint Server 2013-Testversion – Windows Server 2012 R2 | A4 (Extragroß)
-8\. | Erster SharePoint-Webserver | Microsoft SharePoint Server 2013-Testversion – Windows Server 2012 R2 | A4 (Extragroß)
-9\. | Zweiter SharePoint-Webserver | Microsoft SharePoint Server 2013-Testversion – Windows Server 2012 R2 | A4 (Extragroß)
-
-Nutzen Sie zum Berechnen der geschätzten Kosten für diese Konfiguration den [Azure-Preisrechner](https://azure.microsoft.com/pricing/calculator/).
-
-1. Klicken Sie unter **Module** auf **Compute** und dann so oft auf **Virtuelle Computer**, bis Sie eine Liste mit neun virtuellen Computern erstellt haben.
-2. Wählen Sie für jeden virtuellen Computer Folgendes:
-	- Die gewünschte Region
-	- **Windows** für den Typ
-	- **Standard** für die Preisstufe
-	- Die Standardgröße in der vorherigen Tabelle oder die gewünschte Größe für die **Instanzgröße**
-
-> [AZURE.NOTE]Der Azure-Preisrechner bezieht nicht die zusätzlichen Kosten für die SQL Server-Lizenz für die beiden virtuellen Computer ein, auf denen SQL Server 2014 Enterprise ausgeführt wird. Weitere Informationen finden Sie unter [Virtual Machines-Preise – SQL](https://azure.microsoft.com/pricing/details/virtual-machines/#Sql).
-
-### Phasen der Bereitstellung
 
 Verwenden Sie zum Bereitstellen dieser Konfiguration das folgende Verfahren:
 
 - Phase 1: Konfigurieren von Azure
 
-	Verwenden Sie das klassische Azure-Portal und Azure PowerShell, um ein Speicherkonto, Clouddienste und ein standortübergreifendes virtuelles Netzwerk zu erstellen. Die ausführlichen Konfigurationsschritte finden Sie unter [Phase 1](virtual-machines-workload-intranet-sharepoint-phase1.md).
+	Verwenden Sie Azure PowerShell, um ein Speicherkonto, Verfügbarkeitsgruppen und ein standortübergreifendes virtuelles Netzwerk zu erstellen. Die ausführlichen Konfigurationsschritte finden Sie unter [Phase 1](virtual-machines-workload-intranet-sharepoint-phase1.md).
 
 - Phase 2: Konfigurieren der Domänencontroller
 
-	Konfigurieren Sie zwei Azure Active Directory-Replikatdomänencontroller und DNS-Einstellungen für das virtuelle Netzwerk. Die ausführlichen Konfigurationsschritte finden Sie unter [Phase 2](virtual-machines-workload-intranet-sharepoint-phase2.md).
+	Konfigurieren Sie zwei Active Directory-Replikatdomänencontroller und DNS-Einstellungen für das virtuelle Netzwerk. Die ausführlichen Konfigurationsschritte finden Sie unter [Phase 2](virtual-machines-workload-intranet-sharepoint-phase2.md).
 
 - Phase 3: Konfigurieren der SQL Server-Infrastruktur
 
@@ -137,20 +98,8 @@ Verwenden Sie zum Bereitstellen dieser Konfiguration das folgende Verfahren:
 
 Nach Abschluss der Konfiguration können Sie diese SharePoint-Farm gemäß den Informationen unter [Microsoft Azure-Architekturen für SharePoint 2013](http://technet.microsoft.com/library/dn635309.aspx) erweitern.
 
-## Zusätzliche Ressourcen
+## Nächster Schritt
 
-[Bereitstellen von SharePoint mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in Azure](virtual-machines-workload-deploy-spsqlao-overview.md)
+- Verschaffen Sie sich einen [Überblick](virtual-machines-workload-intranet-sharepoint-overview.md) über den Produktions-Workload, bevor Sie sich die Konfiguration näher anschauen.
 
-[Einrichten einer SharePoint-Intranetfarm in einer Hybrid Cloud zu Testzwecken](../virtual-network/virtual-networks-setup-sharepoint-hybrid-cloud-testing.md)
-
-[Microsoft Azure-Architekturen für SharePoint 2013](https://technet.microsoft.com/library/dn635309.aspx)
-
-[Infografik zu SharePoint mit SQL Server AlwaysOn](http://go.microsoft.com/fwlink/?LinkId=394788)
-
-[In Azure-Infrastrukturdiensten gehostete SharePoint-Farmen](virtual-machines-sharepoint-infrastructure-services.md)
-
-[Implementierungsrichtlinien für Azure-Infrastrukturdienste](virtual-machines-infrastructure-services-implementation-guidelines.md)
-
-[Azure-Infrastrukturdienste-Workload: Branchenanwendung mit hoher Verfügbarkeit](virtual-machines-workload-high-availability-lob-application.md)
-
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_1223_2015-->

@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="Windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/11/2015"
+	ms.date="12/17/2015"
 	ms.author="josephd"/>
 
 # Bereitstellen von SharePoint mit SQL Server AlwaysOn-Verfügbarkeitsgruppen in Azure
@@ -34,6 +34,44 @@ Hier die Konfiguration mit Platzhalternamen für die Server:
 ![](./media/virtual-machines-workload-intranet-sharepoint-overview/workload-spsqlao_05.png)
 
 Zwei Computer pro Rolle stellen eine hohe Verfügbarkeit sicher. Alle virtuellen Computer befinden sich in der gleichen Region. Jede Gruppe virtueller Computer einer bestimmten Rolle befindet sich in einer eigenen Verfügbarkeitsgruppe.
+
+## Stückliste
+
+Diese Basiskonfiguration erfordert den folgenden Satz von Azure-Diensten und -Komponenten:
+
+- Neun virtuelle Computer
+- Vier zusätzliche Datenträger für die Domänencontroller und SQL-Server
+- Vier Verfügbarkeitsgruppen
+- Ein standortübergreifendes virtuelles Netzwerk
+- Ein Speicherkonto
+- Ein Azure-Abonnement
+
+Nachfolgend sind die virtuellen Computer und deren Standardgrößen für diese Konfiguration aufgeführt.
+
+Element | Beschreibung des virtuellen Computers | Katalogimage | Standardgröße
+--- | --- | --- | ---
+1\. | Erster Domänencontroller | Windows Server 2012 R2 Datacenter | A2
+2\. | Zweiter Domänencontroller | Windows Server 2012 R2 Datacenter | A2
+3\. | Erster Datenbankserver | Microsoft SQL Server 2014 Enterprise – Windows Server 2012 R2 | A5
+4\. | Zweiter Datenbankserver | Microsoft SQL Server 2014 Enterprise – Windows Server 2012 R2 | A5
+5\. | Mehrheitsknoten des Clusters | Windows Server 2012 R2 Datacenter | A1
+6\. | Erster SharePoint-Anwendungsserver | Microsoft SharePoint Server 2013-Testversion – Windows Server 2012 R2 | A4
+7\. | Zweiter SharePoint-Anwendungsserver | Microsoft SharePoint Server 2013-Testversion – Windows Server 2012 R2 | A4
+8\. | Erster SharePoint-Webserver | Microsoft SharePoint Server 2013-Testversion – Windows Server 2012 R2 | A4
+9\. | Zweiter SharePoint-Webserver | Microsoft SharePoint Server 2013-Testversion – Windows Server 2012 R2 | A4
+
+Nutzen Sie zum Berechnen der geschätzten Kosten für diese Konfiguration den [Azure-Preisrechner](https://azure.microsoft.com/pricing/calculator/).
+
+1. Klicken Sie unter **Module** auf **Compute** und dann so oft auf **Virtuelle Computer**, bis Sie eine Liste mit neun virtuellen Computern erstellt haben.
+2. Wählen Sie für jeden virtuellen Computer Folgendes:
+	- Die gewünschte Region
+	- **Windows** für den Typ
+	- **Standard** für die Preisstufe
+	- Die Standardgröße in der vorherigen Tabelle oder die gewünschte Größe für die **Instanzgröße**
+
+> [AZURE.NOTE]Der Azure-Preisrechner bezieht nicht die zusätzlichen Kosten für die SQL Server-Lizenz für die beiden virtuellen Computer ein, auf denen SQL Server 2014 Enterprise ausgeführt wird. Weitere Informationen finden Sie unter [Virtual Machines-Preise – SQL](https://azure.microsoft.com/pricing/details/virtual-machines/#Sql).
+
+## Bereitstellungsphasen
 
 Sie stellen diese Konfiguration in den folgenden Phasen bereit:
 
@@ -63,4 +101,4 @@ Weitere Informationen zu SharePoint mit SQL Server AlwaysOn-Verfügbarkeitsgrupp
 
 - Starten Sie die Konfiguration dieser Workload mit [Phase 1](virtual-machines-workload-intranet-sharepoint-phase1.md).
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_1223_2015-->

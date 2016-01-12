@@ -70,7 +70,7 @@ In die Domäne eingebundene Geräte verwenden dieses Objekt, um während der aut
 
 >[AZURE.NOTE]Ersetzen Sie [*connector account name*] durch das Domänenkonto, das als AD-Connector-Konto verwendet wird.
 
->[AZURE.NOTE]Wenn das Get-Credential-Popup angezeigt wird, muss der Benutzername für die Anmeldeinformationen im Format **user@example.com* angegeben werden.
+>[AZURE.NOTE]Wenn das Get-Credential-Popup angezeigt wird, muss der Benutzername für die Anmeldeinformationen im Format *user@example.com* angegeben werden.
 
 ### Konfigurieren von AD FS-Anspruchsregeln
 Dieser Schritt ermöglicht die sofortige Registrierung eines Computers bei Azure DRS, indem den Computern die Authentifizierung mit Kerberos/NTLM über AD FS erlaubt wird. Ohne diesen Schritt werden Computer nur mit Verzögerung in Azure AD eingebunden (abhängig von den Synchronisationszeiten von Azure AD Connect).
@@ -137,4 +137,4 @@ Sie können eine Active Directory-Gruppenrichtlinie verwenden, um Ihre in die Do
 * [Verbinden von in die Domäne eingebundenen Geräten mit Azure AD für Windows 10-Funktionen](active-directory-azureadjoin-devices-group-policy.md)
 * [Einrichten von Azure AD Join](active-directory-azureadjoin-setup.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!----HONumber=AcomDC_1203_2015-->

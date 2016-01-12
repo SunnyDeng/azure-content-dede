@@ -28,7 +28,7 @@ Dieses Thema bietet einen Überblick über einige Aspekte der Verwendung virtuel
 Wenn Sie mithilfe des klassischen Azure-Portals einen virtuellen Linux-Computer erstellen, werden Sie aufgefordert, einen Benutzernamen, ein Kennwort oder einen öffentlichen SSH-Schlüssel anzugeben. Bei der Auswahl eines Benutzernamens während der Bereitstellung virtueller Linux-Computer gibt es folgende Einschränkungen: bereits im virtuellen Computer vorhandene Namen von Systemkonten (UID <100) sind nicht zulässig, z. B. 'root'.
 
 
- - Weitere Informationen finden Sie unter [Erstellen eines virtuellen Linux-Computers](virtual-machines-linux-tutorial.md)
+ - Siehe [Erstellen eines virtuellen Linux-Computers](virtual-machines-linux-tutorial.md)
  - Siehe [Verwenden von SSH mit Linux in Azure](../linux-use-ssh-key.md)
 
 

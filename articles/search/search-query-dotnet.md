@@ -21,7 +21,6 @@
 > [AZURE.SELECTOR]
 - [Overview](search-query-overview.md)
 - [Fiddler](search-fiddler.md)
-- [Postman](search-chrome-postman.md)
 - [.NET](search-query-dotnet.md)
 - [REST](search-query-rest-api.md)
 
@@ -29,7 +28,7 @@ Dieser Artikel beschreibt, wie Sie eine Abfrage mit dem [Azure Search .NET SDK](
 
 Zu den Voraussetzungen zum Erstellen einer Abfrage gehört das vorherige Einrichten einer Verbindung mit Ihrem Suchdienst, was üblicherweise über einen `SearchServiceClient` erfolgt.
 
-Der folgende Codeausschnitt erstellt eine Methode, die eine Suchzeichenfolgeneingabe an eine „SearchDocuments“-Methode übergibt.
+Der folgende Codeausschnitt erstellt eine Methode, die eine Suchzeichenfolgeneingabe an eine SearchDocuments-Methode übergibt.
 
 	private static void SearchDocuments(SearchIndexClient indexClient, string searchText, string filter = null)
 	{
@@ -48,9 +47,9 @@ Der folgende Codeausschnitt erstellt eine Methode, die eine Suchzeichenfolgenein
 		}
 	}
 	
-Diese Methode erstellt zunächst ein neues „SearchParameters“-Objekt. Damit werden zusätzliche Abfrageoptionen wie Sortierung, Filter, Paging und Facettierung festgelegt. In diesem Beispiel legen wir nur die „Filter“-Eigenschaft fest.
+Diese Methode erstellt zunächst ein neues SearchParameters-Objekt. Damit werden zusätzliche Abfrageoptionen wie Sortierung, Filter, Paging und Facettierung festgelegt. In diesem Beispiel legen wir nur die Eigenschaft „Filter“ fest.
 
-Im nächsten Schritt wird die Suchabfrage bereits ausgeführt. Dies erfolgt mithilfe der „Documents.Search“-Methode. In diesem Fall übergeben wir den zu verwendenden Suchtext als Zeichenfolge sowie die zuvor erstellten Suchparameter. Außerdem geben wir „Hotel“ als Typparameter für „Documents.Search“ an, wodurch das SDK angewiesen wird, die Dokumente im Suchergebnis in Objekte des Typs „Hotel“ zu deserialisieren.
+Im nächsten Schritt wird die Suchabfrage bereits ausgeführt. Dies erfolgt mithilfe der Documents.Search-Methode. In diesem Fall übergeben wir den zu verwendenden Suchtext als Zeichenfolge sowie die zuvor erstellten Suchparameter. Außerdem geben wir „Hotel“ als Typparameter für „Documents.Search“ an, wodurch das SDK angewiesen wird, die Dokumente in den Suchergebnissen in Objekte des Typs „Hotel“ zu deserialisieren.
 
 Schließlich geht diese Methode durch alle Übereinstimmungen im Suchergebnis, wobei sie jedes Dokument auf der Konsole ausgibt.
 
@@ -59,8 +58,8 @@ Wir wollen uns nun näher ansehen, wie diese Methode aufgerufen wird:
 	SearchDocuments(indexClient, searchText: "fancy wifi");
 	SearchDocuments(indexClient, searchText: "*", filter: "category eq 'Luxury'");
 
-Im ersten Aufruf werden alle Dokumente mit den Abfrageausdrücken „fancy“ und „wifi“ gesucht. Im zweiten Aufruf ist der Suchtext auf „*“ gesetzt, d. h., es wird nach allem gesucht. Weitere Informationen zur Syntax von Such- bzw. Abfrageausdrücken finden Sie unter [Syntax für einfache Abfragen in Azure Search](https://msdn.microsoft.com/library/azure/dn798920.aspx).
+Im ersten Aufruf werden alle Dokumente mit den Abfrageausdrücken „fancy“ und „wifi“ gesucht. Im zweiten Aufruf ist der Suchtext auf „*“ gesetzt, d. h., es wird nach allem gesucht. Weitere Informationen zur Syntax von Suchabfrageausdrücken finden Sie unter [Syntax für einfache Abfragen in Azure Search](https://msdn.microsoft.com/library/azure/dn798920.aspx).
 
 Der zweite Aufruf verwendet den OData-Ausdruck „$filter“ mit „Luxury“ als Kategorie. Diese Suche gibt dadurch nur Dokumente zurück, deren Kategoriefeld genau der Zeichenfolge „Luxury“ entspricht. Weitere Informationen zur OData-Syntax finden Sie auf der Seite [OData-Ausdruckssyntax für Azure Search](https://msdn.microsoft.com/library/azure/dn798921.aspx).
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_1223_2015-->

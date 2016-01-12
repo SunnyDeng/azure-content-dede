@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/19/2015" 
+	ms.date="12/18/2015" 
 	ms.author="tomfitz"/>
 
 # Verschieben von Ressourcen in eine neue Ressourcengruppe oder ein neues Abonnement
@@ -28,8 +28,8 @@ Beim Verschieben einer Ressource sollten Sie einige wichtige Aspekte berücksich
 
 1. Sie können nicht den Speicherort der Ressource ändern. Wenn Sie ein Ressource verschieben, wird sie nur in eine neue Ressourcengruppe verschoben. Die neue Ressourcengruppe hat möglicherweise einen anderen Speicherort, das heißt jedoch nicht, dass der Speicherort der Ressource geändert wird.
 2. Die Zielressourcengruppe sollte nur Ressourcen enthalten, die den gleichen Anwendungslebenszyklus wie die verschobenen Ressourcen haben.
-3. Wenn Sie Azure PowerShell verwenden, stellen Sie sicher, dass Sie die neueste Version verwenden. Der **Move-AzureRmResource**-Befehl wird regelmäßig aktualisiert. Führen Sie zum Aktualisieren Ihrer Version den Microsoft-Webplattform-Installer aus, und überprüfen Sie, ob eine neue Version verfügbar ist. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md).
-4. Es kann einige Zeit dauern, bis der Verschiebevorgang abgeschlossen ist. Die PowerShell-Eingabeaufforderung wartet so lange, bis der Vorgang abgeschlossen ist.
+3. Wenn Sie Azure PowerShell oder die Azure-Befehlszeilenschnittstelle verwenden, stellen Sie sicher, dass Sie die neueste Version verwenden. Führen Sie zum Aktualisieren Ihrer Version den Microsoft-Webplattform-Installer aus, und überprüfen Sie, ob eine neue Version verfügbar ist. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md) und [Installieren der Azure-Befehlszeilenschnittstelle](xplat-cli-install.md).
+4. Es kann einige Zeit dauern, bis der Verschiebevorgang abgeschlossen ist. Die Eingabeaufforderung wartet so lange, bis der Vorgang abgeschlossen ist.
 5. Beim Verschieben von Ressourcen werden die Quellgruppe und die Zielgruppe für die Dauer des Vorgangs gesperrt. Schreib- und Löschvorgänge in den Gruppen werden bis zum Abschluss der Verschiebung blockiert.
 
 ## Unterstützte Dienste
@@ -89,6 +89,16 @@ Im zweiten Beispiel wird veranschaulicht, wie mehrere Ressourcen in eine neue Re
 
 Um Ressourcen in ein neues Abonnement zu verschieben, schließen Sie einen Wert für den **DestinationSubscriptionId**-Parameter ein.
 
+## Verwenden der Azure-Befehlszeilenschnittstelle zum Verschieben von Ressourcen
+
+Verwenden Sie zum Verschieben vorhandener Ressourcen in eine andere Ressourcengruppe oder ein anderes Abonnement den Befehl **azure resource move**. Das folgende Beispiel zeigt, wie Sie ein Redis-Cache in eine neue Ressourcengruppe verschieben. Geben Sie im **-i**-Parameter eine durch Kommas getrennte Liste der zu verschiebenden Ressourcen-IDs an.
+
+    azure resource move -i "/subscriptions/{guid}/resourceGroups/OldRG/providers/Microsoft.Cache/Redis/examplecache" -d "NewRG"
+    info:    Executing command resource move
+    Move selected resources in OldRG to NewRG? [y/n] y
+    + Moving selected resources to NewRG
+    info:    resource move command OK
+
 ## Verschieben von Ressourcen mithilfe der REST-API
 
 Führen Sie zum Verschieben vorhandener Ressourcen in eine andere Ressourcengruppe oder ein anderes Abonnement Folgendes aus:
@@ -103,4 +113,4 @@ Geben Sie im Anforderungstext die Zielgruppe und die zu verschiebenden Ressource
 - [Verwenden des Azure-Portals zum Verwalten von Ressourcen](azure-portal/resource-group-portal.md)
 - [Verwenden von Tags zum Organisieren von Azure-Ressourcen](./resource-group-using-tags.md)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_1223_2015-->

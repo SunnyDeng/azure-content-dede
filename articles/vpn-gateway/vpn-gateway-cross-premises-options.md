@@ -63,9 +63,7 @@ Mit einem Standort-zu-Standort-VPN können Sie eine sichere Verbindung zwischen 
 - Das VPN-Gerät, das Sie verwenden, muss mit dem Gatewaytyp kompatibel sein, der für Ihre Lösung erforderlich ist. Siehe [Zu VPN-Gateways](vpn-gateway-about-vpngateways.md).
 - Die Gateway-SKU wirkt sich auch auf den aggregierten Durchsatz aus. Weitere Informationen finden Sie unter [Gateway-SKUs](vpn-gateway-about-vpngateways.md#gateway-skus). 
 
-Informationen zum Konfigurieren einer Standort-zu-Standort-VPN-Gatewayverbindung mithilfe des klassischen Azure-Portals und des klassischen Bereitstellungsmodells finden Sie unter [Konfigurieren eines virtuellen Netzwerks mit einer Standort-zu-Standort-VPN-Verbindung](vpn-gateway-site-to-site-create.md).
-
-Informationen zum Konfigurieren einer Standort-zu-Standort-VPN mithilfe des Ressourcen-Manager-Bereitstellungsmodells finden Sie unter [Erstellen eines virtuellen Netzwerks mit einer Standort-zu-Standort-VPN-Verbindung](vpn-gateway-create-site-to-site-rm-powershell.md).
+Informationen zum Konfigurieren einer Standort-zu-Standort-VPN-Gatewayverbindung mithilfe des klassischen Azure-Portals und des klassischen Bereitstellungsmodells finden Sie unter [Konfigurieren eines virtuellen Netzwerks mit einer Standort-zu-Standort-VPN-Verbindung](vpn-gateway-site-to-site-create.md). Informationen zum Konfigurieren einer Standort-zu-Standort-VPN mithilfe des Ressourcen-Manager-Bereitstellungsmodells finden Sie unter [Erstellen eines virtuellen Netzwerks mit einer Standort-zu-Standort-VPN-Verbindung](vpn-gateway-create-site-to-site-rm-powershell.md).
 
 
 ## Punkt-zu-Standort-Verbindungen
