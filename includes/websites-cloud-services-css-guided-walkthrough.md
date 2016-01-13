@@ -1,4 +1,6 @@
 
-> [AZURE.NOTE]Schneller ans Ziel kommen – mit der NEUEN [Komplettanleitung für Azure](http://support.microsoft.com/kb/2990804). Mit dieser Anleitung wird das Zuordnen eines benutzerdefinierten Domänennamens zu Azure Cloud Services und Azure App Service-Web-Apps sowie das Absichern der Kommunikation mittels SSL zum Kinderspiel.
+<div class="note"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewbox="2 2 13 13"><path fill="#0072C6" d="M8.5,14C5.467,14,3,11.532,3,8.5C3,5.467,5.467,3,8.5,3C11.532,3,14,5.467,14,8.5C14,11.532,11.532,14,8.5,14z"></path><path fill="#FFFFFF" d="M8.5,3.5c2.757,0,5,2.243,5,5s-2.243,5-5,5s-5-2.243-5-5S5.743,3.5,8.5,3.5 M8.5,2.5c-3.314,0-6,2.686-6,6s2.686,6,6,6s6-2.686,6-6S11.814,2.5,8.5,2.5L8.5,2.5z"></path><circle fill="#FFFFFF" cx="8.5" cy="5.951" r="0.951"></circle><polygon fill="#FFFFFF" points="8.357,12 8.642,12 9.353,12 9.353,7.836 8.642,7.836 8.357,7.836 7.656,7.836 7.647,12 "></polygon></svg></span><h5><a id="note" name="note" href="#note"></a>HINWEIS</h5>
+<p>Schneller ans Ziel kommen – mit der NEUEN <a href="http://support.microsoft.com/kb/2990804">Komplettanleitung für Azure</a> Mit dieser Anleitung wird das Zuordnen eines benutzerdefinierten Domänennamens zu Azure Cloud Services und Azure App Service-Web-Apps sowie das Absichern der Kommunikation mittels SSL zum Kinderspiel.</p>
+</div>
 
 <!---HONumber=Oct15_HO3-->
