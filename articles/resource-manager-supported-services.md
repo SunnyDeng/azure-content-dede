@@ -37,7 +37,6 @@ Die folgenden Tabellen zeigen, welche Dienste Bereitstellung und Verwaltung übe
 | Service Fabric (Vorschau) | Ja | | [Service Fabric REST](https://msdn.microsoft.com/library/azure/dn707692.aspx) | | [Microsoft.ServiceFabric](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.ServiceFabric%22&type=Code) |
 | Virtual Machines (klassisch) | Eingeschränkt | Teilweise (siehe unten) | - | - | 
 | Remote App | Nein | - | - | - |
-| Service Fabric | Nein | Nein | -           | -        | -      |
 
 "Virtuelle Computer (klassisch)" bezieht sich auf Ressourcen, die über das klassische Bereitstellungsmodell statt über das Ressourcen-Manager-Bereitstellungsmodell bereitgestellt wurden. Im Allgemeinen unterstützen diese Ressourcen keine Ressourcen-Manager-Vorgänge, es wurden jedoch einige Vorgänge aktiviert. Weitere Informationen zu diesen Bereitstellungsmodellen finden Sie unter [Grundlegendes zur Bereitstellung über den Ressourcen-Manager im Vergleich zur klassischen Bereitstellung](resource-manager-deployment-model.md).
 
@@ -115,7 +114,9 @@ Bei der Arbeit mit Web-Apps können Sie nicht nur einen App Services-Plan versch
 
 | Dienst | Ressourcen-Manager aktiviert | Ressourcen verschieben | REST-API | Schema | Schnellstartvorlagen |
 | ------- | ------- | -------------- | -------- | ------ | ------ |
-| Azure Active Directory | Nein | - | - | - | | Azure Actice Directory B2C | Nein | - | - | - | | Multi-Factor Authentication | Nein | - | - | - |
+| Azure Active Directory | Nein | - | - | - |
+| Azure Actice Directory B2C | Nein | - | - | - |
+| Multi-Factor Authentication | Nein | - | - | - |
 
 ## Entwicklerdienste 
 
@@ -243,4 +244,4 @@ Sie können die Datei öffnen und nach dem Element **apiVersions** suchen.
 - Weitere Informationen zum Erstellen von Ressourcen-Manager-Vorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md).
 - Informationen zum Bereitstellen von Vorlagen finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](resource-group-template-deploy.md).
 
-<!---HONumber=AcomDC_1223_2015-->
+<!----HONumber=AcomDC_1223_2015-->

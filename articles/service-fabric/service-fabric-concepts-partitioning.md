@@ -220,7 +220,7 @@ Beachten Sie auch, dass sich die veröffentlichte URL leicht vom Überwachungs-U
       }
     ```
 
-    `ProcessInternalRequest` reads the values of the query string parameter used to call the partition and calls `AddUserAsync` to add the lastname to the reliable dictionary `m_name`.    
+    `ProcessInternalRequest` liest die Werte des Abfragezeichenfolgenparameters, der zum Aufrufen der Partition verwendet wird, und ruft `AddUserAsync` auf, um den Nachnamen dem zuverlässigen Wörterbuch `m_name` hinzuzufügen.
 
 10. Wir fügen dem Projekt nun einen zustandslosen Dienst hinzu, um zu verdeutlichen, wie Sie eine bestimmte Partition aufrufen können. Dieser Dienst dient als einfache Webschnittstelle, die den Nachnamen als Abfragezeichenfolgenparameter akzeptiert, den Partitionsschlüssel bestimmt und diesen zur Verarbeitung an den Alphabet.Processing-Dienst sendet.
 11. Wählen Sie im Dialogfeld **Dienst erstellen** für den Dienst **Zustandslos** aus, und vergeben Sie wie unten gezeigt den Namen „Alphabet.WebApi“. ![Screenshot des zustandslosen Diensts](./media/service-fabric-concepts-partitioning/alphabetstatelessnew.png)
@@ -290,10 +290,13 @@ Beachten Sie auch, dass sich die veröffentlichte URL leicht vom Überwachungs-U
       }
       ```
 
-    Let's walk through it step by step. The code reads the first letter of the query string parameter `lastname` into a char. Then, it determines the partition key for this letter by subtracting the hexadecimal value of `A` from the hexadecimal value of the last names' first letter.
+    Wir führen Sie schrittweise durch dieses Verfahren. Der Code liest den ersten Buchstaben des Zeichenabfolgeparameters `lastname` in ein char-Objekt ein. Anschließend bestimmt er den Partitionsschlüssel für diesen Buchstaben durch Abziehen des Hexwerts von `A` vom Hexwert des Anfangsbuchstabens des Nachnamens.
 
     ```CSharp
-    string lastname = context.Request.QueryString["lastname"]; char firstLetterOfLastName = lastname.First(); int partitionKey = Char.ToUpper(firstLetterOfLastName) - 'A'; ```
+    string lastname = context.Request.QueryString["lastname"];
+    char firstLetterOfLastName = lastname.First();
+    int partitionKey = Char.ToUpper(firstLetterOfLastName) - 'A';
+    ```
 
     Bedenken Sie, dass wir für dieses Beispiel 26 Partitionen mit einem Partitionsschlüssel pro Partition verwenden. Als Nächstes rufen wir die Dienstpartition `partition` für diesen Schlüssel ab, indem wir die `ResolveAsync`-Methode für das `servicePartitionResolver`-Objekt verwenden. `servicePartitionResolver` ist wie folgt definiert:
 
@@ -330,7 +333,7 @@ Beachten Sie auch, dass sich die veröffentlichte URL leicht vom Überwachungs-U
   </Parameters>
   ```
 
-16. Nach Abschluss der Bereitstellung können Sie den Dienst und alle Partitionen im Service Fabric-Explorer überprüfen. ![Screenshot des Service Fabric-Explorers](./media/service-fabric-concepts-partitioning/alphabetservicerunning.png)
+16. Nach Abschluss der Bereitstellung können Sie den Dienst und alle Partitionen im Service Fabric-Explorer überprüfen.![Screenshot des Service Fabric-Explorers](./media/service-fabric-concepts-partitioning/alphabetservicerunning.png)
 17. In einem Browser können Sie die Partitionierungslogik testen, indem Sie `http://localhost:8090/?lastname=somename` eingeben. Sie sehen, dass alle Nachnamen mit dem gleichen Anfangsbuchstaben in derselben Partition gespeichert sind. ![Screenshot des Browsers](./media/service-fabric-concepts-partitioning/alphabetinbrowser.png)
 
 Den gesamten Quellcode des Beispiels finden Sie unter [GitHub](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started/tree/master/Services/AlphabetPartitions).
@@ -347,4 +350,4 @@ Informationen zu den Service Fabric-Konzepten finden Sie hier:
 
 [wikipartition]: https://en.wikipedia.org/wiki/Partition_(database)
 
-<!---HONumber=AcomDC_1223_2015-->
+<!----HONumber=AcomDC_1223_2015-->
