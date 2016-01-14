@@ -46,7 +46,9 @@ In den folgenden Tabellen sind die Werte beschrieben, die Sie im Schema festlege
 | ---- | ---- | -------- | ---------------- | ----------- |
 | Typ | enum | Ja | Für Ressourcen: <br />**{Namespace}/{Typ}/providers/locks**<br /><br />Für Ressourcengruppen:<br />**Microsoft.Authorization/locks** | Der zu erstellende Ressourcentyp. |
 | apiVersion | enum | Ja | **2015-01-01** | Die API-Version zum Erstellen der Ressource. |  
-| name | string | Ja | Für Ressourcen:<br />**{Ressource}/Microsoft.Authorization/{Sperrname}**<br /><br />Für Ressourcengruppen:<br />**{Sperrname}****<br /><br />Bis zu 64 Zeichen<br />Darf nicht die Zeichen „<, >, %, &, ?“ und keine Steuerzeichen enthalten. | Ein Wert, der sowohl die zu sperrende Ressource als auch einen Namen für die Sperre angibt. | | dependsOn | Array | Nein | Eine durch Trennzeichen getrennte Liste mit Ressourcennamen oder eindeutigen Ressourcenbezeichnern. | Die Sammlung von Ressourcen, von denen diese Sperre abhängt. Wenn die gesperrte Ressource in derselben Vorlage bereitgestellt wird, fügen Sie den Namen dieser Ressource in diesem Element ein, um sicherzustellen, dass die Ressource zuerst bereitgestellt wird. | | properties | Objekt | Ja | (siehe unten) | Ein Objekt, das den Typ der Sperre angibt, und Hinweise zu der Sperre. | 
+| name | string | Ja | Für Ressourcen:<br />**{Ressource}/Microsoft.Authorization/{Sperrname}**<br /><br />Für Ressourcengruppen:<br />**{Sperrname}****<br /><br />Bis zu 64 Zeichen<br />Darf nicht die Zeichen „<, >, %, &, ?“ und keine Steuerzeichen enthalten. | Ein Wert, der sowohl die zu sperrende Ressource als auch einen Namen für die Sperre angibt. |
+| dependsOn | Array | Nein | Eine durch Trennzeichen getrennte Liste mit Ressourcennamen oder eindeutigen Ressourcenbezeichnern. | Die Sammlung von Ressourcen, von denen diese Sperre abhängt. Wenn die gesperrte Ressource in derselben Vorlage bereitgestellt wird, fügen Sie den Namen dieser Ressource in diesem Element ein, um sicherzustellen, dass die Ressource zuerst bereitgestellt wird. |
+| properties | Objekt | Ja | (siehe unten) | Ein Objekt, das den Typ der Sperre angibt, und Hinweise zu der Sperre. | 
 
 ### properties-Objekt
 
@@ -133,4 +135,4 @@ Im nächsten Beispiel wird eine Schreibschutzsperre auf die Ressourcengruppe ang
 - Informationen zur Vorlagenstruktur finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md).
 - Weitere Informationen zu Sperren finden Sie unter [Sperren von Ressourcen mit dem Azure-Ressourcen-Manager](resource-group-lock-resources.md).
 
-<!---HONumber=AcomDC_1223_2015-->
+<!----HONumber=AcomDC_1223_2015-->
