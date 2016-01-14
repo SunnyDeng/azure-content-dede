@@ -23,7 +23,7 @@ Sie können Azure-Ressourcen IP-Adressen zuweisen, um die Kommunikation mit ande
 
 Private IP-Adressen werden für die Kommunikation innerhalb eines Azure Virtual Networks (VNet) und innerhalb Ihres lokalen Netzwerks verwendet, wenn Sie Ihr Netzwerk mithilfe eines VPN-Gateways oder einer ExpressRoute-Verbindung auf Azure ausdehnen.
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](virtual-network-ip-addresses-overview-classic.md).
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/learn-about-deployment-models-rm-include.md)] [Klassisches Bereitstellungsmodell](virtual-network-ip-addresses-overview-classic.md).
 
 ## Öffentliche IP-Adressen
 Öffentliche IP-Adressen ermöglichen Azure-Ressourcen die Kommunikation mit dem Internet und öffentlichen Azure-Diensten wie [Azure Redis Cache](https://azure.microsoft.com/services/cache), [Azure Event Hubs](https://azure.microsoft.com/services/event-hubs), [SQL-Datenbanken](sql-database-technical-overview.md) und [Azure Storage](storage-introduction.md).
@@ -125,7 +125,16 @@ Die folgende Tabelle gibt Aufschluss über die einzelnen Ressourcentypen, die m�
 ## Vergleich zwischen Ressourcen-Manager-Bereitstellungen und klassischen Bereitstellungen
 Im Folgenden wird der Umgang mit IP-Adressen im Ressourcen-Manager-Bereitstellungsmodell und im klassischen Bereitstellungsmodell miteinander verglichen.
 
-||Ressource|Klassisch|Ressourcen-Manager| |---|---|---|---| |**Öffentliche IP-Adresse**|VM|Als öffentliche IP-Adressen auf Instanzebene (ILPIP) bezeichnet (nur dynamisch)|Als öffentliche IP-Adresse bezeichnet (dynamisch oder statisch)| |||Einer IaaS-VM oder einer PaaS-Rolleninstanz zugewiesen|Der NIC einer VM zugeordnet| ||Load Balancer mit Internetzugriff |Als VIP (dynamisch) oder reservierte IP (statisch) bezeichnet|Als öffentliche IP-Adresse bezeichnet (dynamisch oder statisch)| |||Einem Clouddienst zugewiesen|Der Front-End-Konfiguration eines Load Balancers zugeordnet| |||| |**Private IP-Adresse**|VM|Als DIP bezeichnet|Als private IP-Adresse bezeichnet| |||Einer IaaS-VM oder einer PaaS-Rolleninstanz zugewiesen|Der NIC einer VM zugewiesen| ||Interner Load Balancer (ILB)|Dem ILB zugewiesen (dynamisch oder statisch)|Der Front-End-Konfiguration des ILB zugewiesen (dynamisch oder statisch)|
+||Ressource|Klassisch|Ressourcen-Manager|
+|---|---|---|---|
+|**Öffentliche IP-Adresse**|VM|Als öffentliche IP-Adressen auf Instanzebene (ILPIP) bezeichnet (nur dynamisch)|Als öffentliche IP-Adresse bezeichnet (dynamisch oder statisch)|
+|||Einer IaaS-VM oder einer PaaS-Rolleninstanz zugewiesen|Der NIC einer VM zugeordnet|
+||Load Balancer mit Internetzugriff |Als VIP (dynamisch) oder reservierte IP (statisch) bezeichnet|Als öffentliche IP-Adresse bezeichnet (dynamisch oder statisch)|
+|||Einem Clouddienst zugewiesen|Der Front-End-Konfiguration eines Load Balancers zugeordnet|
+||||
+|**Private IP-Adresse**|VM|Als DIP bezeichnet|Als private IP-Adresse bezeichnet|
+|||Einer IaaS-VM oder einer PaaS-Rolleninstanz zugewiesen|Der NIC einer VM zugewiesen|
+||Interner Load Balancer (ILB)|Dem ILB zugewiesen (dynamisch oder statisch)|Der Front-End-Konfiguration des ILB zugewiesen (dynamisch oder statisch)|
 
 ## Nächste Schritte
 - [Bereitstellen einer VM mit einer statischen öffentlichen IP-Adresse](virtual-network-deploy-static-pip-arm-template.md)
@@ -137,3 +146,4 @@ Im Folgenden wird der Umgang mit IP-Adressen im Ressourcen-Manager-Bereitstellun
 - [Erstellen eines Back-End-Pools mit statischen privaten IP-Adressen für ein Anwendungsgateway mithilfe von PowerShell](application-gateway-create-gateway-arm.md#create-an-application-gateway-configuration-object)
 
 <!---HONumber=AcomDC_1223_2015-->
+

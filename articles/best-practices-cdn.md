@@ -56,10 +56,20 @@ Das CDN wird häufig für Folgendes verwendet:
 Die folgende Liste enthält Beispiele für die mittlere Zeit, die an verschiedenen geografischen Standorten bis zum ersten Byte benötigt wird. Die Zielwebrolle wird in der Azure-Region „USA, Westen“ bereitgestellt. Es gibt eine starke Wechselbeziehung zwischen dem größeren Boost durch das CDN und der Entfernung zu einem CDN-Knoten. Eine vollständige Liste aller Azure CDN-Knotenstandorte finden Sie unter [POP-Standorte von Azure Content Delivery Network (CDN)](cdn/cdn-pop-locations.md/).
 
 
-|| Zeit (ms) bis zum ersten Byte (Ursprung) | Zeit (ms) bis zum ersten Byte (CDN) |% Beschleunigung durch CDN| |-------------|------------------------|--------------------|------------------| |*San Jose, CA| 47,5 | 46,5 | 2 % | |**Dulles, VA| 109 | 40,5 | 169 % | |Buenos Aires, AR| 210 | 151 | 39 %| |*London, UK| 195 | 44 | 343 %| |Shanghai, CN| 242 | 206 | 17 % | |*Singapur | 214 | 74 | 189 % | |*Tokio, JP | 163 | 48 | 204 % | |Seoul, KR| 190 | 190 | 0 % |
+|| Zeit (ms) bis zum ersten Byte (Ursprung) | Zeit (ms) bis zum ersten Byte (CDN) |% Beschleunigung durch CDN|
+|-------------|------------------------|--------------------|------------------|
+|*San Jose, CA| 47,5 | 46,5 | 2 % |
+|**Dulles, VA| 109 | 40,5 | 169 % |
+|Buenos Aires, AR| 210 | 151 | 39 %|
+|*London, UK| 195 | 44 | 343 %|
+|Shanghai, CN| 242 | 206 | 17 % |
+|*Singapur | 214 | 74 | 189 % |
+|*Tokio, JP | 163 | 48 | 204 % |
+|Seoul, KR| 190 | 190 | 0 % |
 
 
-* Hat einen Azure CDN-Knoten in derselben Stadt. ** Hat einen Azure CDN-Knoten in einer Nachbarstadt.
+\* Hat einen Azure CDN-Knoten in derselben Stadt.  
+\*\* Hat einen Azure CDN-Knoten in einer Nachbarstadt.  
 
 ## Herausforderungen  
 
@@ -196,7 +206,13 @@ Nehmen Sie CDN in Ihre Anwendungsüberwachungsstrategie auf, um Ausfälle oder l
 
 Aktivieren Sie die Protokollierung für das CDN, und überwachen Sie dieses Protokoll als Teil Ihrer täglichen Aufgaben.
 
-Erwägen Sie, den CDN-Datenverkehr im Hinblick auf Verwendungsmuster zu analysieren. Das Azure-Portal enthält Tools, mit denen Sie Folgendes überwachen können: + Bandbreite + Übertragene Daten + Treffer (Statuscodes) + Cachestatus + Cachetrefferquote + Verhältnis von IPV4- zu IPV6-Anforderungen.
+Erwägen Sie, den CDN-Datenverkehr im Hinblick auf Verwendungsmuster zu analysieren. Das Azure-Portal enthält Tools, mit denen Sie Folgendes überwachen können:
++ Bandbreite
++ Übertragene Daten
++ Treffer (Statuscodes)
++ Cachestatus
++ Cachetrefferquote
++ Verhältnis von IPV4- zu IPV6-Anforderungen.
 
 Weitere Informationen finden Sie unter [Analysieren von Azure CDN-Verwendungsmustern](cdn/cdn-analyze-usage-patterns.md/).
 
