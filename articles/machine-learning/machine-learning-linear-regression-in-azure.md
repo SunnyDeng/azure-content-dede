@@ -8,7 +8,6 @@
 	manager="paulettm" 
 	editor="cgronlun"  />
 
-
 <tags 
 	ms.service="machine-learning" 
 	ms.workload="data-services" 
@@ -18,14 +17,11 @@
 	ms.date="12/11/2015" 
 	ms.author="kbaroni;garye" />
 
-
 # Verwenden der linearen Regression in Azure Machine Learning
 
 > *Kate Baroni* und *Ben Boatman* sind Enterprise Solution Architects im Microsoft Data Insights Center of Excellence. In diesem Artikel beschreiben die beiden ihre Erfahrungen beim Migrieren einer vorhandenen Regressionsanalysesuite zu einer cloudbasierten Lösung mit Azure Machine Learning.
 
-
 [AZURE.INCLUDE [machine-learning-kostenlose-Testversion](../../includes/machine-learning-free-trial.md)]
-
 
 ## Zielsetzung
 
@@ -163,4 +159,4 @@ Im Folgenden finden Sie einige Ressourcen für Ihre Arbeit mit Regression:
 [split]: https://msdn.microsoft.com/library/azure/70530644-c97a-4ab6-85f7-88bf30a8be5f/
  
 
-<!-----HONumber=AcomDC_1210_2015-->
+<!------HONumber=AcomDC_1210_2015-->
