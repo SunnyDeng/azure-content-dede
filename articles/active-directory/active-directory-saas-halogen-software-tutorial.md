@@ -45,7 +45,8 @@ Um die Schritte in diesem Tutorial zu testen, sollten Sie folgende Empfehlungen 
 
  
 ## Beschreibung des Szenarios
-Ziel dieses Tutorials ist es, das einmalige Anmelden von Azure AD in einer Testumgebung zu testen. <br> Das in diesem Tutorial beschriebene Szenario besteht aus zwei großen Bausteinen:
+Ziel dieses Tutorials ist es, das einmalige Anmelden von Azure AD in einer Testumgebung zu testen. <br>
+Das in diesem Tutorial beschriebene Szenario besteht aus zwei großen Bausteinen:
 
 1. Hinzufügen von Halogen Software aus dem Katalog 
 2. Konfigurieren und Testen der einmaligen Anmeldung von Azure AD
@@ -56,14 +57,19 @@ Zum Konfigurieren der Integration von Halogen Software in Azure AD müssen Sie H
 
 **Um Halogen Software aus dem Katalog hinzuzufügen, führen Sie die folgenden Schritte aus:**
 
-1. Klicken Sie im linken Navigationsbereich des **Azure-Verwaltungsportals** auf **Active Directory**. <br><br> ![Active Directory][1]
+1. Klicken Sie im linken Navigationsbereich des **Azure-Verwaltungsportals** auf **Active Directory**. <br><br>
+![Active Directory][1]
 
 2. Wählen Sie in der Liste **Verzeichnis** das Verzeichnis aus, für das Sie die Verzeichnisintegration aktivieren möchten.
 
-3. Klicken Sie zum Öffnen der Anwendungsansicht in der oberen Menüleiste der Verzeichnisansicht auf **Anwendungen**.<br><br> ![Anwendungen][2]
-4. Klicken Sie unten auf der Seite auf **Hinzufügen**.<br><br> ![Anwendungen][3]
-5. Klicken Sie im Dialogfeld **Was möchten Sie tun?** auf **Anwendung aus dem Katalog hinzufügen**.<br><br> ![Anwendungen][4]
-6. Geben Sie in das Suchfeld den Begriff **Halogen Software** ein.<br> ![Anwendungen][5]
+3. Klicken Sie zum Öffnen der Anwendungsansicht in der oberen Menüleiste der Verzeichnisansicht auf **Anwendungen**.<br><br>
+![Anwendungen][2]
+4. Klicken Sie unten auf der Seite auf **Hinzufügen**.<br><br>
+![Anwendungen][3]
+5. Klicken Sie im Dialogfeld **Was möchten Sie tun?** auf **Anwendung aus dem Katalog hinzufügen**.<br><br>
+![Anwendungen][4]
+6. Geben Sie in das Suchfeld den Begriff **Halogen Software** ein.<br>
+![Anwendungen][5]
 7. Wählen Sie im Ergebnisbereich **Halogen Software**, und klicken Sie dann auf **Fertigstellen**, um die Anwendung hinzuzufügen.<br>
 
 
@@ -71,7 +77,8 @@ Zum Konfigurieren der Integration von Halogen Software in Azure AD müssen Sie H
 ##  Konfigurieren und Testen der einmaligen Anmeldung von Azure AD
 In diesem Abschnitt soll veranschaulicht werden, wie basierend auf einem Testbenutzer namens "Britta Simon" das einmalige Anmelden von Azure AD in Halogen Software konfiguriert und getestet werden kann.
 
-Damit einmaliges Anmelden funktioniert, muss Azure AD wissen, wer der entsprechende Gegenbenutzer in Halogen Software zu einem Benutzer in Azure AD ist. Anders ausgedrückt muss zwischen einem Azure AD-Benutzer und dem entsprechenden Benutzer in Halogen Software eine Linkbeziehung eingerichtet werden.<br> Diese Linkbeziehung wird hergestellt, indem Sie den Wert des **Benutzernames** in Azure AD als Wert zum **Benutzernamen** in Halogen Software zuweisen.
+Damit einmaliges Anmelden funktioniert, muss Azure AD wissen, wer der entsprechende Gegenbenutzer in Halogen Software zu einem Benutzer in Azure AD ist. Anders ausgedrückt muss zwischen einem Azure AD-Benutzer und dem entsprechenden Benutzer in Halogen Software eine Linkbeziehung eingerichtet werden.<br>
+Diese Linkbeziehung wird hergestellt, indem Sie den Wert des **Benutzernames** in Azure AD als Wert zum **Benutzernamen** in Halogen Software zuweisen.
  
 Zum Konfigurieren und Testen des einmaligen Anmeldens in Azure AD bei Halogen Software müssen Sie die folgenden Bausteinen ausführen:
 
@@ -87,13 +94,15 @@ Das Ziel dieses Abschnitts ist es, das einmalige Anmelden von Azure AD im Azure 
 
 **Führen Sie zum Konfigurieren des einmaligen Anmeldens von Azure AD in Halogen Software die folgenden Schritte aus:**
 
-1. Klicken Sie im Azure AD-Portal auf der Anwendungsintegrationsseite **Halogen Software** auf **Einmaliges Anmelden konfigurieren**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu öffnen.<br><br> ![Einmaliges Anmelden konfigurieren][8]
+1. Klicken Sie im Azure AD-Portal auf der Anwendungsintegrationsseite **Halogen Software** auf **Einmaliges Anmelden konfigurieren**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu öffnen.<br><br>
+![Einmaliges Anmelden konfigurieren][8]
 
-2. Wählen Sie auf der Seite **Wie sollen sich Benutzer bei Halogen Software anmelden** **Azure AD einmaliges Anmelden** aus, und klicken Sie dann auf **Weiter**.<br><br> ![Azure AD – einmaliges Anmelden][9]
+2. Wählen Sie auf der Seite **Wie sollen sich Benutzer bei Halogen Software anmelden** **Azure AD einmaliges Anmelden** aus, und klicken Sie dann auf **Weiter**.<br><br>
+![Azure AD – einmaliges Anmelden][9]
 
 3. Führen Sie auf der Dialogseite **App-Einstellungen konfigurieren** die folgenden Schritte aus: <br><br>![Konfigurieren von App-Einstellungen][10]
  
-     3\.1 Geben Sie im Textfeld **Anmelde-URL** die URL ein, die von Ihren Benutzern nach folgendem Muster zur Anmeldung bei der Halogen Software verwendet wird: **https://global.hgncloud.com/fabrikam/welcome.jsp*
+     3\.1 Geben Sie im Textfeld **Anmelde-URL** die URL ein, die von Ihren Benutzern nach folgendem Muster zur Anmeldung bei der Halogen Software verwendet wird: *https://global.hgncloud.com/fabrikam/welcome.jsp*
 
      3\.2. Klicken Sie auf **Weiter**.
  
@@ -110,7 +119,9 @@ Das Ziel dieses Abschnitts ist es, das einmalige Anmelden von Azure AD im Azure 
 
      8\.3. Klicken Sie zum Hochladen der heruntergeladenen Metadatendatei auf **Durchsuchen**, um die Datei auszuwählen, und dann auf **Datei hochladen**.
 
-     8\.4. Klicken Sie zum Testen der Konfiguration auf **Durchführen des Tests**. >[AZURE.NOTE]Sie müssen warten, bis die Meldung "*Der SAML-Test ist abgeschlossen. Schließen Sie dieses Fenster*" erscheint. Schließen Sie dann das geöffnete Browserfenster. <br> Das Kontrollkästchen **SAML aktivieren** ist nur aktiviert, wenn der Test abgeschlossen wurde.
+     8\.4. Klicken Sie zum Testen der Konfiguration auf **Durchführen des Tests**. 
+
+> [AZURE.NOTE]Sie müssen warten, bis die Meldung "*Der SAML-Test ist abgeschlossen. Schließen Sie dieses Fenster*" erscheint. Schließen Sie dann das geöffnete Browserfenster. <br> Das Kontrollkästchen **SAML aktivieren** ist nur aktiviert, wenn der Test abgeschlossen wurde.
 
      8\.5. Wählen Sie **SAML aktivieren**.
     
@@ -128,22 +139,29 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Testbenutzers namens Britta S
 
 **Um einen Testbenutzer in Azure AD zu erstellen, führen Sie die folgenden Schritte aus:**
 
-1. Klicken Sie im linken Navigationsbereich des **Azure-Verwaltungsportals** auf **Active Directory**. <br><br>![Was ist Azure AD Connect?][100] 
+1. Klicken Sie im linken Navigationsbereich des **Azure-Verwaltungsportals** auf **Active Directory**.
+<br><br>![Was ist Azure AD Connect?][100] 
 2. Wählen Sie in der Liste **Verzeichnis** das Verzeichnis aus, für das Sie die Verzeichnisintegration aktivieren möchten.
-3. Klicken Sie zum Anzeigen der Liste der Benutzer im Menü oben auf **Benutzer**. <br><br>![Was ist Azure AD Connect?][101] 
-4. Um das Dialogfeld **Benutzer hinzufügen** zu öffnen, klicken Sie auf der Symbolleiste unten auf **Benutzer hinzufügen**. <br><br>![Was ist Azure AD Connect?][102] 
-5. Führen Sie auf der Dialogfeldseite **Informationen über diesen Benutzer** die folgenden Schritte aus: <br><br>![Was ist Azure AD Connect?][103] 
+3. Klicken Sie zum Anzeigen der Liste der Benutzer im Menü oben auf **Benutzer**.
+<br><br>![Was ist Azure AD Connect?][101] 
+4. Um das Dialogfeld **Benutzer hinzufügen** zu öffnen, klicken Sie auf der Symbolleiste unten auf **Benutzer hinzufügen**.
+<br><br>![Was ist Azure AD Connect?][102] 
+5. Führen Sie auf der Dialogfeldseite **Informationen über diesen Benutzer** die folgenden Schritte aus:
+<br><br>![Was ist Azure AD Connect?][103] 
   1. Wählen Sie als **Benutzertyp** **Neuer Benutzer in Ihrer Organisation** aus.
   2. Geben Sie in das **Textfeld** „Benutzername“ **BrittaSimon** ein.
   3. Klicken Sie auf Weiter.
-6.  Führen Sie auf der Dialogfeldseite **Benutzerprofil** die folgenden Schritte aus: <br><br>![Was ist Azure AD Connect?][104] 
+6.  Führen Sie auf der Dialogfeldseite **Benutzerprofil** die folgenden Schritte aus:
+<br><br>![Was ist Azure AD Connect?][104] 
   1. Geben Sie in das Textfeld **Vorname** **Britta** ein.  
   2. Geben Sie in das Textfeld **Nachname** den Namen **Simon** ein.
   3. Geben Sie in das Textfeld **Anzeigename** den Text **Britta Simon** ein.
   4. Wählen Sie in der Liste **Rolle** **Benutzer** aus.
   5. Klicken Sie auf **Weiter**.
-7. Klicken Sie auf der Dialogfeldseite **Temporäres Kennwort abrufen** auf **Erstellen**. <br><br>![Was ist Azure AD Connect?][105]  
-8. Führen Sie auf der Dialogfeldseite **Temporäres Kennwort abrufen** die folgenden Schritte aus: <br><br>![Was ist Azure AD Connect?][106]   
+7. Klicken Sie auf der Dialogfeldseite **Temporäres Kennwort abrufen** auf **Erstellen**.
+<br><br>![Was ist Azure AD Connect?][105]  
+8. Führen Sie auf der Dialogfeldseite **Temporäres Kennwort abrufen** die folgenden Schritte aus:
+<br><br>![Was ist Azure AD Connect?][106]   
   1. Notieren Sie den Wert von **Neues Kennwort**.
   2. Klicken Sie auf **Fertig stellen**.   
   
@@ -155,8 +173,10 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Benutzers namens Britta Simon
 **Um einen Benutzer namens Britta Simon in Halogen Software zu erstellen, führen Sie die folgenden Schritte aus:**
 
 1. Melden Sie sich in Ihrer **Halogen Software**-Anwendung als Administrator an.
-2. Klicken Sie auf die Registerkarte **Benutzercenter** und dann auf **Benutzer erstellen**. <br><br>![Was ist Azure AD Connect?][300]  
-3. Führen Sie auf der Dialogfeldseite **Neuer Benutzer** die folgenden Schritte aus: <br><br>![Was ist Azure AD Connect?][301]
+2. Klicken Sie auf die Registerkarte **Benutzercenter** und dann auf **Benutzer erstellen**.
+<br><br>![Was ist Azure AD Connect?][300]  
+3. Führen Sie auf der Dialogfeldseite **Neuer Benutzer** die folgenden Schritte aus:
+<br><br>![Was ist Azure AD Connect?][301]
   1. Geben Sie in das Textfeld **Vorname** **Britta** ein. 
   2. Geben Sie in das Textfeld **Nachname** **Simon** ein.
   3. Geben Sie im Textfeld **Benutzername** **Britta Simons Benutzernamen im Azure AD-Portal** ein.
@@ -166,21 +186,28 @@ Das Ziel dieses Abschnitts ist das Erstellen eines Benutzers namens Britta Simon
 
 ### Zuweisen des Azure AD-Testbenutzers
 
-Das Ziel dieses Abschnitts ist es, Britta Simon für das einmalige Anmelden bei Azure zu aktivieren, indem sie Zugriff auf Halogen Software erhält. <br><br>![Was ist Azure AD Connect?][200]
+Das Ziel dieses Abschnitts ist es, Britta Simon für das einmalige Anmelden bei Azure zu aktivieren, indem sie Zugriff auf Halogen Software erhält.
+<br><br>![Was ist Azure AD Connect?][200]
 
 **Um Britta Simon Halogen Software zuzuweisen, führen Sie die folgenden Schritte aus:**
 
-1. Klicken Sie zum Öffnen der Anwendungsansicht im Azure-Portal in der oberen Menüleiste der Verzeichnisansicht auf **Anwendungen**.<br> <br><br>![Was ist Azure AD Connect?][201]
-2. Wählen Sie in der Anwendungsliste **Halogen Software** aus. <br><br>![Was ist Azure AD Connect?][202]
-1. Klicken Sie im oberen Menü auf **Benutzer**.<br> <br><br>![Was ist Azure AD Connect?][203]
-1. Wählen Sie in der Benutzerliste **Britta Simon** aus. <br><br>![Was ist Azure AD Connect?][204]
-2. Klicken Sie in der Symbolleiste unten auf **Zuweisen**. <br><br>![Was ist Azure AD Connect?][205]
+1. Klicken Sie zum Öffnen der Anwendungsansicht im Azure-Portal in der oberen Menüleiste der Verzeichnisansicht auf **Anwendungen**.<br>
+<br><br>![Was ist Azure AD Connect?][201]
+2. Wählen Sie in der Anwendungsliste **Halogen Software** aus.
+3. <br><br>![Was ist Azure AD Connect?][202]
+1. Klicken Sie im oberen Menü auf **Benutzer**.<br>
+<br><br>![Was ist Azure AD Connect?][203]
+1. Wählen Sie in der Benutzerliste **Britta Simon** aus.
+<br><br>![Was ist Azure AD Connect?][204]
+2. Klicken Sie in der Symbolleiste unten auf **Zuweisen**.
+<br><br>![Was ist Azure AD Connect?][205]
 
 
 
 ### Testen der einmaligen Anmeldung
 
-Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für einmaliges Anmelden mithilfe des Zugriffsbereichs.<br> Wenn Sie auf die Kachel Halogen Software im Zugriffsbereich klicken, sollten Sie automatisch in Ihrer Halogen Software-Anwendung angemeldet werden.
+Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für einmaliges Anmelden mithilfe des Zugriffsbereichs.<br>
+Wenn Sie auf die Kachel Halogen Software im Zugriffsbereich klicken, sollten Sie automatisch in Ihrer Halogen Software-Anwendung angemeldet werden.
 
 
 ## Zusätzliche Ressourcen
@@ -222,3 +249,4 @@ Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für einm
 [301]: ./media/active-directory-saas-halogen-software-tutorial/tutorial_halogen_301.png
 
 <!---HONumber=AcomDC_1223_2015-->
+
