@@ -12,12 +12,14 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/09/2015"
+    ms.date="01/06/2016"
     ms.author="torsteng;sidneyh" />
 
 # Abfrage für elastische Datenbanken bei datenbankübergreifenden Abfragen (vertikale Partitionierung)
 
 In diesem Dokument werden die Einrichtung der elastischen Abfrage für Szenarien mit datenbankübergreifenden Abfragen (vertikale Partitionierung) und die Ausführung von Abfragen erläutert. Eine Definition des Szenarios mit vertikaler Partitionierung finden Sie in der [Übersicht über die Abfrage für elastische Datenbanken in Azure SQL-Datenbank (Vorschau)](sql-database-elastic-query-overview.md).
+
+![Abfrage über Tabellen in unterschiedlichen Datenbanken hinweg][1]
 
 ## Erstellen von Datenbankobjekten
 
@@ -37,7 +39,7 @@ Das Definieren der Datenbankobjekte für die Abfrage einer elastische Datenbank 
 
 ### 1\.1 Erstellen des Datenbankhauptschlüssels und der Anmeldeinformationen 
 
-Benutzer-ID und Kennwort bilden die Anmeldeinformationen, die von der elastischen Abfrage zur Verbindung mit Ihren Remotedatenbanken in Azure SQL-Datenbank verwendet werden. Den erforderlichen Hauptschlüssel und die Anmeldeinformationen erstellen Sie mit der folgenden Syntax:
+Benutzer-ID und Kennwort bilden die Anmeldeinformationen, die von der Abfrage für elastische Datenbanken zur Verbindung mit Ihren Remotedatenbanken in Azure SQL-Datenbank verwendet werden. Den erforderlichen Hauptschlüssel und die Anmeldeinformationen erstellen Sie mit der folgenden Syntax:
 
     CREATE MASTER KEY ENCRYPTION BY PASSWORD = ’password’;
     CREATE DATABASE SCOPED CREDENTIAL <credential_name>  WITH IDENTITY = ‘<username>’,  
@@ -182,6 +184,9 @@ Sie können herkömmliche SQL Server-Verbindungszeichenfolgen verwenden, um Ihre
 
 
 <!--Image references-->
+[1]: ./media/sql-database-elastic-query-vertical-partitioning/verticalpartitioning.png
+
+
 <!--anchors-->
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

@@ -65,7 +65,7 @@ Installieren Sie die neueste Azure PowerShell, die auf der Azure-Downloadseite 
 ### Schritt 2
 Melden Sie sich beim Azure-Konto an.
 
-	PS C:\> Login-AzureRmAccopunt
+	PS C:\> Login-AzureRmAccount
 
 Sie werden zur Authentifizierung mit Ihren Anmeldeinformationen aufgefordert.
 
@@ -141,12 +141,13 @@ So ändern Sie beispielsweise die Profilgültigkeitsdauer:
 	PS C:\> $profile.Ttl = 300
 	PS C:\> Set-AzureTrafficManagerProfile –TrafficManagerProfile $profile
 
-## Hinzufügen von Traffic Manager-Endpunkten[](#adding-traffic-manager-endpoints)
+## Hinzufügen von Traffic Manager-Endpunkten
 Es gibt drei Arten von Traffic Manager-Endpunkten: 1. Azure-Endpunkte: Diese Endpunkte stellen in Azure gehostete Dienste dar. 2. Externe Endpunkte: Diese Endpunkte stellen außerhalb von Azure gehostete Dienste dar. 3. Geschachtelte Endpunkte: Diese Endpunkte werden verwendet, um geschachtelte Hierarchien von Traffic Manager-Profilen zu erstellen und dadurch erweiterte Konfigurationen für Datenverkehrrouting für komplexere Anwendungen zu ermöglichen. Sie werden über die ARM-API noch nicht unterstützt.
 
 In allen drei Fällen können Endpunkte auf zwei Arten hinzugefügt werden: 1. Mithilfe von drei Schritten, die dem unter [Aktualisieren eines Traffic Manager-Profils](#update-traffic-manager-profile) beschriebenen Vorgang ähneln: Abrufen des Profilobjekts mithilfe von „Get-AzureRmTrafficManagerProfile“, Aktualisieren im Offlinemodus zum Hinzufügen eines Endpunkts mithilfe von „Add-AzureRmTrafficManagerEndpointConfig“ und Hochladen von Änderungen in Azure Traffic Manager mithilfe von „Set-AzureRmTrafficManagerProfile“. Der Vorteil dieser Methode besteht darin, dass mehrere Änderungen am Endpunkt mit nur einer Aktualisierung vorgenommen werden können. 2. Mithilfe des Cmdlets „New-AzureRmTrafficManagerEndpoint“. Mit diesem Cmdlet wird einem vorhandenen Traffic Manager-Profil in einem Schritt ein Endpunkt hinzugefügt.
 
 ### Hinzufügen von Azure-Endpunkten
+
 Azure-Endpunkte verweisen auf andere in Azure gehostete Dienste. Derzeit werden 3 Arten von Azure-Endpunkten unterstützt: 1. Azure-Web-Apps 2. Klassische Clouddienste (die entweder einen PaaS-Dienst oder virtuelle IaaS-Computer enthalten können) 3. ARM Microsoft.Network/publicIpAddress-Ressourcen (die an einen Load Balancer oder an die Netzwerkkarte eines virtuellen Computers angefügt werden können). Beachten Sie, dass der publicIpAddress-Ressource ein DNS-Name zugewiesen werden muss, damit sie in Traffic Manager verwendet werden kann.
 
 In jedem Fall gilt: - Der Dienst wird mithilfe des Parameters „targetResourceId“ von „Add-AzureRmTrafficManagerEndpointConfig“ oder „New-AzureRmTrafficManagerEndpoint“ angegeben. - Die Parameter „Target“ und „EndpointLocation“ müssen nicht angegeben werden. Sie werden von dem oben angegebenen TargetResourceId-Element impliziert. - Die Angabe von „Weight“ ist optional. „Weights“ wird nur verwendet, wenn das Profil für die Verwendung der Datenverkehr-Routingmethode „Weighted“ konfiguriert ist, andernfalls wird der Parameter ignoriert. Wird der Parameter angegeben, muss er im Bereich 1 bis 1.000 liegen. Der Standardwert lautet „1“. - Die Angabe der Priorität ist optional. Prioritäten werden nur verwendet, wenn das Profil für die Verwendung der Datenverkehr-Routingmethode „Priority“ konfiguriert ist, andernfalls wird der Parameter ignoriert. Gültige Werte liegen zwischen 1 und 1.000 (niedrigere Werte stehen für eine höhere Priorität). Wenn Sie für einen Endpunkt Prioritäten angeben, müssen Sie für alle Endpunkte Prioritäten angeben. Wenn keine Prioritäten angegeben werden, werden Standardwerte beginnend mit 1, 2, 3 usw. in der Reihenfolge angewendet, in der Endpunkte bereitgestellt werden.
@@ -228,7 +229,7 @@ Verwenden Sie zum Aktivieren eines Traffic Manager-Endpunkts „Enable-AzureRmT
 
 	PS C:\> Enable-AzureRmTrafficManagerEndpoint -Name MyEndpoint -Type AzureEndpoints -ProfileName MyProfile -ResourceGroupName MyResourceGroup
 
-Beim Deaktivieren des Traffic Manager-Profils gehen Sie ähnlich vor:
+Beim Deaktivieren eines Traffic Manager-Endpunkts gehen Sie ähnlich vor:
 
  	PS C:\> Disable-AzureRmTrafficManagerEndpoint -Name MyEndpoint -Type AzureEndpoints -ProfileName MyProfile -ResourceGroupName MyResourceGroup -Force
 
@@ -264,4 +265,4 @@ Diese Sequenz kann auch weitergeleitet werden:
 [Leistungsüberlegungen zu Traffic Manager](traffic-manager-performance-considerations.md)
  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0107_2016-->

@@ -1,11 +1,13 @@
-When adding a VNet-to-VNet connection, verify that both of your virtual networks have a virtual network gateway and that your virtual networks do not have any overlapping address ranges.
+Stellen Sie beim Hinzufügen einer VNet-zu-VNet-Verbindung sicher, dass beide virtuellen Netzwerke ein virtuelles Netzwerkgateway enthalten und dass die Adressbereiche Ihrer virtuellen Netzwerke sich nicht überschneiden.
 
-1. From the **Virtual networks** blade, locate your virtual network and click to open the blade. On the blade, you will see your gateway listed as a *Connected device*. You can also configure settings directly from your virtual network gateway without first expanding the VNet.
-2. From the virtual network gateway settings, click **Connections**, and then **Add**.
-3. **Name** your Connection. 
-4. For **Connection type**, select **VNet-to-VNet**
-5. For **Virtual network gateway**, the value is fixed because you are connecting from this gateway.
-6. For **Second virtual network gateway**, select the gateway you want to create a connection to from this gateway.
-8. The remaining values for **Subscription**, **Resource Group**, and **Location** are fixed.
-9. Click **OK** to create your connection. You'll see *Creating Connection* flash on the screen.
-10. When the connection is complete, you'll see it appear in the **Connections** blade for your Gateway.
+1. Finden Sie Ihr virtuelles Netzwerk auf dem Blatt **Virtuelle Netzwerke**, und klicken Sie darauf, um das Blatt zu öffnen. Auf dem Blatt wird Ihr Gateway als *Verbundenes Gerät* angezeigt. Sie können Einstellungen auch direkt von Ihrem virtuellen Netzwerkgateway aus konfigurieren, ohne zuerst das VNet zu erweitern.
+2. Klicken Sie in den Einstellungen des virtuellen Netzwerkgateways auf **Verbindungen**, und klicken Sie dann auf **Hinzufügen**.
+3. Geben Sie unter **Name** einen Namen für die Verbindung ein. 
+4. Wählen Sie unter **Verbindungstyp** die Option **VNet-zu-VNet**
+5. Für **Virtuelles Netzwerkgateway** ist der Wert festgelegt, da Sie von diesem Gateway aus die Verbindung herstellen.
+6. Wählen Sie unter **Zweites virtuelles Netzwerkgateway** das Gateway aus, mit dem Sie von diesem Gateway aus eine Verbindung erstellen möchten.
+8. Die verbleibenden Werte für **Abonnement**, **Ressourcengruppe** und **Speicherort** sind unveränderlich.
+9. Klicken Sie auf **OK**, um die Verbindung zu erstellen. Auf dem Bildschirm blinkt der Hinweis *Verbindung wird erstellt*.
+10. Wenn die Verbindung erstellt ist, wird sie auf dem Blatt **Verbindungen** für Ihr Gateway angezeigt.
+
+<!---HONumber=AcomDC_0107_2016-->

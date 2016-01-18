@@ -383,7 +383,7 @@ Die wichtigsten Erkenntnisse dieses Artikels bestehen darin, dass die Datenmodel
 
 Es gibt genauso wenig einen einzigen Weg, um Daten auf einem Bildschirm darzustellen, wie es nur einen einzigen Weg gibt, Ihre Daten zu modellieren. Sie müssen Ihre Anwendung kennen und wissen, wie die Daten erstellt, verwendet und verarbeitet werden. Erst dann können Sie durch Anwenden von einigen der hier vorgestellten Richtlinien damit beginnen, ein Modell zu erstellen, das die unmittelbaren Anforderungen der Anwendung berücksichtigt. Wenn sich Ihre Anwendungen ändern müssen, können Sie die Flexibilität einer schemafreien Datenbank nutzen, um diese Änderung zu übernehmen und um das Datenmodell problemlos weiterzuentwickeln.
 
-Weitere Informationen zu Azure DocumentDB finden Sie auf der [Dokumentationsseite](../../services/documentdb/) des Diensts.
+Weitere Informationen zu Azure DocumentDB finden Sie auf der [Dokumentationsseite](https://azure.microsoft.com/documentation/services/documentdb/) des Diensts.
 
 Informationen zum Optimieren von Indizes in Azure DocumentDB finden Sie im Artikel über die [Indizierungsrichtlinien](documentdb-indexing-policies.md).
 
@@ -392,4 +392,4 @@ Informationen zur horizontalen Partitionierung („Sharding“) Ihrer Daten auf 
 Anleitungen für die Datenmodellierung und das Sharding für mehrinstanzenfähige Anwendungen finden Sie unter [Skalieren einer mehrinstanzenfähigen Anwendung mit Azure DocumentDB](http://blogs.msdn.com/b/documentdb/archive/2014/12/03/scaling-a-multi-tenant-application-with-azure-documentdb.aspx).
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0107_2016-->

@@ -7,15 +7,18 @@
 	services="app-service\logic" 
 	documentationCenter=""/>
 
-<tags ms.service="app-service-logic" ms.workload="integration" ms.tgt_pltfrm="na" ms.devlang="na"
-	
+<tags
+	ms.service="app-service-logic"
+	ms.workload="integration"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"	
 	ms.topic="article"
-	ms.date="10/07/2015"
+	ms.date="01/04/2016"
 	ms.author="stepsic"/>
 	
 # Verwenden der in App Service gehosteten benutzerdefinierten API mit Logik-Apps
 
-Zwar weisen Logik-Apps einen umfangreichen Satz von mehr als 40 Connectors für eine Vielzahl von Diensten auf, trotzdem möchten Sie ggf. Ihre eigene benutzerdefinierte API aufrufen, die Ihren eigenen Code ausführen kann. Die einfachsten und am besten skalierbaren Arten zum Hosten Ihrer eigenen benutzerdefinierten Web-APIs ist die Verwendung von App Service. In diesem Artikel wird beschrieben, wie eine Web-API aufgerufen wird, die in einer App Service-Web-App gehostet wird.
+Zwar weisen Logik-Apps einen umfangreichen Satz von mehr als 40 Connectors für eine Vielzahl von Diensten auf. Trotzdem möchten Sie unter Umständen Ihre eigene benutzerdefinierte API aufrufen, die Ihren eigenen Code ausführen kann. Die einfachste und am besten skalierbare Methode zum Hosten Ihrer eigenen benutzerdefinierten Web-APIs ist die Verwendung von App Service. In diesem Artikel wird beschrieben, wie Sie eine Web-API aufrufen, die in einer App Service-API-App, einer Web-App oder einer mobilen App gehostet wird.
 
 ## Bereitstellen der Web-App
 
@@ -37,7 +40,7 @@ Zunächst möchten Sie wahrscheinlich einen Wiederholungstrigger verwenden oder 
 
 Klicken Sie in der Befehlsleiste auf **Speichern**. Wenn Sie auf **Jetzt ausführen** klicken, sollten der Aufruf der API und die Antwort in der Ausführungsliste angezeigt werden.
 
-Dies funktioniert hervorragend, wenn Sie eine öffentliche API haben, aber wenn Sie Ihre API sichern möchten, gibt es verschiedene Möglichkeiten:
+Bei einer öffentlichen API funktioniert dies sehr gut. Wenn Sie Ihre API jedoch sichern möchten, gibt es verschiedene Möglichkeiten:
 
 1. *Keine Codeänderung erforderlich* – Azure Active Directory kann verwendet werden, um ohne Änderung des Codes oder ohne eine erneute Bereitstellung Ihre API zu schützen.
 2. Erzwingen Sie die Standardauthentifizierung, die AAD-Authentifizierung oder die Zertifikatauthentifizierung im Code der API. 
@@ -48,7 +51,7 @@ In diesem Abschnitt erstellen Sie zwei Azure Active Directory-Anwendungen – ei
 
 ### Teil 1: Einrichten einer Anwendungsidentität für Ihre Logik-App
 
-Auf diese Weise wird die Logik-App bei Active Directory authentifiziert. Sie *müssen* dies nur einmal für das Verzeichnis ausführen. Sie können z. B. die gleiche Identität für alle Logik-Apps verwenden, Sie könnten bei Bedarf aber auch pro Logic-App eindeutige Identitäten erstellen. Sie können dies in der Benutzeroberfläche oder mithilfe von PowerShell durchführen.
+Auf diese Weise wird die Logik-App bei Active Directory authentifiziert. Sie *müssen* dies nur einmal für Ihr Verzeichnis ausführen. Sie können z. B. die gleiche Identität für alle Logik-Apps verwenden, Sie könnten bei Bedarf aber auch pro Logik-App eindeutige Identitäten erstellen. Sie können dies in der Benutzeroberfläche oder mithilfe von PowerShell durchführen.
 
 #### Erstellen der Anwendungsidentität mithilfe des klassischen Azure-Portals
 
@@ -126,7 +129,7 @@ Der Abschnitt für die **Autorisierung** der **HTTP**-Aktion: `{"tenant":"<<tena
 
 | Element | Beschreibung |
 |---------|-------------|
-| Typ | Die Art der Authentifizierung. Für die ActiveDirectoryOAuth-Authentifizierung lautet der Wert "ActiveDirectoryOAuth". |
+| type | Die Art der Authentifizierung. Für die ActiveDirectoryOAuth-Authentifizierung lautet der Wert "ActiveDirectoryOAuth". |
 | tenant | Die Mandanten-ID zum Identifizieren des AD-Mandanten. |
 | audience | Erforderlich. Die Ressource, mit der Sie eine Verbindung herstellen. |
 | clientID | Die Client-ID für die Azure AD-Anwendung. |
@@ -144,7 +147,7 @@ Im Abschnitt für die *Autorisierung* sollten Sie Folgendes angeben: `{"type": "
 
 | Element | Beschreibung |
 |---------|-------------|
-| Typ | Erforderlich. Die Art der Authentifizierung. Für SSL-Clientzertifikate muss der Wert auf "ClientCertificate" festgelegt werden. |
+| type | Erforderlich. Die Art der Authentifizierung. Für SSL-Clientzertifikate muss der Wert auf "ClientCertificate" festgelegt werden. |
 | pfx | Erforderlich. Base64-codierte Inhalte der PFX-Datei. |
 | password | Erforderlich. Kennwort für den Zugriff auf die PFX-Datei. |
 
@@ -156,7 +159,7 @@ Im Abschnitt für die *Autorisierung* sollten Sie Folgendes angeben: `{"type": "
 
 | Element | Beschreibung |
 |---------|-------------|
-| Typ | Erforderlich. Die Art der Authentifizierung. Für die Standardauthentifizierung muss der Wert "basic" lauten. |
+| type | Erforderlich. Die Art der Authentifizierung. Für die Standardauthentifizierung muss der Wert "basic" lauten. |
 | username | Erforderlich. Der zu authentifizierende Benutzername. |
 | password | Erforderlich. Das zu authentifizierende Kennwort. |
  
@@ -170,4 +173,4 @@ Wenn Sie dies darüber hinaus vollständig in Ihrem eigenen Code implementieren 
 
 Sie müssen dennoch die obigen Schritte ausführen, um die Anwendungsidentität für Ihre Logik-App zu erstellen und diese zum Aufrufen der API zu verwenden.
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0107_2016-->

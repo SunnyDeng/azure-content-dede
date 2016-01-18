@@ -74,7 +74,7 @@ Standardmäßig werden alle Dokumente von DocumentDB automatisch indiziert. Wenn
 ## Nächste Schritte
 Anweisungen zur Überwachung der Leistungsebenen im Azure-Portal finden Sie unter [Überwachen eines DocumentDB-Kontos](documentdb-monitor-accounts.md).
 
-Weitere Informationen zum Auswählen von Leistungsebenen für Sammlungen finden Sie unter [Leistungsebenen in DocumentDB](documentdb-performance-levels).
+Weitere Informationen zum Auswählen von Leistungsebenen für Sammlungen finden Sie unter [Leistungsebenen in DocumentDB](documentdb-performance-levels.md).
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

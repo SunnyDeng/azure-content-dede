@@ -4,7 +4,7 @@
    services="storsimple"
    documentationCenter="NA"
    authors="SharS"
-   manager="carolz"
+   manager="carmonm"
    editor="" />
 <tags 
    ms.service="storsimple"
@@ -12,14 +12,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="09/14/2015"
+   ms.date="12/30/2015"
    ms.author="v-sharos" />
 
 # Verwalten des Sicherungskatalogs mithilfe des StorSimple Manager-Diensts
 
 ## Übersicht
 
-Auf der Seite **Sicherungskatalog** des StorSimple Manager-Diensts werden alle Sicherungssätze angezeigt, die mithilfe manueller oder automatisierter Sicherungen erstellt wurden. Sie können auf dieser Seite alle Sicherungen für eine Sicherungsrichtlinie oder ein Volume auflisten, Sicherungen auswählen oder löschen oder eine Sicherung zum Wiederherstellen oder Klonen eines Volumes verwenden.
+Auf der Seite **Sicherungskatalog** des StorSimple Manager-Diensts werden alle Sicherungssätze angezeigt, die mithilfe manueller oder geplanter Sicherungen erstellt wurden. Sie können auf dieser Seite alle Sicherungen für eine Sicherungsrichtlinie oder ein Volume auflisten, Sicherungen auswählen oder löschen oder eine Sicherung zum Wiederherstellen oder Klonen eines Volumes verwenden.
 
 In diesem Tutorial wird erläutert, wie ein Sicherungssatz aufgeführt, ausgewählt und gelöscht wird. Um zu erfahren, wie Sie Ihr Gerät aus einer Sicherung wiederherstellen, gehen Sie zu [Wiederherstellen Ihres Geräts aus einem Sicherungssatz](storsimple-restore-from-backup-set.md). Um zu erfahren, wie Sie ein Volume klonen, gehen Sie zu [Klonen von StorSimple-Volumes](storsimple-clone-volume.md).
 
@@ -27,23 +27,23 @@ In diesem Tutorial wird erläutert, wie ein Sicherungssatz aufgeführt, ausgewä
 
 Die Seite **Sicherungskatalog** bietet eine Abfrage, mit der Sie die Auswahl der Sicherungssätze einschränken können. Sie können die abgerufenen Sicherungssätze anhand der folgenden Parameter filtern:
 
-- **Gerät** – das Gerät, auf dem der Sicherungssatz erstellt wurde.
+- **Gerät**: das Gerät, auf dem der Sicherungssatz erstellt wurde.
 
-- **Sicherungsrichtlinie oder Volume** – Die Sicherungsrichtlinie oder das Volume, der oder dem dieser Sicherungssatz zugeordnet ist.
+- **Sicherungsrichtlinie oder Volume**: die Sicherungsrichtlinie oder das Volume, der oder dem dieser Sicherungssatz zugeordnet ist.
 
-- **Von und Bis** – Der Datums- und Uhrzeitbereich, in dem die Sicherung erstellt wurde.
+- **Von und Bis**: der Datums- und Uhrzeitbereich, in dem die Sicherung erstellt wurde.
 
 Die gefilterten Sicherungssätze werden dann basierend auf den folgenden Attributen in Tabellenform angezeigt:
 
-- **Name** – der Name der Sicherungsrichtlinie oder des Volumes, der oder dem dieser Sicherungssatz zugeordnet ist.
+- **Name**: der Name der Sicherungsrichtlinie oder des Volumes, der oder dem dieser Sicherungssatz zugeordnet ist.
 
-- **Größe** – die tatsächliche Größe des Sicherungssatzes.
+- **Größe**: die tatsächliche Größe des Sicherungssatzes.
 
-- **Erstellt am** – Das Datum und die Uhrzeit der Erstellung der Sicherungen.
+- **Erstellt am**: das Datum und die Uhrzeit der Erstellung der Sicherungen.
 
-- **Typ** – Sicherungssätze können lokale Momentaufnahmen oder Cloudmomentaufnahmen sein. Eine lokale Momentaufnahme ist eine Sicherung aller Volumedaten, die auf dem lokalen Gerät gespeichert ist, während die Sicherung von Volumedaten in der Cloud als Cloudmomentaufnahme bezeichnet wird. Lokale Momentaufnahmen bieten schnelleren Zugriff, während Cloudmomentaufnahmen für Datenstabilität ausgewählt werden.
+- **Typ**: Sicherungssätze können lokale Momentaufnahmen oder Cloudmomentaufnahmen sein. Eine lokale Momentaufnahme ist eine Sicherung aller Volumedaten, die auf dem lokalen Gerät gespeichert ist, während die Sicherung von Volumedaten in der Cloud als Cloudmomentaufnahme bezeichnet wird. Lokale Momentaufnahmen bieten schnelleren Zugriff, während Cloudmomentaufnahmen für Datenstabilität ausgewählt werden.
 
-- **Initiiert von** – Die Sicherungen können automatisch nach einem Zeitplan oder manuell durch einen Benutzer initiiert werden. Sie können eine Sicherungsrichtlinie verwenden, um Sicherungen zu planen. Es ist aber auch möglich, mithilfe der Option **Sicherung erstellen** eine interaktive Sicherung durchzuführen.
+- **Initiiert von**: Die Sicherungen können automatisch nach einem Zeitplan oder manuell durch einen Benutzer initiiert werden. Sie können eine Sicherungsrichtlinie verwenden, um Sicherungen zu planen. Es ist aber auch möglich, mithilfe der Option **Sicherung erstellen** eine manuelle Sicherung durchzuführen.
 
 ## Aufführen der Sicherungssätze für ein Volume
  
@@ -51,7 +51,7 @@ Führen Sie die folgenden Schritte aus, um alle Sicherungen für ein Volume aufz
 
 #### Aufführen der Sicherungssätze
 
-1. Klicken Sie auf der Seite des StorSimple-Manager-Diensts auf die Registerkarte **Sicherungskatalog**.
+1. Klicken Sie auf der Seite des StorSimple Manager-Diensts auf die Registerkarte **Sicherungskatalog**.
 
 2. Filtern Sie die Auswahl wie folgt:
 
@@ -71,7 +71,7 @@ Führen Sie die folgenden Schritte aus, um einen Sicherungssatz für ein Volume 
 
 #### Auswählen eines Sicherungssatzes
 
-1. Klicken Sie auf der Seite des StorSimple-Manager-Diensts auf die Registerkarte **Sicherungskatalog**.
+1. Klicken Sie auf der Seite des StorSimple Manager-Diensts auf die Registerkarte **Sicherungskatalog**.
 
 2. Filtern Sie die Auswahl wie folgt:
 
@@ -85,7 +85,7 @@ Führen Sie die folgenden Schritte aus, um einen Sicherungssatz für ein Volume 
 
     Die dem ausgewählten Volume oder der Sicherungsrichtlinie zugeordneten Sicherungen sollten in der Liste der Sicherungssätze angezeigt werden.
 
-3. Wählen Sie einen Sicherungssatz aus und erweitern Sie diesen. Die Optionen **Wiederherstellen und Löschen** werden unten auf der Seite angezeigt. Sie können beide Aktionen in dem Sicherungssatz durchführen, den Sie ausgewählt haben.
+3. Wählen Sie einen Sicherungssatz aus und erweitern Sie diesen. Die Optionen **Wiederherstellen** und **Löschen** werden unten auf der Seite angezeigt. Sie können beide Aktionen in dem Sicherungssatz durchführen, den Sie ausgewählt haben.
 
 ## Löschen eines Sicherungssatzes
 
@@ -107,7 +107,7 @@ Löschen Sie eine Sicherung, wenn Sie die zugeordneten Daten nicht mehr beibehal
 
     Die dem ausgewählten Volume oder der Sicherungsrichtlinie zugeordneten Sicherungen sollten in der Liste der Sicherungssätze angezeigt werden.
 
-3. Wählen Sie einen Sicherungssatz aus und erweitern Sie diesen. Die Optionen **Wiederherstellen und Löschen** werden unten auf der Seite angezeigt. Klicken Sie auf **Löschen**.
+3. Wählen Sie einen Sicherungssatz aus und erweitern Sie diesen. Die Optionen **Wiederherstellen** und **Löschen** werden unten auf der Seite angezeigt. Klicken Sie auf **Löschen**.
 
 4. Sie werden benachrichtigt, wenn der Löschvorgang durchgeführt wird und wenn er erfolgreich abgeschlossen wurde. Aktualisieren Sie die Abfrage auf dieser Seite, nachdem der Löschvorgang abgeschlossen wurde. Der gelöschte Sicherungssatz wird nicht mehr in der Liste der Sicherungssätze angezeigt.
 
@@ -117,4 +117,4 @@ Löschen Sie eine Sicherung, wenn Sie die zugeordneten Daten nicht mehr beibehal
 
 - Informationen zum [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

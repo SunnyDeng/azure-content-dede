@@ -1,6 +1,8 @@
-In this scenario, you'll create a VNet named **TestVNet** with a reserved CIDR block of **192.168.0.0./16**. Your VNet will contain the following subnets:
+In diesem Szenario erstellen Sie ein VNet namens **TestVNet** mit einem reservierten CIDR-Block **192.168.0.0./16**. Das VNet enthält die folgenden Subnetze:
 
-- **FrontEnd**, using **192.168.1.0/24** as its CIDR block.
-- **BackEnd**, using **192.168.2.0/24** as its CIDR block.
+- **FrontEnd**, mit **192.168.1.0/24** als CIDR-Block.
+- **BackEnd**, mit **192.168.2.0/24** als CIDR-Block.
 
-![VNet scenario](./media/vpn-gateway-basic-vnet-scenario-include/vnet-scenario.png)
+![VNet-Szenario](./media/vpn-gateway-basic-vnet-scenario-include/vnet-scenario.png)
+
+<!---HONumber=AcomDC_0107_2016-->

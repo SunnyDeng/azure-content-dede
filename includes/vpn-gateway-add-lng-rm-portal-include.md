@@ -1,11 +1,13 @@
-To create a local network gateway, follow the steps below:
+Um ein lokales Netzwerkgateway zu erstellen, führen Sie die folgenden Schritte aus:
 
-1. Use **Browse** and fildter to locate the **Local network gateways** blade, then click **Add**.
-2. On the **Create local network gateways blade**, **Name** your local network gateway object. For this example, we'll name the local network gateway *GW1LocalNet*.
-3. Configure an **IP address** for your gateway. This is the IP address of the external VPN device that you want to connect to. It cannot be behind NAT and has to be reachable by Azure. This is the device IP address that your Azure gateway will connect to.
-4. **Address Space** refers to the address ranges on your local (typically on-premises) network. You can add multiple address space ranges. The ranges that you enter here cannot overlap any of the address space ranges that you are using for any of the virtual networks that will communicate through the gateway.  You will need to coordinate with your on-premises configuration as well as with your Azure virtual network address spaces. 
-5. For **Subscription**, verify that the correct subscription is showing.
-6. For **Resource Group**, select the resource group that you want to use. You can either create a new resource group, or select one that you have already created. To create a new resource group, type the name in the box. To select a resource group that you've already created, click **Resource Group** to open the **Resource group** blade, and then select the resource group that you want to use.
-7. For **Location**, verify that the location is the same as the virtual network gateway that you will associate this with.
-8. Leave "Pin to dashboard" selected if you want to find this local network gateway easily from the dashboard.
-9. Click **Create** to create the local network gateway. You'll see "Deploying Local network gateway" on your dashboard. This shouldn't take very long to create.
+1. Verwenden Sie **Durchsuchen**, und filtern Sie, um das Blatt **Lokale Netzwerkgateways** zu finden. Klicken Sie dann auf **Hinzufügen**.
+2. Geben Sie auf dem Blatt **Lokale Netzwerkgateways erstellen** unter **Name** einen Namen für Ihr lokales Netzwerkgateway-Objekt ein. In diesem Beispiel nennen wir das lokale Netzwerkgateway *GW1LocalNet*.
+3. Konfigurieren Sie eine **IP-Adresse** für das Gateway. Dies ist die IP-Adresse des externen VPN-Geräts, mit dem Sie eine Verbindung herstellen möchten. Sie darf sich nicht hinter einer NAT befinden und muss für Azure erreichbar sein. Dies ist die IP-Adresse des Geräts, mit dem Ihr Azure-Gateway eine Verbindung herstellen soll.
+4. **Adressraum** bezieht sich auf die Adressbereiche für das lokale Netzwerk. Sie können mehrere Adressraumbereiche hinzufügen. Die hier eingegebenen Bereiche dürfen sich nicht mit den Adressraumbereichen für virtuelle Netzwerke überschneiden, die über das Gateway kommunizieren sollen. Sie müssen sie mit Ihrer lokalen Konfiguration sowie mit den Adressräumen des virtuellen Azure-Netzwerks koordinieren. 
+5. Stellen Sie unter **Abonnement** sicher, dass das richtige Abonnement angezeigt wird.
+6. Wählen Sie unter **Ressourcengruppe** die Ressourcengruppe aus, die Sie verwenden möchten. Sie können entweder eine neue Ressourcengruppe erstellen oder eine auswählen, die Sie bereits erstellt haben. Um eine neue Ressourcengruppe zu erstellen, geben Sie den Namen in das Feld ein. Um eine bereits erstellte Ressourcengruppe auszuwählen, klicken Sie auf **Ressourcengruppe**, um das Blatt **Ressourcengruppe** zu öffnen, und wählen Sie dann die gewünschte Ressourcengruppe aus.
+7. Stellen Sie unter **Standort** sicher, dass der Standort mit dem virtuellen Netzwerkgateway identisch ist, mit dem die Zuordnung erfolgt.
+8. Lassen Sie „An Dashboard anheften“ ausgewählt, wenn Sie dieses lokale Netzwerkgateway ganz bequem im Dashboard vorfinden möchten.
+9. Klicken Sie auf **Erstellen**, um das lokale Netzwerkgateway zu erstellen. Im Dashboard wird „Lokales Netzwerkgateway wird bereitgestellt“ angezeigt. Die Erstellung sollte nicht sehr lange dauern.
+
+<!---HONumber=AcomDC_0107_2016-->

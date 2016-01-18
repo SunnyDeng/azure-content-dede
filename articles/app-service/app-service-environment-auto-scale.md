@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/09/2015" 
+	ms.date="01/05/2016" 
 	ms.author="byvinyal"
 />
 	
@@ -170,7 +170,7 @@ Der im Profil definierte Zielbereich wird anhand der minimalen Instanzen, die im
 
 Der maximale Bereich wäre die Summe aller maximalen Bereiche für alle **App Service-Pläne**, die im **Workerpool** gehostet werden.
 
-Bei den Regeln für die Hochskalierung sollte die Anzahl, um die erhöht wird, auf mindestens 1 X die **Inflationsrate für den App Service-Plan** für die Hochskalierung festgelegt werden.
+Bei den Regeln für das zentrale Hochskalieren sollte die Anzahl, um die erhöht wird, auf mindestens 1 X die **Inflationsrate für den App Service-Plan** für das zentrale Hochskalieren festgelegt werden.
 
 Die Anzahl, um die verringert wird, kann zwischen 1/2 X und 1 X die **Inflationsrate für den App Service-Plan** für die Herunterskalierung liegen.
 
@@ -227,4 +227,4 @@ In diesem Szenario weiß Frank, dass sich die Fehlerrate erhöht, sobald Front-E
 [Worker-Pool-Scale]: ./media/app-service-environment-auto-scale/wp-scale.png
 [Front-End-Scale]: ./media/app-service-environment-auto-scale/fe-scale.png
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

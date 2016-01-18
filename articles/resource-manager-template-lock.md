@@ -1,6 +1,6 @@
 <properties
    pageTitle="Ressourcen-Manager-Vorlage für Ressourcensperren | Microsoft Azure"
-   description="Zeigt das Ressourcen-Manager-Schema für Ressourcensperren an."
+   description="Zeigt das Ressourcen-Manager-Schema für die Bereitstellung von Ressourcensperren über eine Vorlage."
    services="azure-resource-manager"
    documentationCenter="na"
    authors="tfitzmac"
@@ -13,10 +13,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="10/25/2015"
+   ms.date="01/04/2016"
    ms.author="tomfitz"/>
 
-# Ressourcensperren – Vorlagenschema
+# Vorlagenschema für Ressourcensperren
 
 Erstellt eine neue Sperre für eine Ressource und ihre untergeordneten Ressourcen.
 
@@ -135,4 +135,4 @@ Im nächsten Beispiel wird eine Schreibschutzsperre auf die Ressourcengruppe ang
 - Informationen zur Vorlagenstruktur finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md).
 - Weitere Informationen zu Sperren finden Sie unter [Sperren von Ressourcen mit dem Azure-Ressourcen-Manager](resource-group-lock-resources.md).
 
-<!----HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0107_2016-->

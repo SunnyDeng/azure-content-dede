@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="12/03/2015"
+   ms.date="01/04/2016"
    ms.author="v-darmi"/>
 
 
@@ -264,4 +264,9 @@ Bei der Konfiguration des Platzhaltervorgangs kann die Dashboardressource so kon
 ## Zusammenfassung
 Der Azure API Management-Dienst bietet flexible Richtlinien, die selektiv auf den HTTP-Verkehr angewendet werden können und die Zusammensetzung der Back-End-Dienste ermöglichen. Unabhängig davon, ob Sie das API-Gateway mit Alarmfunktionen, Überprüfungs- und Validierungsfunktionen verbessern möchten oder ob Sie neue zusammengesetzte Ressourcen basierend auf mehreren Back-End-Diensten erstellen möchten, bieten die `send-request`-Richtlinie und verwandte Richtlinien vollkommen neue Möglichkeiten.
 
-<!---HONumber=AcomDC_1210_2015-->
+## Überblicksvideo zu diesen Richtlinien
+Informieren Sie im folgenden Video ausführlicher über die diesem Artikel behandelten Richtlinien [send-one-way-request](https://msdn.microsoft.com/library/azure/dn894085.aspx#SendOneWayRequest), [send-request](https://msdn.microsoft.com/library/azure/dn894085.aspx#SendRequest) und [return-response](https://msdn.microsoft.com/library/azure/dn894085.aspx#ReturnResponse).
+
+> [AZURE.VIDEO send-request-and-return-response-policies]
+
+<!---HONumber=AcomDC_0107_2016-->

@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Verwenden von SSH unter Windows zum Herstellen einer Verbindung zu virtuellen Linux-Computern | Microsoft Azure" 
-description="Erfahren Sie, wie Sie SSH-Schlüssel unter Windows erstellen und verwenden, um Verbindungen mit virtuellen Linux-Computern in Azure herzustellen." 
+	pageTitle="Verwenden von SSH unter Windows zum Herstellen einer Verbindung mit virtuellen Linux-Computern | Microsoft Azure" 
+description="Erfahren Sie, wie Sie SSH-Schlüssel auf einem Windows-Computer erstellen und verwenden, um Verbindungen mit virtuellen Linux-Computern in Azure herzustellen." 
 	services="virtual-machines" 
 	documentationCenter="" 
 	authors="squillace" 
@@ -14,7 +14,7 @@ description="Erfahren Sie, wie Sie SSH-Schlüssel unter Windows erstellen und ve
 	ms.tgt_pltfrm="vm-linux" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/05/2015" 
+	ms.date="01/04/2016" 
 	ms.author="rasquill"/>
 
 #Verwenden von SSH mit Windows in Azure
@@ -43,12 +43,12 @@ Wenn Sie über etwas mehr Erfahrungen verfügen, können Sie auch den [neuen Por
 
 ## Erforderliche Schlüsseldateien
 
-Ein grundlegendes ssh-Setup für Azure enthält ein öffentliches und privates **ssh-rsa**-Schlüsselpaar mit 2048 Bit (**ssh-keygen** speichert diese Dateien standardmäßig unter **~/.ssh/id\_rsa** und **~/.ssh/id-rsa.pub**, sofern Sie die Standardeinstellungen nicht ändern) sowie eine `.pem`-Datei, die zur Verwendung mit dem klassischen Bereitstellungsmodell des klassischen Portals aus der privaten **id\_rsa**-Schlüsseldatei generiert wird.
+Ein grundlegendes SSH-Setup für Azure umfasst ein öffentliches und privates **ssh-rsa**-Schlüsselpaar mit 2048 Bit (**ssh-keygen** speichert diese Dateien standardmäßig unter **~/.ssh/id\_rsa** und **~/.ssh/id-rsa.pub**, sofern Sie die Standardeinstellungen nicht ändern) sowie eine `.pem`-Datei, die zur Verwendung mit dem klassischen Bereitstellungsmodell des klassischen Portals aus der privaten **id\_rsa**-Schlüsseldatei generiert wird.
 
-Im Folgenden sind die Dateitypen für die unterschiedlichen Bereitstellungsszenarios aufgeführt:
+Im Folgenden sind die Dateitypen für die unterschiedlichen Bereitstellungsszenarien aufgeführt:
 
-1. **ssh-rsa**-Schlüssel sind unabhängig vom Bereitstellungsmodell für alle Bereitstellungen mithilfe des [Vorschauportals](https://portal.azure.com) erforderlich.
-2. PEM-Dateien sind erforderlich, um VMS mithilfe des [klassischen Portals](https://manage.windowsazure.com) zu erstellen. PEM-Dateien werden auch in klassischen Bereitstellungen mit der [Azure-Befehlszeilenschnittstelle](xplat-cli-install.md) unterstützt.
+1. **SSH-RSA**-Schlüssel sind unabhängig vom Bereitstellungsmodell für alle Bereitstellungen mithilfe des [Vorschauportals](https://portal.azure.com) erforderlich.
+2. PEM-Dateien sind erforderlich, um VMs mithilfe des [klassischen Portals](https://manage.windowsazure.com) zu erstellen. PEM-Dateien werden auch in klassischen Bereitstellungen mit der [Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md) unterstützt.
 
 > [AZURE.NOTE]Wenn Sie vorhaben, mit dem klassischen Bereitstellungsmodell bereitgestellte Dienste zu verwalten, können Sie auch eine **CER**-Datei erstellen. Dies erfordert jedoch weder die Verwendung von **ssh** noch das Herstellen einer Verbindung mit Linux-VMs und ist daher nicht Gegenstand dieses Artikels. Geben Sie zum Erstellen dieser Dateien unter Linux oder auf einem Mac Folgendes ein:
 
@@ -68,23 +68,23 @@ Im Folgenden sind die Dateitypen für die unterschiedlichen Bereitstellungsszena
 1.	Laden und installieren Sie GitHub für Windows von folgendem Speicherort: [http://windows.github.com/](http://windows.github.com/)
 2.	Führen Sie die Git-Shell aus: Startmenü > Alle Programme > GitHub, Inc
 
-> [AZURE.NOTE]Beim Ausführen der `openssl`-Befehle tritt möglicherweise der folgende Fehler auf:
+> [AZURE.NOTE]Beim Ausführen der obigen `openssl`-Befehle tritt möglicherweise der folgende Fehler auf:
 
-			Unable to load config info from /usr/local/ssl/openssl.cnf
-	<!-- -->
-		The easiest way to resolve this is to set the `OPENSSL_CONF` environment variable. The process for setting this variable will vary depending on the shell that you have configured in Github:
-	<!-- -->
-		**Powershell:**
-	<!-- -->
-			$Env:OPENSSL_CONF="$Env:GITHUB_GIT\ssl\openssl.cnf"
-	<!-- -->
-		**CMD:**
-	<!-- -->
-			set OPENSSL_CONF=%GITHUB_GIT%\ssl\openssl.cnf
-	<!-- -->
-		**Git Bash:**
-	<!-- -->
-			export OPENSSL_CONF=$GITHUB_GIT/ssl/openssl.cnf
+        Unable to load config info from /usr/local/ssl/openssl.cnf
+
+Die einfachste Lösung ist, die Umgebungsvariable `OPENSSL_CONF` festzulegen. Der Prozess zum Festlegen dieser Variable variieren abhängig von der Shell, die Sie in Github konfiguriert haben:
+
+**Powershell:**
+
+        $Env:OPENSSL_CONF="$Env:GITHUB_GIT\ssl\openssl.cnf"
+
+**CMD:**
+
+        set OPENSSL_CONF=%GITHUB_GIT%\ssl\openssl.cnf
+
+**Git Bash:**
+
+        export OPENSSL_CONF=$GITHUB_GIT/ssl/openssl.cnf
 	
 
 ###Verwenden von Cygwin###
@@ -155,4 +155,4 @@ Im Folgenden sind die Dateitypen für die unterschiedlichen Bereitstellungsszena
 5.	Klicken Sie auf **Öffnen**, um die Verbindung mit Ihrem virtuellen Computer herzustellen.
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0107_2016-->

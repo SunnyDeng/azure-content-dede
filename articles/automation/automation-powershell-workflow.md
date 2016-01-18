@@ -1,6 +1,6 @@
 <properties 
    pageTitle="Grundlagen des PowerShell-Workflows"
-   description="Runbooks in Azure Automation basieren auf dem Windows PowerShell-Workflow. Dieser Artikel ist als kurze Lektion für Autoren gedacht, die mit PowerShell vertraut sind, um die Grundlagen der speziellen Unterschiede zwischen PowerShell und dem PowerShell-Workflow zu verdeutlichen."
+   description="Dieser Artikel ist als kurze Lektion für Autoren gedacht, die mit PowerShell vertraut sind, um die Grundlagen der speziellen Unterschiede zwischen PowerShell und dem PowerShell-Workflow zu verdeutlichen."
    services="automation"
    documentationCenter=""
    authors="bwren"
@@ -25,9 +25,9 @@ Ausführliche Informationen zu den Themen in diesem Artikel finden Sie unter [Er
 
 ## Arten von Runbooks
 
-In Azure Automation gibt es zwei Arten von Runbooks: *Text* und *Grafik*. Sie können den Runbooktyp beim Erstellen des Runbooks definieren, und es ist nicht möglich, ein Runbook nach der Erstellung in den anderen Typ zu konvertieren.
+Es gibt drei Arten von Runbooks in Azure Automation: *PowerShell-Workflow-Runbooks*, *PowerShell-Runbooks* und *grafische Runbooks*. Sie können den Runbooktyp beim Erstellen des Runbooks definieren, und es ist nicht möglich, ein Runbook nach der Erstellung in den anderen Typ zu konvertieren.
 
-Runbooks vom Typ „Text“ sind für Benutzer bestimmt, die lieber direkt mit dem PowerShell-Workflowcode arbeiten – entweder mit dem Text-Editor in Azure Automation oder mit einem Offline-Editor wie PowerShell ISE. Sie sollten die Informationen in diesem Artikel verstanden haben, wenn Sie ein Runbook vom Typ „Text“ erstellen.
+PowerShell-Workflow-Runbooks und PowerShell-Runbooks sind für Benutzer bestimmt, die lieber direkt mit dem PowerShell-Code arbeiten – entweder mit dem Text-Editor in Azure Automation oder mit einem Offline-Editor wie PowerShell ISE. Sie sollten die Informationen in diesem Artikel verstanden haben, wenn Sie ein PowerShell-Workflow-Runbook erstellen.
 
 Grafische Runbooks ermöglichen Ihnen die Erstellung von Runbooks mit den gleichen Aktivitäten und Cmdlets, aber Sie nutzen eine grafische Oberfläche, bei der die komplexen Zusammenhänge des zugrunde liegenden PowerShell-Workflows verborgen sind. Die Konzepte in diesem Artikel, z. B. Prüfpunkte und parallele Ausführung, gelten auch für grafische Runbooks, aber Sie müssen sich dabei keine Gedanken über die ausführliche Syntax machen.
 
@@ -249,4 +249,4 @@ Weitere Informationen zu Prüfpunkten finden Sie unter [Hinzufügen von Prüfpun
 
 - [Erste Schritte mit dem Windows PowerShell-Workflow](http://technet.microsoft.com/library/jj134242.aspx) 
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

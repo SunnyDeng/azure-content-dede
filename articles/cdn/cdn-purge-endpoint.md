@@ -58,4 +58,4 @@ Dieses Lernprogramm führt Sie durch das Löschen von Assets aus allen Edgeknote
 ## Weitere Informationen
 [Azure CDN-REST-API-Referenz – Löschen oder Vorabladen eines Endpunkts](https://msdn.microsoft.com/library/mt634451.aspx)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0107_2016-->

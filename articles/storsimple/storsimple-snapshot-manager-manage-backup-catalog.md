@@ -12,14 +12,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="09/15/2015"
+   ms.date="12/28/2015"
    ms.author="v-sharos" />
 
 # Verwenden Sie StorSimple Snapshot Manager zum Verwalten des Sicherungkatalogs
 
 ## Übersicht
 
-Die primäre Funktion des StorSimple Snapshot Managers ist das Erstellen anwendungskonsistenter Sicherungkopien von Azure StorSimple-Volumes in Form von Momentaufnahmen. Momentaufnahmen werden dann in einer XML-Datei aufgeführt, die *Sicherungkatalog* genannt wird. Der Sicherungkatalog gliedert Momentaufnahmen nach Volumegruppe, und anschließend nach lokaler oder cloudbasierter Momentaufnahme.
+Die primäre Funktion des StorSimple Snapshot Managers ist das Erstellen anwendungskonsistenter Sicherungkopien von Azure StorSimple-Volumes in Form von Momentaufnahmen. Momentaufnahmen werden dann in einer XML-Datei aufgeführt, die *Sicherungkatalog* genannt wird. Der Sicherungkatalog gliedert Momentaufnahmen nach Volumegruppe und anschließend nach lokaler oder cloudbasierter Momentaufnahme.
 
 Sie können den Sicherungskatalog durch Erweitern des Knotens **Sicherungskatalog** im Fenster **Bereich**, und dem anschließendem Erweitern der Volumegruppe anzeigen.
 
@@ -208,4 +208,4 @@ Sie sollten die StorSimple Snapshot Manager-Datenbank auf dem Hostcomputer regel
 - Weitere Informationen zum [Verwenden von StorSimple Snapshot Manager zum Verwalten der StorSimple-Lösung](storsimple-snapshot-manager-admin.md).
 - Weitere Informationen zu den [Aufgaben und Workflows im StorSimple Snapshot Manager](storsimple-snapshot-manager-admin.md#storsimple-snapshot-manager-tasks-and-workflows).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

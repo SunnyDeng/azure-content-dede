@@ -256,15 +256,13 @@ Wenn Sie bei der Erstellung der VM nicht den SSH-Standardport 22 verwendet habe
 
 ### Beispiel: Ausgabe einer SSH-Sitzung mit PEM-Schlüsseln und einer klassischen Bereitstellung
 
-Wenn Sie eine VM anhand einer PEM-Datei erstellt haben, die aus Ihrer Datei `~/.ssh/id_rsa` generiert wurde, können Sie direkt eine SSH-Verbindung mit dieser VM herstellen. Beachten Sie, dass in diesem Fall Ihr privater Schlüssel in `~/.ssh/id_rsa` vom Zertifikathandshake verwendet wird. Die Ausgabe kann wie im folgenden Beispiel aussehen:
+Wenn Sie eine VM anhand einer PEM-Datei erstellt haben, die aus Ihrer Datei `~/.ssh/id_rsa` generiert wurde, können Sie direkt eine SSH-Verbindung mit dieser VM herstellen. Beachten Sie, dass in diesem Fall Ihr privater Schlüssel in `~/.ssh/id_rsa` vom Zertifikathandshake verwendet wird. (Beim VM-Erstellungsprozess wird der öffentliche Schlüssel aus der PEM-Datei berechnet und die SSH-RSA-Form des öffentlichen Schlüssels in `~/.ssh/authorized_users` eingefügt.) Das Herstellen der Verbindung kann wie im folgenden Beispiel aussehen:
 
 	ssh ops@testpemasm.cloudapp.net -p 22
 	The authenticity of host 'testpemasm.cloudapp.net (40.83.178.221)' can't be established.
 	RSA key fingerprint is dc:bb:e4:cc:59:db:b9:49:dc:71:a3:c8:37:36:fd:62.
 	Are you sure you want to continue connecting (yes/no)? yes
 	Warning: Permanently added 'testpemasm.cloudapp.net,40.83.178.221' (RSA) to the list of known hosts.
-	Saving password to keychain failed
-	Identity added: /Users/user/.ssh/id_rsa.pub (/Users/user/.ssh/id_rsa.pub)
 	Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.19.0-28-generic x86_64)
 
 	* Documentation:  https://help.ubuntu.com/
@@ -298,4 +296,4 @@ Möglicherweise lässt sich das Problem mithilfe der Empfehlungen unter [Problem
  
 Nachdem Sie eine Verbindung mit Ihrer VM hergestellt haben, müssen Sie die ausgewählte Distribution vor der weiteren Verwendung unbedingt aktualisieren.
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0107_2016-->

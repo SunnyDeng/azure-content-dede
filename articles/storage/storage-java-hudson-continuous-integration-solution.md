@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="Java"
 	ms.topic="article"
-	ms.date="10/12/2015" 
+	ms.date="01/05/2016" 
 	ms.author="robmcm"/>
 
 # Verwenden von Azure-Speicher mit einer Hudson-Lösung für die fortlaufende Integration
@@ -73,7 +73,7 @@ Um den Blob-Dienst mit Hudson verwenden zu können, müssen Sie das Azure-Speich
 ## Installieren des Azure-Speicher-Plug-Ins ##
 
 1. Klicken Sie im Hudson-Dashboard auf **Manage Hudson**.
-2. Klicken Sie auf der Seite **Hudson verwalten** auf **Plug-Ins verwalten**.
+2. Klicken Sie auf der Seite **Hudson verwalten ** auf **Plug-Ins verwalten**.
 3. Klicken Sie auf die Registerkarte **Available**.
 4. Klicken Sie auf **Others**.
 5. Wählen Sie im Abschnitt **Artefakt-Uploadprogramme** die Option **Microsoft Azure Storage-Plug-In**.
@@ -177,4 +177,4 @@ Im Folgenden erhalten Sie einen Überblick über die Komponenten des Blob-Dienst
   [Erstellen eines Speicherkontos]: http://go.microsoft.com/fwlink/?LinkId=279823
   [Meet Hudson]: http://wiki.eclipse.org/Hudson-ci/Meet_Hudson
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

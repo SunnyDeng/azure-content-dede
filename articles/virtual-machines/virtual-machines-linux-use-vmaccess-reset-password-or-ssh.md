@@ -69,7 +69,7 @@ Schritt 1: Erstellen Sie eine Datei namens PrivateConf.json mit den folgenden In
 	{
 	"username":"currentusername",
 	"password":"newpassword",
-	"expiration":"2016-01-01",
+	"expiration":"2016-01-01"
 	}
 
 Schritt 2: Führen Sie diesen Befehl aus, und ersetzen Sie dabei "vmname" durch den Namen des virtuellen Computers.
@@ -82,7 +82,7 @@ Schritt 1: Erstellen Sie eine Datei namens PrivateConf.json mit den folgenden In
 
 	{
 	"username":"currentusername",
-	"ssh_key":"contentofsshkey",
+	"ssh_key":"contentofsshkey"
 	}
 
 Schritt 2: Führen Sie diesen Befehl aus, und ersetzen Sie dabei "vmname" durch den Namen des virtuellen Computers.
@@ -96,7 +96,7 @@ Schritt 1: Erstellen Sie eine Datei namens PrivateConf.json mit den folgenden In
 	{
 	"username":"currentusername",
 	"ssh_key":"contentofsshkey",
-	"password":"newpassword",
+	"password":"newpassword"
 	}
 
 Schritt 2: Führen Sie diesen Befehl aus, und ersetzen Sie dabei "vmname" durch den Namen des virtuellen Computers.
@@ -122,7 +122,7 @@ Wenn sich die SSH-Konfiguration in einen unerwünschten Zustand befindet, verlie
 Schritt 1: Erstellen Sie eine Datei namens PrivateConf.json mit diesem Inhalt.
 
 	{
-	"reset_ssh":"True",
+	"reset_ssh":"True"
 	}
 
 Schritt 2: Führen Sie diesen Befehl aus, und ersetzen Sie dabei "vmname" durch den Namen des virtuellen Computers.
@@ -136,7 +136,7 @@ Wenn Sie ein Benutzerkonto löschen möchten, ohne sich direkt auf dem virtuelle
 Schritt 1: Erstellen Sie eine Datei namens PrivateConf.json mit folgendem Inhalte, und ersetzen Sie dabei die Platzhalter-Werte.
 
 	{
-	"remove_user":"usernametoremove",
+	"remove_user":"usernametoremove"
 	}
 
 Schritt 2: Führen Sie diesen Befehl aus, und ersetzen Sie dabei "vmname" durch den Namen des virtuellen Computers.
@@ -266,4 +266,4 @@ Führen Sie zum Anzeigen des Status der VMAccess-Erweiterung diesen Befehl aus.
 [Azure-VM-Erweiterungen und Features]: virtual-machines-extensions-features.md
 [Herstellen einer Verbindung mit einem virtuellen Azure-Computer über RDP oder SSH]: http://msdn.microsoft.com/library/azure/dn535788.aspx
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0107_2016-->

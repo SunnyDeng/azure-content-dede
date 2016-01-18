@@ -38,7 +38,7 @@ Klicken Sie auf die Schaltfläche **Überprüfen**. Die Blätter **Rollenüberpr
 
 ### Auswählen der zu überprüfenden Rolle
 
-1. Wählen Sie die Rolle aus der Liste der Rollen auf dem Blatt **Eine Rolle für die Überprüfung auswählen** aus. Sie können jeweils nur eine Rolle auswählen. Das Blatt **Eine Rolle für die Überprüfung auswählen** wird durch das Blatt **Prüfer auswählen** ersetzt. Bei der Auswahl der Prüfer stehen Ihnen zwei Optionen zur Verfügung:
+1. Wählen Sie auf dem Blatt **Eine Rolle für die Überprüfung auswählen** in der Liste der Rollen die gewünschte Rolle aus. Sie können jeweils nur eine Rolle auswählen. Das Blatt **Eine Rolle für die Überprüfung auswählen** wird durch das Blatt **Prüfer auswählen** ersetzt. Bei der Auswahl der Prüfer stehen Ihnen zwei Optionen zur Verfügung:
   - Ich: Verwenden Sie diese Funktion, wenn Sie eine Vorschau zur Funktionsweise von Sicherheitsüberprüfungen anzeigen möchten, ohne andere Administratoren einzubeziehen.
   - Selbstüberprüfung durch Rollenmitglieder: Mit diesem Feature können Benutzer ihre eigenen Rollenzuweisungen selbst überprüfen.
 2. Wählen Sie eine der beiden Optionen aus, um die Arbeit mit den Überprüfungsdetails zu beginnen. Das Blatt **Standardeinstellungen ändern** wird angezeigt.
@@ -51,9 +51,9 @@ Klicken Sie auf die Schaltfläche **Überprüfen**. Die Blätter **Rollenüberpr
   - Wie viele Personen werden überprüft?
   - Wie schnell können die Benutzer die Erweiterung hinzufügen und die Überarbeitung abschließen?
 4. Klicken Sie auf dem Blatt **Standardeinstellungen ändern** auf die Schaltfläche "OK". Das Blatt wird geschlossen.
-5. Klicken Sie auf dem Blatt **Rollenüberprüfung starten** auf die Schaltfläche "OK". Das Blatt wird geschlossen. Eine Benachrichtigung wird im Hauptmenü des Portals angezeigt. Aktualisieren Sie das Dashboard, indem Sie auf die Schaltfläche **Aktualisieren** klicken. Die Sicherheitsüberprüfung wird im Abschnitt **Sicherheitsüberprüfungen** angezeigt.
+5. Klicken Sie auf dem Blatt **Rollenüberprüfung starten** auf die Schaltfläche "OK". Das Blatt wird geschlossen. Eine Benachrichtigung wird im Hauptmenü des Azure-Portals angezeigt. Aktualisieren Sie das Dashboard, indem Sie auf die Schaltfläche **Aktualisieren** klicken. Die Sicherheitsüberprüfung wird im Abschnitt **Sicherheitsüberprüfungen** angezeigt.
 6. Benachrichtigen Sie die Personen in der Rolle, dass sie die Erweiterung hinzufügen und anschließend ihren eigenen Administratorzugriff überprüfen sollen. Weitere Informationen finden Sie im nächsten Schritt.
-6. [Prüfen Sie den Administratorzugriff](active-directory-privileged-identity-management-how-to-perform-security-review.md).
+6. [Prüfen Sie den Administratorzugriff.](active-directory-privileged-identity-management-how-to-perform-security-review.md)
 
 ### Überprüfung mit Option "Ich"
 
@@ -63,4 +63,4 @@ Wenn Sie die Option "Ich" als Prüfer ausgewählt haben, fahren Sie mit der Sich
 ## Inhaltsverzeichnis zu PIM
 [AZURE.INCLUDE [active-directory-privileged-identity-management-toc](../../includes/active-directory-privileged-identity-management-toc.md)]
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

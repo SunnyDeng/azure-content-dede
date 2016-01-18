@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Erste Schritte mit einem Cordova-Projekt für Mobile Services (Visual Studio Verbundene Dienste)"
+	pageTitle="Erste Schritte mit einem Cordova-Projekt für Mobile Services (Visual Studio Verbundene Dienste) | Microsoft Azure"
 	description="Beschreibt die ersten Schritte, die Sie ausführen können, nachdem Sie Ihr Cordova-Projekt mithilfe von Visual Studio Verbundene Dienste mit Azure Mobile Services verbunden haben."
 	services="mobile-services"
 	documentationCenter=""
@@ -13,19 +13,12 @@
 	ms.tgt_pltfrm="vs-getting-started"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="09/17/2015"
+	ms.date="01/05/2016"
 	ms.author="tarcher"/>
 
 # Erste Schritte mit Mobile Services (Cordova-Projekte)
 
 [AZURE.INCLUDE [mobile-service-note-mobile-apps](../../includes/mobile-services-note-mobile-apps.md)]
-
-&nbsp;
-
-
-> [AZURE.SELECTOR]
-> - [Getting Started](vs-mobile-services-cordova-getting-started.md)
-> - [What Happened](vs-mobile-services-cordova-what-happened.md)
 
 ##Erste Schritte
 Der erste Schritt, der ausgeführt werden muss, um den Code in diesen Beispielen verwenden zu können, hängt davon ab, mit welchem Typ von mobilem Dienst Sie eine Verbindung herstellen.
@@ -33,8 +26,6 @@ Der erste Schritt, der ausgeführt werden muss, um den Code in diesen Beispielen
 - Für einen mobilen JavaScript-Back-End-Dienst erstellen Sie eine Tabelle namens TodoItem. Wenn Sie eine Tabelle erstellen möchten, suchen Sie den mobilen Dienst unter dem Knoten "Azure" im Server-Explorer, klicken mit der rechten Maustaste auf den Knoten des mobilen Diensts, um das Kontextmenü zu öffnen, und wählen dann **Create Table** aus. Geben Sie "TodoItem" als Tabellennamen ein.
 
 - Wenn Sie einen mobilen .NET-Back-End-Dienst verwenden, ist bereits eine Tabelle "TodoItem" in der Standardprojektvorlage enthalten, die Visual Studio für Sie erstellt hat. Sie müssen diese jedoch noch in Azure veröffentlichen. Öffnen Sie im Projektmappen-Explorer das Kontextmenü für das Mobile Services-Projekt, und wählen Sie dann **Web veröffentlichen** aus. Übernehmen Sie die Standardwerte, und klicken Sie dann auf die Schaltfläche **Veröffentlichen**.
-
-
 
 ##Erstellen eines Verweises auf eine Tabelle
 
@@ -99,4 +90,4 @@ Löschen Sie eine Zeile aus einer Datentabelle mithilfe der Methode **del**. Ruf
 
 [Weitere Informationen zu mobilen Diensten](http://azure.microsoft.com/documentation/services/mobile-services/)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

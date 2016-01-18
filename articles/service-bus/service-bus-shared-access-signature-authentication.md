@@ -25,7 +25,7 @@ Die Unterstützung der SAS-Authentifizierung ist im Azure SDK, Version 2.0 oder 
 
 Die SAS-Authentifizierung in Service Bus umfasst die Konfiguration eines kryptografischen Schlüssels mit den zugehörigen Rechten für eine Service Bus-Ressource. Clients beanspruchen Zugriff auf Service Bus-Ressourcen, indem sie ein SAS-Token bereitstellen. Dieses Token besteht aus dem Ressourcen-URI, auf den zugegriffen wird, und einer Ablaufangabe, die mit dem konfigurierten Schlüssel signiert wird.
 
-Sie können SAS-Autorisierungsregeln für Service Bus [Relays](service-bus-fundamentals-hybrid-solutions.md/#relays), -[Warteschlangen](service-bus-fundamentals-hybrid-solutions.md/#queues), -[Themen](service-bus-fundamentals-hybrid-solutions.md/#topics) und -[Event Hubs](https://azure.microsoft.com/documentation/services/event-hubs/) konfigurieren.
+Sie können SAS-Autorisierungsregeln für Service Bus [Relays](service-bus-fundamentals-hybrid-solutions.md#relays), -[Warteschlangen](service-bus-fundamentals-hybrid-solutions.md#queues), -[Themen](service-bus-fundamentals-hybrid-solutions.md#topics) und -[Event Hubs](https://azure.microsoft.com/documentation/services/event-hubs/) konfigurieren.
 
 Die SAS-Authentifizierung verwendet die folgenden Elemente:
 
@@ -258,4 +258,4 @@ Weitere Hintergrundinformationen zur Service Bus-Authentifizierung finden Sie un
 
 [klassischen Azure-Portals]: http://manage.windowsazure.com
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0107_2016-->

@@ -44,11 +44,11 @@ Hier erstellen Sie einen Shardzuordnungs-Manager und mehrere Shards und fügen a
 ## Erstellen einer elastischen Datenbankabfrage
 
 1. Öffnen Sie das [Azure-Portal](https://portal.azure.com), und melden Sie sich an.
-2. Erstellen Sie eine neue Azure SQL-Datenbank auf demselben Server, auf dem sich auch das Shard-Setup befindet. Nennen Sie die Datenbank "ElasticDBQuery". Als Tarif müssen Sie eines der Premium-Angebote auswählen. Abfragen für elastische Datenbanken sind derzeit nur im Premium-Tarif verfügbar.
+2. Erstellen Sie eine neue Azure SQL-Datenbank auf demselben Server, auf dem sich auch das Shard-Setup befindet. Nennen Sie die Datenbank "ElasticDBQuery". 
 
 	![Azure-Portal und -Tarif][3]
 
-	Hinweis: Sie können eine vorhandene Premium-Datenbank verwenden. Wenn Sie diese Konfiguration wählen, darf es sich bei dem Shard nicht um einen der Shards handeln, für die Sie die Abfragen ausführen möchten. Diese Datenbank wird zum Erstellen der Metadatenobjekte für eine Abfrage für elastische Datenbanken verwendet.
+	Hinweis: Sie können eine vorhandene Datenbank verwenden. Wenn Sie diese Konfiguration wählen, darf es sich bei dem Shard nicht um einen der Shards handeln, für die Sie die Abfragen ausführen möchten. Diese Datenbank wird zum Erstellen der Metadatenobjekte für eine Abfrage für elastische Datenbanken verwendet.
 
 
 ## Erstellen von Datenbankobjekten
@@ -127,7 +127,7 @@ Die Excel-Tabelle wird mit allen Zeilen aus der Tabelle **Customers** gefüllt, 
 Sie können jetzt die leistungsstarken Funktionen von Excel zur Datenvisualisierung verwenden. Sie können die Verbindungszeichenfolge mit dem Servernamen, Datenbanknamen und den Anmeldeinformationen zur Verbindung der BI und der Datenintegrationstools mit der elastischen Abfragedatenbank verwenden. Stellen Sie sicher, dass SQL Server als Datenquelle für das Tool unterstützt wird. Sie können auf die elastische Abfragedatenbank und die externen Tabellen wie auf jede andere SQL Server-Datenbank und SQL Server-Tabelle verweisen, zu denen Sie mit dem Tool eine Verbindung herstellen würden.
 
 ### Kosten
-Es gibt keine zusätzlichen Gebühren für die Verwendung der Abfragefunktion für elastische Datenbanken. Zum jetzigen Zeitpunkt steht dieses Feature nur für Premium-Datenbanken als Endpunkt zur Verfügung, die Shards können jedoch aus jeder Dienstebene stammen.
+Es gibt keine zusätzlichen Gebühren für die Verwendung der Abfragefunktion für elastische Datenbanken.
 
 Preisinformationen finden Sie in der [SQL-Datenbank – Preisdetails](http://azure.microsoft.com/pricing/details/sql-database/).
 
@@ -142,4 +142,4 @@ Preisinformationen finden Sie in der [SQL-Datenbank – Preisdetails](http://azu
 [5]: ./media/sql-database-elastic-query-getting-started/exel-sources.png
 <!--anchors-->
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

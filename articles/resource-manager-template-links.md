@@ -1,6 +1,6 @@
 <properties
    pageTitle="Ressourcen-Manager-Vorlage für Ressourcenverknüpfungen | Microsoft Azure"
-   description="Zeigt das Ressourcen-Manager-Vorlagenschema zum Erstellen von Verknüpfungen zwischen verwandten Ressourcen."
+   description="Zeigt das Ressourcen-Manager-Schema zum Bereitstellen von Links zwischen verwandten Ressourcen über eine Vorlage."
    services="azure-resource-manager"
    documentationCenter="na"
    authors="tfitzmac"
@@ -13,10 +13,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="12/09/2015"
+   ms.date="01/04/2016"
    ms.author="tomfitz"/>
 
-# Ressourcenverknüpfungen – Vorlagenschema
+# Vorlagenschema für Ressourcenlinks
 
 Erstellt eine Verknüpfung zwischen zwei Ressourcen. Die Verknüpfung gehört zu einer Quellressource genannten Ressource. Die zweite Ressource in der Verknüpfung wird als Zielressource bezeichnet.
 
@@ -124,9 +124,20 @@ Im folgenden Beispiel wird eine Schreibschutzsperre für eine Web-App angewendet
         "outputs": {}
     }
 
+## Schnellstartvorlagen
+
+Die folgenden Schnellstartvorlagen stellen Ressourcen mit einem Link bereit.
+
+- [Warnung für Warteschlange mit Logik-App](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-queue-with-logic-app)
+- [Warnung für Pufferzeit mit Logik-App](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-slack-with-logic-app)
+- [Bereitstellen einer API-App mit einem vorhandenen Gateway](https://github.com/Azure/azure-quickstart-templates/tree/master/201-api-app-gateway-existing)
+- [Bereitstellen einer API-App mit einem neuen Gateway](https://github.com/Azure/azure-quickstart-templates/tree/master/201-api-app-gateway-new)
+- [Erstellen einer Logik-App und einer API-App mithilfe einer Vorlage](https://github.com/Azure/azure-quickstart-templates/tree/master/201-logic-app-api-app-create)
+- [Logik-App, die eine Textnachricht sendet, wenn eine Warnung ausgelöst wird](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-text-message-with-logic-app)
+
 
 ## Nächste Schritte
 
 - Informationen zur Vorlagenstruktur finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md).
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0107_2016-->

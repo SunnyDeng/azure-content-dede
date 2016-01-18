@@ -45,7 +45,6 @@ Es gibt einige wenige Gründe, warum Sie Ihre Azure Mobile Services jetzt nicht 
   *  Sie sind zurzeit sehr stark ausgelastet und können sich einen Neustart der Website zu diesem Zeitpunkt nicht leisten.
   *  Sie möchten Auswirkungen auf Ihre Produktionswebsite vor dem Testen des Migrationsprozesses vermeiden.
   *  Sie verfügen über mehrere Websites in den Tarifen Free bzw. Basic und möchten nicht alle Websites gleichzeitig migrieren.
-  *  Sie haben geplante Aufträge, die Sie migrieren möchten, als bedarfsgesteuert konfiguriert.
 
 Wenn Sie zurzeit sehr stark ausgelastet sind, sehen Sie die Migration für ein geplantes Wartungsfenster vor. Zum Migrationsprozess gehört der Neustart Ihrer Website, und Ihre Benutzer könnten diese vorübergehende Störung der Verfügbarkeit bemerken.
 
@@ -146,6 +145,24 @@ Dies ist eine optionale Aufgabe, ermöglicht aber im Weiteren eine bessere Verwa
 
 > [AZURE.TIP]Ein Vorteil der Verwendung von Azure App Service ist, dass Sie Ihre Website und den Mobile Service auf der gleichen Website ausführen können. Weitere Informationen finden Sie im Abschnitt [Nächste Schritte](#next-steps).
 
+### <a name="download-publish-profile"></a>Herunterladen eines neuen Veröffentlichungsprofils
+
+Beim der Migration zu Azure App Service wird das Veröffentlichungsprofil der Website geändert. Wenn Sie Ihre Website aus Visual Studio heraus veröffentlichen möchten, benötigen Sie ein neues Veröffentlichungsprofil. So laden Sie das neue Veröffentlichungsprofil herunter:
+
+  1.  Melden Sie sich beim [Azure-Portal] an.
+  2.  Wählen Sie **Alle Ressourcen** oder **App Services** aus, und klicken Sie dann auf den Namen Ihres migrierten Mobile Service.
+  3.  Klicken Sie auf **Veröffentlichungsprofil abrufen**.
+
+Die PublishSettings-Datei wird auf Ihren Computer heruntergeladen. Sie heißt normalerweise _Websitename_.PublishSettings. Anschließend können Sie die Veröffentlichungseinstellungen in Ihr vorhandenes Projekt importieren:
+
+  1.  Öffnen Sie Visual Studio und Ihr Azure Mobile Service-Projekt.
+  2.  Klicken Sie im **Projektmappen-Explorer** mit der rechten Maustaste auf Ihr Projekt, und wählen Sie **Veröffentlichen...** aus.
+  3.  Klicken Sie auf **Importieren**.
+  4.  Klicken Sie auf **Durchsuchen**, und wählen Sie die heruntergeladene Datei mit den Veröffentlichungseinstellungen aus. Klicken Sie auf **OK**.
+  5.  Klicken Sie auf **Verbindung überprüfen**, um sicherzustellen, dass die Veröffentlichungseinstellungen funktionieren.
+  6.  Klicken Sie auf **Veröffentlichen**, um die Website zu veröffentlichen.
+
+
 ## <a name="working-with-your-site"></a>Arbeiten mit Ihrer Website nach der Migration
 
 Sie beginnen im [Azure-Portal], nach der Migration mit Ihrem neuen App Service zu arbeiten. Es folgen einige Hinweise zu bestimmten Vorgängen, die Sie im [klassischen Azure-Portal] ausgeführt haben, mit ihren App Service-Entsprechungen.
@@ -224,33 +241,24 @@ Die Registerkarte _API_ in Mobile Services wurde durch _Einfache APIs_ im Azure-
 
 Im Blatt werden bereits Ihre migrierten APIs aufgeführt. Sie können auch eine neue API von diesem Blatt aus hinzufügen. Um eine bestimmte API zu verwalten, klicken Sie auf die API. Von dem neuen Blatt aus können Sie die Berechtigungen für die API passen und die Skripts für die API bearbeiten.
 
-### <a name="on-demand-jobs"></a>Bedarfsgesteuerte geplante Aufträge
+### <a name="on-demand-jobs"></a>Scheduler-Aufträge
 
-Bedarfsgesteuerte geplante Aufträge werden über eine Webanforderung ausgelöst. Sie sollten einen HTTP-Client wie [Postman], [Fiddler] oder [curl] verwenden. Wenn Ihre Website ‚Contoso‘ heißt, dann erhalten Sie einen Endpunkt https://contoso.azure-mobile.net/jobs/_yourjobname_, mit dem Sie den bedarfsgesteuerten Auftrag auslösen können. Sie müssen einen zusätzlichen Header **X-ZUMO-MASTER** mit Ihrem Hauptschlüssel senden.
-
-Der Hauptschlüssel kann wie folgt abgerufen werden:
+Auf alle Scheduler-Aufträge können Sie im Abschnitt „Scheduler-Auftragssammlungen“ zugreifen. So greifen Sie auf Scheduler-Aufträge zu:
 
   1. Melden Sie sich beim [Azure-Portal] an.
-  2. Wählen Sie **Alle Ressourcen** oder **App Services** aus, und klicken Sie dann auf den Namen Ihres migrierten Mobile Service.
-  3. Das Blatt „Einstellungen“ wird standardmäßig geöffnet. Wenn dies nicht der Fall ist, klicken Sie auf **Einstellungen**.
-  4. Klicken Sie im Menü „ALLGEMEIN“ auf **Anwendungseinstellungen**.
-  5. Suchen Sie nach der Anwendungseinstellung **MS\_MasterKey**.
+  2. Wählen Sie **Durchsuchen >**, geben Sie **Zeitplan** in das Feld _Filter_ ein, und wählen Sie **Scheduler-Sammlungen**.
+  3. Wählen Sie die Auftragssammlung für Ihre Website aus. Sie hat den Namen _Websitename_-Aufträge.
+  4. Klicken Sie auf **Einstellungen**.
+  5. Klicken Sie unter „VERWALTEN“ auf **Scheduler-Aufträge**.
 
-Sie können den Hauptschlüssel ausschneiden und in Ihre Postman-Sitzung einfügen. Hier ist ein Beispiel für das Auslösen eines bedarfsgesteuerten Auftrags in einem migrierten Mobile Service:
+Geplante Aufträge werden mit der Häufigkeit aufgelistet, die Sie vor der Migration angegeben haben. Bedarfsgesteuerte Aufträge werden deaktiviert. So führen Sie einen bedarfsgesteuerten Auftrag aus:
 
-  ![Auslösen eines bedarfsgesteuerten Auftrags mit Postman][2]
+  1. Wählen Sie den auszuführenden Auftrag aus.
+  2. Wenn nötig, klicken Sie auf **Aktivieren**, um den Auftrag zu aktivieren.
+  3. Klicken Sie auf **Einstellungen** und dann auf **Zeitplan**.
+  4. Wählen als Wiederholung **Einmal** aus, und klicken Sie dann auf **Speichern**.
 
-Notieren Sie die Einstellungen:
-
-  * Methode: **POST**
-  * URL: https://_yoursite_.azure-mobile.net/jobs/_yourjobname_
-  * Header: X-ZUMO-MASTER: _Ihr-Hauptschlüssel_
-
-Alternativ können Sie [curl] zum Auslösen des bedarfsgesteuerten Auftrags in einer Befehlszeile verwenden:
-
-    curl -H 'X-ZUMO-MASTER: yourmasterkey' --data-ascii '' https://yoursite.azure-mobile.net/jobs/yourjob
-
-Ihre bedarfsgesteuerten Aufträge befinden sich in `App_Data/config/scripts/scheduler post-migration`. Sie sollten alle bedarfsgesteuerten Aufträge in [WebJobs] umwandeln.
+Ihre bedarfsgesteuerten Aufträge befinden sich in `App_Data/config/scripts/scheduler post-migration`. Sie sollten alle bedarfsgesteuerten Aufträge in [WebJobs] umwandeln. Schreiben Sie neue Scheduler-Aufträge als [WebJobs].
 
 ### <a name="notification-hubs"></a>Notification Hubs
 
@@ -386,4 +394,4 @@ Ihre Anwendung ist nicht nur zu App Service migriert, Sie können sogar noch meh
 [VNet]: ../app-service-web/web-sites-integrate-with-vnet.md
 [WebJobs]: ../app-service-web/websites-webjobs-resources.md
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0107_2016-->

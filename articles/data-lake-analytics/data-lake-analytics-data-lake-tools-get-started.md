@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="12/21/2015"
+   ms.date="01/07/2015"
    ms.author="jgao"/>
 
 # Tutorial: Entwickeln von U-SQL-Skripts mit Data Lake-Tools für Visual Studio
@@ -88,6 +88,8 @@ Die Data Lake Analytics-Aufträge werden in der Sprache U-SQL geschrieben. Weite
 
 	![Neues Visual Studio-U-SQL-Projekt](./media/data-lake-analytics-data-lake-tools-get-started/data-lake-analytics-data-lake-tools-new-project.png)
 
+	>[AZURE.NOTE]Derzeit unterstützen die Data Lake-Tools bei lokaler Ausführung keine UNC-Projektpfade.
+	
 3. Klicken Sie auf **OK**. Visual Studio erstellt eine Projektmappe mit der Datei **Script.usql**.
 4. Geben Sie das folgende Skript in **Script.usql** ein:
 
@@ -219,6 +221,10 @@ In Visual Studio wird ein Konto *Lokal* angezeigt, und das Installationsprogramm
 - Für ein bestimmtes Skript: Wenn in Eingabe-/Ausgabepfaden auf einen relativen Pfad verwiesen wird, wird DataRoot nachgeschlagen (sowie der Pfad des Skripts, wenn er zur Eingabe gehört).
 - Auf den Ordner „DataRoot“ wird nicht verwiesen, wenn Sie versuchen, eine Assembly zu registrieren, und dabei einen relativen Pfad verwenden (Weitere Details finden Sie im Abschnitt unter „Verwenden von Assemblys bei lokalen Ausführungen“.)
 
+Das folgende Video veranschaulicht das Feature zum lokalen Ausführen von U-SQL:
+
+>[AZURE.VIDEO usql-localrun]
+
 ### Bekannte Probleme und Einschränkungen
 
 - Die lokale Ausführung von U-SQL unterstützt keine lokalen Abfragen von Dateigruppen. Weitere Informationen finden Sie unter [U-SQL-Dateigruppen](https://msdn.microsoft.com/library/azure/mt621294.aspx). Dies wird in Zukunft behoben.
@@ -263,8 +269,6 @@ Das folgende Verfahren funktioniert nur in Visual Studio 2015. In älteren Versi
         CREATE ASSEMBLY assemblyname FROM @"..\..\path\to\output\.dll";
 3.	Legen Sie Haltepunkte im C#-Code fest.
 4.	Drücken Sie **F5**, um das Skript mit Verweis auf die C#-DLL lokal zu debuggen.  
- 
-
 
 ##Weitere Informationen
 
@@ -353,4 +357,4 @@ Mit dem folgenden PowerShell-Skript werden das Azure Data Lake Analytics-Konto u
     Get-AzureRmDataLakeStoreChildItem -Account $dataLakeStoreName -Path  "/Samples/Data/"
     #endregion
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0107_2016-->

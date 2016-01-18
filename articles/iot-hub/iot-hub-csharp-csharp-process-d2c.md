@@ -3,7 +3,7 @@
 	description="In diesem Lernprogramm werden nützliche Verfahren zum Verarbeiten von Gerät-zu-Cloud-Nachrichten (Device-to-Cloud, D2C) mit IoT Hub beschrieben."
 	services="iot-hub"
 	documentationCenter=".net"
-	authors="fsautomata"
+	authors="dominicbetts"
 	manager="timlt"
 	editor=""/>
 
@@ -13,45 +13,45 @@
      ms.topic="article"
      ms.tgt_pltfrm="na"
      ms.workload="na"
-     ms.date="09/29/2015"
-     ms.author="elioda"/>
+     ms.date="01/05/2016"
+     ms.author="dobett"/>
 
 # Lernprogramm: Verarbeiten von D2C-Nachrichten mit IoT Hub
 
 ## Einführung
 
-Azure IoT Hub ist ein vollständig verwalteter Dienst, der eine zuverlässige und sichere bidirektionale Kommunikation zwischen Millionen von IoT-Geräten und einem Anwendungs-Back-End ermöglicht. In vorhergehenden Lernprogrammen ([Erste Schritte mit IoT Hub] und [Senden von C2D-Nachrichten mit IoT Hub]) werden die grundlegenden Funktionen von IoT Hub für Gerät-zu-Cloud- (Device-to-Cloud, D2C) und Cloud-zu-Gerät-Messaging (Cloud-to-Device, C2D) und der Zugriff auf diese Funktionen über Geräte und Cloudkomponenten beschrieben.
+Azure IoT Hub ist ein vollständig verwalteter Dienst, der eine zuverlässige und sichere bidirektionale Kommunikation zwischen Millionen von IoT-Geräten und einem Anwendungs-Back-End ermöglicht. Weitere Lernprogramme wie [Erste Schritte mit IoT Hub] und [Senden von C2D-Nachrichten mit IoT Hub] veranschaulichen, wie Sie die grundlegenden Device-to-Cloud- und Cloud-to-Device-Messagingfunktionen von IoT Hub verwenden.
 
-Dieses Lernprogramm baut auf den Code in [Erste Schritte mit IoT Hub] auf, in dem zwei Verfahren zum Verarbeiten von D2C-Nachrichten beschrieben werden.
+Dieses Lernprogramm baut auf dem Code des Lernprogramms [Erste Schritte mit IoT Hub] auf und veranschaulicht zwei skalierbare Muster, die Sie zum Verarbeiten von D2C-Nachrichten verwenden können:
 
-Bei dem ersten Verfahren handelt es sich um das zuverlässige Speichern von D2C-Nachrichten in [Azure-Blobs]. Dieses Szenario kommt sehr häufig bei der Implementierung von *cold-path*-Analysen vor, wenn in Blobs gespeicherte Daten als Eingabe für Analysen mit Tools wie [Azure Data Factory] oder dem [Hadoop]-Stapel verwendet werden.
+- Zuverlässiges Speichern von D2C-Nachrichten in [Azure Blob Storage]\: Dies ist sehr häufiges Szenario bei der Implementierung der *Cold Path*-Analyse, bei der Sie Daten in Blobs speichern. Die Blobs werden als Eingabe für Analyseprozesse mit Tools wie [Azure Data Factory] oder dem [HDInsight (Hadoop)]-Stapel verwendet.
 
-Bei dem zweiten Verfahren handelt es sich um die zuverlässige Verarbeitung der *interaktiven* D2C-Nachrichten. D2C-Nachrichten werden als *interaktiv* bezeichnet, wenn es sich um unmittelbare Auslöser für eine Reihe von Aktionen im Anwendungs-Back-End handelt und nicht um eine *Datenpunkt*-Nachricht, die an ein Analysemodul übertragen wird. Bei einem Alarm von einem Gerät, der das Einfügen eines Tickets in einem CRM-System auslöst, handelt es sich z. B. um eine *interaktive* D2C-Nachricht, während eine Telemetrienachricht mit Temperaturmesswerten eine *Datenpunkt*-Nachricht darstellt.
+- Zuverlässige Verarbeitung von *interaktiven* D2C-Nachrichten: D2C-Nachrichten sind interaktiv, wenn es sich um unmittelbare Auslöser für eine Reihe von Aktionen im Anwendungs-Back-End handelt, und nicht um *Datenpunkt*-Nachrichten, die an ein Analysemodul übertragen werden. Ein Alarm von einem Gerät, bei dem das Einfügen eines Tickets in ein CRM-System ausgelöst werden muss, ist beispielsweise eine interaktive D2C-Nachricht. Bei Telemetriedaten, z. B. Temperaturangaben, handelt es sich dagegen um eine Datenpunkt-D2C-Nachricht.
 
-Da in IoT Hub ein Event Hubs-kompatibler Endpunkt zum Empfangen von D2C-Nachrichten verfügbar gemacht wird, wird in diesem Lernprogramm mit [EventProcessorHost] eine Ereignisprozessorklasse mit folgenden Merkmalen gehostet:
+Da in IoT Hub ein Event Hubs-kompatibler Endpunkt zum Empfangen von D2C-Nachrichten verfügbar gemacht wird, wird in diesem Lernprogramm eine [EventProcessorHost]-Instanz verwendet, die Folgendes ermöglicht:
 
-* Zuverlässiges Speichern von *Datenpunkt*-Nachrichten in Azure-Blobs und
-* Weiterleiten von *interaktiven* D2C-Nachrichten an eine [Service Bus-Warteschlange] zur sofortigen Verarbeitung.
+* Zuverlässiges Speichern von *Datenpunkt*-Nachrichten in Azure-Blobs
+* Weiterleiten von *interaktiven* D2C-Nachrichten an eine [Service Bus-Warteschlange] zur sofortigen Verarbeitung
 
-[Service Bus][Service Bus Queue] ist eine hervorragende Möglichkeit, um die zuverlässige Verarbeitung von interaktiven Nachrichten sicherzustellen, da Checkpoints pro Nachricht und die Deduplizierung auf Grundlage von Zeitfenstern bereitgestellt werden.
+Service Bus ist eine hervorragende Möglichkeit, um die zuverlässige Verarbeitung von interaktiven Nachrichten sicherzustellen, da Checkpoints pro Nachricht und die Deduplizierung auf Grundlage von Zeitfenstern bereitgestellt werden.
 
 Am Ende dieses Lernprogramms führen Sie drei Windows-Konsolenanwendungen aus:
 
-* **SimulatedDevice**, eine geänderte Version der in [Erste Schritte mit IoT Hub] erstellten Anwendung, die jede Sekunde *Datenpunkt*-Nachrichten vom Gerät in die Cloud und alle 10 Sekunden *interaktive* D2C-Nachrichten sendet.
-* **ProcessDeviceToCloudMessages**. Hierbei werden mit [EventProcessorHost] zuverlässig *Datenpunkt*-Nachrichten in einem Azure-Blob gespeichert und *interaktive* Nachrichten an eine Service Bus-Warteschlange weitergeleitet.
-* **ProcessD2cInteractiveMessages**. Hiermit werden Nachrichten aus der Warteschlange entfernt.
+* **SimulatedDevice**, eine geänderte Version der im Lernprogramm [Erste Schritte mit IoT Hub] erstellten App, die jede Sekunde Datenpunkt-D2C-Nachrichten und alle 10 Sekunden interaktive D2C-Nachrichten sendet.
+* **ProcessDeviceToCloudMessages**: Verwendet die [EventProcessorHost]-Klasse zum Abrufen von Nachrichten vom Event Hub-kompatiblen Endpunkt und speichert Datenpunkt-Nachrichten dann zuverlässig in einem Azure-Blob und leitet interaktive Nachrichten an eine Service Bus-Warteschlange weiter.
+* **ProcessD2CInteractiveMessages**: Entfernt die interaktiven Nachrichten aus der Service Bus-Warteschlange.
 
-> [AZURE.NOTE]IoT Hub verfügt durch Azure IoT-Geräte-SDKs über SDK-Unterstützung für zahlreiche Geräteplattformen und Sprachen (u. a. C, Java und Javascript). Im [Azure IoT Developer Center] finden Sie Schritt-für-Schritt-Anweisungen zum Verbinden eines Geräts mit dem Code in diesem Lernprogramm sowie allgemeine Informationen zum Verbinden mit Azure IoT Hub.
+> [AZURE.NOTE]IoT Hub verfügt über SDK-Unterstützung für zahlreiche Geräteplattformen und Sprachen, z. B. C, Java und JavaScript. Schritt-für-Schritt-Anleitungen zum Ersetzen des simulierten Geräts in diesem Lernprogramm durch ein physisches Gerät und allgemeine Informationen zum Verbinden von Geräten mit Azure IoT Hub finden Sie im [Azure IoT Developer Center].
 
-> [AZURE.NOTE]Der Inhalt dieses Lernprogramms kann direkt auf andere Möglichkeiten zum Verarbeiten Event Hubs-kompatibler Nachrichten übertragen werden, z. B. [Hadoop]-Projekte wie Storm. Weitere Informationen finden Sie unter [Informationen zu IoT Hub – Kompatibilität mit Event Hubs].
+Dieses Lernprogramm kann direkt auf andere Möglichkeiten zum Verarbeiten von Event Hubs-kompatiblen Nachrichten übertragen werden, z. B. Projekte vom Typ [HDInsight (Hadoop)]. Weitere Informationen finden Sie unter [Entwicklungsleitfaden für Azure IoT Hub – Device to Cloud (D2C)].
 
 Zum Durchführen dieses Lernprogramms benötigen Sie Folgendes:
 
-+ Microsoft Visual Studio 2015
++ Microsoft Visual Studio 2015.
 
 + Ein aktives Azure-Konto. <br/>Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdevelop%2Fiot%2Ftutorials%2Fprocess-d2c%2F target="\_blank").
 
-Außerdem wird davon ausgegangen, dass Sie über Kenntnisse zu [Azure Storage] und [Azure Service Bus] verfügen.
+Sie sollten über grundlegende Kenntnisse in Bezug auf [Azure Storage] und [Azure Service Bus] verfügen.
 
 
 [AZURE.INCLUDE [iot-hub-process-d2c-device-csharp](../../includes/iot-hub-process-d2c-device-csharp.md)]
@@ -63,19 +63,19 @@ Außerdem wird davon ausgegangen, dass Sie über Kenntnisse zu [Azure Storage] u
 
 Sie können jetzt die Anwendung ausführen.
 
-1.	Klicken Sie in Visual Studio mit der rechten Maustaste auf Ihre Projektmappe, und wählen Sie **Startprojekte festlegen** aus. Wählen Sie **Mehrere Startprojekte** aus, und wählen Sie dann die Aktion **Starten** für die Anwendungen **ProcessDeviceToCloudMessages**, **SimulatedDevice** und **ProcessD2cInteractiveMessages** aus.
+1.	Klicken Sie in Visual Studio im Projektmappen-Explorer mit der rechten Maustaste auf Ihre Projektmappe, und wählen Sie **Startprojekte festlegen**. Wählen Sie **Mehrere Startprojekte** aus, und wählen Sie dann **Starten** als Aktion für die Projekte **ProcessDeviceToCloudMessages**, **SimulatedDevice** und **ProcessD2CInteractiveMessages** aus.
 
-2.	Drücken Sie **F5**. Sie sollten nun sehen, dass alle Anwendungen gestartet werden, und alle vom simulierten Gerät gesendeten interaktiven Nachrichten sollten vom interaktiven Nachrichtenprozessor verarbeitet werden.
+2.	Drücken Sie **F5**, um die drei Konsolenanwendungen zu starten. Die Anwendung **ProcessD2CInteractiveMessages** sollte jede interaktive Nachricht verarbeiten, die von der Anwendung **SimulatedDevice** gesendet wird.
 
   ![][50]
 
-> [AZURE.NOTE]Damit Sie sehen können, wie die Blob-Datei aktualisiert wird, müssen Sie möglicherweise die `MAX_BLOCK_SIZE`-Konstante in `StoreEventProcessor` auf einen kleinen Wert reduzieren (d. h. `1024`). Dies liegt daran, dass es bei den mit dem simulierten Gerät gesendeten Daten einige Zeit dauern kann, bis die Blockgröße erreicht wird. Nach dieser Änderung sollten Sie sehen, dass im Speichercontainer ein Blob erstellt und aktualisiert wird.
+> [AZURE.NOTE]Um in Ihrer Blobdatei Updates sehen zu können, müssen Sie unter Umständen die Konstante **MAX\_BLOCK\_SIZE** in der **StoreEventProcessor**-Klasse auf einen niedrigeren Wert festlegen, z. B. **1024**. Dies liegt daran, dass es bei den mit dem simulierten Gerät gesendeten Daten einige Zeit dauert, bis die Blockgröße erreicht wird. Bei einer kleineren Blockgröße müssen Sie nicht so lange warten, bis das Blob erstellt und aktualisiert wird. Allerdings sorgt die Verwendung einer höheren Blockgröße für eine bessere Skalierbarkeit der Anwendung.
 
 ## Nächste Schritte
 
-In diesem Lernprogramm haben Sie gelernt, wie Sie mit [EventProcessorHost] zuverlässig *Datenpunkt*- und *interaktive* D2C-Nachrichten verarbeiten. Eine analoge Logik für die Nachrichtenverarbeitung kann implementiert werden mit:
+In diesem Lernprogramm haben Sie gelernt, wie Sie mit der [EventProcessorHost]-Klasse zuverlässig Datenpunkt-Nachrichten und interaktive D2C-Nachrichten verarbeiten.
 
-- In [Hochladen von Dateien von Geräten] wird beschrieben, wie mithilfe von C2D-Nachrichten Dateiuploads von Geräten erleichtert werden.
+Das Lernprogramm [Hochladen von Dateien von Geräten] baut auf diesem Lernprogramm auf. Es wird eine analoge Nachrichtenverarbeitungslogik verwendet, und es wird ein Muster beschrieben, bei dem C2D-Nachrichten zum Durchführen von Dateiuploads von Geräten eingesetzt werden.
 
 Weitere Informationen zu IoT Hub:
 
@@ -91,34 +91,31 @@ Weitere Informationen zu IoT Hub:
 
 <!-- Links -->
 
-[Azure-Blobs]: https://azure.microsoft.com/de-DE/documentation/articles/storage-dotnet-how-to-use-blobs/
+[Azure Blob storage]: https://azure.microsoft.com/de-DE/documentation/articles/storage-dotnet-how-to-use-blobs/
 [Azure Data Factory]: https://azure.microsoft.com/de-DE/documentation/services/data-factory/
-[Hadoop]: https://azure.microsoft.com/de-DE/documentation/services/hdinsight/
-[Service Bus Queue]: https://azure.microsoft.com/de-DE/documentation/articles/service-bus-dotnet-how-to-use-queues/
+[HDInsight (Hadoop)]: https://azure.microsoft.com/de-DE/documentation/services/hdinsight/
 [Service Bus-Warteschlange]: https://azure.microsoft.com/de-DE/documentation/articles/service-bus-dotnet-how-to-use-queues/
 [EventProcessorHost]: http://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.eventprocessorhost(v=azure.95).aspx
 
-[Transient Fault Handling]: https://msdn.microsoft.com/de-DE/library/hh680901(v=pandp.50).aspx
+
 [Behandeln vorübergehender Fehler]: https://msdn.microsoft.com/de-DE/library/hh680901(v=pandp.50).aspx
 
-[Informationen zu IoT Hub – Kompatibilität mit Event Hubs]: iot-hub-guidance.md#eventhubcompatible
+[Entwicklungsleitfaden für Azure IoT Hub – Device to Cloud (D2C)]: https://azure.microsoft.com/de-DE/documentation/articles/iot-hub-devguide/#d2c
 
 [Azure Storage]: https://azure.microsoft.com/de-DE/documentation/services/storage/
 [Azure Service Bus]: https://azure.microsoft.com/de-DE/documentation/services/service-bus/
 
-[Azure portal]: https://portal.azure.com/
+
 
 [Senden von C2D-Nachrichten mit IoT Hub]: iot-hub-csharp-csharp-c2d.md
-[Process Device-to-Cloud messages]: iot-hub-csharp-csharp-process-d2c.md
 [Verarbeiten von D2C-Nachrichten]: iot-hub-csharp-csharp-process-d2c.md
 [Hochladen von Dateien von Geräten]: iot-hub-csharp-csharp-file-upload.md
 
 [Übersicht zu IoT Hub]: iot-hub-what-is-iot-hub.md
 [Anleitungen zu IoT Hub]: iot-hub-guidance.md
 [IoT Hub-Entwicklerhandbuch]: iot-hub-devguide.md
-[IoT Hub Supported Devices]: iot-hub-supported-devices.md
 [Erste Schritte mit IoT Hub]: iot-hub-csharp-csharp-getstarted.md
 [Supported devices]: https://github.com/Azure/azure-iot-sdks/blob/master/doc/tested_configurations.md
-[Azure IoT Developer Center]: http://www.azure.com/develop/iot
+[Azure IoT Developer Center]: https://azure.microsoft.com/develop/iot
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0107_2016-->

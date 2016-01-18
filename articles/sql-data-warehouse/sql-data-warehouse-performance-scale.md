@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="09/22/2015"
+   ms.date="01/04/2016"
    ms.author="nicw;JRJ@BigBangData.co.uk;mausher"/>
 
 # Flexible Leistung und Skalierbarkeit mit SQL Data Warehouse
@@ -94,4 +94,4 @@ Die Leistungsübersicht finden Sie unter [Leistungsübersicht][].
 [klassische Azure-Portal]: http://portal.azure.com/
 [klassischen Azure-Portal]: http://portal.azure.com/
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

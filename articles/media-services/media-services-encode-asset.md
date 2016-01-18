@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/29/2015"  
+	ms.date="01/05/2015"  
 	ms.author="juliako"/>
 
 #Azure On-Demand Media Encoder – Überblick und Vergleich
@@ -72,13 +72,17 @@ Die Eingabemetadaten für den Encoder werden [hier](http://msdn.microsoft.com/li
 
 Die Ausgabemetadaten für den Encoder werden [hier](http://msdn.microsoft.com/library/azure/dn783217.aspx) beschrieben.
 
-###Miniaturansicht
+###Generieren von Miniaturansichten
 
-Informationen dazu, wie Miniaturansichten erstellt werden, finden Sie unter [Generieren von Miniaturansichten mithilfe von Media Encoder Standard mit .NET](media-services-dotnet-generate-thumbnail-with-mes.md).
+Informationen finden Sie unter [Generieren von Miniaturansichten mithilfe von Media Encoder Standard](media-services-custom-mes-presets-with-dotnet.md#thumbnails).
 
-###Audio- und/oder Videoüberlagerungen
+###Kürzen von Videos (Clipping)
 
-Wird derzeit nicht unterstützt.
+Informationen finden Sie unter [Kürzen von Videos mithilfe von Media Encoder Standard](media-services-custom-mes-presets-with-dotnet.md#trim_video).
+
+###Erstellen von Überlagerungen
+
+Informationen finden Sie unter [Erstellen von Überlagerungen mithilfe von Media Encoder Standard](media-services-custom-mes-presets-with-dotnet.md#overlay).
 
 ###Weitere Informationen
 
@@ -265,4 +269,4 @@ Windows Media Audio|Nein|Ja|Ja
 <!--Reference links in article-->
 [1]: http://azure.microsoft.com/pricing/details/media-services/
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

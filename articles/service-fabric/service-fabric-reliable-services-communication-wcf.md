@@ -1,6 +1,6 @@
 <properties
    pageTitle="Zuverlässige WCF-Dienste Kommunikationsstapel von Reliable Services | Microsoft Azure"
-   description="Der integrierte WCF Kommunikationsstapel in Reliable Services bietet Clientdienst-WCF-Kommunikation für Reliable Services."
+   description="Der integrierte WCF-Kommunikationsstapel in Service Fabric bietet Clientdienst-WCF-Kommunikation für Reliable Services."
    services="service-fabric"
    documentationCenter=".net"
    authors="BharatNarasimman"
@@ -17,10 +17,10 @@
    ms.author="bharatn@microsoft.com"/>
 
 # WCF-basierter Kommunikationsstapel für Reliable Services
-Das Reliable Services-Framework ermöglicht Dienstautoren, den Kommunikationsstapel für ihren Dienst zu wählen. Sie können den Kommunikationsstapel Ihrer Wahl über den von der [CreateServiceReplicaListeners- oder CreateServiceInstanceListeners](service-fabric-reliable-service-communication.md)-Methode zurückgegebenen `ICommunicationListener` implementieren. Das Framework bietet eine WCF-basierten Implementierung des Kommunikationstapels für Dienstautoren, die eine WCF-basierte Kommunikation verwenden möchten.
+Das Reliable Services-Framework ermöglicht Dienstautoren, den Kommunikationsstapel für ihren Dienst zu wählen. Sie können den Kommunikationsstapel ihrer Wahl über den von der [CreateServiceReplicaListeners- oder CreateServiceInstanceListeners](service-fabric-reliable-service-communication.md)-Methode zurückgegebenen **ICommunicationListener** implementieren. Das Framework bietet eine Implementierung des auf WCF (Windows Communication Foundation) basierenden Kommunikationsstapels für Dienstautoren, die eine WCF-basierte Kommunikation verwenden möchten.
 
 ## WCF-Kommunikationslistener
-Die spezielle WCF-Implementierung von `ICommunicationListener` erfolgt über die Klasse `Microsoft.ServiceFabric.Services.Communication.Wcf.Runtime.WcfCommunicationListener`.
+Die WCF-spezifische Implementierung von **ICommunicationListener** erfolgt über die **Microsoft.ServiceFabric.Services.Communication.Wcf.Runtime.WcfCommunicationListener**-Klasse.
 
 ```csharp
 
@@ -32,7 +32,7 @@ protected override IEnumerable<ServiceReplicaListener> CreateServiceReplicaListe
         {
             //
             // The name of the endpoint configured in the ServiceManifest under the Endpoints section
-            // which identifies the endpoint that the wcf servicehost should listen on.
+            // that identifies the endpoint that the WCF ServiceHost should listen on.
             //
             EndpointResourceName = "ServiceEndpoint",
 
@@ -46,8 +46,8 @@ protected override IEnumerable<ServiceReplicaListener> CreateServiceReplicaListe
 
 ```
 
-## Schreiben von Clients für WCF-Kommunikationsstapel
-Für das Schreiben von Clients, die über WCF mit Diensten kommunizieren, bietet das Framework `WcfClientCommunicationFactory`. Dies ist die spezielle WCF-Implementierung von [`ClientCommunicationFactoryBase`](service-fabric-reliable-service-communication.md).
+## Schreiben von Clients für den WCF-Kommunikationsstapel
+Für das Schreiben von Clients, die über WCF mit Diensten kommunizieren, bietet das Framework **WcfClientCommunicationFactory**. Dies ist die spezielle WCF-Implementierung von [ClientCommunicationFactoryBase](service-fabric-reliable-service-communication.md).
 
 ```csharp
 
@@ -60,7 +60,7 @@ public WcfCommunicationClientFactory(
 
 ```
 
-Auf den WCF-Kommunikationskanal kann von `WcfCommunicationClient` aus zugegriffen werden. Der Client wurde von `WcfCommunicationClientFactory` erstellt.
+Der WCF-Kommunikationskanal ist vom **WcfCommunicationClient** aus zugänglich, der mit **WcfCommunicationClientFactory** erstellt wurde.
 
 ```csharp
 
@@ -72,7 +72,7 @@ public class WcfCommunicationClient<TChannel> : ICommunicationClient where TChan
 
 ```
 
-Der Clientcode kann `WcfCommunicationClientFactory` zusammen mit `ServicePartitionClient` verwenden, um den Dienstendpunkt zu bestimmen und mit dem Dienst zu kommunizieren.
+Clientcode kann **WcfCommunicationClientFactory** zusammen mit dem **ServicePartitionClient** verwenden, um den Dienstendpunkt festzulegen und mit dem Dienst zu kommunizieren.
 
 ```csharp
 
@@ -90,11 +90,11 @@ var clientFactory = new WcfCommunicationClientFactory<ICalculator>(
     serviceResolver,// ServicePartitionResolver
     binding,        // Client binding
     null,           // Callback object
-    null);          // donot retry Exception types
+    null);          // do not retry Exception types
 
 
 //
-// Create a client for communicating with the calc service which has been created with
+// Create a client for communicating with the calc service that has been created with the
 // Singleton partition scheme.
 //
 var calculatorServicePartitionClient = new ServicePartitionClient<WcfCommunicationClient<ICalculator>>(
@@ -108,10 +108,10 @@ var result = calculatorServicePartitionClient.InvokeWithRetryAsync(
     client => client.Channel.AddAsync(2, 3)).Result;
 
 ```
- 
+
 ## Nächste Schritte
 * [Remoteprozeduraufruf mit Reliable Services-Remoting](service-fabric-reliable-services-communication-remoting.md)
 
 * [Web-API mit OWIN in Reliable Services](service-fabric-reliable-services-communication-webapi.md)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0107_2016-->

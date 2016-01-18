@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/02/2015"  
+	ms.date="12/21/2015"  
 	ms.author="juliako"/>
 
 
@@ -26,6 +26,8 @@ In diesem Thema wird veranschaulicht, wie Sie .NET mithilfe von Media Encoder St
 Es wird empfohlen, Zwischendateien immer in einen MP4-Satz mit adaptiver Bitrate zu codieren und anschließend mithilfe der [dynamischen Paketerstellung](media-services-dynamic-packaging-overview.md) in das gewünschte Format zu konvertieren. Um dynamische Paketerstellung nutzen zu können, ist mindestens eine bedarfsgesteuerte Streamingeinheit für den Streamingendpunkt erforderlich, aus dem die Inhalte bereitgestellt werden sollen. Weitere Informationen finden Sie unter [Skalieren von Media Services](media-services-manage-origins.md#scale_streaming_endpoints).
 
 Wenn Ihr Ausgabemedienobjekt speicherverschlüsselt ist, müssen Sie die Übermittlungsrichtlinien für Medienobjekte konfigurieren. Weitere Informationen finden Sie unter [Konfigurieren von Übermittlungsrichtlinien für Medienobjekte](media-services-dotnet-configure-asset-delivery-policy.md).
+
+>[AZURE.NOTE]MES erzeugt eine Ausgabedatei mit einem Namen, der die ersten 32 Zeichen des Namens der Eingabedatei enthält. Der Name basiert auf der Angabe in der Voreinstellungsdatei. Beispiel: "FileName": "{Basename}\_{Index}{Extension}". {Basename} wird durch die ersten 32 Zeichen des Namens der Eingabedatei ersetzt.
 
 ###MES-Formate
 
@@ -145,4 +147,4 @@ Im folgenden Codebeispiel wird das Media Services-.NET-SDK verwendet, um die fol
 
 [Erstellen von Miniaturansichten über Media Encoder Standard mit .NET](media-services-dotnet-generate-thumbnail-with-mes.md) [Media Services-Codierung (Übersicht)](media-services-encode-asset.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

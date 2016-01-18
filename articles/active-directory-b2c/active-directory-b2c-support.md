@@ -5,7 +5,7 @@
 	documentationCenter=""
 	authors="swkrish"
 	manager="msmbaldwin"
-	editor="curtand"/>
+	editor="bryanla"/>
 
 <tags
 	ms.service="active-directory-b2c"
@@ -13,16 +13,16 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/24/2015"
+	ms.date="01/04/2016"
 	ms.author="swkrish"/>
 
 # Vorschau für Azure Active Directory B2C: Senden von Supportanfragen für Azure Active Directory B2C
 
 [AZURE.INCLUDE [active-directory-b2c-preview-note](../../includes/active-directory-b2c-preview-note.md)]
 
-Führen Sie die folgenden Schritte aus, um Supportanfragen für Azure Active Directory (AD) B2C im Azure-Vorschauportal zu senden:
+Führen Sie die folgenden Schritte aus, um Supportanfragen für Azure Active Directory (AD) B2C im Azure-Portal zu senden:
 
-1. [Navigieren Sie zum B2C-Featureblatt im Azure-Vorschauportal](active-directory-b2c-app-registration.md#navigate-to-the-b2c-features-blade).
+1. [Führen Sie diese Schritte aus, um im Azure-Portal zum Blatt „B2C-Funktionen“ zu navigieren](active-directory-b2c-app-registration.md#navigate-to-the-b2c-features-blade).
 2. Wechseln Sie aus Ihrem B2C-Mandanten in einen anderen Mandanten, dem ein Azure-Abonnement zugeordnet ist. Dies ist normalerweise Ihr Mitarbeitermandant oder der Standardmandant, der bei der Registrierung für ein Azure-Abonnement erstellt wurde. Lesen Sie [diesen Artikel](active-directory-how-subscriptions-associated-directory.md#how-an-azure-subscription-is-related-to-azure-ad), um weitere Informationen zum Zusammenhang zwischen Azure-Abonnements und Azure AD-Verzeichnissen zu erhalten.
 
     > [AZURE.IMPORTANT]
@@ -52,4 +52,4 @@ Wenn Sie den oben beschriebenen Schritt 2 nicht durchführen und versuchen, ein
 
 ![Support – Kein Abonnement](./media/active-directory-b2c-support/support-no-sub.png)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

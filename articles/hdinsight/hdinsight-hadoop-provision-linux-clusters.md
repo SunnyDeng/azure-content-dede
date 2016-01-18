@@ -18,13 +18,13 @@
    	ms.author="nitinme"/>
 
 
-#Erstellen von Linux-basierten Clustern in HDInsight
+#Erstellen von Linux-basierten Hadoop-Clustern in HDInsight
 
 [AZURE.INCLUDE [Auswahl](../../includes/hdinsight-create-linux-cluster-selector.md)]
 
 In diesem Dokument lernen Sie die verschiedenen Methoden zum Erstellen eines Linux-basierten HDInsight-Clusters in Azure sowie verschiedene optionale Konfigurationen kennen, die für Ihren Cluster verwendet werden können. HDInsight stellt Apache Hadoop, Apache Storm und Apache HBase als Dienste auf der Azure-Cloudplattform bereit.
 
-> [AZURE.NOTE]Dieses Dokument beschreibt die verschiedenen Möglichkeiten zum Erstellen eines Clusters. Wenn Sie schnell in der Lage sein möchten, einen Cluster zu erstellen, lesen Sie [Erste Schritte mit Azure HDInsight unter Linux](../hdinsight-hadoop-linux-get-started.md).
+> [AZURE.NOTE] Dieses Dokument beschreibt die verschiedenen Möglichkeiten zum Erstellen eines Clusters. Wenn Sie schnell in der Lage sein möchten, einen Cluster zu erstellen, lesen Sie [Erste Schritte mit Azure HDInsight unter Linux](../hdinsight-hadoop-linux-get-started.md).
 
 ## Was ist ein HDInsight-Cluster?
 
@@ -45,7 +45,7 @@ Während der Konfiguration wählen Sie einen dieser Typen für den Cluster aus. 
 
 Jeder Clustertyp verfügt über eine eigene Terminologie für Knoten im Cluster, sowie über eine eigene Anzahl von Knoten und eine eigene VM-Standardgröße für jeden Knotentyp:
 
-> [AZURE.IMPORTANT]Wenn Sie mehr als 32 Workerknoten planen, entweder bei Erstellung des Clusters oder durch eine Skalierung des Clusters nach der Erstellung, müssen Sie eine Hauptknotengröße von mindestens 8 Kernen und 14 GB Arbeitsspeicher (RAM) auswählen.
+> [AZURE.IMPORTANT] Wenn Sie mehr als 32 Workerknoten planen, entweder bei Erstellung des Clusters oder durch eine Skalierung des Clusters nach der Erstellung, müssen Sie eine Hauptknotengröße von mindestens 8 Kernen und 14 GB Arbeitsspeicher (RAM) auswählen.
 
 ![HDInsight-Hadoop-Clusterknoten](./media/hdinsight-provision-clusters/HDInsight.Hadoop.roles.png)
 
@@ -105,7 +105,7 @@ Sie können HDInsight-Cluster unter einem der beiden folgenden Betriebssysteme b
 
 - **HDInsight unter Linux (Ubuntu 12.04 LTS für Linux)**: Wählen Sie diese Lösung, wenn Sie mit Linux oder Unix vertraut sind, eine Migration von einer vorhandenen Linux-basierten Hadoop-Lösung durchführen oder wenn Sie eine einfache Integration mit Komponenten des Hadoop-Systems wünschen, die für Linux konzipiert wurden. Weitere Informationen finden Sie unter [Erste Schritte mit Hadoop unter Linux in HDInsight](hdinsight-hadoop-linux-get-started.md).
 
-> [AZURE.NOTE]Bei den Informationen in diesem Artikel wird angenommen, dass Sie einen Linux-basierten HDInsight-Cluster verwenden. Spezifische Informationen für Windows-basierte Cluster finden Sie unter [Erstellen von Windows-basierten Hadoop-Clustern in HDInsight](hdinsight-provision-clusters.md).
+> [AZURE.NOTE] Bei den Informationen in diesem Artikel wird angenommen, dass Sie einen Linux-basierten HDInsight-Cluster verwenden. Spezifische Informationen für Windows-basierte Cluster finden Sie unter [Erstellen von Windows-basierten Hadoop-Clustern in HDInsight](hdinsight-provision-clusters.md).
 
 ###Abonnementname
 
@@ -138,7 +138,7 @@ HDInsight verwendet Azure-Blobspeicher als zugrunde liegenden Speicher für den 
 
 Beim Erstellen eines neuen Clusters müssen Sie entweder ein neues Azure Storage-Konto erstellen oder ein vorhandenes verwenden.
 
-> [AZURE.IMPORTANT]Der geografische Standort, den Sie für das Speicherkonto auswählen, bestimmt den Standort des HDInsight-Clusters, da der Cluster sich im gleichen Datencenter befinden muss wie das Standardspeicherkonto.
+> [AZURE.IMPORTANT] Der geografische Standort, den Sie für das Speicherkonto auswählen, bestimmt den Standort des HDInsight-Clusters, da der Cluster sich im gleichen Datencenter befinden muss wie das Standardspeicherkonto.
 >
 > Um eine Liste der unterstützten Regionen zu erhalten, klicken Sie in der Dropdownliste **Region** auf [HDInsight-Preise](https://go.microsoft.com/fwLink/?LinkID=282635&clcid=0x409).
 
@@ -156,11 +156,11 @@ Sie können die Größe der Computeressourcen auswählen, die vom Cluster genutz
 
 Unterschiedliche Clustertypen weisen verschiedene Knotentypen, eine unterschiedliche Anzahl von Knoten sowie verschiedene Knotengrößen auf. Ein Hadoop-Cluster beispielsweise besitzt zwei _Hauptknoten_ sowie standardmäßig vier _Datenknoten_. Ein Storm-Cluster dagegen weist zwei _Nimbusknoten_, drei _Zookeeperknoten_ und standardmäßig vier _Supervisorknoten_ auf.
 
-> [AZURE.IMPORTANT]Wenn Sie mehr als 32 Workerknoten planen, entweder bei Erstellung des Clusters oder durch eine Skalierung des Clusters nach der Erstellung, müssen Sie eine Hauptknotengröße von mindestens 8 Kernen und 14 GB Arbeitsspeicher (RAM) auswählen.
+> [AZURE.IMPORTANT] Wenn Sie mehr als 32 Workerknoten planen, entweder bei Erstellung des Clusters oder durch eine Skalierung des Clusters nach der Erstellung, müssen Sie eine Hauptknotengröße von mindestens 8 Kernen und 14 GB Arbeitsspeicher (RAM) auswählen.
 
 Wenn Sie das Azure-Vorschauportal zum Konfigurieren des Clusters verwenden, ist die Knotengröße auf dem Blatt __Knotentarif__ verfügbar. Hier werden auch die Kosten für die verschiedenen Knotengrößen angezeigt.
 
-> [AZURE.IMPORTANT]Die Abrechnung beginnt, sobald ein Cluster erstellt wurde, und endet erst, wenn der Cluster gelöscht wird. Weitere Informationen zu den Preisen finden Sie unter [HDInsight – Preise](https://azure.microsoft.com/pricing/details/hdinsight/).
+> [AZURE.IMPORTANT] Die Abrechnung beginnt, sobald ein Cluster erstellt wurde, und endet erst, wenn der Cluster gelöscht wird. Weitere Informationen zu den Preisen finden Sie unter [HDInsight – Preise](https://azure.microsoft.com/pricing/details/hdinsight/).
 
 ##<a id="optionalconfiguration"></a>Optionale Konfiguration
 
@@ -186,7 +186,7 @@ Ein [virtuelles Azure-Netzwerk](http://azure.microsoft.com/documentation/service
 
 Weitere Informationen zu Features, Vorteilen und Funktionen von virtuellen Netzwerken finden Sie unter [Überblick über virtuelle Azure-Netzwerke](http://msdn.microsoft.com/library/azure/jj156007.aspx).
 
-> [AZURE.NOTE]Sie müssen das virtuelle Azure-Netzwerk erstellen, bevor Sie einen Cluster erstellen. Weitere Informationen finden Sie unter [Erstellen eines virtuellen Netzwerks](virtual-networks-create-vnet.md).
+> [AZURE.NOTE] Sie müssen das virtuelle Azure-Netzwerk erstellen, bevor Sie einen Cluster erstellen. Weitere Informationen finden Sie unter [Erstellen eines virtuellen Netzwerks](virtual-networks-create-vnet.md).
 >
 > Azure HDInsight unterstützt nur standortbasierte virtuelle Netzwerke und kann momentan nicht mit affinitätsgruppenbasierten virtuellen Netzwerken verwendet werden. Verwenden Sie das Azure PowerShell-Cmdlet "Get-AzureVNetConfig", um zu prüfen, ob ein vorhandenes virtuelles Netzwerk in Azure standortbasiert ist. Wenn das virtuelle Netzwerk nicht standortbasiert ist, haben Sie die folgenden Optionen:
 >
@@ -207,13 +207,13 @@ Metastore enthält Hive- und Oozie-Metadaten, wie z. B. Informationen zu Hive-T
 
 Mit der Metastore-Konfigurationsoption können Sie einen externen Metastore angeben, der eine SQL-Datenbank verwendet. Auf diese Weise bleiben die Metadateninformationen erhalten, wenn Sie einen Cluster löschen, da diese extern in der Datenbank gespeichert sind. Informationen zum Erstellen einer SQL-Datenbank in Azure finden Sie unter [Erstellen einer ersten Azure SQL-Datenbank](sql-database-get-started.md).
 
-> [AZURE.NOTE]Für HBase-Clustertypen ist keine Metastore-Konfiguration verfügbar.
+> [AZURE.NOTE] Für HBase-Clustertypen ist keine Metastore-Konfiguration verfügbar.
 
 ###<a id="scriptaction"></a>Skriptaktion
 
 Mithilfe von Skripts können Sie während der Bereitstellung zusätzliche Komponenten installieren oder die Clusterkonfiguration anpassen. Diese Skripts werden per **Skriptaktion** aufgerufen. Weitere Informationen finden Sie unter [Anpassen eines HDInsight-Clusters mithilfe von Skriptaktionen](hdinsight-hadoop-customize-cluster-linux.md).
 
-> [AZURE.IMPORTANT]Das Hinzufügen zusätzlicher Komponenten nach der Erstellung eines Clusters wird nicht unterstützt, da diese Komponenten nach dem Reimaging eines Clusterknotens nicht verfügbar sind. Durch Skriptaktionen installierte Komponenten werden im Rahmen des Reimagingvorgangs neu installiert.
+> [AZURE.IMPORTANT] Das Hinzufügen zusätzlicher Komponenten nach der Erstellung eines Clusters wird nicht unterstützt, da diese Komponenten nach dem Reimaging eines Clusterknotens nicht verfügbar sind. Durch Skriptaktionen installierte Komponenten werden im Rahmen des Reimagingvorgangs neu installiert.
 
 ### Zusätzlicher Speicher
 
@@ -282,4 +282,4 @@ In diesem Artikel haben Sie grundlegende Informationen zum Erstellen eines Linux
 
   [89e2276a]: /documentation/articles/hdinsight-use-sqoop/ "Verwenden von Sqoop mit HDInsight"
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0107_2016-->

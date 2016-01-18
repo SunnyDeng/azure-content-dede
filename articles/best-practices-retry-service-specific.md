@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="04/28/2015"
+   ms.date="12/28/2015"
    ms.author="masashin"/>
 
 # Wiederholen der spezifischen Anleitung
@@ -489,7 +489,7 @@ Ausführliche Informationen zur Verwendung des Anwendungsblocks zur Handhabung v
 
 * [Verwenden des Anwendungsblocks zur Handhabung von vorübergehenden Fehlern mit SQL Azure ](http://msdn.microsoft.com/library/hh680899.aspx)
 * [Hartnäckigkeit, das Geheimnis aller Erfolge: Verwenden des Anwendungsblocks für die Behandlung vorübergehender Fehler](http://msdn.microsoft.com/library/dn440719.aspx)
-* [Clouddienst-Grundlagen Datenzugriffsebene - Handhabung vorübergehender Fehler](http://social.technet.microsoft.com/wiki/contents/articles/18665.cloud-service-fundamentals-data-access-layer-transient-fault-handling.aspx).
+* [Clouddienst-Grundlagen Datenzugriffsebene - Handhabung vorübergehender Fehler.](http://social.technet.microsoft.com/wiki/contents/articles/18665.cloud-service-fundamentals-data-access-layer-transient-fault-handling.aspx)
 
 Allgemeine Hinweise, um das Beste aus SQL-Datenbank herauszuholen, finden Sie unter:
 
@@ -1121,4 +1121,4 @@ Der Anwendungsblock zur Handhabung von vorübergehenden Fehlern verfügt über d
 | **Linear (festgelegtes Intervall)** | retryCount<br />retryInterval<br />fastFirstRetry<br /> | 10<br />1 Sekunde<br />true | Die Anzahl der Wiederholungsversuche.<br />Die Verzögerung zwischen Wiederholungen.<br />Gibt an, ob der erste Wiederholungsversuch sofort erfolgt. |
 Beispiele für die Verwendung des Anwendungsblocks zur Handhabung von vorübergehenden Fehlern finden Sie in den Abschnitten „Beispiele“ weiter vorne in diesem Handbuch für die Azure SQL-Datenbank mit ADO.NET und Azure Active Directory.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

@@ -10,7 +10,7 @@
   2. Wählen Sie ein **Speicherkonto** aus, das diesem Volumecontainer zugeordnet werden soll. Sie können mithilfe der Option **Weitere hinzufügen** ein vorhandenes Speicherkonto innerhalb desselben Abonnements oder ein Speicherkonto aus einem anderen Abonnement auswählen. Sie können auch das Speicherkonto auswählen, das beim Erstellen des Diensts zum ersten Mal generiert wurde.
   3. Geben Sie als Bandbreite **Unbegrenzt** an, wenn Sie die gesamte verfügbare Bandbreite nutzen möchten, oder **Benutzerdefiniert**, um eine Bandbreitenkontrolle zu implementieren. Geben Sie einen Wert zwischen 1 und 1000 MBit/s als benutzerdefinierte Bandbreite an. Mithilfe von **Bandbreitenvorlage auswählen** können Sie einen Zeitplan für die Bandbreitenzuweisung anwenden.
   4. Es wird empfohlen, dass Sie immer **Cloud-Speicherverschlüsselung aktivieren** zum Verschlüsseln der in der Cloud gespeicherten Daten verwenden. Deaktivieren Sie die Verschlüsselung nur dann, wenn Sie andere Verfahren zum Verschlüsseln Ihrer Daten anwenden.
-  5. Geben Sie einen **Verschlüsselungsschlüssel für Cloudspeicher** an, der zwischen 8 und 32 Zeichen enthält. Das Gerät verwendet diesen Schlüssel für den Zugriff auf die verschlüsselten Daten. Geben Sie im Feld **Cloudspeicher-Verschlüsselungsschlüssel bestätigen** den Cloudverschlüsselungsschlüssel erneut an, um diesen zu bestätigen.
+  5. Geben Sie einen **Verschlüsselungsschlüssel für Cloudspeicher** an, der zwischen 8 und 32 Zeichen enthält. Das Gerät verwendet diesen Schlüssel für den Zugriff auf die verschlüsselten Daten. Geben Sie im Feld **Cloudspeicher-Verschlüsselungsschlüssel bestätigen** den Cloudverschlüsselungsschlüssel erneut an, um diesen zu bestätigen. Die Verschlüsselungseinstellung kann nach dem Erstellen des Volumecontainers nicht mehr geändert werden. 
   6. Klicken Sie auf den Pfeil, um zur nächsten Seite zu wechseln.
 
     ![Erstellen eines Volumecontainers mit Bandbreitenvorlage 1](./media/storsimple-add-volume-container/HCS_CreateVCBT1-include.png)
@@ -22,4 +22,4 @@
 Der Volumecontainer wird gespeichert, und der neu erstellte Volumecontainer wird auf der Seite **Volumecontainer** aufgeführt.
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

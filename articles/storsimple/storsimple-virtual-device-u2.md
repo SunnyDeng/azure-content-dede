@@ -32,7 +32,7 @@ Das virtuelle StorSimple-Gerät ist eine zusätzliche, in der Microsoft Azure St
 Das virtuelle StorSimple-Gerät steht in zwei Modellen zur Verfügung, dem Standardmodell 8010 und dem in Update 2 eingeführten Premium-Modell 8020. Ein Vergleich der beiden Modelle ist unten in Tabellenform aufgeführt.
 
 
-| Gerätemodell | 8010<sup>1, 2</sup> | 8020<sup>3</sup> |
+| Gerätemodell | 8010<sup>1</sup> | 8020 |
 |-----------------------|---------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
 | **Maximale Kapazität** | 30 TB | 64 TB |
 | **Azure-VM** | Standard\_A3 (4 Kerne, 7 GB Arbeitsspeicher) | Standard\_DS3 (4 Kerne, 14 GB Arbeitsspeicher) |
@@ -41,7 +41,7 @@ Das virtuelle StorSimple-Gerät steht in zwei Modellen zur Verfügung, dem Stand
 | **Speichertyp** | Verwendet Azure Storage Standard<br></br> Erfahren Sie, wie Sie ein [Storage Standard-Konto erstellen](). | Verwendet Azure Storage Premium<br></br>Erfahren Sie, wie Sie ein [Storage Premium-Konto erstellen](storage-premium-storage-preview-portal.md#create-and-use-a-premium-storage-account-for-a-virtual-machine-data-disk). |
 | **Informationen zu Workloads** | Abrufen von Dateien aus Sicherungskopien auf Elementebene | Cloudentwicklungs- und Testszenarien, niedrige Latenz und Workloads mit höherer Leistung <br></br>Sekundäres Gerät für die Notfallwiederherstellung |
  
-<sup>1</sup> *Frühere Bezeichnung: 1100*, <sup>2</sup> *A steht für Azure-Formfaktor*, <sup>3</sup> *AP steht für Azure Premium-Formfaktor.*
+<sup>1</sup> *Ehemals 1100*.
 
 
 In diesem Artikel werden die einzelnen Schritte beim Bereitstellen eines virtuellen StorSimple-Geräts in Azure beschrieben. In diesem Artikel lernen Sie Folgendes:
@@ -259,4 +259,4 @@ Wenn Sie das virtuelle Gerät herunterfahren oder löschen, wird es auf der Seit
  
 - Erfahren Sie, wie Sie [StorSimple-Volumes aus einem Sicherungssatz wiederherstellen](storsimple-restore-from-backup-set.md).
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0107_2016-->

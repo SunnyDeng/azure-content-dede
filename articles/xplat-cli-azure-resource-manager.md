@@ -1,3 +1,4 @@
+
 <properties
 	pageTitle="Azure-Befehlszeilenschnittstelle mit dem Ressourcen-Manager | Microsoft Azure"
 	description="Verwenden Sie die Azure-Befehlszeilenschnittstelle für Mac, Linux und Microsoft Azure, um mehrere Ressourcen als eine Ressourcengruppe bereitzustellen."
@@ -68,7 +69,7 @@ Bei einer Ressourcengruppe handelt es sich um eine logische Gruppe von Netzwerkr
 
 	azure group create -n "testRG" -l "West US"
 
-Anschließend können Sie der Gruppe dann Ressourcen hinzufügen und sie für die Konfiguration einer Ressource wie etwa eines neuen virtuellen Computers verwenden.
+Die Bereitstellung erfolgt später in dieser Ressourcengruppe „testRG“, wenn Sie eine Vorlage zum Starten einer Ubuntu-VM verwenden. Sobald Sie eine Ressourcengruppe erstellt haben, können Sie Ressourcen wie virtuelle Computer und Netzwerke oder Speicher hinzufügen.
 
 
 ## Verwenden von Ressourcengruppenvorlagen
@@ -79,48 +80,50 @@ Sie können [eine eigene Vorlage erstellen](resource-group-authoring-templates.m
 
 Das Erstellen einer neuen Vorlage würde jedoch den Rahmen dieses Artikels sprengen. Daher verwenden wir zum Einstieg die bei [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/101-simple-linux-vm) verfügbare Vorlage _101-simple-vm-from-image_. Standardmäßig wird dabei ein einzelner virtueller Ubuntu 14.04.2-LTS-Computer in einem neuen virtuellen Netzwerk mit einem einzelnen Subnetz in der Region „Westen USA“ erstellt. Sie müssen nur die folgenden wenigen Parameter angeben, um diese Vorlage zu verwenden:
 
-* einen eindeutigen Speicherkontonamen
-* einen Administratorbenutzernamen für den virtuellen Computer
-* ein Kennwort
-* einen Domänennamen für den virtuellen Computer
+* Administratorbenutzername für den virtuellen Computer = `adminUsername`
+* Kennwort = `adminPassword`
+* Domänenname für den virtuellen Computer = `dnsLabelPrefix`
 
 >[AZURE.TIP]Diese Schritte veranschaulichen nur eine Möglichkeit der Verwendung einer VM-Vorlage mit der Azure-Befehlszeilenschnittstelle. Weitere Beispiele finden Sie unter [Bereitstellen und Verwalten von virtuellen Computern mit Azure-Ressourcen-Manager-Vorlagen und der Azure-CLI](../virtual-machines/virtual-machines-deploy-rmtemplates-azure-cli.md).
 
-1. Laden Sie die Dateien „azuredeploy.json“ und „azuredeploy.parameters.json“ von [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/101-simple-linux-vm) in einen Arbeitsordner auf Ihrem lokalen Computer herunter.
+1. Laden Sie die Dateien „azuredeploy.json“ und „azuredeploy.parameters.json“ von [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-simple-linux) in einen Arbeitsordner auf Ihrem lokalen Computer herunter.
 
 2. Öffnen Sie die Datei „azuredeploy.parameters.json“ in einem Text-Editor, und geben Sie geeignete Parameterwerte für Ihre Umgebung ein (behalten Sie den Wert **ubuntuOSVersion** bei).
 
-		{
-	  	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
-	  	"contentVersion": "1.0.0.0",
-	  	"parameters": {
-		    "newStorageAccountName": {
-		      "value": "MyStorageAccount"
-		    },
-		    "adminUsername": {
-		      "value": "MyUserName"
-		    },
-		    "adminPassword": {
-		      "value": "MyPassword"
-		    },
-		    "dnsNameForPublicIP": {
-		      "value": "MyDomainName"
-		    },
-		    "ubuntuOSVersion": {
-		      "value": "14.04.2-LTS"
-		    }
-		  }
-		}
-	```
-3. Verwenden Sie nach dem Speichern der Datei „azuredeploy.parameters.json“ den folgenden Befehl, um eine neue Ressourcengruppe basierend auf der Vorlage zu erstellen. Die Option `-e` gibt die Datei „azuredeploy.parameters.json“ an, die Sie im vorherigen Schritt angepasst haben. Ersetzen Sie *testRG* durch den gewünschten Gruppennamen und *testDeploy* durch den Bereitstellungsnamen Ihrer Wahl. Der Standort muss dem Standort aus der Parametervorlagendatei entsprechen.
 
-		azure group create "testRG" "West US" -f azuredeploy.json -d "testDeploy" -e azuredeploy.parameters.json
+```
+			{
+			  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+			  "contentVersion": "1.0.0.0",
+			  "parameters": {
+			    "adminUsername": {
+			      "value": "azureUser"
+			    },
+			    "adminPassword": {
+			      "value": "GEN-PASSWORD"
+			    },
+			    "dnsLabelPrefix": {
+			      "value": "GEN-UNIQUE"
+			    },
+			    "ubuntuOSVersion": {
+			      "value": "14.04.2-LTS"
+			    }
+			  }
+			}
+
+```
+
+3.  Nach dem Ändern der Bereitstellungsparameter stellen Sie jetzt die Ubuntu-VM in der Ressourcengruppe bereit, die zuvor erstellt wurde. Wählen Sie einen Namen für die Bereitstellung, und verwenden Sie dann den folgenden Befehl, um sie starten.
+
+		azure group deployment create -f azuredeploy.json -e azuredeploy.parameters.json testRG testRGdeploy
+
+	In diesem Beispiel wird eine Bereitstellung namens _testRGDeploy_ erstellt, die in der Ressourcengruppe _testRG_ bereitgestellt wird. Die Option `-e` gibt die Datei „azuredeploy.parameters.json“ an, die Sie im vorherigen Schritt angepasst haben. Die Option `-f` gibt die Vorlagendatei „azuredeploy.json“ an.
 
 	Dieser Befehl gibt „OK“ zurück, nachdem die Bereitstellung hochgeladen wurde, jedoch bevor die Bereitstellung auf die Ressourcen in der Gruppe angewendet wurde.
 
 4. Verwenden Sie den folgenden Befehl, um den Status der Bereitstellung zu prüfen.
 
-		azure group deployment show "testRG" "testDeploy"
+		azure group deployment show "testRG" "testRGDeploy"
 
 	Mit **ProvisioningState** wird der Status der Bereitstellung angezeigt.
 
@@ -210,4 +213,4 @@ Verwenden Sie den Befehl `azure group log show`, um protokollierte Informationen
 [adtenant]: http://technet.microsoft.com/library/jj573650#createAzureTenant
 [psrm]: http://go.microsoft.com/fwlink/?LinkId=394760
 
-<!---HONumber=AcomDC_1223_2015--->
+<!---HONumber=AcomDC_0107_2016-->

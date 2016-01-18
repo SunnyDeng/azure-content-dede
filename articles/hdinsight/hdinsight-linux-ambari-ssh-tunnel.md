@@ -13,7 +13,7 @@ ms.devlang="na"
 ms.topic="article"
 ms.tgt_pltfrm="na"
 ms.workload="big-data"
-ms.date="11/02/2015"
+ms.date="01/05/2015"
 ms.author="larryfr"/>
 
 #Verwenden von SSH-Tunneling zum Zugriff auf die Ambari-Webbenutzeroberfläche, ResourceManager, JobHistory, NameNode, Oozie und andere Webbenutzeroberflächen
@@ -149,6 +149,11 @@ Wenn Sie FoxyProxy Standard installiert haben, konfigurieren Sie es folgenderma�
 	* **URL-Muster** – ***internal.cloudapp.net*** – Dies definiert ein Muster, das mit dem internen vollständig qualifizierten Domänennamen der Clusterknoten übereinstimmt.
 
 	![FoxyProxy-Muster](./media/hdinsight-linux-ambari-ssh-tunnel/foxypattern.png)
+    
+    Wenn Sie einen Storm in HDInsight-Cluster verwenden, sollten Sie außerdem ein Muster mit den folgenden Werten hinzufügen:
+    
+    * **Name des Musters**: **Workerknoten**
+    * **URL-Muster**: *** 10.0.0*** – Ermöglicht der Storm-Benutzeroberfläche den Zugriff auf Daten auf Workerknoten nach IP-Adresse.
 
 4. Klicken Sie auf **OK**, um den Proxy hinzuzufügen und **Proxyeinstellungen** zu schließen.
 
@@ -162,7 +167,7 @@ Nachdem Sie diese Schritte ausgeführt haben, werden ausschließlich Anforderung
 
 Nachdem der Cluster eingerichtet wurde, gehen Sie folgendermaßen vor, um zu überprüfen, ob Sie von der Ambari-Webbenutzeroberfläche auf Dienst-Webbenutzeroberflächen zugreifen können:
 
-1. Navigieren Sie im Webbrowser zu https://CLUSTERNAME.azurehdinsight.net, wobei „CLUSTERNAME“ der Name des HDInsight-Clusters ist.
+1. Navigieren Sie im Webbrowser zu https://CLUSTERNAME.azurehdinsight.net, wobei "CLUSTERNAME" der Name des HDInsight-Clusters ist.
 
 	Geben Sie bei der entsprechenden Aufforderung den Benutzernamen ("admin") und das Kennwort des Administrators für den Cluster ein. Sie werden eventuell von der Ambari-Webbenutzeroberfläche ein zweites Mal zur Eingabe aufgefordert. Geben Sie in diesem Fall die Informationen erneut ein.
 
@@ -197,4 +202,4 @@ Weitere Informationen zur Verwendung von SSH mit HDInsight finden Sie in den fol
 
 * [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Windows](hdinsight-hadoop-linux-use-ssh-windows.md)
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0107_2016-->

@@ -1,20 +1,20 @@
 <properties 
-	pageTitle="Erste Schritte mit Transparent Data Encryption (TDE) in SQL Data Warehouse | Microsoft Azure" 
-	description="Erste Schritte mit Transparent Data Encryption (TDE) in SQL Data Warehouse" 
-	services="sql-data-warehouse" 
-	documentationCenter="" 
-	authors="twounder" 
-	manager="barbkess" 
-	editor=""/>
+   pageTitle="Erste Schritte mit Transparent Data Encryption (TDE) in SQL Data Warehouse | Microsoft Azure" 
+   description="Erste Schritte mit Transparent Data Encryption (TDE) in SQL Data Warehouse" 
+   services="sql-data-warehouse" 
+   documentationCenter="" 
+   authors="twounder" 
+   manager="barbkess" 
+   editor=""/>
 
 <tags 
-	ms.service="sql-data-warehouse" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="11/20/2015" 
-	ms.author="twounder"/>
+   ms.service="sql-data-warehouse" 
+   ms.workload="data-management" 
+   ms.tgt_pltfrm="na" 
+   ms.devlang="na" 
+   ms.topic="article" 
+   ms.date="01/04/2016" 
+   ms.author="twounder"/>
  
 # Erste Schritte mit Transparent Data Encryption (TDE) in SQL Data Warehouse
 > [AZURE.SELECTOR]
@@ -61,4 +61,4 @@ Führen Sie die folgenden Schritte aus, um TDE für ein SQL Data Warehouse zu de
 
 <!--Link references-->
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

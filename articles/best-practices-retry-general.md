@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="04/28/2015"
+   ms.date="12/22/2015"
    ms.author="masashin"/>
 
 # Allgemeiner Leitfaden zum Wiederholen von Vorgängen
@@ -115,4 +115,4 @@ Die folgenden Richtlinien werden Ihnen helfen, für Ihre Anwendungen einen geeig
 * [Kompensieren eines Transaktionsmusters](http://msdn.microsoft.com/library/dn589804.aspx)
 * [Idempotenz-Muster](http://blog.jonathanoliver.com/2010/04/idempotency-patterns/)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

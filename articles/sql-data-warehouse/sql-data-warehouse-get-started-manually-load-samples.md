@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="11/02/2015"
+   ms.date="01/04/2016"
    ms.author="lodipalm;barbkess"/>
 
 #Laden von Beispieldaten in SQL Data Warehouse
@@ -45,7 +45,7 @@ Befolgen Sie diese einfachen Schritte, um die Adventure Works-Beispieldatenbank 
 
 Nachdem Sie einige Beispieldaten in SQL Data Warehouse geladen haben, können Sie schnell einige Abfragen ausführen. Stellen Sie zum Ausführen einer Abfrage eine Verbindung zur neu erstellten Adventure Works-Datenbank in Azure SQL DW mit Visual Studio und SSDT her, wie im [Verbindungsdokument][] beschrieben.
 
-Beispiel einer einfachen Select-Anweisung, um alle Informationen zu den Mitarbeitern abzurufen:
+Beispiel einer einfachen SELECT-Anweisung, um alle Informationen zu den Mitarbeitern abzurufen:
 
 	SELECT * FROM DimEmployee;
 
@@ -84,4 +84,4 @@ Da Sie jetzt Gelegenheit hatten, einige Abfragen mit Beispieldaten auszuprobiere
 <!--Other Web references-->
 [Adventure Works-Beispielskripts für die SQL Data Warehouse]: https://migrhoststorage.blob.core.windows.net/sqldwsample/AdventureWorksSQLDW2012.zip
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0107_2016-->
