@@ -44,7 +44,7 @@ Die folgende schematische Darstellung zeigt die Beziehung zwischen Anwendungen u
 ![Partitionen und Replikate in einem Dienst][cluster-application-instances]
 
 
->[AZURE.TIP]Sie können das Layout von Anwendungen in einem Cluster mit dem Service Fabric-Explorer-Tool anzeigen, das unter http://&lt;yourclusteraddress&gt;:19080/Explorer verfügbar ist. Weitere Informationen finden Sie unter [Visualisieren Ihres Clusters mit dem Service Fabric-Explorer](service-fabric-visualizing-your-cluster.md).
+>[AZURE.TIP] Sie können das Layout von Anwendungen in einem Cluster mit dem Service Fabric-Explorer-Tool anzeigen, das unter http://&lt;yourclusteraddress&gt;:19080/Explorer verfügbar ist. Weitere Informationen finden Sie unter [Visualisieren Ihres Clusters mit dem Service Fabric-Explorer](service-fabric-visualizing-your-cluster.md).
 
 ## Beschreiben eines Diensts
 

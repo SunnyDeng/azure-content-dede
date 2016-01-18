@@ -26,7 +26,7 @@ Mit Azure AD B2C können Sie eine Web-API mit OAuth 2.0-Zugriffstoken sichern, s
 
 ## 1\. Erstellen eines Azure AD B2C-Verzeichnisses
 
-Bevor Sie Azure AD B2C verwenden können, müssen Sie ein Verzeichnis oder einen Mandanten erstellen. Ein Verzeichnis ist ein Container für alle Benutzer, Apps, Gruppen usw. Wenn Sie noch nicht über ein Verzeichnis verfügen,[ erstellen Sie ein B2C-Verzeichnis](active-directory-b2c-get-started.md), bevor Sie fortfahren.
+Bevor Sie Azure AD B2C verwenden können, müssen Sie ein Verzeichnis oder einen Mandanten erstellen. Ein Verzeichnis ist ein Container für alle Benutzer, Apps, Gruppen usw. Wenn Sie noch nicht über ein Verzeichnis verfügen, [erstellen Sie ein B2C-Verzeichnis](active-directory-b2c-get-started.md), bevor Sie fortfahren.
 
 ## 2\. Erstellen einer Anwendung
 
@@ -75,7 +75,7 @@ Wenn der Benutzer mit `TaskWebApp` interagiert, sendet der Client Anfragen an Az
     <add key="UnobtrusiveJavaScriptEnabled" value="true" />
     <add key="ida:Tenant" value="{Enter the name of your B2C directory, e.g. contoso.onmicrosoft.com}" />
     <add key="ida:ClientId" value="{Enter the Application Id assigned to your app by the Azure Portal, e.g.580e250c-8f26-49d0-bee8-1c078add1609}" />
-    <add key="ida:ClientSecret" value="{Enter the Application Secret you created in the Azure Portal, e.g. yGNYWwypRS4Sj1oYXd0443n}" />
+    <add key="ida:ClientSecret" value="{Enter the Application Secret you created in the Azure portal, e.g. yGNYWwypRS4Sj1oYXd0443n}" />
     <add key="ida:AadInstance" value="https://login.microsoftonline.com/{0}{1}{2}" />
     <add key="ida:RedirectUri" value="https://localhost:44316/" />
     <add key="ida:SignUpPolicyId" value="[Enter your sign up policy name, e.g. b2c_1_sign_up]" />
@@ -219,8 +219,10 @@ Erstellen Sie abschließend `TaskWebApp` und `TaskService`, und führen Sie beid
 
 ## 8\. Bearbeiten der Richtlinien
 
-Nachdem Sie eine API mit Azure AD B2C gesichert haben, können Sie mit Richtlinien für Ihre App experimentieren und den Effekt (oder dessen Fehlen) auf die API sehen. Sie können <!--add **identity providers**
-to the policies, allowing you users to sign into the Task Client using social accounts.  You can also -->die **Anwendungsansprüche** in den Richtlinien bearbeiten und die Benutzerinformationen ändern, die in der Web-API verfügbar sind. Zusätzliche Ansprüche, die Sie hinzufügen, stehen Ihrer .NET MVC-Web-API im `ClaimsPrincipal`-Objekt zur Verfügung, wie oben beschrieben.
+Nachdem Sie eine API mit Azure AD B2C gesichert haben, können Sie mit Richtlinien für Ihre App experimentieren und den Effekt (oder dessen Fehlen) auf die API sehen. Sie können 
+<!--add **identity providers** 
+to the policies, allowing you users to sign into the Task Client using social accounts.  You can also 
+-->die **Anwendungsansprüche** in den Richtlinien bearbeiten und die Benutzerinformationen ändern, die in der Web-API verfügbar sind. Zusätzliche Ansprüche, die Sie hinzufügen, stehen Ihrer .NET MVC-Web-API im `ClaimsPrincipal`-Objekt zur Verfügung, wie oben beschrieben.
 
 <!--
 

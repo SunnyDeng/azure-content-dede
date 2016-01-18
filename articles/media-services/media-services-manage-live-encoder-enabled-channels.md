@@ -76,7 +76,7 @@ Im folgenden Diagramm ist ein Livedatenstrom-Workflow dargestellt, bei dem ein S
 
 Im Folgenden werden grundlegende Schritte zum Erstellen allgemeiner Livestreaminganwendungen erläutert.
 
->[AZURE.NOTE]Die maximal empfohlene Dauer eines Liveereignisses beträgt derzeit 8 Stunden. Wenden Sie sich an „AMSLiveD@microsoft.com“, wenn Sie einen Kanal für längere Zeit laufen lassen müssen. Beachten Sie, dass für das Live Encoding Gebühren berechnet werden und dass diese Gebühren stundenweise anfallen, wenn Sie einen Live Encoding-Kanal im Zustand „Wird ausgeführt“ belassen. Es wird empfohlen, die Ausführung der Kanäle sofort zu beenden, wenn das Livestreaming-Ereignis abgeschlossen ist, um das Anfallen zusätzlicher Stundengebühren zu vermeiden.
+>[AZURE.NOTE] Die maximal empfohlene Dauer eines Liveereignisses beträgt derzeit 8 Stunden. Wenden Sie sich an „AMSLiveD@microsoft.com“, wenn Sie einen Kanal für längere Zeit laufen lassen müssen. Beachten Sie, dass für das Live Encoding Gebühren berechnet werden und dass diese Gebühren stundenweise anfallen, wenn Sie einen Live Encoding-Kanal im Zustand „Wird ausgeführt“ belassen. Es wird empfohlen, die Ausführung der Kanäle sofort zu beenden, wenn das Livestreaming-Ereignis abgeschlossen ist, um das Anfallen zusätzlicher Stundengebühren zu vermeiden.
 
 1. Schließen Sie eine Videokamera an einen Computer an. Starten und konfigurieren Sie einen lokalen Liveencoder, von dem ein **Single**-Bitrate-Datenstrom in einem der folgenden Protokolle ausgegeben wird: RTMP, Smooth Streaming oder RTP (MPEG-TS). Weitere Informationen finden Sie unter [Microsoft Azure Media Services RTMP-Support und Liveencoder](http://go.microsoft.com/fwlink/?LinkId=532824).
 	
@@ -104,7 +104,7 @@ Im Folgenden werden grundlegende Schritte zum Erstellen allgemeiner Livestreamin
 1. Sie können das Programm und damit das Streaming und die Archivierung des Ereignisses jederzeit beenden.
 1. Löschen Sie das Programm (und optional das Medienobjekt).   
 
->[AZURE.NOTE]Es ist sehr wichtig, das Beenden eines Live Encoding-Kanals nicht zu vergessen. Beachten Sie, dass das Live Encoding stundenweise abgerechnet wird und dass die Beibehaltung des Status „Wird ausgeführt“ für einen Live Encoding-Kanal mit Gebühren verbunden ist. Es wird empfohlen, die Ausführung der Kanäle sofort zu beenden, wenn das Livestreaming-Ereignis abgeschlossen ist, um das Anfallen zusätzlicher Stundengebühren zu vermeiden.
+>[AZURE.NOTE] Es ist sehr wichtig, das Beenden eines Live Encoding-Kanals nicht zu vergessen. Beachten Sie, dass das Live Encoding stundenweise abgerechnet wird und dass die Beibehaltung des Status „Wird ausgeführt“ für einen Live Encoding-Kanal mit Gebühren verbunden ist. Es wird empfohlen, die Ausführung der Kanäle sofort zu beenden, wenn das Livestreaming-Ereignis abgeschlossen ist, um das Anfallen zusätzlicher Stundengebühren zu vermeiden.
 
 
 Im Abschnitt [Livestreaming-Aufgaben](media-services-manage-channels-overview.md#tasks) finden Sie Verknüpfungen zu Themen, in welchen veranschaulicht wird, wie die beschriebenen Aufgaben auszuführen sind.
@@ -245,7 +245,7 @@ Wenn Sie einen Kanal erstellen, können Sie die Vorschau-URL abrufen. Der Kanal 
 
 Sobald der Kanal mit dem Erfassen von Daten beginnt, können Sie eine Vorschau des Streams anzeigen.
 
->[AZURE.NOTE]Zurzeit kann die Vorschau des Datenstroms unabhängig vom angegebenen Eingabetyp nur in fragmentiertem MP4-Format (Smooth Streaming) geliefert werden. Sie können den Player [http://smf.cloudapp.net/healthmonitor](http://smf.cloudapp.net/healthmonitor) verwenden, um den Smooth Stream zu testen. Sie können auch einen Player verwenden, der im klassischen Azure-Portal gehostet wird, um Ihren Datenstrom anzuzeigen.
+>[AZURE.NOTE] Zurzeit kann die Vorschau des Datenstroms unabhängig vom angegebenen Eingabetyp nur in fragmentiertem MP4-Format (Smooth Streaming) geliefert werden. Sie können den Player [http://smf.cloudapp.net/healthmonitor](http://smf.cloudapp.net/healthmonitor) verwenden, um den Smooth Stream zu testen. Sie können auch einen Player verwenden, der im klassischen Azure-Portal gehostet wird, um Ihren Datenstrom anzuzeigen.
 
 ###Zulässige IP-Adressen
 
@@ -255,7 +255,7 @@ Sie können die IP-Adressen definieren, die zum Herstellen einer Verbindung mit 
 
 In diesem Abschnitt wird beschrieben, wie die Einstellungen für den Liveencoder innerhalb des Kanals angepasst werden können, wenn der **Codierungstyp** des Kanals die Einstellung **Standard** aufweist.
 
->[AZURE.NOTE]Bei der Eingabe mehrerer Sprachspuren und beim Ausführen von Live Encoding mit Azure wird nur RTP für die Eingabe mehrerer Sprachen unterstützt. Sie können bis zu 8 Audiodatenströme mit MPEG-2 TS über RTP definieren. Das Erfassen mehrerer Audiospuren mit RTMP oder Smooth Streaming wird derzeit nicht unterstützt. Beim Durchführen von Live Encoding mit [lokalen Liveencodern](media-services-manage-channels-overview.md) gibt es keine solche Einschränkung, weil alle an AMS gesendeten Daten ohne weitere Verarbeitung über einen Kanal weitergeleitet werden.
+>[AZURE.NOTE] Bei der Eingabe mehrerer Sprachspuren und beim Ausführen von Live Encoding mit Azure wird nur RTP für die Eingabe mehrerer Sprachen unterstützt. Sie können bis zu 8 Audiodatenströme mit MPEG-2 TS über RTP definieren. Das Erfassen mehrerer Audiospuren mit RTMP oder Smooth Streaming wird derzeit nicht unterstützt. Beim Durchführen von Live Encoding mit [lokalen Liveencodern](media-services-manage-channels-overview.md) gibt es keine solche Einschränkung, weil alle an AMS gesendeten Daten ohne weitere Verarbeitung über einen Kanal weitergeleitet werden.
 
 ###Quelle für AD-Marker
 
@@ -416,7 +416,7 @@ Wird beendet|Wird beendet|Nein (Übergangsstatus)
 Beendet|Beendet|Nein
 
 
->[AZURE.NOTE]Derzeit beträgt die durchschnittliche Dauer bis zum Start des Kanals ca. 2 Minuten, aber in Einzelfällen kann dies auch mehr als 20 Minuten dauern. Das Zurücksetzen des Kanals kann bis zu 5 Minuten dauern.
+>[AZURE.NOTE] Derzeit beträgt die durchschnittliche Dauer bis zum Start des Kanals ca. 2 Minuten, aber in Einzelfällen kann dies auch mehr als 20 Minuten dauern. Das Zurücksetzen des Kanals kann bis zu 5 Minuten dauern.
 
 
 ##<a id="Considerations"></a>Überlegungen

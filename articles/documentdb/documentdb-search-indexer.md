@@ -267,7 +267,7 @@ Glückwunsch! Sie wissen nun, wie Azure DocumentDB mit Azure Search unter Verwen
 
  - Weitere Informationen zu Azure DocumentDB finden Sie auf der [Seite zum DocumentDB-Dienst](https://azure.microsoft.com/services/documentdb/).
 
- - Weitere Informationen zu Azure Search finden Sie auf der [Seite des Search-Diensts](https://azure.microsoft.com/de-DE/services/search/).
+ - Weitere Informationen zu Azure Search finden Sie auf der [Seite des Search-Diensts](https://azure.microsoft.com/services/search/).
  
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0107_2016--->

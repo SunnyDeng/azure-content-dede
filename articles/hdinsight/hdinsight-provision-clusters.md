@@ -51,7 +51,9 @@ Folgende sind die grundlegenden Konfigurationsoptionen zum Erstellen eines HDIns
 	
 - **Betriebssystem**
 
-	Sie können HDInsight-Cluster unter einem der folgenden beiden Betriebssysteme erstellen: - **HDInsight für Windows (Windows Server 2012 R2 Datacenter)**: - **HDInsight unter Linux (Ubuntu 12.04 LTS für Linux)**: HDInsight bietet die Möglichkeit, Linux-Cluster in Azure zu konfigurieren. Konfigurieren Sie einen Linux-Cluster, wenn Sie mit Linux oder Unix und der Migration von einer vorhandenen Linux-basierten Hadoop-Lösung vertraut sind, oder Sie eine einfache Integration mit Komponenten des Hadoop-Systems wünschen, die für Linux konzipiert sind. Weitere Informationen finden Sie unter [Erste Schritte mit Hadoop unter Linux in HDInsight](hdinsight-hadoop-linux-get-started.md).
+	Sie können HDInsight-Cluster unter einem der folgenden beiden Betriebssysteme erstellen:
+	- **HDInsight für Windows (Windows Server 2012 R2 Datacenter)**:
+	- **HDInsight unter Linux (Ubuntu 12.04 LTS für Linux)**: HDInsight bietet die Möglichkeit, Linux-Cluster in Azure zu konfigurieren. Konfigurieren Sie einen Linux-Cluster, wenn Sie mit Linux oder Unix und der Migration von einer vorhandenen Linux-basierten Hadoop-Lösung vertraut sind, oder Sie eine einfache Integration mit Komponenten des Hadoop-Systems wünschen, die für Linux konzipiert sind. Weitere Informationen finden Sie unter [Erste Schritte mit Hadoop unter Linux in HDInsight](hdinsight-hadoop-linux-get-started.md).
 
 - **Clustertyp** und **Clustergröße (auch Datenknoten)**
 
@@ -77,16 +79,25 @@ Folgende sind die grundlegenden Konfigurationsoptionen zum Erstellen eines HDIns
 
 	![HDInsight Hadoop-Clusterrollen](./media/hdinsight-provision-clusters/HDInsight.HBase.roles.png)
 
-	HBase-Cluster für HDInsight werden mit drei Rollen bereitgestellt: – Hauptserver (2 Knoten) – Regionsserver (mindestens 1 Knoten) – Master-/Zookeeper-Knoten (3 Knoten)
+	HBase-Cluster für HDInsight werden mit drei Rollen bereitgestellt: 
+	– Hauptserver (2 Knoten) 
+	– Regionsserver (mindestens 1 Knoten) 
+	– Master-/Zookeeper-Knoten (3 Knoten)
 
 	![HDInsight Hadoop-Clusterrollen](./media/hdinsight-provision-clusters/HDInsight.Storm.roles.png)
 
-	Storm-Cluster für HDInsight werden mit drei Rollen bereitgestellt: – Nimbus-Knoten (2 Knoten) – Supervisor-Server (mindestens 1 Knoten) – Zookeeper-Knoten (3 Knoten)
+	Storm-Cluster für HDInsight werden mit drei Rollen bereitgestellt: 
+	– Nimbus-Knoten (2 Knoten) 
+	– Supervisor-Server (mindestens 1 Knoten) 
+	– Zookeeper-Knoten (3 Knoten)
 
 
 	![HDInsight Hadoop-Clusterrollen](./media/hdinsight-provision-clusters/HDInsight.Spark.roles.png)
 
-	Spark-Cluster für HDInsight werden mit drei Rollen bereitgestellt: – Hauptknoten (2 Knoten) – Workerknoten (mindestens 1 Knoten) – Zookeeper-Knoten (3 Knoten) (für Zookeeper vom Typ "A1" kostenlos)
+	Spark-Cluster für HDInsight werden mit drei Rollen bereitgestellt: 
+	– Hauptknoten (2 Knoten) 
+	– Workerknoten (mindestens 1 Knoten) 
+	– Zookeeper-Knoten (3 Knoten) (für Zookeeper vom Typ "A1" kostenlos)
 
 	Kunden wird die Nutzung dieser Knoten für die Laufzeit des Clusters in Rechnung gestellt. Die Abrechnung beginnt, sobald ein Cluster erstellt wurde, und endet, wenn der Cluster gelöscht wird (bei Clustern ist kein Aufheben der Zuweisung oder Anhalten möglich). Die Clustergröße wirkt sich auf die Clusterkosten aus. Zu Lernzwecken wird empfohlen, einen Datenknoten zu verwenden. Weitere Informationen zu den Preisen von HDInsight finden Sie unter [HDInsight – Preise](https://go.microsoft.com/fwLink/?LinkID=282635&clcid=0x409).
 

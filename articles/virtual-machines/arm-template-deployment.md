@@ -32,7 +32,7 @@ Zur Durchführung dieses Lernprogramms benötigen Sie außerdem Folgendes:
 - [Azure-Speicherkonto](../storage-create-storage-account.md)
 - [Windows Management Framework 3.0 ](http://www.microsoft.com/download/details.aspx?id=34595) oder [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855)
 
->[AZURE.NOTE]Das Speicherkonto, das Sie an dieser Stelle erstellen, wird zum Speichern der Vorlage verwendet. Ein weiteres Speicherkonto wird erstellt, wenn Sie die Vorlage bereitstellen, die zum Speichern des Datenträgers für den virtuellen Computer verwendet wird. Erstellen Sie in diesem Speicherkonto einen Container mit der Bezeichnung „templates“.
+>[AZURE.NOTE] Das Speicherkonto, das Sie an dieser Stelle erstellen, wird zum Speichern der Vorlage verwendet. Ein weiteres Speicherkonto wird erstellt, wenn Sie die Vorlage bereitstellen, die zum Speichern des Datenträgers für den virtuellen Computer verwendet wird. Erstellen Sie in diesem Speicherkonto einen Container mit der Bezeichnung „templates“.
 
 [AZURE.INCLUDE [powershell-preview](../../includes/powershell-preview-inline-include.md)]
 
@@ -318,7 +318,7 @@ Um Werte für die Ressourcenparameter anzugeben, die in der Vorlage definiert wu
 	}
 	```
 
-    >[AZURE.NOTE]In diesem Tutorial wird ein virtueller Computer erstellt, auf dem eine Version des Betriebssystems Windows Server ausgeführt wird. Informationen zum Auswählen anderer Images finden Sie unter [Navigieren zwischen und Auswählen von Images für virtuelle Azure-Computer mit Windows PowerShell und der Azure-Befehlszeilenschnittstelle](resource-groups-vm-searching.md).
+    >[AZURE.NOTE] In diesem Tutorial wird ein virtueller Computer erstellt, auf dem eine Version des Betriebssystems Windows Server ausgeführt wird. Informationen zum Auswählen anderer Images finden Sie unter [Navigieren zwischen und Auswählen von Images für virtuelle Azure-Computer mit Windows PowerShell und der Azure-Befehlszeilenschnittstelle](resource-groups-vm-searching.md).
 
 
 4. Speichern Sie Parameterdatei, die Sie erstellt haben.

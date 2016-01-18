@@ -35,7 +35,9 @@ Die folgenden Tabellen zeigen, welche Dienste Bereitstellung und Verwaltung übe
 | Batch | Ja | Ja | [Batch REST (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn820158.aspx) | | [Microsoft.Batch](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Batch%22&type=Code) |
 | Dynamics Lifecycle Services | Ja | | | | [Microsoft.DynamicsLcs](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.DynamicsLcs%22&type=Code)
 | Service Fabric (Vorschau) | Ja | | [Service Fabric REST](https://msdn.microsoft.com/library/azure/dn707692.aspx) | | [Microsoft.ServiceFabric](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.ServiceFabric%22&type=Code) |
-| Virtual Machines (klassisch) | Eingeschränkt | Teilweise (siehe unten) | - | - | | Remote-App | Nein | - | - | - | | Cloud Services (klassisch) | Nein | Teilweise (siehe unten) | - | - | - |
+| Virtual Machines (klassisch) | Eingeschränkt | Teilweise (siehe unten) | - | - | 
+| Remote-App | Nein | - | - | - | 
+| Cloud Services (klassisch) | Nein | Teilweise (siehe unten) | - | - | - |
 
 "Virtuelle Computer (klassisch)" bezieht sich auf Ressourcen, die über das klassische Bereitstellungsmodell statt über das Ressourcen-Manager-Bereitstellungsmodell bereitgestellt wurden. Im Allgemeinen unterstützen diese Ressourcen keine Ressourcen-Manager-Vorgänge, es wurden jedoch einige Vorgänge aktiviert. Weitere Informationen zu diesen Bereitstellungsmodellen finden Sie unter [Grundlegendes zur Bereitstellung über den Ressourcen-Manager im Vergleich zur klassischen Bereitstellung](resource-manager-deployment-model.md).
 
@@ -64,7 +66,8 @@ Die folgenden Tabellen zeigen, welche Dienste Bereitstellung und Verwaltung übe
 | SQL-Datenbank | Ja | Ja | [SQL-Datenbank REST](https://msdn.microsoft.com/library/azure/mt163571.aspx) | [2014-04-01-preview](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2014-04-01-preview/Microsoft.Sql.json) | [Microsoft.Sql](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Sql%22&type=Code) |
 | Suche | Ja | Ja | [Azure-Suchdienst-REST-API](https://msdn.microsoft.com/library/azure/dn798935.aspx) | | [Microsoft.Search](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Search%22&type=Code) |
 | SQL Data Warehouse | Ja | | | |
-| StorSimple | Nein | - | - | - | | Managed Cache | Nein | - | - | - |
+| StorSimple | Nein | - | - | - | 
+| Managed Cache | Nein | - | - | - |
 
 ## Web- und mobile Anwendungen
 
@@ -90,7 +93,8 @@ Bei der Arbeit mit Web-Apps können Sie nicht nur einen App Services-Plan versch
 | Stream Analytics | Ja | | [Stream Analytics REST](https://msdn.microsoft.com/library/azure/dn835031.aspx) | | [Microsoft.StreamAnalytics](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.StreamAnalytics%22&type=Code) |
 | HDInsights | Ja | Ja | [HDInsights REST](https://msdn.microsoft.com/library/azure/mt622197.aspx) | | [Microsoft.HDInsight](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.HDInsight%22&type=Code) |
 | Data Factory | Ja | Ja | [Data Factory REST](https://msdn.microsoft.com/library/azure/dn906738.aspx) | | [Microsoft.DataFactory](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.DataFactory%22&type=Code) |
-| Machine Learning | Nein | - | - | - | | Data Catalog | Nein | - | - | - |
+| Machine Learning | Nein | - | - | - | 
+| Data Catalog | Nein | - | - | - |
 
 ## Medien und CDN
 
@@ -106,13 +110,16 @@ Bei der Arbeit mit Web-Apps können Sie nicht nur einen App Services-Plan versch
 | ------- | ------- | -------------- | -------- | ------ | ------ |
 | BizTalk Services | Ja | | | [2014-04-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2014-04-01/Microsoft.BizTalkServices.json) | [Microsoft.BizTalkServices](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.BizTalkServices%22&type=Code) |
 | Service Bus | Ja | | [Service Bus REST-API-Referenz](https://msdn.microsoft.com/library/azure/hh780717.aspx) | | [Microsoft.ServiceBus](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.ServiceBus%22&type=Code) |
-| Backup | Nein | - | - | - | | Site Recovery | Nein | - | - | - |
+| Backup | Nein | - | - | - | 
+| Site Recovery | Nein | - | - | - |
 
 ## Identitäts- und Zugriffsverwaltung 
 
 | Dienst | Ressourcen-Manager aktiviert | Ressourcen verschieben | REST-API | Schema | Schnellstartvorlagen |
 | ------- | ------- | -------------- | -------- | ------ | ------ |
-| Azure Active Directory | Nein | - | - | - | | Azure Actice Directory B2C | Nein | - | - | - | | Multi-Factor Authentication | Nein | - | - | - |
+| Azure Active Directory | Nein | - | - | - | 
+| Azure Actice Directory B2C | Nein | - | - | - | 
+| Multi-Factor Authentication | Nein | - | - | - |
 
 ## Entwicklerdienste 
 

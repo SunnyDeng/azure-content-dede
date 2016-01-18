@@ -489,7 +489,7 @@ Nachdem Sie alle unterstützenden Ressourcen erstellt haben, können Sie nun ein
 	}
 	```
 
-	>[AZURE.NOTE]In diesem Tutorial wird eine virtuelle Maschine erstellt, auf dem eine Version des Windows Server-Betriebssystems ausgeführt wird. Weitere Informationen zur Auswahl von anderen Images finden Sie unter [Navigieren zwischen und Auswählen von Images für virtuelle Azure-Maschinen mit Windows PowerShell und der Azure-Befehlszeilenschnittstelle](resource-groups-vm-searching.md).
+	>[AZURE.NOTE] In diesem Tutorial wird eine virtuelle Maschine erstellt, auf dem eine Version des Windows Server-Betriebssystems ausgeführt wird. Weitere Informationen zur Auswahl von anderen Images finden Sie unter [Navigieren zwischen und Auswählen von Images für virtuelle Azure-Maschinen mit Windows PowerShell und der Azure-Befehlszeilenschnittstelle](resource-groups-vm-searching.md).
 
 2. Fügen Sie der Main-Methode den folgenden Code hinzu, um die gerade hinzugefügte Methode aufzurufen:
 

@@ -79,7 +79,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
     ![App-URL konfigurieren](./media/active-directory-saas-cherwell-tutorial/IC798992.png "App-URL konfigurieren")
 
     1.  Geben Sie im Textfeld **Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei **Cherwell** verwenden (z. B. **https://pictdev.cherwellondemand.com/cherwellclient*).
-2.  Klicken Sie auf **Weiter**.
+    2.  Klicken Sie auf **Weiter**.
 
 4.  Führen Sie auf der Seite **Einmaliges Anmelden konfigurieren um Cherwell** die folgenden Schritte aus.
 

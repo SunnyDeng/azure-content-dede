@@ -133,7 +133,9 @@ Mitwirkende können alles mit Ausnahme des Zugriffs verwalten.
 | **Aktionen** ||
 | ------- | ------ |
 | * | Erstellen und Verwalten von Ressourcen aller Typen |
-| ****Nicht-Aktionen | | | Microsoft.Authorization/*/Write | Kann keine Rollen und Rollenzuweisungen erstellen | | Microsoft.Authorization/*/Delete | Kann keine Rollen und Rollenzuweisungen löschen |
+| ****Nicht-Aktionen |  |
+| Microsoft.Authorization/*/Write | Kann keine Rollen und Rollenzuweisungen erstellen |
+| Microsoft.Authorization/*/Delete | Kann keine Rollen und Rollenzuweisungen löschen |
 
 ### Mitwirkender von Data Factory
 Kann Data Factorys verwalten
@@ -379,7 +381,8 @@ Kann den Benutzerzugriff auf Azure-Ressourcen verwalten
 
 | **Aktionen** ||
 | ------- | ------ |
-| */read | Lesen von Ressourcen aller Typen, mit Ausnahme geheimer Schlüssel | | Microsoft.Authorization/* | Lesen von Autorisierungen |
+| */read | Lesen von Ressourcen aller Typen, mit Ausnahme geheimer Schlüssel |
+| Microsoft.Authorization/* | Lesen von Autorisierungen |
 | Microsoft.Support/* | Erstellen und Verwalten von Support-Tickets |
 
 ### Mitwirkender von klassischen virtuellen Computern

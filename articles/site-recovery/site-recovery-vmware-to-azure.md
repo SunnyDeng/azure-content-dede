@@ -23,7 +23,8 @@ In diesem Artikel wird beschrieben, wie Site Recovery zu folgenden Zwecken berei
 - **Schützen virtueller VMware-Computer** – Koordinieren von Replikation, Failover und Wiederherstellung von lokalen virtuellen VMware-Computern mit Azure
 - **Schützen physischer Server** – Koordinieren von Replikation, Failover und Wiederherstellung von lokalen physischen Windows- und Linux-Servern mit Azure mithilfe des Azure Site Recovery-Diensts
 
-Dieser Artikel enthält eine Übersicht, informiert über die Voraussetzungen für die Bereitstellung und bietet Setupanweisungen. Am Ende des Artikels wird das Replizieren der virtuellen VMware-Computer oder physischen Server in Azure beschrieben. Sollten Probleme auftreten, stellen Sie Ihre Fragen im [Azure Recovery Services-Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
+Dieser Artikel enthält eine Übersicht, informiert über die Voraussetzungen für die Bereitstellung und bietet Setupanweisungen. Am Ende des Artikels wird das Replizieren der virtuellen VMware-Computer oder physischen Server in Azure beschrieben. 
+Sollten Probleme auftreten, stellen Sie Ihre Fragen im [Azure Recovery Services-Forum](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
 
 
 ## Was ist Azure Site Recovery?
@@ -228,7 +229,8 @@ Es gibt zwei Möglichkeiten, die Netzwerkkonnektivität zwischen Ihrem lokalen S
 4. Geben Sie unter **Details des neuen Konfigurationsservers** Folgendes an:
 
 	- Einen Namen für den Konfigurationsserver und die Anmeldeinformationen für die Verbindung mit dem Server.
-	- Wählen Sie im Dropdownmenü als Netzwerkkonnektivitätstyp die Option „Öffentliches Internet“ oder „VPN“.[AZURE.NOTE]Diese Einstellung ist eine Entscheidung, die zur Bereitstellungszeit getroffen werden muss und später nicht geändert werden kann.  
+	- Wählen Sie im Dropdownmenü als Netzwerkkonnektivitätstyp die Option „Öffentliches Internet“ oder „VPN“.
+	[AZURE.NOTE]Diese Einstellung ist eine Entscheidung, die zur Bereitstellungszeit getroffen werden muss und später nicht geändert werden kann.  
 	- Wählen Sie das Azure-Netzwerk aus, in dem sich der Server befinden soll. Wenn Sie VPN als Netzwerkkonnektivitätstyp angegeben haben, sollten Sie sicherstellen, dass dieses virtuelle Azure-Netzwerk mit Ihrem lokalen Standort über eine ExpressRoute-Verbindung oder ein Standort-zu-Standort-VPN verbunden ist.
 	- Geben Sie die interne IP-Adresse und das Subnetz an, die bzw. das dem Server zugewiesen werden soll. Beachten Sie, dass in jedem Subnetz die ersten vier IP-Adressen für die interne Verwendung durch Azure reserviert sind. Verwenden Sie eine beliebige andere verfügbare IP-Adresse.
 	
@@ -273,12 +275,12 @@ Der Konfigurationsserver wird in einem automatisch erstellten Azure-Clouddienst 
 	- Wenn Sie auf **Weiter** klicken, wird ein Test ausgeführt, um die Proxyverbindung zu überprüfen.
 	- Wenn Sie einen benutzerdefinierten Proxy verwenden oder wenn der Standardproxy Authentifizierung erfordert, müssen Sie die Proxydetails eingeben, einschließlich Adresse, Port und Anmeldeinformationen.
 	- Über den Proxy sollte Zugriff auf die folgenden URLs möglich sein:
-		- **.hypervrecoverymanager.windowsazure.com
-- **.accesscontrol.windows.net
-- **.backup.windowsazure.com
-- **.blob.core.windows.net
-- **.store.core.windows.net
-- Wenn Sie auf IP-Adressen basierende Firewallregeln verwenden, sollten Sie sicherstellen, dass die Regeln die Kommunikation zwischen dem Konfigurationsserver und den unter [IP-Bereiche des Azure-Rechenzentrums](https://msdn.microsoft.com/library/azure/dn175718.aspx) beschriebenen IP-Adressen sowie das HTTPS (443)-Protokoll zulassen. Fügen Sie die IP-Adressbereiche der zu verwendenden Azure-Region sowie die IP-Adressbereiche der westlichen USA einer Positivliste hinzu.
+		- *.hypervrecoverymanager.windowsazure.com
+		- *.accesscontrol.windows.net
+		- *.backup.windowsazure.com
+		- *.blob.core.windows.net
+		- *.store.core.windows.net
+	- Wenn Sie auf IP-Adressen basierende Firewallregeln verwenden, sollten Sie sicherstellen, dass die Regeln die Kommunikation zwischen dem Konfigurationsserver und den unter [IP-Bereiche des Azure-Rechenzentrums](https://msdn.microsoft.com/de-DE/library/azure/dn175718.aspx) beschriebenen IP-Adressen sowie das HTTPS (443)-Protokoll zulassen. Fügen Sie die IP-Adressbereiche der zu verwendenden Azure-Region sowie die IP-Adressbereiche der westlichen USA einer Positivliste hinzu.
 
 	![Proxyregistrierung](./media/site-recovery-vmware-to-azure/ASRVMWare_RegistrationProxy.png)
 
@@ -380,9 +382,10 @@ Beachten Sie, dass in jedem Subnetz die ersten vier IP-Adressen für die interne
 
 8. Wenn Sie Linux verwenden:
 	1. Stellen Sie sicher, dass Sie die aktuellen Linux Integration Services (LIS) installiert haben, bevor Sie die Masterzielserver-Software installieren. Die neueste Version von LIS sowie eine Anleitung zur Installation finden Sie [hier](https://www.microsoft.com/de-DE/download/details.aspx?id=46842). Starten Sie den Computer nach der LIS-Installation neu.
-	2. Klicken Sie unter ** Zielressourcen (Azure-Ressourcen) vorbereiten** auf **Weitere Software herunterladen und installieren (nur für Linux-Masterzielserver)**, um das Linux-Masterzielserverpaket herunterzuladen. Kopieren Sie die heruntergeladene TAR-Datei mit einem SFTP-Client auf den virtuellen Computer. Alternativ können Sie sich bei dem bereitgestellten Linux-Masterzielserver anmelden und die Datei mithilfe von *wget http://go.microsoft.com/fwlink/?LinkID=529757&clcid=0x409* herunterladen.
-2. Melden Sie sich über einen Secure Shell-Client beim Server an. Wenn Sie über VPN mit dem Azure-Netzwerk verbunden sind, verwenden Sie die interne IP-Adresse. Verwenden Sie andernfalls die externe IP-Adresse und den öffentlichen SSH-Endpunkt.
-	3. Extrahieren Sie die Dateien aus dem GZIP-Installationsprogramm, indem Sie folgenden Befehl ausführen: **tar –xvzf Microsoft-ASR\_UA\_8.4.0.0\_RHEL6-64*** ![Linux-Masterzielserver](./media/site-recovery-vmware-to-azure/ASRVMWare_TSLinuxTar.png)
+	2. Klicken Sie unter **Zielressourcen (Azure-Ressourcen) vorbereiten** auf **Weitere Software herunterladen und installieren (nur für Linux-Masterzielserver)**, um das Linux-Masterzielserverpaket herunterzuladen. Kopieren Sie die heruntergeladene TAR-Datei mit einem SFTP-Client auf den virtuellen Computer. Alternativ können Sie sich bei dem bereitgestellten Linux-Masterzielserver anmelden und die Datei mithilfe von *wget http://go.microsoft.com/fwlink/?LinkID=529757&clcid=0x409* herunterladen.
+	2. Melden Sie sich über einen Secure Shell-Client beim Server an. Wenn Sie über VPN mit dem Azure-Netzwerk verbunden sind, verwenden Sie die interne IP-Adresse. Verwenden Sie andernfalls die externe IP-Adresse und den öffentlichen SSH-Endpunkt.
+	3. Extrahieren Sie die Dateien aus dem GZIP-Installationsprogramm, indem Sie folgenden Befehl ausführen: **tar –xvzf Microsoft-ASR\_UA\_8.4.0.0\_RHEL6-64***
+	![Linux-Masterzielserver](./media/site-recovery-vmware-to-azure/ASRVMWare_TSLinuxTar.png)
 	4. Stellen Sie sicher, dass Sie sich in dem Verzeichnis befinden, in das Sie den Inhalt der TAR-Datei extrahiert haben.
 	5. Kopieren Sie die Passphrase für den Konfigurationsserver mit dem Befehl **echo *`<passphrase>`* >passphrase.txt** in eine lokale Datei.
 	6. Führen Sie den Befehl „**sudo ./install -t both -a host -R MasterTarget -d /usr/local/ASR -i *`<Configuration server internal IP address>`* -p 443 -s y -c https -P passphrase.txt**“ aus.
@@ -757,8 +760,10 @@ Wenn ein Prozessserver in einem kritischen Zustand ist, wird im Site Recovery-Da
 
 1. Wechseln Sie zur Seite **KONFIGURATIONSSERVER** unter **SERVER**.
 2. Klicken Sie auf den Namen des Konfigurationsservers, und wechseln Sie zu **Serverdetails**.
-3. Klicken Sie in der Liste **Prozessserver** neben dem Server, den Sie ändern möchten, auf **Prozessserver ändern**. ![Prozessserver ändern 1](./media/site-recovery-vmware-to-azure/ASRVMware_ChangePS1.png)
-4. Wählen Sie im Dialogfeld **Prozessserver ändern** unter **Zielprozessserver** den neuen Server aus, und wählen Sie dann die virtuellen Computer aus, die Sie auf den neuen Server replizieren möchten. Klicken Sie auf das Informationssymbol neben dem Servernamen, um Informationen zum Server, z. B. freier Speicherplatz und verwendeter Arbeitsspeicher, zu erhalten. Um Sie bei Entscheidungen zur Last zu unterstützen, wird der durchschnittliche Speicherplatz angezeigt, der zum Replizieren jedes ausgewählten virtuellen Computers auf den neuen Prozessserver benötigt wird. ![Prozessserver ändern 2](./media/site-recovery-vmware-to-azure/ASRVMware_ChangePS2.png)
+3. Klicken Sie in der Liste **Prozessserver** neben dem Server, den Sie ändern möchten, auf **Prozessserver ändern**.
+	![Prozessserver ändern 1](./media/site-recovery-vmware-to-azure/ASRVMware_ChangePS1.png)
+4. Wählen Sie im Dialogfeld **Prozessserver ändern** unter **Zielprozessserver** den neuen Server aus, und wählen Sie dann die virtuellen Computer aus, die Sie auf den neuen Server replizieren möchten. Klicken Sie auf das Informationssymbol neben dem Servernamen, um Informationen zum Server, z. B. freier Speicherplatz und verwendeter Arbeitsspeicher, zu erhalten. Um Sie bei Entscheidungen zur Last zu unterstützen, wird der durchschnittliche Speicherplatz angezeigt, der zum Replizieren jedes ausgewählten virtuellen Computers auf den neuen Prozessserver benötigt wird.
+	![Prozessserver ändern 2](./media/site-recovery-vmware-to-azure/ASRVMware_ChangePS2.png)
 5. Klicken Sie auf das Häkchen, um mit dem Replizieren auf den neuen Prozessserver zu beginnen. Wenn Sie alle virtuellen Computer von einem Prozessserver entfernen, der einen kritischen Zustand aufgewiesen hat, wird im Dashboard keine Warnung mehr für einen kritischen Zustand angezeigt.
 
 
@@ -766,12 +771,12 @@ Wenn ein Prozessserver in einem kritischen Zustand ist, wird im Site Recovery-Da
 
 Do Not Translate or Localize
 
-Die Software und Firmware, die im Microsoft-Produkt oder -Dienst ausgeführt wird, basiert auf oder enthält Material aus den unten aufgeführten Projekten (zusammen " Drittanbietercode") Microsoft ist nicht der ursprüngliche Autor des Drittanbietercodes. Microsoft ist nicht der ursprüngliche Autor des Drittanbietercodes. Die ursprünglichen Urheberrechtshinweise und die Lizenz, unter der Microsoft der Drittanbietercode überlassen wurde, sind im Folgenden ausgeführt.
+The software and firmware running in the Microsoft product or service is based on or incorporates material from the projects listed below (collectively, “Third Party Code”).  Microsoft is the not original author of the Third Party Code.  The original copyright notice and license, under which Microsoft received such Third Party Code, are set forth below.
 
-The information in Section A is regarding Third Party Code components from the projects listed below. Solche Lizenzen und Informationen dienen ausschließlich informativen Zwecken. Der Code von Drittanbietern wird von Microsoft neu lizensiert und Ihnen dann zu den Microsoft-Softwarelizenzvereinbarungen für das Microsoft-Produkt oder den -Dienst zur Verfügung gestellt.
+The information in Section A is regarding Third Party Code components from the projects listed below. Such licenses and information are provided for informational purposes only.  This Third Party Code is being relicensed to you by Microsoft under Microsoft's software licensing terms for the Microsoft product or service.  
 
 The information in Section B is regarding Third Party Code components that are being made available to you by Microsoft under the original licensing terms.
 
-Die vollständige Datei steht im [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=529428) zur Verfügung. Microsoft behält sich alle Rechte vor, die hier nicht ausdrücklich, stillschweigend, durch Rechtsverwirkung oder auf andere Weise gewährt wurden.
+The complete file may be found on the [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=529428). Microsoft reserves all rights not expressly granted herein, whether by implication, estoppel or otherwise.
 
 <!---HONumber=AcomDC_0107_2016-->
