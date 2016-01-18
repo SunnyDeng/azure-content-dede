@@ -21,10 +21,7 @@
 # Herstellen von Verbindungen mit SQL-Datenbanken mithilfe von Python unter Mac OS
 
 
-> [AZURE.SELECTOR]
-- [Node.js](sql-database-develop-nodejs-simple-mac.md)
-- [Python](sql-database-develop-python-simple-mac-osx.md)
-- [Ruby](sql-database-develop-ruby-simple-mac-osx.md)
+[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
 
 
 Dieses Thema zeigt ein in Python geschriebenes Codebeispiel. Das Beispiel wird auf einem Macintosh-Computer ausgeführt. Das Beispiel stellt mithilfe des **pymssql**-Treibers eine Verbindung mit Azure SQL-Datenbank her. Nutzen Sie darüber hinaus bitte unser Video [Erste Schritte mit Python auf Mac](https://www.youtube.com/watch?v=OMpugPTwnTI), um diese Dokumentation zu ergänzen.
@@ -49,7 +46,7 @@ Dieses Thema zeigt ein in Python geschriebenes Codebeispiel. Das Beispiel wird a
 **2) FreeTDS:** Führen Sie den folgenden Befehl über das Terminal aus. Damit wird FreeTDS auf Ihren Computer heruntergeladen. FreeTDS ist für die Ausführung von pymmsql erforderlich.
 
     brew install FreeTDS
-  
+
 **3) Pymmsql**: Führen Sie den folgenden Befehl über das Terminal aus. Damit wird pymmsql auf Ihrem Computer installiert.
 
     sudo -H pip install pymssql
@@ -107,11 +104,11 @@ In diesem Beispiel erfahren Sie, wie Sie eine [INSERT](https://msdn.microsoft.co
 Dieses Codebeispiel veranschaulicht die Verwendung von Transaktionen für folgende Aufgaben:
 
 
--Starten von Transaktionen
+- Starten von Transaktionen
 
--Einfügen von Zeilen mit Daten
+- Einfügen von Zeilen mit Daten
 
--Durchführen von Rollbacks für Transaktionen zum Rückgängigmachen von Einfügungen
+- Durchführen von Rollbacks für Transaktionen zum Rückgängigmachen von Einfügungen
 
 
 	import pymssql
@@ -126,4 +123,4 @@ Dieses Codebeispiel veranschaulicht die Verwendung von Transaktionen für folgen
 
 Weitere Informationen finden Sie im [Python Developer Center](/develop/python/).
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0107_2016-->

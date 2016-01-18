@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="python" 
 	ms.topic="article" 
-	ms.date="09/29/2015" 
-	ms.author="huguesv"/>
+	ms.date="12/16/2015" 
+	ms.author="huvalo"/>
 
 
 
@@ -40,7 +40,7 @@ Der Azure Marketplace enthält Vorlagen für die Frameworks Bottle, Django und F
 
 Für dieses Tutorial wird davon ausgegangen, dass Sie über ein Azure-Abonnement verfügen und Zugriff auf das Azure-Portal haben.
 
-Wenn Sie noch nicht über eine Web-App verfügen, können Sie eine über das [Azure-Portal](https://portal.azure.com) erstellen. Klicken Sie in der linken unteren Ecke auf "NEU" und anschließend auf **Web + Mobil** > **Web-App**.
+Wenn Sie noch nicht über eine Web-App verfügen, können Sie eine über das [Azure-Portal](https://portal.azure.com) erstellen. Klicken Sie in der linken oberen Ecke auf NEU und anschließend auf **Web + Mobil** > **Web-App**.
 
 ## Git-Veröffentlichung
 
@@ -385,4 +385,4 @@ Weitere Informationen finden Sie im [Python Developer Center](/develop/python/).
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

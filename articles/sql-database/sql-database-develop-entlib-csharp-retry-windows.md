@@ -1,4 +1,4 @@
-<properties 
+<properties
 	pageTitle="EntLib-Wiederholungslogik zum Herstellen einer Verbindung mit SQL-Datenbank | Microsoft Azure"
 	description="Enterprise Library wurde zur Vereinfachung verschiedener Aufgaben für Clientprogramme von Clouddiensten entwickelt. Dazu zählt u. a. die Integration von Wiederherstellungslogik für vorübergehende Fehler."
 	services="sql-database"
@@ -8,23 +8,19 @@
 	editor="" />
 
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="12/17/2015" 
+<tags
+	ms.service="sql-database"
+	ms.workload="data-management"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="12/17/2015"
 	ms.author="genemi"/>
 
 
 # Codebeispiel: Wiederholungslogik aus Enterprise Library 6 in C&#x23; für das Herstellen einer Verbindung mit SQL-Datenbank
 
-
-> [AZURE.SELECTOR]
-- [PHP](sql-database-develop-php-retry-windows.md)
-- [C#](sql-database-develop-csharp-retry-windows.md)
-- [C# EntLib6](sql-database-develop-entlib-csharp-retry-windows.md)
+[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
 
 
 Dieses Thema enthält ein vollständiges Codebeispiel, das die Enterprise Library (EntLib) veranschaulicht. EntLib vereinfacht eine Reihe von Aufgaben für Clientprogramme, die mit Clouddiensten wie Azure SQL-Datenbank interagieren. Der Schwerpunkt unseres Beispiels liegt auf der wichtigen Aufgabe, Wiederholungslogik für vorübergehende Fehler zu integrieren.
@@ -330,4 +326,4 @@ SELECT TOP 3
 
 - [Clientcodebeispiele für die ersten Schritte mit SQL-Datenbank](sql-database-develop-quick-start-client-code-samples.md)
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0107_2016-->

@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="identity"
-	ms.date="12/14/2015"
+	ms.date="01/04/2016"
 	ms.author="inhenk"/>
 
 # Rollenbasierte Access Control in Azure
@@ -22,7 +22,7 @@
 Die rollenbasierte Access Control in Azure (RBAC) ermöglicht eine präzise Zugriffsverwaltung für Azure. Mithilfe von RBAC können Sie Aufgaben in Ihrem DevOps-Team verteilen und Benutzern nur den Zugriff gewähren, den sie zur Ausführung ihrer Aufgaben benötigen.
 
 ### Grundlagen zur Zugriffsverwaltung in Azure
-Jedes Azure-Abonnement befindet sich in einem Azure Active Directory. Nur Benutzern, Gruppen und Anwendungen aus diesem Verzeichnis kann Verwaltungszugriff auf Ressourcen im zugehörigen Azure-Abonnement gewährt werden. Die Verwaltung kann über das Azure-Portal, Azure-Befehlszeilentools und Azure-Verwaltungs-APIs erfolgen.
+Jedes Azure-Abonnement ist mit einem Azure Active Directory verknüpft. Nur Benutzern, Gruppen und Anwendungen aus diesem Verzeichnis kann Verwaltungszugriff auf Ressourcen im zugehörigen Azure-Abonnement gewährt werden. Die Verwaltung kann über das Azure-Portal, Azure-Befehlszeilentools und Azure-Verwaltungs-APIs erfolgen.
 
 Der Zugriff wird gewährt, indem Benutzern, Gruppen und Anwendungen die jeweils geeignete RBAC-Rolle auf der richtigen Ebene zugewiesen wird. Um Zugriff auf das gesamten Abonnement zu gewähren, weisen Sie eine Rolle auf Abonnementebene zu. Um Zugriff auf eine bestimmte Ressourcengruppe innerhalb eines Abonnements zu gewähren, weisen Sie eine Rolle auf Ressourcengruppenebene zu. Sie können Rollen auch für bestimmte Ressourcen zuweisen, wie z. B.für Websites, virtuelle Computer und Subnetze, um nur Zugriff auf eine Ressource zu gewähren.
 
@@ -70,7 +70,6 @@ Wählen Sie die Zugriffseinstellungen auf dem Blatt der Ressourcengruppe im Absc
 
 > [AZURE.NOTE]Geerbte Zuweisungen können auf untergeordneter Ebene nicht entfernt werden. Wechseln Sie auf die übergeordnete Ebene, und entfernen Sie die entsprechenden Zuweisungen.
 
-
 ![](./media/role-based-access-control-configure/remove-access2.png)
 
 ## Verwalten des Zugriffs mit Azure PowerShell
@@ -98,6 +97,9 @@ Der Zugriff kann mithilfe von Azure RBAC-Befehlen in der Azure-Befehlszeilenschn
 -	Verwenden Sie `azure role assignment delete` zum Entfernen des Zugriffs.
 
 Detaillierte Beispiele zur Verwaltung des Zugriffs mithilfe der Azure-Befehlszeilenschnittstelle finden Sie unter [Verwalten des Zugriffs über die Azure-Befehlszeilenschnittstelle](role-based-access-control-manage-access-azure-cli.md).
+
+## Verwalten des Zugriffs mithilfe der REST-API
+Ausführlichere Beispiele für die Verwaltung des Zugriffs mit der REST-API finden Sie unter [Verwalten der rollenbasierten Zugriffssteuerung mit der REST-API](role-based-access-control-manage-access-rest.md).
 
 ## Verwenden des Verlaufsberichts zu Zugriffsänderungen
 Alle Zugriffsänderungen, die in Ihrem Azure-Abonnement vorgenommen werden, werden in Azure-Ereignissen protokolliert.
@@ -173,10 +175,12 @@ Verwenden Sie den Befehl `Get-AzureRmProviderOperation` oder `azure provider ope
 ### Not Actions
 Verwenden Sie die **NotActions**-Eigenschaft einer benutzerdefinierten Rolle im folgenden Fall: Wenn sich die Gruppe der Vorgänge, die Sie zulassen möchten, leicht ausdrücken lässt, indem Sie bestimmte Vorgänge ausschließen, anstatt alle Vorgänge bis auf die Vorgänge einzuschließen, die ausgeschlossen werden sollen. Der effektive Zugriff, der von einer benutzerdefinierten Rolle gewährt wird, wird berechnet, indem die **NotActions**-Vorgänge von den Actions-Vorgängen ausgeschlossen werden.
 
-Beachten Sie Folgendes: Wenn einem Benutzer eine Rolle zugewiesen wird, mit der ein Vorgang in **NotActions** ausgeschlossen wird, und dem Benutzer dann eine zweite Rolle zugewiesen wird, mit der Zugriff auf denselben Vorgang gewährt wird, kann der Benutzer den Vorgang durchführen. **NotActions** ist keine Verweigerungsregel. Es ist lediglich eine bequeme Möglichkeit, eine Gruppe zulässiger Vorgänge zu erstellen, wenn bestimmte Vorgänge ausgeschlossen werden müssen.
+> [AZURE.NOTE]Wenn einem Benutzer eine Rolle zugewiesen wird, mit der ein Vorgang in **NotActions** ausgeschlossen wird, und dem Benutzer dann durch Zuweisen einer zweiten Rolle der Zugriff auf denselben Vorgang gewährt wird, kann der Benutzer den Vorgang durchführen. **NotActions** ist keine Verweigerungsregel. Es ist lediglich eine bequeme Möglichkeit, eine Gruppe zulässiger Vorgänge zu erstellen, wenn bestimmte Vorgänge ausgeschlossen werden müssen.
 
 ### AssignableScopes
-Mit der **AssignableScopes**-Eigenschaft der benutzerdefinierten Rolle werden die Bereiche angegeben (Abonnements, Ressourcengruppen oder Ressourcen), in denen die benutzerdefinierte Rolle für die Zuweisung zu Benutzern, Gruppen und Anwendungen verfügbar ist. Mit **AssignableScopes** können Sie die benutzerdefinierte Rolle für die Zuweisung nur in den Abonnements oder Ressourcengruppen verfügbar machen, für die dies erforderlich ist. So wird verhindert, dass die Benutzeroberfläche für die restlichen Abonnements oder Ressourcengruppen unnötig belastet wird. Mit **AssignableScopes** einer benutzerdefinierten Rolle wird außerdem gesteuert, wer die Rolle anzeigen, aktualisieren und löschen kann. Im Folgenden sind einige gültige zuweisbare Bereiche aufgeführt:
+Mit der **AssignableScopes**-Eigenschaft der benutzerdefinierten Rolle werden die Bereiche angegeben (Abonnements, Ressourcengruppen oder Ressourcen), in denen die benutzerdefinierte Rolle für die Zuweisung zu Benutzern, Gruppen und Anwendungen verfügbar ist. Mit **AssignableScopes** können Sie die benutzerdefinierte Rolle für die Zuweisung nur in den Abonnements oder Ressourcengruppen verfügbar machen, für die dies erforderlich ist. So wird verhindert, dass die Benutzeroberfläche für die restlichen Abonnements oder Ressourcengruppen unnötig belastet wird.
+
+> [AZURE.NOTE]Sie müssen mindestens ein Abonnement, eine Ressourcengruppe oder eine Ressourcen-ID verwenden.* **AssignableScopes** einer benutzerdefinierten Rolle steuern auch, wer zum Anzeigen, Aktualisieren und Löschen der Rolle berechtigt ist. Im Folgenden sind einige gültige zuweisbare Bereiche aufgeführt:
 
 -	„/subscriptions/c276fc76-9cd4-44c9-99a7-4fd71546436e“, „/subscriptions/e91d47c4-76f3-4271-a796-21b4ecfe3624“: Macht die Rolle für die Zuweisung in zwei Abonnements verfügbar.
 -	„/subscriptions/c276fc76-9cd4-44c9-99a7-4fd71546436e“: Macht die Rolle für die Zuweisung in einem einzelnen Abonnement verfügbar.
@@ -191,4 +195,4 @@ Mit der **AssignableScopes**-Eigenschaft der benutzerdefinierten Rolle wird fest
 
 **Wer kann benutzerdefinierte Rollen anzeigen, die für die Zuweisung in einem Bereich verfügbar sind?** Benutzer, die den Vorgang `Microsoft.Authorization/roleDefinition/read` für einen Bereich durchführen können, können die RBAC-Rollen anzeigen, die für die Zuweisung in diesem Bereich verfügbar sind. Alle integrierten Rollen in Azure RBAC ermöglichen das Anzeigen von Rollen, die für die Zuweisung verfügbar sind.
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0107_2016-->

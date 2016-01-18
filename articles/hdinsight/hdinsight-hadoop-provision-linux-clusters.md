@@ -18,7 +18,7 @@
    	ms.author="nitinme"/>
 
 
-#Erstellen von Linux-basierten Clustern in HDInsight
+#Erstellen von Linux-basierten Hadoop-Clustern in HDInsight
 
 [AZURE.INCLUDE [Auswahl](../../includes/hdinsight-create-linux-cluster-selector.md)]
 
@@ -282,4 +282,4 @@ In diesem Artikel haben Sie grundlegende Informationen zum Erstellen eines Linux
 
   [89e2276a]: /documentation/articles/hdinsight-use-sqoop/ "Verwenden von Sqoop mit HDInsight"
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0107_2016-->

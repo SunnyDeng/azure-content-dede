@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="11/05/2015"
+   ms.date="01/04/2016"
    ms.author="barbkess"/>
 
 #Transact-SQL-Themen
@@ -129,4 +129,4 @@ Weitere TSQL-Beispiele finden Sie in der [Entwicklungsübersicht für SQL Data W
 
 <!--Other Web references-->
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0107_2016-->

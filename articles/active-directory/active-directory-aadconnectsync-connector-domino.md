@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.devlang="na"
    ms.topic="article"
-   ms.date="12/16/2015"
+   ms.date="12/28/2015"
    ms.author="andkjell"/>
 
 # Technische Referenz für den Lotus Domino-Connector
@@ -34,7 +34,7 @@ Im Anschluss finden Sie einen allgemeinen Überblick über die von der aktuellen
 
 | Funktion | Support |
 | --- | --- |
-| Verbundene Datenquelle | Server: <li>Lotus Domino 8.5.x</li><li>Lotus Domino 9.x</li>Client:<li>Lotus Notes 8.5.x</li><li>Lotus Notes 9.x</li> |
+| Verbundene Datenquelle | Server: <li>Lotus Domino 8.5.x</li><li>Lotus Domino 9.x</li>Client:<li>Lotus Notes 9.x</li> |
 | Szenarios | <li>Objektlebenszyklusverwaltung</li><li>Gruppenverwaltung</li><li>Kennwortverwaltung</li> |
 | Vorgänge | <li>Vollständiger Import und Deltaimport</li><li>Export</li><li>Kennwort auf HTTP-Kennwort festlegen und ändern</li> |
 | Schema | <li>Person (Roamingbenutzer, Kontakt (Person ohne Zertifikat))</li><li>Gruppe</li><li>Ressource (Ressource, Raum, Onlinebesprechung)</li><li>Mail-In-Datenbank</li><li>Dynamische Ermittlung von Attributen für unterstützte Objekte</li> |
@@ -246,7 +246,7 @@ Wird diesem Personenobjekt nun ein neuer Assistent namens **David Alexander** zu
 
 **Importieren**
 
-Die Exportvorgangsoption unterstützt zwei Modi:
+Die Importvorgangsoption unterstützt zwei Modi:
 
 - Standard
 - Mehrwertig zu einwertig
@@ -539,4 +539,4 @@ Das Schema kann in Domino auf unterschiedliche Arten erweitert werden, sodass es
 
 -	Informationen zum Aktivieren der Protokollierung für die Behandlung von Connectorproblemen finden Sie unter [Vorgehensweise: Aktivieren der ETW-Ablaufverfolgung für Connectors](http://go.microsoft.com/fwlink/?LinkId=335731).
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0107_2016-->

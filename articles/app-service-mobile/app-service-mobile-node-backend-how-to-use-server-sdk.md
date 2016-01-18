@@ -24,7 +24,7 @@
 
 Dieser Artikel enthält ausführliche Informationen und Beispiele, die veranschaulichen, wie Sie in Azure Mobile App Service-Apps ein Node.js-Back-End verwenden.
 
-> [AZURE.NOTE]Dieses SDK befindet sich in der Vorschauphase. Daher wird empfohlen, dieses SDK nicht in einer Produktionsumgebung einzusetzen. In den Beispielen in diesem Dokument wird die Version „2.0.0-beta1“ von [azure-mobile-apps] verwendet.
+> [AZURE.NOTE]Dieses SDK befindet sich in der Vorschauphase. Daher wird empfohlen, dieses SDK nicht in einer Produktionsumgebung einzusetzen. In den Beispielen in diesem Dokument wird die Version „2.0.0-beta2“ von [azure-mobile-apps] verwendet.
 
 ## <a name="Introduction"></a>Einführung
 
@@ -561,7 +561,7 @@ Benutzerdefinierte APIs werden auf ähnliche Weise wie die Tabellen-API definier
 
 1. Erstellen Sie ein **api**-Verzeichnis.
 2. Erstellen Sie im **api**-Verzeichnis eine JavaScript-Datei mit einer API-Definition.
-3. Verwenden Sie die import-Methode, um das **api**-Verzeichnis zu importieren.
+3. Verwenden Sie die „import“-Methode, um das Verzeichnis **api** zu importieren.
 
 Hier ist die API-Prototypdefinition angegeben, die auf dem bereits verwendeten basic-app-Beispiel basiert.
 
@@ -633,7 +633,7 @@ Der Azure App Service stellt mehrere Debugging- und Problembehandlungsverfahren 
 
 ### <a name="howto-diagnostic-logs"></a>Vorgehensweise: Schreiben in die Diagnoseprotokolle von Azure Mobile Apps
 
-Node.js-Anwendungen haben Zugriff auf viele Tools für die Diagnoseprotokollierung. Intern nutzt das Azure Mobile Apps Node.js SDK [Winston] für die Diagnoseprotokollierung. Diese Funktion wird automatisch aktiviert, wenn Sie den Debugmodus aktivieren oder im [Azure-Portal] die App-Einstellung **MS\_DebugMode** auf „true“ festlegen. Generierte Protokolle werden im [Azure-Portal] in den Diagnoseprotokollen angezeigt.
+Node.js-Anwendungen haben Zugriff auf viele Tools für die Diagnoseprotokollierung. Intern nutzt das Azure Mobile Apps Node.js SDK [Winston] für die Diagnoseprotokollierung. Diese Funktion wird automatisch aktiviert, indem der Debugmodus aktiviert oder die App-Einstellung **MS\_DebugMode** im [Azure-Portal] auf „true“ festgelegt wird. Generierte Protokolle werden im [Azure-Portal] in den Diagnoseprotokollen angezeigt.
 
 ## <a name="in-portal-editing"></a>Codebearbeitung im Portal
 
@@ -698,7 +698,7 @@ Im Azure-Portal können Sie Ihre Node.js-Back-End-Skriptdateien in Visual Studio
 [So wird‘s gemacht: Konfigurieren der Google-Authentifizierung]: app-service-mobile-how-to-configure-google-authentication.md
 [So wird‘s gemacht: Konfigurieren der Microsoft-Authentifizierung]: app-service-mobile-how-to-configure-microsoft-authentication.md
 [So wird‘s gemacht: Konfigurieren der Twitter-Authentifizierung]: app-service-mobile-how-to-configure-twitter-authentication.md
-[Azure App Service-Bereitstellungshandbuch]: ../app-service-web/web-site-deploy.md
+[Azure App Service-Bereitstellungshandbuch]: ../app-service-web/web-sites-deploy.md
 [Überwachen eines Azure App Service]: ../app-service-web/web-sites-monitor.md
 [Aktivieren der Diagnoseprotokollierung in Azure App Service]: ../app-service-web/web-sites-enable-diagnostic-log.md
 [Problembehandlung für einen Azure App Service in Visual Studio]: ../app-service-web/web-sites-dotnet-troubleshoot-visual-studio.md
@@ -722,4 +722,4 @@ Im Azure-Portal können Sie Ihre Node.js-Back-End-Skriptdateien in Visual Studio
 [ExpressJS Middleware]: http://expressjs.com/guide/using-middleware.html
 [Winston]: https://github.com/winstonjs/winston
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0107_2016-->

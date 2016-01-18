@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/28/2015" 
+	ms.date="01/05/2016" 
 	ms.author="awills"/>
  
 # Codebeispiel: Analysieren von Daten, die aus Application Insights exportiert wurden
@@ -126,11 +126,11 @@ Erstellen Sie in Visual Studio ein neues Projekt für die Workerrolle.
 
 #### Verbinden mit dem Speicherkonto
 
-Rufen Sie in Azure die Verbindungszeichenfolge aus Ihrem Speicherkonto ab:
+Rufen Sie in Azure die Verbindungszeichenfolge aus Ihrem Storage-Konto ab:
 
-![Wählen Sie im Speicherkonto "Schlüssel" aus, und kopieren Sie die primäre Verbindungszeichenfolge](./media/app-insights-code-sample-export-telemetry-sql-database/055-get-connection.png)
+![Wählen Sie im Storage-Konto "Schlüssel" aus, und kopieren Sie die primäre Verbindungszeichenfolge](./media/app-insights-code-sample-export-telemetry-sql-database/055-get-connection.png)
 
-Konfigurieren Sie die Workerrolleneinstellungen in Visual Studio mit der Verbindungszeichenfolge für das Speicherkonto:
+Konfigurieren Sie die Workerrolleneinstellungen in Visual Studio mit der Verbindungszeichenfolge für das Storage-Konto:
 
 
 ![Erweitern Sie im Projektmappen-Explorer unter dem Cloud Service-Projekt die Option "Rollen", und öffnen Sie die" Workerrolle". Öffnen Sie die Registerkarte "Einstellungen", wählen Sie "Einstellung hinzufügen", und legen Sie "name=StorageConnectionString" und "type=Verbindungszeichenfolge" fest. Klicken Sie, um den Wert festzulegen. Legen Sie ihn manuell fest, und fügen Sie die Verbindungszeichenfolge ein.](./media/app-insights-code-sample-export-telemetry-sql-database/130-connection-string.png)
@@ -543,4 +543,4 @@ Um dieses Beispiel in Aktion zu sehen, [laden Sie den vollständigen Arbeitscode
 
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_0107_2016-->

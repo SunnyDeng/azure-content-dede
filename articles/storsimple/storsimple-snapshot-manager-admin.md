@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="08/28/2015"
+   ms.date="01/04/2016"
    ms.author="v-sharos" />
 
 # Verwenden von StorSimple Snapshot Manager zum Verwalten der StorSimple-Lösung
@@ -39,6 +39,8 @@ Dieser Artikel enthält Links zu Tutorials, in denen der StorSimple Snapshot Man
 
 - Informationen zu StorSimple Snapshot Manager-Bereitstellungsverfahren finden Sie unter[Bereitstellung von StorSimple Snapshot Manager](storsimple-snapshot-manager-deployment.md).
 
+>[AZURE.NOTE]StorSimple Snapshot Manager eignet sich nicht zur Verwaltung von Microsoft Azure StorSimple Virtual Arrays (auch bekannt als lokale virtuelle StorSimple-Geräte).
+
 ## StorSimple Snapshot Manager-Aufgaben und -Workflows
 
 Sie können StorSimple Snapshot Manager zum Überwachen und Verwalten bevorstehender, aktueller und abgeschlossener Sicherungsaufträge verwenden. Darüber hinaus stellt StorSimple Snapshot Manager einen Katalog von bis zu 64 abgeschlossenen Sicherungen bereit. Sie können in diesem Katalog nach Volumes oder einzelnen Dateien suchen und diese wiederherstellen.
@@ -60,4 +62,4 @@ Sie können StorSimple Snapshot Manager zum Überwachen und Verwalten bevorstehe
 
 [StorSimple Snapshot Manager herunterladen](https://www.microsoft.com/download/details.aspx?id=44220).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

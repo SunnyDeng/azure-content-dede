@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="11/13/2015"
+   ms.date="01/04/2016"
    ms.author="nitinme"/>
 
 # Erste Schritte mit Azure Data Lake-Speicher unter Verwendung der Azure-Befehlszeile
@@ -91,7 +91,7 @@ Beispiel:
 
 Sie können Ihre Daten direkt auf die Stammebene eines Data Lake-Speichers oder in einen im Konto erstellten Ordner hochladen. Die folgenden Codeausschnitte veranschaulichen das Hochladen von Beispieldaten in den im vorigen Abschnitt erstellten Ordner (**mynewfolder**).
 
-Wenn Sie Beispieldaten hochladen möchten, können Sie den Ordner **Ambulance Data** aus dem [Azure Data Lake-Git-Repository](https://github.com/MicrosoftBigData/AzureDataLake/tree/master/SQLIPSamples/SampleData/AmbulanceData) herunterladen. Laden Sie die Datei herunter, und speichern Sie sie in ein lokales Verzeichnis auf dem Computer, z. B. „C:\\sampledata“.
+Wenn Sie Beispieldaten hochladen möchten, können Sie den Ordner **Ambulance Data** aus dem [Azure Data Lake-Git-Repository](https://github.com/MicrosoftBigData/usql/tree/master/Examples/Samples/Data/AmbulanceData) herunterladen. Laden Sie die Datei herunter, und speichern Sie sie in ein lokales Verzeichnis auf dem Computer, z. B. „C:\\sampledata“.
 
 	azure datalake store filesystem import <dataLakeStoreAccountName> "<source path>" "<destination path>"
 
@@ -179,7 +179,7 @@ Geben Sie nach entsprechender Aufforderung **Y** ein, um das Konto zu löschen.
 
 ## Weitere Methoden zum Erstellen eines Data Lake-Speicherkontos
 
-- [Erste Schritte mit dem Data Lake-Speicher unter Verwendung des Portals](data-lake-store-get-started-portal.md)
+- [Erste Schritte mit Data Lake-Speicher mithilfe des Portals](data-lake-store-get-started-portal.md)
 - [Erste Schritte mit dem Data Lake-Speicher unter Verwendung des .NET-SDK](data-lake-store-get-started-net-sdk.md)
 - [Erste Schritte mit dem Data Lake-Speicher unter Verwendung von PowerShell](data-lake-store-get-started-powershell.md)
 
@@ -193,4 +193,4 @@ Geben Sie nach entsprechender Aufforderung **Y** ein, um das Konto zu löschen.
 
 [azure-command-line-tools]: ../xplat-cli-install.md
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0107_2016-->

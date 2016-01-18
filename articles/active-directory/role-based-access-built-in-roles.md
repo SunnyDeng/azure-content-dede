@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="identity"
-	ms.date="12/04/2015"
+	ms.date="01/04/2016"
 	ms.author="inhenk"/>
 
 #RBAC: Integrierte Rollen
@@ -133,9 +133,7 @@ Mitwirkende können alles mit Ausnahme des Zugriffs verwalten.
 | **Aktionen** ||
 | ------- | ------ |
 | * | Erstellen und Verwalten von Ressourcen aller Typen |
-| ****Nicht-Aktionen |  |
-| Microsoft.Authorization/*/Write | Kann keine Rollen und Rollenzuweisungen erstellen |
-| Microsoft.Authorization/*/Delete | Kann keine Rollen und Rollenzuweisungen löschen |
+| ****Nicht-Aktionen | | | Microsoft.Authorization/*/Write | Kann keine Rollen und Rollenzuweisungen erstellen | | Microsoft.Authorization/*/Delete | Kann keine Rollen und Rollenzuweisungen löschen |
 
 ### Mitwirkender von Data Factory
 Kann Data Factorys verwalten
@@ -381,8 +379,7 @@ Kann den Benutzerzugriff auf Azure-Ressourcen verwalten
 
 | **Aktionen** ||
 | ------- | ------ |
-| */read | Lesen von Ressourcen aller Typen, mit Ausnahme geheimer Schlüssel |
-| Microsoft.Authorization/* | Lesen von Autorisierungen |
+| */read | Lesen von Ressourcen aller Typen, mit Ausnahme geheimer Schlüssel | | Microsoft.Authorization/* | Lesen von Autorisierungen |
 | Microsoft.Support/* | Erstellen und Verwalten von Support-Tickets |
 
 ### Mitwirkender von klassischen virtuellen Computern
@@ -483,4 +480,4 @@ Kann Websites verwalten, jedoch nicht die Webpläne, mit denen sie verbunden sin
 ## RBAC-Themen
 [AZURE.INCLUDE [role-based-access-control-toc.md](../../includes/role-based-access-control-toc.md)]
 
-<!----HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0107_2016-->

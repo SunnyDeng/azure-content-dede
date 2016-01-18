@@ -1,20 +1,20 @@
-<properties 
-	pageTitle="C#-Wiederherstellungslogik zum Herstellen einer Verbindung mit einer SQL-Datenbank| Microsoft Azure" 
-	description="Das C#-Beispiel enthält die Wiederholungslogik für die zuverlässige Interaktion mit einer Azure SQL-Datenbank." 
-	services="sql-database" 
-	documentationCenter="" 
-	authors="MightyPen" 
-	manager="jeffreyg" 
+<properties
+	pageTitle="C#-Wiederherstellungslogik zum Herstellen einer Verbindung mit einer SQL-Datenbank| Microsoft Azure"
+	description="Das C#-Beispiel enthält die Wiederholungslogik für die zuverlässige Interaktion mit einer Azure SQL-Datenbank."
+	services="sql-database"
+	documentationCenter=""
+	authors="MightyPen"
+	manager="jeffreyg"
 	editor=""/>
 
 
-<tags 
-	ms.service="sql-database" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="12/17/2015" 
+<tags
+	ms.service="sql-database"
+	ms.workload="data-management"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="12/17/2015"
 	ms.author="genemi"/>
 
 
@@ -22,10 +22,7 @@
 
 
 
-> [AZURE.SELECTOR]
-- [PHP](sql-database-develop-php-retry-windows.md)
-- [C#](sql-database-develop-csharp-retry-windows.md)
-- [C# EntLib6](sql-database-develop-entlib-csharp-retry-windows.md)
+[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
 
 
 
@@ -289,4 +286,4 @@ Führen Sie das Programm mit dem Parameter "test" aus, und überprüfen Sie, ob 
 
 - [Ausprobieren von SQL-Datenbank: Verwenden von C# zum Erstellen einer SQL-Datenbank mithilfe der SQL-Datenbankbibliothek für .NET](sql-database-get-started-csharp.md)
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0107_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/22/2015"
+	ms.date="12/22/2015"
 	ms.author="swkrish"/>
 
 # Azure Active Directory B2C (Vorschauversion): Einrichten der Self-Service-Kennwortzurücksetzung für Ihre Kunden
@@ -22,7 +22,7 @@
 
 Diese Funktion ermöglicht Ihren Kunden (die sich für lokale Konten angemeldet haben) das eigenständige Zurücksetzen ihrer Kennwörter. Dadurch wird die Belastung für Ihre Supportmitarbeiter erheblich reduziert, insbesondere, wenn Ihre Anwendung Millionen von Kunden besitzt, die sie regelmäßig verwenden. Derzeit unterstützen wir nur die Verwendung einer verifizierten E-Mail-Adresse als Wiederherstellungsmethode. Wir werden zukünftig zusätzliche Wiederherstellungsmethoden (verifizierte Telefonnummer, Sicherheitsfragen usw.) hinzufügen. Standardmäßig ist für Ihr Verzeichnis die Self-Service-Kennwortzurücksetzung nicht aktiviert. Verwenden Sie die folgenden Schritte zum Aktivieren der Funktion:
 
-1. Melden Sie sich beim [Azure-Portal](https://manage.windowsazure.com/) als Abonnementadministrator an. Dies ist dasselbe Geschäfts-, Schul- oder Unikonto bzw. dasselbe Microsoft-Konto, mit dem Sie Ihr Verzeichnis erstellt haben.
+1. Melden Sie sich beim [klassischen Azure-Portal](https://manage.windowsazure.com/) als Abonnementadministrator an. Dies ist dasselbe Geschäfts-, Schul- oder Unikonto bzw. dasselbe Microsoft-Konto, mit dem Sie Ihr Verzeichnis erstellt haben.
 2. Navigieren Sie auf der linken Navigationsleiste zur Active Directory-Erweiterung.
 3. Suchen Sie Ihr Verzeichnis auf der Registerkarte **Verzeichnis**, und klicken Sie darauf.
 4. Klicken Sie auf die Registerkarte **Konfigurieren**.
@@ -36,4 +36,4 @@ Zum Testen verwenden Sie die Funktion "Jetzt ausführen" für eine beliebige Anm
 
 > [AZURE.NOTE]Die Seiten der Self-Service-Kennwortzurücksetzung können mithilfe der [Unternehmensbranding-Funktion](active-directory-add-company-branding.md) angepasst werden.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

@@ -12,7 +12,7 @@
     ms.topic="article"
     ms.tgt_pltfrm="NA"
     ms.workload="TBD"
-    ms.date="08/31/2015"
+    ms.date="01/05/2016"
     ms.author="v-sharos" />
 
 # Verwalten von Geräten mithilfe von StorSimple-Überwachungsindikatoren   
@@ -31,7 +31,7 @@ In den folgenden Abschnitten finden Sie Informationen zu den verschiedenen Über
 
 ## Indikator-LEDs des vorderen Bedienfelds
 
-Das vordere *Bedienfeld* oder *OPS-Bedienfeld* zeigt sämtliche Statusangaben zu allen Modulen im System an. Das vordere Bedienfeld ist bei StorSimple-Gerät und EBOD-Gehäuse identisch, wie nachfolgend dargestellt.
+Das vordere *Bedienfeld* oder *OPS-Bedienfeld* zeigt sämtliche Statusangaben zu allen Modulen im System an. Das vordere Bedienfeld ist beim primären StorSimple-Gehäuse und beim EBOD-Gehäuse identisch, wie nachfolgend dargestellt.
 
    ![Vorderseite des Geräts][1]
  
@@ -256,4 +256,4 @@ Weitere Informationen zu [StorSimple-Hardwarekomponenten und ihrem Status](stors
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

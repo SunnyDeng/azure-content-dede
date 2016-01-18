@@ -24,7 +24,7 @@ Dieser Artikel bietet eine Einführung in die Funktionalität für Geodaten in [
 - Wie kann ich Geodaten in Azure-DocumentDB in SQL und LINQ abfragen?
 - Wie aktiviere oder deaktiviere ich die räumliche Indizierung in DocumentDB?
 
-In diesem [Github-Projekt](https://github.com/Azure/azure-documentdb-net/tree/master/samples/code-samples/Queries.Spatial) finden Sie Codebeispiele.
+In diesem [Github-Projekt](https://github.com/Azure/azure-documentdb-dotnet/blob/master/samples/code-samples/Geospatial/Program.cs) finden Sie Codebeispiele.
 
 ## Einführung in räumliche Daten
 
@@ -350,9 +350,9 @@ Hier wird gezeigt, wie Sie eine vorhandene Sammlung so ändern können, dass die
 ## Nächste Schritte
 Nachdem Sie die ersten Schritte mit räumlichen Daten in DocumentDB ausgeführt haben, haben Sie folgende Möglichkeiten:
 
-- Starten der Programmierung mit den [.NET-Codebeispielen auf Github für räumliche Daten](https://github.com/Azure/azure-documentdb-net/tree/master/samples/code-samples/Queries.Spatial)
+- Starten der Programmierung mit den [.NET-Codebeispielen auf Github für räumliche Daten](https://github.com/Azure/azure-documentdb-dotnet/blob/master/samples/code-samples/Geospatial/Program.cs)
 - Praktisches Arbeiten mit Abfragen von Geodaten im [DocumentDB Query Playground](http://www.documentdb.com/sql/demo#geospatial)
 - Weitere Informationen zu [DocumentDB-Abfragen](documentdb-sql-query.md)
 - Weitere Informationen zu [DocumentDB-Indizierungsrichtlinien](documentdb-indexing-policies.md)
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0107_2016-->

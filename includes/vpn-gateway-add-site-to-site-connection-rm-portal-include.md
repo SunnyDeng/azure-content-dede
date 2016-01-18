@@ -1,12 +1,14 @@
-When adding a site-to-site connection to your virtual network gateway, you first need to create a local network gateway in order to refer to it from your configuration. Verify that you have a local network gateway configured. You can look for local network gateways by using **Browse** and filtering for **Local network gateways**.
+Beim Hinzufügen einer Standort-zu-Standort-Verbindung mit dem virtuellen Netzwerkgateway müssen Sie zuerst ein lokales Netzwerkgateway erstellen, um von Ihrer Konfiguration aus darauf zu verweisen. Stellen Sie sicher, dass Sie ein lokales Netzwerkgateway konfiguriert haben. Sie können über **Durchsuchen** nach lokalen Netzwerkgateways suchen und über **Lokale Netzwerkgateways** filtern.
 
-1. From the **Virtual networks** blade, locate your virtual network and click to open the blade. On the blade, you will see your gateway listed as a *Connected device*.
-2. Click on the ***name of your virtual network gateway*** -> **Virtual network gateway** -> **Settings** -> **Connections** and then click **Add**.
-3. **Name** your Connection. For the purposes of this example, we'll use *GW1S2S*
-4. For **Connection type**, select **Site-to-site(IPSec)**
-5. For **Virtual network gateway**, the value is fixed because you are connecting from this gateway.
-6. For **Local network gateway**, click **Choose a local network gateway** and select the local network gateway that you want to use. For this example, we'll use *GW1LocalNet*
-7. For **Shared Key**, the values here must match what you have for your local VPN device. If your VPN device on your local network doesn't provide a shared key, you can make one up and input it here and on your local device. The important thing is that they both match.
-8. The remaining values for **Subscription**, **Resource Group**, and **Location** are fixed.
-9. Click **OK** to create your connection. You'll see *Creating Connection* flash on the screen.
-10. When the connection is complete, you'll see it appear in the **Connections** blade for your Gateway.
+1. Finden Sie Ihr virtuelles Netzwerk auf dem Blatt **Virtuelle Netzwerke**, und klicken Sie darauf, um das Blatt zu öffnen. Auf dem Blatt wird Ihr Gateway als *Verbundenes Gerät* angezeigt.
+2. Klicken Sie auf den ***Namen des virtuellen Netzwerkgateways*** -> **Virtuelles Netzwerkgateway** -> **Einstellungen** -> **Verbindungen**, und klicken Sie dann auf **Hinzufügen**.
+3. Geben Sie unter **Name** einen Namen für die Verbindung ein. In diesem Beispiel verwenden wir *GW1S2S*
+4. Wählen Sie als **Verbindungstyp** die Option **Standort-zu-Standort (IPSec)** aus.
+5. Für **Virtuelles Netzwerkgateway** ist der Wert festgelegt, da Sie von diesem Gateway aus die Verbindung herstellen.
+6. Klicken Sie unter **Lokales Netzwerkgateway** auf **Ein lokales Netzwerkgateway auswählen**, und wählen Sie das lokale Netzwerkgateway aus, das Sie verwenden möchten. In diesem Beispiel verwenden wir *GW1LocalNet*.
+7. Unter **Gemeinsam verwendeter Schlüssel** müssen die hier angegebenen Werte mit denen übereinstimmen, die für Ihr lokales VPN-Gerät vorliegen. Wenn Ihr VPN-Gerät im lokalen Netzwerk keinen gemeinsam verwendeten Schlüssel bereitstellt, können Sie einen erfinden und sowohl hier als auch auf Ihrem lokalen Gerät eingeben. Wichtig ist, dass beide übereinstimmen.
+8. Die verbleibenden Werte für **Abonnement**, **Ressourcengruppe** und **Speicherort** sind unveränderlich.
+9. Klicken Sie auf **OK**, um die Verbindung zu erstellen. Auf dem Bildschirm blinkt der Hinweis *Verbindung wird erstellt*.
+10. Wenn die Verbindung erstellt ist, wird sie auf dem Blatt **Verbindungen** für Ihr Gateway angezeigt.
+
+<!---HONumber=AcomDC_0107_2016-->

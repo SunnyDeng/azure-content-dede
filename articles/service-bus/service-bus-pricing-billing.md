@@ -12,14 +12,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="09/10/2015"
+   ms.date="12/28/2015"
    ms.author="sethm" />
 
 # Service Bus – Preise und Abrechnung
 
 Service Bus wird in den Ebenen Basic, Standard und [Premium](service-bus-premium-messaging.md) angeboten. Sie können eine Dienstebene für jeden von Ihnen erstellten Service Bus-Dienstnamespace auswählen, und diese Ebenenauswahl gilt für alle Warteschlangen, Themen/Abonnements, Relays und Event Hubs, die in diesem Namespace erstellt werden.
 
->[AZURE.NOTE]Informationen zu den aktuellen Service Bus-Preisen finden Sie unter [Service Bus-Preisdetails FAQ](service-bus-pricing-faq.md).
+>[AZURE.NOTE]Ausführliche Informationen zu den aktuellen Service Bus-Preisen finden Sie unter [Häufig gestellte Fragen zu Service Bus-Preisen](service-bus-pricing-faq.md).
 
 Service Bus verwendet die zwei folgenden Messgrößen für Warteschlangen und Themen/Abonnements:
 
@@ -39,19 +39,19 @@ In der folgenden Tabelle sind die Funktionsunterschiede zwischen den Ebenen "Bas
 
 |Funktion|Basic|Standard/Premium|
 |---|---|---|
-|Event Hubs|JA|JA|
-|Warteschlangen|JA|JA|
-|Geplante Nachrichten|JA|JA|
-|Themen/Abonnements|NO|JA|
-|Relays|NO|JA|
-|Transaktionen|NO|JA|
-|Deduplizierung|NO|JA|
-|Sitzungen|NO|JA|
-|Umfangreiche Nachrichten|NO|JA|
-|ForwardTo|NO|JA|
-|SendVia|NO|JA|
+|Event Hubs|Ja|Ja|
+|Warteschlangen|Ja|Ja|
+|Geplante Nachrichten|Ja|Ja|
+|Themen/Abonnements|Nein|Ja|
+|Relays|Nein|Ja|
+|Transaktionen|Nein|Ja|
+|Deduplizierung|Nein|Ja|
+|Sitzungen|Nein|Ja|
+|Umfangreiche Nachrichten|Nein|Ja|
+|ForwardTo|Nein|Ja|
+|SendVia|Nein|Ja|
 |Brokerverbindungen (enthalten)|100 pro Service Bus-Namespace|1\.000 pro Azure-Abonnement|
-|Brokerverbindungen (Überschreitung zulässig)|NO|JA (abrechenbar)|
+|Brokerverbindungen (Überschreitung zulässig)|Nein|Ja (abrechenbar)|
 
 ## Messagingvorgänge
 
@@ -85,7 +85,7 @@ Seit dem 1. November 2014 gelten die folgenden Preise:
 
 ## Brokerverbindungen
 
-*Brokerverbindungen* ermöglichen Nutzungsmuster von Kunden, die eine große Anzahl "dauerhaft verbundener" Absender/Empfänger für Warteschlangen, Themen/Abonnements oder Event Hubs beinhalten. Dauerhaft verbundene Absender/Empfänger sind die Absender/Empfänger, die mithilfe von AMQP oder HTTP mit einem Empfangstimeout ungleich null eine Verbindung herstellen (z. B. langer HTTP-Abruf). HTTP-Absender und -Empfänger mit einem sofortigen Timeout generieren keine Brokerverbindungen.
+*Brokerverbindungen* ermöglichen Nutzungsmuster von Kunden, die eine große Anzahl „dauerhaft verbundener“ Absender/Empfänger für Warteschlangen, Themen/Abonnements oder Event Hubs beinhalten. Dauerhaft verbundene Absender/Empfänger sind die Absender/Empfänger, die mithilfe von AMQP oder HTTP mit einem Empfangstimeout ungleich null eine Verbindung herstellen (z. B. langer HTTP-Abruf). HTTP-Absender und -Empfänger mit einem sofortigen Timeout generieren keine Brokerverbindungen.
 
 Zuvor galt für Warteschlangen und Themen/Abonnements ein Grenzwert von 100 gleichzeitigen Verbindungen pro URL. Mit dem aktuellen Abrechnungsschema entfällt der Grenzwert pro URL für Warteschlangen und Themen/Abonnements. Stattdessen werden Kontingente und Messgrößen für Brokerverbindungen auf der Ebene des Service Bus-Namespaces und des Azure-Abonnements implementiert.
 
@@ -143,10 +143,10 @@ Zum Beispiel:
 
 Ja. Es gibt keine Verbindungsgebühren für das Senden von Ereignissen über HTTP, unabhängig von der Anzahl der sendenden Systeme oder Geräte. Durch das Empfangen von Ereignissen mit HTTP mithilfe eines Timeouts größer als null (manchmal als "langer Abruf" bezeichnet) entstehen Gebühren für Brokerverbindungen. Durch AMQP-Verbindungen entstehen Gebühren für Brokerverbindungen, unabhängig davon, ob die Verbindungen zum Senden oder Empfangen verwendet werden. Beachten Sie, dass 100 Brokerverbindungen in einem Basic-Namespace kostenlos zulässig sind. Dies ist auch die maximale Anzahl von Brokerverbindungen, die in einem Azure-Abonnement zulässig ist. Die ersten 1.000 Brokerverbindungen in allen Standard-Namespaces in einem Azure-Abonnement sind ohne zusätzliche Kosten (über die Basisgebühr hinaus) enthalten. Da diese Kontingente für viele Dienst-zu-Dienst-Messaging-Szenarios ausreichend sind, werden Gebühren für Brokerverbindungen normalerweise nur dann relevant, wenn geplant ist, lange AMQP-oder HTTP-Abrufe mit einer großen Anzahl von Clients zu verwenden (z. B., um effizienteres Ereignisstreaming zu erreichen oder die bidirektionale Kommunikation mit zahlreichen Geräten oder Anwendungsinstanzen zu ermöglichen).
 
-## Weitere Informationen
+## Nächste Schritte
 
-[Service Bus-Preisdetails FAQ](service-bus-pricing-faq.md)
+Weitere Informationen zu Service Bus-Preisen finden Sie unter [Häufig gestellte Fragen zu Service Bus-Preisen](service-bus-pricing-faq.md).
 
 [klassische Azure-Portal]: http://manage.windowsazure.com
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="12/10/2015"   
+   ms.date="12/30/2015"   
    ms.author="seanmck"/>
 
 # Modellieren von Anwendungen in Service Fabric
@@ -24,14 +24,16 @@ Dieser Artikel enthält eine Übersicht über das Azure Service Fabric-Anwendung
 
 Eine Anwendung ist eine Sammlung von einzelnen Diensten, die eine bzw. mehrere bestimmte Funktionen ausführen. Ein Dienst führt eine vollständige und eigenständige Funktion aus (er kann unabhängig von anderen Diensten gestartet und ausgeführt werden) und besteht aus Code, Konfiguration und Daten. Für jeden Dienst besteht der Code aus den ausführbaren Binärdateien, die Konfiguration umfasst Diensteinstellungen, die zur Laufzeit geladen werden können, und die Daten bestehen aus beliebigen statischen Daten, die vom Dienst verarbeitet werden. Jede Komponente in diesem hierarchischen Anwendungsmodell kann unabhängig mit einer Versionsangabe versehen und aktualisiert werden.
 
-![][1]
+![Das Service Fabric-Anwendungsmodell][appmodel-diagram]
 
 
 Ein Anwendungstyp ist eine Kategorisierung einer Anwendung und besteht aus einem Bündel von Diensttypen. Ein Diensttyp ist eine Kategorisierung eines Diensts. Bei der Kategorisierung können die Einstellungen und Konfigurationen variieren, die Kernfunktionen bleiben jedoch gleich. Die Instanzen eines Diensts sind die verschiedenen Dienstkonfigurationsvarianten desselben Diensttyps.
 
-Klassen (oder „Typen“) von Anwendungen und Diensten werden über XML-Dateien (Anwendungsmanifeste und Dienstmanifeste) beschrieben, bei denen es sich um die Vorlagen handelt, mit denen Anwendungen instanziiert werden können. Die Codes für verschiedene Anwendungsinstanzen werden als separate Prozesse ausgeführt, auch wenn sie im gleichen Service Fabric-Knoten gehostet werden. Darüber hinaus kann der Lebenszyklus jeder Anwendungsinstanz unabhängig verwaltet (d. h. aktualisiert) werden. Die folgende schematische Darstellung zeigt die Gliederung von Anwendungstypen in Diensttypen, die wiederum aus Code, Konfiguration und Paketen bestehen.
+Klassen (oder „Typen“) von Anwendungen und Diensten werden über XML-Dateien (Anwendungsmanifeste und Dienstmanifeste) beschrieben, bei denen es sich um die Vorlagen handelt, mit denen Anwendungen vom Imagespeicher des Clusters aus instanziiert werden können.
 
-![Service Fabric-Anwendungstypen und Diensttypen][Image1]
+Die Codes für verschiedene Anwendungsinstanzen werden als separate Prozesse ausgeführt, auch wenn sie im gleichen Service Fabric-Knoten gehostet werden. Darüber hinaus kann der Lebenszyklus jeder Anwendungsinstanz unabhängig verwaltet (d. h. aktualisiert) werden. Die folgende schematische Darstellung zeigt die Gliederung von Anwendungstypen in Diensttypen, die wiederum aus Code, Konfiguration und Paketen bestehen. Um das Diagramm zu vereinfachen, werden nur die Code-/Konfigurations-/Datenpakete für `ServiceType4` gezeigt, obwohl jeder Diensttyp normalerweise einige oder alle dieser Pakettypen enthält.
+
+![Service Fabric-Anwendungstypen und Diensttypen][cluster-imagestore-apptypes]
 
 Anwendungen und Dienste werden mit zwei verschiedenen Manifestdateien beschrieben: dem Dienstmanifest und dem Anwendungsmanifest. Diese werden in den folgenden Abschnitten ausführlich behandelt.
 
@@ -39,8 +41,10 @@ Im Cluster können eine oder mehrere Instanzen eines Diensttyps aktiv sein. Zust
 
 Die folgende schematische Darstellung zeigt die Beziehung zwischen Anwendungen und Dienstinstanzen, Partitionen und Replikaten.
 
-![Partitionen und Replikate in einem Dienst][Image2]
+![Partitionen und Replikate in einem Dienst][cluster-application-instances]
 
+
+>[AZURE.TIP]Sie können das Layout von Anwendungen in einem Cluster mit dem Service Fabric-Explorer-Tool anzeigen, das unter http://&lt;yourclusteraddress&gt;:19080/Explorer verfügbar ist. Weitere Informationen finden Sie unter [Visualisieren Ihres Clusters mit dem Service Fabric-Explorer](service-fabric-visualizing-your-cluster.md).
 
 ## Beschreiben eines Diensts
 
@@ -104,7 +108,9 @@ For more information about other features supported by service manifests, refer 
 ## Beschreiben einer Anwendung
 
 
-Das Anwendungsmanifest beschreibt deklarativ den Typ und die Version der Anwendung. Es gibt Dienstzusammensetzungs-Metadaten wie z. B. dauerhafte Namen, Partitionierungsschema, Anzahl der Instanzen/Replikationsfaktor, Richtlinie für Sicherheit/Isolation, Platzierungseinschränkungen, Konfigurationsüberschreibungen und zugehörige Diensttypen an. Zudem werden die Lastenausgleichsdomänen beschrieben, in denen die Anwendung eingefügt wird. Somit beschreibt ein Anwendungsmanifest Elemente auf Anwendungsebene, verweist auf ein oder mehrere Dienstmanifeste und bildet so einen Anwendungstyp. Hier ein einfaches Beispiel eines Anwendungsmanifests:
+Das Anwendungsmanifest beschreibt deklarativ den Typ und die Version der Anwendung. Es gibt Dienstzusammensetzungs-Metadaten wie z. B. dauerhafte Namen, Partitionierungsschema, Anzahl der Instanzen/Replikationsfaktor, Richtlinie für Sicherheit/Isolation, Platzierungseinschränkungen, Konfigurationsüberschreibungen und zugehörige Diensttypen an. Zudem werden die Lastenausgleichsdomänen beschrieben, in denen die Anwendung eingefügt wird.
+
+Somit beschreibt ein Anwendungsmanifest Elemente auf Anwendungsebene, verweist auf ein oder mehrere Dienstmanifeste und bildet so einen Anwendungstyp. Hier ein einfaches Beispiel eines Anwendungsmanifests:
 
 ~~~
 <?xml version="1.0" encoding="utf-8" ?>
@@ -186,7 +192,7 @@ Wenn Sie Ihre Anwendung mithilfe von Visual Studio 2015 erstellen, können Sie 
 
 Klicken Sie zum Erstellen eines Pakets im Projektmappen-Explorer mit der rechten Maustaste auf das Anwendungsprojekt, und wählen Sie wie unten gezeigt den Befehl „Paket“ aus:
 
-![][2]
+![Paketieren einer Anwendung mit Visual Studio][vs-package-command]
 
 Nach Abschluss der Paketerstellung wird der Speicherort des Pakets im **Ausgabefenster** angezeigt. Beachten Sie, dass die Paketerstellung automatisch erfolgt, wenn Sie die Anwendung in Visual Studio bereitstellen oder debuggen.
 
@@ -231,21 +237,21 @@ Nachdem die Anwendung ordnungsgemäß gepackt und die Überprüfung erfolgreich 
 
 ## Nächste Schritte
 
-[Bereitstellen und Entfernen von Anwendungen][10]
+[Deploy an application (in englischer Sprache)][10]
 
 [Verwalten von Anwendungsparametern für mehrere Umgebungen][11]
 
 [RunAs: Ausführen einer Service Fabric-Anwendung mit verschiedenen Sicherheitsberechtigungen][12]
 
 <!--Image references-->
-[1]: ./media/service-fabric-application-model/application-model.jpg
-[2]: ./media/service-fabric-application-model/vs-package-command.png
-[Image1]: media/service-fabric-application-model/Service1.jpg
-[Image2]: media/service-fabric-application-model/Service2.jpg
+[appmodel-diagram]: ./media/service-fabric-application-model/application-model.png
+[cluster-imagestore-apptypes]: ./media/service-fabric-application-model/cluster-imagestore-apptypes.png
+[cluster-application-instances]: media/service-fabric-application-model/cluster-application-instances.png
+[vs-package-command]: ./media/service-fabric-application-model/vs-package-command.png
 
 <!--Link references--In actual articles, you only need a single period before the slash-->
 [10]: service-fabric-deploy-remove-applications.md
 [11]: service-fabric-manage-multiple-environment-app-configuration.md
 [12]: service-fabric-application-runas-security.md
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0107_2016-->

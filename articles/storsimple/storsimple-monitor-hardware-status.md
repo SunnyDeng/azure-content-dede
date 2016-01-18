@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="09/15/2015"
+   ms.date="01/05/2016"
    ms.author="alkohli" />
 
 # Überwachen von Hardwarekomponenten und Status mithilfe des StorSimple Manager-Diensts
@@ -21,7 +21,9 @@
 
 Dieser Artikel beschreibt die verschiedenen physischen und logischen Komponenten Ihres lokalen StorSimple-Geräts. Darüber hinaus wird erläutert, wie Sie den Status der Gerätekomponenten auf der Seite **Wartung** des StorSimple Manager-Diensts überwachen.
 
-Die Seite **Wartung** zeigt den Hardwarestatus aller StorSimple-Gerätekomponenten. Unter der Liste mit den Komponenten für 8100 befinden sich drei Abschnitte, die Folgendes beschreiben:
+Die Seite **Wartung** zeigt den Hardwarestatus aller StorSimple-Gerätekomponenten.
+
+Unter der Liste mit den Komponenten für 8100 befinden sich drei Abschnitte, die Folgendes beschreiben:
 
 - **Gemeinsam genutzte Komponenten**: Diese Komponenten sind nicht Teil der Controller. Hierbei handelt es sich beispielsweise um Laufwerke, Gehäuse, PCM-Komponenten und Fühler für PCM-Temperatur, -Strom und -Spannung.
 
@@ -44,8 +46,9 @@ Ein Gerät vom Typ 8600 verfügt über zusätzliche Komponenten für das EBOD-G
 
 Führen Sie die folgenden Schritte aus, um den Hardwarestatus einer Gerätekomponente anzuzeigen:
 
-1. Navigieren Sie zu **Geräte**, und wählen Sie ein bestimmtes StorSimple-Gerät aus. Klicken Sie im Menü auf Geräteebene auf die Registerkarte **Wartung**. 
+1. Navigieren Sie zu **Geräte**, und wählen Sie ein bestimmtes StorSimple-Gerät aus. Klicken Sie im Menü auf Geräteebene auf **Wartung**. 
 2. Navigieren Sie zum Abschnitt **Hardwarestatus**, und wählen Sie eine der verfügbaren Komponenten aus, die weiter oben beschrieben wurden. Klicken Sie einfach auf den Pfeil vor einer Komponentenbezeichnung, um die Liste zu erweitern und den Status der verschiedenen Gerätekomponenten anzuzeigen. Weitere Informationen finden Sie in der [ausführlichen Komponentenliste für das primäre Gehäuse](#component-list-for-primary-enclosure-of-storsimple-device) sowie in der [ausführlichen Komponentenliste für das EBOD-Gehäuse](#component-list-for-ebod-enclosure-of-storsimple-device).
+
 2. Der Komponentenstatus basiert auf dem folgenden Farbschema:
 	-  **Grünes Häkchen**: Die Komponente ist frei von Fehlern oder hat den Status **OK**.
 	-  **Gelb**: Für die Komponente liegt eine Warnung vor.
@@ -160,7 +163,7 @@ Die folgende Tabelle gibt Aufschluss über die physischen und logischen Komponen
 |Verbindung mit Gerätecontroller|E/A|Physisch|Controller|Nein|Gibt den Zustand der Verbindung zwischen dem EBOD-E/A-Modul und dem Gerätecontroller an.|
 
 ## Nächste Schritte
-- Weitere Informationen zum Verwenden des StorSimple Manager-Diensts finden Sie unter [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
+- Weitere Informationen zum Verwalten Ihres Geräts mit dem StorSimple Manager-Diensts finden Sie unter [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
  
 - Informationen zum Behandeln von Problemen mit einer beeinträchtigten oder fehlerhaften Gerätekomponente finden Sie unter [StorSimple-Überwachungsindikatoren](storsimple-monitoring-indicators.md).
 
@@ -168,4 +171,4 @@ Die folgende Tabelle gibt Aufschluss über die physischen und logischen Komponen
 
 - Sollten weiterhin Geräteprobleme auftreten, [wenden Sie sich an den Microsoft-Support](storsimple-contact-microsoft-support.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

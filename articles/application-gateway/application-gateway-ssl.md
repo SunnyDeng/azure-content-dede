@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Konfigurieren eines Anwendungsgateways für SSL-Auslagerung mit klassischer Microsoft Azure-Bereitstellung | Microsoft Azure"
+   pageTitle="Konfigurieren eines Anwendungsgateways für SSL-Auslagerung mit klassischer Bereitstellung | Microsoft Azure"
    description="Dieser Artikel enthält Anweisungen zum Erstellen eines Anwendungsgateways mit SSL-Auslagerung mit dem klassischen Azure-Bereitstellungsmodell."
    documentationCenter="na"
    services="application-gateway"
@@ -21,9 +21,8 @@
 -[Azure Classic Powershell](application-gateway-ssl.md)
 -[Azure Resource Manager Powershell](application-gateway-ssl-arm.md)
 
-Application Gateway kann so konfiguriert werden, dass damit die SSL-Sitzung auf dem Gateway beendet wird. Auf diese Weise wird die aufwändige SSL-Entschlüsselung auf der Webfarm vermieden. Die SSL-Auslagerung vereinfacht zudem die Einrichtung und Verwaltung der Webanwendung auf dem Front-End-Server.
+Application Gateway kann so konfiguriert werden, dass damit die SSL-Sitzung auf dem Gateway beendet wird. Auf diese Weise wird die aufwändige SSL-Entschlüsselung in der Webfarm vermieden. Die SSL-Auslagerung vereinfacht zudem die Einrichtung und Verwaltung der Webanwendung auf dem Front-End-Server.
 
->[AZURE.IMPORTANT]Bevor Sie mit Azure-Ressourcen arbeiten, sollten Sie wissen, dass Azure derzeit über zwei Bereitstellungsmodelle verfügt: die Bereitstellung mit dem Ressourcen-Manager und das klassische Bereitstellungsmodell. Stellen Sie sicher, dass Sie die [Bereitstellungsmodelle und -tools](azure-classic-rm.md) verstanden haben, bevor Sie mit Azure-Ressouren arbeiten. Sie können die Dokumentation für verschiedene Tools anzeigen, indem Sie auf die Registerkarten oben in diesem Artikel klicken. Dieses Dokument behandelt das Erstellen eines Anwendungsgateways mit dem klassischen Azure-Bereitstellungsmodell. Um den Azure-Ressourcen-Manager zu verwenden, wechseln Sie zu [Konfigurieren eines Anwendungsgateways für SSL-Auslagerung mit dem Azure-Ressourcen-Manager](application-gateway-ssl-arm.md).
 
 
 ## Voraussetzungen
@@ -236,4 +235,4 @@ Weitere Informationen zu Lastenausgleichsoptionen im Allgemeinen finden Sie unte
 - [Azure-Lastenausgleich](https://azure.microsoft.com/documentation/services/load-balancer/)
 - [Azure Traffic Manager](https://azure.microsoft.com/documentation/services/traffic-manager/)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

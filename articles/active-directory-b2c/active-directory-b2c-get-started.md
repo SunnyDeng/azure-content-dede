@@ -26,13 +26,13 @@ Für den Einstieg in Azure Active Directory (AD) B2C führen Sie die unten besch
 
 Wenn Sie bereits über ein Azure-Abonnement verfügen, fahren Sie mit dem nächsten Schritt fort. Andernfalls registrieren Sie sich für ein [Azure-Abonnement](sign-up-organization.md), um Zugriff auf Azure AD B2C zu erhalten.
 
-> [AZURE.NOTE]Die Verwendung der Azure AD B2C-Vorschau ist derzeit kostenlos, jedoch eingeschränkt (bis zu 50.000 Benutzer pro Mandant). Für den Zugriff auf das [Azure-Portal](http://manage.windowsazure.com/) ist ein Azure-Abonnement erforderlich.
+> [AZURE.NOTE]Die Verwendung der Azure AD B2C-Vorschau ist derzeit kostenlos, jedoch eingeschränkt (bis zu 50.000 Benutzer pro Mandant). Für den Zugriff auf das [klassische Azure-Portal](http://manage.windowsazure.com/) ist ein Azure-Abonnement erforderlich.
 
 ## Schritt 2: Erstellen eines Azure AD B2C-Mandanten
 
 Führen Sie die folgenden Schritte aus, um einen neuen Azure AD B2C-Mandanten zu erstellen. Derzeit können B2C-Features in Ihren vorhandenen Verzeichnissen nicht aktiviert werden, sofern vorhanden.
 
-1. Melden Sie sich beim [Azure-Portal](https://manage.windowsazure.com/) als Abonnementadministrator an. Dies ist dasselbe Geschäfts-, Schul- oder Universitätskonto bzw. dasselbe Microsoft-Konto, mit dem Sie sich bei Azure registriert haben.
+1. Melden Sie sich beim [klassischen Azure-Portal](https://manage.windowsazure.com/) als Abonnementadministrator an. Dies ist dasselbe Geschäfts-, Schul- oder Universitätskonto bzw. dasselbe Microsoft-Konto, mit dem Sie sich bei Azure registriert haben.
 2. Klicken Sie auf **Neu** > **App Services** > **Active Directory** > **Verzeichnis** > **Benutzerdefiniert erstellen**.
 
     ![Erstellen eines Mandanten](./media/active-directory-b2c-get-started/new-directory.png)
@@ -47,7 +47,7 @@ Führen Sie die folgenden Schritte aus, um einen neuen Azure AD B2C-Mandanten zu
 
     > [AZURE.IMPORTANT]Es kann bis zu zwei Minuten dauern, bis der Mandant erstellt ist. Wenn beim Erstellen des Mandanten Probleme auftreten, finden Sie eine Anleitung in diesem [Artikel](active-directory-b2c-support-create-directory.md).
 
-## Schritt 3: Navigieren zum B2C-Featureblatt im Azure-Vorschauportal
+## Schritt 3: Navigieren zum Blatt „B2C-Funktionen“ im Azure-Portal
 
 1. Navigieren Sie auf der linken Navigationsleiste zur Active Directory-Erweiterung.
 2. Suchen Sie Ihren Mandanten auf der Registerkarte **Verzeichnis**, und klicken Sie darauf.
@@ -56,18 +56,18 @@ Führen Sie die folgenden Schritte aus, um einen neuen Azure AD B2C-Mandanten zu
 
     ![Erstellen eines B2C-Mandanten](./media/active-directory-b2c-get-started/b2c-directory-configure-tab.png)
 
-4. Das Azure-Vorschauportal mit dem B2C-Featureblatt wird in einer neuen Registerkarte oder einem neuen Fenster des Browsers geöffnet.
+4. Das Azure-Portal mit dem Blatt „B2C-Funktionen“ wird in einer neuen Registerkarte oder einem neuen Fenster des Browsers geöffnet.
 
     > [AZURE.IMPORTANT]Es gibt ein bekanntes Problem, durch das diese Seite nicht ordnungsgemäß geladen wird (für eine kleine Anzahl an Mandanten). Durch Aktualisieren des Browsers sollte es behoben sein. Wenn dies nicht der Fall ist, wenden Sie sich an den Support.
 
 5. Heften Sie diese Blade (rechts oben) an Ihrem Startmenü an, um einfach darauf zugreifen zu können.
 
-    ![B2C-Featureblatt](./media/active-directory-b2c-get-started/b2c-features-blade.png)
+    ![Blatt „B2C-Funktionen“](./media/active-directory-b2c-get-started/b2c-features-blade.png)
 
-    > [AZURE.NOTE]Im [Azure-Portal](https://manage.windowsazure.com/) können Sie Benutzer und Gruppen, die Konfiguration für die Self-Service-Kennwortzurücksetzung und Features des Unternehmensbrandings für Ihren Mandanten verwalten.
+    > [AZURE.NOTE]Im [klassischen Azure-Portal](https://manage.windowsazure.com/) können Sie Benutzer und Gruppen, die Konfiguration für die Self-Service-Kennwortzurücksetzung und die Features des Unternehmensbrandings für Ihren Mandanten verwalten.
 
 ## Nächste Schritte
 
 Fahren Sie mit dem [Registrieren einer Anwendung bei Azure AD B2C und dem Erstellen einer Schnellstartanwendung](active-directory-b2c-app-registration.md) fort.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

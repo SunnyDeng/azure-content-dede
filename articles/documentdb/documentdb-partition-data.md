@@ -18,7 +18,7 @@
 
 # Partitionieren und Skalieren von Daten in DocumentDB
 
-[Microsoft Azure DocumentDB](../../services/documentdb/) wurde entwickelt, damit Sie schnelle, vorhersagbare Leistung für Ihre Anwendung erzielen und diese nahtlos *horizontal hochskalieren* können, wenn sie wächst. DocumentDB wurde verwendet, um hoch skalierbare Produktionsdienste bei Microsoft zu betreiben, wie z. B. den Benutzer-Datenspeicher, der wiederum die MSN-Suite mit Webanwendungen und mobilen Apps betreibt.
+[Microsoft Azure DocumentDB](https://azure.microsoft.com/services/documentdb/) wurde entwickelt, damit Sie schnelle, vorhersagbare Leistung für Ihre Anwendung erzielen und diese nahtlos *horizontal hochskalieren* können, wenn sie wächst. DocumentDB wurde verwendet, um hoch skalierbare Produktionsdienste bei Microsoft zu betreiben, wie z. B. den Benutzer-Datenspeicher, der wiederum die MSN-Suite mit Webanwendungen und mobilen Apps betreibt.
 
 Im Hinblick auf Speicher und Durchsatz für Ihre DocumentDB-Anwendung können Sie eine nahezu unbegrenzte Skalierung erzielen, wenn Sie Ihre Daten horizontal partitionieren. Dieses Konzept wird gemeinhin als **Sharding** bezeichnet. DocumentDB-Konten können über stapelbare Einheiten, auch bekannt als **Sammlungen**, linear zu den Kosten skaliert werden. Die beste Partitionierung Ihrer Daten zwischen Sammlungen ist vom Datenformat und den Zugriffsmustern abhängig.
 
@@ -112,4 +112,4 @@ In diesem Artikel haben wir einige gängige Verfahren der Datenpartitionierung m
 
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_0107_2016-->

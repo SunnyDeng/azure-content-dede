@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
 	ms.topic="article"
-	ms.date="11/30/2015"
+	ms.date="12/30/2015"
 	ms.author="krisragh"/>
 
 # Verwenden der iOS-Clientbibliothek für Azure Mobile Apps
@@ -30,27 +30,47 @@ Das Referenzdokumentation für das iOS-Client-SDK finden Sie hier: [Azure Mobile
 
 ##<a name="Setup"></a>Einrichtung und Voraussetzungen
 
-Dieses Lernprogramm setzt voraus, dass Sie ein Back-End mit einer Tabelle erstellt haben. In dieser Anleitung wird davon ausgegangen, dass die Tabelle das gleiche Schema wie die Tabellen in diesen Lernprogrammen aufweist. Dieses Handbuch setzt außerdem voraus, dass Sie in Ihrem Code auf das `WindowsAzureMobileServices.framework` verweisen und `WindowsAzureMobileServices/WindowsAzureMobileServices.h` importieren.
+Dieses Lernprogramm setzt voraus, dass Sie ein Back-End mit einer Tabelle erstellt haben. In dieser Anleitung wird davon ausgegangen, dass die Tabelle das gleiche Schema wie die Tabellen in diesen Lernprogrammen aufweist. Dieses Handbuch setzt außerdem voraus, dass Sie in Ihrem Code auf das `MicrosoftAzureMobile.framework` verweisen und `MicrosoftAzureMobile/MicrosoftAzureMobile.h` importieren.
 
 ##<a name="create-client"></a>Vorgehensweise beim Erstellen von Clients
 
 Erstellen Sie für den Zugriff auf ein Azure Mobile Apps-Back-End in Ihrem Projekt einen `MSClient`. Ersetzen Sie `AppUrl` durch die URL der App. Sie können `gatewayURLString` und `applicationKey` leer lassen. Wenn Sie ein Gateway für die Authentifizierung einrichten, befüllen Sie `gatewayURLString` mit der Gateway-URL.
 
+**Objective-C**:
+
 ```
-MSClient *client = [MSClient clientWithApplicationURLString:@"AppUrl" gatewayURLString:@"" applicationKey:@""];
+MSClient *client = [MSClient clientWithApplicationURLString:@"AppUrl"];
 ```
+
+**Swift**:
+
+```
+let client = MSClient(applicationURLString: "AppUrl")
+```
+
 
 ##<a name="table-reference"></a>Gewusst wie: Erstellen von Tabellenverweisen
 
 Zum Zugreifen auf oder Aktualisieren von Daten erstellen Sie einen Verweis auf die Back-End-Tabelle. Ersetzen Sie `TodoItem` durch den Namen Ihrer Tabelle.
 
+**Objective-C**:
+
 ```
-	MSTable *table = [client tableWithName:@"TodoItem"];
+MSTable *table = [client tableWithName:@"TodoItem"];
 ```
+
+**Swift**:
+
+```
+let table = client.tableWithName("TodoItem")
+```
+
 
 ##<a name="querying"></a>Gewusst wie: Abfragen von Daten
 
 Fragen Sie zum Erstellen einer Abfrage das `MSTable`-Objekt ab. Die folgende Abfrage ruft alle Elemente im `TodoItem` ab und protokolliert den Text von jedem Element.
+
+**Objective-C**:
 
 ```
 [table readWithCompletion:^(MSQueryResult *result, NSError *error) {
@@ -64,16 +84,32 @@ Fragen Sie zum Erstellen einer Abfrage das `MSTable`-Objekt ab. Die folgende Abf
 }];
 ```
 
+**Swift**:
+
+```
+table.readWithCompletion({(result, error) -> Void in
+    if error != nil { // error is nil if no error occured
+        NSLog("ERROR %@", error!)
+    } else {
+        for item in (result?.items)! {
+            NSLog("Todo Item: %@", item["text"] as! String)
+        }
+    }
+})
+```
+
 ##<a name="filtering"></a>Gewusst wie: Filtern zurückgegebener Daten
 
 Für das Filtern von Ergebnissen stehen zahlreiche Optionen zur Verfügung.
 
 Um mithilfe eines Prädikats zu filtern, verwenden Sie `NSPredicate` und `readWithPredicate`. Mit den folgenden Filtern werden nur Daten zu unvollständigen Todo-Elemente zurückgegeben.
 
+**Objective-C**:
+
 ```
 // Create a predicate that finds items where complete is false
 NSPredicate * predicate = [NSPredicate predicateWithFormat:@"complete == NO"];
-// Query the TodoItem table and update the items property with the results from the service
+// Query the TodoItem table 
 [table readWithPredicate:predicate completion:^(MSQueryResult *result, NSError *error) {
 		if(error) {
 				NSLog(@"ERROR %@", error);
@@ -85,13 +121,39 @@ NSPredicate * predicate = [NSPredicate predicateWithFormat:@"complete == NO"];
 }];
 ```
 
+**Swift**:
+
+```
+// Create a predicate that finds items where complete is false
+let predicate =  NSPredicate(format:"complete == NO")
+// Query the TodoItem table 
+table.readWithPredicate(predicate, completion: { (result, error) -> Void in
+    if error != nil {
+        NSLog("ERROR %@", error!)
+    } else {
+        for item in (result?.items)! {
+            NSLog("Todo Item: %@", item["text"] as! String)
+        }
+    }
+})
+```
+
 ##<a name="query-object"></a>Gewusst wie: Verwenden von MSQuery
 
 Um eine komplexe Abfrage (einschließlich Sortierung und Paging) auszuführen, erstellen Sie ein `MSQuery`-Objekt entweder direkt oder durch Verwenden eines Prädikats:
 
+**Objective-C**:
+
 ```
-    MSQuery *query = [table query];
-    MSQuery *query = [table queryWithPredicate: [NSPredicate predicateWithFormat:@"complete == NO"]];
+MSQuery *query = [table query];
+MSQuery *query = [table queryWithPredicate: [NSPredicate predicateWithFormat:@"complete == NO"]];
+```
+
+**Swift**:
+
+```
+let query = table.query()
+let query = table.queryWithPredicate(NSPredicate(format:"complete == NO"))
 ```
 
 Mit `MSQuery` können Sie verschiedene Abfrageeigenschaften steuern, darunter die Folgenden. Führen Sie eine `MSQuery`-Abfrage durch, indem Sie `readWithCompletion` für MSQuery aufrufen, wie im nächsten Beispiel gezeigt. * Reihenfolge der Ergebnisse angeben * Zurückzugebenden Felder einschränken * Zurückzugebenden Datensätze einschränken * Gesamtzahl in der Antwort angeben * Benutzerdefinierte Abfragezeichenfolgen-Parameter in der Anforderung angeben * Zusätzliche Funktionen anwenden
@@ -100,6 +162,8 @@ Mit `MSQuery` können Sie verschiedene Abfrageeigenschaften steuern, darunter di
 ## <a name="sorting"></a>Gewusst wie: Sortieren von Daten mit MSQuery
 
 Um die Ergebnisse zu sortieren, sehen wir uns ein Beispiel an. Um zuerst aufsteigend nach Feld `text` und dann absteigend nach Feld `completion` zu sortieren, rufen Sie `MSQuery` wie folgt auf:
+
+**Objective-C**:
 
 ```
 [query orderByAscending:@"text"];
@@ -115,22 +179,54 @@ Um die Ergebnisse zu sortieren, sehen wir uns ein Beispiel an. Um zuerst aufstei
 }];
 ```
 
+**Swift**:
+
+```        
+query.orderByAscending("text")
+query.orderByDescending("complete")
+query.readWithCompletion { (result, error) -> Void in
+    if error != nil {
+        NSLog("ERROR %@", error!)
+    } else {
+        for item in (result?.items)! {
+            NSLog("Todo Item: %@", item["text"] as! String)
+        }
+    }
+}
+```
+
 
 ## <a name="selecting"></a><a name="parameters"></a>Gewusst wie: Einschränken von Feldern und Erweitern von Abfragezeichenfolgen-Parametern mit MSQuery
 
 Um die in einer Abfrage zurückzugebenden Felder einzuschränken, geben Sie die Namen der Felder in der **SelectFields**-Eigenschaft an. Hier werden nur der Text und abgeschlossene Felder angezeigt:
 
+**Objective-C**:
+
 ```
-	query.selectFields = @[@"text", @"completed"];
+query.selectFields = @[@"text", @"complete"];
+```
+
+**Swift**:
+
+```
+query.selectFields = ["text", "complete"]
 ```
 
 Um zusätzliche Abfragezeichenfolgen-Parameter in die Anforderung einzubinden (z. B. weil diese Parameter von einem benutzerdefinierten serverseitigen Skript verwendet werden), füllen Sie `query.parameters` wie folgt aus:
 
+**Objective-C**:
+
 ```
-	query.parameters = @{
-		@"myKey1" : @"value1",
-		@"myKey2" : @"value2",
-	};
+query.parameters = @{
+	@"myKey1" : @"value1",
+	@"myKey2" : @"value2",
+};
+```
+
+**Swift**:
+
+```
+query.parameters = ["myKey1": "value1", "myKey2": "value2"]
 ```
 
 ##<a name="inserting"></a>Gewusst wie: Einfügen von Daten
@@ -139,38 +235,91 @@ Um eine neue Tabellenzeile einzufügen, erstellen Sie ein neues `NSDictionary`, 
 
 Wenn `id` nicht angegeben wird, generiert das Back-End automatisch eine neue eindeutige ID. Geben Sie eine eigene `id` ein, um E-Mail-Adressen, Benutzernamen oder einen eigenen benutzerdefinierten Wert als ID zu verwenden. Die Bereitstellung einer eigenen ID kann Joins und die geschäftsorientierte Datenbanklogik vereinfachen.
 
+Das `result` enthält das neue eingefügte Element. Abhängig von Ihrer Serverlogik kann es im Vergleich zur ursprünglichen Übergabe an den Server zusätzliche oder geänderte Daten enthalten.
+
+**Objective-C**:
+
 ```
-	NSDictionary *newItem = @{@"id": @"custom-id", @"text": @"my new item", @"complete" : @NO};
-	[self.table insert:newItem completion:^(NSDictionary *result, NSError *error) {
-		// The result contains the new item that was inserted,
-		// depending on your server scripts it may have additional or modified
-		// data compared to what was passed to the server.
-		if(error) {
-				NSLog(@"ERROR %@", error);
-		} else {
-						NSLog(@"Todo Item: %@", [result objectForKey:@"text"]);
-		}
-	}];
+NSDictionary *newItem = @{@"id": @"custom-id", @"text": @"my new item", @"complete" : @NO};
+[table insert:newItem completion:^(NSDictionary *result, NSError *error) {
+	if(error) {
+		NSLog(@"ERROR %@", error);
+	} else {
+		NSLog(@"Todo Item: %@", [result objectForKey:@"text"]);
+	}
+}];
+```
+
+**Swift**:
+
+```
+let newItem = ["id": "custom-id", "text": "my new item", "complete": false]
+table.insert(newItem) { (result, error) -> Void in
+    if error != nil {
+        NSLog("ERROR %@", error!)
+    } else {
+        NSLog("Todo Item: %@", result!["text"] as! String)
+    }
+}
 ```
 
 ##<a name="modifying"></a>Gewusst wie: Ändern von Daten
 
 Um eine vorhandene Zeile zu aktualisieren, ändern Sie ein Element, und rufen Sie `update` auf:
 
+**Objective-C**:
+
 ```
-	NSMutableDictionary *newItem = [oldItem mutableCopy]; // oldItem is NSDictionary
-	[newItem setValue:@"Updated text" forKey:@"text"];
-	[self.table update:newItem completion:^(NSDictionary *item, NSError *error) {
-		// Handle error or perform additional logic as needed
-	}];
+NSMutableDictionary *newItem = [oldItem mutableCopy]; // oldItem is NSDictionary
+[newItem setValue:@"Updated text" forKey:@"text"];
+[table update:newItem completion:^(NSDictionary *result, NSError *error) {
+	if(error) {
+		NSLog(@"ERROR %@", error);
+	} else {
+		NSLog(@"Todo Item: %@", [result objectForKey:@"text"]);
+	}
+}];
+```
+
+**Swift**:
+
+```
+let newItem = oldItem.mutableCopy() as! NSMutableDictionary // oldItem is NSDictionary
+newerItem["text"] = "Updated text"
+table.update(newerItem  as [NSObject : AnyObject]) { (result, error) -> Void in
+    if error != nil {
+        NSLog("ERROR %@", error!)
+    } else {
+        NSLog("Todo Item: %@", result!["text"] as! String)
+    }
+}
 ```
 
 Geben Sie alternativ die Zeilen-ID und das aktualisierte Feld ein:
 
+**Objective-C**:
+
 ```
-	[self.table update:@{@"id":@"37BBF396-11F0-4B39-85C8-B319C729AF6D", @"Complete":@YES} completion:^(NSDictionary *item, NSError *error) {
-		// Handle error or perform additional logic as needed
-	}];
+[table update:@{@"id":@"custom-id", @"text":"my EDITED item"} completion:^(NSDictionary *result, NSError *error) {
+	if(error) {
+		NSLog(@"ERROR %@", error);
+	} else {
+		NSLog(@"Todo Item: %@", [result objectForKey:@"text"]);
+	}
+}];
+```
+
+**Swift**:
+
+```
+table.update(["id": "custom-id", "text": "my EDITED item"]) { (result, error) -> Void in
+    if error != nil {
+        NSLog("ERROR %@", error!)
+    } else {
+        NSLog("Todo Item: %@", result!["text"] as! String)
+    }
+    
+}
 ```
 
 Für Änderungen muss zumindest das `id`-Attribut gesetzt sein.
@@ -179,18 +328,54 @@ Für Änderungen muss zumindest das `id`-Attribut gesetzt sein.
 
 Um ein Element zu löschen, rufen Sie `delete` mit dem Element auf:
 
+**Objective-C**:
+
 ```
-	[self.table delete:item completion:^(id itemId, NSError *error) {
-		// Handle error or perform additional logic as needed
-	}];
+[table delete:item completion:^(id itemId, NSError *error) {
+	if(error) {
+		NSLog(@"ERROR %@", error);
+	} else {
+		NSLog(@"Todo Item ID: %@", itemId);
+	}
+}];
+```
+
+**Swift**:
+
+```
+table.delete(item as [NSObject : AnyObject]) { (itemId, error) -> Void in
+	if error != nil {
+		NSLog("ERROR %@", error!)
+	} else {
+		NSLog("Todo Item ID: %@", itemId! as! String)
+	}
+}
 ```
 
 Geben Sie alternativ eine Zeilen-ID ein, um das Element zu löschen:
 
+**Objective-C**:
+
 ```
-	[self.table deleteWithId:@"37BBF396-11F0-4B39-85C8-B319C729AF6D" completion:^(id itemId, NSError *error) {
-		// Handle error or perform additional logic as needed
-	}];   
+[table deleteWithId:@"37BBF396-11F0-4B39-85C8-B319C729AF6D" completion:^(id itemId, NSError *error) {
+	if(error) {
+		NSLog(@"ERROR %@", error);
+	} else {
+		NSLog(@"Todo Item ID: %@", itemId);
+	}
+}];   
+```
+
+**Swift**:
+
+```
+table.deleteWithId("37BBF396-11F0-4B39-85C8-B319C729AF6D") { (itemId, error) -> Void in
+        if error != nil {
+        	NSLog("ERROR %@", error!)
+        } else {
+        	NSLog("Todo Item ID: %@", itemId! as! String)
+        }
+}
 ```
 
 Für Löschungen muss zumindest das `id`-Attribut gesetzt sein.
@@ -199,13 +384,39 @@ Für Löschungen muss zumindest das `id`-Attribut gesetzt sein.
 
 Um Vorlagen zu registrieren, übergeben Sie einfach die Vorlagen mit Ihrer **client.push registerDeviceToken**-Methode in Ihrer Client-App.
 
-        [client.push registerDeviceToken:deviceToken template:iOSTemplate completion:^(NSError *error) {
-        	...
-        }];
+**Objective-C**:
+
+```
+[client.push registerDeviceToken:deviceToken template:iOSTemplate completion:^(NSError *error) {
+	if(error) {
+		NSLog(@"ERROR %@", error);
+	}
+}];
+```
+
+**Swift**:
+
+```
+client.push!.registerDeviceToken(deviceToken, template: iOSTemplate, completion: { (error) -> Void in
+            if error != nil {
+                NSLog("ERROR %@", error!)
+            }
+        })
+```
 
 Ihre Vorlagen vom Typ „NSDictionary“ und können mehrere Vorlagen im folgenden Format enthalten:
 
-        NSDictionary *iOSTemplate = @{ @"templateName": @{ @"body": @{ @"aps": @{ @"alert": @"$(message)" } } } };
+**Objective-C**:
+
+```
+NSDictionary *iOSTemplate = @{ @"templateName": @{ @"body": @{ @"aps": @{ @"alert": @"$(message)" } } } };
+```
+
+**Swift**:
+
+```
+let iOSTemplate: [NSObject : AnyObject] = ["templateName": ["body": ["aps": ["alert": "$(message)"]]]]
+```
 
 Beachten Sie, dass aus Sicherheitsgründen alle Tags entfernt werden. Informationen zum Hinzufügen von Tags zu Installationen bzw. Vorlagen innerhalb von Installationen finden Sie unter [Verwenden des .NET-Back-End-Server SDK für Azure Mobile Apps](app-service-mobile-dotnet-backend-how-to-use-server-sdk.md#tags).
 
@@ -213,9 +424,37 @@ Zum Senden von Benachrichtigungen, die diese registrierten Vorlagen verwenden, a
 
 ##<a name="errors"></a>Gewusst wie: Fehlerbehandlung
 
-Beim Aufrufen eines mobilen Dienstes enthält der completion-Block einen `NSError *error`-Parameter. Wenn ein Fehler auftritt, ist der Wert dieses Parameters “non-nil“. Sie sollten diesen Parameter in Ihrem Code prüfen und Fehler entsprechend behandeln.
+Beim Aufrufen eines mobilen Dienstes enthält der completion-Block einen `NSError`-Parameter. Wenn ein Fehler auftritt, ist der Wert dieses Parameters “non-nil“. Sie sollten diesen Parameter in Ihrem Code prüfen und Fehler entsprechend behandeln, wie in den oben aufgeführten Codeausschnitten veranschaulicht.
 
-Die Datei [`<WindowsAzureMobileServices/MSError.h>`](https://github.com/Azure/azure-mobile-services/blob/master/sdk/iOS/src/MSError.h) definiert die Konstanten `MSErrorResponseKey`, `MSErrorRequestKey`, und `MSErrorServerItemKey`, um mehr Daten im Zusammenhang mit dem Fehler zu erhalten. Darüber hinaus definiert die Datei Konstanten für jeden Fehlercode. Ein Beispiel für die Verwendung dieser Konstanten finden Sie unter [Konflikthandler] und die Verwendung von `MSErrorServerItemKey` und `MSErrorPreconditionFailed`.
+Die Datei [`<WindowsAzureMobileServices/MSError.h>`](https://github.com/Azure/azure-mobile-services/blob/master/sdk/iOS/src/MSError.h) definiert die Konstanten `MSErrorResponseKey`, `MSErrorRequestKey` und `MSErrorServerItemKey`, um mehr Daten im Zusammenhang mit dem Fehler zu erhalten. Sie können wie folgt abgerufen werden:
+
+**Objective-C**:
+
+```
+NSDictionary *serverItem = [error.userInfo objectForKey:MSErrorServerItemKey];
+```
+
+**Swift**:
+
+```
+let serverItem = error?.userInfo[MSErrorServerItemKey]
+```
+
+Darüber hinaus definiert die Datei Konstanten für jeden Fehlercode. Sie können wie folgt verwendet werden:
+
+**Objective-C**:
+
+```
+if (error.code == MSErrorPreconditionFailed) {
+```
+
+**Swift**:
+
+```
+if (error?.code == MSErrorPreconditionFailed) {
+```
+
+
 
 <!-- Anchors. -->
 
@@ -266,6 +505,6 @@ Die Datei [`<WindowsAzureMobileServices/MSError.h>`](https://github.com/Azure/az
 [NSDictionary object]: http://go.microsoft.com/fwlink/p/?LinkId=301965
 [ASCII control codes C0 and C1]: http://en.wikipedia.org/wiki/Data_link_escape_character#C1_set
 [CLI to manage Mobile Services tables]: ../virtual-machines-command-line-tools.md#Mobile_Tables
-[Konflikthandler]: mobile-services-ios-handling-conflicts-offline-data.md#add-conflict-handling
+[Conflict-Handler]: mobile-services-ios-handling-conflicts-offline-data.md#add-conflict-handling
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

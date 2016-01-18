@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="12/14/2015"
+   ms.date="12/23/2015"
    ms.author="telmos" />
 
 # IP-Adressen (klassisch) in Azure
@@ -23,7 +23,7 @@ Sie können Azure-Ressourcen IP-Adressen zuweisen, um die Kommunikation mit ande
 
 Private IP-Adressen werden für die Kommunikation innerhalb eines virtuellen Azure-Netzwerks (VNet), Clouddiensts und Ihres lokalen Netzwerks verwendet, wenn Sie Ihr Netzwerk mithilfe eines VPN-Gateways oder einer ExpressRoute-Verbindung auf Azure ausdehnen.
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/learn-about-deployment-models-rm-include.md)] [resource manager deployment model](virtual-network-ip-addresses-overview-arm.md).
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager deployment model](virtual-network-ip-addresses-overview-arm.md).
 
 ## Öffentliche IP-Adressen
 Öffentliche IP-Adressen ermöglichen Azure-Ressourcen die Kommunikation mit dem Internet und öffentlichen Azure-Diensten wie [Azure Redis Cache](https://azure.microsoft.com/services/cache), [Azure Event Hubs](https://azure.microsoft.com/services/event-hubs), [SQL-Datenbanken](sql-database-technical-overview.md) und [Azure Storage](storage-introduction.md).
@@ -37,7 +37,7 @@ Eine öffentliche IP-Adresse wird folgenden Ressourcentypen zugeordnet:
 - Anwendungsgateways
 
 ### Zuordnungsmethode
-Die öffentliche IP-Adresse einer Azure-Ressource wird *dynamisch* aus einem Pool mit verfügbaren öffentlichen IP-Adressen des Ressourcenerstellungsorts zugewiesen. Bei Beendigung der Ressource wird die IP-Adresse wieder freigegeben. Bei einem Clouddienst tritt dieser Fall ein, wenn alle Rolleninstanzen beendet werden. Dies lässt sich durch Verwendung einer *statischen* (reservierten) IP-Adresse verhindern. (Weitere Informationen finden Sie weiter unten unter „Clouddienste“.)
+Die öffentliche IP-Adresse einer Azure-Ressource wird *dynamisch* aus einem Pool mit verfügbaren öffentlichen IP-Adressen des Ressourcenerstellungsorts zugewiesen. Bei Beendigung der Ressource wird die IP-Adresse wieder freigegeben. Bei einem Clouddienst tritt dieser Fall ein, wenn alle Rolleninstanzen beendet werden. Dies lässt sich durch Verwendung einer *statischen* (reservierten) IP-Adresse verhindern. (Weitere Informationen finden Sie unter [Clouddienste](#Cloud-services).)
 
 >[AZURE.NOTE]Die Liste mit den IP-Adressbereichen, aus denen Azure-Ressourcen öffentliche IP-Adressen zugewiesen werden, finden Sie unter [IP-Bereiche des Azure-Rechenzentrums](https://www.microsoft.com/download/details.aspx?id=41653).
 
@@ -80,7 +80,7 @@ Die folgende Tabelle gibt Aufschluss über die einzelnen Ressourcentypen, die m�
 ## Private IP-Adressen
 Private IP-Adressen ermöglichen Azure-Ressourcen die Kommunikation mit anderen Ressourcen in einem Clouddienst oder [virtuellen Netzwerk](virtual-networks-overview.md) (VNet) oder mit einem lokalen Netzwerk (über ein VPN-Gateway oder eine ExpressRoute-Verbindung) ohne Verwendung einer über das Internet erreichbaren IP-Adresse.
 
-Im klassischen Bereitstellungsmodell von Azure wird eine private IP-Adresse verschiedenen Azure-Ressourcen zugewiesen.
+Im klassischen Bereitstellungsmodell von Azure kann eine private IP-Adresse den folgenden Azure-Ressourcen zugewiesen werden:
 
 - IaaS-VMs und PaaS-Rolleninstanzen
 - Interner Lastenausgleich
@@ -101,7 +101,7 @@ Bei Bereitstellung eines Clouddiensts innerhalb eines virtuellen Netzwerks erhal
 
 Darüber hinaus wird bei Clouddiensten in einem VNet standardmäßig eine private IP-Adresse *dynamisch* (per DHCP) zugewiesen. Diese kann sich ändern, wenn die Ressource beendet und wieder gestartet wird. Wenn die IP-Adresse unverändert bleiben soll, müssen Sie die *statische* Zuordnungsmethode verwenden und eine gültige IP-Adresse innerhalb des entsprechenden Adressbereichs angeben.
 
- Statische private IP-Adressen werden häufig für Folgendes verwendet:
+Statische private IP-Adressen werden häufig für Folgendes verwendet:
 
  - VMs, die als Domänencontroller oder DNS-Server fungieren.
  - VMs, die Firewallregeln mit IP-Adressen erfordern.
@@ -115,7 +115,7 @@ Beim Erstellen einer VM wird den von Azure verwalteten DNS-Servern eine Hostname
 Bei einem *eigenständigen* Clouddienst können nur die Hostnamen der VMs/Rolleninstanzen innerhalb des gleichen Clouddiensts aufgelöst werden. Bei einem Clouddienst innerhalb eines VNets können die Hostnamen aller VMs/Rolleninstanzen innerhalb des VNets aufgelöst werden.
 
 ### Interner Lastenausgleich (Internal Load Balancer, ILB) und Anwendungsgateways
-Sie können der **Front-End**-Konfiguration eines [Azure-ILBs](load-balancer-internal-overview.md) oder [Azure-Anwendungsgateways](application-gateway-introduction.md) eine private IP-Adresse zuweisen. Diese private IP-Adresse fungiert als interner Endpunkt und steht nur den Ressourcen innerhalb des entsprechenden virtuellen Netzwerks (VNet) und der damit verbundenen Remotenetzwerke zur Verfügung. Der Front-End-Konfiguration kann eine dynamische oder eine statische private IP-Adresse zugewiesen werden. Für Multi-VIP-Szenarien können auch mehrere private IP-Adressen zugewiesen werden.
+Sie können der **Front-End**-Konfiguration eines [Azure-ILBs](load-balancer-internal-overview.md) oder eines [Azure Application Gateways](application-gateway-introduction.md) eine private IP-Adresse zuweisen. Diese private IP-Adresse fungiert als interner Endpunkt und steht nur den Ressourcen innerhalb des entsprechenden virtuellen Netzwerks (VNet) und der damit verbundenen Remotenetzwerke zur Verfügung. Der Front-End-Konfiguration kann eine dynamische oder eine statische private IP-Adresse zugewiesen werden. Für Multi-VIP-Szenarien können auch mehrere private IP-Adressen zugewiesen werden.
 
 ### Auf einen Blick
 Die folgende Tabelle gibt Aufschluss über die einzelnen Ressourcentypen, die möglichen Zuordnungsmethoden (dynamisch/statisch) sowie über die Möglichkeit, mehrere private IP-Adressen zuzuweisen:
@@ -128,6 +128,23 @@ Die folgende Tabelle gibt Aufschluss über die einzelnen Ressourcentypen, die m�
 |Front-End für internen Lastenausgleich|Ja|Ja|Ja|
 |Application Gateway-Front-End|Ja|Ja|Ja|
 
+## Grenzen
+
+Folgende Tabelle zeigt die Einschränkungen für die IP-Adressierung in Azure gemäß Abonnement. Sie können sich [an den Support wenden](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade), um die Standardlimits Ihren Unternehmensanforderungen entsprechend auf die maximalen Grenzwerte zu erhöhen.
+
+||Standardlimit|Maximaler Grenzwert| |---|---|---| |Öffentliche IP-Adressen (dynamisch)|5|Wenden Sie sich an den Support.| |Reservierte öffentliche IP-Adressen|20|Wenden Sie sich an den Support.| |Öffentliche VIP pro Bereitstellung (Clouddienst)|5|Wenden Sie sich an den Support.| |Private VIP (ILB) pro Bereitstellung (Clouddienst)|1|1|
+
+Lesen Sie unbedingt die vollständigen Informationen zu [Netzwerkeinschränkungen](azure-subscription-service-limits.md#networking-limits) in Azure.
+
+## Preise
+
+In den meisten Fällen sind öffentliche IP-Adressen kostenlos. Es wird eine Schutzgebühr für die Verwendung zusätzlicher und/oder statischer öffentlicher IP-Adressen erhoben. Informieren Sie sich unbedingt über die [Preisstruktur für öffentliche IP-Adressen](https://azure.microsoft.com/pricing/details/ip-addresses/).
+
+## Unterschiede zwischen Ressourcen-Manager-Bereitstellungen und klassischen Bereitstellungen
+Im Folgenden werden IP-Adressfeatures im Ressourcen-Manager-Bereitstellungsmodell und im klassischen Bereitstellungsmodell miteinander verglichen.
+
+||Ressource|Klassisch|Ressourcen-Manager| |---|---|---|---| |**Öffentliche IP-Adresse**|VM|Als öffentliche IP-Adressen auf Instanzebene (ILPIP) bezeichnet (nur dynamisch)|Als öffentliche IP-Adresse bezeichnet (dynamisch oder statisch)| |||Einer IaaS-VM oder einer PaaS-Rolleninstanz zugewiesen|Der NIC einer VM zugeordnet| ||Load Balancer mit Internetzugriff |Als VIP (dynamisch) oder reservierte IP (statisch) bezeichnet|Als öffentliche IP-Adresse bezeichnet (dynamisch oder statisch)| |||Einem Clouddienst zugewiesen|Der Front-End-Konfiguration eines Load Balancers zugeordnet| |||| |**Private IP-Adresse**|VM|Als DIP bezeichnet|Als private IP-Adresse bezeichnet| |||Einer IaaS-VM oder einer PaaS-Rolleninstanz zugewiesen|Der NIC einer VM zugewiesen| ||Interner Load Balancer (ILB)|Dem ILB zugewiesen (dynamisch oder statisch)|Der Front-End-Konfiguration des ILB zugewiesen (dynamisch oder statisch)|
+
 ## Nächste Schritte
 - [Bereitstellen einer VM mit einer statischen öffentlichen IP-Adresse](virtual-network-deploy-static-pip-classic-ps.md)
 - [Bereitstellen einer VM mit einer statischen privaten IP-Adresse](virtual-networks-static-private-ip-classic-pportal.md)
@@ -136,4 +153,4 @@ Die folgende Tabelle gibt Aufschluss über die einzelnen Ressourcentypen, die m�
 - [Erstellen eines Anwendungsgateways mit PowerShell](application-gateway-create-gateway.md)
 - [Erstellen eines internen Anwendungsgateways mit PowerShell](application-gateway-ilb.md)
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0107_2016-->

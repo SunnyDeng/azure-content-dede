@@ -18,7 +18,7 @@
 
 # Sicherer Zugriff auf Daten in DocumentDB #
 
-Dieser Artikel bietet eine Übersicht über den sicheren Zugriff auf in [Microsoft Azure DocumentDB](../../services/documentdb/) gespeicherte Daten.
+Dieser Artikel bietet eine Übersicht über den sicheren Zugriff auf in [Microsoft Azure DocumentDB](https://azure.microsoft.com/services/documentdb/) gespeicherte Daten.
 
 Wenn Sie diesen Artikel gelesen haben, können Sie folgende Fragen beantworten:
 
@@ -163,4 +163,4 @@ Um alle einem bestimmten Benutzer zugeordneten Berechtigungsressourcen abzurufen
 - Informationen zum Erstellen von DocumentDB-Autorisierungstoken finden klicken Sie [hier](https://msdn.microsoft.com/library/azure/dn783368.aspx)
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

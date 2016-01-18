@@ -21,10 +21,7 @@
 # Herstellen von Verbindungen mit SQL-Datenbanken mithilfe von Ruby unter Ubuntu Linux
 
 
-> [AZURE.SELECTOR]
-- [Python](sql-database-develop-python-simple-ubuntu-linux.md)
-- [Node.js](sql-database-develop-nodejs-simple-linux.md)
-- [Ruby](sql-database-develop-ruby-simple-linux.md)
+[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
 
 
 Dieses Thema zeigt ein Ruby-Codebeispiel, das auf einem Ubuntu Linux-Clientcomputer ausgeführt wird, um eine Verbindung mit einer Azure SQL-Datenbank herzustellen.
@@ -121,4 +118,4 @@ Zum Ausrichten am [Datetime](http://msdn.microsoft.com/library/ms187819.aspx)-Fo
     puts row
     end
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0107_2016-->

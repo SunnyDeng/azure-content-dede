@@ -5,7 +5,7 @@
 	documentationCenter=""
 	authors="swkrish"
 	manager="msmbaldwin"
-	editor="curtand"/>
+	editor="bryanla"/>
 
 <tags
 	ms.service="active-directory-b2c"
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/08/2015"
+	ms.date="12/22/2015"
 	ms.author="swkrish"/>
 
 # Azure Active Directory B2C-Vorschau: Ein Hilfsprogramm, mit dem das Anpassungsfeature für die Seitenbenutzeroberfläche (UI) veranschaulicht werden kann
@@ -36,7 +36,7 @@ Sie müssen das [Registrieren einer Anwendung](active-directory-b2c-app-registra
 
 - Erstellen Sie eine der [hier](active-directory-b2c-overview.md#getting-started) aufgeführten Azure AD B2C-Schnellstartanwendungen.
 - Verwenden Sie die fertige Anwendung [Azure AD B2C Playground](https://aadb2cplayground.azurewebsites.net). Wenn Sie die Playground-Anwendung wählen, müssen Sie eine Anwendung mit dem **Umleitungs-URI** `https://aadb2cplayground.azurewebsites.net/` im B2C-Mandanten registrieren.
-- Verwenden Sie die Schaltfläche **Jetzt ausführen** für Ihre Richtlinie im [Azure-Vorschauportal](https://portal.azure.com).
+- Verwenden Sie im [Azure-Portal](https://portal.azure.com) die Schaltfläche **Jetzt ausführen** für Ihre Richtlinie.
 
 ## Anpassen der Richtlinie
 
@@ -44,7 +44,7 @@ Um das Aussehen und Verhalten Ihrer Richtlinien anzupassen, müssen Sie zuerst H
 
 Für dieses Lernprogramm haben wir bereits einige Beispielinhalte erstellt und auf einem Azure-BLOB-Speicher gehostet. Die Beispielinhalte umfassen eine sehr einfache Anpassung des Designs unseres fiktiven Unternehmens „Contoso B2C“. Gehen Sie folgendermaßen vor, um dies für Ihre eigene Richtlinie auszuprobieren:
 
-1. Melden Sie sich bei Ihrem Mandanten im [Azure-Vorschauportal](https://portal.azure.com) an, und navigieren Sie zum Blatt mit den B2C-Features.
+1. Melden Sie sich im [Azure-Portal](https://portal.azure.com) bei Ihrem Mandanten an, und navigieren Sie zum Blatt mit den B2C-Funktionen.
 2. Klicken Sie auf **Registrierungsrichtlinien**, und klicken Sie dann auf Ihre Registrierungsrichtlinie (z. B. „b2c\_1\_sign\_up“).
 3. Klicken Sie auf **Anpassung der Seiten-UI** und dann auf **Auswahlseite für den Identitätsanbieter**.
 4. Stellen Sie die Option **Benutzerdefinierte Vorlage** verwenden auf **Ja** ein. Geben Sie im Feld **Benutzerdefinierter Seiten-URI** den Linktext `https://contosob2c.blob.core.windows.net/static/Index.html` ein. Klicken Sie auf **OK**.
@@ -59,7 +59,7 @@ Wenn Sie den Azure-BLOB-Speicher zum Hosten Ihrer Beispielinhalte verwenden möc
 
 #### Erstellen Sie ein Speicherkonto.
 
-1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com/) an.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/) an.
 2. Klicken Sie auf **+ Neu** -> **Daten und Speicher** -> **Speicherkonto**. Sie benötigen ein Azure-Abonnement, um ein Azure-Blobspeicherkonto zu erstellen. Sie können sich [hier](https://azure.microsoft.com/pricing/free-trial/) für eine kostenlose Testversion registrieren.
 3. Geben Sie einen **Namen** für das Speicherkonto an (z. B. „contoso“), und treffen Sie die entsprechende Auswahl für **Tarif**, **Ressourcengruppe** und **Abonnement**. Stellen Sie sicher, dass die Option **An Startmenü anheften** aktiviert ist. Klicken Sie auf **Erstellen**.
 4. Wechseln Sie zurück zum Startmenü, und klicken Sie auf das Speicherkonto, das Sie gerade erstellt haben.
@@ -90,4 +90,4 @@ Nachdem Sie die Beispielinhalte in Ihr eigenes Speicherkonto hochgeladen haben, 
         
 Sie können nun die Schaltfläche **Jetzt ausführen** oder Ihre eigene Anwendung verwenden, um die Richtlinie erneut auszuführen. Das Ergebnis sollte nahezu identisch sein, da Sie in beiden Fällen dieselben HTML- und CSS-Beispieldaten verwendet haben. Die Richtlinien verweisen jetzt aber auf Ihre eigene Instanz des Azure-BLOB-Speichers, und Sie können die Dateien wie gewünscht bearbeiten und neu hochladen. Weitere Informationen zum Anpassen der HTML- und CSS-Daten finden Sie im [Hauptartikel zur Anpassung der Benutzeroberfläche](active-directory-b2c-reference-ui-customization.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

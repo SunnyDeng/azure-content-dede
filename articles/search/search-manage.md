@@ -21,7 +21,7 @@
 
 Azure Search ist ein cloudbasierter Dienst mit einer HTTP-basierten API, die Sie in eigenen Suchanwendungen verwenden können. Unser Suchdienst bietet ein Modul für Volltextsuche, Textanalyse, erweiterte Suchfunktionen, Speicherung von Suchdaten und eine Befehlssyntax für Abfragen.
 
-In diesem Artikel wird die Verwaltung eines Suchdiensts im [klassischen Azure-Portal](https://portal.azure.com) erläutert.
+In diesem Artikel wird die Verwaltung eines Search-Diensts im [Azure-Portal](https://portal.azure.com) erläutert.
 
 Alternativ können Sie die Management-REST-API verwenden. Detaillierte Informationen finden Sie unter [Erste Schritte mit der Azure Search Management-REST-API](search-get-started-management-api.md) und [Azure Search Management REST-API](http://msdn.microsoft.com/library/azure/dn832684.aspx).
 
@@ -193,4 +193,4 @@ Rollen bieten Zugriffssteuerung, nachdem der Dienst erstellt wurde. Nur Abonneme
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="09/16/2015"
+   ms.date="12/28/2015"
    ms.author="sethm" />
 
 # Erstellen von Anwendungen, die Service Bus-Themen und -Abonnements verwenden
@@ -148,6 +148,6 @@ Alle Gründe, die für die Verwendung von Warteschlangen sprechen und die unter 
 
 ## Nächste Schritte
 
-Informationen zur Verwendung von Warteschlangen im POS-Einzelhandelsszenario finden Sie unter [Erstellen von Anwendungen, die Service Bus-Themen und -Abonnements verwenden](service-bus-create-topics-subscriptions.md).
+Informationen zur Verwendung von Warteschlangen im POS-Einzelhandelsszenario finden Sie unter [Erstellen von Anwendungen, die Service Bus-Warteschlangen verwenden](service-bus-create-queues.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

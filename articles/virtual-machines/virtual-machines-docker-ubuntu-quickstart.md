@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-linux"
 	ms.workload="infrastructure"
-	ms.date="10/04/2015"
+	ms.date="01/04/2016"
 	ms.author="rasquill"/>
 
 # Schneller Einstieg in Docker in Azure Marketplace
@@ -25,7 +25,7 @@ Die schnellste Möglichkeit für die ersten Schritte mit [Docker] besteht darin,
 
 Sie können sofort ohne zusätzlichen Aufwand eine Verbindung mit dem virtuellen Computer über SSH herstellen und direkt mit dem Ausführen von Aufgaben mit Docker beginnen.
 
-> [AZURE.NOTE]Der mit der Azure Marketplace-Vorlage erstellte virtuelle Computer ist kein Host für die Remote-API von Docker zur Verwaltung eines Remote-Docker-Clients. Informationen zur Remotesteuerung des Docker-Hosts auf diesem virtuellen Computer finden Sie unter [Running Docker with HTTPS](https://docs.docker.com/articles/https/) (Ausführen von Docker mit https) (in englischer Sprache). Sie können auch die Schritte unter [Verwenden der Docker-VM-Erweiterung mithilfe des klassischen Azure-Portals ](virtual-machines-docker-with-portal.md) oder [Verwenden der Docker-VM-Erweiterung über die Azure-CLI](virtual-machines-docker-with-xplat-cli-install.md) ausführen. <!-- --> Wenn Sie den virtuellen Azure-Docker-Computer aus Windows automatisieren möchten, können Sie [die Docker-Toolbox installieren](https://docs.docker.com/installation/windows/) oder "Docker.exe" von [Chocolatey](https://chocolatey.org/packages/docker) abrufen.
+> [AZURE.NOTE]Der mit der Azure Marketplace-Vorlage erstellte virtuelle Computer ist kein Host für die Remote-API von Docker zur Verwaltung eines Remote-Docker-Clients. Informationen zur Remotesteuerung des Docker-Hosts auf diesem virtuellen Computer finden Sie unter [Running Docker with HTTPS](https://docs.docker.com/articles/https/) (Ausführen von Docker mit https) (in englischer Sprache). Sie können auch die Schritte unter [Verwenden der Docker-VM-Erweiterung mithilfe des klassischen Azure-Portals ](virtual-machines-docker-with-portal.md) oder [Verwenden der Docker-VM-Erweiterung über die Azure-CLI](virtual-machines-docker-with-xplat-cli.md) ausführen. <!-- --> Wenn Sie den virtuellen Azure-Docker-Computer aus Windows automatisieren möchten, können Sie [die Docker-Toolbox installieren](https://docs.docker.com/installation/windows/) oder "Docker.exe" von [Chocolatey](https://chocolatey.org/packages/docker) abrufen.
 
 ## Anmelden beim Portal
 
@@ -78,4 +78,4 @@ Sie könnten mit der Verwendung von [Docker] beginnen!
 [MSOpenTech]: http://msopentech.com/
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

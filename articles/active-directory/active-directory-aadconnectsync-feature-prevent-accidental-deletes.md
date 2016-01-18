@@ -13,19 +13,27 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="12/16/2015"
+   ms.date="12/29/2015"
    ms.author="andkjell"/>
 
 # Azure AD Connect-Synchronisierung: Verhindern von versehentlichen Löschvorgängen
 In diesem Thema wird die Funktion zum Verhindern von versehentlichen Löschungen (Verhindern versehentlicher Löschvorgänge) in Azure AD Connect beschrieben.
 
-Bei der Installation von Azure AD Connect wird die Funktion zum Schutz vor unbeabsichtigtem Löschen standardmäßig aktiviert und so konfiguriert, das Exporte mit mehr als 500 Löschungen unterbunden werden. Diese Funktion dient zum Schutz vor unbeabsichtigten Konfigurationsänderungen und Änderungen an Ihrem lokalen Verzeichnis, die sich auf eine große Anzahl von Benutzern auswirken würden.
+Bei der Installation von Azure AD Connect wird die Funktion zum Schutz vor unbeabsichtigtem Löschen standardmäßig aktiviert und so konfiguriert, das Exporte mit mehr als 500 Löschungen unterbunden werden. Diese Funktion dient zum Schutz vor unbeabsichtigten Konfigurationsänderungen und Änderungen an Ihrem lokalen Verzeichnis, die sich auf eine große Anzahl von Benutzern und anderen Objekten auswirken würden.
+
+Häufige Szenarien, bei denen dies vorkommt, sind beispielsweise:
+
+- Änderungen an der [Filterung](active-directory-aadconnectsync-configure-filtering.md), bei denen die Auswahl einer gesamten [Organisationseinheit](active-directory-aadconnectsync-configure-filtering.md#organizational-unitbased-filtering) oder [Domäne](active-directory-aadconnectsync-configure-filtering.md#domain-based-filtering) aufgehoben wird.
+- Das Löschen aller Objekte in einer Organisationseinheit.
+- Das Umbenennen einer Organisationseinheit, sodass alle darin enthaltenen Objekte als außerhalb des Synchronisierungsbereichs liegend betrachtet werden.
 
 Der Standardwert von 500 Objekten kann mit PowerShell mithilfe von `Enable-ADSyncExportDeletionThreshold` geändert werden. Sie sollten diesen Wert entsprechend der Größe Ihres Unternehmens konfigurieren. Da die Synchronisierungsplanung alle 3 Stunden ausgeführt wird, entspricht der Wert der Anzahl von Löschvorgängen, die innerhalb von 3 Stunden erfolgen.
 
 Wenn diese Funktion aktiviert ist und zu viele Löschungen in Azure AD exportiert werden sollen, wird der Export nicht fortgesetzt, und Sie erhalten Sie die folgende E-Mail-Nachricht:
 
-![Hallo, der Dienst zur Identitätssynchronisierung hat erkannt, dass die Anzahl der Löschungen den konfigurierten Grenzwert für fabrikam.com überschritten hat. Während dieses Identitätssynchronisierungslaufs wurden insgesamt 1.234 Objekte zur Löschung vorgesehen. Hierbei wurde der konfigurierte Grenzwert von 500 Objekten erreicht oder überschritten. Bitte erteilen Sie uns eine entsprechende Bestätigung, dass diese Löschungen bearbeitet werden sollen, bevor wir die Freigabe erteilen. Weitere Informationen über die in dieser E-Mail genannten Fehler finden Sie in der Dokumentation zum Vermeiden versehentlicher Löschungen.](./media/active-directory-aadconnectsync-feature-prevent-accidental-deletes/email.png)
+![E-Mail zum Verhindern von versehentlichen Löschungen](./media/active-directory-aadconnectsync-feature-prevent-accidental-deletes/email.png)
+
+> *Hallo (Ansprechpartner für Technik), am (Datum und Uhrzeit) hat der Dienst für die Identitätssynchronisierung festgestellt, dass die Anzahl von Löschvorgängen den für (Name der Organisation) konfigurierten Schwellenwert überschritten hat. Es wurden insgesamt (Anzahl) Objekte bei dieser Ausführung der Identitätssynchronisierung zum Löschen gesendet. Dies entspricht dem konfigurierten Schwellenwert für Löschungen von (Anzahl) Objekten bzw. überschreitet ihn. Sie müssen vor dem Fortfahren bestätigen, dass diese Löschvorgänge durchgeführt werden sollen. Weitere Informationen zu dem in dieser E-Mail-Nachricht genannten Fehler finden Sie unter „Verhindern von zufälligem Löschen“.*
 
 Wenn Sie diese Nachricht unerwartet erhalten haben, untersuchen Sie die Grunde dafür, und ergreifen Sie die nötigen Maßnahmen, um das Problem zu beheben. Führen Sie die folgenden Schritte aus, um zu ermitteln, welche Objekte gelöscht werden sollen:
 
@@ -48,4 +56,4 @@ Weitere Informationen zur Konfiguration der [Azure AD Connect-Synchronisierung](
 
 Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0107_2016-->

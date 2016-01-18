@@ -270,10 +270,7 @@ Die Listen **Letzte aktualisierte Slices** und **Letzte fehlerhafte Slices** bef
 
 Klicken Sie auf den Titel der Listen oder auf **...** (Auslassungspunkte), um eine umfangreichere Liste mit Slices anzuzeigen. Klicken Sie auf der Symbolleiste auf **Filter**, um die Slices zu filtern.
  
-Durch Klicken auf die Kachel **Datenslices (nach Slicezeit)** können Sie Slices weiterhin sortiert nach der Slicezeit anzeigen. Die Slices in diesen Auflistungen sind nach Slicezeit sortiert. Bei einem stündlichen Zeitplan sind die Slices beispielsweise wie folgt sortiert:
-- 04.04.2015 17:00 Uhr In Bearbeitung
-- 04.04.2015 16:00 Uhr Erfolg
-- 04.04.2015 15:00 Uhr Fehler
+Durch Klicken auf die Kachel **Datenslices (nach Slicezeit)** können Sie Slices weiterhin sortiert nach der Slicezeit anzeigen. Die Slices in diesen Auflistungen sind nach Slicezeit sortiert. Bei einem stündlichen Zeitplan sind die Slices beispielsweise wie folgt sortiert: - 04.04.2015 17:00 Uhr In Bearbeitung - 04.04.2015 16:00 Uhr Erfolg - 04.04.2015 15:00 Uhr Fehler
 
 Wenn jedoch ein älterer Slice erneut ausgeführt wird, wird er nicht oben in dieser Liste angezeigt, obwohl dies vermutlich für den Benutzer interessant wäre.
 
@@ -341,7 +338,7 @@ Siehe den Blogbeitrag [Azure Data Factory-Update – Neue Datenspeicher](http://
     
   		Eine exemplarische Vorgehensweise zum Erstellen einer benutzerdefinierten Aktivität und zu deren Verwendung in einer Azure Data Factory-Pipeline finden Sie unter [Verwenden benutzerdefinierter Aktivitäten in einer Azure Data Factory-Pipeline][adf-custom-activities].
 
-[adf-azure-ml]: data-factory-create-predictive-pipelines.md
+[adf-azure-ml]: data-factory-azure-ml-batch-execution-activity.md
 [adf-custom-activities]: data-factory-use-custom-activities.md
 [adf-editor]: data-factory-editor.md
 
@@ -357,4 +354,4 @@ Siehe den Blogbeitrag [Azure Data Factory-Update – Neue Datenspeicher](http://
 
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0107_2016-->

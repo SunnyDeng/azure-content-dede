@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/21/2015"
+	ms.date="01/05/2016"
 	ms.author="curtand"/>
 
 # Erste Schritte mit Azure AD
@@ -28,10 +28,10 @@ Wollen Sie loslegen? Sie sollten unbedingt einige der tollen Funktionen ausprobi
 > [AZURE.NOTE]Azure AD ist für alle Benutzer kostenlos verfügbar. Registrieren Sie sich jetzt für ein Azure-Testabonnement. Ihr Verzeichnis wartet schon auf Sie. Das Verzeichnis gehört Ihnen, unabhängig davon, ob Sie etwas kaufen. [Azure AD jetzt testen](http://azure.microsoft.com/trial/get-started-active-directory/)
 
 ##Sicherer Zugriff in Ihrem Unternehmen
-Schützen Sie die Identitätsdaten Ihres Unternehmens mithilfe der Multi-Factor Authentication in der Cloud, um einen sicheren lokalen und Remotezugriff zu gewährleisten. [Erfahren Sie mehr über die Multi-Factor Authentication](../multi-factor-authentication.md).
+Schützen Sie die Identitätsdaten Ihres Unternehmens mithilfe der Multi-Factor Authentication in der Cloud, um einen sicheren lokalen und Remotezugriff zu gewährleisten. [Erfahren Sie mehr über die Multi-Factor Authentication.](../multi-factor-authentication.md)
 
 ##Ändern und Zurücksetzen von Kennwörtern
-Senken Sie die Kosten, und verringern Sie Helpdesk-Anfragen, indem Sie Benutzern die Möglichkeit geben, ihre Kennwörter für Active Directory oder Azure Active Directory von jedem Gerät an jedem beliebigen Ort aus zu ändern und zurückzusetzen. Ein Administrator kann Kennwort-und Benachrichtigungsrichtlinien verwalten, sodass ihm bei diesen Vorgängen zur Kennwortzurücksetzung unmittelbar eine detaillierte Überwachungsaktivität angezeigt wird. [Erfahren Sie mehr über das Verwalten von Kennwörtern in Azure Active Directory](active-directory-manage-passwords.md).
+Senken Sie die Kosten, und verringern Sie Helpdesk-Anfragen, indem Sie Benutzern die Möglichkeit geben, ihre Kennwörter für Active Directory oder Azure Active Directory von jedem Gerät an jedem beliebigen Ort aus zu ändern und zurückzusetzen. Ein Administrator kann Kennwort-und Benachrichtigungsrichtlinien verwalten, sodass ihm bei diesen Vorgängen zur Kennwortzurücksetzung unmittelbar eine detaillierte Überwachungsaktivität angezeigt wird. [Erfahren Sie mehr über das Verwalten von Kennwörtern in Azure Active Directory.](active-directory-manage-passwords.md)
 
 ##Erstellen und Bearbeiten von Benutzern
 Sie können für jeden Benutzer, der auf einen Microsoft-Clouddienst zugreifen muss, ein eigenes Konto erstellen. Benutzer haben standardmäßig keine Administratorberechtigung, Sie können ihnen diese jedoch erteilen. [Erfahren Sie hier mehr über das Erstellen von Azure AD-Benutzern](active-directory-create-users.md).
@@ -44,4 +44,4 @@ Azure AD bietet Administratoren eine Reihe von Berichten. Die kostenpflichtigen 
 * [Als Organisation für Azure registrieren](sign-up-organization.md)
 * [Azure-Identität](fundamentals-identity.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

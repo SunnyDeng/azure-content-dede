@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Bereitstellen von HDInsight Hadoop-Clustern mit Azure Data Lake-Speicher mithilfe des Portals | Azure" 
-   description="Verwenden des Azure-Portals zum Konfigurieren und Verwenden von HDInsight Hadoop-Clustern mit Azure Data Lake-Speicher" 
+   pageTitle="Erstellen von HDInsight Hadoop-Clustern mit Azure Data Lake-Speicher mithilfe des Portals | Azure" 
+   description="Verwenden des Azure-Portals zum Erstellen und Verwenden von HDInsight Hadoop-Clustern mit Azure Data Lake-Speicher" 
    services="data-lake-store" 
    documentationCenter="" 
    authors="nitinme" 
@@ -13,17 +13,17 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="11/13/2015"
+   ms.date="01/06/2016"
    ms.author="nitinme"/>
 
-# Bereitstellen eines HDInsight-Clusters mit Data Lake-Speicher mithilfe des Azure-Portals
+# Erstellen eines HDInsight-Clusters mit Data Lake-Speicher mithilfe des Azure-Portals
 
 > [AZURE.SELECTOR]
 - [Using Portal](data-lake-store-hdinsight-hadoop-use-portal.md)
 - [Using PowerShell](data-lake-store-hdinsight-hadoop-use-powershell.md)
 
 
-Erfahren Sie, wie Sie das Azure-Portal zum Konfigurieren eines HDInsight-Clusters (Hadoop, HBase oder Storm) verwenden, damit dieser mit einem Azure Data Lake-Speicher genutzt werden kann. Einige wichtige Hinweise zu dieser Version:
+Erfahren Sie, wie Sie das Azure-Portal zum Erstellen eines HDInsight-Clusters (Hadoop, HBase oder Storm) mit Zugriff auf den Azure Data Lake-Speicher verwenden. Einige wichtige Hinweise zu dieser Version:
 
 * **Für Hadoop- und Storm-Cluster (Windows und Linux)** kann der Data Lake-Speicher nur als zusätzliches Speicherkonto verwendet werden. Standardspeicherkonten für solche Cluster sind weiterhin Azure-Speicherblobs (WASB).
 
@@ -92,7 +92,7 @@ In diesem Abschnitt erstellen Sie einen HDInsight Hadoop-Cluster, für den der D
 	Führen Sie unter Ihrem Data Lake-Speicherkonto die folgenden Aufgaben aus.
 
 	* [Erstellen Sie einen Ordner im Data Lake-Speicher](data-lake-store-get-started-portal.md#createfolder).
-	* [Laden Sie eine Datei in Ihren Data Lake-Speicher hoch](data-lake-store-get-started-portal.md#uploaddata). Wenn Sie Beispieldaten zum Hochladen verwenden möchten, können Sie den Ordner **Ambulance Data** aus dem [Azure Data Lake-Git-Repository](https://github.com/MicrosoftBigData/AzureDataLake/tree/master/SQLIPSamples/SampleData/AmbulanceData) herunterladen.
+	* [Laden Sie eine Datei in Ihren Data Lake-Speicher hoch](data-lake-store-get-started-portal.md#uploaddata). Wenn Sie Beispieldaten zum Hochladen verwenden möchten, können Sie den Ordner **Ambulance Data** aus dem [Azure Data Lake-Git-Repository](https://github.com/MicrosoftBigData/usql/tree/master/Examples/Samples/Data/AmbulanceData) herunterladen.
 
 	Sie verwenden die hochgeladenen Dateien später, wenn Sie das Data Lake-Speicherkonto mit dem HDInsight-Cluster testen.
 
@@ -207,4 +207,4 @@ Eine Anleitung, wie Sie dem Dateisystem eines Data Lake-Speichers einen Dienstpr
 [makecert]: https://msdn.microsoft.com/library/windows/desktop/ff548309(v=vs.85).aspx
 [pvk2pfx]: https://msdn.microsoft.com/library/windows/desktop/ff550672(v=vs.85).aspx
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0107_2016-->

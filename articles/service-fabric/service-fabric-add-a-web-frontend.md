@@ -107,6 +107,10 @@ Dach dem Definieren der Schnittstelle müssen wir sie in unseren zustandsbehafte
 2. Suchen Sie die Klasse, die mit `StatefulService` verknüpft ist, z. B. `MyStatefulService`, und erweitern Sie sie zum Implementieren der `ICounter`-Schnittstelle.
 
     ```c#
+    using MyStatefulService.Interfaces;
+
+    ...
+
     public class MyStatefulService : StatefulService, ICounter
     {        
           // ...
@@ -136,9 +140,13 @@ Nach dem Implementieren der `ICounter`-Schnittstelle besteht der letzte Schritt 
 
 >[AZURE.NOTE]Die entsprechende Methode zum Öffnen eines Kommunikationskanals für zustandslose Dienste lautet `CreateServiceInstanceListeners`.
 
-In diesem Fall stellen wir einen `ServiceRemotingListener` bereit, der einen RPC-Endpunkt erstellt, der von Clients aufgerufen werden kann, die `ServiceProxy` verwenden.
+In diesem Fall ersetzen wir die vorhandene `CreateServiceReplicaListeners`-Methode und stellen einen `ServiceRemotingListener` bereit. Dieser erstellt einen RPC-Endpunkt, der von Clients aufgerufen werden kann, die `ServiceProxy` verwenden.
 
 ```c#
+using Microsoft.ServiceFabric.Services.Remoting.Runtime;
+
+...
+
 protected override IEnumerable<ServiceReplicaListener> CreateServiceReplicaListeners()
 {
     return new List<ServiceReplicaListener>()
@@ -162,6 +170,11 @@ Unser zustandsbehafteter Dienst kann nun Datenverkehr von anderen Diensten empfa
 3. Öffnen Sie im Controllers-Ordner die `ValuesController`-Klasse. Beachten Sie, dass derzeit nur die `Get`-Methode ein hartcodiertes Zeichenfolgenarray von „Wert1“ und „Wert2“ zurückgibt, das dem vorherigen Browserverhalten entspricht. Ersetzen Sie diese Implementierung durch den folgenden Code:
 
     ```c#
+    using MyStatefulService.Interfaces;
+    using Microsoft.ServiceFabric.Services.Remoting.Client;
+
+    ...
+
     public async Task<IEnumerable<string>> Get()
     {
         ICounter counter =
@@ -221,4 +234,4 @@ Informationen zum Konfigurieren verschiedener Werte für andere Umgebungen finde
 [vs-services-nuget-package]: ./media/service-fabric-add-a-web-frontend/vs-services-nuget-package.png
 [browser-aspnet-counter-value]: ./media/service-fabric-add-a-web-frontend/browser-aspnet-counter-value.png
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0107_2016-->

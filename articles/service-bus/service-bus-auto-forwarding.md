@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="09/18/2015"
+   ms.date="12/28/2015"
    ms.author="sethm" />
 
 # Verketten von Service Bus-Entitäten mit automatischer Weiterleitung
@@ -59,7 +59,7 @@ Detaillierte Informationen über die automatische Weiterleitung finden Sie in de
 - [QueueDescription][]
 - [SubscriptionDescription][]
 
-Weitere Informationen zu Service Bus-Leistungssteigerungen finden Sie unter [Partitionieren von Messagingentitäten][].
+Weitere Informationen zu Service Bus-Leistungssteigerungen finden Sie unter [Partitionierte Messagingentitäten][].
 
   [QueueDescription.ForwardTo]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.queuedescription.forwardto.aspx
   [SubscriptionDescription.ForwardTo]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.subscriptiondescription.forwardto.aspx
@@ -67,6 +67,6 @@ Weitere Informationen zu Service Bus-Leistungssteigerungen finden Sie unter [Par
   [SubscriptionDescription]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.subscriptiondescription.aspx
   [0]: ./media/service-bus-auto-forwarding/IC628631.gif
   [1]: ./media/service-bus-auto-forwarding/IC628632.gif
-  [Partitionieren von Messagingentitäten]: service-bus-partitioning.md
+  [Partitionierte Messagingentitäten]: service-bus-partitioning.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

@@ -26,10 +26,10 @@ Nachdem eine [Sicherheitsüberprüfung gestartet wurde](active-directory-privile
 ### Überprüfen
 1. Klicken Sie im PIM-Hauptmenü auf **Administratorzugriff überprüfen**. Eine Liste mit Sicherheitsüberprüfungen wird angezeigt.
 2. Wählen Sie in der Liste den/die **Benutzer** aus, dessen/deren Zugriff Sie ändern möchten. HINWEIS: Der Zugriff wird tatsächlich geändert. Dieser Vorgang besteht lediglich aus dem Erstellen einer Prüfliste für Personen, die den Zugriff für die Rolle möglicherweise ändern. Nachdem mindestens ein Benutzer ausgewählt wurde, werden die Schaltflächen **Zugriff genehmigen** und **Zugriff verweigern** aktiviert.
-3. Klicken Sie für die von Ihnen ausgewählten Benutzer auf **Zugriff genehmigen** oder **Zugriff verweigern**. Im Hauptmenü des Portals wird eine Benachrichtigung angezeigt, und die Überprüfungsliste wird ausgeblendet. Schließen Sie das Blatt **Azure AD-Rollen überprüfen**.
+3. Klicken Sie für die von Ihnen ausgewählten Benutzer auf **Zugriff genehmigen** oder **Zugriff verweigern**. Im Hauptmenü des Azure-Portals wird eine Benachrichtigung angezeigt, und die Überprüfungsliste wird ausgeblendet. Schließen Sie das Blatt **Azure AD-Rollen überprüfen**.
 
 ### Selbstüberprüfung
-1. Der Benutzer empfängt eine E-Mail mit der Aufforderung, seinen Zugriff zu überprüfen. Die E-Mail enthält einen Link zum Anmelden beim Portal.
+1. Der Benutzer empfängt eine E-Mail mit der Aufforderung, seinen Zugriff zu überprüfen. Die E-Mail enthält einen Link zum Anmelden beim Azure-Portal.
 2. Im Portal kann der Benutzer den eigenen Zugriff genehmigen oder verweigern, indem er auf die Schaltfläche **Zugriff genehmigen** bzw. **Zugriff verweigern** klickt. Sein Name wird aus der Liste entfernt.
 
 ## Für Überprüfungs-Manager: Verwalten von Sicherheitsüberprüfungen
@@ -60,4 +60,4 @@ Sie können eine Überprüfung exportieren, um sie in Excel oder in einem andere
 ## Nächste Schritte
 [AZURE.INCLUDE [active-directory-privileged-identity-management-toc](../../includes/active-directory-privileged-identity-management-toc.md)]
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

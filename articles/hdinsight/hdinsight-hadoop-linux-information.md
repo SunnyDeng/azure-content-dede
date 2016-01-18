@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="12/04/2015"
+   ms.date="01/06/2015"
    ms.author="larryfr"/>
 
 # Informationen zur Verwendung von HDInsight unter Linux
@@ -98,27 +98,31 @@ Mit HDInsight können Sie auch mehrere Blobspeicherkonten einem Cluster zuordnen
 
 Während der Clustererstellung haben Sie entweder die Verwendung eines vorhandenen Azure-Speicherkontos und -containers ausgewählt, oder Sie erstellen diese neu. Dann haben Sie diese möglicherweise wieder vergessen. Sie können das Speicherkonto und den Container mithilfe der Ambari-REST-API finden.
 
-1. Verwenden Sie den folgenden Befehl aus, um HDFS-Konfigurationsinformationen abzurufen:
+1. Verwenden Sie den folgenden Befehl, um HDFS-Konfigurationsinformationen über „curl“ abzurufen, und filtern Sie sie mit [jq](https://stedolan.github.io/jq/):
 
-        curl -u admin:PASSWORD -G "https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME/configurations/service_config_versions?service_name=HDFS&service_config_version=1"
+        curl -u admin:PASSWORD -G "https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME/configurations/service_config_versions?service_name=HDFS&service_config_version=1" | jq '.items[].configurations[].properties["fs.defaultFS"] | select(. != null)'
+    
+    > [AZURE.NOTE]Hierdurch wird die erste auf den Server angewendete Konfiguration (`service_config_version=1`) zurückgegeben, die diese Information enthält. Wenn Sie einen Wert abrufen, der nach der Erstellung des Clusters geändert wurde, müssen Sie möglicherweise die Konfigurationsversionen auflisten und die letzte Version abrufen.
 
-2. Suchen Sie in den zurückgegebenen JSON-Daten nach dem Eintrag `fs.defaultFS`. Dieser enthält den Namen des Standardcontainers und Speicherkontos in einem Format wie dem folgenden:
+    Dadurch wird ein ähnlicher Wert wie der folgende zurückgegeben, wobei __CONTAINER__ der Standardcontainer und __ACCOUNTNAME__ der Name des Azure-Speicherkontos ist:
 
-        wasb://CONTAINTERNAME@STORAGEACCOUNTNAME.blob.core.windows.net
+        wasb://CONTAINER@ACCOUNTNAME.blob.core.windows.net
 
-	> [AZURE.TIP]Wenn Sie [Jq](http://stedolan.github.io/jq/) installiert haben, können Sie folgenden Befehl verwenden, um lediglich den Eintrag `fs.defaultFS` zurückzugeben:
-	>
-	> `curl -u admin:PASSWORD -G "https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME/configurations/service_config_versions?service_name=HDFS&service_config_version=1" | jq '.items[].configurations[].properties["fs.defaultFS"] | select(. != null)'`
+1. Rufen Sie die Ressourcengruppe für das Speicherkonto über die [Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md) ab. Ersetzen Sie im folgenden Befehl __ACCOUNTNAME__ durch den aus Ambari abgerufenen Namen des Speicherkontos:
 
-3. Zur Ermittlung des Schlüssels für die Authentifizierung beim Speicherkonto oder zur Ermittlung sekundärer Speicherkonten des Clusters führen Sie die folgenden Schritte aus:
+        azure storage account list --json | jq '.[] | select(.name=="ACCOUNTNAME").resourceGroup'
+    
+    Hierdurch wird der Ressourcengruppenname für das Konto zurückgegeben.
+    
+    > [AZURE.NOTE]Wenn von diesem Befehl nichts zurückgegeben wird, müssen Sie die Azure-Befehlszeilenschnittstelle eventuell in den Azure-Ressourcen-Manager-Modus ändern und den Befehl erneut ausführen. Wechseln Sie mit dem folgenden Befehl in den Azure-Ressourcen-Manager-Modus:
+    >
+    > `azure config mode arm`
+    
+2. Rufen Sie den Schlüssel für das Speicherkonto ab. Ersetzen Sie __GROUPNAME__ durch den Namen der Ressourcengruppe aus dem vorherigen Schritt. Ersetzen Sie __ACCOUNTNAME__ durch den Namen des Speicherkontos:
 
-		curl -u admin:PASSWORD -G "https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME/configurations/service_config_versions?service_name=HDFS&service_config_version=1"
+        azure storage account keys list -g GROUPNAME ACCOUNTNAME --json | jq '.storageAccountKeys.key1'
 
-4. Suchen Sie in den zurückgegebenen JSON-Daten nach Einträgen, die mit `fs.azure.account.key` beginnen. Der verbleibende Teil dieser Einträge ist der Name eines Speicherkontos. Beispiel: `fs.azure.account.key.mystorage.blob.core.windows.net`. Der Wert dieses Eintrags ist der Schlüssel für die Authentifizierung beim Speicherkonto.
-
-	> [AZURE.TIP]Wenn Sie [jq](http://stedolan.github.io/jq/) installiert haben, können Sie wie folgt eine Liste der Schlüssel und Werte zurückgeben:
-	>
-	> `curl -u admin:PASSWORD -G "https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTERNAME/configurations/service_config_versions?service_name=HDFS&service_config_version=1" | jq '.items[].configurations[].properties as $in | $in | keys[] | select(. | contains("fs.azure.account.key.")) as $item | $item | ltrimstr("fs.azure.account.key.") | { storage_account: ., storage_account_key: $in[$item] }'`
+    Hierdurch wird der Primärschlüssel für das Konto zurückgegeben.
 
 Sie können die Speicherinformationen auch über das Azure-Portal finden:
 
@@ -252,4 +256,4 @@ Wenn der Cluster bereits eine Version einer Komponente als eigenständige JAR-Da
 * [Verwenden von Pig mit HDInsight](hdinsight-use-pig.md)
 * [Verwenden von MapReduce-Aufträgen mit HDInsight](hdinsight-use-mapreduce.md)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0107_2016-->

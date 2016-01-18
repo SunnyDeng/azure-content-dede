@@ -466,7 +466,7 @@ Dieser Abschnitt enthält weitere Details und Hinweise zum Code in der Execute-M
 		outputBlob.UploadText(output);
 
 
-### Erstellen der Data Factory
+## Erstellen der Data Factory
 
 Sie haben im Abschnitt [Erstellen der benutzerdefinierten Aktivität](#create-the-custom-activity) eine benutzerdefinierte Aktivität erstellt und die Zip-Datei mit Binärdateien und der PDB-Datei in einen Azure-Blob-Container hochgeladen. In diesem Abschnitt erstellen Sie eine **Azure Data Factory** mit einer **Pipeline**, die die **benutzerdefinierte Aktivität** verwendet.
 
@@ -909,7 +909,7 @@ Nachdem Sie Daten verarbeitet haben, können Sie sie mit Online-Tools wie **Micr
 
 -   [Untersuchen eines Datasets in Power BI](https://support.powerbi.com/knowledgebase/articles/475159)
 
--   [Erste Schritte mit Power BI Desktop](https://support.powerbi.com/knowledgebase/articles/471664).
+-   [Erste Schritte mit Power BI Desktop.](https://support.powerbi.com/knowledgebase/articles/471664)
 
 -   [Aktualisieren von Daten in Power BI](https://support.powerbi.com/knowledgebase/articles/474669)
 
@@ -935,4 +935,4 @@ Nachdem Sie Daten verarbeitet haben, können Sie sie mit Online-Tools wie **Micr
 
     -   [Erste Schritte mit der Azure Batch-Bibliothek für .NET](../batch/batch-dotnet-get-started.md)
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0107_2016-->

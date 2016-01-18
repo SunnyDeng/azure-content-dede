@@ -13,14 +13,10 @@
 	ms.tgt_pltfrm="vs-getting-started" 
 	ms.devlang="JavaScript" 
 	ms.topic="article" 
-	ms.date="09/17/2015" 
+	ms.date="01/05/2016" 
 	ms.author="tarcher"/>
 
 # Erste Schritte mit einer mobilen Javascript-App, nachdem Azure Mobile Services mithilfe von Visual Studio Verbundene Dienste hinzugefügt wurde
-
-> [AZURE.SELECTOR]
-> - [Getting Started](vs-mobile-services-javascript-getting-started.md)
-> - [What Happened](vs-mobile-services-javascript-what-happened.md)
 
 Der erste Schritt, der ausgeführt werden muss, um den Code in diesen Beispielen verwenden zu können, hängt davon ab, mit welchem Typ von mobilem Dienst Sie eine Verbindung herstellen.
 
@@ -80,7 +76,7 @@ Aktualisieren Sie eine Zeile in einer Datentabelle. In diesem Beispiel ist *todo
             todoItems.splice(todoItems.indexOf(item), 1, item);
         });
 
-#####Löschen eines Eintrags
+##Löschen eines Eintrags
 
 Löschen Sie eine Zeile in einer Datentabelle. Rufen Sie die Methode [done]() für das zurückgegebene [Promise](https://msdn.microsoft.com/library/dn802826.aspx)-Objekt auf, um eine Kopie des eingefügten Objekts abzurufen und ggf. Fehler zu behandeln.
 
@@ -92,4 +88,4 @@ Löschen Sie eine Zeile in einer Datentabelle. Rufen Sie die Methode [done]() f�
 
 [Weitere Informationen zu mobilen Diensten](http://azure.microsoft.com/documentation/services/mobile-services/)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

@@ -13,10 +13,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="tbd" 
-   ms.date="12/18/2015"
+   ms.date="01/04/2016"
    ms.author="yuemlu"/>
 
-# Azure-Gastbetriebssystemreleases und SDK-Kompatibilitätsmatrix
+# Azure-Gastbetriebssystemversionen und SDK-Kompatibilitätsmatrix
 Bietet Ihnen aktuelle Informationen zu den neuesten Azure-Gastbetriebssystemreleases für Cloud Services. Anhand dieser Informationen können Sie Ihren Upgradepfad planen, bevor ein Gastbetriebssystem wird.
 
 > [AZURE.IMPORTANT]Diese Seite bezieht sich auf die Cloud Services-Web- und Workerrollen, die zusätzlich zu einem Gastbetriebssystem ausgeführt werden. Sie gilt nicht für IaaS Virtual Machines. Wenn Sie die Rollen so konfigurieren, dass die automatischen Gastbetriebssystemupdates, wie unter [Updateeinstellungen für Azure-Gastbetriebssysteme][] beschrieben, verwendet werden, müssen Sie diese Seite nicht unbedingt lesen.
@@ -29,6 +29,9 @@ Bietet Ihnen aktuelle Informationen zu den neuesten Azure-Gastbetriebssystemrele
 
 
 ## Neuigkeiten
+
+###### **4. Januar 2016**
+Das Gastbetriebssystem November 201511-02 wurde am 4. Januar 2016 für die Bereitstellung veröffentlicht. Diese Version des Betriebssystems wurde nicht als Standardbetriebssystem für automatische Updates festgelegt. Daher nimmt die Bereitstellung des Gastbetriebssystems für die Version November 201511-02 etwas mehr Zeit in Anspruch.
 
 ###### **18. Dezember 2015**
 November 201511-02: Das Veröffentlichungsdatum des Gastbetriebssystems wurde vom 16. Dezember 2015 auf den 4. Januar 2016 verschoben.
@@ -177,7 +180,7 @@ Unterstützt .NET 4.0, 4.5, 4.5.1, 4.5.2 (Hinweis 2)
 | Gastbetriebssystemversion | Konfigurationszeichenfolge | Herausgabedatum | Deaktivierungsdatum | Ablaufdatum |
 | ---------------- | -------------------------- | ---------------------- | ------------ | --- |
 | 4\.27 | WA-GUEST-OS-4.27\_201512-01 | Voraussichtlich: 8. Januar 2016 | Wird bei Veröffentlichung von 4.29 aktualisiert | TBD |
-| 4\.26 | WA-GUEST-OS-4.26\_201511-02 | Voraussichtlich: 4. Januar 2016 | Wird bei Veröffentlichung von 4.28 aktualisiert | TBD |
+| 4\.26 | WA-GUEST-OS-4.26\_201511-02 | 4\. Januar 2016 | Wird bei Veröffentlichung von 4.28 aktualisiert | TBD |
 | 4\.26 | WA-GUEST-OS-4.26\_201511-01 | 10\. Dezember 2015 | Wird bei Veröffentlichung von 4.28 aktualisiert | TBD |
 | 4\.25 | WA-GUEST-OS-4.25\_201510-01 | 6\. November 2015 | Wird bei Veröffentlichung von 4.27 aktualisiert | TBD |
 | 4\.24 | WA-GUEST-OS-4.24\_201509-01 | 1\. Oktober 2015 | 10\. Januar 2016 | TBD |
@@ -207,7 +210,7 @@ Unterstützt .NET 4.0, 4.5
 | Gastbetriebssystemversion | Konfigurationszeichenfolge | Herausgabedatum | Deaktivierungsdatum | Ablaufdatum |
 | ---------------- | -------------------------- | ---------------------- | ------------ | --- |
 | 3\.34 | WA-GUEST-OS-3.34\_201512-01 | Voraussichtlich: 8. Januar 2016 | Wird bei Veröffentlichung von 3.36 aktualisiert | TBD |
-| 3\.33 | WA-GUEST-OS-3.33\_201511-02 | Voraussichtlich: 4. Januar 2016 | Wird bei Veröffentlichung von 3.35 aktualisiert | TBD |
+| 3\.33 | WA-GUEST-OS-3.33\_201511-02 | 4\. Januar 2016 | Wird bei Veröffentlichung von 3.35 aktualisiert | TBD |
 | 3\.33 | WA-GUEST-OS-3.33\_201511-01 | 10\. Dezember 2015 | Wird bei Veröffentlichung von 3.35 aktualisiert | TBD |
 | 3\.32 | WA-GUEST-OS-3.32\_201510-01 | 6\. November 2015 | Wird bei Veröffentlichung von 3.34 aktualisiert | TBD |
 | 3\.31 | WA-GUEST-OS-3.31\_201509-01 | 1\. Oktober 2015 | 10\. Januar 2016 | TBD |
@@ -238,7 +241,7 @@ Unterstützt .NET 3.5, 4.0
 | Gastbetriebssystemversion | Konfigurationszeichenfolge | Herausgabedatum | Deaktivierungsdatum | Ablaufdatum |
 | ---------------- | -------------------------- | ---------------------- | ------------ | --- |
 | 2\.46 | WA-GUEST-OS-2.46\_201512-01 | Voraussichtlich: 8. Januar 2015 | Wird bei Veröffentlichung von 2.48 aktualisiert | TBD |
-| 2\.45 | WA-GUEST-OS-2.45\_201511-02 | Voraussichtlich: 4. Januar 2016 | Wird bei Veröffentlichung von 2.47 aktualisiert | TBD |
+| 2\.45 | WA-GUEST-OS-2.45\_201511-02 | 4\. Januar 2016 | Wird bei Veröffentlichung von 2.47 aktualisiert | TBD |
 | 2\.45 | WA-GUEST-OS-2.45\_201511-01 | 10\. Dezember 2015 | Wird bei Veröffentlichung von 2.47 aktualisiert | TBD |
 | 2\.44 | WA-GUEST-OS-2.44\_201510-01 | 6\. November 2015 | Wird bei Veröffentlichung von 2.46 aktualisiert | TBD |
 | 2\.43 | WA-GUEST-OS-2.43\_201509-01 | 1\. Oktober 2015 | 10\. Januar 2016 | TBD |
@@ -405,4 +408,4 @@ Aufgrund der partiellen Einführung der letzten beiden Releases können Personen
 [fam1retire]: cloud-services-guestos-family1-retirement.md
  
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0107_2016-->

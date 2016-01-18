@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/01/2015"
+	ms.date="01/05/2015"
 	ms.author="markusvi"/>
 
 # Überlegungen zu Sicherheit und Datenschutz in Cloud App Discovery
@@ -91,6 +91,8 @@ Die folgenden HTTP-Informationen:
 > [AZURE.NOTE]Die oben stehenden HTTP-Informationen werden für alle nicht verschlüsselten Verbindungen erfasst. Bei TLS-Verbindungen werden diese Informationen nur aufgezeichnet, wenn die Einstellung "Verschärfte Inspektion" im Portal aktiviert ist. Diese Einstellung ist standardmäßig aktiviert. Weitere Informationen finden Sie unten und unter [Getting Started With Cloud App Discovery](http://social.technet.microsoft.com/wiki/contents/articles/30962.getting-started-with-cloud-app-discovery.aspx) (in englischer Sprache).
 
 
+Zusätzlich zu den Daten, die der Agent über die Netzwerkaktivität sammelt, sammelt er auch anonyme Informationen über die Software- und Hardwarekonfiguration, Fehlerberichte und Informationen, wie der Agent verwendet wird.
+
 <br><br>
 ### Funktionsweise des Agents
 
@@ -102,7 +104,7 @@ Die Agent-Installation umfasst zwei Komponenten:
 
 
 
-Bei der Erstinstallation des Agents wird ein computerspezifisches vertrauenswürdiges Zertifikat auf dem Computer gespeichert, mit dem dann eine sichere Verbindung mit dem Cloud App Discovery-Dienst hergestellt wird. <br> Der Agent ruft in regelmäßigen Abständen über diese sichere Verbindung die Richtlinienkonfiguration vom Cloud App Discovery-Dienst ab. <br> Die Richtlinie enthält unter anderem Informationen über die zu überwachenden Cloudanwendungen und dazu, ob automatische Updates aktiviert werden solleen.
+Bei der Erstinstallation des Agents wird ein computerspezifisches vertrauenswürdiges Zertifikat auf dem Computer gespeichert, mit dem dann eine sichere Verbindung mit dem Cloud App Discovery-Dienst hergestellt wird. <br> Der Agent ruft in regelmäßigen Abständen über diese sichere Verbindung die Richtlinienkonfiguration vom Cloud App Discovery-Dienst ab. <br> Die Richtlinie enthält unter anderem Informationen über die zu überwachenden Cloudanwendungen und dazu, ob automatische Updates aktiviert werden sollen.
 
 Während Webdatenverkehr auf dem Computer von Chrome oder Internet Explorer gesendet und empfangen wird, analysiert der Cloud App Discovery-Agent den Datenverkehr und extrahiert die relevanten Metadaten (siehe Abschnitt **Vom Agent gesammelte Daten** oben). <br> Einmal pro Minute lädt der Agent die gesammelten Metadaten über einen verschlüsselten Kanal zum Cloud App Discovery-Dienst hoch.
 
@@ -177,4 +179,4 @@ Um die Sicherheit der erfassten Metadaten zu gewährleisten, haben standardmäß
 
 * [Wie ermittle ich nicht genehmigte Cloud-Apps, die in meiner Organisation verwendet werden?](active-directory-cloudappdiscovery-whatis.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

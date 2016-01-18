@@ -13,40 +13,40 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/15/2015"
+	ms.date="12/16/2015"
 	ms.author="jaime-espinosa"/>
 
-# Referenz zur Navigation im klassischen Portal
+# Referenz zur Navigation im Azure-Portal
 
-Azure Websites heißt ab sofort [App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714). Wir aktualisieren unsere gesamte Dokumentation, um diese Namensänderung wiederzugeben und um Anweisungen für das Azure-Portal bereitzustellen. Bis dieser Prozess abgeschlossen ist, können Sie dieses Dokument als Leitfaden für die Arbeit mit Web-Apps im Azure-Portal verwenden.
+Azure Websites heißen ab sofort [App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714). Wir aktualisieren unsere gesamte Dokumentation, um diese Namensänderung wiederzugeben und um Anweisungen für das Azure-Portal bereitzustellen. Bis dieser Prozess abgeschlossen ist, können Sie dieses Dokument als Leitfaden für die Arbeit mit Web-Apps im Azure-Portal verwenden.
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
  
-## Die Zukunft des klassischen Portals
+## Die Zukunft des klassischen Azure-Portals
 
-Sie werden die Brandingänderungen am klassischen Portal schon bemerkt haben. Dieses Portal wird gerade durch das Azure-Portal ersetzt. Da das klassische Portal schrittweise außer Betrieb genommen wird, werden die neuen Entwicklungen auf das Azure-Portal verlagert. Alle anstehenden neuen Features für Web-Apps fließen in das Azure-Portal ein. Nutzen Sie das Azure-Portal, um von den neuesten und besten Features zu profitieren, die Web-Apps zu bieten haben.
+Sie werden die Brandingänderungen am klassischen Azure-Portal schon bemerkt haben. Dieses Portal wird gerade durch das Azure-Portal ersetzt. Da das klassische Portal schrittweise außer Betrieb genommen wird, werden die neuen Entwicklungen auf das Azure-Portal verlagert. Alle anstehenden neuen Features für Web-Apps fließen in das Azure-Portal ein. Nutzen Sie das Azure-Portal, um von den neuesten und besten Features zu profitieren, die Web-Apps zu bieten haben.
 
-## Unterschiede beim Layout zwischen dem klassichen Portal und dem Azure-Portal
+## Unterschiede beim Layout zwischen dem klassischen Azure-Portal und dem Azure-Portal
 
 Im klassischen Portal sind alle Azure-Dienste auf der linken Seite aufgeführt. Die Navigation im klassischen Portal erfolgt in einer Strukturansicht, bei der Sie bei einem Dienst starten und zu den einzelnen Elementen navigieren. Diese Struktur funktioniert gut, wenn Sie unabhängige Komponenten verwalten. Auf Azure basierende Anwendungen sind jedoch eine Sammlung miteinander verbundener Dienste, weshalb diese Struktur für die Arbeit mit Sammlungen von Diensten nicht ideal ist.
 
-Das Azure-Portal vereinfacht die Entwicklung von Anwendungen mit Komponenten aus mehreren Diensten in allen Aspekten. Das Azure-Portal ist in Form von *Abläufen* strukturiert. Ein *Ablauf* umfasst eine Folge von *Blättern*, die als Container für die verschiedenen Komponenten dienen. Das Einrichten der automatischen Skalierung für eine Web-App ist z. B. ein *Ablauf*, bei dem Sie, wie im folgenden Beispiel gezeigt, zu mehreren Blättern gelangen: zum Blatt **Website**, zum Blatt **Einstellungen** und zum Blatt **Skalieren**. Bei diesem Beispiel ist die automatische Skalierung so eingerichtet, dass sie von der CPU-Auslastung abhängig ist. Daher gibt es auch ein Blatt **CPU-Prozentsatz**. Die Komponenten in den *Blättern* heißen *Teile* und sehen wie Kacheln aus.
+Das Azure-Portal vereinfacht die Entwicklung von Anwendungen mit Komponenten aus mehreren Diensten in allen Aspekten. Das Portal ist in Form von *Abläufen* strukturiert. Ein *Ablauf* umfasst eine Folge von *Blättern*, die als Container für die verschiedenen Komponenten dienen. Das Einrichten der automatischen Skalierung für eine Web-App ist z. B. ein *Ablauf*, bei dem Sie, wie im folgenden Beispiel gezeigt, zu mehreren Blättern gelangen: zum Blatt **Website** (das die neue Terminologie noch nicht widerspiegelt), zum Blatt **Einstellungen** und zum Blatt **Horizontal skalieren**. Bei diesem Beispiel ist die automatische Skalierung so eingerichtet, dass sie von der CPU-Auslastung abhängig ist. Daher gibt es auch ein Blatt **CPU-Prozentsatz**. Die Komponenten in den *Blättern* heißen *Teile* und sehen wie Kacheln aus.
 
 ![](./media/app-service-web-app-azure-portal/AutoScaling.png)
 
 ## Navigationsbeispiel: Erstellen einer Web-App
 
-Das Erstellen neuer Web-Apps ist immer noch kinderleicht. Die folgende Abbildung zeigt das klassische Portal und das Azure-Portal nebeneinander. Sie können sehen, dass sich die Anzahl der Schritte, die für Erstellung und Inbetriebnahme einer neuen Web-App erforderlich sind, nur unwesentlich geändert hat.
+Das Erstellen neuer Web-Apps ist immer noch kinderleicht. Die folgende Abbildung zeigt das klassische Portal und das Portal nebeneinander. Sie können sehen, dass sich die Anzahl der Schritte, die für Erstellung und Inbetriebnahme einer neuen Web-App erforderlich sind, nur unwesentlich geändert hat.
 
 ![](./media/app-service-web-app-azure-portal/CreateWebApp.png)
 
-Im Azure-Portal können Sie aus den gängigsten Typen von Web-Apps wählen, darunter z. B. auch beliebte Kataloganwendungen wie WordPress. Eine vollständige Liste der verfügbaren Anwendungen finden Sie im [Azure Marketplace].
+Im Portal können Sie aus den gängigsten Typen von Web-Apps wählen, darunter z. B. auch beliebte Kataloganwendungen wie WordPress. Eine vollständige Liste der verfügbaren Anwendungen finden Sie im [Azure Marketplace].
 
-Wenn Sie eine Web-App erstellen, geben Sie im Azure-Portal die URL, den App Service-Plan und Speicherort wie im klassischen Portal an.
+Wenn Sie eine Web-App erstellen, geben Sie im Portal die URL, den App Service-Plan und Speicherort genauso wie im klassischen Portal an.
 
 ![](./media/app-service-web-app-azure-portal/CreateWebAppSettings.png)
 
-Darüber hinaus können Sie im Azure-Portal weitere allgemeine Einstellungen festlegen. Beispielsweise vereinfachen [Ressourcengruppen](../resource-group-overview.md) das Anzeigen und Verwalten zugehöriger Azure-Ressourcen.
+Darüber hinaus können Sie im Portal weitere allgemeine Einstellungen festlegen. Beispielsweise vereinfachen [Ressourcengruppen](../resource-group-overview.md) das Anzeigen und Verwalten zugehöriger Azure-Ressourcen.
 
 ## Navigationsbeispiel: Einstellungen und Features
 
@@ -70,7 +70,7 @@ Zum Konfigurieren von Anwendungseinstellungen klicken Sie im Blatt **Einstellung
 
 ![](./media/app-service-web-app-azure-portal/AppSettingsPreview.png)
 
-Neben dem Markennamen wurden einige Elemente im Portal umbenannt oder anders gruppiert, um ihr Auffinden zu erleichtern. Nachstehend sehen Sie beispielsweise einen Screenshot der entsprechenden Seite für App-Einstellungen (**Konfigurieren**) im alten Portal.
+Neben dem Markennamen wurden einige Elemente im Portal umbenannt oder anders gruppiert, um ihr Auffinden zu erleichtern. Nachstehend sehen Sie beispielsweise einen Screenshot der entsprechenden Seite für App-Einstellungen (**Konfigurieren**) im klassischen Portal.
 
 ![](./media/app-service-web-app-azure-portal/AppSettings.png)
 
@@ -87,4 +87,4 @@ Neben dem Markennamen wurden einige Elemente im Portal umbenannt oder anders gru
 * Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

@@ -1,20 +1,20 @@
 <properties 
-	pageTitle="Erste Schritte mit SQL Data Warehouse Transparent Data Encryption (TDE) TSQL | Microsoft Azure" 
-	description="Erste Schritte mit SQL Data Warehouse Transparent Data Encryption (TDE) TSQL" 
-	services="sql-data-warehouse" 
-	documentationCenter="" 
-	authors="twounder" 
-	manager="" 
-	editor=""/>
+   pageTitle="Erste Schritte mit SQL Data Warehouse Transparent Data Encryption (TDE) TSQL | Microsoft Azure" 
+   description="Erste Schritte mit SQL Data Warehouse Transparent Data Encryption (TDE) TSQL" 
+   services="sql-data-warehouse" 
+   documentationCenter="" 
+   authors="twounder" 
+   manager="" 
+   editor=""/>
 
 <tags 
-	ms.service="sql-data-warehouse" 
-	ms.workload="data-management" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="10/21/2015" 
-	ms.author="twounder"/>
+   ms.service="sql-data-warehouse" 
+   ms.workload="data-management" 
+   ms.tgt_pltfrm="na" 
+   ms.devlang="na" 
+   ms.topic="article" 
+   ms.date="01/04/2016" 
+   ms.author="twounder"/>
  
 # Erste Schritte mit Transparent Data Encryption (TDE)
 > [AZURE.SELECTOR]
@@ -73,4 +73,4 @@ Das Ergebnis ```1``` steht für eine verschlüsselte Datenbank, und mit ```0``` 
 
 <!--Link references-->
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0107_2016-->

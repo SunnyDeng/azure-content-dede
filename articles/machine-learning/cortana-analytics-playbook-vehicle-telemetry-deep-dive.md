@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/02/2015" 
+	ms.date="01/05/2015" 
 	ms.author="bradsev" />
 
 
@@ -106,7 +106,12 @@ XUF99EW9OIQOMV7Q7 | Familienlimousine
 3.	Führen Sie die Anwendung **CarEventGenerator.exe** aus.
 
 ### Referenzen
-[Visual Studio-Projektmappe „Vehicle Telematics Simulator“](http://go.microsoft.com/fwlink/?LinkId=717075) [Azure Event Hub](http://azure.microsoft.com/services/event-hubs/) [Azure Data Factory](https://azure.microsoft.com/documentation/learning-paths/data-factory/)
+
+[Visual Studio-Projektmappe „Vehicle Telematics Simulator“](http://go.microsoft.com/fwlink/?LinkId=717075)
+
+[Azure Event Hub](http://azure.microsoft.com/services/event-hubs/)
+
+[Azure Data Factory](https://azure.microsoft.com/documentation/learning-paths/data-factory/)
 
 
 ## Erfassung
@@ -149,7 +154,12 @@ Nachdem die Pipeline erfolgreich ausgeführt wurde und das Dataset „RawCarEven
 *Abbildung 10 – PrepareSampleDataPipeline Output*
 
 ### Referenzen
-[Azure Event Hub SDK für Datenstromerfassung](event-hubs-csharp-ephcs-getstarted.md) [Azure Data Factory-Funktionen für die Datenverschiebung](data-factory-data-movement-activities.md) [Azure Data Factory-DotNet-Aktivität](data-factory-use-custom-activities.md) [Visual Studio-Projektmappe „Azure Data Factory-DotNet-Aktivität“ zum Vorbereiten von Beispieldaten](http://go.microsoft.com/fwlink/?LinkId=717077)
+
+[Azure Event Hub-SDK für Datenstromerfassung](event-hubs-csharp-ephcs-getstarted.md)
+
+[Azure Data Factory-Funktionen für die Datenverschiebung](data-factory-data-movement-activities.md) [Azure Data Factory DotNet-Aktivität](data-factory-use-custom-activities.md)
+
+[Visual Studio-Projektmappe „Azure Data Factory-DotNet-Aktivität“ zum Vorbereiten von Beispieldaten](http://go.microsoft.com/fwlink/?LinkId=717077)
 
 
 ## Vorbereiten
@@ -696,4 +706,4 @@ Klicken Sie hier, um eine ausführliche Anleitung zum Einrichten der PowerBI-Ber
 
 In diesem Dokument wird die Projektmappe für die Fahrzeugtelemetrieanalyse (Vehicle Telemetry Analytics) ausführlich beschrieben. Es wird ein Lambda-Architekturmuster für die Echtzeit- und Batchanalyse mit Vorhersagen und Aktionen veranschaulicht. Dieses Muster gilt für eine Vielzahl von Anwendungsfällen, für die „Hot Path“-Analysen (Echtzeit) und „Cold Path“-Analysen (Batch) erforderlich sind.
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0107_2016-->

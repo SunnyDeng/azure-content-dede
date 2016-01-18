@@ -14,13 +14,13 @@ Dieses Verfahren umfasst Folgendes:
 
 1. Öffnen Sie auf dem Front-End-Webserver die SharePoint 2013-Verwaltungsshell als Administrator.
 
-2. Navigieren Sie zum folgenden Ordner: <boot drive>:\\Programme\\Microsoft SQL Remote Blob Storage 10.50\\Maintainer.
+2. Navigieren Sie zum folgenden Ordner: *Startlaufwerk*:\\Programme\\Microsoft SQL Remote Blob Storage 10.50\\Maintainer.
 
 3. Benennen Sie **Microsoft.Data.SqlRemoteBlobs.Maintainer.exe.config** in **web.config** um.
 
 4. Entschlüsseln Sie die Datei „web.config“ mithilfe von `aspnet_regiis -pdf connectionStrings`.
 
-5. Fügen Sie der entschlüsselten Datei „web.config“ unter dem Knoten **<connectionStrings>** die Verbindungszeichenfolge für Ihre SQL Server-Instanz und den Namen der Inhaltsdatenbank hinzu. Siehe folgendes Beispiel.
+5. Fügen Sie der entschlüsselten Datei „web.config“ unter dem Knoten `connectionStrings` die Verbindungszeichenfolge für Ihre SQL Server-Instanz und den Namen der Inhaltsdatenbank hinzu. Siehe folgendes Beispiel.
 
     `<add name=”RBSMaintainerConnectionWSSContent” connectionString="Data Source=SHRPT13-SQL12\SHRPT13;Initial Catalog=WSS_Content;Integrated Security=True;Application Name=";Remote Blob Storage Maintainer for WSS_Content";" providerName="System.Data.SqlClient" />`
 
@@ -64,4 +64,4 @@ Dieses Verfahren umfasst Folgendes:
 
 2. Bearbeiten Sie auf dem Front-End-Webserver unter **Zentraladministration** die **Allgemeinen Webanwendungseinstellungen** für die gewünschte Inhaltsdatenbank, um den Papierkorb wieder zu aktivieren. Klicken Sie auf **Zentraladministration** -> **Anwendungsverwaltung** -> **Webanwendungen (Webanwendungen verwalten)** -> **SharePoint - 80** -> **Allgemeine Anwendungseinstellungen**. Legen Sie den „Status des Papierkorbs“ auf **EIN** fest.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

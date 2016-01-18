@@ -13,12 +13,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="12/11/2015"
+   ms.date="01/05/2016"
    ms.author="nitinme"/>
 
 # Kopieren von Daten aus Azure Storage-Blobs in den Data  Lake-Speicher
 
-Azure Data Lake-Speicher bietet ein Befehlszeilentool, [AdlCopy](http://aka.ms/downloadadlcopy), zum Kopieren von Daten aus Azure Storage-Blobs in den Data Lake-Speicher. Sie können das Tool auf zwei Arten verwenden:
+Azure Data Lake-Speicher bietet das Befehlszeilentool [AdlCopy](http://aka.ms/downloadadlcopy), mit dem Sie Daten **aus Azure Storage-Blobs in den Data Lake-Speicher** kopieren können. Sie können AdlCopy nicht verwenden, um Daten aus dem Data Lake-Speicher in Azure Storage-Blobs zu kopieren.
+
+Sie können das AdlCopy-Tool auf zwei Arten verwenden:
 
 * **Eigenständig**, wobei das Tool Ressourcen des Data Lake-Speichers verwendet, um die Aufgabe auszuführen.
 * **Mit einem Data Lake Analytics-Konto**, wobei die Einheiten, die Ihrem Data Lake Analytics-Konto zugewiesen sind, zum Ausführen des Kopiervorgangs verwendet werden. Möglicherweise möchten diese Option verwenden, wenn Sie die Kopie in einer vorhersagbaren Weise ausführen möchten.
@@ -68,9 +70,12 @@ Die Parameter in der Syntax werden nachfolgend beschrieben:
 		Initializing Copy.
 		Copy Started.
 		...............
-		The total progress of copy operation is 0.00%.
+		0.00% data copied.
 		. . .
-		The total progress of copy operation is 100.00%.
+		. . .
+		100% data copied.
+		Finishing copy.
+		....
 		Copy Completed.
 
 1. Sie können auch alle Blobs aus einem Container mit folgendem Befehl in das Data Lake-Speicherkonto kopieren:
@@ -103,10 +108,14 @@ Beispiel:
 
 * Bei Verwendung des AdlCopy-Tools mit Ihrem Data Lake Analytics-Konto gelten standardmäßige [Data Lake Analytics-Abrechnungsraten](https://azure.microsoft.com/pricing/details/data-lake-analytics/).
 
+## Überlegungen zur Verwendung von AdlCopy
+
+* Das Kopieren von Daten aus Quellen, die gemeinsam mehr als 1000 Dateien und Ordner enthalten, wird von AdlCopy nicht unterstützt. Alternativ können Sie die Dateien und Ordner in verschiedene Unterordner verteilen und den Pfad zu diesen Unterordnern als Quelle angeben.
+
 ## Nächste Schritte
 
 - [Sichern von Daten in Data Lake-Speicher](data-lake-store-secure-data.md)
 - [Verwenden von Azure Data Lake Analytics mit Data Lake-Speicher](data-lake-analytics-get-started-portal.md)
 - [Verwenden von Azure HDInsight mit Data Lake-Speicher](data-lake-store-hdinsight-hadoop-use-portal.md)
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0107_2016-->

@@ -14,7 +14,7 @@
   ms.tgt_pltfrm="na" 
   ms.devlang="na" 
   ms.topic="article" 
-  ms.date="10/26/2015" 
+  ms.date="01/05/2016" 
   ms.author="tamram"/>
 
 
@@ -28,13 +28,13 @@ Objekte in Azure-Speicher unterstützen zusätzlich zu den Daten, die sie enthal
 
 *   **Benutzerdefinierte Metadaten.** Benutzerdefinierte Metadaten sind Metadaten, die für eine bestimmte Ressource in Form von Name-Wert-Paaren angegeben werden. Sie können Metadaten verwenden, um zusätzliche Werte für eine Speicherressource zu speichern. Diese Werte dienen nur den von Ihnen festgelegten Zwecken und haben keine Auswirkungen auf das Verhalten der Ressource.
 
-Das Abrufen von Eigenschafts- und Metadatenwerten einer Speicherressource ist ein zweistufiger Prozess. Bevor Sie diese Werte lesen können, müssen sie explizit durch Aufrufen der **FetchAttributes**-Methode abgerufen werden.
+Das Abrufen von Eigenschafts- und Metadatenwerten einer Speicherressource ist ein zweistufiger Prozess. Bevor Sie diese Werte lesen können, müssen Sie sie explizit durch Aufrufen der **FetchAttributes**-Methode abrufen.
 
 > [AZURE.IMPORTANT]Eigenschafts- und Metadatenwerte werden bei einer Speicherressource nicht aufgefüllt, sofern Sie nicht eine der **FetchAttributes**-Methoden aufrufen.
 
 ## Festlegen und Abrufen von Eigenschaften
 
-Zum Abrufen von Eigenschaftswerten rufen Sie die **FetchAttributes**-Methode für den Blob oder Container auf, um die Eigenschaften-Auflistung zu füllen, und lesen Sie anschließend die Werte.
+Zum Abrufen von Eigenschaftswerten rufen Sie die **FetchAttributes**-Methode für das Blob oder den Container auf, um die Eigenschaften aufzufüllen, und lesen anschließend die Werte.
 
 Um Eigenschaften für ein Objekt festzulegen, geben Sie den Eigenschaftswert an und rufen dann die **SetProperties**-Methode auf.
 
@@ -62,7 +62,7 @@ Das folgende Codebeispiel erstellt einen Container und schreibt einige der zugeh
 
 ## Festlegen und Abrufen von Metadaten
 
-Sie können Metadaten als ein oder mehrere Name-Wert-Paare für einen Blob oder Container angeben. Fügen Sie zum Festlegen von Metadaten Name-Wert-Paare zur **Metadaten**-Auflistung der Ressource hinzu, und rufen Sie dann die **SetMetadata**-Methode auf, um die Werte für den Dienst zu speichern.
+Sie können Metadaten als ein oder mehrere Name-Wert-Paare für ein Blob oder einen Container angeben. Fügen Sie zum Festlegen von Metadaten Name-Wert-Paare zur **Metadaten**-Auflistung der Ressource hinzu, und rufen Sie dann die **SetMetadata**-Methode auf, um die Werte für den Dienst zu speichern.
 
 > [AZURE.NOTE]Der Name der Metadaten muss den Benennungskonventionen für C#-Bezeichner entsprechen.
  
@@ -78,7 +78,7 @@ Das folgende Codebeispiel legt die Metadaten für einen Container fest. Mittels 
         container.SetMetadata();
     }
 
-Zum Abrufen von Metadaten rufen Sie die **FetchAttributes**-Methode für den Blob oder Container auf, um die **Metadaten**-Auflistung zu füllen, und lesen Sie anschließend die Werte wie im unten stehenden Beispiel gezeigt.
+Zum Abrufen von Metadaten rufen Sie die **FetchAttributes**-Methode für das Blob oder den Container auf, um die **Metadaten**-Auflistung zu füllen, und lesen anschließend die Werte wie im unten stehenden Beispiel gezeigt.
 
     public static void ListContainerMetadata(CloudBlobContainer container)
     {
@@ -94,9 +94,9 @@ Zum Abrufen von Metadaten rufen Sie die **FetchAttributes**-Methode für den Blo
         }
     }
 
-## Weitere Informationen  
+## Siehe auch  
 
 - [Azure Storage-Clientbibliothek für .NET-Referenz](http://msdn.microsoft.com/library/azure/wa_storage_30_reference_home.aspx)
 - [Azure Storage-Clientbibliothek für .NET-Paket](https://www.nuget.org/packages/WindowsAzure.Storage/) 
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0107_2016-->

@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Konfigurieren von HDInsight-Clustern mit Azure Data Lake-Speicher mithilfe von PowerShell | Azure" 
-   description="Verwenden von Azure PowerShell zum Konfigurieren und Verwenden von HDInsight Hadoop-Clustern mit Azure Data Lake" 
+   pageTitle="Erstellen von HDInsight-Clustern mit Azure Data Lake-Speicher mithilfe von PowerShell | Azure" 
+   description="Verwenden von Azure PowerShell zum Erstellen und Verwenden von HDInsight Hadoop-Clustern mit Azure Data Lake" 
    services="data-lake" 
    documentationCenter="" 
    authors="nitinme" 
@@ -13,17 +13,17 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="12/04/2015"
+   ms.date="01/06/2016"
    ms.author="nitinme"/>
 
-# Bereitstellen eines HDInsight-Clusters mit Data Lake-Speicher mithilfe von Azure PowerShell
+# Erstellen eines HDInsight-Clusters mit Data Lake-Speicher mithilfe von Azure PowerShell
 
 > [AZURE.SELECTOR]
 - [Using Portal](data-lake-store-hdinsight-hadoop-use-portal.md)
 - [Using PowerShell](data-lake-store-hdinsight-hadoop-use-powershell.md)
 
 
-Hier erfahren Sie, wie Sie einen HDInsight-Cluster (Hadoop, HBase oder Storm) mithilfe von Azure PowerShell so konfigurieren, dass er mit einem Azure Data Lake-Speicher verwendet werden kann. Einige wichtige Hinweise zu dieser Version:
+Hier erfahren Sie, wie Sie einen HDInsight-Cluster (Hadoop, HBase oder Storm) mithilfe von Azure PowerShell so konfigurieren, dass er auf Azure Data Lake-Speicher zugreifen kann. Einige wichtige Hinweise zu dieser Version:
 
 * **Für Hadoop- und Storm-Cluster (Windows und Linux)** kann der Data Lake-Speicher nur als zusätzliches Speicherkonto verwendet werden. Standardspeicherkonten für solche Cluster sind weiterhin Azure-Speicherblobs (WASB).
 
@@ -73,9 +73,9 @@ Es gibt zwei Hauptoptionen für die Installation von Azure PowerShell.
 		# Import Azure Service Management module
 		Import-Module Azure
 
-	Weitere Informationen finden Sie unter [PowerShell Gallery](https://www.powershellgallery.com/).
+	Weitere Informationen finden Sie unter [PowerShell Gallery](https://www.powershellgallery.com/) (in englischer Sprache).
 
-- [Microsoft Web Platform Installer (WebPI)](http://aka.ms/webpi-azps). Falls Sie Azure PowerShell 0.9.x installiert haben, werden Sie aufgefordert, diese Version zu deinstallieren. Wenn Sie Azure PowerShell-Module aus dem PowerShell-Katalog installiert haben, erfordert das Installationsprogramm, dass diese Module vor der Installation deinstalliert werden, um eine konsistente Azure PowerShell-Umgebung herzustellen. Anweisungen hierzu finden Sie unter [Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0/)
+- [Microsoft Web Platform Installer (WebPI)](http://aka.ms/webpi-azps) (in englischer Sprache). Falls Sie Azure PowerShell 0.9.x installiert haben, werden Sie aufgefordert, diese Version zu deinstallieren. Wenn Sie Azure PowerShell-Module aus dem PowerShell-Katalog installiert haben, erfordert das Installationsprogramm, dass diese Module vor der Installation deinstalliert werden, um eine konsistente Azure PowerShell-Umgebung herzustellen. Anweisungen hierzu finden Sie unter [Installing Azure PowerShell 1.0 via WebPI](https://azure.microsoft.com/blog/azps-1-0/) (in englischer Sprache).
 
 WebPI wird monatlich aktualisiert. Der PowerShell-Katalog wird fortlaufend aktualisiert. Wenn Sie mit der Installation aus dem PowerShell-Katalog erst einmal vertraut sind, wird der Katalog sicherlich Ihre erste Anlaufstelle für die neusten und beliebtesten Cmdlets in Azure PowerShell.
  
@@ -118,7 +118,7 @@ Führen Sie folgende Schritte aus, um einen Data Lake-Speicher zu erstellen.
 
 	Die Ausgabe sollte **True** lauten.
 
-4. Laden Sie einige Beispieldaten in Azure Data Lake hoch. Sie werden später in diesem Artikel verwendet, um zu überprüfen, ob auf die Daten aus einem HDInsight-Cluster zugegriffen werden kann. Wenn Sie Beispieldaten zum Hochladen verwenden möchten, können Sie den Ordner **Ambulance Data** aus dem [Azure Data Lake-Git-Repository](https://github.com/MicrosoftBigData/AzureDataLake/tree/master/SQLIPSamples/SampleData/AmbulanceData) herunterladen.
+4. Laden Sie einige Beispieldaten in Azure Data Lake hoch. Sie werden später in diesem Artikel verwendet, um zu überprüfen, ob auf die Daten aus einem HDInsight-Cluster zugegriffen werden kann. Wenn Sie Beispieldaten zum Hochladen verwenden möchten, können Sie den Ordner **Ambulance Data** aus dem [Azure Data Lake-Git-Repository](https://github.com/MicrosoftBigData/usql/tree/master/Examples/Samples/Data/AmbulanceData) herunterladen.
 
 		
 		$myrootdir = "/"
@@ -325,4 +325,4 @@ Nachdem Sie den HDInsight-Cluster für die Verwendung des Data Lake-Speichers ko
 [makecert]: https://msdn.microsoft.com/library/windows/desktop/ff548309(v=vs.85).aspx
 [pvk2pfx]: https://msdn.microsoft.com/library/windows/desktop/ff550672(v=vs.85).aspx
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0107_2016-->

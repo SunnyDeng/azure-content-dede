@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="10/12/2015"
+   ms.date="01/04/2016"
    ms.author="v-sharos" />
 
 # Was ist der StorSimple Snapshot Manager?
@@ -21,10 +21,12 @@
 
 StorSimple Snapshot Manager ist ein Microsoft Management Console (MMC)-Snap-In, das den Datenschutz und die Sicherungsverwaltung in einer Microsoft Azure StorSimple-Umgebung vereinfacht. Mit dem StorSimple Snapshot Manager können Sie Microsoft Azure StorSimple-Daten im Rechenzentrum und in der Cloud als eine einzelne integrierte Speicherlösung verwalten und somit die Sicherungsprozesse vereinfachen und die Kosten senken.
 
-Diese Übersicht bietet eine Einführung in den StorSimple Snapshot Manager, eine Beschreibung der Features und eine Erläuterung seiner Rolle in Microsoft Azure StorSimple.
+Diese Übersicht bietet eine Einführung in StorSimple Snapshot Manager, eine Beschreibung der Features und eine Erläuterung seiner Rolle in Microsoft Azure StorSimple.
 
 Eine Übersicht über das gesamte Microsoft Azure StorSimple-System, einschließlich StorSimple-Gerät, StorSimple Manager-Dienst, StorSimple Snapshot Manager und StorSimple-Adapter für SharePoint, finden Sie unter [StorSimple 8000-Serie: eine Hybridcloud-Speicherlösung](storsimple-overview.md).
  
+>[AZURE.NOTE]StorSimple Snapshot Manager eignet sich nicht zur Verwaltung von Microsoft Azure StorSimple Virtual Arrays (auch bekannt als lokale virtuelle StorSimple-Geräte).
+
 ## Zweck und Architektur des StorSimple Snapshot Managers
 
 Der StorSimple Snapshot Manager stellt eine zentrale Verwaltungskonsole bereit, die Sie zum Erstellen konsistenter zeitpunktbezogener Sicherungskopien von lokalen und Clouddaten verwenden können. Sie können die Konsole z. B. für Folgendes verwenden:
@@ -150,4 +152,4 @@ Informationen zum Überwachen von Sicherungsaufträgen finden Sie unter [Anzeige
 
 - [StorSimple Snapshot Manager](https://www.microsoft.com/download/details.aspx?id=44220) herunterladen.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

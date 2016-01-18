@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/18/2015" 
+	ms.date="01/04/2016" 
 	ms.author="tomfitz"/>
 
 # Verschieben von Ressourcen in eine neue Ressourcengruppe oder ein neues Abonnement
@@ -50,25 +50,28 @@ Derzeit unterstützen die folgenden Dienste das Verschieben in eine neue Ressour
 - Notification Hubs
 - Operational Insights
 - Redis-Cache
-- Suchen
-- SQL-Datenbank
+- Suche
+- SQL-Datenbankserver (beim Verschieben eines Servers werden auch alle zugehörigen Datenbanken verschoben. Datenbanken können nicht separat vom Server verschoben werden.)
 - Web-Apps (es gelten einige [Einschränkungen](app-service-web/app-service-move-resources.md))
 
 Die folgenden Dienste unterstützen das Verschieben in eine neue Ressourcengruppe, jedoch nicht in ein neues Abonnement:
 
 - Virtuelle Computer (Klassisch)
 - Storage (Klassisch)
+- Virtuelle Netzwerke
+- Cloud Services
 
 Die folgenden Dienste unterstützen derzeit nicht das Verschieben einer Ressource:
 
 - Virtual Machines
-- Virtuelle Netzwerke
-- Speicher
+- Storage
 
 Bei der Arbeit mit Web-Apps können Sie nicht nur einen App Services-Plan verschieben. Zum Verschieben von Web-Apps stehen folgende Optionen bereit:
 
 - Verschieben Sie alle Ressourcen aus einer Ressourcengruppe in eine andere Ressourcengruppe, wenn die Zielressourcengruppe noch keine Microsoft.Web-Ressourcen enthält.
 - Verschieben Sie Web-Apps in eine andere Ressourcengruppe, behalten Sie jedoch den App Services-Plan in der ursprünglichen Ressourcengruppe bei.
+
+Eine SQL-Datenbank kann nicht separat vom Server verschoben werden. Die Datenbank und der Server müssen sich in derselben Ressourcengruppe befinden. Wenn Sie eine SQL Server-Instanz verschieben, werden auch alle zugehörigen Datenbanken verschoben.
 
 ## Verschieben von Ressourcen mithilfe von PowerShell
 
@@ -113,4 +116,4 @@ Geben Sie im Anforderungstext die Zielgruppe und die zu verschiebenden Ressource
 - [Verwenden des Azure-Portals zum Verwalten von Ressourcen](azure-portal/resource-group-portal.md)
 - [Verwenden von Tags zum Organisieren von Azure-Ressourcen](./resource-group-using-tags.md)
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0107_2016-->
