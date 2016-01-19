@@ -1,6 +1,6 @@
 <properties
    pageTitle="Verwalten mehrerer Umgebungen in Service Fabric | Microsoft Azure"
-   description="Service Fabric-Anwendung können auf Clustern ausgeführt werden, die eine Größe von einem Computer bis zu Tausenden von Computern aufweisen. In einigen Fällen möchten Sie die Anwendung für diese verschiedenen Umgebungen unterschiedlich konfigurieren. In diesem Artikel wird beschrieben, wie unterschiedliche Anwendungsparameter pro Umgebung definiert werden."
+   description="Service Fabric-Anwendungen können auf Clustern ausgeführt werden, die eine Größe von einem Computer bis zu Tausenden von Computern aufweisen. In einigen Fällen möchten Sie die Anwendung für diese verschiedenen Umgebungen unterschiedlich konfigurieren. In diesem Artikel wird beschrieben, wie unterschiedliche Anwendungsparameter pro Umgebung definiert werden."
    services="service-fabric"
    documentationCenter=".net"
    authors="seanmck"
@@ -18,17 +18,17 @@
 
 # Verwalten von Anwendungsparametern für mehrere Umgebungen
 
-Service Fabric-Cluster können aus einem Computer bestehen, aber auch aus Tausenden von Computern gebildet werden. Während Anwendungsbinärdateien ohne Änderungen in diesem breiten Spektrum von Umgebungen ausgeführt werden können, möchten Sie häufig die Anwendung abhängig von der Anzahl an Computern, auf denen Sie sie bereitstellen, anders konfigurieren.
+Sie können Azure Service Fabric-Cluster erstellen, indem Sie zwischen einem und mehreren Tausend Computern verwenden. Während Anwendungsbinärdateien ohne Änderungen in diesem breiten Spektrum von Umgebungen ausgeführt werden können, kann es häufig vorkommen, dass Sie die Anwendung abhängig von der Anzahl an Computern, auf denen Sie sie bereitstellen, anders konfigurieren möchten.
 
-Betrachten Sie als ein einfaches Beispiel `InstanceCount` für einen zustandslosen Dienst. Bei einer Verwendung in Azure sollten Sie in der Regel diesen Parameter auf den speziellen Wert -1 festlegen. So wird sichergestellt, dass Ihr Dienst auf jedem Knoten im Cluster ausgeführt wird. Diese Konfiguration eignet sich jedoch nicht für einen Cluster mit einem Computer, da nicht mehrere Prozesse auf einem einzigen Computer denselben Endpunkt überwachen können. In diesem Fall legen Sie in der Regel `InstanceCount` auf 1 fest.
+Sehen Sie sich `InstanceCount` als Beispiel für einen zustandslosen Dienst an. Wenn Sie Anwendungen in Azure ausführen, sollten Sie diese Parameter im Allgemeinen auf den Sonderwert „-1“ festlegen. Hierdurch wird sichergestellt, dass der Dienst auf jedem Knoten im Cluster ausgeführt wird. Diese Konfiguration eignet sich aber nicht für einen Cluster mit nur einem Computer, da nicht mehrere Prozesse auf einem einzigen Computer denselben Endpunkt überwachen können. Legen Sie `InstanceCount` in diesem Fall auf „1“ fest.
 
 ## Angeben von umgebungsspezifischen Parametern
 
-Die Lösung ist ein Satz von parametrisierten Standarddiensten und Anwendungsparameterdateien, die die Parameterwerte für eine bestimmte Umgebung angeben.
+Die Lösung dieses Konfigurationsproblems ist ein Satz von parametrisierten Standarddiensten und Anwendungsparameterdateien, mit denen die Parameterwerte für eine bestimmte Umgebung angegeben werden.
 
 ### Standarddienste
 
-Service Fabric-Programme bestehen aus einer Sammlung von Dienstinstanzen. Es ist zwar möglich, eine leere Anwendung zu erstellen und dann alle Dienstinstanzen dynamisch zu erstellen, aber die meisten Anwendungen verfügen über eine Reihe von Basisdiensten, die immer erstellt werden sollten, wenn die Anwendung instanziiert wird. Diese werden als „Standarddienste“ bezeichnet und im Anwendungsmanifest angegeben. Platzhalter für die Konfiguration pro Umgebung sind dabei in zusätzlichen Klammern enthalten:
+Service Fabric-Programme bestehen aus einer Sammlung von Dienstinstanzen. Sie können zwar eine leere Anwendung und dann alle Dienstinstanzen dynamisch erstellen, aber die meisten Anwendungen verfügen über eine Reihe von Basisdiensten, die immer erstellt werden sollten, wenn die Anwendung instanziiert wird. Diese werden als Standarddienste (Default Services) bezeichnet. Sie werden im Anwendungsmanifest angegeben und enthalten Platzhalter für die Konfiguration pro Umgebung in eckigen Klammern:
 
     <DefaultServices>
         <Service Name="Stateful1">
@@ -58,7 +58,7 @@ Die DefaultValue-Attribute geben den zu verwendenden Wert an, wenn ein spezifisc
 
 ### Dienstkonfigurationseinstellungen pro Umgebung
 
-Durch das [Service Fabric-Anwendungsmodell](service-fabric-application-model.md) können Dienste Konfigurationspakete aufweisen, die benutzerdefinierte Schlüssel-Wert-Paare enthalten, die zur Laufzeit gelesen werden können. Die Werte dieser Einstellungen können auch nach Umgebung unterschieden werden, indem `ConfigOverride` im Anwendungsmanifest angegeben wird.
+Aufgrund des [Service Fabric-Anwendungsmodells](service-fabric-application-model.md) können Dienste Konfigurationspakete mit benutzerdefinierten Schlüssel-Wert-Paaren enthalten, die zur Laufzeit gelesen werden können. Die Werte dieser Einstellungen können auch nach Umgebung unterschieden werden, indem `ConfigOverride` im Anwendungsmanifest angegeben wird.
 
 Angenommen, es gibt die folgende Einstellung in der Datei „Config\\Settings.xml“ für den `Stateful1`-Dienst:
 
@@ -79,14 +79,14 @@ Um diesen Wert für ein bestimmtes Paar aus Anwendung und Umgebung zu überschre
      </ConfigOverride>
   </ConfigOverrides>
 
-Dieser Parameter kann dann für eine Umgebung konfiguriert werden, wie oben gezeigt, indem Sie sie im Parameters-Abschnitt des Anwendungsmanifests deklarieren und umgebungsspezifische Werte in den Anwendungsparameterdateien angeben.
+Dieser Parameter kann dann wie oben gezeigt nach der jeweiligen Umgebung konfiguriert werden. Hierfür deklarieren Sie ihn im Abschnitt „Parameters“ des Anwendungsmanifests und geben umgebungsspezifische Werte in den Anwendungsparameterdateien an.
 
->[AZURE.NOTE]Im Fall von Dienstkonfigurationseinstellungen gibt es drei Stellen, um den Wert eines Schlüssels festzulegen: das Dienstkonfigurationspaket, das Anwendungsmanifest und die Anwendungsparameterdatei. Service Fabric wählt immer zuerst die Anwendungsparameterdatei aus (falls angegeben), dann das Anwendungsmanifest und schließlich das Konfigurationspaket.
+>[AZURE.NOTE]Im Fall von Dienstkonfigurationseinstellungen gibt es drei Stellen, um den Wert eines Schlüssels festzulegen: das Dienstkonfigurationspaket, das Anwendungsmanifest und die Anwendungsparameterdatei. Service Fabric wählt immer zuerst die Anwendungsparameterdatei (falls angegeben), dann das Anwendungsmanifest und schließlich das Konfigurationspaket aus.
 
 
 ### Anwendungsparameterdateien
 
-Das Service Fabric-Anwendungsprojekt kann eine oder mehrere Anwendungsparameterdateien enthalten, die jeweils die spezifischen Werte für die im Anwendungsmanifest definierten Parameter definieren:
+Das Service Fabric-Anwendungsprojekt kann eine oder mehrere Anwendungsparameterdateien enthalten. In jeder Datei sind die spezifischen Werte für die Parameter definiert, die im Anwendungsmanifest definiert sind:
 
     <!-- ApplicationParameters\Local.xml -->
 
@@ -98,19 +98,19 @@ Das Service Fabric-Anwendungsprojekt kann eine oder mehrere Anwendungsparameterd
         </Parameters>
     </Application>
 
-Standardmäßig enthält eine neue Anwendung zwei Parameterdateien mit den Namen „Local.xml“ und „Cloud.xml“:
+Standardmäßig enthält eine neue Anwendung zwei Anwendungsparameterdateien mit den Namen „Local.xml“ und „Cloud.xml“:
 
 ![Anwendungsparameterdateien im Projektmappen-Explorer][app-parameters-solution-explorer]
 
-Um eine neue Parameterdatei zu erstellen, kopieren Sie einfach eine vorhandene Datei, und geben Sie ihr einen neuen Namen.
+Um eine neue Parameterdatei zu erstellen, kopieren Sie einfach eine vorhandene Datei und geben ihr einen neuen Namen.
 
 ## Identifizieren umgebungsspezifischer Parameter während der Bereitstellung
 
-Während der Bereitstellung müssen Sie die geeignete Anwendungsparameterdatei für Ihre Anwendung auswählen. Sie können dazu das Dialogfeld „Veröffentlichen“ in Visual Studio oder in PowerShell verwenden.
+Während der Bereitstellung müssen Sie die geeignete Anwendungsparameterdatei für Ihre Anwendung auswählen. Sie können hierfür das Dialogfeld „Veröffentlichen“ in Visual Studio oder PowerShell verwenden.
 
-### Bereitstellen über Visual Studio
+### Bereitstellen von Visual Studio aus
 
-Sie können aus der Liste der verfügbaren Parameterdateien auswählen, wenn Sie die Anwendung in Visual Studio veröffentlichen.
+Sie können in der Liste mit den verfügbaren Parameterdateien eine Auswahl treffen, wenn Sie die Anwendung in Visual Studio veröffentlichen.
 
 ![Auswählen einer Parameterdatei im Dialogfeld „Veröffentlichen“][publishdialog]
 
@@ -122,11 +122,11 @@ Das PowerShell-Skript `DeployCreate-FabricApplication.ps1` akzeptiert eine Param
 
 ## Nächste Schritte
 
-Weitere Informationen zu einigen der grundlegenden Konzepte, die in diesem Thema behandelt werden, finden Sie unter [Technischer Überblick über Service Fabric](service-fabric-technical-overview.md). Informationen zu anderen App-Verwaltungsfunktionen in Visual Studio finden Sie unter [Verwalten von Service Fabric-Anwendungen in Visual Studio](service-fabric-manage-application-in-visual-studio.md).
+Weitere Informationen zu einigen grundlegenden Konzepten, die in diesem Thema behandelt werden, finden Sie unter [Service Fabric – Technische Übersicht](service-fabric-technical-overview.md). Informationen zu anderen App-Verwaltungsfunktionen in Visual Studio finden Sie unter [Verwalten von Service Fabric-Anwendungen in Visual Studio](service-fabric-manage-application-in-visual-studio.md).
 
 <!-- Image references -->
 
 [publishdialog]: ./media/service-fabric-manage-multiple-environment-app-configuration/publish-dialog-choose-app-config.png
 [app-parameters-solution-explorer]: ./media/service-fabric-manage-multiple-environment-app-configuration/app-parameters-in-solution-explorer.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

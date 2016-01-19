@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="get-started-article" 
-	ms.date="11/19/2015" 
+	ms.date="01/11/2016" 
 	ms.author="billmath"/>
 
 # Erste Schritte mit Azure Multi-Factor Authentication-Server
@@ -23,15 +23,14 @@
 
 <center>![Cloud](./media/multi-factor-authentication-get-started-server/server2.png)</center>
 
-Nachdem Sie nun geklärt haben, ob Sie die lokale Multi-Factor Authentication verwenden möchten, können Sie mit der Einrichtung fortfahren. Auf dieser Seite werden eine Neuinstallation des Servers und das Setup mit einem lokalen Active Directory behandelt. Wenn Sie den PhoneFactor-Server bereits installiert haben und eine Anleitung für dieses Verfahren suchen, finden Sie weitere Informationen unter "Aktualisieren von Azure Multi-Factor-Server". Wenn Sie wissen möchten, wie Sie nur den Webdienst installieren, finden Sie weitere Informationen unter "Bereitstellen des Webdiensts der mobilen App-für Azure Multi-Factor Authentication-Server".
-
+Nachdem Sie nun geklärt haben, ob Sie die lokale Multi-Factor Authentication verwenden möchten, können Sie mit der Einrichtung fortfahren. Auf dieser Seite werden eine Neuinstallation des Servers und das Setup mit einem lokalen Active Directory behandelt. Wenn Sie den PhoneFactor-Server bereits installiert haben und ihn aktualisieren möchten, finden Sie weitere Informationen unter [Aktualisieren auf Azure Multi-Factor-Server](multi-factor-authentication-get-started-server-upgrade.md). Wenn Sie wissen möchten, wie Sie nur den Webdienst installieren, finden Sie weitere Informationen unter [Bereitstellen des Webdiensts der mobilen App für den Azure Multi-Factor Authentication-Server](multi-factor-authentication-get-started-server-webservice.md).
 
 
 ## Herunterladen des Azure Multi-Factor Authentication-Servers
 
 
 
-Es gibt zwei Möglichkeiten, den Azure Multi-Factor Authentication-Server herunterzuladen. Bei beiden wird das Azure-Portal verwendet. Die erste besteht darin, den Multi-Factor Authentication-Anbieter direkt zu verwalten. Die zweite erfolgt über die Diensteinstellungen. Für die zweite Option ist entweder ein Multi-Factor Authentication-Anbieter oder eine Azure AD Premium-Lizenz erforderlich.
+Es gibt zwei Möglichkeiten, den Azure Multi-Factor Authentication-Server herunterzuladen. Bei beiden wird das Azure-Portal verwendet. Die erste besteht darin, den Multi-Factor Authentication-Anbieter direkt zu verwalten. Die zweite erfolgt über die Diensteinstellungen. Für die zweite Option ist entweder ein Multi-Factor Authentication-Anbieter oder eine Azure MFA-, Azure AD Premium- oder Enterprise Mobility Suite-Lizenz erforderlich.
 
 
 ### So laden Sie den Azure Multi-Factor Authentication-Server im Azure-Portal herunter
@@ -55,7 +54,7 @@ Es gibt zwei Möglichkeiten, den Azure Multi-Factor Authentication-Server herunt
 3. Doppelklicken Sie auf Ihre Instanz von Azure AD.
 4. Klicken Sie oben auf **Konfigurieren**. ![Herunterladen](./media/multi-factor-authentication-sdk/download2.png)
 5. Wählen Sie unter "Multi-Factor Authentication" die Option **Diensteinstellungen verwalten** aus.
-6. Klicken Sie auf der Seite "Diensteinstellungen" am unteren Rand des Bildschirms auf **Portal aufrufen**. ![Herunterladen](./media/multi-factor-authentication-sdk/download3.png)
+6. Klicken Sie auf der Seite "Diensteinstellungen" am unteren Rand des Bildschirms auf **Portal aufrufen**. ![Herunterladen](./media/multi-factor-authentication-get-started-server/servicesettings.png)
 7. Dadurch wird eine neue Seite geöffnet. Klicken Sie auf **Downloads**.
 8. Klicken Sie über **Anmeldeinformationen für Aktivierung generieren** auf **Herunterladen**.
 9. Speichern Sie den Download.
@@ -186,4 +185,4 @@ Methode|Beschreibung
 [Synchronisieren mit Windows Server Active Directory](multi-factor-authentication-get-started-server-dirint.md)|Informationen zum Einrichten und Konfigurieren der Synchronisierung zwischen Active Directory und dem Azure MFA-Server.
 [Bereitstellen des mobilen App-Webdienstes für den Azure Multi-Factor Authentication-Server](multi-factor-authentication-get-started-server-webservice.md)|Informationen über das Einrichten und Konfigurieren des Azure MFA-Server-Webdienstes.
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0114_2016-->

@@ -1,11 +1,11 @@
 <properties
 	pageTitle="Verwenden des Tabellenspeichers mit .NET | Microsoft Azure"
-	description="Erfahren Sie, wie Sie den Microsoft Azure-Tabellenspeicher zum Erstellen und Löschen von Tabellen sowie zum Einfügen und Abfragen von Entitäten in Tabellen verwenden."
+	description="Verwenden Sie Table Storage, um nicht strukturierte, schemalose Daten zu speichern. Table Storage ist ein NoSQL-Schlüssel-/Attributspeicher. Die Speicherclientbibliothek für .NET bietet APIs zum Erstellen und Löschen von Tabellen sowie zum Einfügen, Aktualisieren, Löschen und Abfragen von Daten."
 	services="storage"
 	documentationCenter=".net"
 	authors="tamram"
-	manager="adinah"
-	editor=""/>
+	manager="carmonm"
+	editor="tysonn"/>
 
 <tags
 	ms.service="storage"
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
-	ms.date="08/04/2015"
+	ms.date="01/07/2016"
 	ms.author="tamram"/>
 
 
@@ -440,4 +440,4 @@ Nachdem Sie sich nun mit den Grundlagen des Tabellenspeichers vertraut gemacht h
   [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
   [How to: Programmatically access Table storage]: #tablestorage
 
-<!----HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

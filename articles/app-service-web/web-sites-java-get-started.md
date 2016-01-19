@@ -5,14 +5,14 @@
 	documentationCenter="java"
 	authors="rmcmurray"
 	manager="wpickett"
-	editor="jimbe"/>
+	editor=""/>
 <tags
 	ms.service="app-service-web"
 	ms.workload="web"
 	ms.tgt_pltfrm="na"
 	ms.devlang="Java"
 	ms.topic="hero-article"
-	ms.date="10/20/2015"
+	ms.date="01/09/2016"
 	ms.author="robmcm"/>
 
 # Erstellen einer Java Web-App in Azure App Service
@@ -27,7 +27,7 @@
 
 Dieses Tutorial zeigt die Erstellung einer [Java-Web-App in Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714) über das [Azure-Portal](https://portal.azure.com/). Das Azure-Portal ist eine Weboberfläche, über die Sie Azure-Ressourcen verwalten können.
 
-> [AZURE.NOTE]Sie benötigen ein Microsoft Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie kein Konto haben, können Sie [Ihre Visual Studio-Abonnentenvorteile aktivieren][] oder [sich für eine kostenlose Testversion registrieren][].
+> [AZURE.NOTE]Sie benötigen ein Microsoft Azure-Konto, um dieses Lernprogramm auszuführen. Wenn Sie kein Konto haben, können Sie [Ihre Visual Studio-Abonnentenvorteile aktivieren][] oder sich [für eine kostenlose Testversion registrieren][].
 >
 > Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, besuchen Sie [Azure App Service-App erstellen][]. Dort können Sie direkt eine kurzzeitige Start-Web-App in App Service erstellen – keine Kreditkarte erforderlich, keine weiteren Verpflichtungen.
 
@@ -172,8 +172,8 @@ Weitere Informationen zum Entwickeln von Java-Anwendungen in Azure finden Sie im
 
 <!-- External Links -->
 [Ihre Visual Studio-Abonnentenvorteile aktivieren]: http://go.microsoft.com/fwlink/?LinkId=623901
-[sich für eine kostenlose Testversion registrieren]: http://go.microsoft.com/fwlink/?LinkId=623901
+[für eine kostenlose Testversion registrieren]: http://go.microsoft.com/fwlink/?LinkId=623901
 
 [Azure App Service-App erstellen]: http://go.microsoft.com/fwlink/?LinkId=523751
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

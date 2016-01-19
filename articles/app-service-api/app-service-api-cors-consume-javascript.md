@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="dotnet"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="12/04/2015"
+	ms.date="01/05/2016"
 	ms.author="tdykstra"/>
 
 # Nutzen einer API-App aus JavaScript mit CORS
@@ -36,7 +36,9 @@ Azure App Service bietet eine einfache Möglichkeit zum Konfigurieren von Domän
 
 ## So nutzen Sie dieses Tutorial
 
-In diesem Tutorial wird eine Beispielanwendung genutzt, die Sie herunterladen, und für die Sie im [ersten Tutorial der ASP.NET-Version dieser Serie](app-service-api-dotnet-get-started.md) eine API-App erstellen. Wenn Sie mit Java oder Node.js arbeiten möchten, finden Sie im [CORS-Konfigurationsabschnitt](#corsconfig) allgemeine Anweisungen, die für alle API-Apps gelten.
+In diesem Tutorial wird eine Beispielanwendung genutzt, die Sie herunterladen, und für die Sie im [ersten Tutorial der ASP.NET-Version dieser Serie](app-service-api-dotnet-get-started.md) eine API-App erstellen.
+
+Wechseln Sie bei den Tutorials mit den ersten Schritten zu Java oder Node.JS direkt zum [CORS-Konfigurationsabschnitt](#corsconfig), um die für alle API-Apps geltenden allgemeinen Anweisungen anzuzeigen.
 
 ## Das Beispielprojekt „ContactsList.Angular“
 
@@ -75,6 +77,8 @@ Der Code ruft die Methode „$scope.refresh()“ beim Laden der Seite auf (am En
 ## Lokales Ausführen des AngularJS-Projekts
 
 In diesem Abschnitt stellen Sie sicher, dass Sie den Client lokal ausführen und die API aufrufen können, während sie ebenfalls lokal ausgeführt wird.
+
+**Hinweis:** Diese Anweisungen gelten für Internet Explorer und Edge-Browser, da diese Browser ursprungsübergreifende Aufrufe von und an `http://localhost`-URLs ermöglichen. Wenn Sie Chrome verwenden, starten Sie den Browser mit dem Switch `--disable-web-security`. Wenn Sie Firefox verwenden, überspringen Sie diesen Abschnitt.
 
 1. Legen Sie die Projekte „ContactsList.API“ und „ContactsList.Angular“ als Startprojekte fest. „ContactsList.API“ sollte dabei vor „ContactsList.Angular“ gestartet werden. 
 
@@ -155,7 +159,7 @@ Sie können eine neue Web-App zum Bereitstellen des AngularJS-Projekts erstellen
 
 Sie können CORS für eine API-App auch mithilfe von Azure-Ressourcen-Manager-Tools wie Azure PowerShell, Befehlszeilenschnittstelle ( Command Line Interface – CLI) oder [Ressourcen-Explorer](https://resources.azure.com/) konfigurieren.
 
-Legen Sie die `cors`-Eigenschaft für Ihre Ressource <site name>/web auf den Ressourcentyp „Microsoft.Web/sites/config“ fest. Beispiel: Wechseln Sie im **Ressourcen-Explorer** zu **Abonnements > {Ihr Abonnement} > Ressourcengruppen > {Ihre Ressourcengruppe} > Anbieter > Microsoft.Web > Websites > {Ihre Website} > Konfigurieren > Web**, wo die cors-Eigenschaft angezeigt wird:
+Legen Sie die `cors`-Eigenschaft für Ihre Ressource <site name>/web auf den Ressourcentyp „Microsoft.Web/sites/config“ fest. Beispiel: Wechseln Sie im **Ressourcen-Explorer** zu **Abonnements > {Ihr Abonnement} > Ressourcengruppen > {Ihre Ressourcengruppe} > Anbieter > Microsoft.Web > Websites > {Ihre Website} > Konfigurieren > Web**, wo Sie die „cors“-Eigenschaft finden:
 
 		"cors": {
 		    "allowedOrigins": [
@@ -163,14 +167,19 @@ Legen Sie die `cors`-Eigenschaft für Ihre Ressource <site name>/web auf den Res
 		    ]
 		}
 
-### App Service-CORS im Vergleich zu Web-API-CORS
+## CORS-Unterstützung im Web-API-Code
 
-Bei ASP.NET-Web-API-Projekten ist es auch einfach, CORS im Code zu konfigurieren, wie Sie im folgenden Abschnitt sehen werden. Wenn Sie jedoch App-Service-CORS und Web-API-CORS zusammen verwenden, hat App Service-CORS Vorrang und Web-API-CORS keine Auswirkung. Beispiel: Wenn Sie eine Ursprungsdomäne in App Service und alle Ursprungsdomänen in Ihrem Web-API-Code aktivieren, akzeptiert Ihre Azure-API-App nur Aufrufe von der in Azure angegebenen Domäne.
+In einem Web-API-Projekt können Sie das [Microsoft.AspNet.WebApi.Cors](https://www.nuget.org/packages/Microsoft.AspNet.WebApi.Cors/)-NuGet-Paket installieren, mit dem Sie im Code angeben können, aus welchen Domänen Ihre API JavaScript-Aufrufe akzeptiert.
+ 
+Web-API-CORS-Unterstützung ist flexibler als App Service-CORS-Unterstützung. Im Code können Sie beispielsweise verschiedene zulässige Ursprünge für unterschiedliche Aktionsmethoden angeben, während Sie für App Service-CORS einen Satz von zulässigen Ursprüngen für alle Methoden einer API-App festlegen.
 
+### App Service-CORS hat Vorrang vor Web-API-CORS.
 
-## So konfigurieren Sie CORS im Web-API-Code
+Versuchen Sie nicht, Web-API-CORS und App Service-CORS in einer API-App zu verwenden. App Service-CORS hat Vorrang, und Web-API-CORS hat keine Auswirkung. Beispiel: Wenn Sie eine Ursprungsdomäne in App Service und alle Ursprungsdomänen in Ihrem Web-API-Code aktivieren, akzeptiert Ihre Azure-API-App nur Aufrufe von der in Azure angegebenen Domäne.
 
-In einem Web-API-Projekt können Sie das [Microsoft.AspNet.WebApi.Cors](https://www.nuget.org/packages/Microsoft.AspNet.WebApi.Cors/)-NuGet-Paket installieren, mit dem Sie im Code angeben können, aus welchen Domänen Ihre API JavaScript-Aufrufe akzeptiert. Dieser Prozess ist unter [Aktivieren von ursprungsübergreifenden Anforderungen in ASP.NET-Web-API 2](http://www.asp.net/web-api/overview/security/enabling-cross-origin-requests-in-web-api) umfassend dokumentiert. Für API-Apps, die mit dem ASP.NET-Web-API erstellt werden, ist die Vorgehensweise genau dieselbe, sie wird jedoch hier nochmals zusammengefasst.
+### Gewusst wie: Aktivieren von CORS im Web-API-Code
+
+In den folgenden Schritten ist der Prozess zum Aktivieren der Web-API-Unterstützung zusammengefasst. Weitere Informationen finden Sie unter [Aktivieren von ursprungsübergreifenden Anforderungen in ASP.NET-Web-API 2](http://www.asp.net/web-api/overview/security/enabling-cross-origin-requests-in-web-api).
 
 1. Fügen Sie in einem Web-API-Projekt, wie im folgenden Beispiel gezeigt, eine `config.EnableCors()`-Codezeile in die **Register**-Methode von **WebApiConfig** ein. 
 
@@ -208,4 +217,4 @@ In einem Web-API-Projekt können Sie das [Microsoft.AspNet.WebApi.Cors](https://
 
 In diesem Tutorial haben Sie erfahren, wie Sie App Service-CORS-Unterstützung aktivieren, sodass der Client-JavaScript-Code eine API in einer anderen Domäne aufrufen kann. Im nächsten Artikel der Serie zu ersten Schritten mit API-Apps lernen Sie die [Authentifizierung für App Service-API-Apps](app-service-api-authentication.md) kennen.
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0114_2016-->

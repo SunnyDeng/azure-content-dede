@@ -1,5 +1,5 @@
 
-<properties 
+<properties
    pageTitle="Erstellen eines Application Gateways mit Azure-Ressourcen-Manager-Vorlagen | Microsoft Azure"
    description="Diese Seite enthält Anweisungen zum Erstellen eines Azure Application Gateways mit einer Azure-Ressourcen-Manager-Vorlage."
    documentationCenter="na"
@@ -7,19 +7,19 @@
    authors="joaoma"
    manager="jdial"
    editor="tysonn"/>
-<tags 
+<tags
    ms.service="application-gateway"
    ms.devlang="na"
-   ms.topic="hero-article" 
+   ms.topic="hero-article"
    ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services" 
+   ms.workload="infrastructure-services"
    ms.date="11/10/2015"
    ms.author="joaoma"/>
 
 
-# Erstellen eines Application Gateways mit einer ARM-Vorlage
+# Erstellen eines Application Gateways mit der Azure-Ressourcen-Manager-Vorlage
 
-Application Gateway verwendet einen Lastenausgleich auf der Schicht 7 (Anwendungsschicht). Application Gateway bietet ein Failover sowie ein schnelles Routing von HTTP-Anforderungen zwischen verschiedenen Servern in der Cloud und der lokalen Umgebung. Application Gateways weisen folgende Anwendungsbereitstellungsfunktionen auf: HTTP-Lastenausgleich, cookiebasierte Sitzungsaffinität und SSL-Auslagerung.
+Für das Azure Application Gateway wird ein Load Balancer auf Schicht 7 (Anwendungsschicht) verwendet. Das Application Gateway ermöglicht ein Failover sowie schnelles Routing von HTTP-Anforderungen zwischen verschiedenen Servern in der Cloud und der lokalen Umgebung. Application Gateways weisen folgende Anwendungsbereitstellungsfunktionen auf: HTTP-Lastenausgleich, cookiebasierte Sitzungsaffinität und Secure Sockets Layer-Auslagerung (SSL).
 
 > [AZURE.SELECTOR]
 - [Azure Classic PowerShell](application-gateway-create-gateway.md)
@@ -28,63 +28,63 @@ Application Gateway verwendet einen Lastenausgleich auf der Schicht 7 (Anwendun
 
 <BR>
 
-Sie erfahren, wie Sie eine vorhandene ARM-Vorlage von GitHub herunterladen und ändern sowie die Vorlage aus GitHub, PowerShell und der Azure-Befehlszeilenschnittstelle bereitstellen.
+Sie erfahren, wie Sie eine vorhandene Azure-Ressourcen-Manager-Vorlage von GitHub herunterladen und ändern und wie Sie die Vorlage über GitHub, PowerShell und die Azure-Befehlszeilenschnittstelle bereitstellen.
 
-Wenn Sie die ARM-Vorlage ohne Änderungen einfach direkt aus GitHub bereitstellen möchten, lesen Sie im Abschnitt zum Bereitstellen einer Vorlage aus GitHub weiter.
+Wenn Sie die Azure-Ressourcen-Manager-Vorlage ohne Änderungen einfach direkt aus GitHub bereitstellen möchten, sollten Sie den Abschnitt zum Bereitstellen einer Vorlage aus GitHub lesen.
 
 
 ## Szenario
 
-In diesem Szenario erstellen Sie Folgendes:
+In diesem Szenario führen Sie Folgendes durch:
 
-- Ein Application Gateway mit 2 Instanzen.
-- Ein VNet mit der Bezeichnung "VirtualNetwork1" mit dem reservierten CIDR-Block 10.0.0.0/16.
-- Ein Subnetz mit der Bezeichnung "Appgatewaysubnet", das 10.0.0.0/28 als CIDR-Block verwendet.
-- Sie richten zwei zuvor konfigurierte Back-End-IP-Adressen für die Webserver ein, die den Lastenausgleich verarbeiten sollen. In dieser Beispielvorlage werden die Back-End-IP-Adressen 10.0.1.10 und 10.0.1.11 verwendet.
+- Sie erstellen ein Application Gateway mit zwei Instanzen.
+- Sie erstellen ein virtuelles Netzwerk mit dem Namen VirtualNetwork1 und dem reservierten CIDR-Block 10.0.0.0/16.
+- Sie erstellen ein Subnetz mit dem Namen Appgatewaysubnet, für das 10.0.0.0/28 als CIDR-Block verwendet wird.
+- Sie richten zwei zuvor konfigurierte Back-End-IP-Adressen für die Webserver ein, die zum Durchführen des Lastenausgleichs verwendet werden sollen. In diesem Vorlagenbeispiel werden die Back-End-IP-Adressen 10.0.1.10 und 10.0.1.11 verwendet.
 
->[AZURE.NOTE]Dies sind die Parameter für diese Vorlage. Sie können Regeln, Listener und SSL ändern, indem Sie die Datei "azuredeploy.json" öffnen, um die Vorlage anzupassen.
-
-
-
-![ARM-Szenario](./media/application-gateway-create-gateway-arm-template/scenario-arm.png)
+>[AZURE.NOTE]Dies sind die Parameter für diese Vorlage. Zum Anpassen der Vorlage können Sie Regeln, den Listener und das SSL-Element ändern, mit dem „azuredeploy.json“ geöffnet wird.
 
 
 
-## Herunterladen und Verstehen der ARM-Vorlage
+![Szenario](./media/application-gateway-create-gateway-arm-template/scenario-arm.png)
 
-Sie können die vorhandene ARM-Vorlage zum Erstellen von einem VNet und zwei Subnetzen über GitHub herunterladen, die gewünschten Änderungen vornehmen und die Vorlage anschließend wiederverwenden. Dazu führen Sie die folgenden Schritte aus.
+
+
+## Herunterladen und Verstehen der Azure-Ressourcen-Manager-Vorlage
+
+Sie können die vorhandene Azure-Ressourcen-Manager-Vorlage herunterladen, um ein virtuelles Netzwerk und zwei Subnetze aus GitHub zu erstellen. Anschließend können Sie die gewünschten Änderungen vornehmen und die Vorlage bei Bedarf wiederverwenden. Führen Sie hierzu die folgenden Schritte aus:
 
 1. Navigieren Sie zu https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/101-create-application-gateway/.
 2. Klicken Sie auf **azuredeploy.json**, und klicken Sie dann auf **RAW**.
 3. Speichern Sie die Datei in einem lokalen Ordner auf Ihrem Computer.
-4. Wenn Sie mit ARM-Vorlagen vertraut sind, fahren Sie mit Schritt 7 fort.
-5. Öffnen Sie die Datei, die Sie gerade gespeichert haben, und sehen Sie sich den Inhalt unter **parameters** in Zeile 5 an. ARM-Vorlagenparameter enthalten Platzhalter für Werte, die während der Bereitstellung ausgefüllt werden können.
+4. Fahren Sie mit Schritt 7 fort, wenn Sie mit Azure-Ressourcen-Manager-Vorlagen bereits vertraut sind.
+5. Öffnen Sie die Datei, die Sie gerade gespeichert haben, und sehen Sie sich den Inhalt unter **parameters** in Zeile 5 an. Die Parameter der Azure-Ressourcen-Manager-Vorlage stellen Platzhalter für Werte dar, die während der Bereitstellung ausgefüllt werden können.
 
 	| Parameter | Beschreibung |
 	|---|---|
 	| **location** | Azure-Region, in der das Application Gateway erstellt wird |
-	| **VirtualNetwork1** | Name für das neue VNet |
-	| **addressPrefix** | Adressraum für das VNet im CIDR-Format |
+	| **VirtualNetwork1** | Name für das neue virtuelle Netzwerk |
+	| **addressPrefix** | Adressraum für das virtuelle Netzwerk im CIDR-Format |
 	| **ApplicationGatewaysubnet** | Name für das Application Gateway-Subnetz |
 	| **subnetPrefix** | CIDR-Block für das Application Gateway-Subnetz |
 	| **skuname** | Größe der SKU-Instanz |
 	| **Kapazität** | Anzahl von Instanzen |
 	| **backendaddress1** | IP-Adresse des ersten Webservers |
 	| **backendaddress2** | IP-Adresse des zweiten Webservers |
-	
 
->[AZURE.IMPORTANT]Die in GitHub verwalteten ARM-Vorlagen können mit der Zeit geändert werden. Überprüfen Sie die Vorlage stets, bevor Sie sie verwenden.
-	
+
+>[AZURE.IMPORTANT]Azure-Ressourcen-Manager-Vorlagen, die in GitHub verwaltet werden, können sich im Laufe der Zeit ändern. Überprüfen Sie die Vorlage stets, bevor Sie sie verwenden.
+
 6. Überprüfen Sie den Inhalt unter **resources**, und beachten Sie Folgendes:
 
-	- **type**. Typ der Ressource, die von der Vorlage erstellt wird. In diesem Fall **Microsoft.Network/applicationGateways** als Ressourcentyp für ein Application Gateway.
+	- **type**. Typ der Ressource, die von der Vorlage erstellt wird. In diesem Fall lautet der Typ **Microsoft.Network/applicationGateways**, der für ein Application Gateway steht.
 	- **name**. Name der Ressource. Beachten Sie die Verwendung von **[parameters('applicationGatewayName')]**. Dies bedeutet, dass der Name während der Bereitstellung durch einen Benutzer oder eine Parameterdatei eingegeben wird.
 	- **properties**. Liste der Eigenschaften für die Ressource. Diese Vorlage verwendet während der Erstellung des Application Gateways das virtuelle Netzwerk und die öffentliche IP-Adresse.
 
 7. Navigieren Sie zurück zu https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/101-create-application-gateway/azuredeploy.json.
 8. Klicken Sie auf **azuredeploy-parameters.json**, und klicken Sie dann auf **RAW**.
 9. Speichern Sie die Datei in einem lokalen Ordner auf Ihrem Computer.
-10. Öffnen Sie die Datei, die Sie gerade gespeichert haben, und bearbeiten Sie die Parameterwerte. Verwenden Sie die unten stehenden Werte, um das Application Gateway wie in unserem Szenario beschrieben bereitzustellen.
+10. Öffnen Sie die Datei, die Sie gerade gespeichert haben, und bearbeiten Sie die Parameterwerte. Verwenden Sie die unten angegebenen Werte, um das Application Gateway wie in unserem Szenario beschrieben bereitzustellen.
 
 		{
 		  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
@@ -113,10 +113,10 @@ Sie können die vorhandene ARM-Vorlage zum Erstellen von einem VNet und zwei Sub
 		}
 
 11. Speichern Sie die Datei. Sie können die JSON-Vorlage und die Parametervorlage mithilfe von online verfügbaren JSON-Validierungstools wie [JSlint.com](http://www.jslint.com/) testen.
- 
-## Bereitstellen der ARM-Vorlage mithilfe von PowerShell
 
-1. Wenn Sie Azure PowerShell zuvor noch nicht verwendet haben, lesen Sie [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md), und befolgen Sie die komplette Anleitung, um sich bei Azure anzumelden und Ihr Abonnement auszuwählen.
+## Bereitstellen der Azure-Ressourcen-Manager-Vorlage mit PowerShell
+
+Wenn Sie Azure PowerShell zuvor noch nicht verwendet haben, ist es ratsam, den Abschnitt [Gewusst wie: Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md) zu lesen. Befolgen Sie die komplette Anleitung, um sich bei Azure anzumelden und Ihr Abonnement auszuwählen.
 
 ### Schritt 1
 
@@ -128,11 +128,11 @@ Sie können die vorhandene ARM-Vorlage zum Erstellen von einem VNet und zwei Sub
 
 Überprüfen Sie die Abonnements für das Konto.
 
-		get-AzureRmSubscription 
+		get-AzureRmSubscription
 
 Sie werden zur Authentifizierung mit Ihren Anmeldeinformationen aufgefordert.<BR>
 
-### Schritt 3 
+### Schritt 3
 
 Wählen Sie aus, welches Azure-Abonnement Sie verwenden möchten.<BR>
 
@@ -142,8 +142,8 @@ Wählen Sie aus, welches Azure-Abonnement Sie verwenden möchten.<BR>
 
 ### Schritt 4
 
-	
-Erstellen Sie bei Bedarf mithilfe des `New-AzureResourceGroup`-Cmdlets eine neue Ressourcengruppe. In unten stehendem Beispiel wird eine neue Ressourcengruppe mit der Bezeichnung "AppgatewayRG" in der Region "East US" erstellt.
+
+Erstellen Sie bei Bedarf eine neue Ressourcengruppe, indem Sie das **New-AzureResourceGroup**-Cmdlet verwenden. Im folgenden Beispiel erstellen Sie eine neue Ressourcengruppe mit dem Namen AppgatewayRG in der Region „USA, Osten“.
 
 	 New-AzureRmResourceGroup -Name AppgatewayRG -Location "East US"
 		VERBOSE: 5:38:49 PM - Created resource group 'AppgatewayRG' in location 'eastus'
@@ -160,7 +160,7 @@ Erstellen Sie bei Bedarf mithilfe des `New-AzureResourceGroup`-Cmdlets eine neue
 
 		ResourceId        : /subscriptions/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/resourceGroups/AppgatewayRG
 
-4. Führen Sie das Cmdlet „New-AzureRmResourceGroupDeployment“ aus, um das neue VNet mithilfe der zuvor heruntergeladenen und geänderten Vorlage und Parameterdateien bereitzustellen.
+Führen Sie das **New-AzureRmResourceGroupDeployment**-Cmdlet aus, um das neue virtuelle Netzwerk mit der zuvor heruntergeladenen und geänderten Vorlage und den Parameterdateien bereitzustellen.
 
 		New-AzureRmResourceGroupDeployment -Name TestAppgatewayDeployment -ResourceGroupName AppgatewayRG `
  		   -TemplateFile C:\ARM\azuredeploy.json -TemplateParameterFile C:\ARM\azuredeploy-parameters.json
@@ -183,15 +183,15 @@ Folgende Ausgabe wird von der Befehlszeile generiert:
                    capacity         Int                        2
                    backendIpAddress1  String                     10.0.1.10
                    backendIpAddress2  String                     10.0.1.11
-					
+
 		Outputs           :
 
 
-## Bereitstellen der ARM-Vorlage mithilfe der Azure-Befehlszeilenschnittstelle
+## Bereitstellen der Azure-Ressourcen-Manager-Vorlage mit der Azure-Befehlszeilenschnittstelle
 
-Führen Sie die folgenden Schritte aus, um die ARM-Vorlage bereitzustellen, die Sie mithilfe der Azure-Befehlszeilenschnittstelle heruntergeladen haben.
+Führen Sie die folgenden Schritte aus, um die heruntergeladene Azure-Ressourcen-Manager-Vorlage mit der Azure-Befehlszeilenschnittstelle bereitzustellen:
 
-1. Wenn Sie die Azure-Befehlszeilenschnittstelle noch nie verwendet haben, ziehen Sie [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](xplat-cli-install.md) zurate, und folgen Sie den Anweisungen bis zu dem Punkt, an dem Sie Ihr Azure-Konto und Ihr Abonnement auswählen.
+1. Wenn Sie die Azure-Befehlszeilenschnittstelle noch nicht verwendet haben, ist es ratsam, den Abschnitt [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](xplat-cli-install.md) zu lesen. Befolgen Sie die Anweisungen bis zu dem Punkt, an dem Sie Ihr Azure-Konto und Ihr Abonnement auswählen.
 2. Führen Sie den Befehl **azure config mode** aus, um in den Ressourcen-Manager-Modus zu wechseln, wie unten dargestellt.
 
 		azure config mode arm
@@ -200,15 +200,15 @@ Hier ist die erwartete Ausgabe des obigen Befehls:
 
 		info:	New mode is arm
 
-3. Führen Sie bei Bedarf **azure group create** aus, um eine neue Ressourcengruppe zu erstellen, wie unten dargestellt. Beachten Sie die Ausgabe des Befehls. In der nach der Ausgabe angezeigten Liste werden die verwendeten Parameter erläutert. Weitere Informationen zu Ressourcengruppen finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](resource-group-overview.md).
+3. Führen Sie bei Bedarf den Befehl **azure group create** aus, um wie unten dargestellt eine neue Ressourcengruppe zu erstellen. Beachten Sie die Ausgabe des Befehls. In der nach der Ausgabe angezeigten Liste werden die verwendeten Parameter erläutert. Weitere Informationen zu Ressourcengruppen finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](resource-group-overview.md).
 
 		azure group create -n appgatewayRG -l eastus
 
-**-n (oder --name)**. Name für die neue Ressourcengruppe. In diesem Szenario: *appgatewayRG*.
+**-n (oder --name)**. Name für die neue Ressourcengruppe. In unserem Fall ist dies *appgatewayRG*.
 
-**-l (oder --location)**. Azure-Region, in der die neue Ressourcengruppe erstellt wird. In diesem Szenario: *Eastus*.
+**-l (oder --location)**. Azure-Region, in der die neue Ressourcengruppe erstellt wird. In unserem Fall ist dies *eastus*.
 
-4. Führen Sie das Cmdlet **azure group deployment create** aus, um das neue VNet mithilfe der oben heruntergeladenen und geänderten Vorlage und Parameterdateien bereitzustellen. In der nach der Ausgabe angezeigten Liste werden die verwendeten Parameter erläutert.
+4. Führen Sie das **azure group deployment create**-Cmdlet aus, um das neue virtuelle Netzwerk mithilfe der oben heruntergeladenen und geänderten Vorlage und Parameterdateien bereitzustellen. In der nach der Ausgabe angezeigten Liste werden die verwendeten Parameter erläutert.
 
 		azure group deployment create -g appgatewayRG -n TestAppgatewayDeployment -f C:\ARM\azuredeploy.json -e C:\ARM\azuredeploy-parameters.json
 
@@ -229,59 +229,59 @@ Hier ist die erwartete Ausgabe des obigen Befehls:
 		data:    -----------------  ------  --------------
 		data:    location           String  East US
 		data:    addressPrefix      String  10.0.0.0/16
-		data:    subnetPrefix       String  10.0.0.0/24	
+		data:    subnetPrefix       String  10.0.0.0/24
 		data:    skuName            String  Standard_Small
 		data:    capacity           Int     2
 		data:    backendIpAddress1  String  10.0.1.10
 		data:    backendIpAddress2  String  10.0.1.11
 		info:    group deployment create command OK
 
-**-g (or --resource-group)**. Name der Ressourcengruppe, in der das neue VNet erstellt wird.
+**-g (oder --resource-group)**. Name der Ressourcengruppe, in der das neue virtuelle Netzwerk erstellt wird.
 
-**-f (oder --template-file)**. Pfad zu Ihrer ARM-Vorlagendatei.
+**-f (oder --template-file)**. Pfad zur Azure-Ressourcen-Manager-Vorlagendatei.
 
-**-e (oder --parameters-file)**. Pfad zu Ihrer ARM-Parameterdatei.
+**-e (oder --parameters-file)**. Pfad zur Azure-Ressourcen-Manager-Parameterdatei.
 
-## Bereitstellen der ARM-Vorlage per Klick
+## Bereitstellen der Azure-Ressourcen-Manager-Vorlage per Click-to-Deploy
 
-Die Bereitstellung per Klick ist ein weiterer Vorteil von ARM-Vorlagen. Diese Art der Bereitstellung bietet eine einfache Möglichkeit, Vorlagen im Azure-Portal zu verwenden.
-
-
-### Schritt 1 
-Der Link [Bereitstellen eines Application Gateways per Klick](https://azure.microsoft.com/documentation/templates/101-application-gateway-public-ip/) leitet Sie zur Portalseite mit den Vorlagen für Application Gateways.
+Click-to-Deploy ist eine weitere Option zum Verwenden von Azure-Ressourcen-Manager-Vorlagen. Diese Art der Bereitstellung bietet eine einfache Möglichkeit, Vorlagen im Azure-Portal zu verwenden.
 
 
-### Schritt 2 
+### Schritt 1
+Navigieren Sie zu [Create an Application Gateway with Public IP](https://azure.microsoft.com/documentation/templates/101-application-gateway-public-ip/).
 
-Klicken Sie auf "Bereitstellen in Azure".
 
-![ARM-Szenario](./media/application-gateway-create-gateway-arm-template/deploytoazure.png)
+### Schritt 2
+
+Klicken Sie auf Schaltfläche zum **Bereitstellen in Azure**.
+
+![Bereitstellen in Azure](./media/application-gateway-create-gateway-arm-template/deploytoazure.png)
 
 ### Schritt 3
 
-Füllen Sie im Portal die Parameter für die Bereitstellungsvorlage aus, und klicken Sie auf "OK".
+Füllen Sie im Portal die Parameter für die Bereitstellungsvorlage aus, und klicken Sie auf **OK**.
 
-![ARM-Szenario](./media/application-gateway-create-gateway-arm-template/ibiza1.png)
+![Parameter](./media/application-gateway-create-gateway-arm-template/ibiza1.png)
 
 ### Schritt 4
 
-Wählen Sie "Rechtliche Bedingungen" aus, und klicken Sie auf "Kaufen".
+Wählen Sie **Rechtliche Bedingungen** aus, und klicken Sie auf **Kaufen**.
 
-### Schritt 5
+### Schritt 5
 
-Klicken Sie auf dem Blatt "Benutzerdefinierte Bereitstellung" auf "Erstellen".
+Klicken Sie auf dem Blatt „Benutzerdefinierte Bereitstellung“ auf **Erstellen**.
 
 
- 
+
 ## Nächste Schritte
 
-Wenn Sie die SSL-Auslagerung konfigurieren möchten, lesen Sie [Konfigurieren eines Application Gateways für die SSL-Auslagerung](application-gateway-ssl.md).
+Wenn Sie die SSL-Auslagerung konfigurieren möchten, ist es ratsam, den Abschnitt [Konfigurieren eines Application Gateways für die SSL-Auslagerung](application-gateway-ssl.md) zu lesen.
 
-Wenn Sie ein Application Gateway für ILB konfigurieren möchten, lesen Sie [Erstellen eines Application Gateways mit einem internen Lastenausgleich (ILB)](application-gateway-ilb.md).
+Wenn Sie ein Application Gateway für die Verwendung mit einem internen Load Balancer konfigurieren möchten, ist es ratsam, den Abschnitt [Erstellen eines Application Gateways mit einem internen Lastenausgleich (ILB)](application-gateway-ilb.md) zu lesen.
 
 Weitere Informationen zu Lastenausgleichsoptionen im Allgemeinen finden Sie unter:
 
 - [Azure-Lastenausgleich](https://azure.microsoft.com/documentation/services/load-balancer/)
 - [Azure Traffic Manager](https://azure.microsoft.com/documentation/services/traffic-manager/)
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0114_2016-->

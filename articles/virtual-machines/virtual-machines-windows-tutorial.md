@@ -20,15 +20,11 @@
 # Erstellen eines virtuellen Windows-Computers im Azure-Portal#
 
 > [AZURE.SELECTOR]
-- [Azure Portal - Windows](virtual-machines-windows-tutorial.md)
-- [Azure PowerShell](virtual-machines-ps-create-preconfigure-windows-resource-manager-vms.md)
-- [Azure PowerShell - Template](virtual-machines-create-windows-powershell-resource-manager-template.md)
-- [Azure Portal - Linux](virtual-machines-linux-tutorial-portal-rm.md)
-- [Azure CLI](virtual-machines-linux-tutorial.md)
-
-<br>
-
-
+- [Portal - Windows](virtual-machines-windows-tutorial.md)
+- [PowerShell](virtual-machines-ps-create-preconfigure-windows-resource-manager-vms.md)
+- [PowerShell - Template](virtual-machines-create-windows-powershell-resource-manager-template.md)
+- [Portal - Linux](virtual-machines-linux-tutorial-portal-rm.md)
+- [CLI](virtual-machines-linux-tutorial.md)
 
 In diesem Tutorial erfahren Sie, wie einfach es ist, in wenigen Minuten einen virtuellen Azure-Computer im Azure-Portal zu erstellen. Wir verwenden ein Windows Server 2012 R2 Datacenter-Image als Beispiel für das Erstellen des virtuellen Computers, aber dies ist nur eines von vielen in Azure bereitgestellten Images. Ihre Imageauswahl hängt von Ihrem Abonnement ab. Beispielsweise können Desktop-Images für MSDN-Abonnenten verfügbar sein.
 
@@ -64,7 +60,7 @@ Nachdem Sie das Image ausgewählt haben, können Sie für den Großteil der Konf
 
 1. Klicken Sie auf dem Blatt **Virtuellen Computer erstellen** auf **Grundlagen**.
 
-2. Geben Sie bei **Name** den gewünschten Namen für den virtuellen Computer ein. Der Name darf keine Sonderzeichen enthalten.
+2. Geben Sie bei **Name** den gewünschten Namen für die virtuelle Maschine ein. Der Name darf keine Sonderzeichen enthalten.
 
 3. Geben Sie einen **Benutzernamen** für die Verwaltung und ein sicheres **Kennwort** ein. Das Kennwort muss 8 bis 123 Zeichen lang sein und mindestens drei der folgenden Elemente enthalten: einen Kleinbuchstaben, einen Großbuchstaben, eine Zahl und ein Sonderzeichen. **Sie benötigen den Benutzernamen und das Kennwort, um sich am virtuellen Computer anzumelden.**
 
@@ -87,7 +83,7 @@ Nachdem Sie das Image ausgewählt haben, können Sie für den Großteil der Konf
 
 	![Screenshot, der die Zusammenfassung der getroffenen Konfigurationsauswahl für die Azure-VM zeigt](./media/virtual-machines-windows-tutorial/create_vm_summary.PNG)
 
-8. Während Azure den virtuellen Computer erstellt, können Sie den Status im Menü „Hub“ unter **Virtuelle Computer** nachverfolgen.
+8. Während Azure die virtuelle Maschine erstellt, können Sie den Status im Menü „Hub“ unter **Virtuelle Maschinen** nachverfolgen.
 
 ## Melden Sie sich beim virtuellen Computer an.
 
@@ -116,6 +112,6 @@ Nachdem Sie den virtuellen Computer erstellt haben, sollten Sie sich bei diesem 
 ## Nächste Schritte
 
 * Verwenden Sie Azure PowerShell und die Azure-Befehlszeilenschnittstelle zum [Suchen und Auswählen von Images für virtuelle Computer](resource-groups-vm-searching.md).
-* Automatisieren Sie die Bereitstellung und Verwaltung von virtuellen Computern und Workloads mithilfe von [Azure-Ressourcen-Manager](virtual-machines-how-to-automate-azure-resource-manager.md) und [Azure-Ressourcen-Manager-Vorlagen](http://azure.microsoft.com/documentation/templates/).
+* Automatisieren Sie die Bereitstellung und Verwaltung von virtuellen Maschinen und Workloads mithilfe von [Azure-Ressourcen-Manager-Vorlagen](http://azure.microsoft.com/documentation/templates/).
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0114_2016-->

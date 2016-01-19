@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="dotnet"
 	ms.devlang="na"
 	ms.topic="hero-article"
-	ms.date="11/30/2015"
+	ms.date="01/08/2016"
 	ms.author="tdykstra"/>
 
 # Benutzerauthentifizierung für API-Apps in Azure App Service
@@ -268,4 +268,4 @@ Das Front-End kann die API jetzt im Namen eines authentifizierten Benutzers aufr
 
 In diesem Tutorial haben Sie die App Service-Authentifizierung/Autorisierung verwendet, um den Zugriff auf eine API-App einzuschränken, damit sie nur von authentifizierten Benutzern aufgerufen werden kann. Im nächsten Tutorial der Reihe geht es um das [Einschränken des Zugriffs auf Ihre API-App für Dienst-zu-Dienst-Szenarien](app-service-api-dotnet-service-principal-auth.md).
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0114_2016-->

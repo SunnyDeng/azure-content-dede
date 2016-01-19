@@ -13,8 +13,8 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/04/2016"
-   ms.author="sahaj08"/>
+   ms.date="01/07/2016"
+   ms.author="sahajs;barbkess;sonyama"/>
 
 # Erstellen eines Supporttickets für SQL Data Warehouse
  In diesem Artikel wird gezeigt, wie Sie ein Supportticket für SQL Data Warehouse erstellen.
@@ -50,7 +50,7 @@
     - Anleitungen für Entwickler und beratende Dienstleistung sind für die Supportstufen „Professional Direct“ und „Premier“ verfügbar.
     - Informieren Sie sich unter [Azure-Supportpläne][] weiter über den Azure-Support, z. B. Umfang, Reaktionszeiten, Preise usw.
 
-    ![Support plan](./media/sql-data-warehouse-get-started-create-support-ticket/support-plan.png)
+    ![Supportplan](./media/sql-data-warehouse-get-started-create-support-ticket/support-plan.png)
 
     Wenn Sie über den Supportplan „Premier“ verfügen, können Sie mit SQL Data Warehouse verbundene Probleme auch im [Microsoft Premier-Onlineportal][] melden.
 
@@ -81,7 +81,7 @@ Außerdem können Sie sich auch an der SQL Data Warehouse-Community beteiligen, 
 [klassische Azure-Portal]: https://portal.azure.com/
 [Azure-Supportpläne]: http://azure.microsoft.com/support/plans/?WT.mc_id=Support_Plan_510979/
 [Microsoft Premier-Onlineportal]: https://premier.microsoft.com/
-[Stack Overflow]:http://stackoverflow.com/questions/tagged/azure-sqldw/
+[Stack Overflow]: http://stackoverflow.com/questions/tagged/azure-sqldw/
 [Azure SQL Data Warehouse-MSDN-Forum]: https://social.msdn.microsoft.com/Forums/home?forum=AzureSQLDataWarehouse/
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0114_2016-->

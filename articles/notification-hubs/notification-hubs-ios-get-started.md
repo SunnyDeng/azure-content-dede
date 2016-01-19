@@ -324,7 +324,7 @@ Wenn Sie innerhalb einer App Benachrichtigungen senden möchten. Dieser Abschnit
 		}
 
 
-8. Ziehen Sie bei gedrückter STRG-Taste die Schaltfläche **Benachrichtigung senden** auf „ViewController.m“, um eine Aktion mit dem Namen **SendNotificationMessage** für **Touch Down** hinzuzufügen. Aktualisieren Sie die Methode mit dem folgenden Code zum Senden der Benachrichtigung mithilfe der REST-API.
+8. Ziehen Sie bei gedrückter STRG-TASTE die Schaltfläche **Benachrichtigung senden** auf „ViewController.m“, um eine Aktion mit dem Namen **SendNotificationMessage** für das Ereignis **Touch Down** hinzuzufügen. Aktualisieren Sie die Methode mit dem folgenden Code zum Senden der Benachrichtigung mithilfe der REST-API.
 
 		- (IBAction)SendNotificationMessage:(id)sender
 		{
@@ -509,4 +509,4 @@ Weitere allgemeine Informationen zu Notification Hubs finden Sie im [Notificatio
 
 [Local and Push Notification Programming Guide]: http://developer.apple.com/library/mac/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW1
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0114_2016-->

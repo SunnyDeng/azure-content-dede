@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="get-started-article" 
-	ms.date="12/10/2015" 
+	ms.date="01/11/2016" 
 	ms.author="billmath"/>
 
 # Erste Schritte mit Azure Multi-Factor Authentication in der Cloud
@@ -22,13 +22,13 @@
 
 <center>![Cloud](./media/multi-factor-authentication-get-started-cloud/cloud2.png)</center>
 
-Nachdem Sie sich nun für die Multi-Factor Authentication in der Cloud entschieden haben, können Sie mit der Einrichtung fortfahren. Wenn Sie Multi-Factor Authentication für Office 365 oder Multi-Factor Authentication für Azure-Administratoren verwenden, können Sie mit Schritt 3 fortfahren. Außerdem wird in diesem Dokument Folgendes behandelt:
+Nachdem Sie sich nun für die Multi-Factor Authentication in der Cloud entschieden haben, können Sie mit der Einrichtung fortfahren. Wenn Sie Multi-Factor Authentication für Office 365 oder Multi-Factor Authentication für Azure-Administratoren verwenden, können Sie mit Schritt 3 fortfahren.
 
 
 1. [Anmelden für ein Azure-Abonnement](https://azure.microsoft.com/pricing/free-trial/)
-	- Falls Sie noch nicht über ein Azure-Abonnement verfügen, müssen Sie sich für ein Abonnement registrieren. Wenn Sie sich in der Anlaufphase befinden und die Verwendung von Azure MFA erkunden, können Sie ein Testabonnement verwenden.
-2. [Erstellen eines Anbieters für mehrstufige Authentifizierung](#creating-an-azure-multi-factor-auth-provider) oder [Zuweisen einer Azure AD Premium- oder Enterprise Mobility Suite-Lizenz an Benutzer](#assigning-an-azure-ad-premium-or-enterprise-mobility-license-top-users)
-	- Sie müssen einen Anbieter für die mehrstufige Authentifizierung in Azure erstellen und diesen Ihrem Verzeichnis zuweisen oder den Azure AD Premium- oder EMS-Benutzern Lizenzen zuweisen. Azure Multi-Factor Authentication ist in Azure Active Directory Premium inbegriffen und somit auch in der Enterprise Mobility Suite enthalten. Wenn Sie über Azure AD Premium oder EMS verfügen, müssen Sie keinen Anbieter für mehrstufige Authentifizierung erstellen. Statt MFA für einen Azure AD Premium- oder EMS-Benutzer zu aktivieren, muss diesem Benutzer eine Azure AD Premium- oder EMS-Lizenz zugewiesen werden. Anschließend kann ein Administrator dem Benutzer über das Verwaltungsportal MFA zuweisen. Informationen zum Zuweisen von Lizenzen zu Benutzern finden Sie im folgenden Abschnitt.
+	- Falls Sie noch nicht über ein Azure-Abonnement verfügen, müssen Sie sich für ein Abonnement registrieren. Wenn Sie die Verwendung von Azure MFA testen möchten, können Sie ein Testabonnement verwenden.
+2. [Erstellen eines Multi-Factor Authentication-Anbieters](#creating-an-azure-multi-factor-auth-provider) oder [Zuweisen von Lizenzen zu Benutzern](multi-factor-authentication-get-started-cloud.md#assigning-an-azure-ad-premium-or-enterprise-mobility-license-to-users)
+	- Sie müssen einen Anbieter für die mehrstufige Authentifizierung in Azure erstellen und diesen Ihrem Verzeichnis zuweisen oder den Azure AD Premium- oder EMS-Benutzern Lizenzen zuweisen. Azure Multi-Factor Authentication ist in Azure Active Directory Premium und somit auch in der Enterprise Mobility Suite inbegriffen. Wenn Sie genügend Lizenzen für Azure MFA, Azure AD Premium und EMS für alle Anwendungen besitzen, die Multi-Factor-Authentifizierung verwenden, müssen Sie keinen Multi-Factor Authentication-Anbieter erstellen. Informationen zum Zuweisen von Lizenzen zu Benutzern finden Sie im folgenden Abschnitt.
 3. [Aktivieren von Multi-Factor Authentication für die Benutzer](#turn-on-multi-factor-authentication-for-users)
 	- Aktivieren Sie MFA für die Benutzer über das Office 365- oder das Azure-Portal. Informationen zur Vorgehensweise finden Sie im folgenden Abschnitt.
 4. [Senden einer E-Mail an Endbenutzer mit einer Benachrichtigung über MFA](#send-email-to-end-users)
@@ -37,7 +37,7 @@ Nachdem Sie sich nun für die Multi-Factor Authentication in der Cloud entschied
 
 
 ## Erstellen eines Anbieters für die mehrstufige Authentifizierung in Azure
-Multi-Factor Authentication ist standardmäßig für globale Administratoren verfügbar, die über einen Azure Active Directory-Mandanten verfügen. Wenn Sie jedoch Multi-Factor Authentication für alle Benutzer verfügbar machen möchten und/oder wenn Sie möchten, dass die globalen Administratoren Features wie das Verwaltungsportal, benutzerdefinierte Grußformeln und Berichte nutzen können, müssen Sie einen Anbieter für mehrstufige Authentifizierung erwerben und konfigurieren.
+Multi-Factor Authentication ist standardmäßig für globale Administratoren verfügbar, die über Azure Active Directory verfügen. Wenn Sie jedoch Multi-Factor Authentication für alle Benutzer verfügbar machen möchten und/oder wenn Sie möchten, dass die globalen Administratoren und Office O365-Benutzer Features wie vertrauenswürdige IP-Adressen, benutzerdefinierte Grußformeln und Berichte nutzen können, müssen Sie die Vollversion von Azure MFA erwerben. Eine Möglichkeit hierzu ist das Erstellen eines Multi-Factor Authentication-Anbieters.
 
 
 
@@ -47,16 +47,16 @@ Multi-Factor Authentication ist standardmäßig für globale Administratoren ver
 1. Melden Sie sich beim Azure-Portal als Administrator an.
 2. Wählen Sie im linken Bereich "Active Directory" aus.
 3. Wählen Sie auf der Seite "Active Directory" oben "Anbieter für mehrstufige Authentifizierung" aus. Klicken Sie dann unten auf **Neu**.
-4. Wählen Sie unter "App Services" den Eintrag "Aktive Authentifizierungsanbieter" aus, und wählen Sie dann "Schnellerfassung".
+4. Wählen Sie unter „App Services“ den Eintrag „Multi-Factor Authentication-Anbieter“ aus, und wählen Sie dann „Schnellerfassung“.
 5. Füllen Sie die folgenden Felder aus, und wählen Sie "Erstellen" aus.
-	1. Name: Der Name des aktiven Authentifizierungsanbieters.
+	1. Name: Der Name des Multi-Factor Authentication-Anbieters.
 	2. Nutzungsmodell: Das Nutzungsmodell des Anbieters für mehrstufige Authentifizierung.
-		- Pro Authentifizierung: Ein Kaufmodell, bei dem die Kosten pro Authentifizierung berechnet werden. Wird in der Regel für Szenarien verwendet, in denen Azure Multi-Factor Authentication in einer Anwendung verwendet wird.
-		- Pro aktiviertem Benutzer: Ein Kaufmodell, bei dem die Kosten pro aktiviertem Benutzer berechnet werden. Wird in der Regel für Szenarien wie Office 365 verwendet.
+		- Pro Authentifizierung: Ein Kaufmodell, bei dem die Kosten pro Authentifizierung berechnet werden. Wird in der Regel für Szenarien verwendet, in denen Azure Multi-Factor Authentication in einer kundenorientierten Anwendung verwendet wird.
+		- Pro aktiviertem Benutzer: Ein Kaufmodell, bei dem die Kosten pro aktiviertem Benutzer berechnet werden. Wird in der Regel für den Mitarbeiterzugriff auf Anwendungen wie Office 365 verwendet.
 	2. Verzeichnis: Der Azure Active Directory-Mandant, dem der Anbieter für mehrstufige Authentifizierung zugeordnet ist. Bedenken Sie dabei Folgendes:
 		- Zum Erstellen eines Anbieters für mehrstufige Authentifizierung benötigen Sie kein Azure AD-Verzeichnis. Dieses kann leer gelassen werden, wenn Sie nur den Azure Multi-Factor Authentication-Server oder das Azure Multi-Factor Authentication-SDK verwenden möchten.
-		- Wenn Sie jedoch Multi-Factor Authentication für alle Benutzer verfügbar machen möchten und/oder wenn Sie möchten, dass die globalen Administratoren Features wie das Verwaltungsportal, benutzerdefinierte Grußformeln und Berichte nutzen können, müssen Sie den Anbieter für mehrstufige Authentifizierung einem Azure AD-Verzeichnis zuordnen.
-		- DirSync oder AAD ist nur erforderlich, wenn Sie Ihre lokale Active Directory-Umgebung mit einem Azure AD-Verzeichnis synchronisieren. Wenn Sie nur ein Azure AD-Verzeichnis verwenden, das nicht mit einer lokalen Instanz von Active Directory synchronisiert ist, benötigen Sie weder DirSync noch AAD Sync.
+		- Wenn Sie Multi-Factor Authentication jedoch für alle Benutzer verfügbar machen möchten und/oder möchten, dass die globalen Administratoren Features wie vertrauenswürdige IP-Adressen, benutzerdefinierte Grußformeln und Berichte nutzen können, müssen Sie den Multi-Factor Authentication-Anbieter einem Azure AD-Verzeichnis zuordnen.
+		- Azure AD Connect, AAD Sync oder DirSync ist nur erforderlich, wenn Sie Ihre lokale Active Directory-Umgebung mit einem Azure AD-Verzeichnis synchronisieren. Wenn Sie lediglich ein Azure AD-Verzeichnis verwenden, das nicht mit einer lokalen Active Directory-Instanz synchronisiert wird, sind diese nicht erforderlich.
 		
 
 
@@ -64,23 +64,22 @@ Multi-Factor Authentication ist standardmäßig für globale Administratoren ver
 5. Nach dem Klicken auf "Erstellen" wird der Anbieter für mehrstufige Synchronisierung erstellt, und es wird die folgende Meldung angezeigt: "Der Anbieter für die mehrstufige Authentifizierung wurde erfolgreich erstellt." Klicken Sie auf "OK".
 
 <center>![Cloud](./media/multi-factor-authentication-get-started-cloud/provider.png)</center>
-## Zuweisen einer Azure AD Premium- oder Enterprise Mobility Suite-Lizenz zu Benutzern
+## Zuweisen einer Azure MFA-, Azure AD Premium- oder Enterprise Mobility Suite-Lizenz zu Benutzern
 
-Wenn Sie über Azure AD Premium oder die Enterprise Mobility Suite verfügen, müssen Sie keinen Anbieter für mehrstufige Authentifizierung erstellen. Sie müssen lediglich einem Benutzer eine Lizenz zuweisen, und anschließend können Sie MFA für Benutzer aktivieren.
+Wenn Sie über Azure MFA, Azure AD Premium oder die Enterprise Mobility Suite verfügen, müssen Sie keinen Multi-Factor Auth-Anbieter erstellen. Sie müssen lediglich die Lizenzen Ihren Benutzern zuweisen und dann können Sie sie für MFA aktivieren.
 
-### So weisen Sie eine Azure AD Premium- oder Enterprise Mobility Suite-Lizenz zu
+### So weisen Sie eine Azure MFA-, Azure AD Premium- oder Enterprise Mobility Suite-Lizenz zu
 --------------------------------------------------------------------------------
-<ol>
 
-<li>Melden Sie sich beim Azure-Portal als Administrator an.</li>
-<li>Wählen Sie im linken Bereich **Active Directory** aus.</li>
-<li>Doppelklicken Sie auf der Seite "Active Directory" auf das Verzeichnis mit den Benutzern, die Sie aktivieren möchten.</li>
-<li>Wählen Sie oben auf der Seite des Verzeichnisses die Option **Lizenzen** aus.</li>
-<li>Wählen Sie auf der Seite "Lizenzen" die Option "Active Directory Premium" oder "Enterprise Mobility Suite" aus, und klicken Sie dann auf **Zuweisen**.</li>
+1. Melden Sie sich beim Azure-Portal als Administrator an.
+2. Wählen Sie im linken Bereich **Active Directory** aus.
+3. Doppelklicken Sie auf der Seite "Active Directory" auf das Verzeichnis mit den Benutzern, die Sie aktivieren möchten.
+4. Wählen Sie oben auf der Seite des Verzeichnisses die Option **Lizenzen** aus.
+5. Wählen Sie auf der Seite „Lizenzen“ die Option „Multi-Factor Authentication“, „Active Directory Premium“ oder „Enterprise Mobility Suite“ aus, und klicken Sie dann auf „Zuweisen“. ![Cloud](./media/multi-factor-authentication-get-started-cloud/license2.png)
+6. Wählen Sie im Dialogfeld die Benutzer oder Gruppen aus, denen Sie Lizenzen zuweisen möchten, und klicken Sie dann auf das Häkchen, um die Änderungen zu speichern.
 
-<center>![Cloud](./media/multi-factor-authentication-get-started-cloud/license.png)</center>
 
-<li>Wählen Sie im Dialogfeld die Benutzer aus, denen Sie Lizenzen zuweisen möchten, und klicken Sie dann auf das Häkchen, um die Änderungen zu speichern.</li>
+
 
 
 
@@ -156,4 +155,4 @@ Nachdem Sie die Benutzer aktiviert haben, sollten Sie ihnen eine E-Mail senden, 
 ## Nächste Schritte
 Nachdem Sie jetzt Multi-Factor Authentication in der Cloud eingerichtet haben, können Sie mit [Konfigurieren von Azure Multi-Factor Authentication](multi-factor-authentication-whats-next.md) fortfahren. In diesem Thema erhalten Sie Informationen über Berichterstellung, Betrugswarnungen, das Anpassen von Sprachnachrichten und alle Features von Azure Multi-Factor Authentication.
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0114_2016-->
