@@ -43,7 +43,7 @@ Tutorials und Beispielcode mit komplexeren Node.js-Anwendungen sowie weitere The
 >
 > Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, besuchen Sie [Azure App Service-App erstellen](http://go.microsoft.com/fwlink/?LinkId=523751). Dort können Sie direkt eine kurzzeitige Start-Web-App in App Service erstellen – keine Kreditkarte erforderlich, keine weiteren Verpflichtungen.
 
-## Erstellen einer Web-App und Aktivieren der Git-Veröffentlichung
+##Erstellen einer Web-App und Aktivieren der Git-Veröffentlichung
 
 Führen Sie diese Schritte aus, um eine Web-App in Azure App Service zu erstellen und die Git-Veröffentlichung zu aktivieren.
 
@@ -73,7 +73,7 @@ Führen Sie diese Schritte aus, um eine Web-App in Azure App Service zu erstelle
 
 8. Klicken Sie auf **Erstellen**.
    
-	![][portal-quick-create2]
+    ![][portal-quick-create2]
 
 	Azure beendet die Erstellung der neuen Web-App innerhalb kurzer Zeit, üblicherweise in weniger als einer Minute.
 
@@ -107,7 +107,7 @@ Führen Sie diese Schritte aus, um eine Web-App in Azure App Service zu erstelle
 
 	![][git-url]
 
-## Lokales Erstellen und Testen der Anwendung
+##Lokales Erstellen und Testen der Anwendung
 
 In diesem Abschnitt erstellen Sie eine Datei **server.js**, die eine leicht abgewandelte Version des "Hello World"-Beispiels von [nodejs.org] enthält. Der Code fügt "process.env.PORT" als den Port ein, an dem bei Ausführung in einer Azure-Web-App gelauscht werden soll.
 
@@ -134,7 +134,7 @@ In diesem Abschnitt erstellen Sie eine Datei **server.js**, die eine leicht abge
 
     ![Ein Browser, in dem die Nachricht "Hello World" angezeigt wird.][helloworld-localhost]
 
-## Veröffentlichen der Anwendung
+##Veröffentlichen der Anwendung
 
 1. Installieren Sie Git, falls Sie dies noch nicht getan haben.
 
@@ -153,6 +153,7 @@ In diesem Abschnitt erstellen Sie eine Datei **server.js**, die eine leicht abge
 3. Fügen Sie ein Git-Remoteverzeichnis hinzu, um die Updates per Push an die zuvor erstellte Web-App zu übertragen. Verwenden Sie dazu den folgenden Befehl:
 
 		git remote add azure [URL for remote repository]
+
 
 4. Übertragen Sie Ihre Änderungen mit dem folgenden Befehl per Push an Azure:
 
@@ -174,13 +175,14 @@ In diesem Abschnitt erstellen Sie eine Datei **server.js**, die eine leicht abge
 		To https://user@testsite.scm.azurewebsites.net/testsite.git
 		 * [new branch]      master -> master
 
+
 5. Um Ihre App anzuzeigen, klicken Sie im Detail **Web-App** im Azure-Portal auf die Schaltfläche **Durchsuchen**.
 
 	![Durchsuchen-Schaltfläche](./media/web-sites-nodejs-develop-deploy-mac/browsebutton.png)
 
 	!["Hello World" in Azure](./media/web-sites-nodejs-develop-deploy-mac/helloworldazure.png)
 
-## Veröffentlichen von Änderungen an der Anwendung
+##Veröffentlichen von Änderungen an der Anwendung
 
 1. Öffnen Sie die Datei **server.js** in einem Texteditor, und ändern Sie "Hello World\\n" in "Hello Azure\\n". 
 
@@ -202,7 +204,7 @@ In diesem Abschnitt erstellen Sie eine Datei **server.js**, die eine leicht abge
 
 Auf dem Blatt **Web-App** können Sie auf **Einstellungen > Dauerhafte Bereitstellung** klicken, um den Bereitstellungsverlauf auf dem Blatt **Bereitstellungen** anzuzeigen. Wenn Sie ein Rollback auf eine frühere Bereitstellung durchführen müssen, können Sie die Bereitstellung auswählen und auf dem Blatt **Bereitstellungsdetails** auf **Erneut bereitstellen** klicken
 
-## Nächste Schritte
+##Nächste Schritte
 
 Sie haben eine Node.js-Anwendung in einer Web-App in Azure App Service bereitgestellt. Weitere Informationen zur Ausführung von Node.js-Anwendungen in App Service-Web-Apps finden Sie unter [Azure App Service Web Apps: Node.js](http://blogs.msdn.com/b/silverlining/archive/2012/06/14/windows-azure-websites-node-js.aspx) und [Festlegen einer Node.js-Version in einer Azure-Anwendung](../nodejs-specify-node-version-azure-apps.md).
 
