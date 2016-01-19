@@ -125,7 +125,7 @@ In den folgenden Artikeln finden Sie weitere Informationen zu IoT Hub:
 
 <!-- Links -->
 [lnk-c2d-tutorial]: iot-hub-csharp-csharp-c2d.md
-[Verarbeiten von Gerät-zu-Cloud-Nachrichten]: iot-hub-csharp-csharp-process-d2c.md
+[lnk-process-d2c-tutorial]: iot-hub-csharp-csharp-process-d2c.md
 [lnk-upload-tutorial]: iot-hub-csharp-csharp-file-upload.md
 
 [lnk-hub-overview]: iot-hub-what-is-iot-hub.md
@@ -138,4 +138,4 @@ In den folgenden Artikeln finden Sie weitere Informationen zu IoT Hub:
 [lnk-resource-groups]: resource-group-portal.md
 [lnk-portal]: https://portal.azure.com/
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0114_2016--->
