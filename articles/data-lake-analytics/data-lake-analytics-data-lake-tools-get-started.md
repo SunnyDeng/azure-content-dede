@@ -10,7 +10,7 @@
 <tags
    ms.service="data-lake-analytics"
    ms.devlang="na"
-   ms.topic="article"
+   ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
    ms.date="01/07/2015"
@@ -60,7 +60,7 @@ Sie haben in diesem Tutorial im Abschnitt **Voraussetzungen** bereits Daten hoch
 
 Falls Sie Ihre eigenen Daten verwenden möchten, können Sie die hier angegebene Vorgehensweise zum Hochladen von Daten über die Data Lake-Tools nutzen.
 
-**So laden Sie die Datei in das abhängige Azure Data Lake-Konto hoch**
+**So laden Sie Dateien in das abhängige Azure Data Lake-Konto hoch**
 
 1. Erweitern Sie in **Server-Explorer** nacheinander die Optionen **Azure** und **Data Lake Analytics** und dann Ihr Data Lake Analytics-Konto und die Option **Speicherkonten**. Sie sehen das standardmäßige Data Lake-Speicherkonto und die verknüpften Data Lake-Speicherkonten sowie die verknüpften Azure-Speicherkonten. Das Data Lake-Standardkonto hat die Bezeichnung „Standardspeicherkonto“.
 2. Klicken Sie mit der rechten Maustaste auf das standardmäßige Data Lake-Speicherkonto, und klicken Sie dann auf **Explorer**. Der Explorer-Bereich mit den Data Lake-Tools für Visual Studio wird geöffnet. Links wird eine Verzeichnisstruktur angezeigt, und rechts befindet sich die Inhaltsansicht.
@@ -69,11 +69,11 @@ Falls Sie Ihre eigenen Daten verwenden möchten, können Sie die hier angegebene
 
 	![Visual Studio-U-SQL-Projekt](./media/data-lake-analytics-data-lake-tools-get-started/data-lake-analytics-data-lake-tools-upload-files.png)
 
-**So laden Sie die Datei in ein Azure Blob Storage-Konto hoch**
+**So laden Sie Dateien in ein verknüpftes Azure Blob Storage-Konto hoch**
 
 1. Erweitern Sie in **Server-Explorer** nacheinander die Optionen **Azure** und **Data Lake Analytics** und dann Ihr Data Lake Analytics-Konto und die Option **Speicherkonten**. Sie sehen das standardmäßige Data Lake-Speicherkonto und die verknüpften Data Lake-Speicherkonten sowie die verknüpften Azure-Speicherkonten. 
 2. Erweitern Sie das Azure-Speicherkonto.
-3. Klicken Sie mit der rechten Maustaste auf den Container, in den Sie Dateien hochladen möchten, und klicken Sie dann auf **Explorer**.
+3. Klicken Sie mit der rechten Maustaste auf den Container, in den Sie Dateien hochladen möchten, und klicken Sie dann auf **Explorer**. Wenn Sie keinen Container besitzen, müssen Sie zunächst einen mit dem Azure-Portal, Azure PowerShell oder anderen Tools erstellen.
 4. Navigieren Sie zu dem Ordner, in den Sie die Dateien hochladen möchten. 
 5. Klicken Sie mit der rechten Maustaste auf einen leeren Bereich, und klicken Sie dann auf **Hochladen**. 
 
@@ -88,8 +88,6 @@ Die Data Lake Analytics-Aufträge werden in der Sprache U-SQL geschrieben. Weite
 
 	![Neues Visual Studio-U-SQL-Projekt](./media/data-lake-analytics-data-lake-tools-get-started/data-lake-analytics-data-lake-tools-new-project.png)
 
-	>[AZURE.NOTE]Derzeit unterstützen die Data Lake-Tools bei lokaler Ausführung keine UNC-Projektpfade.
-	
 3. Klicken Sie auf **OK**. Visual Studio erstellt eine Projektmappe mit der Datei **Script.usql**.
 4. Geben Sie das folgende Skript in **Script.usql** ein:
 
@@ -357,4 +355,4 @@ Mit dem folgenden PowerShell-Skript werden das Azure Data Lake Analytics-Konto u
     Get-AzureRmDataLakeStoreChildItem -Account $dataLakeStoreName -Path  "/Samples/Data/"
     #endregion
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0114_2016-->

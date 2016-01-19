@@ -14,7 +14,7 @@
    	ms.topic="hero-article"
    	ms.tgt_pltfrm="na"
    	ms.workload="big-data"
-   	ms.date="12/03/2015"
+   	ms.date="01/13/2016"
    	ms.author="nitinme"/>
 
 # Hadoop-Lernprogramm: Erste Schritte bei der Verwendung von Hadoop mit Hive in HDInsight unter Linux
@@ -112,15 +112,15 @@ Ambari-Ansichten stellen verschiedene Dienstprogramme über eine Webseite bereit
 
 > [AZURE.NOTE]Ambari ist ein Verwaltungs- und Überwachungsdienstprogramm, das mit Linux-basierten HDInsight-Clustern bereitgestellt wird. Ambari verfügt über viele Funktionen, die in diesem Dokument nicht beschrieben werden. Weitere Informationen finden Sie unter [Verwalten von HDInsight-Clustern mithilfe der Ambari-Webbenutzeroberfläche](hdinsight-hadoop-manage-ambari.md).
 
-Ambari-Ansichten sind im Azure-Portal verfügbar. Wählen Sie Ihren HDInsight-Cluster, und wählen Sie dann __Ambari-Ansichten__ im __Quicklinks__ Abschnitt.
+Um Ambari-Ansichten im Azure-Portal anzuzeigen, wählen Sie Ihren HDInsight-Cluster aus, und wählen Sie dann im Abschnitt __Quicklinks__ die Option __Ambari-Ansichten__.
 
 ![Quicklinks-Abschnitt](./media/hdinsight-hadoop-linux-tutorial-get-started/quicklinks.png)
 
-Sie können auch direkt zu Ambari navigieren, indem Sie in einem Webbrowser https://CLUSTERNAME.azurehdinsight.net aufrufen (wobei __CLUSTERNAME__ der Name Ihres HDInsight-Clusters ist) und dann den Satz von Quadraten im Seitenmenü auswählen (neben dem __Admin__-Link und der Schaltfläche links auf der Seite), um verfügbare Ansichten aufzulisten. Wählen Sie die __Hive Ansicht__.
+Sie können auch direkt zu Ambari navigieren, indem Sie in einem Webbrowser https://CLUSTERNAME.azurehdinsight.net aufrufen (wobei __CLUSTERNAME__ der Name Ihres HDInsight-Clusters ist) und dann den Satz von Quadraten im Seitenmenü auswählen (neben dem __Admin__-Link und der Schaltfläche links auf der Seite), um verfügbare Ansichten aufzulisten. Wählen Sie die __Hive-Ansicht__ aus.
 
-![Auswählen von Ambari-Ansichten](./media/hdinsight-hadoop-linux-tutorial-get-started/selecthiveview.png).
+![Ambari-Ansichten auswählen](./media/hdinsight-hadoop-linux-tutorial-get-started/selecthiveview.png).
 
-> [AZURE.NOTE]Beim Zugriff auf Ambari werden Sie aufgefordert, sich bei der Website zu authentifizieren. Geben Sie den Administratorkontonamen (Standard `admin`) und das Kennwort ein, die Sie beim Erstellen des Clusters verwendet haben.
+> [AZURE.NOTE]Beim Zugriff auf Ambari werden Sie aufgefordert, sich bei der Website zu authentifizieren. Geben Sie den Administratorkontonamen (Standard-`admin`) und das Kennwort ein, den bzw. das Sie beim Erstellen des Clusters verwendet haben.
 
 Eine Seite ähnlich der folgenden wird angezeigt:
 
@@ -138,7 +138,7 @@ Führen Sie in der Hive-Ansicht folgende Schritte aus, um eine Hive-Abfrage an D
 		STORED AS TEXTFILE LOCATION 'wasb:///example/data/';
 		SELECT t4 AS sev, COUNT(*) AS cnt FROM log4jLogs WHERE t4 = '[ERROR]' GROUP BY t4;
 
-	Mit diesen Anweisungen werden die folgenden Aktionen ausgeführt:
+	Diese Anweisungen führen die folgenden Aktionen aus:
 
 	- **DROP TABLE** löscht die Tabelle und Datendatei, falls die Tabelle bereits vorhanden ist.
 	- **CREATE EXTERNAL TABLE** erstellt eine neue externe Tabelle in Hive. Externe Tabellen dienen nur zum Speichern der Tabellendefinition in Hive. Die Daten verbleiben am ursprünglichen Speicherort.
@@ -148,11 +148,11 @@ Führen Sie in der Hive-Ansicht folgende Schritte aus, um eine Hive-Abfrage an D
 
 	>[AZURE.NOTE]Wenn erwartet wird, dass die zugrunde liegenden Daten über eine externe Quelle, z. B. einen automatisierten Prozess zum Hochladen von Daten, oder über einen anderen MapReduce-Vorgang aktualisiert, aber von Hive immer die neuesten Daten verwendet werden, sollten externe Tabellen verwendet werden. Durch das Löschen einer externen Tabelle werden *nicht* die Daten, sondern nur die Tabellendefinitionen gelöscht.
 
-2. Starten Sie die Abfrage mit der __Ausführen__-Schaltfläche am unteren Rand des Abfrage-Editors. Deren Farbe sollte zu Orange wechseln und der Text sich in __Ausführung beenden__ ändern. Ein Abschnitt __Abfrageprozessergebnisse__ sollte unterhalb des Abfrage-Editors angezeigt werden und Informationen über den Auftrag anzeigen.
+2. Starten Sie die Abfrage mit der Schaltfläche __Ausführen__ am unteren Rand des Abfrage-Editors. Deren Farbe sollte zu Orange wechseln, und der Text sollte sich in __Ausführung beenden__ ändern. Der Abschnitt __Abfrageprozessergebnisse__ sollte unterhalb des Abfrage-Editors angezeigt werden und Informationen über den Auftrag enthalten.
 
-    > [AZURE.IMPORTANT]In einigen Browsern werden das Protokoll oder die Ergebnisdaten möglicherweise nicht korrekt aktualisiert. Wenn Sie einen Auftrag ausführen, und Sie eine scheinbar endlose Ausführung ohne Aktualisierung des Protokolls oder Rückgabe von Ergebnissen feststellen, versuchen Sie es noch mal mit Mozilla FireFox oder Google Chrome.
+    > [AZURE.IMPORTANT]In einigen Browsern werden das Protokoll oder die Ergebnisdaten möglicherweise nicht korrekt aktualisiert. Wenn Sie einen Auftrag ausführen und eine scheinbar endlose Ausführung ohne Aktualisierung des Protokolls oder Rückgabe von Ergebnissen feststellen, sollten Sie es noch einmal mit Mozilla Firefox oder Google Chrome versuchen.
     
-3. Nach Abschluss der Abfrage werden im Abschnitt __Abfrageprozessergebnisse__ die Ergebnisse des Vorgangs angezeigt. Die __Ausführung beenden__-Schaltfläche verändert sich auch wieder zu einer grünen __Ausführen__-Schaltfläche. Die Registerkarte __Ergebnisse__ sollte folgende Informationen enthalten:
+3. Nach Abschluss der Abfrage werden im Abschnitt __Abfrageprozessergebnisse__ die Ergebnisse des Vorgangs angezeigt. Die Schaltfläche __Ausführung beenden__ ändert sich auch wieder in die grüne Schaltfläche __Ausführen__. Die Registerkarte __Ergebnisse__ sollte folgende Informationen enthalten:
 
         sev       cnt
         [ERROR]   3
@@ -161,40 +161,40 @@ Führen Sie in der Hive-Ansicht folgende Schritte aus, um eine Hive-Abfrage an D
     
     > [AZURE.TIP]Beachten Sie die Dropdownliste __Ergebnisse speichern__ in der oberen linken Ecke des Abschnitts __Abfrageprozessergebnisse__; hiermit können Sie entweder die Ergebnisse herunterladen oder auf HDInsight-Speicher als CSV-Datei speichern.
 
-3. Wählen Sie die ersten vier Zeilen dieser Abfrage und dann __Ausführen__. Beachten Sie, dass keine Ergebnisse vorliegen, wenn der Auftrag abgeschlossen ist. Der Grund ist, dass die __Ausführen__-Schaltfläche, wenn ein Teil der Abfrage ausgewählt ist, nur die ausgewählten Anweisungen ausführt. In diesem Fall enthielt die Auswahl nicht die letzte Anweisung, die Zeilen aus der Tabelle abruft. Wenn Sie nur diese Zeile auswählen und __Ausführen__ verwenden, sollten die erwarteten Ergebnisse angezeigt werden.
+3. Wählen Sie die ersten vier Zeilen dieser Abfrage und dann __Ausführen__. Beachten Sie, dass keine Ergebnisse vorliegen, wenn der Auftrag abgeschlossen ist. Der Grund ist, dass die Schaltfläche __Ausführen__, wenn ein Teil der Abfrage ausgewählt ist, nur die ausgewählten Anweisungen ausführt. In diesem Fall enthielt die Auswahl nicht die letzte Anweisung, die Zeilen aus der Tabelle abruft. Wenn Sie nur diese Zeile auswählen und __Ausführen__ verwenden, sollten die erwarteten Ergebnisse angezeigt werden.
 
-3. Verwenden Sie die __Neues Arbeitsblatt__-Schaltfläche am unteren Rand des __Abfrage-Editors__, um ein neues Arbeitsblatt zu erstellen. Geben Sie in das neue Arbeitsblatt die folgenden HiveQL-Anweisungen ein:
+3. Verwenden Sie die Schaltfläche __Neues Arbeitsblatt__ am unteren Rand des __Abfrage-Editors__, um ein neues Arbeitsblatt zu erstellen. Geben Sie in das neue Arbeitsblatt die folgenden HiveQL-Anweisungen ein:
 
 		CREATE TABLE IF NOT EXISTS errorLogs (t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string) STORED AS ORC;
 		INSERT OVERWRITE TABLE errorLogs SELECT t1, t2, t3, t4, t5, t6, t7 FROM log4jLogs WHERE t4 = '[ERROR]';
 
-	Mit diesen Anweisungen werden die folgenden Aktionen ausgeführt:
+	Diese Anweisungen führen die folgenden Aktionen aus:
 
 	- **TABELLE ERSTELLEN, FALLS NICHT VORHANDEN** – Erstellt eine Tabelle, sofern diese noch nicht vorhanden ist. Da das Schlüsselwort **EXTERN** nicht verwendet wird, ist dies eine "interne" Tabelle, die im Hive-Data Warehouse gespeichert und vollständig von Hive verwaltet wird. Im Gegensatz zu externen Tabellen werden beim Ablegen von internen Tabellen auch die zugrunde liegenden Daten gelöscht.
 	- **ALS ORC GESPEICHERT** – Speichert die Daten im ORC-Format (Optimized Row Columnar) Dies ist ein stark optimiertes und effizientes Format zum Speichern von Hive-Daten.
 	- **ÜBERSCHREIBEN EINFÜGEN ... AUSWÄHLEN** – Wählt Zeilen in der Tabelle **log4jLogs** aus, die [FEHLER] enthalten, und fügt die Daten dann in die Tabelle **errorLogs** ein.
     
-    Verwenden Sie die __Ausführen__ Schaltfläche, um diese Abfrage auszuführen. Die Registerkarte __Ergebnisse__ wird keine Informationen enthalten, da diese Abfrage keine Zeilen zurückgibt, aber der Status __ERFOLGREICH__ sollte angezeigt werden.
+    Verwenden Sie die Schaltfläche __Ausführen__, um diese Abfrage auszuführen. Die Registerkarte __Ergebnisse__ wird keine Informationen enthalten, da diese Abfrage keine Zeilen zurückgibt, aber der Status __ERFOLGREICH__ sollte angezeigt werden.
     
 4. Rechts vom Abfrage-Editor befindet sich eine Reihe von Symbolen. Wählen Sie das Symbol aus, das wie eine Kette aussieht.
 
     ![Symbole](./media/hdinsight-hadoop-linux-tutorial-get-started/icons.png)
     
-    Dies ist die __Visuelle Erläuterung__-Ansicht der Abfrage, die das Verständnis des Ablaufs komplexer Abfragen erleichtern kann. Sie können eine Textentsprechung dieser Ansicht mit der __Erklären__-Schaltfläche im Abfrage-Editor anzeigen.
+    Dies ist die Ansicht __Visuelle Erläuterung__ der Abfrage, die das Verständnis des Ablaufs komplexer Abfragen erleichtern kann. Sie können eine Textentsprechung dieser Ansicht mit der Schaltfläche __Erklären__ im Abfrage-Editor anzeigen.
     
     ![Bild zur visuellen Erläuterung](./media/hdinsight-hadoop-linux-tutorial-get-started/visualexplain.png)
     
     Die anderen Symbole haben folgende Zwecke:
     
-        * Einstellungen: The gear icon allows you to change Hive settings, such as setting `hive.execution.engine` or Tez parameters.
-        * Tez: Displays the Directed Acyclic Graph (DAG) that Tez used to perform the query. If you want to view the DAG for queries you've ran in the past, use the __Tez View__ instead.
-        * Benachrichtigungen: Displays notifications, such as "Query has been submitted" or if an error occurs when running a query.
+	* Einstellungen: Über das Zahnradsymbol können Sie Hive-Einstellungen wie etwa die Einstellung `hive.execution.engine` oder Tez-Parameter ändern.
+	* Tez: Zeigt den gerichteten azyklischen Graphen (Directed Acyclic Graph, DAG) an, den Tez zum Ausführen der Abfrage verwendet hat. Wenn Sie den DAG für Abfragen anzeigen möchten, die Sie in der Vergangenheit ausgeführt haben, verwenden Sie stattdessen die __Tez-Ansicht__.
+	* Benachrichtigungen: Zeigt Benachrichtigungen wie etwa „Abfrage wurde übermittelt.“ oder eine Meldung an, wenn beim Ausführen einer Abfrage ein Fehler auftritt.
 
 5. Wählen Sie das __SQL__-Symbol, um zum Abfrage-Editor zurückzukehren, erstellen Sie dann ein neues Arbeitsblatt, und geben Sie folgende Abfrage ein:
 
         SELECT * from errorLogs;
     
-    Klicken Sie unten im Editor auf die Schaltfläche __Speichern unter__. Benennen Sie diese Abfrage __Errorlogs__, und wählen Sie __OK__. Beachten Sie, dass der Name des Arbeitsblatts sich in __Errorlogs__ ändert.
+    Klicken Sie unten im Editor auf die Schaltfläche __Speichern unter__. Geben Sie der Abfrage den Namen __Errorlogs__, und wählen Sie __OK__. Beachten Sie, dass der Name des Arbeitsblatts sich in __Errorlogs__ ändert.
     
     Gespeicherte Abfragen werden auch auf der Registerkarte __Gespeicherte Abfragen__ am oberen Rand der Seite angezeigt. Wählen Sie diese Registerkarte aus. Nun sollte __Errorlogs__ aufgeführt werden. Bei Auswahl des Namens wird die Abfrage im Abfrage-Editor geöffnet.
 
@@ -260,4 +260,4 @@ Weitere Informationen zum Erstellen und Verwalten von HDInsight-Clustern finden 
 [image-hdi-gettingstarted-powerquery-importdata]: ./media/hdinsight-hadoop-tutorial-get-started-windows/HDI.GettingStarted.PowerQuery.ImportData.png
 [image-hdi-gettingstarted-powerquery-importdata2]: ./media/hdinsight-hadoop-tutorial-get-started-windows/HDI.GettingStarted.PowerQuery.ImportData2.png
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0114_2016-->

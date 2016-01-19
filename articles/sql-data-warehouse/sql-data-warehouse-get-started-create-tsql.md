@@ -1,12 +1,12 @@
 <properties
-	pageTitle="Erstellen eines SQL Data Warehouse mit TSQL | Microsoft Azure"
-	description="Erfahren Sie, wie Sie ein Azure SQL Data Warehouse mit TSQL erstellen."
-	services="sql-data-warehouse"
-	documentationCenter="NA"
-	authors="lodipalm"
-	manager="barbkess"
-	editor=""
-	tags="azure-sql-data-warehouse"/>
+   pageTitle="Erstellen eines SQL Data Warehouse mit TSQL | Microsoft Azure"
+   description="Erfahren Sie, wie Sie ein Azure SQL Data Warehouse mit TSQL erstellen."
+   services="sql-data-warehouse"
+   documentationCenter="NA"
+   authors="lodipalm"
+   manager="barbkess"
+   editor=""
+   tags="azure-sql-data-warehouse"/>
 
 <tags
    ms.service="sql-data-warehouse"
@@ -14,8 +14,8 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/04/2016"
-   ms.author="lodipalm"/>
+   ms.date="01/07/2016"
+   ms.author="lodipalm;barbkess;sonyama"/>
 
 #Erstellen eines SQL Data Warehouse mit TSQL 
 
@@ -38,20 +38,20 @@ Sie können ein SQL Data Warehouse auch erstellen, indem Sie die Befehlszeile ö
 
         sqlcmd -S <Server Name>.database.windows.net -I -U <User> -P <Password> -Q "CREATE DATABASE <Name> (EDITION='datawarehouse', SERVICE_OBJECTIVE = '<Compute Size - DW####>', MAXSIZE= <Storage Size - #### GB>)"
 
-Beachten Sie beim Ausführen der oben genannten TSQL-Anweisungen die Parameter MAXSIZE und SERVICE_OBJECTIVE. Diese bestimmen die anfängliche Speichergröße und Datenverarbeitungskapazität, die Ihrer Data Warehouse-Instanz zugewiesen sind. MAXSIZE akzeptiert die folgenden Größen. Wir empfehlen eine hohe Größe, um Wachstum unterstützen zu können:
+Beachten Sie beim Ausführen der oben genannten TSQL-Anweisungen die Parameter MAXSIZE und SERVICE\_OBJECTIVE. Diese bestimmen die anfängliche Speichergröße und Datenverarbeitungskapazität, die Ihrer Data Warehouse-Instanz zugewiesen sind. MAXSIZE akzeptiert die folgenden Größen. Wir empfehlen eine hohe Größe, um Wachstum unterstützen zu können:
 
 + 250 GB
 + 500 GB
 + 750 GB
 + 1024 GB
 + 5120 GB
-+ 10240 GB
-+ 20480 GB
-+ 30720 GB
-+ 40960 GB
-+ 51200 GB
++ 10\.240 GB
++ 20\.480 GB
++ 30\.720 GB
++ 40\.960 GB
++ 51\.200 GB
 
-SERVICE_OBJECTIVE gibt die Anzahl der DWUs an, mit der Ihre Instanz gestartet wird, und akzeptiert die folgenden Werte:
+SERVICE\_OBJECTIVE gibt die Anzahl der DWUs an, mit der Ihre Instanz gestartet wird, und akzeptiert die folgenden Werte:
 
 + DW100
 + DW200
@@ -76,4 +76,4 @@ Nach der SQL Data Warehouse-Bereitstellung können Sie [Beispieldaten laden][] o
 [Beispieldaten laden]: ./sql-data-warehouse-get-started-manually-load-samples.md
 [Preisgestaltung]: https://azure.microsoft.com/pricing/details/sql-data-warehouse/
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0114_2016-->

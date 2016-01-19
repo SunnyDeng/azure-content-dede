@@ -2,7 +2,7 @@
 	pageTitle="Erste Schritte mit Azure Mobile Engagement für Windows Universal-Apps"
 	description="Erfahren Sie, wie Sie Azure Mobile Engagement mit Analysen und Pushbenachrichtigungen für Windows Universal-Apps verwenden."
 	services="mobile-engagement"
-	documentationCenter="mobile"
+	documentationCenter="windows"
 	authors="piyushjo"
 	manager="dwrede"
 	editor="" />
@@ -156,7 +156,7 @@ Sie sind bereits für das Senden einer Popupbenachrichtigung. Und wir werden jet
 
 ###Gewähren von Zugriff auf Mobile Engagement zum Senden von Benachrichtigungen
 
-1. Öffnen Sie das [Windows Store Dev Center] in Ihrem Webbrowser, melden Sie sich an, und erstellen Sie (falls erforderlich) ein Konto.
+1. Öffnen Sie das [Windows Store Dev Center] in Ihrem Webbrowser, melden Sie sich an, und Sie erstellen ein Konto, falls erforderlich.
 2. Klicken Sie oben rechts auf **Dashboard**, und klicken Sie im linken Menü des Bereichs auf **Neue App erstellen**. 
 
 	![][9]
@@ -213,4 +213,4 @@ Wenn die App ausgeführt wurde, wird eine Benachrichtigung in der App angezeigt.
 [12]: ./media/mobile-engagement-windows-store-dotnet-get-started/dashboard_services_push_1.png
 [13]: ./media/mobile-engagement-windows-store-dotnet-get-started/dashboard_services_push_creds.png
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0114_2016-->

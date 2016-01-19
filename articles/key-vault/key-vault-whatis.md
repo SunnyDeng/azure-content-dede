@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="12/11/2015"
+	ms.date="01/08/2016"
 	ms.author="cabailey"/>
 
 
@@ -38,18 +38,18 @@ Die folgende Tabelle enthält Informationen dazu, wie Sie mithilfe des Schlüsse
 | ------------- |-------------|-----|
 | Entwickler einer Azure-Anwendung | "Ich möchte eine Anwendung für Azure schreiben, die Schlüssel für Anmeldung und Verschlüsselung verwendet, aber ich möchte diese Schlüssel außerhalb der Anwendung verwalten, damit die Lösung auch für eine geografisch verteilte Anwendung geeignet ist. <br/><br/>Ich möchte Schlüssel und geheime Schlüssel schützen, ohne den Code dafür selbst zu schreiben. Außerdem sollen die Schlüssel auf einfache Weise bei optimaler Leistung aus meiner Anwendung verwendet werden können." | √ Schlüssel werden in einem Tresor gespeichert und über einen URI aufgerufen, wenn sie benötigt werden.<br/><br/> √ Schlüssel werden mithilfe von Algorithmen nach Industriestandard, Schlüssellängen und Hardwaresicherheitsmodulen (HSMs) von Azure geschützt.<br/><br/> √ Schlüssel werden in HSMs verarbeitet, die sich in denselben Azure-Datencentern befinden wie die Anwendungen. Dadurch wird eine höhere Zuverlässigkeit und eine geringere Latenz geboten als bei Aufbewahrung der Schlüssel an einem getrennten Speicherort, wie lokale Standorte.|
 | Entwickler von SaaS-Lösungen (Software-as-a-Service) |"Ich möchte weder die Verantwortung noch die Haftung für Schlüssel und geheime Schlüssel für Kundenmandanten übernehmen. <br/><br/>Ich möchte, dass der Kunde sowohl die Verantwortung als auch die Verwaltung für seine Schlüssel übernimmt, sodass ich mich auf meine eigentlichen Aufgaben konzentrieren kann – die Bereitstellung der Softwarefunktionen." | √ Kunden können eigene Schlüssel in Azure importieren und diese verwalten. Wenn eine SaaS-Anwendung kryptografische Vorgänge unter Verwendung der Kundenschlüssel ausführen muss, führt der Schlüsseltresor diese Vorgänge im Namen der Anwendung aus. Die Anwendung hat keine Informationen über die Kundenschlüssel.|
-| Sicherheitsbeauftragter (Chief Security Officer, CSO) | "Ich möchte sicherstellen, dass unsere Anwendungen den Anforderungen für FIPS 140-2 Level 2 HSMs für die sichere Schlüsselverwaltung entsprechen. <br/><br/>Ich möchte sicherstellen, dass meine Organisation die Kontrolle über den gesamten Lebenszyklus der Schlüssel behält und die Schlüsselverwendung überwachen kann. <br/><br/>Auch wenn wir verschiedene Azure-Dienste und -Ressourcen nutzen, möchte ich die Schlüssel über einen einzigen Speicherort in Azure verwalten." |√ HSMs sind FIPS 140-2 Level 2-zertifiziert.<br/><br/>√ Der Schlüsseltresor ist so konzipiert, dass Microsoft Ihre Schlüssel weder extrahiert noch sieht.<br/><br/>√ Die Schlüsselverwendung wird nahezu in Echtzeit protokolliert (aktuell in der [Vorschau](http://blogs.technet.com/b/kv/archive/2015/11/10/keyvault_2d00_logging_2d00_preview.aspx)).<br/><br/>√ Der Tresor stellt eine einzige Benutzeroberfläche bereit – unabhängig davon, über wie viele Tresore Sie in Azure verfügen, welche Regionen diese unterstützen und von welchen Anwendungen die Tresore verwendet werden. |
+| Sicherheitsbeauftragter (Chief Security Officer, CSO) | "Ich möchte sicherstellen, dass unsere Anwendungen den Anforderungen für FIPS 140-2 Level 2 HSMs für die sichere Schlüsselverwaltung entsprechen. <br/><br/>Ich möchte sicherstellen, dass meine Organisation die Kontrolle über den gesamten Lebenszyklus der Schlüssel behält und die Schlüsselverwendung überwachen kann. <br/><br/>Auch wenn wir verschiedene Azure-Dienste und -Ressourcen nutzen, möchte ich die Schlüssel über einen einzigen Speicherort in Azure verwalten." |√ HSMs sind FIPS 140-2 Level 2-zertifiziert.<br/><br/>√ Der Schlüsseltresor ist so konzipiert, dass Microsoft Ihre Schlüssel weder extrahiert noch sieht.<br/><br/>√ Die Schlüsselverwendung wird nahezu in Echtzeit protokolliert.<br/><br/>√ Der Tresor stellt eine einzige Benutzeroberfläche bereit – unabhängig davon, über wie viele Tresore Sie in Azure verfügen, welche Regionen diese unterstützen und von welchen Anwendungen die Tresore verwendet werden. |
 
 
 Jeder Benutzer mit einem Azure-Abonnement kann Schlüsseltresore erstellen und verwenden. Wenngleich der Schlüsseltresor insbesondere Entwicklern und Sicherheitsadministratoren Vorteile bietet, kann er durch einen Organisationsadministrator implementiert und verwaltet werden, der andere Azure-Dienste für eine Organisation verwaltet. Beispielsweise kann sich dieser Administrator mit einem Azure-Abonnement anmelden, einen Tresor für die Schlüsselspeicherung der Organisation erstellen und dann operative Vorgänge wie die folgenden übernehmen:
 
 + Erstellen oder Importieren eines Schlüssels oder geheimer Informationen
 + Widerrufen oder Löschen eines Schlüssels oder geheimer Informationen
-+ Autorisieren von Benutzern oder Anwendungen zur Verwaltung oder Verwendung von Schlüsseln und geheimen Schlüsseln
++ Autorisieren von Benutzern oder Anwendungen für den Zugriff auf den Schlüsseltresor, sodass sie die Schlüssel und geheimen Schlüssel verwalten oder verwenden können
 + Konfigurieren der Schlüsselverwendung (z. B. Anmelden oder Verschlüsseln)
 + Übersachen der Schlüsselverwendung
 
-Dieser Administrator kann anschließend den Entwicklern die URIs für den Aufruf der Schlüssel aus ihren Anwendungen und den Sicherheitsadministratoren Protokollinformationen zur Schlüsselverwendung bereitstellen. Beachten Sie, dass sich die Protokollierung der Verwendung derzeit in der [Vorschau](http://blogs.technet.com/b/kv/archive/2015/11/10/keyvault_2d00_logging_2d00_preview.aspx) befindet.
+Dieser Administrator kann anschließend den Entwicklern die URIs für den Aufruf der Schlüssel aus ihren Anwendungen und den Sicherheitsadministratoren Protokollinformationen zur Schlüsselverwendung bereitstellen.
 
    ![Übersicht über den Azure-Schlüsseltresor][1]
 
@@ -59,10 +59,12 @@ Entwickler können die Schlüssel außerdem durch Verwendung von APIs direkt ver
 
 Ein Lernprogramm für den Einstieg für Administratoren finden Sie unter [Erste Schritte mit dem Azure-Schlüsseltresor](key-vault-get-started.md).
 
+Weitere Informationen zur Nutzungsprotokollierung für den Schlüsseltresor finden Sie unter [Azure-Schlüsseltresor-Protokollierung](key-vault-logging.md).
+
 Weitere Informationen zur Verwendung von Schlüsseln und geheimen Schlüsseln mit dem Azure-Schlüsseltresor finden Sie unter [Informationen zu Schlüsseln und geheimen Schlüsseln](https://msdn.microsoft.com/library/azure/dn903623.aspx).
 
 
 <!--Image references-->
 [1]: ./media/key-vault-whatis/AzureKeyVault_overview.png
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0114_2016-->

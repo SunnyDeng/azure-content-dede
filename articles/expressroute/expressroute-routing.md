@@ -120,30 +120,31 @@ Microsoft kennzeichnet Präfixe, die über das öffentliche Peering und Microsof
 
 | **Geopolitische Region** | **Microsoft Azure-Region (dasselbe gilt für Office 365)** | **BGP-Communitywert** |
 |---|---|---|
-| **Nordamerika** | | 12076:51201 |
+| **Nordamerika** | | |
 | | USA (Ost) | 12076:51004 |
 | | USA (Ost) 2 | 12076:51005 |
-| | USA, Westen | 12076:51006 |
+| | USA (West) | 12076:51006 |
 | | USA (Mitte/Norden) | 12076:51007 |
 | | USA (Mitte/Süden) | 12076:51008 |
 | | USA (Mitte) | 12076:51009 |
-| **Südamerika** | | 12076:51202 |
+| **Südamerika** | | |
 | | Brasilien Süd | 12076:51014 |
-| **Europa** | | 12076:51203 |
+| **Europa** | | |
 | | Nordeuropa | 12076:51003 |
 | | Westeuropa | 12076:51002 |
-| **Asien-Pazifik** | | 12076:51204 |
+| **Asien-Pazifik** | | |
 | | Ostasien | 12076:51010 |
 | | Südostasien | 12076:51011 |
-| **Japan** | Japan Ost | 12076:51012 |
-| | Japan, Westen | 12076:51013 |
-| **Australien** | Australien (Osten) | 12076:51015 |
+| **Japan** | | |
+| | Japan Ost | 12076:51012 |
+| | Japan (Westen) | 12076:51013 |
+| **Australien** | | | 
+| | Australien (Ost) | 12076:51015 |
 | | Australien (Südost) | 12076:51016 |
-| **Indien** | Indien, Süden | 12076:51019 |
+| **Indien** | | |
+| | Indien, Süden | 12076:51019 |
 | | Indien, Westen | 12076:51018 |
 | | Indien, Mitte | 12076:51017 |
-| **Global** | **Nur unterstützt und veröffentlicht, wenn das Premium-Add-On aktiviert ist** | 12076:51000 |
-| **Anycast** | | 12076:51250 |
 
 Alle Routen, die von Microsoft angekündigt werden, werden mit dem entsprechenden Communitywert gekennzeichnet.
 
@@ -173,4 +174,4 @@ Microsoft berücksichtigt keine BGP-Communitywerte, die von Ihnen festgelegt wer
 	- [Konfigurieren des Routings](expressroute-howto-routing-classic.md)
 	- [Verknüpfen eines VNet mit einer ExpressRoute-Verbindung](expressroute-howto-linkvnet-classic.md)
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0114_2016-->
