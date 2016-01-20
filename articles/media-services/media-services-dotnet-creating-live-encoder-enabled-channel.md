@@ -25,7 +25,7 @@
 - [REST API](https://msdn.microsoft.com/library/azure/dn783458.aspx)  
 
 > [AZURE.NOTE]
-> Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](/pricing/free-trial/?WT.mc_id=A261C142F). 
+> Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](/pricing/free-trial/?WT.mc_id=A261C142F).
 
 ##Übersicht
 
@@ -38,7 +38,7 @@ Weitere konzeptuelle Informationen zu Kanälen, bei denen Livecodierung aktivier
 
 Im Folgenden werden die Schritte und Aufgaben zum Erstellen allgemeiner Livestreaminganwendungen beschrieben.
 
->[AZURE.NOTE] Die maximal empfohlene Dauer eines Liveereignisses beträgt derzeit 8 Stunden. Wenden Sie sich an Amslived unter Microsoft Punkt Com, wenn Sie einen Kanal für längere Zeit laufen lassen müssen.
+>[AZURE.NOTE]Die maximal empfohlene Dauer eines Liveereignisses beträgt derzeit 8 Stunden. Wenden Sie sich an Amslived unter Microsoft Punkt Com, wenn Sie einen Kanal für längere Zeit laufen lassen müssen.
 
 1. Schließen Sie eine Videokamera an einen Computer an. Starten und konfigurieren Sie einen lokalen Liveencoder, von dem ein Single-Bitrate-Datenstrom in einem der folgenden Protokolle ausgegeben wird: RTMP, Smooth Streaming oder RTP (MPEG-TS). Weitere Informationen finden Sie unter [Microsoft Azure Media Services RTMP-Support und Liveencoder](http://go.microsoft.com/fwlink/?LinkId=532824).
 
@@ -115,7 +115,7 @@ Laden Sie [hier](http://azure.microsoft.com/documentation/samples/media-services
 ##Verbinden mit Mediendiensten
 Als bewährte Methode sollten Sie eine app.config-Datei zum Speichern von Namen und Kontoschlüssel von Media Services verwenden.
 
->[AZURE.NOTE] Sie finden Werte für Namen und Schlüssel im klassischen Azure-Portal: Wählen Sie Ihr Media Services-Konto aus, und klicken Sie unten im Portalfenster auf das Symbol SCHLÜSSEL VERWALTEN. Klicken Sie auf die Symbole neben den Textfeldern, um den jeweiligen Wert in die Systemzwischenablage zu kopieren.
+>[AZURE.NOTE]Sie finden Werte für Namen und Schlüssel im klassischen Azure-Portal: Wählen Sie Ihr Media Services-Konto aus, und klicken Sie unten im Portalfenster auf das Symbol SCHLÜSSEL VERWALTEN. Klicken Sie auf die Symbole neben den Textfeldern, um den jeweiligen Wert in die Systemzwischenablage zu kopieren.
 
 Fügen Sie der app.config-Datei den Bereich „appSettings“ hinzu, und geben Sie Ihren Kontonamen und Kontoschlüssel für Media Services ein.
 
@@ -530,4 +530,4 @@ Fügen Sie der app.config-Datei den Bereich „appSettings“ hinzu, und geben S
 
 Wenn dieses Thema nicht die erwarteten Informationen enthält, Informationen fehlen oder auf andere Weise Ihre Erwartungen nicht erfüllt wurden, senden Sie uns bitte über den Disqus-Thread unten Ihr Feedback.
 
-<!---HONumber=AcomDC_1223_2015--->
+<!----HONumber=AcomDC_1223_2015--->
