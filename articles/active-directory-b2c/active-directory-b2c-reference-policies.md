@@ -74,8 +74,7 @@ Für die Registrierung bei Ihrer Anwendung müssen Sie eine Registrierungsrichtl
 4. Der **Name** bestimmt den Namen der Registrierungsrichtlinie, die von der Anwendung verwendet wird. Geben Sie beispielsweise "SiUp" ein.
 5. Klicken Sie auf **Identitätsanbieter**, und wählen Sie "E-Mail-Adresse" aus. Optional können Sie auch soziale Netzwerke als Identitätsanbieter auswählen, sofern bereits konfiguriert. Klicken Sie auf **OK**.
 
-> [AZURE.NOTE]
-> Für lokale Konten werden unter den Anmelderichtlinien von Azure AD B2C "sichere" Kennwörter verwendet (sie sind so festgelegt, dass sie "nie ablaufen"). Weitere Einstellungen (die von Azure AD B2C derzeit nicht verwendet werden) finden Sie in der [Azure AD-Kennwortrichtlinie](https://msdn.microsoft.com/library/azure/jj943764.aspx).
+    > [AZURE.NOTE]Für lokale Konten werden unter den Anmelderichtlinien von Azure AD B2C "sichere" Kennwörter verwendet (sie sind so festgelegt, dass sie "nie ablaufen"). Weitere Einstellungen (die von Azure AD B2C derzeit nicht verwendet werden) finden Sie in der [Azure AD-Kennwortrichtlinie](https://msdn.microsoft.com/library/azure/jj943764.aspx).
 
 6. Klicken Sie auf **Registrierungsattribute**. Hier wählen Sie die Attribute aus, die der Consumer bei der Registrierung angeben soll. Wählen Sie z. B. "Land/Region", "Anzeigename" und "Postleitzahl" aus. Klicken Sie auf **OK**.
 7. Klicken Sie auf **Anwendungsansprüche**. Hier wählen Sie die Ansprüche aus, die in den zurückgegebenen Token nach einer erfolgreichen Registrierung an die Anwendung zurückgegeben werden sollen. Wählen Sie z. B. "Anzeigename", "Identitätsanbieter", "Postleitzahl", "Benutzer ist neu" und "Objekt-ID des Benutzers" aus.
@@ -118,4 +117,4 @@ Um die Profilbearbeitung in Ihrer Anwendung zu ermöglichen, müssen Sie eine Ri
 
     > [AZURE.NOTE]Es dauert bis zu einer Minute, bis die Erstellung und Aktualisierung von Richtlinien wirksam wird.
 
-<!-----HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0107_2016-->
