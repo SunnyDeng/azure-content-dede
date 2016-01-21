@@ -74,7 +74,8 @@ Für die Registrierung bei Ihrer Anwendung müssen Sie eine Registrierungsrichtl
 4. Der **Name** bestimmt den Namen der Registrierungsrichtlinie, die von der Anwendung verwendet wird. Geben Sie beispielsweise "SiUp" ein.
 5. Klicken Sie auf **Identitätsanbieter**, und wählen Sie "E-Mail-Adresse" aus. Optional können Sie auch soziale Netzwerke als Identitätsanbieter auswählen, sofern bereits konfiguriert. Klicken Sie auf **OK**.
 
-    > [AZURE.NOTE]Für lokale Konten werden unter den Anmelderichtlinien von Azure AD B2C "sichere" Kennwörter verwendet (sie sind so festgelegt, dass sie "nie ablaufen"). Weitere Einstellungen (die von Azure AD B2C derzeit nicht verwendet werden) finden Sie in der [Azure AD-Kennwortrichtlinie](https://msdn.microsoft.com/library/azure/jj943764.aspx).
+    > [AZURE.NOTE]
+    Für lokale Konten werden unter den Anmelderichtlinien von Azure AD B2C "sichere" Kennwörter verwendet (sie sind so festgelegt, dass sie "nie ablaufen"). Weitere Einstellungen (die von Azure AD B2C derzeit nicht verwendet werden) finden Sie in der [Azure AD-Kennwortrichtlinie](https://msdn.microsoft.com/library/azure/jj943764.aspx).
 
 6. Klicken Sie auf **Registrierungsattribute**. Hier wählen Sie die Attribute aus, die der Consumer bei der Registrierung angeben soll. Wählen Sie z. B. "Land/Region", "Anzeigename" und "Postleitzahl" aus. Klicken Sie auf **OK**.
 7. Klicken Sie auf **Anwendungsansprüche**. Hier wählen Sie die Ansprüche aus, die in den zurückgegebenen Token nach einer erfolgreichen Registrierung an die Anwendung zurückgegeben werden sollen. Wählen Sie z. B. "Anzeigename", "Identitätsanbieter", "Postleitzahl", "Benutzer ist neu" und "Objekt-ID des Benutzers" aus.
@@ -82,7 +83,8 @@ Für die Registrierung bei Ihrer Anwendung müssen Sie eine Registrierungsrichtl
 9. Öffnen Sie die Richtlinie, indem Sie auf **B2C\_1\_SiUp** klicken.
 10. Wählen Sie "Contoso B2C-App" in der Dropdownliste **Anwendungen** und `https://localhost:44321/` in der Dropdownliste **Antwort-URL/Umleitungs-URI** aus. Klicken Sie auf die Schaltfläche **Jetzt ausführen**. Eine neue Browserregisterkarte wird geöffnet, und Sie können die Benutzeroberfläche für Consumer für die Registrierung bei Ihrer Anwendung durchgehen.
 
-    > [AZURE.NOTE]Es dauert bis zu einer Minute, bis die Erstellung und Aktualisierung von Richtlinien wirksam wird.
+    > [AZURE.NOTE]
+    Es dauert bis zu einer Minute, bis die Erstellung und Aktualisierung von Richtlinien wirksam wird.
 
 ## Erstellen einer Anmelderichtlinie
 
@@ -98,7 +100,8 @@ Für die Anmeldung bei Ihrer Anwendung müssen Sie eine Anmelderichtlinie erstel
 8. Öffnen Sie die Richtlinie, indem Sie auf **B2C\_1\_SiIn** klicken.
 9. Wählen Sie "Contoso B2C-App" in der Dropdownliste **Anwendungen** und `https://localhost:44321/` in der Dropdownliste **Antwort-URL/Umleitungs-URI** aus. Klicken Sie auf die Schaltfläche **Jetzt ausführen**. Eine neue Browserregisterkarte wird geöffnet, und Sie können die Benutzeroberfläche für Consumer für die Anmeldung bei Ihrer Anwendung durchgehen.
 
-    > [AZURE.NOTE]Es dauert bis zu einer Minute, bis die Erstellung und Aktualisierung von Richtlinien wirksam wird.
+    > [AZURE.NOTE]
+    Es dauert bis zu einer Minute, bis die Erstellung und Aktualisierung von Richtlinien wirksam wird.
 
 ## Erstellen einer Richtlinie für die Profilbearbeitung
 
@@ -115,6 +118,7 @@ Um die Profilbearbeitung in Ihrer Anwendung zu ermöglichen, müssen Sie eine Ri
 9. Öffnen Sie die Richtlinie, indem Sie auf **B2C\_1\_SiPe** klicken.
 10. Wählen Sie "Contoso B2C-App" in der Dropdownliste **Anwendungen** und `https://localhost:44321/` in der Dropdownliste **Antwort-URL/Umleitungs-URI** aus. Klicken Sie auf die Schaltfläche **Jetzt ausführen**. Eine neue Browserregisterkarte wird geöffnet, und Sie können die Benutzeroberfläche für Consumer für die Profilbearbeitung in Ihrer Anwendung durchgehen.
 
-    > [AZURE.NOTE]Es dauert bis zu einer Minute, bis die Erstellung und Aktualisierung von Richtlinien wirksam wird.
+    > [AZURE.NOTE]
+    Es dauert bis zu einer Minute, bis die Erstellung und Aktualisierung von Richtlinien wirksam wird.
 
 <!---HONumber=AcomDC_0107_2016-->
