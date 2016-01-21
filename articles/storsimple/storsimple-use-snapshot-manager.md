@@ -490,7 +490,8 @@ In den folgenden Tabellen werden die Tastenkombinationen für die einzelnen Knot
 | V | Öffnet das Menü **Ansicht**. |
 | W | Öffnet eine neue StorSimple Snapshot Manager-Konsole mit Fokus auf dem Knoten **Volumegruppen**.|
 | F | Aktualisiert die StorSimple Snapshot Manager-Konsole.|
-| L | Öffnet die Seite **Liste exportieren**. | H | Öffnet die Onlinehilfe. |
+| L | Öffnet die Seite **Liste exportieren**.
+| H | Öffnet die Onlinehilfe. |
  
 #### Tastenkombinationen für den Knoten "Sicherungskatalog"
 

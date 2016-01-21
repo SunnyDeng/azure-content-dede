@@ -64,53 +64,30 @@ Die folgende Tabelle gibt Aufschluss über die physischen und logischen Komponen
 
 |Komponente|Modul|Typ|Ort|FRU (Field Replaceable Unit)?|Beschreibung|
 |---|---|---|---|---|---|
-|Laufwerk in Einschubfach [0-11]|Laufwerke|Physisch|Shared  
-|Ja|Die einzelnen SSD- oder HDD-Laufwerke des primären Gehäuses werden jeweils in einer eigenen Zeile angegeben.|
-|Ambiente-Temperatursensor|Gehäuse|Physisch|Shared  
-|Nein|Misst die Temperatur im Gehäuse.|
-|Midplane-Temperatursensor|Gehäuse|Physisch|Shared  
-|Nein|Misst die Temperatur auf der mittleren Ebene.|
-|Hörbarer Alarm|Gehäuse|Physisch|Shared  
-|Nein|Gibt an, ob das Subsystem für den akustischen Alarm im Gehäuse funktionsfähig ist.|
-|Gehäuse|Gehäuse|Physisch|Shared  
-|Ja|Gibt an, dass ein Gehäuse vorhanden ist.|
-|Gehäuseeinstellungen|Gehäuse|Physisch|Shared  
-|Nein|Bezieht sich auf das vordere Bedienfeld des Gehäuses.|
-|Spannungssensoren|PCM|Physisch|Shared  
-|Nein|Der angezeigte Zustand zahlreicher Spannungssensoren gibt Aufschluss darüber, ob die gemessene Spannung innerhalb des Toleranzbereichs liegt.|
-|Stromsensoren|PCM|Physisch|Shared  
-|Nein|Der angezeigte Zustand zahlreicher Stromsensoren gibt Aufschluss darüber, ob die gemessene Stromstärke innerhalb des Toleranzbereichs liegt.|
-|Temperatursensoren in PCM|PCM|Physisch|Shared  
-|Nein|Der angezeigte Zustand zahlreicher Temperatursensoren (beispielsweise Einlass- und Hotspot-Sensoren) gibt Aufschluss darüber, ob die gemessene Temperatur innerhalb des Toleranzbereichs liegt.|
-|Netzteil [0-1]|PCM|Physisch|Shared  
-|Ja|Für die einzelnen Stromversorgungen in den beiden PCMs an der Geräterückseite wird jeweils eine eigene Zeile angezeigt.|
-|Kühlung [0-1]|PCM|Physisch|Shared  
-|Ja|Für die vier Lüfter in den beiden PCMs wird jeweils eine eigene Zeile angezeigt.|
-|Pufferbatterie [0-1]|PCM|Physisch|Shared  
-|Ja|Für die einzelnen Sicherungsakkumodule im PCM wird jeweils eine eigene Zeile angezeigt.|
-|Metis|–|Logisch|Shared  
-|–|Zeigt den Zustand der Akkus an und gibt Aufschluss über Ladebedarf und Haltbarkeit.|
-|Cluster|–|Logisch|Shared  
-|–|Zeigt den Zustand des Clusters, der zwischen den beiden integrierten Controller-Modulen erstellt wird.|
-|Clusterknoten|–|Logisch|Shared  
-|–|Gibt den Zustand des Controllers als Teil des Clusters an.|
+|Laufwerk in Einschubfach [0-11]|Laufwerke|Physisch|Shared|Ja|Die einzelnen SSD- oder HDD-Laufwerke des primären Gehäuses werden jeweils in einer eigenen Zeile angegeben.|
+|Ambiente-Temperatursensor|Gehäuse|Physisch|Shared|Nein|Misst die Temperatur im Gehäuse.|
+|Midplane-Temperatursensor|Gehäuse|Physisch|Shared|Nein|Misst die Temperatur auf der mittleren Ebene.|
+|Hörbarer Alarm|Gehäuse|Physisch|Shared|Nein|Gibt an, ob das Subsystem für den akustischen Alarm im Gehäuse funktionsfähig ist.|
+|Gehäuse|Gehäuse|Physisch|Shared|Ja|Gibt an, dass ein Gehäuse vorhanden ist.|
+|Gehäuseeinstellungen|Gehäuse|Physisch|Shared|Nein|Bezieht sich auf das vordere Bedienfeld des Gehäuses.|
+|Spannungssensoren|PCM|Physisch|Shared|Nein|Der angezeigte Zustand zahlreicher Spannungssensoren gibt Aufschluss darüber, ob die gemessene Spannung innerhalb des Toleranzbereichs liegt.|
+|Stromsensoren|PCM|Physisch|Shared|Nein|Der angezeigte Zustand zahlreicher Stromsensoren gibt Aufschluss darüber, ob die gemessene Stromstärke innerhalb des Toleranzbereichs liegt.|
+|Temperatursensoren in PCM|PCM|Physisch|Shared|Nein|Der angezeigte Zustand zahlreicher Temperatursensoren (beispielsweise Einlass- und Hotspot-Sensoren) gibt Aufschluss darüber, ob die gemessene Temperatur innerhalb des Toleranzbereichs liegt.|
+|Netzteil [0-1]|PCM|Physisch|Shared|Ja|Für die einzelnen Stromversorgungen in den beiden PCMs an der Geräterückseite wird jeweils eine eigene Zeile angezeigt.|
+|Kühlung [0-1]|PCM|Physisch|Shared|Ja|Für die vier Lüfter in den beiden PCMs wird jeweils eine eigene Zeile angezeigt.|
+|Pufferbatterie [0-1]|PCM|Physisch|Shared|Ja|Für die einzelnen Sicherungsakkumodule im PCM wird jeweils eine eigene Zeile angezeigt.|
+|Metis|–|Logisch|Shared|–|Zeigt den Zustand der Akkus an und gibt Aufschluss über Ladebedarf und Haltbarkeit.|
+|Cluster|–|Logisch|Shared|–|Zeigt den Zustand des Clusters, der zwischen den beiden integrierten Controller-Modulen erstellt wird.|
+|Clusterknoten|–|Logisch|Shared|–|Gibt den Zustand des Controllers als Teil des Clusters an.|
 |Clusterquorum|–|Logisch||–|Gibt an, dass die Mehrheitsdatenträger-Mitgliedschaft im HDD-Speicherpool vorhanden ist.|
-|HDD-Datenbereich|–|Logisch|Shared  
-|–|Der Speicherplatz, der für Daten im HDD-Speicherpool verwendet wird.|
-|HDD-Verwaltungsbereich|–|Logisch|Shared  
-|–|Der Platz, der im HDD-Speicherpool für Verwaltungsaufgaben reserviert ist.|
-|HDD-Quorumbereich|–|Logisch|Shared  
-|–|Der Platz, der im HDD-Speicherpool für das Clusterquorum reserviert ist.|
-|HDD-Ersetzungsbereich|–|Logisch|Shared  
-|–|Der Platz, der im HDD-Speicherpool für die Controllerersetzung reserviert ist.|
-|SSD-Datenbereich|–|Logisch|Shared  
-|–|Der Speicherplatz, der im SSD-Speicherpool für Daten verwendet wird.|
-|SSD-NVRAM-Bereich|–|Logisch|Shared  
-|–|Der Speicherplatz im SSD-Speicherpool, der für die NVRAM-Logik reserviert ist.|
-|HDD-Speicherpool|–|Logisch|Shared  
-|–|Zeigt den Zustand des logischen Speicherpools an, der auf der Grundlage von Geräte-HDDs erstellt wird.|
-|SSD-Speicherpool|–|Logisch|Shared  
-|–|Zeigt den Zustand des logischen Speicherpools an, der auf der Grundlage von Geräte-SSDs erstellt wird.|
+|HDD-Datenbereich|–|Logisch|Shared|–|Der Speicherplatz, der für Daten im HDD-Speicherpool verwendet wird.|
+|HDD-Verwaltungsbereich|–|Logisch|Shared|–|Der Platz, der im HDD-Speicherpool für Verwaltungsaufgaben reserviert ist.|
+|HDD-Quorumbereich|–|Logisch|Shared|–|Der Platz, der im HDD-Speicherpool für das Clusterquorum reserviert ist.|
+|HDD-Ersetzungsbereich|–|Logisch|Shared|–|Der Platz, der im HDD-Speicherpool für die Controllerersetzung reserviert ist.|
+|SSD-Datenbereich|–|Logisch|Shared|–|Der Speicherplatz, der im SSD-Speicherpool für Daten verwendet wird.|
+|SSD-NVRAM-Bereich|–|Logisch|Shared|–|Der Speicherplatz im SSD-Speicherpool, der für die NVRAM-Logik reserviert ist.|
+|HDD-Speicherpool|–|Logisch|Shared|–|Zeigt den Zustand des logischen Speicherpools an, der auf der Grundlage von Geräte-HDDs erstellt wird.|
+|SSD-Speicherpool|–|Logisch|Shared|–|Zeigt den Zustand des logischen Speicherpools an, der auf der Grundlage von Geräte-SSDs erstellt wird.|
 |Controller [0-1] [Status]|E/A|Physisch|Controller|Ja|Zeigt den Zustand des Controllers im Gehäuse und gibt Aufschluss darüber, ob er aktiv oder im Standbymodus ist.|
 |Temperatursensoren im Controller|E/A|Physisch|Controller|Nein|Der angezeigte Zustand zahlreicher Temperatursensoren (etwa für das E/A-Modul, für die CPU-Temperatur sowie DIMM- und PCIe-Sensoren) gibt Aufschluss darüber, ob die Temperatur innerhalb des Toleranzbereichs liegt.|
 |SAS-Erweiterung|E/A|Physisch|Controller|Nein|Gibt den Zustand der SAS-Erweiterung an, über die der integrierte Speicher mit dem Controller verbunden wird.|
@@ -129,30 +106,18 @@ Die folgende Tabelle gibt Aufschluss über die physischen und logischen Komponen
 
 |Komponente|Modul|Typ|Standort|FRU?|Beschreibung|
 |---|---|---|---|---|---|
-|Laufwerk in Einschubfach [0-11]|Laufwerke|Physisch|Shared  
-|Ja|Die einzelnen HDD-Laufwerke an der Vorderseite des EBOD-Gehäuses werden jeweils in einer eigenen Zeile angegeben.|
-|Ambiente-Temperatursensor|Gehäuse|Physisch|Shared  
-|Nein|Misst die Temperatur im Gehäuse.|
-|Midplane-Temperatursensor|Gehäuse|Physisch|Shared  
-|Nein|Misst die Temperatur auf der mittleren Ebene.|
-|Hörbarer Alarm|Gehäuse|Physisch|Shared  
-|Nein|Gibt an, ob das Subsystem für den akustischen Alarm im Gehäuse funktionsfähig ist.|
-|Gehäuse|Gehäuse|Physisch|Shared  
-|Ja|Gibt an, dass ein Gehäuse vorhanden ist.|
-|Gehäuseeinstellungen|Gehäuse|Physisch|Shared  
-|Nein|Bezieht sich auf das OPS oder vordere Bedienfeld des Gehäuses.|
-|Spannungssensoren|PCM|Physisch|Shared  
-|Nein|Der angezeigte Zustand zahlreicher Spannungssensoren gibt Aufschluss darüber, ob die gemessene Spannung innerhalb des Toleranzbereichs liegt.|
-|Stromsensoren|PCM|Physisch|Shared  
-|Nein|Der angezeigte Zustand zahlreicher Stromsensoren gibt Aufschluss darüber, ob die gemessene Stromstärke innerhalb des Toleranzbereichs liegt.|
-|Temperatursensoren in PCM|PCM|Physisch|Shared  
-|Nein|Der angezeigte Zustand zahlreicher Temperatursensoren (beispielsweise Einlass- und Hotspot-Sensoren) gibt Aufschluss darüber, ob die gemessene Temperatur innerhalb des Toleranzbereichs liegt.|
-|Netzteil [0-1]|PCM|Physisch|Shared  
-|Ja|Für die einzelnen Stromversorgungen in den beiden PCMs an der Geräterückseite wird jeweils eine eigene Zeile angezeigt.|
-|Kühlung [0-1]|PCM|Physisch|Shared  
-|Ja|Für die vier Lüfter in den beiden PCMs wird jeweils eine eigene Zeile angezeigt.|
-|Lokaler Speicher [HDD]|–|Logisch|Shared  
-|–|Zeigt den Zustand des logischen Speicherpools an, der auf der Grundlage von Geräte-HDDs erstellt wird.|
+|Laufwerk in Einschubfach [0-11]|Laufwerke|Physisch|Shared|Ja|Die einzelnen HDD-Laufwerke an der Vorderseite des EBOD-Gehäuses werden jeweils in einer eigenen Zeile angegeben.|
+|Ambiente-Temperatursensor|Gehäuse|Physisch|Shared|Nein|Misst die Temperatur im Gehäuse.|
+|Midplane-Temperatursensor|Gehäuse|Physisch|Shared|Nein|Misst die Temperatur auf der mittleren Ebene.|
+|Hörbarer Alarm|Gehäuse|Physisch|Shared|Nein|Gibt an, ob das Subsystem für den akustischen Alarm im Gehäuse funktionsfähig ist.|
+|Gehäuse|Gehäuse|Physisch|Shared|Ja|Gibt an, dass ein Gehäuse vorhanden ist.|
+|Gehäuseeinstellungen|Gehäuse|Physisch|Shared|Nein|Bezieht sich auf das OPS oder vordere Bedienfeld des Gehäuses.|
+|Spannungssensoren|PCM|Physisch|Shared|Nein|Der angezeigte Zustand zahlreicher Spannungssensoren gibt Aufschluss darüber, ob die gemessene Spannung innerhalb des Toleranzbereichs liegt.|
+|Stromsensoren|PCM|Physisch|Shared|Nein|Der angezeigte Zustand zahlreicher Stromsensoren gibt Aufschluss darüber, ob die gemessene Stromstärke innerhalb des Toleranzbereichs liegt.|
+|Temperatursensoren in PCM|PCM|Physisch|Shared|Nein|Der angezeigte Zustand zahlreicher Temperatursensoren (beispielsweise Einlass- und Hotspot-Sensoren) gibt Aufschluss darüber, ob die gemessene Temperatur innerhalb des Toleranzbereichs liegt.|
+|Netzteil [0-1]|PCM|Physisch|Shared|Ja|Für die einzelnen Stromversorgungen in den beiden PCMs an der Geräterückseite wird jeweils eine eigene Zeile angezeigt.|
+|Kühlung [0-1]|PCM|Physisch|Shared|Ja|Für die vier Lüfter in den beiden PCMs wird jeweils eine eigene Zeile angezeigt.|
+|Lokaler Speicher [HDD]|–|Logisch|Shared|–|Zeigt den Zustand des logischen Speicherpools an, der auf der Grundlage von Geräte-HDDs erstellt wird.|
 |Controller [0-1] [Status]|E/A|Physisch|Controller|Ja|Zeigt den Zustand der Controller im EBOD-Modul an.|
 |Temperatursensoren in EBOD|E/A|Physisch|Controller|Nein|Der angezeigte Zustand zahlreicher Temperatursensoren der einzelnen Controller gibt Aufschluss darüber, ob die Temperatur innerhalb des Toleranzbereichs liegt.|
 |SAS-Erweiterung|E/A|Physisch|Controller|Nein|Gibt den Zustand der SAS-Erweiterung an, über die der integrierte Speicher mit dem Controller verbunden wird.|
@@ -172,3 +137,4 @@ Die folgende Tabelle gibt Aufschluss über die physischen und logischen Komponen
 - Sollten weiterhin Geräteprobleme auftreten, [wenden Sie sich an den Microsoft-Support](storsimple-contact-microsoft-support.md).
 
 <!---HONumber=AcomDC_0107_2016-->
+
