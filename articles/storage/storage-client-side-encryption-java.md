@@ -232,6 +232,8 @@ Wenn die Entität "TableEntity" implementiert, können der Getter und Setter der
 Beachten Sie, dass ein Verschlüsseln Ihrer Storage-Daten einen zusätzlichen Leistungsaufwand verursacht. Der Inhaltsschlüssel und der IV müssen generiert, der Inhalt selbst muss verschlüsselt, und zusätzliche Metadaten müssen formatiert und hochgeladen werden. Dieser Aufwand variiert abhängig von der Menge der zu verschlüsselnden Daten. Es empfiehlt sich, dass Kunden ihre Anwendungen während der Entwicklung immer hinsichtlich der Leistung testen.
 
 ## Nächste Schritte  
-[Maven-Paket mit der Azure Storage-Clientbibliothek für Java] herunterladen(<fix URL>) [Azure Storage-Clientbibliothek für Java-Quellcode von GitHub](https://github.com/Azure/azure-storage-java) herunterladen Maven-Pakete [Core](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Core/), [Client](http://www.nuget.org/packages/Microsoft.Azure.KeyVault/) und [Extensions](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Extensions/) für den Azure-Schlüsseltresor herunterladen Lesen Sie die [Dokumentation zum Azure-Schlüsseltresor](../articles/key-vault-whatis.md)
+[Maven-Paket mit der Azure Storage-Clientbibliothek für Java](<fix URL>) herunterladen 
+[Azure Storage-Clientbibliothek für Java-Quellcode von GitHub](https://github.com/Azure/azure-storage-java) herunterladen
+Maven-Pakete [Core](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Core/), [Client](http://www.nuget.org/packages/Microsoft.Azure.KeyVault/) und [Extensions](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Extensions/)für den Azure-Schlüsseltresor herunterladen Lesen Sie die [Dokumentation zum Azure-Schlüsseltresor](../articles/key-vault-whatis.md)
 
-<!---HONumber=AcomDC_0107_2016-->
+<!----HONumber=AcomDC_0107_2016-->
