@@ -30,6 +30,7 @@ Führen Sie die folgenden Schritte aus, um Supportanfragen für Azure Active Dir
 
     ![Support – Wechseln des Verzeichnisses](./media/active-directory-b2c-support/support-switch-dir.png)
 
+    
 3. Klicken Sie nach dem Wechsel des Verzeichnisses auf **Hilfe und Support**.
 
     ![Support – Support](./media/active-directory-b2c-support/support-support.png)
@@ -53,3 +54,4 @@ Wenn Sie den oben beschriebenen Schritt 2 nicht durchführen und versuchen, ein
 ![Support – Kein Abonnement](./media/active-directory-b2c-support/support-no-sub.png)
 
 <!---HONumber=AcomDC_0107_2016-->
+
