@@ -23,7 +23,7 @@ Sie können Azure-Ressourcen IP-Adressen zuweisen, um die Kommunikation mit ande
 
 Private IP-Adressen werden für die Kommunikation innerhalb eines virtuellen Azure-Netzwerks (VNet), Clouddiensts und Ihres lokalen Netzwerks verwendet, wenn Sie Ihr Netzwerk mithilfe eines VPN-Gateways oder einer ExpressRoute-Verbindung auf Azure ausdehnen.
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager deployment model](virtual-network-ip-addresses-overview-arm.md).
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/learn-about-deployment-models-classic-include.md)] [Ressourcen-Manager-Bereitstellungsmodell](virtual-network-ip-addresses-overview-arm.md).
 
 ## Öffentliche IP-Adressen
 Öffentliche IP-Adressen ermöglichen Azure-Ressourcen die Kommunikation mit dem Internet und öffentlichen Azure-Diensten wie [Azure Redis Cache](https://azure.microsoft.com/services/cache), [Azure Event Hubs](https://azure.microsoft.com/services/event-hubs), [SQL-Datenbanken](sql-database-technical-overview.md) und [Azure Storage](storage-introduction.md).
@@ -153,7 +153,8 @@ Im Folgenden werden IP-Adressfeatures im Ressourcen-Manager-Bereitstellungsmodel
 |**Öffentliche IP-Adresse**|VM|Als öffentliche IP-Adressen auf Instanzebene (ILPIP) bezeichnet (nur dynamisch)|Als öffentliche IP-Adresse bezeichnet (dynamisch oder statisch)|
 |||Einer IaaS-VM oder einer PaaS-Rolleninstanz zugewiesen|Der NIC einer VM zugeordnet|
 ||Load Balancer mit Internetzugriff |Als VIP (dynamisch) oder reservierte IP (statisch) bezeichnet|Als öffentliche IP-Adresse bezeichnet (dynamisch oder statisch)|
-|||Einem Clouddienst zugewiesen|Der Front-End-Konfiguration eines Load Balancers zugeordnet| ||||
+|||Einem Clouddienst zugewiesen|Der Front-End-Konfiguration eines Load Balancers zugeordnet|
+||||
 |**Private IP-Adresse**|VM|Als DIP bezeichnet|Als private IP-Adresse bezeichnet|
 |||Einer IaaS-VM oder einer PaaS-Rolleninstanz zugewiesen|Der NIC einer VM zugewiesen|
 ||Interner Load Balancer (ILB)|Dem ILB zugewiesen (dynamisch oder statisch)|Der Front-End-Konfiguration des ILB zugewiesen (dynamisch oder statisch)|
@@ -167,3 +168,4 @@ Im Folgenden werden IP-Adressfeatures im Ressourcen-Manager-Bereitstellungsmodel
 - [Erstellen eines internen Anwendungsgateways mit PowerShell](application-gateway-ilb.md)
 
 <!----HONumber=AcomDC_0107_2016-->
+

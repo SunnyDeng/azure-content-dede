@@ -22,7 +22,7 @@
 > [AZURE.SELECTOR]
 - [Portal](media-services-portal-creating-live-encoder-enabled-channel.md)
 - [.NET](media-services-dotnet-creating-live-encoder-enabled-channel.md)
-- [REST API](https://msdn.microsoft.com/library/azure/dn783458.aspx)
+- [REST API](https://msdn.microsoft.com/library/azure/dn783458.aspx)  
 
 > [AZURE.NOTE]
 > Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](/pricing/free-trial/?WT.mc_id=A261C142F).
@@ -531,3 +531,4 @@ Fügen Sie der app.config-Datei den Bereich „appSettings“ hinzu, und geben S
 Wenn dieses Thema nicht die erwarteten Informationen enthält, Informationen fehlen oder auf andere Weise Ihre Erwartungen nicht erfüllt wurden, senden Sie uns bitte über den Disqus-Thread unten Ihr Feedback.
 
 <!-----HONumber=AcomDC_1223_2015--->
+
