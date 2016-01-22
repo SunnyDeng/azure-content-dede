@@ -248,6 +248,3 @@ Maven-Pakete [Core](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Core/
 Lesen Sie die [Dokumentation zum Azure-Schlüsseltresor](../articles/key-vault-whatis.md)
 
 <!----HONumber=AcomDC_0107_2016-->
-
-
-

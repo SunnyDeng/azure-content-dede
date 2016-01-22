@@ -168,4 +168,3 @@ Im Folgenden werden IP-Adressfeatures im Ressourcen-Manager-Bereitstellungsmodel
 - [Erstellen eines internen Anwendungsgateways mit PowerShell](application-gateway-ilb.md)
 
 <!----HONumber=AcomDC_0107_2016-->
-
