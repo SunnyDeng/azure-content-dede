@@ -45,9 +45,11 @@ Führen Sie die unten angegebenen Schritte aus, um eine Webanwendung aus Visual 
 
     - Die **Copy Local**-Eigenschaft wird für alle Assemblys, die für MVC 2-, MVC 3-, MVC 4- und Silverlight-Geschäftsanwendungen erforderlich sind, auf "true" festgelegt. So werden diese Assemblys dem Dienstpaket hinzugefügt, das für die Bereitstellung verwendet wird.
 
-  >[AZURE.IMPORTANT]Wenn Sie über andere Assemblys oder Dateien verfügen, die für diese Webanwendung benötigt werden, müssen Sie die Eigenschaften für diese Dateien manuell festlegen. Informationen zum Festlegen dieser Eigenschaften finden Sie im Abschnitt **Einschließen von Dateien in das Dienstpaket** weiter unten in diesem Artikel.
+  >[AZURE.IMPORTANT]Wenn Sie über andere Assemblys oder Dateien verfügen, die für diese Webanwendung benötigt werden, müssen Sie die Eigenschaften für diese Dateien manuell festlegen. Informationen zum Festlegen dieser Eigenschaften finden Sie im Abschnitt **Einschließen von Dateien in das Dienstpaket** weiter unten in diesem Artikel.  
+
 
   >[AZURE.NOTE]Wenn eine Webrolle für ein bestimmtes Webprojekt in einem Azure-Projekt der Lösung bereits vorhanden ist, wird **Konvertieren**, **In Azure-Clouddienstprojekt konvertieren** im Kontextmenü für dieses Webprojekt nicht angezeigt.
+
 
   Falls Ihre Webanwendung mehrere Webprojekte umfasst und Sie Webrollen für jedes Webprojekt erstellen möchten, müssen Sie die Schritte in diesem Verfahren für jedes Webprojekt ausführen. Hierbei werden für jede Webrolle separate Azure-Projekte erstellt. Jedes Webprojekt kann separat veröffentlicht werden. Alternativ dazu können Sie einem vorhandenen Azure-Projekt in der Webanwendung eine weitere Webrolle hinzufügen. Öffnen Sie hierzu das Kontextmenü für den Ordner **Rollen** in Ihrem Azure-Projekt, wählen Sie **Hinzufügen** und **Webrollenprojekt in Lösung** und dann das Projekt aus, das als Webrolle hinzugefügt werden soll. Klicken Sie anschließend auf die Schaltfläche **OK**.
 
