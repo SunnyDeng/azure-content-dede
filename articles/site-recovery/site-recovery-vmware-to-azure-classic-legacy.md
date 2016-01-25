@@ -1,10 +1,10 @@
 <properties
 	pageTitle="Virtuelle Computer und physische Server in Azure mit Azure Site Recovery (Legacy) replizieren | Microsoft Azure" 
-	description ="Beschreibt eine Legacy-Bereitstellung zum Einrichten von Azure Site Recovery, um eine Replikation, Failover und Wiederherstellung von lokalen VMware virtuellen Computern und physischen Windows-/Linux-Servern zu Azure zu orchestrieren." " 
-	services ="site-recovery"
-	documentationCenter =""
+	description="Beschreibt eine Legacy-Bereitstellung zum Einrichten von Azure Site Recovery, um eine Replikation, Failover und Wiederherstellung von lokalen VMware virtuellen Computern und physischen Windows-/Linux-Servern zu Azure zu orchestrieren." " 
+	services="site-recovery"
+	documentationCenter=""
 	authors="rayne wiselman"
-	manager ="jwhit"
+	manager="jwhit"
 	editor=""/>
 
 <tags
@@ -809,4 +809,4 @@ The information in Section B is regarding Third Party Code components that are b
 
 Die vollständige Datei steht im [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=529428) zur Verfügung. Microsoft behält sich alle Rechte vor, die hier nicht ausdrücklich, stillschweigend, durch Rechtsverwirkung oder auf andere Weise gewährt wurden.
 
-<!---HONumber=AcomDC_0114_2016-->
+<!----HONumber=AcomDC_0114_2016-->
