@@ -46,7 +46,7 @@ Eine Parameterdefinition in PowerShell-Workflow-Runbooks hat die folgende allgem
 
          [Parameter (Mandatory= $true/$false)]
          [Type] Name2 = <Default value>
-     )
+     ) 
 ```
 
 >[AZURE.NOTE]Wenn Sie bei der Definition der Parameter nicht das Attribut „**Erforderlich**” angeben, gilt der Parameter standardmäßig als optional. Wenn Sie für einen Parameter in PowerShell-Workflow-Runbooks einen Standardwert vorgeben, wird dieser Parameter von PowerShell als optional behandelt, egal was beim Attribut „**Erforderlich**” steht.
@@ -77,7 +77,7 @@ Um ein [grafisches Runbook](automation-first-runbook-graphical.md) mit Eingabepa
 
 Sie können mit der Aktivität [**Write-Output**](https://technet.microsoft.com/library/hh849921.aspx) die Namen von virtuellen Computern abrufen. Die Aktivität **Get-AzureVM** wird zwei Parameter akzeptieren: den „**Namen der virtuellen Computers**” und den „**Dienstkontonamen**”. Da diese Parameter bei jedem Start des Runbooks unterschiedliche Werte benötigen könnten, können Sie Ihrem Runbook Eingabeparameter hinzufügen. Mit diesen Schritten fügen Sie Eingabeparameter hinzu:
 
-1. Wählen Sie das grafische Runbook im Blatt **Runbooks** aus, und [bearbeiten](automation-graphical-authoring-intro.md) Sie es.
+1. Wählen Sie das grafische Runbook im Blatt **Runbooks** aus, und [bearbeiten](automation-graphical-authoring-intro.md) Sie es. 
 
 2. Klicken Sie im Blatt „**Bearbeiten**” auf „**Eingabe und Ausgabe**”, um das **Eingabe- und Ausgabe**-Blatt zu öffnen.
 
@@ -98,9 +98,17 @@ Sie können mit der Aktivität [**Write-Output**](https://technet.microsoft.com/
 
 4. Erstellen Sie zwei Parameter mit den folgenden Eigenschaften, die von der Aktivität **Get-AzureVM** verwendet werden:
 
-    * **Parameter1:** Name--VMName, Type--Zeichenfolge, Erforderlich--Nein
+    * **Parameter1:** 
+    Name--VMName, 
+    Type--Zeichenfolge, 
+    Erforderlich--Nein
 
-    * **Parameter2:** Name--VMNameServiceName, Typ--Zeichenfolge, Erforderlich--Nein, Standardwert--Benutzerdefiniert, Benutzerdefinierter Standardwert--<Name des Standarddienstes das die virtuellen Computer enthält>
+    * **Parameter2:** 
+    Name--VMNameServiceName, 
+    Typ--Zeichenfolge, 
+    Erforderlich--Nein, 
+    Standardwert--Benutzerdefiniert,
+    Benutzerdefinierter Standardwert--<Name des Standarddienstes das die virtuellen Computer enthält>
 
 5. Wenn Sie die Parameter hinzugefügt haben, klicken Sie auf **OK**. Sie können die Parameter jetzt im Blatt „**Eingabe und Ausgabe**” sehen. Klicken Sie nochmal auf „**OK**”, dann auf „**Speichern**”, und „**Veröffentlichen**” Sie Ihr Runbook.
 
@@ -131,7 +139,8 @@ In der Beschriftung unter dem Eingabefeld können Sie sehen, welche Attribute f�
 
     **Beispiel:**
 
-      ``` $params = @{„VMName“=„WSVMClassic“; „ServiceName“=„WSVMClassicSG“}
+      ```
+        $params = @{„VMName“=„WSVMClassic“; „ServiceName“=„WSVMClassicSG“}
 
         Start-AzureAutomationRunbook -AutomationAccountName “TestAutomation” -Name “Get-AzureVMGraphical” -Parameters $params
       ```
@@ -141,7 +150,8 @@ In der Beschriftung unter dem Eingabefeld können Sie sehen, welche Attribute f�
 
     **Beispiel:**
 
-      ``` $params = @{„VMName“=„WSVMClassic“;„ServiceName“=„WSVMClassicSG“}
+      ```
+        $params = @{„VMName“=„WSVMClassic“;„ServiceName“=„WSVMClassicSG“}
 
         Start-AzureRMAutomationRunbook -AutomationAccountName “TestAutomationRG” -Name “Get-AzureVMGraphical” –ResourceGroupName “RG1” -Parameters $params
       ```

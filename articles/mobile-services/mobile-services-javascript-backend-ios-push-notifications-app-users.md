@@ -69,6 +69,8 @@ function insert(item, user, request) {
 <!-- URLs. -->
 [Erste Schritte mit Authentifizierung]: mobile-services-ios-get-started-users.md
 [Erste Schritte mit Pushbenachrichtigungen]: mobile-services-javascript-backend-ios-get-started-push.md
+
+[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Mobile Services .NET How-to Conceptual Reference]: mobile-services-ios-how-to-use-client-library.md
 
 <!---HONumber=AcomDC_0114_2016-->

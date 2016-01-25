@@ -378,7 +378,12 @@ Weitere Hinweise:
 
 		browser.Navigate(string.Format(@"{0}/login/aad", GATEWAY_URL));
 
-	Hier die Werte für andere Anbieter: * "microsoftaccount" * "facebook" * "twitter" * "google" <br/><br/>
+	Hier die Werte für andere Anbieter: 
+	* "microsoftaccount" 
+	* "facebook" 
+	* "twitter" 
+	* "google"
+<br/><br/>
 
 * Der zweite Parameter für die `GetConsentLinkAsync()`-Methode ist die Rückruf-URL, zu der der Zustimmungsserver umgeleitet wird, nachdem sich der Benutzer bei Dropbox angemeldet und die Zustimmung für den Zugriff auf das Konto des Benutzers gegeben hat.
 
@@ -422,7 +427,7 @@ Falls Sie den HTTP-Fehler 405 erhalten, sobald der Code "GetConsentLinkAsync" au
 
 ![](./media/app-service-api-dotnet-connect-to-saas/http405.png)
 
-Sie erhalten den Fehler "405 – Nicht zulässig", da der Client versucht, eine Nicht-SSL-HTTP POST-Anforderung zu stellen, die das Gateway an **https://* umleitet. Diese Umleitung verursacht eine GET-Anforderung. Die URL zum Abrufen von eines Zustimmungslinks akzeptiert nur POST-Anforderungen.
+Sie erhalten den Fehler "405 – Nicht zulässig", da der Client versucht, eine Nicht-SSL-HTTP POST-Anforderung zu stellen, die das Gateway an *https://* umleitet. Diese Umleitung verursacht eine GET-Anforderung. Die URL zum Abrufen von eines Zustimmungslinks akzeptiert nur POST-Anforderungen.
 
 ### <a id="400"></a>HTTP-Fehler 400 anstelle der Dropbox-Anmeldeseite
 

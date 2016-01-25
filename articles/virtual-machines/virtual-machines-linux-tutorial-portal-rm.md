@@ -35,6 +35,8 @@ Das Erstellen eines virtuellen Azure-Computers (VM), auf dem Linux ausdeführt w
 
 > [AZURE.NOTE]In diesem Lernprogramm wird ein virtueller Azure-Computer erstellt, der über die Azure-Ressourcengruppen-API verwaltet wird. Weitere Informationen finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](resource-group-overview.md).
 
+<br>
+
 [AZURE.INCLUDE [free-trial-note](../../includes/free-trial-note.md)]
 
 ## Auswählen des Images

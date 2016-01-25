@@ -42,6 +42,7 @@ Bevor Sie den Buildcomputer einrichten können, müssen Sie einen „Dienstprinz
 
     >[AZURE.NOTE]Bei Verwendung von Windows 10 mit neuesten Updates können Sie diesen Schritt überspringen.
 
+
 2.	Installieren und aktualisieren Sie das AzureRM-Modul.
     1.  Wenn Sie eine ältere Version von Azure PowerShell installiert haben, entfernen Sie sie. Klicken Sie mit der rechten Maustaste auf die Schaltfläche „Start“, und wählen Sie „**Programme hinzufügen/entfernen**“. Suchen Sie nach „Azure PowerShell“, und deinstallieren Sie es.
     2.  Öffnen Sie eine PowerShell-Eingabeaufforderung.

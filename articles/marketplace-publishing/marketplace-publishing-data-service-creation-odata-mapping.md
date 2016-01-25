@@ -72,9 +72,12 @@ Ermöglicht die Definition von Funktionen (SPROCs) und Entitäten, die über ein
 > [AZURE.TIP]Klicken Sie auf den Dropdownpfeil **Weitere Versionen**, und wählen Sie eine Version aus, falls der Artikel nicht angezeigt wird.
 
 ### EDM – Entry Data Model
-- Übersicht: [http://msdn.microsoft.com/library/vstudio/ee382825(v=vs.100).aspx][OverviewLink] [OverviewLink]:http://msdn.microsoft.com/library/vstudio/ee382825(v=vs.100).aspx
-- Vorschau: [http://msdn.microsoft.com/library/aa697428(v=vs.80).aspx][PreviewLink] [PreviewLink]:http://msdn.microsoft.com/library/aa697428(v=vs.80).aspx
-- Datentypen: [http://msdn.microsoft.com/library/bb399548(v=VS.100).aspx][DataTypesLink] [DataTypesLink]:http://msdn.microsoft.com/library/bb399548(v=VS.100).aspx
+- Übersicht: [http://msdn.microsoft.com/library/vstudio/ee382825(v=vs.100).aspx][OverviewLink]
+[OverviewLink]:http://msdn.microsoft.com/library/vstudio/ee382825(v=vs.100).aspx
+- Vorschau: [http://msdn.microsoft.com/library/aa697428(v=vs.80).aspx][PreviewLink]
+[PreviewLink]:http://msdn.microsoft.com/library/aa697428(v=vs.80).aspx
+- Datentypen: [http://msdn.microsoft.com/library/bb399548(v=VS.100).aspx][DataTypesLink]
+[DataTypesLink]:http://msdn.microsoft.com/library/bb399548(v=VS.100).aspx
 
 Im Folgenden sehen Sie den detaillierten Links-nach-Rechts-Ablauf ab dem Punkt, an dem der Client in die OData-Anweisung eintritt (Aufruf des Inhaltsanbieter-Webdienst) bis zu dem Punkt, an dem die Ergebnisse/Daten zurückgegeben werden:
 
@@ -298,4 +301,4 @@ Stellt eine Verbindung mit einem Dienst her, der eine Datenbanktabelle oder -sic
 - Wenn Sie an Beispielen interessiert sind, lesen Sie den Artikel [Beispiele für die OData-Zuordnung im Datendienst](marketplace-publishing-data-service-creation-odata-mapping-examples.md), um Beispielcode kennenzulernen sowie Codesyntax und Kontext zu verstehen.
 - Um zum vorgeschriebenen Pfad für die Veröffentlichung eines Datendiensts im Azure Marketplace zurückzukehren, lesen Sie den Artikel [Leitfaden zum Veröffentlichen von Datendiensten](marketplace-publishing-data-service-creation.md).
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0114_2016--->

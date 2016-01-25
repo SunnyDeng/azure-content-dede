@@ -567,7 +567,8 @@ Speicherkonten bieten mehr Speicherplatz und längere Aufbewahrungszeiten für P
 
 1. Klicken Sie in Visual Studio im Fenster **Azure-Web-App** auf die Registerkarte **Protokolle** und anschließend auf **Protokollierung im Verwaltungsportal konfigurieren**.
 
-    <!-- todo:screenshot of new portal if the VS page link goes to new portal -->![Konfigurieren der Protokollierung](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-configlogging.png)
+    <!-- todo:screenshot of new portal if the VS page link goes to new portal -->
+	![Konfigurieren der Protokollierung](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-configlogging.png)
 
 	Damit öffnen Sie im klassischen Portal die Registerkarte **Konfigurieren** für Ihre Web-App.
 

@@ -96,16 +96,19 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
 8.  Führen Sie auf der Dialogfeldseite **Mit SAML anmelden** die folgenden Schritte aus, und klicken Sie dann auf **Änderungen speichern**:
 
-    1.  Klicken Sie auf **Einmaliges Anmelden mit SAML aktivieren**.![Mit SAML anmelden](./media/active-directory-saas-samanage-tutorial/IC771719.png "Mit SAML anmelden")
-    2.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren bei Samanage** den Wert der **Identitätsanbieter-ID**, und fügen Sie ihn in das Textfeld **Identitätsanbieter-URL** ein.![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-samanage-tutorial/IC771720.png "Einmaliges Anmelden konfigurieren")
-3.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Samanage** den Wert für **Remoteanmelde-URL**, und fügen Sie ihn ins Textfeld **Anmelde-URL** ein.
+    1.  Klicken Sie auf **Einmaliges Anmelden mit SAML aktivieren**.
+        ![Mit SAML anmelden](./media/active-directory-saas-samanage-tutorial/IC771719.png "Mit SAML anmelden")
+    2.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren bei Samanage** den Wert der **Identitätsanbieter-ID**, und fügen Sie ihn in das Textfeld **Identitätsanbieter-URL** ein.
+        ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-samanage-tutorial/IC771720.png "Einmaliges Anmelden konfigurieren")
+    3.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Samanage** den Wert für **Remoteanmelde-URL**, und fügen Sie ihn ins Textfeld **Anmelde-URL** ein.
     4.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Samanage** den Wert für **Remoteabmelde-URL**, und fügen Sie ihn ins Textfeld **Abmelde-URL** ein.
     5.  Erstellen Sie eine **Base64-codierte** Datei aus dem heruntergeladenen Zertifikat.  
 
         >[AZURE.TIP]Weitere Informationen finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache).
 
     6.  Öffnen Sie das Base64-codierte Zertifikat in Editor, kopieren Sie den Inhalt des Zertifikats in die Zwischenablage, und fügen Sie ihn anschließend in das Textfeld **X.509-Zertifikat** ein.
-    7.  Klicken Sie auf **Benutzer erstellen, wenn sie nicht in Samanage vorhanden sind**. ![Aktualisieren](./media/active-directory-saas-samanage-tutorial/IC771722.png "Aktualisieren")
+    7.  Klicken Sie auf **Benutzer erstellen, wenn sie nicht in Samanage vorhanden sind**.
+        ![Aktualisieren](./media/active-directory-saas-samanage-tutorial/IC771722.png "Aktualisieren")
     8.  Klicken Sie auf **Aktualisieren**.
 
 9.  Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.

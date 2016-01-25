@@ -93,7 +93,7 @@ Ein Auslastungstestprojekt besteht aus mindestens einem Szenario, das durch eine
 
 4. Geben Sie im Abschnitt **Testlaufeinstellungen** die Dauer des Auslastungstests an.
 
-    >[AZURE.NOTE]Die Option **Testiterationen** ist nur verfügbar, wenn Sie einen Auslastungstest lokal über Visual Studio ausführen.
+    >[AZURE.NOTE] Die Option **Testiterationen** ist nur verfügbar, wenn Sie einen Auslastungstest lokal über Visual Studio ausführen.
 
 5. Geben Sie im Abschnitt **Speicherort** der **Testlaufeinstellungen** das Verzeichnis an, in dem Auslastungstestanforderungen generiert werden. Der Assistent fordert Sie möglicherweise auf, sich bei Ihrem Team Services-Konto anzumelden. Melden Sie sich an, und wählen Sie dann einen geografischen Standort aus. Wenn Sie fertig sind, klicken Sie auf die Schaltfläche **Fertig stellen**.
 

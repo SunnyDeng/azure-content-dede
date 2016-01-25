@@ -27,7 +27,7 @@ Sie können "keytool" zum Hinzufügen des Zertifizierungsstellenzertifikats verw
 
 	`keytool -list -keystore cacerts`
 
-	Sie werden aufgefordert, das Kennwort für den Speicher einzugeben. Das Standardkennwort lautet **changeit**. (Falls Sie das Kennwort ändern möchten, finden Sie die entsprechenden Informationen in der keytool-Dokumentation unter http://docs.oracle.com/javase/7/docs/technotes/tools/windows/keytool.html.) Bei diesem Beispiel wird davon ausgegangen, dass das Zertifikat mit dem MD5-Fingerabdruck "67:CB:9D:C0:13:24:8A:82:9B:B2:17:1E:D1:1B:EC:D4" nicht aufgeführt ist und dass Sie dieses Zertifikat importieren möchten. Dieses bestimmte Zertifikat ist für den Twilio API-Dienst erforderlich.
+	Sie werden aufgefordert, das Kennwort für den Speicher einzugeben. Das Standardkennwort lautet **changeit**. (Falls Sie das Kennwort ändern möchten, finden Sie die entsprechenden Informationen in der keytool-Dokumentation unter <http://docs.oracle.com/javase/7/docs/technotes/tools/windows/keytool.html>.) Bei diesem Beispiel wird davon ausgegangen, dass das Zertifikat mit dem MD5-Fingerabdruck "67:CB:9D:C0:13:24:8A:82:9B:B2:17:1E:D1:1B:EC:D4" nicht aufgeführt ist und dass Sie dieses Zertifikat importieren möchten. Dieses bestimmte Zertifikat ist für den Twilio API-Dienst erforderlich.
 2. Rufen Sie das Zertifikat in der Liste der Zertifikate ab, die unter [GeoTrust-Stammzertifikate](http://www.geotrust.com/resources/root-certificates/) aufgeführt sind. Klicken Sie mit der rechten Maustaste auf den Link für das Zertifikat mit der Seriennummer "35:DE:F4:CF", und speichern Sie das Zertifikat im Ordner **jdk\\jre\\lib\\security**. In diesem Beispiel wurde das Zertifikat in einer Datei mit dem Namen **Equifax\_Secure\_Certificate\_Authority.cer** gespeichert.
 3. Importieren Sie das Zertifikat mithilfe des folgenden Befehls:
 
@@ -52,7 +52,7 @@ Wenn Sie das Zertifikat "Baltimore CyberTrust Root" hinzufügen müssen, sei dar
 
 ## Nächste Schritte
 
-Weitere Informationen zu den von Azure verwendeten Stammzertifikaten finden Sie unter [Azure Root Certificate Migration](http://blogs.msdn.com/b/windowsazure/archive/2013/03/15/windows-azure-root-certificate-migration.aspx) (in englischer Sprache).
+Weitere Informationen zu den von Azure verwendeten Stammzertifikaten finden Sie unter [Azure Root Certificate Migration (in englischer Sprache)](http://blogs.msdn.com/b/windowsazure/archive/2013/03/15/windows-azure-root-certificate-migration.aspx).
 
 Weitere Informationen zu Java finden Sie im [Java Developer Center](/develop/java/).
 

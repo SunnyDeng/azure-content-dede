@@ -47,7 +47,7 @@ Sie müssen folgende Voraussetzungen erfüllen, um den Blob-Dienst mit Ihrer Hud
 
     Wenn Sie noch keine Hudson CI-Lösung im Einsatz haben, können Sie eine Hudson CI-Lösung auf folgende Weise ausführen:
 
-    1. Laden Sie für einen Java-fähigen Computer Hudson WAR von http://hudson-ci.org/ herunter.
+    1. Laden Sie für einen Java-fähigen Computer Hudson WAR von <http://hudson-ci.org/> herunter.
     2. Führen Sie in einer Eingabeaufforderung im Ordner, der Hudson.WAR enthält, den folgenden Befehl aus: Falls Sie zum Beispiel Version 3.1.2 heruntergeladen haben:
 
         `java -jar hudson-3.1.2.war`
@@ -73,7 +73,7 @@ Um den Blob-Dienst mit Hudson verwenden zu können, müssen Sie das Azure-Speich
 ## Installieren des Azure-Speicher-Plug-Ins ##
 
 1. Klicken Sie im Hudson-Dashboard auf **Manage Hudson**.
-2. Klicken Sie auf der Seite **Hudson verwalten** auf **Plug-Ins verwalten**.
+2. Klicken Sie auf der Seite **Hudson verwalten ** auf **Plug-Ins verwalten**.
 3. Klicken Sie auf die Registerkarte **Available**.
 4. Klicken Sie auf **Others**.
 5. Wählen Sie im Abschnitt **Artefakt-Uploadprogramme** die Option **Microsoft Azure Storage-Plug-In**.

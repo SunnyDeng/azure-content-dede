@@ -358,7 +358,7 @@ Unter den folgenden Links erhalten Sie weitere Informationen zu komplexeren Spei
 - [Azure Storage-REST-API][]
 - [Azure Storage-Teamblog][]
 
-  [Download the Azure SDK for Java]: http://go.microsoft.com/fwlink/?LinkID=525671
+  [Downloadseite des Azure SDK für Java]: http://go.microsoft.com/fwlink/?LinkID=525671
   [Erstellen eines Speicherkontos]: storage-create-storage-account.md#create-a-storage-account
   [Verwalten von Speicherkonten]: storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys
   [Verwenden des Blob-Speicherdiensts in Python]: storage-java-how-to-use-blob-storage.md
