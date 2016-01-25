@@ -14,17 +14,17 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/08/2015"
+	ms.date="01/07/2016"
 	ms.author="davidmu"/>
 
 # Erstellen Sie einen virtuellen Windows-Computer mit einer Resource Manager-Vorlage
 
 > [AZURE.SELECTOR]
-- [Azure Portal - Windows](virtual-machines-windows-tutorial.md)
-- [Azure PowerShell](virtual-machines-ps-create-preconfigure-windows-resource-manager-vms.md)
-- [Azure PowerShell - Template](virtual-machines-create-windows-powershell-resource-manager-template.md)
-- [Azure Portal - Linux](virtual-machines-linux-tutorial-portal-rm.md)
-- [Azure CLI](virtual-machines-linux-tutorial.md)
+- [Portal - Windows](virtual-machines-windows-tutorial.md)
+- [PowerShell](virtual-machines-ps-create-preconfigure-windows-resource-manager-vms.md)
+- [PowerShell - Template](virtual-machines-create-windows-powershell-resource-manager-template.md)
+- [Portal - Linux](virtual-machines-linux-tutorial-portal-rm.md)
+- [CLI](virtual-machines-linux-tutorial.md)
 
 <br>
 
@@ -285,18 +285,8 @@ Folgendes sollte angezeigt werden:
 
 Nun ist ein neuer virtueller Windows-Computer mit dem Namen „MyWindowsVM“ in Ihrer neuen Ressourcengruppe vorhanden.
 
-## Zusätzliche Ressourcen
+## Nächste Schritte
 
-[Azure Compute-, Network- and Storage-Anbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md)
+Informationen zum Verwalten der gerade erstellten virtuellen Maschine finden Sie unter [Verwalten von virtuellen Computern mit Azure-Ressourcen-Manager und PowerShell](virtual-machines-deploy-rmtemplates-powershell.md).
 
-[Übersicht über den Azure-Ressourcen-Manager](resource-group-overview.md)
-
-[Create a Windows virtual machine with Azure Resource Manager and PowerShell (Erstellen eines virtuellen Windows-Computers mit dem Azure-Ressourcen-Manager und PowerShell)](virtual-machines-create-windows-powershell-resource-manager.md)
-
-[Sie können virtuelle Windows-Computer mit PowerShell und dem klassischen Bereitstellungsmodell erstellen.](virtual-machines-ps-create-preconfigure-windows-vms.md)
-
-[Dokumentation zu virtuellen Computern](http://azure.microsoft.com/documentation/services/virtual-machines/)
-
-[Installieren und Konfigurieren von Azure PowerShell](install-configure-powershell.md)
-
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0114_2016-->

@@ -17,7 +17,7 @@
    ms.author="seanmck"/>
 
 # Ihre Service Fabric-Anwendung und nächste Schritte
-Ihre Service Fabric-Anwendung wurde nun erstellt. Dieser Artikel beschreibt die Zusammensetzung des Projekts und einige mögliche nächste Schritte.
+Ihre Azure Service Fabric-Anwendung wurde erstellt. Dieser Artikel beschreibt die Zusammensetzung des Projekts und einige mögliche nächste Schritte.
 
 ## Ihre Anwendung
 Jede neue Anwendung umfasst ein Anwendungsprojekt. Es gibt möglicherweise je nach gewähltem Diensttyp ein oder zwei zusätzliche Projekte.
@@ -27,7 +27,7 @@ Das Anwendungsprojekt besteht aus:
 
 - einem Satz von Verweisen auf die Dienste, aus denen die Anwendung besteht
 
-- zwei Veröffentlichungsprofilen (Lokal und Cloud), die Sie zum Verwalten der Voreinstellungen für die Arbeit mit unterschiedlichen Umgebungen verwenden können, z. B. als Clusterendpunkt und ob standardmäßig Upgradebereitstellungen ausgeführt werden sollen
+- zwei Veröffentlichungsprofilen (Lokal und Cloud), die Sie zum Verwalten der Voreinstellungen für die Arbeit mit unterschiedlichen Umgebungen verwenden können – z. B. als Clusterendpunkt und ob standardmäßig Upgradebereitstellungen ausgeführt werden sollen
 
 - zwei Anwendungsparameterdateien (Lokal und Cloud), mit denen Sie umgebungsspezifische Anwendungskonfigurationen verwalten können, wie z. B. die Anzahl der Partitionen, die für einen Dienst erstellt werden sollen
 
@@ -36,7 +36,7 @@ Das Anwendungsprojekt besteht aus:
 - das Anwendungsmanifest, das die Anwendung beschreibt
 
 ### Reliable Services
-Wenn Sie einen neuen Reliable Service hinzufügen, fügt Visual Studio der Projektmappe ein Dienstprojekt hinzu. Das Dienstprojekt enthält eine Klasse, die sich je nach ausgewähltem Typ entweder von `StatelessService` oder `StatefulService` ableitet.
+Wenn Sie einen neuen Reliable Service hinzufügen, fügt Visual Studio Ihrer Lösung ein Dienstprojekt hinzu. Das Dienstprojekt enthält eine Klasse, die sich je nach ausgewähltem Typ entweder von `StatelessService` oder `StatefulService` ableitet.
 
 ### Reliable Actors
 Wenn Sie einen neuen Reliable Actor hinzufügen, fügt Visual Studio zwei Projekte zur Projektmappe hinzu: ein Akteurprojekt und ein Schnittstellenprojekt.
@@ -48,9 +48,9 @@ Beachten Sie, dass Akteurprojekte kein Standardverhalten für den Start enthalte
 ### ASP.NET 5
 Die ASP.NET 5-Vorlagen zur Verwendung in Service Fabric-Anwendungen sind fast identisch mit jenen für unabhängig erstellte ASP.NET 5-Projekte. Die einzigen Unterschiede sind:
 
-- Das Projekt enthält einen **PackageRoot**-Ordner zum Speichern des ServiceManifest sowie Data- und Config-Pakete.
+- Das Projekt enthält einen **PackageRoot**-Ordner zum Speichern der ServiceManifest-Datei sowie Data- und Config-Pakete.
 
-- Das Projekt verweist auf ein zusätzliches NuGet-Paket (Microsoft.ServiceFabric.AspNet.Hosting), das als Brücke zwischen DNX und Service Fabric fungiert.
+- Das Projekt verweist auf ein zusätzliches NuGet-Paket (Microsoft.ServiceFabric.AspNet.Hosting), das als Brücke zwischen der .NET Ausführungsumgebung (DNX) und Service Fabric fungiert.
 
 ## Nächste Schritte
 ### Hinzufügen eines Web-Front-Ends zur Anwendung
@@ -76,13 +76,14 @@ Service Fabric ermöglicht eine unabhängige Versionierung und Upgrades von unab
 Informationen zur Einrichtung einer Continuous Integration für die Service Fabric-Anwendung finden Sie unter [Konfigurieren der Continuous Integration in Visual Studio Team Services][ci-with-vso].
 
 
+
 <!-- Links -->
 [add-web-frontend]: ./service-fabric-add-a-web-frontend.md
 [create-cluster-in-portal]: ./service-fabric-cluster-creation-via-portal.md
 [publish-app-to-azure]: ./service-fabric-publish-app-remote-cluster.md
 [visualize-with-sfx]: ./service-fabric-visualizing-your-cluster.md
-[ci-with-vso]: ./service-fabric-configure-continuous-integration-with-vso.md
+[ci-with-vso]: ./service-fabric-set-up-continuous-integration.md
 [reliable-services-webapi]: ./service-fabric-reliable-services-communication-webapi.md
 [app-upgrade-tutorial]: ./service-fabric-application-upgrade-tutorial.md
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0114_2016-->

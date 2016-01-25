@@ -18,7 +18,7 @@
 
 # Erste Schritte mit Tools für elastische Datenbanken
 
-In diesem Dokument werden die Entwicklerfunktionen durch Ausführen der Beispielapp vorgestellt. Mit dem Beispiel wird eine einfache Sharding-Anwendung erstellt, und es werden die wichtigsten Funktionen von Tools für elastische Datenbanken erkundet. Das Beispiel veranschaulicht die Funktionen der [Clientbibliothek für elastische Datenbanken](sql-database-elastic-database-client-library.md).
+In diesem Dokument werden die Entwicklerfunktionen durch Ausführen der Beispiel-App vorgestellt. Mit dem Beispiel wird eine einfache Sharding-Anwendung erstellt, und es werden die wichtigsten Funktionen von Tools für elastische Datenbanken erkundet. Das Beispiel veranschaulicht die Funktionen der [Clientbibliothek für elastische Datenbanken](sql-database-elastic-database-client-library.md).
 
 ## Voraussetzungen
 
@@ -27,7 +27,7 @@ In diesem Dokument werden die Entwicklerfunktionen durch Ausführen der Beispiel
 
 ## Herunterladen und Ausführen der Beispiel-App
 
-Die Beispielanwendung unter **Elastische Datenbank mit Azure SQL – Erste Schritte** veranschaulicht die wichtigsten Aspekte der Entwicklungsoberfläche für Shardinganwendungen, die Tools für elastische Datenbanken in Azure SQL verwenden. Dabei stehen die wichtigsten Anwendungsfälle für [Shard-Zuordnungsverwaltung](sql-database-elastic-scale-shard-map-management.md), [datenabhängiges Routing](sql-database-elastic-scale-data-dependent-routing.md) und [Abfragen von mehreren Shards](sql-database-elastic-scale-multishard-querying.md) im Mittelpunkt. Gehen Sie folgendermaßen vor, um das Beispiel herunterzuladen und auszuführen:
+Die Beispielanwendung unter **Elastische Datenbank mit Azure SQL – Erste Schritte** veranschaulicht die wichtigsten Aspekte der Entwicklungsoberfläche für Sharding-Anwendungen, die Tools für elastische Datenbanken in Azure SQL verwenden. Dabei stehen die wichtigsten Anwendungsfälle für [Shard-Zuordnungsverwaltung](sql-database-elastic-scale-shard-map-management.md), [datenabhängiges Routing](sql-database-elastic-scale-data-dependent-routing.md) und [Abfragen mehrerer Shards](sql-database-elastic-scale-multishard-querying.md) im Mittelpunkt. Gehen Sie folgendermaßen vor, um das Beispiel herunterzuladen und auszuführen:
 
 1. Öffnen Sie Visual Studio, und wählen Sie **Datei -> Neu -> Projekt** aus.
 2. Klicken Sie im Dialogfeld auf **Online**.
@@ -61,7 +61,7 @@ Herzlichen Glückwunsch! Sie haben Ihre erste Sharding-Anwendung mit den Tools f
 ### Weitere Elastic Scale-Operationen
 
 1. **Aufteilen eines vorhandenen Shards**: Die Möglichkeit zum Aufteilen von Shards wird über das **Split-Merge-Tool** bereitgestellt. Weitere Informationen zu diesem Tool finden Sie hier: [Übersicht über das Split-Merge-Tool](sql-database-elastic-scale-overview-split-and-merge.md).
-2. **Zusammenführen vorhandener Shards**: Shardzusammenführungen werden ebenfalls mit dem **Split-Merge-Tool** durchgeführt. Weitere Informationen finden Sie unter: [Übersicht über das Split-Merge-Tool](sql-database-elastic-scale-overview-split-and-merge).   
+2. **Zusammenführen vorhandener Shards**: Shardzusammenführungen werden ebenfalls mit dem **Split-Merge-Tool** durchgeführt. Weitere Informationen finden Sie unter: [Übersicht über das Split-Merge-Tool](sql-database-elastic-scale-overview-split-and-merge.md).   
 
 
 ## Kosten
@@ -98,4 +98,4 @@ Weitere Informationen zu den Tools für elastische Datenbanken finden Sie unter:
 [4]: ./media/sql-database-elastic-scale-get-started/output2.png
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0114_2016-->

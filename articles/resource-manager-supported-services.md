@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="01/06/2016"
+   ms.date="01/12/2016"
    ms.author="tomfitz"/>
 
 # Anbieter, Regionen, API-Versionen und Schemas für den Ressourcen-Manager
@@ -35,11 +35,11 @@ Die folgenden Tabellen zeigen, welche Dienste Bereitstellung und Verwaltung übe
 | Batch | Ja | Ja | [Batch REST (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn820158.aspx) | | [Microsoft.Batch](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Batch%22&type=Code) |
 | Dynamics Lifecycle Services | Ja | | | | [Microsoft.DynamicsLcs](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.DynamicsLcs%22&type=Code)
 | Service Fabric (Vorschau) | Ja | | [Service Fabric REST](https://msdn.microsoft.com/library/azure/dn707692.aspx) | | [Microsoft.ServiceFabric](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.ServiceFabric%22&type=Code) |
-| Virtual Machines (klassisch) | Eingeschränkt | Teilweise (siehe unten) | - | - | 
-| Remote-App | Nein | - | - | - | 
-| Cloud Services (klassisch) | Nein | Teilweise (siehe unten) | - | - | - |
+| Virtual Machines (klassisch) | Eingeschränkt | Teilweise (siehe unten) | - | - | | Remote-App | Nein | - | - | - | | Cloud Services (klassisch) | Ja (siehe unten) | Teilweise (siehe unten) | - | - | - |
 
 "Virtuelle Computer (klassisch)" bezieht sich auf Ressourcen, die über das klassische Bereitstellungsmodell statt über das Ressourcen-Manager-Bereitstellungsmodell bereitgestellt wurden. Im Allgemeinen unterstützen diese Ressourcen keine Ressourcen-Manager-Vorgänge, es wurden jedoch einige Vorgänge aktiviert. Weitere Informationen zu diesen Bereitstellungsmodellen finden Sie unter [Grundlegendes zur Bereitstellung über den Ressourcen-Manager im Vergleich zur klassischen Bereitstellung](resource-manager-deployment-model.md).
+
+Der Ressourcen-Manager ist für Clouddienste für die Verwendung mit anderen klassischen Ressourcen aktiviert; jedoch profitieren klassische Ressourcen nicht von allen Funktionen des Ressourcen-Managers und sind keine gute Option für zukünftige Lösungen. Ändern Sie stattdessen Ihre Infrastruktur, um Ressourcen aus den Namespaces Microsoft.Compute, Microsoft.Storage und Microsoft.Network zu verwenden.
 
 „Virtual Machines (klassisch)“ und „Cloud Services“ können in neue Ressourcengruppen verschoben werden, nicht jedoch in neue Abonnements.
 
@@ -66,8 +66,7 @@ Die folgenden Tabellen zeigen, welche Dienste Bereitstellung und Verwaltung übe
 | SQL-Datenbank | Ja | Ja | [SQL-Datenbank REST](https://msdn.microsoft.com/library/azure/mt163571.aspx) | [2014-04-01-preview](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2014-04-01-preview/Microsoft.Sql.json) | [Microsoft.Sql](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Sql%22&type=Code) |
 | Suche | Ja | Ja | [Azure-Suchdienst-REST-API](https://msdn.microsoft.com/library/azure/dn798935.aspx) | | [Microsoft.Search](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Search%22&type=Code) |
 | SQL Data Warehouse | Ja | | | |
-| StorSimple | Nein | - | - | - | 
-| Managed Cache | Nein | - | - | - |
+| StorSimple | Nein | - | - | - | - |
 
 ## Web- und mobile Anwendungen
 
@@ -76,6 +75,7 @@ Die folgenden Tabellen zeigen, welche Dienste Bereitstellung und Verwaltung übe
 | API Management | Ja | Ja | [API Management REST](https://msdn.microsoft.com/library/azure/dn776326.aspx) | | [Microsoft.ApiManagement](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.ApiManagement%22&type=Code) | 
 | API-Apps | Ja | | | [2015-03-01-preview](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-03-01-preview/Microsoft.AppService.json) | [API-Apps](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22kind%22%3A+%22apiApp%22&type=Code) |
 | Web-Apps | Ja | Ja, mit Einschränkungen (siehe unten) | | [2015-08-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-08-01/Microsoft.Web.json) | [Microsoft.Web](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Web%22&type=Code) |
+| Mobile Apps | Ja | | | | |
 | Notification Hubs | Ja | Ja | [Notification Hub REST](https://msdn.microsoft.com/library/azure/dn495827.aspx) | [2015-04-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2015-04-01/Microsoft.NotificationHubs.json) | [Microsoft.NotificationHubs](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.NotificationHubs%22&type=Code) |
 | Logik-Apps | Ja | Ja | | | [Microsoft.Logic](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.Logic%22&type=Code) |
 | Mobile Engagements | Ja | Ja | | | [Microsoft.MobileEngagements](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.MobileEngagement%22&type=Code) |
@@ -93,8 +93,7 @@ Bei der Arbeit mit Web-Apps können Sie nicht nur einen App Services-Plan versch
 | Stream Analytics | Ja | | [Stream Analytics REST](https://msdn.microsoft.com/library/azure/dn835031.aspx) | | [Microsoft.StreamAnalytics](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.StreamAnalytics%22&type=Code) |
 | HDInsights | Ja | Ja | [HDInsights REST](https://msdn.microsoft.com/library/azure/mt622197.aspx) | | [Microsoft.HDInsight](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.HDInsight%22&type=Code) |
 | Data Factory | Ja | Ja | [Data Factory REST](https://msdn.microsoft.com/library/azure/dn906738.aspx) | | [Microsoft.DataFactory](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.DataFactory%22&type=Code) |
-| Machine Learning | Nein | - | - | - | 
-| Data Catalog | Nein | - | - | - |
+| Machine Learning | Nein | - | - | - | | Data Catalog | Nein | - | - | - |
 
 ## Medien und CDN
 
@@ -109,17 +108,12 @@ Bei der Arbeit mit Web-Apps können Sie nicht nur einen App Services-Plan versch
 | Dienst | Ressourcen-Manager aktiviert | Ressourcen verschieben | REST-API | Schema | Schnellstartvorlagen |
 | ------- | ------- | -------------- | -------- | ------ | ------ |
 | BizTalk Services | Ja | | | [2014-04-01](https://github.com/Azure/azure-resource-manager-schemas/blob/master/schemas/2014-04-01/Microsoft.BizTalkServices.json) | [Microsoft.BizTalkServices](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.BizTalkServices%22&type=Code) |
-| Service Bus | Ja | | [Service Bus REST-API-Referenz](https://msdn.microsoft.com/library/azure/hh780717.aspx) | | [Microsoft.ServiceBus](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.ServiceBus%22&type=Code) |
-| Backup | Nein | - | - | - | 
-| Site Recovery | Nein | - | - | - |
+| Service Bus | Ja | | | | [Microsoft.ServiceBus](https://github.com/Azure/azure-quickstart-templates/search?utf8=%E2%9C%93&q=%22Microsoft.ServiceBus%22&type=Code) |
+| Backup | Nein | - | - | - | | Site Recovery | Nein | - | - | - |
 
 ## Identitäts- und Zugriffsverwaltung 
 
-| Dienst | Ressourcen-Manager aktiviert | Ressourcen verschieben | REST-API | Schema | Schnellstartvorlagen |
-| ------- | ------- | -------------- | -------- | ------ | ------ |
-| Azure Active Directory | Nein | - | - | - | 
-| Azure Actice Directory B2C | Nein | - | - | - | 
-| Multi-Factor Authentication | Nein | - | - | - |
+Azure Active Directory arbeitet mit dem Ressourcen-Manager zusammen, um die rollenbasierte Access Control für Ihr Abonnement zu aktivieren. Weitere Informationen zur rollenbasierten Access Control finden Sie unter [Rollenbasierte Access Control in Azure](./active-directory/role-based-access-control-configure.md).
 
 ## Entwicklerdienste 
 
@@ -279,4 +273,4 @@ Sie können die Datei öffnen und nach dem Element **apiVersions** suchen.
 - Weitere Informationen zum Erstellen von Ressourcen-Manager-Vorlagen finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md).
 - Informationen zum Bereitstellen von Vorlagen finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](resource-group-template-deploy.md).
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0114_2016-->

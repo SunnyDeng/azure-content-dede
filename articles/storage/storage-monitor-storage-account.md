@@ -4,8 +4,8 @@
 	services="storage"
 	documentationCenter=""
 	authors="tamram"
-	manager="adinah"
-	editor="cgronlun"/>
+	manager="carmonm"
+	editor="tysonn"/>
 
 <tags
 	ms.service="storage"
@@ -157,4 +157,4 @@ Für jeden der für Ihr Speicherkonto verfügbaren Speicherdienste (Blob, Wartes
 
 Die Diagnoseprotokolle werden in einem Blob-Container namens $logs in Ihren Speicherkonto gespeichert. Informationen zum Zugreifen auf den Container $logs finden Sie unter [Informationen zur Protokollierung durch die Speicheranalyse](http://msdn.microsoft.com/library/azure/hh343262.aspx).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

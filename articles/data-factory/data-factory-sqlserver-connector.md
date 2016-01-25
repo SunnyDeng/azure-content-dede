@@ -482,6 +482,25 @@ Wenn Sie sqlReaderQuery oder sqlReaderStoredProcedureName nicht angeben, werden 
 | storedProcedureParameters | Parameter für die gespeicherte Prozedur. | Name-Wert-Paare. Die Namen und die Groß-/Kleinschreibung von Parametern müssen denen der Parameter der gespeicherten Prozedur entsprechen. | Nein | 
 | sqlWriterTableType | Benutzerdefinierter Tabellentypname, der in der obigen gespeicherten Prozedur verwendet werden soll. Die Kopieraktivität macht die verschobenen Daten in einer temporären Tabelle mit diesem Tabellentyp verfügbar. Der gespeicherte Prozedurcode kann dann die kopierten Daten mit vorhandenen Daten zusammenführen. | Ein Tabellentypname. | Nein |
 
+## Beheben von Verbindungsproblemen
+
+1. Konfigurieren Sie Ihren SQL-Server, um Remoteverbindungen zu akzeptieren. Starten Sie **SQL Server Management Studio**, klicken Sie mit der rechten Maustaste auf **Server** und dann auf **Eigenschaften**. Wählen Sie **Verbindungen** aus der Liste und aktivieren sie das Kontrollkästchen **Remoteverbindungen mit diesem Server zulassen**.
+	
+	![Aktivieren von Remoteverbindungen](.\media\data-factory-sqlserver-connector\AllowRemoteConnections.png)
+
+	Ausführliche Schritte finden Sie im Abschnitt zum [Konfigurieren der Serverkonfigurationsoption für den Remotezugriff](https://msdn.microsoft.com/library/ms191464.aspx). 
+2. Starten Sie den **SQL Server-Konfigurations-Manager**. Erweitern Sie die **SQL Server-Netzwerkkonfiguration** für die gewünschte Instanz, und wählen Sie **Protokolle für MSSQLSERVER**. Im rechten Bereich werden Protokolle angezeigt. Aktivieren Sie TCP/TP, indem Sie mit der rechten Maustaste auf **TCP/IP** und auf **Aktivieren** klicken.
+
+	![TCP/IP aktivieren](.\media\data-factory-sqlserver-connector\EnableTCPProptocol.png)
+
+	Alternative Methoden zum Aktivieren des TCP/IP-Protokolls finden Sie unter [Aktivieren oder Deaktivieren eines Server-Netzwerkprotokolls](https://msdn.microsoft.com/library/ms191294.aspx). 
+3. Doppelklicken Sie in demselben Fenster auf **TCP/IP**, um das Fenster **TCP/IP-Eigenschaften** zu öffnen.
+4. Klicken Sie auf die Registerkarte **IP-Adressen**. Scrollen Sie nach unten zum Abschnitt **IPAll**. Notieren Sie den ** TCP-Port ** (der Standardwert ist **1433**).
+5. Erstellen Sie eine **Regel für die Windows-Firewall** auf dem Computer, um eingehenden Datenverkehr über diesen Port zuzulassen.  
+6. **Verbindung überprüfen**: Verwenden Sie SQL Server Management Studio auf einem anderen Computer, um mit einem vollqualifizierten Namen die Verbindung mit dem SQL-Server herzustellen. Beispiel: <machine>.<domain>. corp.<company>. com, 1433.
+
+	> [AZURE.IMPORTANT]Ausführliche Informationen finden Sie unter [Ports und Sicherheitsaspekte](data-factory-move-data-between-onprem-and-cloud.md#port-and-security-considerations).
+
 [AZURE.INCLUDE [data-factory-type-repeatability-for-sql-sources](../../includes/data-factory-type-repeatability-for-sql-sources.md)]
 
 
@@ -543,4 +562,4 @@ Die Zuordnung ist mit der SQL Server-Datentypzuordnung für ADO.NET identisch.
 
 [AZURE.INCLUDE [data-factory-column-mapping](../../includes/data-factory-column-mapping.md)]
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0114_2016-->

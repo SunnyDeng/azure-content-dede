@@ -3,7 +3,7 @@
 	description="Untersuchen Sie schrittweise die Struktur der Vorlagendatei ";azuredeploy.json"; für die SharePoint-Farm mit drei Servern."
 	services="virtual-machines"
 	documentationCenter=""
-	authors="JoeDavies-MSFT"
+	authors="davidmu1"
 	manager="timlt"
 	editor=""
 	tags="azure-resource-manager"/>
@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="07/28/2015"
-	ms.author="josephd"/>
+	ms.author="davidmu"/>
 
 # Ressourcen-Manager-Vorlage für die SharePoint-Farm mit drei Servern
 
@@ -352,7 +352,7 @@ Im folgenden Abschnitt **"type": "Microsoft.Compute/virtualMachines"** werden di
 
 In zusätzlichen **"Microsoft.Compute/virtualMachines/extensions"**-Abschnitten wird das PowerShell-Skript zum Konfigurieren des SQL-Servers aufgerufen.
 
-Im nächsten **"type": "Microsoft.Compute/virtualMachines"**-Abschnitt werden der virtuelle SharePoint-Computer in der Bereitstellung erstellt und das Speicherkonto, der Verfügbarkeitssatz, das Lastenausgleichsmodul, das virtuelle Netzwerk und Netzwerkschnittstelle angegeben. In einem zusätzlichen "Microsoft.Compute/virtualMachines/extensions"-Abschnitt wird das PowerShell-Skript zum Konfigurieren der SharePoint-Farm aufgerufen.
+Im nächsten **"type": "Microsoft.Compute/virtualMachines"**-Abschnitt werden der virtuelle SharePoint-Computer in der Bereitstellung erstellt und das Speicherkonto, der Verfügbarkeitssatz, das Lastenausgleichsmodul, das virtuelle Netzwerk und Netzwerkschnittstelle angegeben. In einem zusätzlichen **"Microsoft.Compute/virtualMachines/extensions"**-Abschnitt wird das PowerShell-Skript zum Konfigurieren der SharePoint-Farm aufgerufen.
 
 Beachten Sie die allgemeine Organisation der Unterabschnitte des Abschnitts **"Ressourcen"** der JSON-Datei:
 
@@ -366,14 +366,8 @@ Bei Ihren eigenen JSON-Vorlagen zum Erstellen einer Infrastruktur mit mehreren E
 1.	Erstellen Sie die allgemeinen Elemente (Speicherkonto, virtuelles Netzwerk), spezifische Elemente für die Ebene (Verfügbarkeitsgruppen) und spezifische Elemente für die virtuellen Computer (öffentliche IP-Adressen, Verfügbarkeitsgruppen, Netzwerkschnittstellen und Lastenausgleichsinstanzen) der Azure-Infrastruktur, die für die Bereitstellung erforderlich sind.
 2.	Erstellen Sie für jede Ebene in der Anwendung (z. B. Authentifizierung , Datenbank, Web) die Server in dieser Ebene mithilfe der allgemeinen Elemente (Speicherkonto, virtuelles Netzwerk), der spezifischen Elemente für die Ebene (Verfügbarkeitsgruppe) und der spezifischen Elemente für die virtuellen Computer (öffentliche IP-Adressen, Netzwerkschnittstellen, Lastenausgleichsinstanzen), und konfigurieren Sie sie.
 
-Weitere Informationen finden Sie unter [Vorlagensprache des Azure-Ressourcen-Managers](../resource-group-authoring-templates.md).
+## Nächster Schritt
 
-## Zusätzliche Ressourcen
+- Erfahren Sie mehr über die [Vorlagensprache des Azure-Ressourcen-Managers](../resource-group-authoring-templates.md), und erstellen Sie Ihre eigene Vorlagensprache.
 
-[Azure Compute-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md) [Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md)
-
-[Erstellen von Azure-Ressourcen-Manager-Vorlagen](../resource-group-authoring-templates.md)
-
-[Dokumentation zu virtuellen Computern](http://azure.microsoft.com/documentation/services/virtual-machines/)
-
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0114_2016-->

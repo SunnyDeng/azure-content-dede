@@ -1,21 +1,20 @@
-<properties 
-	pageTitle="Clientseitige Verschlüsselung mit Java für Microsoft Azure Storage | Microsoft Azure" 
-	description="Die Azure Storage-Clientbibliothek für Java bietet Unterstützung für die clientseitige Verschlüsselung und die Integration in den Azure-Schlüsseltresor. Dies bietet eine maximale Sicherheit für Ihre Azure Storage-Anwendungen." 
-	services="storage" 
-	documentationCenter="java" 
-	authors="dineshm" 
-	manager="carolz" 
-	editor=""/>
+<properties
+	pageTitle="Clientseitige Verschlüsselung mit Java für Microsoft Azure Storage | Microsoft Azure"
+	description="Die Azure Storage-Clientbibliothek für Java bietet Unterstützung für die clientseitige Verschlüsselung und die Integration in den Azure-Schlüsseltresor. Dies bietet eine maximale Sicherheit für Ihre Azure Storage-Anwendungen."
+	services="storage"
+	documentationCenter="java"
+	authors="dineshmurthy"
+	manager="carmonm"
+	editor="tysonn"/>
 
-<tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="01/05/2016" 
-	ms.author="tamram"/>
-
+<tags
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="01/13/2016"
+	ms.author="dineshm"/>
 
 # Clientseitige Verschlüsselung mit Java für Microsoft Azure Storage   
 
@@ -34,8 +33,7 @@ Die Verschlüsselung über das Umschlagverfahren funktioniert wie folgt:
 
 2.	Benutzerdaten werden mit diesem CEK verschlüsselt.
 
-3.	Der CEK wird dann mit dem Schlüsselverschlüsselungsschlüssel (Key Encryption Key, KEK) umschlossen (verschlüsselt). Der KEK wird anhand eines Schlüsselbezeichners identifiziert und kann ein asymmetrisches Schlüsselpaar oder ein symmetrischer Schlüssel sein.  
-Er kann lokal verwaltet oder im Azure-Schlüsseltresor gespeichert werden. Die Speicherclientbibliothek hat selbst nie Zugriff auf den KEK. Die Bibliothek ruft lediglich den Algorithmus für das Umschließen des Schlüssels aus, der vom Schlüsseltresor bereitgestellt wird. Benutzer können bei Bedarf benutzerdefinierte Anbieter für das Umschließen von Schlüsseln bzw. das Aufheben dieses Zustands verwenden.  
+3.	Der CEK wird dann mit dem Schlüsselverschlüsselungsschlüssel (Key Encryption Key, KEK) umschlossen (verschlüsselt). Der KEK wird anhand eines Schlüsselbezeichners identifiziert und kann ein asymmetrisches Schlüsselpaar oder ein symmetrischer Schlüssel sein. Er kann lokal verwaltet oder im Azure-Schlüsseltresor gespeichert werden. Die Speicherclientbibliothek hat selbst nie Zugriff auf den KEK. Die Bibliothek ruft lediglich den Algorithmus für das Umschließen des Schlüssels aus, der vom Schlüsseltresor bereitgestellt wird. Benutzer können bei Bedarf benutzerdefinierte Anbieter für das Umschließen von Schlüsseln bzw. das Aufheben dieses Zustands verwenden.
 
 4.	Die verschlüsselten Daten werden dann in den Azure Storage-Dienst hochgeladen. Der umschlossene Schlüssel und einige zusätzliche Verschlüsselungsmetadaten werden entweder als Metadaten (in einem Blob) gespeichert oder mit den verschlüsselten Daten (Warteschlangennachrichten und Tabellenentitäten) interpoliert.
 
@@ -54,12 +52,11 @@ Die Entschlüsselung über das Umschlagverfahren funktioniert wie folgt:
 Die Speicherclientbibliothek verwendet [AES](http://en.wikipedia.org/wiki/Advanced_Encryption_Standard), um Benutzerdaten zu verschlüsseln. Insbesondere wird der [CBC-Modus (Blockchiffreverkettung, Cipher Block Chaining)](http://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher-block_chaining_.28CBC.29) mit AES verwendet. Da jeder Dienst eine andere Funktionsweise aufweist, werden die Dienste hier erörtert.
 
 ### Blobs  
-Die Clientbibliothek unterstützt momentan nur die Verschlüsselung vollständiger Blobs. Insbesondere wird die Verschlüsselung unterstützt, wenn Benutzer die **upload*** -Methoden oder die **openOutputStream**-Methode verwenden. Es werden sowohl vollständige Downloads als auch Downloads von Bereichen unterstützt.
+Die Clientbibliothek unterstützt momentan nur die Verschlüsselung vollständiger Blobs. Insbesondere wird die Verschlüsselung unterstützt, wenn Benutzer die **upload***-Methoden oder die **openOutputStream**-Methode verwenden. Es werden sowohl vollständige Downloads als auch Downloads von Bereichen unterstützt.
 
 Bei der Verschlüsselung generiert die Clientbibliothek einen zufälligen Initialisierungsvektor (IV) mit einer Größe von 16 Byte zusammen mit einem zufälligen Inhaltsverschlüsselungsschlüssel (CEK) mit einer Größe von 32 Byte. Mithilfe dieser Informationen wird die Umschlagverschlüsselung der Blobdaten ausgeführt. Der umschlossene CEK und einige zusätzliche Verschlüsselungsmetadaten werden dann als Blobmetadaten zusammen mit dem verschlüsselten Blob für den Dienst gespeichert.
 
->**Warnung:**  
->Wenn Sie eigene Metadaten für den Blob bearbeiten oder hochladen, müssen Sie sicherstellen, dass diese Metadaten beibehalten werden. Wenn Sie neue Metadaten ohne diese Metadaten hochladen, gehen der umschlossene CEK, der IV und andere Metadaten verloren und der Blobinhalt wird nie wieder abrufbar sein.
+>**Warnung**: Wenn Sie eigene Metadaten für den Blob bearbeiten oder hochladen, müssen Sie sicherstellen, dass diese Metadaten beibehalten werden. Wenn Sie neue Metadaten ohne diese Metadaten hochladen, gehen der umschlossene CEK, der IV und andere Metadaten verloren und der Blobinhalt wird nie wieder abrufbar sein.
 
 Beim Herunterladen eines verschlüsselten Blobs wird der Inhalt des gesamten Blobs mit den **download*/openInputStream**-Hilfsmethoden abgerufen. Der umschlossene CEK wird entpackt und zusammen mit dem IV (in diesem Fall als Blobmetadaten gespeichert) verwendet, um die entschlüsselten Daten an die Benutzer zurückzugeben.
 
@@ -79,8 +76,7 @@ Bei der Entschlüsselung wird der umschlossene Schlüssel aus der Warteschlangen
 ### Tabellen  
 Die Clientbibliothek unterstützt die Verschlüsselung von Entitätseigenschaften für Einfüge- und Ersetzungsvorgänge.
 
->**Hinweis:**  
->Das Zusammenführen wird derzeit nicht unterstützt. Da eine Teilmenge der Eigenschaften möglicherweise bereits mit einem anderen Schlüssel verschlüsselt wurde, führen das einfache Zusammenführen der neuen Eigenschaften und das Aktualisieren der Metadaten zu Datenverlusten. Das Zusammenführen erfordert entweder zusätzliche Dienstaufrufe, um die bereits vorhandene Entität aus dem Dienst zu lesen, oder die Verwendung eines neuen Schlüssels pro Eigenschaft. Beide Verfahren sind aus Leistungsgründen nicht geeignet.
+>**Hinweis**: Das Zusammenführen wird derzeit nicht unterstützt. Da eine Teilmenge der Eigenschaften möglicherweise bereits mit einem anderen Schlüssel verschlüsselt wurde, führen das einfache Zusammenführen der neuen Eigenschaften und das Aktualisieren der Metadaten zu Datenverlusten. Das Zusammenführen erfordert entweder zusätzliche Dienstaufrufe, um die bereits vorhandene Entität aus dem Dienst zu lesen, oder die Verwendung eines neuen Schlüssels pro Eigenschaft. Beide Verfahren sind aus Leistungsgründen nicht geeignet.
 
 Die Verschlüsselung von Tabellendaten funktioniert wie folgt:
 
@@ -108,8 +104,7 @@ Der Azure-Schlüsseltresor unterstützt Sie dabei, kryptografische Schlüssel un
 Die Speicherclientbibliothek verwendet die Schlüsseltresor-Kernbibliothek, um ein gemeinsames Framework zum Verwalten von Schlüsseln innerhalb von Azure bereitzustellen. Ein zusätzlicher Vorteil für die Benutzer besteht in der Verwendung der Schlüsseltresor-Erweiterungsbibliothek. Die Erweiterungsbibliothek bietet nützliche Funktionen für die einfache und nahtlose Nutzung von lokalen und Cloudschlüsselanbietern von symmetrischen/RSA-Schlüsseln sowie für Aggregation und Zwischenspeicherung.
 
 ### Schnittstelle und Abhängigkeiten  
-Es gibt drei Schlüsseltresorpakete:  
-- "azure-keyvault-core" enthält "IKey" und "IKeyResolver". Dies ist ein kleines Paket ohne Abhängigkeiten. Die Speicherclientbibliothek für Java definiert es als Abhängigkeit.
+Es gibt drei Schlüsseltresorpakete: – "azure-keyvault-core" enthält "IKey" und "IKeyResolver". Dies ist ein kleines Paket ohne Abhängigkeiten. Die Speicherclientbibliothek für Java definiert es als Abhängigkeit.
 
 - "azure-keyvault" enthält den REST-Client des Schlüsseltresors.  
 
@@ -121,14 +116,12 @@ Es gibt drei Schlüsseltresorpakete:
 
 2.	Verwenden Sie den Basisbezeichner des geheimen Schlüssels als Parameter, um die aktuelle Version des geheimen Schlüssels für die Verschlüsselung aufzulösen und diese Informationen lokal zwischenzuspeichern. Verwenden Sie "CachingKeyResolver" für die Zwischenspeicherung. Es wird nicht erwartet, dass die Benutzer eigene Logik für das Zwischenspeichern implementieren.
 
-3.	Verwenden Sie beim Erstellen der Verschlüsselungsrichtlinie den Zwischenspeicherungsresolver als Eingabe.
-Weitere Informationen zur Verwendung des Schlüsseltresors finden Sie in den Beispielen für Verschlüsselungscode. <fix URL>
+3.	Verwenden Sie beim Erstellen der Verschlüsselungsrichtlinie den Zwischenspeicherungsresolver als Eingabe. Weitere Informationen zur Verwendung des Schlüsseltresors finden Sie in den Beispielen für Verschlüsselungscode. <fix URL>
 
 ## Bewährte Methoden  
 Verschlüsselungsunterstützung ist nur in der Speicherclientbibliothek für Java verfügbar.
 
->**Wichtig:**  
->Beachten Sie bei Verwendung einer clientseitigen Verschlüsselung die folgenden wichtigen Punkte:
+>**Wichtig**: Beachten Sie bei Verwendung einer clientseitigen Verschlüsselung die folgenden wichtigen Punkte:
 >  
 >- Verwenden Sie beim Lesen aus einem verschlüsselten Blob oder beim Schreiben in diesen Befehle zum Hochladen des vollständigen Blobs und zum Herunterladen des bereichsbasierten oder vollständigen Blobs. Vermeiden Sie beim Schreiben in einen verschlüsselten Blob Protokollvorgänge wie z. B. "Put Block", "Put Block List", "Write Pages", "Clear Pages" oder "Append Block". Andernfalls wird der verschlüsselte Blob möglicherweise beschädigt und kann nicht mehr gelesen werden.  
 >
@@ -139,11 +132,7 @@ Verschlüsselungsunterstützung ist nur in der Speicherclientbibliothek für Jav
 >- Aktivieren Sie das **requireEncryption**-Flag in den Standardanforderungsoptionen für Benutzer, die nur mit verschlüsselten Daten arbeiten sollen. Weitere Details finden Sie nachstehend.
 
 ## Client-API/Schnittstelle  
-Beim Erstellen eines EncryptionPolicy-Objekts können die Benutzer nur einen Schlüssel ("IKey"-Implementierung), nur einen Resolver (IKeyResolver-Implementierung) oder beides bereitstellen. "IKey" ist der grundlegende Schlüsseltyp, der mit einer Schlüsselkennung gekennzeichnet wird und der die Logik für das Einschließen/Entpacken bereitstellt. "IKeyResolver" wird verwendet, um einen Schlüssel während des Entschlüsselungsvorgangs aufzulösen. Er definiert eine ResolveKey-Methode, die bei einer angegebenen Schlüsselkennung einen "IKey" zurückgibt. Dies ermöglicht den Benutzern die Auswahl zwischen mehreren Schlüsseln, die an mehreren Speicherorten verwaltet werden.
-- Für die Verschlüsselung wird immer der Schlüssel verwendet. Ein fehlender Schlüssel führt zu einem Fehler.
-- Für die Entschlüsselung gilt:  
-	- Der Schlüsselresolver wird aufgerufen, wenn er angegeben wurde, um den Schlüssel abzurufen. Wenn der Resolver angegeben wird, dieser aber nicht über eine Zuordnung für die Schlüsselkennung verfügt, wird ein Fehler ausgelöst.  
-	- Ist kein Resolver, aber ein Schlüssel angegeben, wird der Schlüssel verwendet, wenn seine Kennung mit der geforderten Schlüsselkennung übereinstimmt. Stimmt die Kennung nicht überein, wird ein Fehler ausgelöst.  
+Beim Erstellen eines EncryptionPolicy-Objekts können die Benutzer nur einen Schlüssel ("IKey"-Implementierung), nur einen Resolver (IKeyResolver-Implementierung) oder beides bereitstellen. "IKey" ist der grundlegende Schlüsseltyp, der mit einer Schlüsselkennung gekennzeichnet wird und der die Logik für das Einschließen/Entpacken bereitstellt. "IKeyResolver" wird verwendet, um einen Schlüssel während des Entschlüsselungsvorgangs aufzulösen. Er definiert eine ResolveKey-Methode, die bei einer angegebenen Schlüsselkennung einen "IKey" zurückgibt. Dies ermöglicht den Benutzern die Auswahl zwischen mehreren Schlüsseln, die an mehreren Speicherorten verwaltet werden. – Für die Verschlüsselung wird immer der Schlüssel verwendet. Ein fehlender Schlüssel führt zu einem Fehler. – Für die Entschlüsselung gilt: – Der Schlüsselresolver wird aufgerufen, wenn er angegeben wurde, um den Schlüssel abzurufen. Wenn der Resolver angegeben wird, dieser aber nicht über eine Zuordnung für die Schlüsselkennung verfügt, wird ein Fehler ausgelöst. – Ist kein Resolver, aber ein Schlüssel angegeben, wird der Schlüssel verwendet, wenn seine Kennung mit der geforderten Schlüsselkennung übereinstimmt. Stimmt die Kennung nicht überein, wird ein Fehler ausgelöst.
 
 	  The [encryption samples](https://github.com/Azure/azure-storage-net/tree/master/Samples/GettingStarted/EncryptionSamples) <fix URL>demonstrate a more detailed end-to-end scenario for blobs, queues and tables, along with Key Vault integration.
 
@@ -160,32 +149,33 @@ Erstellen Sie ein **BlobEncryptionPolicy**-Objekt, und legen Sie es in den Anfor
 
 	// Create the encryption policy to be used for upload and download.
 	BlobEncryptionPolicy policy = new BlobEncryptionPolicy(key, null);
-	
+
 	// Set the encryption policy on the request options.
 	BlobRequestOptions options = new BlobRequestOptions();
 	options.setEncryptionPolicy(policy);
-	
+
 	// Upload the encrypted contents to the blob.
 	blob.upload(stream, size, null, options, null);
-	
+
 	// Download and decrypt the encrypted contents from the blob.
-	ByteArrayOutputStream outputStream = new ByteArrayOutputStream(); blob.DownloadToStream(outputStream, null, options, null);
+	ByteArrayOutputStream outputStream = new ByteArrayOutputStream(); 
+	blob.download(outputStream, null, options, null);
 
 ### Warteschlangendienst-Verschlüsselung  
 Erstellen Sie ein **QueueEncryptionPolicy**-Objekt, und legen Sie es in den Anforderungsoptionen fest (über die API oder mit **DefaultRequestOptions** auf einer Clientebene). Alles Weitere wird intern von der Clientbibliothek behandelt.
 
 	// Create the IKey used for encryption.
 	RsaKey key = new RsaKey("private:key1" /* key identifier */);
-	
+
 	// Create the encryption policy to be used for upload and download.
 	QueueEncryptionPolicy policy = new QueueEncryptionPolicy(key, null);
-	
+
 	// Add message
 	QueueRequestOptions options = new QueueRequestOptions();
 	options.setEncryptionPolicy(policy);
-	
+
 	queue.addMessage(message, 0, 0, options, null);
-	
+
 	// Retrieve message
 	CloudQueueMessage retrMessage = queue.retrieveMessage(30, options, null);
 
@@ -196,11 +186,11 @@ Zusätzlich zum Erstellen einer Verschlüsselungsrichtlinie und zu deren Festleg
 
 	// Create the IKey used for encryption.
 	RsaKey key = new RsaKey("private:key1" /* key identifier */);
-	
+
 	// Create the encryption policy to be used for upload and download.
 	TableEncryptionPolicy policy = new TableEncryptionPolicy(key, null);
-	
-	TableRequestOptions options = new TableRequestOptions() 
+
+	TableRequestOptions options = new TableRequestOptions()
 	options.setEncryptionPolicy(policy);
 	options.setEncryptionResolver(new EncryptionResolver() {
 	    public boolean encryptionResolver(String pk, String rk, String key) {
@@ -211,15 +201,15 @@ Zusätzlich zum Erstellen einer Verschlüsselungsrichtlinie und zu deren Festleg
         	return false;
     	}
 	});
-	
+
 	// Insert Entity
 	currentTable.execute(TableOperation.insert(ent), options, null);
-	
+
 	// Retrieve Entity
 	// No need to specify an encryption resolver for retrieve
-	TableRequestOptions retrieveOptions = new TableRequestOptions() 
+	TableRequestOptions retrieveOptions = new TableRequestOptions()
 	retrieveOptions.setEncryptionPolicy(policy);
-	
+
 	TableOperation operation = TableOperation.retrieve(ent.PartitionKey, ent.RowKey, DynamicTableEntity.class);
 	TableResult result = currentTable.execute(operation, retrieveOptions, null);
 
@@ -232,7 +222,7 @@ Wenn die Entität "TableEntity" implementiert, können der Getter und Setter der
 	public String getEncryptedProperty1 () {
 	    return this.encryptedProperty1;
 	}
-	
+
 	@Encrypt
 	public void setEncryptedProperty1(final String encryptedProperty1) {
 	    this.encryptedProperty1 = encryptedProperty1;
@@ -242,9 +232,8 @@ Wenn die Entität "TableEntity" implementiert, können der Getter und Setter der
 Beachten Sie, dass ein Verschlüsseln Ihrer Storage-Daten einen zusätzlichen Leistungsaufwand verursacht. Der Inhaltsschlüssel und der IV müssen generiert, der Inhalt selbst muss verschlüsselt, und zusätzliche Metadaten müssen formatiert und hochgeladen werden. Dieser Aufwand variiert abhängig von der Menge der zu verschlüsselnden Daten. Es empfiehlt sich, dass Kunden ihre Anwendungen während der Entwicklung immer hinsichtlich der Leistung testen.
 
 ## Nächste Schritte  
-[Maven-Paket mit der Azure Storage-Clientbibliothek für Java](<fix URL>) herunterladen  
-[Azure Storage-Clientbibliothek für Java-Quellcode von GitHub](https://github.com/Azure/azure-storage-java) herunterladen   
-Maven-Pakete [Core](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Core/), [Client](http://www.nuget.org/packages/Microsoft.Azure.KeyVault/) und [Extensions](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Extensions/)für den Azure-Schlüsseltresor herunterladen
-Lesen Sie die [Dokumentation zum Azure-Schlüsseltresor](../articles/key-vault-whatis.md)
+[Maven-Paket mit der Azure Storage-Clientbibliothek für Java](http://mvnrepository.com/artifact/com.microsoft.azure/azure-storage/4.0.0) herunterladen [Azure Storage-Clientbibliothek für Java-Quellcode von GitHub](https://github.com/Azure/azure-storage-java) herunterladen Maven-Pakete [Core](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Core/), [Client](http://www.nuget.org/packages/Microsoft.Azure.KeyVault/) und [Extensions](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Extensions/) für den Azure-Schlüsseltresor herunterladen
 
-<!----HONumber=AcomDC_0107_2016-->
+[Dokumentation zum Azure-Schlüsseltresor](../articles/key-vault-whatis.md) aufrufen
+
+<!---HONumber=AcomDC_0114_2016-->

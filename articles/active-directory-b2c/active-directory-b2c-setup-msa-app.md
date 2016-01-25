@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/06/2016"
+	ms.date="01/12/2016"
 	ms.author="swkrish"/>
 
 # Vorschau für Azure Active Directory B2C: Bereitstellen von Registrierung und Anmeldung für Kunden mit Microsoft-Konten
@@ -41,11 +41,9 @@ Um den Dienst „Microsoft-Konto“ als Identitätsanbieter in Azure Active Dire
 
     ![MSA – Umleitungs-URL](./media/active-directory-b2c-setup-msa-app/msa-redirect-url.png)
 
-6. Klicken Sie links im Navigationsbereich auf **App-Einstellungen**. Kopieren Sie die Werte für **Client-ID** und **Geheimer Clientschlüssel**. Sie benötigen beide Angaben, um Microsoft-Konto als Identitätsanbieter in Ihrem Mandanten zu konfigurieren.
+6. Klicken Sie links im Navigationsbereich auf **App-Einstellungen**. Kopieren Sie die Werte für **Client-ID** und **Geheimer Clientschlüssel**. Sie benötigen beide Angaben, um Microsoft-Konto als Identitätsanbieter in Ihrem Mandanten zu konfigurieren. Hinweis: Der **geheime Clientschlüssel** ist eine wichtige Anmeldeinformation.
 
-> [AZURE.NOTE]Der **geheime Clientschlüssel** ist eine wichtige Anmeldeinformation.
-
-    ![MSA - Client secret](./media/active-directory-b2c-setup-msa-app/msa-client-secret.png)
+    ![MSA – Geheimer Clientschlüssel](./media/active-directory-b2c-setup-msa-app/msa-client-secret.png)
 
 ## Konfigurieren von Microsoft-Konto als Identitätsanbieter in Ihrem Mandanten
 
@@ -57,4 +55,4 @@ Um den Dienst „Microsoft-Konto“ als Identitätsanbieter in Azure Active Dire
 6. Klicken Sie auf **Diesen Identitätsanbieter einrichten**, und geben Sie die **Client-ID** und den **geheimen Clientschlüssel** der Microsoft-Kontoanwendung ein, die Sie zuvor erstellt haben.
 7. Klicken Sie auf **OK** und dann auf **Erstellen**, um die Konfiguration für das Microsoft-Konto zu speichern.
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0114_2016-->

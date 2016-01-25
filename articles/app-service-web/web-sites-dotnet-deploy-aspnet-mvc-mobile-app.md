@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="09/16/2015" 
+	ms.date="01/12/2016" 
 	ms.author="cephalin;riande"/>
 
 
@@ -62,37 +62,45 @@ Visual Studio-Projekte mit C#-Quellcode sind zur Ergänzung dieses Themas verfü
 
 1.	Laden Sie das [Starterprojekt][StarterProject] für die Konferenzanwendung herunter.
 
-2. 	Klicken Sie dann im Windows-Explorer mit der rechten Maustaste auf die Datei "Mvc5Mobile.zip", und wählen Sie *Eigenschaften* aus.
+2. 	Klicken Sie dann im Windows-Explorer mit der rechten Maustaste auf die heruntergeladene zip-Datei, und wählen Sie *Eigenschaften* aus.
 
-3. 	Klicken Sie im Dialogfeld **Eigenschaften von Mvc5Mobile.zip** auf die Schaltfläche **Blockierung aufheben**. (Durch diese Option wird eine Sicherheitswarnung verhindert, die angezeigt wird, wenn Sie versuchen, eine *.zip*-Datei zu verwenden, die Sie aus dem Internet heruntergeladen haben.)
+3. 	Klicken Sie im Dialogfeld **Eigenschaften** auf die Schaltfläche **Blockierung aufheben**. (Durch diese Option wird eine Sicherheitswarnung verhindert, die angezeigt wird, wenn Sie versuchen, eine *.zip*-Datei zu verwenden, die Sie aus dem Internet heruntergeladen haben.)
 
-4.	Klicken Sie mit der rechten Maustaste auf die Datei *Mvc5Mobile.zip*, und wählen Sie **Alle extrahieren** aus, um die Datei zu extrahieren.
+4.	Klicken Sie mit der rechten Maustaste auf die zip-Datei, und wählen Sie **Alle extrahieren** aus, um die Datei zu entpacken.
 
-5. 	Öffnen Sie in Visual Studio die Datei *Mvc5Mobile.sln*.
+5. 	Öffnen Sie in Visual Studio die Datei *C#\\Mvc5Mobile.sln*.
 
 6.  Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf das Projekt, und klicken Sie anschließend auf **Veröffentlichen**.
 
 	![][DeployClickPublish]
 
-7.	Klicken Sie in "Web veröffentlichen" auf **Microsoft Azure-Web-Apps**.
+7.	Klicken Sie in „Web veröffentlichen“ auf **Microsoft Azure App Service**.
 
 	![][DeployClickWebSites]
 
-8.	Klicken Sie auf **Anmelden**.
+8.	Wenn Sie noch nicht bei Azure angemeldet sind, klicken Sie auf **Konto hinzufügen**.
 
 	![][DeploySignIn]
 
 9.	Folgen Sie den Aufforderungen auf dem Bildschirm, um sich bei Ihrem Azure-Konto anzumelden.
 
-11. Im Dialogfeld "Vorhandene Web-App auswählen" sollte jetzt erkennbar sein, dass Sie angemeldet sind. Klicken Sie auf **Neu**.
+11. Die App Service-Dialogfeld sollte nach der Anmeldung angezeigt werden. Klicken Sie auf **Neu**.
 
 	![][DeployNewWebsite]
 
-12. Geben Sie im Feld **Web-App-Name** ein eindeutiges Präfix für den App-Namen ein. Der voll qualifizierte Web-App-Name lautet *&lt;Präfix>*.azurewebsites.net. Konfigurieren Sie außerdem die Felder **App Service-Plan**, **Ressourcengruppe** und **Region**. Klicken Sie dann auf **Erstellen**.
+12. Geben Sie im Feld **Web-App-Name** ein eindeutiges Präfix für den App-Namen ein. Der voll qualifizierte Web-App-Name lautet *&lt;Präfix>*.azurewebsites.net. Wählen Sie unter **Ressourcengruppe** eine neue oder vorhandene Ressourcengruppe aus. Klicken Sie dann auf **Neu**, um einen neuen App Service-Plan zu erstellen.
 
 	![][DeploySiteSettings]
 
-13.	Das Dialogfeld "Web veröffentlichen" enthält jetzt die Einstellungen für Ihre neue Web-App. Klicken Sie auf **Veröffentlichen**.
+13. Konfigurieren Sie den neuen App Service-Plan, und klicken Sie auf **OK**.
+
+    ![](./media/web-sites-dotnet-deploy-aspnet-mvc-mobile-app/deploy-to-azure-website-7a.png)
+
+13. Klicken Sie im Dialogfeld „App Service erstellen“ auf **Erstellen**.
+
+    ![](./media/web-sites-dotnet-deploy-aspnet-mvc-mobile-app/deploy-to-azure-website-7b.png)
+
+13.	Nach dem Erstellen der Azure-Ressourcen enthält das Dialogfeld „Web veröffentlichen“ jetzt die Einstellungen für Ihre neue App. Klicken Sie auf **Veröffentlichen**.
 
 	![][DeployPublishSite]
 
@@ -102,7 +110,7 @@ Visual Studio-Projekte mit C#-Quellcode sind zur Ergänzung dieses Themas verfü
 
 	![][AllTags]
 
->[AZURE.NOTE]Während Sie Ihre MVC 5-Anwendung in Visual Studio debuggen, können Sie Ihre Web-App erneut auf Azure veröffentlichen, um die Live-Web-App direkt in Ihrem mobilen Browser oder einem Browseremulator zu überprüfen.
+>[AZURE.TIP]Während Sie Ihre MVC 5-Anwendung in Visual Studio debuggen, können Sie Ihre Web-App erneut auf Azure veröffentlichen, um die Live-Web-App direkt in Ihrem mobilen Browser oder einem Browseremulator zu überprüfen.
 
 Die Anzeige ist auf einem mobilen Gerät sehr gut lesbar. Sie können zudem bereits einige der vom Bootstrap CSS Framework angewendeten visuellen Effekte sehen. Klicken Sie auf den Link **ASP.NET**.
 
@@ -616,4 +624,4 @@ In diesem Lernprogramm haben Sie erfahren, wie Sie mit ASP.NET MVC 5 Webanwendun
 [SessionByCodeFixed3-644]: ./media/web-sites-dotnet-deploy-aspnet-mvc-mobile-app/SessionByCode-Fixed-3-644.png
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

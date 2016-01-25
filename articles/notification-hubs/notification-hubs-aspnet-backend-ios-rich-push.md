@@ -96,7 +96,7 @@ Allgemeines:
             }
         }
 
-> [AZURE.NOTE](optional) Weitere Informationen zum Hinzufügen und Abrufen von Projektressourcen finden Sie unter [Einbetten von und Zugreifen auf Ressourcen mithilfe von Visual C#](http://support.microsoft.com/kb/319292).
+	>[AZURE.NOTE](optional) Weitere Informationen zum Hinzufügen und Abrufen von Projektressourcen finden Sie unter [Einbetten von und Zugreifen auf Ressourcen mithilfe von Visual C#](http://support.microsoft.com/kb/319292).
 
 7. Definieren Sie **NotificationsController** in **NotificationsController.cs** mit den folgenden Codeausschnitten neu. Dadurch wird eine erste stille (silent) umfassende Benachrichtigungs-ID an das Gerät gesendet und der clientseitige Abruf des Bilds ermöglicht:
 
@@ -381,4 +381,4 @@ Nachdem Sie das Back-End nun so geändert haben, dass nur die *ID* einer Benachr
 [IOS3]: ./media/notification-hubs-aspnet-backend-ios-rich-push/rich-push-ios-3.png
 [IOS4]: ./media/notification-hubs-aspnet-backend-ios-rich-push/rich-push-ios-4.png
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0114_2016-->

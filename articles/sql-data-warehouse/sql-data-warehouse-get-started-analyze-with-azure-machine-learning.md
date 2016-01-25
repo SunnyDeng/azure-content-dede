@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/04/2016"
-   ms.author="sahajs"/>
+   ms.date="01/07/2016"
+   ms.author="sahajs;barbkess;sonyama"/>
 
 # Analysieren von Daten mit Azure Machine Learning
 In diesem Tutorial erfahren Sie, wie Sie ein prädiktives Machine Learning-Modell mit Azure Machine Learning und Ihren Azure SQL Data Warehouse-Daten erstellen. In diesem Tutorial werden wir eine gezielte Marketingkampagne für Adventure Works, einen Fahrradladen, erstellen und dabei eine Prognose, ob ein Kunde ein Fahrrad kauft.
@@ -139,4 +139,4 @@ Weitere Informationen zum Erstellen von vorhersehbaren Machine Learning-Vorhersa
 [Beispieldaten manuell laden]: sql-data-warehouse-get-started-manually-load-samples.md
 [Erstellen eines SQL Data Warehouse]: sql-data-warehouse-get-started-provision.md
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0114_2016-->

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Timer und Erinnerungen für Reliable Actors"
+   pageTitle="Timer und Erinnerungen für Reliable Actors | Microsoft Azure"
    description="Einführung in Timer und Erinnerungen für Service Fabric Reliable Actors."
    services="service-fabric"
    documentationCenter=".net"
@@ -18,9 +18,9 @@
 
 
 # Actor-Timer
-Actor-Timer bieten einen einfachen Wrapper um .NET-Timer, wodurch die Rückrufmethoden die zur Actor-Laufzeit bereitgestellten wechselseitigen Parallelitätsgarantien respektieren.
+Actor-Timer bieten einen einfachen Wrapper um .NET-Timer, wodurch die Rückrufmethoden die von der Actor-Laufzeit bereitgestellten wechselseitigen Parallelitätsgarantien respektieren.
 
-Actor können sich mithilfe der Methoden `RegisterTimer` und `UnregisterTimer` ihrer Basisklasse bei ihren Timern an- und abmelden. Das folgende Beispiel zeigt die Verwendung von Timer-APIs. Die APIs sind dem .NET-Timer sehr ähnlich. Im Beispiel unten wird bei Ablauf des Timers von der Actor-Laufzeit die Methode `MoveObject` aufgerufen. Sie respektiert garantiert die wechselseitige Parallelität, sodass bis zum Abschluss des Rückrufs keine anderen Actor-Methoden oder Timer-/Erinnerungsrückrufe ausgeführt werden.
+Actor können sich mithilfe der Methoden `RegisterTimer` und `UnregisterTimer` ihrer Basisklasse bei ihren Timern an- und abmelden. Das folgende Beispiel zeigt die Verwendung von Timer-APIs. Die APIs sind dem .NET-Timer sehr ähnlich. Im Beispiel wird die `MoveObject`-Methode von der Actors-Laufzeit aufgerufen, wenn der Timer abgelaufen ist. Es ist sichergestellt, dass die Methode die wechselseitige Parallelität respektiert. Dies bedeutet, dass keine anderen Actor-Methoden oder Timer-/Erinnerungsrückrufe ausgeführt werden, bis dieser Rückruf die Ausführung abgeschlossen hat.
 
 ```csharp
 class VisualObjectActor : StatefulActor<VisualObject>, IVisualObject
@@ -32,10 +32,10 @@ class VisualObjectActor : StatefulActor<VisualObject>, IVisualObject
         ...
 
         _updateTimer = RegisterTimer(
-            MoveObject,                     // callback method
-            state,                          // state to pass to callback method
-            TimeSpan.FromMilliseconds(15),  // amount of time to delay before callback is invoked
-            TimeSpan.FromMilliseconds(15)); // time interval between invocation of the callback method
+            MoveObject,                     // Callback method
+            state,                          // State to pass to the callback method
+            TimeSpan.FromMilliseconds(15),  // Amount of time to delay before the callback is invoked
+            TimeSpan.FromMilliseconds(15)); // Time interval between invocations of the callback method
 
         return base.OnActivateAsync();
     }
@@ -60,16 +60,16 @@ class VisualObjectActor : StatefulActor<VisualObject>, IVisualObject
 
 Der nächste Timerzeitraum beginnt nach Abschluss des Rückrufs. Dies bedeutet, dass der Timer während des Rückrufs angehalten und nach Abschluss des Rückrufs erneut gestartet wird.
 
-Zur Actor-Laufzeit wird der Actor-Zustand bei Abschluss des Rückrufs gespeichert, wenn er wie im obigen Beispiel zustandsbehaftet ist. Tritt ein Fehler beim Speichern des Zustands auf, wird das Actor-Objekt deaktiviert und eine neue Instanz aktiviert. Eine Rückrufmethode, die den Actor-Zustand nicht ändert, kann als ein schreibgeschützter Timerrückruf registriert werden. Legen Sie hierfür wie im Abschnitt [Schreibschutzmethoden](service-fabric-reliable-actors-introduction.md#readonly-methods) beschrieben, das Attribute "Readonly“ für den Timerrückruf fest.
+Zur Actor-Laufzeit wird der Actor-Zustand bei Abschluss des Rückrufs gespeichert, wenn er wie im obigen Beispiel zustandsbehaftet ist. Tritt ein Fehler beim Speichern des Zustands auf, wird das Actor-Objekt deaktiviert und eine neue Instanz aktiviert. Eine Rückrufmethode, die den Actor-Zustand nicht ändert, kann als schreibgeschützter Timerrückruf registriert werden. Legen Sie hierfür das Attribut „Readonly“ für den Timerrückruf fest. Dies wird im Abschnitt zu [Readonly-Methoden](service-fabric-reliable-actors-introduction.md#readonly-methods) beschrieben.
 
-Wen der Actor im Rahmen der Garbage Collection deaktiviert wird, werden alle Timer angehalten und im Anschluss keine Timerrückrufaktionen ausgeführt. Zur Actor-Laufzeit werden zudem keine Informationen über die Timer gespeichert, die vor der Deaktivierung ausgeführt wurden. Es ist die Aufgabe des Actors, alle für zukünftige Reaktivierungen erforderlichen Timer zu registrieren. Weitere Informationen finden Sie im Abschnitt über die [Actor Garbage Collection](service-fabric-reliable-actors-lifecycle.md).
+Alle Timer werden angehalten, wenn der Actor im Rahmen einer Garbage Collection deaktiviert wird. Danach werden keine Timerrückrufe mehr aufgerufen. Zur Actor-Laufzeit werden zudem keine Informationen über die Timer gespeichert, die vor der Deaktivierung ausgeführt wurden. Es ist die Aufgabe des Actors, alle für zukünftige Reaktivierungen erforderlichen Timer zu registrieren. Weitere Informationen finden Sie im Abschnitt zur [Actor Garbage Collection](service-fabric-reliable-actors-lifecycle.md).
 
 ## Actor-Erinnerungen
-Erinnerungen sind ein Mechanismus für persistente Rückrufe in einem Actor zu bestimmten Zeiten. Die Funktionalität ähnelt Timern, wobei Erinnerungen bis zur expliziten Aufhebung durch den Actor unter allen Umständen ausgelöst werden. Erinnerungen werden insbesondere über Actor-Deaktivierungen und Failover ausgelöst, da zur Actor-Laufzeit Informationen über die Erinnerungen des Actors gespeichert werden.
+Erinnerungen sind ein Mechanismus zum Auslösen persistenter Rückrufe für einen Actor zu bestimmten Zeiten. Die Funktionalität ähnelt dabei Timern. Im Gegensatz zu Timern werden Erinnerungen aber unter allen Umständen ausgelöst, bis ihre Registrierung vom Actor explizit aufgehoben wird. Erinnerungen werden insbesondere über Actor-Deaktivierungen und Failover ausgelöst, da zur Actor-Laufzeit Informationen über die Erinnerungen des Actors gespeichert werden.
 
-Erinnerungen werden nur für zustandsbehaftete Actor unterstützt. Zustandsfreie Actor können keine Erinnerungen verwenden. Die Zustandsanbieter der Actor sind für das Speichern von Informationen zu den Erinnerungen verantwortlich, die vom jeweiligen Actor registriert wurden.
+Erinnerungen werden nur für zustandsbehaftete Actors unterstützt. Zustandsfreie Actors können keine Erinnerungen verwenden. Die Zustandsanbieter der Actors sind für das Speichern von Informationen zu den Erinnerungen verantwortlich, die von Actors registriert wurden.
 
-Zum Registrieren einer Erinnerung ruft ein Actor die in der Basisklasse bereitgestellte Methode `RegisterReminder` auf, wie im folgenden Beispiel gezeigt.
+Zum Registrieren einer Erinnerung ruft ein Actor die in der Basisklasse bereitgestellte `RegisterReminder`-Methode auf, wie im folgenden Beispiel gezeigt.
 
 ```csharp
 string task = "Pay cell phone bill";
@@ -82,9 +82,9 @@ Task<IActorReminder> reminderRegistration = RegisterReminder(
                                                 ActorReminderAttributes.None);
 ```
 
-Im Beispiel oben ist `"Pay cell phone bill"` der Erinnerungsname, d. h. eine Zeichenfolge, die der Actor zur eindeutigen Identifizierung einer Erinnerung verwendet. `BitConverter.GetBytes(amountInDollars)` ist der mit der Erinnerung verknüpfte Kontext. Sie wird an den Actor als Argument für den Erinnerungsrückruf zurückgegeben, d. h. `IRemindable.ReceiveReminderAsync`.
+Im obigen Beispiel ist `"Pay cell phone bill"` der Name der Erinnerung. Dies ist eine Zeichenfolge, die der Actor zur eindeutigen Identifizierung einer Erinnerung verwendet. `BitConverter.GetBytes(amountInDollars)` ist der mit der Erinnerung verknüpfte Kontext. Sie wird an den Actor als Argument für den Erinnerungsrückruf zurückgegeben, d. h. `IRemindable.ReceiveReminderAsync`.
 
-Actor, die Erinnerungen verwenden, müssen die Schnittstelle `IRemindable` implementieren, wie im folgenden Beispiel gezeigt.
+Actors, die Erinnerungen verwenden, müssen die `IRemindable`-Schnittstelle implementieren, wie im folgenden Beispiel gezeigt.
 
 ```csharp
 public class ToDoListActor : StatefulActor<ToDoList>, IToDoListActor, IRemindable
@@ -101,11 +101,11 @@ public class ToDoListActor : StatefulActor<ToDoList>, IToDoListActor, IRemindabl
 }
 ```
 
-Wenn eine Erinnerung ausgelöst wird, ruft die Fabric Actors-Laufzeit auf dem Actor die Methode `ReceiveReminderAsync` auf. Ein Actor kann mehrere Erinnerungen registrieren. Die Methode `ReceiveReminderAsync` wird aufgerufen, sobald eine dieser Erinnerungen ausgelöst wurde. Der Actor kann mithilfe des an die Methode `ReceiveReminderAsync` übergebenen Erinnerungsnamens ermitteln, welche Erinnerung ausgelöst wurde.
+Wenn eine Erinnerung ausgelöst wird, ruft die Fabric Actors-Laufzeit auf dem Actor die `ReceiveReminderAsync`-Methode auf. Ein Actor kann mehrere Erinnerungen registrieren. Die `ReceiveReminderAsync`-Methode wird aufgerufen, sobald eine dieser Erinnerungen ausgelöst wurde. Der Actor kann mithilfe des an die Methode `ReceiveReminderAsync` übergebenen Erinnerungsnamens ermitteln, welche Erinnerung ausgelöst wurde.
 
 Die Actors-Laufzeit speichert den Actor-Zustand nach Abschluss des Aufrufs `ReceiveReminderAsync`. Tritt ein Fehler beim Speichern des Zustands auf, wird das Actor-Objekt deaktiviert und eine neue Instanz aktiviert. Um anzugeben, dass der Zustand nach Abschluss des Erinnerungsrückrufs nicht gespeichert werden muss, kann das Flag `ActorReminderAttributes.ReadOnly` im Parameter `attributes` festgelegt werden, wenn die Methode `RegisterReminder` zum Erstellen der Erinnerung aufgerufen wird.
 
-Zum Aufheben der Registrierung einer Erinnerung sollte die Methode `UnregisterReminder` aufgerufen werden, wie im folgenden Beispiel gezeigt.
+Zum Aufheben der Registrierung einer Erinnerung ruft ein Actor die `UnregisterReminder`-Methode auf, wie im folgenden Beispiel gezeigt.
 
 ```csharp
 IActorReminder reminder = GetReminder("Pay cell phone bill");
@@ -114,4 +114,4 @@ Task reminderUnregistration = UnregisterReminder(reminder);
 
 Wie oben gezeigt, akzeptiert die Methode `UnregisterReminder` die Schnittstelle `IActorReminder`. Die Basisklasse des Actors unterstützt die Methode `GetReminder`, die zum Abrufen der Schnittstelle `IActorReminder` durch Übergabe des Erinnerungsnamens verwendet werden kann. Dies ist praktisch, da der Actor die Schnittstelle `IActorReminder` nicht beibehalten muss, die bei Aufruf der Methode `RegisterReminder` zurückgegeben wurde.
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0114_2016-->

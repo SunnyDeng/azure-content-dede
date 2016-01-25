@@ -11,7 +11,7 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
+    ms.date="01/12/2016" 
     ms.author="markvi" />
 
 #Tutorial: Azure Active Directory-Integration mit UserVoice
@@ -21,7 +21,7 @@ In diesem Tutorial wird die Integration von Azure und UserVoice erläutert. Das 
 -   Ein gültiges Azure-Abonnement
 -   Ein UserVoice-Mandant
   
-Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie UserVoice zugewiesen haben, mittels einmaligen Anmeldens auf Ihrer UserVoice-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Sie können aber auch den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
+Nach Abschluss dieses Tutorials können sich die UserVoice zugewiesenen Azure AD-Benutzer mittels einmaliger Anmeldung auf Ihrer UserVoice-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -56,7 +56,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Use
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-uservoice-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie im **Suchfeld** den Suchbegriff **UserVoice** ein.
+6.  Geben Sie im **Suchfeld** als Suchbegriff **UserVoice** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-uservoice-tutorial/IC777513.png "Anwendungskatalog")
 
@@ -78,11 +78,11 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-uservoice-tutorial/IC777516.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **UserVoice-Anmelde-URL** die URL im Format „*https://\<Mandantenname>.UserVoice.com*“ ein, und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **UserVoice-Anmelde-URL** die URL im Format "*https://\<Mandantenname>.UserVoice.com*" ein, und klicken Sie dann auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-uservoice-tutorial/IC777517.png "App-URL konfigurieren")
 
-4.  Klicken Sie zum Herunterladen des Zertifikats auf der Seite **Einmaliges Anmelden konfigurieren für UserVoice** auf **Zertifikat herunterladen**, und speichern Sie die Zertifikatsdatei lokal unter **C:\\UserVoice.cer**.
+4.  Klicken Sie zum Herunterladen des Zertifikats auf der Seite **Einmaliges Anmelden konfigurieren um UserVoice** auf **Zertifikat herunterladen**, und speichern Sie die Zertifikatsdatei lokal unter **C:\\UserVoice.cer**.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-uservoice-tutorial/IC777518.png "Einmaliges Anmelden konfigurieren")
 
@@ -105,11 +105,11 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
     3.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren bei UserVoice** den Wert für **Remoteabmelde-URL**, und fügen Sie ihn in das Textfeld **Einmalige Remoteabmeldung** ein.
     4.  Kopieren Sie den **Fingerabdruckwert** aus dem exportierten Zertifikat, und fügen Sie ihn in das Textfeld **SHA1-Fingerabdruck des aktuellen Zertifikats** ein.  
 
-        >[AZURE.TIP]Weitere Informationen finden Sie unter [How to retrieve a certificate's thumbprint value](http://youtu.be/YKQF266SAxI) (in englischer Sprache).
+        >[AZURE.TIP]Weitere Informationen finden Sie unter [Abrufen des Fingerabdruckwerts eines Zertifikats](http://youtu.be/YKQF266SAxI).
 
-    5.  Klicken Sie auf **Save Authentication Settings**.
+    5.  Klicken Sie auf **Authentifizierungseinstellungen speichern**.
 
-9.  Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
+9.  Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-uservoice-tutorial/IC777522.png "Einmaliges Anmelden konfigurieren")
 
@@ -162,4 +162,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0114_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/16/2015"
+	ms.date="01/08/2016"
 	ms.author="billmath;andkjell"/>
 
 # Benutzerdefinierte Installation von Azure AD Connect
@@ -43,11 +43,11 @@ Bei der Installation der Synchronisierungsdienste können Sie den optionalen Kon
 ![Erforderliche Komponenten](./media/active-directory-aadconnect-get-started-custom/requiredcomponents.png)
 
 
-Optionale Konfiguration | Beschreibung
-------------- | ------------- |
-SQL Server-Name | Ermöglicht Ihnen die Angabe des SQL-Servernamens und des Instanznamens. Wählen Sie diese Option aus, wenn Sie bereits über einen Datenbankserver verfügen, den Sie verwenden möchten.
-Dienstkonto | Standardmäßig erstellt Azure AD Connect ein lokales Dienstkonto für die zu verwendenden Synchronisierungsdienste. Das Kennwort wird automatisch generiert und ist der Person, die Azure AD Connect installiert, nicht bekannt. Wenn Sie einen Remote-SQL Server verwenden, benötigen Sie ein Dienstkonto in der Domäne und müssen das Kennwort kennen. Geben Sie in diesen Fällen das zu verwendende Dienstkonto ein. Stellen Sie sicher, dass der die Installation ausführende Benutzer ein SA in SQL ist, damit das Dienstkonto erstellt werden kann. Siehe [Azure AD Connect-Konten und -Berechtigungen](active-directory-aadconnect-accounts-permissions.md#custom-settings-installation) |
-Berechtigungen | Standardmäßig erstellt Azure AD Connect lokal auf dem Server vier Gruppen, wenn die Synchronisierungsdienste installiert sind. Diese Gruppen sind: Administratorengruppe, Operatorengruppe, Durchsuchen-Gruppe und die Gruppe "Kennwort zurücksetzen". Wenn Sie eigene Gruppen angeben möchten, können Sie das hier tun. Die Gruppen müssen sich lokal auf dem Server befinden und dürfen nicht in der Domäne sein. |
+| Optionale Konfiguration | Beschreibung |
+| ------------- | ------------- |
+| Verwenden eines vorhandenen SQL Servers | Ermöglicht Ihnen die Angabe des SQL-Servernamens und des Instanznamens. Wählen Sie diese Option aus, wenn Sie bereits über einen Datenbankserver verfügen, den Sie verwenden möchten. Wenn in Ihrem SQL Server das Browsen nicht aktiviert ist und Sie eine Portnummer angeben müssen, geben Sie im Feld **Instanzname** den Instanznamen gefolgt von einem Komma und einer Portnummer ein. |
+| Verwenden eines vorhandenen Dienstkontos | Standardmäßig erstellt Azure AD Connect ein lokales Dienstkonto für die zu verwendenden Synchronisierungsdienste. Das Kennwort wird automatisch generiert und ist der Person, die Azure AD Connect installiert, nicht bekannt. Wenn Sie einen Remote-SQL Server verwenden, benötigen Sie ein Dienstkonto in der Domäne und müssen das Kennwort kennen. Geben Sie in diesen Fällen das zu verwendende Dienstkonto ein. Stellen Sie sicher, dass der die Installation ausführende Benutzer ein SA in SQL ist, damit das Dienstkonto erstellt werden kann. Siehe [Azure AD Connect-Konten und -Berechtigungen](active-directory-aadconnect-accounts-permissions.md#custom-settings-installation) |
+| Angeben benutzerdefinierter Synchronisierungsgruppen | Standardmäßig erstellt Azure AD Connect lokal auf dem Server vier Gruppen, wenn die Synchronisierungsdienste installiert sind. Diese Gruppen sind: Administratorengruppe, Operatorengruppe, Durchsuchen-Gruppe und die Gruppe "Kennwort zurücksetzen". Wenn Sie eigene Gruppen angeben möchten, können Sie das hier tun. Die Gruppen müssen sich lokal auf dem Server befinden und dürfen nicht in der Domäne sein. |
 
 
 ## Benutzeranmeldung
@@ -103,11 +103,13 @@ Ihr eigenes Attribut|Mit dieser Option können Sie Ihr eigenes Attribut auswähl
 
 
 ### Synchronisierungsfilterung anhand von Gruppen
-Mithilfe des Features zur Filterung anhand von Gruppen können Sie ein kleines Pilotprojekt ausführen, für das nur eine kleine Teilmenge von Objekten in Azure AD und Office 365 erstellt werden sollte. Um dieses Feature verwenden zu können, erstellen Sie eine Gruppe in Active Directory und fügen die Benutzer und Gruppen hinzu, die mit Azure AD als direkte Mitglieder synchronisiert werden sollen. Später können Sie Benutzer hinzufügen und entfernen, um die Liste der Objekte zu verwalten, die in Azure AD vorhanden sein sollten. Zur Verwendung dieses Features wird bei der benutzerdefinierten Installation diese Seite angezeigt:
+Mithilfe des Features zur Filterung anhand von Gruppen können Sie ein kleines Pilotprojekt ausführen, für das nur eine kleine Teilmenge von Objekten in Azure AD und Office 365 erstellt werden sollte. Um dieses Feature verwenden zu können, erstellen Sie eine Gruppe in Active Directory und fügen die Benutzer und Gruppen hinzu, die mit Azure AD als direkte Mitglieder synchronisiert werden sollen. Später können Sie Benutzer hinzufügen und entfernen, um die Liste der Objekte zu verwalten, die in Azure AD vorhanden sein sollten. Alle Objekte, die Sie synchronisieren möchten, müssen direkte Mitglieder der Gruppe sein. Das schließt Benutzer, Gruppen, Kontakte und Computer/Geräte ein. Eine geschachtelte Gruppenmitgliedschaft wird nicht aufgelöst; ein Gruppenmitglied einer Gruppe wird nur die Gruppe selbst und nicht deren Mitglieder enthalten.
 
-![Synchronisierungsfilterung](./media/active-directory-aadconnect-get-started-custom/filter2.png)
+Zur Verwendung dieses Features wird bei der benutzerdefinierten Installation diese Seite angezeigt: ![Synchronisierungsfilterung](./media/active-directory-aadconnect-get-started-custom/filter2.png)
 
 >[AZURE.WARNING]Diese Funktion dient nur dazu, eine Pilotbereitstellung zu unterstützen, und sollte nicht in einer umfassend genutzten Produktionsbereitstellung verwendet werden.
+
+In einer vollständigen Produktionsbereitstellung wird die Verwaltung einer einzelnen Gruppe mit allen zu synchronisierenden Objekten ein komplexes Unterfangen. Verwenden Sie stattdessen eine der unter [Konfigurieren der Filterung](active-directory-aadconnectsync-configure-filtering.md) beschriebenen Methoden.
 
 ### Optionale Features
 
@@ -248,4 +250,4 @@ Nachdem Sie Azure AD Connect installiert haben, können Sie [die Installation �
 
 Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

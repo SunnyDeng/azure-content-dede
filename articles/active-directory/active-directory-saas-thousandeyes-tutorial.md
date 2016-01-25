@@ -1,6 +1,6 @@
 <properties 
     pageTitle="Tutorial: Azure Active Directory-Integration mit ThousandEyes | Microsoft Azure" 
-    description="Erfahren Sie, wie Sie ThousandEyes mit Azure Active Directory verwenden können, um einmaliges Anmelden, die automatisierte Bereitstellung u. v. m. zu aktivieren." 
+    description="Erfahren Sie, wie Sie ThousandEyes mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
     services="active-directory" 
     authors="markusvi"  
     documentationCenter="na" 
@@ -11,7 +11,7 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
+    ms.date="01/12/2016" 
     ms.author="markvi" />
 
 #Tutorial: Azure Active Directory-Integration mit ThousandEyes
@@ -78,7 +78,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-thousandeyes-tutorial/IC790063.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **ThousandEyes-Anmelde-URL** die URL-Benutzer ein, die die Benutzer zur Anmeldung bei ThousandEyes verwenden (z. B. **https://app.thousandeyes.com/login/sso*"), und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **ThousandEyes-Anmelde-URL** die URL-Benutzer ein, welche die Benutzer zur Anmeldung bei ThousandEyes verwenden (z. B. **https://app.thousandeyes.com/login/sso*"), und klicken Sie dann auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-thousandeyes-tutorial/IC790064.png "App-URL konfigurieren")
 
@@ -88,7 +88,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
 5.  Melden Sie sich in einem anderen Webbrowserfenster bei der **ThousandEyes**-Unternehmenswebsite als Administrator an.
 
-6.  Klicken Sie im oberen Menü auf **Einstellungen**.
+6.  Klicken Sie im oberen Menü auf das Symbol **Einstellungen**.
 
     ![Einstellungen](./media/active-directory-saas-thousandeyes-tutorial/IC790066.png "Einstellungen")
 
@@ -127,11 +127,11 @@ Damit sich Azure AD-Benutzer bei ThousandEyes anmelden können, müssen sie in 
 
     ![Einstellungen](./media/active-directory-saas-thousandeyes-tutorial/IC790066.png "Einstellungen")
 
-3.  Klicken Sie auf **Konto**.
+3.  Klicken Sie auf **Account**.
 
     ![Konto](./media/active-directory-saas-thousandeyes-tutorial/IC790067.png "Konto")
 
-4.  Klicken Sie auf die Registerkarte **Konten und Benutzer**.
+4.  Klicken Sie auf Registerkarte **Konten und Benutzer**.
 
     ![Konten und Benutzer](./media/active-directory-saas-thousandeyes-tutorial/IC790073.png "Konten und Benutzer")
 
@@ -158,10 +158,10 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
     ![Benutzer zuweisen](./media/active-directory-saas-thousandeyes-tutorial/IC790075.png "Benutzer zuweisen")
 
-3.  Wählen Sie den Testbenutzer aus, und klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen.
+3.  Wählen Sie den Testbenutzer aus, klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen.
 
     ![Ja](./media/active-directory-saas-thousandeyes-tutorial/IC767830.png "Ja")
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0114_2016-->

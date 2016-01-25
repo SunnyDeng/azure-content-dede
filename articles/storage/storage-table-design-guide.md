@@ -5,7 +5,7 @@
    documentationCenter="na"
    authors="jasonnewyork" 
    manager="tadb"
-   editor=""/>
+   editor="tysonn"/>
 
 <tags
    ms.service="storage"
@@ -210,16 +210,12 @@ In den folgenden Beispielen wird angenommen, dass der Tabellenspeicherdienst Ent
 Im Abschnitt [Übersicht über den Azure-Tabellenspeicherdienst](#azure-table-service-overview) weiter oben werden einige der wichtigsten Funktionen des Azure-Tabellenspeicherdiensts beschrieben, die direkten Einfluss auf den Entwurf für Abfragen haben. Dadurch ergeben sich die folgenden allgemeinen Richtlinien für den Entwurf von Abfragen für den Tabellenspeicherdienst. Beachten Sie, dass die in den Beispielen unten verwendete Filtersyntax aus dem REST-API-Tabellenspeicherdienst stammt. Weitere Informationen finden Sie unter [Abfragen von Entitäten](http://msdn.microsoft.com/library/azure/dd179421.aspx) auf MSDN.
 
 -	Eine ***Punktabfrage*** ist die effizienteste Suche und wird bei sehr umfangreichen Suchvorgängen oder für Suchvorgänge empfohlen, die eine sehr niedrige Latenz erfordern. Eine solche Abfrage kann Indizes verwenden, um durch die Angabe der **PartitionKey**- und **RowKey**-Werte eine einzelne Entität sehr effizient zu suchen. Beispiel: $filter=(PartitionKey eq 'Sales') und (RowKey eq '2')  
--	Die zweitbeste Lösung ist eine ***Bereichsabfrage***, die den **PartitionKey** verwendet und einen Bereich von **RowKey**-Werten filtert, um mehr als eine Entität zurückzugeben. Der **PartitionKey**-Wert identifiziert eine bestimmte Partition und die **RowKey**-Werte identifizieren eine Teilmenge der Entitäten in dieser Partition. Beispiel:
-$filter=PartitionKey eq 'Sales' und RowKey ge 'S' und RowKey lt 'T'  
--	Die drittbeste Lösung ist ein ***Partitionsscan***, der den **PartitionKey** sowie Filter für eine andere Eigenschaft ohne Schlüssel verwendet und möglicherweise mehr als eine Entität zurückgibt. Der **PartitionKey**-Wert identifiziert eine bestimmte Partition und die Eigenschaftswerte wählen eine Teilmenge der Entitäten in dieser Partition aus. Beispiel:
-$filter=PartitionKey eq 'Sales' und LastName eq 'Smith'  
--	Ein ***Tabellenscan*** umfasst den **PartitionKey** nicht und ist sehr ineffizient, da er alle Partitionen, aus denen Ihre Tabelle besteht, auf übereinstimmende Entitäten untersucht. Er führt einen Tabellenscan durch, unabhängig davon, ob der Filter **RowKey** verwendet. Beispiel:
-$filter=LastName eq 'Jones'  
+-	Die zweitbeste Lösung ist eine ***Bereichsabfrage***, die den **PartitionKey** verwendet und einen Bereich von **RowKey**-Werten filtert, um mehr als eine Entität zurückzugeben. Der **PartitionKey**-Wert identifiziert eine bestimmte Partition und die **RowKey**-Werte identifizieren eine Teilmenge der Entitäten in dieser Partition. Beispiel: $filter=PartitionKey eq 'Sales' und RowKey ge 'S' und RowKey lt 'T'  
+-	Die drittbeste Lösung ist ein ***Partitionsscan***, der den **PartitionKey** sowie Filter für eine andere Eigenschaft ohne Schlüssel verwendet und möglicherweise mehr als eine Entität zurückgibt. Der **PartitionKey**-Wert identifiziert eine bestimmte Partition und die Eigenschaftswerte wählen eine Teilmenge der Entitäten in dieser Partition aus. Beispiel: $filter=PartitionKey eq 'Sales' und LastName eq 'Smith'  
+-	Ein ***Tabellenscan*** umfasst den **PartitionKey** nicht und ist sehr ineffizient, da er alle Partitionen, aus denen Ihre Tabelle besteht, auf übereinstimmende Entitäten untersucht. Er führt einen Tabellenscan durch, unabhängig davon, ob der Filter **RowKey** verwendet. Beispiel: $filter=LastName eq 'Jones'  
 -	Abfragen, die mehrere Entitäten zurückgeben, geben diese sortiert in der Reihenfolge **PartitionKey** und **RowKey** zurück. Um eine Neusortierung der Entitäten im Client zu vermeiden, müssen Sie einen **RowKey** auswählen, der die am häufigsten verwendeten Sortierreihenfolge definiert.  
 
-Beachten Sie, dass die Verwendung von **or** für die Festlegung eines Filters, der auf **RowKey**-Werten basiert, zu einem Partitionsscan führt und nicht als eine Bereichsabfrage behandelt wird. Aus diesem Grund sollten Sie Abfragen vermeiden, die z. B. folgende Filter verwenden:
-$filter=PartitionKey eq 'Sales' und (RowKey eq '121' or RowKey eq '322')
+Beachten Sie, dass die Verwendung von **or** für die Festlegung eines Filters, der auf **RowKey**-Werten basiert, zu einem Partitionsscan führt und nicht als eine Bereichsabfrage behandelt wird. Aus diesem Grund sollten Sie Abfragen vermeiden, die z. B. folgende Filter verwenden: $filter=PartitionKey eq 'Sales' und (RowKey eq '121' or RowKey eq '322')
 
 Beispiele für clientseitigen Code, der die Storage Client Library zur Ausführung effizienter Abfragen verwendet, finden Sie unter:
 
@@ -575,9 +571,7 @@ Beachten Sie die folgenden Punkte bei der Entscheidung, wie dieses Muster implem
 Verwenden Sie dieses Muster, um Eventual Consistency zwischen Entitäten zu gewährleisten, die in verschiedenen Partitionen oder Tabellen vorhanden sind. Sie können dieses Muster zur Gewährleistung von Eventual Consistency für alle Vorgänge zum Tabellenspeicherdienst, Blob-Dienst und andere Nicht-Azure Tabellenspeicher-Datenquellen wie Datenbank oder Dateisystem verwenden.
 
 #### Zugehörige Muster und Anleitungen  
-Die folgenden Muster und Anleitungen können auch relevant sein, wenn dieses Muster implementiert wird:  
--	[Entitätsgruppentransaktionen](#entity-group-transactions)  
--	[Zusammenführen oder Ersetzen](#merge-or-replace)  
+Die folgenden Muster und Anleitungen können auch relevant sein, wenn dieses Muster implementiert wird: - [Entitätsgruppentransaktionen](#entity-group-transactions) - [Zusammenführen oder Ersetzen](#merge-or-replace)
 
 >[AZURE.NOTE]Falls Transaktionsisolation für Ihre Lösung wichtig ist, sollten Sie einen Neuentwurf Ihrer Tabellen erwägen, damit Sie EGTs verwenden können.
 
@@ -612,10 +606,7 @@ Verwenden Sie für die zweite Option die Index-Entitäten, die folgende Daten sp
 
 Die Eigenschaft **EmployeeIDs** enthält eine Liste der Mitarbeiter-IDs für Mitarbeiter, deren Nachnamen in **RowKey** gespeichert sind.
 
-Wenn Sie die zweite Option verwenden, beschreiben die folgenden Schritte den Prozess, den Sie befolgen sollten, wenn Sie einen neuen Mitarbeiter hinzufügen. In diesem Beispiel wird ein Mitarbeiter mit der ID "000152" und dem Nachnamen "Jones" in der Vertriebsabteilung hinzugefügt:  
-1.	Rufen Sie die Indexentität mit dem **PartitionKey**-Wert "Sales" und dem **RowKey**-Wert "Jones" ab. Speichern Sie das ETag der Entität für die Verwendung in Schritt 2.  
-2.	Erstellen Sie eine Entitätsgruppentransaktion (also einen Batchvorgang), mit der die neue Mitarbeiterentität eingefügt wird (**PartitionKey**-Wert "Sales" und **RowKey**-Wert "000152"), und aktualisieren Sie die Indexentität (**PartitionKey-Wert** "Sales" und **RowKey**-Wert "Jones") durch Hinzufügen der neuen Mitarbeiter-ID zu der Liste im Feld "EmployeeIDs". Weitere Informationen zu Entitätsgruppentransaktionen finden Sie unter [Entitätsgruppentransaktionen](#entity-group-transactions). 
-3.	Falls die Entitätsgruppentransaktion aufgrund eines Fehlers der vollständigen Nebenläufigkeit (jemand hat gerade die Indexentität geändert) nicht erfolgreich ist, müssen Sie erneut mit Schritt 1 beginnen.
+Wenn Sie die zweite Option verwenden, beschreiben die folgenden Schritte den Prozess, den Sie befolgen sollten, wenn Sie einen neuen Mitarbeiter hinzufügen. In diesem Beispiel wird ein Mitarbeiter mit der ID "000152" und dem Nachnamen "Jones" in der Vertriebsabteilung hinzugefügt: 1. Rufen Sie die Indexentität mit dem **PartitionKey**-Wert "Sales" und dem **RowKey**-Wert "Jones" ab. Speichern Sie das ETag der Entität für die Verwendung in Schritt 2. 2. Erstellen Sie eine Entitätsgruppentransaktion (also einen Batchvorgang), mit der die neue Mitarbeiterentität eingefügt wird (**PartitionKey**-Wert "Sales" und **RowKey**-Wert "000152"), und aktualisieren Sie die Indexentität (**PartitionKey-Wert** "Sales" und **RowKey**-Wert "Jones") durch Hinzufügen der neuen Mitarbeiter-ID zu der Liste im Feld "EmployeeIDs". Weitere Informationen zu Entitätsgruppentransaktionen finden Sie unter [Entitätsgruppentransaktionen](#entity-group-transactions). 3. Falls die Entitätsgruppentransaktion aufgrund eines Fehlers der vollständigen Nebenläufigkeit (jemand hat gerade die Indexentität geändert) nicht erfolgreich ist, müssen Sie erneut mit Schritt 1 beginnen.
 
 Wenn Sie die zweite Option verwenden, können Sie einen ähnlichen Ansatz beim Löschen eines Mitarbeiters wählen. Das Ändern des Nachnamen des Mitarbeiters ist etwas komplexer, da Sie eine Entitätsgruppentransaktion ausführen müssen, die drei Entitäten aktualisiert: die Mitarbeiterentität, die Indexentität für den alten Nachnamen und die Indexentität für den neuen Nachnamen. Sie müssen jede Entität abrufen, bevor Sie Änderungen vornehmen, um die ETag-Werte abzurufen, mit denen Sie dann die Updates unter Verwendung von optimistischer Nebenläufigkeit ausführen.
 
@@ -637,12 +628,7 @@ Mit der dritten Option können Sie keine EGTs zur Aufrechterhaltung der Konsiste
 
 #### Probleme und Überlegungen  
 
-Beachten Sie die folgenden Punkte bei der Entscheidung, wie dieses Muster implementiert werden soll:  
--	Diese Lösung erfordert mindestens zwei Abfragen zum Abrufen von übereinstimmenden Entitäten, eine zur Abfrage der Indexentitäten, um die Liste mit **RowKey**-Werten zu erhalten, und Abfragen zum Abrufen jeder Entität in der Liste.  
--	Da eine einzelne Entität eine maximale Größe von 1 MB hat, wird bei Option 2 und Option 3 der Lösung angenommen, dass die Liste der Mitarbeiter-IDs für einen angegebenen Nachnamen nie größer als 1 MB ist. Wenn die Liste der Mitarbeiter-IDs aller Voraussicht nach größer als 1 MB wird, verwenden Sie die Option 1 und speichern Sie die Indexdaten im Blob-Speicher.  
--	Bei Verwendung von Option 2 (Verwendung von EGTs zum Hinzufügen und Löschen von Mitarbeitern und Ändern des Nachnamens eines Mitarbeiters) müssen Sie bewerten, ob sich die Transaktionsmenge den Skalierungsgrenzen in einer bestimmten Partition nähert. Wenn dies der Fall ist, sollten Sie eine Lösung mit "Eventual Consistency" (Option 1 oder 3) erwägen, die Warteschlangen zur Behandlung der Update-Anforderungen verwendet und Ihnen das Speichern der Indexentitäten in einer von den Mitarbeiterentitäten separaten Partition ermöglicht.  
--	In Option 2 in dieser Lösung wird davon ausgegangen, dass Sie innerhalb einer Abteilung nach Nachnamen suchen möchten. Beispielsweise möchten Sie eine Liste von Mitarbeitern mit dem Nachnamen "Jones" in der Vertriebsabteilung abrufen. Wenn Sie eine Suche nach allen Mitarbeitern mit dem Nachnamen "Jones" in der gesamten Organisation durchführen möchten, verwenden Sie entweder Option 1 oder Option 3.
--	Sie können eine auf einer Warteschlange basierende Lösung implementieren, die "Eventual Consistency" bietet (weitere Informationen finden Sie unter [Eventual Consistency-Transaktionsmuster](#eventually-consistent-transactions-pattern) ).  
+Beachten Sie die folgenden Punkte bei der Entscheidung, wie dieses Muster implementiert werden soll: – Diese Lösung erfordert mindestens zwei Abfragen zum Abrufen von übereinstimmenden Entitäten, eine zur Abfrage der Indexentitäten, um die Liste mit **RowKey**-Werten zu erhalten, und Abfragen zum Abrufen jeder Entität in der Liste. – Da eine einzelne Entität eine maximale Größe von 1 MB hat, wird bei Option 2 und Option 3 der Lösung angenommen, dass die Liste der Mitarbeiter-IDs für einen angegebenen Nachnamen nie größer als 1 MB ist. Wenn die Liste der Mitarbeiter-IDs aller Voraussicht nach größer als 1 MB wird, verwenden Sie die Option 1 und speichern Sie die Indexdaten im Blob-Speicher. – Bei Verwendung von Option 2 (Verwendung von EGTs zum Hinzufügen und Löschen von Mitarbeitern und Ändern des Nachnamens eines Mitarbeiters) müssen Sie bewerten, ob sich die Transaktionsmenge den Skalierungsgrenzen in einer bestimmten Partition nähert. Wenn dies der Fall ist, sollten Sie eine Lösung mit "Eventual Consistency" (Option 1 oder 3) erwägen, die Warteschlangen zur Behandlung der Update-Anforderungen verwendet und Ihnen das Speichern der Indexentitäten in einer von den Mitarbeiterentitäten separaten Partition ermöglicht. – In Option 2 in dieser Lösung wird davon ausgegangen, dass Sie innerhalb einer Abteilung nach Nachnamen suchen möchten. Beispielsweise möchten Sie eine Liste von Mitarbeitern mit dem Nachnamen "Jones" in der Vertriebsabteilung abrufen. Wenn Sie eine Suche nach allen Mitarbeitern mit dem Nachnamen "Jones" in der gesamten Organisation durchführen möchten, verwenden Sie entweder Option 1 oder Option 3. – Sie können eine auf einer Warteschlange basierende Lösung implementieren, die "Eventual Consistency" bietet (weitere Informationen finden Sie unter [Eventual Consistency-Transaktionsmuster](#eventually-consistent-transactions-pattern) ).
 
 #### Verwendung dieses Musters  
 
@@ -650,11 +636,7 @@ Verwenden Sie dieses Muster, wenn Sie eine Reihe von Entitäten nachschlagen mö
 
 #### Zugehörige Muster und Anleitungen  
 
-Die folgenden Muster und Anleitungen können auch relevant sein, wenn dieses Muster implementiert wird:  
--	[Zusammengesetzte Schlüsselmuster](#compound-key-pattern)  
--	[Eventual Consistency-Transaktionsmuster](#eventually-consistent-transactions-pattern)  
--	[Entitätsgruppentransaktionen](#entity-group-transactions)  
--	[Arbeiten mit heterogenen Entitätstypen](#working-with-heterogeneous-entity-types)
+Die folgenden Muster und Anleitungen können auch relevant sein, wenn dieses Muster implementiert wird: - [Zusammengesetzte Schlüsselmuster](#compound-key-pattern) – [Eventual Consistency-Transaktionsmuster](#eventually-consistent-transactions-pattern) – [Entitätsgruppentransaktionen](#entity-group-transactions) - [Arbeiten mit heterogenen Entitätstypen](#working-with-heterogeneous-entity-types)
 
 ### Denormalisierungsmuster  
 
@@ -685,10 +667,7 @@ Beachten Sie die folgenden Punkte bei der Entscheidung, wie dieses Muster implem
 Verwenden Sie dieses Muster, wenn Sie häufig nach zugeordneten Informationen suchen müssen. Dieses Muster reduziert die Anzahl der Abfragen, die Ihr Client vornehmen muss, um die benötigten Daten abzurufen.
 
 #### Zugehörige Muster und Anleitungen
-Die folgenden Muster und Anleitungen können auch relevant sein, wenn dieses Muster implementiert wird:  
--	[Zusammengesetzte Schlüsselmuster](#compound-key-pattern)  
--	[Entitätsgruppentransaktionen](#entity-group-transactions)  
--	[Arbeiten mit heterogenen Entitätstypen](#working-with-heterogeneous-entity-types)
+Die folgenden Muster und Anleitungen können auch relevant sein, wenn dieses Muster implementiert wird: - [Zusammengesetzte Schlüsselmuster](#compound-key-pattern) – [Entitätsgruppentransaktionen](#entity-group-transactions) – [Arbeiten mit heterogenen Entitätstypen](#working-with-heterogeneous-entity-types)
 
 ### Zusammengesetzte Schlüsselmuster  
 
@@ -840,9 +819,7 @@ Bei diesem Entwurf können Sie mit einem Zusammenführungsvorgang den Meldungsz�
 
 #### Probleme und Überlegungen  
 
-Beachten Sie die folgenden Punkte bei der Entscheidung, wie dieses Muster implementiert werden soll:  
--	Wenn die vollständige Datenreihe nicht in eine einzelne Entität passt (eine Entität kann bis zu 252 Eigenschaften aufweisen), verwenden Sie einen alternativen Datenspeicher, z. B einen Blob.  
--	Wenn mehrere Clients gleichzeitig eine Entität aktualisieren, müssen Sie den **ETag** verwenden, um optimistische Nebenläufigkeit zu implementieren. Wenn Sie viele Clients haben, können eine Vielzahl von Konflikten auftreten.
+Beachten Sie die folgenden Punkte bei der Entscheidung, wie dieses Muster implementiert werden soll: – Wenn die vollständige Datenreihe nicht in eine einzelne Entität passt (eine Entität kann bis zu 252 Eigenschaften aufweisen), verwenden Sie einen alternativen Datenspeicher, z. B einen Blob. – Wenn mehrere Clients gleichzeitig eine Entität aktualisieren, müssen Sie den **ETag** verwenden, um optimistische Nebenläufigkeit zu implementieren. Wenn Sie viele Clients haben, können eine Vielzahl von Konflikten auftreten.
 
 #### Verwendung dieses Musters  
 
@@ -1461,8 +1438,7 @@ Es ist möglich, einen SAS-Token zu generieren, der Zugriff auf eine Teilmenge d
 
 ### Asynchrone und parallele Vorgänge  
 
-Angenommen, Sie verteilen Ihre Anfragen über mehrere Partitionen. In diesem Fall können Sie Durchsatz und Client-Reaktionsfähigkeit mithilfe von asynchronen oder parallelen Abfragen verbessern.
-Beispiel: Sie haben möglicherweise zwei oder mehr Workerrollen-Instanzen, die auf die Tabellen parallel zugreifen. Sie können einzelne Worker-Rollen haben, die für bestimmte Gruppen von Partitionen zuständig sind oder einfach mehrere Workerrollen-Instanzen, von denen jede auf alle Partitionen in einer Tabelle zugreifen kann.
+Angenommen, Sie verteilen Ihre Anfragen über mehrere Partitionen. In diesem Fall können Sie Durchsatz und Client-Reaktionsfähigkeit mithilfe von asynchronen oder parallelen Abfragen verbessern. Beispiel: Sie haben möglicherweise zwei oder mehr Workerrollen-Instanzen, die auf die Tabellen parallel zugreifen. Sie können einzelne Worker-Rollen haben, die für bestimmte Gruppen von Partitionen zuständig sind oder einfach mehrere Workerrollen-Instanzen, von denen jede auf alle Partitionen in einer Tabelle zugreifen kann.
 
 Innerhalb einer Client-Instanz können Sie den Durchsatz verbessern, indem Sie Speichervorgänge asynchron ausführen. Die Storage Client Library erleichtert das Schreiben von asynchronen Abfragen und Änderungen. Beispiel: Sie können mit der synchronen Methode starten, mit der alle Entitäten in einer Partition wie im folgenden C#-Code gezeigt abgerufen werden:
 
@@ -1584,4 +1560,4 @@ Wir möchten auch den folgenden Microsoft-MVPs für ihr wertvolles Feedback zu d
 [29]: ./media/storage-table-design-guide/storage-table-design-IMAGE29.png
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0114_2016-->

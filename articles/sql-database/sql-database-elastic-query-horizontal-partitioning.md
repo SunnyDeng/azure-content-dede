@@ -21,7 +21,7 @@ In diesem Dokument wird die Einrichtung von elastischen Datenbankabfragen für S
 
 ![Abfrage über Shards hinweg][1]
 
-Die Funktionalität ist Teil des Azure SQL-Datenbankfeatures [Elastische Datenbank](sql-database-elastic-scale.md).
+Die Funktionalität ist Teil des Azure SQL-Datenbankfeatures [Elastische Datenbank](sql-database-elastic-scale-introduction.md).
  
 ## Erstellen von Datenbankobjekten
 
@@ -241,4 +241,4 @@ Verwenden Sie herkömmliche SQL Server-Verbindungszeichenfolgen, um Ihre Anwendu
 [1]: ./media/sql-database-elastic-query-horizontal-partitioning/horizontalpartitioning.png
 <!--anchors-->
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0114_2016-->

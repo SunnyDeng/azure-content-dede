@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/04/2016"
-   ms.author="lodipalm"/>
+   ms.date="01/07/2016"
+   ms.author="lodipalm;barbkess;sonyama"/>
 
 #Nutzen anderer Dienste mit SQL Data Warehouse
 Zusätzlich zur Kernfunktionalität ermöglicht SQL Data Warehouse Benutzern die gleichzeitige Nutzung vieler anderer Dienste in Azure. Insbesondere haben wir aktuell Schritte unternommen, um die weitreichende Integration folgender Dienste voranzubringen:
@@ -71,4 +71,4 @@ Weitere Informationen finden Sie unter[Integration in Azure Stream Analytics](..
 
 <!--Other Web references-->
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0114_2016-->

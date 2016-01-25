@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="11/18/2015"
+   ms.date="01/13/2015"
    ms.author="larryfr"/>
 
 
@@ -59,14 +59,29 @@ Mit Azure Virtual Network können Sie Ihre Hadoop-Lösungen erweitern, um lokale
 Weitere Informationen zu Features, Vorteilen und Funktionen von virtuellen Netzwerken finden Sie unter [Überblick über virtuelle Azure-Netzwerke](../virtual-network/virtual-networks-overview.md).
 
 > [AZURE.NOTE]Sie müssen das virtuelle Azure-Netzwerk erstellen, bevor Sie einen HDInsight-Cluster bereitstellen. Weitere Informationen finden Sie unter [Konfigurationsaufgaben für virtuelle Netzwerke](http://azure.microsoft.com/documentation/services/virtual-network/).
->
-> Azure HDInsight unterstützt nur standortbasierte virtuelle Netzwerke und kann momentan nicht mit affinitätsgruppenbasierten virtuellen Netzwerken verwendet werden.
->
-> Sie sollten unbedingt ein einziges Subnetz pro Cluster verwenden.
->
-> Für Windows-basierte Cluster ist ein virtuelles Azure-Netzwerk der Version 1 (klassisch) erforderlich, für Linux-basierte Cluster dagegen ein virtuelles Azure-Netzwerk der Version 2 (Azure-Ressourcen-Manager). Wenn nicht der richtige Netzwerktyp vorhanden ist, kann das Netzwerk nicht zum Erstellen des Clusters verwendet werden.
->
-> Wenn sich Ressourcen in einem virtuellen Netzwerk befinden, das nicht von dem zu erstellenden Cluster verwendet werden kann, dann können Sie ein neues virtuelles Netzwerk erstellen, das vom Cluster verwendet werden kann, und es mit dem inkompatiblen virtuellen Netzwerk verbinden. Anschließend können Sie den Cluster in der erforderlichen Netzwerkversion erstellen, und da die beiden Netzwerke verknüpft sind, kann auf die Ressourcen im anderen Netzwerk zugegriffen werden. Weitere Informationen zum Herstellen einer Verbindung zwischen klassischen und neuen virtuellen Netzwerken finden Sie unter [Herstellen einer Verbindung zwischen klassischen VNets und neuen VNets](../virtual-network/virtual-networks-arm-asm-s2s.md).
+
+## Anforderungen für Virtual Networks
+
+> [AZURE.IMPORTANT]Zum Erstellen eines HDInsight-Clusters in einem Virtual Network sind bestimmte Virtual Network-Konfigurationen erforderlich, die in diesem Abschnitt beschrieben werden.
+
+* Azure HDInsight unterstützt nur standortbasierte virtuelle Netzwerke und kann momentan nicht mit affinitätsgruppenbasierten virtuellen Netzwerken verwendet werden. 
+
+* Es wird empfohlen, jeweils ein einzelnes Subnetz für die einzelnen HDInsight-Cluster zu erstellen.
+
+* Für Windows-basierte Cluster ist ein virtuelles Azure-Netzwerk der Version 1 (klassisch) erforderlich, für Linux-basierte Cluster dagegen ein virtuelles Azure-Netzwerk der Version 2 (Azure-Ressourcen-Manager). Wenn nicht der richtige Netzwerktyp vorhanden ist, kann das Netzwerk nicht zum Erstellen des Clusters verwendet werden.
+
+    Wenn sich Ressourcen in einem virtuellen Netzwerk befinden, das nicht von dem zu erstellenden Cluster verwendet werden kann, dann können Sie ein neues virtuelles Netzwerk erstellen, das vom Cluster verwendet werden kann, und es mit dem inkompatiblen virtuellen Netzwerk verbinden. Anschließend können Sie den Cluster in der erforderlichen Netzwerkversion erstellen, und da die beiden Netzwerke verknüpft sind, kann auf die Ressourcen im anderen Netzwerk zugegriffen werden. Weitere Informationen zum Herstellen einer Verbindung zwischen klassischen und neuen virtuellen Netzwerken finden Sie unter [Herstellen einer Verbindung zwischen klassischen VNets und neuen VNets](../virtual-network/virtual-networks-arm-asm-s2s.md).
+
+* HDInsight wird nicht für Azure Virtual Networks unterstützt, bei denen der Zugriff auf das bzw. aus dem Internet explizit eingeschränkt ist. Ein Beispiel hierfür ist die Verwendung von Netzwerksicherheitsgruppen oder ExpressRoute zum Blockieren von Internetdatenverkehr zu Ressourcen im Virtual Network. Der HDInsight-Dienst ist ein verwalteter Dienst, der während der Bereitstellung und Ausführung Internetzugriff benötigt. Azure muss die Integrität des Clusters überprüfen, das Failover von Clusterressourcen initiieren und andere automatisierte Verwaltungsaufgaben durchführen können.
+
+    Wenn Sie HDInsight in einem Virtual Network verwenden möchten, für das der Internetdatenverkehr blockiert wird, haben Sie folgende Möglichkeiten:
+
+    1.	Erstellen Sie innerhalb des Virtual Network ein neues Subnetz. Dieses Subnetz wird von HDInsight verwendet.
+
+    2.	Definieren Sie eine Routingtabelle, und erstellen Sie eine benutzerdefinierte Route (User-Defined Route, UDR) für das Subnetz, die sowohl eingehende als auch ausgehende Internetverbindungen zulässt. Dies erreichen Sie mit Routen. Die Internetverbindung wird so nur für die Ressourcen im Subnetz aktiviert. Weitere Informationen zum Verwenden von benutzerdefinierten Routen finden Sie unter https://azure.microsoft.com/de-DE/documentation/articles/virtual-networks-udr-overview/ und https://azure.microsoft.com/de-DE/documentation/articles/virtual-networks-udr-how-to/.
+    
+    3.	Wählen Sie beim Erstellen des HDInsight-Clusters das in Schritt 1 erstellte Subnetz aus. Der Cluster wird in dem Subnetz mit Internetzugriff bereitgestellt.
+
 
 Weitere Informationen zur Bereitstellung eines HDInsight-Clusters in einem virtuellen Netzwerk finden Sie unter [Bereitstellen von Hadoop-Clustern in HDInsight](hdinsight-provision-clusters.md).
 
@@ -176,4 +191,4 @@ In den folgenden Beispielen wird die Verwendung von HDInsight mit Azure Virtual 
 
 Weitere Informationen zu virtuellen Azure Virtual-Netzwerken finden Sie unter [Überblick über Azure Virtual Network](../virtual-network/virtual-networks-overview.md).
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0114_2016-->

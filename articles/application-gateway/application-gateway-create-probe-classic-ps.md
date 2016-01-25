@@ -1,6 +1,6 @@
-<properties 
+<properties
    pageTitle="Erstellen eines benutzerdefinierten Tests für ein Application Gateway im klassischen Bereitstellungsmodell mithilfe von PowerShell | Microsoft Azure"
-   description="Hier erfahren Sie, wie Sie mithilfe von PowerShell einen benutzerdefinierten Test für ein Application Gateway im klassischen Bereitstellungsmodell erstellen."
+   description="Erfahren Sie, wie Sie mithilfe von PowerShell einen benutzerdefinierten Test für ein Application Gateway im klassischen Bereitstellungsmodell erstellen."
    services="application-gateway"
    documentationCenter="na"
    authors="joaoma"
@@ -17,7 +17,7 @@
    ms.date="12/17/2015"
    ms.author="joaoma" />
 
-# Erstellen eines benutzerdefinierten Tests für ein Application Gateway (klassisch) mithilfe von PowerShell
+# Erstellen eines benutzerdefinierten Tests für ein Azure Application Gateway (klassisch) mithilfe von PowerShell
 
 
 [AZURE.INCLUDE [azure-probe-intro-include](../../includes/application-gateway-create-probe-intro-include.md)].
@@ -28,19 +28,19 @@
 [AZURE.INCLUDE [azure-ps-prerequisites-include.md](../../includes/azure-ps-prerequisites-include.md)]
 
 
-## Erstellen eines neuen Application Gateways 
+## Erstellen eines neuen Anwendungsgateways
 
-Zum Erstellen eines Application Gateways müssen Sie bestimmte Schritte in folgender Reihenfolge ausführen:
+So erstellen Sie ein Application Gateway
 
-1. Erstellen einer Application Gateway-Ressource
-2. Erstellen der XML-Konfigurationsdatei oder des Konfigurationsobjekts
-3. Übertragen der Konfiguration auf die neu erstellte Application Gateway-Ressource
+1. Erstellen Sie eine neue Application Gateway-Ressource.
+2. Erstellen Sie eine XML-Konfigurationsdatei oder ein Konfigurationsobjekt.
+3. Ordnen Sie die Konfiguration der neu erstellten Application Gateway-Ressource zu.
 
 ### Erstellen einer Application Gateway-Ressource
 
-Erstellen Sie das Gateway mithilfe des Cmdlets `New-AzureApplicationGateway`. Ersetzen Sie dabei die Werte durch eigene Werte. Beachten Sie, dass die Abrechnung für das Gateway jetzt noch nicht gestartet wird. Die Abrechnung beginnt in einem späteren Schritt, wenn das Gateway erfolgreich gestartet wurde.
+Verwenden Sie zum Erstellen des Gateways das **New-AzureApplicationGateway**-Cmdlet, und ersetzen Sie die Werte durch Ihre eigenen Werte. Beachten Sie, dass die Abrechnung für das Gateway jetzt noch nicht gestartet wird. Die Abrechnung beginnt in einem späteren Schritt, wenn das Gateway erfolgreich gestartet wurde.
 
-Mit dem folgenden Beispiel wird ein neues Application Gateway über ein virtuelles Netzwerk mit dem Namen "testvnet1" und ein Subnetz mit dem Namen "subnet-1" erstellt.
+Mit dem folgenden Beispiel wird ein neues Application Gateway über ein virtuelles Netzwerk mit dem Namen „testvnet1“ und ein Subnetz mit dem Namen „subnet-1“ erstellt.
 
 
 	PS C:\> New-AzureApplicationGateway -Name AppGwTest -VnetName testvnet1 -Subnets @("Subnet-1")
@@ -55,7 +55,7 @@ Mit dem folgenden Beispiel wird ein neues Application Gateway über ein virtuell
  *Description*, *InstanceCount* und *GatewaySize* sind optionale Parameter.
 
 
-Mithilfe des Cmdlets `Get-AzureApplicationGateway` können Sie **überprüfen**, ob das Gateway erstellt wurde.
+Sie können das **Get-AzureApplicationGateway**-Cmdlet verwenden, um zu überprüfen, ob das Gateway erstellt wurde.
 
 
 	PS C:\> Get-AzureApplicationGateway AppGwTest
@@ -69,16 +69,16 @@ Mithilfe des Cmdlets `Get-AzureApplicationGateway` können Sie **überprüfen**,
 	VirtualIPs    : {}
 	DnsName       :
 
->[AZURE.NOTE]Der Standardwert für *InstanceCount* ist 2, der Maximalwert ist 10. Der Standardwert für *GatewaySize* ist "Medium". Sie können zwischen "Small", "Medium" und "Large" auswählen.
+>[AZURE.NOTE]Der Standardwert für *InstanceCount* ist 2, der Maximalwert ist 10. Der Standardwert für *GatewaySize* ist "Medium". Sie können zwischen „Small“, „Medium“ und „Large“ wählen.
 
 
- *Vip* und *DnsName* werden leer angezeigt, da das Gateway noch nicht gestartet wurde. Die Werte werden erstellt, sobald das Gateway ausgeführt wird.
+ *VirtualIPs* und *DnsName* werden leer angezeigt, da das Gateway noch nicht gestartet wurde. Die Werte werden erstellt, sobald das Gateway ausgeführt wird.
 
 ## Konfigurieren des Application Gateways
 
-Sie können das Application Gateway mit XML oder einem Konfigurationsobjekt konfigurieren.
+Sie können das Application Gateway per XML oder mit einem Konfigurationsobjekt konfigurieren.
 
-## Konfigurieren des Application Gateways mit XML
+## Konfigurieren des Application Gateways per XML
 
 Im folgenden Beispiel verwenden Sie eine XML-Datei, um alle Einstellungen des Application Gateways zu konfigurieren und auf die Application Gateway-Ressource zu übertragen.
 
@@ -151,7 +151,7 @@ Kopieren Sie den folgenden Text in Editor.
 
 Bearbeiten Sie die Werte zwischen den Klammern für die Konfigurationselemente. Speichern Sie die Datei mit der Erweiterung XML.
 
-Das folgende Beispiel zeigt, wie Sie mithilfe einer Konfigurationsdatei das Application Gateway für den Lastenausgleich von HTTP-Datenverkehr am öffentlichen Port 80 und für das Senden des Netzwerkdatenverkehrs an den Back-End-Port 80 zwischen zwei IP-Adressen einrichten. Dabei wird ein benutzerdefinierter Test (engl. „Probe“) verwendet.
+Das folgende Beispiel zeigt, wie Sie mithilfe einer Konfigurationsdatei das Application Gateway für den Lastenausgleich von HTTP-Datenverkehr am öffentlichen Port 80 und zum Senden des Netzwerkdatenverkehrs an den Back-End-Port 80 zwischen zwei IP-Adressen einrichten, indem Sie einen benutzerdefinierten Test verwenden.
 
 >[AZURE.IMPORTANT]Für die Protokollelemente Http oder Https muss die Groß-/Kleinschreibung beachtet werden.
 
@@ -161,29 +161,29 @@ Es wird ein neues Konfigurationselement <Probe> hinzugefügt, um benutzerdefinie
 Die Konfigurationsparameter sind:
 
 - **Name**: Der Verweisname für den benutzerdefinierten Test.
-- **Protocol**: Das verwendete Protokoll (mögliche Werte sind „Http“ oder „Https“).
-- **Host** und **Path**: Vollständiger URL-Pfad, der vom Application Gateway aufgerufen wird, um die Integrität der Instanz zu ermitteln. Beispiel: Bei einer Website http://contoso.com/ können Sie den benutzerdefinierten Test für „http://contoso.com/path/custompath.htm“ konfigurieren, damit die HTTP-Antwort bei den Prüfungen des Tests erfolgreich ist. 
-- **Interval**: Konfiguriert die Intervalle für die Prüfungen des Tests (in Sekunden). 
-- **Timeout**: Definiert das Zeitlimit des Tests für eine HTTP-Antwortprüfung.
+- **Protocol**: Das verwendete Protokoll (mögliche Werte sind „HTTP“ oder „HTTPS“).
+- **Host** und **Path**: Vollständiger URL-Pfad, der vom Application Gateway aufgerufen wird, um die Integrität der Instanz zu ermitteln. Beispiel: Bei der Website http://contoso.com/ können Sie den benutzerdefinierten Test für „http://contoso.com/path/custompath.htm“ konfigurieren, damit die HTTP-Antwort bei den Prüfungen des Tests erfolgreich ist.
+- **Interval**: Konfiguriert die Intervalle für die Prüfungen des Tests (in Sekunden).
+- **Timeout**: Definiert das Timeout des Tests für eine HTTP-Antwortprüfung.
 - **UnhealthyThreshold**: Die Anzahl der Fehler bei HTTP-Antworten, ab der die Back-End-Instanz als *fehlerhaft* gekennzeichnet wird.
 
-Auf den Namen des Tests wird in der <BackendHttpSettings> Konfiguration verwiesen, um festzulegen, welcher Back-End-Pool die Einstellungen für den benutzerdefinierten Test verwenden soll.
+Auf den Namen des Tests wird in der Konfiguration <BackendHttpSettings> verwiesen, um festzulegen, welcher Back-End-Pool die Einstellungen für den benutzerdefinierten Test verwenden soll.
 
 ## Hinzufügen der Konfiguration eines benutzerdefinierten Tests zu einem vorhandenen Application Gateway
 
-Zum Ändern der aktuellen Konfiguration eines Application Gateways sind drei Schritte nötig: das Abrufen der aktuellen XML-Konfigurationsdatei, das Einfügen des benutzerdefinierten Tests in die XML-Datei und das Konfigurieren des Application Gateways mit den neuen XML-Einstellungen
+Zum Ändern der aktuellen Konfiguration eines Application Gateways sind drei Schritte nötig: das Abrufen der aktuellen XML-Konfigurationsdatei, das Einfügen des benutzerdefinierten Tests in die XML-Datei und das Konfigurieren des Application Gateways mit den neuen XML-Einstellungen.
 
 ### Schritt 1
 
-Rufen Sie mit „get-AzureApplicationGatewayConfig“ die XML-Datei ab. Dadurch wird die Konfigurations-XML-Datei exportiert, sodass ihr die Einstellungen für den Test hinzugefügt werden können.
-	
+Rufen Sie mit get-AzureApplicationGatewayConfig die XML-Datei ab. Dadurch wird die XML-Konfigurationsdatei exportiert, sodass ihr die Einstellungen für den Test hinzugefügt werden können.
+
 	get-AzureApplicationGatewayConfig -Name <application gateway name> -Exporttofile "<path to file>"
 
 
-### Schritt 2 
+### Schritt 2
 
-Öffnen Sie die XML-Datei in einem Texteditor. Fügen Sie nach `<frontendport>` den Abschnitt `<probe>` ein.
-	
+Öffnen Sie die XML-Datei in einem Texteditor. Fügen Sie nach `<frontendport>` den Abschnitt `<probe>` hinzu.
+
 	<Probes>
         <Probe>
             <Name>Probe01</Name>
@@ -195,8 +195,8 @@ Rufen Sie mit „get-AzureApplicationGatewayConfig“ die XML-Datei ab. Dadurch 
             <UnhealthyThreshold>5</UnhealthyThreshold>
         </Probe>
 
-Im Abschnitt „BackendHttpSettings“ der XML-Datei fügen Sie den Namen des Tests so hinzu wie im folgenden Beispiel gezeigt:
-    
+Fügen Sie den Namen des Tests im Abschnitt „BackendHttpSettings“ der XML-Datei wie im folgenden Beispiel hinzu:
+
         <BackendHttpSettings>
             <Name>setting1</Name>
             <Port>80</Port>
@@ -209,17 +209,17 @@ Im Abschnitt „BackendHttpSettings“ der XML-Datei fügen Sie den Namen des Te
 Speichern Sie die XML-Datei.
 
 
-### Schritt 3 
+### Schritt 3
 
-Aktualisieren Sie die Konfiguration des Application Gateways mit der neuen XML-Datei, und verwenden Sie dazu `Set-AzureApplicationGatewayConfig`. Dadurch wird das Application Gateway mit der neuen Konfiguration aktualisiert.
+Aktualisieren Sie die Application Gateway-Konfiguration mit der neuen XML-Datei, indem Sie **Set-AzureApplicationGatewayConfig** verwenden. Dadurch wird das Application Gateway mit der neuen Konfiguration aktualisiert.
 
 	set-AzureApplicationGatewayConfig -Name <application gateway name> -Configfile "<path to file>"
 
 
 ## Nächste Schritte
 
-Wenn Sie die SSL-Auslagerung konfigurieren möchten, lesen Sie [Konfigurieren eines Application Gateways für die SSL-Auslagerung](application-gateway-ssl.md).
+Wenn Sie die Secure Sockets Layer-Auslagerung (SSL) konfigurieren möchten, ist es ratsam, den Abschnitt [Konfigurieren eines Application Gateways für die SSL-Auslagerung](application-gateway-ssl.md) zu lesen.
 
-Wenn Sie ein Application Gateway für ILB konfigurieren möchten, lesen Sie [Erstellen eines Application Gateways mit einem internen Lastenausgleich (ILB)](application-gateway-ilb.md).
+Wenn Sie ein Application Gateway für die Verwendung mit einem internen Load Balancer konfigurieren möchten, ist es ratsam, den Abschnitt [Erstellen eines Application Gateways mit einem internen Lastenausgleich (ILB)](application-gateway-ilb.md) zu lesen.
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0114_2016-->

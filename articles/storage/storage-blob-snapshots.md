@@ -1,19 +1,19 @@
 <properties
-	pageTitle="Erstellen der Momentaufnahme eines Blobs | Microsoft Azure"
-	description="Anleitung zum Erstellen von Momentaufnahmen von Azure Storage-Blobs"
+	pageTitle="Erstellen einer schreibgeschützten Momentaufnahme eines Blobs | Microsoft Azure"
+	description="Erfahren Sie, wie Sie eine Momentaufnahme eines Blobs erstellen, um Blobdaten zu einem angegebenen Zeitpunkt zu sichern. Sie erhalten grundlegende Informationen dazu, wie Momentaufnahmen in Rechnung gestellt und wie Sie mithilfe von Momentaufnahmen Ihre Kapazitätskosten minimieren können."
 	services="storage"
 	documentationCenter=""
 	authors="tamram"
-	manager="adinah"
-	editor=""/>
+	manager="carmonm"
+	editor="tysonn"/>
 
-<tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/01/2015" 
+<tags
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="01/07/2016"
 	ms.author="tamram"/>
 
 # Erstellen einer Momentaufnahme eines Blobs
@@ -125,4 +125,4 @@ In Szenario 4 wurde das Basis-Blob vollständig aktualisiert und enthält keine
 
 ![Azure Storage-Ressourcen](./media/storage-blob-snapshots/storage-blob-snapshots-billing-scenario-4.png)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0114_2016-->

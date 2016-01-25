@@ -11,7 +11,7 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
+    ms.date="01/12/2016" 
     ms.author="markvi" />
 
 #Tutorial: Azure Active Directory-Integration mit Projectplace
@@ -21,7 +21,7 @@ In diesem Tutorial wird die Integration von Azure und Projectplace erläutert. D
 -   Ein gültiges Azure-Abonnement
 -   Ein Projectplace-Abonnement, für das einmaliges Anmelden aktiviert ist
   
-Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie Projectplace zugewiesen haben, mittels einmaliger Anmeldung auf Ihrer Projectplace-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können Sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
+Nach Abschluss dieses Tutorials können sich die Projectplace zugewiesenen Azure AD-Benutzer mittels einmaliger Anmeldung auf Ihrer Projectplace-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -55,7 +55,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Pro
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-projectplace-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie im **Suchfeld** den Suchbegriff **Projectplace** ein.
+6.  Geben Sie im **Suchfeld** das Wort **Projectplace** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-projectplace-tutorial/IC790218.png "Anwendungskatalog")
 
@@ -76,7 +76,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-projectplace-tutorial/IC790221.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Projectplace-Anmelde-URL** die URL Ihres Projectplace-Mandanten ein (z. B. "**http://company.projectplace.com*"), und klicken Sie auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Projectplace-Anmelde-URL** die URL Ihres Projectplace-Mandanten ein (z. B. **http://company.projectplace.com*")), und klicken Sie auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-projectplace-tutorial/IC790222.png "App-URL konfigurieren")
 
@@ -88,7 +88,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     >[AZURE.NOTE]Einmaliges Anmelden muss vom Supportteam von Projectplace konfiguriert werden. Sie erhalten eine Benachrichtigung, sobald die Konfiguration abgeschlossen ist.
 
-6.  Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
+6.  Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-projectplace-tutorial/IC790227.png "Einmaliges Anmelden konfigurieren")
 ##Konfigurieren der Benutzerbereitstellung
@@ -112,7 +112,7 @@ Damit sich Azure AD-Benutzer bei Projectplace anmelden können, müssen sie in P
     ![Neue Mitglieder](./media/active-directory-saas-projectplace-tutorial/IC790233.png "Neue Mitglieder")
 
     1.  Geben Sie im Textfeld **Neue Mitglieder** die E-Mail-Adresse eines gültigen AAD-Benutzerkontos, das Sie bereitstellen möchten, in die entsprechenden Textfelder ein.
-    2.  Klicken Sie auf **Send**.
+    2.  Klicken Sie auf **Senden**.
 
 	    >[AZURE.NOTE]An den Besitzer des Azure Active Directory-Kontos wird eine E-Mail mit einem Link zur Bestätigung des Kontos gesendet, bevor es aktiv wird.
     
@@ -136,4 +136,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0114_2016-->

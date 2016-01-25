@@ -12,8 +12,8 @@
 	ms.workload="identity"
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
-	ms.topic="article" 
-	ms.date="09/18/2015"
+	ms.topic="article"
+	ms.date="01/08/2016"
 	ms.author="cabailey"/>
 #Gewusst wie: Generieren und Übertragen von HSM-geschützten Schlüsseln für den Azure-Schlüsseltresor
 
@@ -194,7 +194,7 @@ So überprüfen Sie das heruntergeladene Paket
 			python verifykeypackage.py -k BYOK-KEK-pkg-AUS-1 -w BYOK-SecurityWorld-pkg-AUS-1
 
 	>[AZURE.TIP]Die Thales-Software enthält Python unter „%NFAST\_HOME%\\python\\bin“.
-	
+
 2.	Vergewissern Sie sich, dass Folgendes angezeigt wird, um eine erfolgreiche Überprüfung zu melden: **Result: SUCCESS**
 
 Mit diesem Skript wird die Signaturgeberkette bis zum Thales-Stammschlüssel überprüft. Der Hash dieses Stammschlüssels ist in das Skript eingebettet, und sein Wert sollte **59178a47 de508c3f 291277ee 184f46c4 f1d9c639** lauten. Sie können diesen Wert auch separat bestätigen, indem Sie die [Thales-Website](http://www.thalesesec.com/) besuchen.
@@ -301,7 +301,7 @@ Gehen Sie wie folgt vor, wenn Sie diesen Befehl ausführen:
 
 Wenn dieser Vorgang erfolgreich ist, wird **Result: SUCCESS** angezeigt, und im aktuellen Ordner ist eine neue Datei mit dem folgenden Namen enthalten: "TransferPackage-*ContosoFirstHSMkey**byok".
 
-###Schritt 4.4: Kopieren des Schlüsselübertragungspakets auf die Arbeitsstation mit Internetverbindung 
+###Schritt 4.4: Kopieren des Schlüsselübertragungspakets auf die Arbeitsstation mit Internetverbindung
 
 Verwenden Sie ein USB-Laufwerk oder anderes tragbares Speichergerät, um die Ausgabedatei aus dem vorherigen Schritt (KeyTransferPackage-ContosoFirstHSMkey.byok) auf die Arbeitsstation mit Internetverbindung zu kopieren.
 
@@ -317,4 +317,4 @@ Wenn der Upload erfolgreich ist, werden die Eigenschaften des gerade hinzugefüg
 
 Sie können diesen HSM-geschützten Schlüssel jetzt in Ihrem Schlüsseltresor verwenden. Weitere Informationen finden Sie im Abschnitt **Verwenden eines Hardwaresicherheitsmoduls (HSM)** im Lernprogramm [Erste Schritte mit dem Azure-Schlüsseltresor](key-vault-get-started.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0114_2016-->

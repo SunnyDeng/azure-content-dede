@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="12/23/2015"
+   ms.date="01/12/2015"
    ms.author="telmos" />
 
 # IP-Adressen in Azure
@@ -128,12 +128,7 @@ Die folgende Tabelle gibt Aufschluss über die einzelnen Ressourcentypen, die m�
 
 Folgende Tabelle zeigt die Einschränkungen für die IP-Adressierung in Azure pro Region pro Abonnement. Sie können sich [an den Support wenden](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade), um die Standardlimits Ihren Unternehmensanforderungen entsprechend auf die maximalen Grenzwerte zu erhöhen.
 
-||Standardlimit|Maximaler Grenzwert|
-|---|---|---|
-|Öffentliche IP-Adressen (dynamisch)|60|Wenden Sie sich an den Support.|
-|Öffentliche IP-Adressen (statisch)|20|Wenden Sie sich an den Support.|
-|Öffentliche Front-End-IP pro Lastenausgleich|5|Wenden Sie sich an den Support.|
-|Private Front-End-IP pro Lastenausgleich|1|Wenden Sie sich an den Support.|
+||Standardlimit|Maximaler Grenzwert| |---|---|---| |Öffentliche IP-Adressen (dynamisch)|60|Wenden Sie sich an den Support.| |Öffentliche IP-Adressen (statisch)|20|Wenden Sie sich an den Support.| |Öffentliche Front-End-IP pro Lastenausgleich|5|Wenden Sie sich an den Support.| |Private Front-End-IP pro Lastenausgleich|1|Wenden Sie sich an den Support.|
 
 Lesen Sie unbedingt die vollständigen Informationen zu [Netzwerkeinschränkungen](azure-subscription-service-limits.md#networking-limits) in Azure.
 
@@ -152,12 +147,8 @@ Zusammenfassend gilt für öffentliche IP-Ressourcen die folgenden Preisstruktur
 	- Die Nutzung wird basierend auf der Gesamtanzahl von statischen öffentlichen IP-Adressen im Abonnement berechnet.
 
 ## Nächste Schritte
-- [Bereitstellen einer VM mit einer statischen öffentlichen IP-Adresse](virtual-network-deploy-static-pip-arm-template.md)
-- [Erstellen einer öffentlichen IP-Adresse für einen Load Balancer mit Internetzugriff mithilfe der Azure-Befehlszeilenschnittstelle](load-balancer-get-started-internet-arm-cli.md#create-a-virtual-network-and-a-public-ip-address-for-the-front-end-ip-pool)
-- [Erstellen einer öffentlichen IP-Adresse für ein Anwendungsgateway mithilfe von PowerShell](application-gateway-create-gateway-arm.md#create-public-ip-address-for-front-end-configuration)
-- [Erstellen einer öffentlichen IP-Adresse für ein VPN-Gateway mithilfe von PowerShell](vpn-gateway-create-site-to-site-rm-powershell.md#4-request-a-public-ip-address-for-the-gateway)
-- [Bereitstellen einer VM mit einer statischen privaten IP-Adresse](virtual-networks-static-private-ip-arm-pportal.md)
-- [Erstellen einer statischen privaten Front-End-IP-Adresse für einen internen Load Balancer mithilfe von PowerShell](load-balancer-get-started-ilb-arm-ps.md#create-front-end-ip-pool-and-backend-address-pool)
-- [Erstellen eines Back-End-Pools mit statischen privaten IP-Adressen für ein Anwendungsgateway mithilfe von PowerShell](application-gateway-create-gateway-arm.md#create-an-application-gateway-configuration-object)
+- [Bereitstellen einer VM mit einer statischen öffentlichen IP-Adresse](virtual-network-deploy-static-pip-arm-portal.md) mithilfe des Azure-Portals
+- Erfahren Sie, wie Sie [eine VM mit einer statischen öffentlichen IP-Adresse mithilfe einer Vorlage bereitstellen](virtual-network-deploy-static-pip-arm-template.md).
+- [Bereitstellen einer VM mit einer statischen privaten IP-Adresse](virtual-networks-static-private-ip-arm-pportal.md) mithilfe des Azure-Portals
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0114_2016-->

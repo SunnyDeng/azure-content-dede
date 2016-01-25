@@ -101,7 +101,7 @@ Das virtuelle Gerät weist folgende Merkmale auf:
 
 Mit Update 2 und höher steht das virtuelle StorSimple-Gerät in zwei Modellen zur Verfügung: dem 8010-Gerät (früher als Modell 1100 bekannt) und dem 8020-Gerät. Das 8010-Gerät bietet eine maximale Kapazität von 30 TB. Das 8020-Gerät nutzt Azure-Premium-Speicher und umfasst eine maximale Kapazität von 64 TB. (Azure-Premium-Speicher speichert Daten auf SSDs. Beim Standardspeicher werden Daten auf HDDs gespeichert.) Beachten Sie, dass Sie zur Verwendung von Premium-Speicher ein Azure-Premium-Speicherkonto benötigen. Informationen zu Premium-Speicher finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Arbeitslasten auf virtuellen Azure-Computern](storage-premium-storage-preview-portal.md).
 
-Weitere Informationen zum virtuellen StorSimple-Gerät finden Sie unter [Bereitstellen und Verwalten eines virtuellen StorSimple-Geräts in Azure](storsimple-virtual-device-u1).
+Weitere Informationen zum virtuellen StorSimple-Gerät finden Sie unter [Bereitstellen und Verwalten eines virtuellen StorSimple-Geräts in Azure](storsimple-virtual-device-u1.md).
 
 ## StorSimple Manager-Dienst
 
@@ -278,4 +278,4 @@ Weitere Informationen zur [StorSimple-Sicherheit](storsimple-security.md).
 
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0114_2016-->

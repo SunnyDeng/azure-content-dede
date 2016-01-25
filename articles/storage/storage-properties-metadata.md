@@ -5,8 +5,8 @@
   services="storage" 
   documentationCenter="" 
   authors="tamram" 
-  manager="adinah" 
-  editor=""/>
+  manager="carmonm" 
+  editor="tysonn"/>
 
 <tags 
   ms.service="storage" 
@@ -99,4 +99,4 @@ Zum Abrufen von Metadaten rufen Sie die **FetchAttributes**-Methode für das Blo
 - [Azure Storage-Clientbibliothek für .NET-Referenz](http://msdn.microsoft.com/library/azure/wa_storage_30_reference_home.aspx)
 - [Azure Storage-Clientbibliothek für .NET-Paket](https://www.nuget.org/packages/WindowsAzure.Storage/) 
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0114_2016-->

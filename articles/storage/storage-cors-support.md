@@ -1,24 +1,24 @@
-<properties 
-	pageTitle="Unterstützung von Cross-Origin Resource Sharing (CORS) | Microsoft Azure" 
-	description="Erfahren Sie, wie die CORS-Unterstützung für die Microsoft Azure Storage-Dienste aktiviert werden." 
-	services="storage" 
-	documentationCenter=".net" 
-	authors="tamram" 
-	manager="carolz" 
-	editor=""/>
+<properties
+	pageTitle="Unterstützung von Cross-Origin Resource Sharing (CORS) | Microsoft Azure"
+	description="Erfahren Sie, wie die CORS-Unterstützung für die Microsoft Azure Storage-Dienste aktiviert werden."
+	services="storage"
+	documentationCenter=".net"
+	authors="tamram"
+	manager="carmonm"
+	editor="tysonn"/>
 
-<tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="09/03/2015" 
-	ms.author="tamram;andtyler"/>
+<tags
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="01/07/2016"
+	ms.author="tamram"/>
 
 # Unterstützung von Cross-Origin Resource Sharing (CORS) für die Azure Storage-Dienste
 
-Ab Version 2013-08-15 unterstützen die Azure Storage-Dienste Cross-Origin Resource Sharing (CORS) für die BLOB-, Tabellen- und Warteschlangendienste. CORS ist eine HTTP-Funktion, die einer Webanwendung in einer Domäne den Zugriff auf Ressourcen in einer anderen Domäne ermöglicht. Webbrowser implementieren eine Sicherheitseinschränkung, die als [Same-Origin-Richtlinie](http://www.w3.org/Security/wiki/Same_Origin_Policy) (Richtlinie desselben Ursprungs) bezeichnet wird und die verhindert, dass eine Webseite APIs in einer anderen Domäne aufruft. CORS bietet eine sichere Methode, einer Domäne (der Ursprungsdomäne) das Aufrufen von APIs in einer anderen Domäne zu ermöglichen. Informationen zu CORS finden Sie in der [CORS-Spezifikation](http://www.w3.org/TR/cors/).
+Ab Version 2013-08-15 unterstützen die Azure Storage-Dienste Cross-Origin Resource Sharing (CORS) für die Blob-, Tabellen-, Warteschlangen- und Dateidienste. CORS ist eine HTTP-Funktion, die einer Webanwendung in einer Domäne den Zugriff auf Ressourcen in einer anderen Domäne ermöglicht. Webbrowser implementieren eine Sicherheitseinschränkung, die als [Same-Origin-Richtlinie](http://www.w3.org/Security/wiki/Same_Origin_Policy) (Richtlinie desselben Ursprungs) bezeichnet wird und die verhindert, dass eine Webseite APIs in einer anderen Domäne aufruft. CORS bietet eine sichere Methode, einer Domäne (der Ursprungsdomäne) das Aufrufen von APIs in einer anderen Domäne zu ermöglichen. Informationen zu CORS finden Sie in der [CORS-Spezifikation](http://www.w3.org/TR/cors/).
 
 Sie können CORS-Regeln einzeln für jeden der Speicherdienste festlegen, indem Sie die unter [Festlegen von Blob-Diensteigenschaften](https://msdn.microsoft.com/library/hh452235.aspx), [Festlegen von Warteschlangeneigenschaften](https://msdn.microsoft.com/library/hh452232.aspx) und [Festlegen von Tabellendiensteigenschaften](https://msdn.microsoft.com/library/hh452240.aspx) beschriebenen Anforderungen aufrufen. Nachdem Sie die CORS-Regeln für den Dienst festgelegt haben, wird durch Auswertung einer ordnungsgemäß authentifizierten Anforderung, die von einer anderen Domäne an den Dienst gesendet wurde, ermittelt, ob die Anforderung gemäß den von Ihnen festgelegten Regeln zulässig ist.
 
@@ -194,6 +194,5 @@ Nicht erfolgreiche Preflight-Anforderungen werden nicht berechnet.
 [Festlegen von Tabellendiensteigenschaften](https://msdn.microsoft.com/library/hh452240.aspx)
 
 [W3C-Spezifikation für CORS (Cross-Origin Resource Sharing)](http://www.w3.org/TR/cors/)
- 
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0114_2016-->

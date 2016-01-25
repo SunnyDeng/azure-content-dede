@@ -19,9 +19,9 @@
 # Ausführen eines U-SQL-Skripts auf Azure Data Lake Analytics in Azure Data Factory 
 Eine Pipeline in einer Azure Data Factory verarbeitet Daten in verknüpften Speicherdiensten mithilfe verknüpfter Compute Services. Sie enthält eine Abfolge von Aktivitäten, wobei jede Aktivität einen bestimmten Verarbeitungsvorgang ausführt. In diesem Kapitel wird die **U-SQL-Aktivität von Data Lake Analytics** beschrieben, die ein **U-SQL**-Skript auf einem mit **Azure Data Lake Analytics** verknüpften Computedienst ausführt.
 
-> [AZURE.NOTE]Vor dem Erstellen einer Pipeline mit U-SQL-Aktivität auf Data Lake Analytics muss ein Azure Data Lake Analytics-Konto erstellt werden. Weitere Informationen zu Azure Data Lake Analytics finden Sie unter [Erste Schritte mit Data Lake Analytics](../data-lake-analytics/data-lake-analytics-get-started-portal.md).
+> [AZURE.NOTE]Vor dem Erstellen einer Pipeline mit U-SQL-Aktivität auf Data Lake Analytics muss ein Azure Data Lake Analytics-Konto erstellt werden. Weitere Informationen zu Azure Data Lake Analytics finden Sie unter [Erste Schritte mit Azure Data Lake Analytics](../data-lake-analytics/data-lake-analytics-get-started-portal.md).
 >  
-> Im Lernprogramm [Erstellen Ihrer ersten Pipeline](data-factory-build-your-first-pipeline.md) finden Sie ausführliche Anweisungen zum Erstellen von Data Factorys, verknüpften Diensten, Datasets und Pipelines. Verwenden Sie die JSON-Codeausschnitte mit Data Factory-Editor oder Visual Studio oder Azure PowerShell, um die Data Factory-Entitäten zu erstellen.
+> Im Tutorial [Erstellen Ihrer ersten Pipeline](data-factory-build-your-first-pipeline.md) finden Sie ausführliche Anweisungen zum Erstellen von Data Factorys, verknüpften Diensten, Datasets und Pipelines. Verwenden Sie die JSON-Codeausschnitte mit Data Factory-Editor, Visual Studio oder Azure PowerShell, um die Data Factory-Entitäten zu erstellen.
 
 ## Mit Azure Data Lake Analytics verknüpfter Dienst
 Sie erstellen einen mit **Azure Data Lake Analytics** verknüpften Dienst, um einen Azure Data Lake Analytics-Computedienst vor Verwendung der Data Lake Analytics-U-SQL-Aktivität mit einer Azure Data Factory zu verknüpfen.
@@ -117,14 +117,15 @@ Die folgende Tabelle beschreibt die Namen und Eigenschaften, die für diese Akti
 
 Eigenschaft | Beschreibung | Erforderlich
 :-------- | :----------- | :--------
-Typ | Die „type“-Eigenschaft muss auf **DataLakeAnalyticsU-SQL** festgelegt sein. | Ja
+Typ | Die type-Eigenschaft muss auf **DataLakeAnalyticsU-SQL** festgelegt sein. | Ja
 scriptPath | Der Pfad zum Ordner, der das U-SQL-Skript enthält. | Nein (wenn script verwendet wird)
 scriptLinkedService | Verknüpfter Dienst, der den Speicher, der das Skript enthält, mit der Data Factory verknüpft. | Nein (wenn script verwendet wird)
 script | Geben Sie ein Inlineskript anstelle von scriptPath und scriptLinkedService an. Beispiel: „script“ : „CREATE DATABASE test“. | Nein (wenn scriptPath and scriptLinkedService verwendet werden)
 degreeOfParallelism | Die maximale Anzahl von Knoten, die zum Ausführen des Auftrags gleichzeitig verwendet werden. | Nein
-priority | Bestimmt, welche der in der Warteschlange befindlichen Aufträge als erstes ausgeführt werden. Je niedriger die Zahl ist, desto höher ist die Priorität. | Nein 
+priority | Bestimmt, welche der in der Warteschlange befindlichen Aufträge als erstes ausgeführt werden. Je niedriger die Zahl, desto höher die Priorität. | Nein 
 parameters | Parameter für das U-SQL-Skript | Nein 
 
+Die Skriptdefinition finden Sie unter [Skriptdefinition „SearchLogProcessing.txt“](#script-definition).
 
 ### Eingabe- und Ausgabedatasets als Beispiel
 
@@ -187,4 +188,35 @@ Hier finden Sie die Definition des Beispiels „Mit Azure Data Lake-Speicher ver
 
 Eine Beschreibung der in den oben gezeigten JSON-Ausschnitten zum Thema „Verknüpfte Dienste und Datasets mit Azure Data Lake-Speicher“ verwendeten JSON-Eigenschaften finden Sie unter [Verschieben von Daten zu und von Azure Data Lake-Speicher](data-factory-azure-datalake-connector.md)
 
-<!---HONumber=Nov15_HO2-->
+### Skriptdefinition
+
+	@searchlog =
+	    EXTRACT UserId          int,
+	            Start           DateTime,
+	            Region          string,
+	            Query           string,
+	            Duration        int?,
+	            Urls            string,
+	            ClickedUrls     string
+	    FROM @in
+	    USING Extractors.Tsv(nullEscape:"#NULL#");
+	
+	@rs1 =
+	    SELECT Start, Region, Duration
+	    FROM @searchlog
+	WHERE Region == "en-gb";
+	
+	@rs1 =
+	    SELECT Start, Region, Duration
+	    FROM @rs1
+	    WHERE Start <= DateTime.Parse("2012/02/19");
+	
+	OUTPUT @rs1   
+	    TO @out
+	      USING Outputters.Tsv(quoting:false, dateTimeFormat:null);
+
+Die Werte für die Parameter **@in** und **@out** im oben dargestellten U-SQL-Skript werden von ADF dynamisch mithilfe des Abschnitts „parameters“ übergeben. Informationen finden Sie oben in der Pipelinedefinition im Abschnitt „parameters“.
+
+Sie können in Ihrer Pipelinedefinition auch andere Eigenschaften wie etwa „degreeOfParallelism“ oder „priority“ für die Aufträge angeben, die im Azure Data Lake Analytics-Dienst ausgeführt werden.
+
+<!---HONumber=AcomDC_0114_2016-->

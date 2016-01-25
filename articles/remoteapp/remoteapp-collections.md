@@ -12,7 +12,7 @@
     ms.tgt_pltfrm="na" 
     ms.devlang="na" 
     ms.topic="article" 
-    ms.date="09/28/2015" 
+    ms.date="01/07/2016" 
     ms.author="elizapo" />
 
 
@@ -91,4 +91,4 @@ Ich denke, ich habe jetzt alles erklärt, was Sie wissen müssen. Jetzt bleibt n
 
 [Erstellen Sie eine Cloudsammlung](remoteapp-create-cloud-deployment.md), oder [erstellen Sie eine Hybrid-Sammlung](remoteapp-create-hybrid-deployment.md) – fangen Sie einfach an.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0114_2016-->

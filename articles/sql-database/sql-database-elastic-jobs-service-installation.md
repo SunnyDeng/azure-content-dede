@@ -17,6 +17,7 @@
 	ms.author="ddove;sidneyh"/>
 
 # Installieren von Aufträgen für die elastische Datenbank – Übersicht
+
 [**Aufträge für die elastische Datenbank**](sql-database-elastic-jobs-overview.md) kann mithilfe von PowerShell oder über das klassische Azure-Portal installiert werden. Der Zugriff zum Erstellen und Verwalten von Aufträgen mithilfe der PowerShell-API ist jedoch nur mit installiertem PowerShell-Paket möglich. Darüber hinaus stellen die PowerShell-APIs zurzeit erheblich mehr Funktionen bereit als das Portal.
 
 Wenn Sie **Aufträge für die elastische Datenbank** bereits aus einem vorhandenen **elastischen Datenbankpool**, über das Portal installiert haben, finden Sie in der neuesten Powershell-Vorschau Skripts, mit denen Sie ein Upgrade der vorhandenen Installation vornehmen können. Es wird dringend empfohlen, dass Sie ein Upgrade Ihrer Installation auf die neuesten Komponenten der **Aufträge für die elastische Datenbank** durchführen, um die über die PowerShell-APIs verfügbar gemachten neuen Funktionen nutzen zu können.
@@ -178,13 +179,13 @@ Wenn die Deinstallation erforderlich ist, löschen Sie die Ressourcengruppe. Wei
 
 ## Nächste Schritte
 
-Stellen Sie sicher, dass Anmeldeinformationen mit den passenden Rechten für die Skriptausführung für jede Datenbank in der Gruppe erstellt werden. Weitere Informationen dazu finden Sie unter [Hinzufügen von Benutzern zu allen Datenbanken in einer Gruppe von Datenbanken](sql-database-elastic-jobs-add-logins-to-dbs.md). Informationen zum Einstieg finden Sie unter [Erstellen und Verwalten von Aufträgen für die elastische Datenbank](sql-database-elastic-jobs-create-and-manage.md).
+Stellen Sie sicher, dass Anmeldeinformationen mit den passenden Rechten für die Skriptausführung für jede Datenbank in der Gruppe erstellt werden. Weitere Informationen dazu finden Sie unter [Sichern der SQL-Datenbank](sql-database-security.md). Informationen zum Einstieg finden Sie unter [Erstellen und Verwalten von Aufträgen für die elastische Datenbank](sql-database-elastic-jobs-create-and-manage.md).
 
 <!--Image references-->
 [1]: ./media/sql-database-elastic-jobs-service-installation/screen-1.png
 [2]: ./media/sql-database-elastic-jobs-service-installation/credentials.png
 [3]: ./media/sql-database-elastic-jobs-service-installation/start-board.png
-[4]: ./media/sql-database-elastic-jobs-service-installation/incomplete.png
+[4]: ./media/sql-database-elastic-jobs-service-installation/not-done.png
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

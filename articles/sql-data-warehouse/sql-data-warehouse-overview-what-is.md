@@ -4,7 +4,7 @@
    services="sql-data-warehouse"
    documentationCenter="NA"
    authors="lodipalm"
-   manager="jhubbard"
+   manager="barbkess"
    editor=""/>
 
 <tags
@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/04/2016"
-   ms.author="lodipalm;barbkess;twounder;JRJ@BigBangData.co.uk;"/>
+   ms.date="01/07/2016"
+   ms.author="lodipalm;barbkess;mausher;jrj;sonyama;"/>
 
 
 # Was ist Azure SQL Data Warehouse?
@@ -138,4 +138,4 @@ Nachdem Sie jetzt einige Informationen zu SQL Data Warehouse erhalten haben, kö
 
 <!--Other Web references-->
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0114_2016-->

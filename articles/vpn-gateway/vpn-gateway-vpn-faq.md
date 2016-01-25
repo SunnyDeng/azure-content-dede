@@ -84,8 +84,6 @@ Auch andere VPN-Softwarelösungen können mit unserem Gateway verwendet werden, 
 
 ## Punkt-zu-Standort-Verbindungen
 
-Punkt-zu-Standort-Verbindungen sind derzeit nur für das klassische Bereitstellungsmodell (auch als Dienstverwaltung bezeichnet) verfügbar. Wir arbeiten an einer Punkt-zu-Standort-Lösung für das Azure-Ressourcen-Manager-Bereitstellungsmodell. Bei Verfügbarkeit wird diese Seite aktualisiert.
-
 ### Welche Betriebssysteme kann ich bei Punkt-zu-Standort-Verbindungen verwenden?
 
 Folgende Betriebssysteme werden unterstützt:
@@ -269,4 +267,4 @@ Weitere Informationen zu VPN-Gateways erhalten Sie auf der Seite [VPN Gateway-Do
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

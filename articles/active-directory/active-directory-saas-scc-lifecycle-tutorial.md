@@ -11,7 +11,7 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
+    ms.date="01/12/2016" 
     ms.author="markvi" />
 
 #Tutorial: Azure Active Directory-Integration mit SCC LifeCycle
@@ -21,7 +21,7 @@ In diesem Tutorial wird die Integration von Azure und SCC LifeCycle erläutert. 
 -   Ein gültiges Azure-Abonnement
 -   Ein SCC LifeCycle-Abonnement, für das einmaliges Anmelden aktiviert ist
   
-Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie SCC LifeCycle zugewiesen haben, mittels einmaliger Anmeldung auf Ihrer SCC LifeCycle-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
+Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, die Sie SCC LifeCycle zugewiesen haben, mittels einmaliger Anmeldung auf der SCC LifeCycle-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -55,7 +55,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für SCC
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-scc-lifecycle-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie in das **Suchfeld** den Suchbegriff **SCC LifeCycle** ein.
+6.  Geben Sie in das **Suchfeld** **SCC LifeCycle** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-scc-lifecycle-tutorial/IC794121.png "Anwendungskatalog")
 
@@ -76,7 +76,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-scc-lifecycle-tutorial/IC794123.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **SCC LifeCycle-Anmelde-URL** unter Verwendung der des folgenden Musters "**https://bs1.scc.com/lc7/welcome/customer/PICTtest.aspx*" die URL ein, welche die Benutzer zur Anmeldung bei SCC LifeCycle verwenden, und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **SCC LifeCycle-Anmelde-URL** unter Verwendung der des folgenden Musters „**https://bs1.scc.com/lc7/welcome/customer/PICTtest.aspx*" die URL ein, welche die Benutzer zur Anmeldung bei SCC LifeCycle verwenden, und klicken Sie dann auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-scc-lifecycle-tutorial/IC794124.png "App-URL konfigurieren")
 
@@ -117,4 +117,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0114_2016-->

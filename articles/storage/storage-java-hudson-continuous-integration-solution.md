@@ -1,11 +1,11 @@
 <properties
-	pageTitle="Verwenden von Hudson mit dem Azure-Blobdienst | Microsoft Azure"
+	pageTitle="Verwenden von Hudson mit Blob Storage | Microsoft Azure"
 	description="Beschreibt die Verwendung von Hudson mit dem Azure Blob-Speicher als Repository für Buildartefakte."
 	services="storage"
 	documentationCenter="java"
 	authors="rmcmurray"
 	manager="wpickett"
-	editor="jimbe"/>
+	editor=""/>
 
 <tags
 	ms.service="storage"
@@ -13,14 +13,14 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="Java"
 	ms.topic="article"
-	ms.date="01/05/2016" 
+	ms.date="01/09/2016" 
 	ms.author="robmcm"/>
 
 # Verwenden von Azure-Speicher mit einer Hudson-Lösung für die fortlaufende Integration
 
 ## Übersicht
 
-Die folgenden Informationen zeigen die Verwendung des Azure-Blobdienst als Repository von Buildartefakten, die durch eine Hudson Continuous Integration-Lösung (CI) erstellt wurden, oder als eine Quelle von herunterladbaren Dateien, die in einem Buildvorgang verwendet werden. Dies ist zum Beispiel dann hilfreich, wenn Sie in einer agilen Entwicklungsumgebung (in Java oder anderen Sprachen) programmieren, Builds auf Basis der fortlaufenden Integration ausgeführt werden, und Sie ein Repository für Ihre Buildartefakte benötigen, sodass Sie sie beispielsweise mit anderen Mitgliedern der Organisation oder Ihren Kunden gemeinsam nutzen oder ein Archiv pflegen können. Ein anderes Szenario liegt vor, wenn für Ihren Buildauftrag an sich andere Dateien erforderlich sind, beispielsweise als Teil der Buildeingabe herunterzuladende Abhängigkeiten.
+Die folgenden Informationen zeigen die Verwendung von Blob Storage als Repository von Buildartefakten, die durch eine Hudson Continuous Integration-Lösung (CI) erstellt wurden, oder als eine Quelle von herunterladbaren Dateien, die in einem Buildvorgang verwendet werden. Dies ist zum Beispiel dann hilfreich, wenn Sie in einer agilen Entwicklungsumgebung (in Java oder anderen Sprachen) programmieren, Builds auf Basis der fortlaufenden Integration ausgeführt werden, und Sie ein Repository für Ihre Buildartefakte benötigen, sodass Sie sie beispielsweise mit anderen Mitgliedern der Organisation oder Ihren Kunden gemeinsam nutzen oder ein Archiv pflegen können. Ein anderes Szenario liegt vor, wenn für Ihren Buildauftrag an sich andere Dateien erforderlich sind, beispielsweise als Teil der Buildeingabe herunterzuladende Abhängigkeiten.
 
 In diesem Lernprogramm verwenden Sie das Azure-Speicher-Plug-In für Hudson CI, das von Microsoft zur Verfügung gestellt wird.
 
@@ -47,7 +47,7 @@ Sie müssen folgende Voraussetzungen erfüllen, um den Blob-Dienst mit Ihrer Hud
 
     Wenn Sie noch keine Hudson CI-Lösung im Einsatz haben, können Sie eine Hudson CI-Lösung auf folgende Weise ausführen:
 
-    1. Laden Sie für einen Java-fähigen Computer Hudson WAR von <http://hudson-ci.org/> herunter.
+    1. Laden Sie für einen Java-fähigen Computer Hudson WAR von http://hudson-ci.org/ herunter.
     2. Führen Sie in einer Eingabeaufforderung im Ordner, der Hudson.WAR enthält, den folgenden Befehl aus: Falls Sie zum Beispiel Version 3.1.2 heruntergeladen haben:
 
         `java -jar hudson-3.1.2.war`
@@ -73,7 +73,7 @@ Um den Blob-Dienst mit Hudson verwenden zu können, müssen Sie das Azure-Speich
 ## Installieren des Azure-Speicher-Plug-Ins ##
 
 1. Klicken Sie im Hudson-Dashboard auf **Manage Hudson**.
-2. Klicken Sie auf der Seite **Hudson verwalten ** auf **Plug-Ins verwalten**.
+2. Klicken Sie auf der Seite **Hudson verwalten** auf **Plug-Ins verwalten**.
 3. Klicken Sie auf die Registerkarte **Available**.
 4. Klicken Sie auf **Others**.
 5. Wählen Sie im Abschnitt **Artefakt-Uploadprogramme** die Option **Microsoft Azure Storage-Plug-In**.
@@ -177,4 +177,4 @@ Im Folgenden erhalten Sie einen Überblick über die Komponenten des Blob-Dienst
   [Erstellen eines Speicherkontos]: http://go.microsoft.com/fwlink/?LinkId=279823
   [Meet Hudson]: http://wiki.eclipse.org/Hudson-ci/Meet_Hudson
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0114_2016-->

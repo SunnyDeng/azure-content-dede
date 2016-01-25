@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="11/30/2015"
+	ms.date="01/11/2015"
 	ms.author="wesmc"/>
 
 # Synchronisierung von Offlinedaten in Azure Mobile Apps
@@ -36,10 +36,11 @@ Die Offlinesynchronisierung bietet eine Reihe an Vorteilen:
 
 Die folgenden Lernprogramme zeigen, wie Sie die Offlinesynchronisierung zu Ihren mobilen Clients mithilfe von Azure Mobile Apps hinzufügen können:
 
+* [Android: Offlinesynchronisierung aktivieren]
 * [iOS: Offlinesynchronisierung aktivieren]			
 * [Xamarin iOS: Offlinesynchronisierung aktivieren]	
 * [Xamarin Android: Offlinesynchronisierung aktivieren]
-* [Windows 8.1: Offlinesynchronisierung aktivieren]	
+* [Windows 8.1: Offlinesynchronisierung aktivieren]
 
 ## Was ist eine Synchronisierungstabelle?
 
@@ -121,10 +122,11 @@ Beim Synchronisieren von Tabellen steuert der Clientcode, wann lokale Änderunge
 
 <!-- Links -->
 
+[Android: Offlinesynchronisierung aktivieren]: ../app-service-mobile-android-get-started-offline-data.md
 [iOS: Offlinesynchronisierung aktivieren]: ../app-service-mobile-ios-get-started-offline-data.md
 [Xamarin iOS: Offlinesynchronisierung aktivieren]: ../app-service-mobile-xamarin-ios-get-started-offline-data.md
 [Xamarin Android: Offlinesynchronisierung aktivieren]: ../app-service-mobile-xamarin-ios-get-started-offline-data.md
 [Windows 8.1: Aktivieren der Offline-Synchronisierung]: ../app-service-mobile-windows-store-dotnet-get-started-offline-data.md
 [Windows 8.1: Offlinesynchronisierung aktivieren]: ../app-service-mobile-windows-store-dotnet-get-started-offline-data.md
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

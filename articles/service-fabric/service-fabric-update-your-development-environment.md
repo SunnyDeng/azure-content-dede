@@ -18,7 +18,7 @@
 
 # Aktualisieren der Service Fabric-Entwicklungsumgebung
 
- Für Service Fabric werden regelmäßig neue Versionen für Laufzeit, SDK und Tools bereitgestellt, die bei der lokalen Entwicklung verwendet werden können. Indem Sie Ihre lokale Entwicklungsumgebung mit diesen Versionen auf dem aktuellen Stand halten, stellen Sie sicher, dass Sie immer Zugriff auf die neuesten Funktionen, Fehlerkorrekturen und Leistungsverbesserungen haben, wenn Sie Anwendungen lokal erstellen und testen.
+ Für Azure Service Fabric werden regelmäßig neue Versionen für Laufzeit, SDK und Tools bereitgestellt, die bei der lokalen Entwicklung verwendet werden können. Indem Sie Ihre lokale Entwicklungsumgebung mit diesen Versionen auf dem aktuellen Stand halten, können Sie sicherstellen, dass Sie immer Zugriff auf die neuesten Funktionen, Fehlerkorrekturen und Leistungsverbesserungen haben, wenn Sie Anwendungen lokal erstellen und testen.
 
 ## Bereinigen des lokalen Clusters
 
@@ -29,9 +29,9 @@
  Sie können Ihren lokalen Cluster wie folgt bereinigen:
 
 
- 1. Schließen Sie alle anderen PowerShell-Fenster, und starten Sie ein neues Fenster als Administrator.
+ 1. Schließen Sie alle PowerShell-Fenster, und öffnen Sie ein neues Fenster als Administrator.
 
- 2. Navigieren Sie zum Verzeichnis "ClusterSetup": `cd "$env:ProgramW6432\Microsoft SDKs\Service Fabric\ClusterSetup"`
+ 2. Navigieren Sie mit `cd "$env:ProgramW6432\Microsoft SDKs\Service Fabric\ClusterSetup"` zum Einrichtungsverzeichnis des Clusters.
 
  3. Führen Sie `.\CleanCluster.ps1` aus.
 
@@ -43,14 +43,14 @@
 
  1. Starten Sie den Webplattform-Installer, um das [Update auf die neue Version durchzuführen][1].
 
- 2. Starten Sie nach Abschluss des Vorgangs ein neues PowerShell-Fenster als Administrator, und navigieren Sie mit `cd "$ENV:ProgramFiles\Microsoft SDKs\ServiceFabric\ClusterSetup"` zum Einrichtungsverzeichnis des Clusters.
+ 2. Öffnen Sie nach Abschluss des Vorgangs ein neues PowerShell-Fenster als Administrator, und navigieren Sie mit `cd "$ENV:ProgramFiles\Microsoft SDKs\ServiceFabric\ClusterSetup"` zum Einrichtungsverzeichnis des Clusters.
 
  3. Führen Sie `.\DevClusterSetup.ps1` aus, um den lokalen Cluster einzurichten.
 
 Das ist alles! Sie können Visual Studio jetzt starten und mit dem Erstellen von Service Fabric-Anwendungen fortfahren.
 
->[AZURE.NOTE]Die Standardprojektstruktur wurde in dieser Version geändert. Es sollte möglich sein, vorhandene Projekte in Visual Studio zu öffnen und auszuführen. Falls beim Erstellen, Bereitstellen oder Debuggen von Anwendungen aber Probleme auftreten, sollten Sie die Erstellung eines neuen Projekts und die Migration Ihres Codes erwägen.
+>[AZURE.NOTE]Die Standardprojektstruktur wurde in dieser Version geändert. Es sollte möglich sein, vorhandene Projekte in Visual Studio zu öffnen und auszuführen. Falls beim Erstellen, Bereitstellen oder Debuggen von Anwendungen aber Probleme auftreten, sollten Sie die Erstellung eines neuen Projekts und die Migration Ihres Codes zu diesem Projekt erwägen.
 
  [1]: http://www.microsoft.com/web/handlers/webpi.ashx?command=getinstallerredirect&appid=MicrosoftAzure-ServiceFabric "WebPI-Link"
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0114_2016-->

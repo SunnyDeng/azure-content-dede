@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/04/2016"
-   ms.author="lodipalm;barbkess"/>
+   ms.date="01/07/2016"
+   ms.author="lodipalm;barbkess;sonyama"/>
 
 #Laden von Beispieldaten in SQL Data Warehouse
 
@@ -84,4 +84,4 @@ Da Sie jetzt Gelegenheit hatten, einige Abfragen mit Beispieldaten auszuprobiere
 <!--Other Web references-->
 [Adventure Works-Beispielskripts für die SQL Data Warehouse]: https://migrhoststorage.blob.core.windows.net/sqldwsample/AdventureWorksSQLDW2012.zip
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0114_2016-->

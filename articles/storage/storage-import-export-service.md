@@ -1,20 +1,20 @@
-<properties 
-	pageTitle="Verwenden von Import/Export zum Übertragen von Daten in den Blob-Speicher | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie Import- und Exportaufträge im klassischen Portal erstellen, um Daten in den Blob-Speicher zu übertragen." 
-	authors="robinsh" 
-	manager="carmonm" 
-	editor="" 
-	services="storage" 
+<properties
+	pageTitle="Verwenden von Import/Export zum Übertragen von Daten in den Blob-Speicher | Microsoft Azure"
+	description="Erfahren Sie, wie Sie Import- und Exportaufträge im klassischen Portal erstellen, um Daten in den Blob-Speicher zu übertragen."
+	authors="robinsh"
+	manager="carmonm"
+	editor="tysonn"
+	services="storage"
 	documentationCenter=""/>
 
-<tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="12/22/2015" 
-	ms.author="robinsh"/>
+<tags
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="12/22/2015"
+	ms.author="renash"/>
 
 
 # Verwenden des Microsoft Azure Import-/Export-Diensts zum Übertragen von Daten in den Blob-Speicher
@@ -52,7 +52,7 @@ Für die Erstellung eines Import- oder Exportauftrags benötigen Sie außerdem d
 1.	**Abonnement und Speicherkonten:** Sie müssen über ein Azure-Abonnement und ein oder mehrere Speicherkonten verfügen, um den Import/Export-Dienst nutzen zu können. Bei jedem Auftrag können lediglich Daten auf ein oder von einem Speicherkonto übertragen werden. In anderen Worten: Ein Auftrag kann nicht mehrere Speicherkonten umfassen. Weitere Informationen zum Erstellen eines neuen Speicherkontos finden Sie unter [Erstellen eines Speicherkontos](storage-create-storage-account.md).
 2.	**Festplatten:** Für den Import/Export-Dienst werden lediglich interne 3,5-Zoll-SATA II/III-Festplatten unterstützt. Es werden Festplatten mit bis zu 6 TB unterstützt. Bei Importaufträgen wird nur das erste Datenvolume auf dem Laufwerk verarbeitet. Das Datenvolume muss mit NTFS formatiert sein. Sie können SATA II/III-Laufwerke über einen externen SATA II/III-USB-Adapter extern an die meisten Computer anschließen.
 3.	**BitLocker-Verschlüsselung:** Alle auf den Festplatten gespeicherten Daten müssen mit BitLocker verschlüsselt sein. Dabei müssen die Verschlüsselungsschlüssel durch numerische Kennwörter geschützt sein.
-4.	**Blobspeicherziele**: Daten können auf Blockblobs und Seitenblobs hochgeladen bzw. von dort heruntergeladen werden. 
+4.	**Blobspeicherziele**: Daten können auf Blockblobs und Seitenblobs hochgeladen bzw. von dort heruntergeladen werden.
 5.	**Anzahl der Aufträge:** Jeder Kunde kann bis zu 20 aktive Aufträge pro Speicherkonto haben.
 6.	**Maximale Größe eines Auftrags:** Die Größe eines Auftrags wird durch die Kapazität der verwendeten Festplatten und der maximalen Menge an Daten bestimmt, die in einem Speicherkonto gespeichert werden kann. Jeder Auftrag kann maximal zehn Festplatten umfassen.
 
@@ -65,22 +65,22 @@ Erstellen Sie einen Importauftrag, um den Import-/Export-Dienst darüber zu info
 ### Vorbereiten Ihrer Laufwerke
 
 Bevor Sie einen Importauftrag erstellen, müssen Sie Ihre Laufwerke mit dem Microsoft Azure Import-/Exporttool vorbereiten. Weitere Details zum Microsoft Azure Import-/Exporttool finden Sie in der [Referenz zum Microsoft Azure Import-/Exporttool](http://go.microsoft.com/fwlink/?LinkId=329032). Sie können das [Microsoft Azure Import-/Exporttool](http://go.microsoft.com/fwlink/?LinkID=301900&clcid=0x409) als eigenständiges Paket herunterladen.
-  
+
 Führen Sie die folgenden drei Schritte durch, um Ihre Laufwerke vorzubereiten:
 
 1.	Bestimmen Sie die zu importierenden Daten und die Anzahl der benötigten Laufwerke.
-2.	Geben Sie die Ziel-Blobs für Ihre Daten im Azure Blob-Dienst an.
+2.	Geben Sie die Zielblobs für Ihre Daten in Blob Storage an.
 3.	Verwenden Sie das Microsoft Azure Import-/Exporttool, um Ihre Daten auf eine oder mehrere Festplatten zu kopieren.
 
 Das Microsoft Azure Import-/Exporttool generiert für jedes Laufwerk bei der Vorbereitung eine *Journaldatei*. Die Laufwerkprotokolldatei wird auf Ihrem lokalen Computer gespeichert, nicht auf dem Laufwerk selbst. Beim Erstellen des Importauftrags laden Sie die Protokolldatei hoch. Eine Laufwerkprotokolldatei enthält die Laufwerk-ID und die BitLocker-Schlüssel sowie weitere Informationen über das Laufwerk.
 
 ### Importauftrag erstellen
 
-1.	Sobald Sie Ihr Laufwerk vorbereitet haben, navigieren Sie zum Speicherkonto im klassischen Portal und zeigen das Dashboard an. Klicken Sie unter **Schnelleinsicht** auf **Create an Import Job**. 
- 
+1.	Sobald Sie Ihr Laufwerk vorbereitet haben, navigieren Sie zum Speicherkonto im klassischen Portal und zeigen das Dashboard an. Klicken Sie unter **Schnelleinsicht** auf **Create an Import Job**.
+
 2.	Geben Sie im ersten Schritt des Assistenten an, dass Sie Ihr Laufwerk vorbereitet haben und dass Sie die Laufwerkprotokolldatei zur Hand haben.
- 
-3.	Geben Sie im zweiten Schritt die Kontaktinformationen des Ansprechpartners für diesen Importauftrag an. Wenn Sie ausführliche Protokolldaten für den Importauftrag speichern möchten, wählen Sie die Option **Speichern des ausführlichen Protokolls im Blob-Container  'waimportexport'**.
+
+3.	Geben Sie im zweiten Schritt die Kontaktinformationen des Ansprechpartners für diesen Importauftrag an. Wenn Sie ausführliche Protokolldaten für den Importauftrag speichern möchten, wählen Sie die Option **Save the verbose log in my 'waimportexport' blob container**.
 
 4.	Laden Sie im dritten Schritt die Protokolldateien hoch, die Sie während der Vorbereitung des Laufwerks erhalten haben. Sie müssen pro vorbereitetem Laufwerk eine Datei hochladen.
 
@@ -94,10 +94,10 @@ Das Microsoft Azure Import-/Exporttool generiert für jedes Laufwerk bei der Vor
 
 	Falls Sie Ihre Nachverfolgungsnummer haben, wählen Sie Ihr Transportunternehmen in der Liste aus und geben Sie die Nummer ein.
 
-	Wenn Sie noch keine Tracking-Nummer haben, wählen Sie **Ich gebe meine Versandinformationen für diesen Importauftrag an, nachdem ich mein Paket versendet habe**, und schließen Sie den Importprozess ab.
+	Wenn Sie noch keine Tracking-Nummer haben, wählen Sie **I will provide my shipping information for this import job once I have shipped my package**, und schließen Sie den Importprozess ab.
 
 7. Um Ihre Nachverfolgungsnummer einzugeben, nachdem Sie Ihr Paket verschickt haben, kehren Sie zur Seite **Import/Export** für Ihr Speicherkonto im klassischen Portal zurück, wählen Ihren Auftrag in der Liste aus und klicken auf **Versandinformationen**. Navigieren Sie durch den Assistenten und geben Sie Ihre Nachverfolgungsnummer in Schritt 2 ein.
-	
+
 	Wenn die Nachverfolgungsnummer nicht innerhalb von zwei Wochen nach Erstellung des Auftrags aktualisiert wird, läuft der Auftrag ab.
 
 	Falls der Auftrag den Status "Erstellung", "Versand" oder "Übertragung" hat, können Sie außerdem Ihre Kontonummer beim Transportunternehmen in Schritt 2 des Assistenten eingeben. Falls der Auftrag den Status "Verpackung" hat, können Sie Ihre Kontonummer beim Transportunternehmen nicht mehr ändern.
@@ -108,7 +108,7 @@ Erstellen Sie einen Exportauftrag, um den Import-/Export-Dienst darüber zu info
 
 1. 	Navigieren Sie zum Speicherkonto im klassischen Portal und zeigen Sie das Dashboard an, um einen Exportauftrag zu erstellen. Klicken Sie unter **Schnelleinsicht** auf **Create an Export Job**, und fahren Sie mit dem Assistenten fort.
 
-2. 	Geben Sie im zweiten Schritt die Kontaktinformationen des Ansprechpartners für diesen Exportauftrag an. Wenn Sie ausführliche Protokolldaten für den Exportauftrag speichern möchten, wählen Sie die Option **Speichern des ausführlichen Protokolls im Blob-Container  'waimportexport'**.
+2. 	Geben Sie im zweiten Schritt die Kontaktinformationen des Ansprechpartners für diesen Exportauftrag an. Wenn Sie ausführliche Protokolldaten für den Exportauftrag speichern möchten, wählen Sie die Option **Save the verbose log in my 'waimportexport' blob container**.
 
 3.	Legen Sie im dritten Schritt fest, welche Blob-Daten Sie von Ihrem Speicherkonto auf Ihr leeres Laufwerk oder Ihre Laufwerke exportieren möchten. Sie können alle Blob-Daten des Speicherkontos exportieren, oder Sie legen fest, welche Blobs oder Blob-Sätze exportiert werden sollen.
 
@@ -141,7 +141,7 @@ Erstellen Sie einen Exportauftrag, um den Import-/Export-Dienst darüber zu info
 	Falls Sie noch keine Nachverfolgungsnummer haben, wählen Sie die Option **Ich werde die Versanddaten für diesen Exportauftrag angeben, sobald ich mein Paket verschickt habe** aus und schließen Sie den Exportvorgang ab.
 
 6. Um Ihre Nachverfolgungsnummer einzugeben, nachdem Sie Ihr Paket verschickt haben, kehren Sie zur Seite **Import/Export** für Ihr Speicherkonto im klassischen Portal zurück, wählen Ihren Auftrag in der Liste aus und klicken auf **Versandinformationen**. Navigieren Sie durch den Assistenten und geben Sie Ihre Nachverfolgungsnummer in Schritt 2 ein.
-	
+
 	Wenn die Nachverfolgungsnummer nicht innerhalb von zwei Wochen nach Erstellung des Auftrags aktualisiert wird, läuft der Auftrag ab.
 
 	Falls der Auftrag den Status "Erstellung", "Versand" oder "Übertragung" hat, können Sie außerdem Ihre Kontonummer beim Transportunternehmen in Schritt 2 des Assistenten eingeben. Falls der Auftrag den Status "Verpackung" hat, können Sie Ihre Kontonummer beim Transportunternehmen nicht mehr ändern.
@@ -180,13 +180,13 @@ Bei Exportaufträgen können Sie die BitLocker-Schlüssel, die vom Dienst für I
 **Wie lange dauert der Import oder Export meiner Daten?**
 
 - Man muss die Zeit für den Versand der Festplatten berücksichtigen sowie pro TB an Daten mehrere Stunden zum Kopieren der Daten.
- 
+
 **Welche Schnittstellentypen werden unterstützt?**
 
 - Der Import-/Exportdienst unterstützt interne SATA II/III-Laufwerke (HDDs) im 3,5-Zoll-Format. Sie können die folgenden Konverter verwenden, um Daten von USB-Geräten vor dem Versand auf SATA zu übertragen:
 	- Anker 68UPSATAA-02BU
 	- Anker 68UPSHHDS-BU
-	- Startech SATADOCK22UE 
+	- Startech SATADOCK22UE
 
 > [AZURE.NOTE]Falls Sie einen Konverter haben, der nicht in der Liste enthalten ist, können Sie versuchen, das Microsoft Azure-Import-/Exporttool mit Ihrem Konverter zur Vorbereitung des Laufwerks auszuführen, bevor Sie einen unterstützten Konverter kaufen.
 
@@ -221,9 +221,8 @@ Bei Exportaufträgen können Sie die BitLocker-Schlüssel, die vom Dienst für I
 **Formatieren Sie die Laufwerke, bevor Sie sie zurückschicken?**
 
 - Nein, alle Laufwerke müssen mit BitLocker vorbereitet sein.
- 
-**Muss ich den Datenträger beim Erstellen eines Exportauftragsvorbereiten?**
-- Nein, aber es empfiehlt sich, einige Vorabüberprüfungen durchzuführen. Überprüfen Sie die Anzahl der erforderlichen Datenträger mithilfe des Befehls [PreviewExport](https://msdn.microsoft.com/library/azure/dn722414.aspx) Import/Export-Tools. Sie können damit eine Vorschau der Festplattenverwendung für Blobs anzeigen, die Sie ausgewählt haben, basierend auf der Größe der Laufwerke, die Sie verwenden möchten. Überprüfen Sie außerdem, ob Sie Lese-/Schreibzugriff auf die Festplatte haben, die für den Exportauftrag versendet werden soll.
+
+**Muss ich den Datenträger beim Erstellen eines Exportauftragsvorbereiten?** – Nein, aber es empfiehlt sich, einige Vorabüberprüfungen durchzuführen. Überprüfen Sie die Anzahl der erforderlichen Datenträger mithilfe des Befehls [PreviewExport](https://msdn.microsoft.com/library/azure/dn722414.aspx) Import/Export-Tools. Sie können damit eine Vorschau der Festplattenverwendung für Blobs anzeigen, die Sie ausgewählt haben, basierend auf der Größe der Laufwerke, die Sie verwenden möchten. Überprüfen Sie außerdem, ob Sie Lese-/Schreibzugriff auf die Festplatte haben, die für den Exportauftrag versendet werden soll.
 
 ### Versand
 
@@ -244,10 +243,10 @@ Bei Exportaufträgen können Sie die BitLocker-Schlüssel, die vom Dienst für I
 **Von wo aus kann ich meine Daten verschicken bzw. wohin kann ich sie schicken lassen?**
 
 - Der Import-/Exportdienst unterstützt Import und Export von Daten in Speicherkonten in den folgenden Regionen:
-	- USA (Ost) 
-	- Westen USA 
-	- USA Nord Mitte 
-	- USA Süd Mitte 
+	- USA (Ost)
+	- Westen USA
+	- USA Nord Mitte
+	- USA Süd Mitte
 	- Nordeuropa
 	- Westeuropa
 	- Asien (Osten)
@@ -275,6 +274,5 @@ Bei Exportaufträgen können Sie die BitLocker-Schlüssel, die vom Dienst für I
 [import-job-03]: ./media/storage-import-export-service-classic-portal/import-job-03.png
 [export-job-03]: ./media/storage-import-export-service-classic-portal/export-job-03.png
 [export-job-bitlocker-keys]: ./media/storage-import-export-service-classic-portal/export-job-bitlocker-keys.png
- 
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0114_2016-->

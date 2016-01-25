@@ -13,10 +13,10 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/06/2016"
+	ms.date="01/12/2016"
 	ms.author="swkrish"/>
 
-# Vorschau für Azure Active Directory (AD) B2C: Bereitstellen von Registrierung und Anmeldung für Kunden mit LinkedIn-Konten
+# Vorschau für Azure Active Directory B2C: Bereitstellen von Registrierung und Anmeldung für Kunden mit LinkedIn-Konten
 
 [AZURE.INCLUDE [active-directory-b2c-preview-note](../../includes/active-directory-b2c-preview-note.md)]
 
@@ -34,9 +34,7 @@ Um LinkedIn als Identitätsanbieter in Azure Active Directory (AD) B2C verwenden
 
     ![LinkedIn – Registrieren einer App](./media/active-directory-b2c-setup-li-app/linkedin-register-app.png)
 
-5. Kopieren Sie die Werte von **Client-ID** und **Geheimer Clientschlüssel** (diese finden Sie im Abschnitt **Authentifizierungsschlüssel**). Sie benötigen beide Angaben, um LinkedIn als Identitätsanbieter in Ihrem Mandanten zu konfigurieren.
-
-> [AZURE.NOTE]Der **geheime Clientschlüssel** ist eine wichtige Sicherheitsanmeldeinformation.
+5. Kopieren Sie die Werte von **Client-ID** und **Geheimer Clientschlüssel** (diese finden Sie im Abschnitt **Authentifizierungsschlüssel**). Sie benötigen beide Angaben, um LinkedIn als Identitätsanbieter in Ihrem Mandanten zu konfigurieren. Hinweis: Der **geheime Clientschlüssel** ist eine wichtige Anmeldeinformation.
 
 6. Geben Sie in das Feld **Autorisierte Umleitungs-URLs** (im Abschnitt **OAuth 2.0**) den Wert `https://login.microsoftonline.com/te/{tenant}/oauth2/authresp` ein. Ersetzen Sie dabei **{tenant}** durch den Namen Ihres Mandanten (z. B. „contoso.onmicrosoft.com“), und klicken Sie auf **Hinzufügen**. Klicken Sie dann auf **Aktualisieren**.
 
@@ -45,11 +43,11 @@ Um LinkedIn als Identitätsanbieter in Azure Active Directory (AD) B2C verwenden
 ## Konfigurieren von LinkedIn als Identitätsanbieter in Ihrem Mandanten
 
 1. [Führen Sie diese Schritte aus, um im Azure-Portal zum Blatt „B2C-Funktionen“ zu navigieren](active-directory-b2c-app-registration.md#navigate-to-the-b2c-features-blade).
-2. Klicken Sie auf dem Blatt „B2C-Funktionen“ auf **Identitätsanbieter**.
+2. Klicken Sie auf dem B2C-Featureblatt auf **Identitätsanbieter**.
 3. Klicken Sie oben auf dem Blatt auf **+Hinzufügen**.
 4. Geben Sie einen aussagekräftigen Namen für die Konfiguration des Identitätsanbieters unter **Name** ein. Geben Sie z. B. "LI" ein.
 5. Klicken Sie auf **Typ des Identitätsanbieters**, wählen Sie **LinkedIn** aus, und klicken Sie auf **OK**.
 6. Klicken Sie auf **Diesen Identitätsanbieter einrichten**, und geben Sie **Client-ID** und **Geheimer Clientschlüssel** der LinkeIn-Anwendung, die Sie zuvor erstellt haben, ein.
 7. Klicken Sie auf **OK** und dann auf **Erstellen**, um die Konfiguration für LinkedIn zu speichern.
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0114_2016-->

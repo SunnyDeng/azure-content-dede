@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/03/2015" 
+	ms.date="01/08/2016" 
 	ms.author="tdykstra"/>
 
 # Verbinden eines lokalen SQL-Servers von einer API-App in Azure App Service über Hybridverbindungen
@@ -432,4 +432,4 @@ Nachdem die Hybridverbindungsinfrastruktur jetzt vollständig ist, können Sie d
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../../includes/app-service-web-whats-changed.md)]
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

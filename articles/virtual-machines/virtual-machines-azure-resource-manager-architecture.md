@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/01/2015"
+	ms.date="01/07/2016"
 	ms.author="davidmu"/>
 
 # Architektur des Azure-Ressourcen-Managers
@@ -73,14 +73,6 @@ Sie können die Komponentisierung sowie die Abhängigkeitsbeziehungen zwischen R
 
 ## Nächste Schritte
 
-[Bereitstellen und Verwalten von virtuellen Computern mit Azure Resource Manager-Vorlagen und der Azure-CLI](virtual-machines-deploy-rmtemplates-azure-cli.md)
+Informationen zu den Ressourcen, die mit dem Ressourcen-Manager-Bereitstellungsmodell bereitgestellt werden können, finden Sie unter [Azure Computing-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md).
 
-[Bereitstellen und Verwalten von virtuellen Azure-Computern mit Ressourcen-Manager-Vorlagen und PowerShell](virtual-machines-deploy-rmtemplates-powershell.md)
-
-## Zusätzliche Ressourcen
-
-[Azure Compute-, Network- and Storage-Anbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md)
-
-[Azure Resource Manager-Übersicht](resource-group-overview.md)
-
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

@@ -32,7 +32,7 @@ Zum Ausführen der Anweisungen in diesem Artikel benötigen Sie ein Azure-Abonne
 
 ##<a id="configuration"></a>Was sind die verschiedenen Konfigurationsoptionen?
 
-###Zusätzlicher Speicher
+### Zusätzlicher Speicher
 
 Bei der Konfiguration müssen Sie ein Azure-Blobspeicherkonto und einen Standardcontainer angeben. Das Cluster verwendet diese Option als Standard-Speicherort. Sie können optional ein zusätzliches Azure-Speicherkonto angeben, das ebenfalls dem Cluster zugeordnet wird.
 
@@ -40,7 +40,7 @@ Bei der Konfiguration müssen Sie ein Azure-Blobspeicherkonto und einen Standard
 
 Weitere Informationen zu sekundären Blobspeichern finden Sie unter [Verwenden von Azure-Blobspeicher mit HDInsight](hdinsight-use-blob-storage.md).
 
-###Metastore
+### Metastore
 
 Mit Spark können Sie über Rohdaten Schemas und Hive-Tabellen definieren. Sie können diese Schemas und Tabellenmetadaten in externen Metastores speichern. Mit dem Metastore können Sie Ihre Hive-Metadaten beibehalten, damit Sie Hive-Tabellen nicht neu erstellen müssen, wenn Sie einen neuen Cluster erstellen. Standardmäßig speichert Hive diese Informationen in einer eingebetteten Datenbank. Die eingebettete Datenbank kann die Metadaten nicht beibehalten, wenn der Cluster gelöscht wird.
 
@@ -51,7 +51,7 @@ Informationen zum Erstellen einer SQL-Datenbank finden Sie unter [Erstellen eine
 Sie können zusätzliche Komponenten installieren oder die Clusterkonfiguration mithilfe von Skripts während der Erstellung anpassen. Diese Skripts werden mithilfe der Konfigurationsoption **Skriptaktion** aufgerufen, die vom Azure-Verwaltungsportal, von HDInsight Windows PowerShell-Cmdlets oder dem HDInsight .NET SDK verwendet werden kann. Weitere Informationen finden Sie unter [Anpassen eines HDInsight-Clusters mithilfe von Skriptaktionen][hdinsight-customize-cluster].
 
 
-###Virtuelle Netzwerke
+### Virtuelle Netzwerke
 
 [Azure Virtual Network](http://azure.microsoft.com/documentation/services/virtual-network/) ermöglicht das Erstellen eines sicheren, beständigen Netzwerk mit allen Ressourcen, die Sie für Ihre Lösung benötigen. Virtuelle Netzwerken ermöglichen Folgendes:
 
@@ -69,13 +69,7 @@ Sie können zusätzliche Komponenten installieren oder die Clusterkonfiguration 
 
 	![Diagramm der Punkt-zu-Standort-Konfiguration](./media/hdinsight-apache-spark-provision-clusters/hdinsight-vnet-point-to-site.png)
 
-Weitere Informationen zu Features, Vorteilen und Funktionen von virtuellen Netzwerken finden Sie unter [Überblick über virtuelle Azure-Netzwerke](../virtual-network/virtual-networks-overview.md).
-
-> [AZURE.NOTE]Sie müssen das virtuelle Azure-Netzwerk erstellen, bevor Sie einen Cluster erstellen. Weitere Informationen finden Sie unter [Erstellen eines virtuellen Netzwerks](virtual-networks-create-vnet.md).
->
-> Azure HDInsight unterstützt nur standortbasierte virtuelle Netzwerke und kann momentan nicht mit affinitätsgruppenbasierten virtuellen Netzwerken verwendet werden.
->
-> Sie sollten unbedingt ein einziges Subnetz pro Cluster verwenden.
+Informationen zur Verwendung von HDInsight mit einem virtuellen Netzwerk, einschließlich spezifischer Konfigurationsanforderungen für das virtuelle Netzwerk, finden Sie unter [Erweitern der HDInsight-Funktionen mit Azure Virtual Network](hdinsight-extend-hadoop-virtual-network.md).
 
 ##<a id="portal"></a> Mit dem Azure-Vorschauportal
 
@@ -166,7 +160,7 @@ Spark-Cluster in HDInsight verwenden als Standarddateisystem einen Azure-BLOB-Sp
 
 	![Clusterblatt](./media/hdinsight-apache-spark-provision-clusters/hdispark.cluster.blade.png "Clustereigenschaften")
 
-	Im Folgenden werden die Symbole oben auf diesem Blatt und in den Abschnitten **Zusammenfassung** und **Quicklinks** erläutert:
+	Im Folgenden werden die Symbole oben auf diesem Blatt und in den Abschnitten **Zusammenfassung** und **QuickLinks** erläutert:
 
 	* **Einstellungen** und **Alle Einstellungen**: Zeigt das Blatt **Einstellungen** für den Cluster an, über das Sie auf detaillierte Konfigurationsinformationen für den Cluster zugreifen können.
 
@@ -189,7 +183,7 @@ Spark-Cluster in HDInsight verwenden als Standarddateisystem einen Azure-BLOB-Sp
 	* **Cluster-Dashboard**: Öffnet das Blatt „Cluster-Dashboard“, auf dem Sie das Cluster-Dashboard selbst oder Zeppelin und Jupyter Notebooks starten können.
 
 
-##<a id="powershell"></a> Verwenden von Azure PowerShell
+##<a id="powershell"></a>Verwenden von Azure PowerShell
 
 Weitere Informationen finden Sie unter [Erstellen von HDInsight-Clustern](hdinsight-provision-clusters.md#create-using-azure-powershell).
 
@@ -248,4 +242,4 @@ Geben Sie den Spark-Clustertyp an:
 
 [89e2276a]: /documentation/articles/hdinsight-use-sqoop/ "Verwenden von Sqoop mit HDInsight"
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0114_2016-->

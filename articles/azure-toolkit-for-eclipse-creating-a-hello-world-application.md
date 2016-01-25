@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="multiple"
     ms.devlang="Java"
     ms.topic="article"
-    ms.date="11/19/2015" 
+    ms.date="01/09/2016" 
     ms.author="robmcm"/>
 
 <!-- Legacy MSDN URL = https://msdn.microsoft.com/library/azure/hh690944.aspx -->
@@ -39,16 +39,12 @@ Die Anwendung sieht etwa wie folgt aus:
 Zunächst beginnen wir mit der Erstellung eines Java-Projekts.
 
 *  Starten Sie Eclipse, klicken Sie im Menü auf **File**, auf **New** und anschließend auf **Dynamic Web Project**. (Wenn **Dynamic Web Project** nach Klicken auf **File** und **New** nicht als verfügbares Projekt aufgeführt ist, gehen Sie wie folgt vor: Klicken Sie auf **File**, anschließend auf **New** und dann auf **Project**. Erweitern Sie die Option **Web**, klicken Sie auf **Dynamic Web Project** und dann auf **Next**.)
-*  Nennen Sie das Projekt für die Zwecke dieses Tutorials **MyHelloWorld**. (Verwenden Sie diesen Namen unbedingt, weil in den weiteren Schritten dieses Tutorials erwartet wird, dass Ihre WAR-Datei „MyHelloWorld“ heißt). Ihr Bildschirm sieht dann in etwa wie folgt aus:
-	![][ic589576]
+*  Nennen Sie das Projekt für die Zwecke dieses Tutorials **MyHelloWorld**. (Verwenden Sie diesen Namen unbedingt, weil in den weiteren Schritten dieses Tutorials erwartet wird, dass Ihre WAR-Datei „MyHelloWorld“ heißt). Ihr Bildschirm sieht dann in etwa wie folgt aus: ![][ic589576]
 * Klicken Sie auf **Fertig stellen**.
 * Erweitern Sie in der Projektexplorer-Ansicht von Eclipse die Option **MyHelloWorld**. Klicken Sie mit der rechten Maustaste auf **WebContent**, und klicken Sie dann auf **New** sowie auf **JSP File**.
-* Geben Sie der Datei im Dialogfeld **New JSP File** den Namen **index.jsp**. Nennen Sie den übergeordneten Ordner wie im Folgenden gezeigt **MyHelloWorld/WebContent**:
-
-	![][ic659262]
+* Geben Sie der Datei im Dialogfeld **New JSP File** den Namen **index.jsp**. Nennen Sie den übergeordneten Ordner wie im Folgenden gezeigt **MyHelloWorld/WebContent**: ![][ic659262]
 * Wählen Sie im Dialogfeld **Select JSP Template** für die Zwecke dieses Tutorials **New JSP File (html)**, und klicken Sie dann auf **Finish**.
-* Wenn in Eclipse die Datei „index.jsp“ geöffnet wird, geben Sie den Text **Hello World!** ein, damit er im vorhandenen `<body>`-Element angezeigt wird. Der aktualisierte `<body>`-Inhalt sollte wie folgt aussehen:
-```
+* Wenn in Eclipse die Datei „index.jsp“ geöffnet wird, geben Sie den Text **Hello World!** ein, damit er im vorhandenen `<body>`-Element angezeigt wird. Der aktualisierte `<body>`-Inhalt sollte wie folgt aussehen: ```
     <body>
     <b><% out.println("Hello World!"); %></b>
     </body>
@@ -60,36 +56,22 @@ Zunächst beginnen wir mit der Erstellung eines Java-Projekts.
 Wenn Ihre Java-Webanwendung zum Testen bereit steht, können Sie sie auf einem abgekürzten Weg direkt in der Azure-Cloud ausprobieren.
 
 1. Klicken Sie im Projektexplorer von Eclipse auf **MyHelloWorld**.
-1. Klicken Sie auf der Eclipse-Symbolleiste auf die Schaltfläche **Publish to Azure Cloud**
-    ![][ic710882]
-1. Wenn Sie diese Anwendung zum ersten Mal in Azure veröffentlichen und Sie zuvor noch kein Azure-Bereitstellungsprojekt für diese Anwendung erstellt haben, wird automatisch ein Azure-Bereitstellungsprojekt für Sie erstellt. In der Regel wird Ihnen die folgende Eingabeaufforderung angezeigt, die auch das JDK-Paket und den Anwendungsserver auflistet. Beide werden automatisch bereitgestellt, um Ihre Anwendung auszuführen.
-    ![][ic789598]
-    Auf diesem abgekürzten Weg können Sie Ihre Anwendung schnell und einfach in Azure testen, ohne einen bestimmten Server oder ein JDK zu konfigurieren und ohne dabei Standardeinstellungen zu verändern. Wenn Sie mit den Standardeinstellungen zufrieden sind, klicken Sie auf **OK**, um die folgenden Schritte auszuführen.
-    Falls Sie jedoch das JDK oder den Anwendungsserver für Ihre Anwendung ändern möchten, ist dies später möglich. Dazu bearbeiten Sie das automatisch erstellte Azure-Bereitstellungsprojekt, oder Sie klicken jetzt auf **Cancel** und lesen in diesem Tutorial den Abschnitt **Informationen zu Azure-Bereitstellungsprojekten**.
+1. Klicken Sie auf der Eclipse-Symbolleiste auf die Schaltfläche **Publish to Azure Cloud** ![][ic710882].
+1. Wenn Sie diese Anwendung zum ersten Mal in Azure veröffentlichen und Sie zuvor noch kein Azure-Bereitstellungsprojekt für diese Anwendung erstellt haben, wird automatisch ein Azure-Bereitstellungsprojekt für Sie erstellt. In der Regel wird Ihnen die folgende Eingabeaufforderung angezeigt, die auch das JDK-Paket und den Anwendungsserver auflistet. Beide werden automatisch bereitgestellt, um Ihre Anwendung auszuführen. ![][ic789598] Auf diesem abgekürzten Weg können Sie Ihre Anwendung schnell und einfach in Azure testen, ohne einen bestimmten Server oder ein JDK zu konfigurieren und ohne dabei Standardeinstellungen zu verändern. Wenn Sie mit den Standardeinstellungen zufrieden sind, klicken Sie auf **OK**, um die folgenden Schritte auszuführen. Falls Sie jedoch das JDK oder den Anwendungsserver für Ihre Anwendung ändern möchten, ist dies später möglich. Dazu bearbeiten Sie das automatisch erstellte Azure-Bereitstellungsprojekt, oder Sie klicken jetzt auf **Cancel** und lesen in diesem Tutorial den Abschnitt **Informationen zu Azure-Bereitstellungsprojekten**.
 1. Führen Sie im Dialogfeld **Publish to Azure** folgende Schritte aus:
     1. Wenn in der Liste **Subscription** noch keine Abonnements aufgeführt sind, importieren Sie Ihre Abonnementinformationen wie folgt:
         1. Klicken Sie auf **Import from PUBLISH-SETTINGS file**.
         1. Klicken Sie im Dialogfeld **Import Subscription Information** auf **Download PUBLISH-SETTINGS File**. Wenn Sie noch nicht bei Ihrem Azure-Konto angemeldet sind, werden Sie zur Anmeldung aufgefordert. Anschließend werden Sie aufgefordert, eine Datei mit Azure-Veröffentlichungseinstellungen zu speichern. Speichern Sie sie auf Ihrem lokalen Computer.
-        1. Klicken Sie im Dialogfeld **Import Subscription Information** auf die Schaltfläche **Browse**, wählen Sie die im vorherigen Schritt lokal gespeicherte Datei mit den Veröffentlichungseinstellungen aus, und klicken Sie dann auf **Open**. Ihr Bildschirm sollte ähnlich dem folgenden aussehen:
-
-			![][ic644267]
+        1. Klicken Sie im Dialogfeld **Import Subscription Information** auf die Schaltfläche **Browse**, wählen Sie die im vorherigen Schritt lokal gespeicherte Datei mit den Veröffentlichungseinstellungen aus, und klicken Sie dann auf **Open**. Ihr Bildschirm sollte ähnlich dem folgenden aussehen: ![][ic644267]
         1. Klicken Sie auf **OK**.
     1. Wählen Sie bei **Subscription** das Abonnement aus, das Sie für Ihre Bereitstellung verwenden möchten.
     1. Bei **Storage account** wählen Sie das zu verwendende Speicherkonto aus, oder klicken Sie auf **New**, um ein neues Speicherkonto zu erstellen.
     1. Bei **Service name** wählen Sie den zu verwendenden Clouddienst aus, oder klicken Sie auf **New**, um einen neuen Clouddienst zu erstellen.
     1. Bei **Target OS** wählen Sie die Version des Betriebssystems aus, die Sie für Ihre Bereitstellung verwenden möchten.
     1. Bei **Target environment** wählen Sie für die Zwecke dieses Tutorials **Staging** aus. (Wenn Sie Ihre Website für den Produktivbetrieb bereitstellen möchten, ändern Sie diese Einstellung in **Production**.)
-    1. Optional: Wenn die neue Bereitstellung die vorherige automatisch überschreiben soll, aktivieren Sie **Overwrite previous deployment**. Falls die Veröffentlichung am gleichen Speicherort erfolgt, können Sie durch Aktivieren dieser Option Probleme vom Typ „409 Konflikt“ vermeiden. 
-        Beachten Sie, dass das Dialogfeld **Publish to Azure** einen Abschnitt **Remote Access** für den Remotezugriff enthält. In der Standardeinstellung ist der Remotezugriff nicht aktiviert, und er wird für dieses Beispiel auch nicht aktiviert. Zum Aktivieren des Remotezugriffs müssten Sie einen Benutzernamen und ein Kennwort angeben, das bei der Remoteanmeldung verwendet wird. Weitere Informationen zum Remotezugriff finden Sie unter [Aktivieren des Remotezugriffs für Azure-Bereitstellungen in Eclipse][].
-        Das bei Ihnen angezeigte Dialogfeld **Publish to Azure** sieht etwa wie folgt aus:
-        ![][ic719488]
-1. Klicken Sie auf **Publish**, um die Veröffentlichung in einer Stagingumgebung anzustoßen.
-    Wenn Sie zum Ausführen eines vollständigen Builds aufgefordert werden, klicken Sie auf **Yes**. Das Erstellen des ersten Builds kann mehrere Minuten in Anspruch nehmen.
-    In Eclipse wird eine Registerkarte **Azure Activity Log** angezeigt.
-    ![][ic719489]
-    In diesem Protokoll oder in der Ansicht **Console** können Sie den Fortschritt bei Ihrer Bereitstellung verfolgen. Alternativ dazu können Sie sich beim [Azure-Verwaltungsportal][] anmelden und den Abschnitt **Cloud Services** verwenden, um den Status zu überwachen.
-1. Wenn die Bereitstellung erfolgreich abgeschlossen wurde, wird im **Azure Activity Log** der Status **Published** angezeigt. Klicken Sie wie in der folgenden Abbildung gezeigt auf **Published**. Daraufhin öffnet Ihr Browser eine Instanz Ihrer Bereitstellung.
-    ![][ic719490]
+    1. Optional: Wenn die neue Bereitstellung die vorherige automatisch überschreiben soll, aktivieren Sie **Overwrite previous deployment**. Falls die Veröffentlichung am gleichen Speicherort erfolgt, können Sie durch Aktivieren dieser Option Probleme vom Typ „409 Konflikt“ vermeiden. Beachten Sie, dass das Dialogfeld **Publish to Azure** einen Abschnitt **Remote Access** für den Remotezugriff enthält. In der Standardeinstellung ist der Remotezugriff nicht aktiviert, und er wird für dieses Beispiel auch nicht aktiviert. Zum Aktivieren des Remotezugriffs müssten Sie einen Benutzernamen und ein Kennwort angeben, das bei der Remoteanmeldung verwendet wird. Weitere Informationen zum Remotezugriff finden Sie unter [Aktivieren des Remotezugriffs für Azure-Bereitstellungen in Eclipse][]. Das bei Ihnen angezeigte Dialogfeld **Publish to Azure** sieht etwa wie folgt aus: ![][ic719488]
+1. Klicken Sie auf **Publish**, um die Veröffentlichung in einer Stagingumgebung anzustoßen. Wenn Sie zum Ausführen eines vollständigen Builds aufgefordert werden, klicken Sie auf **Yes**. Das Erstellen des ersten Builds kann mehrere Minuten in Anspruch nehmen. In Eclipse wird eine Registerkarte **Azure Activity Log** angezeigt. ![][ic719489] In diesem Protokoll oder in der Ansicht **Console** können Sie den Fortschritt bei Ihrer Bereitstellung verfolgen. Alternativ dazu können Sie sich beim [Azure-Verwaltungsportal][] anmelden und den Abschnitt **Cloud Services** verwenden, um den Status zu überwachen.
+1. Wenn die Bereitstellung erfolgreich abgeschlossen wurde, wird im **Azure Activity Log** der Status **Published** angezeigt. Klicken Sie wie in der folgenden Abbildung gezeigt auf **Published**. Daraufhin öffnet Ihr Browser eine Instanz Ihrer Bereitstellung. ![][ic719490]
 
 Da die Bereitstellung in einer Stagingumgebung erfolgt ist, hat der DNS-Name die Form http://&lt;*guid*&gt;.cloudapp.net, und die URL enthält den DNS-Namen sowie ein Suffix für Ihre Anwendung. Beispiel: http://447564652c20426f6220526f636b7321.cloudapp.net/MyHelloWorld. (Bei dem Teil **MyHelloWorld** muss die Groß-/Kleinschreibung beachtet werden.) Sie können den DNS-Namen auch anzeigen, wenn Sie im Azure-Verwaltungsportal im Bereich „Cloud Services“ auf den Namen der Bereitstellung klicken.
 
@@ -141,8 +123,7 @@ Wenn Sie ein neues Azure-Bereitstellungsprojekt gemäß den zuvor beschriebenen 
 >[AZURE.IMPORTANT]Wenn Ihnen die Eingabeaufforderung der Benutzerkontensteuerung nicht angezeigt wird, prüfen Sie, ob auf der Windows-Taskleiste ein Symbol für die Benutzerkontensteuerung angezeigt wird. Mitunter wird die Eingabeaufforderung der Benutzerkontensteuerung nicht als oberstes Fenster angezeigt und ist nur als Taskleistensymbol sichtbar.
 
 1. Untersuchen Sie die Ausgabe in der Benutzeroberfläche des Serveremulators und prüfen Sie, ob bei Ihrem Projekt Probleme vorhanden sind. Abhängig vom Inhalt Ihrer Bereitstellung kann es einige Minuten dauern, bis Ihre Anwendung im Serveremulator vollständig gestartet ist.
-1. Rufen Sie einen Browser auf, und verwenden Sie als Adresse die URL `http://localhost:8080/MyHelloWorld` (bei dem Teil `MyHelloWorld` der URL muss die Groß-/Kleinschreibung beachtet werden). Daraufhin sollte die Anwendung „MyHelloWorld“ angezeigt werden (die Ausgabe von „index.jsp“), ähnlich wie in der folgenden Abbildung:
-    ![][ic589579]
+1. Rufen Sie einen Browser auf, und verwenden Sie als Adresse die URL `http://localhost:8080/MyHelloWorld` (bei dem Teil `MyHelloWorld` der URL muss die Groß-/Kleinschreibung beachtet werden). Daraufhin sollte die Anwendung „MyHelloWorld“ angezeigt werden (die Ausgabe von „index.jsp“), ähnlich wie in der folgenden Abbildung: ![][ic589579]
 
 Wenn Sie bereit sind, die im Serveremulator ausgeführte Anwendung zu beenden, klicken Sie auf der Eclipse-Symbolleiste auf die Schaltfläche **Reset Azure Emulator** ![][ic710880].
 
@@ -195,4 +176,4 @@ Weitere Informationen zum Verwenden von Azure mit Java finden Sie im [Azure Java
 [ic719491]: ./media/azure-toolkit-for-eclipse-creating-a-hello-world-application/ic719491.png
 [ic789598]: ./media/azure-toolkit-for-eclipse-creating-a-hello-world-application/ic789598.png
 
-<!-----HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0114_2016-->

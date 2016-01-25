@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/04/2016"
-   ms.author="JRJ@BigBangData.co.uk;barbkess"/>
+   ms.date="01/07/2016"
+   ms.author="jrj;barbkess;sonyama"/>
 
 # Verwalten von Statistiken in SQL Data Warehouse
  In SQL Data Warehouse werden statistische Daten verwendet, um die Kosten für unterschiedliche Wege zum Durchführen einer verteilten Abfrage zu bewerten. Wenn die Statistiken präzise sind, können mit dem Abfrageoptimierer qualitativ hochwertige Abfragepläne generiert werden, um die Abfrageleistung zu verbessern.
@@ -459,4 +459,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [SQL Data Warehouse-Entwicklu
 [sys.table\_types]: https://msdn.microsoft.com/library/bb510623.aspx
 [Aktualisieren von Statistiken]: https://msdn.microsoft.com/library/ms187348.aspx
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0114_2016-->

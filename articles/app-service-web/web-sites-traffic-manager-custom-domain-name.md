@@ -6,7 +6,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/18/2015" 
+	ms.date="01/09/2016" 
 	ms.author="robmcm"/>
 
 #Konfigurieren eines benutzerdefinierten Domänennamens für eine Web-App in Azure App Services, der Traffic Manager verwendet.
@@ -61,4 +61,4 @@ Um Ihrer benutzerdefinierten Domäne eine Web-App in Azure App Services zuzuweis
  
  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0114_2016-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="12/10/2015"
+   ms.date="01/05/2016"
    ms.author="terrylan"/>
 
 # Verwalten von Sicherheitsempfehlungen in Azure Security Center
@@ -55,22 +55,22 @@ So zeigen Sie die Details jeder Empfehlung an:
 
 Die Empfehlungen werden in einem Tabellenformat angezeigt, wobei jede Zeile eine bestimmte Empfehlung darstellt. Die Spalten dieser Tabelle sind:
 
-- **BESCHREIBUNG:** eine Erläuterung der Empfehlung, und was getan werden muss, um sie zu befolgen.
+- **BESCHREIBUNG**: Eine Erläuterung der Empfehlung, und was getan werden muss, um sie zu befolgen.
 - **RESSOURCE:** für welche Ressource(n) diese Empfehlung gilt.
 - **STATUS:** der aktuelle Status der Empfehlung
-  - **Offen:** noch nicht behandelt
+  - **Offen**: noch nicht behandelt
   - **In Bearbeitung:** Empfehlung wird derzeit auf diese Ressourcen angewendet, es ist keine Aktion Ihrerseits erforderlich.
   - **Gelöst:** Empfehlung wurde bereits abgeschlossen (im Status „Gelöst“ ist die Farbe der Linie abgeblendet).
-- **SCHWEREGRAD:** Beschreibt den Schweregrad der jeweiligen Empfehlung:
+- **SCHWEREGRAD**: Beschreibt den Schweregrad dieser bestimmten Empfehlung:
   - **Hoch:**: Ein Sicherheitsrisiko betrifft eine bedeutsame Ressource (Anwendung, VM, Netzwerksicherheitsgruppe) und erfordert Aufmerksamkeit.
-  - **Mittel:** nicht schwerwiegend, möglicherweise sind zusätzliche Schritte erforderlich, um einen Prozess abzuschließen oder eine Sicherheitslücke zu beseitigen.
+  - **Mittel**: Unkritische oder zusätzliche Schritte sind erforderlich, um einen Prozess abzuschließen oder eine Sicherheitslücke zu beseitigen.
   - **Niedrig:** Ein Sicherheitsrisiko, das behandelt werden sollte, jedoch keine unmittelbare Aufmerksamkeit erfordert. (Standardmäßig wird eine Empfehlung mit Schweregrad "Niedrig" nicht angezeigt, jedoch können Sie einen entsprechenden Filter für solche Empfehlungen einstellen, wenn Sie sie anzeigen möchten.)
 
 Der folgenden Tabelle können Sie entnehmen, welche Empfehlungen verfügbar sind, und welche Aktionen sie jeweils ausführen, wenn Sie sie anwenden:
 
 | Empfehlung | Beschreibung |
 |----- |-----|
-| Sammlung von Daten für Abonnements/virtuelle Computer aktivieren | Empfiehlt Ihnen, in der Sicherheitsrichtlinie die Datensammlung für ausgewählte virtuelle Computer zu aktivieren. |
+| Sammlung von Daten für Abonnements/virtuelle Computer aktivieren | Empfiehlt Ihnen, in der Sicherheitsrichtlinie die Datensammlung für alle Abonnements oder für ausgewählte virtuelle Maschinen zu aktivieren. |
 | Grundregelkonflikte lösen | Empfiehlt Ihnen, OS-Konfigurationen an den empfohlenen Grundregeln zu orientieren, z. B. nicht zuzulassen, dass Kennwörter gespeichert werden. |
 | Systemupdates anwenden | Empfiehlt Ihnen, fehlende Systemupdates für virtuelle Computer (nur Windows-VMs) bereitzustellen. |
 | ACLs für Endpunkte konfigurieren | Sie sollten eine Zugriffssteuerungsliste konfigurieren, um den eingehenden Zugriff auf virtuelle Computer (nur für klassische VMs) einzuschränken. |
@@ -120,7 +120,7 @@ In diesem Dokument wurden Ihnen Sicherheitsempfehlungen in Azure Security Center
 
 - [Festlegen von Sicherheitsrichtlinien in Azure Security Center](security-center-policies.md) – erfahren Sie, wie Sie Sicherheitsrichtlinien konfigurieren.
 - [Überwachen der Sicherheitsintegrität in Azure Security Center](security-center-monitoring.md) – erfahren Sie, wie Sie die Integrität Ihrer Azure-Ressourcen überwachen.
-- [Verwalten von und Reagieren auf Sicherheitswarnungen in Azure Security Center](security-center-managing-and-responding-alerts.md) – erfahren Sie, wie Sie Sicherheitswarnungen verwalten und auf diese reagieren.
+- [Verwalten von und Reagieren auf Sicherheitswarnungen in Azure Security Center](security-center-managing-and-responding-alerts.md) – Erfahren Sie, wie Sie Sicherheitswarnungen verwalten und auf diese reagieren.
 - [Azure Security Center – häufig gestellte Fragen](security-center-faq.md) zur Verwendung des Diensts.
 - [Azure Security Blog](http://blogs.msdn.com/b/azuresecurity/) – suchen Sie nach Blogbeiträgen über Azure-Sicherheit und -Compliance.
 
@@ -135,4 +135,4 @@ In diesem Dokument wurden Ihnen Sicherheitsempfehlungen in Azure Security Center
 [9]: ./media/security-center-recommendations/finalize-waf.png
 [10]: ./media/security-center-recommendations/restrict-traffic.png
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0114_2016-->

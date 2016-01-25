@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/30/2015" 
+	ms.date="01/08/2016" 
 	ms.author="tdykstra"/>
 
 # API-Apps-Übersicht
@@ -57,4 +57,4 @@ Eine Liste der bekannten Probleme mit API-Apps finden Sie in dem entsprechenden 
 
 Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure App Service](../app-service/app-service-value-prop-what-is.md).
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0114_2016-->

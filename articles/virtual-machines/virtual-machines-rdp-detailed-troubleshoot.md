@@ -14,56 +14,48 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/16/2015"
+	ms.date="01/08/2016"
 	ms.author="dkshir"/>
 
 # Detaillierte Problembehandlung für Remotedesktopverbindungen mit Windows-basierten virtuellen Azure-Computern
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
-Dieser Artikel enthält detaillierte Schritte zur Problembehandlung bei komplexen Remotedesktopfehlern.
+Dieser Artikel enthält ausführliche schrittweise Anleitungen zur Diagnose und Behebung komplexer Remotedesktop-Fehler für virtuelle windowsbasierte Azure-Computer.
 
-> [AZURE.IMPORTANT]Um allgemeine Remotedesktopfehler als Ursache auszuschließen, lesen Sie zunächst die [grundlegende Problembehandlung für Remotedesktop](virtual-machines-troubleshoot-remote-desktop-connections.md), bevor Sie mit dieser Problembehandlung fortfahren.
+> [AZURE.IMPORTANT]Um allgemeine Remotedesktopfehler als Ursache auszuschließen, lesen Sie zunächst den Artikel [grundlegende Problembehandlung für Remotedesktop](virtual-machines-troubleshoot-remote-desktop-connections.md), bevor Sie mit dieser Problembehandlung fortfahren.
 
-## Azure-Kundensupport kontaktieren
+Wenn Sie eine Fehlermeldung erhalten, die nicht den spezifischen Fehlermeldungen ähnelt, die im Artikel [grundlegende Problembehandlung für Remotedesktop](virtual-machines-troubleshoot-remote-desktop-connections.md) beschrieben sind, können Sie diese Schritte durchführen, um herauszufinden, warum der Remotedesktop (oder [RDP](https://en.wikipedia.org/wiki/Remote_Desktop_Protocol)) Client keine Verbindung mit dem RDP-Dienst auf der Azure-VM herstellen kann.
 
-Wenn Sie beim Lesen dieses Artikels feststellen, dass Sie weitere Hilfe benötigen, können Sie Ihre Frage im [MSDN Azure-Forum oder im Stack Overflow-Forum](http://azure.microsoft.com/support/forums/) stellen, um dort Hilfe von Azure-Experten zu erhalten.
-
-Alternativ dazu haben Sie die Möglichkeit, einen Azure-Supportfall zu erstellen. Rufen Sie die [Azure-Support-Website](http://azure.microsoft.com/support/options/) auf, und klicken Sie auf **Support erhalten**. Informationen zur Nutzung von Azure-Support finden Sie unter [Microsoft Azure-Support-FAQ](http://azure.microsoft.com/support/faq/).
+Wenn Sie beim Lesen dieses Artikels feststellen, dass Sie weitere Hilfe benötigen, können Sie Ihre Frage im [MSDN Azure-Forum oder im Stack Overflow-Forum](http://azure.microsoft.com/support/forums/) stellen, um dort Hilfe von Azure-Experten zu erhalten. Alternativ dazu haben Sie die Möglichkeit, einen Azure-Supportfall zu erstellen. Rufen Sie die [Azure-Support-Website](http://azure.microsoft.com/support/options/) auf, und klicken Sie auf **Support erhalten**. Informationen zur Nutzung von Azure-Support finden Sie unter [Microsoft Azure-Support-FAQ](http://azure.microsoft.com/support/faq/).
 
 
-## Allgemeine Fehlermeldung für Remotedesktop
+## Komponenten einer Remotedesktopverbindung
 
-Im Meldungsfenster für die Remotedesktopverbindung kann die folgende Fehlermeldung angezeigt werden: _Der Remotedesktop kann aus einem der folgenden Gründe keine Verbindung mit dem Remotecomputer herstellen…_
-
-Dieser Fehler wird angezeigt, wenn der Remotedesktopclient keine Verbindung mit dem Remotedesktopdienst auf dem virtuellen Computer herstellen kann. Für diesen Fehler kann es verschiedene Ursachen geben.
-
-Nachfolgend sind die beteiligten Komponenten aufgeführt.
+Eine Remotedesktopverbindung enthält folgende Komponenten:
 
 ![](./media/virtual-machines-rdp-detailed-troubleshoot/tshootrdp_0.png)
 
-Bevor Sie mit einer detaillierte Problembehandlung beginnen, empfiehlt es sich, sich zu überlegen, was sich geändert hat, seit Sie zuletzt erfolgreich Remotedesktopverbindungen herstellen konnten, und diese Änderung als Ausgangspunkt für die Problembehebung zu verwenden. Beispiel:
+Bevor Sie fortfahren, kann es hilfreich sein zu überlegen, was sich seit der letzten erfolgreichen Remotedesktopverbindung mit dem virtuellen Computer geändert hat. Beispiel:
 
-- Wenn Sie Remotedesktopverbindungen herstellen konnten und die öffentliche IP-Adresse des virtuellen Computers oder des Clouddiensts mit dem virtuellen Computer (auch virtuelle IP-Adresse [VIP] genannt) geändert haben, enthält der DNS-Clientcache möglicherweise einen Eintrag für den DNS-Namen und die *alte IP-Adresse*. Löschen Sie den Cache des DNS-Clients, und versuchen Sie es erneut. Versuchen Sie stattdessen, die Verbindung mit der neuen VIP herzustellen.
-- Wenn Sie statt des klassischen Azure-Portals oder des Azure-Portals eine Anwendung zum Verwalten von Remotedesktopverbindungen verwenden, stellen Sie sicher, dass die Anwendungskonfiguration den nach dem Zufallsprinzip bestimmten TCP-Port für den Remotedesktop-Datenverkehr enthält.
-
-In den folgenden Abschnitten wird schrittweise erläutert, wie die verschiedenen Ursachen für dieses Problem isoliert und ermittelt werden. Zudem werden Lösungen und Problemumgehungen bereitgestellt.
+- Wenn sich die öffentliche IP-Adresse des virtuellen Computers oder des Clouddienst mit dem virtuellen Computer (auch virtuelle IP-Adresse „[VIP](https://en.wikipedia.org/wiki/Virtual_IP_address)“ genannt) geändert hat, tritt möglicherweise deshalb ein RDP-Fehler auf, weil im DNS-Clientcache immer noch die *alte IP-Adresse* für den DNS-Namen gespeichert ist. Löschen Sie den Cache des DNS-Clients, und versuchen Sie erneut eine Verbindung zum virtuellen Computer herzustellen. Oder versuchen Sie es direkt mit der neuen VIP.
+- Wenn Sie für die Verwaltung Ihrer Remotedesktopverbindungen statt der Azure-Portale eine Anwendung eines Drittanbieters verwenden, müssen Sie sicherstellen, dass in der Anwendungskonfiguration der richtige TCP-Port für den Datenverkehr des Remotedesktops angegeben ist. Bei klassischen virtuelle Computern können Sie dies im [Azure-Portal](portal.azure.com) überprüfen, indem Sie die Einstellungen für diese VM aufrufen und auf „Endpunkt“ klicken.
 
 
 ## Vorbereitende Schritte
 
-Führen Sie die folgenden Schritte aus, bevor Sie mit der detaillierten Problembehandlung fortfahren.
+Führen Sie die folgenden Schritte aus, bevor Sie mit der detaillierten Problembehandlung fortfahren:
 
-- Überprüfen Sie den Status des virtuellen Computers im klassischen Azure-Portal oder im Azure-Portal.
-- Starten Sie den virtuellen Computer neu.
-- [Ändern Sie die Größe des virtuellen Computers.](virtual-machines-size-specs.md)
+- Überprüfen Sie im klassischen Azure-Portal oder im Azure-Portal, ob offensichtliche Probleme mit dem virtuellen Computer bestehen.
+- Führen Sie die Schritte durch, die im Artikel [Problembehandlung bei Remotedesktopverbindungen mit einem Windows-basierten virtuellen Azure-Computer](virtual-machines-troubleshoot-remote-desktop-connections.md#quickfixrdp) aufgeführt sind.
 
-Versuchen Sie nach diesen Schritten erneut, die Remotedesktopverbindung herzustellen.
+
+Versuchen Sie anschließend erneut eine Remotedesktopverbindung zum virtuellen Computer herzustellen.
 
 
 ## Detaillierte Problembehandlung
 
-Wenn die Verbindung zwischen dem Remotedesktopclient und dem Remotedesktopdienst auf dem virtuellen Azure-Computer fehlschlägt, kann dies auf Fehler oder eine falsche Konfiguration an einer der folgenden Stellen zurückzuführen sein:
+Wenn die Verbindung zwischen dem Remotedesktopclient und dem Remotedesktopdienst auf dem virtuellen Azure-Computer fehlschlägt, kann dies auf Fehler an folgenden Stellen zurückzuführen sein:
 
 - Remotedesktop-Clientcomputer
 - Edgegerät im Intranet des Unternehmens
@@ -73,7 +65,7 @@ Wenn die Verbindung zwischen dem Remotedesktopclient und dem Remotedesktopdienst
 
 ### Quelle 1: Remotedesktop-Clientcomputer
 
-Um Ihren Computer als Problemquelle oder dessen Fehlkonfiguration auszuschließen, überprüfen Sie, ob Ihr Computer Remotedesktopverbindungen mit einem anderen lokalen Windows-basierten Computer herstellen kann.
+Stellen Sie sicher, dass Ihr Computer Remotedesktopverbindungen mit einem anderen lokalen windowsbasierten Computer herstellen kann.
 
 ![](./media/virtual-machines-rdp-detailed-troubleshoot/tshootrdp_1.png)
 
@@ -84,40 +76,40 @@ Falls dies nicht möglich ist, suchen Sie auf Ihrem Computer Folgendes:
 - Lokal installierte Netzwerküberwachungssoftware, die Remotedesktopverbindungen verhindert
 - Andere Arten von Sicherheitssoftware, die Datenverkehr überwachen oder bestimmte Arten von Datenverkehr zulassen/unterbinden, die Remotedesktopverbindungen verhindern
 
-Versuchen Sie in allen diesen Fällen, die Software vorübergehend zu deaktivieren, und versuchen Sie, eine Remotedesktopverbindung mit einem lokalen Computer herzustellen, um die Hauptursache zu ermitteln. Anschließend korrigieren Sie zusammen mit Ihrem Netzwerkadministrator die Einstellungen der Software, um Remotedesktopverbindungen zu ermöglichen.
+In allen diesen Fällen deaktivieren Sie zur Ermittlung der Ursache die Software vorübergehend, und versuchen Sie dann, eine Remotedesktopverbindung mit einem lokalen Computer herzustellen. Wenn Sie damit die Ursache gefunden haben, korrigieren Sie zusammen mit Ihrem Netzwerkadministrator die Einstellungen der Software, um Remotedesktopverbindungen zu ermöglichen.
 
 ### Quelle 2: Edgegerät im Intranet des Unternehmens
 
-Um das Edgegerät im Intranet des Unternehmens als Problemquelle oder dessen Fehlkonfiguration auszuschließen, überprüfen Sie, ob ein direkt mit dem Internet verbundener Computer Remotedesktopverbindungen mit Ihrem virtuellen Azure-Computer herstellen kann.
+Stellen Sie sicher, dass ein direkt mit dem Internet verbundener Computer Remotedesktopverbindungen mit Ihrem virtuellen Azure-Computer herstellen kann.
 
 ![](./media/virtual-machines-rdp-detailed-troubleshoot/tshootrdp_2.png)
 
-Wenn Sie keinen Computer haben, der direkt mit dem Internet verbunden ist, können Sie problemlos einen neuen virtuellen Azure-Computer in einer eigenen Ressourcengruppe oder einem eigenen Clouddienst erstellen und verwenden. Weitere Informationen finden Sie unter [Erstellen eines virtuellen Computers unter Windows in Azure](virtual-machines-windows-tutorial.md). Löschen Sie die Ressourcengruppe oder den virtuellen Computer und den Clouddienst, wenn Sie Ihre Tests abgeschlossen haben.
+Wenn Sie keinen Computer haben, der direkt mit dem Internet verbunden ist, können Sie einen neuen virtuellen Azure-Computer in einer Ressourcengruppe oder einem Clouddienst erstellen und mit diesem testen. Weitere Informationen finden Sie unter [Erstellen eines virtuellen Computers unter Windows in Azure](virtual-machines-windows-tutorial.md). Sie können den virtuellen Computer und die Ressourcengruppe bzw. den Clouddienst nach Abschluss des Tests löschen.
 
 Wenn Sie eine Remotedesktopverbindung mit einem direkt mit dem Internet verbundenen Computer herstellen können, überprüfen Sie das Edgegerät für das Intranet Ihrer Organisation auf Folgendes:
 
 - Eine interne Firewall, die HTTPS-Verbindungen mit dem Internet blockiert
-- Der Proxy-Server, der Remotedesktopverbindungen verhindert
+- Ein Proxy-Server, der Remotedesktopverbindungen verhindert
 - Software zur Erkennung von Eindringversuchen oder zur Netzwerküberwachung, die auf dem Edgegerät ausgeführt und die Remotedesktopverbindungen verhindert
 
 Korrigieren Sie zusammen mit Ihrem Netzwerkadministrator die Einstellungen des Edgegeräts für das Intranet Ihrer Organisation, um HTTPS-basierte Remotedesktopverbindungen mit dem Internet zu ermöglichen.
 
 ### Quelle 3: Clouddienst-Endpunkt und ACL
 
-Um Clouddienst-Endpunkt und ACL als Problemquelle oder die Fehlkonfiguration virtueller Computer auszuschließen, die in der Dienstverwaltungs-API erstellt wurden, überprüfen Sie, ob ein anderer virtueller Azure-Computer in demselben Clouddienst oder virtuellen Netzwerk Remotedesktopverbindungen mit Ihrem virtuellen Azure-Computer herstellen kann.
+Überprüfen Sie für mit dem klassischen Bereitstellungsmodell erstellte virtuelle Computer, ob ein anderer virtueller Azure-Computer in demselben Clouddienst oder virtuellen Netzwerk Remotedesktopverbindungen mit Ihrem virtuellen Azure-Computer herstellen kann.
 
 ![](./media/virtual-machines-rdp-detailed-troubleshoot/tshootrdp_3.png)
 
 > [AZURE.NOTE]Für virtuelle Computer, die im Ressourcen-Manager erstellt wurden, fahren Sie mit [Quelle 4: Netzwerksicherheitsgruppen](#nsgs) fort.
 
-Ist kein anderer virtueller Computer in demselben Clouddienst oder virtuellen Netzwerk vorhanden, können Sie problemlos einen neuen erstellen. Weitere Informationen finden Sie unter [Erstellen eines virtuellen Computers unter Windows in Azure](virtual-machines-windows-tutorial.md). Löschen Sie den zusätzlichen virtuellen Computer, wenn Sie Ihre Tests abgeschlossen haben.
+Wenn Sie nicht über einen anderen virtuellen Computer im gleichen Clouddienst oder virtuellen Netzwerk verfügen, können Sie anhand der Schritte in [Erstellen eines virtuellen Computers unter Windows in Azure](virtual-machines-windows-tutorial.md)einen neuen virtuellen Computer erstellen. Löschen Sie den zusätzlichen virtuellen Computer, nach Abschluss des Tests.
 
 Wenn Sie mit einem virtuellen Computer in demselben Clouddienst oder virtuellen Netzwerk eine Remotedesktopverbindung herstellen können, überprüfen Sie Folgendes:
 
-- Die Endpunktkonfiguration für den Remotedesktop-Datenverkehr auf dem virtuellen Zielcomputer. Der private TCP-Port des Endpunkts muss mit dem TCP-Port übereinstimmen, der vom Dienst der Remotedesktopdienste auf dem virtuellen Computer überwacht wird. In der Standardeinstellung ist dies Port 3389.
-- Die ACL für den Endpunkt des Remotedesktop-Datenverkehr auf dem virtuellen Zielcomputer. In ACLs können Sie anhand der Quell-IP-Adresse angeben, ob eingehender Datenverkehr aus dem Internet zugelassen oder verweigert wird. Falsch konfigurierte ACSs können verhindern, dass die Remotedesktop-Datenverkehr zum Endpunkt gelangt. Untersuchen Sie die ACLs, um sicherzustellen, dass eingehender Verkehr von den öffentlichen IP-Adressen des Proxy- oder anderen Edgeservers zugelassen wird. Weitere Informationen finden Sie unter [Was ist eine Netzwerk-Zugriffssteuerungsliste (ACL)?](../virtual-network/virtual-networks-acl.md).
+- Die Endpunktkonfiguration für den Remotedesktop-Datenverkehr auf der Ziel-VM: der private TCP-Port des Endpunkts muss mit dem TCP-Port übereinstimmen, den der Remotedesktop-Dienst der VM überwacht (standardmäßig 3389).
+- Die ACL für den Endpunkt des Remotedesktop-Datenverkehrs auf der Ziel-VM: In ACLs können Sie anhand der Quell-IP-Adresse angeben, ob eingehender Datenverkehr aus dem Internet zugelassen oder verweigert wird. Falsch konfigurierte ACLs können verhindern, dass die Remotedesktop-Datenverkehr zum Endpunkt gelangt. Überprüfen Sie die ACLs, um sicherzustellen, dass eingehender Verkehr von den öffentlichen IP-Adressen des Proxy- oder eines anderen Edgeservers zugelassen wird. Weitere Informationen finden Sie unter [Was ist eine Netzwerk-Zugriffssteuerungsliste (ACL)?](../virtual-network/virtual-networks-acl.md).
 
-Um den Endpunkt als Problemquelle auszuschließen, entfernen Sie den aktuellen Endpunkt, und erstellen Sie einen neuen Endpunkt. Wählen Sie einen zufälligen Port im Bereich von 49152 bis 65535 für die externe Portnummer aus. Weitere Informationen finden Sie unter [Einrichten von Endpunkten für einen virtuellen Computer](virtual-machines-set-up-endpoints.md).
+Um den Endpunkt als Problemquelle auszuschließen, entfernen Sie den aktuellen Endpunkt und erstellen Sie einen neuen Endpunkt. Wählen Sie einen zufälligen Port im Bereich von 49152 bis 65535 für die externe Portnummer aus. Weitere Informationen finden Sie unter [Einrichten von Endpunkten für einen virtuellen Computer](virtual-machines-set-up-endpoints.md).
 
 ### <a id="nsgs"></a>Quelle 4: Netzwerksicherheitsgruppen
 
@@ -127,23 +119,21 @@ Weitere Informationen finden Sie unter [Was ist eine Netzwerksicherheitsgruppe (
 
 ### Quelle 5: Windows-basierter virtueller Azure-Computer
 
-Der letzte Satz möglicher Probleme hat mit dem virtuellen Azure-Computer selbst zu tun.
-
 ![](./media/virtual-machines-rdp-detailed-troubleshoot/tshootrdp_5.png)
 
-Im Artikel [Grundlegende Problembehandlung für Remotedesktop](virtual-machines-troubleshoot-remote-desktop-connections.md) wird die Verwendung des Diagnosepakets aus [Azure IaaS (Windows) und Diagnoseprogramme](https://home.diagnostics.support.microsoft.com/SelfHelp?knowledgebaseArticleFilter=2976864) beschrieben. Wenn das Problem **RDP-Verbindung mit einem virtuellen Azure-Computer (Neustart erforderlich)** mit diesem Diagnosepaket nicht behoben werden kann, führen Sie die Schritte in [diesem Artikel](virtual-machines-windows-reset-password.md) aus, um die Remotedesktopdienste auf dem virtuellen Computer zurückzusetzen. Dies bewirkt Folgendes:
+Verwenden Sie das [Azure IaaS-Diagnosepaket (Windows)](https://home.diagnostics.support.microsoft.com/SelfHelp?knowledgebaseArticleFilter=2976864) um zu überprüfen, ob der virtuelle Azure-Computer selbst die Fehlerquelle ist. Wenn das Problem **RDP-Verbindung mit einem virtuellen Azure-Computer (Neustart erforderlich)** mit diesem Diagnosepaket nicht behoben werden kann, führen Sie die Schritte in [diesem Artikel](virtual-machines-windows-reset-password.md) aus, um den Remotedesktopdienst auf dem virtuellen Computer zurückzusetzen. Dies bewirkt Folgendes:
 
 - Die Windows-Firewall-Standardregel "Remotedesktop" (TCP-Port 3389) wird aktiviert.
 - Remotedesktopverbindungen werden aktiviert, indem der HKLM\\System\\CurrentControlSet\\Control\\Terminal Server\\fDenyTSConnections-Registrierungswert auf 0 festgelegt wird.
 
-Versuchen Sie erneut, die Verbindung von Ihrem Computer aus herzustellen. Wenn Sie nicht erfolgreich sind, können u. a. die folgenden Probleme der Grund dafür sein:
+Versuchen Sie erneut, die Verbindung von Ihrem Computer aus herzustellen. Wenn Sie noch immer keine Remotedesktopverbindung herstellen können, überprüfen Sie folgende Fehlerquellen:
 
-- Der Dienst der Remotedesktopdienste wird auf dem virtuellen Zielcomputer nicht ausgeführt.
-- Der Dienst der Remotedesktopdienste überwacht nicht den TCP-Port 3389.
+- Der Remotedesktopdienst wird auf dem virtuellen Zielcomputer nicht ausgeführt.
+- Der Remotedesktopdienst überwacht nicht den TCP-Port 3389.
 - Windows-Firewall oder eine andere lokale Firewall enthält eine Regel für ausgehenden Datenverkehr, durch die Remotedesktop-Datenverkehr verhindert wird.
 - Software zur Erkennung von Eindringversuchen oder zur Netzwerküberwachung, die auf dem virtuellen Azure-Computer ausgeführt wird, verhindert Remotedesktopverbindungen.
 
-Um diese möglichen Probleme für virtuelle Computer zu beheben, die mit der Dienstverwaltungs-API erstellt wurden, können Sie eine Azure PowerShell-Remotesitzung für den virtuellen Azure-Computer verwenden. Zunächst müssen Sie ein Zertifikat für den Clouddienst installieren, der als Host des virtuellen Computers fungiert. Wechseln Sie zu [Konfigurieren eines sicheren PowerShell-Remotezugriffs auf virtuellen Azure-Computern](http://gallery.technet.microsoft.com/scriptcenter/Configures-Secure-Remote-b137f2fe), und laden Sie die Skriptdatei **InstallWinRMCertAzureVM.ps1** in einen Ordner auf Ihrem lokalen Computer herunter.
+Bei virtuellen Computern, die mit dem klassischen Bereitstellungsmodell erstellt wurden, können Sie eine Azure PowerShell-Remotesitzung auf dem virtuellen Azure-Computer nutzen. Zunächst müssen Sie ein Zertifikat für den Clouddienst installieren, der als Host des virtuellen Computers fungiert. Wechseln Sie zu [Konfigurieren eines sicheren PowerShell-Remotezugriffs auf virtuellen Azure-Computern](http://gallery.technet.microsoft.com/scriptcenter/Configures-Secure-Remote-b137f2fe), und laden Sie die Skriptdatei „**InstallWinRMCertAzureVM.ps1**“ auf Ihren lokalen Computer herunter.
 
 Installieren Sie dann Azure PowerShell, sofern noch nicht geschehen. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md).
 
@@ -158,9 +148,9 @@ Als Nächstes tragen Sie den Namen Ihres Azure-Abonnements, den Namen des Cloudd
 
 Den richtigen Abonnementnamen können Sie der Eigenschaft _SubscriptionName_ in der Ausgabe des Befehls **Get-AzureSubscription** entnehmen. Der Name des virtuellen Computers und der Name des Clouddiensts werden in der Spalte _ServiceName_ in der Ausgabe des Befehls **Get-AzureVM** angezeigt.
 
-Um sich davon zu überzeugen, dass Sie das neue Zertifikat besitzen, öffnen Sie ein Zertifikate-Snap-In für den aktuellen Benutzer, und zeigen Sie den Ordner **Vertrauenswürdige Stammzertifizierungsstellen\\Zertifikate** an. Es sollte ein Zertifikat mit dem DNS-Namen des Clouddiensts in der Spalte "Ausgestellt für" angezeigt werden (Beispiel: "cloudservice4testing.cloudapp.net").
+Um sich davon zu überzeugen, dass Sie das neue Zertifikat besitzen, öffnen Sie ein Zertifikate-Snap-In für den aktuellen Benutzer, und zeigen Sie den Ordner „**Vertrauenswürdige Stammzertifizierungsstellen\\Zertifikate**“ an. Es sollte ein Zertifikat mit dem DNS-Namen des Clouddiensts in der Spalte "Ausgestellt für" angezeigt werden (Beispiel: "cloudservice4testing.cloudapp.net").
 
-Starten Sie als Nächstes mit diesen Befehlen eine Azure Powershell-Remotesitzung.
+Starten Sie als Nächstes mit diesen Befehlen eine Azure PowerShell-Remotesitzung.
 
 	$uri = Get-AzureWinRMUri -ServiceName $serviceName -Name $vmName
 	$creds = Get-Credential
@@ -170,9 +160,7 @@ Nachdem Sie gültige Administratoranmeldeinformationen eingegeben haben, sollte 
 
 	[cloudservice4testing.cloudapp.net]: PS C:\Users\User1\Documents>
 
-Der erste Teil der Eingabeaufforderung zeigt an, dass Sie jetzt Azure PowerShell-Befehle für den Clouddienst eingeben, der den virtuellen Zielcomputer enthält. Ihr Clouddienstname wird etwas anders lauten als "cloudservice4testing.cloudapp.net".
-
-Sie können jetzt Azure PowerShell-Befehle eingeben, um die oben genannten weitere Probleme zu untersuchen und Korrekturen an der Konfiguration vorzunehmen.
+Den ersten Teil dieser Eingabeaufforderung stellt der Name Ihres Clouddiensts dar, der die Ziel-VM enthält, z. B. „cloudservice4testing.cloudapp.net“. Sie können jetzt Azure PowerShell-Befehle für diesen Clouddienst eingeben, um die oben genannten weiteren Probleme zu untersuchen und Korrekturen an der Konfiguration vorzunehmen.
 
 ### So korrigieren Sie manuell den TCP-Port, der von den Remotedesktopdiensten überwacht wird
 
@@ -192,7 +180,7 @@ Beenden Sie die Azure PowerShell-Remotesitzung mit dem folgenden Befehl.
 
 	Exit-PSSession
 
-Überprüfen Sie, ob der Remotedesktop-Endpunkt für den virtuellen Azure-Computer auch den TCP-Port 3398 als internen Port verwendet. Starten Sie den virtuellen Azure-Computer dann neu, und versuchen Sie erneut, die Remotedesktopverbindung herzustellen.
+Überprüfen Sie, ob der Remotedesktop-Endpunkt für den virtuellen Azure-Computer auch den TCP-Port 3398 als internen Port verwendet. Starten Sie den virtuellen Azure-Computer neu und versuchen Sie erneut, die Remotedesktopverbindung herzustellen.
 
 
 ## Zusätzliche Ressourcen
@@ -207,4 +195,4 @@ Beenden Sie die Azure PowerShell-Remotesitzung mit dem folgenden Befehl.
 
 [Problembehandlung beim Zugriff auf eine Anwendung, die auf einem virtuellen Azure-Computer ausgeführt wird](virtual-machines-troubleshoot-access-application.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

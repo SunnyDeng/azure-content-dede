@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="12/04/2015"
-	ms.author="robinsh;selcint"/>
+	ms.author="robinsh;prkhad"/>
 
 
 # Premium-Speicher: Hochleistungsspeicher für Arbeitslasten auf virtuellen Azure-Computern
@@ -72,7 +72,7 @@ Damit Sie die Vorteile des Premium-Speichers nutzen können, erstellen Sie zuers
 - Stellen Sie sicher, dass auf Ihrem virtuellen Computer ausreichend Bandbreite zum Steuern des Datenverkehrs des Datenträgers verfügbar ist. Bei einem virtuellen Computer vom Typ „STANDARD\_DS1“ steht für Premium-Speicherdatenträgerverkehr beispielsweise eine dedizierte Bandbreite von 32 MB pro Sekunde zur Verfügung. Das bedeutet, dass mit einem an diesen virtuellen Computer angefügten Premium-Speicherdatenträger vom Typ „P10“ maximal 32 MB pro Sekunde möglich sind (nicht bis zu 100 MB pro Sekunde, die der P10-Datenträger bereitstellen kann). Mit einem virtuellen Computer vom Typ „STANDARD\_DS13“ sind maximal 256 MB pro Sekunde auf allen Datenträgern möglich. Derzeit ist der größte virtuelle Computer der DS-Serie der STANDARD\_DS14. Er kann bis zu 512 MB pro Sekunde auf allen Datenträgern bereitstellen. Der größte virtuelle Computer der GS-Serie ist der STANDARD\_GS5. Er kann bis zu 2.000 MB pro Sekunde auf allen Datenträgern bereitstellen.
 
 	Beachten Sie, dass diese Limits nur für den Datenträgerverkehr und nicht für Cachetreffer- und Netzwerkverkehr gelten. Für den Netzwerkdatenverkehr virtueller Computer steht eine separate Bandbreite zur Verfügung. Diese unterscheidet sich von der dedizierten Bandbreite für Premium-Speicherdatenträger.
-	
+
 	Aktuelle Informationen zu maximalen IOPS- und Durchsatzwerten (d. h. Bandbreitenwerte) für virtuelle Computer der DS- und GS-Serie finden Sie unter [Größen virtueller Computer und Clouddienste für Azure](../virtual-machines/virtual-machines-size-specs.md). Informationen zu Datenträgern des Premium-Speichers und ihren IOPs und Durchsatzlimits finden Sie in diesem Artikel in der Tabelle im Abschnitt [Skalierbarkeits- und Leistungsziele bei der Verwendung des Premium-Speichers](#scalability-and-performance-targets-whde-DEing-premium-storage).
 
 > [AZURE.NOTE]Cachetreffer werden durch die zugeordneten IOPS-/Durchsatzwerte des Datenträgers nicht eingeschränkt. Das heißt, bei Verwendung eines Datenträgers mit der Cacheeinstellung „ReadOnly“ für einen virtuellen Computer der DS- oder GS-Serie unterliegen Lesevorgänge, die vom Cache verarbeitet werden, nicht den Einschränkungen für Premium-Speicherdatenträger. Daher können Sie einen sehr hohen Durchsatz mit einem Datenträger erzielen, wenn der Workload vorwiegend aus Lesevorgängen besteht. Beachten Sie, dass für den Cache separate IOPS-/Durchsatzlimits auf Ebene des virtuellen Computers basierend auf der Größe des virtuellen Computers gelten. Virtuelle Computer der DS-Serie bieten etwa 4.000 IOPS und 33 MB pro Sekunde und Kern für E/A von Caches und lokalen SSDs.
@@ -335,6 +335,5 @@ azure storage account create "premiumtestaccount" -l "west us" --type PLRS
 - [Speicherdokumentation](http://azure.microsoft.com/documentation/services/storage/)
 
 [Image1]: ./media/storage-premium-storage-preview-portal/Azure_pricing_tier.png
- 
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0114_2016-->

@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="01/04/2016"
+   ms.date="01/07/2016"
    ms.author="v-sharos" />
 
 # Was ist der StorSimple Snapshot Manager?
@@ -25,7 +25,11 @@ Diese Übersicht bietet eine Einführung in StorSimple Snapshot Manager, eine Be
 
 Eine Übersicht über das gesamte Microsoft Azure StorSimple-System, einschließlich StorSimple-Gerät, StorSimple Manager-Dienst, StorSimple Snapshot Manager und StorSimple-Adapter für SharePoint, finden Sie unter [StorSimple 8000-Serie: eine Hybridcloud-Speicherlösung](storsimple-overview.md).
  
->[AZURE.NOTE]StorSimple Snapshot Manager eignet sich nicht zur Verwaltung von Microsoft Azure StorSimple Virtual Arrays (auch bekannt als lokale virtuelle StorSimple-Geräte).
+>[AZURE.NOTE]
+>
+>- StorSimple Snapshot Manager eignet sich nicht zur Verwaltung von Microsoft Azure StorSimple Virtual Arrays (auch bekannt als lokale virtuelle StorSimple-Geräte).
+>
+>- Wenn Sie StorSimple Update 2 auf Ihrem StorSimple-Gerät installieren möchten, laden Sie unbedingt die aktuelle Version von StorSimple Snapshot Manager herunter, und installieren Sie sie **vor der Installation von StorSimple Update 2**. Die neueste Version von StorSimple Snapshot Manager ist abwärtskompatibel und kann mit allen veröffentlichten Versionen von Microsoft Azure StorSimple verwendet werden. Wenn Sie die vorherige Version von StorSimple Snapshot Manager verwenden, müssen Sie sie aktualisieren (die vorherige Version muss vor der Installation der neuen Version nicht deinstalliert werden).
 
 ## Zweck und Architektur des StorSimple Snapshot Managers
 
@@ -42,7 +46,7 @@ StorSimple Snapshot Manager-Sicherungen sind inkrementelle Momentaufnahmen, die 
 
 ![StorSimple Snapshot Manager-Architektur](./media/storsimple-what-is-snapshot-manager/HCS_SSM_Overview.png)
 
-**Abbildung 1: StorSimple Snapshot Manager-Architektur**
+**StorSimple Snapshot Manager-Architektur**
 
 ## Unterstützung für mehrere Volumetypen
 
@@ -103,7 +107,7 @@ Der Vorgang wird in der folgenden Abbildung veranschaulicht.
 
 ![VSS-Prozess](./media/storsimple-what-is-snapshot-manager/HCS_SSM_VSS_process.png)
 
-**Abbildung 2: Ablauf des Windows-Volumeschattenkopie-Diensts**
+**Ablauf des Windows-Volumeschattenkopie-Diensts**
 
 ## Sicherungstypen und -richtlinien
 
@@ -152,4 +156,4 @@ Informationen zum Überwachen von Sicherungsaufträgen finden Sie unter [Anzeige
 
 - [StorSimple Snapshot Manager](https://www.microsoft.com/download/details.aspx?id=44220) herunterladen.
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0114_2016-->

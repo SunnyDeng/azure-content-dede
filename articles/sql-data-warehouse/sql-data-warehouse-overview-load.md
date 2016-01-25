@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/04/2016"
-   ms.author="lodipalm;barbkess"/>
+   ms.date="01/07/2016"
+   ms.author="lodipalm;barbkess;sonyama"/>
 
 # Laden von Daten in SQL Data Warehouse
 SQL Data Warehouse bietet zahlreiche Optionen zum Laden von Daten. Dazu gehören:
@@ -201,4 +201,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 [Azure-Speicherdokumentation]: https://azure.microsoft.com/de-DE/documentation/articles/storage-create-storage-account/
 [Dokumentation zu ExpressRoute]: http://azure.microsoft.com/documentation/services/expressroute/
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0114_2016-->

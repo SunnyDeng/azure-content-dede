@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="vm-linux"
    ms.workload="infrastructure-services"
-   ms.date="05/19/2015"
+   ms.date="01/12/2016"
    ms.author="kyliel"/>
 
 # Erstellen und Hochladen einer FreeBSD-VHD in Azure
@@ -72,7 +72,7 @@ Führen Sie auf dem virtuellen Computer, auf dem das FreeBSD-Betriebssystem inst
 
     5\.1 **Installieren von python**
 
-		# pkg install python27 py27-asn1
+		# pkg install python27
 		# ln -s /usr/local/bin/python2.7 /usr/bin/python
 
     5\.2 **Installieren von wget**
@@ -81,7 +81,7 @@ Führen Sie auf dem virtuellen Computer, auf dem das FreeBSD-Betriebssystem inst
 
 6. **Installieren des Azure-Agents**
 
-    Die neueste Version des Azure-Agents finden Sie immer auf [github](https://github.com/Azure/WALinuxAgent/releases). Version 2.0.10 und höher unterstützt offiziell FreeBSD 10 und höhere Versionen.
+    Die neueste Version des Azure-Agents finden Sie immer auf [github](https://github.com/Azure/WALinuxAgent/releases). Version 2.0.10 und höher unterstützt offiziell FreeBSD 10 und höhere Versionen. Die neueste Version des Azure-Agents für FreeBSD ist 2.0.16.
 
 		# wget https://raw.githubusercontent.com/Azure/WALinuxAgent/WALinuxAgent-2.0.10/waagent --no-check-certificate
 		# mv waagent /usr/sbin
@@ -106,7 +106,7 @@ Führen Sie auf dem virtuellen Computer, auf dem das FreeBSD-Betriebssystem inst
 
 Sie benötigen in Azure ein Speicherkonto, um eine VHD-Datei hochladen zu können, die zum Erstellen eines virtuellen Computers verwendet werden kann. Über das klassische Azure-Portal können Sie ein Speicherkonto erstellen.
 
-1. Melden Sie sich am klassischen Azure-Portal an.
+1. Melden Sie sich am [klassischen Azure-Portal](https://manage.windowsazure.com) an.
 
 2. Klicken Sie in der Befehlsleiste auf **Neu**.
 
@@ -186,7 +186,7 @@ Wenn Sie die VHD-Datei hochladen, können Sie diese VHD-Datei an einem beliebige
 
 1. Geben Sie über das Azure PowerShell-Fenster, welches Sie im vorherigen Schritt verwendet haben, Folgendes ein:
 
-		Add-AzureVhd -Destination "<BlobStorageURL>/<YourImagesFolder>/<VHDName>.vhd" -LocalFilePath <PathToVHDFile>		
+		Add-AzureVhd -Destination "<BlobStorageURL>/<YourImagesFolder>/<VHDName>.vhd" -LocalFilePath <PathToVHDFile>
 
 ## Schritt 5: Erstellen eines virtuellen Computers mit hochgeladener VHD ##
 Nach dem Hochladen fügen Sie die VHD-Datei als Image zu der Ihrem Abonnement zugeordneten Liste benutzerdefinierter Images hinzu, und erstellen Sie einen virtuellen Computer mit diesem benutzerdefinierten Image.
@@ -209,4 +209,4 @@ Nach dem Hochladen fügen Sie die VHD-Datei als Image zu der Ihrem Abonnement zu
 
 	![FreeBSD-Images in Azure](./media/virtual-machines-freebsd-create-upload-vhd/freebsdimageinazure.png)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

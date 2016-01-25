@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="11/03/2015"
+   ms.date="01/11/2016"
    ms.author="chackdan"/>
 
 # Herauf- oder Herunterskalieren eines Service Fabric-Clusters durch Hinzufügen oder Entfernen von virtuellen Computern (VMs)
@@ -25,51 +25,96 @@ Sie können Service Fabric-Cluster bei Bedarf herauf- oder herunterskalieren, i
 
 ## Manuelles Skalieren eines Service Fabric-Clusters
 
-### Auswählen des zu skalierenden Knotentyps
+Wenn Ihr Cluster mehrere Typen von Knoten enthält, müssen Sie VMs bestimmten Knotentypen hinzufügen oder aus diesen entfernen. Sie können in der gleichen Bereitstellung VMs einem Knotentyp hinzufügen oder aus einem anderen entfernen.
 
-Wenn Ihr Cluster mehrere Knotentypen aufweist, müssen Sie jetzt VMs bestimmten Knotentypen hinzufügen oder aus diesen entfernen.
+### Aktualisieren eines Clusters, den Sie mithilfe des Portals bereitgestellt haben
 
-1. Melden Sie sich beim Azure-Portal [http://aka.ms/servicefabricportal](http://aka.ms/servicefabricportal) an.
+Da dies ein komplexer Vorgang ist, haben wir ein PowerShell-Modul in ein Git-Repository hochgeladen, mit dem dieser Vorgang für Sie durchgeführt wird.
 
-2. Navigieren Sie zu den Service Fabric-Clustern ![BrowseServiceFabricClusterResource][BrowseServiceFabricClusterResource]
+**Schritt 1**: Kopieren Sie diesen Ordner aus [diesem Git-Repository](https://github.com/ChackDan/Service-Fabric/tree/master/Scripts/ServiceFabricRPHelpers) auf Ihren Computer.
 
-3. Wählen Sie den Cluster aus, den Sie zental hoch- oder herunterskalieren möchten.
+**Schritt 2**: Stellen Sie sicher, dass Azure SDK 1.0+ auf Ihrem Computer installiert ist.
 
-4. Navigieren Sie im Clusterdashboard zum Blatt „Einstellungen“. Wenn das Blatt „Einstellungen“ nicht angezeigt wird, klicken Sie im wesentlichen Teil des Clusterdashboards auf „Alle Einstellungen“.
+**Schritt 3**: Öffnen Sie ein PowerShell-Fenster, und importieren Sie die Datei „ServiceFabricRPHelpers.psm“.
 
-5. Klicken Sie auf die Knotentypen, um das Listenblatt „NodeTypes“ zu öffnen.
+```
+Remove-Module ServiceFabricRPHelpers
+```
 
-7. Klicken Sie auf den Knoten, der zentral hoch- oder herunterskaliert werden soll. Dieser wird anschließend auf dem Detailblatt „Knotentyp“ geöffnet.
+Importieren Sie das PowerShell-Modul, das Sie gerade kopiert haben. Sie können die folgenden Cmd kopieren und den Pfad zur .psm1 ändern, sodass er Ihrem Computer entspricht.
 
-### Aufwärtsskalieren durch das Hinzufügen von Knoten
+```
+Import-Module "C:\Users\chackdan\Documents\GitHub\Service-Fabric\Scripts\ServiceFabricRPHelpers\ServiceFabricRPHelpers.psm1"
+```
 
-Passen Sie die Anzahl der VMs bis zur gewünschten Anzahl an, und speichern Sie. Die Knoten/VMs werden nun nach Abschluss der Bereitstellung hinzugefügt.
+ **Schritt 4**: Melden Sie sich bei Ihrem Azure-Konto an.
 
-### Herunterskalieren durch Entfernen von Knoten
+```
+Login-AzureRmAccount
+```
 
-Das Entfernen von Knoten ist ein zweistufiger Prozess:
+Führen Sie den Befehl „Invoke-ServiceFabricRPClusterScaleUpgrade“ aus und stellen Sie dabei sicher, dass der Name der Ressourcengruppe und des Abonnements richtig geschrieben sind.
 
-1. Passen Sie die Anzahl der VMs wie gewünscht an, und speichern Sie. Am unteren Ende des Schiebereglers werden die VM-Mindestanforderungen für diesen Knotentyp angezeigt.
+```
+Invoke-ServiceFabricRPClusterScaleUpgrade -ResourceGroupName <string> -SubscriptionId <string>
+```
 
-  >[AZURE.NOTE]Sie müssen mindestens 5 VMs für den primären Knotentyp verwenden.
+Nachstehend finden Sie ein ausgefülltes Beispiel für den gleichen PS-Befehl.
 
-	Once that deployment is complete, you will get notified of the VM names that can now be deleted. You now need to navigate to the VM resource and delete it.
+```
+Invoke-ServiceFabricRPClusterScaleUpgrade -ResourceGroupName chackod02 -SubscriptionId 18ad2z84-84fa-4798-ad71-e70c07af879f
+```
 
-2. Kehren Sie Clusterdashboard zurück, und klicken Sie auf die Ressourcengruppe. Das Blatt „Ressourcengruppe“ wird geöffnet.
+  **Schritt 5**: der Befehl ruft jetzt die Clusterinformationen ab und führt Sie durch alle Knotentypen. Zuerst werden Sie über die aktuelle Anzahl der VM-Knoten für diesen Knotentyp informiert und dann um die Angabe der Anzahl der neuen VM-Knoten gebeten.
 
-3. Suchen Sie unter Zusammenfassung, oder öffnen Sie die Ressourcenliste durch Klicken auf „...“.
+ **Um diesen Knotentyp herauf zu skalieren**, geben Sie eine größere Zahl als die aktuelle Zahl virtueller Computer an.
 
-4. Klicken Sie auf den VM-Namen, bei dem das System angegeben hat, dass er gelöscht werden kann.
+**Um diesen Knotentyp herunter zu skalieren**, geben Sie eine kleinere Zahl als die aktuelle Zahl virtueller Computer an.
 
-5. Klicken Sie auf das Symbol zum Löschen des virtuellen Computers.
+Diese Aufforderung erfolgt nacheinander für alle Knotentypen. Wenn Ihr Cluster nur einen Knotentyp aufweist, werden Sie nur einmal dazu aufgefordert.
+ 
+  **Schritt 6**: Wenn Sie neue virtuelle Computer hinzufügen, erhalten Sie jetzt eine Aufforderung zur Eingabe der Remotedesktop-Benutzer-ID und des Kennworts für die virtuellen Computer, die Sie hinzufügen.
+ 
+**Schritt 7**: im Ausgabefenster sehen Sie jetzt Meldungen, die Sie über den Fortschritt der Bereitstellung informieren. Nach Abschluss der Bereitstellung sollten Ihre Cluster die Anzahl der Knoten aufweisen, die Sie in Schritt 5 angegeben haben.
+
+
+![ScaleupDownPSOut][ScaleupDownPSOut]
+
+
+**Schritt 8**: Wenn dies eine Anforderung zum Herunterskalieren war, müssen Sie einen weiteren Schritt durchführen, um die VMs zu löschen Das Skript deaktiviert alle virtuellen Computer, die Sie entfernen wollen, d. h., auf diesen Knoten/VMs sind keine Anwendungen oder Systemreplikate mehr vorhanden. Daher ist es jetzt sicher, diese virtuellen Computer zu löschen.
+
+**HINWEIS** - obwohl die deaktivierten Knoten nicht mehr von Ihrem SF-Cluster verwendet werden, müssen Sie die deaktivierten VMs löschen, sodass diese Ihnen nicht in Rechnung gestellt werden.
+
+**Schritt 8.1**: Melden Sie sich beim Azure-Portal [http://aka.ms/servicefabricportal](http://aka.ms/servicefabricportal) an.
+
+**Schritt 8.2**: Navigieren Sie zu der Clusterressource, die Sie herunterskaliert haben und klicken Sie auf „Alle Einstellungen“ auf dem Essentials-Webpart.
+
+**Schritt 8.3**: Klicken Sie auf die Knotentypen. Jetzt sehen Sie eine Liste der Knoten, die deaktiviert sind. In diesem Bild sind chackodnt15, chackodnt24, chackodnt25 und chackodnt26 die VMs, die jetzt gelöscht werden müssen.
+
+![DeactivatedNodeList][DeactivatedNodeList]
+
+**Schritt 8.4**: Löschen Sie diese VMs über PS oder -Portal. Nachdem Sie diese gelöscht haben, ist die Herunterskalierung Ihres Clusters abgeschlossen.
+
+```
+Remove-AzureRmResource -ResourceName <Deactivated Node name without the understore> -ResourceType Microsoft.Compute/virtualMachines -ResourceGroupName <Resource Group name> -ApiVersion <Api version>
+```
+Nachstehend finden Sie ein ausgefülltes Beispiel für diesen Befehl.
+
+```
+Remove-AzureRmResource -ResourceName chackodnt26 -ResourceType Microsoft.Compute/virtualMachines -ResourceGroupName chackod02 -ApiVersion 2015-05-01-preview
+```
+
+### Aktualisieren eines Clusters, den Sie mithilfe von ARM PowerShell/CLI bereitgestellt haben
+
+Wenn Sie zunächst den Cluster mithilfe der ARM-Vorlage bereitgestellt haben, müssen Sie die Anzahl der virtuellen Computer für einen bestimmten Knotentyp und alle Ressourcen, die den virtuellen Computer unterstützen, ändern. Die minimale Anzahl von VMs, die für den primären Knotentyp zulässig ist, ist „5“ (für nicht-Test-Cluster), für Test-Cluster beträgt die minimale Anzahl „3“.
+
+Nachdem Sie die neue Vorlage haben, können Sie diese via ARM bereitstellen, indem Sie die gleiche Ressourcengruppe benutzen, wie die des Clusters, den Sie aktualisieren.
+
 
 ## Automatisches Skalieren eines Service Fabric-Clusters
 
 Derzeit unterstützen Service Fabric-Cluster keine automatische Skalierung. In naher Zukunft werden Cluster aufbauend auf Skalierungssätzen für virtuelle Computer (VMSS) erstellt. Ab diesem Zeitpunkt wird auch automatische Skalierung möglich sein und sich ähnlich verhalten wie die automatische Skalierung für Cloud Services.
 
-## Skalieren mit PowerShell/CLI
-
-In diesem Artikel wurde die Skalierung von Clustern mithilfe des Portals behandelt. Allerdings können Sie dieselben Aktionen über die Befehlszeile mithilfe von ARM-Befehlen auf der Clusterressource ausführen. Die GET-Antwort der ClusterResource stellt die Liste der Knoten bereit, die deaktiviert wurden.
 
 ## Nächste Schritte
 
@@ -78,6 +123,7 @@ In diesem Artikel wurde die Skalierung von Clustern mithilfe des Portals behande
 
 
 <!--Image references-->
-[BrowseServiceFabricClusterResource]: ./media/service-fabric-cluster-scale-up-down/BrowseServiceFabricClusterResource.png
+[ScaleupDownPSOut]: ./media/service-fabric-cluster-scale-up-down/ScaleupDownPSOut.png
+[DeactivatedNodeList]: ./media/service-fabric-cluster-scale-up-down/DeactivatedNodeList.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0114_2016-->

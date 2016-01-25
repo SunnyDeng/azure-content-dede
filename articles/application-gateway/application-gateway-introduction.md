@@ -1,4 +1,4 @@
-<properties 
+<properties
    pageTitle="Einführung in Application Gateway | Microsoft Azure"
    description="Diese Seite bietet eine Übersicht über den Application Gateway-Dienst für Lastenausgleich der Ebene 7, einschließlich Gatewaygrößen, HTTP-Lastenausgleich, cookiebasierte Sitzungsaffinität und SSL-Auslagerung."
    documentationCenter="na"
@@ -6,12 +6,12 @@
    authors="joaoma"
    manager="carmonm"
    editor="tysonn"/>
-<tags 
+<tags
    ms.service="application-gateway"
    ms.devlang="na"
-   ms.topic="article" 
+   ms.topic="article"
    ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services" 
+   ms.workload="infrastructure-services"
    ms.date="11/09/2015"
    ms.author="joaoma"/>
 
@@ -26,7 +26,7 @@ Application Gateway unterstützt derzeit die Anwendungsbereitstellung der Ebene�
 
 - HTTP-Lastenausgleich
 - Cookiebasierte Sitzungsaffinität
-- SSL-Auslagerung
+- Secure Sockets Layer (SSL)-Auslagerung
 
 ![Application Gateway](./media/application-gateway-introduction/appgateway1.png)
 
@@ -34,7 +34,7 @@ Lastenausgleich der HTTP-Ebene 7 eignet sich für:
 
 - Anwendungen, für die Anforderungen von einer Benutzer-/Clientsitzung den gleichen virtuellen Back-End-Computer erreichen müssen. Beispiele hierfür wären Einkaufswagen-Apps und Web-E-Mail-Server.
 - Anwendungen, die für Webserverfarmen den Mehraufwand für die SSL-Beendigung unterbinden möchten.
-- Anwendungen wie CDN, für die mehrere HTTP-Anforderungen auf der gleichen lange bestehenden TCP-Verbindung an verschiedene Back-End-Server weitergeleitet bzw. dort ausgeglichen werden.
+- Anwendungen wie Content Delivery Network, für die mehrere HTTP-Anforderungen auf der gleichen lange bestehenden TCP-Verbindung an verschiedene Back-End-Server weitergeleitet bzw. dort ausgeglichen werden.
 
 
 ## Gatewaygrößen und -instanzen
@@ -49,15 +49,15 @@ Die folgende Tabelle zeigt einen durchschnittlichen Durchsatz für jede Anwendun
 | Back-End-Seitenantwort | Klein | Mittel | Groß|
 |---|---|---|---|
 | 6K | 7,5 MBit/s | 13 MBit/s | 50 MBit/s |
-|100k | 35 MBit/s | 100 Mbit/s| 200 MBit/s |
+|100k | 35 MBit/s | 100 MBit/s| 200 MBit/s |
 
 
 >[AZURE.NOTE]Hierbei handelt es sich um ungefähre Richtwerte für den Application Gateway-Durchsatz. Der tatsächliche Durchsatz ist abhängig von verschiedenen Umgebungsdetails wie etwa durchschnittliche Seitengröße, Ort der Back-End-Instanzen und Verarbeitungszeit für die Seitenbereitstellung.
 
 ## Systemüberwachung
- 
 
-Azure Application Gateway überprüft die Integrität der Back-End-Instanzen automatisch. Weitere Informationen finden Sie unter [Tests und Systemüberwachung bei Application Gateway](application-gateway-probe-overview.md).
+
+Azure Application Gateway überprüft die Integrität der Back-End-Instanzen automatisch. Weitere Informationen finden Sie unter [Systemüberwachung des Application Gateways – Übersicht](application-gateway-probe-overview.md).
 
 ## Konfigurieren und Verwalten
 
@@ -67,8 +67,8 @@ Sie können ein Application Gateway mithilfe von REST-APIs und PowerShell-Cmdlet
 
 ## Nächste Schritte
 
-Erstellen Sie ein Anwendungsgateway. Weitere Informationen finden Sie unter [Erstellen eines Application Gateways](application-gateway-create-gateway.md).
+Erstellen Sie ein Application Gateway. Weitere Informationen finden Sie unter [Erstellen eines Application Gateways](application-gateway-create-gateway.md).
 
 Konfigurieren Sie die SSL-Auslagerung. Weitere Informationen finden Sie unter [Konfigurieren der SSL-Auslagerung mit Application Gateway](application-gateway-ssl.md).
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0114_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="dotnet" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/08/2015" 
+	ms.date="01/08/2016" 
 	ms.author="tdykstra"/>
 
 # Bereitstellen einer API-App in Azure App Service 
@@ -129,4 +129,4 @@ API-Apps sind Web-Apps mit zusätzlichen Funktionen für das Hosten von APIs. Si
 
 Informationen zu API-Apps-Funktionen finden Sie unter [Was sind API-Apps?](app-service-api-apps-why-best-platform.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

@@ -109,15 +109,9 @@ HDInsight-Cluster können wie folgt im Azure-Portal bereitgestellt werden:
 
 	* __Externe Metastores__: Hier können Sie eine SQL-Datenbank auswählen, die zum Speichern der Konfigurationsinformationen für Oozie und Hive verwendet wird. Dadurch können Sie die Konfiguration beim Löschen und Neuerstellen eines Clusters wiederverwenden, anstatt die Hive- und Oozie-Konfiguration jedes Mal neu erstellen zu müssen.
 
-	* __Virtuelles Netzwerk__: Hiermit können Sie den HDInsight-Cluster im gleichen Netzwerk platzieren wie die anderen Ressourcen, z. B. eine SQL-Datenbank oder ein virtueller Azure-Computer. Wenn Ressourcen in einem virtuellen Netzwerk platziert werden, können sie direkt miteinander kommunizieren und umgehen so die öffentlichen Gateways, die eingehenden Datenverkehr aus dem Internet verarbeiten. Informationen zu den Vorteilen, die virtuelle Azure-Netzwerke für HDInsight bieten, finden Sie unter [Erweitern der HDInsight-Funktionen mit Azure Virtual Network](hdinsight-extend-hadoop-virtual-network.md).
-
-		> [AZURE.IMPORTANT]Sie müssen das virtuelle Azure-Netzwerk vor dem HDInsight-Cluster erstellen, da Sie in einer HDInsight-Konfiguration kein neues Netzwerk erstellen können.
-		>
-		> Zurzeit (25.08.2015) besteht die Einschränkung, das in einem virtuellen Azure-Netzwerk nur ein einziger Linux-basierter HDInsight-Knoten vorhanden sein darf.
-        >
-        > Sie können kein virtuelles Azure-Netzwerk der Version 1 (klassisch) mit Linux-basiertem HDInsight verwenden. Das virtuelle Netzwerk muss Version 2 aufweisen (Azure-Ressourcen-Manager), damit es beim Erstellen des Clusters im Azure-Portal als Option angezeigt wird bzw. beim Erstellen eines Clusters über die Azure-Befehlszeilenschnittstelle oder Azure PowerShell verwendet werden kann.
-        >
-        > Wenn Sie über Ressourcen in einem v1-Netzwerk verfügen und möchten, dass diese Ressourcen über ein virtuelles Netzwerk direkt auf HDInsight zugreifen können, finden Sie unter [Herstellen einer Verbindung zwischen klassischen VNets und neuen VNets](../virtual-network/virtual-networks-arm-asm-s2s.md) Informationen zum Verbinden eines virtuellen v2-Netzwerks mit einem virtuellen v1-Netzwerk. Nachdem diese Verbindung eingerichtet wurde, können Sie den HDInsight-Cluster im virtuellen v2-Netzwerk erstellen.
+	* __Virtuelles Netzwerk__: Hiermit können Sie den HDInsight-Cluster im gleichen Netzwerk platzieren wie die anderen Ressourcen, z. B. eine SQL-Datenbank oder ein virtueller Azure-Computer. Wenn Ressourcen in einem virtuellen Netzwerk platziert werden, können sie direkt miteinander kommunizieren und umgehen so die öffentlichen Gateways, die eingehenden Datenverkehr aus dem Internet verarbeiten.
+    
+        Informationen zur Verwendung von HDInsight mit einem virtuellen Netzwerk, einschließlich spezifischer Konfigurationsanforderungen für das virtuelle Netzwerk, finden Sie unter [Erweitern der HDInsight-Funktionen mit Azure Virtual Network](hdinsight-extend-hadoop-virtual-network.md).
 
 	* __Skriptaktionen__: Hiermit können Sie Bash-Skripts angeben, die den HDInsight-Cluster während der Bereitstellung anpassen. Beispielsweise gibt es ein [Skript zur Installation von Hue](hdinsight-hadoop-hue-linux.md) (einem grafischen Client für den Einsatz mit Hadoop). Weitere Informationen zu Skriptaktionen finden Sie unter [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen](hdinsight-hadoop-customize-cluster-linux.md).
 
@@ -193,4 +187,4 @@ In diesem Artikel haben Sie erfahren, wie ein HDInsight-Cluster mit dem Azure-Po
 
 [preview-portal]: https://portal.azure.com
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0114_2016-->

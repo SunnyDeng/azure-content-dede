@@ -1,20 +1,20 @@
-<properties 
-	pageTitle="Verwenden des Warteschlangenspeichers mit Java | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie den Azure-Warteschlangendienst zum Erstellen und Löschen von Warteschlangen sowie zum Einfügen, Abrufen und Löschen von Nachrichten verwenden. Die Beispiele wurden in Java geschrieben." 
-	services="storage" 
-	documentationCenter="java" 
-	authors="rmcmurray" 
-	manager="wpickett" 
+<properties
+	pageTitle="Verwenden des Warteschlangenspeichers mit Java | Microsoft Azure"
+	description="Erfahren Sie, wie Sie den Azure-Warteschlangendienst zum Erstellen und Löschen von Warteschlangen sowie zum Einfügen, Abrufen und Löschen von Nachrichten verwenden. Die Beispiele wurden in Java geschrieben."
+	services="storage"
+	documentationCenter="java"
+	authors="rmcmurray"
+	manager="wpickett"
 	editor="jimbe"/>
 
-<tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="Java" 
-	ms.topic="article" 
-	ms.date="12/01/2015" 
-	ms.author="robmcm"/>
+<tags
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="Java"
+	ms.topic="article"
+	ms.date="12/01/2015"
+	ms.author="micurd"/>
 
 # Verwenden des Warteschlangenspeichers mit Java
 
@@ -49,15 +49,15 @@ Fügen Sie folgende Import-Anweisungen am Anfang der Java-Datei dort ein, wo Azu
 Ein Azure-Speicherclient verwendet eine Speicherverbindungszeichenfolge zum Speichern von Endpunkten und Anmeldeinformationen für den Zugriff auf Datenverwaltungsdienste. Bei der Ausführung in einer Clientanwendung muss die Speicherverbindungszeichenfolge in dem unten gezeigten Format angegeben werden. Dabei müssen der Name Ihres Speicherkontos und der primäre Zugriffsschlüssel für das im [Azure-Portal](portal.azure.com) aufgeführte Speicherkonto als Werte für *AccountName* und *AccountKey* eingegeben werden. Dieses Beispiel zeigt, wie Sie ein statisches Feld für die Verbindungszeichenfolge deklarieren:
 
     // Define the connection-string with your values.
-    public static final String storageConnectionString = 
-        "DefaultEndpointsProtocol=http;" + 
-        "AccountName=your_storage_account;" + 
+    public static final String storageConnectionString =
+        "DefaultEndpointsProtocol=http;" +
+        "AccountName=your_storage_account;" +
         "AccountKey=your_storage_account_key";
 
 In einer Anwendung, die in einer Microsoft Azure-Rolle ausgeführt wird, kann diese Zeichenfolge in der Dienstkonfigurationsdatei *ServiceConfiguration.cscfg* gespeichert werden. Der Zugriff darauf kann dann durch Aufruf der Methode **RoleEnvironment.getConfigurationSettings** erfolgen. Dieses Beispiel zeigt, wie die Verbindungszeichenfolge von einem **Setting**-Element mit der Bezeichnung *StorageConnectionString* in der Dienstkonfigurationsdatei abgerufen wird:
 
     // Retrieve storage account from connection-string.
-    String storageConnectionString = 
+    String storageConnectionString =
         RoleEnvironment.getConfigurationSettings().get("StorageConnectionString");
 
 In den folgenden Beispielen wird davon ausgegangen, dass Sie eine dieser zwei Methoden verwendet haben, um die Speicherverbindungszeichenfolge abzurufen.
@@ -71,7 +71,7 @@ Mithilfe des **CloudQueueClient**-Objekts können Sie einen Verweis auf die Wart
     try
     {
     	// Retrieve storage account from connection-string.
-    	CloudStorageAccount storageAccount = 
+    	CloudStorageAccount storageAccount =
 	       CloudStorageAccount.parse(storageConnectionString);
 
 	   // Create the queue client.
@@ -96,7 +96,7 @@ Um eine Nachricht in eine vorhandene Warteschlange einzufügen, erstellen Sie zu
     try
     {
     	// Retrieve storage account from connection-string.
-    	CloudStorageAccount storageAccount = 
+    	CloudStorageAccount storageAccount =
 	       CloudStorageAccount.parse(storageConnectionString);
 
     	// Create the queue client.
@@ -125,7 +125,7 @@ Sie können einen Blick auf die Nachricht am Anfang einer Warteschlange werfen, 
     try
     {
     	// Retrieve storage account from connection-string.
-    	CloudStorageAccount storageAccount = 
+    	CloudStorageAccount storageAccount =
 	       CloudStorageAccount.parse(storageConnectionString);
 
     	// Create the queue client.
@@ -133,10 +133,10 @@ Sie können einen Blick auf die Nachricht am Anfang einer Warteschlange werfen, 
 
     	// Retrieve a reference to a queue.
     	CloudQueue queue = queueClient.getQueueReference("myqueue");
-			
+
     	// Peek at the next message.
     	CloudQueueMessage peekedMessage = queue.peekMessage();
-			
+
     	// Output the message value.
     	if (peekedMessage != null)
     	{
@@ -158,7 +158,7 @@ Im folgenden Codebeispiel wird die Nachrichtenwartschlange durchsucht, und es wi
     try
     {
         // Retrieve storage account from connection-string.
-        CloudStorageAccount storageAccount = 
+        CloudStorageAccount storageAccount =
             CloudStorageAccount.parse(storageConnectionString);
 
     	// Create the queue client.
@@ -167,7 +167,7 @@ Im folgenden Codebeispiel wird die Nachrichtenwartschlange durchsucht, und es wi
     	// Retrieve a reference to a queue.
     	CloudQueue queue = queueClient.getQueueReference("myqueue");
 
-        // The maximum number of messages that can be retrieved is 32. 
+        // The maximum number of messages that can be retrieved is 32.
         final int MAX_NUMBER_OF_MESSAGES_TO_PEEK = 32;
 
         // Loop through the messages in the queue.
@@ -179,7 +179,7 @@ Im folgenden Codebeispiel wird die Nachrichtenwartschlange durchsucht, und es wi
                 // Modify the content of the first matching message.
                 message.setMessageContent("Updated contents.");
                 // Set it to be visible in 30 seconds.
-                EnumSet<MessageUpdateFields> updateFields = 
+                EnumSet<MessageUpdateFields> updateFields =
                     EnumSet.of(MessageUpdateFields.CONTENT,
                     MessageUpdateFields.VISIBILITY);
                 // Update the message.
@@ -199,7 +199,7 @@ Alternativ aktualisiert das folgende Codebeispiel einfach die erste sichtbare Na
     try
     {
     	// Retrieve storage account from connection-string.
-    	CloudStorageAccount storageAccount = 
+    	CloudStorageAccount storageAccount =
 	       CloudStorageAccount.parse(storageConnectionString);
 
     	// Create the queue client.
@@ -210,13 +210,13 @@ Alternativ aktualisiert das folgende Codebeispiel einfach die erste sichtbare Na
 
     	// Retrieve the first visible message in the queue.
     	CloudQueueMessage message = queue.retrieveMessage();
-			
+
     	if (message != null)
     	{
             // Modify the message content.
             message.setMessageContent("Updated contents.");
             // Set it to be visible in 60 seconds.
-            EnumSet<MessageUpdateFields> updateFields = 
+            EnumSet<MessageUpdateFields> updateFields =
                 EnumSet.of(MessageUpdateFields.CONTENT,
                 MessageUpdateFields.VISIBILITY);
             // Update the message.
@@ -236,7 +236,7 @@ Sie können die Anzahl der Nachrichten in einer Warteschlange schätzen lassen. 
     try
     {
     	// Retrieve storage account from connection-string.
-    	CloudStorageAccount storageAccount = 
+    	CloudStorageAccount storageAccount =
 	       CloudStorageAccount.parse(storageConnectionString);
 
     	// Create the queue client.
@@ -250,7 +250,7 @@ Sie können die Anzahl der Nachrichten in einer Warteschlange schätzen lassen. 
 
     	// Retrieve the newly cached approximate message count.
     	long cachedMessageCount = queue.getApproximateMessageCount();
-			
+
     	// Display the queue length.
     	System.out.println(String.format("Queue length: %d", cachedMessageCount));
     }
@@ -267,7 +267,7 @@ Dieser Code entfernt eine Nachricht in zwei Schritten aus der Warteschlange. Wen
     try
     {
     	// Retrieve storage account from connection-string.
-    	CloudStorageAccount storageAccount = 
+    	CloudStorageAccount storageAccount =
     	    CloudStorageAccount.parse(storageConnectionString);
 
     	// Create the queue client.
@@ -278,7 +278,7 @@ Dieser Code entfernt eine Nachricht in zwei Schritten aus der Warteschlange. Wen
 
     	// Retrieve the first visible message in the queue.
     	CloudQueueMessage retrievedMessage = queue.retrieveMessage();
-			
+
     	if (retrievedMessage != null)
     	{
     		// Process the message in less than 30 seconds, and then delete the message.
@@ -301,7 +301,7 @@ Im folgenden Codebeispiel wird **retrieveMessages** verwendet, um 20 Nachrichten
     try
     {
         // Retrieve storage account from connection-string.
-        CloudStorageAccount storageAccount = 
+        CloudStorageAccount storageAccount =
             CloudStorageAccount.parse(storageConnectionString);
 
         // Create the queue client.
@@ -312,7 +312,7 @@ Im folgenden Codebeispiel wird **retrieveMessages** verwendet, um 20 Nachrichten
 
         // Retrieve 20 messages from the queue with a visibility timeout of 300 seconds.
         for (CloudQueueMessage message : queue.retrieveMessages(20, 300, null, null)) {
-            // Do processing for all messages in less than 5 minutes, 
+            // Do processing for all messages in less than 5 minutes,
             // deleting each message after processing.
             queue.deleteMessage(message);
         }
@@ -357,7 +357,7 @@ Zum Löschen einer Warteschlange und aller darin enthaltenen Nachrichten rufen S
     try
     {
         // Retrieve storage account from connection-string.
-        CloudStorageAccount storageAccount = 
+        CloudStorageAccount storageAccount =
             CloudStorageAccount.parse(storageConnectionString);
 
         // Create the queue client.
@@ -392,4 +392,4 @@ Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gem
 [Azure Storage-REST-API]: https://msdn.microsoft.com/library/azure/dd179355.aspx
 [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

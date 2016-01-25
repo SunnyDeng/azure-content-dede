@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="vm-multiple"
    ms.workload="big-compute"
-   ms.date="09/29/2015"
+   ms.date="01/08/2016"
    ms.author="danlep"/>
 
 # Erstellen eines High Performance Computing (HPC)-Clusters in virtuellen Azure-Computern mit dem HPC Pack-IaaS-Bereitstellungsskript
@@ -36,7 +36,7 @@ Hintergrundinformationen zur Planung eines HPC Pack-Clusters finden Sie unter [P
 * **Azure-Abonnement:** Sie können ein Abonnement entweder im Azure Global- oder Azure China-Dienst nutzen. Ihre Abonnementlimits haben Einfluss darauf, wie viele und welche Arten von Knoten Sie bereitstellen können. Informationen finden Sie unter [Grenzwerte, Kontingente und Einschränkungen für Azure-Abonnements und -Dienste](../azure-subscription-service-limits.md).
 
 
-* **Windows-Clientcomputer mit Azure PowerShell 0.8.7 oder höher (installiert und konfiguriert)** - Siehe [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md). Das Skript wird unter Azure Service Management ausgeführt.
+* **Windows-Clientcomputer mit Azure PowerShell 0.8.7 oder höher (installiert und konfiguriert)** - Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md). Das Skript wird unter Azure Service Management ausgeführt.
 
 
 * **HPC Pack-IaaS-Bereitstellungsskript:** Laden Sie die neueste Version des Skripts aus dem [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=44949) herunter, und entpacken Sie sie. Führen Sie `New-HPCIaaSCluster.ps1 –Version` aus, um die Version des Skripts zu überprüfen. Dieser Artikel basiert auf der Skriptversion 4.4.0.
@@ -75,7 +75,7 @@ New-HPCIaaSCluster.ps1 [-ConfigFile] <String> [-AdminUserName]<String> [[-AdminP
 
 ### Beispiel
 
-Im folgenden Beispiel wird mit der Konfigurationsdatei „MyConfigFile.xml“ ein neuer HPC Pack-Cluster erstellt, und es werden administrative Anmeldeinformationen zum Installieren des Clusters angegeben.
+Im folgenden Beispiel wird mit der Konfigurationsdatei *MyConfigFile.xml* ein neuer HPC Pack-Cluster erstellt, und es werden administrative Anmeldeinformationen zum Installieren des Clusters angegeben.
 
 ```
 New-HPCIaaSCluster.ps1 –ConfigFile MyConfigFile.xml -AdminUserName <username> –AdminPassword <password>
@@ -83,10 +83,9 @@ New-HPCIaaSCluster.ps1 –ConfigFile MyConfigFile.xml -AdminUserName <username> 
 
 ### Zusätzliche Überlegungen
 
-* Das Skript verwendet das HPC Pack-VM-Image des Azure Marketplace zum Erstellen des Clusterhauptknotens. Das aktuelle Image basiert auf Windows Server 2012 R2 Datacenter mit installiertem HPC Pack 2012 R2 Update 3.
+* Das Skript verwendet das HPC Pack-VM-Image des Azure Marketplace zum Erstellen des Clusterhauptknotens. Das neueste Image basiert auf Windows Server 2012 R2 Datacenter mit installiertem HPC Pack 2012 R2 Update 3.
 
 * Das Skript kann die Auftragsübermittlung optional über das HPC Pack-Webportal oder die HPC Pack-REST-API aktivieren.
-
 
 * Das Skript kann optional benutzerdefinierte Skripts für Schritte vor und nach der Konfiguration auf dem Hauptknoten ausführen, falls Sie zusätzliche Software installieren oder andere Einstellungen konfigurieren möchten.
 
@@ -99,7 +98,7 @@ Die Konfigurationsdatei für das Bereitstellungsskript ist eine XML-Datei. Die S
 
 ### Beispiel 1
 
-Mit der folgenden Konfigurationsdatei wird ein HPC Pack-Cluster in einer vorhandenen Domänengesamtstruktur bereitgestellt. Der Cluster verfügt über einen Hauptknoten mit lokalen Datenbanken und zwölf Computeknoten mit angewendeter BGInfo-VM-Erweiterung. Die automatische Installation von Windows-Updates ist für alle virtuellen Computer in der Domänengesamtstruktur deaktiviert. Alle Clouddienste werden direkt am Standort in Ostasien erstellt. Die Computeknoten werden in drei Clouddiensten und drei Speicherkonten erstellt (MyHPCCN-0001 bis MyHPCCN-0005 in MyHPCCNService01 und mycnstorage01, MyHPCCN-0006 bis MyHPCCN0010 in MyHPCCNService02 und mycnstorage02 sowie MyHPCCN-0011 bis MyHPCCN-0012 in MyHPCCNService03 und mycnstorage03). Die Computeknoten werden aus einem vorhandenen privaten Image erstellt, das über einen Computeknoten erfasst wird. Der Dienst zum automatischen Vergrößern und Verkleinern ist mit standardmäßigen Vergrößerungs- und Verkleinerungsintervallen aktiviert.
+Mit der folgenden Konfigurationsdatei wird ein HPC Pack-Cluster in einer vorhandenen Domänengesamtstruktur bereitgestellt. Der Cluster verfügt über einen Hauptknoten mit lokalen Datenbanken und zwölf Computeknoten mit angewendeter BGInfo-VM-Erweiterung. Die automatische Installation von Windows-Updates ist für alle virtuellen Computer in der Domänengesamtstruktur deaktiviert. Alle Clouddienste werden direkt am Standort in Ostasien erstellt. Die Computeknoten werden in drei Clouddiensten und drei Speicherkonten erstellt (_MyHPCCN-0001_ bis _MyHPCCN-0005_ in _MyHPCCNService01_ und _mycnstorage01_, _MyHPCCN-0006_ bis _MyHPCCN0010_ in _MyHPCCNService02_ und _mycnstorage02_ sowie _MyHPCCN-0011_ bis _MyHPCCN-0012_ in _MyHPCCNService03_ und _mycnstorage03_). Die Computeknoten werden aus einem vorhandenen privaten Image erstellt, das über einen Computeknoten erfasst wird. Der Dienst zum automatischen Vergrößern und Verkleinern ist mit standardmäßigen Vergrößerungs- und Verkleinerungsintervallen aktiviert.
 
 ```
 <?xml version="1.0" encoding="utf-8" ?>
@@ -163,7 +162,7 @@ Mit der folgenden Konfigurationsdatei wird ein HPC Pack-Cluster in einer vorhand
 
 ### Beispiel 2
 
-Mit der folgenden Konfigurationsdatei wird ein HPC Pack-Cluster in einer vorhandenen Domänengesamtstruktur bereitgestellt. Der Cluster enthält einen Hauptknoten, einen Datenbankserver mit einem 500-GB-Datenträger, zwei Brokerknoten, auf denen das Betriebssystem Windows Server 2012 R2 ausgeführt wird, und fünf Computeknoten, auf denen das Betriebssystem Windows Server 2012 R2 ausgeführt wird. Der Clouddienst MyHPCCNService wird in der Affinitätsgruppe MyIBAffinityGroup erstellt, und alle anderen Clouddienste werden in der Affinitätsgruppe MyAffinityGroup erstellt. Die HPC-Auftragsplaner-REST-API und das HPC-Webportal sind auf dem Hauptknoten aktiviert.
+Mit der folgenden Konfigurationsdatei wird ein HPC Pack-Cluster in einer vorhandenen Domänengesamtstruktur bereitgestellt. Der Cluster enthält einen Hauptknoten, einen Datenbankserver mit einem 500-GB-Datenträger, zwei Brokerknoten, auf denen das Betriebssystem Windows Server 2012 R2 ausgeführt wird, und fünf Computeknoten, auf denen das Betriebssystem Windows Server 2012 R2 ausgeführt wird. Der Clouddienst MyHPCCNService wird in der Affinitätsgruppe *MyIBAffinityGroup* erstellt, und alle anderen Clouddienste werden in der Affinitätsgruppe *MyAffinityGroup* erstellt. Die HPC-Auftragsplaner-REST-API und das HPC-Webportal sind auf dem Hauptknoten aktiviert.
 
 ```
 <?xml version="1.0" encoding="utf-8" ?>
@@ -217,7 +216,7 @@ Mit der folgenden Konfigurationsdatei wird ein HPC Pack-Cluster in einer vorhand
 
 ### Beispiel 3
 
-Die folgende Konfigurationsdatei erstellt eine neue Domänengesamtstruktur und stellt einen HPC Pack-Cluster bereit, der über einen Hauptknoten mit lokalen Datenbanken und 20 Linux-Computeknoten verfügt. Alle Clouddienste werden direkt am Standort in Ostasien erstellt. Die Linux-Computeknoten werden in vier Clouddiensten und vier Speicherkonten erstellt (MyLnxCN-0001 bis MyHPCCN-0005 in MyLnxCNService01 und mylnxstorage01, MyLnxCN-0006 bis MyLnxCN-0010 in MyLnxCNService02 und mylnxstorage02, MyLnxCN-0011 bis MyLnxCN-0015 in MyLnxCNService03 und mylnxstorage03 sowie MyLnxCN-0016 bis MyLnxCN-0020 in MyLnxCNService04 und mylnxstorage04). Die Computeknoten werden aus einem Linux-Image (OpenLogic CentOS Version 7.0) erstellt.
+Die folgende Konfigurationsdatei erstellt eine neue Domänengesamtstruktur und stellt einen HPC Pack-Cluster bereit, der über einen Hauptknoten mit lokalen Datenbanken und 20 Linux-Computeknoten verfügt. Alle Clouddienste werden direkt am Standort in Ostasien erstellt. Die Linux-Computeknoten werden in vier Clouddiensten und vier Speicherkonten erstellt (_MyLnxCN-0001_ bis _MyHPCCN-0005_ in _MyLnxCNService01_ und _mylnxstorage01_, _MyLnxCN-0006_ bis _MyLnxCN-0010_ in _MyLnxCNService02_ und _mylnxstorage02_, _MyLnxCN-0011_ bis _MyLnxCN-0015_ in _MyLnxCNService03_ und _mylnxstorage03_ sowie _MyLnxCN-0016_ bis _MyLnxCN-0020_ in _MyLnxCNService04_ und _mylnxstorage04_). Die Computeknoten werden aus einem Linux-Image (OpenLogic CentOS Version 7.0) erstellt.
 
 ```
 <?xml version="1.0" encoding="utf-8" ?>
@@ -305,7 +304,7 @@ Die folgende Konfigurationsdatei stellt einen HPC Pack-Cluster bereit, der über
 
 ### Beispiel 5
 
-Mit der folgenden Konfigurationsdatei wird ein HPC Pack-Cluster in einer vorhandenen Domänengesamtstruktur bereitgestellt. Der Cluster verfügt über einen Hauptknoten mit lokalen Datenbanken, es werden zwei Vorlagen für Azure-Knoten erstellt, und drei mittelgroße Azure-Knoten werden für die Azure-Knotenvorlage „AzureTemplate1“ erstellt. Eine Skriptdatei wird auf dem Hauptknoten ausgeführt, nachdem der Hauptknoten konfiguriert wurde.
+Mit der folgenden Konfigurationsdatei wird ein HPC Pack-Cluster in einer vorhandenen Domänengesamtstruktur bereitgestellt. Der Cluster verfügt über einen Hauptknoten mit lokalen Datenbanken, es werden zwei Vorlagen für Azure-Knoten erstellt, und drei mittelgroße Azure-Knoten werden für die Azure-Knotenvorlage _AzureTemplate1_ erstellt. Eine Skriptdatei wird auf dem Hauptknoten ausgeführt, nachdem der Hauptknoten konfiguriert wurde.
 
 ```
 <?xml version="1.0" encoding="utf-8" ?>
@@ -392,4 +391,4 @@ Mit der folgenden Konfigurationsdatei wird ein HPC Pack-Cluster in einer vorhand
 
 * Probieren Sie die Tools von HPC Pack zum Starten, Beenden, Hinzufügen und Entfernen von Computeknoten von einem von Ihnen erstellten Cluster aus. Weitere Informationen finden Sie unter [Verwalten von Computeknoten in einem HPC Pack-Cluster in Azure](virtual-machines-hpcpack-cluster-node-manage.md).
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0114_2016-->

@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/04/2016"
-   ms.author="JRJ@BigBangData.co.uk;barbkess"/>
+   ms.date="01/07/2016"
+   ms.author="jrj;barbkess;sonyama"/>
 
 # Tabellenentwurf in SQL Data Warehouse #
 SQL Data Warehouse ist ein verteiltes Datenbanksystem mit paralleler Massenverarbeitung (Massively Parallel Processing, MPP). Daten werden an vielen verschiedenen Orten gespeichert, die als **Verteilungen** bezeichnet werden. Jede **Verteilung** fungiert wie ein „Bucket“. Darin werden eindeutige Teilmengen von Daten im Data Warehouse gespeichert. Indem die Daten- und Verarbeitungsfunktionen über mehrere Knoten verteilt werden, ist in SQL Data Warehouse eine umfassende Skalierbarkeit möglich, die die Skalierbarkeit eines einzelnen Systems weit übersteigt.
@@ -306,4 +306,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 
 <!--Other Web references-->
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0114_2016-->

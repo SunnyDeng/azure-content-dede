@@ -4,7 +4,7 @@
 	documentationCenter="windows"
 	authors="rmcmurray"
 	manager="wpickett"
-	editor="jimbe"
+	editor=""
 	services="mobile-services"/>
 
 <tags
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows-store"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="11/19/2015"
+	ms.date="01/09/2016"
 	ms.author="glenga"/>
 
 # Erstellen einer Bestenlisten-App mit Azure Mobile Services .NET-Back-End
@@ -765,4 +765,4 @@ Wenn Sie nun die App ausführen, kommuniziert diese mit dem echten Dienst.
 [Hinzufügen von Pushbenachrichtigungen]: ../notification-hubs-windows-store-dotnet-get-started.md
 [Erste Schritte mit der Authentifizierung]: /develop/mobile/tutorials/get-started-with-users-dotnet
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

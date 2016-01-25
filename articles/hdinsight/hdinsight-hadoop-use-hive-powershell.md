@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="11/02/2015"
+   ms.date="01/08/2016"
    ms.author="larryfr"/>
 
 #Ausführen von Hive-Abfragen mit PowerShell
@@ -114,12 +114,14 @@ Die folgenden Schritte veranschaulichen, wie diese Cmdlets zum Ausführen eines 
     
 7. Nachdem der Auftrag abgeschlossen ist, muss er Informationen zurückgeben, die den folgenden ähneln:
 
-		Display the standard output...
-		[ERROR]	3
+        Display the standard output...
+        2012-02-03      18:35:34        SampleClass0    [ERROR] incorrect       id
+        2012-02-03      18:55:54        SampleClass1    [ERROR] incorrect       id
+        2012-02-03      19:25:27        SampleClass4    [ERROR] incorrect       id
 
 4. Wie bereits erwähnt, kann **Invoke-Hive** dazu verwendet werden, um eine Abfrage auszuführen und auf die Antwort zu warten. Verwenden Sie die folgenden Befehle, wobei Sie **CLUSTERNAME** durch den Namen des Clusters ersetzen.
 
-        Use-AzureRmHDInsightCluster -ClusterName $clusterName
+        Use-AzureRmHDInsightCluster -ClusterName $clusterName -HttpCredential $creds
         #Get the cluster info so we can get the resource group, storage, etc.
         $clusterInfo = Get-AzureRmHDInsightCluster -ClusterName $clusterName
         $resourceGroup = $clusterInfo.ResourceGroup
@@ -130,7 +132,7 @@ Die folgenden Schritte veranschaulichen, wie diese Cmdlets zum Ausführen eines 
             -ResourceGroupName $resourceGroup `
             | %{ $_.Key1 }
         Invoke-AzureRmHDInsightHiveJob `
-            -StatusFolder "wasb:///example/statusout" `
+            -StatusFolder "statusout" `
             -DefaultContainer $container `
             -DefaultStorageAccountName $storageAccountName `
             -DefaultStorageAccountKey $storageAccountKey `
@@ -184,4 +186,4 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 
 * [Verwenden von MapReduce mit Hadoop in HDInsight](hdinsight-use-mapreduce.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

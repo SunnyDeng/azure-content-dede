@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/04/2016"
+	ms.date="01/13/2016"
 	ms.author="nitinme"/>
 
 
@@ -23,8 +23,6 @@
 Hier erfahren Sie, wie Sie einen Apache Spark-Cluster in HDInsight erstellen und dann ein [Jupyter](https://jupyter.org)-Notebook verwenden, um interaktive Spark-SQL-Abfragen für den Spark-Cluster auszuführen.
 
    ![Erste Schritte mit Apache Spark in HDInsight](./media/hdinsight-apache-spark-jupyter-spark-sql/hdispark.getstartedflow.png "Lernprogramm zu den ersten Schritten mit Apache Spark in HDInsight Dargestellte Schritte: Erstellen eines Speicherkontos, Erstellen eines Clusters, Ausführen von Spark-SQL-Anweisungen")
-
->[AZURE.NOTE]Eine Liste der bekannten Probleme und Einschränkungen in der aktuellen Version finden Sie unter [Bekannte Probleme von Apache Spark in Azure HDInsight (Linux)](hdinsight-apache-spark-jupyter-spark-sql.md).
 
 **Voraussetzungen:**
 
@@ -235,6 +233,10 @@ In diesem Abschnitt verwenden Sie ein Jupyter Notebook, um Spark-SQL-Abfragen f�
 
 * [Verwalten von Ressourcen für den Apache Spark-Cluster in Azure HDInsight](hdinsight-apache-spark-resource-manager.md)
 
+### Bekannte Probleme
+
+* [Bekannte Probleme von Apache Spark in Azure HDInsight (Linux)](hdinsight-apache-spark-known-issues.md)
+
 
 [hdinsight-versions]: ../hdinsight-component-versioning/
 [hdinsight-upload-data]: ../hdinsight-upload-data/
@@ -246,4 +248,4 @@ In diesem Abschnitt verwenden Sie ein Jupyter Notebook, um Spark-SQL-Abfragen f�
 [azure-management-portal]: https://manage.windowsazure.com/
 [azure-create-storageaccount]: ../storage-create-storage-account/
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0114_2016-->

@@ -8,12 +8,12 @@
    editor=""/>
 
    <tags
-      ms.service="marketplace-publishing"
+      ms.service="marketplace"
       ms.devlang="na"
       ms.topic="article"
       ms.tgt_pltfrm="na"
       ms.workload="na"
-      ms.date="11/30/2015"
+      ms.date="01/04/2016"
       ms.author="hascipio; avikova" />
 
 # Grundlegende Informationen zum Knotenschema zum Zuordnen eines vorhandenen Webdiensts zu OData über CSDL
@@ -162,9 +162,8 @@ Folgende Attribute wurden der CSDL-Spezifikation hinzugefügt:
 |----|----|
 | **d:Regex** *(optional)* | Mit einer Regexanweisung wird der Eingabewert für den Parameter überprüft. Der Wert wird abgelehnt, wenn der Eingabewert nicht mit der Anweisung übereinstimmt. Auf diese Weise kann auch eine Reihe von möglichen Werten angegeben werden, z. B. ^ [0-9] +? $, um nur Zahlen zuzulassen. **Beispiel:** `<Parameter Name="name" Mode="In" Type="String" d:Nullable="false" d:Regex="^[a-zA-Z]*$" d:Description="A name that cannot contain any spaces or non-alpha non-English characters" d:SampleValues="George|John|Thomas|James"/>` |
 | **d:Enum** *(optional)* | Eine Liste für den Parameter gültiger Werte, wo der senkrechte Strich als Trennzeichen verwendet wird. Der Typ der Werte muss dem definierten Typ des Parameters entsprechen. Beispiel: `english|metric|raw`. "Enum" wird als auswählbare Dropdownliste von Parametern in der Benutzeroberfläche (Dienst-Explorer) angezeigt. **Beispiel:** `<Parameter Name="Duration" Type="String" Mode="In" Nullable="true" d:Enum="1year|5years|10years"/>` |
-| **d:Nullable** *(optional)* | Ermöglicht, festzulegen, ob ein Parameter potenziell den Wert NULL haben kann. Der Standardwert ist: "True". Allerdings können Parameter, die als Teil des Pfads in der URI-Vorlage verfügbar gemacht werden, nicht NULL sein. Die Benutzereingabe wird überschrieben, wenn das Attribut für diese Parameter auf "False" festgelegt wird. Ermöglicht, festzulegen, ob ein Parameter potenziell den Wert NULL haben kann. Der Standardwert ist: "True". Allerdings können Parameter, die als Teil des Pfads in der URI-Vorlage verfügbar gemacht werden, nicht NULL sein. Die Benutzereingabe wird überschrieben, wenn das Attribut für diese Parameter auf "False" festgelegt wird. **Beispiel:** `<Parameter Name="BikeType" Type="String" Mode="In" Nullable="false"/>` |
-| **d:SampleValue** *(optional)* | Ein Beispielwert, der als Hinweis für den Client in der Benutzeroberfläche angezeigt werden soll. Es können mehrere Werte hinzugefügt werden, die mit dem senkrechten Strich getrennt werden, "|". **Beispiel:** `<Parameter Name="BikeOwner" Type="String" Mode="In" d:SampleValues="George|John|Thomas|James"/>` |
-| **d:UriTemplate** | |
+| **d:Nullable** *(optional)* | Ermöglicht, festzulegen, ob ein Parameter potenziell den Wert NULL haben kann. Der Standardwert ist: "True". Allerdings können Parameter, die als Teil des Pfads in der URI-Vorlage verfügbar gemacht werden, nicht NULL sein. Die Benutzereingabe wird überschrieben, wenn das Attribut für diese Parameter auf "False" festgelegt wird. **Beispiel:** `<Parameter Name="BikeType" Type="String" Mode="In" Nullable="false"/>` |
+| **d:SampleValue** *(optional)* | Ein Beispielwert, der als Hinweis für den Client in der Benutzeroberfläche angezeigt werden soll. Mehrere Werte können in einer durch senkrechte Striche getrennten Liste hinzugefügt werden, d. h. `a|b|c` **Beispiel:** `<Parameter Name="BikeOwner" Type="String" Mode="In" d:SampleValues="George|John|Thomas|James"/>` |
 
 ## EntityType-Knoten
 
@@ -271,6 +270,6 @@ Die folgenden Parameter- und Eigenschaftstypen werden unterstützt. (Groß-/Klei
 ## Weitere Informationen
 - Wenn Sie sich über den gesamten OData-Zuordnungsprozess und seinen Zweck informieren möchten, lesen Sie den Artikel [OData-Zuordnung im Datendienst](marketplace-publishing-data-service-creation-odata-mapping.md), um Definitionen, Strukturen und Anweisungen kennen zu lernen.
 - Wenn Sie an Beispielen interessiert sind, lesen Sie den Artikel [Beispiele für die OData-Zuordnung im Datendienst](marketplace-publishing-data-service-creation-odata-mapping-examples.md), um Beispielcode kennen zu lernen und Codesyntax und Kontext zu verstehen.
-- Um zum vorgeschriebenen Pfad für die Veröffentlichung eines Datendiensts im Azure Marketplace zurückzukehren, lesen Sie den Artikel [Leitfaden zur Datendienstveröffentlichung](marketplace-publishing-data-service-creation.md).
+- Um zum vorgeschriebenen Pfad für die Veröffentlichung eines Datendiensts im Azure Marketplace zurückzukehren, lesen Sie den Artikel [Leitfaden zum Veröffentlichen von Datendiensten](marketplace-publishing-data-service-creation.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

@@ -13,7 +13,7 @@ ms.service="virtual-machines"
  ms.topic="article"
  ms.tgt_pltfrm="vm-multiple"
  ms.workload="big-compute"
- ms.date="09/28/2015"
+ ms.date="01/08/2016"
  ms.author="danlep"/>
 
 # Hinzufügen von bedarfsgesteuerten Burstknoten (Workerrolleninstanzen) als Computeressourcen zu einem HPC Pack-Cluster in Azure
@@ -21,11 +21,11 @@ ms.service="virtual-machines"
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
 
 
-In diesem Artikel wird erläutert, wie Sie Azure-Burstknoten (Workerrolleninstanzen, die in einem Clouddienst ausgeführt werden) bedarfsgesteuert als Computeressourcen zu einem vorhandenen HPC Pack-Hauptknoten in Azure hinzufügen So können Sie die Computekapazität des HPC-Clusters in Azure zentral hochskalieren, ohne mehrere vorkonfigurierte virtuelle Computer für Computeknoten verwalten zu müssen.
+In diesem Artikel wird erläutert, wie Sie Azure-Burstknoten (Workerrolleninstanzen, die in einem Clouddienst ausgeführt werden) bedarfsgesteuert als Computeressourcen zu einem vorhandenen HPC Pack-Hauptknoten in Azure hinzufügen So können Sie die Computekapazität des HPC-Clusters in Azure bedarfsgesteuert zentral hochskalieren, ohne mehrere vorkonfigurierte VMs für Computeknoten verwalten zu müssen.
 
 ![Burstknoten][burst]
 
->[AZURE.TIP]Bei Verwendung des [HPC Pack IaaS-Bereitstellungsskripts](virtual-machines-hpcpack-cluster-powershell-script.md) zum Erstellen des Clusters in Azure können Sie Azure-Burstknoten in die automatisierte Bereitstellung integrieren.
+>[AZURE.TIP]Bei Verwendung des [HPC Pack IaaS-Bereitstellungsskripts](virtual-machines-hpcpack-cluster-powershell-script.md) zum Erstellen des Clusters in Azure können Sie Azure-Burstknoten in die automatisierte Bereitstellung integrieren. Sehen Sie sich die Beispiele in diesem Artikel an.
 
 Anhand der Schritte in diesem Artikel können Sie Azure-Knoten auf schnelle Weise zu einem cloudbasierten virtuellen Computer für den HPC Pack-Hauptknoten für Tests oder Machbarkeitsstudien hinzufügen. Der Vorgang entspricht im Wesentlichen dem "Burst-auf-Azure"-Vorgang zum Hinzufügen von Cloudcomputekapazität zu einem lokalen HPC Pack-Cluster. Ein entsprechendes Lernprogramm finden Sie unter [Einrichten eines Hybrid-Rechenclusters mit Microsoft HPC Pack](../cloud-services/cloud-services-setup-hybrid-hpcpack-cluster.md). Ausführliche Anweisungen und Überlegungen zu Produktionsbereitstellungen finden Sie unter [Burst to Azure with Microsoft HPC Pack](https://technet.microsoft.com/library/gg481749.aspx) (in englischer Sprache).
 
@@ -69,7 +69,7 @@ Zusätzliche Optionen zum Konfigurieren des Verwaltungszertifikats finden Sie un
 
 
 
-Die Schritte zum Hinzufügen und Starten von Azure-Knoten in diesem Szenario entsprechen i. Allg. der Vorgehensweise bei lokalen Hauptknoten. Weitere Informationen finden Sie in den folgenden Abschnitten unter [Steps to Deploy Azure Nodes with Microsoft HPC Pack](https://technet.microsoft.com/library/gg481758(v=ws.10).aspx) (in englischer Sprache):
+Die Schritte zum Hinzufügen und Starten von Azure-Knoten in diesem Szenario entsprechen i. Allg. der Vorgehensweise bei lokalen Hauptknoten. Weitere Informationen finden Sie in den folgenden Abschnitten unter [Steps to Deploy Azure Nodes with Microsoft HPC Pack](https://technet.microsoft.com/library/gg481758.aspx) (in englischer Sprache):
 
 * Erstellen einer Azure-Knotenvorlage
 
@@ -79,7 +79,7 @@ Die Schritte zum Hinzufügen und Starten von Azure-Knoten in diesem Szenario ent
 
 Nachdem Sie die Knoten hinzugefügt und gestartet haben, können Sie sie zum Ausführen von Clusteraufträgen verwenden.
 
-Wenn bei der Bereitstellung von Azure-Knoten Probleme auftreten, finden Sie unter [Troubleshoot Deployments of Azure Nodes with Microsoft HPC Pack](http://technet.microsoft.com/library/jj159097(v=ws.10).aspx) (in englischer Sprache) Anweisungen zur Problembehandlung.
+Wenn bei der Bereitstellung von Azure-Knoten Probleme auftreten, finden Sie unter [Troubleshoot Deployments of Azure Nodes with Microsoft HPC Pack] (in englischer Sprache) (http://technet.microsoft.com/library/jj159097(v=ws.10).aspx) Anweisungen zur Problembehandlung.
 
 ## Nächste Schritte
 
@@ -88,4 +88,4 @@ Wenn bei der Bereitstellung von Azure-Knoten Probleme auftreten, finden Sie unte
 <!--Image references-->
 [burst]: ./media/virtual-machines-hpcpack-cluster-node-burst/burst.png
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0114_2016-->

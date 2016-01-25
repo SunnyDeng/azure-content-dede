@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.devlang="na"
    ms.topic="article"
-   ms.date="12/16/2015"
+   ms.date="01/14/2015"
    ms.author="andkjell"/>
 
 # Technische Referenz für den generischen LDAP-Connector
@@ -49,13 +49,13 @@ Unterstützte Verzeichnisse für Deltaimport und Kennwortverwaltung:
 
 - Microsoft Active Directory Lightweight Directory Services (AD LDS)
     - Unterstützt alle Vorgänge für den Deltaimport
-    - Unterstützt Kennwort festlegen und Kennwort ändern
+    - Unterstützt Kennwort festlegen
 - Microsoft Active Directory – Globaler Katalog (AD GC)
     - Unterstützt alle Vorgänge für den Deltaimport
-    - Unterstützt Kennwort festlegen und Kennwort ändern
+    - Unterstützt Kennwort festlegen
 - 389 Directory Server
     - Unterstützt alle Vorgänge für den Deltaimport
-    - Unterstützt Kennwort festlegen
+    - Unterstützt Kennwort festlegen und Kennwort ändern
 - Apache Directory Server
     - Unterstützt keine Deltaimporte, da dieses Verzeichnis über kein dauerhaftes Änderungsprotokoll verfügt
     - Unterstützt Kennwort festlegen
@@ -71,10 +71,10 @@ Unterstützte Verzeichnisse für Deltaimport und Kennwortverwaltung:
     - Unterstützt Kennwort festlegen und Kennwort ändern
 - Open DJ
     - Unterstützt alle Vorgänge für den Deltaimport
-    - Unterstützt Kennwort festlegen
+    - Unterstützt Kennwort festlegen und Kennwort ändern
 - Open DS
     - Unterstützt alle Vorgänge für den Deltaimport
-    - Unterstützt Kennwort festlegen
+    - Unterstützt Kennwort festlegen und Kennwort ändern
 - Open LDAP (openldap.org)
     - Unterstützt alle Vorgänge für den Deltaimport
     - Unterstützt Kennwort festlegen
@@ -145,7 +145,7 @@ Der Connector versucht zu erkennen, ob die Optionen auf dem Server vorhanden sin
 
 Der Deltaimport ist nur verfügbar, wenn ein Supportverzeichnis erkannt wurde. Momentan werden folgende Methoden verwendet:
 
-- LDAP-Zugriffsprotokoll. Siehe [http://www.openldap.org/doc/admin24/overlays.html#Access Logging](http://www.openldap.org/doc/admin24/overlays.html#Access Logging)
+- LDAP-Zugriffsprotokoll. Siehe „http://www.openldap.org/doc/admin24/overlays.html#Access Logging“ (http://www.openldap.org/doc/admin24/overlays.html#Access Logging)
 - LDAP-Änderungsprotokoll. Siehe [http://tools.ietf.org/html/draft-good-ldap-changelog-04](http://tools.ietf.org/html/draft-good-ldap-changelog-04)
 - Zeitstempel. Für Novell/NetIQ eDirectory verwendet der Connector den letzten Datums-/Uhrzeitwert zum Abrufen erstellter und aktualisierter Objekte. Novell/NetIQ eDirectory bietet keine entsprechende Möglichkeit zum Abrufen gelöschter Objekte. Diese Option kann auch verwendet werden, wenn auf dem LDAP-Server keine andere Deltaimportmethode aktiv ist. Mit dieser Option können keine gelöschten Objekte importiert werden.
 - USNChanged. Siehe [https://msdn.microsoft.com/library/ms677627.aspx](https://msdn.microsoft.com/library/ms677627.aspx)
@@ -211,13 +211,13 @@ Die folgende Liste gibt Aufschluss über die standardmäßigen Änderungsprotoko
 | Apache Directory Server | Nicht verfügbar. |
 | Directory 389 | Änderungsprotokoll. Zu verwendender Standardwert: **cn=changelog** |
 | IBM Tivoli DS | Änderungsprotokoll. Zu verwendender Standardwert: **cn=changelog** |
-| Isode Directory | Änderungsprotokoll. Zu verwendender Standardwert: **cn=ChangeLog**
+| Isode Directory | Änderungsprotokoll. Zu verwendender Standardwert: **cn=changelog**
 | Novell/NetIQ eDirectory | Nicht verfügbar. Zeitstempel. Der Connector verwendet den Datums-/Uhrzeitwert der letzten Aktualisierung, um hinzugefügte und aktualisierte Datensätze abzurufen. |
-| Open DJ/DS | Änderungsprotokoll. Zu verwendender Standardwert: **cn=Changelog** |
+| Open DJ/DS | Änderungsprotokoll. Zu verwendender Standardwert: **cn=changelog** |
 | Open LDAP | Zugriffsprotokoll. Zu verwendender Standardwert: **cn=accesslog** |
 | Oracle DSEE | Änderungsprotokoll. Zu verwendender Standardwert: **cn=changelog** |
 | RadiantOne VDS | Virtuelles Verzeichnis. Abhängig vom mit VDS verbundenen Verzeichnis. |
-| Sun One Directory Server | Änderungsprotokoll. Zu verwendender Standardwert: **cn=Changelog** |
+| Sun One Directory Server | Änderungsprotokoll. Zu verwendender Standardwert: **cn=changelog** |
 
 Das Kennwortattribut ist der Name des Attributs, das der Connector bei Kennwortänderungen/-festlegungen zum Festlegen des Kennworts verwenden soll. Er ist standardmäßig auf **userPassword** festgelegt, kann jedoch bei Bedarf für ein bestimmtes LDAP-System angepasst werden.
 
@@ -279,4 +279,4 @@ Bei Verzeichnissen mit einem datums-/uhrzeitbasierten Delta-Änderungsprotokoll 
 
 -	Informationen zum Aktivieren der Protokollierung für die Behandlung von Connectorproblemen finden Sie unter [Vorgehensweise: Aktivieren der ETW-Ablaufverfolgung für Connectors](http://go.microsoft.com/fwlink/?LinkId=335731).
 
-<!----HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0114_2016-->

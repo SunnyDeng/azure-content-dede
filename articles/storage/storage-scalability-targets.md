@@ -1,12 +1,12 @@
-<properties 
+<properties
    pageTitle="Skalierbarkeits- und Leistungsziele für Azure Storage | Microsoft Azure"
    description="Informationen zu den Skalierbarkeits- und Leistungszielen für Azure Storage, einschließlich Kapazität Anforderungsrate sowie eingehende und ausgehende Bandbreite für Standard- und Premium-Speicherkonten. Machen Sie sich mit den Leistungszielen für Partitionen in den einzelnen Azure Storage-Diensten vertraut."
    services="storage"
    documentationCenter="na"
    authors="robinsh"
    manager="carmonm"
-   editor="na" />
-<tags 
+   editor="tysonn" />
+<tags
    ms.service="storage"
    ms.devlang="na"
    ms.topic="article"
@@ -36,7 +36,7 @@ Wenn die Anforderungen Ihrer Anwendung die Skalierbarkeitsziele eines einzelnen 
 
 [AZURE.INCLUDE [azure-storage-limits](../../includes/azure-storage-limits.md)]
 
-## Skalierbarkeitsziele für Festplatten virtueller Computer 
+## Skalierbarkeitsziele für Festplatten virtueller Computer
 
 [AZURE.INCLUDE [azure-storage-limits-vm-disks](../../includes/azure-storage-limits-vm-disks.md)]
 
@@ -85,4 +85,4 @@ Partitionen wirken sich wie folgt auf den Lastenausgleich und die Skalierbarkeit
 - [Checkliste zu Leistung und Skalierbarkeit von Microsoft Azure Storage](storage-performance-checklist.md)
 - [Microsoft Azure Storage: A Highly Available Cloud Storage Service with Strong Consistency (in englischer Sprache)](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0114_2016-->

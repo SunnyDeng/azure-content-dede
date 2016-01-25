@@ -1,4 +1,5 @@
-You can create virtual machines (VMs) in Azure and expose them to the public Internet by using a public IP address. By default, Public IPs are dynamic and the address associated to them may change when the VM is deleted. To guarantee that the VM always uses the same public IP address, you need to create a static Public IP. 
+Sie können virtuelle Maschinen (VMs) in Azure erstellen und sie unter Verwendung einer öffentlichen IP-Adresse im Internet verfügbar machen. Öffentliche IPs sind standardmäßig dynamisch. Die ihnen zugewiesene Adresse kann sich daher ändern, wenn die VM gelöscht wird. Um sicherzustellen, dass die VM immer die gleiche öffentliche IP-Adresse verwendet, müssen Sie eine statische öffentliche IP-Adresse erstellen.
 
-Before you can implement static Public IPs in VMs, it is necessary to understand when you can use static Public IPs, and how they are used. Read the [IP addressing overview](virtual-network-ip-addresses-overview-arm.md) to learn more about IP addressing in Azure.
+Bevor Sie statische öffentliche IP-Adressen in VMs implementieren können, müssen Sie wissen, wann Sie statische öffentliche IP-Adressen verwenden können und wie diese eingesetzt werden. Weitere Informationen zu IP-Adressen in Azure finden Sie unter [Übersicht über IP-Adressen](virtual-network-ip-addresses-overview-arm.md).
 
+<!---HONumber=AcomDC_0114_2016-->

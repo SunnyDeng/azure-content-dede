@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="09/16/2015" 
+	ms.date="01/08/2016" 
 	ms.author="tdykstra"/>
 
 # Problembehandlung von Web-Apps in Azure App Service in Visual Studio
@@ -567,8 +567,7 @@ Speicherkonten bieten mehr Speicherplatz und längere Aufbewahrungszeiten für P
 
 1. Klicken Sie in Visual Studio im Fenster **Azure-Web-App** auf die Registerkarte **Protokolle** und anschließend auf **Protokollierung im Verwaltungsportal konfigurieren**.
 
-    <!-- todo:screenshot of new portal if the VS page link goes to new portal -->
-	![Konfigurieren der Protokollierung](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-configlogging.png)
+    <!-- todo:screenshot of new portal if the VS page link goes to new portal -->![Konfigurieren der Protokollierung](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-configlogging.png)
 
 	Damit öffnen Sie im klassischen Portal die Registerkarte **Konfigurieren** für Ihre Web-App.
 
@@ -762,4 +761,4 @@ Informationen darüber, wie Sie statt einer Web-App einen Azure-Cloud-Dienst deb
 [GetStartedWJ]: websites-dotnet-webjobs-sdk.md
  
 
-<!----HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

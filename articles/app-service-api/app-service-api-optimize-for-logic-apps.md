@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="dotnet"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/15/2015"
+	ms.date="01/08/2016" 
 	ms.author="sameerch"/>
 
 # Optimieren Ihrer API-App für Logik-Apps #
@@ -235,4 +235,4 @@ Für API-Apps mit dynamischen Metadaten können Sie benutzerdefinierte Attribute
 In diesem Artikel haben Sie erfahren, wie Sie die Benutzerfreundlichkeit Ihrer API-App verbessern, wenn diese im Logik-Apps-Designer verwendet wird. Als bewährte Methode wird empfohlen, benutzerfreundliche Namen für alle Operationen (Aktionen und Trigger), Parameter und Eigenschaften bereitzustellen. Außerdem wird empfohlen, nicht mehr als 5 grundlegende Operationen bereitzustellen. Für Eingabeparameter lautet die Empfehlung, die Anzahl von grundlegenden Eigenschaften auf maximal 4 zu beschränken, für Eigenschaften liegt die Empfehlung bei 5 oder weniger. Die verbleibenden Operationen und Eigenschaften sollten als erweitert gekennzeichnet werden.
  
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0114_2016-->

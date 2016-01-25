@@ -12,7 +12,7 @@
     ms.tgt_pltfrm="ibiza"
     ms.devlang="na"
     ms.topic="article"
-	ms.date="01/05/2016"
+	ms.date="01/12/2016"
     ms.author="awills"/>
 
 # Versionsanmerkungen in Application Insights
@@ -34,34 +34,43 @@ Um Versionsanmerkungen erstellen zu können, müssen Sie eine der zahlreichen Te
 
 Diesen Vorgang müssen Sie nur einmal für Ihr Visual Studio Team Services-Konto ausführen. Versionsanmerkungen können nun für jedes Projekt in Ihrem Konto konfiguriert werden.
 
-
-
-## Hinzufügen einer Anmerkungsaufgabe zur Versionsvorlage
+## Abrufen eines API-Schlüssels aus Application Insights
 
 Diesen Schritt müssen Sie für jede Versionsvorlage ausführen, für die Sie Versionsanmerkungen erstellen möchten.
 
-Öffnen (oder erstellen) Sie über Visual Studio Team Services die Versionsvorlage, mit der Ihre Bereitstellungen verwaltet werden.
 
-Fügen Sie eine Aufgabe hinzu, und wählen Sie im Menü die Aufgabe für Application Insights-Versionsanmerkungen aus.
+1. Melden Sie sich im [Microsoft Azure-Portal](https://portal.azure.com) an, und öffnen Sie die Application Insights-Ressource, mit der Sie Ihre Anwendung überwachen. (Oder [erstellen Sie nun eine Ressource](app-insights-overview.md), sofern noch nicht geschehen.)
+2. Öffnen Sie **Einstellungen** und **API-Zugriff**, und erstellen Sie eine Kopie der **Application Insights-ID**.
 
-![Öffnen Sie oben rechts auf der Team Services-Website den Marketplace. Suchen Sie die Application Insights-Anmerkungen, und installieren Sie sie unter Ihrem Konto.](./media/app-insights-annotations/40.png)
+    ![Öffnen Sie unter „portal.azure.com“ die Application Insights-Ressource, und wählen Sie „Einstellungen“. Öffnen Sie „API-Zugriff“. Kopieren Sie](./media/app-insights-annotations/20.png)
 
-Um diesen Schritt abzuschließen, benötigen Sie einige Details der Application Insights-Ressource, mit der Sie Ihre Anwendung überwachen.
+2. Öffnen (oder erstellen) Sie in einem separaten Browserfenster die Versionsvorlage, mit der Ihre Bereitstellungen über Visual Studio Team Services verwaltet werden.
 
-Lassen Sie das Team Services-Fenster geöffnet, während Sie die Details aus Application Insights abrufen.
+    Fügen Sie eine Aufgabe hinzu, und wählen Sie im Menü die Aufgabe für Application Insights-Versionsanmerkungen aus.
 
-## Kopieren eines API-Schlüssels aus Application Insights
+    Fügen Sie die **Application Insights-ID** ein, die Sie vom Blatt „API-Zugriff“ kopiert haben.
 
-In einem separaten Browserfenster:
+    ![Öffnen Sie in Visual Studio Team Services die Option „Version“, wählen Sie eine Versionsdefinition aus, und wählen Sie „Bearbeiten“. Klicken Sie auf „Aufgabe hinzufügen“, und wählen Sie die Option „Application Insights-Versionsanmerkung“. Fügen Sie die Application Insights-ID ein.](./media/app-insights-annotations/30.png)
 
-1. Melden Sie sich im [Microsoft Azure-Portal](https://portal.azure.com) an, und öffnen Sie die Application Insights-Ressource, mit der Sie Ihre Anwendung überwachen. (Oder [erstellen Sie nun eine](app-insights-overview.md), sofern noch nicht geschehen.)
-2. Öffnen Sie das Dropdownmenü **Essentials**, und kopieren Sie die Abonnement-ID, die Ressourcengruppe und den Namen der Ressource in die Aufgabe für Versionsanmerkungen. ![](./media/app-insights-annotations/50.png)
-2. Öffnen Sie **Einstellungen** > **API-Schlüssel**, und erstellen Sie einen neuen Schlüssel. Kopieren Sie diesen Schlüssel. ![](./media/app-insights-annotations/30.png)
+3. Legen Sie das Feld **APIKey** auf eine Variable (`$(ApiKey)`) fest.
 
-**Speichern** Sie abschließend die Versionsdefinition.
+4. Wechseln Sie zurück zum Blatt „API-Zugriff“, erstellen Sie einen neuen API-Schlüssel, und erstellen Sie eine Kopie davon.
 
-## Bereitstellungsmarker
+    ![Klicken Sie im Azure-Fenster auf dem Blatt „API-Zugriff“ auf „API-Schlüssel erstellen“. Geben Sie einen Kommentar an, aktivieren Sie das Schreiben von Anmerkungen, und klicken Sie auf „Schlüssel generieren“. Kopieren Sie den neuen Schlüssel.](./media/app-insights-annotations/40.png)
+
+4. Öffnen Sie die Registerkarte „Konfiguration“ der Versionsvorlage.
+
+    Erstellen Sie eine Variablendefinition für `ApiKey`.
+
+    Fügen Sie Ihren API-Schlüssel in die ApiKey-Variablendefinition ein.
+
+    ![Wählen Sie im Team Services-Fenster die Registerkarte „Konfiguration“, und klicken Sie auf „Variable hinzufügen“. Legen Sie den Namen auf ApiKey fest, und fügen Sie unter „Wert“ den gerade generierten Schlüssel ein.](./media/app-insights-annotations/50.png)
+
+
+5. **Speichern** Sie abschließend die Versionsdefinition.
+
+## Bereitstellungsanmerkungen
 
 Wenn Sie nun diese Versionsvorlage zum Bereitstellen einer neuen Version verwenden, wird jedes Mal eine Anmerkung an Application Insights gesendet. Die Anmerkungen werden in Diagrammen im Metrik-Explorer angezeigt.
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0114_2016-->

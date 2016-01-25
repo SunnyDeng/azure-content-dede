@@ -8,12 +8,12 @@
    editor=""/>
 
 <tags
-   ms.service="AzureStore"
+   ms.service="marketplace"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="10/09/2015"
+   ms.date="01/04/2016"
    ms.author="hascipio" />
 
 # Bereitstellen Ihres Angebots im Azure Marketplace
@@ -45,4 +45,4 @@ Wenn das Angebot live geschaltet wurde, testen Sie die Kundenszenarien in der Pr
 [img-pubportal-menu-publish]: media/marketplace-publishing-push-to-production/pubportal-menu-publish.png
 [img-pubportal-publish-pushproduction]: media/marketplace-publishing-push-to-production/pubportal-publish-pushproduction.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0114_2016-->

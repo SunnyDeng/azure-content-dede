@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="12/31/2015"
+   ms.date="01/08/2016"
    ms.author="v-sharos" />
 
 # Verwalten von StorSimple-Volumecontainern mithilfe des StorSimple Manager-Diensts
@@ -43,7 +43,7 @@ Bei den folgenden Verfahren wird erläutert, wie Sie die Seite **Volumecontainer
 
 ## Hinzufügen eines Volumecontainers
 
-Führen Sie die folgenden Schritte aus, um einen Volumecontainer zu erstellen.
+Führen Sie die folgenden Schritte aus, um einen Volumecontainer hinzuzufügen.
 
 [AZURE.INCLUDE [storsimple-add-volume-container](../../includes/storsimple-add-volume-container.md)]
 
@@ -66,4 +66,4 @@ In einem Volumecontainer sind Volumes enthalten. Er kann nur gelöscht werden, n
 - Erfahren Sie mehr über das [Verwalten von StorSimple-Volumes](storsimple-manage-volumes.md). 
 - Erfahren Sie mehr über das [Verwenden Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0114_2016-->

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Festlegen von Endpunkten auf einen virtuellen Computer in Azure"
+	pageTitle="Einrichten von Endpunkten auf einer klassischen virtuellen Azure-Maschine | Microsoft Azure"
 	description="Erfahren Sie, wie Endpunkte im klassischen Azure-Portal eingerichtet werden, um die Kommunikation mit einem virtuellen Computer in Azure zu ermöglichen."
 	services="virtual-machines"
 	documentationCenter=""
@@ -11,29 +11,21 @@
 <tags
 	ms.service="virtual-machines"
 	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="na"
+	ms.tgt_pltfrm="vm-multiple"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/28/2015"
+	ms.date="01/06/2016"
 	ms.author="cynthn"/>
 
-#Einrichten von Endpunkten für einen virtuellen Computer
+# Einrichten von Endpunkten auf einer klassischen virtuellen Azure-Maschine
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell. Informationen zur Ressourcen-Manager-Bereitstellung finden Sie unter [Erste Schritte zum Konfigurieren des Lastenausgleichs für Internetverbindungen mit dem Azure-Ressourcen-Manager](../load-balancer/load-balancer-arm-powershell.md) und [Informationen zu Netzwerk-Sicherheitsgruppen](virtual-networks-nsg.md).
 
-Alle virtuellen Computer, die Sie in Azure erstellen, können automatisch über einen privaten Netzwerkkanal mit anderen virtuellen Computern im gleichen Clouddienst oder virtuellen Netzwerk kommunizieren. Computer im Internet oder anderen virtuellen Netzwerken erfordern jedoch von den Endpunkten, dass sie den eingehenden Netzwerkdatenverkehr auf einen virtuellen Computer leiten.
+Alle virtuellen Maschinen, die Sie mit dem klassischen Bereitstellungsmodell in Azure erstellen, können automatisch über einen privaten Netzwerkkanal mit anderen virtuellen Maschinen im gleichen Clouddienst oder Virtual Network kommunizieren. Computer im Internet oder anderen virtuellen Netzwerken erfordern jedoch von den Endpunkten, dass sie den eingehenden Netzwerkdatenverkehr auf einen virtuellen Computer leiten.
 
-Beim Erstellen eines virtuellen Computers im klassischen Azure-Portal werden die Endpunkte für Remotedesktop und Windows PowerShell-Remoting Secure Shell (SSH) automatisch erstellt. Sie können zusätzliche Endpunkte beim Erstellen des virtuellen Computers oder später nach Bedarf konfigurieren.
+Beim Erstellen einer virtuellen Maschine im klassischen Azure-Portal werden die Endpunkte für Remote Desktop und Windows PowerShell Remoting Secure Shell (SSH) in der Regel automatisch erstellt – je nachdem, welches Betriebssystem Sie wählen. Sie können zusätzliche Endpunkte beim Erstellen des virtuellen Computers oder später nach Bedarf konfigurieren.
 
-[AZURE.INCLUDE [service-management-pointer-to-resource-manager](../../includes/service-management-pointer-to-resource-manager.md)]
-
-- [Informationen zu Netzwerk-Sicherheitsgruppen](virtual-networks-nsg.md)
-
-Beachten Sie bitte, dass Netzwerk-Sicherheitsgruppen zwar den Zugriff auf den virtuellen Computer steuern, jedoch nicht über Funktionen zur Portweiterleitung verfügen. Informationen zur Portweiterleitung finden Sie in folgendem Artikel:
-
-- [Erste Schritte zum Konfigurieren des Lastenausgleichs für Internetverbindungen mit dem Azure-Ressourcen-Manager](../load-balancer/load-balancer-arm-powershell.md)
-
-Jeder Endpunkt verfügt über einen öffentlichen und einen privaten Port.
+Jeder Endpunkt verfügt über einen *öffentlichen* und einen *privaten Port*.
 
 - Der öffentliche Port wird von Azure-Lastenausgleich verwendet, um eingehenden Datenverkehr an den virtuellen Computer aus dem Internet zu überwachen.
 - Der private Port wird vom virtuellen Computer zum Überwachen von eingehendem Datenverkehr verwendet, in der Regel für eine Anwendung oder ein Dienst, der auf dem virtuellen Computer ausgeführt wird.
@@ -44,7 +36,7 @@ Nachdem Sie einen Endpunkt erstellt haben, können Sie eine Zugriffssteuerungsli
 
 > [AZURE.NOTE]\: Die Firewallkonfiguration für virtuelle Computer erfolgt in Azure für Remote Desktop und Secure Shell (SSH) sowie in den meisten Fällen für die dem Windows PowerShell-Remoting zugeordneten Ports automatisch. Für Ports, die für alle anderen Endpunkte angegeben werden, wird keine Konfiguration der Firewall des virtuellen Computers automatisch durchgeführt. Wenn Sie einen Endpunkt für den virtuellen Computer erstellen, müssen Sie sicherstellen, dass die Firewall des virtuellen Computers außerdem den Datenverkehr für das Protokoll und den privaten Port entsprechend der Endpunktkonfiguration ermöglicht.
 
-##Erstellen eines Endpunkts
+## Erstellen eines Endpunkts
 
 1.	Melden Sie sich beim klassischen Azure-Portal an, falls noch nicht geschehen.
 2.	Klicken Sie auf **Virtuelle Computer** und dann auf den Namen des virtuellen Computers, den Sie konfigurieren möchten.
@@ -68,9 +60,9 @@ Der neue Endpunkt wird auf der Seite **Endpunkte** aufgeführt.
 
 ![Endpunkt erfolgreich erstellt](./media/virtual-machines-set-up-endpoints/endpointwindowsnew.png)
 
-Ein Azure-PowerShell-Cmdlet zum Einrichten finden Sie unter [Add-AzureEndpoint](https://msdn.microsoft.com/library/azure/dn495300.aspx).
+Ein Azure-PowerShell-Cmdlet zum Einrichten finden Sie unter [Add-AzureEndpoint](https://msdn.microsoft.com/library/azure/dn495300.aspx). Wenn Sie die Azure-CLI im Service Management-Modus verwenden, geben Sie den Befehl **azure vm endpoint creat** ein.
 
-##Verwaltung der ACL für einen Endpunkt
+## Verwaltung der ACL für einen Endpunkt
 
 Zum Definieren der Computer, die Datenverkehr senden können, kann die ACL für einen Endpunkt Datenverkehr anhand der IP-Quelladresse einschränken. Gehen Sie folgendermaßen vor, um eine ACL an einem Endpunkt hinzuzufügen, zu modifizieren oder zu entfernen.
 
@@ -100,4 +92,4 @@ Informationen dazu, wie Sie ein Azure PowerShell-Cmdlet für die Einrichtung ver
 
 [Lastenausgleich für Azure-Infrastrukturdienste](virtual-machines-load-balance.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->
