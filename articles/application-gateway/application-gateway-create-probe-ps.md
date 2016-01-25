@@ -1,4 +1,4 @@
-<properties 
+<properties
    pageTitle="Erstellen eines benutzerdefinierten Tests für ein Application Gateway mithilfe von PowerShell im Ressourcen-Manager | Microsoft Azure"
    description="Hier erfahren Sie, wie Sie einen benutzerdefinierten Test für Application Gateways mithilfe von PowerShell im Ressourcen-Manager erstellen."
    services="application-gateway"
@@ -17,7 +17,7 @@
    ms.date="12/17/2015"
    ms.author="joaoma" />
 
-# Erstellen eines benutzerdefinierten Tests für ein Application Gateway mithilfe von PowerShell für den Azure-Ressourcen-Manager
+# Erstellen eines benutzerdefinierten Tests für Azure Application Gateway mithilfe von PowerShell für Azure-Ressourcen-Manager
 
 [AZURE.INCLUDE [azure-probe-intro-include](../../includes/application-gateway-create-probe-intro-include.md)]
 
@@ -28,9 +28,9 @@
 [AZURE.INCLUDE [azure-ps-prerequisites-include.md](../../includes/azure-ps-prerequisites-include.md)]
 
 
-### Schritt 1 
+### Schritt 1
 
-Authentifizieren mithilfe des Cmdlets Login-AzureRmAccount
+Verwenden Sie das Cmdlet „Login-AzureRmAccount“, um sich zu authentifizieren.
 
 	Login-AzureRmAccount
 
@@ -38,11 +38,11 @@ Authentifizieren mithilfe des Cmdlets Login-AzureRmAccount
 
 Überprüfen Sie die Abonnements für das Konto.
 
-		get-AzureRmSubscription 
+		get-AzureRmSubscription
 
 Sie werden zur Authentifizierung mit Ihren Anmeldeinformationen aufgefordert.<BR>
 
-### Schritt 3 
+### Schritt 3
 
 Wählen Sie aus, welches Azure-Abonnement Sie verwenden möchten.<BR>
 
@@ -52,62 +52,62 @@ Wählen Sie aus, welches Azure-Abonnement Sie verwenden möchten.<BR>
 
 ### Schritt 4
 
-Erstellen Sie eine neue Ressourcengruppe. (Überspringen Sie diesen Schritt, wenn Sie eine vorhandene Ressourcengruppe verwenden.)
+Erstellen Sie eine neue Ressourcengruppe (Überspringen Sie diesen Schritt, wenn Sie eine vorhandene Ressourcengruppe verwenden.)
 
     New-AzureRmResourceGroup -Name appgw-rg -location "West US"
 
 Der Azure-Ressourcen-Manager erfordert, dass alle Ressourcengruppen einen Speicherort angeben. Dieser wird als Standardspeicherort für Ressourcen in dieser Ressourcengruppe verwendet. Stellen Sie sicher, dass alle Befehle, mit denen ein Application Gateway erstellt wird, die gleiche Ressourcengruppe verwenden.
 
-Im oben stehenden Beispiel haben wir eine Ressourcengruppe namens "appgw-RG" mit dem Standort "USA, Westen" erstellt.
+Im obigen Beispiel haben wir eine Ressourcengruppe namens „appgw-RG“ mit dem Standort „USA, Westen“ erstellt.
 
-## Erstellen eines virtuelles Netzwerks und Subnetzes für das Application Gateway
+## Erstellen eines virtuelles Netzwerkes und eines Subnetzes für das Application Gateway.
 
-Anhand der folgenden Schritte erstellen Sie ein virtuelles Netzwerk und ein Subnetz für das Application Gateway.
+Mit den folgenden Schritten erstellen Sie ein virtuelles Netzwerk und ein Subnetz für das Application Gateway.
 
-### Schritt 1	
-	
+### Schritt 1
 
-Dieser Befehl weist den Adressbereich 10.0.0.0/24 der Subnetzvariablen zu, die zum Erstellen eines virtuelles Netzwerks verwendet wird.
+
+Weisen Sie dem Adressbereich 10.0.0.0/24 eine Subnetzvariable zu, die zum Erstellen eines virtuellen Netzwerks verwendet wird.
 
 	$subnet = New-AzureRmVirtualNetworkSubnetConfig -Name subnet01 -AddressPrefix 10.0.0.0/24
 
-### Schritt 2	
+### Schritt 2
 
-Ein virtuelles Netzwerk mit dem Namen „appgwvnet“ wird in der Ressourcengruppe „appgw-rg“ für die Region „USA, Westen“ mit dem Präfix 10.0.0.0/16 und dem Subnetz 10.0.0.0/24 erstellt.
+Erstellen Sie ein virtuelles Netzwerk mit dem Namen „appgwvnet“ in der Ressourcengruppe „appgw-rg“ für die Region „USA, Westen“ mit dem Präfix „10.0.0.0/16“ und dem Subnetz „10.0.0.0/24“.
 
 	$vnet = New-AzureRmVirtualNetwork -Name appgwvnet -ResourceGroupName appgw-rg -Location "West US" -AddressPrefix 10.0.0.0/16 -Subnet $subnet
 
 
 ### Schritt 3
 
-Weisen Sie eine Subnetzvariable zu, damit die nächsten Schritte beim Erstellen eines Application Gateways ausgeführt werden können.
-		
+Weisen Sie eine Subnetzvariable für die nächsten Schritte zu. Damit wird ein Application Gateway erstellt.
+
 	$subnet=$vnet.Subnets[0]
 
 ## Erstellen der öffentlichen IP-Adresse für die Front-End-Konfiguration
 
 
-Dieser Befehl dient zum Erstellen der öffentlichen IP-Ressource „publicIP01“ in der Ressourcengruppe „appgw-rg“ für die Region „USA, Westen“.
+Erstellen Sie eine öffentliche IP-Ressource namens „publicIP01“ in der Ressourcengruppe „appgw-rg“ für die Region „USA, Westen“.
 
 	$publicip = New-AzureRmPublicIpAddress -ResourceGroupName appgw-rg -name publicIP01 -location "West US" -AllocationMethod Dynamic
- 
 
-## Erstellen eines Konfigurationsobjekts für das Application Gateway mit benutzerdefiniertem Test 
 
-Sie müssen alle Konfigurationselemente einrichten, bevor Sie das Application Gateway erstellen. Mit den folgenden Schritten erstellen Sie die Konfigurationselemente, die für eine Application Gateway-Ressource benötigt werden.
+## Erstellen eines Konfigurationsobjekts für das Application Gateway mit benutzerdefiniertem Test
+
+Sie müssen alle Konfigurationselemente einrichten, bevor Sie das Application Gateway erstellen. Die folgenden Schritten erstellen die Konfigurationselemente, die für eine Application Gateway-Ressource benötigt werden.
 
 
 ### Schritt 1
 
-Dieser Befehl erstellt eine IP-Konfiguration für das Anwendungsgateway mit dem Namen „gatewayIP01“. Beim Start des Application Gateways wählt es eine IP-Adresse aus dem konfigurierten Subnetz aus und leitet dann Netzwerkdatenverkehr an die IP-Adressen im Back-End-IP-Pool weiter. Beachten Sie, dass jede Instanz eine IP-Adresse verwendet.
+Erstellen Sie eine IP-Konfiguration für das Application Gateway mit dem Namen „gatewayIP01“. Beim Start des Application Gateways wählt es eine IP-Adresse aus dem konfigurierten Subnetz aus und leitet dann Netzwerkdatenverkehr an die IP-Adressen im Back-End-IP-Pool weiter. Beachten Sie, dass jede Instanz eine eigene IP-Adresse benötigt.
 
 	$gipconfig = New-AzureRmApplicationGatewayIPConfiguration -Name gatewayIP01 -Subnet $subnet
 
- 
+
 ### Schritt 2
 
 
-Dieser Schritt dient zum Konfigurieren des Back-End-IP-Adresspools "pool01" mit den IP-Adressen 134.170.185.46, 134.170.188.221 und 134.170.185.50. Dies sind die IP-Adressen, die den Netzwerkdatenverkehr vom Front-End-IP-Adressendpunkt empfangen werden. Ersetzen Sie die obigen IP-Adressen durch Ihre eigenen IP-Adressendpunkte der Anwendung.
+Konfigurieren Sie den Back-End-IP-Adresspool „pool01“ mit den IP-Adressen „134.170.185.46“, „134.170.188.221“ und „134.170.185.50“. Dies sind die IP-Adressen, die den Netzwerkdatenverkehr vom Front-End-IP-Endpunkt empfangen werden. Ersetzen Sie die obigen IP-Adressen durch Ihre eigenen IP-Adressendpunkte der Anwendung.
 
 	$pool = New-AzureRmApplicationGatewayBackendAddressPool -Name pool01 -BackendIPAddresses 134.170.185.46, 134.170.188.221,134.170.185.50
 
@@ -119,60 +119,60 @@ In diesem Schritt wird der benutzerdefinierte Test konfiguriert.
 
 Verwendete Parameter:
 
-- **-Interval**: Konfiguriert die Intervalle für die Prüfungen des Tests (in Sekunden). 
+- **-Interval**: Konfiguriert die Intervalle für die Prüfungen des Tests (in Sekunden).
 - **-Timeout**: Definiert das Timeout des Tests für eine HTTP-Antwortprüfung.
-- **-Hostname und -path**: Vollständiger URL-Pfad, der vom Application Gateway aufgerufen wird, um die Integrität der Instanz zu ermitteln. Beispiel: Bei der Website http://contoso.com/ können Sie den benutzerdefinierten Test für „http://contoso.com/path/custompath.htm“ konfigurieren, damit die HTTP-Antwort bei den Prüfungen des Tests erfolgreich ist. 
+- **-Hostname und -path**: Vollständiger URL-Pfad, der vom Application Gateway aufgerufen wird, um die Integrität der Instanz zu ermitteln. Beispiel: Bei der Website http://contoso.com/ können Sie den benutzerdefinierten Test für „http://contoso.com/path/custompath.htm“ konfigurieren, damit die HTTP-Antwort bei den Prüfungen des Tests erfolgreich ist.
 - **UnhealthyThreshold**: Die Anzahl der Fehler bei HTTP-Antworten, ab der die Back-End-Instanz als *fehlerhaft* gekennzeichnet wird.
 
 
 
-	$probe = New-AzureRmApplicationGatewayProbeConfig -Name probe01 -Protocol Http -HostName "contoso.com" -Path "/path/path.htm" -Interval 30 -Timeout 120 -UnhealthyThreshold 8
+	$probe = New-AzureRmApplicationGatewayProbeConfig -Name probe01 -Protocol Http -HostName "contoso.com" -Path "/path/custompath.htm" -Interval 30 -Timeout 120 -UnhealthyThreshold 8
 
 
 ### Schritt 4
 
-Dient zum Konfigurieren der Application Gateway-Einstellungen „poolsetting01“ für den Datenverkehr im Back-End-Pool. Dieser Schritt umfasst auch eine Timeoutkonfiguration, die für die Back-End-Pool-Antwort auf eine Application Gateway-Anforderung gilt. Wenn eine Back-End-Antwort ein Timeoutlimit erreicht, bricht das Application Gateway die Anforderung ab. Dies unterscheidet sich vom Timeout des Tests, das nur für die Back-End-Antwort auf Testprüfungen gilt.
+Konfigurieren Sie die Application Gateway-Einstellung „poolsetting01“ für den Datenverkehr im Back-End-Pool. Dieser Schritt umfasst auch eine Timeoutkonfiguration, die für die Back-End-Pool-Antwort auf eine Application Gateway-Anforderung gilt. Wenn eine Back-End-Antwort ein Timeoutlimit erreicht, bricht das Application Gateway die Anforderung ab. Dieses Timeoutlimit unterscheidet sich vom Timeout des Tests, das nur für die Back-End-Antwort auf Testprüfungen gilt.
 
 	$poolSetting = New-AzureRmApplicationGatewayBackendHttpSettings -Name poolsetting01 -Port 80 -Protocol Http -CookieBasedAffinity Disabled -Probe $probe -RequestTimeout 80
 
 
 ### Schritt 5
 
-Dieser Befehl konfiguriert den Front-End-IP-Port mit dem Namen "frontendport01" für den öffentlichen IP-Adressendpunkt.
+Konfigurieren Sie den Front-End-IP-Port mit dem Namen „frontendport01“ für den öffentlichen IP-Adressendpunkt.
 
 	$fp = New-AzureRmApplicationGatewayFrontendPort -Name frontendport01  -Port 80
 
 ### Schritt 6
 
-Hiermit wird die Front-End-IP-Adresskonfiguration namens „fipconfig01“ erstellt und die öffentliche IP-Adresse zugewiesen.
+Erstellen Sie die Front-End-IP-Adresskonfiguration namens „fipconfig01“ und ordnen Sie die öffentliche IP-Adresse der Front-End-IP-Konfiguration zu.
 
 
 	$fipconfig = New-AzureRmApplicationGatewayFrontendIPConfig -Name fipconfig01 -PublicIPAddress $publicip
 
 ### Schritt 7
 
-Dieser Befehl dient zum Erstellen des Listeners „listener01“ und zum Zuweisen des Front-End-Ports zur Front-End-IP-Konfiguration.
+Erstellen Sie den Listener „listener01“ und ordnen Sie den Front-End-Port der Front-End-IP-Konfiguration zu.
 
 	$listener = New-AzureRmApplicationGatewayHttpListener -Name listener01  -Protocol Http -FrontendIPConfiguration $fipconfig -FrontendPort $fp
 
-### Schritt 8 
+### Schritt 8
 
-Erstellt die Load Balancer-Routingregel „rule01“ und konfiguriert das Load Balancer-Verhalten.
+Erstellen Sie die Load Balancer-Routingregel „rule01“, welche das Load Balancer-Verhalten konfiguriert.
 
 	$rule = New-AzureRmApplicationGatewayRequestRoutingRule -Name rule01 -RuleType Basic -BackendHttpSettings $poolSetting -HttpListener $listener -BackendAddressPool $pool
 
 ### Schritt 9
 
-Dieser Befehl konfiguriert die Instanzgröße des Application Gateways.
+Konfigurieren Sie die Instanzgröße des Application Gateways.
 
 	$sku = New-AzureRmApplicationGatewaySku -Name Standard_Small -Tier Standard -Capacity 2
 
 
->[AZURE.NOTE]Der Standardwert für *InstanceCount* ist 2, der Maximalwert ist 10. Der Standardwert für *GatewaySize* ist "Medium". Sie können zwischen „Standard\_Small“, „Standard\_Medium“ und „Standard\_Large“ wählen.
+>[AZURE.NOTE]Der Standardwert für „*InstanceCount*” ist „2“, der Maximalwert ist „10“. Der Standardwert für „*GatewaySize*” ist „Medium“. Sie können zwischen „Standard\_Small“, „Standard\_Medium“ und „Standard\_Large“ wählen.
 
-## Erstellen eines Application Gateways mit dem Cmdlet New-AzureRmApplicationGateway
+## Erstellen eines Application Gateways mit dem Cmdlet „New-AzureRmApplicationGateway“
 
-Mit diesem Cmdlet wird ein Application Gateway mit allen Konfigurationselementen aus den vorangegangenen Schritten erstellt. Im Beispiel heißt das Application Gateway "appgwtest".
+Erstellen Sie ein Application Gateway mit allen Konfigurationselementen aus den vorangegangenen Schritten. In diesem Beispiel heißt das Application Gateway „appgwtest“.
 
 	$appgw = New-AzureRmApplicationGateway -Name appgwtest -ResourceGroupName appgw-rg -Location "West US" -BackendAddressPools $pool -Probes $probe -BackendHttpSettingsCollection $poolSetting -FrontendIpConfigurations $fipconfig  -GatewayIpConfigurations $gipconfig -FrontendPorts $fp -HttpListeners $listener -RequestRoutingRules $rule -Sku $sku
 
@@ -180,9 +180,9 @@ Mit diesem Cmdlet wird ein Application Gateway mit allen Konfigurationselementen
 
 Zum Hinzufügen eines benutzerdefinierten Tests zu einem vorhandenen Application Gateway sind vier Schritte erforderlich.
 
-### Schritt 1 
+### Schritt 1
 
-Laden Sie die Application Gateway-Ressource mithilfe von `Get-AzureRmApplicationGateway` in eine PowerShell-Variable.
+Laden Sie die Application Gateway-Ressource mit „**Get-AzureRmApplicationGateway**” in eine PowerShell-Variable.
 
 	$getgw =  Get-AzureRmApplicationGateway -Name appgwtest -ResourceGroupName appgw-rg
 
@@ -192,19 +192,19 @@ Fügen Sie der vorhandenen Gateway-Konfiguration einen Test hinzu.
 
 	$probe = Add-AzureRmApplicationGatewayProbeConfig -ApplicationGateway $getgw -Name probe01 -Protocol Http -HostName "contoso.com" -Path "/path/custompath.htm" -Interval 30 -Timeout 120 -UnhealthyThreshold 8
 
-   
-Im genannten Beispiel ist der benutzerdefinierte Test so konfiguriert, dass der URL-Pfad „contoso.com/path/custompath.htm“ alle 30 Sekunden überprüft wird. Ein Timeoutschwellenwert mit 120 Sekunden und maximal acht erfolglosen Suchanfragen wird konfiguriert.
+
+Im genannten Beispiel ist der benutzerdefinierte Test so konfiguriert, dass der URL-Pfad „contoso.com/path/custompath.htm“ alle 30 Sekunden überprüft wird. Ein Timeoutschwellenwert mit 120 Sekunden und maximal acht erfolglosen Testanfragen wird konfiguriert.
 
 ### Schritt 3
 
-Fügen Sie den Test mithilfe von `-Set-AzureRmApplicationGatewayBackendHttpSettings` der Einstellungskonfiguration des Back-End-Pools und dem Timeout hinzu.
+Fügen Sie den Test „ **-Set-AzureRmApplicationGatewayBackendHttpSettings**“ den Einstellungen für die Back-End-Konfiguration und dem Timeout hinzu.
 
 
 	 $getgw = Set-AzureRmApplicationGatewayBackendHttpSettings -ApplicationGateway $getgw -Name $getgw.BackendHttpSettingsCollection.name -Port 80 -Protocol Http -CookieBasedAffinity Disabled -Probe $probe -RequestTimeout 120
 
 ### Schritt 4
 
-Speichern Sie die Konfiguration im Application Gateway mithilfe von `Set-AzureRmApplicationGateway`.
+Speichern Sie die Konfigurationen mit „**Set-AzureRmApplicationGateway**” ins Application Gateway.
 
 	Set-AzureRmApplicationGateway -ApplicationGateway $getgw -verbose
 
@@ -212,30 +212,30 @@ Speichern Sie die Konfiguration im Application Gateway mithilfe von `Set-AzureRm
 
 Hier sind die Schritte zum Entfernen eines benutzerdefinierten Tests aus einem vorhandenen Application Gateway aufgeführt.
 
-### Schritt 1 
+### Schritt 1
 
-Laden Sie die Application Gateway-Ressource mithilfe von `Get-AzureRmApplicationGateway` in eine PowerShell-Variable.
+Laden Sie die Application Gateway-Ressource mit „**Get-AzureRmApplicationGateway**” in eine PowerShell-Variable.
 
 	$getgw =  Get-AzureRmApplicationGateway -Name appgwtest -ResourceGroupName appgw-rg
 
 
-### Schritt 2 
+### Schritt 2
 
-Entfernen Sie die Testkonfiguration mithilfe von `Remove-AzureRmApplicationGatewayProbeConfig` aus dem Application Gateway.
+Entfernen Sie die Testkonfiguration aus dem Application Gateway mit „**Remove-AzureRmApplicationGatewayProbeConfig**”.
 
 	$getgw = Remove-AzureRmApplicationGatewayProbeConfig -ApplicationGateway $getgw -Name $getgw.Probes.name
 
-### Schritt 3 
+### Schritt 3
 
-Aktualisieren Sie mithilfe von `-Set-AzureRmApplicationGatewayBackendHttpSettings` die Back-End-Pool-Einstellung, um die Einstellung für den Test und das Timeout zu entfernen
+Verwenden Sie „**-Set-AzureRmApplicationGatewayBackendHttpSettings**”, um die Back-End-Pool-Einstellungen zu aktualisieren und damit den Test und die Timeouteinstellung zu entfernen.
 
 
 	 $getgw=Set-AzureRmApplicationGatewayBackendHttpSettings -ApplicationGateway $getgw -Name $getgw.BackendHttpSettingsCollection.name -Port 80 -Protocol http -CookieBasedAffinity Disabled
 
 ### Schritt 4
-	
-Speichern Sie die Konfiguration im Application Gateway mithilfe von `Set-AzureRmApplicationGateway`.
+
+Speichern Sie die Konfigurationen mit „**Set-AzureRmApplicationGateway**” ins Application Gateway.
 
 	Set-AzureRmApplicationGateway -ApplicationGateway $getgw -verbose
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0114_2016-->

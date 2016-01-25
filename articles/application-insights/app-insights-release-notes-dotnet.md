@@ -11,7 +11,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/17/2015" 
+	ms.date="01/12/2016" 
 	ms.author="abaranch"/>
  
 # Versionshinweise für das Application Insights-SDK für .NET
@@ -32,6 +32,18 @@ Informationen dazu finden Sie unter [Application Insights – Beginnen Sie damit
 * Vergleichen Sie "ApplicationInsights.config" mit der alten Kopie. Die meisten Änderungen sind darauf zurückzuführen, dass einige Module entfernt und andere parametrisierbar gemacht wurden. Reaktivieren Sie alle Anpassungen, die Sie an der alten Datei vorgenommen haben.
 * Erstellen Sie die Projektmappe neu.
 
+## Version 2.0.0-beta4
+
+- Die Erweiterungsmethoden UseSampling und UseAdaptiveSampling wurden nach Microsoft.ApplicationInsights.Extensibility verschoben.
+- Die Unterstützung für Universal Windows Phone- und Store-Anwendungen wurde entfernt.
+- ```DependencyTelemetry``` wurde aktualisiert und verfügt über die neuen Eigenschaften ```ResultCode``` und ```Id```. ```ResultCode``` wird zum Bereitstellen von HTTP-Antwortcode für HTTP-Abhängigkeiten und Fehlercode für SQL-Abhängigkeiten verwendet. ```Id``` wird für die komponentenübergreifende Korrelation verwendet. 
+- Wenn ```ServerTelemetryChannel``` programmgesteuert initialisiert wird, ist jetzt das Aufrufen der ```ServerTelemetryChannel.Initialize()```-Methode erforderlich. Andernfalls wird beständiger Speicher nicht initialisiert. (Dies bedeutet, dass Telemetriedaten verworfen werden, wenn diese aufgrund von vorübergehenden Verbindungsproblemen nicht gesendet werden können.)
+- ```ServerTelemetryChannel``` verfügt über die neue ```StorageFolder```-Eigenschaft, die entweder per Code oder Konfiguration festgelegt werden kann. Wenn diese Eigenschaft festgelegt ist, wird von ApplicationInsights der angegebene Speicherort zum Speichern der Telemetriedaten verwendet, die bei vorübergehenden Verbindungsproblemen nicht gesendet wurden. Wenn die Eigenschaft nicht festgelegt ist oder nicht auf den angegebenen Ordner zugegriffen werden kann, versucht ApplicationInsights, wie zuvor die Ordner „LocalAppData“ oder „Temp“ zu verwenden.
+- Die ```TelemetryConfiguration.GetTelemetryProcessorChainBuilder```-Erweiterungsmethode wird entfernt. Verwenden Sie anstelle dieser Methode die ```TelemetryConfiguration.TelemetryProcessorChainBuilder```-Instanzmethode.
+- Die ```TelemetryConfiguration```-Klasse verfügt über die neue ```TelemetryProcessors```-Eigenschaft, die schreibgeschützten Zugriff auf die ```TelemetryProcessors```-Sammlung ermöglicht.
+- ```Use```, ```UseSampling``` und ```UseAdaptiveSampling``` behält aus der Konfiguration geladene ```TelemetryProcessors```-Elemente bei.
+- Zwei Telemetrieprozessoren werden standardmäßig in der Konfigurationsdatei bereitgestellt: der Benutzer-Agent-Telemetrieprozessor und der Anforderungshandler-Telemetrieprozessor. Ihr Verhalten kann angepasst werden. Sie können eine Benutzer-Agent-Zeichenfolge anhängen, die in der Datei „AI.config“ herausgefiltert werden soll. Standardmäßig wird die Benutzer-Agent-Zeichenfolge ```AllwaysOn``` herausgefiltert. Beim aktuellen Verhalten werden Zeichenfolgen in der CONFIG-Datei mit der Benutzer-Agent-Zeichenfolge verglichen, indem ein vollständiger Vergleich auf Übereinstimmungen mit Beachtung der Groß-/Kleinschreibung durchgeführt wird. Sie können die Liste mit den Handlern auch anpassen, für die Anforderungen herausgefiltert werden sollen. 
+- Die abhängige Microsoft.ApplicationInsights.Agent.Intercept-Nuget-Version wurde auf 1.2.1 aktualisiert. Sie verfügt über Fehlerbehebungen für die Sammlung mit den SQL-Abhängigkeiten.
 
 ## Version 2.0.0-beta3
 
@@ -124,4 +136,4 @@ Für ältere Versionen sind keine Versionshinweise verfügbar.
 
  
 
-<!---HONumber=AcomDC_1223_2015--->
+<!---HONumber=AcomDC_0114_2016--->

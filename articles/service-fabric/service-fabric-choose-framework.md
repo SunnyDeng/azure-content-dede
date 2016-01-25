@@ -18,14 +18,14 @@
 
 # Auswählen eines Frameworks für den Dienst
 
-Service Fabric bietet zwei High-Level-Frameworks zum Erstellen von Diensten: Reliable Actors-APIs und Reliable Services-APIs. Beide Programmiermodelle setzen auf dem gleichen Service Fabric-Kern auf, sie unterscheiden sich jedoch durch unterschiedliche Kompromisse zwischen Einfachheit und Flexibilität im Hinblick auf Parallelität, Partitionierung und Kommunikation. Um das richtige Framework für einen bestimmten Dienst in Ihrer Anwendung zu wählen, sollten Sie beide Modelle kennen.
+Azure Service Fabric bietet zwei High-Level-Frameworks zum Erstellen von Diensten: die Reliable Actors-API und die Reliable Services-API. Beide Programmiermodelle setzen auf dem gleichen Service Fabric-Kern auf, sie unterscheiden sich jedoch durch unterschiedliche Kompromisse zwischen Einfachheit und Flexibilität im Hinblick auf Parallelität, Partitionierung und Kommunikation. Um das richtige Framework für einen bestimmten Dienst in Ihrer Anwendung zu wählen, sollten Sie beide Modelle kennen.
 
-## Vergleich der Reliable Actors- und Reliable Services-APIs
+## Vergleich der Reliable Actors- und der Reliable Services-API
 
-|**Reliable Actors-APIs**|**Reliable Services-APIs**|
+|**Argumente für die Reliable Actors-API**|**Argumente für die Reliable Services-API**|
 |-----------------------|--------------------------|
 |Der Problembereich enthält viele kleine unabhängige Zustands- und Logikeinheiten.|Sie müssen Logik über mehrere Komponenten hinweg gewährleisten.|
-|Sie möchten mit Singlethread-Objekten arbeiten und dennoch skalieren und Konsistenz gewährleisten können.|Sie möchten zuverlässige Auflistungen (wie .NET Wörterbuch und Warteschlange) zum Speichern und Verwalten des Zustands verwenden.|
+|Sie möchten mit Singlethread-Objekten arbeiten und dennoch skalieren und Konsistenz gewährleisten können.|Sie möchten Reliable Collections (wie .NET Reliable Dictionary und Reliable Queue) zum Speichern und Verwalten des Zustands verwenden.|
 |Das Framework soll die Parallelität und Granularität des Zustands verwalten.|Die Granularität und Parallelität des Zustands soll gesteuert werden können.|
 |Die Plattform soll die Kommunikation für Sie verwalten.|Sie möchten die Kommunikation verwalten und das Partitionierungsschema für Ihren Dienst steuern können.|
 
@@ -33,7 +33,7 @@ Bedenken Sie, dass es durchaus sinnvoll ist, verschiedenen Frameworks für versc
 
 ## Nächste Schritte
 
-- [Erfahren Sie mehr über Reliable Actors-APIs](service-fabric-reliable-actors-introduction.md)
-- [Erfahren Sie mehr über Reliable Services-APIs](../Service-Fabric/service-fabric-reliable-services-introduction.md)
+- [Erfahren Sie mehr über die Reliable Actors-API.](service-fabric-reliable-actors-introduction.md)
+- [Erfahren Sie mehr über die Reliable Services-API.](../Service-Fabric/service-fabric-reliable-services-introduction.md)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0114_2016-->

@@ -5,7 +5,7 @@
     documentationCenter="na"
     authors="ms-prkhad"
     manager=""
-    editor=""/>
+    editor="tysonn"/>
 
 <tags
     ms.service="storage"
@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/04/2015"
-    ms.author="robinsh"/>
+    ms.author="prkhad"/>
 
 # Azure Storage Premium: Entwurf für hohe Leistung
 
@@ -111,7 +111,7 @@ Die Leistungsindikatoren im Systemmonitor sind für Prozessor, Arbeitsspeicher u
 | **Max. Arbeitsspeicher** | Für die reibungslose Ausführung der Anwendung erforderlicher Arbeitsspeicher | Zugesicherte verwendete Bytes (%) | vmstat verwenden |
 | **Max. CPU** | Für die reibungslose Ausführung der Anwendung erforderliche CPU-Größe | % Prozessorzeit | %util |
 
-Weitere Informationen zu [iostat](http://linuxcommand.org/man_pages/iostat1.html) und [PerfMon](https://msdn.microsoft.com/library/aa645516.aspx) (Systemmonitor).
+Weitere Informationen zu [iostat](http://linuxcommand.org/man_pages/iostat1.html) und Systemmonitor [PerfMon](https://msdn.microsoft.com/library/aa645516(v=vs.71).aspx).
 
 
 ## Optimieren der Anwendungsleistung  
@@ -158,15 +158,15 @@ Es folgt ein Beispiel, wie Sie IOPS bzw. Durchsatz/Bandbreite für Ihre Anwendun
 
 | **Anwendungsanforderung** | **E/A-Größe** | **IOPS** | **Durchsatz/Bandbreite** |
 |-----------------------------|--------------|----------|--------------------------|
-| Max. IOPS | 8 KB | 5\.000 | 40 MB pro Sekunde |
+| Max. IOPS | 8 KB | 5\.000 | 40 MB pro Sekunde |
 | Max. Durchsatz | 1024 KB | 200 | 200 MB pro Sekunde |
 | Max. Durchsatz + hohe IOPS-Rate | 64 KB | 3\.200 | 200 MB pro Sekunde |
-| Max. IOPS + hoher Durchsatz | 32 KB | 5\.000 | 160 MB pro Sekunde |
+| Max. IOPS + hoher Durchsatz | 32 KB | 5\.000 | 160 MB pro Sekunde |
 
 Um eine IOPS-Rate und Bandbreite zu erzielen, die höher als der Maximalwert eines einzelnen Storage Premium-Datenträgers ist, verwenden Sie mehrere Premium-Datenträger in einem Stripeset. Fügen Sie z. B. zwei P30-Datenträger zu einem Stripeset zusammen, um in dieser Kombination eine IOPS-Rate von 10.000 oder einen Durchsatz von 400 MB pro Sekunde zu erzielen. Wie im nächsten Abschnitt erläutert, müssen Sie eine VM-Größe wählen, die die IOPS-Rate und den Durchsatz der kombinierten Datenträger unterstützt.
 
 >**Hinweis:**  
->Wenn Sie entweder die IOPS-Rate oder den Durchsatz erhöhen, stellen Sie sicher, dass Sie dabei nicht das Durchsatz- oder IOPS-Limit des Datenträgers oder der VM überschreiten.
+>Wenn Sie entweder die IOPS-Rate oder den Durchsatz erhöhen, sollten Sie sicherstellen, dass Sie dabei nicht das Durchsatz- oder IOPS-Limit des Datenträgers oder der VM überschreiten.
 
 Führen Sie zum Überprüfen der Auswirkungen der E/A-Größe auf die Anwendungsleistung in Ihrer VM und auf Ihren Datenträgern Benchmarktools aus. Erstellen Sie mehrere Testläufe, und wählen Sie für jeden Lauf eine andere E/A-Größe, um die Auswirkungen zu prüfen. Im Abschnitt [Benchmarktests](#_Benchmarking) am Ende dieses Artikels finden Sie weitere Details.
 
@@ -177,8 +177,8 @@ Hochleistungs-VMs stehen in mehreren Größen mit jeweils einer anderen Anzahl v
 
 | VM-Größe | CPU-Kerne | Arbeitsspeicher | VM-Datenträgergrößen | Max. Anzahl Datenträger | Cachegröße | IOPS | Limits für Bandbreite, Cache und E/A |
 |---|---|---|---|---|---|---|---|
-| Standard\_DS14 | 16 | 112 GB | Betriebssystem = 1023 GB <br> Lokales SSD = 224 GB | 32 | 576 GB | 50\.000 IOPS <br> 512 MB pro Sekunde | 4\.000 IOPS und 33 MB pro Sekunde |
-| Standard\_GS5 | 32 | 448 GB | Betriebssystem = 1.023 GB <br> Lokales SSD = 896 GB | 64 | 4\.224 GB | 80\.000 IOPS <br> 2.000 MB pro Sekunde | 5\.000 IOPS und 50 MB pro Sekunde |
+| Standard\_DS14 | 16 | 112 GB | Betriebssystem = 1023 GB <br> Lokales SSD = 224 GB | 32 | 576 GB | 50\.000 IOPS <br> 512 MB pro Sekunde | 4\.000 IOPS und 33 MB pro Sekunde |
+| Standard\_GS5 | 32 | 448 GB | Betriebssystem = 1023 GB <br> Lokales SSD = 896 GB | 64 | 4\.224 GB | 80\.000 IOPS <br> 2.000 MB pro Sekunde | 5\.000 IOPS und 50 MB pro Sekunde |
 
 Eine vollständige Übersicht mit allen verfügbaren Azure-VM-Größen finden Sie unter [Größen für virtuelle Azure-Computer](virtual-machines-size-specs.md). Wählen Sie eine VM-Größe, die Ihre Anforderungen an die Anwendungsleistung erfüllen und entsprechend skaliert werden kann. Berücksichtigen Sie darüber hinaus folgende wichtige Aspekte bei der Wahl der VM-Größe.
 
@@ -188,7 +188,7 @@ Die maximalen IOPS-Limits pro VM und Datenträger sind unterschiedlich und vonei
 Beispiel: Angenommen, eine Anwendungsanforderung ist ein IOPS-Wert von maximal 4.000. Um dies zu erreichen, stellen Sie einen P30-Datenträger in einer VM der DS1-Serie bereit. Der P30-Datenträger kann bis zu 5.000 IOPS bieten. Die VM der DS1-Serie ist jedoch auf 3.200 IOPS beschränkt. Daher wird die Anwendungsleistung gemäß dem VM-Limit auf 3.200 IOPS verringert. Um dies zu vermeiden, wählen eine VM- und Datenträgergröße, die beide Anwendungsanforderungen erfüllt.
 
 *Betriebskosten*  
-In vielen Fällen ist es möglich, dass die Gesamtbetriebskosten bei Verwenden von Storage Premium niedriger als bei Verwenden von Storage Standard sind.
+In vielen Fällen ist es möglich, dass die Gesamtbetriebskosten bei der Verwendung von Storage Premium niedriger als bei der Verwendung von Storage Standard sind.
 
 Nehmen wir als Beispiel eine Anwendung, die 16.000 IOPS benötigt. Um diese Leistung zu erzielen, brauchen Sie eine Azure IaaS-VM vom Typ „Standard\_D14“, die bei Verwenden von 32 Storage Standard-Datenträgern mit je 1 TB eine maximale IOPS-Rate von 16.000 bietet. Jeder Storage Standard-Datenträger mit 1 TB kann maximal 500 IOPS erzielen. Die geschätzten Kosten für diese VM pro Monat liegen bei 1.570 $. Die monatliche Kosten der 32 Storage Standard-Datenträger betragen 1.638 $. Die geschätzten monatlichen Gesamtkosten betragen 3.208 $.
 
@@ -198,12 +198,12 @@ In der folgenden Tabelle wird die Aufschlüsselung der Kosten für Storage Stand
 
 | | **Standard** | **Premium** |
 |---|---|---|
-| **VM-Kosten pro Monat** | 1\.570,58 $ (Standard\_D14) | 1\.003,66 $ (Standard\_DS13) |
+| **VM-Kosten pro Monat** | 1\.570.58 $ (Standard\_D14) | 1\.003,66 $ (Standard\_DS13) |
 | **Datenträgerkosten pro Monat** | 1\.638,40 $ (32 1-TB-Festplatten) | 544,34 $ (4 P30-Datenträger) |
 | **Gesamtkosten pro Monat** | 3\.208,98 $ | 1\.544,34 $ |
 
 *Linux-Distributionen*  
-Mit Azure Storage Premium erhalten Sie unter Windows und Linux das gleiche Maß an Leistung für virtuelle Computer. Wir unterstützen viele Arten von Linux-Distributionen. Eine vollständige Liste finden Sie [hier](https://azure.microsoft.com/documentation/articles/virtual-machines-linux-endorsed-distributions/). Es ist wichtig zu beachten, dass verschiedene Distributionen für verschiedene Arten von Workloads besser geeignet sind. Je nach Distribution, in der Ihr Workload ausgeführt wird, sind die Leistungsgrade unterschiedlich. Testen Sie die Linux-Distributionen mit Ihrer Anwendung, und wählen Sie diejenige, die am besten geeignet ist.
+Mit Azure Storage Premium erhalten Sie unter Windows und Linux das gleiche Maß an Leistung für virtuelle Computer. Wir unterstützen viele Arten von Linux-Distributionen. Eine vollständige Liste finden Sie [hier](virtual-machines-linux-endorsed-distributions.md). Es ist wichtig zu beachten, dass verschiedene Distributionen für verschiedene Arten von Workloads besser geeignet sind. Je nach Distribution, in der Ihr Workload ausgeführt wird, sind die Leistungsgrade unterschiedlich. Testen Sie die Linux-Distributionen mit Ihrer Anwendung, und wählen Sie diejenige, die am besten geeignet ist.
 
 Überprüfen Sie bei Ausführen von Linux mit Storage Premium die neuesten Updates hinsichtlich erforderlicher Treiber, um eine hohe Leistung zu gewährleisten.
 
@@ -221,7 +221,7 @@ Die zu wählende Anzahl von Datenträgern hängt von der gewählten Datenträger
 *Skalierungslimits (IOPS und Durchsatz)*  
 Die IOPS- und Durchsatzlimits der einzelnen Premium-Datenträgergrößen sind unterschiedlich und unabhängig von den VM-Skalierungslimits. Vergewissern Sie sich, dass die gesamte IOPS- und Durchsatzrate der Datenträger innerhalb der Skalierungslimits der gewählten VM-Größe liegen.
 
-Beispiel: Angenommen, eine Anwendungsanforderung hat einen Durchsatz von maximal 250 MB/s, und Sie verwenden eine VM vom Typ DS4 mit einem einzelnen P30-Datenträger. Die VM vom Typ DS4 kann einen Durchsatz von bis zu 256 MB/s bieten. Ein einzelner P30-Datenträger hat jedoch ein Durchsatzlimit von 200 MB/s. Demzufolge wird die Anwendung aufgrund des Datenträgerlimits auf 200 MB/s beschränkt. Um diese Beschränkung zu umgehen, stellen Sie für die VM mehr als einen Datenträger bereit.
+Beispiel: Angenommen, eine Anwendungsanforderung hat einen Durchsatz von maximal 250 MB/s, und Sie verwenden eine VM vom Typ DS4 mit einem einzelnen P30-Datenträger. Die VM vom Typ DS4 kann einen Durchsatz von bis zu 256 MB/s bieten. Ein einzelner P30-Datenträger hat jedoch ein Durchsatzlimit von 200 MB/s.Demzufolge wird die Anwendung aufgrund des Datenträgerlimits auf 200 MB/s beschränkt. Um diese Beschränkung zu umgehen, stellen Sie für die VM mehr als einen Datenträger bereit.
 
 >**Hinweis:**  
 >Leseanforderungen, die aus dem Cache erfüllt werden, bleiben bei der IOPS- und Durchsatzleistung des Datenträgers unberücksichtigt und unterliegen deshalb keinen Datenträgerlimits. Für den Cache gelten separate IOPS- und Durchsatzlimits pro VM.
@@ -395,13 +395,13 @@ Nachdem der Cachedatenträger aufgefüllt wurde, fahren Sie mit den nachstehende
 
 | Testszenario | Zielvolume | Name | Ergebnis |
 |--------------------|---------------|-------------------|--------------|
-| Max. Lese-IOPS | CacheReads | RandomWrites\_8K | 50\.000 IOPS |
-| Max. Schreib-IOPS | NoCacheWrites | RandomReads\_8K | 64\.000 IOPS |
-| Max. Kombinierte IOPS | CacheReads | RandomWrites\_8K | 100\.000 IOPS |
+| Max. Lese-IOPS | CacheReads | RandomWrites\_8K | 50\.000 IOPS |
+| Max. Schreib-IOPS | NoCacheWrites | RandomReads\_8K | 64\.000 IOPS |
+| Max. Kombinierte IOPS | CacheReads | RandomWrites\_8K | 100\.000 IOPS |
 | | NoCacheWrites | RandomReads\_8K | |
 | Max. Lesen – MB/s | CacheReads | RandomWrites\_64K | 524 MB/s |
 | Max. Schreiben – MB/s | NoCacheWrites | RandomReads\_64K | 524 MB/s |
-| Kombiniert – MB/s | CacheReads | RandomWrites\_64K | 1\.000 MB/s |
+| Kombiniert – MB/s | CacheReads | RandomWrites\_64K | 1000 MB/s |
 | | NoCacheWrites | RandomReads\_64K | |
 
 Nachstehend sehen Sie Screenshots der Iometer-Testergebnisse für kombinierte IOPS- und Durchsatz-Szenarien
@@ -413,7 +413,7 @@ Nachstehend sehen Sie Screenshots der Iometer-Testergebnisse für kombinierte IO
 ![](media/storage-premium-storage-performance/image10.png)
 
 ### FIO  
-FIO ist ein beliebtes Tool für Benchmarktests des Speichers von Linux-VMs. Es ermöglicht die flexible Auswahl unterschiedlicher E/A-Größen sowie sequenzieller oder zufälliger Lese- und Schreibvorgänge. FIO erzeugt Arbeitsthreads oder Prozesse zum Ausführen der angegebenen E/A-Vorgänge. Mithilfe von Auftragsdateien können Sie den Typ der E/A-Vorgänge angeben, den jeder Arbeitsthread ausführen soll. Wir haben eine Auftragsdatei pro Szenario erstellt, was in den folgenden Beispielen veranschaulicht wird. Sie können die Spezifikationen in diesen Auftragsdateien ändern, um Benchmarktests für verschiedene Workloads in Storage Premium auszuführen. In den Beispielen verwenden wir eine Standard-VM vom Typ DS 14 unter**Ubuntu**. Verwenden Sie dieselbe am Anfang des Abschnitts „Benchmarktests“ beschriebene Einrichtung, und füllen Sie den Cache vor dem Ausführen der Benchmarktests auf.
+FIO ist ein beliebtes Tool für Benchmarktests des Speichers von Linux-VMs. Es ermöglicht die flexible Auswahl unterschiedlicher E/A-Größen sowie sequenzieller oder zufälliger Lese- und Schreibvorgänge. FIO erzeugt Arbeitsthreads oder Prozesse zum Ausführen der angegebenen E/A-Vorgänge. Mithilfe von Auftragsdateien können Sie den Typ der E/A-Vorgänge angeben, den jeder Arbeitsthread ausführen soll. Wir haben eine Auftragsdatei pro Szenario erstellt, was in den folgenden Beispielen veranschaulicht wird. Sie können die Spezifikationen in diesen Auftragsdateien ändern, um Benchmarktests für verschiedene Workloads in Storage Premium auszuführen. In den Beispielen verwenden wir eine Standard-VM vom Typ DS 14 unter**Ubuntu**. Verwenden Sie dieselbe am Anfang des Abschnitts „Benchmarktests“ beschriebene Einrichtung, und füllen Sie den Cache vor dem Ausführen der Benchmarktests auf.
 
 Installieren Sie FIO auf der virtuellen Maschine, bevor Sie beginnen. Laden Sie FIO von [GitHub](https://github.com/axboe/fio) herunter.
 
@@ -451,7 +451,7 @@ directory=/mnt/nocache
 Beachten Sie, dass die folgenden wichtigen Aspekte in Einklang mit den in den vorherigen Abschnitten erörterten Entwurfsrichtlinien sind. Diese Spezifikationen sind zum Erzielen der maximalen IOPS wichtig:  
 -   Eine hohe Warteschlangenlänge von 256  
 -   Eine kleine Blockgröße von 8 KB  
--   Mehrere Threads, die sequentielle Schreibvorgänge ausführen
+-   Mehrere Threads, die sequentielle Lesevorgänge ausführen
 
 Führen Sie den folgenden Befehl aus, um einen 30-sekündigen FIO-Test zu starten:
 				
@@ -564,8 +564,8 @@ Weitere Informationen zu Azure Storage Premium:
 
 Für SQL Server-Benutzer bietet sich das Lesen von Artikeln zu den bewährten Methoden für die Leistung von SQL Server an:
 
-- [Bewährte Methoden für die Leistung von SQL Server in 
-- Azure Virtual Machines](https://msdn.microsoft.com/library/azure/dn133149.aspx) 
+- [Bewährte Methoden für die Leistung von SQL Server in
+- Azure Virtual Machines](https://msdn.microsoft.com/library/azure/dn133149.aspx)
 - [Azure Storage Premium bietet höchste Leistung für SQL Server in Azure-VM](http://blogs.technet.com/b/dataplatforminsider/archive/2015/04/23/azure-premium-storage-provides-highest-performance-for-sql-server-in-azure-vm.aspx)  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0114_2016-->

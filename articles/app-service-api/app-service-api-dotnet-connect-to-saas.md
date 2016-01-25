@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="dotnet" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/22/2015" 
+	ms.date="01/08/2016" 
 	ms.author="tdykstra"/>
 
 # Verbinden mit einer SaaS-Plattform über eine ASP.NET-API-App in Azure App Service
@@ -28,15 +28,15 @@ Als Alternative zum Schreiben von Code, der eine SaaS-API direkt aus einer benut
 
 In diesem Tutorial werden die folgenden Schritte behandelt:
 
-* Erstellen eines API-App-Projekts in Visual Studio. 
-* Konfigurieren der Datei *apiapp.json*, um der API-App die Verbindung mit dem Dropbox-Dienst zu ermöglichen.
-* Hinzufügen von Code, der Dropbox aufruft und die Ergebnisse zurückgibt.
-* Erstellen einer neuen API-App in Azure.
-* Bereitstellen des Projekts für die API-App.
-* Konfigurieren der API-App.
-* Konfigurieren des Gateways.
-* Erstellen eines Testclients.
-* Ausführen des Testclients.
+* Erstellen eines API-App-Projekts in Visual Studio 
+* Konfigurieren der Datei *apiapp.json*, um der API-App die Verbindung mit dem Dropbox-Dienst zu ermöglichen
+* Hinzufügen von Code, der Dropbox aufruft und die Ergebnisse zurückgibt
+* Erstellen einer neuen API-App in Azure
+* Bereitstellen des Projekts für die API-App
+* Konfigurieren der API-App
+* Konfigurieren des Gateways
+* Erstellen eines Testclients
+* Ausführen des Testclients
 
 ## Voraussetzungen
 
@@ -427,7 +427,7 @@ Falls Sie den HTTP-Fehler 405 erhalten, sobald der Code "GetConsentLinkAsync" au
 
 ![](./media/app-service-api-dotnet-connect-to-saas/http405.png)
 
-Sie erhalten den Fehler "405 – Nicht zulässig", da der Client versucht, eine Nicht-SSL-HTTP POST-Anforderung zu stellen, die das Gateway an **https://* umleitet. Diese Umleitung verursacht eine GET-Anforderung. Die URL zum Abrufen von eines Zustimmungslinks akzeptiert nur POST-Anforderungen.
+Sie erhalten den Fehler "405 – Nicht zulässig", da der Client versucht, eine Nicht-SSL-HTTP POST-Anforderung zu stellen, die das Gateway an *https://* umleitet. Diese Umleitung verursacht eine GET-Anforderung. Die URL zum Abrufen von eines Zustimmungslinks akzeptiert nur POST-Anforderungen.
 
 ### <a id="400"></a>HTTP-Fehler 400 anstelle der Dropbox-Anmeldeseite
 
@@ -454,4 +454,4 @@ Sie haben erfahren, wie Sie eine API-App programmieren und konfigurieren, die si
 [Azure preview portal]: https://portal.azure.com/
 [Azure portal]: https://manage.windowsazure.com/
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

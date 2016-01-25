@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
 	ms.topic="article"
-	ms.date="10/01/2015"
+	ms.date="01/12/2016"
 	ms.author="krisragh"/>
 
 # Hinzufügen von Authentifizierung zu einer vorhandenen App
@@ -90,4 +90,4 @@ Als Nächstes erfahren Sie, [wie der Benutzer-ID-Wert zum Filtern der zurückgeg
 
 [klassischen Azure-Portal]: https://manage.windowsazure.com/
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

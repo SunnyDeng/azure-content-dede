@@ -10,7 +10,7 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
+    ms.date="01/12/2016" 
     ms.author="markvi" />
 
 
@@ -21,7 +21,7 @@ In diesem Tutorial wird die Integration von Azure und Zscaler ZSCloud erläutert
 -   Ein gültiges Azure-Abonnement
 -   Ein Zscaler ZSCloud-Abonnement, für das einmaliges Anmelden aktiviert ist
   
-Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie Zscaler ZSCloud zugewiesen haben, mittels einmaliger Anmeldung auf Ihrer Zscaler ZSCloud-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können Sie die [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md) nutzen.
+Nach Abschluss dieses Tutorials können sich die Zscaler ZSCloud zugewiesenen Azure AD-Benutzer mittels einmaliger Anmeldung auf Ihrer Zscaler ZSCloud-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können Sie die [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md) nutzen.
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -57,7 +57,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Zsc
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-zscaler-zscloud-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie im **Suchfeld** den Suchbegriff **Zscaler ZSCloud** ein.
+6.  Geben Sie im **Suchfeld** das Wort **Zscaler ZSCloud** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-zscaler-zscloud-tutorial/IC800276.png "Anwendungskatalog")
 
@@ -79,7 +79,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-zscaler-zscloud-tutorial/IC800279.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Zscaler ZSCloud-Anmelde-URL** die URL ein, welche die Benutzer zur Anmeldung bei Zscaler ZSCloud verwenden, und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Zscaler ZSCloud-Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei Zscaler ZSCloud verwenden, und klicken Sie dann auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-zscaler-zscloud-tutorial/IC800280.png "App-URL konfigurieren")
 
@@ -201,4 +201,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0114_2016-->

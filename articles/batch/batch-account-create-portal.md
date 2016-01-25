@@ -72,7 +72,7 @@ Klicken Sie zum Anzeigen und Verwalten der Zugriffsschlüssel auf das Schlüssel
 
 * Sie können mehrere Batch-Workloads in einem Batch-Konto ausführen oder die Workloads auf Batch-Konten in verschiedenen Azure-Regionen aufteilen.
 
-* Wenn Sie mehrere umfangreiche Batch-Workloads ausführen, sollten Sie bestimmte [Kontingente und Limits für den Batch-Dienst](batch-quota-limit.md) beachten, die für Ihr Azure-Abonnement und jedes Batch-Konto gelten. Sie finden die aktuell gültigen Kontingente für ein Batch-Konto im Vorschauportal unter den Kontoeigenschaften.
+* Wenn Sie mehrere umfangreiche Batch-Workloads ausführen, sollten Sie bestimmte [Kontingente und Limits für den Batch-Dienst](batch-quota-limit.md) beachten, die für Ihr Azure-Abonnement und jedes Batch-Konto gelten. Die aktuell gültigen Kontingente für ein Batch-Konto finden Sie im Portal unter den Kontoeigenschaften.
 
 ## Nächste Schritte
 
@@ -84,4 +84,4 @@ Klicken Sie zum Anzeigen und Verwalten der Zugriffsschlüssel auf das Schlüssel
 [account_portal]: ./media/batch-account-create-portal/batch_acct_portal.png
 [account_keys]: ./media/batch-account-create-portal/account_keys.PNG
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

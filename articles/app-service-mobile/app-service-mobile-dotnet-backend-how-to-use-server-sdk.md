@@ -228,7 +228,7 @@ Sie können dem Serverprojekt eine Authentifizierung hinzufügen, indem Sie das 
 
 2. Fügen Sie in der Projektdatei "Startup.cs" die folgende Codezeile am Anfang der **Configuration**-Methode hinzu:
 
-		app.UseMobileAppAuthentication(config);
+		app.UseAppServiceAuthentication(config);
 
 	Diese fügt die OWIN-Middleware-Komponente hinzu, mit der Ihre Azure Mobile App das vom zugeordneten App Service-Gateway ausgestellte Token überprüfen kann.
 
@@ -242,20 +242,20 @@ Sie können auch eigene Anmeldesysteme bereitstellen, wenn Sie keinen der Authen
 
 Sie müssen Ihre eigene Logik bereitstellen, mit der ermittelt wird, ob ein Benutzer angemeldet werden soll. Sie können beispielsweise eine Datenbank auf Kennwörter mit Salt und Hash überprüfen. Im folgenden Beispiel übernimmt die `isValidAssertion()`-Methode diese Überprüfungen. Sie wird an anderer Stelle definiert.
 
-Die benutzerdefinierte Authentifizierung wird durch Erstellen eines neuen ApiController-Elements und Anmeldeaktionen (siehe weiter unten) verfügbar gemacht. Der Client kann die Anmeldung ausführen, indem er die relevanten Informationen vom Benutzer abruft und einen HTTPS-POST-Aufruf mit den Benutzerinformationen im Text an die API sendet. Sobald diese Informationen überprüft wurden, kann mithilfe der `MobileAppLoginHandler.CreateToken()`-Methode ein Token ausgestellt werden.
+Die benutzerdefinierte Authentifizierung wird durch Erstellen eines neuen ApiController-Elements und Anmeldeaktionen (siehe weiter unten) verfügbar gemacht. Der Client kann die Anmeldung ausführen, indem er die relevanten Informationen vom Benutzer abruft und einen HTTPS-POST-Aufruf mit den Benutzerinformationen im Text an die API sendet. Wenn der Server die Assertion überprüft, kann mithilfe der `AppServiceLoginHandler.CreateToken()`-Methode ein Token ausgegeben werden.
 
 Beispiel für eine Anmeldeaktion:
 
-		public HttpResponseMessage Post([FromBody] JObject assertion)
+		public IHttpActionResult Post([FromBody] JObject assertion)
 		{
 			if (isValidAssertion(assertion)) // user-defined function, checks against a database
 			{
-				JwtSecurityToken token = MobileAppLoginHandler.CreateToken(new Claim[] { new Claim(JwtRegisteredClaimNames.Sub, assertion["username"]) },
+				JwtSecurityToken token = AppServiceLoginHandler.CreateToken(new Claim[] { new Claim(JwtRegisteredClaimNames.Sub, assertion["username"]) },
 					mySigningKey,
 					myAppURL,
 					myAppURL,
 					TimeSpan.FromHours(24) );
-				return this.Request.CreateResponse(HttpStatusCode.OK, new LoginResult()
+				return Ok(new LoginResult()
 				{
 					AuthenticationToken = token.RawData,
 					User = new LoginResultUser() { UserId = userName.ToString() }
@@ -276,9 +276,17 @@ In diesem Beispiel sind „LoginResult“ und „LoginResultUser“ nur einfache
 			}
 		}
 
-Die `MobileAppLoginHandler.CreateToken()`-Methode enthält die Parameter _audience_ und _issuer_. Für diese beiden Parameter wird in der Regel mithilfe des HTTPS-Schemas die URL des Anwendungsstammverzeichnisses festgelegt. Für _secretKey_ muss der Wert des Signaturschlüssels Ihrer Anwendung festgelegt werden. Dies ist ein vertraulicher Wert, der keinesfalls freigegeben werden oder in einem Client enthalten sein sollte. Sie können diesen in App Service gehosteten Wert abrufen, indem Sie auf die Umgebungsvariable _WEBSITE\_AUTH\_SIGNING\_KEY_ verweisen. Falls er in einem lokalen Debuggingkontext erforderlich ist, befolgen Sie die Anweisungen im Abschnitt [Lokales Debuggen mit Authentifizierung](#local-debug), um den Schlüssel abzurufen und als Anwendungseinstellung zu speichern.
+Die `MobileAppLoginHAppServiceLoginHandlerandler.CreateToken()`-Methode enthält die Parameter _audience_ und _issuer_. Für diese beiden Parameter wird in der Regel mithilfe des HTTPS-Schemas die URL des Anwendungsstammverzeichnisses festgelegt. Für _secretKey_ muss der Wert des Signaturschlüssels Ihrer Anwendung festgelegt werden. Dies ist ein vertraulicher Wert, der keinesfalls freigegeben werden oder in einem Client enthalten sein sollte. Sie können diesen in App Service gehosteten Wert abrufen, indem Sie auf die Umgebungsvariable _WEBSITE\_AUTH\_SIGNING\_KEY_ verweisen. Falls er in einem lokalen Debuggingkontext erforderlich ist, befolgen Sie die Anweisungen im Abschnitt [Lokales Debuggen mit Authentifizierung](#local-debug), um den Schlüssel abzurufen und als Anwendungseinstellung zu speichern.
 
 Sie müssen darüber hinaus eine Lebensdauer für das ausgestellte Token sowie alle Ansprüche angeben, die aufgenommen werden sollen. Wie im Beispielcode gezeigt, müssen Sie den Anspruch „Betreff“ angeben.
+
+Sie können den Clientcode auch vereinfachen, um die `loginAsync()`-Methode (die Benennung kann über Plattformen hinweg variieren) anstelle einer manuellen HTTP POST-Methode zu verwenden. Sie verwenden die Überlagerung, die einen zusätzlichen Parameter verwendet, der mit dem Assertionsprojekt zusammenhängt, das Sie bereitstellen möchten. Der Anbieter sollte in diesem Fall einen benutzerdefinierten Namen Ihrer Wahl tragen. Auf dem Server erfolgt Ihre Anmeldeaktion dann unter dem Pfad _/.auth/login/{customProviderName}_, der diesen benutzerdefinierten Namen enthält. Um den Controller unter diesem Pfad zu speichern, fügen Sie Ihrer HttpConfiguration eine Route hinzu, bevor Sie Ihre MobileAppConfiguration anwenden.
+
+		config.Routes.MapHttpRoute("CustomAuth", ".auth/login/CustomAuth", new { controller = "CustomAuth" }); 
+		
+Ersetzen Sie die Zeichenfolge „CustomAuth“ oben durch den Namen des Controller, der Ihre Anmeldeaktion hostet.
+
+>[AZURE.TIP]Mit dem loginAsync()-Ansatz wird sichergestellt, dass das Authentifizierungstoken jedem nachfolgenden Aufruf des Diensts angefügt wird.
 
 ###<a name="user-info"></a>Vorgehensweise: Abrufen von Informationen zu authentifizierten Benutzern
 
@@ -359,7 +367,7 @@ Sie können dem Serverprojekt Pushbenachrichtigungen hinzufügen, indem Sie das 
 
 An diesem Punkt können Sie den Notification Hubs-Client zum Senden von Pushbenachrichtigungen an registrierte Geräte verwenden. Weitere Informationen finden Sie unter [Hinzufügen von Pushbenachrichtigungen zur App](app-service-mobile-ios-get-started-push.md) Weitere Informationen zu allem, was mit Notification Hubs machbar ist, finden Sie unter [Übersicht über Notification Hubs](../notification-hubs/notification-hubs-overview.md).
 
-##<a name="tags"></a>Vorgehensweise: Hinzufügen von Tags zu einer Geräteinstallation zum Aktivieren von Pushvorgängen an Tags
+##<a name="tags"></a>Hinzufügen von Tags zu einer Geräteinstallation zum Aktivieren von Pushvorgängen an Tags
 
 Gemäß den Schritten unter **Vorgehensweise: Definieren eines benutzerdefinierten API-Controllers** können Sie eine benutzerdefinierte API auf Ihrem Back-End einrichten, die mit Notification Hubs zusammenarbeitet, um Tags einer bestimmten Geräteinstallation hinzuzufügen. Stellen Sie sicher, dass Sie die im lokalen Clientspeicher gespeicherte Installations-ID und die hinzuzufügenden Tags übergeben. (Letzteres ist optional, da Sie Tags auch direkt auf Ihrem Back-End angeben können.) Fügen Sie Ihrem Controller den folgenden Ausschnitt für die Zusammenarbeit mit Notification Hubs hinzu, um ein Tag zu einer Geräteinstallations-ID hinzuzufügen.
 
@@ -414,7 +422,7 @@ So können Sie die Diagnose aktivieren und in die Protokolle schreiben:
 
 Sie können zum Testen von Änderungen Ihre Anwendung vor der Veröffentlichung in der Cloud lokal ausführen. Bei vielen Apps muss dazu in Visual Studio nur die Taste *F5* gedrückt werden. Bei der Verwendung der Authentifizierung gibt es jedoch einige zusätzliche Aspekte zu berücksichtigen.
 
-Sie benötigen eine cloudbasierte mobile App, für die App Service-Authentifizierung/-Autorisierung konfiguriert ist. Für den Client muss als alternativer Anmeldehost zudem der Cloudendpunkt angegeben sein. Die für Ihre Clientplattform ([iOS](app-service-mobile-ios-how-to-use-client-library.md), [Windows/Xamarin](app-service-mobile-dotnet-how-to-use-client-library.md)) erforderlichen Schritte finden Sie in der entsprechenden Dokumentation.
+Sie benötigen eine cloudbasierte mobile App, für die App Service-Authentifizierung/-Autorisierung konfiguriert ist. Für den Client muss als alternativer Anmeldehost zudem der Cloudendpunkt angegeben sein. Die für Ihre ausgewählte Clientplattform ([iOS](app-service-mobile-ios-how-to-use-client-library.md), [Windows/Xamarin](app-service-mobile-dotnet-how-to-use-client-library.md)) erforderlichen Schritte finden Sie in der entsprechenden Dokumentation.
 
 Stellen Sie sicher, dass für Ihre Anwendung [Microsoft.Azure.Mobile.Server.Authentication] installiert ist. Fügen Sie dann in der OWIN-Startklasse Ihrer Anwendung Folgendes hinzu (nach der Anwendung von `MobileAppConfiguration` auf `HttpConfiguration`):
 		
@@ -439,4 +447,4 @@ Ihr lokal ausgeführter Server kann nun Token überprüfen, die der Client vom c
 [Microsoft.Azure.Mobile.Server.Login]: http://www.nuget.org/packages/Microsoft.Azure.Mobile.Server.Login/
 [Microsoft.Azure.Mobile.Server.Notifications]: http://www.nuget.org/packages/Microsoft.Azure.Mobile.Server.Notifications/
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0114_2016-->

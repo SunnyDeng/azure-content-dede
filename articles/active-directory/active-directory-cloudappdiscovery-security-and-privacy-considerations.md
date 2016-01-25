@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/05/2015"
+	ms.date="01/12/2016"
 	ms.author="markusvi"/>
 
 # Überlegungen zu Sicherheit und Datenschutz in Cloud App Discovery
@@ -179,4 +179,4 @@ Um die Sicherheit der erfassten Metadaten zu gewährleisten, haben standardmäß
 
 * [Wie ermittle ich nicht genehmigte Cloud-Apps, die in meiner Organisation verwendet werden?](active-directory-cloudappdiscovery-whatis.md)
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0114_2016-->

@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/08/2015"
+	ms.date="01/07/2016"
 	ms.author="davidmu"/>
 
 # Bereitstellen eines WordPress-Servers auf Ubuntu mit einer Azure-Ressourcen-Manager-Vorlage
@@ -92,18 +92,4 @@ Beim Ausführen des Befehls **azure group deployment create** werden Sie aufgefo
 
 Wenn die Vorlagenausführung abgeschlossen ist, verfügen Sie über einen neuen WordPress-Server, der in der neuen Ressourcengruppe unter Ubuntu ausgeführt wird.
 
-## Zusätzliche Ressourcen
-
-[Bereitstellen und Verwalten von virtuellen Computern mit Azure-Ressourcen-Manager-Vorlagen und Azure PowerShell](virtual-machines-deploy-rmtemplates-powershell.md)
-
-[Azure-Rechen-, Netzwerk- und Speicheranbieter unter dem Azure Resource Manager](virtual-machines-azurerm-versus-azuresm.md)
-
-[Übersicht über den Azure Resource Manager](../resource-group-overview.md)
-
-[Bereitstellen und Verwalten von virtuellen Computern mit Azure Resource Manager-Vorlagen und der Azure-CLI](virtual-machines-deploy-rmtemplates-azure-cli.md)
-
-[Dokumentation zu virtuellen Computern](http://azure.microsoft.com/documentation/services/virtual-machines/)
-
-[Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md)
-
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

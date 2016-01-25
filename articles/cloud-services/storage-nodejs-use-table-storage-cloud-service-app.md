@@ -3,7 +3,7 @@
 	description="Ein Tutorial, das auf der Web-App mit dem Express-Tutorial basiert, und Azure-Speicherdienste sowie das Azure-Modul hinzufügt." 
 	services="cloud-services, storage" 
 	documentationCenter="nodejs" 
-	authors="TomArcher" 
+	authors="rmcmurray" 
 	manager="wpickett" 
 	editor=""/>
 
@@ -13,13 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="nodejs" 
 	ms.topic="article" 
-	ms.date="09/01/2015" 
-	ms.author="tarcher"/>
-
-
-
-
-
+	ms.date="01/09/2016" 
+	ms.author="robmcm"/>
 
 # Node.js-Webanwendung mit Speicher
 
@@ -408,4 +403,4 @@ In den folgenden Schritten erfahren Sie, wie Sie die Anwendung beenden und lösc
  
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0114_2016-->

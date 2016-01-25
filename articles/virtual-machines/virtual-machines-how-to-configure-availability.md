@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Konfigurieren einer Verfügbarkeitsgruppe für virtuelle Computer | Microsoft Azure"
+	pageTitle="Konfigurieren einer Verfügbarkeitsgruppe für klassische VMs | Microsoft Azure"
 	description="Konfigurieren Sie eine Verfügbarkeitsgruppe für einen neuen oder vorhandenen virtuellen Computer im klassischen Bereitstellungsmodell mithilfe des klassischen Azure-Portals und mit Azure PowerShell."
 	services="virtual-machines"
 	documentationCenter=""
@@ -14,24 +14,24 @@
 	ms.tgt_pltfrm="vm-multiple"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/10/2015"
+	ms.date="01/07/2016"
 	ms.author="cynthn"/>
 
 # Konfigurieren einer Verfügbarkeitsgruppe für virtuelle Computer im klassischen Bereitstellungsmodell
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell. Sie können auch Verfügbarkeitsgruppen in Ressourcen-Manager-Bereitstellungen konfigurieren.
 
 
 Eine Verfügbarkeitsgruppe hilft, dass Ihre virtuellen Computer während eines Ausfalls wie während einer Wartung verfügbar bleiben. Das Platzieren von mindestens zwei ähnlich konfigurierten virtuellen Computern in einer Verfügbarkeitsgruppe erstellt die Redundanz, die zum Wahren der Verfügbarkeit der Anwendungen oder Dienste erforderlich ist, die auf Ihrem virtuellen Computer ausgeführt werden. Ausführliche Informationen hierzu finden Sie unter [Verwalten der Verfügbarkeit virtueller Computer][].
 
 Sie sollten eine Kombination aus Verfügbarkeitssätzen und Endpunkten mit Lastenausgleich verwenden, um sicherzustellen, dass Ihre Anwendung stets verfügbar ist und effizient ausgeführt wird. Details über Endpunkte mit Lastenausgleich finden Sie unter [Lastenausgleich für Azure-Infrastrukturdienste][].
 
-Mithilfe einer der beiden folgenden Optionen können Sie einen virtuellen Computer in eine Verfügbarkeitsgruppe versetzen:
+Beim klassischen Bereitstellungsmodell können Sie mithilfe einer der beiden folgenden Optionen virtuelle Maschinen in eine Verfügbarkeitsgruppe versetzen:
 
 - [Option 1: Erstellen Sie gleichzeitig einen virtuellen Computer und eine Verfügbarkeitsgruppe][]. Fügen Sie der Gruppe anschließend die neuen virtuellen Computer hinzu, wenn Sie diese virtuellen Computer erstellen.
 - [Option 2: Fügen Sie einer Verfügbarkeitsgruppe einen vorhandenen virtuellen Computer hinzu][].
 
->[AZURE.NOTE]Virtuelle Computer, die Sie in dieselbe Verfügbarkeitsgruppe versetzen möchten, müssen zum selben Clouddienst gehören.
+>[AZURE.NOTE]Beim klassischen Modell müssen virtuelle Maschinen, die Sie in dieselbe Verfügbarkeitsgruppe versetzen möchten, zum selben Clouddienst gehören.
 
 ## <a id="createset"> </a>Option 1: Erstellen Sie gleichzeitig einen virtuellen Computer und eine Verfügbarkeitsgruppe##
 
@@ -112,4 +112,4 @@ Um Azure PowerShell-Befehle zu verwenden, öffnen Sie eine Azure PowerShell-Sitz
 [Virtuelle Netzwerke im Überblick]: virtual-networks-overview.md
 [Artikel zu virtuellen Computern in der Dienstverwaltung]: virtual-machines-service-management-articles.md
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

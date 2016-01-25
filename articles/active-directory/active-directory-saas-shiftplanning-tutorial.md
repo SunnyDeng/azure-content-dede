@@ -11,7 +11,7 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
+    ms.date="01/12/2016" 
     ms.author="markvi" />
 
 #Tutorial: Azure Active Directory-Integration mit ShiftPlanning
@@ -21,7 +21,7 @@ In diesem Tutorial wird die Integration von Azure und ShiftPlanning erläutert. 
 -   Ein gültiges Azure-Abonnement
 -   Ein ShiftPlanning-Abonnement, für das einmaliges Anmelden aktiviert ist
   
-Nach Abschluss dieses Tutorials können sich die ShiftPlanning zugewiesenen Azure AD-Benutzer mittels einmaliger Anmeldung auf Ihrer ShiftPlanning-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können Sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
+Nach Abschluss dieses Tutorials können sich die ShiftPlanning zugewiesenen Azure AD-Benutzer mittels einmaliger Anmeldung auf Ihrer ShiftPlanning-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -55,7 +55,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Shi
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-shiftplanning-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie in das **Suchfeld** als Suchbegriff **ShiftPlanning** ein.
+6.  Geben Sie in das **Suchfeld** **ShiftPlanning** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-shiftplanning-tutorial/IC786613.png "Anwendungskatalog")
 
@@ -64,7 +64,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Shi
     ![ShiftPlanning](./media/active-directory-saas-shiftplanning-tutorial/IC786614.png "ShiftPlanning")
 ##Konfigurieren der einmaligen Anmeldung
   
-In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei ShiftPlanning zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie eine Base-64-codierte Zertifikatsdatei erstellen. Falls Sie mit diesem Verfahren nicht vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (Konvertieren eines binären Zertifikats in eine Textdatei; in englischer Sprache) weitere Informationen.
+In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei ShiftPlanning zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie eine Base-64-codierte Zertifikatsdatei erstellen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [Konvertieren eines binären Zertifikats in eine Textdatei](http://youtu.be/PlgrzUZ-Y1o) weitere Informationen.
 
 ###So konfigurieren Sie einmaliges Anmelden:
 
@@ -86,11 +86,11 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
 5.  Melden Sie sich in einem anderen Webbrowserfenster bei der **ShiftPlanning**-Unternehmenswebsite als Administrator an.
 
-6.  Klicken Sie oben im Menü auf **Admin**.
+6.  Klicken Sie oben im Menü auf **Administrator**.
 
     ![Admin](./media/active-directory-saas-shiftplanning-tutorial/IC786619.png "Admin")
 
-7.  Klicken Sie unter **Integration** auf **Einmaliges Anmelden**.
+7.  Klicken Sie unter **Integration**, klicken Sie auf **Einmaliges Anmelden**.
 
     ![Einmaliges Anmelden](./media/active-directory-saas-shiftplanning-tutorial/IC786620.png "Einmaliges Anmelden")
 
@@ -98,18 +98,18 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden](./media/active-directory-saas-shiftplanning-tutorial/IC786905.png "Einmaliges Anmelden")
 
-    1.  Wählen Sie **SAML aktiviert**.
-    2.  Wählen Sie **Anmeldung mit Kennwort zulassen**.
+    1.  Wählen Sie **SAML aktiviert** aus.
+    2.  Wählen Sie **Anmeldung mit Kennwort zulassen** aus.
     3.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für ShiftPlanning** den Wert für **Remoteanmelde-URL**, und fügen Sie ihn in das Textfeld **URL des SAML-Ausstellers** ein.
     4.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für ShiftPlanning** den Wert der **Remoteabmelde-URL**, und fügen Sie ihn in das Textfeld **Remoteabmelde-URL** ein.
     5.  Erstellen Sie eine **Base-64-codierte** Datei aus dem heruntergeladenen Zertifikat.  
 
-        >[AZURE.TIP]Weitere Informationen finden Sie unter [Konvertieren eines binären Zertifikats in eine Textdatei](http://youtu.be/PlgrzUZ-Y1o).
+        >[AZURE.TIP]Weitere Informationen finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache).
 
-    6.  Öffnen Sie das Base64-codierte Zertifikat im Editor, kopieren Sie den Inhalt des Zertifikats in die Zwischenablage, und fügen Sie ihn anschließend in das Textfeld **X.509-Zertifikat** ein.
+    6.  Öffnen Sie das Base-64-codierte Zertifikat im Editor, kopieren Sie den Inhalt des Zertifikats in die Zwischenablage, und fügen Sie ihn anschließend in das Textfeld **X.509-Zertifikat** ein.
     7.  Klicken Sie auf **Einstellungen speichern**.
 
-9.  Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
+9.  Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-shiftplanning-tutorial/IC786621.png "Einmaliges Anmelden konfigurieren")
 ##Konfigurieren der Benutzerbereitstellung
@@ -120,7 +120,7 @@ Damit sich Azure AD-Benutzer bei ShiftPlanning anmelden können, müssen sie in 
 
 1.  Melden Sie sich bei der **ShiftPlanning**-Unternehmenswebsite als Administrator an.
 
-2.  Klicken Sie auf **Admin**.
+2.  Klicken Sie auf **Administrator**.
 
     ![Admin](./media/active-directory-saas-shiftplanning-tutorial/IC786619.png "Admin")
 
@@ -136,7 +136,7 @@ Damit sich Azure AD-Benutzer bei ShiftPlanning anmelden können, müssen sie in 
 
     ![Mitarbeiter speichern](./media/active-directory-saas-shiftplanning-tutorial/IC786625.png "Mitarbeiter speichern")
 
-    1.  Geben Sie **Vorname**, **Nachname** und **Email-Adresse** eines gültigen AAD-Benutzerkontos, das Sie bereitstellen möchten, in die entsprechenden Textfelder ein.
+    1.  Geben Sie den **Vornamen**, den **Nachnamen** und die **Email-Adresse** eines gültigen AAD-Benutzerkontos, das Sie bereitstellen möchten, in die entsprechenden Textfelder ein.
     2.  Klicken Sie auf **Mitarbeiter speichern**.
 
 >[AZURE.NOTE]Sie können AAD-Benutzerkonten auch mithilfe von anderen Tools zum Erstellen von ShiftPlanning-Benutzerkonten oder mithilfe der von ShiftPlanning bereitgestellten APIs erstellen.
@@ -149,7 +149,7 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
 
 1.  Erstellen Sie im Azure AD-Portal ein Testkonto.
 
-2.  Klicken Sie auf der Anwendungsintegrationsseite für **ShiftPlanning** auf **Benutzer zuweisen**.
+2.  Klicken Sie auf der Anwendungsintegrationsseite für ShiftPlanning auf **Benutzer zuweisen**.
 
     ![Benutzer zuweisen](./media/active-directory-saas-shiftplanning-tutorial/IC786626.png "Benutzer zuweisen")
 
@@ -159,4 +159,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0114_2016-->

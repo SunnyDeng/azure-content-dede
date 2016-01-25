@@ -14,7 +14,7 @@
 	ms.workload="search" 
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
-	ms.date="12/18/2015" 
+	ms.date="01/11/2016" 
 	ms.author="heidist"/>
 
 # Erste Schritte mit Azure Search
@@ -29,85 +29,30 @@ Ein alternativer Ansatz für .NET Entwickler ist die Verwendung des Azure Search
 > [AZURE.NOTE]Um dieses Lernprogramm absolvieren zu können, benötigen Sie ein [Azure-Abonnement](../includes/free-trial-note.md). Wenn Sie sich noch nicht für ein Testabonnement registrieren möchten, können Sie dieses Lernprogramm überspringen und stattdessen [Azure App Service testen](https://tryappservice.azure.com/). Bei dieser Alternativoption erhalten Sie Azure Search mit einer ASP.NET-Web-App kostenlos – eine Stunde pro Sitzung, ganz ohne Abonnement.
  
 <a id="sub-1"></a>
-## Erste Schritte mit dem kostenlosen Dienst
+## Erstellen eines Azure Search-Diensts
 
 Administratoren können den Suchdienst bei der Auswahl des gemeinsam genutzten Diensts kostenlos zu einem bestehenden Abonnement hinzufügen, oder bei der Auswahl fest zugeordneter Ressourcen zu einem reduzierten Preis.
 
-Abonnenten erhalten kostenlosen Zugriff auf einen gemeinsam genutzten mehrinstanzenfähigen Suchdienst, den Sie zu Lernzwecken, zum Testen von Machbarkeitsstudien oder zur Entwicklung kleiner Suchprojekte nutzen können. Führen Sie die folgenden Schritte aus, um sich für die kostenlose Version anzumelden.
+Abonnenten erhalten kostenlosen Zugriff auf einen gemeinsam genutzten mehrinstanzenfähigen Suchdienst, den Sie zu Lernzwecken, zum Testen von Machbarkeitsstudien oder zur Entwicklung kleiner Suchprojekte nutzen können.
 
-1. Melden Sie sich mit Ihrem bestehenden Abonnement beim [klassischen Azure-Portal](https://portal.azure.com) an. Beachten Sie, dass diese URL zum Portal führt. Die Verwendung des Portals ist zwingend notwendig. 
+Melden Sie sich mit Ihrem bestehenden Abonnement beim [Azure-Portal](https://portal.azure.com) an. Schrittweise Anweisungen finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](search-create-service-portal.md).
 
-2. Klicken Sie am oberen Seitenrand auf **Neu**.
- 
-  	![][6]
+## Abrufen der Dienst-URL und eines API-Schlüssels
 
-3. Klicken Sie auf **Daten + Speicher** | **Search**.
+Nach der Diensterstellung können Sie zu den Konfigurationseinstellungen zurückkehren, um die URL und die API-Schlüssel abzurufen. Für Verbindungen mit Ihrem Suchdienst benötigen Sie sowohl URL als auch API-Schlüssel, um den Aufruf zu authentifizieren. So finden Sie diese Werte schnell und einfach:
 
-	- Geben Sie einen Dienstnamen in Kleinbuchstaben für die Dienst-URL ein. Verwenden Sie dabei keine Leerzeichen, und beachten Sie die Längenbeschränkung von 15 Zeichen.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
+2. Klicken Sie in der Navigationsleiste auf **Search-Dienst**, um alle für Ihr Abonnement bereitgestellten Azure Search-Dienste aufzuführen.
+3. Wählen Sie den Dienst aus, den Sie verwenden möchten.
+4.	Im Dienst-Dashboard sehen Sie Kacheln für **EIGENSCHAFTEN** und **SCHLÜSSEL**, sowie eine Übersicht über die Ressourcennutzung. 
 
-	- Klicken Sie auf den Pfeil in **Preisebene**, um eine Preisoption auszuwählen. Wählen Sie **KOSTENLOS** aus und klicken Sie auf **AUSWÄHLEN** am unteren Seitenrand. Die kostenlose Version bietet ausreichend Kapazität für Lernprogramme und zum Schreiben von Code für Machbarkeitsstudien, eignet sich jedoch nicht für den Einsatz in Produktionsumgebungen.
-
-	- Klicken Sie auf den Pfeil in **Ressourcengruppe**, um eine bestehende Gruppe auszuwählen oder eine neue Gruppe zu erstellen. Ressourcengruppen sind Container für Dienste und Ressourcen, die einem gemeinsamen Zweck dienen. Wenn Sie eine auf Azure Search, Azure Websites und Azure-Blobspeicher basierte Suchanwendung erstellen möchten, können Sie z. B. eine Ressourcengruppe erstellen, die diese Dienste in den Verwaltungsseiten im Portal gruppiert.
-
-	- Klicken Sie auf den Pfeil in **Abonnement**, wenn Sie mehrere Abonnements haben und für diesen Suchdienst ein anderes Abonnement verwenden möchten.
-
-	- Klicken Sie auf den Pfeil in **Standort**, um eine Region für das Rechenzentrum auszuwählen. In dieser Vorschau haben Sie die Wahl zwischen USA West, USA Ost, Nordeuropa und Südostasien. Später, wenn weitere Regionen online sind, können Sie eine Region für den zu erstellenden Dienst auswählen. Die öffentliche Vorschau unterstützt keine Konfiguration mit verteilten Ressourcen über mehrere Rechenzentren.
-
-4. Klicken Sie auf **ERSTELLEN**, um den Dienst bereitzustellen. **CREATE** kann erst angeklickt werden, nachdem Sie alle erforderlichen Werte eingegeben haben.
-
-Der Dienst wird innerhalb weniger Minuten erstellt. Sie können zu den Konfigurationseinstellungen zurückkehren, um die URL oder die API-Schlüssel abzurufen. Für Verbindungen mit Ihrem Suchdienst benötigen Sie sowohl URL als auch API-Schlüssel, um den Aufruf zu authentifizieren. So finden Sie diese Werte schnell und einfach:
-
-14. Wechseln Sie zur **Startseite**, um das Dashboard zu öffnen. Klicken Sie auf den Search-Dienst, um das Dienst-Dashboard zu öffnen. 
-
-  	![][13]
-
-15.	Im Dienst-Dashboard sehen Sie Kacheln für **EIGENSCHAFTEN** und **SCHLÜSSEL**, sowie eine Übersicht über die Ressourcennutzung.
-
-Unter [Testen der Dienstfunktionen](#sub-3) wird beschrieben, wie Sie sich mithilfe dieser Werte mit dem Dienst verbinden können.
-
-<a id="sub-2"></a>
-## Upgrade auf die Standardsuche
-
-Mit der Standardsuche erhalten Sie fest zugeordnete Ressourcen in einem Azure-Rechenzentrum, die Ihnen exklusiv zur Verfügung stehen. Für Such-Arbeitslasten benötigen Sie sowohl Speicher- als auch Dienstreplikate. Bei der Anmeldung für die Standardsuche können Sie die Dienstkonfiguration optimieren, um mehr von der jeweils wichtigeren Ressource für Ihr Szenario zuzuweisen.
-
-Fest zugeordnete Ressourcen verbessern Skalierbarkeit und Leistung, bieten jedoch keine zusätzlichen Funktionen. Die gemeinsam genutzte und die Standardsuche bieten denselben Funktionsumfang.
-
-Für die Standardsuche erstellen Sie einen neuen Suchdienst und wählen die Standard-Preisebene aus. Beachten Sie, dass das Upgrade keine direkte Aktualisierung der kostenlosen Version ist. Beim Wechsel zu Standard und dessen Skalierungspotenzial müssen Sie einen neuen Dienst erstellen. Sie müssen die von Ihrer Suchanwendung verwendeten Indizes und Dokumente erneut laden.
-
-Die Einrichtung fest zugeordneter Ressourcen kann einige Zeit in Anspruch nehmen (15 Minuten oder mehr).
-
-**Schritt 1 - Erstellen eines neuen Diensts mit dem Tarif "Standard"**
-
-1. Melden Sie sich mit Ihrem bestehenden Abonnement beim [Azure-Portal](https://portal.azure.com) an. 
-
-2. Klicken Sie unten auf der Seite auf **New**.
-
-4. Klicken Sie im Katalog auf D**aten + Speicher** | **Search**.
-
-7. Geben Sie die Konfigurationseinstellungen des Dienstes an, und klicken Sie dann auf **CREATE**.
-
-8. Klicken Sie auf den Pfeil in **Tarif**, um eine Preisoption auszuwählen. Wählen Sie **STANDARD** aus und klicken Sie auf **AUSWÄHLEN** am unteren Seitenrand.
-
-**Schritt 2 - Anpassen der Sucheinheiten an die Skalierungsanforderungen**
-
-Die Standardsuche beginnt mit je einem Replikat und einer Partition, kann jedoch schnell und einfach auf höhere Ressourcenebenen skaliert werden.
-
-1.	Kehren Sie nach der Erstellung des Diensts zum Dienst-Dashboard zurück und klicken Sie auf die Kachel **Skalieren**.
-
-2.	Mit den Schiebereglern können Sie Replikate, Partitionen oder beides hinzufügen.
-
-Zusätzliche Replikate und Partitionen werden in Sucheinheiten abgerechnet. Die insgesamt benötigten Sucheinheiten zum Unterstützen einer bestimmten Ressourcenkonfiguration wird auf der Seite angezeigt, während Sie Ressourcen hinzufügen.
-
-Unter [Preisdetails](http://go.microsoft.com/fwlink/p/?LinkID=509792) finden Sie Abrechnungsinformationen pro Einheit. Eine Entscheidungshilfe für die Konfiguration von Partitions- und Replikatkombinationen finden Sie unter [Limits und Einschränkungen](search-limits-quotas-capacity.md).
-
- ![][15]
 
 <a id="sub-3"></a>
 ## Testen der Dienstfunktionen
 
-Als letzter Schritt bei der Konfiguration der Suche überprüfen Sie, ob Ihr Dienst einsatzbereit ist und über eine Clientanwendung angesprochen werden kann. Diese Prozedur verwendet Fiddler, einen [kostenlosen Download von Telerik](http://www.telerik.com/fiddler), um HTTP-Anforderungen zu senden und die Antworten anzuzeigen. Mit Fiddler können Sie die API sofort testen, ohne Code schreiben zu müssen.
+Testen Sie, ob Ihr Dienst einsatzbereit ist und darauf von einer Clientanwendung aus zugegriffen werden kann. Diese Prozedur verwendet Fiddler, einen [kostenlosen Download von Telerik](http://www.telerik.com/fiddler), um HTTP-Anforderungen zu senden und die Antworten anzuzeigen. Mit Fiddler können Sie die API sofort testen, ohne Code schreiben zu müssen.
 
-Die folgende Prozedur funktioniert für die gemeinsam genutzte und für die Standardsuche. In den folgenden Schritten erstellen Sie einen Index, laden Dokumente hoch, fragen den Index ab und fragen zuletzt Dienstinformationen aus dem System ab.
+In den folgenden Schritten erstellen Sie einen Index, laden Dokumente hoch, fragen den Index ab und fragen zuletzt Dienstinformationen aus dem System ab.
 
 ### Erstellen eines Index
 
@@ -378,4 +323,4 @@ Bereit für den nächsten Schritt? Unter den folgenden Links finden Sie zusätzl
 [Create your first azure search solution]: search-create-first-solution.md
 [Create a geospatial search app using Azure Search]: search-create-geospatial.md
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0114_2016-->

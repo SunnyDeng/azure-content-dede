@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="01/06/2015"
+   ms.date="01/12/2016"
    ms.author="larryfr"/>
 
 # Informationen zur Verwendung von HDInsight unter Linux
@@ -196,16 +196,7 @@ Folgende Clustertypen sind von der Skalierung betroffen:
 
 	* __Storm-Benutzeroberfläche__: Führen Sie die folgenden Schritte aus, um eine Topologie mithilfe der Storm-Benutzeroberfläche erneut auszugleichen.
 
-		1. [Erstellen Sie einen SSH-Tunnel zum Cluster, und öffnen Sie die Ambari-Webbenutzeroberfläche.](hdinsight-linux-ambari-ssh-tunnel.md)
-
-		2. Wählen Sie aus der Liste der Dienste auf der linken Seite den Dienst __Storm__ aus. Wählen Sie dann unter __QuickLinks__ den Eintrag __Storm-UI__ aus.
-
-
-			![Eintrag der Storm-Benutzeroberfläche in den Quicklinks](./media/hdinsight-hadoop-linux-information/ambari-storm.png)
-
-			Damit wird die Storm-Benutzeroberfläche geöffnet:
-
-			![Storm-Benutzeroberfläche](./media/hdinsight-hadoop-linux-information/storm-ui.png)
+		1. Öffnen Sie \_\___https://CLUSTERNAME.azurehdinsight.net/stormui__ in einem Webbrowser, wobei CLUSTERNAME der Name Ihres Storm-Clusters ist. Geben Sie bei entsprechender Aufforderung den Namen und das Kennwort des HDInsight-Clusteradministrators ein, die Sie beim Erstellen des Clusters festgelegt haben.
 
 		3. Wählen Sie die Topologie aus, die Sie erneut ausgleichen möchten, und klicken Sie dann auf die Schaltfläche __Neu ausgleichen__. Geben Sie die Verzögerung ein, bevor der Neuausgleich ausgeführt wird.
 
@@ -256,4 +247,4 @@ Wenn der Cluster bereits eine Version einer Komponente als eigenständige JAR-Da
 * [Verwenden von Pig mit HDInsight](hdinsight-use-pig.md)
 * [Verwenden von MapReduce-Aufträgen mit HDInsight](hdinsight-use-mapreduce.md)
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0114_2016-->

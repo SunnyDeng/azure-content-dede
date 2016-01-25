@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="06/11/2015" 
+	ms.date="01/08/2016" 
 	ms.author="tdykstra"/>
 
 # Was ist das Azure-SDK für .NET?
@@ -186,4 +186,4 @@ Quellcode des Azure-SDK für .NET, einschließlich Clientbibliotheken, finden Si
 
 Referenzdokumentation für Azure-Clientbibliotheken finden Sie unter [Azure .NET-Referenz](/documentation/api/).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0114_2016-->

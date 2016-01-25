@@ -5,7 +5,7 @@
 	documentationCenter="python" 
 	authors="emgerner-msft" 
 	manager="wpickett" 
-	editor=""/>
+	editor="tysonn"/>
 
 <tags 
 	ms.service="storage" 
@@ -113,4 +113,4 @@ Weitere Informationen finden Sie außerdem im [Python Developer Center](/develop
 [Python Azure Storage-Paket]: https://pypi.python.org/pypi/azure-storage
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0114_2016-->

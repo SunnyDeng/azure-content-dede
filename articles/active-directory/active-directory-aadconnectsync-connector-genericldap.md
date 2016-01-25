@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.devlang="na"
    ms.topic="article"
-   ms.date="12/16/2015"
+   ms.date="01/14/2015"
    ms.author="andkjell"/>
 
 # Technische Referenz für den generischen LDAP-Connector
@@ -49,13 +49,13 @@ Unterstützte Verzeichnisse für Deltaimport und Kennwortverwaltung:
 
 - Microsoft Active Directory Lightweight Directory Services (AD LDS)
     - Unterstützt alle Vorgänge für den Deltaimport
-    - Unterstützt Kennwort festlegen und Kennwort ändern
+    - Unterstützt Kennwort festlegen
 - Microsoft Active Directory – Globaler Katalog (AD GC)
     - Unterstützt alle Vorgänge für den Deltaimport
-    - Unterstützt Kennwort festlegen und Kennwort ändern
+    - Unterstützt Kennwort festlegen
 - 389 Directory Server
     - Unterstützt alle Vorgänge für den Deltaimport
-    - Unterstützt Kennwort festlegen
+    - Unterstützt Kennwort festlegen und Kennwort ändern
 - Apache Directory Server
     - Unterstützt keine Deltaimporte, da dieses Verzeichnis über kein dauerhaftes Änderungsprotokoll verfügt
     - Unterstützt Kennwort festlegen
@@ -71,10 +71,10 @@ Unterstützte Verzeichnisse für Deltaimport und Kennwortverwaltung:
     - Unterstützt Kennwort festlegen und Kennwort ändern
 - Open DJ
     - Unterstützt alle Vorgänge für den Deltaimport
-    - Unterstützt Kennwort festlegen
+    - Unterstützt Kennwort festlegen und Kennwort ändern
 - Open DS
     - Unterstützt alle Vorgänge für den Deltaimport
-    - Unterstützt Kennwort festlegen
+    - Unterstützt Kennwort festlegen und Kennwort ändern
 - Open LDAP (openldap.org)
     - Unterstützt alle Vorgänge für den Deltaimport
     - Unterstützt Kennwort festlegen
@@ -279,4 +279,4 @@ Bei Verzeichnissen mit einem datums-/uhrzeitbasierten Delta-Änderungsprotokoll 
 
 -	Informationen zum Aktivieren der Protokollierung für die Behandlung von Connectorproblemen finden Sie unter [Vorgehensweise: Aktivieren der ETW-Ablaufverfolgung für Connectors](http://go.microsoft.com/fwlink/?LinkId=335731).
 
-<!----HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0114_2016-->

@@ -1,6 +1,6 @@
 <properties
    pageTitle="Erstellen und Registrieren eines Kontos für die Veröffentlichung | Microsoft Azure"
-   description="Anweisungen zum Erstellen eines Microsoft-Verkäuferkontos, mit dem – nach Genehmigung des Kontos – verschiedene Arten von Angeboten im Azure Marketplace veröffentlicht werden können."
+   description="Anweisungen zum Erstellen eines Microsoft-Entwicklerkontos, mit dem – nach Genehmigung des Kontos – verschiedene Arten von Angeboten im Azure Marketplace veröffentlicht werden können."
    services="Azure Marketplace"
    documentationCenter=""
    authors="HannibalSII"
@@ -13,16 +13,16 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="12/06/2015"
+   ms.date="12/17/2015"
    ms.author="hascipio"/>
 
-# Erstellen eines Microsoft-Verkäuferkontos
-In diesem Artikel werden die Schritte zur Erstellung und Registrierung eines Kontos erläutert, die notwendig sind, um anerkannter Microsoft-Verkäufer im Azure Marketplace zu werden.
+# Erstellen eines Microsoft-Entwicklerkontos
+In diesem Artikel werden die Schritte zur Erstellung und Registrierung eines Kontos erläutert, die notwendig sind, um anerkannter Microsoft-Entwickler im Azure Marketplace zu werden.
 
 ## 1\. Erstellen eines Microsoft-Kontos
 > [AZURE.WARNING]Zum Starten des Veröffentlichungsprozesses müssen Sie ein Microsoft-Konto erstellen. Dieses Konto wird verwendet, um sich für das **Microsoft Developer Center** und das **Azure-Veröffentlichungsportal** zu registrieren und die Anmeldung dafür durchzuführen. Sie sollten für Ihre Azure Marketplace-Angebote nur ein Microsoft-Konto verwenden. Verwenden Sie keine unterschiedlichen Konten für verschiedene Dienste oder Angebote.
 
-Die Adresse, die für den Benutzernamen maßgeblich ist, sollte sich in Ihrer Domäne befinden und von Ihrem IT-Team gesteuert werden (z. B. publishing@example.com). Informationen zu Bezahlung, Steuern und Berichterstellung werden an dieses Konto gesendet.
+Die Adresse, die für den Benutzernamen maßgeblich ist, sollte sich in Ihrer Domäne befinden und von Ihrem IT-Team gesteuert werden (z. B. publishing@example.com)). Informationen zu Bezahlung, Steuern und Berichterstellung werden an dieses Konto gesendet.
 
   >[AZURE.WARNING]Wörter wie „Azure“ und „Microsoft“ werden bei der Registrierung eines Microsoft-Kontos nicht unterstützt. Vermeiden Sie diese Wörter, um den Prozess der Kontoerstellung und -registrierung abzuschließen.
 
@@ -47,10 +47,10 @@ Die Adresse, die für den Benutzernamen maßgeblich ist, sollte sich in Ihrer Do
 ## 2\. Erstellen des Microsoft Developer Center-Kontos
 Das Microsoft Developer Center wird für die einmalige Registrierung der Unternehmensinformationen verwendet. Die Person, die das Konto registriert, muss ein offizieller Vertreter des Unternehmens sein und ihre persönlichen Informationen zum Zweck der Identitätsüberprüfung bereitstellen. Diese Person muss ein Microsoft-Konto verwenden, das für das Unternehmen freigegeben ist. **Das gleiche Konto muss im Azure-Veröffentlichungsportal verwendet werden.** Sie sollten überprüfen, ob Ihr Unternehmen nicht bereits über ein Microsoft Developer Center-Konto verfügt, bevor Sie ein Konto erstellen. Während des Prozesses erfassen wir Informationen zu Unternehmensadresse, Bankdaten und Steuer. Diese Informationen erhalten Sie üblicherweise über Bank- oder Geschäftskontakte.
 
-> [AZURE.IMPORTANT]Sie müssen folgende Komponenten des Verkäuferprofils ausfüllen, um die verschiedenen Phasen der Angebotserstellung und -bereitstellung durchlaufen zu können.
+> [AZURE.IMPORTANT]Sie müssen folgende Komponenten des Entwicklerprofils ausfüllen, um die verschiedenen Phasen der Angebotserstellung und -bereitstellung durchlaufen zu können.
 
 
-| Verkäuferprofil | Entwurf starten | Staging | Kostenlos veröffentlichen und Lösungsvorlage | Für den Erwerb veröffentlichen |
+| Entwicklerprofil | Entwurf starten | Staging | Kostenlos veröffentlichen und Lösungsvorlage | Für den Erwerb veröffentlichen |
 |----|----|----|----|----|
 |Unternehmensregistrierung | Verpflichtend | Verpflichtend | Verpflichtend | Verpflichtend |
 |Steuer-ID | Optional | Optional | Optional | Verpflichtend |
@@ -78,8 +78,6 @@ Das Microsoft Developer Center wird für die einmalige Registrierung der Unterne
     > [AZURE.WARNING]**Verkäuferländer:** Um Ihre Dienste im Azure Marketplace verkaufen zu können, muss die registrierte Organisation in einem der obigen genehmigten Verkäuferländer ansässig sein. Diese Einschränkung hat auszahlungstechnische und steuerliche Gründe. Die Länderliste wird in Kürze erweitert, prüfen Sie sie also regelmäßig. Weitere Informationen finden Sie in den [Marketplace-Teilnahmerichtlinien](http://go.microsoft.com/fwlink/?LinkID=526833).
 
 6. Wählen Sie Ihren „Kontotyp“ oder die Option **Einzelperson** oder **Unternehmen** aus.
-
-    <!-- Insert screenshot -->
 
     > [AZURE.IMPORTANT]Sehen Sie sich die Seite [Kontotypen, Standorte und Gebühren](https://msdn.microsoft.com/library/windows/apps/jj863494.aspx) an, um mehr Informationen zu Kontotypen zu erhalten und die bestmögliche Wahl treffen zu können.
 
@@ -149,11 +147,7 @@ Das Azure-Veröffentlichungsportal dient zum Veröffentlichen und Verwalten Ihre
 
   >[AZURE.TIP]Die Teilnahmerichtlinien werden auf der [Azure-Website](http://azure.microsoft.com/support/legal/marketplace/participation-policies/) beschrieben.
 
-  > Wenn Sie Probleme beim Abschließen der Developer Center-Registrierung haben, öffnen Sie wie nachfolgend beschrieben ein Supportticket:
-  1. Wenden Sie sich an den [Support](https://support.microsoft.com/getsupport?wf=0&tenant=ClassicCommercial&oaspworkflow=start_1.0.0.0&supportregion=de-DE&pesid=15635&ccsid=635847950577064286).
-  2. Wählen Sie **Developer Center**.
-  3. Wählen Sie **Profil**.
-  4. Wählen Sie die Methode für die Kontaktaufnahme aus.
+  > Wenn Sie Probleme beim Abschließen der Developer Center-Registrierung haben, öffnen Sie wie nachfolgend beschrieben ein Supportticket: 1. Wenden Sie sich an den [Support](https://support.microsoft.com/getsupport?wf=0&tenant=ClassicCommercial&oaspworkflow=start_1.0.0.0&supportregion=de-DE&pesid=15635&ccsid=635847950577064286). 2. Wählen Sie **Developer Center** aus. 3. Wählen Sie **Profil**. 4. Wählen Sie die Methode für die Kontaktaufnahme aus.
 
 
 
@@ -166,8 +160,8 @@ Nachdem Ihr Konto erstellt und registriert wurde, klicken Sie auf den Artefaktty
 || VM-Image | Entwicklerdienst | Datendienst | Lösungsvorlage |
 |----|-----|-----|-----|-----|
 |**Schritt 2: Erstellen Ihres Angebots** | [Allgemeine, nicht technische Voraussetzungen](marketplace-publishing-pre-requisites.md) | [Allgemeine, nicht technische Voraussetzungen](marketplace-publishing-pre-requisites.md) | [Allgemeine, nicht technische Voraussetzungen](marketplace-publishing-pre-requisites.md) | [Allgemeine, nicht technische Voraussetzungen](marketplace-publishing-pre-requisites.md) |
-|| [Technische Voraussetzungen für VM-Images ][link-single-vm-prereq]| Technische Voraussetzungen für Entwicklerdienste | [Technische Voraussetzungen für Datendienste](marketplace-publishing-data-service-creation-prerequisites.md)  | [Technische Voraussetzungen für Lösungsvorlagen](marketplace-publishing-solution-template-creation-prerequisites.md) |
-|| [Veröffentlichungsleitfaden für VM-Image][link-single-vm] | Veröffentlichungsleitfaden für Entwicklerdienste | [Veröffentlichungsleitfaden für Datendienste](marketplace-publishing-data-service-creation.md) | [Veröffentlichungsleitfaden für Lösungsvorlagen](marketplace-publishing-solution-template-creation.md) |
+|| [Technische Voraussetzungen für VM-Images ][link-single-vm-prereq] [Technische Voraussetzungen für Entwicklerdienste](marketplace-publishing-dev-service-creation-prerequisites.md) | [Technische Voraussetzungen für Datendienste](marketplace-publishing-data-service-creation-prerequisites.md) | [Technische Voraussetzungen für Lösungsvorlagen](marketplace-publishing-solution-template-creation-prerequisites.md) | 
+|| [Veröffentlichungsleitfaden für VM-Image][link-single-vm] | [Veröffentlichungsleitfaden für Entwicklerdienste](marketplace-publishing-dev-creation.md) | [Veröffentlichungsleitfaden für Datendienste](marketplace-publishing-data-service-creation.md) | [Veröffentlichungsleitfaden für Lösungsvorlagen](marketplace-publishing-solution-template-creation.md) | 
 || [Leitfaden zu Azure Marketplace-Marketinginhalten][link-pushstaging] | [Leitfaden zu Azure Marketplace-Marketinginhalten][link-pushstaging] | [Leitfaden zu Azure Marketplace-Marketinginhalten][link-pushstaging] | [Leitfaden zu Azure Marketplace-Marketinginhalten][link-pushstaging] |
 
 ## Weitere Informationen
@@ -200,4 +194,4 @@ Nachdem Ihr Konto erstellt und registriert wurde, klicken Sie auf den Artefaktty
 [link-devsvc-prereq]: marketplace-publishing-dev-service-creation-prerequisites.md
 [link-pushstaging]: marketplace-publishing-push-to-staging.md
 
-<!----HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0114_2016-->

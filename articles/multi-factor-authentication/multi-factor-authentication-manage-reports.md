@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/19/2015" 
+	ms.date="01/11/2016" 
 	ms.author="billmath"/>
 
 # Berichte in Azure Multi-Factor Authentication
 
-Azure Multi-Factor Authentication bietet verschiedene Berichte, die Sie und Ihre Organisation verwenden können. Auf diese Berichte können Sie über das Multi-Factor Authentication-Verwaltungsportal zugreifen. Folgendes ist eine Liste der verfügbaren Berichte.
+Azure Multi-Factor Authentication bietet verschiedene Berichte, die Sie und Ihre Organisation verwenden können. Auf diese Berichte können Sie über das Multi-Factor Authentication-Verwaltungsportal zugreifen. Dazu benötigen Sie einen Azure MFA-Anbieter bzw. eine Azure MFA-, Azure AD Premium- oder Enterprise Mobility Suite-Lizenz. Folgendes ist eine Liste der verfügbaren Berichte.
 
 Sie können auf die Berichte über das Azure-Verwaltungsportal zugreifen.
 
@@ -33,14 +33,13 @@ In Warteschlange|Hier werden Berichte aufgelistet, die zur Verarbeitung und aufg
 
 ## Anzeigen von Berichten
 
-1. Melden Sie sich an bei [http://azure.microsoft.com](http://azure.microsoft.com).
-2. Wählen Sie im linken Bereich "Active Directory" aus.
-3. Wählen Sie oben "Anbieter für mehrstufige Authentifizierung" aus. Hierdurch wird eine Liste der Anbieter für mehrstufige Authentifizierung angezeigt.
-4. Wenn Sie mehr als einen Anbieter für mehrstufige Authentifizierung haben, wählen Sie denjenigen aus, bei dem Sie den Betrugswarnbericht anzeigen möchten, und klicken Sie am unteren Rand der Seite auf "Verwalten". Wenn Sie nur einen Anbieter haben, klicken Sie direkt auf "Verwalten". Dadurch wird das Multi-Factor Authentication-Verwaltungsportal von Azure geöffnet.
-5. Im Azure Multi-Factor Authentication-Verwaltungsportal sehen Sie auf der linken Seite "Einen Bericht anzeigen". Von hier aus können Sie die oben beschriebenen Berichte auswählen.
+1.	Melden Sie sich unter http://azure.microsoft.com an.
+2.	Wählen Sie im linken Bereich "Active Directory" aus.
+3.	Wählen Sie eine der folgenden Optionen:
+	- **Option 1**: Klicken Sie auf die Registerkarte mit den Multi-Factor Authentication-Anbietern. Wählen Sie Ihren MFA-Anbieter, und klicken Sie auf die Schaltfläche „Verwalten“ am unteren Rand.
+	- **Option 2**: Wählen Sie Ihr Verzeichnis aus und klicken Sie auf die Registerkarte „Konfigurieren“. Klicken Sie im Abschnitt „Multi-Factor Authentication“ auf „Diensteinstellungen verwalten“. Klicken Sie am unteren Rand der Seite mit den Einstellungen für den MFA-Dienst auf den Link „Portal aufrufen“.
+4.	Im Azure Multi-Factor Authentication-Verwaltungsportal sehen Sie auf der linken Seite den Bereich „Einen Bericht anzeigen“. Von hier aus können Sie die oben beschriebenen Berichte auswählen.
 
-
- 
 <center>![Cloud](./media/multi-factor-authentication-manage-reports/report.png)</center>
 
 
@@ -50,4 +49,4 @@ In Warteschlange|Hier werden Berichte aufgelistet, die zur Verarbeitung und aufg
 * [Azure Multi-Factor Authentication bei MSDN](https://msdn.microsoft.com/library/azure/dn249471.aspx)
  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0114_2016-->

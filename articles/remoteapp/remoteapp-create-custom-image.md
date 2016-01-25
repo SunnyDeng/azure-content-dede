@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/12/2015" 
+	ms.date="01/07/2016" 
 	ms.author="elizapo"/>
 
 # Erstellen eines benutzerdefinierten Vorlagenimages für Azure RemoteApp
@@ -142,4 +142,4 @@ Nach dem Erstellen des benutzerdefinierten Vorlagenimages müssen Sie dieses Ima
 - [Erstellen einer Cloud-Sammlung von RemoteApp](remoteapp-create-cloud-deployment.md)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0114_2016-->

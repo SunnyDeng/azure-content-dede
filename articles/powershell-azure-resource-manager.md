@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="powershell" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/08/2015" 
+	ms.date="01/08/2016" 
 	ms.author="tomfitz"/>
 
 # Verwenden von Windows PowerShell mit dem Azure-Ressourcen-Manager
@@ -302,6 +302,9 @@ Sie können die Vorlage kopieren und als JSON-Datei lokal speichern. In diesem T
                 "name": "[variables('siteName')]",
                 "type": "Microsoft.Web/sites",
                 "location": "[resourceGroup().location]",
+                "tags": {
+                    "team": "webdev"
+                },
                 "dependsOn": [
                     "[concat('Microsoft.Web/serverFarms/', parameters('hostingPlanName'))]"
                 ],
@@ -382,9 +385,9 @@ Nach dem Erstellen einer Ressourcengruppe können Sie die Cmdlets im Ressourcen-
 
 - Um alle Ressourcengruppen in Ihrem Abonnement abzurufen, verwenden Sie das Cmdlet **Get-AzureRmResourceGroup**:
 
-		PS C:\>Get-AzureRmResourceGroup
+		PS C:\> Get-AzureRmResourceGroup
 
-		ResourceGroupName : TestRG
+		ResourceGroupName : TestRG1
 		Location          : westus
 		ProvisioningState : Succeeded
 		Tags              :
@@ -392,21 +395,38 @@ Nach dem Erstellen einer Ressourcengruppe können Sie die Cmdlets im Ressourcen-
 		
 		...
 
+      Wenn Sie lediglich eine bestimmte Ressourcengruppe abrufen möchten, geben Sie den **Name**-Parameter an.
+      
+          PS C:\> Get-AzureRmResourceGroup -Name TestRG1
+
 - Um die Ressourcen in der Ressourcengruppe abzurufen, verwenden Sie das Cmdlet **Find-AzureRmResource** und den zugehörigen **ResourceGroupNameContains**-Parameter. Ohne Parameter ruft „Find-AzureRmResource“ alle Ressourcen in Ihrem Azure-Abonnement ab.
 
-		PS C:\> Find-AzureRmResource -ResourceGroupNameContains TestRG1
+        PS C:\> Find-AzureRmResource -ResourceGroupNameContains TestRG1
 		
-		Name              : exampleserver
-                ResourceId        : /subscriptions/{guid}/resourceGroups/TestRG1/providers/Microsoft.Sql/servers/tfserver10
-                ResourceName      : exampleserver
-                ResourceType      : Microsoft.Sql/servers
-                Kind              : v12.0
-                ResourceGroupName : TestRG1
-                Location          : westus
-                SubscriptionId    : {guid}
+        Name              : exampleserver
+        ResourceId        : /subscriptions/{guid}/resourceGroups/TestRG1/providers/Microsoft.Sql/servers/tfserver10
+        ResourceName      : exampleserver
+        ResourceType      : Microsoft.Sql/servers
+        Kind              : v12.0
+        ResourceGroupName : TestRG1
+        Location          : westus
+        SubscriptionId    : {guid}
                 
-                ...
+        ...
 	        
+- Die oben genannte Vorlage enthält ein Tag für eine Ressource. Sie können Tags verwenden, um die Ressourcen in Ihrem Abonnement logisch zu organisieren. Verwenden Sie die Befehle **Find-AzureRmResource** und **Find-AzureRmResourceGroup**, um Ihre Ressourcen nach Tags abzufragen.
+
+        PS C:\> Find-AzureRmResource -TagName team
+
+        Name              : ExampleSiteuxq53xiz5etmq
+        ResourceId        : /subscriptions/{guid}/resourceGroups/TestRG1/providers/Microsoft.Web/sites/ExampleSiteuxq53xiz5etmq
+        ResourceName      : ExampleSiteuxq53xiz5etmq
+        ResourceType      : Microsoft.Web/sites
+        ResourceGroupName : TestRG1
+        Location          : westus
+        SubscriptionId    : {guid}
+                
+      Mit Tags können noch viele andere Aktionen ausgeführt werden. Weitere Informationen finden Sie unter [Verwenden von Tags zum Organisieren von Azure-Ressourcen](resource-group-using-tags.md).
 
 ## Hinzufügen zu einer Ressourcengruppe
 
@@ -441,4 +461,4 @@ Sie können vorhandene Ressourcen in eine neue Ressourcengruppe verschieben. Bei
 - Ein ausführliches Beispiel für das Bereitstellen eines Projekts finden Sie unter [Vorhersagbares Bereitstellen von Microservices in Azure](app-service-web/app-service-deploy-complex-application-predictably.md).
 - Weitere Informationen zur Problembehandlung bei einer nicht erfolgreichen Bereitstellung finden Sie unter [Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure](./virtual-machines/resource-group-deploy-debug.md).
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0114_2016-->

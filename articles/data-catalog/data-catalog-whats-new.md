@@ -13,12 +13,21 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="12/18/2015"
+   ms.date="01/08/2016"
    ms.author="maroche"/>
 
 # Neuigkeiten in Azure Data Catalog
 
 Updates für **Azure Data Catalog** werden in regelmäßigen Abständen veröffentlicht. Nicht jede Version umfasst neue Funktionen für Benutzer, da sich einige Versionen auf Back-End-Dienstfunktionen konzentrieren. Auf dieser Seite werden neue Funktionen für Benutzer aufgezeigt, die dem Dienst **Azure Data Catalog** hinzugefügt wurden.
+
+## Neuigkeiten in der Version der Woche ab dem 8. Januar 2016
+
+In der Woche ab dem 8. Januar 2016 wurden Azure Data Catalog die folgenden Funktionen hinzugefügt:
+
+- Die Möglichkeit zum Anheften und Entfernen von Datenassets im **Azure Data Catalog**-Portal. Benutzer können Datenassets anheften, um sie leichter finden und erneut verwenden zu können.
+- Eine neu gestaltete Startseite im **Azure Data Catalog**-Portal. Die neue Homepage eröffnet Einblick in die aktuelle Benutzeraktivität – darunter kürzlich veröffentlichte Assets, angeheftete Assets und gespeicherte Suchvorgänge – als auch einen Einblick in die Aktivität im Katalog als Ganzes.
+- Unterstützung für persistente Benutzereinstellungen im **Azure Data Catalog**-Portal. Benutzeroberflächeneinstellungen – z. B. Raster- oder Kachelansicht, die Anzahl der Ergebnisse pro Seite und Aktivieren bzw. Deaktivieren von Treffermarkierungen – werden sitzungsübergreifend beibehalten.
+- **Azure Data Catalog** ist jetzt in zwei neuen Azure-Regionen verfügbar. Kunden können **Azure Data Catalog** in Nordeuropa und Südostasien, im Osten und Westen der USA, in Westeuropa und im Osten von Australien bereitstellen. Weitere Informationen finden Sie unter [Azure-Regionen](https://azure.microsoft.com/regions/).
 
 ## Neuigkeiten in der Version der Woche ab dem 18. Dezember 2015
 
@@ -165,4 +174,4 @@ Ab der Woche beginnend am 21. August 2015 wurden **Azure Data Catalog** die folg
 - Nur Standard Edition: Beim Hinzufügen von Besitzern zu Datenbeständen unterstützt **Azure Data Catalog** jetzt sowohl Benutzerkonten als auch Sicherheitsgruppen als Besitzer. Um eine Sicherheitsgruppe als Besitzer für ausgewählte Datenasset hinzuzufügen, können Sie entweder den Anzeigenamen der Gruppe oder die UPN-E-Mail-Adresse der Gruppe (sofern vorhanden) eingeben.
 - Unterstützung für Datenquellen in Azure Blob Storage. Benutzer können nun Azure Storage-Blobs und -Verzeichnisse registrieren und ermitteln.
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0114_2016-->

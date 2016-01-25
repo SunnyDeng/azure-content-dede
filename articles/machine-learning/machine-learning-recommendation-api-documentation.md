@@ -16,14 +16,14 @@
 	ms.date="12/10/2015" 
 	ms.author="LuisCa"/>
 
-# Azure Machine Learning-Empfehlungs-APIs – Dokumentation
+#Azure Machine Learning-Empfehlungs-APIs – Dokumentation
 
 In diesem Dokument werden die Microsoft Azure Machine Learning-APIs für Empfehlungen erläutert.
 
 
 [AZURE.INCLUDE [machine-learning-free-trial](../../includes/machine-learning-free-trial.md)]
 
-## 1\. Allgemeine Übersicht
+##1\. Allgemeine Übersicht
 Dieses Dokument ist eine API-Referenz. Beginnen Sie mit dem Dokument „Azure Machine Learning Recommendation – Quick Start“ (Empfehlungen zu Azure Machine Learning – Schnellstart).
 
 Die Azure Machine Learning-Empfehlungs-APIs können in die folgenden logischen Gruppen unterteilt werden:
@@ -44,6 +44,7 @@ Die Azure Machine Learning-Empfehlungs-APIs können in die folgenden logischen G
 ##2\. Einschränkungen
 
 - Die Maximale Anzahl von Modellen pro Abonnement beträgt 10.
+- Die maximale Anzahl von Builds pro Modell beträgt 20.
 - Die maximale Anzahl von Elementen, die ein Katalog aufnehmen kann, beträgt 100.000.
 - Die maximale Menge der Nutzungspunkte, die aufbewahrt werden, beträgt etwa 5.000.000. Die ältesten werden gelöscht, wenn neue hochgeladen oder gemeldet werden.
 - Die maximale Größe der Daten, die in POST gesendet werden können (z. B. Importieren von Katalog- oder Nutzungsdaten), beträgt 200 MB.
@@ -266,9 +267,7 @@ OData-XML
 
 ###5.4. Modell aktualisieren
 
-Sie können die Modellbeschreibung oder die aktive Build-ID aktualisieren.<br>
-<ins>Aktive Build-ID</ins>: Jeder Build für jedes Modell weist eine „Build-ID“ auf. Die aktive Build-ID ist der erste erfolgreich erstellte Build jedes neuen Modells. Wenn Sie über eine aktive Build-ID verfügen und für das gleiche Modell zusätzliche Builds erstellen, müssen Sie die aktive Build-ID gegebenenfalls ausdrücklich als Standard-Build-ID festlegen. Wenn Sie Empfehlungen nutzen und die zu verwendende Build-ID nicht angeben, wird automatisch der Standard-Build-ID verwendet.<br>
-Wenn ein Empfehlungsmodell in der Produktion verwendet wird, können mit diesem Mechanismus neue Modelle erstellt und getestet werden, bevor sie in der Produktion verwendet werden.
+Sie können die Modellbeschreibung oder die aktive Build-ID aktualisieren.<br> <ins>Aktive Build-ID</ins>: Jeder Build für jedes Modell weist eine „Build-ID“ auf. Die aktive Build-ID ist der erste erfolgreich erstellte Build jedes neuen Modells. Wenn Sie über eine aktive Build-ID verfügen und für das gleiche Modell zusätzliche Builds erstellen, müssen Sie die aktive Build-ID gegebenenfalls ausdrücklich als Standard-Build-ID festlegen. Wenn Sie Empfehlungen nutzen und die zu verwendende Build-ID nicht angeben, wird automatisch der Standard-Build-ID verwendet.<br> Wenn ein Empfehlungsmodell in der Produktion verwendet wird, können mit diesem Mechanismus neue Modelle erstellt und getestet werden, bevor sie in der Produktion verwendet werden.
 
 
 | HTTP-Methode | URI |
@@ -799,16 +798,23 @@ d5358189-d70f-4e35-8add-34b83b4942b3, Pigs in Heaven
 </pre>
 
 
-
-
 ##7\. Modellgeschäftsregeln
-Folgende Regeltypen werden unterstützt:
-- <strong>BlockList</strong>: Hiermit können Sie eine Sperrliste mit Elementen erstellen, die nicht in den Empfehlungsergebnissen zurückgegeben werden sollen.
-- <strong>FeatureBlockList</strong>: Hiermit können Sie Elemente basierend auf den Werten ihrer Features blockieren
+Folgende Regeltypen werden unterstützt: 
+<strong>BlockList</strong>: Mit dieser Funktion können Sie eine Sperrliste mit Elementen erstellen, die nicht in den Empfehlungsergebnissen zurückgegeben werden sollen.
+
+- <strong>FeatureBlockList</strong> Hiermit können Sie Elemente basierend auf den Werten ihrer Features blockieren.
+
+*Senden Sie in einer einzelnen Blocklistenregel nicht mehr als 1000 Elemente, um eine Zeitüberschreitung beim Aufruf zu vermeiden. Wenn Sie mehr als 1000 Elemente blockieren müssen, können Sie mehrere Blocklisten aufrufen.*
+
 - <strong>Upsale</strong>: Hiermit können Sie das Zurückgeben von Elementen in den Empfehlungsergebnissen erzwingen.
+
 - <strong>WhiteList</strong>: Hiermit können Sie ausschließlich Empfehlungen aus einer Liste von Elementen vorschlagen.
+
 - <strong>FeatureWhiteList</strong>: Hiermit können Sie ausschließlich Elemente empfehlen, die bestimmte Featurewerte haben.
-- <strong>PerSeedBlockList</strong>: Hiermit können Sie pro Element eine Liste von Elementen festlegen, die nicht in den Empfehlungsergebnissen zurückgegeben werden sollen.
+
+- <strong>PerSeedBlockList</strong>: Mit dieser Funktion können Sie eine Sperrliste pro Startwert erstellen, um für jedes Element eine Liste von Elementen festzulegen, die nicht in den Empfehlungsergebnissen zurückgegeben werden sollen.
+
+
 
 
 ###7.1. Modellregeln abrufen
@@ -881,18 +887,14 @@ OData-XML
 |	apiVersion | 1,0 |
 ||| 
 | Anforderungstext | 
-<ins>Stellen Sie beim Bereitstellen von Element-IDs für Geschäftsregeln sicher, dass Sie die externe ID des Elements verwenden (die gleiche ID, die Sie in der Katalogdatei verwendet haben).</ins><br> 
-<ins>So fügen Sie eine „BlockList“-Regel hinzu:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>BlockList</Type><Value>{"ItemsToExclude":["2406E770-769C-4189-89DE-1C9283F93A96","3906E110-769C-4189-89DE-1C9283F98888"]}</Value></ApiFilter>`<br><br><ins>
-<ins>So fügen Sie eine „FeatureBlockList“-Regel hinzu:</ins><br>
-<br>
-`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>FeatureBlockList</Type><Value>{"Name":"Movie_category","Values":["Adult","Drama"]}</Value></ApiFilter>`<br><br><ins>
-So fügen Sie eine „Upsale“-Regel hinzu:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>Upsale</Type><Value>{"ItemsToUpsale":["2406E770-769C-4189-89DE-1C9283F93A96"]}</Value></ApiFilter>`<br><br>
-<ins>So fügen Sie eine „WhiteList“-Regel hinzu:</ins><br>
-`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>WhiteList</Type><Value>{"ItemsToInclude":["2406E770-769C-4189-89DE-1C9283F93A96","1116E770-769C-4189-89DE-1C9283F88888"]}</Value></ApiFilter>`<br><br><ins>
-<ins>So fügen Sie eine „FeatureWhiteList“-Regel hinzu:</ins><br>
-<br>
-`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>FeatureWhiteList</Type><Value>{"Name":"Movie_rating","Values":["PG13"]}</Value></ApiFilter>`<br><br><ins>
-So fügen Sie eine „PerSeedBlockList“-Regel hinzu:</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>PerSeedBlockList</Type><Value>{"SeedItems":["9949"],"ItemsToExclude":["9862","8158","8244"]}</Value></ApiFilter>`|
+<ins>Stellen Sie beim Bereitstellen von Element-IDs für Geschäftsregeln sicher, dass Sie die externe ID des Elements verwenden (die gleiche ID, die Sie in der Katalogdatei verwendet haben).</ins><br>
+<ins>So fügen Sie eine BlockList-Regel hinzu</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>BlockList</Type><Value>{"ItemsToExclude":["2406E770-769C-4189-89DE-1C9283F93A96","3906E110-769C-4189-89DE-1C9283F98888"]}</Value></ApiFilter>`<br><br><ins>
+<ins>So fügen Sie eine FeatureBlockList-Regel hinzu</ins><br> 
+<br> 
+`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>FeatureBlockList</Type><Value>{"Name":"Movie_category","Values":["Adult","Drama"]}</Value></ApiFilter>`<br><br><ins> 
+So fügen Sie eine Upsale-Regel hinzu</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>Upsale</Type><Value>{"ItemsToUpsale":["2406E770-769C-4189-89DE-1C9283F93A96"]}</Value></ApiFilter>`<br><br> <ins>So fügen Sie eine WhiteList-Regel hinzu</ins><br> `<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>WhiteList</Type><Value>{"ItemsToInclude":["2406E770-769C-4189-89DE-1C9283F93A96","1116E770-769C-4189-89DE-1C9283F88888"]}</Value></ApiFilter>`<br><br><ins> 
+<ins>So fügen Sie eine FeatureWhiteList-Regel hinzu</ins><br> <br> 
+`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>FeatureWhiteList</Type><Value>{"Name":"Movie_rating","Values":["PG13"]}</Value></ApiFilter>`<br><br><ins> So fügen Sie eine PerSeedBlockList-Regel hinzu</ins><br>`<ApiFilter xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><ModelId>24024f7e-b45c-419e-bfa2-dfd947e0d253</ModelId><Type>PerSeedBlockList</Type><Value>{"SeedItems":["9949"],"ItemsToExclude":["9862","8158","8244"]}</Value></ApiFilter>`|
 
 
 **Antwort**:
@@ -984,9 +986,9 @@ Hinweis: Die maximale Dateigröße beträgt 200 MB.
 |:---|:---|:---|:---|
 | Element-ID |Ja | [A-z], [a-z], [0-9], [\_] &#40;Unterstrich&#41;, [-] &#40;Bindestrich&#41;<br> Max. Länge: 50 | Eindeutiger Bezeichner eines Elements. | 
 | Elementname | Ja | Alle alphanumerischen Zeichen<br> Max. Länge: 255 | Elementname. | 
-| Elementkategorie | Ja | Alle alphanumerischen Zeichen <br> Max. Länge: 255 | Kategorie, zu der dieses Element gehört (z. B. Kochbücher, Drama…). Darf leer sein. | 
+| Elementkategorie | Ja | Alle alphanumerischen Zeichen <br> Max. Länge: 255 | Kategorie, zu der dieses Element gehört (z. B. Kochbücher, Drama …). Darf leer sein. | 
 | Beschreibung | Nein, es sei denn, es sind Features vorhanden (darf jedoch leer sein) | Alle alphanumerischen Zeichen <br> Max. Länge: 4000 | Dies ist die Beschreibung des Elements. | 
-| Featureliste | Nein | Alle alphanumerischen Zeichen <br> Max. Länge: 4000 | Dies ist eine kommagetrennte Liste im Format „Featurename=Featurewert“ zum Verbessern der Modellempfehlung; siehe Abschnitt [Erweiterte Themen](#2-advanced-topics). |
+| Featureliste | Nein | Alle alphanumerischen Zeichen <br> Max. Länge: 4000; Max. Anzahl von Features: 20 | Dies ist eine kommagetrennte Liste im Format „Featurename=Featurewert“ zum Verbessern der Modellempfehlung; siehe Abschnitt [Erweiterte Themen](#2-advanced-topics). |
 
 
 | HTTP-Methode | URI |
@@ -1885,6 +1887,7 @@ In der folgenden Tabelle sind die Parameter für Empfehlungsbuilds aufgeführt.
 |FbtMaxItemSetSize | Begrenzt die Anzahl der Elemente in einem häufigen Satz.| Ganze Zahl | 2-3 (2) |
 |FbtMinimalScore | Dies ist die Mindestbewertung, die ein häufiger Satz haben muss, um in die zurückgegebenen Ergebnisse eingeschlossen zu werden. Höhere Bewertungen sind besser als niedrigere.| Doppelt | 0 und höher (0) |
 |FbtSimilarityFunction | Definiert die Ähnlichkeitsfunktion, die vom Build verwendet werden soll. „Lift“ fördert Zufall, „Co-occurrence“ fördert Vorhersagbarkeit und „Jaccard“ stellt einen Kompromiss zwischen beiden dar. | String | cooccurrence, lift, jaccard (lift) |
+
 
 ###11.2. Auslösen eines Empfehlungsbuilds
 
@@ -2787,7 +2790,7 @@ Die Antwort umfasst einen Eintrag pro empfohlenem Elementsatz (ein Satz Elemente
 
 Eine Beispielantwort finden Sie unter 12.3.
 
-###12\.5. Abrufen von Benutzerempfehlungen (für aktiven Build)
+###12.5. Abrufen von Benutzerempfehlungen (für aktiven Build)
 
 Hierdurch werden Benutzerempfehlungen eines Builds vom Typ "Recommendation" abgerufen, der als aktiver Build gekennzeichnet ist.
 
@@ -3097,4 +3100,4 @@ Dieses Dokument gibt Ihnen keinerlei geistige Eigentums- oder anderweitige Recht
 © 2015 Microsoft. Alle Rechte vorbehalten.
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0114_2016-->

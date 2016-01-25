@@ -25,22 +25,10 @@ Der Abschnitt "Reach" der Benutzeroberfläche ist das Verwaltungstool für Pushk
 
 >[AZURE.NOTE]Viele Abschnitte der Benutzeroberfläche des **Mobile Engagement**-Portals enthalten die Schaltfläche **HILFE ANZEIGEN**. Drücken Sie diese Schaltfläche, um weitere Kontextinformationen zu einem bestimmten Bereich zu erhalten.
 
- 
 ## Vier Arten von Pushbenachrichtigungen
 1.    Ankündigungen – Ermöglicht Ihnen das Senden von Werbebotschaften an Benutzer, über die diese zu einer anderen Stelle in Ihrer App umgeleitet oder zu einer Webseite oder einem Store außerhalb Ihrer App geleitet werden. 
 2.    Umfragen - Sie können Informationen zu Endbenutzern erfassen, indem Sie ihnen Fragen stellen.
 3.    Datenpushes - Ermöglicht Ihnen das Senden einer Binär- oder Base64-Datendatei. Die Informationen in einem Datenpush werden an Ihre Anwendung gesendet, um die aktuelle Benutzerumgebung in Ihrer App zu ändern. Die Anwendung muss die Daten in einem Datenpush verarbeiten können.
-
-
-## Es werden drei Kategorien von Echtzeitstatistiken für jede Kampagne gezeigt
-
-1.    Anzahl der Pushvorgänge – Die Anzahl der Pushvorgänge, die anhand der in der Kampagne angegebenen Kriterien gesendet wurden. 
-2.    Geantwortet – Anzahl der Benutzer, die auf die Benachrichtigung reagiert haben, indem sie sie entweder außerhalb der App geöffnet oder innerhalb der App geschlossen haben. 
-3.    Aktion ausgeführt - Die Anzahl der Benutzer, die auf den Link in der Benachrichtigung geklickt haben, um zu einer neue Stelle in der App, zu einem Store oder zu einem Webbrowser umgeleitet zu werden. 
-
-> [AZURE.NOTE]Ausführlichere Kampagnenstatistiken stehen über die Statistiken der Reach-API zur Verfügung.
-
-
 
 ## Kampagnendetails
 
@@ -50,11 +38,40 @@ Sie können Kampagnen bearbeiten, klonen, löschen oder Kampagnen aktivieren, di
 
 ## Reach-Feedback
 
-Klicken Sie auf eine Kampagne, um Details oder Statistiken dazu zu sehen. Sie können dann von der Detail- zur Statistikansicht einer geöffneten Kampagne wechseln, die bereits aktiviert wurde. Und Sie können von der einfachen zur erweiterten Ansicht der Statistiken wechseln, um (je nach Berechtigungen) detailliertere Informationen zu erhalten. Sie können auch die Reach-Feedbackinformationen aus einer vorherigen Kampagne als Zielkriterien in einer neuen Kampagne verwenden. Reach-Feedbackstatistiken können auch über die Reach-API mithilfe von **Stats** erfasst werden. Sie können auch die Zielgruppe Ihrer Pushkampagnen basierend auf früheren Kampagnen anpassen.
+Klicken Sie auf „**Statistiken**“, um die Details einer Reichweitenkampagne zu sehen. Die Ansicht „**Einfach**“ bietet eine visuelle Darstellung in Form eines Balkendiagramms, die zeigt, was passiert ist, nachdem eine Kampagne aktiviert wurde. Die Ansicht „**Erweitert**“ bietet detailliertere Informationen zur Push-Kampagne. Diese Details stehen nicht zur Verfügung, wenn Sie eine Testkampagne senden, wie z. B. einen Push an ein Testgerät. So sollten diese Details interpretiert werden:
+
+1. **Übertragen** - Gibt die Anzahl der an die Geräte gesendeten Meldungen an. Diese Anzahl hängt von der Zielgruppe ab, die Sie beim Erstellen der Push-Kampagne angegeben haben. Wenn Sie keine Zielgruppe angeben, wird dieser Push an alle registrierten Geräte gesendet. Wie alle anderen Push-Dienste senden wir die Pushes nicht direkt an die Geräte, sondern übertragen sie zu den entsprechenden plattformspezifischen Pushbenachrichtigungsdiensten (PNS - APNS/GCM/WNS), damit diese die Benachrichtigungen an die Geräte senden können. 
+
+2.	**Übermittelt** - Gibt die Anzahl der Meldungen an, die erfolgreich vom PNS an das Gerät gesendet und vom Mobile Engagement SDK als empfangen bestätigt wurden.
+		
+	*Gründe für eine geringere Anzahl bei „Übermittelt“ im Vergleich zu „Übertragen“:*
+	
+	1. Wenn der Benutzer die App auf dem Gerät deinstalliert hat und dies dem PNS zum Zeitpunkt, zu dem wir den Push an den PNS senden, nicht bekannt ist, wird die Meldung gelöscht.
+	2. Wenn die App auf dem Gerät installiert ist, die Geräte selbst aber für längere Zeit offline waren, kann die Meldung nicht vom PNS an das Gerät übermittelt werden. 
+	3. Wenn die Meldung an das Gerät übermittelt wird, das Mobile Engagement SDK in der Anwendung den Inhalt der Meldung jedoch nicht erkennt, wird die Meldung gelöscht. Dies kann passieren, wenn die Anpassung der Benachrichtigung in der App eine Ausnahme generiert, die wir im SDK erfassen und die Meldung somit löschen. Dies kann auch auftreten, wenn die App auf dem Gerät eine Version des Mobile Engagement SDK verwendet, die die von der Plattform gesendete neuere Version der Pushbenachrichtigung nicht verstehen kann. Dies tritt jedoch nur auf, wenn die App aktualisiert wurde, nachdem die Benachrichtigung von der Serviceplattform gesendet wurde. Die Registerkarte „**Erweitert**” zeigt an, wie viele Nachrichten gelöscht wurden. 
+
+3.	**Angezeigt** - Gibt die Anzahl der Meldungen an, die dem App-Benutzer erfolgreich auf dem Gerät angezeigt wurden - entweder in Form einer System-/Out-of-App-Benachrichtigung im Notification Center oder einer In-App-Benachrichtigung in der mobilen App. Die Registerkarte „**Erweitert**” zeigt an, wie viele der Benachrichtigungen System- und wie viele In-App-Benachrichtigungen waren.
+
+4.	**Benutzerinteraktionen** - Gibt die Anzahl der Meldungen an, mit denen der App-Benutzer interagiert hat, und enthält die Meldungen, die entweder geöffnet oder geschlossen wurden.
+
+	- *Der App-Benutzer kann eine Benachrichtigung auf eine der folgenden Weisen öffnen:*
+			
+		1. Wenn es sich bei der Benachrichtigung um eine System-/Out-of-App-Benachrichtigung oder eine als reine Benachrichtigung gesendete In-App-Benachrichtigung handelt und der App-Benutzer auf die Benachrichtigung klickt.
+		2. Wenn es sich bei der Benachrichtigung um eine In-App-Benachrichtigung mit Text, Webansicht oder Umfragen handelt und der App-Benutzer in der Benachrichtigung auf aktivieren klickt.
+		3. Wenn es sich bei der Benachrichtigung um eine In-App-Benachrichtigung mit Webansicht handelt und der Benutzer auf eine URL in der Webansicht klickt [nur Android].
+	
+	- *Der App-Benutzer kann eine Benachrichtigung auf eine der folgenden Weisen schließen:*
+	
+		1. Durch Klicken auf die Schaltfläche „Schließen“, direkt in der Benachrichtigung. 
+		2. Durch Wischen mit dem Finger oder Löschen der Benachrichtigung. 
+		3. In-App-Benachrichtigungen mit Text-/Webinhalten und Umfragen werden dem App-Benutzer in der Regel in einem zweistufigen Prozess angezeigt. Zunächst wird dem Benutzer eine Benachrichtigung angezeigt und sobald er darauf klickt, sieht er die weiteren Text-/Web-/Umfrageninhalte. Der App-Benutzer kann eine Benachrichtigung während einem dieser Schritte schließen und dies wird in den Details in der Ansicht „Erweitert“ erfasst. 
+
+5.	**Geöffnet** - Gibt die Anzahl der Meldungen an, die explizit vom App-Benutzer geöffnet wurden. Dies ist die interessanteste Zahl, da sie angibt, wie viele App-Benutzer an der Meldung, die Sie in der Benachrichtigung gesendet haben, interessiert waren.
+ 
+> [AZURE.NOTE]Bei IOS- und Windows-Plattformen ist es möglich, dass die Out-of-App- und die In-App-Benachrichtigungen beide gleichzeitig angezeigt werden, wenn der Benutzer die App geöffnet hat und es sich bei der Kampagne um eine „Jederzeit“-Kampagne handelte. Dies könnte zur Folge haben, dass die Anzahl bei „Angezeigt“ höher ist als bei „Übermittelt“. Wenn der Benutzer mit der Benachrichtigung interagiert oder sie öffnet, könnte sogar die Anzahl bei „Benutzerinteraktionen/Geöffnet“ höher sein als bei „Übermittelt“.
 
 
 ![Reach2][19]
-
 
 ## Weitere Informationen
 
@@ -153,4 +170,4 @@ Klicken Sie auf eine Kampagne, um Details oder Statistiken dazu zu sehen. Sie k�
 [Link 29]: mobile-engagement-user-interface-reach-content.md
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

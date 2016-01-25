@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/11/2015"
+	ms.date="01/07/2016"
 	ms.author="dkshir"/>
 
 # Gewusst wie: Anfügen eines Datenträgers an einen virtuellen Linux-Computer
@@ -22,13 +22,15 @@
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
 
 
-Sie können sowohl leere Datenträger als auch Datenträger mit Daten anfügen. In beiden Fällen sind die Datenträger eigentlich VHD-Dateien, die sich in einem Azure-Speicherkonto befinden. Außerdem müssen Sie in beiden Fällen den Datenträger nach dem Anfügen initialisieren, damit er verwendet werden kann. Dieser Artikel bezieht sich auf virtuelle Computer, die mit dem klassischen Bereitstellungsmodell erstellt wurden.
+Sie können sowohl leere Datenträger als auch Datenträger mit Daten anfügen. In beiden Fällen sind die Datenträger eigentlich VHD-Dateien, die sich in einem Azure-Speicherkonto befinden. Außerdem müssen Sie in beiden Fällen den Datenträger nach dem Anfügen initialisieren, damit er verwendet werden kann.
 
 > [AZURE.NOTE]Es empfiehlt sich, einen oder mehrere separate Datenträger zu verwenden, um die Daten eines virtuellen Computers zu speichern. Wenn Sie einen virtuellen Azure-Computer erstellen, verfügt dieser über einen Betriebssystem-Datenträger und über einen temporären Datenträger. **Verwenden Sie den temporären Datenträger nicht zum Speichern von Daten.** Wie der Name schon sagt, bietet dieser Datenträger nur temporäre Speicherung. Er ermöglicht keine Redundanz oder Sicherung, da er sich nicht im Azure-Speicher befindet. Unter Linux wird der temporäre Datenträger normalerweise vom Azure Linux Agent verwaltet und automatisch an **/mnt/resource** (oder auf Ubuntu-Images an **/mnt**) angefügt. Andererseits kann ein Datenträger vom Linux-Kernel beispielsweise den Namen `/dev/sdc` erhalten, und Sie müssen diese Ressource partitionieren, formatieren und einbinden. Weitere Informationen finden Sie im [Benutzerhandbuch für Azure Linux-Agent][Agent].
 
 [AZURE.INCLUDE [howto-attach-disk-windows-linux](../../includes/howto-attach-disk-linux.md)]
 
 ## Vorgehensweise: Initialisieren eines neuen Datenträgers unter Linux
+
+Sie können die gleichen Schritte zum Initialisieren mehrerer Datenträger ausführen. Verwenden Sie dabei die richtige Geräte-ID (siehe unten).
 
 1. Stellen Sie eine Verbindung mit dem virtuellen Computer her. Anweisungen dazu finden Sie unter [Anmelden bei einem virtuellen Computer, auf dem Linux ausgeführt wird][Logon].
 
@@ -86,7 +88,7 @@ Sie können sowohl leere Datenträger als auch Datenträger mit Daten anfügen. 
 
 	![Neues Gerät erstellen](./media/virtual-machines-linux-how-to-attach-disk/DiskPartition.png)
 
-5. Geben Sie nach Aufforderung **p** ein, um die Partition zur primären zu machen, geben Sie **1** ein, um sie zur ersten Partition zu machen, und drücken Sie die Eingabetaste, um den Standardwert für den Zylinder zu übernehmen.
+5. Geben Sie nach Aufforderung **p** ein, um die Partition zur primären zu machen, geben Sie **1** ein, um sie zur ersten Partition zu machen, und drücken Sie die Eingabetaste, um den Standardwert für den Zylinder zu übernehmen. Bei einigen Systemen werden unter Umständen anstelle des Zylinders die Standardwerte des ersten und letzten Abschnitts angezeigt. Sie können diese Standardeinstellungen auch übernehmen.
 
 
 	![Partition erstellen](./media/virtual-machines-linux-how-to-attach-disk/DiskCylinder.png)
@@ -105,7 +107,7 @@ Sie können sowohl leere Datenträger als auch Datenträger mit Daten anfügen. 
 
 	![Datenträgeränderungen schreiben](./media/virtual-machines-linux-how-to-attach-disk/DiskWrite.png)
 
-8. Erstellen Sie das Dateisystem auf der neuen Partition. Geben Sie beispielsweise folgenden Befehl und dann das Kontokennwort ein:
+8. Erstellen Sie das Dateisystem auf der neuen Partition. Fügen Sie die Partitionsnummer (1) an die Geräte-ID an. Geben Sie beispielsweise folgenden Befehl und dann das Kontokennwort ein:
 
 		# sudo mkfs -t ext4 /dev/sdc1
 
@@ -160,7 +162,9 @@ Sie können sowohl leere Datenträger als auch Datenträger mit Daten anfügen. 
 
 	Wenn der Befehl `mount` zu einem Fehler führt, prüfen Sie die Datei "/etc/fstab" auf korrekte Syntax. Wenn zusätzliche Datenlaufwerke oder Partitionen erstellt werden, müssen Sie diese ebenfalls einzeln in "/etc/fstab" einfügen.
 
-	Das Laufwerk muss beschreibbar sein. Sie erreichen dies mit den Befehlen: # cd /datadrive # sudo chmod go+w /datadrive
+	Das Laufwerk muss beschreibbar sein. Sie erreichen dies mit folgendem Befehl:
+
+		# sudo chmod go+w /datadrive
 
 >[AZURE.NOTE]Wenn Sie später einen Datenträger entfernen, ohne "fstab" zu bearbeiteten, kann der Start des virtuellen Computers fehlschlagen. Für den Fall, dass dieses Problem häufiger auftritt, bieten die meisten Verteilungen die fstab-Optionen `nofail` und/oder `nobootwait`, die einen Systemstart auch dann erlauben, wenn der Datenträger zur Startzeit nicht eingebunden werden kann. Weitere Informationen zu diesen Parametern finden Sie in der Dokumentation zu Ihrer Verteilung.
 
@@ -175,4 +179,4 @@ Sie können sowohl leere Datenträger als auch Datenträger mit Daten anfügen. 
 [Agent]: virtual-machines-linux-agent-user-guide.md
 [Logon]: virtual-machines-linux-how-to-log-on.md
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0114_2016-->

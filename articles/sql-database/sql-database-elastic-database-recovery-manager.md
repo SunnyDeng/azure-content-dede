@@ -21,7 +21,7 @@ Die [RecoveryManager](https://msdn.microsoft.com/library/azure/microsoft.azure.s
 
 Die GSM und die LSM verfolgen die Zuordnung der einzelnen Datenbanken in einer horizontal partitionierten Umgebung. Gelegentlich kommt es zu einem Bruch zwischen der GSM und der LSM. Verwenden Sie in diesem Fall die RecoveryManager-Klasse, um den Bruch zu erkennen und zu reparieren.
 
-Die RecoveryManager-Klasse ist Teil der [Clientbibliothek für elastische Datenbanken](sql-database-elastic-database-client-library).
+Die RecoveryManager-Klasse ist Teil der [Clientbibliothek für elastische Datenbanken](sql-database-elastic-database-client-library.md).
 
 
 ![Shardzuordnung][1]
@@ -157,4 +157,4 @@ In diesem Beispiel werden die folgende Schritte ausgeführt: 1. Entfernen von Sh
 [1]: ./media/sql-database-elastic-database-recovery-manager/recovery-manager.png
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0114_2016-->

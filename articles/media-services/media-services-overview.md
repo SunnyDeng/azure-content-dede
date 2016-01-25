@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/15/2015"
+	ms.date="01/12/2016"
 	ms.author="juliako"/>
 
 #Azure Media Services – Übersicht und häufige Szenarios
@@ -29,7 +29,7 @@ Sie können Ihre Inhalte live streamen oder sie bei Bedarf bereitstellen. In die
 Zum Entwickeln von Media Services-Lösungen können Sie folgende Komponenten verwenden:
 
 - [Media Services-REST-API](https://msdn.microsoft.com/library/azure/hh973617.aspx)
-- Eines der verfügbaren Client-SDKs: [Azure Media Services-SDK für .NET](https://github.com/Azure/azure-sdk-for-media-services), [Azure-SDK für Java](https://github.com/Azure/azure-sdk-for-java), [Azure Media Services für Node.js](https://github.com/fritzy/node-azure-media), [Azure-PHP-SDK](https://github.com/Azure/azure-sdk-for-php)
+- Eines der verfügbaren Client-SDKs: [Azure Media Services-SDK für .NET](https://github.com/Azure/azure-sdk-for-media-services), [Azure-SDK für Java](https://github.com/Azure/azure-sdk-for-java), [Azure Media Services für Node.js](https://github.com/michelle-becker/node-ams-sdk/blob/master/lib/request.js), [Azure-PHP-SDK](https://github.com/Azure/azure-sdk-for-php)
 - Vorhandene Tools: [klassisches Azure-Portal](http://manage.windowsazure.com/) oder [Azure Media Services-Explorer](https://github.com/Azure/Azure-Media-Services-Explorer).
 
 
@@ -231,4 +231,4 @@ Der [Azure-Support](http://azure.microsoft.com/support/options/) bietet Supporto
 [live-overview2]: ./media/media-services-live-streaming-workflow/media-services-live-streaming-current.png
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

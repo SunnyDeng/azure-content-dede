@@ -11,7 +11,7 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
+    ms.date="01/12/2016" 
     ms.author="markvi" />
 
 #Tutorial: Azure AD-Integration mit Sciforma
@@ -21,7 +21,7 @@ In diesem Tutorial wird die Integration von Azure und Sciforma erläutert. Das i
 -   Ein gültiges Azure-Abonnement
 -   Ein Sciforma-Mandant
   
-Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie Sciforma zugewiesen haben, mittels einmaliger Anmeldung auf Ihrer Sciforma-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
+Nach Abschluss dieses Lernprogramms können sich die Sciforma zugewiesenen Azure AD-Benutzer mittels einmaliger Anmeldung auf Ihrer Sciforma-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -55,7 +55,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Sci
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-sciforma-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie in das **Suchfeld** den Suchbegriff **Sciforma** ein.
+6.  Geben Sie in das **Suchfeld** **Sciforma** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-sciforma-tutorial/IC777370.png "Anwendungskatalog")
 
@@ -76,11 +76,11 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-sciforma-tutorial/IC777373.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Sciforma-Anmelde-URL** die URL im Format „*https://\<Mandantenname>.Sciforma.com*“ ein, und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Zendesk-Anmelde-URL** die URL im Format „*https://\<Mandantenname>.Sciforma.com*“ ein, und klicken Sie dann auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-sciforma-tutorial/IC777374.png "App-URL konfigurieren")
 
-4.  Klicken Sie auf der Seite **Einmaliges Anmelden konfigurieren für Sciforma** auf **Metadaten herunterladen**, und speichern Sie die Metadatendatei lokal unter **C:\\SciformaMetaData.xml**.
+4.  Klicken Sie auf der Seite **Einmaliges Anmelden konfigurieren für Sciforma** auf **Metadaten herunterladen**, und speichern Sie die Metadatendatei lokal unter **c:\\SciformaMetaData.xml**.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-sciforma-tutorial/IC777375.png "Einmaliges Anmelden konfigurieren")
 
@@ -110,4 +110,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0114_2016-->

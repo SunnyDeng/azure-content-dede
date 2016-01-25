@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/24/2015"
+	ms.date="01/08/2016"
 	ms.author="markusvi;andkjell"/>
 
 
@@ -417,7 +417,7 @@ Diese Attribute werden vom Azure AD auf das lokale Active Directory zurückgesch
 
 | Attributname| Benutzer| Kontakt| Gruppe| Kommentar |
 | --- | :-: | :-: | :-: | --- |
-| msDS-ExternalDirectoryObject| X| | | Abgeleitet von cloudAnchor in Azure AD.|
+| msDS-ExternalDirectoryObjectID| X| | | Abgeleitet von cloudAnchor in Azure AD. Dies ist neu in Exchange 2016.|
 | msExchArchiveStatus| X| | | Online-Archiv: Ermöglicht Kunden, E-Mail-Nachrichten zu archivieren.|
 | msExchBlockedSendersHash| X| | | Filtern: Schreibt lokale Filterung, Onlinesicherung und blockierte Absenderdaten von Clients zurück.|
 | msExchSafeRecipientsHash| X| | | Filtern: Schreibt lokale Filterung, Onlinesicherung und blockierte Absenderdaten von Clients zurück.|
@@ -435,4 +435,4 @@ Weitere Informationen zur Konfiguration der [Azure AD Connect-Synchronisierung](
 
 Weitere Informationen zum [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

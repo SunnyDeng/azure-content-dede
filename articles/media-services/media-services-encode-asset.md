@@ -250,6 +250,26 @@ MP3 (MPEG-1 Audio Layer 3)|Nein|Nein|Ja
 Windows Media Audio|Nein|Ja|Ja
 
 
+##Fehlercodes  
+
+Die folgende Tabelle enthält die Fehlercodes, die zurückgegeben werden können, wenn bei der Ausführung einer Codieraufgabe ein Fehler auftritt. Verwenden Sie zum Abrufen von Fehlerdetails im .NET-Code die [ErrorDetails](http://msdn.microsoft.com/library/microsoft.windowsazure.mediaservices.client.errordetail.aspx)-Klasse. Verwenden Sie zum Abrufen von Fehlerdetails im REST-Code die [ErrorDetail](https://msdn.microsoft.com/library/jj853026.aspx)-REST-API.
+
+ErrorDetail.Code|Mögliche Ursachen des Fehlers
+-----|-----------------------
+Unknown| Unbekannter Fehler beim Ausführen der Aufgabe
+ErrorDownloadingInputAssetMalformedContent|Kategorie von Fehlern, die Fehler beim Herunterladen von Eingabe-Assets abdeckt, z. B. fehlerhafte Dateinamen, Dateien mit Nulllänge, falsche Formate usw.
+ErrorDownloadingInputAssetServiceFailure|Kategorie von Fehlern, die Probleme auf der Dienstseite abdeckt, z. B. Netzwerk- oder Speicherfehler beim Herunterladen.
+ErrorParsingConfiguration|Kategorie von Fehlern, bei denen die Aufgabe <see cref="MediaTask.PrivateData"/> (Konfiguration) nicht gültig ist, z. B. wenn die Konfiguration keine gültige Systemvoreinstellung ist oder ungültige XML-Daten enthält.
+ErrorExecutingTaskMalformedContent|Kategorie von Fehlern während der Ausführung der Aufgabe, wenn Probleme in den Eingabemediendateien zu Fehlern führen.
+ErrorExecutingTaskUnsupportedFormat|Kategorie von Fehlern, bei denen die bereitgestellten Dateien mit dem Medienprozessor nicht verarbeitet werden können: keine Unterstützung des Medienformats oder fehlende Übereinstimmung mit der Konfiguration. Beispiel: Der Versuch, eine Audioausgabe für ein Asset zu erstellen, die nur Video ermöglicht.
+ErrorProcessingTask|Kategorie anderer Fehler, die für den Medienprozessor beim Verarbeiten der Aufgabe auftreten und sich nicht auf den Inhalt beziehen.
+ErrorUploadingOutputAsset|Kategorie von Fehlern beim Hochladen des Ausgabe-Assets.
+ErrorCancelingTask|Kategorie von Fehlern, die auftreten, wenn versucht wird, die Aufgabe abzubrechen.
+TransientError|Kategorie von Fehlern, mit der vorübergehende Probleme abgedeckt werden (z. B. temporäre Netzwerkprobleme mit Azure Storage).
+
+
+Öffnen Sie ein [Supportticket](https://ms.portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade), um Hilfe vom **Media Services**-Team zu erhalten.
+
 
 
 ##Media Services-Lernpfade
@@ -263,10 +283,11 @@ Windows Media Audio|Nein|Ja|Ja
 
 ##Verwandte Artikel
 
+- [Ausführen von Aufgaben für die erweiterte Codierung durch Anpassen der Media Encoder Standard-Voreinstellungen](media-services-custom-mes-presets-with-dotnet.md)
 - [Kontingente und Einschränkungen](media-services-quotas-and-limitations.md)
 
  
 <!--Reference links in article-->
 [1]: http://azure.microsoft.com/pricing/details/media-services/
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0114_2016-->

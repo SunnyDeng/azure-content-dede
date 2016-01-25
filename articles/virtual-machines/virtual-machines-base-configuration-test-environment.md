@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="Windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/05/2015"
+	ms.date="01/12/2016"
 	ms.author="josephd"/>
 
 # Testumgebung für die Basiskonfiguration
@@ -51,9 +51,9 @@ Die Einrichtung des Corpnet-Subnetzes der Testumgebung für die Basiskonfigurati
 3.	Konfigurieren von APP1
 4.	Konfigurieren von CLIENT1
 
-Wenn Sie noch nicht über ein Azure-Konto verfügen, erhalten Sie unter [Einen Monat kostenlos testen](http://azure.microsoft.com/pricing/free-trial/) eine kostenlose Testversion. Wenn Sie über ein MSDN-Abonnement verfügen, lesen Sie [Azure-Vorteil für MSDN-Abonnenten](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
+Wenn Sie noch nicht über ein Azure-Konto verfügen, erhalten Sie unter [Einen Monat kostenlos testen](http://azure.microsoft.com/pricing/free-trial/) eine kostenlose Testversion. Wenn Sie über ein MSDN Platforms-Abonnement verfügen, lesen Sie [Azure-Vorteil für MSDN Platforms-Abonnenten](https://azure.microsoft.com/offers/ms-azr-0062p/).
 
-> [AZURE.NOTE]Durch virtuelle Computer, die in Azure ausgeführt werden, entstehen fortlaufend Kosten. Diese Kosten werden im Rahmen der kostenlosen Testversion, des MSDN-Abonnements oder des kostenpflichtigen Abonnements abgerechnet. Weitere Informationen zu den Kosten der in Azure ausgeführten virtuellen Computer finden Sie unter [Virtuelle Computer – Preisübersicht](http://azure.microsoft.com/pricing/details/virtual-machines/) und [Azure-Preisrechner](http://azure.microsoft.com/pricing/calculator/). Informationen dazu, wie Sie die Kosten möglichst gering halten können, finden Sie unter [Minimizing the costs of test environment virtual machines in Azure](#costs) (Minimieren der Kosten von Testumgebungen für virtuelle Computer in Azure).
+> [AZURE.NOTE]Durch virtuelle Computer, die in Azure ausgeführt werden, entstehen fortlaufend Kosten. Diese Kosten werden im Rahmen der kostenlosen Testversion, des MSDN Platforms-Abonnements oder des kostenpflichtigen Abonnements abgerechnet. Weitere Informationen zu den Kosten der in Azure ausgeführten virtuellen Computer finden Sie unter [Virtuelle Computer – Preisübersicht](http://azure.microsoft.com/pricing/details/virtual-machines/) und [Azure-Preisrechner](http://azure.microsoft.com/pricing/calculator/). Informationen dazu, wie Sie die Kosten möglichst gering halten können, finden Sie unter [Minimizing the costs of test environment virtual machines in Azure](#costs) (Minimieren der Kosten von Testumgebungen für virtuelle Computer in Azure).
 
 ## Phase 1: Erstellen des virtuellen Netzwerks
 
@@ -250,15 +250,11 @@ Dies ist die endgültige Konfiguration.
 
 ![](./media/virtual-machines-base-configuration-test-environment/BC_TLG04.png)
 
-Die Basiskonfiguration in Azure kann nun zur Anwendungsentwicklung, zu Testzwecken oder für zusätzliche Testumgebungen wie eine [simulierte Hybridcloudumgebung](../virtual-network/virtual-networks-setup-simulated-hybrid-cloud-environment-testing.md) verwendet werden.
+Die Basiskonfiguration in Azure kann nun zur Anwendungsentwicklung, zu Testzwecken oder für zusätzliche Testumgebungen verwendet werden.
 
-## Zusätzliche Ressourcen
+## Nächster Schritt
 
-[Azure Test Lab](http://social.technet.microsoft.com/wiki/contents/articles/24092.azure-test-lab.aspx)
-
-[Hybrid cloud test environments (Testumgebungen für Hybridclouds)](../virtual-network/virtual-networks-setup-hybrid-cloud-environment-testing.md)
-
-[Testumgebung für die Basiskonfiguration mit Azure-Ressourcen-Manager](virtual-machines-base-configuration-test-environment-resource-manager.md)
+- Richten Sie zum Testen von Hybridkonfigurationen die [simulierte Hybridcloudumgebung](../virtual-network/virtual-networks-setup-simulated-hybrid-cloud-environment-testing.md) ein.
 
 ## <a id="costs"></a>Minimizing the costs of test environment virtual machines in Azure (Minimieren der Kosten von Testumgebungen für virtuelle Computer in Azure)
 
@@ -288,4 +284,4 @@ Zum Starten der virtuellen Computer in der angegebenen Reihenfolge mit Azure Pow
 	Start-AzureVM -ServiceName $serviceName -Name "APP1"
 	Start-AzureVM -ServiceName $serviceName -Name "CLIENT1"
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

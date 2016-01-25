@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/21/2015"
+	ms.date="01/12/2016"
 	ms.author="cephalin"/>
 
 # Einrichten von Stagingumgebungen für Web-Apps in Azure App Service
@@ -45,7 +45,7 @@ Jeder App Service-Planmodus unterstützt eine andere Anzahl von Bereitstellungss
 Die Web-App muss im **Standard**- oder **Premium**-Modus ausgeführt werden, damit mehrere Bereitstellungsslots aktiviert werden können.
 
 1. Öffnen Sie im [Azure-Portal](https://portal.azure.com/) das Blatt Ihrer Web-App.
-2. Klicken Sie auf **Bereitstellungsslots**. Klicken Sie dann auf dem Blatt **Bereitstellungsslots**auf **Bereitstellungsslot hinzufügen**.
+2. Klicken Sie auf **Einstellungen** und dann auf **Bereitstellungsslots**. Klicken Sie dann auf dem Blatt **Bereitstellungsslots**auf **Bereitstellungsslot hinzufügen**.
 
 	![Neuen Bereitstellungs-Steckplatz hinzufügen][QGAddNewDeploymentSlot]
 
@@ -65,7 +65,7 @@ Die Web-App muss im **Standard**- oder **Premium**-Modus ausgeführt werden, dam
 
 	![Bereitstellungs-Steckplatz-Titel][StagingTitle]
 
-5. Klicken Sie auf der Seite des Slots auf die App-URL. Beachten Sie, dass der Bereitstellungsslot über einen eigenen Hostnamen verfügt und eine Live-Web-App ist. Weitere Informationen darüber, wie Sie den öffentlichen Zugriff auf den Bereitstellungsslot beschränken, finden Sie unter [App Service-Web-App – Blockieren des Webzugangs auf Nicht-Produktionsslots](http://ruslany.net/2014/04/azure-web-sites-block-web-access-to-non-production-deployment-slots/).
+5. Klicken Sie auf der Seite des Slots auf die App-URL. Beachten Sie, dass der Bereitstellungsslot über einen eigenen Hostnamen verfügt und eine Live-App ist. Weitere Informationen darüber, wie Sie den öffentlichen Zugriff auf den Bereitstellungsslot beschränken, finden Sie unter [App Service-Web-App – Blockieren des Webzugangs auf Nicht-Produktionsslots](http://ruslany.net/2014/04/azure-web-sites-block-web-access-to-non-production-deployment-slots/).
 
 Nach der Erstellung des Bereitstellungsslots ist kein Inhalt vorhanden. Sie können die Bereitstellung im Slot von einem anderen Repositoryzweig oder einem ganz anderen Repository vornehmen. Darüber hinaus können Sie die Konfiguration des Slots ändern. Verwenden Sie für Aktualisierungen des Inhalts das Veröffentlichungsprofil oder die Bereitstellungsanmeldeinformationen, die dem Bereitstellungsslot zugeordnet sind. Beispiel: [Für die Veröffentlichung in diesem Slot können Sie Git verwenden](web-sites-publish-source-control.md).
 
@@ -259,4 +259,4 @@ Um einen nicht mehr benötigten Bereitstellungsslot zu löschen, verwenden Sie w
 [SlotSettings]: ./media/web-sites-staged-publishing/SlotSetting.png
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

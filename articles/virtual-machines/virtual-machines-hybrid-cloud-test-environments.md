@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="Windows"
 	ms.devlang="na"
 	ms.topic="index-page"
-	ms.date="09/16/2015"
+	ms.date="01/12/2016"
 	ms.author="josephd"/>
 
 # Testumgebungen für Azure-Hybridclouds
@@ -49,14 +49,8 @@ Der [Office 365 DirSync-Server in einer hybriden Cloud-Testumgebung](../virtual-
 Für Organisationen und Einzelpersonen, für die eine direkte Internetverbindung und eine öffentliche IP-Adresse nicht ohne Weiteres verfügbar sind, erstellt die [simulierte hybride Cloud-Testumgebung](../virtual-network/virtual-networks-setup-simulated-hybrid-cloud-environment-testing.md) das vereinfachte lokale Netzwerk in einem separaten virtuellen Azure-Netzwerk, und verbindet die beiden virtuellen Netzwerke dann mit einer VNet-zu-VNet-VPN-Verbindung.
 
 
-## Zusätzliche Ressourcen
+## Nächster Schritt
 
-[In Azure-Infrastrukturdiensten gehostete SharePoint-Farmen](virtual-machines-sharepoint-infrastructure-services.md)
+- Erfahren Sie mehr über [Implementierungsrichtlinien](virtual-machines-infrastructure-services-implementation-guidelines.md), um eine benutzerdefinierte Entwicklungs-/Testbereitstellung oder eine Produktionsbereitstellung in Azure- Infrastrukturdiensten zu entwerfen.
 
-[Azure-Infrastrukturdienste-Workload: Branchenanwendung mit hoher Verfügbarkeit](virtual-machines-workload-high-availability-LOB-application.md)
-
-[Bereitstellen von Office 365-Verzeichnissynchronisierung (DirSync) in Microsoft Azure](https://technet.microsoft.com/library/dn635310.aspx)
-
-[Implementierungsrichtlinien für Azure-Infrastrukturdienste](virtual-machines-infrastructure-services-implementation-guidelines.md)
-
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0114_2016-->

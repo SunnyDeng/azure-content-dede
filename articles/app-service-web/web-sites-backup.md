@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/10/2015" 
+	ms.date="01/07/2015" 
 	ms.author="cephalin"/>
 
 # Sichern von Web-Apps in Azure App Service
@@ -126,8 +126,7 @@ Erstellen Sie zum Ausschließen von Dateien und Ordnern aus der Sicherung eine `
 
 Stellen Sie sich vor, Sie verfügen über eine Website mit Protokolldateien und statischen Bildern aus früheren Jahren, die sich nicht ändern. Sie haben bereits eine vollständige Sicherung der Web-App erstellt, die die alten Bilder enthält. Jetzt möchten Sie die Web-App täglich sichern, aber Sie möchten nicht für die Speicherung von Protokolldateien oder statischen Bilddateien bezahlen, die sich nie ändern.
 
-![Ordner "Logs"][LogsFolder]
-![Ordner "Images"][ImagesFolder]
+![Ordner "Logs"][LogsFolder] ![Ordner "Images"][ImagesFolder]
 	
 Die unten angegebenen Schritte zeigen, wie Sie diese Dateien aus der Sicherung ausschließen.
 
@@ -167,7 +166,7 @@ Die Datenbanksicherung für die Web-App wird im Stammverzeichnis der ZIP-Datei g
 
 <a name="nextsteps"></a>
 ## Nächste Schritte
-Informationen zum Wiederherstellen von Web-Apps aus einer Sicherung finden Sie unter [Wiederherstellen von Web-Apps in Azure App Service](web-sites-restore.md).
+Informationen zum Wiederherstellen von Web-Apps aus einer Sicherung finden Sie unter [Wiederherstellen von Web-Apps in Azure App Service](web-sites-restore.md). Sie können App Service-Apps auch mithilfe der REST-API sichern und wiederherstellen (siehe [Verwenden von REST zum Sichern und Wiederherstellen von App Service-Apps](websites-csm-backup.md)).
 
 Informationen zu den ersten Schritten mit Azure finden Sie unter [Kostenlose Microsoft Azure-Testversion](/pricing/free-trial/).
 
@@ -190,4 +189,4 @@ Informationen zu den ersten Schritten mit Azure finden Sie unter [Kostenlose Mic
 [GhostUpgradeWarning]: ./media/web-sites-backup/13GhostUpgradeWarning.png
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0114_2016-->

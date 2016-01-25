@@ -14,7 +14,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="12/04/2015" 
+	ms.date="01/11/2016" 
 	ms.author="jeffstok"/>
 	
 # Azure Stream Analytics und Power BI: Ein Dashboard mit Echtzeitanalyse und -sichtbarkeit von Streamingdaten
@@ -27,13 +27,13 @@ In diesem Artikel erfahren Sie, wie Sie eigene benutzerdefinierte Business Intel
 
 > [AZURE.NOTE]Power BI ist eine Vorschaufunktion von Azure Stream Analytics. Zu diesem Zeitpunkt wird die Erstellung und Konfiguration von Power BI-Ausgaben im Azure-Vorschauportal nicht unterstützt.
 
-## Voraussetzungen ##
+## Voraussetzungen
 
 * Microsoft Azure-Konto
 * Eine Eingabe für Ihren Stream Analytics-Auftrag, aus dem Streamingdaten verwendet werden können. Stream Analytics akzeptiert Eingaben von Azure Event Hubs oder dem Azure-Blob-Speicher.  
 * Geschäfts- oder Schulkonto für Power BI
 
-## Erstellen eines Azure Stream Analytics-Auftrags ##
+## Erstellen eines Azure Stream Analytics-Auftrags
 
 Klicken Sie im [Azure-Portal](https://manage.windowsazure.com) auf **Neu, Datendienste, Stream Analytics und Schnellerfassung**.
 
@@ -49,7 +49,7 @@ Klicken Sie im linken Bereich auf **Stream Analytics**, um die Stream Analytics-
 
 > [AZURE.TIP]Der neue Auftrag wird mit dem Status **Nicht gestartet** aufgeführt. Beachten Sie, dass die Schaltfläche **Start** am unteren Seitenrand deaktiviert ist. Dies entspricht dem erwarteten Verhalten, da Sie die Auftragseingabe, -ausgabe, -abfrage usw. konfigurieren müssen, bevor Sie den Auftrag starten können.
 
-## Festlegen der Auftragseingabe ##
+## Festlegen der Auftragseingabe
 
 In diesem Tutorial wird davon ausgegangen, dass Sie Event Hub als Eingabe mit JSON-Serialisierung und UTF-8-Codierung verwenden.
 
@@ -74,7 +74,7 @@ In diesem Tutorial wird davon ausgegangen, dass Sie Event Hub als Eingabe mit J
   *	**Codierung** – UTF8
 *	Klicken Sie auf das Häkchen, um diese Quelle hinzuzufügen und um zu überprüfen, ob Stream Analytics erfolgreich mit dem Event Hub verbunden werden kann.
 
-## Power BI-Ausgabe hinzufügen ##
+## Power BI-Ausgabe hinzufügen
 
 1.  Klicken Sie am oberen Seitenrand auf **Ausgabe** und dann auf **Ausgabe hinzufügen**. Sie sehen, dass Power BI als Ausgabeoption aufgelistet ist.
 
@@ -106,7 +106,7 @@ Geben Sie die Werte wie nachfolgend gezeigt ein:
 >	[AZURE.WARNING] Wenn Power BI bereits über ein Dataset und eine Tabelle mit demselben Namen verfügt, den Sie in diesem Stream Analytics-Auftrag angegeben haben, beachten Sie bitte, dass die vorhandenen Daten überschrieben werden.
 
 
-## Schreiben von Abfragen ##
+## Schreiben von Abfragen
 
 Gehen Sie zur Registerkarte **Abfrage** des Auftrags. Schreiben Sie die Abfrage, deren Ausgabe Sie in Power BI sehen möchten. Dies kann z. B. die folgende SQL-Abfrage sein:
 
@@ -127,7 +127,7 @@ Gehen Sie zur Registerkarte **Abfrage** des Auftrags. Schreiben Sie die Abfrage,
     
 Starten Sie den Auftrag. Überprüfen Sie, ob der Event Hub Ereignisse empfängt und Ihre Abfrage die erwarteten Ergebnisse generiert. Wenn Ihre Abfrage 0 Zeilen ausgibt, werden Power BI-Dataset und -Tabellen nicht automatisch erstellt.
 
-## Erstellen des Dashboards in Power BI ##
+## Erstellen des Dashboards in Power BI
 
 Wechseln Sie zu [Powerbi.com](https://powerbi.com), und melden Sie sich mit Ihrem Geschäfts- oder Schulkonto an. Wenn die Stream Analytics-Auftragsabfrage Ergebnisse ausgibt, werden Sie feststellen, dass das Dataset bereits erstellt wurde:
 
@@ -163,13 +163,18 @@ Beachten Sie, dass in diesem Tutorial nur die Erstellung einer Art von Diagramm 
 
 Weitere Informationen zum Konfigurieren einer Power BI-Ausgabe und zur Verwendung von Power BI-Gruppen finden Sie unter [Grundlegendes zu Stream Analytics-Ausgaben](stream-analytics-define-outputs.md "Grundlegendes zu Stream Analytics-Ausgaben") im Abschnitt [Power BI](stream-analytics-define-outputs.md#power-bi). Eine weitere nützliche Ressource, um mehr über das Erstellen von Dashboards mit Power BI zu erfahren, sind die [Dashboards in der Power BI-Vorschau](http://support.powerbi.com/knowledgebase/articles/424868-dashboards-in-power-bi-preview).
 
-## Einschränkungen und bewährte Methoden ##
+## Einschränkungen und bewährte Methoden
+
 In Power BI werden Parallelitäts- und Durchsatzeinschränkungen genutzt. Eine Beschreibung finden Sie hier: [https://powerbi.microsoft.com/pricing](https://powerbi.microsoft.com/pricing "Power BI-Preise") (in englischer Sprache).
 
-Aufgrund dieser Einschränkungen eignet sich Power BI perfekt für Anwendungsfälle, bei denen Azure Stream Analytics eine erhebliche Datenlastverringerung ermöglicht. Es wird die Verwendung von „TumblingWindow“ oder „HoppingWindow“ empfohlen, um sicherzustellen, dass beim Datenpush maximal 1 Push pro Sekunde erfolgt und dass die Abfrage innerhalb der Durchsatzanforderungen liegt. Mit der folgenden Gleichung können Sie den Wert für das Fenster in Sekunden berechnen: ![Gleichung1](./media/stream-analytics-power-bi-dashboard/equation1.png).
-
-Beispiel: Wenn 1.000 Geräte jede Sekunde Daten senden und Sie das Power BI Pro-SKU verwenden, das 1.000.000 Zeilen pro Stunde unterstützt, und die durchschnittlichen Daten pro Gerät in Power BI berechnen möchten, können Sie maximal alle 4 Sekunden einen Push pro Gerät durchführen (wie im Folgenden gezeigt): ![Gleichung2](./media/stream-analytics-power-bi-dashboard/equation2.png)
-
+Aufgrund dieser Einschränkungen eignet sich Power BI perfekt für Anwendungsfälle, bei denen Azure Stream Analytics eine erhebliche Datenlastverringerung ermöglicht. Es wird die Verwendung von TumblingWindow oder HoppingWindow empfohlen, um sicherzustellen, dass beim Datenpush maximal 1 Push pro Sekunde erfolgt und dass die Abfrage innerhalb der Durchsatzanforderungen liegt. Mit der folgenden Gleichung können Sie den Wert für das Fenster in Sekunden berechnen:
+  
+![Gleichung1](./media/stream-analytics-power-bi-dashboard/equation1.png)
+  
+Beispiel: Wenn 1.000 Geräte jede Sekunde Daten senden und Sie das Power BI Pro-SKU verwenden, das 1.000.000 Zeilen pro Stunde unterstützt, und die durchschnittlichen Daten pro Gerät in Power BI berechnen möchten, können Sie maximal alle 4 Sekunden einen Push pro Gerät durchführen (wie im Folgenden gezeigt):
+  
+![Gleichung2](./media/stream-analytics-power-bi-dashboard/equation2.png)
+  
 Das bedeutet, dass die ursprüngliche Abfrage wie folgt geändert wird:
 
     SELECT
@@ -185,7 +190,13 @@ Das bedeutet, dass die ursprüngliche Abfrage wie folgt geändert wird:
     	TUMBLINGWINDOW(ss,4),
     	dspl
 
-## Erneuern der Autorisierung
+### Aktualisieren der PowerBI-Ansicht
+
+Häufig wird gefragt, warum das Dashboard in PowerBI nicht automatisch aktualisiert wird.
+
+Nutzen Sie für die automatische Aktualisierung in PowerBI die Option für Fragen und Antworten. Geben Sie beispielsweise die Abfrage „Höchstwert nach Temperatur mit Zeitstempel von heute“ ein, und heften Sie die entsprechende Kachel an das Dashboard an.
+
+### Erneuern der Autorisierung
 
 Aufgrund einer vorübergehenden Einschränkung muss das Authentifizierungstoken alle 90 Tage manuell für sämtliche Aufträge mit Power BI-Ausgabe aktualisiert werden. Darüber hinaus muss Ihr Power BI-Konto erneut authentifiziert werden, wenn das Kennwort seit der Erstellung oder letzten Authentifizierung Ihres Auftrags geändert wurde. Dieses Problem zeigt sich, indem keine Auftragsausgabe erfolgt und in den Vorgangsprotokollen ein Benutzerauthentifizierungsfehler angezeigt wird.
 
@@ -195,10 +206,10 @@ Um dieses Problem zu beheben, halten Sie den laufenden Auftrag an, und wechseln 
 
 ![Grafik13][graphic13]
 
-## Hier erhalten Sie Hilfe ##
+## Hier erhalten Sie Hilfe
 Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=AzureStreamAnalytics).
 
-## Nächste Schritte ##
+## Nächste Schritte
 
 - [Einführung in Azure Stream Analytics](stream-analytics-introduction.md)
 - [Erste Schritte mit Azure Stream Analytics](stream-analytics-get-started.md)
@@ -221,4 +232,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 [graphic12]: ./media/stream-analytics-power-bi-dashboard/12-stream-analytics-power-bi-dashboard.png
 [graphic13]: ./media/stream-analytics-power-bi-dashboard/13-stream-analytics-power-bi-dashboard.png
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0114_2016-->

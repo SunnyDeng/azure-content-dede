@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="11/16/2015"
+   ms.date="01/12/2016"
    ms.author="larryfr"/>
 
 # Bereitstellen und Verwalten von Apache Storm-Topologien in HDInsight unter Linux
@@ -94,23 +94,10 @@ Durch das Ausgleichen einer Topologie kann das System die Parallelität der Topo
 
 ##Überwachen und Verwalten mit der Storm-Benutzeroberfläche
 
-Die Storm-Benutzeroberfläche bietet eine Weboberfläche zum Arbeiten mit ausgeführten Topologien und befindet sich auf dem HDInsight-Cluster.
+Die Storm-Benutzeroberfläche bietet eine Weboberfläche zum Arbeiten mit ausgeführten Topologien und befindet sich auf dem HDInsight-Cluster. Öffnen Sie zum Anzeigen der Storm-Benutzeroberfläche in einem Webbrowser die Seite \_\___https://CLUSTERNAME.azurehdinsight.net/stormui__, wobei __CLUSTERNAME__ der Name Ihres Clusters ist.
 
-> [AZURE.IMPORTANT]Die Storm-Benutzeroberfläche ist nicht öffentlich über das Internet verfügbar. Der Zugriff muss über einen SSH-Tunnel zum Hauptknoten des HDInsight-Clusters erfolgen. Weitere Informationen zum Erstellen und Verwenden eines SSH-Tunnels finden Sie unter [Verwenden von SSH-Tunneling zum Zugriff auf die Ambari-Webbenutzeroberfläche, ResourceManager, JobHistory, NameNode, Oozie und andere Webbenutzeroberflächen](hdinsight-linux-ambari-ssh-tunnel.md).
+> [AZURE.NOTE]Wenn Sie dazu aufgefordert werden, einen Benutzernamen und ein Kennwort anzugeben, geben Sie den Namen des Cluster-Administrators (Admin) und das entsprechende Kennwort ein, die Sie beim Erstellen des Clusters verwendet haben.
 
-Führen Sie die folgenden Schritte aus, um die Storm-Benutzeroberfläche anzuzeigen:
-
-1. Öffnen Sie in einem Webbrowser Ambari Web für Ihren HDInsight-Cluster. Die URL für Ambari Web lautet https://CLUSTERNAME.azurehdinsight.net, wobei __CLUSTERNAME__ der Name des Clusters ist.
-
-2. Wählen Sie aus der Liste der Dienste auf der linken Seite __Storm__ aus. Wählen Sie dann unter __QuickLinks__ den Eintrag __Storm-UI__ aus.
-
-    ![Eintrag der Storm-Benutzeroberfläche in den Quicklinks](./media/hdinsight-storm-deploy-monitor-topology-linux/ambari-storm.png)
-
-    Damit wird die Storm-Benutzeroberfläche geöffnet:
-
-    ![Storm-Benutzeroberfläche](./media/hdinsight-storm-deploy-monitor-topology-linux/storm-ui.png)
-
-> [AZURE.NOTE]Bei der Arbeit mit der Storm-Benutzeroberfläche stellen Sie möglicherweise fest, dass sie von einigen Versionen von Internet Explorer nach dem ersten Besuch nicht ordnungsgemäß aktualisiert wird. Beispielsweise werden die von Ihnen übermittelten neuen Topologien nicht gezeigt, oder es wird eine Topologie als aktiv angezeigt, die Sie zuvor deaktiviert haben. Microsoft ist sich dieses Umstands bewusst und arbeitet an einer Lösung.
 
 ### Hauptseite
 
@@ -168,4 +155,4 @@ Nachdem Sie erfahren haben, wie Sie Topologien mithilfe des Storm-Dashboards ber
 
 Eine Liste weiterer Beispieltopologien finden Sie unter [Beispieltopologien für Storm auf HDInsight](hdinsight-storm-example-topology.md).
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0114_2016-->

@@ -5,7 +5,7 @@
    documentationCenter=""
    authors="adhurwit"
    manager=""
-   editor=""/>
+   editor="tysonn"/>
 
 <tags
    ms.service="storage"
@@ -13,20 +13,20 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="required"
-   ms.date="06/17/2015"
-   ms.author="adhurwit"/>
+   ms.date="01/06/2016"
+   ms.author="lakasa"/>
 
 # Verschlüsseln und Entschlüsseln von Blobs in Microsoft Azure Storage per Azure-Schlüsseltresor
 
 ## Einführung
- 
+
 In diesem Lernprogramm erfahren Sie, wie Sie die clientseitige Speicherverschlüsselung mit Azure Key Vault verwenden. Sie werden durch die Schritte zum Verschlüsseln und Entschlüsseln eines Blobs in einer Konsolenanwendung mit dieser Technologie geführt.
 
 **Geschätzter Zeitaufwand:** 20 Minuten
 
-Eine Übersicht über den Azure-Schlüsseltresor finden Sie unter [Was ist der Azure-Schlüsseltresor?](key-vault/key-vault-whatis.md)
+Eine Übersicht über den Azure-Schlüsseltresor finden Sie unter [Was ist der Azure-Schlüsseltresor?](key-vault/key-vault-whatis.md).
 
-Übersichtsinformationen zur clientseitigen Verschlüsselung für Azure Storage finden Sie unter [Clientseitige Verschlüsselung und Azure Key Vault für Microsoft Azure Storage](storage-client-side-encryption.md).
+Übersichtsinformationen zur clientseitigen Verschlüsselung für Azure Storage finden Sie unter [Erste Schritte der clientseitigen Verschlüsselung für Microsoft Azure Storage](storage-client-side-encryption.md).
 
 
 ## Voraussetzungen
@@ -35,7 +35,7 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
 
 - Ein Azure-Speicherkonto
 - Visual Studio 2013 oder höher
-- Microsoft Azure PowerShell 
+- Microsoft Azure PowerShell
 
 
 ## Übersicht über die clientseitige Verschlüsselung
@@ -69,13 +69,13 @@ Erstellen Sie in Visual Studio eine neue Konsolenanwendung.
 
 Fügen Sie die erforderlichen NuGet-Pakete in der Paket-Manager-Konsole hinzu.
 
-	Install-Package WindowsAzure.Storage 
+	Install-Package WindowsAzure.Storage
 
 	// This is the latest stable release for ADAL.
 	Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -Version 2.16.204221202
 
-	Install-Package Microsoft.Azure.KeyVault 
-	Install-Package Microsoft.Azure.KeyVault.Extensions 
+	Install-Package Microsoft.Azure.KeyVault
+	Install-Package Microsoft.Azure.KeyVault.Extensions
 
 
 Fügen Sie der Datei „App.Config“ AppSettings hinzu.
@@ -108,13 +108,13 @@ Die folgende Methode wird von Schlüsseltresorklassen verwendet, für die eine A
 	{
 	    var authContext = new AuthenticationContext(authority);
 	    ClientCredential clientCred = new ClientCredential(
-	        ConfigurationManager.AppSettings["clientId"], 
+	        ConfigurationManager.AppSettings["clientId"],
 	        ConfigurationManager.AppSettings["clientSecret"]);
 		AuthenticationResult result = await authContext.AcquireTokenAsync(resource, clientCred);
-	
+
 	    if (result == null)
 	        throw new InvalidOperationException("Failed to obtain the JWT token");
-	
+
 	    return result.AccessToken;
 	}
 
@@ -148,14 +148,14 @@ Fügen Sie in der Main-Funktion den folgenden Code hinzu.
 ## Verschlüsseln des Blobs und Hochladen
 Fügen Sie den folgenden Code hinzu, um ein BLOB zu verschlüsseln und in Ihr Azure-Speicherkonto hochzuladen. Die **ResolveKeyAsync**-Methode, die verwendet wird, gibt einen IKey zurück.
 
-	
+
 	// Retrieve the key that you created previously.
 	// The IKey that is returned here is an RsaKey.
 	// Remember that we used the names contosokeyvault and testrsakey1.
     var rsa = cloudResolver.ResolveKeyAsync("https://contosokeyvault.vault.azure.net/keys/TestRSAKey1", CancellationToken.None).GetAwaiter().GetResult();
 
 
-	// Now you simply use the RSA key to encrypt by setting it in the BlobEncryptionPolicy. 
+	// Now you simply use the RSA key to encrypt by setting it in the BlobEncryptionPolicy.
 	BlobEncryptionPolicy policy = new BlobEncryptionPolicy(rsa, null);
 	BlobRequestOptions options = new BlobRequestOptions() { EncryptionPolicy = policy };
 
@@ -202,9 +202,9 @@ Für die Verwendung eines geheimen Schlüssels mit clientseitiger Verschlüsselu
 - Der Schlüssel in einem "SymmetricKey" sollte über eine Base64-Codierung verfügen.
 - Ein geheimer Schlüsseltresor-Schlüssel, der als "SymmetricKey" verwendet wird, muss im Schlüsseltresor den Inhaltstyp "application/octet-stream" aufweisen.
 
-Hier ist ein Beispiel in PowerShell angegeben, bei dem im Schlüsseltresor ein geheimer Schlüssel erstellt wird, der als "SymmetricKey" verwendet werden kann.
+Hier ist ein Beispiel in PowerShell angegeben, bei dem im Schlüsseltresor ein geheimer Schlüssel erstellt wird, der als "SymmetricKey" verwendet werden kann. HINWEIS: Der hartcodierte Wert „$key“ dient nur der Veranschaulichung. In Ihrem eigenen Code sollten Sie diesen Schlüssel generieren.
 
-	// Here we are making a 128-bit key so we have 16 characters. 
+	// Here we are making a 128-bit key so we have 16 characters.
 	// 	The characters are in the ASCII range of UTF8 so they are
 	//	each 1 byte. 16 x 8 = 128.
 	$key = "qwertyuiopasdfgh"
@@ -218,7 +218,7 @@ Hier ist ein Beispiel in PowerShell angegeben, bei dem im Schlüsseltresor ein g
 In Ihrer Konsolenanwendung können Sie den gleichen Aufruf wie vorher verwenden, um diesen geheimen Schlüssel als "SymmetricKey" abzurufen.
 
 	SymmetricKey sec = (SymmetricKey) cloudResolver.ResolveKeyAsync(
-    	"https://contosokeyvault.vault.azure.net/secrets/TestSecret2/", 
+    	"https://contosokeyvault.vault.azure.net/secrets/TestSecret2/",
         CancellationToken.None).GetAwaiter().GetResult();
 
 Das ist alles. Viel Spaß!
@@ -235,4 +235,4 @@ Aktuelle Informationen zu Microsoft Azure Storage finden Sie im [Microsoft Azure
 <!--Image references-->
 [1]: ./media/storage-encrypt-decrypt-blobs-key-vault/blobmetadata.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

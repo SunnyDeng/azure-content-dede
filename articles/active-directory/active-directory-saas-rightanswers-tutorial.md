@@ -10,7 +10,7 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
+    ms.date="01/12/2016" 
     ms.author="markvi" />
 
 #Tutorial: Azure Active Directory-Integration mit RightAnswers
@@ -20,7 +20,7 @@ In diesem Tutorial wird die Integration von Azure und RightAnswers erläutert. D
 -   Ein gültiges Azure-Abonnement
 -   Ein RightAnswers-Abonnement, für das einmaliges Anmelden aktiviert ist
   
-Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie RightAnswers zugewiesen haben, wie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md) beschrieben mittels einmaliger Anmeldung bei der Anwendung anmelden.
+Nach Abschluss dieses Tutorials können sich die RightAnswers zugewiesenen Azure AD-Benutzer wie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md) beschrieben mittels einmaliger Anmeldung bei der Anwendung anmelden.
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -54,7 +54,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Rig
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-rightanswers-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie im **Suchfeld** den Suchbegriff **RightAnswers** ein.
+6.  Geben Sie im **Suchfeld** das Wort **RightAnswers** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-rightanswers-tutorial/IC802926.png "Anwendungskatalog")
 
@@ -69,11 +69,11 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-rightanswers-tutorial/IC802927.png "Einmaliges Anmelden konfigurieren")
 
-2.  Wählen Sie auf der Seite **Wie sollen sich Benutzer bei RightAnswers anmelden?** die Option **Microsoft Azure AD – einmaliges Anmelden** aus, und klicken Sie dann auf **Weiter**.
+2.  Wählen Sie auf der Seite **Wie sollen sich Benutzer RightAnswers anmelden?** die Option **Microsoft Azure AD – einmaliges Anmelden** aus, und klicken Sie dann auf **Weiter**.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-rightanswers-tutorial/IC802928.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Anmelde-URL** die URL ein, welche die Benutzer zur Anmeldung bei RightAnswers verwenden (z. B. **https://fortify.rightanswers.com/portal/ss/*), und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **RightAnswers-Anmelde-URL** die URL ein, welche die Benutzer zur Anmeldung bei RightAnswers verwenden (z. B. „**https://fortify.rightanswers.com/portal/ss/*), und klicken Sie dann auf **Weiter**.
 
     ![Konfigurieren von App-Einstellungen](./media/active-directory-saas-rightanswers-tutorial/IC802929.png "Konfigurieren von App-Einstellungen")
 
@@ -114,4 +114,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0114_2016-->

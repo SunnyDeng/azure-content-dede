@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="12/23/2015"
+   ms.date="01/12/2015"
    ms.author="telmos" />
 
 # IP-Adressen (klassisch) in Azure
@@ -160,11 +160,6 @@ Im Folgenden werden IP-Adressfeatures im Ressourcen-Manager-Bereitstellungsmodel
 ||Interner Load Balancer (ILB)|Dem ILB zugewiesen (dynamisch oder statisch)|Der Front-End-Konfiguration des ILB zugewiesen (dynamisch oder statisch)|
 
 ## Nächste Schritte
-- [Bereitstellen einer VM mit einer statischen öffentlichen IP-Adresse](virtual-network-deploy-static-pip-classic-ps.md)
-- [Bereitstellen einer VM mit einer statischen privaten IP-Adresse](virtual-networks-static-private-ip-classic-pportal.md)
-- [Erstellen eines Lastenausgleichs mit PowerShell](load-balancer-get-started-internet-classic-cli.md)
-- [Erstellen eines internen Lastenausgleichs mit PowerShell](load-balancer-get-started-ilb-classic-ps.md)
-- [Erstellen eines Anwendungsgateways mit PowerShell](application-gateway-create-gateway.md)
-- [Erstellen eines internen Anwendungsgateways mit PowerShell](application-gateway-ilb.md)
+- [Bereitstellen einer VM mit einer statischen privaten IP-Adresse](virtual-networks-static-private-ip-classic-pportal.md) mithilfe des klassischen Portals
 
-<!----HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0114_2016-->

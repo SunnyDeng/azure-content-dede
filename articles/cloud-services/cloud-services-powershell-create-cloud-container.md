@@ -13,11 +13,13 @@
    ms.topic="article"
    ms.tgt_pltfrm="powershell"
    ms.workload="na"
-   ms.date="10/14/2015"
+   ms.date="01/13/2015"
    ms.author="cawa"/>
 
 # Verwenden des Azure PowerShell-Befehls zum Erstellen eines leeren Clouddienstcontainers
-1. Installieren Sie das Microsoft Azure PowerShell-Cmdlet über [Download Azure PowerShell](http://go.microsoft.com/?linkid=9811175&clcid=0x409). Weitere Anweisungen zum Installieren des Azure PowerShell-Cmdlets und zum Herstellen einer Verbindung zu Ihrem Azure-Abonnement finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
+1. Installieren Sie das Microsoft Azure PowerShell-Cmdlet über [Download Azure PowerShell](http://aka.ms/webpi-azps). Öffnen Sie eine PowerShell-Eingabeaufforderung. Melden Sie sich mithilfe von [Add-AzureAccount](https://msdn.microsoft.com/library/dn495128.aspx) an.
+
+> [AZURE.NOTE]Weitere Anweisungen zum Installieren des Azure PowerShell-Cmdlets und zum Herstellen einer Verbindung zu Ihrem Azure-Abonnement finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md).
 
 2. **New-AzureService** ist das Cmdlet, mit dem ein leerer Clouddienstcontainer erstellt wird.
 
@@ -41,4 +43,4 @@ Get-help New-AzureService
     - Um Ihr Clouddienst-Projekt in Azure zu veröffentlichen, nutzen Sie das Codebeispiel **PublishCloudService.ps1** auf der Seite [Kontinuierliche Zustellung für Cloud Services in Azure](cloud-services-dotnet-continuous-delivery.md).
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_0114_2016-->

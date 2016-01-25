@@ -13,7 +13,7 @@ ms.devlang="na"
 ms.topic="article"
 ms.tgt_pltfrm="na"
 ms.workload="big-data"
-ms.date="01/05/2015"
+ms.date="01/12/2016"
 ms.author="larryfr"/>
 
 #Verwenden von SSH-Tunneling zum Zugriff auf die Ambari-Webbenutzeroberfläche, ResourceManager, JobHistory, NameNode, Oozie und andere Webbenutzeroberflächen
@@ -32,7 +32,6 @@ Im Folgenden finden Sie die Dienste, die von der Ambari-Webbenutzeroberfläche v
 * Threadstapel,
 * Oozie-Webbenutzeroberfläche
 * Benutzeroberfläche für HBase-Master und -Protokolle
-* Storm-Benutzeroberfläche
 
 Wenn Sie für die Clusteranpassung Skriptaktionen verwenden, benötigen Sie für alle Dienste und Dienstprogramme, die Sie installieren und die eine Webbenutzeroberfläche verfügbar machen, einen SSH-Tunnel. Bei der Installation von Hue mit einer Skriptaktion müssen Sie z. B. einen SSH-Tunnel verwenden, um auf die Hue-Webbenutzeroberfläche zuzugreifen.
 
@@ -149,11 +148,6 @@ Wenn Sie FoxyProxy Standard installiert haben, konfigurieren Sie es folgenderma�
 	* **URL-Muster** – ***internal.cloudapp.net*** – Dies definiert ein Muster, das mit dem internen vollständig qualifizierten Domänennamen der Clusterknoten übereinstimmt.
 
 	![FoxyProxy-Muster](./media/hdinsight-linux-ambari-ssh-tunnel/foxypattern.png)
-    
-    Wenn Sie einen Storm in HDInsight-Cluster verwenden, sollten Sie außerdem ein Muster mit den folgenden Werten hinzufügen:
-    
-    * **Name des Musters**: **Workerknoten**
-    * **URL-Muster**: *** 10.0.0*** – Ermöglicht der Storm-Benutzeroberfläche den Zugriff auf Daten auf Workerknoten nach IP-Adresse.
 
 4. Klicken Sie auf **OK**, um den Proxy hinzuzufügen und **Proxyeinstellungen** zu schließen.
 
@@ -202,4 +196,4 @@ Weitere Informationen zur Verwendung von SSH mit HDInsight finden Sie in den fol
 
 * [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Windows](hdinsight-hadoop-linux-use-ssh-windows.md)
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0114_2016-->

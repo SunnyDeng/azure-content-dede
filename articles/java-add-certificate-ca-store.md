@@ -5,7 +5,7 @@
 	documentationCenter="java" 
 	authors="rmcmurray" 
 	manager="wpickett" 
-	editor="jimbe"/>
+	editor=""/>
 
 <tags 
 	ms.service="multiple" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="Java" 
 	ms.topic="article" 
-	ms.date="11/19/2015" 
+	ms.date="01/09/2016" 
 	ms.author="robmcm"/>
 
 # Hinzufügen eines Zertifikats zum Java CA-Zertifikatspeicher
@@ -56,5 +56,4 @@ Weitere Informationen zu den von Azure verwendeten Stammzertifikaten finden Sie 
 
 Weitere Informationen zu Java finden Sie im [Java Developer Center](/develop/java/).
 
-<!---HONumber=AcomDC_1125_2015-->
-
+<!---HONumber=AcomDC_0114_2016-->

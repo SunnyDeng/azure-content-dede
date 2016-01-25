@@ -11,7 +11,7 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
+    ms.date="01/12/2016" 
     ms.author="markvi" />
 
 #Tutorial: Azure Active Directory-Integration mit PolicyStat
@@ -21,7 +21,7 @@ In diesem Tutorial wird die Integration von Azure und PolicyStat erläutert. Das
 -   Ein gültiges Azure-Abonnement
 -   Einen PolicyStat-Mandanten
   
-Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie PolicyStat zugewiesen haben, mittels einmaliger Anmeldung auf Ihrer PolicyStat-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können Sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
+Nach Abschluss dieses Tutorials können sich die PolicyStat zugewiesenen Azure AD-Benutzer mittels einmaliger Anmeldung auf Ihrer PolicyStat-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -55,7 +55,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Pol
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-policystat-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie im **Suchfeld** den Suchbegriff **PolicyStat** ein.
+6.  Geben Sie im **Suchfeld** das Wort **PolicyStat** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-policystat-tutorial/IC808627.png "Anwendungskatalog")
 
@@ -78,7 +78,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-policystat-tutorial/IC808630.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-Einstellungen konfigurieren** im Textfeld **Anmelde-URL** die von den Benutzern für die Anmeldung bei PolicyStat verwendete URL ein (z. B. *"https://demo-azure.policystat.com"*), und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-Einstellungen konfigurieren** im Textfeld **Anmelde-URL** die von den Benutzern für die Anmeldung bei PolicyStat verwendete URL ein (z. B. *https://demo-azure.policystat.com*), und klicken Sie dann auf **Weiter**.
 
     ![Konfigurieren von App-Einstellungen](./media/active-directory-saas-policystat-tutorial/IC808631.png "Konfigurieren von App-Einstellungen")
 
@@ -154,4 +154,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0114_2016-->

@@ -13,7 +13,7 @@ ms.service="virtual-machines"
  ms.topic="article"
  ms.tgt_pltfrm="vm-multiple"
  ms.workload="big-compute"
- ms.date="09/28/2015"
+ ms.date="01/07/2016"
  ms.author="danlep"/>
 
 # Automatisches zentrales Hoch- und Herunterskalieren von Azure-Computeressourcen in einem HPC Pack-Cluster entsprechend der Clusterworkload
@@ -27,12 +27,14 @@ Wenn Sie Azure-Burstknoten im HPC Pack-Cluster bereitstellen oder einen HPC Pack
 
 ## Voraussetzungen
 
-* **Cluster mit HPC Pack 2012 R2 Update 1 oder höher** – Das Skript **AzureAutoGrowShrink.ps1** ist im Ordner "%CCP\_HOME%bin" installiert. Der Clusterhauptknoten kann entweder lokal oder auf einem virtuellen Azure-Computer bereitgestellt werden. Informationen für die ersten Schritte mit einem lokalen Hauptknoten und Azure-Burstknoten finden Sie unter [Einrichten eines Hybrid-Rechenclusters mit Microsoft HPC Pack](../cloud-services/cloud-services-setup-hybrid-hpcpack-cluster.md). Informationen zur schnellen Bereitstellung eines HPC Pack-Clusters auf virtuellen Azure-Computern finden Sie im Artikel zur Verwendung des [HPC Pack IaaS-Bereitstellungsskripts](virtual-machines-hpcpack-cluster-powershell-script.md).
+* **Cluster mit HPC Pack 2012 R2 Update 1 oder höher** – Das Skript **AzureAutoGrowShrink.ps1** ist im Ordner "%CCP\_HOME%bin" installiert. Der Clusterhauptknoten kann entweder lokal oder auf einem virtuellen Azure-Computer bereitgestellt werden. Informationen für die ersten Schritte mit einem lokalen Hauptknoten und Azure-Burstknoten finden Sie unter [Einrichten eines Hybrid-Rechenclusters mit Microsoft HPC Pack](../cloud-services/cloud-services-setup-hybrid-hpcpack-cluster.md). Informationen zur schnellen Bereitstellung eines HPC Pack-Clusters auf virtuellen Azure-Maschinen finden Sie im Artikel zur Verwendung des [HPC Pack IaaS-Bereitstellungsskripts](virtual-machines-hpcpack-cluster-powershell-script.md). Alternativ können Sie eine [Azure-Schnellstartvorlage](https://azure.microsoft.com/documentation/templates/create-hpc-cluster/) nutzen.
+
+* **Azure PowerShell 0.8.12**: Das Skript hängt derzeit von dieser bestimmten Version von Azure PowerShell ab. Wenn Sie eine höhere Version auf dem Hauptknoten ausführen, müssen Sie Azure PowerShell möglicherweise auf [Version 0.8.12](http://az412849.vo.msecnd.net/downloads03/azure-powershell.0.8.12.msi) herunterstufen, um das Skript ausführen zu können.
 
 * **Für einen Cluster mit Azure-Burstknoten** – Führen Sie das Skript auf einem Clientcomputer, auf dem HPC Pack installiert ist, oder auf dem Hauptknoten aus. Wenn Sie das Skript auf einem Clientcomputer ausführen, stellen Sie sicher, dass Sie die Variable "$env:CCP\_SCHEDULER" so festlegen, dass sie auf den Hauptknoten verweist. Die Azure-Burstknoten müssen dem Cluster bereits hinzugefügt sein, sie können jedoch den Status "Nicht bereitgestellt" aufweisen.
 
 
-* **Für einen auf virtuellen Azure-Computern bereitgestellten Cluster** – Führen Sie das Skript auf dem virtuellen Computer für den Hauptknoten aus, da er von den Skripts **Start HpcIaaSNode.ps1** und **Stop HpcIaaSNode.ps1** abhängt, die dort installiert sind. Für diese Skripts ist zudem ein Azure-Verwaltungszertifikat oder eine Azure-Veröffentlichungseinstellungsdatei erforderlich (siehe [Manage the number and availability of compute nodes in an HPC Pack cluster in Azure](virtual-machines-hpcpack-cluster-node-manage.md) (in englischer Sprache)). Stellen Sie sicher, dass alle virtuellen Computer für Computeknoten dem Cluster bereits hinzugefügt sind. Sie können sich jedoch im Status "Beendet" befinden.
+* **Für einen auf virtuellen Azure-Computern bereitgestellten Cluster** – Führen Sie das Skript auf dem virtuellen Computer für den Hauptknoten aus, da er von den Skripts **Start HpcIaaSNode.ps1** und **Stop HpcIaaSNode.ps1** abhängt, die dort installiert sind. Für diese Skripts ist zudem ein Azure-Verwaltungszertifikat oder eine Azure-Veröffentlichungseinstellungsdatei erforderlich (siehe [Manage the number and availability of compute nodes in an HPC Pack cluster in Azure](virtual-machines-hpcpack-cluster-node-manage.md) (in englischer Sprache)). Stellen Sie sicher, dass alle erforderlichen virtuellen Maschinen für Computeknoten dem Cluster bereits hinzugefügt sind. Sie können sich jedoch im Status „Beendet“ befinden.
 
 ## Syntax
 
@@ -102,4 +104,4 @@ Im folgenden Beispiel werden die mit der Standardvorlage "ComputeNode" bereitges
 .\AzureAutoGrowShrink.ps1 -NodeTemplates 'Default ComputeNode Template' -JobTemplates 'Default' -NodeType ComputeNodes -NumOfActiveQueuedTasksPerNodeToGrow 10 -NumOfActiveQueuedTasksToGrowThreshold 15 -NumOfInitialNodesToGrow 5 -GrowCheckIntervalMins 1 -ShrinkCheckIntervalMins 1 -ShrinkCheckIdleTimes 10 -ArgFile 'IaaSVMComputeNodes_Arg.xml' -LogFilePrefix 'IaaSVMComputeNodes_log'
 ```
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0114_2016-->

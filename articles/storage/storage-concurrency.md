@@ -1,24 +1,24 @@
 <properties 
-	pageTitle="Verwalten von Nebenläufigkeit Microsoft Azure Storage" 
-	description="Verwalten von Nebenläufigkeit für die Blob-, Warteschlangen-, Tabellen- und Dateidienste" 
-	services="storage" 
-	documentationCenter="" 
-	authors="jasonnewyork" 
-	manager="tadb" 
-	editor=""/>
+	pageTitle="Verwalten von Nebenläufigkeit Microsoft Azure Storage"
+	description="Verwalten von Nebenläufigkeit für die Blob-, Warteschlangen-, Tabellen- und Dateidienste"
+	services="storage"
+	documentationCenter=""
+	authors="jasonnewyork"
+	manager="tadb"
+	editor="tysonn"/>
 
-<tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="09/03/2015" 
+<tags
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="09/03/2015"
 	ms.author="jahogg"/>
 
 # Verwalten von Nebenläufigkeit Microsoft Azure Storage
 
-## Übersicht 
+## Übersicht
 
 Moderne Internet-basierte Anwendungen haben in der Regel mehrere Benutzer, die Daten gleichzeitig anzeigen und aktualisieren. Dies zwingt Anwendungsentwickler dazu, sorgfältig zu überlegen, wie sie ihren Endbenutzern ein vorhersagbares Erlebnis gewährleisten können, insbesondere in Situationen, in denen mehrere Benutzer die gleichen Daten aktualisieren können. Von Entwicklern werden für gewöhnlich die drei folgenden Hauptstrategien für die Datennebenläufigkeit in Betracht gezogen:
 
@@ -34,7 +34,7 @@ Der Azure-Speicherdienst unterstützt alle drei Strategien, vor allem jedoch die
 
 Entwickler müssen nicht nur die entsprechende Nebenläufigkeitsstrategie auswählen, sondern auch wissen, wie eine Speicherplattform Änderungen isoliert, insbesondere Änderungen, die in mehreren Transaktionen an demselben Objekt vorgenommen wurden. Der Azure-Speicherdienst verwendet die Momentaufnahmeisolation, damit Lesevorgänge innerhalb einer einzelnen Partition gleichzeitig mit Schreibvorgängen ausgeführt werden können. Im Unterschied zu anderen Isolationsstufen garantiert die Momentaufnahmeisolation, dass bei allen Lesevorgängen eine konsistente Momentaufnahme der Daten vorliegt, auch wenn Aktualisierungen stattfinden. Dazu werden während der Verarbeitung einer Aktualisierungstransaktion im Wesentlichen die zuletzt übergebenen Werte zurückgegeben.
 
-## Verwalten der Nebenläufigkeit im Blob-Dienst
+## Verwalten der Parallelität im Blobspeicher
 Für die Verwaltung des Zugriffs auf Blobs und Container im Blob-Dienst können Sie entweder das optimistische oder das pessimistische Nebenläufigkeitsmodell verwenden. Wenn Sie die Strategie nicht explizit festlegen, wird standardmäßig "Letzter Schreiber gewinnt" verwendet.
 
 ### Optimistische Nebenläufigkeit für Blobs und Container  
@@ -52,18 +52,18 @@ Dieser Prozess ist folgendermaßen gegliedert:
 Der folgende C#-Codeausschnitt (der Client Storage Library 4.2.0 verwendet) zeigt ein einfaches Beispiel zur Konstruktion eines **If-Match AccessCondition**-Objekts, das auf dem ETag-Wert beruht, auf den über die Eigenschaften eines Blob zugegriffen wird, das zuvor abgerufen oder eingefügt wurde. Dann wird für die Aktualisierung des Blobs das **AccessCondition**-Objekt verwendet: Das **AccessCondition**-Objekt fügt der Anforderung den **If-Match**-Header hinzu. Falls das Blob von einem anderen Prozess aktualisiert wurde, gibt der Blob-Dienst eine HTTP 412-Statusmeldung (Vorbedingungsfehler) zurück. Das vollständige Beispiel können Sie [hier](http://code.msdn.microsoft.com/windowsazure/Managing-Concurrency-using-56018114) herunterladen.
 
 	// Retrieve the ETag from the newly created blob
-	// Etag is already populated as UploadText should cause a PUT Blob call 
+	// Etag is already populated as UploadText should cause a PUT Blob call
 	// to storage blob service which returns the etag in response.
 	string orignalETag = blockBlob.Properties.ETag;
-	 
+
 	// This code simulates an update by a third party.
 	string helloText = "Blob updated by a third party.";
-	 
+
 	// No etag, provided so orignal blob is overwritten (thus generating a new etag)
 	blockBlob.UploadText(helloText);
-	Console.WriteLine("Blob updated. Updated ETag = {0}", 
+	Console.WriteLine("Blob updated. Updated ETag = {0}",
 	blockBlob.Properties.ETag);
-	 
+
 	// Now try to update the blob using the orignal ETag provided when the blob was created
 	try
 	{
@@ -121,13 +121,13 @@ Der folgende C#-Codeausschnitt zeigt an einem Beispiel, wie eine exklusive Lease
 	// Acquire lease for 15 seconds
 	string lease = blockBlob.AcquireLease(TimeSpan.FromSeconds(15), null);
 	Console.WriteLine("Blob lease acquired. Lease = {0}", lease);
-	 
+
 	// Update blob using lease. This operation will succeed
 	const string helloText = "Blob updated";
 	var accessCondition = AccessCondition.GenerateLeaseCondition(lease);
 	blockBlob.UploadText(helloText, accessCondition: accessCondition);
 	Console.WriteLine("Blob updated using an exclusive lease");
-	 
+
 	//Simulate third party update to blob without lease
 	try
 	{
@@ -182,7 +182,7 @@ Weitere Informationen finden Sie unter:
 
 - [Angeben von bedingten Headern für Vorgänge des Blob-Diensts](http://msdn.microsoft.com/library/azure/dd179371.aspx)
 - [Lease Container](http://msdn.microsoft.com/library/azure/jj159103.aspx)
-- [Lease Blob ](http://msdn.microsoft.com/library/azure/ee691972.aspx) 
+- [Lease Blob ](http://msdn.microsoft.com/library/azure/ee691972.aspx)
 
 ## Verwalten der Nebenläufigkeit im Tabellendienst
 Wenn Sie mit Entitäten arbeiten, verwendet der Tabellendienst standardmäßig optimistische Nebenläufigkeitsprüfungen. Darin unterscheidet er sich vom Blob-Dienst, wo die Durchführung optimistischer Nebenläufigkeitsprüfungen explizit gewählt werden muss. Ein weiterer Unterschied zwischen Tabellendienst und Blob-Dienst besteht darin, dass Sie mit dem Tabellendienst nur das Nebenläufigkeitsverhalten von Entitäten verwalten können, während Sie mit dem Blob-Dienst die Nebenläufigkeit sowohl von Containern als auch von Blobs verwalten können.
@@ -211,7 +211,7 @@ Der folgende C#-Codeausschnitt zeigt, wie für eine Kundenentität, die zuvor er
 	    if (ex.RequestInformation.HttpStatusCode == 412)
 	        Console.WriteLine("Optimistic concurrency violation – entity has changed since it was retrieved.");
 	    else
-	        throw; 
+	        throw;
 	}  
 
 Um die Nebenläufigkeitsprüfung explizit zu deaktivieren, müssen Sie die **ETag**-Eigenschaft des Objekts **employee** auf "*" festlegen, bevor das Ersetzen ausgeführt wird.
@@ -228,7 +228,7 @@ Entität aktualisieren|	Ja|	Ja|
 Entität zusammenführen|	Ja|	Ja|
 Entität löschen|	Nein|	Ja|
 Entität einfügen oder ersetzen|	Ja|	Nein|
-Entität einfügen oder zusammenführen|	Ja|	Nein 
+Entität einfügen oder zusammenführen|	Ja|	Nein
 
 Bei den Vorgängen **Entität einfügen oder ersetzen** und **Entität einfügen oder zusammenführen** werden *keine* Nebenläufigkeitsprüfungen durchgeführt, da hierbei kein ETag-Wert an den Tabellendienst gesendet wird.
 
@@ -271,6 +271,4 @@ Weitere Informationen zu Azure Storage finden Sie unter:
 - Storage - Erste Schritte für [Blob](storage-dotnet-how-to-use-blobs.md), [Tabelle](storage-dotnet-how-to-use-tables.md) und [Warteschlangen](storage-dotnet-how-to-use-queues.md)
 - Speicherarchitektur – [Microsoft Azure Storage: A Highly Available Cloud Storage Service with Strong Consistency](http://blogs.msdn.com/b/windowsazurestorage/archive/2011/11/20/windows-azure-storage-a-highly-available-cloud-storage-service-with-strong-consistency.aspx) (in englischer Sprache)
 
- 
-
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_0114_2016-->

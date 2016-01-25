@@ -1,21 +1,20 @@
-<properties 
-	pageTitle="Clientseitige Verschlüsselung mit Java für Microsoft Azure Storage | Microsoft Azure" 
-	description="Die Azure Storage-Clientbibliothek für Java bietet Unterstützung für die clientseitige Verschlüsselung und die Integration in den Azure-Schlüsseltresor. Dies bietet eine maximale Sicherheit für Ihre Azure Storage-Anwendungen." 
-	services="storage" 
-	documentationCenter="java" 
-	authors="dineshm" 
-	manager="carolz" 
-	editor=""/>
+<properties
+	pageTitle="Clientseitige Verschlüsselung mit Java für Microsoft Azure Storage | Microsoft Azure"
+	description="Die Azure Storage-Clientbibliothek für Java bietet Unterstützung für die clientseitige Verschlüsselung und die Integration in den Azure-Schlüsseltresor. Dies bietet eine maximale Sicherheit für Ihre Azure Storage-Anwendungen."
+	services="storage"
+	documentationCenter="java"
+	authors="dineshmurthy"
+	manager="carmonm"
+	editor="tysonn"/>
 
-<tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="01/05/2016" 
-	ms.author="tamram"/>
-
+<tags
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="01/13/2016"
+	ms.author="dineshm"/>
 
 # Clientseitige Verschlüsselung mit Java für Microsoft Azure Storage   
 
@@ -34,8 +33,7 @@ Die Verschlüsselung über das Umschlagverfahren funktioniert wie folgt:
 
 2.	Benutzerdaten werden mit diesem CEK verschlüsselt.
 
-3.	Der CEK wird dann mit dem Schlüsselverschlüsselungsschlüssel (Key Encryption Key, KEK) umschlossen (verschlüsselt). Der KEK wird anhand eines Schlüsselbezeichners identifiziert und kann ein asymmetrisches Schlüsselpaar oder ein symmetrischer Schlüssel sein.  
-Er kann lokal verwaltet oder im Azure-Schlüsseltresor gespeichert werden. Die Speicherclientbibliothek hat selbst nie Zugriff auf den KEK. Die Bibliothek ruft lediglich den Algorithmus für das Umschließen des Schlüssels aus, der vom Schlüsseltresor bereitgestellt wird. Benutzer können bei Bedarf benutzerdefinierte Anbieter für das Umschließen von Schlüsseln bzw. das Aufheben dieses Zustands verwenden.  
+3.	Der CEK wird dann mit dem Schlüsselverschlüsselungsschlüssel (Key Encryption Key, KEK) umschlossen (verschlüsselt). Der KEK wird anhand eines Schlüsselbezeichners identifiziert und kann ein asymmetrisches Schlüsselpaar oder ein symmetrischer Schlüssel sein. Er kann lokal verwaltet oder im Azure-Schlüsseltresor gespeichert werden. Die Speicherclientbibliothek hat selbst nie Zugriff auf den KEK. Die Bibliothek ruft lediglich den Algorithmus für das Umschließen des Schlüssels aus, der vom Schlüsseltresor bereitgestellt wird. Benutzer können bei Bedarf benutzerdefinierte Anbieter für das Umschließen von Schlüsseln bzw. das Aufheben dieses Zustands verwenden.
 
 4.	Die verschlüsselten Daten werden dann in den Azure Storage-Dienst hochgeladen. Der umschlossene Schlüssel und einige zusätzliche Verschlüsselungsmetadaten werden entweder als Metadaten (in einem Blob) gespeichert oder mit den verschlüsselten Daten (Warteschlangennachrichten und Tabellenentitäten) interpoliert.
 
@@ -160,16 +158,17 @@ Erstellen Sie ein **BlobEncryptionPolicy**-Objekt, und legen Sie es in den Anfor
 
 	// Create the encryption policy to be used for upload and download.
 	BlobEncryptionPolicy policy = new BlobEncryptionPolicy(key, null);
-	
+
 	// Set the encryption policy on the request options.
 	BlobRequestOptions options = new BlobRequestOptions();
 	options.setEncryptionPolicy(policy);
-	
+
 	// Upload the encrypted contents to the blob.
 	blob.upload(stream, size, null, options, null);
-	
+
 	// Download and decrypt the encrypted contents from the blob.
-	ByteArrayOutputStream outputStream = new ByteArrayOutputStream(); blob.DownloadToStream(outputStream, null, options, null);
+	ByteArrayOutputStream outputStream = new ByteArrayOutputStream(); 
+	blob.download(outputStream, null, options, null);
 
 ### Warteschlangendienst-Verschlüsselung  
 Erstellen Sie ein **QueueEncryptionPolicy**-Objekt, und legen Sie es in den Anforderungsoptionen fest (über die API oder mit **DefaultRequestOptions** auf einer Clientebene). Alles Weitere wird intern von der Clientbibliothek behandelt.
@@ -242,9 +241,8 @@ Wenn die Entität "TableEntity" implementiert, können der Getter und Setter der
 Beachten Sie, dass ein Verschlüsseln Ihrer Storage-Daten einen zusätzlichen Leistungsaufwand verursacht. Der Inhaltsschlüssel und der IV müssen generiert, der Inhalt selbst muss verschlüsselt, und zusätzliche Metadaten müssen formatiert und hochgeladen werden. Dieser Aufwand variiert abhängig von der Menge der zu verschlüsselnden Daten. Es empfiehlt sich, dass Kunden ihre Anwendungen während der Entwicklung immer hinsichtlich der Leistung testen.
 
 ## Nächste Schritte  
-[Maven-Paket mit der Azure Storage-Clientbibliothek für Java](<fix URL>) herunterladen  
-[Azure Storage-Clientbibliothek für Java-Quellcode von GitHub](https://github.com/Azure/azure-storage-java) herunterladen   
-Maven-Pakete [Core](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Core/), [Client](http://www.nuget.org/packages/Microsoft.Azure.KeyVault/) und [Extensions](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Extensions/)für den Azure-Schlüsseltresor herunterladen
-Lesen Sie die [Dokumentation zum Azure-Schlüsseltresor](../articles/key-vault-whatis.md)
+[Maven-Paket mit der Azure Storage-Clientbibliothek für Java](http://mvnrepository.com/artifact/com.microsoft.azure/azure-storage/4.0.0) herunterladen [Azure Storage-Clientbibliothek für Java-Quellcode von GitHub](https://github.com/Azure/azure-storage-java) herunterladen Maven-Pakete [Core](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Core/), [Client](http://www.nuget.org/packages/Microsoft.Azure.KeyVault/) und [Extensions](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Extensions/) für den Azure-Schlüsseltresor herunterladen
 
-<!----HONumber=AcomDC_0107_2016-->
+[Dokumentation zum Azure-Schlüsseltresor](../articles/key-vault-whatis.md) aufrufen
+
+<!---HONumber=AcomDC_0114_2016-->

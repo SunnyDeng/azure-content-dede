@@ -16,7 +16,12 @@
    ms.date="12/14/2015"
    ms.author="ruturajd@microsoft.com"/>
 
-# Failback von virtuellen VMware-Computern und physischen Servern aus Azure an VMware mit Azure Site Recovery
+# Failback von virtuellen VMware-Maschinen und physischen Servern von Azure auf VMware mit Azure Site Recovery (Legacy)
+
+> [AZURE.SELECTOR]
+- [Enhanced](site-recovery-failback-azure-to-vmware-classic.md)
+- [Legacy](site-recovery-failback-azure-to-vmware-classic-legacy.md)
+
 
 ## Übersicht
 
@@ -131,7 +136,7 @@ Aktivieren Sie den Parameter „disk.EnableUUID = TRUE“, um die SCSI-IDs für 
 
 HINWEIS: Vergewissern Sie sich vor dem Herunterladen und Installieren zusätzlicher Pakete, dass das System über eine Internetverbindung verfügt.
 
-\#yum install -y xfsprogs perl lsscsi rsync wget kexec-tools
+\# yum install -y xfsprogs perl lsscsi rsync wget kexec-tools
 
 Mit diesem Befehl werden diese 15 Pakete aus dem CentOS 6.6-Repository heruntergeladen und installiert:
 
@@ -152,7 +157,7 @@ perl-5.10.1-136.el6\_6.1.x86\_64.rpm
 perl-Module-Pluggable-3.90-136.el6\_6.1.x86\_64.rpm
 
 perl-Pod-Escapes-1.04-136.el6\_6.1.x86\_64.rpm
-
+	
 perl-Pod-Simple-3.13-136.el6\_6.1.x86\_64.rpm
 
 perl-libs-5.10.1-136.el6\_6.1.x86\_64.rpm
@@ -169,17 +174,13 @@ HINWEIS: Wenn der Quellcomputer für das Stamm- oder Startgerät das Reiser- ode
 
 \# cd /usr/local
 
-\# wget 
-<http://elrepo.org/linux/elrepo/el6/x86_64/RPMS/kmod-reiserfs-0.0-1.el6.elrepo.x86_64.rpm>
+\# wget <http://elrepo.org/linux/elrepo/el6/x86_64/RPMS/kmod-reiserfs-0.0-1.el6.elrepo.x86_64.rpm>
 
-\# wget 
-<http://elrepo.org/linux/elrepo/el6/x86_64/RPMS/reiserfs-utils-3.6.21-1.el6.elrepo.x86_64.rpm>
+\# wget <http://elrepo.org/linux/elrepo/el6/x86_64/RPMS/reiserfs-utils-3.6.21-1.el6.elrepo.x86_64.rpm>
 
-\# rpm -ivh kmod-reiserfs-0.0-1.el6.elrepo.x86\_64.rpm 
-reiserfs-utils-3.6.21-1.el6.elrepo.x86\_64.rpm
+\# rpm -ivh kmod-reiserfs-0.0-1.el6.elrepo.x86\_64.rpm reiserfs-utils-3.6.21-1.el6.elrepo.x86\_64.rpm
 
-\# wget 
-<http://mirror.centos.org/centos/6.6/os/x86_64/Packages/xfsprogs-3.1.1-16.el6.x86_64.rpm>
+\# wget <http://mirror.centos.org/centos/6.6/os/x86_64/Packages/xfsprogs-3.1.1-16.el6.x86_64.rpm>
 
 \# rpm -ivh xfsprogs-3.1.1-16.el6.x86\_64.rpm
 
@@ -190,16 +191,11 @@ Stellen Sie vor dem Übernehmen dieser Änderungen sicher, dass Sie den vorherig
 
 1. Kopieren Sie die Binärdatei für „RHEL 6-64 Unified Agent“ in das neu erstellte Betriebssystem.
 
-2. Führen Sie für die Binärdatei den folgenden Untar-Befehl aus:
+2. Führen Sie für die Binärdatei den folgenden Untar-Befehl aus: **tar -zxvf <Dateiname>**
 
-**tar -zxvf <Dateiname>**
-3. Führen Sie den folgenden Befehl aus, um Berechtigungen zu erteilen:
+3. Führen Sie den folgenden Befehl aus, um Berechtigungen zu erteilen: # **chmod 755 ./ApplyCustomChanges.sh**
 
- # **chmod 755 ./ApplyCustomChanges.sh**
-
-4. Führen Sie das folgende Skript aus:
-
- **# ./ApplyCustomChanges.sh**. Führen Sie das Skript nur einmal auf dem Server aus. Starten Sie den Server neu, nachdem das Skript ausgeführt wurde.
+4. Führen Sie das folgende Skript aus: **# ./ApplyCustomChanges.sh**. Führen Sie das Skript nur einmal auf dem Server aus. Starten Sie den Server neu, nachdem das Skript ausgeführt wurde.
 
 
 
@@ -251,11 +247,7 @@ Sie müssen die virtuellen Computer auf dem lokalen Standort schützen, bevor Si
 
 ### Voraussetzungen
 
-Beim Failover eines virtuellen Computers zu Azure wird ein temporäres Laufwerk für die Auslagerungsdatei hinzugefügt. Hierbei handelt es sich um ein zusätzliches Laufwerk, das von dem virtuellen Computer, für den das Failover ausgeführt wurde, in der Regel nicht benötigt wird, da dieser unter Umständen bereits über ein dediziertes Laufwerk für die Auslagerungsdatei verfügt.
-
-Bevor Sie mit der Umkehr des Schutzes der virtuellen Computer beginnen, müssen Sie das Laufwerk offline schalten, damit es nicht geschützt wird.
-
-Gehen Sie hierzu wie folgt vor:
+Beim Failover eines virtuellen Computers zu Azure wird ein temporäres Laufwerk für die Auslagerungsdatei hinzugefügt. Hierbei handelt es sich um ein zusätzliches Laufwerk, das von dem virtuellen Computer, für den das Failover ausgeführt wurde, in der Regel nicht benötigt wird, da dieser unter Umständen bereits über ein dediziertes Laufwerk für die Auslagerungsdatei verfügt. Bevor Sie mit der Umkehr des Schutzes der virtuellen Computer beginnen, müssen Sie dieses Laufwerk offline schalten, damit es nicht geschützt wird. Gehen Sie hierzu wie folgt vor:
 
 1.  Öffnen Sie die Computerverwaltung und klicken Sie auf die Speicherverwaltung, um die Datenträger anzuzeigen, die online und mit dem Computer verbunden sind.
 2.  Wählen Sie den temporären Datenträger aus, der dem Computer zugeordnet ist, und schalten Sie ihn offline. 
@@ -306,7 +298,7 @@ Gehen Sie hierzu wie folgt vor:
 
 	![](./media/site-recovery-failback-azure-to-vmware/image26.png)
 
-	**Eigenschaft** | **Konfiguration**
+	**Eigenschaft** | **Details**
 	---|---
 	Network Configuration| Wählen Sie jeden Netzwerkadapter aus, der erkannt wird, und klicken Sie auf **Ändern**, um die Failback-IP-Adresse für den virtuellen Computer zu konfigurieren. 
 	Hardware Configuration| Geben Sie die CPU und den Arbeitsspeicher für den virtuellen Computer an. Einstellungen können auf alle virtuellen Computer angewendet werden, die Sie schützen möchten. Die korrekten Werte für CPU und Arbeitsspeicher finden Sie unter der Rollengröße des virtuellen IAAS-Computers. Hier können Sie die Anzahl der Kerne und den zugewiesenen Arbeitsspeicher einsehen.
@@ -414,8 +406,8 @@ Nach Abschluss des Failbacks empfiehlt es sich unter Umständen, die virtuellen 
  
 ## Nächste Schritte
 
-[Erfahren Sie mehr über](site-recovery-vmware-to-azure.md) die Replikation virtueller VMware-Computer zu Azure.
+[Erfahren Sie mehr über](site-recovery-vmware-to-azure-classic-legacy.md) die Replikation virtueller VMware-Computer zu Azure.
 
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0114_2016--->

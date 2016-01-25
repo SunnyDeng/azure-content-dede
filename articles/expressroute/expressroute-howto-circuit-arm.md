@@ -13,7 +13,7 @@
    ms.topic="article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="12/04/2015"
+   ms.date="01/12/2016"
    ms.author="cherylmc"/>
 
 # Erstellen und Ändern einer ExpressRoute-Verbindung mit dem Azure-Ressourcen-Manager und mit PowerShell
@@ -63,7 +63,7 @@ In diesem Artikel werden Sie durch die Schritte zum Erstellen einer ExpressRoute
 
 	Vor dem Erstellen einer ExpressRoute-Verbindung benötigen Sie die Liste der Konnektivitätsanbieter, unterstützten Standorte und Bandbreitenoptionen. Das PowerShell-Cmdlet *Get-AzureRmExpressRouteServiceProvider* gibt diese Informationen zurück, die Sie in späteren Schritten noch verwenden werden.
 
-		PS C:\> Get-AzureRmExpressRouteServiceProvider
+		Get-AzureRmExpressRouteServiceProvider
 
 	Überprüfen Sie, ob Ihr Konnektivitätsanbieter hier aufgeführt ist. Notieren Sie die folgenden Angaben, da Sie sie zum Erstellen der Verbindungen benötigen.
 	
@@ -93,13 +93,13 @@ In diesem Artikel werden Sie durch die Schritte zum Erstellen einer ExpressRoute
 
 	Die Antwort enthält den Dienstschlüssel. Ausführliche Beschreibungen aller Parameter erhalten Sie, wenn Sie Folgendes ausführen:
 
-		get-help New-AzureRmExpressRouteCircuit -detailed 
+		Get-Help New-AzureRmExpressRouteCircuit -detailed 
 
 4. **Listen Sie alle ExpressRoute-Verbindungen auf.**
 
 	Sie können den Befehl *Get-AzureRmExpressRouteCircuit* ausführen, um eine Liste mit allen von Ihnen erstellten ExpressRoute-Verbindungen abzurufen.
 
-		#Getting service key
+		
 		Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
 
 	Die Antwort wird in etwa wie im folgendem Beispiel gezeigt lauten:
@@ -159,7 +159,7 @@ In diesem Artikel werden Sie durch die Schritte zum Erstellen einer ExpressRoute
 
 	Ausführliche Beschreibungen aller Parameter erhalten Sie, wenn Sie Folgendes ausführen:
 
-		get-help Get-AzureRmExpressRouteCircuit -detailed 
+		Get-Help Get-AzureRmExpressRouteCircuit -detailed 
 
 5. **Senden Sie den Dienstschlüssel zur Bereitstellung an Ihren Konnektivitätsanbieter.**
 
@@ -215,17 +215,22 @@ In diesem Artikel werden Sie durch die Schritte zum Erstellen einer ExpressRoute
 
 6. **Erstellen Sie die Routingkonfiguration.**
 	
-	Eine Schritt-für-Schritt-Anleitung finden Sie auf der Seite [Routingkonfiguration für ExpressRoute-Verbindung (Erstellen und Ändern von Verbindungspeerings)](expressroute-howto-routing-arm.md).
+	Lesen Sie die Schritt-für-Schritt-Anweisungen unter [Erstellen und Ändern des Routings für eine ExpressRoute-Verbindung](expressroute-howto-routing-arm.md).
 
-7. **Verknüpfen Sie ein VNet mit einer ExpressRoute-Verbindung.**
+>[AZURE.IMPORTANT]Diese Anweisungen gelten nur für Verbindungen, die über Service Provider erstellt wurden, von denen Layer 2-Konnektivitätsdienste angeboten werden. Wenn Sie einen Service Provider nutzen, der verwaltete Layer 3-Dienste anbietet (meist ein IPVPN, z. B. MPLS), übernimmt Ihr Konnektivitätsanbieter die Konfiguration und Verwaltung des Routings für Sie. In diesem Fall können Sie keine Peerings erstellen oder verwalten.
 
-	Verknüpfen Sie als Nächstes ein VNet mit der ExpressRoute-Verbindung. Sie können für die Arbeit mit dem Azure-Ressourcen-Manager-Bereitstellungsmodus [diese Vorlage](https://github.com/Azure/azure-quickstart-templates/tree/ecad62c231848ace2fbdc36cbe3dc04a96edd58c/301-expressroute-circuit-vnet-connection) verwenden. Wir arbeiten derzeit mit PowerShell-Schritten.
+
+7. **Verknüpfen Sie ein VNet mit einer ExpressRoute-Verbindung.** 
+
+	Verknüpfen Sie als Nächstes ein VNet mit der ExpressRoute-Verbindung. Lesen Sie die Schritt-für-Schritt-Anweisungen unter [Verknüpfen von virtuellen Netzwerken mit ExpressRoute-Verbindungen](expressroute-howto-linkvnet-arm.md).
 
 ##  So rufen Sie den Status einer ExpressRoute-Verbindung ab
 
 Sie können diese Informationen jederzeit mithilfe des Cmdlets *Get-AzureRmExpressRouteCircuit* abrufen. Wenn Sie den Aufruf ohne Parameter durchführen, werden alle Verbindungen aufgelistet.
 
 		Get-AzureRmExpressRouteCircuit
+
+Die Antwort lautet etwa wie im folgendem Beispiel:
 
 		Name                             : ExpressRouteARMCircuit
 		ResourceGroupName                : ExpressRouteResourceGroup
@@ -253,7 +258,8 @@ Sie können Informationen zu einer bestimmten ExpressRoute-Verbindung erhalten, 
 
 		Get-AzureRmExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
 
-	The response will be something similar to the example below:
+
+Die Antwort wird in etwa wie im folgendem Beispiel gezeigt lauten:
 
 		Name                             : ExpressRouteARMCircuit
 		ResourceGroupName                : ExpressRouteResourceGroup
@@ -279,7 +285,7 @@ Sie können Informationen zu einer bestimmten ExpressRoute-Verbindung erhalten, 
 
 Ausführliche Beschreibungen aller Parameter erhalten Sie, wenn Sie Folgendes ausführen:
 
-		get-help get-azurededicatedcircuit -detailed 
+		Get-Help Get-azurededicatedcircuit -detailed 
 
 ## So ändern Sie eine ExpressRoute-Verbindung
 
@@ -357,4 +363,4 @@ Wenn der Service Provider die Bereitstellung der Verbindung aufgehoben hat (Bere
 
 - [Konfigurieren des Routings](expressroute-howto-routing-arm.md)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0114_2016-->

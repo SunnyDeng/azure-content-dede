@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/04/2016"
-   ms.author="twounder;JRJ@BigBangData.co.uk;barbkess"/>
+   ms.date="01/07/2016"
+   ms.author="mausher;jrj;barbkess;sonyama"/>
 
 # Umbenennen in SQL Data Warehouse
 SQL Server unterstützt das Umbenennen von Datenbanken über die gespeicherte Prozedur ```sp_renamedb```, SQL Data Warehouse hingegen verwendet die DDL-Syntax für die Umbenennung. Der DDL-Befehl lautet ```RENAME OBJECT```.
@@ -53,4 +53,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 <!--Article references-->
 [Entwicklungsübersicht]: sql-data-warehouse-overview-develop.md
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0114_2016-->

@@ -70,11 +70,11 @@ Genau wie bei den Administratoranmeldeinformationen verwenden Sie keine Werte im
 ## Weitere Informationen
 [Verwalten von Datenbanken und Anmeldungen in der Azure SQL-Datenbank](sql-database-manage-logins.md)
 
-[Hinzufügen von Benutzern zu einem elastischen Datenbankpool](sql-database-elastic-jobs-add-logins-to-dbs.md)
+[Sichern der SQL-Datenbank](sql-database-security.md)
 
 [Erste Schritte mit Aufträgen für die elastische Datenbank](sql-database-elastic-jobs-getting-started.md)
 
 [AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0114_2016-->

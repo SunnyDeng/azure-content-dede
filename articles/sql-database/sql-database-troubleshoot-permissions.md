@@ -13,14 +13,14 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/11/2015"
+	ms.date="01/11/2016"
 	ms.author="v-shysun"/>
 
 #Problembehandlung bei allgemeinen Berechtigungs- und Zugriffsproblemen mit Azure SQL-Datenbank
 In diesem Thema finden Sie Kurzanleitungen zum Gewähren und Aufheben des Zugriffs auf eine Azure SQL-Datenbank. Ausführlichere Informationen finden Sie unter:
 
 - [Verwalten von Datenbanken und Anmeldungen in der Azure SQL-Datenbank](sql-database-manage-logins.md)
-- [Schützen Ihrer SQL-Datenbank](sql-database-security)
+- [Schützen Ihrer SQL-Datenbank](sql-database-security.md)
 - [Sicherheitscenter für SQL Server-Datenbankmodul und Azure SQL-Datenbank](https://msdn.microsoft.com/library/bb510589)
 
 ##So ändern Sie das Administratorkennwort für einen logischen Server
@@ -37,4 +37,4 @@ In diesem Thema finden Sie Kurzanleitungen zum Gewähren und Aufheben des Zugrif
 ## So erstellen Sie zusätzliche Anmeldungen für Benutzer mit hohen Berechtigungen in der virtuellen „master“-Datenbank
 Verwenden Sie die [CREATE LOGIN](https://msdn.microsoft.com/library/ms189751.aspx)-Anweisung, und lesen Sie den Abschnitt „Verwalten von Anmeldungen“ in [Verwalten von Datenbanken und Anmeldungen in Azure SQL-Datenbank](sql-database-manage-logins.md), der weitere Details bietet.
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0114_2016-->

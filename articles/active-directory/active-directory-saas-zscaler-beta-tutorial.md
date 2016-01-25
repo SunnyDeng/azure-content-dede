@@ -11,7 +11,7 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
+    ms.date="01/12/2016" 
     ms.author="markvi" />
 
 #Tutorial: Azure Active Directory-Integration mit ZScaler Beta
@@ -21,7 +21,7 @@ In diesem Tutorial wird die Integration von Azure und ZScaler Beta erläutert. D
 -   Ein gültiges Azure-Abonnement
 -   Ein ZScaler Beta-Abonnement, für das einmaliges Anmelden aktiviert ist
   
-Nach Abschluss dieses Tutorials können sich die ZScaler Beta zugewiesenen Azure AD-Benutzer mittels einmaliger Anmeldung auf Ihrer ZScaler Beta-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können Sie die [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md) nutzen.
+Nach Abschluss dieses Tutorials können sich die ZScaler Beta zugewiesenen Azure AD-Benutzer mittels einmaliger Anmeldung auf Ihrer ZScaler Beta-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -57,7 +57,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für ZSc
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-zscaler-beta-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie im **Suchfeld** als Suchbegriff **ZScaler Beta** ein.
+6.  Geben Sie im **Suchfeld** das Wort **ZScaler Beta** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-zscaler-beta-tutorial/IC800224.png "Anwendungskatalog")
 
@@ -67,7 +67,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für ZSc
 
 ##Konfigurieren der einmaligen Anmeldung
   
-In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei ZScaler Beta zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie eine Base-64-codierte Zertifikatsdatei in Ihren ZScaler Beta-Mandanten hochladen. Falls Sie mit diesem Verfahren nicht vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (Konvertieren eines binären Zertifikats in eine Textdatei; in englischer Sprache) weitere Informationen.
+In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei ZScaler Beta zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie eine Base-64-codierte Zertifikatsdatei in Ihren ZScaler Beta-Mandanten hochladen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [Konvertieren eines binären Zertifikats in eine Textdatei](http://youtu.be/PlgrzUZ-Y1o) weitere Informationen.
 
 ###So konfigurieren Sie einmaliges Anmelden
 
@@ -104,9 +104,9 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
     ![Authentifizierung](./media/active-directory-saas-zscaler-beta-tutorial/IC800208.png "Authentifizierung")
 
     1.  Wählen Sie **Authentifizeren mit der einmaligen Anmeldung für SAML**.
-    2.  Klicken Sie auf **Configure SAML Single Sign-On Parameters**.
+    2.  Klicken Sie auf **Einzelne Parameter der einmaligen Anmeldung für SAML konfigurieren**.
 
-9.  Führen Sie auf der Dialogfeldseite **Einzelne Parameter der einmaligen Anmeldung für SAML konfigurieren** die folgenden Schritte aus, und klicken Sie dann auf **Fertig**:
+9.  Führen Sie auf der Dialogfeldseite **Einzelne Parameter der einmaligen Anmeldung für SAML konfigurieren** die folgenden Schritte aus, und klicken Sie dann auf **Fertig stellen**.
 
     ![Einmaliges Anmelden](./media/active-directory-saas-zscaler-beta-tutorial/IC800209.png "Einmaliges Anmelden")
 
@@ -147,8 +147,8 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
     ![Proxyserver](./media/active-directory-saas-zscaler-beta-tutorial/IC769494.png "Proxyserver")
 
     1.  Wählen Sie "Proxyserver für LAN verwenden" aus.
-    2.  Geben Sie in das Textfeld „Adresse“ **gateway.zscalerBeta.net** ein.
-    3.  Geben Sie im Textfeld „Port“ **80** ein.
+    2.  Geben Sie in das Textfeld "Adresse" **gateway.zscalerBeta.net** ein.
+    3.  Geben Sie im Textfeld "Port" **80** ein.
     4.  Wählen Sie **Proxyserver für lokale Adressen umgehen**.
     5.  Klicken Sie zum Schließen des Dialogfelds **Local Area Network (LAN) Settings** auf **OK**.
 
@@ -201,4 +201,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0114_2016-->

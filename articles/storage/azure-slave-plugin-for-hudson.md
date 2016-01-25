@@ -1,22 +1,22 @@
 <properties
     pageTitle="Verwenden des Azure Slave-Plug-Ins mit Hudson Continuous Integration"
     description="Beschreibt das Verwenden des Azure Slave-Plug-Ins mit Hudson Continuous Integration."
-	services="storage" 
-	documentationCenter="java" 
-	authors="rmcmurray" 
-	manager="wpickett" 
+	services="storage"
+	documentationCenter="java"
+	authors="rmcmurray"
+	manager="wpickett"
 	editor="jimbe" />
 
 <tags
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="Java" 
-	ms.topic="article" 
-	ms.date="11/19/2015" 
-	ms.author="v-dedomi"/>
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="Java"
+	ms.topic="article"
+	ms.date="01/11/2016"
+	ms.author="robmcm"/>
 
-#Verwenden des Azure Slave-Plug-Ins mit Hudson Continuous Integration
+# Verwenden des Azure Slave-Plug-Ins mit Hudson Continuous Integration
 
 Das Azure Slave-Plug-In für Hudson ermöglicht Ihnen das Bereitstellen untergeordneter Knoten in Azure beim Ausführen von verteilten Builds.
 
@@ -27,7 +27,7 @@ Das Azure Slave-Plug-In für Hudson ermöglicht Ihnen das Bereitstellen untergeo
 4. Klicken Sie auf **Search**, und geben Sie **Azure** ein, um relevante-Plug-Ins aufzulisten.
 
 	Wenn Sie einen Bildlauf durch die Liste der verfügbaren Plug-Ins durchführen möchten, finden Sie das Azure Slave-Plug-In im Abschnitt **Cluster Management and Distributed Build** auf der Registerkarte **Others**.
-	 
+
 5. Aktivieren Sie das Kontrollkästchen **Azure Slave Plugin**.
 6. Klicken Sie auf **Installieren**.
 7. Starten Sie Hudson neu.
@@ -81,7 +81,7 @@ Gehen folgendermaßen Sie vor, um das Azure Slave-Plug-In zu konfigurieren, soba
 5. Kopieren Sie die Abonnement-ID und das Verwaltungszertifikat aus Ihrem Abonnementprofil, und fügen Sie sie in die entsprechenden Felder ein.
 
 	Beim Kopieren der Abonnement-ID und des Verwaltungszertifikats schließen Sie **nicht** die Anführungszeichen ein, die die Werte einschließen.
-	
+
 6. Klicken Sie auf **Verify Configuration**.
 7. Wenn die Konfiguration erfolgreich überprüft wurde, klicken Sie auf **Speichern**.
 
@@ -100,7 +100,7 @@ Eine Vorlage für virtuelle Computer die Parameter, die das Plug-In zum Erstelle
 
 5. Geben Sie einen Clouddienstnamen im Feld **Name** ein. Bezieht sich der von Ihnen angegebene Name auf einen vorhandenen Clouddienst, wird der virtuelle Computer in diesem Dienst bereitgestellt. Andernfalls erstellt Azure einen neuen.
 6. Geben Sie in das Feld **Beschreibung** Text ein, der die Vorlage beschreibt, die Sie erstellen. Diese Informationen dienen nur der Dokumentation und werden nicht bei einer VM-Bereitstellung verwendet.
-7. Geben Sie im Feld **Bezeichnungen** **linux** ein. Diese Bezeichnung wird verwendet, um die Vorlage zu identifizieren, die Sie erstellen, und wird anschließend als Verweise auf die Vorlage beim Erstellen eines Hudson-Auftrags verwendet. 
+7. Geben Sie im Feld **Bezeichnungen** **linux** ein. Diese Bezeichnung wird verwendet, um die Vorlage zu identifizieren, die Sie erstellen, und wird anschließend als Verweise auf die Vorlage beim Erstellen eines Hudson-Auftrags verwendet.
 8. Wählen Sie eine Region aus, in der der virtuelle Computer erstellt wird.
 9. Wählen Sie die passende Größe des virtuellen Computers aus.
 10. Geben Sie ein Speicherkonto an, in dem der virtuelle Computer erstellt wird. Stellen Sie sicher, dass es sich in der gleichen Region wie der Clouddienst befindet, den Sie verwenden möchten. Wenn Sie neuen Speicher erstellen möchten, können Sie dieses Feld leer lassen.
@@ -118,11 +118,11 @@ Eine Vorlage für virtuelle Computer die Parameter, die das Plug-In zum Erstelle
 	Wenn Sie aus einer Liste von Imagefamilien auswählen möchten, geben Sie das erste Zeichen (Groß-/Kleinschreibung beachten) des Namens der Imagefamilie ein. Wenn Sie z. B. **U** eingeben, erhalten Sie eine Liste der Ubuntu Server-Familien. Wenn Sie aus der Liste auswählen, verwendet Jenkins die neueste Version des Systemimages aus dieser Familie bei die VM-Bereitstellung.
 
 	![BS-Familienliste](./media/azure-slave-plugin-for-hudson/hudson-oslist.png)
-	
+
 	Wenn Sie stattdessen ein vorhandenes benutzerdefiniertes Image verwenden möchten, geben Sie den Namen dieses benutzerdefinierten Images ein. Benutzerdefiniertes Imagenamen werden nicht in einer Liste angezeigt, daher müssen Sie sicherstellen, dass der Name richtig eingegeben wurde.
 
 	Geben Sie für dieses Lernprogramm **U** ein, um eine Liste mit Ubuntu-Images anzuzeigen, und wählen Sie **Ubuntu Server 14.04 LTS** aus.
- 
+
 14. Wählen Sie für **Launch method** die Option **SSH** aus.
 15. Kopieren Sie das folgende Skript, und fügen Sie es in das Feld **Init script** ein.
 
@@ -152,7 +152,7 @@ Eine Vorlage für virtuelle Computer die Parameter, die das Plug-In zum Erstelle
 		sudo apt-get install -y ant
 
 	Das **Initialisierungsskript** wird ausgeführt, nachdem der virtuelle Computer erstellt wurde. In diesem Beispiel installiert das Skript Java, git und ant.
-	
+
 16. Geben Sie in die Felder **Benutzername** und **Kennwort** Ihre bevorzugten Werte für das Administratorkonto ein, das auf Ihrem virtuellen Computer erstellt werden soll.
 17. Klicken Sie auf **Verify Template**, um zu überprüfen, ob die angegebenen Parameter gültig sind.
 18. Klicken Sie auf **Speichern**.
@@ -162,12 +162,12 @@ Eine Vorlage für virtuelle Computer die Parameter, die das Plug-In zum Erstelle
 
 In diesem Abschnitt erstellen Sie eine Hudson-Aufgabe, die auf einen untergeordneten Knoten in Azure ausgeführt wird.
 
-1. Klicken Sie im Hudson-Dashboard auf **New Job**. 
+1. Klicken Sie im Hudson-Dashboard auf **New Job**.
 2. Geben Sie einen Namen für den Auftrag ein, den Sie erstellen.
 3. Wählen Sie für den Auftragstyp **Build a free-style software job** aus.
 4. Klicken Sie auf **OK**.
 5. Wählen Sie auf der Konfigurationsseite des Auftrags **Restrict where this project can be run** aus.
-6. Wählen Sie **Node and label menu** und dann **linux** aus (Sie haben diese Bezeichnung beim Erstellen der virtuellen Computervorlage im vorherigen Abschnitt angegeben). 
+6. Wählen Sie **Node and label menu** und dann **linux** aus (Sie haben diese Bezeichnung beim Erstellen der virtuellen Computervorlage im vorherigen Abschnitt angegeben).
 
 7. Klicken Sie im Abschnitt **Build** auf **Add build step**, und wählen Sie **Execute shell** aus.
 8. Bearbeiten Sie das folgende Skript, und ersetzen Sie **(Ihr github-Kontoname)**, **(Name Ihres Projekts)** und **(Projektverzeichnis)** durch entsprechende Werte, und fügen Sie das bearbeitete Skript im angezeigten Textbereich ein.
@@ -188,7 +188,7 @@ In diesem Abschnitt erstellen Sie eine Hudson-Aufgabe, die auf einen untergeordn
   			git clone https://github.com/(your github account name)/(your project name).git
 
 		fi
-		
+
 		# change directory to project
 
 		cd $currentDir/(your project directory)
@@ -198,19 +198,10 @@ In diesem Abschnitt erstellen Sie eine Hudson-Aufgabe, die auf einen untergeordn
 		#Execute build task
 
 		ant
-		
+
 9. Klicken Sie auf **Speichern**.
-10. Suchen Sie im Hudson-Dashboard den soeben erstellten Auftrag, und klicken Sie auf das **Schedule a build**-Symbol. 
+10. Suchen Sie im Hudson-Dashboard den soeben erstellten Auftrag, und klicken Sie auf das **Schedule a build**-Symbol.
 
 Hudson erstellt dann einen untergeordneten Knoten mithilfe der im vorherigen Abschnitt erstellten Vorlage und führt das Skript aus, das Sie im Buildschritt für diese Aufgabe angegeben haben.
 
-
-
-
-
-
-  
-
-  
-
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0114_2016-->

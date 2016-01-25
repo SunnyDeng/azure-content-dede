@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/06/2016"
+	ms.date="01/12/2016"
 	ms.author="swkrish"/>
 
 # Vorschau für Azure Active Directory B2C: Bereitstellen von Registrierung und Anmeldung für Kunden mit Facebook-Konten
@@ -46,17 +46,15 @@ Um Facebook als Identitätsanbieter in Azure Active Directory (AD) B2C verwenden
     ![FB – Einstellungen](./media/active-directory-b2c-setup-fb-app/fb-website.png)
 
 7. Geben Sie [https://login.microsoftonline.com/](https://login.microsoftonline.com/) im Feld **Site URL** ein, und klicken Sie dann auf **Save Changes**.
-8. Kopieren Sie den Wert unter **App ID**. Klicken Sie auf **Show**, und kopieren Sie den Wert unter **App Secret**. Sie benötigen beide Angaben, um Facebook als Identitätsanbieter in Ihrem Mandanten zu konfigurieren.
+8. Kopieren Sie den Wert unter **App ID**. Klicken Sie auf **Show**, und kopieren Sie den Wert unter **App Secret**. Sie benötigen beide Angaben, um Facebook als Identitätsanbieter in Ihrem Mandanten zu konfigurieren. Hinweis: Das **App-Geheimnis** ist eine wichtige Anmeldeinformation.
 
-> [AZURE.NOTE]Bei **App Secret** handelt es sich um eine wichtige Sicherheitsinformation für die Anmeldung.
+    ![FB – Website-URL](./media/active-directory-b2c-setup-fb-app/fb-site-url.png)
 
-    ![FB - Site URL](./media/active-directory-b2c-setup-fb-app/fb-site-url.png)
-
-9. Klicken Sie oben auf die Registerkarte **Advanced**, und geben Sie dann `https://login.microsoftonline.com/te/{tenant}/oauth2/authresp` im Feld **Valid OAuth redirect URIs** (im Abschnitt **Security**) ein. Ersetzen Sie dabei **{tenant}** durch den Namen Ihres Mandanten (z. B. „contosob2c.onmicrosoft.com“). Klicken Sie unten auf der Seite auf **Save Changes**.
+9. Klicken Sie oben auf die Registerkarte **Erweitert**, und geben Sie dann `https://login.microsoftonline.com/te/{tenant}/oauth2/authresp` im Feld **Gültige OAuth-Umleitungs-URIs** (im Abschnitt **Sicherheit**) ein. Ersetzen Sie dabei **{tenant}** durch den Namen Ihres Mandanten (z. B. „contosob2c.onmicrosoft.com“). Klicken Sie unten auf der Seite auf **Save Changes**.
 
     ![FB – URI für OAuth-Umleitung](./media/active-directory-b2c-setup-fb-app/fb-oauth-redirect-uri.png)
 
-10. Damit Ihre Facebook-Anwendung von Azure AD B2C verwendet werden kann, müssen Sie sie öffentlich verfügbar machen. Dazu klicken Sie im linken Navigationsbereich auf **Status & Review** und reichen Ihre Anwendung zur Überprüfung ein (klicken Sie auf die Schaltfläche **Start a Submission**). Nachdem Ihre Anwendung von Facebook genehmigt wurde, können Sie sie öffentlich verfügbar machen, indem Sie den Schalter oben auf der Seite auf **YES** stellen. Klicken Sie dann auf **Confirm**.
+10. Damit Ihre Facebook-Anwendung von Azure AD B2C verwendet werden kann, müssen Sie sie öffentlich verfügbar machen. Dazu klicken Sie im linken Navigationsbereich auf **Status und Überprüfung** und reichen Ihre Anwendung zur Überprüfung ein (klicken Sie auf die Schaltfläche **Übermittlung starten**). Nachdem Ihre Anwendung von Facebook genehmigt wurde, können Sie sie öffentlich verfügbar machen, indem Sie den Schalter oben auf der Seite auf **JA** stellen. Klicken Sie dann auf **Bestätigen**.
 
     ![FB – Einreichen einer App](./media/active-directory-b2c-setup-fb-app/fb-app-submission.png)
 
@@ -65,11 +63,11 @@ Um Facebook als Identitätsanbieter in Azure Active Directory (AD) B2C verwenden
 ## Konfigurieren von Facebook als Identitätsanbieter in Ihrem Mandanten
 
 1. [Führen Sie diese Schritte aus, um im Azure-Portal zum Blatt „B2C-Funktionen“ zu navigieren](active-directory-b2c-app-registration.md#navigate-to-the-b2c-features-blade).
-2. Klicken Sie auf dem Blatt „B2C-Funktionen“ auf **Identitätsanbieter**.
+2. Klicken Sie auf dem B2C-Featureblatt auf **Identitätsanbieter**.
 3. Klicken Sie oben auf dem Blatt auf **+Hinzufügen**.
 4. Geben Sie einen aussagekräftigen Namen für die Konfiguration des Identitätsanbieters unter **Name** ein. Geben Sie z. B. "FB" ein.
 5. Klicken Sie auf **Typ des Identitätsanbieters**, wählen Sie **Facebook** aus, und klicken Sie auf **OK**.
 6. Klicken Sie auf **Diesen Identitätsanbieter einrichten**, und geben Sie die **App-ID** und den **geheimen App-Schlüssel** der Facebook-Anwendung, die Sie zuvor erstellt haben, in den Feldern **Client-ID** und **Geheimer Clientschlüssel** ein.
 7. Klicken Sie auf **OK** und dann auf **Erstellen**, um die Facebook-Konfiguration zu speichern.
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0114_2016-->

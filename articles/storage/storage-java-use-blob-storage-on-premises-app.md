@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="Java"
 	ms.topic="article"
-	ms.date="12/01/2015" 
-	ms.author="robmcm"/>
+	ms.date="12/01/2015"
+	ms.author="micurd"/>
 
 # Lokale Anwendungen mit Blob-Speicher
 
@@ -358,7 +358,7 @@ Unter den folgenden Links erhalten Sie weitere Informationen zu komplexeren Spei
 - [Azure Storage-REST-API][]
 - [Azure Storage-Teamblog][]
 
-  [Download the Azure SDK for Java]: http://go.microsoft.com/fwlink/?LinkID=525671
+  [Downloadseite des Azure SDK für Java]: http://go.microsoft.com/fwlink/?LinkID=525671
   [Erstellen eines Speicherkontos]: storage-create-storage-account.md#create-a-storage-account
   [Verwalten von Speicherkonten]: storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys
   [Verwenden des Blob-Speicherdiensts in Python]: storage-java-how-to-use-blob-storage.md
@@ -366,4 +366,4 @@ Unter den folgenden Links erhalten Sie weitere Informationen zu komplexeren Spei
   [Referenz für Azure Storage-Client-SDKs]: http://dl.windowsazure.com/storage/javadoc/
   [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

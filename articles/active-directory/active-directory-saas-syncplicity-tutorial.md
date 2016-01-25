@@ -11,7 +11,7 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
+    ms.date="01/12/2016" 
     ms.author="markvi" />
 
 #Lernprogramm: Azure Active Directory-Integration mit Syncplicity
@@ -23,7 +23,7 @@ Das in diesem Lernprogramm verwendete Szenario setzt voraus, dass Sie bereits ü
 -   Ein gültiges Azure-Abonnement
 -   Ein Syncplicity-Mandant
   
-Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, denen Sie den Zugriff auf Syncplicity zugewiesen haben, mittels einmaliger Anmeldung auf der Syncplicity-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen.
+Nach Abschluss dieses Tutorials können sich die Syncplicity zugewiesenen Azure AD-Benutzer mittels einmaliger Anmeldung auf Ihrer Syncplicity-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen.
 
 1.  Aktivieren der Anwendungsintegration für Syncplicity
 2.  Konfigurieren der einmaligen Anmeldung
@@ -150,7 +150,7 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
 1.  Erstellen Sie im Azure AD-Portal ein Testkonto.
 
-2.  Klicken Sie auf der Anwendungsintegrationsseite für **Syncplicity** auf **Benutzer zuweisen**.
+2.  Klicken Sie auf der **Anwendungsintegrationsseite** für **Syncplicity** auf **Benutzer zuweisen**.
 
     ![Benutzer zuweisen](./media/active-directory-saas-syncplicity-tutorial/IC769557.png "Benutzer zuweisen")
 
@@ -160,4 +160,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0114_2016-->
