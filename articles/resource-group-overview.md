@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="12/22/2015"
+   ms.date="01/15/2016"
    ms.author="tomfitz"/>
 
 # Übersicht über den Azure-Ressourcen-Manager
@@ -91,11 +91,11 @@ Informationen zum Bereitstellen der Lösung in andere Umgebungen finden Sie unte
 
 ## Tags
 
-Der Ressourcen-Manager verfügt über eine Markierungsfunktion, mit der Sie Ressourcen gemäß Ihren Anforderungen für die Verwaltung oder Abrechnung kategorisieren können. Die Verwendung von Markierungen (Tags) kann ratsam sein, wenn Sie über eine komplexe Sammlung von Ressourcengruppen und Ressourcen verfügen und diese Ressourcen auf möglichst sinnvolle Weise visualisieren müssen. Beispielsweise können Sie Ressourcen markieren, die in Ihrer Organisation eine ähnliche Funktion haben oder zu derselben Abteilung gehören.
+Der Ressourcen-Manager verfügt über eine Markierungsfunktion, mit der Sie Ressourcen gemäß Ihren Anforderungen für die Verwaltung oder Abrechnung kategorisieren können. Die Verwendung von Markierungen (Tags) kann ratsam sein, wenn Sie über eine komplexe Sammlung von Ressourcengruppen und Ressourcen verfügen und diese Ressourcen auf möglichst sinnvolle Weise visualisieren müssen. Beispielsweise können Sie Ressourcen markieren, die in Ihrer Organisation eine ähnliche Funktion haben oder zu derselben Abteilung gehören. Benutzer in Ihrer Organisation können mehrere Ressourcen erstellen, die ohne Tags später schwer zu identifizieren und zu verwalten sind. Sie möchten beispielsweise alle Ressourcen für ein bestimmtes Projekt löschen. Wenn diese Ressourcen jedoch nicht mit einem Tag für das Projekt versehen wurden, müssen Sie manuell nach den Ressourcen suchen. Tags können wichtig sein, um unnötige Kosten in Ihrem Abonnement zu vermeiden.
 
 Ressourcen müssen sich nicht in derselben Ressourcengruppe befinden, um ein gemeinsames Tag aufzuweisen. Sie können Ihre eigene Tag-Taxonomie erstellen, um dafür zu sorgen, dass alle Benutzer in Ihrer Organisation die gleichen Tags verwenden. So wird verhindert, dass Benutzer versehentlich leicht unterschiedliche Tags nutzen (z. B. „dept“ anstelle von „department“).
 
-Weitere Informationen zu Tags finden Sie unter [Verwenden von Tags zum Organisieren von Azure-Ressourcen](./resource-group-using-tags.md).
+Weitere Informationen zu Tags finden Sie unter [Verwenden von Tags zum Organisieren von Azure-Ressourcen](./resource-group-using-tags.md). Sie können eine [angepasste Richtlinie](#manage-resources-with-customized-policies) erstellen, die das Hinzufügen von Tags zu Ressourcen während der Bereitstellung erforderlich macht.
 
 ## Zugriffssteuerung
 
@@ -111,7 +111,7 @@ Bewährte Methoden finden Sie unter [Sicherheitsaspekte für Azure-Ressourcen-Ma
 
 ## Verwalten von Ressourcen mit benutzerdefinierten Richtlinien
 
-Mit dem Ressourcen-Manager können Sie benutzerdefinierte Richtlinien zum Verwalten Ihrer Ressourcen erstellen. Die von Ihnen erstellten Richtlinien können verschiedenste Szenarien abdecken. Sie können z. B. festlegen, dass bestimmte Namenskonventionen zwingend einzuhalten sind, oder einschränken, welche Regionen einen bestimmten Typ von Ressourcen hosten können. Oder Sie können einen Tagwert für Ressourcen als erforderlich deklarieren, um eine Abrechnung nach Abteilungen zu ermöglichen. Weitere Informationen finden Sie unter [Verwenden von Richtlinien für Ressourcenverwaltung und Zugriffssteuerung](resource-manager-policy.md).
+Mit dem Ressourcen-Manager können Sie benutzerdefinierte Richtlinien zum Verwalten Ihrer Ressourcen erstellen. Die von Ihnen erstellten Richtlinien können verschiedenste Szenarien abdecken. Sie können z. B. festlegen, dass bestimmte Namenskonventionen zwingend einzuhalten sind, oder einschränken, welche Typen und Instanzen von Ressourcen bereitgestellt werden oder welche Regionen einen bestimmten Typ von Ressourcen hosten können. Oder Sie können einen Tagwert für Ressourcen als erforderlich deklarieren, um eine Abrechnung nach Abteilungen zu ermöglichen. Sie erstellen Richtlinien, um Kosten zu senken und die Konsistenz in Ihrem Abonnement zu wahren. Weitere Informationen finden Sie unter [Verwenden von Richtlinien für Ressourcenverwaltung und Zugriffssteuerung](resource-manager-policy.md).
 
 ## Einheitliche Verwaltungsebene
 
@@ -138,4 +138,4 @@ Hier sehen Sie eine Videodemonstration dieser Übersicht:
 
 [AZURE.VIDEO azure-resource-manager-overview]
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0121_2016-->

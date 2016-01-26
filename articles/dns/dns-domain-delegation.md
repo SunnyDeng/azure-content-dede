@@ -88,6 +88,8 @@ In diesem Beispiel wurde die Zone "contoso.com" den Namenservern "ns1-04.azure-d
 
 Jede Registrierungsstelle hat seine eigenen DNS-Verwaltungstools, um die Namenservereinträge für eine Domäne zu ändern. Bearbeiten Sie auf der DNS-Verwaltungsseite der Registrierungsstelle die NS-Einträge, und ersetzen Sie die NS-Einträge mit den von Azure DNS erstellten.
 
+>[AZURE.NOTE]Wenn Sie eine Domäne an Azure DNS delegieren, müssen Sie die von Azure DNS bereitgestellten Namen der Namenserver verwenden. Sie sollten nicht mit Verbindungsdatensätzen auf die IP-Adressen der Azure DNS-Namenserver verweisen, da sich diese IP-Adressen später ändern können. Delegierungen, für die Namen der Namenserver in Ihrer eigenen Zone verwendet werden (manchmal als „Vanity-Namenserver“ bezeichnet), werden derzeit in Azure DNS nicht unterstützt.
+
 Nach Abschluss der Delegierung können Sie überprüfen, ob die Namensauflösung funktioniert, indem Sie ein Tool wie z. B. "nslookup" verwenden, um den SOA-Eintrag für die Zone abzurufen (die auch automatisch beim Erstellen der Zone erstellt wird).
 
 Beachten Sie, dass Sie nicht die Azure DNS-Namenserver angeben müssen, da der normale DNS-Auflösungsvorgang die Namenserver automatisch findet, wenn die Delegierung ordnungsgemäß eingerichtet wurde.
@@ -153,10 +155,8 @@ Wie beim Delegieren mithilfe einer Registrierungsstelle können wir überprüfen
 
 [Verwalten von DNS-Einträgen](dns-operations-recordsets.md)
 
-[Traffic Manager – Übersicht](traffic-manager-overview.md)
-
 [Automatisieren von Azure-Vorgängen mit dem .NET SDK](dns-sdk.md)
 
 [REST-API-Referenz für Azure DNS](https://msdn.microsoft.com/library/azure/mt163862.aspx)
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0121_2016-->

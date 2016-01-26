@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
-	ms.date="12/17/2015"
+	ms.date="01/18/2016"
 	ms.author="juliako"/>
 
 
@@ -22,8 +22,7 @@
 [AZURE.INCLUDE [media-services-selector-get-started](../../includes/media-services-selector-get-started.md)]
 
 
->[AZURE.NOTE]
-> Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](/pricing/free-trial/?WT.mc_id=A261C142F).
+>[AZURE.NOTE]Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](/pricing/free-trial/?WT.mc_id=A261C142F).
  
 ##Übersicht 
 
@@ -108,7 +107,7 @@ Um die Anzahl der reservierten Einheiten für das Streaming zu ändern, gehen Si
 
 3. Um die Anzahl der Streaming-Einheiten anzugeben, klicken Sie die auf Registerkarte "SKALIERUNG" und verschieben anschließend den Schieberegler für die **reservierte Kapazität**.
 
-![Skalierungsseite](./media/media-services-dotnet-get-started/media-services-origin-scale.png)
+	![Skalierungsseite](./media/media-services-dotnet-get-started/media-services-origin-scale.png)
 
 4. Klicken Sie zum Speichern der Änderungen auf **SPEICHERN**.
 
@@ -130,12 +129,7 @@ Das Zuordnen neuer Einheiten dauert etwa 20 Minuten.
 
 4. Öffnen Sie die Datei "App.config" (fügen Sie die Datei dem Projekt hinzu, wenn sie nicht standardmäßig hinzugefügt wurde), und fügen Sie einen *appSettings*-Abschnitt in der Datei hinzu. Legen Sie die Werte für Ihren Azure Media Services-Kontonamen und Schlüssel fest, wie im folgenden Beispiel gezeigt. Um den Kontonamen und wichtige Informationen zu erhalten, öffnen Sie das klassische Azure-Portal, wählen Sie Ihr Media Services-Konto aus, und klicken Sie anschließend auf die Schaltfläche **Schlüssel verwalten**.
 
-<configuration>
-		...
-		  <appSettings>
-		    <add key="MediaServicesAccountName" value="Media-Services-Account-Name" />
-		    <add key="MediaServicesAccountKey" value="Media-Services-Account-Key" />
-		  </appSettings>
+<configuration> ... <appSettings> <add key="MediaServicesAccountName" value="Media-Services-Account-Name" /> <add key="MediaServicesAccountKey" value="Media-Services-Account-Key" /> </appSettings>
 		  
 		</configuration>
 
@@ -452,4 +446,4 @@ Wenn dieses Thema nicht die erwarteten Informationen enthält, Informationen feh
   [Web Platform Installer]: http://go.microsoft.com/fwlink/?linkid=255386
   [Portal]: http://manage.windowsazure.com/
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0121_2016-->

@@ -28,7 +28,11 @@
 
 In diesem Tutorial erfahren Sie, wie einfach es ist, in wenigen Minuten einen virtuellen Azure-Computer im Azure-Portal zu erstellen. Wir verwenden ein Windows Server 2012 R2 Datacenter-Image als Beispiel für das Erstellen des virtuellen Computers, aber dies ist nur eines von vielen in Azure bereitgestellten Images. Ihre Imageauswahl hängt von Ihrem Abonnement ab. Beispielsweise können Desktop-Images für MSDN-Abonnenten verfügbar sein.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]klassisches Bereitstellungsmodell.
+
+<br>
+
+>[AZURE.TIP]Soll Ihre VM Mitglied einer Verfügbarkeitsgruppe sein, müssen Sie bei Verwendung des Portals die Verfügbarkeitsgruppe vor oder während der Erstellung der ersten VM in der Gruppe erstellen. Weitere Information zum Erstellen und Verwenden von Verfügbarkeitsgruppen finden Sie unter [Verwalten der Verfügbarkeit virtueller Computer](virtual-machines-manage-availability.md).
 
 Sie können virtuelle Computer auch unter Verwendung eigener Images, mithilfe von Ressourcen-Manager-Vorlagen oder mit Automatisierungstools erstellen. Informationen zu den verschiedenen Methoden finden Sie unter [Verschiedene Möglichkeiten zum Erstellen eines virtuellen Windows-Computers](virtual-machines-windows-choices-create-vm.md).
 
@@ -62,7 +66,7 @@ Nachdem Sie das Image ausgewählt haben, können Sie für den Großteil der Konf
 
 2. Geben Sie bei **Name** den gewünschten Namen für die virtuelle Maschine ein. Der Name darf keine Sonderzeichen enthalten.
 
-3. Geben Sie einen **Benutzernamen** für die Verwaltung und ein sicheres **Kennwort** ein. Das Kennwort muss 8 bis 123 Zeichen lang sein und mindestens drei der folgenden Elemente enthalten: einen Kleinbuchstaben, einen Großbuchstaben, eine Zahl und ein Sonderzeichen. **Sie benötigen den Benutzernamen und das Kennwort, um sich am virtuellen Computer anzumelden.**
+3. Geben Sie einen **Benutzernamen** für die Verwaltung und ein sicheres **Kennwort** ein. Das Kennwort muss 8 bis 123 Zeichen lang sein und mindestens drei der folgenden Elemente enthalten: einen Kleinbuchstaben, einen Großbuchstaben, eine Zahl und ein Sonderzeichen. **Sie brauchen den Benutzernamen und das Passwort, um sich am virtuellen Computer anzumelden**.
 
 4. Wenn Sie über mehr als ein Abonnement verfügen, geben Sie das für den neuen virtuellen Computer geltende Abonnement sowie eine neue oder vorhandene **Ressourcengruppe** und den **Standort** eines Azure-Datencenters an.
 
@@ -107,11 +111,11 @@ Nachdem Sie den virtuellen Computer erstellt haben, sollten Sie sich bei diesem 
 
 7. Klicken Sie auf **Ja**, um die Identität des virtuellen Computers zu bestätigen.
 
-	Sie können jetzt mit dem virtuellen Computer wie mit jedem anderen Server arbeiten.
+Sie können jetzt mit dem virtuellen Computer wie mit jedem anderen Server arbeiten.
 
 ## Nächste Schritte
 
 * Verwenden Sie Azure PowerShell und die Azure-Befehlszeilenschnittstelle zum [Suchen und Auswählen von Images für virtuelle Computer](resource-groups-vm-searching.md).
 * Automatisieren Sie die Bereitstellung und Verwaltung von virtuellen Maschinen und Workloads mithilfe von [Azure-Ressourcen-Manager-Vorlagen](http://azure.microsoft.com/documentation/templates/).
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0121_2016-->

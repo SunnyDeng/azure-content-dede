@@ -42,7 +42,7 @@ Remotezugriff, z. B. VPN, RDG| |* |
 
 ## Wo befinden sich die Benutzer?
 
-Außerdem hängt die Entscheidung für die richtige Lösung – Multi-Factor Authentication in der Cloud oder lokal über den MFA-Server – davon ab, wo sich Ihre Benutzer befinden.
+Außerdem hängt die Entscheidung für die richtige Lösung – Multi-Factor Authentication in der Cloud oder lokal über den MFA-Server – davon ab, wo sich die Benutzer befinden.
 
 
 
@@ -81,4 +81,4 @@ Sie haben nun ermittelt, ob Sie Multi-Factor Authentication in der Cloud oder de
 
 <center> [![Cloud](./media/multi-factor-authentication-get-started/cloud2.png)](multi-factor-authentication-get-started-cloud.md) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[![Proofup](./media/multi-factor-authentication-get-started/server2.png)](multi-factor-authentication-get-started-server.md) &#160;&#160;&#160;&#160;&#160; </center>
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0121_2016-->

@@ -209,7 +209,7 @@ Sie können jedes Tool Ihrer Wahl für diese Aufgabe verwenden (z. B. Azure Sto
 			Transfer skipped:        0
 			Transfer failed:         0
 			Elapsed time:            00.00:00:01
-	1. Wiederholen Sie die vorherigen beiden Schritte zum Hochladen der Datei „partitionweblogs.hql“ in den Ordner „Script“ des Containers „adfgetstarted“. Hier ist der Befehl: 
+	1. Führen Sie zum Hochladen der Datei **partitionweblogs.hql** in den Ordner **Script** des Containers **adfgetstarted** den folgenden Befehl aus. Hier ist der Befehl: 
 	
 			AzCopy /Source:. /Dest:https://<storageaccountname>.blob.core.windows.net/adfgetstarted/script /DestKey:<storagekey>  /Pattern:partitionweblogs.hql
 
@@ -222,4 +222,4 @@ Jetzt können Sie mit dem Tutorial beginnen. Klicken Sie oben auf eine der Regis
 - Visual Studio
 - Azure-Ressourcen-Manager-Vorlagen 
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0121_2016-->

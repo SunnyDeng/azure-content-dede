@@ -26,7 +26,7 @@
 
 [Erstellen eines virtuellen Computers unter Windows im klassischen Azure-Portal](virtual-machines-windows-tutorial-classic-portal.md)
 
-[Erstellen eines benutzerdefinierten virtuellen Computers mit Windows in Azure](virtual-machines-windows-create-custom.md)
+[Erstellen eines benutzerdefinierten virtuellen Computers mit Windows in Azure](virtual-machines-create-custom.md)
 
 [Erstellen eines benutzerdefinierten virtuellen Computers unter Linux in Azure](virtual-machines-linux-create-custom.md)
 
@@ -152,4 +152,4 @@
 
 [Referenz zur REST-API der Dienstverwaltung](https://msdn.microsoft.com/library/azure/ee460799.aspx)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0121_2016-->

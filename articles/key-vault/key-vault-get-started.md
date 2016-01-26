@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="hero-article"
-	ms.date="01/08/2016"
+	ms.date="01/19/2016"
 	ms.author="cabailey"/>
 
 # Erste Schritte mit dem Azure-Schlüsseltresor #
@@ -24,7 +24,7 @@ Verwenden Sie dieses Tutorial für den Einstieg in Azure-Schlüsseltresor, um ei
 
 *Geschätzter Zeitaufwand*:* 20 Minuten.
 
->[AZURE.NOTE] Dieses Tutorial enthält keine Anweisungen zum Schreiben der in einem der Schritte verwendeten Azure-Anwendung, die dazu dient, eine Anwendung zum Verwenden eines Schlüssels oder geheimen Schlüssels im Schlüsseltresor zu autorisieren.
+>[AZURE.NOTE]Dieses Tutorial enthält keine Anweisungen zum Schreiben der in einem der Schritte verwendeten Azure-Anwendung, die dazu dient, eine Anwendung zum Verwenden eines Schlüssels oder geheimen Schlüssels im Schlüsseltresor zu autorisieren.
 >
 >Derzeit können Sie den Azure-Schlüsseltresor nicht im Azure-Portal konfigurieren. Sie müssen stattdessen die Anweisungen für Azure PowerShell verwenden. Anleitungen für die plattformübergreifende Befehlszeilenschnittstelle finden Sie in [diesem entsprechenden Tutorial](key-vault-manage-with-cli.md).
 
@@ -35,7 +35,7 @@ Eine Übersicht über den Azure-Schlüsseltresor finden Sie unter [Was ist der A
 Für dieses Tutorial benötigen Sie Folgendes:
 
 - Ein Abonnement für Microsoft Azure. Wenn Sie kein Abonnement haben, können Sie sich für eine [kostenlose Testversion](../../../../pricing/free-trial) registrieren.
-- Azure PowerShell, **mindestens Version 1.0**. Um Azure PowerShell zu installieren und Ihrem Azure-Abonnement zuzuordnen, lesen Sie [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md). Wenn Sie Azure PowerShell bereits installiert haben und die Version nicht kennen, geben Sie über die Azure PowerShell-Konsole `(Get-Module azure -ListAvailable).Version` ein. Wenn Sie Azure PowerShell in den Versionen 0.9.1 bis 0.9.8 installiert haben, können Sie diese Tutorial mit einigen kleineren Änderungen verwenden. Sie müssen z. B. den Befehl `Switch-AzureMode AzureResourceManager` verwenden, und einige der Befehle des Azure-Schlüsseltresors wurden geändert. Eine Liste der Schlüsseltresor-Cmdlets für die Versionen 0.9.1 bis 0.9.8 finden Sie unter [Cmdlets für den Azure-Schlüsseltresor](https://msdn.microsoft.com/library/azure/dn868052(v=azure.98).aspx). 
+- Azure PowerShell, **mindestens Version 1.1.0**. Um Azure PowerShell zu installieren und Ihrem Azure-Abonnement zuzuordnen, lesen Sie [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md). Wenn Sie Azure PowerShell bereits installiert haben und die Version nicht kennen, geben Sie über die Azure PowerShell-Konsole `(Get-Module azure -ListAvailable).Version` ein. Wenn Sie Azure PowerShell in den Versionen 0.9.1 bis 0.9.8 installiert haben, können Sie diese Tutorial mit einigen kleineren Änderungen verwenden. Sie müssen z. B. den Befehl `Switch-AzureMode AzureResourceManager` verwenden, und einige der Befehle des Azure-Schlüsseltresors wurden geändert. Eine Liste der Schlüsseltresor-Cmdlets für die Versionen 0.9.1 bis 0.9.8 finden Sie unter [Cmdlets für den Azure-Schlüsseltresor](https://msdn.microsoft.com/library/azure/dn868052(v=azure.98).aspx). 
 - Eine Anwendung, die zur Verwendung des Schlüssels oder Kennworts konfiguriert wird, den bzw. das Sie in diesem Lernprogramm erstellen. Eine Beispielanwendung erhalten Sie im [Microsoft Download Center](http://www.microsoft.com/de-DE/download/details.aspx?id=45343). Anweisungen finden Sie in der zugehörigen Readme-Datei.
 
 
@@ -45,9 +45,9 @@ Um detaillierte Hilfe zu einem Cmdlet aus dem Tutorial zu erhalten, verwenden Si
 
 	Get-Help <cmdlet-name> -Detailed
 
-Geben Sie beispielsweise Folgendes ein, um Hilfe zum **Add-AzureAccount**-Cmdlet zu erhalten:
+Geben Sie beispielsweise Folgendes ein, um Hilfe zum **Login-AzureRmAccount**-Cmdlet zu erhalten:
 
-	Get-Help Add-AzureAccount -Detailed
+	Get-Help Login-AzureRmAccount -Detailed
 
 Lesen Sie bitte auch die folgenden Tutorials, um sich mit dem Azure-Ressourcen-Manager in Azure PowerShell vertraut zu machen:
 
@@ -60,6 +60,8 @@ Lesen Sie bitte auch die folgenden Tutorials, um sich mit dem Azure-Ressourcen-M
 Starten Sie eine Azure PowerShell-Sitzung, und melden Sie sich mit dem folgenden Befehl bei Ihrem Azure-Konto an:
 
     Login-AzureRmAccount 
+
+Hinweis: Wenn Sie eine bestimmte Instanz von Azure wie etwa Azure Government nutzen, verwenden Sie den Parameter „-Environment“ mit diesem Befehl. Beispiel: `Login-AzureRmAccount –Environment (Get-AzureRmEnvironment –Name AzureUSGovernment)`
 
 Geben Sie im Popup-Browserfenster den Benutzernamen und das Kennwort Ihres Azure-Kontos ein. Azure PowerShell ruft alle Abonnements ab, die diesem Konto zugeordnet sind, und verwendet standardmäßig das erste Abonnement.
 
@@ -111,7 +113,7 @@ Geben Sie anschließend den folgenden Code ein, um den Schlüssel aus der PFX-Da
     $key = Add-AzureKeyVaultKey -VaultName 'ContosoKeyVault' -Name 'ContosoFirstKey' -KeyFilePath 'c:\softkey.pfx' -KeyFilePassword $securepfxpwd
 
 
-Jetzt können Sie mit dem zugehörigen URI auf den erstellten oder in den Azure-Schlüsseltresor hochgeladenen Schlüssel verweisen. Verwenden Sie **https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey**, um immer die aktuelle Version zu erhalten, und verwenden Sie **https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey/cgacf4f763ar42ffb0a1gca546aygd87**, um diese bestimmte Version abzurufen.
+Jetzt können Sie mit dem zugehörigen URI auf den erstellten oder in den Azure-Schlüsseltresor hochgeladenen Schlüssel verweisen. Verwenden Sie ****https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey**, um immer die aktuelle Version zu erhalten, und verwenden Sie ****https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey/cgacf4f763ar42ffb0a1gca546aygd87**, um diese bestimmte Version abzurufen.
 
 Geben Sie zur Anzeige des URI für diesen Schlüssel Folgendes ein:
 
@@ -125,7 +127,7 @@ Geben Sie anschließend Folgendes ein:
 
 	$secret = Set-AzureKeyVaultSecret -VaultName 'ContosoKeyVault' -Name 'SQLPassword' -SecretValue $secretvalue
 
-Jetzt können Sie mit dem zugehörigen URI auf das Kennwort verweisen, das Sie dem Azure-Schlüsseltresor hinzugefügt haben. Verwenden Sie **https://ContosoVault.vault.azure.net/secrets/SQLPassword**, um immer die aktuelle Version zu erhalten, und verwenden Sie **https://ContosoVault.vault.azure.net/secrets/SQLPassword/90018dbb96a84117a0d2847ef8e7189d**, um diese bestimmte Version abzurufen.
+Jetzt können Sie mit dem zugehörigen URI auf das Kennwort verweisen, das Sie dem Azure-Schlüsseltresor hinzugefügt haben. Verwenden Sie ****https://ContosoVault.vault.azure.net/secrets/SQLPassword**, um immer die aktuelle Version zu erhalten, und verwenden Sie ****https://ContosoVault.vault.azure.net/secrets/SQLPassword/90018dbb96a84117a0d2847ef8e7189d**, um diese bestimmte Version abzurufen.
 
 Geben Sie zur Anzeige des URI für diesen geheimen Schlüssel Folgendes ein:
 
@@ -143,7 +145,7 @@ Jetzt sind Schlüsseltresor und Schlüssel oder geheimer Schlüssel bereit für 
 Dieser Schritt wird üblicherweise durch einen Entwickler auf einem separaten Computer durchgeführt. Dieser Schritt ist nicht spezifisch für den Azure-Schlüsseltresor, wird der Vollständigkeit halber jedoch hier aufgeführt.
 
 
->[AZURE.IMPORTANT] Zum Abschließen dieses Tutorials müssen sich Ihr Konto, der Schlüsseltresor und die in diesem Schritt registrierte Anwendung im selben Azure-Verzeichnis befinden.
+>[AZURE.IMPORTANT]Zum Abschließen dieses Tutorials müssen sich Ihr Konto, der Schlüsseltresor und die in diesem Schritt registrierte Anwendung im selben Azure-Verzeichnis befinden.
 
 Anwendungen, die einen Schlüsseltresor verwenden, müssen sich mithilfe eines Azure Active Directory-Tokens authentifizieren. Hierzu muss der Besitzer der Anwendung die Anwendung zunächst in Azure Active Directory registrieren. Zum Abschluss der Registrierung erhält der Anwendungsbesitzer die folgenden Werte:
 
@@ -182,7 +184,7 @@ Wenn Sie dieselbe Anwendung so autorisieren möchten, dass sie geheime Schlüsse
 
 Zur Steigerung der Sicherheit können Sie Schlüssel in HSMs importieren oder in diesen generieren. Diese Schlüssel verbleiben immer innerhalb der HSM-Grenzen. Die HSMs sind FIPS 140-2 Ebene 2 überprüft. Wenn diese Anforderung auf Sie nicht zutrifft, überspringen Sie diesen Abschnitt und wechseln Sie zu [Löschen des Schlüsseltresors und zugeordneter Schlüssel und geheimer Schlüssel](#delete).
 
-Um diese HSM-geschützten Schlüssel zu erstellen, müssen Sie über ein [Tresorabonnement mit Unterstützung von HSM-geschützten Schlüsseln](../../../pricing/free-trial) verfügen.
+Um diese HSM-geschützten Schlüssel zu erstellen, müssen Sie über ein [Tresorabonnement mit Unterstützung von HSM-geschützten Schlüsseln](../../../pricing/free-trial) verfügen. Darüber hinaus steht diese Funktion nicht für Azure China zur Verfügung.
 
 
 Wenn Sie den Tresor erstellen, fügen Sie den **-SKU**-Parameter hinzu.
@@ -235,9 +237,9 @@ Ein weiterführendes Tutorial zur Verwendung des Azure-Schlüsseltresors in eine
 
 Informationen zur Verwendung des Schlüsseltresors finden Sie unter [Azure-Schlüsseltresor-Protokollierung](key-vault-logging.md).
 
-Eine Liste der Azure PowerShell 1.0-Cmdlets für den Azure-Schlüsseltresor finden Sie unter [Cmdlets für den Azure-Schlüsseltresor](https://msdn.microsoft.com/library/azure/dn868052.aspx).
+Eine Liste der aktuellen Azure PowerShell-Cmdlets für den Azure-Schlüsseltresor finden Sie unter [Cmdlets für den Azure-Schlüsseltresor](https://msdn.microsoft.com/library/azure/dn868052.aspx).
  
 
 Eine Referenz zur Programmierung finden Sie im [Entwicklerhandbuch für den Azure-Schlüsseltresor](key-vault-developers-guide.md).
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0121_2016-->
