@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="hero-article"
-	ms.date="11/17/2015"
-	ms.author="trinadhk; aashishr; jimpark; markgal"/>
+	ms.date="01/19/2016"
+	ms.author="trinadhk; jimpark; markgal;"/>
 
 
 # Sichern von virtuellen Azure-Computern
@@ -40,7 +40,8 @@ Der Ermittlungsprozess muss immer als erster Schritt erfolgen, um sicherzustelle
 
     ![Workload auswählen](./media/backup-azure-vms/discovery-select-workload.png)
 
-3. Klicken Sie unten auf der Seite auf **ERMITTELN**. ![Schaltfläche „Ermitteln“](./media/backup-azure-vms/discover-button-only.png)
+3. Klicken Sie unten auf der Seite auf **ERMITTELN**.
+    ![Schaltfläche „Ermitteln“](./media/backup-azure-vms/discover-button-only.png)
 
     Der Ermittlungsvorgang kann einige Minuten dauern, während die virtuellen Computer in einer Tabelle aufgeführt werden. Am unteren Rand des Bildschirms wird eine Benachrichtigung angezeigt, die Ihnen mitteilt, dass der Vorgang ausgeführt wird.
 
@@ -59,7 +60,8 @@ Sie registrieren einen virtuellen Azure-Computer, um ihn dem Azure Backup-Dienst
 
     ![Workload auswählen](./media/backup-azure-vms/discovery-select-workload.png)
 
-3. Klicken Sie unten auf der Seite auf **REGISTRIEREN**. ![Schaltfläche „Registrieren“](./media/backup-azure-vms/register-button-only.png)
+3. Klicken Sie unten auf der Seite auf **REGISTRIEREN**. 
+    ![Schaltfläche „Registrieren“](./media/backup-azure-vms/register-button-only.png)
 
 4. Wählen Sie im Kontextmenü **Elemente registrieren** die virtuellen Computer aus, die Sie registrieren möchten. Wenn zwei oder mehr virtuelle Computer denselben Namen aufweisen, verwenden Sie den Clouddienst, um sie unterscheiden.
 
@@ -162,4 +164,4 @@ Wenn beim Sichern des virtuellen Computers Probleme auftreten, finden Sie in die
 - [Verwalten und Überwachen Ihrer virtuellen Computer](backup-azure-manage-vms.md)
 - [Wiederherstellen virtueller Computer](backup-azure-restore-vms.md)
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0121_2016-->

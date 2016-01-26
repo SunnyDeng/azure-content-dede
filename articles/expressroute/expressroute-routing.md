@@ -12,7 +12,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="10/06/2015"
+   ms.date="01/16/2016"
    ms.author="cherylmc"/>
 
 
@@ -70,7 +70,6 @@ Stellen Sie sicher, dass Ihre IP-Adresse und die AS-Nummer für Sie in einer der
 - [RIPE NCC](https://www.ripe.net/)
 - [RADB](http://www.radb.net/)
 - [ALTDB](http://altdb.net/)
-- [LEVEL3](http://rr.Level3.net/)
 
 
 ## Dynamischer Routenaustausch
@@ -157,7 +156,7 @@ Zusätzlich zu den obigen Kennzeichnungen versieht Microsoft Präfixe auch basie
 |---|---|
 | **Exchange** | 12076:5010 |
 | **SharePoint** | 12076:5020 |
-| **Skype for Business** | 12076:5030 |
+| **Skype For Business** | 12076:5030 |
 | **CRM Online** | 12076:5040 |
 | **Andere Office 365-Dienste** | 12076:5100 |
 
@@ -174,4 +173,4 @@ Microsoft berücksichtigt keine BGP-Communitywerte, die von Ihnen festgelegt wer
 	- [Konfigurieren des Routings](expressroute-howto-routing-classic.md)
 	- [Verknüpfen eines VNet mit einer ExpressRoute-Verbindung](expressroute-howto-linkvnet-classic.md)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0121_2016-->

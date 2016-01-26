@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="10/21/2015"
+   ms.date="01/14/2016"
    ms.author="edmaca"/>
 
 # Lernprogramm: Erste Schritte mit Azure Data Lake Analytics mithilfe des .NET SDK
@@ -133,7 +133,7 @@ Ein Beispielsuchprotokoll wurde in einen öffentlichen Azure-Blob-Container kopi
                 private const string DataLakeStoreAccountName = "<Data Lake Store Account Name>"; // The application will create this account.
                 private const string DataLakeAnalyticsAccountName = "<Data Lake Analytics Account Name>"; //The application will create this account.
         
-                private const string LocalFolder = @"C:\tutorials\downloads";  //local folder with write permission for file transferring.
+                private const string LocalFolder = @"C:\tutorials\downloads\";  //local folder with write permission for file transferring.
         
                 private static DataLakeStoreManagementClient _dataLakeStoreClient;
                 private static DataLakeStoreFileSystemManagementClient _dataLakeStoreFileSystemClient;
@@ -251,8 +251,8 @@ Ein Beispielsuchprotokoll wurde in einen öffentlichen Azure-Blob-Container kopi
 - Wenn Sie dasselbe Tutorial mit anderen Tools verwenden möchten, klicken Sie oben auf der Seite auf die Registerkartenauswahl.
 - Eine komplexere Abfrage finden Sie unter [Analysieren von Websiteprotokollen mit Azure Data Lake Analytics](data-lake-analytics-analyze-weblogs.md).
 - Informationen zu den ersten Schritten der Entwicklung von U-SQL-Anwendungen finden Sie unter [Entwickeln von U-SQL-Skripts mit Data Lake-Tools für Visual Studio](data-lake-analytics-data-lake-tools-get-started.md).
-- Informationen zum Erlernen von U-SQL finden Sie unter [Erste Schritte mit der Sprache U-SQL für Azure Data Lake Analytics](data-lake-analytics-u-sql-get-started.md).
+- Weitere Informationen zu U-SQL finden Sie unter [Erste Schritte mit Azure Data Lake Analytics-U-SQL-Sprache](data-lake-analytics-u-sql-get-started.md) und in der [Referenz zur U-SQL-Sprache](http://go.microsoft.com/fwlink/?LinkId=691348).
 - Informationen zu Verwaltungsaufgaben finden Sie unter [Verwalten von Azure Data Lake Analytics mithilfe des Azure-Portals](data-lake-analytics-manage-use-portal.md).
 - Eine Übersicht über Data Lake Analytics finden Sie unter [Azure Data Lake Analytics – Übersicht](data-lake-analytics-overview.md).
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0121_2016-->

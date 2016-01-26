@@ -14,7 +14,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="powershell"
    ms.workload="data-management" 
-   ms.date="12/01/2015"
+   ms.date="01/20/2016"
    ms.author="sstein"/>
 
 # Ausprobieren von SQL-Datenbank: Verwenden von C# zum Erstellen einer SQL-Datenbank mithilfe der SQL-Datenbankbibliothek für .NET 
@@ -414,8 +414,7 @@ Mit dem folgenden C#-Befehl wird eine neue Basic-Datenbank erstellt, sofern nich
 ## Nächste Schritte
 Nachdem Sie SQL-Datenbank ausprobiert und mit C# eine Datenbank erstellt haben, bietet sich die folgenden Artikel an:
 
-- [Verbinden mit und Abfragen der SQL-Datenbank mit C#](sql-database-connect-query.md)
-- [Herstellen einer Verbindung mit SQL Server Management Studio (SSMS)](sql-database-connect-to-database.md)
+- [Herstellen einer Verbindung mit einer Azure SQL-Datenbank mit SQL Server Management Studio und Ausführen einer T-SQL-Beispielabfrage](sql-database-connect-query-ssms.md)
 
 ## Zusätzliche Ressourcen
 
@@ -436,4 +435,4 @@ Nachdem Sie SQL-Datenbank ausprobiert und mit C# eine Datenbank erstellt haben, 
 [8]: ./media/sql-database-get-started-csharp/add-application2.png
 [9]: ./media/sql-database-get-started-csharp/clientid.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0121_2016-->

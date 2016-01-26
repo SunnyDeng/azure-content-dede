@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article" 
-	ms.date="01/10/2016" 
+	ms.date="01/20/2016" 
 	ms.author="juliako"/>
 
 
@@ -627,8 +627,10 @@ Das folgende Beispiel veranschaulicht die Funktionen, die im Azure Media Service
 
 ##Weitere Informationen
 
+[CENC mit Multi-DRM und Access Control](media-services-cenc-with-multidrm-access-control.md)
+
 [Konfigurieren der Widevine-Paketerstellung mit AMS](http://mingfeiy.com/how-to-configure-widevine-packaging-with-azure-media-services)
 
 [Ankündigung der öffentlichen Vorschau von Google Widevine-Diensten zur Lizenzbereitstellung in Azure Media Services](http://azure.microsoft.com/blog/announcing-google-widevine-license-delivery-services-public-preview-in-azure-media-services/)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0121_2016-->

@@ -13,20 +13,22 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="12/07/2015"
+	ms.date="01/15/2016"
 	ms.author="sdanie"/>
 
 # Schützen Ihrer API mithilfe von Aufruflimits in Azure API Management
 
 In diesem Leitfaden wird gezeigt, wie einfach Sie Ihre Back-End-API schützen können, indem Sie Richtlinien für Aufruflimits und Kontingente mithilfe von API Management konfigurieren.
 
-In diesem Lernprogramm erstellen Sie ein kostenloses API-Testprodukt, das bis zu 10 Aufrufe pro Minute und maximal 200 Aufrufe pro Woche erlaubt. Anschließend veröffentlichen Sie die API und testen die Richtlinie für das Aufruflimit.
+In diesem Tutorial erstellen Sie ein kostenloses API-Testprodukt, das bis zu zehn Aufrufe pro Minute und maximal 200 Aufrufe pro Woche der API bei Verwendung von [Aufrufrate nach Abonnement einschränken](https://msdn.microsoft.com/library/azure/dn894078.aspx#LimitCallRate) und [Nutzungskontingent nach Abonnement festlegen](https://msdn.microsoft.com/library/azure/dn894078.aspx#SetUsageQuota) erlaubt. Anschließend veröffentlichen Sie die API und testen die Richtlinie für das Aufruflimit.
 
->[AZURE.NOTE]Wenn Sie bereits ein Produkt konfiguriert haben und dieses für das Lernprogramm verwenden möchten, können Sie direkt zum Abschnitt [Konfigurieren von Richtlinien für Aufruflimits und Kontingente][] wechseln und die weiteren Schritte im Lernprogramm ausführen. Ersetzen Sie hierbei die kostenlose Testversion durch Ihr Produkt.
+Informationen zu fortgeschritteneren Drosselungsszenarien mithilfe der Richtlinien [rate-limit-by-key](https://msdn.microsoft.com/library/azure/dn894078.aspx#LimitCallRateByKey) und [quota-by-key](https://msdn.microsoft.com/library/azure/dn894078.aspx#SetUsageQuotaByKey) finden Sie unter [Erweiterte Anforderungsbegrenzung mit Azure API Management](api-management-sample-flexible-throttling.md).
 
 ## <a name="create-product"> </a>So erstellen Sie ein Produkt
 
 In diesem Schritt erstellen Sie ein kostenloses Testprodukt, für das keine Abonnementgenehmigung erforderlich ist.
+
+>[AZURE.NOTE]Wenn Sie bereits ein Produkt konfiguriert haben und dieses für das Lernprogramm verwenden möchten, können Sie direkt zum Abschnitt [Konfigurieren von Richtlinien für Aufruflimits und Kontingente][] wechseln und die weiteren Schritte im Lernprogramm ausführen. Ersetzen Sie hierbei die kostenlose Testversion durch Ihr Produkt.
 
 Klicken Sie zunächst im klassischen Azure-Portal für Ihren API Management-Dienst auf **Verwalten**. Daraufhin gelangen Sie zum API Management-Herausgeberportal.
 
@@ -44,7 +46,8 @@ Klicken Sie auf **Produkt hinzufügen**, um das Dialogfeld **Neues Produkt hinzu
 
 Geben Sie im Feld **Titel** **Kostenlose Testversion** ein.
 
-Geben Sie in das Textfeld **Beschreibung** Folgendes ein: **Abonnenten können bis zu 10 Aufrufe pro Minute und bis zu 200 Aufrufe pro Woche ausführen, danach wird der Zugriff verweigert.**
+Geben Sie in das Textfeld **Beschreibung** Folgendes ein: 
+**Abonnenten können bis zu 10 Aufrufe pro Minute und bis zu 200 Aufrufe pro Woche ausführen, danach wird der Zugriff verweigert.**
 
 Produkte in API Management können geschützt oder offen sein. Geschützte Produkte müssen abonniert werden, bevor sie verwendet werden können. Offene Produkte können ohne Abonnement genutzt werden. Stellen Sie sicher, dass die Option **Abonnement erforderlich** ausgewählt ist, um ein geschütztes Produkt zu erstellen, das abonniert werden muss. Dies ist die Standardeinstellung.
 
@@ -211,7 +214,7 @@ Klicken Sie auf **APIs** im Hauptmenü und anschließend auf **Echo API**.
 
 ![Entwicklerportal][api-management-developer-portal-api-menu]
 
-Klicken Sie auf **GET Resource** und anschließend auf **Konsole öffnen**.
+Klicken Sie auf **GET Resource** und anschließend auf **Ausprobieren**.
 
 ![Konsole öffnen][api-management-open-console]
 
@@ -221,17 +224,17 @@ Behalten Sie die Standard-Parameterwerte bei und wählen Sie Ihren Abonnementsch
 
 >[AZURE.NOTE]Falls Sie mehrere Abonnements haben, stellen Sie sicher, dass Sie den Schlüssel für **Kostenloser Test** auswählen. Andernfalls treten die in den vorherigen Schritten konfigurierten Richtlinien nicht in Kraft.
 
-Klicken Sie auf **HTTP Get** und sehen Sie sich dann die Antwort an. Beachten Sie den **Antwortstatus** von **200 OK**.
+Klicken Sie auf **Senden**, und sehen Sie sich dann die Antwort an. Beachten Sie den **Antwortstatus** von **200 OK**.
 
 ![Operationsergebnis][api-management-http-get-results]
 
-Klicken Sie häufiger als das konfigurierte Limit von 10 mal pro Minute auf **HTTP Get**. Nachdem das Aufruflimit überschritten wurde, wird der Antwortstatus **429 Too Many Requests** zurückgegeben.
+Klicken Sie häufiger als das konfigurierte Limit von zehnmal pro Minute auf **Senden**. Nachdem das Aufruflimit überschritten wurde, wird der Antwortstatus **429 Too Many Requests** zurückgegeben.
 
 ![Operationsergebnis][api-management-http-get-429]
 
-Die Bereiche **Antwortheader** und **Antworttext** enthalten das verbleibende Intervall, bis neue Aufrufe möglich sind.
+Der **Antwortinhalt** gibt das verbleibende Intervall an, bis neue Aufrufe möglich sind.
 
-Wenn das Aufruflimit von 10 Aufrufen pro Minute aktiv ist, werden nachfolgende Aufrufe fehlschlagen, bis 60 Sekunden nach dem ersten der 10 erfolgreichen Aufrufe an das Produkt vergangen sind, bevor das Aufruflimit überschritten wurde. In diesem Beispiel beträgt das verbleibende Intervall 43 Sekunden.
+Wenn das Aufruflimit von 10 Aufrufen pro Minute aktiv ist, werden nachfolgende Aufrufe fehlschlagen, bis 60 Sekunden nach dem ersten der 10 erfolgreichen Aufrufe an das Produkt vergangen sind, bevor das Aufruflimit überschritten wurde. In diesem Beispiel beträgt das verbleibende Intervall 54 Sekunden.
 
 ## <a name="next-steps"> </a>Nächste Schritte
 
@@ -291,4 +294,4 @@ Wenn das Aufruflimit von 10 Aufrufen pro Minute aktiv ist, werden nachfolgende A
 [Aufruflimit]: https://msdn.microsoft.com/library/azure/dn894078.aspx#LimitCallRate
 [Nutzungskontingent]: https://msdn.microsoft.com/library/azure/dn894078.aspx#SetUsageQuota
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0121_2016-->

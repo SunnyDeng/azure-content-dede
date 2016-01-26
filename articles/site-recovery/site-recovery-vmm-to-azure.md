@@ -82,7 +82,8 @@ Wenn Sie eine Netzwerkzuordnung bereitstellen möchten, benötigen Sie Folgendes
 
 
 2. Erweitern Sie
-3. *Data Services*, erweitern Sie *Recovery Services*, und klicken Sie auf den *Site Recovery-Tresor*. *
+3. *Data Services*, erweitern Sie *Recovery Services*, und klicken Sie auf den *Site Recovery-Tresor*. 
+*
 3. Klicken Sie auf *Neu erstellen* und anschließend auf *Schnellerfassung*.
 
 
@@ -123,15 +124,26 @@ Generieren Sie einen Registrierungsschlüssel im Tresor. Nachdem Sie den Azure S
 	![Microsoft Updates](./media/site-recovery-vmm-to-azure/VMMASRInstallMUScreen.png)
 
 
-1.  Der Installationspfad ist auf **<SystemDrive>\\Programme\\Microsoft System Center 2012 R2\\Virtual Machine Manager\\bin** festgelegt. Klicken Sie auf die Schaltfläche "Installieren", um die Installation des Anbieters zu starten. ![InstallLocation](./media/site-recovery-vmm-to-azure/VMMASRInstallLocationScreen.png)
+1.  Der Installationspfad ist auf **<SystemDrive>\Programme\Microsoft System Center 2012 R2\Virtual Machine Manager\bin** festgelegt. Klicken Sie auf die Schaltfläche "Installieren", um die Installation des Anbieters zu starten. 
+	![InstallLocation](./media/site-recovery-vmm-to-azure/VMMASRInstallLocationScreen.png)
 
 
 
-1. Klicken Sie nach der Installation des Anbieters auf die Schaltfläche "Registrieren", um den Server im Tresor zu registrieren. ![InstallComplete](./media/site-recovery-vmm-to-azure/VMMASRInstallComplete.png)
+1. Klicken Sie nach der Installation des Anbieters auf die Schaltfläche "Registrieren", um den Server im Tresor zu registrieren. 
+	![InstallComplete](./media/site-recovery-vmm-to-azure/VMMASRInstallComplete.png)
 
 5. Geben Sie auf der Seite **Internetverbindung** an, wie sich der Anbieter auf dem VMM-Server mit dem Internet verbinden soll. Wählen Sie *Proxyeinstellungen des Systems verwenden* aus, um die Standard-Internetverbindungseinstellungen auf dem Server zu verwenden.
 
-	![Interneteinstellungen](./media/site-recovery-vmm-to-azure/VMMASRRegisterProxyDetailsScreen.png) - Wenn Sie einen benutzerdefinierten Proxy verwenden möchten, sollten Sie diesen vor der Installation des Anbieters einrichten. Wenn Sie benutzerdefinierte Proxyeinstellungen konfigurieren, wird ein Test ausgeführt, um die Proxyverbindung zu überprüfen. - Wenn Sie einen benutzerdefinierten Proxy verwenden oder Ihr Standardproxy eine Authentifizierung erfordert, müssen Sie die Proxydetails einschließlich der Proxyadresse und des Proxyports eingeben. - Der VMM-Server und die Hyper-V-Hosts müssen auf die folgenden URLs Zugriff haben. - *.hypervrecoverymanager.windowsazure.com - *.accesscontrol.windows.net - *.backup.windowsazure.com - *.blob.core.windows.net - *.store.core.windows.net - Erlauben Sie die unter [IP-Bereiche des Azure-Rechenzentrums](http://go.microsoft.com/fwlink/?LinkId=511094) beschriebenen IP-Adressen und das HTTPS (443)-Protokoll. Fügen Sie die IP-Adressbereiche der zu verwendenden Azure-Region sowie die IP-Adressbereiche der westlichen USA einer Positivliste hinzu.
+	![Interneteinstellungen](./media/site-recovery-vmm-to-azure/VMMASRRegisterProxyDetailsScreen.png) 
+	- Wenn Sie einen benutzerdefinierten Proxy verwenden möchten, sollten Sie diesen vor der Installation des Anbieters einrichten. Wenn Sie benutzerdefinierte Proxyeinstellungen konfigurieren, wird ein Test ausgeführt, um die Proxyverbindung zu überprüfen. 
+	- Wenn Sie einen benutzerdefinierten Proxy verwenden oder Ihr Standardproxy eine Authentifizierung erfordert, müssen Sie die Proxydetails einschließlich der Proxyadresse und des Proxyports eingeben.  
+	- Der VMM-Server und die Hyper-V-Hosts müssen auf die folgenden URLs Zugriff haben.
+		- *.hypervrecoverymanager.windowsazure.com 
+		- *.accesscontrol.windows.net 
+		- *.backup.windowsazure.com 
+		- *.blob.core.windows.net 
+		- *.store.core.windows.net 
+		- Erlauben Sie die unter [IP-Bereiche des Azure-Rechenzentrums](http://go.microsoft.com/fwlink/?LinkId=511094) beschriebenen IP-Adressen und das HTTPS (443)-Protokoll. Fügen Sie die IP-Adressbereiche der zu verwendenden Azure-Region sowie die IP-Adressbereiche der westlichen USA einer Positivliste hinzu.
 
 	- Wenn Sie einen benutzerdefinierten Proxy verwenden, wird ein ausführendes VMM-Konto (DRAProxyAccount) automatisch mit den angegebenen Proxyanmeldeinformationen erstellt. Konfigurieren Sie den Proxyserver so, dass dieses Konto erfolgreich authentifiziert werden kann. In der VMM-Konsole können die Einstellungen des ausführenden VMM-Kontos geändert werden. Zu diesem Zweck öffnen Sie den Arbeitsbereich "Einstellungen", erweitern Sie "Sicherheit", klicken Sie auf "Ausführende Konten", und ändern Sie das Kennwort für DRAProxyAccount. Sie müssen den VMM-Dienst neu starten, damit diese Einstellung wirksam wird.
 
@@ -147,7 +159,8 @@ Generieren Sie einen Registrierungsschlüssel im Tresor. Nachdem Sie den Azure S
 
 8. Geben Sie unter **Servername** einen Anzeigenamen ein, um den VMM-Server im Tresor zu identifizieren. Geben Sie in einer Clusterkonfiguration den Rollennamen des VMM-Clusters an.
 
-8. Wählen Sie unter **Erste Cloudmetadaten-Synchronisierung** aus, ob Sie Metadaten für alle Clouds auf dem VMM-Server mit dem Tresor synchronisieren möchten. Diese Aktion muss für jeden VMM-Server nur einmal ausgeführt werden. Wenn Sie nicht alle Clouds synchronisieren möchten, können Sie diese Einstellung deaktiviert lassen und die Clouds in den Cloudeigenschaften in der VMM-Konsole einzeln synchronisieren. ![Serverregistrierung](./media/site-recovery-vmm-to-azure/VMMASRRegisterFriendlyName.png)
+8. Wählen Sie unter **Erste Cloudmetadaten-Synchronisierung** aus, ob Sie Metadaten für alle Clouds auf dem VMM-Server mit dem Tresor synchronisieren möchten. Diese Aktion muss für jeden VMM-Server nur einmal ausgeführt werden. Wenn Sie nicht alle Clouds synchronisieren möchten, können Sie diese Einstellung deaktiviert lassen und die Clouds in den Cloudeigenschaften in der VMM-Konsole einzeln synchronisieren. 
+	![Serverregistrierung](./media/site-recovery-vmm-to-azure/VMMASRRegisterFriendlyName.png)
 
 
 8. Klicken Sie auf *Weiter*, um den Prozess abzuschließen. Nach der Registrierung werden die Metadaten vom VMM-Server von Azure Site Recovery abgerufen. Der Server wird im Tresor auf der Registerkarte *VMM-Server* der Seite **Server** angezeigt.
@@ -166,7 +179,7 @@ Generieren Sie einen Registrierungsschlüssel im Tresor. Nachdem Sie den Azure S
 1. Registrieren Sie den Anbieter mithilfe des folgenden Befehls:
 
     	CD C:\Program Files\Microsoft System Center 2012 R2\Virtual Machine Manager\bin
-    	C:\Program Files\Microsoft System Center 2012 R2\Virtual Machine Manager\bin> DRConfigurator.exe /r  /Friendlyname <friendly name of the server> /Credentials <path of the credentials file> /EncryptionEnabled <full file name to save the encryption certificate>       
+    	C:\Program Files\Microsoft System Center 2012 R2\Virtual Machine Manager\bin\> DRConfigurator.exe /r  /Friendlyname <friendly name of the server> /Credentials <path of the credentials file> /EncryptionEnabled <full file name to save the encryption certificate>       
 
   
 #### Parameter für die Installation über die Befehlszeile
@@ -201,6 +214,13 @@ Installieren Sie den Azure Recovery Services-Agent auf jedem Hyper-V-Hostserver 
 	![Voraussetzungen Recovery Services-Agent](./media/site-recovery-vmm-to-azure/ASRE2AVMM_AgentPrereqs.png)
 
 4. Geben Sie auf der Seite **Installationseinstellungen** an, wo Sie den Agent installieren möchten, und wählen Sie den Cachespeicherort aus, in dem die Sicherungsmetadaten installiert werden. Klicken Sie dann auf <b>Installieren</b>.
+5. Klicken Sie nach Abschluss der Installation auf die Schaltfläche **Schließen**.
+	
+	![MARS-Agent registrieren](./media/site-recovery-vmm-to-azure/MarsAgentRegister.png)
+
+>[AZURE.NOTE]Sie können den Microsoft Azure Recovery Services-Agent mit dem folgenden Befehl über die Befehlszeile installieren:
+>
+	marsagentinstaller.exe /q /nu
 
 ## Schritt 6: Konfigurieren der Cloudschutzeinstellungen
 
@@ -277,7 +297,7 @@ Nach der korrekten Konfiguration von Servern, Clouds und Netzwerken können Sie 
 
 		- Wenn die Anzahl der Netzwerkadapter des Quellcomputers maximal der Anzahl der Netzwerkadapter entspricht, die für die Größe des Zielcomputers zulässig ist, hat der Zielcomputer die gleiche Anzahl von Netzwerkadaptern wie der Quellcomputer.
 		- Wenn die Anzahl der Netzwerkadapter für den virtuellen Quellcomputer die maximal zulässige Anzahl für die Größe des Zielcomputers übersteigt, wird die Anzahl verwendet, die maximal für die Größe des Zielcomputers zulässig ist.
-		- Ein Beispiel: Wenn ein Quellcomputer zwei Netzwerkadapter besitzt und der Zielcomputer aufgrund seiner Größe vier Adapter unterstützt, erhält der Zielcomputer zwei Adapter. Wenn der Quellcomputer dagegen zwei Netzwerkadapter besitzt und der Zielcomputer aufgrund seiner Größe nur einen Adapter unterstützt, erhält der Zielcomputer nur einen Adapter. 	
+		- Ein Beispiel: Wenn ein Quellcomputer zwei Netzwerkkarten besitzt und der Zielcomputer aufgrund seiner Größe vier Netzwerkkarten unterstützt, erhält der Zielcomputer zwei Netzwerkkarten. Wenn der Quellcomputer dagegen zwei Netzwerkadapter besitzt und der Zielcomputer aufgrund seiner Größe nur einen Adapter unterstützt, erhält der Zielcomputer nur einen Adapter. 	
 
 
 	1. Netzwerk des virtuellen Zielcomputers – Das Netzwerk, zu dem der virtuelle Computer eine Verbindung herstellt, wird durch die Netzwerkzuordnung des Netzwerks vom virtuellen Quellcomputer bestimmt. Falls der virtuellen Quellcomputer über mehrere Netzwerkadapter verfügt und Quellnetzwerke verschiedenen Netzwerken im Ziel zugeordnet sind, muss der Benutzer zwischen den Zielnetzwerken wählen.
@@ -344,7 +364,7 @@ Gehen Sie folgendermaßen vor, um ein Testfailover durchzuführen:
 	- Klicken Sie auf **Das Testfailover ist abgeschlossen**. Bereinigen Sie die Testumgebung, um die virtuellen Testcomputer automatisch auszuschalten und zu löschen.
 	- Klicken Sie auf **Notizen**, um alle Beobachtungen im Zusammenhang mit dem Test-Failover aufzuzeichnen und zu speichern.
 
-## <a id="runtest" name="runtest" href="#runtest"></a> Überwachen der Aktivität
+## <a id="runtest" name="runtest" href="#runtest"></a>Überwachen der Aktivität
 <p>Verwenden Sie die Registerkarte *Jobs* und das *Dashboard*, um die wichtigsten Aufträge anzuzeigen und zu überwachen, die vom Azure Site Recovery-Tresor durchgeführt werden. Dazu zählen das Konfigurieren von Schutz für eine Cloud, Aktivieren und Deaktivieren von Schutz für einen virtuellen Computer, Ausführen eines Failovers (geplant, ungeplant oder Test) und Übernehmen eines ungeplanten Failovers.</p>
 
 <p>Auf der Registerkarte *Jobs* können Sie Aufträge anzeigen, ein Drill-Down zu den Auftragsdetails und -fehlern durchführen, Auftragsabfragen ausführen, um Aufträge abzurufen, die bestimmte Kriterien erfüllen, Aufträge nach Excel exportieren und fehlgeschlagene Aufträge neu starten.</p>
@@ -358,6 +378,7 @@ Gehen Sie folgendermaßen vor, um ein Testfailover durchzuführen:
 <LI>Informationen zur Planung und Bereitstellung von Azure Site Recovery in einer realen Produktionsumgebung finden Sie im <a href="http://go.microsoft.com/fwlink/?LinkId=321294">Planungshandbuch für Azure Site Recovery</a> und im <a href="http://go.microsoft.com/fwlink/?LinkId=321295">Bereitstellungshandbuch für Azure Site Recovery</a>.</LI>
 
 
-<LI>Wenn Sie Fragen haben, besuchen Sie das<a href="http://go.microsoft.com/fwlink/?LinkId=313628"> Azure Recovery Services-Forum</a>.</LI></UL>
+<LI>Wenn Sie Fragen haben, besuchen Sie das<a href="http://go.microsoft.com/fwlink/?LinkId=313628"> Azure Recovery Services-Forum</a>.</LI>
+</UL>
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0121_2016-->

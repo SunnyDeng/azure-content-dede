@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="get-started-article" 
-	ms.date="12/02/2015" 
+	ms.date="01/20/2016" 
 	ms.author="casoper"/>
 
 
@@ -35,7 +35,7 @@ Die Verwendung von CDN zum Zwischenspeichern von Azure-Daten bietet folgende Vor
 
 	Ein CDN-Profil ist eine Sammlung von CDN-Endpunkten. Jedes Profil enthält mindestens einen CDN-Endpunkt. Nachdem Sie ein CDN-Profil erstellt haben, können Sie anhand des ausgewählten Ursprungs einen neuen CDN-Endpunkt erstellen.
 	
-	>[AZURE.NOTE]Ein einzelnes Azure-Abonnement ist auf vier CDN Profile beschränkt. Jedes CDN-Profil ist auf vier CDN-Endpunkte beschränkt.
+	>[AZURE.NOTE]Ein einzelnes Azure-Abonnement ist standardmäßig auf vier CDN-Profile beschränkt. Jedes CDN-Profil ist auf zehn CDN-Endpunkte beschränkt.
 	>
 	> Die Preise für Azure CDN gelten auf der Ebene von CDN-Profilen. Wenn Sie die Features von Standard-CDN und Premium-CDN kombinieren möchten, benötigen Sie mehrere CDN-Profile.
 	
@@ -147,4 +147,4 @@ Microsoft Azure CDN kann mithilfe der [CDN-Ressourcenanbieter-REST-API](https://
 - [Löschen eines Azure CDN-Endpunkts](cdn-purge-endpoint.md)
 - [CDN-Ressourcenanbieter-REST-API](https://msdn.microsoft.com/library/mt634456.aspx)
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0121_2016-->
