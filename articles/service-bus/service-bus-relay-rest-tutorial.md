@@ -570,7 +570,7 @@ namespace Microsoft.ServiceBus.Samples
 
 Führen Sie nach dem Erstellen der Projektmappe Folgendes aus, um die Anwendung auszuführen:
 
-1. Führen Sie den Dienst an einer Eingabeaufforderung aus (ImageListener\\bin\\Debug\\ImageListener.exe).
+1. Führen Sie den Dienst an einer Eingabeaufforderung aus (ImageListener\bin\Debug\ImageListener.exe).
 
 2. Kopieren Sie die Adresse aus der Eingabeaufforderung in einen Browser, um das Bild anzuzeigen.
 

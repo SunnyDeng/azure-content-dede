@@ -133,7 +133,7 @@ Ein Beispielsuchprotokoll wurde in einen öffentlichen Azure-Blob-Container kopi
                 private const string DataLakeStoreAccountName = "<Data Lake Store Account Name>"; // The application will create this account.
                 private const string DataLakeAnalyticsAccountName = "<Data Lake Analytics Account Name>"; //The application will create this account.
         
-                private const string LocalFolder = @"C:\tutorials\downloads";  //local folder with write permission for file transferring.
+                private const string LocalFolder = @"C:\tutorials\downloads\";  //local folder with write permission for file transferring.
         
                 private static DataLakeStoreManagementClient _dataLakeStoreClient;
                 private static DataLakeStoreFileSystemManagementClient _dataLakeStoreFileSystemClient;

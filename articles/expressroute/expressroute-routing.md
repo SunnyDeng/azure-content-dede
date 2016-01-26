@@ -156,7 +156,7 @@ Zusätzlich zu den obigen Kennzeichnungen versieht Microsoft Präfixe auch basie
 |---|---|
 | **Exchange** | 12076:5010 |
 | **SharePoint** | 12076:5020 |
-| **Skype for Business** | 12076:5030 |
+| **Skype For Business** | 12076:5030 |
 | **CRM Online** | 12076:5040 |
 | **Andere Office 365-Dienste** | 12076:5100 |
 

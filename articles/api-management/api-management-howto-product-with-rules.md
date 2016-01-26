@@ -46,7 +46,8 @@ Klicken Sie auf **Produkt hinzufügen**, um das Dialogfeld **Neues Produkt hinzu
 
 Geben Sie im Feld **Titel** **Kostenlose Testversion** ein.
 
-Geben Sie in das Textfeld **Beschreibung** Folgendes ein: **Abonnenten können bis zu 10 Aufrufe pro Minute und bis zu 200 Aufrufe pro Woche ausführen, danach wird der Zugriff verweigert.**
+Geben Sie in das Textfeld **Beschreibung** Folgendes ein: 
+**Abonnenten können bis zu 10 Aufrufe pro Minute und bis zu 200 Aufrufe pro Woche ausführen, danach wird der Zugriff verweigert.**
 
 Produkte in API Management können geschützt oder offen sein. Geschützte Produkte müssen abonniert werden, bevor sie verwendet werden können. Offene Produkte können ohne Abonnement genutzt werden. Stellen Sie sicher, dass die Option **Abonnement erforderlich** ausgewählt ist, um ein geschütztes Produkt zu erstellen, das abonniert werden muss. Dies ist die Standardeinstellung.
 

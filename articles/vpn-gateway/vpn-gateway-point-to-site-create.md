@@ -27,7 +27,7 @@ Mit einer Punkt-zu-Standort-Konfiguration können Sie von einem Clientcomputer e
 
 Dieser Artikel gilt für Punkt-zu-Standort-VPN-Gatewayverbindungen mit einem virtuellen Netzwerk, das mit dem **klassischen Bereitstellungsmodell** (Dienstverwaltung) erstellt wurde. Wenn Sie eine Punkt-zu-Standort-Verbindung für ein VNet konfigurieren möchten, das mit dem Ressourcen-Manager erstellt wurde, lesen Sie die Informationen unter [Konfigurieren einer Punkt-zu-Standort-VPN-Verbindung mit einem virtuellen Netzwerk mithilfe von PowerShell](vpn-gateway-howto-point-to-site-rm-ps.md).
 
-[AZURE.INCLUDE [vpn-gateway-classic-rm](../../includes/vpn-gateway-classic-rm-include.md)]
+[AZURE.INCLUDE [vpn-gateway-classic-rm](../../includes/vpn-gateway-classic-rm-include.md)] 
 
 
 ## Informationen zum Erstellen einer Punkt-zu-Standort-Verbindung
