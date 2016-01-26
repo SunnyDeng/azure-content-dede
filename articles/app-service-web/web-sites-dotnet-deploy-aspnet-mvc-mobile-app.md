@@ -163,7 +163,7 @@ Entfernen Sie in jedem `Html.ActionLink`-Aufruf für die Navigationsleiste "Durc
         <li>@Html.ActionLink("Tag", "AllTags", "Home")</li>
     </ul>
 
-Kopieren Sie die Datei *Views\Home\AllTags.cshtml* in *Views\Home\AllTags.Mobile.cshtml*. Öffnen Sie die neue Datei, und ändern Sie das `<h2>`-Element von "Tags" in "Tags (M)":
+Kopieren Sie die Datei *Views\Home\AllTags.cshtml* in *Views\Home\AllTags.Mobile.cshtml*. Öffnen Sie die neue Datei, und ändern Sie das `<h2>` -Element von "Tags" in "Tags (M)":
 
     <h2>Tags (M)</h2>
 
@@ -624,4 +624,4 @@ In diesem Lernprogramm haben Sie erfahren, wie Sie mit ASP.NET MVC 5 Webanwendun
 [SessionByCodeFixed3-644]: ./media/web-sites-dotnet-deploy-aspnet-mvc-mobile-app/SessionByCode-Fixed-3-644.png
  
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0114_2016--->
