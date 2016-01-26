@@ -128,7 +128,12 @@ Die folgende Tabelle gibt Aufschluss über die einzelnen Ressourcentypen, die m�
 
 Folgende Tabelle zeigt die Einschränkungen für die IP-Adressierung in Azure pro Region pro Abonnement. Sie können sich [an den Support wenden](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade), um die Standardlimits Ihren Unternehmensanforderungen entsprechend auf die maximalen Grenzwerte zu erhöhen.
 
-||Standardlimit|Maximaler Grenzwert| |---|---|---| |Öffentliche IP-Adressen (dynamisch)|60|Wenden Sie sich an den Support.| |Öffentliche IP-Adressen (statisch)|20|Wenden Sie sich an den Support.| |Öffentliche Front-End-IP pro Lastenausgleich|5|Wenden Sie sich an den Support.| |Private Front-End-IP pro Lastenausgleich|1|Wenden Sie sich an den Support.|
+||Standardlimit|Maximaler Grenzwert|
+|---|---|---|
+|Öffentliche IP-Adressen (dynamisch)|60|Wenden Sie sich an den Support.|
+|Öffentliche IP-Adressen (statisch)|20|Wenden Sie sich an den Support.|
+|Öffentliche Front-End-IP pro Lastenausgleich|5|Wenden Sie sich an den Support.|
+|Private Front-End-IP pro Lastenausgleich|1|Wenden Sie sich an den Support.|
 
 Lesen Sie unbedingt die vollständigen Informationen zu [Netzwerkeinschränkungen](azure-subscription-service-limits.md#networking-limits) in Azure.
 
@@ -151,4 +156,4 @@ Zusammenfassend gilt für öffentliche IP-Ressourcen die folgenden Preisstruktur
 - Erfahren Sie, wie Sie [eine VM mit einer statischen öffentlichen IP-Adresse mithilfe einer Vorlage bereitstellen](virtual-network-deploy-static-pip-arm-template.md).
 - [Bereitstellen einer VM mit einer statischen privaten IP-Adresse](virtual-networks-static-private-ip-arm-pportal.md) mithilfe des Azure-Portals
 
-<!---HONumber=AcomDC_0114_2016-->
+<!----HONumber=AcomDC_0114_2016-->
