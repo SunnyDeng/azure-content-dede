@@ -197,7 +197,7 @@ Führen Sie zum Installieren von Azure PowerShell die Schritte aus dem vorherige
 ### Registrieren Ihres Build-Agents
 
 1.	Laden Sie „agent.zip“ herunter. Gehen Sie dazu folgendermaßen vor:
-    1.	Melden Sie sich bei Ihrem Teamprojekt an, z. B. „****https://[your-Team-Services-account-name].visualstudio.com**”.
+    1.	Melden Sie sich bei Ihrem Teamprojekt an, z. B. „**https://[your-Team-Services-account-name].visualstudio.com**”.
 1.	Wählen Sie das Zahnradsymbol in der rechten oberen Bildschirmecke aus.
     1.	Wählen Sie in der Systemsteuerung die Registerkarte **Agentpools** aus.
     1.	Wählen Sie **Download-Agent** aus, um die Datei „agent.zip“ herunterzuladen.
@@ -349,4 +349,4 @@ Weitere Informationen zu Continuous Integration für Service Fabric-Anwendungen 
 - [Bereitstellen eines Build-Agents](https://msdn.microsoft.com/Library/vs/alm/Build/agents/windows)
 - [Erstellen und Konfigurieren einer Builddefinition](https://msdn.microsoft.com/Library/vs/alm/Build/vs/define-build)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!----HONumber=AcomDC_0114_2016-->
