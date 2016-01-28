@@ -18,12 +18,12 @@ ms.service="virtual-machines"
 
 # Automatisches zentrales Hoch- und Herunterskalieren von Azure-Computeressourcen in einem HPC Pack-Cluster entsprechend der Clusterworkload
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Ressourcen-Manager-Modell.
 
 
 Wenn Sie Azure-Burstknoten im HPC Pack-Cluster bereitstellen oder einen HPC Pack-Cluster in virtuellen Azure-Computern erstellen, möchten Sie möglicherweise die Azure-Computeressourcen entsprechend der aktuellen Workload der Aufträge und Aufgaben im Cluster automatisch vergrößern oder verkleinern. Auf diese Weise können Sie die Azure-Ressourcen effizienter nutzen und die Kosten kontrollieren. Verwenden Sie hierzu das HPC PowerShell-Skript **AzureAutoGrowShrink.ps1**, das mit HPC Pack installiert wird.
 
->[AZURE.TIP]Ab HPC Pack 2012 R2 Update 2 enthält HPC Pack einen integrierten Dienst zum automatischen Vergrößern und Verkleinern von Azure-Burstknoten oder Azure-VM-Computeknoten. Konfigurieren Sie den Dienst mit einer Einstellung im [HPC Pack IaaS-Bereitstellungsskript](virtual-machines-hpcpack-cluster-powershell-script.md), oder legen Sie die Clustereigenschaft **AutoGrowShrink** manuell fest. Siehe dazu [What’s New in Microsoft HPC Pack 2012 R2 Update 2](https://technet.microsoft.com/library/mt269417.aspx) (in englischer Sprache).
+>[AZURE.TIP] Ab HPC Pack 2012 R2 Update 2 enthält HPC Pack einen integrierten Dienst zum automatischen Vergrößern und Verkleinern von Azure-Burstknoten oder Azure-VM-Computeknoten. Konfigurieren Sie den Dienst mit einer Einstellung im [HPC Pack IaaS-Bereitstellungsskript](virtual-machines-hpcpack-cluster-powershell-script.md), oder legen Sie die Clustereigenschaft **AutoGrowShrink** manuell fest. Siehe dazu [What’s New in Microsoft HPC Pack 2012 R2 Update 2](https://technet.microsoft.com/library/mt269417.aspx) (in englischer Sprache).
 
 ## Voraussetzungen
 
@@ -34,7 +34,7 @@ Wenn Sie Azure-Burstknoten im HPC Pack-Cluster bereitstellen oder einen HPC Pack
 * **Für einen Cluster mit Azure-Burstknoten** – Führen Sie das Skript auf einem Clientcomputer, auf dem HPC Pack installiert ist, oder auf dem Hauptknoten aus. Wenn Sie das Skript auf einem Clientcomputer ausführen, stellen Sie sicher, dass Sie die Variable "$env:CCP\_SCHEDULER" so festlegen, dass sie auf den Hauptknoten verweist. Die Azure-Burstknoten müssen dem Cluster bereits hinzugefügt sein, sie können jedoch den Status "Nicht bereitgestellt" aufweisen.
 
 
-* **Für einen auf virtuellen Azure-Computern bereitgestellten Cluster** – Führen Sie das Skript auf dem virtuellen Computer für den Hauptknoten aus, da er von den Skripts **Start HpcIaaSNode.ps1** und **Stop HpcIaaSNode.ps1** abhängt, die dort installiert sind. Für diese Skripts ist zudem ein Azure-Verwaltungszertifikat oder eine Azure-Veröffentlichungseinstellungsdatei erforderlich (siehe [Manage the number and availability of compute nodes in an HPC Pack cluster in Azure](virtual-machines-hpcpack-cluster-node-manage.md) (in englischer Sprache)). Stellen Sie sicher, dass alle erforderlichen virtuellen Maschinen für Computeknoten dem Cluster bereits hinzugefügt sind. Sie können sich jedoch im Status „Beendet“ befinden.
+* **Für einen auf virtuellen Azure-Computern bereitgestellten Cluster** – Führen Sie das Skript auf dem virtuellen Computer für den Hauptknoten aus, da er von den Skripts **Start HpcIaaSNode.ps1** und **Stop HpcIaaSNode.ps1** abhängt, die dort installiert sind. Für diese Skripts ist zudem ein Azure-Verwaltungszertifikat oder eine Azure-Veröffentlichungseinstellungsdatei erforderlich (siehe [Verwalten der Anzahl und Verfügbarkeit von Computeknoten in einem HPC Pack-Cluster in Azure](virtual-machines-hpcpack-cluster-node-manage.md) (in englischer Sprache)). Stellen Sie sicher, dass alle erforderlichen virtuellen Maschinen für Computeknoten dem Cluster bereits hinzugefügt sind. Sie können sich jedoch im Status „Beendet“ befinden.
 
 ## Syntax
 
