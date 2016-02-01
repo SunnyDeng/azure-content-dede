@@ -80,8 +80,8 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![App-URL konfigurieren](./media/active-directory-saas-replicon-tutorial/IC777803.png "App-URL konfigurieren")
 
-    1.  Geben Sie in das Textfeld **Replicon-Anmelde- URL** Ihre Replicon-Mandanten-URL ein (z. B.: **https://na2.replicon.com/company/saml2/sp-sso/post*).
-    2.  Geben Sie im Textfeld **Replicon-Antwort-URL** Ihre **AssertionConsumerService-URL** für Replicon ein (z. B. **https://global.replicon.com/!/saml2/company/sso/post*).
+    1.  Geben Sie in das Textfeld **Replicon-Anmelde- URL** Ihre Replicon-Mandanten-URL ein (z. B.: *https://na2.replicon.com/company/saml2/sp-sso/post*).
+    2.  Geben Sie im Textfeld **Replicon-Antwort-URL** Ihre **AssertionConsumerService-URL** für Replicon ein (z. B. *https://global.replicon.com/!/saml2/company/sso/post*).
 
         >[AZURE.NOTE]Sie können die URL aus den Replicon-Metadaten unter: **https://global.replicon.com/!/saml2/\< YourCompanyKey >** abrufen.
 

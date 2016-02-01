@@ -85,7 +85,7 @@ Wenn einmaliges Anmelden konfiguriert werden soll, müssen Sie sich an das Succe
 
     ![App-URL konfigurieren](./media/active-directory-saas-successfactors-tutorial/IC791140.png "App-URL konfigurieren")
 
-    1.  Geben Sie im Textfeld **SuccessFactors-Anmelde-URL** die URL ein, welche die Benutzer zur Anmeldung bei der SuccessFactors-Anwendung verwenden (z. B. *https://performancemanager4.successfactors.com/sf/home?company=CompanyName&loginMethod=SSO*")).
+    1.  Geben Sie im Textfeld **SuccessFactors-Anmelde-URL** die URL ein, welche die Benutzer zur Anmeldung bei der SuccessFactors-Anwendung verwenden (z. B. *https://performancemanager4.successfactors.com/sf/home?company=CompanyName&loginMethod=SSO*").
     2.  Geben Sie in das Textfeld **SuccessFactors-Antwort-URL** **https://performancemanager4.successfactors.com/saml2/SAMLAssertionConsumer?company=CompanyName** ein.
 
         >[AZURE.NOTE]Dieser Wert ist nur ein temporärer Platzhalter.  

@@ -23,7 +23,7 @@ ms.service="virtual-machines"
 
 Wenn Sie Azure-Burstknoten im HPC Pack-Cluster bereitstellen oder einen HPC Pack-Cluster in virtuellen Azure-Computern erstellen, möchten Sie möglicherweise die Azure-Computeressourcen entsprechend der aktuellen Workload der Aufträge und Aufgaben im Cluster automatisch vergrößern oder verkleinern. Auf diese Weise können Sie die Azure-Ressourcen effizienter nutzen und die Kosten kontrollieren. Verwenden Sie hierzu das HPC PowerShell-Skript **AzureAutoGrowShrink.ps1**, das mit HPC Pack installiert wird.
 
->[AZURE.TIP] Ab HPC Pack 2012 R2 Update 2 enthält HPC Pack einen integrierten Dienst zum automatischen Vergrößern und Verkleinern von Azure-Burstknoten oder Azure-VM-Computeknoten. Konfigurieren Sie den Dienst mit einer Einstellung im [HPC Pack IaaS-Bereitstellungsskript](virtual-machines-hpcpack-cluster-powershell-script.md), oder legen Sie die Clustereigenschaft **AutoGrowShrink** manuell fest. Siehe dazu [What’s New in Microsoft HPC Pack 2012 R2 Update 2](https://technet.microsoft.com/library/mt269417.aspx) (in englischer Sprache).
+>[AZURE.TIP] Ab HPC Pack 2012 R2 Update 2 enthält HPC Pack einen integrierten Dienst zum automatischen Vergrößern und Verkleinern von Azure-Burstknoten oder Azure-VM-Computeknoten. Konfigurieren Sie den Dienst mit einer Einstellung im [HPC Pack IaaS-Bereitstellungsskript](virtual-machines-hpcpack-cluster-powershell-script.md), oder legen Sie die Clustereigenschaft **AutoGrowShrink** manuell fest. Weitere Informationen finden Sie unter [Neuigkeiten in Microsoft HPC Pack 2012 R2 Update 2](https://technet.microsoft.com/library/mt269417.aspx) (in englischer Sprache).
 
 ## Voraussetzungen
 

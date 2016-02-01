@@ -12,6 +12,8 @@ Für das Azure-Toolkit für Eclipse sind folgende Komponenten notwendig:
 
 >[AZURE.NOTE]Weitere Informationen finden Sie in Eclipse Marketplace auf der Seite [Azure-Toolkit für Eclipse](http://marketplace.eclipse.org/content/azure-toolkit-eclipse).
 
+<br>
+
 > [AZURE.IMPORTANT]Bei Verwendung des Azure-Toolkits für Eclipse unter Windows erfordert das Toolkit die Installation des Azure SDK in Version 2.7 oder höher. Für das Installieren des Azure SDK gibt es zwei Möglichkeiten:
 > 
 > * Sie können das Azure SDK mithilfe des [Webplattform-Installers (WebPI)][] herunterladen und installieren.
