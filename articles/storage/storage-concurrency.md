@@ -93,7 +93,10 @@ Get Container Properties|	Ja|	Nein|
 Get Container Metadata|	Ja|	Nein|
 Set Container Metadata|	Ja|	Ja|
 Get Container ACL|	Ja|	Nein|
-Set Container ACL|	Ja|	Ja (*)| Delete Container| Nein| Ja| Lease Container| Ja| Ja| List Blobs| Nein| Nein 
+Set Container ACL|	Ja|	Ja (*)|
+Delete Container| Nein| Ja|
+Lease Container| Ja| Ja|
+List Blobs| Nein| Nein 
 
 (*) Die von SetContainerACL definierten Berechtigungen werden zwischengespeichert, und die Verteilung der Aktualisierungen dieser Berechtigungen dauert 30 Sekunden. Während dieser Zeitspanne kann die Konsistenz der Aktualisierungen nicht garantiert werden.
 
@@ -107,7 +110,16 @@ Get Blob Properties|	Ja|	Ja|
 Set Blob Properties|	Ja|	Ja|
 Get Blob Metadata|	Ja|	Ja|
 Set Blob Metadata|	Ja|	Ja|
-Lease Blob (*)| Ja| Ja| Snapshot Blob| Ja| Ja| Copy Blob| Ja| Ja (für Quell- und Ziel-Blob)| Abort Copy Blob| Nein| Nein| Delete Blob| Nein| Ja| Put Block| Nein| Nein| Put Block List| Ja| Ja| Get Block List| Ja| Nein| Put Page| Ja| Ja| Get Page Ranges| Ja| Ja
+Lease Blob (*)| Ja| Ja|
+Snapshot Blob| Ja| Ja|
+Copy Blob| Ja| Ja (für Quell- und Ziel-Blob)|
+Abort Copy Blob| Nein| Nein|
+Delete Blob| Nein| Ja|
+Put Block| Nein| Nein|
+Put Block List| Ja| Ja|
+Get Block List| Ja| Nein|
+Put Page| Ja| Ja|
+Get Page Ranges| Ja| Ja
 
 (*) "Lease Blob" ändert das ETag eines Blob nicht.
 
