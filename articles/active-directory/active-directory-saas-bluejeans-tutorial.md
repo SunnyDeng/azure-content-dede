@@ -110,8 +110,8 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Änderungen speichern](./media/active-directory-saas-bluejeans-tutorial/IC785874.png "Änderungen speichern")
 
-    1.  Geben Sie in das Textfeld **Benutzer-ID** den Wert ****http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name** ein.
-2.  Geben Sie in das Textfeld **E-Mail** den Wert ****http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name** ein.
+    1.  Geben Sie in das Textfeld **Benutzer-ID** den Wert **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name** ein.
+2.  Geben Sie in das Textfeld **E-Mail** den Wert **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name** ein.
 3.  Klicken Sie auf **Änderungen speichern**.
 
 10. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.

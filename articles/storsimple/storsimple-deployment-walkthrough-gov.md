@@ -115,7 +115,7 @@ Stellen Sie Folgendes sicher, bevor Sie beginnen:
 
 - Sie besitzen ein Microsoft Azure-Speicherkonto mit Anmeldeinformationen für den Zugriff.
 
-- Ihr Microsoft Azure-Abonnement ist für den StorSimple Manager-Dienst aktiviert. Ihr Abonnement sollten Sie über das [Enterprise Agreement](http://azure.microsoft.com/pricing/enterprise-agreement/) erwerben.
+- Ihr Microsoft Azure-Abonnement ist für den StorSimple-Manager-Dienst aktiviert. Ihr Abonnement sollten Sie über die [Lizenzierung für Unternehmen](http://azure.microsoft.com/pricing/enterprise-agreement/) erwerben.
 
 - Sie haben Zugriff auf Terminalemulationssoftware wie PuTTY.
 

@@ -46,17 +46,23 @@ _IF_ _Bedingung_ _THEN_ _Aktion_
 
 Betrachten Sie das folgende Beispiel:
 
-*IF Menge kleiner gleich verfügbare Mittel* *THEN Transaktion durchführen und Beleg drucken*
+*IF Menge kleiner gleich verfügbare Mittel* 
+*THEN Transaktion durchführen und Beleg drucken*
 
-Diese Regel bestimmt, ob eine Transaktion durchgeführt wird, indem sie Geschäftslogik in Form eines Vergleichs zwischen zwei monetären Werten anwendet, einem Transaktionsbetrag und den zur Verfügung stehenden Mitteln. Sie können anhand der Geschäftsregel Geschäftsregeln erstellen, ändern und bereitstellen. Alternativ können Sie die vorherigen Aufgaben programmgesteuert ausführen.
+Diese Regel bestimmt, ob eine Transaktion durchgeführt wird, indem sie Geschäftslogik in Form eines Vergleichs zwischen zwei monetären Werten anwendet, einem Transaktionsbetrag und den zur Verfügung stehenden Mitteln. 
+Sie können anhand der Geschäftsregel Geschäftsregeln erstellen, ändern und bereitstellen. Alternativ können Sie die vorherigen Aufgaben programmgesteuert ausführen.
 
 ###Bedingungen
 
-Eine Bedingung ist ein boolescher Ausdruck (true/false), der aus einem oder mehreren Prädikaten besteht. In diesem Beispiel wird das Prädikat kleiner gleich auf die Menge und die verfügbaren Mittel angewendet. Diese Bedingung wird immer entweder als "true" oder "false" ausgewertet. Prädikate können mit den logischen Operatoren AND, OR und NOT zu einem logischen Ausdruck kombiniert werden, der möglicherweise sehr umfangreich ist, aber immer als "true" oder "false" ausgewertet wird.
+Eine Bedingung ist ein boolescher Ausdruck (true/false), der aus einem oder mehreren Prädikaten besteht. 
+In diesem Beispiel wird das Prädikat kleiner gleich auf die Menge und die verfügbaren Mittel angewendet. Diese Bedingung wird immer entweder als "true" oder "false" ausgewertet. 
+Prädikate können mit den logischen Operatoren AND, OR und NOT zu einem logischen Ausdruck kombiniert werden, der möglicherweise sehr umfangreich ist, aber immer als "true" oder "false" ausgewertet wird.
 
 ###Aktionen
 
-Aktionen sind die funktionalen Folgen der Bedingungsauswertung. Wenn eine Bedingung erfüllt ist, wird mindestens eine entsprechende Aktion initiiert. In unserem Beispiel sind "Transaktion durchführen" und "Beleg drucken" Aktionen, die nur dann durchgeführt werden, wenn die Bedingung (in diesem Fall "Betrag kleiner gleich verfügbare Mittel") wahr, also "true", ist. Aktionen werden im Geschäftsregel-Framework dargestellt, indem bestimmte Vorgänge an XML-Dokumenten durchgeführt werden.
+Aktionen sind die funktionalen Folgen der Bedingungsauswertung. Wenn eine Bedingung erfüllt ist, wird mindestens eine entsprechende Aktion initiiert. 
+In unserem Beispiel sind "Transaktion durchführen" und "Beleg drucken" Aktionen, die nur dann durchgeführt werden, wenn die Bedingung (in diesem Fall "Betrag kleiner gleich verfügbare Mittel") wahr, also "true", ist. 
+Aktionen werden im Geschäftsregel-Framework dargestellt, indem bestimmte Vorgänge an XML-Dokumenten durchgeführt werden.
 
 ##Richtlinie
 
@@ -105,40 +111,83 @@ Nach dem Erstellen einer BizTalk-Regel-API-App besteht der nächste Schritt im E
 
    ![Alt text][4]
 
-2\. Wählen Sie „Vocabulary definitions“ aus. Der Bildschirm zum Verfassen des Vokabulars wird angezeigt. 3. Wählen Sie „Hinzufügen“ aus, um neue Vokabulardefinitionen hinzuzufügen. Derzeit werden zwei Arten von Vokabulardefinitionen unterstützt – literal und XML.
+2. Wählen Sie „Vocabulary definitions“ aus. Der Bildschirm zum Verfassen des Vokabulars wird angezeigt. 
+3. Wählen Sie „Hinzufügen“ aus, um neue Vokabulardefinitionen hinzuzufügen. 
+Derzeit werden zwei Arten von Vokabulardefinitionen unterstützt – literal und XML.
 
 ##Literale Definition
 1.	Nach dem Klicken auf "Hinzufügen" wird ein neues Blatt "Definition hinzufügen" geöffnet. Geben Sie die folgenden Werte ein:
   1.	Name – Es werden nur alphanumerische Zeichen ohne Sonderzeichen erwartet. Dieser Name sollte auch in Ihrer Liste vorhandener Vokabulardefinitionen eindeutig sein.
   2.	Beschreibung – Optionales Feld.
   3.	Definitionstyp – Es werden 2 Typen unterstützt. Wählen Sie in diesem Beispiel "Literal".
-  4.	Datentyp – Ermöglicht Benutzern das Auswählen des Datentyps der Definition. Derzeit werden 4 Datentypen unterstützt: i. String – Diese Werte müssen in doppelte Anführungszeichen (“Beispielzeichenfolge”) eingeschlossen werden. ii. Boolean – Kann entweder "true" oder "false" sein. iii. Number – Kann jede Dezimalzahl sein. iv. DateTime – Die Definition ist vom Typ Datum/Uhrzeit. Daten müssen in diesem Format eingegeben werden: mm/tt/jjjj hh:mm:ss AM\\PM.  
+  4.	Datentyp – Ermöglicht Benutzern das Auswählen des Datentyps der Definition. Derzeit werden 4 Datentypen unterstützt: 
+  	i. String – Diese Werte müssen in doppelte Anführungszeichen (“Beispielzeichenfolge”) eingeschlossen werden. 
+ 	 ii. Boolean – Kann entweder "true" oder "false" sein. 
+  	iii. Number – Kann jede Dezimalzahl sein. 
+ 	 iv. DateTime – Die Definition ist vom Typ Datum/Uhrzeit. Daten müssen in diesem Format eingegeben werden: mm/tt/jjjj hh:mm:ss AM\\PM.  
   5. Input – Hier geben Sie den Wert Ihrer Definition ein. Die hier eingegebenen Werte müssen dem ausgewählten Datentyp entsprechen. Sie können einen einzelnen Wert, einen durch Kommas getrennten Satz von Werten oder einen Bereich von Werten mit dem Schlüsselwort *to* eingeben. Beispielsweise können Sie den eindeutigen Wert 1, den Satz 1, 2, 3 oder einen Bereich von 1 bis 5 angeben. Beachten Sie, dass Bereiche nur für Zahlen unterstützt werden.
   6. Klicken Sie auf *OK*.
 
 ![Alt text][5]
 ##XML-Definition
-Wenn als Vokabulartyp XML ausgewählt wird, muss folgende Eingabe bereitgestellt werden: a. Schema – Durch Klicken auf diese Option wird ein neues Blatt geöffnet, in dem der Benutzer entweder aus einer Liste bereits hochgeladener Schemas auswählen oder ein neues Schema hochladen kann. b. XPATH – Diese Eingabe wird erst freigegeben, wenn Sie im vorherigen Schritt ein Schema ausgewählt haben. Durch Klicken auf diese Option wird das ausgewählte Schema angezeigt. Der Benutzer kann den Knoten auswählen, für den eine Vokabulardefinition erstellt werden soll. c. FACT – Diese Eingabe legt fest, welches Datenobjekt dem Regelmodul zur Verarbeitung vorgelegt wird. Dies ist eine erweiterte Eigenschaft, die standardmäßig auf das übergeordnete Element des ausgewählten XPATH festgelegt ist. FACT ist für die Verkettung und Auflistung von Szenarien besonders wichtig.
+Wenn als Vokabulartyp XML ausgewählt wird, muss folgende Eingabe bereitgestellt werden: 
+  a. 	Schema – Durch Klicken auf diese Option wird ein neues Blatt geöffnet, in dem der Benutzer entweder aus einer Liste bereits hochgeladener Schemas auswählen oder ein neues Schema hochladen kann. 
+  b. 	XPATH – Diese Eingabe wird erst freigegeben, wenn Sie im vorherigen Schritt ein Schema ausgewählt haben. Durch Klicken auf diese Option wird das ausgewählte Schema angezeigt. Der Benutzer kann den Knoten auswählen, für den eine Vokabulardefinition erstellt werden soll. 
+  c. 	FACT – Diese Eingabe legt fest, welches Datenobjekt dem Regelmodul zur Verarbeitung vorgelegt wird. Dies ist eine erweiterte Eigenschaft, die standardmäßig auf das übergeordnete Element des ausgewählten XPATH festgelegt ist. FACT ist für die Verkettung und Auflistung von Szenarien besonders wichtig.
 
 ![Alt text][6]
 
 ### Massenhinzufügen
-In den oben genannten Schritten wurde die Erstellung von Vokabulardefinitionen behandelt. Nach ihrer Erstellung werden die Vokabulardefinitionen in Listenform angezeigt. Es gibt die Anforderung, mehrere Definitionen aus demselben Schema zu generieren, statt die obigen Schritte jedes Mal zu wiederholen. An dieser Stelle bietet sich die Funktion zur Massenhinzufügung an. Durch Auswählen von „Massenhinzufügen“ gelangen Sie zu einem neuen Blatt. Im ersten Schritt wählen Sie das Schema aus, für das mehrere Definitionen erstellt werden sollen. Durch Auswählen dieser Option wird ein neues Blatt geöffnet, in dem Sie entweder ein Schema in einer Liste bereits hochgeladener Schemas auswählen oder ein neues Schema hochladen können. Jetzt wird die XPATHS-Eigenschaft entsperrt. Durch Auswählen dieser Option wird der Schema-Viewer geöffnet, in dem mehrere Knoten ausgewählt werden können. Die Namen für die erstellten Definitionen entsprechen standardmäßig dem Namen des ausgewählten Knotens. Sie können nach der Erstellung jederzeit geändert werden.
+In den oben genannten Schritten wurde die Erstellung von Vokabulardefinitionen behandelt. Nach ihrer Erstellung werden die Vokabulardefinitionen in Listenform angezeigt. Es gibt die Anforderung, mehrere Definitionen aus demselben Schema zu generieren, statt die obigen Schritte jedes Mal zu wiederholen. 
+An dieser Stelle bietet sich die Funktion zur Massenhinzufügung an. Durch Auswählen von „Massenhinzufügen“ gelangen Sie zu einem neuen Blatt. Im ersten Schritt wählen Sie das Schema aus, für das mehrere Definitionen erstellt werden sollen. Durch Auswählen dieser Option wird ein neues Blatt geöffnet, in dem Sie entweder ein Schema in einer Liste bereits hochgeladener Schemas auswählen oder ein neues Schema hochladen können. 
+Jetzt wird die XPATHS-Eigenschaft entsperrt. Durch Auswählen dieser Option wird der Schema-Viewer geöffnet, in dem mehrere Knoten ausgewählt werden können. 
+Die Namen für die erstellten Definitionen entsprechen standardmäßig dem Namen des ausgewählten Knotens. Sie können nach der Erstellung jederzeit geändert werden.
 
 ![Alt text][7]
 
 ##Richtlinienerstellung
-Nachdem der Entwickler die erforderlichen Vokabulare erstellt hat, ist der Business Analyst erwartungsgemäß derjenige, der Geschäftsrichtlinien über das Azure-Portal erstellt. 1. In der erstellten Regel-App gibt es eine Richtlinienlupe. Durch Klicken gelangt der Benutzer auf die Seite zur Richtlinienerstellung. 2. Auf dieser Seite wird die Liste der Richtlinien angezeigt, die für diese spezielle Regel-App gelten. Der Analyst kann eine neue Richtlinie hinzufügen, indem er einfach einen Richtliniennamen eingibt und die TAB-Taste zweimal drückt. In einer einzigen Regel-API-App können sich mehrere Richtlinien befinden. 3. Durch Auswählen der erstellten Richtlinie gelangt der Benutzer zur Richtliniendetailseite, auf der die in der Richtlinie enthaltenen Regeln angezeigt werden. ![Alt text][8] 4. Klicken Sie auf „Hinzufügen“, um eine neue Regel hinzuzufügen. Sie gelangen zu einem neuen Blatt.
+Nachdem der Entwickler die erforderlichen Vokabulare erstellt hat, ist der Business Analyst erwartungsgemäß derjenige, der Geschäftsrichtlinien über das Azure-Portal erstellt. 
+	1. In der erstellten Regel-App gibt es eine Richtlinienlupe. Durch Klicken gelangt der Benutzer auf die Seite zur Richtlinienerstellung. 
+	2. Auf dieser Seite wird die Liste der Richtlinien angezeigt, die für diese spezielle Regel-App gelten. Der Analyst kann eine neue Richtlinie hinzufügen, indem er einfach einen Richtliniennamen eingibt und die TAB-Taste zweimal drückt. In einer einzigen Regel-API-App können sich mehrere Richtlinien befinden. 
+	3. Durch Auswählen der erstellten Richtlinie gelangt der Benutzer zur Richtliniendetailseite, auf der die in der Richtlinie enthaltenen Regeln angezeigt werden. 
+	![Alt text][8] 
+	4. Klicken Sie auf „Hinzufügen“, um eine neue Regel hinzuzufügen. Sie gelangen zu einem neuen Blatt.
 
 ##Regelerstellung
-Eine Regel ist eine Auflistung von Bedingungs- und Aktionsanweisungen. Die Aktionen werden ausgeführt, wenn die Bedingung als wahr („true“) ausgewertet wird. Geben Sie auf dem Blatt zur Regelerstellung einen eindeutigen Regelnamen (für diese Richtlinie) und eine Beschreibung (optional) ein. Das Bedingungsfeld („IF“) kann zum Erstellen komplexer Bedingungsanweisungen verwendet werden. Folgende Schlüsselwörter werden unterstützt: 1. Und – bedingter Operator 2. Oder – bedingter Operator 3. does\_not\_exist 4. exists 5. false 6. is\_equal\_to 7. is\_greater\_than 8. is\_greater\_than\_equal\_to 9. is\_in 10. is\_less\_than 11. is\_less\_than\_equal\_to 12. is\_not\_in 13. is\_not\_equal\_to 14. mod 15. true
+Eine Regel ist eine Auflistung von Bedingungs- und Aktionsanweisungen. Die Aktionen werden ausgeführt, wenn die Bedingung als wahr („true“) ausgewertet wird. Geben Sie auf dem Blatt zur Regelerstellung einen eindeutigen Regelnamen (für diese Richtlinie) und eine Beschreibung (optional) ein. 
+Das Bedingungsfeld („IF“) kann zum Erstellen komplexer Bedingungsanweisungen verwendet werden. Folgende Schlüsselwörter werden unterstützt: 
+1. Und – bedingter Operator 
+2. Oder – bedingter Operator 
+3. does_not_exist 
+4. exists 
+5. false 
+6. is_equal_to 
+7. is_greater_than 
+8. is_greater_than_equal_to 
+9. is_in 
+10. is_less_than 
+11. is_less_than_equal_to 
+12. is_not_in 
+13. is_not_equal_to 
+14. mod 
+15. true
 
-Das Aktionsfeld („THEN“) kann mehrere Anweisungen enthalten, eine pro Zeile, um Aktionen zu erstellen, die ausgeführt werden sollen. Folgende Schlüsselwörter werden unterstützt: 1. equals 2. false 3. true 4. halt 5. mod 6. null 7. update
+Das Aktionsfeld („THEN“) kann mehrere Anweisungen enthalten, eine pro Zeile, um Aktionen zu erstellen, die ausgeführt werden sollen. Folgende Schlüsselwörter werden unterstützt: 
+1. 	equals 
+2. 	false 
+3. 	true 
+4. 	halt 
+5. 	mod 
+6. 	null 
+7. 	update
 
-Das Bedingungs- und das Aktionsfeld bieten Intellisense, damit Sie schnell eine Regel erstellen können. Dies kann durch Drücken von STRG+LEERTASTE oder einfach durch den Beginn der Eingabe ausgelöst werden. Schlüsselwörter, die den eingegebenen Zeichen entsprechen, werden automatisch gefiltert und dargestellt. Das Intellisense-Fenster zeigt alle Schlüsselwörter und Vokabulardefinitionen an. ![Alt text][9]
+Das Bedingungs- und das Aktionsfeld bieten Intellisense, damit Sie schnell eine Regel erstellen können. Dies kann durch Drücken von STRG+LEERTASTE oder einfach durch den Beginn der Eingabe ausgelöst werden. Schlüsselwörter, die den eingegebenen Zeichen entsprechen, werden automatisch gefiltert und dargestellt. Das Intellisense-Fenster zeigt alle Schlüsselwörter und Vokabulardefinitionen an. 
+![Alt text][9]
 
 ##Explizite Vorwärtsverkettung
-BizTalk-Regeln unterstützen die explizite Vorwärtsverkettung, sodass Benutzer, die Regeln auf bestimmte Aktionen hin erneut auswerten möchten, diesen Vorgang anhand von bestimmten Schlüsselwörtern auslösen können. Folgende Schlüsselwörter werden unterstützt: 1. update <vocabulary definition> – Durch dieses Schlüsselwort werden alle Regeln neu ausgewertet, die die angegebene Vokabulardefinition in ihrer Bedingung verwenden. 2. Halt – Dieses Schlüsselwort beendet alle Regelausführungen.
+BizTalk-Regeln unterstützen die explizite Vorwärtsverkettung, sodass Benutzer, die Regeln auf bestimmte Aktionen hin erneut auswerten möchten, diesen Vorgang anhand von bestimmten Schlüsselwörtern auslösen können. Folgende Schlüsselwörter werden unterstützt: 
+	1. update <vocabulary definition> – Durch dieses Schlüsselwort werden alle Regeln neu ausgewertet, die die angegebene Vokabulardefinition in ihrer Bedingung verwenden. 
+	2. Halt – Dieses Schlüsselwort beendet alle Regelausführungen.
 
 ##Aktivieren/Deaktivieren von Regeln
 Jede Regel in der Richtlinie kann aktiviert oder deaktiviert werden. Standardmäßig sind alle Regeln aktiviert. Deaktivierte Regeln werden während der Richtlinienausführung nicht ausgeführt. Das Aktivieren/Deaktivieren von Regeln kann entweder direkt vom Regelblatt – die Befehle stehen in der Befehlsleiste im oberen Blattbereich zur Verfügung - oder über das Kontextmenü der Richtlinie erfolgen (klicken Sie mit der rechten Maustaste auf eine Regel).

@@ -411,7 +411,7 @@ Im Folgenden wird beschrieben, wie Sie Windows-Computer vorbereiten, damit der P
 
 1.  Erstellen Sie ein Konto, mit dem der Prozessserver auf den Computer zugreifen kann. Das Konto muss über Administratorrechte verfügen (lokal oder für die Domäne). Beachten Sie, dass diese Anmeldeinformationen nur für die Pushinstallation des Mobilitätsdiensts verwendet werden.
 
-	>[AZURE.NOTE]Wenn Sie kein Domänenkonto verwenden, müssen Sie die Remote-Benutzerzugriffssteuerung auf dem lokalen Computer deaktivieren. Zu diesem Zweck fügen Sie in der Registrierung unter „HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System“ den DWORD-Eintrag „LocalAccountTokenFilterPolicy“ mit dem Wert 1 hinzu. Um den Registrierungseintrag über eine Befehlszeilenschnittstelle hinzuzufügen, öffnen Sie eine Befehlszeile oder verwenden PowerShell und geben **`REG ADD HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1`** ein.
+	>[AZURE.NOTE] Wenn Sie kein Domänenkonto verwenden, müssen Sie die Remote-Benutzerzugriffssteuerung auf dem lokalen Computer deaktivieren. Zu diesem Zweck fügen Sie in der Registrierung unter „HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System“ den DWORD-Eintrag „LocalAccountTokenFilterPolicy“ mit dem Wert 1 hinzu. Um den Registrierungseintrag über eine Befehlszeilenschnittstelle hinzuzufügen, öffnen Sie eine Befehlszeile oder verwenden PowerShell und geben **`REG ADD HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1`** ein.
 
 2.  Wählen Sie in der Windows-Firewall des zu schützenden Computers **Eine App oder ein Feature durch die Windows-Firewall zulassen** aus, und aktivieren Sie **Datei- und Druckerfreigabe** und **Windows-Verwaltungsinstrumentation**. Für Computer, die einer Domäne angehören, können Sie die Firewallrichtlinie mit einem Gruppenrichtlinienobjekt konfigurieren.
 
@@ -454,7 +454,8 @@ Die Installationsprogramme stehen unter „C:\\Programme (x86)\\Microsoft Azure 
 Quellbetriebssystem | Installationsdatei für den Mobilitätsdienst
 --- | ---
 Windows Server (nur 64 Bit) | Microsoft-ASR\_UA\_9.*.0.0\_Windows\_* release.exe
-CentOS 6.4, 6.5, 6.6 (nur 64 Bit) | Microsoft-ASR\_UA\_9.*.0.0\_RHEL6-64\_*release.tar.gz SUSE Linux Enterprise Server 11 SP3 (nur 64 Bit) | Microsoft-ASR\_UA\_9.*.0.0\_SLES11-SP3-64\_*release.tar.gz
+CentOS 6.4, 6.5, 6.6 (nur 64 Bit) | Microsoft-ASR\_UA\_9.*.0.0\_RHEL6-64\_*release.tar.gz
+SUSE Linux Enterprise Server 11 SP3 (nur 64 Bit) | Microsoft-ASR\_UA\_9.*.0.0\_SLES11-SP3-64\_*release.tar.gz
 Oracle Enterprise Linux 6.4, 6.5 (nur 64 Bit) | Microsoft-ASR\_UA\_9.*.0.0\_OL6-64\_*release.tar.gz
 
 
@@ -733,15 +734,15 @@ vCenter-Benutzerrolle | Failover und Failback | Weisen Sie diese Berechtigungen 
 
 ## Hinweise und Informationen zu Drittanbietersoftware
 
-Nicht übersetzen oder lokalisieren
+Do Not Translate or Localize
 
-Die Software und Firmware, die im Microsoft-Produkt oder -Dienst ausgeführt wird, basiert auf oder enthält Material aus den unten aufgeführten Projekten (zusammen „Drittanbietercode“) Microsoft is the not original author of the Third Party Code. The original copyright notice and license, under which Microsoft received such Third Party Code, are set forth below.
+The software and firmware running in the Microsoft product or service is based on or incorporates material from the projects listed below (collectively, “Third Party Code”). Microsoft is the not original author of the Third Party Code. The original copyright notice and license, under which Microsoft received such Third Party Code, are set forth below.
 
-Die Informationen in Abschnitt A betreffen Codekomponenten von Drittanbietern aus den unten aufgezählten Projekten. Such licenses and information are provided for informational purposes only. This Third Party Code is being relicensed to you by Microsoft under Microsoft's software licensing terms for the Microsoft product or service.
+The information in Section A is regarding Third Party Code components from the projects listed below. Such licenses and information are provided for informational purposes only. This Third Party Code is being relicensed to you by Microsoft under Microsoft's software licensing terms for the Microsoft product or service.
 
-Die Informationen in Abschnitt B betreffen Codekomponenten von Drittanbietern, die Microsoft Ihnen zu den ursprünglichen Lizenzbedingungen zur Verfügung stellt.
+The information in Section B is regarding Third Party Code components that are being made available to you by Microsoft under the original licensing terms.
 
-Die vollständige Datei steht im [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=529428) zur Verfügung. Microsoft reserves all rights not expressly granted herein, whether by implication, estoppel or otherwise.
+The complete file may be found on the [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=529428). Microsoft reserves all rights not expressly granted herein, whether by implication, estoppel or otherwise.
 
 ## Nächste Schritte
 

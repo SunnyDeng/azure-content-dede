@@ -41,7 +41,7 @@ Sie können mithilfe folgender Schritte das Remotedebuggen in Azure, für Cloudd
 4. Installieren Sie Azure PowerShell (ab Version 0.7.4) wie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md) beschrieben.
 5. Führen Sie folgendes Skript aus, um die RemoteDebug-Erweiterung zu aktivieren. Ersetzen Sie die Pfade und persönlichen Daten mit Ihren eigenen Daten, zum Beispiel Abonnementname, Dienstname und Fingerabdruck.
 
-	>[AZURE.NOTE]Dieses Skript wird für Visual Studio 2015 konfiguriert. Wenn Sie Visual Studio 2013 verwenden, ändern Sie die Zuweisungen von `$referenceName` und `$extensionName` unten so, dass `RemoteDebugVS2013` (anstelle von `RemoteDebugVS2015`) verwendet wird.
+	>[AZURE.NOTE] Dieses Skript wird für Visual Studio 2015 konfiguriert. Wenn Sie Visual Studio 2013 verwenden, ändern Sie die Zuweisungen von `$referenceName` und `$extensionName` unten so, dass `RemoteDebugVS2013` (anstelle von `RemoteDebugVS2015`) verwendet wird.
 
 	<pre>
 Add-AzureAccount

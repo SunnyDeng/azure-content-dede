@@ -210,7 +210,7 @@ Angesichts der Tatsache, dass der Anwendungscode für die Web-API in einem eigen
 
 In diesem Artikel wird als OWIN-Host für die Web-API-Anwendung Katana verwendet. Katana ist eine Open-Source-Owin-Host-Implementierung.
 
-> [AZURE.NOTE]Weitere Informationen zu Katana finden Sie auf der [Katana-Website](http://www.asp.net/aspnet/overview/owin-and-katana/an-overview-of-project-katana). Eine Kurzübersicht über die Verwendung von Katana zum Selbsthosten der Web-API finden Sie unter [Use OWIN to Self-Host ASP.NET Web API 2](http://www.asp.net/web-api/overview/hosting-aspnet-web-api/use-owin-to-self-host-web-api).
+> [AZURE.NOTE] Weitere Informationen zu Katana finden Sie auf der [Katana-Website](http://www.asp.net/aspnet/overview/owin-and-katana/an-overview-of-project-katana). Eine Kurzübersicht über die Verwendung von Katana zum Selbsthosten der Web-API finden Sie unter [Use OWIN to Self-Host ASP.NET Web API 2](http://www.asp.net/web-api/overview/hosting-aspnet-web-api/use-owin-to-self-host-web-api).
 
 
 ## Einrichten des Webservers
@@ -539,12 +539,12 @@ Nachdem Sie nun alles zusammengestellt haben, sollte Ihr Projekt wie eine typisc
 Falls Sie dies nicht bereits getan haben, [richten Sie die Entwicklungsumgebung ein](service-fabric-get-started.md).
 
 
-Sie können jetzt den Dienst erstellen und bereitstellen. Drücken Sie zum Erstellen und Bereitstellen der Anwendung in Visual Studio **F5**. Im Fenster für Diagnoseereignisse sollte per Meldung darauf hingewiesen werden, dass der Webserver unter http://localhost:80/webapp/api geöffnet wurde.
+Sie können jetzt den Dienst erstellen und bereitstellen. Drücken Sie zum Erstellen und Bereitstellen der Anwendung in Visual Studio **F5**. Im Fenster für Diagnoseereignisse sollte per Meldung darauf hingewiesen werden, dass der Webserver unter **http://localhost:80/webapp/api** geöffnet wurde.
 
 
 ![Visual Studio-Fenster mit Diagnoseereignissen](media/service-fabric-reliable-services-communication-webapi/webapi-diagnostics.png)
 
-> [AZURE.NOTE]Wenn der Port bereits von einem anderen Prozess auf Ihrem Computer geöffnet wurde, wird hier ggf. ein Fehler angezeigt. Dies gibt an, dass der Listener nicht geöffnet werden konnte. Wenn dies der Fall ist, verwenden Sie einen anderen Port für die Endpunktkonfiguration in „ServiceManifest.xml“.
+> [AZURE.NOTE] Wenn der Port bereits von einem anderen Prozess auf Ihrem Computer geöffnet wurde, wird hier ggf. ein Fehler angezeigt. Dies gibt an, dass der Listener nicht geöffnet werden konnte. Wenn dies der Fall ist, verwenden Sie einen anderen Port für die Endpunktkonfiguration in „ServiceManifest.xml“.
 
 
 Sobald der Dienst ausgeführt wird, öffnen Sie einen Browser und navigieren zu [http://localhost/webapp/api/values](http://localhost/webapp/api/values), um dies zu testen.

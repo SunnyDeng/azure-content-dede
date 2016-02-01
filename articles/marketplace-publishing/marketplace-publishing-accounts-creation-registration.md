@@ -47,7 +47,7 @@ Die Adresse, die für den Benutzernamen maßgeblich ist, sollte sich in Ihrer Do
 ## 2\. Erstellen des Microsoft Developer Center-Kontos
 Das Microsoft Developer Center wird für die einmalige Registrierung der Unternehmensinformationen verwendet. Die Person, die das Konto registriert, muss ein offizieller Vertreter des Unternehmens sein und ihre persönlichen Informationen zum Zweck der Identitätsüberprüfung bereitstellen. Diese Person muss ein Microsoft-Konto verwenden, das für das Unternehmen freigegeben ist. **Das gleiche Konto muss im Azure-Veröffentlichungsportal verwendet werden.** Sie sollten überprüfen, ob Ihr Unternehmen nicht bereits über ein Microsoft Developer Center-Konto verfügt, bevor Sie ein Konto erstellen. Während des Prozesses erfassen wir Informationen zu Unternehmensadresse, Bankdaten und Steuer. Diese Informationen erhalten Sie üblicherweise über Bank- oder Geschäftskontakte.
 
-> [AZURE.IMPORTANT]Sie müssen folgende Komponenten des Entwicklerprofils ausfüllen, um die verschiedenen Phasen der Angebotserstellung und -bereitstellung durchlaufen zu können.
+> [AZURE.IMPORTANT] Sie müssen folgende Komponenten des Entwicklerprofils ausfüllen, um die verschiedenen Phasen der Angebotserstellung und -bereitstellung durchlaufen zu können.
 
 
 | Entwicklerprofil | Entwurf starten | Staging | Kostenlos veröffentlichen und Lösungsvorlage | Für den Erwerb veröffentlichen |
@@ -79,7 +79,7 @@ Das Microsoft Developer Center wird für die einmalige Registrierung der Unterne
 
 6. Wählen Sie Ihren „Kontotyp“ oder die Option **Einzelperson** oder **Unternehmen** aus.
 
-    > [AZURE.IMPORTANT]Sehen Sie sich die Seite [Kontotypen, Standorte und Gebühren](https://msdn.microsoft.com/library/windows/apps/jj863494.aspx) an, um mehr Informationen zu Kontotypen zu erhalten und die bestmögliche Wahl treffen zu können.
+    > [AZURE.IMPORTANT] Sehen Sie sich die Seite [Kontotypen, Standorte und Gebühren](https://msdn.microsoft.com/library/windows/apps/jj863494.aspx) an, um mehr Informationen zu Kontotypen zu erhalten und die bestmögliche Wahl treffen zu können.
 
 7. Geben Sie den **Anzeigenamen des Herausgebers** ein. Dies ist normalerweise der Name Ihres Unternehmens.
 

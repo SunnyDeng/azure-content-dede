@@ -125,7 +125,8 @@ Führen Sie die folgenden Schritte aus, um das virtuelle StorSimple-Gerät zu er
 
 Stellen Sie vorab sicher, dass Sie über eine Kopie des Verschlüsselungsschlüssels für die Dienstdaten verfügen. Der Schlüssel für die Dienstdatenverschlüsselung wurde beim Konfigurieren des ersten StorSimple-Geräts erstellt, und Sie wurden aufgefordert, diesen an einem sicheren Ort zu speichern. Wenn Sie über keine Kopie des Schlüssels für die Dienstdatenverschlüsselung verfügen, wenden Sie sich an den Microsoft-Support.
 
-Führen Sie die folgenden Schritte durch, um das virtuelle StorSimple-Gerät zu konfigurieren und zu registrieren:[AZURE.INCLUDE [Konfigurieren und Registrieren eines virtuellen Geräts](../../includes/storsimple-configure-register-virtual-device.md)]
+Führen Sie die folgenden Schritte durch, um das virtuelle StorSimple-Gerät zu konfigurieren und zu registrieren:
+[AZURE.INCLUDE [Konfigurieren und Registrieren eines virtuellen Geräts](../../includes/storsimple-configure-register-virtual-device.md)]
 
 ### Schritt 3: (Optional) Ändern der Konfigurationseinstellungen des Geräts
 
@@ -143,7 +144,7 @@ Dieser Parameter enthält die Anmeldeinformationen, die Ihr virtuelles Gerät ve
 
 Der StorSimple-Momentaufnahme-Manager befindet sich auf dem Windows-Host und ermöglicht Administratoren die Verwaltung der Sicherungen Ihres StorSimple-Geräts in Form von lokalen und Cloudmomentaufnahmen.
 
->[AZURE.NOTE]Für das virtuelle Gerät handelt es sich beim Windows-Host um einen virtuellen Azure-Computer.
+>[AZURE.NOTE] Für das virtuelle Gerät handelt es sich beim Windows-Host um einen virtuellen Azure-Computer.
 
 Beim Konfigurieren eines Geräts im StorSimple-Momentaufnahme-Manager werden Sie aufgefordert, zur Authentifizierung des Speichergeräts die IP-Adresse und das Kennwort des StorSimple-Geräts anzugeben. Ausführliche Schritte finden Sie unter [Konfigurieren des StorSimple Snapshot Manager-Kennworts](storsimple-change-passwords.md#change-the-storsimple-snapshot-manager-password).
 
@@ -166,7 +167,7 @@ Führen Sie die folgenden Schritte durch, um die Remoteverwaltung für das virtu
 
 Wenn Sie die Windows PowerShell-Remoteverwaltung auf der Konfigurationsseite des StorSimple-Geräts aktiviert haben, können Sie Windows PowerShell-Remoting für Verbindungen mit dem virtuellen Gerät von anderen virtuellen Computern im gleichen virtuellen Netzwerk aus verwenden. So können Sie beispielsweise eine Verbindung von dem virtuellen Hostcomputer herstellen, den Sie für die iSCSI-Verbindung konfiguriert und verwendet haben. Bei den meisten Bereitstellungen ist bereits ein öffentlicher Endpunkt für den Zugriff auf den virtuellen Hostcomputer geöffnet, der für den Zugriff auf das virtuelle Gerät verwendet werden kann.
 
->[AZURE.WARNING]**Aus Sicherheitsgründen wird dringend empfohlen, für Endpunktverbindungen HTTPS zu verwenden und die Endpunkte nach Abschluss der PowerShell-Remotesitzung zu löschen.**
+>[AZURE.WARNING] **Aus Sicherheitsgründen wird dringend empfohlen, für Endpunktverbindungen HTTPS zu verwenden und die Endpunkte nach Abschluss der PowerShell-Remotesitzung zu löschen.**
 
 Beim Einrichten von Remoting für Ihr virtuelles Gerät sollten Sie die Schritte unter [Remoteverbindungen mit dem StorSimple-Gerät](storsimple-remote-connect.md) durchführen.
 

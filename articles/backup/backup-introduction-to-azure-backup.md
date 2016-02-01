@@ -15,7 +15,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="01/19/2016"
-	ms.author="trinadhk;jimpark"/>
+	ms.author="trinadhk"; "jimpark"/>
 
 # Was ist Azure Backup?
 Azure Backup ist der Dienst zum Sichern und Wiederherstellen von Daten in der Microsoft Cloud. Dieser Dienst ersetzt Ihre vorhandene lokale bzw. standortexterne Lösung durch eine zuverlässige, sichere und wirtschaftliche Cloudlösung. Außerdem werden in der Cloud ausgeführte Ressourcen geschützt. Azure Backup bietet Wiederherstellungsdienste in einer erstklassigen Infrastruktur, die skalierbar, beständig und hoch verfügbar ist.
@@ -66,7 +66,7 @@ Als eine hybride Sicherungslösung besteht Azure Backup aus mehreren Komponenten
 ## Funktionalität
 In diesen Tabellen wird zusammengefasst, wie Azure Backup-Funktionen in jeder Komponente gehandhabt werden:
 
-### 1\. Speicher
+### 1. Speicher
 
 | Funktion | Azure Backup-Agent | SCDPM | Azure Backup Server | Azure Backup (VM-Erweiterung) |
 | ------- | --- | --- | --- | ---- |
@@ -89,7 +89,7 @@ Die Deduplizierung wird für SCDPM und Azure Backup-Server unterstützt, wenn [d
 
 >[AZURE.WARNING]Die Deduplizierung ist in Azure für keine der Azure Backup-Komponenten verfügbar! Wenn SCDPM und Azure Backup-Server in Azure bereitgestellt werden, können an die VM angefügte Speicherdatenträger nicht dedupliziert werden.
 
-### 2\. Sicherheit
+### 2. Sicherheit
 
 | Funktion | Azure Backup-Agent | SCDPM | Azure Backup Server | Azure Backup (VM-Erweiterung) |
 | ------- | --- | --- | --- | ---- |
@@ -98,11 +98,11 @@ Die Deduplizierung wird für SCDPM und Azure Backup-Server unterstützt, wenn [d
 
 Sämtlicher Sicherungsdatenverkehr von Ihren Servern in den Azure Backup-Tresor wird mit AES256 verschlüsselt, und die Daten werden über eine sichere HTTPS-Verbindung übertragen. Die Sicherungsdaten werden auch im Sicherungstresor in ihrer verschlüsselten Form gespeichert. Nur der Kunde verfügt über die Passphrase zum Entsperren dieser Daten. Die Sicherungsdaten können von Microsoft zu keinem Zeitpunkt entschlüsselt werden.
 
->[AZURE.WARNING]Den Schlüssel zum Verschlüsseln der Sicherungsdaten besitzt nur der Kunde. Microsoft behält keine Kopie in Azure und hat keinen Zugriff auf den Schlüssel. Wenn der Schlüssel verlegt wird, kann Microsoft die gesicherten Daten nicht wiederherstellen.
+>[AZURE.WARNING] Den Schlüssel zum Verschlüsseln der Sicherungsdaten besitzt nur der Kunde. Microsoft behält keine Kopie in Azure und hat keinen Zugriff auf den Schlüssel. Wenn der Schlüssel verlegt wird, kann Microsoft die gesicherten Daten nicht wiederherstellen.
 
 Für eine Sicherung von Azure-VMs müssen Sie die Verschlüsselung *im* virtuellen Computer explizit einrichten. Verwenden Sie BitLocker auf virtuellen Windows-Computern und dm-crypt auf virtuellen Linux-Computern. Daten, die auf diesem Weg eingehen, werden von Azure Backup nicht automatisch verschlüsselt.
 
-### 3\. Unterstützte Workloads
+### 3. Unterstützte Workloads
 
 | Funktion | Azure Backup-Agent | SCDPM | Azure Backup Server | Azure Backup (VM-Erweiterung) |
 | ------- | --- | --- | --- | ---- |
@@ -116,7 +116,7 @@ Für eine Sicherung von Azure-VMs müssen Sie die Verschlüsselung *im* virtuell
 | Virtueller Azure-Computer (Windows) | | | | ![Ja][green] |
 | Virtueller Azure-Computer (Linux) | | | | ![Ja][green] |
 
-### 4\. Netzwerk
+### 4. Netzwerk
 
 | Funktion | Azure Backup-Agent | SCDPM | Azure Backup Server | Azure Backup (VM-Erweiterung) |
 | ------- | --- | --- | --- | ---- |
@@ -129,7 +129,7 @@ Da die VM-Erweiterung die Daten aus dem Azure-Speicherkonto direkt über das Spe
 
 Für Kunden, die die Übertragung von Daten an einen Sicherungsserver (SCDPM oder Azure Backup Server) schützen, kann der Datenverkehr vom primären Server zum Sicherungsserver auch komprimiert werden, um die Bandbreitenauslastung zu verringern.
 
-### 5\. Sicherung und Aufbewahrung
+### 5. Sicherung und Aufbewahrung
 
 | | Azure Backup-Agent | SCDPM und Azure Backup-Server | Azure Backup (VM-Erweiterung) |
 | --- | --- | --- | --- |

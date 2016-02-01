@@ -112,13 +112,14 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-arcgis-tutorial/IC784746.png "Einmaliges Anmelden konfigurieren")
 ##Konfigurieren der Benutzerbereitstellung
 
-Damit sich Azure AD-Benutzer bei ArcGIS anmelden können, müssen sie in ArcGIS bereitgestellt werden. Im Fall von ArcGIS ist die Bereitstellung eine manuelle Aufgabe.
+Damit sich Azure AD-Benutzer bei ArcGIS anmelden können, müssen sie in ArcGIS bereitgestellt werden.
+Im Fall von ArcGIS ist die Bereitstellung eine manuelle Aufgabe.
 
 ###So konfigurieren Sie die Benutzerbereitstellung
 
 1.  Melden Sie sich bei Ihrem **ArcGIS**-Mandanten an.
 
-2.  Klicken Sie auf **Invite Members**.
+2.  Klicken Sie auf **Mitglieder einladen**.
 
     ![Mitglieder einladen](./media/active-directory-saas-arcgis-tutorial/IC784747.png "Invite Members")
 
@@ -126,18 +127,18 @@ Damit sich Azure AD-Benutzer bei ArcGIS anmelden können, müssen sie in ArcGIS
 
     ![Add Members Automatically](./media/active-directory-saas-arcgis-tutorial/IC784748.png "Add Members Automatically")
 
-4.  Führen Sie auf der Dialogfeldseite **Members** die folgenden Schritte aus:
+4.  Führen Sie auf der Dialogfeldseite **Mitglieder** die folgenden Schritte aus:
 
     ![Add and review](./media/active-directory-saas-arcgis-tutorial/IC784749.png "Add and review")
 
     1.  Geben Sie den **Vornamen**, den **Nachnamen** und die **E-Mail-Adresse** eines gültigen AAD-Benutzerkontos ein, das Sie bereitstellen möchten.
     2.  Klicken Sie auf**Add And Review**.
 
-5.  Überprüfen Sie die eingegebenen Daten, und klicken Sie dann auf **Add Members**.
+5.  Überprüfen Sie die eingegebenen Daten, und klicken Sie dann auf **Mitglieder hinzufügen**.
 
     ![Add member](./media/active-directory-saas-arcgis-tutorial/IC784750.png "Add member")
 
->[AZURE.NOTE]Sie können AAD-Benutzerkonten auch mithilfe von anderen Tools zum Erstellen von ArcGIS-Benutzerkonten oder mithilfe der von ArcGIS bereitgestellten APIs erstellen.
+>[AZURE.NOTE] Sie können AAD-Benutzerkonten auch mithilfe von anderen Tools zum Erstellen von ArcGIS-Benutzerkonten oder mithilfe der von ArcGIS bereitgestellten APIs erstellen.
 
 ##Zuweisen von Benutzern
 

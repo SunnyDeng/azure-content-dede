@@ -49,7 +49,7 @@ Eine Parameterdefinition in PowerShell-Workflow-Runbooks hat die folgende allgem
      )
 ```
 
->[AZURE.NOTE]Wenn Sie bei der Definition der Parameter nicht das Attribut „**Erforderlich**” angeben, gilt der Parameter standardmäßig als optional. Wenn Sie für einen Parameter in PowerShell-Workflow-Runbooks einen Standardwert vorgeben, wird dieser Parameter von PowerShell als optional behandelt, egal was beim Attribut „**Erforderlich**” steht.
+>[AZURE.NOTE] Wenn Sie bei der Definition der Parameter nicht das Attribut „**Erforderlich**” angeben, gilt der Parameter standardmäßig als optional. Wenn Sie für einen Parameter in PowerShell-Workflow-Runbooks einen Standardwert vorgeben, wird dieser Parameter von PowerShell als optional behandelt, egal was beim Attribut „**Erforderlich**” steht.
 
 Als Beispiel konfigurieren wir die Eingabeparameter für ein PowerShell-Workflow-Runbook, das Details virtueller Computer ausgibt - entweder eines einzelnen virtuellen Computers oder aller virtuellen Computer in einem Dienst. Dieses Runbook hat, wie im folgenden Screenshot gezeigt, zwei Parameter: den Namen des virtuellen Computers und den Namen des Diensts.
 
@@ -98,9 +98,17 @@ Sie können mit der Aktivität [**Write-Output**](https://technet.microsoft.com/
 
 4. Erstellen Sie zwei Parameter mit den folgenden Eigenschaften, die von der Aktivität **Get-AzureVM** verwendet werden:
 
-    * **Parameter1:** Name--VMName, Type--Zeichenfolge, Erforderlich--Nein
+    * **Parameter1:** 
+    Name--VMName, 
+    Type--Zeichenfolge, 
+    Erforderlich--Nein
 
-    * **Parameter2:** Name--VMNameServiceName, Typ--Zeichenfolge, Erforderlich--Nein, Standardwert--Benutzerdefiniert, Benutzerdefinierter Standardwert--<Name des Standarddienstes das die virtuellen Computer enthält>
+    * **Parameter2:** 
+    Name--VMNameServiceName, 
+    Typ--Zeichenfolge, 
+    Erforderlich--Nein, 
+    Standardwert--Benutzerdefiniert, 
+    Benutzerdefinierter Standardwert--<Name des Standarddienstes das die virtuellen Computer enthält>
 
 5. Wenn Sie die Parameter hinzugefügt haben, klicken Sie auf **OK**. Sie können die Parameter jetzt im Blatt „**Eingabe und Ausgabe**” sehen. Klicken Sie nochmal auf „**OK**”, dann auf „**Speichern**”, und „**Veröffentlichen**” Sie Ihr Runbook.
 
@@ -123,7 +131,7 @@ In der Beschriftung unter dem Eingabefeld können Sie sehen, welche Attribute f�
 ![Hilfesprechblase](media/automation-runbook-input-parameters/automation_05_HelpBaloon.png)
 
 
->[AZURE.NOTE]Parameter des Typs „Zeichenfolge“ unterstützen **leere** Zeichenfolgenwerte. Die Eingabe einer **[leeren Zeichenfolge]**in das Eingabefeld des Eingabeparameters bewirkt, dass eine leere Zeichenfolge an den Parameter übergeben wird. Außerdem unterstützen Parameter vom Typ „Zeichenfolge“ nicht die Übergabe von **Null**-Werten. Wenn Sie keinen Wert an den Zeichenfolge-Parameter übergeben, interpretiert PowerShell dies als Null.
+>[AZURE.NOTE] Parameter des Typs „Zeichenfolge“ unterstützen **leere** Zeichenfolgenwerte. Die Eingabe einer **[leeren Zeichenfolge]**in das Eingabefeld des Eingabeparameters bewirkt, dass eine leere Zeichenfolge an den Parameter übergeben wird. Außerdem unterstützen Parameter vom Typ „Zeichenfolge“ nicht die Übergabe von **Null**-Werten. Wenn Sie keinen Wert an den Zeichenfolge-Parameter übergeben, interpretiert PowerShell dies als Null.
 
 - **Starten eines veröffentlichten Runbooks durch PowerShell -Cmdlets und Zuweisen von Parametern**
 
@@ -131,7 +139,8 @@ In der Beschriftung unter dem Eingabefeld können Sie sehen, welche Attribute f�
 
     **Beispiel:**
 
-      ``` $params = @{„VMName“=„WSVMClassic“; „ServiceName“=„WSVMClassicSG“}
+      ```
+       $params = @{„VMName“=„WSVMClassic“; „ServiceName“=„WSVMClassicSG“}
 
         Start-AzureAutomationRunbook -AutomationAccountName “TestAutomation” -Name “Get-AzureVMGraphical” -Parameters $params
       ```
@@ -141,12 +150,13 @@ In der Beschriftung unter dem Eingabefeld können Sie sehen, welche Attribute f�
 
     **Beispiel:**
 
-      ``` $params = @{„VMName“=„WSVMClassic“;„ServiceName“=„WSVMClassicSG“}
+      ```
+        $params = @{„VMName“=„WSVMClassic“;„ServiceName“=„WSVMClassicSG“}
 
         Start-AzureRMAutomationRunbook -AutomationAccountName “TestAutomationRG” -Name “Get-AzureVMGraphical” –ResourceGroupName “RG1” -Parameters $params
       ```
 
->[AZURE.NOTE]Wenn Sie ein Runbook mit PowerShell-Cmdlets starten, wird der Standardparameter „**MicrosoftApplicationManagementStartedBy**” mit dem Wert „**PowerShell**” erstellt. Sie können diesen Parameter im Blatt „**Auftragsdetails**” ansehen.
+>[AZURE.NOTE] Wenn Sie ein Runbook mit PowerShell-Cmdlets starten, wird der Standardparameter „**MicrosoftApplicationManagementStartedBy**” mit dem Wert „**PowerShell**” erstellt. Sie können diesen Parameter im Blatt „**Auftragsdetails**” ansehen.
 
 - **Starten eines Runbooks mit dem SDK und Zuweisen von Parametern**
 

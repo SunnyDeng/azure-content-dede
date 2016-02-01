@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Microsoft Azure AD Connect – Upgrade vom Windows Azure AD-Synchronisierungstool (DirSync)"
+   pageTitle="Windows Azure AD Connect – Upgrade vom Microsoft Azure AD-Synchronisierungstool (DirSync)"
    description="Informationen Sie zum Aktualisieren von DirSync auf Azure AD Connect. Dieser Artikel beschreibt die Schritte zur Aktualisierung Ihres aktuellen Windows Azure AD-Synchronisierungstools (DirSync) auf Azure AD Connect."
    services="active-directory"
    documentationCenter=""
@@ -197,4 +197,4 @@ Nachdem Sie Azure AD Connect installiert haben, können Sie [die Installation �
 
 Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=AcomDC_0121_2016-->
+<!-------HONumber=AcomDC_0121_2016--->

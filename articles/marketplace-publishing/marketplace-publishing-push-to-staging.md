@@ -130,7 +130,7 @@ Im Folgenden finden Sie eine ausführliche Übersicht darüber, wie die Marketin
 
 ![Abbildung](media/marketplace-publishing-push-to-staging/acom-listing-details-02.png)
 
-* Preisübersicht zu den Angeboten auf der Azure Marketplace-Website*
+*Preisübersicht zu den Angeboten auf der Azure Marketplace-Website*
 
 ### Azure-Vorschauportal
 ![Abbildung](media/marketplace-publishing-push-to-staging/portal-catalog-01.png)

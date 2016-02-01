@@ -64,7 +64,9 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Cis
     ![Cisco Webex](./media/active-directory-saas-cisco-webex-tutorial/IC777616.png "Cisco Webex")
 ##Konfigurieren der einmaligen Anmeldung
 
-In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Cisco Webex zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie ein Base64-codiertes Zertifikat erstellen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache) weitere Informationen.
+In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Cisco Webex zu authentifizieren. 
+Im Rahmen dieses Verfahrens müssen Sie ein Base64-codiertes Zertifikat erstellen. 
+Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache) weitere Informationen.
 
 ###So konfigurieren Sie einmaliges Anmelden
 
@@ -81,7 +83,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
     ![App-URL konfigurieren](./media/active-directory-saas-cisco-webex-tutorial/IC777619.png "App-URL konfigurieren")
 
     1.  Geben Sie im Textfeld **Anmelde-URL** Ihre Cisco Webex-Mandanten-URL ein (z. B. **http://contoso.webex.com*).
-2.  Geben Sie im Textfeld **Cisco Webex-Antwort-URL** Ihre **AssertionConsumerService-URL** für Cisco Webex ein (z. B. **https://company.webex.com/dispatcher/SAML2AuthService?siteurl=company*).
+    2.  Geben Sie im Textfeld **Cisco Webex-Antwort-URL** Ihre **AssertionConsumerService-URL** für Cisco Webex ein (z. B. **https://company.webex.com/dispatcher/SAML2AuthService?siteurl=company*).
 
 4.  Klicken Sie zum Herunterladen des Zertifikats auf der Seite **Einmaliges Anmelden konfigurieren um Cisco Webex** auf **Zertifikat herunterladen**, und speichern Sie das Zertifikat auf Ihrem Computer.
 
@@ -104,7 +106,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
     1.  Wählen Sie in der Liste **Federation Protocol** die Option **SAML 2.0** aus.
     2.  Erstellen Sie eine **Base64-codierte** Datei aus dem heruntergeladenen Zertifikat.  
 
-        >[AZURE.TIP]Weitere Informationen finden Sie unter [Konvertieren eines binären Zertifikats in eine Textdatei](http://youtu.be/PlgrzUZ-Y1o).
+        >[AZURE.TIP] Weitere Informationen finden Sie unter [Konvertieren eines binären Zertifikats in eine Textdatei](http://youtu.be/PlgrzUZ-Y1o).
 
     3.  Öffnen Sie das Base64-codierte Zertifikat in Editor, und kopieren Sie seinen Inhalt.
     4.  Klicken Sie auf **Import SAML Metadata**, und fügen Sie dann das Base64-codierte Zertifikat ein.
