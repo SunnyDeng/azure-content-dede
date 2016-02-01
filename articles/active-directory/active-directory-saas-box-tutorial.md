@@ -1,8 +1,8 @@
 <properties 
     pageTitle="Tutorial: Azure Active Directory-Integration mit Box | Microsoft Azure" 
-    description="Erfahren Sie, wie Sie Box mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu aktivieren." 
+    description="Erfahren Sie, wie Sie Box mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags 
@@ -11,8 +11,8 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
-    ms.author="markvi" />
+    ms.date="01/14/2016" 
+    ms.author="jeedes" />
 
 
 
@@ -26,7 +26,7 @@ In diesem Tutorial wird die Integration von Azure und Box erläutert. Das in die
 -   Ein gültiges Azure-Abonnement
 -   Ein Testmandant bei Box
   
-Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie Box zugewiesen haben, mithilfe der einmaligen Anmeldung auf der Box-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Sie können aber auch den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
+Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, die Sie Box zugewiesen haben, mithilfe der einmaligen Anmeldung auf der Box-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Sie können aber auch den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -63,7 +63,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Box
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-box-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie im **Suchfeld** den Suchbegriff **Box** ein.
+6.  Geben Sie im **Suchfeld** als Suchbegriff **Box** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-box-tutorial/IC701023.png "Anwendungskatalog")
 
@@ -129,7 +129,7 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
 2. Klicken Sie auf der Anwendungsintegrationsseite für **Box** auf **Benutzer zuweisen**. <br><br> ![Benutzer zuweisen](./media/active-directory-saas-box-tutorial/IC769552.png "Benutzer zuweisen")
 
-3.  Wählen Sie den Testbenutzer aus, klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen. <br><br> ![Ja](./media/active-directory-saas-box-tutorial/IC767830.png "Ja")
+3.  Wählen Sie den Testbenutzer aus, und klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen. <br><br> ![Ja](./media/active-directory-saas-box-tutorial/IC767830.png "Ja")
   
 
 Nach 10 Minuten können Sie überprüfen, ob das Konto mit Box synchronisiert wurde.
@@ -153,4 +153,4 @@ In Ihrem Box-Mandanten werden synchronisierte Benutzer in der **Verwaltungskonso
 * [Liste der Tutorials zur Integration von SaaS-Apps in Azure Active Directory](active-directory-saas-tutorial-list.md)
 * [Was bedeuten Anwendungszugriff und einmaliges Anmelden mit Azure Active Directory?](active-directory-appssoaccess-whatis.md)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0121_2016-->

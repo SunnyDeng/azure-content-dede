@@ -3,12 +3,19 @@
    description="Erstellen Sie mithilfe dieser einfachen Methode ein Backup eines Windows Servers oder Windows Clients auf Azure mit diesem. Windows-Dateien und -Ordner lassen sich in wenigen einfachen Schritten in der Cloud sichern."
    services="backup"
    documentationCenter=""
-   authors="aashishr"
+   authors="Jim-Parker"
    manager="jwhit"
    editor=""
    keywords="Windows Server-Backup; Windows Server sichern"/>
 
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="article" ms.date="11/17/2015" ms.author="jimpark"; "aashishr"/>
+<tags
+   ms.service="backup"
+   ms.workload="storage-backup-recovery"
+	 ms.tgt_pltfrm="na"
+	 ms.devlang="na"
+	 ms.topic="article"
+	 ms.date="01/19/2016"
+	 ms.author="jimpark;"/>
 
 # Sichern von Windows Server- oder Windows-Clientdateien und -ordnern in Azure
 Das Sichern von Windows-Dateien und -Ordnern in Azure ist mit dieser unkomplizierten Prozedur sehr einfach. Falls noch nicht erfolgt, erfüllen Sie die [Voraussetzungen](backup-configure-vault.md#before-you-start) zur Vorbereitung Ihrer Umgebung auf die Sicherung Ihres Windows-Computers, ehe Sie fortfahren.
@@ -45,4 +52,4 @@ Das Sichern von Windows-Dateien und -Ordnern in Azure ist mit dieser unkomplizie
 - [Wiederherstellen von Windows-Servern oder Windows-Clients aus Azure](backup-azure-restore-windows-server.md)
 - [Azure Backup – Häufig gestellte Fragen](backup-azure-backup-faq.md)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0121_2016-->

@@ -2,7 +2,7 @@
     pageTitle="Tutorial: Azure Active Directory-Integration mit Onit | Microsoft Azure" 
     description="Hier erfahren Sie, wie Sie Onit mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags 
@@ -11,8 +11,8 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
-    ms.author="markvi" />
+    ms.date="01/14/2016" 
+    ms.author="jeedes" />
 
 #Tutorial: Azure Active Directory-Integration mit Onit
   
@@ -55,7 +55,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Oni
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-onit-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie im **Suchfeld** als Suchbegriff **Onit** ein.
+6.  Geben Sie im **Suchfeld** das Wort **Onit** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-onit-tutorial/IC791167.png "Anwendungskatalog")
 
@@ -64,7 +64,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Oni
     ![Onit](./media/active-directory-saas-onit-tutorial/IC795325.png "Onit")
 ##Konfigurieren der einmaligen Anmeldung
   
-In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Onit zu authentifizieren. Zum Konfigurieren des einmaligen Anmeldens für Onit müssen Sie einen Fingerabdruckwert aus einem Zertifikat abrufen. Falls Sie mit diesem Verfahren nicht vertraut sind, finden Sie unter [How to retrieve a certificate's thumbprint value](http://youtu.be/YKQF266SAxI) (Abrufen des Fingerabdruckwerts eines Zertifikats, in englischer Sprache) weitere Informationen.
+In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Onit zu authentifizieren. Zum Konfigurieren des einmaligen Anmeldens für Onit müssen Sie einen Fingerabdruckwert aus einem Zertifikat abrufen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [Abrufen des Fingerabdruckwerts eines Zertifikats](http://youtu.be/YKQF266SAxI) weitere Informationen.
   
 Die Onit-Anwendung erwartet die SAML-Assertionen in einem bestimmten Format. Daher müssen Sie Ihrer Konfiguration der **SAML-Tokenattribute** benutzerdefinierte Attributzuordnungen hinzufügen. Der folgende Screenshot zeigt ein Beispiel für diese Attributzuordnungen:
 
@@ -101,7 +101,7 @@ Die Onit-Anwendung erwartet die SAML-Assertionen in einem bestimmten Format. Dah
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-onit-tutorial/IC791171.png "Einmaliges Anmelden konfigurieren")
 
-7.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Onit-Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei Onit verwenden (z. B. „**https://ms-sso-test.onit.com*”)“), und klicken Sie dann auf **Weiter**.
+7.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Onit-Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei Onit verwenden (z. B. **https://ms-sso-test.onit.com*”)), und klicken Sie dann auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-onit-tutorial/IC791172.png "App-URL konfigurieren")
 
@@ -182,4 +182,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0121_2016-->

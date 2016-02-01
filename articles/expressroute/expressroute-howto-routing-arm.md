@@ -13,7 +13,7 @@
    ms.topic="article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/12/2015"
+   ms.date="01/16/2016"
    ms.author="cherylmc"/>
 
 # Erstellen und Ändern des Routings einer ExpressRoute-Verbindung mit Azure-Ressourcen-Manager und PowerShell
@@ -395,4 +395,4 @@ Verknüpfen Sie als Nächstes ein VNet mit einer ExpressRoute-Verbindung. Sie k�
 
 -  Weitere Informationen zur Arbeit mit virtuellen Netzwerken finden Sie unter [Virtuelle Netzwerke im Überblick](../virtual-network/virtual-networks-overview.md).
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0121_2016-->

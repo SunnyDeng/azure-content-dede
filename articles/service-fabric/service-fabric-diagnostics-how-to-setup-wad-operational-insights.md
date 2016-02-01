@@ -55,6 +55,7 @@ Wenn Sie sich die Diagnoseeinstellung in der Ressourcen-Manager-Vorlage ansehen 
 Außerdem müssen Sie vor dem Aufrufen dieses Bereitstellungsbefehls unter Umständen einige Setupschritte ausführen. So müssen Sie eventuell Ihr Azure-Konto hinzufügen (`Add-AzureAccount`), ein Abonnement auswählen (`Select-AzureSubscription`), in den Ressourcen-Manager-Modus wechseln (`Switch-AzureMode AzureResourceManager`) und ggf. die Ressourcengruppe erstellen (`New-AzureResourceGroup`).
 
 ```powershell
+
 New-AzureResourceGroupDeployment -ResourceGroupName $resourceGroupName -Name $deploymentName -TemplateFile $pathToARMConfigJsonFile -TemplateParameterFile $pathToParameterFile –Verbose
 ```
 
@@ -62,7 +63,9 @@ New-AzureResourceGroupDeployment -ResourceGroupName $resourceGroupName -Name $de
 Einem bereits vorhandenen Cluster ohne Diagnosebereitstellung können Sie die Diagnose wie folgt hinzufügen: Erstellen Sie mit dem unten angegebenen JSON-Code die beiden Dateien „WadConfigUpdate.json“ und „WadConfigUpdateParams.json“:
 
 ##### WadConfigUpdate.json
+
 ```json
+
 {
     "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
@@ -141,7 +144,10 @@ Einem bereits vorhandenen Cluster ohne Diagnosebereitstellung können Sie die Di
 ```
 
 ##### WadConfigUpdateParams.json
-Ersetzen Sie „vmNamePrefix“ durch das Präfix, das Sie beim Erstellen des Clusters für VM-Namen ausgewählt haben. Legen Sie dann „vmStorageAccountName“ auf das Speicherkonto fest, an das Sie die Protokolle der VMs hochladen möchten. ```json
+Ersetzen Sie „vmNamePrefix“ durch das Präfix, das Sie beim Erstellen des Clusters für VM-Namen ausgewählt haben. Legen Sie dann „vmStorageAccountName“ auf das Speicherkonto fest, in das Sie die Protokolle der VMs hochladen möchten.
+
+```json
+
 {
     "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
@@ -161,7 +167,10 @@ Ersetzen Sie „vmNamePrefix“ durch das Präfix, das Sie beim Erstellen des Cl
 
 Passen Sie die wie oben beschrieben erstellten JSON-Dateien an die Einzelheiten Ihrer Umgebung an. Rufen Sie dann den folgenden Befehl auf, und übergeben Sie dabei den Namen der Ressourcengruppe für Ihren Service Fabric-Cluster. Nach erfolgreicher Ausführung des Befehls wird die Diagnose auf allen VMs bereitgestellt, und es wird damit begonnen, die Protokolle aus dem Cluster an Tabellen im angegebenen Azure-Speicherkonto hochzuladen.
 
-Vor dem Aufrufen des Bereitstellungsbefehls sind unter Umständen noch einige Setupschritte erforderlich – etwa das Hinzufügen Ihres Azure-Kontos (`Add-AzureAccount`), das Auswählen des richtigen Abonnements (`Select-AzureSubscription`) und das Wechseln in den Ressourcen-Manager-Modus (`Switch-AzureMode AzureResourceManager`). ```powershell
+Vor dem Aufrufen des Bereitstellungsbefehls sind unter Umständen noch einige Setupschritte erforderlich – etwa das Hinzufügen Ihres Azure-Kontos (`Add-AzureAccount`), das Auswählen des richtigen Abonnements (`Select-AzureSubscription`) und das Wechseln in den Ressourcen-Manager-Modus (`Switch-AzureMode AzureResourceManager`).
+
+```ps
+
 New-AzureResourceGroupDeployment -ResourceGroupName $resourceGroupName -Name $deploymentName -TemplateFile $pathToWADConfigJsonFile -TemplateParameterFile $pathToParameterFile –Verbose
 ```
 
@@ -174,7 +183,12 @@ Die Schritte zum Erstellen eines Operational Insights-Arbeitsbereichs werden im
 [Operational Insights-Onboarding](https://technet.microsoft.com/library/mt484118.aspx)
 
 ### Konfigurieren eines Operational Insights-Arbeitsbereichs zum Anzeigen der Clusterprotokolle
-Nachdem Sie den Operational Insights-Arbeitsbereich wie oben beschrieben erstellt haben, muss er so konfiguriert werden, dass die Protokolle aus den Azure-Speichertabellen abgerufen werden, an die sie von der Diagnoseerweiterung aus dem Cluster hochgeladen werden. Diese Konfiguration kann derzeit nicht über das Operational Insights-Portal, sondern nur über PowerShell-Befehle durchgeführt werden. Führen Sie das folgende PowerShell-Skript aus. Mit diesem Skript wird ein Operations Management Suite-Arbeitsbereich (also ein Operational Insights-Arbeitsbereich) konfiguriert, um Diagnosen aus einem Azure-Speicherkonto auszulesen. ```powershell <#
+Nachdem Sie den Operational Insights-Arbeitsbereich wie oben beschrieben erstellt haben, muss er so konfiguriert werden, dass die Protokolle aus den Azure-Speichertabellen abgerufen werden, an die sie von der Diagnoseerweiterung aus dem Cluster hochgeladen werden. Diese Konfiguration kann derzeit nicht über das Operational Insights-Portal, sondern nur über PowerShell-Befehle durchgeführt werden. Führen Sie das folgende PowerShell-Skript aus:
+
+```powershell
+
+    <#
+    This script will configure an Operations Management Suite workspace (aka Operational Insights workspace) to read Diagnostics from an Azure Storage account.
 
     It will enable all supported data types (currently Windows Event Logs, Syslog, Service Fabric Events, ETW Events and IIS Logs).
 
@@ -183,7 +197,7 @@ Nachdem Sie den Operational Insights-Arbeitsbereich wie oben beschrieben erstel
     If you have more than one OMS workspace you will be prompted for the workspace to configure.
 
     If you have more than one storage account you will be prompted for which storage account to configure.
-#>
+    #>
 
 Add-AzureAccount
 
@@ -241,17 +255,38 @@ function Select-StorageAccount {
     return $storage
 }
 
-$workspace = Select-Workspace $storageAccount = Select-StorageAccount
+$workspace = Select-Workspace
+$storageAccount = Select-StorageAccount
 
 $insightsName = $storageAccount.Name + $workspace.Name
 
 $existingConfig = ""
 
-try { $existingConfig = Get-AzureOperationalInsightsStorageInsight -Workspace $workspace -Name $insightsName -ErrorAction Stop } catch [Hyak.Common.CloudException] { # HTTP Not Found wird zurückgegeben, wenn die Speichereinsicht nicht vorhanden ist }
+try
+{
+    $existingConfig = Get-AzureOperationalInsightsStorageInsight -Workspace $workspace -Name $insightsName -ErrorAction Stop
+}
+catch [Hyak.Common.CloudException]
+{
+    # HTTP Not Found is returned if the storage insight doesn't exist
+}
 
-if ($existingConfig) { Set-AzureOperationalInsightsStorageInsight -Workspace $workspace -Name $insightsName -Tables $validTables -Containers $validContainers
+if ($existingConfig) {
+    Set-AzureOperationalInsightsStorageInsight -Workspace $workspace -Name $insightsName -Tables $validTables -Containers $validContainers
 
-} else { if ($storageAccount.ResourceType -eq "Microsoft.ClassicStorage/storageAccounts") { Switch-AzureMode -Name AzureServiceManagement $key = (Get-AzureStorageKey -StorageAccountName $storageAccount.Name).Primary Switch-AzureMode -Name AzureResourceManager } else { $key = (Get-AzureStorageAccountKey -ResourceGroupName $storageAccount.ResourceGroupName -Name $storageAccount.Name).Key1 } New-AzureOperationalInsightsStorageInsight -Workspace $workspace -Name $insightsName -StorageAccountResourceId $storageAccount.ResourceId -StorageAccountKey $key -Tables $validTables -Containers $validContainers } ``` Nachdem Sie den Operational Insights-Arbeitsbereich für das Auslesen der Daten aus Ihrem Speicherkonto konfiguriert haben, melden Sie sich beim Portal an, und rufen Sie die Registerkarte **Speicher** für die Operational Insights-Ressource auf. Diese sollte in etwa wie folgt aussehen: ![Operational Insights-Speicherkonfiguration im Azure-Portal](./media/service-fabric-diagnostics-how-to-setup-wad-operational-insights/oi-connected-tables-list.png)
+} else {
+    if ($storageAccount.ResourceType -eq "Microsoft.ClassicStorage/storageAccounts") {
+        Switch-AzureMode -Name AzureServiceManagement
+        $key = (Get-AzureStorageKey -StorageAccountName $storageAccount.Name).Primary
+        Switch-AzureMode -Name AzureResourceManager
+    } else {
+        $key = (Get-AzureStorageAccountKey -ResourceGroupName $storageAccount.ResourceGroupName -Name $storageAccount.Name).Key1
+    }
+    New-AzureOperationalInsightsStorageInsight -Workspace $workspace -Name $insightsName -StorageAccountResourceId $storageAccount.ResourceId -StorageAccountKey $key -Tables $validTables -Containers $validContainers
+}
+```
+
+Sobald Sie den Operational Insights-Arbeitsbereich so konfiguriert haben, dass die Azure-Tabellen in Ihrem Speicherkonto ausgelesen werden, sollten Sie sich beim Portal anmelden und zur Registerkarte **Speicher** für die Operational Insights-Ressource wechseln. Diese sollte in etwa wie folgt aussehen: ![Operational Insights-Speicherkonfiguration im Azure-Portal](./media/service-fabric-diagnostics-how-to-setup-wad-operational-insights/oi-connected-tables-list.png)
 
 ### Durchsuchen und Anzeigen von Protokollen in Operational Insights
 Nachdem Sie den Operational Insights-Arbeitsbereich für das Auslesen der Daten aus dem angegebenen Speicherkonto konfiguriert haben, kann es bis zu zehn Minuten dauern, bis die Protokolle auf der Benutzeroberfläche von Operational Insights angezeigt werden. Um sich zu vergewissern, dass neue Protokolle generiert werden, empfiehlt es sich, in Ihrem Cluster eine Service Fabric-Anwendung bereitzustellen, da dabei Betriebsereignisse der Service Fabric-Plattform generiert werden.
@@ -269,7 +304,7 @@ Im Anschluss finden Sie einige Beispiele für Szenarien und die dazugehörigen A
     Type=ServiceFabricReliableServiceEvent AND ServiceName="fabric:/Application2/Stateless1" AND "RunAsync has been invoked"
     ```
 
-2. **So ermitteln Sie, ob ein zustandsbehafteter Dienst Ausnahmen ausgelöst hat, die von Service Fabric als Fehler gekennzeichnet wurden:** Verwenden Sie für die Suche nach entsprechenden Ereignissen eine Abfrage wie die folgende:
+2. **So ermitteln Sie, ob ein statusbehafteter Dienst Ausnahmen ausgelöst hat, die von Service Fabric als Fehler gekennzeichnet wurden:** Verwenden Sie für die Suche nach entsprechenden Ereignissen eine Abfrage wie die folgende:
 
     ```
     Type=ServiceFabricReliableServiceEvent AND ServiceName="fabric:/Application2/Stateful1" AND TaskName=StatefulRunAsyncFailure
@@ -290,4 +325,4 @@ Sie müssen den EtwEventSourceProviderConfiguration-Abschnitt in der Datei „Wa
 ## Nächste Schritte
 Sehen Sie sich die Diagnoseereignisse an, die für [Reliable Actors](service-fabric-reliable-actors-diagnostics.md) und [Reliable Services](service-fabric-reliable-services-diagnostics.md) ausgegeben werden, um besser zu verstehen, welche Ereignisse Sie beim Behandeln von Problemen untersuchen sollten.
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0121_2016-->

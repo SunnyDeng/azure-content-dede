@@ -54,32 +54,7 @@ Die Standard Edition von **Azure Data Catalog** unterstützt bis zu 100.000 reg
 
 ## F: Welche Datenquellen und Assettypen werden unterstützt?
 
-Während der Vorschauphase unterstützt **Azure Data Catalog** derzeit relationale SQL Server-Datenbanken (z. B. Azure SQL DB) und SQL Server Analysis Services-Datenbanken (mehrdimensional und tabellarisch) sowie SQL Server Reporting Services (nur systemeigener Modus) und Oracle Database.
-
-Während der Vorschauphase unterstützt **Azure Data Catalog** die Registrierung und Ermittlung der folgenden Assettypen:
-
-- SQL Server-Tabelle
-- SQL Server-Ansicht
-- SQL Server Analysis Services-Dimension
-- SQL Server Analysis Services-Measure
-- SQL Server Analysis Services-KPI
-- SQL Server Analysis Services-Tabelle
-- SQL Server Reporting Services-Bericht  
-- Oracle Database-Tabelle
-- Oracle Database-Ansicht
-- Azure Storage-Blob
-- Azure-Speicherverzeichnis
-- HDFS-Datei
-- HDFS-Verzeichnis
-- Teradata-Tabelle
-- Teradata-Sicht
-
-Zusätzlich zu den oben aufgeführten Assets unterstützt **Azure Data Catalog** die Ermittlung der folgenden Datenasset-Container:
-
-- SQL Server-Datenbank
-- Oracle-Datenbank
-- HDFS-Cluster
-- Teradata-Datenbank
+Eine Liste mit den derzeit unterstützten Datenquellen finden Sie unter [Von Azure Data Catalog unterstützte Datenquellen](data-catalog-dsr.md).
 
 
 ## F: Wie fordere ich die Unterstützung für eine andere Datenquelle an?
@@ -172,4 +147,4 @@ Wenn Probleme auftreten oder falls Sie Hilfe mit der Vorschauversion von **Azure
 
 Wechseln Sie in das [Azure Data Catalog-Forum](http://go.microsoft.com/fwlink/?LinkID=616424&clcid=0x409). Fragen, die dort gestellt werden, werden in diesen Artikel aufgenommen.
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0121_2016-->

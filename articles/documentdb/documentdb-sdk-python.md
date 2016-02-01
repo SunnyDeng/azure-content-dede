@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="DocumentDB Python SDK | Microsoft Azure" 
-	description="Wichtige Informatinen zum Python SDK einschließlich Veröffentlichungstermine, Deaktivierungstermine und Änderungen an den einzelnen Versionen des DocumentDB Python SDK." 
+	description="Wichtige Informationen zum Python SDK einschließlich Veröffentlichungstermine, Deaktivierungstermine und Änderungen an den einzelnen Versionen des DocumentDB Python SDK." 
 	services="documentdb" 
 	documentationCenter="python" 
 	authors="ryancrawcour" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="python" 
 	ms.topic="article" 
-	ms.date="11/16/2015" 
+	ms.date="01/19/2016" 
 	ms.author="ryancraw"/>
 
 # DocumentDB SDK
@@ -28,7 +28,10 @@
 
 <table> <tr><td>**Herunterladen**</td><td>[PyPI](https://pypi.python.org/pypi/pydocumentdb)</td></tr> <tr><td>**Mitwirken**</td><td>[GitHub](https://github.com/Azure/azure-documentdb-python)</td></tr> <tr><td>**Dokumentation**</td><td>[Referenzdokumentation zum Python SDK](http://azure.github.io/azure-documentdb-python/)</td></tr> <tr><td>**Erste Schritte**</td><td>[Erste Schritte mit dem Python SDK](documentdb-python-application.md)</td></tr> <tr><td>**Derzeit unterstützte Plattform**</td><td>[Python 2.7](https://www.python.org/download/releases/2.7/)</td></tr> </table></br>
 
-## Versionsinformationen
+## Versionshinweise
+
+### <a name="1.5.0"/>[1\.5.0](https://pypi.python.org/pypi/pydocumentdb/1.5.0)
+- Hinzufügen von Hash- und Bereichspartitionen-Konfliktlösern, um die Freigabe von Anwendungen über mehrere Partitionen zu unterstützen.
 
 ### <a name="1.4.2"/>[1\.4.2](https://pypi.python.org/pypi/pydocumentdb/1.4.2)
 - Upsert implementiert. Neue UpsertXXX-Methoden hinzugefügt, um das „Upsert“-Feature zu unterstützen.
@@ -49,7 +52,7 @@
 - Allgemeine Verfügbarkeit (GA) des SDK
 
 ## Veröffentlichungs- und Deaktivierungstermine
-Wenn Microsoft ein SDK deaktiviert, werden Sie mindestens **12 Monate** vorher benachrichtigt, um einen reibungslosen Übergang zu einer neueren, unterstützten Version zu gewährleisten.
+Wenn Microsoft ein SDK deaktiviert, werden Sie mindestens **12 Monate** vorher benachrichtigt, um einen reibungslosen Übergang zu einer neueren/unterstützten Version zu gewährleisten.
 
 Neue Features, Funktionen und Optimierungen werden nur dem aktuellen SDK hinzugefügt. Daher wird empfohlen, immer so früh wie möglich auf die neueste SDK-Version zu aktualisieren.
 
@@ -61,23 +64,13 @@ Anforderungen von DocumentDB mithilfe eines deaktivierten SDK werden vom Dienst 
 
 | Version | Herausgabedatum | Deaktivierungstermine 
 | ---	  | ---	         | ---
-| [1\.4.2](#1.4.2) | 6. Oktober 2015 |---
-| [1\.4.1](#1.4.1) | 6. Oktober 2015 |---
-| [1\.2.0](#1.2.0) | 6. August 2015 |---
-| [1\.1.0](#1.1.0) | 9. Juli 2015 |---
-| [1\.0.1](#1.0.1) | 25. Mai 2015 |---
-| [1\.0.0](#1.0.0) | 7. April 2015 |---
-| 0.9.4-prelease | 14. April 2015 | 29. Februar 2016
-| 0.9.3-prelease | 9. Dezember 2014 | 29. Februar 2016
-| 0.9.2-prelease | 25. November 2014 | 29. Februar 2016
-| 0.9.1-prelease | 23. September 2014 | 29. Februar 2016
-| 0.9.0-prelease | 21. August 2014 | 29. Februar 2016
+| [1\.5.0](#1.5.0) | 3. Januar 2016 |--- | [1\.4.2](#1.4.2) | 6. Oktober 2015 |--- | [1\.4.1](#1.4.1) | 6. Oktober 2015 |--- | [1\.2.0](#1.2.0) | 6. August 2015 |--- | [1\.1.0](#1.1.0) | 9. Juli 2015 |--- | [1\.0.1](#1.0.1) | 25. Mai 2015 |--- | [1\.0.0](#1.0.0) | 7. April 2015 |--- | 0.9.4-prelease | 14. Januar 2015 | 29. Februar 2016 | 0.9.3-prelease | 9. Dezember 2014 | 29. Februar 2016 | 0.9.2-prelease | 25. November 2014 | 29. Februar 2016 | 0.9.1-prelease | 23. September 2014 | 29. Februar 2016 | 0.9.0-prelease | 21. August 2014 | 29. Februar 2016
 
 ## Häufig gestellte Fragen
 [AZURE.INCLUDE [documentdb-sdk-faq](../../includes/documentdb-sdk-faq.md)]
 
 ## Weitere Informationen
 
-Weitere Informationen zu DocumentDB finden Sie auf Seite zum Dienst [Microsoft Azure DocumentDB](https://azure.microsoft.com/services/documentdb/).
+Weitere Informationen zu DocumentDB finden Sie auf der Seite zum Dienst [Microsoft Azure DocumentDB](https://azure.microsoft.com/services/documentdb/).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0121_2016-->

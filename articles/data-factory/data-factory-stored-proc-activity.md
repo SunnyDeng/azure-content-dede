@@ -13,12 +13,19 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/12/2015" 
+	ms.date="01/19/2016" 
 	ms.author="spelluru"/>
 
 # SQL Server-Aktivität "Gespeicherte Prozedur"
 
-Sie können die SQL Server-Aktivität "Gespeicherte Prozedur" in einer Data Factory-[Pipeline](data-factory-create-pipelines.md) zum Aufrufen einer gespeicherten Prozedur in einer **Azure SQL-Datenbank** oder einem **Azure SQL Data Warehouse** verwenden. Dieser Artikel baut auf dem Artikel zu [Datentransformationsaktivitäten](data-factory-data-transformation-activities.md) auf, der einen allgemeinen Überblick über die Datentransformation und die unterstützten Transformationsaktivitäten bietet.
+Sie können die SQL Server-Aktivität „Gespeicherte Prozedur“ in einer Data Factory-[Pipeline](data-factory-create-pipelines.md) verwenden, um eine gespeicherte Prozedur in einem der folgenden Datenspeicher aufzurufen.
+
+
+- Azure SQL-Datenbank 
+- Azure SQL Data Warehouse  
+- SQL Server-Datenbank in Ihrem Unternehmen oder auf einem virtuellen Azure-Computer Sie müssen das Datenverwaltungsgateway auf dem Computer installieren, der die Datenbank hostet, oder auf einem separaten Computer, um zu vermeiden, dass der Computer mit der Datenbank um Ressourcen konkurriert. Das Datenverwaltungsgateway ist eine Software, die lokale Datenquellen oder Datenquellen auf virtuellen Azure-Computern auf sichere, verwaltete Weise mit Cloud-Diensten verbindet. Weitere Informationen zum Datenverwaltungsgateway finden Sie im Artikel [Verschieben von Daten zwischen lokalen Quellen und der Cloud](data-factory-move-data-between-onprem-and-cloud.md). 
+
+Dieser Artikel baut auf dem Artikel zu [Datentransformationsaktivitäten](data-factory-data-transformation-activities.md) auf, der einen allgemeinen Überblick über die Datentransformation und die unterstützten Transformationsaktivitäten bietet.
 
 ## Syntax
 	{
@@ -42,9 +49,9 @@ Sie können die SQL Server-Aktivität "Gespeicherte Prozedur" in einer Data Fact
 
 Eigenschaft | Beschreibung | Erforderlich
 -------- | ----------- | --------
-Name | Der Name der Aktivität | Ja
+name | Der Name der Aktivität | Ja
 description | Ein Text, der beschreibt, wofür die Aktivität verwendet wird. | Nein
-Typ | SqlServerStoredProcedure | Ja
+type | SqlServerStoredProcedure | Ja
 inputs | Eingabedatasets müssen (im Status "Bereit") verfügbar sein, damit die Aktivität "Gespeicherte Prozedur" ausgeführt wird. Die Eingaben in die Aktivität "Gespeicherte Prozedur" dienen nur zur Verwaltung von Abhängigkeiten bei deren Verkettung. Die Eingabedatasets können nicht als Parameter in der gespeicherten Prozedur genutzt werden. | Nein
 outputs | Von der Aktivität "Gespeicherte Prozedur" generierte Ausgabedatasets. Stellen Sie sicher, dass die Ausgabetabelle einen verknüpften Dienst verwendet, der eine Azure SQL-Datenbank oder ein Azure SQL Data Warehouse mit der Data Factory verknüpft. Die Ausgaben in der Aktivität "Gespeicherte Prozedur" dienen als Möglichkeit, das Ergebnis dieser Aktivität für die nachfolgende Verarbeitung zu übergeben und/oder Abhängigkeiten bei deren Verkettung zu verwalten. | Ja
 storedProcedureName | Geben Sie den Namen der gespeicherten Prozedur in der Azure SQL-Datenbank oder dem Azure SQL Data Warehouse an, die bzw. das vom verknüpften Dienst dargestellt wird, den die Ausgabetabelle verwendet. | Ja
@@ -65,8 +72,7 @@ storedProcedureParameters | Geben Sie Werte für Parameter der gespeicherten Pro
 		CREATE CLUSTERED INDEX ClusteredID ON dbo.sampletable(Id);
 		GO
 
-	"Id" ist der eindeutige Bezeichner, und die Spalte "datetimestamp" enthält das Datum und die Uhrzeit, zu der die entsprechende ID generiert wird.
-	![Beispieldaten](./media/data-factory-stored-proc-activity/sample-data.png)
+	"Id" ist der eindeutige Bezeichner, und die Spalte "datetimestamp" enthält das Datum und die Uhrzeit, zu der die entsprechende ID generiert wird. ![Beispieldaten](./media/data-factory-stored-proc-activity/sample-data.png)
 
 2. Erstellen Sie die folgende **gespeicherte Prozedur**, mit welcher Daten in **sampletable** eingefügt werden.
 
@@ -100,7 +106,7 @@ Nach dem Erstellen der Data Factory erstellen Sie einen mit Azure SQL verknüpft
 
 7.	Klicken Sie auf dem Blatt **DATA FACTORY** für **SProcDF** auf **Erstellen und bereitstellen**. Der Data Factory-Editor wird gestartet. 
 2.	Klicken Sie in der Befehlsleiste auf **Neuer Datenspeicher**, und wählen Sie **Azure SQL**. Das JSON-Skript zum Erstellen eines mit Azure SQL verknüpften Diensts wird im Editor angezeigt. 
-4. Ersetzen Sie **servername** durch den Namen Ihres Azure SQL-Datenbankservers, **databasename** durch die Datenbank, in der Sie die Tabelle und die gespeicherte Prozedur erstellt haben, **username@servername** durch das Benutzerkonto, das Zugriff auf die Datenbank besitzt, und **password** durch das Kennwort für das Benutzerkonto.
+4. Ersetzen Sie **servername** durch den Namen Ihres Azure SQL-Datenbankservers, **databasename** durch die Datenbank, in der Sie die Tabelle und die gespeicherte Prozedur erstellt haben, ****username@servername** durch das Benutzerkonto, das Zugriff auf die Datenbank besitzt, und **password** durch das Kennwort für das Benutzerkonto.
 5. Klicken Sie auf der Befehlsleiste auf **Bereitstellen**, um den verknüpften Dienst bereitzustellen.
 
 ### Erstellen eines Ausgabedatasets
@@ -199,4 +205,4 @@ Um dies zu erreichen, übergeben Sie den Parameter "Scenario" und den Wert aus d
 		}
 	}
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0121_2016-->

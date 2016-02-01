@@ -20,7 +20,19 @@
 # Vorbereiten eines auf Red Hat basierenden virtuellen Computers für Azure
 In diesem Artikel erfahren Sie, wie einen auf Red Hat Enterprise Linux (RHEL) basierenden virtuellen Computer für die Verwendung in Azure vorbereiten. In diesem Artikel werden die RHEL-Versionen 6.7, 7.1 und 7.2 sowie die Hypervisoren Hyper-V, KVM und VMware für die Vorbereitung vorgestellt. Weitere Informationen zu den Berechtigungsvoraussetzungen für die Teilnahme am Cloud Access-Programm von Red Hat finden Sie auf der [Red Hat Cloud Access-Website](http://www.redhat.com/en/technologies/cloud-computing/cloud-access) und unter [Running RHEL on Azure](https://access.redhat.com/articles/1989673) (in englischer Sprache).
 
+[Vorbereiten einer virtuellen RHEL 6.7-Maschine über Hyper-V-Manager](#rhel67hyperv)
 
+[Vorbereiten einer virtuellen RHEL 7.1-/7.2-Maschine über Hyper-V-Manager](#rhel7xhyperv)
+
+[Vorbereiten einer virtuellen RHEL 6.7-Maschine über KVM](#rhel67kvm)
+
+[Vorbereiten einer virtuellen RHEL 7.1-/7.2-Maschine über KVM](#rhel7xkvm)
+
+[Vorbereiten einer virtuellen RHEL 6.7-Maschine über VMWare](#rhel67vmware)
+
+[Vorbereiten einer virtuellen RHEL 7.1-/7.2-Maschine über VMWare](#rhel7xvmware)
+
+[Vorbereiten einer virtuellen RHEL 7.1-/7.2-Maschine über eine Kickstart-Datei](#rhel7xkickstart)
 
 
 ##Vorbereiten eines Images mit Hyper-V-Manager 
@@ -39,8 +51,8 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
 
 - Wenn Sie zum Umwandeln der Datenträgerimages in das VHD-Format qemu-img verwenden, beachten Sie das bekannte Problem in den Versionen von qemu-img ab 2.2.1, das zu einer falsch formatierten VHD-Datei führt. Das Problem wird in einer zukünftigen qemu-img-Version behoben werden. Bis es soweit ist, empfiehlt es sich jedoch, auf die qemu-img-Version 2.2.0 oder niedriger zurückzugreifen.
 
+### <a id="rhel67hyperv"> </a>Vorbereiten einer virtuellen RHEL 6.7-Maschine über Hyper-V-Manager###
 
-###RHEL 6.7
 
 1.	Wählen Sie im Hyper-V-Manager den virtuellen Computer aus.
 
@@ -134,7 +146,7 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
 
 16.	Klicken Sie im Hyper-V-Manager auf **Aktion -> Herunterfahren**. Ihre Linux-VHD kann nun in Azure hochgeladen werden.
 
-###RHEL 7.1/7.2
+### <a id="rhel7xhyperv"> </a>Vorbereiten einer virtuellen RHEL 7.1-/7.2-Maschine über Hyper-V-Manager###
 
 1.  Wählen Sie im Hyper-V-Manager den virtuellen Computer aus.
 
@@ -214,7 +226,9 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
 
 
 ##Image von KVM vorbereiten 
-###RHEL 6.7
+
+### <a id="rhel67kvm"> </a>Vorbereiten einer virtuellen RHEL 6.7-Maschine über KVM###
+
 
 1.	Laden Sie das KVM-Image von RHEL 6.7 von der Red Hat-Website herunter.
 
@@ -303,7 +317,7 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
         # yum install WALinuxAgent
         # chkconfig waagent on
 
-14.	Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein temporärer Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Passen Sie nach dem Installieren des Azure Linux-Agents (siehe vorheriger Schritt) die folgenden Parameter in **/etc/waagent.conf** an:
+14.	Der Azure Linux Agent kann SWAP-Raum automatisch mit dem lokalen Ressourcendatenträger konfigurieren, der nach der Bereitstellung in Azure mit dem virtuellen Computer verknüpft ist. Beachten Sie, dass der lokale Ressourcendatenträger ein temporärer Datenträger ist und geleert werden kann, wenn die Bereitstellung des virtuellen Computers aufgehoben wird. Ändern Sie nach dem Installieren des Azure Linux-Agents (siehe vorheriger Schritt) die folgenden Parameter in **/etc/waagent.conf** entsprechend:
 
         ResourceDisk.Format=y
         ResourceDisk.Filesystem=ext4
@@ -335,7 +349,8 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits ein RHEL-Image aus 
          # qemu-img convert -f raw -o subformat=fixed -O vpc rhel-6.7.raw rhel-6.7.vhd
 
 
-###RHEL 7.1/7.2
+### <a id="rhel7xkvm"> </a>Vorbereiten einer virtuellen RHEL 7.1-/7.2-Maschine über KVM###
+
 
 1.	Laden Sie das KVM-Image von RHEL 7.1(oder 7.2) von der Red Hat-Website herunter. In diesem Beispiel wird RHEL 7.1 verwendet.
 
@@ -487,7 +502,10 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits einen virtuellen Co
 
 - Wählen Sie beim Erstellen der virtuellen Festplatte **Virtuellen Datenträger als einzelne Datei speichern** aus.
 
-###RHEL 6.7
+
+
+### <a id="rhel67vmware"> </a>Vorbereiten einer virtuellen RHEL 6.7-Maschine über VMWare###
+
 1.	Deinstallieren Sie den NetworkManager, indem Sie den folgenden Befehl ausführen:
 
          # sudo rpm -e --nodeps NetworkManager
@@ -588,7 +606,8 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits einen virtuellen Co
 
         # qemu-img convert -f raw -o subformat=fixed -O vpc rhel-6.7.raw rhel-6.7.vhd
 
-###RHEL 7.1/7.2
+
+### <a id="rhel7xvmware"> </a>Vorbereiten einer virtuellen RHEL 7.1-/7.2-Maschine über VMWare###
 
 1.	Erstellen Sie eine Datei mit der Benennung **network** im Verzeichnis "/etc/sysconfig/", die den folgenden Text enthält:
 
@@ -613,7 +632,7 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits einen virtuellen Co
 
         # sudo subscription-manager register --auto-attach --username=XXX --password=XXX
 
-5.	Modifizieren Sie die Boot-Zeile des Kernels in Ihrer Grub-Konfiguration, um zusätzliche Kernel-Parameter für Azure einzubinden. Öffnen Sie dazu `/etc/default/grub` in einem Text-Editor und bearbeiten Sie den Parameter **GRUB\_CMDLINE\_LINUX**. Beispiel:
+5.	Modifizieren Sie die Boot-Zeile des Kernels in Ihrer Grub-Konfiguration, um zusätzliche Kernel-Parameter für Azure einzubinden. Öffnen Sie dazu `/etc/default/grub` in einem Text-Editor, und bearbeiten Sie den Parameter **GRUB\_CMDLINE\_LINUX**. Beispiel:
 
         GRUB_CMDLINE_LINUX="rootdelay=300 
         console=ttyS0 
@@ -692,7 +711,10 @@ In diesem Abschnitt wird davon ausgegangen, dass Sie bereits einen virtuellen Co
 
 
 ##Mit Kickstart-Datei automatisch aus ISO vorbereiten
-###RHEL 7.1/7.2
+
+
+### <a id="rhel7xkickstart"> </a>Vorbereiten einer virtuellen RHEL 7.1-/7.2-Maschine über eine Kickstart-Datei###
+
 
 1.	Erstellen Sie die Kickstart-Datei mit folgendem Inhalt, und speichern Sie die Datei. Weitere Informationen zur Kickstartinstallation finden Sie unter [Kickstartinstallationen](https://access.redhat.com/documentation/de-DE/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/chap-kickstart-installations.html).
 
@@ -842,6 +864,8 @@ Dieses Problem tritt zeitweise auf, jedoch öfter während häufigen Datenträge
 
 
 ## Nächste Schritte
-Nun können Sie mit Ihrer Red Hat Enterprise Linux-VHD-Datei neue virtuelle Azure-Computer in Azure erstellen. Weitere Informationen zu den Hypervisoren, die zum Ausführen von Red Hat Enterprise Linux zertifiziert sind, finden Sie auf der [Red Hat-Website](https://access.redhat.com/certified-hypervisors).
+Nun können Sie mit Ihrer Red Hat Enterprise Linux-VHD-Datei neue virtuelle Azure-Computer in Azure erstellen. Falls Sie zum ersten Mal Azure verwenden und die VHD-Datei in Azure hochladen, können Sie sich an die Schritte 2 und 3 in [diesem Leitfaden](virtual-machines-linux-create-upload-vhd.md) halten.
+ 
+Weitere Informationen zu den Hypervisoren, die zum Ausführen von Red Hat Enterprise Linux zertifiziert sind, finden Sie auf der [Red Hat-Website](https://access.redhat.com/certified-hypervisors).
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0121_2016-->

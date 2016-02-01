@@ -2,7 +2,7 @@
     pageTitle="Tutorial: Azure Active Directory-Integration mit Lucidchart | Microsoft Azure" 
     description="Erfahren Sie, wie Sie Lucidchart mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" manager="stevenpo"/>
 <tags 
     ms.service="active-directory" 
@@ -10,8 +10,8 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
-    ms.author="markvi" />
+    ms.date="01/14/2016" 
+    ms.author="jeedes" />
 
 #Tutorial: Azure Active Directory-Integration mit Lucidchart
   
@@ -20,7 +20,7 @@ In diesem Tutorial wird die Integration von Azure und Lucidchart erläutert. Das
 -   Ein gültiges Azure-Abonnement
 -   Ein Lucidchart-Software-Abonnement, für das das einmalige Anmelden aktiviert ist.
   
-Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie Lucidchart zugewiesen haben, mittels einmaliger Anmeldung auf Ihrer Lucidchart-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können Sie die [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md) nutzen.
+Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie Lucidchart zugewiesen haben, mittels einmaliger Anmeldung auf Ihrer Lucidchart-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie auch die [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md) nutzen.
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -54,7 +54,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Luc
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-lucidchart-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie im **Suchfeld** den Suchbegriff **Lucidchart** ein.
+6.  Geben Sie im **Suchfeld** das Wort **Lucidchart** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-lucidchart-tutorial/IC791184.png "Anwendungskatalog")
 
@@ -75,7 +75,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-lucidchart-tutorial/IC791187.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Lucidchart-Anmelde-URL** die URL ein, welche die Benutzer zur Anmeldung bei Lucidchart verwenden (z. B. "**https://chart2.office.lucidchart.com/saml/sso/azure*"), und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Lucidchart-Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei Lucidchart verwenden (z. B. **https://chart2.office.lucidchart.com/saml/sso/azure*")), und klicken Sie dann auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-lucidchart-tutorial/IC791188.png "App-URL konfigurieren")
 
@@ -124,4 +124,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0121_2016-->

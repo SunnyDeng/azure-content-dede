@@ -38,6 +38,8 @@ Der standardmäßig verfügbare Abhängigkeitsmonitor meldet derzeit Aufrufe an 
  * Azure DocumentDb, Tabelle, Blobspeicher und Warteschlange
 * Java
  * Aufrufe an eine Datenbank über einen [JDBC](http://docs.oracle.com/javase/7/docs/technotes/guides/jdbc/)-Treiber, z. B. MySQL, SQL Server, PostgreSQL oder SQLite.
+* Webseiten
+ * AJAX-Aufrufe
 
 In diesem Fall könnten Sie Ihre eigenen SDK-Aufrufe zum Überwachen anderer Abhängigkeiten schreiben.
 
@@ -129,4 +131,4 @@ Wenn Sie das Standardmodul für die Nachverfolgung von Abhängigkeiten deaktivie
 
 <!--Link references-->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0121_2016-->

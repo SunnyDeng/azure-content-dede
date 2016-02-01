@@ -20,6 +20,20 @@
 
 Die folgenden Tabellen zeigen die Microsoft Security Response Center-Updates (MSRC), die auf das Azure-Gastbetriebssystem angewendet wurden. Durchsuchen Sie diesen Artikel, um zu ermitteln, ob ein bestimmtes Update für das Gastbetriebssystem gilt, das Sie verwenden. Updates werden für die [Familie][family-explain], in der sie eingeführt wurden, immer in die jeweils neueste Version übertragen.
 
+## Gastbetriebssystem Januar
+
+| Bulletin-ID | Übergeordneter KB-Artikel | Beschreibung des Sicherheitsrisikos | Gastbetriebssystem | Datum der ersten Einführung |
+| ----------- | ------------------- | --------------------------------------------------------------------------- | ---------------- | --------------------- |
+| MS16-001 | [3124903] | Kumulatives Sicherheitsupdate für Internet Explorer | 4\.28, 3.35, 2.47 | 12\. Januar 2016 |
+| MS16-003 | [3125540] | Kumulatives Sicherheitsupdate für JScript und VBScript | 2\.47 | 12\. Januar 2016 |
+| MS16-005 | [3124584] | Sicherheitsupdate für Windows-Kernelmodustreiber, um Remotecodeausführung zu beheben | 4\.28, 3.35, 2.47 | 12\. Januar 2016 |
+| MS16-007 | [3124901] | Sicherheitsupdate für Microsoft Windows, um Remotecodeausführung zu beheben | 4\.28, 3.35, 2.47 | 12\. Januar 2016 |
+| MS16-008 | [3124605] | Sicherheitsupdate für Kernel, um Erhöhung von Berechtigungen zu beheben | 4\.28, 3.35, 2.47 | 12\. Januar 2016 |
+| Überarbeitete Microsoft-Sicherheitsempfehlung | [2755801] | Update für Sicherheitsrisiken bei Adobe Flash Player in Internet Explorer (Paket-KB: TBD) – Empfehlungsplatzhalter | 4\.28, 3.35 | 12\. Januar 2016 |
+| Microsoft-Sicherheitsempfehlung | [3109853] | Update zur Verbesserung der TLS-Interoperabilität | 4\.28, 3.35 | 12\. Januar 2016 |
+| Microsoft-Sicherheitsempfehlung | [3123479] | Veraltung des SHA-1-Hashalgorithmus für das Microsoft-Programm für Stammzertifikate | 4\.28, 3.35, 2.47 | 12\. Januar 2016 |
+| Microsoft-Sicherheitsempfehlung | [2736233] | Updates für ActiveX-Killbits | 4\.28, 3.35, 2.47 | 12\. Januar 2016 |
+
 ## Gastbetriebssystem Dezember
 
 | Bulletin-ID | Übergeordneter KB-Artikel | Beschreibung des Sicherheitsrisikos | Gastbetriebssystem | Datum der ersten Einführung |
@@ -211,6 +225,15 @@ Die folgenden Tabellen zeigen die Microsoft Security Response Center-Updates (MS
 | – | [2999802][2999802] | In Windows werden durchgezogene Linien statt gepunktete Linien gedruckt | 4\.15, 3.22, 2.34 | 13\. Januar 2015 |
 | – | [2896881][2896881] | Lange Anmeldezeit bei der Verwendung des VBScript-Befehls "AddPrinterConnection" zum Zuordnen von Druckern zu Benutzern während des Anmeldeprozesses in Windows | 4\.15, 3.22, 2.34 | 13\. Januar 2015 |
 
+[3124903]: http://support.microsoft.com/kb/3124903
+[3125540]: http://support.microsoft.com/kb/3125540
+[3124584]: http://support.microsoft.com/kb/3124584
+[3124901]: http://support.microsoft.com/kb/3124901
+[3124605]: http://support.microsoft.com/kb/3124605
+[2755801]: http://support.microsoft.com/kb/2755399
+[3109853]: http://support.microsoft.com/kb/3109853
+[3123479]: http://support.microsoft.com/kb/3123479
+[2736233]: http://support.microsoft.com/kb/2736233
 
 [3116180]: http://support.microsoft.com/kb/3116180
 [3116178]: http://support.microsoft.com/kb/3116178
@@ -354,4 +377,4 @@ Die folgenden Tabellen zeigen die Microsoft Security Response Center-Updates (MS
 [family-explain]: cloud-services-guestos-update-matrix.md#guest-os-family-version-and-release-explanation
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0121_2016-->

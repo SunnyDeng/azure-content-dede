@@ -13,7 +13,7 @@
   ms.topic="article"
   ms.tgt_pltfrm="Azure"
   ms.workload="na"
-  ms.date="12/08/2015"
+  ms.date="01/07/2016"
   ms.author="hascipio; v-divte"/>
 
 # Allgemeine Voraussetzungen für das Erstellen eines Angebots für den Azure Marketplace
@@ -45,9 +45,9 @@ Im nächsten Schritt werden die technischen Voraussetzungen für die einzelnen A
 
 | VM-Image | Entwicklerdienst | Datendienst | Lösungsvorlage |
 |-----|-----|-----|-----|
-| [Technische Voraussetzungen für VMs](marketplace-publishing-vm-image-creation-prerequisites.md) | [Technische Voraussetzungen für Entwicklerdienste](marketplace-publishing-dev-service-creation-prerequisites.md) | [Technische Voraussetzungen für Datendienste](marketplace-publishing-data-service-creation-prerequisites.md) | [Technische Voraussetzungen für Lösungsvorlagen](marketplace-publishing-solution-template-creation-prerequisites.md) |
+| [Technische Voraussetzungen für VMs](marketplace-publishing-vm-image-creation-prerequisites.md) | Technische Voraussetzungen für Entwicklerdienste | [Technische Voraussetzungen für Datendienste](marketplace-publishing-data-service-creation-prerequisites.md) | [Technische Voraussetzungen für Lösungsvorlagen](marketplace-publishing-solution-template-creation-prerequisites.md) |
 
 ## Weitere Informationen
 - [Erste Schritte: Veröffentlichen eines Angebots im Azure Marketplace](marketplace-publishing-getting-started.md)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0121_2016-->

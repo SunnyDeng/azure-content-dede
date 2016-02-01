@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="12/14/2015"
+   ms.date="01/20/2016"
    ms.author="alkohli" />
 
 # Ausführen eines Failovers und einer Notfallwiederherstellung für das StorSimple-Gerät
@@ -77,9 +77,13 @@ Führen Sie die folgenden Schritte aus, um Ihr Gerät auf einem physischen Zielg
 
 	1. Wählen Sie in der Liste der Volumecontainer die Volumecontainer aus, für die ein Failover durchgeführt werden soll.
 
-		>[AZURE.NOTE]**Nur die Volumecontainer mit zugeordneten Cloudmomentaufnahmen und Offlinevolumes werden angezeigt.** 1. Wählen Sie unter **Choose a target device for the volumes in the selected containers** ein Zielgerät aus der Dropdownliste der verfügbaren Geräte aus. Nur die Geräte, die über die verfügbare Kapazität verfügen, werden in der Dropdownliste angezeigt. 1. Überprüfen Sie abschließend die Failover-Einstellungen unter **Failover bestätigen**. Klicken Sie auf das Häkchensymbol ![Häkchensymbol](./media/storsimple-device-failover-disaster-recovery/IC740895.png).
+		>[AZURE.NOTE]**Nur die Volumecontainer mit zugeordneten Cloudmomentaufnahmen und Offlinevolumes werden angezeigt.**
 
-1. Wechseln Sie nach Abschluss des Failovers zur Seite **Geräte**.
+	1. Wählen Sie unter **Choose a target device for the volumes in the selected containers** ein Zielgerät aus der Dropdownliste der verfügbaren Geräte aus. Nur die Geräte, die über die verfügbare Kapazität verfügen, werden in der Dropdownliste angezeigt.
+
+	1. Überprüfen Sie abschließend die Failover-Einstellungen unter **Failover bestätigen**. Klicken Sie auf das Häkchensymbol ![Häkchensymbol](./media/storsimple-device-failover-disaster-recovery/IC740895.png).
+
+1. Ein Failoverauftrag wird erstellt, der über die Seite **Aufträge** überwacht werden kann. Enthält der Volumecontainer, für den Sie ein Failover durchgeführt haben, lokale Volumes, werden einzelne Wiederherstellungsaufträge für jedes lokale Volume (nicht für mehrstufige Volumes) im Container angezeigt. Diese Wiederherstellungsaufträge können einige Zeit in Anspruch nehmen. Der Failoverauftrag wird wahrscheinlich vorher abgeschlossen. Beachten Sie, dass diese Volumes erst nach Abschluss der Wiederherstellungsaufträge über lokale Garantien verfügen. Wechseln Sie nach Abschluss des Failovers zur Seite **Geräte**.
 
 	1. Wählen Sie das Gerät aus, das Sie als Zielgerät für den Failovervorgang verwendet haben.
 
@@ -153,12 +157,9 @@ Wenn StorSimple-Geräte direkt vor einem Notfall registriert wurden, müssen die
 
 ## Nächste Schritte
 
-Nach einem Failover müssen Sie möglicherweise folgende Schritte ausführen:
+- Nach einem Failover müssen Sie unter Umständen Ihr [StorSimple-Gerät deaktivieren oder löschen](storsimple-deactivate-and-delete-device.md).
 
-- [Deaktivieren des StorSimple-Geräts](storsimple-deactivate-and-delete-device.md#deactivate-a-device)
-- [Löschen des StorSimple-Geräts](storsimple-deactivate-and-delete-device.md#delete-a-device)
-
-Weitere Informationen zum Verwenden des StorSimple Manager-Diensts finden Sie unter [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
+- Weitere Informationen zum Verwenden des StorSimple Manager-Diensts finden Sie unter [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
  
 
-<!---HONumber=AcomDC_1217_2015--->
+<!---HONumber=AcomDC_0121_2016-->

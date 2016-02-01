@@ -17,7 +17,7 @@
 
 # Tutorial zu Service Bus-Relaymessaging
 
-Dieses Tutorial beschreibt das Erstellen einer einfachen Service Bus-Clientanwendung und eines Service Bus-Clientdiensts mithilfe der Service Bus-Relayfunktionen. Ein entsprechendes Tutorial, in dem das Erstellen einer Anwendung beschrieben wird, die die "Broker"- oder asynchronen Messagingfunktionen von Service Bus verwendet, finden Sie unter [.NET-Tutorial zu Service Bus-Brokermessaging](https://msdn.microsoft.com/library/hh367512.aspx). Ein ähnliches Tutorial, in dem die [Brokermessagingfunktionen](service-bus-messaging-overview.md/#Brokered-messaging) von Service Bus beschrieben werden, finden Sie unter [.NET-Tutorial zu Service Bus-Brokermessaging](https://msdn.microsoft.com/library/hh367512.aspx).
+Dieses Tutorial beschreibt das Erstellen einer einfachen Service Bus-Clientanwendung und eines Service Bus-Clientdiensts mithilfe der Service Bus-Relayfunktionen. Ein entsprechendes Tutorial, in dem die [Brokermessagingfunktionen](service-bus-messaging-overview.md#Brokered-messaging) von Service Bus beschrieben werden, finden Sie unter .[NET-Tutorial zu Service Bus-Brokermessaging](service-bus-brokered-tutorial-dotnet.md).
 
 Dieses Tutorial vermittelt Ihnen Grundkenntnisse zu den Schritten, die zum Erstellen einer Service Bus-Client- und -Dienstanwendung erforderlich sind. Ein Dienst ist wie sein Gegenstück in WCF ein Konstrukt, das mindestens einen Endpunkt bereitstellt. Dabei stellt jeder Endpunkt mindestens einen Dienstvorgang zur Verfügung. Der Endpunkt eines Diensts gibt eine Adresse an, unter der der Dienst gefunden werden kann, eine Bindung, die die Information enthält, dass ein Client mit dem Dienst kommunizieren muss, und einen Vertrag, der die Funktionen definiert, die der Dienst für seine Clients bereitstellt. Der Hauptunterschied zwischen einem WCF- und einem Service Bus-Dienst besteht darin, dass der Endpunkt in der Cloud und nicht lokal auf Ihrem Computer bereitgestellt wird.
 
@@ -31,9 +31,9 @@ Bei allen Themen in diesem Abschnitt wird davon ausgegangen, dass Sie Visual Stu
 
 Der erste Schritt umfasst die Einrichtung des Service Bus-Dienstnamespace und das Abrufen eines SAS-Schlüssels (Shared Access Signature). Ein Dienstnamespace stellt eine Anwendungsgrenze für jede Anwendung zur Verfügung, die durch Service Bus bereitgestellt wird. Die Kombination aus dem Dienstnamespace und dem SAS-Schlüssel stellt Anmeldeinformationen für Service Bus zur Authentifizierung des Zugriffs auf eine Anwendung zur Verfügung.
 
-Um einen Namespace zu erstellen, führen Sie die Schritte unter [Vorgehensweise: Erstellen oder Ändern eines Service Bus-Dienstnamespace](https://msdn.microsoft.com/library/hh690931.aspx) aus.
+1. Rufen Sie zum Erstellen eines Dienstnamespace das [klassische Azure-Portal][] auf. Klicken Sie auf der linken Seite auf **Service Bus** und anschließend auf **Erstellen**. Geben Sie einen Namen für den Namespace ein, und klicken Sie auf das Häkchen.
 
->[AZURE.NOTE]Sie müssen für Client- und Dienstanwendungen nicht denselben Dienstnamespace verwenden.
+	>[AZURE.NOTE]Sie müssen für Client- und Dienstanwendungen nicht denselben Dienstnamespace verwenden.
 
 1. Klicken Sie im Hauptfenster des [klassischen Azure-Portals][] auf den Namen des Dienstnamespaces, den Sie im vorherigen Schritt erstellt haben.
 
@@ -833,7 +833,7 @@ Stellen Sie sicher, dass der Dienst ausgeführt wird, bevor Sie den Client start
 
 ## Nächste Schritte
 
-Dieses Tutorial zeigte das Erstellen einer Service Bus-Clientanwendung und eines Service Bus-Clientdiensts mithilfe der Service Bus-Relayfunktionen. Ein ähnliches Tutorial, in dem die [Brokermessagingfunktionen](service-bus-messaging-overview.md/#Brokered-messaging) von Service Bus beschrieben werden, finden Sie unter [.NET-Tutorial zu Service Bus-Brokermessaging](https://msdn.microsoft.com/library/hh367512.aspx).
+Dieses Tutorial zeigte das Erstellen einer Service Bus-Clientanwendung und eines Service Bus-Clientdiensts mithilfe der Service Bus-Relayfunktionen. Ein ähnliches Tutorial, in dem die [Brokermessagingfunktionen](service-bus-messaging-overview.md#Brokered-messaging) von Service Bus beschrieben werden, finden Sie unter [.NET-Tutorial zu Service Bus-Brokermessaging](service-bus-brokered-tutorial-dotnet.md).
 
 Weitere Informationen zu Service Bus finden Sie in den folgenden Themen.
 
@@ -841,6 +841,7 @@ Weitere Informationen zu Service Bus finden Sie in den folgenden Themen.
 - [Service Bus – Grundlagen](service-bus-fundamentals-hybrid-solutions.md)
 - [Service Bus-Architektur](service-bus-architecture.md)
 
+[klassische Azure-Portal]: http://manage.windowsazure.com
 [klassischen Azure-Portals]: http://manage.windowsazure.com
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0121_2016-->

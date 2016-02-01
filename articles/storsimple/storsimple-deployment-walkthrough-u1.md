@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="01/05/2016"
+   ms.date="01/14/2016"
    ms.author="alkohli" />
 
 # Bereitstellen lokaler StorSimple-Geräte (Update 1)
@@ -284,9 +284,9 @@ Installations- und Konfigurationsanweisungen für MPIO auf einem StorSimple-Ger�
 
 ## Nächste Schritte
 
-Konfigurieren eines [virtuellen Geräts](storsimple-virtual-device.md)
+- Konfigurieren eines [virtuellen Geräts](storsimple-virtual-device.md)
 
-Verwenden des [StorSimple Manager-Diensts](storsimple-manager-service-administration.md) für das Verwalten Ihres StorSimple-Geräts
+- Verwenden des [StorSimple-Manager-Diensts](storsimple-manager-service-administration.md) für das Verwalten Ihres StorSimple-Geräts
  
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0121_2016-->

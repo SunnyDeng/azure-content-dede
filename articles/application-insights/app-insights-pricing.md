@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/18/2015" 
+	ms.date="01/15/2016" 
 	ms.author="awills"/>
 
 # Verwalten von Preisen und Kontingenten für Application Insights
@@ -67,7 +67,7 @@ Sie können jederzeit zur kostenlosen 30-Tage-Testversion des Premium-Tarifs wec
 * Sie können auch einzelne Datenpunkte in der Quelle während des Debuggens überprüfen:
  * Wenn Sie Ihre App im Debugmodus in Visual Studio ausführen, werden die Datenpunkte im Ausgabefenster protokolliert. 
  * Um Clientdatenpunkte anzuzeigen, öffnen Sie den Debuggingbereich Ihres Browserfensters (in der Regel über F12) und die Registerkarte „Netzwerk“.
-
+* Die Datenrate wird (standardmäßig) durch [adaptive Stichprobenerstellung](app-insights-sampling) reduziert. Dies bedeutet, dass bei steigender Verwendung Ihrer App die Telemetrierate nicht in dem von Ihnen erwarteten Maß ansteigt.
 
 ### Overage
 
@@ -85,6 +85,8 @@ Das Diagramm im unteren Bereich des Blatts mit der Preisübersicht zeigt das Dat
 ![Im unteren Bereich des Blatts mit der Preisübersicht](./media/app-insights-pricing/03-allocation.png)
 
 Klicken Sie auf das Diagramm, um weitere Details einzublenden, oder ziehen Sie den Mauszeiger darüber, und klicken Sie auf „(+)“, um einen Zeitraum im Detail anzuzeigen.
+
+Das Diagramm zeigt die Menge an Daten, die der Application Insights-Dienst nach Durchführung der [Stichproben](app-insights-sampling) empfängt.
 
 
 ## Datenrate
@@ -114,7 +116,7 @@ Tritt eine Drosselung auf, erhalten Sie zur Warnung eine Benachrichtigung über 
 
 *Wie kann ich die von meiner App gesendete Datenmenge reduzieren?*
 
-* Verwenden Sie [Stichproben](app-insights-sampling.md). Diese Technologie verringert die Datenrate, ohne die Metriken zu verzerren und ohne die Navigation zwischen verwandten Elementen bei der Suche zu stören. Die adaptive Stichprobenerstellung wird von ASP.NET SDK-2.0.0-beta3 standardmäßig aktiviert.
+* Verwenden Sie [Stichproben](app-insights-sampling.md). Diese Technologie verringert die Datenrate, ohne die Metriken zu verzerren und ohne die Navigation zwischen verwandten Elementen bei der Suche zu stören. Seit Version 2.0.0-beta3 von Application Insights SDK für ASP.NET ist die adaptive Stichprobenerstellung standardmäßig aktiviert.
 * [Deaktivieren Sie Telemetriedaten-Sammlungsmodule](app-insights-configuration-with-applicationinsights-config.md), die Sie nicht benötigen.
 
 
@@ -164,4 +166,4 @@ Die Gebühren für Application Insights werden Ihrer Azure-Rechnung hinzugefügt
 
  
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0121_2016-->

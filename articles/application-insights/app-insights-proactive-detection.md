@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/08/2016" 
+	ms.date="01/15/2016" 
 	ms.author="awills"/>
 
 #  Application Insights: Proaktive Erkennung
@@ -37,12 +37,12 @@ Derzeit überprüfen wir mit unseren Algorithmen die Seitenladezeiten, Reaktions
 
 Sie müssen keine Schwellenwerte festlegen und keine Regeln konfigurieren. Machine Learning- und Data Mining-Algorithmen werden verwendet, um ungewöhnliche Muster zu erkennen.
 
-Die proaktive Erkennung befindet sich derzeit in der Vorschauphase und ist noch nicht für alle Application Insights-Benutzer verfügbar. Wenn Sie sie ausprobieren möchten, wenden Sie sich an AppInsightsML@microsoft.com. Wir werden sie dann in Zusammenarbeit mit Ihnen einrichten.
+Wir freuen uns sehr über Ihr Feedback. Lassen Sie uns wissen, wie Sie von der proaktiven Erkennung profitieren, wie wir sie verbessern können und welche zusätzlichen Funktionen Sie sich wünschen. Sie können uns über die Smileys im Portal (lächelnd/finster dreinblickend) Feedback geben oder uns eine E-Mail sendenAppInsightsML@microsoft.com.
 
 ## Informationen zur proaktiven Warnung
 
 * *Warum habe ich diese E-Mail erhalten?*
- * Die von Ihrer Anwendung an Application Insights gesendeten Telemetriedaten wurden mit der proaktiven Erkennung analysiert. Dabei wurde ein Leistungsproblem in der Anwendung erkannt.
+ * Die von Ihrer Anwendung an Application Insights gesendeten Telemetriedaten wurden mit der proaktiven Erkennung analysiert. Dabei wurde ein Leistungsproblem in der Anwendung erkannt. 
 * *Bedeutet die Benachrichtigung, dass ich definitiv ein Problem habe?*
  * Nein. Es handelt sich lediglich um Vorschlag über etwas, das Sie sich möglicherweise genauer ansehen möchten. 
 * *Wie sollte ich vorgehen?*
@@ -56,7 +56,7 @@ Die proaktive Erkennung befindet sich derzeit in der Vorschauphase und ist noch 
 * *Welche Arten von Anomalien werden erkannt?*
  * Muster, deren Überprüfung für Sie selbst zeitaufwendig wäre Beispiel: schlechte Leistung bei einer bestimmten Kombination aus Ort, Uhrzeit und Plattform
 * *Werden alle der von Application Insights erfassten Daten analysiert?*
- * Derzeit nicht. Gegenwärtig werden Antwortzeiten auf Anforderungen und Seitenladezeiten analysiert. Die Analyse weiterer Metriken wird in Kürze zur Verfügung stehen. 
+ * Derzeit nicht. Gegenwärtig werden Antwortzeiten auf Anforderungen, Reaktionszeiten von Abhängigkeiten und Seitenladezeiten analysiert. Die Analyse weiterer Metriken wird in Kürze zur Verfügung stehen. 
 * *Kann ich meinen eigenen Erkennungsregeln für Anomalien erstellen?*
  * Bisher nicht. Sie können aber Folgendes tun:
  * [Einrichten von Warnungen](app-insights-alerts.md), die Sie informieren, wenn eine Metrik einen Schwellenwert überschreitet.
@@ -124,13 +124,13 @@ Da Sie im Web viele Ratschläge zur Verbesserung der Serverreaktionszeit und Sei
  
     Derzeit werden Sie an Personen gesendet, die über [Schreibzugriff für die Application Insights-Ressource](app-insights-resources-roles-access-control.md) verfügen.
 
-    Sie können die Liste mit den Empfängern auch auf dem Blatt „Proaktive Erkennung“ bearbeiten.
+    Sie können die Einstellungen für die Liste mit den Empfängern auch auf dem Blatt „Proaktive Erkennung“ bearbeiten.
 * *Ich möchte nicht mit diesen Nachrichten überflutet werden.*
- * Sie erhalten maximal eine Nachricht am Tag. Sie erhalten Nachrichten nicht mehrfach.
+ * Sie erhalten nur eine Nachricht pro Tag, in der das relevanteste Problem genannt wird, über das wir noch nicht berichtet haben. Sie erhalten Nachrichten nicht mehrfach.
 * *Erhalte ich eine Erinnerung, wenn ich nichts unternehme?*
- * Nein, Sie erhalten jeweils nur eine Nachricht zu einem Problem.
+ * Nein, Sie erhalten jeweils nur eine Nachricht zu einem Problem. 
 * *Ich habe die E-Mail verloren. Wo finde ich die Benachrichtigungen im Portal?*
- * Klicken Sie in der Application Insights-Übersicht Ihrer App auf die Kachel **Proaktive Erkennung**. 
+ * Klicken Sie in der Application Insights-Übersicht Ihrer App auf die Kachel **Proaktive Erkennung**. Dort finden Sie alle Benachrichtigungen der letzten 7 Tage.
 
 
 ## Verwandte Artikel
@@ -141,4 +141,4 @@ Da Sie im Web viele Ratschläge zur Verbesserung der Serverreaktionszeit und Sei
 * [Suchexplorer](app-insights-diagnostic-search.md)
  
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0121_2016-->

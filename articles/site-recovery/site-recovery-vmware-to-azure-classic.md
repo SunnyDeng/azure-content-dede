@@ -26,7 +26,7 @@ Der Dienst Azure Site Recovery unterstützt Ihre Strategie für Geschäftskontin
 
 ## Übersicht
 
-Dieser Artikel beschreibt folgende Vorgehensweisen:
+Dieser Artikel beschreibt die Vorgehensweise zum
 
 - **Replizieren virtueller VMware-Computer in Azure**: Sie stellen Site Recovery bereit, um die Replikation, das Failover und die Wiederherstellung von lokalen virtuellen VMware-Computern im Azure Speicher zu koordinieren.
 - **Replizieren physischer Server in Azure**: Sie stellen Azure Site Recovery bereit, um die Replikation, das Failover und die Wiederherstellung von lokalen physischen Windows- und Linux-Servern in Azure zu koordinieren.
@@ -214,7 +214,7 @@ Richten Sie ein Azure-Netzwerk ein, damit die virtuellen Azure-Computer nach dem
 1. Klicken Sie im Azure-Portal auf **Virtuelles Netzwerk erstellen**, und geben Sie einen Namen für das Netzwerk an. Geben Sie einen IP-Adressbereich und einen Subnetznamen an.
 2. Sie müssen dem Netzwerk ein VPN oder ExpressRoute hinzufügen, wenn Sie ein Failback ausführen. Das VPN oder ExpressRoute können dem Netzwerk auch nach dem Failover noch hinzugefügt werden. 
 
-Erfahren Sie mehr über [Azure-Netzwerke](virtual-networks-overview.md).
+Erfahren Sie mehr über [Azure-Netzwerke](../virtual-network/virtual-networks-overview.md).
 
 ## Schritt 3: Installieren der VMware-Komponenten
 
@@ -249,11 +249,11 @@ Wenn Sie virtuelle VMware-Computer replizieren möchten, installieren Sie die fo
 
 5. Geben Sie in **Interneteinstellungen** an, wie der Anbieter, der auf dem Server installiert wird, eine Internetverbindung mit Azure Site Recovery herstellt.
 
-- Wenn der Anbieter eine direkte Verbindung herstellt, wählen Sie **Ohne Proxy direkt verbinden** aus.
-- Wenn die Verbindung über einen derzeit auf dem Server eingerichteten Proxy hergestellt werden soll, wählen Sie **Mit vorhandenen Proxyeinstellungen verbinden** aus.
-- Wenn für den vorhandenen Proxy eine Authentifizierung erforderlich ist oder wenn Sie für den Anbieter einen benutzerdefinierten Proxy verwenden möchten, wählen Sie **Mit benutzerdefinierten Proxyeinstellungen verbinden** aus
-- Bei einem benutzerdefinierten Proxy müssen Sie die Adresse, den Port und Anmeldeinformationen eingeben.
-- Bei Verwendung eines Proxys müssen über ihn die folgenden URLs zugänglich sein:
+	- Wenn der Anbieter eine direkte Verbindung herstellt, wählen Sie **Ohne Proxy direkt verbinden** aus.
+	- Wenn die Verbindung über einen derzeit auf dem Server eingerichteten Proxy hergestellt werden soll, wählen Sie **Mit vorhandenen Proxyeinstellungen verbinden** aus.
+	- Wenn für den vorhandenen Proxy eine Authentifizierung erforderlich ist oder wenn Sie für den Anbieter einen benutzerdefinierten Proxy verwenden möchten, wählen Sie **Mit benutzerdefinierten Proxyeinstellungen verbinden** aus
+	- Bei einem benutzerdefinierten Proxy müssen Sie die Adresse, den Port und Anmeldeinformationen eingeben.
+	- Bei Verwendung eines Proxys müssen über ihn die folgenden URLs zugänglich sein:
 
 
 	![Firewall](./media/site-recovery-vmware-to-azure-classic/combined-wiz3.png)
@@ -295,6 +295,13 @@ Wenn Sie virtuelle VMware-Computer replizieren möchten, installieren Sie die fo
 13.  Überprüfen Sie unter **Zusammenfassung** die angezeigten Informationen.
 
 	![Zusammenfassung](./media/site-recovery-vmware-to-azure-classic/combined-wiz10.png)
+14. Starten Sie nach Abschluss der Installation über das Windows-Startmenü die Anwendung „Microsoft Azure Recovery Services Shell“. Führen Sie im daraufhin geöffneten Befehlsfenster den folgenden Befehlssatz aus, um die Proxyservereinstellungen einzurichten.
+
+		PS C:\Windows\System32> $pwd = ConvertTo-SecureString -String ProxyUserPassword
+		PS C:\Windows\System32> Set-OBMachineSetting -ProxyServer http://myproxyserver.domain.com -ProxyPort PortNumb – ProxyUserName domain\username -ProxyPassword $pwd
+		PS C:\Windows\System32> net stop obengine.exe
+	 
+
 
 ### Ausführen des Setupprogramms über die Befehlszeile
 
@@ -377,10 +384,10 @@ Eine Schutzgruppe enthält virtuelle Computer oder physische Server, die die gle
 
 	![Schutzgruppenreplikation](./media/site-recovery-vmware-to-azure-classic/protection-groups3.png)
 
-	- **Multi-VM-Konsistenz:** Wenn Sie diese Option aktivieren, werden freigegebene anwendungskonsistente Wiederherstellungspunkte auf den Computern in der Schutzgruppe erstellt. Diese Einstellung ist besonders wichtig, wenn auf allen Computern in der Schutzgruppe dieselbe Workload ausgeführt wird. Alle Computer werden an demselben Datenpunkt wiederhergestellt. Diese Option ist beim Replizieren von virtuellen VMware-Computern genauso verfügbar wie beim Replizieren von physischen Windows-/Linux-Servern.
+	- **Multi-VM-Konsistenz:** Wenn Sie diese Option aktivieren, werden freigegebene anwendungskonsistente Wiederherstellungspunkte auf den Computern in der Schutzgruppe erstellt. Diese Einstellung ist besonders wichtig, wenn auf allen Computern in der Schutzgruppe dieselbe Arbeitsauslastung ausgeführt wird. Alle Computer werden an demselben Datenpunkt wiederhergestellt. Diese Option ist beim Replizieren von virtuellen VMware-Computern genauso verfügbar wie beim Replizieren von physischen Windows-/Linux-Servern.
 	- **RPO-Schwellenwert:** Legt die RPO (Recovery Point Objective) fest. Wenn bei der Replikation für den kontinuierlichen Datenschutz der konfigurierte RPO-Schwellenwert überschritten wird, werden Warnungen generiert.
 	- **Aufbewahrungszeitraum des Wiederherstellungspunkts:** Gibt die Aufbewahrungsdauer an. Geschützte Computer können innerhalb dieses Zeitfensters an einem beliebigen Punkt wiederhergestellt werden.
-	- **Häufigkeit von Momentaufnahmen für Anwendungskonsistenz:** Gibt an, wie oft Wiederherstellungspunkte erstellt werden, die anwendungskonsistente Momentaufnahmen enthalten.
+	- **Anwendungskonsistente Momentaufnahmehäufigkeit:** Gibt an, wie oft Wiederherstellungspunkte erstellt werden, die anwendungskonsistente Momentaufnahmen enthalten.
 
 Wenn Sie auf das Häkchen klicken, wird eine Schutzgruppe mit dem von Ihnen angegebenen Namen erstellt. Außerdem wird eine zweite Schutzgruppe mit dem Namen <Schutzgruppename-Failback> erstellt. Diese Schutzgruppe wird verwendet, wenn Sie nach einem Failover zu Azure das Failback zum lokalen Standort ausführen. Sie können die Erstellung der Schutzgruppen auf der Seite **Geschützte Elemente** überwachen.
 
@@ -404,7 +411,7 @@ Im Folgenden wird beschrieben, wie Sie Windows-Computer vorbereiten, damit der P
 
 1.  Erstellen Sie ein Konto, mit dem der Prozessserver auf den Computer zugreifen kann. Das Konto muss über Administratorrechte verfügen (lokal oder für die Domäne). Beachten Sie, dass diese Anmeldeinformationen nur für die Pushinstallation des Mobilitätsdiensts verwendet werden.
 
-	>[AZURE.NOTE]Wenn Sie kein Domänenkonto verwenden, müssen Sie die Remote-Benutzerzugriffssteuerung auf dem lokalen Computer deaktivieren. Zu diesem Zweck fügen Sie in der Registrierung unter „HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System“ den DWORD-Eintrag „LocalAccountTokenFilterPolicy“ mit dem Wert 1 hinzu. Um den Registrierungseintrag über eine Befehlszeilenschnittstelle (CLI) hinzuzufügen, öffnen Sie eine CLI oder verwenden PowerShell und geben **`REG ADD HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1`** ein.
+	>[AZURE.NOTE]Wenn Sie kein Domänenkonto verwenden, müssen Sie die Remote-Benutzerzugriffssteuerung auf dem lokalen Computer deaktivieren. Zu diesem Zweck fügen Sie in der Registrierung unter „HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System“ den DWORD-Eintrag „LocalAccountTokenFilterPolicy“ mit dem Wert 1 hinzu. Um den Registrierungseintrag über eine Befehlszeilenschnittstelle hinzuzufügen, öffnen Sie eine Befehlszeile oder verwenden PowerShell und geben **`REG ADD HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1`** ein.
 
 2.  Wählen Sie in der Windows-Firewall des zu schützenden Computers **Eine App oder ein Feature durch die Windows-Firewall zulassen** aus, und aktivieren Sie **Datei- und Druckerfreigabe** und **Windows-Verwaltungsinstrumentation**. Für Computer, die einer Domäne angehören, können Sie die Firewallrichtlinie mit einem Gruppenrichtlinienobjekt konfigurieren.
 
@@ -442,13 +449,12 @@ Im Folgenden wird beschrieben, wie Sie Windows-Computer vorbereiten, damit der P
 
 ### Manuelles Installieren des Mobilitätsdiensts
 
-Die benötigten Installationsprogramme können Sie von xxx herunterladen.
+Die Installationsprogramme stehen unter „C:\\Programme (x86)\\Microsoft Azure Site Recovery\\home\\svsystems\\pushinstallsvc\\repository“ zur Verfügung.
 
 Quellbetriebssystem | Installationsdatei für den Mobilitätsdienst
 --- | ---
 Windows Server (nur 64 Bit) | Microsoft-ASR\_UA\_9.*.0.0\_Windows\_* release.exe
-CentOS 6.4, 6.5, 6.6 (nur 64 Bit) | Microsoft-ASR\_UA\_9.*.0.0\_RHEL6-64\_*release.tar.gz
-SUSE Linux Enterprise Server 11 SP3 (nur 64 Bit) | Microsoft-ASR\_UA\_9.*.0.0\_SLES11-SP3-64\_*release.tar.gz
+CentOS 6.4, 6.5, 6.6 (nur 64 Bit) | Microsoft-ASR\_UA\_9.*.0.0\_RHEL6-64\_*release.tar.gz SUSE Linux Enterprise Server 11 SP3 (nur 64 Bit) | Microsoft-ASR\_UA\_9.*.0.0\_SLES11-SP3-64\_*release.tar.gz
 Oracle Enterprise Linux 6.4, 6.5 (nur 64 Bit) | Microsoft-ASR\_UA\_9.*.0.0\_OL6-64\_*release.tar.gz
 
 
@@ -493,7 +499,7 @@ Nach dem Ausführen des Assistenten können Sie die IP-Adresse des Verwaltungsse
 
 1. Kopieren Sie anhand der obigen Tabelle das geeignete TAR-Archiv auf den zu schützenden Linux-Computer.
 2. Öffnen Sie ein Shellprogramm, und extrahieren Sie das gezippte TAR-Archiv in einen lokalen Pfad, indem Sie Folgendes ausführen: `tar -xvzf Microsoft-ASR_UA_8.5.0.0*`
-3. Erstellen Sie in dem lokalen Verzeichnis, in das Sie den Inhalt des TAR-Archivs extrahiert haben, die Datei „passphrase.txt“. Hierzu kopieren Sie die Passphrase aus „C:\\ProgramData\\Microsoft Azure Site Recovery\\private\\connection.passphrase“ auf dem Verwaltungsserver, und speichern Sie sie dann in „passphrase.txt“, indem Sie in der Shell *`echo <passphrase> >passphrase.txt`* ausführen.
+3. Erstellen Sie in dem lokalen Verzeichnis, in das Sie den Inhalt des TAR-Archivs extrahiert haben, die Datei „passphrase.txt“. Hierzu kopieren Sie die Passphrase aus „C:\\ProgramData\\Microsoft Azure Site Recovery\\private\\connection.passphrase“ auf dem Verwaltungsserver und speichern sie dann in „passphrase.txt“, indem Sie in der Shell *`echo <passphrase> >passphrase.txt`* ausführen.
 4. Installieren Sie den Mobilitätsdienst, indem Sie *`sudo ./install -t both -a host -R Agent -d /usr/local/ASR -i <IP address> -p <port> -s y -c https -P passphrase.txt`* eingeben.
 5. Geben Sie die interne IP-Adresse des Verwaltungsservers an, und stellen Sie sicher, dass Port 443 ausgewählt ist.
 
@@ -517,8 +523,8 @@ Zum Aktivieren des Schutzes fügen Sie einer Schutzgruppe virtuelle Computer und
 
 - Virtuelle VMware-Computer werden alle 15 Minuten ermittelt, und es kann länger als 15 Minuten dauern, bis sie nach der Ermittlung im Site Recovery-Portal angezeigt werden.
 - Es kann auch länger als 15 Minuten dauern, bis Umgebungsänderungen auf dem virtuellen Computer (z. B. die Installation von VMware-Tools) in Site Recovery aktualisiert werden.
-- Sie können den Zeitpunkt der letzten Ermittlung für die virtuellen VMware-Computer auf der Registerkarte **Konfigurationsserver** im Feld **Letzter Kontakt um** für den vCenter-Server oder den ESXi-Host überprüfen.
-- Wenn Sie bereits eine Schutzgruppe erstellt haben und anschließend einen vCenter-Server oder ESXi-Host hinzufügen, kann es länger als 15 Minuten dauern, bis das Azure Site Recovery-Portal aktualisiert wird und virtuelle Computer im Dialogfeld **Computer zu Schutzgruppe hinzufügen** angezeigt werden.
+- Sie können den Zeitpunkt der letzten Ermittlung für die VMware-VMs auf der Registerkarte **Konfigurationsserver** im Feld **Letzter Kontakt um** für den vCenter-Server oder den ESXi-Host überprüfen.
+- Wenn Sie bereits eine Schutzgruppe erstellt haben und anschließend einen vCenter-Server oder ESXi-Host hinzufügen, kann es länger als 15 Minuten dauern, bis das Azure Site Recovery-Portal aktualisiert wird und virtuelle Maschinen im Dialogfeld **Computer zu Schutzgruppe hinzufügen** angezeigt werden.
 - Wenn Sie einer Schutzgruppe sofort Computer hinzufügen möchten, ohne auf die planmäßige Ermittlung zu warten, markieren Sie den Konfigurationsserver (klicken Sie nicht darauf), und klicken Sie auf die Schaltfläche **Aktualisieren**.
 
 Beachten Sie außerdem Folgendes:
@@ -570,13 +576,13 @@ Außerdem können Sie den Schutzstatus unter **Geschützte Elemente** > <protect
 
 	-  **Name des virtuellen Azure-Computers**: Dies ist der Name, der dem Computer in Azure nach dem Failover zugewiesen wird. Der Name muss den Azure-Anforderungen entsprechen.
 	-  **Größe des virtuellen Azure-Computers**: Die Anzahl der Netzwerkkarten hängt von der Größe ab, die Sie für den virtuellen Zielcomputer angeben. Erfahren Sie mehr über [Größen und Adapter](virtual-machines-size-specs.md/#size-tables). Beachten Sie Folgendes:
-		- Wenn Sie die Größe für einen virtuellen Computer ändern und die Einstellungen speichern, wird die Anzahl der Netzwerkkarten beim nächsten Öffnen der Registerkarte **Konfigurieren** geändert. Die Anzahl der Netzwerkkarten der virtuellen Zielcomputer entspricht mindestens der Anzahl der Netzwerkkarten auf virtuellen Quellcomputern und der maximalen Anzahl der Netzwerkkarten, die von der ausgewählten Größe des virtuellen Computers unterstützt werden. 
+		- Wenn Sie die Größe für eine virtuelle Maschine ändern und die Einstellungen speichern, wird die Anzahl der Netzwerkkarten beim nächsten Öffnen der Registerkarte **Konfigurieren** geändert. Die Anzahl der Netzwerkkarten der virtuellen Zielcomputer entspricht mindestens der Anzahl der Netzwerkkarten auf virtuellen Quellcomputern und der maximalen Anzahl der Netzwerkkarten, die von der ausgewählten Größe des virtuellen Computers unterstützt werden. 
 			- Wenn die Anzahl der Netzwerkkarten des Quellcomputers maximal der Anzahl der Netzwerkkarten entspricht, die für die Größe des Zielcomputers zulässig ist, hat der Zielcomputer die gleiche Anzahl von Netzwerkkarten wie der Quellcomputer.
 			- Wenn die Anzahl der Netzwerkadapter für den virtuellen Quellcomputer die maximal zulässige Anzahl für die Größe des Zielcomputers übersteigt, wird die Anzahl verwendet, die maximal für die Größe des Zielcomputers zulässig ist.
 			- Ein Beispiel: Wenn ein Quellcomputer zwei Netzwerkkarten besitzt und der Zielcomputer aufgrund seiner Größe vier Netzwerkkarten unterstützt, erhält der Zielcomputer zwei Netzwerkkarten. Wenn der Quellcomputer dagegen zwei Netzwerkadapter besitzt und der Zielcomputer aufgrund seiner Größe nur einen Adapter unterstützt, erhält der Zielcomputer nur einen Adapter.
 		- Wenn der virtuelle Computer mehrere Netzwerkkarten besitzt, müssen alle Netzwerkkarten mit dem gleichen Azure-Netzwerk verbunden werden. 
-	- **Azure-Netzwerk**: Sie müssen ein Azure-Netzwerk angeben, mit dem die virtuellen Azure-Computer nach dem Failover verbunden werden. Wenn Sie keines angeben, werden die virtuellen Azure-Computer mit keinem Netzwerk verbunden. Außerdem müssen Sie ein Azure-Netzwerk angeben, wenn Sie ein Failback von Azure zum lokalen Standort ausführen möchten. Für das Failback wird eine VPN-Verbindung zwischen einem Azure-Netzwerk und dem lokalen Netzwerk benötigt.	
-	- **Azure-IP-Adresse/Subnetz**: Für jede Netzwerkkarte müssen Sie das Subnetz auswählen, mit dem der virtuelle Azure-Computer verbunden werden soll. Beachten Sie Folgendes:
+	- **Azure-Netzwerk**: Sie müssen ein Azure-Netzwerk angeben, mit dem die Azure-VMs nach dem Failover verbunden werden. Wenn Sie keines angeben, werden die virtuellen Azure-Computer mit keinem Netzwerk verbunden. Außerdem müssen Sie ein Azure-Netzwerk angeben, wenn Sie ein Failback von Azure zum lokalen Standort ausführen möchten. Für das Failback wird eine VPN-Verbindung zwischen einem Azure-Netzwerk und dem lokalen Netzwerk benötigt.	
+	- **Azure-IP-Adresse/Subnetz**: Für jede Netzwerkkarte müssen Sie das Subnetz auswählen, mit dem die Azure-VM verbunden werden soll. Beachten Sie Folgendes:
 		- Wenn die Netzwerkkarte des Quellcomputers für eine statische IP-Adresse konfiguriert wurde, können Sie für den virtuellen Azure-Computer eine statische IP-Adresse angeben. Wenn Sie keine statische IP-Adresse angeben, wird eine beliebige verfügbare IP-Adresse zugewiesen. Wenn die Ziel-IP-Adresse angegeben ist, sie aber bereits von einem anderen virtuellen Computer in Azure verwendet wird, tritt beim Failover ein Fehler auf. Wenn die Netzwerkkarte des Quellcomputers für DHCP konfiguriert ist, wird für Azure als Einstellung DHCP verwendet.
 
 ## Schritt 12: Erstellen eines Wiederherstellungsplans und Ausführen eines Failovers
@@ -615,8 +621,8 @@ Beachten Sie vor dem Ausführen eines Failovers Folgendes:
 
 Führen Sie ein Testfailover aus, um Ihre Prozesse für Failover und Wiederherstellung in einem isolierten Netzwerk zu simulieren, das keine Auswirkungen auf Ihre Produktionsumgebung hat. Bei dieser Simulation wird die reguläre Replikation ganz normal fortgesetzt. Das Testfailover wird an der Quelle initiiert, und Sie können es auf verschiedene Weise ausführen:
 
-- **Geben Sie kein Azure-Netzwerk an**: Wenn Sie das Testfailover ohne ein Netzwerk ausführen, wird beim Test einfach überprüft, ob die virtuellen Computer starten und ordnungsgemäß in Azure angezeigt werden. Die virtuellen Computer werden nach einem Failover nicht mit einem Azure-Netzwerk verbunden.
-- **Geben Sie ein Azure-Netzwerk an**: Bei dieser Art von Failover wird überprüft, ob die gesamte Replikationsumgebung wie erwartet hochgefahren wird und die betreffenden virtuellen Azure-Computer mit dem angegebenen Netzwerk verbunden werden. 
+- **Geben Sie kein Azure-Netzwerk an**: Wenn Sie das Testfailover ohne ein Netzwerk ausführen, wird beim Test einfach überprüft, ob die virtuellen Maschinen starten und ordnungsgemäß in Azure angezeigt werden. Die virtuellen Computer werden nach einem Failover nicht mit einem Azure-Netzwerk verbunden.
+- **Geben Sie ein Azure-Netzwerk an**: Bei dieser Art von Failover wird überprüft, ob die gesamte Replikationsumgebung wie erwartet hochgefahren wird und die betreffenden virtuellen Azure-Maschinen mit dem angegebenen Netzwerk verbunden werden. 
 
 
 1. Wählen Sie auf der Seite **Wiederherstellungspläne** den Plan aus, und klicken Sie auf **Testfailover**.
@@ -635,7 +641,7 @@ Führen Sie ein Testfailover aus, um Ihre Prozesse für Failover und Wiederherst
 
 5. Wenn das Failover die Endphase des Tests erreicht und Sie fertig sind, klicken Sie auf „Test abschließen“, um den Test zu beenden. Erfassen und speichern Sie unter „Hinweise“ alle Beobachtungen im Zusammenhang mit dem Testfailover.
 
-6. Klicken Sie auf **Das Testfailover ist abgeschlossen.**, um eine automatische Bereinigung der Testumgebung durchzuführen. Nach Abschluss dieses Vorgangs wird für das Testfailover der Status **Abgeschlossen** angezeigt. Alle Elemente und virtuellen Computer, die im Zuge des Testfailovers automatisch erstellt wurden, werden gelöscht. Beachten Sie: Sollte das Testfailover länger als zwei Wochen bestehen bleiben, wird sein Abschluss erzwungen.
+6. Klicken Sie auf **Das Test-Failover ist abgeschlossen.**, um eine automatische Bereinigung der Testumgebung durchzuführen. Nach Abschluss dieses Vorgangs wird für das Testfailover der Status **Abgeschlossen** angezeigt. Alle Elemente und virtuellen Computer, die im Zuge des Testfailovers automatisch erstellt wurden, werden gelöscht. Beachten Sie: Sollte das Testfailover länger als zwei Wochen bestehen bleiben, wird sein Abschluss erzwungen.
 
 
 	
@@ -656,7 +662,7 @@ Ein ungeplantes Failover wird in Azure initiiert und kann auch ausgeführt werde
 
 	>[AZURE.NOTE]Wenn Sie physische Server replizieren, ist diese Option nicht verfügbar. Sie müssen diese nach Möglichkeit manuell herunterfahren.
 	
-3. Überprüfen Sie unter **Failover bestätigen** die Failoverrichtung (zu Azure), und wählen Sie den Wiederherstellungspunkt aus, der für das Failover verwendet werden soll. Wenn Sie beim Konfigurieren der Replikationseigenschaften die Option für Multi-VM aktiviert haben, können Sie zum letzten anwendungs- oder absturzkonsistenten Wiederherstellungspunkt wiederherstellen. Sie können auch **Benutzerdefinierter Wiederherstellungspunkt** auswählen, um den Zustand eines früheren Zeitpunkts wiederherzustellen. Klicken Sie auf das Häkchen, um das Failover zu starten.
+3. Überprüfen Sie unter **Failover bestätigen** die Failover-Richtung (zu Azure), und wählen Sie den Wiederherstellungspunkt aus, der für das Failover verwendet werden soll. Wenn Sie beim Konfigurieren der Replikationseigenschaften die Option für Multi-VM aktiviert haben, können Sie zum letzten anwendungs- oder absturzkonsistenten Wiederherstellungspunkt wiederherstellen. Sie können auch **Benutzerdefinierter Wiederherstellungspunkt** auswählen, um den Zustand eines früheren Zeitpunkts wiederherzustellen. Klicken Sie auf das Häkchen, um das Failover zu starten.
 
 	![Virtuelle Computer hinzufügen](./media/site-recovery-vmware-to-azure-classic/unplanned-failover3.png)
 
@@ -675,7 +681,7 @@ Erfahren Sie, [wie Sie dies einrichten](http://social.technet.microsoft.com/wiki
 
 ## Bereitstellen zusätzlicher Prozessserver
 
-Wenn Sie Ihre Bereitstellung über 200 Quellcomputer hinaus horizontal hochskalieren müssen oder die gesamte tägliche Änderungsrate 2 TB überschreitet, benötigen Sie zusätzliche Prozessserver zur Bewältigung des Datenverkehrsaufkommens. Zum Einrichten eines zusätzlichen Prozessservers überprüfen Sie zunächst die Anforderungen unter [Zusätzliche Prozessserver](#additional-process-servers) und befolgen dann die folgenden Anweisungen. Nachdem Sie den Prozessserver eingerichtet haben, können Sie die Quellcomputer so konfigurieren, dass sie diesen verwenden.
+Wenn Sie Ihre Bereitstellung über 200 Quellcomputer hinaus horizontal hochskalieren müssen oder die gesamte tägliche Änderungsrate 2 TB überschreitet, benötigen Sie zusätzliche Prozessserver zur Bewältigung des Datenverkehrsaufkommens. Zum Einrichten eines zusätzlichen Prozess-Servers überprüfen Sie zunächst die Anforderungen unter [Zusätzliche Prozessserver](#additional-process-servers) und befolgen dann die folgenden Anweisungen. Nachdem Sie den Prozessserver eingerichtet haben, können Sie die Quellcomputer so konfigurieren, dass sie diesen verwenden.
 
 ### Einrichten eines zusätzlichen Prozessservers
 
@@ -719,7 +725,7 @@ Der Prozessserver kann virtuelle Computer auf einem vCenter-Server automatisch e
 
 **Rolle** | **Details** | **Berechtigungen**
 --- | --- | ---
-Rolle „Azure\_Site\_Recovery“ | Ermittlung von virtuellen VMware-Computern |Weisen Sie diese Berechtigungen für den v-Center-Server zu:<br/><br/>Datastore -> Allocate space, Browse datastore, Low level file operations, Remove file, Update virtual machine files<br/><br/>Netzwerk -> Network assign<br/><br/>Ressource -> Assign virtual machine to resource pool, Migrate powered off virtual machine, Migrate powered on virtual machine<br/><br/>Aufgaben -> Create task, update task<br/><br/>Virtueller Computer -> Konfiguration<br/><br/>Virtueller Computer -> Interact -> Answer question, Device connection, Configure CD media, Configure floppy media, Power off, Power on, VMware tools install<br/><br/>Virtueller Computer -> Inventory -> Create, Register, Unregister<br/><br/>Virtueller Computer -> Bereitstellung -> Allow virtual machine download, Allow virtual machine files upload<br/><br/>Virtueller Computer -> Momentaufnahmen -> Remove snapshots
+Rolle „Azure\_Site\_Recovery“ | Ermittlung von virtuellen VMware-Computern |Weisen Sie diese Berechtigungen für den v-Center-Server zu:<br/><br/>Datastore -> Allocate space, Browse datastore, Low level file operations, Remove file, Update virtual machine files<br/><br/>Network -> Network assign<br/><br/>Resource -> Assign virtual machine to resource pool, Migrate powered off virtual machine, Migrate powered on virtual machine<br/><br/>Tasks -> Create task, update task<br/><br/>Virtual machine -> Configuration<br/><br/>Virtual machine -> Interact -> Answer question, Device connection, Configure CD media, Configure floppy media, Power off, Power on, VMware tools install<br/><br/>Virtual machine -> Inventory -> Create, Register, Unregister<br/><br/>Virtual machine -> Provisioning -> Allow virtual machine download, Allow virtual machine files upload<br/><br/>Virtual machine -> Snapshots -> Remove snapshots
 vCenter-Benutzerrolle | Ermittlung von virtuellen VMware-Computern/Failover ohne Herunterfahren der Quell-VM | Weisen Sie diese Berechtigungen für den vCenter-Server zu:<br/><br/>Data Center object –> Propagate to Child Object, Rolle = Read-only <br/><br/>Der Benutzer wird auf Datencenterebene zugewiesen und hat daher Zugriff auf alle Objekte im Datencenter. Wenn Sie den Zugriff einschränken möchten, weisen Sie die Rolle **No access** mit **Propagate to child object** den untergeordneten Objekten zu (ESX-Hosts, Datenspeicher, VMs und Netzwerke). 
 vCenter-Benutzerrolle | Failover und Failback | Weisen Sie diese Berechtigungen für den vCenter-Server zu:<br/><br/>Datacenter object – Propagate to child object, Rolle = Azure\_Site\_Recovery<br/><br/>Der Benutzer wird auf Datencenterebene zugewiesen und hat daher Zugriff auf alle Objekte im Datencenter. Wenn Sie den Zugriff einschränken möchten, weisen Sie die Rolle **No access** mit dem Objekt **Propagate to child object** dem untergeordneten Objekt zu (ESX-Hosts, Datenspeicher, VMs und Netzwerke). 
 
@@ -727,18 +733,18 @@ vCenter-Benutzerrolle | Failover und Failback | Weisen Sie diese Berechtigungen 
 
 ## Hinweise und Informationen zu Drittanbietersoftware
 
-Do Not Translate or Localize
+Nicht übersetzen oder lokalisieren
 
-The software and firmware running in the Microsoft product or service is based on or incorporates material from the projects listed below (collectively, “Third Party Code”). Microsoft is the not original author of the Third Party Code. The original copyright notice and license, under which Microsoft received such Third Party Code, are set forth below.
+Die Software und Firmware, die im Microsoft-Produkt oder -Dienst ausgeführt wird, basiert auf oder enthält Material aus den unten aufgeführten Projekten (zusammen „Drittanbietercode“) Microsoft is the not original author of the Third Party Code. The original copyright notice and license, under which Microsoft received such Third Party Code, are set forth below.
 
-The information in Section A is regarding Third Party Code components from the projects listed below. Such licenses and information are provided for informational purposes only. This Third Party Code is being relicensed to you by Microsoft under Microsoft's software licensing terms for the Microsoft product or service.
+Die Informationen in Abschnitt A betreffen Codekomponenten von Drittanbietern aus den unten aufgezählten Projekten. Such licenses and information are provided for informational purposes only. This Third Party Code is being relicensed to you by Microsoft under Microsoft's software licensing terms for the Microsoft product or service.
 
-The information in Section B is regarding Third Party Code components that are being made available to you by Microsoft under the original licensing terms.
+Die Informationen in Abschnitt B betreffen Codekomponenten von Drittanbietern, die Microsoft Ihnen zu den ursprünglichen Lizenzbedingungen zur Verfügung stellt.
 
-The complete file may be found on the [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=529428). Microsoft reserves all rights not expressly granted herein, whether by implication, estoppel or otherwise.
+Die vollständige Datei steht im [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=529428) zur Verfügung. Microsoft reserves all rights not expressly granted herein, whether by implication, estoppel or otherwise.
 
 ## Nächste Schritte
 
 [Informieren Sie sich über das Failback](site-recovery-failback-azure-to-vmware-classic.md) von unter Azure ausgeführten Computern zur lokalen Umgebung.
 
-<!----HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0121_2016-->

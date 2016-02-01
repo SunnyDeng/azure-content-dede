@@ -12,7 +12,7 @@
    ms.topic="article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="10/12/2015"
+   ms.date="01/21/2016"
    ms.author="cherylmc"/>
 
 # ExpressRoute-Workflows für die Verbindungsbereitstellung und Verbindungszustände
@@ -39,7 +39,7 @@ Die folgende Abbildung und die zugehörigen Schritte zeigen die Aufgaben, die Si
 
 	![](./media/expressroute-workflows/expressroute-routing-workflow.png)
 
-5. Verknüpfen von virtuellen Netzwerken mit ExpressRoute-Verbindungen – Sie können virtuelle Netzwerke mit Ihrer ExpressRoute-Verbindung verknüpfen. Führen Sie die Schritte zum [Verknüpfen von VNets](expressroute-howto-linkvnets-classic.md) mit Ihrer Verbindung aus. Diese VNets können sich im gleichen Azure-Abonnement wie die ExpressRoute-Verbindung oder in einem anderen Abonnement befinden.
+5. Verknüpfen von virtuellen Netzwerken mit ExpressRoute-Verbindungen – Sie können virtuelle Netzwerke mit Ihrer ExpressRoute-Verbindung verknüpfen. Führen Sie die Schritte zum [Verknüpfen von VNets](expressroute-howto-linkvnet-arm.md) mit Ihrer Verbindung aus. Diese VNets können sich im gleichen Azure-Abonnement wie die ExpressRoute-Verbindung oder in einem anderen Abonnement befinden.
 
 
 ## Bereitstellungszustände von ExpressRoute-Verbindungen
@@ -117,8 +117,8 @@ Wenn der Zustand der angekündigten öffentlichen Präfixe *validation needed* l
 
 - Konfigurieren Sie Ihre ExpressRoute-Verbindung.
 
-	- [Erstellen einer ExpressRoute-Verbindung](expressroute-howto-circuit-classic.md)
-	- [Konfigurieren des Routings](expressroute-howto-routing-classic.md)
-	- [Verknüpfen eines VNet mit einer ExpressRoute-Verbindung](expressroute-howto-linkvnet-classic.md)
+	- [Erstellen einer ExpressRoute-Verbindung](expressroute-howto-circuit-arm.md)
+	- [Konfigurieren des Routings](expressroute-howto-routing-arm.md)
+	- [Verknüpfen eines VNet mit einer ExpressRoute-Verbindung](expressroute-howto-linkvnet-arm.md)
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0121_2016-->

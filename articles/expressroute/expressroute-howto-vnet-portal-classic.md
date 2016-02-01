@@ -14,7 +14,7 @@
    ms.topic="article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services" 
-   ms.date="10/19/2015"
+   ms.date="01/16/2016"
    ms.author="cherylmc"/>
 
 # Konfigurieren eines virtuellen Netzwerks für ExpressRoute
@@ -70,4 +70,4 @@ Diese Schritte führen Sie durch die Konfiguration eines virtuellen Netzwerks un
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0121_2016-->

@@ -517,8 +517,6 @@ Wiederholungsrichtlinien werden programmgesteuert festgelegt und können als Sta
 
 	namespaceManager.Settings.RetryPolicy = new RetryExponential(minBackoff: TimeSpan.FromSeconds(0.1),
 	                                                             maxBackoff: TimeSpan.FromSeconds(30),
-	                                                             deltaBackoff: TimeSpan.FromSeconds(2),
-	                                                             terminationTimeBuffer: TimeSpan.FromSeconds(5),
 	                                                             maxRetryCount: 3);
 
 Beachten Sie, das in diesem Code aus Gründen der Übersichtlichkeit benannte Parameter verwendet werden. Alternativ können Sie die Namen auslassen, da keiner der Parameter optional ist.
@@ -530,8 +528,6 @@ Legen Sie zum Festlegen der Standard Wiederholungsrichtlinie für alle Clients e
 
 	messagingFactory.RetryPolicy = new RetryExponential(minBackoff: TimeSpan.FromSeconds(0.1),
 	                                                    maxBackoff: TimeSpan.FromSeconds(30),
-	                                                    deltaBackoff: TimeSpan.FromSeconds(2),
-	                                                    terminationTimeBuffer: TimeSpan.FromSeconds(5),
 	                                                    maxRetryCount: 3);
 
 Um die Standard-Wiederholungsrichtlinie für einen Messaging Client festzulegen oder die Standardrichtlinie zu überschreiben, legen Sie seine **RetryPolicy**-Eigenschaft mit einer Instanz der erforderlichen Richtlinienklasse fest:
@@ -539,8 +535,6 @@ Um die Standard-Wiederholungsrichtlinie für einen Messaging Client festzulegen 
 ```csharp
 client.RetryPolicy = new RetryExponential(minBackoff: TimeSpan.FromSeconds(0.1),
 	                                        maxBackoff: TimeSpan.FromSeconds(30),
-	                                        deltaBackoff: TimeSpan.FromSeconds(2),
-	                                        terminationTimeBuffer: TimeSpan.FromSeconds(5),
 	                                        maxRetryCount: 3);
 ```
 
@@ -619,8 +613,6 @@ namespace RetryCodeSamples
 		            new RetryExponential(
 		                minBackoff: TimeSpan.FromSeconds(0),
 		                maxBackoff: TimeSpan.FromSeconds(30),
-		                deltaBackoff: TimeSpan.FromSeconds(1.75),
-		                terminationTimeBuffer: TimeSpan.FromSeconds(4),
 		                maxRetryCount: 3);
 
 		        // Policies cannot be specified on a per-operation basis.
@@ -644,8 +636,6 @@ namespace RetryCodeSamples
 		            new RetryExponential(
 		                minBackoff: TimeSpan.FromSeconds(1),
 		                maxBackoff: TimeSpan.FromSeconds(30),
-		                deltaBackoff: TimeSpan.FromSeconds(2),
-		                terminationTimeBuffer: TimeSpan.FromSeconds(5),
 		                maxRetryCount: 3);
 
 
@@ -664,8 +654,6 @@ namespace RetryCodeSamples
 		            new RetryExponential(
 		                minBackoff: TimeSpan.FromSeconds(0.1),
 		                maxBackoff: TimeSpan.FromSeconds(30),
-		                deltaBackoff: TimeSpan.FromSeconds(2),
-		                terminationTimeBuffer: TimeSpan.FromSeconds(5),
 		                maxRetryCount: 3);
 
 
@@ -955,13 +943,11 @@ Erwägen Sie, mit den folgenden Einstellungen für Wiederholungsvorgänge zu beg
 Das folgende Codebeispiel veranschaulicht die Verwendung des Anwendungsblocks zur Handhabung vorübergehender Fehler (Topaz), um eine benutzerdefinierte vorübergehende Fehlererkennungsstrategie, die für die Verwendung mit dem ADAL-Client geeignet ist, zu definieren. Mit dem Code wird wie in der Codeauflistung unten definiert eine neue **RetryPolicy**-Instanz basierend auf einer benutzerdefinierten Erkennungsstrategie des Typs **AdalDetectionStrategy** erstellt. Benutzerdefinierte Erkennungsstrategien für Topaz implementieren die **ITransientErrorDetectionStrategy**-Schnittstelle und geben „true“ zurück, wenn eine Wiederholung versucht wird, oder **false**, wenn der Fehler nicht vorläufig ist und eine Wiederholung nicht versucht werden soll.
 
 	using System;
-	using System.Collections.Generic;
 	using System.Linq;
 	using System.Net;
-	using System.Text;
 	using System.Threading.Tasks;
+	using Microsoft.Practices.TransientFaultHandling;
 	using Microsoft.IdentityModel.Clients.ActiveDirectory;
-	using Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling;
 
 	namespace RetryCodeSamples
 	{
@@ -1121,4 +1107,4 @@ Der Anwendungsblock zur Handhabung von vorübergehenden Fehlern verfügt über d
 | **Linear (festgelegtes Intervall)** | retryCount<br />retryInterval<br />fastFirstRetry<br /> | 10<br />1 Sekunde<br />true | Die Anzahl der Wiederholungsversuche.<br />Die Verzögerung zwischen Wiederholungen.<br />Gibt an, ob der erste Wiederholungsversuch sofort erfolgt. |
 Beispiele für die Verwendung des Anwendungsblocks zur Handhabung von vorübergehenden Fehlern finden Sie in den Abschnitten „Beispiele“ weiter vorne in diesem Handbuch für die Azure SQL-Datenbank mit ADO.NET und Azure Active Directory.
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0121_2016-->

@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/05/2015" 
+	ms.date="01/15/2016" 
 	ms.author="awills"/>
 
 # Application Insights für Windows-Desktop-Apps, -Dienste und -Workerrollen
@@ -23,7 +23,7 @@
 
 Mit Application Insights können Sie die Nutzung und Leistung Ihrer bereitgestellten Anwendung überwachen:
 
-Alle Windows-Anwendungen, einschließlich Desktop-Apps, Hintergrunddienste und Workerrollen, können das Application Insights SDK zum Senden von Telemetriedaten an Application Insights verwenden. Sie können das Applications Insights-SDK auch einem Klassenbibliotheksprojekt hinzufügen.
+Alle Windows-Anwendungen, einschließlich Desktop-Apps, Hintergrunddienste und Workerrollen, können das Application Insights SDK zum Senden von Telemetriedaten an Application Insights verwenden. Sie können das Application Insights-SDK auch einem Klassenbibliotheksprojekt hinzufügen.
 
 Sie können die gewünschten Standarddatensammler auswählen (z. B. zum Überwachen von Leistungsindikatoren oder Abhängigkeitsaufrufen) oder einfach die Kern-API verwenden und eigene Telemetriedaten schreiben.
 
@@ -33,13 +33,13 @@ Sie können die gewünschten Standarddatensammler auswählen (z. B. zum Überwac
 
 1.  Erstellen Sie im [Azure-Portal][portal] eine neue Application Insights-Ressource. Wählen Sie als Anwendungstyp "Windows Store-App" aus. 
 
-    ![Klicken Sie auf "Neu > Application Insights".](./media/app-insights-windows-desktop/01-new.png)
+    ![Klicken Sie auf "Neu > Application Insights"](./media/app-insights-windows-desktop/01-new.png)
 
     (Die Auswahl des Anwendungstyps bestimmt den Inhalt des Blatts "Übersicht" und die im [Metrik-Explorer][metrics] verfügbaren Eigenschaften.)
 
-2.  Erstellen Sie eine Kopie des Instrumentationsschlüssels.
+2.  Erstellen Sie eine Kopie des Instrumentationsschlüssels. Diesen finden Sie in der Dropdownliste „Essentials“ der neuen Ressource, die Sie gerade erstellt haben.
 
-    ![Klicken Sie auf "Eigenschaften", wählen Sie den Schlüssel aus, und drücken Sie STRG+C](./media/app-insights-windows-desktop/02-props.png)
+    ![Klicken Sie auf „Eigenschaften“, wählen Sie den Schlüssel aus, und drücken Sie STRG+C.](./media/app-insights-windows-desktop/02-props.png)
 
 ## <a name="sdk"></a>Installieren des SDK in Ihrer Anwendung
 
@@ -299,4 +299,4 @@ Den Code für den Persistenzkanal finden Sie auf [GitHub](https://github.com/Mic
 [CoreNuGet]: https://www.nuget.org/packages/Microsoft.ApplicationInsights
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0121_2016-->

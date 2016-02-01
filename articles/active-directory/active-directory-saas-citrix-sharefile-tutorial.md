@@ -2,7 +2,7 @@
     pageTitle="Lernprogramm: Azure Active Directory-Integration mit Citrix ShareFile | Microsoft Azure" 
     description="Erfahren Sie, wie Sie Citrix ShareFile mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags 
@@ -11,8 +11,8 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
-    ms.author="markvi" />
+    ms.date="01/14/2016" 
+    ms.author="jeedes" />
 
 #Lernprogramm: Azure Active Directory-Integration mit Citrix-ShareFile
 
@@ -21,7 +21,7 @@ In diesem Lernprogramm wird die Integration von Azure und Citrix ShareFile erlä
 -   Ein gültiges Azure-Abonnement
 -   Einen Citrix ShareFile-Mandanten
 
-Nach Abschluss dieses Tutorials können sich die Citrix ShareFile zugewiesenen Azure AD-Benutzer mittels einmaliger Anmeldung auf der Citrix ShareFile-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
+Nach Abschluss dieses Lernprogramms können sich die Citrix ShareFile zugewiesenen Azure AD-Benutzer mittels einmaliger Anmeldung auf der Citrix ShareFile-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie auch die [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md) nutzen.
 
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -76,11 +76,11 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-citrix-sharefile-tutorial/IC773624.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld **Sign On URL-Anmelde-URLCitrix ShareFile** die URL im Format „`https://<tenant-name>.shareFile.com`“ ein, und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld **Anmelde-URL für Citrix ShareFile** die URL im Format `https://<tenant-name>.shareFile.com` ein, und klicken Sie dann auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-citrix-sharefile-tutorial/IC773625.png "App-URL konfigurieren")
 
-4.  Klicken Sie zum Herunterladen des Zertifikats auf der Seite **Einmaliges Anmelden konfigurieren für Citrix ShareFile** auf **Zertifikat herunterladen**, und speichern Sie die Zertifikatsdatei auf Ihrem Computer.
+4.  Klicken Sie zum Herunterladen des Zertifikats auf der Seite **Einmaliges Anmelden konfigurieren um Citrix ShareFile** auf **Zertifikat herunterladen**, und speichern Sie das Zertifikat auf Ihrem Computer.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-citrix-sharefile-tutorial/IC773626.png "Einmaliges Anmelden konfigurieren")
 
@@ -88,21 +88,21 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
 6.  Klicken Sie oben auf der Symbolleiste auf **Admin**.
 
-7.  Klicken Sie im linken Navigationsbereich auf **Einmaliges Anmelden konfigurieren**.
+7.  Klicken Sie im linken Navigationsbereich auf **Configure Single Sign-On**.
 
     ![Kontoverwaltung](./media/active-directory-saas-citrix-sharefile-tutorial/IC773627.png "Kontoverwaltung")
 
-8.  Gehen Sie auf der Dialogseite **Konfiguration für einmaliges Anmelden/ SAML 2.0** unter **Grundlegende Einstellungen** folgendermaßen vor:
+8.  Gehen Sie auf der Dialogseite **Single Sign-On/ SAML 2.0 Configuration** unter **Basic Settings** folgendermaßen vor:
 
     ![Einmaliges Anmelden](./media/active-directory-saas-citrix-sharefile-tutorial/IC773628.png "Einmaliges Anmelden")
 
-    1.  Klicken Sie auf **SAML aktivieren**.
-    2.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Citrix ShareFile ** den Wert der **Entitäts-ID**, und fügen Sie ihn in das Textfeld **Ihr IDP-Aussteller/Ihre Entitäts-ID** ein.
-    3.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Citrix ShareFile** den Wert für **Remoteanmelde-URL**, und fügen Sie ihn in das Textfeld **Anmelde-URL** ein.
-    4.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Citrix ShareFile** den Wert für **Remoteabmelde-URL**, und fügen Sie ihn in das Textfeld **Abmelde-URL** ein.
-    5.  Klicken Sie neben dem Feld **X.509-Zertifikat** auf **Ändern**, und laden Sie dann das aus dem Azure AD-Portal heruntergeladene Zertifikat hoch. ![Basic Settings](./media/active-directory-saas-citrix-sharefile-tutorial/IC773629.png "Basic Settings")
+    1.  Aktivieren Sie **Enable SAML**.
+    2.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren um Citrix ShareFile ** den Wert der **Entitäts-ID**, und fügen Sie ihn in das Textfeld **Your IDP Issuer/ Entity ID** ein.
+    3.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren um Citrix ShareFile** den Wert für **Remoteanmelde-URL**, und fügen Sie ihn in das Textfeld **Login URL** ein.
+    4.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren um Citrix ShareFile** den Wert für **Remoteabmelde-URL**, und fügen Sie ihn in das Textfeld **Logout URL** ein.
+    5.  Klicken Sie auf **Change** neben dem Feld **X.509 Certificate**, und laden Sie dann das vom Azure AD-Portal heruntergeladene Zertifikat hoch.![Basic Settings](./media/active-directory-saas-citrix-sharefile-tutorial/IC773629.png "Basic Settings")
 
-9.  Klicken Sie im Citrix ShareFile-Verwaltungsportal auf **Speichern**.
+9.  Klicken Sie im Citrix ShareFile-Verwaltungsportal auf **Save**.
 
 10. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
 
@@ -115,15 +115,15 @@ Damit sich Azure AD-Benutzer bei Citrix ShareFile anmelden können, müssen sie
 
 1.  Melden Sie sich bei Ihrem **Citrix ShareFile**-Mandanten an.
 
-2.  Klicken Sie auf **Benutzer verwalten > Startseite zum Verwalten von Benutzern > + Mitarbeiter erstellen**.
+2.  Klicken Sie auf **Manage Users > Manage Users Home > + Create Employee**.
 
     ![Create Employee](./media/active-directory-saas-citrix-sharefile-tutorial/IC781050.png "Create Employee")
 
-3.  Geben Sie **E-Mail-Adresse**, **Vorname** und **Nachname** eines gültigen Azure AD-Kontos ein, das Sie bereitstellen möchten.
+3.  Geben Sie **EMail Address**, **First Name** und **Last Name** eines gültigen Azure AD-Kontos ein, das Sie bereitstellen möchten.
 
     ![Basic Information](./media/active-directory-saas-citrix-sharefile-tutorial/IC799951.png "Basic Information")
 
-4.  Klicken Sie auf **Benutzer hinzufügen**.
+4.  Klicken Sie auf **Add User**.
 
     >[AZURE.NOTE]Der Besitzer des AAD-Kontos erhält eine E-Mail mit einem Link zur Bestätigung des Kontos, bevor es aktiv wird.
 
@@ -141,10 +141,10 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
     ![Benutzer zuweisen](./media/active-directory-saas-citrix-sharefile-tutorial/IC773631.png "Benutzer zuweisen")
 
-3.  Wählen Sie den Testbenutzer aus, und klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen.
+3.  Wählen Sie den Testbenutzer aus, klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen.
 
     ![Ja](./media/active-directory-saas-citrix-sharefile-tutorial/IC767830.png "Ja")
 
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0121_2016-->

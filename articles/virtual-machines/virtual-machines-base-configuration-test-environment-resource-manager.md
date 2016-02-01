@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="Windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/11/2015"
+	ms.date="01/14/2016"
 	ms.author="josephd"/>
 
 # Testumgebung für die Basiskonfiguration mit Azure-Ressourcen-Manager
@@ -158,6 +158,8 @@ Als Nächstes konfigurieren Sie DC1 als Domänencontroller und DNS-Server für d
 	Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
 	Install-ADDSForest -DomainName corp.contoso.com -DatabasePath "F:\NTDS" -SysvolPath "F:\SYSVOL" -LogPath "F:\Logs"
 
+Beachten Sie, dass die Ausführung dieser Befehle einige Minuten in Anspruch nehmen kann.
+
 Stellen Sie nach dem Neustart des virtuellen Computers DC1 erneut eine Verbindung mit DC1 her.
 
 1.	Klicken Sie im Azure-Portal auf **Virtuelle Computer** und anschließend auf den virtuellen Computer **DC1**.
@@ -169,12 +171,15 @@ Stellen Sie nach dem Neustart des virtuellen Computers DC1 erneut eine Verbindun
 - Kennwort: [Kennwort des lokalen Administratorkontos]
 6.	Wenn ein Meldungsfeld der Remotedesktopverbindung zu Zertifikaten angezeigt wird, klicken Sie auf **Ja**.
 
-Als Nächstes erstellen Sie in Active Directory ein Benutzerkonto zum Anmelden bei Mitgliedscomputern der CORP-Domäne. Führen Sie mithilfe einer Windows PowerShell-Eingabeaufforderung auf Administratorebene nacheinander die folgenden Befehle aus:
+Als Nächstes erstellen Sie in Active Directory ein Benutzerkonto zum Anmelden bei Mitgliedscomputern der CORP-Domäne. Führen Sie diesen Befehl an einer Windows PowerShell-Eingabeaufforderung auf Administratorebene aus.
 
 	New-ADUser -SamAccountName User1 -AccountPassword (read-host "Set user password" -assecurestring) -name "User1" -enabled $true -PasswordNeverExpires $true -ChangePasswordAtLogon $false
-	Add-ADPrincipalGroupMembership -Identity "CN=User1,CN=Users,DC=corp,DC=contoso,DC=com" -MemberOf "CN=Enterprise Admins,CN=Users,DC=corp,DC=contoso,DC=com","CN=Domain Admins,CN=Users,DC=corp,DC=contoso,DC=com"
 
-Beachten Sie, dass durch den ersten Befehl die Aufforderung ausgelöst wird, das Kontokennwort für User1 einzugeben. Wählen Sie ein sicheres Kennwort aus, da dieses Konto für Remotedesktopverbindungen sämtlicher Mitgliedscomputer der CORP-Domäne verwendet wird. Sie können die Sicherheit des Kennworts unter [Password Checker: Using Strong Passwords](https://www.microsoft.com/security/pc-security/password-checker.aspx) (Kennwortprüfung – Verwenden sicherer Kennwörter) überprüfen. Zeichnen Sie das User1-Kontokennwort auf, und speichern Sie es an einem sicheren Ort.
+Beachten Sie, dass Sie dieser Befehl zur Eingabe des Kennworts für das Konto „User1“ auffordert. *Wählen Sie ein sicheres Kennwort aus*, da dieses Konto für Remotedesktopverbindungen sämtlicher Mitgliedscomputer der CORP-Domäne verwendet wird. Sie können die Sicherheit des Kennworts unter [Password Checker: Using Strong Passwords](https://www.microsoft.com/security/pc-security/password-checker.aspx) (Kennwortprüfung – Verwenden sicherer Kennwörter) überprüfen. Zeichnen Sie das User1-Kontokennwort auf, und speichern Sie es an einem sicheren Ort.
+
+Anschließend konfigurieren Sie das neue Konto „User1“ als Unternehmensadministrator. Führen Sie diesen Befehl an der Windows PowerShell-Eingabeaufforderung auf Administratorebene aus.
+
+	Add-ADPrincipalGroupMembership -Identity "CN=User1,CN=Users,DC=corp,DC=contoso,DC=com" -MemberOf "CN=Enterprise Admins,CN=Users,DC=corp,DC=contoso,DC=com","CN=Domain Admins,CN=Users,DC=corp,DC=contoso,DC=com"
 
 Schließen Sie die Remotedesktopsitzung mit DC1, und stellen Sie die Verbindung dann mit dem Konto „CORP\\User1“ wieder her.
 
@@ -291,7 +296,7 @@ Die Basiskonfiguration in Azure kann nun zur Anwendungsentwicklung, zu Testzweck
 
 ## Nächster Schritt
 
-- Verwenden Sie dies als Grundlage zum Erstellen der [simulierten Hybridcloud-Testumgebung](../virtual-network/virtual-networks-setup-simulated-hybrid-cloud-environment-testing.md).
+- [Fügen Sie eine neue virtuelle Maschine](virtual-machines-ps-create-preconfigure-windows-resource-manager-vms.md) zum Subnetz des Unternehmensnetzwerks hinzu, beispielsweise ein Subnetz unter Microsoft SQL Server.
 
 
 ## <a id="costs"></a>Minimizing the costs of test environment virtual machines in Azure (Minimieren der Kosten von Testumgebungen für virtuelle Computer in Azure)
@@ -321,4 +326,4 @@ Zum Starten der virtuellen Computer mit Azure PowerShell in der richtigen Reihen
 	Start-AzureRMVM -ResourceGroupName $rgName -Name "APP1"
 	Start-AzureRMVM -ResourceGroupName $rgName -Name "CLIENT1"
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0121_2016-->

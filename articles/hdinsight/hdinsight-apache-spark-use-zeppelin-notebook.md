@@ -13,13 +13,15 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/05/2016" 
+	ms.date="01/15/2016" 
 	ms.author="nitinme"/>
 
 
 # Verwenden von Zeppelin Notebooks mit Spark-Cluster in HDInsight (Linux)
 
 Erfahren Sie, wie Zeppelin Notebooks auf Spark-Clustern installiert und wie Zeppelin Notebooks verwendet werden.
+
+> [AZURE.IMPORTANT]Ein Zeppelin Notebook für Spark-Cluster in HDInsight dient zur Veranschaulichung der Verwendung von Zeppelin in einer Azure HDInsight Spark-Umgebung. Wenn Sie Notebooks zum Arbeiten mit HDInsight Spark verwenden möchten, empfehlen wir die Verwendung von Jupyter Notebooks. Jupyter Notebooks bieten zudem verschiedene Kerneloptionen, z. B. Scala, und werden weiterhin Verbesserungen von Features aufweisen. Hinweise zur Verwendung von Jupyter Notebooks mit HDInsight Spark finden Sie unter [Ausführen von Spark-SQL-Abfragen mit einem Jupyter Notebook](hdinsight-apache-spark-jupyter-spark-sql.md#jupyter).
 
 **Voraussetzungen:**
 
@@ -328,4 +330,4 @@ Nach dem Einrichten des SSH-Tunneling können Sie die folgenden Schritte ausfüh
 [azure-management-portal]: https://manage.windowsazure.com/
 [azure-create-storageaccount]: ../storage-create-storage-account/
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0121_2016-->

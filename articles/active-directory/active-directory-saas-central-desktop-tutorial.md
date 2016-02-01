@@ -2,7 +2,7 @@
     pageTitle="Tutorial: Azure Active Directory-Integration mit Central Desktop | Microsoft Azure" 
     description="Erfahren Sie, wie Sie Central Desktop mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags 
@@ -11,8 +11,8 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
-    ms.author="markvi" />
+    ms.date="01/14/2016" 
+    ms.author="jeedes" />
 
 #Tutorial: Azure Active Directory-Integration mit Central Desktop
 
@@ -62,9 +62,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Cen
     ![Central Desktop](./media/active-directory-saas-central-desktop-tutorial/IC769560.png "Central Desktop")
 ##Konfigurieren der einmaligen Anmeldung
 
-In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Central Desktop zu authentifizieren.  
-Im Rahmen dieses Verfahrens müssen Sie eine Base64-codierte Zertifikatsdatei in Ihren Central Desktop-Mandanten hochladen.  
-Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache\) weitere Informationen.
+In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Central Desktop zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie eine Base64-codierte Zertifikatsdatei in Ihren Central Desktop-Mandanten hochladen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [Konvertieren eines binären Zertifikats in eine Textdatei](http://youtu.be/PlgrzUZ-Y1o) weitere Informationen.
 
 
 
@@ -81,44 +79,44 @@ Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to con
 3.  Führen Sie auf der Seite **App-URL konfigurieren** die folgenden Schritte aus, und klicken Sie dann auf **Weiter**.
 
     -   Geben Sie im Textfeld **Central Desktop-Anmelde-URL** die URL Ihres Central Desktop-Mandanten ein (z. B. **http://contoso.centraldesktop.com*).
--   Geben Sie im Textfeld „Central Desktop-Antwort-URL“ Ihre Central Desktop-AssertionConsumerService-URL ein (z. B. https://contoso.centraldesktop.com/saml2-assertion.php).
+-   Geben Sie im Textfeld "Central Desktop-Antwort-URL" Ihre Central Desktop AssertionConsumerService-URL ein (z. B. https://contoso.centraldesktop.com/saml2-assertion.php).
 
     >[AZURE.NOTE]Sie finden den Wert in den Central Desktop-Metadaten (z. B. **http://contoso.centraldesktop.com*).
 
     ![App-URL konfigurieren](./media/active-directory-saas-central-desktop-tutorial/IC769561.png "App-URL konfigurieren")
 
-4.  Klicken Sie zum Herunterladen des Zertifikats auf der Seite **Einmaliges Anmelden konfigurieren für Central Desktop** auf **Zertifikat herunterladen**, und speichern Sie die Zertifikatsdatei auf Ihrem Computer.
+4.  Klicken Sie zum Herunterladen des Zertifikats auf der Seite **Einmaliges Anmelden bei Central Desktop konfigurieren** auf **Zertifikat herunterladen**, und speichern Sie das Zertifikat auf Ihrem Computer.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-central-desktop-tutorial/IC769562.png "Einmaliges Anmelden konfigurieren")
 
 5.  Melden Sie sich bei Ihrem **Central Desktop**-Mandanten an.
 
-6.  Wechseln Sie zu **Einstellungen**, klicken Sie auf **Erweitert**, und klicken Sie dann auf **Einmaliges Anmelden**.
+6.  Wechseln Sie zu **Settings**, klicken Sie auf **Advanced**, und klicken Sie dann auf **Single Sign On**.
 
     ![Setup - Advanced](./media/active-directory-saas-central-desktop-tutorial/IC769563.png "Setup - Advanced")
 
-7.  Führen Sie im Dialogfeld **Einstellungen für einmaliges Anmelden** die folgenden Schritte aus:
+7.  Führen Sie im Dialogfeld **Single Sign On Settings** die folgenden Schritte aus:
 
     ![Single Sign On Settings](./media/active-directory-saas-central-desktop-tutorial/IC769564.png "Single Sign On Settings")
 
-    1.  Aktivieren Sie **Einmaliges Anmelden für SAML v2 aktivieren**.
-    2.  Kopieren Sie im Azure AD-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Central Desktop** den Wert für **Aussteller-URL**, und fügen Sie ihn in das Textfeld **SSO-URL** ein.
-    3.  Kopieren Sie im Azure AD-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Central Desktop** den Wert für **Remoteanmelde-URL**, und fügen Sie ihn in das Textfeld **SSO-Anmelde-URL** ein.
-    4.  Kopieren Sie im Azure AD-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Central Desktop** den Wert für **Remoteabmelde-URL**, und fügen Sie ihn in das Textfeld **SSO-Abmelde-URL** ein.
+    1.  Aktivieren Sie **Enable SAML v2 Single Sign On**.
+    2.  Kopieren Sie im Azure AD-Portal auf der Dialogfeldseite **Einmaliges Anmelden bei Central Desktop konfigurieren** den Wert für **Aussteller-URL**, und fügen Sie ihn in das Textfeld **SSO URL** ein.
+    3.  Kopieren Sie im Azure AD-Portal auf der Dialogfeldseite **Einmaliges Anmelden bei Central Desktop konfigurieren** den Wert für **Remoteanmelde-URL**, und fügen Sie ihn in das Textfeld **SSO Login URL** ein.
+    4.  Kopieren Sie im Azure AD-Portal auf der Dialogfeldseite **Einmaliges Anmelden bei Central Desktop konfigurieren** den Wert für **Remoteabmelde-URL**, und fügen Sie ihn in das Textfeld **SSO Logout URL** ein.
 
-8.  Führen Sie im Abschnitt **Methode für die Nachrichtensignaturüberprüfung** die folgenden Schritte aus:
+8.  Führen Sie im Abschnitt **Message Signature Verification Method** die folgenden Schritte aus:
 
     ![Message Signature Verification Method](./media/active-directory-saas-central-desktop-tutorial/IC769565.png "Message Signature Verification Method")
 
-    1.  Aktivieren Sie **Zertifikat**.
-    2.  Wählen Sie in der Liste **SSO-Zertifikat** die Option **RSH SHA256** aus.
-    3.  Erstellen Sie eine Textdatei aus dem heruntergeladenen Zertifikat, kopieren Sie den Inhalt der Textdatei, und fügen Sie ihn in das Feld **SSO-Zertifikat** ein.  
+    1.  Wählen Sie **Certificate** aus.
+    2.  Wählen Sie in der Liste **SSO Certificate** die Option **RSH SHA256** aus.
+    3.  Erstellen Sie eine Textdatei aus dem heruntergeladenen Zertifikat, kopieren Sie den Inhalt der Textdatei, und fügen Sie ihn in das Feld **SSO Certificate** ein.  
 
-        >[AZURE.TIP]Weitere Informationen finden Sie unter [How to convert a binary certificate into a text file ](http://youtu.be/PlgrzUZ-Y1o) (Konvertieren eines binären Zertifikats in eine Textdatei; in englischer Sprache).
+        >[AZURE.TIP]Weitere Informationen finden Sie unter [Konvertieren eines binären Zertifikats in eine Textdatei](http://youtu.be/PlgrzUZ-Y1o).
 
-    4.  Aktivieren Sie **Link zur SAMLv2-Anmeldeseite anzeigen**.
+    4.  Aktivieren Sie **Display a link to your SAMLv2 login page**.
 
-9.  Klicken Sie auf **Aktualisieren**.
+9.  Klicken Sie auf **Update**.
 
 10. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
 
@@ -131,17 +129,17 @@ Damit sich AAD-Benutzer anmelden können, müssen sie in der Central Desktop-Anw
 
 1.  Melden Sie sich bei Ihrem Central Desktop-Mandanten an.
 
-2.  Wechseln Sie zu **Personen > Interne Mitglieder**.
+2.  Wechseln Sie zu **People > Internal Members**.
 
-3.  Klicken Sie auf **Interne Mitglieder hinzufügen**.
+3.  Klicken Sie auf **Add Internal Members**.
 
     ![People](./media/active-directory-saas-central-desktop-tutorial/IC781051.png "People")
 
-4.  Geben Sie im Textfeld **E-Mail-Adresse neuer Mitglieder** ein AAD-Konto ein, das Sie bereitstellen möchten, und klicken Sie dann auf **Weiter**.
+4.  Geben Sie im Textfeld **Email Address of New Members** ein AAD-Konto ein, das Sie bereitstellen möchten, und klicken Sie dann auf **Next**.
 
     ![Email Addresses of New Members](./media/active-directory-saas-central-desktop-tutorial/IC781052.png "Email Addresses of New Members")
 
-5.  Klicken Sie auf **Interne Mitglieder hinzufügen**.
+5.  Klicken Sie auf **Add Internal member(s)**.
 
     ![Add Internal Member](./media/active-directory-saas-central-desktop-tutorial/IC781053.png "Add Internal Member")
 
@@ -167,4 +165,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0121_2016-->

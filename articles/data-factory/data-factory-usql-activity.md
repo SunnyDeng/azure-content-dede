@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/27/2015" 
+	ms.date="01/19/2016" 
 	ms.author="spelluru"/>
 
 # Ausführen eines U-SQL-Skripts auf Azure Data Lake Analytics in Azure Data Factory 
@@ -48,7 +48,7 @@ Die folgende Tabelle enthält Beschreibungen der Eigenschaften, die in der JSON-
 
 Eigenschaft | Beschreibung | Erforderlich
 -------- | ----------- | --------
-Typ | Legen Sie die Typeigenschaft auf **AzureDataLakeAnalytics** fest. | Ja
+type | Legen Sie die Typeigenschaft auf **AzureDataLakeAnalytics** fest. | Ja
 accountName | Name des Azure Data Lake Analytics-Kontos. | Ja
 dataLakeAnalyticsUri | URI des Azure Data Lake Analytics-Kontos. | Nein 
 authorization | Der Autorisierungscode wird automatisch abgerufen, nachdem Sie im Data Factory-Editor auf die Schaltfläche **Autorisieren** geklickt und die OAuth-Anmeldung abgeschlossen haben. | Ja 
@@ -56,7 +56,45 @@ subscriptionId | Azure-Abonnement-ID | Nein (falls nicht angegeben, wird das Abo
 ResourceGroupName | Azure-Ressourcengruppenname | Nein (falls nicht angegeben, wird die Ressourcengruppe der Data Factory verwendet).
 sessionId | Sitzungs-ID aus der OAuth-Autorisierungssitzung. Jede Sitzungs-ID ist eindeutig und darf nur einmal verwendet werden. Sie wird im Data Factory-Editor automatisch generiert. | Ja
 
-   
+Der von Ihnen mithilfe der Schaltfläche **Autorisieren** generierte Autorisierungscode läuft nach einer gewissen Zeit ab. Die Zeiten bis zum Ablaufen der Autorisierungscodes für die verschiedenen Benutzerkonten finden Sie in der folgenden Tabelle. Unter Umständen wird Ihnen nach dem **Ablauf des Tokens** folgende Fehlermeldung angezeigt: „Fehler beim Anmeldevorgang: invalid\_grant – AADSTS70002: Fehler beim Überprüfen der Anmeldeinformationen. AADSTS70008: Die angegebene Zugriffserteilung ist abgelaufen oder wurde widerrufen. Ablaufverfolgungs-ID: d18629e8-af88-43c5-88e3-d8419eb1fca1 Korrelations-ID: fac30a0c-6be6-4e02-8d69-a776d2ffefd7 Zeitstempel: 2015-12-15 21:09:31Z“
+
+ 
+| Benutzertyp | Läuft ab nach |
+| :-------- | :----------- | 
+| Nicht-AAD-Benutzer(@hotmail.com, @live.com usw.) | 12 Stunden |
+| AAD-Benutzer, und die OAuth-basierte Quelle befindet sich in einem anderen [Mandanten](https://msdn.microsoft.com/library/azure/jj573650.aspx#BKMK_WhatIsAnAzureADTenant) als demjenigen für die Data Factory des Benutzers. | 12 Stunden |
+| AAD-Benutzer, und die OAuth-basierte Quelle befindet sich im gleichen Mandanten wie demjenigen für die Data Factory des Benutzers. | <p> Das Maximum beträgt 90 Tage, wenn ein Benutzer alle 14 Tage mindestens einmal Slices auf Basis seiner OAuth-basierten verknüpften Dienstquelle ausführt. </p><p>Wenn der Benutzer während der erwarteten 90 Tage in einem Zeitraum von 14 Tagen keine Slices für diese Quelle ausgeführt hat, laufen die Anmeldeinformation 14 Tage nach Ausführung des letzten Slices ohne Zeitverzug ab.</p> | 
+
+Um diesen Fehler zu vermeiden oder zu beheben, müssen Sie bei **Ablauf des Tokens** mithilfe der Schaltfläche **Autorisieren** eine erneute Autorisierung ausführen und den verknüpften Dienst erneut bereitstellen. Sie können auch programmgesteuert Werte für die Eigenschaften **sessionId** und **authorization** generieren. Verwenden Sie dazu den im folgenden Abschnitt bereitgestellten Code.
+
+  
+### So generieren Sie programmgesteuert Werte für „sessionId“ und „authorization“ 
+
+    if (linkedService.Properties.TypeProperties is AzureDataLakeStoreLinkedService ||
+        linkedService.Properties.TypeProperties is AzureDataLakeAnalyticsLinkedService)
+    {
+        AuthorizationSessionGetResponse authorizationSession = this.Client.OAuth.Get(this.ResourceGroupName, this.DataFactoryName, linkedService.Properties.Type);
+
+        WindowsFormsWebAuthenticationDialog authenticationDialog = new WindowsFormsWebAuthenticationDialog(null);
+        string authorization = authenticationDialog.AuthenticateAAD(authorizationSession.AuthorizationSession.Endpoint, new Uri("urn:ietf:wg:oauth:2.0:oob"));
+
+        AzureDataLakeStoreLinkedService azureDataLakeStoreProperties = linkedService.Properties.TypeProperties as AzureDataLakeStoreLinkedService;
+        if (azureDataLakeStoreProperties != null)
+        {
+            azureDataLakeStoreProperties.SessionId = authorizationSession.AuthorizationSession.SessionId;
+            azureDataLakeStoreProperties.Authorization = authorization;
+        }
+
+        AzureDataLakeAnalyticsLinkedService azureDataLakeAnalyticsProperties = linkedService.Properties.TypeProperties as AzureDataLakeAnalyticsLinkedService;
+        if (azureDataLakeAnalyticsProperties != null)
+        {
+            azureDataLakeAnalyticsProperties.SessionId = authorizationSession.AuthorizationSession.SessionId;
+            azureDataLakeAnalyticsProperties.Authorization = authorization;
+        }
+    }
+
+Details zu den im Code verwendeten Data Factory-Klassen finden Sie in den Themen [AzureDataLakeStoreLinkedService-Klasse](https://msdn.microsoft.com/library/microsoft.azure.management.datafactories.models.azuredatalakestorelinkedservice.aspx), [AzureDataLakeAnalyticsLinkedService-Klasse](https://msdn.microsoft.com/library/microsoft.azure.management.datafactories.models.azuredatalakeanalyticslinkedservice.aspx) und [AuthorizationSessionGetResponse-Klasse](https://msdn.microsoft.com/library/microsoft.azure.management.datafactories.models.authorizationsessiongetresponse.aspx). Sie müssen für die WindowsFormsWebAuthenticationDialog-Klasse einen Verweis hinzufügen auf: „Microsoft.IdentityModel.Clients.ActiveDirectory.WindowsForms.dll“.
+ 
  
 ## U-SQL-Aktivität für Data Lake Analytics 
 
@@ -117,7 +155,7 @@ Die folgende Tabelle beschreibt die Namen und Eigenschaften, die für diese Akti
 
 Eigenschaft | Beschreibung | Erforderlich
 :-------- | :----------- | :--------
-Typ | Die type-Eigenschaft muss auf **DataLakeAnalyticsU-SQL** festgelegt sein. | Ja
+type | Die type-Eigenschaft muss auf **DataLakeAnalyticsU-SQL** festgelegt sein. | Ja
 scriptPath | Der Pfad zum Ordner, der das U-SQL-Skript enthält. | Nein (wenn script verwendet wird)
 scriptLinkedService | Verknüpfter Dienst, der den Speicher, der das Skript enthält, mit der Data Factory verknüpft. | Nein (wenn script verwendet wird)
 script | Geben Sie ein Inlineskript anstelle von scriptPath und scriptLinkedService an. Beispiel: „script“ : „CREATE DATABASE test“. | Nein (wenn scriptPath and scriptLinkedService verwendet werden)
@@ -219,4 +257,4 @@ Die Werte für die Parameter **@in** und **@out** im oben dargestellten U-SQL-Sk
 
 Sie können in Ihrer Pipelinedefinition auch andere Eigenschaften wie etwa „degreeOfParallelism“ oder „priority“ für die Aufträge angeben, die im Azure Data Lake Analytics-Dienst ausgeführt werden.
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0121_2016-->

@@ -1,8 +1,8 @@
 <properties 
     pageTitle="Lernprogramm: Azure Active Directory-Integration mit Clarizen | Microsoft Azure" 
-    description="Erfahren Sie, wie Sie Clarizen mit Azure Active Directory verwenden können, um das einmalige Anmelden, automatisierte Bereitstellung und vieles mehr zu aktivieren." 
+    description="Erfahren Sie, wie Sie Clarizen mit Azure Active Directory verwenden können, um das einmalige Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags 
@@ -11,8 +11,8 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
-    ms.author="markvi" />
+    ms.date="01/14/2016" 
+    ms.author="jeedes" />
 
 #Lernprogramm: Azure Active Directory-Integration mit Clarizen
 
@@ -21,7 +21,7 @@ In diesem Lernprogramm wird die Integration von Azure und Clarizen erläutert. D
 -   Ein gültiges Azure-Abonnement
 -   Ein Clarizen-Abonnement, für das einmaliges Anmelden aktiviert ist
 
-Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie Clarizen zugewiesen haben, mittels einmaligen Anmeldens auf Ihrer Clarizen-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Sie können aber auch den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
+Nach Abschluss dieses Lernprogramms können sich die Clarizen zugewiesenen Azure AD-Benutzer mittels einmaligen Anmeldens auf Ihrer Clarizen-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie auch die [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md) nutzen.
 
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -55,7 +55,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Cla
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-clarizen-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie im **Suchfeld** den Suchbegriff **Clarizen** ein.
+6.  Geben Sie im **Suchfeld** als Suchbegriff **Clarizen** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-clarizen-tutorial/IC784680.png "Anwendungskatalog")
 
@@ -76,13 +76,13 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-clarizen-tutorial/IC784683.png "Einmaliges Anmelden konfigurieren")
 
-3.  Klicken Sie zum Herunterladen des Zertifikats auf der Seite **Einmaliges Anmelden konfigurieren für Clarizen** auf **Zertifikat herunterladen**, und speichern Sie das Zertifikat auf Ihrem Computer.
+3.  Klicken Sie zum Herunterladen des Zertifikats auf der Seite **Einmaliges Anmelden konfigurieren um Clarizen** auf **Zertifikat herunterladen**, und speichern Sie das Zertifikat auf Ihrem Computer.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-clarizen-tutorial/IC784684.png "Einmaliges Anmelden konfigurieren")
 
 4.  Melden Sie sich in einem anderen Webbrowserfenster bei der **Clarizen**-Unternehmenswebsite als Administrator an (z. B. **https://app2.clarizen.com/Clarizen/Pages/Service/Login.aspx*).
 
-5.  Klicken Sie auf Ihren Benutzernamen, und klicken Sie dann auf **Einstellungen**.
+5.  Klicken Sie auf Ihren Benutzernamen, und klicken Sie dann auf **Settings**.
 
     ![Einstellungen](./media/active-directory-saas-clarizen-tutorial/IC784685.png "Einstellungen")
 
@@ -95,8 +95,8 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
     ![Federated Authentication](./media/active-directory-saas-clarizen-tutorial/IC785892.png "Federated Authentication")
 
     1.  Klicken Sie auf **Upload**, um das heruntergeladene Zertifikat hochzuladen.
-    2.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Clarizen** den Wert für **Dienst-URL für einmalige Anmeldung**, und fügen Sie ihn in das Textfeld **Anmelde-URL** ein.
-    3.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Clarizen** den Wert für **Dienst-URL für einmaliges Abmelden**, und fügen Sie ihn ins Textfeld **Abmelde-URL** ein.
+    2.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren um Clarizen** den Wert für **Dienst-URL für einmalige Anmeldung**, und fügen Sie ihn in das Textfeld **Sign-in URL** ein.
+    3.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren um Clarizen** den Wert für **Dienst-URL für einmaliges Abmelden**, und fügen Sie ihn ins Textfeld **Sign-out URL** ein.
     4.  Aktivieren Sie **Use POST**.
     5.  Klicken Sie auf **Speichern**.
 
@@ -115,7 +115,7 @@ Damit sich Azure AD-Benutzer bei Clarizen anmelden können, müssen sie in Clar
 
     ![People](./media/active-directory-saas-clarizen-tutorial/IC784689.png "People")
 
-3.  Klicken Sie auf **Invite Users**.
+3.  Klicken Sie auf **Invite User**.
 
     ![Invite Users](./media/active-directory-saas-clarizen-tutorial/IC784690.png "Invite Users")
 
@@ -124,7 +124,7 @@ Damit sich Azure AD-Benutzer bei Clarizen anmelden können, müssen sie in Clar
     ![Invite People](./media/active-directory-saas-clarizen-tutorial/IC784691.png "Personen einladen")
 
     1.  Geben Sie im Textfeld **Email** die E-Mail-Adresse eines gültigen Azure Active Directory-Kontos ein, das Sie bereitstellen möchten.
-    2.  Klicken Sie auf **Einladen**.
+    2.  Klicken Sie auf **Invite**.
 
     >[AZURE.NOTE]Der Besitzer des Azure Active Directory-Kontos erhält eine E-Mail und folgt einem Link zur Bestätigung des Kontos, bevor es aktiv wird.
 
@@ -140,10 +140,10 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
     ![Benutzer zuweisen](./media/active-directory-saas-clarizen-tutorial/IC784692.png "Benutzer zuweisen")
 
-3.  Wählen Sie den Testbenutzer aus, und klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen.
+3.  Wählen Sie den Testbenutzer aus, klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen.
 
     ![Ja](./media/active-directory-saas-clarizen-tutorial/IC767830.png "Ja")
 
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0121_2016-->

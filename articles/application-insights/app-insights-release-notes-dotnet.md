@@ -60,8 +60,8 @@ Informationen dazu finden Sie unter [Application Insights – Beginnen Sie damit
 
 
 ## Version 2.0.0-beta2
-- Zusätzliche Unterstützung für ITelemetryProcessor und die Möglichkeit, per Code oder Konfigurationsdatei zu konfigurieren. [Aktiviert das benutzerdefinierte Filtern im SDK](app-insights-api-telemetry-processors/#telemetry-processors)
-- Kontextinitialisierer wurden entfernt. Verwenden Sie stattdessen [Telemetrieinitialisierer]( https://azure.microsoft.com/documentation/articles/app-insights-api-telemetry-processors/#telemetry-initializers).
+- Zusätzliche Unterstützung für ITelemetryProcessor und die Möglichkeit, per Code oder Konfigurationsdatei zu konfigurieren. [Aktiviert das benutzerdefinierte Filtern im SDK](app-insights-api-filtering-sampling/#filtering)
+- Kontextinitialisierer wurden entfernt. Verwenden Sie stattdessen [Telemetrieinitialisierer](https://azure.microsoft.com/documentation/articles/app-insights-api-filtering-sampling/#filtering).
 - Application Insights wurde für .NET Framework 4.6 aktualisiert. 
 - Die Namen von benutzerdefinierten Ereignissen können jetzt bis zu 512 Zeichen enthalten.
 - Die Eigenschaft ```OperationContext.Name``` wurde umbenannt in ```RootName```.
@@ -136,4 +136,4 @@ Für ältere Versionen sind keine Versionshinweise verfügbar.
 
  
 
-<!---HONumber=AcomDC_0114_2016--->
+<!---HONumber=AcomDC_0121_2016-->

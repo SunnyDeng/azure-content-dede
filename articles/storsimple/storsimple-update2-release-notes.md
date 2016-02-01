@@ -68,7 +68,7 @@ Die folgende Tabelle enthält eine Zusammenfassung der Probleme, die in Update 
 | Nr. | Funktion | Problem | Gilt für das physische Gerät | Gilt für das virtuelle Gerät |
 |-----|---------|-------|--------------------------------|--------------------------------|
 | 1 | Netzwerkschnittstellen | Nach dem Upgrade auf Update 1 hat der StorSimple Manager-Dienst gemeldet, dass die Ports „Data2“ und „Data3“ auf einem Controller Fehler verursachen. Dieses Problem wurde behoben. | Ja | Nein |
-| 2 | Aktualisierungen | Nach dem Upgrade auf Update 1 traten im Azure-Portal auf mehreren Geräten akustische Alarme auf. Dieses Problem wurde behoben. | Ja | Nein |
+| 2 | Aktualisierungen | Nach dem Upgrade auf Update 1 traten im klassischen Azure-Portal auf mehreren Geräten akustische Alarme auf. Dieses Problem wurde behoben. | Ja | Nein |
 | 3 | Openstack-Authentifizierung | Wenn Sie Openstack als Clouddienstanbieter verwenden, haben Sie möglicherweise eine Fehlermeldung erhalten, dass die Zeichenfolge zur Cloudauthentifizierung zu lang war. Dies wurde korrigiert. | Ja | Nein |
 
 
@@ -113,4 +113,4 @@ Mit dieser Version werden der Treiber und die Datenträgerfirmware auf Ihrem Ger
 
 Dieses Update kann nicht auf das virtuelle Gerät angewendet werden. Es müssen neue virtuelle Geräte erstellt werden.
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0121_2016-->

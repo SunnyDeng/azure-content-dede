@@ -117,15 +117,15 @@ So überprüfen Sie die Version des VM-Agents auf virtuellen Windows-Computern
 ## Problembehandlung für Probleme mit VM-Momentaufnahmen
 Bei der VM-Sicherung werden Momentaufnahmenbefehle an den zugrunde liegenden Speicher ausgegeben. Wenn Sie bei der Ausführung von Momentaufnahmenaufgaben keinen Zugriff auf Speicherung oder Verzögerung haben, ist der Sicherungsvorgang unter Umständen nicht erfolgreich. Es kann die unten angegebenen Gründe haben, wenn für Momentaufnahmenaufgaben ein Fehler auftritt.
 
-1. Netzwerkzugriff auf Storage wird per NSG blockiert<br> Lesen Sie weitere Informationen zum [Aktivieren des Netzwerkzugriffs](backup-azure-vms-prepare.md#2-network-connectivity) auf Storage durch das Setzen von IPs auf eine Positivliste oder per Proxyserver. 
-2.  VMs mit konfigurierter SQL Server-Sicherung können zu Verzögerungen bei der Momentaufnahmenaufgabe führen <br> Standardmäßig wird bei der VM-Sicherung eine vollständige VSS-Sicherung auf Windows-VMs ausgegeben. Auf VMs, auf denen SQL-Server ausgeführt werden und die SQL Server-Sicherung konfiguriert ist, kann dies eine Verzögerung bei der Ausführung von Momentaufnahmen zur Folge haben. Legen Sie den folgenden Registrierungsschlüssel fest, wenn bei Ihnen aufgrund von Problemen mit Momentaufnahmen Sicherungsfehler auftreten. 
+1. Netzwerkzugriff auf Storage wird per NSG blockiert<br> Lesen Sie weitere Informationen zum [Aktivieren des Netzwerkzugriffs](backup-azure-vms-prepare.md#2-network-connectivity) auf Storage durch das Setzen von IPs auf eine Positivliste oder per Proxyserver.
+2.  VMs mit konfigurierter SQL Server-Sicherung können zu Verzögerungen bei der Momentaufnahmenaufgabe führen <br> Standardmäßig wird bei der VM-Sicherung eine vollständige VSS-Sicherung auf Windows-VMs ausgegeben. Auf VMs, auf denen SQL-Server ausgeführt werden und die SQL Server-Sicherung konfiguriert ist, kann dies eine Verzögerung bei der Ausführung von Momentaufnahmen zur Folge haben. Legen Sie den folgenden Registrierungsschlüssel fest, wenn bei Ihnen aufgrund von Problemen mit Momentaufnahmen Sicherungsfehler auftreten.
 
 	```
 	[HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\BCDRAGENT]
 	"USEVSSCOPYBACKUP"="TRUE"
 	```
-3.  Der VM-Status wird falsch gemeldet, da die VM im RDP heruntergefahren ist. <br> Wenn Sie die virtuelle Maschine im RDP heruntergefahren haben, sollten Sie im Portal überprüfen, ob der VM-Status richtig wiedergegeben wird. Falls nicht, beenden Sie die VM im Portal, indem Sie im VM-Dashboard die Option „Herunterfahren“ verwenden. 
-4.  Viele VMs desselben Clouddiensts sind so konfiguriert, dass die Sicherung zur selben Zeit durchgeführt wird.<br> Die bewährte Methode besteht darin, für die VMs eines Clouddiensts unterschiedliche Sicherungszeitpläne zu verwenden. 
+3.  Der VM-Status wird falsch gemeldet, da die VM im RDP heruntergefahren ist. <br> Wenn Sie die virtuelle Maschine im RDP heruntergefahren haben, sollten Sie im Portal überprüfen, ob der VM-Status richtig wiedergegeben wird. Falls nicht, beenden Sie die VM im Portal, indem Sie im VM-Dashboard die Option „Herunterfahren“ verwenden.
+4.  Viele VMs desselben Clouddiensts sind so konfiguriert, dass die Sicherung zur selben Zeit durchgeführt wird.<br> Die bewährte Methode besteht darin, für die VMs eines Clouddiensts unterschiedliche Sicherungszeitpläne zu verwenden.
 5.  Die VM wird bei hoher CPU-/Arbeitsspeicherauslastung ausgeführt.<br> Wenn die virtuelle Maschine bei hoher CPU-Auslastung (> 90 %) oder Arbeitsspeicherauslastung ausgeführt wird, wird die Momentaufnahmenaufgabe in die Warteschlange eingereiht und verzögert und erreicht schließlich die Zeitüberschreitung. Versuchen Sie es in diesem Fall mit bedarfsgesteuerten Sicherungen.
 
 <br>
@@ -149,4 +149,6 @@ Nachdem die Namensauflösung richtig eingerichtet wurde, muss auch der Zugriff a
     - Wenn Netzwerkeinschränkung bestehen (beispielsweise eine Netzwerksicherheitsgruppe) sollte ein HTTP-Proxyserver zum Weiterleiten des Datenverkehrs bereitgestellt werden. Schritte zum Bereitstellen eines HTTP-Proxy-Servers finden Sie [hier](backup-azure-vms-prepare.md#2-network-connectivity).
     - Fügen Sie der NSG (falls in der Organisation vorhanden) Regeln für den Zugriff auf das Internet über den HTTP-Proxy hinzu.
 
-<!---HONumber=AcomDC_0114_2016-->
+>[AZURE.NOTE]Für die VM-Sicherung mithilfe von IaaS muss im Gastbetriebssystem die DHCP-Option aktiviert sein. Wenn Sie eine statische private IP-Adresse benötigen, sollten Sie diese über die Plattform konfigurieren. Die DHCP-Option innerhalb des virtuellen Computers sollte aktiviert bleiben. Weitere Informationen zum Festlegen einer statischen internen IP-Adresse finden Sie [hier](virtual-networks-reserved-private-ip.md).
+
+<!---HONumber=AcomDC_0121_2016-->

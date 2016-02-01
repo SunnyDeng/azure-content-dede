@@ -6,7 +6,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/20/2015" 
+	ms.date="01/20/2016" 
 	ms.author="adhurwit"/>
 
 # Verwenden von SQL Server Management Studio in Azure RemoteApp zum Herstellen einer Verbindung mit SQL-Datenbank
@@ -137,7 +137,7 @@ Wenn Sie in Azure Active Directory auf einen Benutzer zugreifen, können Sie auf
 
 Nach Abschluss aller oben genannten Schritte können Sie den Azure RemoteApp-Client ausführen und sich mit einem zugewiesenen Benutzer anmelden. SSMS wird als eine Ihrer Anwendungen angezeigt. Sie können sie so ausführen, als ob sie auf Ihrem Computer mit Zugriff auf Azure SQL Server installiert wäre.
 
-Weitere Informationen zum Herstellen der Verbindung mit SQL-Datenbank finden Sie unter [Herstellen einer Verbindung mit SQL Server Management Studio (SSMS)](sql-database-connect-to-database.md).
+Weitere Informationen zum Herstellen der Verbindung mit SQL-Datenbank finden Sie unter [Herstellen einer Verbindung mit einer Azure SQL-Datenbank mit SQL Server Management Studio und Ausführen einer T-SQL-Beispielabfrage](sql-database-connect-query-ssms.md).
 
 
 Das ist erst einmal alles. Viel Spaß!
@@ -152,4 +152,4 @@ Das ist erst einmal alles. Viel Spaß!
 [5]: ./media/sql-database-ssms-remoteapp/publish.png
 [6]: ./media/sql-database-ssms-remoteapp/user.png
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0121_2016-->

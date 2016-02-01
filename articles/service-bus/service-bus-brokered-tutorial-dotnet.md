@@ -31,7 +31,7 @@ Es folgen einige administrative und vorbereitende Schritte, die Sie ausführen s
 
 ### Erstellen eines Dienstnamespace und Abrufen eines SAS-Schlüssels
 
-1. Um einen Dienstnamespace im Azure-Portal zu erstellen, führen Sie die Schritte unter [Gewusst wie: Erstellen oder Ändern eines Service Bus-Dienstnamespace](https://msdn.microsoft.com/library/azure/hh690931.aspx) aus.
+1. Rufen Sie zum Erstellen eines Dienstnamespace das [klassische Azure-Portal][] auf. Klicken Sie auf der linken Seite auf **Service Bus** und anschließend auf **Erstellen**. Geben Sie einen Namen für den Namespace ein, und klicken Sie auf das Häkchen.
 
 1. Klicken Sie im Hauptfenster des [klassischen Azure-Portals][] auf den Namen des Namespaces, den Sie im vorherigen Schritt erstellt haben.
 
@@ -642,7 +642,7 @@ Klicken Sie in Visual Studio im Menü **Erstellen** auf **Projektmappe erstellen
 
 ## Nächste Schritte
 
-In diesem Lernprogramm wurde gezeigt, wie Sie eine Service Bus-Clientanwendung und den dazugehörigen Dienst mit den Service Bus-Brokermessagingfunktionen erstellen. Ein ähnliches Lernprogramm, in dem die [Relaymessagingfunktionen](service-bus-messaging-overview.md/#Relayed-messaging) von Service Bus beschrieben werden, finden Sie unter [Lernprogramm zu Service Bus-Relaymessaging](service-bus-relay-tutorial.md).
+In diesem Lernprogramm wurde gezeigt, wie Sie eine Service Bus-Clientanwendung und den dazugehörigen Dienst mit den Service Bus-Brokermessagingfunktionen erstellen. Ein ähnliches Lernprogramm, in dem die [Relaymessagingfunktionen](service-bus-messaging-overview.md#Relayed-messaging) von Service Bus beschrieben werden, finden Sie unter [Lernprogramm zu Service Bus-Relaymessaging](service-bus-relay-tutorial.md).
 
 Weitere Informationen zu [Service Bus](https://azure.microsoft.com/services/service-bus/) finden Sie in den folgenden Themen.
 
@@ -650,7 +650,8 @@ Weitere Informationen zu [Service Bus](https://azure.microsoft.com/services/serv
 - [Service Bus – Grundlagen](service-bus-fundamentals-hybrid-solutions.md)
 - [Service Bus-Architektur](service-bus-architecture.md)
 
+[klassische Azure-Portal]: http://manage.windowsazure.com
 [klassischen Azure-Portal]: http://manage.windowsazure.com
 [klassischen Azure-Portals]: http://manage.windowsazure.com
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0121_2016-->

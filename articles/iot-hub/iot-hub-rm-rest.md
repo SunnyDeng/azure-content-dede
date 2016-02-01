@@ -24,6 +24,8 @@
 
 Sie können die [REST-API für IoT-Hub-Ressourcenanbieter][lnk-rest-api] verwenden, um Azure IoT-Hubs programmgesteuert zu erstellen und zu verwalten. In diesem Tutorial erfahren Sie, wie Sie mithilfe des REST-API für IoT-Hub-Ressourcenanbieter mit einem C#-Programm einen IoT-Hub erstellen.
 
+> [AZURE.NOTE]Azure verfügt über zwei verschiedene Bereitstellungsmodelle für das Erstellen und Verwenden von Ressourcen: [Ressourcen-Manager und klassische Bereitstellungen](../resource-manager-deployment-model.md). Dieser Artikel behandelt die Verwendung des Ressourcen-Manager-Bereitstellungsmodells.
+
 Zum Durchführen dieses Lernprogramms benötigen Sie Folgendes:
 
 - Microsoft Visual Studio 2015.
@@ -192,4 +194,4 @@ Sie können die Anwendung jetzt durch Aufrufen der Methoden **CreateIoTHub** und
 [lnk-rest-api]: https://msdn.microsoft.com/library/mt589014.aspx
 [lnk-azure-rm-overview]: https://azure.microsoft.com/documentation/articles/resource-group-overview/
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0121_2016-->

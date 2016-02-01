@@ -2,7 +2,7 @@
     pageTitle="Tutorial: Azure Active Directory-Integration mit Directions on Microsoft | Microsoft Azure" 
     description="Hier erfahren Sie, wie Sie Directions on Microsoft mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags 
@@ -11,8 +11,8 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
-    ms.author="markvi" />
+    ms.date="01/14/2016" 
+    ms.author="jeedes" />
 
 #Tutorial: Azure Active Directory-Integration mit Directions on Microsoft
 
@@ -21,7 +21,7 @@ In diesem Tutorial wird die Integration von Azure Active Directory und Direction
 -   Ein gültiges Azure-Abonnement
 -   Ein Directions on Microsoft-Abonnement
 
-Falls Sie noch kein Directions on Microsoft-Verbundabonnement haben, senden Sie per E-Mail eine Anforderung an „*service@DirectionsOnMicrosoft.com*”.
+Falls Sie noch kein Directions on Microsoft-Verbundabonnement haben, senden Sie per e-Mail eine Anforderung an „*service@DirectionsOnMicrosoft.com*”.
 
 Nach Abschluss dieses Tutorials können sich die Azure Active Directory-Benutzer, die Sie Directions on Microsoft zugewiesen haben, mittels einmaliger Anmeldung bei der Anwendung anmelden.
 
@@ -57,7 +57,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Dir
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-directions-microsoft-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie im **Suchfeld** den Suchbegriff **Directions on Microsoft** ein.
+6.  Geben Sie im **Suchfeld** **Directions on Microsoft** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-directions-microsoft-tutorial/IC786878.png "Anwendungskatalog")
 
@@ -112,4 +112,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
 
     ![Ja](./media/active-directory-saas-directions-microsoft-tutorial/IC767830.png "Ja")
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0121_2016-->

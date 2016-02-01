@@ -2,7 +2,7 @@
     pageTitle="Tutorial: Konfigurieren von Workday für eingehende Synchronisierung | Microsoft Azure" 
     description="Hier erfahren Sie, wie Sie Workday mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags 
@@ -11,8 +11,8 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
-    ms.author="markvi" />
+    ms.date="01/14/2016" 
+    ms.author="jeedes" />
 
 #Tutorial: Konfigurieren von Workday für eingehende Synchronisierung
 >[AZURE.NOTE]Azure Active Directory (AD) Premium steht für Kunden in China zur Verfügung, die mit der weltweit verfügbaren Instanz von Azure AD arbeiten. Azure AD Premium wird derzeit im von 21Vianet in China betriebenen Microsoft Azure-Dienst nicht unterstützt.
@@ -52,7 +52,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Wor
 
 	![Was möchten Sie tun?](./media/active-directory-saas-inbound-synchronization-tutorial/IC700995.png "Was möchten Sie tun?")
 
-5.  Geben Sie im **Suchfeld** den Suchbegriff **Workday** ein.
+5.  Geben Sie im **Suchfeld** das Wort **Workday** ein.
 
 	![Workday](./media/active-directory-saas-inbound-synchronization-tutorial/IC701021.png "Workday")
 
@@ -62,7 +62,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Wor
 
 ##Erstellen eines Integrationssystembenutzers
 
-1.  Geben Sie in der **Workday-Workbench** den Suchbegriff **Benutzer erstellen** in das Suchfeld ein, und klicken Sie dann auf den Link **Integrationssystembenutzer erstellen**.     
+1.  Geben Sie in der **Workday-Workbench** die Suchzeichenfolge **Benutzer erstellen** in das Suchfeld ein, und klicken Sie dann auf den Link **Integrationssystembenutzer erstellen**.     
 
 	![Benutzer erstellen](./media/active-directory-saas-inbound-synchronization-tutorial/IC750979.png "Benutzer erstellen")
 
@@ -181,4 +181,4 @@ In diesem Abschnitt wird beschrieben, wie Sie Microsoft Azure AD zum Importieren
 
 Jetzt können Sie zum Abschnitt **Benutzer** wechseln und überprüfen, ob der Workday-Benutzer importiert wurde.
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0121_2016-->

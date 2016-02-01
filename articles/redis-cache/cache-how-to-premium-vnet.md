@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/14/2015" 
+	ms.date="01/19/2016" 
 	ms.author="sdanie"/>
 
 # Konfigurieren der Unterstützung virtueller Netzwerke für Azure Redis Cache vom Typ "Premium"
@@ -78,15 +78,23 @@ Die folgende Liste enthält Antworten auf häufig gestellte Fragen zur Skalierun
 
 ## Welche Probleme treten häufig bei einer fehlerhaften Konfiguration von Azure Redis Cache und VNETs auf?
 
-Im Folgenden sind einige häufige Konfigurationsfehler aufgeführt, die dazu führen, dass Azure Redis Cache nicht ordnungsgemäß ausgeführt wird.
+Beim Hosten von Azure Redis Cache in einem VNET werden die in der folgenden Tabelle angegebenen Ports verwendet. Wenn diese Ports gesperrt sind, funktioniert der Cache möglicherweise nicht ordnungsgemäß. Eine bestehende Sperre für mindestens einen dieser Ports ist die häufigste Fehlkonfiguration, die beim Verwenden von Azure Redis Cache in einem VNET auftritt.
 
--	Kein Zugriff auf DNS. Azure Redis Cache-Instanzen in einem VNET benötigen Zugriff auf DNS für Teile des Überwachungs- und Laufzeitsystems des Caches. Wenn die Cacheinstanz keinen DNS-Zugriff hat, funktioniert die Überwachung nicht, und der Cache funktioniert nicht richtig.
--	Blockierte TCP-Ports, über die Clients eine Verbindung mit Redis herstellen, z. B. Port 6379 oder 6380.
--	Blockierter oder abgefangener ausgehender HTTPS-Datenverkehr aus dem virtuellen Netzwerk. Azure Redis Cache verwendet den ausgehenden HTTPS-Datenverkehr in Azure-Diensten, insbesondere in Azure Storage.
--	Virtuelle Computer mit blockierten Redis-Rolleninstanzen, sodass die Kommunikation zwischen den Rolleninstanzen im Subnetz nicht möglich ist. Redis-Rolleninstanzen müssen über TCP auf allen verwendeten Ports miteinander kommunizieren können. Dies kann zwar geändert werden, muss jedoch mindestens für alle in der Redis-Datei "CSDEF" verwendeten Ports zulässig sein.
--	Azure Load Balancer kann keine Verbindung mit den virtuellen Redis-Computern über den TCP/HTTP-Port 16001 herstellen. Azure Redis Cache hängt vom standardmäßigen Azure Load Balancer-Test ab, um zu ermitteln ob Rolleninstanzen ausgeführt werden. Beim standardmäßigen Load Balancer-Test wird der Azure-Gast-Agent über Port 16001 gepingt. Nur die Rolleninstanzen, die auf den Ping reagieren, werden in die Rotation für den Empfang des von der ILB weitergeleiteten Datenverkehrs platziert. Wenn sich keine Instanzen in der Rotation befinden, da Pings aufgrund blockierter Ports fehlschlagen, akzeptiert die ILB keine eingehenden TCP-Verbindungen.
--	Der für die Überprüfung des öffentlichen SSL-Schlüssels verwendete Webdatenverkehr der Clientanwendung ist blockiert. Clients von Redis (innerhalb des virtuellen Netzwerks) müssen HTTP-Datenverkehr an das öffentliche Internet weiterleiten können, um Zertifizierungsstellenzertifikate und Zertifikatsperrlisten herunterzuladen und die Überprüfung von SSL-Zertifikaten durchzuführen, wenn sie über Port 6380 eine Verbindung mit Redis herstellen und die Authentifizierung des SSL-Servers durchführen.
--	Azure Load Balancer kann keine Verbindung zu virtuellen Redis-Computern in einem Cluster über Port 1300x (13000, 13001 usw.) oder 1500x (15000, 15001 usw.) herstellen. VNETs werden in der CSDEF-Datei mit einem Load Balancer-Test zum Öffnen dieser Ports konfiguriert. Der Azure Load Balancer muss von NSGs zugelassen werden. Bei Standard-NSGs erfolgt dies über das Tag "AZURE\_LOADBALANCER". Dem Azure Load Balancer ist die statische IP-Adresse 168.63.126.16 zugewiesen. Weitere Informationen finden Sie unter [Was ist eine Netzwerksicherheitsgruppe (NSG)?](../virtual-network/virtual-networks-nsg.md).
+| Port(s) | Richtung | Transportprotokoll | Zweck | Remote-IP |
+|-------------|------------------|--------------------|-----------------------------------------------------------------------------------|-------------------------------------|
+| 80, 443 | Ausgehend | TCP | Redis-Abhängigkeiten von Azure Storage/PKI (Internet) | * |
+| 53 | Ausgehend | TCP/UDP | Redis-Abhängigkeiten von DNS (Internet/VNet) | * |
+| 6379, 6380 | Eingehend | TCP | Clientkommunikation mit Redis, Azure-Lastenausgleich | VIRTUAL\_NETWORK, AZURE\_LOADBALANCER |
+| 8443 | Eingehend/ausgehend | TCP | Implementierungsdetail für Redis | VIRTUAL\_NETWORK |
+| 8500 | Eingehend | TCP/UDP | Azure-Lastenausgleich | AZURE\_LOADBALANCER |
+| 10221-10231 | Eingehend/ausgehend | TCP | Implementierungsdetail für Redis (kann den Remoteendpunkt auf VIRTUAL\_NETWORK beschränken) | VIRTUAL\_NETWORK, AZURE\_LOADBALANCER |
+| 13000-13999 | Eingehend | TCP | Clientkommunikation mit Redis-Clustern, Azure-Lastenausgleich | VIRTUAL\_NETWORK, AZURE\_LOADBALANCER |
+| 15000-15999 | Eingehend | TCP | Clientkommunikation mit Redis-Clustern, Azure-Lastenausgleich | VIRTUAL\_NETWORK, AZURE\_LOADBALANCER |
+| 16001 | Eingehend | TCP/UDP | Azure-Lastenausgleich | AZURE\_LOADBALANCER |
+| 20226 | Eingehend und ausgehend | TCP | Implementierungsdetail für Redis-Cluster | VIRTUAL\_NETWORK |
+
+
+
 
 ## Kann ich VNETs mit einem Standard-Cache oder Basic-Cache verwenden?
 
@@ -117,4 +125,4 @@ Informationen zur Verwendung weiterer Funktionen des Premium-Caches finden Sie i
 
 [redis-cache-vnet-subnet]: ./media/cache-how-to-premium-vnet/redis-cache-vnet-subnet.png
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0121_2016-->

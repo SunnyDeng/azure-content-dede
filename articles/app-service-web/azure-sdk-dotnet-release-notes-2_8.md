@@ -14,14 +14,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration" 
-   ms.date="11/30/2015"
+   ms.date="01/19/2016"
    ms.author="juliako"/>
 
-# Azure SDK für .NET 2.8 und 2.8.1
+# Azure SDK für .NET 2.8, 2.8.1 und 2.8.2
 
 ##Übersicht
  
-Dieser Artikel enthält die Versionshinweise (einschließlich bekannter Probleme und wichtiger Änderungen) für das Azure SDK für .NET 2.8 und 2.8.1.
+Dieser Artikel enthält die Versionshinweise (einschließlich bekannter Probleme und wichtiger Änderungen) für das Azure SDK für .NET 2.8, 2.8.1 und 2.8.2.
 
 Eine vollständige Liste der neuen Funktionen und in dieser Version vorgenommenen Aktualisierungen finden Sie in der Ankündigung zum [Azure SDK 2.8 für Visual Studio 2013 und Visual Studio 2015](https://azure.microsoft.com/blog/announcing-the-azure-sdk-2-8-for-net/) (in englischer Sprache).
 
@@ -37,7 +37,7 @@ Eine vollständige Liste der neuen Funktionen und in dieser Version vorgenommene
 
 ####Bekannte Probleme
 
-Mit Azure .NET SDK 2.8 können Sie .NET 4.5.2-Clouddienstpakete erstellen. Das .NET 4.5.2-Framework wird jedoch bis zur Gastbetriebssystemversion im Januar 2016 nicht in den Gastbetriebssystem-Standardimages installiert. Bis zu dieser Version wird das .NET 4.5.2-Framework über eine separate Gastbetriebssystemversion (November 2015-02) zur Verfügung gestellt. Informationen zur Veröffentlichung des Images finden Sie auf der Seite [Azure-Gastbetriebssystemreleases und SDK-Kompatibilitätsmatrix](../cloud-services-guestos-update-matrix.md). Wenn das Image „November 2015-02“ veröffentlicht wurde, können Sie dieses verwenden, indem Sie die Clouddienst-Konfigurationsdatei (CSCFG-Datei) entsprechend aktualisieren. Legen Sie in der Dienstkonfigurationsdatei das osVersion-Attribut des ServiceConfiguration-Elements auf die Zeichenfolge „WA-GUEST-OS-4.26\_201511-02“ fest. Wenn Sie sich für die Verwendung dieses Images anmelden, erhalten Sie keine automatischen Updates für das Gastbetriebssystem mehr. Um automatische Updates zu erhalten, muss osVersion auf „*“ festgelegt sein. .NET 4.5.2 ist ab Januar 2016 nur noch über automatische Updates verfügbar.
+Mit Azure .NET SDK 2.8 können Sie .NET 4.5.2-Clouddienstpakete erstellen. Das .NET 4.5.2-Framework wird jedoch bis zur Gastbetriebssystemversion im Januar 2016 nicht in den Gastbetriebssystem-Standardimages installiert. Bis zu dieser Version wird das .NET 4.5.2-Framework über eine separate Gastbetriebssystemversion (November 2015-02) zur Verfügung gestellt. Informationen zur Veröffentlichung des Images finden Sie auf der Seite [Azure-Gastbetriebssystemreleases und SDK-Kompatibilitätsmatrix](../cloud-services/cloud-services-guestos-update-matrix.md). Wenn das Image „November 2015-02“ veröffentlicht wurde, können Sie dieses verwenden, indem Sie die Clouddienst-Konfigurationsdatei (CSCFG-Datei) entsprechend aktualisieren. Legen Sie in der Dienstkonfigurationsdatei das osVersion-Attribut des ServiceConfiguration-Elements auf die Zeichenfolge „WA-GUEST-OS-4.26\_201511-02“ fest. Wenn Sie sich für die Verwendung dieses Images anmelden, erhalten Sie keine automatischen Updates für das Gastbetriebssystem mehr. Um automatische Updates zu erhalten, muss osVersion auf „*“ festgelegt sein. .NET 4.5.2 ist ab Januar 2016 nur noch über automatische Updates verfügbar.
 
 ###Azure Data Factory
 
@@ -84,7 +84,13 @@ Weitere Informationen finden Sie unter [Azure SDK 2.8 für Visual Studio 2013 un
 2. Bei Python-Kunden treten möglicherweise Debugger-Probleme auf. Das Service-Team führt dafür ein Update ein. Wenn Kunden betroffen sind, informieren Sie Microsoft dennoch in den Foren, im Ankündigungsblog oder im Kommentarbereich der Versionshinweise. 
 3. In bestimmten Regionen (z. B. Südindien) treten Fehler bei der App Service-Bereitstellung auf. Dies gilt auch für das Portal, und Kunden, bei denen dieses Problem auftritt, können das Azure-Portal nutzen, um den Zugriff zum Veröffentlichen in diesen Georegionen anzufordern. Nachdem die Kunden den Zugriff auf diese Regionen angefordert haben, sollte die Bereitstellung des Azure-Portals funktionieren. 
 
+##Azure SDK für .NET 2.8.2
 
+Nach der Installation von Version 2.8.2 dieses Tools kann es vorkommen, dass Sie folgende Probleme feststellen.
+
+- Wenn Sie Windows 10 verwenden und Internet Explorer nicht installiert ist, kann es vorkommen, dass Ihnen die Fehlermeldung „Internet Explorer konnte nicht gefunden werden“ angezeigt wird. Installieren Sie Internet Explorer über das Dialogfeld „Windows-Komponenten hinzufügen/entfernen“.
+
+Tritt dieses Problem bei Ihnen auf, teilen Sie uns dies bitte über die Funktion „Lächeln senden“ mit.
 ##Andere Updates
 
 Andere Updates finden Sie im [Ankündigungsartikel zu Azure SDK 2.8](https://azure.microsoft.com/blog/announcing-the-azure-sdk-2-8-for-net/).
@@ -95,4 +101,4 @@ Andere Updates finden Sie im [Ankündigungsartikel zu Azure SDK 2.8](https://az
 
 [Unterstützungs- und Deaktivierungsinformationen zum Azure SDK für .NET und APIs](https://msdn.microsoft.com/library/azure/dn479282.aspx)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0121_2016-->

@@ -1,11 +1,11 @@
 <properties
-	pageTitle="Verbessern der Geschäftskontinuität mit Azure-Regionspaaren"
-	description="Verwenden Sie Regionspaare, um Anwendungen bei Datencenterausfällen stabil zu halten."
-	services="multiple"
+	pageTitle="Geschäftskontinuität und Notfallwiederherstellung: Azure Regionspaare | Microsoft Azure"
+	description="Azure-Regionspaare stellen sicher, dass Anwendungen auch bei Datencenterausfällen stabil laufen."
+	services="site-recovery"
 	documentationCenter=""
-	authors="rboucher"
+	authors="rayne-wiselman"
 	manager="jwhit"
-	editor="tysonn"/>
+	editor=""/>
 
 <tags
     ms.service="backup"
@@ -13,12 +13,12 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="09/16/2015"
-    ms.author="robb"/>
+    ms.date="01/12/2016"
+    ms.author="raynew"/>
 
-# Verbessern der Verfügbarkeit mithilfe von Azure-Regionspaaren
+# Geschäftskontinuität und Notfallwiederherstellung: Azure-Regionspaare
 
-## Azure-Regionspaare – Erläuterung
+## Was sind Regionspaare?
 
 Azure betreibt Datencenter in mehreren Gebieten auf der ganzen Erde. Bei einem Azure-Gebiet handelt es sich um einen definierten Bereich der Erde, der mindestens eine Azure-Region enthält. Eine Azure-Region ist ein Bereich in einem Gebiet mit mindestens einem Datencenter.
 
@@ -43,6 +43,7 @@ Abbildung 1 – Diagramm von Azure-Regionspaaren
 | Brasilien | Brasilien, Süden (1) | USA (Mitte/Süden) |
 | Australien | Australien (Ost) | Australien (Südost)|
 | US Government | US Government, Iowa | US Government, Virginia |
+| Indien | Indien (Mitte) | Indien (Süden) |
 
 Tabelle 1: Übersicht über Azure-Regionspaare
 
@@ -50,7 +51,7 @@ Tabelle 1: Übersicht über Azure-Regionspaare
 
 Wir empfehlen das Replizieren von Workloads zwischen Regionalpaaren, um von Richtlinien für Isolierung und Verfügbarkeit von Azure zu profitieren. Beispielsweise werden geplante Azure-Systemupdates in Regionspaaren sequenziell (nicht gleichzeitig) bereitgestellt. Das heißt, dass selbst im seltenen Fall eines fehlerhaften Updates beide Regionen nicht gleichzeitig betroffen sind. Darüber hinaus wird im unwahrscheinlichen Fall eines umfassenden Ausfalls die Wiederherstellung mindestens einer Region aus jedem Paar priorisiert.
 
-## Beispiel eines Regionspaars
+## Beispiel für ein Regionspaar
 Abbildung 2 zeigt eine hypothetische Anwendung, die das Regionspaar für die Notfallwiederherstellung verwendet. Die grünen Zahlen markieren die regionsübergreifenden Aktivitäten von drei Azure-Diensten (Azure Compute, Storage und Database) und ihre Konfiguration für eine regionsübergreifende Replikation. Die eindeutigen Vorteile einer Bereitstellung in Regionspaaren werden von den orangefarbenen Zahlen hervorgehoben.
 
 
@@ -84,4 +85,4 @@ Wie in Abbildung 2 dargestellt.
 
 ![9Orange](./media/best-practices-availability-paired-regions/9Orange.png) **Speicherort von Daten** – Eine Region befindet sich innerhalb desselben Gebiets wie ihr Paar (mit Ausnahme von Brasilien, Süden), um steuerliche und rechtliche Anforderungen an den Speicherort von Daten zu erfüllen.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0121_2016-->

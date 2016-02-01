@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="data-management"
-   ms.date="12/14/2015"
+   ms.date="01/15/2016"
    ms.author="rick.byham@microsoft.com"/>
 
 # Azure SQL-Datenbank – Abweichungen bei Transact-SQL
@@ -58,7 +58,6 @@ Azure SQL-Datenbank V12 unterstützt einige, aber nicht alle Argumente, die in d
 - Datenbankdiagramme
 - Datenbank-E-Mail
 - DATABASEPROPERTY (verwenden Sie stattdessen DATABASEPROPERTYEX)
-- Verteilte Transaktionen
 - EXECUTE AS-Anmeldungen
 - Verschlüsselung: erweiterbare Schlüsselverwaltung
 - Ereignisse: Ereignisse, Ereignisbenachrichtigungen, Abfragebenachrichtigungen
@@ -107,4 +106,4 @@ Die Transact-SQL-Referenz umfasst Themen zu SQL Server-Versionen ab 2008. Unter 
 
 In einigen Fällen kann der allgemeine Gegenstand eines Themas in einem Produkt verwendet werden, es liegen jedoch kleine Unterschiede im Hinblick auf die verschiedenen Produkte vor. Die Unterschiede werden dann im Thema entsprechend angegeben.
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0121_2016-->

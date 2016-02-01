@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Tutorial: Azure Stream Analytics und Azure Machine Learning-Integration | Microsoft Azure" 
+	pageTitle="Tutorial: Stimmungsanalysen mit Azure Stream Analytics und Azure Machine Learning | Microsoft Azure" 
 	description="Verwenden von UDF und Machine Learning in Stream Analytics-Aufträgen"
 	keywords=""
 	documentationCenter=""
@@ -19,7 +19,7 @@
 	ms.author="jeffstok"
 />
 
-# Tutorial: Einführung in Stream Analytics und Machine Learning-Integration #
+# Tutorial: Ausführen von Stimmungsanalysen mit Stream Analytics und Machine Learning #
 
 In diesem Tutorial soll Ihnen die schnelle Einrichtung eines einfachen Stream Analytics-Auftrags mit Machine Learning-Integration vermittelt werden. Wir nutzen ein Sentiment Analytics Machine Learning-Modell aus dem Cortana Analytics-Katalog, um Streamingtextdaten zu analysieren und den Stimmungswert (Sentiment Score) in Echtzeit zu ermitteln. Dieses Tutorial eignet sich gut zum Erlernen folgender Szenarien: Echtzeit-Stimmungsanalyse für Streaming-Twitter-Daten, Datensatzanalyse beim Kundenchat mit Support-Personal, Kommentare zu Foren/Blogs/Videos und viele andere Echtzeitszenarien im Bereich Predictive Scoring.
   
@@ -150,4 +150,4 @@ Sie können sich auch die auf die Azure Machine Learning-Funktion bezogenen Metr
 
     ![Stream Analytics Machine Learning-Tutorial – ML-Überwachungsansicht](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-machine-learning-integration-tutorial-ml-monitor-view.png)
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0121_2016-->

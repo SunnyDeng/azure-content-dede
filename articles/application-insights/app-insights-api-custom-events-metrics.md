@@ -479,7 +479,7 @@ Wenn es für Sie praktischer ist, können Sie die Parameter eines Ereignisses in
 
     telemetry.TrackEvent(event);
 
-
+> [AZURE.WARNING]Verwenden Sie nicht die selbe Telemetrieelementinstanz (in diesem Beispiel `event`), um Track*() mehrfach aufzurufen. Dies kann dazu führen, dass Telemetriedaten mit einer falschen Konfiguration gesendet werden.
 
 #### <a name="timed"></a> Zeitmessung bei Ereignissen
 
@@ -736,4 +736,4 @@ Es gibt einige Beschränkungen hinsichtlich der Anzahl von Metriken und Ereignis
 
  
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0121_2016-->

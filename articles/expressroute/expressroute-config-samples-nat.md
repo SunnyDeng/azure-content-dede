@@ -12,7 +12,7 @@
    ms.topic="article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="10/12/2015"
+   ms.date="01/16/2016"
    ms.author="cherylmc"/>
 
 # Beispiele für die Routerkonfiguration zum Einrichten und Verwalten von NAT (Network Address Translation, Netzwerkadressübersetzung)
@@ -217,7 +217,7 @@ NAT-Befehle:
 
 ### 5\. Konfigurieren von BGP zum Ankündigen selektiver Namespacepräfixe in jede Richtung
 
-Beispiele finden Sie auf der Seite [Beispiele für Routingkonfiguration](expressroute-config-samples-routing.md).
+Beispielen finden Sie auf der Seite [Beispiele für Routingkonfiguration](expressroute-config-samples-routing.md).
 
 ### 6\. Erstellen von Richtlinien
 
@@ -319,4 +319,4 @@ Beispiele finden Sie auf der Seite [Beispiele für Routingkonfiguration](express
 
 Weitere Informationen finden Sie unter [ExpressRoute – FAQ](expressroute-faqs.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0121_2016-->

@@ -1,9 +1,9 @@
 <properties
    pageTitle="Visualisieren des Clusters mit Service Fabric-Explorer | Microsoft Azure"
-   description="Service Fabric Explorer ist ein nützliches GUI-Tool zum Untersuchen und Verwalten von Cloudanwendungen und Knoten in einem Microsoft Azure Service Fabric-Cluster."
+   description="Service Fabric Explorer ist ein webbasiertes Tool zum Untersuchen und Verwalten von Cloudanwendungen und Knoten in einem Microsoft Azure Service Fabric-Cluster."
    services="service-fabric"
    documentationCenter=".net"
-   authors="jessebenson"
+   authors="seanmck"
    manager="timlt"
    editor=""/>
 
@@ -13,10 +13,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="10/30/2015"
-   ms.author="jesseb"/>
+   ms.date="01/13/2016"
+   ms.author="seanmck"/>
 
-# Visualisieren des Clusters mit Service Fabric-Explorer
+# Visualisieren Ihres Clusters mit Service Fabric Explorer
 
 Service Fabric-Explorer ist ein webbasiertes Tool zum Untersuchen und Verwalten von Anwendungen und Knoten in einem Azure Service Fabric-Cluster. Service Fabric-Explorer wird direkt innerhalb des Clusters gehostet und ist daher immer verfügbar – unabhängig davon, wo der Cluster ausgeführt wird.
 
@@ -56,7 +56,7 @@ Auf jeder Ebene der Struktur werden im Hauptbereich relevante Informationen zum 
 
 Die Knotenansicht zeigt das physische Layout des Clusters. Für einen Knoten können Sie überprüfen, für welche Anwendungen Code auf dem Knoten bereitgestellt wurde. Genauer gesagt können Sie anzeigen, welche Replikate derzeit darauf ausgeführt werden.
 
-## Nutzen von Aktionen mit Service Fabric-Explorer
+## Aktionen
 
 Service Fabric-Explorer bietet eine schnelle Möglichkeit zum Aufrufen von Aktionen für die Knoten, Anwendungen und Dienste in Ihrem Cluster.
 
@@ -64,9 +64,22 @@ Um beispielsweise eine Anwendungsinstanz zu löschen, wählen Sie einfach die An
 
 ![Löschen einer Anwendung in Service Fabric-Explorer][sfx-delete-application]
 
-Da viele Aktionen destruktiv sind, werden Sie aufgefordert, den Löschvorgang zu bestätigen, bevor die Aktion abgeschlossen wird.
+In der folgenden Tabelle sind die für jede Entität verfügbaren Aktionen aufgeführt:
 
->[AZURE.NOTE]Jede Aktion, die mit Service Fabric-Explorer ausgeführt werden kann, kann auch mithilfe von PowerShell oder einer REST-API ausgeführt werden, um die Automation zu ermöglichen.
+| **Entität** | **Aktion** | **Beschreibung** |
+| ------ | ------ | ----------- |
+| Anwendungstyp | Bereitstellung des Typs aufheben | Entfernt das Anwendungspaket aus dem Imagespeicher des Clusters. Dabei müssen zunächst alle Anwendungen dieses Typs entfernt werden. |
+| Anwendung | Anwendung löschen | Löscht die Anwendung, einschließlich aller Dienste und Zustände (sofern vorhanden). |
+| Dienst | Dienst löschen | Löscht den Dienst und seinen Zustand (sofern vorhanden). |
+| Knoten | Aktivieren | Aktiviert den Knoten. |
+|| Deaktivieren (anhalten) | Hält den Knoten im aktuellen Zustand an. Die Dienste werden weiterhin ausgeführt, Service Fabric verschiebt jedoch nur dann Elemente proaktiv in oder aus dem Dienst, wenn dies zur Vermeidung von Ausfällen oder Dateninkonsistenzen erforderlich ist. Diese Aktion wird normalerweise zum Aktivieren von Debuggingdiensten auf einem bestimmten Knoten verwendet, um sicherzustellen, dass sie während der Überprüfung nicht verschoben werden. |
+|| Deaktivieren (neu starten) | Ermöglicht das sichere Verschieben aller In-Memory-Dienste von einem Knoten und schließt dauerhafte Dienste. Wird in der Regel verwendet, wenn die Hostprozesse oder Hostcomputer neu gestartet werden müssen. |
+|| Deaktivieren (Daten entfernen) | Ermöglicht das sichere Schließen aller auf dem Knoten ausgeführten Dienste, nachdem ausreichend Ersatzreplikate erstellt wurden. Wird in der Regel verwendet, wenn ein Knoten (oder zumindest sein Speicher) dauerhaft außer Betrieb genommen wird. |
+|| Knotenzustand entfernen | Entfernt die Replikatinformationen eines Knotens aus dem Cluster. Wird in der Regel verwendet, wenn ein Knoten, auf dem bereits ein Fehler aufgetreten ist, als nicht mehr wiederherstellbar gilt. |
+
+Da viele Aktionen destruktiv sind, werden Sie aufgefordert, den Vorgang zu bestätigen, bevor die Aktion abgeschlossen wird.
+
+>[AZURE.TIP]Jede Aktion, die mit Service Fabric-Explorer ausgeführt werden kann, kann auch mithilfe von PowerShell oder einer REST-API ausgeführt werden, um die Automation zu ermöglichen.
 
 
 
@@ -101,4 +114,4 @@ Wenn Sie versuchen, eine Verbindung mit Service Fabric-Explorer auf einem siche
 [sfx-service-essentials]: ./media/service-fabric-visualizing-your-cluster/SfxServiceEssentials.png
 [sfx-delete-application]: ./media/service-fabric-visualizing-your-cluster/SfxDeleteApplication.png
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0121_2016-->

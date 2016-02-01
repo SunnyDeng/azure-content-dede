@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="12/01/2015"
+   ms.date="01/15/2016"
    ms.author="alkohli" />
 
 # Auspacken, Einbauen und Verkabeln des StorSimple 8100-Geräts
@@ -259,9 +259,9 @@ Beachten Sie zur Sicherstellung der hohen Verfügbarkeit und Leistung Folgendes:
 
 - Verbinden Sie die Netzwerkschnittstellen jedes Controllers nach Möglichkeit mit zwei unterschiedlichen Switches, um sicherzustellen, dass die Verfügbarkeit auch bei einem Switchausfall gewährleistet ist. Die Abbildung zeigt die beiden 10 GbE-Netzwerkschnittstellen, DATA 2 und DATA 3, jedes Controllers, die mit zwei unterschiedlichen Switches verbunden sind.
 
-Weitere Informationen finden Sie im Abschnitt **Netzwerkschnittstellen** unter [Anforderungen an die hohe Verfügbarkeit für Ihr StorSimple-Gerät](storsimple-system-requirements/#high-availability-requirements-for-storsimple.md).
+Weitere Informationen finden Sie im Abschnitt **Netzwerkschnittstellen** unter [Anforderungen an die hohe Verfügbarkeit für Ihr StorSimple-Gerät](storsimple-system-requirements.md#high-availability-requirements-for-storsimple).
 
->[AZURE.NOTE]Verwenden Sie die beigefügten QSFP-SFP+-Adapter, wenn Sie SFP+-Transceiver mit Ihren 10 GbE-Netzwerkschnittstellen nutzen. Weitere Informationen finden Sie unter [Unterstützte Hardware für 10-GbE-Netzwerkschnittstellen auf Ihrem StorSimple-Gerät](storsimple-supported-hardware-for-10-gbe-network-interfaces.md).
+>[AZURE.NOTE]Verwenden Sie die beigefügten QSFP-SFP+-Adapter, wenn Sie SFP+-Transceiver mit Ihren 10-GbE-Netzwerkschnittstellen nutzen. Weitere Informationen finden Sie unter [Unterstützte Hardware für 10-GbE-Netzwerkschnittstellen auf Ihrem StorSimple-Gerät](storsimple-supported-hardware-for-10-gbe-network-interfaces.md).
     
 
    
@@ -289,6 +289,6 @@ Das Gerät ist jetzt für Stromversorgung, Netzwerkzugriff und serielle Konnekti
 
 ## Nächste Schritte
 
-Erfahren Sie, wie Sie [Ihr lokales StorSimple-Gerät bereitstellen und konfigurieren](storsimple-deployment-walkthrough.md).
+Erfahren Sie, wie Sie Ihr [lokales StorSimple-Gerät bereitstellen und konfigurieren](storsimple-deployment-walkthrough.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0121_2016-->

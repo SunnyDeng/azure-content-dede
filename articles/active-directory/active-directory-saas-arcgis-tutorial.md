@@ -1,8 +1,8 @@
 <properties 
     pageTitle="Lernprogramm: Azure Active Directory-Integration mit ArcGIS | Microsoft Azure" 
-    description="Erfahren Sie, wie Sie ArcGIS mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu aktivieren." 
+    description="Erfahren Sie, wie Sie ArcGIS mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags 
@@ -11,8 +11,8 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
-    ms.author="markvi" />
+    ms.date="01/14/2016" 
+    ms.author="jeedes" />
 
 #Lernprogramm: Azure Active Directory-Integration mit ArcGIS
 
@@ -55,7 +55,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Arc
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-arcgis-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie im **Suchfeld** den Suchbegriff **ArcGIS** ein.
+6.  Geben Sie im **Suchfeld** als Suchbegriff **ArcGIS** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-arcgis-tutorial/IC784736.png "Anwendungskatalog")
 
@@ -80,34 +80,34 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![App-URL konfigurieren](./media/active-directory-saas-arcgis-tutorial/IC784740.png "App-URL konfigurieren")
 
-4.  Klicken Sie auf der Seite **Einmaliges Anmelden konfigurieren für ArcGIS** auf **Metadaten herunterladen**, und speichern Sie die Metadatendatei lokal auf Ihrem Computer.
+4.  Klicken Sie auf der Seite **Einmaliges Anmelden konfigurieren um ArcGIS** auf **Metadaten herunterladen**, und speichern Sie die Metadatendatei lokal auf Ihrem Computer.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-arcgis-tutorial/IC784741.png "Einmaliges Anmelden konfigurieren")
 
 5.  Melden Sie sich in einem anderen Webbrowserfenster bei der ArcGIS-Unternehmenswebsite als Administrator an.
 
-6.  Klicken Sie auf **Einstellungen bearbeiten**.
+6.  Klicken Sie auf **Edit Settings**.
 
     ![Einstellungen bearbeiten](./media/active-directory-saas-arcgis-tutorial/IC784742.png "Einstellungen bearbeiten")
 
-7.  Klicken Sie auf **Sicherheit**.
+7.  Klicken Sie auf **Security**.
 
     ![Sicherheit](./media/active-directory-saas-arcgis-tutorial/IC784743.png "Sicherheit")
 
-8.  Klicken Sie unter **Enterprise-Anmeldungen** auf **Identitätsanbieter festlegen**.
+8.  Klicken Sie unter **Enterprise Logins** auf **Set Identity Provider**.
 
     ![Enterprise Logins](./media/active-directory-saas-arcgis-tutorial/IC784744.png "Enterprise Logins")
 
-9.  Führen Sie auf der Konfigurationsseite **Identitätsanbieter festlegen** die folgenden Schritte aus.
+9.  Führen Sie auf der Konfigurationsseite **Set Identity Provider** die folgenden Schritte aus.
 
     ![Set Identity Provider](./media/active-directory-saas-arcgis-tutorial/IC784745.png "Set Identity Provider")
 
     1.  Geben Sie in das Textfeld "Name" den Namen Ihrer Organisation ein.
-    2.  Wählen Sie für **Metadaten für Enterprise-Identitätsanbieter werden zur Verfügung gestellt mittels** die Option **Datei** aus.
+    2.  Wählen Sie für **Metadata for the Enterprise Identity Provider will be supplied using** die Option **A File** aus.
     3.  Klicken Sie auf **Datei auswählen**, um die heruntergeladene Metadatendatei hochzuladen.
-    4.  Klicken Sie auf **Identitätsanbieter festlegen**.
+    4.  Klicken Sie auf **Set Identity Provider**.
 
-10. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
+10. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-arcgis-tutorial/IC784746.png "Einmaliges Anmelden konfigurieren")
 ##Konfigurieren der Benutzerbereitstellung
@@ -118,7 +118,7 @@ Damit sich Azure AD-Benutzer bei ArcGIS anmelden können, müssen sie in ArcGIS
 
 1.  Melden Sie sich bei Ihrem **ArcGIS**-Mandanten an.
 
-2.  Klicken Sie auf **Mitglieder einladen**.
+2.  Klicken Sie auf **Invite Members**.
 
     ![Mitglieder einladen](./media/active-directory-saas-arcgis-tutorial/IC784747.png "Invite Members")
 
@@ -157,4 +157,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0121_2016-->
