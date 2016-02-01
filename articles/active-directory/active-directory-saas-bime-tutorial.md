@@ -1,8 +1,8 @@
 <properties 
     pageTitle="Lernprogramm: Azure Active Directory-Integration mit Bime | Microsoft Azure" 
-    description="Erfahren Sie, wie Sie Bime mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu aktivieren." 
+    description="Erfahren Sie, wie Sie Bime mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags 
@@ -11,8 +11,8 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
-    ms.author="markvi" />
+    ms.date="01/14/2016" 
+    ms.author="jeedes" />
 
 #Lernprogramm: Azure Active Directory-Integration mit Bime
 
@@ -21,7 +21,7 @@ In diesem Lernprogramm wird die Integration von Azure und Bime erläutert. Das i
 -   Ein gültiges Azure-Abonnement
 -   Einen Bime-Mandanten
 
-Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie Bime zugewiesen haben, mittels einmaligen Anmeldens auf der Bime-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Sie können aber auch den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
+Nach Abschluss dieses Lernprogramms können sich die Bime zugewiesenen Azure AD-Benutzer mittels einmaligen Anmeldens auf Ihrer Bime-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie auch die [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md) nutzen.
 
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -55,7 +55,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Bim
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-bime-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie im **Suchfeld** den Suchbegriff **Bime** ein.
+6.  Geben Sie im **Suchfeld** als Suchbegriff **Bime** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-bime-tutorial/IC775553.png "Anwendungskatalog")
 
@@ -64,7 +64,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Bim
     ![Bime](./media/active-directory-saas-bime-tutorial/IC775554.png "Bime")
 ##Konfigurieren der einmaligen Anmeldung
 
-In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Bime zu authentifizieren. Zum Konfigurieren des einmaligen Anmeldens für Bime müssen Sie einen Fingerabdruckwert aus einem Zertifikat abrufen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [Abrufen des Fingerabdruckwerts eines Zertifikats](http://youtu.be/YKQF266SAxI) weitere Informationen.
+In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Bime zu authentifizieren. Zum Konfigurieren des einmaligen Anmeldens für Bime müssen Sie einen Fingerabdruckwert aus einem Zertifikat abrufen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to retrieve a certificate's thumbprint value](http://youtu.be/YKQF266SAxI) (in englischer Sprache) weitere Informationen.
 
 ###So konfigurieren Sie einmaliges Anmelden
 
@@ -80,13 +80,13 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![App-URL konfigurieren](./media/active-directory-saas-bime-tutorial/IC775556.png "App-URL konfigurieren")
 
-4.  Klicken Sie zum Herunterladen des Zertifikats auf der Seite **Einmaliges Anmelden konfigurieren für Bime** auf **Zertifikat herunterladen**, und speichern Sie die Zertifikatsdatei lokal unter **C:\\Bime.cer**.
+4.  Klicken Sie zum Herunterladen des Zertifikats auf der Seite **Einmaliges Anmelden konfigurieren um Bime** auf **Zertifikat herunterladen**, und speichern Sie die Zertifikatsdatei lokal unter **C:\\Bime.cer**.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-bime-tutorial/IC775557.png "Einmaliges Anmelden konfigurieren")
 
 5.  Melden Sie sich in einem anderen Webbrowserfenster bei der Bime-Unternehmenswebsite als Administrator an.
 
-6.  Klicken Sie auf der Symbolleiste auf **Administrator**, und klicken Sie dann auf **Konto**.
+6.  Klicken Sie auf der Symbolleiste auf **Admin**, und klicken Sie dann auf **Account**.
 
     ![Admin](./media/active-directory-saas-bime-tutorial/IC775558.png "Admin")
 
@@ -94,9 +94,9 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-bime-tutorial/IC775559.png "Einmaliges Anmelden konfigurieren")
 
-    1.  Wählen Sie die Option **SAML-Authentifizierung aktivieren**.
-    2.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Bime** den Wert für **Remoteanmelde-URL**, und fügen Sie ihn ins Textfeld **Remoteanmelde-URL** ein.
-    3.  Kopieren Sie den **Fingerabdruckwert** aus dem exportierten Zertifikat, und fügen Sie ihn in das Textfeld **Fingerabdruck des Zertifikats** ein.  
+    1.  Aktivieren Sie **Enable SAML authentication**.
+    2.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren um Bime** den Wert für **Remoteanmelde-URL**, und fügen Sie ihn ins Textfeld **Remote Login URL** ein.
+    3.  Kopieren Sie den **Fingerabdruckwert** aus dem exportierten Zertifikat, und fügen Sie ihn in das Textfeld **Certificate fingerprint** ein.  
 
         >[AZURE.TIP]Weitere Informationen finden Sie unter [Abrufen des Fingerabdruckwerts eines Zertifikats](http://youtu.be/YKQF266SAxI).
 
@@ -113,11 +113,11 @@ Damit sich Azure AD-Benutzer bei Bime anmelden können, müssen sie in Bime ber
 
 1.  Melden Sie sich bei Ihrem **Bime**-Mandanten an.
 
-2.  Klicken Sie auf der Symbolleiste auf **Admin**, und klicken Sie dann auf **Benutzer**.
+2.  Klicken Sie auf der Symbolleiste auf **Admin**, und klicken Sie dann auf **Users**.
 
     ![Admin](./media/active-directory-saas-bime-tutorial/IC775561.png "Admin")
 
-3.  Klicken Sie unter **Benutzerliste** auf **Neuen Benutzer hinzufügen** („+“).
+3.  Klicken Sie unter **Users List** auf "**+**" (Neuen Benutzer hinzufügen).
 
     ![Benutzer](./media/active-directory-saas-bime-tutorial/IC775562.png "Benutzer")
 
@@ -148,4 +148,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0121_2016-->

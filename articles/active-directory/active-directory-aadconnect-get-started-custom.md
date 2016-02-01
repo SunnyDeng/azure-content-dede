@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/08/2016"
+	ms.date="01/11/2016"
 	ms.author="billmath;andkjell"/>
 
 # Benutzerdefinierte Installation von Azure AD Connect
@@ -70,6 +70,7 @@ Geben Sie im Bildschirm "Mit Azure AD verbinden" ein Konto und ein Kennwort für
 
 ![Benutzeranmeldung](./media/active-directory-aadconnect-get-started-custom/connectaad.png)
 
+Falls ein Fehler auftritt und Sie Probleme mit der Konnektivität haben, können Sie unter [Problembehebung bei Konnektivitätsproblemen](active-directory-aadconnect-troubleshoot-connectivity.md) nach einer Lösung suchen.
 
 ## Seiten im Abschnitt "Synchronisierung"
 
@@ -121,7 +122,7 @@ In einer vollständigen Produktionsbereitstellung wird die Verwaltung einer einz
 
 Optionale Features | Beschreibung
 -------------------    | ------------- |
-Exchange-Hybridbereitstellung |Die Exchange-Hybridbereitstellungsfunktion ermöglicht die Koexistenz von Exchange-Postfächern sowohl lokal als auch in Azure durch die Synchronisierung eines bestimmten [Attributsatzes](active-directory-aadconnectsync-attributes-synchronzied.md#exchange-hybrid-writeback) von Azure AD zurück in Ihr lokales Verzeichnis.
+Exchange-Hybridbereitstellung |Die Exchange-Hybridbereitstellungsfunktion ermöglicht die Koexistenz von Exchange-Postfächern sowohl lokal als auch in Azure durch die Synchronisierung eines bestimmten [Attributsatzes](active-directory-aadconnectsync-attributes-synchronized.md#exchange-hybrid-writeback) von Azure AD zurück in Ihr lokales Verzeichnis.
 Azure AD-App- und Attributfilterung|Durch Aktivieren von Azure AD-App- und Attributfilterung kann die Sammlung der synchronisierten Attribute auf einer nachfolgenden Seite des Assistenten auf eine bestimmte Menge festgelegt werden. Zwei zusätzliche Konfigurationsseiten werden daraufhin im Assistenten geöffnet.  
 Kennwortsynchronisierung | Bei Auswahl von Verbund als Anmeldungslösung können Sie diese Option aktivieren. Die Synchronisierung von Kennwörtern kann dann als Sicherungsoption verwendet werden. Weitere Informationen finden Sie unter [Kennwortsynchronisierung](active-directory-aadconnectsync-implement-password-synchronization.md).
 Rückschreiben von Kennwörtern|Durch Aktivieren des Rückschreibens von Kennwörtern werden Kennwortänderungen aus Azure AD in Ihr lokales Verzeichnis zurückgeschrieben. Weitere Informationen finden Sie unter [Erste Schritte mit der Kennwortverwaltung](active-directory-passwords-getting-started.md).
@@ -250,4 +251,4 @@ Nachdem Sie Azure AD Connect installiert haben, können Sie [die Installation �
 
 Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0121_2016-->

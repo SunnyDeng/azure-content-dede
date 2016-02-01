@@ -1,7 +1,7 @@
 <properties 
    pageTitle="Erstellen von HDInsight-Clustern mit Azure Data Lake-Speicher mithilfe von PowerShell | Azure" 
    description="Verwenden von Azure PowerShell zum Erstellen und Verwenden von HDInsight Hadoop-Clustern mit Azure Data Lake" 
-   services="data-lake" 
+   services="data-lake-store" 
    documentationCenter="" 
    authors="nitinme" 
    manager="paulettm" 
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="01/06/2016"
+   ms.date="01/20/2016"
    ms.author="nitinme"/>
 
 # Erstellen eines HDInsight-Clusters mit Data Lake-Speicher mithilfe von Azure PowerShell
@@ -249,6 +249,38 @@ In diesem Abschnitt erstellen wir einen HDInsight Hadoop-Cluster. Für diese Ver
 
 Nachdem Sie einen HDInsight-Cluster konfiguriert haben, können Sie Testaufträge für den Cluster ausführen, um zu testen, ob der HDInsight-Cluster auf Daten im Data Lake-Speicher zugreifen kann. Hierzu führen wir einen Hive-Beispielauftrag aus. Es wird eine Tabelle aus den Beispieldaten erstellt, die Sie zuvor in Ihren Data Lake-Speicher hochgeladen haben.
 
+### Für einen Linux-Cluster
+
+In diesem Abschnitt stellen Sie eine SSH-Verbindung mit dem Cluster her und führen eine Hive-Beispielabfrage aus. Windows bietet keinen integrierten SSH-Client. Wir empfehlen die Verwendung von **PuTTY**. Sie können das Programm unter [http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) herunterladen.
+
+Weitere Informationen zum Verwenden von PuTTY finden Sie unter [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Windows](../hdinsight/hdinsight-hadoop-linux-use-ssh-windows.md).
+
+1. Nachdem die Verbindung hergestellt wurde, starten Sie die Hive-Befehlszeilenschnittstelle (CLI) mit dem folgenden Befehl:
+
+    	hive
+
+2. Geben Sie die folgenden Anweisungen zum Erstellen einer neuen Tabelle namens **vehicles** mithilfe der Befehlszeilenschnittstelle ein, wobei Sie die Beispieldaten im Data Lake-Speicher verwenden:
+
+		DROP TABLE vehicles;
+		CREATE EXTERNAL TABLE vehicles (str string) LOCATION 'adl://<mydatalakestore>.azuredatalakestore.net:443/';
+		SELECT * FROM vehicles LIMIT 10;
+
+	Es sollte eine Ausgabe angezeigt werden, die Folgendem ähnelt:
+
+		1,1,2014-09-14 00:00:03,46.81006,-92.08174,51,S,1
+		1,2,2014-09-14 00:00:06,46.81006,-92.08174,13,NE,1
+		1,3,2014-09-14 00:00:09,46.81006,-92.08174,48,NE,1
+		1,4,2014-09-14 00:00:12,46.81006,-92.08174,30,W,1
+		1,5,2014-09-14 00:00:15,46.81006,-92.08174,47,S,1
+		1,6,2014-09-14 00:00:18,46.81006,-92.08174,9,S,1
+		1,7,2014-09-14 00:00:21,46.81006,-92.08174,53,N,1
+		1,8,2014-09-14 00:00:24,46.81006,-92.08174,63,SW,1
+		1,9,2014-09-14 00:00:27,46.81006,-92.08174,4,NE,1
+		1,10,2014-09-14 00:00:30,46.81006,-92.08174,31,N,1
+
+
+### Für einen Windows-Cluster
+
 Verwenden Sie die folgenden Cmdlets, um die Hive-Abfrage auszuführen. In dieser Abfrage erstellen wir eine Tabelle aus den Daten im Data Lake-Speicher und führen für die erstellte Tabelle dann eine SELECT-Abfrage aus.
 
 	$queryString = "DROP TABLE vehicles;" + "CREATE EXTERNAL TABLE vehicles (str string) LOCATION 'adl://$dataLakeStoreName.azuredatalakestore.net:443/';" + "SELECT * FROM vehicles LIMIT 10;"
@@ -290,11 +322,30 @@ Die Ausgabe des Auftrags sieht etwa wie folgt aus:
 	1,10,2014-09-14 00:00:30,46.81006,-92.08174,31,N,1
 
 
-	
-
 ## Zugreifen auf den Data Lake-Speicher mit HDFS-Befehlen
 
 Nachdem Sie den HDInsight-Cluster für die Verwendung des Data Lake-Speichers konfiguriert haben, können Sie die HDFS-Shellbefehle verwenden, um auf den Speicher zuzugreifen.
+
+### Für einen Linux-Cluster
+
+In diesem Abschnitt stellen Sie eine SSH-Verbindung mit dem Cluster her und führen die HDFS-Befehle aus. Windows bietet keinen integrierten SSH-Client. Wir empfehlen die Verwendung von **PuTTY**. Sie können das Programm unter [http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) herunterladen.
+
+Weitere Informationen zum Verwenden von PuTTY finden Sie unter [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Windows](../hdinsight/hdinsight-hadoop-linux-use-ssh-windows.md).
+
+Nachdem die Verbindung hergestellt wurde, listen Sie mithilfe des folgenden HDFS-Dateisystembefehls die Dateien im Data Lake-Speicher auf.
+
+	hdfs dfs -ls adl://<Data Lake Store account name>.azuredatalakestore.net:443/
+
+Hierbei sollte auch die Datei aufgeführt werden, die Sie bereits in den Data Lake-Speicher hochgeladen haben.
+
+	15/09/17 21:41:15 INFO web.CaboWebHdfsFileSystem: Replacing original urlConnectionFactory with org.apache.hadoop.hdfs.web.URLConnectionFactory@21a728d6
+	Found 1 items
+	-rwxrwxrwx   0 NotSupportYet NotSupportYet     671388 2015-09-16 22:16 adl://mydatalakestore.azuredatalakestore.net:443/mynewfolder
+
+Sie können auch den Befehl `hdfs dfs -put` verwenden, um Dateien in den Data Lake-Speicher hochzuladen, und dann mit `hdfs dfs -ls` überprüfen, ob der Upload der Dateien erfolgreich war.
+
+
+### Für einen Windows-Cluster
 
 1. Melden Sie sich beim neuen [Azure-Portal](https://portal.azure.com) an.
 
@@ -306,7 +357,7 @@ Nachdem Sie den HDInsight-Cluster für die Verwendung des Data Lake-Speichers ko
 
 	Geben Sie bei Aufforderung die Anmeldeinformationen ein, die Sie für den Remotedesktopbenutzer bereitgestellt haben.
 
-4. Starten Sie in der Remotesitzung Windows PowerShell, und verwenden Sie die HDFS-Dateisystembefehle, um die Dateien in Azure Data Lake aufzulisten.
+4. Starten Sie in der Remotesitzung die Windows PowerShell, und verwenden Sie die HDFS-Dateisystembefehle, um die Dateien im Azure Data Lake-Speicher aufzulisten.
 
 	 	hdfs dfs -ls adl://<Data Lake Store account name>.azuredatalakestore.net:443/
 
@@ -316,13 +367,13 @@ Nachdem Sie den HDInsight-Cluster für die Verwendung des Data Lake-Speichers ko
 		Found 1 items
 		-rwxrwxrwx   0 NotSupportYet NotSupportYet     671388 2015-09-16 22:16 adl://mydatalakestore.azuredatalakestore.net:443/vehicle1_09142014.csv
 
-	Sie können auch den Befehl `hdfs dfs -put` verwenden, um Dateien in Azure Data Lake hochzuladen, und dann mit `hdfs dfs -ls` überprüfen, ob das Hochladen der Dateien erfolgreich war.
+	Sie können auch den Befehl `hdfs dfs -put` verwenden, um Dateien in den Data Lake-Speicher hochzuladen, und dann mit `hdfs dfs -ls` überprüfen, ob der Upload der Dateien erfolgreich war.
 
-## Weitere Informationen
+## Siehe auch
 
 * [Portal: Erstellen eines HDInsight-Clusters für die Verwendung des Data Lake-Speichers](data-lake-store-hdinsight-hadoop-use-portal.md)
 
 [makecert]: https://msdn.microsoft.com/library/windows/desktop/ff548309(v=vs.85).aspx
 [pvk2pfx]: https://msdn.microsoft.com/library/windows/desktop/ff550672(v=vs.85).aspx
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0121_2016-->

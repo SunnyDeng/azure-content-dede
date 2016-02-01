@@ -193,11 +193,11 @@ Führen Sie vor dem Ausführen von **azure vm create** mit dem Image folgende Sc
 Führen Sie einen Befehl aus, der dem folgenden ähnelt:
 
 	azure vm create -g <your-resource-group-name> -n <your-new-vm-name> -l eastus -y Linux -o <your-storage-account-name> -d "https://yourstorage.blob.core.windows.net/vhds/your-prefix-OsDisk.vhd" -z Standard_A1 -u <your-admin-name> -p <your-admin-password> -f <your-nic-name>
-	
+
 Führen Sie für zusätzliche Befehlsoptionen `azure help vm create` aus.
 
 ## Nächste Schritte
 
 Informationen zur Verwaltung Ihrer virtuellen Computer mit der CLI finden Sie unter [Bereitstellen und Verwalten von virtuellen Computern mit Azure-Ressourcen-Manager-Vorlagen und der Azure-CLI](virtual-machines-deploy-rmtemplates-azure-cli.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0121_2016-->

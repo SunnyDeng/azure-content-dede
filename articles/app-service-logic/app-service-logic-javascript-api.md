@@ -1,6 +1,6 @@
 <properties
-   pageTitle="JavaScript-API"
-   description="JavaScript-API"
+   pageTitle="Verwenden der JavaScript-API-App in einer Logik-App | Microsoft Azure"
+   description="JavaScript-API-App oder -Connector"
    services="app-service\logic"
    documentationCenter=".net,nodejs,java"
    authors="stepsic-microsoft-com"
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration"
-   ms.date="10/29/2015"
+   ms.date="01/19/2016"
    ms.author="stepsic"/>
 
 #JavaScript-API-App
@@ -91,4 +91,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 <!--Links -->
 [Creating a Logic App]: app-service-logic-create-a-logic-app.md
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0121_2016-->

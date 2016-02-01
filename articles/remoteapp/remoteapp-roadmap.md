@@ -12,7 +12,7 @@
     ms.tgt_pltfrm="NA"
     ms.devlang="NA"
     ms.topic="article"
-    ms.date="12/16/2015"
+    ms.date="01/14/2016"
     ms.author="elizapo" />
 
 # Geplante Neuerungen in Azure RemoteApp
@@ -23,7 +23,7 @@ Wir arbeiten stetig daran, Azure RemoteApp mithilfe Ihres Feedbacks zu verbesser
 |-----------|-------|-------|
 |Azure RemoteApp ist sowohl im [klassischen Azure-Portal](http://manage.windowsazure.com) als auch im [Azure-Portal](http://portal.azure.com) verfügbar. |X | |
 |Universelle Windows 10-Anwendung für die Vorschauversion von Azure RemoteApp|X| |
-|Möglichkeit zum Veröffentlichen einzelner Anwendungen für bestimmte Benutzer – **Öffentliche Vorschau** ([Feedback](http://feedback.azure.com/forums/247748-azure-remoteapp/suggestions/6067043-allow-the-ability-to-publish-specific-apps-to-spec))|X | |
+|Möglichkeit zum Veröffentlichen einzelner Anwendungen für bestimmte Benutzer – **Private Vorschau** ([Feedback](http://feedback.azure.com/forums/247748-azure-remoteapp/suggestions/6067043-allow-the-ability-to-publish-specific-apps-to-spec))|X | |
 |Verteilbares Windows-MSI-Clientpaket ([Feedback](http://feedback.azure.com/forums/247748-azure-remoteapp/suggestions/6627191-client-deployment-provide-an-msi-package-to-allo))| X| |
 |HTML5-basierter Client für Azure RemoteApp|X ||
 |Support für Azure-Ressourcen-Manager (ARM)||X|
@@ -46,4 +46,4 @@ Weitere Verbesserungen, die dieses Jahr bereits hinzugefügt wurden:
 - Verfügbarkeit in australischen Rechenzentren
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0121_2016-->

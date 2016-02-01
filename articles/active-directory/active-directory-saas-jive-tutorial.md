@@ -2,7 +2,7 @@
     pageTitle="Tutorial: Azure Active Directory-Integration mit Jive | Microsoft Azure" 
     description="Hier erfahren Sie, wie Sie Jive mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags 
@@ -11,8 +11,8 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
-    ms.author="markvi" />
+    ms.date="01/14/2016" 
+    ms.author="jeedes" />
 
 #Tutorial: Azure Active Directory-Integration mit Jive
 
@@ -47,7 +47,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Jiv
 
     ![Was möchten Sie tun?](./media/active-directory-saas-jive-tutorial/IC700995.png "Was möchten Sie tun?")
 
-5.  Geben Sie im **Suchfeld** den Suchbegriff **Jive** ein.
+5.  Geben Sie im **Suchfeld** das Wort **Jive** ein.
 
     ![Jive](./media/active-directory-saas-jive-tutorial/IC701001.png "Jive")
 
@@ -78,10 +78,10 @@ Der folgende Screenshot zeigt ein Beispiel für das entsprechende Dialogfeld in 
 
     4.  Klicken Sie auf **Überprüfen**, um die Konfiguration zu überprüfen.
 
-    5.  Klicken Sie auf **Weiter**, um die **Bestätigungsseite** zu öffnen.
+    5.  Klicken Sie auf **Weiter**, um die Bestätigungsseite zu öffnen.
 
-3.  Klicken Sie auf der **Bestätigungsseite** auf das Häkchen, um die Konfiguration zu speichern.
+3.  Klicken Sie auf der Bestätigungsseite auf das Häkchen, um die Konfiguration zu speichern.
   
 Sie können nun ein Testkonto erstellen und nach 10 Minuten überprüfen, ob das Konto mit „Jive.com“ synchronisiert wurde.
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0121_2016-->

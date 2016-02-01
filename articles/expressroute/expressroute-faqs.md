@@ -12,7 +12,7 @@
    ms.topic="article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="10/20/2015"
+   ms.date="01/16/2016"
    ms.author="cherylmc"/>
 
 # ExpressRoute – FAQ
@@ -116,7 +116,7 @@ Ja. Sie können bis zu 10 virtuelle Netzwerke mit einer ExpressRoute-Verbindung 
 ### Ich habe mehrere Azure-Abonnements, die Virtual Networks enthalten. Kann ich Virtual Networks, die sich in unterschiedlichen Abonnements befinden, mit einer ExpressRoute-Verbindung verbinden?
 Ja. Sie können bis zu 10 andere Azure-Abonnements autorisieren, eine einzige ExpressRoute-Verbindung zu verwenden. Dieses Limit kann durch das Aktivieren des ExpressRoute Premium-Features erhöht werden.
 
-Weitere Informationen finden Sie unter [Freigeben einer ExpressRoute-Verbindung für mehrere Abonnements](expressroute-share-circuit.md).
+Weitere Informationen finden Sie unter [Freigeben einer ExpressRoute-Verbindung für mehrere Abonnements](expressroute-howto-linkvnet-arm.md).
 
 ### Sind virtuelle Netzwerke, die mit der gleichen Verbindung verbunden sind, voneinander isoliert?
 Nein. Alle virtuellen Netzwerke, die mit der gleichen ExpressRoute-Verbindung verknüpft sind, sind Teil der gleichen Routingdomäne und aus Routingsicht nicht voneinander isoliert. Wenn Sie eine Isolierung der Routen benötigen, müssen Sie zuerst eine separate ExpressRoute-Verbindung erstellen.
@@ -258,4 +258,4 @@ Weitere Informationen zur Liste der Partner und Standorte, die ExpressRoute unte
 Ja. Office 365-Dienstendpunkte sind über das Internet erreichbar, selbst wenn ExpressRoute für Ihr Netzwerk konfiguriert wurde. Wenn Sie sich an einem Ort befinden, an dem die Verbindung mit Office 365-Diensten über ExpressRoute konfiguriert wurde, wird die Verbindung über ExpressRoute hergestellt.
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0121_2016-->

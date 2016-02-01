@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Vorlagenausdrücke des Ressourcen-Managers | Microsoft Azure"
+   pageTitle="Vorlagenfunktionen im Ressourcen-Manager | Microsoft Azure"
    description="Es werden die Funktionen beschrieben, die in einer Azure-Ressourcen-Manager-Vorlage zum Abrufen von Werten, Arbeiten mit Zeichenfolgen und numerischen Werten sowie Abrufen von Bereitstellungsinformationen verwendet werden."
    services="azure-resource-manager"
    documentationCenter="na"
@@ -13,18 +13,18 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="12/31/2015"
+   ms.date="01/15/2016"
    ms.author="tomfitz"/>
 
-# Vorlagenausdrücke des Azure-Ressourcen-Managers
+# Vorlagenfunktionen im Azure-Ressourcen-Manager
 
-Dieses Thema beschreibt alle Ausdrücke, die Sie in einer Azure-Ressourcen-Manager-Vorlage verwenden können.
+Dieses Thema beschreibt alle Funktionen, die Sie in einer Azure Resource Manager-Vorlage verwenden können.
 
-Bei Vorlagenausdrücken und ihren Parametern ist die Groß-und Kleinschreibung nicht relevant. Der Ressourcen-Manager löst beispielsweise **variables('var1')** und **VARIABLES('VAR1')** identisch auf. Bei der Auswertung wird die Groß-/Kleinschreibung beibehalten, sofern diese nicht ausdrücklich durch den Ausdruck geändert wird (z. B. mit „toUpper“ oder „toLower“). Für spezielle Ressourcentypen gelten möglicherweise ungeachtet der Auswertungsweise von Ausdrücken bestimmte Anforderungen hinsichtlich der Groß-/Kleinschreibung.
+Bei Vorlagenfunktionen und ihren Parametern wird Groß-und Kleinschreibung nicht unterschieden. Der Ressourcen-Manager löst beispielsweise **variables('var1')** und **VARIABLES('VAR1')** identisch auf. Bei der Auswertung wird die Groß-/Kleinschreibung beibehalten, sofern diese nicht ausdrücklich durch die Funktion geändert wird (z. B. mit „toUpper“ oder „toLower“). Für spezielle Ressourcentypen gelten möglicherweise Vorgaben zur Schreibweise ungeachtet der Auswertungsweise von Funktionen.
 
-## Numerische Ausdrücke
+## Numerische Funktionen
 
-Der Ressourcen-Manager stellt die folgenden Ausdrücke für das Arbeiten mit ganzen Zahlen bereit:
+Der Ressourcen-Manager stellt die folgenden Funktionen für das Arbeiten mit ganzen Zahlen bereit:
 
 - [Hinzufügen](#add)
 - [copyIndex](#copyindex)
@@ -56,7 +56,7 @@ Gibt die Summe der beiden angegebenen ganzen Zahlen zurück.
 
 Gibt den aktuellen Index einer Iterationsschleife zurück.
 
-Dieser Ausdruck wird immer mit einem **copy**-Objekt verwendet. Beispiele zur Verwendung von **copyIndex** finden Sie unter [Erstellen mehrerer Instanzen von Ressourcen im Azure-Ressourcen-Manager](resource-group-create-multiple.md).
+Diese Funktion wird immer mit einem **copy**-Objekt verwendet. Beispiele zur Verwendung von **copyIndex** finden Sie unter [Erstellen mehrerer Instanzen von Ressourcen im Azure-Ressourcen-Manager](resource-group-create-multiple.md).
 
 
 <a id="div" />
@@ -157,9 +157,9 @@ Gibt die Differenz der beiden angegebenen ganzen Zahlen zurück.
 | operand2 | Ja | Zahl, die subtrahiert werden soll.
 
 
-## Zeichenfolgenausdrücke
+## Zeichenfolgenfunktionen
 
-Der Ressourcen-Manager stellt die folgenden Ausdrücke für das Arbeiten mit Zeichenfolgen bereit:
+Der Ressourcen-Manager stellt die folgenden Funktionen für das Arbeiten mit Zeichenfolgen bereit:
 
 - [base64](#base64)
 - [concat](#concat)
@@ -199,16 +199,31 @@ Das folgende Beispiel zeigt die Funktionsweise der base64-Funktion.
 
 **concat (arg1, arg2, arg3, ...)**
 
-Kombiniert mehrere Zeichenfolgewerte und gibt den resultierenden Zeichenfolgewert zurück. Diese Funktion kann eine beliebige Anzahl an Argumenten entgegennehmen.
+Kombiniert mehrere Werte und gibt das verkettete Ergebnis zurück. Diese Funktion akzeptiert eine beliebige Anzahl von Argumenten und Zeichenfolgen oder Arrays für die Parameter.
 
-Das folgende Beispiel zeigt die Kombinationsweise mehrerer Werte, um einen Wert zurückzugeben.
+Das folgende Beispiel zeigt, wie mehrere Zeichenfolgenwerte kombiniert werden, um eine verkettete Zeichenfolge zu erhalten.
 
     "outputs": {
         "siteUri": {
           "type": "string",
-          "value": "[concat('http://',reference(resourceId('Microsoft.Web/sites', parameters('siteName'))).hostNames[0])]"
+          "value": "[concat('http://', reference(resourceId('Microsoft.Web/sites', parameters('siteName'))).hostNames[0])]"
         }
     }
+
+Im nächsten Beispiel wird veranschaulicht, wie zwei Arrays kombiniert werden.
+
+    "parameters": {
+        "firstarray": {
+            type: "array"
+        }
+        "secondarray": {
+            type: "array"
+        }
+     },
+     "variables": {
+         "combinedarray": "[concat(parameters('firstarray'), parameters('secondarray'))]
+     }
+        
 
 <a id="padleft" />
 ### padLeft
@@ -430,17 +445,25 @@ Im folgenden Beispiel wird veranschaulicht, wie basierend auf dem Wert der über
 
     "templateLink": "[uri(deployment().properties.templateLink.uri, 'nested/azuredeploy.json')]"
 
+## Arrayfunktionen
 
+Der Ressourcen-Manager stellt die folgenden Funktionen für das Arbeiten mit Arraywerten bereit:
 
-## Bereitstellungswertausdrücke
+Zum Kombinieren mehrerer Arrays in einem Array, verwenden Sie [concat](#concat).
 
-Der Ressourcen-Manager stellt die folgenden Ausdrücke zum Abrufen von Werten aus Vorlagenabschnitten sowie von bereitstellungsbezogenen Werten bereit:
+Um die Anzahl der Elemente in einem Array zu erhalten, verwenden Sie [length](#length).
+
+Um einen Zeichenfolgenwert in ein Array von Zeichenfolgenwerten zu unterteilen, verwenden Sie [split](#split).
+
+## Funktionen für Bereitstellungswerte
+
+Der Ressourcen-Manager stellt die folgenden Funktionen zum Abrufen von Werten aus Vorlagenabschnitten sowie von bereitstellungsbezogenen Werten bereit:
 
 - [deployment](#deployment)
 - [parameters](#parameters)
 - [Variablen](#variables)
 
-Informationen zum Abrufen von Werten aus Ressourcen, Ressourcengruppen oder Abonnements finden Sie unter [Ressourcenausdrücke](#resource-expressions).
+Informationen zum Abrufen von Werten aus Ressourcen, Ressourcengruppen oder Abonnements finden Sie unter [Ressourcenfunktionen](#resource-functions).
 
 <a id="deployment" />
 ### deployment
@@ -449,7 +472,7 @@ Informationen zum Abrufen von Werten aus Ressourcen, Ressourcengruppen oder Abon
 
 Gibt Informationen zum aktuellen Bereitstellungsvorgang zurück.
 
-Dieser Ausdruck gibt das Objekt zurück, das während der Bereitstellung übergeben wird. Die Eigenschaften im zurückgegebenen Objekt hängen davon ab, ob das Bereitstellungsobjekt als Link oder als Inline-Objekt übergeben wird. Wenn das Bereitstellungsobjekt als Inlineobjekt übergeben wird, z. B. bei Verwendung des **-TemplateFile**-Parameters in Azure PowerShell zum Verweisen auf eine lokale Datei, hat das zurückgegebene Objekt folgendes Format:
+Diese Funktion gibt das Objekt zurück, das während der Bereitstellung übergeben wird. Die Eigenschaften im zurückgegebenen Objekt hängen davon ab, ob das Bereitstellungsobjekt als Link oder als Inline-Objekt übergeben wird. Wenn das Bereitstellungsobjekt als Inlineobjekt übergeben wird, z. B. bei Verwendung des **-TemplateFile**-Parameters in Azure PowerShell zum Verweisen auf eine lokale Datei, hat das zurückgegebene Objekt folgendes Format:
 
     {
         "name": "",
@@ -528,9 +551,9 @@ Gibt den Wert der Variablen zurück. Der angegebene Variablenname muss im Variab
 
 
 
-## Ressourcenausdrücke
+## Ressourcen-Funktionen
 
-Der Ressourcen-Manager stellt die folgenden Ausdrücke zum Abrufen von Ressourcenwerten bereit:
+Der Ressourcen-Manager stellt die folgenden Funktionen zum Abrufen von Ressourcenwerten bereit:
 
 - [listkeys](#listkeys)
 - [providers](#providers)
@@ -539,7 +562,7 @@ Der Ressourcen-Manager stellt die folgenden Ausdrücke zum Abrufen von Ressource
 - [Ressourcen-ID](#resourceid)
 - [Abonnement](#subscription)
 
-Informationen zum Abrufen von Werten aus Parametern, Variablen oder der aktuellen Bereitstellung finden Sie unter [Bereitstellungswertausdrücke](#deployment-value-expressions).
+Informationen zum Abrufen von Werten aus Parametern, Variablen oder der aktuellen Bereitstellung finden Sie unter [Bereitstellungswertfunktionen](#deployment-value-functions).
 
 <a id="listkeys" />
 ### listKeys
@@ -605,7 +628,7 @@ Aktiviert einen Ausdruck, um seinen Wert vom Laufzeitstatus einer anderen Ressou
 
 Die **Referenz**-Funktion leitet ihren Wert von einem Laufzeitstatus ab und kann somit nicht im Variablen-Abschnitt verwendet werden. Sie kann in Ausgabeabschnitten einer Vorlage verwendet werden.
 
-Mithilfe des Referenzausdrucks können Sie implizit deklarieren, dass eine Ressource von einer anderen abhängt, wenn die referenzierte Ressource innerhalb der gleichen Vorlage zur Verfügung gestellt wird. Sie müssen nicht zusätzlich die Eigenschaft **dependsOn** verwenden. Der Ausdruck wird nicht ausgewertet, bis die Ressource, auf die verwiesen wird, die Bereitstellung abgeschlossen hat.
+Mithilfe der Referenzfunktion können Sie implizit deklarieren, dass eine Ressource von einer anderen abhängt, wenn die referenzierte Ressource innerhalb der gleichen Vorlage zur Verfügung gestellt wird. Sie müssen nicht zusätzlich die Eigenschaft **dependsOn** verwenden. Die Funktion wird nicht ausgewertet, bis die Ressource, auf die verwiesen wird, die Bereitstellung abgeschlossen hat.
 
 Im folgenden Beispiel wird auf ein Speicherkonto verwiesen, das in der gleichen Vorlage bereitgestellt wird.
 
@@ -634,7 +657,7 @@ Sie können wie folgt über das zurückgegebene Objekt, beispielsweise den Blob-
 		}
 	}
 
-Wenn Sie die API-Version in Ihrer Vorlage nicht direkt angeben möchten, können Sie wie folgt mithilfe des Ausdrucks **providers** einen der Werte abrufen, etwa die aktuelle Version:
+Wenn Sie die API-Version in Ihrer Vorlage nicht direkt angeben möchten, können Sie wie folgt mithilfe der [providers](#providers)-Funktion einen der Werte abrufen, etwa die aktuelle Version:
 
     "outputs": {
 		"BlobUri": {
@@ -769,4 +792,4 @@ Das folgende Beispiel zeigt ein Abrufen der Abonnement-Funktion im Ausgabeabschn
 - Informationen dazu, wie Sie beim Erstellen eines Ressourcentyps eine bestimmte Anzahl von Durchläufen ausführen, finden Sie unter [Erstellen mehrerer Instanzen von Ressourcen im Azure-Ressourcen-Manager](resource-group-create-multiple.md).
 - Informationen zum Bereitstellen der erstellten Vorlage finden Sie unter [Bereitstellen einer Anwendung mit einer Azure-Ressourcen-Manager-Vorlage](resource-group-template-deploy.md).
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0121_2016-->

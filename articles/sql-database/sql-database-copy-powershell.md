@@ -1,5 +1,5 @@
 <properties 
-    pageTitle="Erstellen der Kopie einer Azure SQL-Datenbank mithilfe von PowerShell" 
+    pageTitle="Erstellen der Kopie einer Azure SQL-Datenbank mithilfe von PowerShell | Microsoft Azure" 
     description="Erstellen der Kopie einer Azure SQL-Datenbank mithilfe von PowerShell" 
 	services="sql-database"
 	documentationCenter=""
@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.devlang="NA"
-	ms.date="12/01/2015"
+	ms.date="01/20/2016"
 	ms.author="sstein"
 	ms.workload="data-management"
 	ms.topic="article"
@@ -136,7 +136,7 @@ Nach dem Ausführen von **Start-AzureSqlDatabaseCopy** können Sie den Status de
 
 ## Nächste Schritte
 
-- [Herstellen einer Verbindung mit SQL Server Management Studio (SSMS)](sql-database-connect-to-database.md)
+- [Herstellen einer Verbindung mit einer Azure SQL-Datenbank mit SQL Server Management Studio und Ausführen einer T-SQL-Beispielabfrage](sql-database-connect-query-ssms.md)
 - [Exportieren der Datenbank in eine BACPAC-Datei](sql-database-export-powershell.md)
 
 
@@ -146,4 +146,4 @@ Nach dem Ausführen von **Start-AzureSqlDatabaseCopy** können Sie den Status de
 - [Warnungen zur Notfallwiederherstellung](sql-database-disaster-recovery-drills.md)
 - [SQL-Datenbankdokumentation](https://azure.microsoft.com/documentation/services/sql-database/)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0121_2016-->

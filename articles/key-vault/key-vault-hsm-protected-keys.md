@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/08/2016"
+	ms.date="01/19/2016"
 	ms.author="cabailey"/>
 #Gewusst wie: Generieren und Übertragen von HSM-geschützten Schlüsseln für den Azure-Schlüsseltresor
 
@@ -22,6 +22,8 @@
 Zur Steigerung der Sicherheit können Sie bei Verwendung des Azure-Schlüsseltresors Schlüssel in HSMs (Hardwaresicherheitsmodule) importieren oder darin generieren. Diese Schlüssel verbleiben immer innerhalb der HSM-Grenzen. Dieses Szenario wird häufig als *Bring Your Own Key* (BYOK) bezeichnet. Die HSMs sind FIPS 140-2 Ebene 2-zertifiziert. Für den Azure-Schlüsseltresor wird die Thales nShield-Familie der HSMs zum Schützen der Schlüssel verwendet.
 
 Verwenden Sie die Informationen in diesem Thema zum Planen, Generieren und anschließenden Übertragen Ihrer eigenen HSM-geschützten Schlüssel für die Nutzung mit dem Azure-Schlüsseltresor.
+
+Diese Funktion für Azure China nicht zur Verfügung.
 
 >[AZURE.NOTE]Weitere Informationen zum Azure-Schlüsseltresor finden Sie unter [Was ist der Azure-Schlüsseltresor?](key-vault-whatis.md).
 >
@@ -58,8 +60,8 @@ Die folgende Tabelle enthält eine Liste mit Voraussetzungen, die beim Azure-Sch
 
 |Anforderung|Weitere Informationen|
 |---|---|
-|Azure-Abonnement|Um einen Azure-Schlüsseltresor erstellen zu können, benötigen Sie ein Azure-Abonnement: [Registrieren Sie sich für die kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/).|
-|Azure-Schlüsseltresor, der HSMs unterstützt|Weitere Informationen zu den Dienstebenen und Funktionen für den Azure-Schlüsseltresor finden Sie auf der Website [Azure-Schlüsseltresor – Preise](http://azure.microsoft.com/pricing/details/key-vault/).|
+|Azure-Abonnement|Um einen Azure-Schlüsseltresor erstellen zu können, benötigen Sie ein Azure-Abonnement: [Registrieren Sie sich für die kostenlose Testversion](../../../../pricing/free-trial).|
+|Azure-Schlüsseltresor, der HSMs unterstützt|Weitere Informationen zu den Dienstebenen und Funktionen für den Azure-Schlüsseltresor finden Sie auf der Website [Azure-Schlüsseltresor – Preise](../../../../pricing/details/key-vault/).|
 |Thales-HSM, Smartcards und Supportsoftware|Sie benötigen Zugriff auf ein Thales-Hardwaresicherheitsmodul sowie grundlegende Kenntnisse zum Betrieb von Thales-HSMs. Eine Liste mit kompatiblen Modellen bzw. Informationen zum Kauf eines HSM, falls Sie noch keins besitzen, finden Sie unter [Thales-Hardwaresicherheitsmodul](https://www.thales-esecurity.com/msrms/buy).|
 |Folgende Hardware und Software:<ol><li>x64-Offlinearbeitsstation mit Windows 7 als Betriebssystem-Mindestversion und Thales nShield-Software (mindestens Version 11.50).<br/><br/>Wenn auf der Arbeitsstation Windows 7 ausgeführt wird, müssen Sie [Microsoft .NET Framework 4.5 installieren](http://download.microsoft.com/download/b/a/4/ba4a7e71-2906-4b2d-a0e1-80cf16844f5f/dotnetfx45_full_x86_x64.exe).</li><li>Eine Arbeitsstation mit Internetverbindung und Windows 7 als Betriebssystem-Mindestversion.</li><li>Ein USB-Laufwerk oder anderes tragbares Speichergerät mit mindestens 16 MB freiem Speicherplatz.</li></ol>|Aus Sicherheitsgründen wird empfohlen, die erste Arbeitsstation nicht mit einem Netzwerk zu verbinden. Dies wird jedoch nicht programmgesteuert erzwungen.<br/><br/>Beachten Sie, dass diese Arbeitsstation in den folgenden Anleitungen als „verbindungslose Arbeitsstation“ bezeichnet wird.</p></blockquote><br/>Falls Ihr Mandantenschlüssel für ein Produktionsnetzwerk gilt, empfehlen wir außerdem, eine zweite separate Arbeitsstation zu verwenden, um das Toolset herunterzuladen und den Mandantenschlüssel hochzuladen. Zu Testzwecken können Sie aber auch ein und dieselbe Arbeitsstation verwenden.<br/><br/>Beachten Sie, dass diese zweite Arbeitsstation in den folgenden Anleitungen als „Arbeitsstation mit Internetverbindung“ bezeichnet wird.</p></blockquote><br/>|
 
@@ -97,9 +99,9 @@ Lassen Sie das Azure PowerShell-Fenster geöffnet.
 
 ###Schritt 1.3: Herunterladen des BYOK-Toolsets für den Azure-Schlüsseltresor
 
-Wechseln Sie zum Microsoft Download Center, und [laden Sie das BYOK-Toolset für den Azure-Schlüsseltresor für Ihre Region herunter](http://www.microsoft.com/download/details.aspx?id=45345):
+Wechseln Sie zum Microsoft Download Center, und [laden Sie das Azure Key Vault BYOK-Toolset für Ihre Region oder Instanz von Azure herunter](http://www.microsoft.com/download/details.aspx?id=45345):
 
-|Region|Paketname|SHA-256-Pakethash|
+|Geografische Region oder Instanz von Azure|Paketname|SHA-256-Pakethash|
 |---|---|---|
 |Nordamerika|KeyVault-BYOK-Tools-UnitedStates.zip|D9FDA9F5A34E1388CD6C9138E5B75B7051FB7D6B11F087AFE0553DC85CCF0E36|
 |Europa|KeyVault-BYOK-Tools-Europe.zip|881DCA798305B8408C06BAE7B3EFBC1E9EA6113A8D6EC443464F3744896F32C3|
@@ -107,6 +109,7 @@ Wechseln Sie zum Microsoft Download Center, und [laden Sie das BYOK-Toolset für
 |Lateinamerika|KeyVault-BYOK-Tools-LatinAmerica.zip|B38015990D4D1E522B8367FF78E78E0234BF9592663470426088C44C3CAAAF48|
 |Japan|KeyVault-BYOK-Tools-Japan.zip|DB512CD9472FDE2FD610522847DF05E4D7CD49A296EE4A2DD74D43626624A113|
 |Australien|KeyVault-BYOK-Tools-Australia.zip|8EBC69E58E809A67C036B50BB4F1130411AD87A7464E0D61A9E993C797915967|
+|[Azure Government](../../../../features/gov/)|KeyVault-BYOK-Tools-USGovCloud.zip|4DE9B33990099E4197ED67D786316F628E5218FC1EB0C24DCAD8A1851FD345B8|
 
 Verwenden Sie in der Azure PowerShell-Sitzung das [Get-FileHash](https://technet.microsoft.com/library/dn520872.aspx)-Cmdlet, um die Integrität des heruntergeladenen BYOK-Toolsets zu überprüfen.
 
@@ -173,7 +176,7 @@ Dieser Schritt ist optional, wird aber empfohlen, damit Sie Folgendes überprüf
 
 So überprüfen Sie das heruntergeladene Paket
 
-1.	Führen Sie das Skript „verifykeypackage.py“ aus, indem Sie je nach Region Folgendes eingeben:
+1.	Führen Sie das Skript „verifykeypackage.py“ aus, indem Sie je nach Region oder Instanz von Azure Folgendes eingeben:
 	- Für Nordamerika:
 
 			python verifykeypackage.py -k BYOK-KEK-pkg-NA-1 -w BYOK-SecurityWorld-pkg-NA-1
@@ -192,6 +195,9 @@ So überprüfen Sie das heruntergeladene Paket
 	- Für Australien:
 
 			python verifykeypackage.py -k BYOK-KEK-pkg-AUS-1 -w BYOK-SecurityWorld-pkg-AUS-1
+	- Für [Azure Government](../../../../features/gov/) (arbeitet mit der Instanz von Azure der US-Regierung):
+
+			python verifykeypackage.py -k BYOK-KEK-pkg-USGOV-1 -w BYOK-SecurityWorld-pkg-USGOV-1
 
 	>[AZURE.TIP]Die Thales-Software enthält Python unter „%NFAST\_HOME%\\python\\bin“.
 
@@ -229,7 +235,7 @@ Führen Sie für diesen vierten Schritt die folgenden Verfahren auf der verbindu
 
 ###Schritt 4.1: Erstellen einer Kopie des Schlüssels mit reduzierten Berechtigungen
 
-Um die Berechtigungen für den Schlüssel zu reduzieren, führen Sie an einer Eingabeaufforderung je nach Region Folgendes aus:
+Um die Berechtigungen für den Schlüssel zu reduzieren, führen Sie an einer Eingabeaufforderung je nach Region oder Instanz von Azure Folgendes aus:
 
 - Für Nordamerika:
 
@@ -249,6 +255,9 @@ Um die Berechtigungen für den Schlüssel zu reduzieren, führen Sie an einer Ei
 - Für Australien:
 
 		KeyTransferRemote.exe -ModifyAcls -KeyAppName simple -KeyIdentifier contosokey -ExchangeKeyPackage BYOK-KEK-pkg-AUS-1 -NewSecurityWorldPackage BYOK-SecurityWorld-pkg-AUS-1
+- Für [Azure Government](../../../../features/gov/) (arbeitet mit der Instanz von Azure der US-Regierung):
+
+		KeyTransferRemote.exe -ModifyAcls -KeyAppName simple -KeyIdentifier contosokey -ExchangeKeyPackage BYOK-KEK-pkg-USGOV-1 -NewSecurityWorldPackage BYOK-SecurityWorld-pkg-USGOV-1
 
 Ersetzen Sie beim Ausführen dieses Befehls *contosokey* durch den gleichen Wert, den Sie in **Schritt 3.3: Erstellen eines neuen Schlüssels** unter [Generieren des Schlüssels](#step-3-generate-your-key) angegeben haben.
 
@@ -270,7 +279,7 @@ Ersetzen Sie beim Ausführen dieser Befehle "contosokey" durch den Wert, den Sie
 
 ###Schritt 4.3: Verschlüsseln des Schlüssels mit dem Schlüsselaustauschschlüssel von Microsoft
 
-Führen Sie je nach Region einen der folgenden Befehle aus:
+Führen Sie je nach geografischer Region oder Instanz von Azure einen der folgenden Befehle aus:
 
 - Für Nordamerika:
 
@@ -290,6 +299,9 @@ Führen Sie je nach Region einen der folgenden Befehle aus:
 - Für Australien:
 
 		KeyTransferRemote.exe -Package -KeyIdentifier contosokey -ExchangeKeyPackage BYOK-KEK-pkg-AUS-1 -NewSecurityWorldPackage BYOK-SecurityWorld-pkg-AUS-1 -SubscriptionId SubscriptionID -KeyFriendlyName ContosoFirstHSMkey
+- Für [Azure Government](../../../../features/gov/) (arbeitet mit der Instanz von Azure der US-Regierung):
+
+		KeyTransferRemote.exe -Package -KeyIdentifier contosokey -ExchangeKeyPackage BYOK-KEK-pkg-USGOV-1 -NewSecurityWorldPackage BYOK-SecurityWorld-pkg-USGOV-1 -SubscriptionId SubscriptionID -KeyFriendlyName ContosoFirstHSMkey
 
 Gehen Sie wie folgt vor, wenn Sie diesen Befehl ausführen:
 
@@ -313,8 +325,9 @@ Verwenden Sie für diesen letzten Schritt auf der Arbeitsstation mit Internetver
 
 Wenn der Upload erfolgreich ist, werden die Eigenschaften des gerade hinzugefügten Schlüssels angezeigt.
 
+
 ##Nächste Schritte
 
 Sie können diesen HSM-geschützten Schlüssel jetzt in Ihrem Schlüsseltresor verwenden. Weitere Informationen finden Sie im Abschnitt **Verwenden eines Hardwaresicherheitsmoduls (HSM)** im Lernprogramm [Erste Schritte mit dem Azure-Schlüsseltresor](key-vault-get-started.md).
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0121_2016-->

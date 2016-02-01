@@ -18,18 +18,22 @@
 
 # Reliable Actors-Entwurfsmuster: Intelligenter Cache
 
-Die Kombination von Webebene, Caching-Ebene, Speicherebene und gelegentlich auch Worker-Ebene sind im Großen und Ganzen die standardmäßigen Teile heutiger Anwendungen. Die Caching-Ebene ist in der Regel von entscheidender Bedeutung für die Leistung und kann wiederum selbst mehrere Ebenen umfassen. Viele Caches sind einfache Schlüsselwertpaare, während andere Systeme wie [Redis](http://redis.io), die als Cache verwendet werden, eine reichhaltigere Semantik bieten. Dennoch ist jede spezielle Caching-Ebene semantisch beschränkt, und noch wichtiger, es ist eine weitere Ebene, die verwaltet werden muss. Was, wenn anstatt Objekten nur der Status in lokalen Variablen gespeichert wird, und von diesen Objekten automatisch Snapshots erstellt oder sie in einem permanenten Speicher verschoben werden können? Außerdem werden umfassende Auflistungen, wie z. B. Listen, sortierte Sätze, Warteschlangen sowie auch jeder andere benutzerdefinierte Typ, einfach als Membervariablen und Methoden modelliert.
+Die Kombination von Webebene, Cachingebene, Speicherebene und gelegentlich auch Workerebene sind im Großen und Ganzen die standardmäßigen Teile heutiger Anwendungen. Die Cachingebene ist in der Regel von entscheidender Bedeutung für die Leistung und kann wiederum selbst mehrere Ebenen umfassen. Viele Caches sind einfache Schlüssel-Wert-Paare. Andere Systeme, wie z. B. [Redis](http://redis.io), dienen als Cache, bieten aber auch eine reichhaltigere Semantik. Jede spezielle Cachingebene besitzt jedoch eine begrenzte Semantik. Darüber hinaus ist sie noch eine weitere Ebene, die verwaltet werden muss.
 
-![][1]
+Objekte können stattdessen nur den Status in lokalen Variablen speichern, und von diesen Objekten können automatisch Momentaufnahmen erstellt werden, oder sie können in einen permanenten Speicher verschoben werden. Außerdem können umfassende Auflistungen, wie z. B. Listen, sortierte Sätze, Warteschlangen und andere benutzerdefinierte Typen, einfach als Membervariablen und Methoden modelliert werden.
 
-## Das Leaderboard-Beispiel
+![Actors und Caching][1]
 
-Nehmen Sie Leaderboards als Beispiel – ein Leaderboard-Objekt muss eine sortierte Spielerliste und die dazugehörigen Punkte verwalten, damit Abfragen durchgeführt werden können. Um beispielsweise die "100 besten Spielern" zu suchen, oder um die Position eines Spielers relativ zu +-N-Spielern vor oder nach ihm im Leaderboard zu ermitteln. Bei einer typischen Lösung mit herkömmlichen Tools müsste das Leaderboard-Objekt (Auflistung, die das Einfügen eines neuen Tuples<Player  Points> namens "Score" unterstützt) mit GET abgerufen, sortiert und schließlich mit PUT wieder an den Cache übermittelt werden. Wahrscheinlich würden wir das Leaderboard-Objekt aus Gründen der Konsistenz mit LOCK (GETLOCK PUTLOCK) sperren. Nehmen wir nun eine Actor-basierte Lösung, bei der Status und Verhalten nicht getrennt ist. Es gibt zwei Optionen:
+## Untersuchen des Leaderboard-Beispiels
 
-* Implementieren der Leaderboard-Auflistung als Teil des Actors
-* oder Verwenden des Actors als Schnittstelle für die Auflistung, die in einer Membervariablen gespeichert werden kann. Schauen wir zunächst, wie die Schnittstelle aussehen könnte:
+Sehen wir uns Leaderboards als Beispiel an. Ein Leaderboard-Objekt muss eine sortierte Spielerliste und die dazugehörigen Punkte verwalten, damit Abfragen durchgeführt werden können. Eine Abfrage kann die ersten 100 Spieler finden. Sie kann auch die Position eines Spielers im Leaderboard relativ zu einer angegebenen Anzahl von Spielern über und unter ihm finden. Bei einer herkömmlichen Lösung müsste das Leaderboard-Objekt (eine Auflistung, die das Einfügen eines neuen Tupels `<Player, Points>` namens **Score** unterstützt) mit GET abgerufen, sortiert und schließlich mit PUT wieder an den Cache übermittelt werden. Wahrscheinlich würden wir das Leaderboard-Objekt aus Gründen der Konsistenz mit LOCK (GETLOCK PUTLOCK) sperren. Nehmen wir nun eine Actor-basierte Lösung, bei der Status und Verhalten nicht getrennt sind. Es gibt zwei Optionen:
 
-## Codebeispiel für intelligenten Cache – Leaderboard-Schnittstelle
+* Implementieren der Leaderboard-Auflistung als Teil des Actors.
+* Verwenden des Actors als Schnittstelle für die Auflistung, die in einer Membervariablen gespeichert werden kann.
+
+Das folgende Codebeispiel zeigt, wie die Schnittstelle aussehen könnte.
+
+### Codebeispiel für intelligenten Cache: Leaderboard-Schnittstelle
 
 ```
 public interface ILeaderboard : IActor
@@ -46,9 +50,9 @@ public interface ILeaderboard : IActor
 
 ```
 
-Als Nächstes implementieren wir diese Schnittstelle. Dann verwenden wir die zweite Option und kapseln das Verhalten der Auflistung in den Actor ein:
+Als Nächstes können wir diese Schnittstelle implementieren, indem wir die zweite Option verwenden und das Verhalten der Auflistung in den Actor kapseln:
 
-## Codebeispiel für intelligenten Cache – Leaderboard-Actor
+### Codebeispiel für intelligenten Cache: Leaderboard-Actor
 
 ```
 public class Leaderboard : StatefulActor<LeaderboardCollection>, ILeaderboard
@@ -75,9 +79,9 @@ public class Leaderboard : StatefulActor<LeaderboardCollection>, ILeaderboard
 
 ```
 
-Der Status-Member der Klasse stellt den Status des Actors bereit, im obigen Beispielcode stellt er außerdem Methoden zum Lesen/Schreiben von Daten bereit.
+Der Statusmember der Klasse stellt den Status des Actors bereit. Im oben dargestellten Beispielcode stellt er auch Methoden zum Lesen und Schreiben von Daten bereit.
 
-## Codebeispiel für intelligenten Cache – LeaderboardCollection
+### Codebeispiel für intelligenten Cache: LeaderboardCollection
 
 ```
 [DataContract]
@@ -105,9 +109,9 @@ public class LeaderboardCollection
 
 ```
 
-Kein Datenversand, keine Sperren, nur die Bearbeitung von Remote-Objekten in einer verteilten Laufzeit, die mehrere Clients bedienen, als wären sie einzelne Objekte in einer einzelnen Anwendung, die nur einen einzelnen Client bedient. Hier der Beispiel-Client:
+Bei diesem Ansatz gibt es keine Sperren und keinen Datenversand. Es werden nur Remoteobjekte in einer verteilten Laufzeit bearbeitet, die mehrere Clients bedient, als wären sie einzelne Objekte in einer einzelnen Anwendung, die nur einen einzelnen Client bedient. Das folgende Codebeispiel konzentriert sich auf den Beispielclient.
 
-## Codebeispiel für intelligenten Cache – Aufrufen das Leaderboard-Actors
+### Codebeispiel für intelligenten Cache: Aufrufen des Leaderboard-Actors
 
 ```
 // Get reference to Leaderboard
@@ -131,10 +135,12 @@ Player = 1 Points = 500
 Player = 2 Points = 100
 ```
 
-## Skalierung der Architektur
-Es sieht möglicherweise so aus, als könnte im obigen Beispiel ein Engpass in der Leaderboard-Instanz erstellt werden. Was, wenn wir beispielsweise planen, Hunderte und Tausende von Spielern zu unterstützen? Eine Möglichkeit dazu wäre, statusfreie Aggregatoren einzuführen, die wie ein Puffer fungieren – also Teilergebnisse (d. h. Untersummen) speichern und diese dann in regelmäßigen Abständen an den Leaderboard-Actor senden, der das endgültige Leaderboard verwaltet. Dieses "Aggregationsverfahren" wird zu einem späteren Zeitpunkt noch ausführlicher erörtert. Es müssen auch nicht Mutexe, Semaphoren oder andere Parallelitätskonstrukte berücksichtigt werden, wie dies traditionell bei sich korrekt verhaltenden parallelen Programmen erforderlich ist. Es folgt ein weiteres Cache-Beispiel, das die umfangreiche Semantik veranschaulicht, die mit Actors implementiert werden kann. Dieses Mal implementieren wir die Logik der Prioritätswarteschlange (Reduzierung der Anzahl, Erhöhung der Priorität) als Teil der Actor-Implementierung. Die Schnittstelle für IJobQueue sieht wie folgt aus:
+## Skalieren der Architektur
+Es sieht möglicherweise so aus, als könnte das obige Beispiel zu einem Engpass in der Leaderboard-Instanz führen. Was geschieht beispielsweise, wenn Sie beabsichtigen, Tausende von Spielern zu unterstützen? Eine Möglichkeit wäre in diesem Fall, statusfreie Aggregatoren einzuführen, die als Puffer fungieren. Diese Aggregatoren würden partielle Ergebnisse (Teilergebnisse) speichern und sie dann in regelmäßigen Abständen an den Leaderboard-Actor senden, der das endgültige Leaderboard verwalten würde. Dieses Verfahren wird zu einem späteren Zeitpunkt noch ausführlicher erörtert. Es müssen auch nicht Mutexe, Semaphoren oder andere Parallelitätskonstrukte berücksichtigt werden, wie dies traditionell bei sich korrekt verhaltenden parallelen Programmen erforderlich ist.
 
-## Codebeispiel für intelligenten Cache – Auftragswarteschlangen-Schnittstelle
+Es folgt ein weiteres Cache-Beispiel, das die umfangreiche Semantik veranschaulicht, die mit Actors implementiert werden kann. Dieses Mal implementieren wir die Logik der Prioritätswarteschlange (je niedriger die Nummer, desto höher die Priorität) als Teil der Actor-Implementierung. Das folgende Codebeispiel bietet einen Überblick über die Schnittstelle für **IJobQueue**.
+
+### Codebeispiel für intelligenten Cache: Auftragswarteschlangen-Schnittstelle
 
 ```
 public interface IJobQueue : IActor
@@ -146,9 +152,9 @@ public interface IJobQueue : IActor
 }
 ```
 
-Wir müssen auch das Auftragselement definieren:
+Wir müssen auch das **Job**-Element definieren:
 
-## Codebeispiel für intelligenten Cache – Auftrag
+### Codebeispiel für intelligenten Cache: Auftrag
 
 ```
 public class Job : IComparable<Job>
@@ -168,9 +174,9 @@ public class Job : IComparable<Job>
 }
 ```
 
-Zuletzt implementieren wir die IJobQueue-Schnittstelle im Actor. Beachten Sie, dass wir die Implementierungsdetails der Prioritätswarteschlange hier aus Gründen der Übersichtlichkeit weggelassen haben. Eine Beispielimplementierung finden Sie in den begleitenden Beispielen.
+Zuletzt implementieren wir die IJobQueue-Schnittstelle im Actor. Beachten Sie, dass wir die Implementierungsdetails der Prioritätswarteschlange hier aus Gründen der Übersichtlichkeit weggelassen haben. Eine Implementierung finden Sie in den begleitenden Beispielen.
 
-## Codebeispiel für intelligenten Cache – Auftragswarteschlange
+### Codebeispiel für intelligenten Cache: Auftragswarteschlange
 
 ```
 public class JobQueue : StatefulActor<List<Jobs>>, IJobQueue
@@ -233,16 +239,20 @@ Job = 6 Priority = 0.962653734238191
 Job = 1 Priority = 0.97444181375878
 ```
 
-## Actors bieten Flexibilität
-In den obigen Beispielen, Leaderboard und JobQueue, wurden zwei verschiedene Verfahren verwendet:
+## Verwenden von Actors zum Bereitstellen von Flexibilität
+In den obigen Beispielen zu Leaderboard und Auftragswarteschlange wurden zwei verschiedene Verfahren verwendet:
 
-* Im Leaderboard-Beispiel haben wir ein Leaderboard-Objekt als private Membervariable in den Actor eingekapselt und nur eine einzelne Schnittstelle für dieses Objekt bereitgestellt – für den Status und die Funktionalität.
+* Im Leaderboard-Beispiel haben wir ein Leaderboard-Objekt als eine private Membervariable in den Actor gekapselt. Wir haben dann lediglich eine Schnittstelle für dieses Objekt bereitgestellt, sowohl zu dessen Status als auch zu dessen Funktionalität.
 
-* Andererseits haben wir im JobQueue-Beispiel den Actor als Prioritätswarteschlange selbst implementiert, anstatt auf ein an anderer Stelle definiertes Element zu verweisen.
+* Im Beispiel der Auftragswarteschlange haben wir stattdessen den Actor als Prioritätswarteschlange selbst implementiert, anstatt auf ein an anderer Stelle definiertes Objekt zu verweisen.
 
-Akteure bieten Entwicklern die Flexibilität, umfangreiche Objektstrukturen als Teil der Akteure zu definieren oder auf Objektdiagramme außerhalb der Akteure zu verweisen. In Caching-Begriffen ausgedrückt, können Actors Write-behind- oder Write-through verwenden, oder wir können unterschiedliche Techniken auf Membervariablen-Granularität verwenden. Anders ausgedrückt: Wir besitzen die vollständige Kontrolle darüber, was persistent beibehalten werden soll und wann es beibehalten werden soll. Ein transienter Status oder ein Status, der anhand eines gespeicherten Status erstellt werden kann, muss nicht beibehalten werden. Und wie sieht es dann mit dem Auffüllen der Caches dieser Actors aus? Es gibt eine Reihe von Möglichkeiten, dies zu erreichen. Akteure informieren Benutzer mithilfe der virtuellen Methoden OnActivateAsync() und OnDectivateAsync, wenn eine Instanz des Akteurs aktiviert oder deaktiviert wird. Beachten Sie, dass der Actor bei Bedarf aktiviert wird, wenn eine erste Anforderung an ihn gesendet wird. Wir können OnActivateAsync() verwenden, um den Status bei Bedarf wie beim Read-through, vielleicht aus einem externen stabilen Speicher, auszufüllen. Oder der Status kann auf einem Timer ausgefüllt werden, z. B. einem Wechselkurs-Actor, der die Konvertierungsfunktion basierend auf den aktuellen Wechselkursen bereitstellt. Dieser Actor kann seinen Status in regelmäßigen Abständen über einen externen Dienst ausfüllen, z. B. alle 5 Sekunden, und den Status für die Konvertierungsfunktion verwenden. Betrachten Sie das folgende Beispiel:
+Actors bieten Entwicklern die Flexibilität, umfangreiche Objektstrukturen als Teil der Actors zu definieren oder auf Objektdiagramme außerhalb der Actors zu verweisen. In Cachingterminologie ausgedrückt, können Actors Write-Behind oder Write-Through verwenden, oder sie können unterschiedliche Techniken für die Granularität von Membervariablen einsetzen. Sie besitzen die vollständige Kontrolle darüber, was persistent beibehalten werden soll und wann es beibehalten werden soll. Ein transienter Status oder ein Status, der anhand eines gespeicherten Status erstellt werden kann, muss nicht beibehalten werden.
 
-## Codebeispiel für intelligenten Cache – Ratenkonvertierung
+Wie werden die Caches von diese Actors aufgefüllt? Es gibt eine Reihe von Möglichkeiten, dies zu erreichen. Actors informieren Benutzer mithilfe der virtuellen Methoden **OnActivateAsync()** und **OnDeactivateAsync()**, wenn eine Instanz des Actors aktiviert oder deaktiviert wird. Beachten Sie, dass der Actor bei Bedarf aktiviert wird, wenn erstmals eine Anforderung an ihn gesendet wird.
+
+Sie können „OnActivateAsync()“ verwenden, um den Status bei Bedarf wie beim Read-Through, vielleicht aus einem externen stabilen Speicher, aufzufüllen. Der Status kann auch nach einem Timer aufgefüllt werden, z. B. mit einem Wechselkurs-Actor, der die Konvertierungsfunktion basierend auf den aktuellen Wechselkursen bereitstellt. Dieser Actor kann seinen Status in regelmäßigen Abständen über einen externen Dienst auffüllen, z. B. alle fünf Sekunden, und den Status für die Konvertierungsfunktion verwenden. Im folgenden Codebeispiel wird gezeigt, wie dies funktioniert.
+
+### Codebeispiel für intelligenten Cache: Ratenkonvertierung
 
 ```
 ...
@@ -271,13 +281,13 @@ public Task RefreshRates()
 
 ```
 
-Im Wesentlichen bietet der Smart Cache Folgendes:
+Im Wesentlichen bietet der Ansatz des intelligenten Caches folgende Vorteile:
 
 * Hoher Durchsatz/niedrige Latenz bei Dienstanforderungen aus dem Arbeitsspeicher.
-* Einzelinstanz-Routing und Singlethread-Serialisierung von Anforderungen an ein Element ohne Konflikt im persistenten Speicher.
-* Semantische Vorgänge, wie z. B. Enqueue(Auftragselement).
-* Einfach zu implementierende Write-through- oder Write-Behind-Technik.
-* Automatische Entfernung von LRU (Last Recently Used)-Elementen (Ressourcenverwaltung).
+* Einzelinstanz-Routing und Singlethread-Serialisierung von Anforderungen an ein Element ohne Konflikt in einem persistenten Speicher.
+* Semantische Vorgänge, wie z. B. **Enqueue(Auftragselement)**.
+* Einfach zu implementierendes Write-Through oder Write-Behind.
+* Automatisches Entfernen von LRU-Elementen (Last Recently Used) (Ressourcenverwaltung).
 * Automatische Elastizität und Zuverlässigkeit.
 
 
@@ -285,20 +295,20 @@ Im Wesentlichen bietet der Smart Cache Folgendes:
 
 [Muster: Verteilte Netzwerke und Diagramme](service-fabric-reliable-actors-pattern-distributed-networks-and-graphs.md)
 
-[Muster: Ressourcenkontrolle](service-fabric-reliable-actors-pattern-resource-governance.md)
+[Muster: Ressourcengovernance](service-fabric-reliable-actors-pattern-resource-governance.md)
 
-[Muster: Komposition zustandsbehafteter Dienste](service-fabric-reliable-actors-pattern-stateful-service-composition.md)
+[Muster: Zusammenstellung statusbehafteter Dienste](service-fabric-reliable-actors-pattern-stateful-service-composition.md)
 
 [Muster: Internet der Dinge](service-fabric-reliable-actors-pattern-internet-of-things.md)
 
 [Muster: Verteilte Berechnung](service-fabric-reliable-actors-pattern-distributed-computation.md)
 
-[Beispiele für Antimuster](service-fabric-reliable-actors-anti-patterns.md)
+[Einige Antimuster](service-fabric-reliable-actors-anti-patterns.md)
 
-[Einführung in Service Fabric Actors](service-fabric-reliable-actors-introduction.md)
+[Einführung in Service Fabric Reliable Actors](service-fabric-reliable-actors-introduction.md)
 
 
 <!--Image references-->
 [1]: ./media/service-fabric-reliable-actors-pattern-smart-cache/smartcache-arch.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0121_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="nodejs" 
 	ms.topic="article" 
-	ms.date="11/16/2015" 
+	ms.date="01/19/2016" 
 	ms.author="ryancraw"/>
 
 # DocumentDB SDK
@@ -35,7 +35,15 @@
 <tr><td>**Derzeit unterstützte Plattform**</td><td>[Node.js v0.10](https://nodejs.org/en/blog/release/v0.10.0/)<br/>[Node.js v0.12](https://nodejs.org/en/blog/release/v0.12.0/)<br/>[Node.js v4.2.0](https://nodejs.org/en/blog/release/v4.2.0/)</td></tr>
 </table></br>
 
-## Versionsinformationen
+##Versionshinweise
+
+###<a name="1.5.1"/>1.5.1</a>
+
+- Problem [Nr. 92](https://github.com/Azure/azure-documentdb-node/issues/90) behoben – Umbenennung des Ordners „Hash“ in „hash“ für Systeme, bei denen die Groß-/Kleinschreibung beachtet wird.
+
+### <a name="1.5.0"/>1.5.0</a>
+
+- Unterstützung für Sharding implementiert, indem Hash- und Bereichspartitionsresolver hinzugefügt wurden.
 
 ### <a name="1.4.0"/>1.4.0</a>
 
@@ -97,11 +105,13 @@ Alle Versionen des Azure DocumentDB SDK für Node.js vor Version **1.0.0** werde
 
 | Version | Herausgabedatum | Deaktivierungstermine 
 | ---	  | ---	         | ---
-| [1\.4.0](#1.4.0) | 6. Oktober 2015 |---
-| [1\.3.0](#1.3.0) | 6. Oktober 2015 |---
-| [1\.2.2](#1.2.2) | 10. September 2015 |---
-| [1\.2.1](#1.2.1) | 15. August 2015 |---
-| [1\.2.0](#1.2.0) | 15. August 2015 |---
+| [1.5.1](#1.5.1) | 4. Januar 2016 |---
+| [1.5.0](#1.5.0) | 31. Dezember 2015 |---
+| [1.4.0](#1.4.0) | 6. Oktober 2015 |---
+| [1.3.0](#1.3.0) | 6. Oktober 2015 |---
+| [1.2.2](#1.2.2) | 10. September 2015 |---
+| [1.2.1](#1.2.1) | 15. August 2015 |---
+| [1.2.0](#1.2.0) | 5. August 2015 |---
 | [1\.1.0](#1.1.0) | 9. Juli 2015 |---
 | [1\.0.3](#1.0.3) | 4. Juni 2015 |---
 | [1\.0.2](#1.0.2) | 23. Mai 2015 |---
@@ -119,6 +129,6 @@ Alle Versionen des Azure DocumentDB SDK für Node.js vor Version **1.0.0** werde
 
 ## Weitere Informationen
 
-Weitere Informationen zu DocumentDB finden Sie auf Seite zum Dienst [Microsoft Azure DocumentDB](https://azure.microsoft.com/services/documentdb/).
+Weitere Informationen zu DocumentDB finden Sie auf der Seite zum Dienst [Microsoft Azure DocumentDB](https://azure.microsoft.com/services/documentdb/).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0121_2016-->

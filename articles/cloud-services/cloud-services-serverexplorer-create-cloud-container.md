@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na" 
-   ms.date="10/14/2015"
+   ms.date="01/13/2016"
    ms.author="cawa"/>
 
 # Verwenden von Visual Studio zum Erstellen eines Clouddienstcontainers
@@ -33,4 +33,4 @@ Wählen Sie zum Anzeigen des **Server-Explorer** in Visual Studio in der Menüle
 Nachdem Sie einen Clouddienstcontainer erstellt haben, können Sie nun einen Clouddienst [erstellen und bereitstellen](cloud-services-how-to-create-deploy.md).
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_0121_2016-->

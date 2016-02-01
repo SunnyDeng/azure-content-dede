@@ -17,7 +17,7 @@
 	ms.date="12/16/2015"
 	ms.author="jeffstok"/>
 
-# Skalieren von Azure Stream Analytics-Aufträgen zur Erhöhung des Durchsatzes bei der Streamingdatenverarbeitung #
+# Skalieren von Stream Analytics-Aufträgen zur Erhöhung des Durchsatzes bei der Datenverarbeitung #
 
 Erfahren Sie, wie Sie Analyseaufträge optimieren, *Streamingeinheiten* für einen Stream Analytics-Auftrag berechnen und Stream Analytics-Aufträge durch Konfiguration von Eingabepartitionen, Optimierung der Abfragedefinition und Einstellung von Streamingeinheiten für Aufträge skalieren.
 
@@ -265,4 +265,4 @@ Um Hilfe zu erhalten, nutzen Sie unser [Azure Stream Analytics-Forum](https://so
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0121_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/22/2015"
+	ms.date="01/15/2016"
 	ms.author="adegeo"/>
 
 
@@ -22,12 +22,12 @@
 # Konfigurieren von SSL für eine Anwendung in Azure
 
 > [AZURE.SELECTOR]
-- [Azure classic portal](cloud-services-configure-ssl-certificate.md)
 - [Azure portal](cloud-services-configure-ssl-certificate-portal.md)
+- [Azure classic portal](cloud-services-configure-ssl-certificate.md)
 
 Secure Socket Layer (SSL)-Verschlüsselung ist die am häufigsten verwendete Methode zur Sicherung von Daten im Internet. Im Folgenden erfahren Sie, wie Sie einen HTTPS-Endpunkt für eine Webrolle angeben und ein SSL-Zertifikat zur Sicherung Ihrer Anwendung hochladen können.
 
-> [AZURE.NOTE]Die Prozesse in dieser Aufgabe gelten für Azure-Clouddienste. Die Vorgehensweise für Websites finden Sie unter [Configuring an SSL certificate for an Azure web site](../web-sites-configure-ssl-certificate.md) (Konfigurieren eines SSL-Zertifikats für eine Azure-Website, in englischer Sprache).
+> [AZURE.NOTE]Die Vorgehensweisen in dieser Aufgabe gelten für Azure Cloud Services. Entsprechende Informationen zu App Services finden Sie [hier](../app-service-web/web-sites-configure-ssl-certificate.md).
 
 Diese Aufgabe erfordert die Verwendung einer Produktionsbereitstellung. Informationen zur Verwendung einer Stagingbereitstellung erhalten Sie am Ende dieses Themenabschnitts.
 
@@ -67,7 +67,7 @@ Ihre Anwendung muss so konfiguriert sein, dass das Zertifikat verwendet wird. Au
         ...
         </WebRole>
 
-    Der Bereich **Certificates** definiert den Namen des Zertifikats, dessen Speicherort sowie den Namen des Speichers. Hier wurde der Speicher der Zertifizierungsstelle als Speicherort des Zertifikats gewählt. Sie können jedoch auch andere Optionen auswählen. Weitere Informationen finden Sie unter [Verknüpfen eines Zertifikats mit einem Dienst][].
+    Der Bereich **Certificates** definiert den Namen des Zertifikats, dessen Speicherort sowie den Namen des Speichers.
 
 2.  Fügen Sie in der Dienstdefinitionsdatei im Bereich **Endpoints** ein **InputEndpoint**-Element hinzu, um HTTPS zu aktivieren:
 
@@ -160,4 +160,4 @@ Jetzt wird die Bereitstellung in Azure ausgeführt, und Sie können eine HTTPS-V
 * [Konfigurieren eines benutzerdefinierten Domänennamens](cloud-services-custom-domain-name-portal.md)
 * [Verwalten Ihres Clouddiensts](cloud-services-how-to-manage-portal.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0121_2016-->

@@ -2,7 +2,7 @@
     pageTitle="Tutorial: Azure Active Directory-Integration mit Concur | Microsoft Azure" 
     description="Hier erfahren Sie, wie Sie Concur mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags 
@@ -11,8 +11,8 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
-    ms.author="markvi" />
+    ms.date="01/14/2016" 
+    ms.author="jeedes" />
 
 #Tutorial: Azure Active Directory-Integration mit Concur  
 
@@ -53,7 +53,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Con
 
     ![Was möchten Sie tun?](./media/active-directory-saas-concur-tutorial/IC700995.png "Was möchten Sie tun?")
 
-5.  Geben Sie im **Suchfeld** den Suchbegriff **Concur** ein.
+5.  Geben Sie im **Suchfeld** das Wort **Concur** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-concur-tutorial/IC721727.png "Anwendungskatalog")
 
@@ -132,7 +132,7 @@ Aus den folgenden Gründen sollte diese Aktion nicht mit dem Profil ausgeführt 
 
 8.  Geben Sie den Benutzernamen und das Kennwort Ihres Concur-Administrators ein, und klicken Sie dann auf **Weiter**.
 
-9.  Klicken Sie zum Abschließen der Konfiguration auf der **Bestätigungsseite** auf **Abschließen**.
+9.  Klicken Sie zum Abschließen der Konfiguration auf der Bestätigungsseite auf **Abschließen**.
 
 Sie können nun ein Testkonto erstellen und nach 10 Minuten überprüfen, ob das Konto mit Concur synchronisiert wurde.
 ##Zuweisen von Benutzern
@@ -155,4 +155,4 @@ Nach 10 Minuten können Sie überprüfen, ob das Konto mit Concur synchronisier
 
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0121_2016-->

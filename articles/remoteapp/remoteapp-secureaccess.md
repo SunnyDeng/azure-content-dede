@@ -61,7 +61,9 @@ Wir durchlaufen ein Beispielszenario: Der Azure RemoteApp-Administrator möchte 
 	1. Wählen Sie **Zugriff blockieren, wenn nicht gearbeitet wird**, damit Benutzer außerhalb der von Ihnen angegebenen Netzwerkumgebung vollständig am Zugriff auf Azure RemoteApp gehindert werden.
 	2. Klicken Sie auf die unten stehende Option, um die IP-Adressbereiche zu definieren, aus denen sich Ihr „vertrauenswürdiges Netzwerk“ zusammensetzt. Alles außerhalb dieser Bereiche wird zurückgewiesen.
 
-5.	Testen Sie Ihre Konfiguration, indem Sie den Azure RemoteApp-Client von einer IP-Adresse außerhalb des angegebenen Bereichs aus starten. Nachdem Sie sich mit Ihren Azure AD-Anmeldeinformationen angemeldet haben, wird in etwa folgende Meldung angezeigt: ![Verweigerter Zugriff auf Azure RemoteApp](./media/remoteapp-secureaccess/ra-accessdenied.png)
+5.	Testen Sie Ihre Konfiguration, indem Sie den Azure RemoteApp-Client von einer IP-Adresse außerhalb des angegebenen Bereichs aus starten. Nachdem Sie sich mit Ihren Azure AD-Anmeldeinformationen angemeldet haben, wird eine Meldung wie die folgende angezeigt:
+
+![Verweigerter Zugriff auf Azure RemoteApp](./media/remoteapp-secureaccess/ra-accessdenied.png)
  
 
 ### Zukünftige Features für den bedingten Zugriff 
@@ -72,11 +74,11 @@ Ein sehr nützliches Feature, das zusammen mit dem bedingten Zugriff verwendet w
 
 Beispielsweise werden Ihnen die Namen der Benutzer angezeigt, die auf Azure RemoteApp zugegriffen haben, und Sie sehen, wie oft und wann ein Zugriff erfolgt ist.
 
-1.	Klicken Sie im Azure-Portal auf **Active Directory**, und klicken Sie dann auf Ihr Verzeichnis.
+1.	Klicken Sie im Azure-Portal auf **Active Directory** und dann auf Ihr Verzeichnis.
 
 2.	Wechseln Sie zur Registerkarte **Berichte**.
 
-3.	Wählen Sie aus der Liste der Berichte unter **Integrierte Anwendungen** den Eintrag **Anwendungsnutzung**.
+3.	Wählen Sie in der Liste der Berichte unter **Integrierte Anwendungen** den Eintrag **Anwendungsnutzung** aus.
 
 	Sie sehen einige aggregierte Statistiken für Azure RemoteApp. ![Aggregierte Zugriffsstatistiken für Azure RemoteApp](./media/remoteapp-secureaccess/ra-accessstats.png)
  
@@ -106,6 +108,6 @@ Für die Verbindung der Azure-Umgebung mit der lokalen Umgebung gibt es verschie
 Mit Azure RemoteApp müssen Sie zuerst Ihr VNet konfigurieren und es dann beim Vorgang der Sammlungserstellung verwenden.
 
 ## Die vollständige Lösung
-Das folgende Diagramm zeigt die vollständige Lösung, in der wir einen sicheren Zugriffskanal vom Endbenutzer über Azure RemoteApp (ARA) bis hin zur Back-End-Ressource erstellt haben. ![Sichern von Azure RemoteApp](./media/remoteapp-secureaccess/ra-secureoverview.png) In Phase 1 wurden die Benutzer ausgewählt und Zugriffsregeln erstellt, die den Zugriff auf ARA regulieren. Im folgenden Beispiel gestatten wir nur den Benutzern Zugriff, die vom Unternehmensnetzwerk aus arbeiten. Benutzer, die dieser Vorgabe nicht entsprechen, können überhaupt nicht auf die ARA-Umgebung zugreifen. In Phase 2 haben wir die Back-End-Ressource nur über die Konfiguration von VNet/VPN verfügbar gemacht, die von uns gesteuert wird. Azure RemoteApp wurde im selben VNet platziert. Als Endergebnis ist die Ressource nur über die ARA-Umgebung zugänglich.
+Das folgende Diagramm zeigt die vollständige Lösung, in der wir einen sicheren Zugriffskanal vom Endbenutzer über Azure RemoteApp (ARA) bis hin zur Back-End-Ressource erstellt haben. ![Sichern von Azure RemoteApp](./media/remoteapp-secureaccess/ra-secureoverview.png) In Phase 1 wurden die Benutzer ausgewählt und Zugriffsregeln erstellt, die den Zugriff auf ARA steuern. Im folgenden Beispiel gestatten wir nur den Benutzern Zugriff, die vom Unternehmensnetzwerk aus arbeiten. Benutzer, die dieser Vorgabe nicht entsprechen, können überhaupt nicht auf die ARA-Umgebung zugreifen. In Phase 2 haben wir die Back-End-Ressource nur über die Konfiguration von VNet/VPN verfügbar gemacht, die von uns gesteuert wird. Azure RemoteApp wurde im selben VNet platziert. Als Endergebnis ist die Ressource nur über die ARA-Umgebung zugänglich.
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0121_2016-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="09/16/2015"
+   ms.date="01/20/2016"
    ms.author="jonor;sivae"/>
 
 # Beispiel 3: Erstellen einer DMZ zum Schutz von Netzwerken mit Firewall, UDR und NSG
@@ -915,7 +915,7 @@ Speichern Sie diese XML-Datei mit dem aktualisierten Speicherort, und fügen Sie
 	</NetworkConfiguration>
 
 #### Beispielanwendungsskripts
-Wenn Sie eine Beispielanwendung für dieses und weitere DMZ-Beispiele installieren möchten, finden Sie eine solche Anwendung unter folgendem Link: [Beispielanwendungsskript][SampleApp].
+Wenn Sie eine Beispielanwendung für dieses und weitere DMZ-Beispiele installieren möchten, finden Sie eine Anwendung dieser Art unter folgendem Link: [Beispielanwendungsskript][SampleApp].
 
 <!--Image References-->
 [1]: ./media/virtual-networks-dmz-nsg-fw-udr-asm/example3design.png "Bidirektionale DMZ mit virtuellem Netzwerkgerät, Netzwerksicherheitsgruppe und benutzerdefiniertem Routing"
@@ -941,4 +941,4 @@ Wenn Sie eine Beispielanwendung für dieses und weitere DMZ-Beispiele installier
 [HOME]: ../best-practices-network-security.md
 [SampleApp]: ./virtual-networks-sample-app.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0121_2016-->

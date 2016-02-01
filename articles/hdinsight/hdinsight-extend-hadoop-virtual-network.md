@@ -74,14 +74,22 @@ Weitere Informationen zu Features, Vorteilen und Funktionen von virtuellen Netzw
 
 * HDInsight wird nicht für Azure Virtual Networks unterstützt, bei denen der Zugriff auf das bzw. aus dem Internet explizit eingeschränkt ist. Ein Beispiel hierfür ist die Verwendung von Netzwerksicherheitsgruppen oder ExpressRoute zum Blockieren von Internetdatenverkehr zu Ressourcen im Virtual Network. Der HDInsight-Dienst ist ein verwalteter Dienst, der während der Bereitstellung und Ausführung Internetzugriff benötigt. Azure muss die Integrität des Clusters überprüfen, das Failover von Clusterressourcen initiieren und andere automatisierte Verwaltungsaufgaben durchführen können.
 
-    Wenn Sie HDInsight in einem Virtual Network verwenden möchten, für das der Internetdatenverkehr blockiert wird, haben Sie folgende Möglichkeiten:
+    Wenn Sie HDInsight in einem virtuellen Netzwerk verwenden möchten, für das der Internetdatenverkehr blockiert wird, haben Sie folgende Möglichkeiten:
 
-    1.	Erstellen Sie innerhalb des Virtual Network ein neues Subnetz. Dieses Subnetz wird von HDInsight verwendet.
-
-    2.	Definieren Sie eine Routingtabelle, und erstellen Sie eine benutzerdefinierte Route (User-Defined Route, UDR) für das Subnetz, die sowohl eingehende als auch ausgehende Internetverbindungen zulässt. Dies erreichen Sie mit Routen. Die Internetverbindung wird so nur für die Ressourcen im Subnetz aktiviert. Weitere Informationen zum Verwenden von benutzerdefinierten Routen finden Sie unter https://azure.microsoft.com/de-DE/documentation/articles/virtual-networks-udr-overview/ und https://azure.microsoft.com/de-DE/documentation/articles/virtual-networks-udr-how-to/.
+    1. Erstellen Sie innerhalb des Virtual Network ein neues Subnetz. Standardmäßig kann das neue Subnetz mit dem Internet kommunizieren. Dadurch kann HDInsight in diesem Subnetz installiert werden. Da sich das neue Subnetz im gleichen virtuellen Netzwerk wie die geschützten Subnetze befindet, kann es auch mit Ressourcen kommunizieren, die dort installiert sind.
     
-    3.	Wählen Sie beim Erstellen des HDInsight-Clusters das in Schritt 1 erstellte Subnetz aus. Der Cluster wird in dem Subnetz mit Internetzugriff bereitgestellt.
+    2. Mithilfe der folgenden PowerShell-Anweisungen können Sie bestätigen, dass keine bestimmte Netzwerksicherheitsgruppe oder Routentabelle dem Subnetz zugeordnet ist. Ersetzen Sie __VIRTUALNETWORKNAME__ durch den Namen Ihres virtuellen Netzwerks, __GROUPNAME__ durch den Namen der Ressourcengruppe mit dem virtuellen Netzwerk und __SUBNET__ durch den Namen des Subnetzes.
+        
+            $vnet = Get-AzureRmVirtualNetwork -Name VIRTUALNETWORKNAME -ResourceGroupName GROUPNAME
+            $vnet.Subnets | Where-Object Name -eq "SUBNET"
+            
+        Beachten Sie in den Ergebnissen, dass __NetworkSecurityGroup__ und __RouteTable__ beide `null` sind.
+    
+    2. Erstellen Sie den HDInsight-Cluster. Wenn Sie die Einstellungen des virtuellen Netzwerks für den Cluster konfigurieren, wählen Sie das Subnetz aus, das Sie in Schritt 1 erstellt haben.
 
+    > [AZURE.NOTE]In den zuvor genannten Schritten wird davon ausgegangen, dass Sie die Kommunikation mit IP-Adressen _im IP-Adressbereich des virtuellen Netzwerks_ nicht eingeschränkt haben. Falls doch, müssen Sie diese Einschränkungen so ändern, dass eine Kommunikation mit dem neuen Subnetz zulässig ist.
+
+    Weitere Informationen zu Netzwerksicherheitsgruppen finden Sie unter [Übersicht über Netzwerksicherheitsgruppen](../virtual-network/virtual-networks-nsg.md). Informationen zum Steuern des Routings in einem Azure Virtual Network finden Sie unter [Benutzerdefinierte Routen und IP-Weiterleitung](../virtual-network/virtual-networks-udr-overview.md).
 
 Weitere Informationen zur Bereitstellung eines HDInsight-Clusters in einem virtuellen Netzwerk finden Sie unter [Bereitstellen von Hadoop-Clustern in HDInsight](hdinsight-provision-clusters.md).
 
@@ -191,4 +199,4 @@ In den folgenden Beispielen wird die Verwendung von HDInsight mit Azure Virtual 
 
 Weitere Informationen zu virtuellen Azure Virtual-Netzwerken finden Sie unter [Überblick über Azure Virtual Network](../virtual-network/virtual-networks-overview.md).
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0121_2016-->

@@ -1,19 +1,19 @@
-<properties 
+<properties
    pageTitle="Standardmäßige Größe des TEMP-Ordners ist für eine Rolle zu gering | Microsoft Azure"
    description="Eine Clouddienstrolle verfügt über begrenzten Speicherplatz für den Ordner TEMP. Dieser Artikel enthält einige Vorschläge dazu, wie Sie vermeiden, dass kein Speicherplatz mehr vorhanden ist."
    services="cloud-services"
    documentationCenter=""
    authors="dalechen"
-   manager="msmets"
+   manager="felixwu"
    editor=""
    tags="top-support-issue"/>
-<tags 
+<tags
    ms.service="cloud-services"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="tbd"
-   ms.date="10/14/2015"
+   ms.date="01/20/2016"
    ms.author="daleche" />
 
 # Standardmäßige Größe des TEMP-Ordners ist für eine Clouddienst-Web-/Workerrolle zu gering
@@ -56,18 +56,18 @@ namespace WorkerRole1
             // service definition file for the role named WorkerRole1:
             //
             // <LocalResources>
-            //    <LocalStorage name="CustomTempLocalStore" 
-            //                  cleanOnRoleRecycle="false" 
+            //    <LocalStorage name="CustomTempLocalStore"
+            //                  cleanOnRoleRecycle="false"
             //                  sizeInMB="1024" />
             // </LocalResources>
-            
-            string customTempLocalResourcePath = 
+
+            string customTempLocalResourcePath =
             RoleEnvironment.GetLocalResource("CustomTempLocalStore").RootPath;
             Environment.SetEnvironmentVariable("TMP", customTempLocalResourcePath);
             Environment.SetEnvironmentVariable("TEMP", customTempLocalResourcePath);
-            
+
             // The rest of your startup code goes here…
-            
+
             return base.OnStart();
         }
     }
@@ -76,6 +76,10 @@ namespace WorkerRole1
 
 ## Nächste Schritte
 
+Lesen Sie einen anderen Blog, der beschreibt, [wie Sie die Größe des temporären Ordners für die Azure-Webrolle ASP.NET erhöhen](http://blogs.msdn.com/b/kwill/archive/2011/07/18/how-to-increase-the-size-of-the-windows-azure-web-role-asp-net-temporary-folder.aspx).
+
 Sehen Sie sich weitere [Artikel zur Problembehandlung](..\?tag=top-support-issue&service=cloud-services) für Clouddienste an.
 
-<!---HONumber=Oct15_HO4-->
+Erfahren Sie in der [Blogreihe von Kevin Williamson](http://blogs.msdn.com/b/kwill/archive/2013/08/09/windows-azure-paas-compute-diagnostics-data.aspx), wie Sie Probleme bei Clouddienstrollen mithilfe der Computerdiagnosedaten von Azure-PaaS beheben.
+
+<!---HONumber=AcomDC_0121_2016-->

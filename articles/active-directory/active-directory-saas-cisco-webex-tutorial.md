@@ -2,7 +2,7 @@
     pageTitle="Lernprogramm: Azure Active Directory-Integration mit Cisco Webex | Microsoft Azure" 
     description="Erfahren Sie, wie Sie Cisco Webex mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
     services="active-directory" 
-    authors="MarkusVi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags 
@@ -11,8 +11,8 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
-    ms.author="markvi" />
+    ms.date="01/14/2016" 
+    ms.author="jeedes" />
 
 #Lernprogramm: Azure Active Directory-Integration mit Cisco Webex
 
@@ -21,7 +21,7 @@ In diesem Lernprogramm wird die Integration von Azure und Cisco Webex erläutert
 -   Ein gültiges Azure-Abonnement
 -   Einen Cisco Webex-Mandanten
 
-Nach Abschluss dieses Tutorials können sich die Cisco Webex zugewiesenen Azure AD-Benutzer mittels einmaligen Anmeldens auf Ihrer Cisco Webex-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
+Nach Abschluss dieses Lernprogramms können sich die Cisco Webex zugewiesenen Azure AD-Benutzer mittels einmaligen Anmeldens auf Ihrer Cisco Webex-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie auch die [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md) nutzen.
 
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -64,9 +64,9 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Cis
     ![Cisco Webex](./media/active-directory-saas-cisco-webex-tutorial/IC777616.png "Cisco Webex")
 ##Konfigurieren der einmaligen Anmeldung
 
-In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Cisco Webex zu authentifizieren.  
-Im Rahmen dieses Verfahrens müssen Sie ein Base64-codiertes Zertifikat erstellen.  
-Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) \(in englischer Sprache\) weitere Informationen.
+In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Cisco Webex zu authentifizieren. 
+Im Rahmen dieses Verfahrens müssen Sie ein Base64-codiertes Zertifikat erstellen. 
+Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache) weitere Informationen.
 
 ###So konfigurieren Sie einmaliges Anmelden
 
@@ -83,19 +83,19 @@ Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to con
     ![App-URL konfigurieren](./media/active-directory-saas-cisco-webex-tutorial/IC777619.png "App-URL konfigurieren")
 
     1.  Geben Sie im Textfeld **Anmelde-URL** Ihre Cisco Webex-Mandanten-URL ein (z. B. **http://contoso.webex.com*).
-2.  Geben Sie im Textfeld **Cisco Webex-Antwort-URL** Ihre **AssertionConsumerService-URL** für Cisco Webex ein (z. B. **https://company.webex.com/dispatcher/SAML2AuthService?siteurl=company*).
+    2.  Geben Sie im Textfeld **Cisco Webex-Antwort-URL** Ihre **AssertionConsumerService-URL** für Cisco Webex ein (z. B. **https://company.webex.com/dispatcher/SAML2AuthService?siteurl=company*).
 
-4.  Klicken Sie zum Herunterladen des Zertifikats auf der Seite **Einmaliges Anmelden konfigurieren für Cisco Webex** auf **Zertifikat herunterladen**, und speichern Sie die Zertifikatsdatei auf Ihrem Computer.
+4.  Klicken Sie zum Herunterladen des Zertifikats auf der Seite **Einmaliges Anmelden konfigurieren um Cisco Webex** auf **Zertifikat herunterladen**, und speichern Sie das Zertifikat auf Ihrem Computer.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-cisco-webex-tutorial/IC777620.png "Einmaliges Anmelden konfigurieren")
 
 5.  Melden Sie sich in einem anderen Webbrowserfenster bei der Cisco Webex-Unternehmenswebsite als Administrator an.
 
-6.  Klicken Sie im oberen Menü auf **Websiteverwaltung**.
+6.  Klicken Sie im oberen Menü auf **Site Administration**.
 
     ![Site Administration](./media/active-directory-saas-cisco-webex-tutorial/IC777621.png "Site Administration")
 
-7.  Klicken Sie im Abschnitt **Website verwalten** auf **SSO-Konfiguration**.
+7.  Klicken Sie im Abschnitt **Manage Site** auf **SSO Configuration**.
 
     ![SSO Configuration](./media/active-directory-saas-cisco-webex-tutorial/IC777622.png "SSO Configuration")
 
@@ -103,21 +103,21 @@ Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to con
 
     ![Federated SSO Configuration](./media/active-directory-saas-cisco-webex-tutorial/IC777623.png "Federated SSO Configuration")
 
-    1.  Wählen Sie in der Liste **Verbundprotokoll** die Option **SAML 2.0** aus.
+    1.  Wählen Sie in der Liste **Federation Protocol** die Option **SAML 2.0** aus.
     2.  Erstellen Sie eine **Base64-codierte** Datei aus dem heruntergeladenen Zertifikat.  
 
-        >[AZURE.TIP]Weitere Informationen finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (Konvertieren eines binären Zertifikats in eine Textdatei; in englischer Sprache).
+        >[AZURE.TIP] Weitere Informationen finden Sie unter [Konvertieren eines binären Zertifikats in eine Textdatei](http://youtu.be/PlgrzUZ-Y1o).
 
     3.  Öffnen Sie das Base64-codierte Zertifikat in Editor, und kopieren Sie seinen Inhalt.
-    4.  Klicken Sie auf **SAML-Metadaten importieren**, und fügen Sie dann das Base64-codierte Zertifikat ein.
-    5.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Cisco Webex** den Wert für **Aussteller-URL**, und fügen Sie ihn in das Textfeld **Aussteller für SAML (IdP-ID)** ein.
-    6.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Cisco Webex** den Wert für **Remoteanmelde-URL**, und fügen Sie ihn in das Textfeld **SSO-Dienstanmelde-URL für Kunden** ein.
-    7.  Wählen Sie in der Liste **NameID-Format** die Option **E-Mail-Adresse** aus.
+    4.  Klicken Sie auf **Import SAML Metadata**, und fügen Sie dann das Base64-codierte Zertifikat ein.
+    5.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren um Cisco Webex** den Wert für **Aussteller-URL**, und fügen Sie ihn in das Textfeld **Issuer for SAML (IdP ID)** ein.
+    6.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren um Cisco Webex** den Wert für **Remoteanmelde-URL**, und fügen Sie ihn in das Textfeld **Customer SSO Service Login URL** ein.
+    7.  Wählen Sie in der Liste **NameID Format** die Option **Email address** aus.
     8.  Geben Sie in das Textfeld **AuthnContextClassRef** die Zeichenkette **urn:oasis:names:tc:SAML:2.0:ac:classes:Password** ein.
-    9.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Cisco Webex** den Wert für **Remoteabmelde-URL**, und fügen Sie ihn in das Textfeld **SSO-Dienstabmelde-URL für Kunden** ein.
-    10. Klicken Sie auf **Aktualisieren**.
+    9.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren um Cisco Webex** den Wert für **Remoteabmelde-URL**, und fügen Sie ihn in das Textfeld **Customer SSO Service Logout URL** ein.
+    10. Klicken Sie auf **Update**.
 
-9.  Wählen Sie im Azure-Portal auf der Dialogseite **Einmaliges Anmelden konfigurieren für Cisco Webex** die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**.
+9.  Wählen Sie im Azure-Portal auf der Dialogseite **Einmaliges Anmelden konfigurieren um Cisco Webex** die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-cisco-webex-tutorial/IC777624.png "Einmaliges Anmelden konfigurieren")
 ##Konfigurieren der Benutzerbereitstellung
@@ -128,7 +128,7 @@ Damit sich Azure AD-Benutzer bei Cisco Webex anmelden können, müssen sie in C
 
 1.  Melden Sie sich bei Ihrem **Cisco Webex**-Mandanten an.
 
-2.  Wechseln Sie zu **Benutzer verwalten > Benutzer hinzufügen**.
+2.  Wechseln Sie zu **Manage Users > Add User**.
 
     ![Hinzufügen von Benutzern](./media/active-directory-saas-cisco-webex-tutorial/IC777625.png "Hinzufügen von Benutzern")
 
@@ -136,8 +136,8 @@ Damit sich Azure AD-Benutzer bei Cisco Webex anmelden können, müssen sie in C
 
     ![Benutzer hinzufügen](./media/active-directory-saas-cisco-webex-tutorial/IC777626.png "Benutzer hinzufügen")
 
-    1.  Wählen Sie unter **Kontotyp** die Option **Host** aus.
-    2.  Geben Sie die Informationen eines vorhandenen Azure AD-Benutzers in die folgenden Textfelder ein: **Vorname, Nachname**, **Benutzername**, **E-Mail**, **Kennwort**, **Kennwort bestätigen**.
+    1.  Wählen Sie unter **Account Type** die Option **Host** aus.
+    2.  Geben Sie die Informationen eines vorhandenen Azure AD-Benutzers in die folgenden Textfelder ein:**First name, Last name**, **User name**, **Email**, **Password**, **Confirm Password**.
     3.  Klicken Sie auf **Hinzufügen**.
 
 >[AZURE.NOTE]Sie können AAD-Benutzerkonten auch mithilfe von anderen Tools zum Erstellen von Cisco Webex-Benutzerkonten oder mithilfe der von Cisco Webex bereitgestellten APIs erstellen.
@@ -160,4 +160,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0121_2016-->

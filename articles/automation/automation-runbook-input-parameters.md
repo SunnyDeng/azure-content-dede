@@ -46,10 +46,10 @@ Eine Parameterdefinition in PowerShell-Workflow-Runbooks hat die folgende allgem
 
          [Parameter (Mandatory= $true/$false)]
          [Type] Name2 = <Default value>
-     ) 
+     )
 ```
 
->[AZURE.NOTE]Wenn Sie bei der Definition der Parameter nicht das Attribut „**Erforderlich**” angeben, gilt der Parameter standardmäßig als optional. Wenn Sie für einen Parameter in PowerShell-Workflow-Runbooks einen Standardwert vorgeben, wird dieser Parameter von PowerShell als optional behandelt, egal was beim Attribut „**Erforderlich**” steht.
+>[AZURE.NOTE] Wenn Sie bei der Definition der Parameter nicht das Attribut „**Erforderlich**” angeben, gilt der Parameter standardmäßig als optional. Wenn Sie für einen Parameter in PowerShell-Workflow-Runbooks einen Standardwert vorgeben, wird dieser Parameter von PowerShell als optional behandelt, egal was beim Attribut „**Erforderlich**” steht.
 
 Als Beispiel konfigurieren wir die Eingabeparameter für ein PowerShell-Workflow-Runbook, das Details virtueller Computer ausgibt - entweder eines einzelnen virtuellen Computers oder aller virtuellen Computer in einem Dienst. Dieses Runbook hat, wie im folgenden Screenshot gezeigt, zwei Parameter: den Namen des virtuellen Computers und den Namen des Diensts.
 
@@ -77,7 +77,7 @@ Um ein [grafisches Runbook](automation-first-runbook-graphical.md) mit Eingabepa
 
 Sie können mit der Aktivität [**Write-Output**](https://technet.microsoft.com/library/hh849921.aspx) die Namen von virtuellen Computern abrufen. Die Aktivität **Get-AzureVM** wird zwei Parameter akzeptieren: den „**Namen der virtuellen Computers**” und den „**Dienstkontonamen**”. Da diese Parameter bei jedem Start des Runbooks unterschiedliche Werte benötigen könnten, können Sie Ihrem Runbook Eingabeparameter hinzufügen. Mit diesen Schritten fügen Sie Eingabeparameter hinzu:
 
-1. Wählen Sie das grafische Runbook im Blatt **Runbooks** aus, und [bearbeiten](automation-graphical-authoring-intro.md) Sie es. 
+1. Wählen Sie das grafische Runbook im Blatt **Runbooks** aus, und [bearbeiten](automation-graphical-authoring-intro.md) Sie es.
 
 2. Klicken Sie im Blatt „**Bearbeiten**” auf „**Eingabe und Ausgabe**”, um das **Eingabe- und Ausgabe**-Blatt zu öffnen.
 
@@ -107,7 +107,7 @@ Sie können mit der Aktivität [**Write-Output**](https://technet.microsoft.com/
     Name--VMNameServiceName, 
     Typ--Zeichenfolge, 
     Erforderlich--Nein, 
-    Standardwert--Benutzerdefiniert,
+    Standardwert--Benutzerdefiniert, 
     Benutzerdefinierter Standardwert--<Name des Standarddienstes das die virtuellen Computer enthält>
 
 5. Wenn Sie die Parameter hinzugefügt haben, klicken Sie auf **OK**. Sie können die Parameter jetzt im Blatt „**Eingabe und Ausgabe**” sehen. Klicken Sie nochmal auf „**OK**”, dann auf „**Speichern**”, und „**Veröffentlichen**” Sie Ihr Runbook.
@@ -122,7 +122,7 @@ Ein Runbook kann auf viele verschiedene Arten gestartet werden: Über die Benutz
 
 - **Starten eines veröffentlichten Runbooks über das Azure-Portal und Zuweisen von Parametern**
 
-Wenn Sie das [Runbook starten](automation-starting-a-runbook#starting-a-runbook-with-the-azure-portal.md), öffnet sich das Blatt „**Runbook starten**” und Sie können Werte für die eben von Ihnen erstellten Parameter konfigurieren.
+Wenn Sie das [Runbook starten](automation-starting-a-runbook.md#starting-a-runbook-with-the-azure-portal), öffnet sich das Blatt „**Runbook starten**” und Sie können Werte für die eben von Ihnen erstellten Parameter konfigurieren.
 
 ![Starten unter Verwendung des Portals](media/automation-runbook-input-parameters/automation_04_StartRunbookUsingPortal.png)
 
@@ -131,7 +131,7 @@ In der Beschriftung unter dem Eingabefeld können Sie sehen, welche Attribute f�
 ![Hilfesprechblase](media/automation-runbook-input-parameters/automation_05_HelpBaloon.png)
 
 
->[AZURE.NOTE]Parameter des Typs „Zeichenfolge“ unterstützen **leere** Zeichenfolgenwerte. Die Eingabe einer **[leeren Zeichenfolge]**in das Eingabefeld des Eingabeparameters bewirkt, dass eine leere Zeichenfolge an den Parameter übergeben wird. Außerdem unterstützen Parameter vom Typ „Zeichenfolge“ nicht die Übergabe von **Null**-Werten. Wenn Sie keinen Wert an den Zeichenfolge-Parameter übergeben, interpretiert PowerShell dies als Null.
+>[AZURE.NOTE] Parameter des Typs „Zeichenfolge“ unterstützen **leere** Zeichenfolgenwerte. Die Eingabe einer **[leeren Zeichenfolge]**in das Eingabefeld des Eingabeparameters bewirkt, dass eine leere Zeichenfolge an den Parameter übergeben wird. Außerdem unterstützen Parameter vom Typ „Zeichenfolge“ nicht die Übergabe von **Null**-Werten. Wenn Sie keinen Wert an den Zeichenfolge-Parameter übergeben, interpretiert PowerShell dies als Null.
 
 - **Starten eines veröffentlichten Runbooks durch PowerShell -Cmdlets und Zuweisen von Parametern**
 
@@ -140,7 +140,7 @@ In der Beschriftung unter dem Eingabefeld können Sie sehen, welche Attribute f�
     **Beispiel:**
 
       ```
-        $params = @{„VMName“=„WSVMClassic“; „ServiceName“=„WSVMClassicSG“}
+       $params = @{„VMName“=„WSVMClassic“; „ServiceName“=„WSVMClassicSG“}
 
         Start-AzureAutomationRunbook -AutomationAccountName “TestAutomation” -Name “Get-AzureVMGraphical” -Parameters $params
       ```
@@ -156,7 +156,7 @@ In der Beschriftung unter dem Eingabefeld können Sie sehen, welche Attribute f�
         Start-AzureRMAutomationRunbook -AutomationAccountName “TestAutomationRG” -Name “Get-AzureVMGraphical” –ResourceGroupName “RG1” -Parameters $params
       ```
 
->[AZURE.NOTE]Wenn Sie ein Runbook mit PowerShell-Cmdlets starten, wird der Standardparameter „**MicrosoftApplicationManagementStartedBy**” mit dem Wert „**PowerShell**” erstellt. Sie können diesen Parameter im Blatt „**Auftragsdetails**” ansehen.
+>[AZURE.NOTE] Wenn Sie ein Runbook mit PowerShell-Cmdlets starten, wird der Standardparameter „**MicrosoftApplicationManagementStartedBy**” mit dem Wert „**PowerShell**” erstellt. Sie können diesen Parameter im Blatt „**Auftragsdetails**” ansehen.
 
 - **Starten eines Runbooks mit dem SDK und Zuweisen von Parametern**
 
@@ -279,4 +279,4 @@ Wenn Sie einen Webhook verwenden, um ein Runbook ausführen zu lassen, wird der 
 - Informationen zum Bearbeiten eines Textrunbooks finden Sie unter [Bearbeiten von Textrunbooks](automation-edit-textual-runbook.md).
 - Informationen zum Bearbeiten eines grafischen Runbooks finden Sie unter [Grafische Erstellung in Azure Automation](automation-graphical-authoring-intro.md).
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0121_2016-->

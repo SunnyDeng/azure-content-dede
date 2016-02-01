@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="12/14/2015"
+   ms.date="01/15/2016"
    ms.author="alkohli" />
 
 # Anzeigen und Verwalten von StorSimple-Aufträgen mithilfe des StorSimple Manager-Diensts (Update 2)
@@ -93,4 +93,4 @@ Dieser Auftrag wird nun abgebrochen.
 
 - Erfahren Sie mehr über das [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0121_2016-->

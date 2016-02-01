@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="01/04/2016"
+   ms.date="01/14/2016"
    ms.author="v-sharos" />
 
 # Installieren und Konfigurieren des StorSimple-Adapters für SharePoint
@@ -308,4 +308,4 @@ Nachdem Sie die BLOBs zurück in die SQL Server-Inhaltsdatenbanken verschoben ha
 [5]: https://technet.microsoft.com/library/ff628583(v=office.15).aspx
 [8]: https://technet.microsoft.com/de-DE/library/ff943565.aspx
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0121_2016-->

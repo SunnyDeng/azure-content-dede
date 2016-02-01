@@ -12,7 +12,7 @@
     ms.tgt_pltfrm="ibiza"
     ms.devlang="na"
     ms.topic="article"
-	ms.date="01/12/2016"
+	ms.date="01/19/2016"
     ms.author="awills"/>
 
 # Versionsanmerkungen in Application Insights
@@ -28,9 +28,9 @@ Versionsanmerkungen sind ein Feature des cloudbasierten Build- und Versionsdiens
 Um Versionsanmerkungen erstellen zu können, müssen Sie eine der zahlreichen Team Service-Erweiterungen installieren, die im Visual Studio Marketplace zur Verfügung stehen.
 
 1. Melden Sie sich bei Ihrem [Visual Studio Team Services](https://www.visualstudio.com/de-DE/get-started/setup/sign-up-for-visual-studio-online)-Projekt an.
-2. Öffnen Sie Visual Studio-Marketplace, suchen Sie nach der Erweiterung für Application Insights-Anmerkungen, und fügen Sie sie Ihrem Team Services-Konto hinzu.
+2. Laden Sie im Visual Studio-Marketplace die Erweiterung [Release Annotations](https://marketplace.visualstudio.com/items/ms-appinsights.appinsightsreleaseannotations) herunter, und fügen Sie sie Ihrem Team Services-Konto hinzu.
 
-![Öffnen Sie oben rechts auf der Team Services-Website den Marketplace. Suchen Sie die Application Insights-Anmerkungen, und installieren Sie sie unter Ihrem Konto.](./media/app-insights-annotations/10.png)
+![Öffnen Sie oben rechts auf der Team Services-Website den Marketplace. Wählen Sie „Visual Team Services“ und klicken Sie anschließend unter „Build und Version“ auf „Mehr Informationen“.](./media/app-insights-annotations/10.png)
 
 Diesen Vorgang müssen Sie nur einmal für Ihr Visual Studio Team Services-Konto ausführen. Versionsanmerkungen können nun für jedes Projekt in Ihrem Konto konfiguriert werden.
 
@@ -40,7 +40,7 @@ Diesen Schritt müssen Sie für jede Versionsvorlage ausführen, für die Sie Ve
 
 
 1. Melden Sie sich im [Microsoft Azure-Portal](https://portal.azure.com) an, und öffnen Sie die Application Insights-Ressource, mit der Sie Ihre Anwendung überwachen. (Oder [erstellen Sie nun eine Ressource](app-insights-overview.md), sofern noch nicht geschehen.)
-2. Öffnen Sie **Einstellungen** und **API-Zugriff**, und erstellen Sie eine Kopie der **Application Insights-ID**.
+2. Klicken Sie auf **Einstellungen**, anschließend auf **API-Zugriff**, und kopieren Sie die **Application Insights-ID**.
 
     ![Öffnen Sie unter „portal.azure.com“ die Application Insights-Ressource, und wählen Sie „Einstellungen“. Öffnen Sie „API-Zugriff“. Kopieren Sie](./media/app-insights-annotations/20.png)
 
@@ -73,4 +73,4 @@ Diesen Schritt müssen Sie für jede Versionsvorlage ausführen, für die Sie Ve
 
 Wenn Sie nun diese Versionsvorlage zum Bereitstellen einer neuen Version verwenden, wird jedes Mal eine Anmerkung an Application Insights gesendet. Die Anmerkungen werden in Diagrammen im Metrik-Explorer angezeigt.
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0121_2016-->

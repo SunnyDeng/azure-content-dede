@@ -1,8 +1,8 @@
 <properties 
     pageTitle="Lernprogramm: Azure Active Directory-Integration mit ClickTime | Microsoft Azure" 
-    description="Erfahren Sie, wie Sie ClickTime mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu aktivieren." 
+    description="Erfahren Sie, wie Sie ClickTime mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags 
@@ -11,8 +11,8 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
-    ms.author="markvi" />
+    ms.date="01/14/2016" 
+    ms.author="jeedes" />
 
 #Lernprogramm: Azure Active Directory-Integration mit ClickTime
 
@@ -21,7 +21,7 @@ In diesem Lernprogramm wird die Integration von Azure und ClickTime erläutert. 
 -   Ein gültiges Azure-Abonnement
 -   Einen ClickTime-Mandanten
 
-Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie ClickTime zugewiesen haben, mittels einmaligen Anmeldens auf Ihrer ClickTime-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Sie können aber auch den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
+Nach Abschluss dieses Lernprogramms können sich die ClickTime zugewiesenen Azure AD-Benutzer mittels einmaligen Anmeldens auf Ihrer ClickTime-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie auch die [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md) nutzen.
 
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -55,7 +55,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Cli
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-clicktime-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie im **Suchfeld** den Suchbegriff **ClickTime** ein.
+6.  Geben Sie im **Suchfeld** als Suchbegriff **ClickTime** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-clicktime-tutorial/IC777275.png "Anwendungskatalog")
 
@@ -64,7 +64,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Cli
     ![ClickTime](./media/active-directory-saas-clicktime-tutorial/IC777276.png "ClickTime")
 ##Konfigurieren der einmaligen Anmeldung
 
-In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei ClickTime zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie eine Base64-codierte Zertifikatsdatei in Ihren ClickTime-Mandanten hochladen. Falls Sie mit diesem Verfahren nicht vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (Konvertieren eines binären Zertifikats in eine Textdatei; in englischer Sprache) weitere Informationen.
+In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei ClickTime zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie eine Base64-codierte Zertifikatsdatei in Ihren ClickTime-Mandanten hochladen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache) weitere Informationen.
 
 >[AZURE.IMPORTANT]Damit Sie einmaliges Anmelden für Ihren ClickTime-Mandanten konfigurieren können, müssen Sie sich zunächst an den technischen Support von ClickTime wenden, um dieses Feature zu aktivieren.
 
@@ -78,7 +78,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-clicktime-tutorial/IC777278.png "Einmaliges Anmelden konfigurieren")
 
-3.  Klicken Sie zum Herunterladen des Zertifikats auf der Seite **Einmaliges Anmelden konfigurieren für ClickTime** auf **Zertifikat herunterladen**, und speichern Sie das Zertifikat auf Ihrem Computer.
+3.  Klicken Sie zum Herunterladen des Zertifikats auf der Seite **Einmaliges Anmelden konfigurieren um ClickTime** auf **Zertifikat herunterladen**, und speichern Sie das Zertifikat auf Ihrem Computer.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-clicktime-tutorial/IC777279.png "Einmaliges Anmelden konfigurieren")
 
@@ -90,13 +90,13 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Security Settings](./media/active-directory-saas-clicktime-tutorial/IC777280.png "Security Settings")
 
-    1.  Aktivieren Sie **Allow** für das einmalige Anmelden (SSO) mit **OneLogin**.
-    2.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für ClickTime** den Wert für **Dienst-URL für einmaliges Anmelden**, und fügen Sie ihn in das Textfeld **Identity Provider Endpoint** ein.
-    3.  Erstellen Sie eine **Base-64-codierte** Datei aus dem heruntergeladenen Zertifikat.  
+    1.  Aktivieren Sie **Allow** sign-in using Single Sign-On (SSO) with **OneLogin**.
+    2.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren um ClickTime** den Wert für **Dienst-URL für einmaliges Anmelden**, und fügen Sie ihn in das Textfeld **Identity Provider Endpoint** ein.
+    3.  Erstellen Sie eine **Base64-codierte** Datei aus dem heruntergeladenen Zertifikat.  
 
         >[AZURE.TIP]Weitere Informationen finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache).
 
-    4.  Öffnen Sie das Base-64-codierte Zertifikat im **Editor**, kopieren Sie den Inhalt, und fügen Sie ihn anschließend in das Textfeld **X.509 Certificate** ein.
+    4.  Öffnen Sie das Base64-codierte Zertifikat in **Editor**, kopieren Sie den Inhalt, und fügen Sie ihn anschließend in das Textfeld **X.509 Certificate** ein.
     5.  Klicken Sie auf **Speichern**.
 
 7.  Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
@@ -149,4 +149,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0121_2016-->

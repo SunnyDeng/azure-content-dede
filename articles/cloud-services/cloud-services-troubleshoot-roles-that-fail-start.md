@@ -1,19 +1,19 @@
-<properties 
+<properties
    pageTitle="Problembehandlung bei nicht gestarteten Rollen | Microsoft Azure"
    description="Hier finden Sie einige der häufigsten Gründe, aus denen eine Clouddienstrolle nicht gestartet wird. Es werden auch Lösungen für diese Probleme bereitgestellt."
    services="cloud-services"
    documentationCenter=""
    authors="dalechen"
-   manager="msmets"
+   manager="felixwu"
    editor=""
    tags="top-support-issue"/>
-<tags 
+<tags
    ms.service="cloud-services"
    ms.devlang="na"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="tbd"
-   ms.date="10/14/2015"
+   ms.date="01/20/2016"
    ms.author="daleche" />
 
 # Allgemeine Schritte zur Problembehandlung bei nicht gestarteten Clouddienstrollen
@@ -165,4 +165,6 @@ Nachdem Sie sichergestellt haben, dass alle Fehler behoben wurden, können Sie d
 
 Sehen Sie sich weitere [Artikel zur Problembehandlung](..\?tag=top-support-issue&service=cloud-services) für Clouddienste an.
 
-<!---HONumber=AcomDC_1203_2015-->
+Erfahren Sie in der [Blogreihe von Kevin Williamson](http://blogs.msdn.com/b/kwill/archive/2013/08/09/windows-azure-paas-compute-diagnostics-data.aspx), wie Sie Probleme bei Clouddienstrollen mithilfe der Computerdiagnosedaten von Azure-PaaS beheben.
+
+<!---HONumber=AcomDC_0121_2016-->

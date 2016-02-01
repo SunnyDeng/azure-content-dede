@@ -112,6 +112,9 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein Ubuntu-Linux-Betr
 
 11. Klicken Sie im Hyper-V-Manager auf **Aktion -> Herunterfahren**. Ihre Linux-VHD kann nun in Azure hochgeladen werden.
 
+## Nächste Schritte
+Nun können Sie mit Ihrer Ubuntu Linux-VHD-Datei neue virtuelle Azure-Maschinen in Azure erstellen. Falls Sie zum ersten Mal Azure verwenden und die VHD-Datei in Azure hochladen, können Sie sich an die Schritte 2 und 3 in [diesem Leitfaden](virtual-machines-linux-create-upload-vhd.md) halten.
+
 ## Referenzen ##
 
 Ubuntu HardWare Enablement-Kernel (HWE)
@@ -119,4 +122,4 @@ Ubuntu HardWare Enablement-Kernel (HWE)
 - [http://blog.utlemming.org/2015/01/ubuntu-1404-azure-images-now-tracking.html](http://blog.utlemming.org/2015/01/ubuntu-1404-azure-images-now-tracking.html)
 - [http://blog.utlemming.org/2015/02/1204-azure-cloud-images-now-using-hwe.html](http://blog.utlemming.org/2015/02/1204-azure-cloud-images-now-using-hwe.html)
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0121_2016-->

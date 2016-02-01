@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/10/2015"    
+	ms.date="01/14/2016"    
 	ms.author="juliako"/>
 
 
@@ -218,6 +218,9 @@ Im folgenden Codebeispiel wird das Media Services-.NET-SDK verwendet, um die fol
 
 In diesem Abschnitt erfahren Sie, wie Sie eine Voreinstellung anpassen, die Miniaturansichten generiert. Die unten definierte Voreinstellung enthält Informationen zum Codieren Ihrer Datei sowie die erforderlichen Informationen zum Generieren von Miniaturansichten. Sie können alle [hier](https://msdn.microsoft.com/library/mt269960.aspx) dokumentierten MES-Voreinstellungen verwenden und Code hinzufügen, mit dem Miniaturansichten generiert werden.
 
+>[AZURE.NOTE]Die Einstellung **SceneChangeDetection** in der folgenden Voreinstellung kann nur auf „true“ festgelegt werden, wenn eine Codierung als Single-Bitrate-Video erfolgt. Wenn eine Codierung als Multi-Bitrate-Video erfolgt und **SceneChangeDetection** auf „true“ festgelegt ist, gibt der Encoder einen Fehler zurück.
+
+
 Informationen zum Schema finden Sie in [diesem](https://msdn.microsoft.com/library/mt269962.aspx) Thema.
 
 Lesen Sie unbedingt den Abschnitt [Überlegungen](media-services-custom-mes-presets-with-dotnet.md#considerations).
@@ -230,7 +233,7 @@ Lesen Sie unbedingt den Abschnitt [Überlegungen](media-services-custom-mes-pres
 	  "Codecs": [
 	    {
 	      "KeyFrameInterval": "00:00:02",
-		  "SceneChangeDetection": "true",
+	      "SceneChangeDetection": "true",
 	      "H264Layers": [
 	        {
 	          "Profile": "Auto",
@@ -420,9 +423,9 @@ Es gelten die folgenden Bedingungen:
 
 ##<a id="trim_video"></a>Kürzen eines Videos (Clipping)
 
-Dieser Abschnitt befasst sich mit dem Ändern der Encoder-Voreinstellungen zum Beschneiden oder Kürzen des Eingabevideos, wenn es sich bei der Eingabe um eine sogenannte Zwischendatei (Mezzanine File) oder bedarfsgesteuerte Datei handelt. Der Encoder kann darüber hinaus zum Beschneiden oder Kürzen eines Assets verwendet werden, das aus einem Livedatenstrom erfasst oder archiviert wird. Ausführliche Informationen hierzu finden Sie [diesem Blog](https://azure.microsoft.com/blog/sub-clipping-and-live-archive-extraction-with-media-encoder-standard/).
+Dieser Abschnitt befasst sich mit dem Ändern der Encoder-Voreinstellungen zum Beschneiden oder Kürzen des Eingabevideos, wenn es sich bei der Eingabe um eine sogenannte Zwischendatei (Mezzanine File) oder bedarfsgesteuerte Datei handelt. Der Encoder kann darüber hinaus zum Beschneiden oder Kürzen eines Assets verwendet werden, das aus einem Livestream erfasst oder archiviert wird. Ausführliche Informationen hierzu finden Sie [diesem Blog](https://azure.microsoft.com/blog/sub-clipping-and-live-archive-extraction-with-media-encoder-standard/).
 
-Zum Kürzen Ihrer Videos können Sie alle [hier](https://msdn.microsoft.com/library/mt269960.aspx) dokumentierten MES-Voreinstellungen verwenden und das **Sources**-Element ändern (wie unten gezeigt). Beachten Sie, dass **Quellen** am oberen Rand des Schemas platziert werden müssen.
+Zum Kürzen Ihrer Videos können Sie alle [hier](https://msdn.microsoft.com/library/mt269960.aspx) dokumentierten MES-Voreinstellungen verwenden und das **Sources**-Element (wie unten gezeigt) ändern. Beachten Sie, dass **Sources** oben im Schemas platziert werden muss.
 
 ###<a id="json"></a>JSON-Voreinstellung
 	
@@ -546,7 +549,7 @@ Zum Kürzen Ihrer Videos können Sie alle [hier](https://msdn.microsoft.com/libr
 
 ###XML-Voreinstellung
 	
-Zum Kürzen Ihrer Videos können Sie alle [hier](https://msdn.microsoft.com/library/mt269960.aspx) dokumentierten MES-Voreinstellungen verwenden und das **Sources**-Element ändern (wie unten gezeigt).
+Zum Kürzen Ihrer Videos können Sie alle [hier](https://msdn.microsoft.com/library/mt269960.aspx) dokumentierten MES-Voreinstellungen verwenden und das **Sources**-Element (wie unten gezeigt) ändern.
 
 	<?xml version="1.0" encoding="utf-16"?>
 	<Preset xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="1.0" xmlns="http://www.windowsazure.com/media/encoding/Preset/2014/03">
@@ -841,7 +844,7 @@ Sie können alle [hier](https://msdn.microsoft.com/library/mt269960.aspx) dokume
       <Bitrate>96</Bitrate>
     </AACAudio>
 
-##<a id="deinterlacing"></a>Deaktivieren des automatischen Deinterlacings
+##<a id="deinterlacing"></a>Deaktivieren des automatischen De-Interlacings
 
 Kunden müssen nichts tun, wenn sie wünschen, dass das Interlacing der die Interlace-Inhalte automatisch aufgehoben wird. Bei Aktivierung des automatischen Deinterlacings (Standard) übernimmt MWS die automatische Erkennung von Frames mit Zeilensprung und hebt das Interlacing nur für Frames auf, die als Interlaced markiert sind.
 
@@ -886,4 +889,4 @@ Sie können das automatische Deinterlacing deaktivieren. Diese Option wird jedoc
 
 [Media Services-Codierung (Übersicht)](media-services-encode-asset.md)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0121_2016-->

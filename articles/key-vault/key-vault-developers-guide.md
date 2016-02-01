@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="11/06/2015"
+   ms.date="01/19/2016"
    ms.author="bruceper" />
 
 # Entwicklerhandbuch zu Azure-Schlüsseltresor
@@ -25,7 +25,7 @@ Nach erfolgreicher Autorisierung können Sie folgende Aufgaben durchführen:
 
 - Verwalten kryptografischer Schlüssel unter Verwendung von [Create](https://msdn.microsoft.com/library/azure/dn903634.aspx), [Import](https://msdn.microsoft.com/library/azure/dn903626.aspx), [Update](https://msdn.microsoft.com/library/azure/dn903616.aspx), [Delete](https://msdn.microsoft.com/library/azure/dn903611.aspx) und anderer Befehle
 
-- Verwalten geheimer Schlüssel unter Verwendung von [Get](https://msdn.microsoft.com/library/azure/dn903633.aspx), [Update](https://msdn.microsoft.com/library/azure/dn986818.aspx, [Delete](https://msdn.microsoft.com/library/azure/dn903613.aspx) und anderer Befehle
+- Verwalten geheimer Schlüssel unter Verwendung von [Get](https://msdn.microsoft.com/library/azure/dn903633.aspx), [Update](https://msdn.microsoft.com/library/azure/dn986818.aspx), [Delete](https://msdn.microsoft.com/library/azure/dn903613.aspx) und anderen Befehlen
 
 - Verwenden kryptografischer Schlüssel unter von [Sign](https://msdn.microsoft.com/library/azure/dn878096.aspx)/[Verify](https://msdn.microsoft.com/library/azure/dn878082.aspx), [WrapKey](https://msdn.microsoft.com/library/azure/dn878066.aspx)/[UnwrapKey](https://msdn.microsoft.com/library/azure/dn878079.aspx) und [Encrypt](https://msdn.microsoft.com/library/azure/dn878060.aspx)/[Decrypt](https://msdn.microsoft.com/library/azure/dn878097.aspx)
 
@@ -37,7 +37,8 @@ Das Schlüsseltresore-Verwaltungssystem für Programmierer besteht aus mehreren 
 
 |[![.NET](./media/key-vault-developers-guide/net.png)](https://msdn.microsoft.com/library/azure/dn903301.aspx)|[![Node.js](./media/key-vault-developers-guide/nodejs.png)](http://azure.github.io/azure-sdk-for-node/azure-arm-keyvault/latest)
 |:--:|:--:|
-|[.NET](https://msdn.microsoft.com/library/azure/dn903301.aspx)|[Node.js](http://azure.github.io/azure-sdk-for-node/azure-arm-keyvault/latest)
+|[Dokumentation zum .NET SDK](https://msdn.microsoft.com/library/azure/dn903301.aspx)|[Dokumentation zum Node.js SDK](http://azure.github.io/azure-sdk-for-node/azure-arm-keyvault/latest)|
+|[.NET SDK-Paket](https://azure.microsoft.com/de-DE/documentation/api/)|[Node.js SDK-Paket](https://www.npmjs.com/package/azure-keyvault)|
 
 ## Verwalten von Schlüsseltresoren
 
@@ -65,4 +66,4 @@ Die folgenden Artikel bieten aufgabenspezifische Anleitungen:
 
 - [Microsoft Azure-Schlüsseltresorerweiterungen](http://www.nuget.org/packages/Microsoft.Azure.KeyVault.Extensions/1.0.0) bieten erweiterte Funktionen für den Azure-Schlüsseltresor.
 
-<!---HONumber=AcomDC_0107_2016-->
+<!----HONumber=AcomDC_0121_2016-->

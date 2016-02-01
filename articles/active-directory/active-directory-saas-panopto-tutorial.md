@@ -2,7 +2,7 @@
     pageTitle="Tutorial: Azure Active Directory-Integration mit Panopto | Microsoft Azure" 
     description="Erfahren Sie, wie Sie Panopto mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags 
@@ -11,8 +11,8 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
-    ms.author="markvi" />
+    ms.date="01/14/2016" 
+    ms.author="jeedes" />
 
 #Tutorial: Azure Active Directory-Integration mit Panopto
   
@@ -55,7 +55,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Pan
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-panopto-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie im **Suchfeld** als Suchbegriff **Panopto** ein.
+6.  Geben Sie im **Suchfeld** das Wort **Panopto** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-panopto-tutorial/IC777666.png "Anwendungskatalog")
 
@@ -64,7 +64,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Pan
     ![Panopto](./media/active-directory-saas-panopto-tutorial/IC782936.png "Panopto")
 ##Konfigurieren der einmaligen Anmeldung
   
-In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Panopto zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie eine Base-64-codierte Zertifikatsdatei erstellen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [Konvertieren eines binären Zertifikats in eine Textdatei](http://youtu.be/PlgrzUZ-Y1o) weitere Informationen.
+In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Panopto zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie eine Base-64-codierte Zertifikatsdatei erstellen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (Konvertieren eines binären Zertifikats in eine Textdatei; in englischer Sprache) weitere Informationen.
 
 ###Führen Sie zum Konfigurieren des einmaligen Anmeldens die folgenden Schritte aus:
 
@@ -76,7 +76,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-panopto-tutorial/IC777668.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld **Panopto-Anmelde-URL** die URL im Format „*https://\<Mandantenname>. Panopto.com*“ ein, und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Panopto-Anmelde-URL** die URL im Format "*https://\<Mandantenname>. Panopto.com*" ein, und klicken Sie dann auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-panopto-tutorial/IC777528.png "App-URL konfigurieren")
 
@@ -103,11 +103,11 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
     3.  Geben Sie im Textfeld **Beschreibung** eine Beschreibung ein.
     4.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Panopto** den Wert für **Aussteller-URL**, und fügen Sie ihn in das Textfeld **Aussteller** ein.
     5.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Panopto** den Wert für **SAML-SSO-URL**, und fügen Sie ihn in das Textfeld **URL der Bounce-Seite** ein.
-    6.  Erstellen Sie eine **Base64-codierte** Datei aus dem heruntergeladenen Zertifikat.  
+    6.  Erstellen Sie eine **Base-64-codierte** Datei aus dem heruntergeladenen Zertifikat.  
 
-        >[AZURE.TIP]Weitere Informationen finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (Konvertieren eines binären Zertifikats in eine Textdatei; in englischer Sprache).
+        >[AZURE.TIP]Weitere Informationen finden Sie unter [Konvertieren eines binären Zertifikats in eine Textdatei](http://youtu.be/PlgrzUZ-Y1o).
 
-    7.  Öffnen Sie das Base64-codierte Zertifikat im Editor, kopieren Sie den Inhalt des Zertifikats in die Zwischenablage, und fügen Sie ihn anschließend in das Textfeld **Öffentlicher Schlüssel** ein.
+    7.  Öffnen Sie das Base-64-codierte Zertifikat im Editor, kopieren Sie den Inhalt des Zertifikats in die Zwischenablage, und fügen Sie ihn anschließend in das Textfeld **Öffentlicher Schlüssel** ein.
     8.  Klicken Sie auf **Speichern**. ![Speichern](./media/active-directory-saas-panopto-tutorial/IC777673.png "Speichern")
 
 9.  Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
@@ -137,4 +137,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0121_2016-->

@@ -162,7 +162,12 @@ Sie können Mitglieder einer Gruppe jetzt basierend auf dem manager-Attribut ein
 So konfigurieren Sie eine Gruppe als Gruppe mit "Vorgesetzten"
 --------------------------------------------------------------------------------
 1. Klicken Sie im Administratorportal auf die Registerkarte **Konfigurieren**, und wählen Sie **ERWEITERTE REGEL** aus.
-2. Geben Sie die Regel mit folgender Syntax ein: Mitarbeiter von *Mitarbeiter von {Benutzer-ID\_von\_Vorgesetztem}*
+2. Geben Sie die Regel mit folgender Syntax ein: Mitarbeiter von *Mitarbeiter von {Benutzer-ID\_von\_Vorgesetzter}*. Ein Beispiel für eine gültige Regel für den direkten Mitarbeiter ist 
+
+Mitarbeiter von „62e19b97-8b3d-4d4a-a106-4ce66896a863“
+
+Dabei ist „62e19b97-8b3d-4d4a-a106-4ce66896a863“ die Objekt-ID des Managers. Die Objekt-ID kann im AAD Admin-Portal auf der Profilregisterkarte der Benutzerseite desjenigen Benutzers gefunden werden, welcher der Vorgesetzte ist.
+
 3. Nach dem Speichern dieser Regel werden alle Benutzer, die diese Regel erfüllen, als Mitglieder dieser Gruppe eingetragen. Beachten Sie, dass das erste Auffüllen der Gruppe einige Minuten dauern kann.
 
 
@@ -177,4 +182,4 @@ Diese Artikel enthalten zusätzliche Informationen zum Azure Active Directory.
 
 * [Integrieren Ihrer lokalen Identitäten in Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0121_2016-->

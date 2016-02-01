@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Hinweise zur Actor-Typserialisierung von Reliable Actors"
-   description="Es werden grundlegende Anforderungen für das Definieren von serialisierbaren Klassen erörtert, die zum Definieren von Status und Schnittstellen für Service Fabric Reliable Actor verwendet werden können"
+   pageTitle="Hinweise zur Serialisierung des Actor-Typs in Reliable Actors"
+   description="Erörtert grundlegende Anforderungen für das Definieren serialisierbarer Klassen, die zum Definieren von Statusangaben und Schnittstellen für Service Fabric Reliable Actors verwendet werden können."
    services="service-fabric"
    documentationCenter=".net"
    authors="vturecek"
@@ -18,11 +18,11 @@
 
 # Hinweise zur Typserialisierung von Service Fabric Reliable Actors
 
-Es gibt nur wenige wichtige Aspekte, die beim Definieren der Schnittstelle(n) und des Status des Actors zu berücksichtigen sind: Typen müssen Datenvertrag-serialisierbar sein. Weitere Informationen zu Datenverträgen finden Sie unter [MSDN](https://msdn.microsoft.com/library/ms731923.aspx).
+Beim Definieren der Schnittstelle(n) und des Status eines Actors sollten Sie einige wichtige Aspekte im Hinterkopf behalten. Typen müssen Datenvertrag-serialisierbar sein. Weitere Informationen zu Datenverträgen finden Sie unter [MSDN](https://msdn.microsoft.com/library/ms731923.aspx).
 
-## In Actor-Schnittstellen verwendete Typen
+## Actor-Schnittstellentypen
 
-Die Argumente aller Methoden und der Ergebnistyp des Tasks, der von jeder in der [Actor-Schnittstelle](service-fabric-reliable-actors-introduction.md#actors) definierten Methode zurückgegeben wird, müssen Datenvertrag-serialisierbar sein. Dies gilt auch für die Argumente von Methoden, die in [Actor- Ereignisschnittstellen](service-fabric-reliable-actors-events.md#actor-events) definiert werden. (In Actor-Ereignisschnittstellen definierte Methoden geben immer "void" zurück). Wenn z. B. die `IVoiceMail`-Schnittstelle eine Methode definiert als:
+Die Argumente aller Methoden und die Ergebnistypen der Tasks, die von den einzelnen in der [Actor-Schnittstelle](service-fabric-reliable-actors-introduction.md#actors) definierten Methoden zurückgegeben werden, müssen Datenvertrag-serialisierbar sein. Dies gilt auch für die Argumente der Methoden, die in [Actor- Ereignisschnittstellen](service-fabric-reliable-actors-events.md#actor-events) definiert werden. (In Actor-Ereignisschnittstellen definierte Methoden geben immer „void“ zurück). Wenn z. B. die `IVoiceMail`-Schnittstelle eine Methode definiert als:
 
 ```csharp
 
@@ -30,7 +30,7 @@ Task<List<Voicemail>> GetMessagesAsync();
 
 ```
 
-`List<T>` ist ein .NET-Standardtyp, der bereits Datenvertrag-serialisierbar ist. Der `Voicemail`-Typ muss Datenvertrag-serialisierbar sein.
+`List<T>` ist ein .NET-Standardtyp, der bereits Datenvertrag-serialisierbar ist. Auch der `Voicemail`-Typ muss Datenvertrag-serialisierbar sein.
 
 ```csharp
 
@@ -49,9 +49,9 @@ public class Voicemail
 
 ```
 
-## Actor-Status-Klasse
+## Actor-Statusklasse
 
-Der Actor-Status muss Datenvertrag-serialisierbar sein. Wenn z. B. eine Actor-Klassendefinition vorhanden ist, die wie folgt aussieht:
+Der Actor-Status muss Datenvertrag-serialisierbar sein. Beispielsweise kann eine Actor-Klassendefinition wie folgt aussehen:
 
 ```csharp
 
@@ -61,7 +61,7 @@ public class VoiceMailActor : StatefulActor<VoicemailBox>, IVoiceMail
 
 ```
 
-Die Status-Klasse wird mit der Klasse definiert, und ihre Member werden jeweils mit den Attributen "DataContract" und "DataMember" versehen.
+Die Statusklasse wird mit der Klasse definiert, und ihre Member werden jeweils mit den Attributen **DataContract** und **DataMember** versehen.
 
 ```csharp
 
@@ -82,4 +82,4 @@ public class VoicemailBox
 
 ```
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0121_2016-->

@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="11/04/2015"
+    ms.date="01/13/2016"
     ms.author="elizapo" />
 
 
@@ -29,12 +29,7 @@ Wenn Sie Probleme beim Erstellen einer Sammlung haben oder wenn die Sammlung nic
 ## Ihr Image ist ungültig. ##
 Wenn eine Meldung wie „GoldImageInvalid“ angezeigt wird, während Sie darauf warten, dass Azure Ihre Sammlung bereitstellt, bedeutet dies, dass Ihr Vorlagenimage nicht die [definierten Anforderungen für Images](remoteapp-imagereqs.md) erfüllt. Gehen Sie deshalb diese [Anforderungen](remoteapp-imagereqs.md) durch, korrigieren Sie Ihr Image, und versuchen Sie erneut, Ihre Sammlung zu erstellen.
 
-## Kann Ihr VNET erzwungene Tunnelung verwenden? ##
-RemoteApp unterstützt derzeit die Verwendung von VNETs nicht, bei denen erzwungene Tunnelung aktiviert ist. Wenn Sie diese Funktion benötigen, wenden Sie sich an das [RemoteApp-Team](mailto:remoteappforum@microsoft.com), um Unterstützung anzufordern.
 
-Nachdem Ihre Anfrage genehmigt wurde, stellen Sie sicher, dass die folgenden Ports im Subnetz geöffnet sind, das Sie für Azure RemoteApp und die virtuellen Computer im Subnetz ausgewählt haben. Die virtuellen Computer in Ihren Subnetzen sollten auch auf die URLs zugreifen können, die im Abschnitt über Netzwerksicherheitsgruppen erwähnt sind.
-
-Ausgehend: TCP: 443, TCP: 10101 - 10175
 
 ## Sind in Ihrem VNET Netzwerksicherheitsgruppen definiert? ##
 Wenn im Subnetz, das Sie für die Sammlung verwenden, Netzwerksicherheitsgruppen definiert sind, stellen Sie sicher, dass auf die folgenden URLs von innerhalb des Subnetzes zugegriffen werden kann:
@@ -84,4 +79,4 @@ Stellen Sie sicher, dass die Domänendetails gültig sind und dass der Domänenc
 
 Der erstellte oder hinzugefügte Domänenname muss ein interner Domänenname sein (nicht Ihr Azure AD-Domänenname), und er muss in das DNS-Format auflösbar sein (contoso.local). Angenommen, Sie verfügen über einen internen Active Directory-Namen (contoso.local) und eine Active Directory-UPN (contoso.com), dann müssen Sie den internen Namen verwenden, wenn Sie eine Sammlung erstellen.
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0121_2016-->

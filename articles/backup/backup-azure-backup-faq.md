@@ -71,7 +71,7 @@ Im Folgenden finden Sie eine Liste häufig gestellter Fragen zu Azure Backup. We
 - Komprimierter Stream: Nicht unterstützt, wird übersprungen
 - Stream mit geringer Dichte: Nicht unterstützt, wird übersprungen
 
-**F13. Welche Mindestgröße gilt für den Cacheordner?** <br/> A13. Die Größe des Cacheordners wird durch die Menge der Daten bestimmt, die Sie sichern möchten. Im Allgemeinen sollten Sie davon ausgehen, dass 10 bis 15 % des für die Datenspeicherung erforderlichen Speicherplatzes für den Cacheordner zugewiesen werden sollte.
+**F13. Welche Mindestgröße gilt für den Cacheordner?** <br/> A13. Die Größe des Cacheordners wird durch die Menge der Daten bestimmt, die Sie sichern möchten. Im Allgemeinen sollten Sie davon ausgehen, dass 5 % des für die Datenspeicherung erforderlichen Speicherplatzes für den Cacheordner zugewiesen werden sollte.
 
 **F14. Wie kann ich bestimmte Serverdaten isolieren, sodass sie nicht von anderen Servern in meiner Organisation wiederhergestellt werden?**<br/> A14. Alle über denselben Tresor registrierten Server können die Daten wiederherstellen, die von anderen Servern mit derselben Passphrase gesichert wurden. Wenn Sie Server verwenden, deren Wiederherstellung nur auf bestimmten Servern in Ihrer Organisation erfolgen darf, sollten Sie eine separate Passphrase für diese Server festlegen. So können Sie beispielsweise für die Server der Personalabteilung, für die Server der Buchhaltung und für die Speicherserver jeweils eine eigene Verschlüsselungspassphrase verwenden.
 
@@ -166,8 +166,8 @@ Die Größe der Datenquelle wird wie folgt gemessen.
 
 	| Registrierungspfad | Registrierungsschlüssel | Wert |
 	| ------ | ------- | ------ |
-	| `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Azure Backup\Config` | ScratchLocation | <i>Neuer Speicherort des Cacheordners</i> |
-	| `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Azure Backup\Config\CloudBackupProvider` | ScratchLocation | <i>Neuer Speicherort des Cacheordners</i> |
+	| `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Azure Backup\Config` | ScratchLocation | <i>Neuer Speicherort des Cacheordners</i> |
+	| `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Azure Backup\Config\CloudBackupProvider` | ScratchLocation | <i>Neuer Speicherort des Cacheordners</i> |
 
 
 + Starten Sie die OBEngine durch Ausführen des nachfolgenden Befehls in einer Eingabeaufforderung mit erhöhten Rechten:
@@ -176,4 +176,4 @@ Die Größe der Datenquelle wird wie folgt gemessen.
 
 Sobald die Sicherungen erfolgreich mit dem neuen Cachespeicherort ausgeführt werden, können Sie den ursprünglichen Cacheordner entfernen.
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0121_2016-->

@@ -1,9 +1,10 @@
 
-| Ressource | Weicher Grenzwert 
---- | ---
-| CDN-Endpunkte | 50
-| Benutzerdefinierte Domänen pro Kunde| 16
+Ressource | Weicher Grenzwert
+---------|-----------
+CDN-Profile | 4
+CDN-Endpunkte pro Profil | 10
+Benutzerdefinierte Domänen pro Endpunkt | 10 
 
-Sie können die Aktualisierung weicher Grenzwerte anfordern, indem Sie ein Supportticket öffnen.
+Fordern Sie eine Aktualisierung der weichen Grenzwerte Ihres Abonnement an, indem Sie ein Supportticket öffnen.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0121_2016-->

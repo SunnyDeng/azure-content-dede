@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/11/2016" 
+	ms.date="01/21/2016" 
 	ms.author="billmath"/>
 
 # Konfigurieren von Azure Multi-Factor Authentication
@@ -151,7 +151,7 @@ Bevor Sie beginnen, sollten Sie Folgendes beachten:
 
 ## Zwischenspeichern in Azure Multi-Factor Authentication
 
-Durch Zwischenspeichern können Sie einen bestimmten Zeitraum festlegen, sodass nachfolgende Authentifizierungsversuche automatisch erfolgreich sind. Dies wird hauptsächlich verwendet, wenn lokale Systeme, wie z. B. VPNs, mehrere Verifizierungsanfragen senden, während die erste Anfrage noch bearbeitet wird. Dadurch werden die nachfolgenden Anforderungen automatisch erfolgreich ausgeführt, nachdem die laufende Verifizierungsanfrage für den Benutzer erfolgreich ausgeführt wurde. Beachten Sie, dass das Zwischenspeichern nicht für Anmeldungen gedacht ist.
+Durch Zwischenspeichern können Sie einen bestimmten Zeitraum festlegen, sodass nachfolgende Authentifizierungsversuche automatisch erfolgreich sind. Dies wird hauptsächlich verwendet, wenn lokale Systeme, wie z. B. VPNs, mehrere Verifizierungsanfragen senden, während die erste Anfrage noch bearbeitet wird. Dadurch werden die nachfolgenden Anforderungen automatisch erfolgreich ausgeführt, nachdem die laufende Verifizierungsanfrage für den Benutzer erfolgreich ausgeführt wurde. Beachten Sie, dass das Zwischenspeichern nicht für Anmeldungen bei Azure AD gedacht ist.
 
 
 ### Einrichten der Zwischenspeicherung in Azure Multi-Factor Authentication
@@ -349,6 +349,6 @@ Um sicherzustellen, dass die Benutzerkonten geschützt sind, sollten Sie die Mul
 <li>Klicken Sie im ausgewählten Verzeichnis auf "Konfigurieren".</li>
 <li>Klicken Sie im Abschnitt "Multi-Factor Authentication" auf "Diensteinstellungen verwalten".</li>
 <li>Auf der Seite "Einstellungen" unter "Geräteeinstellungen von Benutzern verwalten", **Aktivieren/Deaktivieren Sie mehrstufige Authentifizierung anhalten, indem ein Gerät gespeichert wird**.</li>
-![Aussetzen von Geräten](./media/multi-factor-authentication-manage-users-and-devices/suspend.png)<li>Legen Sie die Anzahl der Tage fest, an denen Sie die Aussetzung zulassen möchten. Der Standardwert ist 14 Tage.</li> <li>Klicken Sie auf "Speichern".</li><li>Klicken Sie auf "Schließen".</li>
+![Aussetzen von Geräten](./media/multi-factor-authentication-manage-users-and-devices/suspend.png) <li>Legen Sie die Anzahl der Tage fest, an denen Sie die Aussetzung zulassen möchten. Der Standardwert ist 14 Tage.</li> <li>Klicken Sie auf "Speichern".</li> <li>Klicken Sie auf "Schließen".</li>
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0121_2016-->

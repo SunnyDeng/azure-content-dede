@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Zurücksetzen des Kennworts des virtuellen Linux-Computers über die Azure-Befehlszeilenschnittstelle | Microsoft Azure"
-	description="Hier erfahren Sie, wie Sie die VMAccess-Erweiterung im klassischen Azure-Portal oder der Azure-Befehlszeilenschnittstelle verwenden, um Kennwörter und SSH-Schlüssel des virtuellen Linux-Computers sowie SSH-Konfigurationen zurückzusetzen und Benutzerkonten zu löschen."
+	pageTitle="Zurücksetzen von Kennwörtern für Linux-VMs und Hinzufügen von Benutzern über die Azure-Befehlszeilenschnittstelle | Microsoft Azure"
+	description="Hier erfahren Sie, wie Sie die VMAccess-Erweiterung im Azure-Portal oder in der Azure-Befehlszeilenschnittstelle verwenden, um Kennwörter und SSH-Schlüssel der Linux-VM sowie SSH-Konfigurationen zurückzusetzen, Benutzerkonten hinzuzufügen oder zu löschen und die Datenträgerkonsistenz zu überprüfen."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -14,15 +14,15 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/28/2015"
+	ms.date="12/15/2015"
 	ms.author="cynthn"/>
 
-# Gewusst wie: Zurücksetzen eines Kennworts oder einer SSH für virtuelle Linux-Computer #
+# Gewusst wie: Zurücksetzen des Zugriffs, Verwalten von Benutzern und Überprüfen von Datenträgern mit der Azure VMAccess-Erweiterung für Linux#
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
 
 
-Wenn Sie aufgrund eines vergessenen Kennworts, eines falschen SSH (Secure Shell)-Schlüssels oder eines Problems bei der SSH-Konfiguration keine Verbindung zu einem virtuellen Linux-Computer herstellen können, haben Sie die Möglichkeit, das Kennwort oder den SSH-Schlüssel zurückzusetzen oder die SSH-Konfiguration zu beheben (mithilfe des Azure-Portals oder der VMAccessforLinux-Erweiterung). Beachten Sie, dass sich dieser Artikel auf virtuelle Computer bezieht, die mit dem klassischen Bereitstellungsmodell erstellt wurden.
+Wenn Sie aufgrund eines vergessenen Kennworts, eines falschen SSH (Secure Shell)-Schlüssels oder eines Problems bei der SSH-Konfiguration keine Verbindung mit einer virtuellen Linux-Maschine herstellen können, haben Sie die Möglichkeit, das Kennwort oder den SSH-Schlüssel zurückzusetzen, SSH-Konfigurationsprobleme zu beheben und die Datenträgerkonsistenz zu überprüfen. Verwenden Sie dazu das Azure-Portal oder die VMAccessForLinux-Erweiterung mit der Azure-Befehlszeilenschnittstelle.
 
 ## Azure-Portal
 
@@ -61,6 +61,8 @@ Mit der Azure-CLI können Sie die folgenden Aufgaben ausführen:
 + [Zurücksetzen der SSH-Konfiguration](#sshconfigresetcli)
 + [Löschen eines Benutzers](#deletecli)
 + [Anzeigen des Status der VMAccess-Erweiterung](#statuscli)
++ [Überprüfen der Konsistenz von hinzugefügten Datenträgern](#checkdisk)
++ [Reparieren von hinzugefügten Datenträgern auf Ihrer Linux-VM](#repairdisk)
 
 ### <a name="pwresetcli"></a>Zurücksetzen des Kennworts
 
@@ -149,6 +151,34 @@ Führen Sie zum Anzeigen des Status der VMAccess-Erweiterung diesen Befehl aus.
 
 	azure vm extension get
 
+### <a name='checkdisk'<</a>Überprüfen der Konsistenz von hinzugefügten Datenträgern
+
+Gehen Sie wie folgt vor, um fsck auf allen Datenträgern Ihrer virtuellen Linux-Maschine auszuführen:
+
+Schritt 1: Erstellen Sie eine Datei namens „PublicConf.json“ mit diesem Inhalt. Die Datenträgerüberprüfung ermittelt anhand eines booleschen Werts, ob an die virtuelle Maschine angefügte Datenträger überprüft werden sollen.
+
+    {   
+    "check_disk": "true"
+    }
+
+Schritt 2: Führen Sie den folgenden Befehl aus, und ersetzen Sie dabei die Platzhalterwerte.
+
+   azure vm extension set vm-name VMAccessForLinux Microsoft.OSTCExtensions 1.* --public-config-path PublicConf.json
+
+### <a name='repairdisk'></a>Reparieren von hinzugefügten Datenträgern auf Ihrer virtuellen Linux-Maschine
+
+Verwenden Sie zum Reparieren von Datenträgern, die nicht bereitgestellt werden können oder für die Fehler bei der Bereitstellungskonfiguration angezeigt werden, die VMAccess-Erweiterung, um die Bereitstellungskonfiguration ihrer virtuellen Linux-Maschine zurückzusetzen.
+
+Schritt 1: Erstellen Sie eine Datei namens „PublicConf.json“ mit diesem Inhalt.
+
+    {
+    "repair_disk":"true",
+    "disk_name":"yourdisk"
+    }
+
+Schritt 2: Führen Sie den folgenden Befehl aus, und ersetzen Sie dabei die Platzhalterwerte.
+
+    azure vm extension set vm-name VMAccessForLinux Microsoft.OSTCExtensions 1.* --public-config-path PublicConf.json
 
 ## Verwenden von Azure PowerShell
 
@@ -179,6 +209,8 @@ Anschließend können Sie die folgenden Aufgaben ausführen:
 + [Zurücksetzen der SSH-Konfiguration](#config)
 + [Löschen eines Benutzers](#delete)
 + [Anzeigen des Status der VMAccess-Erweiterung](#status)
++ [Überprüfen der Konsistenz von hinzugefügten Datenträgern](#checkdisk)
++ [Reparieren von hinzugefügten Datenträgern auf Ihrer Linux-VM](#repairdisk)
 
 ### <a name="password"></a>Zurücksetzen des Kennworts
 
@@ -252,6 +284,25 @@ Führen Sie zum Anzeigen des Status der VMAccess-Erweiterung diesen Befehl aus.
 
 	$vm.GuestAgentStatus
 
+### <a name="checkdisk"<</a>Überprüfen der Konsistenz von hinzugefügten Datenträgern
+
+Führen Sie zum Überprüfen der Konsistenz Ihrer Datenträger mit dem fsck-Hilfsprogramm die folgenden Befehle aus:
+
+	$PublicConfig = "{"check_disk": "true"}"
+	$ExtensionName = "VMAccessForLinux"
+	$Publisher = "Microsoft.OSTCExtensions"
+	$Version = "1.*"
+	Set-AzureVMExtension -ExtensionName $ExtensionName -VM $vm -Publisher $Publisher -Version $Version -PublicConfiguration $PublicConfig | Update-AzureVM
+
+### <a name="checkdisk"<</a>Reparieren von hinzugefügten Datenträgern auf Ihrer Linux-VM
+
+Führen Sie zum Reparieren von Datenträgern mit dem fsck-Hilfsprogramm die folgenden Befehle aus:
+
+	$PublicConfig = "{"repair_disk": "true", "disk_name": "my_disk"}"
+	$ExtensionName = "VMAccessForLinux"
+	$Publisher = "Microsoft.OSTCExtensions"
+	$Version = "1.*"
+	Set-AzureVMExtension -ExtensionName $ExtensionName -VM $vm -Publisher $Publisher -Version $Version -PublicConfiguration $PublicConfig | Update-AzureVM
 
 ## Zusätzliche Ressourcen
 
@@ -266,4 +317,4 @@ Führen Sie zum Anzeigen des Status der VMAccess-Erweiterung diesen Befehl aus.
 [Azure-VM-Erweiterungen und Features]: virtual-machines-extensions-features.md
 [Herstellen einer Verbindung mit einem virtuellen Azure-Computer über RDP oder SSH]: http://msdn.microsoft.com/library/azure/dn535788.aspx
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0121_2016-->

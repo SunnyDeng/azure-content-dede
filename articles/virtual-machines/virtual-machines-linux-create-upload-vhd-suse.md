@@ -179,4 +179,8 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein SUSE- oder openSU
 
 13. Klicken Sie im Hyper-V-Manager auf **Aktion -> Herunterfahren**. Ihre Linux-VHD kann nun in Azure hochgeladen werden.
 
-<!---HONumber=Nov15_HO4-->
+## Nächste Schritte
+Nun können Sie mit Ihrer SUSE Linux-VHD-Datei neue virtuelle Azure-Maschinen in Azure erstellen. Falls Sie zum ersten Mal Azure verwenden und die VHD-Datei in Azure hochladen, können Sie sich an die Schritte 2 und 3 in [diesem Leitfaden](virtual-machines-linux-create-upload-vhd.md) halten.
+ 
+
+<!---HONumber=AcomDC_0121_2016-->

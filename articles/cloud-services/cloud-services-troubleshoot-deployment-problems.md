@@ -4,7 +4,7 @@
    services="cloud-services"
    documentationCenter=""
    authors="dalechen"
-   manager="msmets"
+   manager="felixwu"
    editor=""
    tags="top-support-issue"/>
 <tags
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="tbd"
-   ms.date="01/07/2016"
+   ms.date="01/20/2016"
    ms.author="daleche" />
 
 # Behandeln von Problemen mit der Clouddienstbereitstellung
@@ -70,7 +70,7 @@ So finden Sie heraus, ob ein automatisches Upgrade den VIP-Austausch verhindert
 
 Diese Bedingung kann auf ein Problem mit dem Anwendungscode, dem Anwendungspaket oder der Konfigurationsdatei hinweisen. Wenn diese Bedingung zutrifft, sehen Sie, dass der Status sich alle paar Minuten ändert und im Azure-Portal Meldungen wie **Recycling**, **Ausgelastet** oder **Wird initialisiert** angezeigt werden. Dies weist darauf hin, dass ein Fehler in der Anwendung vorliegt, der verhindert, dass die Rolleninstanz ausgeführt wird.
 
-Weitere Informationen zum Behandeln dieses Problems finden Sie im Blogbeitrag [Azure PaaS Compute Diagnostics Data] (in englischer Sprache) und unter [Allgemeine Probleme, durch die Rollen zyklisch ausgeführt werden](cloud-services-troubleshoot-common-issues-which-cause-roles-recycle.md).
+Weitere Informationen zum Behandeln dieses Problems finden Sie im Blogbeitrag [Azure PaaS Compute Diagnostics Data] und unter [Allgemeine Probleme, durch die Rollen zyklisch ausgeführt werden](cloud-services-troubleshoot-common-issues-which-cause-roles-recycle.md).
 
 ## Problem: Meine Anwendung funktioniert nicht mehr.
 
@@ -78,7 +78,7 @@ Weitere Informationen zum Behandeln dieses Problems finden Sie im Blogbeitrag [A
 2. Sehen Sie sich im Bereich **Eigenschaften** des Azure-Portals die folgenden Bedingungen an, die Ihnen bei der Problembehebung helfen können:
    * Wenn die Rolleninstanz kürzlich beendet wurde (prüfen Sie die **Anzahl der Abbrüche**), wird die Bereitstellung möglicherweise gerade aktualisiert. Warten Sie, ob die Rolleninstanz ihre Funktionsweise selbstständig wieder aufnimmt.
    * Wenn die Rolleninstanz ausgelastet ist, überprüfen Sie den Anwendungscode, um festzustellen, ob das [StatusCheck](https://msdn.microsoft.com/library/microsoft.windowsazure.serviceruntime.roleenvironment.statuscheck)-Ereignis verarbeitet wird. Möglicherweise müssen Sie Code hinzufügen oder korrigieren, der dieses Ereignis verarbeitet.
-   * Weitere Informationen erhalten Sie in den Diagnosedaten und Problembehandlungsszenarios im Blogbeitrag [Azure PaaS Compute Diagnostics Data] (in englischer Sprache).
+   * Weitere Informationen erhalten Sie in den Diagnosedaten und Problembehandlungsszenarios im Blogbeitrag [Azure PaaS Compute Diagnostics Data].
 
 >[AZURE.WARNING]Wenn Sie Ihren Clouddienst neu starten, setzen Sie die Eigenschaften für die Bereitstellung zurück und löschen so effektiv die Informationen, die Sie zur Lösung des ursprünglichen Problems benötigen.
 
@@ -86,7 +86,6 @@ Weitere Informationen zum Behandeln dieses Problems finden Sie im Blogbeitrag [A
 
 Sehen Sie sich weitere [Artikel zur Problembehandlung](..\?tag=top-support-issue&service=cloud-services) für Clouddienste an.
 
+Erfahren Sie in der [Blogreihe von Kevin Williamson](http://blogs.msdn.com/b/kwill/archive/2013/08/09/windows-azure-paas-compute-diagnostics-data.aspx), wie Sie Probleme bei Clouddienstrollen mithilfe der Computerdiagnosedaten von Azure-PaaS beheben.
 
-[Azure PaaS Compute Diagnostics Data]: http://blogs.msdn.com/b/kwill/archive/2013/08/09/windows-azure-paas-compute-diagnostics-data.aspx
-
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0121_2016-->

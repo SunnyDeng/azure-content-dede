@@ -14,15 +14,14 @@
 	ms.tgt_pltfrm="Windows" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/10/2015" 
+	ms.date="01/14/2016" 
 	ms.author="josephd"/>
 
 # Einrichten einer simulierten Hybrid Cloud-Umgebung zu Testzwecken
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
 
-
-In diesem Thema lernen Sie Schritt für Schritt, wie Sie eine simulierte Hybrid Cloud-Umgebung mit Microsoft Azure für Tests mithilfe zweier virtueller Azure-Netzwerke erstellen. Verwenden Sie diese Konfiguration als Alternative zum [Einrichten einer Hybridcloudumgebung zu Testzwecken](virtual-networks-setup-hybrid-cloud-environment-testing.md), wenn Sie nicht über eine direkte Internetverbindung und eine erreichbare öffentliche IP-Adresse verfügen. Hier sehen Sie die daraus resultierende Konfiguration.
+In diesem Thema lernen Sie Schritt für Schritt, wie Sie eine simulierte Hybrid Cloud-Umgebung mit Microsoft Azure für Tests mithilfe von zwei separaten virtuellen Azure-Netzwerken erstellen. Verwenden Sie diese Konfiguration als Alternative zum [Einrichten einer Hybridcloudumgebung zu Testzwecken](virtual-networks-setup-hybrid-cloud-environment-testing.md), wenn Sie nicht über eine direkte Internetverbindung und eine erreichbare öffentliche IP-Adresse verfügen. Hier sehen Sie die daraus resultierende Konfiguration.
 
 ![](./media/virtual-networks-setup-simulated-hybrid-cloud-environment-testing/CreateSimHybridCloud_4.png)
 
@@ -47,7 +46,7 @@ Die Einrichtung dieser Hybrid Cloud-Testumgebung besteht aus vier Hauptphasen:
 
 Wenn Sie noch über kein Azure-Abonnement verfügen, können Sie sich unter [Azure testen](http://azure.microsoft.com/pricing/free-trial/) für eine kostenlose Testversion anmelden. Wenn Sie über ein MSDN-Abonnement verfügen, lesen Sie [Azure-Vorteil für MSDN-Abonnenten](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
 
->[AZURE.NOTE]Für virtuelle Computer und virtuelle Netzwerkgateways in Azure fallen laufende Kosten an, wenn sie ausgeführt werden. Diese Kosten werden im Rahmen der kostenlosen Testversion, des MSDN-Abonnements oder des kostenpflichtigen Abonnements abgerechnet. Weitere Informationen zum Reduzieren der Kosten für das Ausführen dieser Testumgebung, wenn sie nicht verwendet wird, finden Sie im Abschnitt [Minimieren der laufenden Kosten dieser Umgebung](#costs) in diesem Thema.
+>[AZURE.NOTE]Für virtuelle Computer und virtuelle Netzwerkgateways in Azure fallen laufende Kosten an, wenn sie ausgeführt werden. Diese Kosten werden im Rahmen der kostenlosen Testversion, des MSDN-Abonnements oder des kostenpflichtigen Abonnements abgerechnet. Weitere Informationen zum Reduzieren der Kosten für das Ausführen dieser Testumgebung, wenn sie nicht verwendet wird, finden Sie in diesem Artikel unter [Minimieren der laufenden Kosten dieser Umgebung](#costs).
 
 
 ## Phase 1: Konfigurieren des virtuellen Netzwerks "TestLab"
@@ -58,8 +57,8 @@ Stellen Sie im Azure-Verwaltungsportal auf Ihrem lokalen Computer eine Verbindun
 
 	New-ADReplicationSite -Name "TestLab" 
 	New-ADReplicationSite -Name "TestVNET"
-	New-ADReplicationSubnet â€“Name "10.0.0.0/8" â€“Site "TestLab"
-	New-ADReplicationSubnet â€“Name "192.168.0.0/16" â€“Site "TestVNET"
+	New-ADReplicationSubnet -Name "10.0.0.0/8" -Site "TestLab"
+	New-ADReplicationSubnet -Name "192.168.0.0/16" -Site "TestVNET"
 
 Die aktuelle Konfiguration sieht folgendermaßen aus.
 
@@ -106,7 +105,7 @@ Erstellen Sie zunächst lokale Netzwerke, die die Adressräume der beiden virtue
 4.	Klicken Sie unter **CIDR (Anzahl Adressen)** auf **/24 (256)** und anschließend auf das Kontrollkästchen.
 5.	Klicken Sie auf **Neu > Netzwerkdienste > Virtual Network > Lokales Netzwerk hinzufügen**.
 6.	Geben Sie auf der Seite "Details zum lokalen Netzwerk angeben" unter **Name** den Namen **TestVNETLNet** und unter **IP-Adresse des VPN-Geräts** die IP-Adresse **131.107.0.2** ein, und klicken Sie dann auf den Pfeil nach rechts.
-7.	Geben Sie auf der Seite "Adressraum angeben" unter **Start-IP** den Wert **192.168.0.0** ein.
+7.	Geben Sie auf der Seite "Adressraum angeben" unter **Start-IP** die IP **192.168.0.0** ein.
 8.	Klicken Sie unter **CIDR (Anzahl Adressen)** auf **/24 (256)** und anschließend auf das Kontrollkästchen.
 
 Beachten Sie, dass die IP-Adressen 131.107.0.1 und 131.107.0.2 für die VPM-Geräte nur temporäre Platzhalterwerte sind, die so lange gelten, bis Sie Gateways für die beiden virtuellen Netzwerke konfigurieren.
@@ -145,7 +144,7 @@ Konfigurieren Sie anschließend die lokalen Netzwerke TestLabLNet und TestVNETLN
 Setzen Sie anschließend den vorinstallierten Schlüssel für beide Gateways auf denselben Wert. Dieser ist der im Azure-Verwaltungsportal festgelegte Schlüsselwert für das virtuelle Netzwerk TestLab. Führen Sie über eine Azure PowerShell-Eingabeaufforderung auf Ihrem lokalen Computer die folgenden Befehle aus, und tragen Sie den Wert des für TestLab vorinstallierten Schlüssels ein.
 
 	$preSharedKey="<The preshared key for the TestLab virtual network>"
-	Set-AzureVNetGatewayKey -VNetName TestVNET -LocalNetworkSiteName TestLabLNet â€“SharedKey $preSharedKey
+	Set-AzureVNetGatewayKey -VNetName TestVNET -LocalNetworkSiteName TestLabLNet -SharedKey $preSharedKey
 
 Klicken Sie anschließend im Azure-Verwaltungsportal des lokalen Computers auf der Seite "Netzwerk" auf das virtuelle Netzwerk **TestLab**, klicken Sie auf **Dashboard** und anschließend in der Taskleiste auf **Verbinden**. Warten Sie, bis angezeigt wird, dass das virtuelle Netzwerk TestLab verbunden ist.
 
@@ -158,14 +157,14 @@ Die aktuelle Konfiguration sieht folgendermaßen aus.
 Erstellen Sie zunächst einen virtuellen Azure-Computer für DC2. Führen Sie in der Eingabeaufforderung von Azure PowerShell auf dem lokalen Computer die folgenden Befehle aus.
 
 	$ServiceName="<Your cloud service name from Phase 2>"
-	$cred=Get-Credential â€“Message "Type the name and password of the local administrator account for DC2."
+	$cred=Get-Credential -Message "Type the name and password of the local administrator account for DC2."
 	$image = Get-AzureVMImage | where { $_.ImageFamily -eq "Windows Server 2012 R2 Datacenter" } | sort PublishedDate -Descending | select -ExpandProperty ImageName -First 1
 	$vm1=New-AzureVMConfig -Name DC2 -InstanceSize Medium -ImageName $image
 	$vm1 | Add-AzureProvisioningConfig -Windows -AdminUsername $cred.GetNetworkCredential().Username -Password $cred.GetNetworkCredential().Password
 	$vm1 | Set-AzureSubnet -SubnetNames TestSubnet
 	$vm1 | Set-AzureStaticVNetIP -IPAddress 192.168.0.4
-	$vm1 | Add-AzureDataDisk -CreateNew -DiskSizeInGB 20 -DiskLabel ADFiles â€“LUN 0 -HostCaching None
-	New-AzureVM â€“ServiceName $ServiceName -VMs $vm1 -VNetName TestVNET
+	$vm1 | Add-AzureDataDisk -CreateNew -DiskSizeInGB 20 -DiskLabel ADFiles -LUN 0 -HostCaching None
+	New-AzureVM -ServiceName $ServiceName -VMs $vm1 -VNetName TestVNET
 
 Melden Sie sich anschließend bei dem neuen virtuellen Computer für DC2 an.
 
@@ -219,23 +218,14 @@ Die aktuelle Konfiguration sieht folgendermaßen aus.
  
 Die simulierte Hybrid Cloud-Umgebung kann jetzt zum Testen verwendet werden.
 
-Sie können in dieser Testumgebung auch die folgenden Konfigurationen erstellen:
+## Nächste Schritte
+
+Einrichten der folgenden Workloads im virtuellen Netzwerk TestVNET:
 
 - [SharePoint-Intranetfarm](virtual-networks-setup-sharepoint-hybrid-cloud-testing.md)
 - [Webbasierte Branchenanwendung](virtual-networks-setup-lobapp-hybrid-cloud-testing.md)
 - [Office 365-Verzeichnissynchronisierungsserver (DirSync)](virtual-networks-setup-dirsync-hybrid-cloud-testing.md)
 
-## Zusätzliche Ressourcen
-
-[Einrichten einer Hybridcloudumgebung zu Testzwecken](virtual-networks-setup-hybrid-cloud-environment-testing.md)
-
-[Konfigurieren einer VNet-zu-VNet-Verbindung](../vpn-gateway/virtual-networks-configure-vnet-to-vnet-connection.md)
-
-[Testumgebung für die Basiskonfiguration](../virtual-machines/virtual-machines-base-configuration-test-environment.md)
-
-[Testumgebungen für Azure-Hybridclouds](../virtual-machines/virtual-machines-hybrid-cloud-test-environments.md)
-
-[Implementierungsrichtlinien für Azure-Infrastrukturdienste](../virtual-machines/virtual-machines-infrastructure-services-implementation-guidelines.md)
 
 ## <a id="costs"></a>Minimieren der laufenden Kosten dieser Umgebung
 
@@ -271,9 +261,9 @@ Konfigurieren Sie anschließend die lokalen Netzwerke TestLabLNet und TestVNETLN
 Setzen Sie anschließend den vorinstallierten Schlüssel für beide Gateways auf denselben Wert. Dieser ist der im Azure-Verwaltungsportal festgelegte Schlüsselwert für das virtuelle Netzwerk TestLab. Führen Sie über eine Azure PowerShell-Eingabeaufforderung auf Ihrem lokalen Computer die folgenden Befehle aus, und tragen Sie den Wert des für TestLab vorinstallierten Schlüssels ein.
 
 	$preSharedKey="<The preshared key for the TestLab virtual network>"
-	Set-AzureVNetGatewayKey -VNetName TestVNET -LocalNetworkSiteName TestLabLNet â€“SharedKey $preSharedKey
+	Set-AzureVNetGatewayKey -VNetName TestVNET -LocalNetworkSiteName TestLabLNet -SharedKey $preSharedKey
 
 Klicken Sie auf der Seite "Netzwerk" im Azure-Verwaltungsportal auf das virtuelle Netzwerk **TestLab** und anschließend in der Taskleiste auf **Verbinden**. Warten Sie, bis angezeigt wird, dass das virtuelle Netzwerk TestLab mit dem lokalen Netzwerk TestVNET verbunden ist.
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0121_2016-->

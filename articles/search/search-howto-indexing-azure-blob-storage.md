@@ -17,21 +17,19 @@ ms.author="eugenesh" />
 
 # Indizieren von Dokumenten in Azure Blob Storage mit Azure Search
 
-Azure Search-Kunden können schon seit einiger Zeit beliebte Datenquellen automatisch indizieren, indem sie Indexer für [Azure SQL-Datenbank](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers-2015-02-28.md) und [Azure DocumentDB](../documentdb/documentdb-search-indexer.md) verwenden.
-
-Wir fügen nun Unterstützung für die Indizierung von Dokumenten hinzu, die unter Azure Blob Storage gespeichert sind. Viele Kunden haben uns gebeten, die Indizierung von in Blobs gespeicherten Dokumenten zu vereinfachen, z. B. für PDFs, Office-Dokumente oder HTML-Seiten. Bisher war hierfür das Schreiben von benutzerdefiniertem Code erforderlich, um die Textextrahierung durchzuführen und die Dokumente einem Azure Search-Index hinzuzufügen.
+Dieser Artikel beschreibt, wie Sie Azure Search zum Indizieren von Dokumenten (z. B. PDF- oder Office-Dateien) verwenden, die in Azure-Blobspeicher gespeichert sind. Mit dem neuen Azure Search-Blobindexer verläuft dieser Prozess schnell und reibungslos.
 
 > [AZURE.IMPORTANT]Diese Funktion befindet sich derzeit in der Vorschauphase. Sie ist nur im Rahmen der REST-API unter der Version **2015-02-28-Preview** verfügbar. Beachten Sie hierbei, dass Vorschau-APIs für Tests und Evaluierungen bestimmt sind und nicht in Produktionsumgebungen eingesetzt werden sollten.
 
-## Einrichten der Blob-Indizierung
+## Einrichten der Blobindizierung
 
-Zum Einrichten und Konfigurieren des Indexers für Azure Blob Storage können Sie die Azure Search-REST-API nutzen, um **Indexer** und **Datenquellen** wie in [diesem Artikel](https://msdn.microsoft.com/library/azure/dn946891.aspx) beschrieben zu erstellen und zu verwalten. In Zukunft wird die Unterstützung für die Blob-Indizierung dem Azure Search-.NET-SDK und dem Azure-Portal hinzugefügt.
+Zum Einrichten und Konfigurieren des Indexers für Azure Blob Storage können Sie die Azure Search-REST-API nutzen, um **Indexer** und **Datenquellen** wie in [diesem Artikel](https://msdn.microsoft.com/library/azure/dn946891.aspx) beschrieben zu erstellen und zu verwalten. In Zukunft wird die Unterstützung für die Blobindizierung dem Azure Search-.NET-SDK und dem Azure-Portal hinzugefügt.
 
 Eine Datenquelle gibt an, welche Daten indiziert werden müssen. Sie legt außerdem die Anmeldeinformationen für den Zugriff auf die Daten sowie die Richtlinien zur Aktivierung von Azure Search fest, um Änderungen an den Daten effizient identifizieren zu können (z. B. neue, geänderte oder gelöschte Zeilen). Eine Datenquelle wird als unabhängige Ressource definiert, sodass sie von mehreren Indexern verwendet werden kann.
 
 Ein Indexer ist die Ressource, die Datenquellen mit Zielsuchindizes verbindet.
 
-Führen Sie zum Einrichten eines Blob-Indexers folgende Schritte aus:
+Führen Sie zum Einrichten eines Blobindexers folgende Schritte aus:
 
 1. Erstellen Sie eine Datenquelle vom Typ `azureblob`, von der auf einen Container (und optional einen Ordner in diesem Container) in einem Azure-Speicherkonto verwiesen wird.
 	- Übergeben Sie die Verbindungszeichenfolge des Speicherkontos als `credentials.connectionString`-Parameter.
@@ -67,7 +65,7 @@ Als Nächstes erstellen Sie einen Indexer, der auf die Datenquelle und einen Zie
 
 ## Unterstützte Dokumentformate
 
-Der Blob-Indexer kann Text aus den folgenden Dokumentformaten extrahieren:
+Der Blobindexer kann Text aus den folgenden Dokumentformaten extrahieren:
 
 - PDF
 - Microsoft Office-Formate: DOCX/DOC, XLSX/XLS, PPTX/PPT, MSG (Outlook-E-Mails)  
@@ -148,7 +146,7 @@ Hier wird beschrieben, wie Sie Feldzuordnungen hinzufügen und die Base64-Codier
 
 ## Inkrementelle Indizierung und Erkennung von Löschungen
 
-Wenn Sie einen Blob-Indexer zur Ausführung nach einem Zeitplan einrichten, werden nur die geänderten Blobs neu indiziert. Dies wird anhand des `LastModified`-Zeitstempels der Blobs ermittelt.
+Wenn Sie einen Blobindexer zur Ausführung nach einem Zeitplan einrichten, werden nur die geänderten Blobs neu indiziert. Dies wird anhand des `LastModified`-Zeitstempels der Blobs ermittelt.
 
 > [AZURE.NOTE]Sie müssen keine Richtlinie zum Erkennen von Änderungen angeben. Die inkrementelle Indizierung wird für Sie automatisch indiziert.
 
@@ -198,14 +196,15 @@ Nur-Text (text/plain) | `metadata_content_type`</br>`metadata_content_encoding`<
 <a name="CustomMetadataControl"></a>
 ## Verwenden von benutzerdefinierten Metadaten zum Steuern der Dokumentextrahierung
 
-Sie können einem Blob Metadateneigenschaften hinzufügen, um bestimmte Aspekte der Blob-Indizierung und des Prozesses der Dokumentextrahierung zu steuern. Derzeit werden die folgenden Eigenschaften unterstützt:
+Sie können einem Blob Metadateneigenschaften hinzufügen, um bestimmte Aspekte der Blobindizierung und des Prozesses der Dokumentextrahierung zu steuern. Derzeit werden die folgenden Eigenschaften unterstützt:
 
 Eigenschaftenname | Eigenschaftswert | Erklärung
 --------------|----------------|------------
-AzureSearch\_Skip | „true“ | Weist den Blob-Indexer an, das Blob vollständig zu überspringen. Es wird nicht versucht, Metadaten oder Inhalt zu extrahieren. Dies ist nützlich, wenn Sie bestimmte Inhaltstypen überspringen möchten oder wenn ein bestimmtes Blob wiederholt fehlschlägt und den Indizierungsprozess unterbricht.
+AzureSearch\_Skip | „true“ | Weist den Blobindexer an, das Blob vollständig zu überspringen. Es wird nicht versucht, Metadaten oder Inhalt zu extrahieren. Dies ist nützlich, wenn Sie bestimmte Inhaltstypen überspringen möchten oder wenn ein bestimmtes Blob wiederholt fehlschlägt und den Indizierungsprozess unterbricht.
+AzureSearch\_SkipContent | „true“ | Weist den Blobindexer an, nur die Metadaten zu indizieren und das Extrahieren von Inhalten des Blobs zu überspringen. Dies ist hilfreich, wenn der Blobinhalt nicht weiter relevant ist, Sie aber dennoch die an das Blob angefügten Metadaten indizieren möchten.
 
 ## Helfen Sie uns bei der Verbesserung von Azure Search
 
 Teilen Sie uns auf unserer [UserVoice-Website](https://feedback.azure.com/forums/263029-azure-search) mit, wenn Sie sich Features wünschen oder Verbesserungsvorschläge haben.
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0121_2016-->

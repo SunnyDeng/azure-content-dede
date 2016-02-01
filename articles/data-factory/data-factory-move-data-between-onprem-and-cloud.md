@@ -165,7 +165,7 @@ In diesem Schritt verwenden Sie das Azure-Portal zum Erstellen einer Azure Data 
 	> 
 	> Navigieren Sie bei Verwendung von Chrome zum [Chrome Web Store](https://chrome.google.com/webstore/), führen Sie eine Suche mit dem Begriff „ClickOnce“ durch, wählen Sie eine der ClickOnce-Erweiterungen aus, und installieren Sie sie.
 	>  
-	> Gehen Sie bei Firefox genauso vor (Installation des Add-Ins). Sie können ein Add-In beispielsweise über [diese Seite](https://addons.mozilla.org/firefox/addon/fxclickonce/) installieren.
+	> Gehen Sie bei Firefox genauso vor (Installation des Add-Ins). Klicken Sie auf der Symbolleiste auf die Schaltfläche **Menü öffnen** (**drei waagerechte Striche** in der oberen rechten Ecke), klicken Sie auf **Add-ons**, suchen Sie nach dem Stichwort „ClickOnce“, wählen Sie eine der ClickOnce-Erweiterungen aus, und installieren Sie sie.
 
 	![Blatt "Gateway konfigurieren"](./media/data-factory-move-data-between-onprem-and-cloud/OnPremGatewayConfigureBlade.png)
 
@@ -561,11 +561,11 @@ Sie können einen verknüpften SQL Server-Dienst auch mithilfe des Blatts "Verkn
 4. Klicken Sie auf **OK**, um das Blatt **Anmeldeinformationen** zu schließen. 
 5. Klicken Sie auf dem Blatt **Neuer Datenspeicher** auf **OK**. 	
 6. Überprüfen Sie, ob der Status für **SqlServerLinkedService** auf dem Blatt "Verknüpfte Dienste" auf "Online" festgelegt ist.
-	![Status des verknüpften SQL Server-Diensts](./media/data-factory-move-data-between-onprem-and-cloud/sql-server-linked-service-status.png)
+ 	![Status des verknüpften SQL Server-Diensts](./media/data-factory-move-data-between-onprem-and-cloud/sql-server-linked-service-status.png)
 
 Wenn Sie auf das Portal auf einem Computer zugreifen, der sich vom Computer mit dem Gateway unterscheidet, müssen Sie sicherstellen, dass die Anwendung "Anmeldeinformations-Manager" eine Verbindung mit dem Gatewaycomputer herstellen kann. Wenn die Anwendung den Computer mit dem Gateway nicht erreichen kann, können Sie keine Anmeldeinformationen für die Datenquelle festlegen und die Verbindung mit der Datenquelle nicht testen.
 
-Wenn Sie die Anwendung "Anmeldeinformationen festlegen" über das Azure-Portal gestartet haben, um Anmeldeinformationen für eine lokale Datenquelle festzulegen, werden die Anmeldeinformationen im Portal mit dem Zertifikat verschlüsselt, das Sie auf der Registerkarte "Zertifikat" des Datenverwaltungsgateway-Konfigurations-Managers auf dem Gatewaycomputer angegeben haben.
+Wenn Sie die Anwendung „Anmeldeinformationen festlegen“ über das Azure-Portal gestartet haben, um Anmeldeinformationen für eine lokale Datenquelle festzulegen, werden die Anmeldeinformationen im Portal mit dem Zertifikat verschlüsselt, das Sie auf der Registerkarte "Zertifikat" des Datenverwaltungsgateway-Konfigurations-Managers auf dem Gatewaycomputer angegeben haben.
 
 Wenn Sie einen API-basierten Ansatz zum Verschlüsseln der Anmeldeinformationen nutzen möchten, können Sie das PowerShell-Cmdlet [New-AzureRmDataFactoryEncryptValue](https://msdn.microsoft.com/library/mt603802.aspx) verwenden, um Anmeldeinformationen zu verschlüsseln. Das Cmdlet verwendet das Zertifikat, für dessen Verwendung dieses Gateway konfiguriert ist, um die Anmeldeinformationen zu verschlüsseln. Sie können die verschlüsselten Anmeldeinformationen, die von diesem Cmdlet zurückgegeben werden, dem EncryptedCredential-Element von „connectionString“ in der JSON-Datei, die Sie mit dem Cmdlet [New-AzureRmDataFactoryLinkedService](https://msdn.microsoft.com/library/mt603647.aspx) verwenden, oder im Portal im Data Factory-Editor dem JSON-Ausschnitt hinzufügen.
 
@@ -643,4 +643,4 @@ Im Folgenden sind der allgemeine Datenfluss und eine Zusammenfassung der Schritt
 5.	Das Gateway entschlüsselt die Anmeldeinformationen mit dem gleichen Zertifikat und stellt dann mit dem richtigen Authentifizierungstyp eine Verbindung mit dem lokalen Datenspeicher her.
 6.	Das Gateway kopiert Daten aus dem lokalen Speicher in einen Cloudspeicher oder aus einem Cloudspeicher in einen lokalen Datenspeicher. Dies ist abhängig von der Konfiguration der Kopieraktivität in der Datenpipeline. Hinweis: Für diesen Schritt kommuniziert das Gateway über einen sicheren Kanal (HTTPS) direkt mit dem cloudbasierten Speicherdienst (z. B. Azure Blob, Azure SQL usw.).
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0121_2016-->

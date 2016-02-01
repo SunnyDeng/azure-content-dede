@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="01/07/2015"
+   ms.date="01/16/2016"
    ms.author="ganesr" />
 
 # Verknüpfen von virtuellen Netzwerken mit ExpressRoute-Verbindungen
@@ -137,4 +137,4 @@ Sie können eine Autorisierung durch das Löschen der Verbindung freigeben, die 
 
 Weitere Informationen über ExpressRoute finden Sie unter [ExpressRoute – FAQ](expressroute-faqs.md).
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0121_2016-->

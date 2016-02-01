@@ -17,25 +17,25 @@
    ms.author="vturecek"/>
 
 # Reliable Actors-Entwurfsmuster: Verteilte Berechnung
-Dieses Beispiel verdanken wir zum Teil dem Umstand, dass wir einen realen Kunden dabei beobachten konnten, wie er eine Finanzberechnung in Service Fabric Reliable Actors innerhalb verblüffend kurzer Zeit durchführte – eine Monte-Carlo-Simulation für die Risikoberechnung, um genau zu sein.
+Dieses Beispiel verdanken wir zum Teil dem Umstand, dass wir einen realen Kunden dabei beobachten konnten, wie er eine Finanzberechnung in Service Fabric Reliable Actors innerhalb verblüffend kurzer Zeit durchführte. Dabei ging es um eine Monte-Carlo-Simulation für die Risikoberechnung.
 
-Zunächst mag die Behandlung dieser Art von Arbeitslast durch Azure Service Fabric im Vergleich zu eher herkömmlichen Ansätzen wie Zuordnen/Reduzieren oder MPI nicht offensichtlich sein, insbesondere nicht für diejenigen, die über keine domänenspezifischen Kenntnisse verfügen.
+Die Vorteile der Verarbeitung dieser Art von Workload mit Service Fabric anstelle eines herkömmlichen Ansatzes (z. B. MapReduce oder Message Passing Interface) sind möglicherweise nicht sofort offensichtlich, wenn Sie nicht über domänenspezifische Kenntnisse verfügen.
 
-Aber es zeigt sich, dass Azure Service Fabric sehr gut geeignet ist für parallele asynchrone Nachrichten, leicht zu verwaltenden verteilten Status sowie Parallelberechnung, wie das folgende Diagramm veranschaulicht:
+Service Fabric ist jedoch sehr gut geeignet für parallele asynchrone Nachrichten, für leicht zu verwaltende verteilte Statusangaben sowie zur Parallelberechnung, wie das folgende Diagramm veranschaulicht:
 
-![][1]
+![Service Fabric ist sehr gut geeignet für parallele asynchrone Nachrichten, leicht zu verwaltende verteilte Statusangaben sowie zur Parallelberechnung][1]
 
-Im folgenden Beispiel wird Pi einfach mithilfe einer Monte Carlo-Simulation berechnet. Gegeben sind die folgenden Actors:
+Im folgenden Beispiel wird Pi einfach mithilfe einer Monte-Carlo-Simulation berechnet. Wir verwenden die folgenden Actors:
 
-* Prozessor für die Berechnung von Pi mithilfe von PoolTask-Actors.
+* Prozessor für die Berechnung von Pi mithilfe von Actors für gruppierte Tasks
 
-* PoolTask für die Monte Carlo-Simulation und zum Senden von Ergebnissen an den Aggregator.
+* Gruppierter Task für die Monte-Carlo-Simulation und zum Senden von Ergebnissen an einen Aggregator
 
-* Aggregator zum, wie bereits der Name sagt, Aggregieren von Ergebnissen und Senden dieser Ergebnisse an den Finaliser.
+* Aggregator zum Aggregieren von Ergebnissen und zum Senden dieser Ergebnisse an einen Finalizer
 
-* Finaliser für die Berechnung des Endergebnisses und für die Bildschirmausgabe.
+* Finalizer für die Berechnung des Endergebnisses und für die Bildschirmausgabe
 
-## Codebeispiel für verteilte Berechnung – Monte Carlo-Simulation
+## Codebeispiel für verteilte Berechnung – Monte-Carlo-Simulation
 
 ```csharp
 public interface IProcessor : IActor
@@ -91,7 +91,9 @@ public class PooledTask : StatelessActor, IPooledTask
 }
 ```
 
-Eine gängige Methode zum Aggregieren von Ergebnissen in Azure Service Fabric ist die Verwendung von Timern. Statusfreie Actors werden aus zwei Gründen verwendet: Die Laufzeit ermittelt dynamisch, wie viele Aggregatoren benötigt werden, und bietet daher bedarfsgerechte Skalierung. Außerdem instanziiert sie diese Actors "lokal" – das heißt im selben Silo wie der aufrufende Actor, wodurch Netzwerk-Hops reduziert werden. Aggregator und Finaliser sehen wie folgt aus:
+Eine gängige Methode zum Aggregieren von Ergebnissen in Service Fabric ist die Verwendung von Timern. Statusfreie Actors werden aus zwei Gründen verwendet: Die Laufzeit ermittelt dynamisch, wie viele Aggregatoren benötigt werden, und bietet bedarfsgerechte Skalierung. Außerdem instanziiert sie diese Actors „lokal“. Dies geschieht also im selben Silo, in dem sich auch der aufrufende Actor befindet, wodurch Netzwerkhops reduziert werden.
+
+Aggregator und Finalizer sehen wie folgt aus:
 
 ## Codebeispiel für verteilte Berechnung – Aggregator
 
@@ -183,27 +185,27 @@ public class Finaliser : StatefulActor<FinalizerState>, IFinaliser
 }
 ```
 
-An diesem Punkt sollte klar sein, wie das Leaderboard-Beispiel durch einen Aggregator im Hinblick auf Skalierung und Leistung potenziell verbessert werden könnte.
+An diesem Punkt sollte klar sein, wie das Leaderboard-Beispiel im Hinblick auf Skalierung und Leistung durch einen Aggregator verbessert werden könnte.
 
-Es soll hier keineswegs behauptet werden, Azure Service Fabric sei ein Drop-in Replacement für die weitere verteilte Berechnung von Big-Data-Frameworks oder Hochleistungs-Computing. Es ist aber so konzipiert, dass es einfach einiges besser kann. Es ist möglich, Workflows und verteilte parallele Berechnung in Azure Service Fabric zu modellieren und gleichzeitig von den Einfachheitsvorteilen zu profitieren, die es bietet.
+Es soll hier keineswegs behauptet werden, dass Service Fabric einen gleichwertigen Ersatz für andere verteilte Berechnungen in Big-Data-Frameworks oder für das Hochleistungs-Computing darstellt. Es wurde so konzipiert, dass einige Dinge besser gehandhabt werden können als andere. Es ist jedoch möglich, Workflows und verteilte parallele Berechnungen in Service Fabric zu modellieren und gleichzeitig von der Einfachheit dieses Tools zu profitieren.
 
 ## Nächste Schritte
 [Muster: Intelligenter Cache](service-fabric-reliable-actors-pattern-smart-cache.md)
 
 [Muster: Verteilte Netzwerke und Diagramme](service-fabric-reliable-actors-pattern-distributed-networks-and-graphs.md)
 
-[Muster: Ressourcenkontrolle](service-fabric-reliable-actors-pattern-resource-governance.md)
+[Muster: Ressourcengovernance](service-fabric-reliable-actors-pattern-resource-governance.md)
 
-[Muster: Komposition zustandsbehafteter Dienste](service-fabric-reliable-actors-pattern-stateful-service-composition.md)
+[Muster: Zusammenstellung statusbehafteter Dienste](service-fabric-reliable-actors-pattern-stateful-service-composition.md)
 
 [Muster: Internet der Dinge](service-fabric-reliable-actors-pattern-internet-of-things.md)
 
-[Beispiele für Antimuster](service-fabric-reliable-actors-anti-patterns.md)
+[Einige Antimuster](service-fabric-reliable-actors-anti-patterns.md)
 
-[Einführung in Service Fabric Actors](service-fabric-reliable-actors-introduction.md)
+[Einführung in Service Fabric Reliable Actors](service-fabric-reliable-actors-introduction.md)
 
 
 <!--Image references-->
 [1]: ./media/service-fabric-reliable-actors-pattern-distributed-computation/distributed-computation-1.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0121_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="12/14/2015" 
+	ms.date="01/19/2016" 
 	ms.author="tdykstra"/>
 
 # Verwenden von Azure-Blobspeicher mit dem WebJobs-SDK
@@ -30,7 +30,7 @@ In der Anleitung wird davon ausgegangen, dass Sie wissen, [wie ein WebJobs-Proje
 
 Dieser Abschnitt beschreibt die Verwendung des `BlobTrigger`-Attributs.
 
-> **Hinweis:** Das WebJobs-SDK durchsucht Protokolldateien nach neuen oder geänderten Blobs. Dieser Vorgang ist naturgemäß recht langsam. Eine Funktion wird unter Umständen erst mehrere Minuten nach der Bloberstellung (oder noch später) ausgelöst. Wenn Ihre Anwendung Blobs sofort verarbeiten muss, empfiehlt es sich, zusammen mit dem Blob eine Warteschlangennachricht zu erstellen, und für die Funktion, die das Blob verarbeitet, anstelle des `BlobTrigger`-Attributs das [QueueTrigger](websites-dotnet-webjobs-sdk-storage-queues-how-to.md#trigger)-Attribut zu verwenden.
+> [AZURE.NOTE]Das WebJobs-SDK durchsucht Protokolldateien nach neuen oder geänderten Blobs. Dieser Vorgang verläuft nicht in Echtzeit. Eine Funktion wird unter Umständen erst mehrere Minuten nach der Bloberstellung oder noch später ausgelöst. Darüber hinaus [werden Storage-Protokolle auf einer „best effort“](https://msdn.microsoft.com/library/azure/hh343262.aspx)-Basis erstellt; es gibt jedoch keine Garantie, dass alle Ereignisse erfasst werden. Unter bestimmten Umständen können Protokolle fehlen. Wenn die Geschwindigkeit und Zuverlässigkeitseinschränkungen von Blob-Triggern für Ihre Anwendung nicht akzeptabel sind, empfiehlt es sich, zusammen mit dem Blob eine Warteschlangennachricht zu erstellen und für die Funktion, die das Blob verarbeitet, anstelle des `BlobTrigger`-Attributs das [QueueTrigger](websites-dotnet-webjobs-sdk-storage-queues-how-to.md#trigger)-Attribut zu verwenden.
 
 ### Einzelner Platzhalter für Blobnamen mit Erweiterung  
 
@@ -238,4 +238,4 @@ In diesem Artikel werden u. a. die folgenden Themen behandelt:
 In dieser Anleitung wurden Codebeispiele bereitgestellt, in denen veranschaulicht wird, wie häufige Szenarien für das Arbeiten mit Azure-Blobs behandelt werden. Weitere Informationen zur Verwendung von Azure WebJobs und dem WebJobs-SDK finden Sie unter [Empfohlene Ressourcen für Azure WebJobs](http://go.microsoft.com/fwlink/?linkid=390226).
  
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0121_2016-->

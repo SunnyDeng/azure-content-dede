@@ -17,7 +17,7 @@
 	ms.date="12/04/2015" 
 	ms.author="jeffstok"/>
 
-#Austauschen von Anmeldeinformationen
+#Austauschen von Anmeldeinformationen für Ein- und Ausgaben in Stream Analytics-Aufträgen
 
 ##Zusammenfassung
 Derzeit unterstützt Azure Stream Analytics das Austauschen der Anmeldeinformationen für die Eingabe/Ausgabe nicht, während ein Auftrag ausgeführt wird.
@@ -194,4 +194,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 [graphic43]: ./media/stream-analytics-login-credentials-inputs-outputs/43-stream-analytics-login-credentials-inputs-outputs.png
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0121_2016-->

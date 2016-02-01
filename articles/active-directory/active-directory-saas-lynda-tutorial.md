@@ -2,7 +2,7 @@
     pageTitle="Tutorial: Azure Active Directory-Integration mit Lynda.com | Microsoft Azure" 
     description="Erfahren Sie, wie Sie Lynda.com mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
     services="active-directory" 
-    authors="MarkusVi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags 
@@ -11,8 +11,8 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
-    ms.author="markvi" />
+    ms.date="01/14/2016" 
+    ms.author="jeedes" />
 
 #Tutorial: Azure Active Directory-Integration mit Lynda.com
   
@@ -21,7 +21,7 @@ In diesem Tutorial wird die Integration von Azure und Lynda.com erläutert. Das 
 -   Ein gültiges Azure-Abonnement
 -   Einen Lynda.com-Mandanten
   
-Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie Lynda.com zugewiesen haben, mittels einmaliger Anmeldung auf Ihrer Lynda.com-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können Sie die [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md) nutzen.
+Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie Lynda.com zugewiesen haben, mittels einmaliger Anmeldung auf Ihrer Lynda.com-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie auch die [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md) nutzen.
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -55,7 +55,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Lyn
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-lynda-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie im **Suchfeld** den Suchbegriff **Lynda.com** ein.
+6.  Geben Sie im **Suchfeld** das Wort **Lynda.com** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-lynda-tutorial/IC777524.png "Anwendungskatalog")
 
@@ -78,7 +78,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-lynda-tutorial/IC777527.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Lynda.com-Anmelde-URL** die URL Ihres Lynda.com-Mandanten ein (z. B. **https://shib.lynda.com/Shibboleth.sso/InCommon?providerId=https://sts.windows-ppe.net/6247032d-9415-403c-b72b-277e3fb6f2c8/&target=https://shib.lynda.com/InCommon*), und klicken Sie auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **Lynda.com-Anmelde-URL** die URL Ihres Lynda.com-Mandanten ein (z. B. **https://shib.lynda.com/Shibboleth.sso/InCommon?providerId=https://sts.windows-ppe.net/6247032d-9415-403c-b72b-277e3fb6f2c8/&target=https://shib.lynda.com/InCommon*)), und klicken Sie auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-lynda-tutorial/IC781047.png "App-URL konfigurieren")
 
@@ -88,7 +88,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
 5.  Senden Sie die heruntergeladene Metadatendatei an das Supportteam von Lynda.com. Das Supportteam von Lynda.com übernimmt das Konfigurieren des einmaligen Anmeldens für Sie.
 
-6.  Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
+6.  Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-lynda-tutorial/IC777530.png "Einmaliges Anmelden konfigurieren")
 ##Konfigurieren der Benutzerbereitstellung
@@ -115,4 +115,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0121_2016-->

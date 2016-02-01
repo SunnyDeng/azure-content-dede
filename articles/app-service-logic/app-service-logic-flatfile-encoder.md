@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="BizTalk Flat File Encoder" 
-   description="BizTalk Flat File Encoder" 
+   pageTitle="Verwenden des BizTalk Flat File Encoders in einer Logik-App| Microsoft Azure" 
+   description="BizTalk Flat File Encoder-API-App oder -Connector" 
    services="app-service\logic" 
    documentationCenter=".net,nodejs,java" 
    authors="rajram" 
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration" 
-   ms.date="10/29/2015"
+   ms.date="01/19/2016"
    ms.author="rajram"/>
 
 # BizTalk Flat File Encoder
@@ -69,4 +69,4 @@ Die Aktion gibt die Ausgabe als Zeichenfolge zurück - Flatfile. Ausgabe enthäl
 
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0121_2016-->

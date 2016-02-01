@@ -29,28 +29,7 @@ Um eine Datenquelle zu registrieren, starten Sie einfach im **Azure Data Catalog
 Nachdem die Datenquelle registriert wurde, verfolgt der Katalog ihren Speicherort nach und indiziert ihre Metadaten. Dadurch können Benutzer die Datenquelle suchen, durchsuchen und ermitteln und dann ihren Speicherort zum Herstellen einer Verbindung mit der Anwendung oder dem Tool ihrer Wahl verwenden.
 
 ## Unterstützte Datenquellen
-In der aktuellen Vorschauversion unterstützt **Azure Data Catalog** die Registrierung dieser Datenquellen und Objekttypen:
-
-* SQL Server-Datenbankmodultabellen und -sichten
-* Oracle-Datenbanktabellen und -sichten
-* SQL Server Analysis Services (Mehrdimensionale Dimensionen, Measures und KPIs)
-* SQL Server Analysis Services – Tabellarische Tabellen
-* SQL Server Reporting Services-Berichte
-* Azure-Speicherblobs und -Verzeichnisse
-* Azure Data Lake-Speicher
-* HDFS-Dateien und -Verzeichnisse
-* Apache Hive-Tabellen
-* Teradata-Tabellen und -Sichten
-* Azure Data Lake-Speicherdatei und -Verzeichnisse
-* MySQL-Tabellen und -Sichten
-
-> [AZURE.NOTE]SQL Server unterstützt außerdem Microsoft Azure SQL-Datenbank sowie Microsoft Azure SQL Data Warehouse.
-
-<br/>
-
-> [AZURE.NOTE]Unterstützung für SQL Server Reporting Services gilt nur für Server im einheitlichen Modus. Der SharePoint-Modus wird noch nicht unterstützt.
-
-<br/>
+Eine Liste mit den derzeit unterstützten Datenquellen finden Sie unter [Von Azure Data Catalog unterstützte Datenquellen](data-catalog-dsr.md). <br/>
 
 
 ## Strukturelle Metadaten
@@ -97,4 +76,4 @@ Beim erneuten Registrieren einer bereits registrierten Datenquelle werden neue O
 ## Zusammenfassung
 Durch die Registrierung einer Datenquelle in **Azure Data Catalog** werden strukturelle und beschreibende Metadaten aus der Datenquelle in den Katalogdienst kopiert, sodass die Datenquelle leichter zu ermitteln und zu verstehen ist. Nachdem eine Datenquelle registriert wurde, kann sie im **Azure Data Catalog**-Portal mit Anmerkungen versehen, verwaltet und ermittelt werden.
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0121_2016-->

@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration" 
-   ms.date="11/18/2015"
+   ms.date="01/19/2016"
    ms.author="juliako"/>
 
 
@@ -159,4 +159,4 @@ LightSwitch-Projekte sind mit dieser Version nicht kompatibel. Dieses Problem wi
 
 [Unterstützungs- und Deaktivierungsinformationen zum Azure SDK für .NET und APIs](https://msdn.microsoft.com/library/azure/dn479282.aspx/)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0121_2016-->

@@ -25,7 +25,6 @@
 ##Übersicht
 Das virtuelle StorSimple-Gerät ist eine zusätzliche, in der Microsoft Azure StorSimple-Lösung enthaltene Funktion. Das virtuelle StorSimple-Gerät wird auf einem virtuellen Computer in einem virtuellen Microsoft Azure-Netzwerk ausgeführt und kann zum Sichern und Klonen von Daten von Hosts verwendet werden.
 
- 
 
 #### Vergleich virtueller Gerätemodelle
 
@@ -80,7 +79,7 @@ In den folgenden Abschnitten werden die Konfigurationsvoraussetzungen für das v
 
 Bevor Sie das virtuelle Gerät bereitstellen, müssen Sie in Ihrer Umgebung die folgenden Vorbereitungen treffen:
 
-- [Konfigurieren Sie ein virtuelles Netzwerk in Azure](../virtual-network/virtual-networks-create-vnet.md) für das virtuelle Gerät. Wenn Sie Storage Premium verwenden, müssen Sie ein virtuelles Netzwerk in einer Azure-Region erstellen, die Storage Premium unterstützt. Weitere Informationen zu [Regionen, die Storage Premium derzeit unterstützen](https://azure.microsoft.com/regions/#services).
+- [Konfigurieren Sie ein virtuelles Netzwerk in Azure](../virtual-network/virtual-networks-create-vnet-classic-portal.md) für das virtuelle Gerät. Wenn Sie Storage Premium verwenden, müssen Sie ein virtuelles Netzwerk in einer Azure-Region erstellen, die Storage Premium unterstützt. Weitere Informationen zu [Regionen, die Storage Premium derzeit unterstützen](https://azure.microsoft.com/regions/#services).
 - Es empfiehlt sich, die von Azure bereitgestellten DNS-Standardserver zu verwenden, anstatt einen eigenen DNS-Servernamen anzugeben. Wenn Ihr DNS-Servername ungültig ist oder der DNS-Server IP-Adressen nicht ordnungsgemäß auflösen kann, ist die Erstellung des virtuellen Geräts nicht möglich.
 - Punkt-zu-Standort und Standort-zu-Standort sind optional, aber nicht erforderlich. Sie können diese Optionen gegebenenfalls für erweiterte Szenarios konfigurieren. 
 - Sie können [virtuelle Azure-Computer](../virtual-machines/virtual-machines-about.md) (Hostserver) im virtuellen Netzwerk erstellen, die die vom virtuellen Gerät verfügbar gemachten Volumes verwenden können. Diese Server müssen die folgenden Anforderungen erfüllen: 							
@@ -104,7 +103,7 @@ Nehmen Sie vor dem Erstellen eines virtuellen Geräts die folgenden Updates für
 
 Stellen Sie vorab sicher, dass die folgenden Informationen vorliegen:
 
-- Ihr Konto für das Azure-Portal sowie die zugehörigen Anmeldeinformationen.
+- Ein Konto für das klassische Azure-Portal sowie die zugehörigen Anmeldeinformationen
 
 - Eine Kopie des Schlüssels für die Dienstdatenverschlüsselung des physischen Geräts.
 
@@ -192,7 +191,7 @@ In den folgenden Abschnitten werden einige der Unterschiede bei der Arbeit mit v
 
 Da es sich um ein reines Softwaregerät handelt, ist der Verwaltungsaufwand im Vergleich zu einem physischen Gerät minimal. Folgende Optionen stehen zur Auswahl:
 
-- **Softwareupdates** – Sie können das Datum des letzten Softwareupdates sowie alle Updatestatusmeldungen anzeigen. Mit der Schaltfläche **Updates scannen** unten auf der Seite können Sie manuell nach Updates suchen. Wenn Updates verfügbar sind, klicken Sie zu deren Installation auf **Updates installieren**. Da nur eine einzige Schnittstelle zum virtuellen Gerät vorhanden ist, tritt beim Übernehmen der Updates eine kurze Dienstunterbrechung auf. Das virtuelle Gerät wird heruntergefahren und (ggf.) neu gestartet, um alle veröffentlichten Updates zu übernehmen. Eine Schrittanleitung finden Sie unter [Aktualisieren Ihres Geräts](storsimple-update-device.md#install-regular-updates-via-the-management-portal).
+- **Softwareupdates** – Sie können das Datum des letzten Softwareupdates sowie alle Updatestatusmeldungen anzeigen. Mit der Schaltfläche **Updates scannen** unten auf der Seite können Sie manuell nach Updates suchen. Wenn Updates verfügbar sind, klicken Sie zu deren Installation auf **Updates installieren**. Da nur eine einzige Schnittstelle zum virtuellen Gerät vorhanden ist, tritt beim Übernehmen der Updates eine kurze Dienstunterbrechung auf. Das virtuelle Gerät wird heruntergefahren und (ggf.) neu gestartet, um alle veröffentlichten Updates zu übernehmen. Eine Schrittanleitung finden Sie unter [Aktualisieren Ihres Geräts](storsimple-update-device.md#install-regular-updates-via-the-azure-classic-portal).
 - **Supportpaket** – Sie können ein Supportpaket erstellen und hochladen, um den Microsoft-Support beim Beheben von Problemen mit Ihrem virtuellen Gerät zu unterstützen. Eine Schrittanleitung finden Sie unter [Erstellen und Verwalten eines Unterstützungspakets](storsimple-create-manage-support-package.md).
 
 ### Speicherkonten für ein virtuelles Gerät
@@ -215,7 +214,7 @@ Das Deaktivieren eines virtuellen Geräts führt zu den folgenden Aktionen:
 
 - Für das virtuelle Gerät erstellte Cloudmomentaufnahmen werden beibehalten.
 
-Eine Schrittanleitung finden Sie unter [Deaktivieren Ihres Geräts](storsimple-deactivate-and-delete-device.md#deactivate-a-device).
+Eine Schritt-für-Schritt-Anleitung finden Sie unter [Deaktivieren und Löschen eines StorSimple-Geräts](storsimple-deactivate-and-delete-device.md).
 
 Sobald das virtuelle Gerät auf der Seite des StorSimple Manager-Diensts als deaktiviert angezeigt wird, können Sie das virtuelle Gerät aus der Geräteliste auf der Seite **Geräte** löschen.
 
@@ -248,7 +247,7 @@ Eine Schrittanleitung finden Sie unter [Failover auf ein virtuelles Gerät](stor
 
 Wenn Sie zuvor ein virtuelles StorSimple-Gerät konfiguriert und verwendet haben, jedoch keine weiteren Verwendungsgebühren anfallen sollen, können Sie das virtuelle Gerät herunterfahren. Beim Herunterfahren des virtuellen Geräts werden dessen Betriebssystem oder die Datenträger im Speicher nicht gelöscht. Es fallen keine weiteren Gebühren für Ihr Abonnement an, die Speichergebühren für das Betriebssystem und die Datenträger laufen jedoch weiter.
 
-Wenn Sie das virtuelle Gerät herunterfahren oder löschen, wird es auf der Seite "Geräte" des StorSimple-Manager-Diensts als **Offline** angezeigt. Sie können das Gerät deaktivieren oder löschen, wenn Sie zudem die vom virtuellen Gerät erstellten Sicherungen löschen möchten. Weitere Informationen finden Sie unter [Deaktivieren eines Geräts](storsimple-deactivate-and-delete-device.md#deactivate-a-device).
+Wenn Sie das virtuelle Gerät herunterfahren oder löschen, wird es auf der Seite "Geräte" des StorSimple-Manager-Diensts als **Offline** angezeigt. Sie können das Gerät deaktivieren oder löschen, wenn Sie zudem die vom virtuellen Gerät erstellten Sicherungen löschen möchten. Weitere Informationen finden Sie unter [Deaktivieren und Löschen eines StorSimple-Geräts](storsimple-deactivate-and-delete-device.md).
 
 [AZURE.INCLUDE [Herunterfahren eines virtuellen Geräts](../../includes/storsimple-shutdown-virtual-device.md)]
 
@@ -260,4 +259,4 @@ Wenn Sie das virtuelle Gerät herunterfahren oder löschen, wird es auf der Seit
  
 - Erfahren Sie, wie Sie [StorSimple-Volumes aus einem Sicherungssatz wiederherstellen](storsimple-restore-from-backup-set.md).
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0121_2016-->

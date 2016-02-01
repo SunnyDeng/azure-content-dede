@@ -12,7 +12,7 @@
    ms.topic="article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services" 
-   ms.date="09/22/2015"
+   ms.date="01/16/2016"
    ms.author="cherylmc"/>
 
 # ExpressRoute-Verbindungen und Routingdomänen
@@ -33,7 +33,7 @@ Jede Verbindung verfügt über eine feste Bandbreite (50 MBit/s, 100 MBit/s, 2
 
 ### Kontingente, Grenzwerte und Einschränkungen
 
-Standardkontingente und -grenzwerte gelten für alle ExpressRoute-Verbindungen. Aktuelle Informationen zu Kontingenten finden Sie auf der Seite [Grenzwerte, Kontingente und Einschränkungen für Azure-Abonnements und -Dienste](../articles/azure-subscription-service-limits.md).
+Standardkontingente und -grenzwerte gelten für alle ExpressRoute-Verbindungen. Aktuelle Informationen zu Kontingenten finden Sie auf der Seite [Grenzwerte, Kontingente und Einschränkungen für Azure-Abonnements und -Dienste](../../includes/expressroute-limits.md).
 
 ## ExpressRoute-Routingdomänen
 
@@ -47,7 +47,7 @@ Einer ExpressRoute-Verbindung sind mehrere Routingdomänen zugeordnet: öffentli
 
 Azure-Computedienste, sprich virtuelle Computer (IaaS) und Clouddienste (PaaS), die in einem virtuellen Netzwerk bereitgestellt werden, können über die private Peeringdomäne verbunden werden. Die private Peeringdomäne gilt als vertrauenswürdige Erweiterung Ihres Kernnetzwerks für Microsoft Azure. Sie können eine bidirektionale Verbindung zwischen Ihrem Kernnetzwerk und den virtuellen Azure-Netzwerken (VNets) einrichten. Dadurch können Sie direkt über ihre privaten IP-Adressen eine Verbindung zwischen virtuellen Computern und Clouddiensten herstellen.
 
-Sie können mehr als ein virtuelles Netzwerk mit der privaten Peeringdomäne verbinden. Informationen zu Grenzwerten und Einschränkungen finden Sie auf der [FAQ-Seite](expressroute-faqs.md). Aktuelle Informationen zu Grenzwerten finden Sie auf der Seite [Grenzwerte, Kontingente und Einschränkungen für Azure-Abonnements und -Dienste](../articles/azure-subscription-service-limits.md). Ausführliche Informationen zur Routingkonfiguration finden Sie unter [Routing](expressroute-routing.md).
+Sie können mehr als ein virtuelles Netzwerk mit der privaten Peeringdomäne verbinden. Informationen zu Grenzwerten und Einschränkungen finden Sie auf der [FAQ-Seite](expressroute-faqs.md). Aktuelle Informationen zu Grenzwerten finden Sie auf der Seite [Grenzwerte, Kontingente und Einschränkungen für Azure-Abonnements und -Dienste](../../includes/expressroute-limits.md). Ausführliche Informationen zur Routingkonfiguration finden Sie unter [Routing](expressroute-routing.md).
 
 ### Öffentliches Peering
 
@@ -71,10 +71,10 @@ In der folgenden Tabelle werden die drei Routingdomänen verglichen.
 
 ||**Privates Peering**|**Öffentliches Peering**|**Microsoft-Peering**|
 |---|---|---|---|
-|**Max. unterstützte Anzahl Präfixe pro Peering**|Standardmäßig 4.000, bei ExpressRoute Premium 10.000|200|200|
+|**Max. Anzahl von unterstützten Präfixen pro Peering**|Standardmäßig 4.000, bei ExpressRoute Premium 10.000|200|200|
 |**Unterstützte IP-Adressbereiche**|Jede gültige IPv4-Adresse innerhalb des WANs.|Öffentliche IPv4-Adressen in Ihrem Besitz oder im Besitz des Konnektivitätsanbieters.|Öffentliche IPv4-Adressen in Ihrem Besitz oder im Besitz des Konnektivitätsanbieters.|
-|**Anforderungen AS-Nummer**|Private und öffentliche AS-Nummern. Kunde muss öffentliche AS-Nummer besitzen. | Private und öffentliche AS-Nummern. Kunde muss öffentliche AS-Nummer besitzen. | Nur öffentliche AS-Nummern. AS-Nummer muss anhand von Routingregistrierungen überprüft werden, um den Besitz zu prüfen.|
-|**IP-Adressen der Routingschnittstelle**|RFC1918 und öffentliche IP-Adressen|In Routingregistrierungen beim Kunden registrierte öffentliche IP-Adressen.|In Routingregistrierungen beim Kunden registrierte öffentliche IP-Adressen.|
+|**Anforderungen für AS-Nummern**|Private und öffentliche AS-Nummern. Kunde muss öffentliche AS-Nummer besitzen. | Private und öffentliche AS-Nummern. Kunde muss öffentliche AS-Nummer besitzen.| Nur öffentliche AS-Nummern. AS-Nummer muss anhand von Routingregistrierungen überprüft werden, um den Besitz zu prüfen.|
+|**IP-Adressen der Routingschnittstelle**|RFC1918 und öffentliche IP-Adressen|In Routingregistrierungen für den Kunden registrierte öffentliche IP-Adressen.| In Routingregistrierungen für den Kunden registrierte öffentliche IP-Adressen.|
 |**MD5-Hash-Unterstützung**| Ja|Ja|Ja|
 
 Sie können mehrere Routingdomänen als Teil der ExpressRoute-Verbindung aktivieren. Sie können alle Routingdomänen durch das gleiche VPN leiten, wenn sie diese zu einer einzelnen Routingdomäne zusammenführen möchten. Sie können sie auch getrennt halten, ähnlich wie im Diagramm. Die empfohlene Konfiguration sieht folgendermaßen aus: Das private Peering ist direkt mit dem Kernnetzwerk verbunden, und die öffentlichen Peeringlinks und die Microsoft-Peeringlinks sind mit Ihrer DMZ verbunden.
@@ -90,4 +90,4 @@ Wenn Sie sich für alle drei Peeringsitzungen entscheiden, müssen Sie über dre
 	- [Konfigurieren des Routings (Verbindungspeerings)](expressroute-howto-routing-classic.md)
 	- [Verknüpfen eines VNet mit einer ExpressRoute-Verbindung](expressroute-howto-linkvnet-classic.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0121_2016-->

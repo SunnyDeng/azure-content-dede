@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/27/2015"
+	ms.date="01/19/2016"
 	ms.author="jhubbard"/>
 
 
@@ -22,7 +22,7 @@ In diesem Tutorial lernen Sie die Grundlagen der Azure SQL-Datensynchronisierung
 
 Für dieses Lernprogramm wird minimale vorherige Erfahrung mit SQL Server und Azure SQL Database vorausgesetzt. In diesem Lernprogramm erstellen Sie eine hybride (aus SQL Server- und SQL Database-Instanzen bestehende) Synchronisierungsgruppe, die vollständig gemäß einem von Ihnen festgelegten Zeitplan konfiguriert und synchronisiert wird.
 
-> [AZURE.NOTE]Die gesamte technische Dokumentation zur SQL-Datensynchronisierung von Azure, die früher im MSDN zu finden war, ist jetzt in einer PDF-Datei enthalten, die [hier](http://download.microsoft.com/download/4/E/3/4E394315-A4CB-4C59-9696-B25215A19CEF/SQL_Data_Sync_Preview.pdf) zum Download bereitsteht.
+> [AZURE.NOTE]Die gesamte technische Dokumentation zur SQL-Datensynchronisierung von Azure, die früher im MSDN zu finden war, ist als PDF-Datei verfügbar. Sie können sie [hier](http://download.microsoft.com/download/4/E/3/4E394315-A4CB-4C59-9696-B25215A19CEF/SQL_Data_Sync_Preview.pdf) herunterladen.
 
 ## Schritt 1: Herstellen einer Verbindung zur Azure SQL-Datenbank
 
@@ -202,4 +202,4 @@ Zusätzliche Informationen über SQL Database und SQL Data Sync finden Sie hier:
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0121_2016-->

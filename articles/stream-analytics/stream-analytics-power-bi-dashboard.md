@@ -17,7 +17,7 @@
 	ms.date="01/11/2016" 
 	ms.author="jeffstok"/>
 	
-# Azure Stream Analytics und Power BI: Ein Dashboard mit Echtzeitanalyse und -sichtbarkeit von Streamingdaten
+#  Stream Analytics und Power BI: Ein Dashboard mit Echtzeitanalyse von Streamingdaten
 
 Azure Stream Analytics ermöglicht Ihnen die Nutzung von Microsoft Power BI, eines der führenden Business Intelligence-Tools. Erfahren Sie, wie Sie Azure Stream Analytics verwenden, um hohe Volumen von Streamingdaten zu analysieren und diese in einem Power BI-Dashboard mit Echtzeitanalyse darzustellen.
 
@@ -232,4 +232,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 [graphic12]: ./media/stream-analytics-power-bi-dashboard/12-stream-analytics-power-bi-dashboard.png
 [graphic13]: ./media/stream-analytics-power-bi-dashboard/13-stream-analytics-power-bi-dashboard.png
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0121_2016-->
