@@ -30,7 +30,7 @@ Dieses Tutorial führt Sie durch die Erstellung eines [PowerShell-Runbooks](auto
 
 Für dieses Tutorial benötigen Sie Folgendes:
 
-- Azure-Abonnement. Wenn Sie noch kein Abonnement haben, können Sie [Ihre MSDN-Abonnentenvorteile aktivieren](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) oder sich <a href="/pricing/free-trial/" target="_blank">[für eine kostenlose Testversion registrieren](http://azure.microsoft.com/pricing/free-trial/).
+- Azure-Abonnement. Wenn Sie noch kein Abonnement haben, können Sie [Ihre MSDN-Abonnentenvorteile aktivieren](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) oder sich <a href="/pricing/free-trial/" target="_blank">[für eine kostenlose Testversion registrieren](https://azure.microsoft.com/pricing/free-trial/).
 - [Automation-Konto](automation-configuring.md) zum Speichern des Runbooks.
 - Einen virtuellen Azure-Computer. Da dieser Computer gestartet und beendet wird, darf er sich nicht in der Produktionsumgebung befinden.
 - [Azure Active Directory-Benutzer und Automation-Anmeldeinformationsobjekt](automation-configuring.md) für die Authentifizierung gegenüber Azure-Ressourcen. Dieser Benutzer muss über die Berechtigung zum Starten und Beenden des virtuellen Computers verfügen.
@@ -130,4 +130,4 @@ PowerShell-Runbooks verfügen über den gleichen Lebenszyklus, die gleichen Funk
 - Informationen über die verschiedenen Runbooktypen, ihre Vorteile und Einschränkungen finden Sie unter [Azure Automation-Runbooktypen](automation-runbook-types.md).
 - Weitere Informationen zur PowerShell-Skriptunterstützungsfeature finden Sie unter [Native PowerShell Script Support in Azure Automation](https://azure.microsoft.com/blog/announcing-powershell-script-support-azure-automation-2/).
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

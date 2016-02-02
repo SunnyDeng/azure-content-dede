@@ -35,7 +35,7 @@ In diesem Lernprogramm führen Sie mit Visual Studio 2013 die folgenden Schritt
 ## Erstellen und Bereitstellen von Daten Factory-Entitäten mit Visual Studio 
 
 ### Voraussetzungen
-Sie müssen Folgendes auf Ihrem Computer installiert haben: – Visual Studio 2013 – Herunterladen von Azure SDK für Visual Studio 2013. Navigieren Sie zur [Azure-Downloadseite](http://azure.microsoft.com/downloads/), und klicken Sie im Abschnitt **.NET** auf **VS 2013 installieren**.
+Sie müssen Folgendes auf Ihrem Computer installiert haben: – Visual Studio 2013 – Herunterladen von Azure SDK für Visual Studio 2013. Navigieren Sie zur [Azure-Downloadseite](https://azure.microsoft.com/downloads/), und klicken Sie im Abschnitt **.NET** auf **VS 2013 installieren**.
 
 ### Exemplarische Vorgehensweise
 
@@ -209,7 +209,8 @@ Sie haben bisher verknüpfte Ein-/Ausgabe-Dienste und -Tabellen erstellt. Nun er
 	1. Wählen Sie die Option **Neue Data Factory erstellen**.
 	2. Geben Sie **VSTutorialFactory** als **Name** ein.  
 	
-		> [AZURE.NOTE]Der Name der Azure Data Factory muss global eindeutig sein. Wenn beim Veröffentlichen ein Fehler bezüglich des Namens der Data Factory auftritt, ändern Sie den Namen der Data Factory (z. B. in „IhrNameVSTutorialFactory“), und versuchen Sie erneut, sie zu veröffentlichen. Im Thema [Data Factory – Benennungsregeln](data-factory-naming-rules.md) finden Sie Benennungsregeln für Data Factory-Artefakte.
+		> [AZURE.NOTE]  
+		Der Name der Azure Data Factory muss global eindeutig sein. Wenn beim Veröffentlichen ein Fehler bezüglich des Namens der Data Factory auftritt, ändern Sie den Namen der Data Factory (z. B. in „IhrNameVSTutorialFactory“), und versuchen Sie erneut, sie zu veröffentlichen. Im Thema [Data Factory – Benennungsregeln](data-factory-naming-rules.md) finden Sie Benennungsregeln für Data Factory-Artefakte.
 		> 
 		> Der Name der Data Factory kann in Zukunft als DNS-Name registriert und so öffentlich sichtbar werden.
 	3. Wählen Sie im Feld **Abonnement** das richtige Abonnement aus. 
@@ -236,4 +237,4 @@ Um die Azure Data Factory-Tools für Visual Studio zu aktualisieren, führen Sie
 
 Unter [Überwachen von Datasets und Pipelines](data-factory-get-started-using-editor.md#MonitorDataSetsAndPipeline) finden Sie eine Anleitung zum Überwachen der in diesem Tutorial erstellten Pipeline und Datasets über das Azure-Portal.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

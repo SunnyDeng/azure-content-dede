@@ -41,7 +41,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
 + Ein aktives Windows Store-Konto
 
-+ Ein aktives Azure-Konto <br/>Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdocumentation%2Farticles%2Fnotification-hubs-windows-store-dotnet-get-started%2F).
++ Ein aktives Azure-Konto <br/>Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdocumentation%2Farticles%2Fnotification-hubs-windows-store-dotnet-get-started%2F).
 
 Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen Notification Hub-Lernprogramme für Windows Store-Apps.
 
@@ -86,7 +86,8 @@ Sie müssen die App dem Windows Store zuordnen, um Pushbenachrichtigungen an Win
 
    	![][6]
 
- 	> [AZURE.WARNING]Der geheime Clientschlüssel und die Paket-SID sind wichtige Sicherheitsanmeldeinformationen. Geben Sie diese Werte nicht weiter, und verteilen Sie sie nicht mit Ihrer Anwendung.
+ 	> [AZURE.WARNING]
+	Der geheime Clientschlüssel und die Paket-SID sind wichtige Sicherheitsanmeldeinformationen. Geben Sie diese Werte nicht weiter, und verteilen Sie sie nicht mit Ihrer Anwendung.
 
 ##Konfigurieren Ihres Notification Hub
 
@@ -283,4 +284,4 @@ Weitere allgemeine Informationen zu Notification Hubs finden Sie im [Notificatio
 [Kachelkatalog]: http://msdn.microsoft.com/library/windows/apps/hh761491.aspx
 [Übersicht über Signale]: http://msdn.microsoft.com/library/windows/apps/hh779719.aspx
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

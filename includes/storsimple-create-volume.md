@@ -18,7 +18,7 @@
    2. Geben Sie unter **iSCSI-Initiatorname** den qualifizierten iSCSI-Namen (IQN) des Windows-Hosts an. Wenn Sie den IQN nicht kennen, fahren Sie mit [Abrufen des IQNs eines Windows Server-Hosts](#get-the-iqn-of-a-windows-server-host) fort.
    3. Es wird empfohlen, eine Standardsicherung zu aktivieren, indem Sie das Kontrollkästchen **Standardsicherung für dieses Volume aktivieren** aktivieren. Die Standardsicherung erstellt eine Richtlinie, die jeden Tag um 22:30 Uhr ausgeführt wird (Uhrzeit des Geräts) und eine Cloud-Momentaufnahme dieses Volumes erstellt.
 
-        > [AZURE.NOTE] Nachdem die Sicherung hier aktiviert wurde, kann sie nicht zurückgesetzt werden. Sie müssen das Volume bearbeiten, um diese Einstellung zu ändern.
+        > [AZURE.NOTE] After the backup is enabled here, it cannot be reverted. You will need to edit the volume to modify this setting.
 
         ![Add volume](./media/storsimple-create-volume/AddVolume2-include.png)
 
@@ -26,6 +26,6 @@
 
 ![Video verfügbar](./media/storsimple-create-volume/Video_icon.png) **Video verfügbar**
 
-Sie können sich [hier](http://azure.microsoft.com/documentation/videos/create-a-storsimple-volume/) ein Video anschauen, in dem das Erstellen eines StorSimple-Volumes demonstriert wird.
+Sie können sich [hier](https://azure.microsoft.com/documentation/videos/create-a-storsimple-volume/) ein Video anschauen, in dem das Erstellen eines StorSimple-Volumes demonstriert wird.
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

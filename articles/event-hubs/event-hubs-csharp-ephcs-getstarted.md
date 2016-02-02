@@ -30,13 +30,13 @@ Zum Durchführen dieses Lernprogramms benötigen Sie Folgendes:
 
 + Microsoft Visual Studio 2013 oder Microsoft Visual Studio Express 2013 für Windows.
 
-+ Ein aktives Azure-Konto. <br/>Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F target="\_blank").
++ Ein aktives Azure-Konto. <br/>Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F target="\_blank").
 
 ## Erstellen eines Ereignis-Hubs
 
 1. Melden Sie sich beim [klassischen Azure-Portal][] an, und klicken Sie im unteren Teil des Bildschirms auf **NEU**.
 
-2. Klicken Sie auf **App-Dienste**, **Service Bus**, **Event Hub** und dann auf **Schnellerfassung**.
+2. Klicken Sie auf **App Services**, **Service Bus**, **Event Hub** und dann auf **Schnellerfassung**.
 
    	![][1]
 
@@ -108,4 +108,4 @@ Nachdem Sie eine funktionierende Anwendung erstellt haben, die einen Ereignis-Hu
 [Messaginglösung mit Warteschlange]: ../service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

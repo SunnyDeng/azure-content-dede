@@ -41,11 +41,11 @@ Bitte verwenden Sie nach Abschluss des Node.js-Tutorials die Abstimmungsschaltfl
 
 Lassen Sie uns anfangen.
 
-## Voraussetzungen
+## Voraussetzungen für das Node.js-Tutorial
 
 Stellen Sie sicher, dass Sie über Folgendes verfügen:
 
-- Ein aktives Azure-Konto. Wenn Sie kein Konto haben, können Sie sich für eine [kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/) registrieren.
+- Ein aktives Azure-Konto. Wenn Sie kein Konto haben, können Sie sich für eine [kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/) registrieren.
 - [Node.js](https://nodejs.org/) Version v0.10.29 oder höher.
 
 ## Schritt 1: Erstellen eines DocumentDB-Kontos
@@ -76,7 +76,7 @@ Prima. Damit ist die Einrichtung abgeschlossen, und wir können mit dem Schreibe
 
 Erstellen Sie dann ein leeres Objekt mit dem Titel ```config```, und legen Sie die Eigenschaften ```config.endpoint``` und ```config.authKey``` auf Ihren DocumentDB-Endpunkt und den Autorisierungsschlüssel fest. Beide Konfigurationen finden Sie im [Azure-Portal](https://portal.azure.com).
 
-![Screenshot des Azure-Portals mit einem DocumentDB-Konto, bei dem der ACTIVE-Hub, die Schaltfläche "SCHLÜSSEL" auf dem Blatt "DocumentDB-Konto", und auf dem Blatt "Schlüssel" die Werte URI, PRIMÄRSCHLÜSSEL und SEKUNDÄRSCHLÜSSEL hervorgehoben sind][keys]
+![Node.js-Tutorial – Screenshot des Azure-Portals mit einem DocumentDB-Konto, bei dem der AKTIVE Hub, die Schaltfläche SCHLÜSSEL auf dem Blatt „DocumentDB-Konto“ und auf dem Blatt „Schlüssel“ die Werte URI, PRIMÄRSCHLÜSSEL und SEKUNDÄRSCHLÜSSEL hervorgehoben sind – Node-Datenbank][keys]
 
     var config = {}
 
@@ -212,7 +212,7 @@ Eine [Datenbank](documentdb-resources.md#databases) kann mithilfe der [createDat
 
 ##<a id="CreateColl"></a>Schritt 6: Erstellen einer Sammlung  
 
-> [AZURE.WARNING]**CreateDocumentCollectionAsync** erstellt eine neue S1-Sammlung, die hat Auswirkungen auf die Preise hat. Weitere Informationen finden Sie auf unserer [Preisseite](https://azure.microsoft.com/pricing/details/documentdb/).
+> [AZURE.WARNING] **CreateDocumentCollectionAsync** erstellt eine neue S1-Sammlung, die hat Auswirkungen auf die Preise hat. Weitere Informationen finden Sie auf unserer [Preisseite](https://azure.microsoft.com/pricing/details/documentdb/).
 
 Eine [Sammlung](documentdb-resources.md#collections) kann mithilfe der [createCollection](https://azure.github.io/azure-documentdb-node/DocumentClient.html)-Funktion der **DocumentClient**-Klasse erstellt werden. Eine Sammlung ist ein Container für JSON-Dokumente und die zugehörige JavaScript-Anwendungslogik. Die neu erstellte Sammlung wird einer [S1-Leistungsebene](documentdb-performance-levels.md) zugeordnet. Fügen Sie eine Funktion zum Erstellen der neuen Sammlung in der Datei „app.js“ mit der ```id``` aus dem ```config```-Objekt hinzu. Auch hier stellen wir sicher, dass ein Dokument mit der gleichen ```FamilyCollection```-ID noch nicht vorhanden ist. Wenn eine vorhanden ist, verwenden wir diese Sammlung, statt eine neue zu erstellen.
 
@@ -276,7 +276,7 @@ Fügen Sie anschließend in „app.js“ eine Funktion für die Erstellung der D
 
 Glückwunsch! Sie verfügen jetzt über die Funktionen zum Erstellen einer Datenbank, einer Sammlung und eines Dokuments in DocumentDB!
 
-![Diagramm zur Veranschaulichung der hierarchischen Beziehung zwischen dem Konto, der Datenbank, der Sammlung und den Dokumenten](./media/documentdb-nodejs-get-started/node-js-tutorial-account-database.png)
+![Node.js-Tutorial – Diagramm zur Veranschaulichung der hierarchischen Beziehung zwischen dem Konto, der Datenbank, der Sammlung und den Dokumenten – Node-Datenbank](./media/documentdb-nodejs-get-started/node-js-tutorial-account-database.png)
 
 ##<a id="Query"></a>Schritt 8: Abfragen von DocumentDB-Ressourcen
 
@@ -302,7 +302,7 @@ DocumentDB unterstützt [umfassende Abfragen](documentdb-sql-query.md) der in je
 
 Das folgende Diagramm veranschaulicht, wie die DocumentDB-SQL-Abfragesyntax für die erstellte Sammlung aufgerufen wird.
 
-![Diagramm zur Veranschaulichung des Bereichs und der Bedeutung der Abfrage](./media/documentdb-nodejs-get-started/node-js-tutorial-collection-documents.png)
+![Node.js-Tutorial – Diagramm zur Veranschaulichung des Bereichs und der Bedeutung der Abfrage – Node-Datenbank](./media/documentdb-nodejs-get-started/node-js-tutorial-collection-documents.png)
 
 Das [FROM](documentdb-sql-query.md/#from-clause) -Schlüsselwort ist in der Abfrage optional, da DocumentDB Abfragen auf eine Sammlung begrenzt. Aus diesem Grund ist "FROM Familien f" austauschbar mit "FROM Stamm r" oder einem anderen variablen Namen, den Sie auswählen. DocumentDB wird ableiten, dass Familien, Stamm oder der variable Name, den Sie ausgewählt haben, standardmäßig auf die aktuelle Sammlung verweisen.
 
@@ -419,7 +419,7 @@ Die Ausgabe der GetStarted-Anwendung sollte angezeigt werden. Die Ausgabe sollte
 
 Glückwunsch! Sie haben das Node.js-Tutorial abgeschlossen und Ihre erste DocumentDB-Konsolenanwendung erstellt.
 
-##<a id="GetSolution"></a> Abrufen der vollständigen Lösung
+##<a id="GetSolution"></a> Abrufen der vollständigen Projektmappe für das Node.js-Tutorial
 Um die "GetStarted"-Lösung zu erstellen, die alle Beispiele dieses Artikels enthält, ist Folgendes erforderlich:
 
 -   [DocumentDB-Konto][documentdb-create-account].
@@ -442,4 +442,4 @@ Aktualisieren Sie dann in der Datei ```config.js``` die Werte für „config.end
 
 [keys]: media/documentdb-nodejs-get-started/node-js-tutorial-keys.png
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

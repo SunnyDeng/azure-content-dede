@@ -30,7 +30,7 @@ In diesem Lernprogramm erstellen Sie einen neuen mobilen Dienst und eine einfach
 
 Für dieses Lernprogramm benötigen Sie Folgendes:
 
-* Ein aktives Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Dienste, die Sie auch nach Ablauf der Testversion weiter nutzen können. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdocumentation%2Farticles%2Fmobile-services-javascript-backend-windows-store-javascript-get-started%2F).
+* Ein aktives Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Dienste, die Sie auch nach Ablauf der Testversion weiter nutzen können. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdocumentation%2Farticles%2Fmobile-services-javascript-backend-windows-store-javascript-get-started%2F).
 * [Visual Studio 2013 Express für Windows]
 
 ## Erstellen eines neuen mobilen Diensts
@@ -98,4 +98,4 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 [klassischen Azure-Portal]: https://manage.windowsazure.com/
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

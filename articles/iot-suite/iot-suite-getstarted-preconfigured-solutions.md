@@ -2,13 +2,14 @@
 	pageTitle="Erste Schritte mit vorkonfigurierten Lösungen | Microsoft Azure"
 	description="In diesem Tutorial erlernen Sie das Bereitstellen einer vorkonfigurierten Azure IoT Suite-Lösung."
 	services=""
+    suite="iot-suite"
 	documentationCenter=""
 	authors="dominicbetts"
 	manager="timlt"
 	editor=""/>
 
 <tags
-     ms.service="na"
+     ms.service="iot-suite"
      ms.devlang="na"
      ms.topic="hero-article"
      ms.tgt_pltfrm="na"
@@ -26,7 +27,7 @@ Dieses Tutorial zeigt, wie Sie eine vorkonfigurierte Lösung für die *Remoteüb
 
 Sie benötigen ein aktives Azure-Abonnement, um dieses Lernprogramm auszuführen.
 
-> [AZURE.NOTE]Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion][lnk_free_trial].
+> [AZURE.NOTE]  Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion][lnk_free_trial].
 
 ## Bereitstellen einer vorkonfigurierten Lösung für die Remoteüberwachung
 
@@ -159,4 +160,4 @@ Nachdem Sie jetzt eine funktionsfähige vorkonfigurierte Lösung erstellt haben,
 [lnk-customize]: iot-suite-guidance-on-customizing-preconfigured-solutions.md
 [lnk-predictive]: iot-suite-predictive-overview.md
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

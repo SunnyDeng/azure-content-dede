@@ -19,9 +19,7 @@
 
 #Erstellen einer Xamarin.iOS-App
 
-[AZURE.INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]
-&nbsp;  
-[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
+[AZURE.INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]&nbsp;[AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]
 
 ##Übersicht
 
@@ -33,7 +31,7 @@ Das Absolvieren dieses Lernprogramms ist Voraussetzung für alle anderen Xamarin
 
 Für dieses Lernprogramm benötigen Sie Folgendes:
 
-* Ein aktives Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Apps, die Sie auch nach Ablauf der Testversion weiter nutzen können. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/).
+* Ein aktives Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Apps, die Sie auch nach Ablauf der Testversion weiter nutzen können. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/).
 
 * [Visual Studio Community 2013] oder höher. Wenn Sie Visual Studio Community 2013 installieren, dann installieren Sie [Xamarin] separat. Sie können die Xamarin-Tools bei der Installation von Visual Studio 2015 installieren.
 
@@ -41,7 +39,7 @@ Für dieses Lernprogramm benötigen Sie Folgendes:
  
 * Wenn Sie beabsichtigen, Ihre App mit Visual Studio auf einem Windows-basierten Computer mit ausgeführtem Visual Studio zu erstellen, benötigen Sie weiterhin Zugriff auf einen an das Netzwerk angeschlossenen Mac mit ausgeführtem Xamarin.iOS Build Host, um den Build zu erstellen und die Bereitstellung auszuführen. Weitere Informationen finden Sie unter [Installieren von Xamarin.iOS unter Windows](http://developer.xamarin.com/guides/ios/getting_started/installation/windows/).
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, besuchen Sie [Azure App Service-App erstellen](https://tryappservice.azure.com/?appServiceName=mobile). Dort können Sie direkt eine kurzzeitige mobile Start-App in App Service erstellen – keine Kreditkarte erforderlich, keine weiteren Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, besuchen Sie [Azure App Service-App erstellen](https://tryappservice.azure.com/?appServiceName=mobile). Dort können Sie direkt eine kurzzeitige mobile Start-App in App Service erstellen – keine Kreditkarte erforderlich, keine weiteren Verpflichtungen.
 
 ## Erstellen eines neuen Azure Mobile App-Back-Ends
 
@@ -70,7 +68,7 @@ Wenn Sie zuvor eine .NET-Back-End-Konfiguration gewählt haben, können Sie das 
 
 1. Öffnen Sie auf Ihrem Mac das [Azure-Portal] in einem Browserfenster.
 
-	>[AZURE.NOTE]Es ist einfacher, Ihre Xamarin.iOS-App auf einem Mac auszuführen. Sie können die Xamarin.iOS-App auf Wunsch mithilfe von Visual Studio auf Ihrem Windows-basierten Computer ausführen. Allerdings ist dies etwas kompliziert, da Sie eine Verbindung zu einem vernetzten Mac benötigen. Wenn Sie daran interessiert sind, finden Sie Informationen dazu unter [Installation von Xamarin.iOS auf Windows].
+	>[AZURE.NOTE] Es ist einfacher, Ihre Xamarin.iOS-App auf einem Mac auszuführen. Sie können die Xamarin.iOS-App auf Wunsch mithilfe von Visual Studio auf Ihrem Windows-basierten Computer ausführen. Allerdings ist dies etwas kompliziert, da Sie eine Verbindung zu einem vernetzten Mac benötigen. Wenn Sie daran interessiert sind, finden Sie Informationen dazu unter [Installation von Xamarin.iOS auf Windows].
 
 2. Klicken Sie auf dem Blatt „Einstellungen“ für Ihre mobile App auf **Erste Schritte** > **Xamarin.iOS**. Klicken Sie unter Schritt 3 auf **Neue App erstellen**, falls noch nicht ausgewählt. Klicken Sie dann auf die Schaltfläche **Herunterladen**.
 
@@ -121,4 +119,4 @@ Wenn Sie zuvor eine .NET-Back-End-Konfiguration gewählt haben, können Sie das 
 [Xamarin for Windows]: https://go.microsoft.com/fwLink/?LinkID=330242&clcid=0x409
 [Installation von Xamarin.iOS auf Windows]: http://developer.xamarin.com/guides/ios/getting_started/installation/windows/
 
-<!---HONumber=AcomDC_1203_2015--->
+<!---HONumber=AcomDC_0128_2016-->

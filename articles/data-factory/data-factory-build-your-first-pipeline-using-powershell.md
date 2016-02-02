@@ -61,7 +61,7 @@ In diesem Schritt erstellen Sie mit Azure PowerShell eine Azure Data Factory nam
 
 		New-AzureRmDataFactory -ResourceGroupName ADFTutorialResourceGroup -Name FirstDataFactoryPSH –Location "West US"
 
-	> [AZURE.IMPORTANT]Der Name der Azure Data Factory muss global eindeutig sein. Bei Anzeige der Fehlermeldung **Data Factory-Name „FirstDataFactoryPSH“ nicht verfügbar** ändern Sie den Namen (z. B. in „IhrNameFirstDataFactoryPSH“). Verwenden Sie diesen Namen beim Ausführen der Schritte in diesem Lernprogramm anstelle von "ADFTutorialDataFactoryPSH". Im Thema [Data Factory – Benennungsregeln](data-factory-naming-rules.md) finden Sie Benennungsregeln für Data Factory-Artefakte.
+	> [AZURE.IMPORTANT] Der Name der Azure Data Factory muss global eindeutig sein. Bei Anzeige der Fehlermeldung **Data Factory-Name „FirstDataFactoryPSH“ nicht verfügbar** ändern Sie den Namen (z. B. in „IhrNameFirstDataFactoryPSH“). Verwenden Sie diesen Namen beim Ausführen der Schritte in diesem Lernprogramm anstelle von "ADFTutorialDataFactoryPSH". Im Thema [Data Factory – Benennungsregeln](data-factory-naming-rules.md) finden Sie Benennungsregeln für Data Factory-Artefakte.
 	> 
 	> Der Name der Data Factory kann in Zukunft als DNS-Name registriert und so öffentlich sichtbar werden.
 
@@ -87,7 +87,7 @@ Ein-/Ausgabedaten und die HQL-Skriptdatei zu speichern.
 	    	}
 		}
 
-	Ersetzen Sie **Kontoname** durch den Namen Ihres Azure-Speicherkontos und **Kontoschlüssel** durch den Zugriffsschlüssel des Azure-Speicherkontos. Informationen zum Abrufen Ihres Speicherzugriffsschlüssels finden Sie unter [Informationen zu Azure-Speicherkonten](http://azure.microsoft.com/documentation/articles/storage-create-storage-account/#view-copy-and-regenerate-storage-access-keys).
+	Ersetzen Sie **Kontoname** durch den Namen Ihres Azure-Speicherkontos und **Kontoschlüssel** durch den Zugriffsschlüssel des Azure-Speicherkontos. Informationen zum Abrufen Ihres Speicherzugriffsschlüssels finden Sie unter [Informationen zu Azure-Speicherkonten](https://azure.microsoft.com/documentation/articles/storage-create-storage-account/#view-copy-and-regenerate-storage-access-keys).
 
 2. Wechseln Sie in Azure PowerShell zum Ordner „ADFGetStarted“.
 3. Verwenden Sie das Cmdlet **New-AzureRmDataFactoryLinkedService**, um einen verknüpften Dienst zu erstellen. Dieses Cmdlet und andere Data Factory-Cmdlets, die Sie in diesem Lernprogramm verwenden, erfordern das Eingeben von Werten für die Parameter *ResourceGroupName* und *DataFactoryName*. Sie können auch **Get-AzureRmDataFactory** verwenden, um ein **DataFactory**-Objekt abzurufen und das Objekt ohne Eingabe von *ResourceGroupName* und *DataFactoryName* bei jeder Ausführung eines Cmdlets zu übergeben. Führen Sie folgenden Befehl aus, um die Ausgabe des Cmdlets **Get-AzureRmDataFactory** der Variablen **$df** zuzuweisen.
@@ -131,6 +131,15 @@ In diesem Schritt verknüpfen Sie einen bedarfsgesteuerten HDInsight-Cluster mit
 	| TimeToLive | Gibt die Leerlaufzeit des HDInsight-Clusters an, bevor er gelöscht wird. |
 	| linkedServiceName | Gibt das Speicherkonto an, das verwendet wird, um die Protokolle zu speichern, die von HDInsight generiert werden. |
 
+	Beachten Sie Folgendes:
+	
+	- Die Data Factory erstellt mit dem obigen JSON-Code einen **Windows-basierten** HDInsight-Cluster für Sie. Sie können sich auch für die Erstellung eines **Linux-basierten** HDInsight-Clusters entscheiden. Ausführliche Informationen finden Sie unter [Bedarfsgesteuerter verknüpfter HDInsight-Dienst](data-factory-compute-linked-services.md#azure-hdinsight-on-demand-linked-service). 
+	- Anstelle eines bedarfsgesteuerten HDInsight-Clusters könnten Sie **Ihren eigenen HDInsight-Cluster** verwenden. Ausführliche Informationen finden Sie unter [Verknüpfter HDInsight-Dienst](data-factory-compute-linked-services.md#azure-hdinsight-linked-service).
+	- Der HDInsight-Cluster erstellt einen **Standardcontainer** in der Blob Storage-Instanz, die Sie im JSON-Code angegeben haben (**linkedServiceName**). HDInsight löscht diesen Container nicht, wenn der Cluster gelöscht wird. Dies ist beabsichtigt. Beim bedarfsgesteuerten verknüpften HDInsight-Dienst wird jedes Mal ein HDInsight-Cluster erstellt, wenn ein Slice verarbeitet werden muss – es sei denn, ein aktiver Cluster (**timeToLive**) ist vorhanden und wird gelöscht, nachdem die Verarbeitung abgeschlossen ist.
+	
+		Wenn immer mehr Slices verarbeitet werden, enthält Azure Blob Storage viele Container. Falls Sie diese für die Problembehandlung der Aufträge nicht benötigen, sollten Sie sie ggf. löschen, um die Speicherkosten zu verringern. Der Name dieser Container basiert auf dem folgenden Muster: adf**ihrdatafactoryname**-**nameverknüpfterdienst**-datumuhrzeitstempel. Verwenden Sie Tools wie [Microsoft Storage-Explorer](http://storageexplorer.com/), um Container in Ihrer Azure Blob Storage-Instanz zu löschen.
+
+	Ausführliche Informationen finden Sie unter [Bedarfsgesteuerter verknüpfter HDInsight-Dienst](data-factory-compute-linked-services.md#azure-hdinsight-on-demand-linked-service). 
 2. Führen Sie nun das Cmdlet **New-AzureRmDataFactoryLinkedService** zum Erstellen des verknüpften Diensts „HDInsightOnDemandLinkedService“ aus.
 
 		New-AzureRmDataFactoryLinkedService $df -File .\HDInsightOnDemandLinkedService.json
@@ -218,7 +227,7 @@ In diesem Schritt erstellen Sie Ihre erste Pipeline mit einer **HDInsightHive**-
 
 1. Erstellen Sie im Ordner „C:\\ADFGetStarted“ eine JSON-Datei mit dem Namen „MyFirstPipelinePSH.json“ mit folgendem Inhalt:
 
-	> [AZURE.IMPORTANT]Ersetzen Sie im JSON-Code **storageaccountname** durch den Namen Ihres Speicherkontos.
+	> [AZURE.IMPORTANT] Ersetzen Sie im JSON-Code **storageaccountname** durch den Namen Ihres Speicherkontos.
 		
 		{
 		    "name": "MyFirstPipeline",
@@ -343,4 +352,4 @@ In diesem Artikel haben Sie eine Pipeline mit einer Transformationsaktivität (H
 
 [cmdlet-reference]: https://msdn.microsoft.com/library/azure/dn820234(v=azure.98).aspx
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

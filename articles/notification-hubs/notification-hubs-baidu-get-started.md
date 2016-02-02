@@ -32,7 +32,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 + [Mobile Services Android SDK]
 + [Baidu Push Android SDK]
 
->[AZURE.NOTE]Sie benötigen ein aktives Azure-Konto, um dieses Lernprogramm abzuschließen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Einen Monat kostenlos testen](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdocumentation%2Farticles%2Fnotification-hubs-baidu-get-started%2F).
+>[AZURE.NOTE] Sie benötigen ein aktives Azure-Konto, um dieses Lernprogramm abzuschließen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Einen Monat kostenlos testen](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdocumentation%2Farticles%2Fnotification-hubs-baidu-get-started%2F).
 
 
 ##Erstellen eines Baidu-Kontos
@@ -503,4 +503,4 @@ Zum Senden einer Testbenachrichtigung können Sie die Registerkarte „Debuggen�
 [klassischen Azure-Portal]: https://manage.windowsazure.com/
 [Baidu-Portal]: http://www.baidu.com/
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -42,7 +42,7 @@ Sie benötigen für dieses Lernprogramm die [Android Developer Tools](https://de
 
 Das heruntergeladene Schnellstartprojekt enthält das Azure Mobile Services SDK für Android.
 
-> [AZURE.IMPORTANT]Um dieses Tutorial abzuschließen, benötigen Sie ein Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie hier [Kostenloses Azure-Testkonto](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AE564AB28).
+> [AZURE.IMPORTANT] Um dieses Tutorial abzuschließen, benötigen Sie ein Azure-Konto. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie hier [Kostenloses Azure-Testkonto](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AE564AB28).
 
 
 ## Erstellen eines neuen mobilen Diensts
@@ -97,4 +97,4 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 [Erste Schritte mit Pushbenachrichtigungen]: mobile-services-javascript-backend-android-get-started-push.md
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/p/?LinkID=266533
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

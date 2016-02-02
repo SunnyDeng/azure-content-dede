@@ -155,4 +155,4 @@ In diesem Szenario werden Deltareplikationsänderungen vom vereinheitlichten Age
 
 [Bereiten Sie sich auf die Bereitstellung vor](site-recovery-best-practices.md).
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

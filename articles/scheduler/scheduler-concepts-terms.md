@@ -197,7 +197,7 @@ Das Wiederholungsintervall, das durch das Objekt **retryInterval** angegeben wir
 
  [Erstellen komplexer Zeitpläne und erweiterter Serien mit Azure Scheduler](scheduler-advanced-complexity.md)
 
- [Azure Scheduler-REST-API – Referenz](https://msdn.microsoft.com/library/dn528946)
+ [Azure Scheduler-REST-API – Referenz](https://msdn.microsoft.com/library/mt629143)
 
  [Azure Scheduler – PowerShell-Cmdlets-Referenz](scheduler-powershell-reference.md)
 
@@ -207,4 +207,4 @@ Das Wiederholungsintervall, das durch das Objekt **retryInterval** angegeben wir
 
  [Ausgehende Authentifizierung von Azure Scheduler](scheduler-outbound-authentication.md)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

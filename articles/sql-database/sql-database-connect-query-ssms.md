@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Herstellen einer Verbindung mit SQL-Datenbank über SSMS | Microsoft Azure"
-	description="Erfahren Sie, wie Sie über SQL Server Management Studio eine Verbindung mit einer Azure SQL-Datenbank herstellen. Führen Sie dann eine Beispielabfrage mithilfe von Transact-SQL (T-SQL) aus."
+	pageTitle="Verbinden mit der SQL-Datenbank – SQL Server Management Studio | Microsoft Azure"
+	description="Erfahren Sie, wie Sie über SQL Server Management Studio (SSMS) eine Verbindung mit einer SQL-Datenbank in Azure herstellen. Führen Sie dann eine Beispielabfrage mithilfe von Transact-SQL (T-SQL) aus."
 	metaCanonical=""
 	keywords="Verbinden mit SQL-Datenbank, SQL Server Management Studio"
 	services="sql-database"
@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="10/09/2015"
+	ms.date="01/21/2016"
 	ms.author="sstein" />
 
 # Herstellen einer Verbindung mit einer Azure SQL-Datenbank mit SQL Server Management Studio und Ausführen einer T-SQL-Beispielabfrage
@@ -25,7 +25,7 @@
 - [SSMS](sql-database-connect-query-ssms.md)
 - [Excel](sql-database-connect-excel.md)
 
-In diesem Artikel wird das Herstellen einer Verbindung mit einer Azure SQL-Datenbank und anschließende Durchführen einer einfachen Abfrage mithilfe von Transact-SQL-Anweisungen veranschaulicht.
+In diesem Artikel wird das Herstellen einer Verbindung mit einer Azure SQL-Datenbank und anschließende Durchführen einer einfachen Abfrage mithilfe von Transact-SQL-Anweisungen (T-SQL) veranschaulicht.
 
 Sie benötigen zuerst eine SQL-­Datenbank in Azure. Mithilfe der Anweisungen unter [Erste Schritte mit Microsoft Azure SQL-Datenbank](sql-database-get-started.md) können Sie schnell eine erstellen. Die hier aufgeführten Beispiele basieren auf der AdventureWorks-Beispieldatenbank, die Sie in diesem Artikel erstellen. Bis zur Durchführung der Abfrage gelten jedoch für jede SQL-Datenbank die gleichen Schritte.
 
@@ -42,20 +42,18 @@ Bei der Arbeit mit SQL-Datenbank sollten Sie die aktuelle Version von SSMS verwe
 
 	![SQL Server Management Studio: Verbinden mit einem SQL-Datenbankserver](./media/sql-database-connect-query-ssms/1-connect.png)
 
-### Wenn die Verbindung mit der SQL-Datenbank nicht hergestellt werden kann
+### Bei Verbindungsfehlern
 
-Der häufigsten Gründe für Verbindungsfehler sind Fehler im Server- oder Benutzernamen bzw. im Kennwort sowie dass der Server aus Sicherheitsgründen keine Verbindungen zulässt. Stellen Sie sicher, dass die Firewalleinstellungen des Servers Verbindungen von der IP-Adresse Ihres lokalen Computers und der vom SSMS-Client verwendeten IP-Adresse zulassen. Diese unterscheiden sich bisweilen.
-
-Wenn aufgrund von Firewalleinstellungen ein Verbindungsfehler auftritt, erstellt die neueste Version von SSMS nach vorheriger Anfrage die Firewallregel. Sie finden sie unter [SSMS herunterladen](https://msdn.microsoft.com/library/mt238290.aspx). Wenn Sie eine frühere Version verwenden, wird Ihnen die IP-Adresse in einer Fehlermeldung mitgeteilt, und Sie müssen diese IP-Adresse der Firewallregel des Servers hinzufügen. Weitere Informationen finden Sie unter [Vorgehensweise: Konfigurieren von Firewalleinstellungen (Azure SQL-Datenbank)](sql-database-configure-firewall-settings.md).
+Die häufigste Ursache für Verbindungsfehler sind Unregelmäßigkeiten beim Servernamen (Erinnerung: *&lt;;servername>* ist der Name des logischen Servers, nicht der Datenbank), Benutzernamen oder Kennwort sowie das Verbieten der Verbindung durch den Server aus Sicherheitsgründen. Wenn Sie die Verbindung zum ersten Mal herstellen oder die Verbindung aufgrund einer geänderten IP-Konfiguration fehlschlägt, werden Sie von der [aktuellen SSMS-Version](https://msdn.microsoft.com/library/mt238290.aspx) nach Ihren Azure-Anmeldedaten gefragt. Anschließend wird die Firewallregel für Sie in Azure erstellt. Wenn Sie eine frühere Version verwenden, wird Ihnen die IP-Adresse in einer Fehlermeldung mitgeteilt, und Sie müssen diese IP-Adresse der Firewallregel des Servers in Azure hinzufügen. Stellen Sie sicher, dass die Firewalleinstellungen des Servers Verbindungen von der IP-Adresse Ihres lokalen Computers und der vom SSMS-Client verwendeten IP-Adresse zulassen. Diese unterscheiden sich bisweilen. Weitere Informationen finden Sie unter [Vorgehensweise: Konfigurieren von Firewalleinstellungen (Azure SQL-Datenbank)](sql-database-configure-firewall-settings.md).
 
 ## Durchführen von Beispielabfragen
 
-Nach dem Herstellen der Verbindung mit SQL-Datenbank können Sie eine Beispielabfrage durchführen. Wenn Sie die Datenbank nicht mithilfe des AdventureWorks-Beispiels in [Erste Schritte mit Microsoft Azure SQL-Datenbank](sql-database-get-started.md) erstellt haben, funktioniert diese Abfrage nicht. Fahren Sie direkt mit den nächsten Schritten fort, um mehr zu erfahren.
+Nachdem Sie eine Verbindung mit Ihrem logischen Server hergestellt haben, können Sie eine Verbindung mit einer Datenbank herstellen und eine Beispielabfrage ausführen. Wenn Sie die Datenbank nicht mithilfe des AdventureWorks-Beispiels in [Erste Schritte mit Microsoft Azure SQL-Datenbank](sql-database-get-started.md) erstellt haben, funktioniert diese Abfrage nicht. Fahren Sie direkt mit den nächsten Schritten fort, um mehr zu erfahren.
 
 1. Navigieren Sie im **Objekt-Explorer** zur Datenbank **AdventureWorks**.
 2. Klicken Sie mit der rechten Maustaste auf die Datenbank, und wählen Sie dann **Neue Abfrage** aus.
 
-	![Neue Abfrage](./media/sql-database-connect-query-ssms/4-run-query.png)
+	![Neue Abfrage Verbinden mit einem SQL-Datenbankserver: SQL Server Management Studio](./media/sql-database-connect-query-ssms/4-run-query.png)
 
 3. Kopieren Sie den folgenden Code, und fügen Sie ihn im Abfragefenster ein.
 
@@ -69,7 +67,7 @@ Nach dem Herstellen der Verbindung mit SQL-Datenbank können Sie eine Beispielab
 
 4. Klicken Sie auf die Schaltfläche **Ausführen**. Der folgende Screenshot zeigt eine erfolgreiche Abfrage.
 
-	![Erfolgreich](./media/sql-database-connect-query-ssms/5-success.png)
+	![Erfolgreich Verbinden mit einem SQL-Datenbankserver: SQL Server Management Studio](./media/sql-database-connect-query-ssms/5-success.png)
 
 ## Nächste Schritte
 
@@ -77,4 +75,4 @@ Mit T-SQL-Anweisungen können Sie Datenbanken in Azure auf gleiche Weise wie mit
 
 Wenn Sie mit T-SQL nicht vertraut sind, siehe [Tutorial: Schreiben von Transact-SQL-Anweisungen](https://msdn.microsoft.com/library/ms365303.aspx) und [Transact-SQL-Referenz (Datenbankmodul)](https://msdn.microsoft.com/library/bb510741.aspx).
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0128_2016-->

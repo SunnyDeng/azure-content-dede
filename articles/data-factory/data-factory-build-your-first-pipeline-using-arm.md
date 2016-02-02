@@ -41,7 +41,7 @@ Neben den im Thema „Tutorial – Übersicht“ aufgeführten vorausgesetzten K
 
 Erstellen Sie eine JSON-Datei mit dem Namen **ADFTutorialARM.json** im Ordner **C:\\ADFGetStarted** mit dem folgenden Inhalt:
 
-> [AZURE.IMPORTANT]Ändern Sie die Werte für die Variablen **storageAccountName** und **storageAccountKey**. Ändern Sie auch **dataFactoryName**, denn dieser Name muss eindeutig sein.
+> [AZURE.IMPORTANT] Ändern Sie die Werte für die Variablen **storageAccountName** und **storageAccountKey**. Ändern Sie auch **dataFactoryName**, denn dieser Name muss eindeutig sein.
 
 Mit der Vorlage können Sie die folgenden Data Factory-Entitäten erstellen.
 
@@ -213,6 +213,15 @@ Klicken Sie auf die Registerkarte **Verwenden des Data Factory-Editors**, um zu 
 	}
 
 
+Beachten Sie Folgendes:
+
+- Die Data Factory erstellt mit dem obigen JSON-Code einen **Windows-basierten** HDInsight-Cluster für Sie. Sie können sich auch für die Erstellung eines **Linux-basierten** HDInsight-Clusters entscheiden. Ausführliche Informationen finden Sie unter [Bedarfsgesteuerter verknüpfter HDInsight-Dienst](data-factory-compute-linked-services.md#azure-hdinsight-on-demand-linked-service). 
+- Anstelle eines bedarfsgesteuerten HDInsight-Clusters können Sie auch **Ihren eigenen HDInsight-Cluster** verwenden. Ausführliche Informationen finden Sie unter [Verknüpfter HDInsight-Dienst](data-factory-compute-linked-services.md#azure-hdinsight-linked-service).
+- Der HDInsight-Cluster erstellt einen **Standardcontainer** in der Blob Storage-Einheit, die Sie im JSON-Code angegeben haben (**linkedServiceName**). HDInsight löscht diesen Container nicht, wenn der Cluster gelöscht wird. Dies ist beabsichtigt. Beim bedarfsgesteuerten verknüpften HDInsight-Dienst wird jedes Mal ein HDInsight-Cluster erstellt, wenn ein Slice verarbeitet werden muss – es sei denn, ein aktiver Cluster (**timeToLive**) ist vorhanden und wird gelöscht, nachdem die Verarbeitung abgeschlossen ist.
+
+	Wenn immer mehr Slices verarbeitet werden, enthält Azure Blob Storage viele Container. Falls Sie diese für die Problembehandlung der Aufträge nicht benötigen, sollten Sie sie ggf. löschen, um die Speicherkosten zu verringern. Der Name dieser Container basiert auf dem folgenden Muster: „adf**ihrdatafactoryname**-**nameverknüpfterdienst**-datumuhrzeitstempel“. Verwenden Sie Tools wie [Microsoft Storage-Explorer](http://storageexplorer.com/), um Container in Ihrer Azure Blob Storage-Einheit zu löschen.
+
+Ausführliche Informationen finden Sie unter [Bedarfsgesteuerter verknüpfter HDInsight-Dienst](data-factory-compute-linked-services.md#azure-hdinsight-on-demand-linked-service).
 
 ## Schritt 2: Bereitstellen von Data Factory-Entitäten mit der ARM-Vorlage
 
@@ -226,7 +235,7 @@ Klicken Sie auf die Registerkarte **Verwenden des Data Factory-Editors**, um zu 
 
 ## Überwachen der Pipeline
  
-1.	Klicken Sie nach der Anmeldung beim [Azure-Portal](http://portal.azure.com/) auf **Durchsuchen**, und wählen Sie **Data Factorys** aus. ![Durchsuchen -> Data Factorys](./media/data-factory-build-your-first-pipeline-using-arm/BrowseDataFactories.png)
+1.	Klicken Sie nach der Anmeldung beim [Azure-Portal](https://portal.azure.com/) auf **Durchsuchen**, und wählen Sie **Data Factorys** aus. ![Durchsuchen -> Data Factorys](./media/data-factory-build-your-first-pipeline-using-arm/BrowseDataFactories.png)
 2.	Klicken Sie im Blatt **Data Factorys** auf die von Ihnen erstellte Data Factory (**TutorialFactoryARM**).	
 2.	Klicken Sie im Blatt **Data Factory** für Ihre Data Factory auf **Diagramm**. ![Kachel „Diagramm“](./media/data-factory-build-your-first-pipeline-using-arm/DiagramTile.png)
 4.	In der **Diagrammansicht** sehen Sie eine Übersicht über die in diesem Tutorial verwendeten Pipelines und Datasets.
@@ -241,4 +250,4 @@ Klicken Sie auf die Registerkarte **Verwenden des Data Factory-Editors**, um zu 
 10. Sobald der Slice den Status **Bereit** hat, überprüfen Sie, ob die Ausgabedaten sich in Ihrem Blobspeicher im Ordner **partitioneddata** im Container **adfgetstarted** befinden.  
  
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

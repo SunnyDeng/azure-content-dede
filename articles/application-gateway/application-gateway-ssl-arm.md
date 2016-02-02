@@ -26,7 +26,7 @@
 
 ## Voraussetzungen
 
-1. Installieren Sie mit dem Webplattform-Installer die aktuelle Version der Azure PowerShell-Cmdlets. Sie können die neueste Version aus dem Abschnitt **Windows PowerShell** der [Downloadseite](http://azure.microsoft.com/downloads/) herunterladen und installieren.
+1. Installieren Sie mit dem Webplattform-Installer die aktuelle Version der Azure PowerShell-Cmdlets. Sie können die neueste Version aus dem Abschnitt **Windows PowerShell** der [Downloadseite](https://azure.microsoft.com/downloads/) herunterladen und installieren.
 2. Sie erstellen ein virtuelles Netzwerk und Subnetz für das Application Gateway. Stellen Sie sicher, dass keine virtuellen Maschinen oder Cloudbereitstellungen das Subnetz verwenden. Das Application Gateway muss sich allein im Subnetz eines virtuellen Netzwerks befinden.
 3. Die Server, die Sie für die Verwendung des Application Gateways konfigurieren, müssen vorhanden sein oder Endpunkte aufweisen, die im virtuellen Netzwerk erstellt wurden oder denen eine öffentliche IP-Adresse/VIP zugewiesen wurde.
 
@@ -89,7 +89,7 @@ Wählen Sie aus, welches Azure-Abonnement Sie verwenden möchten.<BR>
 
 ### Schritt 4
 
-Erstellen Sie eine neue Ressourcengruppe. (Überspringen Sie diesen Schritt, wenn Sie eine vorhandene Ressourcengruppe verwenden.)
+Erstellen Sie eine neue Ressourcengruppe (Überspringen Sie diesen Schritt, wenn Sie eine vorhandene Ressourcengruppe verwenden.)
 
     New-AzureRmResourceGroup -Name appgw-rg -location "West US"
 
@@ -110,7 +110,7 @@ Dieser Befehl weist den Adressbereich 10.0.0.0/24 einer Subnetzvariablen zu, die
 ### Schritt 2
 	$vnet = New-AzureRmVirtualNetwork -Name appgwvnet -ResourceGroupName appgw-rg -Location "West US" -AddressPrefix 10.0.0.0/16 -Subnet $subnet
 
-Es wird ein virtuelles Netzwerk mit dem Namen „appgwvnet“ in der Ressourcengruppe „appgw-rg“ für die Region „USA, Westen“ mit dem Präfix 10.0.0.0/16 und dem Subnetz 10.0.0.0/24 erstellt.
+Ein virtuelles Netzwerk mit dem Namen „appgwvnet“ wird in der Ressourcengruppe „appgw-rg“ für die Region „USA, Westen“ mit dem Präfix 10.0.0.0/16 und dem Subnetz 10.0.0.0/24 erstellt.
 
 ### Schritt 3
 
@@ -131,7 +131,7 @@ Es wird die öffentliche IP-Ressource „publicIP01“ in der Ressourcengruppe �
 
 	$gipconfig = New-AzureRmApplicationGatewayIPConfiguration -Name gatewayIP01 -Subnet $subnet
 
-Es wird eine IP-Konfiguration für das Application Gateway mit dem Namen „gatewayIP01“ erstellt. Beim Starten des Application Gateways wird eine IP-Adresse aus dem konfigurierten Subnetz ausgewählt, und der Netzwerkdatenverkehr wird an die IP-Adressen im Back-End-IP-Pool weitergeleitet. Beachten Sie, dass für jede Instanz eine IP-Adresse erforderlich ist.
+Eine IP-Konfiguration für das Application Gateway mit dem Namen „gatewayIP01“ wird erstellt. Beim Starten des Application Gateways wird eine IP-Adresse aus dem konfigurierten Subnetz ausgewählt, und der Netzwerkdatenverkehr wird an die IP-Adressen im Back-End-IP-Pool weitergeleitet. Beachten Sie, dass jede Instanz eine eigene IP-Adresse benötigt.
 
 ### Schritt 2
 
@@ -182,7 +182,7 @@ Erstellt die Load Balancer-Routingregel mit dem Namen „rule01“, mit der das 
 
 Konfiguriert die Instanzgröße des Application Gateways.
 
->[AZURE.NOTE]Der Standardwert für *InstanceCount* ist 2, der Maximalwert ist 10. Der Standardwert für *GatewaySize* ist "Medium". Sie können zwischen „Standard\_Small“, „Standard\_Medium“ und „Standard\_Large“ wählen.
+>[AZURE.NOTE]  Der Standardwert für *InstanceCount* ist 2, der Maximalwert ist 10. Der Standardwert für *GatewaySize* ist "Medium". Sie können zwischen „Standard\_Small“, „Standard\_Medium“ und „Standard\_Large“ wählen.
 
 ## Erstellen eines Application Gateways mit dem New-AzureApplicationGateway-Cmdlet
 
@@ -199,4 +199,4 @@ Weitere Informationen zu Lastenausgleichsoptionen im Allgemeinen finden Sie unte
 - [Azure-Lastenausgleich](https://azure.microsoft.com/documentation/services/load-balancer/)
 - [Azure Traffic Manager](https://azure.microsoft.com/documentation/services/traffic-manager/)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

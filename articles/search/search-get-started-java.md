@@ -36,7 +36,7 @@ In dieser Beispielanwendung werden Daten von [United States Geological Services 
 
 In dieser Anwendung erstellt das Programm **SearchServlet.java** den Index und lädt ihn unter Verwendung eines [Indexer](https://msdn.microsoft.com/library/azure/dn798918.aspx)-Konstrukts, wobei das gefilterte USGS-DataSet aus einer öffentlichen Azure SQL-Datenbank abgerufen wird. Vordefinierte Anmeldeinformationen und Verbindungsinformationen zur Onlinedatenquelle werden im Programmcode bereitgestellt. Hinsichtlich des Datenzugriffs ist keine weitere Konfiguration erforderlich.
 
-> [AZURE.NOTE]Wir haben einen Filter auf dieses Dataset angewendet, um unter dem Limit des kostenlosen Tarifs von maximal 10.000 Dokumenten zu bleiben. Bei Verwendung des Standardtarifs gilt dieses Limit nicht, und Sie können den Code bearbeiten, um größere Datasets verwenden zu können. Ausführliche Informationen zur Kapazität der einzelnen Tarife finden Sie unter [Limits und Einschränkungen](search-limits-quotas-capacity.md).
+> [AZURE.NOTE] Wir haben einen Filter auf dieses Dataset angewendet, um unter dem Limit des kostenlosen Tarifs von maximal 10.000 Dokumenten zu bleiben. Bei Verwendung des Standardtarifs gilt dieses Limit nicht, und Sie können den Code bearbeiten, um größere Datasets verwenden zu können. Ausführliche Informationen zur Kapazität der einzelnen Tarife finden Sie unter [Limits und Einschränkungen](search-limits-quotas-capacity.md).
 
 ## Informationen zu den Programmdateien
 
@@ -158,7 +158,7 @@ Wenn Sie noch keine Server-Laufzeitumgebung in Eclipse angegeben haben, müssen 
 
 5. Klicken Sie mit der rechten Maustaste auf **Search.jsp** > **Run As** > **Run on Server**. Wählen Sie den Apache Tomcat-Server aus, und klicken Sie dann auf **Run**.
 
-> [AZURE.TIP]Wenn Sie das Projekt nicht im Standardarbeitsbereich gespeichert haben, müssen Sie die Einstellung für **Run Configuration** ändern, damit sie auf den Speicherort des Projekts verweist, um einen Server-Startfehler zu vermeiden. Klicken Sie in Project Explorer mit der rechten Maustaste auf **Search.jsp** > **Run As** > **Run Configurations**. Wählen Sie den Apache Tomcat-Server aus. Klicken Sie auf **Arguments**. Klicken Sie auf **Workspace** oder **File System**, um den Ordner, der das Projekt enthält, festzulegen.
+> [AZURE.TIP] Wenn Sie das Projekt nicht im Standardarbeitsbereich gespeichert haben, müssen Sie die Einstellung für **Run Configuration** ändern, damit sie auf den Speicherort des Projekts verweist, um einen Server-Startfehler zu vermeiden. Klicken Sie in Project Explorer mit der rechten Maustaste auf **Search.jsp** > **Run As** > **Run Configurations**. Wählen Sie den Apache Tomcat-Server aus. Klicken Sie auf **Arguments**. Klicken Sie auf **Workspace** oder **File System**, um den Ordner, der das Projekt enthält, festzulegen.
 
 Wenn Sie die Anwendung ausführen, sollte ein Browserfenster angezeigt werden, das ein Suchfeld zur Eingabe von Suchbegriffen bereitstellt.
 
@@ -184,7 +184,7 @@ Dies ist das erste Azure Search-Lernprogramm, das auf Java und dem USGS-Dataset 
 
 Wenn Sie bereits über Erfahrungen mit Azure Search verfügen, können Sie dieses Beispiel als Ausgangspunkt für weitere Experimente nutzen, um die [Suchseite](search-pagination.md) zu erweitern oder eine [Facettennavigation](search-faceted-navigation.md) zu implementieren. Sie können auch die Suchergebnisseite verbessern, indem Sie Statistiken hinzufügen und Dokumente mit Batchvorgängen verarbeiten, damit die Benutzer die Ergebnisse seitenweise anzeigen können.
 
-Neu bei Azure Search? Es wird empfohlen, auch andere Lernprogramme zu bearbeiten, damit Sie ein Verständnis dafür entwickeln, was Sie erstellen können. Besuchen Sie unsere [Dokumentationsseite](http://azure.microsoft.com/documentation/services/search/), um weitere Ressourcen zu finden. Sie können auch die Links in unserer [Video- und Lernprogrammliste](search-video-demo-tutorial-list.md) besuchen, um auf weitere Informationen zuzugreifen.
+Neu bei Azure Search? Es wird empfohlen, auch andere Lernprogramme zu bearbeiten, damit Sie ein Verständnis dafür entwickeln, was Sie erstellen können. Besuchen Sie unsere [Dokumentationsseite](https://azure.microsoft.com/documentation/services/search/), um weitere Ressourcen zu finden. Sie können auch die Links in unserer [Video- und Lernprogrammliste](search-video-demo-tutorial-list.md) besuchen, um auf weitere Informationen zuzugreifen.
 
 <!--Image references-->
 [1]: ./media/search-get-started-java/create-search-portal-1.PNG
@@ -200,4 +200,4 @@ Neu bei Azure Search? Es wird empfohlen, auch andere Lernprogramme zu bearbeiten
 [11]: ./media/search-get-started-java/rogerwilliamsschool1.PNG
 [12]: ./media/search-get-started-java/AzSearch-Java-SelectProject.png
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

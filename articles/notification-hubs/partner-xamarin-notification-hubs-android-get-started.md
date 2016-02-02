@@ -47,7 +47,7 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 
 Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen Notification Hubs-Lernprogramme für Xamarin.Android-Apps.
 
-> [AZURE.IMPORTANT]Sie benötigen ein aktives Azure-Konto, um dieses Lernprogramm abzuschließen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenloses Azure-Testkonto](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A9C9624B5&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdocumentation%2Farticles%2Fpartner-xamarin-notification-hubs-android-get-started%2F).
+> [AZURE.IMPORTANT] Sie benötigen ein aktives Azure-Konto, um dieses Lernprogramm abzuschließen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenloses Azure-Testkonto](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A9C9624B5&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdocumentation%2Farticles%2Fpartner-xamarin-notification-hubs-android-get-started%2F).
 
 ##Aktivieren von Google Cloud Messaging
 
@@ -86,7 +86,7 @@ Der Notification Hub ist jetzt für die Arbeit mit GCM konfiguriert, und Sie bes
 
 	Ihr **Package name** muss mit einem Kleinbuchstaben beginnen.
 
-	> [AZURE.IMPORTANT]Der erste Buchstabe im Paketnamen muss ein Kleinbuchstabe sein. Andernfalls erhalten Sie Anwendungsmanifestfehler, wenn Sie Ihre **BroadcastReceiver** und **IntentFilter** weiter unten für Pushbenachrichtigungen registrieren.
+	> [AZURE.IMPORTANT] Der erste Buchstabe im Paketnamen muss ein Kleinbuchstabe sein. Andernfalls erhalten Sie Anwendungsmanifestfehler, wenn Sie Ihre **BroadcastReceiver** und **IntentFilter** weiter unten für Pushbenachrichtigungen registrieren.
 
    	![](./media/partner-xamarin-notification-hubs-android-get-started/notification-hub--xamarin-android-app-options.png)
 
@@ -170,7 +170,7 @@ Der im Xamarin Component Store erhältliche Google Cloud Messaging Client verein
 
 4. Erstellen Sie eine neue Klasse namens **MyBroadcastReceiver**.
 
-	> [AZURE.NOTE]Die Erstellung einer **BroadcastReceivers**-Klasse wird nachstehend von Grund auf erläutert. Eine schnelle Alternative zur manuellen Erstellung von **MyBroadcastReceiver.cs** ist jedoch ein Verweis auf die Datei **GcmService.cs** im Xamarin.Android-Projektbeispiel in den [NotificationHubs-Beispielen][GitHub]. Sie können für den Anfang auch **GcmService.cs** duplizieren und die Klassennamen ändern.
+	> [AZURE.NOTE] Die Erstellung einer **BroadcastReceivers**-Klasse wird nachstehend von Grund auf erläutert. Eine schnelle Alternative zur manuellen Erstellung von **MyBroadcastReceiver.cs** ist jedoch ein Verweis auf die Datei **GcmService.cs** im Xamarin.Android-Projektbeispiel in den [NotificationHubs-Beispielen][GitHub]. Sie können für den Anfang auch **GcmService.cs** duplizieren und die Klassennamen ändern.
 
 5. Fügen Sie die folgenden „using“-Anweisungen in **MyBroadcastReceiver.cs** ein (mit Verweis auf die zuvor hinzugefügte Komponente und Assembly):
 
@@ -261,7 +261,7 @@ Der im Xamarin Component Store erhältliche Google Cloud Messaging Client verein
 			}
 		}
 
-	> [AZURE.NOTE]Beachten Sie im obigen **OnRegistered()**-Code die Möglichkeit, Tags für bestimmte Nachrichtenkanäle zu registrieren.
+	> [AZURE.NOTE] Beachten Sie im obigen **OnRegistered()**-Code die Möglichkeit, Tags für bestimmte Nachrichtenkanäle zu registrieren.
 
 10. Überschreiben Sie die **OnMessage**-Methode in **PushHandlerService** mithilfe des folgenden Codes:
 
@@ -290,7 +290,7 @@ Der im Xamarin Component Store erhältliche Google Cloud Messaging Client verein
 
 11. Fügen Sie die folgenden Methoden **createNotification** und **dialogNotify** zu **PushHandlerService** hinzu, damit Benutzer über den Eingang einer Nachricht informiert werden.
 
-	>[AZURE.NOTE]Benachrichtigen in Android Version 5.0 und höher unterscheiden sich in der Ausführung deutlich von früheren Versionen. Wenn Sie dies in Android 5.0 prüfen, muss die App ausgeführt werden, damit die Benachrichtigung empfangen werden kann. Weitere Informationen finden Sie unter [Android-Benachrichtigungen](http://go.microsoft.com/fwlink/?LinkId=615880).
+	>[AZURE.NOTE] Benachrichtigen in Android Version 5.0 und höher unterscheiden sich in der Ausführung deutlich von früheren Versionen. Wenn Sie dies in Android 5.0 prüfen, muss die App ausgeführt werden, damit die Benachrichtigung empfangen werden kann. Weitere Informationen finden Sie unter [Android-Benachrichtigungen](http://go.microsoft.com/fwlink/?LinkId=615880).
 
         void createNotification(string title, string desc)
         {
@@ -358,9 +358,9 @@ Der im Xamarin Component Store erhältliche Google Cloud Messaging Client verein
 
 Stellen Sie beim Ausführen dieser App im Emulator sicher, dass Sie ein Android Virtual Device (AVD) verwenden, das Google-APIs unterstützt.
 
-> [AZURE.IMPORTANT]Um Pushbenachrichtigungen zu erhalten, müssen Sie ein Google-Konto auf Ihrem Android Virtual Device einrichten. (Navigieren Sie im Emulator zu **Einstellungen** und klicken Sie auf **Konto hinzufügen**.) Überprüfen Sie zudem, dass der Emulator mit dem Internet verbunden ist.
+> [AZURE.IMPORTANT] Um Pushbenachrichtigungen zu erhalten, müssen Sie ein Google-Konto auf Ihrem Android Virtual Device einrichten. (Navigieren Sie im Emulator zu **Einstellungen** und klicken Sie auf **Konto hinzufügen**.) Überprüfen Sie zudem, dass der Emulator mit dem Internet verbunden ist.
 
->[AZURE.NOTE]Benachrichtigen in Android Version 5.0 und höher unterscheiden sich in der Ausführung deutlich von früheren Versionen. Weitere Informationen finden Sie unter [Android-Benachrichtigungen](http://go.microsoft.com/fwlink/?LinkId=615880).
+>[AZURE.NOTE] Benachrichtigen in Android Version 5.0 und höher unterscheiden sich in der Ausführung deutlich von früheren Versionen. Weitere Informationen finden Sie unter [Android-Benachrichtigungen](http://go.microsoft.com/fwlink/?LinkId=615880).
 
 
 1. Klicken Sie unter **Tools** auf **Open Android Emulator Manager**, wählen Sie Ihr Gerät aus, und klicken Sie auf **Edit**.
@@ -523,4 +523,4 @@ In diesem einfachen Beispiel haben Sie Benachrichtigungen an alle Android-Gerät
 [Google Cloud Messaging Client-Komponente]: http://components.xamarin.com/view/GCMClient/
 [Azure Messaging-Komponente]: http://components.xamarin.com/view/azure-messaging
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

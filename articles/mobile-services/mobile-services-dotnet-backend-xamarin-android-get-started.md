@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-xamarin-android"
 	ms.devlang="dotnet"
 	ms.topic="get-started-article"
-	ms.date="10/12/2015"
+	ms.date="01/14/2016"
 	ms.author="donnam"/>
 
 # <a name="getting-started"></a>Erste Schritte mit Mobile Services
@@ -25,7 +25,7 @@
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]&nbsp;
 
->[AZURE.TIP]Wenn Sie gerade in die mobile Entwicklung mit Microsoft Azure einsteigen, [beginnen Sie mit Azure Mobile Apps](app-service-mobile-dotnet-backend-xamarin-android-get-started-preview.md) anstatt mit Azure Mobile Services. Mit Mobile Apps erhalten Sie [zusätzliche Vorteile](app-service-mobile-value-prop-migration-from-mobile-services-preview.md).
+>[AZURE.TIP] Wenn Sie gerade in die mobile Entwicklung mit Microsoft Azure einsteigen, [beginnen Sie mit Azure Mobile Apps](../app-service-mobile/app-service-mobile-dotnet-backend-xamarin-android-get-started-preview.md) anstatt mit Azure Mobile Services. Mit Mobile Apps erhalten Sie [zusätzliche Vorteile](app-service-mobile-value-prop-migration-from-mobile-services-preview.md).
 
 In diesem Lernprogramm erfahren Sie, wie Sie mit den Azure Mobile Services einen cloudbasierten Backend-Dienst zu einer Xamarin Android-App hinzufügen können. In diesem Lernprogramm erstellen Sie einen neuen mobilen Dienst und eine einfache _To-Do-Listen_-App, die App-Daten im neuen mobilen Dienst speichert. Der von Ihnen erstellte mobile Dienst verwendet die unterstützten .NET-Sprachen unter Verwendung von Visual Studio für die serverseitige Geschäftslogik und zur Verwaltung des mobilen Diensts. Informationen zum Erstellen eines mobilen Diensts, mit dem Sie serverseitige Geschäftslogik in JavaScript schreiben können, finden Sie in der [JavaScript-Back-End-Version] dieses Themas.
 
@@ -37,7 +37,7 @@ Unten sehen Sie einen Screenshot aus der fertigen App:
 
 Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen Mobile Services-Lernprogramme für Xamarin Android-Apps.
 
->[AZURE.NOTE]Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Dienste, die Sie auch nach Ablauf der Testversion weiter nutzen können. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-xamarin-android-get-started). Für dieses Tutorial ist [Visual Studio Professional 2013](https://go.microsoft.com/fwLink/p/?LinkID=257546) erforderlich. Dazu ist eine kostenlose Testversion verfügbar.
+>[AZURE.NOTE]Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Dienste, die Sie auch nach Ablauf der Testversion weiter nutzen können. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-xamarin-android-get-started). Für dieses Tutorial ist [Visual Studio Professional 2013](https://go.microsoft.com/fwLink/p/?LinkID=257546) erforderlich. Dazu ist eine kostenlose Testversion verfügbar.
 
 ## Erstellen eines neuen mobilen Diensts
 
@@ -45,11 +45,11 @@ Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen M
 
 ## Erstellen einer neuen Xamarin Android-App
 
-Sobald Sie den mobilen Dienst erstellt haben, können Sie einer einfachen Schnellstartanleitung im klassischen Azure-Portal folgen, um eine neue App zu erstellen oder eine vorhandene App für die Verbindung mit dem mobilen Dienst zu ändern.
+Sobald Sie den mobilen Dienst erstellt haben, können Sie einer einfachen Schnellstartanleitung im klassischen Portal folgen, um eine neue App zu erstellen oder eine vorhandene App für die Verbindung mit dem mobilen Dienst zu ändern.
 
 In diesem Abschnitt laden Sie eine neue Xamarin Android-App und ein Dienstprojekt für Ihren mobilen Dienst herunter.
 
-1. Klicken Sie im [klassischen Azure-Portal] auf **Mobile Services** und anschließend auf den mobilen Dienst, den Sie gerade erstellt haben.
+1. Klicken Sie im [klassischen Portal] auf **Mobile Services** und anschließend auf den mobilen Dienst, den Sie gerade erstellt haben.
 
 2. Klicken Sie auf der Registerkarte "Schnellstart" auf **Xamarin** unter **Plattform auswählen** und erweitern Sie **Erstellen einer neuen Xamarin iOS-App**.
 
@@ -65,7 +65,7 @@ In diesem Abschnitt laden Sie eine neue Xamarin Android-App und ein Dienstprojek
 
 5. Wählen Sie unter **Service in der Cloud herunterladen und veröffentlichen** die Option **Android** und klicken Sie auf **Herunterladen**.
 
-  	Daraufhin wird eine Lösung heruntergeladen, die Projekte für den mobilen Dienst und für die beispielhafte _To-Do-Listen_-Anwendung, die mit dem mobilen Dienst verbunden ist, enthält. Speichern Sie die komprimierte Projektdatei auf dem lokalen Computer und merken Sie sich, wo Sie sie gespeichert haben.
+  	Daraufhin wird eine Lösung heruntergeladen, die Projekte für den mobilen Dienst und für die Beispielanwendung _To-Do-Liste_ enthält, die mit dem mobilen Dienst verbunden ist. Speichern Sie die komprimierte Projektdatei auf dem lokalen Computer und merken Sie sich, wo Sie sie gespeichert haben.
 
 6. Laden Sie das Veröffentlichungsprofil herunter, speichern Sie die heruntergeladene Datei auf dem lokalen Computer, und notieren Sie sich den Speicherort.
 
@@ -85,7 +85,7 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 
 2. Klicken Sie auf die Schaltfläche **Ausführen**, um das Projekt zu erstellen und die App zu starten. Sie werden zur Auswahl eines Emulators oder eines angeschlossenen USB-Geräts aufgefordert.
 
-	> [AZURE.NOTE]Sie müssen mindestens ein Android Virtual Device (AVD) definieren, um das Projekt im Android-Emulator auszuführen. Verwenden Sie den AVD Manager, um diese Geräte zu erstellen und zu verwalten.
+	> [AZURE.NOTE] Sie müssen mindestens ein Android Virtual Device (AVD) definieren, um das Projekt im Android-Emulator auszuführen. Verwenden Sie den AVD Manager, um diese Geräte zu erstellen und zu verwalten.
 
 3. Geben Sie in der App einen sinnvollen Text, wie z. B. _Tutorial fertigstellen_ ein, und klicken Sie dann auf das Plus-Symbol (**+**).
 
@@ -93,7 +93,8 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 
 	Dadurch wird eine POST-Anforderung an den neuen, in Azure gehosteten mobilen Dienst gesendet. Daten von der Anforderung werden in die TodoItem-Tabelle eingefügt. In der Tabelle gespeicherte Einträge werden von dem mobilen Dienst zurückgegeben, und die Daten werden in der Liste angezeigt.
 
-	> [AZURE.NOTE]Sie können den Code überprüfen, der zum Abfragen und Einfügen von Daten auf den mobilen Dienst zugreift. Der Code befindet sich in der C#-Datei "ToDoActivity.cs".
+	> [AZURE.NOTE]
+   	Sie können den Code überprüfen, der zum Abfragen und Einfügen von Daten auf den mobilen Dienst zugreift. Der Code befindet sich in der C#-Datei "ToDoActivity.cs".
 
 ## Nächste Schritte
 Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzliche wichtige Aufgaben in Mobile Services ausgeführt werden:
@@ -130,7 +131,8 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 [Visual Studio Professional 2013]: https://go.microsoft.com/fwLink/p/?LinkID=257546
 [Mobile Services SDK]: http://go.microsoft.com/fwlink/?LinkId=257545
 [JavaScript and HTML]: mobile-services-win8-javascript/
-[klassischen Azure-Portal]: https://manage.windowsazure.com/
+[Azure classic portal]: https://manage.windowsazure.com/
+[klassischen Portal]: https://manage.windowsazure.com/
 [JavaScript-Back-End-Version]: mobile-services-android-get-started.md
 [Beheben von Problemen bei einem Mobile Services .NET-Back-End]: mobile-services-dotnet-backend-how-to-troubleshoot.md
 
@@ -139,4 +141,4 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 [Xcode]: https://go.microsoft.com/fwLink/?LinkID=266532&clcid=0x409
 [Xamarin for Windows]: https://go.microsoft.com/fwLink/?LinkID=330242&clcid=0x409
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

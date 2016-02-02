@@ -42,11 +42,11 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 + Ein Gerät, das auf iOS 8 (oder einer neueren Version) laufen kann
 + iOS-Entwicklerprogramm-Mitgliedschaft
 
-   >[AZURE.NOTE]Pushbenachrichtigungen müssen aufgrund von Konfigurationsanforderungen auf einem iOS-fähigen Gerät (iPhone oder iPad) anstatt auf dem iOS-Simulator bereitgestellt und getestet werden.
+   >[AZURE.NOTE] Pushbenachrichtigungen müssen aufgrund von Konfigurationsanforderungen auf einem iOS-fähigen Gerät (iPhone oder iPad) anstatt auf dem iOS-Simulator bereitgestellt und getestet werden.
 
 Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen Notification Hubs-Lernprogramme für iOS-Apps.
 
-> [AZURE.NOTE]Sie benötigen ein aktives Azure-Konto, um dieses Lernprogramm abzuschließen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdocumentation%2Farticles%2Fnotification-hubs-ios-get-started).
+> [AZURE.NOTE] Sie benötigen ein aktives Azure-Konto, um dieses Lernprogramm abzuschließen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdocumentation%2Farticles%2Fnotification-hubs-ios-get-started).
 
 [AZURE.INCLUDE [Notification Hubs – Aktivieren von Apple-Pushbenachrichtigungen](../../includes/notification-hubs-enable-apple-push-notifications.md)]
 
@@ -88,7 +88,7 @@ Der Notification Hub ist nun konfiguriert, um mit APNS arbeiten zu können. Auß
 
 4. Laden Sie Version 1.2.4 des [Mobile Services iOS SDK] herunter, und entzippen Sie die Datei. Klicken Sie in Xcode mit der rechten Maustaste auf Ihr Projekt, und klicken Sie dann auf die Option **Add Files to** zum Hinzufügen des Ordners **WindowsAzureMessaging.framework** zum Xcode-Projekt. Wählen Sie **Copy items if needed**, und klicken Sie dann auf **Add**.
 
-	>[AZURE.NOTE]Das Notification Hubs-SDK unterstützt derzeit keinen Bitcode unter Xcode 7. Sie müssen **Bitcode aktivieren** in den **Buildoptionen** für Ihr Projekt auf **Nein** setzen.
+	>[AZURE.NOTE] Das Notification Hubs-SDK unterstützt derzeit keinen Bitcode unter Xcode 7. Sie müssen **Bitcode aktivieren** in den **Buildoptionen** für Ihr Projekt auf **Nein** setzen.
 
    	![][10]
 
@@ -436,7 +436,7 @@ Wenn Sie innerhalb einer App Benachrichtigungen senden möchten. Dieser Abschnit
 11. Erstellen Sie das Projekt, und überprüfen Sie, dass keine Fehler vorhanden sind.
 
 
-> [AZURE.NOTE]Wenn in Xcode7 ein Buildfehler zur Unterstützung von Bitcode auftritt, sollten Sie „Buildeinstellungen“ -> „Bitcode“ (ENABLE\_BITCODE) in Xcode in „NO“ ändern. Das Notification Hubs-SDK unterstützt derzeit keinen Bitcode.
+> [AZURE.NOTE] Wenn in Xcode7 ein Buildfehler zur Unterstützung von Bitcode auftritt, sollten Sie „Buildeinstellungen“ -> „Bitcode“ (ENABLE\_BITCODE) in Xcode in „NO“ ändern. Das Notification Hubs-SDK unterstützt derzeit keinen Bitcode.
 
 Sie finden alle möglichen Benachrichtigungsnutzlasten im [Local and Push Notification Programming Guide] von Apple (in englischer Sprache).
 
@@ -503,10 +503,9 @@ Weitere allgemeine Informationen zu Notification Hubs finden Sie im [Notificatio
 [iOS Provisioning Portal]: http://go.microsoft.com/fwlink/p/?LinkId=272456
 
 [Get started with push notifications in Mobile Services]: ../mobile-services-javascript-backend-ios-get-started-push.md
-[Erste Schritte mit Pushbenachrichtigungen in Mobile Services]: ../mobile-services-javascript-backend-ios-get-started-push.md
 [Verwenden von Notification Hubs für Pushbenachrichtigungen an Benutzer]: notification-hubs-aspnet-backend-ios-notify-users.md
 [Verwenden von Notification Hubs zum Übermitteln von Nachrichten]: notification-hubs-ios-send-breaking-news.md
 
 [Local and Push Notification Programming Guide]: http://developer.apple.com/library/mac/#documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/ApplePushService.html#//apple_ref/doc/uid/TP40008194-CH100-SW1
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

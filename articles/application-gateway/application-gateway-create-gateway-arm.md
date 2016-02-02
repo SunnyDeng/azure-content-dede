@@ -4,7 +4,7 @@
    documentationCenter="na"
    services="application-gateway"
    authors="joaoma"
-   manager="jdial"
+   manager="carmonm"
    editor="tysonn"/>
 <tags
    ms.service="application-gateway"
@@ -12,13 +12,13 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/24/2015"
+   ms.date="01/21/2016"
    ms.author="joaoma"/>
 
 
 # Erstellen, Starten oder Löschen eines Application Gateways mit Azure-Ressourcen-Manager
 
-Azure Application Gateway verwendet einen Load Balancer auf der Schicht 7 (Anwendungsschicht). Application Gateway bietet ein Failover sowie ein schnelles Routing von HTTP-Anforderungen zwischen verschiedenen Servern in der Cloud und der lokalen Umgebung. Application Gateways weisen folgende Anwendungsbereitstellungsfunktionen auf: HTTP-Lastenausgleich, cookiebasierte Sitzungsaffinität und Secure Sockets Layer-Auslagerung (SSL).
+Azure Application Gateway verwendet einen Load Balancer auf der Schicht 7 (Anwendungsschicht). Das Application Gateway ermöglicht ein Failover sowie schnelles Routing von HTTP-Anforderungen zwischen verschiedenen Servern in der Cloud und der lokalen Umgebung. Application Gateways weisen folgende Anwendungsbereitstellungsfunktionen auf: HTTP-Lastenausgleich, cookiebasierte Sitzungsaffinität und Secure Sockets Layer-Auslagerung (SSL).
 
 
 > [AZURE.SELECTOR]
@@ -33,13 +33,13 @@ Azure Application Gateway verwendet einen Load Balancer auf der Schicht 7 (Anwe
 In diesem Artikel werden Sie durch die Schritte zum Erstellen, Konfigurieren, Starten und Löschen eines Application Gateways geführt.
 
 
->[AZURE.IMPORTANT]Bevor Sie mit Azure-Ressourcen arbeiten, sollten Sie wissen, dass Azure derzeit über zwei Bereitstellungsmodelle verfügt: die Bereitstellung mit dem Ressourcen-Manager und die klassische Bereitstellung. Stellen Sie sicher, dass Sie die [Bereitstellungsmodelle und -tools](azure-classic-rm.md) verstehen, bevor Sie mit Azure-Ressourcen arbeiten. Zum Anzeigen der Dokumentation für verschiedene Tools klicken Sie auf die Registerkarten oben in diesem Artikel. In diesem Dokument erfahren Sie alles über das Erstellen eines Application Gateways mit Azure-Ressourcen-Manager Um die klassische Version zu verwenden, wechseln Sie zu [Erstellen einer klassischen Application Gateway-Bereitstellung mithilfe von PowerShell](application-gateway-create-gateway.md).
+>[AZURE.IMPORTANT] Bevor Sie mit Azure-Ressourcen arbeiten, sollten Sie wissen, dass Azure derzeit über zwei Bereitstellungsmodelle verfügt: die Bereitstellung mit dem Ressourcen-Manager und die klassische Bereitstellung. Stellen Sie sicher, dass Sie die [Bereitstellungsmodelle und -tools](azure-classic-rm.md) verstehen, bevor Sie mit Azure-Ressourcen arbeiten. Zum Anzeigen der Dokumentation für verschiedene Tools klicken Sie auf die Registerkarten oben in diesem Artikel. In diesem Dokument erfahren Sie alles über das Erstellen eines Application Gateways mit Azure-Ressourcen-Manager Um die klassische Version zu verwenden, wechseln Sie zu [Erstellen einer klassischen Application Gateway-Bereitstellung mithilfe von PowerShell](application-gateway-create-gateway.md).
 
 
 
 ## Voraussetzungen
 
-1. Installieren Sie mit dem Webplattform-Installer die aktuelle Version der Azure PowerShell-Cmdlets. Sie können die neueste Version aus dem Abschnitt **Windows PowerShel**l der [Downloadseite](http://azure.microsoft.com/downloads/) herunterladen und installieren.
+1. Installieren Sie mit dem Webplattform-Installer die aktuelle Version der Azure PowerShell-Cmdlets. Sie können die neueste Version aus dem Abschnitt **Windows PowerShell** der [Downloadseite](https://azure.microsoft.com/downloads/) herunterladen und installieren.
 2. Sie erstellen ein virtuelles Netzwerk und Subnetz für das Application Gateway. Stellen Sie sicher, dass keine virtuellen Maschinen oder Cloudbereitstellungen das Subnetz verwenden. Das Application Gateway muss sich allein im Subnetz eines virtuellen Netzwerks befinden.
 3. Die Server, die Sie für die Verwendung des Application Gateways konfigurieren, müssen vorhanden sein oder Endpunkte aufweisen, die im virtuellen Netzwerk erstellt wurden oder denen eine öffentliche IP-Adresse/VIP zugewiesen wurde.
 
@@ -97,7 +97,7 @@ Wählen Sie aus, welches Azure-Abonnement Sie verwenden möchten.<BR>
 
 ### Schritt 4
 
-Erstellen Sie eine neue Ressourcengruppe. (Überspringen Sie diesen Schritt, wenn Sie eine vorhandene Ressourcengruppe verwenden.)
+Erstellen Sie eine neue Ressourcengruppe (Überspringen Sie diesen Schritt, wenn Sie eine vorhandene Ressourcengruppe verwenden.)
 
     New-AzureRmResourceGroup -Name appgw-rg -location "West US"
 
@@ -106,7 +106,7 @@ Der Azure-Ressourcen-Manager erfordert, dass alle Ressourcengruppen einen Speich
 Im obigen Beispiel haben wir eine Ressourcengruppe namens „appgw-RG“ mit dem Standort „USA, Westen“ erstellt.
 
 
->[AZURE.NOTE]Falls Sie einen benutzerdefinierten Test für Ihr Application Gateway konfigurieren müssen, finden Sie die entsprechenden Informationen unter [Erstellen eines Application Gateways mit benutzerdefinierten Tests mithilfe von PowerShell](application-gateway-create-probe-ps.md). Weitere Informationen finden Sie unter [Benutzerdefinierte Tests und Systemüberwachung](application-gateway-probe-overview.md).
+>[AZURE.NOTE] Falls Sie einen benutzerdefinierten Test für Ihr Application Gateway konfigurieren müssen, finden Sie die entsprechenden Informationen unter [Erstellen eines Application Gateways mit benutzerdefinierten Tests mithilfe von PowerShell](application-gateway-create-probe-ps.md). Weitere Informationen finden Sie unter [Benutzerdefinierte Tests und Systemüberwachung](application-gateway-probe-overview.md).
 
 
 
@@ -123,7 +123,7 @@ Weisen Sie den Adressbereich 10.0.0.0/24 der Subnetzvariablen zu, die zum Erstel
 
 ### Schritt 2
 
-Erstellen Sie ein virtuelles Netzwerk mit dem Namen „appgwvnet“ in der Ressourcengruppe „appgw-rg“ für die Region „USA, Westen“ mit dem Präfix 10.0.0.0/16 und dem Subnetz 10.0.0.0/24.
+Erstellen Sie ein virtuelles Netzwerk mit dem Namen „appgwvnet“ in der Ressourcengruppe „appgw-rg“ für die Region „USA, Westen“ mit dem Präfix „10.0.0.0/16“ und dem Subnetz „10.0.0.0/24“.
 
 	$vnet = New-AzureRmVirtualNetwork -Name appgwvnet -ResourceGroupName appgw-rg -Location "West US" -AddressPrefix 10.0.0.0/16 -Subnet $subnet
 
@@ -155,7 +155,7 @@ Erstellen Sie eine IP-Konfiguration für das Application Gateway mit dem Namen �
 
 ### Schritt 2
 
-Konfigurieren Sie den Back-End-IP-Adresspool „pool01" mit den IP-Adressen „134.170.185.46, 134.170.188.221“ und „134.170.185.50“. Dies sind die IP-Adressen, die den Netzwerkdatenverkehr vom Front-End-IP-Endpunkt empfangen werden. Ersetzen Sie die obigen IP-Adressen durch Ihre eigenen IP-Adressendpunkte der Anwendung.
+Konfigurieren Sie den Back-End-IP-Adresspool „pool01“ mit den IP-Adressen „134.170.185.46“, „134.170.188.221“ und „134.170.185.50“. Dies sind die IP-Adressen, die den Netzwerkdatenverkehr vom Front-End-IP-Endpunkt empfangen werden. Ersetzen Sie die obigen IP-Adressen durch Ihre eigenen IP-Adressendpunkte der Anwendung.
 
 	$pool = New-AzureRmApplicationGatewayBackendAddressPool -Name pool01 -BackendIPAddresses 134.170.185.46, 134.170.188.221,134.170.185.50
 
@@ -200,9 +200,9 @@ Konfigurieren Sie die Instanzgröße des Application Gateways.
 
 	$sku = New-AzureRmApplicationGatewaySku -Name Standard_Small -Tier Standard -Capacity 2
 
->[AZURE.NOTE]Der Standardwert für *InstanceCount* ist 2, der Maximalwert ist 10. Der Standardwert für *GatewaySize* ist "Medium". Sie können zwischen „Standard\_Small“, „Standard\_Medium“ und „Standard\_Large“ wählen.
+>[AZURE.NOTE]  Der Standardwert für *InstanceCount* ist 2, der Maximalwert ist 10. Der Standardwert für *GatewaySize* ist "Medium". Sie können zwischen „Standard\_Small“, „Standard\_Medium“ und „Standard\_Large“ wählen.
 
-## Erstellen eines Application Gateways mit dem Cmdlet New-AzureRmApplicationGateway
+## Erstellen eines Application Gateways mit dem Cmdlet „New-AzureRmApplicationGateway“
 
 Erstellen Sie ein Application Gateway mit allen Konfigurationselementen aus den vorangegangenen Schritten. In diesem Beispiel heißt das Application Gateway „appgwtest.
 
@@ -237,13 +237,13 @@ Verwenden Sie das **Remove-AzureRmApplicationGateway**-Cmdlet, um den Dienst zu 
 
 
 
->[AZURE.NOTE]Mit dem optionalen Switch **-force** kann diese Bestätigungsmeldung unterdrückt werden.
+>[AZURE.NOTE] Mit dem optionalen Switch **-force** kann diese Bestätigungsmeldung unterdrückt werden.
 
 
 Um sicherzustellen, dass der Dienst entfernt wurde, können Sie das **Get-AzureRmApplicationGateway**-Cmdlet verwenden. Dieser Schritt ist nicht erforderlich.
 
 
-	Get-AzureRmApplicationGateway -Name appgwtest-ResourceGroupName appgw-rg
+	Get-AzureRmApplicationGateway -Name appgwtest -ResourceGroupName appgw-rg
 
 
 ## Nächste Schritte
@@ -257,4 +257,4 @@ Weitere Informationen zu Lastenausgleichsoptionen im Allgemeinen finden Sie unte
 - [Azure-Lastenausgleich](https://azure.microsoft.com/documentation/services/load-balancer/)
 - [Azure Traffic Manager](https://azure.microsoft.com/documentation/services/traffic-manager/)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

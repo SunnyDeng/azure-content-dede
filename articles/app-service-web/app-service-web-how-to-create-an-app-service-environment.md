@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="get-started-article" 
-	ms.date="10/26/2015" 
+	ms.date="01/14/2016" 
 	ms.author="ccompy"/>
 
 # Erstellen einer App Service-Umgebung #
@@ -32,7 +32,7 @@ Für die ASE-Erstellung muss der Kunde die folgenden Informationen bereitstellen
 
 Zu jedem dieser Elemente gibt es einige wichtige Details. Der Name der ASE wird in der Unterdomäne für alle Apps verwendet, die in dieser ASE erstellt werden. Alle in einer ASE erstellten Apps befinden sich in demselben Abonnement wie die ASE selbst. Wenn Sie nicht auf das Abonnement zugreifen können, das zum Erstellen der ASE verwendet wurde, können Sie die ASE nicht zum Erstellen von Apps verwenden. VNETs, die zum Hosten einer ASE verwendet werden, müssen regionale klassische „v1“-VNETs sein. Das zum Hosten der ASE verwendete Subnetz darf keine weiteren Computeressourcen enthalten. Ein Subnetz kann nur eine ASE enthalten.
 
-Jede Bereitstellung einer App Service-Umgebung ist ein gehosteter Dienst, der von Azure verwaltet und gewartet wird. Die Computeressourcen, welche die Systemrollen der App Service-Umgebung hosten, sind für den Kunden nicht zugänglich. Der Kunde verwaltet jedoch die Menge der Instanzen und deren Größen.
+Jede Bereitstellung einer App Service-Umgebung ist ein gehosteter Dienst, der von Azure verwaltet und gewartet wird. Die Compute-Ressourcen, welche die Systemrollen der App Service-Umgebung hosten, sind für den Kunden nicht zugänglich. Der Kunde verwaltet jedoch die Menge der Instanzen und deren Größen.
 
 Es gibt zwei Möglichkeiten, auf die Benutzeroberfläche zur Erstellung der App Service-Umgebung zuzugreifen. Durchsuchen Sie den Azure Marketplace nach ***App Service-Umgebung***, oder wählen Sie "Neu" -> "Web + Mobil".
 
@@ -47,16 +47,16 @@ Die Erstellungsoberfläche für eine ASE bietet eine Reihe von Standardeinstellu
 - einem Workerpool mit 2 P1-Computeressourcen
 - einer einzelnen IP-Adresse zur Verwendung für IP-SSL
 
-Dies ist die Mindestgröße für eine ASE. Für Front-End-Pools ist P2 oder größer erforderlich. Wählen Sie das Abonnement aus, in dem sich die ASE befinden soll. Die einzigen Konten, die die App Service-Umgebung zum Hosten von Inhalten verwenden können, müssen in dem Abonnement enthalten sein, das zur Erstellung verwendet wurde.
+Für Front-End-Pools ist P2 oder größer erforderlich. Lassen Sie beim Auswählen des Abonnements, in dem sich die ASE befinden soll, Vorsicht walten. Die einzigen Konten, die die App Service-Umgebung zum Hosten von Inhalten verwenden können, müssen in dem Abonnement enthalten sein, das zur Erstellung verwendet wurde.
 
 ![][1]
 
-Der Name, der für die ASE angegeben wird, wird für die in der ASE erstellten Apps verwendet. Wenn der Name der ASE „appsvcenvdemo“ ist, lautet der Domänenname „.*appsvcenvdemo.p.azurewebsites.net*“. Wenn Sie also eine App namens *mytestapp* erstellt haben, wäre diese unter der Adresse *mytestapp.appsvcenvdemo.p.azurewebsites.net* aufrufbar. Sie können im Namen Ihrer ASE keine Leerzeichen verwenden. Bei Verwendung von Großbuchstaben im Namen wird der entsprechende Domänenname dennoch vollständig in Kleinbuchstaben geschrieben.
+Der Name, der für die ASE angegeben wird, wird für die in der ASE erstellten Apps verwendet. Wenn der Name der App Service-Umgebung "appsvcenvdemo" ist, lautet der Domänenname ".*appsvcenvdemo.p.azurewebsites.net*". Wenn Sie also eine App namens *mytestapp* erstellt haben, wäre diese unter der Adresse *mytestapp.appsvcenvdemo.p.azurewebsites.net* aufrufbar. Sie dürfen im Namen Ihrer ASE keine Leerzeichen verwenden. Bei Verwendung von Großbuchstaben im Namen wird der entsprechende Domänenname dennoch vollständig in Kleinbuchstaben geschrieben.
 
 Die Standardwerte sind für eine Reihe von Fällen sehr nützlich, aber häufig müssen Sie sie anpassen. Die nächsten Abschnitten führen Sie durch die einzelnen Konfigurationsabschnitte, die für die ASE relevant sind.
 
 ### Virtuelles Netzwerk ###
-Auch wenn es eine schnelle Funktion zum automatischen Erstellen eines neuen VNET gibt, unterstützt die Funktion auch die Auswahl eines vorhandenen VNET und die manuelle Erstellung eines VNET. Sie können ein vorhandenes VNET auswählen (nur klassische virtuelle „v1“-Netzwerke werden derzeit unterstützt), wenn es für die Unterstützung der Bereitstellung einer App Service-Umgebung groß genug ist. Das VNET muss mindestens acht Adressen aufweisen.
+Auch wenn es eine schnelle Funktion zum automatischen Erstellen eines neuen VNET gibt, unterstützt die Funktion auch die Auswahl eines vorhandenen VNET und die manuelle Erstellung eines VNET. Sie können ein vorhandenes VNET auswählen (nur klassische virtuelle „v1“-Netzwerke werden derzeit unterstützt), wenn es für die Unterstützung der Bereitstellung einer App Service-Umgebung groß genug ist. Das VNET muss mindestens acht Adressen aufweisen.
 
 Wenn Sie ein bereits vorhandenes VNET auswählen, müssen Sie auch ein Subnetz angeben oder ein neues erstellen. Das Subnetz muss mindestens acht Adressen aufweisen, und es dürfen keine anderen Ressourcen bereits darin enthalten sein. Die ASE-Erstellung funktioniert nicht, wenn Sie ein Subnetz verwenden, dem bereits virtuelle Computer zugewiesen sind.
 
@@ -70,18 +70,18 @@ Der Speicherort des VNETs ist der Speicherort der ASE, da die ASE in diesem VNET
 
 Nachdem Sie Ihr VNET angegeben oder ausgewählt haben, müssen Sie nach Bedarf ein Subnetz erstellen oder auswählen. Die Details, die Sie bereitstellen müssen, sind der Subnetzname und der Subnetzbereich in CIDR-Notation.
 
-Falls Sie keine Erfahrung mit CIDR (Classless Inter-Domain Routing) besitzen: Es erfordert das Format einer IP-Adresse, die durch einen Schrägstrich vom CIDR-Wert getrennt wird. Das sieht folgendermaßen aus: *10.0.0.0/22*. Der CIDR-Wert gibt die Anzahl der führenden Bits an, die für die angezeigte IP-Adresse maskiert dargestellt werden. Einfacher ausgedrückt, stellt der CIDR-Wert einen IP-Adressbereich bereit. In diesem Beispiel kennzeichnet 10.0.0.0/22 einen Bereich von 1024 Adressen oder von 10.0.0.0 bis 10.0.3.255. /23 bedeutet 512 Adressen und so weiter.
+Falls Sie keine Erfahrung mit CIDR (Classless Inter-Domain Routing) besitzen: Es erfordert das Format einer IP-Adresse, die durch einen Schrägstrich vom CIDR-Wert getrennt wird. Das sieht folgendermaßen aus: *10.0.0.0/22*. Der CIDR-Wert gibt die Anzahl der führenden Bits an, die für die angezeigte IP-Adresse maskiert dargestellt werden. Einfacher ausgedrückt, stellt der CIDR-Wert einen IP-Adressbereich bereit. In diesem Beispiel kennzeichnet 10.0.0.0/22 einen Bereich von 1024 Adressen oder von 10.0.0.0 bis 10.0.3.255. /23 bedeutet 512 Adressen und so weiter.
 
 Zur Erinnerung: Wenn Sie ein Subnetz in einem vorhandenen VNET erstellen möchten, befindet sich die ASE in derselben Ressourcengruppe wie das VNET. Damit Ihre ASE sich in einer vom VNET separaten Ressourcengruppe befindet, erstellen Sie einfach das VNET und das Subnetz getrennt von und vor der Erstellung der ASE.
 
 ![][2]
 
 
-### Computeressourcenpools ###
+### Compute-Ressourcenpools ###
 
 Während der Erstellung der ASE können Sie die Anzahl der Ressourcen für die einzelnen Ressourcenpools sowie deren Größe festlegen. Die Größe der Ressourcenpools kann bei der Erstellung der ASE festgelegt werden, jedoch auch noch danach über die manuellen oder über die automatischen Skalierungsoptionen anpassen.
 
-Wie bereits erwähnt, besteht eine ASE aus Front-End-Servern und Workern. Die Front-End-Server verarbeiten die Verbindungslast, und Worker führen den App-Code aus. Die Front-End-Server werden in einem dedizierten Computeressourcenpool verwaltet. Die Worker werden wiederum in drei separaten Computeressourcenpools verwaltet namens
+Wie bereits erwähnt, besteht eine ASE aus Front-End-Servern und Workern. Die Front-End-Server verarbeiten die Verbindungslast, und Worker führen den App-Code aus. Die Front-End-Server werden in einem dedizierten Compute-Ressourcenpool verwaltet. Die Worker werden wiederum in drei separaten Compute-Ressourcenpools verwaltet namens
 
 - Workerpool 1
 - Workerpool 2
@@ -91,20 +91,20 @@ Wenn Sie über eine große Anzahl von Anforderungen für einfache Web-Apps verf�
 
 ![][3]
 
-Unabhängig von der Größe der Computeressourcen sind mindestens zwei Front-End-Server und zwei Worker erforderlich. Eine App ASE kann für die Verwendung von bis zu 55 Computeressourcen insgesamt konfiguriert werden. Von diesen 55 Computeressourcen können nur 50 zum Hosten von Workloads eingesetzt werden. Dafür gibt es zwei Gründe. Es sind mindestens zwei Front-End-Computeressourcen erforderlich. So bleiben bis zu 53 zur Unterstützung der Workerpoolzuweisung übrig. Um Fehlertoleranz bereitzustellen, muss nach den folgenden Regeln eine zusätzliche Computeressource zugewiesen werden:
+Unabhängig von der Größe der Compute-Ressourcen sind mindestens zwei Front-End-Server und zwei Worker erforderlich. Eine ASE kann für die Verwendung von bis zu 55 Computeressourcen insgesamt konfiguriert werden. Von diesen 55 Compute-Ressourcen können nur 50 zum Hosten von Workloads eingesetzt werden. Dafür gibt es zwei Gründe. Es sind mindestens zwei Front-End-Compute-Ressourcen erforderlich. So bleiben bis zu 53 zur Unterstützung der Workerpoolzuweisung übrig. Um Fehlertoleranz bereitzustellen, muss nach den folgenden Regeln eine zusätzliche Computeressource zugewiesen werden:
 
-- Jeder Workerpool benötigt mindestens eine weitere Computeressource, der keine Workload zugewiesen werden kann
-- Wenn die Menge von Computeressourcen in einem Pool einen bestimmten Wert überschreitet, ist eine weitere Computeressource erforderlich
+- Jeder Workerpool benötigt mindestens eine weitere Compute-Ressource, der keine Workload zugewiesen werden kann
+- Wenn die Menge von Compute-Ressourcen in einem Pool einen bestimmten Wert überschreitet, ist eine weitere Compute-Ressource erforderlich
 
 Im Rahmen der Fehlertoleranzanforderungen gilt innerhalb eines einzelnen Workerpools Folgendes für einen bestimmten Wert von X Ressourcen, die einem Workerpool zugewiesen sind:
 
-- Wenn X zwischen 2 und 20 liegt, beträgt die Anzahl der Computeressourcen, die für Workloads verwendet werden können, X-1
-- Wenn X zwischen 21 und 40 liegt, beträgt die Anzahl der Computeressourcen, die für Workloads verwendet werden können, X-2
-- Wenn X zwischen 41 und 53 liegt, beträgt die Anzahl der Computeressourcen, die für Workloads verwendet werden können, X-3
+- Wenn X zwischen 2 und 20 liegt, beträgt die Anzahl der Compute-Ressourcen, die für Workloads verwendet werden können, X-1
+- Wenn X zwischen 21 und 40 liegt, beträgt die Anzahl der Compute-Ressourcen, die für Workloads verwendet werden können, X-2
+- Wenn X zwischen 41 und 53 liegt, beträgt die Anzahl der Compute-Ressourcen, die für Workloads verwendet werden können, X-3
 
-Sie können nicht nur die Menge der Computeressourcen verwalten, die einem bestimmten Pool zugewiesen werden können, Sie besitzen außerdem auch die Kontrolle über die Größe. In App Service-Umgebungen können Sie aus vier unterschiedlichen Größen mit den Namen P1 bis P4 auswählen. Ausführliche Informationen zu diesen Größen und Preisen finden Sie unter [App Service-Preise][AppServicePricing]. Die Computeressourcengrößen P1 bis P3 entsprechen denen, die in den mehrinstanzenfähigen Umgebungen verfügbar sind. Die P4-Computeressource bietet 8 Kerne mit 14 GB Arbeitsspeicher und steht nur in einer App Service-Umgebung zur Verfügung.
+Sie können nicht nur die Menge der Compute-Ressourcen verwalten, die einem bestimmten Pool zugewiesen werden können, Sie besitzen außerdem auch die Kontrolle über die Größe. In App Service-Umgebungen können Sie aus vier unterschiedlichen Größen mit den Namen P1 bis P4 auswählen. Ausführliche Informationen zu diesen Größen und Preisen finden Sie unter [App Service-Preise][AppServicePricing]. Die Compute-Ressourcengrößen P1 bis P3 entsprechen denen, die in den mehrinstanzenfähigen Umgebungen verfügbar sind. Die P4-Compute-Ressource bietet 8 Kerne mit 14 GB Arbeitsspeicher und steht nur in einer App Service-Umgebung zur Verfügung.
 
-Die Preisgebung für App Service-Umgebungen erfolgt anhand der zugewiesenen Computeressourcen. Sie bezahlen für die Computeressourcen, die Ihrer App Service-Umgebung zugewiesen sind – unabhängig davon, ob diese Workloads hosten.
+Die Preisgebung für App Service-Umgebungen erfolgt anhand der zugewiesenen Compute-Ressourcen. Sie bezahlen für die Compute-Ressourcen, die Ihrer App Service-Umgebung zugewiesen sind – unabhängig davon, ob diese Workloads hosten.
 
 Standardmäßig umfasst eine App Service-Umgebung eine IP-Adresse, die für IP-SSL verfügbar ist. Wenn Sie wissen, dass Sie weitere benötigen werden, können Sie dies hier angeben oder nach der Erstellung verwalten.
   
@@ -115,7 +115,7 @@ Nach der Erstellung einer App Service-Umgebung können Sie die folgenden Einstel
 - Anzahl der Front-Ends (Minimum: 2)
 - Anzahl der Worker (Minimum: 2)
 - Menge der für IP-SSL verfügbaren IP-Adressen
-- Größen der Computeressourcen, die von den Front-Ends oder den Workern verwendet werden (Mindestgröße für Front-Ends ist P2)
+- Größen der Compute-Ressourcen, die von den Front-Ends oder den Workern verwendet werden (Mindestgröße für Front-Ends ist P2)
 
 Folgende Einstellungen können Sie nicht ändern:
 
@@ -155,4 +155,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 [AzureAppService]: http://azure.microsoft.com/documentation/articles/app-service-value-prop-what-is/
 [ASEAutoscale]: http://azure.microsoft.com/documentation/articles/app-service-environment-auto-scale/
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0128_2016-->

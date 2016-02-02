@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="ASP.NET MVC-Tutorial für DocumentDB: Entwicklung von Webanwendungen | Microsoft Azure" 
-	description="Schließen Sie dieses ASP.NET MVC-Tutorial ab, um eine MVC-Webanwendung mit DocumentDB zu erstellen. Sie speichern JSON- und Zugriffsdaten über eine Todo-App, die in Azure Websites gehostet wird." 
+	description="ASP.NET MVC-Tutorial zum Erstellen einer MVC-Webanwendung mit DocumentDB. Speichern von JSON- und Zugriffsdaten über eine Todo-App, die in Azure Websites gehostet wird – Schrittanleitung im ASP NET MVC-Tutorial" 
 	keywords="asp.net mvc tutorial, web application development, mvc web application, asp net mvc tutorial step by step"
 	services="documentdb" 
 	documentationCenter=".net" 
@@ -18,7 +18,7 @@
 	ms.date="11/18/2015" 
 	ms.author="ryancraw"/>
 
-#<a name="_Toc395809351"></a>Erstellen einer Webanwendung mit ASP.NET MVC unter Verwendung von DocumentDB
+#<a name="_Toc395809351"></a>ASP.NET MVC-Tutorial: Erstellen einer Webanwendung mit DocumentDB
 
 > [AZURE.SELECTOR]
 - [.NET](documentdb-dotnet-application.md)
@@ -32,7 +32,7 @@ Um zu verdeutlichen, wie Sie Azure DocumentDB effizient zum Speichern und Abfrag
 
 In dieser exemplarischen Vorgehensweise wird veranschaulicht, wie Sie mit dem von Azure bereitgestellten DocumentDB-Dienst Daten aus einer in Azure gehosteten ASP.NET MVC-Webanwendung speichern und auf diese zugreifen.
 
-> [AZURE.TIP]Dieses Lernprogramm setzt vorherige Erfahrung mit der Verwendung von ASP.NET MVC und Azure-Websites voraus. Wenn Sie noch nicht mit ASP.NET oder den [erforderlichen Tools](#_Toc395637760) vertraut sind, sollten Sie das vollständige Beispielprojekt von [GitHub][] herunterladen und den Anweisungen in diesem Beispiel folgen. Nachdem Sie das Projekt erstellt haben, können Sie den Artikel lesen, um Einblick in den Code im Kontext des Projekts zu erhalten.
+> [AZURE.TIP] Dieses Lernprogramm setzt vorherige Erfahrung mit der Verwendung von ASP.NET MVC und Azure-Websites voraus. Wenn Sie noch nicht mit ASP.NET oder den [erforderlichen Tools](#_Toc395637760) vertraut sind, sollten Sie das vollständige Beispielprojekt von [GitHub][] herunterladen und den Anweisungen in diesem Beispiel folgen. Nachdem Sie das Projekt erstellt haben, können Sie den Artikel lesen, um Einblick in den Code im Kontext des Projekts zu erhalten.
 
 ## <a name="_Toc395637760"></a>Voraussetzungen für dieses Datenbanktutorial
 
@@ -397,7 +397,7 @@ Hier muss zunächst eine Klasse hinzugefügt werden, die die gesamte Logik zur V
     	    }
     	}
 
-	> [AZURE.TIP]Beim Erstellen einer neuen Dokumentensammlung können Sie einen optionalen RequestOptions-Parameter vom Angebotstyp bereitstellen, sodass die Leistungsfähigkeit der neuen Sammlung angegeben werden kann. Wenn dieser Parameter nicht übergeben wird, wird der Standardtangebotstyp verwendet. Weitere Informationen zu DocumentDB-Angebotstypen finden Sie in [Leistungsstufen in DocumentDB](documentdb-performance-levels.md)
+	> [AZURE.TIP] Beim Erstellen einer neuen Dokumentensammlung können Sie einen optionalen RequestOptions-Parameter vom Angebotstyp bereitstellen, sodass die Leistungsfähigkeit der neuen Sammlung angegeben werden kann. Wenn dieser Parameter nicht übergeben wird, wird der Standardtangebotstyp verwendet. Weitere Informationen zu DocumentDB-Angebotstypen finden Sie in [Leistungsstufen in DocumentDB](documentdb-performance-levels.md)
 
 3. Nun werden einige Werte aus der Konfiguration gelesen. Öffnen Sie die Datei **Web.config** Ihrer Anwendung, und fügen Sie die folgenden Zeilen unter dem Abschnitt `<AppSettings>` hinzu.
 	
@@ -454,7 +454,7 @@ Wenn Sie die Anwendung jetzt ausführen, werden Sie zum **HomeController** und d
 
 Damit weiß ASP.NET MVC, dass Sie keinen Wert in der URL angegeben haben, um das Routingverhalten zu steuern, dass anstelle von **Home** **Item** als Controller und den Benutzer-**Index** als Ansicht verwendet.
 
-Wenn Sie jetzt die Anwendung ausführen, wird Ihr **ItemController** aufgerufen. In diesem wird die „Repository“-Klasse aufgerufen und die „GetItems“-Methode verwendet, um alle unvollständigen Elemente an die Ansicht **Ansichten**\\**Element**\\**Index** zurückzugeben.
+Wenn Sie jetzt die Anwendung ausführen, wird Ihr **ItemController** aufgerufen. In diesem wird die „Repository“-Klasse aufgerufen und die „GetItems“-Methode verwendet, um alle unvollständigen Elemente an die Ansicht **Ansichten**\**Element**\**Index** zurückzugeben.
 
 Wenn Sie dieses Projekt jetzt erstellen und ausführen, sollte ein Ergebnis ähnlich dem folgenden angezeigt werden.
 
@@ -633,4 +633,4 @@ Wenn Sie Ihrer Anwendung zusätzliche Funktionen hinzufügen möchten, sehen Sie
 [Grundlegende CRUD-Vorgänge in ASP.NET MVC]: http://go.microsoft.com/fwlink/?LinkId=317598
 [GitHub]: https://github.com/Azure-Samples/documentdb-net-todo-app
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

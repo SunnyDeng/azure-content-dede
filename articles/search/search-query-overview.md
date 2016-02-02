@@ -14,18 +14,21 @@
 	ms.workload="search"
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
-	ms.date="11/10/2015"
+	ms.date="01/23/2016"
 	ms.author="heidist"/>
 
 # Abfragen in Azure Search
 > [AZURE.SELECTOR]
 - [Overview](search-query-overview.md)
+- [Search Explorer](search-explorer.md)
 - [Fiddler](search-fiddler.md)
 - [.NET](search-query-dotnet.md)
 - [REST](search-query-rest-api.md)
 
-Benutzerdefinierte Lösungen, die Azure Search als integrierte Suchumgebung nutzen, müssen Code einbeziehen, der die Suchabfrage erstellt und diese zur Verarbeitung an den Suchdienst sendet.
+Benutzerdefinierte Lösungen, die Azure Search als eingebettete Suchumgebung integrieren, müssen Code einbeziehen, der eine Suchabfrage erstellt und diese zur Verarbeitung an die Suchmaschine sendet.
 
-Mit dem .NET SDK oder der REST-API können Sie Methoden für die Ausführung von Abfragen schreiben. Für vorläufige Tests oder Untersuchungen können Sie Tools wie Fiddler nutzen, um Abfragen an Ihren Dienst zu senden.
+Mit dem .NET SDK oder der REST-API können Sie Methoden für die Ausführung von Abfragen schreiben. Für vorläufige Tests oder Untersuchungen können Sie Tools wie den integrierten Suchexplorer im Azure-Portal verwenden, um einen Index abzufragen. Alternativ können Sie mit Fiddler eine gültige Anforderung an Ihren Suchdienst ausgeben.
 
-<!---HONumber=AcomDC_1223_2015-->
+Eine Liste mit Beispielen und exemplarische Vorgehensweisen zur Veranschaulichung der Erstellung von Abfragen in Code finden Sie unter [Videos, tutorials, demos and code samples](search-video-demo-tutorial-list.md) (Videos, Tutorials, Demos und Codebeispiele). Fast jedes bereitgestellte Beispiel enthält Code, mit dem Abfragen an einen Suchdienst gesendet werden.
+
+<!---HONumber=AcomDC_0128_2016-->

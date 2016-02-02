@@ -24,7 +24,7 @@ Mit dem Statusmonitor von Visual Studio Application Insights können Sie Ausnahm
 
 ![Beispieldiagramme](./media/app-insights-monitor-performance-live-website-now/10-intro.png)
 
-> [AZURE.TIP]Es gibt separate Artikel zum Instrumentieren von [Live-J2EE-Web-Apps](app-insights-java-live.md) und [Azure Cloud Services](app-insights-cloudservices.md).
+> [AZURE.TIP] Es gibt separate Artikel zum Instrumentieren von [Live-J2EE-Web-Apps](app-insights-java-live.md) und [Azure Cloud Services](app-insights-cloudservices.md).
 
 
 Bei der Anwendung von Application Insights auf die IIS-Webanwendungen können Sie zwischen drei Möglichkeiten wählen:
@@ -99,7 +99,7 @@ Fügen Sie in der Systemsteuerung Ihrer Azure-Web-App die Application Insights-
 
 ## Anzeigen von Leistungstelemetriedaten
 
-Melden Sie sich beim [Azure-Portal](http://portal.azure.com) an, navigieren Sie zu Application Insights, und öffnen Sie die zuvor erstellte Ressource.
+Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an, navigieren Sie zu Application Insights, und öffnen Sie die zuvor erstellte Ressource.
 
 ![Wählen Sie "Durchsuchen", "Application Insights" und dann Ihre App aus.](./media/app-insights-monitor-performance-live-website-now/appinsights-08openApp.png)
 
@@ -136,7 +136,7 @@ Sie können Detailinformationen zu bestimmten Ausnahmen (der letzten sieben Tage
 
 ## Stichproben
 
-Wenn Ihre Anwendung eine große Menge von Daten sendet und Sie das Application Insights-SDK für ASP.NET Version 2.0.0-beta3 oder höher verwenden, können Sie die adaptive Stichprobenerstellung nutzen, bei der nur ein bestimmter Prozentsatz der Telemetriedaten übermittelt wird. [Erfahren Sie mehr über das Erstellen von Stichproben](app-insights-sampling.md).
+Wenn Ihre Anwendung eine große Menge von Daten sendet und Sie das Application Insights-SDK für ASP.NET Version 2.0.0-beta3 oder höher verwenden, wird möglicherweise die adaptive Stichprobenerstellung verwendet, bei der nur ein bestimmter Prozentsatz der Telemetriedaten übermittelt wird. [Erfahren Sie mehr über das Erstellen von Stichproben.](app-insights-sampling.md)
 
 
 ## Problembehandlung
@@ -220,4 +220,4 @@ IIS-Unterstützung: IIS 7, 7.5, 8, 8.5 (IIS ist erforderlich)
 [roles]: app-insights-resources-roles-access-control.md
 [usage]: app-insights-web-track-usage.md
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -4,7 +4,7 @@
    documentationCenter="na"
    services="application-gateway"
    authors="joaoma"
-   manager="jdial"
+   manager="carmonm"
    editor="tysonn"/>
 <tags
    ms.service="application-gateway"
@@ -12,7 +12,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/24/2015"
+   ms.date="01/21/2016"
    ms.author="joaoma"/>
 
 
@@ -28,7 +28,7 @@ Dieser Artikel führt Sie durch die Schritte zum Konfigurieren eines Application
 
 ## Voraussetzungen
 
-1. Installieren Sie mit dem Webplattform-Installer die aktuelle Version der Azure PowerShell-Cmdlets. Sie können die neueste Version aus dem Abschnitt **Windows PowerShell** der [Downloadseite](http://azure.microsoft.com/downloads/) herunterladen und installieren.
+1. Installieren Sie mit dem Webplattform-Installer die aktuelle Version der Azure PowerShell-Cmdlets. Sie können die neueste Version aus dem Abschnitt **Windows PowerShell** der [Downloadseite](https://azure.microsoft.com/downloads/) herunterladen und installieren.
 2. Sie erstellen ein virtuelles Netzwerk und ein Subnetz für das Application Gateway. Stellen Sie sicher, dass keine virtuellen Maschinen oder Cloudbereitstellungen das Subnetz verwenden. Das Application Gateway muss sich allein im Subnetz eines virtuellen Netzwerks befinden.
 3. Die Server, die Sie für die Verwendung des Application Gateways konfigurieren, müssen vorhanden sein oder Endpunkte aufweisen, die im virtuellen Netzwerk erstellt wurden oder denen eine öffentliche IP-Adresse/VIP zugewiesen wurde.
 
@@ -82,7 +82,7 @@ Wählen Sie aus, welches Azure-Abonnement Sie verwenden möchten.<BR>
 
 ### Schritt 4
 
-Erstellen Sie eine neue Ressourcengruppe. (Überspringen Sie diesen Schritt, wenn Sie eine vorhandene Ressourcengruppe verwenden.)
+Erstellen Sie eine neue Ressourcengruppe (Überspringen Sie diesen Schritt, wenn Sie eine vorhandene Ressourcengruppe verwenden.)
 
     New-AzureRmResourceGroup -Name appgw-rg -location "West US"
 
@@ -163,13 +163,16 @@ Die Load Balancer-Routingregel mit dem Namen „rule01“, mit der das Load Bala
 
 Die Instanzgröße des Application Gateways wird konfiguriert.
 
->[AZURE.NOTE]Der Standardwert für *InstanceCount* ist 2, der Maximalwert ist 10. Der Standardwert für *GatewaySize* ist "Medium". Sie können zwischen „Standard\_Small“, „Standard\_Medium“ und „Standard\_Large“ wählen.
+>[AZURE.NOTE]  Der Standardwert für *InstanceCount* ist 2, der Maximalwert ist 10. Der Standardwert für *GatewaySize* ist "Medium". Sie können zwischen „Standard\_Small“, „Standard\_Medium“ und „Standard\_Large“ wählen.
 
 ## Erstellen eines Application Gateways mit dem New-AzureApplicationGateway-Cmdlet
 
+Mit diesem Befehl wird ein Application Gateway mit allen Konfigurationselementen aus den vorangegangenen Schritten erstellt. In diesem Beispiel heißt das Application Gateway „appgwtest“.
+
+
 	$appgw = New-AzureRmApplicationGateway -Name appgwtest -ResourceGroupName appgw-rg -Location "West US" -BackendAddressPools $pool -BackendHttpSettingsCollection $poolSetting -FrontendIpConfigurations $fipconfig  -GatewayIpConfigurations $gipconfig -FrontendPorts $fp -HttpListeners $listener -RequestRoutingRules $rule -Sku $sku
 
-Hierbei wird ein Application Gateway mit allen Konfigurationselementen aus den vorangegangenen Schritten erstellt. Im Beispiel heißt das Application Gateway „appgwtest“.
+Hierbei wird ein Application Gateway mit allen Konfigurationselementen der vorangegangenen Schritte erstellt. Im Beispiel heißt das Application Gateway „appgwtest“.
 
 
 ## Löschen eines Application Gateways
@@ -178,7 +181,7 @@ Um ein Application Gateway zu löschen, müssen Sie die folgenden Schritte in de
 
 1. Verwenden Sie das **Stop-AzureRmApplicationGateway**-Cmdlet, um das Gateway zu beenden.
 2. Verwenden Sie das **Remove-AzureRmApplicationGateway**-Cmdlet, um das Gateway zu entfernen.
-3. Stellen Sie sicher, dass das Gateway entfernt wurde, indem Sie das **Get-AzureApplicationGatewa**y-Cmdlet verwenden.
+3. Stellen Sie mithilfe des **Get-AzureApplicationGateway**-Cmdlets sicher, dass das Gateway entfernt wurde.
 
 
 ### Schritt 1
@@ -210,7 +213,7 @@ Verwenden Sie das **Remove-AzureRmApplicationGateway**-Cmdlet, um den Dienst zu 
 	----       ----------------     ------------                             ----
 	Successful OK                   055f3a96-8681-2094-a304-8d9a11ad8301
 
->[AZURE.NOTE]Mit dem optionalen Switch **-force** kann diese Bestätigungsmeldung unterdrückt werden.
+>[AZURE.NOTE] Mit dem Switch **-force** kann diese Bestätigungsmeldung unterdrückt werden.
 
 
 Um sicherzustellen, dass der Dienst entfernt wurde, können Sie das **Get-AzureRmApplicationGateway**-Cmdlet verwenden. Dieser Schritt ist nicht erforderlich.
@@ -234,4 +237,4 @@ Weitere Informationen zu Lastenausgleichsoptionen im Allgemeinen finden Sie unte
 - [Azure-Lastenausgleich](https://azure.microsoft.com/documentation/services/load-balancer/)
 - [Azure Traffic Manager](https://azure.microsoft.com/documentation/services/traffic-manager/)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

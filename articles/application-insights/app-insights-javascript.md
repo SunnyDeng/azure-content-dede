@@ -33,7 +33,7 @@ Wenn Sie kein Azure-Abonnement besitzen und Application Insights auf Ihrer Webse
 
 Daten zur Leistung und Nutzung Ihrer Seite werden in der Application Insights-Ressource angezeigt. (Wenn Sie bereits eine Ressource erstellt haben, um beispielsweise Daten von Ihrem Webserver zu erfassen, überspringen Sie diesen Schritt.)
 
-Melden Sie sich beim [Azure-Portal](http://portal.azure.com) an.
+Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
 
 Wenn Sie bereits die Überwachung für die Serverseite der App eingerichtet haben, verfügen Sie schon über eine Ressource:
 
@@ -125,7 +125,7 @@ Klicken Sie auf ein Diagramm, um weitere Metriken anzuzeigen, die dargestellt we
 
 ![](./media/app-insights-javascript/appinsights-63usermetrics.png)
 
-> [AZURE.NOTE]Metriken können nur in einigen Kombinationen angezeigt werden. Wenn Sie eine Metrik auswählen, werden die inkompatiblen deaktiviert.
+> [AZURE.NOTE] Metriken können nur in einigen Kombinationen angezeigt werden. Wenn Sie eine Metrik auswählen, werden die inkompatiblen deaktiviert.
 
 
 
@@ -150,7 +150,7 @@ Legen Sie im Blatt "Diagnosesuche" als Filter die Einstellung "Seitenansicht" fe
 
 Wählen Sie ein Ereignis, um weitere Details anzuzeigen. Klicken Sie auf der Detailseite auf "...", um weitere Details anzuzeigen.
 
-> [AZURE.NOTE]Beachten Sie bei Verwendung von [Search](app-insights-diagnostic-search.md), dass Sie ganze Wörter suchen müssen: "Info" und "nfo" stimmen nicht mit "Informationen" überein, "Info*" hingegen schon. Ein Suchbegriff darf nicht mit einem Platzhalterzeichen beginnen. Beispielsweise ergibt die Suche nach „*bou“ nicht „About“.
+> [AZURE.NOTE] Beachten Sie bei Verwendung von [Search](app-insights-diagnostic-search.md), dass Sie ganze Wörter suchen müssen: "Info" und "nfo" stimmen nicht mit "Informationen" überein, "Info*" hingegen schon. Ein Suchbegriff darf nicht mit einem Platzhalterzeichen beginnen. Beispielsweise ergibt die Suche nach „*bou“ nicht „About“.
 
 > [Erfahren Sie mehr über Diagnosesuche](app-insights-diagnostic-search.md)
 
@@ -187,4 +187,4 @@ Oder wenn Ihre Web-App bereits aktiv ist, können Sie weiterhin Servertelemetrie
 * [Benutzerdefinierte Ereignisse und Metriken](app-insights-api-custom-events-metrics.md)
 * [Erstellen-Messen-Lernen](app-insights-overview-usage.md)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0128_2016-->

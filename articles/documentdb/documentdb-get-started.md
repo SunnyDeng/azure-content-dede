@@ -17,7 +17,7 @@
 	ms.date="11/18/2015"
 	ms.author="anhoh"/>
 
-# NoSQL-Tutorial: DocumentDB C#-Konsolenanwendung 
+# NoSQL-Tutorial: Erstellen einer DocumentDB-C#-Konsolenanwendung 
 
 > [AZURE.SELECTOR]
 - [.NET](documentdb-get-started.md)
@@ -45,7 +45,7 @@ Lassen Sie uns anfangen.
 
 Stellen Sie sicher, dass Sie über Folgendes verfügen:
 
-- Ein aktives Azure-Konto. Wenn Sie keines besitzen, können Sie sich für eine [kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/) registrieren.
+- Ein aktives Azure-Konto. Wenn Sie keines besitzen, können Sie sich für eine [kostenlose Testversion](https://azure.microsoft.com/pricing/free-trial/) registrieren.
 - [Visual Studio 2013/Visual Studio 2015](http://www.visualstudio.com/).
 
 ## Schritt 1: Erstellen eines DocumentDB-Kontos
@@ -76,11 +76,11 @@ Fügen Sie zunächst in der Datei "Program.cs" am Anfang der C#-Anwendung folgen
     using Microsoft.Azure.Documents.Linq;
     using Newtonsoft.Json;
 
-> [AZURE.IMPORTANT]Um dieses NoSQL-Tutorial abzuschließen, müssen Sie die oben genannten Abhängigkeiten hinzufügen.
+> [AZURE.IMPORTANT] Um dieses NoSQL-Tutorial abzuschließen, müssen Sie die oben genannten Abhängigkeiten hinzufügen.
 
 Speichern Sie anschließend den DocumentDB-Kontoendpunkt und entweder den primären oder den sekundären Zugriffsschlüssel. Die Schlüssel finden Sie im [Azure-Portal](https://portal.azure.com).
 
-![Screenshot des Azure-Portals mit einem DocumentDB-Konto, bei dem der ACTIVE-Hub, die Schaltfläche "SCHLÜSSEL" auf dem Blatt "DocumentDB-Konto", und auf dem Blatt "Schlüssel" die Werte URI, PRIMÄRSCHLÜSSEL und SEKUNDÄRSCHLÜSSEL hervorgehoben sind][keys]
+![Screenshot des Azure-Portals, das vom NoSQL-Tutorial zum Erstellen einer C#-Konsolenanwendung verwendet wird. Zeigt ein DocumentDB-Konto, bei dem der ACTIVE-Hub, die Schaltfläche „SCHLÜSSEL“ auf dem Blatt „DocumentDB-Konto“ sowie auf dem Blatt „Schlüssel“ die Werte URI, PRIMÄRSCHLÜSSEL und SEKUNDÄRSCHLÜSSEL hervorgehoben sind.][keys]
 
     private const string EndpointUrl = "<your endpoint URI>";
     private const string AuthorizationKey = "<your key>";
@@ -108,7 +108,7 @@ Rufen Sie die asynchrone Aufgabe in der **Main**-Methode auf, wie im folgenden C
 		}
 	}
 
-> [AZURE.WARNING]Speichern Sie niemals Anmeldeinformationen im Quellcode. Die Anmeldeinformationen sind hier im Code dargestellt, um das Beispiel zu vereinfachen. Siehe [Azure-Websites: Funktionsweise von Anwendungs- und Verbindungszeichenfolgen](https://azure.microsoft.com/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/) für Informationen zum Speichern von Anmeldeinformationen in einer Produktionsumgebung. Sehen Sie sich unsere Beispielanwendung auf [GitHub](https://github.com/Azure-Samples/documentdb-dotnet-getting-started/blob/master/src/Program.cs) an, als Beispiel für das Speichern von Anmeldeinformationen außerhalb des Quellcodes.
+> [AZURE.WARNING] Speichern Sie niemals Anmeldeinformationen im Quellcode. Die Anmeldeinformationen sind hier im Code dargestellt, um das Beispiel zu vereinfachen. Siehe [Azure-Websites: Funktionsweise von Anwendungs- und Verbindungszeichenfolgen](https://azure.microsoft.com/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/) für Informationen zum Speichern von Anmeldeinformationen in einer Produktionsumgebung. Sehen Sie sich unsere Beispielanwendung auf [GitHub](https://github.com/Azure-Samples/documentdb-dotnet-getting-started/blob/master/src/Program.cs) an, als Beispiel für das Speichern von Anmeldeinformationen außerhalb des Quellcodes.
 
 Nachdem Sie nun wissen, wie Sie eine Verbindung mit einem DocumentDB-Konto herstellen und eine Instanz der Klasse **DocumentClient** erstellen, lassen Sie uns einen Blick auf die Arbeit mit DocumentDB-Ressourcen werfen.
 
@@ -136,7 +136,7 @@ Ihre DocumentDB-[Datenbank](documentdb-resources.md#databases) kann mithilfe der
 
 ##<a id="CreateColl"></a>Schritt 5: Erstellen einer Sammlung  
 
-> [AZURE.WARNING]**CreateDocumentCollectionAsync** erstellt eine neue S1-Sammlung, die hat Auswirkungen auf die Preise hat. Weitere Informationen finden Sie auf unserer [Preisseite](https://azure.microsoft.com/pricing/details/documentdb/).
+> [AZURE.WARNING] **CreateDocumentCollectionAsync** erstellt eine neue S1-Sammlung, die hat Auswirkungen auf die Preise hat. Weitere Informationen finden Sie auf unserer [Preisseite](https://azure.microsoft.com/pricing/details/documentdb/).
 
 Eine [Sammlung](documentdb-resources.md#collections) kann mithilfe der [CreateDocumentCollectionAsync](https://msdn.microsoft.com/library/microsoft.azure.documents.client.documentclient.createdocumentcollectionasync.aspx)-Methode der **DocumentClient**-Klasse erstellt werden. Eine Sammlung ist ein Container für JSON-Dokumente und die zugehörige JavaScript-Anwendungslogik. Die neu erstellte Sammlung wird einer [S1-Leistungsebene](documentdb-performance-levels.md) zugeordnet. Erstellen Sie nach dem Erstellen der Datenbank in der **GetStartedDemo**-Methode eine neue Sammlung mit dem Namen **FamilyCollection**.
 
@@ -279,7 +279,7 @@ Als Nächstes erstellen Sie Ihre Dokumente innerhalb Ihrer asynchronen **GetStar
 
 Sie haben jetzt die folgende Datenbank, Sammlung und die folgenden Dokumente in Ihrem DocumentDB-Konto erstellt.
 
-![Diagramm zur Veranschaulichung der hierarchischen Beziehung zwischen dem Konto, der Datenbank, der Sammlung und den Dokumenten](./media/documentdb-get-started/nosql-tutorial-account-database.png)
+![Diagramm zur hierarchischen Beziehung zwischen dem Konto, der Onlinedatenbank, der Sammlung und den Dokumenten, die vom NoSQL-Tutorial zum Erstellen einer C#-Konsolenanwendung verwendet werden.](./media/documentdb-get-started/nosql-tutorial-account-database.png)
 
 ##<a id="Query"></a>Schritt 7: Abfragen von DocumentDB-Ressourcen
 
@@ -319,11 +319,11 @@ DocumentDB unterstützt umfassende [Abfragen](documentdb-sql-query.md) der in je
 
 Das folgende Diagramm veranschaulicht, wie die DocumentDB-SQL-Abfragesyntax gegen die erstellte Sammlung aufgerufen wird. Die gleiche Logik wird auf die LINQ-Abfrage angewendet.
 
-![Diagramm zur Veranschaulichung des Bereichs und der Bedeutung der Abfrage](./media/documentdb-get-started/nosql-tutorial-collection-documents.png)
+![Diagramm zur Veranschaulichung des Bereichs und der Bedeutung der Abfrage, die vom NoSQL-Tutorial zum Erstellen einer C#-Konsolenanwendung verwendet wird.](./media/documentdb-get-started/nosql-tutorial-collection-documents.png)
 
 Das [FROM](documentdb-sql-query.md#from-clause) -Schlüsselwort ist in der Abfrage optional, da DocumentDB Abfragen auf eine Sammlung begrenzt. Aus diesem Grund ist "FROM Familien f" austauschbar mit "FROM Stamm r" oder einem anderen variablen Namen, den Sie auswählen. DocumentDB wird ableiten, dass Familien, Stamm oder der variable Name, den Sie ausgewählt haben, standardmäßig auf die aktuelle Sammlung verweisen.
 
-##<a id="DeleteDatabase"></a>Schritt 8: Löschen der Datenbank
+##<a id="DeleteDatabase"></a>Schritt 8: Löschen der Onlinedatenbank
 
 Das Löschen der erstellten Datenbank entfernt die Datenbank und alle untergeordneten Ressourcen (Sammlungen, Dokumente usw.). Sie können die Datenbank und den Dokument-Client löschen, indem Sie folgenden Codeausschnitt an das Ende der asynchronen **GetStartedDemo**-Methode hängen.
 
@@ -456,9 +456,9 @@ Die Ausgabe der GetStarted-Anwendung sollte jetzt angezeigt werden. Die Ausgabe 
 	  "_attachments": "attachments/"
 	} from LINQ query
 
-Glückwunsch! Sie haben dieses NoSQL-Tutorial abgeschlossen.
+Glückwunsch! Sie haben dieses NoSQL-Tutorial abgeschlossen und verfügen über eine funktionierende C#-Konsolenanwendung!
 
-##<a id="GetSolution"></a> Abrufen der vollständigen Lösung
+##<a id="GetSolution"></a> Abrufen der vollständigen Projektmappe für das NoSQL-Tutorial
 Um die "GetStarted"-Lösung zu erstellen, die alle Beispiele dieses Artikels enthält, ist Folgendes erforderlich:
 
 -   [DocumentDB-Konto][documentdb-create-account].
@@ -478,4 +478,4 @@ Um die Verweise auf das DocumentDB .NET SDK in Visual Studio wiederherzustellen,
 [keys]: media/documentdb-get-started/nosql-tutorial-keys.png
  
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -32,7 +32,7 @@ In diesem Lernprogramm erfahren Sie, wie Sie mit den Azure Mobile Services einen
 
 In diesem Lernprogramm erstellen Sie einen neuen mobilen Dienst und eine einfache _To-Do-Listen_-App, die App-Daten im neuen mobilen Dienst speichert. Der von Ihnen zu erstellende mobile Dienst verwendet JavaScript für die serverseitige Geschäftslogik. Informationen zum Erstellen eines mobilen Diensts mit serverseitiger Geschäftslogik in .NET finden Sie in der [.NET-Back-End-Version] dieses Themas.
 
-> [AZURE.NOTE]Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie [kostenlose mobile Dienste, die Sie auch nach Ablauf der Testversion weiter nutzen können](http://azure.microsoft.com/pricing/details/mobile-services/). Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AE564AB28&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-ios%2F%20).
+> [AZURE.NOTE] Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie [kostenlose mobile Dienste, die Sie auch nach Ablauf der Testversion weiter nutzen können](https://azure.microsoft.com/pricing/details/mobile-services/). Einzelheiten finden Sie unter [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=AE564AB28&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started-ios%2F%20).
 
 ## <a name="create-new-service"> </a>Erstellen eines neuen mobilen Dienstes
 
@@ -95,4 +95,4 @@ Erfahren Sie, wie Sie weitere wichtige Aufgaben in Mobile Services durchführen:
 [XCode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [.NET-Back-End-Version]: mobile-services-dotnet-backend-ios-get-started.md
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

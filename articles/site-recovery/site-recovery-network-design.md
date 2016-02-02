@@ -158,7 +158,7 @@ Damit die Woodgrove Bank die Replikation bereitstellen und IP-Adressen verwalten
 
 ### Option 2: Geändert von IP-Adressen
 
-Dieser Ansatz scheint am häufigsten gewählt zu werden und bedeutet, dass sich die IP-Adresse jedes virtuellen Computers, für den ein Failover erfolgt, ändert. Größter Nachteil dieses Ansatzes: Die Netzwerkinfrastruktur muss erkennen können, wenn sich IP-Adressen geändert haben, und muss wissen, dass DNS-Einträge in der Regel im gesamten Netzwerk geändert oder gelöscht werden müssen, ebenso wie zwischengespeicherte Einträge in Netzwerktabellen. Dies könnte zu Ausfallzeiten führen, je nachdem, wie die DNS-Infrastruktur eingerichtet ist. Sie können diese Probleme mindern, indem Sie für Intranetanwendungen niedrige TTL-Werte und für internetbasierte Anwendungen [Azure Traffic Manager mit Site Recovery](http://azure.microsoft.com/blog/2015/03/03/reduce-rto-by-using-azure-traffic-manager-with-azure-site-recovery/) verwenden.
+Dieser Ansatz scheint am häufigsten gewählt zu werden und bedeutet, dass sich die IP-Adresse jedes virtuellen Computers, für den ein Failover erfolgt, ändert. Größter Nachteil dieses Ansatzes: Die Netzwerkinfrastruktur muss erkennen können, wenn sich IP-Adressen geändert haben, und muss wissen, dass DNS-Einträge in der Regel im gesamten Netzwerk geändert oder gelöscht werden müssen, ebenso wie zwischengespeicherte Einträge in Netzwerktabellen. Dies könnte zu Ausfallzeiten führen, je nachdem, wie die DNS-Infrastruktur eingerichtet ist. Sie können diese Probleme mindern, indem Sie für Intranetanwendungen niedrige TTL-Werte und für internetbasierte Anwendungen [Azure Traffic Manager mit Site Recovery](https://azure.microsoft.com/blog/2015/03/03/reduce-rto-by-using-azure-traffic-manager-with-azure-site-recovery/) verwenden.
 
 #### Beispiel 2 – Geänderte IP-Adressen
 
@@ -177,17 +177,17 @@ Betrachten wir dieses Szenario mit einem Beispiel, bei dem es einen dritten Stan
 - Virtuelle Computer aktualisieren den DNS-Server, den sie nach dem Start verwenden. DNS-Einträge müssen in der Regel im gesamten Netzwerk geändert oder gelöscht werden, und zwischengespeicherte Einträge in Netzwerktabellen müssen aktualisiert oder gelöscht werden, daher ist es nicht ungewöhnlich, dass es während dieser Zustandsänderungen zu Ausfallzeiten kommt. Die Auswirkungen können auf folgende Weise gemindert werden:
 
 	- Durch Verwenden niedrige TTL-Werte für Intranetanwendungen.
-	- Durch Verwenden von [Azure Traffic Manager mit Site Recovery] (http://azure.microsoft.com/blog/2015/03/03/reduce-rto-by-using-azure-traffic-manager-with-azure-site-recovery/ für internetbasierte Anwendungen).
+	- Durch Verwenden von [Azure Traffic Manager mit Site Recovery] (https://azure.microsoft.com/blog/2015/03/03/reduce-rto-by-using-azure-traffic-manager-with-azure-site-recovery/ für internetbasierte Anwendungen).
 	- Durch Verwenden des folgende Skripts in Ihrem Wiederherstellungsplan zum Aktualisieren der DNS-Server, um ein rechtzeitiges Update sicherzustellen. (Das Skript ist nicht erforderlich, wenn die dynamische DNS-Registrierung konfiguriert ist wird.)
 
     [string]$Zone, [string]$name, [string]$IP ) $Record = Get-DnsServerResourceRecord -ZoneName $zone -Name $name $newrecord = $record.clone() $newrecord.RecordData[0].IPv4Address = $IP Set-DnsServerResourceRecord -zonename $zone -OldInputObject $record -NewInputObject $Newrecord
 
 #### Beispiel – Failover zu Azure
 
-Im Blogbeitrag [Networking Infrastructure Setup for Microsoft Azure as a Disaster Recovery Site](http://azure.microsoft.com/blog/2014/09/04/networking-infrastructure-setup-for-microsoft-azure-as-a-disaster-recovery-site/) wird erläutert, wie die erforderliche Azure-Netzwerkinfrastruktur konfiguriert wird, wenn das Beibehalten der IP-Adressen keine Voraussetzung ist. Zuerst wird die Anwendung beschrieben. Anschließend befasst der Beitrag sich mit der Konfiguration lokaler Netzwerke in Azure. Abschließend werden Anweisungen zum Ausführen eines Testfailovers und eines geplanten Failover bereitgestellt.
+Im Blogbeitrag [Networking Infrastructure Setup for Microsoft Azure as a Disaster Recovery Site](https://azure.microsoft.com/blog/2014/09/04/networking-infrastructure-setup-for-microsoft-azure-as-a-disaster-recovery-site/) wird erläutert, wie die erforderliche Azure-Netzwerkinfrastruktur konfiguriert wird, wenn das Beibehalten der IP-Adressen keine Voraussetzung ist. Zuerst wird die Anwendung beschrieben. Anschließend befasst der Beitrag sich mit der Konfiguration lokaler Netzwerke in Azure. Abschließend werden Anweisungen zum Ausführen eines Testfailovers und eines geplanten Failover bereitgestellt.
 
 ## Nächste Schritte
 
 [Hier](site-recovery-network-mapping.md) erfahren Sie, wie Site Recovery Quell- und Zielnetzwerke zuordnet.
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

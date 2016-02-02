@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="11/24/2015"
+	ms.date="01/24/2016"
 	ms.author="awills"/>
 
 # Erste Schritte mit Application Insights in einem Java-Webprojekt
@@ -30,7 +30,7 @@ Application Insights unterstützt Java-Apps, die unter Linux, Unix oder Windows 
 Sie benötigen Folgendes:
 
 * Oracle JRE 1.6 oder höher bzw. Zulu JRE 1.6 oder höher
-* Ein Abonnement für [Microsoft Azure](http://azure.microsoft.com/). (Sie können mit der [kostenlosen Testversion](http://azure.microsoft.com/pricing/free-trial/) beginnen.)
+* Ein Abonnement für [Microsoft Azure](https://azure.microsoft.com/). (Sie können mit der [kostenlosen Testversion](https://azure.microsoft.com/pricing/free-trial/) beginnen.)
 
 *Wenn Sie eine Web-App haben, die bereits aktiv ist, könnten Sie das alternative Verfahren nutzen, [um das SDK zur Laufzeit auf dem Webserver hinzuzufügen](app-insights-java-live.md). Diese Alternative vermeidet das Neuerstellen des Codes, jedoch erhalten Sie nicht die Möglichkeit, Code schreiben, um die Benutzeraktivität nachzuverfolgen.*
 
@@ -98,7 +98,7 @@ Aktualisieren Sie dann die Projektabhängigkeiten, damit die Binärdateien herun
       // or applicationinsights-core for bare API
     }
 
-* *Build- oder Prüfsummenvalidierungsfehler? Versuchen Sie es mit einer bestimmten Version, z. B.:* `version:'1.0.n'`. *Sie finden die neueste Version in den [SDK-Versionshinweisen](app-insights-release-notes-java.md).*
+* *Build- oder Prüfsummenvalidierungsfehler? Versuchen Sie es mit einer bestimmten Version, z. B.: * `version:'1.0.n'`. *Sie finden die neueste Version in den [SDK-Versionshinweisen](app-insights-release-notes-java.md).*
 * *So aktualisieren Sie auf ein neues SDK*
  * Aktualisieren Sie die Abhängigkeiten des Projekts.
 
@@ -117,7 +117,7 @@ Fügen Sie das SDK manuell hinzu:
  * Mit `applicationinsights-web` erhalten Sie Metriken zum Verfolgen der Anzahl der HTTP-Anforderungen und der Antwortzeiten. Sie können sie weglassen, wenn diese Telemetriedaten nicht automatisch gesammelt werden sollen, beispielsweise, wenn Sie den Code selbst schreiben möchten.
 
 * *So aktualisieren Sie das SDK, wenn wir Änderungen veröffentlichen*
- * Laden Sie das aktuelle [Application Insights-SDK für Java](http://dl.windowsazure.com/lib/applicationinsights/javabin/sdk.zip) herunter, und ersetzen Sie die alte Version.
+ * Laden Sie das aktuelle [Application Insights-SDK für Java](https://azuredownloads.blob.core.windows.net/applicationinsights/sdk.zip) herunter, und ersetzen Sie die alte Version.
  * Änderungen werden in den [SDK-Versionshinweisen](app-insights-release-notes-java.md) beschrieben.
 
 
@@ -398,4 +398,4 @@ Weitere Informationen finden Sie im [Java Developer Center](/develop/java/).
 [metrics]: app-insights-metrics-explorer.md
 [usage]: app-insights-web-track-usage.md
 
-<!----HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

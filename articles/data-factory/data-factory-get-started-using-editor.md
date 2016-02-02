@@ -62,7 +62,7 @@ In diesem Schritt erstellen Sie im Azure-Portal eine Azure Data Factory namens *
 	 
 	![Data Factory-Name nicht verfügbar][image-data-factory-name-not-available]
 	
-	> [AZURE.NOTE]Der Name der Data Factory kann in Zukunft als DNS-Name registriert und so öffentlich sichtbar werden.
+	> [AZURE.NOTE] Der Name der Data Factory kann in Zukunft als DNS-Name registriert und so öffentlich sichtbar werden.
 
 9. Klicken Sie auf der linken Seite auf **BENACHRICHTIGUNGEN**, und suchen Sie nach Benachrichtigungen zum Erstellungsprozess. Klicken Sie auf **X**, um das Blatt **Benachrichtigungen** zu schließen, falls es geöffnet ist.
 10. Nach Abschluss der Erstellung wird das Blatt **DATA FACTORY** wie unten dargestellt angezeigt:
@@ -79,7 +79,6 @@ In diesem Schritt erstellen Sie zwei verknüpfte Dienste: **StorageLinkedService
 
 	![Kachel "Erstellen und bereitstellen"][image-author-deploy-tile]
 
-	Im Thema [Data Factory-Editor][data-factory-editor] finden Sie eine ausführliche Übersicht über den Data Factory-Editor.
 	 
 5. Klicken Sie im **Editor** auf der Symbolleiste auf die Schaltfläche **Neuer Datenspeicher**, und wählen Sie im Dropdownmenü **Azure-Speicher** aus. Die JSON-Vorlage zum Erstellen eines mit einem Azure-Speicher verknüpften Diensts sollte im rechten Bereich angezeigt werden.
 
@@ -327,7 +326,7 @@ In diesem Schritt verwenden Sie das klassische Azure-Portal zur Überwachung der
 	Die Listen **Letzte aktualisierte Slices** und **Letzte fehlerhafte Slices** werden anhand der **UHRZEIT DER LETZTEN AKTUALISIERUNG** sortiert. Der Zeitpunkt der Aktualisierung eines Slices wird in den folgenden Situationen geändert.
     
 
-	-  Sie haben den Status eines Slices manuell aktualisiert, z. B. mit dem Cmdlet **Set AzureRmDataFactorySliceStatus** oder durch Klicken auf **Ausführen** auf dem Blatt **SLICE** des Slices.
+	-  Sie haben den Status eines Slices manuell aktualisiert, z. B. mit dem Cmdlet **Set-AzureRmDataFactorySliceStatus**, oder durch Klicken auf **Ausführen** auf dem Blatt **SLICE** des Slices.
 	-  Der Status des Slices ändert sich aufgrund einer Ausführung (z. B. Ausführung gestartet, Ausführung mit Fehler beendet, Ausführung erfolgreich beendet usw.).
  
 	Klicken Sie auf den Titel der Listen oder auf **...** (Auslassungspunkte), um eine umfangreichere Liste mit Slices anzuzeigen. Klicken Sie auf der Symbolleiste auf **Filter**, um die Slices zu filtern.
@@ -398,7 +397,6 @@ Informationen zum Ausführen dieses Lernprogramms mit Azure PowerShell finden Si
 [sql-management-studio]: http://azure.microsoft.com/documentation/articles/sql-database-manage-azure-ssms/#Step2
 [sql-cmd-exe]: https://msdn.microsoft.com/library/azure/ee336280.aspx
 
-[data-factory-editor]: data-factory-editor.md
 [monitor-manage-using-powershell]: data-factory-monitor-manage-using-powershell.md
 [adf-tutorial]: data-factory-tutorial.md
 [use-custom-activities]: data-factory-use-custom-activities.md
@@ -461,4 +459,4 @@ Informationen zum Ausführen dieses Lernprogramms mit Azure PowerShell finden Si
 [image-data-factory-name-not-available]: ./media/data-factory-get-started-using-editor/getstarted-data-factory-not-available.png
  
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -28,7 +28,7 @@ In diesem Artikel wird davon ausgegangen, dass Sie über ausreichende C#- und Vi
 
 ### Konten
 
-- **Azure-Konto:** Wenn Sie nicht bereits über ein Azure-Abonnement verfügen, können Sie innerhalb weniger Minuten unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/) ein kostenloses Testkonto erstellen.
+- **Azure-Konto:** Wenn Sie nicht bereits über ein Azure-Abonnement verfügen, können Sie innerhalb weniger Minuten unter [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/) ein kostenloses Testkonto erstellen.
 - **Batch-Konto:** Wenn Sie über ein Azure-Abonnement verfügen, können Sie ein [Azure Batch-Konto erstellen und verwalten](batch-account-create-portal.md).
 - **Storage-Konto:** Weitere Informationen finden Sie unter [Informationen zu Azure-Speicherkonten](../storage-create-storage-account.md) im Abschnitt *Erstellen eines Speicherkontos*.
 
@@ -88,7 +88,7 @@ Die Kontoanmeldeinformationen für Batch und Storage finden Sie jeweils auf dem 
 
 Nachdem Sie das Projekt mit Ihren Anmeldeinformationen aktualisiert haben, klicken Sie im *Projektmappen-Explorer* mit der rechten Maustaste auf die Projektmappe, und klicken Sie dann auf **Projektmappe erstellen**. Bestätigen Sie die Wiederherstellung von NuGet-Paketen, wenn Sie hierzu aufgefordert werden.
 
-> [AZURE.TIP]Wenn die NuGet-Pakete nicht automatisch wiederhergestellt werden oder Fehler in Bezug auf die Wiederherstellung der Pakete angezeigt werden, müssen Sie sicherstellen, dass der [NuGet Package Manager][nuget_packagemgr] installiert ist. Aktivieren Sie anschließend das Herunterladen fehlender Pakete. Informationen zum Aktivieren des Paketdownloads finden Sie unter [Enabling Package Restore During Build][nuget_restore].
+> [AZURE.TIP] Wenn die NuGet-Pakete nicht automatisch wiederhergestellt werden oder Fehler in Bezug auf die Wiederherstellung der Pakete angezeigt werden, müssen Sie sicherstellen, dass der [NuGet Package Manager][nuget_packagemgr] installiert ist. Aktivieren Sie anschließend das Herunterladen fehlender Pakete. Informationen zum Aktivieren des Paketdownloads finden Sie unter [Enabling Package Restore During Build][nuget_restore].
 
 In den folgenden Abschnitten unterteilen wir die Beispielanwendung in die Schritte, die ausgeführt werden, um eine Workload im Batch-Dienst zu verarbeiten. Diese werden dann ausführlich beschrieben. Es ist hilfreich, die geöffnete Projektmappe in Visual Studio zu verfolgen, während Sie den restlichen Text dieses Artikels durcharbeiten. Es wird nämlich nicht einzeln auf jede Codezeile des Beispiels eingegangen.
 
@@ -234,7 +234,7 @@ Bei Shared Access Signatures handelt es sich um Zeichenfolgen, die – bei Einbi
 
 - **Container-SAS:** Wenn die Arbeit einer Aufgabe auf dem Computeknoten abgeschlossen ist, wird die Ausgabedatei in Azure Storage in den Container *output* hochgeladen. Hierfür nutzt die TaskApplication eine Container-SAS, die im Rahmen des Pfads beim Hochladen der Datei Lese-/Schreibzugriff auf den Container ermöglicht. Das Abrufen der Container-SAS erfolgt auf ähnliche Weise wie beim Abrufen der Blob-SAS, und in DotNetTutorial sehen Sie, dass die `GetContainerSasUrl`-Hilfsmethode hierfür [CloudBlobContainer.GetSharedAccessSignature][net_sas_container] aufruft. Weitere Informationen dazu, wie TaskApplication die Container-SAS verwendet, erhalten Sie unten in Schritt 6, „Überwachen von Aufgaben“.
 
-> [AZURE.TIP]Sehen Sie sich die zweiteilige Reihe zu Shared Access Signatures an: [Teil 1: Grundlagen zum SAS-Modell](./../storage/storage-dotnet-shared-access-signature-part-1.md) und [Teil 2: Erstellen und Verwenden einer SAS mit dem Blob-Dienst](./../storage/storage-dotnet-shared-access-signature-part-2.md). Sie erhalten darin weitere Informationen zur Bereitstellung des sicheren Zugriffs auf Daten in Ihrem Storage-Konto.
+> [AZURE.TIP] Sehen Sie sich die zweiteilige Reihe zu Shared Access Signatures an: [Teil 1: Grundlagen zum SAS-Modell](./../storage/storage-dotnet-shared-access-signature-part-1.md) und [Teil 2: Erstellen und Verwenden einer SAS mit dem Blob-Dienst](./../storage/storage-dotnet-shared-access-signature-part-2.md). Sie erhalten darin weitere Informationen zur Bereitstellung des sicheren Zugriffs auf Daten in Ihrem Storage-Konto.
 
 ## Schritt 3: Erstellen eines Batch-Pools
 
@@ -288,7 +288,7 @@ private static async Task CreatePoolAsync(BatchClient batchClient, string poolId
 
 Beim Erstellen eines Pools mit [CreatePool][net_pool_create] geben Sie eine Reihe von Parametern an, z. B. die Anzahl von Computeknoten, die [Größe der Knoten](./../cloud-services/cloud-services-sizes-specs.md) und das [Betriebssystem](./../cloud-services/cloud-services-guestos-update-matrix.md) der Knoten.
 
-> [AZURE.IMPORTANT]Die Nutzung von Computeressourcen in Batch wird Ihnen berechnet. Zum Reduzieren der Kosten können Sie `targetDedicated` auf den Wert 1 verringern, bevor Sie das Beispiel ausführen.
+> [AZURE.IMPORTANT] Die Nutzung von Computeressourcen in Batch wird Ihnen berechnet. Zum Reduzieren der Kosten können Sie `targetDedicated` auf den Wert 1 verringern, bevor Sie das Beispiel ausführen.
 
 Zusammen mit diesen Eigenschaften des physischen Knotens können Sie auch eine [StartTask][net_pool_starttask] für den Pool angeben. Die StartTask wird auf jedem Knoten ausgeführt, wenn dieser dem Pool hinzugefügt wird, sowie bei jedem Neustart eines Knotens. Besonders nützlich ist die StartTask zum Installieren von Anwendungen auf Computeknoten vor der Ausführung von Aufgaben. Wenn Daten für Ihre Aufgaben mit Python-Skripts verarbeitet werden, können Sie eine StartTask verwenden, um Python auf den Computeknoten zu installieren.
 
@@ -296,7 +296,7 @@ In dieser Beispielanwendung kopiert die StartTask die Dateien, die aus Storage h
 
 Beachten Sie im obigen Codeausschnitt auch die Verwendung von zwei Umgebungsvariablen in der *CommandLine*-Eigenschaft der StartTask: `%AZ_BATCH_TASK_WORKING_DIR%` und `%AZ_BATCH_NODE_SHARED_DIR%`. Jeder Computeknoten in einem Batch-Pool wird automatisch mit einer Reihe von speziellen Umgebungsvariablen für Batch konfiguriert, und alle Prozesse, die von einer Aufgabe ausgeführt werden, haben Zugriff auf diese Umgebungsvariablen.
 
-> [AZURE.TIP]Weitere Informationen zu den Umgebungsvariablen, die auf Computeknoten in einem Batch-Pool verfügbar sind, und Informationen zu Arbeitsverzeichnissen von Aufgaben finden Sie in den Abschnitten **Umgebungseinstellungen für Aufgaben** und **Dateien und Verzeichnisse** unter [Übersicht über Azure Batch-Features](batch-api-basics.md).
+> [AZURE.TIP] Weitere Informationen zu den Umgebungsvariablen, die auf Computeknoten in einem Batch-Pool verfügbar sind, und Informationen zu Arbeitsverzeichnissen von Aufgaben finden Sie in den Abschnitten **Umgebungseinstellungen für Aufgaben** und **Dateien und Verzeichnisse** unter [Übersicht über Azure Batch-Features](batch-api-basics.md).
 
 ## Schritt 4: Erstellen eines Batch-Auftrags
 
@@ -356,7 +356,7 @@ private static async Task<List<CloudTask>> AddTasksAsync(BatchClient batchClient
 }
 ```
 
-> [AZURE.IMPORTANT]Beim Zugreifen auf Umgebungsvariablen wie `%AZ_BATCH_NODE_SHARED_DIR%` oder beim Ausführen einer Anwendung, die im `PATH` des Knotens nicht gefunden wurde, müssen Befehlszeilen von Aufgaben das Präfix `cmd /c` enthalten. Hiermit wird der Befehlsinterpreter explizit ausgeführt und angewiesen, den Vorgang nach dem Ausführen Ihres Befehls zu beenden. Diese Anforderung ist nicht erforderlich, falls von Ihren Aufgaben eine Anwendung im PATH des Knotens (z. B. *robocopy.exe* oder *powershell.exe*) ausgeführt wird und keine Umgebungsvariablen verwendet werden.
+> [AZURE.IMPORTANT] Beim Zugreifen auf Umgebungsvariablen wie `%AZ_BATCH_NODE_SHARED_DIR%` oder beim Ausführen einer Anwendung, die im `PATH` des Knotens nicht gefunden wurde, müssen Befehlszeilen von Aufgaben das Präfix `cmd /c` enthalten. Hiermit wird der Befehlsinterpreter explizit ausgeführt und angewiesen, den Vorgang nach dem Ausführen Ihres Befehls zu beenden. Diese Anforderung ist nicht erforderlich, falls von Ihren Aufgaben eine Anwendung im PATH des Knotens (z. B. *robocopy.exe* oder *powershell.exe*) ausgeführt wird und keine Umgebungsvariablen verwendet werden.
 
 In der Schleife `foreach` im obigen Codeausschnitt sehen Sie, dass die Befehlszeile für die Aufgabe so erstellt wurde, dass drei Befehlszeilenargumente an *TaskApplication.exe* übergeben werden:
 
@@ -521,7 +521,7 @@ private static async Task DownloadBlobsFromContainerAsync(CloudBlobClient blobCl
 }
 ```
 
-> [AZURE.NOTE]Mit dem Aufrufen von `DownloadBlobsFromContainerAsync` in der Anwendung *DotNetTutorial* wird angegeben, dass die Dateien in Ihren Ordner `%TEMP%` heruntergeladen werden sollen. Sie können diesen Ausgabespeicherort ändern.
+> [AZURE.NOTE] Mit dem Aufrufen von `DownloadBlobsFromContainerAsync` in der Anwendung *DotNetTutorial* wird angegeben, dass die Dateien in Ihren Ordner `%TEMP%` heruntergeladen werden sollen. Sie können diesen Ausgabespeicherort ändern.
 
 ## Schritt 8: Löschen von Containern
 
@@ -576,7 +576,7 @@ if (response != "n" && response != "no")
 }
 ```
 
-> [AZURE.IMPORTANT]Denken Sie daran, dass für Computeressourcen Kosten anfallen und dass Sie durch das Löschen nicht verwendeter Pools Kosten sparen können. Beachten Sie, dass beim Löschen eines Pools alle Computeknoten dieses Pools gelöscht werden und dass alle Daten auf den Knoten nicht mehr wiederhergestellt werden können, nachdem der Pool gelöscht wurde.
+> [AZURE.IMPORTANT] Denken Sie daran, dass für Computeressourcen Kosten anfallen und dass Sie durch das Löschen nicht verwendeter Pools Kosten sparen können. Beachten Sie, dass beim Löschen eines Pools alle Computeknoten dieses Pools gelöscht werden und dass alle Daten auf den Knoten nicht mehr wiederhergestellt werden können, nachdem der Pool gelöscht wurde.
 
 ## Ausführen des *DotNetTutorial*-Beispiels
 
@@ -680,4 +680,4 @@ Nachdem Sie sich jetzt mit dem grundlegenden Workflow einer Batch-Lösung vertra
 [10]: ./media/batch-dotnet-get-started/credentials_storage_sm.png "Storage-Anmeldeinformationen im Portal"
 [11]: ./media/batch-dotnet-get-started/batch_workflow_minimal_sm.png "Batch-Lösungsworkflow (reduziertes Diagramm)"
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

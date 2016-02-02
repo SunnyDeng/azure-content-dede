@@ -22,7 +22,7 @@ Azure RemoteApp stattet Azure mit der Funktionalität des lokalen Microsoft Remo
 
 Mit Azure RemoteApp können Sie Apps und Ressourcen auf fast jedem Gerät für Benutzer freigeben. Wir hosten Ihre Apps in der Cloud, was bedeutet, dass wir uns um Hardware und Skalierung kümmern, um die Anforderungen der Benutzer zu erfüllen. Sie müssen lediglich die Apps, die Sie freigeben möchten, hochladen, und Ihre Benutzer dann dazu veranlassen, sie zu verwenden. [Benutzer behalten ihre eigenen Geräte](remoteapp-clients.md), während Sie alles über das Azure-Portal verwalten. Sie haben sogar die Möglichkeit, die Anmeldeinformationen Ihres Unternehmens zu verwenden, sodass Sie die Sicherheit von Apps und Daten gewährleisten.
 
-Nachfolgend erhalten Sie weitere Informationen zu Azure RemoteApp, und falls wir Sie schon überzeugt haben, können Sie es [jetzt ausprobieren](http://azure.microsoft.com/services/remoteapp/).
+Nachfolgend erhalten Sie weitere Informationen zu Azure RemoteApp. Falls wir Sie schon überzeugt haben, können Sie den Dienst [jetzt ausprobieren](https://azure.microsoft.com/services/remoteapp/).
 
 Haben Sie Fragen zu Azure RemoteApp? Schlagen Sie unter den [häufig gestellten Fragen](remoteapp-faq.md) nach.
 
@@ -36,11 +36,11 @@ Es gibt zwei Arten von [Azure RemoteApp-Sammlungen](remoteapp-collections.md):
 
 - Eine **Cloudsammlung** wird in der Cloud gehostet und speichert dort Daten für Programme. Benutzer können sich mit ihrem Microsoft-Konto oder mit den Anmeldeinformationen des Unternehmens, die mit Azure Active Directory verbunden sind oder synchronisiert werden, anmelden und auf die Apps zugreifen.
 
-	Verwenden Sie eine Cloudsammlung, wenn die Anwendung, die Sie freigeben möchten, keine Verbindung mit einer Ressource im privaten Netzwerk Ihres Unternehmens (beispielsweise über ein VPN-Gerät) erfordert. Eine Cloudsammlung ist geeignet, wenn die Anwendung Ressourcen wie das Internet, OneDrive oder Azure verwendet. Darüber hinaus lässt sie sich am schnellsten erstellen.
+	Verwenden Sie eine Cloud-Sammlung, wenn die Anwendung, die Sie freigeben möchten, keine Verbindung mit einer Ressource im privaten Netzwerk Ihres Unternehmens (beispielsweise über ein VPN-Gerät) erfordert. Eine Cloud-Sammlung ist geeignet, wenn die Anwendung Ressourcen wie das Internet, OneDrive oder Azure verwendet. Darüber hinaus lässt sie sich am schnellsten erstellen.
 
-- Eine **Hybridsammlung** wird in der Azure-Cloud gehostet und speichert dort die Daten. Benutzer können aber auch auf die Daten und Ressourcen zugreifen, die im lokalen Netzwerk gespeichert sind. Benutzer können sich mit den Anmeldeinformationen des Unternehmens, die mit Azure Active Directory verbunden sind oder synchronisiert werden, anmelden und auf die Apps zugreifen.
+- Eine **Hybrid-Sammlung** wird in der Azure-Cloud gehostet und speichert dort die Daten. Benutzer können aber auch auf die Daten und Ressourcen zugreifen, die im lokalen Netzwerk gespeichert sind. Benutzer können sich mit den Anmeldeinformationen des Unternehmens, die mit Azure Active Directory verbunden sind oder synchronisiert werden, anmelden und auf die Apps zugreifen.
 
-	Wählen Sie eine Hybridsammlung, wenn Sie eine Verbindung mit Ressourcen im privaten Netzwerk Ihres Unternehmens benötigen. Dies ist beispielsweise der Fall, wenn die Anwendung Zugriff Folgendes benötigt:
+	Wählen Sie eine Hybrid-Sammlung, wenn Sie eine Verbindung mit Ressourcen im privaten Netzwerk Ihres Unternehmens benötigen. Dies ist beispielsweise der Fall, wenn die Anwendung Zugriff Folgendes benötigt:
 
 	- Dateiserver in Ihrem Intranet
 	- Quicken
@@ -52,11 +52,11 @@ Die verschiedenen Sammlungen verfügen über verschiedene Optionen, einschließl
 
 
 ### Aktualisieren Ihrer Sammlung
-Einer der Hauptunterschiede zwischen Hybrid- und Cloudsammlungen ist die Behandlung von Softwareupdates. Bei einer Cloudsammlung, die das vorinstallierte Image von Office 365 ProPlus oder Office 2013 verwendet, brauchen Sie sich nicht um Updates zu kümmern. Der Dienst verwaltet sich selbst und stellt fortlaufend Updates für Apps und Betriebssystem bereit.
+Einer der Hauptunterschiede zwischen Hybrid- und Cloud-Sammlungen ist die Behandlung von Softwareupdates. Bei einer Cloud-Sammlung, die das vorinstallierte Image von Office 365 ProPlus oder Office 2013 verwendet, brauchen Sie sich nicht um Updates zu kümmern. Der Dienst verwaltet sich selbst und stellt fortlaufend Updates für Apps und Betriebssystem bereit.
 
-Bei Hybridsammlungen sowie bei Cloudsammlungen, die ein benutzerdefiniertes Vorlagenimage verwenden, sind Sie für die Wartung und Pflege von Image und Apps verantwortlich. Bei in die Domäne eingebundenen Images können Sie Updates mithilfe von Tools wie Windows Update, Gruppenrichtlinien oder System Center steuern.
+Bei Hybrid-Sammlungen sowie bei Cloud-Sammlungen, die ein benutzerdefiniertes Vorlagenimage verwenden, sind Sie für die Wartung und Pflege von Image und Apps verantwortlich. Bei in die Domäne eingebundenen Images können Sie Updates mithilfe von Tools wie Windows Update, Gruppenrichtlinien oder System Center steuern.
 
-Nach dem Update des benutzerdefinierten Vorlagenimages laden Sie das neue Image in die Azure-Cloud hoch und aktualisieren dann die Sammlung, um das neue Image zu verwenden. (Das können Sie über die Seite **Schnellstart** in Azure RemoteApp oder das Dashboard erledigen.)
+Nach dem Update des benutzerdefinierten Vorlagenimages laden Sie das neue Image in die Azure-Cloud hoch und aktualisieren dann die Sammlung, um das neue Image zu verwenden. (Das können Sie über die Seite **Schnellstart** in Azure RemoteApp oder über das Dashboard erledigen.)
 
 Weitere Informationen finden Sie unter [Aktualisieren Ihrer Sammlung](remoteapp-update.md).
 
@@ -78,6 +78,6 @@ Los! Probieren Sie es aus! Diese Artikel helfen Ihnen beim Einstieg in Azure Rem
  
 
 ### Helfen Sie uns, Ihnen zu helfen 
-Wussten Sie schon, dass Sie diesen Artikel im Bereich unten nicht nur bewerten und kommentieren, sondern ihn auch selbst ändern können? Fehlt etwas? Ist etwas nicht ganz richtig? Habe ich etwas geschrieben, das eher verwirrend ist? Scrollen Sie nach oben und klicken Sie auf **In GitHub bearbeiten**, um die gewünschten Änderungen vorzunehmen. Ihr Vorschlag wird uns vorgelegt, und wenn wir ihn bestätigt haben, werden Ihre Änderungen und Verbesserungen hier angezeigt.
+Wussten Sie schon, dass Sie diesen Artikel im Bereich unten nicht nur bewerten und kommentieren, sondern ihn auch selbst ändern können? Fehlt etwas? Ist etwas nicht ganz richtig? Habe ich etwas geschrieben, das eher verwirrend ist? Scrollen Sie nach oben, und klicken Sie auf **Edit on GitHub**, um die gewünschten Änderungen vorzunehmen. Ihr Vorschlag wird uns vorgelegt, und wenn wir ihn bestätigt haben, werden Ihre Änderungen und Verbesserungen hier angezeigt.
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0128_2016-->

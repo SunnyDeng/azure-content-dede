@@ -32,7 +32,7 @@ In diesem Artikel werden Sie durch die Schritte zum Erstellen, Konfigurieren, St
 
 ## Voraussetzungen
 
-1. Installieren Sie mit dem Webplattform-Installer die aktuelle Version der Azure PowerShell-Cmdlets. Sie können die neueste Version aus dem Abschnitt **Windows PowerShell** der [Downloadseite](http://azure.microsoft.com/downloads/) herunterladen und installieren.
+1. Installieren Sie mit dem Webplattform-Installer die aktuelle Version der Azure PowerShell-Cmdlets. Sie können die neueste Version aus dem Abschnitt **Windows PowerShell** der [Downloadseite](https://azure.microsoft.com/downloads/) herunterladen und installieren.
 2. Stellen Sie sicher, dass Sie über ein funktionierendes virtuelles Netzwerk mit einem gültigen Subnetz verfügen. Stellen Sie sicher, dass keine virtuellen Maschinen oder Cloudbereitstellungen das Subnetz verwenden. Das Application Gateway muss sich allein im Subnetz eines virtuellen Netzwerks befinden.
 3. Die Server, die Sie für die Verwendung des Application Gateways konfigurieren, müssen vorhanden sein oder Endpunkte aufweisen, die im virtuellen Netzwerk erstellt wurden oder denen eine öffentliche IP-Adresse/VIP zugewiesen wurde.
 
@@ -60,7 +60,7 @@ So erstellen Sie ein Application Gateway
 2. Erstellen Sie eine XML-Konfigurationsdatei oder ein Konfigurationsobjekt.
 3. Ordnen Sie die Konfiguration der neu erstellten Application Gateway-Ressource zu.
 
->[AZURE.NOTE]Falls Sie einen benutzerdefinierten Test für Ihr Application Gateway konfigurieren müssen, helfen Ihnen die entsprechenden Informationen unter [Erstellen eines Application Gateways mit benutzerdefinierten Tests mithilfe von PowerShell](application-gateway-create-probe-classic-ps.md) weiter. Weitere Informationen finden Sie unter [Benutzerdefinierte Tests und Systemüberwachung](application-gateway-probe-overview.md).
+>[AZURE.NOTE] Falls Sie einen benutzerdefinierten Test für Ihr Application Gateway konfigurieren müssen, helfen Ihnen die entsprechenden Informationen unter [Erstellen eines Application Gateways mit benutzerdefinierten Tests mithilfe von PowerShell](application-gateway-create-probe-classic-ps.md) weiter. Weitere Informationen finden Sie unter [Benutzerdefinierte Tests und Systemüberwachung](application-gateway-probe-overview.md).
 
 
 ### Erstellen einer Application Gateway-Ressource
@@ -98,7 +98,7 @@ Sie können das **Get-AzureApplicationGateway**-Cmdlet verwenden, um zu überpr�
 	VirtualIPs    : {}
 	DnsName       :
 
->[AZURE.NOTE]Der Standardwert für *InstanceCount* ist 2, der Maximalwert ist 10. Der Standardwert für *GatewaySize* ist "Medium". Sie können zwischen "Small", "Medium" und "Large" auswählen.
+>[AZURE.NOTE]  Der Standardwert für *InstanceCount* ist 2, der Maximalwert ist 10. Der Standardwert für *GatewaySize* ist "Medium". Sie können zwischen "Small", "Medium" und "Large" auswählen.
 
 
  *VirtualIPs* und *DnsName* werden leer angezeigt, da das Gateway noch nicht gestartet wurde. Die Werte werden erstellt, sobald das Gateway ausgeführt wird.
@@ -160,7 +160,7 @@ Kopieren Sie den folgenden Text in Editor.
 
 Bearbeiten Sie die Werte zwischen den Klammern für die Konfigurationselemente. Speichern Sie die Datei mit der Erweiterung XML.
 
->[AZURE.IMPORTANT]Für die Protokollelemente Http oder Https muss die Groß-/Kleinschreibung beachtet werden.
+>[AZURE.IMPORTANT] Für die Protokollelemente Http oder Https muss die Groß-/Kleinschreibung beachtet werden.
 
 Das folgende Beispiel zeigt, wie Sie mithilfe einer Konfigurationsdatei das Application Gateway für den Lastenausgleich von HTTP-Datenverkehr am öffentlichen Port 80 und zum Senden des Netzwerkdatenverkehrs an den Back-End-Port 80 zwischen zwei IP-Adressen einrichten:
 
@@ -225,7 +225,7 @@ Legen Sie anschließend das Application Gateway fest. Verwenden Sie das **Set-Az
 
 Das folgende Beispiel zeigt, wie Sie das Application Gateway mithilfe von Konfigurationsobjekten konfigurieren. Alle Konfigurationselemente müssen einzeln konfiguriert und anschließend einem Konfigurationsobjekt für das Application Gateway hinzugefügt werden. Nach dem Erstellen des Konfigurationsobjekts verwenden Sie den Befehl **Set-AzureApplicationGateway**, um die Konfiguration der zuvor erstellten Application Gateway-Ressource zuzuordnen.
 
->[AZURE.NOTE]Bevor Sie dem Konfigurationsobjekt einen Wert zuweisen, müssen Sie deklarieren, welcher Objekttyp in PowerShell zum Speichern verwendet wird. Die erste Zeile zum Erstellen der einzelnen Elemente definiert, welches Microsoft.WindowsAzure.Commands.ServiceManagement.Network.ApplicationGateway.Model(Objektname) verwendet wird.
+>[AZURE.NOTE] Bevor Sie dem Konfigurationsobjekt einen Wert zuweisen, müssen Sie deklarieren, welcher Objekttyp in PowerShell zum Speichern verwendet wird. Die erste Zeile zum Erstellen der einzelnen Elemente definiert, welches Microsoft.WindowsAzure.Commands.ServiceManagement.Network.ApplicationGateway.Model(Objektname) verwendet wird.
 
 ### Schritt 1
 
@@ -331,7 +331,7 @@ Ordnen Sie das Konfigurationsobjekt der Application Gateway-Ressource zu, indem 
 Verwenden Sie nach dem Konfigurieren des Gateways das **Start-AzureApplicationGateway**-Cmdlet, um das Gateway zu starten. Die Abrechnung für ein Application Gateway beginnt, nachdem das Gateway erfolgreich gestartet wurde.
 
 
-> [AZURE.NOTE]Es kann 15 bis 20 Minuten dauern, bis der Vorgang für das **Start-AzureApplicationGateway**-Cmdlet abgeschlossen ist.
+> [AZURE.NOTE] Es kann 15 bis 20 Minuten dauern, bis der Vorgang für das **Start-AzureApplicationGateway**-Cmdlet abgeschlossen ist.
 
 
 
@@ -414,4 +414,4 @@ Weitere Informationen zu Lastenausgleichsoptionen im Allgemeinen finden Sie unte
 - [Azure-Lastenausgleich](https://azure.microsoft.com/documentation/services/load-balancer/)
 - [Azure Traffic Manager](https://azure.microsoft.com/documentation/services/traffic-manager/)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

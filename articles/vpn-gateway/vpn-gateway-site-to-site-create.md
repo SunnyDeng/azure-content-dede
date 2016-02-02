@@ -37,7 +37,7 @@ Vergewissern Sie sich vor Beginn der Konfiguration, dass Sie über Folgendes ver
 
 -  Eine externe öffentliche IP-Adresse für Ihr VPN-Gerät. Diese IP-Adresse darf sich nicht hinter einer NAT befinden.
 
-- Ein Azure-Abonnement. Wenn Sie noch kein Abonnement haben, können Sie Ihre [MSDN-Abonnentenvorteile](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) aktivieren oder sich für eine [kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/) registrieren.
+- Ein Azure-Abonnement. Wenn Sie noch kein Abonnement haben, können Sie Ihre [MSDN-Abonnentenvorteile](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) aktivieren oder sich für eine [kostenlose Testversion](https://azure.microsoft.com/pricing/free-trial/) registrieren.
 
 
 ## Erstellen des virtuellen Netzwerks
@@ -100,4 +100,4 @@ Sie können dem virtuellen Netzwerk virtuelle Computer hinzufügen. Weitere Info
 
 Wenn Sie eine Verbindung zwischen dem klassischen virtuellen Netzwerk und einem virtuellen Netzwerk, das mit dem Azure-Ressourcen-Manager-Modus erstellt wurde, konfigurieren möchten, finden Sie weitere Informationen unter [Herstellen einer Verbindung zwischen klassischen VNets und VNets des Azure-Ressourcen-Managers](../virtual-network/virtual-networks-arm-asm-s2s-howto.md).
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

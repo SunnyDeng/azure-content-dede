@@ -26,7 +26,7 @@
 
 [AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]&nbsp;
 
->[AZURE.TIP]Wenn Sie gerade in die mobile Entwicklung mit Microsoft Azure einsteigen, [beginnen Sie mit Azure Mobile Apps](app-service-mobile-dotnet-backend-windows-store-dotnet-get-started-preview.md) anstatt mit Azure Mobile Services. Mit Mobile Apps erhalten Sie [zusätzliche Vorteile](app-service-mobile-value-prop-migration-from-mobile-services-preview.md).
+>[AZURE.TIP] Wenn Sie gerade in die mobile Entwicklung mit Microsoft Azure einsteigen, [beginnen Sie mit Azure Mobile Apps](app-service-mobile-dotnet-backend-windows-store-dotnet-get-started-preview.md) anstatt mit Azure Mobile Services. Mit Mobile Apps erhalten Sie [zusätzliche Vorteile](app-service-mobile-value-prop-migration-from-mobile-services-preview.md).
 
 In diesem Lernprogramm wird gezeigt, wie Sie einer universellen Windows-App einen cloudbasierten Back-End-Dienst unter Verwendung von Azure Mobile Services hinzufügen. Universelle Windows-App-Lösungen beinhalten Projekte für Windows Store 8.1, Windows Phone Store 8.1-Apps und ein gemeinsames, geteiltes Projekt. Weitere Informationen finden Sie unter [Erstellen universeller Windows-Apps, die Windows und Windows Phone als Ziel verwenden](http://msdn.microsoft.com/library/windows/apps/xaml/dn609832.aspx).
 
@@ -40,7 +40,7 @@ In diesem Lernprogramm erstellen Sie einen neuen mobilen Dienst und eine einfach
 
 Für dieses Lernprogramm benötigen Sie Folgendes:
 
-* Ein aktives Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Dienste, die Sie auch nach Ablauf der Testversion weiter nutzen können. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-windows-store-dotnet-get-started%2F).
+* Ein aktives Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Dienste, die Sie auch nach Ablauf der Testversion weiter nutzen können. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdocumentation%2Farticles%2Fmobile-services-dotnet-backend-windows-store-dotnet-get-started%2F).
 * [Visual Studio 2013].
 
 ## Erstellen eines neuen mobilen Diensts
@@ -132,4 +132,4 @@ Weitere Informationen zu universellen Windows-Apps finden Sie unter [Unterstütz
 [klassischen Azure-Portal]: https://manage.windowsazure.com/
 [Beheben von Problemen bei einem Mobile Services .NET-Back-End]: mobile-services-dotnet-backend-how-to-troubleshoot.md
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

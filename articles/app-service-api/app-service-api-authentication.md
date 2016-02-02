@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="hero-article"
-	ms.date="01/07/2016"
+	ms.date="01/21/2016"
 	ms.author="tdykstra"/>
 
 # Authentifizierung und Autorisierung für API-Apps in Azure App Service
@@ -74,6 +74,8 @@ Im [Azure-Portal](https://portal.azure.com/) wählen Sie die gewünschte Option 
 Aktivieren Sie für Option 1 und 2 **App Service-Authentifizierung**, und wählen Sie in der Dropdownliste **Auszuführende Aktion, wenn Anforderung nicht authentifiziert wird** die Option **Anmelden** oder **Anforderung zulassen (keine Aktion)**. Wenn Sie **Anmelden** wählen, müssen Sie einen Authentifizierungsanbieter auswählen und konfigurieren.
 
 ![](./media/app-service-api-authentication/actiontotake.png)
+
+Ausführliche Informationen zum Konfigurieren der Authentifizierung finden Sie unter [So konfigurieren Sie Ihre App Service-Anwendung zur Verwendung der Azure Active Directory-Anmeldung](../app-service-mobile/app-service-mobile-how-to-configure-active-directory-authentication.md). Der Artikel gilt für API-Apps sowie für mobile Apps und enthält Links zu weiteren Artikeln für andere Authentifizierungsanbieter.
  
 ## <a id="internal"></a> Dienstkontoauthentifizierung
 
@@ -81,7 +83,7 @@ Die App Service-Authentifizierung eignet sich für interne Szenarien, z. B. fü
 
 Schützen Sie in Dienst-zu-Dienst-Szenarien die aufgerufene API-App mithilfe von Azure Active Directory, und stellen Sie ein AAD-Dienstprinzipal-Autorisierungstoken bereit, wenn Sie die API-App aufrufen. Sie können ein Token anfordern, indem Sie die Client-ID und den geheimen Clientschlüssel aus der AAD-Anwendung bereitstellen. Es ist kein spezieller Azure-Code erforderlich, wie er beispielsweise für das Behandeln des Mobile Services-Zumo-Tokens benötigt wurde. Ein Beispiel für dieses Szenario mithilfe von ASP.NET-API-Apps finden Sie in dem Tutorial [Dienstprinzipalauthentifizierung für API-Apps in Azure App Service](app-service-api-dotnet-service-principal-auth.md).
 
-Wenn Sie ein Dienst-zu-Dienst-Szenario ohne App Service-Authentifizierung behandeln möchten, können Sie Clientzertifikate oder Standardauthentifizierung verwenden. Informationen zu Clientzertifikaten in Azure finden Sie unter [Konfigurieren von gegenseitiger TLS-Authentifizierung für Web-Apps](../app-service-web/app-service-web-configure-tls-mutual-auth.md). Informationen zur grundlegenden Authentifizierung in ASP.NET finden Sie unter [Authentication Filters in ASP.NET Web API 2](http://www.asp.net/web-api/overview/security/authentication-filters).
+Wenn Sie ein Dienst-zu-Dienst-Szenario ohne App Service-Authentifizierung behandeln möchten, können Sie Clientzertifikate oder Standardauthentifizierung verwenden. Informationen zu Clientzertifikaten in Azure finden Sie unter [Konfigurieren von gegenseitiger TLS-Authentifizierung für Web-Apps](../app-service-web/app-service-web-configure-tls-mutual-auth.md). Informationen zur grundlegenden Authentifizierung in ASP.NET finden Sie unter [Authentication Filters in ASP.NET Web API 2](http://www.asp.net/web-api/overview/security/authentication-filters) (Authentifizierungsfilter in ASP.NET-Web-API 2).
 
 Dienstkontoauthentifizierung von einer App Service-Logik-App zu einer API-App ist ein Sonderfall, der in [Verwenden der in App Service gehosteten benutzerdefinierten API mit Logik-Apps](../app-service-logic/app-service-logic-custom-hosted-api.md) erklärt wird.
 
@@ -91,7 +93,10 @@ Informationen zur Authentifizierung von mobilen Clients finden Sie in der [Dokum
   
 ## Weitere Informationen
 
-Weitere Informationen zu Authentifizierungs- und Autorisierungsdiensten in Azure App Service finden Sie unter [Erweitern der App Service-Authentifizierung/Autorisierung](/blog/announcing-app-service-authentication-authorization/).
+Weitere Informationen zur Authentifizierung und Autorisierung in Azure App Service finden Sie in den folgenden Ressourcen:
+
+* [Expanding App Service authentication / authorization](/blog/announcing-app-service-authentication-authorization/) (Erweitern der App Service-Authentifizierung/-Autorisierung)
+* [So konfigurieren Sie Ihre App Service-Anwendung zur Verwendung der Azure Active Directory-Anmeldung](../app-service-mobile/app-service-mobile-how-to-configure-active-directory-authentication.md) (Enthält oben auf der Seite Links für andere Authentifizierungsanbieter.) 
 
 Weitere Informationen zu OAuth 2.0, OpenID Connect und JSON-Webtoken (JWT) finden Sie in den folgenden Ressourcen.
 
@@ -113,4 +118,4 @@ Wenn Sie der Erste-Schritte-Sequenz der Tutorials für ASP.NET- und API-Apps fol
 
 Weitere Informationen zur Verwendung von Knoten und Java in Azure App Service finden Sie unter [Node.js Developer Center](/develop/nodejs/) und [Java Developer Center](/develop/java/).
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->
