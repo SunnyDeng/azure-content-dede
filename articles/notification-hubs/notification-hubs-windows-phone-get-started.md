@@ -53,6 +53,7 @@ Der Hub ist jetzt erstellt und so konfiguriert, dass nicht authentifizierte Bena
 
 > [AZURE.NOTE] Dieses Lernprogramm verwendet MPNS im nicht authentifizierten Modus. Im nicht authentifizierten MPNS-Modus liegen Einschränkungen für Benachrichtigungen vor, die Sie an jeden Kanal senden können. Notification Hubs unterstützt den [authentifizierten MPNS-Modus](http://msdn.microsoft.com/library/windowsphone/develop/ff941099.aspx), wodurch Sie Ihr Zertifikat hochladen können.
 
+
 ##Verbinden Ihrer App mit dem Notification Hub
 
 1. Erstellen Sie in Visual Studio eine neue Windows Phone 8-Anwendung.
@@ -78,7 +79,7 @@ Der Hub ist jetzt erstellt und so konfiguriert, dass nicht authentifizierte Bena
         using Microsoft.Phone.Notification;
         using Microsoft.WindowsAzure.Messaging;
 
-5. Fügen Sie den folgenden Code oben in der Methode **Application\_Launching** in „App.xaml.cs“ ein:
+5. Fügen Sie den folgenden Code oben in der Methode **Application_Launching** in „App.xaml.cs“ ein:
 
 	    var channel = HttpNotificationChannel.Find("MyPushChannel");
         if (channel == null)
@@ -103,7 +104,7 @@ Der Hub ist jetzt erstellt und so konfiguriert, dass nicht authentifizierte Bena
 
 	>[AZURE.NOTE]Dieses Lernprogramm sendet eine Popupbenachrichtigung an das Gerät. Wenn Sie eine Kachelbenachrichtigung senden, müssen Sie stattdessen die **BindToShellTile**-Methode für den Kanal aufrufen. Um Popup- und Kachelbenachrichtigungen zu unterstützen, rufen Sie beide Methoden, **BindToShellTile** und **BindToShellToast**, auf.
 
-6. Erweitern Sie im Projektmappen-Explorer **Eigenschaften**, öffnen Sie die Datei „WMAppManifest.xml“, klicken Sie auf die Registerkarte **Funktionen**, und aktivieren Sie die Funktion **ID\_CAP\_PUSH\_NOTIFICATION**.
+6. Erweitern Sie im Projektmappen-Explorer **Eigenschaften**, öffnen Sie die Datei „WMAppManifest.xml“, klicken Sie auf die Registerkarte **Funktionen**, und aktivieren Sie die Funktion **ID_CAP_PUSH_NOTIFICATION**.
 
    	![][14]
 
@@ -146,8 +147,8 @@ Sie können Benachrichtigungen mit Notification Hubs von jedem beliebigen Back-E
         {
             NotificationHubClient hub = NotificationHubClient
 				.CreateClientFromConnectionString("<connection string with full access>", "<hub name>");
-            string toast = "<?xml version="1.0" encoding="utf-8"?>" +
-                "<wp:Notification xmlns:wp="WPNotification">" +
+            string toast = "<?xml version=\"1.0\" encoding=\"utf-8\"?>" +
+                "<wp:Notification xmlns:wp=\"WPNotification\">" +
                    "<wp:Toast>" +
                         "<wp:Text1>Hello from a .NET App!</wp:Text1>" +
                    "</wp:Toast> " +

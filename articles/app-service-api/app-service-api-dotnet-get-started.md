@@ -176,7 +176,7 @@ In diesem Abschnitt des Tutorials geht es um die generierten Swagger 2.0-Metada
 
 1. Schließen Sie den Browser.
 
-3. Öffnen Sie im Projekt ToDoListDataAPI im **Projektmappen-Explorer** die Datei *App\_Start\\SwaggerConfig.cs*, und scrollen Sie dann nach unten zum folgenden Code. Heben Sie die Auskommentierung für diesen Code auf.
+3. Öffnen Sie im Projekt ToDoListDataAPI im **Projektmappen-Explorer** die Datei *App_Start\SwaggerConfig.cs*, und scrollen Sie dann nach unten zum folgenden Code. Heben Sie die Auskommentierung für diesen Code auf.
 
 		/*
 		    })
@@ -388,7 +388,7 @@ Das Projekt ToDoListAPI enthält bereits den generierten Clientcode. Sie lösche
 
 	![](./media/app-service-api-dotnet-get-started/codegenfiles.png)
 
-5. Öffnen Sie im Projekt ToDoListAPI die Datei *Controllers\\ToDoListController.cs*, um den Code zum Aufrufen der API mit dem generierten Client anzuzeigen.
+5. Öffnen Sie im Projekt ToDoListAPI die Datei *Controllers\ToDoListController.cs*, um den Code zum Aufrufen der API mit dem generierten Client anzuzeigen.
 
 	Der folgende Codeausschnitt zeigt, wie mit dem Code das Clientobjekt instanziiert und die Get-Methode aufgerufen wird.
 

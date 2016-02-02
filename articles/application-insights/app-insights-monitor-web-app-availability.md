@@ -129,7 +129,7 @@ Um einen mehrstufigen Ttest zu erstellen, zeichnen das Szenario mit Visual Studi
 
 Beachten Sie, dass Sie keine codierten Funktionen in den Tests verwenden können: Die Szenarioschritte müssen als Skript in der Webtest-Datei enthalten sein.
 
-#### 1\. Aufzeichnen eines Szenarios
+#### 1. Aufzeichnen eines Szenarios
 
 Verwenden Sie Visual Studio Enterprise oder Ultimate, um eine Websitzung aufzuzeichnen.
 
@@ -160,7 +160,7 @@ Verwenden Sie Visual Studio Enterprise oder Ultimate, um eine Websitzung aufzuze
     ![Öffnen Sie in Visual Studio die WEBTEST-Datei, und klicken Sie auf "Ausführen".](./media/app-insights-monitor-web-app-availability/appinsights-71webtest-multi-vs-run.png)
 
 
-#### 2\. Hochladen des Webtests in Application Insights
+#### 2. Hochladen des Webtests in Application Insights
 
 1. Erstellen Sie im Application Insights-Portal einen neuen Webtest.
 

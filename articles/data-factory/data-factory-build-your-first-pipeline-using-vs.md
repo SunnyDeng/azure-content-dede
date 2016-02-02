@@ -262,7 +262,7 @@ In diesem Schritt erstellen Sie Ihre erste Pipeline mit einer **HDInsightHive**-
 ### Hinzufügen von „partitionweblogs.hql“ und „input.log“ als Abhängigkeit 
 
 1. Klicken Sie mit der rechten Maustaste im Fenster **Projektmappen-Explorer** auf **Abhängigkeiten**, zeigen Sie auf **Hinzufügen**, und klicken Sie auf **Vorhandenes Element**.  
-2. Navigieren Sie zu **C:\\ADFGettingStarted**, wählen Sie die Dateien **partitionweblogs.hql** und **input.log** aus, und klicken Sie auf **Hinzufügen**. Sie hätten diese beiden Dateien als Teil der erforderlichen Komponenten aus der [Übersicht über das Tutorial](data-factory-build-your-first-pipeline.md) erstellt.
+2. Navigieren Sie zu **C:\ADFGettingStarted**, wählen Sie die Dateien **partitionweblogs.hql** und **input.log** aus, und klicken Sie auf **Hinzufügen**. Sie hätten diese beiden Dateien als Teil der erforderlichen Komponenten aus der [Übersicht über das Tutorial](data-factory-build-your-first-pipeline.md) erstellt.
 
 Beim Veröffentlichen der Lösung im nächsten Schritt wird die Datei **partitionweblogs.hql** in den Skriptordner **adfgetstarted** im Blobcontainer hochgeladen.
 

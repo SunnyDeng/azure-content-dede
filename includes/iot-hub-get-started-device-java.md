@@ -27,7 +27,7 @@ In diesem Abschnitt erstellen Sie eine Java-Konsolenanwendung, die ein Gerät si
 
 4. Speichern und schließen Sie die Datei „pom.xml“.
 
-5. Öffnen Sie die Datei „simulated-device\\src\\main\\java\\com\\mycompany\\app\\App.java“ mit einem Text-Editor.
+5. Öffnen Sie die Datei „simulated-device\src\main\java\com\mycompany\app\App.java“ mit einem Text-Editor.
 
 6. Fügen Sie der Datei die folgenden **import**-Anweisungen hinzu:
 

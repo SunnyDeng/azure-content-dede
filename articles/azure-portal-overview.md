@@ -18,7 +18,11 @@
 
 # Übersicht über das Microsoft Azure-Portal
 
-Das Microsoft Azure-Portal ist eine zentrale Anlaufstelle zum Bereitstellen und Verwalten von Azure-Ressourcen. Dieses Lernprogramm macht Sie mit dem Portal vertraut und zeigt Ihnen, wie die folgenden wichtigen Funktionen verwendet werden: - Der **Marketplace**, auf dem Sie Tausende Artikel von Microsoft oder Drittanbietern durchsuchen können, die gekauft und/oder bereitgestellt werden können. - **Einheitliche und skalierbare Suchfunktion**, mit der Sie die Ressourcen, die Sie interessieren, leichter finden und verschiedene Verwaltungsvorgänge ausführen können. - **Konsistente Verwaltungsbereiche** („Blades“), mit denen Sie die große Vielfalt der Azure-Dienste verwalten können und die Ihnen Einstellungen, Aktionen, Abrechnungsinformationen, Zustandsdaten, Nutzungsdaten und vieles mehr auf einheitliche Art und Weise zur Verfügung stellen. - Ein **individuelles Benutzererlebnis**, das es Ihnen ermöglicht, eine persönliche Startseite zu erstellen, die Ihnen bei jedem Anmelden die gewünschten Informationen anzeigt. Sie können auch die Verwaltungsbereiche anpassen, die Kacheln enthalten.
+Das Microsoft Azure-Portal ist eine zentrale Anlaufstelle zum Bereitstellen und Verwalten von Azure-Ressourcen. Dieses Lernprogramm macht Sie mit dem Portal vertraut und zeigt Ihnen, wie die folgenden wichtigen Funktionen verwendet werden: 
+- Der **Marketplace**, auf dem Sie Tausende Artikel von Microsoft oder Drittanbietern durchsuchen können, die gekauft und/oder bereitgestellt werden können. 
+- **Einheitliche und skalierbare Suchfunktion**, mit der Sie die Ressourcen, die Sie interessieren, leichter finden und verschiedene Verwaltungsvorgänge ausführen können. 
+- **Konsistente Verwaltungsbereiche** („Blades“), mit denen Sie die große Vielfalt der Azure-Dienste verwalten können und die Ihnen Einstellungen, Aktionen, Abrechnungsinformationen, Zustandsdaten, Nutzungsdaten und vieles mehr auf einheitliche Art und Weise zur Verfügung stellen. 
+- Ein **individuelles Benutzererlebnis**, das es Ihnen ermöglicht, eine persönliche Startseite zu erstellen, die Ihnen bei jedem Anmelden die gewünschten Informationen anzeigt. Sie können auch die Verwaltungsbereiche anpassen, die Kacheln enthalten.
 
  ![Azure-Portal-UI-Ausrichtung][UIOrientation]
 
@@ -76,7 +80,13 @@ Sollten Sie auf ein Problem stoßen, sind wir für Sie da. Das Portal verfügt �
 
 ## Zusammenfassung
 
-Überprüfen wir, was Sie in diesem Lernprogramm gelernt haben: - Sie haben gelernt, sich zu registrieren, ein Abonnement zu erhalten und zu dem Portal zu navigieren - Sie haben die Benutzeroberfläche des Portals kennengelernt und erfahren, wie man Ressourcen erstellt und danach sucht - Sie haben die Struktur des Portals bzw. die Verwaltungsbereiche (Blades) kennengelernt und erfahren, wie verschiedene Arten von Ressourcen einheitlich verwaltet werden können - Sie wissen nun, wie Sie das Portal anpassen können, um die gewünschten Informationen griffbereit zu haben - Sie wissen nun, wie der Zugriff auf Ressourcen mithilfe des rollenbasierten Zugriffs (RBAC) gesteuert werden kann - Sie haben erfahren, wie Sie auf Hilfe und Support zugreifen können.
+Überprüfen wir, was Sie in diesem Lernprogramm gelernt haben: 
+- Sie haben gelernt, sich zu registrieren, ein Abonnement zu erhalten und zu dem Portal zu navigieren 
+- Sie haben die Benutzeroberfläche des Portals kennengelernt und erfahren, wie man Ressourcen erstellt und danach sucht 
+- Sie haben die Struktur des Portals bzw. die Verwaltungsbereiche (Blades) kennengelernt und erfahren, wie verschiedene Arten von Ressourcen einheitlich verwaltet werden können 
+- Sie wissen nun, wie Sie das Portal anpassen können, um die gewünschten Informationen griffbereit zu haben 
+- Sie wissen nun, wie der Zugriff auf Ressourcen mithilfe des rollenbasierten Zugriffs (RBAC) gesteuert werden kann 
+- Sie haben erfahren, wie Sie auf Hilfe und Support zugreifen können.
 
 Das Microsoft Azure-Portal vereinfacht die Erstellung und Verwaltung Ihrer Anwendungen in der Cloud radikal. Um auf dem Laufenden zu bleiben, besuchen Sie unseren [Verwaltungsblog](https://azure.microsoft.com/blog/topics/management/). Wir sind stets offen für [Feedback](https://feedback.azure.com/forums/223579-azure-preview-portal/) und nehmen ständig Verbesserungen vor. Der Blog von [ScottGu](http://weblogs.asp.net/scottgu) ist eine weitere umfangreiche Quelle für alle Azure-Aktualisierungen.
 

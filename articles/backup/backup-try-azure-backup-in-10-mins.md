@@ -7,7 +7,14 @@
    manager="shreeshd"
    editor=""/>
 
-<tags ms.service="backup" ms.workload="storage-backup-recovery" ms.tgt_pltfrm="na" ms.devlang="na" ms.topic="get-started-article" ms.date="11/26/2015" ms.author="aashishr"; "jimpark"/>
+<tags 
+ms.service="backup" 
+ms.workload="storage-backup-recovery"
+ ms.tgt_pltfrm="na"
+  ms.devlang="na" 
+	 ms.topic="get-started-article"
+	 ms.date="11/26/2015"
+	 ms.author="aashishr"; "jimpark"/>
 
 # Erste Schritte mit Azure Backup
 Die Einrichtung von Azure Backup ist überaus einfach. Die folgenden Videos mit Anleitungen sollen Ihnen den Einsteig erleichtern.

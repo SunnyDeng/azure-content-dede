@@ -235,7 +235,7 @@ In diesem Abschnitt senden Sie Benachrichtigungen mithilfe einer .NET-Konsolen-A
         private static async void SendNotificationAsync()
         {
             NotificationHubClient hub = NotificationHubClient.CreateClientFromConnectionString("<connection string with full access>", "<hub name>");
-            var alert = "{"aps":{"alert":"Hello from .NET!"}}";
+            var alert = "{\"aps\":{\"alert\":\"Hello from .NET!\"}}";
             await hub.SendAppleNativeNotificationAsync(alert);
         }
 

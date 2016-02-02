@@ -31,11 +31,11 @@ Dieses Thema beschreibt die ersten Schritte mit Azure Redis Cache und Node.js. E
 
 ## Voraussetzungen
 
-Installieren Sie [node\_redis](https://github.com/mranney/node_redis):
+Installieren Sie [node_redis](https://github.com/mranney/node_redis):
 
     npm install redis
 
-In diesem Lernprogramm wird [node\_redis](https://github.com/mranney/node_redis) verwendet. Sie können jedoch alle unter [http://redis.io/clients](http://redis.io/clients) aufgeführten Node.js-Clients verwenden.
+In diesem Lernprogramm wird [node_redis](https://github.com/mranney/node_redis) verwendet. Sie können jedoch alle unter [http://redis.io/clients](http://redis.io/clients) aufgeführten Node.js-Clients verwenden.
 
 ## Erstellen eines Redis-Caches in Azure
 

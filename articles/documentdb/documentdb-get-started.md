@@ -376,7 +376,7 @@ Die Ausgabe der GetStarted-Anwendung sollte jetzt angezeigt werden. Die Ausgabe 
 	  "_rid": "ybVlALUoqAEBAAAAAAAAAA==",
 	  "_ts": 1428372205,
 	  "_self": "dbs/ybVlAA==/colls/ybVlALUoqAE=/docs/ybVlALUoqAEBAAAAAAAAAA==/",
-	  "_etag": ""0000400c-0000-0000-0000-55233aed0000"",
+	  "_etag": "\"0000400c-0000-0000-0000-55233aed0000\"",
 	  "_attachments": "attachments/"
 	} from SQL
 	Read {
@@ -414,7 +414,7 @@ Die Ausgabe der GetStarted-Anwendung sollte jetzt angezeigt werden. Die Ausgabe 
 	  "_rid": "ybVlALUoqAEBAAAAAAAAAA==",
 	  "_ts": 1428372205,
 	  "_self": "dbs/ybVlAA==/colls/ybVlALUoqAE=/docs/ybVlALUoqAEBAAAAAAAAAA==/",
-	  "_etag": ""0000400c-0000-0000-0000-55233aed0000"",
+	  "_etag": "\"0000400c-0000-0000-0000-55233aed0000\"",
 	  "_attachments": "attachments/"
 	} from LINQ
 	Read {
@@ -452,7 +452,7 @@ Die Ausgabe der GetStarted-Anwendung sollte jetzt angezeigt werden. Die Ausgabe 
 	  "_rid": "ybVlALUoqAEBAAAAAAAAAA==",
 	  "_ts": 1428372205,
 	  "_self": "dbs/ybVlAA==/colls/ybVlALUoqAE=/docs/ybVlALUoqAEBAAAAAAAAAA==/",
-	  "_etag": ""0000400c-0000-0000-0000-55233aed0000"",
+	  "_etag": "\"0000400c-0000-0000-0000-55233aed0000\"",
 	  "_attachments": "attachments/"
 	} from LINQ query
 

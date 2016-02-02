@@ -185,7 +185,6 @@ In weniger als 5 Minuten haben Sie eine einfache Logik-App eingerichtet, die in 
 
 <!-- Shared links -->
 [Azure portal]: https://portal.azure.com
-[Use logic app features]: app-service-logic-use-logic-app-features.md
 [Verwenden von Logik-App-Features]: app-service-logic-use-logic-app-features.md
 
 <!---HONumber=AcomDC_0128_2016-->

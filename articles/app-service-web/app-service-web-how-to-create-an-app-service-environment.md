@@ -30,7 +30,13 @@ Für die ASE-Erstellung muss der Kunde die folgenden Informationen bereitstellen
 - Azure VNET-Auswahl (Virtual Network) zusammen mit einem Subnetz
 - ASE-Ressourcenpooldefinition
 
-Zu jedem dieser Elemente gibt es einige wichtige Details. Der Name der ASE wird in der Unterdomäne für alle Apps verwendet, die in dieser ASE erstellt werden. Alle in einer ASE erstellten Apps befinden sich in demselben Abonnement wie die ASE selbst. Wenn Sie nicht auf das Abonnement zugreifen können, das zum Erstellen der ASE verwendet wurde, können Sie die ASE nicht zum Erstellen von Apps verwenden. VNETs, die zum Hosten einer ASE verwendet werden, müssen regionale klassische „v1“-VNETs sein. Das zum Hosten der ASE verwendete Subnetz darf keine weiteren Computeressourcen enthalten. Ein Subnetz kann nur eine ASE enthalten.
+Zu jedem dieser Elemente gibt es einige wichtige Details. 
+- Der Name der ASE wird in der Unterdomäne für alle Apps verwendet, die in dieser ASE erstellt werden. 
+- Alle in einer ASE erstellten Apps befinden sich in demselben Abonnement wie die ASE selbst. 
+- Wenn Sie nicht auf das Abonnement zugreifen können, das zum Erstellen der ASE verwendet wurde, können Sie die ASE nicht zum Erstellen von Apps verwenden. 
+- VNETs, die zum Hosten einer ASE verwendet werden, müssen regionale klassische „v1“-VNETs sein. 
+- Das zum Hosten der ASE verwendete Subnetz darf keine weiteren Computeressourcen enthalten. 
+- Ein Subnetz kann nur eine ASE enthalten.
 
 Jede Bereitstellung einer App Service-Umgebung ist ein gehosteter Dienst, der von Azure verwaltet und gewartet wird. Die Compute-Ressourcen, welche die Systemrollen der App Service-Umgebung hosten, sind für den Kunden nicht zugänglich. Der Kunde verwaltet jedoch die Menge der Instanzen und deren Größen.
 
@@ -127,7 +133,8 @@ Folgende Einstellungen können Sie nicht ändern:
 
 Hier finden Sie weitere Details zur manuellen Skalierung, Verwaltung und Überwachung von App Service-Umgebungen: [Konfigurieren einer App Service-Umgebung][ASEConfig]
 
-Weitere Informationen zur automatischen Skalierung finden Sie in diesem Leitfaden: [Konfigurieren der automatischen Skalierung für eine App Service-Umgebung][ASEAutoscale].
+Weitere Informationen zur automatischen Skalierung finden Sie in diesem Leitfaden: 
+[Konfigurieren der automatischen Skalierung für eine App Service-Umgebung][ASEAutoscale].
 
 Es gibt zusätzliche Abhängigkeiten, die nicht zur Anpassung zur Verfügung stehen, wie beispielsweise Datenbank und Speicher. Diese werden von Azure verwaltet und sind im System enthalten. Der Systemspeicher unterstützt bis zu 500 GB für die gesamte App Service-Umgebung, und die Datenbank wird von Azure nach Bedarf an die Staffelung des Systems angepasst.
 

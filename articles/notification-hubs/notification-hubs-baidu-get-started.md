@@ -264,7 +264,7 @@ Die Nachricht **保存成功！** (**Erfolgreich gespeichert!**) wird angezeigt.
 				public static String NotificationHubConnectionString = "...";
 			}
 
-	Legen Sie für den Wert von **API\_KEY** den Wert fest, den Sie zuvor aus dem Baidu-Cloud-Projekt abgerufen haben, für **NotificationHubName** Ihren Notification Hub-Namen aus dem klassischen Azure-Portal und für **NotificationHubConnectionString** die „DefaultListenSharedAccessSignature“ aus dem klassischen Azure-Portal.
+	Legen Sie für den Wert von **API_KEY** den Wert fest, den Sie zuvor aus dem Baidu-Cloud-Projekt abgerufen haben, für **NotificationHubName** Ihren Notification Hub-Namen aus dem klassischen Azure-Portal und für **NotificationHubConnectionString** die „DefaultListenSharedAccessSignature“ aus dem klassischen Azure-Portal.
 
 11. Fügen Sie eine neue Klasse namens **DemoApplication.java** mit dem folgenden Code hinzu:
 
@@ -373,15 +373,15 @@ Die Nachricht **保存成功！** (**Erfolgreich gespeichert!**) wird angezeigt.
 		    @Override
 		    public void onNotificationClicked(Context context, String title,
 		            String description, String customContentString) {
-		        String notifyString = "title="" + title + "" description=""
-		                + description + "" customContent=" + customContentString;
+		        String notifyString = "title=\"" + title + "\" description=\""
+		                + description + "\" customContent=" + customContentString;
 		        Log.d(TAG, notifyString);
 		    }
 
 		    @Override
 		    public void onMessage(Context context, String message,
 		            String customContentString) {
-		        String messageString = "message="" + message + "" customContentString=" + customContentString;
+		        String messageString = "message=\"" + message + "\" customContentString=" + customContentString;
 		        Log.d(TAG, messageString);
 		    }
 		}
@@ -442,7 +442,7 @@ In diesem Abschnitt zeigen wir das Senden einer Benachrichtigung über eine .NET
 		private static async void SendNotificationAsync()
 		{
 			NotificationHubClient hub = NotificationHubClient.CreateClientFromConnectionString("DefaultFullSharedAccessSignatureSASConnectionString", "NotificationHubName");
-			string message = "{"title":"((Notification title))","description":"Hello from Azure"}";
+			string message = "{\"title\":\"((Notification title))\",\"description\":\"Hello from Azure\"}";
 			var result = await hub.SendBaiduNativeNotificationAsync(message);
 		}
 

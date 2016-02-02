@@ -65,9 +65,11 @@ So erstellen Sie einen Dienstnamespace:
 
 Wenn Sie Verwaltungsvorgänge ausführen möchten, z. B. das Erstellen einer Relayverbindung für den neuen Namespace, müssen Sie die SAS-Autorisierungsregel (Shared Access Signature) für den Namespace konfigurieren. Weitere Informationen zu SAS finden Sie unter [SAS-Authentifizierung (Shared Access Signature) mit Service Bus][].
 
-1.  Klicken Sie im linken Navigationsbereich auf den Knoten **Service Bus**, um die Liste verfügbarer Namespaces anzuzeigen. ![](./media/service-bus-dotnet-how-to-use-relay/sb-queues-13.png)
+1.  Klicken Sie im linken Navigationsbereich auf den Knoten **Service Bus**, um die Liste verfügbarer Namespaces anzuzeigen. 
+	![](./media/service-bus-dotnet-how-to-use-relay/sb-queues-13.png)
 
-2.  Doppelklicken Sie in der angezeigten Liste auf den Namen des Namespaces, den Sie soeben erstellt haben. ![](./media/service-bus-dotnet-how-to-use-relay/sb-queues-09.png)
+2.  Doppelklicken Sie in der angezeigten Liste auf den Namen des Namespaces, den Sie soeben erstellt haben. 
+	![](./media/service-bus-dotnet-how-to-use-relay/sb-queues-09.png)
 
 3.  Klicken Sie oben auf der Seite auf die Registerkarte **Konfigurieren**.
 

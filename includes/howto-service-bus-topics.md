@@ -20,9 +20,11 @@ So erstellen Sie einen Dienstnamespace:
 
 2.  Klicken Sie im linken Navigationsbereich des Portals auf **Service Bus**.
 
-3.  Klicken Sie im unteren Bereich des Portals auf **Erstellen**. ![][0]
+3.  Klicken Sie im unteren Bereich des Portals auf **Erstellen**. 
+	![][0]
 
-4.  Geben Sie im Dialogfeld **Add a new namespace** einen Namen für den Namespace ein. Das System prüft sofort, ob dieser Name verfügbar ist.![][2]
+4.  Geben Sie im Dialogfeld **Add a new namespace** einen Namen für den Namespace ein. Das System prüft sofort, ob dieser Name verfügbar ist.
+	![][2]
 
 5.  Wählen Sie nach der Bestätigung, dass der Name für den Namespace verfügbar ist, das Land oder die Region, wo dieser Namespace gehostet werden soll. (Stellen Sie sicher, dass dies dasselbe Land/dieselbe Region ist, in dem/der sie Ihre Rechnerressourcen einsetzen.)
 
@@ -38,11 +40,14 @@ Wenn Sie Verwaltungsvorgänge ausführen möchten, z. B. die Erstellung eines T
 
 ### Abrufen der Anmeldeinformationen für die Verwaltung aus dem Portal
 
-1.  Klicken Sie im linken Navigationsbereich auf den Knoten **Service Bus**, um die Liste der verfügbaren Namespaces anzuzeigen: ![][0]
+1.  Klicken Sie im linken Navigationsbereich auf den Knoten **Service Bus**, um die Liste der verfügbaren Namespaces anzuzeigen: 
+	![][0]
 
-2.  Wählen Sie in der angezeigten Liste den Namespace, den Sie gerade erstellt haben: ![][3]
+2.  Wählen Sie in der angezeigten Liste den Namespace, den Sie gerade erstellt haben: 
+	![][3]
 
-3.  Klicken Sie auf **Verbindungsinformationen**. ![][4]
+3.  Klicken Sie auf **Verbindungsinformationen**. 
+	![][4]
 
 4.  Im Bereich **Zugriff auf die Verbindungsinformationen** finden Sie die Verbindungszeichenfolge, die den SAS-Schlüssel und den Schlüsselnamen enthält. Notieren Sie sich diese Werte, da Sie diese Informationen später benötigen, um Vorgänge mit dem Namespace durchzuführen.
 

@@ -323,7 +323,13 @@ Das Löschen der erstellten Datenbank entfernt die Datenbank und alle untergeord
 
 Da Sie jetzt alle erforderlichen Funktionen für die Anwendung festgelegt haben, können Sie sie aufrufen.
 
-Die Reihenfolge der Funktionsaufrufe ist: * *getOrCreateDatabase* * *getOrCreateCollection* * *getOrCreateDocument* * *getOrCreateDocument* * *queryCollection* * *cleanup*
+Die Reihenfolge der Funktionsaufrufe ist: 
+	* *getOrCreateDatabase* 
+		* *getOrCreateCollection* 
+			* *getOrCreateDocument* 
+				* *getOrCreateDocument* 
+					* *queryCollection* 
+						* *cleanup*
 
 Fügen Sie den folgenden Codeausschnitt unten im Code in ```app.js``` hinzu.
 
@@ -425,7 +431,8 @@ Um die "GetStarted"-Lösung zu erstellen, die alle Beispiele dieses Artikels ent
 -   [DocumentDB-Konto][documentdb-create-account].
 -   Die [GetStarted-Lösung](https://github.com/Azure-Samples/documentdb-node-getting-started) auf GitHub.
 
-Installieren Sie das **documentdb**-Modul über npm. Verwenden Sie den folgenden Befehl: * ```npm install documentdb --save```
+Installieren Sie das **documentdb**-Modul über npm. Verwenden Sie den folgenden Befehl: 
+* ```npm install documentdb --save```
 
 Aktualisieren Sie dann in der Datei ```config.js``` die Werte für „config.endpoint“ und „config.authKey“, wie unter [Schritt 3: Festlegen der Konfigurationen der App](#Config) beschrieben.
 

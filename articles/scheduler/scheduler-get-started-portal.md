@@ -59,7 +59,8 @@ Wenn Sie das klassische Azure-Portal zum ersten Mal öffnen, ist automatisch die
 
    	![][5]
 
-8.  Klicken Sie auf **OK**. Die Erstellung des Auftrags und der Auftragssammlung kann eine Weile dauern. Sie können die Benachrichtigungen unten im Portal überwachen, um den Status zu überprüfen.
+8.  Klicken Sie auf **OK**. 
+    Die Erstellung des Auftrags und der Auftragssammlung kann eine Weile dauern. Sie können die Benachrichtigungen unten im Portal überwachen, um den Status zu überprüfen.
 
    	![][6]
 

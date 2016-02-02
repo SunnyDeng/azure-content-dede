@@ -436,7 +436,7 @@ Wenn Sie innerhalb einer App Benachrichtigungen senden möchten. Dieser Abschnit
 11. Erstellen Sie das Projekt, und überprüfen Sie, dass keine Fehler vorhanden sind.
 
 
-> [AZURE.NOTE] Wenn in Xcode7 ein Buildfehler zur Unterstützung von Bitcode auftritt, sollten Sie „Buildeinstellungen“ -> „Bitcode“ (ENABLE\_BITCODE) in Xcode in „NO“ ändern. Das Notification Hubs-SDK unterstützt derzeit keinen Bitcode.
+> [AZURE.NOTE] Wenn in Xcode7 ein Buildfehler zur Unterstützung von Bitcode auftritt, sollten Sie „Buildeinstellungen“ -> „Bitcode“ (ENABLE_BITCODE) in Xcode in „NO“ ändern. Das Notification Hubs-SDK unterstützt derzeit keinen Bitcode.
 
 Sie finden alle möglichen Benachrichtigungsnutzlasten im [Local and Push Notification Programming Guide] von Apple (in englischer Sprache).
 
@@ -489,7 +489,7 @@ Weitere allgemeine Informationen zu Notification Hubs finden Sie im [Notificatio
 
 
 <!-- URLs. -->
-[Mobile Services iOS SDK]: http://aka.ms/kymw2g
+
 [Mobile Services iOS SDK-Version 1.2.4]: http://aka.ms/kymw2g
 [Mobile Services iOS SDK]: http://go.microsoft.com/fwLink/?LinkID=266533
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582

@@ -423,7 +423,7 @@ In diesem Abschnitt senden Sie Benachrichtigungen mithilfe einer .NET-Konsolen-A
         private static async void SendNotificationAsync()
         {
             NotificationHubClient hub = NotificationHubClient.CreateClientFromConnectionString("<connection string with full access>", "<hub name>");
-            await hub.SendGcmNativeNotificationAsync("{ "data" : {"message":"Hello from Azure!"}}");
+            await hub.SendGcmNativeNotificationAsync("{ \"data\" : {\"message\":\"Hello from Azure!\"}}");
         }
 
 6. Fügen Sie folgende Zeilen zur **Main**-Methode hinzu:

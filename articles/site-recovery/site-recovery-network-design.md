@@ -124,7 +124,10 @@ Wenn Sie den Schutz für einen bestimmten virtuellen Computer aktivieren, weist 
 3. Wenn die gleiche IP-Adresse nicht verfügbar ist, wird von Site Recovery eine andere Adresse aus dem Pool zugeordnet.
 4. Nachdem die virtuelle Maschine für den Schutz aktiviert wurde, können Sie das folgende Beispielskript verwenden, um die IP-Adresse zu überprüfen, die dem virtuellen Computer zugewiesen wurde. Die gleiche IP-Adresse würde als Failover-IP-Adresse festgelegt sein und dem virtuellen Computer zum Zeitpunkt der Failovers zugewiesen werden.
 
-    $vm = Get-SCVirtualMachine -Name $na = $vm[0].VirtualNetworkAdapters $ip = Get-SCIPAddress -GrantToObjectID $na[0].id $ip.address
+    $vm = Get-SCVirtualMachine -Name 
+    $na = $vm[0].VirtualNetworkAdapters 
+    $ip = Get-SCIPAddress -GrantToObjectID $na[0].id 
+    $ip.address
 
 Beachten Sie, dass die IP-Adressverwaltung nicht durch Site Recovery erfolgt, wenn die virtuellen Computer DHCP verwenden. Sie müssen sicherstellen, dass der DHCP-Server, der die IP-Adressen auf dem Wiederherstellungsstandort zuweist, Adressen aus dem gleichen Bereich zuweisen kann, der dem Bereich auf dem primären Standort entspricht.
 
@@ -137,8 +140,10 @@ Wenn ein Failover zu Azure ausgeführt wird, gelten einigen weitere Einschränku
 - Die Woodgrove Bank möchte Site Recovery verwenden, um die lokalen Workloads zu Azure zu replizieren. 
 - Bei der Woodgrove Bank sind Anwendungen und Konfigurationen vorhanden, die von hartcodierten IP-Adressen abhängig sind, daher müssen die IP-Adressen der Anwendungen nach einem Failover zu Azure beibehalten werden.
 - Die lokale Infrastruktur der Woodgrove Bank wird von einem VMM 2012 R2-Server verwaltet.
-- Es gibt ein VLAN-basiertes logisches Netzwerk (Anwendungsnetzwerk) auf dem VMM-Server. ![Logisches Netzwerk](./media/site-recovery-network-design/ASR_NetworkDesign5.png)
-- Ein VM-Netzwerk (Anwendungs-VM-Netzwerk) wurde mithilfe des logischen Netzwerks erstellt. ![VM-Netzwerk](./media/site-recovery-network-design/ASR_NetworkDesign6.png)
+- Es gibt ein VLAN-basiertes logisches Netzwerk (Anwendungsnetzwerk) auf dem VMM-Server. 
+	![Logisches Netzwerk](./media/site-recovery-network-design/ASR_NetworkDesign5.png)
+- Ein VM-Netzwerk (Anwendungs-VM-Netzwerk) wurde mithilfe des logischen Netzwerks erstellt. 
+	![VM-Netzwerk](./media/site-recovery-network-design/ASR_NetworkDesign6.png)
 - Alle virtuellen Computer in der Anwendung verwenden statische IP-Adressen, daher wird auch ein statischer IP-Pool für das logische Netzwerk definiert. 
 - Die Woodgrove Bank weist ihren in Azure ausgeführten Ressourcen IP-Adressen aus dem IP-Adressbereich (172.16.1.0/24, 172.16.2.0/24) zu.
 
@@ -151,10 +156,12 @@ Damit die Woodgrove Bank die Replikation bereitstellen und IP-Adressen verwalten
 
 	![Azure-Netzwerke](./media/site-recovery-network-design/ASR_NetworkDesign7.png)
 
-- Um sicherzustellen, dass die IP-Adresse für den virtuellen Computer beibehalten wird, wird in den Eigenschaften des virtuellen Computers in Site Recovery festgelegt, dass dieselbe IP-Adresse verwendet werden soll. Nach dem Failover wird die angegebene IP-Adresse dann von Site Recovery dem virtuellen Computer zugewiesen. ![Azure-Netzwerke](./media/site-recovery-network-design/ASR_NetworkDesign8.png)
+- Um sicherzustellen, dass die IP-Adresse für den virtuellen Computer beibehalten wird, wird in den Eigenschaften des virtuellen Computers in Site Recovery festgelegt, dass dieselbe IP-Adresse verwendet werden soll. Nach dem Failover wird die angegebene IP-Adresse dann von Site Recovery dem virtuellen Computer zugewiesen. 
+	![Azure-Netzwerke](./media/site-recovery-network-design/ASR_NetworkDesign8.png)
 
 
-- Wenn das Failover ausgelöst wird und die virtuellen Computer im Wiederherstellungsnetzwerk mit der erforderlichen IP-Adresse erstellt werden, kann die Verbindung mit dem virtuellen Computer hergestellt werden. Diese Aktion kann per Skript erfolgen. Wie im vorherigen Abschnitt über das Subnetzfailover erläutert, müssten die Routen auf beim Failover zu Azure entsprechend geändert werden, um widerzuspiegeln, dass 192.168.1.0/24 jetzt zu Azure verschoben wurde. ![Azure-Netzwerke](./media/site-recovery-network-design/ASR_NetworkDesign9.png)
+- Wenn das Failover ausgelöst wird und die virtuellen Computer im Wiederherstellungsnetzwerk mit der erforderlichen IP-Adresse erstellt werden, kann die Verbindung mit dem virtuellen Computer hergestellt werden. Diese Aktion kann per Skript erfolgen. Wie im vorherigen Abschnitt über das Subnetzfailover erläutert, müssten die Routen auf beim Failover zu Azure entsprechend geändert werden, um widerzuspiegeln, dass 192.168.1.0/24 jetzt zu Azure verschoben wurde. 
+	![Azure-Netzwerke](./media/site-recovery-network-design/ASR_NetworkDesign9.png)
 
 ### Option 2: Geändert von IP-Adressen
 
@@ -180,7 +187,14 @@ Betrachten wir dieses Szenario mit einem Beispiel, bei dem es einen dritten Stan
 	- Durch Verwenden von [Azure Traffic Manager mit Site Recovery] (https://azure.microsoft.com/blog/2015/03/03/reduce-rto-by-using-azure-traffic-manager-with-azure-site-recovery/ für internetbasierte Anwendungen).
 	- Durch Verwenden des folgende Skripts in Ihrem Wiederherstellungsplan zum Aktualisieren der DNS-Server, um ein rechtzeitiges Update sicherzustellen. (Das Skript ist nicht erforderlich, wenn die dynamische DNS-Registrierung konfiguriert ist wird.)
 
-    [string]$Zone, [string]$name, [string]$IP ) $Record = Get-DnsServerResourceRecord -ZoneName $zone -Name $name $newrecord = $record.clone() $newrecord.RecordData[0].IPv4Address = $IP Set-DnsServerResourceRecord -zonename $zone -OldInputObject $record -NewInputObject $Newrecord
+    [string]$Zone, 
+    [string]$name, 
+    [string]$IP 
+    ) 
+    $Record = Get-DnsServerResourceRecord -ZoneName $zone -Name $name 
+    $newrecord = $record.clone() 
+    $newrecord.RecordData[0].IPv4Address = $IP 
+    Set-DnsServerResourceRecord -zonename $zone -OldInputObject $record -NewInputObject $Newrecord
 
 #### Beispiel – Failover zu Azure
 

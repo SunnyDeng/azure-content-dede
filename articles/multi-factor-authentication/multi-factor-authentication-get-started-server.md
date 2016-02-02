@@ -41,8 +41,10 @@ Es gibt zwei Möglichkeiten, den Azure Multi-Factor Authentication-Server herunt
 2. Wählen Sie im linken Bereich "Active Directory" aus.
 3. Klicken Sie auf der Seite "Active Directory" oben auf **Anbieter für mehrstufige Authentifizierung**.
 4. Klicken Sie unten auf **Verwalten**.
-5. Dadurch wird eine neue Seite geöffnet. Klicken Sie auf **Downloads**. ![Download](./media/multi-factor-authentication-sdk/download.png)
-6. Klicken Sie über **Anmeldeinformationen für Aktivierung generieren** auf **Herunterladen**. ![Herunterladen](./media/multi-factor-authentication-get-started-server/download4.png)
+5. Dadurch wird eine neue Seite geöffnet. Klicken Sie auf **Downloads**. 
+![Download](./media/multi-factor-authentication-sdk/download.png)
+6. Klicken Sie über **Anmeldeinformationen für Aktivierung generieren** auf **Herunterladen**. 
+![Herunterladen](./media/multi-factor-authentication-get-started-server/download4.png)
 7. Speichern Sie den Download.
 
 
@@ -53,9 +55,11 @@ Es gibt zwei Möglichkeiten, den Azure Multi-Factor Authentication-Server herunt
 1. Melden Sie sich beim Azure-Portal als Administrator an.
 2. Wählen Sie im linken Bereich "Active Directory" aus.
 3. Doppelklicken Sie auf Ihre Instanz von Azure AD.
-4. Klicken Sie oben auf **Konfigurieren**. ![Herunterladen](./media/multi-factor-authentication-sdk/download2.png)
+4. Klicken Sie oben auf **Konfigurieren**. 
+![Herunterladen](./media/multi-factor-authentication-sdk/download2.png)
 5. Wählen Sie unter "Multi-Factor Authentication" die Option **Diensteinstellungen verwalten** aus.
-6. Klicken Sie auf der Seite "Diensteinstellungen" am unteren Rand des Bildschirms auf **Portal aufrufen**. ![Herunterladen](./media/multi-factor-authentication-get-started-server/servicesettings.png)
+6. Klicken Sie auf der Seite "Diensteinstellungen" am unteren Rand des Bildschirms auf **Portal aufrufen**. 
+![Herunterladen](./media/multi-factor-authentication-get-started-server/servicesettings.png)
 7. Dadurch wird eine neue Seite geöffnet. Klicken Sie auf **Downloads**.
 8. Klicken Sie über **Anmeldeinformationen für Aktivierung generieren** auf **Herunterladen**.
 9. Speichern Sie den Download.
@@ -85,18 +89,18 @@ Wenn Firewalls auf den ausgehenden Port 443 eingeschränkt sind, müssen die fol
 
 IP-Subnetz|Netzmaske|IP-Bereich
 :------------- | :------------- | :------------- |
-134\.170.116.0/25|255\.255.255.128|134\.170.116.1–134.170.116.126
-134\.170.165.0/25|255\.255.255.128|134\.170.165.1–134.170.165.126
-70\.37.154.128/25|255\.255.255.128|70\.37.154.129–70.37.154.254
+134.170.116.0/25|255.255.255.128|134.170.116.1–134.170.116.126
+134.170.165.0/25|255.255.255.128|134.170.165.1–134.170.165.126
+70.37.154.128/25|255.255.255.128|70.37.154.129–70.37.154.254
 
 Wenn Sie die Ereignisbestätigungsfunktionen von Azure Multi-Factor Authentication nicht verwenden und Benutzer sich nicht mit den mobilen Apps für Multi-Factor Authentication von Geräten aus authentifizieren, die sich im Firmennetzwerk befinden, sind nur die folgenden IP-Adressbereiche erforderlich:
 
 
 IP-Subnetz|Netzmaske|IP-Bereich
 :------------- | :------------- | :------------- |
-134\.170.116.72/29|255\.255.255.248|134\.170.116.72–134.170.116.79
-134\.170.165.72/29|255\.255.255.248|134\.170.165.72–134.170.165.79
-70\.37.154.200/29|255\.255.255.248|70\.37.154.201–70.37.154.206
+134.170.116.72/29|255.255.255.248|134.170.116.72–134.170.116.79
+134.170.165.72/29|255.255.255.248|134.170.165.72–134.170.165.79
+70.37.154.200/29|255.255.255.248|70.37.154.201–70.37.154.206
 
 
 ### So installieren und konfigurieren Sie den Azure Multi-Factor Authentication-Server
@@ -106,7 +110,8 @@ IP-Subnetz|Netzmaske|IP-Bereich
 1. Doppelklicken Sie auf die ausführbare Datei. Dadurch wird die Installation gestartet.
 2. Vergewissern Sie sich, dass im Bildschirm "Installationsordner auswählen" der richtige Ordner ausgewählt ist, und klicken Sie auf "Weiter".
 3. Klicken Sie nach Abschluss der Installation auf "Fertig stellen". Dadurch wird der Konfigurations-Assistent gestartet.
-4. Aktivieren Sie auf der Willkommensseite des Konfigurations-Assistenten das Kontrollkästchen **Verwendung des Authentifizierungskonfigurations-Assistenten überspringen**, und klicken Sie auf **Weiter**. Damit wird der Assistent geschlossen und der Server gestartet. ![Cloud](./media/multi-factor-authentication-get-started-server/skip2.png)
+4. Aktivieren Sie auf der Willkommensseite des Konfigurations-Assistenten das Kontrollkästchen **Verwendung des Authentifizierungskonfigurations-Assistenten überspringen**, und klicken Sie auf **Weiter**. Damit wird der Assistent geschlossen und der Server gestartet. 
+![Cloud](./media/multi-factor-authentication-get-started-server/skip2.png)
 
 5. Wechseln Sie zurück zu der Seite, von der Sie den Server heruntergeladen haben, und klicken Sie auf die Schaltfläche **Anmeldeinformationen für Aktivierung generieren**. Kopieren Sie diese Informationen auf dem Azure MFA-Server in die angezeigten Felder, und klicken Sie auf **Aktivieren**.
 

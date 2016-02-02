@@ -182,7 +182,7 @@ Erstellt die Load Balancer-Routingregel mit dem Namen „rule01“, mit der das 
 
 Konfiguriert die Instanzgröße des Application Gateways.
 
->[AZURE.NOTE]  Der Standardwert für *InstanceCount* ist 2, der Maximalwert ist 10. Der Standardwert für *GatewaySize* ist "Medium". Sie können zwischen „Standard\_Small“, „Standard\_Medium“ und „Standard\_Large“ wählen.
+>[AZURE.NOTE]  Der Standardwert für *InstanceCount* ist 2, der Maximalwert ist 10. Der Standardwert für *GatewaySize* ist "Medium". Sie können zwischen „Standard_Small“, „Standard_Medium“ und „Standard_Large“ wählen.
 
 ## Erstellen eines Application Gateways mit dem New-AzureApplicationGateway-Cmdlet
 

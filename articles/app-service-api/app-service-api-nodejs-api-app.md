@@ -202,7 +202,7 @@ Indem Sie die integrierten Azure App Service-Funktionen für die dauerhafte Bere
 
         git remote add azure YOUR_GIT_CLONE_URL_HERE
 
-    **Hinweis**: Es ist ratsam, die obige Zeichenfolge „YOUR\_GIT\_CLONE\_URL\_HERE“ durch Ihre eigene Git-Klon-URL zu ersetzen, die Sie vorhin kopiert haben.
+    **Hinweis**: Es ist ratsam, die obige Zeichenfolge „YOUR_GIT_CLONE_URL_HERE“ durch Ihre eigene Git-Klon-URL zu ersetzen, die Sie vorhin kopiert haben.
 
 1. Führen Sie als Nächstes die beiden unten angegebenen Befehle über die Node.js-Befehlszeilenoberfläche aus.
 

@@ -231,7 +231,7 @@ Führen Sie die folgenden Schritte aus, um Benachrichtigungen mithilfe einer .NE
 
    	Stellen Sie sicher, dass Sie den Platzhalter „hub name“ durch den Namen des Notification Hubs ersetzen, der im [klassischen Azure-Portal] auf der Registerkarte **Notification Hubs** angezeigt wird. Ersetzen Sie außerdem den Platzhalter für die Verbindungszeichenfolge durch die Verbindungszeichenfolge **DefaultFullSharedAccessSignature**, die Sie im Abschnitt "Konfigurieren Ihres Notification Hubs" erhalten haben.
 
-	>[AZURE.NOTE]Stellen Sie sicher, dass Sie die Verbindungszeichenfolge mit Vollzugriff (**Full**) und nicht mit dem Zugriff (**Listen**) verwenden. Die Verbindungszeichenfolge mit Abhörzugriff verfügt nicht über die Berechtigungen zum Senden von Benachrichtigungen.
+	>[AZURE.NOTE] Stellen Sie sicher, dass Sie die Verbindungszeichenfolge mit Vollzugriff (**Full**) und nicht mit dem Zugriff (**Listen**) verwenden. Die Verbindungszeichenfolge mit Abhörzugriff verfügt nicht über die Berechtigungen zum Senden von Benachrichtigungen.
 
 6. Fügen Sie die folgenden Zeilen zur **Main**-Methode hinzu:
 

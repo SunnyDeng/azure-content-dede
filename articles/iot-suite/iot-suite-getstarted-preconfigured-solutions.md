@@ -89,7 +89,7 @@ Sie benötigen ein aktives Azure-Abonnement, um dieses Lernprogramm auszuführen
 
     ![][img-addnew]
 
-4.  Wählen Sie **Eigene Geräte-ID definieren** aus, und geben Sie einen eindeutigen Geräte-ID-Namen wie **mydevice\_01** ein.
+4.  Wählen Sie **Eigene Geräte-ID definieren** aus, und geben Sie einen eindeutigen Geräte-ID-Namen wie **mydevice_01** ein.
 
 5.  Klicken Sie auf **Erstellen**.
 

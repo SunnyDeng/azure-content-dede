@@ -44,7 +44,7 @@ Für API-Szenarien gibt es einige relevante neue Funktionen:
 Weitere Informationen zu den neuen Authentifizierungsfeatures finden Sie unter [Authentifizierung und Autorisierung für API-Apps in Azure App Service](app-service-api-authentication.md). Informationen zum Migrieren vorhandener API-Apps aus dem vorherigen API-Apps-Modell zum neuen Modell finden Sie weiter unten in diesem Artikel unter [Migrieren von vorhandenen API-Apps](#migrating-existing-api-apps).
  
 ### CORS
-Anstelle einer kommagetrennten **MS\_CrossDomainOrigins**-App-Einstellung enthält das Azure-Verwaltungsportal jetzt ein Blatt zum Konfigurieren von CORS (Cross-Origin Resource Sharing). Alternativ dazu kann die Konfiguration auch mit den Ressourcen-Manager-Tools durchgeführt werden, wie z. B. Azure PowerShell, Befehlszeilenschnittstelle (CLI) oder [Ressourcen-Explorer](https://resources.azure.com/). Legen Sie die **cors**-Eigenschaft für Ihre Ressource **&lt;Websitename&gt;/web** auf den Ressourcentyp **Microsoft.Web/sites/config** fest. Beispiel:
+Anstelle einer kommagetrennten **MS_CrossDomainOrigins**-App-Einstellung enthält das Azure-Verwaltungsportal jetzt ein Blatt zum Konfigurieren von CORS (Cross-Origin Resource Sharing). Alternativ dazu kann die Konfiguration auch mit den Ressourcen-Manager-Tools durchgeführt werden, wie z. B. Azure PowerShell, Befehlszeilenschnittstelle (CLI) oder [Ressourcen-Explorer](https://resources.azure.com/). Legen Sie die **cors**-Eigenschaft für Ihre Ressource **&lt;Websitename&gt;/web** auf den Ressourcentyp **Microsoft.Web/sites/config** fest. Beispiel:
 
     {
         "cors": {

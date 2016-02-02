@@ -104,7 +104,7 @@ Erstellen Sie in Visual Studio ein neues Projekt, das auf der Startvorlage für 
 
 	![Dialogfeld "Neues Projekt"][30-VSNewProject]
 
-2. Geben Sie unter **Name** den Namen **ConnectAndQuery\_Example** ein. Klicken Sie auf **OK**.
+2. Geben Sie unter **Name** den Namen **ConnectAndQuery_Example** ein. Klicken Sie auf **OK**.
 
 
 ## Schritt 3: Hinzufügen eines Assemblyverweises für die Konfigurationsverarbeitung
@@ -141,7 +141,7 @@ Ihre erste Verwendung dient zum Verbinden von Visual Studio mit der Azure SQL-Da
 1. Öffnen Sie in Visual Studio im Bereich "Projektmappen-Explorer" die Datei "App.config".
 
 2. Fügen Sie das Element **&#x3c;configuration&#x3e; &#x3c;/configuration&#x3e;** hinzu, wie im folgenden "App.config"-Codebeispiel gezeigt.
- - Ersetzen Sie *{Ihre\_Platzhalter}* durch die tatsächlichen Werte:
+ - Ersetzen Sie *{Ihre_Platzhalter}* durch die tatsächlichen Werte:
 
 ```
 	<?xml version="1.0" encoding="utf-8" ?>

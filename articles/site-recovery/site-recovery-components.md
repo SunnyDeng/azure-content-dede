@@ -35,7 +35,8 @@ Site Recovery kann in verschiedenen Szenarien verwendet werden und für den Schu
 - **Schützen von physischen Servern**: Sie können physische Computer, auf denen Windows oder Linux ausgeführt wird, schützen, indem Sie sie zu Azure oder in ein sekundäres Rechenzentrum replizieren.
 - **Migrieren von VMs**: Sie können Site Recovery verwenden, um Azure-IaaS-VMs zwischen Regionen zu migrieren oder AWS Windows-Instanzen zu Azure-IaaS-VMs migrieren.
 
-Eine vollständige Zusammenfassung der unterstützten Bereitstellungen finden Sie unter [Was ist Azure Site Recovery?](site-recovery-overview.md) und [Welche Workloads können mit Azure Site Recovery geschützt werden?](site-recovery-workload.md).
+Eine vollständige Zusammenfassung der unterstützten Bereitstellungen finden Sie unter [Was ist Azure Site Recovery?](site-recovery-overview.md) und 
+[Welche Workloads können mit Azure Site Recovery geschützt werden?](site-recovery-workload.md).
 
 ## Replizieren zwischen einem lokalen physischen Server oder einer virtuellen VMware-Maschine und Azure
 

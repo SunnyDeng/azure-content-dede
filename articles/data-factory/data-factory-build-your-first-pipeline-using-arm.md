@@ -39,7 +39,7 @@ Neben den im Thema „Tutorial – Übersicht“ aufgeführten vorausgesetzten K
 
 ## Schritt 1: Erstellen der ARM-Vorlage
 
-Erstellen Sie eine JSON-Datei mit dem Namen **ADFTutorialARM.json** im Ordner **C:\\ADFGetStarted** mit dem folgenden Inhalt:
+Erstellen Sie eine JSON-Datei mit dem Namen **ADFTutorialARM.json** im Ordner **C:\ADFGetStarted** mit dem folgenden Inhalt:
 
 > [AZURE.IMPORTANT] Ändern Sie die Werte für die Variablen **storageAccountName** und **storageAccountKey**. Ändern Sie auch **dataFactoryName**, denn dieser Name muss eindeutig sein.
 

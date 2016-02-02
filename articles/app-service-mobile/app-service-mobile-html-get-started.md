@@ -19,7 +19,9 @@
 
 #Erstellen einer HTML-App
 
-[AZURE.INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]&nbsp;<!--- [AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]-->
+[AZURE.INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]
+&nbsp;
+<!--- [AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]-->
 
 >[AZURE.IMPORTANT] Dieses Thema wird von Mobile Apps derzeit nicht unterstützt, da der Schnellstart für HTML-/JavaScript-Apps vorübergehend aus dem Azure-Portal entfernt wurde. Diese Option soll in naher Zukunft wieder unterstützt werden. Vielen Dank für Ihre Geduld.
 
@@ -71,7 +73,7 @@ Standardmäßig wird das aus dem Portal heruntergeladene Client-Schnellstartproj
  
 		Install-Package Microsoft.AspNet.WebApi.Cors  
 
-2. Öffnen Sie die Projektdatei "App\_Start/Startup.MobileApp.cs", und fügen Sie die folgende "using"-Anweisung hinzu:
+2. Öffnen Sie die Projektdatei "App_Start/Startup.MobileApp.cs", und fügen Sie die folgende "using"-Anweisung hinzu:
 
 		using System.Web.Http.Cors;
 

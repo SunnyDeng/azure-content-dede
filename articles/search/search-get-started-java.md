@@ -114,7 +114,7 @@ Alle nachfolgenden Dateiänderungen und Ausführungsanweisungen werden an den Da
 
 	![][7]
 
-6. Geben Sie auf der nächsten Seite das Tomcat-Installationsverzeichnis an. Auf einem Windows-Computer ist dies wahrscheinlich "C:\\Programme\\Apache Software Foundation\\Tomcat *Version*".
+6. Geben Sie auf der nächsten Seite das Tomcat-Installationsverzeichnis an. Auf einem Windows-Computer ist dies wahrscheinlich "C:\Programme\Apache Software Foundation\Tomcat *Version*".
 
 6. Klicken Sie auf **Fertig stellen**.
 
