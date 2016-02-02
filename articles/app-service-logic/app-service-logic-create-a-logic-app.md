@@ -163,7 +163,7 @@ Der letzte Schritt ist das Hinzufügen einer Aktion, die Tweets in eine Dropbox-
 
 5. Klicken Sie auf das grüne Häkchen, um die Connectoreinstellungen zu speichern.
 
-5. Nun da der Entwurf fertig ist, klicken Sie links oben im Designer auf **Codeansicht**. Beachten Sie, dass dies der JSON-Code ist, der den Workflow definiert, den Sie zuvor im Designer erstellt haben. Auf diesen Code gehen wir im [nächsten Thema][Use logic app features] näher ein.
+5. Nun da der Entwurf fertig ist, klicken Sie links oben im Designer auf **Codeansicht**. Beachten Sie, dass dies der JSON-Code ist, der den Workflow definiert, den Sie zuvor im Designer erstellt haben. Auf diesen Code gehen wir im [nächsten Thema](Verwenden von Logik-App-Features) näher ein.
 
 6. Klicken Sie am unteren Bildschirmrand auf die Schaltfläche **OK** und dann auf die Schaltfläche **Erstellen**.
 
@@ -187,4 +187,4 @@ In weniger als 5 Minuten haben Sie eine einfache Logik-App eingerichtet, die in 
 [Azure portal]: https://portal.azure.com
 [Verwenden von Logik-App-Features]: app-service-logic-use-logic-app-features.md
 
-<!---HONumber=AcomDC_0128_2016-->
+<!----HONumber=AcomDC_0128_2016-->
