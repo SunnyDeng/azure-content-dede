@@ -30,9 +30,9 @@
 
 ![Video verfügbar](./media/storsimple-mount-initialize-format-volume/Video_icon.png) **Video verfügbar**
 
-Sie können sich [hier](http://azure.microsoft.com/documentation/videos/mount-initialize-and-format-a-storsimple-volume/) ein Video anschauen, in dem das Bereitstellen, Initialisieren und Formatieren eines StorSimple-Volumes demonstriert wird.
+Sie können sich [hier](https://azure.microsoft.com/documentation/videos/mount-initialize-and-format-a-storsimple-volume/) ein Video anschauen, in dem das Bereitstellen, Initialisieren und Formatieren eines StorSimple-Volumes demonstriert wird.
 
 <!--Link references-->
 [1]: https://technet.microsoft.com/library/ee338480(WS.10).aspx
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

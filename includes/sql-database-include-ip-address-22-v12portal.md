@@ -15,7 +15,7 @@ articles/sql-database/sql-database-connect-query.md
 -->
 
 
-1. Melden Sie sich beim [Azure-Portal](http://portal.azure.com/) unter http://portal.azure.com/ an.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/) unter http://portal.azure.com/ an.
 
 2. Klicken Sie im linken Banner auf **ALLE DURCHSUCHEN**. Das Blatt **Durchsuchen** wird angezeigt.
 
@@ -63,4 +63,4 @@ includes/sql-database-include-ip-address-22-v12portal.md
 ? includes/sql-database-include-ip-address-*.md
 -->
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

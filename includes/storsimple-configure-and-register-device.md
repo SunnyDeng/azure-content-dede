@@ -30,12 +30,12 @@
    - IP-Adresse für den primären DNS-Server
    - IP-Adresse für den sekundären DNS-Server
    
-      >[AZURE.NOTE]Sie müssen ggf. einige Minuten warten, bis die Subnetzmaske und die DNS-Einstellungen übernommen werden. Wenn die Fehlermeldung "Das Gerät ist nicht bereit" angezeigt wird, überprüfen Sie die physische Netzwerkverbindung für die Netzwerkschnittstelle DATA 0 Ihres aktiven Controllers.
+      >[AZURE.NOTE] Sie müssen ggf. einige Minuten warten, bis die Subnetzmaske und die DNS-Einstellungen übernommen werden. Wenn die Fehlermeldung "Das Gerät ist nicht bereit" angezeigt wird, überprüfen Sie die physische Netzwerkverbindung für die Netzwerkschnittstelle DATA 0 Ihres aktiven Controllers.
 
 8. (Optional) Konfigurieren Sie Ihren Webproxyserver. Die Webproxykonfiguration ist optional. **Achten Sie jedoch bei Verwendung eines Webproxys darauf, dass dieser nur hier konfiguriert werden kann.** Weitere Informationen finden Sie unter [Konfigurieren des Webproxys für Ihr Gerät](storsimple-configure-web-proxy.md). Wenn während dieses Schritts Probleme auftreten, finden Sie Informationen zur Problembehandlung unter [Fehler während der Webproxykonfiguration](storsimple-troubleshoot-deployment.md#errors-during-the-optional-web-proxy-settings).
  
 
-      >[AZURE.NOTE]Sie können jederzeit STRG+C drücken, um den Installations-Assistenten zu beenden. Alle Einstellungen, die Sie vor dem Ausgeben dieses Befehls angewendet haben, werden beibehalten.
+      >[AZURE.NOTE] Sie können jederzeit STRG+C drücken, um den Installations-Assistenten zu beenden. Alle Einstellungen, die Sie vor dem Ausgeben dieses Befehls angewendet haben, werden beibehalten.
 
 9. Aus Sicherheitsgründen läuft das Standardadministratorkennwort für das Gerät nach der ersten Sitzung ab, und Sie müssen es für die nachfolgenden Sitzungen ändern. Geben Sie, wenn Sie dazu aufgefordert werden, ein Administratorkennwort für das Gerät an. Ein gültiges Administratorkennwort für das Gerät muss zwischen 8 und 15 Zeichen lang sein. Das Kennwort muss eine Kombination aus Großbuchstaben, Kleinbuchstaben, Zahlen und Sonderzeichen enthalten.
 
@@ -53,7 +53,7 @@
 
 12. Nachdem das Gerät registriert wurde, wird ein Schlüssel für die Dienstdatenverschlüsselung angezeigt. Kopieren Sie diesen Schlüssel, und bewahren Sie ihn an einem sicheren Ort auf.
 	
-	> [AZURE.WARNING]Dieser Schlüssel ist mit dem Dienstregistrierungsschlüssel zum Registrieren weiterer Geräte bei StorSimple-Manager-Dienst erforderlich. Weitere Informationen zu diesem Schlüssel finden Sie unter [StorSimple-Sicherheit](../articles/storsimple/storsimple-security.md).
+	> [AZURE.WARNING] Dieser Schlüssel ist mit dem Dienstregistrierungsschlüssel zum Registrieren weiterer Geräte bei StorSimple-Manager-Dienst erforderlich. Weitere Informationen zu diesem Schlüssel finden Sie unter [StorSimple-Sicherheit](../articles/storsimple/storsimple-security.md).
 
      ![StorSimple – Registrieren des Geräts 6](./media/storsimple-configure-and-register-device/HCS_RegisterYourDevice6-include.png)
 
@@ -68,12 +68,12 @@
    
     ![StorSimple – Seite "Geräte"](./media/storsimple-configure-and-register-device/HCS_DevicesPageM-include.png)
   
-      >[AZURE.IMPORTANT]Nachdem das Gerät online geschaltet wurde, schließen Sie die Netzwerkkabel wieder an, die Sie am Anfang dieses Schritts ausgesteckt haben.
+      >[AZURE.IMPORTANT] Nachdem das Gerät online geschaltet wurde, schließen Sie die Netzwerkkabel wieder an, die Sie am Anfang dieses Schritts ausgesteckt haben.
 
 Wenn das Gerät erfolgreich registriert wurde, jedoch nicht online geschaltet wird, führen Sie `Test-HcsmConnection -Verbose` aus, um sicherzustellen, dass die Netzwerkverbindungen funktionieren. Ausführliche Informationen zur Verwendung dieses Cmdlets finden Sie in der [Cmdlet-Referenz für "Test-HcsmConnection"](https://technet.microsoft.com/library/dn715782.aspx).
 
 ![Video verfügbar](./media/storsimple-configure-and-register-device/Video_icon.png) **Video verfügbar**
 
-Sie können sich [hier](http://azure.microsoft.com/documentation/videos/initialize-the-storsimple-appliance/) ein Video anschauen, dass die Konfiguration und Registrierung Ihres Geräts über Windows PowerShell für StorSimple demonstriert.
+Sie können sich [hier](https://azure.microsoft.com/documentation/videos/initialize-the-storsimple-appliance/) ein Video anschauen, dass die Konfiguration und Registrierung Ihres Geräts über Windows PowerShell für StorSimple demonstriert.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

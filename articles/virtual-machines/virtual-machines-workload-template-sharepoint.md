@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="vm-windows-sharepoint"
 	ms.devlang="na"
 	ms.topic="hero-article"
-	ms.date="10/20/2015"
+	ms.date="01/21/2016"
 	ms.author="josephd"/>
 
 # Bereitstellen von SharePoint-Farmen mit Azure-Ressourcen-Manager-Vorlagen
@@ -31,7 +31,7 @@ Bei einer einfachen SharePoint Server 2013-Farm werden mit einer Ressourcen-Mana
 
 Sie können die Vorlage mit dem Azure-Portal, mit Azure PowerShell oder der Azure-Befehlszeilenschnittstelle ausführen.
 
-> [AZURE.NOTE]Sie können diese Konfiguration auch mit dem Element [SharePoint 2013 non-HA Farm](https://azure.microsoft.com/marketplace/partners/sharepoint2013/sharepoint2013farmsharepoint2013-nonha/) im Azure Marketplace des Azure-Portals erstellen.
+> [AZURE.NOTE] Sie können diese Konfiguration auch mit dem Element [SharePoint 2013 non-HA Farm](https://azure.microsoft.com/marketplace/partners/sharepoint2013/sharepoint2013farmsharepoint2013-nonha/) im Azure Marketplace des Azure-Portals erstellen.
 
 ### Azure-Portal
 
@@ -50,7 +50,7 @@ Je nach Vorlage kann es einige Zeit dauern, bis der Workload in Azure erstellt i
 
 ### Azure PowerShell
 
-> [AZURE.NOTE]Dieser Artikel enthält Befehle für die Vorschau für Azure PowerShell 1.0. Ersetzen Sie zum Ausführen dieser Befehle in Azure PowerShell 0.9.8 und früheren Versionen **New-AzureRMResourceGroup** durch **New-AzureResourceGroup** und **New-AzureRMResourceGroupDeployment** durch **New-AzureResourceGroupDeployment**. Fügen Sie zudem den Befehl **Switch-AzureMode AzureResourceManager** vor dem Befehl **New-AzureResourceGroup** hinzu. Weitere Informationen finden Sie unter [Vorschau für Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0-pre/).
+> [AZURE.NOTE] Die folgenden Befehlssätze verwenden Azure PowerShell 1.0 und höher. Weitere Informationen finden Sie unter [Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0/) (in englischer Sprache).
 
 Geben Sie einen Namen für die Azure-Bereitstellung, einen Namen für die neue Ressourcengruppe und den Standort eines Azure-Rechenzentrums in die folgenden Befehle ein. Entfernen Sie alles innerhalb der Anführungszeichen, einschließlich der Zeichen < and >.
 
@@ -103,7 +103,7 @@ Bei einer SharePoint Server 2013-Farm mit hoher Verfügbarkeit werden mit einer 
 
 ![](./media/virtual-machines-workload-template-sharepoint/nine-server-sharepoint-farm.png)
 
-> [AZURE.NOTE]Sie können diese Konfiguration auch mit dem Element [SharePoint 2013 HA Farm](https://azure.microsoft.com/marketplace/partners/sharepoint2013/sharepoint2013farmsharepoint2013-ha/) im Azure Marketplace des Azure-Portals erstellen.
+> [AZURE.NOTE] Sie können diese Konfiguration auch mit dem Element [SharePoint 2013 HA Farm](https://azure.microsoft.com/marketplace/partners/sharepoint2013/sharepoint2013farmsharepoint2013-ha/) im Azure Marketplace des Azure-Portals erstellen.
 
 ### Azure-Portal
 
@@ -122,7 +122,7 @@ Je nach Vorlage kann es einige Zeit dauern, bis der Workload in Azure erstellt i
 
 ### Azure PowerShell
 
-> [AZURE.NOTE]Dieser Artikel enthält Befehle für die Vorschau für Azure PowerShell 1.0. Ersetzen Sie zum Ausführen dieser Befehle in Azure PowerShell 0.9.8 und früheren Versionen **New-AzureRMResourceGroup** durch **New-AzureResourceGroup** und **New-AzureRMResourceGroupDeployment** durch **New-AzureResourceGroupDeployment**. Fügen Sie zudem den Befehl **Switch-AzureMode AzureResourceManager** vor dem Befehl **New-AzureResourceGroup** hinzu. Weitere Informationen finden Sie unter [Vorschau für Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0-pre/).
+> [AZURE.NOTE] Die folgenden Befehlssätze verwenden Azure PowerShell 1.0 und höher. Weitere Informationen finden Sie unter [Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0/) (in englischer Sprache).
 
 Geben Sie einen Namen für die Azure-Bereitstellung, einen Namen für die neue Ressourcengruppe und den Standort eines Azure-Rechenzentrums in die folgenden Befehle ein. Entfernen Sie alles innerhalb der Anführungszeichen, einschließlich der Zeichen < and >.
 
@@ -170,20 +170,8 @@ Beim Ausführen des Befehls **azure group deployment create** werden Sie aufgefo
 Nachdem die Vorlage vollständig ausgeführt wurde, verfügen Sie über eine neue SharePoint Server 2013-Farm mit neun Servern in der neuen Ressourcengruppe.
 
 
-## Zusätzliche Ressourcen
+## Nächster Schritt
 
-[In Azure-Infrastrukturdiensten gehostete SharePoint-Farmen](virtual-machines-sharepoint-infrastructure-services.md)
+- Lernen Sie weitere [SharePoint 2013](https://technet.microsoft.com/library/dn635309.aspx)-Konfigurationen in Azure-Infrastrukturdiensten kennen.
 
-[Bereitstellen und Verwalten von virtuellen Computern mit Azure-Ressourcen-Manager-Vorlagen und Azure PowerShell](virtual-machines-deploy-rmtemplates-powershell.md)
-
-[Azure Compute-, Network- und Storage-Anbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md)
-
-[Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md)
-
-[Bereitstellen und Verwalten von virtuellen Computern mit Azure Resource Manager-Vorlagen und der Azure-CLI](virtual-machines-deploy-rmtemplates-azure-cli.md)
-
-[Dokumentation zu virtuellen Computern](http://azure.microsoft.com/documentation/services/virtual-machines/)
-
-[Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md)
-
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

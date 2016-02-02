@@ -13,14 +13,14 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="01/15/2016"
+	ms.date="01/27/2016"
 	ms.author="sdanie"/>
 
 # Schützen Ihrer API mithilfe von Aufruflimits in Azure API Management
 
 In diesem Leitfaden wird gezeigt, wie einfach Sie Ihre Back-End-API schützen können, indem Sie Richtlinien für Aufruflimits und Kontingente mithilfe von API Management konfigurieren.
 
-In diesem Tutorial erstellen Sie ein kostenloses API-Testprodukt, das bis zu zehn Aufrufe pro Minute und maximal 200 Aufrufe pro Woche der API bei Verwendung von [Aufrufrate nach Abonnement einschränken](https://msdn.microsoft.com/library/azure/dn894078.aspx#LimitCallRate) und [Nutzungskontingent nach Abonnement festlegen](https://msdn.microsoft.com/library/azure/dn894078.aspx#SetUsageQuota) erlaubt. Anschließend veröffentlichen Sie die API und testen die Richtlinie für das Aufruflimit.
+In diesem Tutorial erstellen Sie ein kostenloses API-Testprodukt, das bis zu zehn Aufrufe pro Minute und maximal 200 Aufrufe pro Woche der API mithilfe der Richtlinien [Aufrufrate nach Abonnement einschränken](https://msdn.microsoft.com/library/azure/dn894078.aspx#LimitCallRate) und [Nutzungskontingent nach Abonnement festlegen](https://msdn.microsoft.com/library/azure/dn894078.aspx#SetUsageQuota) erlaubt. Anschließend veröffentlichen Sie die API und testen die Richtlinie für das Aufruflimit.
 
 Informationen zu fortgeschritteneren Drosselungsszenarien mithilfe der Richtlinien [rate-limit-by-key](https://msdn.microsoft.com/library/azure/dn894078.aspx#LimitCallRateByKey) und [quota-by-key](https://msdn.microsoft.com/library/azure/dn894078.aspx#SetUsageQuotaByKey) finden Sie unter [Erweiterte Anforderungsbegrenzung mit Azure API Management](api-management-sample-flexible-throttling.md).
 
@@ -28,7 +28,7 @@ Informationen zu fortgeschritteneren Drosselungsszenarien mithilfe der Richtlini
 
 In diesem Schritt erstellen Sie ein kostenloses Testprodukt, für das keine Abonnementgenehmigung erforderlich ist.
 
->[AZURE.NOTE]Wenn Sie bereits ein Produkt konfiguriert haben und dieses für das Lernprogramm verwenden möchten, können Sie direkt zum Abschnitt [Konfigurieren von Richtlinien für Aufruflimits und Kontingente][] wechseln und die weiteren Schritte im Lernprogramm ausführen. Ersetzen Sie hierbei die kostenlose Testversion durch Ihr Produkt.
+>[AZURE.NOTE] Wenn Sie bereits ein Produkt konfiguriert haben und dieses für das Lernprogramm verwenden möchten, können Sie direkt zum Abschnitt [Konfigurieren von Richtlinien für Aufruflimits und Kontingente][] wechseln und die weiteren Schritte im Lernprogramm ausführen. Ersetzen Sie hierbei die kostenlose Testversion durch Ihr Produkt.
 
 Klicken Sie zunächst im klassischen Azure-Portal für Ihren API Management-Dienst auf **Verwalten**. Daraufhin gelangen Sie zum API Management-Herausgeberportal.
 
@@ -46,8 +46,7 @@ Klicken Sie auf **Produkt hinzufügen**, um das Dialogfeld **Neues Produkt hinzu
 
 Geben Sie im Feld **Titel** **Kostenlose Testversion** ein.
 
-Geben Sie in das Textfeld **Beschreibung** Folgendes ein: 
-**Abonnenten können bis zu 10 Aufrufe pro Minute und bis zu 200 Aufrufe pro Woche ausführen, danach wird der Zugriff verweigert.**
+Geben Sie in das Textfeld **Beschreibung** Folgendes ein: **Abonnenten können bis zu 10 Aufrufe pro Minute und bis zu 200 Aufrufe pro Woche ausführen, danach wird der Zugriff verweigert.**
 
 Produkte in API Management können geschützt oder offen sein. Geschützte Produkte müssen abonniert werden, bevor sie verwendet werden können. Offene Produkte können ohne Abonnement genutzt werden. Stellen Sie sicher, dass die Option **Abonnement erforderlich** ausgewählt ist, um ein geschütztes Produkt zu erstellen, das abonniert werden muss. Dies ist die Standardeinstellung.
 
@@ -196,7 +195,7 @@ Wählen Sie **Kostenlose Testversion** und klicken Sie dann auf **Abonnieren**.
 
 ![Abonnement hinzufügen][api-management-add-subscription]
 
->[AZURE.NOTE]In diesem Lernprogramm werden keine gleichzeitigen Abonnements für das Produkt "Kostenloser Test" aktiviert. Wenn Sie diese Option aktivieren, werden Sie zur Angabe des Abonnements aufgefordert, wie im folgenden Beispiel gezeigt.
+>[AZURE.NOTE] In diesem Lernprogramm werden keine gleichzeitigen Abonnements für das Produkt "Kostenloser Test" aktiviert. Wenn Sie diese Option aktivieren, werden Sie zur Angabe des Abonnements aufgefordert, wie im folgenden Beispiel gezeigt.
 
 ![Abonnement hinzufügen][api-management-add-subscription-multiple]
 
@@ -222,7 +221,7 @@ Behalten Sie die Standard-Parameterwerte bei und wählen Sie Ihren Abonnementsch
 
 ![Abonnementschlüssel][api-management-select-key]
 
->[AZURE.NOTE]Falls Sie mehrere Abonnements haben, stellen Sie sicher, dass Sie den Schlüssel für **Kostenloser Test** auswählen. Andernfalls treten die in den vorherigen Schritten konfigurierten Richtlinien nicht in Kraft.
+>[AZURE.NOTE] Falls Sie mehrere Abonnements haben, stellen Sie sicher, dass Sie den Schlüssel für **Kostenloser Test** auswählen. Andernfalls treten die in den vorherigen Schritten konfigurierten Richtlinien nicht in Kraft.
 
 Klicken Sie auf **Senden**, und sehen Sie sich dann die Antwort an. Beachten Sie den **Antwortstatus** von **200 OK**.
 
@@ -294,4 +293,4 @@ Wenn das Aufruflimit von 10 Aufrufen pro Minute aktiv ist, werden nachfolgende A
 [Aufruflimit]: https://msdn.microsoft.com/library/azure/dn894078.aspx#LimitCallRate
 [Nutzungskontingent]: https://msdn.microsoft.com/library/azure/dn894078.aspx#SetUsageQuota
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

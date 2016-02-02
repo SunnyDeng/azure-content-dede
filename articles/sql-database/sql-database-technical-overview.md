@@ -52,13 +52,13 @@ Durch die Unterstützung eines globalen Netzwerks von Microsoft-verwalteten Rech
 Ausführliche Informationen zu den unterschiedlichen Funktionen der Geschäftskontinuität bei den verschiedenen Dienstebenen finden Sie unter [Übersicht über die Geschäftskontinuität](sql-database-business-continuity.md).
 
 ## Sichern der Daten
-SQL Server bietet traditionell eine solide Datensicherheit, die SQL-Datenbank mit Funktionen zur Zugriffseinschränkung, zum Datenschutz und zur Überwachung von Aktivitäten fortführt. Eine kurze Übersicht über die Sicherheitsoptionen in SQL-Datenbank finden Sie unter [Sichern der SQL-Datenbank](sql-database-security.md). Ausführlichere Informationen zu den Sicherheitsfunktionen finden Sie unter [Sicherheitscenter für SQL Server-Datenbankmodul und Azure SQL-Datenbank](https://msdn.microsoft.com/library/bb510589). Schließlich finden Sie im [Azure Trust Center](http://azure.microsoft.com/support/trust-center/security/) Informationen zur Sicherheit der Azure-Plattform.
+SQL Server bietet traditionell eine solide Datensicherheit, die SQL-Datenbank mit Funktionen zur Zugriffseinschränkung, zum Datenschutz und zur Überwachung von Aktivitäten fortführt. Eine kurze Übersicht über die Sicherheitsoptionen in SQL-Datenbank finden Sie unter [Sichern der SQL-Datenbank](sql-database-security.md). Ausführlichere Informationen zu den Sicherheitsfunktionen finden Sie unter [Sicherheitscenter für SQL Server-Datenbankmodul und Azure SQL-Datenbank](https://msdn.microsoft.com/library/bb510589). Schließlich finden Sie im [Azure Trust Center](https://azure.microsoft.com/support/trust-center/security/) Informationen zur Sicherheit der Azure-Plattform.
 
 ## Nächste Schritte
 Nachdem Sie eine Einführung in SQL-Datenbank gelesen und die Frage „Was ist SQL-Datenbank?“ beantwortet haben, sind Sie bereit für Folgendes:
 
-- Unter [Preise](http://azure.microsoft.com/pricing/details/sql-database/) finden Sie Preisangaben und Messgrößen für Einzeldatenbanken und elastische Datenbanken.
+- Unter [Preise](https://azure.microsoft.com/pricing/details/sql-database/) finden Sie Preisangaben und Messgrößen für Einzeldatenbanken und elastische Datenbanken.
 
 - Beginnen Sie mit dem [Erstellen einer ersten Azure SQL-Datenbank](sql-database-get-started.md). Erstellen Sie dann Ihre erste App in [C#](sql-database-connect-query.md), [Java](sql-database-develop-java-simple-windows.md), [Node.js](sql-database-develop-nodejs-simple-windows.md), [PHP](sql-database-develop-php-retry-windows.md), [Python](sql-database-develop-python-simple-windows.md) oder [Ruby](sql-database-develop-ruby-simple-linux).
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

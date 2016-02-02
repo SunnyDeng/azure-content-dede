@@ -34,11 +34,11 @@ Für dieses Lernprogramm ist Folgendes erforderlich:
 + Das [Mobile Engagement iOS SDK]
 + Ein Pushbenachrichtigungszertifikat (P12), das Sie im Apple Dev Center abrufen können.
 
-> [AZURE.NOTE]Dieses Lernprogramm verwendet Swift Version 2.0.
+> [AZURE.NOTE] Dieses Lernprogramm verwendet Swift Version 2.0.
 
 Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen Mobile Engagement-Lernprogramme für iOS-Apps.
 
-> [AZURE.IMPORTANT]Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen Mobile Engagement-Lernprogramme für iOS-Apps. Damit Sie es abschließen können, ist ein aktives Azure-Konto erforderlich. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-DE%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F" target="_blank">Kostenlose Azure-Testversion</a>.
+> [AZURE.IMPORTANT] Das Abschließen dieses Lernprogramms ist eine Voraussetzung für alle anderen Mobile Engagement-Lernprogramme für iOS-Apps. Damit Sie es abschließen können, ist ein aktives Azure-Konto erforderlich. Wenn Sie über kein Konto verfügen, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Einzelheiten finden Sie unter <a href="http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fwww.windowsazure.com%2Fde-DE%2Fdevelop%2Fmobile%2Ftutorials%2Fget-started%2F" target="_blank">Kostenlose Azure-Testversion</a>.
 
 ##<a id="setup-azme"></a>Einrichten von Mobile Engagement für Ihre iOS-App
 
@@ -66,7 +66,7 @@ Wir erstellen eine einfache App mit Xcode, um die Integration zu veranschauliche
 
 	![][2]
 
-5. Öffnen Sie die Registerkarte `Build Phases` und fügen Sie im Menü `Link Binary With Libraries` Frameworks wie folgt hinzu:
+5. Öffnen Sie die Registerkarte `Build Phases` und fügen Sie im Menü `Link Binary With Libraries` Frameworks wie folgt hinzu: **HINWEIS** Sie müssen `CoreLocation, CFNetwork, CoreTelephony, and SystemConfiguration` mit aufnehmen:
 
 	![][3]
 
@@ -209,4 +209,4 @@ Mit Mobile Engagement können Sie mit Ihren Benutzern interagieren und diese mit
 [5]: ./media/mobile-engagement-ios-get-started/app-connection-info-page.png
 [6]: ./media/mobile-engagement-ios-swift-get-started/add-bridging-header.png
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

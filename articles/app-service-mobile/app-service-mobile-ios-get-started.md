@@ -30,7 +30,7 @@ Dieses Tutorial zeigt, wie Sie einen cloudbasierten Back-End-Dienst ([Azure Mobi
 
 Für dieses Tutorial benötigen Sie Folgendes:
 
-* Ein [aktives Azure-Konto](http://azure.microsoft.com/pricing/free-trial/).
+* Ein [aktives Azure-Konto](https://azure.microsoft.com/pricing/free-trial/)
 
 * Einen PC mit [Visual Studio Community 2013] oder höher
 
@@ -69,4 +69,4 @@ Sie haben nun ein Azure-Back-End für mobile Apps bereitgestellt, das von Ihren 
 [Xcode]: https://go.microsoft.com/fwLink/p/?LinkID=266532
 [Visual Studio Community 2013]: https://go.microsoft.com/fwLink/p/?LinkID=534203
 
-<!---HONumber=AcomDC_1203_2015--->
+<!---HONumber=AcomDC_0128_2016-->

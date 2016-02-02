@@ -2,7 +2,7 @@
 	pageTitle="Herstellen einer Verbindung mit SQL-Datenbank mithilfe einer C#-Abfrage | Microsoft Azure"
 	description="Schreiben Sie ein Programm in C# zum Abfragen und Herstellen einer Verbindung mit einer SQL-Datenbank. Informationen zu IP-Adressen, Verbindungszeichenfolgen, sicherer Anmeldung und kostenlosem Visual Studio."
 	services="sql-database"
-	keywords="C#-Datenbankabfrage, C#-Abfrage, mit Datenbank verbinden"
+	keywords="C#-Datenbankabfrage, C#-Abfrage, mit Datenbank verbinden, SQL C#"
 	documentationCenter=""
 	authors="MightyPen"
 	manager="jeffreyg"
@@ -36,7 +36,7 @@ In diesem Artikel werden alle Schritte für Benutzer beschrieben, die mit Azure 
 Zum Ausführen des C#-Abfragecodebeispiels benötigen Sie Folgendes:
 
 
-- Ein Azure-Konto und ein Azure-Abonnement. Sie können sich für eine [kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/) registrieren.
+- Ein Azure-Konto und ein Azure-Abonnement. Sie können sich für eine [kostenlose Testversion](https://azure.microsoft.com/pricing/free-trial/) registrieren.
 
 
 - Eine **AdventureWorksLT**-Demodatenbank im Azure SQL-Datenbankdienst.
@@ -46,7 +46,7 @@ Zum Ausführen des C#-Abfragecodebeispiels benötigen Sie Folgendes:
 - Visual Studio 2013, Update 4 (oder höher). Microsoft bietet Visual Studio Community jetzt *kostenlos* an.
  - [Download von Visual Studio Community](http://www.visualstudio.com/products/visual-studio-community-vs)
  - [Weitere Optionen für kostenlose Visual Studio-Versionen](http://www.visualstudio.com/products/free-developer-offers-vs.aspx)
- - Oder lesen Sie in einem [Schritt](#InstallVSForFree) weiter unten in diesem Thema, wie das [Azure-Portal](http://portal.azure.com/) Ihnen bei der Installation von Visual Studio hilft.
+ - Oder lesen Sie in einem [Schritt](#InstallVSForFree) weiter unten in diesem Thema, wie das [Azure-Portal](https://portal.azure.com/) Ihnen bei der Installation von Visual Studio hilft.
 
 
 <a name="InstallVSForFree" id="InstallVSForFree"></a>
@@ -59,13 +59,13 @@ Zum Ausführen des C#-Abfragecodebeispiels benötigen Sie Folgendes:
 Zur Installation von Visual Studio haben Sie folgende Möglichkeiten:
 
 - Installieren Sie Visual Studio Community kostenlos, indem Sie in Ihrem Browser die Visual Studio-Produktwebseiten aufrufen, auf denen kostenlose Downloads und andere Optionen angeboten werden.
-- Lassen Sie sich vom [Azure-Portal](http://portal.azure.com/) zur Downloadwebseite führen, die als Nächstes beschrieben wird.
+- Lassen Sie sich vom [Azure-Portal](https://portal.azure.com/) zur Downloadwebseite führen, die als Nächstes beschrieben wird.
 
 
 ### Visual Studio über das Azure-Portal
 
 
-1. Melden Sie sich über das [Azure-Portal](http://portal.azure.com/) unter http://portal.azure.com/ an.
+1. Melden Sie sich über das [Azure-Portal](https://portal.azure.com/) unter http://portal.azure.com/ an.
 
 2. Klicken Sie auf **ALLE DURCHSUCHEN*** > **SQL-Datenbanken**. Ein Blatt für die Suche nach Datenbanken wird geöffnet.
 
@@ -104,7 +104,7 @@ Erstellen Sie in Visual Studio ein neues Projekt, das auf der Startvorlage für 
 
 	![Dialogfeld "Neues Projekt"][30-VSNewProject]
 
-2. Geben Sie unter **Name** den Namen **ConnectAndQuery\_Example** ein. Klicken Sie auf **OK**.
+2. Geben Sie unter **Name** den Namen **ConnectAndQuery_Example** ein. Klicken Sie auf **OK**.
 
 
 ## Schritt 3: Hinzufügen eines Assemblyverweises für die Konfigurationsverarbeitung
@@ -127,7 +127,7 @@ Unser C#-Beispiel verwendet die .NET Framework-Assembly **System.Configuration.d
 ## Schritt 4: Abrufen der Verbindungszeichenfolge
 
 
-Kopieren Sie im [Azure-Portal](http://portal.azure.com/) die Verbindungszeichenfolge, die für das Verbinden mit der SQL-Datenbank benötigt wird.
+Kopieren Sie im [Azure-Portal](https://portal.azure.com/) die Verbindungszeichenfolge, die für das Verbinden mit der SQL-Datenbank benötigt wird.
 
 Ihre erste Verwendung dient zum Verbinden von Visual Studio mit der Azure SQL-Datenbank **AdventureWorksLT**.
 
@@ -141,7 +141,7 @@ Ihre erste Verwendung dient zum Verbinden von Visual Studio mit der Azure SQL-Da
 1. Öffnen Sie in Visual Studio im Bereich "Projektmappen-Explorer" die Datei "App.config".
 
 2. Fügen Sie das Element **&#x3c;configuration&#x3e; &#x3c;/configuration&#x3e;** hinzu, wie im folgenden "App.config"-Codebeispiel gezeigt.
- - Ersetzen Sie *{Ihre\_Platzhalter}* durch die tatsächlichen Werte:
+ - Ersetzen Sie *{Ihre_Platzhalter}* durch die tatsächlichen Werte:
 
 ```
 	<?xml version="1.0" encoding="utf-8" ?>
@@ -305,7 +305,7 @@ namespace ConnectAndQuery_Example
 Wir versuchen, das C#-Beispiel kurz zu halten. Dennoch haben wir Code zum Lesen einer Konfigurationsdatei hinzugefügt, um mehrere Anfragen von Kunden wie Ihnen zu berücksichtigen. Wir sind uns einig, dass für hochwertige Produktionsprogramme Konfigurationsdateien anstelle von Literalen verwendet werden sollten, die in der EXE-Datei hartcodiert sind.
 
 
-> [AZURE.WARNING]Um den Code kurz zu halten, haben wir uns entschieden, in diesem Lernbeispiel keinen Code für Ausnahmebehandlung und Wiederholungslogik einzubeziehen. Ihre Produktionsprogramme, die mit einer Clouddatenbank interagieren, sollten jedoch beides beinhalten.
+> [AZURE.WARNING] Um den Code kurz zu halten, haben wir uns entschieden, in diesem Lernbeispiel keinen Code für Ausnahmebehandlung und Wiederholungslogik einzubeziehen. Ihre Produktionsprogramme, die mit einer Clouddatenbank interagieren, sollten jedoch beides beinhalten.
 >
 > [Hier](sql-database-develop-csharp-retry-windows.md) finden Sie einen Link zu einem Codebeispiel, das Wiederholungslogik enthält.
 
@@ -316,7 +316,7 @@ Wir versuchen, das C#-Beispiel kurz zu halten. Dennoch haben wir Code zum Lesen 
 Das C#-Clientprogramm kann erst dann eine Verbindung mit Azure SQL-Datenbank herstellen, wenn die IP-Adresse des Clientcomputers der SQL-Datenbankfirewall hinzugefügt wurde. Das Programm gibt eine hilfreiche Fehlermeldung aus, in der die erforderliche IP-Adresse genannt wird.
 
 
-Sie können die IP-Adresse über das [Azure-Portal](http://portal.azure.com/) hinzufügen.
+Sie können die IP-Adresse über das [Azure-Portal](https://portal.azure.com/) hinzufügen.
 
 
 
@@ -358,4 +358,4 @@ Weitere Informationen finden Sie unter:<br/> [Konfigurieren der Firewalleinstell
 
 [50-VSCopyToOutputDirectoryProperty]: ./media/sql-database-connect-query/connqry-vs-appconfig-copytoputputdir-h.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

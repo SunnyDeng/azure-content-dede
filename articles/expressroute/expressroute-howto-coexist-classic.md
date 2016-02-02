@@ -20,7 +20,7 @@
 
 Die Möglichkeit zum Konfigurieren von Standort-zu-Standort-VPN und ExpressRoute bietet mehrere Vorteile. Sie können Standort-zu-Standort-VPN als sicheren Failoverpfad für ExressRoute konfigurieren oder Standort-zu-Standort-VPNs für die Verbindung mit Websites nutzen, die nicht Teil Ihres Netzwerks, aber über ExpressRoute verbunden sind. Wir werden die Schritte zum Konfigurieren von beiden Szenarien in diesem Artikel behandeln. Dieser Artikel bezieht sich auf Verbindungen, die mithilfe des klassischen Bereitstellungsmodells erstellt wurden.
 
->[AZURE.IMPORTANT]Sie sollten wissen, dass Azure derzeit mit zwei Bereitstellungsmodellen arbeitet: der Bereitstellung mit dem Ressourcen-Manager und der klassischen Bereitstellung. Bevor Sie Ihre Konfiguration beginnen, sollten Sie sicherstellen, dass Sie die Bereitstellungsmodelle und -tools verstehen. Informationen zu den Bereitstellungsmodellen finden Sie unter [Azure-Bereitstellungsmodelle](../azure-classic-rm.md).
+>[AZURE.IMPORTANT] Sie sollten wissen, dass Azure derzeit mit zwei Bereitstellungsmodellen arbeitet: der Bereitstellung mit dem Ressourcen-Manager und der klassischen Bereitstellung. Bevor Sie Ihre Konfiguration beginnen, sollten Sie sicherstellen, dass Sie die Bereitstellungsmodelle und -tools verstehen. Informationen zu den Bereitstellungsmodellen finden Sie unter [Azure-Bereitstellungsmodelle](../azure-classic-rm.md).
 
 
 ExpressRoute-Verbindungen müssen bereits konfiguriert sein, bevor Sie die folgenden Schritte ausführen. Stellen Sie sicher, dass Sie die Handbücher zu [ExpressRoute-Verbindung erstellen](expressroute-howto-circuit-classic.md) und [Konfigurieren des Routings](expressroute-howto-routing-classic.md) gelesen haben, bevor Sie die folgenden Schritte unternehmen.
@@ -46,7 +46,7 @@ Sie können Ihr Netzwerk so konfigurieren, dass einige Seiten direkt mit Azure �
 
 ![Koexistenz](media/expressroute-howto-coexist-classic/scenario2.jpg)
 
->[AZURE.NOTE]Sie können ein virtuelles Netzwerk nicht als Transitrouter konfigurieren.
+>[AZURE.NOTE] Sie können ein virtuelles Netzwerk nicht als Transitrouter konfigurieren.
 
 ## Erstellen und konfigurieren
 
@@ -67,7 +67,7 @@ Es stehen zwei unterschiedliche Verfahren für die Konfiguration von Verbindunge
 
 Dieses Verfahren führt Sie durch das Erstellen eines VNets sowie das Erstellen von gleichzeitig bestehenden Standort-zu-Standort- und ExpressRoute-Verbindungen.
 
-1. Stellen Sie sicher, dass Sie über die neueste Version von PowerShell-Cmdlets verfügen. Sie können die neuesten PowerShell-Cmdlets aus dem PowerShell-Abschnitt der [Downloadseite](http://azure.microsoft.com/downloads/) herunterladen und installieren.
+1. Stellen Sie sicher, dass Sie über die neueste Version von PowerShell-Cmdlets verfügen. Sie können die neuesten PowerShell-Cmdlets aus dem PowerShell-Abschnitt der [Downloadseite](https://azure.microsoft.com/downloads/) herunterladen und installieren.
 
 2. Geben Sie Ihrem Virtual Network einen Namen. Weitere Informationen zum Arbeiten mit der Netzwerk-Konfigurationsdatei finden Sie unter [Konfigurieren eines Virtual Network mithilfe einer Netzwerk-Konfigurationsdatei](../virtual-network/virtual-networks-create-vnet-classic-portal.md). Weitere Informationen zum Konfigurationsschema finden Sie unter [Konfigurationsschema für Azure Virtual Network](https://msdn.microsoft.com/library/azure/jj157100.aspx).
 
@@ -142,13 +142,13 @@ Dieses Verfahren führt Sie durch das Erstellen eines VNets sowie das Erstellen 
 
 7. Erstellen Sie eine VPN-Gateway-Entität für einen lokalen Standort. Mit diesem Befehl wird das lokale VPN-Gateway nicht konfiguriert. Stattdessen können Sie mit ihm die Einstellungen des lokalen Gateway bereitstellen, wie z. B. die öffentliche IP-Adresse und der lokale Adressraum, sodass eine Verbindung mit dem Azure-VPN-Gateway hergestellt werden kann.
 
-	> [AZURE.IMPORTANT]Der lokale Standort für das Standort-zu-Standort-VPN ist nicht in der Netcfg-Datei definiert. Stattdessen müssen Sie dieses Cmdlet verwenden, um die lokalen Standort-Parameter anzugeben. Sie können sie nicht über das klassische Azure-Portal oder die Netcfg-Datei definieren.
+	> [AZURE.IMPORTANT] Der lokale Standort für das Standort-zu-Standort-VPN ist nicht in der Netcfg-Datei definiert. Stattdessen müssen Sie dieses Cmdlet verwenden, um die lokalen Standort-Parameter anzugeben. Sie können sie nicht über das klassische Azure-Portal oder die Netcfg-Datei definieren.
 
 	Ersetzen Sie anhand des folgenden Beispiels die Werte mit Ihren eigenen.
 
 	`New-AzureLocalNetworkGateway -GatewayName MyLocalNetwork -IpAddress <MyLocalGatewayIp> -AddressSpace <MyLocalNetworkAddress>`
 
-	> [AZURE.NOTE]Wenn Ihr lokales Netzwerk mehrere Routen hat, können Sie diese als ein Array übergeben. $MyLocalNetworkAddress = @("10.1.2.0/24","10.1.3.0/24","10.2.1.0/24")
+	> [AZURE.NOTE] Wenn Ihr lokales Netzwerk mehrere Routen hat, können Sie diese als ein Array übergeben. $MyLocalNetworkAddress = @("10.1.2.0/24","10.1.3.0/24","10.2.1.0/24")
 
 
 	Verwenden Sie zum Abrufen der Einstellungen des Virtual Network-Gateway, einschließlich der Gateway-ID und der öffentlichen IP, das`Get-AzureVirtualNetworkGateway` Cmdlet. Siehe folgendes Beispiel.
@@ -179,7 +179,7 @@ Wenn Sie ein vorhandenes virtuelles Netzwerk über eine ExpressRoute- oder Stand
 
 **Bevor Sie mit der Konfiguration beginnen:** Überprüfen Sie, dass Sie in Ihrem Virtual Network noch ausreichend IP-Adressen vorhanden sind, sodass Sie die Größe des Gateway-Subnetzes erhöhen können.
 
-1. Laden Sie die aktuelle Version der PowerShell-Cmdlets herunter. Sie können die neuesten PowerShell-Cmdlets aus dem PowerShell-Abschnitt der [Downloadseite](http://azure.microsoft.com/downloads/) herunterladen und installieren.
+1. Laden Sie die aktuelle Version der PowerShell-Cmdlets herunter. Sie können die neuesten PowerShell-Cmdlets aus dem PowerShell-Abschnitt der [Downloadseite](https://azure.microsoft.com/downloads/) herunterladen und installieren.
 
 2. Löschen Sie das vorhandene Standort-zu-Standort-VPN-Gateway. Nutzen Sie das folgende Cmdlet, um die Werte mit Ihren eigenen auszutauschen.
 
@@ -211,4 +211,4 @@ Wenn Sie ein vorhandenes virtuelles Netzwerk über eine ExpressRoute- oder Stand
 
 Weitere Informationen über ExpressRoute finden Sie unter [ExpressRoute – FAQ](expressroute-faqs.md).
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

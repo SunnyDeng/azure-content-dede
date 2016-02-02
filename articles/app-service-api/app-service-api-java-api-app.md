@@ -25,7 +25,7 @@ In diesem Lernprogramm erfahren Sie, wie Sie eine Java-Anwendung erstellen und m
 ## Voraussetzungen
 
 1. [Java Developer Kit 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) (oder höher)
-1. Ein kostenpflichtiges Abonnement für oder eine [kostenlose Testversion](https://azure.microsoft.com/pricing/free-trial/) von [Microsoft Azure](https://azure.microsoft.com)
+1. Ein kostenpflichtiges Abonnement für oder eine [kostenlose Testversion](https://azure.microsoft.com/pricing/free-trial/) von [Microsoft Azure](https://azure.microsoft.com/)
 1. [Maven](https://maven.apache.org/) auf dem Entwicklungscomputer
 1. Git auf dem Entwicklungscomputer 
 
@@ -230,13 +230,13 @@ In diesem Abschnitt ersetzen Sie die serverseitige Implementierung des generiert
 	
 1. Senden Sie mit [Postman](https://www.getpostman.com/) eine Anforderung an die API-Methode „get all contacts“ unter http://localhost:8080/api/contacts.
 
-	![„Contacts-API“ aufrufen](media/app-service-api-java-api-app/calling-contacts-api.png)
+	![Kontakte-API aufrufen](media/app-service-api-java-api-app/calling-contacts-api.png)
 	
 1. Senden Sie mit [Postman](https://www.getpostman.com/) eine Anforderung an die API-Methode „get specific contact“ unter http://localhost:8080/api/contacts/2.
 
-	![„Contacts-API“ aufrufen](media/app-service-api-java-api-app/calling-specific-contact-api.png)
+	![Kontakte-API aufrufen](media/app-service-api-java-api-app/calling-specific-contact-api.png)
 	
-1. Erstellen Sie abschließend die Java WAR (Web ARrchiv)-Datei, indem Sie folgenden Maven-Befehl in der Konsole ausführen.
+1. Erstellen Sie abschließend die Java WAR-Datei (Web ARchive), indem Sie folgenden Maven-Befehl in der Konsole ausführen.
 
 		mvn package war:war
 		
@@ -254,7 +254,7 @@ In diesem Abschnitt ersetzen Sie die serverseitige Implementierung des generiert
 ## Veröffentlichen der Ausgabe in Azure App Service
 In diesem Abschnitt erfahren Sie, wie Sie mit dem Azure-Portal eine neue API-App erstellen, diese API-App zum Hosten von Java-Anwendungen vorbereiten und die neu erstellte WAR-Datei in Azure App Service bereitstellen, um Ihre neue API-App auszuführen.
 
-1. Erstellen Sie eine neue API-App im [Azure-Portal](http://portal.azure.com), indem Sie auf das Menüelement **Neu -> Web und mobil -> API-App** klicken.
+1. Erstellen Sie eine neue API-App im [Azure-Portal](https://portal.azure.com/), indem Sie auf das Menüelement **Neu -> Web und mobil -> API-App** klicken.
 	
 	![Neue API-App erstellen](media/app-service-api-java-api-app/create-api-app.png)
 
@@ -270,11 +270,11 @@ In diesem Abschnitt erfahren Sie, wie Sie mit dem Azure-Portal eine neue API-App
 
 	![Neues lokales Git-Repository einrichten](media/app-service-api-java-api-app/select-git-repo.png)
 
-1. Kopieren Sie die neue URL des Git-Repositorys in die Zwischenablage. Speichern Sie sie, das Sie sie in Kürze benötigen.
+1. Kopieren Sie die neue URL des Git-Repositorys in die Zwischenablage. Speichern Sie sie, da Sie sie in Kürze benötigen.
 
 	![Neues Git-Repository für Ihre App einrichten](media/app-service-api-java-api-app/copy-git-repo-url.png)
 
-1. Übertragen Sie die WAR-Datei mithilfe per Git Push an das Online-Repository. Navigieren Sie dazu zum zuvor erstellten Bereitstellungsordner, damit Sie einfach ein Commit für den Code im Repository in App Service ausführen können. Navigieren Sie im Konsolenfenster zum Ordner, in dem sich der Ordner „webapps“ befindet. Geben Sie dort die folgenden Git-Befehle ein, um den Prozess zu starten und eine Bereitstellung auszulösen.
+1. Übertragen Sie die WAR-Datei per Git Push an das Online-Repository. Navigieren Sie dazu zum zuvor erstellten Bereitstellungsordner, damit Sie einfach einen Commit für den Code im Repository in App Service ausführen können. Navigieren Sie im Konsolenfenster zum Ordner, in dem sich der Ordner „webapps“ befindet. Geben Sie dort die folgenden Git-Befehle ein, um den Prozess zu starten und eine Bereitstellung auszulösen.
 
 		git init
 		git add .
@@ -295,4 +295,4 @@ Aufbauend auf diesem Beispiel können Sie mehr über das [Storage SDK für Java]
 
 Weitere Informationen zum Verwenden von Java in Azure finden Sie im [Java Developer Center](/develop/java/).
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

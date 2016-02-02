@@ -16,13 +16,13 @@ In diesem Abschnitt erstellen Sie eine Java-Konsolen-App, mit der eine neue Ger�
     <dependency>
       <groupId>com.microsoft.azure.iothub-java-client</groupId>
       <artifactId>iothub-java-service-client</artifactId>
-      <version>1.0.0-preview.8</version>
+      <version>1.0.0-preview.9</version>
     </dependency>
     ```
     
 4. Speichern und schließen Sie die Datei „pom.xml“.
 
-5. Öffnen Sie die Datei „create-device-identity\\src\\main\\java\\com\\mycompany\\app\\App.java“ mit einem Text-Editor.
+5. Öffnen Sie die Datei „create-device-identity\src\main\java\com\mycompany\app\App.java“ mit einem Text-Editor.
 
 6. Fügen Sie der Datei die folgenden **import**-Anweisungen hinzu:
 
@@ -84,7 +84,7 @@ In diesem Abschnitt erstellen Sie eine Java-Konsolen-App, mit der eine neue Ger�
 
 13. Notieren Sie sich die **Geräte-ID** und den **Geräteschlüssel**. Sie benötigen diese Angaben später beim Erstellen einer Anwendung, für die eine Verbindung mit IoT Hub als Gerät hergestellt wird.
 
-> [AZURE.NOTE]Die Identitätsregistrierung im IoT Hub speichert nur Geräteidentitäten, um einen sicheren Zugriff auf den Hub zu ermöglichen. Sie speichert Geräte-IDs und Schlüssel, die als Sicherheitsanmeldeinformationen verwendet werden, sowie ein Aktiviert/Deaktiviert-Kennzeichen, mit dem Sie den Zugriff für ein einzelnes Gerät deaktivieren können. Wenn Ihre Anwendung verlangt, dass weitere gerätespezifische Metadaten gespeichert werden, sollte dafür ein anwendungsspezifischer Speicher verwendet werden. Weitere Informationen finden Sie im [IoT Hub-Entwicklerhandbuch][lnk-devguide-identity].
+> [AZURE.NOTE] Die Identitätsregistrierung im IoT Hub speichert nur Geräteidentitäten, um einen sicheren Zugriff auf den Hub zu ermöglichen. Sie speichert Geräte-IDs und Schlüssel, die als Sicherheitsanmeldeinformationen verwendet werden, sowie ein Aktiviert/Deaktiviert-Kennzeichen, mit dem Sie den Zugriff für ein einzelnes Gerät deaktivieren können. Wenn Ihre Anwendung verlangt, dass weitere gerätespezifische Metadaten gespeichert werden, sollte dafür ein anwendungsspezifischer Speicher verwendet werden. Weitere Informationen finden Sie im [IoT Hub-Entwicklerhandbuch][lnk-devguide-identity].
 
 ## Empfangen von Gerät-an-Cloud-Nachrichten
 
@@ -110,7 +110,7 @@ In diesem Abschnitt erstellen Sie eine Java-Konsolen-App, die D2C-Nachrichten (D
 
 4. Speichern und schließen Sie die Datei „pom.xml“.
 
-5. Öffnen Sie die Datei „read-d2c-messages\\src\\main\\java\\com\\mycompany\\app\\App.java“ mit einem Text-Editor.
+5. Öffnen Sie die Datei „read-d2c-messages\src\main\java\com\mycompany\app\App.java“ mit einem Text-Editor.
 
 6. Fügen Sie der Datei die folgenden **import**-Anweisungen hinzu:
 
@@ -173,7 +173,7 @@ In diesem Abschnitt erstellen Sie eine Java-Konsolen-App, die D2C-Nachrichten (D
     }
     ```
 
-    > [AZURE.NOTE]Bei dieser Methode wird beim Erstellen des Receiver-Elements ein Filter verwendet, damit das Receiver-Element nur Nachrichten liest, die nach Beginn der Ausführung des Receiver-Elements an IoT Hub gesendet werden. Dies ist in einer Testumgebung nützlich, damit Sie den aktuellen Satz an Nachrichten anzeigen können. In einer Produktionsumgebung sollten Sie per Code sicherstellen, dass alle Nachrichten verarbeitet werden. Weitere Informationen finden Sie im Tutorial [Verarbeiten von D2C-Nachrichten mit IoT Hub][lnk-processd2c-tutorial].
+    > [AZURE.NOTE] Bei dieser Methode wird beim Erstellen des Receiver-Elements ein Filter verwendet, damit das Receiver-Element nur Nachrichten liest, die nach Beginn der Ausführung des Receiver-Elements an IoT Hub gesendet werden. Dies ist in einer Testumgebung nützlich, damit Sie den aktuellen Satz an Nachrichten anzeigen können. In einer Produktionsumgebung sollten Sie per Code sicherstellen, dass alle Nachrichten verarbeitet werden. Weitere Informationen finden Sie im Tutorial [Verarbeiten von D2C-Nachrichten mit IoT Hub][lnk-processd2c-tutorial].
 
 11. Ändern Sie die Signatur der **main**-Methode, um die unten angegebenen Ausnahmen einzufügen:
 
@@ -181,7 +181,7 @@ In diesem Abschnitt erstellen Sie eine Java-Konsolen-App, die D2C-Nachrichten (D
     public static void main( String[] args ) throws IOException
     ```
 
-12. Fügen Sie der **main**-Methode in der **App**-Klasse den folgenden Code hinzu. Mit diesem Code wird eine **EventHubClient**-Instanz zum Verbinden des Event Hub-kompatiblen Endpunkts mit IoT Hub erstellt. Anschließend werden zwei Threads zum Lesen aus den beiden Partitionen erstellt. Ersetzen Sie **{youriothubkey}**, **{youreventhubcompatiblenamespace}** und **{youreventhubcompatiblename}** durch die Werte, die Sie zuvor notiert haben:
+12. Fügen Sie der **main**-Methode in der **App**-Klasse den folgenden Code hinzu. Mit diesem Code wird eine **EventHubClient**-Instanz zum Verbinden des Event Hub-kompatiblen Endpunkts mit IoT Hub erstellt. Anschließend werden zwei Threads zum Lesen aus den beiden Partitionen erstellt. Ersetzen Sie **{youriothubkey}**, **{youreventhubcompatiblenamespace}** und **{youreventhubcompatiblename}** durch die Werte, die Sie zuvor notiert haben. Der Wert des Platzhalters **{youreventhubcompatiblenamespace}** stammt vom **Event Hub-kompatiblen Endpunkt** und hat das folgende Format: **xxxxnamespace.servicebus.windows.net**.
 
     ```
     String policyName = "iothubowner";
@@ -209,7 +209,7 @@ In diesem Abschnitt erstellen Sie eine Java-Konsolen-App, die D2C-Nachrichten (D
     client.close();
     ```
 
-    > [AZURE.NOTE]In diesem Code wird davon ausgegangen, dass Sie einen kostenlosen IoT Hub erstellt haben. Ein kostenloser IoT Hub verfügt über zwei Partitionen mit den Bezeichnungen „0“ und „1“. Wenn Sie Ihren IoT Hub mit einem der anderen Tarife erstellt haben, sollten Sie den Code so anpassen, dass ein **MessageReceiver**-Element für jede Partition erstellt wird.
+    > [AZURE.NOTE] In diesem Code wird davon ausgegangen, dass Sie Ihren IoT Hub auf der Ebene F1 (Free) erstellt haben. Ein kostenloser IoT Hub verfügt über zwei Partitionen mit den Bezeichnungen „0“ und „1“. Wenn Sie Ihren IoT Hub mit einem der anderen Tarife erstellt haben, sollten Sie den Code so anpassen, dass ein **MessageReceiver**-Element für jede Partition erstellt wird.
 
 13. Speichern und schließen Sie die Datei „App.java“.
 
@@ -228,4 +228,4 @@ In diesem Abschnitt erstellen Sie eine Java-Konsolen-App, die D2C-Nachrichten (D
 [lnk-event-hubs-overview]: event-hubs-overview.md
 [lnk-processd2c-tutorial]: iot-hub-csharp-csharp-process-d2c.md
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

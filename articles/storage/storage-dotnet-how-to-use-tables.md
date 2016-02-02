@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Verwenden des Tabellenspeichers mit .NET | Microsoft Azure"
-	description="Verwenden Sie Table Storage, um nicht strukturierte, schemalose Daten zu speichern. Table Storage ist ein NoSQL-Schlüssel-/Attributspeicher. Die Speicherclientbibliothek für .NET bietet APIs zum Erstellen und Löschen von Tabellen sowie zum Einfügen, Aktualisieren, Löschen und Abfragen von Daten."
+	pageTitle="Erste Schritte mit Azure Table Storage mit .NET | Microsoft Azure"
+	description="Speichern Sie unstrukturierte Daten mit Azure Table Storage – dem NoSQL-Datenspeicher von Microsoft – in der Cloud. Beginnen Sie mit einfachen Table Storage-Vorgängen, z. B. Erstellen und Löschen von Tabellen und Einfügen, Aktualisieren, Löschen und Abfragen von Daten."
 	services="storage"
 	documentationCenter=".net"
 	authors="tamram"
@@ -13,17 +13,21 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
-	ms.date="01/07/2016"
+	ms.date="01/24/2016"
 	ms.author="tamram"/>
 
 
-# Verwenden des Tabellenspeichers mit .NET
+# Erste Schritte mit Azure Table Storage mit .NET
 
 [AZURE.INCLUDE [storage-selector-table-include](../../includes/storage-selector-table-include.md)]
 
 ## Übersicht
 
-In diesem Artikel wird die Umsetzung gängiger Szenarien mit dem Azure-Tabellenspeicherdienst demonstriert. Die Beispiele sind in C# geschrieben und greifen auf die Azure-Speicherclientbibliothek für .NET zurück. Die behandelten Szenarien umfassen das Erstellen und Löschen einer Tabelle sowie das Arbeiten mit Tabellenentitäten.
+Azure Table Storage ist ein Dienst, bei dem unstrukturierte NoSQL-Daten in der Cloud gespeichert werden. Bei Table Storage handelt es sich um einen Schlüssel-/Attributspeicher mit einem schemalosen Design. Aufgrund der Schemalosigkeit von Table Storage ist es einfach, Ihre Daten an die Entwicklung Ihrer Anwendungen anzupassen. Der Datenzugriff ist für alle Arten von Anwendungen schnell und kostengünstig. Der Tabellenspeicher ist deutlich kostengünstiger als herkömmliches SQL für ähnliche Datenmengen.
+
+Sie können den Tabellenspeicher zur Speicherung von flexiblen Datensätzen wie Benutzerdaten für Webanwendungen, Adressbüchern, Geräteinformationen und jeder Art von Metadaten verwenden, die Ihr Dienst erfordert. Sie können eine beliebige Anzahl von Entitäten in einer Tabelle speichern, und ein Speicherkonto kann eine beliebige Anzahl von Tabellen enthalten, bis zur Speicherkapazitätsgrenze eines Speicherkontos.
+
+In diesem Tutorial wird gezeigt, wie Sie .NET-Code für einige häufige Szenarien mit Verwendung von Azure Table Storage schreiben, z. B. das Erstellen und Löschen einer Tabelle und das Einfügen, Aktualisieren, Löschen und Abfragen von Tabellendaten.
 
 [AZURE.INCLUDE [storage-dotnet-client-library-version-include](../../includes/storage-dotnet-client-library-version-include.md)]
 
@@ -440,4 +444,4 @@ Nachdem Sie sich nun mit den Grundlagen des Tabellenspeichers vertraut gemacht h
   [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
   [How to: Programmatically access Table storage]: #tablestorage
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

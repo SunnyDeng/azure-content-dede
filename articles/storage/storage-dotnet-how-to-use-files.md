@@ -1,6 +1,6 @@
 <properties
-			pageTitle="Verwenden von Azure-Dateien mit Windows | Microsoft Azure"
-    		description="Erstellen Sie mit diesem Schritt-für-Schritt-Tutorial eine Azure-Dateifreigabe in der Cloud. Verwalten Sie die Inhalte Ihrer Dateifreigaben, und stellen Sie eine Dateifreigabe aus einem virtuellen Azure-Computer oder einer lokalen Anwendung bereit."
+			pageTitle="Erste Schritte mit Azure File Storage unter Windows | Microsoft Azure"
+    		description="Speichern Sie Dateidaten mit Azure File Storage in der Cloud, und stellen Sie Ihre Clouddateifreigabe über eine virtuelle Azure-Maschine (VM) oder eine lokale Anwendung mit Windows bereit."
             services="storage"
             documentationCenter=".net"
             authors="robinsh"
@@ -12,22 +12,20 @@
       ms.tgt_pltfrm="na"
       ms.devlang="dotnet"
       ms.topic="hero-article"
-      ms.date="01/12/2015"
+      ms.date="01/24/2015"
       ms.author="robinsh" />
 
-# Verwenden des Azure-Dateispeichers unter Windows
+# Erste Schritte mit Azure File Storage unter Windows
 
 [AZURE.INCLUDE [storage-selector-file-include](../../includes/storage-selector-file-include.md)]
 
 ## Übersicht
 
-Azure File Storage bietet Dateifreigaben in der Cloud unter Verwendung des standardmäßigen [SMB (Server Message Block)-Protokolls](https://msdn.microsoft.com/library/windows/desktop/aa365233.aspx). Der Dateispeicher ist jetzt allgemein verfügbar und unterstützt sowohl SMB 2.1 als auch SMB 3.0.
+Azure File Storage ist ein Dienst, bei dem Dateifreigaben in der Cloud unter Verwendung des standardmäßigen Server Message Block-Protokolls bereitgestellt werden können (siehe [Microsoft SMB Protocol and CIFS Protocol Overview](https://msdn.microsoft.com/library/windows/desktop/aa365233.aspx) (Microsoft SMB-Protokoll und CIFS-Protokoll – Übersicht)). Sowohl SMB 2.1 als auch SMB 3.0 werden unterstützt. Mit Azure File Storage können Sie Legacyanwendungen, für die Dateifreigaben benötigt werden, schnell und ohne teures Umschreiben zu Azure migrieren. Anwendungen, die auf virtuellen Azure-Maschinen, in Clouddiensten oder auf lokalen Clients ausgeführt werden, können eine Dateifreigabe genauso in der Cloud bereitstellen, wie eine Desktopanwendung eine normale SMB-Freigabe bereitstellt. Die Dateispeicher-Freigaben können dann von beliebig vielen Anwendungskomponenten gleichzeitig eingebunden und abgerufen werden.
 
-Sie können Azure-Dateifreigaben mit dem [Azure-Portal](portal.azure.com), den Azure Storage-PowerShell-Cmdlets, den Azure Storage-Clientbibliotheken oder der Azure Storage-REST-API erstellen. Da es sich bei diesen Dateifreigaben um SMB-Freigaben handelt, können Sie darauf außerdem über standardmäßige und vertraute Dateisystem-APIs zugreifen.
+Da es sich bei Dateispeicher-Freigaben um gewöhnliche SMB-Freigaben handelt, können Anwendungen in Azure über die E/A-System-APIs auf die Freigaben zugreifen. Entwickler können daher ihren vorhandenen Code und bereits erlernte Fertigkeiten für die Migration vorhandener Anwendungen verwenden. IT-Fachkräfte können PowerShell-Cmdlets verwenden, um Dateispeicher-Freigaben im Rahmen der Administration von Azure-Anwendungen zu erstellen, einzubinden und zu verwalten.
 
-Anwendungen, die in Azure ausgeführt werden, können Dateifreigaben von virtuellen Azure-Computern problemlos einbinden. Und dank der allgemeinen Verfügbarkeit von File Storage können Sie zudem eine Dateifreigabe von einem lokalen Client bereitstellen, der SMB 3.0 unterstützt (z. B. Ihr lokaler Laptop, Desktop und Server).
-
-File Storage beruht auf der gleichen Technologie wie Blob, Table und Queue Storage. Dies bedeutet, dass File Storage die vorhandene Verfügbarkeit, Dauerhaftigkeit, Skalierbarkeit und Georedundanz nutzt, die in die Azure Storage-Plattform integriert ist.
+Sie können Azure-Dateifreigaben mit dem [Azure-Portal](https://portal.azure.com), den Azure Storage-PowerShell-Cmdlets, den Azure Storage-Clientbibliotheken oder der Azure Storage-REST-API erstellen. Da es sich bei diesen Dateifreigaben um SMB-Freigaben handelt, können Sie darauf außerdem über standardmäßige und vertraute Dateisystem-APIs zugreifen.
 
 Informationen zur Verwendung des Dateispeichers unter Linux finden Sie unter [Verwenden des Azure-Dateispeichers mit Linux](storage-how-to-use-files-linux.md).
 
@@ -61,7 +59,7 @@ Der Dateispeicher wird jetzt für alle Speicherkonten unterstützt, sodass Sie e
 
 ## Verwenden des Azure-Portals zum Verwalten einer Dateifreigabe
 
-Das [Azure-Portal](portal.azure.com) bietet eine Benutzeroberfläche, über die Kunden Dateifreigaben verwalten können. Im Portal können Sie folgende Aktionen ausführen:
+Das [Azure-Portal](https://portal.azure.com) bietet eine Benutzeroberfläche, über die Kunden Dateifreigaben verwalten können. Im Portal können Sie folgende Aktionen ausführen:
 
 - Erstellen der Dateifreigabe
 - Hoch- und Herunterladen von Dateien für die Dateifreigabe
@@ -119,7 +117,7 @@ Das [Azure-Portal](portal.azure.com) bietet eine Benutzeroberfläche, über die 
 
 	![Screenshot, der das Bereitstellen der Dateifreigabe veranschaulicht](./media/storage-dotnet-how-to-use-files/files-manage-3.png)
 
-	>[AZURE.TIP]Klicken Sie zum Abrufen des Zugriffsschlüssels für das Speicherkonto auf die **Einstellungen** Ihres Speicherkontos und anschließend auf **Zugriffsschlüssel**.
+	>[AZURE.TIP] Klicken Sie zum Abrufen des Zugriffsschlüssels für das Speicherkonto auf die **Einstellungen** Ihres Speicherkontos und anschließend auf **Zugriffsschlüssel**.
 
 	![Screenshot, der das Abrufen des Zugriffsschlüssels für das Speicherkonto veranschaulicht](./media/storage-dotnet-how-to-use-files/files-manage-4.png)
 
@@ -134,13 +132,13 @@ Alternativ können Sie Azure PowerShell zum Erstellen und Verwalten von Dateifre
 
 Laden Sie die Azure PowerShell-Cmdlets herunter und installieren Sie diese anschließend, um die Verwendung von PowerShell vorzubereiten. Informationen zum Installationspunkt und zu Installationsanweisungen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md).
 
-> [AZURE.NOTE]Sie sollten daher das neueste Azure PowerShell-Modul herunterladen und installieren bzw. ein Upgrade durchführen.
+> [AZURE.NOTE] Sie sollten daher das neueste Azure PowerShell-Modul herunterladen und installieren bzw. ein Upgrade durchführen.
 
 Öffnen Sie ein Azure PowerShell-Fenster, indem Sie auf **Start** klicken und **Azure PowerShell** eingeben. Im Azure PowerShell-Fenster wird das Azure Powershell-Modul geladen.
 
 ### Erstellen von Kontexten für Speicherkonten und -schlüssel
 
-Erstellen Sie nun den Speicherkonto-Kontext. Der Kontext kapselt den Speicherkontonamen und den Kontoschlüssel. Anweisungen zum Kopieren Ihres Kontoschlüssels aus dem [Azure-Portal](portal.azure.com) finden Sie unter [Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln](storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys).
+Erstellen Sie nun den Speicherkonto-Kontext. Der Kontext kapselt den Speicherkontonamen und den Kontoschlüssel. Anweisungen zum Kopieren Ihres Kontoschlüssels aus dem [Azure-Portal](https://portal.azure.com) finden Sie unter [Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln](storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys).
 
 Ersetzen Sie im folgenden Beispiel `storage-account-name` und `storage-account-key` durch Ihren Speicherkontonamen und -schlüssel.
 
@@ -156,7 +154,7 @@ Erstellen Sie anschließend die neue Freigabe mit dem Namen `logs`.
 
 Nun haben Sie eine Dateifreigabe im Dateispeicher. Als Nächstes fügen Sie ein Verzeichnis und eine Datei hinzu.
 
-> [AZURE.IMPORTANT]Der Name der Dateifreigabe darf nur Kleinbuchstaben enthalten. Ausführliche Informationen zur Benennung von Dateifreigaben und Dateien finden Sie unter [Benennen und Referenzieren von Freigaben, Verzeichnissen, Dateien und Metadaten](https://msdn.microsoft.com/library/azure/dn167011.aspx).
+> [AZURE.IMPORTANT] Der Name der Dateifreigabe darf nur Kleinbuchstaben enthalten. Ausführliche Informationen zur Benennung von Dateifreigaben und Dateien finden Sie unter [Benennen und Referenzieren von Freigaben, Verzeichnissen, Dateien und Metadaten](https://msdn.microsoft.com/library/azure/dn167011.aspx).
 
 ### Erstellen eines Verzeichnisses in der Dateifreigabe
 
@@ -230,7 +228,7 @@ Beachten Sie, dass die Anmeldeinformationen nur für den Kontext beibehalten wer
 
 Nachdem Sie eine Remoteverbindung zu dem virtuellen Computer hergestellt haben, können Sie den Befehl `net use` mit folgender Syntax ausführen, um die Dateifreigabe bereitzustellen. Ersetzen Sie `<storage-account-name>` durch den Namen Ihres Speicherkontos und `<share-name>` durch den Namen Ihrer Dateispeicher-Freigabe:
 
-    net use <drive-letter>: \<storage-account-name>.file.core.windows.net<share-name>
+    net use <drive-letter>: \\<storage-account-name>.file.core.windows.net\<share-name>
 
 	example :
 	net use z: \\samples.file.core.windows.net\logs
@@ -253,7 +251,7 @@ Um die Dateifreigabe über einen lokalen Client bereitzustellen, müssen Sie zue
 - Installieren Sie eine Version von Windows, die SMB 3.0 unterstützt. Windows nutzt die SMB 3.0-Verschlüsselung zum sicheren Übertragen von Daten zwischen Ihrem lokalen Client und der Azure-Dateifreigabe in der Cloud. 
 - Öffnen Sie den Internetzugriff für Port 445 (TCP ausgehend) im lokalen Netzwerk, wie dies für das SMB-Protokoll erforderlich ist. 
 
-> [AZURE.NOTE]Von einigen Internet Service Providern wird Port 445 unter Umständen blockiert. Erfragen Sie dies, falls erforderlich, bei Ihrem Service Provider.
+> [AZURE.NOTE] Von einigen Internet Service Providern wird Port 445 unter Umständen blockiert. Erfragen Sie dies, falls erforderlich, bei Ihrem Service Provider.
 
 ## Entwickeln mit Dateispeicher
 
@@ -281,7 +279,7 @@ Als Nächstes speichern Sie Ihre Anmeldeinformationen in der Datei „app.config
 	    </appSettings>
 	</configuration>
 
-> [AZURE.NOTE]Die neueste Version des Azure-Speicheremulators bietet keine Unterstützung für Dateispeicher. Die Verbindungszeichenfolge muss auf ein Azure-Speicherkonto in der Cloud verweisen, um mit Dateispeicher arbeiten zu können.
+> [AZURE.NOTE] Die neueste Version des Azure-Speicheremulators bietet keine Unterstützung für Dateispeicher. Die Verbindungszeichenfolge muss auf ein Azure-Speicherkonto in der Cloud verweisen, um mit Dateispeicher arbeiten zu können.
 
 ### Hinzufügen von Namespace-Deklarationen
 
@@ -429,7 +427,7 @@ Ab Version 5.x der Azure Storage-Clientbibliothek können Sie eine Datei in eine
 
 Sie können auch AzCopy verwenden, um eine Datei in eine andere oder ein BLOB in eine Datei oder umgekehrt zu kopieren. Ausführliche Informationen zum Kopieren von Dateien mit AzCopy finden Sie unter [Verwenden von AzCopy mit Microsoft Azure Storage](storage-use-azcopy.md#copy-files-in-azure-file-storage-with-azcopy-preview-version-only).
 
-> [AZURE.NOTE]Wenn Sie ein BLOB in eine Datei oder eine Datei in ein BLOB kopieren, müssen Sie eine SAS verwenden, um das Quellobjekt zu authentifizieren. Dies gilt selbst dann, wenn Sie innerhalb desselben Speicherkontos kopieren.
+> [AZURE.NOTE] Wenn Sie ein BLOB in eine Datei oder eine Datei in ein BLOB kopieren, müssen Sie eine SAS verwenden, um das Quellobjekt zu authentifizieren. Dies gilt selbst dann, wenn Sie innerhalb desselben Speicherkontos kopieren.
 
 **Kopieren einer Datei in eine andere Datei**
 
@@ -528,7 +526,7 @@ Auf gleiche Weise können Sie ein BLOB in eine Datei kopieren. Wenn das Quellobj
 
 Azure Storage Analytics unterstützt jetzt Metriken für Dateispeicher. Mit Metrikdaten können Sie Anforderungen verfolgen und Probleme diagnostizieren.
 
-Sie können Metriken für Dateispeicher über das [Azure-Portal](portal.azure.com) aktivieren. Sie können Metriken auch programmgesteuert aktivieren, indem Sie den Vorgang „Set File Service Properties“ über die REST API oder einen analogen Vorgang in der Speicherclientbibliothek aufrufen.
+Sie können Metriken für Dateispeicher über das [Azure-Portal](https://portal.azure.com) aktivieren. Sie können Metriken auch programmgesteuert aktivieren, indem Sie den Vorgang „Set File Service Properties“ über die REST API oder einen analogen Vorgang in der Speicherclientbibliothek aufrufen.
 
 ## Dateispeicher – Häufig gestellte Fragen
 
@@ -611,4 +609,4 @@ Weitere Informationen zum Azure-Dateispeicher erhalten Sie über diese Links.
 - [Beibehalten von Verbindungen zu Microsoft Azure-Dateien](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx)
 - [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy)
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

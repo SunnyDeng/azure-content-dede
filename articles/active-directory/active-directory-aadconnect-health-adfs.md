@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="get-started-article" 
-	ms.date="08/14/2015" 
+	ms.date="01/21/2016" 
 	ms.author="billmath"/>
 
 # Verwenden von Azure AD Connect Health mit AD FS 
@@ -32,7 +32,7 @@ Durch Auswahl einer Warnung werden zusätzliche Informationen, Lösungsschritte 
 ## Nutzungsanalyse für AD FS
 In der Azure AD Connect Health-Nutzungsanalyse wird der Authentifizierungsdatenverkehr für Ihre Verbundserver analysiert. Bei Auswahl des Felds "Nutzungsanalyse" wird das Blatt zur Nutzungsanalyse geöffnet, in dem Metriken und Gruppierungen angezeigt werden.
 
->[AZURE.NOTE]Um die Nutzungsanalyse mit AD FS verwenden zu können, müssen Sie sicherstellen, dass die AD FS-Überwachung aktiviert ist. Weitere Informationen finden Sie unter [Aktivieren der Überwachung für AD FS](active-directory-aadconnect-health-operations.md#enable-auditing-for-ad-fs).
+>[AZURE.NOTE] Um die Nutzungsanalyse mit AD FS verwenden zu können, müssen Sie sicherstellen, dass die AD FS-Überwachung aktiviert ist. Weitere Informationen finden Sie unter [Aktivieren der Überwachung für AD FS](active-directory-aadconnect-health-operations.md#enable-auditing-for-ad-fs).
 
 ![Azure AD Connect Health-Portal](./media/active-directory-aadconnect-health/report1.png)
 
@@ -74,4 +74,4 @@ Wenn Sie die Filteroption oben im Blatt auswählen, können Sie eine Filterung n
 * [Verwenden von Azure AD Connect Health für die Synchronisierung](active-directory-aadconnect-health-sync.md)
 * [Azure AD Connect Health – FAQ](active-directory-aadconnect-health-faq.md)
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0128_2016-->

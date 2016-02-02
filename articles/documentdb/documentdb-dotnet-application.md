@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="ASP.NET MVC-Tutorial für DocumentDB: Entwicklung von Webanwendungen | Microsoft Azure" 
-	description="Schließen Sie dieses ASP.NET MVC-Tutorial ab, um eine MVC-Webanwendung mit DocumentDB zu erstellen. Sie speichern JSON- und Zugriffsdaten über eine Todo-App, die in Azure Websites gehostet wird." 
+	description="ASP.NET MVC-Tutorial zum Erstellen einer MVC-Webanwendung mit DocumentDB. Speichern von JSON- und Zugriffsdaten über eine Todo-App, die in Azure Websites gehostet wird – Schrittanleitung im ASP NET MVC-Tutorial" 
 	keywords="asp.net mvc tutorial, web application development, mvc web application, asp net mvc tutorial step by step"
 	services="documentdb" 
 	documentationCenter=".net" 
@@ -18,7 +18,7 @@
 	ms.date="11/18/2015" 
 	ms.author="ryancraw"/>
 
-#<a name="_Toc395809351"></a>Erstellen einer Webanwendung mit ASP.NET MVC unter Verwendung von DocumentDB
+#<a name="_Toc395809351"></a>ASP.NET MVC-Tutorial: Erstellen einer Webanwendung mit DocumentDB
 
 > [AZURE.SELECTOR]
 - [.NET](documentdb-dotnet-application.md)
@@ -32,7 +32,7 @@ Um zu verdeutlichen, wie Sie Azure DocumentDB effizient zum Speichern und Abfrag
 
 In dieser exemplarischen Vorgehensweise wird veranschaulicht, wie Sie mit dem von Azure bereitgestellten DocumentDB-Dienst Daten aus einer in Azure gehosteten ASP.NET MVC-Webanwendung speichern und auf diese zugreifen.
 
-> [AZURE.TIP]Dieses Lernprogramm setzt vorherige Erfahrung mit der Verwendung von ASP.NET MVC und Azure-Websites voraus. Wenn Sie noch nicht mit ASP.NET oder den [erforderlichen Tools](#_Toc395637760) vertraut sind, sollten Sie das vollständige Beispielprojekt von [GitHub][] herunterladen und den Anweisungen in diesem Beispiel folgen. Nachdem Sie das Projekt erstellt haben, können Sie den Artikel lesen, um Einblick in den Code im Kontext des Projekts zu erhalten.
+> [AZURE.TIP] Dieses Lernprogramm setzt vorherige Erfahrung mit der Verwendung von ASP.NET MVC und Azure-Websites voraus. Wenn Sie noch nicht mit ASP.NET oder den [erforderlichen Tools](#_Toc395637760) vertraut sind, sollten Sie das vollständige Beispielprojekt von [GitHub][] herunterladen und den Anweisungen in diesem Beispiel folgen. Nachdem Sie das Projekt erstellt haben, können Sie den Artikel lesen, um Einblick in den Code im Kontext des Projekts zu erhalten.
 
 ## <a name="_Toc395637760"></a>Voraussetzungen für dieses Datenbanktutorial
 
@@ -209,7 +209,7 @@ Nun wird das **V** in MVC erstellt, die Ansichten (Views):
 	- Wählen Sie im Feld **Vorlage** die Option ***Liste*** aus.
 	- Wählen Sie im Feld **Modellklasse** die Option ***Item (todo.Models)*** aus.
 	- Lassen Sie das Feld **Datenkontextklasse** leer. 
-	- Geben Sie im Feld für die Layoutseite ***~/Views/Shared/\_Layout.cshtml*** ein.
+	- Geben Sie im Feld für die Layoutseite ***~/Views/Shared/_Layout.cshtml*** ein.
 	
 	![Screenshot des Dialogfelds "Ansicht hinzufügen"](./media/documentdb-dotnet-application/image18.png)
 
@@ -226,7 +226,7 @@ Nun wird das **V** in MVC erstellt, die Ansichten (Views):
     - Wählen Sie im Feld **Vorlage** die Option ***Erstellen*** aus.
     - Wählen Sie im Feld **Modellklasse** die Option ***Item (todo.Models)*** aus.
     - Lassen Sie das Feld **Datenkontextklasse** leer.
-    - Geben Sie im Feld für die Layoutseite ***~/Views/Shared/\_Layout.cshtml*** ein.
+    - Geben Sie im Feld für die Layoutseite ***~/Views/Shared/_Layout.cshtml*** ein.
     - Klicken Sie auf **Hinzufügen**.
 
 #### <a name="_Toc395888515"></a>Hinzufügen einer Elementbearbeitungsansicht
@@ -240,7 +240,7 @@ Fügen Sie abschließend eine letzte Ansicht zum Bearbeiten eines **Elements** a
     - Wählen Sie im Feld **Vorlage** die Option ***Bearbeiten*** aus.
     - Wählen Sie im Feld **Modellklasse** die Option ***Item (todo.Models)*** aus.
     - Lassen Sie das Feld **Datenkontextklasse** leer. 
-    - Geben Sie im Feld für die Layoutseite ***~/Views/Shared/\_Layout.cshtml*** ein.
+    - Geben Sie im Feld für die Layoutseite ***~/Views/Shared/_Layout.cshtml*** ein.
     - Klicken Sie auf **Hinzufügen**.
 
 Wenn dies abgeschlossen ist, schließen Sie alle CSHTML-Dokumente in Visual Studio, da wir erst später zu diesen Ansichten zurückkehren.
@@ -397,7 +397,7 @@ Hier muss zunächst eine Klasse hinzugefügt werden, die die gesamte Logik zur V
     	    }
     	}
 
-	> [AZURE.TIP]Beim Erstellen einer neuen Dokumentensammlung können Sie einen optionalen RequestOptions-Parameter vom Angebotstyp bereitstellen, sodass die Leistungsfähigkeit der neuen Sammlung angegeben werden kann. Wenn dieser Parameter nicht übergeben wird, wird der Standardtangebotstyp verwendet. Weitere Informationen zu DocumentDB-Angebotstypen finden Sie in [Leistungsstufen in DocumentDB](documentdb-performance-levels.md)
+	> [AZURE.TIP] Beim Erstellen einer neuen Dokumentensammlung können Sie einen optionalen RequestOptions-Parameter vom Angebotstyp bereitstellen, sodass die Leistungsfähigkeit der neuen Sammlung angegeben werden kann. Wenn dieser Parameter nicht übergeben wird, wird der Standardtangebotstyp verwendet. Weitere Informationen zu DocumentDB-Angebotstypen finden Sie in [Leistungsstufen in DocumentDB](documentdb-performance-levels.md)
 
 3. Nun werden einige Werte aus der Konfiguration gelesen. Öffnen Sie die Datei **Web.config** Ihrer Anwendung, und fügen Sie die folgenden Zeilen unter dem Abschnitt `<AppSettings>` hinzu.
 	
@@ -448,7 +448,7 @@ Jetzt sollte Ihre Lösung ohne Fehler erstellen können.
 
 Wenn Sie die Anwendung jetzt ausführen, werden Sie zum **HomeController** und der Ansicht **Index** dieses Controllers geleitet. Das ist das Standardverhalten für das MVC-Vorlagenprojekt, das am Anfang ausgewählt wurde, das möchten wir jedoch nicht! Zum Ändern dieses Verhaltens muss die Weiterleitung dieser MVC-Anwendung geändert werden.
 
-Öffnen Sie ***App\\_Start\\RouteConfig.cs***, navigieren Sie zur Zeile, die mit „defaults“ beginnt, und ändern Sie diese auf folgende Weise.
+Öffnen Sie ***App\_Start\RouteConfig.cs***, navigieren Sie zur Zeile, die mit „defaults“ beginnt, und ändern Sie diese auf folgende Weise.
 
     	defaults: new { controller = "Item", action = "Index", id = UrlParameter.Optional }
 
@@ -633,4 +633,4 @@ Wenn Sie Ihrer Anwendung zusätzliche Funktionen hinzufügen möchten, sehen Sie
 [Grundlegende CRUD-Vorgänge in ASP.NET MVC]: http://go.microsoft.com/fwlink/?LinkId=317598
 [GitHub]: https://github.com/Azure-Samples/documentdb-net-todo-app
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -26,7 +26,7 @@
 
 Dieser Artikel hilft Ihnen beim Einstieg in die Erstellung Ihrer ersten Azure Data Factory.
 
-> [AZURE.NOTE]Dieser Artikel bietet keine grundlegende Übersicht über den Azure Data Factory-Dienst. Eine ausführliche Übersicht über den Dienst finden Sie unter [Einführung in Azure Data Factory](data-factory-introduction.md).
+> [AZURE.NOTE] Dieser Artikel bietet keine grundlegende Übersicht über den Azure Data Factory-Dienst. Eine ausführliche Übersicht über den Dienst finden Sie unter [Einführung in Azure Data Factory](data-factory-introduction.md).
 
 ## Übersicht über das Tutorial
 Dieses Tutorial führt Sie durch die Schritte, mit denen Sie Ihre erste Data Factory in Gang bringen. Sie werden eine Pipeline in der Data Factory erstellen, die Eingabedaten transformiert/verarbeitet, um Ausgabedaten zu erzeugen.
@@ -34,7 +34,7 @@ Dieses Tutorial führt Sie durch die Schritte, mit denen Sie Ihre erste Data Fac
 ## Voraussetzungen
 Bevor Sie mit diesem Tutorial beginnen, müssen folgende Voraussetzungen erfüllt sein:
 
-1.	**Azure-Abonnement** – Wenn Sie über kein Azure-Abonnement verfügen, können Sie in wenigen Minuten ein kostenloses Testversionskonto einrichten. Im Artikel [Kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/) erfahren Sie, wie Sie ein kostenloses Testkonto erhalten.
+1.	**Azure-Abonnement** – Wenn Sie über kein Azure-Abonnement verfügen, können Sie in wenigen Minuten ein kostenloses Testversionskonto einrichten. Im Artikel [Kostenlose Testversion](https://azure.microsoft.com/pricing/free-trial/) erfahren Sie, wie Sie ein kostenloses Testkonto erhalten.
 
 2.	**Azure-Speicher** – Sie benötigen ein Azure-Speicherkonto zum Speichern der Daten in diesem Tutorial. Falls Sie noch kein Azure-Speicherkonto haben, lesen Sie den Artikel [Erstellen eines Speicherkontos](../storage/storage-create-storage-account.md#create-a-storage-account). Nachdem Sie das Speicherkonto erstellt haben, müssen Sie den Kontoschlüssel für den Zugriff auf den Speicher abrufen. Siehe [Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln](../storage/storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys).
 
@@ -185,7 +185,7 @@ Erstellen Sie mithilfe des Editors eine Datei namens **input.log** in **c:\adfge
 
 ### Hochladen von Eingabe- und HQL-Datei in Ihren Azure-Blobspeicher
 
-Sie können jedes Tool Ihrer Wahl für diese Aufgabe verwenden (z. B. Azure Storage-Explorer, CloudXPlorer von ClumsyLeaf Software). Dieser Abschnitt enthält Anweisungen zur Verwendung des AzCopy-Tools.
+Sie können jedes Tool Ihrer Wahl für diese Aufgabe verwenden (z. B. [Microsoft Azure Storage-Explorer](http://storageexplorer.com/) oder CloudXPlorer von ClumsyLeaf Software). Dieser Abschnitt enthält Anweisungen zur Verwendung des AzCopy-Tools.
 	 
 2. So bereiten Sie den Azure-Speicher für das Tutorial vor:
 	1. Laden Sie die [neueste Version von **AzCopy**](http://aka.ms/downloadazcopy) oder die [neueste Vorschauversion](http://aka.ms/downloadazcopypr) herunter. Im Artikel [Verwenden von AzCopy ](../storage/storage-use-azcopy.md) finden Sie eine Anleitung zur Verwendung des Hilfsprogramms.
@@ -197,7 +197,7 @@ Sie können jedes Tool Ihrer Wahl für diese Aufgabe verwenden (z. B. Azure Sto
 
 			AzCopy /Source:. /Dest:https://<storageaccountname>.blob.core.windows.net/adfgetstarted/inputdata /DestKey:<storagekey>  /Pattern:input.log
 
-		> [AZURE.NOTE]Der obige Befehl erstellt einen Container mit dem Namen **adfgetstarted** in Ihrem Azure-Blobspeicher und kopiert die Datei **partitionweblogs.hql** von Ihrem lokalen Laufwerk in den Ordner **inputdata** des Containers.
+		> [AZURE.NOTE] Der obige Befehl erstellt einen Container mit dem Namen **adfgetstarted** in Ihrem Azure-Blobspeicher und kopiert die Datei **partitionweblogs.hql** von Ihrem lokalen Laufwerk in den Ordner **inputdata** des Containers.
 	
 	5. Nachdem die Datei erfolgreich hochgeladen wurde, sehen Sie eine Ausgabe ähnlich der folgenden von AzCopy.
 	
@@ -222,4 +222,4 @@ Jetzt können Sie mit dem Tutorial beginnen. Klicken Sie oben auf eine der Regis
 - Visual Studio
 - Azure-Ressourcen-Manager-Vorlagen 
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

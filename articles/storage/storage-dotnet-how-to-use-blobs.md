@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Verwenden des Blob-Speichers mit .NET | Microsoft Azure"
-	description="Erfahren Sie mehr über den Azure Blob-Speicher, und wie Sie einen Container erstellen und Blob-Inhalt hochladen, herunterladen, auflisten und löschen können."
+	pageTitle="Erste Schritte mit Azure Blob Storage mit .NET | Microsoft Azure"
+	description="Speichern Sie Dateidaten in der Cloud, indem Sie Azure Blob Storage (Objektspeicher) verwenden. Informieren Sie sich über einfache Blob Storage-Vorgänge, z. B. das Erstellen eines Containers und das Hochladen, Auflisten und Löschen von Blob-Inhalten."
 	services="storage"
 	documentationCenter=".net"
 	authors="tamram"
@@ -13,17 +13,19 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
-	ms.date="12/01/2015"
+	ms.date="01/22/2016"
 	ms.author="tamram"/>
 
 
-# Verwenden des Blob-Speichers mit .NET
+# Erste Schritte mit Azure Blob Storage mit .NET
 
 [AZURE.INCLUDE [storage-selector-blob-include](../../includes/storage-selector-blob-include.md)]
 
 ## Übersicht
 
-In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Microsoft Azure Blob-Speicherdienst demonstriert. Die Beispiele sind in C# geschrieben und greifen auf die Azure-Speicherclientbibliothek für .NET zurück. Die Speicherclientbibliothek ist ein SDK, das die Interaktion mit Blobspeicher-REST-APIs vereinfacht. Die in dieser Anleitung behandelten Szenarien umfassen **Hochladen**, **Auflisten**, **Herunterladen** und **Löschen** von Blobs und nehmen etwa eine Stunde in Anspruch. Wenn Sie ein Erste-Schritte-Video sehen möchten, finden Sie dies unter [Einführung in Azure Storage in fünf Minuten](https://azure.microsoft.com/documentation/videos/azure-storage-5-minute-overview/), oder lesen Sie [Erste Schritte mit Azure Storage – Einstieg in fünf Minuten](storage-getting-started-guide.md).
+Azure Blob Storage ist ein Dienst, bei dem Dateidaten in der Cloud gespeichert werden. In Blob Storage können alle Arten von Text- oder Binärdaten gespeichert werden, z. B. ein Dokument, eine Mediendatei oder ein Installer einer Anwendung. Blob Storage wird auch als Objektspeicher bezeichnet.
+
+In diesem Tutorial wird gezeigt, wie Sie .NET-Code für einige häufig verwendete Szenarien mit Azure Blob Storage schreiben. Die beschriebenen Szenarien umfassen das Hochladen, Auflisten, Herunterladen und Löschen von Blobs. Das Durcharbeiten des Tutorials sollte maximal eine Stunde dauern.
 
 [AZURE.INCLUDE [storage-dotnet-client-library-version-include](../../includes/storage-dotnet-client-library-version-include.md)]
 
@@ -38,6 +40,7 @@ In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Microsoft
 [AZURE.INCLUDE [storage-dotnet-obtain-assembly](../../includes/storage-dotnet-obtain-assembly.md)]
 
 ### Namespace-Deklarationen
+
 Fügen Sie zu Beginn aller C#-Dateien, in denen Sie programmgesteuert auf Azure-Speicher zugreifen möchten, die folgenden Namespace-Deklarationen hinzu:
 
     using Microsoft.WindowsAzure;
@@ -292,7 +295,7 @@ Da die Beispielmethode eine asynchrone Methode aufruft, muss sie mit dem Schlüs
 ## Beschreiben eines Anfügeblobs
 
 Ein Anfügeblob ist eine neue Art von Blob, die mit Version 5.x der Azure-Speicher-Clientbibliothek für .NET eingeführt wird. Anfügeblobs sind für Anfügevorgäng wie die Protokollierung optimiert. Ein Anfügeblob besteht wie ein Blockblob aus Blöcken. Allerdings ist es bei einem Anfügeblob so, dass ein neuer Block immer ans Ende des Blobs angefügt wird. Das Aktualisieren oder Löschen eines vorhandenen Blocks ist in einem Anfügeblob nicht möglich. Anders als bei Blockblobs sind die Block-IDs sind für Anfügeblobs nicht verfügbar.
- 
+
 In einem Anfügeblob kann jeder Block unterschiedlich groß sein, bis maximal 4 MB. Insgesamt können bis zu 50.000 Blöcke enthalten sein. Die maximale Größe eines Anfügeblobs ist deshalb etwas mehr als 195 GB (4 MB X 50.000 Blöcke).
 
 Das folgende Beispiel erstellt ein neues Anfügeblob und fügt einige Daten hinzu, um eine einfache Protokollierung zu simulieren.
@@ -307,7 +310,7 @@ Das folgende Beispiel erstellt ein neues Anfügeblob und fügt einige Daten hinz
     //Get a reference to a container.
     CloudBlobContainer container = blobClient.GetContainerReference("my-append-blobs");
 
-    //Create the container if it does not already exist. 
+    //Create the container if it does not already exist.
     container.CreateIfNotExists();
 
     //Get a reference to an append blob.
@@ -323,7 +326,7 @@ Das folgende Beispiel erstellt ein neues Anfügeblob und fügt einige Daten hinz
     Random rnd = new Random();
     byte[] bytes = new byte[numBlocks];
     rnd.NextBytes(bytes);
-        
+
     //Simulate a logging operation by writing text data and byte data to the end of the append blob.
     for (int i = 0; i < numBlocks; i++)
     {
@@ -365,4 +368,4 @@ Nachdem Sie sich nun mit den Grundlagen von Blobspeichern vertraut gemacht haben
   [.NET client library reference]: http://go.microsoft.com/fwlink/?LinkID=390731&clcid=0x409
   [REST API reference]: http://msdn.microsoft.com/library/azure/dd179355
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

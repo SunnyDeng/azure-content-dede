@@ -111,9 +111,10 @@ So entfernen Sie die Diagnoseerweiterung aus jeder einzelnen Rolle
 ```
 
 
-## Verwandte Themen
+## Weitere Informationen
 
 * [Überwachen von Azure Cloud Services-Apps mit Application Insights](app-insights-cloudservices.md)
 * [Senden von Azure-Diagnosedaten an Application Insights](app-insights-azure-diagnostics.md)
+* [Automatisieren der Warnungskonfiguration](app-insights-powershell-alerts.md)
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -27,6 +27,6 @@ Sie haben die Gerätekonfiguration abgeschlossen.
 
 ![Video verfügbar](./media/storsimple-take-backup/Video_icon.png) **Video verfügbar**
 
-Sie können sich [hier](http://azure.microsoft.com/documentation/videos/take-a-storsimple-backup/) ein Video anschauen, in dem das Erstellen einer StorSimple-Sicherung demonstriert wird.
+Sie können sich [hier](https://azure.microsoft.com/documentation/videos/take-a-storsimple-backup/) ein Video anschauen, in dem das Erstellen einer StorSimple-Sicherung demonstriert wird.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->
