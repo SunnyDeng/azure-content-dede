@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Azure Automation-Webhooks"
+   pageTitle="Azure Automation-Webhooks | Microsoft Azure"
    description="Ein Webhook, der es einem Client ermöglicht, ein Runbook in Azure Automation über einen HTTP-Aufruf zu starten. In diesem Artikel wird beschrieben, wie Sie einen Webhook erstellen und aufrufen, um ein Runbook zu starten."
    services="automation"
    documentationCenter=""
@@ -17,9 +17,7 @@
 
 # Azure Automation-Webhooks
 
-Mit einem *Webhook* können Sie ein bestimmtes Runbook in Azure Automation über eine einfache HTTP-Anforderung starten. Dadurch wird es externen Diensten wie Visual Studio Team Services, GitHub oder benutzerdefinierten Anwendungen ermöglicht, Runbooks zu starten, ohne eine vollständige Lösung unter Verwendung der Azure Automation API zu implementieren.
-
-![Webhooks](media/automation-webhooks/webhooks-overview.png)
+Mit einem *Webhook* können Sie ein bestimmtes Runbook in Azure Automation über eine einfache HTTP-Anforderung starten. Dadurch wird es externen Diensten wie Visual Studio Team Services, GitHub oder benutzerdefinierten Anwendungen ermöglicht, Runbooks zu starten, ohne eine vollständige Lösung unter Verwendung der Azure Automation API zu implementieren. ![Webhooks](media/automation-webhooks/webhooks-overview.png)
 
 In [Starten eines Runbooks in Azure Automation](automation-starting-a-runbook.md) können Sie Webhooks mit anderen Methoden zum Starten eines Runbooks vergleichen.
 
@@ -36,7 +34,7 @@ Die folgende Tabelle beschreibt die Eigenschaften, die Sie für einen Webhook ko
 
 
 ### Parameter
-Ein Webhook kann Werte für Runbookparameter definieren, die verwendet werden, wenn das Runbook von diesem Webhook gestartet wird. Der Webhook muss Werte für alle obligatorischen Parameter des Runbooks einschließen und kann Werte für optionale Parameter einschließen. Mehrere mit einem einzelnen Runbook verknüpften Webhooks können verschiedene Parameterwerte verwenden.
+Ein Webhook kann Werte für Runbookparameter definieren, die verwendet werden, wenn das Runbook von diesem Webhook gestartet wird. Der Webhook muss Werte für alle obligatorischen Parameter des Runbooks einschließen und kann Werte für optionale Parameter einschließen. Ein Parameterwert, der für ein Webhook konfiguriert wurde, kann auch nach der Erstellung des Webhooks geändert werden. Mehrere mit einem einzelnen Runbook verknüpften Webhooks können verschiedene Parameterwerte verwenden.
 
 Wenn ein Client ein Runbook mithilfe eines Webhooks startet, können die im Webhook definierten Parameterwerte nicht überschrieben werden. Um Daten aus dem Client abzurufen, kann das Runbook nur einen Parameter namens **$WebhookData** vom Typ [object] akzeptieren, der Daten enthält, die der Client in die POST-Anforderung einschließt.
 
@@ -125,8 +123,10 @@ Das Runbook erwartet im Anforderungstext eine Liste von virtuellen Computern, di
 	$uri = "https://s1events.azure-automation.net/webhooks?token=8ud0dSrSo%2fvHWpYbklW%3c8s0GrOKJZ9Nr7zqcS%2bIQr4c%3d"
 	$headers = @{"From"="user@contoso.com";"Date"="05/28/2015 15:47:00"}
     
-    $vms  = @([pscustomobject]@{Name="vm01";ServiceName="vm01"})
-    $vms += @([pscustomobject]@{Name="vm02";ServiceName="vm02"})
+    $vms  = @(
+    			@{ Name="vm01";ServiceName="vm01"},
+    			@{ Name="vm02";ServiceName="vm02"}
+    		)
 	$body = ConvertTo-Json -InputObject $vms 
 
 	$response = Invoke-RestMethod -Method Post -Uri $uri -Headers $headers -Body $body
@@ -186,7 +186,7 @@ Das folgende Beispiel-Runbook akzeptiert die Anforderung aus dem vorherigen Beis
 
 ## Erstellen von Runbooks als Antwort auf Azure-Warnungen
 
-Webhook-fähige Runbooks können verwendet werden, um auf [Azure-Warnungen](Azure-portal/insights-receive-alert-notifications.md) zu reagieren. Durch das Sammeln von Statistiken wie Leistung, Verfügbarkeit und Nutzung mithilfe der Azure-Warnungen können Ressourcen in Azure überwacht werden. Sie können auf der Grundlage von Überwachungsmetriken oder Ereignissen für Ihre Azure-Ressourcen eine Warnung empfangen, derzeit unterstützen Automation-Konten nur Metriken. Wenn der Wert einer angegebenen Metrik den zugewiesenen Schwellenwert überschreitet oder wenn das konfigurierte Ereignis ausgelöst wird, wird eine Benachrichtigung an den Dienstadministrator oder an die Co-Administratoren gesendet, um die Warnung zu beheben. Weitere Informationen zu Metriken und Ereignissen finden Sie unter [Azure-Warnungen](Azure-portal/insights-receive-alert-notifications.md).
+Webhook-fähige Runbooks können verwendet werden, um auf [Azure-Warnungen](../azure-portal/insights-receive-alert-notifications.md) zu reagieren. Durch das Sammeln von Statistiken wie Leistung, Verfügbarkeit und Nutzung mithilfe der Azure-Warnungen können Ressourcen in Azure überwacht werden. Sie können auf der Grundlage von Überwachungsmetriken oder Ereignissen für Ihre Azure-Ressourcen eine Warnung empfangen, derzeit unterstützen Automation-Konten nur Metriken. Wenn der Wert einer angegebenen Metrik den zugewiesenen Schwellenwert überschreitet oder wenn das konfigurierte Ereignis ausgelöst wird, wird eine Benachrichtigung an den Dienstadministrator oder an die Co-Administratoren gesendet, um die Warnung zu beheben. Weitere Informationen zu Metriken und Ereignissen finden Sie unter [Azure-Warnungen](../azure-portal/insights-receive-alert-notifications.md).
 
 Neben der Verwendung von Azure-Warnungen als Benachrichtigungssystem können Sie auch Runbooks als Reaktion auf Warnungen erstellen. Azure Automation bietet die Möglichkeit, Webhook-fähige Runbooks mit Azure-Warnungen auszuführen. Wenn eine Metrik den konfigurierten Schwellenwert überschreitet, wird die Warnregel aktiv und löst den Automation-Webhook aus, der wiederum das Runbook ausführt.
 
@@ -196,12 +196,12 @@ Neben der Verwendung von Azure-Warnungen als Benachrichtigungssystem können Sie
 
 Bei einer Azure Ressource wie einem virtuellen Computer ist die CPU-Auslastung dieses Computers eine der wichtigsten Leistungsmetriken. Wenn die CPU-Auslastung über einen langen Zeitraum 100 % oder mehr beträgt, empfiehlt sich ein Neustart des virtuellen Computers, um das Problem zu beheben. Dies kann gelöst werden, indem für den virtuellen Computer eine Warnregel mit dem CPU-Prozentsatz als Metrik konfiguriert wird. Der CPU-Prozentsatz dient hier lediglich als Beispiel. Es gibt zahlreiche weitere Metriken, die Sie für Ihre Azure-Ressourcen konfigurieren können. Der Neustart des virtuellen Computers ist eine Aktion, um dieses Problem zu beheben. Sie können aber auch andere Aktionen für das Runbook konfigurieren.
 
-Wenn diese Warnregel aktiv wird und das Webhook-fähige Runbook auslöst, wird der Warnungskontext an das Runbook gesendet. Der [Warnungskontext](Azure-portal/insights-receive-alert-notifications.md) enthält Details wie **SubscriptionID**, **ResourceGroupName**, **ResourceName**, **ResourceType**, **ResourceId** und **Timestamp**, die erforderlich sind, damit das Runbook die Ressource identifizieren kann, für die eine Aktion ausgeführt wird. Der Warnungskontext ist im Textteil des **WebhookData**-Objekts eingebettet, das an das Runbook gesendet wird, und der Zugriff darauf ist über die **Webhook.RequestBody**-Eigenschaft möglich.
+Wenn diese Warnregel aktiv wird und das Webhook-fähige Runbook auslöst, wird der Warnungskontext an das Runbook gesendet. Der [Warnungskontext](../azure-portal/insights-receive-alert-notifications.md) enthält Details wie **SubscriptionID**, **ResourceGroupName**, **ResourceName**, **ResourceType**, **ResourceId** und **Timestamp**, die erforderlich sind, damit das Runbook die Ressource identifizieren kann, für die eine Aktion ausgeführt wird. Der Warnungskontext ist im Textteil des **WebhookData**-Objekts eingebettet, das an das Runbook gesendet wird, und der Zugriff darauf ist über die **Webhook.RequestBody**-Eigenschaft möglich.
 
 
 ### Beispiel
 
-Erstellen Sie einen virtuellen Azure-Computer unter Ihrem Abonnement, und weisen Sie eine [Warnung zur Überwachung der CPU-Prozentsatzmetrik zu](Azure-portal/insights-receive-alert-notifications.md). Achten Sie beim Erstellen der Warnung darauf, im Webhook-Feld die URL des Webhooks anzugeben, die beim Erstellen des Webhooks generiert wurde.
+Erstellen Sie einen virtuellen Azure-Computer unter Ihrem Abonnement, und weisen Sie eine [Warnung zur Überwachung der CPU-Prozentsatzmetrik zu](../azure-portal/insights-receive-alert-notifications.md). Achten Sie beim Erstellen der Warnung darauf, im Webhook-Feld die URL des Webhooks anzugeben, die beim Erstellen des Webhooks generiert wurde.
 
 Das folgende Beispiel-Runbook wird immer dann ausgelöst, wenn die Warnregel aktiv wird, und es werden die Parameter des Warnungskontexts gesammelt, die erforderlich sind, damit das Runbook die Ressource identifizieren kann, für die die Aktion ausgeführt wird.
 
@@ -266,10 +266,10 @@ Das folgende Beispiel-Runbook wird immer dann ausgelöst, wenn die Warnregel akt
 
  
 
-## Verwandte Artikel
+## Nächste Schritte
 
-- [Starten eines Runbooks](automation-starting-a-runbook.md)
-- [Anzeigen des Status eines Runbookauftrags](automation-viewing-the-status-of-a-runbook-job.md)
+- Weitere Informationen zu verschiedenen Methoden zum Starten eines Runbooks finden Sie unter [Starten eines Runbooks in Azure Automation](automation-starting-a-runbook.md).
+- Informationen zum Anzeigen des Status eines Runbookauftrags finden Sie unter [Ausführen von Runbooks in Azure Automation](automation-runbook-execution.md).
 - [Ausführen von Aktionen nach Azure-Warnungen mithilfe von Azure Automation](https://azure.microsoft.com/blog/using-azure-automation-to-take-actions-on-azure-alerts/)
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0121_2016-->

@@ -1,11 +1,11 @@
 <properties
 	pageTitle="Verwenden des Blob-Speichers mit Node.js | Microsoft Azure"
-	description="Erfahren Sie, wie Sie den Azure-Blobdienst zum Hochladen, Herunterladen, Auflisten und Löschen von Blobinhalten verwenden. Die Beispiele sind in Node.js geschrieben."
+	description="Erfahren Sie, wie Sie Blob Storage zum Hochladen, Herunterladen, Auflisten und Löschen von Blobinhalten verwenden. Die Beispiele sind in Node.js geschrieben."
 	services="storage"
 	documentationCenter="nodejs"
 	authors="rmcmurray"
 	manager="wpickett"
-	editor=""/>
+	editor="tysonn"/>
 
 <tags
 	ms.service="storage"
@@ -14,7 +14,7 @@
 	ms.devlang="nodejs"
 	ms.topic="article"
 	ms.date="12/01/2015"
-	ms.author="robmcm"/>
+	ms.author="micurd"/>
 
 
 
@@ -24,7 +24,7 @@
 
 ## Übersicht
 
-Dieser Artikel demonstriert Ihnen allgemeine Szenarien unter Verwendung des Azure-Blobdienstes. Die Beispiele werden über die Node.js-API geschrieben. Die behandelten Szenarien umfassen das Hochladen, Auflisten, Herunterladen und Löschen von Blobs.
+In diesem Artikel wird die Durchführung gängiger Szenarien mit Blob Storage demonstriert. Die Beispiele werden über die Node.js-API geschrieben. Die behandelten Szenarien umfassen das Hochladen, Auflisten, Herunterladen und Löschen von Blobs.
 
 [AZURE.INCLUDE [storage-blob-concepts-include](../../includes/storage-blob-concepts-include.md)]
 
@@ -377,4 +377,4 @@ Weitere Informationen finden Sie in den folgenden Ressourcen.
 [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
 [API-Referenz zum Azure Storage-SDK für Node]: http://dl.windowsazure.com/nodestoragedocs/index.html
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0114_2016-->

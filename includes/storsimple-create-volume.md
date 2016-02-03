@@ -8,7 +8,7 @@
    1. Geben Sie den **Namen** für das Volume ein.
    2. Geben Sie die **Bereitgestellte Kapazität** für das Volume in GB oder TB an. Die Volumekapazität muss für ein physisches Gerät zwischen 1 GB und 64 TB liegen.
    3. Wählen Sie aus der Dropdownliste den **Verwendungstyp** für das Volume aus. 
-   4. Wenn Sie dieses Volume für archivierte Daten verwenden, aktivieren Sie das Kontrollkästchen **Use this volume for less frequently accessed archival data**. Wählen Sie für alle anderen Verwendungstypen einfach **Mehrstufiges Volume** aus. (Mehrstufige Volumes wurden früher primäre Volumes genannt).
+   4. Wenn Sie dieses Volume für archivierte Daten verwenden, aktivieren Sie das Kontrollkästchen **Verwenden Sie dieses Volume für Archivdaten, auf die Sie seltener zugreifen**. Wählen Sie für alle anderen Verwendungstypen einfach **Mehrstufiges Volume** aus. (Mehrstufige Volumes wurden früher primäre Volumes genannt).
    4. Klicken Sie auf den Pfeil ![Pfeilsymbol](./media/storsimple-create-volume/HCS_ArrowIcon-include.png), um zur nächsten Seite zu wechseln.
 
         ![Add volume](./media/storsimple-create-volume/AddVolume1-include.png)
@@ -26,6 +26,6 @@
 
 ![Video verfügbar](./media/storsimple-create-volume/Video_icon.png) **Video verfügbar**
 
-Sie können sich [hier](http://azure.microsoft.com/documentation/videos/create-a-storsimple-volume/) ein Video anschauen, in dem das Erstellen eines StorSimple-Volumes demonstriert wird.
+Sie können sich [hier](https://azure.microsoft.com/documentation/videos/create-a-storsimple-volume/) ein Video anschauen, in dem das Erstellen eines StorSimple-Volumes demonstriert wird.
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

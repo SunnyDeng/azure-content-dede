@@ -23,7 +23,8 @@
 &nbsp;
 
 
-[AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]&nbsp;
+[AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]
+&nbsp;
 
 [AZURE.INCLUDE [mobile-services-hero-slug](../../includes/mobile-services-hero-slug.md)]
 
@@ -41,7 +42,7 @@ Unten sehen Sie einen Screenshot aus der fertigen App:
 
 Für das Abschließen dieses Lernprogramms sind XCode und [Xamarin Studio] für OS X oder das Xamarin Visual Studio-Plug-In für Visual Studio unter Windows erforderlich. Das Beispiel wird unter iOS 5.0 und höher ausgeführt.
 
-> [AZURE.IMPORTANT]Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Dienste, die Sie auch nach Ablauf der Testversion weiter nutzen können. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/).
+> [AZURE.IMPORTANT] Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Dienste, die Sie auch nach Ablauf der Testversion weiter nutzen können. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/).
 
 ## <a name="create-new-service"> </a>Erstellen eines neuen mobilen Dienstes
 
@@ -89,7 +90,7 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 
 	Dadurch wird eine POST-Anforderung an den neuen, in Azure gehosteten mobilen Dienst gesendet. Daten von der Anforderung werden in die TodoItem-Tabelle eingefügt. In der Tabelle gespeicherte Einträge werden von dem mobilen Dienst zurückgegeben, und die Daten werden in der Liste angezeigt.
 
-	> [AZURE.NOTE]Sie können den Code überprüfen, der auf den Mobile Service zugreift, um Daten abzufragen und einzufügen. Sie finden ihn in der C#-Datei "TodoService.cs".
+	> [AZURE.NOTE] Sie können den Code überprüfen, der auf den Mobile Service zugreift, um Daten abzufragen und einzufügen. Sie finden ihn in der C#-Datei "TodoService.cs".
 
 4. Zurück im [klassischen Azure-Portal] klicken Sie auf die Registerkarte **Daten** und dann auf die Tabelle **TodoItems**.
 
@@ -103,13 +104,17 @@ Der letzte Schritt dieses Lernprogramms besteht im Erstellen und Ausführen der 
 ## Nächste Schritte
 Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzliche wichtige Aufgaben in Mobile Services ausgeführt werden:
 
-* [Erste Schritte mit der Synchronisierung von Offlinedaten] Erfahren Sie, wie Sie die Offlinedatensynchronisierung nutzen, um eine flexible und stabile App zu erstellen.
+* [Erste Schritte mit der Synchronisierung von Offlinedaten] 
+ Erfahren Sie, wie Sie die Offlinedatensynchronisierung nutzen, um eine flexible und stabile App zu erstellen.
 
-* [Erste Schritte mit der Authentifizierung] Informationen zur Authentifizierung von Benutzern Ihrer App bei einem Identitätsanbieter.
+* [Erste Schritte mit der Authentifizierung] 
+ Informationen zur Authentifizierung von Benutzern Ihrer App bei einem Identitätsanbieter.
 
-* [Erste Schritte mit Pushbenachrichtigungen] Informationen zum Senden einer einfachen Pushbenachrichtigung an Ihre App.
+* [Erste Schritte mit Pushbenachrichtigungen] 
+ Informationen zum Senden einer einfachen Pushbenachrichtigung an Ihre App.
 
-* [Verwenden des Clients der Xamarin-Komponente für Azure Mobile Services](partner-xamarin-mobile-services-how-to-use-client-library.md) Erfahren Sie, wie Sie den mobilen Dienst abfragen, mit Daten arbeiten und auf benutzerdefinierte APIs zugreifen.
+* [Verwenden des Clients der Xamarin-Komponente für Azure Mobile Services](partner-xamarin-mobile-services-how-to-use-client-library.md) 
+ Erfahren Sie, wie Sie den mobilen Dienst abfragen, mit Daten arbeiten und auf benutzerdefinierte APIs zugreifen.
 
 
 [AZURE.INCLUDE [app-service-disqus-feedback-slug](../../includes/app-service-disqus-feedback-slug.md)]
@@ -141,4 +146,4 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 
 [klassischen Azure-Portal]: https://manage.windowsazure.com/
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

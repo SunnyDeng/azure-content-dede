@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="09/22/2015" 
+	ms.date="12/14/2015" 
 	ms.author="tdykstra"/>
 
 # Verwenden von Azure Service Bus mit dem WebJobs-SDK
@@ -26,12 +26,21 @@ Im Handbuch wird davon ausgegangen, dass Sie wissen, [wie ein WebJobs-Projekt in
 
 Die Codeausschnitte zeigen nur Funktionen, nicht den Code, mit dem das `JobHost`-Objekt in diesem Beispiel erstellt wird:
 
-		static void Main(string[] args)
-		{
-		    JobHost host = new JobHost();
-		    host.RunAndBlock();
-		}
-		
+```
+public class Program
+{
+   public static void Main()
+   {
+      JobHostConfiguration config = new JobHostConfiguration();
+      config.UseServiceBus();
+      JobHost host = new JobHost(config);
+      host.RunAndBlock();
+   }
+}
+```
+
+Ein [vollständiges Service Bus-Codebeispiel](https://github.com/Azure/azure-webjobs-sdk-samples/blob/master/BasicSamples/ServiceBus/Program.cs) finden Sie im Repository „azure-webjobs-sdk-samples“ auf GitHub.com.
+
 ## <a id="prerequisites"></a> Voraussetzungen
 
 Für die Arbeit mit Service Bus müssen Sie neben den weiteren WebJobs-SDK-Paketen das NuGet-Paket [Microsoft.Azure.WebJobs.ServiceBus](https://www.nuget.org/packages/Microsoft.Azure.WebJobs.ServiceBus/) installieren.
@@ -146,6 +155,17 @@ Zum Schreiben einer Funktion, die das SDK aufruft, wenn eine Nachricht zu einem 
 
 Zum Erstellen einer Nachricht zu einem Thema verwenden Sie das `ServiceBus`-Attribut mit einem Themennamen ebenso wie bei Verwendung eines Warteschlangennamens.
 
+## In Version 1.1 hinzugefügte Features
+
+In Version 1.1 wurden die folgenden Features hinzugefügt:
+
+* Möglichkeit zur umfassenden Anpassung der Nachrichtenverarbeitung über `ServiceBusConfiguration.MessagingProvider`.
+* `MessagingProvider` unterstützt die Anpassung der Service Bus-Elemente `MessagingFactory` und `NamespaceManager`.
+* Ein `MessageProcessor`-Strategiemuster ermöglicht es Ihnen, einen Prozessor pro Warteschlange/Thema anzugeben.
+* Die parallele Nachrichtenverarbeitung wird standardmäßig unterstützt. 
+* Einfache Anpassung von `OnMessageOptions` über `ServiceBusConfiguration.MessageOptions`.
+* [AccessRights](https://github.com/Azure/azure-webjobs-sdk-samples/blob/master/BasicSamples/ServiceBus/Functions.cs#L71) können für `ServiceBusTriggerAttribute`/`ServiceBusAttribute` angegeben werden (für Szenarien, in denen Sie möglicherweise keine Verwaltungsrechte besitzen). 
+
 ## <a id="queues"></a>Verwandte Themen, die im Artikel zu Speicherwarteschlangen behandelt werden
 
 Informationen zu WebJobs-SDK-Szenarien, die nicht spezifisch für Service Bus sind, finden Sie unter [Verwenden des Azure-Warteschlangenspeichers mit dem WebJobs-SDK](websites-dotnet-webjobs-sdk-storage-queues-how-to.md).
@@ -166,4 +186,4 @@ In diesem Artikel werden u. a. die folgenden Themen behandelt:
 In dieser Anleitung wurde anhand von Codebeispielen veranschaulicht, wie häufige Szenarien für das Arbeiten mit Azure Service Bus behandelt werden. Weitere Informationen zur Verwendung von Azure WebJobs und dem WebJobs-SDK finden Sie unter [Empfohlene Ressourcen für Azure WebJobs](http://go.microsoft.com/fwlink/?linkid=390226).
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

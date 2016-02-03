@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Verwenden von Logik-App-Features" 
+	pageTitle="Verwenden von Logik-App-Features | Microsoft Azure" 
 	description="Erfahren Sie, wie die erweiterten Features von Logik-Apps verwendet werden." 
 	authors="stepsic-microsoft-com" 
 	manager="dwrede" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/15/2015"
+	ms.date="01/04/2016"
 	ms.author="stepsic"/>
 	
 # Verwenden von Logik-App-Features
@@ -49,15 +49,15 @@ Die "Repeat"-Eigenschaft verwendet eine Liste von Elementen und führt für jede
 
 3. Klicken Sie auf das Zahnradsymbol, und wählen Sie **Für eine Liste wiederholen**.
  
-2. Klicken Sie neben dem Feld **Wiederholen** auf `...`, und wählen Sie **Text** aus. Dies führt zur Eingabe von:
+2. Klicken Sie neben dem Feld **Wiederholen** auf `...`, und wählen Sie **Text** aus. Dadurch wird Folgendes:
 
     	@body('twitterconnector')
 
-	in das Textfeld. Diese Funktion gibt eine Liste mit Tweets aus.
+	in das Textfeld eingegeben. Diese Funktion gibt eine Liste mit Tweets aus.
 
 3. Wählen Sie den gesamten Text im Textfeld **Inhalt** aus, und löschen Sie ihn. Klicken Sie dann auf `...`, und wählen Sie **Tweet-Text** aus. Dies fügt die **repeatItem()**-Funktion hinzu, die jedes Element in der Liste zurückgibt.
 
-Beachten Sie, dass die Ausgaben von wiederholten Aktionen besonders sind. Wenn Sie auf die Ergebnisse des Dropbox-Vorgangs verweisen möchten, führen Sie *nicht* den normalen Befehl `@actions('dropboxconnector').outputs.body` aus, sondern: `@actions('dropboxconnector').outputs.repeatItems`. Dadurch wird eine Liste mit der Häufigkeit der Ausführung des Vorgangs zusammen mit den jeweiligen Ausgaben zurückgegeben. Z. B. gibt `@first(actions('dropboxconnector').outputs.repeatItems).outputs.body.FilePath` den Pfad der ersten hochgeladenen Datei zurück.
+Beachten Sie, dass die Ausgaben von wiederholten Aktionen besonders sind. Wenn Sie auf die Ergebnisse des Dropbox-Vorgangs verweisen möchten, führen Sie *nicht* den normalen Befehl `@actions('dropboxconnector').outputs.body` aus. Sondern verwenden Sie anstelle dessen: `@actions('dropboxconnector').outputs.repeatItems` Dadurch wird eine Liste mit der Häufigkeit der Ausführung des Vorgangs zusammen mit den jeweiligen Ausgaben zurückgegeben. Beispielsweise gibt `@first(actions('dropboxconnector').outputs.repeatItems).outputs.body.FilePath` den Pfad der ersten hochgeladenen Datei zurück.
 
 ### Bedingt
 Diese Logik-App führt weiter zu zahlreichen Dateien, die in Dropbox hochgeladen werden. In den folgenden Schritten wird zusätzliche Logik hinzugefügt, um sicherzustellen, dass Sie nur eine Datei erhalten, wenn der Tweet eine bestimmte Anzahl von Retweets hat.
@@ -98,7 +98,7 @@ Der folgende Code aktualisiert die vorhandene Logik-App so, dass Parameter für 
 		    "defaultValue" : "MicrosoftAzure"
 	    }
     
-2. Führen Sie einen Bildlauf zur `twitterconnector`-Aktion durch, suchen Sie den Abfragewert, und ersetzen Sie ihn durch `#@{parameters('topic')}`. Außerdem können Sie die **Concat**-Funktion verwenden, um zwei oder mehr Zeichenfolgen zu verknüpfen, z. B. ist `@concat('#',parameters('topic'))` identisch mit der oben genannten.
+2. Scrollen Sie zur `twitterconnector`-Aktion, suchen Sie den Abfragewert, und ersetzen Sie ihn durch `#@{parameters('topic')}`. Außerdem können Sie die **Concat**-Funktion verwenden, um zwei oder mehr Zeichenfolgen zu verknüpfen, z. B. ist `@concat('#',parameters('topic'))` identisch mit der oben genannten.
  
 3. Wechseln Sie abschließend zur Aktion `dropboxconnector`, und fügen Sie den "Topic"-Parameter wie folgt hinzu:
 
@@ -117,7 +117,7 @@ Es gibt mehrere Möglichkeiten zum Starten des Workflows, der in der Logik-App d
 Ein Wiederholungstrigger wird in einem von Ihnen angegebenen Intervall ausgeführt. Wenn der Trigger bedingte Logik aufweist, bestimmt der Trigger, ob der Workflow ausgeführt werden muss oder nicht. Ein Trigger gibt an, dass er ausgeführt werden sollte, indem der Statuscode `200` zurückgegeben wird. Wenn er nicht ausgeführt werden muss, wird der Statuscode `202` zurückgegeben.
 
 ### Rückruf mit REST-APIs
-Dienste können ein Logik-App-Endgerät zum Starten eines Workflows aufrufen. Sie finden das Endgerät, auf das Sie zugreifen möchten, indem Sie in Ihrer Logik-App über die Befehlsleistenschaltfläche **Einstellungen** zum Blatt **Eigenschaften** navigieren.
+Dienste können einen Logik-App-Endpunkt zum Starten eines Workflows aufrufen. Sie finden den Endpunkt, auf den Sie zugreifen möchten, indem Sie in Ihrer Logik-App über die Befehlsleistenschaltfläche **Einstellungen** zum Blatt **Eigenschaften** navigieren.
 
 Über diesen Rückruf können Sie eine Logik-App in Ihrer benutzerdefinierten Anwendung aufrufen. Sie müssen die **Standardauthentifizierung** verwenden. Der Benutzername `default` wird für Sie erstellt, und das Kennwort ist das Feld **Primärer Zugriffsschlüssel** auf dem Blatt **Eigenschaften**. Zum Beispiel:
 
@@ -143,4 +143,4 @@ Um eine Logik-App bei Bedarf zu starten, klicken Sie auf der Befehlsleiste auf d
 [Erstellen einer neuen Logik-App]: app-service-logic-create-a-logic-app.md
 [Azure-Portal]: https://portal.azure.com
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_0107_2016-->

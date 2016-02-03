@@ -94,6 +94,8 @@ Vor der Bereitstellung eines HBase-Clusters müssen Sie ein virtuelles Azure-Net
 	- **Speicherort** – Der Speicherort muss derselbe sein wie der des zu erstellenden HBase-Clusters.
     
         > [AZURE.NOTE]> Azure HDInsight unterstützt nur standortbasierte virtuelle Netzwerke und kann momentan nicht mit affinitätsgruppenbasierten virtuellen Netzwerken verwendet werden.
+        
+    Informationen zur Verwendung von HDInsight mit einem virtuellen Netzwerk, einschließlich spezifischer Konfigurationsanforderungen für das virtuelle Netzwerk, finden Sie unter [Erweitern der HDInsight-Funktionen mit Azure Virtual Network](hdinsight-extend-hadoop-virtual-network.md).
 
 5. Klicken Sie auf **Erstellen**.
 
@@ -389,4 +391,4 @@ In diesem Lernprogramm haben Sie erfahren, wie Sie einen HBase-Cluster bereitste
 
 [azure-preview-portal]: https://portal.azure.com
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

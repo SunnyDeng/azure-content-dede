@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
 	ms.topic="article"
-	ms.date="10/01/2015"
+	ms.date="01/12/2016"
 	ms.author="krisragh"/>
 
 # Senden von Pushbenachrichtigungen an authentifizierte Benutzer
@@ -69,6 +69,8 @@ function insert(item, user, request) {
 <!-- URLs. -->
 [Erste Schritte mit Authentifizierung]: mobile-services-ios-get-started-users.md
 [Erste Schritte mit Pushbenachrichtigungen]: mobile-services-javascript-backend-ios-get-started-push.md
+
+[Azure-Verwaltungsportal]: https://manage.windowsazure.com/
 [Mobile Services .NET How-to Conceptual Reference]: mobile-services-ios-how-to-use-client-library.md
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

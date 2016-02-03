@@ -91,7 +91,8 @@ Führen Sie die folgenden Schritte aus, um einen Zugriffssteuerungsdatensatz zu 
 ## Nächste Schritte
 
 - Erfahren Sie mehr über das [Verwalten von StorSimple-Volumes](storsimple-manage-volumes.md).
+
 - Erfahren Sie mehr zum [Verwenden Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0121_2016-->

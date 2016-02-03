@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="na"
-	ms.date="12/16/2015"
+	ms.date="01/15/2016"
 	ms.author="v-darmi"/>
 
 
@@ -68,4 +68,9 @@ Azure API Management ermöglicht Drosselungen bzw. Begrenzungen nach Rate und Ko
 ## Nächste Schritte
 Bitte geben Sie uns im Disqus-Thread Feedback zu diesem Thema. Wir würden gern von Ihnen hören, welche anderen möglichen Schlüsselwerte sich in Ihren Szenarien anbieten oder bewährt haben.
 
-<!---HONumber=AcomDC_1217_2015-->
+## Überblicksvideo zu diesen Richtlinien
+Weitere Informationen zu den in diesem Artikel behandelten Richtlinien [rate-limit-by-key](https://msdn.microsoft.com/library/azure/dn894078.aspx#LimitCallRateByKey) und [quota-by-key](https://msdn.microsoft.com/library/azure/dn894078.aspx#SetUsageQuotaByKey) finden Sie in folgendem Video.
+
+> [AZURE.VIDEO advanced-request-throttling-with-azure-api-management]
+
+<!---HONumber=AcomDC_0121_2016-->

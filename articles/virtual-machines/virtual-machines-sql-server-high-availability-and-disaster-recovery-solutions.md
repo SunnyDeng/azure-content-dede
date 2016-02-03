@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Hochverfügbarkeit und Notfallwiederherstellung für SQL Server | Microsoft Azure"
-	description="In diesem Lernprogramm werden die mit dem klassischen Bereitstellungsmodell erstellten Ressourcen verwendet und die verschiedenen Typen von HADR-Strategien für SQL Server auf virtuellen Computern in Azure erläutert."
+	description="Eine Beschreibung der verschiedenen HADR-Strategien für SQL Server in Azure Virtual Machines."
 	services="virtual-machines"
 	documentationCenter="na"
 	authors="rothja"
@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.workload="infrastructure-services"
-	ms.date="11/13/2015"
+	ms.date="01/07/2015"
 	ms.author="jroth" />
 
 # Hochverfügbarkeit und Notfallwiederherstellung für SQL Server in Azure Virtual Machines
@@ -38,7 +38,8 @@ Zu den in Azure unterstützten SQL Server-HADR-Technologien gehören:
 - [AlwaysOn-Verfügbarkeitsgruppen](https://technet.microsoft.com/library/hh510230.aspx)
 - [Datenbankspiegelung](https://technet.microsoft.com/library/ms189852.aspx)
 - [Protokollversand](https://technet.microsoft.com/library/ms187103.aspx)
-- [SQL Server-Sicherung und -Wiederherstellung mit dem Microsoft Azure-BLOB-Speicherdienst](https://msdn.microsoft.com/library/jj919148.aspx)
+- [Sicherung und Wiederherstellung mit dem Azure-Blob-Speicherdienst](https://msdn.microsoft.com/library/jj919148.aspx)
+- [AlwaysOn-Failoverclusterinstanzen](https://technet.microsoft.com/library/ms189134.aspx) 
 
 Es ist möglich, mehrere Technologie zu kombinieren, um eine SQL Server-Lösung zu implementieren, die sowohl Funktionen zur hohen Verfügbarkeit als auch zur Notfallwiederherstellung verfügt. Abhängig von der verwendeten Technologie erfordert eine Hybridbereitstellung einen VPN-Tunnel mit dem virtuellen Azure-Netzwerk. In den folgenden Abschnitte werden einige Beispiele für Bereitstellungsarchitekturen gezeigt.
 
@@ -48,8 +49,9 @@ Sie können eine Lösung mit hoher Verfügbarkeit für SQL Server-Datenbanken i
 
 |Technologie|Beispielarchitekturen|
 |---|---|
-|**AlwaysOn-Verfügbarkeitsgruppen**|Alle verfügbaren Replikate werden auf den virtuellen Azure-Computern für eine hohe Verfügbarkeit innerhalb derselben Region ausgeführt. Sie müssen zusätzlich zu den virtuellen Computern mit SQL Server einen Domänencontroller konfigurieren, da für das Windows Server Failover Clustering (WSFC) eine Active Directory-Domäne erforderlich ist.<br/> ![AlwaysOn-Verfügbarkeitsgruppen](./media/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions/azure_only_ha_always_on.gif)<br/>Weitere Informationen finden Sie unter [Konfigurieren von AlwaysOn-Verfügbarkeitsgruppen in Azure (GUI)](virtual-machines-sql-server-alwayson-availability-groups-gui.md).|
+|**AlwaysOn-Verfügbarkeitsgruppen**|Alle verfügbaren Replikate werden auf den virtuellen Azure-Computern für eine hohe Verfügbarkeit innerhalb derselben Region ausgeführt. Sie müssen eine Domänencontroller-VM konfigurieren, da für das Windows Server Failover Clustering (WSFC) eine Active Directory-Domäne erforderlich ist.<br/> ![AlwaysOn-Verfügbarkeitsgruppen](./media/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions/azure_only_ha_always_on.gif)<br/>Weitere Informationen finden Sie unter [Konfigurieren von AlwaysOn-Verfügbarkeitsgruppen in Azure (GUI)](virtual-machines-sql-server-alwayson-availability-groups-gui.md).|
 |**Spiegeln von Datenbanken**|Prinzipal-, Spiegel- und Zeugenserver werden im gleichen Azure-Rechenzentrum ausgeführt, um eine hohe Verfügbarkeit zu gewährleisten. Sie können die Bereitstellung mit einem Domänencontroller durchführen.<br/>![Spiegeln von Datenbanken](./media/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions/azure_only_ha_dbmirroring1.gif)<br/>Mithilfe von Serverzertifikaten können Sie dieselbe Konfiguration zur Datenbankspiegelung auch ohne einen Domänencontroller bereitstellen.<br/>![Spiegeln von Datenbanken](./media/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions/azure_only_ha_dbmirroring2.gif)|
+|**AlwaysOn-Failoverclusterinstanzen**|Zum Erstellen von Failoverclusterinstanzen (FCI), die gemeinsam genutzten Speicher erfordern, gibt es zwei verschiedene Möglichkeiten.<br/><br/>1. Eine FCI auf einem WSFC mit zwei Knoten, die auf Azure-VMs mit Speicher ausgeführt wird, der von einer Drittanbieter-Clusterlösung bereitgestellt wird. Ein spezifisches Beispiel mit SIOS DataKeeper finden Sie unter [Hohe Verfügbarkeit für eine Dateifreigabe mit WSFC und der Drittanbietersoftware SIOS Datakeeper](https://azure.microsoft.com/blog/high-availability-for-a-file-share-using-wsfc-ilb-and-3rd-party-software-sios-datakeeper/).<br/><br/>2. Eine FCI auf einem WSFC mit zwei Knoten, die auf Azure-VMs mit gemeinsam genutztem Remote-iSCSI-Zielblockspeicher über ExpressRoute ausgeführt wird. Beispielsweise macht NetApp Private Storage (NPS) ein iSCSI-Ziel über ExpressRoute mit Equinix für Azure-VMs verfügbar.<br/><br/>Für Drittanbieterlösungen für gemeinsame Speichernutzung und Datenreplikation sollten Sie sich an den Hersteller wenden, falls beim Failover Probleme in Bezug auf den Datenzugriff auftreten.<br/><br/>Beachten Sie, dass die Verwendung von FCI zusätzlich zum [Azure-Dateispeicher](https://azure.microsoft.com/services/storage/files/) noch nicht unterstützt wird, da diese Lösung nicht Storage Premium verwendet. Wir arbeiten daran, dass diese Konfiguration so bald wie möglich unterstützt wird.|
 
 ## Nur Azure: Notfallwiederherstellungslösungen
 
@@ -152,4 +154,4 @@ Weitere Informationen zum Ausführen von SQL Server auf virtuellen Azure-Comput
 - [Installieren einer neuen Active Directory-Gesamtstruktur in Azure](../active-directory/active-directory-new-forest-virtual-machine.md)
 - [Create WSFC Cluster for AlwaysOn Availability Groups in Microsoft Azure VM (in englischer Sprache)](http://gallery.technet.microsoft.com/scriptcenter/Create-WSFC-Cluster-for-7c207d3a)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

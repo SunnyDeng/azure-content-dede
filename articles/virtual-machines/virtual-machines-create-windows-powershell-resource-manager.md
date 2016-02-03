@@ -14,12 +14,12 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/08/2015"
+	ms.date="01/05/2016"
 	ms.author="davidmu"/>
 
 # Erstellen einer Windows-VM mit dem Ressourcen-Manager und PowerShell
 
-[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](virtual-machines-ps-create-preconfigure-windows-vms.md).
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]klassisches Bereitstellungsmodell.
 
 Dieses Thema beschreibt das schnelle Erstellen und Verwalten eines virtuellen Microsoft Azure-Computers mithilfe von Azure-Ressourcen-Manager und PowerShell.
 
@@ -123,18 +123,8 @@ Es erscheint beispielsweise Folgendes:
 	RequestId           : 98c7b4fb-b26e-4a58-b17a-b0983d896aae
 	StatusCode          : OK
 
-## Zusätzliche Ressourcen
+## Nächste Schritte
 
-[Azure Compute-, Netzwerk- und Speicheranbieter unter dem Azure-Ressourcen-Manager](virtual-machines-azurerm-versus-azuresm.md)
+Informationen zum Verwalten der gerade erstellten virtuellen Maschine finden Sie unter [Verwalten von virtuellen Computern mit Azure-Ressourcen-Manager und PowerShell](virtual-machines-deploy-rmtemplates-powershell.md).
 
-[Übersicht über den Azure-Ressourcen-Manager](resource-group-overview.md)
-
-[Erstellen eines virtuellen Windows-Computers mit einer Resource Manager-Vorlage und PowerShell](virtual-machines-create-windows-powershell-resource-manager-template-simple.md)
-
-[Sie können virtuelle Windows-Computer mit PowerShell und dem klassischen Bereitstellungsmodell erstellen.](virtual-machines-ps-create-preconfigure-windows-vms.md)
-
-[Dokumentation zu virtuellen Computern](http://azure.microsoft.com/documentation/services/virtual-machines/)
-
-[Installieren und Konfigurieren von Azure PowerShell](install-configure-powershell.md)
-
-<!----HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0114_2016-->

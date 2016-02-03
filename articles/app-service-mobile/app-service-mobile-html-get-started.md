@@ -19,11 +19,11 @@
 
 #Erstellen einer HTML-App
 
-[AZURE.INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)] 
-&nbsp;  
+[AZURE.INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]
+&nbsp;
 <!--- [AZURE.INCLUDE [app-service-mobile-note-mobile-services](../../includes/app-service-mobile-note-mobile-services.md)]-->
 
->[AZURE.IMPORTANT]Dieses Thema wird von Mobile Apps derzeit nicht unterstützt, da der Schnellstart für HTML-/JavaScript-Apps vorübergehend aus dem Azure-Portal entfernt wurde. Diese Option soll in naher Zukunft wieder unterstützt werden. Vielen Dank für Ihre Geduld.
+>[AZURE.IMPORTANT] Dieses Thema wird von Mobile Apps derzeit nicht unterstützt, da der Schnellstart für HTML-/JavaScript-Apps vorübergehend aus dem Azure-Portal entfernt wurde. Diese Option soll in naher Zukunft wieder unterstützt werden. Vielen Dank für Ihre Geduld.
 
 ##Übersicht
 
@@ -37,13 +37,13 @@ Das Abschließen dieses Tutorials ist eine Voraussetzung für alle anderen Mobil
 
 ##Voraussetzungen
 
-Für dieses Tutorial benötigen Sie Folgendes:
+Für dieses Lernprogramm benötigen Sie Folgendes:
 
-* Ein aktives Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Apps, die Sie auch nach Ablauf der Testversion weiter nutzen können. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/).
+* Ein aktives Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Apps, die Sie auch nach Ablauf der Testversion weiter nutzen können. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/).
 
 * [Visual Studio Community 2013] oder höher.
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](https://tryappservice.azure.com/?appServiceName=mobile) sofort kostenlos eine kurzlebige mobile Starter-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](https://tryappservice.azure.com/?appServiceName=mobile) sofort kostenlos eine kurzlebige mobile Starter-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ##Erstellen eines neuen mobilen App-Back-Ends
 
@@ -73,7 +73,7 @@ Standardmäßig wird das aus dem Portal heruntergeladene Client-Schnellstartproj
  
 		Install-Package Microsoft.AspNet.WebApi.Cors  
 
-2. Öffnen Sie die Projektdatei "App\_Start/Startup.MobileApp.cs", und fügen Sie die folgende "using"-Anweisung hinzu:
+2. Öffnen Sie die Projektdatei "App_Start/Startup.MobileApp.cs", und fügen Sie die folgende "using"-Anweisung hinzu:
 
 		using System.Web.Http.Cors;
 
@@ -103,7 +103,7 @@ Dann stellen Sie das CORS-fähige Projekt in Azure bereit.
 	+ **launch-mac.command** (Mac OS X-Computer)
 	+ **launch-linux.sh** (Linux-Computer)
 
-	> [AZURE.NOTE]Bei einem Windows-Computer geben Sie `R` ein, wenn Sie von PowerShell zur Bestätigung aufgefordert werden, dass Sie das Skript ausführen möchten. Ihr Webbrowser rät Ihnen unter Umständen von einer Ausführung des Skripts ab, weil es vom Internet heruntergeladenen wurde. In diesem Fall müssen Sie darauf bestehen, dass der Browser mit dem Laden des Skripts fortfährt.
+	> [AZURE.NOTE] Bei einem Windows-Computer geben Sie `R` ein, wenn Sie von PowerShell zur Bestätigung aufgefordert werden, dass Sie das Skript ausführen möchten. Ihr Webbrowser rät Ihnen unter Umständen von einer Ausführung des Skripts ab, weil es vom Internet heruntergeladenen wurde. In diesem Fall müssen Sie darauf bestehen, dass der Browser mit dem Laden des Skripts fortfährt.
 
 	Hierdurch wird ein Webserver auf Ihrem lokalen Computer zum Hosten der neuen App gestartet.
 
@@ -115,7 +115,7 @@ Dann stellen Sie das CORS-fähige Projekt in Azure bereit.
 
    	Dadurch wird eine POST-Anforderung an das neue in Azure gehostete mobile App-Back-End gesendet. Daten von der Anforderung werden in die "TodoItem"-Tabelle im Mobile App-Schema eingefügt. In der Tabelle gespeicherte Werte werden vom Dienst zurückgegeben, und die Daten werden in der zweiten Spalte der App angezeigt.
 
-	> [AZURE.TIP]Sie können den Code, der zur Abfrage und zum Einfügen von Daten auf Ihren mobilen Dienst zugreift, in der Datei app.js finden und prüfen.
+	> [AZURE.TIP] Sie können den Code, der zur Abfrage und zum Einfügen von Daten auf Ihren mobilen Dienst zugreift, in der Datei app.js finden und prüfen.
 
 <!-- Anchors. -->
 <!-- Images. -->
@@ -127,4 +127,4 @@ Dann stellen Sie das CORS-fähige Projekt in Azure bereit.
 [Visual Studio Community 2013]: https://www.visualstudio.com/downloads
  
 
-<!---HONumber=AcomDC_1203_2015--->
+<!---HONumber=AcomDC_0128_2016-->

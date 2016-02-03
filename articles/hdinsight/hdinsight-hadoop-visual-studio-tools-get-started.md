@@ -15,7 +15,7 @@
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
 	ms.workload="big-data"
-	ms.date="11/30/2015"
+	ms.date="01/27/2016"
 	ms.author="jgao"/>
 
 # Erste Schritte bei der Verwendung von Hadoop-Tools für Visual Studio für HDInsight zum Ausführen einer Hive-Abfrage
@@ -38,7 +38,7 @@ Um dieses Tutorial durchzuführen und die Hadoop-Tools in Visual Studio zu verwe
 		- Visual Studio 2013 Community/Professional/Premium/Ultimate mit [Update 4](https://www.microsoft.com/download/details.aspx?id=44921)
 		- Visual Studio 2015 (Community/Enterprise)
 
-	>[AZURE.NOTE]Derzeit werden die HDInsight-Tools für Visual Studio nur mit der englischen Version bereitgestellt.
+	>[AZURE.NOTE] Derzeit werden die HDInsight-Tools für Visual Studio nur mit der englischen Version bereitgestellt.
 
 
 ## Installieren von HDInsight-Tools für Visual Studio
@@ -55,9 +55,7 @@ HDInsight-Tools für Visual Studio und Microsoft Hive ODBC Driver gehören zum M
 ## Herstellen einer Verbindung mit Azure-Abonnements
 Mithilfe der HDInsight-Tools für Visual Studio können Sie eine Verbindung mit Ihren HDInsight-Clustern herstellen, einfache Verwaltungsvorgänge durchführen und Hive-Abfragen ausführen.
 
->[AZURE.NOTE]Informationen zum Herstellen einer Verbindung mit dem HDInsight-Emulator finden Sie unter [Erste Schritte mit dem HDInsight-Emulator](../hdinsight-get-started-emulator.md/#vstools).
-
->[AZURE.NOTE]Informationen zum Herstellen einer Verbindung mit einem generischen Hadoop-Cluster (Vorschau) finden Sie unter [Schreiben und Übermitteln von Hive-Abfragen mithilfe von Visual Studio](http://blogs.msdn.com/b/xiaoyong/archive/2015/05/04/how-to-write-and-submit-hive-queries-using-visual-studio.aspx).
+>[AZURE.NOTE] Informationen zum Herstellen einer Verbindung mit einem generischen Hadoop-Cluster (Vorschau) finden Sie unter [Schreiben und Übermitteln von Hive-Abfragen mithilfe von Visual Studio](http://blogs.msdn.com/b/xiaoyong/archive/2015/05/04/how-to-write-and-submit-hive-queries-using-visual-studio.aspx).
 
 
 **Verbinden mit Ihrem Azure-Abonnement**
@@ -140,7 +138,7 @@ Es gibt zwei Möglichkeiten zum Erstellen und Ausführen von Hive-Abfragen:
 
 	![Hadoop-Tools: HDInsight-Tools für Visual Studio – IntelliSense][14]
 
-	> [AZURE.NOTE]Nur die Metadaten der Cluster, die in der HDInsight-Symbolleiste ausgewählt sind, werden vorgeschlagen.
+	> [AZURE.NOTE] Nur die Metadaten der Cluster, die in der HDInsight-Symbolleiste ausgewählt sind, werden vorgeschlagen.
 4. (Optional): Klicken Sie auf **Skript überprüfen**, um die Syntaxfehler des Skripts zu überprüfen.
 
 	![Hadoop-Tools: HDInsight-Tools für Visual Studio – lokale Überprüfung][10]
@@ -182,7 +180,7 @@ Die neueste Version des Tools ermöglicht es Ihnen zu sehen, was sich innerhalb 
 
 ### Schnellerer Weg zur Hive-Ausführung über HiveServer2
 
->[AZURE.NOTE]Dieses Feature funktioniert nur mit HDInsight-Clustern ab Version 3.2.
+>[AZURE.NOTE] Dieses Feature funktioniert nur mit HDInsight-Clustern ab Version 3.2.
 
 Die HDInsight-Tools haben bisher Hive-Aufträge via WebHCat (auch bekannt als Templeton) übermittelt. Es dauerte sehr lange, bis Auftragsdetails und Fehlerinformationen zurückgegeben wurden. Um dieses Leistungsproblem zu beheben, führen die HDInsight-Tools Hive-Aufträge jetzt über HiveServer2 direkt im Cluster aus, sodass RDP/SSH umgangen wird. Als weiterer Vorteil neben der Leistungsverbesserung können die Benutzer Hive nun in Tez-Diagrammen anzeigen, und sie können die Aufgabendetails anzeigen.
 
@@ -210,7 +208,7 @@ Das Ausführen von Abfragen über HiveServer2 hat zwar viele Leistungsvorteile, 
 
 In den HDInsight-Tools für Visual Studio wird das Anzeigen von Leistungsdiagrammen für die Hive-Aufträge unterstützt, die vom Tez-Ausführungsmodul ausgeführt werden. Informationen zum Aktivieren von Tez finden Sie unter [Verwenden von Hive in HDInsight][hdinsight.hive]. Nachdem Sie in Visual Studio einen Hive-Job gesendet haben, wird das Diagramm in Visual Studio angezeigt, wenn der Auftrag abgeschlossen ist. Sie müssen unter Umständen auf die Schaltfläche **Aktualisieren** klicken, um den aktuellen Auftragsstatus zu erhalten.
 
-> [AZURE.NOTE]Dieses Feature ist nur für höhere HDInsight-Clusterversionen als 3.2.4.593 verfügbar und funktioniert nur für abgeschlossene Aufträge. Dies funktioniert sowohl für Windows-basierte als auch für Linux-basierte Cluster.
+> [AZURE.NOTE] Dieses Feature ist nur für höhere HDInsight-Clusterversionen als 3.2.4.593 verfügbar und funktioniert nur für abgeschlossene Aufträge. Dies funktioniert sowohl für Windows-basierte als auch für Linux-basierte Cluster.
 
 ![Leistungsdiagramm für Hadoop Hive Tez](./media/hdinsight-hadoop-visual-studio-tools-get-started/hdinsight.hive.tez.performance.graph.png)
 
@@ -269,4 +267,4 @@ In diesem Artikel haben Sie erfahren, wie Sie in Visual Studio mithilfe des Hado
 
 [apache.hive]: http://hive.apache.org
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="dotnet" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/04/2015" 
+	ms.date="01/08/2016" 
 	ms.author="erikre"/>
 
 # Erstellen einer ASP.NET 5-API-App mit Visual Studio-Code
@@ -461,4 +461,4 @@ Wechseln Sie im Azure-Vorschauportal zum Blatt **API-App-Host** für Ihre API-Ap
 In diesem Lernprogramm haben Sie erfahren, wie Sie eine API-App in Visual Studio Code erstellen. Weitere Informationen zu Visual Studio Code finden Sie unter [Visual Studio Code](https://code.visualstudio.com/Docs/). Weitere Informationen zu API-Apps finden Sie unter [Was sind API-Apps?](app-service-api-apps-why-best-platform.md).
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0114_2016-->

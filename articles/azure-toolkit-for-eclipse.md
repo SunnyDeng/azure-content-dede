@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="multiple"
     ms.devlang="Java"
     ms.topic="article"
-    ms.date="11/20/2015" 
+    ms.date="01/09/2016" 
     ms.author="robmcm"/>
 
 <!-- Legacy MSDN URL = https://msdn.microsoft.com/library/azure/hh694271.aspx -->
@@ -65,9 +65,9 @@ Die folgenden Artikel erklären, wie Sie mit dem Azure-Toolkit für Eclipse Ihre
 
 [Erstellen einer Hello World-Anwendung für Azure in Eclipse][]
 
-[Neuerungen im Azure-Toolkit für Eclipse][]
+[What‘s New in the Azure Toolkit for Eclipse (in englischer Sprache)][]
 
-Weitere Informationen zur Verwendung von Azure mit Java finden Sie im [Azure Java Developer Center][].
+Weitere Informationen zum Verwenden von Azure mit Java finden Sie im [Azure Java Developer Center][].
 
 <!-- URL List -->
 
@@ -92,5 +92,6 @@ Weitere Informationen zur Verwendung von Azure mit Java finden Sie im [Azure Jav
 [SSL-Abladung]: http://go.microsoft.com/fwlink/?LinkID=699549
 [Verwenden der Azure-Dienstlaufzeitbibliothek in JSP]: http://go.microsoft.com/fwlink/?LinkID=699551
 [Neuerungen im Azure-Toolkit für Eclipse]: http://go.microsoft.com/fwlink/?LinkID=699552
+[What‘s New in the Azure Toolkit for Eclipse (in englischer Sprache)]: http://go.microsoft.com/fwlink/?LinkID=699552
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0114_2016-->

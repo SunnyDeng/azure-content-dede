@@ -4,7 +4,7 @@
    services="sql-data-warehouse"
    documentationCenter="NA"
    authors="lvargas"
-   manager="tonypet"
+   manager="barbkess"
    editor=""/>
 
 <tags
@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="09/22/2015"
-   ms.author="lvargas;twounder;barbkess"/>
+   ms.date="01/07/2016"
+   ms.author="lvargas;mausher;barbkess"/>
 
 # Erwartungen an SQL Data Warehouse Preview
 
@@ -72,4 +72,4 @@ SQL Data Warehouse speichert die Daten auf einem oder mehreren Serverknoten, auf
 
 <!--Other Web references-->
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0114_2016-->

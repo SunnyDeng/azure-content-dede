@@ -13,7 +13,7 @@
    ms.topic="article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/05/2015"
+   ms.date="01/16/2016"
    ms.author="cherylmc"/>
 
 # Erstellen und Ändern des Routings für eine ExpressRoute-Verbindung mithilfe von PowerShell
@@ -28,7 +28,7 @@ In diesem Artikel werden Sie durch die Schritte zum Erstellen und Verwalten der 
 
 ## Konfigurationsvoraussetzungen
 
-- Sie benötigen die neueste Version der Azure PowerShell-Module. Sie können das neueste PowerShell-Modul aus dem PowerShell-Abschnitt der Seite mit den [Azure-Downloads](http://azure.microsoft.com/downloads) herunterladen. Befolgen Sie die Anleitung auf der Seite [Vorgehensweise: Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md). Sie erhalten dort eine Schritt-für-Schritt-Anleitung zum Konfigurieren des Computers für die Verwendung der Azure PowerShell-Module. 
+- Sie benötigen die neueste Version der Azure PowerShell-Module. Sie können das neueste PowerShell-Modul aus dem PowerShell-Abschnitt der [Azure-Downloadseite](http://azure.microsoft.com/downloads) herunterladen. Befolgen Sie die Anleitung auf der Seite [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md). Sie erhalten dort eine Schritt-für-Schritt-Anleitung zum Konfigurieren des Computers für die Verwendung der Azure PowerShell-Module. 
 - Stellen Sie sicher, dass Sie vor Beginn der Konfiguration die Seiten [Voraussetzungen](expressroute-prerequisites.md), [Routinganforderungen](expressroute-routing.md) und [Workflows](expressroute-workflows.md) gelesen haben.
 - Sie benötigen eine aktive ExpressRoute-Verbindung. Führen Sie die Schritte zum [Erstellen einer ExpressRoute-Verbindung](expressroute-howto-circuit-classic.md) aus, und lassen Sie sie vom Konnektivitätsanbieter aktivieren, bevor Sie fortfahren. Die ExpressRoute-Verbindung muss sich im Zustand „provisioned“ und „enabled“ befinden, damit Sie die unten beschriebenen Cmdlets ausführen können.
 
@@ -188,7 +188,7 @@ Dieser Abschnitt enthält Anweisungen zum Erstellen, Abrufen, Aktualisieren und 
 
 	>[AZURE.IMPORTANT]Stellen Sie sicher, dass Sie Ihre AS-Nummer als Peering-ASN angeben, nicht als Kunden-ASN.
 
-### Abrufen der Details für das öffentliche Azure-Peering
+### So rufen Sie Details zum öffentlichen Azure-Peering ab
 
 Sie können die Konfigurationsdetails mit dem folgenden Cmdlet abrufen.
 
@@ -216,7 +216,7 @@ Sie können einen beliebigen Teil der Konfiguration mit dem folgenden Cmdlet akt
 
 Die VLAN-ID der Verbindung wird im obigen Beispiel von 200 in 600 geändert.
 
-### Löschen von öffentlichem Azure-Peering
+### So löschen Sie ein öffentliches Azure-Peering
 
 Sie können Ihre Peeringkonfiguration entfernen, indem Sie das folgende Cmdlet ausführen.
 
@@ -226,7 +226,7 @@ Sie können Ihre Peeringkonfiguration entfernen, indem Sie das folgende Cmdlet a
 
 Dieser Abschnitt enthält Anweisungen zum Erstellen, Abrufen, Aktualisieren und Löschen der Microsoft-Peeringkonfiguration für eine ExpressRoute-Verbindung.
 
-### Erstellen des Microsoft-Peerings
+### So erstellen Sie Microsoft-Peering
 
 1. **Importieren Sie das PowerShell-Modul für ExpressRoute.**
 	
@@ -271,7 +271,7 @@ Dieser Abschnitt enthält Anweisungen zum Erstellen, Abrufen, Aktualisieren und 
 	- Angekündigte Präfixe: Sie müssen eine Liste mit allen Präfixen bereitstellen, die Sie über die BGP-Sitzung ankündigen möchten. Nur öffentliche IP-Adresspräfixe werden akzeptiert. Sie können eine kommagetrennte Liste senden, wenn Sie planen, einen Satz mit Präfixen zu senden. Diese Präfixe müssen über eine RIR/IRR-Registrierung für Sie verfügen.
 	- Kunden-ASN: Wenn Sie Präfixe ankündigen, die nicht für die Peering-AS-Nummer registriert sind, können Sie die AS-Nummer angeben, unter der sie registriert sind. **Dies ist optional**.
 	- Routing-Registrierungsname: Sie können den RIR/IRR-Wert angeben, unter dem die AS-Nummer und die Präfixe registriert sind.
-	- Ein MD5-Hash, wenn Sie sich für dessen Einsatz entscheiden. **Dies ist optional**.
+	- Ein MD5-Hash, wenn Sie sich für dessen Einsatz entscheiden. **Dies ist optional.**
 	
 	Sie können das folgende Cmdlet ausführen, um das Microsoft-Peering für Ihre Verbindung zu konfigurieren.
 
@@ -318,4 +318,4 @@ Nächster Schritt: [Verknüpfen eines VNet mit einer ExpressRoute-Verbindung](ex
 -  Weitere Informationen zu Workflows finden Sie unter [ExpressRoute-Workflows](expressroute-workflows.md).
 -  Weitere Informationen zum Verbindungspeering finden Sie unter [ExpressRoute-Verbindungen und Routingdomänen](expressroute-circuit-peerings.md).
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0121_2016-->

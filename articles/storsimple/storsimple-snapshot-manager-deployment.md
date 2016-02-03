@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="12/01/2015"
+   ms.date="01/07/2016"
    ms.author="v-sharos" />
 
 # Bereitstellen des StorSimple Snapshot Manager-MMC-Snap-Ins
@@ -23,11 +23,15 @@ Der StorSimple Snapshot Manager ist ein MMC-Snap-In (Microsoft Management Consol
 
 Dieses Tutorial beschreibt die Konfigurationsanforderungen sowie Verfahren zum Installieren, Entfernen und Aktualisieren des StorSimple Snapshot Managers.
 
+>[AZURE.NOTE]
+>
+>- StorSimple Snapshot Manager eignet sich nicht zur Verwaltung von Microsoft Azure StorSimple Virtual Arrays (auch bekannt als lokale virtuelle StorSimple-Geräte).
+>
+>- Wenn Sie StorSimple Update 2 auf Ihrem StorSimple-Gerät installieren möchten, laden Sie unbedingt die aktuelle Version von StorSimple Snapshot Manager herunter, und installieren Sie sie **vor der Installation von StorSimple Update 2**. Die neueste Version von StorSimple Snapshot Manager ist abwärtskompatibel und kann mit allen veröffentlichten Versionen von Microsoft Azure StorSimple verwendet werden. Wenn Sie die vorherige Version von StorSimple Snapshot Manager verwenden, müssen Sie sie aktualisieren (die vorherige Version muss vor der Installation der neuen Version nicht deinstalliert werden).
+
 ## StorSimple Snapshot Manager-Installation
 
-Der StorSimple Snapshot Manager kann auf Computern installiert werden, die unter Windows Server® 2008 R2 SP1, Windows Server 2012, oder Windows Server 2012 R2 ausgeführt werden.
-
->[AZURE.NOTE]Auf Servern unter Windows 2008 R2 müssen Sie außerdem Windows Server 2008 SP1 und Windows Management Framework 3.0 installieren.
+Der StorSimple Snapshot Manager kann auf Computern mit dem Betriebssystem Windows Server 2008 R2 SP1, Windows Server 2012 oder Windows Server 2012 R2 installiert werden. Auf Servern unter Windows 2008 R2 müssen Sie außerdem Windows Server 2008 SP1 und Windows Management Framework 3.0 installieren.
 
 Stellen Sie vor der Installation oder Aktualisierung des StorSimple Snapshot Manager-Snap-Ins für die Microsoft Management Console (MMC) sicher, dass das Microsoft Azure StorSimple-Gerät und der -Hostserver ordnungsgemäß konfiguriert sind.
 
@@ -47,7 +51,7 @@ Die folgenden Schritte bieten einen allgemeinen Überblick über die Konfigurati
     - Windows Server 2012
     - Windows Server 2012 R2
  
-    >[AZURE.NOTE]Für ein virtuelles StorSimple-Gerät muss der Host ein virtueller Microsoft Azure-Computer sein.
+    Für ein virtuelles StorSimple-Gerät muss der Host ein virtueller Microsoft Azure-Computer sein.
 
 3. Stellen Sie sicher, dass Sie die Microsoft Azure StorSimple-Konfigurationsanforderungen erfüllen. Weitere Informationen finden Sie unter [Voraussetzungen für die Bereitstellung](storsimple-deployment-walkthrough.md#deployment-prerequisites).
 
@@ -255,4 +259,4 @@ Um den StorSimple Snapshot Manager erneut zu installieren, führen Sie die Schri
 
 - Weitere Informationen zum Verwenden von StorSimple Snapshot Manager finden Sie unter [Verwenden von StorSimple Snapshot Manager zum Verwalten der StorSimple-Lösung](storsimple-snapshot-manager-admin.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

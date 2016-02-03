@@ -2,7 +2,7 @@
     pageTitle="Tutorial: Azure Active Directory-Integration mit LogicMonitor | Microsoft Azure" 
     description="Erfahren Sie, wie Sie LogicMonitor mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags 
@@ -11,8 +11,8 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
-    ms.author="markvi" />
+    ms.date="01/14/2016" 
+    ms.author="jeedes" />
 
 #Tutorial: Azure Active Directory-Integration mit LogicMonitor
   
@@ -53,7 +53,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Log
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-logicmonitor-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie im **Suchfeld** den Suchbegriff **logicmonitor** ein.
+6.  Geben Sie im **Suchfeld** das Wort **logicmonitor** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-logicmonitor-tutorial/IC790046.png "Anwendungskatalog")
 
@@ -74,7 +74,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-logicmonitor-tutorial/IC790049.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld **Anmelde-URL** die von den Benutzern für die Anmeldung bei LogicMonitor verwendete URL ein (z. B. "**http://company.logicmonitor.com*"), und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld **Anmelde-URL** die von den Benutzern für die Anmeldung bei LogicMonitor verwendete URL ein (z. B. **http://company.logicmonitor.com*")), und klicken Sie dann auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-logicmonitor-tutorial/IC790050.png "App-URL konfigurieren")
 
@@ -146,4 +146,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0121_2016-->

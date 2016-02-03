@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="vm-multiple"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/13/2015"
+	ms.date="01/15/2016"
 	ms.author="cynthn"/>
 
 # Informationen zu Images für virtuelle Computer
@@ -53,10 +53,11 @@ Beispiele der Verwendung der Tools in einer klassischen Bereitstellung:
 >[Azure.Tip]Der "OSState"-Parameter ist erforderlich, wenn Sie ein VM-Image erstellen möchten, das neben dem Betriebssystem-Datenträger auch andere Datenträger enthält. Wenn Sie den Parameter nicht verwenden, erstellt das Cmdlet ein Betriebssystem-Image. Der Wert des Parameters gibt an, ob das Image verallgemeinert oder spezialisiert ist, was davon abhängt, ob der Betriebssystem-Datenträger auf die erneute Verwendung vorbereitet wurde.
 -	**Ein Image löschen**: `Remove-AzureVMImage –ImageName "MyOldVmImage"`
 
+
 ## Zusätzliche Ressourcen
 
 [Verschiedene Möglichkeiten zum Erstellen eines virtuellen Linux-Computers](virtual-machines-linux-choices-create-vm.md)
 
 [Verschiedene Möglichkeiten zum Erstellen eines virtuellen Windows-Computers](virtual-machines-windows-choices-create-vm.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0121_2016-->

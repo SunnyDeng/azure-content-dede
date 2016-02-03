@@ -4,7 +4,7 @@
     services="sql-database"
     documentationCenter=""  
     manager="jeffreyg"
-    authors="sidneyh"/>
+    authors="torsteng"/>
 
 <tags
     ms.service="sql-database"
@@ -12,14 +12,16 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="10/15/2015"
+    ms.date="01/06/2016"
     ms.author="sidneyh;torsteng" />
 
 # Elastische Datenbankabfragen bei Sharding (horizontaler Partitionierung)
 
 In diesem Dokument wird die Einrichtung von elastischen Datenbankabfragen für Szenarien mit horizontaler Partitionierung und die Ausführung von Abfragen erläutert. Eine Definition des Szenarios mit horizontaler Partitionierung finden Sie in der [Übersicht über elastische Datenbankabfragen](sql-database-elastic-query-overview.md).
 
-Die Funktionalität ist Teil des Azure SQL-Datenbankfeatures [Elastische Datenbank](sql-database-elastic-scale.md).
+![Abfrage über Shards hinweg][1]
+
+Die Funktionalität ist Teil des Azure SQL-Datenbankfeatures [Elastische Datenbank](sql-database-elastic-scale-introduction.md).
  
 ## Erstellen von Datenbankobjekten
 
@@ -37,7 +39,7 @@ Das Definieren der Datenbankobjekte für eine elastische Datenbankabfrage beruht
 
 ### 1\.1 Erstellen des Datenbankhauptschlüssels und der Anmeldeinformationen 
 
-Benutzer-ID und Kennwort bilden die Anmeldeinformationen, die von der elastischen Abfrage zur Verbindung mit Ihren Remotedatenbanken in Azure SQL-Datenbank verwendet werden. So erstellen Sie den erforderlichen Hauptschlüssel und die Anmeldeinformationen mit der folgenden Syntax:
+Benutzer-ID und Kennwort bilden die Anmeldeinformationen, die von der Abfrage für elastische Datenbanken zur Verbindung mit Ihren Remotedatenbanken in Azure SQL-Datenbank verwendet werden. Den erforderlichen Hauptschlüssel und die Anmeldeinformationen erstellen Sie mit der folgenden Syntax:
 
     CREATE MASTER KEY ENCRYPTION BY PASSWORD = ’password’;
     CREATE DATABASE SCOPED CREDENTIAL <credential_name>  WITH IDENTITY = ‘<username>’,  
@@ -120,7 +122,7 @@ Die DATA\_SOURCE-Klausel definiert die externe Datenquelle (bei horizontaler Par
 
 Die Klauseln SCHEMA\_NAME und OBJECT\_NAME bieten die Möglichkeit, die Definition der externen Tabelle einer Tabelle in einem anderen Schema im Shard bzw. einer Tabelle mit einem anderen Namen zuzuordnen. Falls nicht angegeben, wird davon ausgegangen, dass das Schema des Remoteobjekts „dbo“ und sein Name mit dem definierten Namen der externen Tabelle identisch ist.
 
-Die Klauseln SCHEMA\_NAME und OBJECT\_NAME sind besonders nützlich, wenn der Name der Remotetabelle bereits in der Datenbank verwendet wird, in der Sie die externe Tabelle erstellen möchten. Ein Beispiel für dieses Problem liegt vor, wenn Sie eine externe Tabelle zum Abrufen einer aggregrierten Sicht von Katalogsichten oder DMVs für Ihre horizontal hochskalierte Datenebene definieren möchten. Da Katalogsichten und DMVs bereits lokal vorhanden sind, können Sie ihre Namen nicht für die Definition der externen Tabelle verwenden. Verwenden Sie stattdessen in den Klauseln SCHEMA\_NAME und/oder OBJECT\_NAME einen anderen Namen und den Namen der Katalogsicht oder DMV. (Siehe das folgende Beispiel.)
+Die Klauseln SCHEMA\_NAME und OBJECT\_NAME sind besonders nützlich, wenn der Name der Remotetabelle bereits in der Datenbank verwendet wird, in der Sie die externe Tabelle erstellen möchten. Ein Beispiel für dieses Problem liegt vor, wenn Sie eine externe Tabelle zum Abrufen einer aggregrierten Sicht von Katalogsichten oder DMVs für Ihre horizontal hochskalierte Datenebene definieren möchten. Da Katalogsichten und DMVs bereits lokal vorhanden sind, können Sie ihre Namen nicht für die Definition der externen Tabelle verwenden. Verwenden Sie stattdessen in den Klauseln SCHEMA\_NAME und/oder OBJECT\_NAME einen anderen Namen und den Namen der Katalogsicht oder DMV. (Betrachten Sie das folgende Beispiel.)
 
 Die DISTRIBUTION-Klausel gibt die Datenverteilung für diese Tabelle an:
 
@@ -132,11 +134,11 @@ Die DISTRIBUTION-Klausel gibt die Datenverteilung für diese Tabelle an:
 
 Der Abfrageprozessor nutzt die Informationen in der DISTRIBUTION-Klausel, um die effizientesten Abfragepläne zu erstellen.
 
-Mit der folgenden Anweisung können Sie eine externe Tabellen löschen:
+Mit der folgenden Anweisung können Sie externe Tabellen löschen:
 
 	DROP EXTERNAL TABLE [ database_name . [ schema_name ] . | schema_name. ] table_name[;]  
 
-Es sind die Berechtigungen **CREATE/DROP EXTERNAL TABLE**: ALTER ANY EXTERNAL DATA SOURCE erforderlich, die auch für den Verweis auf die zugrunde liegende Datenquelle benötigt werden.
+**Berechtigungen für CREATE/DROP EXTERNAL TABLE:** ALTER ANY EXTERNAL DATA SOURCE-Berechtigungen sind erforderlich, die auch für den Verweis auf die zugrunde liegende Datenquelle benötigt werden.
 
 **Sicherheitsüberlegungen:** Benutzer mit Zugriff auf die externe Tabelle erhalten automatisch Zugriff auf die zugrunde liegenden Remotetabellen gemäß den Anmeldeinformationen, die in der externen Datenquellendefinition angegeben sind. Sie müssen den Zugriff auf die externe Tabelle sorgfältig verwalten, um eine unerwünschte Erhöhung von Berechtigungen über die Anmeldeinformationen für die externe Datenquelle zu vermeiden. Herkömmliche SQL-Berechtigungen können zum Gewähren (GRANT) oder Widerrufen (REVOKE) des Zugriffs auf eine externe Tabelle wie bei einer normalen Tabelle verwendet werden.
 
@@ -171,7 +173,7 @@ Das folgende Beispiel zeigt, wie Sie die Liste der externen Tabellen aus der akt
 
 ### 2\.1 T-SQL-Abfragen mit voller Vertraulichkeit 
 
-Nachdem Sie die externe Datenquelle und die externen Tabellen definiert haben, können Sie jetzt T-SQL vollständig auf die externen Tabellen anwenden.
+Nachdem Sie die externe Datenquelle und die externen Tabellen definiert haben, können Sie jetzt vollständiges T-SQL in den externen Tabellen verwenden.
 
 **Beispiel für horizontale Partitionierung**: Die folgende Abfrage führt eine Dreiwegeverknüpfung zwischen Lagern, Aufträgen und Auftragspositionen aus und nutzt mehrere Aggregate und einen selektiven Filter. Es wird Folgendes vorausgesetzt: 1.) eine horizontale Partitionierung, 2.) dass für Lager, Aufträge und Auftragspositionen ein Sharding anhand der Spalte „warehouse id“ erfolgt ist, und 3.) dass die elastische Abfrage die Verknüpfungen für die Shards anordnen und den aufwendigen Teil der Abfrage in den Shards parallel verarbeiten kann.
 
@@ -236,6 +238,7 @@ Verwenden Sie herkömmliche SQL Server-Verbindungszeichenfolgen, um Ihre Anwendu
 
 
 <!--Image references-->
+[1]: ./media/sql-database-elastic-query-horizontal-partitioning/horizontalpartitioning.png
 <!--anchors-->
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_0114_2016-->

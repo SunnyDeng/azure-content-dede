@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="12/02/2015"
+   ms.date="01/14/2016"
    ms.author="alkohli" />
 
 # Microsoft-Support kontaktieren
@@ -30,7 +30,7 @@ Führen Sie die folgenden Schritte aus, um eine Supportanfrage zu erstellen.
 
 #### So erstellen Sie eine Supportanfrage
 
-1. Eine Supportanfrage kann über das [klassische Azure-Portal](http://manage.windowsazure.com/) erstellt werden. Klicken Sie im [Portal](http://manage.windowsazure.com/) auf Ihren **Kontonamen** und anschließend auf **Microsoft-Support kontaktieren**.
+1. Eine Supportanfrage kann über das [klassische Azure-Portal](https://manage.windowsazure.com/) erstellt werden. Klicken Sie im [klassischen Portal](https://manage.windowsazure.com/) auf Ihren **Kontonamen** und anschließend auf **Microsoft-Support kontaktieren**.
 
 	![Kontaktieren des Supports von MS über das Verwaltungsportal](./media/storsimple-contact-microsoft-support/IC777286.png)
 
@@ -76,4 +76,4 @@ Führen Sie zum Starten einer Supportsitzung die folgenden Schritte aus:
 
 > [AZURE.IMPORTANT]Sie können den Supportzugriff deaktivieren, indem Sie `Disable-HcsSupportAccess` deaktivieren. Das StorSimple-Gerät versucht acht Stunden nach dem Initiieren der Sitzung ebenfalls, den Supportzugriff zu deaktivieren. Es wird empfohlen, die Anmeldeinformationen für das StorSimple-Gerät nach dem Initiieren einer Supportsitzung zu ändern.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0121_2016-->

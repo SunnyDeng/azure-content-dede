@@ -263,4 +263,4 @@ Wenn ein StorSimple-Gerät ausfällt und durch ein Austauschgerät ersetzt wird 
 - Weitere Informationen zum [Verwenden von StorSimple Snapshot Manager zum Verwalten der StorSimple-Lösung](storsimple-snapshot-manager-admin.md).
 - Weitere Informationen zum [Verwenden von StorSimple Snapshot Manager zum Anzeigen und Verwalten von Volumes](storsimple-snapshot-manager-manage-volumes.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0121_2016-->

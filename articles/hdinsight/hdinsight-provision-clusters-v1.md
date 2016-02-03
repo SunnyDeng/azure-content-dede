@@ -220,16 +220,7 @@ Sie können zusätzliche Komponenten installieren oder die Clusterkonfiguration 
 
 	![Diagramm der Punkt-zu-Standort-Konfiguration](./media/hdinsight-provision-clusters-v1/hdinsight-vnet-point-to-site.png)
 
-Weitere Informationen zu Features, Vorteilen und Funktionen von virtuellen Netzwerken finden Sie unter [Überblick über virtuelle Azure-Netzwerke](../virtual-network/virtual-networks-overview.md).
-
-> [AZURE.NOTE]Sie müssen das virtuelle Azure-Netzwerk erstellen, bevor Sie einen HDInsight-Cluster bereitstellen. Weitere Informationen finden Sie unter [Konfigurationsaufgaben für virtuelle Netzwerke](../services/virtual-machines/).
->
-> Azure HDInsight unterstützt nur standortbasierte virtuelle Netzwerke und kann momentan nicht mit affinitätsgruppenbasierten virtuellen Netzwerken verwendet werden. Verwenden Sie das Azure PowerShell-Cmdlet "Get-AzureVNetConfig", um zu prüfen, ob ein vorhandenes virtuelles Netzwerk in Azure standortbasiert ist. Wenn das virtuelle Netzwerk nicht standortbasiert ist, haben Sie die folgenden Optionen:
->
-> - Exportieren Sie die vorhandene virtuelle Netzwerkkonfiguration, und erstellen Sie ein neues virtuelles Netzwerk. Alle neuen virtuellen Netzwerke sind standardmäßig standortbasiert.
-> - Migrieren Sie zu einem standortbasierten virtuellen Netzwerk. Siehe [Migrieren vorhandener Dienste in einen Regionsbereich](http://azure.microsoft.com/blog/2014/11/26/migrating-existing-services-to-regional-scope/).
->
-> Sie sollten unbedingt ein einziges Subnetz pro Cluster verwenden.
+Informationen zur Verwendung von HDInsight mit einem virtuellen Netzwerk, einschließlich spezifischer Konfigurationsanforderungen für das virtuelle Netzwerk, finden Sie unter [Erweitern der HDInsight-Funktionen mit Azure Virtual Network](hdinsight-extend-hadoop-virtual-network.md).
 
 ## Bereitstellungstools
 
@@ -518,7 +509,7 @@ Sie können die Azure-Befehlszeilenschnittstelle entweder über NPM oder Windows
 
 		npm install -g https://github.com/azure/azure-xplat-cli/archive/hdinsight-February-18-2015.tar.gz
 
-	> [AZURE.NOTE]Wenn die Fehlermeldung angezeigt wird, dass der NPM-Befehl nicht gefunden wurde, überprüfen Sie, ob sich die folgenden Pfade in der Path-Umgebungsvariablen PATH befinden: <i>C:\\Program Files (X 86) \\nodejs; C:\\Users[Benutzername]\\AppData\\Roaming\\npm</i> oder <i>C:\\Program Files\\nodejs; C:\\Users[Benutzername]\\AppData\\Roaming\\npm</i>
+	> [AZURE.NOTE]Wenn die Fehlermeldung angezeigt wird, dass der NPM-Befehl nicht gefunden wurde, überprüfen Sie, ob sich die folgenden Pfade in der Umgebungsvariablen PATH befinden: <i>C:\\Program Files (x86)\\nodejs;C:\\Users[Benutzername]\\AppData\\Roaming\\npm</i> oder <i>C:\\Program Files\\nodejs;C:\\Users[Benutzername]\\AppData\\Roaming\\npm</i>.
 
 5.	Führen Sie den folgenden Befehl aus, um die Installation zu überprüfen:
 
@@ -810,4 +801,4 @@ In diesem Artikel haben Sie mehrere Möglichkeiten zu Bereitstellung von HDInsig
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/library/dn479185.aspx
 [azure-management-portal]: https://manage.windowsazure.com
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="hero-article"
-	ms.date="12/17/2015"
+	ms.date="01/18/2016"
 	ms.author="juliako"/>
 
 
@@ -23,7 +23,7 @@
 
 
 >[AZURE.NOTE]
-> Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](/pricing/free-trial/?WT.mc_id=A261C142F).
+Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](/pricing/free-trial/?WT.mc_id=A261C142F).
  
 ##Übersicht 
 
@@ -59,7 +59,7 @@ Zum Abschließen dieses Lernprogramms müssen folgende Voraussetzungen erfüllt 
 
 ##Beispiel herunterladen
 
-Laden Sie [hier](http://azure.microsoft.com/documentation/samples/media-services-dotnet-on-demand-encoding-with-media-encoder-standard/) ein Beispiel herunter, und führen Sie es aus.
+Laden Sie [hier](https://azure.microsoft.com/documentation/samples/media-services-dotnet-on-demand-encoding-with-media-encoder-standard/) ein Beispiel herunter, und führen Sie es aus.
 
 ##Erstellen eines Media Services-Kontos mithilfe des Portals
 
@@ -108,13 +108,13 @@ Um die Anzahl der reservierten Einheiten für das Streaming zu ändern, gehen Si
 
 3. Um die Anzahl der Streaming-Einheiten anzugeben, klicken Sie die auf Registerkarte "SKALIERUNG" und verschieben anschließend den Schieberegler für die **reservierte Kapazität**.
 
-![Skalierungsseite](./media/media-services-dotnet-get-started/media-services-origin-scale.png)
+	![Skalierungsseite](./media/media-services-dotnet-get-started/media-services-origin-scale.png)
 
 4. Klicken Sie zum Speichern der Änderungen auf **SPEICHERN**.
 
 Das Zuordnen neuer Einheiten dauert etwa 20 Minuten.
 
->[AZURE.NOTE]Aktuell kann das Streaming bis zu eine Stunde lang deaktiviert werden, wenn Sie einen positiven Wert für die Streamingeinheiten zurück auf null setzen.
+>[AZURE.NOTE] Aktuell kann das Streaming bis zu eine Stunde lang deaktiviert werden, wenn Sie einen positiven Wert für die Streamingeinheiten zurück auf null setzen.
 >
 > Die höchste für den 24-Stunden-Zeitraum angegebene Anzahl an Einheiten wird zum Berechnen der Kosten verwendet. Eine Preisübersicht finden Sie unter [Azure-Preise](http://go.microsoft.com/fwlink/?LinkId=275107).
 
@@ -152,7 +152,7 @@ Das Zuordnen neuer Einheiten dauert etwa 20 Minuten.
 		using Microsoft.WindowsAzure.MediaServices.Client;
 		using Microsoft.WindowsAzure.MediaServices.Client.DynamicEncryption;
 
-6. Erstellen Sie einen neuen Ordner unter dem Verzeichnis Projekte, und kopieren Sie eine MP4 oder WMV-Datei, die Sie codieren und streamen oder progressiv herunterladen möchten. In diesem Beispiel wird der Pfad "C:\\VideoFiles" verwendet.
+6. Erstellen Sie einen neuen Ordner unter dem Verzeichnis Projekte, und kopieren Sie eine MP4 oder WMV-Datei, die Sie codieren und streamen oder progressiv herunterladen möchten. In diesem Beispiel wird der Pfad "C:\VideoFiles" verwendet.
 
 ##Herstellen einer Verbindung mit dem Media Services-Konto
 
@@ -452,4 +452,4 @@ Wenn dieses Thema nicht die erwarteten Informationen enthält, Informationen feh
   [Web Platform Installer]: http://go.microsoft.com/fwlink/?linkid=255386
   [Portal]: http://manage.windowsazure.com/
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

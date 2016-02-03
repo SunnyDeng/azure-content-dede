@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na"
 	ms.topic="article" 
-	ms.date="12/04/2015" 
+	ms.date="01/08/2016" 
 	ms.author="tdykstra"/>
 
 # Verwalten von API-Apps in Azure App Service
@@ -136,4 +136,4 @@ Dieser Artikel hat gezeigt, wie Sie das Azure-Portal zum Ausführen verschiedene
 
 Informationen zum Verwalten von API-Apps über die Befehlszeile finden Sie in den Artikeln im Abschnitt **Automatisieren**, die links neben dem Artikel (bei breiten Browserfenstern) oder oben über dem Artikel (bei schmalen Browserfenstern) angezeigt werden.
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0114_2016-->

@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="09/22/2015"
-   ms.author="sahajs"/>
+   ms.date="01/07/2016"
+   ms.author="sahajs;barbkess;sonyama"/>
 
 
 # Planen von Geschäftskontinuität in SQL Data Warehouse
@@ -78,4 +78,4 @@ Informationen zu den Geschäftskontinuitätsfeatures anderer SQL-Datenbank-Editi
 
 <!--Other Web references-->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0114_2016-->

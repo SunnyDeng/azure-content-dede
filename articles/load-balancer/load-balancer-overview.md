@@ -1,12 +1,12 @@
-<properties 
+<properties
    pageTitle="Übersicht über Azure-Lastenausgleich | Microsoft Azure"
-   description="Übersicht über Funktionen, Architektur und Implementierung des Azure-Lastenausgleichsmoduls. Dieser Artikel dient dem Verständnis der Arbeitsweise und der Nutzung des Lastenausgleichs in der Cloud."
+   description="Übersicht über Features, Architektur und Implementierung des Azure Load Balancers. Dieser Artikel dient dem Verständnis der Arbeitsweise und der Nutzung des Load Balancers in der Cloud."
    services="load-balancer"
    documentationCenter="na"
    authors="joaoma"
    manager="adinah"
    editor="tysonn" />
-<tags 
+<tags
    ms.service="load-balancer"
    ms.devlang="na"
    ms.topic="article"
@@ -17,108 +17,109 @@
 
 
 # Was ist der Azure Load Balancer?
- 
-Der Azure-Lastenausgleich bietet hohe Verfügbarkeit und Netzwerkleistung für Ihre Anwendungen. Es handelt sich um einen Lastenausgleich des Layer-4-Typs (TCP, UDP), der eingehenden Datenverkehr zwischen funktionierenden Dienstinstanzen in Clouddiensten oder auf virtuelle Computer verteilt, die in einem Lastenausgleich definiert wurden.
- 
+
+Der Azure Load Balancer bietet hohe Verfügbarkeit und Netzwerkleistung für Ihre Anwendungen. Es handelt sich um einen Lastenausgleich des Layer-4-Typs (TCP, UDP), der eingehenden Datenverkehr zwischen funktionierenden Dienstinstanzen in Clouddiensten oder auf virtuelle Computer verteilt, die in einem Lastenausgleich definiert wurden.
+
 Es gibt folgende Konfigurationsmöglichkeiten:
 
 - Lastenausgleich des eingehenden Internetdatenverkehrs für virtuelle Computer. Wir bezeichnen dies als [Lastenausgleich für Internetzugriff](load-balancer-internet-overview.md).
-- Lastenausgleich für Datenverkehr zwischen virtuellen Computern in einem virtuellen Netzwerk, zwischen virtuellen Computern in Clouddiensten oder zwischen lokalen und virtuellen Computern in einem standortübergreifenden virtuellen Netzwerk. Wir bezeichnen dies als [Internen Lastenausgleich (ILB)](load-balancer-internal-overview.md).
-- 	Weiterleiten von externem Datenverkehr an eine bestimmte Instanz eines virtuellen Computers
+- Lastenausgleich für Datenverkehr zwischen virtuellen Computern in einem virtuellen Netzwerk, zwischen virtuellen Computern in Clouddiensten oder zwischen lokalen und virtuellen Computern in einem standortübergreifenden virtuellen Netzwerk. Wir bezeichnen dies als [internen Lastenausgleich](load-balancer-internal-overview.md).
+- Weiterleiten von externem Datenverkehr an eine bestimmte Instanz eines virtuellen Computers.
 
-## Grundlegendes zum Azure Load Balancer im klassischen Azure und Azure-Ressourcen-Manager (ARM)
+## Load Balancer in den beiden Bereitstellungsmodellen
 
-Alle Ressourcen in der Cloud benötigen eine öffentliche IP-Adresse, damit sie im Internet erreichbar sind. Die Cloudinfrastruktur in Microsoft Azure verwendet nicht routbare IP-Adressen in ihren Ressourcen und Netzwerkadressübersetzung (Network Address Translation, NAT) mit öffentlichen IP-Adressen zur Kommunikation mit dem Internet.
+Alle Ressourcen in der Cloud benötigen eine öffentliche IP-Adresse, damit sie im Internet erreichbar sind. Die Cloudinfrastruktur in Microsoft Azure verwendet nicht routbare IP-Adressen innerhalb ihrer Ressourcen. Für die Kommunikation mit dem Internet nutzt sie die Netzwerkadressübersetzung (NAT) mit öffentlichen IP-Adressen.
 
-Es gibt 2 Bereitstellungsmodelle in Microsoft Azure und ihre Lastenausgleichsimplementierungen:
-
- 
 ### Klassisches Azure
 
-Klassisches Azure ist das erste in Microsoft Azure implementierte Bereitstellungsmodell. In diesem Modell sind eine öffentliche IP-Adresse und ein FQDN einem Clouddienst zugewiesen, und in einem Clouddienst bereitgestellte virtuelle Computer können gruppiert werden, um einen Lastenausgleich zu verwenden. Der Lastenausgleich übernimmt Portübersetzung und Lastenausgleich im Netzwerkdatenverkehr, wobei die öffentliche IP-Adresse für den Clouddienst genutzt wird.
+Im klassischen Azure-Bereitstellungsmodell werden einem Clouddienst eine öffentliche IP-Adresse und ein FQDN zugewiesen. In einem Clouddienst bereitgestellte virtuelle Computer können gruppiert werden, um einen Lastenausgleich zu verwenden. Der Azure Load Balancer übernimmt die Portübersetzung und den Lastenausgleich im Netzwerkdatenverkehr, wobei die öffentliche IP-Adresse für den Clouddienst genutzt wird.
 
-In einem klassischen Bereitstellungsmodell erfolgt die Portübersetzung mit Endpunkten, die eine 1:1-Beziehung zwischen dem öffentlichen zugewiesenen Port der öffentlichen IP-Adresse und dem lokalen Port bilden, der zum Senden von Datenverkehr an einen bestimmten virtuellen Computer zugewiesen wurde.
+Im klassischen Bereitstellungsmodell erfolgt die Portübersetzung über Endpunkte, die eine 1:1-Beziehung zwischen dem öffentlichen zugewiesenen Port der öffentlichen IP-Adresse und dem lokalen Port bilden, der zum Senden von Datenverkehr an einen bestimmten virtuellen Computer zugewiesen wurde.
 
-Lastenausgleich erfolgt über vom Load Balancer festgelegte Endpunkte. Diese Endpunkte bilden eine 1:n-Beziehung zwischen der öffentlichen IP-Adresse und lokalen Ports, die allen virtuellen Computern in der Gruppe zugewiesen wurden, die auf den ausgeglichenen Netzwerkverkehr reagieren.
+Der Lastenausgleich erfolgt über vom Load Balancer festgelegte Endpunkte. Diese Endpunkte haben eine 1:n-Beziehung zwischen der öffentlichen IP-Adresse und den lokalen Ports, die allen virtuellen Computer in der Gruppe zugewiesen sind, die auf den Netzwerkdatenverkehr mit Lastenausgleich reagiert.
 
-Die Domänenbezeichnung für die öffentliche IP-Adresse, die ein Lastenausgleich in diesem Bereitstellungsmodell verwenden würde, wäre `<cloud service name>.cloudapp.net`.
+Die Domänenbezeichnung für die öffentliche IP-Adresse, die ein Load Balancer in diesem Bereitstellungsmodell verwenden würde, ist `<cloud service name>.cloudapp.net`.
 
-Dies ist eine grafische Darstellung eines Lastenausgleichs in einem klassischen Bereitstellungsmodell: ![Lastenausgleich auf Hashbasis](./media/load-balancer-overview/asm-lb.png)
+Dies ist eine grafische Darstellung des Load Balancers in einem klassischen Bereitstellungsmodell:
+
+![Load Balancer im klassischen Bereitstellungsmodell](./media/load-balancer-overview/asm-lb.png)
 
 ### Azure-Ressourcen-Manager
- 
-Das Konzept des Lastenausgleichs ändert sich beim Azure-Ressourcen-Manager (ARM), da dort keine Notwendigkeit besteht, dass ein Clouddienst einen Lastenausgleich erstellt.
 
-In ARM ist eine öffentliche IP-Adresse ihre eigene Ressource und kann einer Domänenbezeichnung oder einem DNS-Namen zugeordnet werden. Die öffentliche IP-Adresse ist in diesem Fall der Lastenausgleichsressource zugeordnet, sodass Lastenausgleichsregeln, eingehende NAT-Regeln die öffentliche IP-Adresse als Internetendpunkt für die Ressourcen verwenden, die ausgeglichenen Netzwerkverkehr empfangen.
+Das Konzept des Load Balancers ändert sich für das Azure-Ressourcen-Manager-Bereitstellungsmodell, da für einen Clouddienst keine Notwendigkeit besteht, einen Lastenausgleich zu erstellen.
 
-Eine Netzwerkschnittstellenressource (NIC) enthält die IP-Adresskonfiguration (private oder öffentliche IP) für einen virtuellen Computer. Sobald eine NIC einem Lastenausgleichs-Back-End-IP-Adresspool hinzugefügt wurde, beginnt der Lastenausgleich, ausgeglichenen Netzwerkverkehr basierend auf den Lastenausgleichsregeln zu senden.
+Im Ressourcen-Manager ist eine öffentliche IP-Adresse eine eigene Ressource und kann einer Domänenbezeichnung oder einem DNS-Namen zugeordnet werden. Die öffentliche IP-Adresse ist in diesem Fall der Load Balancer-Ressource zugeordnet. Auf diese Weise verwenden Load Balancer-Regeln und eingehende NAT-Regeln die öffentliche IP-Adresse als Internetendpunkt für die Ressourcen, die Netzwerkverkehr mit Lastenausgleich empfangen.
 
-Eine Verfügbarkeitsgruppe ist die Gruppierungsmethode, die verwendet wird, um virtuelle Computer dem Lastenausgleich hinzuzufügen. Die Verfügbarkeitsgruppe garantiert, dass die virtuellen Computer sich nicht auf der gleichen physischen Hardware befinden, sodass bei einem Fehler im Zusammenhang mit der physischen Cloudinfrastruktur sichergestellt ist, dass der Lastenausgleich immer über einen virtuellen Computer verfügt, der ausgeglichenen Netzwerkverkehr empfängt.
+Eine Netzwerkschnittstellen-Ressource enthält die IP-Adresskonfiguration (private oder öffentliche IP) für einen virtuellen Computer. Nachdem eine NIC einem IP-Adresspool des Load Balancer-Back-Ends hinzugefügt wurde, beginnt der Load Balancer basierend auf den erstellten Lastenausgleichsregeln mit dem Senden des Netzwerkdatenverkehrs mit Lastenausgleich.
 
-Dies ist eine grafische Darstellung eines Lastenausgleichs im Azure-Ressourcen-Manager (ARM):
+Dies ist eine grafische Darstellung des Load Balancers im Ressourcen-Manager:
 
-![Lastenausgleich auf Hashbasis](./media/load-balancer-overview/arm-lb.png)
+![Load Balancer im Ressourcen-Manager](./media/load-balancer-overview/arm-lb.png)
 
 ## Lastenausgleichsfunktionen
 
-### Layer-4-Lastenausgleich, Verteilung auf Hashbasis
+### Hash-basierte Verteilung
 
-Der Azure-Lastenausgleich verwendet einen Verteilungsalgorithmus auf Hashbasis. Standardmäßig wird ein 5-Tupelhash (Quell-IP, Quellport, IP-Zieladresse, Zielport Protokolltyp) zum Zuordnen des Datenverkehrs an verfügbare Server verwendet. Dabei wird Bindung nur in einer Transportsitzung angeboten. Pakete in derselben TCP- oder UDP-Sitzung werden an die gleiche Instanz der Rechenzentrums-IP (DIP) hinter dem Lastenausgleichs-Endpunkt geleitet. Wenn der Client die Verbindung schließt und erneut öffnet oder eine neue Sitzung über die gleiche Quell-IP startet, wird der Quellport geändert. Dadurch kann der Datenverkehr an einen anderen DIP-Endpunkt geleitet werden.
+Der Azure Load Balancer verwendet einen Verteilungsalgorithmus auf Hashbasis. Standardmäßig wird ein 5-Tupel-Hash (Quell-IP, Quellport, IP-Zieladresse, Zielport Protokolltyp) zum Zuordnen des Datenverkehrs an verfügbare Server verwendet. Dabei wird Bindung nur in einer Transportsitzung angeboten. Pakete in derselben TCP- oder UDP-Sitzung werden an die gleiche Instanz der Datencenter-IP (DIP) hinter dem Lastenausgleichs-Endpunkt geleitet. Wenn der Client die Verbindung schließt und erneut öffnet oder eine neue Sitzung über die gleiche Quell-IP startet, wird der Quellport geändert. Dadurch kann der Datenverkehr an einen anderen DIP-Endpunkt geleitet werden.
 
 
-Weitere Informationen finden Sie unter [Verteilungsmodus des Lastenausgleichs](load-balancer-distribution-mode.md)
+Weitere Informationen finden Sie unter [Load Balancer-Verteilungsmodus](load-balancer-distribution-mode.md)
 
-![Lastenausgleich auf Hashbasis](./media/load-balancer-overview/load-balancer-distribution.png)
+Die folgende Grafik veranschaulicht eine Hash-basierte Verteilung:
+
+![Hash-basierte Verteilung](./media/load-balancer-overview/load-balancer-distribution.png)
 
 ### Portweiterleitung
 
-Mit dem Azure-Lastenausgleich steuern Sie die Verwaltung der eingehenden Kommunikation wie Datenverkehr von Internethosts oder virtuellen Computern in anderen Clouddiensten bzw. virtuellen Netzwerken. Dieses Steuerelement wird von einem Endpunkt (auch als Eingabeendpunkt bezeichnet) dargestellt.
+Mit dem Azure Load Balancer steuern Sie, wie die eingehende Kommunikation verwaltet wird. Diese Kommunikation kann Datenverkehr umfassen, der von Internethosts oder virtuellen Computern in anderen Clouddiensten oder virtuellen Netzwerken initialisiert wird. Diese Steuerung wird durch einen Endpunkt (auch als Eingabeendpunkt bezeichnet) abgebildet.
 
-Ein Endpunkt mit einem öffentlichen Port überwacht Datenverkehr und leitet diesen an einen internen Port. Sie können dieselben Ports einem internen oder externen Endpunkt zuordnen oder einen anderen Port verwenden. Beispiel: Sie können einen Webserver konfigurieren, der Port 81 überwacht, während Port 80 dem öffentlichen Endpunkt zugeordnet ist. Die Erstellung eines öffentlichen Endpunkts löst die Erstellung eines Azure-Lastenausgleichs aus.
+Ein Endpunkt mit einem öffentlichen Port überwacht Datenverkehr und leitet diesen an einen internen Port. Sie können dieselben Ports einem internen oder externen Endpunkt zuordnen oder einen anderen Port verwenden. Beispiel: Sie können einen Webserver konfigurieren, der an Port 81 lauscht, während Port 80 dem öffentlichen Endpunkt zugeordnet ist. Die Erstellung eines öffentlichen Endpunkts löst die Erstellung einer Azure Load Balancer-Instanz aus.
 
-Die Endpunkte auf virtuellen Computern, die Sie mit dem Azure-Verwaltungsportal erstellen, werden hauptsächlich für das Remotedesktopprotokoll (RDP) und Windows PowerShell-Sitzungsverkehr verwendet. Über diese Endpunkte können Sie die virtuellen Computer über das Internet verwalten.
+Die Standardnutzung und -konfiguration von Endpunkten auf einem virtuellen Computer, der über das Azure-Portal erstellt wurde, sind auf das RDP- (Remotedesktopprotokoll) und Windows PowerShell-Sitzungsdatenverkehr ausgerichtet. Über diese Endpunkte können Sie den virtuellen Computer remote über das Internet verwalten.
 
 
-### Automatische Neukonfiguration bei vertikaler/horizontaler Skalierung
+### Automatische Neukonfiguration
 
-Der Azure-Lastenausgleich konfiguriert sich unmittelbar neu, wenn Sie Instanzen vertikal oder horizontal skalieren (aufgrund der Zunahme der Anzahl an Instanzen für die Web-/Workerrolle oder durch Einfügen zusätzlicher virtueller Computer in der gleichen Lastenausgleichsgruppe).
+Der Azure Load Balancer konfiguriert sich selbst sofort, wenn Sie Instanzen nach oben oder unten skalieren. Diese Neukonfiguration kann z. B. vorkommen, wenn Sie die Anzahl der Instanzen für die Web-/Workerrolle erhöhen oder wenn Sie weitere virtuelle Computer in die gleiche Gruppe mit Lastenausgleich aufnehmen.
 
 
 ### Dienstüberwachung
-Der Azure-Lastenausgleich bietet die Möglichkeit, die Integrität der verschiedenen Serverinstanzen zu testen. Wenn ein Test nicht reagiert, beendet der Azure-Lastenausgleich das Senden neuer Verbindungen an die fehlerhaften Instanzen. Vorhandene Verbindungen sind nicht betroffen.
+Der Azure Load Balancer bietet die Möglichkeit, die Integrität der verschiedenen Serverinstanzen zu testen. Wenn ein Test nicht reagiert, beendet der Load Balancer das Senden neuer Verbindungen an die fehlerhaften Instanzen. Vorhandene Verbindungen sind nicht betroffen.
 
-Es gibt drei unterstützte Tests:
- 
-- Gast-Agent-Test (nur PaaS-VMs). Der Azure-Lastenausgleich nutzt den Gast-Agent auf dem virtuellen Computer und überwacht und antwortet nur mit einer HTTP-OK-Antwort 200, wenn die Instanz bereit ist (d. h. die Instanz nicht ausgelastet ist bzw. recycelt oder angehalten wird usw.). Wenn der Gast-Agent nicht mit dem HTTP-OK-Code 200 antwortet, kennzeichnet der Azure-Lastenausgleich die Instanz als nicht reagierend und sendet keinen Datenverkehr mehr an diese Instanz. Der Azure-Lastenausgleich sendet weiterhin ein Ping an die Instanz, und falls der Gast-Agent mit HTTP-Code 200 antwortet, sendet der Azure-Lastenausgleich wieder Datenverkehr an diese Instanz. Bei Verwendung einer Webrolle wird Ihr Websitecode in der Regel in der ausführbaren Datei "w3wp.exe" ausgeführt, die von der Azure-Struktur oder dem Gast-Agent nicht überwacht wird. Fehler in "w3wp.exe" (z. B. HTTP 500-Antworten) werden nicht an den Gast-Agent gemeldet, und das Lastenausgleichsmodul weiß nicht, dass es diese Instanz aus der Rotation entfernen sollte.
+Drei Testarten werden unterstützt:
 
-- Benutzerdefinierte HTTP-Tests. Der benutzerdefinierte Lastenausgleichstest überschreibt den Standard-Gast-Agent-Test und ermöglicht es Ihnen, Ihre eigene Logik zum Bestimmen der Integrität der Rolleninstanz zu erstellen. Der Lastenausgleich testet regelmäßig den Endpunkt (standardmäßig alle 15 Sekunden), und die Instanz wird als rotierend berücksichtigt, wenn sie innerhalb des Zeitlimits (Standardwert 31 Sekunden) mit einem TCP-ACK oder HTTP-Code 200 reagiert. Dies kann hilfreich sein, um eine eigene Logik zum Entfernen von Instanzen aus der Lastenausgleichsrotation zu implementieren, wie z. B. durch Rückgabe eines Nicht-200-Status, wenn die Instanz über 90 % CPU-Auslastung aufweist. Für Webrollen mit "w3wp.exe" bedeutet dies auch automatische Überwachung der Website, da Fehler im Websitecode einen Nicht-200-Status an den Lastenausgleichstest zurückgeben.
+- Gast-Agent-Test (nur PaaS-VMs). Der Azure Load Balancer nutzt den Gast-Agent auf dem virtuellen Computer. Er lauscht und antwortet nur dann mit dem HTTP-OK-Code 200, wenn die Instanz sich im Zustand „Bereit“ befindet (d. h. nicht in einem Zustand wie „Beschäftigt“, „Wiederverwendung“ oder „Wird beendet“). Wenn der Gast-Agent nicht mit dem HTTP-OK-Code 200 antwortet, kennzeichnet der Azure Load Balancer die Instanz als nicht reagierend und sendet keinen weiteren Datenverkehr an diese Instanz. Der Load Balancer pingt die Instanz weiterhin. Wenn der Gast-Agent mit dem HTTP-Code 200 antwortet, sendet der Load Balancer wieder Datenverkehr an diese Instanz. Wenn Sie eine Webrolle verwenden, wird Ihr Websitecode in der Regel in „w3wp.exe“ ausgeführt. Dieses Programm wird nicht von der Azure-Fabric oder vom Gast-Agent überwacht. Das bedeutet, dass Fehler in „w3wp.exe“ (z. B. HTTP 500-Antworten) nicht an den Gast-Agent gemeldet werden und der Load Balancer nicht erkennen kann, dass diese Instanz aus der Rotation entfernt werden soll.
 
-- Benutzerdefinierte TCP-Tests. TCP-Tests basieren auf der erfolgreichen Herstellung von TCP-Sitzungen an einem definierten Testport.
+- Benutzerdefinierter HTTP-Test. Der benutzerdefinierte Load Balancer-Test setzt den (Gast-Agent-) Standardtest außer Kraft. Sie können damit Ihre eigene Logik zum Ermitteln der Integrität der Rolleninstanz erstellen. Der Load Balancer testet regelmäßig Ihren Endpunkt (standardmäßig alle 15 Sekunden). Die Instanz wird als rotierend betrachtet, wenn sie innerhalb des Zeitlimits (standardmäßig 31 Sekunden) mit einem TCP-ACK oder HTTP-Code 200 reagiert. Dies kann für die Implementierung Ihrer eigenen Logik zum Entfernen von Instanzen aus der Load Balancer-Rotation nützlich sein. Beispielsweise können Sie die Instanz so konfigurieren, dass sie einen anderen Status als 200 zurückgibt, wenn die Instanz bei über 90 % CPU-Auslastung liegt. Für Webrollen, die „w3wp.exe“ verwenden, wird die Website außerdem automatisch überwacht, da Fehler im Websitecode einen anderen Status als 200 an den Load Balancer-Test zurückgeben.
 
-Weitere Informationen finden Sie unter [LoadBalancerProbe-Schema](https://msdn.microsoft.com/library/azure/jj151530.aspx).
+- Benutzerdefinierter TCP-Test. TCP-Tests basieren auf der erfolgreichen Herstellung von TCP-Sitzungen an einem definierten Testport.
 
-### Quell-NAT (SNAT)
+Weitere Informationen finden Sie unter [Load Balancer-Integritätstest](https://msdn.microsoft.com/library/azure/jj151530.aspx).
+
+### Quell-NAT
 
 
-Auf den gesamten ausgehenden Internetdatenverkehr, der vom Dienst stammt, wird Quell-NAT (SNAT, Source Network Address Translation) mit der gleichen VIP-Adresse wie für eingehenden Datenverkehr angewendet. SNAT bietet wichtige Vorteile:
+Auf den gesamten von Ihrem Dienst ausgehenden Internetdatenverkehr wird Quell-NAT (SNAT, Source Network Address Translation) mit der gleichen VIP-Adresse wie für eingehenden Datenverkehr angewendet. SNAT bietet wichtige Vorteile:
 
 - Sie ermöglicht einfache Upgrades und Notfallwiederherstellung von Diensten, da die VIP-Adresse dynamisch einer anderen Instanz des Diensts zugeordnet werden kann.
 
-- Sie vereinfacht die ACL-Verwaltung, da die ACL im Hinblick auf VIPs ausgedrückt werden kann. Daher müssen Sie keine Änderungen vornehmen, wenn Sie Dienste horizontal oder vertikal skalieren oder erneut bereitstellen.
+- Sie vereinfacht die ACL-Verwaltung, da die ACL im Hinblick auf VIPs ausgedrückt werden kann. Daher müssen Sie keine Änderungen vornehmen, wenn Sie Dienste zentral hoch- oder herunterskalieren oder erneut bereitstellen.
 
-Die Azure-Lastenausgleichskonfiguration unterstützt vollständige Cone-NAT für UDP. Vollständige Cone-NAT ist ein NAT-Typ, bei dem der Port eingehende Verbindungen von jedem externen Host (als Reaktion auf eine externe Anforderung) erlaubt.
+Die Azure Load Balancer-Konfiguration unterstützt vollständige Cone-NAT für UDP. Vollständige Cone-NAT ist ein NAT-Typ, bei dem der Port eingehende Verbindungen von jedem externen Host (als Reaktion auf eine externe Anforderung) erlaubt.
 
 
->[AZURE.NOTE]Beachten Sie, dass für jede neue ausgehende Verbindung, die von einem virtuellen Computer initiiert wurde, auch ein ausgehender Port vom Azure-Lastenausgleich zugeordnet wird. Dem externen Host wird eingehender Datenverkehr über eine VIP mit zugewiesenem Port angezeigt. Wenn Ihre Szenarios eine große Anzahl ausgehender Verbindungen benötigen, empfiehlt es sich, dass die virtuellen Computer öffentliche IP-Adressen auf Instanzebene verwenden, damit diese über eine festgelegte ausgehende IP für die Quell-NAT (SNAT, Source Network Address Translation) verfügen. Dies reduziert das Risiko von Portauslastung.
+>[AZURE.NOTE]Für jede neue ausgehende Verbindung, die von einem virtuellen Computer initiiert wird, wird auch ein ausgehender Port vom Azure Load Balancer zugeordnet. Dem externen Host wird eingehender Datenverkehr als einer virtuellen IP (VIP) zugewiesener Port angezeigt. Wenn für Ihre Szenarien eine große Anzahl von ausgehenden Verbindungen benötigt wird, empfehlen wir, dass die VMs öffentliche IP-Adressen auf Instanzebene verwenden, damit sie eine dedizierte ausgehende IP-Adresse für SNAT aufweisen. Dies reduziert das Risiko von Portauslastung.
 >
->Die maximale Anzahl von Ports, die für VIP oder ILPIP verwendet werden können, beträgt 64k. Dies ist eine standardmäßige Einschränkung für TCP.
+>Die maximale Anzahl von Ports, die für VIPs oder öffentliche IPs auf Instanzebene (PIPs) verwendet werden können, beträgt 64.000. Dies ist eine standardmäßige Einschränkung für TCP.
 
 
-**Unterstützung für mehrere IPs mit Lastenausgleich für virtuelle Computer**
+**Unterstützung für mehrere IP-Adressen mit Lastenausgleich für virtuelle Computer**
 
-Sie können einer Gruppe von virtuellen Computern mehr als eine öffentliche IP-Adresse mit Lastenausgleich zuweisen. Mit dieser Funktion können Sie mehrere SSL-Websites und/oder mehrere Listener für SQL-AlwaysOn-Verfügbarkeitsgruppen in der gleichen Gruppe von virtuellen Computern hosten. Weitere Informationen finden Sie unter [Mehrere VIPs pro Clouddienst](load-balancer-multivip.md)
+Sie können einer Gruppe von virtuellen Computern mehr als eine öffentliche IP-Adresse mit Lastenausgleich zuweisen. Mit dieser Funktion können Sie mehrere SSL-Websites und/oder mehrere Listener für SQL Server-AlwaysOn-Verfügbarkeitsgruppen in der gleichen Gruppe virtueller Computer hosten. Weitere Informationen finden Sie unter [Mehrere VIPs pro Clouddienst](load-balancer-multivip.md).
 
-****Vorlagenbasierte Bereitstellungen mithilfe des Azure-Ressourcen-Managers** Azure-Ressourcen-Manager (ARM) ist das neue Verwaltungsframework für Dienste in Azure. Der Azure-Lastenausgleich kann jetzt mithilfe von APIs und Tools auf Basis von Azure-Ressourcen-Manager verwaltet werden. Weitere Informationen zum Azure-Ressourcen-Manager finden Sie unter [Iaas just got easier with Azure Resource Manager](http://azure.microsoft.com/blog/2015/04/29/iaas-just-got-easier-again/) (in englischer Sprache).
+**Vorlagenbasierte Bereitstellungen über den Azure-Ressourcen-Manager**
+
+Der Azure-Ressourcen-Manager ist das neue Verwaltungsframework für Dienste in Azure. Der Azure Load Balancer kann jetzt mithilfe von APIs und Tools im Ressourcen-Manager verwaltet werden. Weitere Informationen zum Ressourcen-Manager finden Sie unter [IaaS ist jetzt noch einfacher mit Azure-Ressourcen-Manager](http://azure.microsoft.com/blog/2015/04/29/iaas-just-got-easier-again/).
 
 
 ## Nächste Schritte
@@ -127,7 +128,6 @@ Sie können einer Gruppe von virtuellen Computern mehr als eine öffentliche IP-
 
 [Interner Lastenausgleich (Übersicht)](load-balancer-internal-overview.md)
 
-[Erste Schritte – Lastenausgleich für Internetzugriff](load-balancer-internet-getstarted.md)
- 
+[Erste Schritte zum Erstellen eines Lastenausgleichs für den Internetzugriff](load-balancer-internet-getstarted.md)
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0114_2016-->

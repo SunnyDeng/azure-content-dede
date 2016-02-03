@@ -13,14 +13,14 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/22/2015"
+	ms.date="01/15/2016"
 	ms.author="adegeo"/>
 
 # Konfigurieren eines benutzerdefinierten Domänennamens für einen Azure-Clouddienst
 
 > [AZURE.SELECTOR]
-- [Azure classic portal](cloud-services-custom-domain-name.md)
 - [Azure portal](cloud-services-custom-domain-name-portal.md)
+- [Azure classic portal](cloud-services-custom-domain-name.md)
 
 
 Wenn Sie einen Clouddienst erstellen, weist Azure diesen einer Unterdomäne von cloudapp.net zu. Wenn der Clouddienst beispielsweise den Namen „contoso“ hat, können Ihre Benutzer auf die Anwendung über eine URL wie etwa http://contoso.cloudapp.net zugreifen. Darüber hinaus weist Azure eine virtuelle IP-Adresse zu.
@@ -35,7 +35,7 @@ Wissen Sie bereits, worum es sich bei CNAME- und A-Datensätzen handelt? [Übers
 <p/>
 
 > [AZURE.NOTE]
-> Die Verfahren in dieser Aufgabe gelten für Azure Cloud Services. Für Websites siehe [Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure App Service-Web-App](../web-sites-custom-domain-name.md). Informationen zu Speicherkonten finden Sie unter [Konfigurieren eines benutzerdefinierten Domänennamens für ein Azure-Speicherkonto](../storage-custom-domain-name.md).
+> Die Verfahren in dieser Aufgabe gelten für Azure Cloud Services. Informationen zu App Services finden Sie [hier](../app-service-web/web-sites-custom-domain-name.md). Informationen zu Speicherkonten finden Sie [hier](../storage/storage-custom-domain-name.md).
 
 
 ## Informationen zu CNAME- und A-Datensätzen
@@ -47,7 +47,7 @@ Mit CNAME- (oder Aliasdatensätze) und A-Datensätzen können Sie einen Domänen
 Ein CNAME-Datensatz weist eine *spezifische* Domäne, beispielsweise **contoso.com** oder **www.contoso.com**, zu einem kanonischen Domänennamen zu. In diesem Fall ist der kanonische Domänenname der Domänenname **[myapp].cloudapp.net** Ihrer von Azure gehosteten Anwendung. Nach der Erstellung erstellt der CNAME-Eintrag einen Alias für **[myapp].cloudapp.net**. Der CNAME-Eintrag wird automatisch zur IP-Adresse Ihres Diensts **[myapp].cloudapp.net** aufgelöst. Wenn sich also die IP-Adresse des Clouddiensts ändert, müssen Sie keine Maßnahmen ergreifen.
 
 > [AZURE.NOTE]
-> Bei einigen Domänenregistrierungen können Sie Unterdomänen nur mit einem CNAME-Datensatz wie www.contoso.com zuweisen und nicht mit einem Stammnamen wie contoso.com. Weitere Informationen zu CNAME-Datensätzen finden Sie in der durch Ihre Registrierung zur Verfügung gestellte Dokumentation, [dem Wikipedia-Eintrag "CNAME Resource Record"](http://en.wikipedia.org/wiki/CNAME_record) oder dem Dokument [IETF Domain Names - Implementation and Specification](http://tools.ietf.org/html/rfc1035) (IEFT-Domännamen – Implementierung und Spezifizierung, in englischer Sprache).
+> Bei einigen Domänenregistrierungen können Sie Unterdomänen nur mit einem CNAME-Datensatz wie www.contoso.com zuweisen und nicht mit einem Stammnamen wie contoso.com. Weitere Informationen zu CNAME-Datensätzen finden Sie in der durch Ihre Registrierung zur Verfügung gestellte Dokumentation, [dem Wikipedia-Eintrag "CNAME Resource Record"](http://en.wikipedia.org/wiki/CNAME_record) oder dem Dokument [IETF Domain Names - Implementation and Specification](http://tools.ietf.org/html/rfc1035) (IEFT-Domänennamen – Implementierung und Spezifizierung, in englischer Sprache).
 
 ### A-Datensatz
 
@@ -96,7 +96,7 @@ Der folgende CNAME-Datensatz leitet zum Beispiel den gesamten Verkehr von **www.
 Einem Besucher von **www.contoso.com** wird niemals der wirkliche Host (contoso.cloudapp.net) angezeigt. Die Weiterleitung ist also für den Endbenutzer nicht sichtbar.
 
 > [AZURE.NOTE]
-> Das oben genannte Beispiel gilt nur für Verkehr an der Unterdomäne **www**. Da Sie keine Platzhalter mit CNAME-Datensätzen verwenden können, müssen Sie einen CNAME für jede Domäne/Unterdomäne erstellen. Wenn Sie den Verkehr von Unterdomänen wie \*.contoso.com an Ihre cloudapp.net-Adresse weiterleiten möchten, können Sie in Ihren DNS-Einstellungen einen Eintrag für **URL-Umleitung** oder **URL-Weiterleitung** erstellen. Alternativ können Sie einen A-Datensatz erstellen.
+> Das oben genannte Beispiel gilt nur für Verkehr an der Unterdomäne **www**. Da Sie keine Platzhalter mit CNAME-Datensätzen verwenden können, müssen Sie einen CNAME für jede Domäne/Unterdomäne erstellen. Wenn Sie den Verkehr von Unterdomänen wie *.contoso.com an Ihre cloudapp.net-Adresse weiterleiten möchten, können Sie in Ihren DNS-Einstellungen einen Eintrag für **URL-Umleitung** oder **URL-Weiterleitung** erstellen. Alternativ können Sie einen A-Datensatz erstellen.
 
 
 ## Hinzufügen eines A-Datensatzes für Ihre benutzerdefinierte Domäne
@@ -125,7 +125,7 @@ Sie müssen zunächst die virtuelle IP-Adresse Ihres Clouddiensts ermitteln, um 
 
 2.  Navigieren Sie nun zu dem Bereich, in dem Sie A-Datensätze auswählen oder eingeben können. Möglicherweise müssen Sie den Datensatztyp in einem Dropdownmenü auswählen oder die Seite für erweiterte Einstellungen aufrufen.
 
-3. Wählen Sie die Domäne oder Unterdomäne aus, die diesen A-Datensatz verwenden wird, oder geben Sie diese ein. Wählen Sie beispielsweise **www**, wenn Sie einen Alias für **www.customdomain.com** erstellen möchten. Wenn Sie einen Platzhaltereintrag für alle Unterdomänen erstellen möchten, geben Sie "\_\_*\_\_" ein. Dieser Eintrag deckt alle Unterdomänen ab wie **mail.customdomain.com**, **login.customdomain.com** und **www.customdomain.com**.
+3. Wählen Sie die Domäne oder Unterdomäne aus, die diesen A-Datensatz verwenden wird, oder geben Sie diese ein. Wählen Sie beispielsweise **www**, wenn Sie einen Alias für **www.customdomain.com** erstellen möchten. Wenn Sie einen Platzhaltereintrag für alle Unterdomänen erstellen möchten, geben Sie "__*__" ein. Dieser Eintrag deckt alle Unterdomänen ab wie **mail.customdomain.com**, **login.customdomain.com** und **www.customdomain.com**.
 
     Wenn Sie einen A-Datensatz für die Stammdomäne erstellen möchten, wird dieser möglicherweise als "**@**"-Zeichen in den DNS-Tools Ihrer Registrierung aufgeführt.
 
@@ -138,15 +138,16 @@ Der folgende A-Datensatz leitet zum Beispiel den gesamten Verkehr von **www.cont
 | @ | 137\.135.70.239 |
 
 
-Dieses Beispiel zeigt das Erstellen eines A-Datensatzes für die Stammdomäne. Wenn Sie einen Platzhaltereintrag erstellen möchten, der alle Unterdomänen abdeckt, würden Sie "\_\_*\_\_" als Unterdomäne eingeben.
+
+Dieses Beispiel zeigt das Erstellen eines A-Datensatzes für die Stammdomäne. Wenn Sie einen Platzhaltereintrag erstellen möchten, der alle Unterdomänen abdeckt, würden Sie "__*__" als Unterdomäne eingeben.
 
 >[AZURE.WARNING]
->IP-Adressen in Azure sind standardmäßig dynamische IP-Adressen. Es empfiehlt sich, eine [reservierte IP-Adresse](..\virtual-network\virtual-networks-reserved-public-ip.md) zu verwenden, um sicherzustellen, dass sich Ihre IP-Adresse nicht ändert.
+> IP-Adressen in Azure sind standardmäßig dynamische IP-Adressen. Es empfiehlt sich, eine [reservierte IP-Adresse](../virtual-network/virtual-networks-reserved-public-ip.md) zu verwenden, um sicherzustellen, dass sich Ihre IP-Adresse nicht ändert.
 
 ## Nächste Schritte
 
 * [Verwalten von Cloud Services](cloud-services-how-to-manage.md)
-* [Zuordnen von CDN-Inhalt (Content Delivery Network) zu einer benutzerdefinierten Domäne](cdn-map-content-to-custom-domain.md)
+* [Zuordnen von CDN-Inhalt (Content Delivery Network) zu einer benutzerdefinierten Domäne](../cdn/cdn-map-content-to-custom-domain.md)
 * [Allgemeine Konfiguration Ihres Clouddiensts](cloud-services-how-to-configure.md)
 * Weitere Informationen zum [Bereitstellen eines Clouddiensts](cloud-services-how-to-create-deploy.md)
 * Konfigurieren von [SSL-Zertifikaten](cloud-services-configure-ssl-certificate.md)
@@ -165,4 +166,4 @@ Dieses Beispiel zeigt das Erstellen eines A-Datensatzes für die Stammdomäne. W
 [csurl]: ./media/cloud-services-custom-domain-name/csurl.png
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0121_2016-->

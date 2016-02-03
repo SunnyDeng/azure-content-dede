@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="12/10/2015"
+   ms.date="01/06/2016"
    ms.author="mbaldwin"/>
 
 
@@ -29,9 +29,9 @@ Als Plattform vom Typ "Identity Management as a Service (IDMaaS)" stellt Azure A
 
 1. [Integrieren von Anwendungen in Azure Active Directory](active-directory-integrating-applications.md): Weitere Informationen, wie Sie Anwendungen in Azure Active Directory hinzufügen, aktualisieren und entfernen, sowie zu den Brandingrichtlinien für integrierte Apps.
 
-1. [Azure Active Directory Graph-API](active-directory-graph-api.md): Verwenden Sie die Azure Active Directory Graph-API, um über REST-API-Endpunkte programmgesteuert auf Azure Active Directory zuzugreifen. Beachten Sie, dass die Azure AD Graph-API auch über [Microsoft Graph](https://graph.microsoft.io/) möglich ist, eine einheitliche API, die Zugriff auf mehrere Microsoft Clouddienst-APIs über einen einzelnen Endpunkt für den REST-API und mit einem einzelnen Zugriffstoken ermöglicht.
+1. [Azure Active Directory Graph-API](active-directory-graph-api.md): Verwenden Sie die Azure Active Directory Graph-API, um über REST-API-Endpunkte programmgesteuert auf Azure Active Directory zuzugreifen. Beachten Sie, dass die Azure AD Graph-API auch über [Microsoft Graph](https://graph.microsoft.io/) zugänglich ist, eine einheitliche API, die Zugriff auf mehrere Microsoft Clouddienst-APIs über einen einzelnen Endpunkt für die REST-API und mit einem einzelnen Zugriffstoken ermöglicht.
 
-1. [Azure Active Directory-Authentifizierungsbibliotheken](active-directory-authentication-libraries.md): Nutzen Sie die einfache Authentifizierung von Benutzern, um Zugriffstoken über die Azure-Authentifizierungsbibliotheken für [.NET](https://msdn.microsoft.com/library/azure/mt417579.aspx), [JavaScript](https://github.com/AzureAD/azure-activedirectory-library-for-js), [ObjectiveC](https://github.com/AzureAD/azure-activedirectory-library-for-objc), [Android](http://search.maven.org/remotecontent?filepath=com/microsoft/aad/adal/o) und [weitere](active-directory-authentication-libraries.md) zu erhalten.
+1. [Azure Active Directory-Authentifizierungsbibliotheken](active-directory-authentication-libraries.md): Authentifizieren Sie Benutzer auf einfache Weise, indem Sie Zugriffstoken über die Azure AD-Authentifizierungsbibliotheken für .NET, JavaScript, Objective-C, Android und weitere abrufen.
 
 
 ## Erste Schritte
@@ -93,7 +93,7 @@ Diese Artikel enthalten grundlegende Referenzen zu REST- und Authentifizierungsb
 
 - [Graph-API-Referenz](https://msdn.microsoft.com/library/azure/hh974476.aspx): Hier finden Sie die REST-Referenz für die Azure Active Directory Graph-API. [Sehen Sie sich die interaktive Umgebung für die Graph-API-Referenz an](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog).
 
-- [Graph-API-Berechtigungsbereiche](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/graph-api-permission-scopes): Hier werden die OAuth 2.0-Berechtigungsbereiche beschrieben, mit denen gesteuert wird, welchen Zugriff eine App auf die Verzeichnisdaten für einen Mandanten hat.
+- [Graph-API-Berechtigungsbereiche](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-graph-api-permission-scopes): Hier werden die OAuth 2.0-Berechtigungsbereiche beschrieben, mit denen gesteuert wird, welchen Zugriff eine App auf die Verzeichnisdaten für einen Mandanten hat.
 
 ### Authentifizierungsbibliotheken
 
@@ -141,4 +141,4 @@ In diesen Übersichtspräsentationen zur Entwicklung von Apps mithilfe von Azure
 
 - [Azure Active Directory auf Twitter](https://twitter.com/azuread): Azure Active Directory-Ankündigungen in höchstens 140 Zeichen.
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0107_2016-->

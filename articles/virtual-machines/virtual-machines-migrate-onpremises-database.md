@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Migrieren einer Datenbank zu SQL Server auf einem virtuellen Computer | Mirosoft Azure"
+	pageTitle="Migrieren einer SQL Server-Datenbank zu SQL Server auf einem virtuellen Computer | Microsoft Azure"
 	description="Erfahren Sie mehr über das Migrieren einer lokalen Benutzerdatenbank auf SQL Server in einem virtuellen Azure-Computer."
 	services="virtual-machines"
 	documentationCenter=""
@@ -13,11 +13,11 @@
 	ms.tgt_pltfrm="vm-windows-sql-server"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/02/2015"
+	ms.date="01/05/2016"
 	ms.author="carlrab"/>
 
 
-# Migrieren einer Datenbank zu SQL Server auf einem virtuellen Azure-Computer
+# Migrieren einer SQL Server-Datenbank zu SQL Server auf einem virtuellen Azure-Computer
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
 
@@ -34,14 +34,18 @@ Die primären Migrationsmethoden sind:
 - Trennen und anschließendes Kopieren der Daten-und Protokolldateien in einen Azure-Blob-Speicher, dann Verbinden mit SQL Server in der Azure-VM über URL
 - Konvertieren eines lokalen physischen Computers in Hyper-V-VHD, Hochladen in einen Azure-Blob-Speicher und anschließendes Bereitstellen als neue VM mithilfe des hochgeladenen VHD
 - Versenden einer Festplatte mithilfe des Windows-Import/Export-Diensts
+- Bei einer lokalen AlwaysOn-Bereitstellung: Verwenden des [Assistenten zum Hinzufügen von Azure-Replikaten](virtual-machines-sql-server-extend-on-premises-alwayson-availability-groups.md), um ein Replikat in Azure zu erstellen, und Durchführen eines Failovers, bei dem Benutzer auf die Azure-Datenbankinstanz verwiesen werden
+- Verwenden der SQL Server-[Transaktionsreplikation](https://msdn.microsoft.com/library/ms151176.aspx), um die Azure SQL Server-Instanz als Abonnent zu konfigurieren, und anschließendes Deaktivieren der Replikation, um Benutzer auf die Azure-Datenbankinstanz zu verweisen
 
-> [AZURE.NOTE]Bei einer lokalen Bereitstellung, die immer aktiviert ist, kann auch mit dem [Assistenten zum Hinzufügen von Azure-Replikaten](virtual-machines-sql-server-extend-on-premises-alwayson-availability-groups.md) in Azure ein Replikat erstellt werden, auf das dann als Migrationsmethode ein Failover durchgeführt werden kann.
+
 
 ## Auswählen der Migrationsmethode
 
 Für eine optimale Übertragungsleistung ist die Migration der Datenbankdateien in eine Azure-VM anhand einer komprimierten Sicherungsdatei im Allgemeinen die beste Methode. Dies ist die Methode, die der [Assistent zum Bereitstellen einer SQL Server-Datenbank auf einem virtuellen Microsoft Azure-Computer](#azure-vm-deployment-wizard-tutorial) verwendet. Dieser Assistent ist die empfohlene Methode für das Migrieren einer lokalen Benutzerdatenbank, die auf SQL Server 2005 oder höher ausgeführt wird, auf SQL Server 2014, wenn die Sicherungsdatei der komprimierten Datenbank weniger als 1 TB groß ist.
 
-Falls es nicht möglich ist, den Assistenten zu verwenden, weil die Datenbanksicherungsdatei zu groß ist oder die SQL Server-Zielinstanz nicht SQL Server 2014 oder höher ist, ist der Migrationsvorgang ein manueller Prozess, der i. d. R. mit einer Datenbanksicherung und dem Kopieren dieser Sicherung in Azure beginnt und dann mit dem Wiederherstellen der Datenbank abgeschlossen wird. Sie können auch die Datenbankdateien selbst in Azure kopieren. Es gibt mehrere Methoden, mit denen dieser manuelle Prozess zum Migrieren einer Datenbank in eine Azure-VM ausgeführt werden kann.
+Um die Ausfallzeit während des Datenbankmigrationsvorgangs auf ein Mindestmaß zu beschränken, verwenden Sie entweder die AlwaysOn-Option oder die Option zur Transaktionsreplikation.
+
+Falls die oben genannten Methoden nicht verwendet werden können, migrieren Sie die Datenbank manuell. Mit dieser Methode beginnen Sie in der Regel mit einer Datenbanksicherung, kopieren die Datenbanksicherung in Azure und führen dann eine Wiederherstellung der Datenbank durch. Sie können auch die Datenbankdateien selbst in Azure kopieren und anschließend anfügen. Es gibt mehrere Methoden, mit denen dieser manuelle Prozess zum Migrieren einer Datenbank in eine Azure-VM ausgeführt werden kann.
 
 > [AZURE.NOTE]Wenn Sie aus älteren Versionen von SQL Server auf SQL Server 2014 oder SQL Server 2016 aktualisieren, sollten Sie erwägen, ob Änderungen erforderlich sind. Es wird empfohlen, dass Sie alle Abhängigkeiten von Funktionen, die von der neuen Version von SQL Server nicht unterstützt werden, im Rahmen des Migrationsprojekts behandeln. Weitere Informationen zu den unterstützten Editionen und Szenarios finden Sie unter [Aktualisieren auf SQL Server](https://msdn.microsoft.com/library/bb677622.aspx).
 
@@ -49,7 +53,9 @@ In der folgenden Tabelle werden alle primären Migrationsmethoden aufgeführt, u
 
 | Methode | Version der Quelldatenbank | Version der Zieldatenbank | Größeneinschränkung für Sicherung der Quelldatenbank | Hinweise |
 |---|---|---|---|---|
-| [Verwenden des Assistenten für das Bereitstellen einer SQL Server-Datenbank auf einer Microsoft Azure-VM](#azure-vm-deployment-wizard-tutorial) | SQL Server 2005 oder höher | SQL Server 2014 oder höher | > 1 TB | Schnellste und einfachste Methode, sollte möglichst immer verwendet werden, um eine neue oder vorhandene SQL Server-Instanz in einem virtuellen Azure-Computer zu migrieren |
+| [Verwenden des Assistenten für das Bereitstellen einer SQL Server-Datenbank auf einer Microsoft Azure-VM](#azure-vm-deployment-wizard-tutorial) | SQL Server 2005 oder höher | SQL Server 2014 oder höher | > 1 TB | Schnellste und einfachste Methode, sollte möglichst immer verwendet werden, um eine neue oder vorhandene SQL Server-Instanz in einem virtuellen Azure-Computer zu migrieren | 
+| [Verwenden des Assistenten zum Hinzufügen von Azure-Replikaten](virtual-machines-sql-server-extend-on-premises-alwayson-availability-groups.md) | SQL Server 2012 oder höher | SQL Server 2012 oder höher | [Azure VM-Speichergrenze](https://azure.microsoft.com/documentation/articles/azure-subscription-service-limits/) | Beschränkt Ausfallzeiten auf ein Mindestmaß, Verwendung bei einer lokalen AlwaysOn-Bereitstellung |
+| [Verwenden der SQL Server-Transaktionsreplikation](https://msdn.microsoft.com/library/ms151176.aspx) | SQL Server 2005 oder höher | SQL Server 2005 oder höher | [Azure VM-Speichergrenze](https://azure.microsoft.com/documentation/articles/azure-subscription-service-limits/) | Verwendung zum Beschränken der Ausfallzeiten auf ein Mindestmaß, wenn keine lokale AlwaysOn-Bereitstellung vorliegt |
 | [Durchführen einer lokalen Sicherung mit Komprimierung und anschließendes manuelles Kopieren der Sicherungsdatei auf den virtuellen Azure-Computer](#backup-to-file-and-copy-to-vm-and-restore) | SQL Server 2005 oder höher | SQL Server 2005 oder höher | [Azure VM-Speichergrenze](https://azure.microsoft.com/documentation/articles/azure-subscription-service-limits/) | Nur verwenden, wenn Sie den Assistenten nicht verwenden können, da z. B. die Version der Zieldatenbank eine frühere ist als SQL Server 2012 SP1 CU2 oder da die Größe der Datenbanksicherung 1 TB überschreitet (bei SQL Server 2016 12,8 TB) |
 | [Durchführen einer Sicherung auf eine URL und Wiederherstellung auf dem virtuellen Azure-Computer aus der URL](#backup-to-url-and-restore) | SQL Server 2012 SP1 CU2 oder höher | SQL Server 2012 SP1 CU2 oder höher | > 1 TB (für SQLServer 2016 < 12,8 TB) | Im Allgemeinen entspricht die Leistung der Methode [Sicherung über URLs](https://msdn.microsoft.com/library/dn435916.aspx) etwa der bei Verwendung des Assistenten, jedoch ist sie nicht ganz so einfach. |
 | [Trennen und anschließendes Kopieren der Daten- und Protokolldateien in einen Azure Blob-Speicher, dann Anschließen an den SQL Server auf dem virtuellen Azure-Computer über URL](#detach-and-copy-to-url-and-attach-from-url) | SQL Server 2005 oder höher | SQL Server 2014 oder höher | [Azure VM-Speichergrenze](https://azure.microsoft.com/documentation/articles/azure-subscription-service-limits/) | Verwenden Sie diese Methode, wenn Sie planen, [diese Dateien mithilfe des Azure Blob-Speicherdiensts zu speichern](https://msdn.microsoft.com/library/dn385720.aspx) und sie mit SQL Server in einer Azure-VM zu verbinden, insbesondere bei sehr großen Datenbanken. |
@@ -168,4 +174,4 @@ Mithilfe der Methode [Windows Import-Export-Dienst](../storage-import-export-ser
 
 Ausführlichere Informationen zur Verwendung von SQL Server auf virtuellen Azure-Computern finden Sie unter [Übersicht zu SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

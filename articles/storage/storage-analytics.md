@@ -1,11 +1,11 @@
 <properties
-	pageTitle="Speicheranalyse | Microsoft Azure"
-	description="Verwalten von Nebenläufigkeit für die Blob-, Warteschlangen-, Tabellen- und Dateidienste"
+	pageTitle="Erfassen von Protokollen und Metrikdaten mithilfe der Speicheranalyse | Microsoft Azure"
+	description="Mit der Speicheranalyse können Sie Metrikdaten für alle Speicherdienste nachverfolgen und Protokolle für Blob-, Warteschlangen- und Tabellenspeicher erfassen."
 	services="storage"
 	documentationCenter=""
 	authors="tamram"
-	manager="adinah"
-	editor=""/>
+	manager="carmonm"
+	editor="tysonn"/>
 
 <tags
 	ms.service="storage"
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="09/03/2015"
+	ms.date="01/07/2016"
 	ms.author="tamram"/>
 
 # Speicheranalyse
@@ -206,4 +206,4 @@ Wenn Sie Speicheranalysedaten überprüfen, können Sie anhand der Tabellen im T
 - [Schema der Tabellen für Speicheranalysemetriken](https://msdn.microsoft.com/library/hh343264.aspx)
 - [Protokollierte Speicheranalysevorgänge und Statusmeldungen](https://msdn.microsoft.com/library/hh343260.aspx)  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

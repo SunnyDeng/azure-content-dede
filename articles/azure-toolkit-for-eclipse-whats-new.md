@@ -1,20 +1,20 @@
 <properties
-    pageTitle="Neuerungen im Azure-Toolkit für Eclipse"
-    description="Hier können Sie sich über die neuesten Features des Azure-Toolkits für Eclipse informieren."
-    services=""
-    documentationCenter="java"
-    authors="rmcmurray"
-    manager="wpickett"
-    editor=""/>
+	pageTitle="Neuerungen im Azure-Toolkit für Eclipse"
+	description="Hier können Sie sich über die neuesten Features des Azure-Toolkits für Eclipse informieren."
+	services=""
+	documentationCenter="java"
+	authors="rmcmurray"
+	manager="wpickett"
+	editor=""/>
 
 <tags
-    ms.service="multiple"
-    ms.workload="na"
-    ms.tgt_pltfrm="multiple"
-    ms.devlang="Java"
-    ms.topic="article"
-    ms.date="11/19/2015" 
-    ms.author="robmcm"/>
+	ms.service="multiple"
+	ms.workload="na"
+	ms.tgt_pltfrm="multiple"
+	ms.devlang="Java"
+	ms.topic="article"
+	ms.date="01/09/2016" 
+	ms.author="robmcm"/>
 
 <!-- Legacy MSDN URL = https://msdn.microsoft.com/library/azure/hh694270.aspx -->
 
@@ -23,6 +23,14 @@
 ## Versionen des Azure-Toolkits für Eclipse ##
 
 Dieser Artikel enthält Informationen zu den verschiedenen Versionen und den neuesten Updates des Azure-Toolkits für Eclipse.
+
+### 4\. Januar 2015 ###
+
+Die Version des Azure-Toolkits für Eclipse vom Januar 2016 umfasst folgende Erweiterungen:
+
+* **Unterstützung der Zulu OpenJDK-Updates**. Weitere Informationen finden Sie auf der [Azul Systems-Webseite zu Zulu OpenJDK][].
+* **Aktualisierte Tomcat- und Jetty-Distributionen**. Die im Rahmen von Microsoft Azure verfügbaren Jetty- und Tomcat-Distributionen für die Verwendung mit dem Azure-Toolkit für Eclipse wurden aktualisiert.
+* **Featureübereinstimmung zwischen Eclipse- und IntelliJ-Toolkits für Azure**. Das Azure-Toolkit für Eclipse und das [Azure-Toolkit für IntelliJ][] unterstützen nun dieselben Features.
 
 ### 1\. September 2015 ###
 
@@ -277,9 +285,9 @@ Die CTP-Version des Azure-Plug-Ins für Eclipse vom Dezember 2011 wird veröffe
 
 [Installieren des Azure-Toolkits für Eclipse][]
 
-[Erstellen einer Hello World-Anwendung für Azure in Eclipse][]
+[Creating a Hello World Application for Azure in Eclipse (in englischer Sprache)][]
 
-Weitere Informationen zur Verwendung von Azure mit Java finden Sie im [Azure Java Developer Center][].
+Weitere Informationen zum Verwenden von Azure mit Java finden Sie im [Azure Java Developer Center][] (in englischer Sprache).
 
 <!-- URL List -->
 
@@ -288,7 +296,9 @@ Weitere Informationen zur Verwendung von Azure mit Java finden Sie im [Azure Jav
 [Azure-Dienstendpunkte]: http://go.microsoft.com/fwlink/?LinkID=699526
 [Azure-Speicherkontenliste]: http://go.microsoft.com/fwlink/?LinkID=699528
 [Azure-Toolkit für Eclipse]: http://go.microsoft.com/fwlink/?LinkID=699529
+[Azure-Toolkit für IntelliJ]: https://plugins.jetbrains.com/plugin/8053
 [Eigenschaften für Komponenten]: http://go.microsoft.com/fwlink/?LinkID=699525#components_properties
+[Creating a Hello World Application for Azure in Eclipse (in englischer Sprache)]: http://go.microsoft.com/fwlink/?LinkID=699533
 [Erstellen einer Hello World-Anwendung für Azure in Eclipse]: http://go.microsoft.com/fwlink/?LinkID=699533
 [Erstellen einer Hello World-Anwendung für Azure in Eclipse]: http://go.microsoft.com/fwlink/?LinkID=699533
 [Debuggen von Azure-Anwendungen in Eclipse]: http://go.microsoft.com/fwlink/?LinkID=699535
@@ -319,4 +329,4 @@ Weitere Informationen zur Verwendung von Azure mit Java finden Sie im [Azure Jav
 [ic710882]: ./media/azure-toolkit-for-eclipse-whats-new/ic710882.png
 [ic710883]: ./media/azure-toolkit-for-eclipse-whats-new/ic710883.png
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0114_2016-->

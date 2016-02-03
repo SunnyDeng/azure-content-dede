@@ -188,7 +188,7 @@ Weitere Informationen zum Add-AzureVhd-Cmdlet finden Sie unter [Add-AzureVhd](ht
 
 	![Benutzerdefiniertes Image](./media/virtual-machines-create-upload-vhd-windows-server/vm_custom_image.png)
 
-	Dieses neue Image steht jetzt beim Erstellen eines virtuellen Computers unter **Eigene Images** zur Verfügung. Anweisungen hierzu finden Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers mit Windows](virtual-machines-windows-create-custom.md).
+	Dieses neue Image steht jetzt beim Erstellen eines virtuellen Computers unter **Eigene Images** zur Verfügung. Anweisungen hierzu finden Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers](virtual-machines-create-custom.md).
 
 	![VM von benutzerdefiniertem Image erstellen](./media/virtual-machines-create-upload-vhd-windows-server/create_vm_custom_image.png)
 
@@ -203,4 +203,4 @@ Versuchen Sie nach dem Erstellen eines virtuellen Computers, einen virtuellen SQ
 [Step 3: Prepare the connection to Azure]: #prepAzure
 [Step 4: Upload the .vhd file]: #upload
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0121_2016-->

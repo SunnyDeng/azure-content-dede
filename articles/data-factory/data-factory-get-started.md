@@ -25,7 +25,7 @@
 
 Dieser Artikel hilft Ihnen beim raschen Einstieg in die Verwendung des Azure Data Factory-Diensts. Das Lernprogramm zeigt, wie Sie erst eine Azure Data Factory und dann eine Pipeline in der Data Factory erstellen, um Daten aus einem Azure-Blobspeicher in eine Azure SQL-Datenbank zu kopieren.
 
-> [AZURE.NOTE]Eine ausführliche Übersicht über den Data Factory-Dienst finden Sie im Artikel [Einführung in Azure Data Factory][data-factory-introduction].
+> [AZURE.NOTE] Eine ausführliche Übersicht über den Data Factory-Dienst finden Sie im Artikel [Einführung in Azure Data Factory][data-factory-introduction].
 
 ##Voraussetzungen für das Lernprogramm
 Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
@@ -67,7 +67,7 @@ Stellen Sie sicher, dass die Einstellung **Zugriff auf Azure-Dienste erlauben** 
 ### Vorbereiten von Azure Blob-Speicher und Azure SQL-Datenbank für das Lernprogramm
 Nun bereiten Sie Ihrer Azure-Blobspeicher und die Azure SQL-Datenbank durch Ausführen der folgenden Schritte auf das Lernprogramm vor:
 
-1. Öffnen Sie den Editor, fügen Sie den folgenden Text ein, und speichern Sie die Datei als **emp.txt** im Ordner **C:\\ADFGetStarted** auf Ihrer Festplatte.
+1. Öffnen Sie den Editor, fügen Sie den folgenden Text ein, und speichern Sie die Datei als **emp.txt** im Ordner **C:\ADFGetStarted** auf Ihrer Festplatte.
 
         John, Doe
 		Jane, Doe
@@ -88,9 +88,9 @@ Nun bereiten Sie Ihrer Azure-Blobspeicher und die Azure SQL-Datenbank durch Ausf
 
 		CREATE CLUSTERED INDEX IX_emp_ID ON dbo.emp (ID);
 
-	**Wenn Sie SQL Server 2012/2014 auf Ihrem Computer installiert haben:** Befolgen Sie die Anweisungen unter "Schritt 2: Herstellen einer Verbindung mit SQL-Datenbank" im Artikel [Verwalten einer Azure SQL-Datenbank mit SQL Server Management Studio][sql-management-studio], um eine Verbindung mit Ihrem Azure SQL-Server herzustellen und das SQL-Skript auszuführen. Beachten Sie, dass in diesem Artikel das [klassische Azure-Portal](http://manage.windowsazure.com) und nicht das [Azure-Portal](http://portal.azure.com) verwendet wird, um die Firewall für einen Azure SQL-Server zu konfigurieren.
+	**Wenn Sie SQL Server 2012/2014 auf Ihrem Computer installiert haben:** Befolgen Sie die Anweisungen unter "Schritt 2: Herstellen einer Verbindung mit SQL-Datenbank" im Artikel [Verwalten einer Azure SQL-Datenbank mit SQL Server Management Studio][sql-management-studio], um eine Verbindung mit Ihrem Azure SQL-Server herzustellen und das SQL-Skript auszuführen. Beachten Sie, dass in diesem Artikel das [klassische Azure-Portal](http://manage.windowsazure.com) und nicht das [Azure-Portal](https://portal.azure.com) verwendet wird, um die Firewall für einen Azure SQL-Server zu konfigurieren.
 
-	**Wenn Sie Visual Studio 2013 auf Ihrem Computer installiert haben:** Klicken Sie im [Azure-Portal](http://portal.azure.com) links auf **Durchsuchen**, dann auf **SQL-Server**, wählen Sie Ihre Datenbank aus, und klicken Sie auf der Symbolleiste auf die Schaltfläche **In Visual Studio öffnen**, um eine Verbindung mit Ihrem Azure SQL-Server herzustellen und das SQL-Skript auszuführen. Wenn Ihr Client nicht auf den Azure SQL-Server zugreifen darf, müssen Sie die Firewall für Ihren Azure SQL-Server so konfigurieren, dass der Zugriff über Ihren Computer (bzw. dessen IP-Adresse) ermöglicht wird. Im vorherigen Artikel finden Sie Schritte zum Konfigurieren der Firewall für Ihren Azure SQL-Server.
+	**Wenn Sie Visual Studio 2013 auf Ihrem Computer installiert haben:** Klicken Sie im [Azure-Portal](https://portal.azure.com) links auf **Durchsuchen**, dann auf **SQL-Server**, wählen Sie Ihre Datenbank aus, und klicken Sie auf der Symbolleiste auf die Schaltfläche **In Visual Studio öffnen**, um eine Verbindung mit Ihrem Azure SQL-Server herzustellen und das SQL-Skript auszuführen. Wenn Ihr Client nicht auf den Azure SQL-Server zugreifen darf, müssen Sie die Firewall für Ihren Azure SQL-Server so konfigurieren, dass der Zugriff über Ihren Computer (bzw. dessen IP-Adresse) ermöglicht wird. Im vorherigen Artikel finden Sie Schritte zum Konfigurieren der Firewall für Ihren Azure SQL-Server.
 
 
 Gehen Sie wie folgt vor:
@@ -111,4 +111,4 @@ Gehen Sie wie folgt vor:
 [data-factory-create-storage]: http://azure.microsoft.com/documentation/articles/storage-create-storage-account/#create-a-storage-account
 [data-factory-create-sql-database]: ../sql-database/sql-database-get-started.md
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

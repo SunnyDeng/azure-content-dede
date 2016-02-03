@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Kopieren einer Azure SQL-Datenbank"
+	pageTitle="Kopieren einer Azure SQL-Datenbank | Microsoft Azure"
 	description="Erstellen der Kopie einer Azure SQL-Datenbank"
 	services="sql-database"
 	documentationCenter=""
@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.devlang="NA"
-	ms.date="10/16/2015"
+	ms.date="01/20/2016"
 	ms.author="sstein"
 	ms.workload="data-management"
 	ms.topic="article"
@@ -84,7 +84,7 @@ Zum Kopieren einer SQL-Datenbank benötigen Sie Folgendes:
 
 ## Nächste Schritte
 
-- [Herstellen einer Verbindung mit SQL Server Management Studio (SSMS)](sql-database-connect-to-database.md)
+- [Herstellen einer Verbindung mit einer Azure SQL-Datenbank mit SQL Server Management Studio und Ausführen einer T-SQL-Beispielabfrage](sql-database-connect-query-ssms.md)
 - [Exportieren der Datenbank in eine BACPAC-Datei](sql-database-export.md)
 
 
@@ -101,4 +101,4 @@ Zum Kopieren einer SQL-Datenbank benötigen Sie Folgendes:
 [3]: ./media/sql-database-copy/copy-notification.png
 [4]: ./media/sql-database-copy/monitor-copy.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0121_2016-->

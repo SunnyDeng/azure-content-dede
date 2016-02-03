@@ -13,7 +13,7 @@ ms.devlang="na"
 ms.topic="article"
 ms.tgt_pltfrm="na"
 ms.workload="big-data"
-ms.date="11/06/2015"
+ms.date="01/08/2016"
 ms.author="larryfr"/>
 
 #Verwenden von DataFu mit Pig für HDInsight
@@ -22,7 +22,7 @@ Bei DataFu handelt es sich um eine Sammlung von Open Source-Bibliotheken für di
 
 ##Voraussetzungen
 
-* Ein Azure-Abonnement
+* Ein Azure-Abonnement.
 
 * Ein Azure HDInsight-Cluster (Linux- oder Windows-basiert)
 
@@ -107,4 +107,4 @@ Weitere Informationen zu DataFu oder Pig finden Sie in den folgenden Dokumenten:
 
 * [Verwenden von Pig mit HDInsight](hdinsight-use-pig.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0114_2016-->

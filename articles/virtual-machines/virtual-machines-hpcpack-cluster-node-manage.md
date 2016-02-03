@@ -13,7 +13,7 @@ ms.service="virtual-machines"
  ms.topic="article"
  ms.tgt_pltfrm="vm-multiple"
  ms.workload="big-compute"
- ms.date="09/28/2015"
+ ms.date="01/08/2016"
  ms.author="danlep"/>
 
 # Verwalten der Anzahl und Verfügbarkeit von Computeknoten in einem HPC Pack-Cluster in Azure
@@ -34,11 +34,11 @@ Wenn Sie einen HPC Pack-Cluster auf virtuellen Azure-Computern erstellt haben, m
     * **Importieren der Azure-Veröffentlichungseinstellungsdatei **. Führen Sie hierzu die folgenden Azure PowerShell-Cmdlets auf dem Hauptknoten aus:
 
     ```
-    Get-AzurePublishSettingsFile 
-         
+    Get-AzurePublishSettingsFile
+
     Import-AzurePublishSettingsFile –PublishSettingsFile <publish settings file>
     ```
-    
+
     * **Konfigurieren des Azure-Verwaltungszertifikats auf dem Hauptknoten**. Wenn Sie über die CER-Datei verfügen, importieren Sie sie in "CurrentUser\\My certificate store", und führen Sie dann das folgende Azure PowerShell-Cmdlet für Ihre Azure-Umgebung (AzureCloud oder AzureChinaCloud) aus:
 
     ```
@@ -60,7 +60,7 @@ Add-HPCIaaSNode.ps1 [-ServiceName] <String> [-ImageName] <String>
 
 * **ServiceName**: Name des Clouddiensts, dem virtuelle Computer für neue Computeknoten hinzugefügt werden.
 
-* **ImageName:** Name des Azure-VM-Images, das über das klassische Azure-Portal oder das Azure PowerShell-Cmdlet **Get-AzureVMImage** abgerufen werden kann. Das Image muss die folgenden Anforderungen erfüllen:
+* **ImageName**: Name des Azure-VM-Images, das über das klassische Azure-Portal oder das Azure PowerShell-Cmdlet **Get-AzureVMImage** abgerufen werden kann. Das Image muss die folgenden Anforderungen erfüllen:
 
     1. Es muss ein Windows-Betriebssystem installiert sein.
 
@@ -74,13 +74,13 @@ Add-HPCIaaSNode.ps1 [-ServiceName] <String> [-ImageName] <String>
 
 * **DomainUserName**: Domänenbenutzername, der zum Verknüpfen der neuen virtuellen Computer mit der Domäne verwendet wird.
 
-* **DomainUserPassword***: Kennwort des Domänenbenutzers
+* **DomainUserPassword**: Kennwort des Domänenbenutzers
 
-* **NodeNameSeries** (optional): Benennungsmuster für die Computeknoten. Folgendes Format ist erforderlich: &lt;*Root\_Name*&gt;&lt;*Start\_Number*&gt;%. "MyCN%10%" gibt beispielsweise mehrere Namen für Computeknoten, beginnend ab "MyCN11" an. Wenn kein Wert angegeben ist, verwendet das Skript die im HPC-Cluster konfigurierten Benennungsreihen für Knoten.
+* **NodeNameSeries** (optional): Benennungsmuster für den Computeknoten. Erforderliches Format: &lt;*Root\_Name*&gt;&lt;*Start\_Number*&gt;% "MyCN%10%" gibt beispielsweise mehrere Namen für Computeknoten, beginnend ab "MyCN11" an. Wenn kein Wert angegeben ist, verwendet das Skript die im HPC-Cluster konfigurierten Benennungsreihen für Knoten.
 
 ### Beispiel
 
-Im folgenden Beispiel werden 20 virtuelle Computer für Computeknoten mit der Größe "Large" basierend auf dem VM-Image "hpccnimage1" dem Clouddienst "hpcservice1" hinzugefügt.
+Im folgenden Beispiel werden 20 virtuelle Maschinen für Computeknoten mit der Größe „Large“ basierend auf dem VM-Image *hpccnimage1* dem Clouddienst *hpcservice1* hinzugefügt.
 
 ```
 Add-HPCIaaSNode.ps1 –ServiceName hpcservice1 –ImageName hpccniamge1
@@ -103,9 +103,9 @@ Remove-HPCIaaSNode.ps1 -Node <Object> [-DeleteVHD] [-Force] [-Confirm] [<CommonP
 
 ### Parameter
 
- * **Name**: Namen der zu entfernenden Clusterknoten. Platzhalter werden unterstützt. Der Name des Parametersatzes ist "Name". Sie können nicht die beiden Parameter **Name** und **Node** angeben.
+* **Name**: Namen der zu entfernenden Clusterknoten. Platzhalter werden unterstützt. Der Name des Parametersatzes ist "Name". Sie können nicht die beiden Parameter **Name** und **Node** angeben.
 
-* **Node***: Das HpcNode-Objekt für die zu entfernenden Knoten, das über das HPC PowerShell-Cmdlet [Get-HpcNode](https://technet.microsoft.com/library/dn887927.aspx) abgerufen werden kann. Der Name des Parametersatzes ist "Node". Sie können nicht die beiden Parameter **Name** und **Node** angeben.
+* **Node**: Das HpcNode-Objekt für die zu entfernenden Knoten, das über das HPC PowerShell-Cmdlet [Get-HpcNode](https://technet.microsoft.com/library/dn887927.aspx) abgerufen werden kann. Der Name des Parametersatzes ist "Node". Sie können nicht die beiden Parameter **Name** und **Node** angeben.
 
 * **DeleteVHD** (optional): Einstellung zum Löschen der Datenträger, die den zu entfernenden virtuellen Computern zugeordnet sind.
 
@@ -165,7 +165,7 @@ Stop-HPCIaaSNode.ps1 -Node <Object> [-Force] [<CommonParameters>]
 
 * **Name**: Namen der zu beendenden Clusterknoten. Platzhalter werden unterstützt. Der Name des Parametersatzes ist "Name". Sie können nicht die beiden Parameter **Name** und **Node** angeben.
 
-* **Node**: Das HpcNode-Objekt für die zu beendenden Knoten, das über das HPC PowerShell-Cmdlet "Get-HpcNode" abgerufen werden kann. Der Name des Parametersatzes ist "Node". Sie können nicht die beiden Parameter **Name** und **Node** angeben.
+* **Node**: Das HpcNode-Objekt für die zu beendenden Knoten, das über das HPC PowerShell-Cmdlet [Get-HpcNode](https://technet.microsoft.com/library/dn887927.aspx) abgerufen werden kann. Der Name des Parametersatzes ist "Node". Sie können nicht die beiden Parameter **Name** und **Node** angeben.
 
 * **Force** (optional): Einstellung, mit der HPC-Knoten offline geschaltet werden, bevor sie beendet werden.
 
@@ -177,6 +177,6 @@ Stop-HPCIaaSNode.ps1 –Name HPCNodeCN-* -Force
 
 ## Nächste Schritte
 
-* Wenn Sie die Azure-Computeressourcen entsprechend der aktuellen Workload der Aufträge und Aufgaben im Cluster automatisch vergrößern oder verkleinern möchten, finden Sie entsprechende Informationen unter [Automatisches Hoch- und Herunterskalieren von Azure-Computeressourcen in einem HPC Pack-Cluster](virtual-machines-hpcpack-cluster-node-autogrowshrink.md).
+* Wenn Sie die Clusterknoten entsprechend der aktuellen Workload der Aufträge und Aufgaben im Cluster automatisch vergrößern oder verkleinern möchten, finden Sie entsprechende Informationen unter [Automatisches Hoch- und Herunterskalieren von Azure-Computeressourcen in einem HPC Pack-Cluster](virtual-machines-hpcpack-cluster-node-autogrowshrink.md).
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0114_2016-->

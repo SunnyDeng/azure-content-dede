@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/02/2015" 
+	ms.date="01/20/2016" 
 	ms.author="casoper"/>
 
 # Übersicht über das Azure Content Delivery Network (CDN)
@@ -49,6 +49,7 @@ Der CDN-Tarif „Standard“ enthält die folgenden Features:
 - Lastenausgleich
 - DDoS-Schutz
 - [Schnelles Löschen](cdn-purge-endpoint.md)
+- [Vorabladen von Assets](cdn-preload-endpoint.md)
 - [Verwaltung über die REST-API](https://msdn.microsoft.com/library/mt634456.aspx)
 
 
@@ -58,6 +59,6 @@ Der CDN-Tarif „Premium“ beinhaltet alle Funktionen des Standard-Tarifs und f
 
 - [Anpassbares, regelbasiertes Modul zur Inhaltsübermittlung](cdn-rules-engine.md)
 - [Erweiterte HTTP-Berichte](cdn-advanced-http-reports.md)
-- [Echtzeitstatistiken](cdn-read-time-stats.md)
+- [Echtzeitstatistiken](cdn-real-time-stats.md)
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0121_2016-->

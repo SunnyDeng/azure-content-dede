@@ -2,7 +2,7 @@
     pageTitle="Tutorial: Azure Active Directory-Integration mit Innotas | Microsoft Azure"
     description="Hier erfahren Sie, wie Sie Innotas mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags 
@@ -11,8 +11,8 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
-    ms.author="markvi" />
+    ms.date="01/14/2016" 
+    ms.author="jeedes" />
 
 #Tutorial: Azure Active Directory-Integration mit Innotas
   
@@ -21,7 +21,7 @@ In diesem Tutorial wird die Integration von Azure und Innotas erläutert. Das in
 -   Ein gültiges Azure-Abonnement
 -   Einen Innotas-Mandanten
   
-Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, die Sie Innotas zugewiesen haben, mittels einmaliger Anmeldung auf der Innotas-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
+Nach Abschluss dieses Lernprogramms können sich die Innotas zugewiesenen Azure AD-Benutzer mittels einmaligen Anmeldens auf Ihrer Innotas-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie auch die [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md) nutzen.
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -55,7 +55,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Inn
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-innotas-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie im **Suchfeld** den Suchbegriff **Innotas** ein.
+6.  Geben Sie im **Suchfeld** das Wort **Innotas** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-innotas-tutorial/IC777332.png "Anwendungskatalog")
 
@@ -80,7 +80,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![App-URL konfigurieren](./media/active-directory-saas-innotas-tutorial/IC777336.png "App-URL konfigurieren")
 
-4.  Klicken Sie auf der Seite **Einmaliges Anmelden konfigurieren für Innotas** auf **Metadaten herunterladen**, und speichern Sie die Metadatendatei lokal unter **C:\\InnotasMetaData.xml**.
+4.  Klicken Sie auf der Seite **Einmaliges Anmelden konfigurieren für Innotas** auf **Metadaten herunterladen**, und speichern Sie die Metadatendatei lokal unter **c:\\InnotasMetaData.xml**.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-innotas-tutorial/IC777337.png "Einmaliges Anmelden konfigurieren")
 
@@ -110,4 +110,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0121_2016-->

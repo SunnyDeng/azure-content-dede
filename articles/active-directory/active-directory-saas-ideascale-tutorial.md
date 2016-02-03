@@ -2,7 +2,7 @@
     pageTitle="Tutorial: Azure Active Directory-Integration mit IdeaScale | Microsoft Azure" 
     description="Hier erfahren Sie, wie Sie IdeaScale mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags 
@@ -11,8 +11,8 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
-    ms.author="markvi" />
+    ms.date="01/14/2016" 
+    ms.author="jeedes" />
 
 #Tutorial: Azure Active Directory-Integration mit IdeaScale
   
@@ -21,7 +21,7 @@ In diesem Tutorial wird die Integration von Azure und IdeaScale erläutert. Das 
 -   Ein gültiges Azure-Abonnement
 -   Ein IdeaScale-Abonnement, für das einmaliges Anmelden aktiviert ist
   
-Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie IdeaScale zugewiesen haben, wie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md) beschrieben mittels einmaliger Anmeldung bei der Anwendung anmelden.
+Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, die Sie IdeaScale zugewiesen haben, wie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md) beschrieben mittels einmaliger Anmeldung bei der Anwendung anmelden.
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -55,7 +55,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Ide
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-ideascale-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie im **Suchfeld** den Suchbegriff **IdeaScale** ein.
+6.  Geben Sie im **Suchfeld** das Wort **IdeaScale** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-ideascale-tutorial/IC790841.png "Anwendungskatalog")
 
@@ -76,7 +76,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-ideascale-tutorial/IC790844.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **IdeaScale-Anmelde-URL** die URL ein, welche die Benutzer zur Anmeldung bei IdeaScale verwenden (z. B. „**https://company.IdeaScale.com*"), und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **IdeaScale-Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei IdeaScale verwenden (z. B. „**https://company.IdeaScale.com*"), und klicken Sie dann auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-ideascale-tutorial/IC790845.png "App-URL konfigurieren")
 
@@ -107,7 +107,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
     3.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für IdeaScale** den Wert der **Remoteabmelde-URL**, und fügen Sie ihn in das Textfeld **URL für erfolgreiche Abmeldung** ein.
     4.  Klicken Sie auf **Änderungen speichern**.
 
-10. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
+10. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-ideascale-tutorial/IC790851.png "Einmaliges Anmelden konfigurieren")
 ##Konfigurieren der Benutzerbereitstellung
@@ -157,4 +157,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0121_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/20/2015"  
+	ms.date="12/22/2015"  
 	ms.author="juliako"/>
 
 #Arbeiten mit Kanälen, die zum Ausführen von Livecodierung mit Azure Media Services aktiviert wurden
@@ -76,7 +76,7 @@ Im folgenden Diagramm ist ein Livedatenstrom-Workflow dargestellt, bei dem ein S
 
 Im Folgenden werden grundlegende Schritte zum Erstellen allgemeiner Livestreaminganwendungen erläutert.
 
->[AZURE.NOTE]Die maximal empfohlene Dauer eines Liveereignisses beträgt derzeit 8 Stunden. Wenden Sie sich an „AMSLiveD@microsoft.com“, wenn Sie einen Kanal für längere Zeit laufen lassen müssen. Beachten Sie, dass für das Live Encoding Gebühren berechnet werden und dass diese Gebühren stundenweise anfallen, wenn Sie einen Live Encoding-Kanal im Zustand „Wird ausgeführt“ belassen. Es wird empfohlen, die Ausführung der Kanäle sofort zu beenden, wenn das Livestreaming-Ereignis abgeschlossen ist, um das Anfallen zusätzlicher Stundengebühren zu vermeiden.
+>[AZURE.NOTE] Die maximal empfohlene Dauer eines Liveereignisses beträgt derzeit 8 Stunden. Wenden Sie sich an „AMSLiveD@microsoft.com“, wenn Sie einen Kanal für längere Zeit laufen lassen müssen. Beachten Sie, dass für das Live Encoding Gebühren berechnet werden und dass diese Gebühren stundenweise anfallen, wenn Sie einen Live Encoding-Kanal im Zustand „Wird ausgeführt“ belassen. Es wird empfohlen, die Ausführung der Kanäle sofort zu beenden, wenn das Livestreaming-Ereignis abgeschlossen ist, um das Anfallen zusätzlicher Stundengebühren zu vermeiden.
 
 1. Schließen Sie eine Videokamera an einen Computer an. Starten und konfigurieren Sie einen lokalen Liveencoder, von dem ein **Single**-Bitrate-Datenstrom in einem der folgenden Protokolle ausgegeben wird: RTMP, Smooth Streaming oder RTP (MPEG-TS). Weitere Informationen finden Sie unter [Microsoft Azure Media Services RTMP-Support und Liveencoder](http://go.microsoft.com/fwlink/?LinkId=532824).
 	
@@ -104,7 +104,7 @@ Im Folgenden werden grundlegende Schritte zum Erstellen allgemeiner Livestreamin
 1. Sie können das Programm und damit das Streaming und die Archivierung des Ereignisses jederzeit beenden.
 1. Löschen Sie das Programm (und optional das Medienobjekt).   
 
->[AZURE.NOTE]Es ist sehr wichtig, das Beenden eines Live Encoding-Kanals nicht zu vergessen. Beachten Sie, dass das Live Encoding stundenweise abgerechnet wird und dass die Beibehaltung des Status „Wird ausgeführt“ für einen Live Encoding-Kanal mit Gebühren verbunden ist. Es wird empfohlen, die Ausführung der Kanäle sofort zu beenden, wenn das Livestreaming-Ereignis abgeschlossen ist, um das Anfallen zusätzlicher Stundengebühren zu vermeiden.
+>[AZURE.NOTE] Es ist sehr wichtig, das Beenden eines Live Encoding-Kanals nicht zu vergessen. Beachten Sie, dass das Live Encoding stundenweise abgerechnet wird und dass die Beibehaltung des Status „Wird ausgeführt“ für einen Live Encoding-Kanal mit Gebühren verbunden ist. Es wird empfohlen, die Ausführung der Kanäle sofort zu beenden, wenn das Livestreaming-Ereignis abgeschlossen ist, um das Anfallen zusätzlicher Stundengebühren zu vermeiden.
 
 
 Im Abschnitt [Livestreaming-Aufgaben](media-services-manage-channels-overview.md#tasks) finden Sie Verknüpfungen zu Themen, in welchen veranschaulicht wird, wie die beschriebenen Aufgaben auszuführen sind.
@@ -130,7 +130,8 @@ Professionelle Sendeanstalten arbeiten in der Regel mit lokalen High-End-Liveenc
 
 Überlegungen:
 
-- Es wird dringend empfohlen, als Eingabe einen Single-Program-Transportdatenstrom (SPTS) zu verwenden. Die Verwendung von mehreren Audiosprachspuren wird jedoch ebenfalls unterstützt.
+- Es wird dringend empfohlen, als Eingabe einen Single-Program-Transportdatenstrom (SPTS) zu verwenden. 
+- Sie können bis zu 8 Audiodatenströme mit MPEG-2 TS über RTP eingeben. 
 - Der Videodatenstrom muss eine durchschnittliche Bitrate unter 15-Mbit/s aufweisen.
 - Die aggregierte durchschnittliche Bitrate der Audiodatenströme muss unter 1 Mbit/s liegen.
 - Folgende Codecs werden unterstützt:
@@ -242,9 +243,9 @@ Mit den Kanälen ist ein Vorschauendpunkt (Vorschau-URL) verfügbar, mit dem Sie
 
 Wenn Sie einen Kanal erstellen, können Sie die Vorschau-URL abrufen. Der Kanal muss zum Abrufen der URL nicht den Status **Running** (Wird ausgeführt) aufweisen.
 
-Wenn die Datenerfassung durch den Kanal begonnen hat, können Sie eine Vorschau Ihres Datenstroms ansehen.
+Sobald der Kanal mit dem Erfassen von Daten beginnt, können Sie eine Vorschau des Streams anzeigen.
 
-**Hinweis**: Zurzeit kann die Vorschau des Datenstroms unabhängig vom angegebenen Eingabetyp nur in fragmentiertem MP4-Format (Smooth Streaming) geliefert werden. Sie können den Player [http://smf.cloudapp.net/healthmonitor](http://smf.cloudapp.net/healthmonitor) verwenden, um den Smooth Stream zu testen. Sie können auch einen Player verwenden, der im klassischen Azure-Portal gehostet wird, um Ihren Datenstrom anzuzeigen.
+>[AZURE.NOTE] Zurzeit kann die Vorschau des Datenstroms unabhängig vom angegebenen Eingabetyp nur in fragmentiertem MP4-Format (Smooth Streaming) geliefert werden. Sie können den Player [http://smf.cloudapp.net/healthmonitor](http://smf.cloudapp.net/healthmonitor) verwenden, um den Smooth Stream zu testen. Sie können auch einen Player verwenden, der im klassischen Azure-Portal gehostet wird, um Ihren Datenstrom anzuzeigen.
 
 ###Zulässige IP-Adressen
 
@@ -253,6 +254,8 @@ Sie können die IP-Adressen definieren, die zum Herstellen einer Verbindung mit 
 ##Einstellungen für die Livecodierung
 
 In diesem Abschnitt wird beschrieben, wie die Einstellungen für den Liveencoder innerhalb des Kanals angepasst werden können, wenn der **Codierungstyp** des Kanals die Einstellung **Standard** aufweist.
+
+>[AZURE.NOTE] Bei der Eingabe mehrerer Sprachspuren und beim Ausführen von Live Encoding mit Azure wird nur RTP für die Eingabe mehrerer Sprachen unterstützt. Sie können bis zu 8 Audiodatenströme mit MPEG-2 TS über RTP definieren. Das Erfassen mehrerer Audiospuren mit RTMP oder Smooth Streaming wird derzeit nicht unterstützt. Beim Durchführen von Live Encoding mit [lokalen Liveencodern](media-services-manage-channels-overview.md) gibt es keine solche Einschränkung, weil alle an AMS gesendeten Daten ohne weitere Verarbeitung über einen Kanal weitergeleitet werden.
 
 ###Quelle für AD-Marker
 
@@ -413,7 +416,7 @@ Wird beendet|Wird beendet|Nein (Übergangsstatus)
 Beendet|Beendet|Nein
 
 
->[AZURE.NOTE]Derzeit beträgt die durchschnittliche Dauer bis zum Start des Kanals ca. 2 Minuten, aber in Einzelfällen kann dies auch mehr als 20 Minuten dauern. Das Zurücksetzen des Kanals kann bis zu 5 Minuten dauern.
+>[AZURE.NOTE] Derzeit beträgt die durchschnittliche Dauer bis zum Start des Kanals ca. 2 Minuten, aber in Einzelfällen kann dies auch mehr als 20 Minuten dauern. Das Zurücksetzen des Kanals kann bis zu 5 Minuten dauern.
 
 
 ##<a id="Considerations"></a>Überlegungen
@@ -427,6 +430,7 @@ Beendet|Beendet|Nein
 - Es werden nur Kanäle in Rechnung gestellt, die den Status **Running** (Wird ausgeführt) aufweisen. Weitere Informationen finden Sie in [diesem Abschnitt](media-services-manage-live-encoder-enabled-channels.md#states).
 - Die maximal empfohlene Dauer eines Liveereignisses beträgt derzeit 8 Stunden. Wenden Sie sich an Amslived unter Microsoft Punkt Com, wenn Sie einen Kanal für längere Zeit laufen lassen müssen.
 - Stellen Sie sicher, dass auf dem Streamingendpunkt, von dem Sie Inhalte streamen möchten, mindestens eine für das Streaming reservierte Einheit verfügbar ist.
+- Bei der Eingabe mehrerer Sprachspuren und beim Ausführen von Live Encoding mit Azure wird nur RTP für die Eingabe mehrerer Sprachen unterstützt. Sie können bis zu 8 Audiodatenströme mit MPEG-2 TS über RTP definieren. Das Erfassen mehrerer Audiospuren mit RTMP oder Smooth Streaming wird derzeit nicht unterstützt. Beim Durchführen von Live Encoding mit [lokalen Liveencodern](media-services-manage-channels-overview.md) gibt es keine solche Einschränkung, weil alle an AMS gesendeten Daten ohne weitere Verarbeitung über einen Kanal weitergeleitet werden.
 - Vergessen Sie nicht, IHRE KANÄLE ZU BEENDEN, wenn Sie fertig sind. Wenn Sie dies nicht tun, werden weiter Gebühren berechnet. 
 
 ##Bekannte Probleme
@@ -466,4 +470,4 @@ Wählen Sie **Portal**, **.NET** oder **REST API**, um auf Informationen zum Ers
 [live-overview]: ./media/media-services-manage-live-encoder-enabled-channels/media-services-live-streaming-new.png
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

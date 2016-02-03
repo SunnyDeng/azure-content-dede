@@ -13,17 +13,16 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/08/2015"
+	ms.date="01/07/2016"
 	ms.author="kgremban"/>
 
 
 
 # Arbeiten mit Ansprüche unterstützenden Apps im Anwendungsproxy
 
-Ansprüche unterstützende Apps führen eine Umleitung zum Sicherheitstokendienst (STS, Security Token Service) durch, der wiederum Anmeldeinformationen vom Benutzer im Austausch gegen ein Token anfordert, bevor der Benutzer zur Anwendung umgeleitet wird. Damit der Anwendungsproxy mit diesen Umleitungen arbeiten kann, müssen die folgenden Schritte ausgeführt werden.
-
 > [AZURE.IMPORTANT]Das Feature "Anwendungsproxy" ist nur verfügbar, wenn Sie Azure Active Directory auf die Premium oder Basic Edition aktualisiert haben. Weitere Informationen finden Sie unter [Azure Active Directory-Editionen](active-directory-editions.md).
 
+Ansprüche unterstützende Apps führen eine Umleitung zum Sicherheitstokendienst (STS, Security Token Service) durch, der wiederum Anmeldeinformationen vom Benutzer im Austausch gegen ein Token anfordert, bevor der Benutzer zur Anwendung umgeleitet wird. Damit der Anwendungsproxy mit diesen Umleitungen arbeiten kann, müssen die folgenden Schritte ausgeführt werden.
 
 ## Voraussetzung
 
@@ -41,13 +40,26 @@ Stellen Sie vor dem Ausführen dieses Verfahrens sicher, dass der STS, zu dem di
 ### ADFS-Konfiguration
 
 1. Öffnen Sie die ADFS-Verwaltung.
-2. Wechseln Sie zu **Vertrauensstellungen der vertrauenden Seite**, klicken Sie mit der rechten Maustaste auf die App, die Sie mit dem Anwendungsproxy veröffentlichen, und wählen Sie **Eigenschaften**.
-
-![Vertrauensstellungen der vertrauenden Seite: mit der rechten Maustaste auf den App-Namen klicken – Screenshot](./media/active-directory-application-proxy-claims-aware-apps/appproxyrelyingpartytrust.png)
-
+2. Wechseln Sie zu **Vertrauensstellungen der vertrauenden Seite**, klicken Sie mit der rechten Maustaste auf die App, die Sie mit dem Anwendungsproxy veröffentlichen, und wählen Sie **Eigenschaften**. ![Vertrauensstellungen der vertrauenden Seite: mit der rechten Maustaste auf den App-Namen klicken – Screenshot](./media/active-directory-application-proxy-claims-aware-apps/appproxyrelyingpartytrust.png)  
 3. Wählen Sie auf der Registerkarte **Endpunkte** unter **Endpunkttyp** die Option **WS-Verbund**.
-4. Geben Sie unter **Vertrauenswürdige URL** die URL ein, die Sie unter **Externe URL** in den Anwendungsproxy eingegeben haben, und klicken Sie auf **OK**.
+4. Geben Sie unter **Vertrauenswürdige URL** die URL ein, die Sie im Anwendungsproxy unter **Externe URL** eingegeben haben, und klicken Sie auf **OK**. ![Hinzufügen eines Endpunkts – Wert "Vertrauenswürdige URL" festlegen – Screenshot](./media/active-directory-application-proxy-claims-aware-apps/appproxyendpointtrustedurl.png)  
 
-![Hinzufügen eines Endpunkts – Wert "Vertrauenswürdige URL" festlegen – Screenshot](./media/active-directory-application-proxy-claims-aware-apps/appproxyendpointtrustedurl.png)
+## Weitere Informationen
+Der Anwendungsproxy bietet Ihnen noch viele weitere Möglichkeiten:
 
-<!---HONumber=AcomDC_1210_2015-->
+- [Veröffentlichen von Anwendungen mit dem Anwendungsproxy](active-directory-application-proxy-publish.md)
+- [Veröffentlichen von Anwendungen mit Ihrem eigenen Domänennamen](active-directory-application-proxy-custom-domains.md)
+- [Aktivieren der einmaligen Anmeldung](active-directory-application-proxy-sso-using-kcd.md)
+- [Problembehandlung von Anwendungsproxys](active-directory-application-proxy-troubleshoot.md)
+
+## Weitere Informationen zum Anwendungsproxy
+- [Onlinehilfe anzeigen](active-directory-application-proxy-enable.md)
+- [Blog zum Anwendungsproxy aufrufen](http://blogs.technet.com/b/applicationproxyblog/)
+- [Sehen Sie sich unsere Videos auf Channel 9 an!](http://channel9.msdn.com/events/Ignite/2015/BRK3864)
+
+## Zusätzliche Ressourcen
+
+* [Als Organisation für Azure registrieren](sign-up-organization.md)
+* [Azure-Identität](fundamentals-identity.md)
+
+<!---HONumber=AcomDC_0114_2016-->

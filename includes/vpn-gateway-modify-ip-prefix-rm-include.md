@@ -1,29 +1,29 @@
-If you need to change the prefixes for your local site, use the instructions below.  Two sets of instructions are provided and depend on whether you have already created your VPN gateway connection. 
+Verwenden Sie die unten angegebene Anleitung, wenn Sie die Präfixe für Ihren lokalen Standort ändern müssen. Es werden zwei Gruppen von Anweisungen bereitgestellt. Sie richten sich danach, ob Sie Ihre VPN Gateway-Verbindung bereits erstellt haben oder nicht.
 
-### Add or remove prefixes without a VPN gateway connection
+### Hinzufügen oder Entfernen von Präfixen ohne VPN Gateway-Verbindung
 
 
-- **To add** additional address prefixes to a local site that you created, but that doesn't yet have a VPN gateway connection, use the example below.
+- Verwenden Sie das unten angegebene Beispiel, um zusätzliche Adresspräfixe einem lokalen Standort **hinzuzufügen**, den Sie erstellt haben, aber der noch nicht über eine VPN-Gatewayverbindung verfügt.
 
 		$local = Get-AzureRmLocalNetworkGateway -Name LocalSite -ResourceGroupName testrg
 		Set-AzureRmLocalNetworkGateway -LocalNetworkGateway $local -AddressPrefix @('10.0.0.0/24','20.0.0.0/24','30.0.0.0/24')
 
 
-- **To remove** an address prefix from a local site that doesn't have a VPN connection, use the example below. Leave out the prefixes that you no longer need. In this example, we no longer need prefix 20.0.0.0/24 (from the previous example), so we will update the local site and exclude that prefix.
+- Verwenden Sie das unten angegebene Beispiel, um ein Adresspräfix aus einem lokalen Standort **zu entfernen**, der noch nicht über eine VPN-Verbindung verfügt. Lassen Sie die Präfixe weg, die Sie nicht mehr benötigen. In diesem Beispiel wird das Präfix 20.0.0.0/24 (aus dem vorherigen Beispiel) nicht mehr benötigt, daher wird der lokale Standort aktualisiert und das Präfix ausgeschlossen.
 
 		$local = Get-AzureRmLocalNetworkGateway -Name LocalSite -ResourceGroupName testrg
 		Set-AzureRmLocalNetworkGateway -LocalNetworkGateway $local -AddressPrefix @('10.0.0.0/24','30.0.0.0/24')
 
-### Add or remove prefixes with a VPN gateway connection
+### Hinzufügen oder Entfernen von Präfixen mit VPN Gateway-Verbindung
 
-If you have created your VPN connection and want to add or remove the IP address prefixes contained in your local site, you'll need to do the following steps in order. This will result in some downtime for your VPN connection, as you will need to remove and rebuild the gateway.  However, because you have requested an IP address for the connection, you won't need to re-configure your on-premises VPN router unless you decide to change the values you previously used.
+Wenn Sie die VPN-Verbindung erstellt haben und die IP-Adresspräfixe Ihres lokalen Standorts hinzufügen oder entfernen möchten, müssen Sie die folgenden Schritte der Reihenfolge nach ausführen. Dies führt zu Ausfallzeiten für Ihre VPN-Verbindung, da Sie das Gateway entfernen und neu erstellen müssen. Da Sie aber eine IP-Adresse für die Verbindung angefordert haben, müssen Sie Ihren lokalen VPN-Router nicht neu konfigurieren. Dies ist nur erforderlich, wenn Sie sich dafür entscheiden, die zuvor verwendeten Werte zu ändern.
 
  
-1. Remove the gateway connection. 
-2. Modify the prefixes for your local site. 
-3. Create a new gateway connection. 
+1. Entfernen Sie die Gatewayverbindung. 
+2. Ändern Sie die Präfixe für Ihren lokalen Standort. 
+3. Erstellen Sie eine neue Gatewayverbindung. 
 
-You can use the following sample as a guideline.
+Sie können das folgende Beispiel als Hilfe verwenden.
 
 
 	$gateway1 = Get-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg
@@ -35,3 +35,5 @@ You can use the following sample as a guideline.
 	Set-AzureRmLocalNetworkGateway -LocalNetworkGateway $local -AddressPrefix @('10.0.0.0/24','20.0.0.0/24','30.0.0.0/24')
 	
 	New-AzureRmVirtualNetworkGatewayConnection -Name localtovon -ResourceGroupName testrg -Location 'West US' -VirtualNetworkGateway1 $gateway1 -LocalNetworkGateway2 $local -ConnectionType IPsec -RoutingWeight 10 -SharedKey 'abc123'
+
+<!---HONumber=AcomDC_0107_2016-->

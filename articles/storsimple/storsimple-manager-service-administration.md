@@ -57,10 +57,10 @@ Die folgende Tabelle gibt Aufschluss über die Navigationshierarchie der Benutze
 |Zielseite|Seiten auf Dienstebene|Seiten auf Geräteebene|Seiten auf Geräteebene|
 |---|---|---|---|
 |StorSimple Manager-Dienst|Dienstdashboard|Gerätedashboard||
-||Geräte →|Überwachen| 
-||Sicherungskatalog|Volumecontainer→|Volumes| 
-||Konfigurieren (Dienst)|Sicherungsrichtlinien|| 
-||Aufträge|Konfigurieren (Gerät)| 
+||Geräte →|Überwachen|
+||Sicherungskatalog|Volumecontainer→|Volumes|
+||Konfigurieren (Dienst)|Sicherungsrichtlinien||
+||Aufträge|Konfigurieren (Gerät)|
 ||Warnungen|Wartung|
 
 ![Video verfügbar](./media/storsimple-manager-service-administration/Video_icon.png) **Video verfügbar**
@@ -112,8 +112,6 @@ Informationen zu Problemen beim alltäglichen Betrieb Ihres StorSimple-Geräts o
 - [Problembehandlung bei einem betriebsbereiten Gerät](storsimple-troubleshoot-operational-device.md)
 - [StorSimple-Überwachungsindikatoren](storsimple-monitoring-indicators.md)
 
-Falls sich das Problem nicht beheben lässt und Sie eine Serviceanfrage erstellen müssen, finden Sie hier weitere Informationen:
+Falls sich die Probleme nicht beheben lassen und Sie eine Serviceanfrage erstellen müssen, finden Sie unter [Microsoft-Support kontaktieren](storsimple-contact-microsoft-support.md) weitere Informationen.
 
--  [Kontaktaufnahme mit dem Microsoft-Support](storsimple-contact-microsoft-support.md)
-
-<!----HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0121_2016-->

@@ -12,7 +12,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="09/12/2015"
+    ms.date="01/07/2016"
     ms.author="elizapo" />
 
 
@@ -33,4 +33,4 @@ Klicken Sie im Portal auf der Registerkarte **Veröffentlichung** auf **Veröffe
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0114_2016-->

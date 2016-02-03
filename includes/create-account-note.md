@@ -1,3 +1,4 @@
-> [AZURE.NOTE]Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Sie können <a href="/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF" target="_blank">Ihre MSDN-Abonnentenvorteile aktivieren</a> oder <a href="/pricing/free-trial/?WT.mc_id=A85619ABF" target="_blank">sich für eine kostenlose Testversion anmelden</a>.
+> [AZURE.NOTE]
+Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Sie können [Ihre Vorteile für MSDN-Abonnenten aktivieren](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) oder [sich für eine kostenlose Testversion anmelden](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A85619ABF).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

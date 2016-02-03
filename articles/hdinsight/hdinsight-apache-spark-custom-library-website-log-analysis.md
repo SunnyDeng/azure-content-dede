@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/22/2015" 
+	ms.date="01/04/2016" 
 	ms.author="nitinme"/>
 
 # Analysieren von Protokollen in HDInsight Spark mithilfe einer benutzerdefinierten Bibliothek (Linux)
@@ -100,7 +100,7 @@ Nachdem Ihre Daten als Hive-Tabelle gespeichert wurden, können wir im nächsten
 	Anschließend muss der folgende Codeausschnitt ausgeführt werden, um die Bibliothek an alle Workerknoten im Spark-Cluster zu verteilen.
 
 
-		sc.addPyFile('wasb:///example/data/iislogparser.py')
+		sc.addPyFile('wasb:///HdiSamples/HdiSamples/WebsiteLogSampleData/iislogparser.py')
 
 
 9. `iislogparser` stellt die Funktion `parse_log_line` bereit, die `None` zurückgibt, wenn es sich bei einer Protokollzeile um eine Kopfzeile handelt. Handelt es sich dagegen um eine Protokollzeile, gibt die Funktion eine Instanz der Klasse `LogLine` zurück. Verwenden Sie die Klasse `LogLine`, um nur die Protokollzeilen aus dem RDD zu extrahieren:
@@ -211,7 +211,7 @@ Nachdem Ihre Daten als Hive-Tabelle gespeichert wurden, können wir im nächsten
 
 * [Spark mit Machine Learning: Analysieren von Gebäudetemperaturen mithilfe von Spark in HDInsight und HVAC-Daten](hdinsight-apache-spark-ipython-notebook-machine-learning.md)
 
-* [Spark mit Machine Learning: Vorhersage von Lebensmittelüberwachungsergebnissen mithilfe von Spark in HDInsight](hdinsight-apache-spark-machine-learning-mllib-ipython.md)
+* [Spark mit Machine Learning: Vorhersage von Lebensmittelkontrollergebnissen mithilfe von Spark in HDInsight](hdinsight-apache-spark-machine-learning-mllib-ipython.md)
 
 * [Spark-Streaming: Erstellen von Echtzeit-Streaminganwendungen mithilfe von Spark in HDInsight](hdinsight-apache-spark-eventhub-streaming.md)
 
@@ -223,12 +223,12 @@ Nachdem Ihre Daten als Hive-Tabelle gespeichert wurden, können wir im nächsten
 
 ### Erweiterungen
 
-* [Verwenden von Zeppelin Notebooks mit einem Spark-Cluster in HDInsight](hdinsight-apache-spark-use-zeppelin-notebook.md)
+* [Verwenden von Zeppelin-Notebooks mit einem Spark-Cluster in HDInsight](hdinsight-apache-spark-use-zeppelin-notebook.md)
 
-* [Verfügbare Kernels für Jupyter Notebook im Spark-Cluster für HDInsight](hdinsight-apache-spark-jupyter-notebook-kernels.md)
+* [Verfügbare Kernels für Jupyter-Notebooks im Spark-Cluster für HDInsight](hdinsight-apache-spark-jupyter-notebook-kernels.md)
 
 ### Verwalten von Ressourcen
 
 * [Verwalten von Ressourcen für den Apache Spark-Cluster in Azure HDInsight](hdinsight-apache-spark-resource-manager.md)
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0107_2016-->

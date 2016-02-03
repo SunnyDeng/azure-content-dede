@@ -2,7 +2,7 @@
     pageTitle="Tutorial: Azure Active Directory-Integration mit FreshService | Microsoft Azure" 
     description="Hier erfahren Sie, wie Sie FreshService mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags 
@@ -11,8 +11,8 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
-    ms.author="markvi" />
+    ms.date="01/14/2016" 
+    ms.author="jeedes" />
 
 #Tutorial: Azure Active Directory-Integration mit FreshService
   
@@ -55,7 +55,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Fre
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-freshservice-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie im **Suchfeld** den Suchbegriff **FreshService** ein.
+6.  Geben Sie im **Suchfeld** das Wort **FreshService** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-freshservice-tutorial/IC790808.png "Anwendungskatalog")
 
@@ -76,7 +76,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-freshservice-tutorial/IC790811.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **FreshService-Anmelde-URL** die URL ein, welche die Benutzer zur Anmeldung bei FreshService verwenden (z. B. "**http://democompany.freshservice.com/*"), und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **FreshService-Anmelde-URL** die URL ein, die die Benutzer zur Anmeldung bei FreshService verwenden (z. B. „**http://democompany.freshservice.com/*"), und klicken Sie dann auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-freshservice-tutorial/IC790812.png "App-URL konfigurieren")
 
@@ -86,7 +86,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
 5.  Melden Sie sich in einem anderen Webbrowserfenster bei der FreshService-Unternehmenswebsite als Administrator an.
 
-6.  Klicken Sie oben im Menü auf **Admin**.
+6.  Klicken Sie oben im Menü auf **Administrator**.
 
     ![Admin](./media/active-directory-saas-freshservice-tutorial/IC790814.png "Admin")
 
@@ -104,7 +104,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
     4.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für FreshService** den Wert für **Remoteabmelde-URL**, und fügen Sie ihn in das Textfeld **Abmelde-URL** ein.
     5.  Kopieren Sie den **Fingerabdruckwert** aus dem exportierten Zertifikat, und fügen Sie ihn in das Textfeld **Fingerabdruck des Sicherheitszertifikats** ein.
     
-        >[AZURE.TIP]Weitere Informationen finden Sie unter [How to retrieve a certificate's thumbprint value](http://youtu.be/YKQF266SAxI) (in englischer Sprache).
+        >[AZURE.TIP]Weitere Informationen finden Sie unter [Abrufen des Fingerabdruckwerts eines Zertifikats](http://youtu.be/YKQF266SAxI).
 
 9.  Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
 
@@ -117,7 +117,7 @@ Damit sich Azure AD-Benutzer bei FreshService anmelden können, müssen sie in F
 
 1.  Melden Sie sich bei der **FreshService**-Unternehmenswebsite als Administrator an.
 
-2.  Klicken Sie oben im Menü auf **Admin**.
+2.  Klicken Sie oben im Menü auf **Administrator**.
 
     ![Admin](./media/active-directory-saas-freshservice-tutorial/IC790814.png "Admin")
 
@@ -152,10 +152,10 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
 
     ![Benutzer zuweisen](./media/active-directory-saas-freshservice-tutorial/IC790821.png "Benutzer zuweisen")
 
-3.  Wählen Sie den Testbenutzer aus, und klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen.
+3.  Wählen Sie den Testbenutzer aus, klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen.
 
     ![Ja](./media/active-directory-saas-freshservice-tutorial/IC767830.png "Ja")
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0121_2016-->

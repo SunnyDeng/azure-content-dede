@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Bereitstellen von HDInsight Hadoop-Clustern mit Azure Data Lake-Speicher mithilfe des Portals | Azure" 
-   description="Verwenden des Azure-Portals zum Konfigurieren und Verwenden von HDInsight Hadoop-Clustern mit Azure Data Lake-Speicher" 
+   pageTitle="Erstellen von HDInsight Hadoop-Clustern mit Azure Data Lake-Speicher mithilfe des Portals | Azure" 
+   description="Verwenden des Azure-Portals zum Erstellen und Verwenden von HDInsight Hadoop-Clustern mit Azure Data Lake-Speicher" 
    services="data-lake-store" 
    documentationCenter="" 
    authors="nitinme" 
@@ -13,19 +13,21 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="11/13/2015"
+   ms.date="01/20/2016"
    ms.author="nitinme"/>
 
-# Bereitstellen eines HDInsight-Clusters mit Data Lake-Speicher mithilfe des Azure-Portals
+# Erstellen eines HDInsight-Clusters mit Data Lake-Speicher mithilfe des Azure-Portals
 
 > [AZURE.SELECTOR]
 - [Using Portal](data-lake-store-hdinsight-hadoop-use-portal.md)
 - [Using PowerShell](data-lake-store-hdinsight-hadoop-use-powershell.md)
 
 
-Erfahren Sie, wie Sie das Azure-Portal zum Konfigurieren eines HDInsight-Clusters (Hadoop, HBase oder Storm) verwenden, damit dieser mit einem Azure Data Lake-Speicher genutzt werden kann. Einige wichtige Hinweise zu dieser Version:
+Erfahren Sie, wie Sie das Azure-Portal zum Erstellen eines HDInsight-Clusters (Hadoop, HBase oder Storm) mit Zugriff auf den Azure Data Lake-Speicher verwenden. Einige wichtige Hinweise zu dieser Version:
 
-* **Für Hadoop- und Storm-Cluster (Windows und Linux)** kann der Data Lake-Speicher nur als zusätzliches Speicherkonto verwendet werden. Standardspeicherkonten für solche Cluster sind weiterhin Azure-Speicherblobs (WASB).
+* **Bei Hadoop-Clustern (Windows und Linux)** kann der Data Lake-Speicher nur als zusätzliches Speicherkonto verwendet werden. Standardspeicherkonten für solche Cluster sind weiterhin Azure-Speicherblobs (WASB).
+
+* **Bei Storm-Clustern (Windows und Linux)** kann der Data Lake-Speicher zum Schreiben von Daten aus einer Storm-Topologie verwendet werden. Der Data Lake-Speicher kann auch zum Speichern von Verweisdaten verwendet werden, die anschließend von einer Storm-Topologie gelesen werden.
 
 * Sie können **für HBase-Cluster (Windows und Linux)** den Data Lake-Speicher als Standardspeicher oder als Zusatzspeicher verwenden.
 
@@ -92,7 +94,7 @@ In diesem Abschnitt erstellen Sie einen HDInsight Hadoop-Cluster, für den der D
 	Führen Sie unter Ihrem Data Lake-Speicherkonto die folgenden Aufgaben aus.
 
 	* [Erstellen Sie einen Ordner im Data Lake-Speicher](data-lake-store-get-started-portal.md#createfolder).
-	* [Laden Sie eine Datei in Ihren Data Lake-Speicher hoch](data-lake-store-get-started-portal.md#uploaddata). Wenn Sie Beispieldaten zum Hochladen verwenden möchten, können Sie den Ordner **Ambulance Data** aus dem [Azure Data Lake-Git-Repository](https://github.com/MicrosoftBigData/AzureDataLake/tree/master/SQLIPSamples/SampleData/AmbulanceData) herunterladen.
+	* [Laden Sie eine Datei in Ihren Data Lake-Speicher hoch](data-lake-store-get-started-portal.md#uploaddata). Wenn Sie Beispieldaten zum Hochladen verwenden möchten, können Sie den Ordner **Ambulance Data** aus dem [Azure Data Lake-Git-Repository](https://github.com/MicrosoftBigData/usql/tree/master/Examples/Samples/Data/AmbulanceData) herunterladen.
 
 	Sie verwenden die hochgeladenen Dateien später, wenn Sie das Data Lake-Speicherkonto mit dem HDInsight-Cluster testen.
 
@@ -128,6 +130,47 @@ In diesem Abschnitt erstellen Sie einen HDInsight Hadoop-Cluster, für den der D
 
 Nachdem Sie einen HDInsight-Cluster konfiguriert haben, können Sie Testaufträge für den Cluster ausführen, um zu testen, ob der HDInsight-Cluster auf Daten im Azure Data Lake-Speicher zugreifen kann. Hierzu führen wir einige Hive-Abfragen für den Data Lake-Speicher aus.
 
+### Für einen Linux-Cluster
+
+1. Öffnen Sie das Clusterblatt für den Cluster, den Sie bereitgestellt haben, und klicken Sie dann auf **Dashboard**. Dadurch wird Ambari für den Linux-Cluster geöffnet. Beim Zugriff auf Ambari werden Sie aufgefordert, sich bei der Website zu authentifizieren. Geben Sie den Administratorkontonamen (Standardeinstellung: admin) und das Kennwort ein, den bzw. das Sie beim Erstellen des Clusters verwendet haben.
+
+	![Clusterdashboard starten](./media/data-lake-store-hdinsight-hadoop-use-portal/hdiadlcluster1.png "Clusterdashboard starten")
+
+	Sie können auch direkt zu Ambari navigieren, indem Sie in einem Webbrowser https://CLUSTERNAME.azurehdinsight.net aufrufen (wobei **CLUSTERNAME** der Name Ihres HDInsight-Clusters ist).
+
+2. Öffnen Sie die Hive-Ansicht. Klicken Sie im Seitenmenü auf die Gruppe von Quadraten (neben dem Link und der Schaltfläche für **Admin** rechts auf der Seite), um verfügbare Ansichten aufzulisten. Wählen Sie die **Hive**-Ansicht aus.
+
+	![Ambari-Ansichten auswählen](./media/data-lake-store-hdinsight-hadoop-use-portal/selecthiveview.png)
+
+3. Eine Seite ähnlich der folgenden wird angezeigt:
+
+	![Bild der Hive-Ansichtenseite, die einen Abfrage-Editor-Abschnitt enthält](./media/data-lake-store-hdinsight-hadoop-use-portal/hiveview.png)
+
+4. Fügen Sie im Abschnitt **Abfrage-Editor** der Seite die folgende HiveQL-Anweisung in das Arbeitsblatt ein:
+
+		CREATE EXTERNAL TABLE vehicles (str string) LOCATION 'adl://mydatalakestore.azuredatalakestore.net:443/mynewfolder'
+
+5. Klicken Sie unten im **Abfrage-Editor** auf die Schaltfläche **Ausführen**, um die Abfrage zu starten. Der Abschnitt **Abfrageprozessergebnisse** sollte unterhalb des **Abfrage-Editors** angezeigt werden und Informationen über den Auftrag enthalten.
+
+6. Nach Abschluss der Abfrage werden im Abschnitt **Abfrageprozessergebnisse** die Ergebnisse des Vorgangs angezeigt. Die Registerkarte **Ergebnisse** sollte folgende Informationen enthalten:
+
+7. Führen Sie die folgende Abfrage aus, um sicherzustellen, dass die Tabelle erstellt wurde.
+
+		SHOW TABLES;
+
+	Auf der Registerkarte **Ergebnisse** sollte Folgendes angezeigt werden:
+
+		hivesampletable
+		vehicles
+
+	**vehicles** ist die Tabelle, die Sie bereits erstellt haben. **hivesampletable** ist eine Beispieltabelle, die in allen HDInsight-Clustern standardmäßig verfügbar ist.
+
+8. Sie können auch eine Abfrage ausführen, um Daten aus der Tabelle **vehicles** abzurufen.
+
+		SELECT * FROM vehicles LIMIT 5;
+
+### Für einen Windows-Cluster
+
 1. Öffnen Sie das Clusterblatt für den Cluster, den Sie bereitgestellt haben, und klicken Sie dann auf **Dashboard**.
 
 	![Clusterdashboard starten](./media/data-lake-store-hdinsight-hadoop-use-portal/hdiadlcluster1.png "Clusterdashboard starten")
@@ -152,20 +195,42 @@ Nachdem Sie einen HDInsight-Cluster konfiguriert haben, können Sie Testaufträg
 
 		SHOW TABLES;
 
-	Klicken Sie für diese Abfrage auf „Details anzeigen“. Die Ausgabe sollte wie folgt angezeigt werden:
+	Klicken Sie für diese Abfrage auf **Details anzeigen**. Die Ausgabe sollte wie folgt angezeigt werden:
 
 		hivesampletable
 		vehicles
 
 	**vehicles** ist die Tabelle, die Sie bereits erstellt haben. **hivesampletable** ist eine Beispieltabelle, die in allen HDInsight-Clustern standardmäßig verfügbar ist.
 
-5. Sie können auch eine Abfrage ausführen, um Daten aus **vehicles** abzurufen.
+5. Sie können auch eine Abfrage ausführen, um Daten aus der Tabelle **vehicles** abzurufen.
 
 		SELECT * FROM vehicles LIMIT 5;
+
 
 ## Zugreifen auf den Data Lake-Speicher mit HDFS-Befehlen
 
 Nachdem Sie den HDInsight-Cluster für die Verwendung des Data Lake-Speichers konfiguriert haben, können Sie die HDFS-Shellbefehle verwenden, um auf den Speicher zuzugreifen.
+
+### Für einen Linux-Cluster
+
+In diesem Abschnitt stellen Sie eine SSH-Verbindung mit dem Cluster her und führen die HDFS-Befehle aus. Windows bietet keinen integrierten SSH-Client. Wir empfehlen die Verwendung von **PuTTY**. Sie können das Programm unter [http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html) herunterladen.
+
+Weitere Informationen zum Verwenden von PuTTY finden Sie unter [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Windows](../hdinsight/hdinsight-hadoop-linux-use-ssh-windows.md).
+
+Nachdem die Verbindung hergestellt wurde, listen Sie mithilfe des folgenden HDFS-Dateisystembefehls die Dateien im Data Lake-Speicher auf.
+
+	hdfs dfs -ls adl://<Data Lake Store account name>.azuredatalakestore.net:443/
+
+Hierbei sollte auch die Datei aufgeführt werden, die Sie bereits in den Data Lake-Speicher hochgeladen haben.
+
+	15/09/17 21:41:15 INFO web.CaboWebHdfsFileSystem: Replacing original urlConnectionFactory with org.apache.hadoop.hdfs.web.URLConnectionFactory@21a728d6
+	Found 1 items
+	-rwxrwxrwx   0 NotSupportYet NotSupportYet     671388 2015-09-16 22:16 adl://mydatalakestore.azuredatalakestore.net:443/mynewfolder
+
+Sie können auch den Befehl `hdfs dfs -put` verwenden, um Dateien in den Data Lake-Speicher hochzuladen, und dann mit `hdfs dfs -ls` überprüfen, ob der Upload der Dateien erfolgreich war.
+
+
+### Für einen Windows-Cluster
 
 1. Melden Sie sich beim neuen [Azure-Portal](https://portal.azure.com) an.
 
@@ -198,7 +263,9 @@ Für HBase-Cluster können Sie Data Lake-Speicherkonten als Standardspeicher ver
 
 Eine Anleitung, wie Sie dem Dateisystem eines Data Lake-Speichers einen Dienstprinzipal hinzufügen, finden Sie unter [Konfigurieren des Dienstprinzipals für den Zugriff auf das Dateisystem des Data Lake-Speichers](#acl).
 
+## Verwenden des Data Lake-Speichers in einer Storm-Topologie
 
+Sie können den Data Lake-Speicher verwenden, um dort Daten aus einer Storm-Topologie zu schreiben. Informationen zum Umsetzen dieses Szenarios finden Sie unter [Verwenden von Azure Data Lake-Speicher mit Apache Storm und HDInsight](../hdinsight/hdinsight-storm-write-data-lake-store.md).
 
 ## Weitere Informationen
 
@@ -207,4 +274,4 @@ Eine Anleitung, wie Sie dem Dateisystem eines Data Lake-Speichers einen Dienstpr
 [makecert]: https://msdn.microsoft.com/library/windows/desktop/ff548309(v=vs.85).aspx
 [pvk2pfx]: https://msdn.microsoft.com/library/windows/desktop/ff550672(v=vs.85).aspx
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0121_2016-->

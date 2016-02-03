@@ -12,7 +12,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="10/06/2015"
+   ms.date="01/16/2016"
    ms.author="cherylmc"/>
 
 
@@ -38,7 +38,7 @@ Sie können entweder private IP-Adressen oder öffentliche IP-Adressen verwenden
  - Wenn ein /29-Subnetz verwendet wird, wird es in zwei /30-Subnetze unterteilt. 
 	 - Das erste /30-Subnetz wird für die primäre Verknüpfung verwendet, und das zweite /30-Subnetz wird für die sekundäre Verknüpfung verwendet.
 	 - Für jedes /30-Subnetz müssen Sie zuerst die IP-Adresse des /30-Subnetzes auf dem Router angeben. Microsoft verwendet die zweite IP-Adresse des /30-Subnetzes zum Einrichten einer BGP-Sitzung.
-	 - Sie müssen beide BGP-Sitzungen einrichten, damit unsere [Vereinbarungen zum Servicelevel](http://azure.microsoft.com/support/legal/sla/) gültig sind.  
+	 - Sie müssen beide BGP-Sitzungen einrichten, damit unsere [Vereinbarungen zum Servicelevel](https://azure.microsoft.com/support/legal/sla/) gültig sind.  
 
 #### Beispiel für privates Peering
 
@@ -48,8 +48,8 @@ a.b.c.d/29 wird in a.b.c.d/30 und a.b.c.d+4/30 unterteilt und über die Bereitst
 
 Betrachten wir den Fall, in dem Sie 192.168.100.128/29 zum Einrichten des privaten Peerings auswählen. 192.168.100.128/29 enthält die Adressen von 192.168.100.128 bis 192.168.100.135, für die Folgendes gilt:
 
-- 192\.168.100.128/30 wird link1 zugewiesen, wobei der Anbieter 192.168.100.129 und Microsoft 192.168.100.130 verwendet.
-- 192\.168.100.132/30 wird link2 zugewiesen, wobei der Anbieter 192.168.100.133 und Microsoft 192.168.100.134 verwendet.
+- 192.168.100.128/30 wird link1 zugewiesen, wobei der Anbieter 192.168.100.129 und Microsoft 192.168.100.130 verwendet.
+- 192.168.100.132/30 wird link2 zugewiesen, wobei der Anbieter 192.168.100.133 und Microsoft 192.168.100.134 verwendet.
 
 ### IP-Adressen für öffentliches Azure-Peering und Microsoft-Peering
 
@@ -59,7 +59,7 @@ Sie müssen eigene öffentliche IP-Adressen zum Einrichten der BGP-Sitzungen ver
 - Wenn ein /29-Subnetz verwendet wird, wird es in zwei /30-Subnetze unterteilt. 
 	- Das erste /30-Subnetz wird für die primäre Verknüpfung verwendet, und das zweite /30-Subnetz wird für die sekundäre Verknüpfung verwendet.
 	- Für jedes /30-Subnetz müssen Sie zuerst die IP-Adresse des /30-Subnetzes auf dem Router verwenden. Microsoft verwendet die zweite IP-Adresse des /30-Subnetzes zum Einrichten einer BGP-Sitzung.
-	- Sie müssen beide BGP-Sitzungen einrichten, damit unsere [Vereinbarungen zum Servicelevel](http://azure.microsoft.com/support/legal/sla/) gültig sind.
+	- Sie müssen beide BGP-Sitzungen einrichten, damit unsere [Vereinbarungen zum Servicelevel](https://azure.microsoft.com/support/legal/sla/) gültig sind.
 
 Stellen Sie sicher, dass Ihre IP-Adresse und die AS-Nummer für Sie in einer der unten aufgeführten Registrierungen registriert sind.
 
@@ -70,7 +70,6 @@ Stellen Sie sicher, dass Ihre IP-Adresse und die AS-Nummer für Sie in einer der
 - [RIPE NCC](https://www.ripe.net/)
 - [RADB](http://www.radb.net/)
 - [ALTDB](http://altdb.net/)
-- [LEVEL3](http://rr.Level3.net/)
 
 
 ## Dynamischer Routenaustausch
@@ -120,34 +119,35 @@ Microsoft kennzeichnet Präfixe, die über das öffentliche Peering und Microsof
 
 | **Geopolitische Region** | **Microsoft Azure-Region (dasselbe gilt für Office 365)** | **BGP-Communitywert** |
 |---|---|---|
-| **Nordamerika** | | 12076:51201 |
+| **Nordamerika** | | |
 | | USA (Ost) | 12076:51004 |
 | | USA (Ost) 2 | 12076:51005 |
-| | USA, Westen | 12076:51006 |
+| | USA (West) | 12076:51006 |
 | | USA (Mitte/Norden) | 12076:51007 |
 | | USA (Mitte/Süden) | 12076:51008 |
 | | USA (Mitte) | 12076:51009 |
-| **Südamerika** | | 12076:51202 |
+| **Südamerika** | | |
 | | Brasilien Süd | 12076:51014 |
-| **Europa** | | 12076:51203 |
+| **Europa** | | |
 | | Nordeuropa | 12076:51003 |
 | | Westeuropa | 12076:51002 |
-| **Asien-Pazifik** | | 12076:51204 |
+| **Asien-Pazifik** | | |
 | | Ostasien | 12076:51010 |
 | | Südostasien | 12076:51011 |
-| **Japan** | Japan Ost | 12076:51012 |
-| | Japan, Westen | 12076:51013 |
-| **Australien** | Australien (Osten) | 12076:51015 |
+| **Japan** | | |
+| | Japan Ost | 12076:51012 |
+| | Japan (Westen) | 12076:51013 |
+| **Australien** | | | 
+| | Australien (Ost) | 12076:51015 |
 | | Australien (Südost) | 12076:51016 |
-| **Indien** | Indien, Süden | 12076:51019 |
+| **Indien** | | |
+| | Indien, Süden | 12076:51019 |
 | | Indien, Westen | 12076:51018 |
 | | Indien, Mitte | 12076:51017 |
-| **Global** | **Nur unterstützt und veröffentlicht, wenn das Premium-Add-On aktiviert ist** | 12076:51000 |
-| **Anycast** | | 12076:51250 |
 
 Alle Routen, die von Microsoft angekündigt werden, werden mit dem entsprechenden Communitywert gekennzeichnet.
 
->[AZURE.IMPORTANT]Globale Präfixe werden mit einem entsprechenden Community-Wert markiert und nur dann angekündigt, wenn das Premium-Add-On von ExpressRoute aktiviert ist.
+>[AZURE.IMPORTANT] Globale Präfixe werden mit einem entsprechenden Community-Wert markiert und nur dann angekündigt, wenn das Premium-Add-On von ExpressRoute aktiviert ist.
 
 
 Zusätzlich zu den obigen Kennzeichnungen versieht Microsoft Präfixe auch basierend auf dem zugehörigen Dienst mit einer Kennzeichnung. Dies gilt nur für das Microsoft-Peering. Die Tabelle unten enthält die Zuordnung des Diensts zum BGP-Communitywert.
@@ -163,7 +163,7 @@ Zusätzlich zu den obigen Kennzeichnungen versieht Microsoft Präfixe auch basie
 
 ### Ändern von Routingvoreinstellungen
 
-Microsoft berücksichtigt keine BGP-Communitywerte, die von Ihnen festgelegt werden. Sie müssen ein BGP-Sitzungspaar pro Peering einrichten, um sicherzustellen, dass die Anforderungen für die [Vereinbarungen zum Servicelevel](http://azure.microsoft.com/support/legal/sla/) erfüllt sind. Sie können Ihr Netzwerk aber so konfigurieren, dass ein bestimmter Link vorrangig behandelt wird, indem Sie standardmäßige Verfahren zur BGP-Routenänderung verwenden. Sie können unterschiedliche lokale BGP-Voreinstellungen auf jeden Link anwenden, damit ein Pfad von Ihrem Netzwerk zu Microsoft gegenüber dem anderen Pfad vorgezogen wird. Sie können den AS-PATH bei Routenankündigungen voranstellen, um den Datenverkehrsfluss von Microsoft in Ihr Netzwerk zu beeinflussen.
+Microsoft berücksichtigt keine BGP-Communitywerte, die von Ihnen festgelegt werden. Sie müssen ein BGP-Sitzungspaar pro Peering einrichten, um sicherzustellen, dass die Anforderungen für die [Vereinbarungen zum Servicelevel](https://azure.microsoft.com/support/legal/sla/) erfüllt sind. Sie können Ihr Netzwerk aber so konfigurieren, dass ein bestimmter Link vorrangig behandelt wird, indem Sie standardmäßige Verfahren zur BGP-Routenänderung verwenden. Sie können unterschiedliche lokale BGP-Voreinstellungen auf jeden Link anwenden, damit ein Pfad von Ihrem Netzwerk zu Microsoft gegenüber dem anderen Pfad vorgezogen wird. Sie können den AS-PATH bei Routenankündigungen voranstellen, um den Datenverkehrsfluss von Microsoft in Ihr Netzwerk zu beeinflussen.
 
 ## Nächste Schritte
 
@@ -173,4 +173,4 @@ Microsoft berücksichtigt keine BGP-Communitywerte, die von Ihnen festgelegt wer
 	- [Konfigurieren des Routings](expressroute-howto-routing-classic.md)
 	- [Verknüpfen eines VNet mit einer ExpressRoute-Verbindung](expressroute-howto-linkvnet-classic.md)
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0128_2016-->

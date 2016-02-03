@@ -59,7 +59,8 @@ Wenn Sie das klassische Azure-Portal zum ersten Mal öffnen, ist automatisch die
 
    	![][5]
 
-8.  Klicken Sie auf **OK**. Die Erstellung des Auftrags und der Auftragssammlung kann eine Weile dauern. Sie können die Benachrichtigungen unten im Portal überwachen, um den Status zu überprüfen.
+8.  Klicken Sie auf **OK**. 
+    Die Erstellung des Auftrags und der Auftragssammlung kann eine Weile dauern. Sie können die Benachrichtigungen unten im Portal überwachen, um den Status zu überprüfen.
 
    	![][6]
 
@@ -229,7 +230,7 @@ Bei allen Aktionstypen können Zeitplan und Wiederholungsverhalten geändert wer
 
  [Erstellen komplexer Zeitpläne und erweiterter Serien mit Azure Scheduler](scheduler-advanced-complexity.md)
 
- [Scheduler-REST-API – Referenz](https://msdn.microsoft.com/library/dn528946)
+ [Scheduler-REST-API – Referenz](https://msdn.microsoft.com/library/mt629143)
 
  [Scheduler – PowerShell-Cmdlets-Referenz](scheduler-powershell-reference.md)
 
@@ -257,4 +258,4 @@ Bei allen Aktionstypen können Zeitplan und Wiederholungsverhalten geändert wer
 [14]: ./media/scheduler-get-started-portal/scheduler-get-started-portal014.png
 [15]: ./media/scheduler-get-started-portal/scheduler-get-started-portal015.png
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

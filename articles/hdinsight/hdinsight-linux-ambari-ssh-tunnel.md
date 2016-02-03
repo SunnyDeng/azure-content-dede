@@ -13,7 +13,7 @@ ms.devlang="na"
 ms.topic="article"
 ms.tgt_pltfrm="na"
 ms.workload="big-data"
-ms.date="11/02/2015"
+ms.date="01/12/2016"
 ms.author="larryfr"/>
 
 #Verwenden von SSH-Tunneling zum Zugriff auf die Ambari-Webbenutzeroberfläche, ResourceManager, JobHistory, NameNode, Oozie und andere Webbenutzeroberflächen
@@ -32,7 +32,6 @@ Im Folgenden finden Sie die Dienste, die von der Ambari-Webbenutzeroberfläche v
 * Threadstapel,
 * Oozie-Webbenutzeroberfläche
 * Benutzeroberfläche für HBase-Master und -Protokolle
-* Storm-Benutzeroberfläche
 
 Wenn Sie für die Clusteranpassung Skriptaktionen verwenden, benötigen Sie für alle Dienste und Dienstprogramme, die Sie installieren und die eine Webbenutzeroberfläche verfügbar machen, einen SSH-Tunnel. Bei der Installation von Hue mit einer Skriptaktion müssen Sie z. B. einen SSH-Tunnel verwenden, um auf die Hue-Webbenutzeroberfläche zuzugreifen.
 
@@ -162,7 +161,7 @@ Nachdem Sie diese Schritte ausgeführt haben, werden ausschließlich Anforderung
 
 Nachdem der Cluster eingerichtet wurde, gehen Sie folgendermaßen vor, um zu überprüfen, ob Sie von der Ambari-Webbenutzeroberfläche auf Dienst-Webbenutzeroberflächen zugreifen können:
 
-1. Navigieren Sie im Webbrowser zu https://CLUSTERNAME.azurehdinsight.net, wobei „CLUSTERNAME“ der Name des HDInsight-Clusters ist.
+1. Navigieren Sie im Webbrowser zu https://CLUSTERNAME.azurehdinsight.net, wobei "CLUSTERNAME" der Name des HDInsight-Clusters ist.
 
 	Geben Sie bei der entsprechenden Aufforderung den Benutzernamen ("admin") und das Kennwort des Administrators für den Cluster ein. Sie werden eventuell von der Ambari-Webbenutzeroberfläche ein zweites Mal zur Eingabe aufgefordert. Geben Sie in diesem Fall die Informationen erneut ein.
 
@@ -197,4 +196,4 @@ Weitere Informationen zur Verwendung von SSH mit HDInsight finden Sie in den fol
 
 * [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Windows](hdinsight-hadoop-linux-use-ssh-windows.md)
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0114_2016-->

@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="09/18/2015"
+   ms.date="12/28/2015"
    ms.author="sethm" />
 
 # Bewährte Methoden für Leistungsoptimierungen mithilfe von Service Bus-Brokermessaging
@@ -142,7 +142,7 @@ Wenn eine Nachricht, die wichtige Informationen enthält, die nicht verloren geh
 
 ## Verwenden partitionierter Warteschlangen oder Themen
 
-Intern verwendet Service Bus den gleichen Knoten und Messagingspeicher, um alle Nachrichten für eine Messagingentität (Warteschlange oder Thema) zu verarbeiten und zu speichern. Partitionierte Warteschlangen oder Themen sind dagegen auf mehrere Knoten und Messagingspeicher verteilt. Partitionierte Warteschlangen und Themen liefern nicht nur einen höheren Durchsatz als normale Warteschlangen und Themen, sie weisen auch eine höhere Verfügbarkeit auf. Um eine partitionierte Entität zu erstellen, legen Sie die [EnablePartitioning][]-Eigenschaft auf **true** fest, wie im folgenden Beispiel gezeigt. Weitere Informationen zu partitionierten Entitäten finden Sie unter [Partitionieren von Messagingentitäten][].
+Intern verwendet Service Bus den gleichen Knoten und Messagingspeicher, um alle Nachrichten für eine Messagingentität (Warteschlange oder Thema) zu verarbeiten und zu speichern. Partitionierte Warteschlangen oder Themen sind dagegen auf mehrere Knoten und Messagingspeicher verteilt. Partitionierte Warteschlangen und Themen liefern nicht nur einen höheren Durchsatz als normale Warteschlangen und Themen, sie weisen auch eine höhere Verfügbarkeit auf. Um eine partitionierte Entität zu erstellen, legen Sie die [EnablePartitioning][]-Eigenschaft auf **true** fest, wie im folgenden Beispiel gezeigt. Weitere Informationen zu partitionierten Entitäten finden Sie unter [Partitionierte Messagingentitäten][].
 
 ```
 // Create partitioned queue.
@@ -275,7 +275,7 @@ Gehen Sie wie folgt vor, um den Durchsatz zu maximieren:
 
 ## Nächste Schritte
 
-Weitere Informationen zum Optimieren der Service Bus-Leistung finden Sie unter [Partitionieren von Messagingentitäten][].
+Weitere Informationen zum Optimieren der Service Bus-Leistung finden Sie unter [Partitionierte Messagingentitäten][].
 
   [QueueClient]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.queueclient.aspx
   [MessageSender]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.messagesender.aspx
@@ -288,7 +288,7 @@ Weitere Informationen zum Optimieren der Service Bus-Leistung finden Sie unter [
   [SubscriptionClient.PrefetchCount]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.subscriptionclient.prefetchcount.aspx
   [ForcePersistence]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.brokeredmessage.forcepersistence.aspx
   [EnablePartitioning]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.queuedescription.enablepartitioning.aspx
-  [Partitionieren von Messagingentitäten]: service-bus-partitioning.md
+  [Partitionierte Messagingentitäten]: service-bus-partitioning.md
   
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

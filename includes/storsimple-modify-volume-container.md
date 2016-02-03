@@ -1,4 +1,4 @@
-<!--author=SharS last changed: 9/16/15-->
+<!--author=SharS last changed: 1/7/2016-->
 
 #### So ändern Sie einen Volumecontainer
 
@@ -8,7 +8,7 @@
 
 3. Führen Sie im Dialogfeld **Volumecontainer ändern** die folgenden Schritte aus:
 
-    1. Ändern Sie den Namen des Volumecontainers, passen Sie die zugeordnete Bandbreite an, und geben Sie an, ob die Daten in der Cloud verschlüsselt werden müssen.
+    1. Ändern Sie den Namen des Volumecontainers, und ändern Sie die Einstellung der zugeordneten Bandbreite. 
 
         ![Ändern eines Volumecontainers mit Bandbreitenvorlage 1](./media/storsimple-modify-volume-container/HCS_ModifyVCBT1-include.png)
 
@@ -26,4 +26,4 @@
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0114_2016-->

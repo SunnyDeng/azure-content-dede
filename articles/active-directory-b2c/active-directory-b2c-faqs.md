@@ -5,7 +5,7 @@
 	documentationCenter=""
 	authors="swkrish"
 	manager="msmbaldwin"
-	editor="curtand"/>
+	editor="bryanla"/>
 
 <tags
 	ms.service="active-directory-b2c"
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/08/2015"
+	ms.date="12/28/2015"
 	ms.author="swkrish"/>
 
 # Preview-Version von Azure Active Directory B2C: Häufig gestellte Fragen
@@ -22,13 +22,13 @@ Auf dieser Seite werden häufig gestellte Fragen zur Preview-Version von Azure A
 
 [AZURE.INCLUDE [active-directory-b2c-preview-note](../../includes/active-directory-b2c-preview-note.md)]
 
-### Kann ich Azure AD B2C in meinem vorhanden mitarbeiterbasierten Azure AD Directory-Mandanten nutzen?
+### Kann ich Azure AD B2C-Features in meinem vorhanden mitarbeiterbasierten Azure AD Directory-Mandanten nutzen?
 
 Derzeit können Azure AD B2C-Features in Ihrem vorhandenen Azure AD-Mandanten noch nicht aktiviert werden. Es wird empfohlen, einen separaten Mandanten zu erstellen, um Azure AD B2C-Features zu nutzen, z. B. zum Verwalten der Consumer.
 
 ### Kann ich Azure AD B2C zum Bereitstellen der Anmeldung für soziale Netzwerke (Facebook und Google+) in Office 365 verwenden?
 
-Azure AD B2C kann nicht mit Office 365 verwendet werden. Die Anwendung kann generell nicht für die Bereitstellung der Authentifizierung für SaaS-Apps (Salesforce, Workday usw.) verwendet werden. Sie ermöglicht die Identitäts- und Zugriffsverwaltung für Consumer-orientierte Webanwendungen und mobile Anwendungen und ist nicht für Mitarbeiter- oder Partnerszenarien ausgelegt.
+Azure AD B2C kann nicht mit Office 365 verwendet werden. Die Anwendung kann generell nicht für die Bereitstellung der Authentifizierung für SaaS-Apps (Office 365, Salesforce, Workday usw.) verwendet werden. Sie ermöglicht nur die Identitäts- und Zugriffsverwaltung für endkundenorientierte Webanwendungen und mobile Anwendungen und ist nicht für Mitarbeiter- oder Partnerszenarien ausgelegt.
 
 ### Was sind „Lokale Konten“ in Azure AD B2C? Wie unterscheiden sie sich von „Geschäfts- oder Schulkonten“ in Azure AD?
 
@@ -38,7 +38,7 @@ In einem Azure AD B2C-Mandanten ist es bei den meisten Apps üblich, dass Benutz
 
 ### Welche sozialen Identitätsanbieter werden derzeit unterstützt? Welche sollen in Zukunft unterstützt werden?
 
-Gegenwärtig werden Facebook, Google+, LinkedIn und Amazon unterstützt. Die Unterstützung für das Microsoft-Konto und andere beliebte soziale Identitätsanbieter wird je nach Kundennachfrage hinzugefügt.
+Gegenwärtig werden Facebook, Google+, LinkedIn und Amazon unterstützt. Die Unterstützung für andere beliebte soziale Identitätsanbieter wird je nach Kundennachfrage hinzugefügt.
 
 ### Kann ich Bereiche (Scopes) konfigurieren, um von verschiedenen sozialen Identitätsanbietern mehr Informationen zu Consumers zu erhalten?
 
@@ -53,17 +53,21 @@ Nein, aber dieses Feature ist geplant. Die Standardbereiche für unsere unterst�
 
 Nein, Sie können Ihre Anwendung überall hosten (in der Cloud oder lokal). Für die Interaktion mit Azure AD B2C muss nur die Fähigkeit zum Senden und Empfangen von HTTP-Anforderungen über öffentlich zugängliche Endpunkte möglich sein.
 
-### Ich habe mehrere Azure AD B2C-Verzeichnisse. Wie kann ich sie im Azure-Vorschauportal verwalten?
+### Ich habe mehrere Azure AD B2C-Mandanten. Wie kann ich sie im Azure-Portal verwalten?
 
-Jeder Azure AD B2C-Mandant hat im Azure-Vorschauportal ein eigenes Blatt mit B2C-Features. Sie können [hier](active-directory-b2c-app-registration.md#navigate-to-the-b2c-features-blade) nachlesen, wie Sie im Azure-Vorschauportal zum Blatt mit den B2C-Features für einen bestimmten Mandanten navigieren können. Beim Wechseln zwischen Azure AD B2C-Verzeichnissen im Azure-Vorschauportal bleibt das Blatt mit den B2C-Features in den meisten Browsern nicht geöffnet.
+Jeder Azure AD B2C-Mandant hat im Azure-Portal ein eigenes Blatt mit B2C-Funktionen. Sie können [hier](active-directory-b2c-app-registration.md#navigate-to-the-b2c-features-blade) nachlesen, wie Sie im Azure-Portal zum Blatt „B2C-Funktionen“ für einen bestimmten Mandanten navigieren können. Beim Wechseln zwischen Azure AD B2C-Verzeichnissen im Azure-Portal bleibt das Blatt „B2C-Funktionen“ in den meisten Browsern nicht geöffnet.
 
 ### Wie kann ich Bestätigungs-E-Mails (Inhalt und Absenderfeld, also das Feld „Von:“) anpassen, die von Azure AD B2C gesendet werden?
 
-Weitere Details finden Sie in [diesem Artikel zur UI-Anpassung](active-directory-b2c-reference-ui-customization.md).
+Verwenden Sie das [Feature für Unternehmensbranding](./active-directory/active-directory-add-company-branding.md), um den Inhalt von Bestätigungs-E-Mails anzupassen. Das Absenderfeld kann durch den Support geändert werden.
 
 ### Wie kann ich meine vorhandenen Benutzernamen, Kennwörter und Profile aus meiner Datenbank zu Azure AD B2C migrieren?
 
 Sie können die Azure AD Graph-API verwenden (siehe [dieses Beispiel](active-directory-b2c-devquickstarts-graph-dotnet.md)), um Ihr Migrationstool zu schreiben. In Zukunft werden verschiedene Migrationsoptionen und Tools standardmäßig vorhanden sein.
+
+### Welche Kennwortrichtlinie wird für lokale Konten in Azure AD B2C verwendet?
+
+Die Kennwortrichtlinie von Azure AD B2C für lokale Konten basiert auf der Kennwortrichtlinie von Azure Active Directory (Azure AD). Bei Azure AD B2C müssen sichere Kennwörter verwendet werden, und die Kennwörter laufen nicht ab. Weitere Informationen finden Sie in der [Kennwortrichtlinie von Azure AD](https://msdn.microsoft.com/library/azure/jj943764.aspx).
 
 ### Kann ich Azure AD Connect zum Migrieren von Consumeridentitäten, die in meiner lokalen Active Directory-Umgebung gespeichert sind, zu Azure AD B2C verwenden?
 
@@ -87,7 +91,7 @@ Derzeit ist Azure AD B2C nur für Englisch optimiert. Es ist geplant, die Lokali
 
 ### Kann ich auf meinen Seiten für die Registrierung und Anmeldung, die von Azure AD B2C bereitgestellt werden, meine eigenen URLs verwenden? Beispielsweise per Änderung der URLs von „login.microsoftonline.com“ in „login.contoso.com“?
 
-Derzeit ist dies nicht möglich. Dieses Feature ist aber geplant. Beachten Sie auch, dass dies nicht durch das "Bestätigen" Ihrer Domäne auf der Registerkarte **Domänen** für den Mandanten im Azure-Portal erfolgt.
+Derzeit ist dies nicht möglich. Dieses Feature ist aber geplant. Beachten Sie auch, dass dies nicht durch das „Bestätigen“ Ihrer Domäne auf der Registerkarte **Domänen** für den Mandanten im klassischen Azure-Portal erfolgen kann.
 
 ### Kann ich Azure AD B2C als Teil der Enterprise Mobility Suite (EMS) erwerben?
 
@@ -105,4 +109,4 @@ Derzeit können wir noch keine Angaben zum Datum der allgemeinen Verfügbarkeit 
 
 Es kann hilfreich sein, sich auch über die aktuellen [Einschränkungen der Vorschauversion](active-directory-b2c-limitations.md) zu informieren.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

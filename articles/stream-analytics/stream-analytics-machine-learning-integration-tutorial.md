@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Tutorial: Azure Stream Analytics und Azure Machine Learning-Integration | Microsoft Azure" 
+	pageTitle="Tutorial: Stimmungsanalysen mit Azure Stream Analytics und Azure Machine Learning | Microsoft Azure" 
 	description="Verwenden von UDF und Machine Learning in Stream Analytics-Aufträgen"
 	keywords=""
 	documentationCenter=""
@@ -15,11 +15,11 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="12/14/2015" 
+	ms.date="12/30/2015" 
 	ms.author="jeffstok"
 />
 
-# Tutorial: Einführung in Stream Analytics und Machine Learning-Integration #
+# Tutorial: Ausführen von Stimmungsanalysen mit Stream Analytics und Machine Learning #
 
 In diesem Tutorial soll Ihnen die schnelle Einrichtung eines einfachen Stream Analytics-Auftrags mit Machine Learning-Integration vermittelt werden. Wir nutzen ein Sentiment Analytics Machine Learning-Modell aus dem Cortana Analytics-Katalog, um Streamingtextdaten zu analysieren und den Stimmungswert (Sentiment Score) in Echtzeit zu ermitteln. Dieses Tutorial eignet sich gut zum Erlernen folgender Szenarien: Echtzeit-Stimmungsanalyse für Streaming-Twitter-Daten, Datensatzanalyse beim Kundenchat mit Support-Personal, Kommentare zu Foren/Blogs/Videos und viele andere Echtzeitszenarien im Bereich Predictive Scoring.
   
@@ -57,7 +57,7 @@ Für diesen Schritt können Sie eine beliebige CSV-Datei verwenden, z. B. die i
 
     ![Stream Analytics Machine Learning-Tutorial – Server-Explorer](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-machine-learning-integration-tutorial-server-explorer.png)
 
-2.	Erweitern Sie den gerade angefügten Speicher, und wählen Sie **Create Blob Container** aus. Geben Sie dann einen logischen Namen an. Doppelklicken Sie nach der Erstellung auf den Container, um seinen Inhalt anzuzeigen (zu diesem Zeitpunkt leer).
+2.	Erweitern Sie den gerade angefügten Speicher, und wählen Sie **Blob-Container erstellen**. Geben Sie dann einen logischen Namen an. Doppelklicken Sie nach der Erstellung auf den Container, um seinen Inhalt anzuzeigen (zu diesem Zeitpunkt leer).
 
     ![Stream Analytics Machine Learning-Tutorial – Blob erstellen](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-machine-learning-integration-tutorial-create-blob.png)
 
@@ -142,7 +142,7 @@ Notieren Sie sich die Webdienst-URL und den Zugriffsschlüssel aus den herunterg
 
 In diesem Tutorial wurde ein Stream Analytics-Auftrag erstellt, mit dem Streamingtextdaten gelesen werden und ein Sentiment Analytics-Prozess dafür in Echtzeit durchgeführt wird. Dies alles war möglich, ohne dass Sie sich mit der komplexen Erstellung eines Sentiment Analytics-Modells beschäftigen mussten. Dies ist einer der Vorteile der Cortana Analytics Suite.
 
-Sie können sich auch die auf die Azure Machine Language-Funktion bezogenen Metriken ansehen. Klicken Sie auf die Registerkarte **ÜBERWACHEN**. Sie sehen drei funktionsbezogene Metriken:
+Sie können sich auch die auf die Azure Machine Learning-Funktion bezogenen Metriken ansehen. Klicken Sie auf die Registerkarte **ÜBERWACHEN**. Sie sehen drei funktionsbezogene Metriken:
   
 - FUNKTIONSANFORDERUNGEN gibt die Anzahl von Anforderungen an den Machine Learning-Webdienst an.  
 - FUNKTIONSEREIGNISSE gibt die Anzahl von Ereignissen in der Anforderung an. Standardmäßig enthält jede Anforderung an einen ML-Webdienst bis zu 1.000 Ereignisse.  
@@ -150,4 +150,4 @@ Sie können sich auch die auf die Azure Machine Language-Funktion bezogenen Metr
 
     ![Stream Analytics Machine Learning-Tutorial – ML-Überwachungsansicht](./media/stream-analytics-machine-learning-integration-tutorial/stream-analytics-machine-learning-integration-tutorial-ml-monitor-view.png)
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0121_2016-->

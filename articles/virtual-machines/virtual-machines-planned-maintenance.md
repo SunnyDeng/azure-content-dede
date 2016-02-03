@@ -3,7 +3,7 @@
 	description="Verstehen Sie, was eine geplante Azure-Wartung ist und wie sie sich auf Ihre virtuellen Computer auswirkt, die in Azure ausgeführt werden."
 	services="virtual-machines"
 	documentationCenter=""
-	authors="kenazk"
+	authors="drewm"
 	manager="timlt"
 	editor=""
 	tags="azure-service-management,azure-resource-manager"/>
@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="vm-multiple"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/23/2015"
-	ms.author="kenazk"/>
+	ms.date="01/05/2016"
+	ms.author="drewm"/>
 
 
 # Geplante Wartung für virtuelle Azure-Computer
@@ -72,6 +72,11 @@ Nach der Wiederherstellung eines virtuellen Computers ist in der Windows-Ereigni
 <!--Image reference-->
 ![][image2]
 
+Ermitteln Sie mithilfe der Ereignisanzeige, welche virtuellen Maschinen (über das Azure-Portal, über Azure PowerShell oder über die Azure-Befehlszeilenschnittstelle) als Teil einer Konfiguration mit mehreren Instanzen konfiguriert wurden. Beispiel: Um zu ermitteln, welche virtuellen Maschinen sich in einer Konfiguration mit mehreren Instanzen befinden, können Sie die Liste der virtuellen Maschinen durchsuchen. Fügen Sie dazu die Spalte „Verfügbarkeitsgruppe“ zum Dialogfeld „Durchsuchen“ der virtuellen Maschinen hinzu. Im folgenden Beispiel befinden sich die virtuellen Maschinen „Example-VM1“ und „Example-VM2“ in einer Konfiguration mit mehreren Instanzen:
+
+<!--Image reference-->
+![][image4]
+
 ## Konfigurationsupdates bei einzelnen Instanzen
 
 Nachdem die Konfigurationsupdates bei mehreren Instanzen abgeschlossen sind, führt Azure die Konfigurationsupdates für einzelne Instanzen durch. Durch diese Aktualisierung wird auch für virtuelle Computer ein Neustart ausgelöst, die nicht in Verfügbarkeitsgruppen laufen.
@@ -99,7 +104,7 @@ Region 1 | Region 2
 :----- | ------:
 USA (Mitte/Norden) | USA (Mitte/Süden)
 USA (Ost) | USA (West)
-USA, Osten 2 | USA (Mitte)
+USA (Ost 2) | USA (Mitte)
 Nordeuropa | Westeuropa
 Südostasien | Ostasien
 Ostchina | Nordchina
@@ -114,10 +119,11 @@ Beispiel: Während einer geplanten Wartung stellt Azure für "USA (West)" kein U
 [image1]: ./media/virtual-machines-planned-maintenance/vmplanned1.png
 [image2]: ./media/virtual-machines-planned-maintenance/EventViewerPostReboot.png
 [image3]: ./media/virtual-machines-planned-maintenance/RegionPairs.PNG
+[image4]: ./media/virtual-machines-planned-maintenance/AvailabilitySetExample.png
 
 
 <!--Link references-->
 [Virtual Machines Manage Availability]: virtual-machines-windows-tutorial.md
 [Understand planned versus unplanned maintenance]: virtual-machines-manage-availability.md#Understand-planned-versus-unplanned-maintenance/
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_0121_2016-->

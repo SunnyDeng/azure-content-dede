@@ -4,8 +4,8 @@
     services="storage"
     documentationCenter=".net"
     authors="tamram"
-    manager="adinah"
-    editor=""/>
+    manager="carmonm"
+    editor="tysonn"/>
 
 <tags
     ms.service="storage"
@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-	ms.date="09/23/2015"
-    ms.author="tamram"/>
+    ms.date="01/05/2016"
+    ms.author="dineshm"/>
 
 # Verwenden des Tabellenspeichers mit C++
 
@@ -414,4 +414,4 @@ Nachdem Sie sich nun mit den Grundlagen von Tabellenspeichern vertraut gemacht h
 -	[Referenz zur Speicherclientbibliothek für C++](http://azure.github.io/azure-storage-cpp)
 -	[Azure Storage-Dokumentation](http://azure.microsoft.com/documentation/services/storage/)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

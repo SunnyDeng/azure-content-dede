@@ -17,18 +17,20 @@
    ms.author="claudioc"/>
 
 # Reliable Actors-Entwurfsmuster: Verteilte Netzwerke und Diagramme
-Service Fabric Reliable Actors ist ideal geeignet für die Modellierung von komplexen Lösungen mit Beziehungen und für die Modellierung dieser Beziehungen als Objekte.
+Das Azure Service Fabric Reliable Actors-Programmiermodell ist ideal geeignet für die Modellierung komplexer Lösungen mit Beziehungen und für die Modellierung dieser Beziehungen als Objekte.
 
-![][1]
+![Modellierung von Azure Service Fabric Reliable Actors][1]
 
-Wie das Diagramm veranschaulicht, ist es einfach, einen Benutzer als Actor-Instanz (Knoten im Netzwerk) zu modellieren. Zum Beispiel können Benutzer über den "Freunde-Feed" (manchmal auch als "Follower-Problem" bezeichnet) Statusaktualisierungen von Personen anzeigen, mit denen sie verbunden sind, ähnlich wie bei Facebook und Twitter. Das Actor-Modell bietet die Flexibilität, um das Materialisierungsproblem anzugehen. Es ist möglich, den Freunde-Feed jederzeit zu befüllen und den Freunde-Feed aller meiner Freunde zu dem Zeitpunkt zu aktualisieren, zu dem ein Update bereitgestellt wird, wie unten dargestellt:
+Wie das obige Diagramm veranschaulicht, ist es einfach, einen Benutzer als Actor-Instanz (Knoten im Netzwerk) zu modellieren. Zum Beispiel können Benutzer über den „Freunde-Feed“ (manchmal auch als „Follower-Problem“ bezeichnet) Statusaktualisierungen von Personen anzeigen, mit denen sie verbunden sind, ähnlich wie bei Facebook und Twitter.
 
-![][2]
+Das Reliable Actors-Modell bietet einen flexiblen Ansatz für das Materialisierungsproblem. Es ist möglich, den Freunde-Feed jederzeit aufzufüllen und den Freunde-Feed aller Freunde zu dem Zeitpunkt zu aktualisieren, zu dem ein Update bereitgestellt wird, wie unten dargestellt:
+
+![Das Reliable Actors-Modell und Auffüllen des Freunde-Feeds][2]
 
 
-## Code-Beispiel für intelligenten Cache – Freunde-Feed sozialer Netzwerke (Ereigniszeit)
+## Codebeispiel für intelligenten Cache – Freunde-Feed in sozialen Netzwerken (Ereigniszeit)
 
-Beispielcode zum Befüllen des Freunde-Feeds:
+Beispielcode zum Auffüllen des Freunde-Feeds:
 
 ```csharp
 public interface ISocialPerson : IActor
@@ -122,7 +124,11 @@ public class SocialPerson : StatefulActor<SocialPersonState>, ISocialPerson
 }
 ```
 
-Alternativ können wir unsere Actors für die Erweiterung und Kompilierung des Freunde-Feeds auf dem Abfrage-Timer modellieren, mit anderen Worten, wann der Benutzer seinen Freunde-Feed anfordert. Eine weitere Methode, die verwendet werden kann, ist die Materialisierung des Freunde-Feeds auf einem Timer, z. B. alle 5 Minuten. Oder wir können das Modell optimieren, und Ereigniszeit- sowie Abfragezeitverarbeitung mit einem Timer-basierten Modell kombinieren, das auf Benutzergewohnheiten basiert, z. B. wie häufig eine Anmeldung erfolgt oder ein Update gepostet wird. Beim Modellieren eines Actors in einem sozialen Netzwerk sollten auch "Superuser", Benutzer mit Millionen von Followern, berücksichtigt werden. Entwickler sollten Status und Verhalten solcher Benutzer unterschiedlich modellieren, um den Anforderungen zu entsprechen. Analog gilt, wenn eine Aktivität modelliert werden soll, die viele Benutzer-Actors mit einem einzelnen Aktivitäten-Actor (Hub and Spoke) verbindet, so kann dies ebenfalls durchgeführt werden. Gruppenchat- oder Spiele-Hosting-Szenarien sind zwei Beispiele. Nehmen wir das Gruppenchat-Beispiel. Eine Reihe von Teilnehmern erstellt einen Gruppenchat-Actor, der Nachrichten von einem Teilnehmer an die Gruppe verteilen kann, siehe das folgende Beispiel:
+Alternativ können Sie Actors für die Verbreitung und Kompilierung des Freunde-Feeds auf dem Abfragetimer modellieren, wenn der Benutzer den Freunde-Feed anfordert. Sie können den Freunde-Feed auch mit einem Timer (z. B. alle fünf Minuten) materialisieren. Sie können das Modell jedoch auch optimieren und die Verarbeitung sowohl zur Ereigniszeit als auch zur Abfragezeit mit einem Timer-basierten Modell kombinieren, das auf Benutzergewohnheiten basiert, z. B. wie häufig eine Anmeldung erfolgt oder ein Update gepostet wird.
+
+Beim Modellieren eines Actors in einem sozialen Netzwerk sollten auch „Superuser“, also Benutzer mit Millionen von Followern, berücksichtigt werden. Entwickler sollten Status und Verhalten solcher Benutzer anders modellieren, um den Anforderungen zu entsprechen.
+
+Analog gilt, wenn eine Aktivität modelliert werden soll, die viele Benutzer-Actors mit einem einzelnen Aktivitäten-Actor (Hub and Spoke) verbindet, so ist dies ebenfalls möglich. Gruppenchat- und Gamehosting sind zwei Beispiele. Sehen wir uns das Beispiel des Gruppenchats an. Eine Reihe von Teilnehmern erstellt einen Gruppenchat-Actor, der Nachrichten von einem Teilnehmer an die Gruppe verteilen kann. Dies wird im unten gezeigten Beispiel dargestellt:
 
 ## Codebeispiel für intelligenten Cache – Gruppenchat
 
@@ -202,20 +208,20 @@ public Task PublishMessageAsync(long participantId, string message)
 }
 ```
 
-Eigentlich wird lediglich die Fähigkeit von Reliable Actors genutzt, jeden anderen Actor im Cluster über die ID zu adressieren und mit ihm zu kommunizieren, ohne sich um Platzierung, Adressierung, Zwischenspeichern, Messaging, Serialisierung oder Routing Gedanken machen zu müssen.
+Dieser Ansatz nutzt die Fähigkeit des Reliable Actors-Modells, jedem Actor das Ansprechen jedes anderen Actors im Cluster nach ID zu erlauben. Sie können kommunizieren, ohne sich über Ort, Adressierung, Zwischenspeichern, Messaging, Serialisierung oder Routing Gedanken zu machen.
 
 ## Nächste Schritte
 [Muster: Intelligenter Cache](service-fabric-reliable-actors-pattern-smart-cache.md)
 
-[Muster: Ressourcenkontrolle](service-fabric-reliable-actors-pattern-resource-governance.md)
+[Muster: Ressourcengovernance](service-fabric-reliable-actors-pattern-resource-governance.md)
 
-[Muster: Komposition zustandsbehafteter Dienste](service-fabric-reliable-actors-pattern-stateful-service-composition.md)
+[Muster: Zusammenstellung statusbehafteter Dienste](service-fabric-reliable-actors-pattern-stateful-service-composition.md)
 
 [Muster: Internet der Dinge](service-fabric-reliable-actors-pattern-internet-of-things.md)
 
 [Muster: Verteilte Berechnung](service-fabric-reliable-actors-pattern-distributed-computation.md)
 
-[Beispiele für Antimuster](service-fabric-reliable-actors-anti-patterns.md)
+[Einige Antimuster](service-fabric-reliable-actors-anti-patterns.md)
 
 [Einführung in Service Fabric Actors](service-fabric-reliable-actors-introduction.md)
 
@@ -224,4 +230,4 @@ Eigentlich wird lediglich die Fähigkeit von Reliable Actors genutzt, jeden ande
 [1]: ./media/service-fabric-reliable-actors-pattern-distributed-networks-and-graphs/distributedNetworks_arch1.png
 [2]: ./media/service-fabric-reliable-actors-pattern-distributed-networks-and-graphs/distributedNetworks_arch2.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0121_2016-->

@@ -5,7 +5,7 @@
 	documentationCenter=""
 	authors="swkrish"
 	manager="msmbaldwin"
-	editor="curtand"/>
+	editor="bryanla"/>
 
 <tags
 	ms.service="active-directory-b2c"
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/22/2015"
+	ms.date="01/04/2016"
 	ms.author="swkrish"/>
 
 # Azure Active Directory B2C-Vorschau: Aktivieren der Multi-Factor Authentication in kundenorientierten Anwendungen
@@ -31,7 +31,7 @@ Mithilfe dieses Features können Anwendungen Szenarien wie die folgenden behande
 
 ## Ändern der Registrierungsrichtlinie, um die Multi-Factor Authentication zu aktivieren
 
-1. [Navigieren Sie zum B2C-Featureblatt im Azure-Vorschauportal](active-directory-b2c-app-registration.md#navigate-to-the-b2c-features-blade).
+1. [Führen Sie diese Schritte aus, um im Azure-Portal zum Blatt „B2C-Funktionen“ zu navigieren](active-directory-b2c-app-registration.md#navigate-to-the-b2c-features-blade).
 2. Klicken Sie auf **Registrierungsrichtlinien**.
 3. Öffnen Sie die Registrierungsrichtlinie (z. B. "B2C\_1\_SiUp"), indem Sie darauf klicken.
 4. Klicken Sie auf **Multi-Factor Authentication**, und legen Sie den **Status** auf **EIN** fest. Klicken Sie auf **OK**.
@@ -43,7 +43,7 @@ In Ihrem Verzeichnis wird ein Kundenkonto erstellt, bevor der Schritt für die M
 
 ## Ändern der Anmelderichtlinie, um die Multi-Factor Authentication zu aktivieren
 
-1. Navigieren Sie zum B2C-Featureblatt im [Azure-Vorschauportal](htts://portal.azure.com/). Informationen zur Vorgehensweise finden Sie [hier](active-directory-b2c-app-registration.md#navigate-to-the-b2c-features-blade).
+1. [Führen Sie diese Schritte aus, um im Azure-Portal zum Blatt „B2C-Funktionen“ zu navigieren](active-directory-b2c-app-registration.md#navigate-to-the-b2c-features-blade).
 2. Klicken Sie auf **Anmelderichtlinien**.
 3. Öffnen Sie die Anmelderichtlinie (z. B. "B2C\_1\_SiIn"), indem Sie darauf klicken. Klicken Sie oben auf dem Blatt auf **Bearbeiten**.
 4. Klicken Sie auf **Multi-Factor Authentication**, und legen Sie den **Status** auf **EIN** fest. Klicken Sie auf **OK**.
@@ -53,4 +53,4 @@ Mit dem Feature "Jetzt ausführen" für die Richtlinie können Sie die Benutzere
 
 Wenn sich der Kunde (mit einem lokalen Konto oder dem Konto eines sozialen Netzwerks) anmeldet und eine bestätigte Telefonnummer an das Kundenkonto angefügt wurde, wird der aufgefordert, diese zu bestätigen. Wenn keine Telefonnummer angefügt ist, wird der Kunde aufgefordert, eine anzugeben und zu bestätigen. Bei erfolgreicher Bestätigung wird die Telefonnummer zur späteren Verwendung an das Kundenkonto angefügt.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

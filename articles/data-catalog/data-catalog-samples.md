@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="12/02/2015"
+   ms.date="01/20/2015"
    ms.author="derrickv"/>
 
 
@@ -26,8 +26,12 @@ Hier sind die Beispiele, die auf GitHub zu finden sind:
 
   Das Beispiel veranschaulicht, wie die Authentifizierung mit Azure AD erfolgt, um Datenassets mithilfe der Data Catalog-REST-API zu registrieren, zu durchsuchen und zu löschen.
 
-- [Azure Data Catalog – Massenregistrierung und -kommentierung](https://azure.microsoft.com/documentation/samples/data-catalog-dotnet-excel-register-data-assets/)
+- [Massenregistrierung und -kommentierung](https://azure.microsoft.com/documentation/samples/data-catalog-dotnet-excel-register-data-assets/)
 
-  Dieses Beispiel erklärt, wie Sie die Massenregistrierung von Datenassets aus einer Excel-Arbeitsmappe mithilfe von Data Catalog-REST-API und Open XML durchführen.
+  Dieses Beispiel zeigt, wie Sie die Massenregistrierung von Datenassets aus einer Excel-Arbeitsmappe mithilfe von Data Catalog-REST-API und Open XML durchführen.
 
-<!---HONumber=AcomDC_1203_2015-->
+- [Import-/Exporttool](https://azure.microsoft.com/documentation/samples/data-catalog-dotnet-import-export/)
+
+  Dieses Beispiel zeigt, wie Sie mithilfe der Data Catalog-REST-API Assets aus dem Azure Data Catalog abrufen und in einer Datei serialisieren. Es veranschaulicht außerdem, wie eine Gruppe von Assets als JSON serialisiert und in den Katalog übertragen wird. Es unterstützt das Exportieren einer Teilmenge des Katalogs mithilfe einer Suchabfrage.
+
+<!---HONumber=AcomDC_0121_2016-->

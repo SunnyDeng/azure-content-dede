@@ -15,7 +15,7 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/27/2015"
+	ms.date="01/08/2016"
 	ms.author="dkshir"/>
 
 # Behandeln von Problemen mit Secure Shell (SSH)-Verbindungen mit einem Linux-basierten virtuellen Azure-Computer
@@ -37,11 +37,11 @@ Alternativ dazu haben Sie die Möglichkeit, einen Azure-Supportfall zu erstellen
 
 Führen Sie die folgenden Schritte aus, um häufige SSH-Verbindungsfehler für virtuelle Computer zu beheben, die mit dem klassischen Bereitstellungsmodell erstellt werden:
 
-1. **Remotezugriff zurücksetzen** über das [Azure-Portal](https://portal.azure.com). Klicken Sie auf **Alle durchsuchen** > **Virtuelle Computer (klassisch)** > Ihr virtueller Windows-Computer > **Remotezugriff zurücksetzen**.
+1. **Remotezugriff zurücksetzen** über das [Azure-Portal](https://portal.azure.com). Klicken Sie auf **Alle durchsuchen** > **Virtuelle Computer (klassisch)**, und wählen Sie dann die virtuelle Maschine aus, die Sie zurücksetzen möchten. Klicken Sie anschließend auf **Remotezugriff zurücksetzen**.
 
 	![Screenshot, auf dem das Zurücksetzen der SSH-Konfiguration dargestellt ist](./media/virtual-machines-troubleshoot-ssh-connections/Portal-SSH-Reset-Windows.png)
 
-2. Führen Sie einen **Neustart** des virtuellen Computers aus. Klicken Sie im [Azure-Portal](https://portal.azure.com) auf **Alle durchsuchen** > **Virtuelle Computer (klassisch)** > Ihr virtueller Windows-Computer > **Neustart**. Öffnen Sie im [klassischen Azure-Portal](https://manage.windowsazure.com) nacheinander **Virtuelle Computer** > **Instanzen**, und klicken Sie dann auf **Neu starten**.
+2. Führen Sie einen **Neustart** des virtuellen Computers aus. Klicken Sie im [Azure-Portal](https://portal.azure.com) auf **Alle durchsuchen** > **Virtuelle Computer (klassisch)**, und wählen Sie dann die virtuelle Maschine aus, die Sie neu starten möchten. Klicken Sie anschließend auf **Neu starten**. Öffnen Sie im [klassischen Azure-Portal](https://manage.windowsazure.com) nacheinander **Virtuelle Computer** > **Instanzen**, und klicken Sie dann auf **Neu starten**.
 
 3. [**Ändern Sie die Größe** des virtuellen Computers](https://msdn.microsoft.com/library/dn168976.aspx).
 
@@ -104,7 +104,7 @@ Führen Sie die folgenden Schritte aus, um häufige SSH-Probleme für virtuelle 
 	Switch-AzureMode -Name AzureResourceManager
 	```
 
-	c. Führen Sie die `VMAccessForLinux`-Erweiterung aus, um die SSH-Verbindung wie im folgenden Beispiel gezeigt zurückzusetzen.
+	c. Führen Sie die `VMAccessForLinux`-Erweiterung aus, um die SSH-Verbindung wie im folgenden Beispiel gezeigt zurückzusetzen. (Wenn Sie Azure PowerShell 1.0 oder höher verwenden, lautet das folgende Cmdlet `Set-AzureRMVMExtension`.)
 
 	```
 	Set-AzureVMExtension -ResourceGroupName "testRG" -VMName "testVM" -Location "West US" -Name "VMAccessForLinux" -Publisher "Microsoft.OSTCExtensions" -ExtensionType "VMAccessForLinux" -TypeHandlerVersion "1.2" -SettingString "{}" -ProtectedSettingString '{"reset_ssh":true}'
@@ -186,7 +186,7 @@ Im [klassischen Azure-Portal](https://manage.windowsazure.com) für virtuelle Co
 Im [Azure-Portal](https://portal.azure.com):
 
 1. Klicken Sie für einen virtuellen Computer, der mit dem klassischen Bereitstellungsmodell erstellt wurde, auf **Durchsuchen** > **Virtuelle Computer (klassisch)** > *VM-Name*. Klicken Sie für einen virtuellen Computer, der mit dem Ressourcen-Manager erstellt wurde, auf **Durchsuchen** > **Virtuelle Computer (v2)** > *VM-Name*. Im Statusbereich für den virtuellen Computer wird **Wird ausgeführt** angezeigt. Führen Sie einen Bildlauf nach unten durch, um aktuelle Aktivitäten für Compute-, Speicher- und Netzwerkressourcen anzuzeigen.
-2. Klicken Sie auf **Einstellungen**, um Endpunkte, IP-Adressen und andere Einstellungen zu überprüfen. Um Endpunkte in virtuellen Computern zu identifizieren, die mit dem Ressourcen-Manager erstellt wurden, überprüfen Sie Folgendes: ob eine [Netzwerksicherheitsgruppe](../traffic-manager/virtual-networks-nsg.md) definiert ist, die darauf angewendeten Regeln und das Vorhandensein eines Verweises darauf im Subnetz.
+2. Klicken Sie auf **Einstellungen**, um Endpunkte, IP-Adressen und andere Einstellungen zu überprüfen. Um Endpunkte in virtuellen Computern zu identifizieren, die mit dem Ressourcen-Manager erstellt wurden, überprüfen Sie Folgendes: ob eine [Netzwerksicherheitsgruppe](../virtual-network/virtual-networks-nsg.md) definiert ist, die darauf angewendeten Regeln und das Vorhandensein eines Verweises darauf im Subnetz.
 
 Analysieren Sie zum Überprüfen der Netzwerkverbindung die konfigurierten Endpunkte, und testen Sie, ob der virtuelle Computer über ein anderes Protokoll (z. B. HTTP oder über einen anderen Dienst) erreichbar ist.
 
@@ -261,7 +261,7 @@ Entfernen Sie den aktuellen Endpunkt, und erstellen Sie einen neuen Endpunkt mit
 <a id="nsg"></a>
 #### Quelle 4: Netzwerksicherheitsgruppen
 
-Netzwerk-Sicherheitsgruppen ermöglichen Ihnen eine präzisere Steuerung des zulässigen eingehenden und ausgehenden Datenverkehrs. Sie können Regeln erstellen, die mehrere Subnetze und Clouddienste in einem virtuellen Azure-Netzwerk umfassen. Überprüfen Sie die Regeln der Netzwerksicherheitsgruppe, um sicherzustellen, dass sowohl eingehender als auch ausgehender SSH-Datenverkehr über das Internet zulässig ist. Weitere Informationen finden Sie unter [Informationen zu Netzwerksicherheitsgruppen](../traffic-manager/virtual-networks-nsg.md).
+Netzwerk-Sicherheitsgruppen ermöglichen Ihnen eine präzisere Steuerung des zulässigen eingehenden und ausgehenden Datenverkehrs. Sie können Regeln erstellen, die mehrere Subnetze und Clouddienste in einem virtuellen Azure-Netzwerk umfassen. Überprüfen Sie die Regeln der Netzwerksicherheitsgruppe, um sicherzustellen, dass sowohl eingehender als auch ausgehender SSH-Datenverkehr über das Internet zulässig ist. Weitere Informationen finden Sie unter [Informationen zu Netzwerksicherheitsgruppen](../virtual-network/virtual-networks-nsg.md).
 
 #### Quelle 5: Linux-basierter virtueller Azure-Computer
 
@@ -287,4 +287,4 @@ Für virtuelle Computer im klassischen Bereitstellungsmodell: [Zurücksetzen ein
 
 [Problembehandlung beim Zugriff auf eine Anwendung, die auf einem virtuellen Azure-Computer ausgeführt wird](virtual-machines-troubleshoot-access-application.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0121_2016-->

@@ -5,7 +5,7 @@
 	documentationCenter=""
 	authors="jasonnewyork"
 	manager="tadb"
-	editor=""/>
+	editor="tysonn"/>
 
 <tags
 	ms.service="storage"
@@ -831,7 +831,7 @@ Um Speicherprotokollierungsdaten in Excel zu importieren, nachdem Sie diese aus 
 
 In Schritt 1 des **Textimport-Assistenten**, wählen Sie **Semikolon** als einziges Trennungszeichen und Anführungszeichen als **Textbegrenzungszeichen** aus. Klicken Sie anschließend auf **Fertigstellen** und wählen Sie aus, wo Sie die Datei in Ihrer Arbeitsmappe ablegen möchten.
 
-### <a name="appendix-5"></a>Anhang 5: Überwachung mit Application Insights für Visual Studio Team Services
+### <a name="appendix-5"></a>Anhang 5: Überwachung mit Application Insights für Visual Studio Team Services
 
 Sie können die Application Insights-Funktion für Visual Studio Team Services auch als Bestandteil der Leistungs- und Verfügbarkeitsüberwachung verwenden. Dieses Tool kann:
 
@@ -920,4 +920,4 @@ Zum Redaktionszeitpunkt befindet sich Application Insights in der Vorschau. Weit
 [9]: ./media/storage-monitoring-diagnosing-troubleshooting-classic-portal/mma-screenshot-1.png
 [10]: ./media/storage-monitoring-diagnosing-troubleshooting-classic-portal/mma-screenshot-2.png
 
-<!----HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0114_2016-->

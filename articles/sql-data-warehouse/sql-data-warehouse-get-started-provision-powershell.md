@@ -13,8 +13,8 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/04/2016"
-   ms.author="lodipalm"/>
+   ms.date="01/25/2016"
+   ms.author="lodipalm;barbkess;sonyama"/>
 
 # Erstellen von SQL Data Warehouse mithilfe von Powershell
 
@@ -23,25 +23,47 @@
 - [TSQL](sql-data-warehouse-get-started-create-database-tsql.md)
 - [PowerShell](sql-data-warehouse-get-started-provision-powershell.md)
 
-> [AZURE.NOTE]Damit Sie Microsoft Azure Powershell mit SQL Data Warehouse verwenden können, benötigen Sie Version 0.9.4 oder höher. Sie können die Version überprüfen, indem Sie "(Get-Module Azure).Version" in PowerShell ausführen.
-
 ## Abrufen und Ausführen der Azure PowerShell-Cmdlets
-Wenn Sie Powershell nicht bereits eingerichtet haben, gehen Sie wie folgt vor:
+
+> [AZURE.NOTE]  Zum Verwenden von Microsoft Azure PowerShell mit SQL Data Warehouse sollten Sie die aktuelle Version von Azure PowerShell mit ARM-Cmdlets herunterladen und installieren. Sie können Ihre Version überprüfen, indem Sie `Get-Module -ListAvailable -Name Azure` ausführen. Dieser Artikel basiert auf Microsoft Azure PowerShell Version 1.0.3.
+
+Wenn Sie PowerShell noch nicht eingerichtet haben, müssen Sie PowerShell herunterladen und konfigurieren.
 
 1. Führen Sie zum Herunterladen des Azure PowerShell-Moduls den [Microsoft-Webplattform-Installer](http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409) aus.
 2. Geben Sie zum Ausführen des Moduls auf der Startseite **Microsoft Azure PowerShell** ein.
-3. Falls Sie Ihr Konto noch nicht dem Computer hinzugefügt haben, führen Sie das folgende Cmdlet aus. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][]\:
+3. Führen Sie dieses Cmdlet aus, um sich am Azure-Ressourcen-Manager anzumelden. Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell][].
 
-            Add-AzureAccount
+	```
+	Login-AzureRmAccount
+	```
 
-4. Sie müssen PowerShell auch im ARM-Modus ausführen. Sie wechseln in diesen Modus, indem Sie den folgenden Befehl ausführen:
+4. Wählen Sie das Abonnement aus, das Sie für Ihre aktuelle Sitzung verwenden möchten.
 
-            switch-azuremode AzureResourceManager
+	```
+	Get-AzureRmSubscription	-SubscriptionName "MySubscription" | Select-AzureRmSubscription
+	```
+   
+## Erstellen einer SQL Data Warehouse-Datenbank
+Verwenden Sie das New-AzureRmSQLDatabase-Cmdlet, um eine SQL Data Warehouse-Einheit bereitzustellen. Stellen Sie vor dem Ausführen des Befehls sicher, dass die unten angegebenen Voraussetzungen erfüllt sind.
 
-## Erstellen von SQL Data Warehouse
-Nachdem PowerShell ordnungsgemäß unter Ihrem Konto eingerichtet ist, führen Sie Folgendes aus, um ein neues SQL Data Warehouse bereitzustellen:
+### Voraussetzungen
 
-        New-AzureSqlDatabase -RequestedServiceObjectiveName "<Service Objective>" -DatabaseName "<Data Warehouse Name>" -ServerName "<Server Name>" -ResourceGroupName "<ResourceGroupName>" -Edition "DataWarehouse"
+- V12 Azure SQL Server zum Hosten der Datenbank
+- Ressourcengruppenname für SQL Server liegt vor
+
+### Bereitstellungsbefehl
+
+Mit diesem Befehl wird eine neue Datenbank in SQL Data Warehouse bereitgestellt.
+
+```
+New-AzureRmSqlDatabase -RequestedServiceObjectiveName "<Service Objective>" -DatabaseName "<Data Warehouse Name>" -ServerName "<Server Name>" -ResourceGroupName "<ResourceGroupName>" -Edition "DataWarehouse"
+```
+
+In diesem Beispiel wird eine neue Datenbank mit dem Namen „mynewsqldw1“ mit der Dienstzielebene „DW400“ auf dem Server „sqldwserver1“ bereitgestellt, der sich in der Ressourcengruppe „mywesteuroperesgp1“ befindet.
+
+```
+New-AzureRmSqlDatabase -RequestedServiceObjectiveName "DW400" -DatabaseName "mynewsqldw1" -ServerName "sqldwserver1" -ResourceGroupName "mywesteuroperesgp1" -Edition "DataWarehouse"
+```
 
 Die erforderlichen Parameter für dieses Cmdlet lauten wie folgt:
 
@@ -51,8 +73,12 @@ Die erforderlichen Parameter für dieses Cmdlet lauten wie folgt:
  + **ResourceGroupName**: die Ressourcengruppe, die Sie verwenden. Verwenden Sie zum Abrufen der in Ihrem Abonnement verfügbaren Ressourcengruppen das Cmdlet "Get-AzureResourceGroup":
  + **Edition**: Sie müssen die Edition auf "Data Warehouse" festlegen, um ein SQL Data Warehouse zu erstellen. 
 
+Die Befehlsreferenz finden Sie unter [New-AzureRmSqlDatabase](https://msdn.microsoft.com/library/mt619339.aspx).
+
+Die Parameteroptionen finden Sie unter [CREATE DATABASE (Azure SQL Data Warehouse)](https://msdn.microsoft.com/library/mt204021.aspx).
+
 ## Nächste Schritte
-Nach der SQL Data Warehouse-Bereitstellung können Sie [Beispieldaten laden][] oder die Schritte zum [Entwickeln][], [Laden][] oder [Migrieren][] lernen.
+Nach der Bereitstellung von SQL Data Warehouse können Sie [Beispieldaten laden][] oder sich mit dem [Entwickeln][], [Laden][] oder [Migrieren][] befassen.
 
 Weitere Informationen zur programmgesteuerten Verwaltung von SQL Data Warehouse finden Sie in der Dokumentation zu [PowerShell][] und der [REST-API][].
 
@@ -61,14 +87,13 @@ Weitere Informationen zur programmgesteuerten Verwaltung von SQL Data Warehouse 
 <!--Image references-->
 
 <!--Article references-->
-[Migrieren]: https://azure.microsoft.com/de-DE/documentation/articles/sql-data-warehouse-overview-migrate/
-[Entwickeln]: https://azure.microsoft.com/de-DE/documentation/articles/sql-data-warehouse-overview-develop/
-[Laden]: https://azure.microsoft.com/de-DE/documentation/articles/sql-data-warehouse-overview-load/
-[Beispieldaten laden]: https://azure.microsoft.com/de-DE/documentation/articles/sql-data-warehouse-get-started-manually-load-samples/
-[Powershell]: https://azure.microsoft.com/de-DE/documentation/articles/sql-data-warehouse-reference-powershell-cmdlets/
+[Migrieren]: ./sql-data-warehouse-overview-migrate.md
+[Entwickeln]: ./sql-data-warehouse-overview-develop/.md
+[Beispieldaten laden]: ./sql-data-warehouse-get-started-manually-load-samples.md
+[Powershell]: ./sql-data-warehouse-reference-powershell-cmdlets.md
 [REST-API]: https://msdn.microsoft.com/library/azure/dn505719.aspx
 [MSDN]: https://msdn.microsoft.com/library/azure/dn546722.aspx
-[firewall rules]: https://azure.microsoft.com/de-DE/documentation/articles/sql-database-configure-firewall-settings/
-[Installieren und Konfigurieren von Azure PowerShell]: powershell-install-configure.md
+[firewall rules]: ../sql-database/sql-database-configure-firewall-settings.md
+[Installieren und Konfigurieren von Azure PowerShell]: ./powershell-install-configure.md
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

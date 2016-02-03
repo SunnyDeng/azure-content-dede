@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/08/2015"
+	ms.date="12/22/2015"
 	ms.author="swkrish"/>
 
 # Azure Active Directory B2C-Vorschau: Registrieren der Anwendung
@@ -22,32 +22,34 @@
 
 ## Voraussetzung
 
-Zum Erstellen einer Anwendung, die Registrierungen und Anmeldungen von Kunden akzeptiert, müssen Sie sie zunächst bei einem Azure Active Directory B2C-Mandanten registrieren. Die Schritte zum Erstellen Ihres eigenen Mandanten werden [hier](active-directory-b2c-get-started.md) beschrieben. Wenn Sie alle Schritte in diesem Artikel ausgeführt haben, sollte das B2C-Featureblatt an Ihr Startmenü angeheftet sein.
+Zum Erstellen einer Anwendung, die Registrierungen und Anmeldungen von Kunden akzeptiert, müssen Sie sie zunächst bei einem Azure Active Directory B2C-Mandanten registrieren. Die Schritte zum Erstellen Ihres eigenen Mandanten werden [hier](active-directory-b2c-get-started.md) beschrieben. Wenn Sie alle Schritte in diesem Artikel ausgeführt haben, sollte das Blatt „B2C-Funktionen“ an Ihr Startmenü angeheftet sein.
 
 [AZURE.INCLUDE [active-directory-b2c-devquickstarts-v2-apps](../../includes/active-directory-b2c-devquickstarts-v2-apps.md)]
 
-## Navigieren zum B2C-Featureblatt
+## Navigieren zum Blatt „B2C-Funktionen“
 
-Sie haben zwei Möglichkeiten, zum B2C-Featureblatt zu navigieren.
+Sie können im Azure-Portal oder im klassischen Azure-Portal zum Blatt „B2C-Funktionen“ navigieren.
 
-### 1. Direkt im Azure-Vorschauportal
+### 1. Direkt im Azure-Portal
 
-Wenn das Blatt "B2C-Features" an Ihr Startmenü angeheftet ist, sehen Sie es, sobald Sie sich als globaler Administrator des B2C-Mandanten beim [Azure-Vorschauportal](https://portal.azure.com/) anmelden.
+Wenn das Blatt „B2C-Funktionen“ an Ihr Startmenü angeheftet ist, sehen Sie es, sobald Sie sich als globaler Administrator des B2C-Mandanten beim [Azure-Portal](https://portal.azure.com/) anmelden.
 
-Sie können auch direkt auf das Blatt "B2C-Features" zugreifen, indem Sie zu [https://portal.azure.com/{Mandant}.onmicrosoft.com/?Microsoft\_AAD\_B2CAdmin=true#blade/Microsoft\_AAD\_B2CAdmin/TenantManagementBlade/id/{Mandant}.onmicrosoft.com](https://portal.azure.com/{tenant}.onmicrosoft.com/?Microsoft_AAD_B2CAdmin=true#blade/Microsoft_AAD_B2CAdmin/TenantManagementBlade/id/{tenant}.onmicrosoft.com) navigieren, wobei **{Mandant}** durch den Namen ersetzt werden muss, der zum Zeitpunkt der Erstellung des Mandanten verwendet wurde (z. B. "contosob2c"). Melden Sie sich dann als globaler Administrator des B2C-Mandanten an. Sie können ein Lesezeichen für diesen Link erstellen, um in Zukunft darauf zuzugreifen (siehe den nachstehenden Hinweis).
+Sie können auf das Blatt auch zugreifen, indem Sie im [Azure-Portal](https://portal.azure.com/) im linken Navigationsbereich auf **Durchsuchen** und dann auf **Azure AD B2C** klicken.
 
-    > [AZURE.IMPORTANT]
-    You need to be a Global Administrator of the B2C tenant to be able to access the B2C features blade. A Global Administrator from any other tenant or a User from any tenant cannot access it.
+Sie können auch direkt darauf zugreifen, indem Sie zu [https://portal.azure.com/{tenant}.onmicrosoft.com/?#blade/Microsoft\_AAD\_B2CAdmin/TenantManagementBlade/id/](https://portal.azure.com/{tenant}.onmicrosoft.com/?#blade/Microsoft_AAD_B2CAdmin/TenantManagementBlade/id/) navigieren, wobei **{Mandant}** durch den Namen ersetzt werden muss, der zum Zeitpunkt der Erstellung des Mandanten verwendet wurde (z. B. „contosob2c“). Sie können ein Lesezeichen für diesen Link erstellen, um in Zukunft darauf zuzugreifen.
 
-### 2\. Zugriff über das Azure-Portal
+   >[AZURE.IMPORTANT]
+   Sie müssen als globaler Administrator des B2C-Mandanten festgelegt sein, um auf das Blade mit den B2C-Features zugreifen zu können. Globale Administratoren anderer Mandanten oder Benutzer von Mandanten haben keinen Zugriff.
 
-Melden Sie sich beim [Azure-Portal](https://manage.windowsazure.com/) als Abonnementadministrator an (dabei handelt es sich um das gleiche Geschäfts- oder Schulkonto bzw. das gleiche Microsoft-Konto, mit dem Sie sich bei Azure registriert haben). Navigieren Sie links zur Active Directory-Erweiterung, und klicken Sie auf den B2C-Mandanten. Klicken Sie auf der Registerkarte **Schnellstart** (die Registerkarte, die als Erstes geöffnet wird) unter **Verwalten** auf **B2C-Einstellungen verwalten**. Das B2C-Featureblatt in einem neuen Browserfenster oder die Registerkarte wird geöffnet.
+### 2. Zugriff über das klassische Azure-Portal
+
+Melden Sie sich beim [klassischen Azure-Portal](https://manage.windowsazure.com/) als Abonnementadministrator an (dabei handelt es sich um das gleiche Geschäfts- oder Schulkonto bzw. das gleiche Microsoft-Konto, mit dem Sie sich bei Azure registriert haben). Navigieren Sie links zur Active Directory-Erweiterung, und klicken Sie auf den B2C-Mandanten. Klicken Sie auf der Registerkarte **Schnellstart** (die Registerkarte, die als Erstes geöffnet wird) unter **Verwalten** auf **B2C-Einstellungen verwalten**. Das Blatt „B2C-Funktionen“ wird in einem neuen Browserfenster oder einer neuen Registerkarte geöffnet.
 
 Sie finden den Link **B2C-Einstellungen verwalten** außerdem auf der Registerkarte **Konfigurieren** (im Abschnitt **B2C-Verwaltung**).
 
 ## Registrieren einer Anwendung
 
-1. Klicken Sie auf dem Blatt "B2C-Features" im Azure-Vorschauportal auf **Anwendungen**.
+1. Klicken Sie auf dem Blatt „B2C-Funktionen“ im Azure-Portal auf **Anwendungen**.
 2. Klicken Sie oben auf dem Blatt auf **+Hinzufügen**.
 3. Der **Name** der Anwendung sollte die Funktion der Anwendung für Kunden beschreiben. Geben Sie z. B. "Contoso B2C-App" ein.
 4. Wenn Sie eine webbasierte Anwendung entwickeln, stellen Sie den Schalter **Web-App/Web-API einschließen** auf **Ja**. Die **Antwort-URLs** sind Endpunkte, an denen von Azure AD B2C von Ihrer Anwendung angeforderte Token zurückgegeben werden. Geben Sie z. B. Folgendes ein: `https://localhost:44321/`. Wenn Ihre Anwendung eine serverseitige Komponente (API) umfasst, die geschützt werden muss, sollten Sie jetzt ein **Anwendungsgeheimnis** erstellen (und kopieren), indem Sie auf die Schaltfläche **Schlüssel erzeugen** klicken.
@@ -65,4 +67,4 @@ Nachdem Sie über eine bei Azure AD B2C registrierte Anwendung verfügen, könne
 
 [AZURE.INCLUDE [active-directory-v2-quickstart-table](../../includes/active-directory-b2c-quickstart-table.md)]
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

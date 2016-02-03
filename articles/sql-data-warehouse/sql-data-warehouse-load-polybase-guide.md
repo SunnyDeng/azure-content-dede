@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="12/17/2015"
-   ms.author="sahaj08;barbkess"/>
+   ms.date="01/07/2016"
+   ms.author="sahajs;barbkess;sonyama"/>
 
 
 # Anleitung für die Verwendung von PolyBase in SQL Data Warehouse
@@ -210,4 +210,4 @@ Weitere Informationen zum Verschieben von Daten in SQL Data Warehouse finden Sie
 [CREATE DATABASE SCOPED CREDENTIAL (Transact-SQL)]: https://msdn.microsoft.com/library/mt270260.aspx
 [DROP CREDENTIAL (Transact-SQL)]: https://msdn.microsoft.com/library/ms189450.aspx
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0114_2016-->

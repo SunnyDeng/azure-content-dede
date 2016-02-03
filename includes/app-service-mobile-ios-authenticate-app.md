@@ -1,21 +1,47 @@
-1. Öffnen Sie auf dem Mac **QSTodoListViewController.m** in Xcode, und fügen Sie folgende Methode hinzu. Ändern Sie _Facebook_ zu _MicrosoftAccount_, _Twitter_, _Google_ oder _WindowsAzureActiveDirectory_, wenn Sie Facebook nicht als Identitätsanbieter nutzen.
+**Objective-C**:
 
-        - (void) loginAndGetData
-        {
-            MSClient *client = self.todoService.client;
-            if (client.currentUser != nil) {
-                return;
+1. Öffnen Sie auf dem Mac _QSTodoListViewController.m_ in Xcode, und fügen Sie folgende Methode hinzu. Wenn Sie Google nicht als Identitätsanbieter nutzen, ändern Sie _google_ zu _microsoftaccount_, _twitter_, _facebook_ oder _windowsazureactivedirectory_. Wenn Sie Facebook verwenden, [müssen Sie die Facebook-Domänen der Positivliste in Ihrer App hinzufügen](https://developers.facebook.com/docs/ios/ios9#whitelist).
+
+            - (void) loginAndGetData
+            {
+                MSClient *client = self.todoService.client;
+                if (client.currentUser != nil) {
+                    return;
+                }
+            
+                [client loginWithProvider:@"google" controller:self animated:YES completion:^(MSUser *user, NSError *error) {
+                    [self refresh];
+                }];
             }
 
-            [client loginWithProvider:@"facebook" controller:self animated:YES completion:^(MSUser *user, NSError *error) {
-                [self refresh];
-            }];
-        }
 
-2. Ersetzen Sie `[self refresh]` in `viewDidLoad` durch Folgendes:
+2. In _QSTodoListViewController.m_ ersetzen Sie `[self refresh]` in `viewDidLoad` durch Folgendes:
 
-        [self loginAndGetData];
+            [self loginAndGetData];
 
-3. Klicken Sie **Ausführen**, um die App zu starten und melden Sie sich an. Nach der Anmeldung sollten Sie die Todo-Liste anzeigen und Änderungen vornehmen können.
+3. Klicken Sie _Ausführen_, um die App zu starten und melden Sie sich an. Nach der Anmeldung sollten Sie die Todo-Liste anzeigen und Änderungen vornehmen können.
 
-<!---HONumber=Oct15_HO3-->
+**Swift**:
+
+1. Öffnen Sie auf dem Mac _ToDoTableViewController.swift_ in Xcode, und fügen Sie folgende Methode hinzu. Wenn Sie Google nicht als Identitätsanbieter nutzen, ändern Sie _google_ zu _microsoftaccount_, _twitter_, _facebook_ oder _windowsazureactivedirectory_. Wenn Sie Facebook verwenden, [müssen Sie die Facebook-Domänen der Positivliste in Ihrer App hinzufügen](https://developers.facebook.com/docs/ios/ios9#whitelist).
+        
+            func loginAndGetData()
+            {
+                let client = self.table!.client
+                if client.currentUser != nil {
+                    return
+                }
+                    
+                client.loginWithProvider("google", controller: self, animated: true, completion: { (user, error) -> Void in
+                    self.refreshControl?.beginRefreshing()
+                    self.onRefresh(self.refreshControl)
+                })
+            }
+
+2. Entfernen Sie in _ToDoTableViewController.swift_ die Zeilen `self.refreshControl?.beginRefreshing()` und `self.onRefresh(self.refreshControl)` am Ende von `viewDidLoad()`. Fügen Sie an deren Stelle einen Aufruf von `loginAndGetData()` ein:
+
+            loginAndGetData()
+
+3. Klicken Sie _Ausführen_, um die App zu starten und melden Sie sich an. Nach der Anmeldung sollten Sie die Todo-Liste anzeigen und Änderungen vornehmen können.
+
+<!---HONumber=AcomDC_0107_2016-->

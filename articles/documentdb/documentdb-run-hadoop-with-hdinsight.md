@@ -162,9 +162,8 @@ Dieses Lernprogramm verwendet Skriptaktionen aus dem klassischen Azure-Portal zu
 			<td>Gibt den Standardcontainer im Speicherkonto an, der als Standard-Dateisystem für den HDInsight-Cluster verwendet werden soll. Wenn Sie <strong>Vorhandenen Speicher verwenden</strong> für das Feld <strong>Speicherkonto</strong> wählen und in dem betreffenden Konto keine Container vorhanden sind, wird der Container standardmäßig mit demselben Namen wie der Cluster erstellt. Falls bereits ein Container mit dem Namen des Clusters existiert, wird eine Sequenznummer an den Containernamen angehängt.
         </td></tr>
 		<tr><td>Zusätzliche Speicherkonten</td>
-			<td>HDInsight unterstützt mehrere Speicherkonten. Es gibt keine Beschränkung in Bezug auf die zusätzlichen Speicherkonten, die von einem Cluster verwendet werden können. Wenn Sie den Cluster jedoch im Azure-Portal erstellen, können Sie aufgrund von Einschränkungen der Benutzeroberfläche maximal sieben Speicherkonten einrichten. Für jedes angegebene Speicherkonto wird eine zusätzliche Seite im Assistenten hinzugefügt, in der Sie die Kontoinformationen angeben können.</td></tr>
+			<td>HDInsight unterstützt mehrere Speicherkonten. Es gibt keine Beschränkung in Bezug auf die zusätzlichen Speicherkonten, die von einem Cluster verwendet werden können. Wenn Sie den Cluster jedoch im klassischen Azure-Portal erstellen, können Sie aufgrund von Einschränkungen der Benutzeroberfläche maximal sieben Speicherkonten einrichten. Für jedes angegebene Speicherkonto wird eine zusätzliche Seite im Assistenten hinzugefügt, in der Sie die Kontoinformationen angeben können.</td></tr>
 	</table>
-	
 	Klicken Sie auf den Pfeil nach rechts.
 
 7. Klicken Sie auf der Seite **Skriptaktionen** auf **Skriptaktion hinzufügen**, und geben Sie Einzelheiten zu dem PowerShell-Skript an, das Sie zum Anpassen eines Clusters bei seiner Erstellung ausführen möchten. Über das PowerShell-Skript wird der DocumentDB-Hadoop-Connector auf den HDInsight-Clustern während der Erstellung des entsprechenden Clusters installiert.
@@ -196,7 +195,7 @@ Dieses Lernprogramm verwendet Skriptaktionen aus dem klassischen Azure-Portal zu
 
 2. Öffnen Sie die integrierte Azure PowerShell-Skripting-Umgebung:
 	- Sie können die integrierte Suche auf einem Computer verwenden, auf dem Windows 8 oder Windows Server 2012 oder höher ausgeführt wird. Geben Sie auf der Startseite **powershell ise** ein, und drücken Sie die **Eingabetaste**. 
-	- Verwenden Sie auf einem Computer, auf dem eine niedrigere Version als Windows 8 oder Windows Server 2012 ausgeführt wird, das Startmenü. Geben Sie im Startmenü **Eingabeaufforderung** in das Suchfeld ein, und klicken Sie in der Ergebnisliste auf **Eingabeaufforderung**. Geben Sie in der Eingabeaufforderung **powershell\_ise** ein, und drücken Sie dann die **Eingabetaste**.
+	- Verwenden Sie auf einem Computer, auf dem eine niedrigere Version als Windows 8 oder Windows Server 2012 ausgeführt wird, das Startmenü. Geben Sie im Startmenü **Eingabeaufforderung** in das Suchfeld ein, und klicken Sie in der Ergebnisliste auf **Eingabeaufforderung**. Geben Sie in der Eingabeaufforderung **powershell_ise** ein, und drücken Sie dann die **Eingabetaste**.
 
 3. Fügen Sie Ihr Azure-Konto hinzu.
 	1. Geben Sie im Konsolenbereich **Add-AzureAccount** (Azure-Konto hinzufügen) ein, und drücken Sie auf die **Eingabetaste**. 
@@ -390,7 +389,7 @@ Dieses Lernprogramm verwendet Skriptaktionen aus dem klassischen Azure-Portal zu
 	2. Klicken Sie oben rechts im Suchbereich auf <strong>Alles</strong>. </br>
 	3. Suchen Sie nach und klicken Sie auf <strong>DocumentDB-Konten</strong>. </br>
 	4. Suchen Sie als Nächstes das <strong>DocumentDB-Konto</strong>, anschließend die <strong>DocumentDB-Datenbank</strong> und die <strong>DocumentDB-Sammlung</strong>, die mit der in der Pig-Abfrage angegebenen Ausgabesammlung verknüpft ist.</br>
-	5. Klicken Sie abschließend auf <strong>Dokument-Explorer</strong> unter <strong>Entwicklertools</strong>. </br></p>
+	5. Klicken Sie abschließend auf <strong>Dokument-Explorer</strong> unter <strong>Entwicklertools</strong>.</br></p>
 
 	Sie sehen die Ergebnisse der Pig-Abfrage.
 
@@ -476,8 +475,8 @@ Weitere Informationen finden Sie in den folgenden Artikeln:
 [hdinsight-custom-provision]: ../hdinsight/hdinsight-provision-clusters.md#powershell
 [hdinsight-develop-deploy-java-mapreduce]: ../hdinsight/hdinsight-develop-deploy-java-mapreduce.md
 [hdinsight-hadoop-customize-cluster]: ../hdinsight/hdinsight-hadoop-customize-cluster.md
-[hdinsight-get-started]: ../hdinsight-get-started.md
-[hdinsight-storage]: ../hdinsight-use-blob-storage.md
+[hdinsight-get-started]: ../hdinsight/hdinsight-hadoop-tutorial-get-started-windows.md
+[hdinsight-storage]: ../hdinsight/hdinsight-hadoop-use-blob-storage.md
 [hdinsight-use-hive]: ../hdinsight/hdinsight-use-hive.md
 [hdinsight-use-mapreduce]: ../hdinsight/hdinsight-use-mapreduce.md
 [hdinsight-use-pig]: ../hdinsight/hdinsight-use-pig.md
@@ -490,7 +489,7 @@ Weitere Informationen finden Sie in den folgenden Artikeln:
 [image-mapreduce-query-results]: ./media/documentdb-run-hadoop-with-hdinsight/mapreducequeryresults.PNG
 [image-pig-query-results]: ./media/documentdb-run-hadoop-with-hdinsight/pigqueryresults.PNG
 
-[powershell-install-configure]: ../install-configure-powershell.md
+[powershell-install-configure]: ../powershell-install-configure.md
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

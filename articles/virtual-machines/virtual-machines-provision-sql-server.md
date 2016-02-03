@@ -1,33 +1,32 @@
-<properties 
-	pageTitle="Bereitstellen eines virtuellen Computers mit SQL Server | Microsoft Azure" 
-	description="In diesem Tutorial erfahren Sie, wie Sie einen virtuellen Computer mit SQL Server in Azure erstellen und konfigurieren." 
-	services="virtual-machines" 
-	documentationCenter="" 
-	authors="rothja" 
-	manager="jeffreyg" 
+<properties
+	pageTitle="Bereitstellen eines virtuellen Computers mit SQL Server | Microsoft Azure"
+	description="In diesem Tutorial erfahren Sie, wie Sie einen virtuellen Computer mit SQL Server in Azure erstellen und konfigurieren."
+	services="virtual-machines"
+	documentationCenter=""
+	authors="rothja"
+	manager="jeffreyg"
 	editor="monicar"
-	tags="azure-service-management"
-	/>
+	tags="azure-service-management"	/>
 
-<tags 
-	ms.service="virtual-machines" 
-	ms.workload="infrastructure-services" 
-	ms.tgt_pltfrm="vm-windows-sql-server" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/26/2015" 
+<tags
+	ms.service="virtual-machines"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows-sql-server"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="12/22/2015"
 	ms.author="jroth"/>
 
 # Bereitstellen eines virtuellen Computers mit SQL Server in Azure
 
 > [AZURE.SELECTOR]
-- [Azure classic portal](virtual-machines-provision-sql-server.md)
+- [Classic portal](virtual-machines-provision-sql-server.md)
 - [PowerShell](virtual-machines-sql-server-create-vm-with-powershell.md)
+- [Azure Resource Manager portal](virtual-machines-sql-server-provision-resource-manager.md)
 
 ## Übersicht
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
- 
 
 In der Galerie der virtuellen Computer von Azure sind verschiedene Images zu finden, die Microsoft SQL Server enthalten. Sie können eines der Images virtueller Computer aus der Galerie auswählen, und mit wenigen Klicks können Sie den virtuellen Computer auf Ihrer Azure-Umgebung bereitstellen.
 
@@ -61,9 +60,9 @@ Aktuelle Informationen zu den unterstützten SQL Server-Images in Azure finden S
 	- EIN **VERÖFFENTLICHUNGSDATUM DER VERSION** Wenn mehrere Images verfügbar sind, wählen Sie das neueste aus.
 	- Ein eindeutiger **NAME FÜR DEN VIRTUELLEN COMPUTER**
 	- Geben Sie im Feld **NEUER BENUTZERNAME** einen eindeutigen Benutzernamen für das lokale Administratorkonto des Computers ein.
-	- Geben Sie in das Feld **NEUES KENNWORT** ein sicheres Kennwort ein. 
+	- Geben Sie in das Feld **NEUES KENNWORT** ein sicheres Kennwort ein.
 	- Geben Sie das Kennwort im Feld **KENNWORT BESTÄTIGEN** nochmals ein.
-	- Wählen Sie in der Dropdownliste die geeignete **GRÖSSE** aus. 
+	- Wählen Sie in der Dropdownliste die geeignete **GRÖSSE** aus.
 
 	![Konfiguration des virtuellen Computers](./media/virtual-machines-provision-sql-server/4VM-Config.png)
 
@@ -76,13 +75,13 @@ Aktuelle Informationen zu den unterstützten SQL Server-Images in Azure finden S
 
 5. Konfigurieren Sie auf der zweiten Seite **Konfiguration des virtuellen Computers** die Ressourcen für Netzwerk, Speicher und Verfügbarkeit:
 	- Wählen Sie im Feld **Clouddienst** die Option **Einen neuen Clouddienst erstellen** aus.
-	- Geben Sie im Feld **DNS-Name des Clouddiensts** den ersten Teil eines DNS-Namens Ihrer Wahl ein, sodass insgesamt ein Name des Formats **TESTNAME.cloudapp.net** entsteht. 
+	- Geben Sie im Feld **DNS-Name des Clouddiensts** den ersten Teil eines DNS-Namens Ihrer Wahl ein, sodass insgesamt ein Name des Formats **TESTNAME.cloudapp.net** entsteht.
 	- Wählen Sie ein **ABONNEMENT** aus, wenn Sie über mehrere Abonnements verfügen. Die Auswahl bestimmt, welche **Speicherkonten** verfügbar sind.
 	- Wählen Sie im Feld **REGION/AFFINITY GROUP/VIRTUAL NETWORK** eine Region aus, in der dieses virtuelle Image gehostet wird.
-	- Erstellen Sie in **Speicherkonto** automatisch ein Konto, oder wählen Sie ein Konto aus der Liste aus. Ändern Sie das **ABONNEMENT**, um weitere Konten anzuzeigen. 
+	- Erstellen Sie in **Speicherkonto** automatisch ein Konto, oder wählen Sie ein Konto aus der Liste aus. Ändern Sie das **ABONNEMENT**, um weitere Konten anzuzeigen.
 	- Wählen Sie im Feld **AVAILABILITY SET** den Eintrag **(none)**.
 	- Lesen Sie sich die Bedingungen durch, und bestätigen Sie diese.
-	
+
 
 6. Klicken Sie auf den Pfeil zum Aufrufen der nächsten Seite, um fortzufahren.
 
@@ -96,7 +95,7 @@ Aktuelle Informationen zu den unterstützten SQL Server-Images in Azure finden S
 	- **Wird gestartet (Bereitstellung)**
 	- **Wird ausgeführt (Bereitstellung)**
 	- **Wird ausgeführt**
-	
+
 
 ##<a id="RemoteDesktop">Öffnen des virtuellen Computers mit Remotedesktop, um das Setup abzuschließen</a>
 
@@ -118,7 +117,27 @@ Nachdem Sie über Windows Remotedesktop mit dem virtuellen Computer verbunden si
 
 ##<a id="SSMS">Herstellen einer Verbindung mit der Instanz eines virtuellen SQL Server-Computers über SSMS auf einem anderen Computer</a>
 
+Die folgenden Schritte veranschaulichen, wie Sie mithilfe von SQL Server Management Studio (SSMS) über das Internet eine Verbindung mit der SQL Server-Instanz herstellen. Mit den gleichen Schritten ermöglichen Sie jedoch auch den Zugriff der lokal und im klassischen Azure-Bereitstellungsmodell ausgeführten Anwendungen auf den virtuellen SQL Server-Computer. Wenn Ihr virtueller Computer im Ressourcen-Manager-Modell bereitgestellt wird, finden Sie weitere Informationen unter [Verbinden mit SQL Server-Instanzen auf virtuellen Azure-Computern (Ressourcen-Manager)](virtual-machines-sql-server-connectivity-resource-manager.md).
+
+Bevor Sie eine Verbindung mit der Instanz von SQL Server über einen anderen virtuellen Computer oder über das Internet herstellen können, müssen Sie folgende Aufgaben abschließen, die in den nächsten Abschnitten beschrieben werden:
+
+- [Erstellen eines TCP-Endpunkts für den virtuellen Computer](#create-a-tcp-endpoint-for-the-virtual-machine)
+- [Öffnen der TCP-Ports in der Windows-Firewall](#open-tcp-ports-in-the-windows-firewall-for-the-default-instance-of-the-database-engine)
+- [Konfigurieren von SQL Server für das Abhören des TCP-Protokolls](#configure-sql-server-to-listen-on-the-tcp-protocol)
+- [Konfigurieren von SQL Server für die Authentifizierung mit gemischtem Modus](#configure-sql-server-for-mixed-mode-authentication)
+- [Erstellen von Anmeldenamen für die SQL Server-Authentifizierung](#create-sql-server-authentication-logins)
+- [Bestimmen des DNS-Namens des virtuellen Computers](#determine-the-dns-name-of-the-virtual-machine)
+- [Verbinden mit dem Datenbankmodul von einem anderen Computer aus](#connect-to-the-database-engine-from-another-computer)
+
+Der Verbindungspfad wird von folgendem Diagramm zusammengefasst:
+
+![Verbinden mit einem virtuellen SQL Server-Computer](../../includes/media/virtual-machines-sql-server-connection-steps/SQLServerinVMConnectionMap.png)
+
+[AZURE.INCLUDE [Herstellen einer Verbindung mit SQL Server auf einem klassischen VM-TCP-Endpunkt](../../includes/virtual-machines-sql-server-connection-steps-classic-tcp-endpoint.md)]
+
 [AZURE.INCLUDE [Herstellen einer Verbindung mit SQL Server auf einem virtuellen Computer](../../includes/virtual-machines-sql-server-connection-steps.md)]
+
+[AZURE.INCLUDE [Herstellen einer Verbindung mit SQL Server auf einem klassischen virtuellen Computer – Schritte](../../includes/virtual-machines-sql-server-connection-steps-classic.md)]
 
 ## <a id="cdea">Verbinden mit dem Datenbankmodul von Ihrer Anwendung aus</a>
 
@@ -156,4 +175,4 @@ Die folgende Liste enthält zusätzliche Ressourcen für SQL Server auf virtuell
 
 - [Anwendungsmuster und Entwicklungsstrategien für SQL Server auf Azure Virtual Machines](virtual-machines-sql-server-application-patterns-and-development-strategies.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

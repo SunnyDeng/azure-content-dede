@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-android"
 	ms.devlang="java"
 	ms.topic="article"
-	ms.date="10/05/2015"
+	ms.date="01/20/2016"
 	ms.author="ricksal"/>
 
 # Hinzufügen von Authentifizierung zu Ihrer Mobile Services-Android-App (JavaScript-Back-End)
@@ -106,4 +106,4 @@ Im nächsten Lernprogramm [Autorisieren von Benutzern mit Skripts] werden Sie de
 [Erste Schritte mit Mobile Services]: mobile-services-android-get-started.md
 [Autorisieren von Benutzern mit Skripts]: mobile-services-javascript-backend-service-side-authorization.md
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0121_2016-->

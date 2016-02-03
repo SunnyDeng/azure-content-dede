@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="09/16/2015"
+   ms.date="01/20/2016"
    ms.author="jonor"/>
 
 # Beispielanwendung zur Verwendung in Umgebungen mit Sicherheitsbegrenzung
@@ -188,4 +188,4 @@ Diese Beispielanwendung enthält kein Skript zum Einrichten des DNS-Servers. Wen
 <!--Link References-->
 [HOME]: ../best-practices-network-security.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0121_2016-->

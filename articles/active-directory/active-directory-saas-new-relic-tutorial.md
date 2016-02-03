@@ -2,7 +2,7 @@
     pageTitle="Tutorial: Azure Active Directory-Integration mit New Relic | Microsoft Azure" 
     description="Erfahren Sie, wie Sie New Relic mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags 
@@ -11,8 +11,8 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
-    ms.author="markvi" />
+    ms.date="01/14/2016" 
+    ms.author="jeedes" />
 
 #Tutorial: Azure Active Directory-Integration mit New Relic
   
@@ -55,7 +55,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für New
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-new-relic-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie im **Suchfeld** den Suchbegriff **New Relic** ein.
+6.  Geben Sie im **Suchfeld** den Begriff **New Relic** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-new-relic-tutorial/IC797031.png "Anwendungskatalog")
 
@@ -105,7 +105,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
     3.  Kopieren Sie im Microsoft Azure-Portal auf der Seite **Einmaliges Anmelden konfigurieren für New Relic** den Wert für **Remoteabmelde-URL**, und fügen Sie ihn ins Textfeld **Zielseiten-URL für die Abmeldung** ein.
     4.  Klicken Sie auf **Änderungen speichern**.
 
-9.  Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
+9.  Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-new-relic-tutorial/IC797039.png "Einmaliges Anmelden konfigurieren")
 ##Konfigurieren der Benutzerbereitstellung
@@ -146,10 +146,10 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
 
     ![Benutzer zuweisen](./media/active-directory-saas-new-relic-tutorial/IC797043.png "Benutzer zuweisen")
 
-3.  Wählen Sie den Testbenutzer aus, und klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen.
+3.  Wählen Sie den Testbenutzer aus, klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen.
 
     ![Ja](./media/active-directory-saas-new-relic-tutorial/IC767830.png "Ja")
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0121_2016-->

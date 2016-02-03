@@ -13,15 +13,15 @@
 	ms.tgt_pltfrm="powershell"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/06/2015"
+	ms.date="01/04/2016"
 	ms.author="inhenk"/>
 
 # Verwalten der rollenbasierten Zugriffssteuerung mit Windows PowerShell #
 
 > [AZURE.SELECTOR]
-- [Windows PowerShell](role-based-access-control-powershell.md)
-- [Azure CLI](role-based-access-control-xplat-cli-install.md)
-
+- [PowerShell](role-based-access-control-manage-access-powershell.md)
+- [Azure CLI](role-based-access-control-manage-access-azure-cli.md)
+- [REST API](role-based-access-control-manage-access-rest.md)
 
 Mit der rollenbasierten Zugriffssteuerung (RBAC) im Azure-Portal und in der Azure Resource Management-API können Sie den Zugriff auf Ihr Abonnement differenziert steuern. Mithilfe dieser Funktion lassen sich Zugriffsberechtigungen für Active Directory-Benutzer, -Gruppen oder -Dienstprinzipale festlegen, indem ihnen bestimmte Rollen für einen bestimmten Bereich zugewiesen werden.
 
@@ -164,4 +164,4 @@ In den folgenden Themen und Ressourcen erhalten Sie weitere Informationen zur Ve
 - [Konfigurieren der rollenbasierten Zugriffssteuerung mit der Azure-Befehlszeilenschnittstelle](role-based-access-control-xplat-cli-install.md)
 - [Behandlung von Problemen bei der rollenbasierten Zugriffssteuerung](role-based-access-control-troubleshooting.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

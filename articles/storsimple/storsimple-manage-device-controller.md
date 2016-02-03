@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="12/02/2015"
+   ms.date="01/15/2016"
    ms.author="alkohli" />
 
 # Verwalten von StorSimple-Gerätecontrollern
@@ -221,4 +221,4 @@ In diesem Abschnitt haben wir einige der häufig gestellten Fragen zur Verwaltun
 
 - Weitere Informationen zum Verwenden des StorSimple Manager-Diensts finden Sie unter [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0121_2016-->

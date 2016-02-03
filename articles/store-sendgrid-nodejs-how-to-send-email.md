@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="nodejs" 
 	ms.topic="article" 
-	ms.date="08/31/2015" 
+	ms.date="01/05/2016" 
 	ms.author="erikre"/>
 # Senden von E-Mails mit SendGrid aus Node.js
 
@@ -178,8 +178,17 @@ SendGrid bietet webbasierte APIs, die Sie zur Nutzung zusätzlicher SendGrid-Fun
 
 Nachdem Sie nun mit den Grundlagen des E-Mail-Dienstes SendGrid vertraut sind, finden Sie unter diesen Links weitere Informationen.
 
--   Repository für das SendGrid Node.js-Modul: [sendgrid-nodejs][]
--   SendGrid API-Dokumentation: <https://sendgrid.com/docs>
--   Spezielles SendGrid-Angebot für Azure-Kunden: [http://sendgrid.com/azure.html](https://sendgrid.com/windowsazure.html) [Sonderangebot]: https://sendgrid.com/windowsazure.html [sendgrid-nodejs]: https://github.com/sendgrid/sendgrid-nodejs [Filtereinstellungen]: https://sendgrid.com/docs/API_Reference/SMTP_API/apps.html [SendGrid-API-Dokumentation]: https://sendgrid.com/docs [Cloudbasierter E-Mail-Dienst]: https://sendgrid.com/email-solutions [Transaktionale E-Mail-Übermittlung]: https://sendgrid.com/transactional-email
+-   Repository für das SendGrid Node.js-Modul:
+    <https://sendgrid-nodejs>
+-   SendGrid API-Dokumentation:
+    <https://sendgrid.com/docs>
+-   Spezielles SendGrid-Angebot für Azure-Kunden:
+    [http://sendgrid.com/azure.html](https://sendgrid.com/windowsazure.html) 
+  [Sonderangebot]: https://sendgrid.com/windowsazure.html
+  [sendgrid-nodejs]: https://github.com/sendgrid/sendgrid-nodejs
+  [Filtereinstellungen]: https://sendgrid.com/docs/API_Reference/SMTP_API/apps.html
+  [SendGrid-API-Dokumentation]: https://sendgrid.com/docs
+  [cloudbasierter E-Mail-Dienst]: https://sendgrid.com/email-solutions
+  [Transaktionale E-Mail-Übermittlung]: https://sendgrid.com/transactional-email
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

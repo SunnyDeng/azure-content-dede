@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/07/2015"
+	ms.date="01/15/2016"
 	ms.author="adegeo"/>
 
 
@@ -22,8 +22,8 @@
 # Erstellen und Bereitstellen eines Clouddiensts
 
 > [AZURE.SELECTOR]
-- [Azure classic portal](cloud-services-how-to-create-deploy.md)
 - [Azure portal](cloud-services-how-to-create-deploy-portal.md)
+- [Azure classic portal](cloud-services-how-to-create-deploy.md)
 
 Das Azure-Portal bietet zwei Methoden zum Erstellen und Bereitstellen eines Clouddiensts: *Schnellerfassung* und *Benutzerdefiniert erstellen*.
 
@@ -115,4 +115,4 @@ Wenn Ihr Bereitstellungspaket [für die Verwendung von Zertifikaten konfiguriert
 * [Verwalten Ihres Clouddiensts](cloud-services-how-to-manage-portal.md)
 * Konfigurieren von [SSL-Zertifikaten](cloud-services-configure-ssl-certificate-portal.md)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0121_2016-->

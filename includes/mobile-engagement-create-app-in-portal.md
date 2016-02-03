@@ -1,4 +1,4 @@
-1. Melden Sie sich beim Azure-Verwaltungsportal an, und klicken Sie im unteren Teil des Bildschirms auf **+NEW**.
+1. Melden Sie sich beim [klassischen Azure-Portal](https://manage.windowsazure.com) an, und klicken Sie im unteren Teil des Bildschirms auf **+NEW**.
 
 2. Klicken Sie auf **App-Dienste**, dann auf **Mobile Engagement** und anschließend auf **Erstellen**.
 
@@ -23,4 +23,4 @@
 
    	![](./media/mobile-engagement-create-app-in-portal/app-connection-info-page.png)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

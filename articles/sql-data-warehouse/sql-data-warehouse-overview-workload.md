@@ -4,7 +4,7 @@
    services="sql-data-warehouse"
    documentationCenter="NA"
    authors="barbkess"
-   manager="jhubbard"
+   manager="barbkess"
    editor=""/>
 
 <tags
@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="09/22/2015"
-   ms.author="barbkess;twounder;JRJ@BigBangData.co.uk"/>
+   ms.date="01/07/2016"
+   ms.author="barbkess;mausher;jrj;sonyama"/>
 
 
 # Data Warehouse-Workload
@@ -28,7 +28,7 @@ Data Warehouses werden durch Abfragen charakterisiert, die eine größere Anzahl
 
 - Die Leistung eines Data Warehouse ist am besten, wenn die Daten auf eine Weise gespeichert werden, die Abfragen optimiert, die eine große Anzahl von Zeilen oder große Datenbereiche scannen müssen. Diese Art des Scannens funktioniert am besten, wenn die Daten nach Spalten anstelle von Zeilen durchsucht und gespeichert werden. 
 
->[AZURE.NOTE]Der speicherinterne ColumnStore-Index, der Spaltenspeicher verwendet, bietet eine bis zu fünfmal so hohe Komprimierung und eine zehnfache Abfrageleistungssteigerung gegenüber herkömmlichen binären Strukturen für Berichterstattung und Analyse von Abfragen. Wir betrachten ColumnStore-Indizes als Standard für das Speichern und Scannen großer Datenmengen in einem Data Warehouse.
+>[AZURE.NOTE]Der speicherinterne ColumnStore-Index, der Spaltenspeicher verwendet, bietet eine bis zu zehnmal so hohe Komprimierung und eine hundertfache Abfrageleistungssteigerung gegenüber herkömmlichen binären Strukturen für Berichterstattung und Analyse von Abfragen. Wir betrachten ColumnStore-Indizes als Standard für das Speichern und Scannen großer Datenmengen in einem Data Warehouse.
 
 - Ein Data Warehouse hat andere Anforderungen als ein System, das für die Onlinetransaktionsverarbeitung (OLTP) optimiert ist. Im OLTP-System gibt es viele Einfüge-, Aktualisierungs- und Löschvorgänge. Diese Suchvorgänge durchsuchen bestimmte Zeilen in der Tabelle. Tabellensuchen funktionieren am besten, wenn die Daten zeilenweise gespeichert sind. Die Daten können sortiert und schnell mit einem so genannten "Divide & Conquer"-Ansatz, der auch als Binärstruktur- oder btree-Suche bezeichnet wird, durchsucht werden.
 
@@ -73,4 +73,4 @@ Informationen zu den ersten Schritten zum Entwickeln Ihres Data Warehouse finden
 
 <!--Other web references-->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0114_2016-->

@@ -2,7 +2,7 @@
     pageTitle="Tutorial: Azure Active Directory-Integration mit FM:Systems | Microsoft Azure" 
     description="Hier erfahren Sie, wie Sie FM:Systems mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags 
@@ -11,8 +11,8 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
-    ms.author="markvi" />
+    ms.date="01/14/2016" 
+    ms.author="jeedes" />
 
 #Tutorial: Azure Active Directory-Integration mit FM:Systems
   
@@ -21,7 +21,7 @@ In diesem Tutorial wird die Integration von Azure und FM:Systems erläutert. Das
 -   Ein gültiges Azure-Abonnement
 -   Ein FM:Systems-Abonnement, für das einmaliges Anmelden aktiviert ist
   
-Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie FM:Systems zugewiesen haben, mittels einmaliger Anmeldung auf Ihrer FM:Systems-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
+Nach Abschluss dieses Lernprogramms können sich die FM:Systems zugewiesenen Azure AD-Benutzer mittels einmaligen Anmeldens auf Ihrer FM:Systems-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie auch die [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md) nutzen.
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -55,7 +55,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für FM:
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-fm-systems-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie im **Suchfeld** den Suchbegriff **FM:Systems** ein.
+6.  Geben Sie im **Suchfeld** das Wort **FM:Systems** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-fm-systems-tutorial/IC795900.png "Anwendungskatalog")
 
@@ -94,7 +94,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     >[AZURE.NOTE]Die eigentliche SSO-Konfiguration muss vom Supportteam von FM:Systems durchgeführt werden. Sie erhalten eine Benachrichtigung, wenn SSO für Ihr Abonnement aktiviert wurde.
 
-6.  Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
+6.  Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-fm-systems-tutorial/IC795904.png "Einmaliges Anmelden konfigurieren")
 ##Konfigurieren der Benutzerbereitstellung
@@ -140,4 +140,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0121_2016-->

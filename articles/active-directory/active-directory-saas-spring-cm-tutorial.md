@@ -1,6 +1,6 @@
 <properties 
     pageTitle="Tutorial: Azure Active Directory-Integration mit SpringCM | Microsoft Azure" 
-    description="Hier erfahren Sie, wie Sie SpringCM mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
+    description="Hier erfahren Sie, wie Sie Spring CM mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
     services="active-directory" 
     authors="markusvi"  
     documentationCenter="na" 
@@ -11,7 +11,7 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
+    ms.date="01/12/2016" 
     ms.author="markvi" />
 
 #Tutorial: Azure Active Directory-Integration mit SpringCM
@@ -56,7 +56,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Spr
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-spring-cm-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie im **Suchfeld** den Suchbegriff **SpringCM** ein.
+6.  Geben Sie im **Suchfeld** als Suchbegriff **SpringCM** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-spring-cm-tutorial/IC797045.png "Anwendungskatalog")
 
@@ -98,13 +98,13 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Identitätsanbieterkonfiguration](./media/active-directory-saas-spring-cm-tutorial/IC797052.png "Identitätsanbieterkonfiguration")
 
-    1.  Zum Hochladen Ihres heruntergeladenen Azure Active Directory-Zertifikats klicken Sie auf **Ausstellerzertifikat auswählen** oder auf **Ausstellerzertifikat ändern**.
+    1.  Zum Hochladen Ihres heruntergeladenen Azure Active Directory-Zertifikats hochzuladen, klicken Sie auf **Ausstellerzertifikat auswählen** oder auf **Ausstellerzertifikat ändern**.
     2.  Kopieren Sie im Microsoft Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für SpringCM** den Wert für **Aussteller-URL**, und fügen Sie ihn in das Textfeld **Aussteller** ein.
-    3.  Sie im Microsoft Azure-Portal auf der Seite **Einmaliges Anmelden konfigurieren für SpringCM ** den Wert der **SSO-Dienst-URL**, und fügen Sie ihn in das Textfeld **Vom Dienstanbieter (SP) initiierter Endpoint** ein.
+    3.  Kopieren Sie im Microsoft Azure-Portal auf der Seite **Einmaliges Anmelden konfigurieren für SpringCM ** den Wert der **SSO-Dienst-URL**, und fügen Sie ihn in das Textfeld **Vom Dienstanbieter (SP) initiierter Endpoint** ein.
     4.  Wählen Sie für **SAML aktiviert** die Option **Aktivieren**.
     5.  Klicken Sie auf **Speichern**.
 
-8.  Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
+8.  Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-spring-cm-tutorial/IC797053.png "Einmaliges Anmelden konfigurieren")
 
@@ -154,4 +154,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0114_2016-->

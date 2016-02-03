@@ -25,10 +25,9 @@
 
 In diesem Artikel werden Sie durch das Erstellen eines virtuellen Netzwerks und das Herstellen einer Standort-zu-Standort-VPN-Verbindung mit Ihrem lokalen Netzwerk mithilfe des Bereitstellungsmodells aus dem Azure-Ressourcen-Manager geführt. Wenn Sie ein anderes Bereitstellungsmodell für diese Konfiguration suchen, verwenden Sie die Registerkarten oben, um den gewünschten Artikel auszuwählen. Wenn Sie VNets miteinander verbinden möchten, aber keine Verbindung mit einem lokalen Standort erstellen, finden Sie unter [Konfigurieren einer VNet-zu-VNet-Verbindung](vpn-gateway-vnet-vnet-rm-ps.md) entsprechende Informationen.
 
-
 **Informationen zu Azure-Bereitstellungsmodellen**
 
-[AZURE.INCLUDE [vpn-gateway-clasic-rm](../../includes/vpn-gateway-classic-rm-include.md)] 
+[AZURE.INCLUDE [vpn-gateway-clasic-rm](../../includes/vpn-gateway-classic-rm-include.md)]
 
 ## Voraussetzungen
 
@@ -38,16 +37,15 @@ Vergewissern Sie sich vor Beginn der Konfiguration, dass Sie über Folgendes ver
 
 - Eine externe öffentliche IP-Adresse für Ihr VPN-Gerät. Diese IP-Adresse darf sich nicht hinter einer NAT befinden.
 	
-- Ein Azure-Abonnement. Wenn Sie noch kein Abonnement haben, können Sie Ihre [MSDN-Abonnentenvorteile](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) aktivieren oder sich für eine [kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/) registrieren.
+- Ein Azure-Abonnement. Wenn Sie noch kein Abonnement haben, können Sie Ihre [MSDN-Abonnentenvorteile](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) aktivieren oder sich für eine [kostenlose Testversion](https://azure.microsoft.com/pricing/free-trial/) registrieren.
 
 ## Installieren der PowerShell-Module
 
 Sie benötigen die neueste Version der PowerShell-Cmdlets für Azure-Ressourcen-Manager zum Konfigurieren der Verbindung.
 	
-[AZURE.INCLUDE [vpn-gateway-ps-rm-howto](../../includes/vpn-gateway-ps-rm-howto-include.md)] 
+[AZURE.INCLUDE [vpn-gateway-ps-rm-howto](../../includes/vpn-gateway-ps-rm-howto-include.md)]
 
 ## 1. Verbinden mit Ihrem Abonnement 
-
 
 Stellen Sie sicher, dass Sie in den PowerShell-Modus wechseln, um die Ressourcen-Manager-Cmdlets zu verwenden. Weitere Informationen finden Sie unter [Verwenden von Windows PowerShell mit Resource Manager](../powershell-azure-resource-manager.md).
 
@@ -63,7 +61,6 @@ Geben Sie das Abonnement an, das Sie verwenden möchten.
 
 	Select-AzureRmSubscription -Subscriptionid "GUID of subscription"
 
-
 ## 2. Erstellen eines virtuelles Netzwerks und eines Gatewaysubnetzes
 
 - Wenn Sie bereits über ein virtuelles Netzwerk mit einem Gatewaysubnetz verfügen, können Sie direkt mit **Schritt 3: Hinzufügen Ihres lokalen Standorts** fortfahren. 
@@ -74,7 +71,6 @@ Geben Sie das Abonnement an, das Sie verwenden möchten.
 Nutzen Sie das Beispiel unten, um ein virtuelles Netzwerk und ein Gatewaysubnetz zu erstellen. Ersetzen Sie die Werte durch Ihre eigenen.
 
 Erstellen Sie zunächst eine Ressourcengruppe:
-
 	
 	New-AzureRmResourceGroup -Name testrg -Location 'West US'
 
@@ -130,6 +126,8 @@ Als Nächstes müssen Sie eine öffentliche IP-Adresse anfordern, die Ihrem Azur
 Verwenden Sie das folgende PowerShell-Beispiel. Die Zuordnungsmethode für diese Adresse muss dynamisch sein.
 
 	$gwpip= New-AzureRmPublicIpAddress -Name gwpip -ResourceGroupName testrg -Location 'West US' -AllocationMethod Dynamic
+
+>[AZURE.NOTE] Azure VPN Gateway für das Ressourcen-Manager-Bereitstellungsmodell unterstützt derzeit nur öffentliche IP-Adressen. Dabei wird die Methode der dynamischen Zuweisung verwendet. Das bedeutet jedoch nicht, dass sich die IP-Adresse ändert. Die IP-Adresse von Azure VPN Gateway ändert sich nur, wenn das Gateway gelöscht und neu erstellt wird. Die öffentliche IP-Adresse des Gateways ändert sich nicht bei Größenänderungen, beim Zurücksetzen oder bei anderen internen Wartungs-/Upgradeprozessen von Azure VPN Gateway.
 
 ## 5. Erstellen der Gateway-IP-Adressierung
 
@@ -213,7 +211,6 @@ Verwenden Sie die unten angegebene Anleitung, wenn Sie die Präfixe für Ihren l
 
 ### Hinzufügen oder Entfernen von Präfixen ohne VPN Gateway-Verbindung
 
-
 - Verwenden Sie das unten angegebene Beispiel, um zusätzliche Adresspräfixe einem lokalen Standort **hinzuzufügen**, den Sie erstellt haben, aber der noch nicht über eine VPN-Gatewayverbindung verfügt.
 
 		$local = Get-AzureRmLocalNetworkGateway -Name LocalSite -ResourceGroupName testrg
@@ -228,7 +225,6 @@ Verwenden Sie die unten angegebene Anleitung, wenn Sie die Präfixe für Ihren l
 ### Hinzufügen oder Entfernen von Präfixen mit VPN Gateway-Verbindung
 
 Wenn Sie die VPN-Verbindung erstellt haben und die IP-Adresspräfixe Ihres lokalen Standorts hinzufügen oder entfernen möchten, müssen Sie die folgenden Schritte der Reihenfolge nach ausführen. Dies führt zu Ausfallzeiten für Ihre VPN-Verbindung, da Sie das Gateway entfernen und neu erstellen müssen. Da Sie aber eine IP-Adresse für die Verbindung angefordert haben, müssen Sie Ihren lokalen VPN-Router nicht neu konfigurieren. Dies ist nur erforderlich, wenn Sie sich dafür entscheiden, die zuvor verwendeten Werte zu ändern.
-
  
 1. Entfernen Sie die Gatewayverbindung. 
 2. Ändern Sie die Präfixe für Ihren lokalen Standort. 
@@ -236,20 +232,18 @@ Wenn Sie die VPN-Verbindung erstellt haben und die IP-Adresspräfixe Ihres lokal
 
 Sie können das folgende Beispiel als Hilfe verwenden.
 
-
 	$gateway1 = Get-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg
 	$local = Get-AzureRmLocalNetworkGateway -Name LocalSite -ResourceGroupName testrg
 
-	Remove-AzureRmVirtualNetworkGatewayConnection -Name vnetgw1 -ResourceGroupName testrg
+	Remove-AzureRmVirtualNetworkGatewayConnection -Name localtovon -ResourceGroupName testrg
 
 	$local = Get-AzureRmLocalNetworkGateway -Name LocalSite -ResourceGroupName testrg
 	Set-AzureRmLocalNetworkGateway -LocalNetworkGateway $local -AddressPrefix @('10.0.0.0/24','20.0.0.0/24','30.0.0.0/24')
 	
 	New-AzureRmVirtualNetworkGatewayConnection -Name localtovon -ResourceGroupName testrg -Location 'West US' -VirtualNetworkGateway1 $gateway1 -LocalNetworkGateway2 $local -ConnectionType IPsec -RoutingWeight 10 -SharedKey 'abc123'
 
-
 ## Nächste Schritte
 
 Sobald die Verbindung hergestellt ist, können Sie Ihren virtuellen Netzwerken virtuelle Computer hinzufügen. Für diese Schritte finden Sie Informationen unter [Erstellen eines virtuellen Computers](../virtual-machines/virtual-machines-windows-tutorial.md).
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

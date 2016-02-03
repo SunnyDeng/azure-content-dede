@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="09/23/2015"
-   ms.author="sahajs"/>
+   ms.date="01/07/2016"
+   ms.author="sahajs;barbkess;sonyama"/>
 
 # Wiederherstellen einer Datenbank nach einem Benutzerfehler in SQL Data Warehouse
 
@@ -136,4 +136,4 @@ Informationen zu den Geschäftskontinuitätsfeatures anderer Azure SQL-Datenbank
 
 <!--Other Web references-->
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0114_2016-->

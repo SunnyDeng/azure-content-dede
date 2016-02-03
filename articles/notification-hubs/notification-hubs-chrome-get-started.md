@@ -24,7 +24,7 @@ In diesem Thema wird gezeigt, wie Sie mit Azure Notification Hubs Pushbenachrich
 
 Einer der wichtigsten Vorteile der Verwendung von Benachrichtigungen der Chrome-App besteht darin, dass die Benachrichtigungen im Kontext des Google Chrome-Browsers angezeigt werden. Sie müssen die Chrome-App nicht ausführen oder im Browser öffnen (der Chrome-Browser selbst muss allerdings ausgeführt werden). Außerdem wird eine konsolidierte Ansicht all Ihrer Benachrichtigungen im Chrome-Benachrichtigungsfenster angezeigt.
 
->[AZURE.NOTE]Dies ist eine Chrome-Apps-spezifische und keine generische In-Browser-Pushbenachrichtigung – Weitere Informationen finden Sie unter [Chrome-Apps – Übersicht]. Chrome-Apps wurden zuvor als "App-Pakete" bezeichnet und unterscheiden sich von einfacheren "Gehosteten Apps". Informationen zu den Unterschieden finden Sie unter [Installierbare Web-Apps]. Chrome-Apps können auch auf Mobilgeräten (Android und iOS) über Apache Cordova ausgeführt werden. Weitere Informationen finden Sie unter [Chrome-Apps auf Mobile].
+>[AZURE.NOTE] Dies ist eine Chrome-Apps-spezifische und keine generische In-Browser-Pushbenachrichtigung – Weitere Informationen finden Sie unter [Chrome-Apps – Übersicht]. Chrome-Apps wurden zuvor als "App-Pakete" bezeichnet und unterscheiden sich von einfacheren "Gehosteten Apps". Informationen zu den Unterschieden finden Sie unter [Installierbare Web-Apps]. Chrome-Apps können auch auf Mobilgeräten (Android und iOS) über Apache Cordova ausgeführt werden. Weitere Informationen finden Sie unter [Chrome-Apps auf Mobile].
 
 In diesem Lernprogramm erstellen Sie eine Chrome-App, die Pushbenachrichtigungen über Google Cloud Messaging (GCM) empfängt. Nach Abschluss dieses Lernprogramms können Sie Pushbenachrichtigungen an alle Chrome-Benutzer senden, die diese Chrome-App installiert haben.
 
@@ -40,7 +40,7 @@ Das Lernprogramm zeigt ein einfaches Übertragungsszenario mithilfe von Notifica
 
 Bearbeiten Sie auch die im Abschnitt "Nächste Schritte" aufgeführten Lernprogramme, um mehr über die Verwendung von Notification Hubs zur Adressierung von bestimmten Benutzern und Gerätegruppen zu erfahren.
 
->[AZURE.NOTE]Sie benötigen ein aktives Azure-Konto, um dieses Lernprogramm abzuschließen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenloses Azure-Testkonto](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdocumentation%2Farticles%notification-hubs-chrome-get-started%2F).
+>[AZURE.NOTE] Sie benötigen ein aktives Azure-Konto, um dieses Lernprogramm abzuschließen. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenloses Azure-Testkonto](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdocumentation%2Farticles%notification-hubs-chrome-get-started%2F).
 
 ##<a id="register"></a>Aktivieren von Google Cloud Messaging
 
@@ -128,7 +128,7 @@ Die Chrome-App wird mit JavaScript erstellt, und Sie können dazu einen beliebig
 		  "icons": { "128": "gcm_128.png" }
 		}
 
-	Beachten Sie das **permissions**-Element, das angibt, dass diese Chrome-App Pushbenachrichtigungen von GCM empfangen kann. Es muss auch den Azure Notification Hubs-URI zum Senden eines REST-Aufrufs zur Registrierung durch die Chrome-App angeben. Dabei wird eine Symboldatei ("gcm\_128.png") verwendet, die sich in der Quelle befindet und aus dem ursprünglichen GCM-Beispiel wiederverwendet wird. Sie können ein beliebiges Bild verwenden.
+	Beachten Sie das **permissions**-Element, das angibt, dass diese Chrome-App Pushbenachrichtigungen von GCM empfangen kann. Es muss auch den Azure Notification Hubs-URI zum Senden eines REST-Aufrufs zur Registrierung durch die Chrome-App angeben. Dabei wird eine Symboldatei ("gcm_128.png") verwendet, die sich in der Quelle befindet und aus dem ursprünglichen GCM-Beispiel wiederverwendet wird. Sie können ein beliebiges Bild verwenden.
 
 5. Erstellen Sie eine Datei namens **background.js** mit dem folgenden Code:
 
@@ -323,10 +323,10 @@ Die Chrome-App wird mit JavaScript erstellt, und Sie können dazu einen beliebig
 		function sendNHRegistrationRequest()
 		{
 		  var registrationPayload =
-		  "<?xml version="1.0" encoding="utf-8"?>" +
-		  "<entry xmlns="http://www.w3.org/2005/Atom">" +
-		      "<content type="application/xml">" +
-		          "<GcmRegistrationDescription xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/netservices/2010/10/servicebus/connect">" +
+		  "<?xml version=\"1.0\" encoding=\"utf-8\"?>" +
+		  "<entry xmlns=\"http://www.w3.org/2005/Atom\">" +
+		      "<content type=\"application/xml\">" +
+		          "<GcmRegistrationDescription xmlns:i=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns=\"http://schemas.microsoft.com/netservices/2010/10/servicebus/connect\">" +
 		              "<GcmRegistrationId>{GCMRegistrationId}</GcmRegistrationId>" +
 		          "</GcmRegistrationDescription>" +
 		      "</content>" +
@@ -376,11 +376,12 @@ Die Chrome-App wird mit JavaScript erstellt, und Sie können dazu einen beliebig
 	- *registerWithNH* ist der Klick-Handler für die zweite Schaltfläche, der die Registrierung bei Notification Hubs durchführt. Er ruft die vom Benutzer angegebenen Werte für **hubName** und **connectionString** ab und erstellt den REST-API-Aufruf für die Notification Hubs-Registrierung. 
 	- *splitConnectionString* und *generateSaSToken* sind JavaScript-Implementierungen zum Erstellen eines SaS- Tokens, das an alle REST-API-Aufrufe gesendet werden muss. Weitere Informationen finden Sie unter [Allgemeine Konzepte](http://msdn.microsoft.com/library/dn495627.aspx). 
 	- Die Funktion *sendNHRegistrationRequest* sendet einen HTTP-REST-Aufruf. 
-	- *registrationPayload* definiert die Nutzlast der XML-Datei der Registrierung. Weitere Informationen finden Sie unter [Erstellen der Registrierungs-NH-REST-API]. Die darin enthaltene Registrierungs-ID wird mit den von GCM empfangenen Daten aktualisiert. 
+	– *registrationPayload* definiert die Nutzlast der XML-Datei der Registrierung. Weitere Informationen finden Sie unter [Erstellen der Registrierungs-NH-REST-API]. Die darin enthaltene Registrierungs-ID wird mit den von GCM empfangenen Daten aktualisiert. 
 	- *client* ist eine Instanz von **XMLHttpRequest**, die zum Senden der HTTP POST-Anforderung verwendet wird. Beachten Sie, dass der **Authorization**-Header mit **sasToken** aktualisiert wird. Beim erfolgreichen Abschluss dieses Aufrufs wird diese Chrome-App-Instanz bei Azure Notification Hubs registriert.
 
 
-Am Ende dieser Schritte sollte die folgende Ansicht für den Ordner angezeigt werden: ![][21]
+Am Ende dieser Schritte sollte die folgende Ansicht für den Ordner angezeigt werden: 
+	![][21]
 
 ###Einrichten und Testen Ihrer Chrome-App
 
@@ -408,7 +409,8 @@ Am Ende dieser Schritte sollte die folgende Ansicht für den Ordner angezeigt we
 
 In diesem Lernprogramm senden Sie Benachrichtigungen mithilfe einer .NET-Konsolenanwendung. Sie können Benachrichtigungen mit Notification Hubs jedoch von jedem beliebigen Back-End über die <a href="http://msdn.microsoft.com/library/windowsazure/dn223264.aspx">REST-Schnittstelle</a> senden.
 
-Ein Beispiel zum Senden von Benachrichtigungen von einem mit Notification Hubs integrierten Azure Mobile Services-Back-End aus finden Sie unter "Erste Schritte mit Pushbenachrichtigungen in Mobile Services" ([.NET-Back-End](../mobile-services-javascript-backend-android-get-started-push.md) | [JavaScript-Back-End](../mobile-services-javascript-backend-android-get-started-push.md)). Ein Beispiel zum Senden von Benachrichtigungen über die REST-APIs finden Sie unter "Verwenden von Notification Hubs mit Java/PHP/Python" ([Java](notification-hubs-java-backend-how-to.md) | [PHP](notification-hubs-php-backend-how-to.md) | [Python](notification-hubs-python-backend-how-to.md)).
+Ein Beispiel zum Senden von Benachrichtigungen von einem mit Notification Hubs integrierten Azure Mobile Services-Back-End aus finden Sie unter "Erste Schritte mit Pushbenachrichtigungen in Mobile Services" ([.NET-Back-End](../mobile-services-javascript-backend-android-get-started-push.md) | [JavaScript-Back-End](../mobile-services-javascript-backend-android-get-started-push.md)). 
+Ein Beispiel zum Senden von Benachrichtigungen über die REST-APIs finden Sie unter "Verwenden von Notification Hubs mit Java/PHP/Python" ([Java](notification-hubs-java-backend-how-to.md) | [PHP](notification-hubs-php-backend-how-to.md) | [Python](notification-hubs-python-backend-how-to.md)).
 
 1. Wählen Sie in Visual Studio im Menü **Datei** die Option **Neu** und anschließend **Projekt** aus. Klicken Sie unter **Visual C#** auf **Windows**, auf **Konsolenanwendung** und dann auf **OK**. Damit wird ein neues Konsolenanwendungsprojekt erstellt.
 
@@ -429,13 +431,13 @@ Ein Beispiel zum Senden von Benachrichtigungen von einem mit Notification Hubs i
         private static async void SendNotificationAsync()
         {
             NotificationHubClient hub = NotificationHubClient.CreateClientFromConnectionString("<connection string with full access>", "<hub name>");
-            String message = "{"data":{"message":"Hello Chrome from Azure Notification Hubs"}}";
+            String message = "{\"data\":{\"message\":\"Hello Chrome from Azure Notification Hubs\"}}";
             await hub.SendGcmNativeNotificationAsync(message);
         }
 
    	Stellen Sie sicher, dass Sie den Platzhalter **hub name** durch den Namen des Notification Hubs ersetzen, der im Portal auf der Registerkarte *Notification Hubs* angezeigt wird. Ersetzen Sie außerdem den Platzhalter für die Verbindungszeichenfolge durch die Verbindungszeichenfolge **DefaultFullSharedAccessSignature**, die Sie im Abschnitt "Konfigurieren Ihres Notification Hubs" erhalten haben.
 
-	>[AZURE.NOTE]Stellen Sie sicher, dass Sie die Verbindungszeichenfolge mit Vollzugriff (**Full**) verwenden, nicht mit Abhörzugriff (**Listen**). Die Verbindungszeichenfolge mit Abhörzugriff (**Listen**) verfügt nicht über die Berechtigungen zum Senden von Benachrichtigungen.
+	>[AZURE.NOTE] Stellen Sie sicher, dass Sie die Verbindungszeichenfolge mit Vollzugriff (**Full**) verwenden, nicht mit Abhörzugriff (**Listen**). Die Verbindungszeichenfolge mit Abhörzugriff (**Listen**) verfügt nicht über die Berechtigungen zum Senden von Benachrichtigungen.
 
 5. Fügen Sie die folgenden Zeilen zur **Main**-Methode hinzu:
 
@@ -493,4 +495,4 @@ In diesem einfachen Beispiel haben Sie Benachrichtigungen an Ihre Chrome-App ges
 [Azure Notification Hubs – Benachrichtigen von Benutzern]: notification-hubs-aspnet-backend-windows-dotnet-notify-users.md
 [Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten]: notification-hubs-windows-store-dotnet-send-breaking-news.md
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

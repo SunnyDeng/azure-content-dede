@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="12/14/2015"
+   ms.date="01/15/2016"
    ms.author="v-sharos" />
 
 # Verwalten von Volumes mithilfe des StorSimple Manager-Diensts
@@ -23,7 +23,7 @@
 
 In diesem Tutorial wird erläutert, wie Sie den StorSimple-Manager-Dienst zum Erstellen und Verwalten von Volumes auf dem StorSimple-Gerät und dem virtuellen StorSimple-Gerät verwenden können.
 
-Der StorSimple-Manager-Dienst ist eine Erweiterung des Azure-Portals, mit dem Sie Ihre StorSimple-Lösung über eine einzelne Webschnittstelle verwalten können. Zusätzlich zum Verwalten von Datenträgern können Sie mit dem StorSimple-Manager-Dienst StorSimple-Dienste erstellen und verwalten, Geräte anzeigen und verwalten, Warnungen anzeigen sowie Sicherungsrichtlinien und den Sicherungskatalog verwalten.
+Der StorSimple-Manager-Dienst ist eine Erweiterung des klassischen Azure-Portals, mit der Sie Ihre StorSimple-Lösung über eine einzelne Weboberfläche verwalten können. Zusätzlich zum Verwalten von Datenträgern können Sie mit dem StorSimple-Manager-Dienst StorSimple-Dienste erstellen und verwalten, Geräte anzeigen und verwalten, Warnungen anzeigen sowie Sicherungsrichtlinien und den Sicherungskatalog verwalten.
 
 > [AZURE.NOTE]Mit Azure StorSimple können nur nach Bedarf bereitgestellte Volumes erstellt werden. In einem Azure StorSimple-System können keine vollständig oder teilweise bereitgestellten Volumes erstellt werden.
 >
@@ -33,7 +33,7 @@ Der StorSimple-Manager-Dienst ist eine Erweiterung des Azure-Portals, mit dem Si
 
 Auf der Seite **Volumes** können Sie die Speichervolumes verwalten, die auf dem Microsoft Azure StorSimple-Gerät für die Initiatoren (Server) bereitgestellt werden. Auf der Seite wird eine Liste der Volumes auf dem StorSimple-Gerät angezeigt.
 
- ![Seite "Volumes"](./media/storsimple-manage-volumes/HCS_VolumesPage.png)
+ ![Seite „Volumes“](./media/storsimple-manage-volumes/HCS_VolumesPage.png)
 
 Ein Volume umfasst eine Reihe von Attributen:
 
@@ -117,7 +117,7 @@ Zum Ändern eines Volumes müssen Sie dieses erweitern oder die Hosts ändern, d
  
     > [AZURE.NOTE]Die Option **Standardsicherung für dieses Volume aktivieren** kann für das Volume nicht geändert werden.
 
-6. Speichern Sie die Änderungen, indem Sie auf das Häkchensymbol ![Häkchensymbol](./media/storsimple-manage-volumes/HCS_CheckIcon.png) klicken. Das Azure-Portal zeigt eine Meldung zur Aktualisierung des Volumes an. Eine Erfolgsmeldung wird angezeigt, wenn das Volume aktualisiert wurde.
+6. Speichern Sie die Änderungen, indem Sie auf das Häkchensymbol ![Häkchensymbol](./media/storsimple-manage-volumes/HCS_CheckIcon.png) klicken. Das klassische Azure-Portal zeigt eine Meldung zur Aktualisierung des Volumes an. Eine Erfolgsmeldung wird angezeigt, wenn das Volume aktualisiert wurde.
 
 7. Wenn Sie ein Volume erweitern, führen Sie folgende Schritte auf dem Windows-Hostcomputer aus:
 
@@ -171,7 +171,7 @@ Führen Sie die folgenden Schritte durch, um ein Volume zu löschen.
 
 ## Überwachen von Volumes
 
-Mit der Volumeüberwachung können Sie E/A-bezogene Statistiken für ein Volume erfassen. Die Überwachung wird standardmäßig für die ersten 32 von Ihnen erstellten Volumes aktiviert. Die Überwachung der zusätzlichen Volumes ist in der Standardeinstellung deaktiviert. Die Überwachung geklonter Volumes ist standardmäßig deaktiviert.
+Mit der Volumeüberwachung können Sie E/A-bezogene Statistiken für ein Volume erfassen. Die Überwachung wird standardmäßig für die ersten 32 von Ihnen erstellten Volumes aktiviert. Die Überwachung der zusätzlichen Volumes ist in der Standardeinstellung deaktiviert. Die Überwachung geklonter Volumes ist ebenfalls standardmäßig deaktiviert.
 
 Führen Sie die folgenden Schritte durch, um die Überwachung eines Volumes zu aktivieren oder zu deaktivieren.
 
@@ -193,8 +193,9 @@ Führen Sie die folgenden Schritte durch, um die Überwachung eines Volumes zu a
 ## Nächste Schritte
 
 - Erfahren Sie, wie Sie ein [StorSimple-Volume klonen](storsimple-clone-volume.md).
+
 - Erfahren Sie, wie Sie [Ihr StorSimple-Gerät mithilfe des StorSimple Manager-Diensts verwalten](storsimple-manager-service-administration.md).
 
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0121_2016-->

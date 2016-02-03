@@ -25,7 +25,7 @@
 
 Damit Sie Microsoft Azure DocumentDB verwenden können, müssen Sie ein DocumentDB-Datenbankkonto erstellen. Dazu können Sie das Azure-Portal, Azure-Ressourcen-Manager-Vorlagen oder die Azure-Befehlszeilenschnittstelle (CLI) verwenden. In diesem Artikel wird beschrieben, wie Sie ein Datenbankkonto über das Azure-Portal erstellen. Informationen zum Erstellen eines Kontos mit Azure-Ressourcen-Manager oder mit der Azure-Befehlszeilenschnittstelle finden Sie unter [Automatisieren der Erstellung von DocumentDB-Datenbankkonten](documentdb-automation-resource-manager-cli.md).
 
-Arbeiten Sie zum ersten Mal mit DocumentDB? Sehen Sie sich [dieses](http://azure.microsoft.com/documentation/videos/create-documentdb-on-azure/) vier Minuten lange Video an, um zu erfahren, wie die häufigsten Aufgaben im Onlineportal ausgeführt werden.
+Arbeiten Sie zum ersten Mal mit DocumentDB? Sehen Sie sich [dieses](https://azure.microsoft.com/documentation/videos/create-documentdb-on-azure/) vier Minuten lange Video an, um zu erfahren, wie die häufigsten Aufgaben im Onlineportal ausgeführt werden.
 
 [AZURE.INCLUDE [DocumentDB-Erstellen-DB-Account](../../includes/documentdb-create-dbaccount.md)]
 
@@ -50,4 +50,4 @@ Weitere Informationen zu DocumentDB finden Sie in folgenden Ressourcen:
 
  
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

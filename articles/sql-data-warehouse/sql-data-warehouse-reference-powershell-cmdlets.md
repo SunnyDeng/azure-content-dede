@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Erste Schritte mit SQL Data Warehouse-Cmdlets"
+   pageTitle="Erste Schritte mit Cmdlets in SQL Data Warehouse"
    description="Anhalten und Fortsetzen von SQL Data Warehouse mithilfe von PowerShell-Cmdlets"
    services="sql-data-warehouse"
    documentationCenter="NA"
@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="12/15/2015"
-   ms.author="twounder;sidneyh;barbkess"/>
+   ms.date="01/11/2016"
+   ms.author="mausher;sidneyh;barbkess;sonyama"/>
 
 # Erste Schritte mit Azure Data Warehouse-Cmdlets und REST-APIs
 
@@ -30,65 +30,87 @@ Analog dazu können die REST-APIs für **SQL Azure-Datenbank** auch für Instanz
 2. Geben Sie zum Ausführen des Moduls auf der Startseite **Microsoft Azure PowerShell** ein.
 3. Falls Sie Ihr Konto noch nicht dem Computer hinzugefügt haben, führen Sie das folgende Cmdlet aus. (Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell]():
 
-		Add-AzureAccount
-3. Verwenden Sie zum Wechseln des Modus das folgende Cmdlet:
+```
+Add-AzureAccount
+```
 
-		Switch-AzureMode AzureResourceManager
+3. Wählen Sie Ihr Abonnement für die Datenbank, die Sie anhalten oder wieder aufnehmen möchten. Dadurch wird das Abonnement „MySubscription“ ausgewählt.
 
-## Suspend-AzureSqlDatabase
+```
+Select-AzureRmSubscription -SubscriptionName "MySubscription"
+```
+
+## Suspend-AzureRmSqlDatabase
+
+Die Befehlsreferenz finden Sie unter [Suspend-AzureRmSQLDatabase](https://msdn.microsoft.com/library/mt619337.aspx).
+
 ### Beispiel 1: Anhalten einer Datenbank auf einem Server anhand des Namens
 
 In diesem Beispiel wird die auf dem Server „Server01“ gehostete Datenbank mit der Bezeichnung „Database02“ angehalten. Der Server befindet sich in einer Azure-Ressourcengruppe namens „ResourceGroup1“.
 
-    Suspend-AzureSqlDatabase –ResourceGroupName "ResourceGroup11" –ServerName
-    "Server01" –DatabaseName "Database02"
+```
+Suspend-AzureRmSqlDatabase –ResourceGroupName "ResourceGroup11" –ServerName "Server01" –DatabaseName "Database02"
+```
 
 ### Beispiel 2: Anhalten eines Datenbankobjekts
 
-In diesem Beispiel wird eine Datenbank namens „Database02“ von einem Server mit der Bezeichnung „Server01“ abgerufen, der sich in einer Ressourcengruppe namens „ResourceGroup1“ befindet. Das abgerufene Objekt wird an **Suspend-AzureSqlDatabase** weitergeleitet. Dadurch wird die Datenbank angehalten.
+In diesem Beispiel wird eine Datenbank namens „Database02“ von einem Server mit der Bezeichnung „Server01“ abgerufen, der sich in einer Ressourcengruppe namens „ResourceGroup1“ befindet. Das abgerufene Objekt wird an **Suspend-AzureSqlDatabase** weitergeleitet. Dadurch wird die Datenbank angehalten. Der letzte Befehl zeigt die Ergebnisse an.
 
-	$database = Get-AzureSqlDatabase –ResourceGroupName "ResourceGroup11" –ServerName "Server01" –DatabaseName "Database02"
-	$resultDatabase = $database | Suspend-AzureSqlDatabase
+```
+$database = Get-AzureRmSqlDatabase –ResourceGroupName "ResourceGroup11" –ServerName "Server01" –DatabaseName "Database02"
+$resultDatabase = $database | Suspend-AzureRmSqlDatabase
+$resultDatabase
+```
 
 ## Resume-AzureSqlDatabase
+
+Die Befehlsreferenz finden Sie unter [Resume-AzureRmSQLDatabase](https://msdn.microsoft.com/library/mt619347.aspx).
 
 ### Beispiel 1: Fortsetzen einer Datenbank auf einem Server anhand des Namens
 
 In diesem Beispiel wird der Betrieb der auf dem Server „Server01“ gehosteten Datenbank mit der Bezeichnung „Database02“ fortgesetzt. Der Server befindet sich in einer Ressourcengruppe namens „ResourceGroup1“.
 
-	Resume-AzureSqlDatabase –ResourceGroupName "ResourceGroup11" –ServerName "Server01" –DatabaseName "Database02"
+```
+Resume-AzureRmSqlDatabase –ResourceGroupName "ResourceGroup11" –ServerName "Server01" -DatabaseName "Database02"
+```
 
 ### Beispiel 2: Fortsetzen eines Datenbankobjekts
 
-In diesem Beispiel wird eine Datenbank namens „Database02“ von einem Server mit der Bezeichnung „Server01“ abgerufen, der sich in einer Ressourcengruppe namens „ResourceGroup1“ befindet. Das Objekt wird an **Resume-AzureSqlDatabase** übergeben.
+In diesem Beispiel wird eine Datenbank namens „Database02“ von einem Server mit der Bezeichnung „Server01“ abgerufen, der sich in einer Ressourcengruppe namens „ResourceGroup1“ befindet. Das Objekt wird an **Resume-AzureRmSqlDatabase** übergeben.
 
-	$database = Get-AzureSqlDatabase –ResourceGroupName "ResourceGroup11" –ServerName "Server01" –DatabaseName "Database02"
-	$resultDatabase = $database | Resume-AzureSqlDatabase
+```
+$database = Get-AzureRmSqlDatabase –ResourceGroupName "ResourceGroup11" –ServerName "Server01" –DatabaseName "Database02"
+$resultDatabase = $database | Resume-AzureRmSqlDatabase
+```
 
-## Get-AzureSqlDatabaseRestorePoints
+## Get-AzureRmSqlDatabaseRestorePoints
 
-Dieses Cmdlet führt die Sicherungswiederherstellungspunkte für eine Azure SQL-Datenbank auf. Die Wiederherstellungspunkte dienen zum Wiederherstellen der Datenbank. Das zurückgegebene Objekt besitzt folgende Eigenschaften:
+Dieses Cmdlet führt die Sicherungswiederherstellungspunkte für eine Azure SQL Data Warehouse-Datenbank auf. Die Wiederherstellungspunkte dienen zum Wiederherstellen der Datenbank. Das zurückgegebene Objekt besitzt folgende Eigenschaften:
 
 Eigenschaft|Beschreibung
 ---|---
-RestorePointType|DISCRETE/CONTINUOUS. Diskrete Wiederherstellungspunkte beschreiben die möglichen Zeitpunkte, zu denen eine Azure SQL-Datenbank wiederhergestellt werden kann. Kontinuierliche Wiederherstellungspunkte beschreiben die frühestmöglichen Zeitpunkte, zu denen eine Azure SQL-Datenbank wiederhergestellt werden kann. Die Datenbank kann zu jedem Zeitpunkt wiederhergestellt werden, der hinter dem frühestmöglichen Zeitpunkt liegt.
+RestorePointType|DISCRETE/CONTINUOUS. Diskrete Wiederherstellungspunkte beschreiben die möglichen Zeitpunkte, zu denen eine Azure SQL Data Warehouse-Datenbank wiederhergestellt werden kann. Kontinuierliche Wiederherstellungspunkte beschreiben die frühestmöglichen Zeitpunkte, zu denen eine Azure SQL-Datenbank wiederhergestellt werden kann. Die Datenbank kann zu jedem Zeitpunkt wiederhergestellt werden, der hinter dem frühestmöglichen Zeitpunkt liegt.
 EarliestRestoreDate|Früheste Wiederherstellungszeit (wird aufgefüllt, wenn "restorePointType" = CONTINUOUS ist)
 RestorePointCreationDate |Uhrzeit der Sicherungsmomentaufnahme (aufgefüllt, wenn "restorePointType = DISCRETE")
 
 ### Beispiel 1: Abrufen der Wiederherstellungspunkte einer Datenbank auf einem Server anhand des Namens
 In diesem Beispiel werden die Wiederherstellungspunkte für eine Datenbank namens „Database02“ von einem Server mit der Bezeichnung „Server01“ abgerufen, der sich in einer Ressourcengruppe namens „ResourceGroup1“ befindet.
 
-	$restorePoints = Get-AzureSqlDatabaseRestorePoints –ResourceGroupName "ResourceGroup11" –ServerName "Server01" –DatabaseName "Database02"
-
+```	
+$restorePoints = Get-AzureRmSqlDatabaseRestorePoints –ResourceGroupName "ResourceGroup11" –ServerName "Server01" –DatabaseName "Database02"
+$restorePoints
+```
 
 
 ### Beispiel 2: Fortsetzen eines Datenbankobjekts
 
-In diesem Beispiel wird eine Datenbank namens „Database02“ von einem Server mit der Bezeichnung „Server01“ abgerufen, der sich in einer Ressourcengruppe namens „ResourceGroup1“ befindet. Das Datenbankobjekt wird an **Get-AzureSqlDatabase** übergeben, was in den Wiederherstellungspunkten der Datenbank resultiert.
+In diesem Beispiel wird eine Datenbank namens „Database02“ von einem Server mit der Bezeichnung „Server01“ abgerufen, der sich in einer Ressourcengruppe namens „ResourceGroup1“ befindet. Das Datenbankobjekt wird an **Get-AzureRmSqlDatabase** übergeben, was in den Wiederherstellungspunkten der Datenbank resultiert. Der letzte Befehl druckt die Ergebnisse
 
-	$database = Get-AzureSqlDatabase –ResourceGroupName "ResourceGroup11" –ServerName "Server01" –DatabaseName "Database02"
-	$restorePoints = $database | Get-AzureSqlDatabaseRestorePoints
-
+```
+$database = Get-AzureRmSqlDatabase –ResourceGroupName "ResourceGroup11" –ServerName "Server01" –DatabaseName "Database02"
+$restorePoints = $database | Get-AzureRmSqlDatabaseRestorePoints
+$retorePoints
+```
 
 
 > [AZURE.NOTE]Hinweis: Wenn Ihr Server „foo.database.windows.net“ heißt, verwenden Sie in den PowerShell-Cmdlets für „-ServerName“ den Namen „foo“.
@@ -111,4 +133,4 @@ Weitere Referenzinformationen finden Sie unter [SQL Data Warehouse-Referenz – 
 [yah]: http://search.yahoo.com/
 [msn]: http://search.msn.com/
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0114_2016-->

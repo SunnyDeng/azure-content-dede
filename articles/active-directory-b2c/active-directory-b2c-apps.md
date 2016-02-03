@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/28/2015"
+	ms.date="12/22/2015"
 	ms.author="dastrock"/>
 
 # Azure AD B2C Preview: Anwendungstypen
@@ -23,7 +23,7 @@ Azure AD B2C unterstützt die Authentifizierung für eine Vielzahl moderner App-
 [AZURE.INCLUDE [active-directory-b2c-preview-note](../../includes/active-directory-b2c-preview-note.md)]
 
 ## Die Grundlagen
-Jede App, die Azure AD B2C verwendet, muss im [B2C-Verzeichnis](https://portal.azure.com) im [Azure-Vorschauportal](active-directory-b2c-get-started.md) registriert werden. Der Registrierungsprozess für die App sammelt einige Werte und weist ihr einige Werte zu:
+Jede App, die Azure AD B2C verwendet, muss über das [Azure-Portal](https://portal.azure.com) im [B2C-Verzeichnis](active-directory-b2c-get-started.md) registriert werden. Der Registrierungsprozess für die App sammelt einige Werte und weist ihr einige Werte zu:
 
 - Eine **Anwendungs-ID**, die Ihre Anwendung eindeutig identifiziert.
 - Einen **Umleitungs-URI**, der zum Umleiten von Antworten zurück an die App verwendet werden kann.
@@ -128,4 +128,4 @@ Viele Architekturen umfassen eine Web-API, von der eine andere Downstream-Web-AP
 
 Dieses Szenario der verketteten Web-API kann mithilfe der Berechtigung für Anmeldeinformationen über den OAuth 2.0-JWT-Bearer unterstützt werden, auch bekannt als „Im-Auftrag-von-Vorgang“. Der Im-Auftrag-von-Vorgang ist in der Preview-Version von Azure AD B2C derzeit noch nicht implementiert.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

@@ -1,19 +1,19 @@
-<properties 
-    pageTitle="Auflisten von Azure Storage-Ressourcen mit der Microsoft Azure Storage Client Library for C++ | Microsoft Azure" 
-    description="Erfahren Sie, wie Sie die Auflistungs-APIs in Microsoft Azure Storage Client Library for C++ verwenden können, um Container, BLOBs, Warteschlangen, Tabellen und Entitäten aufzuzählen." 
-    documentationCenter=".net" 
+<properties
+    pageTitle="Auflisten von Azure Storage-Ressourcen mit der Microsoft Azure Storage Client Library for C++ | Microsoft Azure"
+    description="Erfahren Sie, wie Sie die Auflistungs-APIs in Microsoft Azure Storage Client Library for C++ verwenden können, um Container, BLOBs, Warteschlangen, Tabellen und Entitäten aufzuzählen."
+    documentationCenter=".net"
     services="storage"
-    authors="tamram" 
-    manager="carolz" 
-    editor=""/>
-<tags 
-    ms.service="storage" 
-    ms.workload="storage" 
-    ms.tgt_pltfrm="na" 
-    ms.devlang="na" 
-    ms.topic="article" 
-    ms.date="09/23/2015" 
-    ms.author="zhimingyuan;tamram"/>
+    authors="tamram"
+    manager="carmonm"
+    editor="tysonn"/>
+<tags
+    ms.service="storage"
+    ms.workload="storage"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="01/05/2016"
+    ms.author="dineshm"/>
 
 # Auflisten von Azure Storage-Ressourcen in C++
 
@@ -54,7 +54,7 @@ Daher ist es unpraktisch, alle Objekte in einer einzigen Antwort aufzulisten. St
 
 Die Antwort für einen Vorgang mit segmentierter Auflistung enthält Folgendes:
 
--	<i>\_segment</i>, das die Ergebnisse enthält, die für einen einzelnen Aufruf der Auflistungs-API zurückgegeben wurden. 
+-	<i>\_segment</i>, das die Ergebnisse enthält, die für einen einzelnen Aufruf der Auflistungs-API zurückgegeben wurden.
 -	*continuation\_token*, das an den nächsten Aufruf übergeben wird, damit die nächste Seite mit Ergebnissen abgerufen wird. Gibt es keine weiteren zurückzugebenden Ergebnisse, ist das Fortsetzungstoken (continuation\_token) gleich NULL.
 
 Ein typischer Aufruf zum Auflisten alle BLOBs in einem Container könnte beispielsweise wie der folgende Codeausschnitt aussehen. Der Code ist in unseren [Beispielen](https://github.com/Azure/azure-storage-cpp/blob/master/Microsoft.WindowsAzure.Storage/samples/BlobsGettingStarted/Application.cpp) verfügbar:
@@ -75,15 +75,15 @@ Ein typischer Aufruf zum Auflisten alle BLOBs in einem Container könnte beispie
 	        process_diretory(it->as_directory());
 	    }
 	}
-	
+
 	    token = segment.continuation_token();
 	}
 	while (!token.empty());
 
 Beachten Sie, dass die Anzahl von Ergebnissen, die in einer Seite zurückgegeben werden, durch den Parameter *max\_results* in der Überladung jeder API gesteuert werden kann. Beispiel:
-	
-	list_blob_item_segment list_blobs_segmented(const utility::string_t& prefix, bool use_flat_blob_listing, 
-		blob_listing_details::values includes, int max_results, const continuation_token& token, 
+
+	list_blob_item_segment list_blobs_segmented(const utility::string_t& prefix, bool use_flat_blob_listing,
+		blob_listing_details::values includes, int max_results, const continuation_token& token,
 		const blob_request_options& options, operation_context context)
 
 Wenn Sie den *max\_results*-Parameter nicht angeben, wird in einer einzelnen Seite der standardmäßige maximale Wert von bis zu 5000 Ergebnissen zurückgegeben.
@@ -124,7 +124,7 @@ Für den Fall, dass in Ihrem Code diese gierigen APIs aufgerufen werden:
 	    {
 	        process_entity(*it);
 	    }
-	
+
 	    token = segment.continuation_token();
 	} while (!token.empty());
 
@@ -184,4 +184,4 @@ Weitere Informationen zu Azure Storage und zur Client Library for C++ finden Sie
 -	[Azure Storage-Teamblog](http://blogs.msdn.com/b/windowsazurestorage/)
 -	[Azure-Speicherdokumentation](http://azure.microsoft.com/documentation/services/storage/)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0114_2016-->

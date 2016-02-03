@@ -1,5 +1,5 @@
 <properties 
-    pageTitle="Importieren einer BACPAC-Datei zum Erstellen einer neuen Azure SQL-Datenbank mithilfe von PowerShell" 
+    pageTitle="Importieren einer BACPAC-Datei zum Erstellen einer neuen Azure SQL-Datenbank mithilfe von PowerShell | Microsoft Azure" 
     description="Importieren einer BACPAC-Datei zum Erstellen einer neuen Azure SQL-Datenbank mithilfe von PowerShell" 
     services="sql-database" 
     documentationCenter="" 
@@ -13,7 +13,7 @@
     ms.topic="article"
     ms.tgt_pltfrm="powershell"
     ms.workload="data-management" 
-    ms.date="12/17/2015"
+    ms.date="01/20/2016"
     ms.author="sstein"/>
 
 # Importieren einer BACPAC-Datei zum Erstellen einer neuen Azure SQL-Datenbank mithilfe von PowerShell
@@ -142,7 +142,7 @@ Beim Ausführen dieses Befehls werden Sie zur Eingabe eines Kennworts aufgeforde
 
 ## Nächste Schritte
 
-- [Herstellen einer Verbindung mit SQL Server Management Studio (SSMS)](sql-database-connect-to-database.md)
+- [Herstellen einer Verbindung mit einer Azure SQL-Datenbank mit SQL Server Management Studio und Ausführen einer T-SQL-Beispielabfrage](sql-database-connect-query-ssms.md)
 
 
 
@@ -153,4 +153,4 @@ Beim Ausführen dieses Befehls werden Sie zur Eingabe eines Kennworts aufgeforde
 - [Warnungen zur Notfallwiederherstellung](sql-database-disaster-recovery-drills.md)
 - [SQL-Datenbankdokumentation](https://azure.microsoft.com/documentation/services/sql-database/)
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0121_2016-->

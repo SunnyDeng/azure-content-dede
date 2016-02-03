@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/03/2015" 
+	ms.date="01/20/2016" 
 	ms.author="casoper"/>
 	
 # Löschen eines Azure CDN-Endpunkts
@@ -56,6 +56,7 @@ Dieses Lernprogramm führt Sie durch das Löschen von Assets aus allen Edgeknote
 	
 
 ## Weitere Informationen
-[Azure CDN-REST-API-Referenz – Löschen oder Vorabladen eines Endpunkts](https://msdn.microsoft.com/library/mt634451.aspx)
+- [Vorabladen von Assets auf einen Azure CDN-Endpunkt](cdn-preload-endpoint.md)
+- [Azure CDN-REST-API-Referenz – Löschen oder Vorabladen eines Endpunkts](https://msdn.microsoft.com/library/mt634451.aspx)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0121_2016-->

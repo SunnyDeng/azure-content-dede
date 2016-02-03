@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="09/15/2015"
+   ms.date="12/28/2015"
    ms.author="v-sharos" />
 
 # Benutzeroberfläche des StorSimple Snapshot Managers
@@ -26,8 +26,6 @@ Der StorSimple Snapshot Manager verfügt über eine intuitive grafische Benutzer
 Um die Benutzeroberfläche anzuzeigen, klicken Sie auf das Symbol des StorSimple Snapshot Managers auf Ihrem Desktop. Das Konsolenfenster wird angezeigt, wie in der folgenden Abbildung dargestellt.
 
 ![StorSimple Snapshot Manager – Bereiche](./media/storsimple-use-snapshot-manager/HCS_SSM_gui_panes.png)
-
-**Abbildung 1: StorSimple Snapshot Manager-Benutzeroberfläche**
 
 Das Konsolenfenster besitzt fünf Hauptelemente. Klicken Sie auf den entsprechenden Link für eine vollständige Beschreibung des jeweiligen Elements.
 
@@ -57,8 +55,6 @@ Klicken Sie auf ein Element auf der Menüleiste, um eine Liste der verfügbaren 
 
 ![Ausgewähltes Menü "Ansicht"](./media/storsimple-use-snapshot-manager/HCS_SSM_View_menu.png)
 
-**Abbildung 2: Menüleiste des StorSimple Snapshot Managers mit ausgewählten Menü "Ansicht"**
-
 ### Menü "Datei"
 
 Das Menü **Datei** enthält Standardbefehle der Microsoft Management Console (MMC).
@@ -68,8 +64,6 @@ Das Menü **Datei** enthält Standardbefehle der Microsoft Management Console (M
 Klicken Sie zum Anzeigen des Menüs **Datei** auf der Menüleiste auf **Datei**. Das folgende Menü wird angezeigt.
 
 ![StorSimple Snapshot Manager-Menü "Datei"](./media/storsimple-use-snapshot-manager/HCS_SSM_FileMenu.png)
-
-**Abbildung 3: StorSimple Snapshot Manager-Menü "Datei"**
 
 #### Menübeschreibung
 
@@ -102,13 +96,9 @@ Wenn Sie z. B. den obersten Knoten im **Bereichsfenster** auswählen und dann m
  
 ![StorSimple Snapshot Manager-Menü "Aktion"](./media/storsimple-use-snapshot-manager/HCS_SSM_Action_menu.png)
 
-**Abbildung 4: StorSimple Snapshot Manager-Menü "Aktion"**
-
 Der Bereich **Aktionen** (rechts in der Konsole) enthält die gleiche Liste von Aktionen wie das Menü **Aktion**. Darüber hinaus enthält der Bereich **Aktionen** die Optionen des Menüs **Ansicht**, mit denen Sie eine benutzerdefinierte Ansicht des **Ergebnisbereichs** erstellen können.
 
 ![Bereich "Aktionen" mit geöffnetem Menü "Ansicht"](./media/storsimple-use-snapshot-manager/HCS_SSM_ActionsPane_Results.png)
-
-**Abbildung 5: StorSimple Snapshot Manager-Bereich "Aktionen" mit dem Menü "Ansicht"**
 
 #### Menübeschreibung
 
@@ -153,8 +143,6 @@ Sie finden das Menü **Ansicht** auf der Menüleiste oder im Bereich **Aktionen*
 
 ![StorSimple Snapshot Manager-Menü "Ansicht"](./media/storsimple-use-snapshot-manager/HCS_SSM_View_menu.png)
 
-**Abbildung 6: StorSimple Snapshot Manager-Menü "Ansicht"**
-
 #### Menübeschreibung
 
 In der folgenden Tabelle werden die Elemente im Menü **Ansicht** beschrieben.
@@ -174,8 +162,6 @@ Sie finden das Menü **Favoriten** auf der Menüleiste.
 
 ![StorSimple Snapshot Manager-Menü "Favoriten"](./media/storsimple-use-snapshot-manager/HCS_SSM_FavoritesMenu.png)
 
-**Abbildung 7: StorSimple Snapshot Manager-Menü "Favoriten"**
-
 #### Menübeschreibung
 
 In der folgenden Tabelle werden die Elemente im Menü **Favoriten** beschrieben.
@@ -194,8 +180,6 @@ Verwenden Sie das Menü **Fenster** zum Hinzufügen und Anordnen von StorSimple 
 Sie finden das Menü **Fenster** auf der Menüleiste.
 
 ![StorSimple Snapshot Manager-Menü "Fenster"](./media/storsimple-use-snapshot-manager/HCS_SSM_WindowMenu.png)
-
-**Abbildung 8: StorSimple Snapshot Manager-Menü "Fenster"**
 
 Die nummerierte Liste am unteren Rand des Menüs enthält die zurzeit geöffneten Fenster. Klicken Sie auf ein Fenster in der Liste, um es im Vordergrund anzuzeigen.
 
@@ -217,8 +201,6 @@ Verwenden Sie das Menü **Hilfe** zum Anzeigen der verfügbaren Onlinehilfe zum 
 Sie finden das Menü **Hilfe** auf der Menüleiste. Sie können auch über den Bereich **Aktionen** auf die Hilfethemen zum StorSimple Snapshot Manager zugreifen.
 
 ![StorSimple Snapshot Manager-Menü "Hilfe"](./media/storsimple-use-snapshot-manager/HCS_SSM_HelpMenu.png)
-
-**Abbildung 9: StorSimple Snapshot Manager-Menü "Hilfe"**
 
 #### Menübeschreibung
 
@@ -259,8 +241,6 @@ Das **Bereichsfenster** ist der linke Bereich in der StorSimple Snapshot Manager
 Das **Bereichsfenster** enthält eine Reihe von Objekten (Knoten), die in einer Baumstruktur angeordnet sind und auf die geklickt werden kann.
 
 ![Bereichsfenster](./media/storsimple-use-snapshot-manager/HCS_SSM_Scope_pane.png)
-
-**Abbildung 10: StorSimple Snapshot Manager – Bereichsfenster**
 
 - Zum Erweitern oder Reduzieren eines Knotens klicken Sie auf den Pfeil neben dem Knotennamen.
 
@@ -384,8 +364,6 @@ Zum Anzeigen des folgenden Beispiels klicken Sie im **Bereichsfenster** auf den 
 
 ![Ergebnisbereich](./media/storsimple-use-snapshot-manager/HCS_SSM_Results_pane.png)
 
-**Abbildung 11: StorSimple Snapshot Manager – Ergebnisbereich**
-
 Sie können die im **Ergebnisbereich** angezeigten Details konfigurieren: Klicken Sie mit der rechten Maustaste im **Bereichsfenster** auf **Ansicht**, und klicken Sie dann auf **Spalten hinzufügen/entfernen**.
 
 ## Bereich "Aktionen"
@@ -398,13 +376,9 @@ Zum Anzeigen des folgenden Beispiels erweitern Sie im **Bereichsfenster** den Kn
 
 ![Bereich "Aktionen" mit Beispiel für geplante Aufträge](./media/storsimple-use-snapshot-manager/HCS_SSM_ActionsPane.png)
 
-**Abbildung 12: StorSimple Snapshot Manager – Bereich "Aktionen" (geplante Aufträge)**
-
 Zum Anzeigen weiterer Optionen erweitern Sie im **Bereichsfenster** den Knoten **Aufträge**. Klicken Sie anschließend auf **Geplant** und dann im **Ergebnisbereich** auf einen geplanten Auftrag. Im Bereich **Aktionen** werden die verfügbaren Aktionen für den geplanten Auftrag angezeigt, wie im folgenden Beispiel gezeigt.
 
 ![Bereich "Aktionen" mit Beispiel für Auftragsaktionen](./media/storsimple-use-snapshot-manager/HCS_SSM_ActionsPane_Results.png)
-
-**Abbildung 13: StorSimple Snapshot Manager – Bereich "Aktionen" (spezieller Auftrag)**
 
 ## Tastaturnavigation und Tastenkombinationen
 
@@ -516,7 +490,8 @@ In den folgenden Tabellen werden die Tastenkombinationen für die einzelnen Knot
 | V | Öffnet das Menü **Ansicht**. |
 | W | Öffnet eine neue StorSimple Snapshot Manager-Konsole mit Fokus auf dem Knoten **Volumegruppen**.|
 | F | Aktualisiert die StorSimple Snapshot Manager-Konsole.|
-| L | Öffnet die Seite **Liste exportieren**. | H | Öffnet die Onlinehilfe. |
+| L | Öffnet die Seite **Liste exportieren**.
+| H | Öffnet die Onlinehilfe. |
  
 #### Tastenkombinationen für den Knoten "Sicherungskatalog"
 
@@ -541,4 +516,4 @@ In den folgenden Tabellen werden die Tastenkombinationen für die einzelnen Knot
 - Weitere Informationen zum [Verwenden von StorSimple Snapshot Manager zum Verwalten der StorSimple-Lösung](storsimple-snapshot-manager-admin.md).
 - Erfahren Sie, wie Sie [mit dem StorSimple Snapshot Manager Verbindungen mit Geräten herstellen und diese verwalten](storsimple-snapshot-manager-manage-devices.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

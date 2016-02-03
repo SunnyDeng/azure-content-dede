@@ -24,9 +24,12 @@ Wenn Sie ein Experiment erstellen möchten, suchen Sie in den Beispielexperiment
 ## Durchsuchen des Cortana Analytics-Katalogs
 1. Wechseln Sie zu [Gallery](http://gallery.azureml.net/) (Galerie).
 2. Durchsuchen Sie **Trending Experiments** (Trendanalyse-Experimente) oder **Microsoft Samples** (Microsoft-Beispiele).
-3. Verwenden Sie die Suchfunktion und Filter, um die Ergebnisse einzugrenzen: ![](./media/machine-learning-sample-experiments/image1.png) 
-4. Klicken Sie auf ein Experiment, um mehr darüber zu erfahren. Zum Ausführen und/oder Ändern des Experiments klicken Sie auf **Open in Studio** (In Studio öffnen). ![](./media/machine-learning-sample-experiments/image2.png) 
-5.  Melden Sie sich mit den Anmeldeinformationen für ihr Microsoft-Konto an. Wenn Sie noch keinen Machine Learning-Arbeitsbereich besitzen, wird ein Arbeitsbereich in der kostenlosen Testversion erstellt. [Informieren Sie sich über den Funktionsumfang der kostenlosen Testversion von Machine Learning](http://azure.microsoft.com/pricing/details/machine-learning/).![](./media/machine-learning-sample-experiments/image3.png) 
+3. Verwenden Sie die Suchfunktion und Filter, um die Ergebnisse einzugrenzen:  
+![](./media/machine-learning-sample-experiments/image1.png)
+4. Klicken Sie auf ein Experiment, um mehr darüber zu erfahren. Zum Ausführen und/oder Ändern des Experiments klicken Sie auf **Open in Studio** (In Studio öffnen). 
+![](./media/machine-learning-sample-experiments/image2.png) 
+5.  Melden Sie sich mit den Anmeldeinformationen für ihr Microsoft-Konto an. Wenn Sie noch keinen Machine Learning-Arbeitsbereich besitzen, wird ein Arbeitsbereich in der kostenlosen Testversion erstellt. [Informieren Sie sich über den Funktionsumfang der kostenlosen Testversion von Machine Learning](https://azure.microsoft.com/pricing/details/machine-learning/).
+![](./media/machine-learning-sample-experiments/image3.png) 
 
 ## Verwenden einer Vorlage in Studio
 1. Melden Sie sich mit den Anmeldeinformationen für ihr Microsoft-Konto bei [Studio](https://studio.azureml.net) an, und klicken Sie dann auf **New*** (Neu), um ein neues Experiment zu erstellen.
@@ -39,4 +42,4 @@ Wenn Sie ein Experiment erstellen möchten, suchen Sie in den Beispielexperiment
 - [Erstellen einer Webdienst-API](machine-learning-publish-a-machine-learning-web-service.md)
 - [Durchsuchen einsatzbereiter Anwendungen](https://datamarket.azure.com/browse?query=machine+learning)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

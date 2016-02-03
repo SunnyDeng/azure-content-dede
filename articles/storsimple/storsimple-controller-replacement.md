@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="12/02/2015"
+   ms.date="01/14/2016"
    ms.author="alkohli" />
 
 # Ersetzen des Controllermoduls auf dem StorSimple-Gerät
@@ -75,7 +75,7 @@ Führen Sie folgende Schritte aus, wenn einer der Controller in Ihrem Microsoft 
 
 #### So entfernen Sie ein einzelnes fehlerhaftes Controllermodul
 
-1. Klicken Sie im klassischen Azure-Portal des StorSimple Manager-Diensts auf die Registerkarte **Geräte**, und klicken Sie dann auf den Namen des Geräts, das Sie überwachen möchten.
+1. Wechseln Sie im klassischen Azure-Portal zum StorSimple Manager-Dienst, und klicken Sie auf die Registerkarte **Geräte** und dann auf den Namen des Geräts, das Sie überwachen möchten.
 
 2. Klicken Sie auf die Registerkarte **Wartung**, und navigieren Sie zu **Hardwarestatus**. Der Status von Controller 0 oder von Controller 1 wird rot dargestellt. Dies zeigt einen Fehler an.
 
@@ -230,9 +230,9 @@ Jedes dieser Verfahren wird im Folgenden beschrieben.
 
 ### Verwenden des klassischen Azure-Portals zum Identifizieren des aktiven Controllers
 
-Navigieren Sie im Verwaltungsportal zu **Geräte** > **Wartung**, und scrollen Sie zum Abschnitt **Controller**. Hier können Sie überprüfen, welcher Domänencontroller aktiv ist.
+Navigieren Sie im klassischen Azure-Portal zu **Geräte** > **Wartung**, und scrollen Sie zum Abschnitt **Controller**. Hier können Sie überprüfen, welcher Domänencontroller aktiv ist.
 
-![Identifizieren des aktiven Controllers im Verwaltungsportal](./media/storsimple-controller-replacement/IC752072.png)
+![Identifizieren des aktiven Controllers im klassischen Azure-Portal](./media/storsimple-controller-replacement/IC752072.png)
 
 **Abbildung 6** Der aktive Controller wird im klassischen Azure-Portal angezeigt.
 
@@ -266,4 +266,4 @@ Wenn diese LED blinkt, ist der Controller aktiv, und der andere Controller befin
 
 Weitere Informationen zum [Austauschen von StorSimple-Hardwarekomponenten](storsimple-hardware-component-replacement.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0121_2016-->

@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="09/22/2015"
-   ms.author="JRJ@BigBangData.co.uk;barbkess"/>
+   ms.date="01/19/2016"
+   ms.author="jrj;barbkess;sonyama"/>
 
 # Migrieren Ihres Schemas nach SQL Data Warehouse#
 
@@ -115,7 +115,7 @@ Alternativen:
 - **table**: in temporäre Tabellen konvertieren
 - **timestamp**: Code anpassen, sodass datetime2 und die `CURRENT_TIMESTAMP`-Funktion verwendet wird. Beachten Sie, dass Sie "current\_timestamp" nicht als Standardeinschränkung verwenden können und dass der Wert nicht automatisch aktualisiert wird. Wenn Sie rowversion-Werte aus einer Spalte mit timestamp-Typ migrieren müssen, sollten Sie binary(8) oder varbinary(8) für NOT NULL- oder NULL-Zeilenversionswerte verwenden.
 - **varchar(max)**: varchar(8000) oder kleiner zur Verbesserung der Leistung
-- **uniqueidentifier**: varbinary(8)
+- **uniqueidentifier**: varbinary(16) oder varchar(36), abhängig vom Eingabeformat (Binärdaten oder Zeichen) Ihrer Werte. Wenn das Eingabeformat auf Zeichen basiert, ist eine Optimierung möglich. Durch das Konvertieren von Zeichen in das Binärformat können Sie den Spaltenspeicher um über 50 Prozent reduzieren. In sehr großen Tabellen kann diese Optimierung von Vorteil sein.
 - **Benutzerdefinierte Datentypen**: zurück in systemeigene Typen konvertieren, falls möglich
 - **xml**: varchar(8000) oder kleiner zur Verbesserung der Leistung. Gegebenenfalls in Spalten unterteilen.
 
@@ -145,4 +145,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 
 <!--Other Web references-->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0121_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/03/2015"
+	ms.date="01/07/2016"
 	ms.author="curtand"/>
 
 
@@ -45,7 +45,7 @@ Die folgende Tabelle beschreibt die verfügbaren Kennwortrichtlinieneinstellunge
 | Ablauf des Kennworts | <ul><li>Standardwert: **false** days (zeigt an, dass der Kennwortablauf aktiviert ist) </li><li>Der Wert kann mit dem Cmdlet „Set-MsolUser“ für einzelne Benutzerkonten konfiguriert werden. </li></ul> |
 | Kennwortverlauf | Das letzte Kennwort kann nicht erneut verwendet werden. |
 | Zeitraum für Kennwortverlauf | Endlos |
-| Kontosperrung | <ul><li>Nach 10 erfolglosen Anmeldeversuchen (falsches Kennwort) muss der Benutzer im Rahmen der Anmeldung einen CAPTCHA-Dialog beantworten.</li><li>Nach 10 weiteren erfolglosen Anmeldeversuchen (falsches Kennwort) und richtiger Beantwortung des CAPTCHA-Dialogs wird der Benutzer eine Zeit lang gesperrt. Eine weitere Eingabe falscher Kennwörter führt zu einer exponentiellen Verlängerung des Sperrzeitraums.</li></ul> |
+| Kontosperrung | Nach zehn nicht erfolgreichen Anmeldeversuchen (falsches Kennwort) wird der Benutzer für eine Minute gesperrt. Mit jeder weiteren nicht erfolgreichen Anmeldung verlängert sich die Dauer, die der Benutzer gesperrt ist. |
 
 
 ## Nächste Schritte
@@ -60,4 +60,4 @@ Die folgende Tabelle beschreibt die verfügbaren Kennwortrichtlinieneinstellunge
 * [Problembehandlung für die Kennwortverwaltung](active-directory-passwords-troubleshoot.md)
 * [Weitere Informationen](active-directory-passwords-learn-more.md)
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0114_2016-->

@@ -11,7 +11,7 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
+    ms.date="01/12/2016" 
     ms.author="markvi" />
 
 #Tutorial: Azure Active Directory-Integration mit Sprinklr
@@ -22,7 +22,7 @@ Das in diesem Lernprogramm verwendete Szenario setzt voraus, dass Sie bereits ü
 -   Ein gültiges Azure-Abonnement
 -   Ein Sprinklr-Mandant
   
-Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, die Sie Sprinklr zugewiesen haben, mittels einmaliger Anmeldung auf der Sprinklr-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
+Nach Abschluss dieses Tutorials können sich die Sprinklr zugewiesenen Azure AD-Benutzer mittels einmaliger Anmeldung auf Ihrer Sprinklr-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -67,9 +67,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Spr
 
 ##Konfigurieren der einmaligen Anmeldung
   
-In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Sprinklr zu authentifizieren.  
-Im Rahmen dieses Verfahrens müssen Sie eine Base-64-codierte Zertifikatsdatei erstellen.  
-Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [Konvertieren eines binären Zertifikats in eine Textdatei](http://youtu.be/PlgrzUZ-Y1o) weitere Informationen.
+In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei Sprinklr zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie eine Base-64-codierte Zertifikatsdatei erstellen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (Konvertieren eines binären Zertifikats in eine Textdatei; in englischer Sprache) weitere Informationen.
 
 ###So konfigurieren Sie einmaliges Anmelden:
 
@@ -112,11 +110,11 @@ Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [Konvertier
     3.  Wählen Sie **Neues SSO-Zertifikat verwenden**.
     4.  Erstellen Sie eine **Base-64-codierte** Datei aus dem heruntergeladenen Zertifikat.  
 
-        >[AZURE.TIP]Weitere Informationen finden Sie unter [Konvertieren eines binären Zertifikats in eine Textdatei](http://youtu.be/PlgrzUZ-Y1o).
+        >[AZURE.TIP] Weitere Informationen finden Sie unter [Konvertieren eines binären Zertifikats in eine Textdatei](http://youtu.be/PlgrzUZ-Y1o).
 
     5.  Öffnen Sie das Base-64-codierte Zertifikat im Editor, kopieren Sie den Inhalt des Zertifikats in die Zwischenablage, und fügen Sie ihn anschließend in das Textfeld **Zertifikat des Identitätsanbieters** ein.
     6.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Sprinklr** den Wert der **Identitätsanbieter-ID**, und fügen Sie ihn in das Textfeld **Entitäts-ID** ein.
-    7.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Sprinklr** den Wert der **Remoteanmelde-URL**, und fügen Sie ihn in das Textfeld **Anmelde-URL des Identitätsanbieters** ein.
+    7.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Sprinklr** den Wert der **Remoteanmelde-URL**, und fügen Sie ihn in das Textfeld **Anmelde-URL des ID-Anbieters** ein.
     8.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Sprinkrl** den Wert der **Remoteabmelde-URL**, und fügen Sie ihn in das Textfeld **Abmelde-URL des Identitätsanbieters** ein.
     9.  Wählen Sie für **SAML-Benutzer-ID-Typ** **Erklärung enthält sprinklr.com-Benutzernamen des Benutzers**.
     10. Wählen Sie für **SAML-Benutzer-ID-Speicherort** die Option **Benutzer-ID ist das Namensbezeichnerelement der Ausstellererklärung**.
@@ -141,7 +139,7 @@ In diesem Abschnitt wird beschrieben, wie in Sprinklr AAD-Benutzerkonten erstell
 
     ![Verwaltung](./media/active-directory-saas-sprinklr-tutorial/IC782907.png "Verwaltung")
 
-3.  Wechseln Sie zu **Client verwalten > Benutzer** im linken Fensterbereich.
+3.  Wechseln Sie zur **Client verwalten > Benutzer** im linken Fensterbereich.
 
     ![Einstellungen](./media/active-directory-saas-sprinklr-tutorial/IC782914.png "Einstellungen")
 
@@ -159,7 +157,7 @@ In diesem Abschnitt wird beschrieben, wie in Sprinklr AAD-Benutzerkonten erstell
     4.  Wählen Sie einen **Benutzertyp** aus.
     5.  Klicken Sie auf **Aktualisieren**.
 
-    >[AZURE.IMPORTANT]**Kennwort deaktiviert** muss ausgewählt sein, um einem Benutzer die Anmeldung über einen Identitätsanbieter zu ermöglichen.
+    >[AZURE.IMPORTANT] **Kennwort deaktiviert** muss ausgewählt sein, um einem Benutzer die Anmeldung über einen Identitätsanbieter zu ermöglichen.
 
 6.  Wechseln Sie zu **Rolle**, und führen Sie dann die folgenden Schritte aus:
 
@@ -168,7 +166,7 @@ In diesem Abschnitt wird beschrieben, wie in Sprinklr AAD-Benutzerkonten erstell
     1.  Wählen Sie aus der Liste **Global** die Option **ALL\_Permissions** aus.
     2.  Klicken Sie auf **Aktualisieren**.
 
->[AZURE.NOTE]Sie können Azure AD-Benutzerkonten auch mithilfe anderer Tools zum Erstellen von Sprinklr-Benutzerkonten oder mithilfe der von Sprinklr bereitgestellten APIs erstellen.
+>[AZURE.NOTE] Sie können Azure AD-Benutzerkonten auch mithilfe anderer Tools zum Erstellen von Sprinklr-Benutzerkonten oder mithilfe der von Sprinklr bereitgestellten APIs erstellen.
 
 ##Zuweisen von Benutzern
   
@@ -178,7 +176,7 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
 
 1.  Erstellen Sie im Azure AD-Portal ein Testkonto.
 
-2.  Klicken Sie auf der Anwendungsintegrationsseite für **Sprinklr **auf **Benutzer zuweisen**.
+2.  Klicken Sie auf der Anwendungsintegrationsseite für Sprinklr auf **Benutzer zuweisen**.
 
     ![Benutzer zuweisen](./media/active-directory-saas-sprinklr-tutorial/IC782918.png "Benutzer zuweisen")
 
@@ -188,4 +186,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0114_2016-->

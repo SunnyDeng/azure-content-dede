@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="11/03/2015"
+	ms.date="01/08/2016"
 	ms.author="larryfr"/>
 
 #Verfügbarkeit und Zuverlässigkeit von Hadoop-Clustern in HDInsight
@@ -136,7 +136,7 @@ Wählen Sie in der Ambari-Webbenutzeroberfläche den Dienst aus, für den Sie Pr
 
 ## Konfigurieren der Größe des Hauptknotens ##
 
-Die Größe des Hauptknotens kann nur beim Erstellen des Clusters ausgewählt werden. Die Standardgröße für Hauptknoten ist **A3**, d. h. vier Kerne, 7 GB Arbeitsspeicher und 285 GB lokaler Speicher. Eine Liste der verschiedenen VM-Größen, die für HDInsight verfügbar sind (einschließlich Kerne, Arbeitsspeicher und lokaler Speicher), finden Sie auf der Seite [HDInsight-Preisdetails](http://azure.microsoft.com/pricing/details/hdinsight/).
+Die Größe des Hauptknotens kann nur beim Erstellen des Clusters ausgewählt werden. Eine Liste der verschiedenen VM-Größen, die für HDInsight verfügbar sind (einschließlich Kerne, Arbeitsspeicher und lokaler Speicher), finden Sie auf der Seite [HDInsight-Preisdetails](http://azure.microsoft.com/pricing/details/hdinsight/).
 
 Beim Erstellen eines neuen Clusters können Sie die Größe der Knoten angeben. Die Größe kann wie folgt im [Azure-Portal][preview-portal], mit [Azure PowerShell][azure-powershell] und mit der [Azure-Befehlszeilenschnittstelle][azure-cli] festgelegt werden:
 
@@ -166,4 +166,4 @@ In diesem Dokument haben Sie erfahren, wie Azure HDInsight hohe Verfügbarkeit f
 [azure-powershell]: ../powershell-install-configure.md
 [azure-cli]: ../xplat-cli-install.md
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

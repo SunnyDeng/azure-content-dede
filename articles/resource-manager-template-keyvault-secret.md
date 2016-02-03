@@ -1,6 +1,6 @@
 <properties
    pageTitle="Ressourcen-Manager-Vorlage für einen geheimen Schlüssel in einem Schlüsseltresor | Microsoft Azure"
-   description="Erläutert das Ressourcen-Manager-Schema für geheime Schlüssel in einem Schlüsseltresor."
+   description="Zeigt das Ressourcen-Manager-Schema für die Bereitstellung geheimer Schlüssel in einem Schlüsseltresor über eine Vorlage."
    services="azure-resource-manager,key-vault"
    documentationCenter="na"
    authors="tfitzmac"
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="12/15/2015"
+   ms.date="01/04/2016"
    ms.author="tomfitz"/>
 
 # Vorlagenschema für einen geheimen Schlüssel in einem Schlüsseltresor
@@ -227,4 +227,4 @@ Im zweiten Beispiel wird der geheime Schlüssel als Ressource der obersten Ebene
 - Allgemeine Informationen zu Schlüsseltresoren finden Sie unter [Erste Schritte mit dem Azure-Schlüsseltresor](./key-vault/key-vault-get-started.md).
 - Ein Beispiel für das Verweisen auf einen geheimen Schlüssel in einem Schlüsseltresor beim Bereitstellen von Vorlagen finden Sie unter [Übergeben sicherer Werte während der Bereitstellung](resource-manager-keyvault-parameter.md).
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0107_2016-->

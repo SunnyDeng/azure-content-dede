@@ -5,7 +5,7 @@
    documentationCenter="NA"
    authors="jrowlandjones"
    manager="barbkess"
-   editor="jrowlandjones"/>
+   editor=""/>
 
 <tags
    ms.service="sql-data-warehouse"
@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="09/22/2015"
-   ms.author="JRJ@BigBangData.co.uk;barbkess"/>
+   ms.date="01/07/2016"
+   ms.author="jrj;barbkess;sonyama"/>
 
 # Parallelitäts- und Workloadverwaltung in SQL Data Warehouse
 SQL Data Warehouse implementiert Verfahren zum Verwalten der Workloadparallelität und der Zuweisung von Rechnerressourcen, um bei jeder Skalierung für eine vorhersagbare Leistung zu sorgen.
@@ -452,4 +452,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 
 <!--Other Web references-->
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0114_2016-->

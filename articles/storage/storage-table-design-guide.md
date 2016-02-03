@@ -5,7 +5,7 @@
    documentationCenter="na"
    authors="jasonnewyork" 
    manager="tadb"
-   editor=""/>
+   editor="tysonn"/>
 
 <tags
    ms.service="storage"
@@ -209,7 +209,8 @@ In den folgenden Beispielen wird angenommen, dass der Tabellenspeicherdienst Ent
 
 Im Abschnitt [Übersicht über den Azure-Tabellenspeicherdienst](#azure-table-service-overview) weiter oben werden einige der wichtigsten Funktionen des Azure-Tabellenspeicherdiensts beschrieben, die direkten Einfluss auf den Entwurf für Abfragen haben. Dadurch ergeben sich die folgenden allgemeinen Richtlinien für den Entwurf von Abfragen für den Tabellenspeicherdienst. Beachten Sie, dass die in den Beispielen unten verwendete Filtersyntax aus dem REST-API-Tabellenspeicherdienst stammt. Weitere Informationen finden Sie unter [Abfragen von Entitäten](http://msdn.microsoft.com/library/azure/dd179421.aspx) auf MSDN.
 
--	Eine ***Punktabfrage*** ist die effizienteste Suche und wird bei sehr umfangreichen Suchvorgängen oder für Suchvorgänge empfohlen, die eine sehr niedrige Latenz erfordern. Eine solche Abfrage kann Indizes verwenden, um durch die Angabe der **PartitionKey**- und **RowKey**-Werte eine einzelne Entität sehr effizient zu suchen. Beispiel: $filter=(PartitionKey eq 'Sales') und (RowKey eq '2')  
+-	Eine ***Punktabfrage*** ist die effizienteste Suche und wird bei sehr umfangreichen Suchvorgängen oder für Suchvorgänge empfohlen, die eine sehr niedrige Latenz erfordern. Eine solche Abfrage kann Indizes verwenden, um durch die Angabe der **PartitionKey**- und **RowKey**-Werte eine einzelne Entität sehr effizient zu suchen. Beispiel:
+$filter=(PartitionKey eq 'Sales') und (RowKey eq '2')  
 -	Die zweitbeste Lösung ist eine ***Bereichsabfrage***, die den **PartitionKey** verwendet und einen Bereich von **RowKey**-Werten filtert, um mehr als eine Entität zurückzugeben. Der **PartitionKey**-Wert identifiziert eine bestimmte Partition und die **RowKey**-Werte identifizieren eine Teilmenge der Entitäten in dieser Partition. Beispiel:
 $filter=PartitionKey eq 'Sales' und RowKey ge 'S' und RowKey lt 'T'  
 -	Die drittbeste Lösung ist ein ***Partitionsscan***, der den **PartitionKey** sowie Filter für eine andere Eigenschaft ohne Schlüssel verwendet und möglicherweise mehr als eine Entität zurückgibt. Der **PartitionKey**-Wert identifiziert eine bestimmte Partition und die Eigenschaftswerte wählen eine Teilmenge der Entitäten in dieser Partition aus. Beispiel:
@@ -1584,4 +1585,4 @@ Wir möchten auch den folgenden Microsoft-MVPs für ihr wertvolles Feedback zu d
 [29]: ./media/storage-table-design-guide/storage-table-design-IMAGE29.png
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0114_2016-->

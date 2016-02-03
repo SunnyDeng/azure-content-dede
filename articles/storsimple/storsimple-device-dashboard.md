@@ -4,7 +4,7 @@
    services="storsimple"
    documentationCenter="NA"
    authors="alkohli"
-   manager="carolz"
+   manager="carmonm"
    editor="" />
 <tags 
    ms.service="storsimple"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="09/15/2015"
+   ms.date="12/30/2015"
    ms.author="alkohli" />
 
 # Verwenden des StorSimple Manager-Gerätedashboards
@@ -21,7 +21,7 @@
 
 Das StorSimple Manager-Gerätedashboard bietet Ihnen einen Überblick über die Informationen für ein bestimmtes StorSimple-Gerät, wodurch es sich deutlich vom Dienstdashboard unterscheidet, das Ihnen Informationen zu allen Geräten bietet, die in Ihrer Microsoft Azure StorSimple-Lösung enthalten sind.
 
-![Seite für Gerätedashboard](./media/storsimple-device-dashboard/HCS_DeviceDashboardPage.png)
+![Seite für Gerätedashboard](./media/storsimple-device-dashboard/StorSimple_DeviceDashbaord1M.png)
 
 Das Dashboard enthält die folgenden Informationen:
 
@@ -100,4 +100,4 @@ Möglicherweise benötigen Sie den Ziel-IQN des Geräts, wenn Sie das Challenge 
 - Erfahren Sie mehr über das [StorSimple Manager-Dienstdashboard](storsimple-service-dashboard.md).
 - Erfahren Sie mehr zum [Verwenden Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="12/15/2015"
+   ms.date="01/15/2016"
    ms.author="v-sharos" />
 
 # Verwalten von Volumes mithilfe des StorSimple Manager-Diensts (Update 2)
@@ -23,7 +23,7 @@
 
 In diesem Tutorial wird erläutert, wie Sie den StorSimple-Manager-Dienst zum Erstellen und Verwalten von Volumes auf dem StorSimple-Gerät und dem virtuellen StorSimple-Gerät mit installiertem Update 2 verwenden können.
 
-Der StorSimple-Manager-Dienst ist eine Erweiterung des Azure-Portals, mit dem Sie Ihre StorSimple-Lösung über eine einzelne Webschnittstelle verwalten können. Zusätzlich zum Verwalten von Datenträgern können Sie mit dem StorSimple-Manager-Dienst StorSimple-Dienste erstellen und verwalten, Geräte anzeigen und verwalten, Warnungen anzeigen sowie Sicherungsrichtlinien und den Sicherungskatalog verwalten.
+Der StorSimple-Manager-Dienst ist eine Erweiterung des klassischen Azure-Portals, mit der Sie Ihre StorSimple-Lösung über eine einzelne Weboberfläche verwalten können. Zusätzlich zum Verwalten von Datenträgern können Sie mit dem StorSimple-Manager-Dienst StorSimple-Dienste erstellen und verwalten, Geräte anzeigen und verwalten, Warnungen anzeigen sowie Sicherungsrichtlinien und den Sicherungskatalog verwalten.
 
 ## Volumetypen
 
@@ -69,7 +69,7 @@ In der folgenden Tabelle finden Sie die bereitgestellte Maximalkapazität für d
 
 Auf der Seite **Volumes** können Sie die Speichervolumes verwalten, die auf dem Microsoft Azure StorSimple-Gerät für die Initiatoren (Server) bereitgestellt werden. Auf der Seite wird eine Liste der Volumes auf dem StorSimple-Gerät angezeigt.
 
- ![Seite "Volumes"](./media/storsimple-manage-volumes-u2/VolumePage.png)
+ ![Seite „Volumes“](./media/storsimple-manage-volumes-u2/VolumePage.png)
 
 Ein Volume umfasst eine Reihe von Attributen:
 
@@ -77,7 +77,7 @@ Ein Volume umfasst eine Reihe von Attributen:
 
 - **Status** – online oder offline. Offline-Volumes sind für die Initiatoren (Server), die über Zugriff für die Verwendung des Volumes verfügen, nicht sichtbar.
 
-- **Kapazität**: Gibt die Gesamtmenge der Daten an, die vom Initiator (Server) gespeichert werden kann. Lokale Volumes werden vollständig bereitgestellt und befinden sich auf dem StorSimple-Gerät. Mehrstufige Volumes werden mit schlanker Speicherzuweisung bereitgestellt, und die Daten werden dedupliziert. Bei Volumes mit schlanker Speicherzuweisung weist Ihr Gerät die physische Speicherkapazität weder intern noch in der Cloud vorab anhand der konfigurierten Volumekapazität zu. Die Volumekapazität wird nach Bedarf zugewiesen und genutzt.
+- **Kapazität**: Gibt die Gesamtmenge der Daten an, die vom Initiator (Server) gespeichert werden kann. Lokale Volumes werden vollständig bereitgestellt und befinden sich auf dem StorSimple-Gerät. Mehrstufige Volumes werden mit schlanker Speicherzuweisung bereitgestellt, und die Daten werden dedupliziert. Bei Volumes mit schlanker Speicherzuweisung weist Ihr Gerät die physische Speicherkapazität weder intern noch in der Cloud anhand der konfigurierten Volumekapazität vorab zu. Die Volumekapazität wird nach Bedarf zugewiesen und genutzt.
 
 - **Typ**: Gibt an, ob das Volume **mehrstufig** (Standard) oder **lokal** ist.
 
@@ -108,7 +108,7 @@ Sie haben beim Bereitstellen der StorSimple-Lösung [ein Volume erstellt](storsi
 
 3. Klicken Sie unten auf der Seite auf **Hinzufügen**. Der Assistent "Volume hinzufügen" wird gestartet.
 
-     ![Assistent zum Hinzufügen von Volumes – Grundeinstellungen](./media/storsimple-manage-volumes-u2/AddVolume1.png)
+     ![Assistent zum Hinzufügen von Volumes – Grundeinstellungen](./media/storsimple-manage-volumes-u2/TieredVolEx.png)
 
 4. Gehen Sie im Assistenten "Volume hinzufügen" unter **Grundlegende Einstellungen** folgendermaßen vor:
 
@@ -117,22 +117,19 @@ Sie haben beim Bereitstellen der StorSimple-Lösung [ein Volume erstellt](storsi
   3. Wenn Sie in Schritt 2 **Mehrstufig** ausgewählt haben, können Sie das Kontrollkästchen **Verwenden Sie dieses Volume für Archivdaten, auf die Sie seltener zugreifen** aktivieren, um ein Archivierungsvolume zu konfigurieren.
   4. Geben Sie die **Bereitgestellte Kapazität** für das Volume in GB oder TB an. Unter [Bereitgestellte Kapazität](#provisioned-capacity) finden Sie die maximalen Größen der einzelnen Geräte und Volumetypen. Sehen Sie sich die **Verfügbare Kapazität** an, um zu ermitteln, wie viel Speicher tatsächlich auf dem Gerät verfügbar ist.
 
-    Wenn Sie ein lokales Volume konfigurieren, wird die folgende Meldung angezeigt.
+5. Klicken Sie auf das Pfeilsymbol ![Pfeilsymbol](./media/storsimple-manage-volumes-u2/HCS_ArrowIcon.png). Wenn Sie ein lokales Volume konfigurieren, wird die folgende Meldung angezeigt.
 
-    ![Nachricht zum Ändern des Volumetyps](./media/storsimple-manage-volumes-u2/LocalVolMessage.png)
-
-    Die folgende Seite wird angezeigt.
+    ![Nachricht zum Ändern des Volumetyps](./media/storsimple-manage-volumes-u2/LocalVolEx.png)
+   
+5. Klicken Sie erneut auf das Pfeilsymbol ![Pfeilsymbol](./media/storsimple-manage-volumes-u2/HCS_ArrowIcon.png), um zur Seite **Weitere Einstellungen** zu wechseln.
 
     ![Assistent zum Hinzufügen von Volumes – Zusätzliche Einstellungen](./media/storsimple-manage-volumes-u2/AddVolume2.png)<br>
-   
-5. Klicken Sie auf das Pfeilsymbol ![Pfeilsymbol](./media/storsimple-manage-volumes-u2/HCS_ArrowIcon.png), um zur Seite **Weitere Einstellungen** zu wechseln.
 
 6. Fügen Sie unter **Weitere Einstellungen** einen neuen Zugriffssteuerungsdatensatz (Access Control Record, ACR) hinzu:
   
   1. Wählen Sie aus der Dropdownliste einen Zugriffssteuerungsdatensatz aus. Sie können auch einen neuen Zugriffssteuerungsdatensatz hinzufügen. Mithilfe von Zugriffssteuerungsdatensätzen wird festgelegt, welche Hosts auf die Volumes zugreifen dürfen, indem der Host-IQN mit dem im Datensatz aufgeführten abgeglichen wird. Wenn Sie keinen ACR angeben, wird die folgende Meldung angezeigt.
 
         ![Specify ACR](./media/storsimple-manage-volumes-u2/SpecifyACR.png)
-
 
   2. Es wird empfohlen, das Kontrollkästchen **Standardsicherung für dieses Volume aktivieren** zu aktivieren.
   3. Klicken Sie auf das Häkchensymbol ![Häkchensymbol](./media/storsimple-manage-volumes-u2/HCS_CheckIcon.png), um das Volume mit den angegebenen Einstellungen zu erstellen.
@@ -168,7 +165,7 @@ Zum Ändern eines Volumes müssen Sie dieses erweitern oder die Hosts ändern, d
 
     > [AZURE.NOTE]Die Option **Standardsicherung für dieses Volume?** kann für das Volume nicht geändert werden.
 
-6. Speichern Sie die Änderungen, indem Sie auf das Häkchensymbol ![Häkchensymbol](./media/storsimple-manage-volumes-u2/HCS_CheckIcon.png) klicken. Das Azure-Portal zeigt eine Meldung zur Aktualisierung des Volumes an. Eine Erfolgsmeldung wird angezeigt, wenn das Volume aktualisiert wurde.
+6. Speichern Sie die Änderungen, indem Sie auf das Häkchensymbol ![Häkchensymbol](./media/storsimple-manage-volumes-u2/HCS_CheckIcon.png) klicken. Das klassische Azure-Portal zeigt eine Meldung zur Aktualisierung des Volumes an. Eine Erfolgsmeldung wird angezeigt, wenn das Volume aktualisiert wurde.
 
 7. Wenn Sie ein Volume erweitern, führen Sie folgende Schritte auf dem Windows-Hostcomputer aus:
 
@@ -211,13 +208,11 @@ Möglicherweise empfiehlt es sich, ein lokales Volume in ein mehrstufiges Volume
     - Wenn Sie den Typ in **Lokal** ändern, prüft StorSimple, ob genügend Kapazität vorhanden ist.
     - Wenn Sie den Typ in **Mehrstufig** ändern und dieses Volume für archivierte Daten verwendet werden soll, aktivieren Sie das Kontrollkästchen **Verwenden Sie dieses Volume für Archivdaten, auf die Sie seltener zugreifen**.
 
-    ![Archivierungskontrollkästchen](./media/storsimple-manage-volumes-u2/ModifyVolume1.png)
+        ![Archivierungskontrollkästchen](./media/storsimple-manage-volumes-u2/ModifyTieredVolEx.png)
 
-5. Klicken Sie auf das Pfeilsymbol ![Pfeilsymbol](./media/storsimple-manage-volumes-u2/HCS_ArrowIcon.png), um zur Seite **Weitere Einstellungen** zu wechseln.
+5. Klicken Sie auf das Pfeilsymbol ![Pfeilsymbol](./media/storsimple-manage-volumes-u2/HCS_ArrowIcon.png), um zur Seite **Weitere Einstellungen** zu wechseln. Wenn Sie ein lokales Volume konfigurieren, wird die folgende Meldung angezeigt.
 
-    Die folgende Meldung wird angezeigt.
-
-    ![Nachricht zum Ändern des Volumetyps](./media/storsimple-manage-volumes-u2/TypeChangeMessage.png)
+    ![Nachricht zum Ändern des Volumetyps](./media/storsimple-manage-volumes-u2/ModifyLocalVolEx.png)
 
 6. Klicken Sie erneut auf das Pfeilsymbol ![Pfeilsymbol](./media/storsimple-manage-volumes-u2/HCS_ArrowIcon.png), um fortzufahren.
 
@@ -266,7 +261,7 @@ Führen Sie die folgenden Schritte durch, um ein Volume zu löschen.
  
 ## Überwachen von Volumes
 
-Mit der Volumeüberwachung können Sie E/A-bezogene Statistiken für ein Volume erfassen. Die Überwachung wird standardmäßig für die ersten 32 von Ihnen erstellten Volumes aktiviert. Die Überwachung der zusätzlichen Volumes ist in der Standardeinstellung deaktiviert. Die Überwachung geklonter Volumes ist standardmäßig deaktiviert.
+Mit der Volumeüberwachung können Sie E/A-bezogene Statistiken für ein Volume erfassen. Die Überwachung wird standardmäßig für die ersten 32 von Ihnen erstellten Volumes aktiviert. Die Überwachung der zusätzlichen Volumes ist in der Standardeinstellung deaktiviert. Die Überwachung geklonter Volumes ist ebenfalls standardmäßig deaktiviert.
 
 Führen Sie die folgenden Schritte durch, um die Überwachung eines Volumes zu aktivieren oder zu deaktivieren.
 
@@ -280,15 +275,14 @@ Führen Sie die folgenden Schritte durch, um die Überwachung eines Volumes zu a
 
 4. Klicken Sie unten auf der Seite auf **Ändern**.
 
-5. Klicken Sie im Assistenten zum Ändern von Volumes unter **Grundeinstellungen** in der Dropdownliste **Überwachen** auf **Aktivieren** oder **Deaktivieren**.
-
-    ![Archivierungskontrollkästchen](./media/storsimple-manage-volumes-u2/ModifyVolume1.png)
+5. Klicken Sie im Assistenten "Ändern von Volume" unter **Grundlegende Einstellungen** in der Dropdownliste **Überwachen** auf **Aktivieren** oder **Deaktivieren**.
 
 ## Nächste Schritte
 
 - Erfahren Sie, wie Sie ein [StorSimple-Volume klonen](storsimple-clone-volume.md).
-- Informationen zum [Verwalten Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
+
+- Erfahren Sie, wie Sie [Ihr StorSimple-Gerät mithilfe des StorSimple Manager-Diensts verwalten](storsimple-manager-service-administration.md).
 
  
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0121_2016-->

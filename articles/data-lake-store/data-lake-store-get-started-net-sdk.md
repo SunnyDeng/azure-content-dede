@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="11/13/2015"
+   ms.date="01/04/2016"
    ms.author="nitinme"/>
 
 # Erste Schritte mit Azure Data Lake-Speicher mithilfe des .NET SDK
@@ -31,7 +31,7 @@ Erfahren Sie, wie Sie mithilfe des .NET SDK für Azure Data Lake-Speicher ein Az
 
 * Visual Studio 2013 oder 2015 Die folgenden Anweisungen verwenden Visual Studio 2015.
 * **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/).
-* **Aktivieren Ihres Azure-Abonnements** für die öffentliche Vorschauversion von Data Lake-Speicher. Weitere Informationen finden Sie in den [Anweisungen](data-lake-store-get-started-portal.md#signup).
+* **Aktiviertes Azure-Abonnement** für die öffentliche Vorschauversion des Data Lake-Speichers. Weitere Informationen finden Sie in den [Anweisungen](data-lake-store-get-started-portal.md#signup).
 
 ## Erstellen einer .NET-Anwendung
 
@@ -49,24 +49,27 @@ Erfahren Sie, wie Sie mithilfe des .NET SDK für Azure Data Lake-Speicher ein Az
 
 4. Klicken Sie auf **OK**, um das Projekt zu erstellen.
 
-5. Fügen Sie Ihrem Projekt das Nuget-Paket hinzu.
+5. Fügen Sie Ihrem Projekt die Nuget-Pakete hinzu.
 
 	1. Klicken Sie im Projektmappen-Explorer mit der rechten Maustaste auf den Projektnamen und dann auf **NuGet-Pakete verwalten**.
 	2. Stellen Sie auf der Registerkarte **Nuget-Paket-Manager** sicher, dass **Paketquelle** auf **nuget.org** festgelegt und das Kontrollkästchen **Include Prerelease** aktiviert ist.
-	3. Suchen und installieren Sie folgende Pakete:
+	3. Suchen und installieren Sie folgende Pakete für den Data Lake-Speicher:
 	
-		* Microsoft.Azure.Common.Authentication
 		* Microsoft.Azure.Management.DataLake.Store
 		* Microsoft.Azure.Management.DataLake.StoreFileSystem
 		* Microsoft.Azure.Management.DataLake.StoreUploader
 
 		![Hinzufügen einer Nuget-Quelle](./media/data-lake-store-get-started-net-sdk/ADL.Install.Nuget.Package.png "Erstellen eines neuen Azure Data Lake-Kontos")
 
+	4. Installieren Sie außerdem das Paket **Microsoft.Azure.Common.Authentication**. Auch hierbei handelt es sich um ein Vorabpaket („Prerelease“). Es wird für die Authentifizierung beim Azure Data Lake-Speicher benötigt.
+
+		![Hinzufügen einer Nuget-Quelle](./media/data-lake-store-get-started-net-sdk/adl.install.azure.auth.png "Erstellen eines neuen Azure Data Lake-Kontos")
+
 	4. Schließen Sie den **NuGet-Paket-Manager**.
 
 7. Öffnen Sie die Datei **Program.cs**, und ersetzen Sie den vorhandenen Codeblock durch folgenden Code. Geben Sie außerdem Werte für die im Codeausschnitt vorhandenen Parameter an.
 
-	Dieser Code erstellt zunächst einen Data Lake-Speicher, erstellt dort Ordner, lädt Dateien hoch und dann wieder herunter, und löscht schließlich das Konto. Wenn Sie Beispieldaten zum Hochladen verwenden möchten, können Sie den Ordner **Ambulance Data** aus dem [Azure Data Lake-Git-Repository](https://github.com/MicrosoftBigData/AzureDataLake/tree/master/SQLIPSamples/SampleData/AmbulanceData) herunterladen.
+	Dieser Code erstellt zunächst einen Data Lake-Speicher, erstellt dort Ordner, lädt Dateien hoch und dann wieder herunter, und löscht schließlich das Konto. Wenn Sie Beispieldaten zum Hochladen verwenden möchten, können Sie den Ordner **Ambulance Data** aus dem [Azure Data Lake-Git-Repository](https://github.com/MicrosoftBigData/usql/tree/master/Examples/Samples/Data/AmbulanceData) herunterladen.
 	
 		using System;
 		using System.Collections.Generic;
@@ -224,4 +227,4 @@ Erfahren Sie, wie Sie mithilfe des .NET SDK für Azure Data Lake-Speicher ein Az
 - [Verwenden von Azure Data Lake Analytics mit Data Lake-Speicher](data-lake-analytics-get-started-portal.md)
 - [Verwenden von Azure HDInsight mit Data Lake-Speicher](data-lake-store-hdinsight-hadoop-use-portal.md)
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0107_2016-->

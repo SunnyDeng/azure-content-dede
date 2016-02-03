@@ -369,7 +369,19 @@ Im Abschnitt "typeProperties" der Aktivität verfügbare Eigenschaften variieren
 
 Eigenschaft | Beschreibung | Zulässige Werte | Erforderlich
 -------- | ----------- | -------------- | -------- 
-azureTableSourceQuery | Verwendet die benutzerdefinierte Abfrage zum Lesen von Daten. | <p>Abfragezeichenfolge für Azure-Tabelle.</p>**Beispiele:****<br/> "azureTableSourceQuery": "PartitionKey eq 'DefaultPartitionKey'" <br/><br/>"azureTableSourceQuery": "$$Text.Format('PartitionKey ge \\'{0:yyyyMMddHH00\_0000}\\' and PartitionKey le \\'{0:yyyyMMddHH00\_9999}\\')', SliceStart)" | Kein "azureTableSourceIgnoreTableNotFound" | Gibt an, ob der Ausnahmefall, dass die Tabelle nicht vorhanden ist, ignoriert werden soll. | TRUE<br/>FALSE | Nein |
+azureTableSourceQuery | Verwendet die benutzerdefinierte Abfrage zum Lesen von Daten. | <p>Abfragezeichenfolge für Azure-Tabelle. Siehe unten aufgeführte Beispiele. | Nein
+azureTableSourceIgnoreTableNotFound | Gibt an, ob der Ausnahmefall, dass die Tabelle nicht vorhanden ist, ignoriert werden soll. | TRUE<br/>FALSE | Nein |
+
+### Beispiele für azureTableSourceQuery
+
+Wenn die Spalte für die Azure-Tabelle vom Typ „Zeichenfolge“ ist:
+
+	azureTableSourceQuery": "$$Text.Format('PartitionKey ge \\'{0:yyyyMMddHH00_0000}\\' and PartitionKey le \\'{0:yyyyMMddHH00_9999}\\'', SliceStart)"
+
+Wenn die Spalte für die Azure-Tabelle vom Typ „datetime“ ist:
+
+	"azureTableSourceQuery": "$$Text.Format('DeploymentEndTime gt datetime\\'{0:yyyy-MM-ddTHH:mm:ssZ}\\' and DeploymentEndTime le datetime\\'{1:yyyy-MM-ddTHH:mm:ssZ}\\'', SliceStart, SliceEnd)"
+
 
 **AzureTableSink** unterstützt die folgenden Eigenschaften im Abschnitt "typeProperties":
 
@@ -503,4 +515,4 @@ In diesem Fall führt Data Factory die Typkonvertierungen automatisch einschlie�
 
 [AZURE.INCLUDE [data-factory-column-mapping](../../includes/data-factory-column-mapping.md)]
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0114_2016-->

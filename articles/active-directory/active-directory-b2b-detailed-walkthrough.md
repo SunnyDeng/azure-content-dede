@@ -2,6 +2,7 @@
    pageTitle="Ausführliche exemplarische Vorgehensweise zur Verwendung der Vorschau der Azure Active Directory B2B-Zusammenarbeit | Microsoft Azure"
    description="Azure Active Directory B2B ermöglicht Geschäftspartnern den sicheren Zugriff auf Ihre Unternehmensanwendungen und unterstützt so Ihre unternehmensübergreifenden Beziehungen."
    services="active-directory"
+   documentationCenter="na"
    authors="viv-liu"
    manager="cliffdi"
    editor=""
@@ -59,7 +60,7 @@ Als Nächstes fügen wir Carol hinzu. Sie benötigt Zugriff auf Anwendungen und 
  - Rufen Sie wie im Fall von Bob die AppPrincipalId mithilfe des Cmdlets `Get-MsolServicePrincipal | fl DisplayName, AppPrincipalId` ab.
  - Rufen Sie die ObjectId für Gruppen mithilfe des Cmdlets `Get-MsolGroup | fl DisplayName, ObjectId` ab. Dadurch wird eine Liste mit allen Gruppen in Contoso und den zugehörigen ObjectIds angezeigt. Gruppen-IDs können auch im Azure-Portal auf der Registerkarte „Eigenschaften“ der Gruppe als Objekt-ID abgerufen werden. ![Abrufen von IDs und Gruppen für Carol](./media/active-directory-b2b-detailed-walkthrough/CarolPowerShell.png)
 
-2. Erstellen Sie eine CSV-Datei, und füllen Sie die Spalten „Email“, „DisplayName“, „InviteAppID“, „InviteAppResources“, **InviteGroupResources** und „InviteContactUsUrl“ für Carol auf. **InviteGroupResources** wird mit den ObjectIds der Gruppen „MyGroup1“ und „Externals“ aufgefüllt (getrennt durch ein Leerzeichen). ![Beispiel-CSV-Datei für Carol](./media/active-directory-b2b-detailed-walkthrough/CarolCSV.png)
+2. Erstellen Sie eine CSV-Datei und füllen Sie die Spalten „Email“, „DisplayName“, „InviteAppID“, „InviteAppResources“, **InviteGroupResources** und „InviteContactUsUrl“ für Carol aus. **InviteGroupResources** wird mit den ObjectIds der Gruppen „MyGroup1“ und „Externals“ aufgefüllt (getrennt durch ein Leerzeichen). ![Beispiel-CSV-Datei für Carol](./media/active-directory-b2b-detailed-walkthrough/CarolCSV.png)
 
 3. Laden Sie die CSV-Datei über das Azure-Portal hoch.
 
@@ -79,4 +80,4 @@ Weitere Artikel zur Azure AD B2B-Zusammenarbeit:
 - [Objektattributänderungen für externe Benutzer](active-directory-b2b-references-external-user-object-attribute-changes.md)
 - [Aktuelle Einschränkungen der Vorschau](active-directory-b2b-current-preview-limitations.md)
 
-<!---HONumber=Nov15_HO1-->
+<!----HONumber=AcomDC_0121_2016-->

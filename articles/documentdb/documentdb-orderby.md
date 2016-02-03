@@ -125,7 +125,7 @@ Hier erfahren Sie, wie Sie eine Sammlung mit der Indizierung für „Order By“
         });
 
 ## Beispiele
-Sehen Sie sich dieses [Github-Beispielprojekt](https://github.com/Azure/azure-documentdb-net/tree/master/samples/code-samples/Queries.OrderBy) an, das veranschaulicht, wie "Order By" verwendet wird, einschließlich Erstellen von Richtlinien für die Indizierung und Paging mit "Order By". Diese Beispiele sind Open-Source-basiert, und wir freuen uns, wenn Sie Pullanforderungen mit Beiträgen senden, von denen andere DocumentDB-Entwickler profitieren können. In den [Anleitungen für Beiträge](https://github.com/Azure/azure-documentdb-net/blob/master/Contributing.md) finden Sie Informationen dazu, wie Sie beitragen können.
+Sehen Sie sich dieses [Github-Beispielprojekt](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/code-samples/Queries) an, das veranschaulicht, wie "Order By" verwendet wird, einschließlich Erstellen von Richtlinien für die Indizierung und Paging mit "Order By". Diese Beispiele sind Open-Source-basiert, und wir freuen uns, wenn Sie Pullanforderungen mit Beiträgen senden, von denen andere DocumentDB-Entwickler profitieren können. In den [Anleitungen für Beiträge](https://github.com/Azure/azure-documentdb-net/blob/master/Contributing.md) finden Sie Informationen dazu, wie Sie beitragen können.
 
 ## Neue Entwicklungen
 
@@ -168,13 +168,13 @@ Sie können Folgendes nicht durchführen:
 
 ## Nächste Schritte
 
-Verwenden Sie das [Github-Beispielprojekt](https://github.com/Azure/azure-documentdb-net/tree/master/samples/code-samples/Queries.OrderBy) und starten Sie die Sortierung Ihrer Daten!
+Verwenden Sie das [Github-Beispielprojekt](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/code-samples/Queries) und starten Sie die Sortierung Ihrer Daten!
 
 ## Referenzen
 * [DocumentDB-Abfragereferenz](documentdb-sql-query.md)
 * [DocumentDB-Indizierungsrichtlinienreferenz](documentdb-indexing-policies.md)
 * [DocumentDB-SQL-Referenz](https://msdn.microsoft.com/library/azure/dn782250.aspx)
-* [DocumentDB-"Order By"-Beispiele](https://github.com/Azure/azure-documentdb-net/tree/master/samples/code-samples/Queries.OrderBy)
+* [DocumentDB-"Order By"-Beispiele](https://github.com/Azure/azure-documentdb-dotnet/tree/master/samples/code-samples/Queries)
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

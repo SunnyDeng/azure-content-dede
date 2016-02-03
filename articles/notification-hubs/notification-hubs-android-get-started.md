@@ -38,7 +38,7 @@ Den vollständigen Code für dieses Tutorial finden Sie [hier](https://github.co
 Für dieses Tutorial ist Folgendes erforderlich:
 
 + Android Studio, das Sie von der <a href="http://go.microsoft.com/fwlink/?LinkId=389797">Android-Website</a> herunterladen können.
-+ Ein aktives Azure-Konto. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdocumentation%2Farticles%2Fnotification-hubs-android-get-started%2F).
++ Ein aktives Azure-Konto. Wenn Sie noch kein Konto haben, können Sie in nur wenigen Minuten ein kostenloses Testkonto erstellen. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdocumentation%2Farticles%2Fnotification-hubs-android-get-started%2F).
 
 
 Das Abschließen dieses Tutorial ist eine Voraussetzung für alle anderen Notification Hubs-Tutorials für Android-Apps.
@@ -130,8 +130,8 @@ Der Notification Hub ist jetzt für die Arbeit mit GCM konfiguriert, und Sie bes
 
 
 	Aktualisieren Sie die drei Platzhalter:
-	* **SENDER\_ID**: Setzen Sie `SENDER_ID` auf die Projektnummer, die Sie zuvor von dem in der [Google Cloud Console](http://cloud.google.com/console) erstellten Projekt abgerufen haben.
-	* **HubListenConnectionString**: Legen Sie für `HubListenConnectionString` die Verbindungszeichenfolge **DefaultListenAccessSignature** für den Hub fest. Sie können diese Verbindungszeichenfolge kopieren, indem Sie im [Azure-Portal]( https://manage.windowsazure.com) auf der Registerkarte **Dashboard** Ihres Hubs auf **Verbindungszeichenfolge anzeigen** klicken.
+ 	* **SENDER_ID**: Legen Sie `SENDER_ID` auf die Projektnummer fest, die Sie zuvor von dem in der [Google Cloud Console](http://cloud.google.com/console) erstellten Projekt abgerufen haben.
+	* **HubListenConnectionString**: Legen Sie für `HubListenConnectionString` die Verbindungszeichenfolge **DefaultListenAccessSignature** für den Hub fest. Sie können diese Verbindungszeichenfolge kopieren, indem Sie im [klassischen Azure-Portal]( https://manage.windowsazure.com) auf der Registerkarte **Dashboard** Ihres Hubs auf **Verbindungszeichenfolge anzeigen** klicken. 
 	* **HubName**: Verwenden Sie den Namen Ihres Notification Hubs, der oben auf der Seite in Azure angezeigt wird (**nicht** die vollständige URL). Verwenden Sie z. B. `"myhub"`.
 
 
@@ -153,10 +153,10 @@ Der Notification Hub ist jetzt für die Arbeit mit GCM konfiguriert, und Sie bes
             	protected Object doInBackground(Object... params) {
                 	try {
                     	String regid = gcm.register(SENDER_ID);
-                    DialogNotify("Registered Successfully","RegId : " +
+                    ToastNotify("Registered Successfully - RegId : " +
 						hub.register(regid).getRegistrationId());
                 	} catch (Exception e) {
-                    	DialogNotify("Exception",e.getMessage());
+                    	ToastNotify("Registration Exception Message - " + e.getMessage());
                     	return e;
                 	}
                 	return null;
@@ -293,7 +293,7 @@ Sie können den Empfang von Benachrichtigungen in Ihrer App testen, indem Sie wi
 ## (Optional) Senden von Benachrichtigungen aus der App
 
 
-1. Erweitern Sie in der Projektansicht von Android Studio **App** > **src** > **main** > **res** > **layout**. Öffnen Sie die Layoutdatei **activity\_main.xml**, und klicken Sie auf die Registerkarte **Text**, um den Textinhalt der Datei zu aktualisieren. Ändern Sie ihn in den folgenden Code, mit dem ein neues `Button`- und `EditText`-Steuerelement zum Senden von Benachrichtigungsmeldungen an den Notification Hub hinzugefügt wird. Fügen Sie diesen Code am Ende der Datei unmittelbar vor `</RelativeLayout>` hinzu.
+1. Erweitern Sie in der Projektansicht von Android Studio **App** > **src** > **main** > **res** > **layout**. Öffnen Sie die Layoutdatei **activity_main.xml**, und klicken Sie auf die Registerkarte **Text**, um den Textinhalt der Datei zu aktualisieren. Ändern Sie ihn in den folgenden Code, mit dem ein neues `Button`- und `EditText`-Steuerelement zum Senden von Benachrichtigungsmeldungen an den Notification Hub hinzugefügt wird. Fügen Sie diesen Code am Ende der Datei unmittelbar vor `</RelativeLayout>` hinzu.
 
 	    <Button
         android:layout_width="wrap_content"
@@ -445,7 +445,7 @@ Sie können den Empfang von Benachrichtigungen in Ihrer App testen, indem Sie wi
          */
         public void sendNotificationButtonOnClick(View v) {
             EditText notificationText = (EditText) findViewById(R.id.editTextNotificationMessage);
-            final String json = "{"data":{"message":"" + notificationText.getText().toString() + ""}}";
+            final String json = "{\"data\":{\"message\":\"" + notificationText.getText().toString() + "\"}}";
 
             new Thread()
             {
@@ -543,7 +543,6 @@ Weitere allgemeine Informationen zu Notification Hubs finden Sie im [Notificatio
 
 <!-- URLs. -->
 [Get started with push notifications in Mobile Services]: ../mobile-services-javascript-backend-android-get-started-push.md
-[Erste Schritte mit Pushbenachrichtigungen in Mobile Services]: ../mobile-services-javascript-backend-android-get-started-push.md
 [Mobile Services Android SDK]: https://go.microsoft.com/fwLink/?LinkID=280126&clcid=0x409
 [Referencing a library project]: http://go.microsoft.com/fwlink/?LinkId=389800
 [klassischen Azure-Portal]: https://manage.windowsazure.com/
@@ -551,4 +550,4 @@ Weitere allgemeine Informationen zu Notification Hubs finden Sie im [Notificatio
 [Verwenden von Notification Hubs für Pushbenachrichtigungen an Benutzer]: notification-hubs-aspnet-backend-android-notify-users.md
 [Verwenden von Benachrichtigungshubs zum Senden von neuesten Nachrichten]: notification-hubs-aspnet-backend-android-breaking-news.md
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

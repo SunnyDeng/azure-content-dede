@@ -3,7 +3,7 @@ Da vom simulierten Gerät eine Datei in ein Azure Storage-BLOB hochgeladen wird,
 
 ## Senden eines Azure-BLOB-URIs an das simulierte Gerät
 
-In diesem Abschnitt ändern Sie die unter [Senden von Cloud-zu-Gerät-Nachrichten mit IoT Hub] erstellte **SendCloudtoDevice**-Konsolen-App, indem Sie ihr einen Azure-BLOB-URI mit einer SAS (Shared Access Signature) hinzufügen. Dadurch ist das Cloud-Back-End in der Lage, ausschließlich dem Empfänger der Cloud-zu-Gerät-Nachricht Schreibzugriff auf das BLOB zu gewähren.
+In diesem Abschnitt ändern Sie die unter [Senden von Cloud-zu-Gerät-Nachrichten mit IoT Hub] erstellte **SendCloudtoDevice**-Konsolen-App, indem Sie ihr einen Azure-BLOB-URI mit einer SAS (Shared Access Signature) hinzufügen. Dadurch ist das Cloud-Back-End in der Lage, ausschließlich dem Empfänger der C2D-Nachricht Schreibzugriff auf das Blob zu gewähren.
 
 1. Klicken Sie in Visual Studio mit der rechten Maustaste auf das **SendCloudtoDevice**-Projekt, und klicken Sie dann auf **NuGet-Pakete verwalten**. 
 
@@ -43,7 +43,7 @@ In diesem Abschnitt ändern Sie die unter [Senden von Cloud-zu-Gerät-Nachrichte
             return blob.Uri + sasBlobToken;
         }
 
-    Diese Methode erstellt einen neuen BLOB-Verweis und generiert einen SAS (Shared Access Signature)-URI, wie unter [Erstellen und Verwenden einer SAS mit dem Blob-Dienst](https://azure.microsoft.com/de-DE/documentation/articles/storage-dotnet-shared-access-signature-part-2/) beschrieben. Beachten Sie, dass die oben genannte Methode einen Signatur-URI generiert, der 24 Stunden gültig ist. Wenn das Zielgerät mehr Zeit zum Hochladen der Datei benötigt (weil es z. B. selten eine Verbindung herstellt, eine unzuverlässige Verbindung zum Hochladen einer umfangreichen Datei nutzt), könnten Sie längere Ablaufzeiten für Signaturen in Betracht ziehen.
+    Diese Methode erstellt einen neuen Blobverweis und generiert einen SAS (Shared Access Signature)-URI, wie unter [Erstellen und Verwenden einer SAS mit Blob Storage](https://azure.microsoft.com/de-DE/documentation/articles/storage-dotnet-shared-access-signature-part-2/) beschrieben. Beachten Sie, dass die oben genannte Methode einen Signatur-URI generiert, der 24 Stunden gültig ist. Wenn das Zielgerät mehr Zeit zum Hochladen der Datei benötigt (weil es z. B. selten eine Verbindung herstellt, eine unzuverlässige Verbindung zum Hochladen einer umfangreichen Datei nutzt), könnten Sie längere Ablaufzeiten für Signaturen in Betracht ziehen.
 
 5. Ändern Sie **SendCloudToDeviceMessageAsync** auf folgende Weise:
 
@@ -70,4 +70,4 @@ In diesem Abschnitt ändern Sie die unter [Senden von Cloud-zu-Gerät-Nachrichte
 
 <!-- Images -->
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0114_2016-->

@@ -13,13 +13,20 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/13/2015"
+	ms.date="01/11/2016"
 	ms.author="billmath"/>
 
 
 # Erneuern von Verbundzertifikaten für Office 365 und Azure AD
 
 Wenn Sie eine E-Mail oder eine Portalbenachrichtigung erhalten haben, in der Sie aufgefordert werden, Ihr Zertifikat für Office 365 zu erneuern, lesen Sie diesen Artikel, um das Problem zu beheben und zu verhindern, dass es erneut auftritt. Dieser Artikel setzt voraus, dass Sie AD FS als Verbundserver verwenden.
+
+>[AZURE.IMPORTANT]Beachten Sie, dass bei der Authentifizierung über Ihren Proxy unter Windows Server 2012 oder Windows Server 2008 R2 ein Fehler auftreten kann, nachdem eine der folgenden Aktionen ausgeführt wurde:
+>
+- Der Proxy erneuert sein vertrauenswürdiges Token nach dem Rollover von Zertifikaten in AD FS.
+- Sie haben Ihre AD FS-Zertifikate manuell ersetzt.
+>     
+Ein Hotfix ist verfügbar, um dieses Problem zu beheben. Informationen hierzu finden Sie unter [Fehler bei der Authentifizierung über Proxy unter Windows Server 2012 oder Windows 2008 R2 SP1](http://support.microsoft.com/kb/3094446).
 
 ## Überprüfen, ob Schritte erforderlich sind
 
@@ -85,4 +92,4 @@ Nun sollten zwei Zertifikate aufgeführt werden, bei denen eines ein NotAfter-Da
 
 >[AZURE.NOTE]Wenn Sie mehrere Domänen der obersten Ebene unterstützen müssen, z. B. "contoso.com" und "fabrikam.com", müssen Sie den SupportMultipleDomain-Switch mit den Cmdlets verwenden. Weitere Informationen finden Sie unter "Unterstützen mehrerer Domänen auf oberster Ebene". Stellen Sie abschließend sicher, dass alle Webanwendungsproxy-Server mit dem [Windows Server Mai 2014](http://support.microsoft.com/kb/2955164)-Rollup aktualisiert wurden. Andernfalls können sich die Proxys möglicherweise nicht mit dem neuen Zertifikat aktualisieren, was zu einem Ausfall führt.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0114_2016-->

@@ -4,7 +4,7 @@
 	services="storage" 
 	documentationCenter="dotnet" 
 	authors="tamram" 
-	manager="adinah"/>
+	manager="carmonm"/>
 
 <tags 
 	ms.service="storage" 
@@ -375,4 +375,4 @@ Weitere Informationen zur Problembehandlung in End-to-End-Szenarien im Azure-Spe
  
  
 
-<!-----HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0114_2016-->

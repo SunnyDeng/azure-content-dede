@@ -12,14 +12,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="09/18/2015"
+   ms.date="12/28/2015"
    ms.author="sethm" />
 
 # Partitionierte Nachrichtenentitäten
 
 Für Azure Service Bus werden mehrere Nachrichtenbroker verwendet, um Nachrichten zu verarbeiten, sowie mehrere Nachrichtenspeicher, um Nachrichten zu speichern. Eine herkömmliche Warteschlange oder ein Thema werden von einem einzelnen Nachrichtenbroker verarbeitet und in einem Nachrichtenspeicher gespeichert. Außerdem ermöglicht Service Bus, dass Warteschlangen oder Themen über mehrere Nachrichtenbroker und -speicher partitioniert werden. Dies bedeutet, dass der Gesamtdurchsatz einer partitionierten Warteschlange oder eines Themas nicht mehr durch die Leistung eines einzelnen Nachrichtenbrokers oder Nachrichtenspeichers beschränkt wird. Außerdem führt ein vorübergehender Ausfall eines Nachrichtenspeichers nicht dazu, dass eine partitionierte Warteschlange oder ein Thema nicht verfügbar ist. Partitionierte Warteschlangen und Themen können alle erweiterten Service Bus-Features enthalten, z. B. die Unterstützung von Transaktionen und Sitzungen.
 
-Weitere Informationen zum Innenleben von Service Bus finden Sie im Thema [Service Bus-Architektur][].
+Weitere Informationen zum inneren Aufbau von Service Bus finden Sie im Thema [Service Bus-Architektur][].
 
 ## Partitionierte Warteschlangen und Themen
 
@@ -31,7 +31,7 @@ Es fallen keine zusätzlichen Kosten an, wenn eine Nachricht an eine partitionie
 
 ## Aktivieren der Partitionierung
 
-Setzen Sie zum Verwenden von partitionierten Warteschlangen und Themen mit Microsoft Azure Service Bus die Azure SDK Version 2.2 oder höher ein, oder geben Sie `api-version=2013-10` in Ihren HTTP-Anforderungen an.
+Setzen Sie zum Verwenden von partitionierten Warteschlangen und Themen mit Azure Service Bus die Azure SDK-Version 2.2 oder höher ein, oder geben Sie `api-version=2013-10` in Ihren HTTP-Anforderungen an.
 
 Sie können Service Bus-Warteschlangen und -Themen in Größen von 1, 2, 3, 4 oder 5 GB erstellen (die Standardgröße ist 1 GB). Bei aktivierter Partitionierung erstellt Service Bus 16 Partitionen für jedes angegebene GB. Wenn Sie also eine Warteschlange mit einer Größe von 5 GB erstellen, beträgt die maximale Warteschlangengröße bei 16 Partitionen 5*16 = 80 GB. Die maximale Größe der partitionierten Warteschlange oder des partitionierten Themas wird im zugehörigen Eintrag im [klassischen Azure-Portal][] angezeigt.
 
@@ -125,7 +125,7 @@ In der aktuellen Implementierung gelten bei Service Bus die folgenden Einschrän
 
 ## Nächste Schritte
 
-Weitere Informationen zur Partitionierung von Nachrichtenentitäten finden Sie in der Beschreibung der AMQP 1.0-Unterstützung für partitionierte Service Bus-Warteschlangen und -Themen (in Kürze verfügbar).
+Weitere Informationen zur Partitionierung von Messagingentitäten finden Sie in der Beschreibung der [AMQP 1.0-Unterstützung für partitionierte Service Bus-Warteschlangen und -Themen][].
 
   [Service Bus-Architektur]: service-bus-architecture.md
   [klassischen Azure-Portal]: http://manage.windowsazure.com
@@ -142,6 +142,6 @@ Weitere Informationen zur Partitionierung von Nachrichtenentitäten finden Sie i
   [MessagingFactorySettings.OperationTimeout]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.messagingfactorysettings.operationtimeout.aspx
   [OperationTimeout]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.messagingfactorysettings.operationtimeout.aspx
   [QueueDescription.ForwardTo]: https://msdn.microsoft.com/library/azure/microsoft.servicebus.messaging.queuedescription.forwardto.aspx
-  [AMQP 1.0 support for Service Bus partitioned queues and topics]: service-bus-partitioned-entities-amqp-overview.md
+  [AMQP 1.0-Unterstützung für partitionierte Service Bus-Warteschlangen und -Themen]: service-bus-partitioned-queues-and-topics-amqp-overview.md
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

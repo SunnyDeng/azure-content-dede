@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="09/16/2015"
+   ms.date="01/06/2016"
    ms.author="jonor;sivae"/>
 
 # Microsoft Cloud Services und Netzwerksicherheit
@@ -307,7 +307,13 @@ Sobald die Routingtabellen erstellt wurden, sind sie an ihre Subnetze gebunden. 
 		 {10.0.0.0/16}     VirtualAppliance 10.0.0.4            Active    
          {0.0.0.0/0}       VirtualAppliance 10.0.0.4            Active
 
->[AZURE.NOTE]Derzeit gelten für UDR und Hybridnetzwerke Einschränkungen. Dies wird in einer künftigen Version gelöst. Beispiele zum Konfigurieren Ihrer DMZ mit ExpressRoute- oder Site-to-Site-Netzwerkverbindungen werden in den Beispielen 3 und 4 erläutert.
+>[AZURE.NOTE]Aufgrund der Komplexität des dynamischen Routings im virtuellen Azure-Gateway gelten für das benutzerdefinierte Routing (User Defined Routing, UDR) mit ExpressRoute bestimmte Einschränkungen. Diese werden im Folgenden aufgeführt:
+>
+> 1. Das benutzerdefinierte Routing (UDR) darf nicht auf das Gateway-Subnetz angewendet werden, an das das mit ExpressRoute verbundene virtuelle Azure-Gateway angebunden ist.
+> 2. Das mit ExpressRoute verbundene virtuelle Azure-Gateway kann nicht als NextHop-Gerät für andere UDR-gebundene Subnetze fungieren.
+>
+>Die Möglichkeit zur vollständigen Integration von UDR und ExpressRoute wird in einer künftigen Azure-Version geschaffen. Beispiele zum Konfigurieren Ihrer DMZ mit ExpressRoute- oder Site-to-Site-Netzwerkverbindungen werden weiter unten in den Beispielen 3 und 4 erläutert.
+
 
 #### Beschreibung der IP-Weiterleitung
 Die IP-Weiterleitung ist eine begleitende Funktion für das benutzerdefinierte Routing (User Defined Routing, UDR). Es handelt sich um eine Einstellung in einem virtuellen Gerät, das diesem ermöglicht, nicht speziell an dieses Gerät adressierten Datenverkehr zu empfangen und diesen an das endgültige Ziel weiterzuleiten.
@@ -436,9 +442,15 @@ Ein Hybridnetzwerk mit einer privaten ExpressRoute-Peeringverbindung kann einem 
 
 Wie in der Abbildung oben gezeigt wird, bietet das private ExpressRoute-Peering eine direkte Verbindung zwischen Ihrem lokalen Netzwerk und dem virtuellen Azure-Netzwerk. Der Datenverkehr passiert nur das Dienstanbieternetzwerk und das Microsoft-/Azure-Netzwerk, ohne jeglichen Berührungspunkt mit dem Internet.
 
->[AZURE.NOTE]Aufgrund der Komplexität des dynamischen Routings im Azure-Gateway gelten für das benutzerdefinierte Routing (User Defined Routing, UDR) und ExpressRoute Einschränkungen. Auf Subnetze, die mit dem Azure-Gateway kommunizieren, das die ExpressRoute-Verbindung bereitstellt, sollte kein UDR angewendet werden. Darüber hinaus kann das Azure-Gateway nicht als NextHop-Gerät für andere UDR-gebundene Subnetze fungieren. Die Möglichkeit zur vollständigen Integration von UDR und ExpressRoute ist für eine spätere Azure-Version geplant.
+>[AZURE.NOTE]Aufgrund der Komplexität des dynamischen Routings im virtuellen Azure-Gateway gelten für das benutzerdefinierte Routing (User Defined Routing, UDR) mit ExpressRoute bestimmte Einschränkungen. Diese werden im Folgenden aufgeführt:
+>
+> 1. Das benutzerdefinierte Routing (UDR) darf nicht auf das Gateway-Subnetz angewendet werden, an das das mit ExpressRoute verbundene virtuelle Azure-Gateway angebunden ist.
+> 2. Das mit ExpressRoute verbundene virtuelle Azure-Gateway kann nicht als NextHop-Gerät für andere UDR-gebundene Subnetze fungieren.
+>
+>Die Möglichkeit zur vollständigen Integration von UDR und ExpressRoute ist für eine spätere Azure-Version geplant.
 
-</br>
+<br />
+
 >[AZURE.TIP]Durch den Einsatz von ExpressRoute wird der Unternehmensnetzwerkverkehr vollständig vom Internet getrennt. Diese Implementierung bietet höhere Sicherheit, eine erheblich gesteigerte Leistung und ermöglicht das Bereitstellen von SLAs durch Ihren ExpressRoute-Anbieter. Mit ExpressRoute kann das Azure-Gateway eine Leistung von bis zu 2 GBit/s erzielen, während das Azure-Gateway bei Site-to-Site-VPNs einen maximalen Durchsatz von 200 MBit/s erreicht.
 
 Wie aus dem nachstehenden Diagramm hervorgeht, verfügt die Umgebung bei dieser Option über zwei Netzwerkgrenzen. Das virtuelle Netzwerkgerät und Netzwerksicherheitsgruppen (NSGs) steuern den Fluss des Datenverkehrs für interne Azure-Netzwerke und zwischen Azure und dem Internet, während das Gateway eine zweite Netzwerkgrenze bildet und für eine vollständige Trennung und Isolierung zwischen dem lokalen Netzwerk und Azure sorgt.
@@ -499,4 +511,4 @@ stehen in Kürze zur Verfügung und werden über diese Seite verlinkt.
 [Example7]: ./virtual-network/virtual-networks-vnet2vnet-direct-asm.md
 [Example8]: ./virtual-network/virtual-networks-vnet2vnet-transit-asm.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

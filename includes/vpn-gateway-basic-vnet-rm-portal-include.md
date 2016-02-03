@@ -1,29 +1,31 @@
-To create a VNet based on the scenario above by using the Azure portal, follow the steps below.
+Gehen Sie folgendermaßen vor, um mit dem Azure-Portal ein VNet basierend auf dem oben beschriebenen Szenario zu erstellen.
 
-1. From a browser, navigate to http://portal.azure.com and, if necessary, sign in with your Azure account.
+1. Navigieren Sie in einem Browser zu http://portal.azure.com, und melden Sie sich, falls erforderlich, mit Ihrem Azure-Konto an.
 
-2. Click **NEW** > **Networking** > **Virtual network**, then click **Resource Manager** from the **Select a deployment model** list, and then click **Create**.
+2. Klicken Sie auf **NEU** > **Netzwerk** > **Virtuelles Netzwerk**, wählen Sie in der Liste **Bereitstellungsmodell auswählen** die Option **Ressourcen-Manager** aus, und klicken Sie anschließend auf **Erstellen**.
 
-3. On the **Create virtual network** blade, configure the VNet settings as shown in the figure below.
+3. Konfigurieren Sie auf dem Blatt **Virtuelles Netzwerk erstellen** die VNet-Einstellungen, wie in der folgenden Abbildung dargestellt.
 
-	![Create virtual network blade](./media/vpn-gateway-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure2.png)
+	![Blatt "Erstellen eines virtuellen Netzwerks"](./media/vpn-gateway-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure2.png)
 
-4. Click **Resource group** and select a resource group to add the VNet to, or click **Create new** to add the VNet to a new resource group. The figure below shows the resource group settings for a new resource group called **TestRG**. For more information about resource groups, visit [Azure Resource Manager Overview](resource-group-overview.md/#resource-groups).
+4. Klicken Sie auf **Ressourcengruppe**, und wählen Sie eine Ressourcengruppe aus, zu der Sie das VNet hinzufügen möchten, oder klicken Sie auf **Neu erstellen**, um das VNet zu einer neuen Ressourcengruppe hinzuzufügen. Die folgende Abbildung zeigt die Ressourcengruppeneinstellungen für eine neue Ressourcengruppe mit dem Namen **TestRG**. Weitere Informationen zu Ressourcengruppen finden Sie unter [Übersicht über den Azure-Ressourcen-Manager](resource-group-overview.md/#resource-groups).
 
-	![Resource group](./media/vpn-gateway-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure3.png)
+	![Ressourcengruppe](./media/vpn-gateway-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure3.png)
 
-5. If necessary, change the **Subscription** and **Location** settings for your VNet. 
+5. Ändern Sie ggf. die **Abonnement**- und **Speicherort**-Einstellungen für das VNet.
 
-6. Click **Create** and notice the tile named **Creating Virtual network** as shown in the figure below.
+6. Klicken Sie auf **Erstellen** und achten Sie auf die Kachel namens **Virtuelles Netzwerk erstellen**, wie in der folgenden Abbildung dargestellt.
 
-	![Creating virtual network tile](./media/vpn-gateway-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure4.png)
+	![Kachel "Erstellen eines virtuellen Netzwerks"](./media/vpn-gateway-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure4.png)
 
-7. Wait for the VNet to be created, then in the **Virtual network** blade, click **All settings** > **Subnets** > **Add**.
+7. Warten Sie, bis das VNet erstellt wurde, und klicken Sie dann auf dem Blatt **Virtuelles Netzwerk** auf **Alle Einstellungen** > **Subnetze** > **Hinzufügen**.
 
-8. Specify the subnet settings for the *BackEnd* subnet, as shown below, and then click **OK**. 
+8. Geben Sie die Subnetzeinstellungen für das Subnetz *BackEnd* ein, wie unten dargestellt, und klicken Sie dann auf **OK**.
 
-	![Subnet settings](./media/vpn-gateway-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure6.png)
+	![Subnetzeinstellungen](./media/vpn-gateway-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure6.png)
 
-9. View the list of subnets.
+9. Sehen Sie sich die Liste der Subnetze an.
 
-	![List of subnets in VNet](./media/vpn-gateway-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure7.png)
+	![Liste der Subnetze im VNet](./media/vpn-gateway-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure7.png)
+
+<!---HONumber=AcomDC_0107_2016-->

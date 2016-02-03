@@ -12,12 +12,15 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="12/01/2015"
+   ms.date="01/14/2016"
    ms.author="alkohli" />
 
 # Bereitstellen lokaler StorSimple-Geräte (Update 1)
 
-[AZURE.INCLUDE [storsimple-version-selector](../../includes/storsimple-version-selector.md)]
+> [AZURE.SELECTOR]
+- [Update 2](../articles/storsimple/storsimple-deployment-walkthrough-u2.md)
+- [Update 1](../articles/storsimple/storsimple-deployment-walkthrough-u1.md)
+- [GA Release](../articles/storsimple/storsimple-deployment-walkthrough.md)
 
 ## Übersicht
 
@@ -102,9 +105,9 @@ Die folgende Konfigurationsprüfliste für die Bereitstellung enthält die Infor
 
 ## Voraussetzungen für die Bereitstellung
 
-In den folgenden Abschnitten werden die Konfigurationsvoraussetzungen für den StorSimple-Manager-Dienst und das StorSimple-Gerät beschrieben.
+In den folgenden Abschnitten werden die Konfigurationsvoraussetzungen für den StorSimple Manager-Dienst und das StorSimple-Gerät beschrieben.
 
-### Für den StorSimple-Manager-Dienst
+### Für den StorSimple Manager-Dienst
 
 Stellen Sie Folgendes sicher, bevor Sie beginnen:
 
@@ -112,7 +115,7 @@ Stellen Sie Folgendes sicher, bevor Sie beginnen:
 
 - Sie besitzen ein Microsoft Azure-Speicherkonto mit Anmeldeinformationen für den Zugriff.
 
-- Ihr Microsoft Azure-Abonnement ist für den StorSimple-Manager-Dienst aktiviert. Ihr Abonnement sollten Sie über das [Enterprise Agreement](http://azure.microsoft.com/pricing/enterprise-agreement/) erwerben.
+- Ihr Microsoft Azure-Abonnement ist für den StorSimple Manager-Dienst aktiviert. Ihr Abonnement sollten Sie über das [Enterprise Agreement](http://azure.microsoft.com/pricing/enterprise-agreement/) erwerben.
 
 - Sie haben Zugriff auf Terminalemulationssoftware wie PuTTY.
 
@@ -135,11 +138,11 @@ Stellen Sie Folgendes sicher, bevor Sie beginnen:
 
 ## Schrittweise Bereitstellung
 
-Verwenden Sie die folgende Schrittanleitung, um Ihr StorSimple-Gerät im Datencenter bereitzustellen.
+Verwenden Sie die folgenden schrittweisen Anweisungen, um Ihr StorSimple-Gerät im Datencenter bereitzustellen.
 
 ## Schritt 1: Erstellen eines neuen Diensts
 
-Ein StorSimple-Manager-Dienst kann mehrere StorSimple-Geräte verwalten. Führen Sie die folgenden Schritte aus, um einen neuen StorSimple-Manager-Dienst zu erstellen.
+Ein StorSimple Manager-Dienst kann mehrere StorSimple-Geräte verwalten. Führen Sie die folgenden Schritte aus, um einen neuen StorSimple Manager-Dienst zu erstellen.
 
 [AZURE.INCLUDE [storsimple-create-new-service](../../includes/storsimple-create-new-service.md)]
 
@@ -150,7 +153,7 @@ Ein StorSimple-Manager-Dienst kann mehrere StorSimple-Geräte verwalten. Führen
 
 ## Schritt 2: Abrufen des Dienstregistrierungsschlüssels
 
-Nachdem der StorSimple-Manager-Dienst eingerichtet wurde und ausgeführt wird, müssen Sie den Dienstregistrierungsschlüssel abrufen. Dieser Schlüssel wird zum Registrieren Ihres StorSimple-Geräts sowie zum Herstellen einer Verbindung mit dem Dienst verwendet.
+Nachdem der StorSimple Manager-Dienst eingerichtet wurde und ausgeführt wird, müssen Sie den Dienstregistrierungsschlüssel abrufen. Dieser Schlüssel wird zum Registrieren Ihres StorSimple-Geräts sowie zum Herstellen einer Verbindung mit dem Dienst verwendet.
 
 Führen Sie die folgenden Schritte im klassischen Azure-Portal aus.
 
@@ -159,7 +162,7 @@ Führen Sie die folgenden Schritte im klassischen Azure-Portal aus.
 
 ## Schritt 3: Konfigurieren und Registrieren des Geräts über Windows PowerShell für StorSimple
 
-Verwenden Sie Windows PowerShell für StorSimple zum Abschließen der anfänglichen Installation Ihres StorSimple-Geräts wie im folgenden Verfahren erläutert. Sie müssen eine Terminalemulationssoftware verwenden, um diesen Schritt abzuschließen. Weitere Informationen finden Sie unter [Verwenden von PuTTY für das Herstellen einer Verbindung mit der seriellen Gerätekonsole](#use-putty-to-connect-to-the-device-serial-console).
+Verwenden Sie Windows PowerShell für StorSimple zum Abschließen der anfänglichen Installation Ihres StorSimple-Geräts wie im folgenden Verfahren erläutert. Sie müssen eine Terminalemulationssoftware verwenden, um diesen Schritt auszuführen. Weitere Informationen finden Sie unter [Verwenden von PuTTY für das Herstellen einer Verbindung mit der seriellen Gerätekonsole](#use-putty-to-connect-to-the-device-serial-console).
 
 [AZURE.INCLUDE [storsimple-Configure-and-Register-Device-U1](../../includes/storsimple-configure-and-register-device-u1.md)]
 
@@ -281,9 +284,9 @@ Installations- und Konfigurationsanweisungen für MPIO auf einem StorSimple-Ger�
 
 ## Nächste Schritte
 
-Konfigurieren eines [virtuellen Geräts](storsimple-virtual-device.md)
+- Konfigurieren eines [virtuellen Geräts](storsimple-virtual-device.md)
 
-Verwenden des [StorSimple-Manager-Diensts](storsimple-manager-service-administration.md) für das Verwalten Ihres StorSimple-Geräts
+- Verwenden des [StorSimple-Manager-Diensts](storsimple-manager-service-administration.md) für das Verwalten Ihres StorSimple-Geräts
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0121_2016-->

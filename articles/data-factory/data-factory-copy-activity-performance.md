@@ -218,10 +218,10 @@ In diesem Fall könnte die BZIP2-Datenkomprimierung die gesamte Pipeline verlang
 Hier finden Sie einige Referenzen zur Leistungsüberwachung und -optimierung für einige der unterstützten Datenspeicher:
 
 - Azure-Speicher (einschließlich Azure Blob und Azure-Tabelle): [ Skalierbarkeitsziele für Azure-Speicher](../storage/storage-scalability-targets.md) und [Checkliste zu Leistung und Skalierbarkeit für Azure-Speicher](../storage//storage-performance-checklist.md)
-- Azure SQL-Datenbank: Sie können [die Leistung überwachen](../sql-database/sql-database-service-tiers.md?rnd=1#monitoring-performance) und den Prozentsatz der Datenbankdurchsatzeinheit (DTU = Database Throughput Unit) überprüfen .
-- Azure SQL Datawarehouse: Die Funktionalität wird in Data Warehouse-Einheiten (Data Warehouse Units, DWUs) gemessen. Informationen finden Sie unter [Flexible Leistung und Skalierbarkeit mit SQL Data Warehouse](../sql-data-warehouse/sql-data-warehouse-performance-scale/).
-- Azure DocumentDB: [Leistungsstufe in DocumentDB](../documentdb/documentdb-performance-levels/).
+- Azure SQL-Datenbank: Sie können [die Leistung überwachen](../sql-database/sql-database-service-tiers.md#monitoring-performance) und den Prozentsatz der Datenbankdurchsatzeinheit (DTU = Database Throughput Unit) überprüfen .
+- Azure SQL Datawarehouse: Die Funktionalität wird in Data Warehouse-Einheiten (Data Warehouse Units, DWUs) gemessen. Informationen finden Sie unter [Flexible Leistung und Skalierbarkeit mit SQL Data Warehouse](../sql-data-warehouse/sql-data-warehouse-performance-scale.md).
+- Azure DocumentDB: [Leistungsstufe in DocumentDB](../documentdb/documentdb-performance-levels.md).
 - Lokale SQL Server: [Überwachen und Optimieren der Leistung](https://msdn.microsoft.com/library/ms189081.aspx)
 - Lokaler Dateiserver: [Leistungsoptimierung für Dateiserver](https://msdn.microsoft.com/library/dn567661.aspx)
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0107_2016-->

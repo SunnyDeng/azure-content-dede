@@ -26,7 +26,7 @@
 
 Dieser Artikel hilft Ihnen beim Einstieg in die Erstellung Ihrer ersten Azure Data Factory.
 
-> [AZURE.NOTE]Dieser Artikel bietet keine grundlegende Übersicht über den Azure Data Factory-Dienst. Eine ausführliche Übersicht über den Dienst finden Sie unter [Einführung in Azure Data Factory](data-factory-introduction.md).
+> [AZURE.NOTE] Dieser Artikel bietet keine grundlegende Übersicht über den Azure Data Factory-Dienst. Eine ausführliche Übersicht über den Dienst finden Sie unter [Einführung in Azure Data Factory](data-factory-introduction.md).
 
 ## Übersicht über das Tutorial
 Dieses Tutorial führt Sie durch die Schritte, mit denen Sie Ihre erste Data Factory in Gang bringen. Sie werden eine Pipeline in der Data Factory erstellen, die Eingabedaten transformiert/verarbeitet, um Ausgabedaten zu erzeugen.
@@ -34,7 +34,7 @@ Dieses Tutorial führt Sie durch die Schritte, mit denen Sie Ihre erste Data Fac
 ## Voraussetzungen
 Bevor Sie mit diesem Tutorial beginnen, müssen folgende Voraussetzungen erfüllt sein:
 
-1.	**Azure-Abonnement** – Wenn Sie über kein Azure-Abonnement verfügen, können Sie in wenigen Minuten ein kostenloses Testversionskonto einrichten. Im Artikel [Kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/) erfahren Sie, wie Sie ein kostenloses Testkonto erhalten.
+1.	**Azure-Abonnement** – Wenn Sie über kein Azure-Abonnement verfügen, können Sie in wenigen Minuten ein kostenloses Testversionskonto einrichten. Im Artikel [Kostenlose Testversion](https://azure.microsoft.com/pricing/free-trial/) erfahren Sie, wie Sie ein kostenloses Testkonto erhalten.
 
 2.	**Azure-Speicher** – Sie benötigen ein Azure-Speicherkonto zum Speichern der Daten in diesem Tutorial. Falls Sie noch kein Azure-Speicherkonto haben, lesen Sie den Artikel [Erstellen eines Speicherkontos](../storage/storage-create-storage-account.md#create-a-storage-account). Nachdem Sie das Speicherkonto erstellt haben, müssen Sie den Kontoschlüssel für den Zugriff auf den Speicher abrufen. Siehe [Anzeigen, Kopieren und erneutes Generieren von Speicherzugriffsschlüsseln](../storage/storage-create-storage-account.md#view-copy-and-regenerate-storage-access-keys).
 
@@ -65,7 +65,7 @@ Wenn die Datei von der Pipeline mit HDInsight-Hive-Aktivität verarbeitet wird, 
 	adfgetstarted/partitioneddata/year=2014/month=2/000000_0
 	adfgetstarted/partitioneddata/year=2014/month=3/000000_0
 
-Von den obigen Beispielzeilen wird die erste (mit „2014-01-01“) in die Datei „000000\_0“ im Ordner „month=1“ geschrieben. Auf ähnliche Weise wird die zweite in die Datei im Ordner „month=2“ geschrieben und die dritte in die Datei im Ordner „month=3“.
+Von den obigen Beispielzeilen wird die erste (mit „2014-01-01“) in die Datei „000000_0“ im Ordner „month=1“ geschrieben. Auf ähnliche Weise wird die zweite in die Datei im Ordner „month=2“ geschrieben und die dritte in die Datei im Ordner „month=3“.
 
 ## Hochladen von Dateien in Azure Storage für das Tutorial
 Bevor Sie mit dem Tutorial beginnen, müssen Sie den Azure-Speicher mit Dateien vorbereiten, die für das Tutorial benötigt werden.
@@ -77,7 +77,7 @@ In diesem Abschnitt werden Sie Folgendes ausführen:
 
 ### Erstellen der HQL-Skriptdatei 
 
-1. Starten Sie **Editor**, und fügen Sie das folgende HQL-Skript ein. Mit diesem Hive-Skript werden zwei externe Tabellen erstellt: **WebLogsRaw** und **WebLogsPartitioned**. Klicken Sie im Menü auf **Datei**, und wählen Sie **Speichern unter** aus. Wechseln Sie zum Ordner **C:\\adfgetstarted** auf Ihrer Festplatte. Wählen Sie **Alle Dateien (*.*)** im Feld **Dateityp** aus. Geben Sie **partitionweblogs.hql** als **Dateinamen** ein. Überprüfen Sie, ob im Feld **Codierung** unten im Dialogfeld **ANSI** festgelegt ist. Falls nicht, legen Sie es auf **ANSI** fest.  
+1. Starten Sie **Editor**, und fügen Sie das folgende HQL-Skript ein. Mit diesem Hive-Skript werden zwei externe Tabellen erstellt: **WebLogsRaw** und **WebLogsPartitioned**. Klicken Sie im Menü auf **Datei**, und wählen Sie **Speichern unter** aus. Wechseln Sie zum Ordner **C:\adfgetstarted** auf Ihrer Festplatte. Wählen Sie **Alle Dateien (*.*)** im Feld **Dateityp** aus. Geben Sie **partitionweblogs.hql** als **Dateinamen** ein. Überprüfen Sie, ob im Feld **Codierung** unten im Dialogfeld **ANSI** festgelegt ist. Falls nicht, legen Sie es auf **ANSI** fest.  
 	
 		set hive.exec.dynamic.partition.mode=nonstrict;
 		
@@ -159,7 +159,7 @@ In diesem Abschnitt werden Sie Folgendes ausführen:
 		FROM WebLogsRaw
 
 ### Erstellen einer Beispieleingabedatei
-Erstellen Sie mithilfe des Editors eine Datei namens **input.log** in **c:\\adfgetstarted** mit folgendem Inhalt:
+Erstellen Sie mithilfe des Editors eine Datei namens **input.log** in **c:\adfgetstarted** mit folgendem Inhalt:
 
 	#Software: Microsoft Internet Information Services 8.0
 	#Fields: date time s-sitename cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Cookie) cs(Referer) cs-host sc-status sc-substatus sc-win32-status sc-bytes cs-bytes time-taken
@@ -185,7 +185,7 @@ Erstellen Sie mithilfe des Editors eine Datei namens **input.log** in **c:\\adfg
 
 ### Hochladen von Eingabe- und HQL-Datei in Ihren Azure-Blobspeicher
 
-Sie können jedes Tool Ihrer Wahl für diese Aufgabe verwenden (z. B. Azure Storage-Explorer, CloudXPlorer von ClumsyLeaf Software). Dieser Abschnitt enthält Anweisungen zur Verwendung des AzCopy-Tools.
+Sie können jedes Tool Ihrer Wahl für diese Aufgabe verwenden (z. B. [Microsoft Azure Storage-Explorer](http://storageexplorer.com/) oder CloudXPlorer von ClumsyLeaf Software). Dieser Abschnitt enthält Anweisungen zur Verwendung des AzCopy-Tools.
 	 
 2. So bereiten Sie den Azure-Speicher für das Tutorial vor:
 	1. Laden Sie die [neueste Version von **AzCopy**](http://aka.ms/downloadazcopy) oder die [neueste Vorschauversion](http://aka.ms/downloadazcopypr) herunter. Im Artikel [Verwenden von AzCopy ](../storage/storage-use-azcopy.md) finden Sie eine Anleitung zur Verwendung des Hilfsprogramms.
@@ -193,11 +193,11 @@ Sie können jedes Tool Ihrer Wahl für diese Aufgabe verwenden (z. B. Azure Sto
 	
 			set path=%path%;C:\Program Files (x86)\Microsoft SDKs\Azure\AzCopy
 
-	3. Navigieren Sie zum Ordner c:\\adfgetstarted, und führen Sie den folgenden Befehl aus, um die Datei **input.log** in das Speicherkonto hochzuladen (Container **adfgetstarted** und Ordner **inputdata**). Ersetzen Sie **StorageAccountName** durch den Namen Ihres Speicherkontos und **Storage Key** durch den Speicherkontoschlüssel.
+	3. Navigieren Sie zum Ordner c:\adfgetstarted, und führen Sie den folgenden Befehl aus, um die Datei **input.log** in das Speicherkonto hochzuladen (Container **adfgetstarted** und Ordner **inputdata**). Ersetzen Sie **StorageAccountName** durch den Namen Ihres Speicherkontos und **Storage Key** durch den Speicherkontoschlüssel.
 
 			AzCopy /Source:. /Dest:https://<storageaccountname>.blob.core.windows.net/adfgetstarted/inputdata /DestKey:<storagekey>  /Pattern:input.log
 
-		> [AZURE.NOTE]Der obige Befehl erstellt einen Container mit dem Namen **adfgetstarted** in Ihrem Azure-Blobspeicher und kopiert die Datei **partitionweblogs.hql** von Ihrem lokalen Laufwerk in den Ordner **inputdata** des Containers.
+		> [AZURE.NOTE] Der obige Befehl erstellt einen Container mit dem Namen **adfgetstarted** in Ihrem Azure-Blobspeicher und kopiert die Datei **partitionweblogs.hql** von Ihrem lokalen Laufwerk in den Ordner **inputdata** des Containers.
 	
 	5. Nachdem die Datei erfolgreich hochgeladen wurde, sehen Sie eine Ausgabe ähnlich der folgenden von AzCopy.
 	
@@ -209,7 +209,7 @@ Sie können jedes Tool Ihrer Wahl für diese Aufgabe verwenden (z. B. Azure Sto
 			Transfer skipped:        0
 			Transfer failed:         0
 			Elapsed time:            00.00:00:01
-	1. Wiederholen Sie die vorherigen beiden Schritte zum Hochladen der Datei „partitionweblogs.hql“ in den Ordner „Script“ des Containers „adfgetstarted“. Hier ist der Befehl: 
+	1. Führen Sie zum Hochladen der Datei **partitionweblogs.hql** in den Ordner **Script** des Containers **adfgetstarted** den folgenden Befehl aus. Hier ist der Befehl: 
 	
 			AzCopy /Source:. /Dest:https://<storageaccountname>.blob.core.windows.net/adfgetstarted/script /DestKey:<storagekey>  /Pattern:partitionweblogs.hql
 
@@ -222,4 +222,4 @@ Jetzt können Sie mit dem Tutorial beginnen. Klicken Sie oben auf eine der Regis
 - Visual Studio
 - Azure-Ressourcen-Manager-Vorlagen 
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

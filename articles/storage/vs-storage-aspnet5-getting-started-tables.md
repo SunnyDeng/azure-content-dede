@@ -150,9 +150,6 @@ Verwenden Sie ein **TableQuery**-Objekt, um eine Tabelle nach allen Entitäten i
         }
     } while (token != null);
 
-    return View();
-
-
 ## Abrufen einer einzelnen Entität
 Sie können eine Abfrage schreiben, um eine bestimmte Entität abzurufen. Der folgende Code verwendet ein **TableOperation**-Objekt, um einen Kunden namens "Ben Smith" anzugeben. Diese Methode gibt nur eine Entität anstelle einer Sammlung zurück, und bei dem zurückgegebenen Wert in **TableResult.Result** handelt es sich um ein **CustomerEntity**-Objekt. Das Angeben der Partitions- und Zeilenschlüssel in einer Abfrage ist die schnellste Möglichkeit, um eine einzelne Entität aus dem Tabellendienst abzurufen.
 
@@ -202,4 +199,4 @@ Sie können eine Entität nach dem Abrufen löschen. Der folgende Code sucht nac
 
 [AZURE.INCLUDE [vs-storage-dotnet-blobs-next-steps](../../includes/vs-storage-dotnet-blobs-next-steps.md)]
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0114_2016-->

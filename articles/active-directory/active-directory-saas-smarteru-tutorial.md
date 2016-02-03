@@ -11,7 +11,7 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
+    ms.date="01/12/2016" 
     ms.author="markvi" />
 
 #Tutorial: Azure Active Directory-Integration mit SmarterU
@@ -21,7 +21,7 @@ In diesem Tutorial wird die Integration von Azure und SmarterU erläutert. Das i
 -   Ein gültiges Azure-Abonnement
 -   Ein SmarterU-Mandant
   
-Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie SmarterU zugewiesen haben, mittels einmaliger Anmeldung auf Ihrer SmarterU-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
+Nach Abschluss dieses Tutorials können sich die SmarterU zugewiesenen Azure AD-Benutzer mittels einmaliger Anmeldung auf Ihrer SmarterU-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -56,7 +56,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Sma
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-smarteru-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie in das **Suchfeld** den Suchbegriff **SmarterU** ein.
+6.  Geben Sie in das **Suchfeld** **SmarterU** ein.
 
     ![Anwendungsfehler](./media/active-directory-saas-smarteru-tutorial/IC777321.png "Anwendungsfehler")
 
@@ -78,7 +78,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-smarteru-tutorial/IC777324.png "Einmaliges Anmelden konfigurieren")
 
-3.  Klicken Sie auf der Seite **Einmaliges Anmelden konfigurieren für SmarterU** auf **Metadaten herunterladen**, und speichern Sie die Metadatendatei lokal unter **C:\\SmarterUMetaData.xml**.
+3.  Klicken Sie auf der Seite **Einmaliges Anmelden konfigurieren für SmarterU** auf **Metadaten herunterladen**, und speichern Sie die Metadatendatei lokal unter **c:\\SmarterUMetaData.xml**.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-smarteru-tutorial/IC777325.png "Einmaliges Anmelden konfigurieren")
 
@@ -99,7 +99,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
     5.  Kopieren Sie den Inhalt der heruntergeladenen Metadatendatei, und fügen Sie ihn in das Textfeld **Okta-Metadaten** ein.
     6.  Klicken Sie auf **Speichern**.
 
-7.  Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
+7.  Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-smarteru-tutorial/IC777328.png "Einmaliges Anmelden konfigurieren")
 
@@ -118,7 +118,7 @@ Damit sich Azure AD-Benutzer bei SmarterU anmelden können, müssen sie in Smart
     ![Neuer Benutzer](./media/active-directory-saas-smarteru-tutorial/IC777329.png "Neuer Benutzer")
 
     1.  Klicken Sie auf **+Benutzer**.
-    2.  Geben Sie die zugehörigen Attributwerte des Azure AD-Benutzerkontos in die folgenden Textfelder ein: **Primäre e-Mail-Adresse**, **Mitarbeiter-ID**, **Kennwort**, **Kennwort bestätigen**, **Vorname**, **Nachname**.
+    2.  Geben Sie die zugehörigen Attributwerte des Azure AD-Benutzerkontos in die folgenden Textfelder ein: **Primäre e-Mail-Adresse**, **Mitarbeiter-ID**, **Kennwort**, **Kennwort bestätigen**, **Angegebener Name**, **Nachname**.
     3.  Klicken Sie auf **Aktiv**.
     4.  Klicken Sie auf **Speichern**.
 
@@ -142,4 +142,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0114_2016-->

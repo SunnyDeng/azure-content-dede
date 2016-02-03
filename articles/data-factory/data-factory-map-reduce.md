@@ -22,7 +22,7 @@ In diesem Artikel wird beschrieben, wie ein **MapReduce**-Programm mithilfe der 
 ## Einführung 
 Eine Pipeline in einer Azure Data Factory verarbeitet Daten in verknüpften Speicherdiensten mithilfe verknüpfter Compute Services. Sie enthält eine Abfolge von Aktivitäten, wobei jede Aktivität einen bestimmten Verarbeitungsvorgang ausführt. In diesem Artikel wird die Verwendung der HDInsight-Aktivität „MapReduce“ beschrieben.
  
-Weitere Informationen zum Ausführen von Pig-/Hive-Skripts auf einen Windows-/Linux-basierten HDInsight-Cluster über eine Azure Data Factory-Pipeline mithilfe von Pig-/Hive-HDInsight-Aktivitäten finden Sie im Artikel zu [Pig](data-factory-pig-activity) und [Hive](data-factory-hive-activity.md).
+Weitere Informationen zum Ausführen von Pig-/Hive-Skripts auf einen Windows-/Linux-basierten HDInsight-Cluster über eine Azure Data Factory-Pipeline mithilfe von Pig-/Hive-HDInsight-Aktivitäten finden Sie im Artikel zu [Pig](data-factory-pig-activity.md) und [Hive](data-factory-hive-activity.md).
 
 ## JSON für die HDInsight-Aktivität „MapReduce“ 
 
@@ -221,4 +221,4 @@ linkedServiceName | Bezieht sich auf den mit HDInsight verknüpften Dienst, den 
 [Azure Classic Portal]: http://portal.azure.com
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

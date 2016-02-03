@@ -2,7 +2,7 @@
     pageTitle="Tutorial: Azure Active Directory-Integration mit Cornerstone OnDemand | Microsoft Azure" 
     description="Hier erfahren Sie, wie Sie Cornerstone OnDemand mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags 
@@ -11,8 +11,8 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
-    ms.author="markvi" />
+    ms.date="01/14/2016" 
+    ms.author="jeedes" />
 
 #Tutorial: Azure Active Directory-Integration mit Cornerstone OnDemand
 
@@ -21,7 +21,7 @@ In diesem Tutorial wird die Integration von Azure und Cornerstone OnDemand erlä
 -   Ein gültiges Azure-Abonnement
 -   Einen Cornerstone OnDemand-Mandanten
 
-Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie Cornerstone OnDemand zugewiesen haben, mittels einmaliger Anmeldung auf Ihrer Cornerstone OnDemand-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können Sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
+Nach Abschluss dieses Lernprogramms können sich die Cornerstone OnDemand zugewiesenen Azure AD-Benutzer mittels einmaligen Anmeldens auf Ihrer Cornerstone OnDemand-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie auch die [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md) nutzen.
 
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -55,7 +55,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Cor
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-cornerstone-ondemand-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie im **Suchfeld** den Suchbegriff **cornerstone ondemand** ein.
+6.  Geben Sie im **Suchfeld** **cornerstone ondemand** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-cornerstone-ondemand-tutorial/IC781594.png "Anwendungskatalog")
 
@@ -123,4 +123,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
 
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0121_2016-->

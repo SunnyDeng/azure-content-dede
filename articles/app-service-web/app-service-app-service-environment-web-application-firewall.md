@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/15/2015" 
+	ms.date="12/24/2015" 
 	ms.author="naziml"/>
 
 # Konfigurieren einer Web Application Firewall (WAF) für eine App Service-Umgebung
@@ -66,7 +66,7 @@ Auf der Registerkarte "Dienste" können Sie Ihre WAF für die Dienste konfigurie
 > Hinweis: Je nachdem, wie Ihre Anwendungen konfiguriert sind und welche Features in Ihrer App Service-Umgebung verwendet werden, müssen Sie Datenverkehr für alle TCP-Ports außer 80 und 443 weiterleiten, wenn Sie IP-SSL für eine Webanwendung eingerichtet haben. Eine Liste der Netzwerkports, die in App Service-Umgebungen verwendet werden, finden Sie in der [Dokumentation zum Steuern des eingehenden Datenverkehrs](app-service-app-service-environment-control-inbound-traffic.md) im Abschnitt "Netzwerkports".
 
 ## Konfigurieren von Microsoft Azure Traffic Manager (optional) ##
-Wenn Ihre Anwendung in mehreren Regionen verfügbar ist, sollten Sie mithilfe von [Azure Traffic Manager](traffic-manager.md) für einen Lastenausgleich sorgen. Fügen Sie hierzu im [klassischen Azure-Portal](https://manage.azure.com) einen Endpunkt unter Angabe des Cloud-Service-Namens für Ihre WAF dem Traffic Manager-Profil hinzu (siehe die folgende Abbildung).
+Wenn Ihre Anwendung in mehreren Regionen verfügbar ist, sollten Sie mithilfe von [Azure Traffic Manager](traffic-manager.md) für einen Lastenausgleich sorgen. Fügen Sie hierzu im [klassischen Azure-Portal](https://manage.azure.com) einen Endpunkt unter Angabe des Clouddienstnamens für Ihre WAF dem Traffic Manager-Profil hinzu (siehe die folgende Abbildung).
 
 ![Traffic Manager-Endpunkt][TrafficManagerEndpoint]
 
@@ -99,4 +99,4 @@ Ersetzen Sie "SourceAddressPrefix" durch die virtuelle IP-Adresse (VIP) des Clou
 [ConfigureTrafficManager]: ./media/app-service-app-service-environment-web-application-firewall/ConfigureTrafficManager.png
 [WebsiteTranslations]: ./media/app-service-app-service-environment-web-application-firewall/WebsiteTranslations.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

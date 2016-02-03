@@ -21,10 +21,7 @@
 # Herstellen einer Verbindung mit SQL-Datenbank mithilfe von Ruby unter Mac OS X (Yosemite)
 
 
-> [AZURE.SELECTOR]
-- [Node.js](sql-database-develop-nodejs-simple-mac.md)
-- [Python](sql-database-develop-python-simple-mac-osx.md)
-- [Ruby](sql-database-develop-ruby-simple-mac-osx.md)
+[AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
 
 
 Dieses Thema enthält ein Ruby-Codebeispiel, das auf einem Macintosh-Computer mit Yosemite für die Verbindung mit einer Datenbank in Azure SQL-Datenbank ausgeführt wird.
@@ -109,4 +106,4 @@ Zum Ausrichten am [Datetime](http://msdn.microsoft.com/library/ms187819.aspx)-Fo
     puts row
     end
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0107_2016-->

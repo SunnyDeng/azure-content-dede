@@ -32,8 +32,8 @@ Nach Abschluss dieses Lernprogramms können Sie die folgenden Fragen beantworten
 Vor dem Ausführen der Anweisungen zu diesem Lernprogramm, müssen Sie sicherstellen, dass Sie über Folgendes verfügen:
 
 - Ein Azure-Abonnement. Azure ist eine abonnementbasierte Plattform. Weitere Informationen zum Erwerb eines Abonnements finden Sie unter [Azure erwerben](http://azure.microsoft.com/pricing/purchase-options/), [Spezielle Angebote](http://azure.microsoft.com/pricing/member-offers/) oder [Einen Monat kostenlos testen!](http://azure.microsoft.com/pricing/free-trial/).
-- Ein Azure-Speicherkonto. Anweisungen finden Sie unter [Informationen zu Azure-Speicherkonten](../storage-whatis-account.md).
-- Eine Arbeitsstation mit Azure PowerShell 0.9.8. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md). Dieses Lernprogramm wurde noch nicht für Azure PowerShell 1.0 Vorschau aktualisiert. 
+- Ein Azure-Speicherkonto. Anweisungen finden Sie unter [Informationen zu Azure-Speicherkonten](../storage/storage-create-storage-account.md).
+- Eine Arbeitsstation mit Azure PowerShell 0.9.8. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md). Dieses Lernprogramm wurde noch nicht für Azure PowerShell 1.0 Vorschau aktualisiert. 
 
 ##<a id="CreateDB"></a>Schritt 1: Herunterladen und Extrahieren der Beispieldateien ##
 Als Erstes laden wir die Beispieldateien herunter, die in diesem Lernprogramm verwendet werden.
@@ -210,4 +210,4 @@ Glückwunsch! Sie haben DocumentDB, eine App Service-Web-App und eine Beispielwe
 >[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

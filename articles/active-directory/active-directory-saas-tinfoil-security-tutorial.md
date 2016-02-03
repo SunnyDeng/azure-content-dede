@@ -11,7 +11,7 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
+    ms.date="01/12/2016" 
     ms.author="markvi" />
 
 #Tutorial: Azure Active Directory-Integration mit Tinfoil Security
@@ -21,7 +21,7 @@ In diesem Tutorial wird die Integration von Azure und Tinfoil Security erläuter
 -   Ein gültiges Azure-Abonnement
 -   Ein Tinfoil Security-Abonnement, für das einmaliges Anmelden aktiviert ist
   
-Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie Tinfoil Security zugewiesen haben, mittels einmaliger Anmeldung auf Ihrer Tinfoil Security-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
+Nach Abschluss dieses Tutorials können sich die Tinfoil Security zugewiesenen Azure AD-Benutzer mittels einmaliger Anmeldung auf Ihrer Tinfoil Security-Unternehmenswebsite bei der Anwendung anmelden (durch den Identitätsanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -56,7 +56,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Tin
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-tinfoil-security-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie im **Suchfeld** den Suchbegriff **Tinfoil Security** ein.
+6.  Geben Sie im **Suchfeld** als Suchbegriff **Tinfoil Security** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-tinfoil-security-tutorial/IC798966.png "Anwendungskatalog")
 
@@ -84,21 +84,21 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![App-URL konfigurieren](./media/active-directory-saas-tinfoil-security-tutorial/IC798969.png "App-URL konfigurieren")
 
-4.  Klicken Sie zum Herunterladen des Zertifikats auf der Seite **Einmaliges Anmelden konfigurieren für Tinfoil Security** auf **Zertifikat herunterladen**, und speichern Sie die Zertifikatsdatei lokal unter **C:\\Tinfoil Security.cer**.
+4.  Klicken Sie zum Herunterladen des Zertifikats auf der Seite **Einmaliges Anmelden konfigurieren für Tinfoil Security** auf **Zertifikat herunterladen**, und speichern Sie die Zertifikatsdatei lokal unter **c:\\Tinfoil Security.cer**.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-tinfoil-security-tutorial/IC798970.png "Einmaliges Anmelden konfigurieren")
 
 5.  Melden Sie sich in einem anderen Webbrowserfenster bei der Tinfoil Security-Unternehmenswebsite als Administrator an.
 
-6.  Klicken Sie oben auf der Symbolleiste auf **Mein Konto**.
+6.  Klicken Sie oben auf der Symbolleiste auf **Einstellungen**.
 
     ![Dashboard](./media/active-directory-saas-tinfoil-security-tutorial/IC798971.png "Dashboard")
 
-7.  Klicken Sie auf **Sicherheit**.
+7.  Klicken Sie auf **Security**.
 
     ![Sicherheit](./media/active-directory-saas-tinfoil-security-tutorial/IC798972.png "Sicherheit")
 
-8.  Führen Sie auf der Konfigurationsseite **Einmaliges Anmelden** die folgenden Schritte aus:
+8.  Führen Sie auf der Konfigurationsseite **Single Sign-On** die folgenden Schritte aus:
 
     ![Einmaliges Anmelden](./media/active-directory-saas-tinfoil-security-tutorial/IC798973.png "Einmaliges Anmelden")
 
@@ -107,12 +107,12 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
     3.  Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Tinfoil Security** den Wert der **SAML-SSO-URL**, und fügen Sie ihn in das Textfeld **SAML POST-URL** ein.
     4.  Kopieren Sie den **Fingerabdruckwert** aus dem exportierten Zertifikat, und fügen Sie ihn in das Textfeld **SAML-Zertifikatsfingerabdruck** ein.  
 
-        >[AZURE.TIP]Weitere Informationen finden Sie unter [Abrufen des Fingerabdruckwerts eines Zertifikats](http://youtu.be/YKQF266SAxI).
+        >[AZURE.TIP]Weitere Informationen finden Sie unter [How to retrieve a certificate's thumbprint value](http://youtu.be/YKQF266SAxI) (in englischer Sprache).
 
     5.  Kopieren Sie **Ihre Konto-ID**.
     6.  Klicken Sie auf **Speichern**.
 
-9.  Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
+9.  Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-tinfoil-security-tutorial/IC798974.png "Einmaliges Anmelden konfigurieren")
 
@@ -129,7 +129,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
     3.  Fügen Sie in das Textfeld **Attributwert** den Konto-ID-Wert ein, den Sie im vorherigen Abschnitt kopiert haben.
     4.  Klicken Sie auf **Fertig stellen**.
 
-12. Klicken Sie auf **Änderungen übernehmen**.
+12. Klicken Sie auf **Apply Changes**.
 
 ##Konfigurieren der Benutzerbereitstellung
   
@@ -155,10 +155,10 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
     ![Benutzer zuweisen](./media/active-directory-saas-tinfoil-security-tutorial/IC798976.png "Benutzer zuweisen")
 
-3.  Wählen Sie den Testbenutzer aus, und klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen.
+3.  Wählen Sie den Testbenutzer aus, klicken Sie auf **Zuweisen** und anschließend auf **Ja**, um die Zuweisung zu bestätigen.
 
     ![Ja](./media/active-directory-saas-tinfoil-security-tutorial/IC767830.png "Ja")
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0114_2016-->

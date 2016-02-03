@@ -1,19 +1,19 @@
 <properties
     pageTitle="Verwenden der Azure-Befehlszeilenschnittstelle mit Azure-Speicher | Microsoft Azure"
-    description="Erfahren Sie, wie Sie die Azure-Befehlszeilenschnittstelle (Azure-CLI) mit Azure Storage verwenden, um Speicherkonten zu erstellen und zu verwalten sowie mit Azure-Blobs und -Dateien zu arbeiten."
+    description="Erfahren Sie, wie Sie die Azure-Befehlszeilenschnittstelle (Azure-CLI) mit Azure Storage verwenden, um Speicherkonten zu erstellen und zu verwalten sowie mit Azure-Blobs und -Dateien zu arbeiten. Die Azure-Befehlszeilenschnittstelle ist ein plattformübergreifendes Tool."
     services="storage"
     documentationCenter="na"
     authors="tamram"
-    manager="jdial"/>
+    manager="carmonm"/>
 
 <tags
     ms.service="storage"
     ms.workload="storage"
     ms.tgt_pltfrm="na"
     ms.devlang="na"
-    ms.topic="article" 
-    ms.date="09/28/2015"
-    ms.author="chungli;jiyang;yaxia;tamram"/>
+    ms.topic="article"
+    ms.date="01/05/2016"
+    ms.author="micurd"/>
 
 # Verwenden der Azure-Befehlszeilenschnittstelle mit Azure-Speicher
 
@@ -206,7 +206,7 @@ Beachten Sie, dass der Name des Verzeichnisses für den Auflistungsvorgang optio
 Ab Version 0.9.8 der Azure-CLI können Sie eine Datei in eine andere Datei, eine Datei in ein Blob oder ein Blob in eine Datei kopieren. Im Folgenden wird demonstriert, wie diese Kopiervorgänge mithilfe von CLI-Befehlen ausgeführt werden können. So kopieren Sie eine Datei in das neue Verzeichnis:
 
 	azure storage file copy start --source-share srcshare --source-path srcdir/hello.txt --dest-share destshare --dest-path destdir/hellocopy.txt --connection-string $srcConnectionString --dest-connection-string $destConnectionString
-	
+
 So kopieren Sie ein Blob in ein Dateiverzeichnis:
 
 	azure storage file copy start --source-container srcctn --source-blob hello2.txt --dest-share hello --dest-path hellodir/hello2copy.txt --connection-string $srcConnectionString --dest-connection-string $destConnectionString
@@ -220,6 +220,5 @@ In den folgenden Artikeln und Ressourcen finden Sie weitere Informationen zum Az
 
 
 [Image1]: ./media/storage-azure-cli/azure_command.png
- 
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

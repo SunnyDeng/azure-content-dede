@@ -13,12 +13,14 @@
 	ms.workload="search"
 	ms.topic="hero-article"
 	ms.tgt_pltfrm="na"
-	ms.date="11/04/2015"
+	ms.date="01/11/2016"
 	ms.author="heidist"/>
 
 # Erste Schritte mit Azure Search in Java
 
 Erfahren Sie, wie Sie eine benutzerdefinierte Java-Suchanwendung erstellen, die Azure Search zum Suchen verwendet. Dieses Lernprogramm verwendet die [REST-API für den Azure Search-Dienst](https://msdn.microsoft.com/library/dn798935.aspx) zum Erstellen der Objekte und Vorgänge, die in dieser Übung verwendet werden.
+
+Um dieses Beispiel auszuführen, benötigen Sie einen Azure Search-Dienst, für den Sie sich im [Azure-Portal](https://portal.azure.com) anmelden können. Schrittweise Anweisungen finden Sie unter [Erstellen eines Azure Search-Diensts im Portal](search-create-service-portal.md).
 
 Zum Erstellen und Testen dieses Beispiels wurde die folgende Software verwendet:
 
@@ -28,17 +30,13 @@ Zum Erstellen und Testen dieses Beispiels wurde die folgende Software verwendet:
 
 - [Apache Tomcat 8.0](http://tomcat.apache.org/download-80.cgi)
 
-Um dieses Beispiel auszuführen, benötigen Sie einen Azure Search-Dienst, für den Sie sich am [klassischen Azure-Portal](https://portal.azure.com) anmelden können.
-
-> [AZURE.TIP]Laden Sie den Quellcode für dieses Lernprogramm von [Azure Search Java demo](http://go.microsoft.com/fwlink/p/?LinkId=530197) von Github herunter.
-
 ## Informationen zu den Daten
 
 In dieser Beispielanwendung werden Daten von [United States Geological Services (USGS)](http://geonames.usgs.gov/domestic/download_data.htm) verwendet, die nach dem Bundesstaat Rhode Island gefiltert wurden, um die Größe des Datasets zu verringern. Wir verwenden diese Daten, um eine Suchanwendung zu erstellen, die markante Gebäude, wie Krankenhäuser und Schulen, sowie geologische Merkmale, wie Flüsse, Seen und Gipfel, zurückgibt.
 
 In dieser Anwendung erstellt das Programm **SearchServlet.java** den Index und lädt ihn unter Verwendung eines [Indexer](https://msdn.microsoft.com/library/azure/dn798918.aspx)-Konstrukts, wobei das gefilterte USGS-DataSet aus einer öffentlichen Azure SQL-Datenbank abgerufen wird. Vordefinierte Anmeldeinformationen und Verbindungsinformationen zur Onlinedatenquelle werden im Programmcode bereitgestellt. Hinsichtlich des Datenzugriffs ist keine weitere Konfiguration erforderlich.
 
-> [AZURE.NOTE]Wir haben einen Filter auf dieses Dataset angewendet, um unter dem Limit des kostenlosen Tarifs von maximal 10.000 Dokumenten zu bleiben. Bei Verwendung des Standardtarifs gilt dieses Limit nicht, und Sie können den Code bearbeiten, um größere Datasets verwenden zu können. Ausführliche Informationen zur Kapazität der einzelnen Tarife finden Sie unter [Limits und Einschränkungen](search-limits-quotas-capacity.md).
+> [AZURE.NOTE] Wir haben einen Filter auf dieses Dataset angewendet, um unter dem Limit des kostenlosen Tarifs von maximal 10.000 Dokumenten zu bleiben. Bei Verwendung des Standardtarifs gilt dieses Limit nicht, und Sie können den Code bearbeiten, um größere Datasets verwenden zu können. Ausführliche Informationen zur Kapazität der einzelnen Tarife finden Sie unter [Limits und Einschränkungen](search-limits-quotas-capacity.md).
 
 ## Informationen zu den Programmdateien
 
@@ -52,48 +50,19 @@ Die folgende Liste beschreibt die Dateien, die für dieses Beispiel relevant sin
 - config.Properties: Legt die URL und den API-Schlüssel des Search-Diensts fest.
 - Pom.XML: Eine Maven-Abhängigkeit.
 
-
-## Erstellen des Diensts
-
-1. Melden Sie sich am [klassischen Azure-Portal](https://portal.azure.com) an.
-
-2. Navigieren Sie über die seitliche Navigationsleiste zu **Neu** > **Daten + Speicher** > **Search**.
-
-     ![][1]
-
-3. Konfigurieren Sie den Dienstnamen, den Tarif, die Ressourcengruppe, das Abonnement und den Ort. Diese Einstellungen sind erforderlich und können nach der Dienstbereitstellung nicht mehr geändert werden.
-
-     ![][2]
-
-	- Der **Dienstname** muss eindeutig sein und aus weniger als 15 Kleinbuchstaben ohne Leerzeichen bestehen. Dieser Name wird Bestandteil des Endpunkts Ihres Azure Search-Diensts. Weitere Informationen zu den Benennungsregeln finden Sie unter [Benennungskonventionen](https://msdn.microsoft.com/library/azure/dn857353.aspx).
-
-	- Der **Tarif** bestimmt Kapazität und Abrechnung. Beide Tarife bieten die gleichen Features, aber mit unterschiedlichen Ressourcen.
-
-		- **Free** wird auf Clustern ausgeführt, die gemeinsam mit anderen Abonnenten genutzt werden. Diese Version bietet genügend Kapazität für Tutorials sowie zum Schreiben von Code für Machbarkeitsstudien, eignet sich jedoch nicht für den Einsatz in Produktionsumgebungen. Die Bereitstellung eines kostenlosen Diensts dauert in der Regel nur wenige Minuten.
-		- **Standard** wird auf fest zugeordneten Ressourcen ausgeführt und ist flexibel skalierbar. Ein Standarddienst wird zunächst mit einem Replikat und einer Partition bereitgestellt, die Kapazität kann nach der Diensterstellung jedoch angepasst werden. Die Bereitstellung eines Standarddiensts dauert länger (üblicherweise etwa 15 Minuten).
-
-	- **Ressourcengruppen** sind Container für Dienste und Ressourcen, die einem gemeinsamen Zweck dienen. Wenn Sie eine auf Azure Search, Azure Websites und Azure-Blobspeicher basierte Suchanwendung erstellen möchten, können Sie z. B. eine Ressourcengruppe erstellen, die diese Dienste in den Verwaltungsseiten im Portal gruppiert.
-
-	- Unter **Abonnement** stehen ggf. mehrere Abonnements zur Auswahl, sofern Sie über mehrere Abonnements verfügen.
-
-	- **Ort** ist die Rechenzentrumsregion. Derzeit müssen alle Ressourcen im gleichen Rechenzentrum ausgeführt werden. Die Aufteilung von Ressourcen auf mehrere Rechenzentren wird nicht unterstützt.
-
-4. Klicken Sie auf **Erstellen**, um den Dienst bereitzustellen.
-
-Achten Sie auf Benachrichtigungen in der Navigationsleiste. Wenn der Dienst verwendet werden kann, erscheint eine Benachrichtigung.
-
 <a id="sub-2"></a>
 ## Ermitteln des Dienstnamens und des API-Schlüssels des Azure Search-Diensts
 
-Nach der Diensterstellung können Sie zum Portal zurückkehren, um URL und `api-key` zu ermitteln. Für Verbindungen mit Ihrem Search-Dienst benötigen Sie sowohl die URL als auch einen `api-key`, um den Aufruf zu authentifizieren.
+Bei allen REST-API-Aufrufen von Azure Search ist die Angabe der Dienst-URL und eines API-Schlüssels erforderlich.
 
-1. Klicken Sie auf der Navigationsleiste auf **Startseite** und anschließend auf den Search-Dienst, um das Service-Dashboard zu öffnen.
-
-2. Auf dem Service-Dashboard werden Kacheln für wichtige Informationen sowie das Schlüsselsymbol für den Zugriff auf die Administratorschlüssel angezeigt.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
+2. Klicken Sie in der Navigationsleiste auf **Search-Dienst**, um alle für Ihr Abonnement bereitgestellten Azure Search-Dienste aufzuführen.
+3. Wählen Sie den Dienst aus, den Sie verwenden möchten.
+4. Auf dem Service-Dashboard werden Kacheln für wichtige Informationen sowie das Schlüsselsymbol für den Zugriff auf die Administratorschlüssel angezeigt.
 
   	![][3]
 
-3. Kopieren Sie die Dienst-URL und einen Administratorschlüssel. Sie benötigen diese später, wenn Sie sie der Datei **config.properties** hinzufügen.
+5. Kopieren Sie die Dienst-URL und einen Administratorschlüssel. Sie benötigen diese später, wenn Sie sie der Datei **config.properties** hinzufügen.
 
 ## Herunterladen der Beispieldateien
 
@@ -123,7 +92,7 @@ Alle nachfolgenden Dateiänderungen und Ausführungsanweisungen werden an den Da
 
 1. Doppelklicken Sie in **Project Explorer** auf **config.properties**, um die Konfigurationseinstellungen zu bearbeiten, die den Servernamen und den API-Schlüssel enthalten.
 
-2. Schlagen Sie die Schritte weiter oben in diesem Artikel nach, mit denen Sie die Dienst-URL und den API-Schlüssel im [klassischen Azure-Portal](https://portal.azure.com) ermittelt haben, um die Werte zu erhalten, die Sie jetzt in **config.properties** eingeben.
+2. Schlagen Sie die Schritte weiter oben in diesem Artikel nach, mit denen Sie die Dienst-URL und den API-Schlüssel im [Azure-Portal](https://portal.azure.com) ermittelt haben, um die Werte zu erhalten, die Sie jetzt in **config.properties** eingeben.
 
 3. Ersetzen Sie in der Datei **config.properties**, "API Key" durch den API-Schlüssel ihres Diensts. Anschließend ersetzen Sie in der gleichen Datei "service name" durch den Dienstname (die erste Komponente der URL http://servicename.search.windows.net).
 
@@ -145,7 +114,7 @@ Alle nachfolgenden Dateiänderungen und Ausführungsanweisungen werden an den Da
 
 	![][7]
 
-6. Geben Sie auf der nächsten Seite das Tomcat-Installationsverzeichnis an. Auf einem Windows-Computer ist dies wahrscheinlich "C:\\Programme\\Apache Software Foundation\\Tomcat *Version*".
+6. Geben Sie auf der nächsten Seite das Tomcat-Installationsverzeichnis an. Auf einem Windows-Computer ist dies wahrscheinlich "C:\Programme\Apache Software Foundation\Tomcat *Version*".
 
 6. Klicken Sie auf **Fertig stellen**.
 
@@ -189,7 +158,7 @@ Wenn Sie noch keine Server-Laufzeitumgebung in Eclipse angegeben haben, müssen 
 
 5. Klicken Sie mit der rechten Maustaste auf **Search.jsp** > **Run As** > **Run on Server**. Wählen Sie den Apache Tomcat-Server aus, und klicken Sie dann auf **Run**.
 
-> [AZURE.TIP]Wenn Sie das Projekt nicht im Standardarbeitsbereich gespeichert haben, müssen Sie die Einstellung für **Run Configuration** ändern, damit sie auf den Speicherort des Projekts verweist, um einen Server-Startfehler zu vermeiden. Klicken Sie in Project Explorer mit der rechten Maustaste auf **Search.jsp** > **Run As** > **Run Configurations**. Wählen Sie den Apache Tomcat-Server aus. Klicken Sie auf **Arguments**. Klicken Sie auf **Workspace** oder **File System**, um den Ordner, der das Projekt enthält, festzulegen.
+> [AZURE.TIP] Wenn Sie das Projekt nicht im Standardarbeitsbereich gespeichert haben, müssen Sie die Einstellung für **Run Configuration** ändern, damit sie auf den Speicherort des Projekts verweist, um einen Server-Startfehler zu vermeiden. Klicken Sie in Project Explorer mit der rechten Maustaste auf **Search.jsp** > **Run As** > **Run Configurations**. Wählen Sie den Apache Tomcat-Server aus. Klicken Sie auf **Arguments**. Klicken Sie auf **Workspace** oder **File System**, um den Ordner, der das Projekt enthält, festzulegen.
 
 Wenn Sie die Anwendung ausführen, sollte ein Browserfenster angezeigt werden, das ein Suchfeld zur Eingabe von Suchbegriffen bereitstellt.
 
@@ -215,7 +184,7 @@ Dies ist das erste Azure Search-Lernprogramm, das auf Java und dem USGS-Dataset 
 
 Wenn Sie bereits über Erfahrungen mit Azure Search verfügen, können Sie dieses Beispiel als Ausgangspunkt für weitere Experimente nutzen, um die [Suchseite](search-pagination.md) zu erweitern oder eine [Facettennavigation](search-faceted-navigation.md) zu implementieren. Sie können auch die Suchergebnisseite verbessern, indem Sie Statistiken hinzufügen und Dokumente mit Batchvorgängen verarbeiten, damit die Benutzer die Ergebnisse seitenweise anzeigen können.
 
-Neu bei Azure Search? Es wird empfohlen, auch andere Lernprogramme zu bearbeiten, damit Sie ein Verständnis dafür entwickeln, was Sie erstellen können. Besuchen Sie unsere [Dokumentationsseite](http://azure.microsoft.com/documentation/services/search/), um weitere Ressourcen zu finden. Sie können auch die Links in unserer [Video- und Lernprogrammliste](search-video-demo-tutorial-list.md) besuchen, um auf weitere Informationen zuzugreifen.
+Neu bei Azure Search? Es wird empfohlen, auch andere Lernprogramme zu bearbeiten, damit Sie ein Verständnis dafür entwickeln, was Sie erstellen können. Besuchen Sie unsere [Dokumentationsseite](https://azure.microsoft.com/documentation/services/search/), um weitere Ressourcen zu finden. Sie können auch die Links in unserer [Video- und Lernprogrammliste](search-video-demo-tutorial-list.md) besuchen, um auf weitere Informationen zuzugreifen.
 
 <!--Image references-->
 [1]: ./media/search-get-started-java/create-search-portal-1.PNG
@@ -231,4 +200,4 @@ Neu bei Azure Search? Es wird empfohlen, auch andere Lernprogramme zu bearbeiten
 [11]: ./media/search-get-started-java/rogerwilliamsschool1.PNG
 [12]: ./media/search-get-started-java/AzSearch-Java-SelectProject.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

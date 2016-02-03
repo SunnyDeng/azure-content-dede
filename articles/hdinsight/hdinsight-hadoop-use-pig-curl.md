@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="11/06/2015"
+   ms.date="01/08/2016"
    ms.author="larryfr"/>
 
 #Ausführen von Pig-Aufträgen mit Hadoop in HDInsight mithilfe von Curl
@@ -118,4 +118,4 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 
 * [Verwenden von MapReduce mit Hadoop in HDInsight](hdinsight-use-mapreduce.md)
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0114_2016-->

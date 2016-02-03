@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/21/2015"
+	ms.date="01/05/2016"
 	ms.author="genli"/>
 
 # Hinzufügen oder Ändern von Azure-Administratorrollen
@@ -42,7 +42,7 @@ Die folgende E-Mail-Adresse kann als Co-Administrator hinzugefügt werden:
 
 **Hinweis**
 
- * Jedes Azure-Abonnement ist mit einem Azure Active Directory-Konto verknüpft (auch als Standardverzeichnis bezeichnet). Um das Standardverzeichnis zu finden, dem das Abonnement zugeordnet ist, wählen Sie im [klassischen Azure-Portal](https://manage.windowsazure.com/) die Optionen **Einstellungen** > **Abonnements** aus. Dort überprüfen Sie die Abonnement-ID und suchen dann das Standardverzeichnis, dem das Abonnement zugeordnet ist.
+ * Jedes Azure-Abonnement ist mit einem Azure Active Directory-Konto verknüpft (auch als Standardverzeichnis bezeichnet). Um das Standardverzeichnis zu finden, dem das Abonnement zugeordnet ist, wählen Sie im [klassischen Azure-Portal](https://manage.windowsazure.com/) die Optionen **Einstellungen** > **Abonnements** aus. Überprüfen Sie dort die Abonnement-ID, und suchen dann das Standardverzeichnis.
 
  * Wenn Sie mit einem Microsoft-Konto angemeldet sind, können Sie nur andere Microsoft-Konten oder Benutzer innerhalb des Standardverzeichnisses als Co-Administrator hinzufügen.
  * Wenn Sie mit einem Organisationskonto angemeldet sind, können Sie andere Organisationskonten in Ihrer Organisation als Co-Administrator hinzufügen. Beispielsweise kann abby@contoso.com das Konto bob@contoso.com als Dienstadministrator oder Co-Administrator hinzufügen, aber nicht john@notcontoso.com, es sei denn, john@noncontoso.com ist Benutzer im Standardverzeichnis. Mit einem Organisationskonto angemeldete Benutzer können Benutzer mit Microsoft-Konten weiterhin als Dienstadministrator oder Co-Administrator hinzufügen.
@@ -64,6 +64,6 @@ Nur der Kontoadministrator kann den Dienstadministrator für ein Abonnement änd
 
 ## Ändern des Kontoadministrators
 
-Informationen zum Übertragen des Besitzes des Azure-Kontos auf ein anderes Konto finden Sie unter [Übertragen eines Azure-Abonnements](../billing-subscription-transfer.md).
+Informationen zum Übertragen des Besitzes des Azure-Kontos auf ein anderes Konto finden Sie unter [Übertragen eines Azure-Abonnements](billing-subscription-transfer.md).
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0121_2016-->

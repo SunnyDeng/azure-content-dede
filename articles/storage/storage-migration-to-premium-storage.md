@@ -5,7 +5,7 @@
     documentationCenter="na"
     authors="ms-prkhad"
     manager=""
-    editor=""/>
+    editor="tysonn"/>
 
 <tags
     ms.service="storage"
@@ -14,7 +14,7 @@
     ms.devlang="na"
     ms.topic="article"
     ms.date="12/04/2015"
-    ms.author="robinsh"/>
+    ms.author="prkhad"/>
 
 
 # Migrieren zu Azure Premium-Speicher
@@ -70,7 +70,7 @@ Premium-Speicherkonten haben zusätzlich zu den unter [Ziele für Skalierbarkeit
 |:--|:---|
 |Festplattenkapazität: 35 TB<br />Kapazität für Momentaufnahmen: 10 TB|Bis zu 50 GB pro Sekunde für eingehenden und ausgehenden Datenverkehr|
 
-Weitere Informationen zu den Spezifikationen für Storage Premium finden Sie unter [Skalierbarkeits- und Leistungsziele bei der Verwendung des Premium-Speichers](storage-premium-storage-preview-portal.md#scalability-and-performance-targets-whde-DEing-premium-storage).
+Weitere Informationen zu den Spezifikationen für Premium-Speicher finden Sie unter [Skalierbarkeits- und Leistungsziele bei der Verwendung des Premium-Speichers](storage-premium-storage-preview-portal.md#scalability-and-performance-targets-whde-DEing-premium-storage).
 
 #### Zusätzliche Datenträger
 Legen Sie je nach Workload fest, ob zusätzliche Datenträger für Ihren virtuellen Computer erforderlich sind. Sie können mehrere Datenträger für permanente Daten auf Ihrem virtuellen Computer anfügen. Bei Bedarf können Sie Daten über die Datenträger verteilen, um die Kapazität und die Leistung des Volumens zu erhöhen. Wenn Sie Daten über Premium-Speicher-Datenträger mithilfe von [Speicherplätzen](http://technet.microsoft.com/library/hh831739.aspx) verteilen, sollten Sie sie für jeden verwendeten Datenträger eine Spalte konfigurieren. Andernfalls kann die Gesamtleistung des Stripesetvolume aufgrund ungleicher Verteilung des Datenverkehrs auf die Datenträger niedriger sein als erwartet. Für Linux-VMs können Sie dazu das Hilfsprogramm *mdadm* verwenden. Weitere Informationen finden Sie im Artikel [Konfigurieren von Software-RAID unter Linux](../virtual-machines-linux-configure-raid.md).
@@ -157,7 +157,7 @@ Im Folgenden sind einige Szenarios zum Kopieren der virtuellen Festplatte beschr
 
 Wenn Sie VHDs aus einem Azure-Standardspeicherkonto zu einem Azure Premium-Speicherkonto migrieren, müssen Sie den Quellpfad des VHD-Containers, den Namen der VHD-Datei und den Speicherkontoschlüssel des Quellspeicherkontos kopieren.
 
-1. Wechseln Sie zu **Azure-Portal > Virtuelle Computer > Datenträger**.
+1. Wechseln Sie zu **Azure-Portal > Virtuelle Computer > Datenträger**.
 2. Kopieren und speichern Sie die VHD-Container-URL aus der Spalte "Speicherort". Die Container-URL ähnelt dem folgenden Format: `https://myaccount.blob.core.windows.net/mycontainer/`.
 
 #### Kopieren von VHDs aus anderen Clouddiensten
@@ -191,7 +191,7 @@ Mit AzCopy können Sie auf einfache Weise die VHD-Datei über das Internet hochl
 	Es folgt die Beschreibung der im AzCopy-Befehl verwendeten Parameter:
 
  - **/Source: *&lt;Quelle&gt;:*** Speicherort des Ordners oder URL des Speichercontainers mit der virtuellen Festplatte (VHD).
- - **/SourceKey: *&lt;Quellspeicherschlüssel&gt;:*** Speicherkontoschlüssel des Quellspeicherkontos.
+ - **/SourceKey: *&lt;Quellspeicherschlüssel&gt;:*** Speicherkontoschlüssel des Quellspeicherkontos.  
  - **/Dest:*&lt;Ziel&gt;:*** URL des Speichercontainers, in den die virtuelle Festplatte kopiert werden soll.
  - **/DestKey: *&lt;Zielspeicherschlüssel&gt;:*** Speicherkontoschlüssel des Zielspeicherkontos.
  - **/BlobType: page:** Gibt an, dass das Ziel ein Seitenblob ist.
@@ -658,23 +658,23 @@ Die aktuelle Konfiguration des virtuellen Computers kann speziell für die Arbei
 ###  Anwendungsmigrationen
 Datenbanken und andere komplexe Anwendungen erfordern womöglich spezielle Schritte, wie vom Anwendungsanbieter für die Migration definiert. Weitere Informationen finden Sie in der Dokumentation der jeweiligen Anwendung. So können beispielsweise Datenbanken in der Regel mittels Sicherung und Wiederherstellung migriert werden.
 
-## Nächste Schritte  
+## Nächste Schritte
 
 Informationen zu bestimmten Szenarios zur Migration virtueller Computer finden Sie in den folgenden Ressourcen:
 
 - [Migrate Azure Virtual Machines between Storage Accounts (in englischer Sprache)](http://azure.microsoft.com/blog/2014/10/22/migrate-azure-virtual-machines-between-storage-accounts/)
-- [Erstellen und Hochladen einer Windows Server-VHD nach Azure](../virtual-machines-create-upload-vhd-windows-server.md)  
-- [Erstellen und Hochladen einer virtuellen Festplatte, die das Linux-Betriebssystem enthält](../virtual-machines-linux-create-upload-vhd.md)  
+- [Erstellen und Hochladen einer Windows Server-VHD nach Azure](../virtual-machines-create-upload-vhd-windows-server.md)
+- [Erstellen und Hochladen einer virtuellen Festplatte, die das Linux-Betriebssystem enthält](../virtual-machines-linux-create-upload-vhd.md)
 - [Migrating Virtual Machines from Amazon AWS to Microsoft Azure (in englischer Sprache)](http://channel9.msdn.com/Series/Migrating-Virtual-Machines-from-Amazon-AWS-to-Microsoft-Azure)
 
 Lesen Sie außerdem die folgenden Ressourcen, um mehr über Azure Sstorage und Azure Virtual Machines zu erfahren:
 
 - [Azure Storage (in englischer Sprache)](http://azure.microsoft.com/documentation/services/storage/)
-- [Dokumentation zu virtuellen Computern](http://azure.microsoft.com/documentation/services/virtual-machines/)  
-- [Premium-Speicher: Hochleistungsspeicher für Workloads in Azure Virtual Machine](storage-premium-storage-preview-portal.md)  
+- [Dokumentation zu virtuellen Computern](http://azure.microsoft.com/documentation/services/virtual-machines/)
+- [Premium-Speicher: Hochleistungsspeicher für Workloads in Azure Virtual Machine](storage-premium-storage-preview-portal.md)
 
 [1]: ./media/storage-migration-to-premium-storage/migration-to-premium-storage-1.png
 [2]: ./media/storage-migration-to-premium-storage/migration-to-premium-storage-1.png
 [3]: ./media/storage-migration-to-premium-storage/migration-to-premium-storage-3.png
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0114_2016-->

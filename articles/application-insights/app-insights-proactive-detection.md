@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/17/2015" 
+	ms.date="01/15/2016" 
 	ms.author="awills"/>
 
 #  Application Insights: Proaktive Erkennung
@@ -22,16 +22,27 @@
 
 Application Insights führt eine umfassende Analyse Ihrer App-Telemetrie durch und kann Sie bei potenziellen Leistungsproblemen warnen. Sie lesen dies wahrscheinlich, da Sie eine unserer proaktiven Warnungen per E-Mail erhalten haben.
 
+
 ## Was ist die proaktive Erkennung?
 
-Bei der proaktiven Erkennung werden mithilfe von Machine Learning- und Data Mining-Algorithmen ungewöhnliche Muster erkannt, die sich auf die Leistung der Anwendung auswirken. Mit der proaktiven Erkennung werden die von Application Insights erfassten Leistungstelemetriedaten automatisch analysiert. Sie erhalten eine E-Mail zu jeder in der Anwendung erkannten anormalen Leistung. Sie müssen keine Regeln für Schwellenwerte festlegen. Die Benachrichtigungen der proaktiven Erkennung sind in die Analysefunktionen von Application Insights integriert, sodass eine schnelle Eingrenzung und Diagnose der Probleme ermöglicht wird.
+Bei der proaktiven Erkennung werden Anomalien in Bezug auf die Leistung der App erkannt, indem die an Application Insights gesendeten Telemetriedaten analysiert werden.
 
-Die proaktive Erkennung befindet sich in der Vorschauphase und ist noch nicht für alle Application Insights-Benutzer verfügbar. Wenn Sie sie ausprobieren möchten, wenden Sie sich an AppInsightsML@microsoft.com. Wir werden sie dann in Zusammenarbeit mit Ihnen einrichten.
+Es werden vor allem Leistungsprobleme ermittelt, die sich nur auf einige Ihrer Benutzer auswirken oder nur in bestimmten Fällen eine Auswirkung für Benutzer darstellen.
+
+Beispielsweise können Sie benachrichtigt werden, ob Ihre App-Seiten mit einigen Browsertypen deutlich langsamer als bei anderen Browsern geladen werden oder ob Anforderungen über einen bestimmten Server deutlich langsamer bereitgestellt werden. Außerdem können Probleme mit Kombinationen von Eigenschaften erkannt werden, z. B. das langsame Laden von Seiten in einem geografischen Bereich zu einer bestimmten Tageszeit.
+
+Anomalien dieser Art sind nicht leicht zu erkennen, wenn nur die Daten untersucht werden, aber sie kommen häufiger vor, als man denkt. Sie erfahren davon meistens erst, wenn Sie Beschwerden von Kunden erhalten. Dann ist es bereits zu spät: Die betroffenen Benutzer wandern zur Konkurrenz ab!
+
+Derzeit überprüfen wir mit unseren Algorithmen die Seitenladezeiten, Reaktionszeiten auf Anforderungen auf dem Server und Reaktionszeiten von Abhängigkeiten.
+
+Sie müssen keine Schwellenwerte festlegen und keine Regeln konfigurieren. Machine Learning- und Data Mining-Algorithmen werden verwendet, um ungewöhnliche Muster zu erkennen.
+
+Wir freuen uns sehr über Ihr Feedback. Lassen Sie uns wissen, wie Sie von der proaktiven Erkennung profitieren, wie wir sie verbessern können und welche zusätzlichen Funktionen Sie sich wünschen. Sie können uns über die Smileys im Portal (lächelnd/finster dreinblickend) Feedback geben oder uns eine E-Mail sendenAppInsightsML@microsoft.com.
 
 ## Informationen zur proaktiven Warnung
 
 * *Warum habe ich diese E-Mail erhalten?*
- * Die von Ihrer Anwendung an Application Insights gesendeten Telemetriedaten wurden mit der proaktiven Erkennung analysiert. Dabei wurde ein Leistungsproblem in der Anwendung erkannt.
+ * Die von Ihrer Anwendung an Application Insights gesendeten Telemetriedaten wurden mit der proaktiven Erkennung analysiert. Dabei wurde ein Leistungsproblem in der Anwendung erkannt. 
 * *Bedeutet die Benachrichtigung, dass ich definitiv ein Problem habe?*
  * Nein. Es handelt sich lediglich um Vorschlag über etwas, das Sie sich möglicherweise genauer ansehen möchten. 
 * *Wie sollte ich vorgehen?*
@@ -45,11 +56,11 @@ Die proaktive Erkennung befindet sich in der Vorschauphase und ist noch nicht f�
 * *Welche Arten von Anomalien werden erkannt?*
  * Muster, deren Überprüfung für Sie selbst zeitaufwendig wäre Beispiel: schlechte Leistung bei einer bestimmten Kombination aus Ort, Uhrzeit und Plattform
 * *Werden alle der von Application Insights erfassten Daten analysiert?*
- * Derzeit nicht. Gegenwärtig werden Antwortzeiten auf Anforderungen und Seitenladezeiten analysiert. Die Analyse weiterer Metriken wird in Kürze zur Verfügung stehen. 
+ * Derzeit nicht. Gegenwärtig werden Antwortzeiten auf Anforderungen, Reaktionszeiten von Abhängigkeiten und Seitenladezeiten analysiert. Die Analyse weiterer Metriken wird in Kürze zur Verfügung stehen. 
 * *Kann ich meinen eigenen Erkennungsregeln für Anomalien erstellen?*
  * Bisher nicht. Sie können aber Folgendes tun:
  * [Einrichten von Warnungen](app-insights-alerts.md), die Sie informieren, wenn eine Metrik einen Schwellenwert überschreitet.
- * [Exportieren von Telemetriedaten](app-insights-export-telemetry.md) in eine [Datenbank](app-insights-code-sample-export-sql-stream-analytics.md) oder [in Power BI](app-insights-export-power-bi.md) oder [andere](app-insights-code-sample-export-telemetry-sql-database.md) Tools, mit denen Sie selbst eine Analyse durchführen können.
+ * [Exportieren von Telemetrie](app-insights-export-telemetry.md) in eine [Datenbank](app-insights-code-sample-export-sql-stream-analytics.md) oder [Power BI](app-insights-export-power-bi.md) oder [andere](app-insights-code-sample-export-telemetry-sql-database.md) Tools, mit denen Sie selbst eine Analyse durchführen können.
 * *Wie oft wird die Analyse ausgeführt?*
  * Die Analyse der Telemetriedaten vom Vortag wird täglich ausgeführt.
 * **Ersetzt dies also die [Metrikwarnungen](app-insights-alerts.md)?
@@ -112,12 +123,14 @@ Da Sie im Web viele Ratschläge zur Verbesserung der Serverreaktionszeit und Sei
  * Klicken Sie auf den Link zum Abbestellen des Abonnements in der Warnung oder in der E-Mail. 
  
     Derzeit werden Sie an Personen gesendet, die über [Schreibzugriff für die Application Insights-Ressource](app-insights-resources-roles-access-control.md) verfügen.
+
+    Sie können die Einstellungen für die Liste mit den Empfängern auch auf dem Blatt „Proaktive Erkennung“ bearbeiten.
 * *Ich möchte nicht mit diesen Nachrichten überflutet werden.*
- * Sie erhalten maximal eine Nachricht am Tag. Sie erhalten Nachrichten nicht mehrfach.
+ * Sie erhalten nur eine Nachricht pro Tag, in der das relevanteste Problem genannt wird, über das wir noch nicht berichtet haben. Sie erhalten Nachrichten nicht mehrfach.
 * *Erhalte ich eine Erinnerung, wenn ich nichts unternehme?*
- * Nein, Sie erhalten jeweils nur eine Nachricht zu einem Problem.
+ * Nein, Sie erhalten jeweils nur eine Nachricht zu einem Problem. 
 * *Ich habe die E-Mail verloren. Wo finde ich die Benachrichtigungen im Portal?*
- * Klicken Sie in der Application Insights-Übersicht Ihrer App auf die Kachel **Proaktive Erkennung**. 
+ * Klicken Sie in der Application Insights-Übersicht Ihrer App auf die Kachel **Proaktive Erkennung**. Dort finden Sie alle Benachrichtigungen der letzten 7 Tage.
 
 
 ## Verwandte Artikel
@@ -128,4 +141,4 @@ Da Sie im Web viele Ratschläge zur Verbesserung der Serverreaktionszeit und Sei
 * [Suchexplorer](app-insights-diagnostic-search.md)
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0121_2016-->

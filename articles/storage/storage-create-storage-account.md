@@ -1,11 +1,11 @@
 <properties
-	pageTitle="Erstellen, Verwalten oder Löschen eines Speicherkontos | Microsoft Azure"
-	description="Erstellen Sie ein neues Speicherkonto, verwalten Sie die Zugriffsschlüssels, oder löschen Sie ein Speicherkonto im Azure-Portal."
+	pageTitle="Gewusst wie: Erstellen, Verwalten oder Löschen eines Speicherkontos im Azure-Portal | Microsoft Azure"
+	description="Erstellen Sie ein neues Speicherkonto, verwalten Sie die Zugriffsschlüssel für Ihr Konto, oder löschen Sie ein Speicherkonto im Azure-Portal. Erfahren Sie mehr über Standard- und Premium-Speicherkonten."
 	services="storage"
 	documentationCenter=""
 	authors="robinsh"
 	manager="carmonm"
-	editor=""/>
+	editor="tysonn"/>
 
 <tags
 	ms.service="storage"
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="12/04/2015" 
+	ms.date="01/26/2016"
 	ms.author="robinsh"/>
 
 
@@ -27,7 +27,7 @@ Ein Azure-Speicherkonto bietet Ihnen Zugriff auf die Azure Blob-, Warteschlangen
 
 Zwei Typen von Speicherkonten stehen zur Verfügung:
 
-- Ein Standardspeicherkonto umfasst Blob-, Tabellen- und Warteschlangenspeicher. 
+- Ein Standardspeicherkonto umfasst Blob-, Tabellen- und Warteschlangenspeicher.
 - Ein Storage Premium-Konto unterstützt aktuell ausschließlich Festplatten virtueller Azure-Computer. Eine ausführliche Übersicht über Azure Premium Storage finden Sie unter [Premium Storage: Hochleistungsspeicher für Workloads auf virtuellen Azure-Computern](storage-premium-storage-preview-portal.md).
 
 ## Speicherkontoabrechnung
@@ -39,11 +39,11 @@ Die Rechnungsstellung für Azure-Speicher basiert auf Ihrem Speicherkonto. Speic
 - Transaktionen beziehen sich auf alle Lese- und Schreibvorgänge im Azure-Speicher.
 - Datenausgang bezieht sich auf Daten, die aus einer Azure-Region übertragen werden. Wenn eine Anwendung, die nicht in der gleichen Region ausgeführt wird und entweder ein Clouddienst oder ein anderer Anwendungstyp ist, auf die Daten in Ihrem Speicherkonto zugreift, fallen Gebühren für den Datenausgang an. (Für Azure-Dienste können Sie Maßnahmen durchführen, um Daten und Dienste in den gleichen Rechenzentren zu gruppieren und so Datenausgangsgebühren zu reduzieren oder zu eliminieren.)  
 
-Die Seite [Azure-Preise](http://azure.microsoft.com/pricing/details/#storage) bietet detaillierte Preisinformationen für Speicherkapazität, Replikation und Transaktionen. Auf der Seite [Datenübertragungen – Preisübersicht](http://azure.microsoft.com/pricing/details/data-transfers/) finden Sie detaillierte Preisinformationen für den Datenausgang.
+Die Seite [Azure-Preise](https://azure.microsoft.com/pricing/details/#storage) bietet detaillierte Preisinformationen für Speicherkapazität, Replikation und Transaktionen. Auf der Seite [Datenübertragungen – Preisübersicht](https://azure.microsoft.com/pricing/details/data-transfers/) finden Sie detaillierte Preisinformationen für den Datenausgang.
 
 Weitere Informationen zu Kapazität und Leistungszielen von Speicherkonten finden Sie unter [Ziele für Skalierbarkeit und Leistung des Azure-Speichers](http://msdn.microsoft.com/library/azure/dn249410.aspx).
 
-> [AZURE.NOTE]Wenn Sie einen virtuellen Azure-Computer erstellen, wird für Sie automatisch ein Speicherkonto in der Bereitstellungsregion erstellt, falls Sie noch kein Speicherkonto in der entsprechenden Region haben. Es ist nicht erforderlich, den unten aufgeführten Schritten zum Anlegen eines Speicherkontos für die Festplatten Ihres virtuelles Computers zu folgen. Der Name des Speicherkontos basiert auf dem Namen des virtuellen Computers. In der [Dokumentation zu Virtual Machines](http://azure.microsoft.com/documentation/services/virtual-machines/) finden Sie weitere Einzelheiten.
+> [AZURE.NOTE] Wenn Sie einen virtuellen Azure-Computer erstellen, wird für Sie automatisch ein Speicherkonto in der Bereitstellungsregion erstellt, falls Sie noch kein Speicherkonto in der entsprechenden Region haben. Es ist nicht erforderlich, den unten aufgeführten Schritten zum Anlegen eines Speicherkontos für die Festplatten Ihres virtuelles Computers zu folgen. Der Name des Speicherkontos basiert auf dem Namen des virtuellen Computers. In der [Dokumentation zu Virtual Machines](https://azure.microsoft.com/documentation/services/virtual-machines/) finden Sie weitere Einzelheiten.
 
 ## Speicherkontoendpunkte
 
@@ -73,7 +73,7 @@ Sie können auch einen benutzerdefinierten Domänennamen konfigurieren, den Sie 
 
 4. Geben Sie einen Namen für Ihr Speicherkonto ein.
 
-	> [AZURE.NOTE]Speicherkontonamen müssen zwischen 3 und 24 Zeichen lang sein und dürfen nur Zahlen und Kleinbuchstaben enthalten.
+	> [AZURE.NOTE] Speicherkontonamen müssen zwischen 3 und 24 Zeichen lang sein und dürfen nur Zahlen und Kleinbuchstaben enthalten.
 	>  
 	> Der Name Ihres Speicherkontos muss innerhalb von Azure eindeutig sein. Im Azure-Portal wird angezeigt, ob der von Ihnen ausgewählte Speicherkontoname bereits vergeben ist.
 
@@ -89,7 +89,7 @@ Sie können auch einen benutzerdefinierten Domänennamen konfigurieren, den Sie 
 
 7. Wenn Sie mehr als ein Azure-Abonnement besitzen, wird das Feld **Abonnement** angezeigt. Wählen Sie das Abonnement aus, in dem Sie das neue Speicherkonto erstellen möchten.
 
-8. Geben Sie eine neue Ressourcengruppe an, oder wählen Sie eine vorhandene Ressourcengruppe aus. Weitere Informationen zu Ressourcengruppen finden Sie unter [Verwenden des Azure-Portals zum Verwalten von Azure-Ressourcen](../resource-group-portal.md).
+8. Geben Sie eine neue Ressourcengruppe an, oder wählen Sie eine vorhandene Ressourcengruppe aus. Weitere Informationen zu Ressourcengruppen finden Sie unter [Verwenden des Azure-Portals zum Verwalten von Azure-Ressourcen](../azure-portal/resource-group-portal.md).
 
 9. Wählen Sie den geografischen Standort für das Speicherkonto aus.
 
@@ -99,7 +99,7 @@ Sie können auch einen benutzerdefinierten Domänennamen konfigurieren, den Sie 
 
 Wenn Sie ein Speicherkonto erstellen, generiert Azure zwei 512-Bit-Speicherzugriffsschlüssel, die für die Authentifizierung verwendet werden, wenn der Zugriff auf das Speicherkonto erfolgt. Durch Bereitstellen von zwei Speicherzugriffsschlüsseln ermöglicht Azure Ihnen das erneute Generieren der Schlüssel ohne Unterbrechung des Speicherdiensts oder Zugriff auf diesen Dienst.
 
-> [AZURE.NOTE]Sie sollten das Weitergeben von Speicherzugriffsschlüsseln an andere vermeiden. Um den Zugriff auf Speicherressourcen zu gewähren, ohne den Zugriffsschlüssel weiterzugeben, verwenden Sie eine *Shared Access Signature*. Eine Shared Access Signature (SAS) bietet Zugriff auf eine Ressource in Ihrem Konto für ein von Ihnen definiertes Zeitintervall und mit den von Ihnen festgelegten Berechtigungen. Weitere Informationen finden Sie im [SAS-Lernprogramm](storage-dotnet-shared-access-signature-part-1.md).
+> [AZURE.NOTE] Sie sollten das Weitergeben von Speicherzugriffsschlüsseln an andere vermeiden. Um den Zugriff auf Speicherressourcen zu gewähren, ohne den Zugriffsschlüssel weiterzugeben, verwenden Sie eine *Shared Access Signature*. Eine Shared Access Signature (SAS) bietet Zugriff auf eine Ressource in Ihrem Konto für ein von Ihnen definiertes Zeitintervall und mit den von Ihnen festgelegten Berechtigungen. Weitere Informationen finden Sie im [SAS-Lernprogramm](storage-dotnet-shared-access-signature-part-1.md).
 
 ### Anzeigen und Kopieren von Speicherzugriffsschlüssel
 
@@ -109,7 +109,7 @@ Navigieren Sie im [Azure-Portal](https://portal.azure.com) zu Ihrem Speicherkont
 
 Sie sollten die Zugriffsschlüssel für Ihr Speicherkonto regelmäßig ändern, um dafür zu sorgen, dass Ihre Speicherverbindungen sicher sind. Zwei Zugriffsschlüssel werden zugewiesen, um es Ihnen zu ermöglichen, Verbindungen zum Speicherkonto mit einem Zugriffsschlüssel aufrecht zu erhalten, während Sie den anderen Zugriffsschlüssel neu generieren.
 
-> [AZURE.WARNING]Das erneute Generieren der Zugriffsschlüssel wirkt sich auf virtuelle Computer, Mediendienste und alle Anwendungen aus, die vom Speicherkonto abhängen. Alle Clients, die den Zugriffsschlüssel verwenden, um auf das Speicherkonto zuzugreifen, müssen aktualisiert werden, um den neuen Schlüssel zu verwenden.
+> [AZURE.WARNING] Das erneute Generieren der Zugriffsschlüssel wirkt sich auf virtuelle Computer, Mediendienste und alle Anwendungen aus, die vom Speicherkonto abhängen. Alle Clients, die den Zugriffsschlüssel verwenden, um auf das Speicherkonto zuzugreifen, müssen aktualisiert werden, um den neuen Schlüssel zu verwenden.
 
 **Virtuelle Computer**: Falls Ihr Speicherkonto virtuelle Computer enthält, die ausgeführt werden, müssen Sie alle virtuellen Computer nach dem erneuten Generieren der Zugriffsschlüssel neu bereitstellen. Um die erneute Bereitstellung zu vermeiden, beenden Sie die virtuellen Computer, bevor Sie die Zugriffsschlüssel neu generieren.
 
@@ -129,14 +129,29 @@ Mit dem folgenden Prozess wechseln Sie Ihre Speicherzugriffsschlüssel:
 
 ## Löschen eines Speicherkontos
 
-Um ein Speicherkonto zu entfernen, das Sie nicht mehr verwenden, wechseln Sie im [Azure-Portal](https://portal.azure.com) zum betreffenden Speicherkonto, und klicken Sie auf **Löschen**. Durch das Löschen eines Speicherkontos wird das gesamte Konto gelöscht, einschließlich aller Daten im Konto.
+Um ein Speicherkonto zu entfernen, das Sie nicht mehr verwenden, wechseln Sie im [Azure-Portal](https://portal.azure.com) zu dem Speicherkonto , und klicken Sie auf **Löschen**. Durch das Löschen eines Speicherkontos wird das gesamte Konto gelöscht, einschließlich aller Daten im Konto.
 
-> [AZURE.WARNING]Es ist nicht möglich, ein gelöschtes Speicherkonto wiederherzustellen oder Inhalte abzurufen, die das Konto vor dem Löschen enthielt. Sichern Sie alle Inhalte, die Sie speichern möchten, bevor Sie das Konto löschen. Dies gilt auch für alle Ressourcen im Konto – gelöschte Blobs, Tabellen, Warteschlangen oder Dateien können nicht wiederhergestellt werden.
+> [AZURE.WARNING] Es ist nicht möglich, ein gelöschtes Speicherkonto wiederherzustellen oder Inhalte abzurufen, die das Konto vor dem Löschen enthielt. Sichern Sie alle Inhalte, die Sie speichern möchten, bevor Sie das Konto löschen. Dies gilt auch für alle Ressourcen im Konto – gelöschte Blobs, Tabellen, Warteschlangen oder Dateien können nicht wiederhergestellt werden.
+
+Um ein Speicherkonto löschen zu können, das einer virtuellen Azure-Maschine zugeordnet ist, müssen Sie zuerst sicherstellen, dass alle Datenträger der virtuellen Maschine gelöscht wurden. Wenn Sie die Datenträger der virtuellen Maschine vorher nicht löschen, wird beim Versuch, das Speicherkonto zu löschen, eine Fehlermeldung der folgenden Art angezeigt:
+
+    Failed to delete storage account <vm-storage-account-name>. Unable to delete storage account <vm-storage-account-name>: 'Storage account <vm-storage-account-name> has some active image(s) and/or disk(s). Ensure these image(s) and/or disk(s) are removed before deleting this storage account.'.
+
+Führen Sie im klassischen Azure-Portal die folgenden Schritte aus, um einen Datenträger der virtuellen Maschine zu entfernen:
+
+1. Navigieren Sie zum [klassischen Azure-Portal](https://manage.windowsazure.com).
+2. Navigieren Sie zur Registerkarte „Virtuelle Computer“.
+3. Klicken Sie auf die Registerkarte „Datenträger“.
+4. Wählen Sie Ihren Datenträger aus, und klicken Sie dann auf „Datenträger löschen“.
+5. Um Datenträgerimages zu löschen, navigieren Sie zur Registerkarte „Images“. Löschen Sie alle unter dem Konto gespeicherten Images.
+
+Weitere Informationen finden Sie unter [Virtual Machines documentation](http://azure.microsoft.com/documentation/services/virtual-machines/) (Dokumentation zu virtuellen Maschinen).
 
 ## Nächste Schritte
 
-- Weitere Informationen über Azure Storage finden Sie in der Azure Storage-Dokumentation auf [Azure.com](http://azure.microsoft.com/documentation/services/storage/).
+- [Azure Storage-Replikation](storage-redundancy.md)
+- [Konfigurieren einer Verbindungszeichenfolge für Azure Storage](storage-configure-connection-string.md)
+- [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy.md)
 - Besuchen Sie den [Blog des Azure-Speicherteams](http://blogs.msdn.com/b/windowsazurestorage/).
-- [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy)
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

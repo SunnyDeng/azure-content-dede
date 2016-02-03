@@ -66,7 +66,7 @@ Die folgenden Befehle sollten über die Node.js-Befehlszeile ausgeführt werden.
 
 1. Kopieren Sie den Ordner **lib** aus dem Ordner **start** in den Ordner **ContactList**, der mit dem Tool für die Gerüsterstellung (Scaffolder) erstellt wurde.
 
-1. Ersetzen Sie den Code in der Datei **handlers/contacts.js** durch den unten angegebenen Code. Für diesen Code werden die JSON-Daten verwendet, die in der Datei **lib/contacts.json** gespeichert sind. Diese Datei wird über **lib/contactRepository.js** bereitgestellt. Mit dem neuen contats.js-Code unten wird auf HTTP-Anforderungen geantwortet, um alle Kontakte abzurufen, die diesen Code verwenden.
+1. Ersetzen Sie den Code in der Datei **handlers/contacts.js** durch den unten angegebenen Code. Für diesen Code werden die JSON-Daten verwendet, die in der Datei **lib/contacts.json** gespeichert sind. Diese Datei wird über **lib/contactRepository.js** bereitgestellt. Mit dem neuen contacts.js-Code unten wird auf HTTP-Anforderungen geantwortet, um alle Kontakte abzurufen, die diesen Code verwenden.
 
         'use strict';
         
@@ -86,7 +86,7 @@ Die folgenden Befehle sollten über die Node.js-Befehlszeile ausgeführt werden.
         
         module.exports = {
             get: function contacts_get(req, res) {
-                res.json(repository.get(req.params['id']))
+                res.json(repository.get(req.params['id']));
             }    
         };
 
@@ -151,7 +151,7 @@ In diesem Abschnitt gehen wir den Prozess der Erstellung einer neuen, leeren API
 
 Das GitHub-Repository, aus dem Sie den Quellcode geklont haben, ist nicht dasselbe Repository, in das Sie den Code für die Bereitstellung per Pushvorgang befördern. Das GitHub-Beispielrepository enthielt den „Start“-Zustand des Codes. Nachdem Sie nun das Gerüst für den „End“-Zustand des Codes erstellt haben, müssen Sie diesen Code nur per Pushvorgang in das Git-Repository befördern, das Ihrer API-App zugeordnet ist. Im ersten Schritt erstellen Sie Ihre API-App mit dem Azure-Portal. Anschließend gehen Sie wie folgt vor:
 
-1. Navigieren Sie zum [Azure-Portal](http://portal.azure.com). 
+1. Navigieren Sie zum [Azure-Portal](https://portal.azure.com/). 
 
 1. Erstellen Sie eine neue API-App.
 
@@ -202,7 +202,7 @@ Indem Sie die integrierten Azure App Service-Funktionen für die dauerhafte Bere
 
         git remote add azure YOUR_GIT_CLONE_URL_HERE
 
-    **Hinweis**: Es ist ratsam, die obige Zeichenfolge „YOUR\_GIT\_CLONE\_URL\_HERE“ durch Ihre eigene Git-Klon-URL zu ersetzen, die Sie vorhin kopiert haben.
+    **Hinweis**: Es ist ratsam, die obige Zeichenfolge „YOUR_GIT_CLONE_URL_HERE“ durch Ihre eigene Git-Klon-URL zu ersetzen, die Sie vorhin kopiert haben.
 
 1. Führen Sie als Nächstes die beiden unten angegebenen Befehle über die Node.js-Befehlszeilenoberfläche aus.
 
@@ -243,4 +243,4 @@ Sie haben mit Node.js erfolgreich Ihre erste API-App erstellt und bereitgestellt
 
 Aufbauend auf diesem Beispiel haben Sie die Möglichkeit, den Handlern Code zum Speichern Ihrer Daten in einer Datenbank oder auf der Festplatte Ihrer API-App-Instanz hinzuzufügen. Nachdem Sie die fortlaufende Bereitstellung eingerichtet haben, ist das Ändern und Erweitern der API-App-Funktionalität so einfach wie das Ändern und Befördern des Codes in Ihr Git-Repository.
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

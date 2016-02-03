@@ -44,6 +44,9 @@ In diesem Artikel wird davon ausgegangen, dass Sie bereits ein Oracle Linux-Betr
 
 - Alle virtuellen Festplatten müssen eine Größe aufweisen, die ein Vielfaches von 1 MB ist.
 
+- Stellen Sie sicher, dass das `Addons`-Repository aktiviert ist. Bearbeiten Sie die Datei `/etc/yum.repo.d/public-yum-ol6.repo`(Oracle Linux 6) oder `/etc/yum.repo.d/public-yum-ol7.repo`(Oracle Linux ), und ändern Sie in dieser Datei unter **[ol6\_addons]** oder **[ol7\_addons]** die Zeile `enabled=0` in `enabled=1`.
+
+
 ##Oracle Linux 6.4+
 Sie müssen die spezifischen Konfigurationsschritte im Betriebssystem für den virtuellen Computer abschließen, welcher unter Azure ausgeführt werden soll.
 
@@ -222,4 +225,4 @@ Das Vorbereiten eines virtuellen Oracle Linux 7-Computers für Azure ähnelt de
 
 15.  Klicken Sie im Hyper-V-Manager auf **Aktion -> Herunterfahren**. Ihre Linux-VHD kann nun in Azure hochgeladen werden.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0121_2016-->

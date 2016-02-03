@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="09/22/2015"
+   ms.date="01/20/2016"
    ms.author="joaoma"/>
 
 
@@ -122,4 +122,4 @@ Sie können auch nslookup oder andere DNS-Tools verwenden, um die neue Datensatz
 [Automatisieren von Azure-Vorgängen mit dem .NET SDK](dns-sdk.md)
  
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0121_2016-->

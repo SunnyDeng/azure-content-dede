@@ -98,13 +98,13 @@ foreach (UserProfile activeUser in query)
 ## HashPartitionResolver
 Bei der Hashpartitionierung werden basierend auf dem Wert einer Hashfunktion Partitionen zugewiesen, sodass Sie Anforderungen und Daten gleichmäßig über eine Anzahl von Partitionen verteilen können. Dieses Verfahren wird häufig zur Partitionierung von Daten verwendet, die aus einer großen Anzahl von unterschiedlichen Clients erzeugt oder genutzt werden, und eignet sich zum Speichern von Benutzerprofilen, Katalogelementen und IoT-Telemetriedaten (Internet of Things, Internet der Dinge).
 
-**Hashpartitionierung:**![Diagramm zur Veranschaulichung, wie die Hashpartitionierung Anforderungen gleichmäßig auf Partitionen verteilt](media/documentdb-sharding/partition-hash.png "Hashpartitionierung")
+**Hashpartitionierung:**![Diagramm zur Veranschaulichung, wie die Hashpartitionierung Anforderungen gleichmäßig auf Partitionen verteilt](media/documentdb-sharding/partition-hash.png)
 
 Ein einfaches Hashpartitionierungsschema über *N* Sammlungen könnte darin bestehen, dass für ein beliebiges Dokument *hash(d) mod N* berechnet wird, um zu ermitteln, in welcher Sammlung es sich befindet. Ein Problem mit diesem einfachen Verfahren ist jedoch, dass es nicht gut funktioniert, wenn Sie neue Sammlungen hinzufügen oder Sammlungen entfernen, da dafür fast alle Daten neu zusammengestellt werden müssten. Das [konsistente Hashing](http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.23.3738) ist ein bekannter Algorithmus, der dieses Problem löst, indem ein Hashingschema implementiert wird, das die Anzahl der während des Erstellens oder Entfernens von Sammlungen erforderlichen Datenverschiebungen minimiert.
 
 Die [HashPartitionResolver](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.partitioning.hashpartitionresolver.aspx)-Klasse implementiert die Logik zum Erstellen eines konsistenten Hashrings über die in der [IHashGenerator](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.partitioning.ihashgenerator.aspx)-Schnittstelle angegebene Hashfunktion. Standardmäßig verwendet der "HashPartitionResolver" eine MD5-Hashfunktion, Sie können diese jedoch durch Ihre eigene Hashingimplementierung ersetzen. Der "HashPartitionResolver" erstellt intern für jede Sammlung 16 Hashes oder "virtuelle Knoten" innerhalb des Hashrings, um eine einheitlichere Verteilung von Dokumenten über die Sammlung zu erreichen. Sie können diese Zahl jedoch variieren, um Datenasymmetrien und die Menge an clientseitigen Berechnungsvorgängen auszubalancieren.
 
-**Konsistentes Hashing mit "HashPartitionResolver":** ![Diagramm zur Veranschaulichung, wie "HashPartitionResolver" einen Hashring erstellt](media/documentdb-sharding/HashPartitionResolver.JPG "Konsistentes Hashing")
+**Konsistentes Hashing mit "HashPartitionResolver":** ![Diagramm zur Veranschaulichung, wie "HashPartitionResolver" einen Hashring erstellt](media/documentdb-sharding/HashPartitionResolver.JPG)
 
 ## RangePartitionResolver
 
@@ -114,7 +114,7 @@ In einer Bereichspartitionierung werden Partitionen basierend darauf zugewiesen,
 
 **Bereichspartitionierung:**
 
-![Diagramm zur Veranschaulichung, wie die Bereichspartitionierung Anforderungen gleichmäßig auf Partitionen verteilt](media/documentdb-sharding/partition-range.png "Bereichspartitionierung")
+![Diagramm zur Veranschaulichung, wie die Bereichspartitionierung Anforderungen gleichmäßig auf Partitionen verteilt](media/documentdb-sharding/partition-range.png)
 
 Ein Sonderfall der Bereichspartitionierung liegt vor, wenn es sich bei dem Bereich nur um einzigen diskreten Wert handelt. Dies wird zuweilen auch als "Lookuppartitionierung" bezeichnet. Dies wird häufig zur regionsbasierten Partitionierung (z. B. die Partition für Skandinavien umfasst Norwegen, Dänemark und Schweden) oder zur Partitionierung von Mandanten in einer mehrinstanzenfähigen Anwendung verwendet.
 
@@ -167,4 +167,4 @@ Sie können "PartitionResolver" verketten, indem Sie Ihren eigenen "IPartitionRe
 * [DocumentDB-Blog mit Leistungstipps](http://azure.microsoft.com/blog/2015/01/20/performance-tips-for-azure-documentdb-part-1-2/)
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

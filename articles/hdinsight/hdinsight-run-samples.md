@@ -48,7 +48,7 @@ Mittlerweile entscheiden sich viele Benutzer lieber für Hive und Pig als für M
 - **Einen HDInsight-Cluster**. Anweisungen zu den verschiedenen Optionen beim Erstellen solcher Cluster finden Sie unter [Erstellen von Hadoop-Clustern in HDInsight](hdinsight-provision-clusters.md).
 - **Eine Arbeitsstation mit Azure PowerShell**. Siehe [Installieren von Azure PowerShell 1.0 und höher](hdinsight-administer-use-powershell.md#install-azure-powershell-10-and-greater).
 
-## Wortzählung – Java 
+## <a name="hdinsight-sample-wordcount"></a>Wortzählung – Java 
 
 Um ein MapReduce-Projekt zu übermitteln, erstellen Sie zunächst eine MapReduce-Auftragsdefinition. In der Auftragsdefinition geben Sie die JAR-Datei des MapReduce-Programms und den Speicherort der JAR-Datei, d. h. „**wasb:///example/jars/hadoop-mapreduce-examples.jar**“, den Klassennamen und die Argumente an. Das MapReduce-Programm für die Wortzählung akzeptiert zwei Argumente: die Quelldatei, die zum Zählen von Wörtern verwendet wird, und den Speicherort der Ausgabe.
 
@@ -114,7 +114,7 @@ Anweisungen zum Entwickeln eines Java MapReduce-Programms finden Sie unter [Entw
 
 3. Legen Sie die ersten drei Variablen fest, und führen Sie das Skript aus.
 
-## Wortzählung – C#-Streaming
+## <a name="hdinsight-sample-csharp-streaming"></a>Wortzählung – C#-Streaming
 
 Hadoop stellt eine Streaming-API für MapReduce zur Verfügung, mit der Sie Map- und Reduce-Funktionen in anderen Sprache als Java schreiben können.
 
@@ -148,7 +148,7 @@ Weitere Informationen zur Hadoop-Streamingschnittstelle finden Sie unter [Hadoop
 	
 		example/data/StreamingOutput/wc.txt/part-00000		
 								
-## Pi-Schätzung
+## <a name="hdinsight-sample-pi-estimator"></a>Pi-Schätzung
 
 Die Pi-Schätzung verwendet eine statistische (Quasi-Monte Carlo) Methode, um den Wert von Pi zu schätzen. Zufällig platzierte Punkte in einem Einheitsquadrat liegen mit einer Wahrscheinlichkeit gleich der Kreisoberfläche Pi/4 innerhalb eines Kreises, der sich im Quadrat befindet. Der Wert für Pi kann aus dem Wert 4R ermittelt werden, wobei R das Verhältnis zwischen der Anzahl der Punkte innerhalb des Kreises zur Gesamtanzahl der Punkte innerhalb des Quadrats ist. Je größer die Anzahl der Punkte, desto genauer die Schätzung.
 
@@ -163,7 +163,7 @@ Das Skript in diesem Beispiel übermittelt einen Hadoop JAR-Auftrag und wird mit
 									-ClassName "pi" `
 									-Arguments "16", "10000000"
 
-## 10-GB-Graysort
+## <a name="hdinsight-sample-10gb-graysort"></a>10-GB-Graysort
 
 Dieses Beispiel verwendet bescheidene 10 GB an Daten, um eine zügige Ausführung zu ermöglichen. Die Anwendung verwendet die MapReduce-Anwendungen von Owen O'Malley und Arun Murthy, die im Jahr 2009 den jährlichen allgemeinen ("daytona") Terabyte-Sortier-Benchmark mit einem Durchsatz von 0,578 TB/Min (100 TB in 173 Minuten) gewonnen haben. Weitere Informationen zu diesem und anderen Sortier-Benchmarks finden Sie unter [Sortbenchmark](http://sortbenchmark.org/).
 
@@ -987,10 +987,10 @@ Sie finden den Code für das TeraSort MapReduce-Programm in diesem Abschnitt zu 
 [hdinsight-get-started]: ../hdinsight-get-started.md
 
 [hdinsight-samples]: hdinsight-run-samples.md
-[hdinsight-sample-10gb-graysort]: hdinsight-sample-10gb-graysort.md
-[hdinsight-sample-csharp-streaming]: hdinsight-sample-csharp-streaming.md
-[hdinsight-sample-pi-estimator]: hdinsight-sample-pi-estimator.md
-[hdinsight-sample-wordcount]: hdinsight-sample-wordcount.md
+[hdinsight-sample-10gb-graysort]: #hdinsight-sample-10gb-graysort
+[hdinsight-sample-csharp-streaming]: #hdinsight-sample-csharp-streaming
+[hdinsight-sample-pi-estimator]: #hdinsight-sample-pi-estimator
+[hdinsight-sample-wordcount]: #hdinsight-sample-wordcount
 
 [hdinsight-use-hive]: hdinsight-use-hive.md
 [hdinsight-use-pig]: hdinsight-use-pig.md
@@ -998,4 +998,4 @@ Sie finden den Code für das TeraSort MapReduce-Programm in diesem Abschnitt zu 
 [streamreader]: http://msdn.microsoft.com/library/system.io.streamreader.aspx
 [console-writeline]: http://msdn.microsoft.com/library/system.console.writeline
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

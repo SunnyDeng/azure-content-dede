@@ -34,8 +34,8 @@ Die folgende Tabelle enthält eine Übersicht über die von Site Recovery unters
 
 **REPLIZIEREN** | **REPLIKATIONSQUELLE** | **REPLIKATIONSZIEL** | **ARTIKEL**
 ---|---|---|---
-Virtuelle VMware-Computer | Lokaler VMware-Server | Azure-Speicher | [Bereitstellen](site-recovery-vmware-to-azure.md)
-Physischer Windows-/Linux-Server | Lokaler physischer Server | Azure-Speicher | [Bereitstellen](site-recovery-vmware-to-azure.md)
+Virtuelle VMware-Computer | Lokaler VMware-Server | Azure-Speicher | [Bereitstellen](site-recovery-vmware-to-azure-classic.md)
+Physischer Windows-/Linux-Server | Lokaler physischer Server | Azure-Speicher | [Bereitstellen](site-recovery-vmware-to-azure-classic.md)
 Virtuelle Hyper-V-Computer | Lokaler Hyper-V-Hostserver in VMM-Cloud | Azure-Speicher | [Bereitstellen](site-recovery-vmm-to-azure.md)
 Virtuelle Hyper-V-Computer | Lokaler Hyper-V-Standort (ein oder mehrere Hyper-V-Hostserver) | Azure-Speicher | [Bereitstellen](site-recovery-hyper-v-site-to-azure.md)
 Lokale Hyper-V-Computer| Lokaler Hyper-V-Hostserver in VMM-Cloud | Lokaler Hyper-V-Hostserver in VMM-Cloud in sekundärem Datencenter | [Bereitstellen](site-recovery-vmm-to-vmm.md)
@@ -68,4 +68,4 @@ Unter [Welche Workloads kann Site Recovery schützen?](site-recovery-workload.md
 Nach dieser Übersicht erfahren Sie [hier](site-recovery-components.md) mehr über die Site Recovery-Architektur.
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0114_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/13/2015" 
+	ms.date="01/05/2016" 
 	ms.author="stefsch"/>
 
 # Implementieren einer mehrstufigen Sicherheitsarchitektur mit App Service-Umgebungen
@@ -22,15 +22,15 @@
  
 Da App Service-Umgebungen eine in einem virtuellen Netzwerk bereitgestellte isolierte Laufzeitumgebung bieten, können Entwickler eine mehrstufige Sicherheitsarchitektur erstellen, in der sie abgestuften Netzwerkzugriff für jede physische Anwendungsschicht gewähren können.
 
-Üblicherweise sollten API-Back-Ends nicht dem allgemeinen Internetzugriff preisgegeben werden, und nur APIs sollten von Upstream-Web-Apps aufgerufen werden können. Um den öffentlichen Zugriff auf API-Anwendungen zu beschränken, können [Netzwerksicherheitsgruppen (Network Security Groups, NSGs)][NetworkSecurityGroups] in Subnetzen mit App Service-Umgebungen verwendet werden.
+Üblicherweise sollten API-Back-Ends nicht dem allgemeinen Internetzugriff preisgegeben werden, und APIs sollten nur von Upstream-Web-Apps aufgerufen werden können. Um den öffentlichen Zugriff auf API-Anwendungen zu beschränken, können [Netzwerksicherheitsgruppen (Network Security Groups, NSGs)][NetworkSecurityGroups] in Subnetzen mit App Service-Umgebungen verwendet werden.
 
 Das nachfolgende Diagramm zeigt eine Beispielarchitektur mit einer WebAPI-basierten App, die in einer App Service-Umgebung bereitgestellt wurde. Drei getrennte Web-App-Instanzen, die in drei getrennten App Service-Umgebungen bereitgestellt wurden, führen Back-End-Aufrufe an die gleiche WebAPI-App aus.
 
 ![Konzeptionelle Architektur][ConceptualArchitecture]
 
-Das grüne Pluszeichen weist darauf hin, dass die Netzwerksicherheitsgruppe im Subnetz, das „apiase“ enthält, eingehende Aufrufe von den Upstream-Web-Apps sowie Aufrufe der App an sich selbst zulässt. Die gleiche Netzwerksicherheitsgruppe verweigert jedoch explizit den Zugriff durch allgemeinen eingehenden Datenverkehr aus dem Internet.
+Die grünen Pluszeichen weisen darauf hin, dass die Netzwerksicherheitsgruppe im Subnetz, das „apiase“ enthält, eingehende Aufrufe von den Upstream-Web-Apps sowie Aufrufe der App an sich selbst zulässt. Die gleiche Netzwerksicherheitsgruppe verweigert jedoch explizit den Zugriff durch allgemeinen eingehenden Datenverkehr aus dem Internet.
 
-In weiteren Verlauf dieses Themas werden die Schritte erläutert, die zum Konfigurieren der Netzwerksicherheitsgruppe in dem Subnetz erforderlich sind, das „apiase“ enthält.
+Im weiteren Verlauf dieses Themas werden die Schritte erläutert, die zum Konfigurieren der Netzwerksicherheitsgruppe in dem Subnetz erforderlich sind, das „apiase“ enthält.
 
 ## Festlegen des Netzwerkverhaltens ##
 Um zu ermitteln, welche Netzwerksicherheitsregeln erforderlich sind, müssen Sie festlegen, welche Netzwerkclients auf die App Service-Umgebung mit der API-App zugreifen können und welche Clients blockiert werden.
@@ -38,12 +38,12 @@ Um zu ermitteln, welche Netzwerksicherheitsregeln erforderlich sind, müssen Sie
 Da [Netzwerksicherheitsgruppen][NetworkSecurityGroups] auf Subnetze angewendet und App Service-Umgebungen in Subnetzen bereitgestellt werden, gelten die Regeln einer Netzwerksicherheitsgruppe für **alle** Apps, die in der jeweiligen App Service-Umgebung ausgeführt werden. Betrachten Sie die Beispielarchitektur für diesen Artikel: Sobald eine Netzwerksicherheitsgruppe auf das Subnetz angewendet wird, das „apiase“ enthält, werden alle Apps, die in der App Service-Umgebung „apiase“ ausgeführt werden, durch den gleichen Satz Sicherheitsregeln geschützt.
 
 - **Ermitteln der ausgehenden IP-Adressen von Aufruffunktionen für den Upstream:** Wie lauten die IP-Adressen der Aufruffunktionen für den Upstream? Diesen Adressen muss in der Netzwerksicherheitsgruppe explizit Zugriff gewährt werden. Da Aufrufe zwischen App Service-Umgebungen als „Internetaufrufe“ betrachtet werden, muss der ausgehenden IP-Adresse, die jeder der App Service-Upstreamumgebungen zugewiesen ist, in der Netzwerksicherheitsgruppe Zugriff auf das Subnetz „apiase“ gewährt werden. Weitere Informationen zum Ermitteln der ausgehenden IP-Adresse für Apps, die in einer App Service-Umgebung ausgeführt werden, finden Sie im Artikel [Übersicht über die Netzwerkarchitektur von App Service-Umgebungen][NetworkArchitecture].
-- **Muss die Back-End-API-App sich selbst aufrufen?** Ein Aspekt, der nicht selten übersehen wird, ist ein Szenario, in dem die Back-End-Anwendung sich selbst aufrufen muss. Wenn die Back-End-API-Anwendung in einer App Service-Umgebung sich selbst aufrufen muss, wird auch dies als „Internetaufruf“ behandelt. In der Beispielarchitektur muss zu diesem Zweck auch der Zugriff von der ausgehenden IP-Adresse der App Service-Umgebung „apiase“ gewährt werden.
+- **Muss die Back-End-API-App sich selbst aufrufen?** Ein Aspekt, der nicht selten übersehen wird, ist ein Szenario, in dem die Back-End-Anwendung sich selbst aufrufen muss. Wenn sich die Back-End-API-Anwendung in einer App Service-Umgebung selbst aufrufen muss, wird auch dies als „Internetaufruf“ behandelt. In der Beispielarchitektur muss zu diesem Zweck auch der Zugriff von der ausgehenden IP-Adresse der App Service-Umgebung „apiase“ gewährt werden.
 
 ## Einrichten der Netzwerksicherheitsgruppe ##
 Sobald die ausgehenden IP-Adressen bekannt sind, besteht der nächste Schritt darin, eine Netzwerksicherheitsgruppe zu erstellen und einzurichten. Da App Service-Umgebungen zurzeit nur in virtuellen „v1“-Netzwerken unterstützt werden, erfolgt die [Konfiguration der Netzwerksicherheitsgruppe][NetworkSecurityGroupsClassic] mithilfe der klassischen Einrichtung von Netzwerksicherheitsgruppen in PowerShell.
 
-In der Beispielarchitektur befinden sich die Umgebungen in der Region „USA, Mitte/Süden“, daher wird in dieser Region eine leere Netzwerksicherheitsgruppe erstellt:
+In der Beispielarchitektur befinden sich die Umgebungen in der Region „USA, Süden-Mitte“, daher wird in dieser Region eine leere Netzwerksicherheitsgruppe erstellt:
 
     New-AzureNetworkSecurityGroup -Name "RestrictBackendApi" -Location "South Central US" -Label "Only allow web frontend and loopback traffic"
 
@@ -109,4 +109,4 @@ In einer App Service-Umgebung verwendete [Netzwerkports][InboundTraffic].
 [ConceptualArchitecture]: ./media/app-service-app-service-environment-layered-security/ConceptualArchitecture-1.png
 [NSGConfiguration]: ./media/app-service-app-service-environment-layered-security/NSGConfiguration-1.png
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_0107_2016-->

@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/02/2015"
+	ms.date="01/11/2016"
 	ms.author="billmath"/>
 
 #Unterstützung für mehrere Domänen
 
-Viele von Ihnen haben gefragt, wie Sie mehrere Office 365- oder Azure AD-Domänen der obersten Ebene sowie Unterdomänen mit Verbund konfigurieren können. Im Prinzip ist dies ganz einfach, aber aufgrund einiger Vorgänge, die sozusagen hinter den Kulissen ablaufen, sollten Sie einige Tipps und Tricks kennen, um die folgenden Probleme zu vermeiden.
+Viele Benutzer haben gefragt, wie Sie mehrere Office 365- oder Azure AD-Domänen der obersten Ebene sowie Unterdomänen mit Verbund konfigurieren können. Im Prinzip ist dies ganz einfach, aber aufgrund einiger Vorgänge, die sozusagen hinter den Kulissen ablaufen, sollten Sie einige Tipps und Tricks kennen, um die folgenden Probleme zu vermeiden.
 
 - Fehlermeldungen beim Versuch, zusätzliche Domänen für den Verbund zu konfigurieren
 - Benutzer in untergeordneten Domänen können sich nicht mehr anmelden, nachdem mehrere Domänen der obersten Ebene für den Verbund konfiguriert wurden
@@ -26,7 +26,7 @@ Viele von Ihnen haben gefragt, wie Sie mehrere Office 365- oder Azure AD-Domäne
 ## Mehrere Domänen der obersten Ebene
 Betrachten wir das Setup der Beispielorganisation „contoso.com“, die eine zusätzliche Domäne namens „fabrikam.com“ benötigt.
 
-Angenommen, in meinem lokalen System habe ich AD FS mit dem Verbunddienstnamen „fs.jenfield.com“ konfiguriert.
+Angenommen, in meinem lokalen System habe ich AD FS mit dem Verbunddienstnamen „fs.contoso100.com“ konfiguriert.
 
 Wenn ich mich das erste Mal bei Office 365 oder Azure AD anmelde, konfiguriere ich „contoso.com“ als meine erste Anmeldedomäne. Das ist über Azure AD Connect oder Azure AD Powershell mithilfe von „New-MsolFederatedDomain“ möglich.
 
@@ -34,8 +34,8 @@ Sobald dies geschehen ist, sehen wir uns die Standardwerte für zwei der neuen K
 
 | Eigenschaftenname | Wert | Beschreibung|
 | ----- | ----- | -----|
-|IssuerURI | http://fs.jenfield.com/adfs/services/trust| Diese Eigenschaft sieht zwar wie eine URL aus, ist aber eigentlich nur ein Name für das lokale Authentifizierungssystem, daher muss der Pfad nicht aufgelöst werden. Standardmäßig wird diese Eigenschaft von Azure AD auf den Wert des Verbunddienstbezeichners in meiner lokalen AD FS-Konfiguration festgelegt.
-|PassiveClientSignInUrl|https://fs.jenfield.com/adfs/ls/|This ist der Standort, an den passive Anmeldeanforderungen gesendet werden. Es wird in mein tatsächliches AD FS-System aufgelöst. Tatsächlich gibt es mehrere *Url-Eigenschaften, aber wir müssen lediglich ein Beispiel betrachten, um den Unterschied zwischen dieser Eigenschaft und einem URI wie IssuerURI zu verdeutlichen.
+|IssuerURI | http://fs.contoso100.com/adfs/services/trust| Diese Eigenschaft sieht zwar wie eine URL aus, ist aber eigentlich nur ein Name für das lokale Authentifizierungssystem, daher muss der Pfad nicht aufgelöst werden. Standardmäßig wird diese Eigenschaft von Azure AD auf den Wert des Verbunddienstbezeichners in meiner lokalen AD FS-Konfiguration festgelegt.
+|PassiveClientSignInUrl|https://fs.contoso100.com/adfs/ls/|This ist der Standort, an den passive Anmeldeanforderungen gesendet werden. Es wird in mein tatsächliches AD FS-System aufgelöst. Tatsächlich gibt es mehrere *Url-Eigenschaften, aber wir müssen lediglich ein Beispiel betrachten, um den Unterschied zwischen dieser Eigenschaft und einem URI wie IssuerURI zu verdeutlichen.
 
 Angenommen, ich füge nun meine zweite Domäne „fabrikam.com“ hinzu. Dazu führe ich den Azure AD Connect-Assistenten ein zweites Mal aus oder verwende PowerShell.
 
@@ -51,9 +51,9 @@ erhalte ich die folgende Konfiguration in Azure AD:
 
 - DomainName: fabrikam.com
 - IssuerURI: http://fabrikam.com/adfs/services/trust 
-- PassiveClientSignInUrl: https://fs.jenfield.com/adfs/ls/ 
+- PassiveClientSignInUrl: https://fs.contoso100.com/adfs/ls/ 
 
-Beachten Sie, dass der IssuerURI zwar auf einen Wert auf Grundlage meiner Domäne festgelegt wurde und somit eindeutig ist, die Endpunkt-URL-Werte aber immer noch so konfiguriert sind, dass sie auf meinen Verbunddienst auf „fs.jenfield.com“ zeigen, genau wie bei der ursprünglichen Domäne „contoso.com“. Alle Domänen verweisen also weiterhin auf dasselbe AD FS-System.
+Beachten Sie, dass der IssuerURI zwar auf einen Wert auf Grundlage meiner Domäne festgelegt wurde und somit eindeutig ist, die Endpunkt-URL-Werte aber immer noch so konfiguriert sind, dass sie auf meinen Verbunddienst auf „fs.contoso100.com“ verweisen, genau wie bei der ursprünglichen Domäne „contoso.com“. Alle Domänen verweisen also weiterhin auf dasselbe AD FS-System.
 
 Zweitens stellt SupportMultipleDomain sicher, dass das AD FS-System den richtigen Ausstellerwert in Token verwendet, die für Azure AD ausgestellt wurden. Dazu wird der Domänenteil des Benutzerprinzipalnamens (UPN) verwendet und als Domäne im IssuerURI festgelegt, d. h. https://{upn suffix}/adfs/services/trust. Während der Authentifizierung in Azure AD oder Office 365 wird daher das Issuer-Element im Token des Benutzers verwendet, um die Domäne in Azure AD zu finden. Wenn keine Übereinstimmung gefunden wird, schlägt die Authentifizierung fehl.
 
@@ -75,10 +75,10 @@ Anschließend verfügen wir über die Konfiguration für zwei Domänen in Azure 
 
 - DomainName: contoso.com
 - IssuerURI: http://contoso.com/adfs/services/trust 
-- PassiveClientSignInUrl: https://fs.jenfield.com/adfs/ls/ 
+- PassiveClientSignInUrl: https://fs.contoso100.com/adfs/ls/ 
 - DomainName: fabrikam.com
 - IssuerURI: http://fabrikam.com/adfs/services/trust 
-- PassiveClientSignInUrl: https://fs.jenfield.com/adfs/ls/ 
+- PassiveClientSignInUrl: https://fs.contoso100.com/adfs/ls/ 
 
 Die Verbundanmeldung für Benutzer aus den Domänen „contoso.com“ und „fabrikam.com“ funktioniert jetzt. Nur ein Problem bleibt bestehen: die Anmeldung für Benutzer in untergeordneten Domänen.
 
@@ -91,4 +91,4 @@ Sie müssen die benutzerdefinierte Anspruchsregel so konfigurieren, dass beim Er
 
 Zusammenfassend gesagt: Sie können über mehrere Domänen mit unterschiedlichen Namen sowie Unterdomänen verfügen, die alle mit dem gleichen AD FS-Server verbunden sind. Sie müssen lediglich einige zusätzliche Schritte ausführen, um sicherzustellen, dass die Issuer-Werte für alle Benutzer richtig festgelegt sind.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

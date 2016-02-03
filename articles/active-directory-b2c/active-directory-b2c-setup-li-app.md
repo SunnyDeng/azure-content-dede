@@ -5,7 +5,7 @@
 	documentationCenter=""
 	authors="swkrish"
 	manager="msmbaldwin"
-	editor="curtand"/>
+	editor="bryanla"/>
 
 <tags
 	ms.service="active-directory-b2c"
@@ -13,10 +13,10 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/08/2015"
+	ms.date="01/12/2016"
 	ms.author="swkrish"/>
 
-# Vorschau für Azure Active Directory (AD) B2C: Bereitstellen von Registrierung und Anmeldung für Kunden mit LinkedIn-Konten
+# Vorschau für Azure Active Directory B2C: Bereitstellen von Registrierung und Anmeldung für Kunden mit LinkedIn-Konten
 
 [AZURE.INCLUDE [active-directory-b2c-preview-note](../../includes/active-directory-b2c-preview-note.md)]
 
@@ -34,17 +34,15 @@ Um LinkedIn als Identitätsanbieter in Azure Active Directory (AD) B2C verwenden
 
     ![LinkedIn – Registrieren einer App](./media/active-directory-b2c-setup-li-app/linkedin-register-app.png)
 
-5. Kopieren Sie die Werte von **Client-ID** und **Geheimer Clientschlüssel** (diese finden Sie im Abschnitt **Authentifizierungsschlüssel**). Sie benötigen beide Angaben, um LinkedIn als Identitätsanbieter in Ihrem Verzeichnis zu konfigurieren.
+5. Kopieren Sie die Werte von **Client-ID** und **Geheimer Clientschlüssel** (diese finden Sie im Abschnitt **Authentifizierungsschlüssel**). Sie benötigen beide Angaben, um LinkedIn als Identitätsanbieter in Ihrem Mandanten zu konfigurieren. Hinweis: Der **geheime Clientschlüssel** ist eine wichtige Anmeldeinformation.
 
-    > [AZURE.NOTE]Der **geheime Clientschlüssel** ist eine wichtige Sicherheitsanmeldeinformation.
-
-6. Geben Sie in das Feld **Autorisierte Umleitungs-URLs** (im Abschnitt **OAuth 2.0**) den Wert [https://login.microsoftonline.com/te/{Verzeichnis}/oauth2/authresp](https://login.microsoftonline.com/te/{directory}/oauth2/authresp) ein. Ersetzen Sie dabei **{Verzeichnis}** durch den Namen Ihres Verzeichnisses (z. B. "contoso.onmicrosoft.com"), und klicken Sie auf **Hinzufügen**. Klicken Sie dann auf **Aktualisieren**.
+6. Geben Sie in das Feld **Autorisierte Umleitungs-URLs** (im Abschnitt **OAuth 2.0**) den Wert `https://login.microsoftonline.com/te/{tenant}/oauth2/authresp` ein. Ersetzen Sie dabei **{tenant}** durch den Namen Ihres Mandanten (z. B. „contoso.onmicrosoft.com“), und klicken Sie auf **Hinzufügen**. Klicken Sie dann auf **Aktualisieren**.
 
     ![LinkedIn – Einrichten einer App](./media/active-directory-b2c-setup-li-app/linkedin-setup.png)
 
-## Konfigurieren von LinkedIn als Identitätsanbieter in Ihrem Verzeichnis
+## Konfigurieren von LinkedIn als Identitätsanbieter in Ihrem Mandanten
 
-1. [Navigieren Sie zum B2C-Features-Blatt im Azure-Vorschauportal](active-directory-b2c-app-registration.md#navigate-to-the-b2c-features-blade).
+1. [Führen Sie diese Schritte aus, um im Azure-Portal zum Blatt „B2C-Funktionen“ zu navigieren](active-directory-b2c-app-registration.md#navigate-to-the-b2c-features-blade).
 2. Klicken Sie auf dem B2C-Featureblatt auf **Identitätsanbieter**.
 3. Klicken Sie oben auf dem Blatt auf **+Hinzufügen**.
 4. Geben Sie einen aussagekräftigen Namen für die Konfiguration des Identitätsanbieters unter **Name** ein. Geben Sie z. B. "LI" ein.
@@ -52,4 +50,4 @@ Um LinkedIn als Identitätsanbieter in Azure Active Directory (AD) B2C verwenden
 6. Klicken Sie auf **Diesen Identitätsanbieter einrichten**, und geben Sie **Client-ID** und **Geheimer Clientschlüssel** der LinkeIn-Anwendung, die Sie zuvor erstellt haben, ein.
 7. Klicken Sie auf **OK** und dann auf **Erstellen**, um die Konfiguration für LinkedIn zu speichern.
 
-<!----HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0114_2016-->

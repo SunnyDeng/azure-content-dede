@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="09/17/2015"
+   ms.date="01/08/2016"
    ms.author="mbaldwin"/>
 
 # Azure Active Directory-Authentifizierungsprotokolle
@@ -55,4 +55,4 @@ Azure Active Directory (Azure AD) unterstützt mehrere der am häufigsten verwen
 
 [Active Directory-Codebeispiele](active-directory-code-samples.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0114_2016-->

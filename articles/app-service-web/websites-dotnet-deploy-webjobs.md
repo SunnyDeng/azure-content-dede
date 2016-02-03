@@ -13,7 +13,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="na" 
-	ms.date="09/22/2015" 
+	ms.date="01/08/2016" 
 	ms.author="tdykstra"/>
 
 # Bereitstellen von Webaufträgen mit Visual Studio
@@ -100,8 +100,7 @@ Zum Erstellen eines neuen webauftragsfähigen Projekts können Sie die Vorlage f
 
 	Erstellen Sie ein Projekt, das für eine automatische Bereitstellung als Webauftrag konfiguriert ist, wenn in derselben Projektmappe ein Webprojekt bereitgestellt wird. Wählen Sie diese Option, wenn Sie Ihren Webauftrag in derselben Web-App ausführen möchten, in der die dazugehörige Webanwendung ausgeführt wird.
 
-In der SDK-Version 2.4 bietet die Webauftragsvorlage "new-project" keine wesentliche Erleichterung im Vergleich zum Erstellen eines Konsolenanwendungsprojekts und Aktivieren der Bereitstellung von Webaufträgen. Künftig wird die Webauftragsvorlage "new-project" die [WebJobs SDK](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/getting-started-with-windows-azure-webjobs)-Bereitstellung vereinfachen, da sie automatisch die entsprechenden WebJobs SDK NuGet-Pakete installiert. Bis dahin können Sie ein Projekt für die Verwendung des WebJobs SDK konfigurieren, indem Sie die Pakete manuell installieren (Anweisungen finden Sie im [Lernprogramm zum WebJobs SDK](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/getting-started-with-windows-azure-webjobs).
-
+> [AZURE.NOTE]Die WebJobs-Vorlage „new-project“ installiert automatisch NuGet-Pakete und enthält in *Program.cs* Code für das [WebJobs-SDK](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/getting-started-with-windows-azure-webjobs). Wenn Sie das WebJobs-SDK nicht verwenden möchten oder lieber einen geplanten anstelle eines kontinuierlichen Webauftrags verwenden möchten, entfernen oder ändern Sie die `host.RunAndBlock`-Anweisung in *Program.cs*.
 
 ### <a id="createnolink"></a> Verwenden der Webauftragsvorlage "new-project" für einen unabhängigen Webauftrag
   
@@ -198,4 +197,4 @@ In diesem Artikel wird erklärt, wie WebJobs mit Visual Studio bereitgestellt wi
 ## Änderungen
 * Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

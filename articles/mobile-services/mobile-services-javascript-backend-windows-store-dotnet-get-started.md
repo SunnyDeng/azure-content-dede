@@ -18,7 +18,8 @@
 
 # <a name="getting-started"></a>Erste Schritte mit Mobile Services
 
-[AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]&nbsp;
+[AZURE.INCLUDE [mobile-services-selector-get-started](../../includes/mobile-services-selector-get-started.md)]
+&nbsp;
 
 [AZURE.INCLUDE [mobile-services-hero-slug](../../includes/mobile-services-hero-slug.md)]
 
@@ -30,7 +31,7 @@ In diesem Lernprogramm erstellen Sie einen neuen mobilen Dienst und eine einfach
 
 Für dieses Lernprogramm benötigen Sie Folgendes:
 
-* Ein aktives Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Dienste, die Sie auch nach Ablauf der Testversion weiter nutzen können. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdocumentation%2Farticles%2Fmobile-services-javascript-backend-windows-store-javascript-get-started%2F).
+* Ein aktives Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Dienste, die Sie auch nach Ablauf der Testversion weiter nutzen können. Ausführliche Informationen finden Sie unter [Kostenlose Azure-Testversion](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A0E0E5C02&amp;returnurl=http%3A%2F%2Fazure.microsoft.com%2Fde-DE%2Fdocumentation%2Farticles%2Fmobile-services-javascript-backend-windows-store-javascript-get-started%2F).
 * [Visual Studio 2013 Express für Windows]
 
 ## Erstellen eines neuen mobilen Diensts
@@ -69,13 +70,17 @@ In diesem Abschnitt erstellen Sie eine neue universelle Windows-App, die sich mi
 ## Nächste Schritte
 Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzliche wichtige Aufgaben in Mobile Services ausgeführt werden:
 
-* [Erste Schritte mit der Synchronisierung von Offlinedaten] Erfahren Sie, wie Sie die Offlinedatensynchronisierung nutzen, um eine reaktionsfähige, stabile App zu implementieren.
+* [Erste Schritte mit der Synchronisierung von Offlinedaten] 
+ Erfahren Sie, wie Sie die Offlinedatensynchronisierung nutzen, um eine reaktionsfähige, stabile App zu implementieren.
 
-* [Hinzufügen von Authentifizierung zur Mobile Services-App][Get started with authentication] Informationen zur Authentifizierung von Benutzern Ihrer App mit einem Identitätsanbieter.
+* [Hinzufügen von Authentifizierung zur Mobile Services-App][Get started with authentication] 
+ Informationen zur Authentifizierung von Benutzern Ihrer App mit einem Identitätsanbieter.
 
-* [Hinzufügen von Pushbenachrichtigungen zur App][Get started with push notifications] Erfahren Sie, wie Sie eine einfache Pushbenachrichtigung an Ihre App senden können.
+* [Hinzufügen von Pushbenachrichtigungen zur App][Get started with push notifications] 
+ Erfahren Sie, wie Sie eine einfache Pushbenachrichtigung an Ihre App senden können.
 
-* [Verwenden der .NET Clientbibliothek](mobile-services-windows-dotnet-how-to-use-client-library.md) Erfahren Sie, wie Sie den mobilen Dienst abfragen, mit Daten arbeiten und auf benutzerdefinierte APIs zugreifen.
+* [Verwenden der .NET Clientbibliothek](mobile-services-windows-dotnet-how-to-use-client-library.md) 
+ Erfahren Sie, wie Sie den mobilen Dienst abfragen, mit Daten arbeiten und auf benutzerdefinierte APIs zugreifen.
 
 [AZURE.INCLUDE [app-service-disqus-feedback-slug](../../includes/app-service-disqus-feedback-slug.md)]
 
@@ -98,4 +103,4 @@ Da Sie den Schnellstart jetzt abgeschlossen haben, erfahren Sie, wie zusätzlich
 [klassischen Azure-Portal]: https://manage.windowsazure.com/
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -47,7 +47,6 @@ Abhängig davon, welche Version auf Ihrem Gerät ausgeführt wird, wird Update 
 ## Vorbereitung auf Updates
 Sie müssen die folgenden Schritte ausführen, bevor Sie das Update überprüfen und anwenden können:
 
-
 1. Erstellen Sie eine Cloudmomentaufnahme der Gerätedaten.
 
 2. Stellen Sie sicher, dass die festen Controller-IP-Adressen routingfähig sind und eine Verbindung mit dem Internet herstellen können. Diese festen IPs werden zum Anwenden von Updates auf Ihr Gerät verwendet. Sie können die Konnektivität testen, indem Sie von der Windows PowerShell-Schnittstelle des Geräts aus auf jedem Controller das folgende Cmdlet ausführen:
@@ -152,4 +151,4 @@ Wenn Sie sichergestellt haben, dass die Verbindung vorhanden ist, und dieses Pro
 
 Weitere Informationen finden Sie unter [Versionshinweise zu Update 1.2](storsimple-update1-release-notes.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0121_2016-->

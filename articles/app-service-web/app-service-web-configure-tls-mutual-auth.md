@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/15/2015" 
+	ms.date="12/17/2015" 
 	ms.author="naziml"/>
 
 # Konfigurieren der gegenseitigen TLS-Authentifizierung für eine Web-App
@@ -179,4 +179,4 @@ Das Clientzertifikat, das an die Anwendung gesendet wird, durchläuft keinerlei 
         }
     }
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

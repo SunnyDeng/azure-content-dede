@@ -12,7 +12,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="12/01/2015"
+   ms.date="01/14/2016"
    ms.author="alkohli" />
 
 # Bereitstellen lokaler StorSimple-Geräte
@@ -72,7 +72,7 @@ Die folgende Konfigurationsprüfliste für die Bereitstellung enthält die Infor
 |----------------------------------------|---------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|
 | **Verkabeln Ihres Geräts** | Serieller Zugriff | Anfängliche Gerätekonfiguration | Ja/Nein |
 | | | | |
-| **Konfigurieren und Registrieren des Geräts** | DATA 0-Netzwerkeinstellungen | DATA 0-IP-Adresse:</br>Subnetzmaske:</br>Gateway:</br>Primärer DNS-Server:</br>Primärer NTP-Server:</br>Webproxyserver-IP/FQDN (optional):</br>Webproxyport:| |
+| **Konfigurieren und Registrieren des Geräts** | DATA 0 Netzwerkeinstellungen | DATA 0 IP Adresse:</br>Subnetzmaske:</br>Gateway:</br>Primärer DNS-Server:</br>Primärer NTP-Server:</br>Webproxyserver-IP/FQDN (optional):</br>Webproxyport:| |
 | | Geräteadministratorkennwort | Das Kennwort muss zwischen 8 und 15 Zeichen lang sein und Kleinbuchstaben, Großbuchstaben, Ziffern und Sonderzeichen umfassen. | |
 | | StorSimple Snapshot Manager-Kennwort | Das Kennwort muss 14 oder 15 Zeichen lang sein und Kleinbuchstaben, Großbuchstaben, Ziffern und Sonderzeichen umfassen.| |
 | | Dienstregistrierungsschlüssel | Dieser Schlüssel wird im klassischen Azure-Portal generiert. | |
@@ -116,7 +116,7 @@ Stellen Sie Folgendes sicher, bevor Sie beginnen:
 
 - Sie besitzen ein Microsoft Azure-Speicherkonto mit Anmeldeinformationen für den Zugriff.
 
-- Ihr Microsoft Azure-Abonnement ist für den StorSimple-Manager-Dienst aktiviert. Ihr Abonnement sollten Sie über das [Enterprise Agreement](http://azure.microsoft.com/pricing/enterprise-agreement/) erwerben.
+- Ihr Microsoft Azure-Abonnement ist für den StorSimple Manager-Dienst aktiviert. Ihr Abonnement sollten Sie über das [Enterprise Agreement](http://azure.microsoft.com/pricing/enterprise-agreement/) erwerben.
 
 - Sie haben Zugriff auf Terminalemulationssoftware wie PuTTY.
 
@@ -172,7 +172,7 @@ Führen Sie die folgenden Schritte aus, um einen neuen StorSimple-Manager-Dienst
 
 ## Schritt 2: Abrufen des Dienstregistrierungsschlüssels
 
-Nachdem der StorSimple-Manager-Dienst eingerichtet wurde und ausgeführt wird, müssen Sie den Dienstregistrierungsschlüssel abrufen. Dieser Schlüssel wird zum Registrieren Ihres StorSimple-Geräts sowie zum Herstellen einer Verbindung mit dem Dienst verwendet.
+Nachdem der StorSimple Manager-Dienst eingerichtet wurde und ausgeführt wird, müssen Sie den Dienstregistrierungsschlüssel abrufen. Dieser Schlüssel wird zum Registrieren Ihres StorSimple-Geräts sowie zum Herstellen einer Verbindung mit dem Dienst verwendet.
 
 Führen Sie die folgenden Schritte im klassischen Azure-Portal aus.
 
@@ -294,4 +294,4 @@ Führen Sie die folgenden Schritte im klassischen Azure-Portal aus, um bei Bedar
 
 - Verwenden des [StorSimple-Manager-Diensts](https://msdn.microsoft.com/library/azure/dn772396.aspx) für das Verwalten Ihres StorSimple-Geräts
 
-<!---HONumber=AcomDC_0107_2016-->
+<!----HONumber=AcomDC_0128_2016-->

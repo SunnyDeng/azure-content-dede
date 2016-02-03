@@ -48,12 +48,12 @@ Ein Dataset ist eine logische Beschreibung der Daten. Die Daten, die beschrieben
 
 | Eigenschaft | Beschreibung | Erforderlich | Standard |
 | -------- | ----------- | -------- | ------- |
-| Name | Name des Datasets | Ja | – |
-| Struktur | <p>Schema des Datasets</p><p>Im Abschnitt [Dataset: Structure](#Structure) finden Sie weitere Details.</p> | Nein. | – |
-| Typ | Typ des Datasets | Ja | – |
+| name | Name des Datasets | Ja | – |
+| structure | <p>Schema des Datasets</p><p>Im Abschnitt [Dataset: Structure](#Structure) finden Sie weitere Details.</p> | Nein. | – |
+| type | Typ des Datasets | Ja | – |
 | typeProperties | <p>Eigenschaften, die dem ausgewählten Typ entsprechen</p><p>Im Abschnitt [Dataset: Type](#Type) finden Sie ausführliche Informationen über die unterstützten Typen und deren Eigenschaften.</p> | Ja | – |
 | external | Boolesches Flag, das angibt, ob ein Dataset explizit durch eine Data Factory-Pipeline erstellt wird oder nicht. | Nein | false | 
-| Verfügbarkeit | <p>Definiert das Verarbeitungsfenster oder das Modell für das Aufteilen in Slices für die Dataset-Produktion. </p><p>Unter [Dataset: Availability](#Availability) finden Sie weitere Informationen.</p><p>Im Artikel [Planung und Ausführung](data-factory-scheduling-and-execution.md) finden Sie weitere Informationen zum Modell für das Aufteilen von Datasets in Slices.</p> | Ja | –
+| availability | <p>Definiert das Verarbeitungsfenster oder das Modell für das Aufteilen in Slices für die Dataset-Produktion. </p><p>Unter [Dataset: Availability](#Availability) finden Sie weitere Informationen.</p><p>Im Artikel [Planung und Ausführung](data-factory-scheduling-and-execution.md) finden Sie weitere Informationen zum Modell für das Aufteilen von Datasets in Slices.</p> | Ja | –
 | policy | Definiert die Kriterien oder die Bedingung, die die Dataset-Slices erfüllen müssen. <p>Unter [Dataset: Policy](#Policy) finden Sie weitere Informationen.</p> | Nein | – |
 
 ### Beispiel
@@ -83,8 +83,8 @@ Der Abschnitt **Structure** bestätigt das Schema des Datasets. Er enthält die 
 
 Eigenschaft | Beschreibung | Erforderlich | Standard  
 -------- | ----------- | -------- | -------
-Name | Name der Spalte | Nein | – 
-Typ | Datentyp der Spalte | Nein | – 
+name | Name der Spalte | Nein | – 
+type | Datentyp der Spalte | Nein | – 
 
 ### Beispiel
 
@@ -138,7 +138,7 @@ Tägliche Slices, die um 6:00 Uhr anstelle des Standards Mitternacht beginnen.
 
 In diesem Fall wird "SliceStart" um 6 Stunden auf 6:00 Uhr verschoben.
 
-Für einen zwölfmonatigen Plan ("frequency" = "month"; "interval" = 12) bedeutet "offset": 60.00:00:00 den Beginn am 2. oder 3. März jedes Jahres (60 Tage ab dem Anfang des Jahres, wenn "style" = "StartOfInterval"), abhängig davon, ob es sich um ein Schaltjahr handelt.
+Für einen zwölfmonatigen Plan ("frequency" = "month"; "interval" = 12) bedeutet "offset": 60.00:00:00 den Beginn am 1. oder 2. März jedes Jahres (60 Tage ab dem Anfang des Jahres, wenn "style" = "StartOfInterval"), abhängig davon, ob es sich um ein Schaltjahr handelt.
 
 
 
@@ -208,4 +208,4 @@ Wenn Sie eine Pipeline jeden Monat an einem bestimmten Tag und zu einer bestimmt
 	  }
 	}
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0121_2016-->

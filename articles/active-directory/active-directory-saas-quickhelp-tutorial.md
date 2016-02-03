@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/01/2015"
+	ms.date="01/06/2015"
 	ms.author="jeedes"/>
 
 
@@ -117,13 +117,13 @@ Das Ziel dieses Abschnitts ist, das einmalige Anmelden von Azure AD im Azure A
 
     b. Klicken Sie zum Hochladen der heruntergeladenen Azure-Metadatendatei auf **Durchsuchen**, navigieren Sie zur Datei, und klicken Sie dann auf **Metadaten hochladen**.
 
-    d. Geben Sie in das Textfeld **E-Mail** den Wert ****http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress** ein.
+    c. Geben Sie in das Textfeld **E-Mail** den Wert ****http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress** ein.
 
-    e. Geben Sie im Textfeld **Vorname** den **Wert http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname** ein.
+    d. Geben Sie im Textfeld **Vorname** den **Wert http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname** ein.
 
-    f. Geben Sie im Textfeld **Nachname** den **Wert http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname** ein.
+    e. Geben Sie im Textfeld **Nachname** den **Wert http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname** ein.
 
-    g. Klicken Sie in der **Aktionsleiste** auf **Speichern**.
+    f. Klicken Sie in der **Aktionsleiste** auf **Speichern**.
 
 
 
@@ -255,4 +255,4 @@ Das Ziel dieses Abschnitts ist das Testen Ihrer Azure AD-Konfiguration für ein
 [401]: ./media/active-directory-saas-QuickHelp-tutorial/tutorial_QuickHelp_401.png
 [402]: ./media/active-directory-saas-QuickHelp-tutorial/tutorial_QuickHelp_402.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

@@ -2,7 +2,7 @@
     pageTitle="Lernprogramm: Azure Active Directory-Integration mit Abintegro | Microsoft Azure" 
     description="Erfahren Sie, wie Sie Abintegro mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu aktivieren." 
     services="active-directory" 
-    authors="markusvi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags 
@@ -11,8 +11,8 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
-    ms.author="markvi" />
+    ms.date="01/14/2016" 
+    ms.author="jeedes" />
 
 #Lernprogramm: Azure Active Directory-Integration mit Abintegro
 
@@ -21,7 +21,7 @@ In diesem Lernprogramm wird die Integration von Azure und Abintegro erläutert. 
 -   Ein gültiges Azure-Abonnement
 -   Ein Abintegro-Abonnement, für das einmaliges Anmelden aktiviert ist
 
-Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie Abintegro zugewiesen haben, mittels einmaligen Anmeldens auf Ihrer Abintegro-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Sie können aber auch den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
+Nach Abschluss dieses Lernprogramms können sich die Abintegro zugewiesenen Azure AD-Benutzer mittels einmaligen Anmeldens auf Ihrer Abintegro-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie auch die [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md) nutzen.
 
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -55,7 +55,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Abi
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-abintegro-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie im **Suchfeld** den Suchbegriff **Abintegro** ein.
+6.  Geben Sie im **Suchfeld** als Suchbegriff **Abintegro** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-abintegro-tutorial/IC790077.png "Anwendungskatalog")
 
@@ -80,7 +80,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![App-URL konfigurieren](./media/active-directory-saas-abintegro-tutorial/IC790081.png "App-URL konfigurieren")
 
-4.  Klicken Sie auf der Seite **Einmaliges Anmelden konfigurieren für Abintegro** auf **Metadaten herunterladen**, und speichern Sie die Metadatendatei auf Ihrem Computer.
+4.  Klicken Sie auf der Seite **Einmaliges Anmelden konfigurieren um Abintegro** auf **Metadaten herunterladen**, und speichern Sie die Metadatendatei auf Ihrem Computer.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-abintegro-tutorial/IC790082.png "Einmaliges Anmelden konfigurieren")
 
@@ -88,7 +88,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     >[AZURE.NOTE]Das einmalige Anmelden muss vom Supportteam von Abintegro konfiguriert werden. Sie erhalten eine Benachrichtigung, sobald die Konfiguration abgeschlossen ist.
 
-6.  Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
+6.  Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-abintegro-tutorial/IC790083.png "Einmaliges Anmelden konfigurieren")
 ##Konfigurieren der Benutzerbereitstellung
@@ -112,4 +112,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0121_2016-->

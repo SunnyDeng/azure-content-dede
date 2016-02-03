@@ -1,9 +1,9 @@
 <properties
    pageTitle="Visualisieren des Clusters mit Service Fabric-Explorer | Microsoft Azure"
-   description="Service Fabric Explorer ist ein nützliches GUI-Tool zum Untersuchen und Verwalten von Cloudanwendungen und Knoten in einem Microsoft Azure Service Fabric-Cluster."
+   description="Service Fabric Explorer ist ein webbasiertes Tool zum Untersuchen und Verwalten von Cloudanwendungen und Knoten in einem Microsoft Azure Service Fabric-Cluster."
    services="service-fabric"
    documentationCenter=".net"
-   authors="jessebenson"
+   authors="seanmck"
    manager="timlt"
    editor=""/>
 
@@ -13,28 +13,28 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="10/30/2015"
-   ms.author="jesseb"/>
+   ms.date="01/13/2016"
+   ms.author="seanmck"/>
 
-# Visualisieren des Clusters mit Service Fabric Explorer
+# Visualisieren Ihres Clusters mit Service Fabric Explorer
 
-Service Fabric-Explorer ist ein webbasiertes Tool zum Untersuchen und Verwalten von Anwendungen und Knoten in einem Service Fabric-Cluster. Service Fabric-Explorer wird direkt innerhalb des Clusters gehostet, daher ist er immer verfügbar, unabhängig davon, wo der Cluster ausgeführt wird.
+Service Fabric-Explorer ist ein webbasiertes Tool zum Untersuchen und Verwalten von Anwendungen und Knoten in einem Azure Service Fabric-Cluster. Service Fabric-Explorer wird direkt innerhalb des Clusters gehostet und ist daher immer verfügbar – unabhängig davon, wo der Cluster ausgeführt wird.
 
 ## Verbinden mit Service Fabric-Explorer
 
 Wenn Sie die Anweisungen zum [Vorbereiten Ihrer Entwicklungsumgebung](service-fabric-get-started.md) befolgt haben, können Sie Service Fabric-Explorer auf dem lokalen Cluster starten, indem Sie zu http://localhost:19080/Explorer navigieren.
 
->[AZURE.NOTE]Wenn Sie Internet Explorer (IE) mit Service Fabric-Explorer zum Verwalten eines Remoteclusters verwenden, müssen Sie einige IE-Einstellungen konfigurieren. Wechseln Sie zu **Extras -> Einstellungen der Kompatibilitätsansicht**, und deaktivieren Sie **Intranetsites in Kompatibilitätsansicht anzeigen**, um sicherzustellen, dass alle Informationen ordnungsgemäß geladen werden.
+>[AZURE.NOTE]Wenn Sie Internet Explorer mit Service Fabric-Explorer zum Verwalten eines Remoteclusters verwenden, müssen Sie einige Internet Explorer-Einstellungen konfigurieren. Wechseln Sie zu **Extras** > **Einstellungen der Kompatibilitätsansicht**, und deaktivieren Sie **Intranetsites in Kompatibilitätsansicht anzeigen**, um sicherzustellen, dass alle Informationen richtig geladen werden.
 
 ## Grundlegendes zum Layout von Service Fabric-Explorer
 
-Sie können mithilfe der Strukturansicht auf der linken Seite in Service Fabric-Explorer navigieren. Auf der Stammebene der Struktur bietet das Clusterdashboard eine Clusterübersicht, einschließlich einer Zusammenfassung der Anwendungs- und Knotenintegrität.
+Sie können in Service Fabric-Explorer navigieren, indem Sie die Strukturansicht auf der linken Seite verwenden. Auf der Stammebene der Struktur bietet das Clusterdashboard eine Clusterübersicht, einschließlich einer Zusammenfassung der Anwendungs- und Knotenintegrität.
 
 ![Service Fabric-Explorer-Clusterdashboard][sfx-cluster-dashboard]
 
-### Die Clusterzuweisung
+### Anzeigen des Cluster-Layouts
 
-Knoten in einem Service Fabric-Cluster befinden sich über einem zweidimensionalen Raster an Fehlerdomänen und Upgradedomänen, um sicherzustellen, dass Ihre Anwendungen auch bei Hardwareausfällen und Anwendungsupgrades zur Verfügung stehen. Mithilfe der Clusterzuweisung können Sie anzeigen, wie der aktuelle Cluster angeordnet ist.
+Knoten in einem Service Fabric-Cluster werden in einem zweidimensionalen Raster aus Fehlerdomänen und Upgradedomänen angeordnet. Durch diese Anordnung wird dafür gesorgt, dass Ihre Anwendungen auch bei Hardwarefehlern und Anwendungsupgrades verfügbar bleiben. Mit der Clusterzuweisung können Sie anzeigen, wie der aktuelle Cluster angeordnet ist.
 
 ![Service Fabric-Explorer-Clusterzuweisung][sfx-cluster-map]
 
@@ -42,31 +42,44 @@ Knoten in einem Service Fabric-Cluster befinden sich über einem zweidimensional
 
 Der Cluster enthält zwei Unterstrukturen: eine für Anwendungen und eine für Knoten.
 
-Die Anwendungsansicht ermöglicht die Navigation durch die logische Hierarchie von Service Fabric: Anwendungen, Dienste, Partitionen und Replikate.
+Sie können die Anwendungsansicht für die Navigation durch die logische Hierarchie von Service Fabric verwenden: Anwendungen, Dienste, Partitionen und Replikate.
 
-Im Beispiel unten besteht die **MyApp**-Anwendung aus zwei Diensten: **MyStatefulService** und **WebSvcService**. Da **MyStatefulService** statusbehaftet ist, enthält er eine Partition mit einem primären und zwei sekundären Replikaten. Im Gegensatz dazu ist „WebSvcService“ statusfrei und enthält eine einzelne Instanz.
+Im Beispiel unten besteht die Anwendung **MyApp** aus zwei Diensten: **MyStatefulService** und **WebService**. Da **MyStatefulService** zustandsbehaftet ist, enthält er eine Partition mit einem primären und zwei sekundären Replikaten. Im Gegensatz dazu ist „WebSvcService“ zustandslos und enthält eine einzelne Instanz.
 
 ![Service Fabric-Explorer-Anwendungsansicht][sfx-application-tree]
 
-Auf jeder Ebene der Struktur werden im Hauptbereich relevante Informationen zum Element angezeigt. Zum Beispiel werden der Integritätsstatus und die Version für einen bestimmten Dienst angezeigt.
+Auf jeder Ebene der Struktur werden im Hauptbereich relevante Informationen zum Element angezeigt. Beispielsweise werden der Integritätsstatus und die Version für einen bestimmten Dienst angezeigt.
 
 ![Service Fabric-Explorer-Bereich für essentielle Informationen][sfx-service-essentials]
 
 ### Anzeigen der Knoten des Clusters
 
-Die Knotenansicht zeigt das physische Layout des Clusters. Sie können für einen angegebenen Knoten überprüfen, welche Anwendungen über auf diesem Knoten bereitgestellten Code verfügen, und insbesondere, welche Replikate derzeit dort ausgeführt werden.
+Die Knotenansicht zeigt das physische Layout des Clusters. Für einen Knoten können Sie überprüfen, für welche Anwendungen Code auf dem Knoten bereitgestellt wurde. Genauer gesagt können Sie anzeigen, welche Replikate derzeit darauf ausgeführt werden.
 
-## Aktionen mit Service Fabric-Explorer
+## Aktionen
 
 Service Fabric-Explorer bietet eine schnelle Möglichkeit zum Aufrufen von Aktionen für die Knoten, Anwendungen und Dienste in Ihrem Cluster.
 
-Um beispielsweise eine Anwendungsinstanz zu löschen, wählen Sie einfach die Anwendung in der Struktur auf der linken Seite und dann „Aktionen > Anwendung löschen“ aus.
+Um beispielsweise eine Anwendungsinstanz zu löschen, wählen Sie einfach die Anwendung in der Struktur auf der linken Seite und dann **Aktionen** > **Anwendung löschen** aus.
 
 ![Löschen einer Anwendung in Service Fabric-Explorer][sfx-delete-application]
 
-Da viele Aktionen destruktiv sind, werden Sie aufgefordert, den Löschvorgang zu bestätigen, bevor die Aktion abgeschlossen wird.
+In der folgenden Tabelle sind die für jede Entität verfügbaren Aktionen aufgeführt:
 
->[AZURE.NOTE]Jede Aktion, die mit Service Fabric-Explorer ausgeführt werden kann, kann auch mithilfe von PowerShell oder einer REST-API unter Verwendung von Automatisierung ausgeführt werden.
+| **Entität** | **Aktion** | **Beschreibung** |
+| ------ | ------ | ----------- |
+| Anwendungstyp | Bereitstellung des Typs aufheben | Entfernt das Anwendungspaket aus dem Imagespeicher des Clusters. Dabei müssen zunächst alle Anwendungen dieses Typs entfernt werden. |
+| Anwendung | Anwendung löschen | Löscht die Anwendung, einschließlich aller Dienste und Zustände (sofern vorhanden). |
+| Dienst | Dienst löschen | Löscht den Dienst und seinen Zustand (sofern vorhanden). |
+| Knoten | Aktivieren | Aktiviert den Knoten. |
+|| Deaktivieren (anhalten) | Hält den Knoten im aktuellen Zustand an. Die Dienste werden weiterhin ausgeführt, Service Fabric verschiebt jedoch nur dann Elemente proaktiv in oder aus dem Dienst, wenn dies zur Vermeidung von Ausfällen oder Dateninkonsistenzen erforderlich ist. Diese Aktion wird normalerweise zum Aktivieren von Debuggingdiensten auf einem bestimmten Knoten verwendet, um sicherzustellen, dass sie während der Überprüfung nicht verschoben werden. |
+|| Deaktivieren (neu starten) | Ermöglicht das sichere Verschieben aller In-Memory-Dienste von einem Knoten und schließt dauerhafte Dienste. Wird in der Regel verwendet, wenn die Hostprozesse oder Hostcomputer neu gestartet werden müssen. |
+|| Deaktivieren (Daten entfernen) | Ermöglicht das sichere Schließen aller auf dem Knoten ausgeführten Dienste, nachdem ausreichend Ersatzreplikate erstellt wurden. Wird in der Regel verwendet, wenn ein Knoten (oder zumindest sein Speicher) dauerhaft außer Betrieb genommen wird. |
+|| Knotenzustand entfernen | Entfernt die Replikatinformationen eines Knotens aus dem Cluster. Wird in der Regel verwendet, wenn ein Knoten, auf dem bereits ein Fehler aufgetreten ist, als nicht mehr wiederherstellbar gilt. |
+
+Da viele Aktionen destruktiv sind, werden Sie aufgefordert, den Vorgang zu bestätigen, bevor die Aktion abgeschlossen wird.
+
+>[AZURE.TIP]Jede Aktion, die mit Service Fabric-Explorer ausgeführt werden kann, kann auch mithilfe von PowerShell oder einer REST-API ausgeführt werden, um die Automation zu ermöglichen.
 
 
 
@@ -82,7 +95,7 @@ http://&lt;your-cluster-endpoint&gt;:19080/Explorer
 
 Die vollständige URL steht auch im Cluster Essentials-Bereich des Azure-Portal zur Verfügung.
 
-### Verbinden mit einem sicheren Cluster
+### Herstellen einer Verbindung mit einem sicheren Cluster
 
 Sie können den Zugriff auf den Service Fabric-Cluster steuern, indem Sie die Präsentation eines Zertifikats durch Clients zum Herstellen einer Verbindung erfordern.
 
@@ -101,4 +114,4 @@ Wenn Sie versuchen, eine Verbindung mit Service Fabric-Explorer auf einem siche
 [sfx-service-essentials]: ./media/service-fabric-visualizing-your-cluster/SfxServiceEssentials.png
 [sfx-delete-application]: ./media/service-fabric-visualizing-your-cluster/SfxDeleteApplication.png
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0121_2016-->

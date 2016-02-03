@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="12/01/2015"
+   ms.date="01/15/2016"
    ms.author="v-sharos" />
 
 
@@ -78,4 +78,4 @@ Diese Version enthält ein aktualisiertes Image für das virtuelle Gerät. Für 
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0121_2016-->

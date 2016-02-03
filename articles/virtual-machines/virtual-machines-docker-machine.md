@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="vm-linux"
    ms.workload="infrastructure"
-   ms.date="09/22/2015"
+   ms.date="01/04/2016"
    ms.author="rasquill"/>
 
 # Verwenden von "docker-machine" mit Azure
@@ -201,7 +201,7 @@ In diesem Beispiel hat Docker den Containerport 80 dem VM-Port 49153 zugewiese
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## Nächste Schritte
-Rufen Sie das [Docker-Benutzerhandbuch](https://docs.docker.com/userguide/) auf, und erstellen Sie Anwendungen auf Microsoft Azure. Oder probieren Sie [**Docker** und Swarm](https://github.com/docker/swarm) auf Azure aus (virtual-machines-docker-swarm), um zu sehen, wie Swarm mit Docker und Azure verwendet werden kann.
+Rufen Sie das [Docker-Benutzerhandbuch](https://docs.docker.com/userguide/) auf, und erstellen Sie Anwendungen auf Microsoft Azure. Oder probieren Sie [**Docker** und Swarm](https://github.com/docker/swarm) auf Azure aus](virtual-machines-docker-swarm.md), um zu sehen, wie Swarm mit Docker und Azure verwendet werden kann.
 
 <!--Image references-->
 [nginx]: ./media/virtual-machines-docker-machine/nginxondocker.png
@@ -214,4 +214,4 @@ Rufen Sie das [Docker-Benutzerhandbuch](https://docs.docker.com/userguide/) auf,
 [Link 2 to another azure.microsoft.com documentation topic]: ../web-sites-custom-domain-name.md
 [Link 3 to another azure.microsoft.com documentation topic]: ../storage-whatis-account.md
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="09/22/2015"
-   ms.author="JRJ@BigBangData.co.uk;barbkess"/>
+   ms.date="01/07/2016"
+   ms.author="jrj;barbkess;sonyama"/>
 
 # Schleifen in SQL Data Warehouse
 SQL Data Warehouse unterstützt die [WHILE][]-Schleife für die wiederholte Ausführung von Anweisungsblöcken. Die Schleife wird so lange ausgeführt, wie die angegebenen Bedingungen wahr sind oder bis die Schleife im Code mit dem Schlüsselwort `BREAK` gezielt beendet wird. Schleifen sind besonders nützlich, um im SQL-Code definierte Cursor zu ersetzen. Glücklicherweise sind fast alle Cursor, die per SQL-Code geschrieben werden, Nur-Lese-Cursor für den schnellen Vorlauf. Daher sind [WHILE]-Schleifen eine hervorragende Alternative, wenn Sie einen Cursor ersetzen müssen.
@@ -82,4 +82,4 @@ Weitere Hinweise zur Entwicklung finden Sie in der [Entwicklungsübersicht][].
 
 <!--Other Web references-->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0114_2016-->

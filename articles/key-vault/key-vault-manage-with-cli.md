@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/22/2015"
+	ms.date="01/08/2016"
 	ms.author="bruceper"/>
 
 # Verwalten von Schlüsseltresor mit CLI #
@@ -256,4 +256,4 @@ Hier ist ein Beispiel, wie ein bestimmten geheimer Schlüssel entfernt werden ka
 
 Eine Referenz zur Programmierung finden Sie im [Entwicklerhandbuch für den Azure-Schlüsseltresor](key-vault-developers-guide.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

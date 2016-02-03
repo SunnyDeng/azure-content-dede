@@ -59,7 +59,7 @@ Die folgende Ausgabe wird erzeugt:
     Enter the code E1A2B3C4D to authenticate. If you're signing in as an Azure
     AD application, use the --username and --password parameters.
 
-> [AZURE.NOTE]Wenn Sie kein Azure-Konto besitzen, wird eine Fehlermeldung mit dem Hinweis angezeigt, dass Sie einen anderen Kontotyp benötigen. Informationen zum Erstellen eines Kontos auf der Basis Ihres aktuellen Azure-Kontos finden Sie unter [Erstellen von Arbeits- oder Schulidentitäten in Azure Active Directory](../resource-group-create-work-id-from-personal.md).
+> [AZURE.NOTE]Wenn Sie kein Azure-Konto besitzen, wird eine Fehlermeldung mit dem Hinweis angezeigt, dass Sie einen anderen Kontotyp benötigen. Informationen zum Erstellen eines Kontos auf der Basis Ihres aktuellen Azure-Kontos finden Sie unter [Erstellen von Arbeits- oder Schulidentitäten in Azure Active Directory](../virtual-machines/resource-group-create-work-id-from-personal.md).
 
 Öffnen Sie [https://aka.ms/devicelogin](https://aka.ms/devicelogin) in einem Browser, und geben Sie den in der Befehlsausgabe angegebenen Code ein.
 
@@ -326,7 +326,7 @@ Wenn Sie Fehlermeldungen wie `Deployment provisioning state was not successful` 
 
     	azure group log show new_res_group --last-deployment
 
-    Zusätzliche Informationen finden Sie unter [Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure](../resource-group-deploy-debug.md).
+    Zusätzliche Informationen finden Sie unter [Problembehandlung beim Bereitstellen von Ressourcengruppen in Azure](../virtual-machines/resource-group-deploy-debug.md).
 
 - Fehlerinformationen sind auch im Azure-Portal verfügbar, wie im folgenden Screenshot dargestellt. So navigieren Sie zu Fehlerinformationen: Klicken Sie auf der Navigationsleiste auf "Ressourcengruppen", wählen Sie die fehlerhafte Ressourcengruppe aus, und klicken Sie dann im Bereich "Zusammenfassung" des Blatts "Ressourcengruppe" auf das Datum der letzten Bereitstellung, und wählen Sie auf dem Blatt "Bereitstellungsverlauf" die fehlerhafte Bereitstellung aus. Klicken Sie dann auf dem Blatt "Bereitstellung" auf das mit einem roten Ausrufezeichen gekennzeichnete Vorgangsdetail. Die Statusmeldung der fehlerhaften Bereitstellung wird auf dem Blatt "Vorgangsdetails" angezeigt.
 
@@ -351,4 +351,4 @@ Weitere Informationen zu DocumentDB finden Sie in folgenden Ressourcen:
 
 Weitere Vorlagen finden Sie unter [Azure-Schnellstartvorlagen](http://azure.microsoft.com/documentation/templates/).
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0107_2016-->

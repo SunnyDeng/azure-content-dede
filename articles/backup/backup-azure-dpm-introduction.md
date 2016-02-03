@@ -19,8 +19,8 @@
 # Vorbereiten der Sicherung von Workloads in Azure mit DPM
 
 > [AZURE.SELECTOR]
-- [Azure Backup](backup-azure-microsoft-azure-backup.md)
-- [SCDPM](backup-azure-dpm-introduction.md)
+- [Azure Backup Server](backup-azure-microsoft-azure-backup.md)
+- [System Center DPM](backup-azure-dpm-introduction.md)
 
 Dieser Artikel enthält eine Einführung zur Verwendung von Microsoft Azure Backup zum Schutz von DPM-Servern und -Workloads (System Center Data Protection Manager). In diesem Artikel erfahren Sie Folgendes:
 
@@ -42,7 +42,7 @@ Vorteile der Verwendung von Azure Backup für die Sicherung von DPM-Servern:
 - Bei DPM-Bereitstellungen in Azure ermöglicht Azure Backup das Auslagern des Speichers vom Azure-Datenträger, sodass Sie vertikal skalieren können, indem Sie ältere Daten in Azure Backup und neue Daten auf dem Datenträger speichern.
 
 ## Funktionsweise der DPM-Serversicherung
-Um einen virtuellen Computer zu sichern, wird zuerst eine Zeitpunkt-Momentaufnahme der Daten benötigt. Der Azure Backup-Dienst initiiert den Sicherungsauftrag zur geplanten Zeit und löst die Sicherungserweiterung zum Erstellen einer Momentaufnahme aus. Die Sicherungserweiterung wird zum Zweck der Konsistenz mit dem VSS-Gastdienst abgestimmt und ruft die Blob-Momentaufnahme-API des Azure Storage-Diensts auf, wenn Konsistenz erzielt wurde. Dadurch kann eine konsistente Momentaufnahme der Datenträger des virtuellen Computers erstellt werden, ohne dass dieser heruntergefahren werden muss.
+Um einen virtuellen Computer zu sichern, wird zuerst eine Zeitpunkt-Momentaufnahme der Daten benötigt. Der Azure Backup-Dienst initiiert den Sicherungsauftrag zur geplanten Zeit und löst die Sicherungserweiterung zum Erstellen einer Momentaufnahme aus. Die Sicherungserweiterung wird zum Zweck der Konsistenz mit dem VSS-Gastdienst abgestimmt und ruft die Blob-Momentaufnahme-API des Azure-Speicherdiensts auf, wenn Konsistenz erzielt wurde. Dadurch kann eine konsistente Momentaufnahme der Datenträger des virtuellen Computers erstellt werden, ohne dass dieser heruntergefahren werden muss.
 
 Nachdem die Momentaufnahme erstellt wurde, werden die Daten vom Azure Backup-Dienst in den Sicherungstresor übertragen. Der Dienst identifiziert und überträgt nur die Datenblöcke, die sich seit der letzten Sicherung geändert haben, sodass die Sicherungen effizient gespeichert und das Netzwerk effizient genutzt werden. Wenn die Datenübertragung abgeschlossen ist, wird die Momentaufnahme entfernt und ein Wiederherstellungspunkt erstellt. Dieser Wiederherstellungspunkt kann im Azure-Verwaltungsportal angezeigt werden.
 
@@ -92,4 +92,4 @@ Diese werden nicht unterstützt:
 
 >[AZURE.NOTE]Ab System Center 2012 DPM mit SP1 können Sie Workloads, die von DPM geschützt werden, in Azure mithilfe von Microsoft Azure Backup sichern.
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0107_2016-->

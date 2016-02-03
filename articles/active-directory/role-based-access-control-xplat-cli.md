@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="command-line-interface"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/14/2015"
+	ms.date="01/04/2016"
 	ms.author="inhenk"/>
 
 # Verwalten der rollenbasierten Zugriffssteuerung mit der Azure-Befehlszeilenschnittstelle (Azure-CLI) #
@@ -151,4 +151,4 @@ In den folgenden Themen und Ressourcen erhalten Sie weitere Informationen zur Ve
 - [Konfigurieren der rollenbasierten Zugriffssteuerung mit Windows PowerShell](role-based-access-control-powershell.md)
 - [Behandlung von Problemen bei der rollenbasierten Zugriffssteuerung](role-based-access-control-troubleshooting.md)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/04/2015"
+	ms.date="01/19/2016"
 	ms.author="ddove; sidneyh"/>
 
 # Erstellen und Verwalten eines elastischen SQL-Datenbankauftrags im Portal (Vorschau)
@@ -23,7 +23,7 @@
 - [PowerShell](sql-database-elastic-jobs-powershell.md)
 
 
-**Elastische Datenbankaufträge** ermöglichen eine einfache und zuverlässige Verwaltung einer Gruppe von Datenbanken. Dazu wird die Ausführung der folgenden administrativen Vorgänge vereinfacht: Schemaänderungen, Verwaltung von Anmeldeinformationen, Aktualisierungen von Verweisdaten, Sammlung von Leistungsdaten und Sammlung von Telemetriedaten zu Mandanten (Kunden). Elastische Datenbankaufträge sind derzeit über das Azure-Portal und PowerShell-Cmdlets verfügbar. Das Azure-Portal bietet allerdings nur eingeschränkte Funktionalität, die auf die Ausführung in allen Datenbanken in einem [elastischen Datenbankpool (Vorschau)](sql-database-elastic-pool.md) begrenzt ist. Informationen zum Zugriff auf zusätzliche Features und zum Anwenden von Skripts auf eine Gruppe von Datenbanken, einschließlich einer benutzerdefinierten Sammlung oder eines Shardsatzes (erstellt mithilfe der [Clientbibliothek für elastische Datenbanken](sql-database-elastic-scale-introduction.md)) finden Sie unter [Erstellen und Verwalten von Aufträgen mithilfe von PowerShell](sql-database-elastic-jobs-powershell.md). Weitere Informationen zu Aufträgen finden Sie unter [Übersicht über elastische Datenbankaufträge](sql-database-elastic-jobs-overview.md).
+**Aufträge für die elastische Datenbank** ermöglichen eine einfache und zuverlässige Verwaltung einer Gruppe von Datenbanken. Dazu wird die Ausführung der folgenden administrativen Vorgänge vereinfacht: Schemaänderungen, Verwaltung von Anmeldeinformationen, Aktualisierungen von Verweisdaten, Sammlung von Leistungsdaten und Sammlung von Telemetriedaten zu Mandanten (Kunden). Elastische Datenbankaufträge sind derzeit über das Azure-Portal und PowerShell-Cmdlets verfügbar. Das Azure-Portal bietet allerdings nur eingeschränkte Funktionalität, die auf die Ausführung in allen Datenbanken in einem [elastischen Datenbankpool (Vorschau)](sql-database-elastic-pool.md) begrenzt ist. Informationen zum Zugriff auf zusätzliche Features und zum Anwenden von Skripts auf eine Gruppe von Datenbanken, einschließlich einer benutzerdefinierten Sammlung oder eines Shardsatzes (erstellt mithilfe der [Clientbibliothek für elastische Datenbanken](sql-database-elastic-scale-introduction.md)) finden Sie unter [Erstellen und Verwalten von Aufträgen mithilfe von PowerShell](sql-database-elastic-jobs-powershell.md). Weitere Informationen zu Aufträgen finden Sie unter [Übersicht über elastische Datenbankaufträge](sql-database-elastic-jobs-overview.md).
 
 ## Voraussetzungen
 
@@ -115,4 +115,4 @@ Wenn ein Auftrag fehlschlägt, wird ein Protokoll zu seiner Ausführung erstellt
 
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0121_2016-->

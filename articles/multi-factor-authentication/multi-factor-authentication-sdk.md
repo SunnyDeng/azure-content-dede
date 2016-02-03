@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/19/2015" 
+	ms.date="01/11/2016" 
 	ms.author="billmath"/>
 
 # Erstellen von Multi-Factor Authentication in benutzerdefinierten Apps (SDK)
@@ -33,7 +33,7 @@ Da die APIs keinen Zugriff auf in Azure Active Directory registrierte Benutzer h
 
 ## Herunterladen des Azure Multi-Factor Authentication-SDK 
 
-Es gibt zwei Möglichkeiten, das Azure Multi-Factor Authentication-SDK herunterzuladen. Bei beiden wird das Azure-Portal verwendet. Die erste besteht darin, den Multi-Factor Authentication-Anbieter direkt zu verwalten. Die zweite erfolgt über die Diensteinstellungen. Für die zweite Option ist entweder ein Multi-Factor Authentication-Anbieter oder eine Azure AD Premium-Lizenz erforderlich.
+Es gibt zwei Möglichkeiten, das Azure Multi-Factor Authentication-SDK herunterzuladen. Bei beiden wird das Azure-Portal verwendet. Die erste besteht darin, den Multi-Factor Authentication-Anbieter direkt zu verwalten. Die zweite erfolgt über die Diensteinstellungen. Für die zweite Option ist entweder ein Multi-Factor Authentication-Anbieter oder eine Azure MFA-, Azure AD Premium- oder Enterprise Mobility Suite-Lizenz erforderlich.
 
 
 ### So laden Sie das Azure Multi-Factor Authentication-SDK aus dem Azure-Portal herunter
@@ -58,7 +58,7 @@ Es gibt zwei Möglichkeiten, das Azure Multi-Factor Authentication-SDK herunterz
 3. Doppelklicken Sie auf Ihre Instanz von Azure AD.
 4. Klicken Sie oben auf **Konfigurieren**.
 5. Wählen Sie unter Multi-Factor Authentication die Option **Diensteinstellungen verwalten** aus ![Herunterladen](./media/multi-factor-authentication-sdk/download2.png)
-6. Klicken Sie auf der Seite "Diensteinstellungen" am unteren Rand des Bildschirms auf **Portal aufrufen**.![Herunterladen](./media/multi-factor-authentication-sdk/download3.png)
+6. Klicken Sie auf der Seite "Diensteinstellungen" am unteren Rand des Bildschirms auf **Portal aufrufen**.![Herunterladen](./media/multi-factor-authentication-sdk/download3a.png)
 7. Dadurch wird eine neue Seite geöffnet. Klicken Sie auf der linken Seite unten auf "SDK".
 8. Wählen Sie die gewünschte Sprache und klicken Sie auf einen der zugehörigen Downloadlinks.
 9. Speichern Sie den Download.
@@ -191,4 +191,4 @@ Im folgenden serverseitigen Code wird Multi-Factor Authentication in Schritt 2 k
 	    }
 	}
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0114_2016-->

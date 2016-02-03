@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="12/22/2015"
+   ms.date="01/04/2016"
    ms.author="v-sharos" />
 
 # Versionsanmerkungen zu Update 2 der StorSimple 8000-Serie  
@@ -68,7 +68,7 @@ Die folgende Tabelle enthält eine Zusammenfassung der Probleme, die in Update 
 | Nr. | Funktion | Problem | Gilt für das physische Gerät | Gilt für das virtuelle Gerät |
 |-----|---------|-------|--------------------------------|--------------------------------|
 | 1 | Netzwerkschnittstellen | Nach dem Upgrade auf Update 1 hat der StorSimple Manager-Dienst gemeldet, dass die Ports „Data2“ und „Data3“ auf einem Controller Fehler verursachen. Dieses Problem wurde behoben. | Ja | Nein |
-| 2 | Aktualisierungen | Nach dem Upgrade auf Update 1 traten im Azure-Portal auf mehreren Geräten akustische Alarme auf. Dieses Problem wurde behoben. | Ja | Nein |
+| 2 | Aktualisierungen | Nach dem Upgrade auf Update 1 traten im klassischen Azure-Portal auf mehreren Geräten akustische Alarme auf. Dieses Problem wurde behoben. | Ja | Nein |
 | 3 | Openstack-Authentifizierung | Wenn Sie Openstack als Clouddienstanbieter verwenden, haben Sie möglicherweise eine Fehlermeldung erhalten, dass die Zeichenfolge zur Cloudauthentifizierung zu lang war. Dies wurde korrigiert. | Ja | Nein |
 
 
@@ -99,6 +99,8 @@ Die folgende Tabelle enthält eine Zusammenfassung der bekannten Probleme in die
 | 19 |Lokale Volumes | Wenn Sie einen Wiederherstellungsauftrag abbrechen oder es bei einer Wiederherstellung zu einem Fehler kommt und danach ein Controllerfailover auftritt, wird auf der Seite **Aufträge** ein zusätzlicher Wiederherstellungsauftrag angezeigt. | Dieses Verhalten ist möglich, wenn der Wiederherstellungsauftrag nur lokale Volumes oder eine Mischung aus lokalen und mehrstufigen Volumes enthält. Wenn der Wiederherstellungsauftrag nur mehrstufige Volumes enthält, tritt dieses Verhalten nicht auf. Es ist kein Benutzereingriff erforderlich. | Ja | Nein |
 | 20 |Vorschaumeldung bei Erstellung des StorSimple Manager-Diensts | Die Vorschaumeldung, die bei Erstellung eines StorSimple Manager-Diensts angezeigt wird, gilt nur für die Microsoft Azure StorSimple Virtual Array-Serie. Die Virtual Array-Serie wurde kürzlich gestartet und ist zurzeit ein Vorschauangebot. Es gelten die [ergänzenden Bestimmungen für die Vorschau](https://azure.microsoft.com/support/legal/preview-supplemental-terms/). Der StorSimple Manager-Dienst und die physische StorSimple-Geräteserie sind allgemein verfügbare Lösungen. Die ergänzenden Bestimmungen für die Vorschau gelten hierfür nicht. | | |
 | 21 |Lokale Volumes | Der Wiederherstellungsauftrag macht eine Gruppe virtueller Datenträger mit dem Präfix **tmpCollection** auf der Seite **Sicherungsrichtlinien** verfügbar, jedoch nur während der Dauer des Wiederherstellungsauftrags.|Dieses Verhalten ist möglich, wenn der Wiederherstellungsauftrag nur lokale Volumes oder eine Mischung aus lokalen und mehrstufigen Volumes enthält. Wenn der Wiederherstellungsauftrag nur mehrstufige Volumes enthält, tritt dieses Verhalten nicht auf. Es ist kein Benutzereingriff erforderlich.|
+| 22 |Lokale Volumes | Wenn Sie versuchen, ein mehrstufiges Volume (erstellt und geklont mit Update 1.2 oder früher) in ein lokales Volume zu konvertieren, und das Gerät nicht genügend Speicherplatz bietet oder die Cloud nicht verfügbar ist, kann dies zu einer Beschädigung des Klons/der Klone führen.| Dieses Problem tritt nur bei Volumes auf, die mit einer Softwareversion vor Update 2 erstellt und geklont wurden. Dieses Szenario sollte eher selten vorkommen.|
+| 23 | Volumekonvertierung | Aktualisieren Sie die einem Volume zugeordneten ACRs nicht, während eine Volumekonvertierung (mehrstufig in lokal oder umgekehrt) ausgeführt wird. Eine Aktualisierung der ACRs kann zur Datenbeschädigung führen. | Aktualisieren Sie die ACRs bei Bedarf vor der Volumekonvertierung, und nehmen Sie keine weiteren ACR-Updates vor, während die Konvertierung stattfindet. |
 
 ## Controller- und Firmwareupdates in Update 2
 
@@ -111,4 +113,4 @@ Mit dieser Version werden der Treiber und die Datenträgerfirmware auf Ihrem Ger
 
 Dieses Update kann nicht auf das virtuelle Gerät angewendet werden. Es müssen neue virtuelle Geräte erstellt werden.
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0121_2016-->

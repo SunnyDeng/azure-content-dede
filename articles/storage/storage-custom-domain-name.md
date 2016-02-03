@@ -1,27 +1,27 @@
-<properties 
-	pageTitle="Konfigurieren eines Domänennamens für Blob-Daten in einem Speicherkonto | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie eine benutzerdefinierte Domäne für den Zugriff auf Blob-Daten in einem Azure-Speicherkonto konfigurieren." 
-	services="storage" 
-	documentationCenter="" 
-	authors="tamram" 
-	manager="adinah" 
-	editor=""/>
+<properties
+	pageTitle="Konfigurieren eines benutzerdefinierten Domänennamens für Ihren Blob Storage-Endpunkt | Microsoft Azure"
+	description="Erfahren Sie, wie Sie eine benutzerdefinierte Benutzerdomäne dem Blob Storage-Endpunkt für ein Azure Storage-Konto zuordnen."
+	services="storage"
+	documentationCenter=""
+	authors="tamram"
+	manager="carmonm"
+	editor="tysonn"/>
 
-<tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="09/03/2015" 
+<tags
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="01/07/2015"
 	ms.author="tamram"/>
 
 
-# Konfigurieren eines benutzerdefinierten Domänennamens für Blob-Daten in einem Azure-Speicherkonto
+# Konfigurieren eines benutzerdefinierten Domänennamens für Ihren Blob Storage-Endpunkt
 
 ## Übersicht
 
-Sie können eine benutzerdefinierte Domäne für den Zugriff auf Blob-Daten in Ihrem Azure-Speicherkonto konfigurieren. Der Standardendpunkt für den Blob-Dienst ist "https://<*meinSpeicherkonto*>.blob.core.windows.net". Wenn Sie dem Blob-Endpunkt für Ihr Speicherkonto eine benutzerdefinierte Domäne und Unterdomäne wie z. B. **www.contoso.com** zuordnen, können Benutzer auch unter Verwendung dieser Domäne auf Blob-Daten in Ihrem Speicherkonto zugreifen.
+Sie können eine benutzerdefinierte Domäne für den Zugriff auf Blob-Daten in Ihrem Azure-Speicherkonto konfigurieren. Der Standardendpunkt für Blob Storage ist „https://<*meinSpeicherkonto*>.blob.core.windows.net“. Wenn Sie dem Blob-Endpunkt für Ihr Speicherkonto eine benutzerdefinierte Domäne und Unterdomäne wie z. B. **www.contoso.com** zuordnen, können Benutzer auch unter Verwendung dieser Domäne auf Blob-Daten in Ihrem Speicherkonto zugreifen.
 
 
 > [AZURE.NOTE]Die Vorgehensweisen in dieser Aufgabe gelten für Azure-Speicherkonten. Informationen zu Clouddiensten finden Sie unter <a href = "/develop/net/common-tasks/custom-dns/">Konfigurieren eines benutzerdefinierten Domänennamens für einen Azure-Clouddienst</a> Informationen zu Websites finden Sie unter <a href="/develop/net/common-tasks/custom-dns-web-site/">Konfigurieren eines benutzerdefinierten Domänennamens für eine Azure-Website</a>.
@@ -44,7 +44,7 @@ Gehen Sie nach diesem Verfahren vor, um Ihre benutzerdefinierte Domäne zu regis
 
 Wenn Ihre benutzerdefinierte Domäne derzeit eine Anwendung unterstützt, die keine Ausfallzeiten zulässt, gehen Sie nach dem unter <a href="#register-asverify">Registrieren einer benutzerdefinierten Domäne für ein Speicherkonto unter Verwendung der Zwischenunterdomäne "asverify"</a> beschriebenen Verfahren vor.
 
-Zum Konfigurieren eines benutzerdefinierten Domänennamens müssen Sie einen neuen CNAME-Datensatz bei der Domänenregistrierung erstellen. Der CNAME-Datensatz gibt einen Alias für einen Domänennamen an; in diesem Fall ordnet er die Adresse der benutzerdefinierten Domäne dem Blob-Dienstendpunkt für Ihr Speicherkonto zu.
+Zum Konfigurieren eines benutzerdefinierten Domänennamens müssen Sie einen neuen CNAME-Datensatz bei der Domänenregistrierung erstellen. Der CNAME-Datensatz gibt einen Alias für einen Domänennamen an. In diesem Fall ordnet er die Adresse der benutzerdefinierten Domäne dem Blob Storage-Endpunkt für Ihr Speicherkonto zu.
 
 Die Methoden zum Festlegen eines CNAME-Datensatzes der verschiedenen Registrierungen sind zwar ähnlich, jedoch unterscheiden sie sich auch in einigen Punkten. Das Konzept ist allerdings gleich. Beachten Sie, dass viele Basispakete für die Domänenregistrierung keine DNS-Konfiguration anbieten, daher müssen Sie möglicherweise Ihr Domänenregistrierungspaket aktualisieren, bevor Sie den CNAME-Datensatz erstellen können.
 
@@ -115,6 +115,5 @@ Sie können z. B. den folgenden URI verwenden, um über eine benutzerdefinierte
 ## Zusätzliche Ressourcen
 
 -   <a href="http://msdn.microsoft.com/library/azure/gg680307.aspx">Zuordnen von CDN-Inhalt (Content Delivery Network) zu einer benutzerdefinierten Domäne</a>
- 
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

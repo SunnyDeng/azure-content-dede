@@ -1,23 +1,23 @@
-### Determine the DNS name of the virtual machine
+### Bestimmen des DNS-Namens des virtuellen Computers
 
-To connect to the SQL Server Database Engine from another computer, you must know the Domain Name System (DNS) name of the virtual machine. (This is the name the internet uses to identify the virtual machine. You can use the IP address, but the IP address might change when Azure moves resources for redundancy or maintenance. The DNS name will be stable because it can be redirected to a new IP address.)  
+Um sich von einem anderen Computer aus mit dem SQL Server-Datenbankmodul zu verbinden, müssen Sie den DNS-Namen (Domain Name System) des virtuellen Computers kennen. (Dies ist der Name, den das Internet verwendet, um den virtuellen Computer zu identifizieren. Sie können die IP-Adresse verwenden, aber die IP-Adresse ändert sich möglicherweise, wenn Azure aufgrund von Redundanz oder Wartungsarbeiten Ressourcen verschiebt. Der DNS-Name bleibt bestehen, da er zu einer neuen IP-Adresse weitergeleitet werden kann.)
 
-1. In the Azure Management Portal (or from the previous step), select **VIRTUAL MACHINES**. 
+1. Wählen Sie im Azure-Verwaltungsportal (oder aus dem vorherigen Schritt) **VIRTUELLE COMPUTER**. 
 
-2. On the **VIRTUAL MACHINE INSTANCES** page, under the **Quick Glance** column, find and copy the DNS name for the virtual machine.
+2. Suchen und kopieren Sie auf der Seite **INSTANZEN VIRTUELLER COMPUTER** in der Spalte **Schnelleinsicht** den DNS-Namen für den virtuellen Computer.
 
-	![DNS name](./media/virtual-machines-sql-server-connection-steps/sql-vm-dns-name.png)
+	![DNS-Name](./media/virtual-machines-sql-server-connection-steps/sql-vm-dns-name.png)
 	
 
-### Connect to the Database Engine from another computer
+### Verbinden mit dem Datenbankmodul von einem anderen Computer aus
  
-1. On a computer connected to the internet, open SQL Server Management Studio.
-2. In the **Connect to Server** or **Connect to Database Engine** dialog box, in the**Server name** box, enter the DNS name of the virtual machine (determined in the previous task) and a public endpoint port number in the format of *DNSName,portnumber* such as **tutorialtestVM.cloudapp.net,57500**.
-To get the port number, log in to the Azure Management Portal and find the Virtual Machine. On the Dashboard, click **ENDPOINTS** and use the **PUBLIC PORT** assigned to **MSSQL**.
-	![Public Port](./media/virtual-machines-sql-server-connection-steps/sql-vm-port-number.png)
-3. In the **Authentication** box, select **SQL Server Authentication**.
-5. In the **Login** box, type the name of a login that you created in an earlier task.
-6. In the **Password** box, type the password of the login that you create in an earlier task.
-7. Click **Connect**.
+1. Öffnen Sie auf einem mit dem Internet verbundenen Computer SQL Server Management Studio.
+2. Geben Sie im Dialogfeld **Verbindung mit Server herstellen ** oder **Verbindung mit Datenbankmodul herstellen** im Feld **Servername** den DNS-Namen des virtuellen Computers ein (in der vorherigen Aufgabe festgelegt) sowie die Portnummer eines öffentlichen Endpunkts im Format *DNSName, Portnummer* wie etwa **tutorialtestVM.cloudapp.net,57500**. Um die Portnummer zu erhalten, melden Sie sich beim Azure-Verwaltungsportal an und suchen den virtuellen Computer. Klicken Sie auf dem Dashboard auf **ENDPUNKTE**, und verwenden Sie den **ÖFFENTLICHEN PORT**, der **MSSQL** zugewiesen ist.![Öffentlicher Port](./media/virtual-machines-sql-server-connection-steps/sql-vm-port-number.png)
+3. Wählen Sie im Feld **Authentifizierung** den Eintrag **SQL Server-Authentifizierung**.
+5. Geben Sie im Feld **Anmeldename** den Anmeldenamen ein, den Sie vorher erstellt haben.
+6. Geben Sie im Feld **Kennwort** das Kennwort des Anmeldenamens ein, den Sie vorher erstellt haben.
+7. Klicken Sie auf **Verbinden**.
 
-	![Connect using SSMS](./media/virtual-machines-sql-server-connection-steps/33Connect-SSMS.png)
+	![Verbinden mit SSMS](./media/virtual-machines-sql-server-connection-steps/33Connect-SSMS.png)
+
+<!---HONumber=AcomDC_0107_2016-->

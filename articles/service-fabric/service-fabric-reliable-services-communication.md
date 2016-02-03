@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Übersicht über das Reliable Service-Kommunikationsmodell | Microsoft Azure"
-   description="Übersicht über das Reliable Service-Kommunikationsmodell, einschließlich Öffnen von Listeners für Dienste, Auflösen von Endpunkten und Kommunikation zwischen Diensten."
+   pageTitle="Übersicht über das Reliable Services-Kommunikationsmodell | Microsoft Azure"
+   description="Übersicht über das Reliable Services-Kommunikationsmodell, einschließlich Öffnen von Listenern für Dienste, Auflösen von Endpunkten und Kommunikation zwischen Diensten."
    services="service-fabric"
    documentationCenter=".net"
    authors="vturecek"
@@ -16,13 +16,13 @@
    ms.date="11/17/2015"
    ms.author="vturecek@microsoft.com"/>
 
-# Das Reliable Service-Kommunikationsmodell
+# Das Reliable Services-Kommunikationsmodell
 
-Service Fabric ist als Plattform vollständig unabhängig von der Kommunikation zwischen Diensten. Alle Protokolle und Stapel von UDP bis HTTP können koexistieren. Es liegt in der Entscheidung des Entwicklers, wie Dienste kommunizieren sollen. Das Reliable Services-Anwendungsframework bietet einige vorgefertigte Kommunikationsstapel und Tools zur Implementierung benutzerdefinierter Kommunikationsstapel, wie z. B. Abstraktionen, die Clients zur Ermittlung von Endpunkten und zur Kommunikation mit diesen verwenden können.
+Azure Service Fabric ist als Plattform vollständig unabhängig von der Kommunikation zwischen Diensten. Alle Protokolle und Stapel von UDP bis HTTP sind zulässig. Es liegt in der Entscheidung des Entwicklers, wie Dienste kommunizieren sollen. Das Reliable Services-Anwendungsframework stellt einige vordefinierte Kommunikationsstapel und Tools bereit, die Sie für die Einführung Ihres benutzerdefinierten Kommunikationsstapels verwenden können. Dazu gehören Abstraktionen, die Clients zum Erkennen von und Kommunizieren mit Dienstendpunkten verwenden können.
 
 ## Einrichten der Dienstkommunikation
 
-Die Reliable Services-API verwendet eine einfache Schnittstelle für die Dienstkommunikation. Um einen Endpunkt für den Dienst zu öffnen, können Sie einfach Sie die folgende Schnittstelle implementieren:
+Die Reliable Services-API verwendet eine einfache Schnittstelle für die Dienstkommunikation. Um einen Endpunkt für den Dienst zu öffnen, implementieren Sie einfach die folgende Schnittstelle:
 
 ```csharp
 
@@ -37,25 +37,25 @@ public interface ICommunicationListener
 
 ```
 
-Fügen Sie anschließend Ihre Kommunikationslistener-Implementierung hinzu, indem Sie sie in der Überschreibung einer Dienst-Basisklassenmethode zurückgeben.
+Sie können anschließend Ihre Kommunikationslistener-Implementierung hinzufügen, indem Sie sie in der Überschreibung einer dienstbasierten Klassenmethode zurückgeben.
 
-Statusfrei:
+Zustandslose Dienste:
 
 ```csharp
 protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
 ```
 
-Statusbehaftet
+Zustandsbehaftete Dienste:
 
 ```csharp
 protected override IEnumerable<ServiceReplicaListener> CreateServiceReplicaListeners()
 ```
 
-In beiden Fällen wird eine Sammlung von Listenern zurückgegeben, durch die Ihr Dienst problemlos mehrere Listener verwenden kann – z. B. könnten Sie einen HTTP-Listener und einen separaten WebSocket-Listener haben. Jeder Listener erhält einen Namen und die resultierende Auflistung von Name-Adress-Paaren wird als JSON-Objekt dargestellt, wenn ein Client die Listeneradressen für eine Dienstinstanz oder eine Partition anfordert.
+In beiden Fällen geben Sie eine Sammlung von Listenern zurück. Dies ermöglicht dem Dienst die einfache Verwendung mehrerer Listener. Sie besitzen beispielsweise einen HTTP-Listener und einen separaten WebSocket-Listener. Jeder Listener erhält einen Namen, und die resultierende Sammlung von *name : address*-Paaren wird als JSON-Objekt dargestellt, wenn ein Client die Listeneradressen für eine Dienstinstanz oder eine Partition anfordert.
 
-Bei einem zustandslosen Dienst gibt die Überschreibung eine Sammlung von ServiceInstanceListeners zurück. Ein ServiceInstanceListener enthält eine Funktion für die ICommunicationListener-Erstellung und weist diesem einen Namen zu. Bei statusbehafteten Diensten gibt die Überschreibung eine ServiceReplicaListener-Sammlung zurück. Dies unterscheidet sich leicht vom statusfreien Gegenstück, da ServiceReplicaListener über eine Option zum Öffnen eines ICommunicationListeners auf sekundären Replikaten verfügt. Dadurch können Sie nicht nur mehrere Kommunikationslistener in einem Dienst verwenden, sondern auch angeben, welche Listener auf sekundären Replikaten Anforderungen akzeptieren und welche nur auf primären Replikaten ausgeführt werden.
+Bei einem zustandslosen Dienst gibt die Überschreibung eine Sammlung von ServiceInstanceListeners zurück. Ein ServiceInstanceListener enthält eine Funktion für die ICommunicationListener-Erstellung und weist diesem Listener einen Namen zu. Bei statusbehafteten Diensten gibt die Überschreibung eine ServiceReplicaListener-Sammlung zurück. Dies unterscheidet sich leicht vom zustandslosen Gegenstück, da ein ServiceReplicaListener über eine Option zum Öffnen eines ICommunicationListeners auf sekundären Replikaten verfügt. Sie können nicht nur mehrere Kommunikationslistener in einem Dienst verwenden, sondern auch angeben, welche Listener auf sekundären Replikaten Anforderungen akzeptieren und welche nur auf primären Replikaten ausgeführt werden.
 
-Beispielsweise haben wir einen ServiceRemotingListener, der nur RPC-Aufrufe auf primären Replikaten akzeptiert, und einen zweiten, benutzerdefinierten Listener, der Leseanforderungen für sekundäre Replikate akzeptiert:
+Beispielsweise können Sie einen ServiceRemotingListener besitzen, der nur RPC-Aufrufe auf primären Replikaten akzeptiert, und einen zweiten, benutzerdefinierten Listener, der Leseanforderungen für sekundäre Replikate akzeptiert:
 
 ```csharp
 protected override IEnumerable<ServiceReplicaListener> CreateServiceReplicaListeners()
@@ -75,7 +75,7 @@ protected override IEnumerable<ServiceReplicaListener> CreateServiceReplicaListe
 }
 ```
 
-Abschließend beschreiben Sie die Endpunkte, die für den Dienst erforderlich sind, im [Dienstmanifest](service-fabric-application-model.md) im Abschnitt „Endpoints“.
+Abschließend beschreiben Sie die Endpunkte, die für den Dienst erforderlich sind, im [Dienstmanifest](service-fabric-application-model.md) im Abschnitt „Endpunkte“.
 
 ```xml
 
@@ -87,7 +87,7 @@ Abschließend beschreiben Sie die Endpunkte, die für den Dienst erforderlich si
 
 ```
 
-Der Kommunikationslistener kann die ihm zugewiesenen Endpunktressourcen für den Endpunkt über `CodePackageActivationContext` in `ServiceInitializationParameters` aufrufen. Die Überwachung von Anforderungen kann nach dem Öffnen des Kommunikationslisteners beginnen.
+Der Kommunikationslistener kann die ihm zugewiesenen Endpunktressourcen für den Endpunkt über `CodePackageActivationContext` in `ServiceInitializationParameters` aufrufen. Die Überwachung von Anforderungen kann nach dem Öffnen des Listeners beginnen.
 
 ```csharp
 
@@ -96,7 +96,7 @@ var port = codePackageActivationContext.GetEndpoint("ServiceEndpoint").Port;
 
 ```
 
-> [AZURE.NOTE]Das gesamte Dienstpaket verwendet einheitliche Endpunktressourcen, die von Service Fabric beim Aktivieren des Dienstpakets zugewiesen werden. Somit verwenden alle Replikate, die im gleichen ServiceHost gehostet sind, den gleichen Port. Dies bedeutet, dass der Kommunikationslistener die Portfreigabe unterstützen sollte. Zu diesem Zweck wird empfohlen, dass der Kommunikationslistener zum Generieren der Überwachungsadresse die Partitions-ID und die Replikat-/Instanz-ID verwendet.
+> [AZURE.NOTE]Das gesamte Dienstpaket verwendet einheitliche Endpunktressourcen, die von Service Fabric beim Aktivieren des Dienstpakets zugewiesen werden. Alle Replikate, die im gleichen ServiceHost gehostet werden, verwenden den gleichen Port. Dies bedeutet, dass der Kommunikationslistener die Portfreigabe unterstützen sollte. Zu diesem Zweck wird empfohlen, dass der Kommunikationslistener zum Generieren der Überwachungsadresse die Partitions-ID und die Replikat-/Instanz-ID verwendet.
 
 ```csharp
 
@@ -126,13 +126,13 @@ var listenAddress = new Uri(
 
 ```
 
-Eine vollständige exemplarische Vorgehensweise zum Schreiben eines `ICommunicationListener` finden Sie unter [Erste Schritte mit Web-API-Diensten von Microsoft Azure Service Fabric mit selbstgehostetem OWIN-Server](service-fabric-reliable-services-communication-webapi.md).
+Eine ausführliche Anleitung mit den Schritten zum Schreiben eines `ICommunicationListener`-Elements finden Sie unter [Web-API-Dienste von Service Fabric mit selbstgehostetem OWIN](service-fabric-reliable-services-communication-webapi.md).
 
-## Kommunikation zwischen Client und Dienst
-Die Reliable Services-API bietet die folgenden Abstraktionen, die das Schreiben von Clients für die Kommunikation mit Diensten einfach machen.
+### Kommunikation zwischen Client und Dienst
+Die Reliable Services-API bietet die folgenden Abstraktionen, die das Schreiben von Clients für die Kommunikation mit Diensten erleichtern.
 
-### ServicePartitionResolver
-Diese Hilfsklasse hilft dem Client, den Endpunkt eines Service Fabric-Diensts zur Laufzeit zu ermitteln. Das Ermitteln des Endpunkts eines Diensts wird in Verbindung mit Service Fabric als Dienstendpunktauflösung bezeichnet.
+#### ServicePartitionResolver
+Diese Hilfsklasse hilft dem Client, den Endpunkt eines Service Fabric-Diensts zur Laufzeit zu ermitteln. Das Ermitteln des Endpunkts eines Diensts wird in Verbindung mit Service Fabric als *Dienstendpunktauflösung* bezeichnet.
 
 ```csharp
 
@@ -151,12 +151,12 @@ Task<ResolvedServicePartition> ResolveAsync(ResolvedServicePartition previousRsp
 
 
 ```
-> [AZURE.NOTE]"FabricClient" ist das Objekt, das für die Kommunikation mit dem Service Fabric-Cluster für verschiedene Verwaltungsvorgänge auf dem Service Fabric-Cluster verwendet wird.
+> [AZURE.NOTE]FabricClient ist das Objekt, das für die Kommunikation mit dem Service Fabric-Cluster für verschiedene Verwaltungsvorgänge im Cluster verwendet wird.
 
-In der Regel muss der Clientcode nicht direkt mit `ServicePartitionResolver` funktionieren. Der erstellte Code wird an andere Hilfsklassen in der Reliable Services-API übergeben. Diese verwenden intern den Resolver und unterstützen den Client bei der Kommunikation mit dem Dienst.
+In der Regel muss der Clientcode nicht direkt mit dem `ServicePartitionResolver`-Element funktionieren. Das Element wird erstellt und an andere Hilfsklassen in der Reliable Services-API übergeben. Diese Klassen verwenden den Resolver intern und unterstützen die Kommunikation des Clients mit dem Dienst.
 
-### CommunicationClientFactory
-`ICommunicationClientFactory` definiert die von einer Kommunikationclientfactory implementierte Basisschnittstelle, die Clients erstellt, die mit einem ServiceFabric-Dienst kommunizieren können. Die Implementierung von CommunicationClientFactory hängt vom Kommunikationsstapel ab, den der Service Fabric-Dienst verwendet, mit dem der Client kommunizieren möchte. Die Reliable Services-API bietet die Klasse CommunicationClientFactoryBase<TCommunicationClient>, die eine Basisimplementierung der Schnittstelle `ICommunicationClientFactory` implementiert und für alle Kommunikationsstapel gängige Aufgaben ausführt (wie die Verwendung von `ServicePartitionResolver` zum Ermitteln des Dienstendpunkts). Clients implementieren in der Regel die abstrakte Klasse CommunicationClientFactoryBase, um die für Kommunikationsstapel spezifische Logik zu verarbeiten.
+#### CommunicationClientFactory
+`ICommunicationClientFactory` definiert die von einer Kommunikationclientfactory implementierte Basisschnittstelle, die Clients erstellt, die mit einem Service Fabric-Dienst kommunizieren können. Die Implementierung von CommunicationClientFactory hängt vom Kommunikationsstapel ab, den der Service Fabric-Dienst verwendet, über den der Client kommunizieren möchte. Die Reliable Services-API stellt das Element `CommunicationClientFactoryBase<TCommunicationClient>` bereit. Dieses Element bietet eine grundlegende Implementierung der `ICommunicationClientFactory`-Schnittstelle und führt Aufgaben aus, die für alle Kommunikationsstapel gelten. (Zu diesen Aufgaben gehört die Verwendung von `ServicePartitionResolver` zum Ermitteln des Dienstendpunkts.) Clients implementieren in der Regel die abstrakte Klasse CommunicationClientFactoryBase, um die für den Kommunikationsstapel spezifische Logik zu verarbeiten.
 
 ```csharp
 
@@ -201,8 +201,8 @@ public class MyCommunicationClientFactory : CommunicationClientFactoryBase<MyCom
 
 ```
 
-### ServicePartitionClient
-`ServicePartitionClient` verwendet CommunicationClientFactory (und intern ServicePartitionResolver). Der Client unterstützt die Kommunikation mit dem Dienst, indem er Wiederholungen für gängige Ausnahmen bei der Kommunikation und vorübergehende Service Fabric-Ausnahmen handhabt.
+#### ServicePartitionClient
+`ServicePartitionClient` verwendet CommunicationClientFactory (und intern ServicePartitionResolver). Der Client unterstützt außerdem die Kommunikation mit dem Dienst, indem er Wiederholungen für gängige Ausnahmen bei der Kommunikation und vorübergehende Service Fabric-Ausnahmen handhabt.
 
 ```csharp
 
@@ -248,12 +248,10 @@ var result = await myServicePartitionClient.InvokeWithRetryAsync(
 ```
 
 ## Nächste Schritte
-* [Remoteprozeduraufruf mit Reliable Services-Remoting](service-fabric-reliable-services-communication-remoting.md)
+* [Remoteprozeduraufrufe mit Reliable Services-Remoting](service-fabric-reliable-services-communication-remoting.md)
 
-* [Web-API mit OWIN in Reliable Services](service-fabric-reliable-services-communication-webapi.md)
+* [Web-API, die OWIN in Reliable Services verwendet](service-fabric-reliable-services-communication-webapi.md)
 
 * [WCF-Kommunikation mit Reliable Services](service-fabric-reliable-services-communication-wcf.md)
 
- 
-
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0121_2016-->

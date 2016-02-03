@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="multiple"
     ms.devlang="Java"
     ms.topic="article"
-    ms.date="11/19/2015" 
+    ms.date="01/09/2016" 
     ms.author="robmcm"/>
 
 <!-- Legacy MSDN URL = https://msdn.microsoft.com/library/azure/dn268600.aspx -->
@@ -45,7 +45,7 @@ Gehen Sie im Dialogfeld **Service Endpoints** auf eine der folgenden Arten vor:
 
 [Azure-Toolkit für Eclipse][]
 
-[Installing the Azure Toolkit for Eclipse (in englischer Sprache)][]
+[Installieren des Azure-Toolkits für Eclipse][]
 
 [Creating a Hello World Application for Azure in Eclipse (in englischer Sprache)][]
 
@@ -56,10 +56,10 @@ Weitere Informationen zum Verwenden von Azure mit Java finden Sie im [Azure Java
 [Azure Java Developer Center]: http://go.microsoft.com/fwlink/?LinkID=699547
 [Azure-Toolkit für Eclipse]: http://go.microsoft.com/fwlink/?LinkID=699529
 [Creating a Hello World Application for Azure in Eclipse (in englischer Sprache)]: http://go.microsoft.com/fwlink/?LinkID=699533
-[Installing the Azure Toolkit for Eclipse (in englischer Sprache)]: http://go.microsoft.com/fwlink/?LinkId=699546
+[Installieren des Azure-Toolkits für Eclipse]: http://go.microsoft.com/fwlink/?LinkId=699546
 
 <!-- IMG List -->
 
 [ic719493]: ./media/azure-toolkit-for-eclipse-azure-service-endpoints/ic719493.png
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0114_2016-->

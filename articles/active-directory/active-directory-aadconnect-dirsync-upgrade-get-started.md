@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Microsoft Azure AD Connect – Upgrade vom Microsoft Azure AD-Synchronisierungstool (DirSync)"
-   description="Informationen Sie zum Aktualisieren von DirSync auf Azure AD Connect. Dieser Artikel beschreibt die Schritte zur Aktualisierung Ihres aktuellen Microsoft Azure AD-Synchronisierungstools (DirSync) auf Azure AD Connect."
+   pageTitle="Windows Azure AD Connect – Upgrade vom Microsoft Azure AD-Synchronisierungstool (DirSync)"
+   description="Informationen Sie zum Aktualisieren von DirSync auf Azure AD Connect. Dieser Artikel beschreibt die Schritte zur Aktualisierung Ihres aktuellen Windows Azure AD-Synchronisierungstools (DirSync) auf Azure AD Connect."
    services="active-directory"
    documentationCenter=""
    authors="andkjell"
@@ -13,10 +13,10 @@
    ms.tgt_pltfrm="na"
    ms.devlang="na"
    ms.topic="article"
-   ms.date="12/16/2015"
+   ms.date="01/11/2016"
    ms.author="shoatman;billmath"/>
 
-# Aktualisieren des Microsoft Azure Active Directory-Synchronisierungstools (DirSync) auf Azure AD Connect
+# Aktualisieren des Windows Azure Active Directory-Synchronisierungstools (DirSync) auf Azure AD Connect
 
 Die folgende Dokumentation hilft Ihnen beim Upgrade Ihrer vorhandenen DirSync-Installation auf Azure AD Connect.
 
@@ -93,7 +93,7 @@ Zusätzliche Schritte sind in folgenden Fällen erforderlich:
     - Wenn Sie SQL Server Express verwenden und über weniger als 50.000 Objekte verfügen, wird der folgende Bildschirm angezeigt: ![Abgeschlossene Analyse bereit für die Aktualisierung von DirSync](./media/active-directory-aadconnect-dirsync-upgrade-get-started/AnalysisReady.png)
     - Falls Sie eine SQL Server-Version für DirSync verwenden, wird stattdessen diese Seite angezeigt: ![Abgeschlossene Analyse bereit für die Aktualisierung von DirSync](./media/active-directory-aadconnect-dirsync-upgrade-get-started/AnalysisReadyFullSQL.png)<BR/> Die Informationen zum vorhandenen SQL Server-Datenbankserver, der von DirSync verwendet wird, werden angezeigt. Führen Sie bei Bedarf die entsprechenden Anpassungen durch. Klicken Sie auf **Weiter**, um die Installation fortzusetzen.
     - Fall Sie über mehr als 50.000 Objekte verfügen, wird stattdessen dieser Bildschirm angezeigt: ![Abgeschlossene Analyse bereit für die Aktualisierung von DirSync](./media/active-directory-aadconnect-dirsync-upgrade-get-started/AnalysisRecommendParallel.png)<BR/> Aktivieren Sie zum Fortsetzen eines direkten Upgrades das Kontrollkästchen neben dieser Meldung: **DirSync-Upgrade auf diesem Computer fortsetzen.** Wenn Sie stattdessen eine [parallele Bereitstellung](#parallel-deployment) durchführen möchten, müssen Sie die DirSync-Konfigurationseinstellungen exportieren und auf den neuen Server verschieben.
-5. Geben Sie das derzeit verwendete Kennwort für das Konto ein, um eine Verbindung zu Azure AD herzustellen. Dies muss das Konto sein, das momentan von DirSync verwendet wird. ![Geben Sie Ihre Azure AD-Anmeldeinformationen ein.](./media/active-directory-aadconnect-dirsync-upgrade-get-started/ConnectToAzureAD.png)
+5. Geben Sie das derzeit verwendete Kennwort für das Konto ein, um eine Verbindung zu Azure AD herzustellen. Dies muss das Konto sein, das momentan von DirSync verwendet wird. ![Geben Sie Ihre Azure AD-Anmeldeinformationen ein.](./media/active-directory-aadconnect-dirsync-upgrade-get-started/ConnectToAzureAD.png)Falls ein Fehler auftritt und Sie Probleme mit der Konnektivität haben, können Sie unter [Problembehebung bei Konnektivitätsproblemen](active-directory-aadconnect-troubleshoot-connectivity.md) nach einer Lösung suchen.
 6. Geben Sie ein Unternehmensadministratorkonto für Active Directory an. ![Geben Sie Ihre ADDS-Anmeldeinformationen ein.](./media/active-directory-aadconnect-dirsync-upgrade-get-started/ConnectToADDS.png)
 7. Sie können nun mit der Konfiguration loslegen. Wenn Sie auf **Upgrade** klicken, wird DirSync deinstalliert und Azure AD Connect konfiguriert. Anschließend wird die Synchronisierung gestartet. ![Bereit für Konfiguration](./media/active-directory-aadconnect-dirsync-upgrade-get-started/ReadyToConfigure.png)
 
@@ -143,7 +143,7 @@ Bei der Installation von Azure AD Connect auf einem neuen Server wird davon aus
 	- Eine vorhandene Instanz von SQL Server (Standard: Azure AD Connect installiert SQL Server 2012 Express). Verwenden Sie nicht dieselbe Datenbankinstanz wie für Ihren DirSync-Server.
 	- Ein Dienstkonto für die Verbindung zu SQL Server (wenn Ihre SQL Server-Datenbank remotegesteuert ist, muss dieses Konto ein Domänendienstkonto sein). Auf diesem Bildschirm werden die folgenden Optionen angezeigt: ![Geben Sie Ihre Azure AD-Anmeldeinformationen ein.](./media/active-directory-aadconnect-dirsync-upgrade-get-started/advancedsettings.png)
 7. Klicken Sie auf **Weiter**.
-8. Lassen Sie auf der Seite **Bereit zur Konfiguration** das Kontrollkästchen **Starten Sie den Synchronisierungsvorgang, sobald die Konfiguration abgeschlossen wurde** aktiviert. Der Server befindet sich im [Stagingmodus](active-directory-aadconnectsync-operations.md#staging-mode), sodass Änderungen derzeit nicht nach Azure AD exportiert werden.
+8. Lassen Sie auf der Seite **Bereit zur Konfiguration** das Kontrollkästchen **Starten Sie den Synchronisierungsvorgang, sobald die Konfiguration abgeschlossen wurde** aktiviert. Der Server befindet sich im [Stagingmodus](active-directory-aadconnectsync-operations.md#staging-mode), sodass Änderungen derzeit nicht nach Azure AD exportiert werden.
 9. Klicken Sie auf **Installieren**.
 
 >[AZURE.NOTE]Die Synchronisierung zwischen Windows Server Active Directory und Azure Active Directory wird gestartet, es werden aber keine Änderungen an Azure AD exportiert. Nur ein Synchronisierungstool kann jeweils aktiv Änderungen exportieren. Dies wird als [Stagingmodus](active-directory-aadconnectsync-operations.md#staging-mode) bezeichnet.
@@ -197,4 +197,4 @@ Nachdem Sie Azure AD Connect installiert haben, können Sie [die Installation �
 
 Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!----HONumber=AcomDC_1217_2015-->
+<!-------HONumber=AcomDC_0121_2016--->

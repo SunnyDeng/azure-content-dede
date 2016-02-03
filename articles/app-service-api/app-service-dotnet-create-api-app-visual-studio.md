@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="dotnet" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/10/2015" 
+	ms.date="01/08/2016" 
 	ms.author="tdykstra"/>
 
 # Konfigurieren eines Web-API-Projekts als API-App
@@ -85,4 +85,4 @@ In diesem Abschnitt wird gezeigt, wie Sie ein vorhandenes Web-API-Projekt als AP
 Ihre API-App kann jetzt bereitgestellt werden. Dazu können Sie das Lernprogramm [Bereitstellen einer API-App](app-service-dotnet-deploy-api-app.md) befolgen.
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

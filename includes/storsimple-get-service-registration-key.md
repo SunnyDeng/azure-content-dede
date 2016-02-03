@@ -16,10 +16,10 @@
 
 5. Klicken Sie auf das Häkchensymbol ![StorSimple, Häkchensymbol](./media/storsimple-get-service-registration-key/HCS_CheckIcon-include.png), um das Dialogfeld zu schließen und zur Seite **Schnellstart** zurückzukehren.
 
-> [AZURE.NOTE]Der Dienstregistrierungsschlüssel wird zur Registrierung aller Geräte verwendet, die mit dem StorSimple-Manager-Dienst registriert werden müssen.
+> [AZURE.NOTE] Der Dienstregistrierungsschlüssel wird zur Registrierung aller Geräte verwendet, die mit dem StorSimple-Manager-Dienst registriert werden müssen.
 
 ![Video verfügbar](./media/storsimple-get-service-registration-key/Video_icon.png) **Video verfügbar**
 
-Um sich ein Video anzusehen, das zeigt, wie Sie den Dienstregistrierungsschlüssel erhalten, klicken Sie [hier](http://azure.microsoft.com/documentation/videos/get-the-service-registration-key/).
+Um sich ein Video anzusehen, das zeigt, wie Sie den Dienstregistrierungsschlüssel erhalten, klicken Sie [hier](https://azure.microsoft.com/documentation/videos/get-the-service-registration-key/).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -1,3 +1,5 @@
-Custom probes allows you to have more granular control about health monitoring status for your back end pool of servers. You can change the interval checks, failed request threshold and timeout settings.
+Mit benutzerdefinierten Tests gewinnen Sie eine präzisere Kontrolle über den Status der Systemüberwachung bei Ihrem Back-End-Serverpool. Sie können die Intervalle für Prüfungen, den Schwellenwert für Anforderungsfehler und die Timeouteinstellungen ändern.
 
-This article will guide you to create an application gateway with a custom probe or adding a custom probe to an existing application gateway. 
+Dieser Artikel enthält eine Anleitung, wie Sie ein Application Gateway mit einem benutzerdefinierten Test erstellen und wie Sie einem vorhandenen Application Gateway einen benutzerdefinierten Test hinzufügen.
+
+<!---HONumber=AcomDC_0107_2016-->

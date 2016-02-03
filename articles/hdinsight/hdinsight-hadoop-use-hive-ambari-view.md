@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="12/03/2015"
+   ms.date="01/04/2016"
    ms.author="larryfr"/>
 
 #Verwenden der Hive-Ansicht mit Hadoop in HDInsight
@@ -123,7 +123,7 @@ Dies ist die Ansicht __Visuelle Erläuterung__ der Abfrage, die das Verständnis
 
 ###Tez
 
-Wählen Sie rechts vom Editor das Symbol __Visuelle Erläuterung__.
+Wählen Sie rechts vom Editor das Symbol __Tez__.
 
 ![Symbole](./media/hdinsight-hadoop-use-hive-ambari-view/tez.png)
 
@@ -131,7 +131,7 @@ Falls verfügbar, wird der von Tez für diese Abfrage verwendete gerichtete azyk
 
 ###Benachrichtigungen
 
-Wählen Sie rechts vom Editor das Symbol __Visuelle Erläuterung__.
+Wählen Sie rechts vom Editor das Symbol __Benachrichtigungen__.
 
 ![Symbole](./media/hdinsight-hadoop-use-hive-ambari-view/notifications.png)
 
@@ -199,4 +199,4 @@ Informationen zu anderen Möglichkeiten, wie Sie mit Hadoop in HDInsight arbeite
 
 * [Verwenden von MapReduce mit Hadoop in HDInsight](hdinsight-use-mapreduce.md)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0114_2016-->

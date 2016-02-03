@@ -5,7 +5,7 @@
 	documentationCenter=""
 	authors="jasonnewyork"
 	manager="tadb"
-	editor=""/>
+	editor="tysonn"/>
 
 <tags
 	ms.service="storage"
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/01/2015"
+	ms.date="01/12/2016"
 	ms.author="jahogg"/>
 
 # Microsoft Azure-Speicher: Überwachung, Diagnose und Problembehandlung
@@ -104,7 +104,7 @@ Wenn Sie mit der Windows-Leistungsüberwachung vertraut sind, können Sie von Sp
 
 Sie können wählen, welche Stundenmetriken Sie im [Azure-Portal](portal.azure.com) anzeigen möchten, und Regeln konfigurieren, die den Administrator per E-Mail benachrichtigen, wenn eine Stundenmetrik einen bestimmten Schwellenwert überschreitet (weitere Informationen finden Sie auf der Seite <a href="http://msdn.microsoft.com/library/azure/dn306638.aspx" target="_blank">Gewusst wie: Empfangen von Warnbenachrichtigungen und Verwalten von Warnungsregeln in Azure</a>). Der Speicherdienst sammelt Metriken nach dem Best-Effort-Prinzip, kann aber nicht jeden Speichervorgang aufzeichnen.
 
-Im Azure-Portal können Sie Metriken wie Verfügbarkeit, Gesamtanfragen und durchschnittliche Latenzzahlen für ein Speicherkonto anzeigen. Zudem wurde eine Benachrichtigungsregel eingerichtet, um einen Administrator zu benachrichtigen, wenn die Verfügbarkeit unter ein bestimmtes Niveau sinkt. Aus der Anzeige dieser Daten ergibt sich als möglicher Untersuchungsbereich der unter 100 % liegende Erfolgsprozentsatz des Tabellendiensts. (Weitere Informationen finden Sie im Abschnitt "[Metriken zeigen niedrigen PercentSuccess an, oder Vorgänge in Analyse-Protokolleinträgen haben den Transaktionsstatus 'ClientOtherErrors']").
+Im Azure-Portal können Sie Metriken wie Verfügbarkeit, Gesamtanfragen und durchschnittliche Latenzzahlen für ein Speicherkonto anzeigen. Zudem wurde eine Benachrichtigungsregel eingerichtet, um einen Administrator zu benachrichtigen, wenn die Verfügbarkeit unter ein bestimmtes Niveau sinkt. Aus der Anzeige dieser Daten ergibt sich als möglicher Untersuchungsbereich der unter 100 % liegende Erfolgsprozentsatz des Tabellendiensts. (Weitere Informationen finden Sie im Abschnitt "[Metriken zeigen niedrigen PercentSuccess an, oder Vorgänge in Analyse-Protokolleinträgen haben den Transaktionsstatus 'ClientOtherErrors']".)
 
 Sie sollten Ihre Azure-Anwendungen kontinuierlich überwachen, um sicherzustellen, dass sie wie erwartet integer und leistungsfähig sind, durch:
 
@@ -922,4 +922,4 @@ Zum Redaktionszeitpunkt befindet sich Application Insights in der Vorschau. Weit
 [9]: ./media/storage-monitoring-diagnosing-troubleshooting/mma-screenshot-1.png
 [10]: ./media/storage-monitoring-diagnosing-troubleshooting/mma-screenshot-2.png
 
-<!----HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0114_2016-->

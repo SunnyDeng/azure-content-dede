@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Anwenden von Vorgangs- und Dienstprotokollen in Stream Analytics | Microsoft Azure" 
+	pageTitle="Debuggen mithilfe von Vorgangs- und Dienstprotokollen in Stream Analytics | Microsoft Azure" 
 	description="Verwenden von Stream Analytics-Vorgangsprotokollen" 
 	keywords="Dienstprotokolle"
 	services="stream-analytics" 
@@ -17,7 +17,7 @@
 	ms.date="12/04/2015" 
 	ms.author="jeffstok"/>
 
-# Grundlegendes zu Stream Analytics-Dienst- und -Vorgangsprotokollen
+# Debuggen von Stream Analytics-Aufträgen mithilfe von Dienst- und Vorgangsprotokollen
 
 Alle Azure-Dienste stellen Benutzern operative Protokollierungsnachrichten bereit, um Details im Zusammenhang mit Verwaltungsvorgängen zu erfassen. In Azure Stream Analytics können diese Informationen für Debugzwecke wie z. B. das Anzeigen des Auftragsstatus, Auftragsfortschritts und von Fehlermeldungen verwendet werden, um den Fortschritt eines Auftrags im Laufe der Zeit von Beginn an, während der Verarbeitung und bis zur Ausgabe nachzuverfolgen.
 
@@ -96,4 +96,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Stream Analytics Query Language Reference (in englischer Sprache)](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0121_2016-->

@@ -14,7 +14,7 @@
     ms.topic="get-started-article"
     ms.tgt_pltfrm="powershell"
     ms.workload="data-management" 
-    ms.date="12/01/2015"
+    ms.date="01/20/2016"
     ms.author="sstein"/>
 
 # Erstellen einer neue SQL-Datenbank und Ausführen gängiger Datenbankeinrichtungsaufgaben mithilfe von PowerShell-Cmdlets 
@@ -135,11 +135,11 @@ Die Datenbankdetails werden angezeigt, nachdem die Datenbank erfolgreich erstell
 ## Nächste Schritte
 Nachdem Sie eine neue SQL-Datenbank erstellt und grundlegende Datenbankeinrichtungsaufgaben ausgeführt haben, sind Sie für Folgendes bereit:
 
-- [Herstellen einer Verbindung mit SQL Server Management Studio (SSMS)](sql-database-connect-to-database.md)
+- [Herstellen einer Verbindung mit einer Azure SQL-Datenbank mit SQL Server Management Studio und Ausführen einer T-SQL-Beispielabfrage](sql-database-connect-query-ssms.md)
 
 
-## Zusätzliche Ressourcen
+## Weitere Ressourcen
 
 - [Azure SQL-Datenbank](https://azure.microsoft.com/documentation/services/sql-database/)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0121_2016-->

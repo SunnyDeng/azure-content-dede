@@ -8,12 +8,12 @@
    editor=""/>
 
    <tags
-      ms.service="marketplace-publishing"
+      ms.service="marketplace"
       ms.devlang="na"
       ms.topic="article"
       ms.tgt_pltfrm="na"
       ms.workload="na"
-      ms.date="11/24/2015"
+      ms.date="01/04/2016"
       ms.author="hascipio; avikova" />
 
 # Beispiele für das Zuordnen eines vorhandenen Webdiensts zu OData über CSDLs
@@ -155,4 +155,4 @@ Verwenden Sie mit GET „Implementieren von RESTful-Paging“ für die Daten. Da
 - Wenn Sie mehr über bestimmte Knoten und ihre Parameter erfahren möchten, lesen Sie den Artikel [OData-Zuordnungsknoten für Datendienste](marketplace-publishing-data-service-creation-odata-mapping-nodes.md). Dort finden Sie Definitionen und Erläuterungen, Beispiele und Kontext für Anwendungsfälle.
 - Um zum vorgeschriebenen Pfad für die Veröffentlichung eines Datendiensts im Azure Marketplace zurückzukehren, lesen Sie den Artikel [Leitfaden zum Veröffentlichen von Datendiensten](marketplace-publishing-data-service-creation.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

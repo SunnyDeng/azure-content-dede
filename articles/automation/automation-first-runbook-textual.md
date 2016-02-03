@@ -30,7 +30,7 @@ Dieses Tutorial führt Sie durch die Erstellung eines [PowerShell-Workflow-Runbo
 
 Für dieses Tutorial benötigen Sie Folgendes:
 
-- Azure-Abonnement. Wenn Sie noch kein Abonnement haben, können Sie [Ihre MSDN-Abonnentenvorteile aktivieren](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) oder sich <a href="/pricing/free-trial/" target="_blank">[für eine kostenlose Testversion registrieren](http://azure.microsoft.com/pricing/free-trial/).
+- Azure-Abonnement. Wenn Sie noch kein Abonnement haben, können Sie [Ihre MSDN-Abonnentenvorteile aktivieren](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) oder sich <a href="/pricing/free-trial/" target="_blank">[für eine kostenlose Testversion registrieren](https://azure.microsoft.com/pricing/free-trial/).
 - [Automation-Konto](automation-configuring.md) zum Speichern des Runbooks.
 - Einen virtuellen Azure-Computer. Da dieser Computer gestartet und beendet wird, darf er sich nicht in der Produktionsumgebung befinden.
 - [Azure Active Directory-Benutzer und Automation-Anmeldeinformationsobjekt](automation-configuring.md) für die Authentifizierung gegenüber Azure-Ressourcen. Dieser Benutzer muss über die Berechtigung zum Starten und Beenden des virtuellen Computers verfügen.
@@ -124,4 +124,4 @@ Unser Runbook startet zwar nun den virtuellen Computer, den wir im Runbook hartc
 - [Mein erstes grafisches Runbook](automation-first-runbook-graphical.md)
 - [Mein erstes PowerShell-Runbook](automation-first-runbook-textual-PowerShell.md)
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

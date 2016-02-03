@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="big-compute"
-	ms.date="11/19/2015"
+	ms.date="01/21/2016"
 	ms.author="yidingz;v-marsma"/>
 
 # Übersicht über Azure Batch-Features
@@ -61,6 +61,8 @@ Wenn Sie den Azure Batch-Dienst verwenden, nutzen Sie die folgenden Ressourcen:
 	- [Auftrags-Manager-Aufgabe](#jobmanagertask)
 
 	- [Tasks zur Auftragsvorbereitung und -freigabe](#jobpreprelease)
+
+	- [Tasks mit mehreren Instanzen](#multiinstance)
 
 - [Auftragszeitplan](#jobschedule)
 
@@ -145,10 +147,9 @@ Ein Task ist eine Berechnungseinheit, die einem Auftrag zugeordnet ist und auf e
 Zusätzlich zu Tasks, die Sie zur Berechnung auf einem Knoten definieren können, werden vom Batch-Dienst die folgenden speziellen Tasks bereitgestellt:
 
 - [Startaufgabe](#starttask)
-
 - [Auftrags-Manager-Aufgabe](#jobmanagertask)
-
 - [Tasks zur Auftragsvorbereitung und -freigabe](#jobmanagertask)
+- [Tasks mit mehreren Instanzen](#multiinstance)
 
 #### <a name="starttask"></a>Startaufgabe
 
@@ -188,6 +189,18 @@ Batch stellt den Auftragsvorbereitungstask für das Setup vor der Auftragsausfü
 Sowohl Auftragsvorbereitungs- als auch Auftragsfreigabeaufgaben bieten die Möglichkeit zur Angabe einer Befehlszeile, die beim Aufrufen der Aufgabe ausgeführt wird, sowie Funktionen wie Dateidownload, Ausführung mit erhöhten Rechten, benutzerdefinierte Umgebungsvariablen, maximale Ausführungsdauer, Wiederholungsanzahl und Dateiaufbewahrungsdauer.
 
 Weitere Informationen zu Auftragsvorbereitungs- und -freigabetasks finden Sie unter [Ausführen von Auftragsvorbereitungs- und Auftragsabschlusstasks auf Azure Batch-Computeknoten](batch-job-prep-release.md).
+
+#### <a name="multiinstance"></a>Tasks mit mehreren Instanzen
+
+Ein [Task mit mehreren Instanzen][rest_multiinstance] ist ein Task, der für die gleichzeitige Ausführung auf mehreren Computeknoten konfiguriert ist. Tasks mit mehreren Instanzen ermöglichen Szenarien, die eine hohe Leistung benötigen, wie z. B. das Message Passing Interface (MPI), und erfordern, dass Computeknoten zu einer Gruppe gebündelt werden, um einen einzelnen Workload zu bearbeiteten.
+
+Sie können in Batch Tasks mit mehreren Instanzen erstellen, indem Sie bei einem normalen [Task](#task) Einstellungen für Tasks mit mehreren Instanzen vornehmen. Dazu gehören die Anzahl der Computeknoten zum Ausführen des Tasks, eine Befehlszeile für den Haupttask (der „Anwendungsbefehl“), ein Koordinationsbefehl und eine Liste der allgemeinen Ressourcendateien für jeden Task.
+
+Wenn Sie einen Task mit mehreren Instanzen an einen Auftrag übermitteln, führt der Batch-Dienst Folgendes aus:
+
+1. Er erstellt automatisch einen primären Task und eine ausreichende Anzahl an Subtasks, die gemeinsam auf der von Ihnen angegebenen Gesamtzahl an Knoten ausgeführt werden. Batch plant dann die Ausführung dieser Tasks auf den Computeknoten, die zuerst die von Ihnen angegebenen gemeinsamen Ressourcendateien herunterladen.
+2. Nachdem die gemeinsamen Ressourcendateien heruntergeladen wurden, wird der Koordinationsbefehl vom Primärtask und den Subtasks ausgeführt. Dieser Koordinationsbefehl startet in der Regel einen Hintergrunddienst (z. B. `smpd.exe`von [MS-MPI][msmpi]) und stellt sicher, dass die Knoten zum Verarbeiten von Nachrichten zwischen den Knoten bereit sind.
+3. Nach erfolgreicher Ausführung des Koordinationsbefehls durch den Primärtask und alle Subtasks wird die Befehlszeile des Task (der „Anwendungsbefehl“) nur von dem Primärtask ausgeführt, der eine benutzerdefinierte MPI-fähige Anwendung startet, die den Workload auf den Knoten verarbeitet. In einem Windows MPI-Szenario würden Sie typischerweise Ihre MPI-fähige Anwendung mithilfe des Anwendungsbefehls über [MS-MPI][msmpi]`mpiexec.exe` ausführen.
 
 ### <a name="jobschedule"></a>Geplante Aufträge
 
@@ -332,6 +345,7 @@ Jeder Knoten in einem Pool erhält eine eindeutige ID, und der Knoten, auf dem e
 [azure_storage]: https://azure.microsoft.com/services/storage/
 [batch_explorer_project]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/BatchExplorer
 [cloud_service_sizes]: https://azure.microsoft.com/documentation/articles/cloud-services-sizes-specs/
+[msmpi]: https://msdn.microsoft.com/library/bb524831.aspx
 
 [batch_net_api]: https://msdn.microsoft.com/library/azure/mt348682.aspx
 [net_cloudjob_jobmanagertask]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudjob.jobmanagertask.aspx
@@ -342,6 +356,7 @@ Jeder Knoten in einem Pool erhält eine eindeutige ID, und der Knoten, auf dem e
 [net_create_user]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.computenode.createcomputenodeuser.aspx
 [net_getfile_node]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.computenode.getnodefile.aspx
 [net_getfile_task]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudtask.getnodefile.aspx
+[net_multiinstancesettings]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.multiinstancesettings.aspx
 [net_rdp]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.computenode.getrdpfile.aspx
 
 [batch_rest_api]: https://msdn.microsoft.com/library/azure/Dn820158.aspx
@@ -351,7 +366,9 @@ Jeder Knoten in einem Pool erhält eine eindeutige ID, und der Knoten, auf dem e
 [rest_add_task]: https://msdn.microsoft.com/library/azure/dn820105.aspx
 [rest_create_user]: https://msdn.microsoft.com/library/azure/dn820137.aspx
 [rest_get_task_info]: https://msdn.microsoft.com/library/azure/dn820133.aspx
+[rest_multiinstance]: https://msdn.microsoft.com/de-DE/library/azure/mt637905.aspx
+[rest_multiinstancesettings]: https://msdn.microsoft.com/library/azure/dn820105.aspx#multiInstanceSettings
 [rest_update_job]: https://msdn.microsoft.com/library/azure/dn820162.aspx
 [rest_rdp]: https://msdn.microsoft.com/library/azure/dn820120.aspx
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0121_2016-->

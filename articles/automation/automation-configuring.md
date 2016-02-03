@@ -25,7 +25,7 @@ Wenn Sie das erste Mal mit Azure Automation arbeiten, müssen Sie zunächst mind
 
 Die Automation-Ressourcen für jedes Automation-Konto sind mit einer einzelnen Azure-Region verknüpft, die Automation-Konten können jedoch Azure-Dienste in beliebigen Regionen verwalten. Der Hauptgrund für das Erstellen von Automation-Konten in unterschiedlichen Regionen ist der, dass Richtlinien eine Isolierung von Daten und Ressourcen innerhalb einer spezifischen Region vorsehen.
 
->[AZURE.NOTE]Auf Automation-Konten und die darin enthaltenen Ressourcen, die mit dem Azure-Vorschauportal erstellt werden, kann im Azure-Portal nicht zugegriffen werden. Wenn Sie diese Konten oder die enthaltenen Ressourcen mit Windows PowerShell verwalten möchten, müssen Sie die Azure-Ressourcen-Manager-Module verwenden.
+>[AZURE.NOTE] Auf Automation-Konten und die darin enthaltenen Ressourcen, die mit dem Azure-Vorschauportal erstellt werden, kann im Azure-Portal nicht zugegriffen werden. Wenn Sie diese Konten oder die enthaltenen Ressourcen mit Windows PowerShell verwalten möchten, müssen Sie die Azure-Ressourcen-Manager-Module verwenden.
 >
 >Mit dem Azure-Portal erstellte Automation-Konten können im Portal oder mit Cmdlets verwaltet werden. Nach dem Erstellen des Kontos macht es keinen Unterschied, wie Sie Ressourcen innerhalb des Kontos erstellen und verwalten. Wenn Sie planen, auch weiterhin das Azure-Portal zu verwenden, sollten Sie dieses anstelle des Azure-Vorschauportals für das Erstellen von Automation-Konten verwenden.
 
@@ -37,7 +37,7 @@ Ein Automation-Konto kann angehalten werden, wenn ein Problem mit Ihrem Azure-Ko
 
 Wenn Sie mithilfe von [Azure-Cmdlets](http://msdn.microsoft.com/library/azure/jj554330.aspx) auf Azure-Ressourcen zugreifen, müssen Sie eine Authentifizierung für Ihr Azure-Abonnement bereitstellen. In Azure Automation wird dies mit einem Organisationskonto in Azure Active Directory erreicht, das Sie als Administrator für Ihr Abonnement konfigurieren. Sie können anschließend [Anmeldeinformationen](http://msdn.microsoft.com/library/dn940015.aspx) für dieses Benutzerkonto erstellen und diese mit [Add-AzureAccount](http://msdn.microsoft.com/library/azure/dn722528.aspx) in Ihrem Runbook verwenden.
 
->[AZURE.NOTE]Microsoft-Konten, vormals als LiveIDs bezeichnet, können nicht mit Azure Automation verwendet werden.
+>[AZURE.NOTE] Microsoft-Konten, vormals als LiveIDs bezeichnet, können nicht mit Azure Automation verwendet werden.
 
 ## Erstellen eines neuen Azure Active Directory-Benutzers zum Verwalten eines Azure-Abonnements
 
@@ -62,7 +62,7 @@ Ein Automation-Konto ist ein Container für Ihre Azure Automation-Ressourcen. Es
 
 3. Konfigurieren Sie auf dem Blatt **Automation-Konto hinzufügen** die Details für Ihr Automation-Konto.
 
->[AZURE.NOTE]Wenn ein Automation-Konto über das Azure-Vorschauportal erstellt wird, werden weder das Konto noch die zugeordneten Ressourcen zurück in das klassische Verwaltungsportal übertragen.
+>[AZURE.NOTE] Wenn ein Automation-Konto über das Azure-Vorschauportal erstellt wird, werden weder das Konto noch die zugeordneten Ressourcen zurück in das klassische Verwaltungsportal übertragen.
 
 Nachfolgend sehen Sie die Liste der zu konfigurierenden Parameter:
 
@@ -76,7 +76,7 @@ Nachfolgend sehen Sie die Liste der zu konfigurierenden Parameter:
 
 ![Konto erstellen](media/automation-configuration/automation-01-create-automation-account.png)
 
->[AZURE.NOTE]Wenn ein über das klassische Verwaltungsportal erstelltes Automation-Konto mithilfe des Azure-Vorschauportals [in eine andere Ressourcengruppe verschoben](../resource-group-move-resources.md) wird, steht das Automation-Konto im klassischen Azure-Portal nicht mehr zur Verfügung, da Azure-Ressourcen-Manager-Konten im klassischen Verwaltungsportal nicht unterstützt werden.
+>[AZURE.NOTE] Wenn ein über das klassische Verwaltungsportal erstelltes Automation-Konto mithilfe des Azure-Vorschauportals [in eine andere Ressourcengruppe verschoben](../resource-group-move-resources.md) wird, steht das Automation-Konto im klassischen Azure-Portal nicht mehr zur Verfügung, da Azure-Ressourcen-Manager-Konten im klassischen Verwaltungsportal nicht unterstützt werden.
 
 
 
@@ -91,7 +91,7 @@ Sie können die Anmeldeinformationen in einem Runbook mithilfe der Aktivität [G
 Diese Zeilen sollten nach jedem [Prüfpunkt](http://technet.microsoft.com/library/dn469257.aspx#bk_Checkpoints) wiederholt werden. Wenn das Runbook angehalten und später von einem anderen Benutzer fortgesetzt wird, muss die Authentifizierung erneut durchgeführt werden.
 
 ## Verwandte Artikel
-- [Azure Automation: Authentifizieren bei Azure mit Azure Active Directory](http://azure.microsoft.com/blog/2014/08/27/azure-automation-authenticating-to-azure-using-azure-active-directory/)
+- [Azure Automation: Authentifizieren bei Azure mit Azure Active Directory](https://azure.microsoft.com/blog/2014/08/27/azure-automation-authenticating-to-azure-using-azure-active-directory/)
  
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0128_2016-->

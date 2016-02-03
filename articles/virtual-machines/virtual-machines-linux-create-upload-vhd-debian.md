@@ -78,6 +78,6 @@ Falls bei der Verwendung dieses Skripts ein Problem auftritt, wenden Sie sich [h
 
 ## Nächste Schritte
 
-Nun können Sie mit Ihrer Debian-VHD-Datei neue Azure Virtual Machines erstellen.
+Nun können Sie mit Ihrer Debian-VHD-Datei neue Azure Virtual Machines erstellen. Falls Sie zum ersten Mal Azure verwenden und die VHD-Datei in Azure hochladen, können Sie sich an die Schritte 2 und 3 in [diesem Leitfaden](virtual-machines-linux-create-upload-vhd.md) halten.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0121_2016-->

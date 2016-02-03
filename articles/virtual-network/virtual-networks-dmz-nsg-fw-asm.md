@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="09/16/2015"
+   ms.date="01/20/2016"
    ms.author="jonor;sivae"/>
 
 # Beispiel 2 – Erstellen einer DMZ zum Schützen von Anwendungen mit einer Firewall und NSGs
@@ -566,4 +566,4 @@ Wenn Sie eine Beispielanwendung für dieses und weitere DMZ-Beispiele installier
 [SampleApp]: ./virtual-networks-sample-app.md
 [Example1]: ./virtual-networks-dmz-nsg-asm.md
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0121_2016-->

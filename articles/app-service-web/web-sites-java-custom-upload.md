@@ -5,7 +5,7 @@
 	documentationCenter="java" 
 	authors="rmcmurray" 
 	manager="wpickett" 
-	editor="jimbe"/>
+	editor=""/>
 
 <tags 
 	ms.service="app-service-web" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="Java" 
 	ms.topic="article" 
-	ms.date="11/19/2015" 
+	ms.date="01/09/2016" 
 	ms.author="robmcm"/>
 
 # Hochladen einer benutzerdefinierten Java Web-App in Azure
@@ -257,4 +257,4 @@ Weitere Informationen zu Java finden Sie im [Java Developer Center](/develop/jav
 <!-- External Links -->
 [Azure App Service]: http://go.microsoft.com/fwlink/?LinkId=529714
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

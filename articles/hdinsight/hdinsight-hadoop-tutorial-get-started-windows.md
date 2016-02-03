@@ -43,7 +43,7 @@ Im Rahmen der generellen Verfügbarkeit von Azure HDInsight hat Microsoft zudem 
 
 Bevor Sie mit diesem Lernprogramm für Hadoop unter Windows beginnen, benötigten Sie Folgendes:
 
-- **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
+- **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 - **Einen Computer** mit Office 2013 Professional Plus, Office 365 Pro Plus, Excel 2013 Standalone oder Office 2010 Professional Plus.
 
 ##Erstellen von Hadoop-Clusters
@@ -81,7 +81,7 @@ Beim Erstellen eines Clusters werden Azure-Computeressourcen erstellt, die Hadoo
 	| ------------------ | --------------------- |
 	| ![Erstellungsanzeige im Startmenü](./media/hdinsight-hadoop-tutorial-get-started-windows/provisioning.png) | ![Kachel für einen erstellten Cluster](./media/hdinsight-hadoop-tutorial-get-started-windows/provisioned.png) |
 
-	> [AZURE.NOTE]Die Erstellung des Clusters dauert in der Regel ca. 15 Minuten. Sie können den Status des Erstellungsprozesses auf der Kachel im Startmenü oder im linken Bereich der Seite unter **Benachrichtigungen** überprüfen.
+	> [AZURE.NOTE] Die Erstellung des Clusters dauert in der Regel ca. 15 Minuten. Sie können den Status des Erstellungsprozesses auf der Kachel im Startmenü oder im linken Bereich der Seite unter **Benachrichtigungen** überprüfen.
 
 10. Klicken Sie nach Abschluss der Erstellung im Startmenü auf die Kachel für den Cluster, um das Clusterblatt zu öffnen.
 
@@ -89,7 +89,7 @@ Beim Erstellen eines Clusters werden Azure-Computeressourcen erstellt, die Hadoo
 ## Ausführen einer Hive-Abfrage im Portal
 Nachdem Sie nun einen HDInsight-Cluster erstellt haben, ist der nächste Schritt die Ausführung eines Hive-Auftrags zum Abfragen einer Hive-Beispieltabelle. Wir verwenden die Tabelle *hivesampletable*, die zu HDInsight-Clustern gehört. Die Tabelle enthält Daten zu Mobilgeräteherstellern, -plattformen und -modellen. Eine Hive-Abfrage für diese Tabelle ruft Daten für Mobilgeräte eines bestimmten Herstellers ab.
 
-> [AZURE.NOTE]HDInsight Tools für Visual Studio ist Bestandteil des Azure SDK für .NET Version 2.5 oder höher. Mithilfe der Tools von Visual Studio können Sie Verbindungen zu HDInsight-Clustern herstellen, Hive-Tabellen erstellen und Hive-Abfragen ausführen. Weitere Informationen finden Sie unter [Erste Schritte mit den HDInsight Hadoop-Tools für Visual Studio][1].
+> [AZURE.NOTE] HDInsight Tools für Visual Studio ist Bestandteil des Azure SDK für .NET Version 2.5 oder höher. Mithilfe der Tools von Visual Studio können Sie Verbindungen zu HDInsight-Clustern herstellen, Hive-Tabellen erstellen und Hive-Abfragen ausführen. Weitere Informationen finden Sie unter [Erste Schritte mit den HDInsight Hadoop-Tools für Visual Studio][1].
 
 **So führen Sie einen Hive-Job über das Clusterdashboard aus**
 
@@ -103,7 +103,7 @@ Nachdem Sie nun einen HDInsight-Cluster erstellt haben, ist der nächste Schritt
 
 	Am oberen Rand der Seite befinden sich mehrere Registerkarten. Die Standardregisterkarte ist **Hive-Editor**, die anderen Registerkarten heißen **Auftragsverlauf** und **Dateibrowser**. Mithilfe des Dashboards können Sie Hive-Abfragen senden, Protokolle von Hadoop-Aufträgen überprüfen und Dateien im Speicher durchsuchen.
 
-	> [AZURE.NOTE]Beachten Sie, dass die URL der Webseite *&lt;ClusterName&gt;.azurehdinsight.net* lautet. Anstatt über das Portal können Sie das Dashboard also auch unter Angabe der URL in einem Webbrowser öffnen.
+	> [AZURE.NOTE] Beachten Sie, dass die URL der Webseite *&lt;ClusterName&gt;.azurehdinsight.net* lautet. Anstatt über das Portal können Sie das Dashboard also auch unter Angabe der URL in einem Webbrowser öffnen.
 
 6. Geben Sie auf der Registerkarte **Hive-Editor** in das Feld **Abfragename** den Text **HTC20** ein. Der Abfragename ist gleichzeitig auch der Auftragstitel. Geben Sie im Abfragebereich die Hive-Abfrage wie in der Abbildung dargestellt ein:
 
@@ -251,4 +251,4 @@ In diesem Hadoop-Tutorial haben Sie erfahren, wie ein Hadoop-Cluster unter Windo
 [image-hdi-gettingstarted-powerquery-importdata2]: ./media/hdinsight-hadoop-tutorial-get-started-windows/HDI.GettingStarted.PowerQuery.ImportData2.png
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -1,20 +1,20 @@
-<properties 
-	pageTitle="Verwenden des Dateispeichers mit Java | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie den Azure-Dateispeicherdienst zum Hochladen, Herunterladen, Auflisten und Löschen von Dateien verwenden. Die Beispiele wurden in Java geschrieben." 
-	services="storage" 
-	documentationCenter="java" 
-	authors="rmcmurray" 
-	manager="wpickett" 
+<properties
+	pageTitle="Verwenden des Dateispeichers mit Java | Microsoft Azure"
+	description="Erfahren Sie, wie Sie den Azure-Dateispeicherdienst zum Hochladen, Herunterladen, Auflisten und Löschen von Dateien verwenden. Die Beispiele wurden in Java geschrieben."
+	services="storage"
+	documentationCenter="java"
+	authors="rmcmurray"
+	manager="wpickett"
 	editor="jimbe" />
 
-<tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="Java" 
-	ms.topic="article" 
-	ms.date="10/26/2015" 
-	ms.author="v-dedomi"/>
+<tags
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="Java"
+	ms.topic="article"
+	ms.date="01/11/2016"
+	ms.author="jutang"/>
 
 # Verwenden des Dateispeichers mit Java
 
@@ -45,9 +45,9 @@ Um die Azure-Speicher-APIs zu verwenden, fügen Sie die folgende Anweisung am An
 Zur Verwendung des Dateidiensts müssen Sie eine Verbindung mit Ihrem Azure-Speicherkonto herstellen. Im ersten Schritt muss eine Verbindungszeichenfolge konfiguriert werden, über die die Verbindung mit dem Speicherkonto hergestellt wird. Definieren Sie dazu eine statische Variable.
 
 	// Configure the connection-string with your values
-	public static final String storageConnectionString = 
-	    "DefaultEndpointsProtocol=http;" + 
-	    "AccountName=your_storage_account_name;" + 
+	public static final String storageConnectionString =
+	    "DefaultEndpointsProtocol=http;" +
+	    "AccountName=your_storage_account_name;" +
 	    "AccountKey=your_storage_account_key";
 
 > [AZURE.NOTE]Ersetzen Sie "your\_storage\_account\_name" und "your\_storage\_account\_key" durch die tatsächlichen Werte für Ihr Speicherkonto.
@@ -75,7 +75,7 @@ Alle Dateien und Verzeichnisse im Dateispeicher befinden sich in einem Container
 Mit dem Dateispeicherclient können Sie dann einen Verweis auf die Freigabe abrufen.
 
 	// Get a reference to the file share
-	CloudFileShare share = fileClient.getShareReference("sampleshare"); 
+	CloudFileShare share = fileClient.getShareReference("sampleshare");
 
 Um die Freigabe zu erstellen, verwenden Sie die **createIfNotExists**-Methode des CloudFileShare-Objekts.
 
@@ -109,9 +109,9 @@ Sie können zudem den Speicher organisieren, indem Sie Dateien in Unterverzeichn
 	//Get a reference to the root directory for the share.
 	CloudFileDirectory rootDir = share.getRootDirectoryReference();
 
-	//Get a reference to the sampledir directory 
+	//Get a reference to the sampledir directory
 	CloudFileDirectory sampleDir = rootDir.getDirectoryReference("sampledir");
-			    
+
 	if (sampleDir.createIfNotExists()) {
 		System.out.println("sampledir created");
 	} else {
@@ -124,7 +124,7 @@ Eine Liste von Dateien und Verzeichnissen in einer Freigabe kann einfach durch A
 
 	//Get a reference to the root directory for the share.
 	CloudFileDirectory rootDir = share.getRootDirectoryReference();
-		   
+
 	for ( ListFileItem fileItem : rootDir.listFilesAndDirectories() ) {
 		System.out.println(fileItem.getUri());
 	}
@@ -136,10 +136,10 @@ Ein Vorgang, den Sie in Bezug auf den Dateispeicher häufiger durchführen werde
 
 	//Get a reference to the root directory for the share.
 	CloudFileDirectory rootDir = share.getRootDirectoryReference();
-	
+
 	//Get a reference to the directory that contains the file
 	CloudFileDirectory sampleDir = rootDir.getDirectoryReference("sampledir");
-			    
+
 	//Get a reference to the file you want to download
 	CloudFile file = sampleDir.getFileReference("SampleFile.txt");
 
@@ -156,7 +156,7 @@ Ein weiterer häufig durchgeführter Vorgang ist das Löschen von Dateien im Dat
 
 	// Get a reference to the directory where the file to be deleted is in
 	CloudFileDirectory containerDir = rootDir.getDirectoryReference("sampledir");
-	
+
 	String filename = "SampleFile.txt"
 	CloudFile file;
 
@@ -174,7 +174,7 @@ Das Löschen eines Verzeichnisses ist eine ziemlich einfache Angelegenheit. Dabe
 	CloudFileDirectory rootDir = share.getRootDirectoryReference();
 
 	// Get a reference to the directory you want to delete
-	CloudFileDirectory containerDir = rootDir.getDirectoryReference("sampledir");	
+	CloudFileDirectory containerDir = rootDir.getDirectoryReference("sampledir");
 
 	// Delete the directory
 	if ( containerDir.deleteIfExists() ) {
@@ -196,10 +196,10 @@ Das Löschen einer Freigabe erfolgt durch Aufrufen der **deleteIfExists**-Method
 
 	   // Get a reference to the file share
 	   CloudFileShare share = fileClient.getShareReference("sampleshare");
-	   
+
 	   if (share.deleteIfExists()) {
 		   System.out.println("sampleshare deleted");
-	   } 
+	   }
 	} catch (Exception e) {
 		e.printStackTrace();
 	}
@@ -220,6 +220,5 @@ Folgen Sie diesen Links, wenn Sie mehr über andere Azure-Speicher-APIs erfahren
 [Referenz für Azure Storage-Client-SDKs]: http://dl.windowsazure.com/storage/javadoc/
 [Azure Storage-REST-API]: https://msdn.microsoft.com/library/azure/dd179355.aspx
 [Azure Storage-Teamblog]: http://blogs.msdn.com/b/windowsazurestorage/
- 
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0114_2016-->

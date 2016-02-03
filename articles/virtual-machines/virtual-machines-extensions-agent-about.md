@@ -14,12 +14,12 @@
  ms.topic="article"
  ms.tgt_pltfrm="vm-multiple"
  ms.workload="infrastructure-services"
- ms.date="09/22/2015"
+ ms.date="01/04/2016"
  ms.author="rasquill"/>
 
 #Informationen zum Agent und zu Erweiterungen für virtuelle Computer
 
-Der Azure-Agent für virtuelle Computer (VM-Agent) dient zum Installieren, Konfigurieren, Verwalten und Ausführen von Azure-Erweiterungen für virtuelle Computer (VM-Erweiterungen). VM-Erweiterungen bieten dynamische Features, die von Microsoft und Drittanbietern bereitgestellt werden. Der Agent und die Erweiterungen werden in erster Linie über das Verwaltungsportal hinzugefügt, jedoch können Sie auch die [PowerShell](../install-configure-powershell.md)-Cmdlets oder die [Azure-Befehlszeilenschnittstelle](xplat-install.md) zum Hinzufügen und Konfigurieren verwenden, wenn Sie einen virtuellen Computer erstellen oder vorhandene virtuelle Computer nutzen.
+Der Azure-Agent für virtuelle Computer (VM-Agent) dient zum Installieren, Konfigurieren, Verwalten und Ausführen von Azure-Erweiterungen für virtuelle Computer (VM-Erweiterungen). VM-Erweiterungen bieten dynamische Features, die von Microsoft und Drittanbietern bereitgestellt werden. Der Agent und die Erweiterungen werden in erster Linie über das Verwaltungsportal hinzugefügt, jedoch können Sie auch die [PowerShell](../powershell-install-configure.md)-Cmdlets oder die [Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md) zum Hinzufügen und Konfigurieren verwenden, wenn Sie einen virtuellen Computer erstellen oder vorhandene virtuelle Computer nutzen.
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]Ressourcen-Manager-Modell.
 
@@ -46,7 +46,7 @@ Der VM-Agent wird in den folgenden Situationen aktiviert:
 
 -   Wenn Sie eine Instanz eines virtuellen Computers mithilfe der **Schnellerfassung** im Verwaltungsportal erstellen oder die Methode **Benutzerdefiniert erstellen** im Verwaltungsportal verwenden und dabei das Kontrollkästchen **VM-Agent installieren** aktiviert ist (wie in der folgenden Abbildung gezeigt). Weitere Informationen finden Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers](virtual-machines-create-custom.md).
 
-    ![Kontrollkästchen "VM-Agent"](./media/virtual-machines-extensions-agent-about/IC719409.png "Kontrollkästchen "VM-Agent"")
+    ![Kontrollkästchen "VM-Agent"](media/virtual-machines-extensions-agent-about/IC719409.png)
 
 -   Wenn Sie eine Instanz eines virtuellen Computers mit dem Cmdlet [New-AzureVM](https://msdn.microsoft.com/library/azure/dn495254.aspx) oder [New-AzureQuickVM](https://msdn.microsoft.com/library/azure/dn495183.aspx) erstellen. Sie können einen virtuellen Computer erstellen, ohne dass der VM-Agent installiert wird, indem Sie dem Cmdlet [Add-AzureProvisioningConfig](https://msdn.microsoft.com/library/azure/dn495299.aspx) den **–DisableGuestAgent**-Parameter hinzufügen.
 
@@ -66,4 +66,4 @@ Der VM-Agent wird in den folgenden Situationen aktiviert:
 
 Weitere Informationen zu diesen Aufgaben finden Sie unter [Hinzufügen, Suchen, Aktualisieren und Entfernen von Azure-VM-Erweiterungen](virtual-machines-extensions-install.md).
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="12/15/2015"
-	ms.author="trinadhk;aashishr;jimpark"/>
+	ms.date="01/09/2016"
+	ms.author="trinadhk;jimpark;aashishr"/>
 
 
 # Problembehandlung bei der Sicherung virtueller Azure-Computer
@@ -42,7 +42,7 @@ Sie können die Problembehandlung für Fehler, die beim Verwenden von Azure Back
 | Sicherungsvorgang | Fehlerdetails | Problemumgehung |
 | -------- | -------- | -------|
 | Sicherung | Zeitüberschreitung beim Kopieren von VHDs aus dem Sicherungstresor – Versuchen Sie, den Vorgang nach einigen Minuten zu wiederholen. Wenden Sie sich an den Microsoft Support, wenn das Problem weiterhin besteht. | Dies passiert, wenn zu viele zu kopierende Daten vorhanden sind. Vergewissern Sie sich, dass Sie weniger als 16 Datenträger verwenden. |
-| Sicherung | Die Kommunikation mit dem VM-Agent im Hinblick auf den Status der Momentaufnahme war nicht möglich. Zeitüberschreitung bei Momentaufnahme für VM-Unteraufgabe – Weitere Informationen zur Lösung dieses Problems finden Sie im Handbuch zur Problembehandlung. | Dieser Fehler wird ausgelöst, wenn ein Problem mit dem VM-Agent besteht oder der Netzwerkzugriff auf die Azure-Infrastruktur blockiert ist. <ul><li>Weitere Informationen zum [Debuggen von Problemen mit dem VM-Agent](#vm-agent) <li>Weitere Informationen zum [Debuggen von Netzwerkproblemen](#networking) </ul><br>Wenn der VM-Agent keine Probleme verursacht, starten Sie den virtuellen Computer neu. Gelegentlich kann ein falscher Status des virtuellen Computers Probleme verursachen. Durch einen Neustart des virtuellen Computers wird der Status zurückgesetzt. |
+| Sicherung | Die Kommunikation mit dem VM-Agent im Hinblick auf den Status der Momentaufnahme war nicht möglich. Zeitüberschreitung bei Momentaufnahme für VM-Unteraufgabe – Weitere Informationen zur Lösung dieses Problems finden Sie im Handbuch zur Problembehandlung. | Dieser Fehler wird ausgelöst, wenn ein Problem mit dem VM-Agent besteht oder der Netzwerkzugriff auf die Azure-Infrastruktur blockiert ist. <ul> <li>Informationen zum [Debuggen von VM-Agent-Problemen](#vm-agent) <li>Informationen zum [Debuggen von Netzwerkproblemen](#networking) <li>Wenn der VM-Agent problemlos ausgeführt wird, helfen Ihnen folgende Informationen weiter: [Problembehandlung für Probleme mit VM-Momentaufnahmen](#Troubleshoot-VM-Snapshot-Issues)</ul><br>Wenn der VM-Agent keine Probleme verursacht, sollten Sie die VM neu starten. Gelegentlich kann ein falscher Status des virtuellen Computers Probleme verursachen. Durch einen Neustart des virtuellen Computers wird der Status zurückgesetzt. |
 | Sicherung | Interner Fehler bei der Sicherung – Versuchen Sie, den Vorgang nach einigen Minuten zu wiederholen. Wenden Sie sich an den Microsoft Support, wenn das Problem weiterhin besteht. | Dieser Fehler kann aus zwei Gründen auftreten: <ol><li> Es sind zu viele zu kopierende Daten vorhanden. <li>Der ursprüngliche virtuelle Computer wurde gelöscht, sodass keine Sicherung erstellt werden kann. Um die Sicherungsdaten für einen gelöschten virtuellen Computer beizubehalten und gleichzeitig die Sicherungsfehler zu vermeiden, heben Sie den Schutz für den virtuellen Computer auf und wählen die Option zum Beibehalten der Daten. So werden der Sicherungszeitplan und die wiederkehrenden Fehlermeldungen vermieden. |
 | Sicherung | Fehler beim Installieren der Azure Recovery Services-Erweiterung auf dem ausgewählten Element – Der VM-Agent ist eine Voraussetzung für die Azure Recovery Services-Erweiterung. Installieren Sie den Azure-VM-Agent, und starten Sie den Registrierungsvorgang erneut. | <ol> <li>Überprüfen Sie, ob der VM-Agent richtig installiert wurde. <li>Stellen Sie sicher, dass das Flag für die VM-Konfiguration richtig festgelegt wurde.</ol> [Erfahren Sie mehr](#validating-vm-agent-installation) über die VM-Agent-Installation und die dazugehörige Überprüfung. |
 | Sicherung | Fehler bei der Ausführung des Befehls – Für dieses Element wird ein anderer Vorgang ausgeführt. Warten Sie, bis der aktuelle Vorgang abgeschlossen ist, und wiederholen Sie anschließend Ihren Vorgang. | Ein vorhandener Sicherungs- oder Wiederherstellungsauftrag wird für den virtuellen Computer ausgeführt. Ein neuer Auftrag kann erst gestartet werden, wenn die Ausführung des aktuellen Auftrags abgeschlossen ist. |
@@ -114,6 +114,22 @@ So überprüfen Sie die Version des VM-Agents auf virtuellen Windows-Computern
 1. Melden Sie sich beim virtuellen Azure-Computer an, und navigieren Sie zum Ordner *C:\\WindowsAzure\\Packages*. Dieser Ordner enthält die Datei "WaAppAgent.exe".
 2. Klicken Sie mit der rechten Maustaste auf die Datei, wechseln Sie zu **Eigenschaften**, und wählen Sie dann die Registerkarte **Details** aus. Im Feld mit der Produktversion sollte 2.6.1198.718 oder eine höhere Version angegeben sein.
 
+## Problembehandlung für Probleme mit VM-Momentaufnahmen
+Bei der VM-Sicherung werden Momentaufnahmenbefehle an den zugrunde liegenden Speicher ausgegeben. Wenn Sie bei der Ausführung von Momentaufnahmenaufgaben keinen Zugriff auf Speicherung oder Verzögerung haben, ist der Sicherungsvorgang unter Umständen nicht erfolgreich. Es kann die unten angegebenen Gründe haben, wenn für Momentaufnahmenaufgaben ein Fehler auftritt.
+
+1. Netzwerkzugriff auf Storage wird per NSG blockiert<br> Lesen Sie weitere Informationen zum [Aktivieren des Netzwerkzugriffs](backup-azure-vms-prepare.md#2-network-connectivity) auf Storage durch das Setzen von IPs auf eine Positivliste oder per Proxyserver.
+2.  VMs mit konfigurierter SQL Server-Sicherung können zu Verzögerungen bei der Momentaufnahmenaufgabe führen <br> Standardmäßig wird bei der VM-Sicherung eine vollständige VSS-Sicherung auf Windows-VMs ausgegeben. Auf VMs, auf denen SQL-Server ausgeführt werden und die SQL Server-Sicherung konfiguriert ist, kann dies eine Verzögerung bei der Ausführung von Momentaufnahmen zur Folge haben. Legen Sie den folgenden Registrierungsschlüssel fest, wenn bei Ihnen aufgrund von Problemen mit Momentaufnahmen Sicherungsfehler auftreten.
+
+	```
+	[HKEY_LOCAL_MACHINE\SOFTWARE\MICROSOFT\BCDRAGENT]
+	"USEVSSCOPYBACKUP"="TRUE"
+	```
+3.  Der VM-Status wird falsch gemeldet, da die VM im RDP heruntergefahren ist. <br> Wenn Sie die virtuelle Maschine im RDP heruntergefahren haben, sollten Sie im Portal überprüfen, ob der VM-Status richtig wiedergegeben wird. Falls nicht, beenden Sie die VM im Portal, indem Sie im VM-Dashboard die Option „Herunterfahren“ verwenden.
+4.  Viele VMs desselben Clouddiensts sind so konfiguriert, dass die Sicherung zur selben Zeit durchgeführt wird.<br> Die bewährte Methode besteht darin, für die VMs eines Clouddiensts unterschiedliche Sicherungszeitpläne zu verwenden.
+5.  Die VM wird bei hoher CPU-/Arbeitsspeicherauslastung ausgeführt.<br> Wenn die virtuelle Maschine bei hoher CPU-Auslastung (> 90 %) oder Arbeitsspeicherauslastung ausgeführt wird, wird die Momentaufnahmenaufgabe in die Warteschlange eingereiht und verzögert und erreicht schließlich die Zeitüberschreitung. Versuchen Sie es in diesem Fall mit bedarfsgesteuerten Sicherungen.
+
+<br>
+
 ## Netzwerk
 Wie bei allen Erweiterungen ist für die Backup-Erweiterung der Zugriff auf das öffentliche Internet erforderlich, damit sie funktioniert. Wenn kein Zugriff auf das öffentliche Internet besteht, kann dies zu unterschiedlichen Ergebnissen führen:
 
@@ -133,4 +149,6 @@ Nachdem die Namensauflösung richtig eingerichtet wurde, muss auch der Zugriff a
     - Wenn Netzwerkeinschränkung bestehen (beispielsweise eine Netzwerksicherheitsgruppe) sollte ein HTTP-Proxyserver zum Weiterleiten des Datenverkehrs bereitgestellt werden. Schritte zum Bereitstellen eines HTTP-Proxy-Servers finden Sie [hier](backup-azure-vms-prepare.md#2-network-connectivity).
     - Fügen Sie der NSG (falls in der Organisation vorhanden) Regeln für den Zugriff auf das Internet über den HTTP-Proxy hinzu.
 
-<!---HONumber=AcomDC_1217_2015-->
+>[AZURE.NOTE]Für die VM-Sicherung mithilfe von IaaS muss im Gastbetriebssystem die DHCP-Option aktiviert sein. Wenn Sie eine statische private IP-Adresse benötigen, sollten Sie diese über die Plattform konfigurieren. Die DHCP-Option innerhalb des virtuellen Computers sollte aktiviert bleiben. Weitere Informationen zum Festlegen einer statischen internen IP-Adresse finden Sie [hier](virtual-networks-reserved-private-ip.md).
+
+<!---HONumber=AcomDC_0121_2016-->

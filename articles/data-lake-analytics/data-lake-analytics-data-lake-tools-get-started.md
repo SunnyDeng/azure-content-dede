@@ -10,10 +10,10 @@
 <tags
    ms.service="data-lake-analytics"
    ms.devlang="na"
-   ms.topic="article"
+   ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data" 
-   ms.date="12/21/2015"
+   ms.date="01/07/2015"
    ms.author="jgao"/>
 
 # Tutorial: Entwickeln von U-SQL-Skripts mit Data Lake-Tools für Visual Studio
@@ -60,7 +60,7 @@ Sie haben in diesem Tutorial im Abschnitt **Voraussetzungen** bereits Daten hoch
 
 Falls Sie Ihre eigenen Daten verwenden möchten, können Sie die hier angegebene Vorgehensweise zum Hochladen von Daten über die Data Lake-Tools nutzen.
 
-**So laden Sie die Datei in das abhängige Azure Data Lake-Konto hoch**
+**So laden Sie Dateien in das abhängige Azure Data Lake-Konto hoch**
 
 1. Erweitern Sie in **Server-Explorer** nacheinander die Optionen **Azure** und **Data Lake Analytics** und dann Ihr Data Lake Analytics-Konto und die Option **Speicherkonten**. Sie sehen das standardmäßige Data Lake-Speicherkonto und die verknüpften Data Lake-Speicherkonten sowie die verknüpften Azure-Speicherkonten. Das Data Lake-Standardkonto hat die Bezeichnung „Standardspeicherkonto“.
 2. Klicken Sie mit der rechten Maustaste auf das standardmäßige Data Lake-Speicherkonto, und klicken Sie dann auf **Explorer**. Der Explorer-Bereich mit den Data Lake-Tools für Visual Studio wird geöffnet. Links wird eine Verzeichnisstruktur angezeigt, und rechts befindet sich die Inhaltsansicht.
@@ -69,11 +69,11 @@ Falls Sie Ihre eigenen Daten verwenden möchten, können Sie die hier angegebene
 
 	![Visual Studio-U-SQL-Projekt](./media/data-lake-analytics-data-lake-tools-get-started/data-lake-analytics-data-lake-tools-upload-files.png)
 
-**So laden Sie die Datei in ein Azure Blob Storage-Konto hoch**
+**So laden Sie Dateien in ein verknüpftes Azure Blob Storage-Konto hoch**
 
 1. Erweitern Sie in **Server-Explorer** nacheinander die Optionen **Azure** und **Data Lake Analytics** und dann Ihr Data Lake Analytics-Konto und die Option **Speicherkonten**. Sie sehen das standardmäßige Data Lake-Speicherkonto und die verknüpften Data Lake-Speicherkonten sowie die verknüpften Azure-Speicherkonten. 
 2. Erweitern Sie das Azure-Speicherkonto.
-3. Klicken Sie mit der rechten Maustaste auf den Container, in den Sie Dateien hochladen möchten, und klicken Sie dann auf **Explorer**.
+3. Klicken Sie mit der rechten Maustaste auf den Container, in den Sie Dateien hochladen möchten, und klicken Sie dann auf **Explorer**. Wenn Sie keinen Container besitzen, müssen Sie zunächst einen mit dem Azure-Portal, Azure PowerShell oder anderen Tools erstellen.
 4. Navigieren Sie zu dem Ordner, in den Sie die Dateien hochladen möchten. 
 5. Klicken Sie mit der rechten Maustaste auf einen leeren Bereich, und klicken Sie dann auf **Hochladen**. 
 
@@ -219,6 +219,10 @@ In Visual Studio wird ein Konto *Lokal* angezeigt, und das Installationsprogramm
 - Für ein bestimmtes Skript: Wenn in Eingabe-/Ausgabepfaden auf einen relativen Pfad verwiesen wird, wird DataRoot nachgeschlagen (sowie der Pfad des Skripts, wenn er zur Eingabe gehört).
 - Auf den Ordner „DataRoot“ wird nicht verwiesen, wenn Sie versuchen, eine Assembly zu registrieren, und dabei einen relativen Pfad verwenden (Weitere Details finden Sie im Abschnitt unter „Verwenden von Assemblys bei lokalen Ausführungen“.)
 
+Das folgende Video veranschaulicht das Feature zum lokalen Ausführen von U-SQL:
+
+>[AZURE.VIDEO usql-localrun]
+
 ### Bekannte Probleme und Einschränkungen
 
 - Die lokale Ausführung von U-SQL unterstützt keine lokalen Abfragen von Dateigruppen. Weitere Informationen finden Sie unter [U-SQL-Dateigruppen](https://msdn.microsoft.com/library/azure/mt621294.aspx). Dies wird in Zukunft behoben.
@@ -263,8 +267,6 @@ Das folgende Verfahren funktioniert nur in Visual Studio 2015. In älteren Versi
         CREATE ASSEMBLY assemblyname FROM @"..\..\path\to\output\.dll";
 3.	Legen Sie Haltepunkte im C#-Code fest.
 4.	Drücken Sie **F5**, um das Skript mit Verweis auf die C#-DLL lokal zu debuggen.  
- 
-
 
 ##Weitere Informationen
 
@@ -353,4 +355,4 @@ Mit dem folgenden PowerShell-Skript werden das Azure Data Lake Analytics-Konto u
     Get-AzureRmDataLakeStoreChildItem -Account $dataLakeStoreName -Path  "/Samples/Data/"
     #endregion
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0114_2016-->

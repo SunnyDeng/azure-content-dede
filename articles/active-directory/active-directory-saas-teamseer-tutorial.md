@@ -10,7 +10,7 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="10/22/2015" 
+    ms.date="01/12/2016" 
     ms.author="markvi" />
 
 #Tutorial: Azure Active Directory-Integration mit TeamSeer
@@ -20,7 +20,7 @@ In diesem Tutorial wird die Integration von Azure und TeamSeer erläutert. Das i
 -   Ein gültiges Azure-Abonnement
 -   Ein TeamSeer-Mandant
   
-Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie TeamSeer zugewiesen haben, mittels einmaliger Anmeldung auf Ihrer TeamSeer-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
+Nach Abschluss dieses Tutorials können sich die TeamSeer zugewiesenen Azure AD-Benutzer mittels einmaliger Anmeldung auf Ihrer TeamSeer-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Alternativ können sie den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
   
 Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
@@ -55,7 +55,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Tea
 
     ![Anwendung aus dem Katalog hinzufügen](./media/active-directory-saas-teamseer-tutorial/IC749322.png "Anwendung aus dem Katalog hinzufügen")
 
-6.  Geben Sie im **Suchfeld** den Suchbegriff **TeamSeer** ein.
+6.  Geben Sie im **Suchfeld** **TeamSeer** ein.
 
     ![Anwendungskatalog](./media/active-directory-saas-teamseer-tutorial/IC789619.png "Anwendungskatalog")
 
@@ -65,7 +65,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Tea
 
 ##Konfigurieren der einmaligen Anmeldung
   
-In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei TeamSeer zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie eine Base-64-codierte Zertifikatsdatei erstellen. Falls Sie mit diesem Verfahren nicht vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (Konvertieren eines binären Zertifikats in eine Textdatei; in englischer Sprache) weitere Informationen.
+In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei TeamSeer zu authentifizieren. Im Rahmen dieses Verfahrens müssen Sie eine Base-64-codierte Zertifikatsdatei erstellen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (Konvertieren eines binären Zertifikats in eine Textdatei; in englischer Sprache) weitere Informationen.
 
 ###So konfigurieren Sie einmaliges Anmelden
 
@@ -77,7 +77,7 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-teamseer-tutorial/IC789628.png "Einmaliges Anmelden konfigurieren")
 
-3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **TeamSeer-Anmelde-URL** die URL im Format "**http://www.teamseer.com/companyid*" ein, und klicken Sie dann auf **Weiter**.
+3.  Geben Sie auf der Seite **App-URL konfigurieren** im Textfeld für die **TeamSeer-Anmelde-URL** die URL im Format „**http://www.teamseer.com/companyid*" ein, und klicken Sie dann auf **Weiter**.
 
     ![App-URL konfigurieren](./media/active-directory-saas-teamseer-tutorial/IC789629.png "App-URL konfigurieren")
 
@@ -114,11 +114,11 @@ In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbund
 
     ![SAML-Einstellungen](./media/active-directory-saas-teamseer-tutorial/IC789638.png "SAML-Einstellungen")
 
-    1.  Geben Sie unter **Test-E-Mail-Adressen** die E-Mail-Adresse des Testbenutzers ein.
+    1.  Geben Sie unter **Test-e-Mail-Adressen** die E-Mail-Adresse des Testbenutzers ein.
     2.  Geben Sie in das Textfeld **Aussteller** die Aussteller-URL des Dienstanbieters ein.
     3.  Klicken Sie auf **Speichern**.
 
-11. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
+11. Wählen Sie im Azure AD-Portal die Bestätigung zur Konfiguration des einmaligen Anmeldens aus, und klicken Sie dann auf **Abschließen**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu schließen.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-teamseer-tutorial/IC789639.png "Einmaliges Anmelden konfigurieren")
 
@@ -141,7 +141,7 @@ Damit sich Azure AD-Benutzer bei TeamSeer anmelden können, müssen sie in TeamS
 
     ![Benutzerdetails](./media/active-directory-saas-teamseer-tutorial/IC789641.png "Benutzerdetails")
 
-    1.  Geben Sie den **Vornamen**, **Nachnamen**, **Benutzernamen (E-Mail-Adresse)** eines gültigen AAD-Benutzerkontos, das Sie bereitstellen möchten, in die entsprechenden Textfelder ein.
+    1.  Geben Sie **Vorname**, **Nachname**, **Benutzername (E-Mail-Adresse)** eines gültigen AAD-Benutzerkontos, das Sie bereitstellen möchten, in die entsprechenden Textfelder ein.
     2.  Klicken Sie auf **Weiter**.
 
 4.  Befolgen Sie den Anweisungen am Bildschirm zum Hinzufügen eines neuen Benutzers. Klicken Sie dann auf **Fertig stellen**.
@@ -166,4 +166,4 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie d
   
 Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich. Weitere Informationen zum Zugriffsbereich finden Sie unter [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0114_2016-->

@@ -5,7 +5,7 @@
 	documentationCenter="java" 
 	authors="rmcmurray" 
 	manager="wpickett" 
-	editor="jimbe"/>
+	editor=""/>
 
 <tags 
 	ms.service="multiple" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="multiple" 
 	ms.devlang="Java" 
 	ms.topic="article" 
-	ms.date="11/30/2015" 
+	ms.date="01/09/2016" 
 	ms.author="robmcm"/>
 
 # Herunterladen des Azure SDK für Java #
@@ -49,50 +49,50 @@ Nachdem das Projekt für die Verwendung von Maven für die Erstellung konfigurie
     <dependency>
         <groupId>com.microsoft.azure</groupId>
         <artifactId>azure-management</artifactId>
-        <version>0.7.0</version>
+        <version>n.n.n</version>
     </dependency>
     <dependency>
         <groupId>com.microsoft.azure</groupId>
         <artifactId>azure-management-compute</artifactId>
-        <version>0.7.0</version>
+        <version>n.n.n</version>
     </dependency>
     <dependency>
         <groupId>com.microsoft.azure</groupId>
         <artifactId>azure-management-network</artifactId>
-        <version>0.7.0</version>
+        <version>n.n.n</version>
     </dependency>
     <dependency>
         <groupId>com.microsoft.azure</groupId>
         <artifactId>azure-management-sql</artifactId>
-        <version>0.7.0</version>
+        <version>n.n.n</version>
     </dependency>
     <dependency>
         <groupId>com.microsoft.azure</groupId>
         <artifactId>azure-management-storage</artifactId>
-        <version>0.7.0</version>
+        <version>n.n.n</version>
     </dependency>
     <dependency>
         <groupId>com.microsoft.azure</groupId>
         <artifactId>azure-management-websites</artifactId>
-        <version>0.7.0</version>
+        <version>n.n.n</version>
     </dependency>
     <dependency>
         <groupId>com.microsoft.azure</groupId>
         <artifactId>azure-media</artifactId>
-        <version>0.6.0</version>
+        <version>n.n.n</version>
     </dependency>
     <dependency>
         <groupId>com.microsoft.azure</groupId>
         <artifactId>azure-servicebus</artifactId>
-        <version>0.7.0</version>
+        <version>n.n.n</version>
     </dependency>
     <dependency>
         <groupId>com.microsoft.azure</groupId>
         <artifactId>azure-serviceruntime</artifactId>
-        <version>0.6.0</version>
+        <version>n.n.n</version>
     </dependency>
 
-**Hinweis:** Ersetzen Sie in jedem `<version>`-Element im vorangegangenen Beispiel die Versionsnummern durch gültige Versionsnummern, die Sie im [Azure Libraries Repository on Maven][] (in englischer Sprache) erhalten.
+**Hinweis:** Ersetzen Sie in jedem `<version>`-Element im vorangegangenen Beispiel den Platzhalter „n.n.n“ durch gültige Versionsnummern, die Sie im [Azure-Bibliothekenrepository auf Maven][] erhalten.
 
 ## Installieren des Azure-Toolkits für Eclipse ##
 
@@ -116,7 +116,7 @@ Im Azure-Toolkit für Eclipse wird die aktuelle Version des Azure SDK verwendet.
 
 [Azure-Toolkit für Eclipse][]
 
-[Installing the Azure Toolkit for Eclipse (in englischer Sprache)][]
+[Installieren des Azure-Toolkits für Eclipse][]
 
 [Creating a Hello World Application for Azure in Eclipse (in englischer Sprache)][]
 
@@ -125,15 +125,15 @@ Weitere Informationen zum Verwenden von Azure mit Java finden Sie im [Azure Java
 <!-- URL List -->
 
 [Azure Java Developer Center]: http://go.microsoft.com/fwlink/?LinkID=699547
-[Azure Libraries Repository on Maven]: http://go.microsoft.com/fwlink/?LinkID=286274
+[Azure-Bibliothekenrepository auf Maven]: http://go.microsoft.com/fwlink/?LinkID=286274
 [Azure-Toolkit für Eclipse]: http://go.microsoft.com/fwlink/?LinkID=699529
 [Creating a Hello World Application for Azure in Eclipse (in englischer Sprache)]: http://go.microsoft.com/fwlink/?LinkID=699533
 [Installing the Azure Toolkit for Eclipse]: http://go.microsoft.com/fwlink/?LinkId=699546
-[Installing the Azure Toolkit for Eclipse (in englischer Sprache)]: http://go.microsoft.com/fwlink/?LinkId=699546
+[Installieren des Azure-Toolkits für Eclipse]: http://go.microsoft.com/fwlink/?LinkId=699546
 [Java Build Path]: http://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2Freference%2Fref-properties-build-path.htm
 [license]: http://www.apache.org/licenses/LICENSE-2.0.html
 [maven-getting-started]: http://go.microsoft.com/fwlink/?LinkID=622998
 [zip-download]: http://go.microsoft.com/fwlink/?LinkId=690320
 [Neuigkeiten im Azure-Toolkit für Eclipse]: http://go.microsoft.com/fwlink/?LinkId=690333
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

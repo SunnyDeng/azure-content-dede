@@ -13,7 +13,7 @@
   ms.topic="article"
   ms.tgt_pltfrm="Azure"
   ms.workload="na"
-  ms.date="12/06/2015"
+  ms.date="01/07/2016"
   ms.author="hascipio; v-divte"/>
 
 # Allgemeine Voraussetzungen für das Erstellen eines Angebots für den Azure Marketplace
@@ -50,4 +50,4 @@ Im nächsten Schritt werden die technischen Voraussetzungen für die einzelnen A
 ## Weitere Informationen
 - [Erste Schritte: Veröffentlichen eines Angebots im Azure Marketplace](marketplace-publishing-getting-started.md)
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0121_2016-->

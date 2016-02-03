@@ -5,7 +5,7 @@
 	documentationCenter="java"
 	authors="rmcmurray"
 	manager="wpickett"
-	editor="jimbe"
+	editor=""
     tags="azure-service-management" />
 
 <tags
@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="Java"
 	ms.topic="article"
-	ms.date="11/19/2015"
+	ms.date="01/09/2016"
 	ms.author="robmcm"/>
 
 # Ausführen eines Java-Anwendungsservers auf einem virtuellen Computer, der mit dem klassischen Bereitstellungsmodell erstellt wurde
@@ -114,7 +114,7 @@ Um von externen Computern aus festzustellen, ob Tomcat ausgeführt wird, müssen
 9. Achten Sie im Bildschirm **Profil** darauf, dass **Domäne**, **Privat** und **Öffentlich** ausgewählt sind, und klicken Sie dann auf **Weiter**. ![Neue eingehende Regel – Profil][NewRuleProfile]
 10. Geben Sie im Bildschirm **Name** einen Namen für die Regel an, beispielsweise **HttpIn** (der Name der Regel muss jedoch nicht mit dem Namen des Endpunkts übereinstimmen). Klicken Sie anschließend auf **Fertig stellen**. ![Neue eingehende Regel – Name][NewRuleName]
 
-An dieser Stelle sollte die Tomcat-Website unter Verwendung einer URL im Format ****http://*your\_DNS\_name*.cloudapp.net** über einen externen Browser sichtbar sein. Dabei ist ***your\_DNS\_name*** der DNS-Name, den Sie beim Erstellen des virtuellen Computers angegeben haben.
+An dieser Stelle sollte die Tomcat-Website unter Verwendung einer URL im Format **http://*your\_DNS\_name*.cloudapp.net** über einen externen Browser sichtbar sein. Dabei ist ***your\_DNS\_name*** der DNS-Name, den Sie beim Erstellen des virtuellen Computers angegeben haben.
 
 ## Überlegungen zum Lebenszyklus von Anwendungen
 * Sie können Ihr eigenes Archiv für Web-Anwendungen (WAR) erstellen und im Ordner **webapps** hinzufügen. Erstellen Sie beispielsweise ein dynamisches JSP-Basiswebprojekt (Java Service Page), und exportieren Sie dieses als WAR-Datei. Kopieren Sie dann die WAR-Datei in den Apache Tomcat-Ordner **webapps** auf dem virtuellen Computer, und führen Sie das Projekt in einem Browser aus.
@@ -146,4 +146,4 @@ Weitere Informationen zu anderen Diensten wie beispielsweise Azure Storage, Serv
 [NewRuleName]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleName.png
 [NewRuleProfile]: ./media/virtual-machines-java-run-tomcat-application-server/NewRuleProfile.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

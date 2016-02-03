@@ -1,18 +1,18 @@
-<properties 
-	pageTitle="End-to-End-Problembehandlung mit Azure-Speichermetriken und -Protokollen sowie AzCopy und Message Analyzer | Microsoft Azure" 
-	description="Ein Lernprogramm zur End-to-End-Problembehandlung mit Azure-Speicheranalyse, AzCopy und Microsoft Message Analyzer" 
-	services="storage" 
-	documentationCenter="dotnet" 
-	authors="tamram" 
-	manager="adinah"/>
+<properties
+	pageTitle="End-to-End-Problembehandlung mit Azure-Speichermetriken und -Protokollen sowie AzCopy und Message Analyzer | Microsoft Azure"
+	description="Ein Lernprogramm zur End-to-End-Problembehandlung mit Azure-Speicheranalyse, AzCopy und Microsoft Message Analyzer"
+	services="storage"
+	documentationCenter="dotnet"
+	authors="tamram"
+	manager="carmonm"/>
 
-<tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="12/01/2015" 
+<tags
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="12/01/2015"
 	ms.author="tamram"/>
 
 # End-to-End-Problembehandlung mit Azure-Speichermetriken und -Protokollen sowie AzCopy und Message Analyzer 
@@ -364,7 +364,5 @@ Weitere Informationen zur Problembehandlung in End-to-End-Szenarien im Azure-Spe
 - [Überwachen eines Speicherkontos](storage-monitor-storage-account.md)
 - [Übertragen von Daten mit dem Befehlszeilenprogramm AzCopy](storage-use-azcopy)
 - [Microsoft Message Analyzer Operating Guide (in englischer Sprache)](http://technet.microsoft.com/library/jj649776.aspx)
- 
- 
 
-<!-----HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0114_2016-->

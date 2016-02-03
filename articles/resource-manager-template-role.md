@@ -1,6 +1,6 @@
 <properties
    pageTitle="Ressourcen-Manager-Vorlage für Rollenzuweisungen | Microsoft Azure"
-   description="Zeigt das Ressourcen-Manager-Schema zum Erstellen einer Rollenzuweisung während der Bereitstellung."
+   description="Zeigt das Ressourcen-Manager-Schema für die Bereitstellung einer Rollenzuweisung über eine Vorlage."
    services="azure-resource-manager"
    documentationCenter="na"
    authors="tfitzmac"
@@ -13,10 +13,10 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="11/10/2015"
+   ms.date="01/04/2016"
    ms.author="tomfitz"/>
 
-# Rollenzuweisungen – Vorlagenschema
+# Vorlagenschema für Rollenzuweisungen
 
 Weist einen Benutzer, eine Gruppe oder einen Dienstprinzipal einer Rolle in einem angegebenen Bereich zu.
 
@@ -44,10 +44,10 @@ In den folgenden Tabellen sind die Werte beschrieben, die Sie im Schema festlege
 | Name | Typ | Erforderlich | Zulässige Werte | Beschreibung |
 | ---- | ---- | -------- | ---------------- | ----------- |
 | Typ | enum | Ja | **Microsoft.Authorization/roleAssignments** | Der zu erstellende Ressourcentyp. |
-| "apiVersion": | enum | Ja | **2015-07-01** | Die API-Version zum Erstellen der Ressource. |  
-| Name | string | Ja | Globally Unique Identifier (GUID) | Ein Bezeichner für die neue Rollenzuweisung |
+| apiVersion | enum | Ja | **2015-07-01** | Die API-Version zum Erstellen der Ressource. |  
+| name | string | Ja | Globally Unique Identifier (GUID) | Ein Bezeichner für die neue Rollenzuweisung |
 | dependsOn | array | Nein | Eine durch Trennzeichen getrennte Liste von Ressourcennamen oder eindeutigen Ressourcenbezeichnern. | Die Auflistung der Ressourcen, von denen diese Rollenzuweisung abhängt. Wenn Sie eine Rolle zuweisen, die auf eine Ressource beschränkt ist, und diese Ressource in derselben Vorlage bereitgestellt wird, nehmen Sie den Ressourcennamen in dieses Element auf, um sicherzustellen, dass die Ressource zuerst bereitgestellt wird. | 
-| Eigenschaften | object | Ja | (siehe unten) | Ein Objekt, das die Rollendefinition, den Prinzipal und den Bereich bezeichnet |  
+| Eigenschaften | Objekt | Ja | (siehe unten) | Ein Objekt, das die Rollendefinition, den Prinzipal und den Bereich bezeichnet |  
 
 ### properties-Objekt
 
@@ -58,7 +58,7 @@ In den folgenden Tabellen sind die Werte beschrieben, die Sie im Schema festlege
 | Bereich | string | Ja | Für eine Ressourcengruppe:<br />**/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}**<br /><br />Für eine Ressource:<br />**/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{provider-namespace}/{resource-type}/{resource-name}** | Der Bereich, für den diese Rollenzuweisung gilt |
 
 
-## Verwenden der gesperrten Ressource
+## Verwenden der Rollenzuweisungsressource
 
 Sie fügen Ihrer Vorlage eine Rollenzuweisung zu, wenn Sie einer Rolle während der Bereitstellung einen Benutzer, eine Gruppe oder einen Dienstprinzipal hinzufügen müssen. Rollenzuweisungen werden von höheren Bereichsebenen geerbt. Wenn Sie also einer Rolle bereits auf Abonnementebene einen Prinzipal hinzugefügt haben, müssen Sie ihn nicht erneut für die Ressourcengruppe oder die Ressource zuordnen.
 
@@ -119,10 +119,17 @@ Das folgende Beispiel weist eine Gruppe zu einer Rolle für die Ressourcengruppe
         "outputs": {}
     }
 
+## Schnellstartvorlagen
+
+Die folgenden Vorlagen zeigen, wie die Rollenzuweisungsressource verwendet wird:
+
+- [Zuweisen einer integrierten Rolle zu einer Ressourcengruppe](https://github.com/Azure/azure-quickstart-templates/tree/master/101-rbac-builtinrole-resourcegroup)
+- [Zuweisen einer integrierten Rolle zu einem vorhandenen virtuellen Computer](https://github.com/Azure/azure-quickstart-templates/tree/master/101-rbac-builtinrole-virtualmachine)
+- [Zuweisen einer integrierten Rolle zu mehreren vorhandenen virtuellen Computer](https://github.com/Azure/azure-quickstart-templates/tree/master/201-rbac-builtinrole-multipleVMs)
 
 ## Nächste Schritte
 
 - Informationen zur Vorlagenstruktur finden Sie unter [Erstellen von Azure-Ressourcen-Manager-Vorlagen](resource-group-authoring-templates.md).
 - Weitere Informationen zur rollenbasierten Zugriffssteuerung finden Sie unter [Rollenbasierte Zugriffssteuerung in Azure Active Directory](active-directory/role-based-access-control-configure.md).
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

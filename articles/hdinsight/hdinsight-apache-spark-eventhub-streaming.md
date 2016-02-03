@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/22/2015" 
+	ms.date="12/29/2015" 
 	ms.author="nitinme"/>
 
 
@@ -95,7 +95,7 @@ In diesem Abschnitt verwenden Sie eine eigenständige lokale Scala-Anwendung, um
 
 ## Aktualisieren der Scala-Streaminganwendung zum Empfangen von Ereignissen
 
-Eine Scala-Beispielanwendung, die das Ereignis empfängt und es an verschiedene Ziele weiterleitet, finden Sie unter [https://github.com/hdinsight/spark-streaming-data-persistence-examples](https://github.com/hdinsight/spark-streaming-data-persistence-examples). Befolgen Sie die unten stehenden Schritte, um die Anwendung zu aktualisieren und die JAR-Ausgabedatei zu erstellen.
+Eine Scala-Beispielanwendung, die das Ereignis empfängt und an verschiedene Ziele weiterleitet, finden Sie unter [https://github.com/hdinsight/spark-streaming-data-persistence-examples](https://github.com/hdinsight/spark-streaming-data-persistence-examples). Befolgen Sie die unten stehenden Schritte, um die Anwendung zu aktualisieren und die JAR-Ausgabedatei zu erstellen.
 
 1. Starten Sie IntelliJ IDEA, und wählen Sie auf dem Startbildschirm **Check out from Version Control**. Klicken Sie dann auf **Git**.
 		
@@ -110,7 +110,7 @@ Eine Scala-Beispielanwendung, die das Ereignis empfängt und es an verschiedene 
 
 	![Projektansicht](./media/hdinsight-apache-spark-eventhub-streaming/project-view.png)
 	
-2. Öffnen Sie die Datei „pom.xml“, und stellen Sie sicher, dass die Spark-Version korrekt ist. Suchen Sie unter dem <properties>-Knoten nach dem folgenden Codeausschnitt, und überprüfen Sie die Spark-Version.
+4. Öffnen Sie die Datei „pom.xml“, und stellen Sie sicher, dass die Spark-Version korrekt ist. Suchen Sie unter dem <properties>-Knoten nach dem folgenden Codeausschnitt, und überprüfen Sie die Spark-Version.
 
 		<scala.version>2.10.4</scala.version>
     	<scala.compat.version>2.10.4</scala.compat.version>
@@ -119,7 +119,7 @@ Eine Scala-Beispielanwendung, die das Ereignis empfängt und es an verschiedene 
 
 	Stellen Sie sicher, dass der Wert für **spark.version** auf **1.5.1** festgelegt ist.
 
-3. Die Anwendung benötigt zwei JAR-Abhängigkeitsdateien:
+5. Die Anwendung benötigt zwei JAR-Abhängigkeitsdateien:
 
 	* **EventHub JAR-Empfängerdatei**. Diese ist erforderlich, damit Spark Nachrichten aus Event Hub empfangen kann. Diese JAR-Datei steht auf dem Spark-Linux-Cluster unter `/usr/hdp/current/spark-client/lib/spark-streaming-eventhubs-example-1.5.1.2.3.2.1-12-jar-with-dependencies.jar` zur Verfügung. Mit pscp können Sie die JAR-Datei auf Ihren lokalen Computer kopieren.
 
@@ -128,22 +128,23 @@ Eine Scala-Beispielanwendung, die das Ereignis empfängt und es an verschiedene 
 		Dabei wird die JAR-Datei aus dem Spark-Cluster auf den lokalen Computer kopiert.
 
 	* **JDBC-JAR-Treiberdatei**. Diese ist erforderlich, um die Nachrichten von Event Hub in eine Azure SQL-Datenbank zu schreiben. Sie können Version 4.1 oder höher der JAR-Datei [hier](https://msdn.microsoft.com/de-DE/sqlserver/aa937724.aspx) herunterladen.
-
-	Fügen Sie der Projektbibliothek einen Verweis auf diese JAR-Dateien hinzu. Führen Sie die folgenden Schritte aus:
-
-	1. Klicken Sie im IntelliJ IDEA-Fenster, in dem die Anwendung geöffnet ist, auf **File**, klicken Sie auf **Project Structure** und dann auf **Libraries**. 
-
-		![Hinzufügen fehlender Abhängigkeiten](./media/hdinsight-apache-spark-eventhub-streaming/add-missing-dependency-jars.png "Hinzufügen fehlender JAR-Abhängigkeitsdateien")
-
-		Klicken Sie auf das Symbol zum Hinzufügen (![Hinzufügen-Symbol](./media/hdinsight-apache-spark-eventhub-streaming/add-icon.png)) und auf **Java**, und navigieren Sie dann zum Speicherort, von dem Sie die Event Hub-JAR-Empfängerdatei heruntergeladen haben. Befolgen Sie die Anweisungen zum Hinzufügen der JAR-Datei in die Projektbibliothek.
-
-	2. Wiederholen Sie den vorherigen Schritt, um auch die JDBC-JAR-Datei der Bibliothek hinzuzufügen.
 	
-		![Hinzufügen fehlender Abhängigkeiten](./media/hdinsight-apache-spark-eventhub-streaming/add-missing-dependency-jars.png "Hinzufügen fehlender JAR-Abhängigkeitsdateien")
 
-	3. Klicken Sie auf **Übernehmen**.
+		Fügen Sie der Projektbibliothek einen Verweis auf diese JAR-Dateien hinzu. Führen Sie die folgenden Schritte aus:
 
-4. Erstellen Sie die JAR-Ausgabedatei. Führen Sie die folgenden Schritte aus.
+		1. Klicken Sie im IntelliJ IDEA-Fenster, in dem die Anwendung geöffnet ist, auf **File**, klicken Sie auf **Project Structure** und dann auf **Libraries**. 
+
+			![Hinzufügen fehlender Abhängigkeiten](./media/hdinsight-apache-spark-eventhub-streaming/add-missing-dependency-jars.png "Hinzufügen fehlender JAR-Abhängigkeitsdateien")
+
+			Klicken Sie auf das Symbol zum Hinzufügen (![Hinzufügen-Symbol](./media/hdinsight-apache-spark-eventhub-streaming/add-icon.png)) und auf **Java**, und navigieren Sie dann zum Speicherort, von dem Sie die Event Hub-JAR-Empfängerdatei heruntergeladen haben. Befolgen Sie die Anweisungen zum Hinzufügen der JAR-Datei in die Projektbibliothek.
+
+		1. Wiederholen Sie den vorherigen Schritt, um auch die JDBC-JAR-Datei der Bibliothek hinzuzufügen.
+	
+			![Hinzufügen fehlender Abhängigkeiten](./media/hdinsight-apache-spark-eventhub-streaming/add-missing-dependency-jars.png "Hinzufügen fehlender JAR-Abhängigkeitsdateien")
+
+		1. Klicken Sie auf **Übernehmen**.
+
+6. Erstellen Sie die JAR-Ausgabedatei. Führen Sie die folgenden Schritte aus.
 	1. Klicken Sie im Dialogfeld **Project Structure** auf **Artifacts** und anschließend auf das Pluszeichen. Klicken Sie im Popupdialogfeld auf **JAR** und anschließend auf **From modules with dependencies**.
 
 		![Erstellen einer JAR-Datei](./media/hdinsight-apache-spark-eventhub-streaming/create-jar-1.png)
@@ -369,4 +370,4 @@ Eine Ausgabe ähnlich der folgenden sollte angezeigt werden:
 [azure-management-portal]: https://manage.windowsazure.com/
 [azure-create-storageaccount]: ../storage-create-storage-account/
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0107_2016-->

@@ -33,4 +33,4 @@ Die Transaktionsreplikation ist eine Technologie, die seit SQL Server 6.5 in SQ
 
 Sie können die Transaktionsreplikation auch zum Migrieren einer Teilmenge Ihrer lokalen Datenbank verwenden. Die Veröffentlichung, die Sie zu Azure SQL-Datenbank replizieren, kann auf eine Teilmenge der Tabellen in der replizierten Datenbank beschränkt werden. Für jede replizierte Tabelle können Sie die Daten außerdem auf eine Teilmenge der Zeilen bzw. eine Teilmenge der Spalten beschränken.
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0114_2016-->

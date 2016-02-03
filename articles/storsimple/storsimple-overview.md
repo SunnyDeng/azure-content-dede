@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD" 
-   ms.date="12/14/2015"
+   ms.date="01/15/2016"
    ms.author="v-sharos@microsoft.com"/>
 
 # StorSimple 8000-Serie: eine Hybridcloud-Speicherlösung
@@ -26,7 +26,7 @@ StorSimple verwendet zur Verwaltung von gespeicherten Daten auf verschiedenen Sp
 
 Mit StorSimple Update 2 können Sie geeignete Volumes als *lokal* kennzeichnen, um sicherzustellen, dass primäre Daten lokal auf dem Gerät verbleiben und nicht in die Cloud ausgelagert werden. Dadurch können Sie für Cloudlatenzen anfällige Workloads, z. B. SQL- und VM-Workloads, auf lokalen Volumes ausführen und die Cloud weiterhin für die Sicherung verwenden. Weitere Informationen zu lokalen Volumes finden Sie unter [Verwalten von Volumes mithilfe des StorSimple Manager-Diensts](storsimple-manage-volumes-u2.md).
 
-Mit Update 2 können Sie zudem virtuelle StorSimple-Geräte erstellen, die die niedrigen Latenzzeiten und die hohe Leistung von Azure-Premium-Speicher nutzen. Weitere Informationen zu virtuellen StorSimple Premium-Geräten finden Sie unter [Bereitstellen und Verwalten eines virtuellen StorSimple-Geräts in Azure](storsimple-virtual-device-u1.md). Informationen zu Azure-Premium-Speicher finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Arbeitslasten auf virtuellen Azure-Computern](storage-premium-storage-preview-portal.md).
+Mit Update 2 können Sie zudem virtuelle StorSimple-Geräte erstellen, die die niedrigen Latenzzeiten und die hohe Leistung von Azure-Premium-Speicher nutzen. Weitere Informationen zu virtuellen StorSimple Premium-Geräten finden Sie unter [Bereitstellen und Verwalten eines virtuellen StorSimple-Geräts in Azure](storsimple-virtual-device-u1.md). Informationen zu Azure-Premium-Speicher finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Arbeitslasten auf virtuellen Azure-Computern](../storage/storage-premium-storage-preview-portal.md).
 
 Zusätzlich zur Speicherverwaltung können Sie mithilfe der StorSimple-Funktionen zum Schutz von Daten bedarfsgesteuerte und geplante Sicherungen erstellen und anschließend lokal oder in der Cloud speichern. Sicherungen erfolgen in Form von inkrementellen Momentaufnahmen, sodass sie schnell erstellt und wiederhergestellt werden können. Cloud-Momentaufnahmen können bei Wiederherstellungen im Notfall extrem wichtig sein, da sie sekundäre Speichersystemen (z. B. Backup auf Bandlaufwerken) ersetzen und es Ihnen ermöglichen, Daten bei Bedarf in Ihrem Rechenzentrum oder an anderen Standorten wiederherzustellen.
 
@@ -64,7 +64,7 @@ Die Microsoft Azure StorSimple-Lösung umfasst die folgenden Komponenten:
 - **Windows PowerShell für StorSimple** – Eine Befehlszeilenschnittstelle, mit der Sie das StorSimple-Gerät verwalten können. Windows PowerShell für StorSimple bietet Features, mit denen Sie Ihr StorSimple-Gerät registrieren, die Netzwerkschnittstelle Ihres Geräts konfigurieren, bestimmte Arten von Updates installieren, Probleme Ihres Geräts durch Zugriff auf eine Supportsitzung beheben und den Gerätestatus ändern können. Sie können auf Windows PowerShell für StorSimple zugreifen, indem Sie eine Verbindung mit der seriellen Konsole herstellen oder Windows PowerShell-Remoting verwenden.
 - **Azure PowerShell-Cmdlets für StorSimple** – eine Auflistung von Windows PowerShell-Cmdlets, die es Ihnen ermöglichen, Servicelevel- und Migrationsaufgaben über die Befehlszeile zu automatisieren. Weitere Informationen zu den Azure PowerShell-Cmdlets für StorSimple finden Sie unter [Cmdlet-Referenz](https://msdn.microsoft.com/library/dn920427.aspx).
 - **StorSimple Snapshot Manager** – Ein MMC-Snap-In, das Volumegruppen und den Volumeschattenkopie-Dienst von Windows verwendet, um anwendungskonsistente Backups zu generieren. Darüber hinaus können Sie den StorSimple-Momentaufnahmen-Manager zum Erstellen von Sicherungszeitplänen und Klonen oder Wiederherstellen von Volumes einsetzen. 
-- **StorSimple-Adapter für SharePoint** – Ein Tool, das den Microsoft Azure StorSimple-Speicher und den Datenschutz auf SharePoint Server-Farmen transparent erweitert, während der Azure StorSimple-Speicher über das SharePoint-Verwaltungsportal angezeigt und verwaltet werden kann.
+- **StorSimple-Adapter für SharePoint** – Ein Tool, das den Microsoft Azure StorSimple-Speicher und den Datenschutz auf SharePoint Server-Farmen transparent erweitert, während der StorSimple-Speicher über das Portal der SharePoint-Zentraladministration angezeigt und verwaltet werden kann.
 
 Das folgende Diagramm bietet eine allgemeine Übersicht über die Architektur und die Komponenten von Microsoft Azure StorSimple.
 
@@ -99,9 +99,9 @@ Das virtuelle Gerät weist folgende Merkmale auf:
 - Sie können eine unbegrenzte Anzahl von virtuellen Geräten in der Cloud erstellen und sie nach Bedarf aktivieren und deaktivieren. 
 - Mit dem virtuellen Gerät können lokale Umgebungen bei der Notfallwiederherstellung und in Entwicklungs- oder Testszenarios simuliert sowie der Abruf aus Sicherungen auf Elementebene unterstützt werden. 
 
-Mit Update 2 und höher steht das virtuelle StorSimple-Gerät in zwei Modellen zur Verfügung: dem 8010-Gerät (früher als Modell 1100 bekannt) und dem 8020-Gerät. Das 8010-Gerät bietet eine maximale Kapazität von 30 TB. Das 8020-Gerät nutzt Azure-Premium-Speicher und umfasst eine maximale Kapazität von 64 TB. (Azure-Premium-Speicher speichert Daten auf SSDs. Beim Standardspeicher werden Daten auf HDDs gespeichert.) Beachten Sie, dass Sie zur Verwendung von Premium-Speicher ein Azure-Premium-Speicherkonto benötigen. Informationen zu Premium-Speicher finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Arbeitslasten auf virtuellen Azure-Computern](storage-premium-storage-preview-portal.md).
+Mit Update 2 und höher steht das virtuelle StorSimple-Gerät in zwei Modellen zur Verfügung: dem 8010-Gerät (früher als Modell 1100 bekannt) und dem 8020-Gerät. Das 8010-Gerät bietet eine maximale Kapazität von 30 TB. Das 8020-Gerät nutzt Azure-Premium-Speicher und umfasst eine maximale Kapazität von 64 TB. (Azure-Premium-Speicher speichert Daten auf SSDs. Beim Standardspeicher werden Daten auf HDDs gespeichert.) Beachten Sie, dass Sie zur Verwendung von Premium-Speicher ein Azure-Premium-Speicherkonto benötigen. Informationen zu Premium-Speicher finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Arbeitslasten auf virtuellen Azure-Computern](../storage/storage-premium-storage-preview-portal.md).
 
-Weitere Informationen zum virtuellen StorSimple-Gerät finden Sie unter [Bereitstellen und Verwalten eines virtuellen StorSimple-Geräts in Azure](storsimple-virtual-device-u1).
+Weitere Informationen zum virtuellen StorSimple-Gerät finden Sie unter [Bereitstellen und Verwalten eines virtuellen StorSimple-Geräts in Azure](storsimple-virtual-device-u1.md).
 
 ## StorSimple Manager-Dienst
 
@@ -278,4 +278,4 @@ Weitere Informationen zur [StorSimple-Sicherheit](storsimple-security.md).
 
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0121_2016-->

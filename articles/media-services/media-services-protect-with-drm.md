@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article" 
-	ms.date="12/17/2015" 
+	ms.date="01/20/2016" 
 	ms.author="juliako"/>
 
 
@@ -30,7 +30,7 @@ Media Services bietet einen Dienst für die Bereitstellung von Microsoft PlayRea
 
 Ab Media Services .NET SDK, Version 3.5.2, ermöglicht Media Services Ihnen auch die Konfiguration der Widevine-Lizenzvorlage und das Abrufen von Widevine-Lizenzen.
 
->[AZURE.NOTE]Die Bereitstellung von Widevine-Lizenzübermittlungsdiensten über Azure Media Services befindet sich in der Vorschau. Weitere Informationen finden Sie in [diesem Blog](http://azure.microsoft.com/blog/announcing-google-widevine-license-delivery-services-public-preview-in-azure-media-services/).
+>[AZURE.NOTE] Die Bereitstellung von Widevine-Lizenzübermittlungsdiensten über Azure Media Services befindet sich in der Vorschau. Weitere Informationen finden Sie in [diesem Blog](https://azure.microsoft.com/blog/announcing-google-widevine-license-delivery-services-public-preview-in-azure-media-services/).
 
 Sie können sich auch von folgenden AMS-Partnern bei der Übermittlung von Widevine-Lizenzen unterstützen lassen: [Axinom](http://www.axinom.com/press/ibc-axinom-drm-6/), [EZDRM](http://ezdrm.com/), [CastLabs](http://castlabs.com/company/partners/azure/). Weitere Informationen finden Sie in den Artikeln zur Integration in [Axinom](media-services-axinom-integration.md) und [castLabs](media-services-castlabs-integration.md).
 
@@ -627,8 +627,10 @@ Das folgende Beispiel veranschaulicht die Funktionen, die im Azure Media Service
 
 ##Weitere Informationen
 
+[CENC mit Multi-DRM und Access Control](media-services-cenc-with-multidrm-access-control.md)
+
 [Konfigurieren der Widevine-Paketerstellung mit AMS](http://mingfeiy.com/how-to-configure-widevine-packaging-with-azure-media-services)
 
-[Ankündigung der öffentlichen Vorschau von Google Widevine-Diensten zur Lizenzbereitstellung in Azure Media Services](http://azure.microsoft.com/blog/announcing-google-widevine-license-delivery-services-public-preview-in-azure-media-services/)
+[Ankündigung der öffentlichen Vorschau von Google Widevine-Diensten zur Lizenzbereitstellung in Azure Media Services](https://azure.microsoft.com/blog/announcing-google-widevine-license-delivery-services-public-preview-in-azure-media-services/)
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -1,19 +1,19 @@
-<properties 
-	pageTitle="Shared Access Signatures: Grundlagen zum SAS-Modell | Microsoft Azure" 
-	description="Erfahren Sie mehr zum Delegieren des Zugriffs auf Azure-Speicherressourcen, einschließlich Blobs, Warteschlangen, Tabellen und Dateien mithilfe von Shared Access Signatures (SAS). Mit SAS können Sie Ihren Speicherkontoschlüssel schützen, während Sie anderen Benutzern Zugriff auf Ressourcen in Ihrem Konto gewähren. Sie können die Berechtigungen, die Sie gewähren, und das für das SAS gültige Intervall steuern. Wenn Sie auch eine gespeicherte Zugriffsrichtlinie einrichten, können Sie die SAS widerrufen, sollten Sie sich um die Sicherheit Ihres Kontos fürchten." 
-	services="storage" 
-	documentationCenter="" 
-	authors="tamram" 
-	manager="adinah" 
-	editor=""/>
+<properties
+	pageTitle="Shared Access Signatures: Grundlagen zum SAS-Modell | Microsoft Azure"
+	description="Erfahren Sie mehr zum Delegieren des Zugriffs auf Azure-Speicherressourcen, einschließlich Blobs, Warteschlangen, Tabellen und Dateien mithilfe von Shared Access Signatures (SAS). Mit SAS schützen Sie Ihren Speicherkontoschlüssel, während Sie anderen Benutzern Zugriff auf Ressourcen in Ihrem Konto gewähren. Sie können die Berechtigungen, die Sie gewähren, und das für das SAS gültige Intervall steuern. Wenn Sie auch eine gespeicherte Zugriffsrichtlinie einrichten, können Sie die SAS widerrufen, sollten Sie sich um die Sicherheit Ihres Kontos fürchten."
+	services="storage"
+	documentationCenter=""
+	authors="tamram"
+	manager="carmonm"
+	editor="tysonn"/>
 
-<tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="dotnet" 
-	ms.topic="article" 
-	ms.date="11/16/2015" 
+<tags
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="11/16/2015"
 	ms.author="tamram"/>
 
 
@@ -50,8 +50,6 @@ Darüber hinaus müssen Sie eine SAS verwenden, um das Quellobjekt in einen Kopi
 - Beim Kopieren eines Blobs in ein anderes Blob, das sich in einem anderen Speicherkonto befindet, müssen Sie eine SAS verwenden, um das Quell-Blob zu authentifizieren. Mit Version 2015-04-05 können Sie optional eine SAS verwenden, um auch das Ziel-Blob zu authentifizieren.
 - Beim Kopieren einer Datei in eine andere Datei, die sich in einem anderen Speicherkonto befindet, müssen Sie eine SAS verwenden, um die Quelldatei zu authentifizieren. Mit Version 2015-04-05 können Sie optional eine SAS verwenden, um auch die Zieldatei zu authentifizieren.
 - Wenn Sie ein Blob in eine Datei oder eine Datei in ein Blob kopieren, müssen Sie eine SAS verwenden, um das Quellobjekt zu authentifizieren. Dies gilt selbst dann, wenn sich die Quell- und Zielobjekte innerhalb desselben Speicherkontos befinden.
-
->[AZURE.NOTE]Die Konto-SAS wird derzeit nur für den Blob- und Dateidienst unterstützt. In naher Zukunft wird sie auch für den Tabellenspeicher- und Warteschlangendienst unterstützt.
 
 ## Arten von Shared Access Signatures
 
@@ -151,7 +149,7 @@ Unten sind einige Beispiele für beide Arten von Shared Access Signatures aufgef
 Zum Ausführen dieser Beispiele müssen Sie diese Pakete herunterladen und darauf verweisen:
 
 - [Azure Storage-Clientbibliothek für .NET](http://www.nuget.org/packages/WindowsAzure.Storage), Version 6.x oder höher (zur Verwendung von Konto-SAS).
-- [Azure-Konfigurations-Manager](http://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager) 
+- [Azure-Konfigurations-Manager](http://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager)
 
 ### Beispiel: Konto-SAS
 
@@ -230,23 +228,23 @@ Im folgenden Codebeispiel wird eine gespeicherte Zugriffsrichtlinie für einen C
     // Parse the connection string for the storage account.
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
         Microsoft.Azure.CloudConfigurationManager.GetSetting("StorageConnectionString"));
-    
+
     // Create the storage account with the connection string.
     CloudStorageAccount storageAccount = CloudStorageAccount.Parse(storageConnectionString);
-       
+
     // Create the blob client object.
     CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
-    
+
     // Get a reference to the container for which shared access signature will be created.
     CloudBlobContainer container = blobClient.GetContainerReference("mycontainer");
     container.CreateIfNotExists();
-    
+
     // Get the current permissions for the blob container.
     BlobContainerPermissions blobPermissions = container.GetPermissions();
 
     // Clear the container's shared access policies to avoid naming conflicts.
     blobPermissions.SharedAccessPolicies.Clear();
-    
+
     // The new shared access policy provides read/write access to the container for 24 hours.
     blobPermissions.SharedAccessPolicies.Add("mypolicy", new SharedAccessBlobPolicy()
     {
@@ -255,14 +253,14 @@ Im folgenden Codebeispiel wird eine gespeicherte Zugriffsrichtlinie für einen C
        SharedAccessExpiryTime = DateTime.UtcNow.AddHours(24),
        Permissions = SharedAccessBlobPermissions.Write | SharedAccessBlobPermissions.Read | SharedAccessBlobPermissions.Create | SharedAccessBlobPermissions.Add
     });
-    
-    // The public access setting explicitly specifies that 
+
+    // The public access setting explicitly specifies that
     // the container is private, so that it can't be accessed anonymously.
     blobPermissions.PublicAccess = BlobContainerPublicAccessType.Off;
-    
+
     // Set the new stored access policy on the container.
     container.SetPermissions(blobPermissions);
-    
+
     // Get the shared access signature token to share with users.
     string sasToken =
        container.GetSharedAccessSignature(new SharedAccessBlobPolicy(), "mypolicy");
@@ -270,15 +268,15 @@ Im folgenden Codebeispiel wird eine gespeicherte Zugriffsrichtlinie für einen C
 Ein Client, der im Besitz der Dienst-SAS ist, kann diese über seinen Code verwenden, um eine Lese- oder Schreibanforderung für ein Blob im Container zu authentifizieren. Im folgenden Code wird das SAS-Token genutzt, um ein neues Blockblob im Container zu erstellen. Ändern Sie den Code, um Ihren eigenen Kontonamen zu verwenden:
 
     Uri blobUri = new Uri("https://<myaccount>.blob.core.windows.net/mycontainer/myblob.txt");
-    
+
     // Create credentials with the SAS token. The SAS token was created in previous example.
     StorageCredentials credentials = new StorageCredentials(sasToken);
-    
+
     // Create a new blob.
     CloudBlockBlob blob = new CloudBlockBlob(blobUri, credentials);
-    
-    // Upload the blob. 
-    // If the blob does not yet exist, it will be created. 
+
+    // Upload the blob.
+    // If the blob does not yet exist, it will be created.
     // If the blob does exist, its existing content will be overwritten.
     using (var fileStream = System.IO.File.OpenRead(@"c:\Temp\myblob.txt"))
     {
@@ -312,7 +310,7 @@ Shared Access Signatures sind nützlich für die Vergabe eingeschränkter Berech
 
 ## Nächste Schritte ##
 
-- [Shared Access Signatures, Teil 2: Erstellen und Verwenden einer SAS mit dem Blobdienst](storage-dotnet-shared-access-signature-part-2.md)
+- [Shared Access Signatures, Teil 2: Erstellen und Verwenden einer SAS mit Blob Storage](storage-dotnet-shared-access-signature-part-2.md)
 - [Verwenden des Azure-Dateispeichers unter Windows](storage-dotnet-how-to-use-files.md)
 - [Verwalten des Zugriffs auf Azure Storage-Ressourcen](storage-manage-access-to-resources.md)
 - [Delegieren des Zugriffs mit einer Shared Access Signature](http://msdn.microsoft.com/library/azure/ee395415.aspx)
@@ -320,7 +318,4 @@ Shared Access Signatures sind nützlich für die Vergabe eingeschränkter Berech
 [sas-storage-fe-proxy-service]: ./media/storage-dotnet-shared-access-signature-part-1/sas-storage-fe-proxy-service.png
 [sas-storage-provider-service]: ./media/storage-dotnet-shared-access-signature-part-1/sas-storage-provider-service.png
 
-
- 
-
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0114_2016-->

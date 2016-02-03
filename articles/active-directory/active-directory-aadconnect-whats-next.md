@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/01/2015"
+	ms.date="01/11/2016"
 	ms.author="billmath"/>
 
 # Nächste Schritte und Verwalten von Azure AD Connect
@@ -69,4 +69,4 @@ Stagingmodus aktivieren | Hiermit können Sie Informationen bereitstellen, die s
 ## Nächste Schritte
 Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

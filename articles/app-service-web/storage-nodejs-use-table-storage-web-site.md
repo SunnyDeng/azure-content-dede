@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Node.js-Web-App mit Azure-Tabellendienst"
-	description="In diesem Tutorial erfahren Sie, wie Sie den Azure-Tabellendienst zum Speichern von Daten aus einer Node.js-Anwendung verwenden können, die in Azure App Service-Web-Apps gehostet wird."
+	description="In diesem Tutorial erfahren Sie, wie Sie den Azure-Tabellendienst verwenden können, um Daten aus einer, in Azure App Service-Web-Apps gehosteten, Node.js-Anwendung, zu speichern."
 	tags="azure-portal"
 	services="app-service\web, storage"
 	documentationCenter="nodejs"
@@ -14,10 +14,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="nodejs"
 	ms.topic="article"
-	ms.date="11/20/2015"
+	ms.date="01/20/2016"
 	ms.author="robmcm"/>
-
-
 
 # Node.js-Web-App mit Azure-Tabellendienst
 
@@ -41,7 +39,6 @@ Hier sehen Sie die erstellte Anwendung:
 
 >[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
-
 ## Voraussetzungen
 
 Bevor Sie diesen Artikel durcharbeiten, sollten Sie sicherstellen, dass Folgendes installiert ist:
@@ -49,7 +46,6 @@ Bevor Sie diesen Artikel durcharbeiten, sollten Sie sicherstellen, dass Folgende
 * [node], Version 0.10.24 oder höher
 
 * [Git]
-
 
 [AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
@@ -293,7 +289,7 @@ Ein *Controller* verarbeitet HTTP-Anforderungen und rendert die HTML-Antwort.
 		  },
 
 		  addTask: function(req,res) {
-		    var self = this
+		    var self = this;
 		    var item = req.body.item;
 		    self.task.addItem(item, function itemAdded(error) {
 		      if(error) {
@@ -501,7 +497,6 @@ In diesem Schritt laden Sie eine Datei mit Informationen zu Ihrem Abonnement her
 	Dieser Befehl startet einen Browser und navigiert zur Downloadseite. Melden Sie sich bei entsprechender Aufforderung mit dem Konto an, dass Ihrem Azure-Abonnement zugeordnet ist.
 
 	<!-- ![The download page][download-publishing-settings] -->
-
 	Der Dateidownload beginnt automatisch. Klicken Sie andernfalls auf den Link oben auf der Seite, um die Datei manuell herunterzuladen. Speichern Sie die Datei, und notieren Sie den Dateipfad.
 
 2. Geben Sie den folgenden Befehl ein, um die Einstellungen zu importieren:
@@ -602,10 +597,11 @@ Die Schritte in diesem Artikel beschreiben zwar die Verwendung des Tabellendiens
 ## Änderungen
 * Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 
+<!-- URLs -->
+
 [Erstellen und Bereitstellen einer Node.js-Web-App in Azure App Service]: web-sites-nodejs-develop-deploy-mac.md
 [Continuous deployment using GIT in Azure App Service]: web-sites-publish-source-control.md
 [Azure Developer Center]: /develop/nodejs/
-
 
 [node]: http://nodejs.org
 [Git]: http://git-scm.com
@@ -625,6 +621,9 @@ Die Schritte in diesem Artikel beschreiben zwar die Verwendung des Tabellendiens
 
 [Azure Portal]: https://portal.azure.com
 
+[Create and deploy a Node.js application to an Azure Web Site]: web-sites-nodejs-develop-deploy-mac.md
+ 
+<!-- Image References -->
 
 [node-table-finished]: ./media/storage-nodejs-use-table-storage-web-site/table_todo_empty.png
 [node-table-list-items]: ./media/storage-nodejs-use-table-storage-web-site/table_todo_list.png
@@ -633,13 +632,9 @@ Die Schritte in diesem Artikel beschreiben zwar die Verwendung des Tabellendiens
 [portal-storage-account]: ./media/storage-nodejs-use-table-storage-web-site/new-storage.png
 [portal-quick-create-storage]: ./media/storage-nodejs-use-table-storage-web-site/quick-storage.png
 [portal-storage-access-keys]: ./media/storage-nodejs-use-table-storage-web-site/manage-access-keys.png
-
 [go-to-dashboard]: ./media/storage-nodejs-use-table-storage-web-site/go_to_dashboard.png
 [web-configure]: ./media/storage-nodejs-use-table-storage-web-site/sql-task-configure.png
 [app-settings-save]: ./media/storage-nodejs-use-table-storage-web-site/savebutton.png
 [app-settings]: ./media/storage-nodejs-use-table-storage-web-site/storage-tasks-appsettings.png
 
-[Create and deploy a Node.js application to an Azure Web Site]: web-sites-nodejs-develop-deploy-mac.md
- 
-
-<!----HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0121_2016-->

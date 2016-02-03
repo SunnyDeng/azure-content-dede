@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/29/2015" 
+	ms.date="01/10/2016" 
 	ms.author="genemi"/>
 
 
@@ -51,7 +51,7 @@ Dieser Abschnitt enthält Links zu Themen mit Codebeispielen für Clientprogramm
 | Sprache | Kurzes Beispiel | Beispiel für Wiederholung | Relational in objektorientiert |
 | :-- | :-- | :-- | :-- |
 | Node.js | [Tedious](sql-database-develop-nodejs-simple-linux.md) | . | . |
-| Python | [FreeTDS, pymssql](sql-database-develop-python-simple-unbutu-linux.md) | . | . |
+| Python | [FreeTDS, pymssql](sql-database-develop-python-simple-ubuntu-linux.md) | . | . |
 | Ruby | [FreeTDS, TinyTDS](sql-database-develop-ruby-simple-linux.md) | . | . |
 
 
@@ -87,11 +87,11 @@ Dieser Abschnitt enthält Links zu Themen mit Codebeispielen für Clientprogramm
 
 
 - [Downloads von SDKs und Tools für zahlreiche Sprachen und Plattformen](http://azure.microsoft.com/downloads/#cmd-line-tools)
-- [Connection Libraries for SQL Database and SQL Server](sql-database-libraries.md) (Verbindungsbibliotheken für SQL-Datenbanken und SQL Server, in englischer Sprache)
+- [Connection Libraries for SQL Database and SQL Server (Verbindungsbibliotheken für SQL-Datenbanken und SQL Server, in englischer Sprache)](sql-database-libraries.md)
 - [Liste mit numerischem Code für vorübergehende Fehler](sql-database-develop-error-messages.md#bkmk_connection_errors)<br/>&nbsp;
 - [Azure SQL-Datenbankentwicklung: Themen zur Vorgehensweise](http://msdn.microsoft.com/library/azure/ee621787.aspx)
 - [Verbindungen mit SQL-Datenbanken: Wichtige Empfehlungen](sql-database-connect-central-recommendations.md)
-- [Create your first Azure SQL Database](sql-database-get-started.md) (Erstellen einer ersten Azure SQL-Datenbank, in englischer Sprache)
+- [Create your first Azure SQL Database (Erstellen einer ersten Azure SQL-Datenbank, in englischer Sprache)](sql-database-get-started.md)
 - [Entity Framework 6 hier, EF 7 auf GitHub](http://entityframework.codeplex.com/)
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0114_2016-->

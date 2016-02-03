@@ -27,7 +27,7 @@ Der erste Schritt umfasst die Einrichtung des Dienstnamespace und das Abrufen ei
 
 ### So erstellen Sie einen Dienstnamespace und rufen einen SAS-Schlüssel an
 
-1. Um einen Namespace im [klassischen Azure-Portal][] zu erstellen, führen Sie die Schritte unter [Erstellen oder Ändern eines Service Bus-Dienstnamespace](https://msdn.microsoft.com/library/hh690931.aspx) aus.
+1. Rufen Sie zum Erstellen eines Dienstnamespace das [klassische Azure-Portal][] auf. Klicken Sie auf der linken Seite auf **Service Bus** und anschließend auf **Erstellen**. Geben Sie einen Namen für den Namespace ein, und klicken Sie auf das Häkchen.
 
 2. Klicken Sie im Hauptfenster des Portals auf den Namen des Dienstnamespace, den Sie im vorherigen Schritt erstellt haben.
 
@@ -570,7 +570,7 @@ namespace Microsoft.ServiceBus.Samples
 
 Führen Sie nach dem Erstellen der Projektmappe Folgendes aus, um die Anwendung auszuführen:
 
-1. Führen Sie den Dienst an einer Eingabeaufforderung aus (ImageListener\\bin\\Debug\\ImageListener.exe).
+1. Führen Sie den Dienst an einer Eingabeaufforderung aus (ImageListener\bin\Debug\ImageListener.exe).
 
 2. Kopieren Sie die Adresse aus der Eingabeaufforderung in einen Browser, um das Bild anzuzeigen.
 
@@ -582,6 +582,7 @@ Da Sie jetzt eine Anwendung erstellt haben, die den Service Bus Relay-Dienst ver
 
 - [Verwenden des Service Bus Relay-Diensts](service-bus-dotnet-how-to-use-relay.md)
 
+[klassische Azure-Portal]: http://manage.windowsazure.com
 [klassischen Azure-Portal]: http://manage.windowsazure.com
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0121_2016-->

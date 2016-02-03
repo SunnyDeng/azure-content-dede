@@ -14,7 +14,7 @@ ms.service="virtual-machines"
  ms.topic="article"
  ms.tgt_pltfrm="vm-multiple"
  ms.workload="infrastructure-services"
- ms.date="12/11/2015"
+ ms.date="01/05/2016"
  ms.author="cynthn"/>
 
 # Größen für virtuelle Computer
@@ -33,10 +33,7 @@ Die Standardgrößen bestehen aus mehreren Serien: A, D, DS, G und GS. Beachten 
 
 *   Die Dv2-Serie, eine Nachfolgerin der ursprünglichen D-Serie, hat eine leistungsfähigere CPU. Die CPU der Dv2-Serie ist ca. 35 % schneller als die CPU der D-Serie. Sie basiert auf der neuesten Generation des 2,4-GHz-Intel Xeon ® E5-2673 v3-Prozessors (Haswell) und kann mit der Intel Turbo Boost Technology 2.0 bis auf 3,2 GHz gebracht werden. Der Dv2-Serie hat die gleichen Arbeitsspeicher- und Datenträgerkonfigurationen wie die D-Serie.
 
-    Die regionale Verfügbarkeit der Dv2-Serie basiert auf diesem Zeitplan: Okt. 2015: USA, Osten 2; USA, Mitte; USA, Norden-Mitte; USA, Westen Nov. 2015: USA, Osten; Europa, Norden; Europa, Westen Jan. 2016: USA, Süden-Mitte; Asien-Pazifik, Osten; Asien-Pazifik, Südosten; Japan, Osten; Japan, Westen; Australien, Osten; Australien, Südosten; Brasilien, Süden
-
-
-*   Virtuelle Computer der G-Serie sind am größten und bieten die beste Leistung. Sie werden auf Hosts mit Prozessoren der Intel Xeon E5 V3-Familie ausgeführt.
+*   Virtuelle Computer der G-Serie bieten den meisten Arbeitsspeicher und werden auf Hosts mit Prozessoren der Intel Xeon E5 V3-Familie ausgeführt.
 
 *   Virtuelle Computer der DS- und der GS-Serie können Premium-Speicher nutzen, der Hochleistungsspeicher mit geringer Latenz für E/A-intensive Workloads bietet. Diese virtuellen Computer nutzen Solid State Drives (SSDs) zum Hosten der Datenträger eines virtuellen Computers und stellen zudem einen lokalen SSD-Datenträgercache bereit. Premium-Speicher ist in bestimmten Regionen verfügbar. Nähere Informationen finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Arbeitslasten auf virtuellen Azure-Computern](../storage-premium-storage-preview-portal.md).
 
@@ -45,13 +42,36 @@ Die Größe des virtuellen Computers wirkt sich auf den Preis aus. Die Größe b
 Die folgenden Überlegungen können Ihnen bei der Entscheidung über die Größe behilflich sein:
 
 
-*   Einige der physischen Hosts in Azure-Rechenzentren unterstützen möglicherweise keine der größeren VM-Größen, z. B. A5 bis A11. Daher wird möglicherweise die Fehlermeldung **Fehler beim Konfigurieren des virtuellen Computers<machine name>** oder **Fehler beim Erstellen des virtuellen Computers<machine name>** beim Ändern der Größe eines vorhandenen virtuellen Computers, beim Erstellen eines neuen virtuellen Computers in einem virtuellen Netzwerk, das vor dem 16. April 2013 erstellt wurde, oder beim Hinzufügen eines neuen virtuellen Computers zu einem vorhandenen Clouddienst angezeigt. Problemumgehungen für die einzelnen Bereitstellungsszenarios finden Sie unter [Error: “Failed to configure virtual machine”](https://social.msdn.microsoft.com/Forums/9693f56c-fcd3-4d42-850e-5e3b56c7d6be/error-failed-to-configure-virtual-machine-with-a5-a6-or-a7-vm-size?forum=WAVirtualMachinesforWindows) (in englischer Sprache) im Supportforum.  
+* Die Größen A8 bis A11 werden auch als *rechenintensive Instanzen* bezeichnet. Die Hardware, auf der diese Größen ausgeführt werden, wurde für rechenintensive Anwendungen mit hoher Netzwerkauslastung konzipiert und optimiert. Hierzu zählen beispielsweise HPC-Clusteranwendungen (High Performance Computing), Modellierung und Simulationen. Detaillierte Informationen und Überlegungen zum Verwenden dieser Größen finden Sie unter [Informationen zu den rechenintensiven A8-, A9-, A10- und A11-Instanzen](virtual-machines-a8-a9-a10-a11-specs.md).
 
-*   Die VM-Größen A8/A10 und A9/A11 haben die gleiche physische Kapazität. Die VM-Instanzen A8 und A9 umfassen einen zusätzlichen Netzwerkadapter, der mit einem RDMA (Remote Direct Memory Access)-Netzwerk für die schnelle Kommunikation zwischen virtuellen Computern verbunden ist. Die A8- und A9-Instanzen wurden für High Performance Computing-Anwendungen entwickelt, die während der Ausführung eine konstante Kommunikation mit niedriger Latenz zwischen den Knoten erfordern, z. B. MPI (Message Passing Interface)-Anwendungen. Die VM-Instanzen A10 und A11 enthalten keinen zusätzlichen Netzwerkadapter. Die A10- und A11-Instanzen sind für High Performance Computing-Anwendungen vorgesehen, die keine konstante Kommunikation mit niedriger Latenz zwischen den Knoten erfordern, auch bekannt als parametrische oder hochgradig parallele Anwendungen.
 
 *	Die Serien Dv2, D, G sowie deren DS/GS-Entsprechungen eignen sich ideal für Clientanwendungen, die schnellere CPUs oder bessere lokale Datenträgerleistung erfordern oder einen höheren Speicherbedarf haben. Sie bieten eine leistungsfähige Kombination für viele Anwendungen für den Unternehmenseinsatz.
 
+*   Einige der physischen Hosts in Azure-Rechenzentren unterstützen möglicherweise keine der größeren VM-Größen, z. B. A5 bis A11. Daher wird möglicherweise die Fehlermeldung **Fehler beim Konfigurieren des virtuellen Computers<machine name>** oder **Fehler beim Erstellen des virtuellen Computers<machine name>** beim Ändern der Größe eines vorhandenen virtuellen Computers, beim Erstellen eines neuen virtuellen Computers in einem virtuellen Netzwerk, das vor dem 16. April 2013 erstellt wurde, oder beim Hinzufügen eines neuen virtuellen Computers zu einem vorhandenen Clouddienst angezeigt. Problemumgehungen für die einzelnen Bereitstellungsszenarios finden Sie unter [Error: “Failed to configure virtual machine”](https://social.msdn.microsoft.com/Forums/9693f56c-fcd3-4d42-850e-5e3b56c7d6be/error-failed-to-configure-virtual-machine-with-a5-a6-or-a7-vm-size?forum=WAVirtualMachinesforWindows) (in englischer Sprache) im Supportforum.
 
+
+## Überlegungen zur Leistung
+
+Wir haben das Konzept der Azure-Berechnungseinheit ACU (Azure Compute Unit) erstellt, um eine Möglichkeit zum Vergleichen der Rechenleistung (CPU) zwischen den Azure-SKUs zu ermöglichen. Auf diese Weise können Sie leicht feststellen, welche SKU Ihren Leistungsanforderungen am ehesten entspricht. Zurzeit ist der ACU-Wert auf einem kleinen virtuellen Computer (Standard\_A1) auf den Standardwert 100 festgelegt, und an den übrigen SKUs kann ungefähr abgelesen werden, wie viel schneller die jeweilige SKU einen Standard-Benchmarktest ausführen kann.
+
+>[AZURE.IMPORTANT]Die ACU ist nur ein Richtwert. Die Ergebnisse für Ihre Workload können abweichen.
+
+<br>
+
+|SKU-Familie |ACU/Kern |
+|---|---|
+|[Standard\_A0 (sehr klein)](#standard-tier-a-series) |50 |
+|[Standard\_A1-4 (klein – groß)](#standard-tier-a-series) |100 |
+|[Standard\_A5-7](#standard-tier-a-series) |100 |
+|[A8-A11](#standard-tier-a-series) |225 *|
+|[D1-14](#standard-tier-d-series) |160 |
+|[D1-14v2](#standard-tier-dv2-series) |210 - 250 *|
+|[DS1-14](#standard-tier-ds-series) |160 |
+|[G1-5](#standard-tier-g-series) |180 - 240 *|
+|[GS1-5](#standard-tier-gs-series) |180 - 240 *|
+
+
+Mit * gekennzeichnete ACUs verwenden die Intel® Turbo-Technologie, um die CPU-Frequenz zu erhöhen eine Leistungssteigerung zu erzielen. Das Maß der Leistungssteigerung variiert basierend auf der Größe und Workload des virtuellen Computers sowie auf anderen Workloads, die auf dem gleichen Host ausgeführt werden.
 
 
 
@@ -60,6 +80,8 @@ Die folgenden Überlegungen können Ihnen bei der Entscheidung über die Größe
 In den folgenden Tabellen sind die Größe und die von den einzelnen Größen bereitgestellte Kapazität aufgeführt.
 
 >[AZURE.NOTE]Die Speicherkapazität wird unter Verwendung von 1024^3 Bytes als Maßeinheit für GB dargestellt. Dies wird manchmal als Gibibyte oder Binärdefinition (bzw. Definition zur Basis 2) bezeichnet. Denken Sie beim Vergleichen von Größen, die andere Basissysteme verwenden, jedoch daran, dass eine als Binärwert angegebene Größe möglicherweise kleiner als ein Dezimalwert zur Basis 10 erscheint (z. B. 1 GB), das Binärsystem jedoch mehr Kapazität als das Dezimalsystem bietet, da 1024^3 größer als 1000^3 ist.
+
+<br>
 
 
 
@@ -85,10 +107,18 @@ Im klassischen Bereitstellungsmodell unterscheiden sich einige VM-Größen in Po
 |Standard\_A5|2|14 GB|1|Temporär = 135 GB |4|4 x 500|
 |Standard\_A6|4|28 GB|2|Temporär = 285 GB |8|8 x 500|
 |Standard\_A7|8|56 GB|4|Temporär = 605 GB |16|16 x 500|
-|Standard\_A8|8|56 GB|2| Temporär = 382 GB. Hinweis: Weitere Informationen und Überlegungen zum Verwenden dieser Größe finden Sie unter [Informationen zu den rechenintensiven A8-, A9-, A10- und A11-Instanzen](http://go.microsoft.com/fwlink/p/?linkid=328042). |16|16 x 500|
-|Standard\_A9|16|112 GB|4| Temporär = 382 GB. Hinweis: Weitere Informationen und Überlegungen zum Verwenden dieser Größe finden Sie unter [Informationen zu den rechenintensiven A8-, A9-, A10- und A11-Instanzen](http://go.microsoft.com/fwlink/p/?linkid=328042). |16|16 x 500|
-|Standard\_A10|8|56 GB|2| Temporär = 382 GB. Hinweis: Weitere Informationen und Überlegungen zum Verwenden dieser Größe finden Sie unter [Informationen zu den rechenintensiven A8-, A9-, A10- und A11-Instanzen](http://go.microsoft.com/fwlink/p/?linkid=328042). |16|16 x 500|
-|Standard\_A11|16|112 GB|4| Temporär = 382 GB. Hinweis: Weitere Informationen und Überlegungen zum Verwenden dieser Größe finden Sie unter [Informationen zu den rechenintensiven A8-, A9-, A10- und A11-Instanzen](http://go.microsoft.com/fwlink/p/?linkid=328042). |16|16 x 500|
+
+
+## Tarif „Standard“: A-Serie – rechenintensive Instanzen
+
+Hinweis: Informationen und Überlegungen zum Verwenden dieser Größen finden Sie unter [Informationen zu den rechenintensiven A8-, A9-, A10- und A11-Instanzen](virtual-machines-a8-a9-a10-a11-specs.md).
+
+|Größe |CPU-Kerne|Arbeitsspeicher|Netzwerkkarten (max.)|Maximale Datenträgergröße|Max. Datenträger (jeweils 1023 GB)|Max. IOPS (500 pro Datenträger)|
+|---|---|---|---|---|---|---|
+|Standard\_A8|8|56 GB|2| Temporär = 382 GB |16|16 x 500|
+|Standard\_A9|16|112 GB|4| Temporär = 382 GB |16|16 x 500|
+|Standard\_A10|8|56 GB|2| Temporär = 382 GB |16|16 x 500|
+|Standard\_A11|16|112 GB|4| Temporär = 382 GB |16|16 x 500|
 
 ## Standard-Ebene: D-Serie
 
@@ -159,4 +189,4 @@ Im klassischen Bereitstellungsmodell unterscheiden sich einige VM-Größen in Po
 
 [Informationen zu den rechenintensiven A8-, A9-, A10- und A11-Instanzen](virtual-machines-a8-a9-a10-a11-specs.md)
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0107_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="dotnet" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="09/22/2015" 
+	ms.date="01/08/2016" 
 	ms.author="tdykstra"/>
 
 # Nutzen einer API-App in Azure App Service aus einem .NET-Client 
@@ -207,4 +207,4 @@ Um weitere Codebeispiele für den Aufruf einer API-App aus einem .NET-Client zu 
 Informationen zur Authentifizierung in API-Apps finden Sie unter [Authentifizierung für API-Apps und mobile Apps in Azure App Service](../app-service/app-service-authentication-overview.md).
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

@@ -23,7 +23,7 @@
 4. Geben Sie auf der Seite **Netzwerkschnittstellen** die festen IP-Adressen für Controller 0 und Controller 1 an. Wenn die DATA 0-Schnittstelle für IPv4 konfiguriert wurde, müssen die festen IP-Adressen im IPv4-Format angegeben werden. Wenn Sie ein Präfix für die IPv6-Konfiguration angegeben haben, werden die festen IP-Adressen in diesen Feldern automatisch mit Daten aufgefüllt.
 
 
-	> [AZURE.NOTE]
+	> [AZURE.NOTE] 
  	> 
  	> - Die festen IP-Adressen des Controllers müssen freie IP-Adressen in dem Subnetz sein, auf das die IP-Adresse des Geräts zugreifen kann.
  	> - Die festen IP-Adressen für den Controller werden dazu verwendet, die Updates für das Gerät vorzunehmen. Daher ist es erforderlich, dass die festen IP-Adressen routingfähig und für Verbindungen mit dem Internet geeignet sind.
@@ -32,10 +32,10 @@
 
 5. Klicken Sie auf das Häkchensymbol ![StorSimple, Häkchensymbol](./media/storsimple-complete-minimum-device-setup/HCS_CheckIcon-include.png). Sie gelangen zurück auf die Seite **Schnellstart** des Geräts.
 
- >[AZURE.NOTE]Alle anderen Geräteeinstellungen können über die Seite **Konfigurieren** geändert werden.
+ >[AZURE.NOTE] Alle anderen Geräteeinstellungen können über die Seite **Konfigurieren** geändert werden.
 
 ![Video verfügbar](./media/storsimple-complete-minimum-device-setup/Video_icon.png) **Video verfügbar**
 
-Sie können sich [hier](http://azure.microsoft.com/documentation/videos/minimum-storsimple-device-setup/) ein Video anschauen, in dem die mindestens erforderliche Gerätekonfiguration demonstriert wird.
+Sie können sich [hier](https://azure.microsoft.com/documentation/videos/minimum-storsimple-device-setup/) ein Video anschauen, in dem die mindestens erforderliche Gerätekonfiguration demonstriert wird.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

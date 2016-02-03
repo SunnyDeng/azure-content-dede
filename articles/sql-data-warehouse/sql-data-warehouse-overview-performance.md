@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="11/23/2015"
-   ms.author="barbkess;JRJ@BigBangData.co.uk;mausher;nicw"/>
+   ms.date="01/08/2016"
+   ms.author="mausher;barbkess;jrj;nicw;sonyama"/>
 
 # Übersicht über Leistung und Skalierbarkeit
 Durch das Verlagern des Data Warehouse in die Cloud müssen Sie nicht mehr mit Low-Level-Hardwareprobleme befassen. Vorbei sind die Zeiten, in denen Sie die Art der Prozessoren, die Menge des Arbeitsspeichers oder den Speichertyp ermitteln mussten, um eine hohe Leistung des Data Warehouse zu erreichen. Stattdessen stellt SQL Data Warehouse Ihnen diese Frage: Wie schnell möchten Sie Ihre Daten analysieren?
@@ -69,7 +69,7 @@ Anleitungen zum Erstellen Ihrer SQL Data Warehouse-Lösung finden Sie im Artikel
 [Leistung und Skalierbarkeit]: sql-data-warehouse-performance-scale.md
 [Parallelitätsmodell]: sql-data-warehouse-develop-concurrency.md
 [Entwerfen von Tabellen]: sql-data-warehouse-develop-table-design.md
-[Auswählen eines Hashverteilungsschlüssels für die Tabelle]: sql-data-warehouse-develop-hash-distribution-key
+[Auswählen eines Hashverteilungsschlüssels für die Tabelle]: sql-data-warehouse-develop-hash-distribution-key.md
 [Statistiken zum Verbessern der Leistung]: sql-data-warehouse-develop-statistics.md
 [Entwicklungsübersicht]: sql-data-warehouse-overview-develop.md
 
@@ -77,4 +77,4 @@ Anleitungen zum Erstellen Ihrer SQL Data Warehouse-Lösung finden Sie im Artikel
 
 <!--Other web references-->
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0114_2016-->

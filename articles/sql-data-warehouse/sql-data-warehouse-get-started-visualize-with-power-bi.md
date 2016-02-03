@@ -13,8 +13,8 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="01/04/2016"
-   ms.author="lodipalm" />
+   ms.date="01/07/2016"
+   ms.author="lodipalm;barbkess;sonyama" />
 
 # Visualisieren von Daten mit Power BI
 
@@ -88,18 +88,18 @@ Sie können Ihren Fortschritt jederzeit speichern, indem Sie auf **Datei** und a
 Nachdem Sie sich schon etwas mit den Beispieldaten vertraut gemacht haben, können Sie sich nun mit der [Entwicklung][], dem [Laden][] oder der [Migration][] befassen.
 
 <!--Image references-->
-[1]:./media/sql-data-warehouse-get-started-visualize-with-power-bi/pbi-find-database.png
-[2]:./media/sql-data-warehouse-get-started-visualize-with-power-bi/pbi-button.png
-[3]:./media/sql-data-warehouse-get-started-visualize-with-power-bi/pbi-connect-to-azure.png
-[4]:./media/sql-data-warehouse-get-started-visualize-with-power-bi/pbi-sign-in.png
-[5]:./media/sql-data-warehouse-get-started-visualize-with-power-bi/pbi-open-adventureworks.png
-[6]:./media/sql-data-warehouse-get-started-visualize-with-power-bi/pbi-aggregatesales.png
-[7]:./media/sql-data-warehouse-get-started-visualize-with-power-bi/pbi-map.png
-[8]:./media/sql-data-warehouse-get-started-visualize-with-power-bi/pbi-chooseaxis.png
-[9]:./media/sql-data-warehouse-get-started-visualize-with-power-bi/pbi-bar.png
-[10]:./media/sql-data-warehouse-get-started-visualize-with-power-bi/pbi-prepare-line.png
-[11]:./media/sql-data-warehouse-get-started-visualize-with-power-bi/pbi-line.png
-[12]:./media/sql-data-warehouse-get-started-visualize-with-power-bi/pbi-save.png
+[1]: ./media/sql-data-warehouse-get-started-visualize-with-power-bi/pbi-find-database.png
+[2]: ./media/sql-data-warehouse-get-started-visualize-with-power-bi/pbi-button.png
+[3]: ./media/sql-data-warehouse-get-started-visualize-with-power-bi/pbi-connect-to-azure.png
+[4]: ./media/sql-data-warehouse-get-started-visualize-with-power-bi/pbi-sign-in.png
+[5]: ./media/sql-data-warehouse-get-started-visualize-with-power-bi/pbi-open-adventureworks.png
+[6]: ./media/sql-data-warehouse-get-started-visualize-with-power-bi/pbi-aggregatesales.png
+[7]: ./media/sql-data-warehouse-get-started-visualize-with-power-bi/pbi-map.png
+[8]: ./media/sql-data-warehouse-get-started-visualize-with-power-bi/pbi-chooseaxis.png
+[9]: ./media/sql-data-warehouse-get-started-visualize-with-power-bi/pbi-bar.png
+[10]: ./media/sql-data-warehouse-get-started-visualize-with-power-bi/pbi-prepare-line.png
+[11]: ./media/sql-data-warehouse-get-started-visualize-with-power-bi/pbi-line.png
+[12]: ./media/sql-data-warehouse-get-started-visualize-with-power-bi/pbi-save.png
 
 <!--Article references-->
 [Migration]: ./sql-data-warehouse-overview-migrate.md
@@ -111,4 +111,4 @@ Nachdem Sie sich schon etwas mit den Beispieldaten vertraut gemacht haben, könn
 [connecting to SQL Data Warehouse]: ./sql-data-warehouse-integrate-power-bi.md
 [Create a SQL Data Warehouse]: ./sql-data-warehouse-get-started-provision.md
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0114_2016-->

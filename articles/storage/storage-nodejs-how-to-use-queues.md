@@ -1,20 +1,20 @@
-<properties 
-	pageTitle="Verwenden des Warteschlangenspeichers mit Node.js | Microsoft Azure" 
-	description="Erfahren Sie, wie Sie den Azure-Warteschlangendienst zum Erstellen und Löschen von Warteschlangen sowie zum Einfügen, Abrufen und Löschen von Nachrichten verwenden. Die Beispiele sind in Node.js geschrieben." 
-	services="storage" 
-	documentationCenter="nodejs" 
-	authors="rmcmurray" 
-	manager="wpickett" 
-	editor=""/>
+<properties
+	pageTitle="Verwenden des Warteschlangenspeichers mit Node.js | Microsoft Azure"
+	description="Erfahren Sie, wie Sie den Azure-Warteschlangendienst zum Erstellen und Löschen von Warteschlangen sowie zum Einfügen, Abrufen und Löschen von Nachrichten verwenden. Die Beispiele sind in Node.js geschrieben."
+	services="storage"
+	documentationCenter="nodejs"
+	authors="rmcmurray"
+	manager="wpickett"
+	editor="tysonn"/>
 
-<tags 
-	ms.service="storage" 
-	ms.workload="storage" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="nodejs" 
-	ms.topic="article" 
-	ms.date="12/01/2015" 
-	ms.author="robmcm"/>
+<tags
+	ms.service="storage"
+	ms.workload="storage"
+	ms.tgt_pltfrm="na"
+	ms.devlang="nodejs"
+	ms.topic="article"
+	ms.date="12/01/2015"
+	ms.author="micurd"/>
 
 
 # Verwenden des Warteschlangenspeichers mit Node.js
@@ -237,7 +237,7 @@ Im folgenden Beispiel wird eine neue Richtlinie für den geteilten Zugriff gener
 	var expiryDate = new Date(startDate);
 	expiryDate.setMinutes(startDate.getMinutes() + 100);
 	startDate.setMinutes(startDate.getMinutes() - 100);
-	
+
 	var sharedAccessPolicy = {
 	  AccessPolicy: {
 	    Permissions: azure.QueueUtilities.SharedAccessPermissions.ADD,
@@ -319,16 +319,15 @@ Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gem
   [Node.js Cloud Service with Storage]: ../storage-nodejs-use-table-storage-cloud-service-app.md
   [Node.js-Webanwendung mit Speicher]: ../storage-nodejs-use-table-storage-web-site.md
 
-  
+
   [Queue1]: ./media/storage-nodejs-how-to-use-queues/queue1.png
   [plus-new]: ./media/storage-nodejs-how-to-use-queues/plus-new.png
   [quick-create-storage]: ./media/storage-nodejs-how-to-use-queues/quick-storage.png
-  
-  
-  
+
+
+
   [Node.js Cloud Service]: ../cloud-services-nodejs-develop-deploy-app.md
   [Blog des Azure-Speicherteams]: http://blogs.msdn.com/b/windowsazurestorage/
   [Website mit WebMatrix]: ../web-sites-nodejs-use-webmatrix.md
- 
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0114_2016-->

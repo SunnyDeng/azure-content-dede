@@ -20,6 +20,7 @@
 #Erstellen von Abfragen in Azure Search in .NET
 > [AZURE.SELECTOR]
 - [Overview](search-query-overview.md)
+- [Search Explorer](search-explorer.md)
 - [Fiddler](search-fiddler.md)
 - [.NET](search-query-dotnet.md)
 - [REST](search-query-rest-api.md)
@@ -62,4 +63,4 @@ Im ersten Aufruf werden alle Dokumente mit den Abfrageausdrücken „fancy“ un
 
 Der zweite Aufruf verwendet den OData-Ausdruck „$filter“ mit „Luxury“ als Kategorie. Diese Suche gibt dadurch nur Dokumente zurück, deren Kategoriefeld genau der Zeichenfolge „Luxury“ entspricht. Weitere Informationen zur OData-Syntax finden Sie auf der Seite [OData-Ausdruckssyntax für Azure Search](https://msdn.microsoft.com/library/azure/dn798921.aspx).
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

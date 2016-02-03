@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article" 
-	ms.date="10/26/2015"
+	ms.date="01/14/2016"
 	ms.author="ccompy"/>
 
 # Erstellen einer Web-App in einer App Service-Umgebung
@@ -22,7 +22,7 @@
 
 Dieses Tutorial zeigt Ihnen, wie Sie Web-Apps und App Service-Pläne in einer [App Service-Umgebung](app-service-app-service-environment-intro.md) (App Service Environment, ASE) erstellen.
 
-> [AZURE.NOTE]Wenn Sie wissen möchten, wie eine Web-App erstellt wird, dies jedoch nicht in einer App Service-Umgebung durchführen möchten, finden Sie weitere Informationen unter [Erstellen einer .NET-Web-App](web-sites-dotnet-get-started.md) oder in einem der zugehörigen Tutorials für andere Sprachen und Frameworks.
+> [AZURE.NOTE] Wenn Sie wissen möchten, wie eine Web-App erstellt wird, dies jedoch nicht in einer App Service-Umgebung durchführen möchten, finden Sie weitere Informationen unter [Erstellen einer .NET-Web-App](web-sites-dotnet-get-started.md) oder in einem der zugehörigen Tutorials für andere Sprachen und Frameworks.
 
 ## Voraussetzungen
 
@@ -118,4 +118,4 @@ Nach dem Erstellen der Web-App und des App Service-Plans sollten Sie eine zentra
 [ResourceGroups]: http://azure.microsoft.com/documentation/articles/resource-group-portal/
 [AzurePowershell]: http://azure.microsoft.com/documentation/articles/powershell-install-configure/
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -2,13 +2,14 @@
   pageTitle="Azure IoT Suite und Azure Active Directory | Microsoft Azure"
   description="Informationen, wie Azure Active Directory von Azure IoT Suite verwendet werden, um Berechtigungen zu verwalten."
   services=""
+  suite="iot-suite"
   documentationCenter=""
   authors="aguilaaj"
   manager="timlt"
   editor=""/>
 
 <tags
-  ms.service="na"
+  ms.service="iot-suite"
   ms.devlang="na"
   ms.topic="hero-article"
   ms.tgt_pltfrm="na"
@@ -145,4 +146,4 @@ Wenn Sie sicher sind, dass Sie über ein Azure-Abonnement verfügen, überprüfe
 [lnk-resource-cs]: https://github.com/Azure/azure-iot-remote-monitoring/blob/master/DeviceAdministration/Web/Security/RolePermissions.cs
 [lnk-wiki-clouddeployment]: https://github.com/Azure/azure-iot-remote-monitoring/wiki/Cloud-deployment
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

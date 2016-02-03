@@ -32,11 +32,11 @@ In diesem Tutorial wird gezeigt, wie Sie einer universellen Windows-App einen cl
 
 Für dieses Lernprogramm benötigen Sie Folgendes:
 
-* Ein aktives Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Apps, die Sie auch nach Ablauf der Testversion weiter nutzen können. Weitere Informationen finden Sie unter [Kostenloses Azure-Testkonto](http://azure.microsoft.com/pricing/free-trial/).
+* Ein aktives Azure-Konto. Falls Sie kein Konto besitzen, können Sie sich für eine Azure-Testversion registrieren. So erhalten Sie bis zu 10 kostenlose mobile Apps, die Sie auch nach Ablauf der Testversion weiter nutzen können. Weitere Informationen finden Sie unter [Kostenloses Azure-Testkonto](https://azure.microsoft.com/pricing/free-trial/).
 
 * [Visual Studio Community 2013] oder höher.
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, besuchen Sie [Azure App Service-App erstellen](https://tryappservice.azure.com/?appServiceName=mobile). Dort können Sie direkt eine kurzzeitige mobile Start-App in App Service erstellen – keine Kreditkarte erforderlich, keine weiteren Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, besuchen Sie [Azure App Service-App erstellen](https://tryappservice.azure.com/?appServiceName=mobile). Dort können Sie direkt eine kurzzeitige mobile Start-App in App Service erstellen – keine Kreditkarte erforderlich, keine weiteren Verpflichtungen.
 
 ##Erstellen eines neuen Azure Mobile App-Back-Ends
 
@@ -75,10 +75,10 @@ Sobald Sie Ihr Back-End für mobile Apps konfiguriert haben, können Sie eine ne
 ##Nächste Schritte
 
 * [Hinzufügen von Authentifizierung zur App](app-service-mobile-windows-store-dotnet-get-started-users.md) 
-  <br/>Informationen über die Authentifizierung von Benutzern der App mit einem Identitätsanbieter.
+ <br/>Informationen über die Authentifizierung von Benutzern der App mit einem Identitätsanbieter.
 
 * [Hinzufügen von Pushbenachrichtigungen zur App](app-service-mobile-windows-store-dotnet-get-started-push.md) 
-  <br/>Erfahren Sie, wie Sie eine einfache Pushbenachrichtigung an Ihre App senden können.
+ <br/>Erfahren Sie, wie Sie eine einfache Pushbenachrichtigung an Ihre App senden können.
 
 <!-- Anchors. -->
 <!-- Images. -->
@@ -87,4 +87,4 @@ Sobald Sie Ihr Back-End für mobile Apps konfiguriert haben, können Sie eine ne
 [Azure portal]: https://portal.azure.com/
 [Visual Studio Community 2013]: https://go.microsoft.com/fwLink/p/?LinkID=534203
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

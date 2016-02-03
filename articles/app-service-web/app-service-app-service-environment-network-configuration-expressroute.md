@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/23/2015" 
+	ms.date="01/05/2016" 
 	ms.author="stefsch"/>
 
 # Details zur Netzwerkkonfiguration für App Service-Umgebungen mit ExpressRoute 
@@ -29,7 +29,7 @@ Kunden können eine [Azure ExpressRoute][ExpressRoute]-Verbindung mit ihrer virt
 Es gibt Netzwerkverbindungsanforderungen für App Service-Umgebungen, die ursprünglich nicht von einem virtuellen Netzwerk erfüllt werden konnten, das mit einer ExpressRoute verbunden war. App Service-Umgebungen erfordern für einen ordnungsgemäßen Betrieb Folgendes:
 
 
--  Ausgehende Netzwerkverbindungen mit Azure-Speicherendpunkten in der ganzen Welt. Dies beinhaltet sowohl Endpunkte, die sich in der gleichen Region wie die App Service-Umgebung befinden, als auch Speicherendpunkte in **anderen** Azure-Regionen. Azure-Speicherendpunkte werden unter den folgenden DNS-Domänen aufgelöst: *table.core.windows.net*, *blob.core.windows.net*, *queue.core.windows.net* und *file.core.windows.net*.  
+-  Ausgehende Netzwerkverbindungen mit Azure-Speicherendpunkten in der ganzen Welt. Dies beinhaltet sowohl Endpunkte, die sich in der gleichen Region wie die App Service-Umgebung befinden, als auch Speicherendpunkte in **anderen** Azure-Regionen. Azure Storage-Endpunkte werden unter den folgenden DNS-Domänen aufgelöst: *table.core.windows.net*, *blob.core.windows.net*, *queue.core.windows.net* und *file.core.windows.net*.  
 -  Ausgehende Netzwerkverbindungen mit SQL-Datenbankendpunkten, die sich in der gleichen Region wie die App Service-Umgebung befinden. SQL-Datenbankendpunkte werden unter der folgenden Domäne aufgelöst: *database.windows.net*.
 -  Ausgehende Netzwerkverbindungen mit den Endpunkten auf der Azure-Verwaltungsebene (ASM- und ARM-Endpunkte). Dies beinhaltet ausgehende Verbindungen mit *management.core.windows.net* und *management.azure.com*. 
 -  Ausgehende Netzwerkkonnektivität mit *ocsp.msocsp.com*. Dies ist zur Unterstützung von SSL-Funktionen erforderlich.
@@ -137,4 +137,4 @@ Weitere Informationen zur Azure App Service-Plattform finden Sie unter [Azure Ap
 
 <!-- IMAGES -->
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0107_2016-->

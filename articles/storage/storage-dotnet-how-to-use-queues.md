@@ -1,28 +1,30 @@
 <properties
-	pageTitle="Verwenden des Warteschlangenspeichers mit .NET | Microsoft Azure"
-	description="Erfahren Sie, wie Sie den Microsoft Azure-Warteschlangenspeicher zum Erstellen und Löschen von Warteschlangen sowie zum Einfügen, Einsehen, Abrufen und Löschen von Warteschlangennachrichten verwenden."
+	pageTitle="Erste Schritte mit Azure Queue Storage mit .NET | Microsoft Azure"
+	description="Asynchrones Senden und Empfangen von Nachrichten zwischen Anwendungskomponenten mit Azure Queue Storage. Hier erfahren Sie mehr zu den ersten Schritten bei einfachen Queue Storage-Vorgängen, einschließlich Erstellen und Löschen von Warteschlangen sowie Hinzufügen, Lesen und Löschen von Warteschlangennachrichten."
 	services="storage"
 	documentationCenter=".net"
 	authors="robinsh"
 	manager="carmonm"
-	editor=""/>
+	editor="tysonn"/>
 
 <tags
 	ms.service="storage"
 	ms.workload="storage"
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
-	ms.topic="hero-article" 
-	ms.date="12/04/2015"
-	ms.author="robinsh"/>
+	ms.topic="hero-article"
+	ms.date="01/24/2016"
+	ms.author="gusapost"/>
 
-# Verwenden des Warteschlangenspeichers mit .NET
+# Erste Schritte mit Azure Queue Storage mit .NET
 
 [AZURE.INCLUDE [storage-selector-queue-include](../../includes/storage-selector-queue-include.md)]
 
 ## Übersicht
 
-In diesem Leitfaden wird die Durchführung häufiger Szenarien mit dem Azure-Warteschlangen-Speicherdienst demonstriert. Die Beispiele sind in C# geschrieben und greifen auf den Azure-Speicherclient für .NET zurück. Zu den Szenarien gehören das **Einfügen**, **Einsehen**, **Abrufen** und **Löschen** von Warteschlangennachrichten sowie das **Erstellen und Löschen von Warteschlangen**.
+Azure Queue Storage ist ein Dienst, der Messagingwarteschlangen in der Cloud bereitstellt. Bei der Entwicklung von Anwendungen für Skalierungszwecke werden einzelne Anwendungskomponenten oft entkoppelt, damit sie unabhängig skaliert werden können. Der Warteschlangenspeicher bietet eine zuverlässige Messaginglösung für die asynchrone Kommunikation zwischen Anwendungskomponenten, egal ob diese in der Cloud, auf dem Desktop, auf einem lokalen Server oder einem mobilen Gerät ausgeführt werden. Queue Storage unterstützt auch die Verwaltung asynchroner Aufgaben und den Aufbau von Prozessworkflows.
+
+In diesem Tutorial wird gezeigt, wie Sie .NET-Code für einige häufig verwendete Szenarien mit Azure Queue Storage schreiben. Zu den behandelten Szenarien zählen das Erstellen und Löschen von Warteschlangen sowie das Hinzufügen, Lesen und Löschen von Warteschlangennachrichten.
 
 [AZURE.INCLUDE [storage-dotnet-client-library-version-include](../../includes/storage-dotnet-client-library-version-include.md)]
 
@@ -246,7 +248,7 @@ Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gem
     - [REST-API-Referenz](http://msdn.microsoft.com/library/azure/dd179355)
 - Erfahren Sie, wie Sie mithilfe des [Azure WebJobs SDK](../websites-dotnet-webjobs-sdk/) den geschriebenen Code so vereinfachen, dass er mit Azure Storage funktioniert.
 - Weitere Informationen zu zusätzlichen Optionen für das Speichern von Daten in Azure finden Sie in den anderen Featureleitfäden.
-    - Verwenden Sie [Tabellenspeicher](storage-dotnet-how-to-use-tables.md) zum Speichern strukturierter Daten. 
+    - Verwenden Sie [Tabellenspeicher](storage-dotnet-how-to-use-tables.md) zum Speichern strukturierter Daten.
     - Verwenden Sie [Blobspeicher](storage-dotnet-how-to-use-blobs.md) zum Speichern unstrukturierter Daten.
     - Verwenden Sie eine [SQL-Datenbank](sql-database-dotnet-how-to-use.md) zum Speichern relationaler Daten.
 
@@ -259,6 +261,5 @@ Nachdem Sie sich nun mit den Grundlagen des Warteschlangenspeichers vertraut gem
   [OData]: http://nuget.org/packages/Microsoft.Data.OData/5.0.2
   [Edm]: http://nuget.org/packages/Microsoft.Data.Edm/5.0.2
   [Spatial]: http://nuget.org/packages/System.Spatial/5.0.2
- 
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

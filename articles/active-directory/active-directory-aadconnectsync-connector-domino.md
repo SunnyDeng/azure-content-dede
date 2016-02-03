@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.devlang="na"
    ms.topic="article"
-   ms.date="12/16/2015"
+   ms.date="01/14/2016"
    ms.author="andkjell"/>
 
 # Technische Referenz für den Lotus Domino-Connector
@@ -34,7 +34,7 @@ Im Anschluss finden Sie einen allgemeinen Überblick über die von der aktuellen
 
 | Funktion | Support |
 | --- | --- |
-| Verbundene Datenquelle | Server: <li>Lotus Domino 8.5.x</li><li>Lotus Domino 9.x</li>Client:<li>Lotus Notes 8.5.x</li><li>Lotus Notes 9.x</li> |
+| Verbundene Datenquelle | Server: <li>Lotus Domino 8.5.x</li><li>Lotus Domino 9.x</li>Client:<li>Lotus Notes 9.x</li> |
 | Szenarios | <li>Objektlebenszyklusverwaltung</li><li>Gruppenverwaltung</li><li>Kennwortverwaltung</li> |
 | Vorgänge | <li>Vollständiger Import und Deltaimport</li><li>Export</li><li>Kennwort auf HTTP-Kennwort festlegen und ändern</li> |
 | Schema | <li>Person (Roamingbenutzer, Kontakt (Person ohne Zertifikat))</li><li>Gruppe</li><li>Ressource (Ressource, Raum, Onlinebesprechung)</li><li>Mail-In-Datenbank</li><li>Dynamische Ermittlung von Attributen für unterstützte Objekte</li> |
@@ -246,7 +246,7 @@ Wird diesem Personenobjekt nun ein neuer Assistent namens **David Alexander** zu
 
 **Importieren**
 
-Die Exportvorgangsoption unterstützt zwei Modi:
+Die Importvorgangsoption unterstützt zwei Modi:
 
 - Standard
 - Mehrwertig zu einwertig
@@ -344,7 +344,7 @@ Die Ressourcenreservierungsdatenbank enthält drei Arten von Dokumenten:
 - Ressource
 - Reservierung
 
-Ausführlichere Informationen zum Einrichten der Ressourcenreservierungsdatenbank finden Sie unter [Einrichten der Ressourcenreservierungsdatenbank](http://publib.boulder.ibm.com/infocenter/domhelp/v8r0/index.jsp?topic=/com.ibm.help.domino.admin85.doc/H_USING_GROUPS_OVER.html).
+Ausführlichere Informationen zum Einrichten der Ressourcenreservierungsdatenbank finden Sie unter [Einrichten der Ressourcenreservierungsdatenbank](https://www-01.ibm.com/support/knowledgecenter/SSKTMJ_8.0.1/com.ibm.help.domino.admin.doc/DOC/H_SETTING_UP_THE_RESOURCE_RESERVATIONS_DATABASE.html).
 
 **Erstellen, Aktualisieren und Löschen von Ressourcen**
 
@@ -477,15 +477,15 @@ Das Schema kann in Domino auf unterschiedliche Arten erweitert werden, sodass es
 
 **Ansatz 1: Erweitern des Lotus Domino-Schemas**
 
-1. Erstellen Sie eine Kopie der Domino-Verzeichnisvorlage <PUBNAMES.NTF>. Die entsprechenden Schritte finden Sie [hier](http://publib.boulder.ibm.com/infocenter/domhelp/v8r0/index.jsp?topic=%2Fcom.ibm.help.domino.admin85.doc%2FH_CREATING_A_COPY_OF_THE_DEFAULT_PUBIC_ADDRESS_BOOK_TEMPLATE.html). (Es empfiehlt sich, die standardmäßige IBM Lotus Domino-Verzeichnisvorlage unverändert zu lassen.)
-2. Öffnen Sie die Kopie der Domino-Verzeichnisvorlage <CONTOSO.NTF>, die Sie soeben erstellt haben, in Domino Designer, und führen Sie die folgenden Schritte aus:
+1. Erstellen Sie eine Kopie der Domino-Verzeichnisvorlage {PUBNAMES.NTF}. Die entsprechenden Schritte finden Sie [hier](http://publib.boulder.ibm.com/infocenter/domhelp/v8r0/index.jsp?topic=%2Fcom.ibm.help.domino.admin85.doc%2FH_CREATING_A_COPY_OF_THE_DEFAULT_PUBIC_ADDRESS_BOOK_TEMPLATE.html). (Es empfiehlt sich, die standardmäßige IBM Lotus Domino-Verzeichnisvorlage unverändert zu lassen.)
+2. Öffnen Sie die Kopie der Domino-Verzeichnisvorlage {CONTOSO.NTF}, die Sie soeben erstellt haben, in Domino Designer, und führen Sie die folgenden Schritte aus:
     - Klicken Sie auf „Freigegebene Elemente“, und erweitern Sie „Unterformulare“.
-    - Doppelklicken Sie anschließend auf das Unterformular „$[Objektname]InheritableSchema“ (wobei „[Objektname]“ der Name der standardmäßigen strukturellen Objektklasse ist – beispielsweise „Person“).
-    - Benennen Sie das Attribut, das Sie dem Schema „[MyPersonAtrribute]“ hinzufügen möchten, und erstellen Sie analog dazu ein Feld, indem Sie im Erstellungsmenü die entsprechende Option auswählen.
+    - Doppelklicken Sie anschließend auf das Unterformular „${ObjectName}InheritableSchema“ (wobei „{ObjectName}“ der Name der standardmäßigen strukturellen Objektklasse ist – beispielsweise „Person“).
+    - Benennen Sie das Attribut, das Sie dem Schema „{MyPersonAtrribute}“ hinzufügen möchten, und erstellen Sie analog dazu ein Feld, indem Sie im Erstellungsmenü die entsprechende Option auswählen.
     - Legen Sie die Eigenschaften des hinzugefügten Felds fest, indem Sie im Fenster mit den Feldeigenschaften den Typ, das Format, die Größe, die Schriftart und ähnliche Parameter auswählen.
     - Behalten Sie für den Standardwert des Attributs den für das Attribut vergebenen Namen bei. (Wenn der Attributname also beispielsweise „MyPersonAttribute“ lautet, behalten Sie den Standardwert mit dem gleichen Namen bei.)
-    - Speichern Sie das Unterformular „$[Objektname]InheritableSchema“ mit den aktualisierten Werten.
-3. Ersetzen Sie die Domino-Verzeichnisvorlage <PUBNAMES.NTF> durch die neue benutzerdefinierte Vorlage „[CONTOSO. NTF]“. Die entsprechende Vorgehensweise finden Sie [hier](http://publib.boulder.ibm.com/infocenter/domhelp/v8r0/index.jsp?topic=%2Fcom.ibm.help.domino.admin85.doc%2FH_ABOUT_RULES_FOR_CUSTOMIZING_THE_PUBLIC_ADDRESS_BOOK.html).
+    - Speichern Sie das Unterformular „${ObjectName}InheritableSchema“ mit den aktualisierten Werten.
+3. Ersetzen Sie die Domino-Verzeichnisvorlage „{PUBNAMES.NTF}“ durch die neue benutzerdefinierte Vorlage „{CONTOSO. NTF}“. Die entsprechende Vorgehensweise finden Sie [hier](http://publib.boulder.ibm.com/infocenter/domhelp/v8r0/index.jsp?topic=%2Fcom.ibm.help.domino.admin85.doc%2FH_ABOUT_RULES_FOR_CUSTOMIZING_THE_PUBLIC_ADDRESS_BOOK.html).
 4. Schließen Sie Domino Administrator, und öffnen Sie die Domino-Konsole, um den LDAP-Dienst neu zu starten und das LDAP-Schema neu zu laden:
     - Fügen Sie in der Domino-Konsole den Befehl [Restart Task LDAP](http://publib.boulder.ibm.com/infocenter/domhelp/v8r0/index.jsp?topic=%2Fcom.ibm.help.domino.admin85.doc%2FH_STARTING_AND_STOPPING_THE_LDAP_SERVER_OVER.html) als Domino-Befehl ein, um den LDAP-Dienst neu zu starten.
     - Verwenden Sie zum Neuladen des LDAP-Schemas den Befehl „Tell LDAP ReloadSchema“.
@@ -494,8 +494,8 @@ Das Schema kann in Domino auf unterschiedliche Arten erweitert werden, sodass es
 
 **Ansatz 2: Erstellen einer Erweiterungsklasse mit benutzerdefiniertem Attribut und Zuordnen zur Objektklasse**
 
-1. Erstellen Sie eine Kopie der Domino-Verzeichnisvorlage „[PUBNAMES.NTF]“. Die entsprechenden Schritte finden Sie [hier]()http://publib.boulder.ibm.com/infocenter/domhelp/v8r0/index.jsp?topic=%2Fcom.ibm.help.domino.admin85.doc%2FH_CREATING_A_COPY_OF_THE_DEFAULT_PUBIC_ADDRESS_BOOK_TEMPLATE.html. (Lassen Sie die standardmäßige IBM Lotus Domino-Verzeichnisvorlage unbedingt unverändert.)
-2. Öffnen Sie die Kopie der Domino-Verzeichnisvorlage „[CONTOSO.NTF]“, die Sie soeben erstellt haben, in Domino Designer.
+1. Erstellen Sie eine Kopie der Domino-Verzeichnisvorlage „{PUBNAMES.NTF}“. Die entsprechenden Schritte finden Sie [hier](http://publib.boulder.ibm.com/infocenter/domhelp/v8r0/index.jsp?topic=%2Fcom.ibm.help.domino.admin85.doc%2FH_CREATING_A_COPY_OF_THE_DEFAULT_PUBIC_ADDRESS_BOOK_TEMPLATE.html). (Lassen Sie die standardmäßige IBM Lotus Domino-Verzeichnisvorlage unbedingt unverändert.)
+2. Öffnen Sie die Kopie der Domino-Verzeichnisvorlage „{CONTOSO.NTF}“, die Sie soeben erstellt haben, in Domino Designer.
 3. Wählen Sie im linken Bereich „Freigegebener Code“ und anschließend „Unterformulare“ aus.
 4. Klicken Sie auf „Neues Unterformular“.
 5. Führen Sie folgende Schritte aus, um die Eigenschaften für das neue Unterformular anzugeben:
@@ -508,16 +508,16 @@ Das Schema kann in Domino auf unterschiedliche Arten erweitert werden, sodass es
 6. Gehen Sie wie folgt vor, um ein Feld zum Definieren der Erweiterungsobjektklasse hinzuzufügen:
     - Öffnen Sie das soeben erstellte Unterformular.
     - Wählen Sie „Erstellen“ und anschließend „Feld“ aus.
-    - Geben Sie neben dem Namen auf der Registerkarte „Grundlagen“ des Felddialogfelds einen beliebigen Namen an (beispielsweise „[MyPersonTestAttribute]“).
+    - Geben Sie neben dem Namen auf der Registerkarte „Grundlagen“ des Felddialogfelds einen beliebigen Namen an (beispielsweise „{MyPersonTestAttribute}“).
     - Legen Sie die Eigenschaften des hinzugefügten Felds fest, indem Sie den Typ, das Format, die Größe, die Schriftart und ähnliche Parameter auswählen.
     - Behalten Sie für den Standardwert des Attributs den für das Attribut vergebenen Namen bei. (Wenn der Attributname also beispielsweise „MyPersonTestAttribute“ lautet, behalten Sie den Standardwert mit dem gleichen Namen bei.)
     - Speichern Sie das Unterformular mit den aktualisierten Werten, und gehen Sie dann wie folgt vor:
         - Wählen Sie im linken Bereich „Freigegebener Code“ und anschließend „Unterformulare“ aus.
         - Wählen Sie das neue Unterformular und anschließend „Design“ > „Designeigenschaften“ aus.
         - Klicken Sie auf die dritte Registerkarte von links, und wählen Sie **Dieses Designänderungsverbot weitergeben** aus.
-7. Öffnen Sie das Unterformular „$[Objektname]ExtensibleSchema“ (wobei „[Objektname]“ der Name der standardmäßigen strukturellen Objektklasse ist – beispielsweise „Person“).
-8. Fügen Sie die Ressource ein, wählen Sie das soeben erstellte Unterformular (etwa „TestSubform“) aus, und speichern Sie das Unterformular „$[Objektname]ExtensibleSchema“.
-9. Ersetzen Sie die Domino-Verzeichnisvorlage „[PUBNAMES.NTF]“ durch die neue benutzerdefinierte Vorlage „[CONTOSO. NTF]“. Die entsprechende Vorgehensweise finden Sie [hier](http://publib.boulder.ibm.com/infocenter/domhelp/v8r0/index.jsp?topic=%2Fcom.ibm.help.domino.admin85.doc%2FH_ABOUT_RULES_FOR_CUSTOMIZING_THE_PUBLIC_ADDRESS_BOOK.html).
+7. Öffnen Sie das Unterformular „${ObjectName}ExtensibleSchema“ (wobei „{ObjectName}“ der Name der standardmäßigen strukturellen Objektklasse ist – beispielsweise „Person“).
+8. Fügen Sie die Ressource ein, wählen Sie das soeben erstellte Unterformular (etwa „TestSubform“) aus, und speichern Sie das Unterformular „${ObjectName}ExtensibleSchema“.
+9. Ersetzen Sie die Domino-Verzeichnisvorlage „{PUBNAMES.NTF}“ durch die neue benutzerdefinierte Vorlage „{CONTOSO. NTF}“. Die entsprechende Vorgehensweise finden Sie [hier](http://publib.boulder.ibm.com/infocenter/domhelp/v8r0/index.jsp?topic=%2Fcom.ibm.help.domino.admin85.doc%2FH_ABOUT_RULES_FOR_CUSTOMIZING_THE_PUBLIC_ADDRESS_BOOK.html).
 10. Schließen Sie Domino Administrator, und öffnen Sie die Domino-Konsole, um den LDAP-Dienst neu zu starten und das LDAP-Schema neu zu laden:
     - Fügen Sie in der Domino-Konsole den Befehl [Restart Task LDAP](http://publib.boulder.ibm.com/infocenter/domhelp/v8r0/index.jsp?topic=%2Fcom.ibm.help.domino.admin85.doc%2FH_STARTING_AND_STOPPING_THE_LDAP_SERVER_OVER.html) als Domino-Befehl ein, um den LDAP-Dienst neu zu starten.
     - Verwenden Sie zum Neuladen des LDAP-Schemas den Befehl „Tell LDAP ReloadSchema“.
@@ -526,10 +526,10 @@ Das Schema kann in Domino auf unterschiedliche Arten erweitert werden, sodass es
 
 **Methode 3: Hinzufügen des benutzerdefinierten Attributs zur ExtensibleObject-Klasse**
 
-1. Öffnen Sie die im Stammverzeichnis abgelegte Datei „[Schema.nsf]“.
+1. Öffnen Sie die im Stammverzeichnis abgelegte Datei „{Schema.nsf}“.
 2. Wählen Sie im linken Menü unter **Alle Schemadokumente** LDAP-Objektklassen aus, und klicken Sie anschließend auf die Schaltfläche **Objektklasse hinzufügen**:
-3. Geben Sie den LDAP-Namen im Format „[###ExtensibleSchema]“ (wobei „###“ der Name der standardmäßigen strukturellen Objektklasse ist – beispielsweise „Person“) und mit einem Verweis auf das Objekt an, für das Sie das Schema erweitern möchten. Wenn Sie das Schema also beispielsweise für die Objektklasse „Person“ erweitern möchten, geben Sie den LDAP-Namen „[PersonExtensibleSchema]“ an.
-4. Geben Sie den übergeordneten Objektklassennamen an, für den Sie das Schema erweitern möchten. Wenn Sie das Schema also beispielsweise für die Objektklasse „Person“ erweitern möchten, geben Sie den übergeordneten Objektklassennamen „[dominoPerson]“ an.
+3. Geben Sie den LDAP-Namen im Format „{zzzExtensibleSchema} “ (wobei „zzz“ der Name der standardmäßigen strukturellen Objektklasse ist – beispielsweise „Person“) und mit einem Verweis auf das Objekt an, für das Sie das Schema erweitern möchten. Wenn Sie das Schema also beispielsweise für die Objektklasse „Person“ erweitern möchten, geben Sie den LDAP-Namen „{PersonExtensibleSchema}“ an.
+4. Geben Sie den übergeordneten Objektklassennamen an, für den Sie das Schema erweitern möchten. Wenn Sie das Schema also beispielsweise für die Objektklasse „Person“ erweitern möchten, geben Sie den übergeordneten Objektklassennamen „{dominoPerson}“ an.
 5. Geben Sie eine gültige, der Objektklasse entsprechende OID an.
 6. Wählen Sie unter den Feldern für obligatorische oder optionale Attributtypen nach Bedarf erweiterte/benutzerdefinierte Attribute aus.
 7. Klicken Sie auf **Speichern und schließen**, nachdem Sie der erweiterbaren Objektklasse die erforderlichen Attribute hinzugefügt haben.
@@ -539,4 +539,4 @@ Das Schema kann in Domino auf unterschiedliche Arten erweitert werden, sodass es
 
 -	Informationen zum Aktivieren der Protokollierung für die Behandlung von Connectorproblemen finden Sie unter [Vorgehensweise: Aktivieren der ETW-Ablaufverfolgung für Connectors](http://go.microsoft.com/fwlink/?LinkId=335731).
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0114_2016-->

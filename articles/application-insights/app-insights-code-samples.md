@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/05/2015" 
+	ms.date="01/05/2016" 
 	ms.author="awills"/>
 
 #  Application Insights: Codebeispiele und exemplarische Vorgehensweisen
@@ -42,7 +42,9 @@ Zum Analysieren von Telemetriedaten mit Ihren eigenen Tools [exportieren](app-in
 
 ## Automatisieren von Aufgaben
 
+* [Senden von Azure-Diagnosedaten an Application Insights mit PowerShell](app-insights-powershell.md)
 * [Skript zum Erstellen einer neuen Application Insights-Ressource](app-insights-powershell-script-create-resource.md)
+* [Senden von Azure-Diagnosedaten an Application Insights mit PowerShell](app-insights-powershell-azure-diagnostics.md)
 
 
 
@@ -53,4 +55,4 @@ Zum Analysieren von Telemetriedaten mit Ihren eigenen Tools [exportieren](app-in
 
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

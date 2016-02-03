@@ -4,8 +4,8 @@
 	services="storage" 
 	documentationCenter="" 
 	authors="tamram" 
-	manager="adinah" 
-	editor=""/>
+	manager="carmonm" 
+	editor="tysonn"/>
 
 <tags 
 	ms.service="storage" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/07/2015" 
+	ms.date="01/05/2016" 
 	ms.author="tamram"/>
 
 # Einführung in Microsoft Azure Storage
@@ -63,9 +63,9 @@ Sie können die Verwendung von Azure mit einem [kostenlosen Testkonto](http://az
 
 Mit einem Standardspeicherkonto erhalten Sie Zugriff auf Blob-, Tabellen-, Warteschlangen- und Dateispeicher:
 
-- Im **Blob-Speicher** werden Dateidaten gespeichert. Ein Blob kann jede Art von Text- oder binären Daten sein, z. B. ein Dokument, eine Mediendatei oder ein Anwendungs-Installer. Der BLOB-Speicher wird mitunter als Objektspeicher bezeichnet. 
+- Im **Blobspeicher** werden Dateidaten gespeichert. Ein Blob kann jede Art von Text- oder binären Daten sein, z. B. ein Dokument, eine Mediendatei oder ein Anwendungs-Installer. Der BLOB-Speicher wird mitunter als Objektspeicher bezeichnet. 
 - Im **Tabellenspeicher** werden strukturierte Datensätze gespeichert. Der Tabellenspeicher ist ein NoSQL-Schlüssel-/Attribut-Datenspeicher, der eine rasche Entwicklung und schnellen Zugriff auf große Datenmengen erlaubt.
-- Der **Warteschlangenspeicher** bietet eine zuverlässige Nachrichtenfunktion zur Workflow-Verarbeitung und zur Kommunikation zwischen Komponenten von Clouddiensten.
+- Der **Warteschlangenspeicher** bietet eine zuverlässige Nachrichtenfunktion zur Workflowverarbeitung und zur Kommunikation zwischen Komponenten von Clouddiensten.
 - Der **Dateispeicher** bietet einen gemeinsam genutzten Speicher für ältere Anwendungen und verwendet dabei das standardmäßige SMB-Protokoll. Virtuelle Azure-Computer und Clouddienste können Dateidaten in verschiedenen Anwendungskomponenten über eingebundene Freigaben teilen, und lokale Anwendungen können über die REST-API des Dateidiensts auf freigegebene Dateien zugreifen. 
 
 Jedes Standardspeicherkonto kann bis zu 500 TB an kombinierten Blob-, Warteschlangen-, Tabellen- und Dateidaten enthalten. Unter [Ziele für Skalierbarkeit und Leistung des Azure-Speichers](storage-scalability-targets.md) finden Sie weitere Details zur Kapazität von Standardspeicherkonten.
@@ -93,7 +93,7 @@ Für Benutzer mit großen Mengen unstrukturierter Daten, die in einer Cloud gesp
 - Konfigurationsdaten für Cloudanwendungen
 - Große Datenmengen wie Protokolle und andere große Datensätze
 
-Jeder Blob ist in einem Container organisiert. Container bieten auch eine praktische Methode, um Gruppen von Objekten Sicherheitsrichtlinien zuzuordnen. Ein Speicherkonto kann eine beliebige Anzahl von Containern enthalten, und ein Container kann eine beliebige Anzahl von Blobs enthalten. Die Speicherkapazität eines Speicherkontos beträgt 500 TB.
+Jedes Blob ist in einem Container organisiert. Container bieten auch eine praktische Methode, um Gruppen von Objekten Sicherheitsrichtlinien zuzuordnen. Ein Speicherkonto kann eine beliebige Anzahl von Containern enthalten, und ein Container kann eine beliebige Anzahl von Blobs enthalten. Die Speicherkapazität eines Speicherkontos beträgt 500 TB.
 
 Der Blob-Speicher bietet drei Arten von Blobs: Block-Blobs, Anfüge-Blobs und Seiten-Blobs (Festplatten). Block-Blobs sind für das Streaming und die Speicherung von Cloudobjekten optimiert und stellen eine gute Wahl zur Speicherung von Dokumenten, Mediendateien, Sicherungskopien usw. dar. Anfüge-Blobs sind mit Block-Blobs vergleichbar, sind allerdings für Anfügevorgänge optimiert. Ein Anfüge-Blob kann nur durch Hinzufügen eines neuen Blocks an dessen Ende aktualisiert werden. Anfüge-Blobs sind eine gute Wahl für Szenarios wie die Protokollierung, bei denen neue Daten nur ans Ende des Blobs geschrieben werden müssen.
 
@@ -141,7 +141,7 @@ Die Dienst-SAS delegiert den Zugriff auf eine Ressource in nur einem der Speiche
 
 Eine Konto-SAS delegiert den Zugriff auf Ressourcen in einem oder mehreren der Speicherdienste. Sie können den Zugriff auf Vorgänge auf Dienstebene delegieren, die nicht mit einer Dienst-SAS verfügbar sind. Sie können auch den Zugriff auf Lese-, Schreib- und Löschvorgänge in Blob-Containern, Tabellen, Warteschlangen und Dateifreigaben delegieren, die mit einer Dienst-SAS nicht zulässig sind.
 
-Abschließend können Sie noch einen Container und seine Blobs – oder einen speziellem Blob – öffentlich verfügbar machen. Wenn Sie einen Container oder einen Blob zu einer öffentlichen Ressource erklären, kann jeder Benutzer anonym drauf zugreifen, ohne eine Authentifizierung zu benötigen. Öffentliche Container und Blobs sind hilfreich zur Verfügbarmachung von Ressourcen wie Medien und Dokumenten, die auf Websites gehostet werden. Um die Netzwerklatenz für ein globales Publikum zu reduzieren, können Sie Blob-Daten, die von Websites verwendet werden, in einem Cache zwischenspeichern.
+Abschließend können Sie noch einen Container und seine Blobs – oder ein spezielles Blob – öffentlich verfügbar machen. Wenn Sie einen Container oder ein Blob zu einer öffentlichen Ressource erklären, kann jeder Benutzer anonym drauf zugreifen, ohne eine Authentifizierung zu benötigen. Öffentliche Container und Blobs sind hilfreich zur Verfügbarmachung von Ressourcen wie Medien und Dokumenten, die auf Websites gehostet werden. Um die Netzwerklatenz für ein globales Publikum zu reduzieren, können Sie Blob-Daten, die von Websites verwendet werden, in einem Cache zwischenspeichern.
 
 Weitere Informationen zum sicheren Zugriff auf Ihr Speicherkonto finden Sie unter [Verwalten des Zugriffs auf Azure-Speicherressourcen](storage-manage-access-to-resources.md) und [Authentifizierung für die Azure-Speicherdienste](https://msdn.microsoft.com/library/azure/dd179428.aspx).
 
@@ -236,4 +236,4 @@ Informationen zu den ersten Schritten mit Azure Storage finden Sie in folgenden 
 - [Verwenden des Warteschlangenspeichers mit Python](storage-python-how-to-use-queue-storage.md)
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0114_2016-->

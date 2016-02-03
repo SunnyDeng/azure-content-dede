@@ -18,25 +18,29 @@
    ms.author="vturecek"/>
 
 # Reliable Actors-Entwurfsmuster: Internet der Dinge
-Seitdem das Internet der Dinge zusammen mit dem technologischen Fortschritt bei Geräten und Cloud-Diensten zum aktuellen Trend wurde, suchen Entwickler nach Schlüsselbausteinen für die Entwicklung ihrer Systeme. Das folgende Diagramm zeigt die wichtigsten Szenarien, die mithilfe von Service Fabric Reliable Actors erreicht wurden:
+Seitdem das Internet der Dinge zusammen mit dem technologischen Fortschritt bei Geräten und Clouddiensten zum aktuellen Trend wurde, suchen Entwickler nach Schlüsselbausteinen für die Entwicklung ihrer Systeme. Das folgende Diagramm zeigt die wichtigsten Szenarien, die mithilfe von Azure Service Fabric Reliable Actors erreicht wurden:
 
-![][1]
+![Wichtige Szenarien in Service Fabric Reliable Actors][1]
 
-Service Fabric Reliable Actors ist der Schlüsselbaustein (als mittlere Ebene) in einem System, das ein Messaging-System-Front-End mit Unterstützung mehrerer Übertragungstypen, wie z. B. HTTPS, MQTT oder AMQP, kombiniert und dann mit Actors kommuniziert, die einzelne Geräte darstellen. Da die Actors ihren Status beibehalten können, sind Modellierungsstreams – insbesondere statusbehaftete Datenstromverarbeitung – und Aggregation pro Gerät einfach. Wenn die Daten beibehalten werden müssen, kann problemlos eine Leerung bei Bedarf oder auf einem Timer durchgeführt werden, während gleichzeitig die aktuellsten N-Bit-Daten für schnelle Abfragen in einer anderen Variablen beibehalten werden können. Beachten Sie, dass wir in unseren Beispielen absichtlich die Details der Ereignis-/Messaging-Ebene ausgelassen haben, die Actors die Kommunikation mit Geräten ermöglichen,um den Fokus auf dem Actor-Modell zu halten. Es gibt im Wesentlichen zwei Szenarien, die in der Regel miteinander kombiniert werden:
+Service Fabric Reliable Actors ist der Grundbaustein (als mittlere Ebene) in einem System, das das Front-End eines Messagingsystems mit Unterstützung für mehrere Übertragungstypen (z. B. HTTPS, MQTT oder AMQP) und die Kommunikation mit Actors kombiniert, die einzelne Geräte darstellen. Da die Actors ihren Status beibehalten können, sind Modellierungsdatenströme – insbesondere die statusbehaftete Datenstromverarbeitung – und Aggregation pro Gerät einfach umzusetzen. Wenn die Daten dauerhaft gespeichert werden müssen, können sie bei Bedarf oder mit einem Timer auf einfache Weise auf die Festplatte geleert werden. Dies ist möglich, während Sie gleichzeitig die letzten N Bits der Daten zur schnellen Abfrage in einer anderen Variablen verwalten.
 
-* *Erfassen von Telemetrie- und Statusdaten aus einem einzelnen Gerät oder einer Gerätegruppe und Beibehalten ihres Status*. Stellen Sie sich Zehntausende von Mausefallen vor (ja, es handelt sich um ein reales Kundenszenarien), die so elementare Daten senden wie beispielsweise, ob in der Vorrichtung ein lästigen Nager gefangen wurde oder nicht. Die Daten werden nach Region aggregiert, und wenn in einer Region genug Mäuse gefangen wurden, wird ein Techniker beauftragt, die Geräte zu leeren. Eine Mausefalle als Actor? Absolut. Ein Gruppen-Actor pro Region als der Aggregator? Aber sicher.
+Beachten Sie, dass wir in unseren Beispielen absichtlich die Details der Ereignis-/Messaging-Ebene ausgelassen haben, die Actors die Kommunikation mit Geräten ermöglicht, um den Fokus auf dem Actor-Modell zu halten. Es gibt im Wesentlichen zwei Szenarien, die in der Regel miteinander kombiniert werden:
 
-* *Übertragen von Geräteverhalten und -konfiguration mithilfe von Push auf ein einzelnes oder eine Gruppe von Geräten*. Denken Sie an Solarstromgeräte für Privatkunden, bei denen der Anbieter unterschiedliche Konfigurationen basierend auf Verbrauch und Saisonabhängigkeit propagiert.
+* **Erfassen von Telemetrie- und Statusdaten von einem einzelnen Gerät oder einer Gerätegruppe und Beibehalten ihres Status**. Stellen Sie sich etwa Zehntausende von Mausefallen vor, die Daten senden. (Dies ist ein reales Kundenszenario.) Dabei handelt es sich um ganz einfache Daten, nämlich, ob das Gerät einen Schädling gefangen hat oder nicht. Die Daten werden nach Region aggregiert, und wenn in einer Region genügend Mäuse gefangen wurden, wird ein Techniker beauftragt, die Geräte zu leeren. Eine Mausefalle als Actor? Ja. Ein Gruppen-Actor pro Region als der Aggregator? Absolut.
+
+* **Übertragen von Geräteverhalten und -konfiguration mithilfe von Push auf ein einzelnes Gerät oder eine Gruppe von Geräten**. Denken Sie an Solarstromgeräte für Privatkunden, bei denen der Anbieter unterschiedliche Konfigurationen basierend auf Verbrauch und Saisonabhängigkeit propagiert.
 
 ## Telemetriedaten und Gerätegruppierung
 
-Betrachten wir zuerst den Fall, bei dem Geräte, nämlich zehntausend, zusammen gruppiert werden und Telemetriedaten an ihre zugeordnete Gruppe senden. Im folgenden Beispiel hat der Kunde Geräte in jeder Region bereitgestellt. Wenn das Gerät eingeschaltet wird, wird als Erstes eine ActivateMe-Meldung mit relevanten Informationen wie Standort, Version usw. gesendet. Der dem Gerät (über die Geräte-ID) zugeordnete Actor wiederum richtet den Anfangsstatus für das Gerät ein, wie z. B. lokale Speicherung des Status (könnte auch persistente sein) und Registrierung eines Gruppen-Actors. In diesem Fall ordnen wir eine zufällige Gruppe für unsere Simulation zu.
+Betrachten wir zuerst den Fall, bei dem Geräte (in fünfstelliger Größenordnung) zusammen gruppiert werden und Telemetriedaten an ihre zugeordnete Gruppe senden. Im folgenden Beispiel hat der Kunde Geräte in jeder Region bereitgestellt. Wenn das Gerät eingeschaltet wird, wird als Erstes eine **ActivateMe**-Meldung mit relevanten Informationen wie Standort und Version gesendet. Der dem Gerät (über die Geräte-ID) zugeordnete Actor richtet den Anfangsstatus für das Gerät ein, wie z. B. lokale Speicherung des Status (kann auch dauerhaft gespeichert werden) und Registrierung eines Gruppen-Actors. In diesem Fall haben wir für unsere Simulation eine zufällige Gruppe zugeordnet.
 
-Im Rahmen der Initialisierung kann das Gerät durch Abrufen von Konfigurationsdaten aus einem Gruppen-Actor oder einem anderen Agent konfiguriert werden. Auf diese Weise die Geräte können anfangs wenig intelligente Geräte bei der Initialisierung sehr viel "smarter" werden. Nachdem dies erledigt, ist, sind Gerät und Actor zum Senden und Verarbeiten von Telemetriedaten bereit.
+Im Rahmen der Initialisierung kann das Gerät durch Abrufen von Konfigurationsdaten aus einem Gruppen-Actor oder einem anderen Agent konfiguriert werden. Auf diese Weise können Geräte, die anfangs kaum Informationen besitzen, bei der Initialisierung mit Daten versorgt werden. Nachdem dies erledigt ist, sind Gerät und Actor zum Senden und Verarbeiten von Telemetriedaten bereit.
 
-Alle Geräte senden ihre Telemetriedaten in regelmäßigen Abständen an den entsprechenden Actor. Wenn der Actor bereits aktiviert ist, wird dieser Actor verwendet. Andernfalls wird er aktiviert. An diesem Punkt kann der Status aus einem stabilen Speicher wiederhergestellt werden, falls erforderlich. Wenn der Actor Telemetriedaten empfängt, speichert er sie in einer lokalen Variablen. Dies geschieht hier, um das Beispiel zu vereinfachen. Bei einer realen Implementierung würden die Daten wahrscheinlich in einem externen Speicher gespeichert werden, um Vorgänge zum Überwachen und Diagnostizieren der Geräteintegrität und Leistung zu ermöglichen. Abschließen werden Telemetriedaten per Push an den Gruppen-Actor übertragen, zu dem der Geräte-Actor logisch gehört.
+Alle Geräte senden ihre Telemetriedaten in regelmäßigen Abständen an die entsprechenden Actors. Wenn ein Actor bereits aktiviert ist, wird dieser Actor verwendet. Andernfalls wird er aktiviert. An diesem Punkt kann der Status aus einem stabilen Speicher wiederhergestellt werden, falls erforderlich. Wenn der Actor Telemetriedaten empfängt, speichert er sie in einer lokalen Variablen.
 
-## Codebeispiel für Internet der Dinge – Telemetrie
+Dies geschieht hier, um das Beispiel zu vereinfachen. In einer realen Implementierung würden wir sie wahrscheinlich in einem externen Speicher speichern. Dadurch könnten Geräteintegrität und Leistung in den Vorgängen überwacht und diagnostiziert werden. Abschließend werden Telemetriedaten per Push an den Gruppen-Actor übertragen, zu dem der Geräte-Actor logisch gehört.
+
+## Codebeispiel für Internet der Dinge: Telemetrie
 
 ```csharp
 public interface IThing : IActor
@@ -95,9 +99,11 @@ public class Thing : StatefulActor<ThingState>, IThing
 }
 ```
 
-Auf Gruppenebene, wie in unserem Beispiel, besteht unser Ziel darin, die Geräte in der Gruppe zu überwachen und Telemetriedaten zu aggregieren, um Warnungen für Techniker zu erzeugen. In diesem Fall möchte unser Kunde Techniker in bestimmte Regionen entsenden, in denen eine bestimmte Anzahl von fehlerhaften Geräten vorhanden ist. Natürlich möchte der Kunde die Kosten senken, indem der Reisezeitaufwand für die Techniker minimiert wird. Aus diesem Grund behält jeder Gruppen-Actor einen aggregierter Status von fehlerhaften Geräten pro Region bei. Wenn diese Anzahl einen Schwellenwert erreicht, sendet der Kunde einen Techniker in die Region, um diese Geräte zu ersetzen bzw. zu reparieren. Lassen Sie uns betrachten, wie dies geschieht:
+Auf Gruppenebene besteht das Ziel in unserem Beispiel darin, die Geräte in der Gruppe zu überwachen und Telemetriedaten zu aggregieren, um Warnungen für Techniker zu erzeugen. In diesem Fall möchte unser Kunde Techniker in bestimmte Regionen entsenden, in denen eine bestimmte Anzahl von fehlerhaften Geräten vorhanden ist. Natürlich möchte der Kunde außerdem die Kosten senken, indem der Reisezeitaufwand für die Techniker minimiert wird. Aus diesem Grund behält jeder Gruppen-Actor einen aggregierter Status von fehlerhaften Geräten pro Region bei. Wenn diese Anzahl einen Schwellenwert erreicht, sendet der Kunde einen Techniker in die Region, um die fehlerhaften Geräte zu reparieren oder auszutauschen.
 
-## Codebeispiel für Internet der Dinge – Gruppierung und Aggregation
+Lassen Sie uns betrachten, wie dies geschieht:
+
+## Codebeispiel für Internet der Dinge: Gruppierung und Aggregation
 
 ```csharp
 public interface IThingGroup : IActor
@@ -168,7 +174,7 @@ public class ThingGroup : StatefulActor<ThingGroupState>, IThingGroup
 }
 ```
 
-Wie zu sehen ist, ist das ist Ganze ziemlich einfach. Nach der Ausführung einfacher Tests sieht das Ergebnis wie folgt aus:
+Wie Sie sehen können, ist es relativ unkompliziert. Nach der Ausführung einfacher Tests sieht das Ergebnis wie folgt aus:
 
 ```
 Sending an engineer to repair/replace devices in Richmond
@@ -179,37 +185,39 @@ Sending an engineer to repair/replace devices in Richmond
     Device = 85 Region = Richmond Version = 4
 ```
 
-Möglicherweise denken Sie, dass es besser gewesen wäre, Geräte nach Region zu gruppieren. Selbstverständlich können Geräte nach Belieben gruppiert/partitioniert werden – sei es nach geografischem Standort, Gerätetyp, Version, Mandant usw. Hier ist Vorsicht angezeigt: Gerätestatus vs. Berichterstellung/Analyse. Aus diesem Grund wurde das Muster explizit veranschaulicht. Auffächerungsabfragen an Actors zum Erstellen von Berichterstellungs-Actors müssen vermieden werden. Unnötige Instanziierungen und Leistung sind nur zwei Nachteile, die genannt werden sollen. Für die Berichterstellung werden zwei Ansätze empfohlen:
+Vielleicht denken Sie, dass es besser gewesen wäre, Geräte nach Region zu gruppieren. Es ist völlig Ihnen überlassen, wie Sie Geräte gruppieren und/oder partitionieren, ob nach geografischem Standort, Gerätetyp, Version, Mandant oder anderen Kriterien.
 
-* Verwendung eines Actors auf Gruppenebene, wie z. B. ein Aggregator, um eine Ansicht für die Gruppe beizubehalten. Lassen Sie jeden Actor per Push nur relevante Daten auf proaktive Weise an diesen Actor übermitteln. Dann kann dieser Actor auf Gruppenebene dazu verwendet werden, den Status der Geräte in der Gruppe anzuzeigen.
+Im Hinblick auf den Gerätestatus im Vergleich zu Berichterstellung und Analyse ist jedoch Vorsicht geboten: Auffächerungsabfragen an Actors zum Erstellen von Berichterstellungs-Actors sollten Sie unbedingt vermeiden. Dadurch können unnötige Instanziierungen und Leistungsprobleme entstehen, um nur zwei Nachteile zu nennen. Aus diesem Grund wurde das Muster explizit veranschaulicht. Für die Berichterstellung werden zwei Ansätze empfohlen:
+
+* Verwenden Sie einen Actor auf Gruppenebene, wie z. B. einen Aggregator, um eine Ansicht für die Gruppe zu verwalten. Lassen Sie jeden Actor per Push nur relevante Daten auf proaktive Weise an diesen Actor übermitteln. Dieser Actor auf Gruppenebene kann dazu verwendet werden, den Status der Geräte in der Gruppe anzuzeigen.
 
 * Beibehaltung eines expliziten Speichers, der für die Berichterstellung bestimmt ist. Ein Aggregator kann Daten puffern und in regelmäßigen Abständen per Push an einen Berichtsspeicher für weitere Abfragen und Analysen übertragen.
 
 ## Gerätevorgang
-So weit so gut, aber was ist mit den Vorgängen auf diesen Geräten? Wie bei Geräten können Actors operative Schnittstellen verfügbar machen, sodass ein Administrator Vorgänge auf Geräten durchführen kann. Ein Administrator möchte beispielsweise eine neue Konfiguration per Push an eine Gruppe von Solarstromgeräten für Privatkunden basierend auf saisonalen/regionalen Änderungen übertragen (ja, ein weiteres Szenario aus dem realen Leben).
+So weit, so gut. Aber was ist mit den Vorgängen auf diesen Geräten? Wie bei Geräten können Actors operative Schnittstellen verfügbar machen, sodass ein Administrator Vorgänge auf Geräten durchführen kann. Ein Administrator möchte beispielsweise eine neue Konfiguration per Push an eine Gruppe von Solarstromgeräten für Privatkunden basierend auf saisonalen und regionalen Änderungen übertragen (ein weiteres Szenario aus dem wahren Leben).
 
-Die Schlüsselidee hierbei ist, granulare Kontrolle über jedes Gerät mithilfe von "Thing"-Actors sowie Gruppenvorgänge mithilfe von "ThingGroup"-Actors zu haben – unabhängig davon, ob Daten von Geräten, wie z. B. Telemetriedaten, aggregiert oder Daten, wie z. B. Konfigurationsdaten, an eine große Anzahl von Geräten gesendet werden. Die Plattform sorgt für die Verteilung der Geräte-Actors und das Messaging zwischen ihnen. Dies ist vollkommen transparent für den Entwickler.
+Die Hauptidee hierbei ist eine präzise Kontrolle über jedes Gerät mithilfe von Thing-Actors sowie die Kontrolle über Gruppenvorgänge mithilfe von ThingGroup-Actors. Dies gilt unabhängig davon, ob Sie Daten wie z. B. Telemetriedaten von Geräten aggregieren oder Daten wie z. B. Konfigurationsdaten an eine große Anzahl von Geräten senden. Die Plattform übernimmt sowohl die Verteilung der Geräte-Actors als auch das Messaging zwischen den Actors. Dieses Verhalten ist für den Entwickler völlig transparent.
 
-Wenn es um Computer zu Computer-Kommunikation (M2M) geht, funktioniert das Hub-and-Spoke-Muster (siehe Abschnitt "Verteilte Netzwerke und Diagramme") sowie die direkte Actor-Actor-Interaktion gut. Für M2M-Szenarien wäre es möglich, einen "Verzeichnis/Index"-Actor für eine Gruppe von Geräten zu modellieren, der es diesen ermöglicht, Meldungen zu erkennen und aneinander zu senden, wie unten dargestellt:
+Bei der Kommunikation zwischen Computern (M2M) haben sich das Hub-and-Spoke-Muster, das im [Abschnitt zu verteilten Netzwerken und Diagrammen](service-fabric-reliable-actors-pattern-distributed-networks-and-graphs.md) behandelt wurde, sowie die direkte Interaktion zwischen Actors gut bewährt. Für M2M-Szenarien könnten Sie einen „Verzeichnis/Index“-Actor für eine Gruppe von Geräten modellieren, der es diesen Geräten ermöglicht, Meldungen zu erkennen und einander zu senden, wie unten dargestellt:
 
-![][2]
+![Modell eines „Verzeichnis/Index“-Actors für eine Gruppe von Geräten][2]
 
-Azure Service Fabric Actors kümmert sich auch um die Lebensdauer der Actors. Es ist zu bedenken, dass es Geräte im Dauerbetrieb gibt, und Geräte, die nur gelegentlich angeschlossen werden. Warum behalten wir den Actor, der für das Gerät zuständig ist, das alle 14 Stunden eine Verbindung im Arbeitsspeicher herstellt? Azure Service Fabric ermöglicht das Speichern und Wiederherstellen des Gerätestatus – wann und wo immer er benötigt wird.
+Das Service Fabric Reliable Actors-Modell kümmert sich auch um die Lebensdauer der Actors. Sehen Sie es so: Wenn Sie sowohl immer betriebsbereite Geräte als auch gelegentlich verbundene Geräte verwenden, warum sollten Sie einen Actor im Arbeitsspeicher behalten, der sich um ein Gerät kümmert, das nur alle 14 Stunden eine Verbindung herstellt? Mit Service Fabric können Sie den Status eines Geräts speichern und wiederherstellen, wann und wo immer Sie möchten.
 
-Abschließend sei bemerkt, dass immer mehr Kunden Azure Service Fabric Actors als Schlüsselbaustein für ihre Implementierungen für das Internet der Dinge betrachten.
+Immer mehr Kunden ziehen Service Fabric Reliable Actors als Grundbausteine für ihre Implementierungen des Internets der Dinge in Betracht.
 
 ## Nächste Schritte
 [Muster: Intelligenter Cache](service-fabric-reliable-actors-pattern-smart-cache.md)
 
 [Muster: Verteilte Netzwerke und Diagramme](service-fabric-reliable-actors-pattern-distributed-networks-and-graphs.md)
 
-[Muster: Ressourcenkontrolle](service-fabric-reliable-actors-pattern-resource-governance.md)
+[Muster: Ressourcengovernance](service-fabric-reliable-actors-pattern-resource-governance.md)
 
-[Muster: Komposition zustandsbehafteter Dienste](service-fabric-reliable-actors-pattern-stateful-service-composition.md)
+[Muster: Zusammenstellung statusbehafteter Dienste](service-fabric-reliable-actors-pattern-stateful-service-composition.md)
 
 [Muster: Verteilte Berechnung](service-fabric-reliable-actors-pattern-distributed-computation.md)
 
-[Beispiele für Antimuster](service-fabric-reliable-actors-anti-patterns.md)
+[Einige Antimuster](service-fabric-reliable-actors-anti-patterns.md)
 
 [Einführung in Service Fabric Actors](service-fabric-reliable-actors-introduction.md)
 
@@ -217,4 +225,4 @@ Abschließend sei bemerkt, dass immer mehr Kunden Azure Service Fabric Actors al
 [1]: ./media/service-fabric-reliable-actors-pattern-internet-of-things/internet-of-things-1.png
 [2]: ./media/service-fabric-reliable-actors-pattern-internet-of-things/internet-of-things-2.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0121_2016-->

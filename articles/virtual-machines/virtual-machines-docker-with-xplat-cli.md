@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="vm-linux"
 	ms.workload="infrastructure-services"
-	ms.date="09/22/2015"
+	ms.date="01/04/2016"
 	ms.author="rasquill"/>
 
 # Verwenden der Docker-VM-Erweiterung aus der Azure-Befehlszeilenschnittstelle (Azure-CLI)
@@ -24,14 +24,9 @@
 
 Dieses Thema beschreibt das Erstellen eines virtuellen Computers mit der Docker-VM-Erweiterung im ASM-Modus (Azure Service Management) in der Azure-Befehlszeilenschnittstelle auf einer beliebigen Plattform. [Docker](https://www.docker.com/) ist einer der beliebtesten Virtualisierungsansätze, der für das Isolieren von Daten und Computing auf gemeinsamen Ressourcen [Linux-Container](http://en.wikipedia.org/wiki/LXC) statt virtueller Computer verwendet. Verwenden Sie die Docker-VM-Erweiterung des [Azure Linux Agent](virtual-machines-linux-agent-user-guide.md), um einen virtuellen Docker-Computer zu erstellen, der eine beliebige Anzahl von Containern für Ihre Anwendungen in Azure hostet. Eine allgemeine Diskussion über die Container und ihre Vorteile finden Sie unter [Docker High Level Whiteboard](http://channel9.msdn.com/Blogs/Regular-IT-Guy/Docker-High-Level-Whiteboard) (Whiteboard auf hoher Ebene zu Docker) (in englischer Sprache).
 
-+ [Verwenden der Docker-VM-Erweiterung mit Azure]
-+ [Erweiterungen für virtuelle Linux- und Windows-Computer]
-+ [Container und Container-Verwaltungsressourcen für Azure]
-+ [Nächste Schritte]
 
 ##Verwenden der Docker-VM-Erweiterung mit Azure
 Um die Docker-VM-Erweiterung mit Azure verwenden zu können, müssen Sie eine höhere Version der [Azure-Befehlszeilenschnittstelle](https://github.com/Azure/azure-sdk-tools-xplat) (Azure-CLI) als 0.8.6 installieren (Bei der Erstellung dieses Dokuments ist die aktuelle Version 0.8.10). Sie können die Azure-CLI auf Mac, Linux und Windows installieren.
-
 
 
 Die Verwendung von Docker auf Azure ist einfach:
@@ -67,10 +62,10 @@ Verwenden Sie in einer Bash- oder Terminalsitzung den folgenden Azure-CLI-Befehl
 
 `azure vm image list | grep Ubuntu-14_04`
 
-ein, oder wählen Sie einen der Imagenamen aus, z. B. `b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04-LTS-amd64-server-20140724-en-us-30GB`. Erstellen Sie anschließend mithilfe des folgenden Befehls eine VM mit diesem Image.
+ein, oder wählen Sie einen der Imagenamen aus, z. B. `b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04-LTS-amd64-server-20140724-de-DE-30GB`. Erstellen Sie anschließend mithilfe des folgenden Befehls eine VM mit diesem Image.
 
 ```
-azure vm docker create -e 22 -l "West US" <vm-cloudservice name> "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04-LTS-amd64-server-20140724-en-us-30GB" <username> <password>
+azure vm docker create -e 22 -l "West US" <vm-cloudservice name> "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04-LTS-amd64-server-20140724-de-DE-30GB" <username> <password>
 ```
 
 Hinweis:
@@ -160,16 +155,12 @@ Sie sind nun bereit, das [Docker-Benutzerhandbuch] und Ihren virtuellen Docker-C
 [Subheading 1]: #subheading-1
 [Subheading 2]: #subheading-2
 [Subheading 3]: #subheading-3
-[Nächste Schritte]: #next-steps
+[Next steps]: #next-steps
 
-[Verwenden der Docker-VM-Erweiterung mit Azure]: #How-to-use-the-Docker-VM-Extension-with-Azure
-[Erweiterungen für virtuelle Linux- und Windows-Computer]: #Virtual-Machine-Extensions-For-Linux-and-Windows
-[Container und Container-Verwaltungsressourcen für Azure]: #Container-and-Container-Management-Resources-for-Azure
+[How to use the Docker VM Extension with Azure]: #How-to-use-the-Docker-VM-Extension-with-Azure
+[Virtual Machine Extensions for Linux and Windows]: #Virtual-Machine-Extensions-For-Linux-and-Windows
+[Container and Container Management Resources for Azure]: #Container-and-Container-Management-Resources-for-Azure
 
-<!--Image references-->
-[5]: ./media/markdown-template-for-new-articles/octocats.png
-[6]: ./media/markdown-template-for-new-articles/pretty49.png
-[7]: ./media/markdown-template-for-new-articles/channel-9.png
 
 
 <!--Link references-->
@@ -181,4 +172,4 @@ Sie sind nun bereit, das [Docker-Benutzerhandbuch] und Ihren virtuellen Docker-C
 [Docker-Benutzerhandbuch]: https://docs.docker.com/userguide/
  
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

@@ -1,40 +1,3 @@
-Die folgenden Schritte veranschaulichen, wie Sie mithilfe von SQL Server Management Studio (SSMS) über das Internet eine Verbindung mit der SQL Server-Instanz herstellen. Mit den gleichen Schritten ermöglichen Sie jedoch auch den Zugriff der lokal und in Azure ausgeführten Anwendungen auf den virtuellen SQL Server-Computer.
-
-Bevor Sie eine Verbindung mit der Instanz von SQL Server über einen anderen virtuellen Computer oder über das Internet herstellen können, müssen Sie folgende Aufgaben abschließen, die in den nächsten Abschnitten beschrieben werden:
-
-- [Erstellen eines TCP-Endpunkts für den virtuellen Computer](#create-a-tcp-endpoint-for-the-virtual-machine)
-- [Öffnen der TCP-Ports in der Windows-Firewall](#open-tcp-ports-in-the-windows-firewall-for-the-default-instance-of-the-database-engine)
-- [Konfigurieren von SQL Server für das Abhören des TCP-Protokolls](#configure-sql-server-to-listen-on-the-tcp-protocol)
-- [Konfigurieren von SQL Server für die Authentifizierung mit gemischtem Modus](#configure-sql-server-for-mixed-mode-authentication)
-- [Erstellen von Anmeldenamen für die SQL Server-Authentifizierung](#create-sql-server-authentication-logins)
-- [Bestimmen des DNS-Namens des virtuellen Computers](#determine-the-dns-name-of-the-virtual-machine)
-- [Verbinden mit dem Datenbankmodul von einem anderen Computer aus](#connect-to-the-database-engine-from-another-computer)
-
-Der Verbindungspfad wird von folgendem Diagramm zusammengefasst:
-
-![Verbinden mit einem virtuellen SQL Server-Computer](./media/virtual-machines-sql-server-connection-steps/SQLServerinVMConnectionMap.png)
-
-### Erstellen eines TCP-Endpunkts für den virtuellen Computer
-
-Für den Zugriff auf SQL Server über das Internet benötigt der virtuelle Computer einen Endpunkt, um nach eingehender TCP-Kommunikation zu lauschen. Dieser Azure-Konfigurationsschritt leitet den eingehenden Datenverkehr des TCP-Ports zu einem TCP-Port, auf den der virtuelle Computer zugreifen kann.
-
->[AZURE.NOTE]Wenn die Verbindung innerhalb desselben Clouddiensts oder innerhalb desselben virtuellen Netzwerks erfolgt, müssen Sie keinen Endpunkt mit öffentlichem Zugriff erstellen. In diesem Fall können Sie mit dem nächsten Schritt fortfahren. Weitere Informationen finden Sie unter [Verbindungsszenarien](../articles/virtual-machines/virtual-machines-sql-server-connectivity.md#connection-scenarios).
-
-1. Klicken Sie im Azure-Verwaltungsportal auf **VIRTUELLE COMPUTER**.
-	
-2. Klicken Sie auf den neu erstellten virtuellen Computer. Informationen zu Ihrem virtuellen Computer werden angezeigt.
-	
-3. Wählen Sie oben auf der Seite die Seite **ENDPUNKTE** aus, und klicken Sie dann unten auf **HINZUFÜGEN**.
-	
-4. Klicken Sie auf der Seite **Einem virtuellen Computer einen Endpunkt hinzufügen** auf **Eigenständigen Endpunkt hinzufügen**, und klicken Sie dann auf „Weiter“, um fortzufahren.
-	
-5. Geben Sie auf der Seite zum Angeben der Details des Endpunkts folgende Informationen ein:
-
-	- Geben Sie unter **NAME** einen Namen für den Endpunkt ein.
-	- Wählen Sie im Feld **PROTOKOLL** den Eintrag **TCP**. Sie können zudem **57500** im Feld **ÖFFENTLICHER PORT** eingeben. Sie können den Standard-Überwachungsport **1433** von SQL Server im Feld **Privater Port** eingeben. Viele Organisationen verwenden unterschiedliche Portnummern, um böswillige Sicherheitsangriffe zu vermeiden. 
-
-6. Klicken Sie auf das Häkchen, um fortzufahren. Der Endpunkt wurde erstellt.
-
 ### Öffnen der TCP-Ports in der Windows-Firewall für die Standardinstanz des Datenbankmoduls
 
 1. Stellen Sie mit Windows Remotedesktop eine Verbindung zum virtuellen Computer her. Geben Sie nach der Anmeldung auf dem Startbildschirm **WF.msc** ein, und drücken Sie dann die EINGABETASTE. 
@@ -161,26 +124,4 @@ Um von einem anderen Computer aus eine Verbindung zum Datenbankmodul herzustelle
 
 Weitere Informationen zu Anmeldenamen für SQL Server finden Sie unter [Erstellen eines Anmeldenamens](http://msdn.microsoft.com/library/aa337562.aspx).
 
-### Bestimmen des DNS-Namens des virtuellen Computers
-
-Um sich von einem anderen Computer aus mit dem SQL Server-Datenbankmodul zu verbinden, müssen Sie den DNS-Namen (Domain Name System) des virtuellen Computers kennen. (Dies ist der Name, den das Internet verwendet, um den virtuellen Computer zu identifizieren. Sie können die IP-Adresse verwenden, aber die IP-Adresse ändert sich möglicherweise, wenn Azure aufgrund von Redundanz oder Wartungsarbeiten Ressourcen verschiebt. Der DNS-Name bleibt bestehen, da er zu einer neuen IP-Adresse weitergeleitet werden kann.)
-
-1. Wählen Sie im Azure-Verwaltungsportal (oder aus dem vorherigen Schritt) **VIRTUELLE COMPUTER**. 
-
-2. Suchen und kopieren Sie auf der Seite **INSTANZEN VIRTUELLER COMPUTER** in der Spalte **Schnelleinsicht** den DNS-Namen für den virtuellen Computer.
-
-	![DNS-Name](./media/virtual-machines-sql-server-connection-steps/sql-vm-dns-name.png)
-	
-
-### Verbinden mit dem Datenbankmodul von einem anderen Computer aus
- 
-1. Öffnen Sie auf einem mit dem Internet verbundenen Computer SQL Server Management Studio.
-2. Geben Sie im Dialogfeld **Verbindung mit Server herstellen ** oder **Verbindung mit Datenbankmodul herstellen** im Feld **Servername** den DNS-Namen des virtuellen Computers ein (in der vorherigen Aufgabe festgelegt) sowie die Portnummer eines öffentlichen Endpunkts im Format *DNSName, Portnummer* wie etwa **tutorialtestVM.cloudapp.net,57500**. Um die Portnummer zu erhalten, melden Sie sich beim Azure-Verwaltungsportal an und suchen den virtuellen Computer. Klicken Sie auf dem Dashboard auf **ENDPUNKTE**, und verwenden Sie den **ÖFFENTLICHEN PORT**, der **MSSQL** zugewiesen ist.![Öffentlicher Port](./media/virtual-machines-sql-server-connection-steps/sql-vm-port-number.png)
-3. Wählen Sie im Feld **Authentifizierung** den Eintrag **SQL Server-Authentifizierung**.
-5. Geben Sie im Feld **Anmeldename** den Anmeldenamen ein, den Sie vorher erstellt haben.
-6. Geben Sie im Feld **Kennwort** das Kennwort des Anmeldenamens ein, den Sie vorher erstellt haben.
-7. Klicken Sie auf **Verbinden**.
-
-	![Verbinden mit SSMS](./media/virtual-machines-sql-server-connection-steps/33Connect-SSMS.png)
-
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0107_2016-->

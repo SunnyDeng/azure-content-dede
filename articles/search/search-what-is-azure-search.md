@@ -11,17 +11,17 @@
 	ms.workload="search"
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
-	ms.date="12/18/2015"
+	ms.date="01/12/2016"
 	ms.author="ashmaka"/>
 
 # Was ist Azure Search?
-Azure Search ist eine cloudbasierte SaaS-Lösung, deren Server- und Infrastrukturtechnologien von Microsoft verwaltet werden. Dadurch erhalten Sie einen sofort einsatzbereiten Dienst, den Sie mit Ihren Daten füllen und anschließend Suchvorgänge für diese Daten durchführen können. Mit Azure Search können Sie Ihre Anwendungen unter Verwendung einer einfachen REST-API oder eines .NET-SDKs problemlos mit einer zuverlässigen Suchfunktion ausstatten, ohne sich mit der Suchinfrastruktur auseinanderzusetzen oder sich umfassende Kenntnisse zu Suchvorgängen aneignen zu müssen.
+Azure Search ist eine cloudbasierte SaaS-Lösung, deren Server- und Infrastrukturtechnologien von Microsoft verwaltet werden. Dadurch erhalten Sie einen sofort einsatzbereiten Dienst, den Sie mit Ihren Daten füllen und anschließend verwenden können, um Ihrer Webanwendung oder mobilen Anwendung eine Suchfunktion hinzuzufügen. Mit Azure Search können Sie Ihre Anwendungen unter Verwendung einer einfachen [REST-API](https://msdn.microsoft.com/library/azure/dn798935.aspx) oder eines [.NET-SDK](search-howto-dotnet-sdk.md) problemlos mit einer zuverlässigen Suchfunktion ausstatten, ohne sich mit der Suchinfrastruktur auseinanderzusetzen oder sich umfassende Kenntnisse zu Suchvorgängen aneignen zu müssen.
 
 ## Leistungsfähige Suchfunktion für Benutzer
 
-**Leistungsfähige Abfragen** mit logischen Operatoren, Vergleichsausdrücken und Ähnlichem können mittels [OData-Syntax](https://msdn.microsoft.com/library/azure/dn798921.aspx) und [einfacher Abfragesyntax](https://msdn.microsoft.com/library/azure/dn798920.aspx) formuliert werden. Die [Lucene-Abfragesyntax](https://msdn.microsoft.com/library/azure/mt589323.aspx) (derzeit in der Vorschauphase) ermöglicht zudem die Verwendung von Fuzzy- und NEAR-Suchen, Term Boosts und regulären Ausdrücken. Azure Search unterstützt auch benutzerdefinierte lexikalische Analysen, was Ihrer Anwendung die Behandlung komplexer Suchabfragen mit phonetischem Abgleich und regulären Ausdrücken ermöglicht.
+Sie können **leistungsfähige Abfragen** formulieren, indem Sie die [einfache Abfragesyntax](https://msdn.microsoft.com/library/azure/dn798920.aspx) verwenden, die über logische Operatoren, Operatoren für die Suche von Ausdrücken, Suffixoperatoren und Rangfolgenoperatoren verfügt. Die [Lucene-Abfragesyntax](https://msdn.microsoft.com/library/azure/mt589323.aspx) (derzeit in der Vorschauphase) ermöglicht zudem die Verwendung von Fuzzy-, Rechtschreibfehler- und NEAR-Suchen, Term Boosts und regulären Ausdrücken. Azure Search unterstützt auch benutzerdefinierte lexikalische Analysen, was Ihrer Anwendung die Behandlung komplexer Suchabfragen mit phonetischem Abgleich und regulären Ausdrücken ermöglicht.
 
-**Sprachunterstützung** steht [für 56 Sprachen](https://msdn.microsoft.com/library/azure/dn879793.aspx) zur Verfügung. Mit einer Kombination aus Lucene-Analysen und Microsoft-Analysen (optimiert durch die langjährige Verarbeitung von natürlicher Sprache in Office und Bing) kann Azure Search Texte unter Verwendung von Worttrennung, Textnormalisierung, Lemmatisierung und Ähnlichem analysieren. Dadurch kann Ihre Anwendung intelligent auf Tippfehler, Verbzeitformen, unregelmäßige Plural-Nomen (z. B. „Maus“ und „Mäuse“) und vieles mehr reagieren.
+**Sprachunterstützung** steht [für 56 Sprachen](https://msdn.microsoft.com/library/azure/dn879793.aspx) zur Verfügung. Durch den kombinierten Einsatz von Lucene- und Microsoft-Analysen (mit jahrelanger Erfahrung bei der Sprachdatenverarbeitung in Office und Bing) kann Text mit Azure Search im Suchfeld Ihrer Anwendung analysiert werden. Sprachspezifische linguistische Probleme können intelligent gelöst werden, z. B. Zeiten von Verben, Geschlecht, unregelmäßiger Plural von Substantiven (Englisch: mouse/mice), Auflösen von zusammengesetzten Wörtern, Worttrennung (für Sprachen ohne Leerstellen) und vieles mehr.
 
 Für Suchleisten mit AutoVervollständigen und für Abfragen mit Textvervollständigung können **Suchvorschläge** aktiviert werden. Bei unvollständigen Sucheingaben von Benutzern werden [Vorschläge für Dokumente aus Ihrem Index](https://msdn.microsoft.com/library/azure/dn798936.aspx) angezeigt.
 
@@ -29,9 +29,9 @@ Für Suchleisten mit AutoVervollständigen und für Abfragen mit Textvervollstä
 
 Mit Azure Search kann Ihre Suchergebnisseite problemlos mit einer **Facettennavigation** versehen werden. Mit [einem einzigen Abfrageparameter](https://msdn.microsoft.com/library/azure/dn798927.aspx) gibt Azure Search alle Informationen zurück, die für die Facettennavigation auf Ihrer App-Benutzeroberfläche erforderlich sind. Dadurch können die Benutzer Detailinformationen zu Suchergebnissen anzeigen und Suchergebnisse filtern, um beispielsweise Katalogelemente nach Preisbereich oder Marke zu filtern.
 
-Die [Unterstützung](https://msdn.microsoft.com/library/azure/dn798921.aspx) **geografischer Daten** ermöglicht eine intelligente Verarbeitung, Filterung und Anzeige geografischer Standorte. Mit Azure Search können die Benutzer Daten auf der Grundlage der Nähe eines Suchergebnisses zu einem bestimmten Ort oder auf der Grundlage einer bestimmten geografischen Region untersuchen.
+Die [Unterstützung](search-create-geospatial.md) **geografischer Daten** ermöglicht eine intelligente Verarbeitung, Filterung und Anzeige geografischer Standorte. Mit Azure Search können die Benutzer Daten auf der Grundlage der Nähe eines Suchergebnisses zu einem bestimmten Ort oder auf der Grundlage einer bestimmten geografischen Region untersuchen.
 
-**Filter** ermöglichen die problemlose Integration einer Facettennavigation (beispielsweise zum Filtern nach Kategorie oder Preis), die Erweiterung von Abfrageformulierungen sowie die Filterung auf der Grundlage benutzer- oder entwicklerdefinierter Kriterien.
+**Filter** ermöglichen die problemlose Integration einer Facettennavigation in die UI Ihrer Anwendung, die Erweiterung von Abfrageformulierungen sowie die Filterung auf der Grundlage von Kriterien von Benutzern oder Entwicklern. Erstellen Sie leistungsstarke Filter, indem Sie die [OData-Syntax](https://msdn.microsoft.com/library/azure/dn798921.aspx) verwenden.
 
 ## Benutzerfreundlicher Dienst für Ihre Entwickler
 
@@ -39,9 +39,9 @@ Seine **hohe Verfügbarkeit** macht den Suchdienst äußerst zuverlässig. [Azur
 
 Bei Azure Search handelt es sich um eine **vollständig verwaltete** End-to-End-Lösung, für die keinerlei Infrastrukturverwaltungsaufwand anfällt. Eine zweidimensionale Skalierung ermöglicht die problemlose Anpassung des Diensts an Ihre Anforderungen, um mehr Dokumentspeicher, ein höheres Abfrageaufkommen oder beides zu bewältigen.
 
-Dank **Datenintegration** mit [Indexern](https://msdn.microsoft.com/library/azure/dn946891.aspx) kann Azure Search automatisch die Azure SQL-Datenbank oder Azure DocumentDB durchforsten, um den Inhalt Ihres Suchindex mit Ihrem primären Datenspeicher zu synchronisieren.
+Dank **Datenintegration** mit [Indexern](https://msdn.microsoft.com/library/azure/dn946891.aspx) kann Azure Search automatisch die Azure SQL-Datenbank, Azure DocumentDB oder [Azure Blob Storage](search-howto-indexing-azure-blob-storage.md) durchforsten, um den Inhalt Ihres Suchindex mit Ihrem primären Datenspeicher zu synchronisieren.
 
-Zum [Lesen und Indizieren gängiger Dateiformate](search-howto-indexing-azure-blob-storage.md) (wie etwa Microsoft Office, PDF und HTML) steht eine **Funktion zum Knacken von Dokumenten** zur Verfügung.
+Zum [Lesen und Indizieren gängiger Dateiformate](search-howto-indexing-azure-blob-storage.md) (wie etwa Microsoft Office, PDF und HTML) steht eine **Funktion zum Knacken von Dokumenten** (derzeit in der Vorschau) zur Verfügung.
 
 **Analysedaten für Suchdatenverkehr** werden [gesammelt und analysiert](search-traffic-analytics.md) und ermöglichen Rückschlüsse auf Benutzereingaben im Suchfeld.
 
@@ -49,7 +49,7 @@ Ein zentraler Vorteil von Azure Search ist die **einfache Bewertung**. Anhand vo
 
 Eine **Sortierung** wird über das Indexschema für mehrere Felder bereitgestellt und dann zur Abfragezeit mit einem einzelnen Suchparameter umgeschaltet.
 
-Dank der fein abgestimmten Steuerung, die Azure Search für Ihre Suchergebnisse bietet, sind **Paginierung** und Einschränkung Ihrer Suchergebnisse kein Problem.
+Dank der [fein abgestimmten Steuerung](search-pagination-page-layout.md), die Azure Search für Ihre Suchergebnisse bietet, sind **Paginierung** und Drosselung Ihrer Suchergebnisse kein Problem.
 
 Mit dem **Such-Explorer** können Sie Abfragen für alle Ihre Indizes direkt über das Azure-Portal Ihres Kontos durchführen und so problemlos Abfragen testen und Bewertungsprofile optimieren.
 
@@ -82,4 +82,4 @@ Testen Sie Azure Search noch heute! Wenn Sie bereits über ein Azure-Konto verf�
 
 Falls Sie noch kein Azure-Konto besitzen, können Sie ganz ohne Registrierung eine kostenlose, 60-minütige Sitzung ausprobieren. Wählen Sie unter [Azure App Service testen](http://go.microsoft.com/fwlink/p/?LinkId=618214) die Option „Web-App“ aus. Wählen Sie anschließend die Vorlage „ASP.NET + Azure Search Site“ aus.
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0114_2016-->
