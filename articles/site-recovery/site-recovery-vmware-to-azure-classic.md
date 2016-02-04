@@ -260,11 +260,12 @@ Wenn Sie virtuelle VMware-Computer replizieren möchten, installieren Sie die fo
 
 6. Stellen Sie sicher, dass die folgenden URLs vom Verwaltungsserver aus zugänglich sind:
 
-	- **.hypervrecoverymanager.windowsazure.com
-- **.accesscontrol.windows.net
-- **.backup.windowsazure.com
-- **.blob.core.windows.net
-- **.store.core.windows.net. Wenn Ihr Server auf IP-Adressen basierende Firewallregeln verwendet, vergewissern Sie sich, dass die Regeln die Kommunikation mit Azure zulassen. Sie müssen die [IP-Adressbereiche für das Azure-Datencenter](https://msdn.microsoft.com/library/azure/dn175718.aspx) und das HTTPS-Protokoll (Port 433) zulassen. Außerdem müssen Sie die IP-Adressbereiche für die Azure-Region Ihres Abonnements und für die Region „USA, Westen“ über eine Whitelist zulassen. Sie müssen auch die folgende URL für das Herunterladen von MySQL auf die Whitelist setzen: http://cdn.mysql.com/archives/mysql-5.5/mysql-5.5.37-win32.msi.
+	- *.hypervrecoverymanager.windowsazure.com
+	- *.accesscontrol.windows.net
+	- *.backup.windowsazure.com
+	- *.blob.core.windows.net
+	- *.store.core.windows.net.
+	Wenn Ihr Server auf IP-Adressen basierende Firewallregeln verwendet, vergewissern Sie sich, dass die Regeln die Kommunikation mit Azure zulassen. Sie müssen die [IP-Adressbereiche für das Azure-Datencenter](https://msdn.microsoft.com/library/azure/dn175718.aspx) und das HTTPS-Protokoll (Port 433) zulassen. Außerdem müssen Sie die IP-Adressbereiche für die Azure-Region Ihres Abonnements und für die Region „USA, Westen“ über eine Whitelist zulassen. Sie müssen auch die folgende URL für das Herunterladen von MySQL auf die Whitelist setzen: http://cdn.mysql.com/archives/mysql-5.5/mysql-5.5.37-win32.msi.
 
 
 7. In der **Voraussetzungsprüfung** führt das Setupprogramm eine Prüfung der erforderlichen Komponenten auf dem Server durch.
@@ -709,7 +710,7 @@ Gehen Sie beim Einrichten eines zusätzlichen Prozessservers wie folgt vor:
 
 	![Prozessserver aktualisieren](./media/site-recovery-vmware-to-azure-classic/update-process-server1.png)
 
-2. Klicken Sie in der Liste **Prozessserver** neben dem Server, den Sie ändern möchten, auf **Prozessserver ändern** .
+2. Klicken Sie in der Liste **Prozessserver** neben dem Server, den Sie ändern möchten, auf **Prozessserver ändern**.
 
 	![Prozessserver aktualisieren](./media/site-recovery-vmware-to-azure-classic/update-process-server2.png)
 
@@ -749,3 +750,4 @@ The complete file may be found on the [Microsoft Download Center](http://go.micr
 [Informieren Sie sich über das Failback](site-recovery-failback-azure-to-vmware-classic.md) von unter Azure ausgeführten Computern zur lokalen Umgebung.
 
 <!---HONumber=AcomDC_0121_2016-->
+
