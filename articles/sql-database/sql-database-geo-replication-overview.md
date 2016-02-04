@@ -36,7 +36,8 @@ Um Geschäftskontinuität praktisch sicherzustellen, ist das Hinzufügen von Red
 ## Möglichkeiten der aktiven Georeplikation
 Das Feature „Aktive Georeplikation“ bietet die folgenden wichtigen Möglichkeiten:
 
-- **Automatische asynchrone Replikation**: Nachdem für eine sekundäre Onlinedatenbank das Seeding erfolgt ist, werden Aktualisierungen an der primären Datenbank automatisch in die sekundäre Onlinedatenbank kopiert. Dies bedeutet, dass für Transaktionen in der primären Datenbank ein Commit erfolgt, ehe sie in die sekundäre Onlinedatenbank kopiert werden. Nach dem Seeding ist die sekundäre Onlinedatenbank jedoch jederzeit hinsichtlich Transaktionen konsistent.
+- **Automatische asynchrone Replikation**: Nachdem für eine sekundäre Onlinedatenbank das Seeding erfolgt ist, werden Aktualisierungen an der primären Datenbank automatisch in die sekundäre Onlinedatenbank kopiert. Dies bedeutet, dass für Transaktionen in der primären Datenbank ein Commit erfolgt, ehe sie in die sekundäre Onlinedatenbank kopiert werden. Nach dem Seeding ist die sekundäre Onlinedatenbank jedoch jederzeit hinsichtlich Transaktionen konsistent. 
+
 	>[AZURE.NOTE]Die asynchrone Replikation trägt der Wartezeit Rechnung, die für WANs typisch ist, mit denen Remotedatencenter verbunden werden.
 
 - **Mehrere sekundäre Onlinedatenbanken**: Zwei oder mehr sekundäre Onlinedatenbanken sorgen für mehr Redundanz und Schutz für die primäre Datenbank und Anwendung. Wenn mehrere sekundäre Onlinedatenbanken vorhanden sind, bleibt die Anwendung auch bei Ausfall einer der sekundären Onlinedatenbanken geschützt. Wenn es nur eine sekundäre Onlinedatenbank gibt und diese ausfällt, ist die Anwendung bis zur Erstellung einer neuen sekundären Onlinedatenbank einem höheren Risiko ausgesetzt.
