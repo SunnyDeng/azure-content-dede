@@ -37,7 +37,9 @@ Die folgende Tabelle zeigt die Grundvoraussetzungen für eine Verbindung mit Azu
 | URL | Port | Beschreibung |
 | ---- | ---- | ---- |
 | mscrl.microsoft.com | HTTP/80 | Wird verwendet um CRL-Listen (Zertifikatsperrlisten) herunterzuladen. |
-| **.verisign.com | HTTP/80 |Wird verwendet um Zertifikatsperrlisten herunterzuladen. || *.windows.net | HTTPS/443 |Wird verwendet um sich in Azure AD anzumelden. | | *.microsoftonline.com |HTTPS/443 | Wird verwendet, um das Azure AD-Verzeichnis zu konfigurieren und um Daten zu importieren und exportieren. |
+| *.verisign.com | HTTP/80 |Wird verwendet um Zertifikatsperrlisten herunterzuladen. |
+| *.windows.net | HTTPS/443 |Wird verwendet um sich in Azure AD anzumelden. |
+| *.microsoftonline.com |HTTPS/443 | Wird verwendet, um das Azure AD-Verzeichnis zu konfigurieren und um Daten zu importieren und exportieren. |
 
 ## Fehler im Assistenten
 Der Installations-Assistent verwendet zwei verschiedene Sicherheitskontexte. Auf der Seite **Mit Azure AD verbinden** verwendet er den aktuell angemeldeten Benutzer. Auf der Seite **Konfigurieren** wechselt er auf das [Konto, das den Dienst für das Synchronisierungsmodul ausführt](active-directory-aadconnect-accounts-permissions.md#azure-ad-connect-sync-service-accounts). Die Proxykonfigurationen, die wir vornehmen, gelten für den ganzen Computer. Daher werden auftretende Probleme höchstwahrscheinlich bereits auf der **Mit Azure AD verbinden**-Seite des Assistenten angezeigt.
@@ -124,4 +126,4 @@ Time | URL
 1/11/2016 8:49 | connect://*bba900-anchor*.microsoftonline.com:443
 1/11/2016 8:49 | connect://*bba800-anchor*.microsoftonline.com:443
 
-<!---HONumber=AcomDC_0121_2016-->
+<!----HONumber=AcomDC_0121_2016-->
