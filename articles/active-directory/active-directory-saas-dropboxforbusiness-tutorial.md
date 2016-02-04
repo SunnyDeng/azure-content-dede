@@ -108,7 +108,8 @@ Im Rahmen dieses Verfahrens müssen Sie ein Base-64-codiertes Zertifikat in Ihre
      5.2. Kopieren Sie im Azure-Portal auf der Dialogfeldseite **Einmaliges Anmelden konfigurieren für Dropbox für Unternehmen** den Wert für **URL der Anmeldeseite**, und fügen Sie ihn ins Textfeld **Anmelde-URL** ein.
 
 
-     5.3. Erstellen Sie eine **Base64-codierte** Datei aus dem heruntergeladenen Zertifikat.
+     5.3. Erstellen Sie eine **Base64-codierte** Datei aus dem heruntergeladenen Zertifikat.  
+
      >[AZURE.TIP]Weitere Informationen finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache).
 
 
