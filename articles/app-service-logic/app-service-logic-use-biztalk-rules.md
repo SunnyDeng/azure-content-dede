@@ -114,7 +114,7 @@ Nach dem Erstellen einer BizTalk-Regel-API-App besteht der nächste Schritt im E
 
    ![Alt text][4]
 
-2.Wählen Sie „Vocabulary definitions“ aus. Der Bildschirm zum Verfassen des Vokabulars wird angezeigt.
+2.Wählen Sie „Vocabulary definitions“ aus. Der Bildschirm zum Verfassen des Vokabulars wird angezeigt.<br/>
 3.Wählen Sie „Hinzufügen“ aus, um neue Vokabulardefinitionen hinzuzufügen.
 Derzeit werden zwei Arten von Vokabulardefinitionen unterstützt – literal und XML.
 
@@ -256,4 +256,4 @@ Einer der Hauptvorteile der Verwendung von Geschäftsregeln ist, dass Änderunge
 [10]: ./media/app-service-logic-use-biztalk-rules/APIDef.PNG
 [11]: ./media/app-service-logic-use-biztalk-rules/PublicAnon.PNG
 
-<!-----------HONumber=AcomDC_0121_2016-->
+<!-----------HONumber=AcomDC_0121_2016--->
