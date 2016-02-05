@@ -40,7 +40,8 @@ Vokabulare sollen die Lücke zwischen Geschäftssemantik und Implementierung sch
 
 ##Regel
 
-Geschäftsregeln sind deklarative Anweisungen, die die Durchführung von Geschäftsprozessen steuern. Eine Regel besteht aus einer Bedingung und Aktionen. Die Bedingung wird ausgewertet, und wenn sie auf "true" ausgewertet wird, initiiert das Regelmodul eine oder mehrere Aktionen. Regeln im Geschäftsregel-Framework werden im folgenden Format definiert:
+Geschäftsregeln sind deklarative Anweisungen, die die Durchführung von Geschäftsprozessen steuern. Eine Regel besteht aus einer Bedingung und Aktionen. Die Bedingung wird ausgewertet, und wenn sie auf "true" ausgewertet wird, initiiert das Regelmodul eine oder mehrere Aktionen.
+Regeln im Geschäftsregel-Framework werden im folgenden Format definiert:
 
 _IF_ _Bedingung_ _THEN_ _Aktion_
 
@@ -80,7 +81,8 @@ Sehen wir uns ein Beispielszenario an, während wir dafür die Geschäftslogik e
 
 ![Alt text][1]
 
-In einem sehr einfachen Versicherungsszenario übermittelt der Antragsteller seinen Versicherungsanspruch (über einen beliebigen Client wie Website, Telefon-App usw.). Diese Anspruchserhebung wird an die Einheit zur Schadenbearbeitung gesendet. Basierend auf dem Ergebnis der Bearbeitung wird der Anspruch entweder genehmigt, abgewiesen oder zur weiteren manuellen Verarbeitung weitergeleitet. Die Einheit zur Schadenbearbeitung wäre in unserem Szenario für die Geschäftslogik für das System zuständig. Wenn wir diese Einheit näher betrachten, können wir Folgendes erkennen:
+In einem sehr einfachen Versicherungsszenario übermittelt der Antragsteller seinen Versicherungsanspruch (über einen beliebigen Client wie Website, Telefon-App usw.). Diese Anspruchserhebung wird an die Einheit zur Schadenbearbeitung gesendet. Basierend auf dem Ergebnis der Bearbeitung wird der Anspruch entweder genehmigt, abgewiesen oder zur weiteren manuellen Verarbeitung weitergeleitet.
+Die Einheit zur Schadenbearbeitung wäre in unserem Szenario für die Geschäftslogik für das System zuständig. Wenn wir diese Einheit näher betrachten, können wir Folgendes erkennen:
 
 ![Alt text][2]
 
@@ -93,7 +95,8 @@ Verwenden wir jetzt Geschäftsregeln zum Implementieren dieser Geschäftslogik.
 1. Melden Sie sich beim Azure-Portal an.
 2. Wählen Sie „Neu“ -> „Marketplace“ aus, und suchen Sie dann nach *BizTalk Rules*.
 3. Wählen Sie „BizTalk Rules“ in der Ergebnisliste aus. Das Blatt „BizTalk Rules“ wird geöffnet.
-4. Klicken Sie auf die Schaltfläche *Erstellen* ![Alt text][3].
+4. Klicken Sie auf die Schaltfläche *Erstellen*
+![Alt text][3].
 1. Geben Sie auf dem neuen Blatt, das geöffnet wird, Folgendes ein:  
 	1. Name – Geben Sie einen Namen für die Regel-API-App ein.
 	1. App Service-Plan – Wählen Sie einen App Service-Plan aus, oder erstellen Sie einen neuen.
@@ -253,4 +256,4 @@ Einer der Hauptvorteile der Verwendung von Geschäftsregeln ist, dass Änderunge
 [10]: ./media/app-service-logic-use-biztalk-rules/APIDef.PNG
 [11]: ./media/app-service-logic-use-biztalk-rules/PublicAnon.PNG
 
-<!------HONumber=AcomDC_0121_2016-->
+<!--------HONumber=AcomDC_0121_2016-->
