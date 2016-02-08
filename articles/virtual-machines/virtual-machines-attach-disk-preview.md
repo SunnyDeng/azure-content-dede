@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="vm-multiple"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/14/2015"
+	ms.date="01/21/2016"
 	ms.author="cynthn"/>
 
 # Anfügen eines Datenträgers für Daten im Azure-Portal
@@ -27,21 +27,17 @@ In diesem Artikel wird beschrieben, wie Sie über das Azure-Portal neue und vorh
 - Für die Verwendung von Premium-Speicher benötigen Sie einen virtuellen Computer der DS- oder GS-Serie. Sie können Datenträger aus Premium- und aus Standard-Speicherkonten für diese virtuellen Computer verwenden. Premium-Speicher ist in bestimmten Regionen verfügbar. Nähere Informationen finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Workloads auf virtuellen Azure-Computern](../storage/storage-premium-storage-preview-portal.md).
 - Bei Datenträgern, die an virtuelle Computer angefügt werden, handelt es sich um VHD-Dateien in einem Azure-Speicherkonto. Weitere Informationen finden Sie unter [Informationen zu Datenträgern und VHDs für virtuelle Computer](virtual-machines-disks-vhds.md).
 - Neue Datenträger werden von Azure beim Anfügen automatisch erstellt. Sie müssen den Datenträger also nicht manuell erstellen.
-- Bei einem bereits vorhandenen Datenträger muss die VHD-Datei in einem Azure-Speicherkonto verfügbar sein. Sie können eine bereits vorhandene Datei verwenden, die noch nicht an einen anderen virtuellen Computer angefügt wurde, oder eine eigene VHD-Datei in das Speicherkonto hochladen.
+- Bei einem bereits vorhandenen Datenträger muss die VHD-Datei in einem Azure-Speicherkonto verfügbar sein. Sie können eine bereits vorhandene VHD verwenden, die noch nicht an einen anderen virtuellen Computer angefügt wurde, oder eine eigene VHD-Datei in das Speicherkonto hochladen.
 
 ## Suchen des virtuellen Computers
 
 1. Melden Sie sich beim Azure-Portal an.
 
-2. Klicken Sie im Menü "Hub" auf **Durchsuchen**.
+2. Klicken Sie im Hub-Menü auf **Virtuelle Computer**.
 
-3. Klicken Sie auf das Blatt "Suchen", führen Sie einen Bildlauf nach unten durch, und klicken Sie auf **Virtuelle Computer**.
+3.	Wählen Sie den gewünschten virtuellen Computer aus der Liste aus.
 
-	![Suchen nach virtuellen Computern](./media/virtual-machines-attach-disk-preview/search-blade-preview-portal.png)
-
-4.	Wählen Sie den gewünschten virtuellen Computer aus der Liste aus.
-
-5. Klicken Sie rechts unter **Zusammenfassung** auf **Alle Einstellungen**, und klicken Sie anschließend auf **Datenträger**.
+4. Klicken Sie rechts unter **Zusammenfassung** auf **Alle Einstellungen**, und klicken Sie anschließend auf **Datenträger**.
 
 	![Öffnen der Datenträgereinstellungen](./media/virtual-machines-attach-disk-preview/find-disk-settings.png)
 
@@ -90,4 +86,4 @@ Nach dem Hinzufügen des Datenträgers müssen Sie ihn für die Verwendung im Be
 
 [Informationen zu Azure-Speicherkonten]: ../storage-whatis-account/
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

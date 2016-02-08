@@ -57,7 +57,7 @@ Fügen Sie eine Sicherungsrichtlinie zum automatischen Planen Ihrer Sicherungen 
 
 ![Video verfügbar](./media/storsimple-manage-backup-policies/Video_icon.png) **Video verfügbar**
 
-Sie können sich [hier](http://azure.microsoft.com/documentation/videos/create-storsimple-backup-policies/) ein Video anschauen, in dem das Erstellen einer lokalen Sicherungsrichtlinie oder einer Sicherungsrichtlinie in der Cloud demonstriert wird.
+Sie können sich [hier](https://azure.microsoft.com/documentation/videos/create-storsimple-backup-policies/) ein Video anschauen, in dem das Erstellen einer lokalen Sicherungsrichtlinie oder einer Sicherungsrichtlinie in der Cloud demonstriert wird.
 
 
 ## Hinzufügen oder Ändern eines Zeitplans
@@ -90,4 +90,4 @@ Führen Sie die folgenden Schritte im klassischen Azure-Portal aus, um eine benu
 
 Erfahren Sie mehr über das [Verwenden Ihres StorSimple-Geräts mithilfe des StorSimple Manager-Diensts](storsimple-manager-service-administration.md).
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

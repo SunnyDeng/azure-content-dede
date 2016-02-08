@@ -11,9 +11,9 @@ Reservierte IPs pro Abonnement|20|100
 Dedizierte ExpressRoute-Schaltkreise pro Abonnement|10|25
 Zertifikate für gehostete Dienste pro Abonnement|400|400
 [Affinitätsgruppen](../virtual-network/virtual-networks-migrate-to-regional-vnet.md) pro Abonnement|256|256
-[Batch](http://azure.microsoft.com/services/batch/)-Konten pro Region und Abonnement|1|50
+[Batch](https://azure.microsoft.com/services/batch/)-Konten pro Region und Abonnement|1|50
 Warnungsregeln pro Abonnement|250|250
 
 <sup>1</sup> Zusätzliche kleine Instanzen zählen als ganzer Prozessorkern im Sinn des Limits, obwohl nur ein Teil eines Kerns verwendet wird.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -25,7 +25,7 @@ In diesem Tutorial wird erläutert, wie Sie den StorSimple-Manager-Dienst zum Er
 
 Der StorSimple-Manager-Dienst ist eine Erweiterung des klassischen Azure-Portals, mit der Sie Ihre StorSimple-Lösung über eine einzelne Weboberfläche verwalten können. Zusätzlich zum Verwalten von Datenträgern können Sie mit dem StorSimple-Manager-Dienst StorSimple-Dienste erstellen und verwalten, Geräte anzeigen und verwalten, Warnungen anzeigen sowie Sicherungsrichtlinien und den Sicherungskatalog verwalten.
 
-> [AZURE.NOTE]Mit Azure StorSimple können nur nach Bedarf bereitgestellte Volumes erstellt werden. In einem Azure StorSimple-System können keine vollständig oder teilweise bereitgestellten Volumes erstellt werden.
+> [AZURE.NOTE] Mit Azure StorSimple können nur nach Bedarf bereitgestellte Volumes erstellt werden. In einem Azure StorSimple-System können keine vollständig oder teilweise bereitgestellten Volumes erstellt werden.
 >
 > Die Bereitstellung nach Bedarf ist eine Virtualisierungstechnologie, bei der der verfügbare Speicher scheinbar die physischen Ressourcen überschreitet. Anstatt vorab ausreichend Speicherplatz zu reservieren, ordnet Azure StorSimple bei der Bereitstellung nach Bedarf nur den für die aktuellen Anforderungen erforderlichen Speicherplatz zu. Die Flexibilität der Cloudspeicherung ermöglicht diesen Ansatz, da Azure StorSimple diesen Cloudspeicher erhöhen oder verringern kann, um die veränderten Anforderungen zu erfüllen.
 
@@ -90,7 +90,7 @@ Das neue Volume kann nun verwendet werden.
 
 Zum Ändern eines Volumes müssen Sie dieses erweitern oder die Hosts ändern, die auf das Volume zugreifen.
 
-> [AZURE.IMPORTANT]
+> [AZURE.IMPORTANT] 
 >
 > - Wenn Sie die Größe des Volumes auf dem Gerät ändern, muss auch die Größe des Volumes auf dem Host geändert werden. 
 > - Die hier beschriebenen hostseitigen Schritte gelten für Windows Server 2012 (2012R2). Vorgehensweisen für Linux oder andere Hostbetriebssysteme können davon abweichen. Beachten Sie beim Ändern des Volumes auf einem Host mit einem anderen Betriebssystem die Anweisungen zu Ihrem Hostbetriebssystem. 
@@ -108,14 +108,14 @@ Zum Ändern eines Volumes müssen Sie dieses erweitern oder die Hosts ändern, d
   - Ändern Sie **Name** und **Verwendungstyp**.
   - Erhöhen Sie die **Bereitgestellte Kapazität**. Die **Bereitgestellte Kapazität** kann nur erhöht werden. Ein Volume kann nach seiner Erstellung nicht mehr verkleinert werden.
 
-    > [AZURE.NOTE]Sie können den Volumecontainer nicht ändern, nachdem dieser einem Volume zugeordnet wurde.
+    > [AZURE.NOTE] Sie können den Volumecontainer nicht ändern, nachdem dieser einem Volume zugeordnet wurde.
 
 5. Unter **Weitere Einstellungen** können Sie folgende Aufgaben durchführen:
 
   - Ändern Sie die Zugriffssteuerungsdatensätze, sofern das Volume offline ist. Wenn das Volume online ist, müssen Sie dieses zunächst offline schalten. Lesen Sie vor dem Bearbeiten eines Zugriffssteuerungsdatensatzes die Schritte unter [Offlineschalten von Volumes](#take-a-volume-offline).
   - Ändern Sie die Liste der Zugriffssteuerungsdatensätze, nachdem das Volume offline ist.
  
-    > [AZURE.NOTE]Die Option **Standardsicherung für dieses Volume aktivieren** kann für das Volume nicht geändert werden.
+    > [AZURE.NOTE] Die Option **Standardsicherung für dieses Volume aktivieren** kann für das Volume nicht geändert werden.
 
 6. Speichern Sie die Änderungen, indem Sie auf das Häkchensymbol ![Häkchensymbol](./media/storsimple-manage-volumes/HCS_CheckIcon.png) klicken. Das klassische Azure-Portal zeigt eine Meldung zur Aktualisierung des Volumes an. Eine Erfolgsmeldung wird angezeigt, wenn das Volume aktualisiert wurde.
 
@@ -128,7 +128,7 @@ Zum Ändern eines Volumes müssen Sie dieses erweitern oder die Hosts ändern, d
 
 ![Video verfügbar](./media/storsimple-manage-volumes/Video_icon.png) **Video verfügbar**
 
-Sie können sich [hier](http://azure.microsoft.com/documentation/videos/expand-a-storsimple-volume) ein Video anschauen, in dem das Erweitern eines Volumes demonstriert wird.
+Sie können sich [hier](https://azure.microsoft.com/documentation/videos/expand-a-storsimple-volume/) ein Video anschauen, in dem das Erweitern eines Volumes demonstriert wird.
 
 ## Offlineschalten von Volumes
 
@@ -149,11 +149,11 @@ Möglicherweise müssen Sie ein Volume offline schalten, wenn Sie dieses ändern
 
     Wenn ein Volume offline geschaltet wurde, wird die Option **Online schalten** angezeigt.
 
-> [AZURE.NOTE]Mit dem Befehl **Offline schalten** wird eine Anforderung an das Gerät gesendet, das Volume offline zu schalten. Wenn das Volume weiterhin von Hosts verwendet wird, führt dies zur Unterbrechung von Verbindungen, das Offlineschalten des Volumes schlägt jedoch nicht fehl.
+> [AZURE.NOTE] Mit dem Befehl **Offline schalten** wird eine Anforderung an das Gerät gesendet, das Volume offline zu schalten. Wenn das Volume weiterhin von Hosts verwendet wird, führt dies zur Unterbrechung von Verbindungen, das Offlineschalten des Volumes schlägt jedoch nicht fehl.
 
 ## Löschen von Volumes
 
-> [AZURE.IMPORTANT]Sie können ein Volume nur löschen, wenn dieses offline ist.
+> [AZURE.IMPORTANT] Sie können ein Volume nur löschen, wenn dieses offline ist.
 
 Führen Sie die folgenden Schritte durch, um ein Volume zu löschen.
 
@@ -198,4 +198,4 @@ Führen Sie die folgenden Schritte durch, um die Überwachung eines Volumes zu a
 
  
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

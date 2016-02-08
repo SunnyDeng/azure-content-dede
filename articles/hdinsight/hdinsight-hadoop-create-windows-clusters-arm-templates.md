@@ -27,7 +27,7 @@ Erfahren Sie mehr über das Erstellen von HDInsight-Clustern mithilfe von Azure-
 
 Bevor Sie die Anweisungen in diesem Artikel ausführen können, benötigen Sie Folgendes:
 
-- [Azure-Abonnement](http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
+- [Azure-Abonnement](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 - [Azure PowerShell](hdinsight-administer-use-powershell.md#install-azure-powershell-10-and-greater) und/oder [Azure CLI](xplat-cli-install.md). 
 
 ## ARM-Vorlagen
@@ -444,4 +444,4 @@ Die folgende Azure-Ressourcen-Manager-Vorlage erstellt einen Linux-basierten Had
 	  }
 	}
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

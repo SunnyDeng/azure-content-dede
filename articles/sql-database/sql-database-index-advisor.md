@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Azure SQL-Datenbank Index Advisor" 
-   description="Der SQL Database Index Advisor empfiehlt neue Indizes für vorhandene SQL-Datenbanken, die die aktuelle Abfrageleistung verbessern können." 
+   pageTitle="Azure SQL-Datenbank-Indexratgeber" 
+   description="Der SQL-Datenbank-Indexratgeber empfiehlt neue Indizes für vorhandene SQL-Datenbanken, die die aktuelle Abfrageleistung verbessern können." 
    services="sql-database" 
    documentationCenter="" 
    authors="stevestein" 
@@ -13,31 +13,25 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="data-management" 
-   ms.date="12/01/2015"
+   ms.date="01/23/2015"
    ms.author="sstein"/>
 
-# SQL Database Index Advisor
+# SQL-Datenbank-Indexratgeber
 
-Der SQL Database Index Advisor empfiehlt neue Indizes für vorhandene SQL-Datenbanken, die die aktuelle Abfrageleistung verbessern können.
+Der Azure SQL-Datenbank-Indexratgeber stellt Indexempfehlungen für Ihre vorhandenen SQL-Datenbanken bereit, die die aktuelle Abfrageleistung verbessern können. Der SQL-Datenbankdienst bewertet die Indexleistung durch eine Analyse des Nutzungsverlaufs Ihrer SQL-Datenbank. Es werden hierbei die Indizes empfohlen, die sich am besten für die Ausführung der typischen Workload Ihrer Datenbank eignen.
 
-Der SQL-Datenbankdienst bewertet die Indexleistung durch eine Analyse des Ressourcennutzungsverlaufs für eine SQL-Datenbank, und es werden die Indizes empfohlen, die sich am besten zur Ausführung typischer Datenbankworkloads eignen.
+Der Indexratgeber unterstützt Sie folgendermaßen dabei, die Leistung Ihrer Datenbank zu optimieren:
 
-Der Index Advisor erleichtert die Indexverwaltung durch Empfehlungen zu den zu erstellenden Indizes. Bei V12-Servern kann der Index Advisor auch Indizes mit wenigen Mausklicks im [Azure-Portal](https://portal.azure.com/) erstellen und überprüfen. Nachdem der Index erstellt wurde, analysiert der SQL-Datenbankdienst die Leistung der Datenbankworkload und stellt ausführliche Informationen zu den Auswirkungen des neuen Index bereit. Ergibt die Analyse, dass ein empfohlener Index negative Auswirkungen auf die Leistung hat, wird der Index automatisch wiederhergestellt.
-
-Mit dem Index Advisor können Sie Zeit bei der Optimierung der Datenbankleistung einsparen.
-
-
-> [AZURE.NOTE]Der Index Advisor befindet sich derzeit in der Vorschau und steht nur im [Azure-Portal](https://portal.azure.com/) zur Verfügung.
+- Empfehlungen dazu, welche Indizes erstellt werden sollten (Empfehlungen stehen nur für nicht gruppierte Indizes zur Verfügung)
+- Empfehlungen dazu, welche Indizes gelöscht werden sollten (Empfehlungen zum Löschen von Indizes befinden sich in der Vorschau und gelten aktuellen nur für doppelte Indizes)
+- Möglichkeit zum automatischen Anwenden von Indexempfehlungen ohne Benutzerinteraktion (Für automatisierte Empfehlungen muss der [Abfragespeicher](https://msdn.microsoft.com/library/dn817826.aspx) aktiviert sein und ausgeführt werden)
+- Automatisches Rollback von Empfehlungen, die sich negativ auf die Leistung auswirken 
 
 
-## Überlegungen zur Vorschau
+Dieser Artikel beschreibt den Indexratgeber für V12-Server. Es stehen Indexempfehlungen für V11-Server zur Verfügung, aber Sie müssen das bereitgestellte Transact-SQL-Skript (T-SQL) ausführen, um die Empfehlung zu implementieren. Der Ratgeber setzt keine Indexvorgänge auf V11-Servern zurück, deshalb müssen Sie die Auswirkungen auf die Leistung überwachen und Empfehlungen ggf. zurücksetzen.
 
-Der Index Advisor befindet sich derzeit in der Vorschau und weist die folgenden Einschränkungen auf:
 
-- Indexempfehlungen können nur für V12-Server automatisch erstellt und überprüft werden. (Empfehlungen und Indexerstellungsskripts werden für V12-Server bereitgestellt.)
-- Empfehlungen und Verwaltung sind nur für nicht gruppierte Indizes verfügbar.
-
-## Voraussetzungen
+### Berechtigungen
 
 Zum Anzeigen und Erstellen von Indexempfehlungen benötigen Sie die richtigen Berechtigungen für [rollenbasierte Zugriffssteuerung](role-based-access-control-configure.md) in Azure.
 
@@ -45,130 +39,144 @@ Zum Anzeigen und Erstellen von Indexempfehlungen benötigen Sie die richtigen Be
 - Die Berechtigungen **Owner** und **SQL DB Contributor** sind erforderlich, um Aktionen ausführen zu können, Indizes zu erstellen oder zu löschen und die Indexerstellung abzubrechen.
 
 
-## Verwenden des Index Advisors
+## Anzeigen von Indexempfehlungen
 
-Der Index Advisor ist einfach zu verwenden. Gehen Sie zur Vereinfachung der Indexverwaltung für die Datenbank nach den folgenden Richtlinien vor:
+Auf der Seite „Indexempfehlungen“ können Sie die vorgeschlagenen Indizes basierend auf ihrer potenziellen Auswirkung zur Verbesserung der Leistung anzeigen. Außerdem können Sie hier den Status der letzten Indexvorgänge sehen. Wählen Sie eine Empfehlung oder einen Status aus, um Detailinformationen anzuzeigen.
 
-- Zunächst überprüfen Sie die Liste der Indexempfehlungen und entscheiden, welche Indizes erstellt oder ignoriert werden sollen. Die Liste der Empfehlungen ist nach den geschätzten Auswirkungen auf die Leistung sortiert und bezeichnet (siehe unten). 
-- Erstellen oder ignorieren Sie die empfohlenen Indizes. Erstellen Sie den Index automatisch, indem Sie im Portal auf **Create Index** klicken, oder erstellen Sie den Index manuell, indem Sie das Skript für die Indexerstellung ausführen.
-- Bei manuell erstellten Indizes sollten Sie den Erstellungsvorgang überwachen und die Auswirkungen auf die Leistung messen. Bei automatisch erstellten Indizes wird die Überwachung und die Analyse der Auswirkungen auf die Leistung automatisch vom Azure SQL-Datenbankdienst ausgeführt. 
-
-
-
-## Überprüfen der empfohlenen Indizes
-
-Der Index Advisor stellt eine Liste von Indexempfehlungen auf dem Blatt „Datenbank“ im [Azure-Portal](https://portal.azure.com/) zur Verfügung. Die obersten ausgewählten Empfehlungen werden für alle Tabellen in der ausgewählten Datenbank angezeigt, für die das Erstellen eines neuen Index Leistungssteigerungen bringen kann.
-
-### So überprüfen Sie die derzeit verfügbaren Indexempfehlungen
+So zeigen Sie Indexempfehlungen an
 
 1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com/) an.
-2. Klicken Sie im linken Menü auf **DURCHSUCHEN**.
-3. Klicken Sie im Blatt **Durchsuchen** auf **SQL-Datenbanken**.
-4. Klicken Sie im Blatt **SQL-Datenbanken** auf die Datenbank, für die Sie die empfohlenen Indizes anzeigen möchten.
-5. Klicken Sie auf **Index Advisor**, um die verfügbaren **Indexempfehlungen** für die ausgewählte Datenbank zu öffnen und anzuzeigen.
+2. Klicken Sie auf **DURCHSUCHEN** > **SQL-Datenbanken**, und wählen Sie Ihre Datenbank aus.
+5. Klicken Sie auf **Alle Einstellungen** > **Indexratgeber** um die verfügbaren **Indexempfehlungen** für die ausgewählte Datenbank zu öffnen und anzuzeigen.
 
-> [AZURE.NOTE]Um Indexempfehlungen zu erhalten, muss eine Datenbank ungefähr eine Woche lang genutzt werden, und innerhalb dieser Woche müssen Aktivitäten stattfinden. Außerdem müssen auch konsistente Aktivitäten vorhanden sein. Der Index Advisor kann leichter für konsistente Abfragemuster optimiert werden als für zufällige, unregelmäßige Aktivitätsspitzen.
+> [AZURE.NOTE] Um Indexempfehlungen zu erhalten, muss eine Datenbank ungefähr eine Woche lang genutzt werden, und innerhalb dieser Woche müssen Aktivitäten stattfinden. Außerdem müssen auch konsistente Aktivitäten vorhanden sein. Der Indexratgeber kann leichter für konsistente Abfragemuster optimiert werden als für zufällige, unregelmäßige Aktivitätsspitzen. Wenn auf der Seite **Indexempfehlungen** keine Empfehlungen verfügbar sind, sollte der Grund hier in einer Meldung erläutert werden.
 
-![Empfohlene Indizes][3]
+![Empfohlene Indizes](./media/sql-database-index-advisor/recommendations.png)
 
 Empfehlungen werden nach möglichen Auswirkungen auf die Leistung in die folgenden vier Kategorien unterteilt:
 
-| Impact | Beschreibung |
+| Auswirkung | Beschreibung |
 | :--- | :--- |
 | Hoch | Empfehlungen für hohe Auswirkungen sollten den größten Einfluss auf die Leistung haben. |
-| Substantial | Empfehlungen für erhebliche Auswirkungen sollten die Leistung deutlich verbessern. |
-| Moderate | Empfehlungen für mittlere Auswirkungen sollten die Leistung verbessern, jedoch nicht wesentlich. |
-| Low | Empfehlungen für geringe Auswirkungen sollten eine bessere Leistung als ohne Index bieten, die Verbesserungen sind möglicherweise jedoch nicht signifikant. 
-Verwenden Sie das Tag "Impact", um die besten Kandidaten zum Erstellen neuer Indizes zu bestimmen.
+| Wesentlich | Empfehlungen für erhebliche Auswirkungen sollten die Leistung deutlich verbessern. |
+| Moderat | Empfehlungen für mittlere Auswirkungen sollten die Leistung verbessern, jedoch nicht wesentlich. |
+| Niedrig | Empfehlungen für geringe Auswirkungen sollten eine bessere Leistung als ohne Index bieten, die Verbesserungen sind möglicherweise jedoch nicht signifikant. 
+Verwenden Sie die Kennzeichnung „Auswirkung“, um die besten Kandidaten zum Erstellen neuer Indizes zu bestimmen.
 
-### Verwalten der Liste der empfohlenen Indizes
 
-Wenn die Empfehlungsliste Indizes enthält, bei denen Sie der Meinung sind, dass diese keinen Nutzen haben, können Sie die Indexempfehlungen im Index Advisor verwerfen. (Sie können die verworfenen Indizes bei Bedarf später wieder in die Liste **Recommended indexes** aufnehmen.)
+### Entfernen von Indexempfehlungen aus der Liste
 
-#### Verwerfen einer Indexempfehlung
+Wenn die Liste der empfohlenen Indizes Einträge enthält, die Sie aus der Liste entfernen möchten, können Sie die Empfehlung verwerfen:
 
-1. Wählen Sie den Index in der Liste **Recommended indexes** aus.
-1. Klicken Sie auf dem Blatt **Index details** auf **Discard index**.
+1. Wählen Sie in der Liste **Empfohlene Indizes** eine Empfehlung aus.
+2. Klicken Sie auf dem Blatt **Indexdetails** auf **Index verwerfen**.
 
-#### Anzeigen von verworfen Indizes und erneutes Hinzufügen zur Hauptliste
 
-1. Klicken Sie auf dem Blatt **Index recommendations** auf **View discarded index recommendations**.
+Falls gewünscht, können Sie verworfene Indizes wieder zur Liste **Empfohlene Indizes** hinzufügen:
+
+1. Klicken Sie auf dem Blatt **Indexempfehlungen** auf **Verworfene Indexempfehlungen anzeigen**.
 1. Wählen Sie einen verworfenen Index aus der Liste, um dessen Details anzuzeigen.
-1. Klicken Sie optional auf **Undo Discard**, um den Index wieder der Hauptliste der **Index recommendations** hinzuzufügen.
+1. Klicken Sie optional auf **Verwerfen rückgängig machen**, um den Index wieder der Hauptliste der **Indexempfehlungen** hinzuzufügen.
 
 
 
-## Erstellen neuer Indizes
+## Anwenden von Indexempfehlungen
 
-Der Index Advisor bietet Ihnen die vollständige Kontrolle über die Erstellung von Indizes. Jede Empfehlung enthält ein T-SQL-Indexerstellungsskript, und Sie können die genauen Angaben zur Indexerstellung überprüfen, bevor eine Aktion für eine Datenbank durchgeführt wird.
+Der Indexratgeber gibt Ihnen vollständige Kontrolle darüber, wie Indexempfehlungen umgesetzt werden. Dazu stehen Ihnen die folgenden 3 Optionen zur Verfügung:
 
-Indexempfehlungen Sie für alle Azure SQL-Datenbankserver verfügbar, aber nur V12-Server bieten automatisierte Indexerstellung. Andere Server profitieren auch vom Index Advisor, Sie müssen Indizes jedoch manuell erstellen, wie im Folgenden beschrieben.
+- Aktivieren Sie einzelne Empfehlungen nacheinander.
+- Konfigurieren Sie den Indexratgeber zum automatischen Anwenden von Indexempfehlungen.
+- Führen Sie das empfohlene T-SQL-Skript manuell für Ihre Datenbank aus, um eine Empfehlung zu implementieren.
 
-Wählen Sie sowohl für automatische als auch manuelle Erstellung einfach einen empfohlenen Index auf dem Blatt **Index recommendations** aus, und gehen Sie folgendermaßen vor:
+Wählen Sie eine beliebige Empfehlung aus, um die zugehörigen Detailinformationen anzuzeigen. Klicken Sie dann auf **Skript anzeigen**, um genaue Informationen dazu anzuzeigen, wie die Empfehlung erstellt wird.
 
-### Automatische Indexerstellung (nur V12-Server)
+Die Datenbank bleibt online, während der Ratgeber die Empfehlung anwendet – durch den Indexratgeber wird niemals eine Datenbank offline geschaltet.
 
-Wenn sich die Datenbank auf einem V12-Server befindet, können Sie problemlos einen empfohlenen Index erstellen, indem Sie den gewünschten Index im Portal auswählen und dann auf **Create Index** klicken.
+### Anwenden einzelner Empfehlungen
 
-Die Datenbank bleibt während der Indexerstellung online. Bei der Verwendung des Index Advisors zum Erstellen eines Index wird die Datenbank nicht offline geschaltet.
+Sie können Empfehlungen nacheinander anzeigen und akzeptieren.
 
-Darüber hinaus erfordern mit **Create Index** erstellte Indizes keine weitere Leistungsüberwachung. Wenn ein empfohlener Index negative Auswirkungen auf die Leistung hat, wird der Index automatisch wiederhergestellt. Nach der Verwendung von "Create Index" sind die Metriken zu den Auswirkungen des neuen Index im Portal verfügbar.
+1. Klicken Sie auf dem Blatt **Indexempfehlungen** auf eine Empfehlung.
+2. Klicken Sie auf dem Blatt **Indexdetails** auf **Übernehmen**.
+
+    ![Anwenden einer Empfehlung](./media/sql-database-index-advisor/apply.png)
 
 
-### Manuelle Indexerstellung (alle Server)
+### Aktivieren der automatischen Indexverwaltung
 
-Wählen Sie einen beliebigen empfohlenen Index im Portal aus, und klicken Sie dann auf **View Script**. Führen Sie dieses Skript für die Datenbank aus, um den empfohlenen Index zu erstellen. Indizes, die manuell erstellt wurden, werden nicht überwacht und nicht auf ihre tatsächlichen Auswirkungen auf die Leistung überprüft. Es empfiehlt sich daher, diese Indizes nach der Erstellung zu überwachen, um sicherzustellen, dass sie Leistungssteigerungen bieten, und um sie gegebenenfalls anzupassen oder zu löschen. Ausführliche Informationen zum Erstellen von Indizes finden Sie unter [CREATE INDEX (Transact-SQL)](https://msdn.microsoft.com/library/ms188783.aspx).
+Sie können den Indexratgeber so konfigurieren, dass Empfehlungen automatisch implementiert werden. Sobald Empfehlungen zur Verfügung stehen, werden sie automatisch angewendet. Wie bei allen vom Dienst verwalteten Indexvorgängen wird eine Empfehlung zurückgesetzt, wenn sie sich negativ auf die Leistung auswirkt.
+
+1. Klicken Sie auf dem Blatt **Indexempfehlungen** auf **Ratgebereinstellungen**:
+
+    ![Ratgebereinstellungen](./media/sql-database-index-advisor/settings.png)
+
+2. Konfigurieren Sie den Ratgeber zum automatischen **Erstellen** oder **Löschen** von Indizes:
+
+    ![Empfohlene Indizes](./media/sql-database-index-advisor/automation.png)
+
+
+
+
+### Manuelles Ausführen des empfohlenen T-SQL-Skripts
+
+Wählen Sie eine beliebige Empfehlung aus, und klicken Sie auf **Skript anzeigen**. Führen Sie dieses Skript für Ihre Datenbank aus, um die Empfehlung manuell anzuwenden.
+
+*Indizes, die manuell erstellt wurden, werden nicht durch den Dienst überwacht und auf ihre tatsächlichen Auswirkungen auf die Leistung überprüft*. Es empfiehlt sich daher, diese Indizes nach der Erstellung zu überwachen. So können Sie sicherstellen, dass sie Leistungssteigerungen bieten, und sie gegebenenfalls anpassen oder löschen. Ausführliche Informationen zum Erstellen von Indizes finden Sie unter [CREATE INDEX (Transact-SQL)](https://msdn.microsoft.com/library/ms188783.aspx).
 
 
 ### Abbrechen der Indexerstellung
 
-Indizes, die den Status **Pending** haben, können abgebrochen werden. Indizes, die gerade erstellt werden (Status **Executing**), können nicht abgebrochen werden.
+Indizes, die den Status **Ausstehend** haben, können abgebrochen werden. Indizes, die gerade erstellt werden (Status **Wird ausgeführt**), können nicht abgebrochen werden.
 
-1. Wählen Sie einen beliebigen Index mit dem Status **Pending** im Bereich **Index operations** aus, um das Blatt **Index details** zu öffnen.
-1. Klicken Sie auf **Abbrechen**, um den Vorgang der Indexerstellung abzubrechen.
+1. Wählen Sie einen beliebigen Index mit dem Status **Ausstehend** im Bereich **Indexvorgänge** aus, um das Blatt **Indexdetails** zu öffnen.
+2. Klicken Sie auf **Abbrechen**, um den Vorgang der Indexerstellung abzubrechen.
 
-## Überwachen der Indexvorgänge nach der Erstellung der Indizes
 
-Die Erstellung eines Index wird nicht sofort ausgeführt. Im Portal finden Sie ausführliche Informationen zum Status der Indexvorgänge. Beim Verwalten von Indizes können die folgenden möglichen Indexzustände vorliegen:
+
+## Überwachen von Indexvorgängen
+
+Eine Empfehlung wird möglicherweise nicht umgehend angewendet. Im Portal finden Sie ausführliche Informationen zum Status der Indexvorgänge. Beim Verwalten von Indizes können die folgenden möglichen Indexzustände vorliegen:
 
 | Status | Beschreibung |
 | :--- | :--- |
-| Ausstehend | Der Befehl "Create index" wurde empfangen, und die Erstellung des Index wurde geplant. |
-| Executing | Der Befehl "Create Index" wird ausgeführt, und der Index wird gegenwärtig erstellt. |
+| Ausstehend | Der Befehl „Index erstellen“ wurde empfangen, und die Erstellung des Index wurde geplant. |
+| Wird ausgeführt | Der Befehl „Index erstellen“ wird ausgeführt, und der Index wird gegenwärtig erstellt. |
 | Erfolgreich | Der Index wurde erfolgreich erstellt. |
 | Fehler | Der Index wurde nicht erstellt. Dies kann ein vorübergehendes Problem sein, oder es handelt sich möglicherweise um eine Schemaänderung an der Tabelle, und das Skript ist nicht mehr gültig. |
-| Wiederherstellen | Die Indexerstellung wurde abgebrochen oder wurde als nicht leistungsfähig erachtet und automatisch zurückgesetzt. |
+| Wird zurückgesetzt | Die Indexerstellung wurde abgebrochen oder wurde als nicht leistungsfähig erachtet und automatisch zurückgesetzt. |
+
+Klicken Sie auf eine in Bearbeitung befindliche Empfehlung in der Liste, um die zugehörigen Detailinformationen anzuzeigen:
+
+![Empfohlene Indizes](./media/sql-database-index-advisor/operations.png)
 
 
 
-![Empfohlene Indizes][4]
+### Zurücksetzen eines Index
+
+Wenn Sie mit dem Ratgeber einen Index erstellt haben (Sie haben das T-SQL-Skript nicht manuell ausgeführt), wird der Index automatisch zurückgesetzt, wenn er eine negative Auswirkung auf die Leistung hat. Wenn Sie aus irgendeinem Grund einen Indexratgebervorgang zurücksetzen möchten, können Sie Folgendes tun.
 
 
+1. Wählen Sie einen erfolgreich erstellten Index in der Liste **Indexvorgänge** aus.
+2. Klicken Sie auf dem Blatt **Indexdetails** auf **zurücksetzen**, oder klicken Sie für ein DROP INDEX-Skript auf **Skript anzeigen**.
 
-## Entfernen eines Index
-Sie können Indizes entfernen, die mit dem Index Advisor erstellt wurden.
+![Empfohlene Indizes](./media/sql-database-index-advisor/details.png)
 
 
-1. Wählen Sie einen erfolgreich erstellten Index in der Liste **Index operations** aus.
-1. Klicken Sie auf dem Blatt **Index details** auf **Remove index**, oder klicken Sie für ein "DROP INDEX"-Skript auf **View Script**.
+## Überwachen der Auswirkung von Indexempfehlungen auf die Leistung
 
+Nachdem Empfehlungen erfolgreich implementiert wurden, können Sie auf dem Blatt „Indexdetails“ auf **Details abfragen** klicken, um die [Statistik zur Abfrageleistung](sql-database-query-performance.md) zu öffnen und die Auswirkung Ihrer häufigsten Abfragen auf die Leistung anzuzeigen.
+
+![Überwachen der Auswirkung auf die Leistung](./media/sql-database-index-advisor/query-insights.png)
 
 
 ## Zusammenfassung
 
-Indexempfehlungen bieten eine automatisierte Lösung für die Indexerstellung und Analyse der einzelnen SQL-Datenbanken, um die am besten geeigneten Indizes zu ermitteln. Klicken Sie auf einem Blatt "Datenbank" auf die Kachel **Index Advisor**, um Indexempfehlungen anzuzeigen.
+Der Indexratgeber stellt Indexempfehlungen bereit und bietet Funktionen zum automatisierten Verwalten von Indizes für SQL-Datenbank. Durch das Bereitstellen von T-SQL-Skripts sowie mithilfe von Optionen zur individuellen und vollständig automatisierten Indexverwaltung bietet der Indexratgeber wertvolle Unterstützung bei der Optimierung Ihrer Datenbankindizes und damit Ihrer Abfrageleistung.
 
 
 
 ## Nächste Schritte
 
-Überwachen Sie Ihre Indexempfehlungen, und wenden Sie sie weiterhin an, um die Leistung zu optimieren. Datenbankworkloads sind dynamisch und ändern sich ständig. Der Index Advisor setzt die Überwachung fort und empfiehlt Indizes, die die Leistung Ihrer Datenbank potenziell erhöhen können.
+Überwachen Sie Ihre Indexempfehlungen, und wenden Sie sie weiterhin an, um die Leistung zu optimieren. Datenbankworkloads sind dynamisch und ändern sich ständig. Der Indexratgeber setzt die Überwachung fort und empfiehlt Indizes, die die Leistung Ihrer Datenbank potenziell erhöhen können.
 
-
-<!--Image references-->
-[1]: ./media/sql-database-index-advisor/index-recommendations.png
-[2]: ./media/sql-database-index-advisor/index-details.png
-[3]: ./media/sql-database-index-advisor/recommended-indexes.png
-[4]: ./media/sql-database-index-advisor/index-operations.png
-
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

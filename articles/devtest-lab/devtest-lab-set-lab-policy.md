@@ -26,7 +26,7 @@ Mit DevTest Lab können Sie Richtlinien für Schlüssel angeben, die die Verwend
 
 Um die Richtlinien für ein Lab anzeigen und ändern zu können, gehen Sie folgendermaßen vor:
 
-1. Melden Sie sich beim [Azure-Vorschauportal](http://portal.azure.com) an.
+1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an.
 
 1. Tippen Sie auf **Durchsuchen**, und tippen Sie dann in der Liste auf **DevTest Labs**.
 
@@ -100,4 +100,4 @@ Die Auto-Shutdown-Richtlinie hilft dabei, unnötigen Aufwand im Lab zu minimiere
 
 1. Tippen Sie auf **Speichern**.
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0128_2016-->

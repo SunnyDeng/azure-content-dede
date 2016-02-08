@@ -24,7 +24,7 @@ Auf der Webseite [Virtuelle Netzwerke – Übersicht](virtual-networks-overview.
 
 ### Wie fange ich an?
 
-Auf der Webseite [Dokumentation zu virtuellen Netzwerken](http://azure.microsoft.com/documentation/services/virtual-network/) finden Sie Informationen zu den ersten Schritten. Auf dieser Seite befinden sich Links zu allgemeinen Konfigurationsschritten sowie Informationen zu den verschiedenen Aspekten, die Sie berücksichtigen müssen, wenn Sie Ihr virtuelles Netzwerk entwerfen.
+Auf der Webseite [Dokumentation zu virtuellen Netzwerken](https://azure.microsoft.com/documentation/services/virtual-network/) finden Sie Informationen zu den ersten Schritten. Auf dieser Seite befinden sich Links zu allgemeinen Konfigurationsschritten sowie Informationen zu den verschiedenen Aspekten, die Sie berücksichtigen müssen, wenn Sie Ihr virtuelles Netzwerk entwerfen.
 
 ### Welche Dienste können in VNets genutzt werden?
 
@@ -143,7 +143,7 @@ Ja. Sie können die Liste der DNS-Server für das VNet jederzeit ändern. Wenn S
 
 Der von Azure bereitgestellte DNS-Dienst ist ein von Microsoft angebotener mehrinstanzenfähiger DNS-Dienst. In Azure werden alle Ihre virtuellen Computer und Rolleninstanzen in diesem Dienst registriert. Dieser Dienst stellt die Namensauflösung nach dem Hostnamen für virtuelle Computer und Rolleninstanzen, die im gleichen Clouddienst enthalten sind, und nach dem FQDN für virtuelle Computer und Rolleninstanzen im gleichen VNet zur Verfügung.
 
-> [AZURE.NOTE]Die mandantenübergreifende Namensauflösung mithilfe des von Azure bereitgestellten DNS-Diensts ist derzeit auf die ersten 100 Clouddienste im virtuellen Netzwerk beschränkt. Diese Einschränkung gilt nicht, wenn Sie einen eigenen DNS-Server verwenden.
+> [AZURE.NOTE] Die mandantenübergreifende Namensauflösung mithilfe des von Azure bereitgestellten DNS-Diensts ist derzeit auf die ersten 100 Clouddienste im virtuellen Netzwerk beschränkt. Diese Einschränkung gilt nicht, wenn Sie einen eigenen DNS-Server verwenden.
 
 ### Können DNS-Einstellungen für einzelne virtuelle Computer und Dienste überschrieben werden?
 
@@ -193,7 +193,7 @@ Nein. Schnittstelleneigenschaften von virtuellen Computern dürfen nicht geände
 
 Nichts. Die IP-Adressen (sowohl die öffentliche VIP-Adresse als auch die interne IP-Adresse) bleiben dem Clouddienst oder virtuellen Computer weiterhin zugewiesen.
 
-> [AZURE.NOTE]Wenn Sie den virtuellen Computer einfach herunterfahren möchten, verwenden Sie dazu nicht das Verwaltungsportal. Derzeit wird über die Schaltfläche zum Herunterfahren die Zuordnung des virtuellen Computers aufgehoben.
+> [AZURE.NOTE] Wenn Sie den virtuellen Computer einfach herunterfahren möchten, verwenden Sie dazu nicht das Verwaltungsportal. Derzeit wird über die Schaltfläche zum Herunterfahren die Zuordnung des virtuellen Computers aufgehoben.
 
 ### Können virtuelle Computer ohne erneute Bereitstellung zwischen Subnetzen in einem VNet verschoben werden?
 
@@ -224,9 +224,9 @@ Ja. Sie können Web-Apps in einem VNet mit ASE (App Service Environment, App Ser
 
 - [Erstellen von Web-Apps in einer App Service-Umgebung](app-service-web-how-to-create-a-web-app-in-an-ase.md)
 
-- [Web Apps Virtual Network Integration (in englischer Sprache)](http://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/)
+- [Web Apps Virtual Network Integration (in englischer Sprache)](https://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/)
 
-- [Using VNet Integration and Hybrid Connections with Web Apps (in englischer Sprache)](http://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/)
+- [Using VNet Integration and Hybrid Connections with Web Apps (in englischer Sprache)](https://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/)
 
 - [Integrieren einer Web-App in einem Azure Virtual Network](web-sites-integrate-with-vnet.md)
 
@@ -266,4 +266,4 @@ Ja. VNets und die standortübergreifende Konnektivität können mithilfe von RES
 
 Ja. Sie können PowerShell und Befehlszeilentools für zahlreiche Plattformen verwenden. Weitere Informationen finden Sie [hier](http://go.microsoft.com/fwlink/?LinkId=317721).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

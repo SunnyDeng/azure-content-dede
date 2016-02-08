@@ -39,7 +39,7 @@ Um für eine REST-Schnittstelle das Übermitteln von Aufträgen an den Cluster p
 
 Ausführliche Verfahren finden Sie unter [Installieren der Microsoft HPC Pack-Webkomponenten](http://technet.microsoft.com/library/hh314627.aspx).
 
->[AZURE.TIP]Bestimmte Azure-Schnellstartvorlagen installieren und konfigurieren die Webkomponenten automatisch. Wenn Sie zum Erstellen des Clusters das [HPC Pack-IaaS-Bereitstellungsskript](virtual-machines-hpcpack-cluster-powershell-script.md) verwenden, können Sie die Webkomponenten optional als Teil der Bereitstellung installieren und konfigurieren.
+>[AZURE.TIP] Bestimmte Azure-Schnellstartvorlagen installieren und konfigurieren die Webkomponenten automatisch. Wenn Sie zum Erstellen des Clusters das [HPC Pack-IaaS-Bereitstellungsskript](virtual-machines-hpcpack-cluster-powershell-script.md) verwenden, können Sie die Webkomponenten optional als Teil der Bereitstellung installieren und konfigurieren.
 
 **So installieren Sie die Webkomponenten**
 
@@ -66,7 +66,7 @@ Ausführliche Verfahren finden Sie unter [Installieren der Microsoft HPC Pack-We
 
 4. Wenn Sie zum Auswählen eines Zertifikats aufgefordert werden, wählen Sie das Zertifikat aus, das dem öffentlichen DNS-Namen des Hauptknotens entspricht. Beispiel: Wenn Sie das HPC Pack-IaaS-Bereitstellungsskript zum Erstellen des Clusters verwenden, erhält der Zertifikatname das Format „CN=&lt;*HeadNodeDnsName*&gt;.cloudapp.net“. Wenn Sie eine Azure-Schnellstartvorlage verwenden, liegt der Zertifikatname im Format „CN=&lt;*HeadNodeDnsName*&gt;.&lt;*region*&gt;.cloudapp.azure“ vor.
 
-    >[AZURE.NOTE]Sie müssen dieses Zertifikat auswählen, um später von einem lokalen Computer Aufträge an den Hauptknoten übermitteln zu können. Wählen bzw. konfigurieren Sie kein Zertifikat, das dem Computernamen des Hauptknotens in der Active Directory-Domäne entspricht (z. B. CN=*MyHPCHeadNode.HpcAzure.local*).
+    >[AZURE.NOTE] Sie müssen dieses Zertifikat auswählen, um später von einem lokalen Computer Aufträge an den Hauptknoten übermitteln zu können. Wählen bzw. konfigurieren Sie kein Zertifikat, das dem Computernamen des Hauptknotens in der Active Directory-Domäne entspricht (z. B. CN=*MyHPCHeadNode.HpcAzure.local*).
 
 5. Geben Sie den folgenden Befehl ein, um das Webportal für die Auftragsübermittlung zu konfigurieren:
 
@@ -114,7 +114,7 @@ Um die HPC Pack-Clienttools zum Übermitteln von Aufträgen an den Hauptknoten v
 
 
 
->[AZURE.SECURITY]Unter Umständen wird eine Sicherheitswarnung angezeigt, da die Zertifizierungsstelle auf dem Hauptknoten vom Clientcomputer nicht erkannt wird. Zu Testzwecken können Sie diese Warnung ignorieren und den Zertifikatimport abschließen.
+>[AZURE.SECURITY] Unter Umständen wird eine Sicherheitswarnung angezeigt, da die Zertifizierungsstelle auf dem Hauptknoten vom Clientcomputer nicht erkannt wird. Zu Testzwecken können Sie diese Warnung ignorieren und den Zertifikatimport abschließen.
 
 ## Schritt 3: Ausführen von Testaufträgen im Cluster
 
@@ -134,7 +134,7 @@ Zum Überprüfen der Konfiguration können Sie versuchen, Aufträge im Cluster i
     job list /scheduler:https://<HeadNodeDnsName>.<region>.cloudapp.azure.com /all
     ```
 
-    >[AZURE.TIP]Verwenden Sie in der Scheduler-URL den vollständigen DNS-Namen des Hauptknotens,nicht die IP-Adresse. Wenn Sie die IP-Adresse angeben, wird ein Fehler der Art „Das Serverzertifikat muss entweder über eine gültige Vertrauenskette verfügen oder im vertrauenswürdigen Stammspeicher angeordnet sein“ angezeigt.
+    >[AZURE.TIP] Verwenden Sie in der Scheduler-URL den vollständigen DNS-Namen des Hauptknotens,nicht die IP-Adresse. Wenn Sie die IP-Adresse angeben, wird ein Fehler der Art „Das Serverzertifikat muss entweder über eine gültige Vertrauenskette verfügen oder im vertrauenswürdigen Stammspeicher angeordnet sein“ angezeigt.
 
 3. Geben Sie bei entsprechender Aufforderung den Benutzernamen (in der Form „&lt;Domänenname&gt;\\&lt;Benutzername&gt;“) und das Kennwort des HPC-Clusteradministrators oder eines anderen Clusterbenutzers ein, den Sie konfiguriert haben. Sie können die Anmeldeinformationen für weitere Auftragsvorgänge auch lokal speichern.
 
@@ -188,4 +188,4 @@ Zum Überprüfen der Konfiguration können Sie versuchen, Aufträge im Cluster i
 <!--Image references-->
 [jobsubmit]: ./media/virtual-machines-hpcpack-cluster-submit-jobs/jobsubmit.png
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

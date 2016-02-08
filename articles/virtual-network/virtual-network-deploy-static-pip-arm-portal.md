@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="01/08/2015"
+   ms.date="01/08/2016"
    ms.author="telmos" />
 
 # Bereitstellen einer VM mit einer statischen öffentlichen IP-Adresse mithilfe des Azure-Portals
@@ -23,7 +23,7 @@
 
 [AZURE.INCLUDE [virtual-network-deploy-static-pip-intro-include.md](../../includes/virtual-network-deploy-static-pip-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell.
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/learn-about-deployment-models-rm-include.md)]klassisches Bereitstellungsmodell.
 
 [AZURE.INCLUDE [virtual-network-deploy-static-pip-scenario-include.md](../../includes/virtual-network-deploy-static-pip-scenario-include.md)]
 
@@ -31,7 +31,7 @@
 
 Führen Sie die unten angegebenen Schritte aus, um eine VM mit einer statischen öffentlichen IP-Adresse im Azure-Portal zu erstellen.
 
-1. Navigieren Sie in einem Browser zum [Azure-Portal](http://portal.azure.com), und melden Sie sich, falls erforderlich, mit Ihrem Azure-Konto an.
+1. Navigieren Sie in einem Browser zum [Azure-Portal](https://portal.azure.com) und melden Sie sich, falls erforderlich, mit Ihrem Azure-Konto an.
 2. Klicken Sie oben links im Portal auf **Neu**>>**Compute**>**Windows Server 2012 R2 Datacenter**.
 3. Wählen Sie in der Liste **Bereitstellungsmodell auswählen** die Option **Ressourcen-Manager**, und klicken Sie auf **Erstellen**.
 4. Geben Sie auf dem Blatt **Grundlagen** die VM-Informationen wie unten gezeigt ein, und klicken Sie dann auf **OK**.
@@ -59,4 +59,4 @@ Führen Sie die unten angegebenen Schritte aus, um eine VM mit einer statischen 
 
 	![Azure-Portal – Öffentliche IP-Adresse erstellen](./media/virtual-network-deploy-static-pip-arm-portal/figure6.png)
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

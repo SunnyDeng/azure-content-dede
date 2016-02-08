@@ -1,4 +1,4 @@
-<properties 
+<properties
    pageTitle="Erstellen eines Azure-Projekts mit Visual Studio | Microsoft Azure"
    description="Erstellen eines Azure-Projekts mit Visual Studio"
    services="visual-studio-online"
@@ -6,13 +6,13 @@
    authors="TomArcher"
    manager="douge"
    editor="" />
-<tags 
+<tags
    ms.service="multiple"
    ms.devlang="multiple"
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="12/18/2015"
+   ms.date="01/22/2016"
    ms.author="tarcher" />
 
 # Erstellen eines Azure-Projekts mit Visual Studio
@@ -21,12 +21,12 @@ Die Azure Tools für Visual Studio stellen eine Vorlage zur Verfügung, mit der 
 
 Eine Azure-Clouddienstlösung enthält die folgenden Projekttypen:
 
-- **Azure-Projekt** 
-    
-    Das Azure-Projekt weist Zuordnungen zu den Rollenprojekten in der Projektmappe auf. Es schließt auch die Dienstdefinition und die Dienstkonfigurationsdateien ein. Die Dienstdefinitionsdatei definiert die Laufzeiteinstellungen für Ihre Anwendung, u. a. erforderliche Rollen, Endpunkte und Größe des virtuellen Computers. Die Dienstkonfigurationsdatei konfiguriert, wie viele Instanzen einer Rolle ausgeführt werden, und die Werte der für eine Rolle definierten Einstellungen. Weitere Informationen zu diesen Einstellungen finden Sie unter [Vorgehensweise: Konfigurieren der Rollen für einen Azure-Clouddienst mit Visual Studio](https://msdn.microsoft.com/library/azure/hh369931.aspx).
+- **Azure-Projekt**
+
+    Das Azure-Projekt weist Zuordnungen zu den Rollenprojekten in der Projektmappe auf. Es schließt auch die Dienstdefinition und die Dienstkonfigurationsdateien ein. Die Dienstdefinitionsdatei definiert die Laufzeiteinstellungen für Ihre Anwendung, u. a. erforderliche Rollen, Endpunkte und Größe des virtuellen Computers. Die Dienstkonfigurationsdatei konfiguriert, wie viele Instanzen einer Rolle ausgeführt werden, und die Werte der für eine Rolle definierten Einstellungen. Weitere Informationen zu diesen Einstellungen finden Sie unter [Vorgehensweise: Konfigurieren der Rollen für einen Azure-Clouddienst mit Visual Studio](vs-azure-tools-configure-roles-for-cloud-service.md).
 
 - **Webrollenprojekt**
- 
+
     Eine Workerrolle führt die Hintergrundverarbeitung aus. Eine Workerrolle kann mit Speicherdiensten und anderen internetbasierten Diensten kommunizieren. Eine Workerrolle kann eine beliebige Anzahl von HTTP-, HTTPS- oder TCP-Endpunkten aufweisen.
 
     - **ASP.NET-Webrolle** zum Erstellen einer ASP.NET-Anwendung mit einem Web-Front-End
@@ -62,4 +62,4 @@ Eine Azure-Clouddienstlösung enthält die folgenden Projekttypen:
 
 1. Um eine Rolle umzubenennen, die dem Projekt hinzugefügt wurde, zeigen Sie im Dialogfeld **Neues Azure-Projekt** mit dem Mauszeiger auf die Rolle und klicken rechts neben der Rolle auf das Symbol **Umbenennen**. Sie können auch eine Rolle innerhalb der Projektmappe umbenennen, nachdem sie hinzugefügt wurde.
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

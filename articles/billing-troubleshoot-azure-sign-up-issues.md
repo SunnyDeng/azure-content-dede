@@ -55,9 +55,9 @@ Vorschläge: – Wenn Sie über keinen OSA-Schlüssel verfügen, wenden Sie sich
 ## Haben Sie in der Vergangenheit bereits ein Azure-Abonnement verwendet und möchten nun eine kostenlose Azure-Testversion aktivieren?
 Die Vereinbarung in den Azure-Nutzungsbedingungen sieht vor, dass eine kostenlose Testversion von Benutzern, die Azure noch nie zuvor genutzt haben, nur einmal aktiviert werden darf. Wenn Sie bereits einen anderen Typ von Azure-Abonnement hatten, können Sie keine kostenlose Testversion aktivieren.
 
-Vorschläge: – Wenn Sie in der Vergangenheit bereits ein Azure-Abonnement aktiviert haben und bei der Aktivierung der kostenlosen Testversion ein Fehler auftritt, erwägen Sie den Kauf eines Abonnements mit nutzungsbasierter Bezahlung. Sie sind ggf. auch für ein Vorteilsangebot berechtigt. Weitere Informationen (abgesehen vom Plan „Kostenlose Azure-Testversion“) finden Sie auf der [Seite mit den Microsoft Azure-Angebotsdetails](http://azure.microsoft.com/support/legal/offer-details/). Beachten Sie, dass für Vorteilspläne bestimmte Voraussetzungen erfüllt sein müssen.
+Vorschläge: – Wenn Sie in der Vergangenheit bereits ein Azure-Abonnement aktiviert haben und bei der Aktivierung der kostenlosen Testversion ein Fehler auftritt, erwägen Sie den Kauf eines Abonnements mit nutzungsbasierter Bezahlung. Sie sind ggf. auch für ein Vorteilsangebot berechtigt. Weitere Informationen (abgesehen vom Plan „Kostenlose Azure-Testversion“) finden Sie auf der [Seite mit den Microsoft Azure-Angebotsdetails](https://azure.microsoft.com/support/legal/offer-details/). Beachten Sie, dass für Vorteilspläne bestimmte Voraussetzungen erfüllt sein müssen.
 
 ## Sie können sich immer noch nicht registrieren?
 [Wenden Sie sich an Azure-Support](http://go.microsoft.com/fwlink/?linkid=544831&clcid=0x409), wenn weiterhin Probleme bei der Registrierung auftreten oder Ihr Problem in diesem Artikel nicht behandelt wird.
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

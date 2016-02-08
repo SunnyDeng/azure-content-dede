@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure AD Connect-Synchronisierung: PowerShell-Connector"
+   pageTitle="Azure AD Connect-Synchronisierung: PowerShell-Connector | Microsoft Azure"
    description="Dieser Artikel beschreibt die Konfiguration des Microsoft Windows PowerShell-Connectors."
    services="active-directory"
    documentationCenter=""
@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.devlang="na"
    ms.topic="article"
-   ms.date="12/16/2015"
+   ms.date="01/21/2016"
    ms.author="andkjell"/>
 
 # Technische Referenz für den Windows PowerShell-Connector
@@ -370,4 +370,4 @@ Ersetzen Sie den Platzhalter <ConnectorName> durch den Namen des Windows PowerS
 [pwdex3]: https://msdn.microsoft.com/library/windows/desktop/microsoft.metadirectoryservices.passwordextensionexception.aspx
 [samp]: http://go.microsoft.com/fwlink/?LinkId=394291
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

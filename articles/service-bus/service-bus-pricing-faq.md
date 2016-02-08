@@ -17,9 +17,9 @@
 
 # Häufig gestellte Fragen zu Service Bus-Preisen
 
-In diesem Abschnitt werden einige häufig gestellte Fragen zur Service Bus-Preisstruktur beantwortet. Sie können auch die [Azure-Support-FAQ](http://go.microsoft.com/fwlink/?LinkID=185083) aufrufen, wenn Sie nach allgemeinen Microsoft Azure-Preisinformationen suchen. Vollständige Informationen zu Service Bus-Preisen finden Sie unter [Service Bus-Preise](http://azure.microsoft.com/pricing/details/service-bus/).
+In diesem Abschnitt werden einige häufig gestellte Fragen zur Service Bus-Preisstruktur beantwortet. Sie können auch die [Azure-Support-FAQ](http://go.microsoft.com/fwlink/?LinkID=185083) aufrufen, wenn Sie nach allgemeinen Microsoft Azure-Preisinformationen suchen. Vollständige Informationen zu Service Bus-Preisen finden Sie unter [Service Bus-Preise](https://azure.microsoft.com/pricing/details/service-bus/).
 
->[AZURE.NOTE]Die Preisstruktur für Event Hubs wird im Thema [Event Hubs Verfügbarkeit und Support – häufig gestellte Fragen](event-hubs-availability-and-support-faq.md) beschrieben. Weitere Informationen hierzu finden Sie zudem im Thema [Event Hubs-Preise](http://azure.microsoft.com/pricing/details/event-hubs/).
+>[AZURE.NOTE] Die Preisstruktur für Event Hubs wird im Thema [Event Hubs Verfügbarkeit und Support – häufig gestellte Fragen](event-hubs-availability-and-support-faq.md) beschrieben. Weitere Informationen hierzu finden Sie zudem im Thema [Event Hubs-Preise](https://azure.microsoft.com/pricing/details/event-hubs/).
 
 - [Wie werden die Kosten für Service Bus berechnet?](#how-do-you-charge-for-service-bus)
 - [Bei welcher Nutzung von Service Bus werden Daten übertragen? Bei welcher nicht?](#what-usage-of-service-bus-is-subject-to-data-transfer-what-is-not)
@@ -32,7 +32,7 @@ In diesem Abschnitt werden einige häufig gestellte Fragen zur Service Bus-Preis
 
 ## Wie werden die Kosten für Service Bus berechnet?
 
-Vollständige Informationen zur Preisgestaltung von Servicebus finden Sie unter [Service Bus – Preisdetails und Abrechnung](https://msdn.microsoft.com/library/dn831889.aspx) sowie unter [Service Bus-Preise](http://azure.microsoft.com/pricing/details/service-bus/). Neben den aufgeführten Preisen werden Ihnen die damit verbundenen aus dem Datencenter ausgehenden Datenübertragungen berechnet, mit denen Ihre Anwendung bereitgestellt wird. Weitere Details finden Sie im Abschnitt [Bei welcher Nutzung von Service Bus werden Daten übertragen? Bei welcher nicht?](#what-usage-of-service-bus-is-subject-to-data-transfer-what-is-not).
+Vollständige Informationen zur Preisgestaltung von Servicebus finden Sie unter [Service Bus – Preisdetails und Abrechnung](https://msdn.microsoft.com/library/dn831889.aspx) sowie unter [Service Bus-Preise](https://azure.microsoft.com/pricing/details/service-bus/). Neben den aufgeführten Preisen werden Ihnen die damit verbundenen aus dem Datencenter ausgehenden Datenübertragungen berechnet, mit denen Ihre Anwendung bereitgestellt wird. Weitere Details finden Sie im Abschnitt [Bei welcher Nutzung von Service Bus werden Daten übertragen? Bei welcher nicht?](#what-usage-of-service-bus-is-subject-to-data-transfer-what-is-not).
 
 ## Bei welcher Nutzung von Service Bus werden Daten übertragen? Bei welcher nicht?
 
@@ -116,4 +116,4 @@ Weitere Informationen zu Service Bus Messaging finden Sie in folgenden Themen.
 
 [klassische Azure-Portal]: http://manage.windowsazure.com
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -204,7 +204,7 @@ Stellen Sie sich ein Szenario vor, in dem Sie eine Pushbenachrichtigung an alle 
 
 - **Verteilen Sie die Last über die Zeit.** Wenn Sie die Zeiten für bestimmte Vorgänge steuern (z. B. das Senden einer Pushbenachrichtigung), von denen eine Nachfragespitze erwartet wird, und wenn der genaue Zeitpunkt für das Ereignis nicht entscheidend ist, können Sie das Ereignis zeitlich verteilen. Im obigen Beispiel kann es vielleicht akzeptabel sein, die Anwendungskunden gruppenweise im Lauf eines Tages zu benachrichtigen anstatt alle praktisch zeitgleich. Teilen Sie Ihre Kunden in Gruppen auf, und senden Sie die Benachrichtigung nacheinander an die einzelnen Gruppen. Wenn Sie Notification Hubs verwenden, können Sie einfach eine zusätzliche Markierung hinzufügen, um die Gruppe zu verfolgen, und dann eine Pushbenachrichtigung an Markierung senden. Weitere Informationen zu Markierungen finden Sie unter [Verwenden von Notification Hubs zum Übermitteln von aktuellen Nachrichten](../notification-hubs-windows-store-dotnet-send-breaking-news.md).
 - **Verwenden Sie wo immer möglich BLOB- und Tabellenspeicher.** Häufig sind die Inhalte, die die Kunden während der Spitzenlast anzeigen, mehr oder weniger statisch und brauchen nicht in einer SQL-Datenbank gespeichert zu werden, da für den Inhalt wahrscheinlich keine relationalen Abfragekapazitäten erforderlich sind. In diesem Fall können Sie den Inhalt in BLOB- oder Tabellenspeicher ablegen. Sie können auf öffentliche BLOBs im BLOB-Speicher direkt vom Gerät aus zugreifen. Um auf sichere Weise auf BLOBs zuzugreifen oder Tabellenspeicher zu verwenden, müssen Sie eine benutzerdefinierte API für mobile Dienste nutzen, um den Speicherzugriffsschlüssel zu schützen. Weitere Informationen finden Sie unter [Verwenden von Mobile Services zum Hochladen von Bildern in Azure Storage](mobile-services-dotnet-backend-windows-store-dotnet-upload-data-blob-storage.md).
-- **Verwenden Sie ein In-Memory-Cache**. Eine weitere Alternative besteht im Speichern von Daten, auf die häufig während einer Datenverkehrsspitze zugegriffen wird, in einem In-Memory-Cache wie [Azure Cache](http://azure.microsoft.com/services/cache/). Das bedeutet, dass eingehende Anfragen die benötigten Informationen aus dem Speicher abrufen können, statt immer wieder die Datenbank abzufragen.
+- **Verwenden Sie ein In-Memory-Cache**. Eine weitere Alternative besteht im Speichern von Daten, auf die häufig während einer Datenverkehrsspitze zugegriffen wird, in einem In-Memory-Cache wie [Azure Cache](https://azure.microsoft.com/services/cache/). Das bedeutet, dass eingehende Anfragen die benötigten Informationen aus dem Speicher abrufen können, statt immer wieder die Datenbank abzufragen.
 
 <a name="Advanced"></a>
 ## Erweiterte Fehlerbehebung
@@ -279,7 +279,8 @@ Im Verwaltungsportal werden einige Metriken bereitgestellt, wenn die Stufen Basi
     WHERE database_name = 'todoitem_db'
     ORDER BY start_time DESC
 
-> [AZURE.NOTE]Führen Sie diese Abfrage für die **master**-Datenbank auf dem Server aus. Die Sicht **sys.resource\\_stats** ist nur für diese Datenbank vorhanden.
+> [AZURE.NOTE]
+Führen Sie diese Abfrage für die **master**-Datenbank auf dem Server aus. Die Sicht **sys.resource\\_stats** ist nur für diese Datenbank vorhanden.
 
 Das Ergebnis enthält folgende nützliche Metriken: CPU (% des Stufenlimits), Speicher (Megabyte), physische Datenlesevorgänge (% des Stufenlimits), Protokollschreibvorgänge (% des Stufenlimits), Speicher (% des Stufenlimits), Workerzähler, Sitzungszähler usw.
 
@@ -292,7 +293,8 @@ Die Sicht **[sys.event\_log](http://msdn.microsoft.com/library/azure/jj819229.as
     and event_type like 'throttling%'
     order by start_time desc
 
-> [AZURE.NOTE]Führen Sie diese Abfrage für die **master**-Datenbank auf dem Server aus. Die Sicht **sys.event\\_log** ist nur für diese Datenbank vorhanden.
+> [AZURE.NOTE]
+Führen Sie diese Abfrage für die **master**-Datenbank auf dem Server aus. Die Sicht **sys.event\\_log** ist nur für diese Datenbank vorhanden.
 
 <a name="AdvancedIndexing" ></a>
 ### Erweiterte Indizierung
@@ -305,7 +307,8 @@ Eine Tabelle oder Sicht kann die folgenden Indizierungstypen enthalten:
 
 Betrachten Sie analog dazu: ein Buch oder ein technisches Handbuch. Der Inhalt jeder Seite entspricht einem Datensatz, die Seitenzahl ist der gruppierte Index und der Themenindex am Ende des Buchs ist der nicht gruppierte Index. Jeder Eintrag im Themenindex verweist auf den gruppierten Index, die Seitenzahl.
 
-> [AZURE.NOTE]Standardmäßig legt das JavaScript-Back-End für Azure Mobile Services **\\_createdAt** als gruppierten Index fest. Wenn Sie diese Spalte entfernen oder einen anderen gruppierten Index wählen möchten, müssen Sie die [Richtlinien für das Design von gruppierten Indizes](#ClusteredIndexes) unten befolgen. Im .NET-Back-End definiert die Klasse `EntityData` `CreatedAt` als gruppierten Index mit der Anmerkung `[Index(IsClustered = true)]`.
+> [AZURE.NOTE]
+Standardmäßig legt das JavaScript-Back-End für Azure Mobile Services **\\_createdAt** als gruppierten Index fest. Wenn Sie diese Spalte entfernen oder einen anderen gruppierten Index wählen möchten, müssen Sie die [Richtlinien für das Design von gruppierten Indizes](#ClusteredIndexes) unten befolgen. Im .NET-Back-End definiert die Klasse `EntityData` `CreatedAt` als gruppierten Index mit der Anmerkung `[Index(IsClustered = true)]`.
 
 <a name="ClusteredIndexes"></a>
 #### Richtlinien für das Design von gruppierten Indizes
@@ -489,4 +492,4 @@ Um den Abfrageplan im **Verwaltungsportal für SQL-Datenbank** zu analysieren, v
 <!-- BLOG LINKS -->
 [Was kostet dieser Schlüssel?]: http://www.sqlskills.com/blogs/kimberly/how-much-does-that-key-cost-plus-sp_helpindex9/
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

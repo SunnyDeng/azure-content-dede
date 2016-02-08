@@ -34,9 +34,9 @@ Mit der Integration in virtuelle Netzwerke können HBase-Cluster im selben virtu
 ##Voraussetzungen
 Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
-- **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
+- **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 
-- **Eine Arbeitsstation mit Azure PowerShell**. Siehe [Install and use Azure PowerShell](http://azure.microsoft.com/documentation/videos/install-and-use-azure-powershell/) (Installieren und Verwenden von Azure PowerShell, in englischer Sprache). Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md). Um Azure PowerShell-Skripts ausführen zu können, müssen Sie Azure PowerShell als Administrator ausführen und die Ausführungsrichtlinie auf *RemoteSigned* setzen. Siehe [Verwenden des Cmdlet „Set-ExecutionPolicy“][2].
+- **Eine Arbeitsstation mit Azure PowerShell**. Siehe [Install and use Azure PowerShell](https://azure.microsoft.com/documentation/videos/install-and-use-azure-powershell/) (Installieren und Verwenden von Azure PowerShell, in englischer Sprache). Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md). Um Azure PowerShell-Skripts ausführen zu können, müssen Sie Azure PowerShell als Administrator ausführen und die Ausführungsrichtlinie auf *RemoteSigned* setzen. Siehe [Verwenden des Cmdlet „Set-ExecutionPolicy“][2].
 
 	Stellen Sie vor dem Ausführen von Azure PowerShell-Skripts mithilfe des folgenden Cmdlets sicher, dass eine Verbindung mit Ihrem Azure-Abonnement besteht:
 
@@ -84,7 +84,7 @@ Ein DNS-Server ist optional, aber in einigen Fällen erforderlich. Die Vorgehens
 
 **So erstellen Sie ein Azure-Speicherkonto und einen Blobspeichercontainer zur Verwendung im Cluster**
 
-> [AZURE.NOTE]HDInsight-Cluster nutzen den Azure-BLOB-Speicher zum Speichern von Daten. Weitere Informationen finden Sie unter [Verwenden von Azure Blob-Speicher mit HDInsight](../hdinsight-use-blob-storage.md). Sie benötigen ein Speicherkonto und einen Blob-Speichercontainer. Der Speicherort des Speicherkontos muss dem Speicherort des virtuellen Netzwerks und des Clusters entsprechen.
+> [AZURE.NOTE] HDInsight-Cluster nutzen den Azure-BLOB-Speicher zum Speichern von Daten. Weitere Informationen finden Sie unter [Verwenden von Azure Blob-Speicher mit HDInsight](../hdinsight-use-blob-storage.md). Sie benötigen ein Speicherkonto und einen Blob-Speichercontainer. Der Speicherort des Speicherkontos muss dem Speicherort des virtuellen Netzwerks und des Clusters entsprechen.
 
 Wie andere HDInsight-Cluster erfordert ein HBase-Cluster ein Azure-Speicherkonto und einen Blobspeichercontainer als Standarddateisystem. Der Speicherort des Speicherkontos muss dem Speicherort des virtuellen Netzwerks und des Clusters entsprechen. Weitere Informationen finden Sie unter [Verwenden von Azure Blob-Speicher mit HDInsight][hdinsight-storage]. Wenn Sie einen HBase-Cluster bereitstellen, können Sie entweder ein neues Speicherkonto und einen neuen Blobspeichercontainer erstellen oder ein vorhandenes Speicherkonto und einen vorhandenen Blobspeichercontainer verwenden. Mit den folgenden Schritten wird veranschaulicht, wie Sie ein Speicherkonto und einen Blobspeichercontainer im klassischen Azure-Portal erstellen.
 
@@ -109,7 +109,7 @@ Wie andere HDInsight-Cluster erfordert ein HBase-Cluster ein Azure-Speicherkonto
 
 **So stellen Sie einen HBase-Cluster im klassischen Azure-Portal bereit**
 
-> [AZURE.NOTE]Informationen zum Bereitstellen eines neuen HBase-Clusters mit Azure PowerShell finden Sie unter [Bereitstellen eines HBase-Clusters mit Azure PowerShell](#powershell).
+> [AZURE.NOTE] Informationen zum Bereitstellen eines neuen HBase-Clusters mit Azure PowerShell finden Sie unter [Bereitstellen eines HBase-Clusters mit Azure PowerShell](#powershell).
 
 1. Melden Sie sich beim [klassischen Azure-Portal][azure-portal] an.
 
@@ -120,21 +120,20 @@ Wie andere HDInsight-Cluster erfordert ein HBase-Cluster ein Azure-Speicherkonto
 	![Angeben von Details für den HBase-Cluster][img-provision-cluster-page1]
 
 
-	> [AZURE.NOTE]Für einen HBase-Cluster ist lediglich "Windows Server" als Option für das Betriebssystem verfügbar.
+	> [AZURE.NOTE] Für einen HBase-Cluster ist lediglich "Windows Server" als Option für das Betriebssystem verfügbar.
 
 4. Auf der Seite **Cluster konfigurieren** können Sie die folgenden Werte auswählen bzw. eingeben:
 
 	![Angeben von Details für den HBase-Cluster](./media/hdinsight-hbase-provision-vnet/hbasewizard2.png)
 
 	<table border='1'>
-		<tr><th>Eigenschaft</th><th>Wert</th></tr>
-		<tr><td>Datenknoten</td><td>Wählen Sie die Anzahl der Datenknoten, die Sie bereitstellen möchten. Erstellen Sie zu Testzwecken einen Cluster mit nur einem Knoten. <br />Die Größenbegrenzung für die Cluster variiert in Azure-Abonnements. Wenden Sie sich an das Azure-Abrechnungssupportteam, um diese Begrenzung zu erhöhen.</td></tr>
-		<tr><td>Region/virtuelles Netzwerk:</td><td><p>Wählen Sie eine Region oder ein virtuelles Netzwerk in Azure, wenn Sie bereits eines erstellt haben. Wählen Sie für dieses Lernprogramm das zuvor erstellte Netzwerk und dann ein entsprechendes Subnetz aus. Der Standardname lautet <b>Subnet-1</b>.</p></td></tr>
-		<tr><td>Größe des Hauptknotens</td><td><p>Wählen Sie eine VM-Größe für den Hauptknoten aus.</p></td></tr>
-		<tr><td>Datenknotengröße</td><td><p>Wählen Sie eine VM-Größe für die Datenknoten aus.</p></td></tr>
-		<tr><td>Zookeeper-Größe</td><td><p>Wählen Sie eine VM-Größe für den Zookeeper-Knoten aus.</p></td></tr>
+	<tr><th>Eigenschaft</th><th>Wert</th></tr>
+	<tr><td>Datenknoten</td><td>Wählen Sie die Anzahl der Datenknoten, die Sie bereitstellen möchten. Erstellen Sie zu Testzwecken einen Cluster mit nur einem Knoten. <br />Die Größenbegrenzung für die Cluster variiert in Azure-Abonnements. Wenden Sie sich an das Azure-Abrechnungssupportteam, um diese Begrenzung zu erhöhen.</td></tr>
+	<tr><td>Region/virtuelles Netzwerk:</td><td><p>Wählen Sie eine Region oder ein virtuelles Netzwerk in Azure, wenn Sie bereits eines erstellt haben. Wählen Sie für dieses Lernprogramm das zuvor erstellte Netzwerk und dann ein entsprechendes Subnetz aus. Der Standardname lautet <b>Subnet-1</b>.</p></td></tr>
+	<tr><td>Größe des Hauptknotens</td><td><p>Wählen Sie eine VM-Größe für den Hauptknoten aus.</p></td></tr>
+	<tr><td>Datenknotengröße</td><td><p>Wählen Sie eine VM-Größe für die Datenknoten aus.</p></td></tr>
+	<tr><td>Zookeeper-Größe</td><td><p>Wählen Sie eine VM-Größe für den Zookeeper-Knoten aus.</p></td></tr>
 	</table>
-
 	>[AZURE.NOTE]Je nach Wahl der VMs können Ihre Kosten variieren. HDInsight verwendet für Clusterknoten VMs mit Standardtarif. Informationen über die Auswirkungen der VM-Größe auf Ihre Kosten finden Sie unter <a href="http://azure.microsoft.com/pricing/details/hdinsight/" target="_blank">HDInsight-Preise</a>.
 
 	Klicken Sie auf die rechte Taste.
@@ -144,51 +143,50 @@ Wie andere HDInsight-Cluster erfordert ein HBase-Cluster ein Azure-Speicherkonto
 	![Bereitstellen eines Speicherkontos für Hadoop HDInsight-Cluster](./media/hdinsight-hbase-provision-vnet/hbasewizard3.png)
 
 	<table border='1'>
-		<tr><th>Eigenschaft</th><th>Wert</th></tr>
-		<tr><td>HTTP-Benutzername</td>
-			<td>Geben Sie den Benutzernamen für den HDInsight-Cluster an.</td></tr>
-		<tr><td>HTTP-Kennwort/Kennwort bestätigen</td>
-			<td>Geben Sie das Kennwort für den HDInsight-Cluster an.</td></tr>
-		<tr><td>Remotedesktop für Cluster aktivieren</td>
-			<td>Aktivieren Sie dieses Kontrollkästchen, um einen Benutzernamen, ein Kennwort und ein Ablaufdatum für einen Remotedesktopbenutzer einzugeben, der nach der Bereitstellung per Remotezugriff auf die Clusterknoten zugreifen kann. Sie können Remotedesktop auch noch nach der Bereitstellung des Clusters aktivieren. Anweisungen hierzu finden Sie unter <a href="hdinsight-administer-use-management-portal/#rdp" target="_blank">Herstellen einer Verbindung mit HDInsight-Clustern mit RDP</a>.</td></tr>
-	</table>
+	<tr><th>Eigenschaft</th><th>Wert</th></tr>
+	<tr><td>HTTP-Benutzername</td>
+		<td>Geben Sie den Benutzernamen für den HDInsight-Cluster an.</td></tr>
+	<tr><td>HTTP-Kennwort/Kennwort bestätigen</td>
+		<td>Geben Sie das Kennwort für den HDInsight-Cluster an.</td></tr>
+	<tr><td>Remotedesktop für Cluster aktivieren</td>
+		<td>Aktivieren Sie dieses Kontrollkästchen, um einen Benutzernamen, ein Kennwort und ein Ablaufdatum für einen Remotedesktopbenutzer einzugeben, der nach der Bereitstellung per Remotezugriff auf die Clusterknoten zugreifen kann. Sie können Remotedesktop auch noch nach der Bereitstellung des Clusters aktivieren. Anweisungen hierzu finden Sie unter <a href="hdinsight-administer-use-management-portal/#rdp" target="_blank">Herstellen einer Verbindung mit HDInsight-Clustern mit RDP</a>.</td></tr>
+</table>
 
 6. Geben Sie auf der Seite **Speicherkonto** die folgenden Werte ein:
 
     ![Bereitstellen eines Speicherkontos für Hadoop HDInsight-Cluster](./media/hdinsight-hbase-provision-vnet/hbasewizard4.png)
 
 	<table border='1'>
-		<tr><th>Eigenschaft</th><th>Wert</th></tr>
-		<tr><td>Speicherkonto</td>
-			<td>Geben Sie das Azure-Speicherkonto an, das als Standard-Dateisystem für das HDInsight-Cluster verwendet werden soll. Sie haben drei Möglichkeiten:
-			<ul>
-				<li><strong>Vorhandenen Speicher verwenden</strong></li>
-				<li><strong>Neuen Speicher erstellen</strong></li>
-				<li><strong>Speicher aus anderem Abonnement verwenden</strong></li>
-			</ul>
-			</td></tr>
-		<tr><td>Kontoname</td>
-			<td><ul>
-				<li>Wenn Sie einen vorhandenen Speicher verwenden, wählen Sie unter <strong>Kontoname</strong> ein vorhandenes Speicherkonto aus. Die Dropdownliste enthält nur die Storage-Konten in dem Datencenter, in dem Sie auch den Cluster eingerichtet haben.</li>
-				<li>Wenn Sie <strong>Neuen Speicher erstellen</strong> oder <strong>Speicher aus einem anderem Abonnement verwenden</strong> ausgewählt haben, müssen Sie den Namen des Storage-Kontos angeben.</li>
-			</ul></td></tr>
-		<tr><td>Kontoschlüssel</td>
-			<td>Geben Sie den Speicherschlüssel für das entsprechende Konto ein, falls Sie <strong>Speicher aus anderem Abonnement verwenden</strong> ausgewählt haben.</td></tr>
-		<tr><td>Standardcontainer</td>
-			<td><p>Gibt den Standardcontainer im Speicherkonto an, der als Standarddateisystem für den HDInsight-Cluster verwendet werden soll. Wenn Sie <strong>Vorhandenen Speicher verwenden</strong> für das Feld <strong>Speicherkonto</strong> wählen und in dem betreffenden Konto keine Container vorhanden sind, wird der Container standardmäßig mit demselben Namen wie der des Clusters erstellt. Falls bereits ein Container mit dem Namen des Clusters existiert, wird eine Sequenznummer an den Containernamen angehängt. Zum Beispiel mycontainer1, mycontainer2 und so weiter. Sie können jedoch auch Container im vorhandenen Speicherkonto verwenden, die einen anderen Namen als der Cluster haben.</p>
-            <p>Falls Sie einen neuen Speicher erstellen oder einen Speicher aus einem anderen Azure-Abonnement verwenden, müssen Sie den Namen des Standardcontainers angeben.</p>
-        </td></tr>
-		<tr><td>Zusätzliche Speicherkonten</td>
+	<tr><th>Eigenschaft</th><th>Wert</th></tr>
+	<tr><td>Speicherkonto</td>
+		<td>Geben Sie das Azure-Speicherkonto an, das als Standard-Dateisystem für das HDInsight-Cluster verwendet werden soll. Sie haben drei Möglichkeiten:
+		<ul>
+			<li><strong>Vorhandenen Speicher verwenden</strong></li>
+			<li><strong>Neuen Speicher erstellen</strong></li>
+			<li><strong>Speicher aus anderem Abonnement verwenden</strong></li>
+		</ul>
+		</td></tr>
+	<tr><td>Kontoname</td>
+		<td><ul>
+			<li>Wenn Sie einen vorhandenen Speicher verwenden, wählen Sie unter <strong>Kontoname</strong> ein vorhandenes Speicherkonto aus. Die Dropdownliste enthält nur die Storage-Konten in dem Datencenter, in dem Sie auch den Cluster eingerichtet haben.</li>
+			<li>Wenn Sie <strong>Neuen Speicher erstellen</strong> oder <strong>Speicher aus einem anderem Abonnement verwenden</strong> ausgewählt haben, müssen Sie den Namen des Storage-Kontos angeben.</li>
+		</ul></td></tr>
+	<tr><td>Kontoschlüssel</td>
+		<td>Geben Sie den Speicherschlüssel für das entsprechende Konto ein, falls Sie <strong>Speicher aus anderem Abonnement verwenden</strong> ausgewählt haben.</td></tr>
+	<tr><td>Standardcontainer</td>
+		<td><p>Gibt den Standardcontainer im Speicherkonto an, der als Standarddateisystem für den HDInsight-Cluster verwendet werden soll. Wenn Sie <strong>Vorhandenen Speicher verwenden</strong> für das Feld <strong>Speicherkonto</strong> wählen und in dem betreffenden Konto keine Container vorhanden sind, wird der Container standardmäßig mit demselben Namen wie der des Clusters erstellt. Falls bereits ein Container mit dem Namen des Clusters existiert, wird eine Sequenznummer an den Containernamen angehängt. Zum Beispiel mycontainer1, mycontainer2 und so weiter. Sie können jedoch auch Container im vorhandenen Speicherkonto verwenden, die einen anderen Namen als der Cluster haben.</p>
+        <p>Falls Sie einen neuen Speicher erstellen oder einen Speicher aus einem anderen Azure-Abonnement verwenden, müssen Sie den Namen des Standardcontainers angeben.</p>
+    </td></tr>
+	<tr><td>Zusätzliche Speicherkonten</td>
 			<td>Geben Sie bei Bedarf weitere Storage-Konten für den Cluster an. HDInsight unterstützt mehrere Speicherkonten. Es gibt keine Beschränkung in Bezug auf die zusätzlichen Speicherkonten, die von einem Cluster verwendet werden können. Wenn Sie den Cluster jedoch im Azure-Portal erstellen, können Sie aufgrund von Einschränkungen der Benutzeroberfläche maximal sieben Speicherkonten einrichten. Für jedes angegebene Storage-Konto wird eine zusätzliche Seite <strong>Speicherkonto</strong> im Assistenten hinzugefügt, auf der Sie die Kontoinformationen angeben können. Im oben abgebildeten Screenshot wurde z. B. kein zusätzliches Speicherkonto hinzugefügt. Daher wurde dem Assistenten auch keine zusätzliche Seite hinzugefügt.</td></tr>
 	</table>
-
 	Klicken Sie auf den Pfeil nach rechts.
 
 7. Klicken Sie auf der Seite **Skriptaktionen** unten rechts auf das Häkchen. Klicken Sie nicht auf die Schaltfläche **Skriptaktion hinzufügen**, da in diesem Lernprogramm kein angepasstes Clustersetup erforderlich ist.
 
 	![Konfigurieren von Skriptaktionen zum Anpassen eines HDInsight HBase-Clusters][img-provision-cluster-page5]
 
-	> [AZURE.NOTE]Diese Seite kann zum Anpassen des Clusters während des Setups verwendet werden. Weitere Informationen finden Sie unter [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen](hdinsight-hadoop-customize-cluster.md).
+	> [AZURE.NOTE] Diese Seite kann zum Anpassen des Clusters während des Setups verwendet werden. Weitere Informationen finden Sie unter [Anpassen von HDInsight-Clustern mithilfe von Skriptaktionen](hdinsight-hadoop-customize-cluster.md).
 
 Führen Sie die Schritte unter [Erste Schritte mit HBase mit Hadoop in HDInsight](../hdinsight-hbase-get-started.md) aus, um mit Ihrem neu erstellten HBase-Cluster zu arbeiten.
 
@@ -308,7 +306,7 @@ Führen Sie die Schritte unter [Erste Schritte mit HBase mit Hadoop in HDInsight
 
 		Daraufhin wird das DNS-Suffix zurückgegeben. Zum Beispiel: **yourclustername.b4.internal.cloudapp.net**.
 
-	> [AZURE.NOTE]Sie können auch per Remotedesktop eine Verbindung mit dem HBase-Cluster herstellen (wobei Sie eine Verbindung mit dem Hauptknoten herstellen) und **ipconfig** in einer Eingabeaufforderung ausführen, um das DNS-Suffix abzurufen. Anweisungen zum Aktivieren des Remotedesktopprotokolls (RDP) und zum Herstellen einer Verbindung mit dem Cluster mithilfe des RDP finden Sie unter [Verwalten von Hadoop-Clustern in HDInsight mit dem klassischen Azure-Portal][hdinsight-admin-portal].
+	> [AZURE.NOTE] Sie können auch per Remotedesktop eine Verbindung mit dem HBase-Cluster herstellen (wobei Sie eine Verbindung mit dem Hauptknoten herstellen) und **ipconfig** in einer Eingabeaufforderung ausführen, um das DNS-Suffix abzurufen. Anweisungen zum Aktivieren des Remotedesktopprotokolls (RDP) und zum Herstellen einer Verbindung mit dem Cluster mithilfe des RDP finden Sie unter [Verwalten von Hadoop-Clustern in HDInsight mit dem klassischen Azure-Portal][hdinsight-admin-portal].
 	>
 	> ![hdinsight.hbase.dns.surffix][img-dns-surffix]
 
@@ -337,7 +335,7 @@ Führen Sie die unter [Verwenden von Maven zur Entwicklung von Java-Anwendungen,
     	<value>zookeeper0.<dns suffix>,zookeeper1.<dns suffix>,zookeeper2.<dns suffix></value>
 	</property>
 
-> [AZURE.NOTE]Weitere Informationen zur Namensauflösung in virtuellen Azure-Netzwerken und zur Verwendung eigener DNS-Server finden Sie unter [Namensauflösung (DNS)](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md).
+> [AZURE.NOTE] Weitere Informationen zur Namensauflösung in virtuellen Azure-Netzwerken und zur Verwendung eigener DNS-Server finden Sie unter [Namensauflösung (DNS)](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md).
 
 ##Bereitstellen von HBase-Clustern mit Azure PowerShell
 
@@ -434,4 +432,4 @@ In diesem Lernprogramm haben Sie erfahren, wie Sie einen HBase-Cluster bereitste
 [img-provision-cluster-page1]: ./media/hdinsight-hbase-provision-vnet/hbasewizard1.png "Bereitstellen von Details für den neuen HBase-Cluster"
 [img-provision-cluster-page5]: ./media/hdinsight-hbase-provision-vnet/hbasewizard5.png "Verwenden von Skriptaktionen zum Anpassen eines HBase-Clusters"
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

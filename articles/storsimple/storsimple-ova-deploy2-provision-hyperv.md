@@ -32,9 +32,9 @@ Sie benötigen Administratorrechte, um ein virtuelles Gerät bereitzustellen und
 
 ## Voraussetzungen für die Bereitstellung
 
-Hier sind die Voraussetzungen zum Bereitstellen eines virtuellen Geräts auf einem Hostsystem mit Hyper-V 2008 R2, Hyper-V 2012 und 2012 R2 angegeben.
+Hier sind die Voraussetzungen zum Bereitstellen eines virtuellen Geräts auf einem Hostsystem mit Hyper-V 2008 R2, Hyper-V 2012 oder Hyper-V 2012 R2 angegeben.
 
-### Für den StorSimple Manager-Dienst
+### Für den StorSimple-Manager-Dienst
 
 Stellen Sie Folgendes sicher, bevor Sie beginnen:
 
@@ -274,4 +274,4 @@ Sehen Sie sich das Video an, in dem die Bereitstellung eines StorSimple Virtual 
 
 -   [Einrichten des StorSimple Virtual Array als iSCSI-Server](storsimple-ova-deploy3-iscsi-setup.md)
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

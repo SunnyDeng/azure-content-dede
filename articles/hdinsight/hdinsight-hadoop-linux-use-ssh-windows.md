@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="11/16/2015"
+   ms.date="01/22/2016"
    ms.author="larryfr"/>
 
 #Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Windows
@@ -25,7 +25,7 @@
 
 Mit [Secure Shell (SSH)](https://en.wikipedia.org/wiki/Secure_Shell) können Sie Vorgänge in Linux-basierten HDInsight-Clustern über eine Befehlszeilenschnittstelle remote ausführen. Dieses Dokument enthält Informationen zum Herstellen einer Verbindung von Windows-Clients mit HDInsight über den PuTTY SSH-Client.
 
-> [AZURE.NOTE]Für die Schritte in diesem Artikel wird davon ausgegangen, dass Sie einen Windows-Client verwenden. Wenn Sie einen Linux-, Unix- oder OS X-Client verwenden, finden Sie entsprechende Informationen unter [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Linux, Unix oder OS X](hdinsight-hadoop-linux-use-ssh-unix.md).
+> [AZURE.NOTE] Für die Schritte in diesem Artikel wird davon ausgegangen, dass Sie einen Windows-Client verwenden. Wenn Sie einen Linux-, Unix- oder OS X-Client verwenden, finden Sie entsprechende Informationen unter [Verwenden von SSH mit Linux-basiertem Hadoop in HDInsight unter Linux, Unix oder OS X](hdinsight-hadoop-linux-use-ssh-unix.md).
 
 ##Voraussetzungen
 
@@ -73,15 +73,15 @@ Verwenden Sie die folgenden Informationen, wenn Sie für Ihren Cluster die Verwe
 
 	![Passphrase](./media/hdinsight-hadoop-linux-use-ssh-windows/key.png)
 
-	> [AZURE.NOTE]Es wird dringend empfohlen, dass Sie für den Schlüssel eine sichere Passphrase verwenden. Wenn Sie die Passphrase vergessen, besteht jedoch keine Möglichkeit, diese wiederherzustellen.
+	> [AZURE.NOTE] Es wird dringend empfohlen, dass Sie für den Schlüssel eine sichere Passphrase verwenden. Wenn Sie die Passphrase vergessen, besteht jedoch keine Möglichkeit, diese wiederherzustellen.
 
 5. Klicken Sie auf **Save private key**, um den Schlüssel in einer **PPK**-Datei zu speichern. Dieser Schlüssel wird zum Authentifizieren für die Linux-basierten HDInsight-Cluster verwendet.
 
-	> [AZURE.NOTE]Sie sollten diesen Schlüssel an einem sicheren Ort verwahren, da dieser für den Zugriff auf Ihre Linux-basierten HDInsight-Cluster verwendet werden kann.
+	> [AZURE.NOTE] Sie sollten diesen Schlüssel an einem sicheren Ort verwahren, da dieser für den Zugriff auf Ihre Linux-basierten HDInsight-Cluster verwendet werden kann.
 
 6. Klicken Sie auf **Save public key**, um den Schlüssel in einer **TXT**-Datei zu speichern. Dadurch können Sie den öffentlichen Schlüssel zukünftig wiederverwenden, wenn Sie zusätzliche Linux-basierte HDInsight-Cluster erstellen.
 
-	> [AZURE.NOTE]Der öffentliche Schlüssel wird auch am oberen Rand von PuTTYGen angezeigt. Sie können mit der rechten Maustaste auf dieses Feld klicken, den Wert kopieren und ihn dann in ein Formular einfügen, wenn Sie einen Cluster mit dem Azure-Portal erstellen.
+	> [AZURE.NOTE] Der öffentliche Schlüssel wird auch am oberen Rand von PuTTYGen angezeigt. Sie können mit der rechten Maustaste auf dieses Feld klicken, den Wert kopieren und ihn dann in ein Formular einfügen, wenn Sie einen Cluster mit dem Azure-Portal erstellen.
 
 ##Erstellen eines Linux-basierten HDInsight-Clusters
 
@@ -129,11 +129,11 @@ Weitere Informationen zur Verwendung dieses Befehls finden Sie unter [Benutzerde
 
 5. Klicken Sie auf **Open**, um die Verbindung mit dem Cluster herzustellen.
 
-	> [AZURE.NOTE]Wenn Sie das erste Mal eine Verbindung mit dem Cluster hergestellt haben, wird eine Sicherheitswarnung angezeigt. Dies ist normal. Wählen Sie **Yes** aus, um den RSA2-Schlüssel des Servers zum Fortfahren zwischenzuspeichern.
+	> [AZURE.NOTE] Wenn Sie das erste Mal eine Verbindung mit dem Cluster hergestellt haben, wird eine Sicherheitswarnung angezeigt. Dies ist normal. Wählen Sie **Yes** aus, um den RSA2-Schlüssel des Servers zum Fortfahren zwischenzuspeichern.
 
 6. Geben Sie nach der entsprechenden Aufforderung den Benutzer ein, den Sie beim Erstellen des Clusters eingegeben haben. Wenn Sie für den Benutzer ein Kennwort angegeben haben, werden Sie auch zur Eingabe dieses Kennworts aufgefordert.
 
-> [AZURE.NOTE]In den oben genannten Schritten wird davon ausgegangen, dass Sie Port 22 verwenden. Über diesen Port wird eine Verbindung mit „Hauptknoten 0“ im HDInsight-Cluster hergestellt. Wenn Sie Port 23 verwenden, wird eine Verbindung mit „head node 1“ hergestellt. Weitere Informationen zu Hauptknoten finden Sie unter [Verfügbarkeit und Zuverlässigkeit von Hadoop-Clustern in HDInsight](hdinsight-high-availability-linux.md).
+> [AZURE.NOTE] In den oben genannten Schritten wird davon ausgegangen, dass Sie Port 22 verwenden. Über diesen Port wird eine Verbindung mit „Hauptknoten 0“ im HDInsight-Cluster hergestellt. Wenn Sie Port 23 verwenden, wird eine Verbindung mit „head node 1“ hergestellt. Weitere Informationen zu Hauptknoten finden Sie unter [Verfügbarkeit und Zuverlässigkeit von Hadoop-Clustern in HDInsight](hdinsight-high-availability-linux.md).
 
 ###Herstellen einer Verbindung mit den Workerknoten
 
@@ -149,7 +149,7 @@ Sofern Sie beim Erstellen des Benutzerkontos einen SSH-Schlüssel bereitgestellt
 
 3. Wenn das Dialogfeld "Durchsuchen" angezeigt wird, wählen Sie die PPK-Datei aus, die den Schlüssel enthält, und klicken Sie dann auf **Open**. Dadurch wird den Schlüssel zu Pageant hinzugefügt, das ihn PuTTY beim Verbinden mit dem Cluster bereitstellt.
 
-    > [AZURE.IMPORTANT]Wenn Sie einen SSH-Schlüssel verwendet haben, um Ihr Konto zu schützen, müssen Sie die vorherigen Schritte abschließen, bevor eine Verbindung mit Workerknoten hergestellt werden kann.
+    > [AZURE.IMPORTANT] Wenn Sie einen SSH-Schlüssel verwendet haben, um Ihr Konto zu schützen, müssen Sie die vorherigen Schritte abschließen, bevor eine Verbindung mit Workerknoten hergestellt werden kann.
 
 4. Öffnen Sie PuTTY.
 
@@ -175,7 +175,7 @@ Sofern Sie beim Erstellen des Benutzerkontos einen SSH-Schlüssel bereitgestellt
 
     Ersetzen Sie *USERNAME* durch Ihren SSH-Benutzernamen und *FQDN* durch den vollqualifizierten Domänennamen des Workerknotens. Beispiel: `workernode0.workernode-0-e2f35e63355b4f15a31c460b6d4e1230.j1.internal.cloudapp.net`.
 
-    > [AZURE.NOTE]Wenn Sie ein Kennwort zur Authentifizierung Ihrer SSH-Sitzung verwenden, werden Sie aufgefordert, das Kennwort erneut einzugeben. Wenn Sie einen SSH-Schlüssel verwenden, sollte die Verbindung ohne Aufforderungen fertig gestellt werden.
+    > [AZURE.NOTE] Wenn Sie ein Kennwort zur Authentifizierung Ihrer SSH-Sitzung verwenden, werden Sie aufgefordert, das Kennwort erneut einzugeben. Wenn Sie einen SSH-Schlüssel verwenden, sollte die Verbindung ohne Aufforderungen fertig gestellt werden.
 
 9. Sobald die Sitzung eingerichtet ist, ändert sich die Eingabeaufforderung für Ihre PuTTY-Sitzung von `username@hn0-clustername` in `username@wn0-clustername`, um anzugeben, dass Sie mit dem Workerknoten verbunden sind. Alle Befehle, die Sie ab diesem Punkt ausführen, werden auf dem Workerknoten ausgeführt.
 
@@ -213,7 +213,7 @@ Wenn Sie weitere Konten zum Cluster hinzufügen möchten, führen Sie die folgen
 
 SSH kann auch zum Tunneln lokaler Anforderungen wie etwa Webanforderungen zum HDInsight-Cluster verwendet werden. Die Anforderung wird dann zur angeforderten Ressource weitergeleitet, als ob sie vom Stammknoten des HDInsight-Clusters stammen würde.
 
-> [AZURE.IMPORTANT]Ein SSH-Tunnel ist für manche Hadoop-Dienste eine Voraussetzung für den Zugriff auf die Webbenutzeroberfläche. Auf die Benutzeroberfläche des Auftragsverlaufs und des Ressourcen-Managers kann beispielsweise nur über einen SSH-Tunnel zugegriffen werden.
+> [AZURE.IMPORTANT] Ein SSH-Tunnel ist für manche Hadoop-Dienste eine Voraussetzung für den Zugriff auf die Webbenutzeroberfläche. Auf die Benutzeroberfläche des Auftragsverlaufs und des Ressourcen-Managers kann beispielsweise nur über einen SSH-Tunnel zugegriffen werden.
 
 Weitere Informationen zum Erstellen und Verwenden eines SSH-Tunnels finden Sie unter [Verwenden von SSH-Tunneling zum Zugriff auf die Ambari-Webbenutzeroberfläche, ResourceManager, JobHistory, NameNode, Oozie und andere Webbenutzeroberflächen](hdinsight-linux-ambari-ssh-tunnel.md).
 
@@ -229,4 +229,4 @@ Nachdem Sie jetzt wissen, wie die Authentifizierung mithilfe eines SSH-Schlüsse
 
 [preview-portal]: https://portal.azure.com/
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

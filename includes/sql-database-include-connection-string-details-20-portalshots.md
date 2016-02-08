@@ -10,7 +10,7 @@ Latest Freshness check:  2015-09-02 , GeneMi.
 ### Abrufen der Verbindungszeichenfolge aus dem Azure-Portal
 
 
-Nutzen Sie das [Azure-Vorschauportal](http://portal.azure.com/) zum Abrufen der Verbindungszeichenfolge, die für die Interaktion des Clientprogramms mit der Azure SQL-Datenbank erforderlich ist:
+Nutzen Sie das [Azure-Vorschauportal](https://portal.azure.com/) zum Abrufen der Verbindungszeichenfolge, die für die Interaktion des Clientprogramms mit der Azure SQL-Datenbank erforderlich ist:
 
 
 1. Klicken auf **DURCHSUCHEN** > **SQL-Datenbanken**.
@@ -56,4 +56,4 @@ includes/sql-database-include-connection-string-30-compare.md
 includes/sql-database-include-connection-string-40-config.md
 -->
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

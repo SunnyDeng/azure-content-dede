@@ -106,13 +106,13 @@ Wollen Sie loslegen? Um das einmalige Anmelden zwischen Azure AD und in Ihrer Or
 
 ###Verwenden des Azure AD-Anwendungskatalogs
 
-Der [Azure Active Directory-Anwendungskatalog](http://azure.microsoft.com/marketplace/active-directory/all/) enthält eine Liste der Anwendungen, die bekanntermaßen eine Form der einmaligen Anmeldung mit Azure Active Directory unterstützen.
+Der [Azure Active Directory-Anwendungskatalog](https://azure.microsoft.com/marketplace/active-directory/all/) enthält eine Liste der Anwendungen, die bekanntermaßen eine Form der einmaligen Anmeldung mit Azure Active Directory unterstützen.
 
 ![][1]
 
 Nachfolgend finden Sie einige Tipps für die Suche nach Apps unter Berücksichtigung der Funktionen, die sie unterstützen:
 
-*	Azure AD unterstützt die automatische Bereitstellung und Aufhebung der Bereitstellung für alle "Top"-Apps im [Azure Active Directory-Anwendungskatalog](http://azure.microsoft.com/marketplace/active-directory/all/).
+*	Azure AD unterstützt die automatische Bereitstellung und Aufhebung der Bereitstellung für alle "Top"-Apps im [Azure Active Directory-Anwendungskatalog](https://azure.microsoft.com/marketplace/active-directory/all/).
 
 *	Eine Liste der Verbundanwendungen, die speziell die einmalige Verbundanmeldung mithilfe eines Protokolls wie z. B. WS-Verbund, SAML oder OpenID Connect unterstützen, finden Sie [hier](http://social.technet.microsoft.com/wiki/contents/articles/20235.azure-active-directory-application-gallery-federated-saas-apps.aspx).
 
@@ -131,7 +131,7 @@ Wenn Sie Ihre Anwendung nicht im Azure AD-Anwendungskatalog finden, haben Sie fo
   * [https://github.com/AzureADSamples/WebApp-WebAPI-MultiTenant-OpenIdConnect-DotNet](https://github.com/AzureADSamples/WebApp-WebAPI-MultiTenant-OpenIdConnect-DotNet)
   * [https://github.com/AzureADSamples/NativeClient-WebAPI-MultiTenant-WindowsStore](https://github.com/AzureADSamples/NativeClient-WebAPI-MultiTenant-WindowsStore)
 
-*	**Anfordern einer App-Integration** – Fordern Sie über das [Feedback-Forum für Azure AD](http://feedback.azure.com/forums/169401-azure-active-directory) Unterstützung für die Anwendung an.
+*	**Anfordern einer App-Integration** – Fordern Sie über das [Feedback-Forum für Azure AD](https://feedback.azure.com/forums/169401-azure-active-directory/) Unterstützung für die Anwendung an.
 
 ###Verwenden des Azure-Verwaltungsportals
 
@@ -168,7 +168,7 @@ Welche Methode(n) Sie zur Bereitstellung in Ihrer Organisation wählen, liegt in
 
 ###Azure AD-Zugriffsbereich
 
-Der "Zugriffsbereich" unter https://myapps.microsoft.com ist ein webbasiertes Portal, das einem Endbenutzer mit einem Organisationskonto im Azure Active Directory erlaubt, cloudbasierte Anwendungen anzuzeigen und zu starten, für die der Azure AD-Administrator Zugriff gewährt hat. Als [Azure Active Directory Premium](http://azure.microsoft.com/pricing/details/active-directory/)-Endbenutzer können Sie auch die Funktionen zur Self-Service-Gruppenverwaltung über den Zugriffsbereich verwenden.
+Der "Zugriffsbereich" unter https://myapps.microsoft.com ist ein webbasiertes Portal, das einem Endbenutzer mit einem Organisationskonto im Azure Active Directory erlaubt, cloudbasierte Anwendungen anzuzeigen und zu starten, für die der Azure AD-Administrator Zugriff gewährt hat. Als [Azure Active Directory Premium](https://azure.microsoft.com/pricing/details/active-directory/)-Endbenutzer können Sie auch die Funktionen zur Self-Service-Gruppenverwaltung über den Zugriffsbereich verwenden.
 
 ![][3]
 
@@ -220,4 +220,4 @@ Diese Links verwenden die gleichen Mechanismen der Zugriffssteuerung wie der Zug
 [5]: ./media/active-directory-appssoaccess-whatis/workdaymobile.png
 [6]: ./media/active-directory-appssoaccess-whatis/deeplink.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0128_2016-->

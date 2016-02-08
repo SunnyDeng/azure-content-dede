@@ -3,7 +3,7 @@
 	description="Beschreibt, was in Ihrem Visual Studio .NET-Projekt passiert ist, nachdem Azure Mobile Services mithilfe von Verbundene Dienste hinzugefügt wurde."
 	services="mobile-services"
 	documentationCenter=""
-	authors="TomArcher"
+	authors="mlhoop"
 	manager="douge"
 	editor=""/>
 
@@ -14,7 +14,7 @@
 	ms.devlang="dotnet"
 	ms.topic="article"
 	ms.date="01/05/2016"
-	ms.author="tarcher"/>
+	ms.author="mlearned"/>
 
 # Was ist mit meinem Visual Studio .NET-Projekt passiert, nachdem Azure Mobile Services mithilfe von Verbundene Dienste hinzugefügt wurde?
 
@@ -39,6 +39,6 @@ In Ihrer Datei **App.xaml.cs** wurde ein MobileServiceClient-Objekt mit der Anwe
 Wenn ein .NET Mobile Service im Anbieter für verbundene Dienste erstellt wird, wird ein Mobile Services-Projekt erstellt und der Projektmappe hinzugefügt.
 
 
-[Weitere Informationen zu mobilen Diensten](http://azure.microsoft.com/documentation/services/mobile-services/)
+[Weitere Informationen zu mobilen Diensten](https://azure.microsoft.com/documentation/services/mobile-services/)
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

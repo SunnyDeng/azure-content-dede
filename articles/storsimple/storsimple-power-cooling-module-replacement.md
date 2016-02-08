@@ -4,7 +4,7 @@
    services="storsimple"
    documentationCenter=""
    authors="alkohli"
-   manager="carolz"
+   manager="carmonm"
    editor="" />
 <tags 
    ms.service="storsimple"
@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="12/02/2015"
+   ms.date="01/21/2016"
    ms.author="alkohli" />
 
 # Austauschen eines Moduls für Stromversorgung und Kühlung eines StorSimple-Geräts
@@ -26,7 +26,7 @@ In diesem Tutorial werden folgende Punkte erläutert:
 - Ausbauen eines PCM
 - Einbauen eines Austausch-PCM
 
->[AZURE.IMPORTANT]Überprüfen Sie vor dem Ausbauen und Austauschen eines PCM die Sicherheitsinformationen unter [Austauschen von StorSimple-Hardwarekomponenten](storsimple-hardware-component-replacement.md).
+>[AZURE.IMPORTANT] Überprüfen Sie vor dem Ausbauen und Austauschen eines PCM die Sicherheitsinformationen unter [Austauschen von StorSimple-Hardwarekomponenten](storsimple-hardware-component-replacement.md).
 
 ## Bevor Sie ein PCM austauschen
 
@@ -40,11 +40,14 @@ Achten Sie auf die folgenden wichtigen Punkte, bevor Sie ein PCM austauschen:
 
 - Der Austausch eines PCM dauert nur einige Minuten, muss aber, damit eine Überhitzung vermieden wird, binnen 10 Minuten ab Ausbau des ausgefallenen PCM abgeschlossen sein.
 
+- Beachten Sie, dass die ab Werk gelieferten 764-W-Austausch-PCMs keinen Notfallakku enthalten. Sie müssen den Akku aus dem fehlerhaften PCM entfernen und in das Ersatzmodul einsetzen, bevor Sie den Austausch durchführen. Weitere Informationen finden Sie unter [Entfernen und Einsetzen eines Notfallakkus](storsimple-battery-replacement.md).
+
+
 ## Ausbauen eines PCM
 
 Gehen Sie entsprechend der folgenden Anleitung vor, wenn Sie ein Modul für Stromversorgung und Kühlung (Power and Cooling Module, PCM) aus einem Microsoft Azure StorSimple-Gerät ausbauen möchten.
 
->[AZURE.NOTE]Bevor Sie das jeweilige PCM ausbauen, sollten Sie sich vergewissern, dass Sie ein passendes Austauschmodul haben (764 W für das primäre Gehäuse oder 580 W für das EBOD-Gehäuse).
+>[AZURE.NOTE] Bevor Sie das jeweilige PCM ausbauen, sollten Sie sich vergewissern, dass Sie ein passendes Austauschmodul haben (764 W für das primäre Gehäuse oder 580 W für das EBOD-Gehäuse).
 
 #### So bauen Sie ein PCM aus
 
@@ -114,7 +117,7 @@ Gehen Sie entsprechend der folgenden Anleitung vor, wenn Sie ein Modul für Stro
 
 ## Einbauen eines Austausch-PCM
 
-Folgen Sie diesen Anweisungen, um ein PCM in Ihrem StorSimple-Gerät einzubauen.
+Folgen Sie diesen Anweisungen, um ein PCM in Ihrem StorSimple-Gerät einzubauen. Stellen Sie sicher, dass Sie den Notfallakku eingesetzt haben, bevor Sie das Austausch-PCM einbauen (gilt nur für PCMs mit 764 W). Weitere Informationen finden Sie unter [Entfernen und Einsetzen eines Notfallakkus](storsimple-battery-replacement.md).
 
 #### So bauen Sie ein PCM ein
 
@@ -126,7 +129,7 @@ Folgen Sie diesen Anweisungen, um ein PCM in Ihrem StorSimple-Gerät einzubauen.
 
 2. Überprüfen Sie das Gehäuse auf Beschädigungen, wobei Sie besonderes auf die Anschlüsse achten sollten.
 										
-    >[AZURE.NOTE]**Bauen Sie das Modul nicht ein, wenn einer der Anschlussstifte verbogen ist.**
+    >[AZURE.NOTE] **Bauen Sie das Modul nicht ein, wenn einer der Anschlussstifte verbogen ist.**
 
 3. Schieben Sie das Modul bei entriegeltem PCM-Bügel in das Gehäuse.
 
@@ -136,7 +139,7 @@ Folgen Sie diesen Anweisungen, um ein PCM in Ihrem StorSimple-Gerät einzubauen.
 
 4. Verriegeln Sie den PCM-Bügel. Sie sollten ein Klicken hören, wenn der Bügelverschluss einrastet.
 										
-    >[AZURE.NOTE]Wenn Sie prüfen möchten, ob die Anschlussstifte Kontakt haben, ziehen Sie vorsichtig am Bügel, ohne den Verschluss zu öffnen. Wenn das PCM herausgleitet, ist davon auszugehen, dass der Verschluss verriegelt wurde, bevor die Anschlüsse Kontakt hatten.
+    >[AZURE.NOTE] Wenn Sie prüfen möchten, ob die Anschlussstifte Kontakt haben, ziehen Sie vorsichtig am Bügel, ohne den Verschluss zu öffnen. Wenn das PCM herausgleitet, ist davon auszugehen, dass der Verschluss verriegelt wurde, bevor die Anschlüsse Kontakt hatten.
 
 5. Verbinden Sie die Netzkabel mit der Stromquelle und dem PCM.
 
@@ -146,10 +149,10 @@ Folgen Sie diesen Anweisungen, um ein PCM in Ihrem StorSimple-Gerät einzubauen.
 
 8. Vergewissern Sie sich, dass der Austausch erfolgreich war: Navigieren Sie im klassischen Azure-Portal Ihres StorSimple Manager-Diensts zu **Geräte** > **Wartung** > **Hardwarestatus**. Unter **Freigegebene Komponenten** muss die Status-LED des PCM grün leuchten.
 										
-    >[AZURE.NOTE]Es kann einige Minuten dauern, bis das Austausch-PCM vollständig initialisiert ist.
+    >[AZURE.NOTE] Es kann einige Minuten dauern, bis das Austausch-PCM vollständig initialisiert ist.
 
 ## Nächste Schritte
 
 Weitere Informationen zum [Austauschen von StorSimple-Hardwarekomponenten](storsimple-hardware-component-replacement.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

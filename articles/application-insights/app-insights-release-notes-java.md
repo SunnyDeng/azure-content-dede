@@ -16,11 +16,11 @@
 
 # Versionshinweise für das Application Insights-SDK für Java
 
-Das [Application Insights-SDK für Java](app-insights-java-get-started.md) sendet Telemetriedaten über Ihre Live-App an [Application Insights](http://azure.microsoft.com/services/application-insights/), wo Sie die Nutzung und Leistung analysieren können.
+Das [Application Insights-SDK für Java](app-insights-java-get-started.md) sendet Telemetriedaten über Ihre Live-App an [Application Insights](https://azure.microsoft.com/services/application-insights/), wo Sie die Nutzung und Leistung analysieren können.
 
 #### So installieren Sie das SDK in Ihrer Anwendung
 
-Informationen dazu finden Sie unter [Erste Schritte mit dem SDK für Java](app-insights-java-get-started.md).
+Informationen dazu finden Sie unter [Erste Schritte mit Application Insights in einem Java-Webprojekt](app-insights-java-get-started.md).
 
 #### So aktualisieren Sie auf das neueste SDK
 
@@ -44,7 +44,7 @@ Vergleichen Sie die alte und die neue Version der Datei "ApplicationInsights.xml
 
 
 ## Version 1.0.1
-- Der [Java-Agent](app-insights-java-agent.md) sammelt Abhängigkeitsinformationen zu Folgendem:
+- Der [Java-Agent](app-insights-java-agent.md) unterstützt das Sammeln folgender Abhängigkeitsinformationen:
 	- HTTP-Aufrufe über HttpClient, OkHttp und RestTemplate (Spring).
 	- Aufrufe von Redis über den Jedis-Client. Wenn ein konfigurierbarer Schwellenwert übergeben wird, ruft das SDK auch die Argumente des Aufrufs ab.
 	- JDBC-Aufrufe mit Oracle DB und Apache Derby DB-Clients.
@@ -73,4 +73,4 @@ Vergleichen Sie die alte und die neue Version der Datei "ApplicationInsights.xml
 - Unterstützung für die manuelle Nachverfolgung von Abhängigkeiten mit einer neuen API mit der ```trackDependency```-Methode.
 - Möglichkeit, ein Telemetrieelement als synthetisch zu markieren, indem dem gemeldeten Element eine ```SyntheticSource```-Eigenschaft hinzugefügt wird.
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0128_2016-->

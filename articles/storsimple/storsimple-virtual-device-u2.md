@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="12/14/2015"
+   ms.date="01/22/2016"
    ms.author="alkohli" />
 
 # Bereitstellen und Verwalten eines virtuellen StorSimple-Geräts in Azure (Update 2)
@@ -235,7 +235,7 @@ Wenn Sie Ihr virtuelles Gerät neu einrichten möchten, deaktivieren und lösche
 
 Die Notfallwiederherstellung ist eines der wichtigsten Szenarios, für die das virtuelle StorSimple-Gerät entwickelt wurde. In diesem Szenario sind das physische StorSimple-Gerät oder das gesamte Datencenter möglicherweise nicht verfügbar. Glücklicherweise können Sie mit einem virtuellen Gerät den Betrieb an einem anderen Speicherort wiederherstellen. Bei der Notfallwiederherstellung wechseln die Volumecontainer vom Quellgerät den Eigentümer und werden auf das virtuelle Gerät übertragen. Als Voraussetzung für die Notfallwiederherstellung müssen ein virtuelles Gerät erstellt und konfiguriert, alle Volumes innerhalb der Volumecontainer offline geschaltet und dem Volumecontainer eine Cloudmomentaufnahme zugeordnet sein.
 
->[AZURE.NOTE]
+>[AZURE.NOTE] 
 >
 > - Wenn Sie ein virtuelles Gerät als sekundäres Gerät für die Notfallwiederherstellung einsetzen, bedenken Sie, dass 8010 über 30 TB Standardspeicher und 8020 über 64 TB Premium-Speicher verfügt. Das virtuelle Gerät mit der höheren Kapazität, 8020, ist möglicherweise für ein DR-Szenario besser geeignet.
 > - Ein Failover oder das Klonen eines Geräts mit Update 2 auf ein Gerät mit Software vor Update 1 ist nicht möglich. Sie können jedoch ein Failover für ein Gerät mit Update 2 auf ein Gerät mit Update 1 (1.1 oder 1.2) durchführen.
@@ -259,4 +259,4 @@ Wenn Sie das virtuelle Gerät herunterfahren oder löschen, wird es auf der Seit
  
 - Erfahren Sie, wie Sie [StorSimple-Volumes aus einem Sicherungssatz wiederherstellen](storsimple-restore-from-backup-set.md).
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

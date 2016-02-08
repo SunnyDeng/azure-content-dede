@@ -28,7 +28,7 @@ Azure Active Directory (Azure AD) bietet eine Identitätslösung, die Sie in der
 
 Stellen Sie sich ein Konto in Azure AD als Führerschein für die Cloud vor. Es handelt sich um Ihre eindeutige ID für den Zugriff auf Onlinedienste. In diesem Sinne funktioniert Azure AD wie Ihre eigene private Registrierungsstelle in der Cloud für diese Führerscheine. Azure AD ermöglicht das Verwenden von Identitäten überall in der Cloud und verbessert die Mobilität für Benutzer, die lokal auf Ressourcen zugreifen.
 
-> [AZURE.NOTE]Um Azure Active Directory verwenden zu können, benötigen Sie ein Azure-Konto. Wenn Sie nicht über ein Azure-Konto verfügen, können Sie sich [für ein kostenloses Azure-Konto registrieren](http://azure.microsoft.com/pricing/free-trial/).
+> [AZURE.NOTE] Um Azure Active Directory verwenden zu können, benötigen Sie ein Azure-Konto. Wenn Sie nicht über ein Azure-Konto verfügen, können Sie sich [für ein kostenloses Azure-Konto registrieren](https://azure.microsoft.com/pricing/free-trial/).
 
 ## Wie unterstützt Azure AD Office 365, Microsoft Intune und andere Azure-Dienste?
 Das Azure-Portal, Office 365 Admin Center, Microsoft Intune-Kontoportal und die Cmdlets des Azure AD PowerShell-Moduls lesen und schreiben Daten in eine einzelne freigegebene Instanz von Azure AD, die Ihrem Verzeichnis zugeordnet ist. Portale (oder Cmdlets) fungieren als Front-End-Schnittstelle, die Ihre Verzeichnisinformationen abruft oder ändert. [Erfahren Sie mehr über die Unterstützung für andere Dienste](active-directory-administer.md#what-is-an-azure-ad-tenant)
@@ -48,4 +48,4 @@ Wünschen Sie weitere Informationen zum Verwalten von Azure AD? Wie wird ein Ver
 * [Als Organisation für Azure registrieren](sign-up-organization.md)
 * [Azure-Identität](fundamentals-identity.md)
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

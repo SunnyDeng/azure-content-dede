@@ -1,7 +1,7 @@
 <properties 
 	pageTitle="Was ist Azure Multi-Factor Authentication? | Microsoft Azure" 
-	description="Azure Multi-Factor Authentication ist eine Methode zum Überprüfen der Identität, für die mehr als nur ein Benutzername und ein Kennwort erforderlich ist. Sie bietet eine zusätzliche Sicherheitsebene für Benutzeranmeldungen und -transaktionen." 
-	keywords="Einführung in die MFA, MFA-Übersicht"
+	description="In diesem Thema wird erläutert, was Multi-Factor Authentication (MFA) ist und warum diese Art der Authentifizierung verwendet wird. Außerdem wird der Client für die Multi-Factor Authentication vorgestellt, und die verschiedenen verfügbaren Methoden und Versionen werden erklärt. Azure Multi-Factor Authentication ist eine Methode zum Überprüfen der Identität, für die mehr als nur ein Benutzername und ein Kennwort erforderlich ist. Sie bietet eine zusätzliche Sicherheitsebene für Benutzeranmeldungen und -transaktionen." 
+	keywords="Einführung in die MFA, MFA-Übersicht, Was ist MFA"
 	services="multi-factor-authentication" 
 	documentationCenter="" 
 	authors="billmath" 
@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="01/11/2016" 
+	ms.date="01/25/2016" 
 	ms.author="billmath"/>
 
 # Was ist Azure Multi-Factor Authentication?
@@ -128,7 +128,7 @@ Wenn Sie nicht nur die für Office 365-Benutzer und Azure-Administratoren verfü
 
 1.	Erwerben Sie Multi-Factor Authentication-Lizenzen, und weisen Sie diese Ihren Benutzern zu.
 2.	Kaufen Sie Lizenzen, in denen Multi-Factor Authentication enthalten ist, z. B. Azure Active Directory Premium, Enterprise Mobility Suite oder Enterprise Cloud Suite, und weisen Sie sie Ihren Benutzern zu.
-3.	Erstellen Sie einen Azure Multi-Factor Authentication-Anbieter in einem Azure-Abonnement. Wenn Sie noch über kein Azure-Abonnement verfügen, können Sie sich für eine kostenlose Testversion anmelden. Testabonnements müssen vor Ablauf der Testversion in reguläre Abonnements konvertiert werden.
+3.	Erstellen Sie einen Azure Multi-Factor Authentication-Anbieter in einem Azure-Abonnement. Wenn Sie noch über kein Azure-Abonnement verfügen, können Sie sich für ein kostenloses Testabonnement registrieren. Testabonnements müssen vor Ablauf in reguläre Abonnements umgewandelt werden.
 
 Wenn Sie einen Azure Multi-Factor Authentication-Anbieter verwenden, sind zwei Nutzungsmodelle verfügbar, die über Ihr Azure-Abonnement abgerechnet werden:
 
@@ -136,7 +136,7 @@ Wenn Sie einen Azure Multi-Factor Authentication-Anbieter verwenden, sind zwei N
 - **Pro Benutzer**. Diese Option ist für Unternehmen geeignet, die Multi-Factor Authentication für eine feste Anzahl von Mitarbeitern aktivieren möchten, die regelmäßig eine Authentifizierung benötigen.
 - **Pro Authentifizierung**. Diese Option ist für Unternehmen geeignet, die Multi-Factor Authentication für eine große Gruppe externer Benutzer aktivieren möchten, die seltener oder unregelmäßig eine Authentifizierung benötigen.
 
-Ausführliche Preisinformationen finden Sie unter [Preise für Azure MFA](http://azure.microsoft.com/pricing/details/multi-factor-authentication/).
+Ausführliche Preisinformationen finden Sie unter [Preise für Azure MFA](https://azure.microsoft.com/pricing/details/multi-factor-authentication/).
 
 Wählen Sie das Pro-Arbeitsplatz-Modell oder ein verbrauchsorientiertes Modell, das am besten zu Ihrer Organisation passt. Lesen Sie anschließend die Informationen unter [Erste Schritte](multi-factor-authentication-get-started.md).
 
@@ -206,4 +206,4 @@ Sie haben nun ermittelt, ob Sie Multi-Factor Authentication in der Cloud oder de
 
 <center> [![Cloud](./media/multi-factor-authentication-get-started/cloud2.png)](multi-factor-authentication-get-started-cloud.md) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[![Proofup](./media/multi-factor-authentication-get-started/server2.png)](multi-factor-authentication-get-started-server.md) &#160;&#160;&#160;&#160;&#160; </center>
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

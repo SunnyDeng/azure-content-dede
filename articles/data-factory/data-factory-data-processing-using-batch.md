@@ -53,7 +53,7 @@ Die Lösung zählt, wie häufig ein Suchbegriff („Microsoft“) in Eingabedate
 
 ### Voraussetzungen
 
-1.  **Azure-Abonnement**. Wenn Sie über kein Azure-Abonnement verfügen, können Sie in wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/).
+1.  **Azure-Abonnement**. Wenn Sie über kein Azure-Abonnement verfügen, können Sie in wenigen Minuten ein kostenloses Testkonto erstellen. Weitere Informationen finden Sie unter [Kostenlose Testversion](https://azure.microsoft.com/pricing/free-trial/).
 
 2.  **Azure-Speicherkonto**. Sie benötigen ein Azure-Speicherkonto zum Speichern der Daten in diesem Tutorial. Falls Sie noch kein Azure-Speicherkonto haben, lesen Sie den Artikel [Erstellen eines Speicherkontos](../storage/storage-create-storage-account.md#create-a-storage-account). Die Beispiellösung verwendet Blob-Speicher.
 
@@ -500,7 +500,7 @@ Die folgende exemplarische Vorgehensweise enthält weitere Details.
 
 ### Schritt 1: Erstellen der Data Factory
 
-1.  Nach der Anmeldung beim [Azure-Portal](http://portal.azure.com/) gehen Sie wie folgt vor:
+1.  Nach der Anmeldung beim [Azure-Portal](https://portal.azure.com/) gehen Sie wie folgt vor:
 
     1.  Klicken Sie im linken Menü auf **NEU**.
 
@@ -707,7 +707,7 @@ In diesem Schritt erstellen Sie ein weiteres Dataset des Typs „Azureblob“, u
 
 In diesem Schritt erstellen Sie eine Pipeline mit einer Aktivität, der zuvor erstellten benutzerdefinierten Aktivität.
 
-> [AZURE.IMPORTANT]Wenn Sie **file.txt** noch nicht in die Eingabeordner im Blob-Container hochgeladen haben, erledigen Sie dies vor dem Erstellen der Pipelines. Die **IsPaused**-Eigenschaft ist in der JSON-Pipeline auf „False“ festgelegt, sodass die Pipeline sofort ausgeführt wird, da das **Startdatum** Datum in der Vergangenheit liegt.
+> [AZURE.IMPORTANT] Wenn Sie **file.txt** noch nicht in die Eingabeordner im Blob-Container hochgeladen haben, erledigen Sie dies vor dem Erstellen der Pipelines. Die **IsPaused**-Eigenschaft ist in der JSON-Pipeline auf „False“ festgelegt, sodass die Pipeline sofort ausgeführt wird, da das **Startdatum** Datum in der Vergangenheit liegt.
 
 1.  Klicken Sie im Data Factory-Editor auf der Befehlsleiste auf die Schaltfläche **Neue Pipeline**. Wenn der Befehl nicht angezeigt wird, klicken Sie auf **... (Auslassungspunkte)**, um ihn anzuzeigen.
 
@@ -761,11 +761,11 @@ In diesem Schritt erstellen Sie eine Pipeline mit einer Aktivität, der zuvor er
 
 	-   **AssemblyName** wird auf den Namen der DLL festgelegt: **MyActivities.dll**.
 
-	-   **EntryPoint** wird auf **MyDotNetActivityNS.MyDotNetActivity** festgelegt. Das entspricht im Grunde \<Namespace\>.\<Klassenname\> in Ihrem Code.
+	-   **EntryPoint** wird auf **MyDotNetActivityNS.MyDotNetActivity** festgelegt. Das entspricht im Grunde <Namespace>.<Klassenname> in Ihrem Code.
 
 	-   **PackageLinkedService** ist auf **StorageLinkedService** festgelegt, das auf den Blobspeicher verweist, der die Zip-Datei mit der benutzerdefinierten Aktivität enthält. Wenn Sie andere Azure-Speicherkonten für die Eingabe- und Ausgabedateien und die Zip-Datei mit der benutzerdefinierten Aktivität verwenden, müssen Sie einen weiteren verknüpften Azure Storage-Dienst erstellen. Dieser Artikel setzt voraus, dass Sie das gleiche Azure-Speicherkonto verwenden.
 
-	-   **PackageFile** wird auf **customactivitycontainer/MyCustomActivity.zip** festgelegt. Das entspricht dem Format: \<containerforthezip\>/\<nameofthezip.zip\>.
+	-   **PackageFile** wird auf **customactivitycontainer/MyCustomActivity.zip** festgelegt. Das entspricht dem Format: <containerforthezip>/<nameofthezip.zip>.
 
 	-   Die benutzerdefinierte Aktivität verwendet **InputDataset** als Eingabe und **OutputDataset** als Ausgabe.
 
@@ -929,4 +929,4 @@ Nachdem Sie Daten verarbeitet haben, können Sie sie mit Online-Tools wie **Micr
 
     -   [Erste Schritte mit der Azure Batch-Bibliothek für .NET](../batch/batch-dotnet-get-started.md)
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

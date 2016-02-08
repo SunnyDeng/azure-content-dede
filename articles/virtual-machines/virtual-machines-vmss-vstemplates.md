@@ -23,7 +23,7 @@
 In diesem Artikel erfahren Sie, wie eine Azure-VM-Skalierungsgruppe über eine Visual Studio-Ressourcengruppenbereitstellung bereitgestellt wird.
 
 
-[Azure-VM-Skalierungsgruppen](azure.microsoft.com/blog/azure-vm-scale-sets-public-preview/) sind eine Azure Compute-Ressource zur Bereitstellung und Verwaltung einer Auflistung ähnlicher virtueller Computer mit einfach integrierten Optionen für automatische Skalierung und Lastenausgleich. Sie können VM-Skalierungsgruppen über [ARM-Vorlagen (Azure-Ressourcen-Manager)](https://github.com/Azure/azure-quickstart-templates) bereitstellen. ARM-Vorlagen können mithilfe der Azure-Befehlszeilenschnittstelle, mit PowerShell, REST und auch direkt über Visual Studio bereitgestellt werden. Visual Studio bietet eine Reihe von Beispielvorlagen, die als Teil eines Azure-Projekts zur Ressourcengruppenbereitstellung bereitgestellt werden können.
+[Azure-VM-Skalierungsgruppen](https://azure.microsoft.com/blog/azure-vm-scale-sets-public-preview/) sind eine Azure Compute-Ressource zur Bereitstellung und Verwaltung einer Auflistung ähnlicher virtueller Computer mit einfach integrierten Optionen für automatische Skalierung und Lastenausgleich. Sie können VM-Skalierungsgruppen über [ARM-Vorlagen (Azure-Ressourcen-Manager)](https://github.com/Azure/azure-quickstart-templates) bereitstellen. ARM-Vorlagen können mithilfe der Azure-Befehlszeilenschnittstelle, mit PowerShell, REST und auch direkt über Visual Studio bereitgestellt werden. Visual Studio bietet eine Reihe von Beispielvorlagen, die als Teil eines Azure-Projekts zur Ressourcengruppenbereitstellung bereitgestellt werden können.
 
 Azure-Ressourcengruppenbereitstellungen bieten eine Möglichkeit, mehrere zusammengehörige Azure-Ressourcen in einem einzelnen Bereitstellungsvorgang zusammenzufassen und zu veröffentlichen. Informationen dazu finden Sie hier: [Erstellen und Bereitstellen von Azure-Ressourcengruppen mit Visual Studio](../vs-azure-tools-resource-groups-deployment-projects-create-deploy/)
 
@@ -108,4 +108,4 @@ Nachdem Sie VM-Skalierungsgruppen erfolgreich über Visual Studio bereitgestellt
 [output_window]: ./media/virtual-machines-vmss-vstemplates/9-Output.png
 [cloud_explorer]: ./media/virtual-machines-vmss-vstemplates/12-CloudExplorer.png
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

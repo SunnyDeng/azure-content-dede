@@ -14,24 +14,24 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="12/04/2015" 
+	ms.date="02/26/2015" 
 	ms.author="larryfr"/>
 
 #Analysieren von Flugverspätungsdaten mit Hive in HDInsight
 
 Hier erfahren Sie, wie Sie Flugverspätungsdaten mithilfe von Hive in einem Linux-basierten HDInsight-Cluster analysieren und anschließend die Daten mithilfe von Sqoop in die Azure SQL-Datenbank exportieren.
 
-> [AZURE.NOTE]Einzelne Teile dieses Dokuments können zwar für Windows-basierte HDInsight-Cluster (beispielsweise Python und Hive) verwendet werden. Zahlreiche Schritte gelten jedoch spezifisch für Linux-basierte Cluster. Schritte für Windows-basierte Cluster finden Sie unter [Analysieren von Flugverspätungsdaten mit Hive in HDInsight](hdinsight-analyze-flight-delay-data.md).
+> [AZURE.NOTE] Einzelne Teile dieses Dokuments können zwar für Windows-basierte HDInsight-Cluster (beispielsweise Python und Hive) verwendet werden. Zahlreiche Schritte gelten jedoch spezifisch für Linux-basierte Cluster. Schritte für Windows-basierte Cluster finden Sie unter [Analysieren von Flugverspätungsdaten mit Hive in HDInsight](hdinsight-analyze-flight-delay-data.md).
 
 ###Voraussetzungen
 
 Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
-- **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
+- **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 
 - __Einen HDInsight-Cluster__. Schritte zum Erstellen eines neuen Linux-basierten HDInsight-Clusters finden Sie unter [Erste Schritte bei der Verwendung von Hadoop mit Hive in HDInsight unter Linux](hdinsight-hadoop-linux-tutorial-get-started.md).
 
-- __Azure SQL-Datenbank__. Sie verwenden eine Azure SQL-Datenbank als Zieldatenspeicher. Falls Sie noch keine SQL-Datenbank besitzen, lesen Sie das Thema [Erstellen einer Azure SQL-Datenbank](../sql-database/sql-database-create.md).
+- __Azure SQL-Datenbank__. Sie verwenden eine Azure SQL-Datenbank als Zieldatenspeicher. Wenn Sie noch nicht über eine SQL-Datenbank verfügen, lesen Sie [SQL-Datenbank-Tutorial: Erstellen einer SQL-Datenbank in Minuten](../sql-database/sql-database-get-started.md).
 
 - __Azure-Befehlszeilenschnittstelle__. Wenn Sie die Azure-Befehlszeilenschnittstelle noch nicht installiert haben, finden Sie unter [Installieren und Konfigurieren der Azure-Befehlszeilenschnittstelle](../xplat-cli-install.md) weitere Schritte.
 
@@ -53,7 +53,7 @@ Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
 	Ersetzen Sie __FILENAME__ durch den Namen der ZIP-Datei. Ersetzen Sie __USERNAME__ durch die SSH-Anmeldedaten für den HDInsight-Cluster. Ersetzen Sie CLUSTERNAME durch den Namen des HDInsight-Clusters.
 	
-	> [AZURE.NOTE]Wenn Sie für die Authentifizierung Ihrer SSH-Anmeldung ein Kennwort verwenden, werden Sie zur Eingabe dieses Kennworts aufgefordert. Wenn Sie einen öffentlichen Schlüssel verwendet haben, müssen Sie möglicherweise den Parameter `-i` verwenden und den Pfad zum passenden privaten Schlüssel angeben. Beispiel: `scp -i ~/.ssh/id_rsa FILENAME.csv USERNAME@CLUSTERNAME-ssh.azurehdinsight.net:`.
+	> [AZURE.NOTE] Wenn Sie für die Authentifizierung Ihrer SSH-Anmeldung ein Kennwort verwenden, werden Sie zur Eingabe dieses Kennworts aufgefordert. Wenn Sie einen öffentlichen Schlüssel verwendet haben, müssen Sie möglicherweise den Parameter `-i` verwenden und den Pfad zum passenden privaten Schlüssel angeben. Beispiel: `scp -i ~/.ssh/id_rsa FILENAME.csv USERNAME@CLUSTERNAME-ssh.azurehdinsight.net:`.
 
 2. Wenn der Upload abgeschlossen ist, stellen Sie über SSH eine Verbindung mit dem Cluster her:
 
@@ -179,7 +179,7 @@ Führen Sie folgenden Schritte aus, um eine Azure SQL-Datenbank zu erstellen: Di
 		data:    Server Name i1qwc540ts
 		info:    sql server create command OK
 
-> [AZURE.IMPORTANT]Beachten Sie den Servernamen, der von diesem Befehl zurückgegeben wird. Dies ist der kurze Name des erstellten SQL-Datenbankservers. Der vollqualifizierte Domänenname (FQDN) lautet `<shortname>.database.windows.net`.
+> [AZURE.IMPORTANT] Beachten Sie den Servernamen, der von diesem Befehl zurückgegeben wird. Dies ist der kurze Name des erstellten SQL-Datenbankservers. Der vollqualifizierte Domänenname (FQDN) lautet `<shortname>.database.windows.net`.
 
 2. Verwenden Sie den folgenden Befehl zum Erstellen einer Datenbank mit dem Namen **sqooptest** auf dem SQL-Datenbankserver:
 
@@ -187,13 +187,13 @@ Führen Sie folgenden Schritte aus, um eine Azure SQL-Datenbank zu erstellen: Di
 
     Nach seinem Abschluss wird die Meldung "OK" zurückgegeben.
 
-	> [AZURE.NOTE]Wenn Sie eine Fehlermeldung über fehlenden Zugriff erhalten, müssen Sie die IP-Adresse der Client-Arbeitsstation der Firewall der SQL-Datenbank mit dem folgenden Befehl hinzufügen:
+	> [AZURE.NOTE] Wenn Sie eine Fehlermeldung über fehlenden Zugriff erhalten, müssen Sie die IP-Adresse der Client-Arbeitsstation der Firewall der SQL-Datenbank mit dem folgenden Befehl hinzufügen:
 	>
 	> `sql firewallrule create [options] <serverName> <ruleName> <startIPAddress> <endIPAddress>`
 
 ##Erstellen einer SQL-Datenbanktabelle
 
-> [AZURE.NOTE]Es gibt viele Möglichkeiten, zum Erstellen einer Tabelle eine Verbindung mit SQL Database herzustellen. Die folgenden Schritte verwenden [FreeTDS](http://www.freetds.org/) aus dem HDInsight-Cluster.
+> [AZURE.NOTE] Es gibt viele Möglichkeiten, zum Erstellen einer Tabelle eine Verbindung mit SQL Database herzustellen. Die folgenden Schritte verwenden [FreeTDS](http://www.freetds.org/) aus dem HDInsight-Cluster.
 
 1. Verwenden Sie SSH, um eine Verbindung mit dem Linux-basierten HDInsight-Cluster herzustellen, und führen Sie die folgenden Schritte in der SSH-Sitzung aus.
 
@@ -304,4 +304,4 @@ Jetzt wissen Sie, wie Sie eine Datei in den Azure-Blobspeicher hochladen, eine H
 
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

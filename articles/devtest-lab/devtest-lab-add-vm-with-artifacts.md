@@ -30,7 +30,7 @@ In diesem Artikel wird die Erstellung einer VM in Ihrem Lab mithilfe von Artefak
 
 ## Hinzufügen einer VM mit Artefakten
 
-1. Melden Sie sich beim [Azure-Vorschauportal](http://portal.azure.com) an.
+1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an.
 
 1. Tippen Sie auf **Durchsuchen**, und tippen Sie dann in der Liste auf **DevTest Labs**.
 
@@ -98,4 +98,4 @@ Gehen Sie zum Anzeigen oder Ändern der Parameter ausgewählter Artefakte wie fo
 
 Erfahren Sie, wie Sie [benutzerdefinierte Artefakte für Ihre VM erstellen](devtest-lab-artifact-author.md).
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0128_2016-->

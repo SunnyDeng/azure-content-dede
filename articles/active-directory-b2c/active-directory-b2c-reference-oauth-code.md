@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/22/2015"
+	ms.date="01/21/2016"
 	ms.author="dastrock"/>
 
 # Azure AD B2C-Vorschau: OAuth 2.0-Autorisierungcodefluss
@@ -74,7 +74,7 @@ client_id=90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6
 
 | Parameter | | Beschreibung |
 | ----------------------- | ------------------------------- | ----------------------- |
-| client\_id | erforderlich | Die Anwendungs-ID, die das [Azure-Portal](https://portal.azure.com) Ihrer App zugewiesen hat. |
+| client\_id | erforderlich | Die Anwendungs-ID, die das [Azure-Portal](https://portal.azure.com/) Ihrer App zugewiesen hat. |
 | response\_type | erforderlich | Muss `code` für den Autorisierungscodefluss enthalten. |
 | redirect\_uri | erforderlich | Der Umleitungs-URI der App, in dem Authentifizierungsantworten gesendet und von der App empfangen werden können. Er muss genau mit einer der Umleitungs-URIs übereinstimmen, die Sie im Portal registriert haben, mit dem Unterschied, dass er URL-codiert sein muss. |
 | Bereich | erforderlich | Eine durch Leerzeichen getrennte Liste von Bereichen. Ein einzelner Bereichswert gibt Azure AD an, dass beide Berechtigungen angefordert werden. Der `openid`-Bereich gibt eine Berechtigung für die Anmeldung des Benutzers und das Abrufen von Daten über den Benutzer in Form von **ID-Token** an (dies wird noch erläutert). Der `offline_access`-Bereich gibt an, dass Ihre App ein **Aktualisierungstoken** für den dauerhaften Zugriff auf Ressourcen benötigt. |
@@ -134,7 +134,7 @@ Content-Type: application/json
 | Parameter | | Beschreibung |
 | ----------------------- | ------------------------------- | --------------------- |
 | p | erforderlich | Die Richtlinie, die zum Abrufen des Autorisierungscodes verwendet wurde. Sie können in dieser Anforderung keine andere Richtlinie verwenden. **Beachten Sie, dass dieser Parameter in der Abfragezeichenfolge hinzugefügt wird**, nicht im POST-Text. |
-| client\_id | erforderlich | Die Anwendungs-ID, die das [Azure-Portal](https://portal.azure.com) Ihrer App zugewiesen hat. |
+| client\_id | erforderlich | Die Anwendungs-ID, die das [Azure-Portal](https://portal.azure.com/) Ihrer App zugewiesen hat. |
 | grant\_type | erforderlich | Muss der `authorization_code` für den Autorisierungscodefluss sein. |
 | Bereich | erforderlich | Eine durch Leerzeichen getrennte Liste von Bereichen. Ein einzelner Bereichswert gibt Azure AD an, dass beide Berechtigungen angefordert werden. Der `openid`-Bereich gibt eine Berechtigung für die Anmeldung des Benutzers und das Abrufen von Daten über den Benutzer in Form von **ID-Token** an. Damit können Sie Token an die Back-End-Web-API der App übermitteln, die durch dieselbe Anwendungs-ID wie der Client dargestellt wird. Der `offline_access`-Bereich gibt an, dass Ihre App ein **Aktualisierungstoken** für den dauerhaften Zugriff auf Ressourcen benötigt. |
 | Code | erforderlich | Der Autorisierungscode, den Sie im ersten Abschnitt des Vorgangs erhalten haben. |
@@ -165,7 +165,8 @@ Eine erfolgreiche Tokenantwort sieht wie folgt aus:
 | refresh\_token | Ein Aktualisierungstoken von OAuth 2.0. Die App kann dieses Token verwenden, um nach Ablauf der aktuellen Token zusätzliche Token zu erhalten. Aktualisierungstoken sind langlebig und können verwendet werden, um den Zugriff auf Ressourcen für längere Zeit beizubehalten. Weitere Details finden Sie in der [B2C-Tokenreferenz](active-directory-b2c-reference-tokens.md). |
 | refresh\_token\_expires\_in | Die maximal mögliche Gültigkeitsdauer für ein Aktualisierungstoken (in Sekunden). Das Aktualisierungstoken kann jedoch jederzeit ungültig werden. |
 
-> [AZURE.NOTE]Wenn Sie dann erfahren möchten, wo das Zugriffstoken ist, berücksichtigen Sie Folgendes. Wenn Sie den `openid`-Bereich anfordern, gibt Azure AD in der Antwort ein JWT-`id_token` aus. Obwohl dieses `id_token` technisch kein OAuth 2.0-Zugriffstoken ist, kann es bei der Kommunikation mit dem Back-End-Dienst der App als solches verwendet werden, da es durch dieselbe Client-ID wie der Client dargestellt wird. Das `id_token` ist immer noch ein signiertes JWT-Bearertoken, das in einem HTTP-Autorisierungsheader an eine Ressource gesendet und zum Autorisieren von Anforderungen verwendet werden kann. Der Unterschied besteht darin, dass ein `id_token` über keinen Mechanismus für die Bereichsdefinition für den Zugriff verfügt, den eine spezielle Clientanwendung eventuell besitzt. Wenn die Clientanwendung jedoch der einzige Client ist, der mit dem Back-End-Dienst kommunizieren kann (wie bei der aktuellen Azure AD B2C-Vorschau), besteht keine Notwendigkeit für einen solchen Mechanismus zur Bereichseingrenzung. Wenn der Azure AD B2C-Vorschau die Möglichkeit für Clients zur Kommunikation mit weiteren Erst- und Drittanbieterressourcen hinzugefügt wird, werden auch Zugriffstoken eingeführt. Allerdings wird auch dann noch die Verwendung von `id_tokens` für die Kommunikation mit dem Back-End-Dienst der App die empfohlene Vorgehensweise sein. Weitere Informationen zu Anwendungstypen, die Sie mit der Azure AD B2C-Vorschau erstellen können, finden Sie in [diesem Artikel](active-directory-b2c-apps.md).
+> [AZURE.NOTE]
+	Wenn Sie dann erfahren möchten, wo das Zugriffstoken ist, berücksichtigen Sie Folgendes. Wenn Sie den `openid`-Bereich anfordern, gibt Azure AD in der Antwort ein JWT-`id_token` aus. Obwohl dieses `id_token` technisch kein OAuth 2.0-Zugriffstoken ist, kann es bei der Kommunikation mit dem Back-End-Dienst der App als solches verwendet werden, da es durch dieselbe Client-ID wie der Client dargestellt wird. Das `id_token` ist immer noch ein signiertes JWT-Bearertoken, das in einem HTTP-Autorisierungsheader an eine Ressource gesendet und zum Autorisieren von Anforderungen verwendet werden kann. Der Unterschied besteht darin, dass ein `id_token` über keinen Mechanismus für die Bereichsdefinition für den Zugriff verfügt, den eine spezielle Clientanwendung eventuell besitzt. Wenn die Clientanwendung jedoch der einzige Client ist, der mit dem Back-End-Dienst kommunizieren kann (wie bei der aktuellen Azure AD B2C-Vorschau), besteht keine Notwendigkeit für einen solchen Mechanismus zur Bereichseingrenzung. Wenn der Azure AD B2C-Vorschau die Möglichkeit für Clients zur Kommunikation mit weiteren Erst- und Drittanbieterressourcen hinzugefügt wird, werden auch Zugriffstoken eingeführt. Allerdings wird auch dann noch die Verwendung von `id_tokens` für die Kommunikation mit dem Back-End-Dienst der App die empfohlene Vorgehensweise sein. Weitere Informationen zu Anwendungstypen, die Sie mit der Azure AD B2C-Vorschau erstellen können, finden Sie in [diesem Artikel](active-directory-b2c-apps.md).
 
 Fehlerantworten sehen wie folgt aus:
 
@@ -210,7 +211,7 @@ Content-Type: application/json
 | Parameter | | Beschreibung |
 | ----------------------- | ------------------------------- | -------- |
 | p | erforderlich | Die Richtlinie, die zum Abrufen des ursprünglichen Aktualisierungstokens verwendet wurde. Sie können in dieser Anforderung keine andere Richtlinie verwenden. **Beachten Sie, dass dieser Parameter in der Abfragezeichenfolge hinzugefügt wird**, nicht im POST-Text. |
-| client\_id | erforderlich | Die Anwendungs-ID, die das [Azure-Portal](https://portal.azure.com) Ihrer App zugewiesen hat. |
+| client\_id | erforderlich | Die Anwendungs-ID, die das [Azure-Portal](https://portal.azure.com/) Ihrer App zugewiesen hat. |
 | grant\_type | erforderlich | Muss der `refresh_token` für diesen Abschnitt des Autorisierungscodeflusses sein. |
 | Bereich | erforderlich | Eine durch Leerzeichen getrennte Liste von Bereichen. Ein einzelner Bereichswert gibt Azure AD an, dass beide Berechtigungen angefordert werden. Der `openid`-Bereich gibt eine Berechtigung für die Anmeldung des Benutzers und das Abrufen von Daten über den Benutzer in Form von **ID-Token** an. Damit können Sie Token an die Back-End-Web-API der App übermitteln, die durch dieselbe Anwendungs-ID wie der Client dargestellt wird. Der `offline_access`-Bereich gibt an, dass Ihre App ein **Aktualisierungstoken** für den dauerhaften Zugriff auf Ressourcen benötigt. |
 | redirect\_uri | erforderlich | Der Umleitungs-URI der Anwendung, bei der Sie den Autorisierungscode erhalten haben. |
@@ -256,11 +257,11 @@ Fehlerantworten sehen wie folgt aus:
 | error\_description | Eine spezifische Fehlermeldung, mit der Entwickler die Hauptursache eines Authentifizierungsfehlers identifizieren können. |
 
 
-<!-- 
+<!--
 
 Here is the entire flow for a native  app; each request is detailed in the sections below:
 
-![OAuth Auth Code Flow](./media/active-directory-b2c-reference-oauth-code/convergence_scenarios_native.png) 
+![OAuth Auth Code Flow](./media/active-directory-b2c-reference-oauth-code/convergence_scenarios_native.png)
 
 -->
 
@@ -272,4 +273,4 @@ Wenn Sie diese Anfragen selbst ausprobieren möchten, müssen Sie zunächst dies
 - [Erstellen einer Anwendung](active-directory-b2c-app-registration.md) zum Abrufen einer Anwendungs-ID und eines Umleitungs-URIs. Sie können Ihrer App einen **systemeigenen Client** hinzufügen.
 - [Erstellen der Richtlinien](active-directory-b2c-reference-policies.md) zum Abrufen der Richtliniennamen.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

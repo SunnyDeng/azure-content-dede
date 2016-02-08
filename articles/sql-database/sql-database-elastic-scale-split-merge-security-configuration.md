@@ -453,7 +453,7 @@ Gehen Sie im Zertifikatimport-Assistenten wie folgt vor:
 
 ## Hochladen des Zertifikats
 
-Im [klassischen Azure-Portal](http://portal.azure.com/)
+Im [klassischen Azure-Portal](https://portal.azure.com/)
 
 1. Wählen Sie **Cloud-Dienste**.
 2. Wählen Sie den Clouddienst aus.
@@ -473,4 +473,4 @@ In dieser Datenbank gespeicherte Anmeldeinformationen werden verschlüsselt. Ste
 
 [AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

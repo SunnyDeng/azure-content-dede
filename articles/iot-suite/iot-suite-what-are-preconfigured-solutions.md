@@ -2,13 +2,14 @@
  pageTitle="Vorkonfigurierte Azure IoT-Lösungen | Microsoft Azure"
  description="Eine Beschreibung der vorkonfigurierten Azure IoT-Lösungen und ihrer Architektur mit Links zu zusätzlichen Ressourcen."
  services=""
+ suite="iot-suite"
  documentationCenter=""
  authors="dominicbetts"
  manager="timlt"
  editor=""/>
 
 <tags
- ms.service="na"
+ ms.service="iot-suite"
  ms.devlang="na"
  ms.topic="article"
  ms.tgt_pltfrm="na"
@@ -36,7 +37,7 @@ In der folgenden Tabelle wird gezeigt, wie diese vorkonfigurierten Lösungen bes
 
 | Lösung | Datenerfassung | Geräteidentität | Befehl und Steuerung | Regeln und Aktionen | Predictive Analytics |
 |------------------------|-----|-----|-----|-----|-----|
-| Remoteüberwachung | Ja | Ja | Ja | Ja | – |
+| Remoteüberwachung | Ja | Ja | Ja | Ja | – | 
 | Vorbeugende Wartung | Ja | Ja | Ja | Ja | Ja |
 
 ## Übersicht über die vorkonfigurierte Lösung zur Remoteüberwachung
@@ -92,7 +93,7 @@ Das Lösungsportal ist eine webbasierte Benutzeroberfläche, die in der Cloud al
 - Senden von Befehlen an bestimmte Geräte
 - Verwalten von Regeln und Aktionen
 
-> [AZURE.NOTE]Im Lösungsportal bleibt die [Registrierung der IoT Hub-Geräteidentität][lnk-identity-registry] mit den umfassenderen Gerätestatusinformationen in der DocumentDB-Datenbank der Lösung synchronisiert.
+> [AZURE.NOTE] Im Lösungsportal bleibt die [Registrierung der IoT Hub-Geräteidentität][lnk-identity-registry] mit den umfassenderen Gerätestatusinformationen in der DocumentDB-Datenbank der Lösung synchronisiert.
 
 Bei dieser vorkonfigurierten Lösung bildet das Lösungsportal einen Teil des *IoT-Lösungs-Back-Ends* und einen Teil der *Verarbeitungsverbindung und Business Connectivity* in einer typischen [IoT-Lösungsarchitektur][lnk-what-is-azure-iot].
 
@@ -115,4 +116,4 @@ Unter den folgenden Ressourcen erhalten Sie weitere Informationen zu vorkonfigur
 [lnk-preconf-get-started]: iot-suite-getstarted-preconfigured-solutions.md
 [lnk-predictive-maintenance]: iot-suite-predictive-overview.md
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

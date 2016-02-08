@@ -64,7 +64,7 @@ Um die Anzahl der Einheiten zu ändern, die für das Streaming reserviert sind, 
 
 Das Zuordnen neuer Einheiten dauert etwa 20 Minuten.
 
->[AZURE.NOTE]Aktuell kann das Streaming bis zu eine Stunde lang deaktiviert werden, wenn Sie einen positiven Wert für die Streamingeinheiten zurück auf null setzen.
+>[AZURE.NOTE] Aktuell kann das Streaming bis zu eine Stunde lang deaktiviert werden, wenn Sie einen positiven Wert für die Streamingeinheiten zurück auf null setzen.
 >
 > Die höchste für den 24-Stunden-Zeitraum angegebene Anzahl an Einheiten wird zum Berechnen der Kosten verwendet. Informationen zu den Preisen finden Sie unter [Mediendienste – Preisübersicht](http://go.microsoft.com/fwlink/?LinkId=275107).
 
@@ -92,11 +92,11 @@ Weitere Informationen über Erfassungs-URLs finden Sie unter [Verwenden von loka
 
 ## Konfigurieren Sie einen Live-Encoder und erfassen Sie Livedatenströme
 
->[AZURE.NOTE]Dieser Schritt erfordert die Erfassungs-URL des Kanals, die im vorherigen Schritt erwähnt wurde.
+>[AZURE.NOTE] Dieser Schritt erfordert die Erfassungs-URL des Kanals, die im vorherigen Schritt erwähnt wurde.
 
-Ausführliche Informationen zum Konfigurieren von Wirecast und der Erfassung von Streams finden Sie unter [Wirecast-Konfiguration](http://azure.microsoft.com/blog/2014/09/18/azure-media-services-rtmp-support-and-live-encoders/).
+Ausführliche Informationen zum Konfigurieren von Wirecast und der Erfassung von Streams finden Sie unter [Wirecast-Konfiguration](https://azure.microsoft.com/blog/2014/09/18/azure-media-services-rtmp-support-and-live-encoders/).
 
->[AZURE.NOTE]Wenn Sie aus irgendeinem Grund den Encoder stoppen und anschließend neu starten müssen, setzen Sie zuerst den Kanal zurück, indem Sie im klassischen Azure-Portal auf den Befehl **Zurücksetzen** klicken.
+>[AZURE.NOTE] Wenn Sie aus irgendeinem Grund den Encoder stoppen und anschließend neu starten müssen, setzen Sie zuerst den Kanal zurück, indem Sie im klassischen Azure-Portal auf den Befehl **Zurücksetzen** klicken.
 
 
 ## Erstellen und Verwalten von Programmen
@@ -205,11 +205,11 @@ Wenn dieses Thema nicht die erwarteten Informationen enthält, Informationen feh
 
 
 ## Zusätzliche Ressourcen
-- [Erste Schritte zum Livestreaming mithilfe des klassischen Azure-Portals](http://azure.microsoft.com/blog/getting-started-with-live-streaming-using-the-azure-management-portal/) (in englischer Sprache)
+- [Erste Schritte zum Livestreaming mithilfe des klassischen Azure-Portals (in englischer Sprache)](https://azure.microsoft.com/blog/getting-started-with-live-streaming-using-the-azure-management-portal/)
 
 <!-- URLs. -->
 [Azure Classic Portal]: http://manage.windowsazure.com/
 
 <!-- Images -->
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

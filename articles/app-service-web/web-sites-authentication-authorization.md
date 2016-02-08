@@ -18,13 +18,13 @@
 
 # Verwenden von Active Directory für die Authentifizierung in Azure App Service #
 
-[Azure App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714) ermöglichen Unternehmensszenarios für Branchenanwendungen, indem unabhängig davon, ob die Benutzer über Ihre lokale Umgebung oder das öffentliche Internet zugreifen, eine einmalige Anmeldung (SSO) unterstützt wird. Für die Authentifizierung und ordnungsgemäße Autorisierung Ihrer internen Active Directory-Benutzer (AD) kann eine Integration in [Azure Active Directory](http://azure.microsoft.com/services/active-directory/) (AAD) oder einen lokalen Dienst für sichere Token (STS) wie beispielsweise Active Directory-Verbunddienste (AD FS) vorgenommen werden.
+[Azure App Service-Web-Apps](http://go.microsoft.com/fwlink/?LinkId=529714) ermöglichen Unternehmensszenarios für Branchenanwendungen, indem unabhängig davon, ob die Benutzer über Ihre lokale Umgebung oder das öffentliche Internet zugreifen, eine einmalige Anmeldung (SSO) unterstützt wird. Für die Authentifizierung und ordnungsgemäße Autorisierung Ihrer internen Active Directory-Benutzer (AD) kann eine Integration in [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) (AAD) oder einen lokalen Dienst für sichere Token (STS) wie beispielsweise Active Directory-Verbunddienste (AD FS) vorgenommen werden.
 
 ## Problemlose Authentifizierung und Autorisierung ##
 
-Mit einigen wenigen Mausklicks können Sie die Authentifizierung und Autorisierung für Ihre Web-App aktivieren. Die Konfiguration jeder Azure-Web-App erfolgt über Kontrollkästchen und ermöglicht eine grundlegende Zugriffssteuerung Ihrer Branchen-Web-App. Erreicht wird dies durch die Erzwingung von HTTPS und Authentifizierung gegenüber einem Azure AD-Mandanten Ihrer Wahl, bevor Benutzer Zugriff auf Ihren Web-App-Inhalt erhalten. Weitere Informationen finden Sie unter [Web Apps Authentication / Authorization](http://azure.microsoft.com/blog/2014/11/13/azure-websites-authentication-authorization/) (in englischer Sprache).
+Mit einigen wenigen Mausklicks können Sie die Authentifizierung und Autorisierung für Ihre Web-App aktivieren. Die Konfiguration jeder Azure-Web-App erfolgt über Kontrollkästchen und ermöglicht eine grundlegende Zugriffssteuerung Ihrer Branchen-Web-App. Erreicht wird dies durch die Erzwingung von HTTPS und Authentifizierung gegenüber einem Azure AD-Mandanten Ihrer Wahl, bevor Benutzer Zugriff auf Ihren Web-App-Inhalt erhalten. Weitere Informationen finden Sie unter [Web Apps Authentication / Authorization](https://azure.microsoft.com/blog/2014/11/13/azure-websites-authentication-authorization/) (in englischer Sprache).
 
->[AZURE.NOTE]Diese Funktion steht derzeit als Vorschau zur Verfügung.
+>[AZURE.NOTE] Diese Funktion steht derzeit als Vorschau zur Verfügung.
 
 ## Manuelles Implementieren der Authentifizierung und Autorisierung ##
 
@@ -46,10 +46,10 @@ In vielen Szenarien muss das Anwendungsverhalten in Bezug auf Authentifizierung 
 	-	Möglichkeit zur Verwaltung von [Ansprüchen](http://technet.microsoft.com/library/ee913571.aspx) auf Anwendungsbasis.
 	-	Es ist eine separate Lösung für den Zugriff auf lokale Active Directory-Daten über die Unternehmensfirewall erforderlich.
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Änderungen
 * Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
  
 
-<!---HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

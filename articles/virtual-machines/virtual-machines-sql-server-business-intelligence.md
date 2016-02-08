@@ -27,11 +27,11 @@ Der Microsoft Azure Virtual Machine-Katalog verfügt über Images, die SQL Serve
 
 Es gibt zwei Möglichkeiten, SQL Server auf Microsoft Azure Virtual Machines zu lizenzieren:
 
-1. Lizenzmobilitätsvorteile, die Teil der Software Assurance sind. Weitere Informationen finden Sie unter [Lizenzmobilität durch Software Assurance für Azure](http://azure.microsoft.com/pricing/license-mobility/).
+1. Lizenzmobilitätsvorteile, die Teil der Software Assurance sind. Weitere Informationen finden Sie unter [Lizenzmobilität durch Software Assurance für Azure](https://azure.microsoft.com/pricing/license-mobility/).
 
-1. Stundenbasierte Abrechnung für Azure Virtual Machines mit Installation von SQL Server. Siehe Abschnitt "SQL Server" unter [Virtuelle Computer Preise](http://azure.microsoft.com/pricing/details/virtual-machines/#Sql).
+1. Stundenbasierte Abrechnung für Azure Virtual Machines mit Installation von SQL Server. Siehe Abschnitt "SQL Server" unter [Virtuelle Computer Preise](https://azure.microsoft.com/pricing/details/virtual-machines/#Sql).
 
-Weitere Informationen zur Lizenzierung und zu aktuellen Preisen finden Sie unter [Häufig gestellte Fragen zur Lizenzierung von Virtual Machines](http://azure.microsoft.com/pricing/licensing-faq/%20).
+Weitere Informationen zur Lizenzierung und zu aktuellen Preisen finden Sie unter [Häufig gestellte Fragen zur Lizenzierung von Virtual Machines](https://azure.microsoft.com/pricing/licensing-faq/%20/).
 
 ## Im Azure Virtual Machine-Katalog verfügbare SQL Server-Images
 
@@ -108,7 +108,7 @@ In der folgenden Tabelle sind die Business Intelligence-Features zusammengefasst
 
 	![SQL Server-Dienste](./media/virtual-machines-sql-server-business-intelligence/IC650107.gif)
 
-	>[AZURE.NOTE]Das SQL Server-Datenbankmodul ist in den unterstützten BI-Szenarios erforderlich. Bei einer VM-Topologie mit Einzelserver muss das Datenbankmodul auf demselben virtuellen Computer ausgeführt werden.
+	>[AZURE.NOTE] Das SQL Server-Datenbankmodul ist in den unterstützten BI-Szenarios erforderlich. Bei einer VM-Topologie mit Einzelserver muss das Datenbankmodul auf demselben virtuellen Computer ausgeführt werden.
 
 	Weitere Informationen finden Sie unter [Deinstallieren von Reporting Services](https://msdn.microsoft.com/library/hh479745.aspx) und [Vorgehensweise: Deinstallieren einer Instanz von Analysis Services](https://msdn.microsoft.com/library/ms143687.aspx).
 
@@ -152,7 +152,7 @@ Analysis Services, Reporting Services, SQL Server-Datenbankmodul und Datenquelle
 
 Das Image für SQL Server im Katalog mit den virtuellen Computern enthält eine Installation von Reporting Services – Einheitlicher Modus. Der Berichtsserver ist aber nicht konfiguriert. Mit den Schritten in diesem Abschnitt wird der Reporting Services-Berichtsserver konfiguriert. Ausführlichere Informationen zur Konfiguration des einheitlichen Modus der Reporting Services finden Sie unter [Installieren des Reporting Services-Berichtsservers im einheitlichen Modus](https://msdn.microsoft.com/library/ms143711.aspx).
 
->[AZURE.NOTE]Ähnliche Inhalte, bei denen Windows PowerShell-Skripts zum Konfigurieren des Berichtsservers verwendet werden, finden Sie unter [Verwenden von PowerShell zum Erstellen einer Azure-VM mit einem Berichtsserver im einheitlichen Modus](virtual-machines-sql-server-create-native-mode-report-server-powershell.md).
+>[AZURE.NOTE] Ähnliche Inhalte, bei denen Windows PowerShell-Skripts zum Konfigurieren des Berichtsservers verwendet werden, finden Sie unter [Verwenden von PowerShell zum Erstellen einer Azure-VM mit einem Berichtsserver im einheitlichen Modus](virtual-machines-sql-server-create-native-mode-report-server-powershell.md).
 
 ### Herstellen einer Verbindung mit dem virtuellen Computer und Starten des Konfigurations-Managers für Reporting Services
 
@@ -170,7 +170,7 @@ Es gibt zwei allgemeine Workflows zum Herstellen einer Verbindung mit einem virt
 		
 		Myservice.cloudapp.net:63133
 		
-		Weitere Informationen finden Sie unter [Computehostingoptionen in Azure?](http://www.windowsazure.com/manage/services/cloud-services/what-is-a-cloud-service/).
+		Weitere Informationen finden Sie unter [Computehostingoptionen in Azure?](https://azure.microsoft.com/manage/services/cloud-services/what-is-a-cloud-service/).
 
 **Starten Sie den Konfigurations-Manager für Reporting Services.**
 
@@ -314,7 +314,7 @@ Führen Sie den SQL Server-Setup-Assistenten aus, um zusätzliche SQL Server-Die
 
 Oder führen Sie „C:\\SQLServer\_12.0\_full\\setup.exe“ oder „C:\\SQLServer\_11.0\_full\\setup.exe“ aus.
 
->[AZURE.NOTE]Beim ersten Ausführen des SQL Server-Setups können mehr Setupdateien heruntergeladen werden und erfordern einen Neustart des virtuellen Computers und einen Neustart des SQL Server-Setups.
+>[AZURE.NOTE] Beim ersten Ausführen des SQL Server-Setups können mehr Setupdateien heruntergeladen werden und erfordern einen Neustart des virtuellen Computers und einen Neustart des SQL Server-Setups.
 >
 >Wenn Sie das von der Microsoft Azure Virtual Machine ausgewählte Image wiederholt anpassen müssen, können Sie erwägen, ein eigenes SQL Server-Image zu erstellen. Die Analysis Services-SysPrep-Funktionalität wurde mit SQL Server 2012 SP1 CU2 aktiviert. Weitere Informationen finden Sie unter [Überlegungen zur Installation von SQL Server mit SysPrep](https://msdn.microsoft.com/library/ee210754.aspx).
 
@@ -388,8 +388,8 @@ In diesem Abschnitt werden die zu erstellenden Microsoft Azure Virtual Machine-E
 
 	|Port|Typ|Beschreibung|
 |---|---|---|
-|**80**|TCP|Remotezugriff auf den Berichtsserver (*).|
-|**1433**|TCP|SQL Server Management Studio (*).|
+|**80**|TCP|Remotezugriff auf den Berichtsserver (*).| 
+|**1433**|TCP|SQL Server Management Studio (*).| 
 |**1434**|UDP|SQL Server-Browser. Ist erforderlich, wenn der virtuelle Computer einer Domäne beigetreten ist.|
 |**2382**|TCP|SQL Server-Browser.|
 |**2383**|TCP|SQL Server Analysis Services-Standardinstanz und gruppierte benannte Instanzen.|
@@ -411,7 +411,7 @@ Im folgenden Diagramm sind die Ports dargestellt, die in der Firewall des virtue
 
 - [Übersicht zu SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-infrastructure-services.md)
 
-- [Virtuelle Computer](http://azure.microsoft.com/documentation/services/virtual-machines/)
+- [Virtuelle Computer](https://azure.microsoft.com/documentation/services/virtual-machines/)
 
 - [Bereitstellen eines virtuellen Computers mit SQL Server auf Azure](virtual-machines-provision-sql-server.md)
 
@@ -423,7 +423,7 @@ Im folgenden Diagramm sind die Ports dargestellt, die in der Firewall des virtue
 
 - [Mehrdimensionale Modellierung (Adventure Works-Tutorial)](https://technet.microsoft.com/library/ms170208.aspx)
 
-- [Azure-Dokumentationscenter](http://azure.microsoft.com/documentation/)
+- [Azure-Dokumentationscenter](https://azure.microsoft.com/documentation/)
 
 - [Verwenden von Power BI in einer Hybridumgebung](https://msdn.microsoft.com/library/dn798994.aspx)
 
@@ -433,4 +433,4 @@ Im folgenden Diagramm sind die Ports dargestellt, die in der Firewall des virtue
 
 - [Verwalten von Azure SQL-Datenbank mit PowerShell](http://blogs.msdn.com/b/windowsazure/archive/2013/02/07/windows-azure-sql-database-management-with-powershell.aspx)
 
-<!----HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

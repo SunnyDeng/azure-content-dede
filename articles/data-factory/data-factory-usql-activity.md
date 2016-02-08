@@ -19,7 +19,8 @@
 # Ausführen eines U-SQL-Skripts auf Azure Data Lake Analytics in Azure Data Factory 
 Eine Pipeline in einer Azure Data Factory verarbeitet Daten in verknüpften Speicherdiensten mithilfe verknüpfter Compute Services. Sie enthält eine Abfolge von Aktivitäten, wobei jede Aktivität einen bestimmten Verarbeitungsvorgang ausführt. In diesem Kapitel wird die **U-SQL-Aktivität von Data Lake Analytics** beschrieben, die ein **U-SQL**-Skript auf einem mit **Azure Data Lake Analytics** verknüpften Computedienst ausführt.
 
-> [AZURE.NOTE]Vor dem Erstellen einer Pipeline mit U-SQL-Aktivität auf Data Lake Analytics muss ein Azure Data Lake Analytics-Konto erstellt werden. Weitere Informationen zu Azure Data Lake Analytics finden Sie unter [Erste Schritte mit Azure Data Lake Analytics](../data-lake-analytics/data-lake-analytics-get-started-portal.md).
+> [AZURE.NOTE] 
+Vor dem Erstellen einer Pipeline mit U-SQL-Aktivität auf Data Lake Analytics muss ein Azure Data Lake Analytics-Konto erstellt werden. Weitere Informationen zu Azure Data Lake Analytics finden Sie unter [Erste Schritte mit Azure Data Lake Analytics](../data-lake-analytics/data-lake-analytics-get-started-portal.md).
 >  
 > Im Tutorial [Erstellen Ihrer ersten Pipeline](data-factory-build-your-first-pipeline.md) finden Sie ausführliche Anweisungen zum Erstellen von Data Factorys, verknüpften Diensten, Datasets und Pipelines. Verwenden Sie die JSON-Codeausschnitte mit Data Factory-Editor, Visual Studio oder Azure PowerShell, um die Data Factory-Entitäten zu erstellen.
 
@@ -48,7 +49,7 @@ Die folgende Tabelle enthält Beschreibungen der Eigenschaften, die in der JSON-
 
 Eigenschaft | Beschreibung | Erforderlich
 -------- | ----------- | --------
-type | Legen Sie die Typeigenschaft auf **AzureDataLakeAnalytics** fest. | Ja
+Typ | Legen Sie die Typeigenschaft auf **AzureDataLakeAnalytics** fest. | Ja
 accountName | Name des Azure Data Lake Analytics-Kontos. | Ja
 dataLakeAnalyticsUri | URI des Azure Data Lake Analytics-Kontos. | Nein 
 authorization | Der Autorisierungscode wird automatisch abgerufen, nachdem Sie im Data Factory-Editor auf die Schaltfläche **Autorisieren** geklickt und die OAuth-Anmeldung abgeschlossen haben. | Ja 
@@ -62,8 +63,8 @@ Der von Ihnen mithilfe der Schaltfläche **Autorisieren** generierte Autorisieru
 | Benutzertyp | Läuft ab nach |
 | :-------- | :----------- | 
 | Nicht-AAD-Benutzer(@hotmail.com, @live.com usw.) | 12 Stunden |
-| AAD-Benutzer, und die OAuth-basierte Quelle befindet sich in einem anderen [Mandanten](https://msdn.microsoft.com/library/azure/jj573650.aspx#BKMK_WhatIsAnAzureADTenant) als demjenigen für die Data Factory des Benutzers. | 12 Stunden |
-| AAD-Benutzer, und die OAuth-basierte Quelle befindet sich im gleichen Mandanten wie demjenigen für die Data Factory des Benutzers. | <p> Das Maximum beträgt 90 Tage, wenn ein Benutzer alle 14 Tage mindestens einmal Slices auf Basis seiner OAuth-basierten verknüpften Dienstquelle ausführt. </p><p>Wenn der Benutzer während der erwarteten 90 Tage in einem Zeitraum von 14 Tagen keine Slices für diese Quelle ausgeführt hat, laufen die Anmeldeinformation 14 Tage nach Ausführung des letzten Slices ohne Zeitverzug ab.</p> | 
+| AAD-Benutzer, und die OAuth-basierte Quelle befindet sich in einem anderen [Mandanten](https://msdn.microsoft.com/library/azure/jj573650.aspx#BKMK_WhatIsAnAzureADTenant) als dem für die Data Factory. | 12 Stunden |
+| AAD-Benutzer, und die OAuth-basierte Quelle befindet sich im gleichen Mandanten wie dem für die Data Factory. | 14 Tage |
 
 Um diesen Fehler zu vermeiden oder zu beheben, müssen Sie bei **Ablauf des Tokens** mithilfe der Schaltfläche **Autorisieren** eine erneute Autorisierung ausführen und den verknüpften Dienst erneut bereitstellen. Sie können auch programmgesteuert Werte für die Eigenschaften **sessionId** und **authorization** generieren. Verwenden Sie dazu den im folgenden Abschnitt bereitgestellten Code.
 
@@ -155,7 +156,7 @@ Die folgende Tabelle beschreibt die Namen und Eigenschaften, die für diese Akti
 
 Eigenschaft | Beschreibung | Erforderlich
 :-------- | :----------- | :--------
-type | Die type-Eigenschaft muss auf **DataLakeAnalyticsU-SQL** festgelegt sein. | Ja
+type | Die „type“-Eigenschaft muss auf **DataLakeAnalyticsU-SQL** festgelegt sein. | Ja
 scriptPath | Der Pfad zum Ordner, der das U-SQL-Skript enthält. | Nein (wenn script verwendet wird)
 scriptLinkedService | Verknüpfter Dienst, der den Speicher, der das Skript enthält, mit der Data Factory verknüpft. | Nein (wenn script verwendet wird)
 script | Geben Sie ein Inlineskript anstelle von scriptPath und scriptLinkedService an. Beispiel: „script“ : „CREATE DATABASE test“. | Nein (wenn scriptPath and scriptLinkedService verwendet werden)
@@ -257,4 +258,4 @@ Die Werte für die Parameter **@in** und **@out** im oben dargestellten U-SQL-Sk
 
 Sie können in Ihrer Pipelinedefinition auch andere Eigenschaften wie etwa „degreeOfParallelism“ oder „priority“ für die Aufträge angeben, die im Azure Data Lake Analytics-Dienst ausgeführt werden.
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

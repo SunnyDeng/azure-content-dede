@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/19/2015"
+	ms.date="01/22/2016"
 	ms.author="larryfr"/>
 
 # Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Portal
@@ -24,7 +24,7 @@
 
 Mithilfe des [Azure-Portals][preview-portal] können Sie Linux-basierte Hadoop-Cluster in Azure HDInsight bereitstellen und verwalten.
 
-> [AZURE.NOTE]Die Schritte in diesem Dokument gelten für Linux-basierte Hadoop-Cluster. Informationen zur Verwendung von Windows-basierten Clustern finden Sie unter [Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Portal](hdinsight-administer-use-management-portal.md).
+> [AZURE.NOTE] Die Schritte in diesem Dokument gelten für Linux-basierte Hadoop-Cluster. Informationen zur Verwendung von Windows-basierten Clustern finden Sie unter [Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Portal](hdinsight-administer-use-management-portal.md).
 
 
 [AZURE.INCLUDE [preview-portal](../../includes/hdinsight-azure-preview-portal-nolink.md)]
@@ -41,7 +41,7 @@ Neben dem Azure-Portal stehen auch andere Tools zum Verwalten von HDInsight zur 
 
 Bevor Sie mit diesem Artikel beginnen können, benötigen Sie Folgendes:
 
-- **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
+- **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 
 ## Bereitstellen von HDInsight-Clustern
 
@@ -61,13 +61,13 @@ HDInsight-Cluster können wie folgt im Azure-Portal bereitgestellt werden:
 
 5. Wählen Sie den Eintrag __Ressourcengruppe__ aus, um eine Liste der vorhandenen Ressourcengruppen anzuzeigen, und wählen Sie dann die Gruppe aus, in der der Cluster erstellt werden soll. Alternativ können Sie eine neue Ressourcengruppe erstellen, indem Sie auf __Neu erstellen__ klicken und den Namen der neuen Gruppe eingeben. Wenn der neue Gruppenname verfügbar ist, wird neben dem Namen ein grünes Häkchen angezeigt.
 
-	> [AZURE.NOTE]Dieser Eintrag ist standardmäßig auf eine Ihrer vorhandenen Ressourcengruppen festgelegt (sofern verfügbar).
+	> [AZURE.NOTE] Dieser Eintrag ist standardmäßig auf eine Ihrer vorhandenen Ressourcengruppen festgelegt (sofern verfügbar).
 
 6. Wählen Sie __Anmeldeinformationen__ aus, und geben Sie dann ein __Clusteranmeldekennwort__ für den __Clusterbenutzernamen__ ein. Außerdem müssen Sie einen __SSH-Benutzernamen__ und entweder ein __Kennwort__ oder einen __öffentlichen Schlüssel__ zum Authentifizieren des SSH-Benutzers eingeben. Klicken Sie abschließend auf die Schaltfläche __Auswählen__, um die Anmeldeinformationen festzulegen. Remotedesktop wird in diesem Dokument nicht verwendet und muss daher nicht aktiviert werden.
 
 	![Blatt „Clusteranmeldeinformationen“](./media/hdinsight-administer-use-portal-linux/clustercredentials.png)
     
-    > [AZURE.NOTE]SSH wird verwendet, um remote über eine Befehlszeile auf den HDInsight-Cluster zuzugreifen. Der hier verwendete Benutzername und das Kennwort oder der öffentliche Schlüssel werden zur Herstellung einer Verbindung mit dem Cluster über SSH verwendet.
+    > [AZURE.NOTE] SSH wird verwendet, um remote über eine Befehlszeile auf den HDInsight-Cluster zuzugreifen. Der hier verwendete Benutzername und das Kennwort oder der öffentliche Schlüssel werden zur Herstellung einer Verbindung mit dem Cluster über SSH verwendet.
 
     Weitere Informationen zur Verwendung von SSH mit HDInsight finden Sie in den folgenden Artikeln:
 
@@ -89,19 +89,20 @@ HDInsight-Cluster können wie folgt im Azure-Portal bereitgestellt werden:
 
 	- __Standort__: Die geografische Region, in der sich das Speicherkonto befindet bzw. in der es erstellt wird.
 
-		> [AZURE.IMPORTANT]Durch die Auswahl des Standorts für die Standarddatenquelle wird auch der Standort des HDInsight-Clusters festgelegt. Der Cluster und die Standarddatenquelle müssen sich in der gleichen Region befinden.
+		> [AZURE.IMPORTANT] Durch die Auswahl des Standorts für die Standarddatenquelle wird auch der Standort des HDInsight-Clusters festgelegt. Der Cluster und die Standarddatenquelle müssen sich in der gleichen Region befinden.
 
 	- __Auswählen__: Hiermit speichern Sie die Datenquellenkonfiguration.
 
 	
 8. Wählen Sie __Knotenpreistarife__ aus, um Informationen zu den Knoten anzuzeigen, die für diesen Cluster erstellt werden. Die Anzahl von Workerknoten ist standardmäßig auf __4__ festgelegt.
 
-
 	Die vorkalkulierten Kosten für den Cluster werden unten auf dem Blatt angezeigt.
 
 	![Blatt „Knotenpreistarife“](./media/hdinsight-administer-use-portal-linux/nodepricingtiers.png)
 
 	Klicken Sie auf die Schaltfläche __Auswählen__, um die Informationen zu den __Knotenpreistarifen__ zu speichern.
+    
+    > [AZURE.NOTE] Die von Ihrem Cluster verwendeten Knoten zählen nicht als virtuelle Computer, da die VM-Images, die für die Knoten verwendet werden, ein Implementierungsdetail des HDInsight-Diensts sind. Die von den Knoten verwendeten Computekerne zählen jedoch zur Gesamtanzahl von Computekernen, die für Ihr Abonnement verfügbar sind. Sie können die Anzahl der Kerne, die vom Cluster verwendet werden sollen, sowie die Anzahl der verfügbaren Kerne beim Erstellen eines HDInsight-Clusters auf dem Blatt „Knotenpreisstufen“ im Abschnitt „Zusammenfassung“ anzeigen.
 
 9. Wählen Sie __Optionale Konfiguration__ aus. Auf diesem Blatt können Sie die folgenden Elemente konfigurieren:
 
@@ -117,7 +118,7 @@ HDInsight-Cluster können wie folgt im Azure-Portal bereitgestellt werden:
 
 	* __Azure-Speicherschlüssel__: Hiermit können Sie dem HDInsight-Server weitere Speicherkonten zuordnen.
 
-		> [AZURE.NOTE]HDInsight kann nur auf Azure-Speicherkonten zugreifen, die als Standarddatenspeicher verwendet werden, in diesem Konfigurationsabschnitt hinzugefügt wurden oder öffentlich zugänglich sind.
+		> [AZURE.NOTE] HDInsight kann nur auf Azure-Speicherkonten zugreifen, die als Standarddatenspeicher verwendet werden, in diesem Konfigurationsabschnitt hinzugefügt wurden oder öffentlich zugänglich sind.
 
 	![Blatt „Optionale Konfiguration“](./media/hdinsight-administer-use-portal-linux/optionalconfiguration.png)
 
@@ -127,7 +128,7 @@ HDInsight-Cluster können wie folgt im Azure-Portal bereitgestellt werden:
 	| ------------------ | --------------------- |
 	| ![Bereitstellungsanzeige im Startmenü](./media/hdinsight-administer-use-portal-linux/provisioning.png) | ![Kachel für einen bereitgestellten Cluster](./media/hdinsight-administer-use-portal-linux/provisioned.png) |
 
-	> [AZURE.NOTE]Die Erstellung des Clusters dauert in der Regel ca. 15 Minuten. Sie können den Status des Bereitstellungsprozesses auf der Kachel im Startmenü oder im linken Bereich der Seite unter __Benachrichtigungen__ überprüfen.
+	> [AZURE.NOTE] Die Erstellung des Clusters dauert in der Regel ca. 15 Minuten. Sie können den Status des Bereitstellungsprozesses auf der Kachel im Startmenü oder im linken Bereich der Seite unter __Benachrichtigungen__ überprüfen.
 
 ## Verwalten eines Clusters
 
@@ -151,13 +152,13 @@ Im Folgenden werden die Symbole oben auf diesem Blatt und in den Abschnitten __Z
 
 * __Benutzer__ (![Benutzersymbol](./media/hdinsight-administer-use-portal-linux/users.png)): Dient zum Festlegen der Berechtigungen für die _Portalverwaltung_ dieses Clusters für andere Benutzer in Ihrem Azure-Abonnement.
 
-	> [AZURE.IMPORTANT]Die hier vorgenommenen Einstellungen betreffen _nur_ den Zugriff und die Berechtigungen für diesen Cluster im Azure-Portal und haben keine Auswirkung darauf, wer eine Verbindung mit dem HDInsight-Cluster herstellen oder Aufträge übermitteln kann.
+	> [AZURE.IMPORTANT] Die hier vorgenommenen Einstellungen betreffen _nur_ den Zugriff und die Berechtigungen für diesen Cluster im Azure-Portal und haben keine Auswirkung darauf, wer eine Verbindung mit dem HDInsight-Cluster herstellen oder Aufträge übermitteln kann.
 
 * __Tags__ (![Tagsymbol](./media/hdinsight-administer-use-portal-linux/tags.png)): Mithilfe von Tags können Sie Schlüssel-Wert-Paare festlegen, um eine benutzerdefinierte Taxonomie für Ihre Cloud Services zu definieren. Sie können z. B. einen Schlüssel mit dem Namen __Projekt__ erstellen und dann einen gemeinsamen Wert für alle mit einem bestimmten Projekt verknüpften Dienste verwenden.
 
 * __Dokumentation__: Links zur Dokumentation für Azure HDInsight.
 
-> [AZURE.IMPORTANT]Um die vom HDInsight-Cluster bereitgestellten Dienste zu verwalten, müssen Sie Ambari Web oder die Ambari-REST-API verwenden. Weitere Informationen zur Verwendung von Ambari finden Sie unter [Verwalten von HDInsight-Clustern mit Ambari](hdinsight-hadoop-manage-ambari.md).
+> [AZURE.IMPORTANT] Um die vom HDInsight-Cluster bereitgestellten Dienste zu verwalten, müssen Sie Ambari Web oder die Ambari-REST-API verwenden. Weitere Informationen zur Verwendung von Ambari finden Sie unter [Verwalten von HDInsight-Clustern mit Ambari](hdinsight-hadoop-manage-ambari.md).
 
 ### <a name="scaling"></a>Skalieren
 
@@ -173,7 +174,7 @@ Der Abschnitt __Nutzung__ des Blatts für den HDInsight-Cluster enthält Informa
 
 ![Informationen zur Nutzung](./media/hdinsight-administer-use-portal-linux/usage.png)
 
-> [AZURE.IMPORTANT]Um die vom HDInsight-Cluster bereitgestellten Dienste zu überwachen, müssen Sie Ambari Web oder die Ambari-REST-API verwenden. Weitere Informationen zur Verwendung von Ambari finden Sie unter [Verwalten von HDInsight-Clustern mit Ambari](hdinsight-hadoop-manage-ambari.md).
+> [AZURE.IMPORTANT] Um die vom HDInsight-Cluster bereitgestellten Dienste zu überwachen, müssen Sie Ambari Web oder die Ambari-REST-API verwenden. Weitere Informationen zur Verwendung von Ambari finden Sie unter [Verwalten von HDInsight-Clustern mit Ambari](hdinsight-hadoop-manage-ambari.md).
 
 ## Nächste Schritte
 In diesem Artikel haben Sie erfahren, wie ein HDInsight-Cluster mit dem Azure-Portal erstellt und wie das Hadoop-Befehlszeilentool geöffnet wird. Weitere Informationen finden Sie in den folgenden Artikeln:
@@ -187,4 +188,4 @@ In diesem Artikel haben Sie erfahren, wie ein HDInsight-Cluster mit dem Azure-Po
 
 [preview-portal]: https://portal.azure.com
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -27,7 +27,7 @@ Als Benutzer einer Vorschauversion haben Sie möglicherweise eine dieser ältere
 
 Da Azure Search jetzt allgemein verfügbar ist, empfehlen wir die Umstellung auf neuere Versionen: 2015-02-28 ist die offizielle API-Version der allgemein verfügbaren Version von Azure Search. Diese Version ist auf [MSDN](https://msdn.microsoft.com/library/azure/dn798933.aspx) dokumentiert.
 
-Zudem führen wir gerade die nächste Vorschauversion [2015-02-28-Preview](search-api-2015-02-28-preview.md) mit Funktionen ein, die sich noch in der Entwicklungsphase befinden. Sie können uns entweder in den [Azure Search-Foren](https://social.msdn.microsoft.com/forums/azure/home?forum=azuresearch) oder auf unserer [Feedback-Seite](http://feedback.azure.com/forums/263029-azure-search) Feedback zur Vorschauversion der API geben.
+Zudem führen wir gerade die nächste Vorschauversion [2015-02-28-Preview](search-api-2015-02-28-preview.md) mit Funktionen ein, die sich noch in der Entwicklungsphase befinden. Sie können uns entweder in den [Azure Search-Foren](https://social.msdn.microsoft.com/forums/azure/home?forum=azuresearch) oder auf unserer [Feedback-Seite](https://feedback.azure.com/forums/263029-azure-search /) Feedback zur Vorschauversion der API geben.
 
 ###Checkliste für die Migration###
 
@@ -144,4 +144,4 @@ Die API-Version `2015-02-28` unterliegt einer Vereinbarung zum Servicelevel (SLA
 
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

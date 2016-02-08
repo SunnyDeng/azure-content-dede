@@ -22,13 +22,13 @@
 
 ## Übersicht
 
-Standardmäßig sind für Ihre Speicherdienste keine Speichermetriken aktiviert. Sie können die Überwachung über das [Azure-Portal](portal.azure.com), über Windows PowerShell oder programmgesteuert über die Speicherclientbibliothek aktivieren.
+Standardmäßig sind für Ihre Speicherdienste keine Speichermetriken aktiviert. Sie können die Überwachung über das [Azure-Portal](https://portal.azure.com), über Windows PowerShell oder programmgesteuert über die Speicherclientbibliothek aktivieren.
 
 Wenn Sie Speichermetriken aktivieren, müssen Sie einen Aufbewahrungszeitraum für die Daten auswählen: Dieser Zeitraum bestimmt, wie lange der Speicherdienst die Metriken beibehält und Speicherplatz abgerechnet wird, der für ihre Speicherung erforderlich ist. Normalerweise sollten Sie einen kürzeren Aufbewahrungszeitraum für minütliche Metriken als für stündliche Metriken auswählen, weil für minütliche Metriken eine erhebliche Menge an zusätzlichem Speicherplatz erforderlich ist. Sie sollten den Aufbewahrungszeitraum so auswählen, dass ausreichend Zeit zum Analysieren der Daten und zum Herunterladen von Metriken verfügbar ist, die Sie für die Offlineanalyse oder zur Berichterstellung verwenden möchten. Denken Sie daran, dass auch für das Herunterladen von Metrikdaten aus Ihrem Speicherkonto Kosten anfallen.
 
 ## Aktivieren von Metriken über das Azure-Portal
 
-Gehen Sie wie folgt vor, um Metriken im [Azure-Portal](portal.azure.com) zu aktivieren:
+Gehen Sie wie folgt vor, um Metriken im [Azure-Portal](https://portal.azure.com) zu aktivieren:
 
 1. Navigieren Sie zum Speicherkonto. 
 1. Öffnen Sie das Blatt **Einstellungen** und wählen **Diagnose**.
@@ -36,7 +36,7 @@ Gehen Sie wie folgt vor, um Metriken im [Azure-Portal](portal.azure.com) zu akti
 1. Wählen Sie die Metriken für die Dienste, die Sie überwachen möchten.
 2. Geben Sie eine Aufbewahrungsrichtlinie an, um festzulegen, wie lange Metriken und Protokolldaten beibehalten werden sollen.
 
-Beachten Sie, dass das [Azure-Portal](portal.azure.com) zurzeit die Konfiguration von minütlichen Metriken in Ihrem Speicherkonto nicht unterstützt. Sie müssen minütliche Metriken mithilfe von PowerShell oder programmgesteuert aktivieren.
+Beachten Sie, dass das [Azure-Portal](https://portal.azure.com) zurzeit die Konfiguration von minütlichen Metriken in Ihrem Speicherkonto nicht unterstützt. Sie müssen minütliche Metriken mithilfe von PowerShell oder programmgesteuert aktivieren.
 
 ## Aktivieren von Metriken mithilfe von PowerShell
 
@@ -94,9 +94,9 @@ Der folgende C#-Codeausschnitt zeigt, wie Metriken und Protokollierung für den 
     
 ## Anzeigen von Speichermetriken
 
-Nachdem Sie die Metriken der Speicheranalyse zum Überwachen Ihres Speicherkontos konfiguriert haben, erfasst die Speicheranalyse die Metriken in bekannten Tabellen in Ihrem Speicherkonto. Sie können Diagramme zum Anzeigen stündlicher Metriken im [Azure-Portal](portal.azure.com) konfigurieren:
+Nachdem Sie die Metriken der Speicheranalyse zum Überwachen Ihres Speicherkontos konfiguriert haben, erfasst die Speicheranalyse die Metriken in bekannten Tabellen in Ihrem Speicherkonto. Sie können Diagramme zum Anzeigen stündlicher Metriken im [Azure-Portal](https://portal.azure.com) konfigurieren:
 
-1. Navigieren Sie zum Speicherkonto im [Azure-Portal](portal.azure.com).
+1. Navigieren Sie zum Speicherkonto im [Azure-Portal](https://portal.azure.com).
 2. Klicken Sie im Abschnitt **Überwachung** auf **Kacheln hinzufügen**, um ein neues Diagramm hinzuzufügen. Wählen Sie im **Kachelkatalog** die Metrik aus, die Sie anzeigen möchten, und ziehen Sie sie in den Abschnitt **Überwachung**.
 3. Um einzustellen, welche Metriken in einem Diagramm angezeigt werden, klicken Sie auf den Link **Bearbeiten**. Sie können einzelne Metriken durch Aktivieren oder Deaktivieren hinzufügen oder entfernen.
 4. Klicken Sie auf **Speichern**, wenn Sie mit dem Bearbeiten der Metriken fertig sind.
@@ -134,7 +134,7 @@ In diesen minütlichen Metrikbeispieldaten verwendet der Partitionsschlüssel di
 
 Die Beispieldaten oben zeigen alle Datensätze für eine einzelne Minute (Beginn um 11:00 Uhr). Die Anzahl der QueryEntities-Anforderungen zuzüglich der Anzahl der QueryEntity-Anforderungen zuzüglich der Anzahl der UpdateEntity-Anforderungen ergibt daher den Wert 7. Dies ist die Gesamtsumme, die in der Zeile "user:All" angezeigt wird. Analog können Sie die durchschnittliche End-to-End-Latenz 104,4286 für die Zeile "user:All" ableiten, indem Sie die Berechnung ((143,8 * 5) + 3 + 9)/7 ausführen.
 
-Sie sollten in Betracht ziehen, im [Azure-Portal](portal.azure.com) auf der Seite "Überwachen" Benachrichtigungen einzurichten, damit die Speichermetriken Sie automatisch bei wichtigen Änderungen im Verhalten Ihrer Speicherdienste benachrichtigen können. Wenn Sie ein Speicher-Explorer-Tool zum Herunterladen dieser Metrikdaten in einem Format mit Trennzeichen verwenden, kann Microsoft Excel zum Analysieren der Daten verwendet werden. Im Blogbeitrag [Microsoft Azure Storage Explorers](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx) finden Sie eine Liste der verfügbaren Speicher-Explorer-Tools.
+Sie sollten in Betracht ziehen, im [Azure-Portal](https://portal.azure.com) auf der Seite "Überwachen" Benachrichtigungen einzurichten, damit die Speichermetriken Sie automatisch bei wichtigen Änderungen im Verhalten Ihrer Speicherdienste benachrichtigen können. Wenn Sie ein Speicher-Explorer-Tool zum Herunterladen dieser Metrikdaten in einem Format mit Trennzeichen verwenden, kann Microsoft Excel zum Analysieren der Daten verwendet werden. Im Blogbeitrag [Microsoft Azure Storage Explorers](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/03/11/windows-azure-storage-explorers-2014.aspx) finden Sie eine Liste der verfügbaren Speicher-Explorer-Tools.
 
 
 
@@ -204,4 +204,4 @@ Die von den Metriktabellen verwendete Kapazität ist ebenfalls kostenpflichtig: 
 [Aktivieren der Speicherprotokollierung und Zugreifen auf Protokolldaten](https://msdn.microsoft.com/library/dn782840.aspx)
  
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

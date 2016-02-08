@@ -287,7 +287,7 @@ td.EnablePartitioning = true;
 ns.CreateTopic(td);
 ```
 
-Weitere Informationen finden Sie unter [Partitionierte Service Bus-Warteschlangen und -Themen | Microsoft Azure-Blog](http://azure.microsoft.com/blog/2013/10/29/partitioned-service-bus-queues-and-topics/). Sehen Sie sich außerdem das Beispiel [Microsoft Azure Service Bus – Partitionierte Warteschlange](https://code.msdn.microsoft.com/windowsazure/Service-Bus-Partitioned-7dfd3f1f) an.
+Weitere Informationen finden Sie unter [Partitionierte Service Bus-Warteschlangen und -Themen | Microsoft Azure-Blog](https://azure.microsoft.com/blog/2013/10/29/partitioned-service-bus-queues-and-topics/). Sehen Sie sich außerdem das Beispiel [Microsoft Azure Service Bus – Partitionierte Warteschlange](https://code.msdn.microsoft.com/windowsazure/Service-Bus-Partitioned-7dfd3f1f) an.
 
 ## Vermeiden des Festlegens von SharedAccessStartTime
 
@@ -449,7 +449,7 @@ Speichern Sie Verbindungszeichenfolgen in den Konfigurationsdateien oder in Azur
 
 - Verwenden Sie für ASP.NET vNext-Anwendungen die Datei „configuration.json“ zum Speichern der Verbindungszeichenfolgen.
 
-Informationen zur Verwendung von Konfigurationsdateien wie „web.config“ oder „app.config“ finden Sie unter [ASP.NET-Webkonfigurationsrichtlinien](https://msdn.microsoft.com/library/vstudio/ff400235(v=vs.100).aspx). Weitere Informationen zur Funktionsweise von Azure-Umgebungsvariablen finden Sie unter [Azure-Websites: Funktionsweise von Anwendungs- und Verbindungszeichenfolgen](http://azure.microsoft.com/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/). Informationen zum Speichern der Verbindungszeichenfolge in der Quellcodeverwaltung finden Sie unter [Vermeiden des Einfügens von vertraulichen Informationen (z. B. Verbindungszeichenfolgen) in Dateien, die im Quellcode-Repository gespeichert werden](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control).
+Informationen zur Verwendung von Konfigurationsdateien wie „web.config“ oder „app.config“ finden Sie unter [ASP.NET-Webkonfigurationsrichtlinien](https://msdn.microsoft.com/library/vstudio/ff400235(v=vs.100).aspx). Weitere Informationen zur Funktionsweise von Azure-Umgebungsvariablen finden Sie unter [Azure-Websites: Funktionsweise von Anwendungs- und Verbindungszeichenfolgen](https://azure.microsoft.com/blog/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work/). Informationen zum Speichern der Verbindungszeichenfolge in der Quellcodeverwaltung finden Sie unter [Vermeiden des Einfügens von vertraulichen Informationen (z. B. Verbindungszeichenfolgen) in Dateien, die im Quellcode-Repository gespeichert werden](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control).
 
 ## Verwenden der Konfigurationsdatei für die Diagnose
 
@@ -532,4 +532,4 @@ public class BlogsController : Controller
 
 Weitere Informationen zur Optimierung und Problembehandlung von Azure-Apps finden Sie unter [Problembehandlung von Web-Apps in Azure App Service in Visual Studio](web-sites-dotnet-troubleshoot-visual-studio.md).
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

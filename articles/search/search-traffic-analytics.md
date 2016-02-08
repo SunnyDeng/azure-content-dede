@@ -27,7 +27,7 @@
 ## Aktivieren von „Datenverkehrsanalyse durchsuchen“
 
 ### 1\. Verwenden des Portals
-Öffnen Sie Ihren Azure Search-Dienst im [Azure-Portal](http://portal.azure.com). Unter „Einstellungen“ finden Sie die Option „Datenverkehrsanalyse durchsuchen“.
+Öffnen Sie Ihren Azure Search-Dienst im [Azure-Portal](https://portal.azure.com). Unter „Einstellungen“ finden Sie die Option „Datenverkehrsanalyse durchsuchen“.
 
 ![][1]
 
@@ -36,7 +36,7 @@ Wählen Sie diese Option aus, und ein neues Blatt wird geöffnet. Ändern Sie de
 ![][2]
 
 
-> [AZURE.IMPORTANT]Das Speicherkonto muss sich in der gleichen Region und dem gleichen Abonnement wie Ihr Suchdienst befinden.
+> [AZURE.IMPORTANT] Das Speicherkonto muss sich in der gleichen Region und dem gleichen Abonnement wie Ihr Suchdienst befinden.
 > 
 > Für dieses Speicherkonto fallen Standardgebühren an.
 
@@ -221,4 +221,4 @@ Erfahren Sie hier mehr über das Erstellen erstaunlicher Berichte. Weitere Infor
 [4]: ./media/search-traffic-analytics/BlobStorage.png
 [5]: ./media/search-traffic-analytics/QueryEditor.png
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

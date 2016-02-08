@@ -41,7 +41,7 @@ In diesem Thema wird ein Codebeispiel in zwei Phasen vorgestellt:
 ## Voraussetzungen
 
 
-- Ein Azure-Konto und ein Azure-Abonnement. Sie können sich für eine [kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/) registrieren.
+- Ein Azure-Konto und ein Azure-Abonnement. Sie können sich für eine [kostenlose Testversion](https://azure.microsoft.com/pricing/free-trial/) registrieren.
 
 
 - Jede Datenbank, in der eine Tabelle erstellt werden kann.
@@ -597,4 +597,4 @@ Image references.
 
 [30_powershell_ise]: ./media/sql-database-xevent-code-event-file/event-file-powershell-ise-b30.png
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

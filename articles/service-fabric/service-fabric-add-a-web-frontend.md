@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="11/21/2015"
+   ms.date="01/19/2016"
    ms.author="seanmck"/>
 
 
@@ -42,7 +42,7 @@ ASP.NET 5 ist ein einfaches, plattformübergreifendes Webentwicklungsframework, 
 
     Nach Erstellung Ihres Web-API-Projekts stehen Ihnen zwei Dienste in Ihrer Anwendung zur Verfügung. Bei der weiteren Erstellung Ihrer Anwendung fügen Sie weitere Dienste auf die gleiche Weise hinzu. Diese können unabhängig versioniert und aktualisiert werden.
 
->[AZURE.NOTE]Ab der November Public Preview-Version von Service Fabric bestehen Probleme mit langen Pfaden beim Umgang mit ASP.NET-Projekten. Wenn Sie diese Typen von Projekten erstellen, empfiehlt es sich, kurze Namen für die Anwendungungs- und Diensttypen sowie Code- und Config-Paketnamen auszuwählen, um Probleme zu vermeiden.
+>[AZURE.NOTE] Ab der November Public Preview-Version von Service Fabric bestehen Probleme mit langen Pfaden beim Umgang mit ASP.NET-Projekten. Wenn Sie diese Typen von Projekten erstellen, empfiehlt es sich, kurze Namen für die Anwendungungs- und Diensttypen sowie Code- und Config-Paketnamen auszuwählen, um Probleme zu vermeiden.
 
 ## Ausführen der Anwendung
 
@@ -139,7 +139,7 @@ Nach dem Definieren der Schnittstelle müssen wir sie in den zustandsbehafteten 
 
 Nach dem Implementieren der `ICounter`-Schnittstelle besteht der letzte Schritt bei der Aktivierung des zustandsbehafteten Diensts darin, von anderen Diensten aufgerufen zu werden, um einen Kommunikationskanal zu öffnen. Für zustandsbehaftete Dienste bietet Service Fabric eine überschreibbare Methode namens „`CreateServiceReplicaListeners`“. Mit dieser Methode können Sie eine oder mehrere Kommunikationslistener angeben, basierend auf der Art der Kommunikation, die Sie in ihrem Dienst aktivieren möchten.
 
->[AZURE.NOTE]Die entsprechende Methode zum Öffnen eines Kommunikationskanals für zustandslose Dienste lautet `CreateServiceInstanceListeners`.
+>[AZURE.NOTE] Die entsprechende Methode zum Öffnen eines Kommunikationskanals für zustandslose Dienste lautet `CreateServiceInstanceListeners`.
 
 In diesem Fall ersetzen wir die vorhandene `CreateServiceReplicaListeners`-Methode und stellen eine Instanz des `ServiceRemotingListener` bereit. Dieser erstellt einen RPC-Endpunkt, der von Clients über `ServiceProxy` aufgerufen werden kann.
 
@@ -189,7 +189,7 @@ Der zustandsbehaftete Dienst ist nun bereit, Datenverkehr von anderen Diensten z
 
     Die erste Codezeile ist der Schlüssel. Zum Erstellen des ICounter-Proxys für den zustandsbehafteten Dienst müssen Sie zwei Informationen angeben: die Partitions-ID und den Namen des Dienstes.
 
-    Sie können durch die Partitionierung zustandsbehaftete Dienste skalieren, indem Sie ihren Status in verschiedene Buckets aufteilen, die auf einem von Ihnen definierten Schlüssel basieren, z. B. „Kunden-ID“ oder „PLZ“. In unserer einfachen Anwendung verfügt der zustandsbehaftete Dienst nur über eine Partition, sodass der Schlüssel keine Rolle spielt. Jeder Schlüssel, den Sie bereitstellen, wird auf dieselbe Partition führen. Weitere Informationen zum Partitionieren von Diensten finden Sie unter [Partitionieren von Service Fabric Reliable Services](service-fabric-concepts-partitioning).
+    Sie können durch die Partitionierung zustandsbehaftete Dienste skalieren, indem Sie ihren Status in verschiedene Buckets aufteilen, die auf einem von Ihnen definierten Schlüssel basieren, z. B. „Kunden-ID“ oder „PLZ“. In unserer einfachen Anwendung verfügt der zustandsbehaftete Dienst nur über eine Partition, sodass der Schlüssel keine Rolle spielt. Jeder Schlüssel, den Sie bereitstellen, wird auf dieselbe Partition führen. Weitere Informationen zum Partitionieren von Diensten finden Sie unter [Partitionieren von Service Fabric Reliable Services](service-fabric-concepts-partitioning.md).
 
     Der Dienstname ist eine URI der Formular-Fabric: /&lt;application\_name&gt;/&lt;service\_name&gt;.
 
@@ -237,4 +237,4 @@ Informationen zum Konfigurieren verschiedener Werte für andere Umgebungen finde
 [vs-services-nuget-package]: ./media/service-fabric-add-a-web-frontend/vs-services-nuget-package.png
 [browser-aspnet-counter-value]: ./media/service-fabric-add-a-web-frontend/browser-aspnet-counter-value.png
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

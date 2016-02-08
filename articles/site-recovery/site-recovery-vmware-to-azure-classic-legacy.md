@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Virtuelle Computer und physische Server in Azure mit Azure Site Recovery (Legacy) replizieren | Microsoft Azure" 
-	description="Beschreibt eine Legacy-Bereitstellung zum Einrichten von Azure Site Recovery, um eine Replikation, Failover und Wiederherstellung von lokalen VMware virtuellen Computern und physischen Windows-/Linux-Servern zu Azure zu orchestrieren." " 
+	description="Beschreibt eine Legacy-Bereitstellung zum Einrichten von Azure Site Recovery, um eine Replikation, Failover und Wiederherstellung von lokalen VMware virtuellen Computern und physischen Windows-/Linux-Servern zu Azure zu orchestrieren."
 	services="site-recovery"
 	documentationCenter=""
 	authors="rayne-wiselman"
@@ -23,7 +23,7 @@
 - [Legacy](site-recovery-vmware-to-azure-classic-legacy.md)
 
 
-Azure Site Recovery unterstützt Ihre Strategie für Geschäftskontinuität und Notfallwiederherstellung, indem Replikation, Failover und Wiederherstellung virtueller Computer und physischer Server aufeinander abgestimmt werden. Computer können in Azure oder in einem lokalen sekundären Rechenzentrum repliziert werden. Eine kurze Übersicht über das Gesamtthema finden Sie unter [Was ist Azure Site Recovery?](site-recovery-overview.md).
+Azure Site Recovery unterstützt Ihre Strategie für Geschäftskontinuität und Notfallwiederherstellung, indem Replikation, Failover und Wiederherstellung virtueller Computer und physischer Server aufeinander abgestimmt werden. Computer können in Azure oder in einem sekundären lokalen Datencenter repliziert werden. Eine kurze Übersicht über das Gesamtthema finden Sie unter [Was ist Azure Site Recovery?](site-recovery-overview.md).
 
 ## Übersicht
 
@@ -32,7 +32,7 @@ Dieser Artikel beschreibt die Vorgehensweise zum
 - **Replizieren virtueller VMware-Computer in Azure**– Stellen Sie Site Recovery (Seitenwiederherstellung) bereit, um die Replikation, das Failover und die Wiederherstellung von lokalen VMware virtuellen Computern im Azure Speicher zu koordinieren.
 - **Replizieren physischer Server** – Stellen Sie Site Recovery bereit um die Replikation, das Failover und die Wiederherstellung von lokalen physischen Windows- und Linux-Servern im Azure Speicher zu koordinieren.
 
->[AZURE.NOTE]Das in diesem Artikel beschriebene Szenario enthält Anweisungen für **ältere (legacy) Versionen**. Verwenden Sie diesen Artikel nicht für neue Bereitstellungen. Verwenden Sie stattdessen die Anweisungen der [erweiterten Bereitstellung](site-recovery-vmware-to-azure-classic) für das klassische Portal. Wenn Sie Site Recovery bereits nach der in diesem Artikel beschriebenen Methode bereitgestellt haben, empfehlen wir Ihnen , wie unten beschrieben zur neuen Version zu migrieren.
+>[AZURE.NOTE] Das in diesem Artikel beschriebene Szenario enthält Anweisungen für **ältere (legacy) Versionen**. Verwenden Sie diesen Artikel nicht für neue Bereitstellungen. Verwenden Sie stattdessen die Anweisungen der [erweiterten Bereitstellung](site-recovery-vmware-to-azure-classic.md) für das klassische Portal. Wenn Sie Site Recovery bereits nach der in diesem Artikel beschriebenen Methode bereitgestellt haben, empfehlen wir Ihnen , wie unten beschrieben zur neuen Version zu migrieren.
 
 
 ## Migrieren zur erweiterten Bereitstellung
@@ -56,33 +56,37 @@ Bevor Sie beginnen, beachten Sie bitte Folgendes:
 Migrieren Sie wie folgt:
 
 1. Erfahren Sie mehr über die [erweiterten Funktionen](site-recovery-vmware-to-azure-classic.md#enhanced-deployment), gehen Sie sicher das Sie die neue [Architektur](site-recovery-vmware-to-azure-classic.md#scenario-architecture) verstehen und überprüfen Sie die [Voraussetzungen](site-recovery-vmware-to-azure-classic.md#before-you-start-deployment) für die erweiterte Bereitstellung.
-2. Beziehen Sie einen [Tresorregistrierungsschlüssel](site-recovery-vmware-to-azure-classic.md#step-3:-download-a-vault-registration-key) und führen Sie den [Assistenten für ein einheitliches Setup ](site-recovery-vmware-to-azure-classic.md#step-4:-install-the-management-server) aus, um den Konfigurationsserver, den Prozessserver und die Komponenten des Masterzielservers auf dem Verwaltungsserver zu installieren. Erfahren Sie mehr über die [Kapazitätsplanung](site-recovery-vmware-to-azure-classic.md#capacity-planning).
-3. Falls Sie einen VMware vCenter-Server haben, [richten Sie die Anmeldeinformationen](site-recovery-vmware-to-azure-classic.md#step-5:-set-up-credentials-for-the-vcenter-server) so ein, dass Site Recovery darauf zugreifen, und automatisch die von ihm verwalteten virtuellen Computer ermitteln kann. Erfahren Sie mehr über die [erforderlichen Berechtigungen](site-recovery-vmware-to-azure-classic.md#vmware-permissions-for-vcenter-access).
-4. Fügen Sie [vCenter-Server oder ESXi Hosts](site-recovery-vmware-to-azure-classic.md#step-6:-add-vcenter-servers-and-esxi-hosts) hinzu. Es dauert bis zu 15 Minuten, bis das Portal aktualisiert ist und die Anmeldeinformationen angezeigt werden.
-5. [Erstellen Sie eine neue Schutzgruppe](site-recovery-vmware-to-azure-classic.md#step-7:-create-a-protection-group). Es dauert bis zu 15 Minuten, bis das Portal aktualisiert ist und die virtuellen Computer ermittelt und angezeigt werden. Wenn Sie nicht warten möchten, können Sie den Namen des Verwaltungsservers markieren (bitte klicken Sie nicht darauf) > und auf „**Aktualisieren**” klicken.
-6. Klicken Sie in der neuen Schutzgruppe auf „**Computer migrieren**”.
+2. Deinstallieren Sie den Mobilitätsdienst auf Computern, die Sie derzeit schützen. Eine neue Version des Mobilitätsdiensts wird auf den Computern installiert, wenn Sie sie der neuen Schutzgruppe hinzufügen.
+3. Beziehen Sie einen [Tresorregistrierungsschlüssel](site-recovery-vmware-to-azure-classic.md#step-4-download-a-vault-registration-key), und führen Sie den [Assistenten für ein einheitliches Setup](site-recovery-vmware-to-azure-classic.md#step-5-install-the-management-server) aus, um den Konfigurationsserver, den Prozessserver und die Komponenten des Masterzielservers auf dem Verwaltungsserver zu installieren. Erfahren Sie mehr über die [Kapazitätsplanung](site-recovery-vmware-to-azure-classic.md#capacity-planning).
+4. Falls Sie einen VMware vCenter-Server haben, [richten Sie die Anmeldeinformationen](site-recovery-vmware-to-azure-classic.md#step-6-set-up-credentials-for-the-vcenter-server) so ein, dass Site Recovery darauf zugreifen und automatisch die von ihm verwalteten virtuellen Computer ermitteln kann. Erfahren Sie mehr über die [erforderlichen Berechtigungen](site-recovery-vmware-to-azure-classic.md#vmware-permissions-for-vcenter-access).
+5. Fügen Sie [vCenter-Server oder ESXi-Hosts](site-recovery-vmware-to-azure-classic.md#step-7-add-vcenter-servers-and-esxi-hosts) hinzu. Es dauert bis zu 15 Minuten, bis das Portal aktualisiert ist und die Anmeldeinformationen angezeigt werden.
+6. Erstellen Sie eine [neue Schutzgruppe](site-recovery-vmware-to-azure-classic.md#step-8-create-a-protection-group). Es dauert bis zu 15 Minuten, bis das Portal aktualisiert ist und die virtuellen Computer ermittelt und angezeigt werden. Wenn Sie nicht warten möchten, können Sie den Namen des Verwaltungsservers markieren (bitte klicken Sie nicht darauf) > und auf **Aktualisieren** klicken.
+7. Klicken Sie in der neuen Schutzgruppe auf **Computer migrieren**.
 
 	![Konto hinzufügen](./media/site-recovery-vmware-to-azure-classic-legacy/legacy-migration1.png)
 
-7. Wählen Sie unter „**Virtuellen Computer auswählen**” die Schutzgruppe, aus der Sie migrieren möchten sowie die zu migrierenden virtuellen Computer aus.
+8. Wählen Sie unter **Virtuellen Computer auswählen** die Schutzgruppe, aus der Sie migrieren möchten, sowie die zu migrierenden virtuellen Computer aus.
 
 	![Konto hinzufügen](./media/site-recovery-vmware-to-azure-classic-legacy/legacy-migration2.png)
-
-8. Geben Sie bei „**Ziel-Einstellungen konfigurieren**” an, ob Sie die gleichen Einstellungen für alle virtuellen Computer verwenden wollen und wählen Sie den Prozessserver und das Azure-Speicherkonto aus. Wenn Sie nur einen Verwaltungsserver eingerichtet haben, ist der Prozessserver die IP-Adresse dieses Verwaltungsservers.
+9. Geben Sie bei **Zieleinstellungen konfigurieren** an, ob Sie für alle Computer die gleichen Einstellungen verwenden möchten, und wählen Sie den Prozessserver und das Azure-Speicherkonto aus. Wenn Sie nur einen Verwaltungsserver eingerichtet haben, ist der Prozessserver die IP-Adresse dieses Verwaltungsservers.
 
 	![Konto hinzufügen](./media/site-recovery-vmware-to-azure-classic-legacy/legacy-migration3.png)
 
-9. Wählen Sie unter „**Konten angeben**” das von Ihnen erstellte Konto aus, um automatisch die neue Version von Mobility Service an die geschützten virtuellen Computer zu übergeben.
+10. Wählen Sie unter **Konten angeben** das von Ihnen erstellte Konto aus, um automatisch die neue Version des Mobilitätsdiensts an die geschützten Computer zu übergeben.
 
 	![Konto hinzufügen](./media/site-recovery-vmware-to-azure-classic-legacy/legacy-migration4.png)
 
-10. Site Recovery migriert Ihre replizierten Daten zu dem von Ihnen angegebenen Azure-Speicherkonto. Optional können Sie das Speicherkonto wiederverwenden, das Sie bereits bei der Legacy-Bereitstellung verwendet haben.
-11. Nach Fertigstellung dieser Aufgabe synchronisieren sich die virtuellen Computer automatisch. Nach Abschluss der Synchronisierung können Sie die virtuellen Computer aus der alten Schutzgruppe löschen.
-12. Nachdem alle Computer migriert wurden, können Sie die alte Schutzgruppe löschen.
-13. Denken Sie daran, die Failover-Eigenschaften für virtuelle Computer und die Azure-Netzwerkeinstellungen nach dem Ende der Synchronisation festzulegen.
-14. Wenn Sie bereits Wiederherstellungspläne haben, können Sie diese über die Schaltfläche „Wiederherstellungsplan migrieren“ in die neue Bereitstellung migrieren. Sie sollten dies nur tun, nachdem alle geschützten virtuellen Computer migriert wurden. 
+11. Site Recovery migriert Ihre replizierten Daten zu dem von Ihnen angegebenen Azure-Speicherkonto. Optional können Sie das Speicherkonto wiederverwenden, das Sie bereits bei der Legacy-Bereitstellung verwendet haben.
+12. Nach Fertigstellung dieser Aufgabe synchronisieren sich die virtuellen Computer automatisch. Nach Abschluss der Synchronisierung können Sie die virtuellen Computer aus der alten Schutzgruppe löschen.
+13. Nachdem alle Computer migriert wurden, können Sie die alte Schutzgruppe löschen.
+14. Denken Sie daran, die Failover-Eigenschaften für virtuelle Computer und die Azure-Netzwerkeinstellungen nach dem Ende der Synchronisation festzulegen.
+15. Wenn Sie bereits Wiederherstellungspläne haben, können Sie diese mit der Option **Wiederherstellungsplan migrieren** in die neue Bereitstellung migrieren. Sie sollten dies nur tun, nachdem alle geschützten virtuellen Computer migriert wurden. 
 
 	![Konto hinzufügen](./media/site-recovery-vmware-to-azure-classic-legacy/legacy-migration5.png)
+
+>[AZURE.NOTE] Wenn Sie die Migrationsschritte abgeschlossen haben, sollten Sie mit dem [aktualisierten Artikel](site-recovery-vmware-to-azure-classic.md) fortfahren. Nach der Migration ist der Rest dieses älteren Artikels nicht mehr relevant, und Sie müssen keinen der darin beschriebenen Schritte mehr befolgen**.
+
+
 
 
 ## Was benötige ich?
@@ -101,7 +105,7 @@ Sie benötigen Folgendes:
 **Lokale Computer** | Lokale virtuelle Computer auf einem VMware-Hypervisor oder physische Server, auf denen Windows oder Linux ausgeführt wird. | Sie richten Replikationseinstellungen für virtuelle Computer und Server ein. Failover können für einzelne Computer durchgeführt werden, häufiger erfolgen sie jedoch im Rahmen eines Wiederherstellungsplans mit gemeinsamem Failover mehrerer virtueller Computer.
 **Mobilitätsdienst** | <p>Wird auf jedem virtuellen Computer oder physischen Server installiert, den Sie schützen möchten.</p><p>Kann manuell installiert oder vom Prozessserver automatisch per Pushfunktion installiert werden, wenn der Schutz für den Server aktiviert ist. | Beim Mobilitätsdienst werden Daten im Rahmen der anfänglichen Replikation (Resync) an den Prozessserver gesendet. Nachdem der Server einen geschützten Zustand erreicht hat (nach Abschluss der erneuten Synchronisierung), führt der Mobilitätsdienst eine In-Memory-Erfassung von Schreibvorgängen auf den Datenträger durch und sendet die Daten an den Prozessserver. Anwendungskonsistenz für Windows-Server wird mit dem VSS-Framework erzielt.
 **Azure Site Recovery-Tresor** | Führen Sie die Einrichtung durch, nachdem Sie den Site Recovery-Dienst abonniert haben. | Sie registrieren Server in einem Site Recovery-Tresor. Der Tresor koordiniert und orchestriert Datenreplikation, Failover und Wiederherstellung zwischen dem lokalen Standort und Azure.
-**Replikationsmechanismus** | <p>**Über das Internet** – Kommuniziert und repliziert Daten von lokalen geschützten Servern und Azure mithilfe eines sicheren SSL/TLS-Kommunikationskanals über eine öffentliche Internetverbindung. Dies ist die Standardoption.</p><p>**VPN/ExpressRoute** – Kommuniziert und repliziert Daten zwischen lokalen Servern und Azure über eine VPN-Verbindung. Sie müssen eine Site-to-Site-VPN-Verbindung oder eine [ExpressRoute](../expressroute-introduction.md)-Verbindung zwischen dem lokalen Standort und Ihrem Azure-Netzwerk einrichten.</p><p>Sie wählen aus, wie die Replizierung während der Site Recovery-Bereitstellung erfolgen soll. Nachdem der Mechanismus konfiguriert wurde, können Sie ihn nicht ändern, ohne den Schutz bereits geschützter Server zu beeinträchtigen.| <p>Für keine der Optionen müssen Sie eingehende Netzwerkports auf geschützten Computern öffnen. Die gesamte Netzwerkkommunikation wird vom lokalen Standort aus initiiert.</p> 
+**Replikationsmechanismus** | <p>**Über das Internet** – Kommuniziert und repliziert Daten von lokalen geschützten Servern und Azure mithilfe eines sicheren SSL/TLS-Kommunikationskanals über eine öffentliche Internetverbindung. Dies ist die Standardoption.</p><p>**VPN/ExpressRoute** – Kommuniziert und repliziert Daten zwischen lokalen Servern und Azure über eine VPN-Verbindung. Sie müssen eine Site-to-Site-VPN-Verbindung oder eine ExpressRoute-Verbindung zwischen dem lokalen Standort und Ihrem Azure-Netzwerk einrichten.</p><p>Sie wählen aus, wie die Replikation während der Site Recovery-Bereitstellung erfolgen soll. Nachdem der Mechanismus konfiguriert wurde, können Sie ihn nicht ändern, ohne den Schutz bereits geschützter Server zu beeinträchtigen.| <p>Für keine der Optionen müssen Sie eingehende Netzwerkports auf geschützten Computern öffnen. Die gesamte Netzwerkkommunikation wird vom lokalen Standort aus initiiert.</p> 
 
 Weitere Informationen über Site Recovery-Komponenten, -Anbieter und -Agents finden Sie unter [Site Recovery-Komponenten](site-recovery-components.md).
 
@@ -201,7 +205,7 @@ Beachten Sie Folgendes:
 
 **Komponente** | **Anforderungen** | **Details**
 --- | --- | --- 
-**Azure-Konto** | Sie benötigen ein [Microsoft Azure](http://azure.microsoft.com/)-Konto. Für den Einstieg steht ein [kostenloses Testkonto](pricing/free-trial/) zur Verfügung.
+**Azure-Konto** | Sie benötigen ein [Microsoft Azure](https://azure.microsoft.com/)-Konto. Für den Einstieg steht ein [kostenloses Testkonto](pricing/free-trial/) zur Verfügung.
 **Azure-Speicher** | <p>Sie benötigen ein Azure-Speicherkonto, um replizierte Daten zu speichern.</p><p>Das Konto sollte entweder ein [georedundantes Standardspeicherkonto](../storage/storage-redundancy.md#geo-redundant-storage) oder [Premium-Speicherkonto](../storage/storage-premium-storage-preview-portal.md) sein.</p><p>Es muss sich in der gleichen Region wie der Azure Site Recovery-Dienst befinden und dem gleichen Abonnement zugeordnet sein.</p><p>Weitere Informationen finden Sie unter [Einführung in Microsoft Azure Storage](../storage/storage-introduction.md)</p>
 **Azure Virtual Network** | Sie benötigen ein virtuelles Azure-Netzwerk, in dem der Konfigurationsserver und der Masterzielserver bereitgestellt werden. Es muss in demselben Abonnement und in derselben Region enthalten sein wie der Azure Site Recovery-Tresor. Wenn Sie Daten über eine ExpressRoute- oder VPN-Verbindung replizieren möchten, muss das virtuelle Azure-Netzwerk mit Ihrem lokalen Netzwerk per ExpressRoute-Verbindung oder Standort-zu-Standort-VPN verbunden sein.
 **Azure-Ressourcen** | Stellen Sie sicher, dass Sie genügend Azure-Ressourcen für die Bereitstellung aller Komponenten besitzen. Weitere Informationen finden Sie unter [Beschränkungen des Azure-Abonnements](../azure-subscription-service-limits.md).
@@ -269,7 +273,7 @@ Es gibt zwei Möglichkeiten, die Netzwerkkonnektivität zwischen Ihrem lokalen S
 4. Geben Sie unter **Details des neuen Konfigurationsservers** Folgendes an:
 
 	- Einen Namen für den Konfigurationsserver und die Anmeldeinformationen für die Verbindung mit dem Server.
-	- Wählen Sie im Dropdownmenü als Netzwerkkonnektivitätstyp die Option „Öffentliches Internet“ oder „VPN“.[AZURE.NOTE]Diese Einstellung ist eine Entscheidung, die zur Bereitstellungszeit getroffen werden muss und später nicht geändert werden kann.  
+	- Wählen Sie im Dropdownmenü als Netzwerkkonnektivitätstyp die Option „Öffentliches Internet“ oder „VPN“.[AZURE.NOTE] Diese Einstellung ist eine Entscheidung, die zur Bereitstellungszeit getroffen werden muss und später nicht geändert werden kann.  
 	- Wählen Sie das Azure-Netzwerk aus, in dem sich der Server befinden soll. Wenn Sie VPN als Netzwerkkonnektivitätstyp angegeben haben, sollten Sie sicherstellen, dass dieses virtuelle Azure-Netzwerk mit Ihrem lokalen Standort über eine ExpressRoute-Verbindung oder ein Standort-zu-Standort-VPN verbunden ist.
 	- Geben Sie die interne IP-Adresse und das Subnetz an, die bzw. das dem Server zugewiesen werden soll. Beachten Sie, dass in jedem Subnetz die ersten vier IP-Adressen für die interne Verwendung durch Azure reserviert sind. Verwenden Sie eine beliebige andere verfügbare IP-Adresse.
 	
@@ -289,7 +293,7 @@ Es gibt zwei Möglichkeiten, die Netzwerkkonnektivität zwischen Ihrem lokalen S
 	
 	![VM-Endpunkte](./media/site-recovery-vmware-to-azure-classic-legacy/vm-endpoints.png)
 
-    >[AZURE.WARNING]Sie dürfen die öffentliche oder private Portnummer der Endpunkte, die während der Bereitstellung des Konfigurationsservers erstellt wurden, nicht ändern oder löschen.
+    >[AZURE.WARNING] Sie dürfen die öffentliche oder private Portnummer der Endpunkte, die während der Bereitstellung des Konfigurationsservers erstellt wurden, nicht ändern oder löschen.
 
 Der Konfigurationsserver wird in einem automatisch erstellten Azure-Clouddienst mit einer reservierten IP-Adresse bereitgestellt. Die reservierte Adresse ist erforderlich, um sicherzustellen, dass die IP-Adresse des Konfigurationsserver-Clouddiensts nach Neustarts der virtuellen Computer (einschließlich des Konfigurationsservers) im Clouddienst gleich bleibt. Wenn der Konfigurationsserver außer Betrieb gesetzt wird und die Reservierung der öffentlichen IP-Adresse nicht manuell rückgängig gemacht wird, bleibt die öffentliche IP-Adresse reserviert. Standardmäßig sind bis zu 20 reservierte öffentliche IP-Adressen pro Abonnement zulässig. [Weitere Informationen](../virtual-network/virtual-networks-reserved-private-ip.md) über reservierte IP-Adressen.
 
@@ -387,7 +391,7 @@ Beachten Sie Folgendes:
 
 Beachten Sie, dass in jedem Subnetz die ersten vier IP-Adressen für die interne Verwendung durch Azure reserviert sind. Geben Sie eine beliebige andere verfügbare IP-Adresse an.
 
->[AZURE.NOTE]Wählen Sie bei der Konfiguration des Schutzes für Workloads, die konsistent hohe E/A-Leistung und niedrige Latenz erfordern, "Standard DS4" mit [Premium-Speicherkonto](../storage/storage-premium-storage-preview-portal.md) aus, um E/A-intensive Workloads zu hosten.
+>[AZURE.NOTE] Wählen Sie bei der Konfiguration des Schutzes für Workloads, die konsistent hohe E/A-Leistung und niedrige Latenz erfordern, "Standard DS4" mit [Premium-Speicherkonto](../storage/storage-premium-storage-preview-portal.md) aus, um E/A-intensive Workloads zu hosten.
 
 
 3. Ein virtueller Computer des Windows-Masterzielservers mit den folgenden Endpunkten wird erstellt (öffentliche Endpunkte werden nur erstellt, wenn der Bereitstellungstyp „Öffentliches Internet“ lautet):
@@ -403,7 +407,7 @@ Beachten Sie, dass in jedem Subnetz die ersten vier IP-Adressen für die interne
 	- Benutzerdefiniert1: Der öffentliche Port wird vom Prozessserver zum Senden von Steuerungsmetadaten über das Internet verwendet. Der private Port 9080 wird vom Prozessserver zum Senden von Steuerungsdaten an den Masterzielserver über ein VPN verwendet.
 	- SSH: Privater Port 22
 
-    >[AZURE.WARNING]Sie dürfen die öffentliche oder private Portnummer der Endpunkte, die während der Bereitstellung des Masterzielservers erstellt wurden, nicht ändern oder löschen.
+    >[AZURE.WARNING] Sie dürfen die öffentliche oder private Portnummer der Endpunkte, die während der Bereitstellung des Masterzielservers erstellt wurden, nicht ändern oder löschen.
 
 5. Warten Sie unter **Virtuelle Computer**, bis der virtuelle Computer gestartet wird.
 
@@ -434,11 +438,11 @@ Beachten Sie, dass in jedem Subnetz die ersten vier IP-Adressen für die interne
 
 	![Zielserver überprüfen](./media/site-recovery-vmware-to-azure-classic-legacy/target-server-list.png)
 
->[AZURE.NOTE]Beachten Sie, dass es bis zu 15 Minuten nach Abschluss der Registrierung dauern kann, bis der Masterzielserver unter dem Konfigurationsserver aufgeführt wird. Wenn die Ansicht sofort aktualisiert werden soll, aktualisieren Sie den Konfigurationsserver, indem Sie unten auf der Seite "Konfigurationsserver" auf die Schaltfläche "Aktualisieren" klicken.
+>[AZURE.NOTE] Beachten Sie, dass es bis zu 15 Minuten nach Abschluss der Registrierung dauern kann, bis der Masterzielserver unter dem Konfigurationsserver aufgeführt wird. Wenn die Ansicht sofort aktualisiert werden soll, aktualisieren Sie den Konfigurationsserver, indem Sie unten auf der Seite "Konfigurationsserver" auf die Schaltfläche "Aktualisieren" klicken.
 
 ## Schritt 4: Bereitstellen eines lokalen Prozessservers
 
->[AZURE.NOTE]Es wird empfohlen, eine statische IP-Adresse für den Prozessserver zu konfigurieren, um sicherzustellen, dass diese nach einem Neustart beibehalten wird.
+>[AZURE.NOTE] Es wird empfohlen, eine statische IP-Adresse für den Prozessserver zu konfigurieren, um sicherzustellen, dass diese nach einem Neustart beibehalten wird.
 
 1. Klicken Sie auf „Schnellstart“ > **Prozessserver lokal installieren** > **Prozessserver herunterladen und installieren**.
 
@@ -675,7 +679,7 @@ So installieren Sie den Dienst auf dem Zielserver:
 
     ./install -t both -a host -R MasterTarget -d /usr/local/ASR -i 104.40.75.37 -p 62519 -s y -c https -P passphrase.txt
 
->[AZURE.NOTE]Wenn Sie einer Schutzgruppe Computer hinzufügen, auf denen bereits eine geeignete Version des Mobilitätsdiensts ausgeführt wird, wird die Pushinstallation übersprungen.
+>[AZURE.NOTE] Wenn Sie einer Schutzgruppe Computer hinzufügen, auf denen bereits eine geeignete Version des Mobilitätsdiensts ausgeführt wird, wird die Pushinstallation übersprungen.
 
 
 ## Schritt 9: Aktivieren des Schutzes
@@ -801,12 +805,12 @@ Wenn ein Prozessserver in einem kritischen Zustand ist, wird im Site Recovery-Da
 
 Do Not Translate or Localize
 
-Die Software und Firmware, die im Microsoft-Produkt oder -Dienst ausgeführt wird, basiert auf oder enthält Material aus den unten aufgeführten Projekten (zusammen " Drittanbietercode") Microsoft ist nicht der ursprüngliche Autor des Drittanbietercodes. Microsoft ist nicht der ursprüngliche Autor des Drittanbietercodes. Die ursprünglichen Urheberrechtshinweise und die Lizenz, unter der Microsoft der Drittanbietercode überlassen wurde, sind im Folgenden ausgeführt.
+The software and firmware running in the Microsoft product or service is based on or incorporates material from the projects listed below (collectively, “Third Party Code”). Microsoft is the not original author of the Third Party Code. The original copyright notice and license, under which Microsoft received such Third Party Code, are set forth below.
 
-The information in Section A is regarding Third Party Code components from the projects listed below. Solche Lizenzen und Informationen dienen ausschließlich informativen Zwecken. Der Code von Drittanbietern wird von Microsoft neu lizensiert und Ihnen dann zu den Microsoft-Softwarelizenzvereinbarungen für das Microsoft-Produkt oder den -Dienst zur Verfügung gestellt.
+The information in Section A is regarding Third Party Code components from the projects listed below. Such licenses and information are provided for informational purposes only. This Third Party Code is being relicensed to you by Microsoft under Microsoft's software licensing terms for the Microsoft product or service.
 
 The information in Section B is regarding Third Party Code components that are being made available to you by Microsoft under the original licensing terms.
 
-Die vollständige Datei steht im [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=529428) zur Verfügung. Microsoft behält sich alle Rechte vor, die hier nicht ausdrücklich, stillschweigend, durch Rechtsverwirkung oder auf andere Weise gewährt wurden.
+The complete file may be found on the [Microsoft Download Center](http://go.microsoft.com/fwlink/?LinkId=529428). Microsoft reserves all rights not expressly granted herein, whether by implication, estoppel or otherwise.
 
-<!-----HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

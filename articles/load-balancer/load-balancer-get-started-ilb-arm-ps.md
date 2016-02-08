@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="12/07/2015"
+   ms.date="01/21/2015"
    ms.author="joaoma" />
 
 # Erste Schritte zum Erstellen eines internen Lastenausgleichs mithilfe von PowerShell
@@ -87,7 +87,7 @@ Wählen Sie aus, welches Azure-Abonnement Sie verwenden möchten.<BR>
 
 Erstellen Sie eine neue Ressourcengruppe. (Überspringen Sie diesen Schritt, wenn Sie eine vorhandene Ressourcengruppe verwenden.)
 
-    PS C:\> New-AzureRmResourceGroup -Name NRP-RG -location "West US"
+    	PS C:\> New-AzureRmResourceGroup -Name NRP-RG -location "West US"
 
 Der Azure-Ressourcen-Manager erfordert, dass alle Ressourcengruppen einen Speicherort angeben. Dieser wird als Standardspeicherort für Ressourcen in dieser Ressourcengruppe verwendet. Stellen Sie sicher, dass alle Befehle, mit denen ein Load Balancer erstellt wird, die gleiche Ressourcengruppe verwenden.
 
@@ -189,8 +189,9 @@ In diesem Schritt erstellen wir eine zweite Netzwerkschnittstelle, weisen sie de
 Das Ergebnis sieht in der Regel wie folgt aus:
 
 
-PS C:\> $backendnic1
+	PS C:\> $backendnic1
 
+Erwartete Ausgabe:
 
 	Name                 : lb-nic1-be
 	ResourceGroupName    : NRP-RG
@@ -242,6 +243,39 @@ Verwenden Sie den Befehl Add-AzureRmVMNetworkInterface, um die NIC einem virtuel
 
 In Option 4 oder 5 der Dokumentation [Erstellen und Vorkonfigurieren eines virtuellen Windows-Computers mit dem Ressourcen-Manager und Azure PowerShell](virtual-machines-ps-create-preconfigure-windows-resource-manager-vms.md#Example) finden Sie eine Schritt-für-Schritt-Anleitung zum Erstellen eines virtuellen Computers und zum Zuweisen einer NIC.
 
+Falls Sie bereits einen virtuellen Computer erstellt haben, können Sie die Netzwerkschnittstelle mit den folgenden Schritten hinzufügen:
+
+#### Schritt 1 
+
+Laden Sie die Lastenausgleichsressource in eine Variable (sofern nicht schon geschehen). Die verwendete Variable heißt „$lb“ und verwendet die Namen aus der oben erstellten Lastenausgleichsressource.
+
+	$lb= Get-AzureRmLoadBalancer –name NRP-LB -resourcegroupname NRP-RG
+
+#### Schritt 2 
+
+Laden Sie die Back-End-Konfiguration in eine Variable.
+
+	$backend= Get-AzureRmLoadBalancerBackendAddressPoolConfig -name backendpool1 -LoadBalancer $lb
+
+#### Schritt 3 
+
+Laden Sie die bereits erstellte Netzwerkschnittstelle in eine Variable. Der Variablenname lautet „$nic“. Der Name der Netzwerkschnittstelle ist der im obigen Beispiel verwendete.
+
+	$nic=Get-AzureRmNetworkInterface –name lb-nic1-be -resourcegroupname NRP-RG
+
+#### Schritt 4
+
+Ändern Sie die Back-End-Konfiguration in der Netzwerkschnittstelle.
+
+	PS C:\> $nic.IpConfigurations[0].LoadBalancerBackendAddressPools=$backend
+
+#### Schritt 5 
+
+Speichern Sie das Netzwerkschnittstellenobjekt.
+
+	PS C:\> Set-AzureRmNetworkInterface -NetworkInterface $nic
+
+Nachdem eine Netzwerkschnittstelle zum Back-End-Pool des Lastenausgleichs hinzugefügt wurde, empfängt sie Netzwerkdatenverkehr basierend auf den Lastenausgleichsregeln für diese Lastenausgleichsressouce.
 
 ## Aktualisieren eines vorhandenen Load Balancers
 
@@ -271,7 +305,7 @@ Verwenden Sie den Befehl „Remove-AzureRmLoadBalancer“, um den zuvor erstellt
 
 	Remove-AzureRmLoadBalancer -Name NRPLB -ResourceGroupName NRP-RG
 
->[AZURE.NOTE]Sie können den optionalen Switch „-Force“ verwenden, um die Aufforderung zum Löschen zu vermeiden.
+>[AZURE.NOTE] Sie können den optionalen Switch „-Force“ verwenden, um die Aufforderung zum Löschen zu vermeiden.
 
 
 
@@ -282,4 +316,4 @@ Verwenden Sie den Befehl „Remove-AzureRmLoadBalancer“, um den zuvor erstellt
 [Konfigurieren von TCP-Leerlauftimeout-Einstellungen für den Lastenausgleich](load-balancer-tcp-idle-timeout.md)
  
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

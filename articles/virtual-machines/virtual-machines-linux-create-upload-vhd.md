@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="vm-linux"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="11/04/2015"
+	ms.date="01/22/2016"
 	ms.author="dkshir"/>
 
 # Erstellen und Hochladen einer virtuellen Festplatte, die das Linux-Betriebssystem enthält
@@ -26,7 +26,7 @@ Dieser Artikel erläutert, wie Sie eine virtuelle Festplatte (Virtual Hard Disk,
 
 [AZURE.INCLUDE [free-trial-note](../../includes/free-trial-note.md)]
 
-Auf einem virtuellen Computer in Azure wird das Betriebssystem ausgeführt, das auf dem Image basiert, das Sie beim Erstellen des virtuellen Computers ausgewählt haben. Ihre Images werden im VHD-Format unter einem Speicherkonto in .vhd-Dateien gespeichert. Weitere Informationen finden Sie unter [Datenträger in Azure](virtual-machines-disks-vhds.md) und [Images in Azure](virtual-machines-images.md).
+Ein virtueller Computer in Azure führt das Betriebssystem basierend auf dem Image aus, das Sie beim Erstellen auswählen. Diese Images werden im VHD-Format unter einem Speicherkonto in .vhd-Dateien gespeichert. Weitere Informationen finden Sie unter [Datenträger in Azure](virtual-machines-disks-vhds.md) und [Images in Azure](virtual-machines-images.md).
 
 Wenn Sie den virtuellen Computer erstellen, können Sie einige Betriebssystemeinstellungen anpassen, damit sie für die Anwendung geeignet sind, die Sie ausführen möchten. Anweisungen hierzu finden Sie unter [Erstellen eines benutzerdefinierten virtuellen Computers](virtual-machines-create-custom.md).
 
@@ -46,7 +46,7 @@ In diesem Artikel wird davon ausgegangen, dass Sie über die folgenden Elemente 
 
 - **Azure-Befehlszeilenschnittstelle**: Wenn Sie ein Linux-Betriebssystem zum Erstellen Ihres Image verwenden, können Sie zum Hochladen der virtuellen Festplatte die [Azure-Befehlszeilenschnittstelle](../virtual-machines-command-line-tools.md) verwenden.
 
-- **Azure Powershell-Tools**: Das `Add-AzureVhd`-Cmdlet kann ebenfalls zum Hochladen der virtuellen Festplatte verwendet werden. Besuchen Sie [Azure-Downloads](http://azure.microsoft.com/downloads/) zum Herunterladen der Azure PowerShell-Cmdlets. Referenzinformationen hierzu finden Sie unter [Add-AzureVhd](https://msdn.microsoft.com/library/azure/dn495173.aspx).
+- **Azure Powershell-Tools**: Das `Add-AzureVhd`-Cmdlet kann ebenfalls zum Hochladen der virtuellen Festplatte verwendet werden. Besuchen Sie [Azure-Downloads](https://azure.microsoft.com/downloads/) zum Herunterladen der Azure PowerShell-Cmdlets. Referenzinformationen hierzu finden Sie unter [Add-AzureVhd](https://msdn.microsoft.com/library/azure/dn495173.aspx).
 
 <a id="prepimage"> </a>
 ## Schritt 1: Vorbereiten des hochzuladenden Images
@@ -142,22 +142,26 @@ Verwenden Sie die Azure AD-Methode für die Anmeldung:
 
 	Weitere Informationen finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](powershell-install-configure.md).
 
-> [AZURE.NOTE]Es wird empfohlen, dass Sie die neuere Azure Active Directory-Methode zum Anmelden in Ihrem Azure-Abonnement verwenden, entweder aus der Azure-Befehlszeilenschnittstelle oder aus Azure PowerShell.
+> [AZURE.NOTE] Es wird empfohlen, dass Sie die neuere Azure Active Directory-Methode zum Anmelden in Ihrem Azure-Abonnement verwenden, entweder aus der Azure-Befehlszeilenschnittstelle oder aus Azure PowerShell.
 
 <a id="upload"> </a>
 ## Schritt 3: Hochladen des Image in Azure
 
-### Bei Verwendung der Azure-Befehlszeilenschnittstelle
-
-Laden Sie das Image mithilfe der Azure-Befehlszeilenschnittstelle hoch. Sie können ein Image hochladen, indem Sie den folgenden Befehl verwenden:
-
-		azure vm image create <image-name> --location <location-of-the-data-center> --os Linux <source-path-to the vhd>
-
-### Bei Verwendung von PowerShell
-
 Zum Hochladen der VHD-Datei wird ein Speicherkonto benötigt. Wählen Sie entweder ein vorhandenes Speicherkonto aus, oder erstellen Sie ein neues. Informationen zum Erstellen eines Speicherkontos finden Sie unter [Erstellen eines Speicherkontos](../storage-create-storage-account.md).
 
-Wenn Sie die .vhd-Datei hochladen, können Sie diese .vhd-Datei an einem beliebigen Speicherort innerhalb des Blobspeichers ablegen. In den folgenden Befehlsbeispielen stellt **BlobStorageURL** die URL für das zu verwendende Speicherkonto dar. Bei **YourImagesFolder** handelt es sich um den Container innerhalb des Blobspeichers, in dem Sie Ihre Images speichern möchten. **VHDName** steht für die Bezeichnung, die im [klassischen Azure-Portal](http://manage.windowsazure.com) zur Identifizierung der virtuellen Festplatte angezeigt wird. **PathToVHDFile** stellt den vollständigen Pfad und den Namen der .vhd-Datei dar.
+Wenn Sie die .vhd-Datei hochladen, können Sie diese .vhd-Datei an einem beliebigen Speicherort innerhalb des Blobspeichers ablegen. In den folgenden Befehlsbeispielen stellt **BlobStorageURL** die URL für das zu verwendende Speicherkonto dar. Bei **YourImagesFolder** handelt es sich um den Container innerhalb des Blobspeichers, in dem Sie Ihre Images speichern möchten. **VHDName** steht für die Bezeichnung, die im [Azure-Portal](http://portal.azure.com) oder im [klassischen Azure-Portal](http://manage.windowsazure.com) zur Identifizierung der virtuellen Festplatte angezeigt wird. **PathToVHDFile** stellt den vollständigen Pfad und den Namen der .vhd-Datei auf Ihrem Computer dar.
+
+
+### Bei Verwendung der Azure-Befehlszeilenschnittstelle
+
+Verwenden Sie die Azure-Befehlszeilenschnittstelle zum Hochladen des Images mithilfe des folgenden Befehls:
+
+		azure vm image create <ImageName> --blob-url <BlobStorageURL>/<YourImagesFolder>/<VHDName> --os Linux <PathToVHDFile>
+
+Weitere Informationen finden Sie unter [Azure-Befehlszeilenschnittstellenreferenz für die Azure-Dienstverwaltung](virtual-machines-command-line-tools.md).
+
+
+### Bei Verwendung von PowerShell
 
 Geben Sie über das Azure PowerShell-Fenster, welches Sie im vorherigen Schritt verwendet haben, Folgendes ein:
 
@@ -165,11 +169,9 @@ Geben Sie über das Azure PowerShell-Fenster, welches Sie im vorherigen Schritt 
 
 Weitere Informationen hierzu finden Sie unter [Add-AzureVhd](https://msdn.microsoft.com/library/azure/dn495173.aspx).
 
-> [AZURE.NOTE]Mit der [Vorschauversion von Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0-pre/) ändert sich die Art und Weise, wie Cmdlets für das klassische und das Ressourcen-Manager-Bereitstellungsmodell verarbeitet werden, erheblich. In diesem Artikel wird die Vorschauversion noch nicht verwendet.
-
 
 [Step 1: Prepare the image to be uploaded]: #prepimage
 [Step 2: Prepare the connection to Azure]: #connect
 [Step 3: Upload the image to Azure]: #upload
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -49,7 +49,7 @@ Wie erstelle ich eine Cloudsammlung?
 - Bieten Vollzugriff auf das lokale Netzwerk und Azure VNET.
 - Umfasst den Domänenbeitrittszugriff für Apps und Daten. Remoteanwendungen können beim lokalen Active Directory authentifiziert werden und haben dann Zugriff auf Ressourcen in Ihrer Domäne.
 - Ermöglichen mit vorhandenen System Center-Lösungen und Windows-Gruppenrichtlinien erweiterte Überwachung und Verwaltung (über ein benutzerdefiniertes Image auf Grundlage von Windows Server 2012 R2).
-- Unterstützen [ExpressRoute](http://azure.microsoft.com/services/expressroute/) für die Verbindung von Azure VNET mit dem lokalen VNET.
+- Unterstützen [ExpressRoute](https://azure.microsoft.com/services/expressroute/) für die Verbindung von Azure VNET mit dem lokalen VNET.
 
 Sie erstellen sie mit der Option **Mit VNET erstellen** und TRETEN einer Domäne BEI.
 
@@ -91,4 +91,4 @@ Ich denke, ich habe jetzt alles erklärt, was Sie wissen müssen. Jetzt bleibt n
 
 [Erstellen Sie eine Cloudsammlung](remoteapp-create-cloud-deployment.md), oder [erstellen Sie eine Hybrid-Sammlung](remoteapp-create-hybrid-deployment.md) – fangen Sie einfach an.
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

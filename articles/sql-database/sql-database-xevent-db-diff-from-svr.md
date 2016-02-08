@@ -33,9 +33,9 @@ In diesem Thema wird erläutert, wie sich die Implementierung erweiterter Ereign
 *XEvents* ist ein informeller Spitzname, der in Blogs und anderen informellen Quellen mitunter für "erweiterte Ereignisse" verwendet wird.
 
 
-> [AZURE.NOTE]Ab Oktober 2015 ist das Sitzungsfeature "Erweiterte Ereignisse" in Azure SQL-Datenbank auf Preview-Ebene aktiviert. Das Datum der allgemeinen Verfügbarkeit steht noch nicht fest.
+> [AZURE.NOTE] Ab Oktober 2015 ist das Sitzungsfeature "Erweiterte Ereignisse" in Azure SQL-Datenbank auf Preview-Ebene aktiviert. Das Datum der allgemeinen Verfügbarkeit steht noch nicht fest.
 > 
-> Auf der Azure-Seite [Dienstupdates](http://azure.microsoft.com/updates/?service=sql-database) finden Sie Beiträge mit Ankündigungen zur allgemeinen Verfügbarkeit.
+> Auf der Azure-Seite [Dienstupdates](https://azure.microsoft.com/updates/?service=sql-database) finden Sie Beiträge mit Ankündigungen zur allgemeinen Verfügbarkeit.
 
 
 ## Voraussetzungen
@@ -44,7 +44,7 @@ In diesem Thema wird erläutert, wie sich die Implementierung erweiterter Ereign
 Dieses Thema setzt voraus, dass Sie mit Folgendem grundlegend vertraut sind:
 
 
-- [Azure SQL-Datenbankdienst](http://azure.microsoft.com/services/sql-database/).
+- [Azure SQL-Datenbankdienst](https://azure.microsoft.com/services/sql-database/).
 
 
 - [Erweiterte Ereignisse](http://msdn.microsoft.com/library/bb630282.aspx) in Microsoft SQL Server.
@@ -54,7 +54,7 @@ Dieses Thema setzt voraus, dass Sie mit Folgendem grundlegend vertraut sind:
 Vorherige Kenntnisse in Bezug auf die folgenden Elemente ist hilfreich bei der Auswahl der Ereignisdatei als [Ziel](#AzureXEventsTargets):
 
 
-- [Azure Storage-Dienst](http://azure.microsoft.com/services/storage/)
+- [Azure Storage-Dienst](https://azure.microsoft.com/services/storage/)
 
 
 - PowerShell
@@ -269,4 +269,4 @@ Anderen Codebeispielthemen für erweiterte Ereignisse finden Sie unter den folge
 - Code sample for SQL Server: [Find the Objects That Have the Most Locks Taken on Them](http://msdn.microsoft.com/library/bb630355.aspx)
 -->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

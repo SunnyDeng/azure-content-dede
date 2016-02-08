@@ -14,7 +14,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="big-data"
-	ms.date="12/04/2015"
+	ms.date="01/25/2016"
 	ms.author="jeffstok"/>
 
 
@@ -22,7 +22,7 @@
 
 ## Einführung ##
 
-Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache formuliert, die [hier](https://msdn.microsoft.com/library/azure/dn834998.aspx) dokumentiert ist. In diesem Dokument werden anhand von Praxisbeispielen Lösungen für mehrere allgemeine Abfragemuster veranschaulicht. Das Dokument wird nach und nach mit weiteren Mustern aktualisiert.
+Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache gestellt, die im [Stream Analytics Query Language Reference](https://msdn.microsoft.com/library/azure/dn834998.aspx) dokumentiert ist. Dieser Artikel zeigt anhand von Praxisbeispielen Lösungen für mehrere weit verbreitete Abfragemuster. Das Dokument wird nach und nach mit weiteren Mustern aktualisiert.
 
 ## Abfragebeispiel: Konvertierungen von Datentypen ##
 **Beschreibung**: Definieren der Arten von Eigenschaften im Eingabedatenstrom. Beispiel: Das Fahrzeuggewicht ist im Eingabedatenstrom als Zeichenfolge angegeben und muss zur Summenbildung in INT konvertiert werden.
@@ -269,7 +269,7 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 
 **Ausgabe**:
 
-| LicensePlate | Stellen | Time |
+| LicensePlate | Make | Time |
 | --- | --- | --- |
 | DXE 5291 | Honda | 2015-07-27T00:00:05.0000000Z |
 | QYF 9358 | Honda | 2015-07-27T00:12:02.0000000Z |
@@ -287,7 +287,7 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 
 Ändern wir nun die Aufgabe, und ermitteln wir jeweils das erste Fahrzeug einer bestimmten Marke in einem Zehn-Minuten-Intervall.
 
-| LicensePlate | Stellen | Time |
+| LicensePlate | Make | Time |
 | --- | --- | --- |
 | DXE 5291 | Honda | 2015-07-27T00:00:05.0000000Z |
 | YZK 5704 | Ford | 2015-07-27T00:02:17.0000000Z |
@@ -311,7 +311,7 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 
 **Eingabe**:
 
-| LicensePlate | Stellen | Time |
+| LicensePlate | Make | Time |
 | --- | --- | --- |
 | DXE 5291 | Honda | 2015-07-27T00:00:05.0000000Z |
 | YZK 5704 | Ford | 2015-07-27T00:02:17.0000000Z |
@@ -323,7 +323,7 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 
 **Ausgabe**:
 
-| LicensePlate | Stellen | Time |
+| LicensePlate | Make | Time |
 | --- | --- | --- |
 | VFE 1616 | Toyota | 2015-07-27T00:09:31.0000000Z |
 | MDR 6128 | BMW | 2015-07-27T00:13:45.0000000Z |
@@ -384,6 +384,35 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 
 **Erläuterung**: Verwenden Sie „LAG“, um im Eingabedatenstrom einen Blick auf das vorherige Ereignis zu werfen und den Make-Wert zu ermitteln. Vergleichen Sie ihn dann mit dem Make-Wert des aktuellen Ereignisses, geben Sie das Ereignis aus, falls die Werte identisch sind, und rufen Sie mithilfe von „LAG“ Daten zum vorherigen Fahrzeug ab.
 
+## Abfragebeispiel: Ermitteln der Dauer zwischen Ereignissen
+**Beschreibung**: Ermitteln der Dauer eines bestimmten Ereignisses beispielsweise mit einem gegebenen Webclickstream, der auf eine Funktion verwendete Zeit ermitteln.
+
+**Eingabe**:
+  
+| Benutzer | Funktion | Ereignis | Time |
+| --- | --- | --- | --- |
+| user@location.com | RightMenu | Starten | 2015-01-01T00:00:01.0000000Z |
+| user@location.com | RightMenu | End | 2015-01-01T00:00:08.0000000Z |
+  
+**Ausgabe**:
+  
+| Benutzer | Funktion | Dauer |
+| --- | --- | --- |
+| user@location.com | RightMenu | 7 |
+  
+
+**Lösung**
+
+````
+    SELECT
+    	[user], feature, DATEDIFF(second, LAST(Time) OVER (PARTITION BY [user], feature LIMIT DURATION(hour, 1) WHEN Event = 'start'), Time) as duration
+    FROM input TIMESTAMP BY Time
+    WHERE
+    	Event = 'end'
+````
+
+**Erläuterung**: Verwenden Sie die „LAST“-Funktion, um den letzten Zeitpunkt (Time value) mit dem Ereignistyp „Start“ zu ermittelt. Beachten Sie, dass die LAST-Funktion PARTITION BY [user] verwendet, um anzuzeigen, dass das Ergebnis einzeln pro Benutzer berechnet wird. Die Abfrage hat einen maximalen Schwellenwert von einer Stunde für die Zeitdifferenz zwischen Start- und Stoppereignissen, ist aber nach Bedarf konfigurierbar (LIMIT DURATION(hour, 1).
+
 ## Abfragebeispiel: Ermitteln der Dauer einer Bedingung ##
 **Beschreibung**: Ermitteln, wie lange eine Bedingung angedauert hat. Beispiel: Aufgrund eines Fehlers wurde für alle Fahrzeuge ein Gewicht von über 20.000 Pfund erfasst, und wir möchten nun ermitteln, wie lange dieser Fehler aufgetreten ist.
 
@@ -413,32 +442,17 @@ Abfragen in Azure Stream Analytics werden in einer SQL-ähnlichen Abfragesprache
 
 **Lösung**:
 
-	SELECT
-	    PrevGood.Time AS StartFault,
-	    ThisGood.Time AS Endfault,
-	    DATEDIFF(second, PrevGood.Time, ThisGood.Time) AS FaultDuraitonSeconds
-	FROM
-	    Input AS ThisGood TIMESTAMP BY Time
-	    INNER JOIN Input AS PrevGood TIMESTAMP BY Time
-	    ON DATEDIFF(second, PrevGood, ThisGood) BETWEEN 1 AND 3600
-	    AND PrevGood.Weight < 20000
-	    INNER JOIN Input AS Bad TIMESTAMP BY Time
-	    ON DATEDIFF(second, PrevGood, Bad) BETWEEN 1 AND 3600
-	    AND DATEDIFF(second, Bad, ThisGood) BETWEEN 1 AND 3600
-	    AND Bad.Weight >= 20000
-	    LEFT JOIN Input AS MidGood TIMESTAMP BY Time
-	    ON DATEDIFF(second, PrevGood, MidGood) BETWEEN 1 AND 3600
-	    AND DATEDIFF(second, MidGood, ThisGood) BETWEEN 1 AND 3600
-	    AND MidGood.Weight < 20000
-	WHERE
-	    ThisGood.Weight < 20000
-	    AND MidGood.Weight IS NULL
+````
+SELECT 
+    LAG(time) OVER (LIMIT DURATION(hour, 24) WHEN weight < 20000 ) [StartFault],
+    [time] [EndFault]
+FROM input
+WHERE
+    [weight] < 20000
+    AND LAG(weight) OVER (LIMIT DURATION(hour, 24)) > 20000
+````
 
-**Erläuterung**: Wir suchen nach zwei gültigen Ereignissen, zwischen denen sich ein ungültiges und kein weiteres gültiges Ereignis befindet. Mit anderen Worten: Bei den beiden Ereignissen handelt es sich jeweils um das erste Ereignis vor bzw. nach mindestens einem ungültigen Ereignis. Zwei gültige Ereignisse mit einem ungültigen Ereignis dazwischen lassen sich problemlos mit zwei JOIN-Klauseln und einer Suche nach dem Muster „gültig -> ungültig -> gültig“ ermitteln. Zu diesem Zweck überprüfen wir das Gewicht und vergleichen die Zeitstempel.
-
-Dank der Erkenntnisse, die wir bei der Verwendung der linken äußeren Verknüpfung zur Ermittlung von NULL-Werten oder zur Prüfung auf nicht vorhandene Ereignisse gewonnen haben, wissen wir, wie wir uns vergewissern können, dass zwischen den beiden gültigen Ereignissen kein gültiges Ereignis aufgetreten ist.
-
-Zusammengenommen erhalten wir „gültig -> ungültig -> gültig“ ohne anderes gültiges Ereignis dazwischen. Nun können wir die Dauer zwischen Beginn und Ende der gültigen Ereignisse berechnen und so die Dauer des Fehlers ermitteln.
+**Erläuterung**: Verwenden Sie LAG, um den Eingabedatenstrom für 24 Stunden anzusehen und suchen Sie nach Instanzen, bei denen „StartFault“ und „StopFault“ von Gewichten unter 20.000 umgeben sind.
 
 ## Hier erhalten Sie Hilfe
 Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://social.msdn.microsoft.com/Forums/de-DE/home?forum=AzureStreamAnalytics).
@@ -452,4 +466,4 @@ Um Hilfe zu erhalten, besuchen Sie unser [Azure Stream Analytics-Forum](https://
 - [Referenz zur Azure Stream Analytics-Verwaltungs-REST-API](https://msdn.microsoft.com/library/azure/dn835031.aspx)
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

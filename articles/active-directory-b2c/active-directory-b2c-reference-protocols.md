@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/22/2015"
+	ms.date="01/21/2016"
 	ms.author="dastrock"/>
 
 # Vorschau für Azure AD B2C: Authentifizierungsprotokolle
@@ -23,9 +23,9 @@ Azure AD B2C bietet Identity-as-a-Service (IDaaS) für Ihre Apps durch die Unter
 <!-- TODO: Need link to libraries above -->
 
 [AZURE.INCLUDE [active-directory-b2c-preview-note](../../includes/active-directory-b2c-preview-note.md)]
-	
+
 ## Die Grundlagen
-Jede App, die Azure AD B2C verwendet, muss im B2C-Verzeichnis im [Azure-Portal](https://portal.azure.com) registriert werden. Der Registrierungsprozess für die App sammelt einige Werte und weist ihr einige Werte zu:
+Jede App, die Azure AD B2C verwendet, muss im B2C-Verzeichnis im [Azure-Portal](https://portal.azure.com/) registriert werden. Der Registrierungsprozess für die App sammelt einige Werte und weist ihr einige Werte zu:
 
 - Eine **Anwendungs-ID**, die Ihre App eindeutig identifiziert.
 - Einen **Umleitungs-URI** oder **Paketbezeichner**, der zum Umleiten von Antworten zurück an die App verwendet werden kann.
@@ -70,4 +70,4 @@ Wenn Sie einige Beispielanforderungen sehen möchten, beginnen Sie mit einem der
 
 <!-- [Call the Azure AD Graph API using the OAuth 2.0 Client Credentials Flow](active-directory-reference-graph.md) -->
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

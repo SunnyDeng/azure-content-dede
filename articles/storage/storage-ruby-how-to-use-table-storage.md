@@ -58,7 +58,7 @@ Das Azure-Modul liest die Umgebungsvariablen **AZURE\_STORAGE\_ACCOUNT** und **A
 
 So rufen Sie diese Werte ab:
 
-1. Melden Sie sich beim [Azure-Portal](portal.azure.com) an.
+1. Melden Sie sich beim [Azure-Portal](https://portal.azure.com) an.
 
 2. Navigieren Sie zum Speicherkonto.
 
@@ -128,7 +128,7 @@ Um eine Gruppe von Entitäten in einer Tabelle abzufragen, erstellen Sie ein Has
 	query = { :filter => "PartitionKey eq 'test-partition-key'" }
 	result, token = azure_table_service.query_entities("testtable", query)
 
-> [AZURE.NOTE]Wenn die Ergebnisgruppe zu groß für die Rückgabe einer einzelnen Abfrage ist, wird ein Fortsetzungstoken zurückgegeben, mit dem Sie nachfolgende Seiten abrufen können.
+> [AZURE.NOTE] Wenn die Ergebnisgruppe zu groß für die Rückgabe einer einzelnen Abfrage ist, wird ein Fortsetzungstoken zurückgegeben, mit dem Sie nachfolgende Seiten abrufen können.
 
 ## Abfragen einer Teilmenge von Entitätseigenschaften
 
@@ -157,4 +157,4 @@ Unter den folgenden Links erhalten Sie weitere Informationen zu komplexeren Spei
 - [Azure Storage-Teamblog](http://blogs.msdn.com/b/windowsazurestorage/)
 - [Azure SDK for Ruby](http://github.com/WindowsAzure/azure-sdk-for-ruby)-Repository auf GitHub
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

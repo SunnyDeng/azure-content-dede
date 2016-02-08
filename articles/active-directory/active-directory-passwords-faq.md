@@ -166,7 +166,7 @@ Diese FAQ sind in folgende Abschnitte unterteilt:
 ## Rückschreiben von Kennwörtern
  - **F: Wie funktioniert das Rückschreiben von Kennwörtern im Detail?**
  
- > **A:** Unter "Rückschreiben von Kennwörtern" finden Sie eine detaillierte Erläuterung der Vorgänge bei einer Kennwortrückschreibung sowie zum Datenfluss durch das System zurück in die lokale Umgebung. Unter "Sicherheitsmodell für das Rückschreiben von Kennwörtern" im Abschnitt "Rückschreiben von Kennwörtern" erfahren Sie, wie wir sicherstellen, dass das Rückschreiben von Kennwörtern ein sehr sicherer Dienst ist.
+ > **A:** Unter [Funktionsweise der Kennwortrückschreibung](active-directory-passwords-learn-more.md#how-password-writeback-works) finden Sie eine detaillierte Erläuterung der Vorgänge bei einer Kennwortrückschreibung sowie zum Datenfluss durch das System zurück in die lokale Umgebung. Unter [Sicherheitsmodell für die Kennwortrückschreibung](active-directory-passwords-learn-more.md#password-writeback-security-model) im Abschnitt „Funktionsweise der Kennwortrückschreibung“ erfahren Sie, wie wir sicherstellen, dass das Rückschreiben von Kennwörtern ein sehr sicherer Dienst ist.
 
  - **F: Wie lange dauert es, bis das Rückschreiben von Kennwörtern funktioniert? Gibt es eine Synchronisierungsverzögerung wie bei der Kennworthashsynchronisierung?**
  
@@ -182,7 +182,7 @@ Diese FAQ sind in folgende Abschnitte unterteilt:
 
  - **Q: Ist die Kennwortrückschreibung sicher? Wie kann ich sicher sein, dass ich nicht gehackt werde?**
  
- > **A:** Ja, die Kennwortrückschreibung ist extrem sicher. Weitere Informationen zu den vier Sicherheitsstufen, die durch den Dienst zur Kennwortrückschreibung implementiert werden, finden Sie unter "Sicherheitsmodell für das Rückschreiben von Kennwörtern" im Abschnitt "Rückschreiben von Kennwörtern".
+ > **A:** Ja, die Kennwortrückschreibung ist extrem sicher. Weitere Informationen zu den vier Sicherheitsstufen, die durch den Dienst zur Kennwortrückschreibung implementiert werden, finden Sie unter [Sicherheitsmodell für das Rückschreiben von Kennwörtern](active-directory-passwords-learn-more.md#password-writeback-security-model) im Abschnitt „Funktionsweise der Kennwortrückschreibung“.
 
 
 <br/> <br/> <br/>
@@ -203,4 +203,4 @@ Im Folgenden finden Sie Links zu allen Webseiten mit Informationen zur Kennwortz
 [001]: ./media/active-directory-passwords-faq/001.jpg "Image_001.jpg"
 [002]: ./media/active-directory-passwords-faq/002.jpg "Image_002.jpg"
 
-<!---HONumber=AcomDC_1125_2015-->
+<!---HONumber=AcomDC_0128_2016-->

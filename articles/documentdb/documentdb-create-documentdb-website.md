@@ -18,7 +18,7 @@
 
 # Bereitstellen von DocumentDB und Azure App Service-Web-Apps mithilfe einer Vorlage des Azure-Ressourcen-Managers #
 
-In diesem Lernprogramm erfahren Sie, wie Sie mithilfe einer Vorlage des Azure-Ressourcen-Managers [Microsoft Azure DocumentDB](http://azure.microsoft.com/services/documentdb/), eine [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714)-Web-App und eine Beispielwebanwendung bereitstellen und integrieren.
+In diesem Lernprogramm erfahren Sie, wie Sie mithilfe einer Vorlage des Azure-Ressourcen-Managers [Microsoft Azure DocumentDB](https://azure.microsoft.com/services/documentdb/), eine [Azure App Service](http://go.microsoft.com/fwlink/?LinkId=529714)-Web-App und eine Beispielwebanwendung bereitstellen und integrieren.
 
 Nach Abschluss dieses Lernprogramms können Sie die folgenden Fragen beantworten:
 
@@ -27,11 +27,11 @@ Nach Abschluss dieses Lernprogramms können Sie die folgenden Fragen beantworten
 
 <a id="Prerequisites"></a>
 ## Voraussetzungen ##
-> [AZURE.TIP]Zwar wird für dieses Lernprogramm keine Erfahrung im Umgang mit Vorlagen des Azure-Ressourcen-Managers, JSON oder Azure PowerShell vorausgesetzt, wenn Sie jedoch die hierin verwendeten Vorlagen oder Bereitstellungsoptionen ändern möchten, sind Kenntnisse in jedem dieser Bereiche erforderlich.
+> [AZURE.TIP] Zwar wird für dieses Lernprogramm keine Erfahrung im Umgang mit Vorlagen des Azure-Ressourcen-Managers, JSON oder Azure PowerShell vorausgesetzt, wenn Sie jedoch die hierin verwendeten Vorlagen oder Bereitstellungsoptionen ändern möchten, sind Kenntnisse in jedem dieser Bereiche erforderlich.
 
 Vor dem Ausführen der Anweisungen zu diesem Lernprogramm, müssen Sie sicherstellen, dass Sie über Folgendes verfügen:
 
-- Ein Azure-Abonnement. Azure ist eine abonnementbasierte Plattform. Weitere Informationen zum Erwerb eines Abonnements finden Sie unter [Azure erwerben](http://azure.microsoft.com/pricing/purchase-options/), [Spezielle Angebote](http://azure.microsoft.com/pricing/member-offers/) oder [Einen Monat kostenlos testen!](http://azure.microsoft.com/pricing/free-trial/).
+- Ein Azure-Abonnement. Azure ist eine abonnementbasierte Plattform. Weitere Informationen zum Erwerb eines Abonnements finden Sie unter [Azure erwerben](https://azure.microsoft.com/pricing/purchase-options/), [Spezielle Angebote](https://azure.microsoft.com/pricing/member-offers/) oder [Einen Monat kostenlos testen!](https://azure.microsoft.com/pricing/free-trial/).
 - Ein Azure-Speicherkonto. Anweisungen finden Sie unter [Informationen zu Azure-Speicherkonten](../storage/storage-create-storage-account.md).
 - Eine Arbeitsstation mit Azure PowerShell 0.9.8. Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../powershell-install-configure.md). Dieses Lernprogramm wurde noch nicht für Azure PowerShell 1.0 Vorschau aktualisiert. 
 
@@ -42,7 +42,7 @@ Als Erstes laden wir die Beispieldateien herunter, die in diesem Lernprogramm ve
 
 2. Laden Sie das [Beispiel zum Erstellen eines DocumentDB-Kontos und Web-Apps](https://portalcontent.blob.core.windows.net/samples/CreateDocDBWebSite.zip) in einen lokalen Ordner (z. B. „C:\\DocumentDBTemplates“) herunter, und extrahieren Sie die Dateien. Mit diesem Beispiel werden ein DocumentDB-Konto und eine App Service-Web-App bereitgestellt; außerdem wird die Konfiguration der Web-App so geändert, dass DocumentDB-Verbindungsinformationen problemlos angegeben werden können, eine Webanwendung ist jedoch nicht enthalten.
 
-> [AZURE.TIP]Beachten Sie, dass Sie je nach den Sicherheitseinstellungen des Computers möglicherweise die extrahierten Dateien entsperren müssen, indem Sie mit der rechten Maustaste darauf klicken und dann auf **Eigenschaften** und auf **Blockierung aufheben** klicken.
+> [AZURE.TIP] Beachten Sie, dass Sie je nach den Sicherheitseinstellungen des Computers möglicherweise die extrahierten Dateien entsperren müssen, indem Sie mit der rechten Maustaste darauf klicken und dann auf **Eigenschaften** und auf **Blockierung aufheben** klicken.
 
 ![Screenshot des Fensters „Eigenschaften“ mit der hervorgehobenen Schaltfläche „Blockierung aufheben“](./media/documentdb-create-documentdb-website/image1.png)
 
@@ -51,7 +51,7 @@ Als Erstes laden wir die Beispieldateien herunter, die in diesem Lernprogramm ve
 
 Jetzt stellen wir unsere erste Vorlage bereit.
 
-> [AZURE.TIP]Die Vorlage überprüft nicht, ob die unten eingegebenen Namen der Web-App und der DocumentDB-Kontoname (a) gültig und (b) verfügbar sind. Es wird dringend empfohlen, die Verfügbarkeit der gewünschten Namen zu überprüfen, bevor Sie das PowerShell-Bereitstellungsskript ausführen.
+> [AZURE.TIP] Die Vorlage überprüft nicht, ob die unten eingegebenen Namen der Web-App und der DocumentDB-Kontoname (a) gültig und (b) verfügbar sind. Es wird dringend empfohlen, die Verfügbarkeit der gewünschten Namen zu überprüfen, bevor Sie das PowerShell-Bereitstellungsskript ausführen.
 
 1. Öffnen Sie Microsoft Azure PowerShell, und navigieren Sie zu dem Ordner, in den Sie das [Beispiel zum Erstellen eines DocumentDB-Kontos, einer App Service-Web-App und Bereitstellen einer Demoanwendung](https://portalcontent.blob.core.windows.net/samples/CreateDocDBWebsiteTodo.zip) heruntergeladen und extrahiert haben (z. B. „C:\\DocumentDBTemplates\\CreateDocDBWebsiteTodo“).
 
@@ -70,7 +70,7 @@ Jetzt stellen wir unsere erste Vorlage bereit.
 
     	PS C:\DocumentDBTemplates\CreateDocDBWebAppTodo> .\CreateDocDBWebsiteTodo.ps1 -WebSiteName "mydemodocdbwebapp" -ResourceGroupName "myDemoResourceGroup" -docDBAccountName "mydemodocdbaccount" -location "West US"
 
-	> [AZURE.TIP]Beachten Sie, dass Sie im Rahmen der Skriptausführung zur Eingabe des Benutzernamens und Kennworts für Ihr Azure-Konto aufgefordert werden. Die gesamte Bereitstellung nimmt zwischen 10 und 15 Minuten in Anspruch.
+	> [AZURE.TIP] Beachten Sie, dass Sie im Rahmen der Skriptausführung zur Eingabe des Benutzernamens und Kennworts für Ihr Azure-Konto aufgefordert werden. Die gesamte Bereitstellung nimmt zwischen 10 und 15 Minuten in Anspruch.
 
 4. Hier sehen Sie ein Beispiel der resultierenden Ausgabe:
 
@@ -151,7 +151,7 @@ Jetzt stellen wir unsere erste Vorlage bereit.
 
 Jetzt stellen wir unsere zweite Vorlage bereit.
 
-> [AZURE.TIP]Die Vorlage überprüft nicht, ob die unten eingegebenen Namen der Web-App und der DocumentDB-Kontoname (a) gültig und (b) verfügbar sind. Es wird dringend empfohlen, die Verfügbarkeit der gewünschten Namen zu überprüfen, bevor Sie das PowerShell-Bereitstellungsskript ausführen.
+> [AZURE.TIP] Die Vorlage überprüft nicht, ob die unten eingegebenen Namen der Web-App und der DocumentDB-Kontoname (a) gültig und (b) verfügbar sind. Es wird dringend empfohlen, die Verfügbarkeit der gewünschten Namen zu überprüfen, bevor Sie das PowerShell-Bereitstellungsskript ausführen.
 
 1. Öffnen Sie Microsoft Azure PowerShell, und navigieren Sie zu dem Ordner, in den Sie das Beispiel zum [Erstellen eines DocumentDB-Kontos und eines Web-App-Beispiels](https://portalcontent.blob.core.windows.net/samples/CreateDocDBWebSite.zip) heruntergeladen und extrahiert haben (z. B. C:\\DocumentDBTemplates\\CreateDocDBWebsite).
 
@@ -169,7 +169,7 @@ Jetzt stellen wir unsere zweite Vorlage bereit.
 
     	PS C:\DocumentDBTemplates\CreateDocDBWebSite> .\CreateDocDBWebSite.ps1 -WebSiteName "myotherdocumentdbwebapp" -ResourceGroupName "myOtherDemoResourceGroup" -docDBAccountName "myotherdocumentdbdemoaccount" -location "East US"
 
-	> [AZURE.TIP]Beachten Sie, dass Sie im Rahmen der Skriptausführung zur Eingabe des Benutzernamens und Kennworts für Ihr Azure-Konto aufgefordert werden. Die gesamte Bereitstellung nimmt zwischen 10 und 15 Minuten in Anspruch.
+	> [AZURE.TIP] Beachten Sie, dass Sie im Rahmen der Skriptausführung zur Eingabe des Benutzernamens und Kennworts für Ihr Azure-Konto aufgefordert werden. Die gesamte Bereitstellung nimmt zwischen 10 und 15 Minuten in Anspruch.
 
 4. Die Ausgabe der Bereitstellung sieht der des ersten Vorlagenbeispiels sehr ähnlich.
 5. Bevor Sie das Azure-Portal öffnen, lassen Sie uns ansehen, was bei der Vorlagenbereitstellung geschehen ist:
@@ -207,7 +207,7 @@ Glückwunsch! Sie haben DocumentDB, eine App Service-Web-App und eine Beispielwe
 * Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 * Hinweise zu den Veränderungen des neuen Portals gegenüber dem alten finden Sie unter [Referenz zur Navigation im klassischen Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715).
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
  
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

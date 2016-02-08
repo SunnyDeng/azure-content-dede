@@ -131,7 +131,7 @@ Sehen Sie sich das [GitHub-Projekt mit DocumentDB-Partitionierungsbeispielen](ht
 
 Diese Beispiele sind Open-Source-basiert, und wir freuen uns, wenn Sie Pullanforderungen mit Beiträgen senden, von denen andere DocumentDB-Entwickler profitieren können. In den [Anleitungen für Beiträge](https://github.com/Azure/azure-documentdb-net/blob/master/Contributing.md) finden Sie Informationen dazu, wie Sie beitragen können.
 
->[AZURE.NOTE]Die Übertragungsrate bei der Erstellung von Sammlungen ist durch DocumentDB begrenzt, die Durchführung einiger der hier gezeigten Beispielmethoden kann also einige Minuten in Anspruch nehmen.
+>[AZURE.NOTE] Die Übertragungsrate bei der Erstellung von Sammlungen ist durch DocumentDB begrenzt, die Durchführung einiger der hier gezeigten Beispielmethoden kann also einige Minuten in Anspruch nehmen.
 
 ##Häufig gestellte Fragen
 **Warum unterstützt DocumentDB die clientseitige Partitionierung anstelle einer serverseitigen Partitionierung?**
@@ -164,7 +164,7 @@ Sie können "PartitionResolver" verketten, indem Sie Ihren eigenen "IPartitionRe
 * [DocumentDB .NET SDK-Dokumentation in MSDN](https://msdn.microsoft.com/library/azure/dn948556.aspx)
 * [DocumentDB .NET-Beispiele](https://github.com/Azure/azure-documentdb-net)
 * [DocumentDB-Einschränkungen](documentdb-limits.md)
-* [DocumentDB-Blog mit Leistungstipps](http://azure.microsoft.com/blog/2015/01/20/performance-tips-for-azure-documentdb-part-1-2/)
+* [DocumentDB-Blog mit Leistungstipps](https://azure.microsoft.com/blog/2015/01/20/performance-tips-for-azure-documentdb-part-1-2/)
  
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

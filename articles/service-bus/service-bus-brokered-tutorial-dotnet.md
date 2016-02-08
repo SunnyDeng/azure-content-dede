@@ -103,7 +103,7 @@ Im nächsten Schritt erstellen Sie ein Visual Studio-Projekt und schreiben zwei 
 	```
 	namespace Microsoft.ServiceBus.Samples
 	{
-	    publicclass Program
+	    public class Program
 	    {
 	
 	        private static DataTable issues;
@@ -202,14 +202,16 @@ Im nächsten Schritt erstellen Sie ein Visual Studio-Projekt und schreiben zwei 
 	```
 	namespace Microsoft.ServiceBus.Samples
 	{
-	    publicclass Program
+	    public class Program
 	    {
 	
-	        privatestatic DataTable issues;
-	        privatestatic List<BrokeredMessage> MessageList; 
-	        // Add these variablesprivatestaticstring ServiceNamespace;
-	        privatestaticstring sasKeyName = "RootManageSharedAccessKey";
-	        privatestaticstring sasKeyValue;
+	        private static DataTable issues;
+	        private static List<BrokeredMessage> MessageList; 
+
+	        // Add these variables
+			private static string ServiceNamespace;
+	        private static string sasKeyName = "RootManageSharedAccessKey";
+	        private static string sasKeyValue;
 	        …
 	```
 
@@ -219,11 +221,11 @@ Im nächsten Schritt erstellen Sie ein Visual Studio-Projekt und schreiben zwei 
 	static void CollectUserInput()
 	{
 	    // User service namespace
-	    Console.Write("Please enter the service namespace to use: ");
+	    Console.Write("Please enter the namespace to use: ");
 	    ServiceNamespace = Console.ReadLine();
 	
 	    // Issuer key
-	    Console.Write("Please enter the SAS key to use: ");
+	    Console.Write("Enter the SAS key to use: ");
 	    sasKeyValue = Console.ReadLine();
 	}
 	```
@@ -247,10 +249,6 @@ Im nächsten Schritt erstellen Sie ein Visual Studio-Projekt und schreiben zwei 
 
 In Visual Studio können Sie im Menü **Erstellen** auf **Projektmappe erstellen** klicken, oder drücken Sie F6, um die Genauigkeit der bisherigen Arbeit zu bestätigen.
 
-Erstellen von Verwaltungsanmeldeinformationen
-
-Dies ist der zweite Schritt des Lernprogramms zu den Service Bus-Messagingfunktionen. In diesem Schritt definieren Sie die Verwaltungsvorgänge, die Sie zum Erstellen von Shared Access Signature (SAS)-Anmeldeinformationen zur Autorisierung Ihrer Anwendung verwenden.
-
 ## Erstellen von Verwaltungsanmeldeinformationen
 
 In diesem Schritt definieren Sie die Verwaltungsvorgänge, die Sie zum Erstellen von Shared Access Signature (SAS)-Anmeldeinformationen zur Autorisierung Ihrer Anwendung verwenden.
@@ -262,7 +260,7 @@ In diesem Schritt definieren Sie die Verwaltungsvorgänge, die Sie zum Erstellen
 	{
 	…
 	}
-	staticvoid Queue()
+	static void Queue()
 	{
 	}
 	```
@@ -270,7 +268,7 @@ In diesem Schritt definieren Sie die Verwaltungsvorgänge, die Sie zum Erstellen
 1. Der nächste Schritt ist die Erstellung von SAS-Anmeldeinformationen mit einem [TokenProvider](https://msdn.microsoft.com/library/azure/microsoft.servicebus.tokenprovider.aspx)-Objekt. Bei der Erstellungsmethode werden der SAS-Schlüsselname und der Wert verwendet, die über die `CollectUserInput()`-Methode abgerufen wurden. Fügen Sie den folgenden Code in die Methode `Queue()` ein:
 
 	```
-	staticvoid Queue()
+	static void Queue()
 	{
 	    // Create management credentials
 	    TokenProvider credentials = TokenProvider.CreateSharedAccessSignatureTokenProvider(sasKeyName,sasKeyValue);
@@ -278,7 +276,7 @@ In diesem Schritt definieren Sie die Verwaltungsvorgänge, die Sie zum Erstellen
 	```
 ### Erstellen des Namespace-Managers
 
-1. Erstellen Sie ein neues Namespace-Verwaltungsobjekt mit einem URI, der den Namespacenamen und die Verwaltungsanmeldeinformationen aus dem letzten Schritt als Argumente enthält. Fügen Sie diesen Code direkt unterhalb des Codes hinzu, den Sie im vorherigen Schritt hinzugefügt haben:
+1. Erstellen Sie ein neues Namespace-Verwaltungsobjekt mit einem URI, der den Namespacenamen und die Verwaltungsanmeldeinformationen aus dem vorherigen Schritt als Argumente enthält. Fügen Sie diesen Code direkt unterhalb des Codes hinzu, den Sie im vorherigen Schritt hinzugefügt haben:
 	
 	```
 	NamespaceManager namespaceClient = new NamespaceManager(ServiceBusEnvironment.CreateServiceUri("sb", <namespaceName>, string.Empty), credentials);
@@ -455,7 +453,7 @@ Durchlaufen Sie in der `Queue()`-Methode die Warteschlange, und empfangen Sie di
 
 ### Beenden der `Queue()`-Methode und Bereinigen der Ressourcen
 
-Fügen Sie direkt unterhalb des vorherigen Codes den folgenden Code hinzu, um die Messagingfactory und Warteschlangenressourcen zu bereinigen:
+Fügen Sie direkt nach dem vorherigen Code den folgenden Code hinzu, um die Messagingfactory und Warteschlangenressourcen zu bereinigen:
 
 	```
 	factory.Close();
@@ -654,4 +652,4 @@ Weitere Informationen zu [Service Bus](https://azure.microsoft.com/services/serv
 [klassischen Azure-Portal]: http://manage.windowsazure.com
 [klassischen Azure-Portals]: http://manage.windowsazure.com
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

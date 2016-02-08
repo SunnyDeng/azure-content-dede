@@ -41,7 +41,7 @@ In der folgende Tabelle werden die Wiederholungsfunktionen für die in dieser An
 | **[Active Directory](#azure-active-directory-retry-guidelines)** | Topaz* (mit benutzerdefinierter Strategie zur Erkennung) | Deklarativ und programmatisch | Codeblöcke | Benutzerdefiniert |
 **Topaz in den Anzeigenamen für den Anwendungsblock zur Handhabung vorübergehender Fehler, der Bestandteil von <a href="http://msdn.microsoft.com/library/dn440719.aspx">Enterprise Library 6.0</a> ist. Sie können für die meisten Dienste wie in diesem Handbuch beschrieben eine benutzerdefinierte Strategie zur Erkennung mit Topaz verwenden. Standardstrategien für Topaz werden Abschnitt [Strategien für den Anwendungsblock zur Handhabung vorübergehender Fehler (Topaz)](#transient-fault-handling-application-block-topaz-strategies) am Ende dieses Handbuchs gezeigt. Beachten Sie, dass der Block jetzt ein Open Source-Framework ist und nicht direkt von Microsoft unterstützt wird.
 
-> [AZURE.NOTE]Für die meisten der integrierten Azure Mechanismen gibt es derzeit keine Möglichkeit, unterschiedliche Wiederholungsrichtlinien für verschiedene Typen von Fehler oder Ausnahmen anzuwenden, die über die in der Wiederholungsrichtlinie integrierte Funktionalität hinausgeht. Daher ist die beste gegenwärtige Anweisung zum Redaktionszeitpunkt eine Richtlinie zu konfigurieren, die die optimale durchschnittliche Leistung und Verfügbarkeit bietet. Eine Möglichkeit zur Optimierung der Richtlinie ist die Analyse von Protokolldateien, um den Typ der vorübergehenden Fehler zu bestimmen, die auftreten. Wenn z. B. die meisten Fehler mit der Netzwerkkonnektivität verknüpft sind, können Sie eine sofortige Wiederholung versuchen, anstatt langer für die erste Wiederholung zu warten.
+> [AZURE.NOTE] Für die meisten der integrierten Azure Mechanismen gibt es derzeit keine Möglichkeit, unterschiedliche Wiederholungsrichtlinien für verschiedene Typen von Fehler oder Ausnahmen anzuwenden, die über die in der Wiederholungsrichtlinie integrierte Funktionalität hinausgeht. Daher ist die beste gegenwärtige Anweisung zum Redaktionszeitpunkt eine Richtlinie zu konfigurieren, die die optimale durchschnittliche Leistung und Verfügbarkeit bietet. Eine Möglichkeit zur Optimierung der Richtlinie ist die Analyse von Protokolldateien, um den Typ der vorübergehenden Fehler zu bestimmen, die auftreten. Wenn z. B. die meisten Fehler mit der Netzwerkkonnektivität verknüpft sind, können Sie eine sofortige Wiederholung versuchen, anstatt langer für die erste Wiederholung zu warten.
 
 ## Azure Storage Wiederholungsrichtlinien
 
@@ -212,7 +212,7 @@ namespace RetryCodeSamples
 
 ## Weitere Informationen
 
-- [Empfehlungen zur Azure Storage-Clientbibliothek Wiederholungsrichtlinie](http://azure.microsoft.com/blog/2014/05/22/azure-storage-client-library-retry-policy-recommendations/)
+- [Empfehlungen zur Azure Storage-Clientbibliothek Wiederholungsrichtlinie](https://azure.microsoft.com/blog/2014/05/22/azure-storage-client-library-retry-policy-recommendations/)
 - [Storage Client Library 2.0 – Implementieren von Wiederholungsrichtlinien](http://gauravmantri.com/2012/12/30/storage-client-library-2-0-implementing-retry-policies/)
 
 ## SQL-Datenbank mit Entity Framework 6 Wiederholungsrichtlinien
@@ -302,7 +302,7 @@ Erwägen Sie, mit den folgenden Einstellungen für Wiederholungsvorgänge zu beg
 | Interaktiv, Benutzeroberfläche<br />oder Vordergrund | 2 Sekunden | Exponentiell | MaxRetryCount<br />MaxDelay | 3<br />750 ms | Versuch 1 - Verzögerung 0 Sek<br />Versuch 2 - Verzögerung 750 ms<br />Versuch 3 - Verzögerung 750 ms |
 | Hintergrund<br /> oder Batch | 30 Sekunden | Exponentiell | MaxRetryCount<br />MaxDelay | 5<br />12 Sekunden | Versuch 1 - Verzögerung 0 Sek<br />Versuch 2 - Verzögerung ca. 1 Sek<br />Versuch 3 - Verzögerung ca. 3 Sek<br />Versuch 4 - Verzögerung ca. 7 Sek<br />Versuch 5 - Verzögerung 12 Sek |
 
-> [AZURE.NOTE]Die End-to-End-Latenzziele setzen das Standardtimeout für Verbindungen mit dem Dienst voraus. Wenn Sie längere Verbindungstimeouts angeben, wird die End-to-End-Latenz durch diese zusätzliche Zeit für jeden Wiederholungsversuch erweitert.
+> [AZURE.NOTE] Die End-to-End-Latenzziele setzen das Standardtimeout für Verbindungen mit dem Dienst voraus. Wenn Sie längere Verbindungstimeouts angeben, wird die End-to-End-Latenz durch diese zusätzliche Zeit für jeden Wiederholungsversuch erweitert.
 
 ## Beispiele (SQL-Datenbank mit Entity Framework 6)
 
@@ -429,7 +429,7 @@ Erwägen Sie, mit den folgenden Einstellungen für Wiederholungsvorgänge zu beg
 | Interaktiv, Benutzeroberfläche<br />oder Vordergrund | 2 Sek | FixedInterval | Anzahl der Wiederholungen<br />Wiederholungsintervall<br />Erster schneller Wiederholungsversuch | 3<br />500 ms<br />true | Versuch 1 - Verzögerung 0 Sek<br />Versuch 2 - Verzögerung 500 ms<br />Versuch 3 - Verzögerung 500 ms |
 | Hintergrund<br />oder Batch | 30 Sek | ExponentialBackoff | Anzahl der Wiederholungen<br />Minimales Backoff<br />Maximales Backoff<br />Delta Backoff-<br />Erste schnelle Wiederholung | 5<br />0 Sek<br />60 Sek<br />2 Sek<br />false | Versuch 1 - Verzögerung 0 Sek<br />Versuch 2 - Verzögerung ca. 2 Sek<br />Versuch 3 - Verzögerung ca. 6 Sek<br />Versuch 4 - Verzögerung ca. 14 Sek<br />Versuch 5 - Verzögerung 30 Sek |
 
-> [AZURE.NOTE]Die End-to-End-Latenzziele setzen das Standardtimeout für Verbindungen mit dem Dienst voraus. Wenn Sie längere Verbindungstimeouts angeben, wird die End-to-End-Latenz durch diese zusätzliche Zeit für jeden Wiederholungsversuch erweitert.
+> [AZURE.NOTE] Die End-to-End-Latenzziele setzen das Standardtimeout für Verbindungen mit dem Dienst voraus. Wenn Sie längere Verbindungstimeouts angeben, wird die End-to-End-Latenz durch diese zusätzliche Zeit für jeden Wiederholungsversuch erweitert.
 
 ### Beispiele (SQL-Datenbank mit ADO.NET)
 
@@ -437,7 +437,7 @@ Dieser Abschnitt beschreibt die Verwendung des Anwendungsblocks zur Handhabung v
 
 Allerdings unterstützten in der aktuellen Version des Anwendungsblocks zur Handhabung vorübergehender Fehler diese Ansätze asynchrone Vorgänge nicht direkt für SQL-Datenbank. Die bewährte Praxis verlangt, dass Sie nur asynchrone Methoden verwenden, um auf Azure-Dienste wie z. B. SQL-Datenbank zuzugreifen, daher sollten Sie die folgenden Methoden in Betracht ziehen, um den Anwendungsblock zur Handhabung vorübergehender Fehler mit SQL-Datenbank zu verwenden.
 
-Sie können die vereinfachte asynchrone Unterstützung in Version 5 der C#-Sprache verwenden, um asynchrone Versionen der Methoden zu erstellen, die vom Block zur Verfügung gestellt werden. Der folgende Code zeigt z. B. die Erstellung einer asynchronen Version der **ExecuteReaderWithRetry**-Erweiterungsmethode. Die Änderungen und Erweiterungen des ursprünglichen Codes werden hervorgehoben. Der Quellcode für Topaz steht auf GitHub unter [Anwendungsblock zur Handhabung vorübergehender Fehler ("Topaz")](http://topaz.codeplex.com/SourceControl/latest) zur Verfügung.
+Sie können die vereinfachte asynchrone Unterstützung in Version 5 der C#-Sprache verwenden, um asynchrone Versionen der Methoden zu erstellen, die vom Block zur Verfügung gestellt werden. Der folgende Code zeigt z. B. die Erstellung einer asynchronen Version der **ExecuteReaderWithRetry**-Erweiterungsmethode. Die Änderungen und Erweiterungen des ursprünglichen Codes werden hervorgehoben. Der Quellcode für Topaz steht auf Codeplex unter [Anwendungsblock zur Handhabung vorübergehender Fehler („Topaz“)](http://topaz.codeplex.com/SourceControl/latest) zur Verfügung.
 
 ```csharp
 public async static Task<SqlDataReader> ExecuteReaderWithRetryAsync(this SqlCommand command, RetryPolicy cmdRetryPolicy,
@@ -713,7 +713,7 @@ Die folgende Tabelle zeigt die Standardeinstellungen für die integrierte Wieder
 |----------------------|-----------------------------------------|-----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ConfigurationOptions | ConnectRetry<br /><br />ConnectTimeout<br /><br />SyncTimeout | 3<br /><br />maximal 5000 ms plus SyncTimeout<br />1000 | Die Anzahl der Wiederholungen von Verbindungsversuchen während des Erstverbindungsvorgangs.<br />Zeitlimit (ms) für Verbindungen. Keine Verzögerung zwischen den Wiederholungsversuchen.<br />Zeit (ms), um synchrone Vorgänge zu ermöglichen. |
 
-> [AZURE.NOTE]SyncTimeout trägt zur End-to-End-Latenz eines Vorgangs bei. Allerdings wird im Allgemeinen die Verwendung von synchronen Vorgängen nicht empfohlen. Weitere Informationen finden Sie unter [Pipelines und Multiplexers](http://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/PipelinesMultiplexers.md).
+> [AZURE.NOTE] SyncTimeout trägt zur End-to-End-Latenz eines Vorgangs bei. Allerdings wird im Allgemeinen die Verwendung von synchronen Vorgängen nicht empfohlen. Weitere Informationen finden Sie unter [Pipelines und Multiplexers](http://github.com/StackExchange/StackExchange.Redis/blob/master/Docs/PipelinesMultiplexers.md).
 
 ## Gebrauchsanleitung Wiederholungen
 
@@ -1107,4 +1107,4 @@ Der Anwendungsblock zur Handhabung von vorübergehenden Fehlern verfügt über d
 | **Linear (festgelegtes Intervall)** | retryCount<br />retryInterval<br />fastFirstRetry<br /> | 10<br />1 Sekunde<br />true | Die Anzahl der Wiederholungsversuche.<br />Die Verzögerung zwischen Wiederholungen.<br />Gibt an, ob der erste Wiederholungsversuch sofort erfolgt. |
 Beispiele für die Verwendung des Anwendungsblocks zur Handhabung von vorübergehenden Fehlern finden Sie in den Abschnitten „Beispiele“ weiter vorne in diesem Handbuch für die Azure SQL-Datenbank mit ADO.NET und Azure Active Directory.
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

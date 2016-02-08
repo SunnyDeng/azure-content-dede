@@ -22,7 +22,7 @@
 Azure SQL-[Web- und -Business-Datenbanken laufen aus](sql-database-web-business-sunset-faq.md). Es ist also an der Zeit, vorhandene Web- oder Business-Datenbanken auf die [Dienstebenen Basic, Standard, Premium oder Elastisch](sql-database-service-tiers.md) zu aktualisieren.
 
 
-> [AZURE.IMPORTANT]Beim Upgrade einer Web- oder Business-Datenbank auf eine neue Dienstebene wird die Datenbank nicht offline geschaltet. Die Datenbank bleibt während des Upgradevorgangs online und verfügbar.
+> [AZURE.IMPORTANT] Beim Upgrade einer Web- oder Business-Datenbank auf eine neue Dienstebene wird die Datenbank nicht offline geschaltet. Die Datenbank bleibt während des Upgradevorgangs online und verfügbar.
 
 
 Um Sie beim Durchführen des Upgrades zu unterstützen, empfiehlt der SQL-Datenbank-Dienst eine geeignete Dienstebene und Leistungsstufe (Tarif) für jede Datenbank. Durch Analysieren der bisherigen Nutzung für jede Datenbank empfiehlt der Dienst einen Tarif, der am besten geeignet ist, die vorhandene Datenbankworkload auszuführen.
@@ -89,11 +89,9 @@ Die Funktionen und Leistungsstufen der neuen Dienstebene werden in der folgenden
 
 | Artikel | Beschreibung |
 |:--|:--|
-|[Dienstebenen (Editionen) der Azure SQL-Datenbank](http://msdn.microsoft.com/library/azure/dn741340.aspx)| Übersicht über die Dienstebenen "Basic", "Standard" und "Premium".|
-|[Dienst- und Leistungsebenen von Azure SQL-Datenbank](http://msdn.microsoft.com/library/dn741336.aspx)| Metriken und Funktionsumfang jeder Dienstebene (und Vorgehensweise bei der Überwachung der Datenbankauslastung im Verwaltungsportal und mithilfe von DMVs). |
-|[Worin unterscheiden sich die Dienstebenen?](http://msdn.microsoft.com/library/dn369873.aspx#Different)| Weitere Informationen zu den verschiedenen Dienstebenen einschließlich der Gründe, die für oder gegen eine Ebene sprechen. |
-|[Geschäftskontinuität in Azure SQL-Datenbank](http://msdn.microsoft.com/library/azure/hh852669.aspx)|Details zu den Funktionen für die Geschäftskontinuität und Notfallwiederherstellung (Zeitpunktwiederherstellung, Geowiederherstellung, Georeplikation) der unterschiedlichen Dienstebenen.|
-|[SQL-Datenbank – Preisdetails](http://azure.microsoft.com/pricing/details/sql-database/)|Detaillierte Preisinformationen zu den unterschiedlichen Dienstebenen und Leistungsstufen.|
+|[Dienst- und Leistungsebenen für Azure SQL-Datenbanken](sql-database-service-tiers.md)| Übersicht, Metriken und Funktionsumfang jeder Dienstebene (und Vorgehensweise bei der Überwachung der Datenbankauslastung im klassischen Portal und mithilfe von DMVs). |
+|[Geschäftskontinuität in Azure SQL-Datenbank](sql-database-business-continuity.md)|Details zu den Funktionen für die Geschäftskontinuität und Notfallwiederherstellung (Zeitpunktwiederherstellung, Geowiederherstellung, Georeplikation) der unterschiedlichen Dienstebenen.|
+|[SQL-Datenbank – Preisübersicht](https://azure.microsoft.com/pricing/details/sql-database/)|Detaillierte Preisinformationen zu den unterschiedlichen Dienstebenen und Leistungsstufen.|
 
 <br>
 
@@ -152,7 +150,7 @@ Die Daten im vorangehenden Beispiel zeigen die durchschnittliche Auslastung von 
 
 Die Ressourcenverbrauchsdaten von Web- und Business-Datenbanken können über die Sicht [sys.resource\_stats](http://msdn.microsoft.com/library/azure/dn269979.aspx) in der Masterdatenbank des logischen Servers eingesehen werden, auf dem die aktuelle Datenbank gespeichert ist. Die Ressourcenverbrauchsdaten werden in Prozentsätzen des Grenzwerts der Leistungsstufe angezeigt. Diese Sicht stellt Daten der letzten maximal 14 Tage in Intervallen von 5 Minuten zur Verfügung.
 
-> [AZURE.NOTE]Sie können nun die Sicht [sys.dm\_db\_resource\_stats](https://msdn.microsoft.com/library/dn800981.aspx) in Web und Business-Datenbanken verwenden, um eine Sicht mit höherer Genauigkeit (alle 15 Sekunden) der Ressourcenverbrauchsdaten zu erhalten. Da "sys.dm\_db\_resource\_stats" historische Daten nur eine Stunde lang speichert, können Sie diese DMV stündlich abfragen und die Daten zur weiteren Analyse speichern.
+> [AZURE.NOTE] Sie können nun die Sicht [sys.dm\_db\_resource\_stats](https://msdn.microsoft.com/library/dn800981.aspx) in Web und Business-Datenbanken verwenden, um eine Sicht mit höherer Genauigkeit (alle 15 Sekunden) der Ressourcenverbrauchsdaten zu erhalten. Da "sys.dm\_db\_resource\_stats" historische Daten nur eine Stunde lang speichert, können Sie diese DMV stündlich abfragen und die Daten zur weiteren Analyse speichern.
 
 Führen Sie die folgende Abfrage für die Masterdatenbank aus, um den durchschnittlichen DTU-Verbrauch für eine Datenbank abzurufen:
 
@@ -176,7 +174,8 @@ Basierend auf dem prozentualen DTU-Verbrauch und der größten Edition, die für
 
 ![Ressourcenverbrauch][4]
 
-> **Hinweis:** Relative DTU-Werte zwischen verschiedenen Leistungsstufen basieren auf dem Workload [Azure SQL-Datenbankvergleichstest](http://msdn.microsoft.com/library/azure/dn741327.aspx). Da der Workload Ihrer Datenbank wahrscheinlich von diesem Vergleichstest abweicht, sollten Sie die oben aufgeführten Berechnungen als Richtlinie für eine anfängliche Einordnung Ihrer Web-/Business-Datenbank in die neuen Dienstebenen verwenden. Nachdem Sie die Datenbank in die neue Ebene verschoben haben, verwenden Sie den im vorherigen Abschnitt beschriebenen Vorgang, um die richtigen Dienstebene zu überprüfen/optimieren, die für die Anforderungen Ihres Workloads geeignet ist.
+> **Hinweis:**
+> Relative DTU-Werte zwischen verschiedenen Leistungsstufen basieren auf dem Workload [Azure SQL-Datenbankvergleichstest](http://msdn.microsoft.com/library/azure/dn741327.aspx). Da der Workload Ihrer Datenbank wahrscheinlich von diesem Vergleichstest abweicht, sollten Sie die oben aufgeführten Berechnungen als Richtlinie für eine anfängliche Einordnung Ihrer Web-/Business-Datenbank in die neuen Dienstebenen verwenden. Nachdem Sie die Datenbank in die neue Ebene verschoben haben, verwenden Sie den im vorherigen Abschnitt beschriebenen Vorgang, um die richtigen Dienstebene zu überprüfen/optimieren, die für die Anforderungen Ihres Workloads geeignet ist.
 > 
 > Während die vorgeschlagene Dienstebene/Leistungsstufe der neuen Edition Ihre Datenbankaktivität innerhalb der letzten 14 Tage berücksichtigt, basieren diese Daten auf den Datenstichproben für den Ressourcenverbrauch, gemittelt über 5 Minuten. Aus diesem Grund können ggf. kurzfristige Aktivitätsspitzen unberücksichtigt bleiben, die weniger als 5 Minuten dauern. Diese Anleitung sollte daher beim Upgrade der Datenbank als Ausgangspunkt verwendet werden. Nachdem Sie das Upgrade der Datenbank auf die empfohlene Ebene ausgeführt haben, sind weitere Überwachungs-, Test- und Überprüfungsvorgänge erforderlich, und die Datenbank kann nach Bedarf nach oben oder unten in eine andere Ebene/Leistungsstufe verschoben werden.
 
@@ -264,7 +263,7 @@ Ausführliche Informationen finden Sie unter [Ändern von Datenbank-Dienstebenen
 
 
 ## 6\. Überwachen des Upgrades auf die neue Dienstebene/Leistungsstufe
-Die Azure SQL-Datenbank stellt in der dynamischen Verwaltungssicht "sys.dm\_operation\_status" in der Masterdatenbank des logischen Servers, auf dem die aktuelle Datenbank gespeichert ist, Statusinformationen zu Verwaltungsvorgängen (z. B. "CREATE", "ALTER", "DROP") zur Verfügung, die für eine Datenbank ausgeführt werden [siehe Dokumentation zum Status des Vorgangs "sys.dm\_operation\_status"](http://msdn.microsoft.com/library/azure/dn270022.aspx) Verwenden Sie die dynamische Verwaltungssicht zum Vorgangsstatus, um den Status des Upgradevorgangs für eine Datenbank zu ermitteln. Die folgende Beispielabfrage zeigt alle Verwaltungsvorgänge, die für eine Datenbank ausgeführt werden:
+Die Azure SQL-Datenbank stellt in der dynamischen Verwaltungssicht „sys.dm\_operation\_status“ in der Masterdatenbank des logischen Servers, auf dem die aktuelle Datenbank gespeichert ist, Statusinformationen zu Verwaltungsvorgängen (z. B. „CREATE“, „ALTER“, „DROP“) zur Verfügung, die für eine Datenbank ausgeführt werden [siehe Dokumentation zum Status des Vorgangs „sys.dm\_operation\_status“].(http://msdn.microsoft.com/library/azure/dn270022.aspx) Verwenden Sie die dynamische Verwaltungssicht zum Vorgangsstatus, um den Status des Upgradevorgangs für eine Datenbank zu ermitteln. Die folgende Beispielabfrage zeigt alle Verwaltungsvorgänge, die für eine Datenbank ausgeführt werden:
 
     SELECT o.operation, o.state_desc, o.percent_complete
     , o.error_code, o.error_desc, o.error_severity, o.error_state
@@ -319,4 +318,4 @@ Der Azure SQL-Datenbankdienst stellt Telemetriedaten und Tools zum Auswerten der
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

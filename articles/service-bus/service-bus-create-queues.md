@@ -55,7 +55,7 @@ In den folgenden Abschnitten wird erläutert, wie diese Anwendung mithilfe von S
 
 ### Registrieren für ein Service Bus-Konto und -Abonnement
 
-Zur Verwendung von Service Bus benötigen Sie ein Azure-Konto. Wenn Sie kein Abonnement haben, können Sie sich [hier](http://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A85619ABF) für eine kostenlose Testversion registrieren.
+Zur Verwendung von Service Bus benötigen Sie ein Azure-Konto. Wenn Sie kein Abonnement haben, können Sie sich [hier](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A85619ABF) für eine kostenlose Testversion registrieren.
 
 ### Erstellen eines Dienstnamespaces
 
@@ -63,7 +63,7 @@ Sobald Sie über ein Abonnement verfügen, können Sie einen neuen Namespace ers
 
 ### Installieren des NuGet-Pakets
 
-Zur Verwendung des Service Bus-Dienstnamespaces muss eine Anwendung auf die Service Bus-Assembly verweisen, d. h. auf "Microsoft.ServiceBus.dll". Diese Assembly ist Bestandteil des Microsoft Azure SDK und kann auf der [Azure SDK-Downloadseite](http://azure.microsoft.com/downloads/) heruntergeladen werden. Das NuGet-Paket "Service Bus" stellt jedoch die einfachste Möglichkeit zum Abrufen der Service Bus-API und zum Konfigurieren der Anwendung mit allen Service Bus-Abhängigkeiten dar. Weitere Informationen zum Verwenden von NuGet und dem Service Bus-Paket finden Sie unter [Verwenden des NuGet Service Bus-Pakets](https://msdn.microsoft.com/library/dn741354.aspx).
+Zur Verwendung des Service Bus-Dienstnamespaces muss eine Anwendung auf die Service Bus-Assembly verweisen, d. h. auf "Microsoft.ServiceBus.dll". Diese Assembly ist Bestandteil des Microsoft Azure SDK und kann auf der [Azure SDK-Downloadseite](https://azure.microsoft.com/downloads/) heruntergeladen werden. Das NuGet-Paket "Service Bus" stellt jedoch die einfachste Möglichkeit zum Abrufen der Service Bus-API und zum Konfigurieren der Anwendung mit allen Service Bus-Abhängigkeiten dar. Weitere Informationen zum Verwenden von NuGet und dem Service Bus-Paket finden Sie unter [Verwenden des NuGet Service Bus-Pakets](https://msdn.microsoft.com/library/dn741354.aspx).
 
 ### Erstellen der Warteschlange
 
@@ -160,4 +160,4 @@ catch (Exception e)
 
 Nun, da Sie sich mit den Grundlagen in Bezug auf Warteschlangen vertraut gemacht haben, finden Sie unter [Erstellen von Anwendungen, die Service Bus-Themen und -Abonnements verwenden](service-bus-create-topics-subscriptions.md) weiterführende Informationen zur Verwendung der Funktionen zum Veröffentlichen/Abonnieren des Service Bus-Brokermessaging.
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

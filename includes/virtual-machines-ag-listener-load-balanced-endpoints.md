@@ -6,7 +6,7 @@ Sie müssen einen Endpunkt mit Lastenausgleich für jeden virtuellen Computer mi
 
 1. Stellen Sie sicher, dass die Werte für **Name** und **Öffentlicher Port** des gewünschten Listenerendpunkts nicht bereits verwendet werden. Im folgenden Beispiel ist der Name "MyEndpoint" und der Port "1433".
 
-1. Laden Sie auf dem lokalen Client [das aktuelle PowerShell-Modul](http://azure.microsoft.com/downloads/) herunter, und installieren Sie es.
+1. Laden Sie auf dem lokalen Client [das aktuelle PowerShell-Modul](https://azure.microsoft.com/downloads/) herunter, und installieren Sie es.
 
 1. Starten Sie **Azure PowerShell**. Eine neue PowerShell-Sitzung wird geöffnet, und die Azure-Verwaltungsmodule werden geladen.
 
@@ -18,4 +18,4 @@ Sie müssen einen Endpunkt mit Lastenausgleich für jeden virtuellen Computer mi
 
 	Nachdem die Datei mit Veröffentlichungseinstellungen importiert wurde, können Sie Ihr Azure-Abonnement in der PowerShell-Sitzung verwalten.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

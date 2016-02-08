@@ -193,7 +193,7 @@ Ersetzen Sie im folgenden Befehl *resource group name* durch den Namen der Resso
 
 	Remove-AzureRmVM -ResourceGroupName "resource group name" –Name "VM name"
 
-> [AZURE.NOTE]Mit dem Parameter **- Force** können Sie die Bestätigungsaufforderung überspringen.
+> [AZURE.NOTE] Mit dem Parameter **- Force** können Sie die Bestätigungsaufforderung überspringen.
 
 Wenn Sie den Parameter "-Force" nicht verwendet haben, werden Sie aufgefordert, den Vorgang zu bestätigen:
 
@@ -216,4 +216,4 @@ Das folgende Video veranschaulicht diese Aufgabe:
 
 [AZURE.VIDEO start-stop-restart-and-delete-vms-in-microsoft-azure-with-powershell]
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

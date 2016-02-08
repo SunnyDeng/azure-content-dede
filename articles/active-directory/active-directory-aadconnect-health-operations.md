@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/19/2015"
+	ms.date="01/21/2016"
 	ms.author="billmath"/>
 
 # Azure AD Connect Health-Vorgänge
@@ -22,7 +22,7 @@ Das folgende Thema beschreibt die verschiedenen Vorgänge, die mithilfe von Azur
 
 ## Aktivieren von E-Mail-Benachrichtigungen
 Sie können Azure AD Connect Health zum Senden von E-Mail-Benachrichtigungen konfigurieren, die beim Generieren von Warnungen gesendet werden und angeben, dass die Identitätsinfrastruktur nicht fehlerfrei ist. Benachrichtigungen werden gesendet, wenn eine Warnung generiert und wenn sie als gelöst markiert wird. Folgen Sie den unten stehenden Anweisungen, um E-Mail-Benachrichtigungen zu konfigurieren.
->[AZURE.NOTE]E-Mail-Benachrichtigungen sind standardmäßig deaktiviert.
+>[AZURE.NOTE] E-Mail-Benachrichtigungen sind standardmäßig deaktiviert.
 
 
 ### So aktivieren Sie Azure AD Connect Health-E-Mail-Benachrichtigungen
@@ -105,18 +105,18 @@ Berechtigungen werden erteilt, wenn ein Benutzer Zugriff auf Verzeichnisebene od
 ### So erteilen Sie Benutzern oder Gruppen Zugriff auf Azure AD Connect Health
 #### Schritt 1: Auswählen des entsprechenden Zugriffsbereichs
 Um einem Benutzer Zugriff auf der Ebene *Alle Dienstinstanzen* innerhalb von Azure AD Connect Health zu gewähren, öffnen Sie das Hauptblatt in Azure AD Connect Health.<br>
-[//]: # (RBAC\_MainBladeSS)
 #### Schritt 2: Hinzufügen von Benutzern und Gruppen sowie Zuweisen von Rollen
-1. Klicken Sie im Abschnitt "Konfigurieren" auf den Bereich "Benutzer".<br>
-![Azure AD Connect Health RBAC Main Blade](./media/active-directory-aadconnect-health/RBAC_main_blade.png)
+1. Klicken Sie im Abschnitt „Konfigurieren“ auf den Bereich „Benutzer“.<br>
+![Azure AD Connect Health – RBAC Hauptblatt](./media/active-directory-aadconnect-health/RBAC_main_blade.png)
 2. Wählen Sie "Hinzufügen" aus.
-3. Wählen Sie „Rolle“ aus, beispielsweise „Besitzer“<br> ![Azure AD Connect Health – RBAC Benutzer hinzufügen](./media/active-directory-aadconnect-health/RBAC_add.png)
+3. Wählen Sie „Rolle“ aus, beispielsweise „Besitzer“<br>
+![Azure AD Connect Health – RBAC Benutzer hinzufügen](./media/active-directory-aadconnect-health/RBAC_add.png)
 4. Geben Sie den Namen oder die Kennung des entsprechenden Benutzers oder der Gruppe ein. Sie können einen oder mehrere Benutzer oder Gruppen gleichzeitig auswählen. Klicken Sie auf „Auswählen“. 
 ![Azure AD Connect Health – RBAC Benutzer auswählen](./media/active-directory-aadconnect-health/RBAC_select_users.png)
 5. Klicken Sie auf „OK“.<br>
 
-6. Nach Abschluss der Rollenzuordnung werden die Benutzer und/oder Gruppen in der Liste angezeigt.<br>
-![Azure AD Connect Health RBAC User List](./media/active-directory-aadconnect-health/RBAC_user_list.png)
+6. Nach Abschluss der Rollenzuordnung werden die Benutzer und/oder Gruppen in der Liste angezeigt.<br> 
+![Azure AD Connect Health – RBAC Benutzerliste](./media/active-directory-aadconnect-health/RBAC_user_list.png)
 
 Diese Schritte ermöglichen den aufgeführten Benutzern und der Gruppe Zugriff basierend auf den zugewiesenen Rollen.
 >[AZURE.NOTE]
@@ -124,14 +124,15 @@ Diese Schritte ermöglichen den aufgeführten Benutzern und der Gruppe Zugriff b
 
 #### Schritt 3: Freigeben des Blattspeicherorts für Benutzer oder Gruppen
 1. Nach dem Zuweisen von Berechtigungen kann ein Benutzer auf Azure AD Connect Health zugreifen, indem er [http://aka.ms/aadconnecthealth](http://aka.ms/aadconnecthealth) aufruft.
-2. Auf dem Blatt kann der Benutzer das Blatt oder verschiedene Teile an das Dashboard heften, indem er auf "An Dashboard anheften" klickt.<br>
-![Azure AD Connect Health RBAC pin blade](./media/active-directory-aadconnect-health/RBAC_pin_blade.png)
+2. Auf dem Blatt kann der Benutzer das Blatt oder verschiedene Teile an das Dashboard heften, indem er auf „An Dashboard anheften“ klickt<br> 
+![Azure AD Connect Health – RBAC Blatt anhaften](./media/active-directory-aadconnect-health/RBAC_pin_blade.png)
 
->[AZURE.NOTE]Ein Benutzer mit der Rolle "Leser" kann den Vorgang "Erstellen" nicht ausführen, um die Azure AD Connect Health-Erweiterung aus dem Azure Marketplace abzurufen. Dieser Benutzer kann weiterhin über den oben aufgeführten Link auf das Blatt zugreifen. Für nachfolgende Verwendungen kann der Benutzer das Blatt an das Dashboard anheften.
+
+>[AZURE.NOTE] Ein Benutzer mit der Rolle "Leser" kann den Vorgang "Erstellen" nicht ausführen, um die Azure AD Connect Health-Erweiterung aus dem Azure Marketplace abzurufen. Dieser Benutzer kann weiterhin über den oben aufgeführten Link auf das Blatt zugreifen. Für nachfolgende Verwendungen kann der Benutzer das Blatt an das Dashboard anheften.
 
 ### Entfernen von Benutzern und/oder Gruppen
-Sie können einen der rollenbasierten Azure AD Connect Health-Zugriffsteuerung hinzugefügten Benutzer oder eine Gruppe entfernen, indem Sie mit der rechten Maustaste darauf klicken und "Entfernen" auswählen.<br>
-![Azure AD Connect Health RBAC Remove User](./media/active-directory-aadconnect-health/RBAC_remove.png)
+Sie können einen der rollenbasierten Azure AD Connect Health-Zugriffsteuerung hinzugefügten Benutzer oder eine Gruppe entfernen, indem Sie mit der rechten Maustaste darauf klicken und „Entfernen“ auswählen.<br> 
+![Azure AD Connect Health – RBAC Benutzer entfernen](./media/active-directory-aadconnect-health/RBAC_remove.png)
 
 [//]: # "Ende des RBAC-Abschnitts"
 
@@ -143,4 +144,4 @@ Sie können einen der rollenbasierten Azure AD Connect Health-Zugriffsteuerung 
 * [Verwenden von Azure AD Connect Health für die Synchronisierung](active-directory-aadconnect-health-sync.md)
 * [Azure AD Connect Health – FAQ](active-directory-aadconnect-health-faq.md)
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0128_2016-->

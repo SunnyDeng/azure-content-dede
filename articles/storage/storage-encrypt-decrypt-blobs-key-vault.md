@@ -136,7 +136,7 @@ Fügen Sie in der Main-Funktion den folgenden Code hinzu.
 	KeyVaultKeyResolver cloudResolver = new KeyVaultKeyResolver(GetToken);
 
 
-> [AZURE.NOTE]Schlüsseltresor-Objektmodelle
+> [AZURE.NOTE] Schlüsseltresor-Objektmodelle
 >
 >Es ist wichtig zu verstehen, dass eigentlich zwei Schlüsseltresor-Objektmodelle vorhanden sind: eins basiert auf der REST-API (KeyVault-Namespace), und das andere ist eine Erweiterung für die clientseitige Verschlüsselung.
 
@@ -167,11 +167,11 @@ Fügen Sie den folgenden Code hinzu, um ein BLOB zu verschlüsseln und in Ihr Az
 		blob.UploadFromStream(stream, stream.Length, null, options, null);
 
 
-Unten sehen Sie einen Screenshot aus dem [klassischen Azure-Portal](manage.windowsazure.com) für ein Blob, das per clientseitiger Verschlüsselung mit einem im Schlüsseltresor gespeicherten Schlüssel verschlüsselt wurde. Die **KeyId**-Eigenschaft ist der URI für den Schlüssel im Schlüsseltresor, der als KEK fungiert. Die **EncryptedKey**-Eigenschaft enthält die verschlüsselte Version des CEK.
+Unten sehen Sie einen Screenshot aus dem [klassischen Azure-Portal](https://manage.windowsazure.com) für ein Blob, das per clientseitiger Verschlüsselung mit einem im Schlüsseltresor gespeicherten Schlüssel verschlüsselt wurde. Die **KeyId**-Eigenschaft ist der URI für den Schlüssel im Schlüsseltresor, der als KEK fungiert. Die **EncryptedKey**-Eigenschaft enthält die verschlüsselte Version des CEK.
 
 ![Screenshot mit Blob-Metadaten, die Verschlüsselungsmetadaten enthalten][1]
 
-> [AZURE.NOTE]Wenn Sie sich den BlobEncryptionPolicy-Konstruktor ansehen, wird Ihnen auffallen, dass dafür ein Schlüssel und/oder ein Konfliktlöser (Resolver) verwendet werden kann. Denken Sie daran, dass Sie an diesem Punkt keinen Konfliktlöser für die Verschlüsselung verwenden können, weil dafür derzeit kein Standardschlüssel unterstützt wird.
+> [AZURE.NOTE] Wenn Sie sich den BlobEncryptionPolicy-Konstruktor ansehen, wird Ihnen auffallen, dass dafür ein Schlüssel und/oder ein Konfliktlöser (Resolver) verwendet werden kann. Denken Sie daran, dass Sie an diesem Punkt keinen Konfliktlöser für die Verschlüsselung verwenden können, weil dafür derzeit kein Standardschlüssel unterstützt wird.
 
 
 
@@ -191,7 +191,7 @@ Fügen Sie Folgendes hinzu, um das Blob zu entschlüsseln, das Sie gerade hochge
 	    blob.DownloadToStream(np, null, options, null);
 
 
-> [AZURE.NOTE]Es sind einige andere Arten von Konfliktlösern (Resolvers) vorhanden, um die Schlüsselverwaltung zu vereinfachen, z. B. AggregateKeyResolver und CachingKeyResolver.
+> [AZURE.NOTE] Es sind einige andere Arten von Konfliktlösern (Resolvers) vorhanden, um die Schlüsselverwaltung zu vereinfachen, z. B. AggregateKeyResolver und CachingKeyResolver.
 
 
 ## Verwenden von geheimen Schlüsseltresor-Schlüsseln
@@ -235,4 +235,4 @@ Aktuelle Informationen zu Microsoft Azure Storage finden Sie im [Microsoft Azure
 <!--Image references-->
 [1]: ./media/storage-encrypt-decrypt-blobs-key-vault/blobmetadata.png
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

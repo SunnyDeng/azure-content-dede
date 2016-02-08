@@ -30,6 +30,8 @@ Data Factory unterstützt nur das Verschieben von Daten aus PostgreSQL in andere
 
 Damit sich das Datenverwaltungsgateway mit der PostgreSQL-Datenbank verbindet, müssen Sie den [Ngpsql-Datenanbieter für PostgreSQL](http://go.microsoft.com/fwlink/?linkid=282716) auf dem System mit dem Datenverwaltungsgateway installieren.
 
+> [AZURE.NOTE] Unter [Problembehandlung bei Gateways](data-factory-move-data-between-onprem-and-cloud.md#gateway-troubleshooting) finden Sie Tipps zur Behandlung von Verbindungs- bzw. Gatewayproblemen.
+
 ## Beispiel: Kopieren von Daten aus PostgreSQL in Azure-Blob
 
 Das nachstehende Beispiel zeigt Folgendes:
@@ -306,4 +308,4 @@ Text | | String
 
 [AZURE.INCLUDE [data-factory-type-repeatability-for-relational-sources](../../includes/data-factory-type-repeatability-for-relational-sources.md)]
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -24,7 +24,7 @@
 
 Wenn Sie auf eine Anwendung, die auf einem virtuellen Azure-Computer ausgeführt wird, nicht zugreifen können, finden Sie in diesem Artikel einen methodischen Ansatz zum Ermitteln der Ursache des Problems und zu seiner Behebung.
 
-> [AZURE.NOTE]Hilfeinformationen zum Herstellen einer Verbindung mit einem virtuellen Azure-Computer finden Sie unter [Problembehandlung bei Remotedesktopverbindungen mit einem Windows-basierten virtuellen Azure-Computer](virtual-machines-troubleshoot-remote-desktop-connections.md) oder [Behandeln von Problemen mit Secure Shell (SSH)-Verbindungen mit einem Linux-basierten virtuellen Azure-Computer](virtual-machines-troubleshoot-ssh-connections.md).
+> [AZURE.NOTE]  Hilfeinformationen zum Herstellen einer Verbindung mit einem virtuellen Azure-Computer finden Sie unter [Problembehandlung bei Remotedesktopverbindungen mit einem Windows-basierten virtuellen Azure-Computer](virtual-machines-troubleshoot-remote-desktop-connections.md) oder [Behandeln von Problemen mit Secure Shell (SSH)-Verbindungen mit einem Linux-basierten virtuellen Azure-Computer](virtual-machines-troubleshoot-ssh-connections.md).
 
 Die Problembehandlung beim Zugriff auf eine Anwendung, die auf einem virtuellen Azure-Computer ausgeführt wird, konzentriert sich auf vier Hauptbereiche.
 
@@ -116,8 +116,8 @@ Weitere Informationen finden Sie unter [Problembehandlung bei Endpunktverbindung
 
 Wenn Sie die obigen Schritte in diesem Artikel ausgeführt haben und zur Behebung des Problems weitere Hilfe benötigen, haben Sie folgende Möglichkeiten:
 
-- Lassen Sie sich von Azure-Experten auf der ganzen Welt weiterhelfen. Posten Sie Ihr Problem in den MSDN Azure- oder Stack Overflow-Foren. Weitere Informationen finden Sie unter [Microsoft Azure-Foren](http://azure.microsoft.com/support/forums/).
-- Erstellen Sie einen Azure-Supportfall. Klicken Sie auf der [Azure-Support-Website](http://azure.microsoft.com/support/options/) unter **Technischer und Abrechnungssupport** auf **Support erhalten**.
+- Lassen Sie sich von Azure-Experten auf der ganzen Welt weiterhelfen. Posten Sie Ihr Problem in den MSDN Azure- oder Stack Overflow-Foren. Weitere Informationen finden Sie unter [Microsoft Azure-Foren](https://azure.microsoft.com/support/forums/).
+- Erstellen Sie einen Azure-Supportfall. Klicken Sie auf der [Azure-Support-Website](https://azure.microsoft.com/support/options/) unter **Technischer und Abrechnungssupport** auf **Support erhalten**.
 
 ## Zusätzliche Ressourcen
 
@@ -125,4 +125,4 @@ Wenn Sie die obigen Schritte in diesem Artikel ausgeführt haben und zur Behebun
 
 [Behandeln von Problemen mit Secure Shell (SSH)-Verbindungen mit einem Linux-basierten virtuellen Azure-Computer](virtual-machines-troubleshoot-ssh-connections.md)
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0128_2016-->

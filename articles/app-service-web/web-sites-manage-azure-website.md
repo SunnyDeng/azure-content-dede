@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/28/2015" 
+	ms.date="01/12/2016" 
 	ms.author="erikre"/>
 
 # Verwalten einer Web-App in Azure App Service
@@ -65,7 +65,7 @@ Bei der Ausführung Ihrer Web-App müssen Sie sicherstellen, dass sie verfügbar
  
 ### Backups
 
-- Legen Sie [automatische Sicherungen](web-sites-backup.md) Ihrer Web-App fest. Erfahren Sie in [diesem Video](http://azure.microsoft.com/documentation/videos/azure-websites-automatic-and-easy-backup/) mehr über Backups.
+- Legen Sie [automatische Sicherungen](web-sites-backup.md) Ihrer Web-App fest. Erfahren Sie in [diesem Video](https://azure.microsoft.com/documentation/videos/azure-websites-automatic-and-easy-backup/) mehr über Backups.
 - Erfahren Sie mehr über die Optionen für die [Datenbankwiederherstellung](../sql-database-business-continuity.md) in der Azure SQL-Datenbank.
 
 ### Problembehandlung
@@ -103,4 +103,4 @@ Wenn Sie Visual Studio Team Services verwenden, können Sie die fortlaufende Ber
 
   
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

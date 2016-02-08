@@ -58,7 +58,7 @@ Authentication Mode | Yes | Geben Sie den Authentifizierungsmodus zum Verbinden 
 Benutzername | Nein | Geben Sie einen gültigen Benutzernamen zum Verbinden mit einer SharePoint-Website ein, wenn als Authentifizierungsmodus nicht "Standard" verwendet wird.
 Kennwort | Nein | Geben Sie ein gültiges Kennwort zum Verbinden mit einer SharePoint-Website ein, wenn als Authentifizierungsmodus nicht "Standard" verwendet wird.
 Relative URLs zur Dokumentbibliothek/Liste | Ja | Geben Sie die URLS von Dokumentbibliotheken/Listen relativ zur SharePoint-Website-URL ein, die vom Connector geändert werden dürfen. Geben Sie z. B. ein: *Listen/Aufgabe, Freigegebene Dokumente*.
-Service Bus-Verbindungszeichenfolge | Nein | Wenn Sie lokale eine Verbindung herstellen, geben Sie die Verbindungszeichenfolge von Service Bus Relay ein.<br/><br/>[Verwendung mit dem Hybrid Connection Manager](app-service-logic-hybrid-connection-manager.md)<br/>[Service Bus-Preise](http://azure.microsoft.com/pricing/details/service-bus/)
+Service Bus-Verbindungszeichenfolge | Nein | Wenn Sie lokale eine Verbindung herstellen, geben Sie die Verbindungszeichenfolge von Service Bus Relay ein.<br/><br/>[Verwendung mit dem Hybrid Connection Manager](app-service-logic-hybrid-connection-manager.md)<br/>[Service Bus-Preise](https://azure.microsoft.com/pricing/details/service-bus/)
 
 5. Nach Abschluss des Vorgangs sehen die Paketeinstellungen etwa wie folgt aus:  
 ![][2]
@@ -98,7 +98,7 @@ Sobald Ihre API-App erstellt wurde, können Sie jetzt den SharePoint-Connector a
 ##  Trigger
 Verwenden Sie Trigger, wenn Sie eine Logik-App starten möchten.
 
-> [AZURE.NOTE]Trigger löschen die Dateien nach dem Lesen. Um diese Dateien zu erhalten, geben Sie einen Wert für den Archivspeicherort ein.
+> [AZURE.NOTE] Trigger löschen die Dateien nach dem Lesen. Um diese Dateien zu erhalten, geben Sie einen Wert für den Archivspeicherort ein.
 
 ### 1\. Neues Dokument in freigegebenen Dokumenten (JSON)
 Dieser Trigger wird ausgelöst, wenn ein neues Dokument in "Freigegebene Dokumente" verfügbar ist.
@@ -456,7 +456,7 @@ Status | Eine erfolgreiche Ausführung der Aktion gibt den Statuscode 200 (OK) z
 
 ## Hybridkonfiguration (optional)
 
-> [AZURE.NOTE]Dieser Schritt ist nur bei lokaler Verwendung von SharePoint hinter Ihrer Firewall erforderlich.
+> [AZURE.NOTE] Dieser Schritt ist nur bei lokaler Verwendung von SharePoint hinter Ihrer Firewall erforderlich.
 
 App Service verwendet den Hybrid-Konfigurations-Manager, um sicher eine Verbindung auf Ihr lokales System herzustellen. Wenn Ihr Connector SharePoint Server lokal verwendet, ist der Hybrid Connection Manager erforderlich.
 
@@ -465,7 +465,7 @@ Informationen finden Sie unter [Hybrid Connection Manager konfigurieren](app-ser
 ## Mehr mit Ihrem Connector machen
 Nachdem der Connector nun erstellt ist, können Sie ihn mit Logik-App in einem Geschäftsworkflow hinzufügen. Informationen finden Sie unter [Was sind Logik-Apps?](app-service-logic-what-are-logic-apps.md).
 
->[AZURE.NOTE]Wenn Sie Azure Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [Logik-App testen](https://tryappservice.azure.com/?appservice=logic) sofort kostenlos eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure Logik-Apps ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [Logik-App testen](https://tryappservice.azure.com/?appservice=logic) sofort kostenlos eine kurzlebige Starter-Logik-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 Anzeigen der Swagger-REST-API-Referenz unter [Referenz zu Connectors und API-Apps](http://go.microsoft.com/fwlink/p/?LinkId=529766).
 
@@ -481,4 +481,4 @@ Sie können auch Leistungsstatistiken überprüfen und die Sicherheit zum Connec
 [6]: ./media/app-service-logic-connector-sharepoint/image_5.png
 [7]: ./media/app-service-logic-connector-sharepoint/image_6.png
 
-<!----HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

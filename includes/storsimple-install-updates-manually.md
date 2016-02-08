@@ -1,6 +1,6 @@
 <!--author=SharS last changed: 9/17/15-->
 
-#### So installieren Sie regelmäßige Updates im Verwaltungsportal
+#### Installieren regelmäßiger Updates im klassischen Azure-Portal
 
 1. Wählen Sie auf der Seite **Geräte** das Gerät aus, für das Sie Updates installieren möchten.
 
@@ -12,4 +12,4 @@
 
     Sie werden benachrichtigt, wenn das Update erfolgreich installiert wurde.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

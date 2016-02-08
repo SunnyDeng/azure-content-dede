@@ -71,7 +71,7 @@ Für den Zugriff auf Azure muss für Ihre App die INTERNET-Berechtigung aktivier
 
 In diesem Abschnitt wird ein Teil des Codes der Schnellstart-App erörtert. Wenn Sie das Schnellstarttutorial nicht absolviert haben, müssen Sie diesen Code Ihrer App hinzufügen.
 
-> [AZURE.NOTE]Die Zeichenfolge „MobileServices“ kommt im Code häufig vor: Tatsächlich verweist der Code auf das Mobile Apps-SDK ist, es ist nur eine temporäre Übernahme aus der Vergangenheit.
+> [AZURE.NOTE] Die Zeichenfolge „MobileServices“ kommt im Code häufig vor: Tatsächlich verweist der Code auf das Mobile Apps-SDK ist, es ist nur eine temporäre Übernahme aus der Vergangenheit.
 
 
 ###<a name="data-object"></a>Definieren von Clientdatenklassen
@@ -125,7 +125,7 @@ Der folgende Code erstellt das **MobileServiceClient**-Objekt, das für den Zugr
 				"MobileAppUrl", // Replace with the above Site URL
 				this)
 
-Ersetzen Sie in diesem Code `MobileAppUrl` durch die URL des Mobile App-Back-Ends. Sie finden die URL im [Azure-Portal](https://portal.azure.com) auf dem Blatt für das Mobile App-Back-End. Zum Kompilieren dieser Codezeile müssen Sie auch folgende **import**-Anweisung hinzufügen:
+Ersetzen Sie in diesem Code `MobileAppUrl` durch die URL des Mobile App-Back-Ends. Sie finden die URL im [Azure-Portal](https://portal.azure.com/) auf dem Blatt für das Mobile App-Back-End. Zum Kompilieren dieser Codezeile müssen Sie auch folgende **import**-Anweisung hinzufügen:
 
 	import com.microsoft.windowsazure.mobileservices.*;
 
@@ -602,9 +602,88 @@ Ein vollständiges Beispiel zum Zwischenspeichern von Authentifizierungstoken fi
 
 Wenn Sie versuchen, ein abgelaufenes Token zu verwenden, erhalten Sie die Antwort *401 nicht autorisiert*. Der Benutzer muss sich erneut anmelden, um ein neues Token zu erhalten. Um den Code zur Behandlung dieses Falls nicht an jeder Stelle in Ihrer App schreiben zu müssen, an der der mobile Dienst aufgerufen wird, können Sie Filter verwenden, mit denen Sie Aufrufe an und Antworten von Mobile Services abfangen können. Der Filtercode prüft Antworten auf 401, löst bei Bedarf den Anmeldeprozess aus und setzt anschließend die Anfrage fort, die den 401-Fehler ausgelöst hatte. Sie können auch das Token auf Ablauf überprüfen.
 
+
+## <a name="adal"></a>Gewusst wie: Authentifizieren von Benutzern mit der Active Directory-Authentifizierungsbibliothek
+
+Nutzen Sie die Active Directory-Authentifizierungsbibliothek (ADAL), um Benutzer mithilfe von Active Directory bei Ihrer Anwendung anzumelden. Dies wird aufgrund der besseren Bedienbarkeit und der Möglichkeit, zusätzliche Anpassungen vorzunehmen, den `loginAsync()`-Methoden häufig vorgezogen.
+
+1. Konfigurieren Sie Ihr mobiles App-Back-End für die einmalige AAD-Anmeldung, indem Sie die im Tutorial [So konfigurieren Sie Ihre App Service-Anwendung zur Verwendung der Azure Active Directory-Anmeldung](app-service-mobile-how-to-configure-active-directory-authentication.md) beschriebenen Schritte durchführen. Schließen Sie auch den optionalen Schritt zur Registrierung einer nativen Clientanwendung ab.
+
+2. Installieren Sie ADAL, indem Sie die Datei „build.gradle“ so ändern, dass sie Folgendes enthält:
+
+	repositories { mavenCentral() flatDir { dirs 'libs' } maven { url "YourLocalMavenRepoPath\\.m2\\repository" } } packagingOptions { exclude 'META-INF/MSFTSIG.RSA' exclude 'META-INF/MSFTSIG.SF' } dependencies { compile fileTree(dir: 'libs', include: ['*.jar']) compile('com.microsoft.aad:adal:1.1.1') { exclude group: 'com.android.support' } // Recent version is 1.1.1 compile 'com.android.support:support-v4:23.0.0' }
+
+3. Fügen Sie Ihrer Anwendung den folgenden Code hinzu, und nehmen Sie die folgenden Ersetzungen vor:
+
+* Ersetzen Sie **INSERT-AUTHORITY-HERE** durch den Namen des Mandanten, in dem Sie Ihre Anwendung bereitgestellt haben. Das Format sollte https://login.windows.net/contoso.onmicrosoft.com sein. Sie können diesen Wert auf der Registerkarte „Domäne“ in Ihrem Azure Active Directory im [klassischen Azure-Portal] kopieren.
+
+* Ersetzen Sie **INSERT-RESOURCE-ID-HERE** durch die Client-ID für Ihr mobiles App-Back-End. Sie finden diese auf der Registerkarte **Erweitert** unter **Azure Active Directory-Einstellungen** im Portal.
+
+* Ersetzen Sie **INSERT-CLIENT-ID-HERE** durch die Client-ID, die Sie aus der nativen Clientanwendung kopiert haben.
+
+* Ersetzen Sie **INSERT-REDIRECT-URI-HERE** durch den _/.auth/login/done_-Endpunkt Ihrer Website mittels des HTTPS-Schemas. Dieser Wert sollte etwa so aussehen: \__https://contoso.azurewebsites.net/.auth/login/done_.
+
+		private AuthenticationContext mContext;
+		private void authenticate() {
+		String authority = "INSERT-AUTHORITY-HERE";
+		String resourceId = "INSERT-RESOURCE-ID-HERE";
+		String clientId = "INSERT-CLIENT-ID-HERE";
+		String redirectUri = "INSERT-REDIRECT-URI-HERE";
+		try {
+		    mContext = new AuthenticationContext(this, authority, true);
+		    mContext.acquireToken(this, resourceId, clientId, redirectUri, PromptBehavior.Auto, "", callback);
+		} catch (Exception exc) {
+		    exc.printStackTrace();
+		}
+		}
+		private AuthenticationCallback<AuthenticationResult> callback = new AuthenticationCallback<AuthenticationResult>() {
+		@Override
+		public void onError(Exception exc) {
+		    if (exc instanceof AuthenticationException) {
+		        Log.d(TAG, "Cancelled");
+		    } else {
+		        Log.d(TAG, "Authentication error:" + exc.getMessage());
+		    }
+		}
+		@Override
+			public void onSuccess(AuthenticationResult result) {
+		    if (result == null || result.getAccessToken() == null
+		            || result.getAccessToken().isEmpty()) {
+		        Log.d(TAG, "Token is empty");
+		    } else {
+		        try {
+		            JSONObject payload = new JSONObject();
+		            payload.put("access_token", result.getAccessToken());
+		            ListenableFuture<MobileServiceUser> mLogin = mClient.login("aad", payload.toString());
+		            Futures.addCallback(mLogin, new FutureCallback<MobileServiceUser>() {
+		                @Override
+		                public void onFailure(Throwable exc) {
+		                    exc.printStackTrace();
+		                }
+		                @Override
+		                public void onSuccess(MobileServiceUser user) {
+		            		Log.d(TAG, "Login Complete");
+		                }
+		            });
+		        }
+		        catch (Exception exc){
+		            Log.d(TAG, "Authentication error:" + exc.getMessage());
+		        }
+		    }
+		}
+		};
+		@Override
+		protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		if (mContext != null) {
+		    mContext.onActivityResult(requestCode, resultCode, data);
+		}
+		}
+
+
 ## Hinzufügen von Pushbenachrichtigungen zur App
 
-Sie können [eine Übersicht lesen](notification-hubs-overview.md/#integration-with-app-service-mobile-apps), die beschreibt, wie Microsoft Azure Notification Hubs eine Vielzahl von Pushbenachrichtigungen unterstützt.
+Erfahren Sie in der [Übersicht](notification-hubs-overview.md/#integration-with-app-service-mobile-apps), wie Microsoft Azure Notification Hubs eine Vielzahl von Pushbenachrichtigungen unterstützt.
 
 In [diesem Tutorial](app-service-mobile-android-get-started-push.md) wird bei jedem Einfügen eines Datensatzes eine Pushbenachrichtigung gesendet.
 
@@ -679,7 +758,7 @@ Sie müssen die clientseitigen Namen zu JSON-Namen serialisieren, die den Spalte
 	@com.google.gson.annotations.SerializedName("duration")
 	private String mDuration;
 
-### <a name="table"></a>Zuordnen unterschiedlicher Tabellennamen zwischen Client und Back-End
+### <a name="table"></a>Gewusst wie: Zuordnen unterschiedlicher Tabellennamen zwischen Client und Back-End
 
 Die Zuordnung von Client-Tabellennamen zu anderen Tabellennamen im mobilen Dienst ist einfach. Verwenden Sie dazu eine der Überschreibungen der <a href="http://go.microsoft.com/fwlink/p/?LinkId=296840" target="_blank">getTable()</a>-Funktion, wie im folgenden Code gezeigt.
 
@@ -763,4 +842,4 @@ Sie können diese allgemeine Methode immer dann verwenden, wenn Sie mit komplexe
 [Get started with authentication]: app-service-mobile-android-get-started-users.md
 [Hinzufügen der Authentifizierung zu Ihrer Android-App]: app-service-mobile-android-get-started-users.md
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

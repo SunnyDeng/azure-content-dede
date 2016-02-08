@@ -32,7 +32,7 @@
 
 #### Was beinhalten die kostenpflichtigen Tarife?
 
-* Ein größeres [monatliches Datenkontingent](http://azure.microsoft.com/pricing/details/application-insights/).
+* Ein größeres [monatliches Datenkontingent](https://azure.microsoft.com/pricing/details/application-insights/).
 * Eine Option zur "Überschreitung", um weiterhin Daten zu sammeln, obwohl das monatliche Kontingent erreicht ist. Wenn Ihre Daten das Kontingent überschreiten, wird Ihnen die Nutzung pro MB berechnet.
 * [Fortlaufender Export](app-insights-export-telemetry.md)
 
@@ -155,7 +155,7 @@ Informationen hierzu finden Sie in den [Versionshinweisen](app-insights-release-
 #### Zuvor wurden Daten angezeigt, jetzt jedoch nicht mehr.
 
 * Überprüfen Sie den [Statusblog](http://blogs.msdn.com/b/applicationinsights-status/).
-* Ist Ihr monatliches Kontingent an Datenpunkten erreicht? Öffnen Sie "Einstellungen – Kontingente und Preisübersicht", um es herauszufinden. Wenn dies der Fall ist, können Sie Ihren Plan aktualisieren oder zusätzliche Kapazität erwerben. Informationen hierzu finden Sie in der [Preisübersicht](http://azure.microsoft.com/pricing/details/application-insights/).
+* Ist Ihr monatliches Kontingent an Datenpunkten erreicht? Öffnen Sie "Einstellungen – Kontingente und Preisübersicht", um es herauszufinden. Wenn dies der Fall ist, können Sie Ihren Plan aktualisieren oder zusätzliche Kapazität erwerben. Informationen hierzu finden Sie in der [Preisübersicht](https://azure.microsoft.com/pricing/details/application-insights/).
 
 
 #### Nicht alle Daten werden erwartungsgemäß angezeigt.
@@ -252,4 +252,4 @@ Sie können ein [PowerShell-Skript schreiben](app-insights-powershell-script-cre
 
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

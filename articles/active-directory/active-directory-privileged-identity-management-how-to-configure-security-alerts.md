@@ -3,7 +3,7 @@
    description="Erfahren Sie, wie Sie Sicherheitswarnungen für die Erweiterung Azure Privileged Identity Management konfigurieren."
    services="active-directory"
    documentationCenter=""
-   authors="IHenkel"
+   authors="kgremban"
    manager="stevenpo"
    editor=""/>
 
@@ -13,12 +13,13 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="09/21/2015"
+   ms.date="01/21/2016"
    ms.author="inhenk"/>
 
 # Azure Privileged Identity Management: Konfigurieren von Sicherheitswarnungen
+
 ## Übersicht über Sicherheitswarnungen
-Azure Privileged Identity Management bietet die folgenden konfigurierbaren Warnungen. Sicherheitswarnungen können im Abschnitt "Warnungen" des PIM-Dashboards angezeigt werden.
+Azure Privileged Identity Management (PIM) bietet die folgenden konfigurierbaren Warnungen. Sicherheitswarnungen können im Abschnitt „Warnungen“ des PIM-Dashboards angezeigt werden.
 
 | Warnung | Trigger |
 | ------------- | ------------- |
@@ -31,20 +32,20 @@ Azure Privileged Identity Management bietet die folgenden konfigurierbaren Warnu
 
 ## Konfigurieren von Sicherheitswarnungen
 
-### Konfigurieren der Warnung "Verdächtige Aktivierungserneuerung privilegierter Rollen"
+### Konfigurieren der Warnung „Verdächtige Aktivierungserneuerung privilegierter Rollen“
 1. Wählen Sie im Abschnitt **Aktivität** des Dashboards **Sicherheitswarnungen** aus. Das Blatt **Aktive Sicherheitswarnungen** wird angezeigt.
 2. Klicken Sie auf **Einstellungen**.
 3. Legen Sie den **Zeitrahmen für Aktivierungserneuerung** mit dem Schieberegler oder durch Eingabe der Anzahl von Minuten im Textfeld fest. Die maximal zulässige Anzahl beträgt 100 Minuten.
 4. Legen Sie die **Anzahl der Aktivierungserneuerungen** im Zeitrahmen fest. Verwenden Sie hierzu den Schieberegler, oder geben Sie im Textfeld die Anzahl der Erneuerungen ein. Die maximale Anzahl von Erneuerungen beträgt 100.
 5. Klicken Sie auf **Speichern**.
 
-### Konfigurieren der Warnung "Redundante Administratoren vergrößern die Angriffsfläche"
+### Konfigurieren der Warnung „Redundante Administratoren vergrößern die Angriffsfläche“
 1. Wählen Sie im Abschnitt **Aktivität** des Dashboards **Sicherheitswarnungen** aus. Das Blatt **Aktive Sicherheitswarnungen** wird angezeigt.
 2. Klicken Sie auf **Einstellungen**.
 3. Wählen Sie die zulässige Anzahl von Tagen ohne Rollenaktivierung aus, indem Sie den Schieberegler einstellen oder im Textfeld die Anzahl der Tage eingeben.
 4. Klicken Sie auf **Speichern**.
 
-### Konfigurieren der Warnung "Eine zu hohe Anzahl von Administratoren vergrößert die Angriffsfläche"
+### Konfigurieren der Warnung „Eine zu hohe Anzahl von Administratoren vergrößert die Angriffsfläche“
 
 Diese Warnung weist zwei Einstellungen auf, die die Warnung auslösen können. "Minimale Anzahl globaler Administratoren" löst die Warnung aus, wenn die zulässige Anzahl von Administratoren überschritten wird. Die Warnung wird auch ausgelöst, wenn der prozentuale Anteil globaler Administratoren an allen Typen von Administratoren höher als der Prozentsatz in den Einstellungen ist.
 
@@ -52,9 +53,10 @@ Diese Warnung weist zwei Einstellungen auf, die die Warnung auslösen können. "
 2. Klicken Sie auf **Einstellungen**.
 3. Legen Sie die **Minimale Anzahl globaler Administratoren** fest, indem Sie den Schieberegler einstellen oder im Textfeld die Zahl eingeben.
 4. Legen Sie den **Prozentsatz globaler Administratoren** fest, indem Sie den Schieberegler einstellen oder im Textfeld die Zahl eingeben.
+5. Klicken Sie auf **Speichern**.
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## Nächste Schritte
 [AZURE.INCLUDE [active-directory-privileged-identity-management-toc](../../includes/active-directory-privileged-identity-management-toc.md)]
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

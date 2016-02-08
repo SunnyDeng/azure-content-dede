@@ -29,7 +29,7 @@ Sie können sofort ohne zusätzlichen Aufwand eine Verbindung mit dem virtuellen
 
 ## Anmelden beim Portal
 
-Dieser Teil ist leicht, sofern Sie über ein Azure-Konto verfügen. [Sie erhalten dieses auf einfache Weise kostenlos](http://azure.microsoft.com/pricing/free-trial/)!
+Dieser Teil ist leicht, sofern Sie über ein Azure-Konto verfügen. [Sie erhalten dieses auf einfache Weise kostenlos](https://azure.microsoft.com/pricing/free-trial/)!
 
 ## Erstellen eines virtuellen Computers mit dem Docker-Image von Canonical und MSOpenTech
 
@@ -78,4 +78,4 @@ Sie könnten mit der Verwendung von [Docker] beginnen!
 [MSOpenTech]: http://msopentech.com/
  
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

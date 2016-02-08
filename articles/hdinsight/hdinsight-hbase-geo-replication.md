@@ -46,9 +46,9 @@ Das folgende Diagramm veranschaulicht die beiden virtuellen Netzwerke und die Ne
 
 Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
-- **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
+- **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 
-- **Eine Arbeitsstation mit Azure PowerShell**. Siehe [Installieren und Verwenden von Azure PowerShell](http://azure.microsoft.com/documentation/videos/install-and-use-azure-powershell/). Um PowerShell-Skripts ausführen zu können, müssen Sie Azure PowerShell als Administrator ausführen und die Ausführungsrichtlinie auf *RemoteSigned* setzen. Siehe Verwenden des Cmdlet "Set-ExecutionPolicy".
+- **Eine Arbeitsstation mit Azure PowerShell**. Siehe [Installieren und Verwenden von Azure PowerShell](https://azure.microsoft.com/documentation/videos/install-and-use-azure-powershell/). Um PowerShell-Skripts ausführen zu können, müssen Sie Azure PowerShell als Administrator ausführen und die Ausführungsrichtlinie auf *RemoteSigned* setzen. Siehe Verwenden des Cmdlet "Set-ExecutionPolicy".
 
 - **Zwei virtuelle Netzwerke in Azure mit VPN-Konnektivität und konfiguriertem DNS**. Anweisungen hierzu finden Sie unter [Konfigurieren einer VPN-Verbindung zwischen zwei virtuellen Netzwerken in Azure][hdinsight-hbase-replication-vnet] und [Konfigurieren von DNS zwischen zwei virtuellen Netzwerken in Azure][hdinsight-hbase-replication-dns].
 
@@ -192,7 +192,7 @@ Um bedingte Weiterleitung zu konfigurieren, müssen Sie die Domänenendungen der
 4. Schließen Sie die RDP-Sitzung nicht. Sie benötigen sie später im Lernprogramm.
 5. Wiederholen Sie dieselben Schritte, um headnode0 der Contoso-HBase-EU von Contoso-HBase-US zu pingen.
 
->[AZURE.IMPORTANT]DNS muss funktionieren, bevor Sie mit den nächsten Schritten fortfahren können.
+>[AZURE.IMPORTANT] DNS muss funktionieren, bevor Sie mit den nächsten Schritten fortfahren können.
 
 ## Aktivieren der Replikation zwischen HBase-Tabellen
 
@@ -285,8 +285,8 @@ Sie können überprüfen, ob die Replikation erfolgt, indem Sie die Tabellen aus
 
 In diesem Lernprogramm haben Sie gelernt, HBase-Replikation über zwei Rechenzentren zu konfigurieren. Weitere Informationen zu HDInsight und HBase finden Sie unter:
 
-- [HDInsight Serviceseite](http://azure.microsoft.com/services/hdinsight/)
-- [HDInsight-Dokumentation](http://azure.microsoft.com/documentation/services/hdinsight/)
+- [HDInsight Serviceseite](https://azure.microsoft.com/services/hdinsight/)
+- [HDInsight-Dokumentation](https://azure.microsoft.com/documentation/services/hdinsight/)
 - [Erste Schritte mit Apache HBase in HDInsight][hdinsight-hbase-get-started]
 - [Überblick HDInsight HBase][hdinsight-hbase-overview]
 - [Bereitstellen von HBase-Clustern im virtuellen Azure-Netzwerk][hdinsight-hbase-provision-vnet]
@@ -311,4 +311,4 @@ In diesem Lernprogramm haben Sie gelernt, HBase-Replikation über zwei Rechenzen
 [hdinsight-hbase-provision-vnet]: hdinsight-hbase-provision-vnet.md
 [hdinsight-hbase-get-started]: ../hdinsight-hbase-get-started.md
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

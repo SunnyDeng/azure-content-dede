@@ -123,7 +123,7 @@ Wenn Ihr Open-Source-Framework in App Service nicht unterstützt wird, ist eine 
 
 ### <a id="lob"></a>Ich verfüge über eine Branchenanwendung, die mit dem Unternehmensnetzwerk verbunden sein muss.
 
-Wenn Sie eine Branchenanwendung erstellen möchten, benötigt Ihre Website möglicherweise direkten Zugriff auf Dienste oder Daten in Ihrem Unternehmensnetzwerk. Dies ist in App Service, Cloud Services und Virtual Machines über den [Azure Virtual Network-Dienst](/services/virtual-network/) möglich. In App Service können Sie mithilfe der [VNET-Integrationsfunktion](http://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/) eine Azure-Anwendung so ausführen, als befände sie sich in Ihrem Unternehmensnetzwerk.
+Wenn Sie eine Branchenanwendung erstellen möchten, benötigt Ihre Website möglicherweise direkten Zugriff auf Dienste oder Daten in Ihrem Unternehmensnetzwerk. Dies ist in App Service, Cloud Services und Virtual Machines über den [Azure Virtual Network-Dienst](/services/virtual-network/) möglich. In App Service können Sie mithilfe der [VNET-Integrationsfunktion](https://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/) eine Azure-Anwendung so ausführen, als befände sie sich in Ihrem Unternehmensnetzwerk.
 
 ### <a id="mobile"></a>Ich möchte eine REST-API oder einen Webdienst für mobile Clients hosten.
 
@@ -170,7 +170,8 @@ Möglichkeit zum Definieren/Ausführen von Startaufgaben||X|X|
 Kann ETW-Ereignisse abhören||X|X|
 
 
-> [AZURE.NOTE]Wenn Sie Wenn Sie Azure Website ausprobieren möchten, ehe Sie sich für ein Konto anmelden, besuchen Sie <a href="https://trywebsites.azurewebsites.net/">https://trywebsites.azurewebsites.net</a>, wo Sie sofort kostenlos eine kurzlebige ASP.NET-Starter-App in Azure App Service erstellen können. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+> [AZURE.NOTE]
+Wenn Sie Wenn Sie Azure Website ausprobieren möchten, ehe Sie sich für ein Konto anmelden, besuchen Sie <a href="https://trywebsites.azurewebsites.net/">https://trywebsites.azurewebsites.net</a>, wo Sie sofort kostenlos eine kurzlebige ASP.NET-Starter-App in Azure App Service erstellen können. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 
 ## <a id="nextsteps"></a> Nächste Schritte
@@ -204,4 +205,4 @@ Informationen zum Einstieg in die gewählte(n) Optionen für Ihre Anwendungen fi
   [Storage]: http://www.windowsazure.com/documentation/services/storage/
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

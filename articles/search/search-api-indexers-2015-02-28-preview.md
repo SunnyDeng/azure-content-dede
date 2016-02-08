@@ -17,7 +17,7 @@ ms.author="heidist" />
 
 #Indexer-Vorgänge (REST-API für Azure Search-Dienst: 2015-02-28-Preview)#
 
-> [AZURE.NOTE]Dieser Artikel beschreibt die Indexer in Version [2015-02-28-Preview](./search-api-2015-02-28-preview). Derzeit besteht kein Unterschied zwischen der `2015-02-28`-Version, die auf [MSDN](http://go.mirosoft.com/fwlink/p/?LinkID=528173) dokumentiert ist, und der hier beschriebenen `2015-02-28-Preview`-Version. Dieser Artikel ist hier enthalten, um eine vollständige Dokumentation für `2015-02-28-Preview` bereitzustellen. Die API selbst wurde jedoch nicht geändert.
+> [AZURE.NOTE] Dieser Artikel beschreibt die Indexer in Version [2015-02-28-Preview](./search-api-2015-02-28-preview). Derzeit besteht kein Unterschied zwischen der `2015-02-28`-Version, die auf [MSDN](http://go.mirosoft.com/fwlink/p/?LinkID=528173) dokumentiert ist, und der hier beschriebenen `2015-02-28-Preview`-Version. Dieser Artikel ist hier enthalten, um eine vollständige Dokumentation für `2015-02-28-Preview` bereitzustellen. Die API selbst wurde jedoch nicht geändert.
 
 ## Übersicht ##
 
@@ -38,7 +38,7 @@ Die folgenden Datenquellen werden derzeit unterstützt:
 - Azure SQL-Datenbank und SQL Server in Azure VMs
 - Azure DocumentDB 
 
-Unterstützung für zusätzliche Datenquellen ist für einen späteren Zeitpunkt geplant. Damit wir unsere Entscheidungen besser priorisieren können, lassen Sie uns im [Feedback-Forum für Azure Search](http://feedback.azure.com/forums/263029-azure-search) Ihr Feedback zukommen.
+Unterstützung für zusätzliche Datenquellen ist für einen späteren Zeitpunkt geplant. Damit wir unsere Entscheidungen besser priorisieren können, lassen Sie uns im [Feedback-Forum für Azure Search](https://feedback.azure.com/forums/263029-azure-search/) Ihr Feedback zukommen.
 
 Informationen zu maximalen Grenzwerten mit Bezug auf Indexer- und Datenquellenressourcen finden Sie unter [Grenzwerte](search-limits-quotas-capacity.md).
 
@@ -776,4 +776,4 @@ Statuscode "204 Kein Inhalt" bei erfolgreicher Antwort.
 </tr>
 </table>
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

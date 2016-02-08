@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="08/26/2015"
+   ms.date="01/20/2016"
    ms.author="aprameyr"/>
 
 # Verfügbarkeit der Service Fabric-Dienste
@@ -38,7 +38,7 @@ Dieses Konzept, bei dem ein Replikat ein primäres oder ein aktives sekundäres 
 ### Replikatrollen
 Die Rolle eines Replikats wird zum Verwalten des Lebenszyklus des Zustands verwendet, der von diesem Replikat verwaltet wird. Ein Replikat mit der Rolle eines primären Replikats verarbeitet Leseanforderungen. Es verarbeitet auch Schreibanforderungen, indem es seinen Zustand aktualisiert und die Änderungen in den aktiven sekundären Replikaten in der Replikatgruppe repliziert. Die Rolle eines aktiven sekundären Replikats ist es, die vom primären Replikat replizierten Zustandsänderungen zu empfangen und den eigenen Zustand entsprechend zu aktualisieren.
 
->[AZURE.NOTE]In komplexen Programmiermodellen, wie z. B. im [Reliable Actors-Framework](service-fabric-reliable-actors-introduction.md), ist das Konzept der Replikatrolle für Entwickler abstrahiert.
+>[AZURE.NOTE] In komplexen Programmiermodellen, wie z. B. im [Reliable Actors-Framework](service-fabric-reliable-actors-introduction.md), ist das Konzept der Replikatrolle für Entwickler abstrahiert.
 
 ## Nächste Schritte
 
@@ -50,4 +50,4 @@ Weitere Informationen zu den Service Fabric-Konzepten finden Sie hier:
 
 - [Definieren und Verwalten von Zuständen](service-fabric-concepts-state.md)
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

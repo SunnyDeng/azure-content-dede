@@ -12,7 +12,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="12/05/2015"
+    ms.date="01/21/2016"
     ms.author="elizapo" />
 
 # Verwenden von Umleitungen in Azure RemoteApp
@@ -67,13 +67,13 @@ Verwenden Sie das folgende Cmdlet, um die gemeinsame Verwendung der Zwischenabla
 
 	Set-AzureRemoteAppCollection -CollectionName <collection name>  -CustomRdpProperty "redirectclipboard:i:0”
 
-> [AZURE.IMPORTANT]Stellen Sie vor dem Testen der Änderung sicher, dass alle Benutzer in der Sammlung nicht nur getrennt, sondern vollständig abgemeldet sind. Navigieren Sie hierzu in der Sammlung im Azure-Portal zur Registerkarte **Sitzungen**, und melden Sie alle getrennten oder angemeldeten Benutzer ab. Manchmal dauert es etwas, bis die lokalen Laufwerke im Rahmen der Sitzung im Explorer angezeigt werden.
+> [AZURE.IMPORTANT] Stellen Sie vor dem Testen der Änderung sicher, dass alle Benutzer in der Sammlung nicht nur getrennt, sondern vollständig abgemeldet sind. Navigieren Sie hierzu in der Sammlung im Azure-Portal zur Registerkarte **Sitzungen**, und melden Sie alle getrennten oder angemeldeten Benutzer ab. Manchmal dauert es etwas, bis die lokalen Laufwerke im Rahmen der Sitzung im Explorer angezeigt werden.
 
 ## Ändern der USB-Umleitungseinstellungen in Ihrem Windows-Client
 
 Wenn Sie die USB-Umleitung auf einem mit RemoteApp verbundenen Computer verwenden möchten, müssen zwei Voraussetzungen erfüllt werden: 1. Der Administrator muss mithilfe von Azure PowerShell die USB-Umleitung auf Sammlungsebene aktivieren. 2. Sie müssen auf jedem Gerät, auf dem Sie die USB-Umleitung verwenden möchten, eine Gruppenrichtlinie aktivieren, die die Umleitung zulässt. Dieser Schritt muss für jeden Benutzer ausgeführt werden, der die USB-Umleitung verwenden möchte.
 
-> [AZURE.NOTE]Die USB-Umleitung mit Azure RemoteApp wird nur für Windows-Computer unterstützt.
+> [AZURE.NOTE] Die USB-Umleitung mit Azure RemoteApp wird nur für Windows-Computer unterstützt.
 
 ### Aktivieren der USB-Umleitung für die RemoteApp-Sammlung
 Verwenden Sie das folgende Cmdlet, um die USB-Umleitung auf Sammlungsebene zu aktivieren:
@@ -104,4 +104,4 @@ Sie können auch das Gruppenrichtlinienverwaltungstool verwenden, um die USB-Uml
 7. Wählen Sie **Aktiviert** und anschließend unter **Zugriffsrechte für RemoteFX USB-Umleitung** die Option für Administratoren und Benutzer aus.
 8. Klicken Sie auf **OK**.  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

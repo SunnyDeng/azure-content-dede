@@ -3,7 +3,7 @@
 	description="Arbeiten mit unterschiedlichen Ressourcentypen bei der rollenbasierten Zugriffssteuerung."
 	services="azure-portal"
 	documentationCenter="na"
-	authors="IHenkel"
+	authors="kgremban"
 	manager="stevenpo"
 	editor=""/>
 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/04/2016"
-	ms.author="inhenk"/>
+	ms.date="01/25/2016"
+	ms.author="kgremban"/>
 
 # Behandlung von Problemen bei der rollenbasierten Zugriffssteuerung
 
@@ -22,18 +22,22 @@
 
 Die [rollenbasierte Zugriffssteuerung](../role-based-access-control-configure.md) ist eine leistungsstarke Funktion, mit der Sie Zugriffsberechtigungen für Azure-Ressourcen differenziert steuern können. Gewähren Sie einem bestimmten Benutzer einfach und sicher Zugriff auf genau die Ressourcen, die er benötigt. In einigen Fällen kann das Ressourcen-Modell für Azure-Ressourcen jedoch kompliziert sein, und es ist nicht immer leicht ersichtlich, wofür Sie Berechtigungen vergeben.
 
-In diesem Dokument erhalten Sie ausführliche Informationen über die Nutzung einiger der Rollen im klassischen Azure-Portal. Es sind drei allgemeine Rollen enthalten, die alle Ressourcentypen abdecken: * Owner * Contributor * Reader
+In diesem Dokument erhalten Sie ausführliche Informationen über die Nutzung einiger der Rollen im Azure-Portal. Es sind drei allgemeine Rollen enthalten, die alle Ressourcentypen abdecken:
 
-Besitzer und Mitwirkende haben Vollzugriff auf alle Verwaltungsfunktionen, mit dem Unterschied, dass Mitwirkende anderen Benutzern oder Gruppen keinen Zugriff gewähren können. Die Leserolle werden wir aufgrund ihrer umfassenden Eigenschaften ausführlicher beschreiben. [In diesem Artikel](../role-based-access-control-configure.md) finden Sie genaue Informationen zum Gewähren von Zugriffen.
+- Besitzer  
+- Mitwirkender  
+- Leser  
+
+Sowohl Besitzer als auch Mitwirkende haben Vollzugriff auf alle Verwaltungsfunktionen, Mitwirkende können jedoch anderen Benutzern oder Gruppen keinen Zugriff gewähren. Die Leserolle werden wir aufgrund ihrer umfassenden Eigenschaften ausführlicher beschreiben. Ausführliche Informationen zum Gewähren von Zugriff finden Sie im Artikel zu den ersten Schritten mit der [rollenbasierten Zugriffssteuerung](../role-based-access-control-configure.md).
 
 ## App Service-Workloads
 
-### Nur Lesezugriff
+### Schreibzugriff
 
-Wenn Sie selbst nur über Lesezugriff auf eine Web-App verfügen oder einem Benutzer nur Lesezugriff auf eine Web-App gewähren, sind eventuell einige Funktionen für Sie unerwartet deaktiviert. Die folgenden Verwaltungsfunktionen erfordern **Schreibzugriff** auf eine Web-App (entweder als Mitwirkender oder Besitzer) und stehen nicht zur Verfügung, wenn der Benutzer nur über Lesezugriff für die Web-App verfügt.
+Wenn Sie einem Benutzer schreibgeschützten Zugriff für eine einzelne Web-App gewähren, sind einige Features deaktiviert, von denen Sie das unter Umständen nicht erwartet haben. Die folgenden Verwaltungsfunktionen erfordern **Schreibzugriff** auf eine Web-App (entweder als Mitwirkender oder Besitzer) und stehen nicht zur Verfügung, wenn der Benutzer nur über Lesezugriff für die Web-App verfügt.
 
 1. Befehle (z. B. starten, anhalten)
-2. Änderung von Einstellungen, wie allgemeine Konfigurationen, Skalierungseinstellungen, Sicherungseinstellungen und Überwachungseinstellungen
+2. Änderung von Einstellungen wie allgemeine Konfigurationen, Skalierungseinstellungen, Sicherungseinstellungen und Überwachungseinstellungen
 3. Zugriff auf Anmeldedaten für die Veröffentlichung oder andere geheime Schlüssel wie App- und Verbindungseinstellungen
 4. Streamingprotokolle
 5. Konfiguration von Diagnoseprotokollen
@@ -43,7 +47,7 @@ Wenn Sie selbst nur über Lesezugriff auf eine Web-App verfügen oder einem Benu
 9. Webtests
 10. Virtuelles Netzwerk (für Leser nur sichtbar, wenn ein virtuelles Netzwerk zuvor von einem Benutzer mit Schreibzugriff konfiguriert wurde)
 
-Wenn Sie auf keine dieser Kacheln zugreifen können, benötigen Sie Zugriff als Mitwirkender auf diese Web-App.
+Wenn Sie auf keine dieser Kacheln zugreifen können, fragen Sie den Administrator nach Zugriff als Mitwirkender auf die Web-App.
 
 ### Umgang mit zugehörigen Ressourcen
 
@@ -68,18 +72,24 @@ Wenn Sie daher lediglich auf die Website Zugriff gewähren, sind viele Funktione
 
 Ähnlich wie bei Web-Apps erfordern einige Funktionen auf dem Blatt "Virtueller Computer" Schreibzugriff auf den virtuellen Computer oder auf andere Ressourcen in der Ressourcengruppe.
 
-Für virtuelle Computer gibt es diese verwandten Ressourcen: Domänennamen, virtuelle Netzwerke, Speicherkonten und Warnungsregeln
+Virtuelle Computer verfügen über folgende zugehörige Ressourcen:
+
+- Domänennamen
+- Virtuelle Netzwerke
+- Speicherkonten
+- Warnregeln
+
 
 1. Die folgenden Elemente erfordern **Schreibzugriff** auf den virtuellen Computer:  
     * Endpunkte
     * IP-Adressen
     * Datenträger
     * Erweiterungen
-2. Die folgenden Elemente erfordern Schreibzugriff auf den virtuellen Computer und die **Ressourcengruppe** (zusammen mit dem Domänennamen), in der sich der virtuelle Computer befindet:  
+2. Die folgenden Elemente erfordern **Schreibzugriff** auf die virtuelle Maschine und die **Ressourcengruppe** (zusammen mit dem Domänennamen), in der sich die virtuelle Maschine befindet:  
     * Verfügbarkeitsgruppe
     * Satz mit Lastenausgleich
     * Warnungsregeln
 
 Wenn Sie auf keine dieser Kacheln zugreifen können, fragen Sie den Administrator nach Zugriff als Mitwirkender auf diese Ressourcengruppe.
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

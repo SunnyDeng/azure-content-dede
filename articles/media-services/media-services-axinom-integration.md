@@ -209,4 +209,4 @@ Inhaltsschlüssel-ID|Muss als Teil des Werts des Anspruchs "entitlement\_message
 
 Wir möchten folgenden Personen für ihre Beiträge zur Erstellung dieses Dokuments danken: Kristjan Jõgi von Axinom, Mingfei Yan und Amit Rajput.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

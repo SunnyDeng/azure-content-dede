@@ -46,7 +46,7 @@ In der folgenden Tabelle sind die wichtigsten Cmdlets in Azure Scheduler beschri
 
  [Pläne und Abrechnung in Azure Scheduler](scheduler-plans-billing.md)
 
- [Azure Scheduler-REST-API – Referenz](https://msdn.microsoft.com/library/dn528946)
+ [Azure Scheduler-REST-API – Referenz](https://msdn.microsoft.com/library/mt629143)
 
  [Hochverfügbarkeit und Zuverlässigkeit von Azure Scheduler](scheduler-high-availability-reliability.md)
 
@@ -59,4 +59,4 @@ In der folgenden Tabelle sind die wichtigsten Cmdlets in Azure Scheduler beschri
 
   
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

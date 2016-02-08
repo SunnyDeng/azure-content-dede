@@ -40,7 +40,7 @@ Entwicklung und Auswahl bilden den Schritt der **Datenaufbereitung** beim maschi
 * **Featureentwicklung**: Bei diesem Prozess wird versucht, zusätzliche relevante Features aus den vorhandenen Rohfeatures in den Daten zu erstellen und die Vorhersageleistung des Lernalgorithmus zu steigern.
 * **Featureauswahl**: Dieser Prozess wählt bei dem Versuch, die Anzahl von Dimensionen des Trainingsproblems zu verringern, die wichtigste Teilmenge der ursprünglichen Datenfeatures aus.
 
-In diesem Thema werden nur die Aspekte Entwicklung und Auswahl von Features des Datenaufbereitungsprozesses behandelt. Weitere Informationen zur Vorbearbeitung von Daten finden Sie im Video [Vorbearbeitung von Daten in Azure ML Studio](http://azure.microsoft.com/documentation/videos/preprocessing-data-in-azure-ml-studio/).
+In diesem Thema werden nur die Aspekte Entwicklung und Auswahl von Features des Datenaufbereitungsprozesses behandelt. Weitere Informationen zur Vorbearbeitung von Daten finden Sie im Video [Vorbearbeitung von Daten in Azure ML Studio](https://azure.microsoft.com/documentation/videos/preprocessing-data-in-azure-ml-studio/).
 
 
 ## Erstellen von Features aus Ihren Daten – Featureentwicklung
@@ -75,7 +75,7 @@ Der Vergleich der Leistungsergebnisse der vier Modelle ist in der folgenden Tabe
 
 ![Ergebnisvergleich](./media/machine-learning-feature-selection-and-engineering/result1.png)
 
-### <a name="example2"></a> Beispiel 2: Erstellen von Features beim Text Mining  
+### <a name="example2"></a> Beispiel 2: Erstellen von Features beim Text Mining  
 
 Die Featureentwicklung wird häufig in Aufgaben verwendet, die mit Text Mining im Zusammenhang stehen, z. B. Dokumentklassifizierung und Stimmungsanalyse. Wenn z. B. Dokumente in verschiedene Kategorien klassifiziert werden sollen, ist eine typische Annahme, dass die in der einen Dokumentkategorie enthaltenen Wörter/Ausdrücke mit geringerer Wahrscheinlichkeit in der anderen Dokumentkategorie auftreten. Anders ausgedrückt, kann die Häufigkeit der Verteilung von Wörtern und Ausdrücken verschiedene Dokumenttypen charakterisieren. In Text Mining-Anwendungen, bei denen einzelne Teile des Textinhalts in der Regel als Eingabedaten dienen, ist der Featureentwicklungsprozess erforderlich, um Features in Zusammenhang mit Häufigkeiten von Wörtern/Ausdrücken zu erstellen.
 
@@ -109,7 +109,7 @@ Azure Machine Learning Studio enthält Module zur Featureauswahl. Wie in der fol
 ![Beispiel für Featureauswahl](./media/machine-learning-feature-selection-and-engineering/feature-Selection.png)
 
 
-Betrachten Sie beispielsweise die Verwendung des Moduls [Filter-Based Feature Selection][filter-based-feature-selection]. Der Einfachheit halber wird weiterhin das oben beschriebene Text Mining-Beispiel verwendet. Es wird vorausgesetzt, dass ein Regressionsmodell erstellt werden soll, nachdem ein Satz von 256 Features über das [Feature Hashing][feature-hashing]-Modul erstellt wurde, dass die Antwortvariable "Col1" ist und eine Buchbewertung mit Bewertungen im Bereich von 1 bis 5 darstellt. Setzen Sie die "Feature scoring method" (Featurebewertungsmethode) auf "Pearson Correlation" (Pearson-Korrelation), die "Target Column" (Zielspalte) auf "Col1" und die "Number of desired features" (Anzahl von gewünschten Features) auf 50. Dann erzeugt das Modul [Filter-Based Feature Selection][filter-based-feature-selection] ein Dataset mit 50 Features mit dem Zieltattribut "Col1". Die folgende Abbildung zeigt den Ablauf dieses Experiments und die oben beschriebenen Eingabeparameter.
+Betrachten Sie beispielsweise die Verwendung des Moduls [Filter-Based Feature Selection][filter-based-feature-selection]. Der Einfachheit halber wird weiterhin das oben beschriebene Text Mining-Beispiel verwendet. Es wird vorausgesetzt, dass ein Regressionsmodell erstellt werden soll, nachdem ein Satz von 256 Features über das [Feature Hashing][feature-hashing]-Modul erstellt wurde, dass die Antwortvariable "Col1" ist und eine Buchbewertung mit Bewertungen im Bereich von 1 bis 5 darstellt. Setzen Sie die "Feature scoring method" (Featurebewertungsmethode) auf "Pearson Correlation" (Pearson-Korrelation), die "Target Column" (Zielspalte) auf "Col1" und die "Number of desired features" (Anzahl von gewünschten Features) auf 50. Dann erzeugt das Modul [Filter-Based Feature Selection][filter-based-feature-selection] ein DataSet mit 50 Features mit dem Zieltattribut "Col1". Die folgende Abbildung zeigt den Ablauf dieses Experiments und die oben beschriebenen Eingabeparameter.
 
 ![Beispiel für Featureauswahl](./media/machine-learning-feature-selection-and-engineering/feature-Selection1.png)
 
@@ -121,7 +121,7 @@ Die entsprechenden Ergebnisse der ausgewählten Features sind in der folgenden A
 
 ![Beispiel für Featureauswahl](./media/machine-learning-feature-selection-and-engineering/feature-Selection3.png)
 
-Durch Anwenden dieses Moduls [Filter-Based Feature Selection][filter-based-feature-selection] werden 50 von 256 Features ausgewählt, da sie die am meisten korrelierten Features mit der Zielvariablen "Col1" auf Grundlage der Bewertungsmethode "Pearson Correlation" besitzen.
+Durch Anwenden dieses Moduls [Filter-Based Feature Selection][filter-based-feature-selection] werden 50 von 256 Features ausgewählt, da sie die am meisten korrelierten Features mit der Zielvariable „Col1“ auf Grundlage der Bewertungsmethode „Pearson Correlation“ besitzen.
 
 ## Zusammenfassung
 Entwicklung und Auswahl von Features sind zwei häufig ausgeführte Schritte zum Vorbereiten von Trainingsdaten beim Erstellen eines Modells für das maschinelle Lernen. Normalerweise wird die Featureentwicklung zuerst ausgeführt, um zusätzliche Features zu generieren, und anschließend wird die Featureauswahl ausgeführt, um irrelevante, redundante oder hoch korrelierte Features zu entfernen.
@@ -135,4 +135,4 @@ Beachten Sie, dass die Entwicklung bzw. Auswahl von Features nicht immer unbedin
 [fisher-linear-discriminant-analysis]: https://msdn.microsoft.com/library/azure/dcaab0b2-59ca-4bec-bb66-79fd23540080/
  
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_0128_2016-->

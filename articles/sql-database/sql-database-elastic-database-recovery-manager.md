@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/09/2015" 
+	ms.date="01/26/2016" 
 	ms.author="ddove"/>
 
 # Verwenden der RecoveryManager-Klasse zur Behebung von Problemen mit der Shard-Zuordnung
@@ -32,15 +32,13 @@ Begriffsdefinitionen finden Sie unter [Tools für elastische Datenbanken – Glo
 
 ## Gründe für die Verwendung von Recovery Manager
 
-In einer Umgebung mit horizontal partitionierten Datenbanken gibt es eine Reihe von Datenbankservern. Jeder Server enthält eine Anzahl von Datenbanken: eine pro Benutzer in einer mehrinstanzenfähigen Lösung. Jede Datenbank muss zugeordnet werden, sodass Aufrufe an den richtigen Server und die richtige Datenbank weitergeleitet werden können. Datenbanken werden nach einem Shardingschlüssel nachverfolgt, und jedem Server wird ein Bereich von Schlüsselwerten zugewiesen. Beispielsweise kann ein Shardingschlüssel die Kundennamen "D" bis "F" darstellen. Die Zuordnung aller Server und ihrer wichtigsten Bereiche sind in der globalen Shardzuordnung enthalten. Jeder Server enthält auch eine Zuordnung der auf dem Shard enthaltenen Datenbanken, die als lokale Shardzuordnung (Local Shard Map, LSM) bezeichnet wird. Die LSM dient zum Überprüfen zwischengespeicherter Daten. (Wenn eine App eine Verbindung mit einem Shard herstellt, wird die Zuordnung für den schnellen Abruf mit der App zwischengespeichert. Die LSM überprüft die Zuordnung.)
+In einer horizontal partitionierten Umgebung gibt es verschiedene Datenbanken und wahrscheinlich eine gewisse Anzahl von Datenbanken, die auf zahlreiche logische Server verteilt sind. Jeder Server enthält eine bestimmte Anzahl von Datenbanken – eine Datenbank pro Mandant in einer Lösung mit einem einzelnen Mandanten. Jede Datenbank muss in der Shardzuordnung zugeordnet werden, sodass Aufrufe an den richtigen Server und die richtige Datenbank weitergeleitet werden können. Datenbanken werden nach einem Shardingschlüssel nachverfolgt, und jedem Shard wird ein Bereich von Schlüsselwerten zugewiesen. Beispielsweise kann ein Shardingschlüssel die Kundennamen "D" bis "F" darstellen. Die Zuordnung aller Shards (d. h. Datenbanken) und ihre Zuordnungsbereiche sind in der globalen Shardzuordnung enthalten. Jede Datenbank enthält außerdem eine Zuordnung der auf dem Shard enthaltenen Bereiche, die als lokale Shardzuordnung (Local Shard Map, LSM) bezeichnet wird. Die LSM dient zum Überprüfen zwischengespeicherter Daten. (Wenn eine App eine Verbindung mit einem Shard herstellt, wird die Zuordnung für den schnellen Abruf mit der App zwischengespeichert. Die LSM überprüft die Zuordnung.)
 
-Mithilfe eines Tools wie z. B. der Clienttoolbibliothek für elastische Datenbanken können Sie Daten aus einem Shard in einen anderen verschieben. Tritt während der Verschiebung eine Unterbrechung auf, sind die GSM und die LSM eventuell nicht mehr synchron. Andere Gründe:
+Die GSM und die LSM können aus den folgenden Gründen nicht mehr synchron sein:
 
-1. Eine Inkonsistenz, die durch das Löschen eines Shards entstanden ist, dessen Bereich anscheinend nicht länger genutzt wird, oder die durch das Umbenennen eines Shards verursacht wurde. Das Löschen eines Shards führt zu einer **verwaisten Shardzuordnung**. Eine umbenannte Datenbank kann auf ähnliche Weise zu einer verwaisten Shardzuordnung führen. In diesem Fall muss einfach der Shardspeicherort aktualisiert werden. 
-2. Ein Geofailoverereignis tritt ein. Um fortzufahren, müssen der Servername, der Datenbankname und/oder die Shardzuordnungsdetails für sämtliche Shards in einer Shardzuordnung aktualisiert werden. Bei einem Geofailover sollte eine solche Wiederherstellungslogik innerhalb des Failoverworkflows automatisiert werden. 
-3. Entweder ein Shard oder die ShardMapManager-Datenbank wird auf einen früheren Zeitpunkt wiederhergestellt. 
- 
-Die Automatisierung von Wiederherstellungsaktionen gewährleistet eine reibungslose Verwaltbarkeit für geofähige Datenbanken und vermeidet manuelle, von Personen durchzuführende Aktionen. Sie ist auch hilfreich bei Wiederherstellungsszenarien, in denen Daten versehentlich gelöscht wurden.
+1. Eine Inkonsistenz, die durch das Löschen eines Shards entstanden ist, dessen Bereich anscheinend nicht länger genutzt wird, oder die durch das Umbenennen eines Shards verursacht wurde. Das Löschen eines Shards führt zu einer **verwaisten Shardzuordnung**. Eine umbenannte Datenbank kann auf ähnliche Weise zu einer verwaisten Shardzuordnung führen. Abhängig davon, was erreicht werden soll, muss der Shard möglicherweise entfernt oder lediglich der Shardspeicherort aktualisiert werden. 
+2. Ein Geofailoverereignis tritt ein. Um fortzufahren, müssen der Servername, der Datenbankname und/oder die Shardzuordnungsdetails für sämtliche Shards in einer Shardzuordnung aktualisiert werden. Bei einem Geofailover sollte eine solche Wiederherstellungslogik innerhalb des Failoverworkflows automatisiert werden. Die Automatisierung von Wiederherstellungsaktionen gewährleistet eine reibungslose Verwaltbarkeit für geofähige Datenbanken und vermeidet manuelle, von Personen durchzuführende Aktionen.
+3. Entweder ein Shard oder die ShardMapManager-Datenbank wird auf einen früheren Zeitpunkt wiederhergestellt.
 
 Weitere Informationen zu den Azure SQL-Datenbanktools für elastische Datenbanken und zur Georeplikation und Wiederherstellung finden Sie in folgenden Artikeln:
 
@@ -157,4 +155,4 @@ In diesem Beispiel werden die folgende Schritte ausgeführt: 1. Entfernen von Sh
 [1]: ./media/sql-database-elastic-database-recovery-manager/recovery-manager.png
  
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

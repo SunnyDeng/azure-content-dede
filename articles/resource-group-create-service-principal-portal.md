@@ -13,13 +13,13 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="12/17/2015"
+   ms.date="01/20/2016"
    ms.author="tomfitz"/>
 
 # Erstellen einer Active Directory-Anwendung und eines Dienstprinzipals mithilfe des Portals
 
 ## Übersicht
-Wenn Sie einen automatisierten Prozess oder eine Anwendung haben, der bzw. die auf eine Ressource in Ihrem Abonnement zugreifen oder diese ändern muss, können Sie im klassischen Portal eine Active Directory-Anwendung erstellen und einer Rolle mit der ordnungsgemäßen Berechtigung zuweisen. Wenn Sie eine Active Directory-Anwendung über das klassische Portal erstellen, wird tatsächlich sowohl die Anwendung als auch ein Dienstprinzipal erstellt. Sie verwenden den Dienstprinzipal, wenn Sie die Berechtigungen festlegen.
+Bei Verwendung eines automatisierten Prozesses oder einer automatisierten Anwendung, der bzw. die auf Ressourcen zugreifen oder diese ändern muss, können Sie im klassischen Portal eine Active Directory-Anwendung erstellen. Wenn Sie eine Active Directory-Anwendung über das klassische Portal erstellen, wird tatsächlich sowohl die Anwendung als auch ein Dienstprinzipal erstellt. Sie können die Anwendung unter ihrer eigenen Identität oder unter der Identität des angemeldeten Benutzers Ihrer Anwendung ausführen. Diese beiden Methoden zur Authentifizierung von Anwendungen werden als interaktiv (Anmeldung durch Benutzer) und nicht interaktiv (Bereitstellung eigener Anmeldeinformationen durch die App ) bezeichnet. Im nicht interaktiven Modus müssen Sie den Dienstprinzipal einer Rolle mit den richtigen Berechtigungen zuweisen.
 
 In diesem Thema wird erklärt, wie eine neue Anwendung und ein neuer Dienstprinzipal mithilfe des klassischen Portals erstellt werden. Derzeit müssen Sie das klassische Portal zum Erstellen einer neuen Active Directory-Anwendung verwenden. Das Azure-Portal wird in einer späteren Version um diese Möglichkeit erweitert. Im Portal können Sie die Anwendung einer Rolle zuweisen. Sie können diese Schritte auch über Azure PowerShell oder Azure CLI ausführen. Informationen zur Verwendung von PowerShell oder CLI mit dem Dienstprinzipal finden Sie unter [Authentifizieren eines Dienstprinzipals mit dem Azure-Ressourcen-Manager](resource-group-authenticate-service-principal.md).
 
@@ -31,7 +31,9 @@ In diesem Thema wird erklärt, wie eine neue Anwendung und ein neuer Dienstprinz
 Eine ausführlichere Erläuterung zu Anwendungen und Dienstprinzipalen finden Sie unter [Anwendungsobjekte und Dienstprinzipalobjekte](active-directory/active-directory-application-objects.md). Weitere Informationen zur Active Directory-Authentifizierung finden Sie unter [Authentifizierungsszenarien für Azure AD](active-directory/active-directory-authentication-scenarios.md).
 
 
-## Erstellen der Anwendungs- und Dienstprinzipalobjekte
+## Erstellen der Anwendung
+
+Für interaktive und nicht interaktive Anwendungen müssen sie Ihre Active Directory-Anwendung erstellen und konfigurieren.
 
 1. Melden Sie sich über das [klassische Portal](https://manage.windowsazure.com/) bei Ihrem Azure-Konto an.
 
@@ -59,16 +61,29 @@ Eine ausführlichere Erläuterung zu Anwendungen und Dienstprinzipalen finden Si
 
      ![neue Anwendung][10]
 
-6. Füllen Sie den Namen der Anwendung aus und wählen Sie den Anwendungstyp aus, den Sie nutzen möchten. Da hier das Dienstprinzipal dieser Anwendung zur Authentifizierung mit Azure Resource Manager verwendet werden soll, wird die Option zum Erstellen einer **WEBANWENDUNG UND/ODER WEB-API** gewählt und auf die Schaltfläche „Weiter“ geklickt.
+6. Füllen Sie den Namen der Anwendung aus und wählen Sie den Anwendungstyp aus, den Sie nutzen möchten. Wählen Sie den Anwendungstyp aus, den Sie erstellen. In diesem Tutorial erstellen wir eine **WEBANWENDUNG UND/ODER WEB-API**, und klicken auf die Schaltfläche „Weiter“.
 
      ![Anwendung benennen][9]
 
-7. Tragen Sie die Eigenschaften Ihrer Anwendung ein. Geben Sie für die **ANMELDE-URL** die URI einer Website an, die Ihre Anwendung beschreibt. Das Vorhandensein der Website wird nicht überprüft. Geben Sie für die **APP-ID URI ** die URI an, die Ihre Anwendung identifiziert. Die Eindeutigkeit oder das Vorhandensein des Endpunktes wird nicht überprüft. Klicken Sie auf **Abschließen**, um Ihre AAD-Anwendung zu erstellen.
+7. Tragen Sie die Eigenschaften Ihrer Anwendung ein. Geben Sie für die **ANMELDE-URL** die URI einer Website an, die Ihre Anwendung beschreibt. Das Vorhandensein der Website wird nicht überprüft. Geben Sie für die **APP-ID URI ** die URI an, die Ihre Anwendung identifiziert. Die Eindeutigkeit oder das Vorhandensein des Endpunktes wird nicht überprüft. Wenn Sie als Anwendungstyp **Native Clientanwendung** ausgewählt haben, geben Sie einen Wert für **Umleitungs-URI** an. Klicken Sie auf **Abschließen**, um Ihre AAD-Anwendung zu erstellen.
 
      ![Anwendungseigenschaften][4]
 
-## Erstellen eines Authentifizierungsschlüssels für Ihre Anwendung
-Das Portal sollte nun Ihre Anwendung ausgewählt haben.
+Sie haben Ihre Anwendung erstellt.
+
+## Abrufen von Client-ID und Mandanten-ID
+
+Beim programmgesteuerten Zugriff auf Ihre Anwendung benötigen Sie die ID für Ihre Anwendung. Wählen Sie die Registerkarte **Konfigurieren**, und kopieren Sie die **CLIENT-ID**.
+  
+   ![Client-ID][5]
+
+In einigen Fällen müssen Sie bei Ihrer Authentifizierungsanforderung die Mandanten-ID übergeben. Sie können die Mandanten-ID abrufen, indem Sie unten auf der Seite **Endpunkte anzeigen** auswählen und die ID wie unten dargestellt abrufen.
+
+   ![Mandanten-ID](./media/resource-group-create-service-principal-portal/save-tenant.png)
+
+## Erstellen eines Authentifizierungsschlüssels
+
+Wenn Ihre Anwendung mit eigenen Anmeldeinformationen ausgeführt wird, müssen Sie einen Schlüssel für die Anwendung erstellen.
 
 1. Klicken Sie auf die Registrierkarte **Konfigurieren**, um das Kennwort für Ihre Anwendung zu konfigurieren.
 
@@ -86,22 +101,36 @@ Das Portal sollte nun Ihre Anwendung ausgewählt haben.
 
      ![gespeicherter Schlüssel][8]
 
-4. Sie können nun Ihren Schlüssel zur Authentifizierung als Dienstprinzipal verwenden. Neben Ihrem **SCHLÜSSEL** benötigen Sie zur Anmeldung Ihre **CLIENT-ID**. Gehen Sie zu **CLIENT-ID** und kopieren Sie diese.
-  
-     ![Client-ID][5]
-
-5. In einigen Fällen müssen Sie bei Ihrer Authentifizierungsanforderung die Mandanten-ID übergeben. Sie können die Mandanten-ID abrufen, indem Sie **Endpunkte anzeigen** auswählen und die ID wie unten dargestellt abrufen.
-
-     ![Mandanten-ID](./media/resource-group-create-service-principal-portal/save-tenant.png)
-
 Ihre Anwendung ist nun bereit und das Dienstprinzipal in Ihrem Mandanten erstellt. Wenn Sie sich als Dienstprinzipal anmelden, achten Sie auf die Nutzung von:
 
 * **CLIENT-ID** - als Ihren Benutzername.
 * **SCHLÜSSEL** - als Ihr Kennwort.
 
-## Zuweisen der Anwendung zu einer Rolle
+## Festlegen der delegierten Berechtigungen
 
-Sie müssen die Anwendung einer Rolle zuweisen, um ihr Berechtigungen zum Ausführen von Aktionen zu gewähren. Zum Zuweisen der Anwendung an eine Rolle wechseln Sie vom klassischen Portal zum [Azure-Portal](https://portal.azure.com). Sie müssen entscheiden, welcher Rolle die Anwendung in welchem Umfang hinzugefügt wird. Informationen zu verfügbaren Rollen finden Sie unter [RBAC: Integrierte Rollen](./active-directory/role-based-access-built-in-roles.md). Sie können den Umfang auf Abonnement-, Ressourcengruppen- oder Ressourcenebene festlegen. Die Berechtigungen werden in niedrigere Umfangsebenen übernommen (wird der Leserrolle für eine Ressourcengruppe beispielsweise eine Anwendung hinzugefügt, kann sie die Ressourcengruppe und alle darin enthaltenen Ressourcen lesen).
+Wenn Ihre Anwendung im Auftrag eines angemeldeten Benutzers auf Ressourcen zugreift, müssen Sie der Anwendung die delegierten Berechtigungen für den Zugriff auf andere Anwendungen gewähren. Dieser Schritt wird auf der Registerkarte **Konfigurieren** im Abschnitt **Berechtigungen für andere Anwendungen** ausgeführt. Eine delegierte Berechtigung ist standardmäßig bereits für die Azure Active Directory-Instanz aktiviert. Lassen Sie diese delegierte Berechtigung unverändert.
+
+1. Wählen Sie **Anwendung hinzufügen**.
+
+2. Wählen Sie in der Liste die **Windows Azure-Service-Verwaltungs-API** aus.
+
+      ![App auswählen](./media/resource-group-create-service-principal-portal/select-app.png)
+
+3. Fügen Sie der Dienstverwaltungs-API die delegierte Berechtigung **Auf Azure-Service-Verwaltung zugreifen (Vorschau)** hinzu.
+
+       ![Berechtigung auswählen](./media/resource-group-create-service-principal-portal/select-permissions.png)
+
+4. Speichern Sie die Änderungen.
+
+## Konfigurieren einer mehrinstanzenfähigen Anwendung
+
+Wenn Benutzer aus anderen Azure Active Directory-Instanzen ihre Zustimmung für die Anwendung geben und sich bei ihr anmelden können, müssen Sie die Mehrinstanzenfähigkeit aktivieren. Legen Sie auf der Registerkarte **Konfigurieren** für **Anwendung ist mehrinstanzenfähig** die Option **Ja** fest.
+
+![mehrinstanzenfähig](./media/resource-group-create-service-principal-portal/multi-tenant.png)
+
+## Zuweisen einer Anwendung zur Rolle
+
+Wenn Ihre Anwendung nicht unter der Identität eines angemeldeten Benutzers ausgeführt wird, müssen Sie die Anwendung einer Rolle zuweisen, um ihr Berechtigungen zum Ausführen bestimmter Aktionen zu gewähren. Zum Zuweisen der Anwendung an eine Rolle wechseln Sie vom klassischen Portal zum [Azure-Portal](https://portal.azure.com). Sie müssen entscheiden, welcher Rolle die Anwendung in welchem Umfang hinzugefügt wird. Informationen zu verfügbaren Rollen finden Sie unter [RBAC: Integrierte Rollen](./active-directory/role-based-access-built-in-roles.md). Sie können den Umfang auf Abonnement-, Ressourcengruppen- oder Ressourcenebene festlegen. Die Berechtigungen werden in niedrigere Umfangsebenen übernommen (wird der Leserrolle für eine Ressourcengruppe beispielsweise eine Anwendung hinzugefügt, kann sie die Ressourcengruppe und alle darin enthaltenen Ressourcen lesen).
 
 1. Navigieren Sie im Portal zur Umfangsebenene, der Sie die Anwendung zuweisen möchten. Für dieses Thema können Sie zu einer Ressourcengruppe navigieren und auf dem Blatt der Ressourcengruppe das Symbol **Zugriff** wählen.
 
@@ -138,7 +167,7 @@ Zunächst müssen Sie die Active Directory-Authentifizierungsbibliothek in Ihrem
     PM> Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory -Version 2.19.208020213
     PM> Update-Package Microsoft.IdentityModel.Clients.ActiveDirectory -Safe
 
-Fügen Sie in Ihrer Anwendung eine Methode wie die folgende zum Abrufen des Tokens hinzu.
+Wenn Sie sich mit der Anwendungs-ID und dem geheimen Schlüssel anmelden möchten, rufen Sie das Token mithilfe der folgenden Methode ab:
 
     public static string GetAccessToken()
     {
@@ -154,6 +183,28 @@ Fügen Sie in Ihrer Anwendung eine Methode wie die folgende zum Abrufen des Toke
 
         return token;
     }
+
+Wenn Sie sich im Auftrag des Benutzers anmelden möchten, rufen Sie das Token mithilfe der folgenden Methode ab:
+
+    public static string GetAcessToken()
+    {
+        var authenticationContext = new AuthenticationContext("https://login.windows.net/{tenant id}");
+        var result = authenticationContext.AcquireToken(resource: "https://management.core.windows.net/", {application id}, new Uri({redirect uri});
+
+        if (result == null) {
+            throw new InvalidOperationException("Failed to obtain the JWT token");
+        }
+
+        string token = result.AccessToken;
+
+        return token;
+    }
+
+Sie können das Token im Anforderungsheader mit dem folgenden Code übergeben:
+
+    string token = GetAcessToken();
+    request.Headers.Add(HttpRequestHeader.Authorization, "Bearer " + token);
+
 
 ## Nächste Schritte
 
@@ -178,4 +229,4 @@ Fügen Sie in Ihrer Anwendung eine Methode wie die folgende zum Abrufen des Toke
 [12]: ./media/resource-group-create-service-principal-portal/add-icon.png
 [13]: ./media/resource-group-create-service-principal-portal/save-icon.png
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

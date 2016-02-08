@@ -27,7 +27,7 @@ Mit dieser Erweiterung kann SQL Server auf virtuellen Azure-Computern bestimmte 
 ## Voraussetzungen
 Anforderungen für die Verwendung von Powershell-Cmdlets:
 
-- Das aktuelle Azure-Befehlszeilen-SDK ist [hier verfügbar](http://azure.microsoft.com/downloads/).
+- Das aktuelle Azure-Befehlszeilen-SDK ist [hier verfügbar](https://azure.microsoft.com/downloads/).
 
 Anforderungen für die Verwendung der Erweiterung auf Ihrem virtuellen Computer:
 
@@ -49,7 +49,7 @@ Wenn Sie den virtuellen SQL Server-Computer mit dem [Azure-Portal](https://porta
 
 Set-AzureVMSqlServerExtension [-VM] <IPersistentVM> [[-Version] <string>] [-AutoBackupSettings <Einstellungen der automatischen Sicherung>] [-AutoPatchingSetttings <AutoPatchingSetttings>] [-Confirm] [-WhatIf] [<Allgemeine Parameter>]
 
-> [AZURE.NOTE]Es wird empfohlen, den Parameter „–Version“ auszulassen. Ohne diesen Parameter wird standardmäßig die neueste Version der Erweiterung festgelegt.
+> [AZURE.NOTE] Es wird empfohlen, den Parameter „–Version“ auszulassen. Ohne diesen Parameter wird standardmäßig die neueste Version der Erweiterung festgelegt.
 
 ### Beispiel
 	Get-AzureVM –ServiceName serviceName –Name vmName | Set-AzureVMSqlServerExtension –AutoBackupSettings $abs | Update-AzureVM**
@@ -65,7 +65,7 @@ Sie können auch das folgende Azure PowerShell-Cmdlet verwenden:
 
 Get-AzureVMSqlServerExtension [[-VM] <IPersistentVM>] [[-Version] <string>] [<Allgemeine Parameter>]
 
-> [AZURE.NOTE]Sie können den Parameter „ –Version“ auslassen. Ohne diesen Parameter wird standardmäßig die neueste Version der Erweiterung festgelegt.
+> [AZURE.NOTE] Sie können den Parameter „ –Version“ auslassen. Ohne diesen Parameter wird standardmäßig die neueste Version der Erweiterung festgelegt.
 
 ### Beispiel
 	Get-AzureVM –ServiceName "service" –Name "vmname" | Get-AzureVMSqlServerExtension
@@ -78,4 +78,4 @@ Wenn Sie diese Erweiterung vom virtuellen Computer entfernen möchten, können S
 ### Syntax
 Remove-AzureVMSqlServerExtension -VM <IPersistentVM> [<CommonParameters>]
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

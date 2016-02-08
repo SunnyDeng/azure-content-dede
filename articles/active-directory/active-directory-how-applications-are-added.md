@@ -91,7 +91,7 @@ Sie selbst können zum Beispiel folgende Anwendungen hinzufügen:
 ## Wie werden Anwendungen meiner Azure AD-Instanz hinzugefügt?
 Es gibt viele Möglichkeiten, eine Anwendung in Azure AD hinzuzufügen:
 
-* Hinzufügen einer Anwendung aus dem [Anwendungskatalog von Azure Active Directory](http://azure.microsoft.com/updates/azure-active-directory-over-1000-apps/)
+* Hinzufügen einer Anwendung aus dem [Anwendungskatalog von Azure Active Directory](https://azure.microsoft.com/updates/azure-active-directory-over-1000-apps/)
 * Anmelden bei einer in Azure Active Directory integrierten Anwendung eines Drittanbieters (z. B. [Smartsheet](https://app.smartsheet.com/b/home) oder [DocuSign](https://www.docusign.net/member/MemberLogin.aspx))
     * Bei der Anmeldung werden die Benutzer aufgefordert, der Anwendung neben weiteren Berechtigungen auch die Berechtigung für den Zugriff auf deren Profil zu erteilen. Der erste Benutzer, der hierzu seine Zustimmung erteilt, bewirkt, dass dem Verzeichnis ein Dienstprinzipal für die Anwendung hinzugefügt wird.
 * Anmeldung bei Microsoft-Onlinediensten wie [Office 365](http://products.office.com/)
@@ -146,4 +146,4 @@ Holen Sie weitere Informationen zum Hinzufügen von Anwendungen in Azure AD und 
 [apps_service_principals_directory]: media/active-directory-how-applications-are-added/HowAppsAreAddedToAAD.jpg
 [app_settings]: media/active-directory-how-applications-are-added/IntegratedAppSettings.jpg
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -8,7 +8,7 @@
 
 6. Geben Sie im Fenster "Windows-Sicherheit" den Benutzernamen und das Kennwort eines Kontos auf dem virtuellen Computer ein, und klicken Sie anschließend auf **OK**.
 
- 	In den meisten Fällen sind dies der Benutzername und das Kennwort des lokalen Kontos, das Sie beim Erstellen des virtuellen Computers angegeben haben. In diesem Fall ist die Domäne der Name des virtuellen Computers. Das Eingabeformat lautet *VM-Name*&#92;*Benutzername*.
+ 	In den meisten Fällen sind die Anmeldeinformationen der Benutzername und das Kennwort des lokalen Kontos, das Sie beim Erstellen des virtuellen Computers angegeben haben. In diesem Fall ist die Domäne der Name des virtuellen Computers. Das Eingabeformat lautet *VM-Name*&#92;*Benutzername*.
 	
 	Wenn der virtuelle Computer zu einer Domäne in Ihrer Organisation gehört, stellen Sie sicher, dass der Benutzername den Namen der Domäne im Format *Domäne*&#92;*Benutzername* enthält. Das Konto muss außerdem in der Administratorgruppe sein oder über Remotezugriffsrechte auf den virtuellen Computer verfügen.
 	
@@ -18,4 +18,4 @@
 
 	![Bestätigen Sie die Identität des Computers.](./media/virtual-machines-log-on-win-server/connectverify.png)
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -1,4 +1,4 @@
-<!--author=alkohli last changed: 01/12/15-->
+<!--author=alkohli last changed: 01/26/16-->
 
 #### So laden Sie Hotfixes herunter
 
@@ -20,7 +20,7 @@ Führen Sie die folgenden Schritte aus, um das Softwareupdate aus dem Microsoft 
  
 6. Klicken Sie auf **Download**. Geben Sie einen lokalen Speicherort an, oder **navigieren** Sie zu einem lokalen Speicherort, in dem der Download abgelegt werden soll. Das Update wird in einen Ordner (gleicher Name wie das Update) am ausgewählten Speicherort heruntergeladen. Der Ordner kann auch in eine Netzwerkfreigabe kopiert werden, auf die vom Gerät aus zugegriffen werden kann.
        
-	> [AZURE.NOTE]
+	> [AZURE.NOTE] 
 	> 
 	> - Außerdem müssen Sie das **LSI-Treiberupdate** (SAS-Controllerupdate 2.0 für StorSimple 8000-Serie – KB3121900), **Storport-Update** (Hotfix für Windows Server 2012 R2 x64 Edition – KB3080728), **Spaceport-Update** (Hotfix für Windows Server 2012 R2 x64 Edition – KB3090322) und **Datenträger-Firmwareupdate** (Kumulatives Datenträger-Firmwareupdate 2.0 für StorSimple 8000-Serie – KB3121899) herunterladen und in denselben freigegebenen Ordner kopieren.
 	> - Der Hotfix muss von beiden Controllern zum Erkennen von möglichen Fehlermeldungen vom Peercontroller aus zugänglich sein.
@@ -85,7 +85,7 @@ Führen Sie die folgenden Schritte zum Installieren und Überprüfen der normale
         ````
 		
 
-	> [AZURE.NOTE]In manchen Fällen gibt das Cmdlet `False` zurück, wenn das Update noch ausgeführt wird. Um sicherzustellen, dass das Update abgeschlossen ist, warten Sie einige Minuten, führen Sie diesen Befehl erneut aus, und überprüfen Sie, ob `RunInProgress` gleich `False` ist. Wenn dies der Fall ist, wurde das Hotfix abgeschlossen.
+	> [AZURE.NOTE] In manchen Fällen gibt das Cmdlet `False` zurück, wenn das Update noch ausgeführt wird. Um sicherzustellen, dass das Update abgeschlossen ist, warten Sie einige Minuten, führen Sie diesen Befehl erneut aus, und überprüfen Sie, ob `RunInProgress` gleich `False` ist. Wenn dies der Fall ist, wurde das Hotfix abgeschlossen.
 	
 8. Wiederholen Sie nach Abschluss des Softwareupdates die Schritte 3 bis 5, um den SaaS-Agent und den MDS-Agent mit `CisMdsAgentUpdateBundle.exe` zu installieren und zu überwachen. Stellen Sie vor dem Ausführen von `CisMdsAgentUpdateBundle.exe` sicher, dass `HcsMdsSoftwareUpdate.exe` installiert ist.
 
@@ -109,7 +109,11 @@ Führen Sie die folgenden Schritte zum Installieren und Überprüfen der normale
 
 #### So installieren und überprüfen Sie den Hotfix für den Wartungsmodus
 
-Verwenden Sie das Paket `DiskFirmwarePackage.exe` (KB3121899), um die Datenträger-Firmwareupdates zu installieren. Es handelt sich dabei um beeinträchtigende Updates, die ca. 30 Minuten dauern. Sie können diese während eines geplanten Wartungsfensters durch Herstellen einer Verbindung mit der seriellen Konsole des Geräts installieren. Führen Sie die Anleitung unten aus, um Datenträger-Firmwareupdates zu installieren.
+Verwenden Sie das Paket `DiskFirmwarePackage.exe` (KB3121899), um die Datenträger-Firmwareupdates zu installieren. Es handelt sich dabei um beeinträchtigende Updates, die ca. 30 Minuten dauern. Sie können diese während eines geplanten Wartungsfensters durch Herstellen einer Verbindung mit der seriellen Konsole des Geräts installieren.
+
+Beachten Sie, dass Sie diese Updates nicht installieren müssen, wenn Ihre Datenträger-Firmware bereits auf dem neuesten Stand ist. Führen Sie das `Get-HcsUpdateAvailability`-Cmdlet über die serielle Konsole des Geräts aus. Sie werden benachrichtigt, wenn Updates verfügbar sind und ob diese Updates mit Unterbrechungen (Wartungsmodus-Updates) oder ohne Unterbrechungen (regelmäßige Updates) installiert werden können.
+ 
+Folgen Sie den Anweisungen unten, um die Datenträger-Firmwareupdates zu installieren.
 
 1. Versetzen Sie das Gerät in den Wartungsmodus. Beachten Sie, dass Sie kein Windows PowerShell-Remoting verwenden sollten, wenn Sie für ein Gerät im Wartungsmodus eine Verbindung herstellen. Sie müssen dieses Cmdlet auf dem Gerätecontroller ausführen, wenn eine Verbindung über die serielle Konsole des Geräts besteht. Geben Sie Folgendes ein:
 		
@@ -235,4 +239,4 @@ Verwenden Sie das Paket `DiskFirmwarePackage.exe` (KB3121899), um die Datenträg
  
  
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

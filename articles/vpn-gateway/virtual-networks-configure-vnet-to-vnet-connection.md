@@ -198,7 +198,7 @@ Nachdem Sie nun alle VNets konfiguriert haben, konfigurieren Sie die VNet-Gatewa
 
 ## Schritt 7: Verbinden der VPN-Gateways
 
-Nachdem alle zuvor beschriebenen Schritte abgeschlossen wurden, legen Sie die vorinstallierten IPSec-/IKE-Schlüssel auf identische Werte fest. Dies kann mithilfe einer REST-API oder eines PowerShell-Cmdlets erfolgen. Wenn Sie PowerShell verwenden, vergewissern Sie sich, dass Sie die [aktuellste Version](http://azure.microsoft.com/downloads/) der Microsoft Azure PowerShell-Cmdlets verwenden. Die Beispiele unten verwenden PowerShell-Cmdlets zum Festlegen des Schlüsselwerts auf "A1b2C3D4". Beachten Sie, dass beide Gateways den gleichen Schlüsselwert verwenden. Bearbeiten Sie die Beispiele unten entsprechend Ihren eigenen Werten.
+Nachdem alle zuvor beschriebenen Schritte abgeschlossen wurden, legen Sie die vorinstallierten IPSec-/IKE-Schlüssel auf identische Werte fest. Dies kann mithilfe einer REST-API oder eines PowerShell-Cmdlets erfolgen. Wenn Sie PowerShell verwenden, vergewissern Sie sich, dass Sie die [aktuellste Version](https://azure.microsoft.com/downloads/) der Microsoft Azure PowerShell-Cmdlets verwenden. Die Beispiele unten verwenden PowerShell-Cmdlets zum Festlegen des Schlüsselwerts auf "A1b2C3D4". Beachten Sie, dass beide Gateways den gleichen Schlüsselwert verwenden. Bearbeiten Sie die Beispiele unten entsprechend Ihren eigenen Werten.
 
 Für VNet1
 
@@ -223,4 +223,4 @@ Sobald die Verbindung hergestellt ist, können Sie Ihren virtuellen Netzwerken v
 [2]: http://channel9.msdn.com/Series/Getting-started-with-Windows-Azure-HDInsight-Service/Configure-the-VPN-connectivity-between-two-Azure-virtual-networks
  
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -24,15 +24,15 @@ Dieser Artikel enthält ein umfassendes Lernprogramm zu den Szenarien und Funkti
 
 Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
--	**Azure-Abonnement:** Wenn Sie kein Abonnement besitzen, können Sie in wenigen Minuten ein kostenloses Testkonto einrichten. Im Artikel [Kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/) finden Sie Details.
--	**Azure Active Directory:** In Azure Data Catalog wird [Azure Active Directory](http://azure.microsoft.com/services/active-directory/) für die Identitäts- und Zugriffsverwaltung verwendet.
+-	**Azure-Abonnement:** Wenn Sie kein Abonnement besitzen, können Sie in wenigen Minuten ein kostenloses Testkonto einrichten. Im Artikel [Kostenlose Testversion](https://azure.microsoft.com/pricing/free-trial/) finden Sie Details.
+-	**Azure Active Directory:** In Azure Data Catalog wird [Azure Active Directory](https://azure.microsoft.com/services/active-directory/) für die Identitäts- und Zugriffsverwaltung verwendet.
 -	**Datenquellen:** Azure Data Catalog enthält Funktionen zur Ermittlung von Datenquellen, und für das Lernprogramm benötigen Sie Zugriff auf eine oder mehrere Datenquellen. Das Lernprogramm wurde unter Verwendung der Adventure Works-Beispieldatenbanken geschrieben. Sie können aber auch beliebige andere unterstützte Datenquellen verwenden, wenn Sie lieber mit Daten arbeiten möchten, die Ihnen vertraut sind und die für Ihre Rolle relevant sind.
 
 ## Übung 1: Installieren der Adventure Works-Beispieldatenbank
 
 In dieser Übung installieren Sie die Adventure Works-Beispieldaten für das SQL Server-Datenbankmodul und SQL Server Analysis Services (Mehrdimensional). Diese Beispiele werden in den folgenden Übungen verwendet.
 
-> [AZURE.NOTE]Diese Übung ist optional. Die restlichen Übungen im Lernprogramm sind so geschrieben, dass auf die Adventure Works-Beispieldatenbanken verwiesen wird. Sie können die Übung aber auch überspringen und stattdessen Ihre eigenen Datenquellen verwenden. Unten sind die Schritte zum Installieren von Adventure Works angegeben.
+> [AZURE.NOTE] Diese Übung ist optional. Die restlichen Übungen im Lernprogramm sind so geschrieben, dass auf die Adventure Works-Beispieldatenbanken verwiesen wird. Sie können die Übung aber auch überspringen und stattdessen Ihre eigenen Datenquellen verwenden. Unten sind die Schritte zum Installieren von Adventure Works angegeben.
 
 ### Installieren der Adventure Works 2014 OLTP- und Data Warehouse-Datenbanken
 
@@ -142,7 +142,7 @@ In dieser Übung haben Sie registrierten Datenassets beschreibende Informationen
 
 In dieser Übung arbeiten Sie mit einem anderen Benutzer zusammen, um den Datenassets im Katalog Metadaten hinzuzufügen. Beim Crowdsourcing-Ansatz von Azure Data Catalog für Anmerkungen können Benutzer Tags, Beschreibungen und andere Metadaten hinzufügen, damit alle an einem Datenasset und seiner Nutzung beteiligten Benutzer ihre Sichtweise erfassen und für andere Personen zur Verfügung stellen können.
 
-> [AZURE.NOTE]Es ist kein Problem, wenn bei Ihnen gerade kein anderer Benutzer verfügbar ist, der mit Ihnen in diesem Lernprogramm zusammenarbeiten kann. Jeder Benutzer, der auf den Datenkatalog zugreift, kann eigene Angaben hinzufügen, wenn er dies möchte. Mit diesem Crowdsourcing-Ansatz für Metadaten können der Inhalt des Katalogs und der Umfang der Katalogmetadaten im Laufe der Zeit ausgebaut werden.
+> [AZURE.NOTE] Es ist kein Problem, wenn bei Ihnen gerade kein anderer Benutzer verfügbar ist, der mit Ihnen in diesem Lernprogramm zusammenarbeiten kann. Jeder Benutzer, der auf den Datenkatalog zugreift, kann eigene Angaben hinzufügen, wenn er dies möchte. Mit diesem Crowdsourcing-Ansatz für Metadaten können der Inhalt des Katalogs und der Umfang der Katalogmetadaten im Laufe der Zeit ausgebaut werden.
 
 ### So können Sie Metadaten für Datenassets per Crowdsourcing beschaffen
 
@@ -159,7 +159,7 @@ In dieser Übung haben Sie die Funktionen von Azure Data Catalog zum Crowdsourci
 In dieser Übung verwenden Sie das **Azure Data Catalog**-Portal, um über Microsoft Excel eine Verbindung mit Datenquellen herzustellen.
 
 
-> [AZURE.NOTE]Es ist wichtig zu beachten, dass **Azure Data Catalog** Benutzern keinen Zugriff auf die eigentliche Datenquelle ermöglicht – es erleichtert Benutzern lediglich, sie zu ermitteln und zu verstehen. Wenn Benutzer eine Verbindung mit einer Datenquelle herstellen, werden von der gewählten Clientanwendung deren Windows-Anmeldeinformationen verwendet, oder Benutzer werden bei Bedarf zur Eingabe ihrer Anmeldeinformationen aufgefordert. Falls dem Benutzer bisher noch kein Zugriff auf die Datenquelle gewährt wurde, muss dies erfolgen, bevor er die Verbindung herstellen kann.
+> [AZURE.NOTE] Es ist wichtig zu beachten, dass **Azure Data Catalog** Benutzern keinen Zugriff auf die eigentliche Datenquelle ermöglicht – es erleichtert Benutzern lediglich, sie zu ermitteln und zu verstehen. Wenn Benutzer eine Verbindung mit einer Datenquelle herstellen, werden von der gewählten Clientanwendung deren Windows-Anmeldeinformationen verwendet, oder Benutzer werden bei Bedarf zur Eingabe ihrer Anmeldeinformationen aufgefordert. Falls dem Benutzer bisher noch kein Zugriff auf die Datenquelle gewährt wurde, muss dies erfolgen, bevor er die Verbindung herstellen kann.
 
 ### So stellen Sie über Excel eine Verbindung mit einer Datenquelle her
 
@@ -181,7 +181,7 @@ In dieser Übung haben Sie Verbindungen mit Datenquellen hergestellt, die per Az
 
 In dieser Übung verwenden Sie das **Azure Data Catalog**-Portal, um Vorschaudaten aus registrierten Datenassets zu entfernen und Datenassets aus dem Katalog zu löschen.
 
-> [AZURE.NOTE]Das Standardverhalten des Katalogs besteht darin, das Registrieren beliebiger Datenquellen für alle Benutzer zuzulassen und Benutzern auch das Löschen aller registrierten Datenassets zu ermöglichen. Die Verwaltungsfunktionen in der **Standard Edition von Azure Data Catalog** umfassen zusätzliche Optionen zum Festlegen des Besitzes von Assets, Einschränken der Ermittlung von Assets und Einschränken des Löschens von Assets.
+> [AZURE.NOTE] Das Standardverhalten des Katalogs besteht darin, das Registrieren beliebiger Datenquellen für alle Benutzer zuzulassen und Benutzern auch das Löschen aller registrierten Datenassets zu ermöglichen. Die Verwaltungsfunktionen in der **Standard Edition von Azure Data Catalog** umfassen zusätzliche Optionen zum Festlegen des Besitzes von Assets, Einschränken der Ermittlung von Assets und Einschränken des Löschens von Assets.
 
 In **Azure Data Catalog** können Sie die Vorschau für das Löschen einzelner oder mehrerer Assets entfernen.
 
@@ -232,4 +232,4 @@ In diesem Lernprogramm haben Sie wichtige Funktionen der Preview-Version von **A
 [12]: ./media/data-catalog-get-started/ownership.png
 [13]: ./media/data-catalog-get-started/crowdsource.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0128_2016-->

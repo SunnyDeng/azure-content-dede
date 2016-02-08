@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="12/01/2015"
+   ms.date="01/25/2016"
    ms.author="mcoskun"/>
 
 # Sichern und Wiederherstellen von Reliable Services
@@ -87,7 +87,7 @@ In diesem Fall würde die Runtime automatisch den Datenverlust erkennen und die 
 
 Der Dienstautor muss Folgendes wiederherstellen:
 
-- Überschreiben Sie **IReliableStateManager**, um ein neues **ReliableStateManager**-Element zurückzugeben, und geben Sie eine Rückruffunktion an, die bei einem Datenverlustereignis aufgerufen wird.
+- Überschreiben Sie **CreateReliableStateManager**, um ein neues **ReliableStateManager**-Element zurückzugeben, und geben Sie eine Rückruffunktion an, die bei einem Datenverlustereignis aufgerufen wird.
 
 - Suchen Sie am externen Speicherort, der die Sicherungen des Diensts enthält, nach den neuesten Sicherungen.
 
@@ -118,7 +118,7 @@ protected override async Task<bool> OnDataLossAsync(CancellationToken cancellati
 }
 ```
 
->[AZURE.NOTE]Für die RestorePolicy ist standardmäßig „sicher“ eingestellt. Dies bedeutet, dass die **RestoreAsync**-API mit ArgumentException fehlschlägt, wenn sie erkennt, dass der Sicherungsordner einen Status enthält, der älter ist als der Status in diesem Replikat bzw. diesem entspricht. **RestorePolicy.Force** kann verwendet werden, um diese Sicherheitsprüfung zu überspringen.
+>[AZURE.NOTE] Für die RestorePolicy ist standardmäßig „sicher“ eingestellt. Dies bedeutet, dass die **RestoreAsync**-API mit ArgumentException fehlschlägt, wenn sie erkennt, dass der Sicherungsordner einen Status enthält, der älter ist als der Status in diesem Replikat bzw. diesem entspricht. **RestorePolicy.Force** kann verwendet werden, um diese Sicherheitsprüfung zu überspringen.
 
 ## Gelöschter oder verlorener Dienst
 
@@ -158,4 +158,4 @@ Der Reliable State Manager ermöglicht das Wiederherstellen aus einer Sicherung 
 
 **RestoreAsync** löscht zuerst jeden bestehenden Zustand in dem primären Replikat, von dem es aufgerufen wurde. Danach erstellt der Reliable State Manager alle Reliable Objects, die im Sicherungsordner vorhanden sind. Als Nächstes werden die Reliable Objects angewiesen, ihre Prüfpunkte im Sicherungsordner wiederherzustellen. Schließlich stellt der Reliable State Manager seinen eigenen Status aus den Protokolldatensätzen im Sicherungsordner wieder her und führt die Wiederherstellung aus. Im Rahmen des Wiederherstellungsprozesses werden ab dem „Startpunkt“ beginnende Vorgänge, die Protokolldatensätze in den Sicherungsordner ausgeführt haben, in den Reliable Objects wiederholt. Dadurch wird sichergestellt, dass der wiederhergestellte Status konsistent ist.
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

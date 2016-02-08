@@ -28,7 +28,7 @@ Mit Microsoft Azure ExpressRoute können Sie Ihre lokalen Netzwerke über eine d
 - Globale Konnektivität mit Microsoft-Diensten in allen Regionen mit ExpressRoute Premium-Add-On.
 - Dynamisches Routing zwischen Ihrem Netzwerk und Microsoft mit Protokollen nach Branchenstandard (BGP).
 - Integrierte Redundanz an jedem Peeringort, um eine höhere Zuverlässigkeit zu erzielen.
-- [SLA](http://azure.microsoft.com/support/legal/sla/) zur Verbindungsbetriebszeit.
+- [SLA](https://azure.microsoft.com/support/legal/sla/) zur Verbindungsbetriebszeit.
 - Dienstqualität und Unterstützung für mehrere Klassen von Diensten für spezielle Anwendungen, z. B. Skype for Business.
 
 Weitere Informationen finden Sie unter [ExpressRoute – FAQ](expressroute-faqs.md).
@@ -55,7 +55,7 @@ Microsoft nutzt das Branchenstandardprotokoll für das dynamische Routing (BGP),
 
 ### Redundanz
 
-Jede ExpressRoute-Verbindung besteht aus zwei Verbindungen mit zwei Microsoft Enterprise-Edgeroutern (MSEEs) vom Konnektivitätsanbieter bzw. Ihrem Netzwerk-Edge. Microsoft erfordert eine BGP-Dualverbindung vom Konnektivitätsanbieter bzw. von Ihrer Seite – eine für jeden MSEE. Sie können sich auch dafür entscheiden, auf Ihrer Seite keine redundanten Geräte /Ethernet-Verbindungen bereitzustellen. Allerdings verwenden Konnektivitätsanbieter redundante Geräte, um sicherzustellen, dass Ihre Verbindungen auf redundante Weise an Microsoft übergeben werden. Eine redundante Layer 3-Konnektivitätskonfiguration ist eine Anforderung, die erfüllt sein muss, damit unser [SLA](http://azure.microsoft.com/support/legal/sla/) gültig ist.
+Jede ExpressRoute-Verbindung besteht aus zwei Verbindungen mit zwei Microsoft Enterprise-Edgeroutern (MSEEs) vom Konnektivitätsanbieter bzw. Ihrem Netzwerk-Edge. Microsoft erfordert eine BGP-Dualverbindung vom Konnektivitätsanbieter bzw. von Ihrer Seite – eine für jeden MSEE. Sie können sich auch dafür entscheiden, auf Ihrer Seite keine redundanten Geräte /Ethernet-Verbindungen bereitzustellen. Allerdings verwenden Konnektivitätsanbieter redundante Geräte, um sicherzustellen, dass Ihre Verbindungen auf redundante Weise an Microsoft übergeben werden. Eine redundante Layer 3-Konnektivitätskonfiguration ist eine Anforderung, die erfüllt sein muss, damit unser [SLA](https://azure.microsoft.com/support/legal/sla/) gültig ist.
 
 ### Verbindung mit Microsoft-Clouddiensten
 
@@ -124,4 +124,4 @@ Sie können ein Abrechnungsmodell auswählen, das für Sie am besten geeignet is
 	- [Konfigurieren des Routings](expressroute-howto-routing-classic.md)
 	- [Verknüpfen eines VNet mit einer ExpressRoute-Verbindung](expressroute-howto-linkvnet-classic.md)
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

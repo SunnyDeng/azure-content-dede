@@ -22,7 +22,8 @@
 ##Übersicht
 In diesem Lernprogramm wird gezeigt, wie Sie eine sichere ASP.NET 4.5 Web Forms-Anwendung erstellen, die eine SQL-Datenbank beinhaltet, und die Anwendung dann auf Azure bereitstellen.
 
->[AZURE.NOTE]Eine MVC-Version dieses Lernprogramms finden Sie unter [Erstellen einer ASP.NET MVC-App mit Authentifizierung und SQL-Datenbank sowie Bereitstellung in Azure App Service](web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database.md).
+>[AZURE.NOTE] 
+Eine MVC-Version dieses Lernprogramms finden Sie unter [Erstellen einer ASP.NET MVC-App mit Authentifizierung und SQL-Datenbank sowie Bereitstellung in Azure App Service](web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database.md).
 
 Sie können ein kostenloses Azure-Konto erstellen. Wenn Sie noch nicht über Visual Studio 2013 verfügen, wird Visual Studio 2013 for Web Express automatisch durch das SDK installiert. Sie können kostenlos mit der Entwicklung für Azure beginnen.
 
@@ -41,7 +42,8 @@ Sie erstellen eine einfache Kontaktlisten-Webanwendung, die auf ASP.NET 4.5-Webf
 
 ![Seite "Kontakte - Bearbeiten"](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms00.png)
 
->[AZURE.NOTE]Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Wenn Sie kein Konto haben, können Sie <a href="/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F" target="_blank">Ihre Visual Studio-Abonnentenvorteile aktivieren</a> oder <a href="/pricing/free-trial/?WT.mc_id=A261C142F" target="_blank">sich für eine kostenlose Testversion registrieren</a>. Wenn Sie Azure ausprobieren möchten, ehe Sie sich für ein Konto anmelden, besuchen Sie [App Service testen](https://tryappservice.azure.com/), wo Sie sofort kostenlos eine kurzlebige ASP.NET Starter Site in Azure erstellen können. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] 
+Um dieses Lernprogramm abzuschließen, benötigen Sie ein Azure-Konto. Wenn Sie kein Konto haben, können Sie <a href="/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F" target="_blank">Ihre Visual Studio-Abonnentenvorteile aktivieren</a> oder <a href="/pricing/free-trial/?WT.mc_id=A261C142F" target="_blank">sich für eine kostenlose Testversion registrieren</a>. Wenn Sie Azure ausprobieren möchten, ehe Sie sich für ein Konto anmelden, besuchen Sie [App Service testen](https://tryappservice.azure.com/), wo Sie sofort kostenlos eine kurzlebige ASP.NET Starter Site in Azure erstellen können. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ##Einrichten der Entwicklungsumgebung 
 Richten Sie zu Beginn Ihre Entwicklungsumgebung ein, indem Sie Visual Studio 2013 und das Azure SDK für .NET installieren.
@@ -50,14 +52,15 @@ Richten Sie zu Beginn Ihre Entwicklungsumgebung ein, indem Sie Visual Studio 201
 2. Installieren Sie [Azure SDK für Visual Studio 2013](http://go.microsoft.com/fwlink/?linkid=324322&clcid=0x409). Für dieses Lernprogramm ist Visual Studio 2013 erforderlich, bevor Sie das Azure SDK für Visual Studio 2013 installieren. Abhängig von der Anzahl an bereits bestehenden SDK-Abhängigkeiten auf Ihrem Computer kann der Installationsvorgang des SDK von mehreren Minuten bis hin zu einer halben Stunde oder länger dauern.  
 
 3. Wenn Sie aufgefordert werden, die ausführbare Installationsdatei auszuführen oder zu speichern, klicken Sie auf **Ausführen**.
-4. Klicken Sie im Fenster **Webplattform-Installer** auf **Installieren**, und setzen Sie die Installation fort.  
+4. Klicken Sie im Fenster **Webplattform-Installer** auf **Installieren**, und setzen Sie die Installation fort. 
 	![Webplattform-Installer](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/Intro-SecureWebForms-01.png)  
 
       Wenn Sie das SDK bereits installiert haben, müssen 0 Elemente installiert werden. Die Anzahl der zu installierenden Elemente wird unten links im Fenster **Webplattform-Installer** angezeigt.
 
 5. Falls Sie nicht bereits über **Visual Studio Update 2** verfügen, laden Sie **[Visual Studio 2013 Update 2](http://www.microsoft.com/download/details.aspx?id=42666)** oder höher herunter und installieren Sie es.
 
-	>[AZURE.NOTE]Sie müssen Visual Studio 2013 Update 2 oder höher installieren, um Google OAuth 2.0 zu verwenden und um SSL lokal ohne Warnmeldungen verwenden zu können. Außerdem benötigen Sie Update 2 zur Verwendung des Web Forms-Gerüsts.
+	>[AZURE.NOTE]  
+	Sie müssen Visual Studio 2013 Update 2 oder höher installieren, um Google OAuth 2.0 zu verwenden und um SSL lokal ohne Warnmeldungen verwenden zu können. Außerdem benötigen Sie Update 2 zur Verwendung des Web Forms-Gerüsts.
 
 Nach Abschluss der Installation haben Sie alles zur Hand, was Sie benötigen, um mit der Entwicklung zu beginnen.
 
@@ -69,18 +72,18 @@ In diesem Lernprogramm wird Ihre Web-App in einer freigegebenen Hostingumgebung 
 
 Die Azure SQL-Datenbank ist ein cloudbasierter relationaler Datenbankdienst auf Grundlage von SQL Server-Technologien. Die Tools und Anwendungen, die mit SQL Server verwendet werden können, sind auch für die SQL-Datenbank geeignet.
 
-1. Klicken Sie im [klassischen Azure-Portal](https://manage.windowsazure.com/) auf der linken Registerkarte auf **Web-Apps** und dann auf **Neu**.  
+1. Klicken Sie im [klassischen Azure-Portal](https://manage.windowsazure.com/) auf der linken Registerkarte auf **Web-Apps** und dann auf **Neu**.
 	![Webplattform-Installer](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/Intro-SecureWebForms-02.png)
-2. Klicken Sie auf **Web-App** und dann auf **Benutzerdefiniert erstellen**.  
+2. Klicken Sie auf **Web-App** und dann auf **Benutzerdefiniert erstellen**. 
 	![Benutzerdefiniert erstellen](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/Intro-SecureWebForms-03.png) Der Assistent **Neue Web-App - benutzerdefiniert erstellen** wird geöffnet.  
 
-3. Geben Sie im Schritt **Web-App erstellen** des Assistenten eine Zeichenfolge in das Feld **URL** ein, die als eindeutige URL der Anwendung dienen soll. Die vollständige URL besteht aus der hier eingegebenen Zeichenfolge und dem Suffix, das neben dem Textfeld aufgeführt wird. Die Abbildung zeigt eine URL, die wahrscheinlich schon vergeben ist, sodass Sie **eine andere URL auswählen müssen**.  
+3. Geben Sie im Schritt **Web-App erstellen** des Assistenten eine Zeichenfolge in das Feld **URL** ein, die als eindeutige URL der Anwendung dienen soll. Die vollständige URL besteht aus der hier eingegebenen Zeichenfolge und dem Suffix, das neben dem Textfeld aufgeführt wird. Die Abbildung zeigt eine URL, die wahrscheinlich schon vergeben ist, sodass Sie **eine andere URL auswählen müssen**. 
 	![Kontakte - Neue Website erstellen](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/Intro-SecureWebForms-04.png)
 4. Wählen Sie in der Dropdownliste "Webhosting-Plan" die am nächsten befindliche Region aus. Mit dieser Einstellung wird das Datencenter angegeben, in dem Ihr virtueller Computer ausgeführt wird.
 5. Wählen Sie in der Dropdownliste **Datenbank** die Option **Create a free 20 MB SQL database** aus.
 6. Ändern Sie im Feld **DB Connection String Name** den Standardwert *DefaultConnection* nicht.
 7. Klicken Sie unten im Feld auf den Pfeil. Der Assistent springt zum Schritt **Specify database settings**.
-8. Geben Sie in das Feld **Name** *`ContactDB`* ein.  
+8. Geben Sie in das Feld **Name** *`ContactDB`* ein.
 	![Datenbankeinstellungen](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/Intro-SecureWebForms-05.png)  
 9. Wählen Sie im Feld **Server** die Option **Neuer SQL-Datenbankserver** aus. Wenn Sie bereits zuvor eine SQL Server-Datenbank erstellt haben, können Sie alternativ diese SQL Server-Instanz aus der Dropdownliste auswählen.
 10. Legen Sie für **Region** dasselbe Gebiet fest wie bei der Erstellung der Web-App.
@@ -91,11 +94,11 @@ Sie kehren im **klassischen Azure-Portal** zur Seite **Web-Apps** zurück, und i
 ##Erstellen einer ASP.NET-Webformularanwendung 
 Sie haben nun eine Web-App erstellt, diese enthält jedoch noch keinen Inhalt. Als Nächstes erstellen Sie die Visual Studio Web App, die Sie auf Azure veröffentlichen.
 ###Erstellen des Projekts 
-1. Wählen Sie in Visual Studio **Neues Projekt** im Menü **Datei** aus.  
+1. Wählen Sie in Visual Studio **Neues Projekt** im Menü **Datei** aus.
 	![Menü "Datei" - "Neues Projekt"](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms01.png)  
 2. Wählen Sie die Vorlagengruppe **Templates** -> **Visual C#** -> **Web** auf der linken Seite aus. 
 3. Wählen Sie die Vorlage **ASP.NET Web Application** in der mittleren Spalte aus.
-4. Benennen Sie Ihr Projekt *ContactManager*, und klicken Sie auf **OK**.  
+4. Benennen Sie Ihr Projekt *ContactManager*, und klicken Sie auf **OK**. 
 	![Dialogfeld "Neues Projekt"](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms02.png)  
 
       Der Name des Projekts in diesem Lernprogramm ist **ContactManager**. Es wird empfohlen, dass Sie genau diesen Projektnamen verwenden, damit der im Lernprogramm angegebene Code wie erwartet funktioniert.
@@ -106,7 +109,7 @@ Sie haben nun eine Web-App erstellt, diese enthält jedoch noch keinen Inhalt. A
 ###Aktualisieren der Masterseite
 In ASP.NET Web Forms können Sie mit Masterseiten ein einheitliches Layout für die Seiten in Ihrer Anwendung erstellen. Eine einzige Masterdseite definiert das Aussehen und das Standardverhalten, das Sie für alle Seiten (oder eine Gruppe von Seiten) in Ihrer Anwendung wünschen. Anschließend können Sie die einzelnen Inhaltsseiten mit dem anzuzeigenden Inhalt erstellen. Wenn Benutzer Inhaltsseiten anfordern, werden diese in ASP.NET mit der Masterseite zusammengeführt, um eine Ausgabe zu erstellen, in der das Layout der Masterseite mit dem Inhalt der Inhaltsseite kombiniert wird. Für die neue Seite muss der Anwendungsname und der Link aktualisiert werden. Dieser Link verweist auf die Seite, welche die Kontaktdetails enthält. Um diese Änderungen vorzunehmen, ändern Sie das HTML auf der Masterseite.
 
-1. Öffnen Sie im **Projektmappen-Explorer** die Seite *Site.Master*.
+1. Öffnen Sie im **Projektmappen-Explorer** die Seite *Site.Master*. 
 2. Falls diese Seite sich in der **Entwurfsansicht** befindet, wechseln Sie zur **Quellansicht**.
 3. Aktualisieren Sie die Masterseite durch Ändern oder Hinzufügen des Markups, sodass es für die Seite wie folgt aussieht:
 
@@ -214,15 +217,16 @@ Nachdem Sie nun die Anwendung erstellt und lokal ausgeführt haben, wird es Zeit
 
 2. Klicken Sie auf der Registerkarte **Profil** des Dialogfelds **Web veröffentlichen** auf **Azure-Web-App**.
 	  
-3. Falls Sie nicht bereits angemeldet sind, klicken Sie im Dialogfeld **Vorhandene Web-App auswählen** auf die Schaltfläche **Anmelden**. Nachdem Sie die Anmeldung abgeschlossen haben, wählen Sie die Web-App aus, die Sie im ersten Teil dieses Lernprogramms erstellt haben. Klicken Sie auf **OK**, um fortzufahren.  
+3. Falls Sie nicht bereits angemeldet sind, klicken Sie im Dialogfeld **Vorhandene Web-App auswählen** auf die Schaltfläche **Anmelden**. Nachdem Sie die Anmeldung abgeschlossen haben, wählen Sie die Web-App aus, die Sie im ersten Teil dieses Lernprogramms erstellt haben. Klicken Sie auf **OK**, um fortzufahren. 
 	![Dialogfeld "Vorhandene Website auswählen"](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms07.png) Visual Studio lädt Ihre Veröffentlichungseinstellungen herunter.
-4. Klicken Sie im Dialogfeld **Web veröffentlichen** auf **Veröffentlichen**.  
+4. Klicken Sie im Dialogfeld **Web veröffentlichen** auf **Veröffentlichen**. 
 	![Dialogfeld "Web veröffentlichen"](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms08.png) Sie sehen den gesamten Veröffentlichungsstatus im Fenster **Webveröffentlichungsaktivität** in Visual Studio: ![Webveröffentlichungsaktivität](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms09.png)  
 
 Die erstellte Anwendung wird nun in der Cloud ausgeführt. Bei der nächsten Bereitstellung der Anwendung von Visual Studio aus werden nur die geänderten (oder neuen) Dateien bereitgestellt.  
 	![Anwendung im Browser](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms10.png)
 
->[AZURE.NOTE]Wenn Sie bei der Veröffentlichung auf einer bereits eingerichteten Web-App einen Fehler feststellen, können Sie den Speicherort vor dem Hinzufügen neuer Dateien löschen. Veröffentlichen Sie die Anwendung erneut, wählen Sie aber im Dialogfeld **Web veröffentlichen** die Registerkarte **Einstellungen** aus. Stellen Sie anschließend die Konfiguration auf **Debug** ein, und wählen Sie die Option **Remove additional files at destination** aus. Verwenden Sie **Veröffentlichen**, um die Anwendung erneut bereitzustellen.  
+>[AZURE.NOTE] 
+Wenn Sie bei der Veröffentlichung auf einer bereits eingerichteten Web-App einen Fehler feststellen, können Sie den Speicherort vor dem Hinzufügen neuer Dateien löschen. Veröffentlichen Sie die Anwendung erneut, wählen Sie aber im Dialogfeld **Web veröffentlichen** die Registerkarte **Einstellungen** aus. Stellen Sie anschließend die Konfiguration auf **Debug** ein, und wählen Sie die Option **Remove additional files at destination** aus. Verwenden Sie **Veröffentlichen**, um die Anwendung erneut bereitzustellen. 
 	![Dialogfeld "Web veröffentlichen"](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms11.png)
 
 ##Hinzufügen einer Datenbank zur Anwendung 
@@ -495,9 +499,9 @@ Mit den folgenden Schritten können Sie einen Google-Authentifizierungsanbieter 
 		}
 
 12. Drücken Sie **STRG+F5**, um die Anwendung zu erstellen und auszuführen. Klicken Sie auf den Link **Log in**.
-13. Klicken Sie unter **Einen anderen Dienst zum Anmelden verwenden** auf **Google**.  
+13. Klicken Sie unter **Einen anderen Dienst zum Anmelden verwenden** auf **Google**. 
 	![Anmelden](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms21d.png)  
-14. Wenn Sie Ihre Anmeldeinformationen eingeben müssen, werden Sie zur Google-Website umgeleitet, wo Sie Ihre Anmeldeinformationen eingeben.  
+14. Wenn Sie Ihre Anmeldeinformationen eingeben müssen, werden Sie zur Google-Website umgeleitet, wo Sie Ihre Anmeldeinformationen eingeben. 
 	![Google - Anmeldung](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms21e.png)  
 15. Nachdem Sie Ihre Anmeldeinformationen eingegeben haben, werden Sie aufgefordert, Berechtigungen für die soeben erstellten Webanwendung zu erteilen:  
 	![Standard-Dienstkonto für Projekt](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms21f.png)  
@@ -686,7 +690,8 @@ Nachdem die Webanwendung nun vollständig ist, können Sie sie in Azure veröffe
 
 10. Klicken Sie dann auf **Veröffentlichen**. Die Anwendung wird in Azure veröffentlicht.
 
->[AZURE.NOTE]Wenn Sie Visual Studio geschlossen und nach dem Erstellen des Veröffentlichungsprofils wieder geöffnet haben, wird die Verbindungszeichenfolge möglicherweise nicht in der Dropdownliste angezeigt. Bearbeiten Sie in diesem Fall nicht das zuvor erstellte Veröffentlichungsprofil, sondern erstellen Sie ein neues Profil auf die gleiche Weise wie das vorherige Profil. Führen Sie dann die folgenden Schritte auf der Registerkarte **Einstellungen** aus.)
+>[AZURE.NOTE]  
+Wenn Sie Visual Studio geschlossen und nach dem Erstellen des Veröffentlichungsprofils wieder geöffnet haben, wird die Verbindungszeichenfolge möglicherweise nicht in der Dropdownliste angezeigt. Bearbeiten Sie in diesem Fall nicht das zuvor erstellte Veröffentlichungsprofil, sondern erstellen Sie ein neues Profil auf die gleiche Weise wie das vorherige Profil. Führen Sie dann die folgenden Schritte auf der Registerkarte **Einstellungen** aus.)
 
 ###Überprüfen der Anwendung in Azure 
 1. Klicken Sie im Browser auf den Link **Kontakt Demo**. Die Kontaktliste wird angezeigt.  
@@ -740,10 +745,11 @@ An früherer Stelle in diesem Lernprogramm haben Sie Code verwendet, um Benutzer
 3. Suchen Sie in der Tabelle **dbo.AspNetUsers** den Benutzer, den Sie zur Rolle hinzufügen möchten, und kopieren Sie die Benutzer-*ID*.
 4. Fügen Sie die kopierte *ID* in das Feld **UserId** auf der neuen Zeile in der Tabelle **AspNetUserRoles** ein.  
 
->[AZURE.NOTE]Zurzeit wird ein Tool entwickelt, das die Verwaltung von Benutzern und Rollen vereinfacht.
+>[AZURE.NOTE]  
+Zurzeit wird ein Tool entwickelt, das die Verwaltung von Benutzern und Rollen vereinfacht.
 
 ##Nächste Schritte
-Weitere Informationen zu ASP.NET Web Forms finden Sie unter [Learn About ASP.NET Web Forms](http://www.asp.net/web-forms) in der ASP.NET-Web-App sowie in den [Microsoft Azure-Lernprogrammen und -Anleitungen](http://azure.microsoft.com/documentation/services/web-sites/#net).
+Weitere Informationen zu ASP.NET Web Forms finden Sie unter [Learn About ASP.NET Web Forms](http://www.asp.net/web-forms) in der ASP.NET-Web-App sowie in den [Microsoft Azure-Lernprogrammen und -Anleitungen](https://azure.microsoft.com/documentation/services/web-sites/#net).
 
 Dieses Lernprogramm basiert auf dem MVC-Lernprogramm [Erstellen einer ASP.NET MVC-App mit Authentifizierung und SQL-Datenbank und Bereitstellung in Azure App Service](web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database.md) von Rick Anderson (Twitter[@RickAndMSFT](https://twitter.com/RickAndMSFT)), mit Unterstützung von Tom Dykstra und Barry Dorrans (Twitter [@blowdart](https://twitter.com/blowdart)).
 
@@ -751,4 +757,4 @@ Bitte teilen Sie uns mit, was Ihrer Meinung nach gelungen ist, bzw. verbessert w
 
  
 
-<!----HONumber=AcomDC_1217_2015-->
+<!---HONumber=AcomDC_0128_2016-->

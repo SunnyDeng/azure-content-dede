@@ -25,7 +25,7 @@ Sie können lokale Verfügbarkeitsgruppen nach Microsoft Azure erweitern, indem 
 
 Dieses Lernprogramm setzt voraus, dass Sie über die folgenden Punkte verfügen:
 
-- Ein aktives Azure-Abonnement. Sie können sich für eine [kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial) registrieren.
+- Ein aktives Azure-Abonnement. Sie können sich für eine [kostenlose Testversion](https://azure.microsoft.com/pricing/free-trial/) registrieren.
 
 - Eine vorhandene, lokale AlwaysOn-Verfügbarkeitsgruppe. Weitere Informationen zu Verfügbarkeitsgruppen finden Sie unter [AlwaysOn-Verfügbarkeitsgruppen](https://msdn.microsoft.com/library/hh510230.aspx).
 
@@ -91,7 +91,7 @@ In diesem Abschnitt erfahren Sie, wie Sie den **Assistenten zum Hinzufügen von 
 
 1. Der Bereitstellungsvorgang beginnt. Wenn der Assistent erfolgreich abgeschlossen wird, klicken Sie auf **Schließen**, um den Assistenten zu verlassen.
 
->[AZURE.NOTE]Der Assistent zum Hinzufügen von Azure-Replikaten erstellt eine Protokolldatei unter <Users>"<Benutzername>\\AppData\\Local\\SQL Server\\AddReplicaWizard". Diese Protokolldatei kann zum Beheben von Fehlern in fehlerhaften Azure-Replikatbereitstellungen verwendet werden. Wenn der Assistent keinerlei Aktionen ausführt, wird ein Rollback aller zuvor vorgenommenen Vorgänge ausgeführt, einschließlich der Löschung der bereitgestellten VM.
+>[AZURE.NOTE] Der Assistent zum Hinzufügen von Azure-Replikaten erstellt eine Protokolldatei unter <Users>"<Benutzername>\\AppData\\Local\\SQL Server\\AddReplicaWizard". Diese Protokolldatei kann zum Beheben von Fehlern in fehlerhaften Azure-Replikatbereitstellungen verwendet werden. Wenn der Assistent keinerlei Aktionen ausführt, wird ein Rollback aller zuvor vorgenommenen Vorgänge ausgeführt, einschließlich der Löschung der bereitgestellten VM.
 
 ## Erstellen eines Listeners für eine Verfügbarkeitsgruppe
 
@@ -103,4 +103,4 @@ Nach dem Erstellen der Verfügbarkeitsgruppe sollten Sie einen Listener für Cli
 
 Weitere Informationen zum Ausführen von SQL Server auf virtuellen Azure-Computern finden Sie unter [SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-infrastructure-services.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

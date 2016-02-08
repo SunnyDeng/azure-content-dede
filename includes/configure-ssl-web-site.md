@@ -1,7 +1,7 @@
 
 In diesem Artikel wird die Vorgehensweise beim Konfigurieren von HTTPS für eine Web-App in Azure App Service beschrieben. Dabei wird die Clientzertifikatauthentifizierung nicht behandelt. Informationen hierzu finden Sie unter [Konfigurieren von gegenseitiger TLS-Authentifizierung für Web-Apps](../articles/app-service-web/app-service-web-configure-tls-mutual-auth.md).
 
-Standardmäßig ermöglicht Azure über ein Platzhalterzertifikat für die Domäne „*.azurewebsites.net“ bereits HTTP für Ihre App. Wenn Sie keine benutzerdefinierte Domäne konfigurieren möchten, können Sie das Standard-HTTPS-Zertifikat nutzen. [Platzhalterdomänen](https://casecurity.org/2014/02/26/pros-and-cons-of-single-domain-multi-domain-and-wildcard-certificates/) sind jedoch generell nicht so sicher wie die Verwendung einer benutzerdefinierten Domäne mit Ihrem eigenen Zertifikat.
+Standardmäßig ermöglicht Azure über ein Platzhalterzertifikat für die Domäne „*.azurewebsites.net“ bereits HTTPS für Ihre App. Wenn Sie keine benutzerdefinierte Domäne konfigurieren möchten, können Sie das Standard-HTTPS-Zertifikat nutzen. [Platzhalterdomänen](https://casecurity.org/2014/02/26/pros-and-cons-of-single-domain-multi-domain-and-wildcard-certificates/) sind jedoch generell nicht so sicher wie die Verwendung einer benutzerdefinierten Domäne mit Ihrem eigenen Zertifikat.
 
 In den folgenden Abschnitten dieses Dokuments wird detailliert erläutert, wie HTTPS für benutzerdefinierte Domänen wie **contoso.com**, **www.contoso.com** oder ***.contoso.com** aktiviert wird.
 
@@ -11,18 +11,18 @@ In den folgenden Abschnitten dieses Dokuments wird detailliert erläutert, wie H
 Wenn Sie HTTPS für eine benutzerdefinierte Domäne wie **contoso.com** aktivieren möchten, müssen Sie zunächst einen [benutzerdefinierten Domänennamen in Azure App Service konfigurieren](../articles/app-service-web/web-sites-custom-domain-name.md). Gehen Sie anschließend wie folgt vor:
 
 1. [Beziehen eines SSL-Zertifikats](#bkmk_getcert)
-2. [Konfigurieren des Tarifs „Standard“](#bkmk_standardmode)
+2. [Konfigurieren des Standard- oder Premium-Tarifs](#bkmk_standardmode)
 2. [Konfigurieren von SSL in Ihrer App](#bkmk_configuressl)
 3. [Erzwingen von SSL für Ihre App](#bkmk_enforce) (optional)
 
-Wenn Sie beim Lesen dieses Artikels feststellen, dass Sie weitere Hilfe benötigen, können Sie Ihre Frage im [MSDN Azure-Forum oder im Stack Overflow-Forum](http://azure.microsoft.com/support/forums/) stellen, um dort Hilfe von Azure-Experten zu erhalten. Alternativ dazu haben Sie die Möglichkeit, einen Azure-Supportfall zu erstellen. Rufen Sie die [Azure-Support-Website](http://azure.microsoft.com/support/options/) auf, und klicken Sie auf **Support erhalten**.
+Wenn Sie beim Lesen dieses Artikels feststellen, dass Sie weitere Hilfe benötigen, können Sie Ihre Frage im [MSDN Azure-Forum oder im Stack Overflow-Forum](https://azure.microsoft.com/support/forums/) stellen, um dort Hilfe von Azure-Experten zu erhalten. Alternativ dazu haben Sie die Möglichkeit, einen Azure-Supportfall zu erstellen. Rufen Sie die [Azure-Support-Website](https://azure.microsoft.com/support/options/) auf, und klicken Sie auf **Support erhalten**.
 
 <a name="bkmk_getcert"></a>
 ## 1\. Beziehen eines SSL-Zertifikats
 
 Bevor Sie ein SSL-Zertifikat anfordern, müssen Sie zuerst festlegen, welche Domänennamen durch das Zertifikat geschützt werden. Davon hängt ab, welchen Typ von Zertifikat Sie benötigen. Wenn Sie lediglich einen einzelnen Domänennamen wie **contoso.com** oder **www.contoso.com** schützen müssen, reicht ein Basiszertifikat aus. Wenn Sie mehrere Domänennamen, wie z. B. **contoso.com**, **www.contoso.com** und **mail.contoso.com**, sichern müssen, erhalten Sie ein [Platzhalterzertifikat](http://en.wikipedia.org/wiki/Wildcard_certificate) oder ein [Zertifikat mit einem alternativen Antragstellernamen](http://en.wikipedia.org/wiki/SubjectAltName) (SubjectAltName).
 
-Mit App Service verwendete SSL-Zertifikate müssen durch eine [Zertifizierungsstelle](http://en.wikipedia.org/wiki/Certificate_authority) (CA) signiert werden. Wenn Sie noch kein Zertifikat haben, müssen Sie eines von einem Unternehmen erwerben, das SSL-Zertifikate ausstellt. Eine Liste von Zertifizierungsstellen finden Sie unter [Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)][cas] (Windows- und Windows Phone 8-SSL-Stammzertifikatsprogramm [Mitgliedszertifizierungsstellen] – in englischer Sprache) im Microsoft TechNet Wiki.
+Mit App Service verwendete SSL-Zertifikate müssen von einer [Zertifizierungsstelle](http://en.wikipedia.org/wiki/Certificate_authority) (CA) signiert werden. Wenn Sie noch kein Zertifikat haben, müssen Sie eines von einem Unternehmen erwerben, das SSL-Zertifikate ausstellt. Eine Liste von Zertifizierungsstellen finden Sie unter [Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)][cas] (Windows- und Windows Phone 8-SSL-Stammzertifikatsprogramm [Mitgliedszertifizierungsstellen] – in englischer Sprache) im Microsoft TechNet Wiki.
 
 Das Zertifikat muss die folgenden Anforderungen für SSL-Zertifikate in Azure erfüllen:
 
@@ -40,7 +40,7 @@ Um ein SSL-Zertifikat für die Verwendung mit Azure App Service zu erhalten, mü
 - [Abrufen eines SubjectAltName-Zertifikats mit OpenSSL](#bkmk_subjectaltname)
 - [Generieren selbstsignierter Zertifikate (nur für Testzwecke)](#bkmk_selfsigned)
 
-> [AZURE.NOTE]Wenn Sie die Schritte befolgen, werden Sie aufgefordert, einen **Allgemeinen Namen**, z. B. `www.contoso.com` einzugeben. Für Platzhalterzertifikate sollte dieser Wert "*.domainname" (z. B. *.contoso.com) lauten. Wenn Sie einen Platzhalternamen wie "*.contoso.com" und einen Stammdomänennamen wie "contoso.com" unterstützen müssen, können Sie ein Platzhalterzertifikat für einen alternativen Antragstellernamen (subjectAltName) verwenden.
+> [AZURE.NOTE] Wenn Sie die Schritte befolgen, werden Sie aufgefordert, einen **Allgemeinen Namen**, z. B. `www.contoso.com` einzugeben. Für Platzhalterzertifikate sollte dieser Wert "*.domainname" (z. B. *.contoso.com) lauten. Wenn Sie einen Platzhalternamen wie "*.contoso.com" und einen Stammdomänennamen wie "contoso.com" unterstützen müssen, können Sie ein Platzhalterzertifikat für einen alternativen Antragstellernamen (subjectAltName) verwenden.
 >
 > Zertifikate für die Kryptografie für elliptische Kurven (ECC) werden für Azure App Service zwar unterstützt, sie sind jedoch noch relativ neu, daher sollten Sie bei Ihrer Zertifizierungsstelle erfragen, wie genau Sie die CSR-Datei erstellen.
 
@@ -169,7 +169,7 @@ Jetzt können Sie die exportierte PFX-Datei zu Ihrer App in Azure App Service ho
 
 	Geben Sie bei der entsprechenden Aufforderung ein Kennwort ein, um die PFX-Datei zu schützen.
 
-	> [AZURE.NOTE]Wenn die Zertifizierungsstelle Zwischenzertifikate verwendet, müssen Sie diese Zertifikate installieren, bevor Sie das Zertifikat im nächsten Schritt exportieren. In der Regel werden diese Zertifikate als separater Download von der Zertifizierungsstelle und in verschiedenen Formaten für unterschiedliche Webservertypen zur Verfügung gestellt. Wählen Sie die Version, die als PEM-Datei (Dateierweiterung .pem) bereitgestellt wird.
+	> [AZURE.NOTE] Wenn die Zertifizierungsstelle Zwischenzertifikate verwendet, müssen Sie diese Zertifikate installieren, bevor Sie das Zertifikat im nächsten Schritt exportieren. In der Regel werden diese Zertifikate als separater Download von der Zertifizierungsstelle und in verschiedenen Formaten für unterschiedliche Webservertypen zur Verfügung gestellt. Wählen Sie die Version, die als PEM-Datei (Dateierweiterung .pem) bereitgestellt wird.
 	>
 	> Der folgende Befehl zeigt, wie eine PFX-Datei erstellt wird, die Zwischenzertifikate enthält, die in der Datei **intermediate-cets.pem** enthalten sind:
 	>
@@ -197,9 +197,9 @@ Wenn Sie mit IIS-Manager vertraut sind, können Sie damit ein Zertifikat generie
 
 4. Exportieren Sie das Zertifikat aus IIS Manager. Weitere Informationen zum Exportieren des Zertifikats finden Sie unter [Exportieren eines Serverzertifikats (IIS 7)][exportcertiis]. Die exportierte Datei wird später nach Azure hochgeladen, um für Ihre App verwendet zu werden.
 
-	> [AZURE.NOTE]Aktivieren Sie während des Exportprozesses die Option <strong>Ja, privaten Schlüssel exportieren</strong>. Damit wird der private Schlüssel in das exportierte Zertifikat einbezogen.
+	> [AZURE.NOTE] Aktivieren Sie während des Exportprozesses die Option <strong>Ja, privaten Schlüssel exportieren</strong>. Damit wird der private Schlüssel in das exportierte Zertifikat einbezogen.
 
-	> [AZURE.NOTE]Aktivieren Sie während des Exportprozesses die Optionen **Alle Zertifikate im Zertifizierungspfad einbeziehen** und **Alle erweiterten Eigenschaften exportieren**. Damit werden alle Zwischenzertifikate in das exportierte Zertifikat einbezogen.
+	> [AZURE.NOTE] Aktivieren Sie während des Exportprozesses die Optionen **Alle Zertifikate im Zertifizierungspfad einbeziehen** und **Alle erweiterten Eigenschaften exportieren**. Damit werden alle Zwischenzertifikate in das exportierte Zertifikat einbezogen.
 
 <a name="bkmk_subjectaltname"></a>
 ### Erhalten eines SubjectAltName-Zertifikats mit OpenSSL
@@ -289,7 +289,7 @@ Mit OpenSSL kann eine Zertifikatanforderung erstellt werden, welche die SubjectA
 
 	Geben Sie bei der entsprechenden Aufforderung ein Kennwort ein, um die PFX-Datei zu schützen.
 
-	> [AZURE.NOTE]Wenn die Zertifizierungsstelle Zwischenzertifikate verwendet, müssen Sie diese Zertifikate installieren, bevor Sie das Zertifikat im nächsten Schritt exportieren. In der Regel werden diese Zertifikate als separater Download von der Zertifizierungsstelle und in verschiedenen Formaten für unterschiedliche Webservertypen zur Verfügung gestellt. Wählen Sie die Version, die als PEM-Datei (Dateierweiterung .pem) bereitgestellt wird.
+	> [AZURE.NOTE] Wenn die Zertifizierungsstelle Zwischenzertifikate verwendet, müssen Sie diese Zertifikate installieren, bevor Sie das Zertifikat im nächsten Schritt exportieren. In der Regel werden diese Zertifikate als separater Download von der Zertifizierungsstelle und in verschiedenen Formaten für unterschiedliche Webservertypen zur Verfügung gestellt. Wählen Sie die Version, die als PEM-Datei (Dateierweiterung .pem) bereitgestellt wird.
 	>
 	> Der folgende Befehl zeigt, wie eine PFX-Datei erstellt wird, die Zwischenzertifikate enthält, die in der Datei **intermediate-cets.pem** enthalten sind:
 	>
@@ -303,7 +303,7 @@ Mit OpenSSL kann eine Zertifikatanforderung erstellt werden, welche die SubjectA
 <a name="bkmk_selfsigned"></a>
 ### Generieren eines selbstsignierten Zertifikats (nur für Testzwecke)
 
-In bestimmten Fällen möchten Sie eventuell ein Zertifikat für Testzwecke erhalten und den Kauf eines Zertifikats von einer vertrauenswürdigen Zertifizierungsstelle verzögern, bis Sie die Produktion aufnehmen. Diese Lücke kann durch selbstsignierte Zertifikate gefüllt werden. Ein selbstsigniertes Zertifikat ist ein Zertifikat, das Sie erstellen und signieren, als wären Sie eine Zertifizierungsstelle. Zwar kann mit diesem Zertifikat eine App geschützt werden, die meisten Browser geben jedoch Fehler zurück, wenn die App besucht wird, da das Zertifikat nicht von einer vertrauenswürdigen Zertifizierungsstelle signiert wurde. Einige Browser verweigern möglicherweise sogar den Aufruf der App.
+In bestimmten Fällen möchten Sie eventuell ein Zertifikat für Testzwecke erhalten und den Kauf eines Zertifikats von einer vertrauenswürdigen Zertifizierungsstelle verzögern, bis Sie die Produktion aufnehmen. Diese Lücke kann durch selbstsignierte Zertifikate gefüllt werden. Ein selbstsigniertes Zertifikat ist ein Zertifikat, das Sie erstellen und signieren, als wären Sie eine Zertifizierungsstelle. Zwar kann mit diesem Zertifikat eine App geschützt werden, die meisten Browser geben jedoch Fehler zurück, wenn die App besucht wird, da das Zertifikat nicht von einer vertrauenswürdigen Zertifizierungsstelle signiert wurde. Einige Browser verweigern möglicherweise sogar das Aufrufen der App.
 
 - [Generieren eines selbstsignierten Zertifikats mit makecert](#bkmk_ssmakecert)
 - [Generieren eines selbstsignierten Zertifikats mit OpenSSL](#bkmk_ssopenssl)
@@ -386,11 +386,11 @@ Mit den folgenden Schritten können Sie ein Testzertifikat mit einem Windows-Sys
 	Die mit diesem Befehl erzeugte Datei **myserver.pfx** kann für Testzwecke zum Schützen der App verwendet werden.
 
 <a name="bkmk_standardmode"></a>
-## 2\. Konfigurieren des Tarifs „Standard“
+## 2\. Konfigurieren des Standard- oder Premium-Tarifs
 
-Die Aktivierung von HTTPS für eine benutzerdefinierte Domäne steht nur für den Tarif **Standard** in Azure App Service zur Verfügung. Gehen Sie folgendermaßen vor, um Ihren App Service-Plan in den Tarif **Standard** zu ändern.
+Die Aktivierung von HTTPS für eine benutzerdefinierte Domäne steht nur für die Tarife **Standard** und **Premium** in Azure App Service zur Verfügung. Gehen Sie folgendermaßen vor, um Ihren App Service-Plan in den Tarif **Standard** zu ändern.
 
-> [AZURE.NOTE]Bevor Sie eine App vom Tarif **Free** auf den Tarif **Standard** umstellen, müssen Sie das für Ihr Abonnement geltende Ausgabenlimit aufheben. Andernfalls besteht das Risiko, dass Ihre App nicht mehr verfügbar ist, wenn Sie Ihr Ausgabenlimit vor Ende des Abrechnungszeitraums erreichen. Weitere Informationen zu den Preisen für die Tarif „Shared“ und **Standard** finden Sie in der [Preisübersicht][pricing].
+> [AZURE.NOTE] Bevor Sie eine App vom Tarif **Free** auf den Tarif **Standard** umstellen, müssen Sie das für Ihr Abonnement geltende Ausgabenlimit aufheben. Andernfalls besteht das Risiko, dass Ihre App nicht mehr verfügbar ist, wenn Sie Ihr Ausgabenlimit vor Ende des Abrechnungszeitraums erreichen. Weitere Informationen zu den Preisen für die Tarife „Shared“ und **Standard** finden Sie in der [Preisübersicht][pricing].
 
 1.	Öffnen Sie in Ihrem Browser das [Azure-Portal](http://go.microsoft.com/fwlink/?LinkId=529715).
 2.	Klicken Sie auf der Seite links auf die Option **Durchsuchen**.
@@ -400,7 +400,7 @@ Die Aktivierung von HTTPS für eine benutzerdefinierte Domäne steht nur für de
 6.	Klicken Sie auf **Skalieren**.![Die Registerkarte "Skalierung"][scale]
 7.	Legen Sie im Abschnitt **Skalierung** den Modus für den App Service-Plan fest, indem Sie auf **Auswählen** klicken. ![Den Tarif][sslreserved]
 
-	> [AZURE.NOTE]Wenn die Fehlermeldung "Fehler beim Konfigurieren der Skalierung für Web-App '&lt;App-Name&gt;'" angezeigt wird, können Sie mit der Schaltfläche "Details" weitere Informationen abrufen. Eventuell wird die Fehlermeldung "Not enough available standard instance servers to satisfy this request." angezeigt. Wenn diese Fehlermeldung angezeigt wird, rufen Sie [Supportoptionen für Azure](/support/options/) auf.
+	> [AZURE.NOTE] Wenn die Fehlermeldung "Fehler beim Konfigurieren der Skalierung für Web-App '&lt;App-Name&gt;'" angezeigt wird, können Sie mit der Schaltfläche "Details" weitere Informationen abrufen. Eventuell wird die Fehlermeldung "Not enough available standard instance servers to satisfy this request." angezeigt. Wenn diese Fehlermeldung angezeigt wird, rufen Sie [Supportoptionen für Azure](/support/options/) auf.
 
 <a name="bkmk_configuressl"></a>
 ## 3\. Konfigurieren von SSL in Ihrer App
@@ -425,7 +425,7 @@ Bevor Sie die Schritte in diesem Abschnitt ausführen, müssen Sie einen benutze
 
 10. Klicken Sie auf **Speichern**, um die Änderungen zu speichern und SSL zu aktivieren.
 
-> [AZURE.NOTE]Wenn Sie **IP-basiertes SSL** ausgewählt haben und Ihre benutzerdefinierte Domäne einen A-Datensatz verwendet, müssen Sie die folgenden zusätzlichen Schritte ausführen:
+> [AZURE.NOTE] Wenn Sie **IP-basiertes SSL** ausgewählt haben und Ihre benutzerdefinierte Domäne einen A-Datensatz verwendet, müssen Sie die folgenden zusätzlichen Schritte ausführen:
 >
 > 1. Nach der Konfiguration einer IP-basierten SSL-Bindung wird Ihrer App eine dedizierte IP-Adresse zugewiesen. Sie finden diese IP-Adresse auf der Seite **Dashboard** Ihrer App im Abschnitt **Auf einen Blick**. Sie wird als **Virtuelle IP-Adresse** aufgeführt:
 >    
@@ -441,9 +441,9 @@ Sie sollten jetzt in der Lage sein, Ihre App über `HTTPS://` anstelle von `HTTP
 <a name="bkmk_enforce"></a>
 ## 4\. Erzwingen von HTTPS in Ihrer App
 
-Mit Azure App Service wird die Verwendung von HTTPS *nicht* erzwungen. Besucher können weiterhin Ihre App mithilfe von HTTP aufrufen, wodurch die Sicherheit Ihrer App aber möglicherweise beeinträchtigt wird. Wenn Sie HTTPS für Ihre App erzwingen möchten, können Sie das **URL Rewrite**-Modul verwenden. Das Modul URL Rewrite ist in Azure App Service enthalten. Damit können Sie Regeln definieren, die auf eingehende Anfragen angewendet werden, bevor diese Anfragen an Ihre Anwendung weitergegeben werden. **Es kann für Anwendungen genutzt werden, die in einer von Azure unterstützten Programmiersprache geschrieben sind.**
+Mit Azure App Service wird die Verwendung von HTTPS *nicht* erzwungen. Besucher können Ihre App weiterhin mithilfe von HTTP aufrufen, wodurch die Sicherheit Ihrer App aber möglicherweise beeinträchtigt wird. Wenn Sie HTTPS für Ihre App erzwingen möchten, können Sie das **URL Rewrite**-Modul verwenden. Das Modul URL Rewrite ist in Azure App Service enthalten. Damit können Sie Regeln definieren, die auf eingehende Anfragen angewendet werden, bevor diese Anfragen an Ihre Anwendung weitergegeben werden. **Es kann für Anwendungen genutzt werden, die in einer von Azure unterstützten Programmiersprache geschrieben sind.**
 
-> [AZURE.NOTE].NET MVC-Anwendungen sollten den [RequireHttps](http://msdn.microsoft.com/library/system.web.mvc.requirehttpsattribute.aspx)-Filter anstelle von "URL Rewrite" verwenden. Weitere Informationen zur Verwendung von "RequireHttps" finden Sie unter [Bereitstellen einer sicheren ASP.NET MVC 5-Anwendung für eine Web-App](../articles/app-service-web/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database.md).
+> [AZURE.NOTE] .NET MVC-Anwendungen sollten den [RequireHttps](http://msdn.microsoft.com/library/system.web.mvc.requirehttpsattribute.aspx)-Filter anstelle von "URL Rewrite" verwenden. Weitere Informationen zur Verwendung von "RequireHttps" finden Sie unter [Bereitstellen einer sicheren ASP.NET MVC 5-Anwendung für eine Web-App](../articles/app-service-web/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database.md).
 >
 > Informationen zur programmatischen Weiterleitung von Anfragen, die andere Programmiersprachen und Frameworks verwenden, finden Sie in der Dokumentation für diese Technologien.
 
@@ -470,7 +470,7 @@ Die Regeln zu URL Rewrite sind in einer **web.config**-Datei im Stammverzeichnis
 
 Diese Regel funktioniert durch die Rückgabe eines HTTP-Statuscode von 301 (Permanent Redirect), wenn der Benutzer eine Seite mit HTTP anfragt. Der Code 301 leitet die Anfrage an die gleiche URL weiter, die der Besucher angefragt hat, aber ersetzt den HTTP-Teil der Anfrage mit HTTPS. Beispielsweise würde HTTP://contoso.com an HTTPS://contoso.com umgeleitet werden.
 
-> [AZURE.NOTE]Wenn Ihre Anwendung in **Node.js**, **PHP**, **Python Django** oder **Java** geschrieben ist, enthält sie wahrscheinliche keine Datei "web.config". Dennoch verwenden **Node.js**, **Python Django** und **Java** eine Datei "web.config", wenn sie in Azure App Service gehostet werden. Azure erstellt die Datei während der Bereitstellung automatisch, deshalb sehen Sie sie nicht. Wenn Sie eine solche Datei als Teil Ihrer Anwendung einfügen, wird die von Azure automatisch generierte Datei überschrieben.
+> [AZURE.NOTE] Wenn Ihre Anwendung in **Node.js**, **PHP**, **Python Django** oder **Java** geschrieben ist, enthält sie wahrscheinliche keine Datei "web.config". Dennoch verwenden **Node.js**, **Python Django** und **Java** eine Datei "web.config", wenn sie in Azure App Service gehostet werden. Azure erstellt die Datei während der Bereitstellung automatisch, deshalb sehen Sie sie nicht. Wenn Sie eine solche Datei als Teil Ihrer Anwendung einfügen, wird die von Azure automatisch generierte Datei überschrieben.
 
 ###.NET
 
@@ -480,13 +480,13 @@ Wenn Ihre web.config-Datei bereits einen Anschnitt **&lt;rewrite>** enthält, f�
 
 ###PHP
 
-Speichern Sie bei PHP-Anwendungen einfach das [Beispiel](#example) als web.config-Datei im Stammverzeichnis Ihrer Anwendung, und stellen Sie die Anwendung für Ihre App erneut bereit.
+Speichern Sie bei PHP-Anwendungen einfach das [Beispiel](#example) als web.config-Datei im Stammverzeichnis Ihrer Anwendung und stellen Sie die Anwendung für Ihre App erneut bereit.
 
 ###Node.js, Python Django und Java
 
 Für Node.js-, Python Django- und Java-Apps wird automatisch eine web.config-Datei erstellt, wenn sie keine haben. Sie existiert aber nur auf dem Server, da sie während der Bereitstellung erstellt wird. Die automatisch generierte Datei enthält Einstellungen, die Azure befehlen, wie Ihre Anwendung gehostet werden soll.
 
-Um die automatisch generierte Datei von der App abzurufen und zu ändern, verwenden Sie die folgenden Schritte.
+Um die automatisch generierte Datei von der App abzurufen und zu ändern, führen Sie die folgenden Schritte aus.
 
 1. Laden Sie die Datei über FTP herunter (siehe [Hochladen/herunterladen von Dateien über FTP und Sammeln von Diagnoseprotokollen](http://blogs.msdn.com/b/avkashchauhan/archive/2012/06/19/windows-azure-website-uploading-downloading-files-over-ftp-and-collecting-diagnostics-logs.aspx)).
 
@@ -496,7 +496,7 @@ Um die automatisch generierte Datei von der App abzurufen und zu ändern, verwen
 
 	* **Node.js und Python Django**
 
-		Die Datei „web.config“, die für Node.js- und Python Django-Anwendungen erstellt wurde, enthält bereits einen Abschnitt **&lt;rewrite>** mit **&lt;rule>**-Einträgen, die für die ordnungsgemäße Funktion der App benötigt werden. Um für die App die Verwendung von HTTPS zu erzwingen, fügen Sie **&lt;rule>** aus dem Beispiel als ersten Eintrag im Abschnitt **&lt;rules>** hinzu. Damit wird HTTPS erzwungen, während die übrigen Regeln bestehen bleiben.
+		Die Datei "web.config", die für Node.js- und Python Django-Anwendungen erstellt wurde, enthält bereits einen Abschnitt **&lt;rewrite>** mit **&lt;rule>**-Einträgen, die für die ordnungsgemäße Funktion der Website benötigt werden. Um für die App die Verwendung von HTTPS zu erzwingen, fügen Sie **&lt;rule>** aus dem Beispiel als ersten Eintrag im Abschnitt **&lt;rules>** hinzu. Damit wird HTTPS erzwungen, während die übrigen Regeln bestehen bleiben.
 
 	* **Java**
 
@@ -515,7 +515,7 @@ Weitere Informationen zum IIS-URL-Rewrite-Modul finden Sie unter der Dokumentati
 - [Konfigurieren von Web-Apps in Azure App Service](../articles/app-service-web/web-sites-configure.md)
 - [Azure-Verwaltungsportal](https://manage.windowsazure.com)
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, bevor Sie sich für ein Azure-Konto registrieren, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine temporäre Starter-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Änderungen
 * Hinweise zu den Veränderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
@@ -545,4 +545,4 @@ Weitere Informationen zum IIS-URL-Rewrite-Modul finden Sie unter der Dokumentati
 [certwiz3]: ./media/configure-ssl-web-site/waws-certwiz3.png
 [certwiz4]: ./media/configure-ssl-web-site/waws-certwiz4.png
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0128_2016-->

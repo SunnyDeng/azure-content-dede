@@ -34,9 +34,9 @@ Mit der Integration in virtuelle Netzwerke können HBase-Cluster im selben virtu
 ##Voraussetzungen
 Bevor Sie mit diesem Lernprogramm beginnen können, benötigen Sie Folgendes:
 
-- **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
+- **Ein Azure-Abonnement**. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 
-- **Eine Arbeitsstation mit Azure PowerShell**. Siehe [Install and use Azure PowerShell](http://azure.microsoft.com/documentation/videos/install-and-use-azure-powershell/) (Installieren und Verwenden von Azure PowerShell, in englischer Sprache). Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md). Um Azure PowerShell-Skripts ausführen zu können, müssen Sie Azure PowerShell als Administrator ausführen und die Ausführungsrichtlinie auf *RemoteSigned* setzen. Siehe [Verwenden des Cmdlet „Set-ExecutionPolicy“][2].
+- **Eine Arbeitsstation mit Azure PowerShell**. Siehe [Install and use Azure PowerShell](https://azure.microsoft.com/documentation/videos/install-and-use-azure-powershell/) (Installieren und Verwenden von Azure PowerShell, in englischer Sprache). Anweisungen hierzu finden Sie unter [Installieren und Konfigurieren von Azure PowerShell](../install-configure-powershell.md). Um Azure PowerShell-Skripts ausführen zu können, müssen Sie Azure PowerShell als Administrator ausführen und die Ausführungsrichtlinie auf *RemoteSigned* setzen. Siehe [Verwenden des Cmdlet „Set-ExecutionPolicy“][2].
 
 	Stellen Sie vor dem Ausführen von Azure PowerShell-Skripts mithilfe des folgenden Cmdlets sicher, dass eine Verbindung mit Ihrem Azure-Abonnement besteht:
 
@@ -78,7 +78,7 @@ Vor der Bereitstellung eines HBase-Clusters müssen Sie ein virtuelles Azure-Net
 2. Klicken Sie auf **NEU**, auf **Netzwerk** und anschließend auf **Virtuelles Netzwerk**.
 3. Wählen Sie in **Bereitstellungsmodell auswählen** die Option**Klassisch**, wenn Sie einen Windows-basierten HDInsight-Cluster verwenden möchten. Wählen Sie **Ressourcen-Manager**, wenn Sie einen Linux-basierten HDInsight-Cluster verwenden möchten. Klicken Sie abschließend auf **Erstellen**.
 
-    > [AZURE.NOTE]Für Windows-basierte Cluster ist ein virtuelles Azure-Netzwerk der Version 1 (klassisch) erforderlich, für Linux-basierte Cluster dagegen ein virtuelles Azure-Netzwerk der Version 2 (Azure-Ressourcen-Manager). Wenn nicht der richtige Netzwerktyp vorhanden ist, kann das Netzwerk nicht zum Erstellen des Clusters verwendet werden.
+    > [AZURE.NOTE] Für Windows-basierte Cluster ist ein virtuelles Azure-Netzwerk der Version 1 (klassisch) erforderlich, für Linux-basierte Cluster dagegen ein virtuelles Azure-Netzwerk der Version 2 (Azure-Ressourcen-Manager). Wenn nicht der richtige Netzwerktyp vorhanden ist, kann das Netzwerk nicht zum Erstellen des Clusters verwendet werden.
     >
     > Wenn sich Ressourcen in einem virtuellen Netzwerk befinden, das nicht von dem zu erstellenden Cluster verwendet werden kann, dann können Sie ein neues virtuelles Netzwerk erstellen, das vom Cluster verwendet werden kann, und es mit dem inkompatiblen virtuellen Netzwerk verbinden. Anschließend können Sie den Cluster in der erforderlichen Netzwerkversion erstellen, und da die beiden Netzwerke verknüpft sind, kann auf die Ressourcen im anderen Netzwerk zugegriffen werden. Weitere Informationen zum Herstellen einer Verbindung zwischen klassischen und neuen virtuellen Netzwerken finden Sie unter [Herstellen einer Verbindung zwischen klassischen VNets und neuen VNets](../virtual-network/virtual-networks-arm-asm-s2s.md).
     
@@ -87,13 +87,13 @@ Vor der Bereitstellung eines HBase-Clusters müssen Sie ein virtuelles Azure-Net
 	- **Name**: Name des virtuellen Netzwerks.
 	- **Adressraum**: Wählen Sie einen Adressraum für das virtuelle Netzwerk, der groß genug ist, um Adressen für alle Knoten im Cluster zur Verfügung zu stellen. Andernfalls schlägt die Bereitstellung fehl. Für dieses Tutorial können Sie die Standardwerte verwenden. Klicken Sie zum Speichern der Änderungen auf **OK**.
     
-        > [AZURE.NOTE]Wenn Sie dieses virtuelle Netzwerk mit mehreren Clustern verwenden, empfiehlt sich dringend, für jeden Cluster ein einzelnes Subnetz anzugeben.
+        > [AZURE.NOTE] Wenn Sie dieses virtuelle Netzwerk mit mehreren Clustern verwenden, empfiehlt sich dringend, für jeden Cluster ein einzelnes Subnetz anzugeben.
          
 	- **Ressourcengruppe**: Wählen Sie die Ressourcengruppe aus, die Sie zuvor in diesem Tutorial erstellt haben.
 	- **Abonnement**: Wählen Sie das Azure-Abonnement aus, das Sie für dieses virtuelle Netzwerk verwenden möchten.
 	- **Speicherort** – Der Speicherort muss derselbe sein wie der des zu erstellenden HBase-Clusters.
     
-        > [AZURE.NOTE]> Azure HDInsight unterstützt nur standortbasierte virtuelle Netzwerke und kann momentan nicht mit affinitätsgruppenbasierten virtuellen Netzwerken verwendet werden.
+        > [AZURE.NOTE] > Azure HDInsight unterstützt nur standortbasierte virtuelle Netzwerke und kann momentan nicht mit affinitätsgruppenbasierten virtuellen Netzwerken verwendet werden.
         
     Informationen zur Verwendung von HDInsight mit einem virtuellen Netzwerk, einschließlich spezifischer Konfigurationsanforderungen für das virtuelle Netzwerk, finden Sie unter [Erweitern der HDInsight-Funktionen mit Azure Virtual Network](hdinsight-extend-hadoop-virtual-network.md).
 
@@ -112,7 +112,7 @@ Ein DNS-Server ist optional, aber in einigen Fällen erforderlich. Die Vorgehens
 
 **So stellen Sie einen HBase-Cluster im Azure-Portal bereit**
 
-> [AZURE.NOTE]Informationen zum Bereitstellen eines neuen HBase-Clusters mit Azure PowerShell finden Sie unter [Bereitstellen eines HBase-Clusters mit Azure PowerShell](#powershell).
+> [AZURE.NOTE] Informationen zum Bereitstellen eines neuen HBase-Clusters mit Azure PowerShell finden Sie unter [Bereitstellen eines HBase-Clusters mit Azure PowerShell](#powershell).
 
 
 **So erstellen Sie einen HDInsight-Cluster**
@@ -139,7 +139,7 @@ Ein DNS-Server ist optional, aber in einigen Fällen erforderlich. Die Vorgehens
   	- **Standort**: Die geografische Region, in der sich das Speicherkonto befindet bzw. in der es erstellt wird. Dieser Standort bestimmt auch den Clusterstandort. Der Cluster und das zugeordnete Standardspeicherkonto müssen sich im selben Azure-Rechenzentrum befinden.
 
   - **Knotentarife**: Legen Sie die Anzahl von Workerknoten fest, die Sie für den Cluster benötigen. Die vorkalkulierten Kosten für den Cluster werden auf dem Blatt angezeigt.
-	- **Optionale Konfiguration**: Für dieses Tutorial müssen Sie nur **Virtual Network** konfigurieren. Wählen Sie das virtuelle Netzwerk aus, das Sie zuvor im Tutorial erstellt haben. Denken Sie daran, ein Subnetz auszuwählen.
+	- **Optionale Konfiguration**: Für dieses Tutorial müssen Sie nur **Virtuelles Netzwerk** konfigurieren. Wählen Sie das virtuelle Netzwerk aus, das Sie zuvor im Tutorial erstellt haben. Denken Sie daran, ein Subnetz auszuwählen.
 
 4. Klicken Sie auf **Erstellen**.
 
@@ -262,7 +262,7 @@ Führen Sie die Schritte unter [Erste Schritte mit HBase mit Hadoop in HDInsight
 
 		Daraufhin wird das DNS-Suffix zurückgegeben. Zum Beispiel: **yourclustername.b4.internal.cloudapp.net**.
 
-	> [AZURE.NOTE]Sie können auch per Remotedesktop eine Verbindung mit dem HBase-Cluster herstellen (wobei Sie eine Verbindung mit dem Hauptknoten herstellen) und **ipconfig** in einer Eingabeaufforderung ausführen, um das DNS-Suffix abzurufen. Anweisungen zum Aktivieren des Remotedesktopprotokolls (RDP) und zum Herstellen einer Verbindung mit dem Cluster mithilfe des RDP finden Sie unter [Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Portal][hdinsight-admin-portal].
+	> [AZURE.NOTE] Sie können auch per Remotedesktop eine Verbindung mit dem HBase-Cluster herstellen (wobei Sie eine Verbindung mit dem Hauptknoten herstellen) und **ipconfig** in einer Eingabeaufforderung ausführen, um das DNS-Suffix abzurufen. Anweisungen zum Aktivieren des Remotedesktopprotokolls (RDP) und zum Herstellen einer Verbindung mit dem Cluster mithilfe des RDP finden Sie unter [Verwalten von Hadoop-Clustern in HDInsight mit dem Azure-Portal][hdinsight-admin-portal].
 	>
 	> ![hdinsight.hbase.dns.surffix][img-dns-surffix]
 
@@ -291,7 +291,7 @@ Führen Sie die unter [Verwenden von Maven zur Entwicklung von Java-Anwendungen,
     	<value>zookeeper0.<dns suffix>,zookeeper1.<dns suffix>,zookeeper2.<dns suffix></value>
 	</property>
 
-> [AZURE.NOTE]Weitere Informationen zur Namensauflösung in virtuellen Azure-Netzwerken und zur Verwendung eigener DNS-Server finden Sie unter [Namensauflösung (DNS)](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md).
+> [AZURE.NOTE] Weitere Informationen zur Namensauflösung in virtuellen Azure-Netzwerken und zur Verwendung eigener DNS-Server finden Sie unter [Namensauflösung (DNS)](../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md).
 
 ##Bereitstellen von HBase-Clustern mit Azure PowerShell
 
@@ -391,4 +391,4 @@ In diesem Lernprogramm haben Sie erfahren, wie Sie einen HBase-Cluster bereitste
 
 [azure-preview-portal]: https://portal.azure.com
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

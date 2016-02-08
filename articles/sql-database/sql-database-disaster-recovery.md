@@ -34,10 +34,10 @@ Der Wiederherstellungsvorgang wirkt sich auf die Anwendung aus. Er erfordert ein
 1. Permanente Verbindungsfehler zwischen Anwendungsebene und Datenbank.
 2. Das klassische Azure-Portal zeigt eine Warnung zu einem Vorfall in der Region mit weit reichenden Auswirkungen.
 
-> [AZURE.NOTE]Nachdem die Wiederherstellung Ihrer Datenbank abgeschlossen ist, können Sie sie für die Verwendung konfigurieren. Befolgen Sie hierzu die Anleitung [Konfigurieren einer Datenbank nach der Wiederherstellung](#postrecovery).
+> [AZURE.NOTE] Nachdem die Wiederherstellung Ihrer Datenbank abgeschlossen ist, können Sie sie für die Verwendung konfigurieren. Befolgen Sie hierzu die Anleitung [Konfigurieren einer Datenbank nach der Wiederherstellung](#postrecovery).
 
 ## Failover auf eine georeplizierte sekundäre Datenbank
-> [AZURE.NOTE]Sie müssen eine sekundäre Datenbank für das Failover konfigurieren. Die Georeplikation ist nur für Standard- und Premium-Datenbanken verfügbar. Hier finden Sie Informationen zum [Konfigurieren der Georeplikation](sql-database-business-continuity-design.md).
+> [AZURE.NOTE] Sie müssen eine sekundäre Datenbank für das Failover konfigurieren. Die Georeplikation ist nur für Standard- und Premium-Datenbanken verfügbar. Hier finden Sie Informationen zum [Konfigurieren der Georeplikation](sql-database-business-continuity-design.md).
 
 ###Klassisches Azure-Portal
 Verwenden Sie das klassische Azure-Portal, um die fortlaufende Kopierbeziehung mit der georeplizierten sekundären Datenbank zu beenden.
@@ -64,7 +64,7 @@ Verwenden Sie REST zum programmgesteuerten Initiieren des Failovers auf eine sek
 
 Bei einem Ausfall einer Datenbank können Sie diese aus der aktuellen geografisch redundanten Sicherung mit der geografischen Wiederherstellung wiederherstellen.
 
-> [AZURE.NOTE]Beim Wiederherstellen einer Datenbank wird eine neue Datenbank erstellt. Es muss sichergestellt werden, dass der Server, auf dem die Wiederherstellung erfolgt, über ausreichend DTU-Kapazität für die neue Datenbank verfügt. [Wenden Sie sich an den Support](http://azure.microsoft.com/blog/azure-limits-quotas-increase-requests/), um dieses Kontingent zu erhöhen.
+> [AZURE.NOTE] Beim Wiederherstellen einer Datenbank wird eine neue Datenbank erstellt. Es muss sichergestellt werden, dass der Server, auf dem die Wiederherstellung erfolgt, über ausreichend DTU-Kapazität für die neue Datenbank verfügt. [Wenden Sie sich an den Support](https://azure.microsoft.com/blog/azure-limits-quotas-increase-requests/), um dieses Kontingent zu erhöhen.
 
 ###Klassisches Azure-Portal
 Führen Sie die folgenden Schritte aus, um eine SQL-Datenbank mithilfe der geografischen Wiederherstellung im klassischen Azure-Portal wiederherzustellen.
@@ -131,4 +131,4 @@ Weitere Informationen zu Datenbankwarnungsregeln finden Sie unter [Empfangen von
 
 Wenn für den Zugriff auf die Datenbank Überwachung erforderlich ist, müssen Sie nach der Wiederherstellung der Datenbank die Überwachung aktivieren. Es ist ein guter Indikator für die Notwendigkeit von Überwachung, wenn Clientanwendungen sichere Verbindungszeichenfolgen in einem Muster von *.database.secure.windows.net verwenden. Weitere Informationen finden Sie unter [Erste Schritte mit der SQL-Datenbanküberwachung](sql-database-auditing-get-started.md).
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

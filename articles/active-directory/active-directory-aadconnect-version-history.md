@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="12/02/2015"
+   ms.date="01/21/2016"
    ms.author="andkjell"/>
 
 # Azure AD Connect: Versionsveröffentlichungsverlauf
@@ -50,7 +50,7 @@ Veröffentlicht im November 2015
 **Neue Vorschaufeatures:**
 
 - [Azure AD Connect Health für die Synchronisierung](active-directory-aadconnect-health-sync.md)
-- Unterstützung für die Kennwortsynchronisierung mit [Azure AD-Domänendiensten](active-directory-ds-getting-started.md)
+- Unterstützung für die Kennwortsynchronisierung mit [Azure AD-Domänendiensten](active-directory-get-started.md)
 
 **Neues unterstütztes Szenario:**
 
@@ -209,4 +209,4 @@ Veröffentlicht im September 2014
 ## Nächste Schritte
 Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

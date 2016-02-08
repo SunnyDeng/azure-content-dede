@@ -22,9 +22,9 @@ In diesem Artikel finden Sie Informationen zu allgemeinen Problemen in Zusammenh
 
 ## Kontaktieren des Azure-Kundensupports
 
-Wenn Sie beim Lesen dieses Artikels feststellen, dass Sie weitere Hilfe benötigen, können Sie Ihre Frage im [MSDN Azure-Forum oder im Stack Overflow-Forum](http://azure.microsoft.com/support/forums/) stellen, um dort Hilfe von Azure-Experten zu erhalten.
+Wenn Sie beim Lesen dieses Artikels feststellen, dass Sie weitere Hilfe benötigen, können Sie Ihre Frage im [MSDN Azure-Forum oder im Stack Overflow-Forum](https://azure.microsoft.com/support/forums/) stellen, um dort Hilfe von Azure-Experten zu erhalten.
 
-Alternativ dazu haben Sie die Möglichkeit, einen Azure-Supportfall zu erstellen. Rufen Sie die [Azure-Support-Website](http://azure.microsoft.com/support/options/) auf, und klicken Sie auf **Support erhalten**. Informationen zur Nutzung von Azure-Support finden Sie unter [Microsoft Azure-Support-FAQ](http://azure.microsoft.com/support/faq/).
+Alternativ dazu haben Sie die Möglichkeit, einen Azure-Supportfall zu erstellen. Rufen Sie die [Azure-Support-Website](https://azure.microsoft.com/support/options/) auf, und klicken Sie auf **Support erhalten**. Informationen zur Nutzung von Azure-Support finden Sie unter [Microsoft Azure-Support-FAQ](https://azure.microsoft.com/support/faq/).
 
 
 ## Fehlende DLLs oder Abhängigkeiten
@@ -107,7 +107,7 @@ Sie können den Microsoft Azure-Serveremulator verwenden, um Probleme mit fehlen
 
 Bei dieser Diagnosemethode erzielen Sie die besten Ergebnisse, wenn Sie einen physischen oder virtuellen Computer mit einer neuen Windows-Installation verwenden. Um die Azure-Umgebung möglichst optimal zu simulieren, sollten Sie Windows Server 2008 R2 x64 verwenden.
 
-1. Installieren Sie die eigenständige Version des [Azure SDK](https://azure.microsoft.com/downloads).
+1. Installieren Sie die eigenständige Version des [Azure SDK](https://azure.microsoft.com/downloads/).
 
 2. Erstellen Sie das Clouddienstprojekt auf dem Entwicklungscomputer.
 
@@ -167,4 +167,4 @@ Sehen Sie sich weitere [Artikel zur Problembehandlung](..\?tag=top-support-issue
 
 Erfahren Sie in der [Blogreihe von Kevin Williamson](http://blogs.msdn.com/b/kwill/archive/2013/08/09/windows-azure-paas-compute-diagnostics-data.aspx), wie Sie Probleme bei Clouddienstrollen mithilfe der Computerdiagnosedaten von Azure-PaaS beheben.
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

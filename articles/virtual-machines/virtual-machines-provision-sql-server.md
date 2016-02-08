@@ -37,11 +37,11 @@ In diesem Lernprogramm lernen Sie Folgendes:
 * [Fertigstellen der Konfigurationsschritte, um mithilfe von SQL Server Management Studio auf einem anderen Computer eine Verbindung zum virtuellen Computer herzustellen](#SSMS)
 * [Nächste Schritte](#Optional)
 
->[AZURE.NOTE]Dieser Artikel beschreibt, wie virtuelle SQL Server-Computer mit dem vorhandenen Portal bereitgestellt werden. Es ist jedoch auch möglich, SQL Server-VMs im [neuen Portal](https://manage.windowsazure.com) zu erstellen und zu verwalten. Das neue Portal bietet einige Vorteile, zum Beispiel die standardmäßige Verwendung von Storage Premium und weitere Optionen, zu denen die automatische Anwendung von Patches, die automatisierte Sicherung und AlwaysOn-Konfigurationen gehören. Zukünftiger Inhalt wird schrittweise Anleitungen umfassen.
+>[AZURE.NOTE] Dieser Artikel beschreibt, wie virtuelle SQL Server-Computer mit dem vorhandenen Portal bereitgestellt werden. Es ist jedoch auch möglich, SQL Server-VMs im [neuen Portal](https://manage.windowsazure.com) zu erstellen und zu verwalten. Das neue Portal bietet einige Vorteile, zum Beispiel die standardmäßige Verwendung von Storage Premium und weitere Optionen, zu denen die automatische Anwendung von Patches, die automatisierte Sicherung und AlwaysOn-Konfigurationen gehören. Zukünftiger Inhalt wird schrittweise Anleitungen umfassen.
 
 ##<a id="Provision">Bereitstellen eines virtuellen SQL Server-Computers aus dem Katalog</a>
 
-1. Melden Sie sich mit Ihrem Konto beim [klassischen Azure-Portal](http://manage.windowsazure.com) an. Wenn Sie kein Azure-Konto haben, sollten Sie die Seite [Kostenlose einmonatige Testversion](http://azure.microsoft.com/pricing/free-trial/) besuchen.
+1. Melden Sie sich mit Ihrem Konto beim [klassischen Azure-Portal](http://manage.windowsazure.com) an. Wenn Sie kein Azure-Konto haben, sollten Sie die Seite [Kostenlose einmonatige Testversion](https://azure.microsoft.com/pricing/free-trial/) besuchen.
 
 2. Klicken Sie im klassischen Azure-Portal unten links auf der Webseite auf **+NEU**, und klicken Sie dann nacheinander auf **COMPUTE**, auf **VIRTUELLER COMPUTER** und dann auf **AUS KATALOG**.
 
@@ -51,10 +51,10 @@ In diesem Lernprogramm lernen Sie Folgendes:
 
 Aktuelle Informationen zu den unterstützten SQL Server-Images in Azure finden Sie unter [Übersicht zu SQL Server auf virtuellen Azure-Computern](virtual-machines-sql-server-infrastructure-services.md).
 
->[AZURE.NOTE]Wenn Sie über einen virtuellen Computer verfügen, der von einem Plattformimage mit der SQL Server Evaluation-Edition erstellt wurde, können Sie kein Upgrade auf ein minütlich bezahltes Editionsimage in der Galerie durchführen. Sie haben zwei Möglichkeiten:
+>[AZURE.NOTE] Wenn Sie über einen virtuellen Computer verfügen, der von einem Plattformimage mit der SQL Server Evaluation-Edition erstellt wurde, können Sie kein Upgrade auf ein minütlich bezahltes Editionsimage in der Galerie durchführen. Sie haben zwei Möglichkeiten:
 >
 > - Sie können einen neuen virtuellen Computer erstellen, indem Sie die minütlich abgerechnete SQL Server-Edition aus dem Katalog verwenden und die Datenbankdateien zu diesem neuen virtuellen Computer migrieren. Führen Sie dazu die Schritte unter [Migrieren einer Datenbank zu SQL Server auf einem virtuellen Azure-Computer](virtual-machines-migrate-onpremises-database) aus.
-> - Sie können auch eine vorhandene Instanz von SQL Server Evaluation Edition gemäß der Vereinbarung [Lizenzmobilität durch Software Assurance für Azure](http://azure.microsoft.com/pricing/license-mobility/) auf eine andere SQL Server-Edition aktualisieren, indem Sie die Schritte unter [Aktualisieren auf eine andere Edition von SQL Server](https://msdn.microsoft.com/library/cc707783.aspx) ausführen. Informationen zum Erwerb der lizenzierten Kopie von SQL Server finden Sie unter [So kaufen Sie SQL Server](http://www.microsoft.com/sqlserver/get-sql-server/how-to-buy.aspx).
+> - Sie können auch eine vorhandene Instanz von SQL Server Evaluation Edition gemäß der Vereinbarung [Lizenzmobilität durch Software Assurance für Azure](https://azure.microsoft.com/pricing/license-mobility/) auf eine andere SQL Server-Edition aktualisieren, indem Sie die Schritte unter [Aktualisieren auf eine andere Edition von SQL Server](https://msdn.microsoft.com/library/cc707783.aspx) ausführen. Informationen zum Erwerb der lizenzierten Kopie von SQL Server finden Sie unter [So kaufen Sie SQL Server](http://www.microsoft.com/sqlserver/get-sql-server/how-to-buy.aspx).
 
 4. Geben Sie zunächst auf der Seite **Konfiguration des virtuellen Computers** die folgenden Informationen ein:
 	- EIN **VERÖFFENTLICHUNGSDATUM DER VERSION** Wenn mehrere Images verfügbar sind, wählen Sie das neueste aus.
@@ -66,7 +66,7 @@ Aktuelle Informationen zu den unterstützten SQL Server-Images in Azure finden S
 
 	![Konfiguration des virtuellen Computers](./media/virtual-machines-provision-sql-server/4VM-Config.png)
 
-	>[AZURE.NOTE]Die Größe des virtuellen Computers wird während der Bereitstellung angegeben:
+	>[AZURE.NOTE] Die Größe des virtuellen Computers wird während der Bereitstellung angegeben:
  	>
 	> - Für Produktionsworkloads empfehlen wir die Verwendung von Storage Premium mit den folgenden empfohlenen Mindestgrößen: **DS3** für SQL Server Enterprise Edition und **DS2** für SQL Server Standard Edition. Weitere Informationen finden Sie unter [Optimale Verfahren für die Leistung für SQL Server auf virtuellen Computern in Azure](virtual-machines-sql-server-performance-best-practices.md).
 	> - Die ausgewählte Größe begrenzt die Anzahl von Datenträgern, die Sie konfigurieren können. Die aktuellsten Informationen zu verfügbaren Größen virtueller Computer und der Anzahl an Datenträgern, die Sie zu einem virtuellen Computer hinzufügen können, finden Sie unter [Größen virtueller Computer für Azure](virtual-machines-size-specs.md).
@@ -77,7 +77,7 @@ Aktuelle Informationen zu den unterstützten SQL Server-Images in Azure finden S
 	- Wählen Sie im Feld **Clouddienst** die Option **Einen neuen Clouddienst erstellen** aus.
 	- Geben Sie im Feld **DNS-Name des Clouddiensts** den ersten Teil eines DNS-Namens Ihrer Wahl ein, sodass insgesamt ein Name des Formats **TESTNAME.cloudapp.net** entsteht.
 	- Wählen Sie ein **ABONNEMENT** aus, wenn Sie über mehrere Abonnements verfügen. Die Auswahl bestimmt, welche **Speicherkonten** verfügbar sind.
-	- Wählen Sie im Feld **REGION/AFFINITY GROUP/VIRTUAL NETWORK** eine Region aus, in der dieses virtuelle Image gehostet wird.
+- Wählen Sie im Feld **REGION/AFFINITY GROUP/VIRTUAL NETWORK** eine Region aus, in der dieses virtuelle Image gehostet wird.
 	- Erstellen Sie in **Speicherkonto** automatisch ein Konto, oder wählen Sie ein Konto aus der Liste aus. Ändern Sie das **ABONNEMENT**, um weitere Konten anzuzeigen.
 	- Wählen Sie im Feld **AVAILABILITY SET** den Eintrag **(none)**.
 	- Lesen Sie sich die Bedingungen durch, und bestätigen Sie diese.
@@ -175,4 +175,4 @@ Die folgende Liste enthält zusätzliche Ressourcen für SQL Server auf virtuell
 
 - [Anwendungsmuster und Entwicklungsstrategien für SQL Server auf Azure Virtual Machines](virtual-machines-sql-server-application-patterns-and-development-strategies.md)
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

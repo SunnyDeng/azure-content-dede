@@ -30,7 +30,7 @@ Der Cloud-Explorer wird als Teil der Visual Studio-Tools für Azure SDK 2.7 inst
 - Visual Studio 2015 RTM.
 
 - Die Visual Studio-Tools für das Azure SDK.
-- Sie benötigen ein Azure-Konto und müssen bei diesem angemeldet sein, um Azure-Ressourcen im Cloud-Explorer anzuzeigen. Wenn Sie noch kein Konto besitzen, können Sie in wenigen Minuten ein Konto einrichten. Wenn Sie über ein MSDN-Abonnement verfügen, lesen Sie [Azure-Vorteil für MSDN-Abonnenten](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/). Andernfalls finden Sie unter [Erstellen eines kostenlosen Testkontos](http://azure.microsoft.com/pricing/free-trial/) weitere Informationen.
+- Sie benötigen ein Azure-Konto und müssen bei diesem angemeldet sein, um Azure-Ressourcen im Cloud-Explorer anzuzeigen. Wenn Sie noch kein Konto besitzen, können Sie in wenigen Minuten ein Konto einrichten. Wenn Sie über ein MSDN-Abonnement verfügen, lesen Sie [Azure-Vorteil für MSDN-Abonnenten](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/). Andernfalls finden Sie unter [Erstellen eines kostenlosen Testkontos](https://azure.microsoft.com/pricing/free-trial/) weitere Informationen.
 
 - Wenn der Cloud-Explorer nicht angezeigt wird, können Sie ihn einblenden, indem Sie auf der Menüleiste **Ansicht**, **Weitere Fenster**, **Cloud-Explorer** wählen.
 
@@ -95,4 +95,4 @@ Um in Ihren Azure-Kontoabonnements Ressourcen mit einem bestimmten Namen zu such
 
 Bei der Eingabe von Zeichen in das Feld "Suchen" werden nur die Ressourcen in der Ressourcenstruktur angezeigt, die diesen Zeichen entsprechen.
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

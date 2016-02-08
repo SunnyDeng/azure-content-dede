@@ -23,7 +23,7 @@
 - [PowerShell](virtual-machines-deploy-rmtemplates-powershell.md)
 - [CLI](virtual-machines-deploy-rmtemplates-azure-cli.md)
 
-In diesem Artikel wird gezeigt, wie mit Azure-Ressourcen-Manager-Vorlagen und der Azure-Befehlszeilenschnittstelle (Azure-CLI) die folgenden allgemeinen Aufgaben zum Bereitstellen und Verwalten von virtuellen Azure-Computern automatisiert werden. Weitere Vorlagen finden Sie unter [Azure-Schnellstartvorlagen](http://azure.microsoft.com/documentation/templates/) und [Erstellen von Anwendungsframeworks mithilfe von Vorlagen](virtual-machines-app-frameworks.md).
+In diesem Artikel wird gezeigt, wie mit Azure-Ressourcen-Manager-Vorlagen und der Azure-Befehlszeilenschnittstelle (Azure-CLI) die folgenden allgemeinen Aufgaben zum Bereitstellen und Verwalten von virtuellen Azure-Computern automatisiert werden. Weitere Vorlagen finden Sie unter [Azure-Schnellstartvorlagen](https://azure.microsoft.com/documentation/templates/) und [Erstellen von Anwendungsframeworks mithilfe von Vorlagen](virtual-machines-app-frameworks.md).
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)]Klassisches Bereitstellungsmodell. Im klassischen Bereitstellungsmodell können Sie keine Vorlagen verwenden.
 
@@ -58,11 +58,11 @@ Sie können die Azure-CLI mit dem folgenden [Docker-Image](https://registry.hub.
 
 ### Festlegen Ihres Azure-Kontos und -Abonnements
 
-Wenn Sie noch kein Azure-Abonnement aber ein MDSN-Abonnement haben, können Sie Ihre [MSDN-Abonnentenvorteile](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) aktivieren. Oder Sie registrieren sich für eine [kostenlose Testversion](http://azure.microsoft.com/pricing/free-trial/).
+Wenn Sie noch kein Azure-Abonnement aber ein MDSN-Abonnement haben, können Sie Ihre [MSDN-Abonnentenvorteile](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) aktivieren. Oder Sie registrieren sich für eine [kostenlose Testversion](https://azure.microsoft.com/pricing/free-trial/).
 
 [Melden Sie sich jetzt interaktiv bei Ihrem Azure-Konto an](../xplat-cli-connect.md#use-the-log-in-method), indem Sie `azure login` eingeben. Folgen Sie dann den Aufforderungen für eine interaktive Anmeldung bei Ihrem Azure-Konto.
 
-> [AZURE.NOTE]Wenn Sie über eine Arbeits- oder Schulkonto-ID verfügen und wissen, dass die zweistufige Authentifizierung nicht aktiviert ist, können Sie **auch** `azure login -u` zusammen mit der Arbeits- oder Schulkonto-ID verwenden, um sich *ohne* interaktive Sitzung anzumelden. Wenn Sie nicht über eine Arbeits- oder Schulkonto-ID verfügen, können Sie [eine Arbeits- oder Schulkonto-ID mit Ihrem persönlichen Microsoft-Konto erstellen](resource-group-create-work-id-from-personal.md), um sich in gleicher Weise anzumelden.
+> [AZURE.NOTE] Wenn Sie über eine Arbeits- oder Schulkonto-ID verfügen und wissen, dass die zweistufige Authentifizierung nicht aktiviert ist, können Sie **auch** `azure login -u` zusammen mit der Arbeits- oder Schulkonto-ID verwenden, um sich *ohne* interaktive Sitzung anzumelden. Wenn Sie nicht über eine Arbeits- oder Schulkonto-ID verfügen, können Sie [eine Arbeits- oder Schulkonto-ID mit Ihrem persönlichen Microsoft-Konto erstellen](resource-group-create-work-id-from-personal.md), um sich in gleicher Weise anzumelden.
 
 Ihr Konto kann über mehrere Abonnements verfügen. Sie können Ihre Abonnements durch Eingabe von `azure account list` auflisten, was etwa wie folgt aussieht:
 
@@ -124,7 +124,7 @@ Erstellen Sie zunächst die Ressourcengruppe.
 
 Zweitens benötigen Sie ein Image. Informationen zur Suche eines Images mit der Azure-CLI finden Sie unter [Navigieren zwischen und Aussuchen von Azure Virtual Machine-Images mit Windows PowerShell und der Azure-Befehlszeilenschnittstelle](resource-groups-vm-searching.md). Doch für diesen Artikel finden Sie hier eine kurze Liste beliebter Images. Für diese Schnellerfassung verwenden wir das CoreOSs Stable-Image.
 
-> [AZURE.NOTE]Sie können für "ComputeImageVersion" sowohl in der Vorlagensprache als auch in der Azure-Befehlszeilenschnittstelle auch einfach "latest" als Parameter angeben. Dies ermöglicht es Ihnen, immer die neueste gepatchte Version des Image zu verwenden, ohne Ihre Skripts oder Vorlagen ändern zu müssen. Dies wird nachfolgend gezeigt.
+> [AZURE.NOTE] Sie können für "ComputeImageVersion" sowohl in der Vorlagensprache als auch in der Azure-Befehlszeilenschnittstelle auch einfach "latest" als Parameter angeben. Dies ermöglicht es Ihnen, immer die neueste gepatchte Version des Image zu verwenden, ohne Ihre Skripts oder Vorlagen ändern zu müssen. Dies wird nachfolgend gezeigt.
 
 | PublisherName | Angebot | Sku | Version |
 |:---------------------------------|:-------------------------------------------|:---------------------------------|:--------------------|
@@ -1171,7 +1171,7 @@ Verwenden Sie jetzt den Befehl `azure group deployment create` und die Option `-
     data:    vmSize                 String        Standard_A1
     info:    group deployment create command OK
 
-Beachten Sie, dass diese Vorlage ein Windows Server-Image bereitstellt. Allerdings kann es leicht durch ein beliebiges Linux-Image ersetzt werden. Sie möchten ein Docker-Cluster mit mehreren Swarm-Managern erstellen? [Das ist kein Problem.](http://azure.microsoft.com/documentation/templates/docker-swarm-cluster/)
+Beachten Sie, dass diese Vorlage ein Windows Server-Image bereitstellt. Allerdings kann es leicht durch ein beliebiges Linux-Image ersetzt werden. Sie möchten ein Docker-Cluster mit mehreren Swarm-Managern erstellen? [Das ist kein Problem.](https://azure.microsoft.com/documentation/templates/docker-swarm-cluster/)
 
 ## <a id="remove-a-resource-group"></a>Aufgabe: Entfernen einer Ressourcengruppe
 
@@ -1264,7 +1264,7 @@ Suchen Sie dann nach "myVM1":
     info:    vm show command OK
 
 
-> [AZURE.NOTE]Wenn Sie die Ausgabe der Konsolenbefehle programmgesteuert speichern und bearbeiten möchten, sollten Sie möglicherweise ein JSON-Analysetool verwenden, z. B. **[jq](https://github.com/stedolan/jq)**, **[jsawk](https://github.com/micha/jsawk)** oder für die Aufgabe geeignete Sprachbibliotheken.
+> [AZURE.NOTE] Wenn Sie die Ausgabe der Konsolenbefehle programmgesteuert speichern und bearbeiten möchten, sollten Sie möglicherweise ein JSON-Analysetool verwenden, z. B. **[jq](https://github.com/stedolan/jq)**, **[jsawk](https://github.com/micha/jsawk)** oder für die Aufgabe geeignete Sprachbibliotheken.
 
 ## <a id="log-on-to-a-linux-based-virtual-machine"></a>Aufgabe: Anmelden bei einem Linux-basierten virtuellen Computer
 
@@ -1276,7 +1276,7 @@ Führen Sie den folgenden Befehl aus:
 
     azure vm stop <group name> <virtual machine name>
 
->[AZURE.IMPORTANT]Verwenden Sie diesen Parameter, um die virtuelle IP-Adresse des VNETs beizubehalten, falls es sich um den letzten virtuellen Computer in diesem VNET handelt. <br><br> Auch wenn Sie den `StayProvisioned`-Parameter verwenden, wird der virtuelle Computer in Rechnung gestellt.
+>[AZURE.IMPORTANT] Verwenden Sie diesen Parameter, um die virtuelle IP-Adresse des VNETs beizubehalten, falls es sich um den letzten virtuellen Computer in diesem VNET handelt. <br><br> Auch wenn Sie den `StayProvisioned`-Parameter verwenden, wird der virtuelle Computer in Rechnung gestellt.
 
 ## <a id="start-a-virtual-machine"></a>Aufgabe: Starten eines virtuellen Computers
 
@@ -1303,6 +1303,6 @@ Anschließend müssen Sie den Datenträger wie gewohnt in Linux (oder Windows) e
 
 Viele weitere Verwendungsbeispiele für die Azure-Befehlszeilenschnittstelle mit dem **arm**-Modus finden Sie unter [Verwenden der plattformübergreifenden Azure-Befehlszeilenschnittstelle mit dem Azure-Ressourcen-Manager](xplat-cli-azure-resource-manager.md). Weitere Informationen zu Azure-Ressourcen und deren Konzepten erhalten Sie unter [Übersicht über den Azure-Ressourcen-Manager](../resource-group-overview.md).
 
-Weitere Vorlagen finden Sie unter [Azure-Schnellstartvorlagen](http://azure.microsoft.com/documentation/templates/) und [Erstellen von Anwendungsframeworks mithilfe von Vorlagen](virtual-machines-app-frameworks.md).
+Weitere Vorlagen finden Sie unter [Azure-Schnellstartvorlagen](https://azure.microsoft.com/documentation/templates/) und [Erstellen von Anwendungsframeworks mithilfe von Vorlagen](virtual-machines-app-frameworks.md).
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

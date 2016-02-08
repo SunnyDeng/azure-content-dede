@@ -5,7 +5,7 @@
    documentationCenter=""
    authors="ronitr"
    manager="jeffreyg"
-   editor="v-romcal"/>
+   editor="jeffreyg"/>
 
 <tags
    ms.service="sql-database"
@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="10/20/2015"
+   ms.date="12/01/2015"
    ms.author="ronitr; ronmat; v-romcal; sstein"/>
 
 # Erste Schritte mit der dynamischen Datenmaskierung für SQL-Datenbanken (klassisches Azure-Portal)
@@ -34,7 +34,7 @@ Ein Servicemitarbeiter in einem Callcenter kann Anrufer beispielsweise anhand me
 Sie richten die dynamische Datenmaskierungsrichtlinie im klassischen Azure-Portal auf der Registerkarte „Überwachung und Sicherheit“ für Ihre Datenbank ein.
 
 
-> [AZURE.NOTE]Informationen zum Einrichten der dynamischen Datenmaskierung im Azure-Portal finden Sie unter [Erste Schritte mit der dynamischen Datenmaskierung für SQL-Datenbanken (Azure-Portal)](sql-database-dynamic-data-masking-get-started.md).
+> [AZURE.NOTE] Informationen zum Einrichten der dynamischen Datenmaskierung im Azure-Portal finden Sie unter [Erste Schritte mit der dynamischen Datenmaskierung für SQL-Datenbanken (Azure-Portal)](sql-database-dynamic-data-masking-get-started.md).
 
 
 ### Berechtigungen für die dynamische Datenmaskierung
@@ -71,7 +71,7 @@ Die dynamische Datenmaskierung kann von den Rollen "Azure-Datenbankadministrator
 
 4. Geben Sie die SQL-Benutzer oder AAD-Identitäten ein, die von der Maskierung ausgeschlossen werden sollen und Zugriff auf die vertraulichen Daten ohne Maskierung haben. Hierbei sollte es sich um eine durch Semikolons getrennte Liste mit Benutzern handeln. Beachten Sie, dass Benutzer mit Administratorrechten immer Zugriff auf die Originaldaten ohne Maskierung haben.
 
-	>[AZURE.TIP]Damit die Anwendungsschicht sensible Daten für die privilegierten Anwendungsbenutzer anzeigen kann, fügen Sie den SQL-Benutzer oder die AAD-Identität hinzu, die von der Anwendung zum Abfragen der Datenbank verwendet wird. Es wird ausdrücklich empfohlen, dass diese Liste nur eine minimale Anzahl von privilegierten Benutzern enthält, um die Anzeige sensibler Daten zu minimieren.
+	>[AZURE.TIP] Damit die Anwendungsschicht sensible Daten für die privilegierten Anwendungsbenutzer anzeigen kann, fügen Sie den SQL-Benutzer oder die AAD-Identität hinzu, die von der Anwendung zum Abfragen der Datenbank verwendet wird. Es wird ausdrücklich empfohlen, dass diese Liste nur eine minimale Anzahl von privilegierten Benutzern enthält, um die Anzeige sensibler Daten zu minimieren.
 
 	![Navigationsbereich](./media/sql-database-dynamic-data-masking-get-started-portal/4_ddm_policy_classic_portal.png)
 
@@ -96,4 +96,4 @@ Siehe [Azure SQL-Datenbank-Cmdlets](https://msdn.microsoft.com/library/azure/mt5
 
 Siehe [Vorgänge für Azure SQL-Datenbanken](https://msdn.microsoft.com/library/dn505719.aspx).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

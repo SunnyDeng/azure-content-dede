@@ -29,7 +29,7 @@ Das Lernprogramm geht zudem davon aus, dass Sie die folgenden Voraussetzungen be
 
 - Sie haben bereits den Abschnitt mit Überlegungen zu Hochverfügbarkeit und Notfallwiederherstellung im Thema [Images virtueller Oracle-Computer – verschiedene Überlegungen](virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images.md) gelesen. Beachten Sie, dass Azure derzeit eigenständige Oracle-Datenbankinstanzen, aber keine Oracle Real Application Clusters (Oracle RAC) unterstützt.
 
-- Sie haben zwei virtuelle Computer (VMs) in Azure mit demselben von der Plattform bereitgestellten Image von Oracle Enterprise Edition unter Windows Server erstellt. Weitere Informationen finden Sie unter [Erstellen eines virtuellen Oracle-Datenbank 12c-Computers in Azure](virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine.md) und [Azure Virtual Machines](http://azure.microsoft.com/documentation/services/virtual-machines/). Stellen Sie sicher, dass sich die virtuellen Computer im [gleichen Clouddienst](virtual-machines-load-balance.md) und im gleichen [virtuellen Netzwerk](azure.microsoft.com/documentation/services/virtual-network/) befinden, um sicherzustellen, dass sie über die permanente private IP-Adresse aufeinander zugreifen können. Darüber hinaus wird empfohlen, die virtuellen Computer in derselben [Verfügbarkeitsgruppe](virtual-machines-manage-availability.md) zu platzieren, damit sie von Azure in eigenen Fehlerdomänen und Upgradedomänen angeordnet werden können. Beachten Sie, dass Oracle Data Guard nur mit Oracle Database Enterprise Edition verfügbar ist. Jeder Computer muss mindestens 2 GB Arbeitsspeicher und 5 GB Speicherplatz aufweisen. Aktuelle Informationen zu den von der Plattform bereitgestellten VM-Größen finden Sie unter [Größen virtueller Computer für Azure](http://msdn.microsoft.com/library/dn197896.aspx). Wenn Sie zusätzliche Datenträgervolumes für die virtuellen Computer benötigen, können Sie zusätzliche Datenträger anfügen. Entsprechende Informationen finden Sie unter [Gewusst wie: Anfügen eines Datenträgers an einen virtuellen Computer](storage-windows-attach-disk.md).
+- Sie haben zwei virtuelle Computer (VMs) in Azure mit demselben von der Plattform bereitgestellten Image von Oracle Enterprise Edition unter Windows Server erstellt. Weitere Informationen finden Sie unter [Erstellen eines virtuellen Oracle-Datenbank 12c-Computers in Azure](virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine.md) und [Azure Virtual Machines](https://azure.microsoft.com/documentation/services/virtual-machines/). Stellen Sie sicher, dass sich die virtuellen Computer im [gleichen Clouddienst](virtual-machines-load-balance.md) und im gleichen [virtuellen Netzwerk](azure.microsoft.com/documentation/services/virtual-network/) befinden, um sicherzustellen, dass sie über die permanente private IP-Adresse aufeinander zugreifen können. Darüber hinaus wird empfohlen, die virtuellen Computer in derselben [Verfügbarkeitsgruppe](virtual-machines-manage-availability.md) zu platzieren, damit sie von Azure in eigenen Fehlerdomänen und Upgradedomänen angeordnet werden können. Beachten Sie, dass Oracle Data Guard nur mit Oracle Database Enterprise Edition verfügbar ist. Jeder Computer muss mindestens 2 GB Arbeitsspeicher und 5 GB Speicherplatz aufweisen. Aktuelle Informationen zu den von der Plattform bereitgestellten VM-Größen finden Sie unter [Größen virtueller Computer für Azure](http://msdn.microsoft.com/library/dn197896.aspx). Wenn Sie zusätzliche Datenträgervolumes für die virtuellen Computer benötigen, können Sie zusätzliche Datenträger anfügen. Entsprechende Informationen finden Sie unter [Gewusst wie: Anfügen eines Datenträgers an einen virtuellen Computer](storage-windows-attach-disk.md).
 
 - Sie haben im klassischen Azure-Portal die Namen der virtuellen Computer auf „Machine1“ für den primären virtuellen Computer und „Machine2“ für den virtuellen Standbycomputer festgelegt.
 
@@ -75,7 +75,7 @@ Erstellen einer physischen Standbydatenbank
 
 6. Überprüfen der physischen Standbydatenbank
 
-> [AZURE.IMPORTANT]Dieses Lernprogramm wurde mit der folgenden Hardware- und Softwarekonfiguration eingerichtet und getestet:
+> [AZURE.IMPORTANT] Dieses Lernprogramm wurde mit der folgenden Hardware- und Softwarekonfiguration eingerichtet und getestet:
 >
 >| | **Primäre Datenbank** | **Standbydatenbank** |
 >|----------------------|-------------------------------------------|-------------------------------------------|
@@ -134,7 +134,7 @@ Zum Implementieren einer Standbydatenbank muss in der primären Datenbank die er
 
 Um archivierte Protokolle vom primären Server an den Standbyserver zu versenden und auf diesem anzuwenden, muss das SYS-Kennwort auf dem primären und Standbyserver identisch sein. Deshalb erstellen Sie in der primären Datenbank eine Kennwortdatei und kopieren sie auf den Standbyserver.
 
->[AZURE.IMPORTANT]Bei Verwendung von Oracle Database 12c ist der neue Benutzer **SYSDG** vorhanden, mit dem Sie Oracle Data Guard verwalten können. Weitere Informationen finden Sie unter[Änderungen in der Version Oracle Database 12c](http://docs.oracle.com/cd/E16655_01/server.121/e10638/release_changes.htm).
+>[AZURE.IMPORTANT] Bei Verwendung von Oracle Database 12c ist der neue Benutzer **SYSDG** vorhanden, mit dem Sie Oracle Data Guard verwalten können. Weitere Informationen finden Sie unter[Änderungen in der Version Oracle Database 12c](http://docs.oracle.com/cd/E16655_01/server.121/e10638/release_changes.htm).
 
 Stellen Sie außerdem sicher, dass in Machine1 die Umgebung "ORACLE\_HOME" bereits definiert ist. Wenn sie noch nicht definiert ist, definieren Sie sie im Dialogfeld "Umgebungsvariablen" als Umgebungsvariable. Um auf dieses Dialogfeld zuzugreifen, starten Sie das Hilfsprogramm **System**, indem Sie in der **Systemsteuerung** auf das Symbol "System" doppelklicken. Klicken Sie dann auf die Registerkarte **Erweitert**, und wählen Sie **Umgebungsvariablen** aus. Klicken Sie unter **Systemvariablen** auf die Schaltfläche **Neu**, um die Umgebungsvariablen festzulegen. Nachdem Sie die Umgebungsvariablen eingerichtet haben, schließen Sie die vorhandene Windows-Eingabeaufforderung, und öffnen Sie eine neue Eingabeaufforderung.
 
@@ -527,7 +527,7 @@ Sie können das Hilfsprogramm Wiederherstellungs-Manager (RMAN) verwenden, um di
 
 Stellen Sie eine Remotedesktopverbindung mit dem virtuellen Standbycomputer (MACHINE2) her, und führen Sie das Hilfsprogramm RMAN aus, indem Sie eine vollständige Verbindungszeichenfolge für die TARGET-Instanz (primäre Datenbank, Machine1) und AUXILIARY-Instanz (Standbydatenbank, Machine2) erstellen.
 
->[AZURE.IMPORTANT]Verwenden Sie nicht die Betriebssystemauthentifizierung, da sich auf dem Standbyservercomputer noch keine Datenbank befindet.
+>[AZURE.IMPORTANT] Verwenden Sie nicht die Betriebssystemauthentifizierung, da sich auf dem Standbyservercomputer noch keine Datenbank befindet.
 
 	C:\> RMAN TARGET sys/password@test AUXILIARY sys/password@test_STBY
 
@@ -625,4 +625,4 @@ Es wird empfohlen, für die primäre und Standbydatenbank "flashback database" z
 ##Zusätzliche Ressourcen
 [Oracle Virtual Machine images for Azure (Images von virtuellen Oracle-Computern für Azure; in englischer Sprache)](virtual-machines-oracle-list-oracle-virtual-machine-images.md)
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

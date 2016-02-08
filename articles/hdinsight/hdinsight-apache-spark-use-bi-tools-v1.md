@@ -20,7 +20,7 @@
 
 # Verwenden von BI-Tools mit Apache Spark für Azure HDInsight (Windows)
 
-> [AZURE.NOTE]HDInsight bietet jetzt Spark-Cluster unter Linux. Informationen zum Verwenden von BI-Tools mit Spark-Clustern unter Linux für HDInsight finden Sie unter [Verwenden von BI-Tools mit Apache Spark für Azure HDInsight (Linux)](hdinsight-apache-spark-use-bi-tools.md).
+> [AZURE.NOTE] HDInsight bietet jetzt Spark-Cluster unter Linux. Informationen zum Verwenden von BI-Tools mit Spark-Clustern unter Linux für HDInsight finden Sie unter [Verwenden von BI-Tools mit Apache Spark für Azure HDInsight (Linux)](hdinsight-apache-spark-use-bi-tools.md).
 
 Hier erfahren Sie, wie Sie Apache Spark in Azure HDInsight für folgende Aufgaben verwenden:
 
@@ -31,7 +31,7 @@ Hier erfahren Sie, wie Sie Apache Spark in Azure HDInsight für folgende Aufgabe
 
 Sie benötigen Folgendes:
 
-- Ein Azure-Abonnement. Siehe [Kostenlose Azure-Testversion](http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
+- Ein Azure-Abonnement. Siehe [Kostenlose Azure-Testversion](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 - Einen Apache Spark-Cluster. Eine Anleitung finden Sie unter [Erstellen von Apache Spark-Clustern in Azure HDInsight](hdinsight-apache-spark-provision-clusters.md).
 - Ein Computer mit installiertem Microsoft Spark-ODBC-Treiber (erforderlich für die Zusammenarbeit von Spark auf HDInsight mit Tableau). Sie können den Treiber [hier](http://go.microsoft.com/fwlink/?LinkId=616229) installieren.
 - BI-Tools wie [Power BI](http://www.powerbi.com/) oder [Tableau Desktop](http://www.tableau.com/products/desktop). Eine kostenlose Preview-Version von Power BI können Sie unter [http://www.powerbi.com/](http://www.powerbi.com/) abonnieren.
@@ -46,7 +46,7 @@ Nachdem Ihre Daten als Hive-Tabelle gespeichert wurden, können wir im nächsten
 
 2. Klicken Sie auf dem Blatt für den Spark-Cluster auf **Quicklinks** und anschließend auf dem Blatt **Cluster Dashboard** auf **Jupyter Notebook**. Geben Sie die Administratoranmeldeinformationen für den Cluster ein, wenn Sie dazu aufgefordert werden.
 
-	> [AZURE.NOTE]Sie können auch das Jupyter Notebook für Ihren Cluster aufrufen, indem Sie in Ihrem Browser die folgende URL öffnen. Ersetzen Sie __CLUSTERNAME__ durch den Namen Ihres Clusters:
+	> [AZURE.NOTE] Sie können auch das Jupyter Notebook für Ihren Cluster aufrufen, indem Sie in Ihrem Browser die folgende URL öffnen. Ersetzen Sie __CLUSTERNAME__ durch den Namen Ihres Clusters:
 	>
 	> `https://CLUSTERNAME.azurehdinsight.net/jupyter`
 
@@ -214,4 +214,4 @@ Nachdem Sie die Daten als Hive-Tabelle gespeichert haben, können Sie Power BI v
 [azure-management-portal]: https://manage.windowsazure.com/
 [azure-create-storageaccount]: ../storage-create-storage-account/
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

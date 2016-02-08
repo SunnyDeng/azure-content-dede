@@ -24,7 +24,7 @@ Sobald Sie [ein Lab erstellt](devtest-lab-create-lab.md) haben, können Sie [die
 
 ## Erstellen einer VM-Vorlage
 
-1. Melden Sie sich beim [Azure-Vorschauportal](http://portal.azure.com) an.
+1. Melden Sie sich beim [Azure-Vorschauportal](https://portal.azure.com) an.
 
 1. Tippen Sie auf **Durchsuchen**, und tippen Sie dann in der Liste auf **DevTest Labs**.
 
@@ -86,4 +86,4 @@ Wenn Sie ein neues Vorlagenimage hinzufügen möchten, benötigen Sie Zugriff au
 
 Nachdem Sie eine VM-Vorlage zum Erstellen eines virtuellen Computers hinzugefügt haben, besteht der nächste Schritt darin, [Ihrem DevTest Lab einen virtuellen Computer hinzuzufügen](devtest-lab-add-vm-with-artifacts).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

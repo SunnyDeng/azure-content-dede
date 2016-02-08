@@ -90,7 +90,7 @@ Wie bereits im Abschnitt mit den wichtigen Begriffen angedeutet, enthält das Ob
 
 Diese Eigenschaften gelten für alle Stammassettypen und für alle Anmerkungstypen.
 
-> [AZURE.NOTE]Bei den Eigenschaften, deren Name mit einem doppelten Unterstrich beginnt, handelt es sich um Systemtypen.
+> [AZURE.NOTE] Bei den Eigenschaften, deren Name mit einem doppelten Unterstrich beginnt, handelt es sich um Systemtypen.
 
 <table><tr><td><b>Eigenschaftenname</b></td><td><b>Datentyp</b></td><td><b>Kommentare</b></td></tr><tr><td>modifiedTime</td><td>DateTime</td><td>Der Zeitpunkt der letzten Stammänderung. Wird vom Client festgelegt. (Dieser Wert wird nicht vom Server gepflegt.)</td></tr><tr><td>__id</td><td>String</td><td>Die ID des Elements (schreibgeschützt). Diese ID ist für das Asset im Katalog garantiert eindeutig.</td></tr><tr><td>__type</td><td>String</td><td>Der Typ des Assets (schreibgeschützt).</td></tr><tr><td>__creatorId</td><td>String</td><td>Eine Zeichenfolge, die vom Ersteller des Assets verwendet wird, um das Asset eindeutig zu identifizieren. </td></tr></table>
 
@@ -172,7 +172,7 @@ Drei Rollen stehen zur Verfügung: **Administrator**, **Besitzer** und **Mitwirk
 
 <table><tr><td><b>Rolle</b></td><td><b>Umfang</b></td><td><b>Rechte</b></td></tr><tr><td>Administrator</td><td>Katalog (also alle Assets/Anmerkungen im Katalog)</td><td>Read Delete ViewRoles ChangeOwnership ChangeVisibility ViewPermissions</td></tr><tr><td>Besitzer</td><td>Jedes Asset (Stammelement)</td><td>Read Delete ViewRoles ChangeOwnership ChangeVisibility ViewPermissions</td></tr><tr><td>Mitwirkender</td><td>Jedes einzelne Asset und jede einzelne Anmerkung</td><td>Read Update Delete ViewRoles – Hinweis: Wird dem Mitwirkenden die Leseberechtigung für das Objekt entzogen, werden ihm auch die anderen Rechte entzogen.</td></tr></table>
 
-> [AZURE.NOTE]Die Rechte **Read**, **Update**, **Delete** und **ViewRoles** gelten für jedes Element (Asset oder Anmerkung), die Rechte **TakeOwnership**, **ChangeOwnership**, **ChangeVisibility** und **ViewPermissions** gelten dagegen nur für das Stammasset.
+> [AZURE.NOTE] Die Rechte **Read**, **Update**, **Delete** und **ViewRoles** gelten für jedes Element (Asset oder Anmerkung), die Rechte **TakeOwnership**, **ChangeOwnership**, **ChangeVisibility** und **ViewPermissions** gelten dagegen nur für das Stammasset.
 >
 >Das Recht **Delete** gilt für ein Element sowie für alle dazugehörigen untergeordneten Elemente. Beim Löschen eines Assets werden also beispielsweise auch sämtliche Anmerkungen für dieses Asset gelöscht.
 
@@ -257,9 +257,9 @@ Mit den Ansichtselementanforderungen **PUT** und **POST** können Sie Rollen und
 	    ]
 	}
 
-> [AZURE.NOTE]Bei „PUT“ muss im Text keine Elementnutzlast angegeben werden: „PUT“ kann zur reinen Aktualisierung von Rollen und/oder Berechtigungen verwendet werden.
+> [AZURE.NOTE] Bei „PUT“ muss im Text keine Elementnutzlast angegeben werden: „PUT“ kann zur reinen Aktualisierung von Rollen und/oder Berechtigungen verwendet werden.
 
 <!--Image references-->
 [1]: ./media/data-catalog-developer-concepts/concept2.png
 
-<!---HONumber=Nov15_HO4-->
+<!---HONumber=AcomDC_0128_2016-->

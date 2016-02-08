@@ -25,12 +25,12 @@ In der Galerie der virtuellen Computer von Azure sind verschiedene Images zu fin
 - SQL Server 2012 SP2 Enterprise für kleine bis mittlere Datenvolumen
 - SQL Server 2012 SP2 Enterprise Optimized for DataWarehousing Workloads für große bis sehr große Datenvolumen
 
- >[AZURE.NOTE]Das SQL Server 2012 SP2 Enterprise-Image **enthält keinen Datenträger**. Sie müssen einen oder mehrere virtuelle Festplatten zum Speichern von Daten hinzufügen und/oder anfügen. Wenn Sie einen virtuellen Azure-Computer erstellen, hat dieser einen Datenträger für das Betriebssystem, der Laufwerk C zugeordnet ist, und einen temporären Datenträger, der Laufwerk D zugeordnet ist. Verwenden Sie Laufwerk D nicht zum Speichern von Daten. Wie der Name schon sagt, bietet dieser Datenträger nur temporäre Speicherung. Er ermöglicht keine Redundanz oder Sicherung, da er sich nicht im Azure-Speicher befindet.
+ >[AZURE.NOTE] Das SQL Server 2012 SP2 Enterprise-Image **enthält keinen Datenträger**. Sie müssen einen oder mehrere virtuelle Festplatten zum Speichern von Daten hinzufügen und/oder anfügen. Wenn Sie einen virtuellen Azure-Computer erstellen, hat dieser einen Datenträger für das Betriebssystem, der Laufwerk C zugeordnet ist, und einen temporären Datenträger, der Laufwerk D zugeordnet ist. Verwenden Sie Laufwerk D nicht zum Speichern von Daten. Wie der Name schon sagt, bietet dieser Datenträger nur temporäre Speicherung. Er ermöglicht keine Redundanz oder Sicherung, da er sich nicht im Azure-Speicher befindet.
 
 
 ##<a name="Provision"></a>Verbinden mit dem klassischen Azure-Portal und Bereitstellen eines virtuellen Computers mit SQL Server
 
-1.  Melden Sie sich mit Ihrem Konto beim [klassischen Azure-Portal](http://manage.windowsazure.com/) an. Wenn Sie kein Azure-Konto haben, sollten Sie die Seite [Kostenlose einmonatige Testversion](http://www.windowsazure.com/pricing/free-trial/) besuchen.
+1.  Melden Sie sich mit Ihrem Konto beim [klassischen Azure-Portal](http://manage.windowsazure.com/) an. Wenn Sie kein Azure-Konto haben, sollten Sie die Seite [Kostenlose einmonatige Testversion](https://azure.microsoft.com/pricing/free-trial/) besuchen.
 
 2.  Klicken Sie im klassischen Azure-Portal unten links auf der Webseite auf **+NEU**, und klicken Sie dann nacheinander auf **COMPUTE**, auf **VIRTUELLER COMPUTER** und dann auf **AUS KATALOG**.
 
@@ -46,7 +46,7 @@ In der Galerie der virtuellen Computer von Azure sind verschiedene Images zu fin
     -   Geben Sie das Kennwort im Feld **KENNWORT BESTÄTIGEN** nochmals ein.
     -   Wählen Sie in der Dropdownliste die geeignete **GRÖSSE** aus.
 
-     >[AZURE.NOTE]Die Größe des virtuellen Computers wird während der Bereitstellung angegeben: A2 ist die kleinste empfohlene Größe für Produktionsworkloads. Die empfohlene Minimalgröße für einen virtuellen Computer ist A3, wenn SQL Server Enterprise Edition verwendet wird. Wählen Sie A3 oder höher aus, wenn Sie SQL Server Enterprise Edition verwenden. Wählen Sie A4 aus, wenn Sie SQL Server 2012 oder 2014 Enterprise verwenden, das für Images für transaktionale Workloads optimiert ist. Wählen Sie A7 aus, wenn Sie SQL Server 2012 oder 2014 Enterprise verwenden, das für Images für Data Warehousing-Workloads optimiert ist. Die ausgewählte Größe begrenzt die Anzahl der Datenträger, die Sie konfigurieren können. Die aktuellsten Informationen zu verfügbaren Größen virtueller Computer und der Anzahl an Datenträgern, die Sie zu einem virtuellen Computer hinzufügen können, finden Sie unter [Größen virtueller Computer für Azure](http://msdn.microsoft.com/library/azure/dn197896.aspx). Preisinformationen finden Sie unter [Preise für virtuelle Computer](http://azure.microsoft.com/pricing/details/virtual-machines/).
+     >[AZURE.NOTE] Die Größe des virtuellen Computers wird während der Bereitstellung angegeben: A2 ist die kleinste empfohlene Größe für Produktionsworkloads. Die empfohlene Minimalgröße für einen virtuellen Computer ist A3, wenn SQL Server Enterprise Edition verwendet wird. Wählen Sie A3 oder höher aus, wenn Sie SQL Server Enterprise Edition verwenden. Wählen Sie A4 aus, wenn Sie SQL Server 2012 oder 2014 Enterprise verwenden, das für Images für transaktionale Workloads optimiert ist. Wählen Sie A7 aus, wenn Sie SQL Server 2012 oder 2014 Enterprise verwenden, das für Images für Data Warehousing-Workloads optimiert ist. Die ausgewählte Größe begrenzt die Anzahl der Datenträger, die Sie konfigurieren können. Die aktuellsten Informationen zu verfügbaren Größen virtueller Computer und der Anzahl an Datenträgern, die Sie zu einem virtuellen Computer hinzufügen können, finden Sie unter [Größen virtueller Computer für Azure](http://msdn.microsoft.com/library/azure/dn197896.aspx). Preisinformationen finden Sie unter [Preise für virtuelle Computer](https://azure.microsoft.com/pricing/details/virtual-machines/).
 
     Klicken Sie unten rechts auf den Pfeil für die nächste Seite, um fortzufahren.
 
@@ -119,7 +119,7 @@ Zum Konfigurieren der neuen SQL Server-VM als IPython Notebook-Server und zum In
 
 Wenn Ihr VM-Image keine Datenträger enthält, d. h. keine anderen Datenträger als die Laufwerke C (Datenträger für das Betriebssystem) und D (temporärer Datenträger), müssen Sie mindestens einen Datenträger zum Speichern der Daten hinzufügen. Das VM-Image für SQL Server 2012 SP2 Enterprise Optimized für DataWarehousing Workloads ist bereits mit zusätzlichen Datenträgern für die Daten- und Protokolldateien von SQL Server vorkonfiguriert.
 
- >[AZURE.NOTE]Verwenden Sie Laufwerk D nicht zum Speichern von Daten. Wie der Name schon sagt, bietet dieser Datenträger nur temporäre Speicherung. Er ermöglicht keine Redundanz oder Sicherung, da er sich nicht im Azure-Speicher befindet.
+ >[AZURE.NOTE] Verwenden Sie Laufwerk D nicht zum Speichern von Daten. Wie der Name schon sagt, bietet dieser Datenträger nur temporäre Speicherung. Er ermöglicht keine Redundanz oder Sicherung, da er sich nicht im Azure-Speicher befindet.
 
 Um zusätzliche Datenträger anzufügen, führen Sie die Schritte unter [Anfügen eines Datenträgers an einen virtuellen Windows-Computer](storage-windows-attach-disk.md) durch:
 
@@ -143,7 +143,7 @@ Das SQL Server-Datenbankmodul kann ohne Domänenumgebung keine Windows-Authentif
 
 	<br>
 
-	 >[AZURE.TIP]Sie können den SQL Server-Authentifizierungsmodus über einen Windows-Registrierungsschlüssel oder in SQL Server Management Studio ändern. Starten Sie zum Ändern des Authentifizierungsmodus über einen Registrierungsschlüssel eine **Neue Abfrage**, und führen Sie das folgende Skript aus:
+	 >[AZURE.TIP] Sie können den SQL Server-Authentifizierungsmodus über einen Windows-Registrierungsschlüssel oder in SQL Server Management Studio ändern. Starten Sie zum Ändern des Authentifizierungsmodus über einen Registrierungsschlüssel eine **Neue Abfrage**, und führen Sie das folgende Skript aus:
 
 		USE master
     	go
@@ -174,7 +174,7 @@ Das SQL Server-Datenbankmodul kann ohne Domänenumgebung keine Windows-Authentif
 
 Um von einem anderen Computer aus eine Verbindung zum Datenbankmodul herzustellen, müssen Sie mindestens einen Anmeldenamen für die SQL Server-Authentifizierung erstellen.
 
-> [AZURE.TIP]Sie können programmgesteuert oder mithilfe von SQL Server Management Studio neue SQL Server-Anmeldungen erstellen. Um programmgesteuert einen neuen sysadmin-Benutzer mit SQL-Authentifizierung zu erstellen, starten Sie eine **Neue Abfrage** und führen das folgende Skript aus. Ersetzen Sie <new user name> und <new password> durch den gewünschten Benutzernamen und das gewünschte Kennwort. Passen Sie die Kennwortrichtlinie ggf. an (der Beispielcode deaktiviert die Richtlinienprüfung und den Ablauf von Kennwörtern). Weitere Informationen zu Anmeldenamen für SQL Server finden Sie unter [Erstellen eines Anmeldenamens](http://msdn.microsoft.com/library/aa337562.aspx).
+> [AZURE.TIP] Sie können programmgesteuert oder mithilfe von SQL Server Management Studio neue SQL Server-Anmeldungen erstellen. Um programmgesteuert einen neuen sysadmin-Benutzer mit SQL-Authentifizierung zu erstellen, starten Sie eine **Neue Abfrage** und führen das folgende Skript aus. Ersetzen Sie <new user name> und <new password> durch den gewünschten Benutzernamen und das gewünschte Kennwort. Passen Sie die Kennwortrichtlinie ggf. an (der Beispielcode deaktiviert die Richtlinienprüfung und den Ablauf von Kennwörtern). Weitere Informationen zu Anmeldenamen für SQL Server finden Sie unter [Erstellen eines Anmeldenamens](http://msdn.microsoft.com/library/aa337562.aspx).
 
     USE master
     go
@@ -259,7 +259,7 @@ In späteren Phasen des Advanced Analytics Process and Technology (ADAPT) verwen
 
 Virtuelle Azure-Computer werden **nach Nutzung abgerechnet**. Damit Sie nicht für ungenutzte virtuelle Computer bezahlen müssen, sollten Sie diese in den Status **Angehalten (Freigegeben)** versetzen.
 
-> [AZURE.NOTE]Beim Herunterfahren virtueller Computer aus der VM heraus (mithilfe der Windows-Energieoptionen) wird der virtuelle Computer beendet, er bleibt jedoch weiterhin zugeordnet. Um sicherzustellen, dass virtuelle Computer nicht abgerechnet werden, beenden Sie sie immer im [klassischen Azure-Portal](http://manage.windowsazure.com/). Sie können die VM auch über PowerShell beenden, indem Sie ShutdownRoleOperation mit der "PostShutdownAction" "StoppedDeallocated" aufrufen.
+> [AZURE.NOTE] Beim Herunterfahren virtueller Computer aus der VM heraus (mithilfe der Windows-Energieoptionen) wird der virtuelle Computer beendet, er bleibt jedoch weiterhin zugeordnet. Um sicherzustellen, dass virtuelle Computer nicht abgerechnet werden, beenden Sie sie immer im [klassischen Azure-Portal](http://manage.windowsazure.com/). Sie können die VM auch über PowerShell beenden, indem Sie ShutdownRoleOperation mit der "PostShutdownAction" "StoppedDeallocated" aufrufen.
 
 So fahren Sie den virtuellen Computer herunter und heben die Zuordnung auf:
 
@@ -298,4 +298,4 @@ Die nächsten Schritte des Datenanalyseprozesses sind unter [Leitfaden: Erweiter
 [15]: ./media/machine-learning-data-science-setup-sql-server-virtual-machine/vmshutdown.png
  
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

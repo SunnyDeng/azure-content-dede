@@ -26,7 +26,7 @@ Die Deaktivierung der Betriebssystemfamilie 1 wurde erstmals am 1. Juni 2013 a
 
 **3. November 2014** Die erweiterte Unterstützung für die Gastbetriebssystemfamilie 1 wurde beendet, und die Familie wurde vollständig außer Betrieb genommen. Alle noch in Familie 1 enthaltenen Dienste sind davon betroffen. Wir können diese Dienste jederzeit beenden. Es gibt keine Garantie dafür, dass Ihre Dienste weiterhin ausgeführt werden können, sofern Sie diese nicht selbst manuell aktualisieren.
 
-Wenn Sie weitere Fragen haben, besuchen Sie die [Cloud Services-Foren](http://social.msdn.microsoft.com/Forums/home?forum=windowsazuredevelopment&filter=alltypes&sort=lastpostdesc), oder wenden Sie sich an den [Azure-Support](http://azure.microsoft.com/support/options/).
+Wenn Sie weitere Fragen haben, besuchen Sie die [Cloud Services-Foren](http://social.msdn.microsoft.com/Forums/home?forum=windowsazuredevelopment&filter=alltypes&sort=lastpostdesc), oder wenden Sie sich an den [Azure-Support](https://azure.microsoft.com/support/options/).
 
 
 
@@ -81,4 +81,4 @@ Clouddienste unter Gastbetriebssystemfamilie 1 werden nicht mehr unterstützt. 
 ## Nächste Schritte
 Überprüfen Sie die neuesten [Gastbetriebssystemreleases](cloud-services-guestos-update-matrix.md).
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

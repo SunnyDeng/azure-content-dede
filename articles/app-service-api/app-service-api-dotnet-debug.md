@@ -72,7 +72,7 @@ Um remotes Debuggen zu aktivieren, müssen Sie einen Debugbuild in Azure bereits
 
 Unter Umständen ist es erforderlich, Ihre API-App lokal zu debuggen, wenn z. B. Roundtrips zum Azure-Server das Debuggen verlangsamen. Der folgende Abschnitt zeigt, wie Sie Ihre API-App mit der Swagger-Benutzeroberfläche als Testclient lokal debuggen.
 
-2. Navigieren Sie in Ihrem Browser zum [Azure-Vorschauportal](https://portal.azure.com). 
+2. Navigieren Sie in Ihrem Browser zum [Azure-Vorschauportal](https://portal.azure.com/). 
 
 3. Klicken Sie in der Randleiste auf die Schaltfläche **Durchsuchen**, und wählen Sie **API-Apps**.
 
@@ -138,4 +138,4 @@ In diesem Lernprogramm haben Sie erfahren, wie das Debuggen bei API-Apps erfolgt
 
 Weitere Informationen zur Problembehandlung finden Sie unter [Problembehandlung von Web-Apps in Azure App Service in Visual Studio](../app-service-web/web-sites-dotnet-troubleshoot-visual-studio.md). Da API-Apps Web-Apps sind, die über zusätzliche Features zum Hosten von Webdiensten verfügen, können Sie dieselben Debugging- und Problembehandlungstools für API-Apps verwenden, die Sie für Web-Apps nutzen.
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -24,7 +24,7 @@ Dieser Artikel bietet die Informationen, die Sie benötigen, um ein Ticket beim 
 
 >[AZURE.NOTE]Nur der Azure-Kontoadministrator verfügt über eine Zugriffsberechtigung für das Kontocenter.
 
-1. Klicken Sie auf der Website des [Azure-Supports](http://azure.microsoft.com/support) auf **Support erhalten**. Sie können einen Incident auch über das Microsoft Azure-Portal oder Azure-Kontocenter übermitteln.
+1. Klicken Sie auf der Website des [Azure-Supports](https://azure.microsoft.com/support/) auf **Support erhalten**. Sie können einen Incident auch über das Microsoft Azure-Portal oder Azure-Kontocenter übermitteln.
 
  * Um ein Supportticket aus dem [Azure-Portal](https://manage.windowsazure.com/) zu übermitteln, klicken Sie auf den Namen Ihres Kontos und dann auf „Microsoft Support kontaktieren“.
  * Um ein Supportticket aus dem [Azure-Kontocenter](https://account.windowsazure.com/Subscriptions) zu übermitteln, klicken Sie auf den Namen Ihres Kontos und dann auf „Microsoft Support kontaktieren“.
@@ -49,4 +49,4 @@ Dieser Artikel bietet die Informationen, die Sie benötigen, um ein Ticket beim 
 
 Sie werden von einem Azure-Support-Mitarbeiter gemäß den Bestimmungen der Vereinbarung kontaktiert.
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

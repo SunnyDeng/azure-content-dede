@@ -46,7 +46,7 @@ Die Ausgabemetadaten für den Encoder werden [hier](http://msdn.microsoft.com/li
 
 ##Beispiel herunterladen
 
-Laden Sie ein Beispiel von [hier](http://azure.microsoft.com/documentation/samples/media-services-dotnet-on-demand-encoding-with-media-encoder-standard/) herunter, und führen Sie es aus.
+Laden Sie ein Beispiel von [hier](https://azure.microsoft.com/documentation/samples/media-services-dotnet-on-demand-encoding-with-media-encoder-standard/) herunter, und führen Sie es aus.
 
 ##Beispiel
 
@@ -147,4 +147,4 @@ Im folgenden Codebeispiel wird das Media Services-.NET-SDK verwendet, um die fol
 
 [Erstellen von Miniaturansichten über Media Encoder Standard mit .NET](media-services-dotnet-generate-thumbnail-with-mes.md) [Media Services-Codierung (Übersicht)](media-services-encode-asset.md)
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

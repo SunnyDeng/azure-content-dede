@@ -26,7 +26,7 @@ Dieses Dokument enthält Anleitungen, die Ihnen bei der Einschätzung helfen, ob
 - Detaillierte Informationen zu elastischen Datenbankpools finden Sie unter [Referenz: Elastische Datenbankpools für SQL-Datenbanken](sql-database-elastic-pool-reference.md).
 
 
-> [AZURE.NOTE]Pools für elastische Datenbanken sind derzeit als Vorschauversion ausschließlich für Server mit Azure SQL-Datenbank V12 verfügbar.
+> [AZURE.NOTE] Pools für elastische Datenbanken sind derzeit als Vorschauversion ausschließlich für Server mit Azure SQL-Datenbank V12 verfügbar.
 
 ## Elastische Datenbankpools
 
@@ -119,7 +119,7 @@ Die folgende Heuristik kann bei der Einschätzung helfen, ob ein elastischer Dat
 
     Preis des Pools = *eDTUs im Pool* * *Einzelpreis der eDTUs im Pool*
 
-    Preisinformationen finden Sie unter [SQL-Datenbank – Preisgestaltung](http://azure.microsoft.com/pricing/details/sql-database/).
+    Preisinformationen finden Sie unter [SQL-Datenbank – Preisgestaltung](https://azure.microsoft.com/pricing/details/sql-database/).
 
 
 4. Wir vergleichen den Pool-Preis aus Schritt 3 mit dem Preis für die Verwendung der geeigneten Leistungsstufen für einzelne Datenbanken.
@@ -176,7 +176,7 @@ Sie finden hier ein PowerShell-Skript zum Schätzen der zusammengefassten eDTU-W
 
 Mit dem Skript werden nur zur Laufzeit Daten gesammelt. Bei einem typischen Produktionsworkload sollten Sie das Skript einen Tag lang ausführen, obwohl Sie über eine Woche oder einen noch längeren Zeitraum zu exakteren Schätzungen kommen. Führen Sie das Skript für die Zeitdauer aus, die den typischen Workload Ihrer Datenbanken repräsentiert.
 
-> [AZURE.IMPORTANT]Beim Ausführen des Skripts muss das PowerShell-Fenster geöffnet sein. Schließen Sie das PowerShell-Fenster erst, wenn das Skript ausreichend lange ausgeführt wurde und wenn genügend Daten gesammelt wurden, um den Workload zu normalen Zweiten und zu Spitzenauslastungszeiten zu repräsentieren.
+> [AZURE.IMPORTANT] Beim Ausführen des Skripts muss das PowerShell-Fenster geöffnet sein. Schließen Sie das PowerShell-Fenster erst, wenn das Skript ausreichend lange ausgeführt wurde und wenn genügend Daten gesammelt wurden, um den Workload zu normalen Zweiten und zu Spitzenauslastungszeiten zu repräsentieren.
 
 ### Voraussetzungen für das Skript 
 
@@ -189,7 +189,7 @@ Installieren Sie Folgendes, bevor Sie das Skript ausführen:
 ### Details zum Skript
 
 
-Sie können das Skript auf Ihrem lokalen Computer oder in einem virtuellen Computer in der Cloud ausführen. Wenn Sie es auf Ihrem lokalen Computer ausführen, kann dies Gebühren für die Datenübergabe verursachen, da das Skript Daten aus den Zieldatenbanken herunterladen muss. Nachstehend sind die Schätzungen für das Datenvolumen basierend auf der Anzahl von Zieldatenbanken und der Ausführungsdauer des Skripts angegeben. Informationen zu Azure-Datenübertragungskosten finden Sie unter [Details zu den Datenübertragungskosten](http://azure.microsoft.com/pricing/details/data-transfers/).
+Sie können das Skript auf Ihrem lokalen Computer oder in einem virtuellen Computer in der Cloud ausführen. Wenn Sie es auf Ihrem lokalen Computer ausführen, kann dies Gebühren für die Datenübergabe verursachen, da das Skript Daten aus den Zieldatenbanken herunterladen muss. Nachstehend sind die Schätzungen für das Datenvolumen basierend auf der Anzahl von Zieldatenbanken und der Ausführungsdauer des Skripts angegeben. Informationen zu Azure-Datenübertragungskosten finden Sie unter [Details zu den Datenübertragungskosten](https://azure.microsoft.com/pricing/details/data-transfers/).
        
  -     1 Datenbank pro Stunde = 38 KB
  -     1 Datenbank pro Tag = 900 KB
@@ -216,7 +216,7 @@ Wenn beim Ausführen des Skripts die folgenden Warnungen ausgegeben werden, kön
 
 Nach Abschluss des Skripts wird die geschätzte Anzahl eDTUs ausgegeben, die für einen elastischen Pool erforderlich sind, der alle Datenbankkandidaten auf dem Zielserver enthält. Diese geschätzten eDTUs können zum Erstellen und Konfigurieren eines elastischen Datenbankpools für diese Datenbanken verwendet werden. Nachdem der Pool erstellt und Datenbanken in diesen Pool verschoben wurden, sollte er für einige Tage genauestens überwacht werden, um im Bedarfsfall Anpassungen an der Konfiguration der Pool-eDTUs vornehmen zu können.
 
-> [AZURE.IMPORTANT]Dieses Skript enthält Befehle für Azure PowerShell-Versionen *vor* Version 1.0. Sie können Ihre Version von Azure PowerShell mit dem Befehl **Get-Module azure | format-table version** überprüfen. Ausführliche Informationen finden Sie unter ["Switch-AzureMode" in Azure PowerShell veraltet](https://github.com/Azure/azure-powershell/wiki/Deprecation-of-Switch-AzureMode-in-Azure-PowerShell).
+> [AZURE.IMPORTANT] Dieses Skript enthält Befehle für Azure PowerShell-Versionen *vor* Version 1.0. Sie können Ihre Version von Azure PowerShell mit dem Befehl **Get-Module azure | format-table version** überprüfen. Ausführliche Informationen finden Sie unter ["Switch-AzureMode" in Azure PowerShell veraltet](https://github.com/Azure/azure-powershell/wiki/Deprecation-of-Switch-AzureMode-in-Azure-PowerShell).
 
 
     
@@ -435,4 +435,4 @@ Nicht alle eigenständigen Datenbanken sind gute Kandidaten für elastische Date
 [2]: ./media/sql-database-elastic-pool-guidance/four-databases.png
 [3]: ./media/sql-database-elastic-pool-guidance/twenty-databases.png
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

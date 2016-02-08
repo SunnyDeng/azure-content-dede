@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="11/05/2015"
+   ms.date="01/19/2016"
    ms.author="bwren" />
 
 # Grafische Erstellung in Azure Automation
@@ -40,6 +40,10 @@ Die folgenden Abschnitte beschreiben die Steuerelemente im grafischen Editor.
 
 ### Zeichenbereich
 Der Zeichenbereich ist der Bereich, in dem Sie Ihr Runbook entwerfen. Sie fügen über die Knoten im Steuerelement "Bibliothek" Aktivitäten zum Runbook hinzu und verbinden diese mit Verknüpfungen zur Definition der Logik des Runbooks.
+
+Über die Steuerelemente unten im Zeichenbereich können Sie die Ansicht vergrößern und verkleinern.
+
+![Grafischer Arbeitsbereich](media/automation-graphical-authoring-intro/canvas-zoom.png)
 
 ### Steuerelement "Bibliothek"
 
@@ -141,6 +145,38 @@ Wenn Sie einen Wert für einen Parameter angeben, wählen Sie eine Datenquelle a
 
 Alle Cmdlets bieten die Möglichkeit, zusätzliche Parameter festzulegen. Hierbei handelt es sich um allgemeine PowerShell-Parameter oder andere benutzerdefinierte Parameter. Es wird Ihnen ein Textfeld angezeigt, in dem Sie unter Verwendung der PowerShell-Syntax Parameter bereitstellen können. Um beispielsweise den allgemeinen Parameter **Verbose** zu verwenden, geben Sie **"-Verbose:$True"** an.
 
+### Wiederholen der Aktivität
+
+Das **Wiederholungsverhalten** erlaubt einer Aktivität eine mehrmalige Ausführung, bis eine bestimmte Bedingung erfüllt ist. Sie können dieses Feature für Aktivitäten nutzen, die mehrmals ausgeführt werden sollen, oder die fehleranfällig sind und möglicherweise mehr als einen Wiederholungsversuch bis zum Erfolg benötigen.
+
+Wenn Sie eine Wiederholung für eine Aktivität aktivieren, können Sie eine Verzögerung und eine Bedingung festlegen. Die Verzögerung ist die Zeit (gemessen in Sekunden oder Minuten), die das Runbook wartet, bevor die Aktivität erneut ausgeführt wird. Wird keine Verzögerung angegeben, wird die Aktivität sofort nach Abschluss erneut ausgeführt.
+
+![Wiederholungsverzögerung für Aktivität](media/automation-graphical-authoring-intro/retry-delay.png)
+
+Die Wiederholungsbedingung ist ein PowerShell-Ausdruck, der nach jeder Ausführung der Aktivität ausgewertet wird. Wenn der Ausdruck „True“ ergibt, wird die Aktivität erneut ausgeführt. Wenn der Ausdruck „False“ ergibt, wird die Aktivität nicht erneut ausgeführt, und das Runbook fährt mit der nächsten Aktivität fort.
+
+![Wiederholungsverzögerung für Aktivität](media/automation-graphical-authoring-intro/retry-condition.png)
+
+Die Wiederholungsbedingung kann eine Variable namens „$RetryData“ enthalten, die Zugriff auf Informationen zu den Aktivitätswiederholungen bereitstellt. Diese Variable hat die Eigenschaften in der folgenden Tabelle.
+
+| Eigenschaft | Beschreibung |
+|:--|:--|
+| NumberOfAttempts | Häufigkeit, mit der die Aktivität ausgeführt wurde. |
+| Output | Die Ausgabe nach der letzten Ausführung der Aktivität. |
+| TotalDuration | Vergangene Zeit seit dem ersten Start der Aktivität. |
+| StartedAt | Uhrzeit im UTC-Format, zu der die Aktivität zuerst gestartet wurde. |
+
+Es folgen Beispiele von Bedingungen für die Wiederholung von Aktivitäten.
+
+	# Run the activity exactly 10 times.
+	$RetryData.NumberOfAttempts -ge 10 
+
+	# Run the activity repeatedly until it produces any output.
+	$RetryData.Output.Count -ge 1 
+
+	# Run the activity repeatedly until 2 minutes has elapsed. 
+	$RetryData.TotalDuration.TotalMinutes -ge 2
+
 ### Steuerelement "Workflowskript"
 
 Das Steuerelement "Workflowskript" ist eine besondere Aktivität, die PowerShell-Workflowcode akzeptiert, um Funktionalität bereitzustellen, die andernfalls nicht zur Verfügung steht. Es handelt sich nicht um einen vollständigen Workflow, das Skript muss jedoch gültige PowerShell-Codezeilen enthalten. Es kann keine Parameter akzeptieren, kann jedoch Variablen für die Aktivitätsausgabe und Runbookeingabeparameter verwenden. Die Ausgabe der Aktivität wird dem Datenbus hinzugefügt, sofern eine ausgehende Verknüpfung vorhanden ist. Andernfalls wird die Ausgabe zur Runbookausgabe hinzugefügt.
@@ -239,7 +275,11 @@ Sie können außerdem die Ausgabe einer Aktivität in einer Datenquelle vom Typ 
 
 ### Prüfpunkte
 
-Die Anleitungen zum Festlegen von [Prüfpunkten](automation-powershell-workflow/#checkpoints) in Ihrem Runbook gelten auch für grafische Runbooks. Sie können eine Aktivität für das Cmdlet "Checkpoint-Workflow" hinzufügen, wenn Sie einen Prüfpunkt setzen möchten. Sie sollten nach dieser Aktivität "Add-AzureAccount" einfügen, falls das Runbook von diesem Prüfpunkt aus auf einem anderen Worker gestartet wird.
+Sie können [Prüfpunkte](automation-powershell-workflow/#checkpoints) in einem grafischen Runbook festlegen, indem Sie *Prüfpunkt für Runbook* für eine Aktivität auswählen. Dadurch wird ein Prüfpunkt festgelegt, nachdem die Aktivität ausgeführt wurde.
+
+![Prüfpunkt](media/automation-graphical-authoring-intro/set-checkpoint.png)
+
+Die Anleitungen zum Festlegen von Prüfpunkten in Ihrem Runbook gelten auch für grafische Runbooks. Wenn das Runbook Azure-Cmdlets enthält, sollten Sie alle Aktivitäten mit Prüfpunkt mit „Add-AzureRMAccount“ verfolgen, falls das Runbook angehalten und an diesem Prüfpunkt auf einem anderen Worker neu gestartet wird.
 
 
 ## Authentifizierung bei Azure-Ressourcen
@@ -379,4 +419,4 @@ Im folgenden Beispiel wird die Ausgabe eine Aktivität mit dem Namen *Get Twitte
 - [Operatoren](https://technet.microsoft.com/library/hh847732.aspx)
  
 
-<!---HONumber=Nov15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

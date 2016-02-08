@@ -50,7 +50,7 @@ Weitere Informationen über das Konfigurieren Ihrer virtuellen Computer für hoh
 
 Im Gegensatz dazu wird eine Einzelinstanz-Konfiguration für eigenständige virtuelle Computer verwendet, die nicht in einer Verfügbarkeitsgruppe platziert wurden. Diese virtuellen Computer fallen nicht unter die Vereinbarung zum Servicelevel (SLA), denn hier ist es erforderlich, dass mindestens zwei virtuelle Computer in derselben Verfügbarkeitsgruppe bereitgestellt werden.
 
-Weitere Informationen zur SLA finden Sie im Abschnitt „Clouddienste, virtuelle Computer und virtuelles Netzwerk“ unter [Vereinbarungen zum Servicelevel (SLAs)](http://azure.microsoft.com/support/legal/sla/).
+Weitere Informationen zur SLA finden Sie im Abschnitt „Clouddienste, virtuelle Computer und virtuelles Netzwerk“ unter [Vereinbarungen zum Servicelevel (SLAs)](https://azure.microsoft.com/support/legal/sla/).
 
 
 ## Konfigurationsupdates bei mehreren Instanzen
@@ -126,4 +126,4 @@ Beispiel: Während einer geplanten Wartung stellt Azure für "USA (West)" kein U
 [Virtual Machines Manage Availability]: virtual-machines-windows-tutorial.md
 [Understand planned versus unplanned maintenance]: virtual-machines-manage-availability.md#Understand-planned-versus-unplanned-maintenance/
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

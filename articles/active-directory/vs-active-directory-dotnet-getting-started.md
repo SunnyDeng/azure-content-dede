@@ -75,6 +75,6 @@ Wenn Sie Ihrer Ansicht SignIn-/SignOut-Steuerelemente hinzufügen möchten, kön
     &lt;/html>
 </pre>
 
-[Weitere Informationen zu Azure Active Directory](http://azure.microsoft.com/services/active-directory/)
+[Weitere Informationen zu Azure Active Directory](https://azure.microsoft.com/services/active-directory/)
 
-<!---HONumber=AcomDC_1223_2015-->
+<!---HONumber=AcomDC_0128_2016-->

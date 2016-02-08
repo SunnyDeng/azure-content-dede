@@ -1,6 +1,7 @@
 <properties 
-	pageTitle="Verwalten der DocumentDB-Kapazität | Microsoft Azure" 
-	description="Sie erfahren, wie Sie DocumentDB an die Kapazitätsanforderungen Ihrer Anwendung anpassen." 
+	pageTitle="DocumentDB – Kapazität – Dokumentspeicherung | Microsoft Azure" 
+	description="Informationen zur Speicherung von Daten und Dokumenten in DocumentDB und zum Skalieren von DocumentDB zum Erfüllen der Kapazitätsanforderungen Ihrer Anwendung." 
+	keywords="Speicherung von Dokumenten"
 	services="documentdb" 
 	authors="mimig1" 
 	manager="jhubbard" 
@@ -13,18 +14,22 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/28/2015" 
+	ms.date="01/27/2016" 
 	ms.author="mimig"/>
 
-# Verwalten von DocumentDB-Kapazitätsanforderungen
-DocumentDB ist ein vollständig verwalteter, skalierbarer dokumentorientierter NoSQL-Datenbankdienst. Mit DocumentDB müssen Sie keine virtuellen Computer mieten, Software bereitstellen, Datenbanken überwachen oder sich Gedanken über die Notfallwiederherstellung machen. DocumentDB wird von Microsoft-Entwicklern betrieben und ständig überwacht, um erstklassige Verfügbarkeit, Leistung und Datensicherheit zu gewährleisten.
+# Weitere Informationen zu Kapazität und Dokumentspeicherung in DocumentDB
+DocumentDB ist ein vollständig verwalteter, skalierbarer dokumentorientierter NoSQL-Datenbankdienst für JSON-Dokumente. Mit DocumentDB müssen Sie keine virtuellen Computer mieten, Software bereitstellen, Datenbanken überwachen oder sich Gedanken über die Notfallwiederherstellung machen. DocumentDB wird von Microsoft-Entwicklern betrieben und ständig überwacht, um erstklassige Verfügbarkeit, Leistung und Datensicherheit zu gewährleisten.
 
 Sie können sich mit DocumentDB vertraut machen, indem Sie über das [Azure-Portal](documentdb-create-account.md) ein [Datenbankkonto erstellen](https://portal.azure.com/). DocumentDB wird in Einheiten aus SSD-gestütztem Speicher und Durchsatz angeboten. Diese Einheiten werden bereitgestellt, indem in Ihrem Datenbankkonto Datenbanksammlungen erstellt werden. Jede Sammlung umfasst 10 GB an Datenbankspeicher mit reserviertem Durchsatz. Wenn sich die Durchsatzanforderungen Ihrer Anwendung ändern, können Sie diese Einstellung dynamisch ändern, indem Sie die [Leistungsebene](documentdb-performance-levels.md) für jede Sammlung festlegen.
 
 Wenn Ihre Anwendung die Leistungsebene für eine oder mehrere Sammlungen überschreitet, werden die Anforderungen pro Sammlung beschränkt. Dies bedeutet, dass einige Anforderungen erfolgreich sind, während andere aufgrund der Beschränkung fehlschlagen.
 
+Dieser Artikel bietet eine Übersicht über die Ressourcen und Metriken zum Verwalten der Kapazität und Planen der Datenspeicherung.
+
 ## Datenbankkonto und Verwaltungsressourcen
 Als Azure-Abonnent können Sie ein oder mehrere DocumentDB-Datenbankkonten bereitstellen. Jedes Datenbankonto verfügt über ein Kontingent von administrativen Ressourcen wie Datenbanken, Benutzern und Berechtigungen. Diese Ressourcen unterliegen [Grenzen und Kontingenten](documentdb-limits.md). [Wenden Sie sich an den Support](documentdb-increase-limits.md), wenn Sie zusätzliche administrative Ressourcen benötigen.
+
+Das Azure-Verwaltungsportal bietet Nutzungsmetriken für die Überwachung von Datenbankkonten, Datenbanken und Sammlungen. Weitere Informationen finden Sie unter [Überwachen eines DocumentDB-Kontos](documentdb-monitor-accounts.md).
 
 ## Datenbanken mit unbegrenztem Dokumentspeicher
 Eine einzelne DocumentDB-Datenbank kann eine nahezu unbegrenzte Menge Dokumentspeicher enthalten, der von Auflistungen partitioniert wird. Auflistungen bilden die Transaktionsdomänen für die Dokumente, die darin enthalten sind. Die Größe einer DocumentDB-Datenbank ist flexibel und reicht von wenigen Gigabyte bis hin zu SSD-gestütztem Dokumentspeicher im Terabyte-Bereich mit bereitgestelltem Durchsatz. Im Gegensatz zu einer herkömmlichen RDBMS-Datenbank ist eine Datenbank in DocumentDB nicht auf einen einzigen Computer begrenzt.
@@ -34,22 +39,22 @@ Mit DocumentDB können Sie weitere Sammlungen oder Datenbanken bzw. beides erste
 ## Datenbanksammlungen
 Jede DocumentDB-Datenbank kann eine oder mehrere Auflistungen enthalten. Sammlungen dienen als hoch verfügbare Datenpartitionen für die Speicherung und Verarbeitung von Dokumenten. Jede Sammlung kann Dokumente mit heterogenem Schema speichern. Die automatischen Indizierungs- und Abfragefunktionen von DocumentDB ermöglichen Ihnen das einfache Filtern und Abrufen von Dokumenten. Eine Auflistung liefert den Umfang für Dokumentspeicher und Abfrageausführung. Eine Auflistung ist auch eine Transaktionsdomäne für ale Dokumente, die darin enthalten sind. Sammlungen wird der Durchsatz basierend auf der dafür angegebenen Leistungsebene zugeordnet. Dies kann über das Azure-Portal oder eines der SDKs dynamisch angepasst werden.
 
-Sie können eine beliebige Anzahl von Sammlungen erstellen, um den Skalierungsanforderungen Ihrer Anwendungen in Bezug auf die Speicherung und den Durchsatz gerecht zu werden. Sammlungen können über das [Azure-Portal](https://portal.azure.com/) oder eines der [DocumentDB SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) erstellt werden.
+Sie können eine beliebige Anzahl von Sammlungen erstellen, um den Skalierungsanforderungen Ihrer Anwendungen in Bezug auf Datenspeicherung und Durchsatz gerecht zu werden. Sammlungen können über das [Azure-Portal](https://portal.azure.com/) oder eines der [DocumentDB SDKs](documentdb-sdk-dotnet.md) erstellt werden.
 
->[AZURE.NOTE]Jede Sammlung unterstützt Speicher für bis zu 10 GB Dokumentdaten.
+>[AZURE.NOTE] Jede Sammlung unterstützt Speicher für bis zu 10 GB Dokumentdaten. Um größere Datasets zu speichern, müssen Sie diese auf mehrere Sammlungen aufteilen. Informationen finden Sie unter [Partitionieren von Daten in DocumentDB mit dem .NET SDK](documentdb-sharding.md).
  
 ## Anforderungseinheiten und Datenbankvorgänge
 DocumentDB ermöglicht vielfältige Datenbankvorgänge, einschließlich relationaler und hierarchischer Abfragen mit UDFs, gespeicherter Prozeduren und Trigger, die alle in den Dokumenten innerhalb einer Datenbanksammlung ausgeführt werden. Die Verarbeitungskosten im Zusammenhang mit diesen Vorgängen variieren basierend auf CPU, E/A und Speicher, die/der für den jeweiligen Vorgang erforderlich ist. Anstelle sich Gedanken über Hardwareressourcen und deren Verwaltung zu machen, können Sie sich eine Anforderungseinheit (RU) als alleinige Maßeinheit für die Ressourcen vorstellen, die für das Durchführen der verschiedenen Datenbankvorgänge und das Ausführen einer Anwendungsanforderung erforderlich sind.
 
 Anforderungseinheiten werden basierend auf der Leistungsebene bereitgestellt und zugewiesen, die für eine Sammlung festgelegt wird. Jede Sammlung wird bei der Erstellung mit einer Leistungsebene versehen. Diese Leistungsebene bestimmt die Verarbeitungskapazität einer Sammlung in Anforderungseinheiten pro Sekunde. Leistungsebenen können während der gesamten Lebensdauer einer Sammlung angepasst werden, um sie auf die veränderten Verarbeitungsanforderungen und Zugriffsmuster der Anwendung abzustimmen. Weitere Informationen finden Sie unter [Leistungsebenen in DocumentDB](documentdb-performance-levels.md).
 
->[AZURE.IMPORTANT]Sammlungen sind fakturierbare Entitäten. Die Kosten richten sich nach der Leistungsebene, die der Sammlung zugewiesen ist.
+>[AZURE.IMPORTANT] Sammlungen sind fakturierbare Entitäten. Die Kosten richten sich nach der Leistungsebene, die der Sammlung zugewiesen ist.
 
 Der Verbrauch von Anforderungseinheiten wird als Rate pro Sekunde bemessen. Für Anwendungen, die die bereitgestellte Anforderungseinheitsrate für eine Sammlung überschreiten, werden Anforderungen an die Sammlung gedrosselt, bis die Rate unter das reservierte Niveau fällt. Wenn Ihre Anwendung eine höhere Durchsatzebene erfordert, können Sie die Leistungsebene von vorhandenen Sammlungen anpassen oder die Anwendungsanforderungen auf neue Sammlungen verteilen.
 
-Eine Anforderungseinheit ist eine normalisierte Kennzahl für die Anforderungsverarbeitungskosten. Eine einzelne Anforderungseinheit stellt die Verarbeitungskapazität dar, die erforderlich ist, um ein einzelnes, aus 10 eindeutigen Eigenschaftswerten bestehendes JSON-Dokument mit 1 KB zu lesen (per „self link“). Bei der Gebühr für Anforderungseinheiten wird angenommen, dass die Konsistenzebene auf den Standardwert "Session" festgelegt ist und alle Dokumente automatisch indiziert werden. Eine Anforderung zum Einfügen, Ersetzen oder Löschen des gleichen Dokuments verbraucht mehr Verarbeitungsleistung des Diensts und daher mehr Anforderungseinheiten. Jede Antwort des Diensts enthält einen benutzerdefinierten Header (x-ms-request-charge), der die für die Anforderung verbrauchten Anforderungseinheiten misst. Auf diesen Header kann auch über die [SDKs](https://msdn.microsoft.com/library/azure/dn781482.aspx) zugegriffen werden. Im .Net SDK ist „RequestCharge“ eine Eigenschaft des ResourceResponse-Objekts.
+Eine Anforderungseinheit ist eine normalisierte Kennzahl für die Anforderungsverarbeitungskosten. Eine einzelne Anforderungseinheit stellt die Verarbeitungskapazität dar, die erforderlich ist, um ein einzelnes, aus 10 eindeutigen Eigenschaftswerten bestehendes JSON-Dokument mit 1 KB zu lesen (per „self link“). Bei der Gebühr für Anforderungseinheiten wird angenommen, dass die Konsistenzebene auf den Standardwert "Session" festgelegt ist und alle Dokumente automatisch indiziert werden. Eine Anforderung zum Einfügen, Ersetzen oder Löschen des gleichen Dokuments verbraucht mehr Verarbeitungsleistung des Diensts und daher mehr Anforderungseinheiten. Jede Antwort des Diensts enthält einen benutzerdefinierten Header (x-ms-request-charge), der die für die Anforderung verbrauchten Anforderungseinheiten misst. Auf diesen Header kann auch über die [SDKs](documentdb-sdk-dotnet.md) zugegriffen werden. Im .Net SDK ist „RequestCharge“ eine Eigenschaft des ResourceResponse-Objekts.
 
->[AZURE.NOTE]Die Baseline einer Anforderungseinheit für ein Dokument mit 1 KB entspricht einem einfachen GET-Vorgang des Dokuments per „self link“.
+>[AZURE.NOTE] Die Baseline einer Anforderungseinheit für ein Dokument mit 1 KB entspricht einem einfachen GET-Vorgang des Dokuments per „self link“.
 
 Es gibt verschiedene Faktoren, die sich auf die Anforderungseinheiten auswirken, die für einen Vorgang in einem DocumentDB-Datenbankkonto genutzt werden. Zu diesen Faktoren zählen folgende:
 
@@ -77,4 +82,4 @@ Anweisungen zur Überwachung der Leistungsebenen im Azure-Portal finden Sie unte
 Weitere Informationen zum Auswählen von Leistungsebenen für Sammlungen finden Sie unter [Leistungsebenen in DocumentDB](documentdb-performance-levels.md).
  
 
-<!---HONumber=AcomDC_0107_2016-->
+<!---HONumber=AcomDC_0128_2016-->

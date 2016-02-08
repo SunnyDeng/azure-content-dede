@@ -49,15 +49,9 @@ Ein HTTP-404-Fehler kann beispielsweise zahlreiche Ursachen haben. Hier können 
 |ConflictError|Konflikt (409)|Es ist ein Konflikt aufgetreten, um den Abschluss des Vorgangs zu verhindern.|
 |TemporaryRedirect|Temporäre Umleitung (307)|Das angeforderte Objekt ist nicht verfügbar. Ein temporärer URI für den neuen Speicherort des Objekts steht in der Antwort im Feld „Speicherort“ zur Verfügung. Die ursprüngliche Anforderung kann mit dem neuen URI wiederholt werden.|
 
-API-Vorgänge können ebenfalls zusätzliche Fehlerinformationen zurückgeben, die vom Verwaltungsdienst definiert werden. Diese zusätzlichen Fehlerinformationen werden im Antworttext zurückgegeben. Für den Text der Fehlerantwort wird das folgende grundlegende Format verwendet:
+API-Vorgänge können ebenfalls zusätzliche Fehlerinformationen zurückgeben, die vom Verwaltungsdienst definiert werden. Diese zusätzlichen Fehlerinformationen werden im Antworttext zurückgegeben.
 
-		<?xml version="1.0" encoding="utf-8"?>  
-		<Error>  
-			<Code>string-code</Code>  
-			<Message>detailed-error-message</Message>  
-		</Error>  
-
-## Weitere Informationen
+## Siehe auch
 
 
  [Was ist Azure Scheduler?](scheduler-intro.md)
@@ -68,7 +62,7 @@ API-Vorgänge können ebenfalls zusätzliche Fehlerinformationen zurückgeben, d
 
  [Pläne und Abrechnung in Azure Scheduler](scheduler-plans-billing.md)
 
- [Azure Scheduler-REST-API – Referenz](https://msdn.microsoft.com/library/dn528946)
+ [Azure Scheduler-REST-API – Referenz](https://msdn.microsoft.com/library/mt629143)
 
  [Azure Scheduler – PowerShell-Cmdlets-Referenz](scheduler-powershell-reference.md)
 
@@ -78,4 +72,4 @@ API-Vorgänge können ebenfalls zusätzliche Fehlerinformationen zurückgeben, d
  
   
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

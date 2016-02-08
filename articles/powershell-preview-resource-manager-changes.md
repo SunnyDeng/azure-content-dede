@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="powershell"
 	ms.workload="na"
-	ms.date="10/09/2015"
+	ms.date="01/26/2016"
 	ms.author="gauravbh;tomfitz"/>
 
 #Änderungen bei den PowerShell-Verwaltungs-Cmdlets für den Azure-Ressourcen-Manager
@@ -91,4 +91,4 @@ Hiermit wird das Ergebnis gefiltert, um nur die Orte anzuzeigen, die für den an
 
 Der Azure-Ressourcen-Manager bietet nun Richtlinienunterstützung. In diesem Release wurden PowerShell-Cmdlets für die Richtlinienverwaltung hinzugefügt. Weitere Einzelheiten zu Richtlinien finden Sie unter [Verwenden von Richtlinien für Ressourcenverwaltung und Zugriffssteuerung](resource-manager-policy.md).
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_0128_2016-->

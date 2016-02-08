@@ -18,9 +18,9 @@
 
 # Cortana-Analyseprozess in Aktion – Verwenden von Azure HDInsight Hadoop-Clustern in einem 1-TB-DataSet
 
-In dieser exemplarischen Vorgehensweise wird die End-to-End-Verwendung des Cortana-Analyseprozesses (CAP) in einem [Azure HDInsight Hadoop-Cluster](http://azure.microsoft.com/services/hdinsight/) zum Speichern, Durchsuchen, Verarbeiten und Komprimieren von Daten aus einem der öffentlich zugänglichen [Criteo](http://labs.criteo.com/downloads/download-terabyte-click-logs/)-DataSets veranschaulicht. Mithilfe von Azure Machine Learning erstellen wir ein binäres Klassifizierungsmodell für diese Daten. Zudem zeigen wir auf, wie eines dieser Modelle als Webdienst veröffentlicht wird.
+In dieser exemplarischen Vorgehensweise wird die End-to-End-Verwendung des Cortana-Analyseprozesses (CAP) in einem [Azure HDInsight Hadoop-Cluster](https://azure.microsoft.com/services/hdinsight/) zum Speichern, Durchsuchen, Verarbeiten und Komprimieren von Daten aus einem der öffentlich zugänglichen [Criteo](http://labs.criteo.com/downloads/download-terabyte-click-logs/)-DataSets veranschaulicht. Mithilfe von Azure Machine Learning erstellen wir ein binäres Klassifizierungsmodell für diese Daten. Zudem zeigen wir auf, wie eines dieser Modelle als Webdienst veröffentlicht wird.
 
-Die in dieser exemplarischen Vorgehensweise vorgestellten Aufgaben können auch mit einem IPython-Notebook umgesetzt werden. Benutzer, die diesem Ansatz folgen möchten, sollten das Thema [Criteo walkthrough using a Hive ODBC connection](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/iPythonNotebooks/machine-Learning-data-science-process-hive-walkthrough-criteo.ipynb) (in englischer Sprache) beachten.
+Die in dieser exemplarischen Vorgehensweise vorgestellten Aufgaben können auch mit einem IPython-Notizbuch umgesetzt werden. Benutzer, die diesem Ansatz folgen möchten, sollten das Thema [Criteo walkthrough using a Hive ODBC connection](https://github.com/Azure/Azure-MachineLearning-DataScience/blob/master/Misc/DataScienceProcess/iPythonNotebooks/machine-Learning-data-science-process-hive-walkthrough-criteo.ipynb) (in englischer Sprache) beachten.
 
 
 ## <a name="dataset"></a>Beschreibung des Criteo-DataSets
@@ -622,7 +622,7 @@ Hinweis: Für das Eingabedatenformat verwenden wir nun die AUSGABE des **Count F
 
 **Wichtiger Hinweis:** Dieses DataSet wird für die Eingabedaten des Webdiensts verwendet.
 
-#### Bewertungsexperiment für den Veröffentlichungswebdienst
+#### Abstimmung des Experiments für den Veröffentlichungswebdienst
 
 Zunächst wird im Folgenden gezeigt, wie dies aussieht. Die grundlegende Struktur ist ein **Score Model**-Modul, das unsere trainierten Modellobjekte und einige Zeilen der in den vorherigen Schritten mit dem **Count Featurizer**-Modul generierten Eingabedaten akzeptiert. Wir verwenden "Project Colums" um die bewerteten Bezeichnungen sowie die Bewertungswahrscheinlichkeiten auszublenden.
 
@@ -648,14 +648,14 @@ Auf der linken Seite befinden sich zwei Links zu Webdiensten:
 
 Wenn Sie auf den Link **REQUEST/RESPONSE** klicken, gelangen Sie zu einer Seite mit vorprogrammiertem Code in C#, Python und R. Dieser Code kann problemlos für Aufrufe an den Webdienst verwendet werden. Beachten Sie, dass der API-Schlüssel auf dieser Seite für die Authentifizierung verwendet werden muss.
 
-Es empfiehlt sich, diesen Python-Code in eine neue Zelle des IPython-Notebooks zu kopieren.
+Es empfiehlt sich, diesen Python-Code in eine neue Zelle des IPython-Notizbuchs zu kopieren.
 
 Im Folgenden finden Sie einen Python-Codeabschnitt mit dem richtigen API-Schlüssel.
 
 ![Python-Code](./media/machine-learning-data-science-process-hive-criteo-walkthrough/f8N4L4g.png)
 
 
-Beachten Sie, dass wir den Standard-API-Schlüssel durch den API-Schlüssel unseres Webdienstes ersetzt haben. Wenn Sie in einem IPython-Notebook für diese Zelle auf **Ausführen** klicken, wird folgende Antwort zurückgegeben:
+Beachten Sie, dass wir den Standard-API-Schlüssel durch den API-Schlüssel unseres Webdienstes ersetzt haben. Wenn Sie in einem IPython-Notizbuch für diese Zelle auf **Ausführen** klicken, wird folgende Antwort zurückgegeben:
 
 ![IPython-Antwort](./media/machine-learning-data-science-process-hive-criteo-walkthrough/KSxmia2.png)
 
@@ -663,4 +663,4 @@ Wir sehen, dass wir für die beiden angefragten Testbeispiele (im JSON-Framework
 
 Damit sind wir am Ende unser ausführlichen exemplarischen Vorgehensweise zum Behandeln umfangreicher DataSets mithilfe von Azure Machine Learning angekommen. Wir haben mit einem Terabyte an Daten begonnen, ein Vorhersagemodell erstellt und dieses als Webdienst in der Cloud bereitgestellt.
 
-<!---HONumber=Oct15_HO4-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -13,14 +13,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="01/05/2016"
+   ms.date="01/21/2016"
    ms.author="terrylan"/>
 
 # Verwalten von Sicherheitsempfehlungen in Azure Security Center
 
 In diesem Dokument erfahren Sie, wie Sicherheitsempfehlungen in Azure Security Center Ihnen helfen, Ihre Azure-Ressourcen zu schützen.
 
-> [AZURE.NOTE]Die Informationen in diesem Dokument gelten für die Vorschauversion von Azure Security Center. Dies ist eine Einführung in den Dienst anhand einer Beispielbereitstellung. Es ist keine schrittweise Anleitung.
+> [AZURE.NOTE] Die Informationen in diesem Dokument gelten für die Vorschauversion von Azure Security Center. Dies ist eine Einführung in den Dienst anhand einer Beispielbereitstellung. Es ist keine schrittweise Anleitung.
 
 ## Was ist Azure Security Center?
 Azure Security Center unterstützt Sie beim Verhindern, Erkennen und Beheben von Bedrohungen durch größere Transparenz und bessere Kontrolle über die Sicherheit Ihrer Azure-Ressourcen. Es bietet integrierte Sicherheitsüberwachung und Richtlinienverwaltung für Ihre Abonnements, hilft bei der Erkennung von Bedrohungen, die andernfalls möglicherweise unbemerkt bleiben, und kann gemeinsam mit einem breiten Sektrum an Sicherheitslösungen verwendet werden.
@@ -38,10 +38,9 @@ In [Festlegen von Sicherheitsrichtlinien in Azure Security Center](security-cent
 - Aktivieren der Datensammlung
 - Auswählen der Empfehlungen, die Sie als Teil Ihrer Sicherheitsrichtlinie verwenden möchten
 
-Aktuelle Richtlinienempfehlungen beziehen sich auf Systemupdates, Grundregeln, Antischadsoftware, [ACLs für Endpunkte](virtual-machines-set-up-endpoints.md), [Netzwerksicherheitsgruppen](virtual-networks-nsg.md) für Subnetze und Netzwerkschnittstellen, Überwachung der SQL-Datenbank, Transparent Data Encryption für die SQL-Datenbank und Web Application Firewall. [Einrichten von Sicherheitsrichtlinien](security-center-policies.md) enthält eine Beschreibung der einzelnen Empfehlungsoptionen.
+Aktuelle Richtlinienempfehlungen beziehen sich auf Systemupdates, Grundregeln, Antischadsoftware, [ACLs für Endpunkte](../virtual-machines/virtual-machines-set-up-endpoints.md), [Netzwerksicherheitsgruppen](../virtual-networks/virtual-networks-nsg.md) für Subnetze und Netzwerkschnittstellen, Überwachung der SQL-Datenbank, Transparent Data Encryption für die SQL-Datenbank und Web Application Firewall. [Einrichten von Sicherheitsrichtlinien](security-center-policies.md) enthält eine Beschreibung der einzelnen Empfehlungsoptionen.
 
 ### Überwachen der Empfehlungen
-
 Nach Einstellung einer Sicherheitsrichtlinie analysiert Azure Security Center den Sicherheitsstatus Ihrer Ressourcen, um potenzielle Sicherheitsrisiken zu erkennen. Auf der Kachel **Empfehlungen** des Blatts **Security Center** können Sie die Gesamtmenge der von Azure Security Center identifizierten Empfehlungen sehen.
 
 ![][2]
@@ -49,40 +48,47 @@ Nach Einstellung einer Sicherheitsrichtlinie analysiert Azure Security Center de
 So zeigen Sie die Details jeder Empfehlung an:
 
 1. Klicken Sie auf dem Blatt **Security Center** auf die Kachel **Empfehlungen**. Das Blatt **Empfehlungen** wird geöffnet.
-2. Sie können nach Status und Schweregrad filtern, welche Empfehlungen Ihnen vorgeschlagen werden. Klicken Sie auf dem Blatt **Empfehlungen** auf **Filter**. Das Blatt „Filter“ wird geöffnet. Sie können Werte für Schweregrad und Status auswählen, die Sie anzeigen möchten. ![][3]
-
-3. Wenn Sie feststellen, dass eine Empfehlung nicht anwendbar ist, können Sie die Empfehlung verwerfen und dann aus der Ansicht filtern. Es gibt zwei Möglichkeiten, eine Empfehlung zu verwerfen. Klicken Sie mit der rechten Maustaste auf ein Element, und wählen Sie **Verwerfen** aus, oder zeigen Sie auf ein Element, klicken Sie auf die drei Punkte, die rechts angezeigt werden, und wählen Sie **Verwerfen** aus. Sie können verworfene Empfehlungen anzeigen, indem Sie auf **Filter** klicken und **Verworfen** auswählen. ![][4]
 
 Die Empfehlungen werden in einem Tabellenformat angezeigt, wobei jede Zeile eine bestimmte Empfehlung darstellt. Die Spalten dieser Tabelle sind:
 
 - **BESCHREIBUNG**: Eine Erläuterung der Empfehlung, und was getan werden muss, um sie zu befolgen.
 - **RESSOURCE:** für welche Ressource(n) diese Empfehlung gilt.
 - **STATUS:** der aktuelle Status der Empfehlung
-  - **Offen**: noch nicht behandelt
-  - **In Bearbeitung:** Empfehlung wird derzeit auf diese Ressourcen angewendet, es ist keine Aktion Ihrerseits erforderlich.
-  - **Gelöst:** Empfehlung wurde bereits abgeschlossen (im Status „Gelöst“ ist die Farbe der Linie abgeblendet).
+    - **Offen**: noch nicht behandelt
+    - **In Bearbeitung:** Empfehlung wird derzeit auf diese Ressourcen angewendet, es ist keine Aktion Ihrerseits erforderlich.
+    - **Gelöst:** Empfehlung wurde bereits abgeschlossen (im Status „Gelöst“ ist die Farbe der Linie abgeblendet).
 - **SCHWEREGRAD**: Beschreibt den Schweregrad dieser bestimmten Empfehlung:
-  - **Hoch:**: Ein Sicherheitsrisiko betrifft eine bedeutsame Ressource (Anwendung, VM, Netzwerksicherheitsgruppe) und erfordert Aufmerksamkeit.
-  - **Mittel**: Unkritische oder zusätzliche Schritte sind erforderlich, um einen Prozess abzuschließen oder eine Sicherheitslücke zu beseitigen.
-  - **Niedrig:** Ein Sicherheitsrisiko, das behandelt werden sollte, jedoch keine unmittelbare Aufmerksamkeit erfordert. (Standardmäßig wird eine Empfehlung mit Schweregrad "Niedrig" nicht angezeigt, jedoch können Sie einen entsprechenden Filter für solche Empfehlungen einstellen, wenn Sie sie anzeigen möchten.)
+    - **Hoch:**: Ein Sicherheitsrisiko betrifft eine bedeutsame Ressource (Anwendung, VM, Netzwerksicherheitsgruppe) und erfordert Aufmerksamkeit.
+    - **Mittel**: Unkritische oder zusätzliche Schritte sind erforderlich, um einen Prozess abzuschließen oder eine Sicherheitslücke zu beseitigen.
+    - **Niedrig:** Ein Sicherheitsrisiko, das behandelt werden sollte, jedoch keine unmittelbare Aufmerksamkeit erfordert. (Standardmäßig wird eine Empfehlung mit Schweregrad "Niedrig" nicht angezeigt, jedoch können Sie einen entsprechenden Filter für solche Empfehlungen einstellen, wenn Sie sie anzeigen möchten.)
 
 Der folgenden Tabelle können Sie entnehmen, welche Empfehlungen verfügbar sind, und welche Aktionen sie jeweils ausführen, wenn Sie sie anwenden:
 
-| Empfehlung | Beschreibung |
-|----- |-----|
-| Sammlung von Daten für Abonnements/virtuelle Computer aktivieren | Empfiehlt Ihnen, in der Sicherheitsrichtlinie die Datensammlung für alle Abonnements oder für ausgewählte virtuelle Maschinen zu aktivieren. |
-| Grundregelkonflikte lösen | Empfiehlt Ihnen, OS-Konfigurationen an den empfohlenen Grundregeln zu orientieren, z. B. nicht zuzulassen, dass Kennwörter gespeichert werden. |
-| Systemupdates anwenden | Empfiehlt Ihnen, fehlende Systemupdates für virtuelle Computer (nur Windows-VMs) bereitzustellen. |
-| ACLs für Endpunkte konfigurieren | Sie sollten eine Zugriffssteuerungsliste konfigurieren, um den eingehenden Zugriff auf virtuelle Computer (nur für klassische VMs) einzuschränken. |
-| Web Application Firewall hinzufügen | Empfiehlt Ihnen, eine Web Application Firewall (WAF) für Webendpunkte bereitzustellen (nur Ressourcen-Manager-VMs). |
-| Web Application Firewall-Setup abschließen | Um die Konfiguration einer WAF abzuschließen, muss Datenverkehr an das WAF-Gerät umgeleitet werden. Diese Empfehlung schließt die erforderlichen Setupänderungen ab. |
-| Antischadsoftware aktivieren | Empfiehlt Ihnen, Antischadsoftware für virtuelle Computer bereitzustellen (nur Windows-VMs). |
-| Netzwerksicherheitsgruppen für Subnetze/Netzwerkschnittstellen aktivieren | Empfiehlt Ihnen, Netzwerksicherheitsgruppen (NSGs) für Subnetze und Netzwerkschnittstellen zu aktivieren(nur Ressourcen-Manager-VMs). |
-| Zugriff über öffentliche externe Endpunkte einschränken | Empfiehlt Ihnen, Regeln für eingehenden Datenverkehr für NSGs zu konfigurieren. |
-| Überwachung von SQL-Server aktivieren | Empfiehlt Ihnen, die Überwachung für Azure SQL-Server zu aktivieren (nur Azure SQL-Dienst, auf Ihren virtuellen Computern ausgeführtes SQL nicht inbegriffen). |
-| Überwachung der SQL-Datenbank aktivieren | Empfiehlt Ihnen, die Überwachung für Azure SQL-Datenbanken zu aktivieren (nur Azure SQL-Dienst, auf Ihren virtuellen Computern ausgeführtes SQL nicht inbegriffen). |
-| Transparent Data Encryption für SQL-Datenbanken aktivieren | Empfiehlt Ihnen, die Verschlüsselung für SQL-Datenbanken zu aktivieren (nur Azure SQL-Dienst). |
-| VM-Agent bereitstellen | Ermöglicht Ihnen, anzuzeigen, welche VMs den VM-Agent benötigen. Der VM-Agent muss auf virtuellen Computern installiert werden, um das Überprüfen von Patches, Überprüfen von Grundregeln und Antischadsoftware bereitzustellen. Der VM-Agent wird standardmäßig für virtuelle Computer installiert, die vom Azure Marketplace bereitgestellt werden. Der Artikel [VM-Agent und Erweiterungen – Teil 2](http://azure.microsoft.com/blog/2014/04/15/vm-agent-and-extensions-part-2/) enthält Informationen zum Installieren des VM-Agents. |
+|Empfehlung|Beschreibung|
+|-----|-----|
+|Sammlung von Daten für Abonnements/virtuelle Computer aktivieren|Empfiehlt Ihnen, in der Sicherheitsrichtlinie die Datensammlung für alle Abonnements oder für ausgewählte virtuelle Maschinen zu aktivieren.|
+|Grundregelkonflikte lösen|Empfiehlt Ihnen, OS-Konfigurationen an den empfohlenen Grundregeln zu orientieren, z. B. nicht zuzulassen, dass Kennwörter gespeichert werden.|
+|Systemupdates anwenden|Empfiehlt Ihnen, fehlende Systemupdates für virtuelle Computer (nur Windows-VMs) bereitzustellen.|
+|ACLs für Endpunkte konfigurieren|Sie sollten eine Zugriffssteuerungsliste konfigurieren, um den eingehenden Zugriff auf virtuelle Computer (nur für klassische VMs) einzuschränken.|
+|Web Application Firewall hinzufügen|Empfiehlt Ihnen, eine Web Application Firewall (WAF) für Webendpunkte bereitzustellen (nur Ressourcen-Manager-VMs).|
+|Web Application Firewall-Setup abschließen|Um die Konfiguration einer WAF abzuschließen, muss Datenverkehr an das WAF-Gerät umgeleitet werden. Diese Empfehlung schließt die erforderlichen Setupänderungen ab.|
+|Antischadsoftware aktivieren|Empfiehlt Ihnen, Antischadsoftware für virtuelle Computer bereitzustellen (nur Windows-VMs).|
+|Netzwerksicherheitsgruppen für Subnetze/Netzwerkschnittstellen aktivieren|Empfiehlt Ihnen, Netzwerksicherheitsgruppen (NSGs) für Subnetze und Netzwerkschnittstellen zu aktivieren(nur Ressourcen-Manager-VMs).|
+|Zugriff über öffentliche externe Endpunkte einschränken|Empfiehlt Ihnen, Regeln für eingehenden Datenverkehr für NSGs zu konfigurieren.|
+|Überwachung von SQL-Server aktivieren|Empfiehlt Ihnen, die Überwachung für Azure SQL-Server zu aktivieren (nur Azure SQL-Dienst, auf Ihren virtuellen Computern ausgeführtes SQL nicht inbegriffen).|
+|Überwachung der SQL-Datenbank aktivieren|Empfiehlt Ihnen, die Überwachung für Azure SQL-Datenbanken zu aktivieren (nur Azure SQL-Dienst, auf Ihren virtuellen Computern ausgeführtes SQL nicht inbegriffen).|
+|Transparent Data Encryption für SQL-Datenbanken aktivieren|Empfiehlt Ihnen, die Verschlüsselung für SQL-Datenbanken zu aktivieren (nur Azure SQL-Dienst).|
+|VM-Agent bereitstellen|Ermöglicht Ihnen, anzuzeigen, welche VMs den VM-Agent benötigen. Der VM-Agent muss auf virtuellen Computern installiert werden, um das Überprüfen von Patches, Überprüfen von Grundregeln und Antischadsoftware bereitzustellen. Der VM-Agent wird standardmäßig für virtuelle Computer installiert, die vom Azure Marketplace bereitgestellt werden. Der Artikel [VM-Agent und Erweiterungen – Teil 2](https://azure.microsoft.com/blog/2014/04/15/vm-agent-and-extensions-part-2/) enthält Informationen zum Installieren des VM-Agents.|
+
+Sie können Empfehlungen filtern und verwerfen.
+
+1. Klicken Sie auf dem Blatt **Empfehlungen** auf **Filter**. Das Blatt „Filter“ wird geöffnet. Sie können Werte für Schweregrad und Status auswählen, die Sie anzeigen möchten.
+
+    ![][3]
+
+2. Wenn Sie feststellen, dass eine Empfehlung nicht anwendbar ist, können Sie die Empfehlung verwerfen und dann aus der Ansicht filtern. Es gibt zwei Möglichkeiten, eine Empfehlung zu verwerfen. Klicken Sie mit der rechten Maustaste auf ein Element, und wählen Sie **Verwerfen** aus, oder zeigen Sie auf ein Element, klicken Sie auf die drei Punkte, die rechts angezeigt werden, und wählen Sie **Verwerfen** aus. Sie können verworfene Empfehlungen anzeigen, indem Sie auf **Filter** klicken und **Verworfen** auswählen.
+
+    ![][4]
 
 ### Anwenden von Empfehlungen
 Nach Auswertung aller Empfehlungen können Sie entscheiden, welche zuerst angewendet werden soll. Verwenden Sie den Schweregrad als wichtigsten Parameter bei der Entscheidung, welche Empfehlungen zuerst angewendet werden sollen. Die Antischadsoftware-Empfehlung dient uns als Beispiel zum Anwenden einer Empfehlung:
@@ -94,7 +100,7 @@ Nach Auswertung aller Empfehlungen können Sie entscheiden, welche zuerst angewe
 4. Weitere Informationen zur Antischadsoftware-Lösung werden angezeigt. Klicken Sie auf **Erstellen**.
 5. Geben Sie die erforderlichen Konfigurationseinstellungen auf dem Blatt **Erweiterung hinzufügen** ein, und wählen Sie **OK**. ![][6]
 
-[Microsoft Antimalware](azure-security-antimalware.md) ist jetzt auf dem ausgewählten virtuellen Computer aktiv.
+[Microsoft Antimalware](../azure-security/azure-security-antimalware.md) ist jetzt auf dem ausgewählten virtuellen Computer aktiv.
 
 ### Bereitstellen empfohlener Partnerlösungen
 
@@ -135,4 +141,4 @@ In diesem Dokument wurden Ihnen Sicherheitsempfehlungen in Azure Security Center
 [9]: ./media/security-center-recommendations/finalize-waf.png
 [10]: ./media/security-center-recommendations/restrict-traffic.png
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

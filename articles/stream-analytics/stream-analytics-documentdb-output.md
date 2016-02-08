@@ -19,7 +19,7 @@
 
 # Ausrichten der JSON-Ausgabe von Stream Analytics auf Azure DocumentDB
 
-Stream Analytics kann für die JSON-Ausgabe auf [Azure DocumentDB](http://azure.microsoft.com/services/documentdb/) ausgerichtet werden, was eine Datenarchivierung und Abfragen unstrukturierter JSON-Daten mit geringer Latenz ermöglicht. Erfahren Sie, wie diese Integration am besten implementiert wird.
+Stream Analytics kann für die JSON-Ausgabe auf [Azure DocumentDB](https://azure.microsoft.com/services/documentdb/) ausgerichtet werden, was eine Datenarchivierung und Abfragen unstrukturierter JSON-Daten mit geringer Latenz ermöglicht. Erfahren Sie, wie diese Integration am besten implementiert wird.
 
 Falls Sie noch nicht mit DocumentDB vertraut sind, sehen Sie sich zum Einstieg den [Lernpfad für DocumentDB](https://azure.microsoft.com/documentation/learning-paths/documentdb/) an.
 
@@ -62,4 +62,4 @@ Beim Erstellen einer DocumentDB-Datenbank als Ausgabe in Stream Analytics wird e
 -   **Partitionsschlüssel**: Der Name des Felds in Ausgabeereignissen, das zur Angabe des Schlüssels für die sammlungsübergreifende Partitionierung der Ausgabe verwendet wird. Für die Ausgabe einer einzelnen Sammlung kann eine beliebige Ausgabespalte wie „PartitionId“ verwendet werden.  
 -   **Dokument-ID**: Optional. Der Name des Felds in Ausgabeereignissen, das zur Angabe des Primärschlüssels verwendet wird, auf dem Einfüge- und Aktualisierungsvorgänge basieren.  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

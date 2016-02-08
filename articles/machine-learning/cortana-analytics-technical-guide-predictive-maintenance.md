@@ -24,7 +24,7 @@ Lösungsvorlagen dienen zur schnelleren Erstellung von E2E-Demos auf Grundlage d
 
 Das Ziel dieses Dokuments besteht darin, die Referenzarchitektur und die verschiedenen im Rahmen Ihres Abonnements bereitgestellten Komponenten zu beschreiben, die Teil dieser Lösungsvorlage sind. Das Dokument erklärt auch, wie Sie die Beispieldaten durch eigene echte Daten ersetzen, um Erkenntnisse und Vorhersagen aus Ihren eigenen Daten zu gewinnen. Außerdem erläutert das Dokument, welche Teile der Lösungsvorlage geändert werden müssen, wenn Sie die Lösung an Ihre eigenen Daten anpassen möchten. Am Ende des Dokuments finden Sie Anweisungen zum Erstellen des Power BI-Dashboards für diese Lösungsvorlage.
 
->[AZURE.TIP]Sie können eine [PDF-Version dieses Dokuments](http://download.microsoft.com/download/F/4/D/F4D7D208-D080-42ED-8813-6030D23329E9/cortana-analytics-technical-guide-predictive-maintenance.pdf) herunterladen und drucken.
+>[AZURE.TIP] Sie können eine [PDF-Version dieses Dokuments](http://download.microsoft.com/download/F/4/D/F4D7D208-D080-42ED-8813-6030D23329E9/cortana-analytics-technical-guide-predictive-maintenance.pdf) herunterladen und drucken.
 
 ## **Übersicht**
 
@@ -156,6 +156,18 @@ Das für diese Lösungsvorlage verwendete [Azure Machine Learning](https://azure
 
 Informationen zum Erstellen des Azure Machine Learning-Experiments finden Sie unter [Vorbeugende Wartung: Schritt 1 von 3, Datenvorbereitung und Featureentwicklung](http://gallery.cortanaanalytics.com/Experiment/Predictive-Maintenance-Step-1-of-3-data-preparation-and-feature-engineering-2).
 
+## **Überwachen des Fortschritts**
+ Nach dem Start des Daten-Generators füllt sich die Pipeline mit Daten, und die verschiedenen Komponenten der Lösung beginnen, im Anschluss an die von der Data Factory aufgerufenen Befehle in Aktion zu treten. Es gibt zwei Möglichkeiten zum Überwachen der Pipeline.
+
+1. Einer der Stream Analytics-Aufträge schreibt die unformatierten eingehenden Daten in Blobspeicher. Wenn Sie auf dem Bildschirm auf die Komponente „Blobspeicher“ Ihrer Lösung klicken, haben Sie die Lösung erfolgreich bereitgestellt. Wenn Sie dann im rechten Bereich auf „Öffnen“ klicken, gelangen Sie zum [Verwaltungsportal](https://portal.azure.com/). Klicken Sie dort auf „Blobs“. Im nächsten Bereich sehen Sie eine Liste mit Containern. Klicken Sie auf **maintenancesadata**. Im nächsten Bereich sehen Sie den Ordner **rawdata**. Innerhalb des Ordners „rawdata“ sehen Sie Ordner mit Namen wie „hour=17“, „hour=18“ usw. Wenn diese Ordner angezeigt werden, bedeutet dies, dass die unformatierten Daten erfolgreich auf Ihrem Computer erstellt und im Blobspeicher gespeichert wurden. In diesen Ordnern sollten Sie CSV-Dateien mit Größen in MB vorfinden.
+
+2. Der letzte Schritt der Pipeline ist das Schreiben von Daten (z. B. Prognosen aus Machine Learning) in die SQL-Datenbank. Möglicherweise müssen Sie bis zu drei Stunden warten, bis die Daten in Azure SQL-Datenbank angezeigt werden. Eine Möglichkeit zum Überwachen, wie viele Daten in Ihrer SQL-Datenbank verfügbar sind, bietet das [Azure-Portal](https://manage.windowsazure.com/). Klicken Sie im linken Bereich „SQL-DATENBANKEN“ ![](media\cortana-analytics-technical-guide-predictive-maintenance\icon-SQL-databases.png). Suchen Sie Ihre Datenbank **pmaintenancedb**, und klicken Sie darauf. Klicken Sie auf der nächsten Seite unten auf VERWALTEN.
+
+	![](media\cortana-analytics-technical-guide-predictive-maintenance\icon-manage.png).
+
+	Hier können Sie auf „Neue Abfrage“ klicken und dann die Anzahl der Zeilen, z. B. select count(*) aus PMResult, abfragen. Wenn Ihre Datenbank wächst, nimmt auch die Anzahl der Zeilen in der Tabelle zu.
+
+
 ## **Power BI-Dashboard**
 
 ### Übersicht
@@ -166,7 +178,7 @@ In diesem Abschnitt wird beschrieben, wie Sie das Power BI-Dashboard einrichten
 
 Bei der Datenpipeline für kalte Daten besteht das wesentliche Ziel darin, die vorhergesagte Restlebensdauer jedes Flugzeugtriebwerks abzurufen, nachdem ein Flug oder Flugzyklus abgeschlossen ist. Das Vorhersageergebnis wird alle drei Stunden aktualisiert, um Vorhersagen für die Flugzeugtriebwerke zu erhalten, die in den letzten drei Stunden einen Flug beendet haben.
 
-Power BI stellt eine Verbindung mit einer Azure SQL-Datenbank als Datenquelle her, denn dort werden die Vorhersageergebnisse gespeichert. Beachten Sie: 1) Nach dem Bereitstellen Ihrer Lösung wird alle drei Stunden eine echte Vorhersage in der Datenbank angezeigt. Die PBIX-Datei, die Teil des Downloads für den Generator ist, enthält einige Seedingdaten, sodass Sie das Power BI-Dashboard sofort erstellen können. 2) Als Voraussetzung für diesen Schritt müssen Sie die kostenlose Software [Power BI Desktop](https://powerbi.microsoft.com/documentation/powerbi-desktop-get-the-desktop/) herunterladen und installieren.
+Power BI stellt eine Verbindung mit einer Azure SQL-Datenbank als Datenquelle her, denn dort werden die Vorhersageergebnisse gespeichert. Beachten Sie: 1) Nach dem Bereitstellen Ihrer Lösung wird alle drei Stunden eine echte Vorhersage in der Datenbank angezeigt. Die PBIX-Datei, die Teil des Downloads für den Generator ist, enthält einige Seedingdaten, sodass Sie das Power BI-Dashboard sofort erstellen können. 2) Die Voraussetzung für diesen Schritt ist das Herunterladen und Installieren der kostenlosen Software [Power BI Desktop](https://powerbi.microsoft.com/documentation/powerbi-desktop-get-the-desktop/).
 
 In den folgenden Schritten wird erklärt, wie Sie die PBIX-Datei mit der SQL-Datenbank verbinden, die beim Bereitstellen der Lösung in Betrieb genommen wurde und die die Daten für die Visualisierung enthält (*z. B.* Vorhersageergebnisse).
 
@@ -174,13 +186,13 @@ In den folgenden Schritten wird erklärt, wie Sie die PBIX-Datei mit der SQL-Dat
 
     Sie benötigen **den Namen des Datenbankservers, den Namen der Datenbank, den Benutzernamen und das Kennwort**, bevor Sie die nächsten Schritte ausführen können. Sie finden diese Informationen anhand der folgenden Schritte.
 
-    -   Sobald **Azure SQL-Datenbank** in ihrem Lösungsvorlagendiagramm grün angezeigt wird, klicken Sie darauf und dann auf **Öffnen**.
+    -   Sobald **Azure SQL-Datenbank** in Ihrem Lösungsvorlagendiagramm grün angezeigt wird, klicken Sie darauf und dann auf **Öffnen**.
 
     -   Es wird eine neue Registerkarte im Browser oder ein neues Browserfenster mit der Azure-Portalseite angezeigt. Klicken Sie im linken Bereich auf **Ressourcengruppen**.
 
-    -   Wählen Sie das Abonnement aus, das Sie zum Bereitstellen der Lösung verwenden, und wählen Sie dann **‚IhrLösungsname\_Ressourcengruppe‘** aus.
+    -   Wählen Sie das Abonnement aus, das Sie zum Bereitstellen der Lösung verwenden, und wählen Sie dann **IhrLösungsname\_Ressourcengruppe** aus.
 
-    -   Klicken Sie im daraufhin angezeigten Popupbereich auf das Symbol ![](media\cortana-analytics-technical-guide-predictive-maintenance\icon-sql.png), um auf Ihre Datenbank zuzugreifen. Neben diesem Symbol wird der Name Ihrer Datenbank angezeigt (*z. B.* **‚pmaintenancedb‘**), und der **Name des Datenbankservers** wird unter der Eigenschaft „Servername“ aufgelistet. Er sollte ähnlich dem Folgenden aussehen: **IhrLösungsname.database.windows.net**.
+    -   Klicken Sie im daraufhin angezeigten Popupbereich auf das Symbol ![](media\cortana-analytics-technical-guide-predictive-maintenance\icon-sql.png), um auf Ihre Datenbank zuzugreifen. Neben diesem Symbol wird der Name Ihrer Datenbank angezeigt (*z. B.* **pmaintenancedb**), und der **Name des Datenbankservers** wird unter der Eigenschaft „Servername“ aufgelistet. Er sollte ähnlich dem Folgenden aussehen: **IhrLösungsname.database.windows.net**.
 
 	-   Der **Benutzername** und das **Kennwort** für Ihre Datenbank sind identisch mit dem Benutzernamen und dem Kennwort, das Sie zuvor bei der Bereitstellung der Lösung notiert haben.
 
@@ -206,7 +218,7 @@ In den folgenden Schritten wird erklärt, wie Sie die PBIX-Datei mit der SQL-Dat
 
     -   Um ein neues Dashboard zu erstellen, klicken Sie im linken Bereich neben dem Abschnitt **Dashboards** auf das Symbol **+**. Geben Sie für dieses neue Dashboard den Namen „Demo für vorbeugende Wartung“ ein.
 
-    -   Wenn Sie den Bericht geöffnet haben, klicken Sie auf ![](media\cortana-analytics-technical-guide-predictive-maintenance\icon-pin.png), um alle Visualisierungen an Ihr Dashboard anzuheften. Ausführliche Informationen finden Sie unter [Anheften einer Kachel an ein Power BI-Dashboard aus einem Bericht](https://support.powerbi.com/knowledgebase/articles/430323-pin-a-tile-to-a-power-bi-dashboard-from-a-report). Wechseln Sie zur Dashboardseite, passen Sie die Größe und Position der Visualisierungen an, und bearbeiten Sie deren Titel. Ausführliche Anweisungen zum Bearbeiten der Titel finden Sie unter [Bearbeiten einer Kachel – Größe ändern, verschieben, umbenennen, anheften, löschen, Link hinzufügen](https://powerbi.microsoft.com/documentation/powerbi-service-edit-a-tile-in-a-dashboard/#rename) Nachfolgend sehen Sie ein Beispieldashboard, an das einige Visualisierungen für kalte Daten angeheftet sind. Abhängig davon, wie lange Sie Ihren Datensimulator ausführen, unterscheiden sich die Zahlen in Ihren Visualisierungen unter Umständen. <br/>![](media\cortana-analytics-technical-guide-predictive-maintenance\final-view.png)<br/>
+    -   Wenn Sie den Bericht geöffnet haben, klicken Sie auf ![](media\cortana-analytics-technical-guide-predictive-maintenance\icon-pin.png), um alle Visualisierungen an Ihr Dashboard anzuheften. Ausführliche Informationen finden Sie unter [Anheften einer Kachel an ein Power BI-Dashboard aus einem Bericht](https://support.powerbi.com/knowledgebase/articles/430323-pin-a-tile-to-a-power-bi-dashboard-from-a-report). Wechseln Sie zur Dashboardseite, passen Sie die Größe und Position der Visualisierungen an, und bearbeiten Sie deren Titel. Ausführliche Anweisungen zum Bearbeiten der Titel finden Sie unter [Bearbeiten einer Kachel – Größe ändern, verschieben, umbenennen, anheften, löschen, Link hinzufügen](https://powerbi.microsoft.com/documentation/powerbi-service-edit-a-tile-in-a-dashboard/#rename) Nachfolgend sehen Sie ein Beispieldashboard, an das einige Visualisierungen für kalte Daten angeheftet sind. Abhängig davon, wie lange Sie Ihren Datensimulator ausführen, unterscheiden sich die Zahlen in Ihren Visualisierungen unter Umständen. <br/> ![](media\cortana-analytics-technical-guide-predictive-maintenance\final-view.png) <br/>
     -   Um eine Aktualisierung der Daten zu planen, zeigen Sie mit dem Mauszeiger auf das Dataset **PredictiveMaintenanceAerospace**, klicken auf ![](media\cortana-analytics-technical-guide-predictive-maintenance\icon-elipsis.png) und wählen dann **Aktualisierung planen**. <br/> **Hinweis:** Wenn eine Warnmeldung angezeigt wird, klicken Sie auf **Anmeldeinformationen bearbeiten** und stellen sicher, dass die Anmeldeinformationen für die Datenbank identisch mit den in Schritt 1 angegebenen sind. <br/> ![](media\cortana-analytics-technical-guide-predictive-maintenance\schedule-refresh.png) <br/>
     -   Erweitern Sie den Abschnitt **Aktualisierung planen**. Aktivieren Sie „Halten Sie Ihre Daten aktuell“. <br/>
     -   Legen Sie einen geeigneten Zeitplan für die Aktualisierung fest. Weitere Informationen finden Sie unter [Aktualisieren von Daten in Power BI](https://support.powerbi.com/knowledgebase/articles/474669-data-refresh-in-power-bi).
@@ -255,4 +267,4 @@ Es stehen zwei Tools zur Verfügung, mit denen Sie die Gesamtkosten zum Ausführ
 
 -   [Microsoft Azure-Kostenschätzungstool (Desktopversion)](http://www.microsoft.com/download/details.aspx?id=43376)
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

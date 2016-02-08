@@ -2,7 +2,7 @@
     pageTitle="Tutorial: Azure Active Directory-Integration mit ServiceNow | Microsoft Azure" 
     description="Erfahren Sie, wie Sie ServiceNow mit Azure Active Directory verwenden können, um einmaliges Anmelden, automatisierte Bereitstellung und vieles mehr zu ermöglichen." 
     services="active-directory" 
-    authors="MarkusVi"  
+    authors="jeevansd"  
     documentationCenter="na" 
     manager="stevenpo"/>
 <tags 
@@ -11,19 +11,19 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="11/02/2015" 
-    ms.author="markvi" />
+    ms.date="01/26/2016" 
+    ms.author="jeedes" />
 
 #Tutorial: Azure Active Directory-Integration mit ServiceNow
   
-In diesem Tutorial wird die Integration von Azure und ServiceNow erläutert. Das in diesem Tutorial verwendete Szenario setzt voraus, dass Sie bereits über die folgenden Elemente verfügen:
+In diesem Tutorial wird die Integration von Azure und ServiceNow erläutert. Das in diesem Lernprogramm verwendete Szenario setzt voraus, dass Sie bereits über die folgenden Elemente verfügen:
 
 -   Ein gültiges Azure-Abonnement
 -   Einen Mandanten in ServiceNow
   
-Nach Abschluss dieses Tutorials können sich die Azure AD-Benutzer, die Sie ServiceNow zugewiesen haben, mittels einmaliger Anmeldung auf der ServiceNow-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Sie können aber auch den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
+Nach Abschluss dieses Lernprogramms können sich die Azure AD-Benutzer, die Sie ServiceNow zugewiesen haben, mittels einmaliger Anmeldung auf der ServiceNow-Unternehmenswebsite bei der Anwendung anmelden (durch den Dienstanbieter initiierte Anmeldung). Sie können aber auch den Zugriffsbereich nutzen (siehe [Einführung in den Zugriffsbereich](active-directory-saas-access-panel-introduction.md)).
   
-Das in diesem Tutorial beschriebene Szenario besteht aus den folgenden Bausteinen:
+Das in diesem Lernprogramm beschriebene Szenario besteht aus den folgenden Bausteinen:
 
 1.  Aktivieren der Anwendungsintegration für ServiceNow
 2.  Konfigurieren der einmaligen Anmeldung
@@ -37,7 +37,7 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Ser
 
 ###So aktivieren Sie die Anwendungsintegration für ServiceNow
 
-1.  Klicken Sie im linken Navigationsbereich des Azure-Verwaltungsportals auf **Active Directory**.
+1.  Klicken Sie im klassischen Azure-Portal im linken Navigationsbereich auf **Active Directory**.
 
     ![Active Directory](./media/active-directory-saas-servicenow-tutorial/IC700993.png "Active Directory")
 
@@ -66,11 +66,11 @@ In diesem Abschnitt wird beschrieben, wie Sie die Anwendungsintegration für Ser
   
 In diesem Abschnitt wird erläutert, wie Sie es Benutzern mithilfe einer Verbundanmeldung auf Basis des SAML-Protokolls ermöglichen, sich mit ihrem Azure AD-Konto bei ServiceNow zu authentifizieren.
 
-Im Rahmen dieses Verfahrens müssen Sie ein Base-64-codiertes Zertifikat in Ihren Dropbox für Unternehmen-Mandanten hochladen. Falls Sie mit diesem Verfahren nicht vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (Konvertieren eines binären Zertifikats in eine Textdatei; in englischer Sprache) weitere Informationen.
+Im Rahmen dieses Verfahrens müssen Sie ein Base-64-codiertes Zertifikat in Ihren Dropbox für Unternehmen-Mandanten hochladen. Falls Sie nicht mit diesem Verfahren vertraut sind, finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache) weitere Informationen.
 
-###So konfigurieren Sie einmaliges Anmelden:
+###Führen Sie zum Konfigurieren des einmaligen Anmeldens die folgenden Schritte aus:
 
-1.  Klicken Sie im Azure AD-Portal auf der Anwendungsintegrationsseite für **ServiceNow** auf **Einmaliges Anmelden konfigurieren**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu öffnen.
+1.  Klicken Sie im klassischen Azure AD-Portal auf der Anwendungsintegrationsseite für **ServiceNow** auf **Einmaliges Anmelden konfigurieren**, um das Dialogfeld **Einmaliges Anmelden konfigurieren** zu öffnen.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-servicenow-tutorial/IC749323.png "Einmaliges Anmelden konfigurieren")
 
@@ -115,7 +115,7 @@ Im Rahmen dieses Verfahrens müssen Sie ein Base-64-codiertes Zertifikat in Ihre
 
     c. Im Textfeld **The field on the user table that...** geben Sie **user\_name** ein.
 
-    d. Klicken Sie auf **Save**.
+    d. Klicken Sie auf **Speichern**.
 
 
 
@@ -133,22 +133,22 @@ Im Rahmen dieses Verfahrens müssen Sie ein Base-64-codiertes Zertifikat in Ihre
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-servicenow-tutorial/IC7694975.png "Einmaliges Anmelden konfigurieren")
 
-    a. Klicken Sie auf **New**.
+    a. Klicken Sie auf **Neu**.
 
-    b. Geben Sie im Textfeld **Name** einen Namen für Ihre Konfiguration ein (z. B.: **TestSAML2.0**).
+    b. Geben Sie im Textfeld **Name** einen Namen für Ihre Konfiguration ein (z. B. **TestSAML2.0**).
 
-    c. Wählen Sie **Active**.
+    c. Wählen Sie **Aktiv**.
 
     d. Wählen Sie unter **Format** das Format **PEM** aus.
 
     e. Wählen Sie unter **Type** den Typ **Trust Store Cert** aus.
 
-    f. Erstellen Sie eine Base-64-codierte Datei aus Ihrem heruntergeladene Zertifikat.
-    > [AZURE.NOTE]Weitere Informationen finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache).
+    f. Erstellen Sie eine Base64-codierte Datei aus Ihrem heruntergeladene Zertifikat.
+    > [AZURE.NOTE] Weitere Informationen finden Sie unter [How to convert a binary certificate into a text file](http://youtu.be/PlgrzUZ-Y1o) (in englischer Sprache).
     
     g. Öffnen Sie das Base64-codierte Zertifikat im Editor, kopieren Sie den Inhalt des Zertifikats in die Zwischenablage, und fügen Sie ihn anschließend in das Textfeld **PEM Certificate** ein.
 
-    h. Klicken Sie auf **Update**.
+    h. Klicken Sie auf **Aktualisieren**.
 
 
 1. Klicken Sie im Navigationsbereich auf der linken Seite auf **Identity Providers**.
@@ -170,22 +170,22 @@ Im Rahmen dieses Verfahrens müssen Sie ein Base-64-codiertes Zertifikat in Ihre
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-servicenow-tutorial/IC7694982.png "Einmaliges Anmelden konfigurieren")
 
 
-    a. Geben Sie im Textfeld **Name** einen Namen für Ihre Konfiguration ein (z. B.: **SAML 2.0**).
+    a. Geben Sie im Textfeld **Name** einen Namen für Ihre Konfiguration ein (z. B. **SAML 2.0**).
 
     b. Im Textfeld **User Field** geben Sie **email** ein.
 
-    c. Kopieren Sie im Azure AD-Portal den Wert für **Identitätsanbieter-ID**, und fügen Sie ihn in das Textfeld **Identity Provider URL** ein.
+    c. Kopieren Sie im klassischen Azure AD-Portal den Wert für **Identitätsanbieter-ID**, und fügen Sie ihn in das Textfeld **Identity Provider URL** ein.
 
-    d. Kopieren Sie im Azure AD-Portal den Wert für **Authentifizierungsanforderungs-URL**, und fügen Sie ihn in das Textfeld **Identity Provider's AuthnRequest** ein.
+    d. Kopieren Sie im klassischen Azure AD-Portal den Wert für **Authentifizierungsanforderungs-URL**, und fügen Sie ihn in das Textfeld **Identity Provider's AuthnRequest** ein.
 
-    e. Kopieren Sie im Azure AD-Portal den Wert für **Dienst-URL für einmalige Abmeldung**, und fügen Sie ihn in das Textfeld **Identity Provider‘s SingleLogoutRequest** ein.
+    e. Kopieren Sie im klassischen Azure AD-Portal den Wert für **Dienst-URL für einmalige Abmeldung**, und fügen Sie ihn in das Textfeld **Identity Provider‘s SingleLogoutRequest** ein.
 
     f. Geben Sie im Textfeld **ServiceNow Homepage** die URL zur Homepage Ihrer ServiceNow-Instanz ein.
 
-    > [AZURE.NOTE]Die URL zur Homepage der ServiceNow-Instanz ist eine Verkettung Ihrer **ServiceNow-Mandanten-URL** und **/navpage.do**, z. B.: **https://fabrikam.service-now.com/navpage.do*)
+    > [AZURE.NOTE] Die URL zur Homepage der ServiceNow-Instanz ist eine Verkettung Ihrer **ServiceNow-Mandanten-URL** und **/navpage.do** (z. B. **https://fabrikam.service-now.com/navpage.do*)
  
 
-    g. Geben Sie im Textfeld **Entity ID / Issuer** die URL Ihres ServiceNow-Mandanten (engl. „ServiceNow Tenant“) ein.
+    g. Geben Sie im Textfeld **Entity ID / Issuer** die URL Ihres ServiceNow-Mandanten ein.
 
     h. Geben Sie im Textfeld **Audience URL** die URL Ihres ServiceNow-Mandanten ein.
 
@@ -207,7 +207,7 @@ Im Rahmen dieses Verfahrens müssen Sie ein Base-64-codiertes Zertifikat in Ihre
 
 
 
-6. Wählen Sie im Azure AD-Portal die Bestätigung aus, dass Sie das einmalige Anmelden konfiguriert haben, und klicken Sie dann auf **Weiter**.
+6. Wählen Sie im klassischen Azure AD-Portal die Bestätigung zur Konfiguration der einmaligen Anmeldung aus, und klicken Sie dann auf **Weiter**.
 
     ![Einmaliges Anmelden konfigurieren](./media/active-directory-saas-servicenow-tutorial/IC7694990.png "Einmaliges Anmelden konfigurieren")
 
@@ -224,24 +224,24 @@ In diesem Abschnitt wird erläutert, wie Sie die Bereitstellung von Active Direc
 
 ### So konfigurieren Sie die Benutzerbereitstellung
 
-1. Klicken Sie im Azure-Verwaltungsportal auf der Anwendungsintegrationsseite für **ServiceNow** auf **Benutzerbereitstellung konfigurieren**. <br><br>![Benutzerbereitstellung](./media/active-directory-saas-servicenow-tutorial/IC769498.png "Benutzerbereitstellung")
+1. Klicken Sie im klassischen Azure-Verwaltungsportal auf der Anwendungsintegrationsseite für **ServiceNow** auf **Benutzerbereitstellung konfigurieren**. <br><br> ![Benutzerbereitstellung](./media/active-directory-saas-servicenow-tutorial/IC769498.png "Benutzerbereitstellung")
 
 
-2. Legen Sie auf der Seite **Geben Sie Ihre ServiceNow-Anmeldeinformationen ein, um die automatische Benutzerbereitstellung zu aktivieren** die folgenden Konfigurationseinstellungen fest: „Benutzerbereitstellung konfigurieren“
+2. Stellen Sie auf der Seite **Geben Sie Ihre ServiceNow-Anmeldeinformationen ein, um die automatische Benutzerbereitstellung zu aktivieren** die folgenden Konfigurationseinstellungen bereit: Benutzerbereitstellung konfigurieren
 
-     2\.1. Geben Sie im Textfeld **ServiceNow-Instanzname** den Namen der ServiceNow-Instanz ein.
+     2.1. Geben Sie im Textfeld **ServiceNow-Instanzname** den Namen des ServiceNow-Instanz ein.
 
-     2\.2. Geben Sie im Textfeld **Administratorbenutzername für ServiceNow** den Namen des ServiceNow-Administratorkontos ein.
+     2.2. Geben Sie im Textfeld **Administratorbenutzername für ServiceNow** den Namen des ServiceNow-Administratorkontos ein.
 
-     2\.3. Geben Sie im Textfeld **ServiceNow-Administratorkennwort** das Kennwort für dieses Konto ein.
+     2.3. Geben Sie im Textfeld **ServiceNow-Administratorkennwort** das Kennwort für dieses Konto ein.
 
-     2\.4. Klicken Sie auf **Überprüfen**, um die Konfiguration zu überprüfen.
+     2.4. Klicken Sie auf **Überprüfen**, um die Konfiguration zu überprüfen.
 
-     2\.5. Klicken Sie auf **Weiter**, um die Seite **Nächste Schritte** zu öffnen.
+     2.5. Klicken Sie auf **Weiter**, um die Seite **Nächste Schritte** zu öffnen.
 
-     2\.6. Wenn Sie alle Benutzer für diese Anwendung bereitstellen möchten, wählen Sie „**Dieser Anwendung automatisch alle Benutzerkonten im Verzeichnis bereitstellen**“ aus. <br><br> ![Nächste Schritte](./media/active-directory-saas-servicenow-tutorial/IC698804.png "Nächste Schritte")
+     2.6. Wenn Sie alle Benutzer für diese Anwendung bereitstellen möchten, wählen Sie **Dieser Anwendung automatisch alle Benutzerkonten im Verzeichnis bereitstellen**. <br><br> ![Nächste Schritte](./media/active-directory-saas-servicenow-tutorial/IC698804.png "Nächste Schritte")
 
-     2\.7. Klicken Sie auf der Seite **Nächste Schritte** auf **Abgeschlossen**, um die Konfiguration zu speichern.
+     2.7. Klicken Sie auf der Seite **Nächste Schritte** auf **Abgeschlossen**, um die Konfiguration zu speichern.
 
 
 
@@ -259,7 +259,7 @@ Um Ihre Konfiguration zu testen, müssen Sie den Azure AD-Benutzern, denen Sie 
 
 ###So weisen Sie ServiceNow Benutzer zu
 
-1.  Erstellen Sie im Azure AD-Portal ein Testkonto.
+1.  Erstellen Sie im klassischen Azure AD-Portal ein Testkonto.
 
 2.  Klicken Sie auf der Anwendungsintegrationsseite für **ServiceNow** auf **Benutzer zuweisen**.
 
@@ -277,4 +277,4 @@ Wenn Sie die SSO-Einstellungen testen möchten, öffnen Sie den Zugriffsbereich.
 * [Liste der Tutorials zur Integration von SaaS-Apps in Azure Active Directory](active-directory-saas-tutorial-list.md)
 * [Was bedeuten Anwendungszugriff und einmaliges Anmelden mit Azure Active Directory?](active-directory-appssoaccess-whatis.md)
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0128_2016-->

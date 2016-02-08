@@ -21,11 +21,11 @@ Für die Verwendung eines lokalen Systems, greift Azure App Service auf den Hybr
 
 Der Hybrid Connection Manager (HCM) ist ein ClickOnce-Installationsprogramm, das auf einem IIS-Server in Ihrem Netzwerk hinter der Firewall installiert ist. Mithilfe eines Azure Service Bus Relays authentifiziert der HCM das lokale System mit dem Connector in Azure.
 
-> [AZURE.NOTE]Der Hybrid Connection Manager wird nur benötigt, wenn Sie auf eine lokale Ressource hinter der Firewall eine Verbindung herstellen wollen. Wenn Sie keine Verbindung mit einem lokalen System herstellen möchten, benötigen Sie den Hybrid Connection Manager nicht.
+> [AZURE.NOTE] Der Hybrid Connection Manager wird nur benötigt, wenn Sie auf eine lokale Ressource hinter der Firewall eine Verbindung herstellen wollen. Wenn Sie keine Verbindung mit einem lokalen System herstellen möchten, benötigen Sie den Hybrid Connection Manager nicht.
 
 Zunächst benötigen Sie Folgendes:
 
-- Azure Service Bus Relay-Namespace SAS-Verbindungszeichenfolge. Unter [Service Bus-Preise](http://azure.microsoft.com/pricing/details/service-bus/) können Sie nachschauen, welcher Tarif Relays umfasst.
+- Azure Service Bus Relay-Namespace SAS-Verbindungszeichenfolge. Unter [Service Bus-Preise](https://azure.microsoft.com/pricing/details/service-bus/) können Sie nachschauen, welcher Tarif Relays umfasst.
 - Anmeldeinformationen für das lokale System, einschließlich Benutzername und Kennwort. Wenn Sie z. B. eine Verbindung zu einem lokalen SQL Server herstellen, benötigen Sie das SQL Server-Anmeldekonto und ein Kennwort.
 - Lokale Serverinformationen, einschließlich der Port-Nummer und dem Servernamen. Wenn Sie z. B. eine Verbindung zu einem lokalen SQL Server herstellen, benötigen Sie den SQL Server-Namen und eine TCP-Portnummer.
 
@@ -56,7 +56,7 @@ Wenn das Setup abgeschlossen ist, wird Folgendes angezeigt: <br/> ![][3]
 
 Wenn Sie nun erneut den Connector aufrufen, sehen Sie, dass der Hybridverbindungsstatus **Verbunden** lautet. Sie müssen den Connector möglicherweise schließen und erneut öffnen: <br/> ![][4]
 
-> [AZURE.NOTE]Um zur sekundären Verbindungszeichenfolge zu wechseln, führen Sie die Einrichtung der Hybrid-Verbindung erneut aus, und geben Sie die **sekundären Konfigurationszeichenfolge** ein.
+> [AZURE.NOTE] Um zur sekundären Verbindungszeichenfolge zu wechseln, führen Sie die Einrichtung der Hybrid-Verbindung erneut aus, und geben Sie die **sekundären Konfigurationszeichenfolge** ein.
 
 
 ## TCP-Ports und Sicherheit
@@ -119,7 +119,7 @@ Wenn Ihre benutzerdefinierte API einen TCP- oder HTTP-Port verwendet, können Si
 
 ## Weitere Informationen
 
-[Überwachen Ihrer Logik-Apps](app-service-logic-monitor-your-logic-apps.md)<br/> [Service Bus-Preise](http://azure.microsoft.com/pricing/details/service-bus/)
+[Überwachen Ihrer Logik-Apps](app-service-logic-monitor-your-logic-apps.md)<br/> [Service Bus-Preise](https://azure.microsoft.com/pricing/details/service-bus/)
 
 
 
@@ -133,4 +133,4 @@ Wenn Ihre benutzerdefinierte API einen TCP- oder HTTP-Port verwendet, können Si
 
  
 
-<!---HONumber=AcomDC_1210_2015-->
+<!---HONumber=AcomDC_0128_2016-->

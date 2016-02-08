@@ -32,6 +32,6 @@ Hier finden Sie detaillierte Versionsinformationen und Updateanweisungen für un
 * [Visual Studio-Tools](app-insights-release-notes-vsix.md)
 * [Andere Plattformen](https://github.com/Microsoft/ApplicationInsights-Home)
 
-Lesen Sie auch unsere [Dienstupdates](http://azure.microsoft.com/updates/?service=application-insights), in denen wichtige Verbesserungen beim Application Insights-Dienst zusammengefasst sind.
+Lesen Sie auch unsere [Dienstupdates](https://azure.microsoft.com/updates/?service=application-insights), in denen wichtige Verbesserungen beim Application Insights-Dienst zusammengefasst sind.
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

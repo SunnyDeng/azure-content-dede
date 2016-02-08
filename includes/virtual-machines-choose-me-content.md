@@ -24,7 +24,7 @@ Wie andere virtuelle Computer verfügt eine VM in Azure über ein Betriebssystem
 
 Virtuelle Computer verwenden virtuelle Festplatten (VHDs), um ihr Betriebssystem (OS) und die Daten zu speichern. VHDs werden auch für die Images verwendet, die Sie auswählen können, um ein Betriebssystem zu installieren. Die folgende Abbildung stellt dies dar sowie zwei Tools zum Erstellen und Verwalten Ihrer VMs.
 
-<a name="fig_createvms"></a> ![vm\_diagram](./media/virtual-machines-choose-me-content/diagram.png)
+<a name="fig_createvms"></a> ![vm_diagram](./media/virtual-machines-choose-me-content/diagram.png)
 
 **Abbildung: Azure Virtual Machines bietet IaaS (Infrastructure as a Service).**
 
@@ -38,8 +38,8 @@ Neben dem Betriebssystem sind die folgenden weiteren Konfigurationsoptionen für
 
 Zu den weiteren Vorteilen von VMs gehören:
 
-**Nutzungsbasierte Zahlung** – Bei Azure wird ein Stundenpreis basierend auf Größe und Betriebssystem der VM berechnet. Angefangene Stunden werden nur nach den Minuten der Nutzung abgerechnet. Speicherplatz wird separat bewertet und in Rechnung gestellt. Ausführliche Informationen finden Sie unter [Virtuelle Computer – Preisdetails](http://azure.microsoft.com/pricing/details/virtual-machines/).
+**Nutzungsbasierte Zahlung** – Bei Azure wird ein Stundenpreis basierend auf Größe und Betriebssystem der VM berechnet. Angefangene Stunden werden nur nach den Minuten der Nutzung abgerechnet. Speicherplatz wird separat bewertet und in Rechnung gestellt. Ausführliche Informationen finden Sie unter [Virtuelle Computer – Preisdetails](https://azure.microsoft.com/pricing/details/virtual-machines/).
 
 **Resilienz** – Azure überwacht die physische Hardware, die einen virtuellen Computer hostet. Wenn ein physischer Server, auf dem eine VM ausgeführt wird, ausfällt, erkennt Azure dies, verschiebt die VM auf neue Hardware und startet sie erneut. Dieser Vorgang wird manchmal als Dienstreparatur bezeichnet. Azure schützt auch die Daten eines virtuellen Computers durch redundante Kopien der virtuellen Festplatten im Blob-Speicher.
 
-<!---HONumber=Oct15_HO3-->
+<!---HONumber=AcomDC_0128_2016-->

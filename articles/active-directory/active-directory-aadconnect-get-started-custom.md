@@ -1,7 +1,8 @@
 <properties
 	pageTitle="Benutzerdefinierte Installation von Azure AD Connect | Microsoft Azure"
-	description="In diesem Dokument werden die Optionen für die benutzerdefinierte Installation für Azure AD Connect aufgeführt."
+	description="In diesem Dokument werden die Optionen für die benutzerdefinierte Installation für Azure AD Connect aufgeführt. Gehen Sie folgendermaßen vor, um Active Directory über Azure AD Connect zu installieren."
 	services="active-directory"
+    keywords="Was ist Azure AD Connect, Active Directory installieren, erforderliche Komponenten für Azure AD"
 	documentationCenter=""
 	authors="billmath"
 	manager="stevenpo"
@@ -13,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="01/11/2016"
+	ms.date="01/25/2016"
 	ms.author="billmath;andkjell"/>
 
 # Benutzerdefinierte Installation von Azure AD Connect
@@ -45,7 +46,7 @@ Bei der Installation der Synchronisierungsdienste können Sie den optionalen Kon
 
 | Optionale Konfiguration | Beschreibung |
 | ------------- | ------------- |
-| Verwenden eines vorhandenen SQL Servers | Ermöglicht Ihnen die Angabe des SQL-Servernamens und des Instanznamens. Wählen Sie diese Option aus, wenn Sie bereits über einen Datenbankserver verfügen, den Sie verwenden möchten. Wenn in Ihrem SQL Server das Browsen nicht aktiviert ist und Sie eine Portnummer angeben müssen, geben Sie im Feld **Instanzname** den Instanznamen gefolgt von einem Komma und einer Portnummer ein. |
+| Verwenden eines vorhandenen SQL Servers | Ermöglicht Ihnen die Angabe des SQL-Servernamens und des Instanznamens. Wählen Sie diese Option aus, wenn Sie bereits über einen Datenbankserver verfügen, den Sie verwenden möchten. Wenn in Ihrer SQL Server-Instanz das Browsen nicht aktiviert ist und Sie eine Portnummer angeben müssen, geben Sie im Feld **Instanzname** den Instanznamen gefolgt von einem Komma und einer Portnummer ein. |
 | Verwenden eines vorhandenen Dienstkontos | Standardmäßig erstellt Azure AD Connect ein lokales Dienstkonto für die zu verwendenden Synchronisierungsdienste. Das Kennwort wird automatisch generiert und ist der Person, die Azure AD Connect installiert, nicht bekannt. Wenn Sie einen Remote-SQL Server verwenden, benötigen Sie ein Dienstkonto in der Domäne und müssen das Kennwort kennen. Geben Sie in diesen Fällen das zu verwendende Dienstkonto ein. Stellen Sie sicher, dass der die Installation ausführende Benutzer ein SA in SQL ist, damit das Dienstkonto erstellt werden kann. Siehe [Azure AD Connect-Konten und -Berechtigungen](active-directory-aadconnect-accounts-permissions.md#custom-settings-installation) |
 | Angeben benutzerdefinierter Synchronisierungsgruppen | Standardmäßig erstellt Azure AD Connect lokal auf dem Server vier Gruppen, wenn die Synchronisierungsdienste installiert sind. Diese Gruppen sind: Administratorengruppe, Operatorengruppe, Durchsuchen-Gruppe und die Gruppe "Kennwort zurücksetzen". Wenn Sie eigene Gruppen angeben möchten, können Sie das hier tun. Die Gruppen müssen sich lokal auf dem Server befinden und dürfen nicht in der Domäne sein. |
 
@@ -99,16 +100,16 @@ Ihr eigenes Attribut|Mit dieser Option können Sie Ihr eigenes Attribut auswähl
 
 - **UserPrincipalName** – Das Attribut "userPrincipalName" ist das Attribut, das Benutzer verwenden, wenn sie sich bei Azure AD und Office 365 anmelden. Die verwendeten Domänen, auch als UPN-Suffix bezeichnet, sollte in Azure AD überprüft werden, bevor die Benutzer synchronisiert werden. Es wird dringend empfohlen, das Standardattribut "userPrincipalName" beizubehalten. Wenn dieses Attribut nicht routingfähig ist und nicht überprüft werden kann, können Sie ein anderes Attribut als das Attribut mit der Anmelde-ID auswählen, beispielsweise "email". Dies wird als **alternative ID** bezeichnet. Der Attributwert der alternativen ID muss dem RFC822-Standard entsprechen. Eine alternative ID kann sowohl mit Kennwort-SSO als auch mit Verbund-SSO (Single Sign-On, einmalige Anmeldung) als Anmeldungslösung verwendet werden.
 
->[AZURE.WARNING]Eine alternative ID ist nicht mit allen Office 365-Workloads kompatibel. Weitere Informationen finden Sie unter [Konfigurieren der alternativen Anmelde-ID](https://technet.microsoft.com/library/dn659436.aspx).
+>[AZURE.WARNING] Eine alternative ID ist nicht mit allen Office 365-Workloads kompatibel. Weitere Informationen finden Sie unter [Konfigurieren der alternativen Anmelde-ID](https://technet.microsoft.com/library/dn659436.aspx).
 
 
 
 ### Synchronisierungsfilterung anhand von Gruppen
 Mithilfe des Features zur Filterung anhand von Gruppen können Sie ein kleines Pilotprojekt ausführen, für das nur eine kleine Teilmenge von Objekten in Azure AD und Office 365 erstellt werden sollte. Um dieses Feature verwenden zu können, erstellen Sie eine Gruppe in Active Directory und fügen die Benutzer und Gruppen hinzu, die mit Azure AD als direkte Mitglieder synchronisiert werden sollen. Später können Sie Benutzer hinzufügen und entfernen, um die Liste der Objekte zu verwalten, die in Azure AD vorhanden sein sollten. Alle Objekte, die Sie synchronisieren möchten, müssen direkte Mitglieder der Gruppe sein. Das schließt Benutzer, Gruppen, Kontakte und Computer/Geräte ein. Eine geschachtelte Gruppenmitgliedschaft wird nicht aufgelöst; ein Gruppenmitglied einer Gruppe wird nur die Gruppe selbst und nicht deren Mitglieder enthalten.
 
-Zur Verwendung dieses Features wird bei der benutzerdefinierten Installation diese Seite angezeigt: ![Synchronisierungsfilterung](./media/active-directory-aadconnect-get-started-custom/filter2.png)
+Zur Verwendung dieses Features wird im benutzerdefinierten Pfad diese Seite angezeigt: ![Synchronisierungsfilterung](./media/active-directory-aadconnect-get-started-custom/filter2.png).
 
->[AZURE.WARNING]Diese Funktion dient nur dazu, eine Pilotbereitstellung zu unterstützen, und sollte nicht in einer umfassend genutzten Produktionsbereitstellung verwendet werden.
+>[AZURE.WARNING] Diese Funktion dient nur dazu, eine Pilotbereitstellung zu unterstützen, und sollte nicht in einer umfassend genutzten Produktionsbereitstellung verwendet werden.
 
 In einer vollständigen Produktionsbereitstellung wird die Verwaltung einer einzelnen Gruppe mit allen zu synchronisierenden Objekten ein komplexes Unterfangen. Verwenden Sie stattdessen eine der unter [Konfigurieren der Filterung](active-directory-aadconnectsync-configure-filtering.md) beschriebenen Methoden.
 
@@ -118,7 +119,7 @@ In einer vollständigen Produktionsbereitstellung wird die Verwaltung einer einz
 
 ![Optionale Features](./media/active-directory-aadconnect-get-started-custom/optional.png)
 
-> [AZURE.WARNING]Wenn derzeit DirSync oder Azure AD Sync aktiv sind, aktivieren Sie keine der Features zum Rückschreiben in Azure AD Connect.
+> [AZURE.WARNING] Wenn derzeit DirSync oder Azure AD Sync aktiv sind, aktivieren Sie keine der Features zum Rückschreiben in Azure AD Connect.
 
 Optionale Features | Beschreibung
 -------------------    | ------------- |
@@ -165,7 +166,7 @@ Sie können eine vorhandene AD FS-Farm verwenden oder eine neue AD FS-Farm ers
 An dieser Stelle geben Sie die spezifischen Server ein, auf denen Sie AD FS installieren möchten. Sie können je nach Ihren Kapazitätsplanungsanforderungen einen oder mehrere Server hinzufügen. Diese Server müssen vor diese Konfiguration mit einer Active Directory-Domäne verknüpft werden. Es empfiehlt sich, einen einzelnen AD FS-Server für Test- und Pilotumgebungen zu installieren und zusätzliche Server bereitzustellen, indem Sie Azure AD Connect öffnen und AD FS auf zusätzlichen Servern bereitstellen, um Ihre Skalierungsanforderungen zu erfüllen.
 
 
-> [AZURE.NOTE]Stellen Sie vor dem Konfigurieren sicher, dass alle Server mit einer AD-Domäne verknüpft sind.
+> [AZURE.NOTE] Stellen Sie vor dem Konfigurieren sicher, dass alle Server mit einer AD-Domäne verknüpft sind.
 
 ![AD FS-Server](./media/active-directory-aadconnect-get-started-custom/adfs2.png)
 
@@ -175,7 +176,8 @@ An dieser Stelle geben Sie die spezifischen Server ein, auf denen Sie AD FS inst
 An dieser Stelle geben Sie die spezifischen Server ein, die Sie als Webanwendungsproxy-Server verwenden möchten. Der Webanwendungsproxy-Server wird in Ihrer DMZ bereitgestellt (Extranetzugriff) und unterstützt Authentifizierungsanforderungen aus dem Extranet. Sie können je nach Ihren Kapazitätsplanungsanforderungen einen oder mehrere Server hinzufügen. Es empfiehlt sich, einen einzelnen Webanwendungs-Proxyserver für Test- und Pilotumgebungen zu installieren und zusätzliche Server bereitzustellen, indem Sie Azure AD Connect öffnen und den Webanwendungsproxy auf zusätzlichen Servern bereitstellen. Erfahrungsgemäß sollte eine entsprechende Anzahl an Proxyservern bereitgestellt werden, um die Authentifizierung für den Internetzugriff zu bewältigen.
 
 
-> [AZURE.NOTE]- Wenn es sich bei dem Konto, das Sie für die Installation von Azure AD Connect verwenden, nicht um ein lokales Administratorkonto für die AD FS-Server handelt, werden Sie aufgefordert, die Anmeldeinformationen für ein Konto einzugeben, das über ausreichende Berechtigungen verfügt. - Stellen Sie sicher, dass eine HTTP/HTTPS-Verbindung zwischen dem Azure AD Connect-Server und dem Webanwendungsproxy-Server besteht, bevor Sie diesen Schritt durchführen. - Stellen Sie darüber hinaus sicher, dass eine HTTP/HTTPS-Verbindung zwischen dem Webanwendungsserver und dem AD FS-Server besteht, um Authentifizierungsanforderungen zu unterstützen.
+> [AZURE.NOTE]
+- Wenn es sich bei dem Konto, das Sie für die Installation von Azure AD Connect verwenden, nicht um ein lokales Administratorkonto für die AD FS-Server handelt, werden Sie aufgefordert, die Anmeldeinformationen für ein Konto einzugeben, das über ausreichende Berechtigungen verfügt. - Stellen Sie sicher, dass eine HTTP/HTTPS-Verbindung zwischen dem Azure AD Connect-Server und dem Webanwendungsproxy-Server besteht, bevor Sie diesen Schritt durchführen. - Stellen Sie darüber hinaus sicher, dass eine HTTP/HTTPS-Verbindung zwischen dem Webanwendungsserver und dem AD FS-Server besteht, um Authentifizierungsanforderungen zu unterstützen.
 
 
 ![Web App](./media/active-directory-aadconnect-get-started-custom/adfs3.png)
@@ -251,4 +253,4 @@ Nachdem Sie Azure AD Connect installiert haben, können Sie [die Installation �
 
 Weitere Informationen zum [Integrieren lokaler Identitäten in Azure Active Directory](active-directory-aadconnect.md).
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -53,7 +53,8 @@ Die Betrugswarnung kann so konfiguriert und eingerichtet werden, dass Ihre Benut
 6.	Geben Sie im Textfeld zu „**Code zur Meldung von Betrug während der Begrüßung**“ einen Nummerncode ein, der bei jeder Anrufüberprüfung genutzt werden kann. Wenn ein Benutzer diesen Code anstelle des #-Zeichens oder zusätzlich zu diesem eingibt, wird eine Betrugswarnung gemeldet. 
 7.	Klicken Sie unten auf "Speichern".
 
->[AZURE.NOTE]In Microsofts Standardansage wird der Benutzer aufgefordert, zum Senden einer Betrugswarnung die Zeichenfolge „0#“ einzugeben. Wenn Sie einen anderen Code als „0“ verwenden, müssen Sie eine benutzerdefinierte Ansage mit den passenden Anweisungen aufnehmen.
+>[AZURE.NOTE]
+In Microsofts Standardansage wird der Benutzer aufgefordert, zum Senden einer Betrugswarnung die Zeichenfolge „0#“ einzugeben. Wenn Sie einen anderen Code als „0“ verwenden, müssen Sie eine benutzerdefinierte Ansage mit den passenden Anweisungen aufnehmen.
 
 
 <center>![Cloud](./media/multi-factor-authentication-whats-next/fraud.png)</center>
@@ -80,7 +81,7 @@ Eine Betrugswarnung kann auf zwei Arten gemeldet werden. Entweder über die mobi
 
 ### Anzeigen des Betrugsberichts
 
-1. Melden Sie sich an bei [http://azure.microsoft.com](http://azure.microsoft.com).
+1. Melden Sie sich an bei [http://azure.microsoft.com](https://azure.microsoft.com/).
 2. Wählen Sie im linken Bereich "Active Directory" aus.
 3. Wählen Sie oben "Anbieter für mehrstufige Authentifizierung" aus. Hierdurch wird eine Liste der Anbieter für mehrstufige Authentifizierung angezeigt.
 4. Wenn Sie mehr als einen Anbieter für mehrstufige Authentifizierung haben, wählen Sie denjenigen aus, bei dem Sie den Betrugswarnbericht anzeigen möchten, und klicken Sie am unteren Rand der Seite auf "Verwalten". Wenn Sie nur einen Anbieter haben, klicken Sie direkt auf "Verwalten". Dadurch wird das Multi-Factor Authentication-Verwaltungsportal von Azure geöffnet.
@@ -106,7 +107,7 @@ Mit einer Einmalumgehung kann sich ein Benutzer ein einziges Mal authentifiziere
 
 ### Anzeigen des Berichts für die Einmalumgehung
 
-1. Melden Sie sich an bei [http://azure.microsoft.com](http://azure.microsoft.com).
+1. Melden Sie sich an bei [http://azure.microsoft.com](https://azure.microsoft.com/).
 2. Wählen Sie im linken Bereich "Active Directory" aus.
 3. Wählen Sie oben "Anbieter für mehrstufige Authentifizierung" aus. Hierdurch wird eine Liste der Anbieter für mehrstufige Authentifizierung angezeigt.
 4. Wenn Sie mehr als einen Anbieter für mehrstufige Authentifizierung haben, wählen Sie denjenigen aus, bei dem Sie den Betrugswarnbericht anzeigen möchten, und klicken Sie am unteren Rand der Seite auf "Verwalten". Wenn Sie nur einen Anbieter haben, klicken Sie direkt auf "Verwalten". Dadurch wird das Multi-Factor Authentication-Verwaltungsportal von Azure geöffnet.
@@ -210,7 +211,7 @@ Außerhalb des Unternehmensnetzwerks|Für Browserflüsse, für die eine mehrstuf
 
 In einigen Anwendungen wie Office 2010 oder älter und Apple Mail können Sie keine mehrstufige Authentifizierung verwenden. Um diese Anwendungen zu verwenden, müssen Sie "App-Kennwörter" anstelle Ihres herkömmlichen Kennworts angeben. Mit App-Kennwörtern kann eine Anwendung die die mehrstufige Authentifizierung umgehen und weiter ausgeführt werden.
 
->[AZURE.NOTE]Moderne Authentifizierung für Office 2013-Clients
+>[AZURE.NOTE] Moderne Authentifizierung für Office 2013-Clients
 >
 > Office 2013-Clients (einschließlich Outlook) unterstützen jetzt neue Authentifizierungsprotokolle und bieten die Möglichkeit zum Aktivieren von Multi-Factor Authentication. Damit sind nach der Aktivierung keine App-Kennwörter mehr für Office 2013-Clients erforderlich. Weitere Informationen finden Sie unter [Office 2013 modern authentication public preview announced](https://blogs.office.com/2015/03/23/office-2013-modern-authentication-public-preview-announced/) ("Öffentliche Preview für moderne Authentifizierung in Office 2013", in englischer Sprache).
 
@@ -230,7 +231,7 @@ Authentifizierungsvorgang|Bei Browser-Apps|Bei Nicht-Browser-Apps
 - Derzeit können pro Benutzer maximal 40 Kennwörter festgelegt werden. Sie werden dazu aufgefordert, eines der vorhandenen App-Kennwörter zu löschen, damit das neue Kennwort erstellt werden kann.
 - Nach der Aktivierung der mehrstufigen Authentifizierung in einem Benutzerkonto können App-Kennwörter mit den meisten Nicht-Browserclients wie Outlook und Lync verwendet werden, wobei administrative Aufgaben auch dann nicht mithilfe von App-Kennwörtern über Nicht-Browseranwendungen wie Windows Power Shell durchgeführt werden können, wenn der Benutzer über ein Administratorkonto verfügt. Stellen Sie sicher, dass Sie zum Ausführen von PowerShell-Skripts ein Dienstkonto mit einem sicheren Kennwort erstellen und für dieses Konto die mehrstufige Authentifizierung nicht aktivieren.
 
->[AZURE.WARNING]App-Kennwörter funktioniert nicht in Hybridumgebungen, in denen Clients sowohl mit lokalen AutoErmittlung-Endpunkten als auch mit solchen in der Cloud kommunizieren.
+>[AZURE.WARNING]  App-Kennwörter funktioniert nicht in Hybridumgebungen, in denen Clients sowohl mit lokalen AutoErmittlung-Endpunkten als auch mit solchen in der Cloud kommunizieren.
 >
 >Bitte beachten Sie, dass App-Kennwörter nicht in Hybridumgebungen funktionieren, in denen Clients sowohl mit lokalen AutoErmittlung-Endpunkten als auch mit solchen in der Cloud kommunizieren, da für solche Umgebungen lokal Domänenkennwörter und in der Cloud App-Kennwörter zur Authentifizierung erforderlich sind.
 
@@ -338,7 +339,7 @@ Um sicherzustellen, dass die Benutzerkonten geschützt sind, sollten Sie die Mul
 - Wenn das Unternehmenskonto gefährdet ist.
 - Wenn ein gespeichertes Gerät verloren ist oder gestohlen wurde.
 
-> [AZURE.NOTE]Dieses Feature wird als ein Cookie Browsercache implementiert. Es funktioniert nicht, wenn Browsercookies nicht aktiviert sind.
+> [AZURE.NOTE] Dieses Feature wird als ein Cookie Browsercache implementiert. Es funktioniert nicht, wenn Browsercookies nicht aktiviert sind.
 
 ### Vorgehensweise beim Aktivieren/Aussetzen der Multi-Factor Authentication für gespeicherte Geräte und Festlegen
 
@@ -351,4 +352,4 @@ Um sicherzustellen, dass die Benutzerkonten geschützt sind, sollten Sie die Mul
 <li>Auf der Seite "Einstellungen" unter "Geräteeinstellungen von Benutzern verwalten", **Aktivieren/Deaktivieren Sie mehrstufige Authentifizierung anhalten, indem ein Gerät gespeichert wird**.</li>
 ![Aussetzen von Geräten](./media/multi-factor-authentication-manage-users-and-devices/suspend.png) <li>Legen Sie die Anzahl der Tage fest, an denen Sie die Aussetzung zulassen möchten. Der Standardwert ist 14 Tage.</li> <li>Klicken Sie auf "Speichern".</li> <li>Klicken Sie auf "Schließen".</li>
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

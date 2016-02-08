@@ -12,7 +12,7 @@
 	ms.tgt_pltfrm="ibiza" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/21/2015" 
+	ms.date="01/21/2016" 
 	ms.author="awills"/>
 
 # Untersuchen von Java-Ablaufverfolgungsprotokollen in Application Insights
@@ -87,9 +87,9 @@ Laden Sie den entsprechenden Appender herunter, extrahieren Sie ihn, und fügen 
 
 Protokollierungstool | Herunterladen | Bibliothek
 ----|----|----
-Logback|[SDK mit Logback-Appender](http://dl.windowsazure.com/applicationinsights/javabin/logbackAppender.zip)|applicationinsights-logging-logback
-Log4J v2. 0|[SDK mit Log4J-v2-Appender](http://dl.windowsazure.com/applicationinsights/javabin/log4j2Appender.zip)|applicationinsights-logging-log4j2 
-Log4J v1. 2|[SDK mit Log4J-v1. 2-Appender](http://dl.windowsazure.com/applicationinsights/javabin/log4j1_2Appender.zip)|applicationinsights-logging-log4j1\_2 
+Logback|[SDK mit Logback-Appender](https://azuredownloads.blob.core.windows.net/applicationinsights/logbackAppender.zip)|applicationinsights-logging-logback
+Log4J v2. 0|[SDK mit Log4J-v2-Appender](https://azuredownloads.blob.core.windows.net/applicationinsights/log4j2Appender.zip)|applicationinsights-logging-log4j2 
+Log4J v1. 2|[SDK mit Log4J-v1. 2-Appender](https://azuredownloads.blob.core.windows.net/applicationinsights/log4j1_2Appender.zip)|applicationinsights-logging-log4j1\_2 
 
 
 
@@ -149,4 +149,4 @@ Nachdem Sie das Projekt so konfiguriert haben, dass Ablaufverfolgungen an Applic
 
  
 
-<!---HONumber=Nov15_HO1-->
+<!---HONumber=AcomDC_0128_2016-->

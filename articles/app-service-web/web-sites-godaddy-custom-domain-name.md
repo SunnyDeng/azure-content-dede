@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/23/2015"
+	ms.date="01/12/2016"
 	ms.author="erikre"/>
 
 # Konfigurieren eines benutzerdefinierten (direkt von GoDaddy erworbenen) Domänennamens in Azure App Service
@@ -50,7 +50,7 @@ Um Ihre benutzerdefinierte Domäne mit einer Web-App im App Service zu verknüpf
 
 	Um einen vorhandenen Datensatz zu **bearbeiten**, wählen Sie das Stift- und Papiersymbol neben dem Datensatz aus.
 
-	> [AZURE.NOTE]Beachten Sie vor dem Hinzufügen von neuen Datensätzen, dass GoDaddy bereits DNS-Datensätze für gängige Stammdomänen (im Editor als **Host** bezeichnet) erstellt hat, z. B. **email**, **files**, **mail** und andere. Wenn der Name, den Sie verwenden möchten, bereits vorhanden ist, bearbeiten Sie den vorhandenen Datensatz, statt einen neuen zu erstellen.
+	> [AZURE.NOTE] Beachten Sie vor dem Hinzufügen von neuen Datensätzen, dass GoDaddy bereits DNS-Datensätze für gängige Stammdomänen (im Editor als **Host** bezeichnet) erstellt hat, z. B. **email**, **files**, **mail** und andere. Wenn der Name, den Sie verwenden möchten, bereits vorhanden ist, bearbeiten Sie den vorhandenen Datensatz, statt einen neuen zu erstellen.
 
 4. Beim Hinzufügen eines Datensatzes müssen Sie zuerst den Datensatztyp auswählen.
 
@@ -67,7 +67,7 @@ Um Ihre benutzerdefinierte Domäne mit einer Web-App im App Service zu verknüpf
 5. Klicken Sie auf **Weiteren hinzufügen**.
 6. Wählen Sie **CNAME** als Eintragstyp aus, und geben Sie dann den **Host**-Wert **Awverify** ein und den **Verweist auf**-Wert **Awverify. & Lt; Yourwebappname & Gt;. *.azurewebsites.NET** ein.
 
-	> [AZURE.NOTE]Dieser CNAME-Datensatz wird von Azure verwendet, um zu überprüfen, ob Sie die Domäne besitzen, die von dem A-Datensatz oder dem ersten CNAME-Eintrag beschrieben wird. Nachdem die Domäne der Web-App im Azure-Portal zugeordnet wurde, kann der **Awverify**-Eintrag entfernt werden.
+	> [AZURE.NOTE] Dieser CNAME-Datensatz wird von Azure verwendet, um zu überprüfen, ob Sie die Domäne besitzen, die von dem A-Datensatz oder dem ersten CNAME-Eintrag beschrieben wird. Nachdem die Domäne der Web-App im Azure-Portal zugeordnet wurde, kann der **Awverify**-Eintrag entfernt werden.
 
 5. Nachdem Sie die gewünschten Datensätze hinzugefügt oder bearbeitet haben, klicken Sie auf **Finish**, um die Änderungen zu speichern.
 
@@ -76,9 +76,9 @@ Um Ihre benutzerdefinierte Domäne mit einer Web-App im App Service zu verknüpf
 
 [AZURE.INCLUDE [Modi](../../includes/custom-dns-web-site-enable-on-web-site.md)]
 
->[AZURE.NOTE]Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
+>[AZURE.NOTE] Wenn Sie Azure App Service ausprobieren möchten, ehe Sie sich für ein Azure-Konto anmelden, können Sie unter [App Service testen](http://go.microsoft.com/fwlink/?LinkId=523751) sofort kostenlos eine kurzlebige Starter-Web-App in App Service erstellen. Keine Kreditkarte erforderlich, keine Verpflichtungen.
 
 ## Änderungen
 * Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
 
-<!---HONumber=AcomDC_1203_2015-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -18,11 +18,17 @@
 	
 # Vorabladen von Assets auf einen Azure CDN-Endpunkt
 
+Standardmäßig werden Assets erst zwischengespeichert, nachdem sie angefordert wurden. Das heißt, dass die erste Anforderung aus den einzelnen Regionen länger dauern kann, da der Inhalt nicht auf den Edgeservern zwischengespeichert ist, die deshalb Anforderungen an den Ursprungsserver weiterleiten müssen. Durch Vorabladen von Inhalten kann die Latenz beim ersten Treffer vermieden werden.
+
+Abgesehen vom Ermöglichen einer besseren Kundenerfahrung kann durch das Vorabladen zwischengespeicherter Inhalte auch der Netzwerkdatenverkehr auf dem Ursprungsserver reduziert werden.
+
+> [AZURE.NOTE] Das Vorabladen von Assets ist nützlich für große Ereignisse oder Inhalte, die für eine große Anzahl von Benutzern gleichzeitig zur Verfügung gestellt werden, wie z. B. bei Veröffentlichung eines neuen Films oder Softwareupdates.
+
 In diesem Tutorial wird Schritt für Schritt erläutert, wie Sie zwischengespeicherten Inhalt auf alle Azure CDN-Edgeknoten vorab laden.
 
 ## Exemplarische Vorgehensweise
 
-1. Navigieren Sie im [Azure-Portal](http://portal.azure.com) zu dem CDN-Profil mit dem Endpunkt, auf den Sie Inhalt vorab laden möchten. Das Profilblatt wird angezeigt.
+1. Navigieren Sie im [Azure-Portal](https://portal.azure.com) zum CDN-Profil mit dem Endpunkt, auf den Sie Inhalt vorab laden möchten. Das Profilblatt wird angezeigt.
 
 2. Klicken Sie in der Liste auf den Endpunkt. Das Blatt für den Endpunkt wird angezeigt.
 
@@ -36,7 +42,7 @@ In diesem Tutorial wird Schritt für Schritt erläutert, wie Sie zwischengespeic
 	
 4. Geben Sie in das Textfeld **Pfad** den vollständigen Pfad jedes Assets ein, das Sie laden möchten (z. B. */pictures/kitten.png*).
 
-	> [AZURE.TIP]Nachdem Sie Text eingegeben haben, werden weitere **Pfad**-Textfelder angezeigt, damit Sie eine Liste mit mehreren Assets erstellen können. Sie können Assets aus der Liste löschen, indem Sie auf die Schaltfläche mit den Auslassungspunkten (...) klicken.
+	> [AZURE.TIP] Nachdem Sie Text eingegeben haben, werden weitere **Pfad**-Textfelder angezeigt, damit Sie eine Liste mit mehreren Assets erstellen können. Sie können Assets aus der Liste löschen, indem Sie auf die Schaltfläche mit den Auslassungspunkten (...) klicken.
 	>
 	> Die Pfade müssen eine relative URL sein. Sternchen (*) können als Platzhalter verwendet werden.
 	
@@ -51,4 +57,4 @@ In diesem Tutorial wird Schritt für Schritt erläutert, wie Sie zwischengespeic
 - [Löschen eines Azure CDN-Endpunkts](cdn-purge-endpoint.md)
 - [Azure CDN-REST-API-Referenz – Löschen oder Vorabladen eines Endpunkts](https://msdn.microsoft.com/library/mt634451.aspx)
 
-<!---HONumber=AcomDC_0121_2016-->
+<!---HONumber=AcomDC_0128_2016-->

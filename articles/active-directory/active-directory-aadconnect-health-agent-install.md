@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Installieren des AD Connect Health-Agents | Microsoft Azure"
+	pageTitle="Installieren des Azure AD Connect Health-Agents | Microsoft Azure"
 	description="Auf dieser Seite zu Azure AD Connect Health wird die Installation des Agents für AD FS und für die Synchronisierung beschrieben."
 	services="active-directory"
 	documentationCenter=""
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="10/15/2015"
+	ms.date="01/21/2016"
 	ms.author="billmath"/>
 
 
@@ -112,7 +112,7 @@ Um mithilfe der Nutzungsanalyse Daten zu sammeln und zu analysieren, benötigt d
 
 ![AD FS-Überwachungsprotokolle](./media/active-directory-aadconnect-health-requirements/adfsaudit.png)
 
-> [AZURE.WARNING]Wenn eine Gruppenrichtlinie implementiert ist, die die AD FS-Überwachung deaktiviert, kann der Azure AD Connect Health-Agent keine Informationen sammeln. Stellen Sie sicher, dass die Überwachung nicht durch eine Gruppenrichtlinie deaktiviert wird.
+> [AZURE.WARNING] Wenn eine Gruppenrichtlinie implementiert ist, die die AD FS-Überwachung deaktiviert, kann der Azure AD Connect Health-Agent keine Informationen sammeln. Stellen Sie sicher, dass die Überwachung nicht durch eine Gruppenrichtlinie deaktiviert wird.
 
 [//]: # "Start des Abschnitts für die Konfiguration des Agent-Proxys"
 
@@ -126,7 +126,7 @@ Um sicherzustellen, dass der Agent installiert wurde, öffnen Sie die Dienste un
  
 ![Überprüfen von Azure AD Connect Health für die Synchronisierung](./media/active-directory-aadconnect-health-sync/services.png)
 
->[Azure.NOTE]Denken Sie daran, dass Sie Azure AD Connect Health nur mit Azure AD Premium nutzen können. Nur wenn Sie über Azure AD Premium verfügen, können Sie die Konfiguration im Azure-Portal abschließen. Weitere Informationen finden Sie in den [hier](active-directory-aadconnect-health.md#requirements) beschriebenen Anforderungen.
+>[Azure.NOTE] Denken Sie daran, dass Sie Azure AD Connect Health nur mit Azure AD Premium nutzen können. Nur wenn Sie über Azure AD Premium verfügen, können Sie die Konfiguration im Azure-Portal abschließen. Weitere Informationen finden Sie in den [hier](active-directory-aadconnect-health.md#requirements) beschriebenen Anforderungen.
 
 
 
@@ -134,12 +134,13 @@ Um sicherzustellen, dass der Agent installiert wurde, öffnen Sie die Dienste un
 ## Konfigurieren des Azure AD Connect Health-Agents zur Verwendung eines HTTP-Proxys
 Sie können den Azure AD Connect Health-Agent für die Arbeit mit einem HTTP-Proxy konfigurieren.
 
->[AZURE.NOTE]- Die Verwendung von "Netsh WinHttp set ProxyServerAddress" funktioniert nicht, da der Agent Webanfragen mithilfe von System.Net anstelle der Microsoft Windows HTTP-Dienste durchführt. - Die konfigurierte HTTP-Proxyadresse wird für das Weiterleiten von verschlüsselten HTTPS-Nachrichten verwendet. -Authentifizierte Proxys (mit HTTPBasic) werden nicht unterstützt.
+>[AZURE.NOTE]
+- Die Verwendung von "Netsh WinHttp set ProxyServerAddress" funktioniert nicht, da der Agent Webanfragen mithilfe von System.Net anstelle der Microsoft Windows HTTP-Dienste durchführt. - Die konfigurierte HTTP-Proxyadresse wird für das Weiterleiten von verschlüsselten HTTPS-Nachrichten verwendet. -Authentifizierte Proxys (mit HTTPBasic) werden nicht unterstützt.
 
 ### Ändern der Health Agent-Proxykonfiguration
 Sie haben die folgenden Möglichkeiten zum Konfigurieren des Azure AD Connect Health-Agents für die Verwendung eines HTTP-Proxys.
 
->[AZURE.NOTE]Sie müssen alle Azure AD Connect Health-Agent-Dienste neu starten, damit die Proxyeinstellungen aktualisiert werden. Führen Sie den folgenden Befehl aus:<br> Restart-Service AdHealth*
+>[AZURE.NOTE] Sie müssen alle Azure AD Connect Health-Agent-Dienste neu starten, damit die Proxyeinstellungen aktualisiert werden. Führen Sie den folgenden Befehl aus:<br> Restart-Service AdHealth*
 
 #### Importieren von vorhandenen Proxyeinstellungen
 
@@ -186,4 +187,4 @@ Mit dem folgenden Befehl können Sie die aktuell konfigurierten Proxyeinstellung
 * [Verwenden von Azure AD Connect Health für die Synchronisierung](active-directory-aadconnect-health-sync.md)
 * [Azure AD Connect Health – FAQ](active-directory-aadconnect-health-faq.md)
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0128_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="11/04/2015" 
+	ms.date="01/27/2016" 
 	ms.author="ddove;sidneyh"/>
 
 # Hinzufügen eines Shards mithilfe der Tools für elastische Datenbanken
@@ -25,7 +25,7 @@ Anwendungen müssen häufig einfach neue Shards hinzufügen, um Daten zu verwalt
 Wenn der neue Schlüsselwertbereich nicht bereits Teil einer vorhandenen Zuordnung (Mapping) ist, ist es sehr einfach, den neuen Shard hinzuzufügen und den neuen Schlüssel oder Bereich mit dem Shard zu verknüpfen.
 
 ### Beispiel: Hinzufügen eines Shards und seines Bereichs zu einer vorhandenen Shard-Zuordnung
-Im Beispiel unten wurden eine Datenbank namens **sample\_shard\_2** mit allen erforderlichen, darin enthaltenen Schemaobjekten so erstellt, dass sie den Bereich [300, 400) abdecken.
+In diesem Beispiel werden die Methoden [TryGetShard](https://msdn.microsoft.com/library/azure/dn823929.aspx), [CreateShard](https://msdn.microsoft.com/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardmap.createshard.aspx) und [CreateRangeMapping](https://msdn.microsoft.com/library/azure/dn807221.aspx#M:Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.RangeShardMap`1.CreateRangeMapping(Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.RangeMappingCreationInfo{`0})) verwendet, und es wir eine Instanz der [ShardLocation](https://msdn.microsoft.com/library/azure/microsoft.azure.sqldatabase.elasticscale.shardmanagement.shardlocation.shardlocation.aspx#M:Microsoft.Azure.SqlDatabase.ElasticScale.ShardManagement.ShardLocation.)-Klasse erstellt. Im Beispiel unten wurden eine Datenbank namens **sample\_shard\_2** mit allen erforderlichen, darin enthaltenen Schemaobjekten so erstellt, dass sie den Bereich [300, 400) abdecken.
 
     // sm is a RangeShardMap object.
     // Add a new shard to hold the range being added. 
@@ -79,4 +79,4 @@ Eine Datenbank namens „sample\_shard\_2“ sowie alle erforderlichen, darin en
 [AZURE.INCLUDE [elastic-scale-include](../../includes/elastic-scale-include.md)]
  
 
-<!---HONumber=Nov15_HO2-->
+<!---HONumber=AcomDC_0128_2016-->

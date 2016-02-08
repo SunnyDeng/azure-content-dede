@@ -54,7 +54,7 @@ Nach dem Upgrade auf V12 stehen [Empfehlungen zur Dienstebene](sql-database-serv
 
 ## Starten des Upgrades
 
-1. Navigieren Sie im [Azure-Portal](http://portal.azure.com/) zu dem Server, den Sie aktualisieren möchten. Wählen Sie dazu **ALLE DURCHSUCHEN** > **SQL-Server** und dann den gewünschten Server aus.
+1. Navigieren Sie im [Azure-Portal](https://portal.azure.com/) zu dem Server, den Sie aktualisieren möchten. Wählen Sie dazu **ALLE DURCHSUCHEN** > **SQL-Server** und dann den gewünschten Server aus.
 2. Wählen Sie **Letzte Aktualisierung der SQL-Datenbank** aus, und wählen Sie dann **Upgrade für diesen Server ausführen** aus.
 
       ![Server upgraden][1]
@@ -111,7 +111,7 @@ Befolgen Sie die Anleitung im Artikel [Erstellen eines Pools für elastische Dat
 
 ## Überwachen von Datenbanken nach dem Upgrade auf SQL-Datenbank V12
 
->[AZURE.IMPORTANT]Führen Sie ein Upgrade auf die aktuelle Version von SQL Server Management Studio (SSMS) aus, um die neuen v12-Funktionen nutzen zu können. [Laden Sie SQL Server Management Studio herunter](https://msdn.microsoft.com/library/mt238290.aspx).
+>[AZURE.IMPORTANT] Führen Sie ein Upgrade auf die aktuelle Version von SQL Server Management Studio (SSMS) aus, um die neuen v12-Funktionen nutzen zu können. [Laden Sie SQL Server Management Studio herunter](https://msdn.microsoft.com/library/mt238290.aspx).
 	
 Nach dem Upgrade wird empfohlen, die Datenbank aktiv zu überwachen, um sicherzustellen, dass Anwendungen mit der gewünschten Leistung ausgeführt werden. Außerdem sollte die Nutzung optimiert werden.
 
@@ -169,4 +169,4 @@ Sie können z. B. eine E-Mail-Benachrichtigung für den "DTU Prozentsatz" festl
 [6]: ./media/sql-database-upgrade-server-portal/recommendations.png
 [7]: ./media/sql-database-upgrade-server-portal/new-elastic-pool.png
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

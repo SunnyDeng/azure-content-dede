@@ -35,7 +35,7 @@ Da Sie sich nicht um das Webserver- oder Anwendungsframework kümmern müssen, g
 
 Gängige Webentwicklungstools unterstützen einen oder mehrere dieser Bereitstellungsprozesse. Das von Ihnen gewählte Tool bestimmt zwar die Bereitstellungsprozesse, die Sie nutzen können, aber die eigentliche verfügbare DevOps-Funktionalität hängt von der Kombination aus Bereitstellungsprozess und den von Ihnen gewählten speziellen Tools ab. Wenn Sie den Web Deploy-Vorgang beispielsweise über [Visual Studio mit Azure SDK](#vspros) durchführen, obwohl die Automation über Kudu nicht möglich ist, können Sie die Paketwiederherstellung und MSBuild-Automation in Visual Studio nutzen. Das Azure SDK enthält auch einen einfachen Assistenten, der Sie beim Erstellen der benötigten Azure-Ressourcen direkt auf der Visual Studio-Benutzeroberfläche unterstützt.
 
->[AZURE.NOTE]Mit diesen Bereitstellungsprozessen werden nicht tatsächlich die [Azure-Ressourcen bereitgestellt](resource-group-portal), die für Ihre App ggf. erforderlich sind, z. B. App Service-Plan, App Service-App und SQL-Datenbank. In den meisten verlinkten Gewusst-wie-Artikeln wird aber ausführlich gezeigt, wie Sie die App UND den Code dafür bereitstellen. Zusätzliche Optionen für die Bereitstellung von Azure-Ressourcen finden Sie auch im Abschnitt [Automatisieren der Bereitstellung mit Befehlszeilentools](#automate).
+>[AZURE.NOTE] Mit diesen Bereitstellungsprozessen werden nicht tatsächlich die [Azure-Ressourcen bereitgestellt](resource-group-portal), die für Ihre App ggf. erforderlich sind, z. B. App Service-Plan, App Service-App und SQL-Datenbank. In den meisten verlinkten Gewusst-wie-Artikeln wird aber ausführlich gezeigt, wie Sie die App UND den Code dafür bereitstellen. Zusätzliche Optionen für die Bereitstellung von Azure-Ressourcen finden Sie auch im Abschnitt [Automatisieren der Bereitstellung mit Befehlszeilentools](#automate).
 
 ## <a name="ftp"></a>Bereitstellen durch das manuelle Kopieren von Dateien nach Azure
 Wenn Sie es gewohnt sind, Ihre Webinhalte manuell zu Web-Hostern zu kopieren (ein gängiger Workflow für PHP-Entwickler), können Sie zum Kopieren der Dateien ein [FTP](http://en.wikipedia.org/wiki/File_Transfer_Protocol)-Hilfsprogramm verwenden, z. B. Windows-Explorer oder [FileZilla](https://filezilla-project.org/).
@@ -201,8 +201,8 @@ Weitere Vorteile der Bereitstellung über Visual Studio Team Services:
 ###<a name="cloudgitmercurial"></a>Gewusst wie: Bereitstellen aus einem cloudbasierten Git- oder Mercurial-Repository
 
 - [Veröffentlichen aus der Quellcodeverwaltung in Web-Apps mit Git](web-sites-publish-source-control.md). Sie erfahren, wie Sie die kontinuierliche Bereitstellung von Repositorys über GitHub, CodePlex oder BitBucket aktivieren. Obwohl in diesem Lernprogramm die Veröffentlichung eines Git-Repositorys gezeigt wird, ist der Vorgang bei Mercurial-Repositorys, die in CodePlex oder BitBucket gehostet werden, ähnlich.
-- [Bereitstellen in Web-Apps mit GitHub unter Verwendung von Kudu](http://azure.microsoft.com/documentation/videos/deploying-to-azure-from-github/). Das Video von Scott Hanselman und David Ebbo zeigt, wie Sie eine Web-App direkt von GitHub für App Service bereitstellen.
-- [Schaltfläche zur Azure-Bereitstellung für Web-Apps](http://azure.microsoft.com/blog/2014/11/13/deploy-to-azure-button-for-azure-websites-2/). Blog über eine Methode zum Auslösen der Bereitstellung aus einem Git-Repository.
+- [Bereitstellen in Web-Apps mit GitHub unter Verwendung von Kudu](https://azure.microsoft.com/documentation/videos/deploying-to-azure-from-github/). Das Video von Scott Hanselman und David Ebbo zeigt, wie Sie eine Web-App direkt von GitHub für App Service bereitstellen.
+- [Schaltfläche zur Azure-Bereitstellung für Web-Apps](https://azure.microsoft.com/blog/2014/11/13/deploy-to-azure-button-for-azure-websites-2/). Blog über eine Methode zum Auslösen der Bereitstellung aus einem Git-Repository.
 - [Azure-Forum für Git, Mercurial und DropBox](http://social.msdn.microsoft.com/Forums/windowsazure/home?forum=azuregit)
 
 Weitere Informationen finden Sie in den folgenden Ressourcen:
@@ -264,7 +264,7 @@ Bei [Web Deploy](http://www.iis.net/downloads/microsoft/web-deploy) handelt es s
 
 Weitere Informationen finden Sie in der folgenden Ressource:
 
-* [Simple Web Apps: Deployment (Einfache Web-Apps: Bereitstellung, in englischer Sprache)](http://azure.microsoft.com/blog/2014/07/28/simple-azure-websites-deployment/). Blog von David Ebbo über ein von ihm geschriebenes Tool zur einfacheren Verwendung von Web Deploy.
+* [Simple Web Apps: Deployment (Einfache Web-Apps: Bereitstellung, in englischer Sprache)](https://azure.microsoft.com/blog/2014/07/28/simple-azure-websites-deployment/). Blog von David Ebbo über ein von ihm geschriebenes Tool zur einfacheren Verwendung von Web Deploy.
 * [Webbereitstellungstool](http://technet.microsoft.com/library/dd568996). Offizielle Dokumentation auf der Microsoft TechNet-Website. Der Inhalt ist nicht mehr auf dem neuesten Stand, aber für den Anfang gut geeignet.
 * [Verwenden von Web Deploy](http://www.iis.net/learn/publish/using-web-deploy). Offizielle Dokumentation auf der Microsoft IIS.NET-Website. Der Inhalt ist auch nicht mehr auf dem neuesten Stand, aber für den Anfang gut geeignet.
 * [StackOverflow](http://www.stackoverflow.com). Die beste Adresse, um aktuelle Informationen zur Verwendung von Web Deploy über die Befehlszeile zu erhalten.
@@ -276,7 +276,7 @@ In einigen Szenarios möchten Sie ggf. in der Lage sein, bequem zwischen einer S
 
 Die Aufstellung eines Sicherungs- und Wiederherstellungsplans ist ein wesentlicher Bestandteil jedes Bereitstellungsworkflows. Weitere Informationen zu den Sicherungs- und Wiederherstellungsfunktionen für Web-Apps finden Sie unter [Sichern von Web-Apps](web-sites-backup.md).
 
-Informationen zur Verwendung der rollenbasierten Zugriffssteuerung von Azure zum Verwalten des Zugriffs auf die Web-App-Bereitstellung finden Sie unter [RBAC and Web App Publishing](http://azure.microsoft.com/blog/2015/01/05/rbac-and-azure-websites-publishing) (in englischer Sprache).
+Informationen zur Verwendung der rollenbasierten Zugriffssteuerung von Azure zum Verwalten des Zugriffs auf die Web-App-Bereitstellung finden Sie unter [RBAC and Web App Publishing](https://azure.microsoft.com/blog/2015/01/05/rbac-and-azure-websites-publishing/) (in englischer Sprache).
 
 Informationen zu weiteren Bereitstellungsthemen finden Sie in den entsprechenden Abschnitten der [Web-App-Dokumentation](/documentation/services/web-sites/).
 
@@ -284,4 +284,4 @@ Informationen zu weiteren Bereitstellungsthemen finden Sie in den entsprechenden
 * Hinweise zu den Änderungen von Websites zum App Service finden Sie unter: [Azure App Service und vorhandene Azure-Dienste](http://go.microsoft.com/fwlink/?LinkId=529714).
  
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->

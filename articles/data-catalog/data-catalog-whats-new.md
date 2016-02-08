@@ -44,7 +44,7 @@ In der Woche ab dem 4. Dezember 2015 wurden Azure Data Catalog die folgenden Fu
 - Unterstützung für Datenquellen aus dem Azure Data Lake-Speicher. Benutzer können nun Azure Data Catalog verwenden, um Datenquellen aus dem Azure Data Lake-Speicher zu registrieren und zu ermitteln.
 - Unterstützung für das manuelle Festlegen von Netzwerk-Proxyeinstellungen im Registrierungstool für Datenquellen von Azure Data Catalog. Benutzer können auf der Startseite des Tools die Option „Proxyeinstellungen ändern“ auswählen und die Proxyadresse und den Port angeben, der vom Tool verwendet werden soll.
 
-> [AZURE.NOTE]Für „Open in Power BI Desktop“ muss eine aktuelle Version der Anwendung Power BI Desktop installiert sein. Wenn bei der Verwendung dieser Funktion Probleme oder Fehler auftreten, vergewissern Sie sich, dass Sie die neueste Version von Power BI Desktop von [PowerBI.com](https://powerbi.com/) heruntergeladen haben.
+> [AZURE.NOTE] Für „Open in Power BI Desktop“ muss eine aktuelle Version der Anwendung Power BI Desktop installiert sein. Wenn bei der Verwendung dieser Funktion Probleme oder Fehler auftreten, vergewissern Sie sich, dass Sie die neueste Version von Power BI Desktop von [PowerBI.com](https://powerbi.com/) heruntergeladen haben.
 
 
 ## Neuigkeiten in der Version der Woche ab dem 20. November 2015
@@ -55,7 +55,7 @@ In der Woche ab dem 20. November 2015 wurden **Azure Data Catalog** die folgend
 - Unterstützung für das Einbinden von Datenprofilen, wenn Teradata-Tabellen und -Ansichten registriert werden.
 - Unterstützung für „Open in Power BI Desktop“ für SQL Server-Datenquellen (einschließlich Azure SQL-Datenbank und Azure SQL Data Warehouse), SQL Server Analysis Services-, Azure Storage- und HDFS-Quellen.  
 
-> [AZURE.NOTE]Für „Open in Power BI Desktop“ muss eine aktuelle Version der Anwendung Power BI Desktop installiert sein. Wenn bei der Verwendung dieser Funktion Probleme oder Fehler auftreten, vergewissern Sie sich, dass Sie die neueste Version von Power BI Desktop von [PowerBI.com](https://powerbi.com) heruntergeladen haben.
+> [AZURE.NOTE] Für „Open in Power BI Desktop“ muss eine aktuelle Version der Anwendung Power BI Desktop installiert sein. Wenn bei der Verwendung dieser Funktion Probleme oder Fehler auftreten, vergewissern Sie sich, dass Sie die neueste Version von Power BI Desktop von [PowerBI.com](https://powerbi.com) heruntergeladen haben.
 
 ## Neuigkeiten in der Version der Woche ab dem 13. November 2015
 
@@ -94,7 +94,7 @@ In der Woche ab dem 23. Oktober 2015 wurden **Azure Data Catalog** die folgend
 
 - Unterstützung für Teradata-Datenquellen. Benutzer können nun Teradata-Tabellen und -Ansichten registrieren und ermitteln.
 
-> [AZURE.NOTE]Bei der aktuellen Version wird nur die Teradata TD2-Authentifizierung unterstützt. Zusätzliche Authentifizierungsmethoden werden in zukünftigen Versionen hinzugefügt.
+> [AZURE.NOTE] Bei der aktuellen Version wird nur die Teradata TD2-Authentifizierung unterstützt. Zusätzliche Authentifizierungsmethoden werden in zukünftigen Versionen hinzugefügt.
 
 ## Neuigkeiten in der Version der Woche ab dem 16. Oktober 2015
 
@@ -118,7 +118,7 @@ In der Woche ab dem 2. Oktober 2015 wurden **Azure Data Catalog** die folgende
 - Unterstützung für die Autorisierung von Azure Active Directory-Sicherheitsgruppen. Katalogadministratoren können den Katalogzugriff auf Sicherheitsgruppen und auf Benutzerkonten ermöglichen, um die Verwaltung des Zugriffs auf **Azure Data Catalog** zu vereinfachen.
 - Unterstützung für das Öffnen von Hive-Datenquellen in Excel über das **Azure Data Catalog**-Portal.
 
-> [AZURE.NOTE]Zum Verwenden des Features „In Excel öffnen“ für Hive-Datenquellen müssen Benutzer den ODBC-Treiber für Hive installieren.
+> [AZURE.NOTE] Zum Verwenden des Features „In Excel öffnen“ für Hive-Datenquellen müssen Benutzer den ODBC-Treiber für Hive installieren.
 
 ## Neuigkeiten in der Version der Woche ab dem 25. September 2015
 
@@ -132,10 +132,10 @@ In der Woche ab dem 25. September 2015 wurden **Azure Data Catalog** die folgen
 In der Woche ab dem 18. September 2015 wurden **Azure Data Catalog** die folgenden Funktionen hinzugefügt:
 
 - Eine neue Übersicht über die Möglichkeiten zur Ermittlung von Datenquellen im **Azure Data Catalog**-Portal. Wenn Benutzer die Seite „Ermitteln“ des **Azure Data Catalog**-Portals aufrufen, ohne einen Suchbegriff einzugeben, wird eine Übersicht der Kataloginhalte angezeigt, einschließlich der am häufigsten verwendeten Tags sowie der Experten, Datenquellentypen und Objekttypen.
-- Unterstützung für das Registrieren und Ermitteln von Azure SQL Data Warehouse-Objekten und -Datenbanken. Weitere Informationen zu Azure SQL Data Warehouse finden Sie unter [SQL Data Warehouse](http://azure.microsoft.com/services/sql-data-warehouse/).
+- Unterstützung für das Registrieren und Ermitteln von Azure SQL Data Warehouse-Objekten und -Datenbanken. Weitere Informationen zu Azure SQL Data Warehouse finden Sie unter [SQL Data Warehouse](https://azure.microsoft.com/services/sql-data-warehouse/).
 - Unterstützung für das Registrieren und Ermitteln von SQL Server Analysis Services-Modellen und SQL Server Reporting Services-Servern als Container. **Azure Data Catalog** erstellt beim Registrieren von SSAS- und SSRS-Objekten einen Eintrag für das SSAS-Modell und den SSRS-Server sowie für die Berichte und andere Objekte. Die Container können über das **Azure Data Catalog**-Portal ermittelt und mit Anmerkungen versehen werden. Benutzer können neben den Inhalten des Katalogs auch die Inhalte eines Modells oder Servers durchsuchen und filtern.
 
-> [AZURE.NOTE]SSAS- und SSRS-Objekte, die vor der Version vom 18. September registriert wurden, müssen mithilfe des Registrierungstools für Datenquellen erneut registriert werden, bevor der Modell- oder Servereintrag dem Katalog hinzugefügt wird. Das erneute Registrieren einer Datenquelle wirkt sich nicht auf Anmerkungen aus, die von Benutzern im **Azure Data Catalog**-Portal hinzugefügt wurden.
+> [AZURE.NOTE] SSAS- und SSRS-Objekte, die vor der Version vom 18. September registriert wurden, müssen mithilfe des Registrierungstools für Datenquellen erneut registriert werden, bevor der Modell- oder Servereintrag dem Katalog hinzugefügt wird. Das erneute Registrieren einer Datenquelle wirkt sich nicht auf Anmerkungen aus, die von Benutzern im **Azure Data Catalog**-Portal hinzugefügt wurden.
 
 ## Neuigkeiten in der Version der Woche ab dem 11. September 2015
 
@@ -146,7 +146,7 @@ In der Woche ab dem 11. September 2015 wurden **Azure Data Catalog** die folgen
 - Unterstützung für das Registrieren und Ermitteln von Oracle-Datenbanken und HDFS-Clustern als Container Beim Registrieren von Oracle-Tabellen und -Sichten oder HDFS erstellt **Azure Data Catalog** einen Eintrag für die Datenbank sowie für die Tabellen und Sichten. Die Datenbank kann über das **Azure Data Catalog**-Portal ermittelt und mit Anmerkungen versehen werden. Benutzer können neben den Inhalten des Katalogs auch die Inhalte einer Datenbank oder eines Clusters durchsuchen und filtern.
 
 
-> [AZURE.NOTE]Oracle-Tabellen und -Ansichten und HDFS-Dateien und -Verzeichnisse, die vor der Version vom 11. September registriert wurden, müssen mithilfe des Registrierungstools für Datenquellen erneut registriert werden, bevor der Datenbank- oder Clustereintrag dem Katalog hinzugefügt wird. Das erneute Registrieren einer Datenquelle wirkt sich nicht auf Anmerkungen aus, die von Benutzern im **Azure Data Catalog**-Portal hinzugefügt wurden.
+> [AZURE.NOTE] Oracle-Tabellen und -Ansichten und HDFS-Dateien und -Verzeichnisse, die vor der Version vom 11. September registriert wurden, müssen mithilfe des Registrierungstools für Datenquellen erneut registriert werden, bevor der Datenbank- oder Clustereintrag dem Katalog hinzugefügt wird. Das erneute Registrieren einer Datenquelle wirkt sich nicht auf Anmerkungen aus, die von Benutzern im **Azure Data Catalog**-Portal hinzugefügt wurden.
 
 ## Neuigkeiten in der Version der Woche ab dem 4. September 2015
 
@@ -155,7 +155,7 @@ In der Woche ab dem 4. September 2015 wurden **Azure Data Catalog** die folgend
 - Unterstützung für die manuelle Registrierung unbekannter Datenquellentypen Benutzer können über das **Azure Data Catalog**-Portal manuell Datenquelleninformationen eingeben, sodass Datenquellen, die nicht explizit vom Quellregistrierungstool unterstützt werden, mit Anmerkungen versehen und ermittelt werden können.
 - Unterstützung für das Registrieren und Ermitteln von SQL Server-Datenbanken als Container Beim Registrieren von SQL Server-Tabellen und -Sichten erstellt **Azure Data Catalog** einen Eintrag für die Datenbank sowie für die Tabellen und Sichten. Die Datenbank kann über das **Azure Data Catalog**-Portal ermittelt und mit Anmerkungen versehen werden. Benutzer können neben den Inhalten des Katalogs auch die Inhalte einer Datenbank durchsuchen und filtern.
 
-> [AZURE.NOTE]SQL Server-Tabellen und -Ansichten, die vor der Version vom 4. September registriert wurden, müssen mithilfe des Registrierungstools für Datenquellen erneut registriert werden, bevor der Datenbankeintrag dem Katalog hinzugefügt wird. Das erneute Registrieren einer Datenquelle wirkt sich nicht auf Anmerkungen aus, die von Benutzern im **Azure Data Catalog**-Portal hinzugefügt wurden.
+> [AZURE.NOTE] SQL Server-Tabellen und -Ansichten, die vor der Version vom 4. September registriert wurden, müssen mithilfe des Registrierungstools für Datenquellen erneut registriert werden, bevor der Datenbankeintrag dem Katalog hinzugefügt wird. Das erneute Registrieren einer Datenquelle wirkt sich nicht auf Anmerkungen aus, die von Benutzern im **Azure Data Catalog**-Portal hinzugefügt wurden.
 
 ## Neuigkeiten in der Version der Woche ab dem 28. August 2015
 
@@ -174,4 +174,4 @@ Ab der Woche beginnend am 21. August 2015 wurden **Azure Data Catalog** die folg
 - Nur Standard Edition: Beim Hinzufügen von Besitzern zu Datenbeständen unterstützt **Azure Data Catalog** jetzt sowohl Benutzerkonten als auch Sicherheitsgruppen als Besitzer. Um eine Sicherheitsgruppe als Besitzer für ausgewählte Datenasset hinzuzufügen, können Sie entweder den Anzeigenamen der Gruppe oder die UPN-E-Mail-Adresse der Gruppe (sofern vorhanden) eingeben.
 - Unterstützung für Datenquellen in Azure Blob Storage. Benutzer können nun Azure Storage-Blobs und -Verzeichnisse registrieren und ermitteln.
 
-<!---HONumber=AcomDC_0114_2016-->
+<!---HONumber=AcomDC_0128_2016-->
