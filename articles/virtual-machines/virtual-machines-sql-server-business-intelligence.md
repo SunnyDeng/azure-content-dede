@@ -388,7 +388,9 @@ In diesem Abschnitt werden die zu erstellenden Microsoft Azure Virtual Machine-E
 
 	|Port|Typ|Beschreibung|
 |---|---|---|
-|**80**|TCP|Remotezugriff auf den Berichtsserver (*).| |**1433**|TCP|SQL Server Management Studio (*).| |**1434**|UDP|SQL Server-Browser. Ist erforderlich, wenn der virtuelle Computer einer Domäne beigetreten ist.|
+|**80**|TCP|Remotezugriff auf den Berichtsserver (*).| 
+|**1433**|TCP|SQL Server Management Studio (*).| 
+|**1434**|UDP|SQL Server-Browser. Ist erforderlich, wenn der virtuelle Computer einer Domäne beigetreten ist.|
 |**2382**|TCP|SQL Server-Browser.|
 |**2383**|TCP|SQL Server Analysis Services-Standardinstanz und gruppierte benannte Instanzen.|
 |**Benutzerdefiniert**|TCP|Erstellen Sie einen statischen Analysis Services-Port für die benannte Instanz. Wählen Sie hierfür eine Portnummer aus, und entsperren Sie dann die Portnummer in der Firewall.|

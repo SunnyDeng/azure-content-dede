@@ -68,7 +68,8 @@ Die folgende Liste enthält Beispiele für die mittlere Zeit, die an verschieden
 |Seoul, KR| 190 | 190 | 0 % |
 
 
-* Hat einen Azure CDN-Knoten in derselben Stadt. ** Hat einen Azure CDN-Knoten in einer Nachbarstadt.
+* Hat einen Azure CDN-Knoten in derselben Stadt.
+** Hat einen Azure CDN-Knoten in einer Nachbarstadt.
 
 ## Herausforderungen  
 
@@ -205,7 +206,13 @@ Nehmen Sie CDN in Ihre Anwendungsüberwachungsstrategie auf, um Ausfälle oder l
 
 Aktivieren Sie die Protokollierung für das CDN, und überwachen Sie dieses Protokoll als Teil Ihrer täglichen Aufgaben.
 
-Erwägen Sie, den CDN-Datenverkehr im Hinblick auf Verwendungsmuster zu analysieren. Das Azure-Portal enthält Tools, mit denen Sie Folgendes überwachen können: + Bandbreite + Übertragene Daten + Treffer (Statuscodes) + Cachestatus + Cachetrefferquote + Verhältnis von IPV4- zu IPV6-Anforderungen.
+Erwägen Sie, den CDN-Datenverkehr im Hinblick auf Verwendungsmuster zu analysieren. Das Azure-Portal enthält Tools, mit denen Sie Folgendes überwachen können: 
++ Bandbreite 
++ Übertragene Daten 
++ Treffer (Statuscodes) 
++ Cachestatus 
++ Cachetrefferquote 
++ Verhältnis von IPV4- zu IPV6-Anforderungen.
 
 Weitere Informationen finden Sie unter [Analysieren von Azure CDN-Verwendungsmustern](cdn/cdn-analyze-usage-patterns.md/).
 

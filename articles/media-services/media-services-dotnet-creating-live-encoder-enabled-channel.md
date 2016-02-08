@@ -120,7 +120,13 @@ Als bewährte Methode sollten Sie eine app.config-Datei zum Speichern von Namen 
 Fügen Sie der app.config-Datei den Bereich „appSettings“ hinzu, und geben Sie Ihren Kontonamen und Kontoschlüssel für Media Services ein.
 
 
-<?xml version="1.0"?> <configuration> <appSettings> <add key="MediaServicesAccountName" value="YouMediaServicesAccountName" /> <add key="MediaServicesAccountKey" value="YouMediaServicesAccountKey" /> </appSettings> </configuration>
+<?xml version="1.0"?>
+	<configuration>
+	  <appSettings>
+	      <add key="MediaServicesAccountName" value="YouMediaServicesAccountName" />
+	      <add key="MediaServicesAccountKey" value="YouMediaServicesAccountKey" />
+	  </appSettings>
+	</configuration>
 	 
 	
 ##Codebeispiel

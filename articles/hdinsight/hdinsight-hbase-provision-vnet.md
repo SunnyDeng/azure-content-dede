@@ -139,7 +139,7 @@ Ein DNS-Server ist optional, aber in einigen Fällen erforderlich. Die Vorgehens
   	- **Standort**: Die geografische Region, in der sich das Speicherkonto befindet bzw. in der es erstellt wird. Dieser Standort bestimmt auch den Clusterstandort. Der Cluster und das zugeordnete Standardspeicherkonto müssen sich im selben Azure-Rechenzentrum befinden.
 
   - **Knotentarife**: Legen Sie die Anzahl von Workerknoten fest, die Sie für den Cluster benötigen. Die vorkalkulierten Kosten für den Cluster werden auf dem Blatt angezeigt.
-	- **Optionale Konfiguration**: Für dieses Tutorial müssen Sie nur **Virtual Network** konfigurieren. Wählen Sie das virtuelle Netzwerk aus, das Sie zuvor im Tutorial erstellt haben. Denken Sie daran, ein Subnetz auszuwählen.
+	- **Optionale Konfiguration**: Für dieses Tutorial müssen Sie nur **Virtuelles Netzwerk** konfigurieren. Wählen Sie das virtuelle Netzwerk aus, das Sie zuvor im Tutorial erstellt haben. Denken Sie daran, ein Subnetz auszuwählen.
 
 4. Klicken Sie auf **Erstellen**.
 

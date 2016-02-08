@@ -372,14 +372,21 @@ Zum Konfigurieren müssen Sie die Datei „courier.config“ im Ordner **Config*
   </repositories>
  ```
 
-Under `<repositories>`, enter the production site URL and user information. If you are using default Umbraco Membership provider, then add the ID for the Administration user in <user> section . If you are using a custom Umbraco membership provider, use `<login>`,`<password>` to Courier2 module know how to connect to the production site. For more details, review the [documentation](http://umbraco.com/help-and-support/customer-area/courier-2-support-and-download/developer-documentation) for Courier module.
+Geben Sie unter `<repositories>` die URL der Produktionssite sowie die Benutzerinformationen ein. Wenn Sie den standardmäßigen Umbraco-Mitgliedschaftsanbieter verwenden, fügen Sie die ID für den Administrator im Abschnitt <user> hinzu. Wenn Sie einen benutzerdefinierten Umbraco-Mitgliedschaftsanbieter verwenden, verwenden Sie `<login>`,`<password>`, damit das Courier2-Modul weiß, wie eine Verbindung mit der Produktionssite hergestellt wird. Weitere Einzelheiten finden Sie in der [Dokumentation](http://umbraco.com/help-and-support/customer-area/courier-2-support-and-download/developer-documentation) zum Courier-Modul.
 
-Similarly, install Courier module on your production site and configure it point to stage web app in its respective courier.config file as shown here
+Installieren Sie das Courier-Modul für Ihre Produktionssite, und konfigurieren Sie es so, dass es auf die Staging-Web-App in der jeweiligen courier.config-Datei verweist (wie in diesem Abschnitt gezeigt)
 
 ```xml
   <!-- Repository connection settings -->
   <!-- For each site, a custom repository must be configured, so Courier knows how to connect and authenticate-->
-  <repositories> <!-- If a custom Umbraco Membership provider is used, specify login & password + set the passwordEncoding to clear:  --> <repository name="Stage web app" alias="stage" type="CourierWebserviceRepositoryProvider" visible="true"> <url>http://umbracositecms-1-stage.azurewebsites.net</url> <user>0</user> </repository> </repositories> ```
+  <repositories>
+        <!-- If a custom Umbraco Membership provider is used, specify login & password + set the passwordEncoding to clear:  -->
+        <repository name="Stage web app" alias="stage" type="CourierWebserviceRepositoryProvider" visible="true">
+            <url>http://umbracositecms-1-stage.azurewebsites.net</url>
+            <user>0</user>
+           </repository>
+  </repositories>
+```
 
 Klicken Sie im Dashboard der Umbraco CMS-Web-App auf die Registerkarte „Courier2“, und wählen Sie Speicherorte aus. Der Name des Repositorys sollte wie in `courier.config` erwähnt angezeigt werden. Führen Sie diesen Vorgang für die Produktions- und die Staging-Web-App aus.
 

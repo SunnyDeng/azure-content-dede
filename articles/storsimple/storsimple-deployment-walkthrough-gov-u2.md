@@ -15,7 +15,7 @@
    ms.date="01/15/2016"
    ms.author="v-sharos" />
 
-# Bereitstellen lokaler StorSimple-Geräte im Government-Portal (Update 2)
+# Bereitstellen lokaler StorSimple-Geräte im Government-Portal (Aktualisieren 2)
 
 [AZURE.INCLUDE [storsimple-version-selector-deploy-gov](../../includes/storsimple-version-selector-deploy-gov.md)]
 

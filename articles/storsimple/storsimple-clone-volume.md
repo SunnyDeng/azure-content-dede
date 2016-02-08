@@ -45,7 +45,7 @@ Sie können einen Klon anhand einer lokalen oder einer Cloudmomentaufnahme auf d
 
   1. Ermitteln Sie ein Zielgerät. Dies ist der Speicherort, an dem der Klon erstellt wird. Sie können das gleiche Gerät auswählen oder ein anderes Gerät angeben. Bei Auswahl eines Volumes, das anderen Cloud-Service Providern als Azure zugeordnet ist, werden in der Dropdownliste für das Zielgerät nur physische Geräte angezeigt. Ein Volume kann nicht auf ein virtuelles Gerät geklont werden, wenn es anderen Cloud-Service Providern zugeordnet ist.
 
-        >  [AZURE.NOTE] Make sure that the capacity required for the clone is lower than the capacity available on the target device.
+        >  [AZURE.NOTE] Stellen Sie sicher, dass für den Klon weniger Kapazität benötigt wird, als auf dem Zielgerät zur Verfügung steht.
   2. Geben Sie einen eindeutigen Volumenamen für Ihren Klon an. Der Name muss zwischen 3 und 127 Zeichen lang sein.
   3. Klicken Sie auf den Pfeil ![Pfeilsymbol](./media/storsimple-clone-volume/HCS_ArrowIcon.png), um zur nächsten Seite zu wechseln.
 

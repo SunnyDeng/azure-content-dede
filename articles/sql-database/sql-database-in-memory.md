@@ -277,7 +277,8 @@ ostress.exe -n100 -r50 -S<servername>.database.windows.net -U<login> -P<password
 So führen Sie die vorherige „ostress.exe“-Befehlszeile aus:
 
 
-1. Setzen Sie den Dateninhalt der Datenbank durch Ausführen des folgenden Befehls in SSMS zurück, um alle Daten zu löschen, die bei vorherigen Ausführungen eingefügt wurden: ```
+1. Setzen Sie den Dateninhalt der Datenbank durch Ausführen des folgenden Befehls in SSMS zurück, um alle Daten zu löschen, die bei vorherigen Ausführungen eingefügt wurden:
+```
 EXECUTE Demo.usp_DemoReset;
 ```
 
@@ -302,7 +303,8 @@ Wenn „ostress.exe“ abgeschlossen ist, wird die Testlaufdauer im RML-Befehlsf
 Sobald Sie über das Ergebnis der Ausführung von „\_inmem“ verfügen, führen Sie die folgenden Schritte für die „\_ondisk“-Ausführung durch:
 
 
-1. Setzen Sie die Datenbank durch Ausführen des folgenden Befehls in SSMS zurück, um alle Daten zu löschen, die beim vorherigen Testlauf eingefügt wurden: ```
+1. Setzen Sie die Datenbank durch Ausführen des folgenden Befehls in SSMS zurück, um alle Daten zu löschen, die beim vorherigen Testlauf eingefügt wurden:
+```
 EXECUTE Demo.usp_DemoReset;
 ```
 

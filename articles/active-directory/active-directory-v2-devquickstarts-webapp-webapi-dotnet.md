@@ -46,7 +46,7 @@ Alternativ können Sie [die fertige App als ZIP-Datei herunterladen](https://git
 
 ```git clone --branch complete https://github.com/AzureADQuickStarts/AppModelv2-WebApp-WebAPI-OpenIdConnect-DotNet.git```
 
-## 1\. Registrieren einer App
+## 1. Registrieren einer App
 Erstellen Sie eine neue App unter [apps.dev.microsoft.com](https://apps.dev.microsoft.com), oder führen Sie die folgenden [ausführlichen Schritte](active-directory-v2-app-registration.md) aus. Stellen Sie sicher, dass Sie:
 
 - die Ihrer App zugewiesene **Anwendungs-ID** kopieren. Sie benötigen Sie in Kürze.
@@ -55,7 +55,7 @@ Erstellen Sie eine neue App unter [apps.dev.microsoft.com](https://apps.dev.micr
 - den richtigen **Umleitungs-URI** eingeben. Der Umleitungs-URI verweist auf Azure AD, wohin Authentifizierungsantworten gesendet werden sollen – der Standardwert in diesem Lernprogramm lautet `https://localhost:44326/`.
 
 
-## 2\. Melden Sie den Benutzer mit OpenID Connect an
+## 2. Melden Sie den Benutzer mit OpenID Connect an
 Hier konfigurieren wir die OWIN-Middleware für die Verwendung des [Authentifizierungsprotokolls OpenID Connect](active-directory-v2-protocols.md#openid-connect-sign-in-flow). OWIN wird unter anderem für die Ausgabe von Anmelde- und Abmeldeanforderungen, für die Verwaltung der Benutzersitzungen und für das Abrufen der Benutzerinformationen verwendet.
 
 -	Öffnen Sie zunächst die Datei `web.config` aus dem Stammverzeichnis des `TodoList-WebApp`-Projekts, und geben Sie die Konfigurationswerte Ihrer App im Abschnitt `<appSettings>` ein.
@@ -114,12 +114,14 @@ public void ConfigureAuth(IAppBuilder app)
 ...
 ```
 
-## 3\. Verwenden von ADAL zum Aufrufen eines Zugriffstokens bei Benutzeranmeldung
+## 3. Verwenden von ADAL zum Aufrufen eines Zugriffstokens bei Benutzeranmeldung
 In der `AuthorizationCodeReceived`-Benachrichtigung möchten wir [OAuth 2.0 zusammen mit OpenID Connect](active-directory-v2-protocols.md#openid-connect-with-oauth-code-flow) zum Einlösen des Autorisierungscodes für ein Zugriffstoken auf den To-Do List-Dienst verwenden. ADAL kann diesen Prozess erleichtern:
 
 - Installieren Sie zunächst die Vorschauversion von ADAL:
 
-```PM> Install-Package Microsoft.Experimental.IdentityModel.Clients.ActiveDirectory -ProjectName TodoList-WebApp -IncludePrerelease``` – Und fügen Sie eine weitere `using`-Anweisung zu der `App_Start\Startup.Auth.cs`-Datei für ADAL hinzu. – Fügen Sie nun eine neue Methode hinzu, den `OnAuthorizationCodeReceived`-Ereignishandler. Dieser Handler nutzt ADAL zum Abrufen eines Zugriffstokens auf die To-Do List-API und speichert das Token im Tokencache von ADAL für spätere Zwecke:
+```PM> Install-Package Microsoft.Experimental.IdentityModel.Clients.ActiveDirectory -ProjectName TodoList-WebApp -IncludePrerelease``` 
+– Und fügen Sie eine weitere `using`-Anweisung zu der `App_Start\Startup.Auth.cs`-Datei für ADAL hinzu. 
+– Fügen Sie nun eine neue Methode hinzu, den `OnAuthorizationCodeReceived`-Ereignishandler. Dieser Handler nutzt ADAL zum Abrufen eines Zugriffstokens auf die To-Do List-API und speichert das Token im Tokencache von ADAL für spätere Zwecke:
 
 ```C#
 private async Task OnAuthorizationCodeReceived(AuthorizationCodeReceivedNotification notification)
@@ -141,7 +143,7 @@ private async Task OnAuthorizationCodeReceived(AuthorizationCodeReceivedNotifica
 <!-- TODO: Token Cache article -->
 
 
-## 4\. Aufrufen der To-Do List-Web-API
+## 4. Aufrufen der To-Do List-Web-API
 Jetzt wird das in Schritt 3 abgerufene Zugriffstoken benötigt. Öffnen Sie die Datei `Controllers\TodoListController.cs` der Web-App, die alle CRUD-Anfragen an die To-Do List-API durchführt.
 
 - Sie können hier wieder ADAL verwenden, um Zugriffstoken aus dem ADAL-Cache abzurufen. Fügen Sie dieser Datei zunächst eine `using`-Anweisung für ADAL hinzu.
@@ -201,6 +203,8 @@ Als Referenz stellen wir [hier](https://github.com/AzureADQuickStarts/AppModelv2
 
 ## Nächste Schritte
 
-Weitere Ressourcen: – [Die App-Modell v2.0-Vorschauversion >>](active-directory-appmodel-v2-overview.md) - [StackOverflow-"adal"-Tag >>](http://stackoverflow.com/questions/tagged/adal)
+Weitere Ressourcen: 
+- [Die App-Modell v2.0-Vorschauversion \>\>](active-directory-appmodel-v2-overview.md)
+- [StackOverflow-"adal"-Tag \>\>](http://stackoverflow.com/questions/tagged/adal)
 
 <!---HONumber=AcomDC_0128_2016-->

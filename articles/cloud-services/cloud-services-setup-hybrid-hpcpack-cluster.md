@@ -157,7 +157,7 @@ Bevor Sie mit HPC Cluster Manager Azure-Knoten bereitstellen und Aufträge über
 
 	![Installations-Anmeldeinformationen][config_hpc6]
 
-	>[AZURE.NOTE]HPC Pack-Dienste verwenden Installationsanmeldeinformationen nur für die Bereitstellung mit der Domäne verknüpfter Compute-Knoten. Die Azure-Knoten, die Sie in diesem Tutorial hinzufügen, sind nicht mit der Domäne verknüpft.
+	>[AZURE.NOTE]HPC Pack-Dienste verwenden Installationsanmeldeinformationen nur für die Bereitstellung mit der Domäne verknüpfter Compute-Knoten. Die Azure-Knoten, die Sie in diesem Lernprogramm hinzufügen, sind nicht mit der Domäne verknüpft.
 
 7. Klicken Sie in der **Deployment To-do List** auf **Configure the naming of new nodes**.
 
@@ -300,13 +300,13 @@ Nachdem Sie den Cluster getestet haben, können Sie die Azure-Knoten stoppen, um
 
 	![Keine Instanzen][view_instances2]
 
-	Damit schließt dieses Tutorial.
+	Damit schließt dieses Lernprogramm.
 
 ## Zugehörige Ressourcen
 
-* [HPC Pack 2012 R2 und HPC Pack 2012](http://go.microsoft.com/fwlink/p/?LinkID=263697
+* [HPC Pack 2012 R2 und HPC Pack 2012](http://go.microsoft.com/fwlink/p/?LinkID=263697)
 
-* [Burst to Azure Worker Role Instances with Microsoft HPC Pack](http://go.microsoft.com/fwlink/p/?LinkID=200493)
+* [Erweiterung auf Azure mit Microsoft HPC Pack](http://go.microsoft.com/fwlink/p/?LinkID=200493)
 * [HPC-Clusteroptionen mit Microsoft HPC Pack in Azure](../virtual-machines/virtual-machines-hpcpack-cluster-options.md)
 * [Big Compute in Azure: technische Ressourcen für Batch und HPC (High Performance Computing)](../batch/big-compute-resources.md)
 

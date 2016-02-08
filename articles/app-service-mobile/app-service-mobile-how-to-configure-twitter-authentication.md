@@ -36,18 +36,18 @@ Dieses Thema veranschaulicht die Verwendung der Authentifizierungs- und Autorisi
 
 1. Melden Sie sich beim [Azure-Portal] an, und navigieren Sie zu Ihrer Anwendung. Kopieren Sie die **URL**. Diese verwenden Sie zur Konfiguration der Twitter-App.
 
-2. Navigieren Sie zur [Twitter Developers]-Website, melden Sie sich mit den Anmeldeinformationen für Ihr Twitter-Konto an, und klicken Sie auf **Create New App**.
+2. Navigieren Sie zur [Twitter Developers]-Website, melden Sie sich mit den Anmeldeinformationen für Ihr Twitter-Konto an, und klicken Sie auf **Neue App erstellen**.
 
 3. Geben Sie den **Namen** und eine **Beschreibung** für Ihre neue App ein. Fügen Sie die **URL** Ihrer Anwendung in den Wert für die **Website** ein. Fügen Sie dann für die **Rückruf-URL** die **Rückruf-URL** ein, die Sie zuvor kopiert haben. Dabei handelt es sich um Ihr Mobile App-Gateway mit dem angehängten Pfad _/.auth/login/twitter/callback_. Beispiel: `https://contoso.azurewebsites.net/.auth/login/twitter/callback`. Stellen Sie sicher, dass Sie das HTTPS-Schema verwenden.
 
 	> [AZURE.NOTE]
 	Wenn anstelle der App Service-Authentifizierungs- oder -Autorisierungsfunktion das App Service-Gateway verwendet wird, greift Ihre Umleitungs-URL stattdessen auf die Gateway-URL mit dem Pfad _/signin-twitter_ zurück.
 
-3.  Lesen und akzeptieren Sie die Bedingungen am Ende der Seite. Klicken Sie dann auf **Create your Twitter application**. Daraufhin wird die Anwendung mit den angegebenen Details registriert.
+3.  Lesen und akzeptieren Sie die Bedingungen am Ende der Seite. Klicken Sie dann auf **Twitter-Anwendung erstellen**. Daraufhin wird die Anwendung mit den angegebenen Details registriert.
 
-4. Klicken Sie auf die Registerkarte **Settings**, aktivieren Sie die Option **Allow this application to be used to sign in with Twitter**, und klicken Sie dann auf **Update Settings**.
+4. Klicken Sie auf die Registerkarte **Einstellungen**, aktivieren Sie die Option **Anmeldung bei Twitter über diese Anwendung zulassen**, und klicken Sie dann auf **Einstellungen aktualisieren**.
 
-5. Wählen Sie die Registerkarte **Keys and Access Tokens**. Notieren Sie die Werte für **Consumer Key (API Key)** und **Consumer secret (API Secret)**.
+5. Wählen Sie die Registerkarte **Schlüssel und Zugriffstoken**. Notieren Sie die Werte für **Verbraucherschlüssel (API-Schlüssel)** und **Geheimer Verbraucherschlüssel (geheimer API-Schlüssel)**.
 
     > [AZURE.NOTE] Consumer secret ist eine wichtige Anmeldeinformation. Teilen Sie diesen Schlüssel mit niemandem, und geben Sie ihn nicht über Ihre App frei.
 

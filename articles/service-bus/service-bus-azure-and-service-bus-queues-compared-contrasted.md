@@ -204,7 +204,8 @@ In diesem Abschnitt werden die von Azure-Warteschlangen und Service Bus-Wartesch
 |Vergleichskriterien|Azure-Warteschlangen|Service Bus-Warteschlangen|
 |---|---|---|
 |Verwaltungsprotokoll|**REST über HTTP/HTTPS**|**REST über HTTPS**|
-|Laufzeitprotokoll|**REST über HTTP/HTTPS**|**REST über HTTPS**<br/><br/>** AMQP 1.0 Standard (TCP mit TLS)**| |. NET-verwaltete API|**Ja**<br/><br/>(.NET verwaltete Speicherclient-API)|**Ja**<br/><br/>(.NET-verwaltete API für Brokermessaging)|
+|Laufzeitprotokoll|**REST über HTTP/HTTPS**|**REST über HTTPS**<br/><br/>** AMQP 1.0 Standard (TCP mit TLS)**| 
+|. NET-verwaltete API|**Ja**<br/><br/>(.NET verwaltete Speicherclient-API)|**Ja**<br/><br/>(.NET-verwaltete API für Brokermessaging)|
 |Systemeigenes C++|**Ja**|**Nein**|
 |Java-API|**Ja**|**Ja**|
 |PHP-API|**Ja**|**Ja**|

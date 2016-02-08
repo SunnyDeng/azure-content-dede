@@ -39,7 +39,7 @@ Sie benötigen ein Twitter-Konto mit verifizierter E-Mail-Adresse, um den in die
 	+ **.NET-Back-End**: `https://<mobile_service>.azure-mobile.net/signin-twitter`
 	+ **JavaScript-Back-End**: `https://<mobile_service>.azure-mobile.net/login/twitter`
 
-	 >[AZURE.NOTE]Stellen Sie sicher, dass Sie das richtige Umleitungs-URL-Pfadformat für Ihren Typ von Mobile Services-Back-End verwenden. Wenn die Angabe falsch ist, wird die Authentifizierung nicht erfolgreich ausgeführt.&nbsp;
+	 >[AZURE.NOTE] Stellen Sie sicher, dass Sie das richtige Umleitungs-URL-Pfadformat für Ihren Typ von Mobile Services-Back-End verwenden. Wenn die Angabe falsch ist, wird die Authentifizierung nicht erfolgreich ausgeführt.&nbsp;
 
    	![][2]
 

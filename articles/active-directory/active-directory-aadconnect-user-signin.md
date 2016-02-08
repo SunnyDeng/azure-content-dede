@@ -24,7 +24,8 @@ Mit Azure AD Connect können sich Ihre Benutzer sowohl bei Cloud- als auch bei l
 
 
 ### Kennwortsynchronisierung
-Mit der Kennwortsynchronisierung werden Benutzerkennworthashes aus Ihrem lokalen Active Directory mit Azure AD synchronisiert. Werden Kennwörter geändert oder lokal zurückgesetzt, werden die neuen Kennwörter sofort mit Azure AD synchronisiert, damit Ihre Benutzer für Cloudressourcen dasselbe Kennwort verwenden können wie in der lokalen Umgebung. Die Kennwörter werden weder an Azure AD übermittelt noch als Klartext in Azure AD gespeichert. Die Kennwortsynchronisierung kann mit der Kennwortrückschreibung kombiniert werden, um es den Benutzern zu ermöglichen, ihre Kennwörter in Azure AD selbst zurückzusetzen.
+Mit der Kennwortsynchronisierung werden Benutzerkennworthashes aus Ihrem lokalen Active Directory mit Azure AD synchronisiert. Werden Kennwörter geändert oder lokal zurückgesetzt, werden die neuen Kennwörter sofort mit Azure AD synchronisiert, damit Ihre Benutzer für Cloudressourcen dasselbe Kennwort verwenden können wie in der lokalen Umgebung. Die Kennwörter werden weder an Azure AD übermittelt noch als Klartext in Azure AD gespeichert. 
+Die Kennwortsynchronisierung kann mit der Kennwortrückschreibung kombiniert werden, um es den Benutzern zu ermöglichen, ihre Kennwörter in Azure AD selbst zurückzusetzen.
 
 <center>![Cloud](./media/active-directory-aadconnect-user-signin/passwordhash.png)</center>
 
@@ -53,7 +54,8 @@ Wenn Sie eine neue Farm bereitstellen oder eine vorhandene Farm verwenden:
 Wenn Sie die Cloudanmeldung bereits mit einer früheren Version von AD FS (z. B. AD FS 2.0) oder einer Drittanbieterlösung konfiguriert haben, können Sie die Konfiguration der Benutzeranmeldung über Azure AD Connect überspringen. Auf diese Weise profitieren Sie von den neuesten Synchronisierungsfunktionen und anderen Features Azure AD Connect und können gleichzeitig Ihre vorhandene Lösung für die Anmeldung nutzen.
 
 ### Auswählen einer Benutzeranmeldemethode für Ihre Organisation
-Für die meisten Organisationen, die lediglich die Benutzeranmeldung für Office 365, SaaS-Anwendungen und andere Azure AD-basierte Ressourcen aktivieren möchten, empfiehlt sich Standardoption für die Kennwortsynchronisierung. Einige Organisationen benötigen jedoch eine Option zur Verbundanmeldung, z. B. AD FS. Diese umfassen:
+Für die meisten Organisationen, die lediglich die Benutzeranmeldung für Office 365, SaaS-Anwendungen und andere Azure AD-basierte Ressourcen aktivieren möchten, empfiehlt sich Standardoption für die Kennwortsynchronisierung. 
+Einige Organisationen benötigen jedoch eine Option zur Verbundanmeldung, z. B. AD FS. Diese umfassen:
 
 - Ihre Organisation hat bereits AD FS oder eine Verbundlösung eines Drittanbieters bereitgestellt.
 - Ihre Sicherheitsrichtlinie unterbindet das Synchronisieren von Kennworthashes mit der Cloud.

@@ -123,7 +123,8 @@ Achten Sie darauf, Ihre Lösungen nicht abhängig von der Verfügbarkeit eines g
 
 Ein Zurückgreifen auf den ursprünglichen Datenspeicher bei einem vorübergehenden Ausfall des Cache zieht aber womöglich ein Skalierbarkeitsproblem für das System nach sich. Während der Wiederherstellung des Cache wird der ursprüngliche Datenspeicher derart mit Datenanforderungen überschwemmt, dass es zu Zeitlimitüberschreitungen und Verbindungsfehlern kommt. In diesem Sinne ist es durchaus sinnvoll, eine Strategie zu überdenken, bei der zusätzlich zum freigegebenen Cache, auf den alle Anwendungsinstanzen zugreifen, für jede Anwendungsinstanz ein lokaler privater Cache implementiert wird. Beim Abrufen eines Elements kann die Anwendung zunächst in ihrem lokalen Cache, dann im freigegebenen Cache und schließlich im ursprünglichen Datenspeicher nachsehen. Der lokale Cache kann mit den Daten des freigegebenen Cache bzw., sollte dieser nicht verfügbar sein, mit den Daten aus der ursprünglichen Datenbank gefüllt werden. Bei dieser Strategie ist eine sorgfältige Konfiguration erforderlich. Es sollte verhindert werden, dass der lokale Cache gegenüber dem freigegebenen Cache zu sehr veraltet, gleichzeitig sollte er aber für den Fall, dass der freigegebene Cache nicht verfügbar ist, als Puffer fungieren. Eine solche Struktur sehen Sie in Abbildung 3.
 
-![Verwenden eines lokalen privaten Cache mit einem freigegebenen Cache\_](media/best-practices-caching/Caching3.png) _Abbildung 3: Verwenden eines lokalen privaten Cache mit einem gemeinsam genutzten Cache_
+![Verwenden eines lokalen privaten Cache mit einem freigegebenen Cache\_](media/best-practices-caching/Caching3.png) 
+_Abbildung 3: Verwenden eines lokalen privaten Cache mit einem gemeinsam genutzten Cache_
 
 Zur Unterstützung großer Caches, die relativ langlebige Daten enthalten, bieten einige Cachedienste eine Option für hohe Verfügbarkeit, die für den Fall, dass der Cache nicht verfügbar ist, automatisches Failover implementiert. Diese Strategie schließt in der Regel die Replikation der auf einem primären Cacheserver zwischengespeicherten Daten auf einem sekundären Cacheserver ein, so dass bei einem Ausfall des primären Cacheservers bzw. einem Verlust der Konnektivität sofort zum sekundären Server gewechselt werden kann. Zur Verkürzung der Latenzzeit, die das Schreiben an mehrere Ziele mit sich bringt, kann die Replikation der Daten auf den sekundären Server auch asynchron zum Caching der Daten auf dem primären Server erfolgen. Diese Strategie birgt zwar das Risiko, dass einige der zwischengespeicherten Informationen bei einem Fehler während dieses Prozesses verloren gehen, der Verlustanteil sollte jedoch gegenüber der Gesamtgröße des Cache vernachlässigbar sein.
 
@@ -427,9 +428,20 @@ Redis unterstützt eine Reihe von atomaren Get- und Set-Vorgängen für Zeichenf
 
 - `INCR`, `INCRBY`, `DECR` und `DECRBY`, die atomare Inkrement- und Dekrementvorgänge an ganzzahligen numerischen Datenwerten ausführen. Die StackExchange-Bibliothek bietet zur Ausführung dieser Vorgänge und zur Rückgabe der Ergebniswerte aus dem Cache erweiterte Versionen der `IDatabase.StringIncrementAsync`- und `IDatabase.StringDecrementAsync`-Methoden. Folgender Codeausschnitt veranschaulicht die Verwendung dieser Methoden:
 
-  ```csharp ConnectionMultiplexer redisHostConnection = ...; IDatabase cache = redisHostConnection.GetDatabase(); ... await cache.StringSetAsync("data:counter", 99); ... long oldValue = await cache.StringIncrementAsync("data:counter"); // Increment by 1 (the default) // oldValue should be 100
+  ```csharp 
+  ConnectionMultiplexer redisHostConnection = ...; 
+  IDatabase cache = redisHostConnection.GetDatabase();
+  ...
+  await cache.StringSetAsync("data:counter", 99);
+  ...
+  long oldValue = await cache.StringIncrementAsync("data:counter");
+  // Increment by 1 (the default)
+  // oldValue should be 100
 
-  long newValue = await cache.StringDecrementAsync("data:counter", 50); // Decrement by 50 // newValue should be 50 ```
+  long newValue = await cache.StringDecrementAsync("data:counter", 50);
+  // Decrement by 50
+  // newValue should be 50
+  ```
 
 - `GETSET`, das den Wert eines Schlüssels abruft und ihn in einen neuen Wert ändert. Die StackExchange-Bibliothek stellt diesen Vorgang über die Methode `IDatabase.StringGetSetAsync` bereit. Nachfolgender Codeausschnitt zeigt ein Beispiel für diese Methode. Dieser Code gibt den aktuellen Wert des Schlüssels „data:counter“ aus dem vorherigen Beispiel zurück und setzt den Wert dieses Schlüssels im selben Vorgang auf 0 (null) zurück:
 
@@ -442,9 +454,28 @@ Redis unterstützt eine Reihe von atomaren Get- und Set-Vorgängen für Zeichenf
 
 - `MGET` und `MSET`, die einen Satz von Zeichenfolgewerten in einem Vorgang zurückgeben oder ändern können. Diese Funktionalität wird, wie das folgende Beispiel zeigt, auch von den erweiterten Methoden `IDatabase.StringGetAsync` und `IDatabase.StringSetAsync` unterstützt:
 
-  ```csharp ConnectionMultiplexer redisHostConnection = ...; IDatabase cache = redisHostConnection.GetDatabase(); ... // Create a list of key/value pairs var keysAndValues = new List<KeyValuePair<RedisKey  RedisValue>>() { new KeyValuePair<RedisKey  RedisValue>("data:key1", "value1"), new KeyValuePair<RedisKey  RedisValue>("data:key99", "value2"), new KeyValuePair<RedisKey  RedisValue>("data:key322", "value3") };
+  ```csharp 
+  ConnectionMultiplexer redisHostConnection = ...; 
+  IDatabase cache = redisHostConnection.GetDatabase();
+  ...
+  // Create a list of key/value pairs
+  var keysAndValues =
+      new List<KeyValuePair<RedisKey, RedisValue>>()
+      {
+          new KeyValuePair<RedisKey, RedisValue>("data:key1", "value1"),
+          new KeyValuePair<RedisKey, RedisValue>("data:key99", "value2"),
+          new KeyValuePair<RedisKey, RedisValue>("data:key322", "value3")
+      };
 
-  // Store the list of key/value pairs in the cache cache.StringSet(keysAndValues.ToArray()); ... // Find all values that match a list of keys RedisKey keys = { "data:key1", "data:key99", "data:key322"}; RedisValue values = null; values = cache.StringGet(keys); // values should contain { "value1", "value2", "value3" } ```
+  // Store the list of key/value pairs in the cache
+  cache.StringSet(keysAndValues.ToArray());
+  ...
+  // Find all values that match a list of keys
+  RedisKey[] keys = { "data:key1", "data:key99", "data:key322"};
+  RedisValue[] values = null;
+  values = cache.StringGet(keys);
+  // values should contain { "value1", "value2", "value3" }
+  ```
 
 Sie können auch mehrere Vorgänge zu einer einzigen Redis-Transaktion zusammenfassen, wie weiter vorne im Abschnitt „Transaktionen und Batches in Redis“ beschrieben. Die StackExchange-Bibliothek bietet über die `ITransaction`-Schnittstelle Unterstützung für Transaktionen. Mithilfe der Methode IDatabase.CreateTransaction können Sie ein ITransaction-Objekt erstellen und mit dem durch die Methoden bereitgestellten `ITransaction`-Objekt Befehle für die Transaktion aufrufen. Die `ITransaction`-Schnittstelle bietet auf die gleichen Methoden Zugriff wie die `IDatabase`-Schnittstelle, allerdings sind diese Methoden asynchron. Sie werden nur bei Aufruf der Methode `ITransaction.Execute` ausgeführt. Der von der Execute-Methode zurückgegebene Wert gibt an, ob die Transaktion erfolgreich erstellt wurde (true) oder fehlgeschlagen ist (false).
 
@@ -735,7 +766,8 @@ subscriber.PublishAsync("messages:blogPosts", blogPost.Title);
 
 - Mehrere Abonnenten können denselben Kanal abonnieren. Sie alle erhalten dann die über diesen Kanal veröffentlichten Nachrichten.
 - Abonnenten empfangen nur Nachrichten, die nach dem Abschluss ihres Abonnements veröffentlicht wurden. Die Kanäle sind nicht gepuffert. Nach der Veröffentlichung einer Nachricht überträgt die Redis-Infrastruktur die Nachricht sofort an jeden Abonnenten und entfernt die Nachricht anschließend wieder aus dem Kanal.
-- Die Abonnenten erhalten die Nachrichten standardmäßig in der Reihenfolge, in der sie gesendet werden. Innerhalb eines sehr aktiven Systems mit sehr vielen Nachrichten und vielen Abonnenten und Publishern würde die garantierte Zustellung der Nachrichten in der sequenziell richtigen Reihenfolge die Leistung des Systems beeinträchtigen. Wenn die Nachrichten unabhängig voneinander sind und die Reihenfolge ihrer Zustellung unerheblich ist, können Sie die Parallelverarbeitung durch das Redis-System aktivieren, wodurch sich die Reaktionsfähigkeit verbessert. Dazu setzen Sie die Einstellung PreserveAsyncOrder der vom Abonnenten verwendeten Verbindung auf dem StackExchange-Client auf „false“: ```csharp
+- Die Abonnenten erhalten die Nachrichten standardmäßig in der Reihenfolge, in der sie gesendet werden. Innerhalb eines sehr aktiven Systems mit sehr vielen Nachrichten und vielen Abonnenten und Publishern würde die garantierte Zustellung der Nachrichten in der sequenziell richtigen Reihenfolge die Leistung des Systems beeinträchtigen. Wenn die Nachrichten unabhängig voneinander sind und die Reihenfolge ihrer Zustellung unerheblich ist, können Sie die Parallelverarbeitung durch das Redis-System aktivieren, wodurch sich die Reaktionsfähigkeit verbessert. Dazu setzen Sie die Einstellung PreserveAsyncOrder der vom Abonnenten verwendeten Verbindung auf dem StackExchange-Client auf „false“:
+  ```csharp
   ConnectionMultiplexer redisHostConnection = ...;
   redisHostConnection.PreserveAsyncOrder = false;
   ISubscriber subscriber = redisHostConnection.GetSubscriber();

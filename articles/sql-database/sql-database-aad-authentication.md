@@ -199,7 +199,8 @@ Das folgende Beispiel gibt Informationen zum aktuellen Azure AD-Administrator f�
 Get-AzureRmSqlServerActiveDirectoryAdministrator –ResourceGroupName "Group-23" –ServerName "demo_server" | Format-List
 ```
 
-Mit dem folgenden Beispiel wird ein Azure AD-Administrator entfernt: ```
+Mit dem folgenden Beispiel wird ein Azure AD-Administrator entfernt: 
+```
 Remove-AzureRmSqlServerActiveDirectoryAdministrator -ResourceGroupName "Group-23" –ServerName "demo_server"
 ```
 
@@ -243,7 +244,7 @@ Verwenden Sie diese Methode, wenn Sie unter Verwendung der verwalteten Azure AD-
 Verwenden Sie diese Methode, wenn Sie mit Ihren Windows-Anmeldeinformationen von einer Domäne aus angemeldet sind, die nicht im Verbund mit Azure konfiguriert ist, oder wenn Sie die Azure AD-Authentifizierung mit Azure AD basierend auf Anfangs- oder Clientdomäne nutzen.
 
 1. Starten Sie Management Studio, und wählen Sie im Dialogfeld **Verbindung mit Datenbankmodul herstellen** (oder **Verbindung mit dem Server herstellen**) im Feld **Authentifizierung** die Einstellung **Active Directory-Kennwortauthentifizierung** aus.
-2. Geben Sie im Feld **Benutzername** Ihren Azure Active Directory-Benutzernamen im Format ****username@domain.com** ein. Es muss sich um ein Konto aus Azure Active Directory oder um ein Konto aus einer Domäne handeln, die im Verbund mit Azure Active Directory konfiguriert ist.
+2. Geben Sie im Feld **Benutzername** Ihren Azure Active Directory-Benutzernamen im Format **username@domain.com** ein. Es muss sich um ein Konto aus Azure Active Directory oder um ein Konto aus einer Domäne handeln, die im Verbund mit Azure Active Directory konfiguriert ist.
 3. Geben Sie im Feld **Kennwort** Ihr Benutzerkennwort für das Azure Active Directory-Konto oder das Verbunddomänenkonto ein.
 4. Klicken Sie auf die Schaltfläche **Optionen**, und geben Sie auf der Seite **Verbindungseigenschaften** im Feld **Mit Datenbank verbinden** den Namen der Benutzerdatenbank ein, mit der Sie sich verbinden möchten.
 

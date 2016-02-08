@@ -63,9 +63,9 @@ Die Beispielanwendung in diesem Lernprogramm ([WebApp-WSFederation-DotNet](https
 
 3.	Öffnen Sie die Projektmappe, und öffnen Sie "Controllers\\AccountController.cs" im **Projektmappen-Explorer**.
 
-	Sie sehen, dass der Code einfach eine Authentifizierungsaufforderung ausgibt, um den Benutzer mithilfe des WS-Verbunds zu authentifizieren. Die gesamte Authentifizierung wird in der Datei "App\_Start\\Startup.Auth.cs" konfiguriert.
+	Sie sehen, dass der Code einfach eine Authentifizierungsaufforderung ausgibt, um den Benutzer mithilfe des WS-Verbunds zu authentifizieren. Die gesamte Authentifizierung wird in der Datei "App_Start\\Startup.Auth.cs" konfiguriert.
 
-4.  Öffnen Sie die Datei "App\_Start\\Startup.Auth.cs". Beachten Sie in der `ConfigureAuth`-Methode die folgende Zeile:
+4.  Öffnen Sie die Datei "App_Start\\Startup.Auth.cs". Beachten Sie in der `ConfigureAuth`-Methode die folgende Zeile:
 
         app.UseWsFederationAuthentication(
             new WsFederationAuthenticationOptions
@@ -79,7 +79,7 @@ Die Beispielanwendung in diesem Lernprogramm ([WebApp-WSFederation-DotNet](https
 	-	RP-ID: `https://contoso.com/MyLOBApp`
 	-	Metadaten-Adresse: `http://adfs.contoso.com/FederationMetadata/2007-06/FederationMetadata.xml`
 
-5.	Ändern Sie in der Datei "App\_Start\\Startup.Auth.cs" die Definitionen für statische Zeichenfolgen wie unten hervorgehoben:
+5.	Ändern Sie in der Datei "App_Start\\Startup.Auth.cs" die Definitionen für statische Zeichenfolgen wie unten hervorgehoben:
 	<pre class="prettyprint">
 private static string realm = ConfigurationManager.AppSettings["ida:<mark>RPIdentifier</mark>"];
 <mark><del>private static string aadInstance = ConfigurationManager.AppSettings["ida:AADInstance"];</del></mark>
@@ -283,7 +283,9 @@ public ActionResult Contact()
 
 	![](./media/web-sites-dotnet-lob-application-adfs/13-authorize-adfs-error.png)
 
-	Wenn Sie diesen Fehler in der Ereignisanzeige auf dem AD FS-Server untersuchen, sehen Sie diese Ausnahmemeldung: <pre class="prettyprint"> Microsoft.IdentityServer.Web.InvalidRequestException: MSIS7042: <mark>The same client browser session has made '6' requests in the last '11' seconds.</mark> Ausführliche Informationen erhalten Sie bei Ihrem Administrator unter Microsoft.IdentityServer.Web.Protocols.PassiveProtocolHandler.UpdateLoopDetectionCookie(WrappedHttpListenerContext context) unter Microsoft.IdentityServer.Web.Protocols.WSFederation.WSFederationProtocolHandler.SendSignInResponse(WSFederationContext context, MSISSignInResponse response) unter Microsoft.IdentityServer.Web.PassiveProtocolListener.ProcessProtocolRequest(ProtocolContext protocolContext, PassiveProtocolHandler protocolHandler) unter Microsoft.IdentityServer.Web.PassiveProtocolListener.OnGetContext(WrappedHttpListenerContext context) </pre>
+	Wenn Sie diesen Fehler in der Ereignisanzeige auf dem AD FS-Server untersuchen, sehen Sie diese Ausnahmemeldung: 
+	<pre class="prettyprint"> 
+	Microsoft.IdentityServer.Web.InvalidRequestException: MSIS7042: <mark>The same client browser session has made '6' requests in the last '11' seconds.</mark> Ausführliche Informationen erhalten Sie bei Ihrem Administrator unter Microsoft.IdentityServer.Web.Protocols.PassiveProtocolHandler.UpdateLoopDetectionCookie(WrappedHttpListenerContext context) unter Microsoft.IdentityServer.Web.Protocols.WSFederation.WSFederationProtocolHandler.SendSignInResponse(WSFederationContext context, MSISSignInResponse response) unter Microsoft.IdentityServer.Web.PassiveProtocolListener.ProcessProtocolRequest(ProtocolContext protocolContext, PassiveProtocolHandler protocolHandler) unter Microsoft.IdentityServer.Web.PassiveProtocolListener.OnGetContext(WrappedHttpListenerContext context) </pre>
 
 	Der Grund hierfür ist, dass MVC standardmäßig die Fehlermeldung "401 - Nicht autorisiert" zurückgibt, wenn die Rollen des Benutzers nicht autorisiert sind. Dadurch wird eine Anforderung zur erneuten Authentifizierung an Ihren Identitätsanbieter (AD FS) ausgelöst. Da der Benutzer bereits authentifiziert ist, kehrt AD FS zur selben Seite zurück- Diese gibt dann wiederum eine 401-Fehlermeldung aus, sodass eine Umleitungsschleife entsteht. Überschreiben Sie die `HandleUnauthorizedRequest`-Methode von "AuthorizeAttribute" mit einfacher Logik, um etwas Sinnvolles anzuzeigen, anstatt die Umleitungsschleife fortzusetzen.
 

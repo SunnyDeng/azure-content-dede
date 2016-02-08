@@ -44,7 +44,7 @@ Ressourcen, die über den Ressourcen-Manager erstellt wurden, weisen folgende Me
 
         ![Azure portal](./media/resource-manager-deployment-model/preview-portal.png)
 
-        For Compute, Storage, and Networking resources, you have the option of using either Resource Manager or Classic deployment. Select **Resource Manager**.
+        Für Compute-, Storage- und Netzwerkressourcen haben Sie die Möglichkeit, entweder den Ressourcen-Manager oder die klassische Bereitstellung zu nutzen. Wählen Sie **Ressourcen-Manager** .
 
         ![Resource Manager deployment](./media/resource-manager-deployment-model/select-resource-manager.png)
 
@@ -93,7 +93,7 @@ Ressourcen, die im klassischen Bereitstellungsmodell erstellt wurden, weisen fol
 
         ![Classic portal](./media/resource-manager-deployment-model/azure-portal.png)
 
-        Or, the portal and you specify **Classic** deployment (for Compute, Storage, and Networking).
+        Alternativ können Sie das Vorschauportal nutzen und eine **klassische** Bereitstellung (für Compute-, Speicher- und Netzwerkressourcen) festlegen.
 
         ![Classic deployment](./media/resource-manager-deployment-model/select-classic.png)
 

@@ -55,11 +55,11 @@ Sie können einen Klon anhand einer lokalen oder einer Cloudmomentaufnahme auf d
 
   1. Ermitteln Sie ein Zielgerät. Dies ist der Speicherort, an dem der Klon erstellt wird. Sie können das gleiche Gerät auswählen oder ein anderes Gerät angeben. Bei Auswahl eines Volumes, das anderen Cloud-Service Providern als Azure zugeordnet ist, werden in der Dropdownliste für das Zielgerät nur physische Geräte angezeigt. Ein Volume kann nicht auf ein virtuelles Gerät geklont werden, wenn es anderen Cloud-Service Providern zugeordnet ist.
 
-        >[AZURE.NOTE] Make sure that the capacity required for the clone is lower than the capacity available on the target device.
+        >[AZURE.NOTE] Stellen Sie sicher, dass für den Klon weniger Kapazität benötigt wird, als auf dem Zielgerät zur Verfügung steht.
 
   2. Geben Sie einen eindeutigen Volumenamen für Ihren Klon an. Der Name muss zwischen 3 und 127 Zeichen lang sein.
     
-        >[AZURE.NOTE] The **Clone Volume As** field will be **Tiered** even if you are cloning a locally pinned volume. You cannot change this setting; however, if you need the cloned volume to be locally pinned as well, you can convert the clone to a locally pinned volume after you successfully create the clone. For information about converting a tiered volume to a locally pinned volume, go to [Change the volume type](storsimple-manage-volumes-u2.md#change-the-volume-type).
+        >[AZURE.NOTE] Das Feld **Volume klonen als** lautet selbst dann **Mehrstufig**, wenn Sie ein lokales Volume klonen. Sie können diese Einstellung nicht ändern. Sie können jedoch das geklonte Volume nach dem erfolgreichen Erstellen des Klons in ein lokales Volume konvertieren. Informationen zum Konvertieren eines mehrstufigen Volumes in ein lokales Volume finden Sie unter [Ändern des Volumetyps](storsimple-manage-volumes-u2.md#change-the-volume-type).
 
         ![Clone wizard 1](./media/storsimple-clone-volume-u2/clone1.png) 
 

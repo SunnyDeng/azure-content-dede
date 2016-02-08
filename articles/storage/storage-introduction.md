@@ -46,7 +46,7 @@ Der Azure-Speicher ist weltweit und von jeder Art von Anwendung erreichbar, egal
 
 Azure Storage unterstützt Kunden mit verschiedenen Betriebssystemen (z. B. Windows und Linux) und einer Vielzahl von Programmiersprachen (darunter .NET, Java und C++) für eine problemlose Entwicklung. Azure Storage macht auch Datenressourcen über einfache REST-APIs verfügbar, die auf jedem Client ausgeführt werden können, der Daten über HTTP/HTTPS senden und empfangen kann.
 
-Azure Premium Storage bietet eine leistungsstarke Datenträgerunterstützung mit niedriger Latenz für E/A-intensive Workloads, die auf virtuellen Azure-Computern ausgeführt werden. Mit Azure Premium Storage können Sie mehrere persistente Datenträger an einen virtuellen Computer anfügen und diese gemäß Ihren Leistungsanforderungen konfigurieren. Jeder Datenträger wird für maximale E/A-Leistung von einer SSD-Festplatte in Azure Premium Storage unterstützt. Weitere Informationen finden Sie unter Premium-Speicher: Hochleistungsspeicher für Workloads auf virtuellen Azure-Computern.
+Azure Premium Storage bietet eine leistungsstarke Datenträgerunterstützung mit niedriger Latenz für E/A-intensive Workloads, die auf virtuellen Azure-Computern ausgeführt werden. Mit Azure Premium Storage können Sie mehrere persistente Datenträger an einen virtuellen Computer anfügen und diese gemäß Ihren Leistungsanforderungen konfigurieren. Jeder Datenträger wird für maximale E/A-Leistung von einer SSD-Festplatte in Azure Premium Storage unterstützt. Weitere Informationen finden Sie unter [Premium-Speicher: Hochleistungsspeicher für Workloads auf virtuellen Azure-Computern](../storage-premium-storage-preview-portal).
 
 ## Anwenden der Azure Storage-Dienste
 
@@ -63,10 +63,10 @@ Sie können die Verwendung von Azure mit einem [kostenlosen Testkonto](https://a
 
 Mit einem Standardspeicherkonto erhalten Sie Zugriff auf Blob-, Tabellen-, Warteschlangen- und Dateispeicher:
 
-- Im **Blob Storage** werden Dateidaten gespeichert. Ein Blob kann jede Art von Text- oder binären Daten sein, z. B. ein Dokument, eine Mediendatei oder ein Anwendungs-Installer. Der BLOB-Speicher wird mitunter als Objektspeicher bezeichnet.
+- Im **Blob-Speicher** werden Dateidaten gespeichert. Ein Blob kann jede Art von Text- oder binären Daten sein, z. B. ein Dokument, eine Mediendatei oder ein Anwendungs-Installer. Der BLOB-Speicher wird mitunter als Objektspeicher bezeichnet. 
 - Im **Tabellenspeicher** werden strukturierte Datensätze gespeichert. Der Tabellenspeicher ist ein NoSQL-Schlüssel-/Attribut-Datenspeicher, der eine rasche Entwicklung und schnellen Zugriff auf große Datenmengen erlaubt.
-- **Queue Storage** bietet eine zuverlässige Nachrichtenfunktion zur Workflowverarbeitung und zur Kommunikation zwischen Komponenten von Clouddiensten.
-- **File Storage** bietet einen gemeinsam genutzten Speicher für Legacyanwendungen unter Verwendung des standardmäßige SMB-Protokolls. Virtuelle Azure-Computer und Clouddienste können Dateidaten in verschiedenen Anwendungskomponenten über eingebundene Freigaben teilen, und lokale Anwendungen können über die REST-API des Dateidiensts auf freigegebene Dateien zugreifen.
+- Der **Warteschlangenspeicher** bietet eine zuverlässige Nachrichtenfunktion zur Workflow-Verarbeitung und zur Kommunikation zwischen Komponenten von Clouddiensten.
+- Der **Dateispeicher** bietet einen gemeinsam genutzten Speicher für Legacyanwendungen unter Verwendung des standardmäßige SMB-Protokolls. Virtuelle Azure-Computer und Clouddienste können Dateidaten in verschiedenen Anwendungskomponenten über eingebundene Freigaben teilen, und lokale Anwendungen können über die REST-API des Dateidiensts auf freigegebene Dateien zugreifen.
 
 Jedes Standardspeicherkonto kann bis zu 500 TB an kombinierten Blob-, Warteschlangen-, Tabellen- und Dateidaten enthalten. Unter [Ziele für Skalierbarkeit und Leistung des Azure-Speichers](storage-scalability-targets.md) finden Sie weitere Details zur Kapazität von Standardspeicherkonten.
 

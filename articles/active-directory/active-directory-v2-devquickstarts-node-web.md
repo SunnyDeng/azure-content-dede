@@ -44,14 +44,14 @@ Der Code für dieses Lernprogramm wird [auf GitHub](https://github.com/AzureADQu
 
 Die fertige Anwendung wird außerdem am Ende dieses Lernprogramms bereitgestellt.
 
-## 1\. Registrieren einer App
+## 1. Registrieren einer App
 Erstellen Sie eine neue App unter [apps.dev.microsoft.com](https://apps.dev.microsoft.com), oder führen Sie die folgenden [ausführlichen Schritte](active-directory-v2-app-registration.md) aus. Stellen Sie sicher, dass Sie:
 
 - die Ihrer App zugewiesene **Anwendungs-ID** kopieren. Sie benötigen Sie in Kürze.
 - die **Web**-Plattform für Ihre App hinzufügen.
 - den richtigen **Umleitungs-URI** eingeben. Der Umleitungs-URI verweist auf Azure AD, wohin Authentifizierungsantworten gesendet werden sollen – der Standardwert in diesem Lernprogramm lautet `http://localhost:3000/auth/openid/return`.
 
-## 2\. Erforderliche Komponenten zu Ihrem Verzeichnis hinzufügen
+## 2. Erforderliche Komponenten zu Ihrem Verzeichnis hinzufügen
 
 Wechseln Sie über die Befehlszeile vom Verzeichnis auf Ihren Stammordner, wenn dies noch nicht der Fall ist, und führen Sie die folgenden Befehle aus:
 
@@ -75,7 +75,7 @@ Wechseln Sie über die Befehlszeile vom Verzeichnis auf Ihren Stammordner, wenn 
 
 Dadurch werden die Bibliotheken installiert, von denen "passport-azure-ad" abhängt.
 
-## 3\. Richten Sie Ihre App zur Nutzung der "passport-node-js"-Strategie ein.
+## 3. Richten Sie Ihre App zur Nutzung der "passport-node-js"-Strategie ein.
 Hier konfigurieren wir die Express-Middleware für die Verwendung des Authentifizierungsprotokolls OpenID Connect. Passport wird unter anderem für die Ausgabe von Anmelde- und Abmeldeanforderungen, für die Verwaltung der Benutzerssitzungen und für das Abrufen der Benutzerinformationen verwendet.
 
 -	Öffnen Sie zunächst die Datei `config.js` aus dem Stammverzeichnis des Projekts, und geben Sie die Konfigurationswerte Ihrer App im Abschnitt `exports.creds` ein.

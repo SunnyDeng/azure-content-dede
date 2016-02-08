@@ -145,7 +145,7 @@ Das Hinzufügen weiterer Instanzen zu einem Workerpool ist unkritisch und führt
  
 Dies führt bei ausgeführten Apps zu sehr viel weniger Unterbrechungen als das Ändern der Größe von Compute-Ressourcen während der Ausführung von Workloads. Details zum Skalieren von Apps in einer App Service-Umgebung finden Sie unter [Skalieren von Apps in einer App Service-Umgebung](app-service-web-scale-a-web-app-in-an-app-service-environment.md)
 
-## Virtual Network ##
+## Virtuelles Netzwerk ##
 
 Anders als beim gehosteten Dienst, der die App Service-Umgebung umfasst, werden das [virtuelle Netzwerk][virtualnetwork] und das Subnetz vom Benutzer gesteuert. App Service-Umgebungen weisen einige Netzwerkanforderungen auf, aber der Rest unterliegt der Steuerung durch den Benutzer. Die App Service-Umgebung stellt folgende Anforderungen:
 

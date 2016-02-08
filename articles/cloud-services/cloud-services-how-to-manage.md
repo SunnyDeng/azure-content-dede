@@ -93,7 +93,7 @@ Im Folgenden wird beschrieben, wie eine neue SQL-Datenbankinstanz, die auf einem
 
 ### Verknüpfen einer SQL-Datenbankinstanz mit einem Cloud-Dienst
 
-1. Klicken Sie im [klassischen Azure-Portal](http://manage.windowsazure.com/) auf **Cloud Services**. Klicken Sie anschließend auf den Namen des Cloud-Diensts, um das Dashboard zu öffnen.
+1. Klicken Sie im [klassischen Azure-Portal](http://manage.windowsazure.com/) auf **Cloud-Dienste**. Klicken Sie anschließend auf den Namen des Cloud-Diensts, um das Dashboard zu öffnen.
 
 2. Klicken Sie auf **Linked Resources**.
 
@@ -121,7 +121,7 @@ Im Folgenden wird beschrieben, wie eine neue SQL-Datenbankinstanz, die auf einem
 
 ### Aufheben der Verknüpfung einer verknüpften Ressource
 
-1. Klicken Sie im [klassischen Azure-Portal](http://manage.windowsazure.com/) auf **Cloud Services**. Klicken Sie anschließend auf den Namen des Cloud-Diensts, um das Dashboard zu öffnen.
+1. Klicken Sie im [klassischen Azure-Portal](http://manage.windowsazure.com/) auf **Cloud-Dienste**. Klicken Sie anschließend auf den Namen des Cloud-Diensts, um das Dashboard zu öffnen.
 
 2. Klicken Sie auf **Linked Resources**, und wählen Sie die Ressource anschließend aus.
 
@@ -139,7 +139,7 @@ Um Rechenkosten zu sparen, können Sie Ihre Stagingbereitstellung löschen, nach
 
 Gehen Sie folgendermaßen vor, um eine Bereitstellung oder Ihren Cloud-Dienst zu löschen.
 
-1. Klicken Sie im [klassischen Azure-Portal](http://manage.windowsazure.com/) auf **Cloud Services**.
+1. Klicken Sie im [klassischen Azure-Portal](http://manage.windowsazure.com/) auf **Cloud-Dienste**.
 
 2. Wählen Sie den Cloud-Dienst aus, und klicken Sie dann auf **Löschen**. (Um einen Cloud-Dienst auszuwählen, ohne das Dashboard zu öffnen, klicken Sie im Cloud-Diensteintrag auf eine beliebige Stelle außerhalb des Namens.)
 
@@ -155,7 +155,7 @@ Gehen Sie folgendermaßen vor, um eine Bereitstellung oder Ihren Cloud-Dienst zu
 5. Klicken Sie zum Löschen des Cloud-Diensts auf **Cloud-Dienst löschen**. Klicken Sie dann an der Bestätigungsaufforderung auf **Ja**.
 
 > [AZURE.NOTE]
-Wenn für den Cloud-Dienst die ausführliche Überwachung konfiguriert ist, löscht Azure die Überwachungsdaten aus Ihrem Speicherkonto nicht, wenn Sie den Cloud-Dienst löschen. Sie müssen die Daten manuell löschen. Informationen zum Speicherort der Metriktabellen finden Sie unter „Zugreifen auf ausführliche Überwachungsdaten außerhalb des klassischen Azure-Portals“ in [Überwachen von Cloud Services](cloud-services-how-to-monitor.md).
+Wenn für den Cloud-Dienst die ausführliche Überwachung konfiguriert ist, löscht Azure die Überwachungsdaten aus Ihrem Speicherkonto nicht, wenn Sie den Cloud-Dienst löschen. Sie müssen die Daten manuell löschen. Informationen zum Speicherort der Metriktabellen finden Sie unter „Zugreifen auf ausführliche Überwachungsdaten außerhalb des klassischen Azure-Portals“ in [Überwachen von Cloud-Dienste](cloud-services-how-to-monitor.md).
 
 ## Nächste Schritte
 

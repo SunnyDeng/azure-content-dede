@@ -102,7 +102,10 @@ Wenn sich Ihre Anwendung den Skalierbarkeitszielen für ein Speicherkonto näher
 -	Wenn Ihre Anwendung die Skalierbarkeitsziele erreicht, stellen Sie sicher, dass Sie exponentiell ansteigende Wartezeiten für Wiederholungsversuche verwenden (siehe [Wiederholungsversuche](#subheading14)). Sie sollten besser sicherstellen, dass Sie sich nicht an die Skalierbarkeitsziele annähern (mit einer der oben angegebenen Methoden), aber dies sorgt ebenfalls dafür, dass die Anwendung keine schnellen Wiederholungen versucht, sodass die Drosselung schlimmer wird.  
 
 ####Nützliche Ressourcen
-Die folgenden Links bieten zusätzliche Details zu Skalierbarkeitszielen: – Sie können die aktuellen Skalierbarkeitsziele unter [Ziele für Skalierbarkeit und Leistung des Azure-Speichers](storage-scalability-targets.md) anzeigen. – Mehr über Speicherredundanzoptionen erfahren Sie unter [Azure Storage-Replikation](storage-redundancy.md) und im Blogbeitrag [Azure Storage-Redundanzoptionen und georedundanter Speicher mit Lesezugriff](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/11/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx). – Aktuelle Informationen zu den Preisdetails für Azure-Dienste finden Sie unter [Azure-Preise](https://azure.microsoft.com/pricing/overview/).
+Die folgenden Links bieten zusätzliche Details zu Skalierbarkeitszielen: 
+–	Sie können die aktuellen Skalierbarkeitsziele unter [Ziele für Skalierbarkeit und Leistung des Azure-Speichers](storage-scalability-targets.md) anzeigen. 
+– 	Mehr über Speicherredundanzoptionen erfahren Sie unter [Azure Storage-Replikation](storage-redundancy.md) und im Blogbeitrag [Azure Storage-Redundanzoptionen und georedundanter Speicher mit Lesezugriff](http://blogs.msdn.com/b/windowsazurestorage/archive/2013/12/11/introducing-read-access-geo-replicated-storage-ra-grs-for-windows-azure-storage.aspx). 
+–	Aktuelle Informationen zu den Preisdetails für Azure-Dienste finden Sie unter [Azure-Preise](https://azure.microsoft.com/pricing/overview/).
 
 ###Netzwerk
 Auch wenn die API-Aufrufe eine Rolle spielen, haben häufig die physischen Netzwerkeinschränkungen deutliche Auswirkungen auf die Leistung. Nachfolgend sind einige der Einschränkungen beschrieben, auf die Benutzer treffen können.

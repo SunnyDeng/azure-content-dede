@@ -89,7 +89,7 @@ Wenn `TaskService` Anforderungen von `TaskWebApp` erhält, sucht er nach einem g
 
 Dieser Artikel behandelt nicht die Details der Sicherung von `TaskService`. Wenn Sie wissen möchten, wie eine Web-API sicher Anforderungen mithilfe von Azure AD B2C authentifiziert, sehen Sie sich unseren [Artikel mit den ersten Schritten für die Web-API](active-directory-b2c-devquickstarts-api-dotnet.md) an.
 
-## 6\. Konfigurieren der Aufgaben-Web-App
+## 6. Konfigurieren der Aufgaben-Web-App
 
 Damit die `TaskWebApp` mit Azure AD B2C kommunizieren kann, müssen Sie einige allgemeine Parameter angeben. Öffnen Sie im `TaskWebApp`-Projekt die Datei `web.config` aus dem Stammverzeichnis des Projekts, und ersetzen Sie die Werte im Abschnitt `<appSettings>`. Diese Werte werden in der gesamten Web-App verwendet.
 

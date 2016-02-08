@@ -2133,8 +2133,8 @@ Das folgende Beispiel zeigt, wie Sie mithilfe von "queryDocuments" in der server
 7.	JavaScript-Spezifikation [http://www.ecma-international.org/publications/standards/Ecma-262.htm](http://www.ecma-international.org/publications/standards/Ecma-262.htm) 
 8.	LINQ [http://msdn.microsoft.com/library/bb308959.aspx](http://msdn.microsoft.com/library/bb308959.aspx) 
 9.	Abfrageauswertungstechniken für große Datenbanken [http://dl.acm.org/citation.cfm?id=152611](http://dl.acm.org/citation.cfm?id=152611)
-10.	Query Processing in Parallel Relational Database Systems, IEEE Computer Society Press, 1994
-11.	Lu, Ooi, Tan, Query Processing in Parallel Relational Database Systems, IEEE Computer Society Press, 1994.
+10.	Abfrageverarbeitung in parallelen relationalen Datenbanksystemen, IEEE Computer Society Press, 1994
+11.	Lu, Ooi, Tan, Abfrageverarbeitung in parallelen relationalen Datenbanksystemen, IEEE Computer Society Press, 1994.
 12.	Christopher Olston, Benjamin Reed, Utkarsh Srivastava, Ravi Kumar, Andrew Tomkins: Pig Latin: A Not-So-Foreign Language for Data Processing, SIGMOD 2008.
 13.     G. Graefe. The Cascades framework for query optimization. IEEE Data Eng. Bull., 18(3): 1995.
 

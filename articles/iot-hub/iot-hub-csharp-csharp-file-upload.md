@@ -78,7 +78,7 @@ Weitere Informationen zu IoT Hub:
 
 <!-- Links -->
 
-[Send Cloud-to-Device messages with IoT Hub]: iot-hub-csharp-csharp-c2d.md
+[Senden von Cloud-zu-Gerät-Nachrichten mit IoT Hub]: iot-hub-csharp-csharp-c2d.md
 
 [Azure-Portal]: https://portal.azure.com/
 

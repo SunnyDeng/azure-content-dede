@@ -34,9 +34,11 @@ Ein Connector kann innerhalb einer Logik-App oder direkt über den Azure Marketp
 
 	Name | Erforderlich | Beschreibung
 --- | --- | ---
-Website-URL | Ja | Geben Sie die vollständige URL der SharePoint-Website ein. Geben Sie z. B. Folgendes ein: **https://microsoft.sharepoint.com/teams/wabstest*. Document Library / List Relative URLs | Yes | Geben Sie die URLS von Dokumentbibliotheken/Listen relativ zur SharePoint-Website-URL ein, die vom Connector geändert werden dürfen. Geben Sie z. B. ein: *Listen/Aufgabe, Freigegebene Dokumente*.
+Website-URL | Ja | Geben Sie die vollständige URL der SharePoint-Website ein. Geben Sie z. B. Folgendes ein: *https://microsoft.sharepoint.com/teams/wabstest*.
+ Document Library / List Relative URLs | Yes | Geben Sie die URLS von Dokumentbibliotheken/Listen relativ zur SharePoint-Website-URL ein, die vom Connector geändert werden dürfen. Geben Sie z. B. ein: *Listen/Aufgabe, Freigegebene Dokumente*.
 
-5. Nach Abschluss des Vorgangs sehen die Paketeinstellungen etwa wie folgt aus: ![][1]
+5. Nach Abschluss des Vorgangs sehen die Paketeinstellungen etwa wie folgt aus:  
+![][1]
 
 Sobald Sie fertig sind, können Sie jetzt in derselben Ressourcengruppe eine Logik-App zur Verwendung des SharePoint Online-Connectors erstellen.
 
@@ -51,13 +53,15 @@ Ein Connector kann innerhalb einer Logik-App oder direkt über den Azure Marketp
 
 	Name | Erforderlich | Beschreibung
 --- | --- | ---
-Website-URL | Ja | Geben Sie die vollständige URL der SharePoint-Website ein. Geben Sie z. B. Folgendes ein: *https://microsoft.sharepoint.com/teams/wabstest*. Authentication Mode | Yes | Geben Sie den Authentifizierungsmodus zum Verbinden mit einer SharePoint-Website ein. Optionen umfassen:<ul><li>Standard</li><li>WindowsAuthentication</li><li>FormBasedAuthentication</li></ul><br/><br/>Wenn Sie "Standard" wählen, werden die Anmeldeinformationen für den SharePoint-Connector verwendet. Benutzername und Kennwort sind nicht erforderlich. Benutzername und Kennwort sind für andere Authentifizierungstypen erforderlich.<br/><br/>** Hinweis ** anonyme Authentifizierung wird nicht unterstützt.
+Website-URL | Ja | Geben Sie die vollständige URL der SharePoint-Website ein. Geben Sie z. B. Folgendes ein: *https://microsoft.sharepoint.com/teams/wabstest*.
+Authentication Mode | Yes | Geben Sie den Authentifizierungsmodus zum Verbinden mit einer SharePoint-Website ein. Optionen umfassen:<ul><li>Standard</li><li>WindowsAuthentication</li><li>FormBasedAuthentication</li></ul><br/><br/>Wenn Sie "Standard" wählen, werden die Anmeldeinformationen für den SharePoint-Connector verwendet. Benutzername und Kennwort sind nicht erforderlich. Benutzername und Kennwort sind für andere Authentifizierungstypen erforderlich.<br/><br/>**Hinweis** anonyme Authentifizierung wird nicht unterstützt.
 Benutzername | Nein | Geben Sie einen gültigen Benutzernamen zum Verbinden mit einer SharePoint-Website ein, wenn als Authentifizierungsmodus nicht "Standard" verwendet wird.
 Kennwort | Nein | Geben Sie ein gültiges Kennwort zum Verbinden mit einer SharePoint-Website ein, wenn als Authentifizierungsmodus nicht "Standard" verwendet wird.
 Relative URLs zur Dokumentbibliothek/Liste | Ja | Geben Sie die URLS von Dokumentbibliotheken/Listen relativ zur SharePoint-Website-URL ein, die vom Connector geändert werden dürfen. Geben Sie z. B. ein: *Listen/Aufgabe, Freigegebene Dokumente*.
 Service Bus-Verbindungszeichenfolge | Nein | Wenn Sie lokale eine Verbindung herstellen, geben Sie die Verbindungszeichenfolge von Service Bus Relay ein.<br/><br/>[Verwendung mit dem Hybrid Connection Manager](app-service-logic-hybrid-connection-manager.md)<br/>[Service Bus-Preise](https://azure.microsoft.com/pricing/details/service-bus/)
 
-5. Nach Abschluss des Vorgangs sehen die Paketeinstellungen etwa wie folgt aus: ![][2]
+5. Nach Abschluss des Vorgangs sehen die Paketeinstellungen etwa wie folgt aus:  
+![][2]
 
 Sobald Sie fertig sind, können Sie jetzt in derselben Ressourcengruppe eine Logik-App zur Verwendung des SharePoint Server-Connectors erstellen.
 
@@ -72,15 +76,20 @@ Sobald Ihre API-App erstellt wurde, können Sie jetzt den SharePoint-Connector a
 
 3. Wenn der SharePoint-Connector am Anfang der Logik-App aktiviert ist, fungiert dieser wie ein Trigger. Andernfalls könnte Aktionen auf dem SharePoint-Konto über den Connector ausgeführt werden.
 
-4. Wenn Sie den SharePoint-Online-Connector verwenden, müssen Logik-Apps in Ihrem Namen authentifiziert und autorisiert werden. Zum Starten der Autorisierung klicken Sie im SharePoint-Connector auf **Autorisieren**: ![][3]
+4. Wenn Sie den SharePoint-Online-Connector verwenden, müssen Logik-Apps in Ihrem Namen authentifiziert und autorisiert werden. Zum Starten der Autorisierung klicken Sie im SharePoint-Connector auf **Autorisieren**:  
+![][3]
 
-5. Durch das Klicken auf "Autorisieren" wird das Authentifizierungsdialogfeld von SharePoint angezeigt. Geben Sie die Anmeldeinformationen des SharePoint-Kontos an, mit dem Sie die Vorgänge ausführen möchten: ![][4]
+5. Durch das Klicken auf "Autorisieren" wird das Authentifizierungsdialogfeld von SharePoint angezeigt. Geben Sie die Anmeldeinformationen des SharePoint-Kontos an, mit dem Sie die Vorgänge ausführen möchten:  
+![][4]
 
-6. Erteilen Sie Logik-Apps Zugriff auf Ihr Konto, um Vorgänge in Ihrem Namen auszuführen: ![][5]
+6. Erteilen Sie Logik-Apps Zugriff auf Ihr Konto, um Vorgänge in Ihrem Namen auszuführen:  
+![][5]
 
-7. Wenn der SharePoint-Connector als Trigger konfiguriert ist, werden die Trigger angezeigt. Andernfalls wird die Liste der Aktionen angezeigt, und Sie können die entsprechenden Vorgänge auswählen, die Sie ausführen möchten: ![][6]
+7. Wenn der SharePoint-Connector als Trigger konfiguriert ist, werden die Trigger angezeigt. Andernfalls wird die Liste der Aktionen angezeigt, und Sie können die entsprechenden Vorgänge auswählen, die Sie ausführen möchten:  
+![][6]
   
-**Für Dokumentbibliothek konfigurierte relative URL**![][7]
+**Für Dokumentbibliothek konfigurierte relative URL**  
+![][7]
 
 **Für Dokumentliste konfigurierte relative URL**
 

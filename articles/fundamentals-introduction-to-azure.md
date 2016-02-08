@@ -35,7 +35,8 @@ Azure gruppiert Dienste im Verwaltungsportal unter verschiedenen Kategorien und 
 
 Dieser Artikel **geht anders vor**, denn die Dienste werden nach Funktionsverwandtschaft dargestellt, und es werden wichtige Teildienste hervorgehoben, die zu größeren Diensten gehören.
 
-![Azure-Komponenten](./media/fundamentals-introduction-to-azure/AzureComponentsIntroNew780.png) *Abbildung: Azure bietet über das Internet zugängliche Anwendungsdienste, die in Azure-Datencentern ausgeführt werden. *
+![Azure-Komponenten](./media/fundamentals-introduction-to-azure/AzureComponentsIntroNew780.png)
+ *Abbildung: Azure bietet über das Internet zugängliche Anwendungsdienste, die in Azure-Datencentern ausgeführt werden. *
 
 ## Verwaltungsportal
 Azure verfügt über eine Webschnittstelle, das so genannte [Verwaltungsportal](http://manage.windowsazure.com), über das Administratoren auf die meisten Azure-Features zugreifen und die meisten Azure-Features verwalten können. Microsoft gibt das Portal mit der neueren Benutzeroberfläche in der Regel als Beta-Version heraus, bevor eine ältere Version zurückgezogen wird. Die neuere Version heißt [Azure-Vorschauportal](https://portal.azure.com/).
