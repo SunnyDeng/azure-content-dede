@@ -20,7 +20,7 @@
 
 # Ändern der für die Zahlung eines Azure-Abonnements verwendeten Kreditkarte
 
-Sie können per Kreditkarte oder Debitkarte bezahlen oder eine Genehmigung für die Zahlung per Rechnung beantragen. Weitere Informationen zur Zahlung per Rechnung finden Sie unter [Azure – Rechnungsstellung](https://azure.microsoft.com/de-DE/pricing/invoicing/).
+Sie können per Kreditkarte oder Debitkarte bezahlen oder eine Genehmigung für die Zahlung per Rechnung beantragen. Weitere Informationen zur Zahlung per Rechnung finden Sie unter [Azure – Rechnungsstellung](https://azure.microsoft.com/pricing/invoicing/).
 
 ## Bearbeiten von Zahlungsinformationen für eine vorhandene Kreditkarte
 1. Melden Sie sich im [Azure-Kontocenter](https://account.windowsazure.com/Subscriptions) als Kontoadministrator an.

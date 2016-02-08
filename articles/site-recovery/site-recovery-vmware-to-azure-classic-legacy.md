@@ -1,4 +1,11 @@
-<properties pageTitle="Virtuelle Computer und physische Server in Azure mit Azure Site Recovery (Legacy) replizieren | Microsoft Azure" description ="Beschreibt eine Legacy-Bereitstellung zum Einrichten von Azure Site Recovery, um eine Replikation, Failover und Wiederherstellung von lokalen VMware virtuellen Computern und physischen Windows-/Linux-Servern zu Azure zu orchestrieren." " services ="site-recovery" documentationCenter =" "authors="rayne wiselman" manager ="jwhit"editor=" "/ >
+<properties
+	pageTitle="Virtuelle Computer und physische Server in Azure mit Azure Site Recovery (Legacy) replizieren | Microsoft Azure" 
+	description="Beschreibt eine Legacy-Bereitstellung zum Einrichten von Azure Site Recovery, um eine Replikation, Failover und Wiederherstellung von lokalen VMware virtuellen Computern und physischen Windows-/Linux-Servern zu Azure zu orchestrieren."
+	services="site-recovery"
+	documentationCenter=""
+	authors="rayne-wiselman"
+	manager="jwhit"
+	editor=""/>
 
 <tags
 	ms.service="site-recovery"

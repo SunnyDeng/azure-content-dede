@@ -31,7 +31,7 @@ Der Einsatz dieser APIs liefert wichtige Informationen zur Nutzung und zu den Ko
 ## Integrieren von Cloudyn in die RateCard- und Nutzungs-APIs
 Die RateCard-API erfordert mehrere Eingabeparameter – z. B. Regionsinformationen, Währung und Gebietsschema –, aber der wichtigste Parameter ist OfferDurableID. Hiermit wird der Typ des Azure-Angebots angegeben, für den der Kunde bezahlt (Nutzungsbasierte Bezahlung, ältere 6- und 12-monatige Tarife mit verbindlicher Zusage bzw. Vertrag, MSDN-Angebote, MPN-Angebote, Werbeangebote usw.). Die OfferDurableID finden Sie im [Azure-Nutzungs- und Abrechnungsportal](https://account.windowsazure.com/Subscriptions) unter der „Angebots-ID“ für das jeweilige Abonnement.
 
-Bei der Registrierung für [Cloudyn für Azure](https://www.cloudyn.com/microsoft-azure/)-Diensten können Kunden ihren OfferDurableID-Code hinzufügen. Hiermit kann Cloudyn ihre relevanten Preisinformationen über die RateCard-API abrufen. Informationen zu den verschiedenen Angebotstypen finden Sie auf der Seite [Microsoft Azure-Angebotsdetails](https://azure.microsoft.com/en-gb/support/legal/offer-details/).
+Bei der Registrierung für [Cloudyn für Azure](https://www.cloudyn.com/microsoft-azure/)-Diensten können Kunden ihren OfferDurableID-Code hinzufügen. Hiermit kann Cloudyn ihre relevanten Preisinformationen über die RateCard-API abrufen. Informationen zu den verschiedenen Angebotstypen finden Sie auf der Seite [Microsoft Azure-Angebotsdetails](https://azure.microsoft.com/support/legal/offer-details/).
 
 ![Übersicht über das Cloudyn-ITFM-Modul][2]
 
